@@ -2,85 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3FE6BD4D9E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 08:37:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 817C1D4DEB
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 09:24:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nvquywgSFozTURBSM4uTpZ0pfM+JgcTRCbNGzuNuHkM=; b=hDJ1gO9DkTG4/O
-	YTUEc9Nmz58tida6q0580ZtBU0LgPFY9/ZtVLj0MMW2RFKr9axtq8YMWO1SAw6gYKJxhmKys5ZE3a
-	NIBTWRkCpp0Cf7Qm7PrSpflxVMGmyEfgfJP79fr/U7Rg7qjUC4ZHIY9U7TP7YupSrAMBRJJqEpkFT
-	cQlNTENdvpl4RyDEyU0Csp3DWmcbyJFAjeslbUWsQxb/7Dr9DnuGEdyNJa9nCdArNbCPgAjD19K2i
-	ipply/rWUW2O4Cfd906HlQ19h/MO4f2g9V25L5DG38w6F39odYUBsBEf5qrSoS8XOmXs4cImjQwdd
-	q+kHlk10hcqq26yN2JnQ==;
+	List-Owner; bh=2P2ponLXkvP/e18m7e3yLVTwJGyUo2ZcjPOXAKTv+ks=; b=n4/eQnZk5v0/SN
+	W06qPP2u+rUpHlQ/eCEIWT1ouZ2dWIGoB7LAZZts0Ho1u3mPQ2VefiZKRzBa4hj6Gg62MoTI6jN2q
+	8Wq9re1yt2J9NuWTGX4qPb0GJ/VWvRZQq1sylL3tOaveknD3TLPDMqzpYc4E9nt7OgNgLEHeTSse5
+	oTLj0UVP6zFhU/MehdztrI/8u/y37RVJsy6qmE/rAEYIRsJL2OZ83NAzwMWYLwC6tm0QepfjSomY/
+	yvmEzsdLMrUxIiXVo9Poc779cc8avsKUdjRykhis6Z+RuekDjzwkGDG/5zAfoX4g8KW6rhDOqLm+o
+	Ur+lZ3YCqysht5sDS4XQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJB21-0001NM-UX; Sat, 12 Oct 2019 06:37:37 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iJBlL-0007PJ-RI; Sat, 12 Oct 2019 07:24:27 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJB1t-0001Mn-00
- for linux-arm-kernel@lists.infradead.org; Sat, 12 Oct 2019 06:37:30 +0000
-Received: by mail-pg1-x541.google.com with SMTP id b8so7004026pgm.13
+ id 1iJBlD-0007Oi-7U
+ for linux-arm-kernel@lists.infradead.org; Sat, 12 Oct 2019 07:24:21 +0000
+Received: by mail-wm1-x343.google.com with SMTP id p7so12391906wmp.4
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 11 Oct 2019 23:37:28 -0700 (PDT)
+ Sat, 12 Oct 2019 00:24:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=enj181dZ5QRmkidqsNYZCPy2b+xtjYW3Q1Csrx2TdQE=;
- b=NDdFcZqcvgb1E3tLIlvdDL21maihC/qaIj8y3PAYoWFkjeSjpGsr4lqELXhKXFddoT
- Jzzkk1hC5XFcwcUODp34vVZwxXHBHhzNkVD/ORklAgon5CFD44dfqjmp2TWpd6eXqbwe
- JpFR1EmAnq/OX0MKv4NgyGRKjenm7wOWmIOWOav8Vmkz92PyvpTZJaLH2WeC3koqizV7
- +//i8gcKUOpwccK09/29/Of0HpaGg9uYj1/rtYbgH7EYsa62v6CLDHpM8WxBUWsTZCJ/
- i6lz274qDCZWv5U8/eiZRTvoZHiG5AsozSZxivV2qDQUMa0Uqo1G4F9KPnSI16VxdH9Y
- KPSQ==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=zAYSIpIU3hJKU2u4hHTRX9v4IZBeJlln5UqpWWtBOKQ=;
+ b=uR2hqb86vFeLoehGG9nQq+UzP1qbzEkHMu9gB1Z1mPmdY2pyRGj8GQIjU8AqIri6ic
+ 4xkbqIkn/uCLwxUBwSA1V0vsLY5X6eq1GrrUGx8G4PVgTiTb9DsevH9tzUE7zWquRaC5
+ x7fmWKcwbdP/wcnaswp9we57PR6XnYoCouhhKJDfYkJUrovG3D3def0y/BDAexOKcaxz
+ 62Yp5v8CEy3I51k3l71lgZgCM/qf7u8Uv3KV5l7hdn/FAXcY22/JshOjYA1aDmGOM7jR
+ 9L/vdbgRF6SKyy1Fxx2CjN77fRn1CnJ8zP4YTQioHbc4EjiMWQEO7t6PNz8FUDSquVkf
+ 02tw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=enj181dZ5QRmkidqsNYZCPy2b+xtjYW3Q1Csrx2TdQE=;
- b=AqYw/fWJ29uHLWN7GF3/wUKtZvzatqAOA7AqlfaWwZqJ4WXBNacDp+VCQ51swO3IAn
- FM5f7Um61sEbFwfOUUQIJWlnTPuA1t+FoO5j2gC7bOsPulp4m8QoiVm8SwEN5A5PymNR
- +P6WSd5iOgqBawZhv+t3UxWxmdp+HrkLB6CI9uFKbkzf2E5zdIMRXledkltaPCUgHpjM
- vUGnuhGzocgG+HrttT4a40FTVR3jP0YfKCFa/dN65hHBY5wuxu87KU29eK9GefiJlb61
- GwgX9CkJz7W3hIHmer+3fJGvoGuiQMLsr2bP5UuVXw+6S8Xe1XqaM3KiHQDGs/uASr0H
- hJWw==
-X-Gm-Message-State: APjAAAUm+hG8l1d9C2g/t4/xH/Zfq5H+/EhduhqFU72OmzdiFhjSXWqH
- BHCebu6NOtloPKyOHBCeUjQnEDkr
-X-Google-Smtp-Source: APXvYqzSkVg6MzYCHOPE0i8n1okTjhUY4LjicQkMl6T0tlNbQu4Zi4KGdjs4SMZNzc7AxMZ3MyASpA==
-X-Received: by 2002:a62:8209:: with SMTP id w9mr20704434pfd.5.1570862248058;
- Fri, 11 Oct 2019 23:37:28 -0700 (PDT)
-Received: from localhost ([106.51.243.12])
- by smtp.gmail.com with ESMTPSA id b69sm13576328pfb.132.2019.10.11.23.37.26
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 11 Oct 2019 23:37:27 -0700 (PDT)
-Date: Sat, 12 Oct 2019 12:07:25 +0530
-From: afzal mohammed <afzal.mohd.ma@gmail.com>
-To: Vladimir Murzin <vladimir.murzin@arm.com>,
- Russell King <linux@armlinux.org.uk>
-Subject: Re: [PATCH] ARM: NOMMU: Fix exc_ret for XIP
-Message-ID: <20191012063725.GA4813@afzalpc>
-References: <1570102888-13426-1-git-send-email-vladimir.murzin@arm.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=zAYSIpIU3hJKU2u4hHTRX9v4IZBeJlln5UqpWWtBOKQ=;
+ b=UCye5mem2OXUzdM41+yVPHKIZFpN6F0x370fLBopDIixYarRCq++H4HBPU+4KsAYmU
+ kHzI71RSRJTTrjaGTW5HqZxkpFrSygLp8zb6Zod4VjqShRFzMAmXMmYNJgREeRetNlB+
+ 5cbUd2SE3POY8unJP/pUkDyln74vaq3+B4IeNOKUaxjkEnIwpa5OSLBAVUcJta1F5yEc
+ 70BeWA0JPAwMZ7x9kkRKa95j407egEOnvVUMMRKYiJzGCRCkvEgSFD/TUnvf6oeo63G4
+ 2HSncKeweqfvSnC3BtwCNWOUHnbSxTUGoblc3AcjJtmBSw6BlKrOpsOMVpUZBM1skFgF
+ sc1g==
+X-Gm-Message-State: APjAAAWOp8oTtraox53BRQ6ESlSQm+aGHnDCTotJidD+NX0+oeZ3uipd
+ HJanJA2/vC9tKa8ijVbSVdTfLemaMqpcN7R4w/w=
+X-Google-Smtp-Source: APXvYqwEsXRXwFwnnik3tZHluRyeExDE+ZTPScWLzikmZiNBW7pzwWZWUUmNoV5MLCdU1uXQk853i8QEPl5oBJ6JSvM=
+X-Received: by 2002:a1c:a608:: with SMTP id p8mr6150105wme.25.1570865056487;
+ Sat, 12 Oct 2019 00:24:16 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1570102888-13426-1-git-send-email-vladimir.murzin@arm.com>
-User-Agent: Mutt/1.9.3 (2018-01-21)
+References: <1564980742-19124-1-git-send-email-hongxing.zhu@nxp.com>
+ <1564980742-19124-5-git-send-email-hongxing.zhu@nxp.com>
+ <CAEnQRZBoLw5pfZ10STGMRfmR7=6hFjYNFOmXiMAnbM+-8Q4uLg@mail.gmail.com>
+ <CAEnQRZCkoA-q=C6nU0L_i33W8iTPY2RC4Cvb-aWuExA8VEqM4g@mail.gmail.com>
+ <AM0PR0402MB35709FCA367D132B3E1634118C950@AM0PR0402MB3570.eurprd04.prod.outlook.com>
+ <AM0PR0402MB357085BEB3A0B7FD7D5649AA8C960@AM0PR0402MB3570.eurprd04.prod.outlook.com>
+In-Reply-To: <AM0PR0402MB357085BEB3A0B7FD7D5649AA8C960@AM0PR0402MB3570.eurprd04.prod.outlook.com>
+From: Daniel Baluta <daniel.baluta@gmail.com>
+Date: Sat, 12 Oct 2019 10:24:05 +0300
+Message-ID: <CAEnQRZApkTEyvgoTGo6So5NJAHARmEnxfzTcahDVXr_9ns+_Sw@mail.gmail.com>
+Subject: Re: [EXT] Re: [RESEND PATCH v5 4/4] mailbox: imx: add support for imx
+ v1 mu
+To: Richard Zhu <hongxing.zhu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_233729_038318_BC41A936 
-X-CRM114-Status: GOOD (  10.79  )
+X-CRM114-CacheID: sfid-20191012_002419_292455_9A1254A0 
+X-CRM114-Status: UNSURE (   7.20  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (afzal.mohd.ma[at]gmail.com)
+ provider (daniel.baluta[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -100,38 +99,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.torgue@st.com, linux@armlinux.org.uk,
- linux-arm-kernel@lists.infradead.org, sza@esh.hu
+Cc: Aisheng Dong <aisheng.dong@nxp.com>,
+ "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Oleksij Rempel <o.rempel@pengutronix.de>, dl-linux-imx <linux-imx@nxp.com>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Vladimir,
+On Sat, Oct 12, 2019 at 4:12 AM Richard Zhu <hongxing.zhu@nxp.com> wrote:
+>
+> Hi Daniel:
+> New version patch-set had been sent out on Oct9.
+> https://patchwork.kernel.org/cover/11180683/
 
-On Thu, Oct 03, 2019 at 12:41:28PM +0100, Vladimir Murzin wrote:
+Thanks Richard. Jassi, care to have a look?
 
-> It was reported that 72cd4064fcca "NOMMU: Toggle only bits in
-> EXC_RETURN we are really care of" breaks NOMMU+XIP combination.
-> It happens because saved EXC_RETURN gets overwritten when data
-> section is relocated.
-> 
-> The fix is to propagate EXC_RETURN via register and let relocation
-> code to commit that value into memory.
-> 
-> Fixes: 72cd4064fcca ("ARM: 8830/1: NOMMU: Toggle only bits in EXC_RETURN we are really care of")
-> 
-> Reported-by: afzal mohammed <afzal.mohd.ma@gmail.com>
-> Tested-by: afzal mohammed <afzal.mohd.ma@gmail.com>
-> Signed-off-by: Vladimir Murzin <vladimir.murzin@arm.com>
-
-Can you please put this into rmk's patch system.
-
-STM32 Cortex-M boards are currently not booting in mainline, this
-change makes them boot again, verified on stm32f429 discovery board.
-
-Regards
-afzal
+Daniel
 
 _______________________________________________
 linux-arm-kernel mailing list
