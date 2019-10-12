@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1BE70D4EE2
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 12:05:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB6F4D4EE3
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 12:06:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=mlzv79V8Xh4YdlNzSYncSjMiZceSJO2t792+uBQ6vNw=; b=W6OvviQ3aM+YBz
-	EEfuva0rQeSTnqIyso6VoU2n6UsEHb+qLysI1qTgqemZ7CN9J8GjUxTvoqbz67BzhmGcwg+Iox8hF
-	+xcsxQx1T9DmYntXBV5N0QcQw9Dsd5fBR0Es7yzXyKIySUxM1HRoW4jh6O0AGm40QNUP4QgfR/2nm
-	00C48Fif80n0EGoeWmlEHU2HA+Ym3cEV4Gw6c0okenTmCubVdpfj9H5Ykpyw0383YxVvTZEL6SmlB
-	QFgLD6s2wJw29YplDiVU736WFhIbbcP5SKuGn68gh7sNjT+Ploj9v4C6s+i+DJU6/h1LON3Hw+2fQ
-	Ja0DrsJ8C6pqSJCPpm3g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RO+vNGjJxNF4kED6IpJdRzXHfrTiT47w9OZbisxEPf4=; b=BJzf8e62tl6ueV
+	m/waUqPh8Xm7Omts7kD/a2PewoiPcnoj/Ic2o2i81s1DjnvaaY+HaLubN4YstrtLx2rN0Qgo2wyv6
+	Xn/IUkPsdNn/pA/1qsVJP0VpOgV4t1N9u5J2eCO9tZyaiu7BPruwofgzrk1t39eUInrE6Q7DwzeEe
+	B+Kz3Jy5/1mv6mltImbDDRlE9Mf2VBEDUVVN6xxzrVsMh0vTZdkutqjCFnvzdrzUs0w1FC0w4EC0X
+	mOTmuhX0v9cVuwJlIOuDXJt1pgwteT/vI3ygOO6Sjufe61yEoWbQIusLaZAcB6Qkvr/P9gPjCgknE
+	GUxuDDep5zLnGifPGBQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJEHN-0001UL-78; Sat, 12 Oct 2019 10:05:41 +0000
+	id 1iJEHf-0001ko-RB; Sat, 12 Oct 2019 10:05:59 +0000
 Received: from mail-sz.amlogic.com ([211.162.65.117])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJEHB-0001Sr-Nk; Sat, 12 Oct 2019 10:05:30 +0000
+ id 1iJEHD-0001Sr-8s; Sat, 12 Oct 2019 10:05:32 +0000
 Received: from droid12-sz.software.amlogic (10.28.8.22) by mail-sz.amlogic.com
  (10.28.11.5) with Microsoft SMTP Server id 15.1.1591.10;
  Sat, 12 Oct 2019 18:05:30 +0800
@@ -29,15 +29,18 @@ From: Xingyu Chen <xingyu.chen@amlogic.com>
 To: Wim Van Sebroeck <wim@linux-watchdog.org>, Guenter Roeck
  <linux@roeck-us.net>, Kevin Hilman <khilman@baylibre.com>, Neil Armstrong
  <narmstrong@baylibre.com>
-Subject: [PATCH 0/4] add meson secure watchdog driver
-Date: Sat, 12 Oct 2019 18:05:17 +0800
-Message-ID: <1570874721-36077-1-git-send-email-xingyu.chen@amlogic.com>
+Subject: [PATCH 1/4] firmware: meson_sm: add new SMC ID support for accessing
+ secure watchdog
+Date: Sat, 12 Oct 2019 18:05:18 +0800
+Message-ID: <1570874721-36077-2-git-send-email-xingyu.chen@amlogic.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1570874721-36077-1-git-send-email-xingyu.chen@amlogic.com>
+References: <1570874721-36077-1-git-send-email-xingyu.chen@amlogic.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.28.8.22]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191012_030529_772290_DF62AB78 
-X-CRM114-Status: UNSURE (   8.47  )
+X-CRM114-CacheID: sfid-20191012_030531_309982_C464C896 
+X-CRM114-Status: UNSURE (   8.33  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -67,29 +70,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The watchdog controller on the Meson-A/C series SoCs is moved to secure world,
-We have to call SMC instruction to trap the ATF for watchdog operation. These
-operations are different from previous SoCs, so we introduce a new watchdog
-driver to support this kind of SoCs.
+The new SMC ID is used to access secure registers by meson secure
+watchdog driver.
 
-Xingyu Chen (4):
-  firmware: meson_sm: add new SMC ID support for accessing secure
-    watchdog
-  dt-bindings: watchdog: add new binding for meson secure watchdog
-  watchdog: add meson secure watchdog driver
-  arm64: dts: a1: add secure watchdog controller
+Signed-off-by: Xingyu Chen <xingyu.chen@amlogic.com>
+---
+ drivers/firmware/meson/meson_sm.c       | 1 +
+ include/linux/firmware/meson/meson_sm.h | 1 +
+ 2 files changed, 2 insertions(+)
 
- .../bindings/watchdog/amlogic,meson-sec-wdt.yaml   |  34 ++++
- arch/arm64/boot/dts/amlogic/meson-a1.dtsi          |   6 +
- drivers/firmware/meson/meson_sm.c                  |   1 +
- drivers/watchdog/Kconfig                           |  16 ++
- drivers/watchdog/Makefile                          |   1 +
- drivers/watchdog/meson_sec_wdt.c                   | 205 +++++++++++++++++++++
- include/linux/firmware/meson/meson_sm.h            |   1 +
- 7 files changed, 264 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/watchdog/amlogic,meson-sec-wdt.yaml
- create mode 100644 drivers/watchdog/meson_sec_wdt.c
-
+diff --git a/drivers/firmware/meson/meson_sm.c b/drivers/firmware/meson/meson_sm.c
+index 1d5b4d7..46a44de 100644
+--- a/drivers/firmware/meson/meson_sm.c
++++ b/drivers/firmware/meson/meson_sm.c
+@@ -44,6 +44,7 @@ static const struct meson_sm_chip gxbb_chip = {
+ 		CMD(SM_EFUSE_WRITE,	0x82000031),
+ 		CMD(SM_EFUSE_USER_MAX,	0x82000033),
+ 		CMD(SM_GET_CHIP_ID,	0x82000044),
++		CMD(SM_WATCHDOG_OPS,	0x82000086),
+ 		{ /* sentinel */ },
+ 	},
+ };
+diff --git a/include/linux/firmware/meson/meson_sm.h b/include/linux/firmware/meson/meson_sm.h
+index 6669e2a..0934718 100644
+--- a/include/linux/firmware/meson/meson_sm.h
++++ b/include/linux/firmware/meson/meson_sm.h
+@@ -12,6 +12,7 @@ enum {
+ 	SM_EFUSE_WRITE,
+ 	SM_EFUSE_USER_MAX,
+ 	SM_GET_CHIP_ID,
++	SM_WATCHDOG_OPS,
+ };
+ 
+ struct meson_sm_firmware;
 -- 
 2.7.4
 
