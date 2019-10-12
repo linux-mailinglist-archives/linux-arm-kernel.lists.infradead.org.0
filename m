@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01678D4E9B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 11:29:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56B1BD4EA7
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 11:35:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NZL3gRx0Qp0BSQffiuEJZQ128RwU9qyvbGyPs4gWg+Y=; b=pHkgbKG0BVccKd
-	awoNHr4+FqtGfoCmOIMseJMb5p9+XW2sv7W6tahf8xGWuYsLyfpXHdVUMwt6jW/S4dATe5VRfBbUZ
-	J6wlSBKC8xlyI/XQePbQIsRQO97czC9pQvYmKRb35FONoate3y6coytEhQvX788fbO0PxbgSxJHFp
-	817lqdW6ySgrRptkAqEwqjKKvFtthK5bh8oIY7iszso5HZa6CjwM9RgUbYKp8TIlonTw7AYcvrXXX
-	7X5P7y5JWr2Jtj55kWwhEi6glswFa9rwyEoOSI2XAbsr2ryXhjLdu2Wn47wSCuhzQcNN1XqEYOqkA
-	wNba3pAdZlOfhuDTyC5w==;
+	List-Owner; bh=LgtBzZThu5qpDvqmEiilI6zDiqTh8KzXznlwCIwvA+M=; b=iMHzLg0hklLJrn
+	bJqf0s+2qvSA+m+Wc2AAhI0qq5SX/OMWXKPqbJ+/jIe88uGb+fitLZUnHHlNv/9HnAL8CQVpKNpWH
+	nHT0D3y+UnFpxnohsvLsy0+iYTjoIvptMygt19jJWGXcdH3MWdywKh0/W+Q32hn+KOMjG3vXAVE3C
+	FWTRZjXSmTzVixMwfuKcJWJEyQBktQHmIZcBcZORPVOLtt4V2KmVhFWtHZtt2yoGTioLkD7nR6Htj
+	i929cq56mm2zb1E6Syr4cmZXXjlAjU9SFfUfwa0XbXJsvCsQD25jB95JzTVfgE240F+sMu1mNmFwO
+	Ft7Wpv8jY2HImlHFT6gg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJDif-0002vl-JL; Sat, 12 Oct 2019 09:29:49 +0000
+	id 1iJDoM-0006Cu-OB; Sat, 12 Oct 2019 09:35:42 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJDiW-0002vG-W2; Sat, 12 Oct 2019 09:29:42 +0000
+ id 1iJDoF-0006CM-IS; Sat, 12 Oct 2019 09:35:37 +0000
 Received: from dhcp-172-31-174-146.wireless.concordia.ca (unknown
  [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested) (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 75EEC28EDBF;
- Sat, 12 Oct 2019 10:29:39 +0100 (BST)
-Date: Sat, 12 Oct 2019 11:29:36 +0200
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 0257D2912F1;
+ Sat, 12 Oct 2019 10:35:33 +0100 (BST)
+Date: Sat, 12 Oct 2019 11:35:30 +0200
 From: Boris Brezillon <boris.brezillon@collabora.com>
 To: Miquel Raynal <miquel.raynal@bootlin.com>
-Subject: Re: [PATCH v3 07/40] mtd: rawnand: Drop the legacy ECC type
- enumeration
-Message-ID: <20191012112936.6c6fbea8@dhcp-172-31-174-146.wireless.concordia.ca>
-In-Reply-To: <20190919193141.7865-8-miquel.raynal@bootlin.com>
+Subject: Re: [PATCH v3 12/40] mtd: nand: Rename a core structure
+Message-ID: <20191012113530.6fe78c71@dhcp-172-31-174-146.wireless.concordia.ca>
+In-Reply-To: <20190919193141.7865-13-miquel.raynal@bootlin.com>
 References: <20190919193141.7865-1-miquel.raynal@bootlin.com>
- <20190919193141.7865-8-miquel.raynal@bootlin.com>
+ <20190919193141.7865-13-miquel.raynal@bootlin.com>
 Organization: Collabora
 X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191012_022941_160270_F46750A3 
-X-CRM114-Status: GOOD (  16.64  )
+X-CRM114-CacheID: sfid-20191012_023535_741062_20DC5639 
+X-CRM114-Status: GOOD (  18.17  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -74,69 +73,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 19 Sep 2019 21:31:07 +0200
+On Thu, 19 Sep 2019 21:31:12 +0200
 Miquel Raynal <miquel.raynal@bootlin.com> wrote:
 
-> Now that all files have been migrated to use the new enumeration, drop
-> the old one which is unused.
+> Prepare the migration to a generic ECC engine by renaming the
+> nand_ecc_req structure into nand_ecc_props. This structure will be the
+> base of a wider 'nand_ecc' structure.
 > 
 > Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 > ---
->  drivers/mtd/nand/raw/nand_base.c |  9 ---------
->  include/linux/mtd/rawnand.h      | 13 -------------
->  2 files changed, 22 deletions(-)
+>  include/linux/mtd/nand.h    | 8 ++++----
+>  include/linux/mtd/spinand.h | 2 +-
+>  2 files changed, 5 insertions(+), 5 deletions(-)
 > 
-> diff --git a/drivers/mtd/nand/raw/nand_base.c b/drivers/mtd/nand/raw/nand_base.c
-> index ad0b892c2523..c313fe4fc16c 100644
-> --- a/drivers/mtd/nand/raw/nand_base.c
-> +++ b/drivers/mtd/nand/raw/nand_base.c
-> @@ -4833,15 +4833,6 @@ static int nand_detect(struct nand_chip *chip, struct nand_flash_dev *type)
->  	return ret;
->  }
+> diff --git a/include/linux/mtd/nand.h b/include/linux/mtd/nand.h
+> index 531c1799bf2c..7072f14239e5 100644
+> --- a/include/linux/mtd/nand.h
+> +++ b/include/linux/mtd/nand.h
+> @@ -128,11 +128,11 @@ struct nand_page_io_req {
+>  };
 >  
-> -static const char * const nand_ecc_modes[] = {
-> -	[NAND_ECC_NONE]		= "none",
-> -	[NAND_SOFT_ECC_ENGINE]		= "soft",
-> -	[NAND_ECC_HW]		= "hw",
-> -	[NAND_ECC_HW_SYNDROME]	= "hw_syndrome",
-> -	[NAND_ECC_HW_OOB_FIRST]	= "hw_oob_first",
-> -	[NAND_ECC_ON_DIE]	= "on-die",
-> -};
-
-You can't really drop that one, for DT backward compat.
-
-> -
->  static const char * const nand_ecc_engine_providers[] = {
->  	[NAND_NO_ECC_ENGINE] = "none",
->  	[NAND_SOFT_ECC_ENGINE] = "soft",
-> diff --git a/include/linux/mtd/rawnand.h b/include/linux/mtd/rawnand.h
-> index 08964ce8b65f..6c9be596a2d1 100644
-> --- a/include/linux/mtd/rawnand.h
-> +++ b/include/linux/mtd/rawnand.h
-> @@ -80,19 +80,6 @@ struct nand_chip;
->  
->  #define NAND_DATA_IFACE_CHECK_ONLY	-1
->  
-> -/*
-> - * Constants for ECC_MODES
-> - */
-> -enum nand_ecc_mode {
-> -	NAND_ECC_INVALID,
-> -	NAND_ECC_NONE,
-> -	NAND_ECC_SOFT,
-> -	NAND_ECC_HW,
-> -	NAND_ECC_HW_SYNDROME,
-> -	NAND_ECC_HW_OOB_FIRST,
-> -	NAND_ECC_ON_DIE,
-> -};
-> -
-
-You can drop the enum though, assuming you have a way to convert
-ecc_modes strings into engine_type+placement pairs.
-
 >  /**
->   * enum nand_ecc_engine_type - NAND ECC engine type/provider
->   * @NAND_INVALID_ECC_ENGINE: Invalid value
+> - * struct nand_ecc_req - NAND ECC requirements
+> + * struct nand_ecc_props - NAND ECC properties
+>   * @strength: ECC strength
+> - * @step_size: ECC step/block size
+> + * @step_size: Number of bytes per step
+>   */
+> -struct nand_ecc_req {
+> +struct nand_ecc_props {
+>  	unsigned int strength;
+>  	unsigned int step_size;
+>  };
+> @@ -191,7 +191,7 @@ struct nand_ops {
+>  struct nand_device {
+>  	struct mtd_info mtd;
+>  	struct nand_memory_organization memorg;
+> -	struct nand_ecc_req eccreq;
+> +	struct nand_ecc_props eccreq;
+
+Let's rename this field too: s/eccreq/eccprops/
+
+>  	struct nand_row_converter rowconv;
+>  	struct nand_bbt bbt;
+>  	const struct nand_ops *ops;
+> diff --git a/include/linux/mtd/spinand.h b/include/linux/mtd/spinand.h
+> index 4ea558bd3c46..fad19058e28f 100644
+> --- a/include/linux/mtd/spinand.h
+> +++ b/include/linux/mtd/spinand.h
+> @@ -294,7 +294,7 @@ struct spinand_info {
+>  	u16 devid;
+>  	u32 flags;
+>  	struct nand_memory_organization memorg;
+> -	struct nand_ecc_req eccreq;
+> +	struct nand_ecc_props eccreq;
+
+This once can stay unchanged since we're actually describing the ECC
+requirements here, not the final ECC properties (actual ECC engine
+might be stronger than requested).
+
+With this addressed, you can add
+
+Reviewed-by: Boris Brezillon <boris.brezillon@collabora.com>
+
+>  	struct spinand_ecc_info eccinfo;
+>  	struct {
+>  		const struct spinand_op_variants *read_cache;
 
 
 _______________________________________________
