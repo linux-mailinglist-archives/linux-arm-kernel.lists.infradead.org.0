@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C845D51E7
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 20:51:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F430D51EA
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 20:52:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OQLd/pOs8xeefhYyT+Gqke/nr2hTO1KABBth7LGG6uY=; b=iA+IwL3gZqZUJ1
-	x4AqIUCeCK80ICd8fVj3fO10n4XXmiHOWjRYHqRDOnv76rJrFfbKB7p+xcunxxtYP7JerT11bZn5w
-	tCr3YDAVQqIbjq93lQMEwNbnjyXMRrlfJ7xr/IgZBAR2CDt62k6WlSOQn0XOzDIk1xZ0O9SPKM7f0
-	L4dfX+FntxRPiI/Dv/pqrf/rZgxqO2Tjdc5Ss/Cc6cRVAfzUD47WdGMl0fuLovw50ijn5aATfgG2i
-	4OeDfqIPElzNUT0/+Twtjc3IOz6LaJNOefBkRKE7nK+losN1btBQSv8EAosC6jm6FfbUtP948jdpu
-	YHj1+39vkd8jnmaDp+Bw==;
+	List-Owner; bh=j1NMdXL10TsonNgCbI8WjI/lLzvdRBfKaEKr1+G0m1Y=; b=QQENc3lFlCPfXV
+	1IO2eakWIVHWjy9Fb1UbRoYwf7OPG2erTFsus+PDvZuhkuBar+EX8+tbN7QKjusBx0I2kC/kxcseE
+	wKc4UCK1zkQU64iTod3/zeyuLWYcNqqAaOcxsbq0R9VX4PaOpum+ZXHICjeUZhS+K2+wk2jDa8dxY
+	oItUk+UiWMJjcNAJtDG6z4ZljJ+YL915Z+R0dqYY86TIHpK2zK9/oBie1N9xjYO38VUHAVPFuqIul
+	CE6I6Qta+dLZplhxGuAJAyk1S2Dwo/jmPwhYDnyO4dJAnfOu9Dl5Gd3GRA+Vfwd3KLKLO9efLBIGJ
+	ob3PWRcgBT1RtJagVLZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJMUG-0006J1-U1; Sat, 12 Oct 2019 18:51:32 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iJMV7-0007Cm-Ge; Sat, 12 Oct 2019 18:52:25 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJMRy-0003ET-D4
- for linux-arm-kernel@lists.infradead.org; Sat, 12 Oct 2019 18:49:11 +0000
-Received: by mail-wr1-x444.google.com with SMTP id r5so15207588wrm.12
+ id 1iJMRz-0003G7-Cw
+ for linux-arm-kernel@lists.infradead.org; Sat, 12 Oct 2019 18:49:12 +0000
+Received: by mail-wr1-x441.google.com with SMTP id y18so5795016wrn.5
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 12 Oct 2019 11:49:10 -0700 (PDT)
+ Sat, 12 Oct 2019 11:49:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=zV4+mJumjqZCVRf0c568eaULYg2KEJ/Mri+qUnmNENE=;
- b=SoAu1WTF4Hz+Q5KvCZRtqKd7pcLykCWR3rS4humVHxIq2FXg01UbNWrURbDgVAA5tO
- OFkbBzxGNoqA/pLYVvzGUWBtnUjIhAvD1HA4yafhkvrcHwvSHgGag/qQaqPsDTW0K6Zn
- Cmw4/4WU6Ia/3JPbqdb5ET0pVfob3XjusoHu7f4ks3bzSqYLpP/gny2O7T+UQe8VMjeW
- 2QDk1VNHzWPnAxCigpf8Z83IwP/+7zq3HVQ3XHpRnep+SH8Ukta6+CG6DCFKGvoyJ6uS
- FmdRe0MJhHzrL27iHOxyieHGLp8CK7JNLB9AnmlXw6xIbWCR+ZaKDaW0JHeH6ka1f4Kj
- GqDw==
+ bh=rYi1VSAulK4JfPFywnxCiz/tj4/4Gu/YnXW7odKIbWU=;
+ b=XmVN7x19aNaggULUvSZupAZZMhzBhr48faHS49pLiyxHuLH7y5SM1o5T80Nh+jPNS7
+ JR5KWuIxukmwkvtbXEGGfqkj94RL2aXIKQKgiGjTxJZzAT53BnpFryHT3edc8hpVitbq
+ ohbLzYHBTiKONPpe+MLsNGZUoNyApYxRGAi0CWUObjxq8mo3GNnspczXPNqTwkHtcBAg
+ fFmFb526ssToYKID1oL+DdlJwf/RtX1oNIv6wn4LCHm/oymv44myVjGjBNRvPu5/wmzK
+ YGCsR2h/O48Ev5U9vzNNWxtULtzuCCZ96TRKNWnFMU/bN0WD0icKheXIre9hvmWrQ3+b
+ W2mg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=zV4+mJumjqZCVRf0c568eaULYg2KEJ/Mri+qUnmNENE=;
- b=fG/oc412KiFZFxWepeEIA+LADrx8uAh4IMVBdDEQU/4dtgsL7icOeajvsT7XFnMnlC
- fMYECVPNfsYyFbnh86xdofFnNuQJGtzucH2Vwoc3zPE+qpsx55dYcSGQapB6GpM9/4T+
- XPj8p2OZn5l0sBBLKETb33sLVTEaYLAo/nnUR9Bh5Ky7164Hzey/NSLSNJHk3ITVBBh7
- EFBYfdoxsgvUNOMB/JxpcBOcIOcMpu2oynko+6IQeV7/xr1EqiGwrJdY+pmfBB32qWHP
- 3sqB04CeVcXTgN31e+2RREme0yWW4xaLXBnESV4ewQ9ZOkYcdvqgHyNjyqBLlhGOU8DP
- cAJg==
-X-Gm-Message-State: APjAAAXfXQfuMj61CwEbYPJ2xH6VjrJDKgjC4eD8qEwjVTHbdnbz2zT7
- 4gNbpvRfV0CHVlvsC8dtuUE=
-X-Google-Smtp-Source: APXvYqyCDqkwYKGrmgm0KnsgLTZDi4etAKSyk1EAu2zh+IJ1tKM6xB6y6T1lZyPLZhBTN8BzP1h+rQ==
-X-Received: by 2002:adf:fa92:: with SMTP id h18mr18391370wrr.220.1570906148927; 
- Sat, 12 Oct 2019 11:49:08 -0700 (PDT)
+ bh=rYi1VSAulK4JfPFywnxCiz/tj4/4Gu/YnXW7odKIbWU=;
+ b=dH2Uxe+lQsfoIWgJmI7YcsppAY2GkFVSkaNRjUK3+nSLqtQhCQ51oDd0Md/bfHMios
+ 02RJS+q8kcA10JPSytqqtSiyVn5dG9ypT7C+UVYoMI3SgcKmsxfLKXGnxCDbbvaP09FJ
+ iKj+mYNgV8BBm1DsA9v/nI8Xk043pfDLXSdFLaHZW/ly9ekKl2r7YWfLanxhi8H00hB1
+ 10RpgTGjR+nijC/tWZUJdhgRn6O7h12EyXNxJOFrxhhi2AdgsRRTsD7yjqZ7qV1IwIXB
+ SODFjg3Y0UGyntWwiwEAfH5imaKEDSE8m/3uTsh/nQDtFXnxwL/o16AU96Q+DeHeS/Rg
+ WO3A==
+X-Gm-Message-State: APjAAAWmFrIcLN5Ytoh3uVAnne0/z2dC3vKpYtCwL4faVe1OsIgK/iSj
+ ku7EtI6SwmEEVb39CkTfN5U=
+X-Google-Smtp-Source: APXvYqzdO5j+f9N+5yh9nGHTDJJd43DAyB+rEujCLac/sFJ/vzap0GKUIv3sFNCRLIQwWpquB/Yrvw==
+X-Received: by 2002:adf:ff8b:: with SMTP id j11mr16749547wrr.299.1570906150269; 
+ Sat, 12 Oct 2019 11:49:10 -0700 (PDT)
 Received: from Red.localdomain ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id a13sm33670580wrf.73.2019.10.12.11.49.07
+ by smtp.googlemail.com with ESMTPSA id a13sm33670580wrf.73.2019.10.12.11.49.08
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 12 Oct 2019 11:49:08 -0700 (PDT)
+ Sat, 12 Oct 2019 11:49:09 -0700 (PDT)
 From: Corentin Labbe <clabbe.montjoie@gmail.com>
 To: catalin.marinas@arm.com, davem@davemloft.net, herbert@gondor.apana.org.au,
  linux@armlinux.org.uk, mark.rutland@arm.com, mripard@kernel.org,
  robh+dt@kernel.org, wens@csie.org, will@kernel.org
-Subject: [PATCH v4 09/11] sunxi_defconfig: add new Allwinner crypto options
-Date: Sat, 12 Oct 2019 20:48:50 +0200
-Message-Id: <20191012184852.28329-10-clabbe.montjoie@gmail.com>
+Subject: [PATCH v4 10/11] arm64: defconfig: add new Allwinner crypto options
+Date: Sat, 12 Oct 2019 20:48:51 +0200
+Message-Id: <20191012184852.28329-11-clabbe.montjoie@gmail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20191012184852.28329-1-clabbe.montjoie@gmail.com>
 References: <20191012184852.28329-1-clabbe.montjoie@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191012_114910_452839_951E5AED 
-X-CRM114-Status: UNSURE (   9.24  )
+X-CRM114-CacheID: sfid-20191012_114911_476175_9AAEABBD 
+X-CRM114-Status: UNSURE (   9.35  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -77,7 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -109,24 +109,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds the new Allwinner crypto configs to sunxi_defconfig
+This patch adds the new allwinner crypto configs to ARM64 defconfig
 
 Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
 ---
- arch/arm/configs/sunxi_defconfig | 2 ++
+ arch/arm64/configs/defconfig | 2 ++
  1 file changed, 2 insertions(+)
 
-diff --git a/arch/arm/configs/sunxi_defconfig b/arch/arm/configs/sunxi_defconfig
-index df433abfcb02..d0ab8ba7710a 100644
---- a/arch/arm/configs/sunxi_defconfig
-+++ b/arch/arm/configs/sunxi_defconfig
-@@ -150,4 +150,6 @@ CONFIG_NLS_CODEPAGE_437=y
- CONFIG_NLS_ISO8859_1=y
- CONFIG_PRINTK_TIME=y
- CONFIG_DEBUG_FS=y
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index c9adae41bac0..c45fb6822e4a 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -114,6 +114,8 @@ CONFIG_CRYPTO_AES_ARM64_CE_CCM=y
+ CONFIG_CRYPTO_AES_ARM64_CE_BLK=y
+ CONFIG_CRYPTO_CHACHA20_NEON=m
+ CONFIG_CRYPTO_AES_ARM64_BS=m
 +CONFIG_CRYPTO_DEV_ALLWINNER=y
-+CONFIG_CRYPTO_DEV_SUN8I_CE=y
- CONFIG_CRYPTO_DEV_SUN4I_SS=y
++CONFIG_CRYPTO_DEV_SUN8I_CE=m
+ CONFIG_JUMP_LABEL=y
+ CONFIG_MODULES=y
+ CONFIG_MODULE_UNLOAD=y
 -- 
 2.21.0
 
