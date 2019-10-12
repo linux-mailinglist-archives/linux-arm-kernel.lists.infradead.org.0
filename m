@@ -2,82 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 885E1D50A4
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 17:18:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D5CF7D5125
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 18:51:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=cGc7vFAd0kZpEVeQb3gr04SVRs6Bh4WEAKaHhy0Osz0=; b=nf10XSy2q5l+hH
-	LkXwX25MVqwuW6wnhRRFhnurlTUfk5Ad4sjb4lenzA8UYaMTfP2lgLOdBy2mHt+LvYHJbQ3r6On8M
-	hqDUxdr3uzO2RSMJzj+DSr2k0JPIpKZexX0dMdCT2BxoDLvFIlj0fBx9Ormu23MeAJfCjNTY3nVG7
-	P8Isc31tpWDiKUian02XLxeUI7mDQ0RT0lECD/3weBZUIubM/jpizR+ihfVQfj6Eii1bEQS48GWTS
-	BbIzx0MywIxth6JMXwB+o7qfNwX9fVB8kzbwG2XPIALrdqxgJiFmdW6S3zILUvb7k0t12VG/Ku8kj
-	E+eBlZD/dBBpu2RhPDFw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=fUD+IET4rpy5ABejW5pQ33tV+sbOdHsQ9eePiI+UVyY=; b=sg/8ND5pW6zj9HfK1S/x+/sN3
+	Ml26wyLfPVcX5mncXlzE5Dozp+xjH7nqiQPddrTtuUdA/nfuGisAGsxcvkSe4msmGrNYgBSg55iLl
+	/4V5KWytp5ZYOHqf7wEIIcgvpqbXe4r63/SrM7DK5mNr3TurI9nAdsfvMeoEDcb9poWmmfJJ9QTnh
+	Ek4DMIp33SK2ewRNbWbjjPej3XSc3RdQ/z8ee/gu/wP2/09UOciO7KCx5rNzmluIru+oWwYoc01Mf
+	SFwa7vSIqd1iv7cg1hs4Yp24lKx2EGKzTs0oj1HYmTo1oB0BWmEpXl4ELNVx6g+mApRpiTgK7lsJz
+	lxAvdmwCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJJAG-0004g5-Di; Sat, 12 Oct 2019 15:18:40 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1iJKbM-0000QP-5D; Sat, 12 Oct 2019 16:50:44 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJJA9-0004fa-Aw; Sat, 12 Oct 2019 15:18:34 +0000
-Received: by mail-wm1-x341.google.com with SMTP id 7so13060373wme.1;
- Sat, 12 Oct 2019 08:18:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=00wbDsxYMw5kLcHoK10nqGz2XPnCpxBhd7bVGwk+FAw=;
- b=Waq0KdUP+gUillAGvOrqIDV7D5eG2F9ALA4QqXAzfIOgYzTT56gi3H2MpNWLS/L+SM
- oOuw+//6TfcIPR8s3qgncPPOF+LCmyAP8DjyoVmVFrqocGMgZhcCBhnTAqtYxy465J3M
- 7AFMTO8KgBXIjw4NxeolNqSmoUamAFYABqIfno1lzjodIxUvpMz2Dnu4wgonaBEWeoEF
- zd116TwtaRxUIkE6ens1iMVMs0m9HfGR9qy7EC9mBihL5cO9040fojglCebTZ5AnElyx
- QeYHcf+EZUiFEcSJsN+EYAOOfvL/rBXKD/0JsM1BgAdNMuksdQSKn8eja89736elYizz
- 24FA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=00wbDsxYMw5kLcHoK10nqGz2XPnCpxBhd7bVGwk+FAw=;
- b=hyj/kWwLCJ4rtc06YdQyK/xaLMGMJmfvp5bI2V+DCkyJKk+jj1AbYi9fz5lbEW23/7
- VAmIEFPOxTh+/ncaneGryfZx0vkG/t2I867ZCsJJPWbgPo5jrrnrsbLbKn0KraECkGEY
- Cm71iZQXPGJeDwlLN84rK7uAvaXegUCfEfLmnKxLWIwgQQii/IxZ7ILB3qccik8eP5u9
- +2FVI/z2+6RHL40GgdeZJ04SYtCscdbzpSsbgUfrxyxxZB046jhprRNnRy7word0Hrcw
- hVLC2W8A+wYmQwFZ7oQOlCUbo8u6k3tXsI6EvjFR+sUdN86+SDRwStyX33vIq2Xj7v5Q
- O6dg==
-X-Gm-Message-State: APjAAAVzpwaKoxXu1ehsYD5tO09wYllSHW9P9mOAPbtvE0tfmH2XEdpQ
- J5H9wzloLgpIt4SrLEZfeg==
-X-Google-Smtp-Source: APXvYqxdj2hI3aRsv91CVNxyxSaFgMHBIQAShwl9NmW/jf+ZJ/6OMqamZpcspf8MkIU6rGhvDZebHA==
-X-Received: by 2002:a05:600c:2185:: with SMTP id
- e5mr7887447wme.78.1570893509733; 
- Sat, 12 Oct 2019 08:18:29 -0700 (PDT)
-Received: from ninjahub.lan (host-2-102-13-201.as13285.net. [2.102.13.201])
- by smtp.googlemail.com with ESMTPSA id r6sm13905017wmh.38.2019.10.12.08.18.28
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 12 Oct 2019 08:18:29 -0700 (PDT)
-From: Jules Irenge <jbi.octave@gmail.com>
-To: outreachy-kernel@googlegroups.com
-Subject: [PATCH v2] staging: vc04_services: place the AND operator at the end
- of the previous line
-Date: Sat, 12 Oct 2019 16:18:05 +0100
-Message-Id: <20191012151805.17988-1-jbi.octave@gmail.com>
-X-Mailer: git-send-email 2.21.0
+ id 1iJKbE-0000Pb-LR; Sat, 12 Oct 2019 16:50:38 +0000
+Received: from lore-desk-wlan.lan (unknown [151.66.37.226])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7737520679;
+ Sat, 12 Oct 2019 16:50:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1570899035;
+ bh=qSEg9PvZkbVxQM23WcD3L4Jru73ZuIoTRpmb7PBGQxQ=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=EHZFF54gumdqsWmUGFRJmszZTjIyCFrRlaBz+iSS8rE9i13x1qazGZ9vd4+UjHBy+
+ 6FdI6HxhQ8g89WZ+j7ScrPRymDIdb8P5WOav5J4NCx/OIglmp1YvCY8Tw7gjVSCBVs
+ bhqM+bkilAPq0SRMq6hiiTZ3KAc7Cn/9w5DzHHDk=
+Date: Sat, 12 Oct 2019 18:50:28 +0200
+From: Lorenzo Bianconi <lorenzo@kernel.org>
+To: Oleksandr Natalenko <oleksandr@natalenko.name>
+Subject: Re: mt76x2e hardware restart
+Message-ID: <20191012165028.GA8739@lore-desk-wlan.lan>
+References: <deaafa7a3e9ea2111ebb5106430849c6@natalenko.name>
+ <c6d621759c190f7810d898765115f3b4@natalenko.name>
+ <9d581001e2e6cece418329842b2b0959@natalenko.name>
 MIME-Version: 1.0
+In-Reply-To: <9d581001e2e6cece418329842b2b0959@natalenko.name>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191012_081833_402920_5ED9CC92 
-X-CRM114-Status: UNSURE (   9.91  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191012_095036_941159_C8475194 
+X-CRM114-Status: GOOD (  20.46  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jbi.octave[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -86,6 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,47 +76,203 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, Jules Irenge <jbi.octave@gmail.com>,
- f.fainelli@gmail.com, sbranden@broadcom.com, mchehab+samsung@kernel.org,
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, eric@anholt.net,
- daniela.mormocea@gmail.com, bcm-kernel-feedback-list@broadcom.com,
- wahrenst@gmx.net, dave.stevenson@raspberrypi.org, rjui@broadcom.com,
- hverkuil-cisco@xs4all.nl, linux-arm-kernel@lists.infradead.org,
- linux-rpi-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Ryder Lee <ryder.lee@mediatek.com>, Stanislaw Gruszka <sgruszka@redhat.com>,
+ netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Roy Luo <royluo@google.com>, Lorenzo Bianconi <lorenzo.bianconi83@gmail.com>,
+ "David S. Miller" <davem@davemloft.net>, Kalle Valo <kvalo@codeaurora.org>,
+ Felix Fietkau <nbd@nbd.name>
+Content-Type: multipart/mixed; boundary="===============5633521994383968640=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Place the AND logical operator at the end of the previous line;
-to fix warning of "Logical continuations should be on the previous line".
- Issue detected by checkpatch tool.
 
-Signed-off-by: Jules Irenge <jbi.octave@gmail.com>
+--===============5633521994383968640==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="ReaqsoxgOBHFXBhH"
+Content-Disposition: inline
+
+
+--ReaqsoxgOBHFXBhH
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+> On 19.09.2019 23:22, Oleksandr Natalenko wrote:
+> > It checks for TX hang here:
+> >=20
+> > =3D=3D=3D mt76x02_mmio.c
+> > 557 void mt76x02_wdt_work(struct work_struct *work)
+> > 558 {
+> > ...
+> > 562     mt76x02_check_tx_hang(dev);
+> > =3D=3D=3D
+>=20
+> I've commented out the watchdog here ^^, and the card is not resetted any
+> more, but similarly it stops working shortly after the first client
+> connects. So, indeed, it must be some hang in the HW, and wdt seems to do=
+ a
+> correct job.
+>=20
+> Is it even debuggable/fixable from the driver?
+
+Hi Oleksandr,
+
+sorry for the delay. Felix and me worked on this issue today. Could you ple=
+ase
+try if the following patch fixes your issue?
+
+Regards,
+Lorenzo
+
+=46rom cf3436c42a297967235a9c9778620c585100529e Mon Sep 17 00:00:00 2001
+Message-Id: <cf3436c42a297967235a9c9778620c585100529e.1570897574.git.lorenz=
+o@kernel.org>
+=46rom: Lorenzo Bianconi <lorenzo@kernel.org>
+Date: Sat, 12 Oct 2019 17:32:57 +0200
+Subject: [PATCH] mt76: mt76x2: disable pcie_aspm by default
+
+On same device (e.g. U7612E-H1) PCIE_ASPM causes continues mcu hangs and
+instability. This patch disable PCIE_ASPM by default. This patch has
+been successfully tested on U7612E-H1 mini-pice card
+
+Signed-off-by: Felix Fietkau <nbd@nbd.name>
+Signed-off-by: Lorenzo Bianconi <lorenzo@kernel.org>
 ---
- drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/net/wireless/mediatek/mt76/mmio.c     | 48 +++++++++++++++++++
+ drivers/net/wireless/mediatek/mt76/mt76.h     |  1 +
+ .../net/wireless/mediatek/mt76/mt76x2/pci.c   |  2 +
+ 3 files changed, 51 insertions(+)
 
-diff --git a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
-index d4d1e44b16b2..beb6a0063bb8 100644
---- a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
-+++ b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
-@@ -1090,8 +1090,8 @@ static int mmal_setup_components(struct bm2835_mmal_dev *dev,
- 
- 	ret = vchiq_mmal_port_set_format(dev->instance, camera_port);
- 
--	if (!ret
--	    && camera_port ==
-+	if (!ret &&
-+	    camera_port ==
- 	    &dev->component[COMP_CAMERA]->output[CAM_PORT_VIDEO]) {
- 		bool overlay_enabled =
- 		    !!dev->component[COMP_PREVIEW]->enabled;
--- 
+diff --git a/drivers/net/wireless/mediatek/mt76/mmio.c b/drivers/net/wirele=
+ss/mediatek/mt76/mmio.c
+index 1c974df1fe25..8e1dbc1903f3 100644
+--- a/drivers/net/wireless/mediatek/mt76/mmio.c
++++ b/drivers/net/wireless/mediatek/mt76/mmio.c
+@@ -3,6 +3,9 @@
+  * Copyright (C) 2016 Felix Fietkau <nbd@nbd.name>
+  */
+=20
++#include <linux/pci.h>
++#include <linux/pci-aspm.h>
++
+ #include "mt76.h"
+ #include "trace.h"
+=20
+@@ -78,6 +81,51 @@ void mt76_set_irq_mask(struct mt76_dev *dev, u32 addr,
+ }
+ EXPORT_SYMBOL_GPL(mt76_set_irq_mask);
+=20
++void mt76_mmio_disable_aspm(struct pci_dev *pdev)
++{
++	struct pci_dev *parent =3D pdev->bus->self;
++	u16 aspm_conf, parent_aspm_conf =3D 0;
++
++	pcie_capability_read_word(pdev, PCI_EXP_LNKCTL, &aspm_conf);
++	aspm_conf &=3D PCI_EXP_LNKCTL_ASPMC;
++	if (parent) {
++		pcie_capability_read_word(parent, PCI_EXP_LNKCTL,
++					  &parent_aspm_conf);
++		parent_aspm_conf &=3D PCI_EXP_LNKCTL_ASPMC;
++	}
++
++	if (!aspm_conf && (!parent || !parent_aspm_conf)) {
++		/* aspm already disabled */
++		return;
++	}
++
++	dev_info(&pdev->dev, "disabling ASPM %s %s\n",
++		 (aspm_conf & PCI_EXP_LNKCTL_ASPM_L0S) ? "L0s" : "",
++		 (aspm_conf & PCI_EXP_LNKCTL_ASPM_L1) ? "L1" : "");
++
++#ifdef CONFIG_PCIEASPM
++	pci_disable_link_state(pdev, aspm_conf);
++
++	/* Double-check ASPM control.  If not disabled by the above, the
++	 * BIOS is preventing that from happening (or CONFIG_PCIEASPM is
++	 * not enabled); override by writing PCI config space directly.
++	 */
++	pcie_capability_read_word(pdev, PCI_EXP_LNKCTL, &aspm_conf);
++	if (!(aspm_conf & PCI_EXP_LNKCTL_ASPMC))
++		return;
++#endif /* CONFIG_PCIEASPM */
++
++	/* Both device and parent should have the same ASPM setting.
++	 * Disable ASPM in downstream component first and then upstream.
++	 */
++	pcie_capability_clear_word(pdev, PCI_EXP_LNKCTL, aspm_conf);
++
++	if (parent)
++		pcie_capability_clear_word(parent, PCI_EXP_LNKCTL,
++					   aspm_conf);
++}
++EXPORT_SYMBOL_GPL(mt76_mmio_disable_aspm);
++
+ void mt76_mmio_init(struct mt76_dev *dev, void __iomem *regs)
+ {
+ 	static const struct mt76_bus_ops mt76_mmio_ops =3D {
+diff --git a/drivers/net/wireless/mediatek/mt76/mt76.h b/drivers/net/wirele=
+ss/mediatek/mt76/mt76.h
+index 8bcc7f21e83c..e95a5893f93b 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt76.h
++++ b/drivers/net/wireless/mediatek/mt76/mt76.h
+@@ -596,6 +596,7 @@ bool __mt76_poll_msec(struct mt76_dev *dev, u32 offset,=
+ u32 mask, u32 val,
+ #define mt76_poll_msec(dev, ...) __mt76_poll_msec(&((dev)->mt76), __VA_ARG=
+S__)
+=20
+ void mt76_mmio_init(struct mt76_dev *dev, void __iomem *regs);
++void mt76_mmio_disable_aspm(struct pci_dev *pdev);
+=20
+ static inline u16 mt76_chip(struct mt76_dev *dev)
+ {
+diff --git a/drivers/net/wireless/mediatek/mt76/mt76x2/pci.c b/drivers/net/=
+wireless/mediatek/mt76/mt76x2/pci.c
+index 6253ec5fbd72..06fb80163c8e 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt76x2/pci.c
++++ b/drivers/net/wireless/mediatek/mt76/mt76x2/pci.c
+@@ -83,6 +83,8 @@ mt76pci_probe(struct pci_dev *pdev, const struct pci_devi=
+ce_id *id)
+ 	/* RG_SSUSB_CDR_BR_PE1D =3D 0x3 */
+ 	mt76_rmw_field(dev, 0x15c58, 0x3 << 6, 0x3);
+=20
++	mt76_mmio_disable_aspm(pdev);
++
+ 	return 0;
+=20
+ error:
+--=20
 2.21.0
 
+>=20
+> --=20
+>   Oleksandr Natalenko (post-factum)
+
+--ReaqsoxgOBHFXBhH
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQTquNwa3Txd3rGGn7Y6cBh0uS2trAUCXaIEUQAKCRA6cBh0uS2t
+rMgMAP4gYBsBVaqrrJGeL59RvPIDCtDh9B4Cal6r0cZiF8/eawD9E3a71sAvXQRq
+77lBM018hpb2RI8zaAU2j9ddT2e6HwU=
+=jGHZ
+-----END PGP SIGNATURE-----
+
+--ReaqsoxgOBHFXBhH--
+
+
+--===============5633521994383968640==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5633521994383968640==--
+
