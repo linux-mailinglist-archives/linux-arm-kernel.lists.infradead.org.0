@@ -2,38 +2,38 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0749D4E7F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 11:16:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CDCBD4E85
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 11:18:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MyCIU9oOjvMndpOTOkL59P+5FwkE0u19kjPHC3IRUYc=; b=jBNnrz7tcf+T/a
-	RnkhD5l6BfBbnVMKylDzPQ9RecwldebrtIPhseI81+2gdHf5/P1dTpOwmnvTPbOBT5XPgocFJDCAF
-	+55ZKn+pHUTE7LPLkMWBGkXvJZi9fPX8mRoVXOW0wQ7YNU55QzYXfbldfi0Jo3NAYbIt36DStMRaL
-	v44w/Bux57brFsS54lu6g5njtdFwekFHqeqLRXXUOqVvAAY2jw2X1kZ4+eXXCc5+f6J2Gy+XDP3ET
-	mCmK74Ph9ScW+3e3Il98LXxjBKqVtLSvExUDAuG1mD/FL+RkpWKiGMjBpb4MZ9MI7Vz4j2nlYm+7z
-	8vOg4PiPwUZGxj99WGvQ==;
+	List-Owner; bh=fS0x1Gb7yyubXjB4PpYTvy8d231+KYuRk7RyTJCaAZE=; b=l1SZQ/jPKVi1aY
+	Kz169M1wxkwyK4vPzXFcCwHANJ/ff+9IoE5WJEAyuYOUiRZoE+04RVzdF2jMz0gbmDamsCSVMNqeo
+	CEsH09pToMEXH3/ZLyGAcGjNL9GIrG1LK9XTktbZ0su5uScHvQdDO+mmfpXSAwG01wvRYxz0RBrNA
+	T9JgdaTktC9UYLlPUxl1oCw4WI4kX9XT/gA4rkkGd3mXRS1NwWNBaxtJ+KXMryl1xryPVNrNpZYB+
+	9nkqG36OTwNpHo/JkZzZqn3fjtdFv43vwEBhA0KdP5mQt3C6Fy2Cuo7ivFyG3yIOloM1xXtqZfuw+
+	C+80/Qk3Dedxk1Qp7nDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJDVP-0006Ld-HN; Sat, 12 Oct 2019 09:16:07 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1iJDX9-0006rZ-Uv; Sat, 12 Oct 2019 09:17:55 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJDVH-0006G5-Br; Sat, 12 Oct 2019 09:16:00 +0000
+ id 1iJDWw-0006r6-L7; Sat, 12 Oct 2019 09:17:43 +0000
 Received: from dhcp-172-31-174-146.wireless.concordia.ca (unknown
  [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested) (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id AF4D72912E9;
- Sat, 12 Oct 2019 10:15:57 +0100 (BST)
-Date: Sat, 12 Oct 2019 11:15:54 +0200
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id EEAEE2912E9;
+ Sat, 12 Oct 2019 10:17:40 +0100 (BST)
+Date: Sat, 12 Oct 2019 11:17:38 +0200
 From: Boris Brezillon <boris.brezillon@collabora.com>
 To: Miquel Raynal <miquel.raynal@bootlin.com>
 Subject: Re: [PATCH v3 06/40] mtd: rawnand: Use the new ECC engine type
  enumeration
-Message-ID: <20191012111554.53d5796d@dhcp-172-31-174-146.wireless.concordia.ca>
+Message-ID: <20191012111738.33be4fd5@dhcp-172-31-174-146.wireless.concordia.ca>
 In-Reply-To: <20190919193141.7865-7-miquel.raynal@bootlin.com>
 References: <20190919193141.7865-1-miquel.raynal@bootlin.com>
  <20190919193141.7865-7-miquel.raynal@bootlin.com>
@@ -41,13 +41,15 @@ Organization: Collabora
 X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191012_021559_548095_7D599193 
-X-CRM114-Status: GOOD (  12.00  )
+X-CRM114-CacheID: sfid-20191012_021742_832713_444D5CA2 
+X-CRM114-Status: GOOD (  13.26  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -77,25 +79,24 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On Thu, 19 Sep 2019 21:31:06 +0200
 Miquel Raynal <miquel.raynal@bootlin.com> wrote:
 
+> diff --git a/include/linux/mtd/rawnand.h b/include/linux/mtd/rawnand.h
+> index 23feab162bc2..08964ce8b65f 100644
+> --- a/include/linux/mtd/rawnand.h
+> +++ b/include/linux/mtd/rawnand.h
+> @@ -381,7 +381,7 @@ static const struct nand_ecc_caps __name = {			\
+>   * @write_oob:	function to write chip OOB data
+>   */
+>  struct nand_ecc_ctrl {
+> -	enum nand_ecc_mode mode;
+> +	enum nand_ecc_engine_type mode;
 
-> diff --git a/include/linux/platform_data/mtd-nand-s3c2410.h b/include/linux/platform_data/mtd-nand-s3c2410.h
-> index 08675b16f9e1..e30cb228c0d7 100644
-> --- a/include/linux/platform_data/mtd-nand-s3c2410.h
-> +++ b/include/linux/platform_data/mtd-nand-s3c2410.h
-> @@ -49,7 +49,7 @@ struct s3c2410_platform_nand {
->  
->  	unsigned int	ignore_unset_ecc:1;
->  
-> -	enum nand_ecc_mode	ecc_mode;
-> +	enum nand_ecc_engine_type ecc_mode;
+This one in particular (the driver ones are not so important I guess).
 
-I know it's a pain, but can we also change the field names?
 s/mode/engine_type/ ?
 
->  
->  	int			nr_sets;
->  	struct s3c2410_nand_set *sets;
-
+>  	enum nand_ecc_engine_oob_placement placement;
+>  	enum nand_ecc_algo algo;
+>  	int steps;
 
 _______________________________________________
 linux-arm-kernel mailing list
