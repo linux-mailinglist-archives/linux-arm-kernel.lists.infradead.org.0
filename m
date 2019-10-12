@@ -2,129 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E437D5033
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 15:56:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FBE9D503E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 16:01:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
-	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VBUlzJ33tbQ9c5ZRHml5wrhrQaN91aW5+KZRYXq+kXw=; b=tg0TeprQQgMdoz
-	BxOXKg+Ha/egKLFm8nWoP3iVdKLb4hQHz1KQRoj3GB/sK7GOQnihCmkoRMI5d0u5neIidaH1ZyJKa
-	iWxTSzQnuVD0F/q4dDP895koyb76ZF5+KLdQ+FUx3p1iJIGu0o+WJsPEanlU8SNabiQEg3ataQqgP
-	paXlb7a6KyvCaS3If/grt+C+NgcUrmMmBEwZlBiE859KBlhLb1gjg5c4N2QtazoFeRh2d8+/M6sD6
-	2Yjgxs5dL8r6lGdYVqddJDvaexLswcdnd0K0esK6/UP1vthFamwLHQ7ByZCQVV9zAwVf27S9tqvts
-	HAuhURl6HDDjl8TYTwUg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pXwL75fE42h6XsQldIb2OdiGryeU48SHLuHZbUBcIvc=; b=If13/OoV1zotxv
+	57BZ2GlRQecYg0fPSv0Vq8LL5QYgQFRSi0b/OJEKXpA9aLbQgWdRSBjFxtjihvV1eZckBv4XJl35J
+	TxCtBhT58+BbTwVq6jVyzP6vtUS9tJlZ5rnhHKWs+FF95d72lf6zTIeSkjas63FNcurrFkyYVnGaQ
+	hDNRijP1AsFHiOrNpsy1RPBWqzRQG32eyytiLTjtr+eM6lteDUZM0u9T7ahfAR34i7YfzQHAfqxFn
+	+8SP7LKvcWVXz1S3aHtlEKbb/cgt/g1ovCQ8jtHvZeieVHGyH5L7YLzM869UIDNCV3ijvx+YHcwis
+	7ybtwQAo/7cQzkzkJQ1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJHsX-0003SP-IQ; Sat, 12 Oct 2019 13:56:17 +0000
-Received: from mout.web.de ([212.227.15.4])
+	id 1iJHwW-0005AG-VF; Sat, 12 Oct 2019 14:00:25 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJHsJ-0003RZ-1z; Sat, 12 Oct 2019 13:56:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1570888555;
- bh=YdsuZrSP+jJJMluIACwENlwHKGfUwYpdRS9znBsqOH8=;
- h=X-UI-Sender-Class:To:From:Subject:Cc:Date;
- b=UerOCV7unbMXupz5/JZ7ZHjLBGOSySWDAstzIbEciWvdUk45/iifgUfy2VQizQiUN
- VSifMEWLXQnOoFpVv3rtGt35qOdYI4T9gb/rXn5Y5dkNhR/ZyyV7ps1ewXq9pPIgFm
- cWmjB4R1F4CIiob1+5FmhSesFt0CP4T9VjP8TMhQ=
-X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
-Received: from [192.168.1.2] ([93.132.155.250]) by smtp.web.de (mrweb001
- [213.165.67.108]) with ESMTPSA (Nemesis) id 0Lsy7e-1hvSLo3MNO-012bFA; Sat, 12
- Oct 2019 15:55:54 +0200
-To: linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, =?UTF-8?Q?Heiko_St=c3=bcbner?=
- <heiko@sntech.de>, Michael Turquette <mturquette@baylibre.com>,
- Stephen Boyd <sboyd@kernel.org>
-From: Markus Elfring <Markus.Elfring@web.de>
-Subject: clk: rockchip: Checking a kmemdup() call in
- rockchip_clk_register_pll()
-Autocrypt: addr=Markus.Elfring@web.de; prefer-encrypt=mutual; keydata=
- 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 FEE=
-Message-ID: <e96505a8-b554-f61e-3940-0b9e9c7850ff@web.de>
-Date: Sat, 12 Oct 2019 15:55:44 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.1
+ id 1iJHwQ-00059j-AC
+ for linux-arm-kernel@lists.infradead.org; Sat, 12 Oct 2019 14:00:19 +0000
+Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
+ [82.4.196.95])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C42602089C;
+ Sat, 12 Oct 2019 14:00:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1570888817;
+ bh=Mz0BL3/C+OrOXXcjjKTuqtWi5Ny6ZYS0L4vIH8ltkfE=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=bipuAx3KMl+7dalmmCW/eKNVAhz7kU3AXJhnZJBdnEjXNPfkwuz455QiBKVrPhfmd
+ PfIJViUdRtB9otkEn2Fzk7E4EhojB23oxtPUci/AhSdup6Tbzg7/FBu9jwLdiMeABm
+ ZedXiIlxroMXFMHZfbWTaPplcVGqZuxfUEmQ1JdI=
+Date: Sat, 12 Oct 2019 15:00:12 +0100
+From: Jonathan Cameron <jic23@kernel.org>
+To: William Breathitt Gray <vilhelm.gray@gmail.com>
+Subject: Re: [PATCH v5 0/3] Simplify count_read/count_write/signal_read
+Message-ID: <20191012150012.5e3399f1@archlinux>
+In-Reply-To: <cover.1570391994.git.vilhelm.gray@gmail.com>
+References: <cover.1570391994.git.vilhelm.gray@gmail.com>
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-Content-Language: en-US
-X-Provags-ID: V03:K1:lfuKZ77lF7iOIkLERuu8Fipch5A0vXrXLcCnxR+nhPRJzXd1O5n
- LxtG8xETpSQLuwurZpMMSk18/YBSZFblP0REDBZ1L8B8W+J1enbIClSuRXZM2U636EPlAdU
- S3YQIZEHCfo17jED1mBt9bw8l4iqtJbPm5M/y1b/ZwljtvrU9fXxrTkWfVmPiKECb279KRI
- 4ooFcnZez1ZBL+Ob666AQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:pQ0RpfS4Wdw=:uaTSn9e6mWPRfwImIcKNNn
- gbKBjD+IcCl0LnR+GI7YbPxI9NHXx2bC3TJZBIOoyS5GzmoBlMO//dYkNo2uLZXnUjH200Jpt
- 8zERy+C+52/xfGQ3X4d4fNqX5ajvNqqsg2K+C5hzZucy1Nev3vKwFOszsefvn0NPqvwqmpDTX
- Rx1BfUG0cWG+8phexbs2k79CrpUXXsONZ2BVo/EMlto3a4ShKDN+XCCGbg7sViK9yXbF0L8dI
- 149SfMdzlDEOHol+dP9+Mybwzb7zghMlvp5uM7bOaOds0NpXcvgKJkU4ZpX45qZg9+bNTRXMV
- eaJXLuO3y3BWuWPVcoVQOPfL7ofA/WkioRgI7FAQMVDmgjhgx6Ca3oJVAZtxizEWL3jFYxoY+
- XSRx+41uAh7MWnRcmSLrn1vcPuC4jZDYpr2OPMt5Lpbk8YNkLlAqCbPvM/P/A3GRmlG3wT31I
- fFIWjRJkQlq7BOgEsXEtiutjoS7l1z4pIz9w0bP9VmdzRseH8X9bBecWfTnJ8cTwKrvPqixHr
- UMwf7NxUmPxqlrW3m20aU6iLz7S4iDm+gvU2ODtQ8hAoRj5izjE5yqVOrGobrbYJ9ihoQlvYB
- SV6Eqys8nJJ/Hp5E45wco1FZd6ag3U47owsGUgw2OtvC6et+X2vGy8o4z6daIxLvviQE4PVxB
- 1i0vRfAjrBDKGQu7U4g4tT5eMoK9b+qKSVW+gw8nu9byLJ1zS3ylLB9Pj5U8f8YCmeSACyGGO
- aJQ+J88lB0Ds325YCHmASepaOrdrZ49Y2knScabV8LxY+TBYPSoTASpTeaQxKFCpu3aVOBcVW
- vnkDZh57/z6H3MBE/B4oNwRbtzg0cd0guB1KjdEx2zKI5Kf4iwr6apo+tuor6n/swAmhY1Mtc
- wZFz1xYsLwM69g89dS48Ovy1CK6xDuBBr/uUDVNlV3LDqYL2DtY4R0wUF1zDym3PAB5PmyRrC
- HKadU2KCVlpaSklYdrTdRKKt2tHNAyir0sX5e046sSwVIZFbijkerbEOf641xVdjijCbW1VAY
- AouQ4cZ5de/BHvsRfVPQ/JN1IE5dPXFNJO0OiFm/gZ/1U6zvm9LyUaz6j2oWpG1gl3WPPPgjB
- Y2c4halA+RbF8KESIRFoRe0+8bzeWI8RqCVbHw95cw4HHF4N7SQrUCq0/E8VzmdCSKhe7S78V
- Ci0ZHZ3WHYbXhNmEHwAC/fyEVigjVGvbpI1HqlS0XMM7Xby6upoc1+wk7xlFsuPQ3ugnAdNyB
- zZhdSqycu8dIa4Ue408mD2tIttdm7Uai71Zpu9lZyiU4MRA4VQ9KwZ0pM4Vs=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191012_065603_432645_7B454079 
-X-CRM114-Status: UNSURE (   6.17  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191012_070018_402536_5AFA7DA4 
+X-CRM114-Status: GOOD (  21.83  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (markus.elfring[at]web.de)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -133,6 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -144,26 +76,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, Aditya Pakki <pakki001@umn.edu>,
- Kangjie Lu <kjlu@umn.edu>, LKML <linux-kernel@vger.kernel.org>,
- Navid Emamdoost <emamd001@umn.edu>, Stephen McCamant <smccaman@umn.edu>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: benjamin.gaignard@linaro.org, alexandre.torgue@st.com,
+ linux-iio@vger.kernel.org, patrick.havelange@essensium.com,
+ linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ fabrice.gasnier@st.com, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, david@lechnology.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGVsbG8sCgpJIHRyaWVkIGFub3RoZXIgc2NyaXB0IGZvciB0aGUgc2VtYW50aWMgcGF0Y2ggbGFu
-Z3VhZ2Ugb3V0LgpUaGlzIHNvdXJjZSBjb2RlIGFuYWx5c2lzIGFwcHJvYWNoIHBvaW50cyBvdXQg
-dGhhdCB0aGUgaW1wbGVtZW50YXRpb24Kb2YgdGhlIGZ1bmN0aW9uIOKAnHJvY2tjaGlwX2Nsa19y
-ZWdpc3Rlcl9wbGzigJ0gY29udGFpbnMgYWxzbyBhIGNhbGwKb2YgdGhlIGZ1bmN0aW9uIOKAnGtt
-ZW1kdXDigJ0uCmh0dHBzOi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0
-L3RvcnZhbGRzL2xpbnV4LmdpdC90cmVlL2RyaXZlcnMvY2xrL3JvY2tjaGlwL2Nsay1wbGwuYz9p
-ZD0xYzBjYzVmMWFlNWVlNWE2OTEzNzA0YzBkNzVhNmU5OTYwNGVlMzBhI245MTMKaHR0cHM6Ly9l
-bGl4aXIuYm9vdGxpbi5jb20vbGludXgvdjUuNC1yYzIvc291cmNlL2RyaXZlcnMvY2xrL3JvY2tj
-aGlwL2Nsay1wbGwuYyNMOTEzCgoqIERvIHlvdSBmaW5kIHRoZSB1c2FnZSBvZiB0aGUgZm9ybWF0
-IHN0cmluZyDigJwlczogY291bGQgbm90IGFsbG9jYXRlCiAgcmF0ZSB0YWJsZSBmb3IgJXNcbuKA
-nSBzdGlsbCBhcHByb3ByaWF0ZSBhdCB0aGlzIHBsYWNlPwoKKiBJcyB0aGVyZSBhIG5lZWQgdG8g
-YWRqdXN0IHRoZSBlcnJvciBoYW5kbGluZyBoZXJlPwoKUmVnYXJkcywKTWFya3VzCgpfX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
-IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
-L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi William
+
+What's the status on these? If you are happy that reviews and
+testing is complete enough, do you want me to take them after
+I pick up the eqep driver (hopefully shortly dependent on
+the pull request Greg has from me being fine).
+
+Thanks,
+
+Jonathan
+
+On Sun,  6 Oct 2019 16:03:08 -0400
+William Breathitt Gray <vilhelm.gray@gmail.com> wrote:
+
+> Changes in v5:
+>  - Add changes and additions to generic-counter.rst to clarify theory
+>    and use of the Generic Counter interface
+>  - Fix typo in counter.h action_get description comment
+> 
+> The changes in this patchset will not affect the userspace interface.
+> Rather, these changes are intended to simplify the kernelspace Counter
+> callbacks for counter device driver authors.
+> 
+> The following main changes are proposed:
+> 
+> * Retire the opaque counter_count_read_value/counter_count_write_value
+>   structures and simply represent count data as an unsigned integer.
+> 
+> * Retire the opaque counter_signal_read_value structure and represent
+>   Signal data as a counter_signal_value enum.
+> 
+> These changes should reduce some complexity and code in the use and
+> implementation of the count_read, count_write, and signal_read
+> callbacks.
+> 
+> The opaque structures for Count data and Signal data were introduced
+> originally in anticipation of supporting various representations of
+> counter data (e.g. arbitrary-precision tallies, floating-point spherical
+> coordinate positions, etc). However, with the counter device drivers
+> that have appeared, it's become apparent that utilizing opaque
+> structures in kernelspace is not the best approach to take.
+> 
+> I believe it is best to let userspace applications decide how to
+> interpret the count data they receive. There are a couple of reasons why
+> it would be good to do so:
+> 
+> * Users use their devices in unexpected ways.
+> 
+>   For example, a quadrature encoder counter device is typically used to
+>   keep track of the position of a motor, but a user could set the device
+>   in a pulse-direction mode and instead use it to count sporadic rising
+>   edges from an arbitrary signal line unrelated to positioning. Users
+>   should have the freedom to decide what their data represents.
+> 
+> * Most counter devices represent data as unsigned integers anyway.
+> 
+>   For example, whether the device is a tally counter or position
+>   counter, the count data is represented to the user as an unsigned
+>   integer value. So specifying that one device is representing tallies
+>   while the other specifies positions does not provide much utility from
+>   an interface perspective.
+> 
+> For these reasons, the count_read and count_write callbacks have been
+> redefined to pass count data directly as unsigned long instead of passed
+> via opaque structures:
+> 
+>         count_read(struct counter_device *counter,
+>                    struct counter_count *count, unsigned long *val);
+>         count_write(struct counter_device *counter,
+>                     struct counter_count *count, unsigned long val);
+> 
+> Similarly, the signal_read is redefined to pass Signal data directly as
+> a counter_signal_value enum instead of via an opaque structure:
+> 
+>         signal_read(struct counter_device *counter,
+>                     struct counter_signal *signal,
+>                     enum counter_signal_value *val);
+> 
+> The counter_signal_value enum is simply the counter_signal_level enum
+> redefined to remove the references to the Signal data "level" data type.
+> 
+> William Breathitt Gray (3):
+>   counter: Simplify the count_read and count_write callbacks
+>   docs: driver-api: generic-counter: Update Count and Signal data types
+>   counter: Fix typo in action_get description
+> 
+>  Documentation/driver-api/generic-counter.rst | 162 +++++++++++--------
+>  drivers/counter/104-quad-8.c                 |  33 ++--
+>  drivers/counter/counter.c                    | 101 ++----------
+>  drivers/counter/ftm-quaddec.c                |  14 +-
+>  drivers/counter/stm32-lptimer-cnt.c          |   5 +-
+>  drivers/counter/stm32-timer-cnt.c            |  17 +-
+>  drivers/counter/ti-eqep.c                    |  19 +--
+>  include/linux/counter.h                      |  76 ++-------
+>  8 files changed, 144 insertions(+), 283 deletions(-)
+> 
+> 
+> base-commit: 0c3aa63a842d84990bd02622f2fa50d2bd33c652
+> prerequisite-patch-id: ebe284609b3db8d4130ea2915f7f7b185c743a70
+> prerequisite-patch-id: cbe857759f10d875690df125d18bc04f585ac7c9
+> prerequisite-patch-id: 21f2660dc88627387ee4666d08044c63dd961dae
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
