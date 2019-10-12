@@ -2,80 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C74FD4DEC
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 09:25:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B48AFD4DFC
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 09:34:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IeiZmYw/C0o6cjzqOvXPAgD92QeEC3K4Zsa9Sq3msEA=; b=JbOCu0urHNGtm2
-	O3yhZRP5EX86fp5FSwrFRZymC5dBNe3vjcRMJHS+0yPcVGe1MWvTUd1Ph6GIL1f43Xy95EXv8gWM0
-	+buDlma+lKBbP0JsCDrPaKjHrc0F2wpYz3Ymvf2yHlknNhVeOYpOrY+WrEVa0puX2a0NCmMoAAovN
-	cXf8GF12J6tdlO6uXapMQ33PkU2PfvOuU/VNeMxuBryjHehCsgO5ttzESBYu1yYSHdk1+5azD2MiY
-	Z9sXHMf00bZwv1zkkYF7TgWXYSvPuqGF8ksDZ7sMwuc6k3njZv0mMtSn41KJOsxjUL+ZFdQVp/NAk
-	ZOyzdhWCKPcZg/Ie6QHA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Rzhu01M5+WNM3IBvpivbOXQXAPaTGCQygKEHkJ1N+h4=; b=VOUza8Xsm4XLyw
+	SUzSHCCprk/pFnV4UijHuj5bE/rzp9qZwUhki7VG0Ku2eg6VW071cUGrBYSm5t9AVDjxmC5ar9EJQ
+	1OG4L3fOGfEKMIVqwkRZC+TckK+yQ0AXiyW+130nhUQG0D2wv5LIrIwcWFRs6h4nRvVq5ooose//M
+	n3bWMG14OnIUCmWJiJTT69LG9MVfgbBJ+zxKAPKqi3o4oDPjRcnR6k5k1GxqEO0inHKQdPQz0i3m5
+	3+RJssuiQY9Lp7dJu7oAWhre73kEERKx8TMLPX2t6NxlQ4DI+caKtHgpAUOOnWs0FOyFCb/K23mZ6
+	1zo7VozbIhaxNlul7n/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJBmL-0000VA-KM; Sat, 12 Oct 2019 07:25:29 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1iJBur-0002Px-H0; Sat, 12 Oct 2019 07:34:17 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJBm8-0000PB-PD
- for linux-arm-kernel@lists.infradead.org; Sat, 12 Oct 2019 07:25:19 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=S7K0D0Ev6TuVOyYzLJhnIoOBVy8T0J5g5ZLMsbH2aZE=; b=DJXusEpIJgZHDCJ99mjm0B6N6
- K0u2rdNhe2d3c64dvEJMcS3NTvvMtFS0Ije/MZfalldZZdZI+XT5Q/O4aialQ4qzG4B4RmBnrWMPe
- aR66JpeZBBuvr/AVcdF7oVEP8dBN5iOQZmE8xqU9J5tEj6uVE4X3gO6jkZwzoE1Mwyez168DQqjTP
- VQEszGEnNGKCJ0IsgKjk20ee3iKHqlSrEaLxYtSLSO6qHRs1AIJaQin04RZUYUpgnVR59XGiMwPsh
- yZpMfnrMqRQiZ1Md9Hh4p1zpSZowKb6rhqxUOXblId9Y9CGi+xP3gsbDLbJ7IrMKJW+Rwv5ULnoao
- +8koEREhg==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:50584)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1iJBlr-0001Y2-OF; Sat, 12 Oct 2019 08:24:59 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1iJBli-0001y0-SB; Sat, 12 Oct 2019 08:24:50 +0100
-Date: Sat, 12 Oct 2019 08:24:50 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: afzal mohammed <afzal.mohd.ma@gmail.com>
-Subject: Re: [PATCH] ARM: NOMMU: Fix exc_ret for XIP
-Message-ID: <20191012072450.GM25745@shell.armlinux.org.uk>
-References: <1570102888-13426-1-git-send-email-vladimir.murzin@arm.com>
- <20191012063725.GA4813@afzalpc>
+ id 1iJBuj-0002P1-Lp
+ for linux-arm-kernel@lists.infradead.org; Sat, 12 Oct 2019 07:34:11 +0000
+Received: from DGGEMS412-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id AEF6B6C2B173B91EFB2B;
+ Sat, 12 Oct 2019 15:33:54 +0800 (CST)
+Received: from [127.0.0.1] (10.177.223.23) by DGGEMS412-HUB.china.huawei.com
+ (10.3.19.212) with Microsoft SMTP Server id 14.3.439.0; Sat, 12 Oct 2019
+ 15:33:42 +0800
+Subject: Re: [PATCH 3/3] arm64: configs: unset CPU_BIG_ENDIAN
+To: Will Deacon <will@kernel.org>, Arnd Bergmann <arnd@arndb.de>
+References: <20190926193030.5843-1-anders.roxell@linaro.org>
+ <20190926193030.5843-5-anders.roxell@linaro.org>
+ <bf5db3a5-96da-752c-49ea-d0de899882d5@huawei.com>
+ <CADYN=9LB9RHgRkQj=HcKDz1x9jqmT464Kseh2wZU5VvcLit+bQ@mail.gmail.com>
+ <d978673e-cbd1-5ab5-b2a4-cdb407d0f98c@huawei.com>
+ <CAK8P3a0kBz1-i-3miCo1vMuoM39ivXa3oxOE9VnCqDO-nfNOxw@mail.gmail.com>
+ <20191011102747.lpbaur2e4nqyf7sw@willie-the-truck>
+From: Hanjun Guo <guohanjun@huawei.com>
+Message-ID: <73701e9f-bee1-7ae8-2277-7a3576171cd4@huawei.com>
+Date: Sat, 12 Oct 2019 15:33:37 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
+ Thunderbird/52.5.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191012063725.GA4813@afzalpc>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191011102747.lpbaur2e4nqyf7sw@willie-the-truck>
+Content-Language: en-US
+X-Originating-IP: [10.177.223.23]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191012_002517_770811_F743ADD3 
-X-CRM114-Status: GOOD (  13.86  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191012_003409_880117_68022E37 
+X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,43 +72,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Vladimir Murzin <vladimir.murzin@arm.com>, alexandre.torgue@st.com,
- linux-arm-kernel@lists.infradead.org, sza@esh.hu
+Cc: Anders Roxell <anders.roxell@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, John Garry <john.garry@huawei.com>,
+ Linux Kernel
+ Mailing List <linux-kernel@vger.kernel.org>, Olof Johansson <olof@lixom.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Oct 12, 2019 at 12:07:25PM +0530, afzal mohammed wrote:
-> Hi Vladimir,
+On 2019/10/11 18:27, Will Deacon wrote:
+[...]
 > 
-> On Thu, Oct 03, 2019 at 12:41:28PM +0100, Vladimir Murzin wrote:
-> 
-> > It was reported that 72cd4064fcca "NOMMU: Toggle only bits in
-> > EXC_RETURN we are really care of" breaks NOMMU+XIP combination.
-> > It happens because saved EXC_RETURN gets overwritten when data
-> > section is relocated.
-> > 
-> > The fix is to propagate EXC_RETURN via register and let relocation
-> > code to commit that value into memory.
-> > 
-> > Fixes: 72cd4064fcca ("ARM: 8830/1: NOMMU: Toggle only bits in EXC_RETURN we are really care of")
-> > 
-> > Reported-by: afzal mohammed <afzal.mohd.ma@gmail.com>
-> > Tested-by: afzal mohammed <afzal.mohd.ma@gmail.com>
-> > Signed-off-by: Vladimir Murzin <vladimir.murzin@arm.com>
-> 
-> Can you please put this into rmk's patch system.
-> 
-> STM32 Cortex-M boards are currently not booting in mainline, this
-> change makes them boot again, verified on stm32f429 discovery board.
+> Does anybody use BIG_ENDIAN? If we're not even building it then maybe we
+> should get rid of it altogether on arm64. I don't know of any supported
+> userspace that supports it or any CPUs that are unable to run little-endian
+> binaries.
 
-Please check linux-next - or see 8914/1.
+FWIW, massive telecommunication products (based on ARM64) form Huawei are using
+BIG_ENDIAN, and will use BIG_ENDIAN in the near future as well.
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+Thanks
+Hanjun
+
 
 _______________________________________________
 linux-arm-kernel mailing list
