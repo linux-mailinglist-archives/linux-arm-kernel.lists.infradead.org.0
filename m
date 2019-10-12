@@ -2,67 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 25CC0D4D87
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 08:24:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FE6BD4D9E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 08:37:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jZiXgIO7RSz72lhJn/wTSuzDuTBcB2VzxqD8Z54oCkA=; b=NVBFCS6uT03kfc
-	xkvzgSWFrVkkYTQwrMlr0DlHgCvCvIIKWr53Cqo9a9puJBsn/QgIzwZgceChgrD9CP6m7QNBjaCYU
-	XMrB2K8wU6wsbZoB4SK7fUy4eUdz2WfdohWuyeD86Z/7jl7rIHvUAesBvAqrswXlRE5FJa0BLkSEL
-	cMZaOrlNm4431ae3gqfrX7b/XG/simgjsu/GMLdzb+SZ2UDGUCjwSrf746aB3E5oMIMBNyIQnVzex
-	oj2+OlvQd1vtcF0+EkRRisTkOiDSRRPdS+QWn78D398i7lMgt0YA4T73IgDs2K1PJQoq/x7/dPr4u
-	Yfy+WfYZuX1U4MD7zJ4w==;
+	List-Owner; bh=nvquywgSFozTURBSM4uTpZ0pfM+JgcTRCbNGzuNuHkM=; b=hDJ1gO9DkTG4/O
+	YTUEc9Nmz58tida6q0580ZtBU0LgPFY9/ZtVLj0MMW2RFKr9axtq8YMWO1SAw6gYKJxhmKys5ZE3a
+	NIBTWRkCpp0Cf7Qm7PrSpflxVMGmyEfgfJP79fr/U7Rg7qjUC4ZHIY9U7TP7YupSrAMBRJJqEpkFT
+	cQlNTENdvpl4RyDEyU0Csp3DWmcbyJFAjeslbUWsQxb/7Dr9DnuGEdyNJa9nCdArNbCPgAjD19K2i
+	ipply/rWUW2O4Cfd906HlQ19h/MO4f2g9V25L5DG38w6F39odYUBsBEf5qrSoS8XOmXs4cImjQwdd
+	q+kHlk10hcqq26yN2JnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJAp3-0005LV-0S; Sat, 12 Oct 2019 06:24:13 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1iJB21-0001NM-UX; Sat, 12 Oct 2019 06:37:37 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJAoq-0005KP-8k; Sat, 12 Oct 2019 06:24:02 +0000
-X-UUID: 0ff20395aab94f6f8a863b62c0d569db-20191011
-X-UUID: 0ff20395aab94f6f8a863b62c0d569db-20191011
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <yong.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1219395512; Fri, 11 Oct 2019 22:23:49 -0800
-Received: from MTKMBS32N1.mediatek.inc (172.27.4.71) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 11 Oct 2019 23:23:49 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS32N1.mediatek.inc
- (172.27.4.71) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Sat, 12 Oct 2019 14:23:46 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Sat, 12 Oct 2019 14:23:45 +0800
-Message-ID: <1570861427.19130.65.camel@mhfsdcap03>
-Subject: Re: [PATCH v2 3/4] iommu/mediatek: Use writel for TLB range
- invalidation
-From: Yong Wu <yong.wu@mediatek.com>
-To: Will Deacon <will@kernel.org>
-Date: Sat, 12 Oct 2019 14:23:47 +0800
-In-Reply-To: <20191011162950.yg4o77mlaicacne5@willie-the-truck>
-References: <1570627143-29441-1-git-send-email-yong.wu@mediatek.com>
- <1570627143-29441-3-git-send-email-yong.wu@mediatek.com>
- <20191011162950.yg4o77mlaicacne5@willie-the-truck>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1iJB1t-0001Mn-00
+ for linux-arm-kernel@lists.infradead.org; Sat, 12 Oct 2019 06:37:30 +0000
+Received: by mail-pg1-x541.google.com with SMTP id b8so7004026pgm.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 11 Oct 2019 23:37:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=enj181dZ5QRmkidqsNYZCPy2b+xtjYW3Q1Csrx2TdQE=;
+ b=NDdFcZqcvgb1E3tLIlvdDL21maihC/qaIj8y3PAYoWFkjeSjpGsr4lqELXhKXFddoT
+ Jzzkk1hC5XFcwcUODp34vVZwxXHBHhzNkVD/ORklAgon5CFD44dfqjmp2TWpd6eXqbwe
+ JpFR1EmAnq/OX0MKv4NgyGRKjenm7wOWmIOWOav8Vmkz92PyvpTZJaLH2WeC3koqizV7
+ +//i8gcKUOpwccK09/29/Of0HpaGg9uYj1/rtYbgH7EYsa62v6CLDHpM8WxBUWsTZCJ/
+ i6lz274qDCZWv5U8/eiZRTvoZHiG5AsozSZxivV2qDQUMa0Uqo1G4F9KPnSI16VxdH9Y
+ KPSQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=enj181dZ5QRmkidqsNYZCPy2b+xtjYW3Q1Csrx2TdQE=;
+ b=AqYw/fWJ29uHLWN7GF3/wUKtZvzatqAOA7AqlfaWwZqJ4WXBNacDp+VCQ51swO3IAn
+ FM5f7Um61sEbFwfOUUQIJWlnTPuA1t+FoO5j2gC7bOsPulp4m8QoiVm8SwEN5A5PymNR
+ +P6WSd5iOgqBawZhv+t3UxWxmdp+HrkLB6CI9uFKbkzf2E5zdIMRXledkltaPCUgHpjM
+ vUGnuhGzocgG+HrttT4a40FTVR3jP0YfKCFa/dN65hHBY5wuxu87KU29eK9GefiJlb61
+ GwgX9CkJz7W3hIHmer+3fJGvoGuiQMLsr2bP5UuVXw+6S8Xe1XqaM3KiHQDGs/uASr0H
+ hJWw==
+X-Gm-Message-State: APjAAAUm+hG8l1d9C2g/t4/xH/Zfq5H+/EhduhqFU72OmzdiFhjSXWqH
+ BHCebu6NOtloPKyOHBCeUjQnEDkr
+X-Google-Smtp-Source: APXvYqzSkVg6MzYCHOPE0i8n1okTjhUY4LjicQkMl6T0tlNbQu4Zi4KGdjs4SMZNzc7AxMZ3MyASpA==
+X-Received: by 2002:a62:8209:: with SMTP id w9mr20704434pfd.5.1570862248058;
+ Fri, 11 Oct 2019 23:37:28 -0700 (PDT)
+Received: from localhost ([106.51.243.12])
+ by smtp.gmail.com with ESMTPSA id b69sm13576328pfb.132.2019.10.11.23.37.26
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 11 Oct 2019 23:37:27 -0700 (PDT)
+Date: Sat, 12 Oct 2019 12:07:25 +0530
+From: afzal mohammed <afzal.mohd.ma@gmail.com>
+To: Vladimir Murzin <vladimir.murzin@arm.com>,
+ Russell King <linux@armlinux.org.uk>
+Subject: Re: [PATCH] ARM: NOMMU: Fix exc_ret for XIP
+Message-ID: <20191012063725.GA4813@afzalpc>
+References: <1570102888-13426-1-git-send-email-vladimir.murzin@arm.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 0A33034A89B0C9BB9E3E78D19D549891FCC7ABDAE5C14ED4B95401F2380F2F052000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <1570102888-13426-1-git-send-email-vladimir.murzin@arm.com>
+User-Agent: Mutt/1.9.3 (2018-01-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_232400_313507_4CC0BB33 
-X-CRM114-Status: GOOD (  18.25  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191011_233729_038318_BC41A936 
+X-CRM114-Status: GOOD (  10.79  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (afzal.mohd.ma[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,62 +100,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: youlin.pei@mediatek.com, anan.sun@mediatek.com, Nicolas
- Boichat <drinkcat@chromium.org>, cui.zhang@mediatek.com,
- srv_heupstream@mediatek.com, chao.hao@mediatek.com,
- Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Evan Green <evgreen@chromium.org>,
- Tomasz Figa <tfiga@google.com>, iommu@lists.linux-foundation.org,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: alexandre.torgue@st.com, linux@armlinux.org.uk,
+ linux-arm-kernel@lists.infradead.org, sza@esh.hu
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2019-10-11 at 17:29 +0100, Will Deacon wrote:
-> On Wed, Oct 09, 2019 at 09:19:02PM +0800, Yong Wu wrote:
-> > Use writel for the register F_MMU_INV_RANGE which is for triggering the
-> > HW work. We expect all the setting(iova_start/iova_end...) have already
-> > been finished before F_MMU_INV_RANGE.
-> > 
-> > Signed-off-by: Anan.Sun <anan.sun@mediatek.com>
-> > Signed-off-by: Yong Wu <yong.wu@mediatek.com>
-> > ---
-> > This is a improvement rather than fixing a issue.
-> > ---
-> >  drivers/iommu/mtk_iommu.c | 3 +--
-> >  1 file changed, 1 insertion(+), 2 deletions(-)
-> > 
-> > diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-> > index 24a13a6..607f92c 100644
-> > --- a/drivers/iommu/mtk_iommu.c
-> > +++ b/drivers/iommu/mtk_iommu.c
-> > @@ -187,8 +187,7 @@ static void mtk_iommu_tlb_add_flush(unsigned long iova, size_t size,
-> >  		writel_relaxed(iova, data->base + REG_MMU_INVLD_START_A);
-> >  		writel_relaxed(iova + size - 1,
-> >  			       data->base + REG_MMU_INVLD_END_A);
-> > -		writel_relaxed(F_MMU_INV_RANGE,
-> > -			       data->base + REG_MMU_INVALIDATE);
-> > +		writel(F_MMU_INV_RANGE, data->base + REG_MMU_INVALIDATE);
+Hi Vladimir,
+
+On Thu, Oct 03, 2019 at 12:41:28PM +0100, Vladimir Murzin wrote:
+
+> It was reported that 72cd4064fcca "NOMMU: Toggle only bits in
+> EXC_RETURN we are really care of" breaks NOMMU+XIP combination.
+> It happens because saved EXC_RETURN gets overwritten when data
+> section is relocated.
 > 
-> I don't understand this change.
+> The fix is to propagate EXC_RETURN via register and let relocation
+> code to commit that value into memory.
 > 
-> Why is it an "improvement" and which accesses are you ordering with the
-> writel?
-
-The register(F_MMU_INV_RANGE) will trigger HW to begin flush range. HW
-expect the other register iova_start/end/flush_type always is ready
-before trigger. thus I'd like use writel to guarantee the previous
-register has been finished.
-
-I didn't see the writel_relaxed cause some error in practice, we only
-think writel is necessary here in theory. so call it "improvement".
-
+> Fixes: 72cd4064fcca ("ARM: 8830/1: NOMMU: Toggle only bits in EXC_RETURN we are really care of")
 > 
-> Will
+> Reported-by: afzal mohammed <afzal.mohd.ma@gmail.com>
+> Tested-by: afzal mohammed <afzal.mohd.ma@gmail.com>
+> Signed-off-by: Vladimir Murzin <vladimir.murzin@arm.com>
 
+Can you please put this into rmk's patch system.
 
+STM32 Cortex-M boards are currently not booting in mainline, this
+change makes them boot again, verified on stm32f429 discovery board.
+
+Regards
+afzal
 
 _______________________________________________
 linux-arm-kernel mailing list
