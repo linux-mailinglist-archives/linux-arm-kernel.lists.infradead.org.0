@@ -2,80 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 055BED507E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 16:51:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D957D5082
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 16:52:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4l+CazX9oLrk6GWwj0Vdcgusg71EUrLub5C1VkvypPA=; b=fNQc+MNFxnx9f8
-	F8517mk44rIPY+UUMCYOXKCRmDCWENhYeOevv5rkqvuOs5Qs4yW0PpLhkUvaPORH4jCPMou2NJ9qq
-	+lyxJKr5DQgctsAwNvdwz/oYs5qPA7A7Kzj3h+jYFQmRMKC7EIhuoYFohv/BrrJAv+V/DrMHj+zsu
-	/M++dK7lp7RdkMagzT0payawbHP1MT/6JzbOHwuG46nvzy9znKfqrkceRvyZ4PBhJS7P1Qc678ehg
-	XK7l3g8Xow/Au6TC/2T2+jgHIH+XHsQplInnFOhkNuu4vEO4fDvHdbvEXvXIUcFZLxCN9h/R4OgMN
-	91gOjLW/5hPKdFieSNpA==;
+	List-Owner; bh=Lv1QfuBZ4+5zIa5kX5OYlJo7E3/znDQIYoidarVHn6s=; b=gDxSx38Nmx234O
+	yJ7eyAoATRGvNslW1JIpzUJydC2EIEd61p4HkUR8juIGsu3YntsBAo1BApRfJ+7PF3GOtQOumkLHs
+	xzVO/yTpMd0kvWaZdkXKff7m0KHBJi0wK3/hFwlrJQ1bAUZGFUwUUsc5P2oaH/qdO0s+8HaeDNnHS
+	IgkHexWHblnqVdjPntccftNlGNixvO+/LOX15V24fbWN2wm16lu6ZTEU47xSdjZGxfCKiMcuT5Yte
+	z3jhd/2om6IynrKH6vNYNSV2DNcb+XgfrD0QUVSC6Lm5/P/neETzwg8IJwc/Y70ScmY07zHGuPS3Z
+	cBZRifE1beE+qZdm5LDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJIjq-0004aS-U1; Sat, 12 Oct 2019 14:51:22 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1iJIkM-0004pJ-2N; Sat, 12 Oct 2019 14:51:54 +0000
+Received: from mail-yb1-xb43.google.com ([2607:f8b0:4864:20::b43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJIji-0004Zy-0g
- for linux-arm-kernel@lists.infradead.org; Sat, 12 Oct 2019 14:51:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=i7ymtaLygujOhFiwo49zTSZEZCPO8tXMCxgm0pezR2s=; b=hAvg9nPu2TVljuKMUkImPU848
- LYXKSc76ODWTf61OC3gEkLC78aatum3ybVVU8UwTIdPN/0OoN4AHS8myPuk9IlyoA0ONtbIuLffYH
- TKAxmS9pHWSonD4ibSHmHg5zTTw+M89y+HMnIm0qhXxp5rskKWXVwQvGArKNNOR+CTSbXXcUdqNjO
- Sm8ZZ7M4WWPRwpF6Zd4qm/wdoAFZHbzcbYVZmuZL86O9h7HWqTgO6Xcs5Xz6Ifhqmp/i1aJQa5TMe
- eKaP264pFtnQp0/v0Gy7lZgUdO4HCspF2l8dXCYIpCtaygpSirK57vtDQodvFGHRiq3RhEwFCDKfY
- qpmqKj2/A==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:54848)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1iJIjS-0003Hc-3D; Sat, 12 Oct 2019 15:50:58 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1iJIjP-0002DS-Bo; Sat, 12 Oct 2019 15:50:55 +0100
-Date: Sat, 12 Oct 2019 15:50:55 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH 3/3] arm64: configs: unset CPU_BIG_ENDIAN
-Message-ID: <20191012145055.GO25745@shell.armlinux.org.uk>
-References: <20190926193030.5843-1-anders.roxell@linaro.org>
- <20190926193030.5843-5-anders.roxell@linaro.org>
- <bf5db3a5-96da-752c-49ea-d0de899882d5@huawei.com>
- <CADYN=9LB9RHgRkQj=HcKDz1x9jqmT464Kseh2wZU5VvcLit+bQ@mail.gmail.com>
- <d978673e-cbd1-5ab5-b2a4-cdb407d0f98c@huawei.com>
- <CAK8P3a0kBz1-i-3miCo1vMuoM39ivXa3oxOE9VnCqDO-nfNOxw@mail.gmail.com>
- <20191011102747.lpbaur2e4nqyf7sw@willie-the-truck>
- <20191011103342.GL25745@shell.armlinux.org.uk>
- <CAK8P3a1ADTc0woWWNjpeqYEtgb=snj264P4QNWOj7ZRMDv8WNg@mail.gmail.com>
+ id 1iJIk9-0004oc-Oc
+ for linux-arm-kernel@lists.infradead.org; Sat, 12 Oct 2019 14:51:43 +0000
+Received: by mail-yb1-xb43.google.com with SMTP id h202so4039715ybg.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 12 Oct 2019 07:51:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=/ZoUm6X5G3HDfQhEntZgmJ59I63O9/tKKJbnPl2JY/k=;
+ b=hk1eKYzZeL1pp5cDqiAgSIS/n4gu6WYa8pXSCB4OBj6T11M3htlnbk2B1LKj0tpx1X
+ KMAJ2VxqF9MR1pWQZAucq4JGOHHVTROy2J9OtF6L1UYO7SZJ1ueqP8d1+1YDJjjUsPR9
+ PfqIe4+EPPDUrsVUk7Q0F6okxnmo7rrminHkyxyGTJHMut5t3wnMM0MuVxhO+C9M1HPy
+ 7wYl3+R6AN/pwjV3iIzh789QwyLNKl+Xle1LsuwwkEkh1TufWhGLOcWFqIo5VO1+99Q/
+ nyTZdDs/STDcM43gRkQOFgKBTZYEIm1Zc1h5pfvPVxtReTe1G4icK+Z2nTT9SJlY5Df+
+ myTQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=/ZoUm6X5G3HDfQhEntZgmJ59I63O9/tKKJbnPl2JY/k=;
+ b=gcXCfFc5RjMvUN9GSlpq8TrTNQEinSE/e6N0gIADpaNGuQsm3pt/cj8gNnGBrg/dry
+ 6vfdMxPQE4RfvUDVu0dc4fAfRykDnjmHHMQRPwWslrFilOqPUNBtMHPcxZVYknAimzM1
+ Gv8ngJ3KEu8JE0qYzpWbNmMhwXHkVkys3B/cl413lJqW7g66J/HYz+YwMk5i+8TjSe/y
+ j+T0JUKwxRWIQfWH4U+meJlejIHSfLHjptG154Roq4ahhMhGArLz4rERs82V8MpXDZfZ
+ 3D+iUkF4/Q7BS3AXTDFf9RDUJXk5mky+zX9HjsWOL8CA+KJ7mXAvQLZRsggy8owrAFjn
+ lXXQ==
+X-Gm-Message-State: APjAAAVtfBZiE0xijlzfGiAxRYOGTaFzGswTlxSHrfu1EGPBtJFzQV9x
+ FTnFvHV8pcRY51NzBBLrxFc=
+X-Google-Smtp-Source: APXvYqxSNcAPqwSZH31b87Ji1TKnGay22xxNKrq1QLqwgT769H3cS7IndXWaX2hKTQ5Lh5hCv6smew==
+X-Received: by 2002:a25:d144:: with SMTP id i65mr13849331ybg.266.1570891900143; 
+ Sat, 12 Oct 2019 07:51:40 -0700 (PDT)
+Received: from icarus (072-189-084-142.res.spectrum.com. [72.189.84.142])
+ by smtp.gmail.com with ESMTPSA id g207sm843084ywb.4.2019.10.12.07.51.38
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 12 Oct 2019 07:51:39 -0700 (PDT)
+Date: Sat, 12 Oct 2019 10:51:19 -0400
+From: William Breathitt Gray <vilhelm.gray@gmail.com>
+To: Jonathan Cameron <jic23@kernel.org>
+Subject: Re: [PATCH v5 0/3] Simplify count_read/count_write/signal_read
+Message-ID: <20191012145101.GA3463@icarus>
+References: <cover.1570391994.git.vilhelm.gray@gmail.com>
+ <20191012150012.5e3399f1@archlinux>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAK8P3a1ADTc0woWWNjpeqYEtgb=snj264P4QNWOj7ZRMDv8WNg@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191012150012.5e3399f1@archlinux>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191012_075114_059013_E14740E1 
-X-CRM114-Status: GOOD (  11.38  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191012_075141_820836_3DAF37A5 
+X-CRM114-Status: GOOD (  26.43  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:b43 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (vilhelm.gray[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -94,40 +100,127 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anders Roxell <anders.roxell@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, John Garry <john.garry@huawei.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Chunrong Guo <chunrong.guo@nxp.com>, Olof Johansson <olof@lixom.net>,
- Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: benjamin.gaignard@linaro.org, alexandre.torgue@st.com,
+ linux-iio@vger.kernel.org, patrick.havelange@essensium.com,
+ linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ fabrice.gasnier@st.com, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, david@lechnology.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Oct 12, 2019 at 12:47:45AM +0200, Arnd Bergmann wrote:
-> On Fri, Oct 11, 2019 at 12:33 PM Russell King - ARM Linux admin
-> <linux@armlinux.org.uk> wrote:
-> > 32-bit ARM experience is that telco class users really like big
-> > endian.
+On Sat, Oct 12, 2019 at 03:00:12PM +0100, Jonathan Cameron wrote:
+> Hi William
 > 
-> Right, basically anyone with a large code base migrated over from a
-> big-endian MIPS or PowerPC legacy that found it cheaper to change
-> the rest of the world than to fix their own code.
+> What's the status on these? If you are happy that reviews and
+> testing is complete enough, do you want me to take them after
+> I pick up the eqep driver (hopefully shortly dependent on
+> the pull request Greg has from me being fine).
+> 
+> Thanks,
+> 
+> Jonathan
 
-I think you need to step off your soap box!  Big endian isn't going
-away, and it likely has nothing to do with code bases.  Just look at
-networking and telco protocols.  Everything in that world tends to
-be big endian.  BE is what is understood in that world, and there's
-little we can do to change it.
+Yes, this is ready for you to take. So after the eqep driver is picked
+up you can apply this patchset.
 
-Demanding that they switch to LE is tantamount to you demanding that
-their entire world change - it ain't going to happen.
+Thanks,
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+William Breathitt Gray
+
+> 
+> On Sun,  6 Oct 2019 16:03:08 -0400
+> William Breathitt Gray <vilhelm.gray@gmail.com> wrote:
+> 
+> > Changes in v5:
+> >  - Add changes and additions to generic-counter.rst to clarify theory
+> >    and use of the Generic Counter interface
+> >  - Fix typo in counter.h action_get description comment
+> > 
+> > The changes in this patchset will not affect the userspace interface.
+> > Rather, these changes are intended to simplify the kernelspace Counter
+> > callbacks for counter device driver authors.
+> > 
+> > The following main changes are proposed:
+> > 
+> > * Retire the opaque counter_count_read_value/counter_count_write_value
+> >   structures and simply represent count data as an unsigned integer.
+> > 
+> > * Retire the opaque counter_signal_read_value structure and represent
+> >   Signal data as a counter_signal_value enum.
+> > 
+> > These changes should reduce some complexity and code in the use and
+> > implementation of the count_read, count_write, and signal_read
+> > callbacks.
+> > 
+> > The opaque structures for Count data and Signal data were introduced
+> > originally in anticipation of supporting various representations of
+> > counter data (e.g. arbitrary-precision tallies, floating-point spherical
+> > coordinate positions, etc). However, with the counter device drivers
+> > that have appeared, it's become apparent that utilizing opaque
+> > structures in kernelspace is not the best approach to take.
+> > 
+> > I believe it is best to let userspace applications decide how to
+> > interpret the count data they receive. There are a couple of reasons why
+> > it would be good to do so:
+> > 
+> > * Users use their devices in unexpected ways.
+> > 
+> >   For example, a quadrature encoder counter device is typically used to
+> >   keep track of the position of a motor, but a user could set the device
+> >   in a pulse-direction mode and instead use it to count sporadic rising
+> >   edges from an arbitrary signal line unrelated to positioning. Users
+> >   should have the freedom to decide what their data represents.
+> > 
+> > * Most counter devices represent data as unsigned integers anyway.
+> > 
+> >   For example, whether the device is a tally counter or position
+> >   counter, the count data is represented to the user as an unsigned
+> >   integer value. So specifying that one device is representing tallies
+> >   while the other specifies positions does not provide much utility from
+> >   an interface perspective.
+> > 
+> > For these reasons, the count_read and count_write callbacks have been
+> > redefined to pass count data directly as unsigned long instead of passed
+> > via opaque structures:
+> > 
+> >         count_read(struct counter_device *counter,
+> >                    struct counter_count *count, unsigned long *val);
+> >         count_write(struct counter_device *counter,
+> >                     struct counter_count *count, unsigned long val);
+> > 
+> > Similarly, the signal_read is redefined to pass Signal data directly as
+> > a counter_signal_value enum instead of via an opaque structure:
+> > 
+> >         signal_read(struct counter_device *counter,
+> >                     struct counter_signal *signal,
+> >                     enum counter_signal_value *val);
+> > 
+> > The counter_signal_value enum is simply the counter_signal_level enum
+> > redefined to remove the references to the Signal data "level" data type.
+> > 
+> > William Breathitt Gray (3):
+> >   counter: Simplify the count_read and count_write callbacks
+> >   docs: driver-api: generic-counter: Update Count and Signal data types
+> >   counter: Fix typo in action_get description
+> > 
+> >  Documentation/driver-api/generic-counter.rst | 162 +++++++++++--------
+> >  drivers/counter/104-quad-8.c                 |  33 ++--
+> >  drivers/counter/counter.c                    | 101 ++----------
+> >  drivers/counter/ftm-quaddec.c                |  14 +-
+> >  drivers/counter/stm32-lptimer-cnt.c          |   5 +-
+> >  drivers/counter/stm32-timer-cnt.c            |  17 +-
+> >  drivers/counter/ti-eqep.c                    |  19 +--
+> >  include/linux/counter.h                      |  76 ++-------
+> >  8 files changed, 144 insertions(+), 283 deletions(-)
+> > 
+> > 
+> > base-commit: 0c3aa63a842d84990bd02622f2fa50d2bd33c652
+> > prerequisite-patch-id: ebe284609b3db8d4130ea2915f7f7b185c743a70
+> > prerequisite-patch-id: cbe857759f10d875690df125d18bc04f585ac7c9
+> > prerequisite-patch-id: 21f2660dc88627387ee4666d08044c63dd961dae
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
