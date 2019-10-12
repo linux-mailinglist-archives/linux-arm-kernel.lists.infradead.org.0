@@ -2,60 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D5CF7D5125
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 18:51:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66295D5149
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 19:12:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=fUD+IET4rpy5ABejW5pQ33tV+sbOdHsQ9eePiI+UVyY=; b=sg/8ND5pW6zj9HfK1S/x+/sN3
-	Ml26wyLfPVcX5mncXlzE5Dozp+xjH7nqiQPddrTtuUdA/nfuGisAGsxcvkSe4msmGrNYgBSg55iLl
-	/4V5KWytp5ZYOHqf7wEIIcgvpqbXe4r63/SrM7DK5mNr3TurI9nAdsfvMeoEDcb9poWmmfJJ9QTnh
-	Ek4DMIp33SK2ewRNbWbjjPej3XSc3RdQ/z8ee/gu/wP2/09UOciO7KCx5rNzmluIru+oWwYoc01Mf
-	SFwa7vSIqd1iv7cg1hs4Yp24lKx2EGKzTs0oj1HYmTo1oB0BWmEpXl4ELNVx6g+mApRpiTgK7lsJz
-	lxAvdmwCw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=t18edhLrORbOKgLbOLBm3O+SKb8MN3d28rMFa3RC+bg=; b=GSRRzBjzJdriWe
+	yzSN2kmfoJbH4Xo+xaKcb8PlG5XMwsXVG934scSmszEPYiGUDRIwPA2lD8FfDvlqmV9p9CFlY8Swr
+	YdM53jysDHjG62udHfsntcoTKwvFhU6qVrfa/BSFyU3ROM241X6CQbqG7zAnlRBllOG37fNTV7d/1
+	ZxkAQa0zcQB8DK+Dy8YseVlCxPvJXdvGD8UpPeFWeYzrB9fl1JVLKEcvp7eRy9LfPvjqC8u2tKIHg
+	xudnxEbew0HHUi5FxtFZSGTAjBZTtu3ZW6WTfcGXDJ4tny6mt5kE6sPrRCE3Yx+hDuVIIkhqyO9Ap
+	sL7QNiza3iojbMrrEVOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJKbM-0000QP-5D; Sat, 12 Oct 2019 16:50:44 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iJKut-0007d9-Kk; Sat, 12 Oct 2019 17:10:55 +0000
+Received: from mout.gmx.net ([212.227.15.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJKbE-0000Pb-LR; Sat, 12 Oct 2019 16:50:38 +0000
-Received: from lore-desk-wlan.lan (unknown [151.66.37.226])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7737520679;
- Sat, 12 Oct 2019 16:50:32 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570899035;
- bh=qSEg9PvZkbVxQM23WcD3L4Jru73ZuIoTRpmb7PBGQxQ=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=EHZFF54gumdqsWmUGFRJmszZTjIyCFrRlaBz+iSS8rE9i13x1qazGZ9vd4+UjHBy+
- 6FdI6HxhQ8g89WZ+j7ScrPRymDIdb8P5WOav5J4NCx/OIglmp1YvCY8Tw7gjVSCBVs
- bhqM+bkilAPq0SRMq6hiiTZ3KAc7Cn/9w5DzHHDk=
-Date: Sat, 12 Oct 2019 18:50:28 +0200
-From: Lorenzo Bianconi <lorenzo@kernel.org>
-To: Oleksandr Natalenko <oleksandr@natalenko.name>
-Subject: Re: mt76x2e hardware restart
-Message-ID: <20191012165028.GA8739@lore-desk-wlan.lan>
-References: <deaafa7a3e9ea2111ebb5106430849c6@natalenko.name>
- <c6d621759c190f7810d898765115f3b4@natalenko.name>
- <9d581001e2e6cece418329842b2b0959@natalenko.name>
+ id 1iJKum-0007cM-Jf; Sat, 12 Oct 2019 17:10:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1570899908;
+ bh=WThmjchEV2vzAfou34wsoexJ0904q7Zea1RHmt1M0OE=;
+ h=X-UI-Sender-Class:Subject:From:To:Cc:References:Date:In-Reply-To;
+ b=DwTTL9LZ/P3ZtHGHGrPnmR3fUQTLV35vGi1ykO4JnzH+4YSoWwCwENM2WQX5FDRdI
+ M/K2VsaTpxQkH72xRvvoS+kEUHbG12FEnAmKhxwpe3E5VBNzwPoAtWd+k1YoOO8GEp
+ aFmq1tvoRqZCNXwb85mNaV8BI/arkoyKXEWptrqA=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.1.162] ([37.4.249.112]) by mail.gmx.com (mrgmx004
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 1MSKuA-1iURhc069Y-00Sbmb; Sat, 12
+ Oct 2019 19:05:08 +0200
+Subject: Re: [PATCH v1 3/3] ARM: dts: bcm2711: Enable GENET support for the
+ RPi4
+From: Stefan Wahren <wahrenst@gmx.net>
+To: matthias.bgg@kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+ "David S . Miller" <davem@davemloft.net>
+References: <20191011184822.866-1-matthias.bgg@kernel.org>
+ <20191011184822.866-4-matthias.bgg@kernel.org>
+ <dfe9062b-1960-f67b-2a9e-864c0680f5d3@gmx.net>
+Message-ID: <bc741ef2-64aa-562c-69cc-f787b35c1058@gmx.net>
+Date: Sat, 12 Oct 2019 19:05:03 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <9d581001e2e6cece418329842b2b0959@natalenko.name>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <dfe9062b-1960-f67b-2a9e-864c0680f5d3@gmx.net>
+Content-Language: en-US
+X-Provags-ID: V03:K1:TOY8axM0tJeh2ZJQi9bkb+Z/Lu9KtfC8Aq/2aZuGRApGXwwMKVT
+ DsmnYbDjr/1UDJ5oTeuAK8MgubkKE0RJNoIuEyqYT9L3NckFkQsWrgUzysDPWsLmkCSTuer
+ wGwsyt62YfRmKgYCA3bSLh6SM3vgSGfKWRX8E8sRaG/+5lAL+eonlZmJ/lVOXUmbTsC330H
+ vsbFJeUNXCi0+abkU+CPw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:2MuRQWHyKLs=:IcfwFc4ZLH+uLpnNutppBy
+ iVDysOqZ8lvADJrDHiUQrak2+buixxUIYJp045C7Pc8Uq9gJVtq5ngEZc1shkKGHG8COkQ9Cd
+ fCQBrAjRd2uTXcravu0eM6c5ZnIxEYiFFFBQMHvGA5PwwkdH5PAOQzE9qB9XU5sYSg1aHxMZI
+ OcPFNIIYoAl4zjfTFs3ap8EhMSdaC9u58LFRTkDmEPOCYO/RFT2ce0SMgav3xI4cHRvID0UeW
+ vRxc5ierCN+cHPTiaecN9qRsMiRwhsj9TTvrluGa+lKvnOaZNxSC3puExNlktTtuxy8hf2gzR
+ A4QZ1DSXgfk6BrQ9dNWkYP46LiSQz8MT4zvho2hZyuTyqOyuAP4IOKl/8BEcznbxxFmwwTDyE
+ SiPoV/Q7VqQqVaPdL4el7hCtjbMegzzCYoOTKuEhhnn207dFSa+Wu9iTP5jOu2l7FmBbiClqC
+ PALbFAJ+1EjMKqlF2iflm/HTLXBWhTNmmQIiHtFjbRINBQ7eCu5QE6RE4NJ+6YJmkfxy0XxTq
+ tHabEciCXCVWcuyW33U9nu0F/5biV3DNmEoIKIwJGPtVqOQg0Hn6QBBtoPjA/Xi+TlCYEHy5J
+ zMScV4SdLyM+RIwzeBH1Aapb3MOmHkASGFWlexXYaWIuvZ8PLO3vtMb8zhLXHH6AB7hqBFdix
+ jebEUQYZ/qvHDDBbHSff4gL0Q1r5KquYbjtxRnz/Emut1FpdHlw4WFynb+cXklmbdpTuD7miy
+ bhN/gK/IpDOHP6lWikd1iFPE5sqFNQDRLLGNIYvSWciwdqUvo+xAcmFIvGLVlQw/gkk7T+Rba
+ 7s9Ih5b3QfOuAjCaz3Oqfd9ChesR3g6Pu+i71ygJLtp0oWyqHtqOhQYr2/cj9Z38fkQbbxKAc
+ pAM67Yl1ppvecGWIcOPPLj9WhV6G1WrMwlygtexgUF/ViEOX70J9qU6NrBLARBioRQ3xNIp83
+ iI2wYYm/E8UFdBOekrdkp2x9LYn/bSkWYZKLrNZBd8MhkoclBdOS8RFhvKx9PHkOinRYmSckc
+ 7MX/X4jAWmXNrnVp4djip/U2/Y2nEhbtC+pQzQxQ6jOb0gsUrFALjGmmraVFZU4Z+m+S5X9Be
+ epNbwCyXAzmSMwux/n3qs+rARBD2Mf5Wa0dT4BJ48VsXJ3VsqGLtJFVZzTx2P+SQ2IZ59/H7w
+ QLxwLPUYu+b5O56a/8SvKTHF0oCLVvLyyNyq1V+4Com7jUw5/pJm1K+orGOgMF8q6f60NonjV
+ w9Hyqu23kHQeAIHEjlZmQ2Opr2nC1lBV88TnxkLOMcxJowPZNUp+hmxtvrNc=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191012_095036_941159_C8475194 
-X-CRM114-Status: GOOD (  20.46  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191012_101048_980123_B2C134C1 
+X-CRM114-Status: GOOD (  12.71  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wahrenst[at]gmx.net)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -64,7 +91,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,203 +102,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ryder Lee <ryder.lee@mediatek.com>, Stanislaw Gruszka <sgruszka@redhat.com>,
- netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
- linux-kernel@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Roy Luo <royluo@google.com>, Lorenzo Bianconi <lorenzo.bianconi83@gmail.com>,
- "David S. Miller" <davem@davemloft.net>, Kalle Valo <kvalo@codeaurora.org>,
- Felix Fietkau <nbd@nbd.name>
-Content-Type: multipart/mixed; boundary="===============5633521994383968640=="
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Matthias Brugger <mbrugger@suse.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, linux-kernel@vger.kernel.org,
+ Eric Anholt <eric@anholt.net>, Rob Herring <robh+dt@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============5633521994383968640==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ReaqsoxgOBHFXBhH"
-Content-Disposition: inline
-
-
---ReaqsoxgOBHFXBhH
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-> On 19.09.2019 23:22, Oleksandr Natalenko wrote:
-> > It checks for TX hang here:
-> >=20
-> > =3D=3D=3D mt76x02_mmio.c
-> > 557 void mt76x02_wdt_work(struct work_struct *work)
-> > 558 {
-> > ...
-> > 562     mt76x02_check_tx_hang(dev);
-> > =3D=3D=3D
->=20
-> I've commented out the watchdog here ^^, and the card is not resetted any
-> more, but similarly it stops working shortly after the first client
-> connects. So, indeed, it must be some hang in the HW, and wdt seems to do=
- a
-> correct job.
->=20
-> Is it even debuggable/fixable from the driver?
-
-Hi Oleksandr,
-
-sorry for the delay. Felix and me worked on this issue today. Could you ple=
-ase
-try if the following patch fixes your issue?
-
-Regards,
-Lorenzo
-
-=46rom cf3436c42a297967235a9c9778620c585100529e Mon Sep 17 00:00:00 2001
-Message-Id: <cf3436c42a297967235a9c9778620c585100529e.1570897574.git.lorenz=
-o@kernel.org>
-=46rom: Lorenzo Bianconi <lorenzo@kernel.org>
-Date: Sat, 12 Oct 2019 17:32:57 +0200
-Subject: [PATCH] mt76: mt76x2: disable pcie_aspm by default
-
-On same device (e.g. U7612E-H1) PCIE_ASPM causes continues mcu hangs and
-instability. This patch disable PCIE_ASPM by default. This patch has
-been successfully tested on U7612E-H1 mini-pice card
-
-Signed-off-by: Felix Fietkau <nbd@nbd.name>
-Signed-off-by: Lorenzo Bianconi <lorenzo@kernel.org>
----
- drivers/net/wireless/mediatek/mt76/mmio.c     | 48 +++++++++++++++++++
- drivers/net/wireless/mediatek/mt76/mt76.h     |  1 +
- .../net/wireless/mediatek/mt76/mt76x2/pci.c   |  2 +
- 3 files changed, 51 insertions(+)
-
-diff --git a/drivers/net/wireless/mediatek/mt76/mmio.c b/drivers/net/wirele=
-ss/mediatek/mt76/mmio.c
-index 1c974df1fe25..8e1dbc1903f3 100644
---- a/drivers/net/wireless/mediatek/mt76/mmio.c
-+++ b/drivers/net/wireless/mediatek/mt76/mmio.c
-@@ -3,6 +3,9 @@
-  * Copyright (C) 2016 Felix Fietkau <nbd@nbd.name>
-  */
-=20
-+#include <linux/pci.h>
-+#include <linux/pci-aspm.h>
-+
- #include "mt76.h"
- #include "trace.h"
-=20
-@@ -78,6 +81,51 @@ void mt76_set_irq_mask(struct mt76_dev *dev, u32 addr,
- }
- EXPORT_SYMBOL_GPL(mt76_set_irq_mask);
-=20
-+void mt76_mmio_disable_aspm(struct pci_dev *pdev)
-+{
-+	struct pci_dev *parent =3D pdev->bus->self;
-+	u16 aspm_conf, parent_aspm_conf =3D 0;
-+
-+	pcie_capability_read_word(pdev, PCI_EXP_LNKCTL, &aspm_conf);
-+	aspm_conf &=3D PCI_EXP_LNKCTL_ASPMC;
-+	if (parent) {
-+		pcie_capability_read_word(parent, PCI_EXP_LNKCTL,
-+					  &parent_aspm_conf);
-+		parent_aspm_conf &=3D PCI_EXP_LNKCTL_ASPMC;
-+	}
-+
-+	if (!aspm_conf && (!parent || !parent_aspm_conf)) {
-+		/* aspm already disabled */
-+		return;
-+	}
-+
-+	dev_info(&pdev->dev, "disabling ASPM %s %s\n",
-+		 (aspm_conf & PCI_EXP_LNKCTL_ASPM_L0S) ? "L0s" : "",
-+		 (aspm_conf & PCI_EXP_LNKCTL_ASPM_L1) ? "L1" : "");
-+
-+#ifdef CONFIG_PCIEASPM
-+	pci_disable_link_state(pdev, aspm_conf);
-+
-+	/* Double-check ASPM control.  If not disabled by the above, the
-+	 * BIOS is preventing that from happening (or CONFIG_PCIEASPM is
-+	 * not enabled); override by writing PCI config space directly.
-+	 */
-+	pcie_capability_read_word(pdev, PCI_EXP_LNKCTL, &aspm_conf);
-+	if (!(aspm_conf & PCI_EXP_LNKCTL_ASPMC))
-+		return;
-+#endif /* CONFIG_PCIEASPM */
-+
-+	/* Both device and parent should have the same ASPM setting.
-+	 * Disable ASPM in downstream component first and then upstream.
-+	 */
-+	pcie_capability_clear_word(pdev, PCI_EXP_LNKCTL, aspm_conf);
-+
-+	if (parent)
-+		pcie_capability_clear_word(parent, PCI_EXP_LNKCTL,
-+					   aspm_conf);
-+}
-+EXPORT_SYMBOL_GPL(mt76_mmio_disable_aspm);
-+
- void mt76_mmio_init(struct mt76_dev *dev, void __iomem *regs)
- {
- 	static const struct mt76_bus_ops mt76_mmio_ops =3D {
-diff --git a/drivers/net/wireless/mediatek/mt76/mt76.h b/drivers/net/wirele=
-ss/mediatek/mt76/mt76.h
-index 8bcc7f21e83c..e95a5893f93b 100644
---- a/drivers/net/wireless/mediatek/mt76/mt76.h
-+++ b/drivers/net/wireless/mediatek/mt76/mt76.h
-@@ -596,6 +596,7 @@ bool __mt76_poll_msec(struct mt76_dev *dev, u32 offset,=
- u32 mask, u32 val,
- #define mt76_poll_msec(dev, ...) __mt76_poll_msec(&((dev)->mt76), __VA_ARG=
-S__)
-=20
- void mt76_mmio_init(struct mt76_dev *dev, void __iomem *regs);
-+void mt76_mmio_disable_aspm(struct pci_dev *pdev);
-=20
- static inline u16 mt76_chip(struct mt76_dev *dev)
- {
-diff --git a/drivers/net/wireless/mediatek/mt76/mt76x2/pci.c b/drivers/net/=
-wireless/mediatek/mt76/mt76x2/pci.c
-index 6253ec5fbd72..06fb80163c8e 100644
---- a/drivers/net/wireless/mediatek/mt76/mt76x2/pci.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt76x2/pci.c
-@@ -83,6 +83,8 @@ mt76pci_probe(struct pci_dev *pdev, const struct pci_devi=
-ce_id *id)
- 	/* RG_SSUSB_CDR_BR_PE1D =3D 0x3 */
- 	mt76_rmw_field(dev, 0x15c58, 0x3 << 6, 0x3);
-=20
-+	mt76_mmio_disable_aspm(pdev);
-+
- 	return 0;
-=20
- error:
---=20
-2.21.0
-
->=20
-> --=20
->   Oleksandr Natalenko (post-factum)
-
---ReaqsoxgOBHFXBhH
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQTquNwa3Txd3rGGn7Y6cBh0uS2trAUCXaIEUQAKCRA6cBh0uS2t
-rMgMAP4gYBsBVaqrrJGeL59RvPIDCtDh9B4Cal6r0cZiF8/eawD9E3a71sAvXQRq
-77lBM018hpb2RI8zaAU2j9ddT2e6HwU=
-=jGHZ
------END PGP SIGNATURE-----
-
---ReaqsoxgOBHFXBhH--
-
-
---===============5633521994383968640==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Am 12.10.19 um 01:09 schrieb Stefan Wahren:
+> Am 11.10.19 um 20:48 schrieb matthias.bgg@kernel.org:
+>> From: Matthias Brugger <mbrugger@suse.com>
+>>
+>> Enable Gigabit Ethernet support on the Raspberry Pi 4
+>> Model B.
+> I asked some questions about genet to the RPi guys [1] which are
+> relevant to this patch (missing clocks and interrupt, MAC address
+> assignment) but i didn't get an answer yet.
+>
+> During my tests with a similiar patch series i noticed that the driver
+> won't probe without a MAC address.
+>
+> How does it get into DT (via U-Boot)?
+Okay, the bootloader uses the ethernet0 alias for the genet DT node. So
+this should also be added to the RPi 4 DTS. But i consider the MAC
+randomize patch still helpful.
+>
+> [1] -
+> https://github.com/raspberrypi/linux/issues/3101#issuecomment-534665860
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5633521994383968640==--
-
