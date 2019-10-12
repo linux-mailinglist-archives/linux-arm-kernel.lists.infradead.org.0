@@ -2,55 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 920FAD4EF9
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 12:25:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1E2FD4F2E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 12:58:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2cS8U22QueIfGZNzl9IGVmM7i3rPmXAsFzfV9iCr+8Y=; b=nNI+Yo1VNQcD0J
-	TYSNkGDRspyU1CbG391bXNvG5UiLP188ZfKkvzqt6aPg3bAjI+plQGonaRWDd+82EVQqQ8D9JFnds
-	y4R9ghAsTfCf3fXKYGA+XOHi9m6rMD83sI56nstWqLOe+J5AENZ/0HAyKolrPXosm1JxebEaf+NVH
-	Xl2YVDHgIe0dnhTLb6LcUDFIoXCnWAdVoCXxbgZ/NpK3Wl2SXVVeoNNbM2PsbjKEWZ6QYWPX6Bur/
-	jslGo24kDk36prG9AGv2RqjxeON0Q6iRkUNP5osIzacDKaR++Ir2TCT2VfbEnak/WCrLXDeIyGzud
-	eyzZQ3BWqI9RZDZvLrhw==;
+	List-Owner; bh=283uVBytODHP0wKeuDxa9zOyHgGFDEkldnEcd2F8vOI=; b=p5w9zRXt9ld9XJ
+	lD3Tb6qU+rDk0Q1ReWHzKp++ErYh1WTHDyTKKC/x8xuXl38gN/2hYv2GkTlPxT2HlByI1pVdAgSAA
+	5vXpekoQqu9b6SjgGNdGx1izPzkQE31EXoHPTBL3xpjkCSbUx9D7RaFLjqMKcPmofDuFtBOwhj9l/
+	f9Zmqpra4HOeg3DK6uhjOjLk+6Bvzlodoz8K1sD4WKPG2wTk21OsqVB3QZaF7h9amn+24evbuwVKP
+	Eac7xJAwpDXq5Kh3racr4c8Kl/+6kJGr07z4Zlatdr2tip9/QxZESyeTtagH4LRH4tBr6GOXFomiM
+	yNNlr1EyfGOIYSUffoxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJEZv-0008S9-BO; Sat, 12 Oct 2019 10:24:51 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1iJF6Z-0003p8-JX; Sat, 12 Oct 2019 10:58:35 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJEZm-0008PX-VM
- for linux-arm-kernel@lists.infradead.org; Sat, 12 Oct 2019 10:24:45 +0000
-X-Originating-IP: 86.202.229.42
-Received: from localhost (lfbn-lyo-1-146-42.w86-202.abo.wanadoo.fr
- [86.202.229.42])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 4955D20007;
- Sat, 12 Oct 2019 10:24:30 +0000 (UTC)
-Date: Sat, 12 Oct 2019 12:24:29 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Mao Wenan <maowenan@huawei.com>
-Subject: Re: [PATCH -next] ASoC: atmel: select SND_ATMEL_SOC_DMA for
- SND_ATMEL_SOC_SSC
-Message-ID: <20191012102429.GH3125@piout.net>
-References: <20191012024230.159371-1-maowenan@huawei.com>
+ id 1iJF6R-0003of-Kk; Sat, 12 Oct 2019 10:58:29 +0000
+Received: from dhcp-172-31-174-146.wireless.concordia.ca (unknown
+ [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested) (Authenticated sender: bbrezillon)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 98FEB28D210;
+ Sat, 12 Oct 2019 11:58:19 +0100 (BST)
+Date: Sat, 12 Oct 2019 12:58:15 +0200
+From: Boris Brezillon <boris.brezillon@collabora.com>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+Subject: Re: [PATCH v3 16/40] mtd: Fix typo in mtd_ooblayout_set_databytes()
+ description
+Message-ID: <20191012125815.1ae2f029@dhcp-172-31-174-146.wireless.concordia.ca>
+In-Reply-To: <20190919193141.7865-17-miquel.raynal@bootlin.com>
+References: <20190919193141.7865-1-miquel.raynal@bootlin.com>
+ <20190919193141.7865-17-miquel.raynal@bootlin.com>
+Organization: Collabora
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191012024230.159371-1-maowenan@huawei.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191012_032443_145074_0A969B59 
-X-CRM114-Status: GOOD (  17.00  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191012_035827_810208_6D21AD1B 
+X-CRM114-Status: GOOD (  16.31  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -63,65 +61,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, lgirdwood@gmail.com,
- linux-kernel@vger.kernel.org, mirq-linux@rere.qmqm.pl,
- kernel-janitors@vger.kernel.org, tiwai@suse.com,
- ludovic.desroches@microchip.com, broonie@kernel.org,
- codrin.ciubotariu@microchip.com, perex@perex.cz,
- linux-arm-kernel@lists.infradead.org
+Cc: Mason Yang <masonccyang@mxic.com.tw>, Vignesh Raghavendra <vigneshr@ti.com>,
+ Tudor Ambarus <Tudor.Ambarus@microchip.com>, Julien Su <juliensu@mxic.com.tw>,
+ Richard Weinberger <richard@nod.at>,
+ Schrempf Frieder <frieder.schrempf@kontron.de>,
+ Paul Cercueil <paul@crapouillou.net>, Marek Vasut <marek.vasut@gmail.com>,
+ linux-mtd@lists.infradead.org, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Brian Norris <computersforpeace@gmail.com>,
+ David Woodhouse <dwmw2@infradead.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/10/2019 10:42:30+0800, Mao Wenan wrote:
-> If SND_ATMEL_SOC_SSC_PDC=y and SND_ATMEL_SOC_SSC_DMA=m,
-> below errors can be found:
-> sound/soc/atmel/atmel_ssc_dai.o: In function
-> `atmel_ssc_set_audio':
-> atmel_ssc_dai.c:(.text+0x6fe): undefined reference to
-> `atmel_pcm_dma_platform_register'
-> make: *** [vmlinux] Error 1
+On Thu, 19 Sep 2019 21:31:16 +0200
+Miquel Raynal <miquel.raynal@bootlin.com> wrote:
+
+> Fix a probable copy/paste error: the function works like
+> mtd_ooblayout_set_bytes(), not *_get_bytes().
 > 
-> After commit 18291410557f ("ASoC: atmel: enable
-> SOC_SSC_PDC and SOC_SSC_DMA in Kconfig"), SND_ATMEL_SOC_DMA
-> and SND_ATMEL_SOC_SSC are selected by SND_ATMEL_SOC_SSC_DMA,
-> SND_ATMEL_SOC_SSC is also selected by SND_ATMEL_SOC_SSC_PDC,
-> the results are SND_ATMEL_SOC_DMA=m but SND_ATMEL_SOC_SSC=y,
-> so the errors happen.
-> 
-> This patch make SND_ATMEL_SOC_SSC select SND_ATMEL_SOC_DMA.
-> 
-> Fixes: 18291410557f ("ASoC: atmel: enable SOC_SSC_PDC and SOC_SSC_DMA in Kconfig")
-> Signed-off-by: Mao Wenan <maowenan@huawei.com>
+> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+
+Reviewed-by: Boris Brezillon <boris.brezillon@collabora.com>
+
 > ---
->  sound/soc/atmel/Kconfig | 1 +
->  1 file changed, 1 insertion(+)
+>  drivers/mtd/mtdcore.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> diff --git a/sound/soc/atmel/Kconfig b/sound/soc/atmel/Kconfig
-> index f118c22..2938f6b 100644
-> --- a/sound/soc/atmel/Kconfig
-> +++ b/sound/soc/atmel/Kconfig
-> @@ -19,6 +19,7 @@ config SND_ATMEL_SOC_DMA
->  
->  config SND_ATMEL_SOC_SSC
->  	tristate
-> +	select SND_ATMEL_SOC_DMA
->  
+> diff --git a/drivers/mtd/mtdcore.c b/drivers/mtd/mtdcore.c
+> index 408615f29e57..12f78ba8c4e9 100644
+> --- a/drivers/mtd/mtdcore.c
+> +++ b/drivers/mtd/mtdcore.c
+> @@ -1547,7 +1547,7 @@ EXPORT_SYMBOL_GPL(mtd_ooblayout_get_databytes);
+>   * @start: first ECC byte to set
+>   * @nbytes: number of ECC bytes to set
+>   *
+> - * Works like mtd_ooblayout_get_bytes(), except it acts on free bytes.
+> + * Works like mtd_ooblayout_set_bytes(), except it acts on free bytes.
+>   *
+>   * Returns zero on success, a negative error code otherwise.
+>   */
 
-This is not the solution because this doesn't allow to compile out DMA
-and use only PDC. I think Arnd already submitted a proper patch.
-
->  config SND_ATMEL_SOC_SSC_PDC
->  	tristate "SoC PCM DAI support for AT91 SSC controller using PDC"
-> -- 
-> 2.7.4
-> 
-
--- 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
