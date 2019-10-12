@@ -2,60 +2,129 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09282D4FEF
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 15:12:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E437D5033
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 15:56:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EnrLvYup4dz6qOVyiUDHgrn+gjZBsDmyc6jQ6VFakEg=; b=GVWxOwN0c5o93f
-	wUOigGih4xvCqDf10g55gFWJ0tXfcTBpw3F3i6DqislJK42b2QgKkqWab4FZzQ0zfWpeUPG+3whiA
-	/vkmRsD+n6whRalzNCq8rYle1vtyvi143XTkrmCTSwsW8jg0jCAJOpbtuaOB9OMZoKMtFUD376+LL
-	NZLUsocTczxc7sHz5Xs4lgdr0bAtTaGEzqSfIcmFwvboatlnA0rhBO3BjHErHjWHhWP1wUhQStkxt
-	hkaBsNbdD7jHQEG5PLeYKLAozNXtylp66vpDH8MEAcakHqA8WNNNJnW2cBv+dj5EeYMrGV3uuy6a/
-	Q4UQ3WGb4P479drk+MZQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
+	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=VBUlzJ33tbQ9c5ZRHml5wrhrQaN91aW5+KZRYXq+kXw=; b=tg0TeprQQgMdoz
+	BxOXKg+Ha/egKLFm8nWoP3iVdKLb4hQHz1KQRoj3GB/sK7GOQnihCmkoRMI5d0u5neIidaH1ZyJKa
+	iWxTSzQnuVD0F/q4dDP895koyb76ZF5+KLdQ+FUx3p1iJIGu0o+WJsPEanlU8SNabiQEg3ataQqgP
+	paXlb7a6KyvCaS3If/grt+C+NgcUrmMmBEwZlBiE859KBlhLb1gjg5c4N2QtazoFeRh2d8+/M6sD6
+	2Yjgxs5dL8r6lGdYVqddJDvaexLswcdnd0K0esK6/UP1vthFamwLHQ7ByZCQVV9zAwVf27S9tqvts
+	HAuhURl6HDDjl8TYTwUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJHBe-0005ys-Lh; Sat, 12 Oct 2019 13:11:58 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iJHsX-0003SP-IQ; Sat, 12 Oct 2019 13:56:17 +0000
+Received: from mout.web.de ([212.227.15.4])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJHBW-0005yM-6t
- for linux-arm-kernel@lists.infradead.org; Sat, 12 Oct 2019 13:11:52 +0000
-Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
- [82.4.196.95])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8E1672089F;
- Sat, 12 Oct 2019 13:11:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570885909;
- bh=vxQ6+Huqy7s8tkwv15FgAN1DovHArYHwFrN1EBWWBHM=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=UfX6az3c8nQT7u2yP1xjFwsqKhfDqG9HLxv2yGh2Fa0YqPh72YtPjSIEQ3AanAE8K
- 9DoAfoBYkTUjfOdUxVLbGOVkqsbNmZXwaSXYlvlYJyUR/UJMtzRni775BIR/mYHB/A
- n4mPl7I/e81qcGoIOIHMEMK0V7M7QBk2TFFHc/6c=
-Date: Sat, 12 Oct 2019 14:11:44 +0100
-From: Jonathan Cameron <jic23@kernel.org>
-To: Fabrice Gasnier <fabrice.gasnier@st.com>
-Subject: Re: [PATCH] iio: dac: stm32: add power management support
-Message-ID: <20191012141144.665f4a50@archlinux>
-In-Reply-To: <1570628918-23474-1-git-send-email-fabrice.gasnier@st.com>
-References: <1570628918-23474-1-git-send-email-fabrice.gasnier@st.com>
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1iJHsJ-0003RZ-1z; Sat, 12 Oct 2019 13:56:04 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
+ s=dbaedf251592; t=1570888555;
+ bh=YdsuZrSP+jJJMluIACwENlwHKGfUwYpdRS9znBsqOH8=;
+ h=X-UI-Sender-Class:To:From:Subject:Cc:Date;
+ b=UerOCV7unbMXupz5/JZ7ZHjLBGOSySWDAstzIbEciWvdUk45/iifgUfy2VQizQiUN
+ VSifMEWLXQnOoFpVv3rtGt35qOdYI4T9gb/rXn5Y5dkNhR/ZyyV7ps1ewXq9pPIgFm
+ cWmjB4R1F4CIiob1+5FmhSesFt0CP4T9VjP8TMhQ=
+X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
+Received: from [192.168.1.2] ([93.132.155.250]) by smtp.web.de (mrweb001
+ [213.165.67.108]) with ESMTPSA (Nemesis) id 0Lsy7e-1hvSLo3MNO-012bFA; Sat, 12
+ Oct 2019 15:55:54 +0200
+To: linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, =?UTF-8?Q?Heiko_St=c3=bcbner?=
+ <heiko@sntech.de>, Michael Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>
+From: Markus Elfring <Markus.Elfring@web.de>
+Subject: clk: rockchip: Checking a kmemdup() call in
+ rockchip_clk_register_pll()
+Autocrypt: addr=Markus.Elfring@web.de; prefer-encrypt=mutual; keydata=
+ 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 FEE=
+Message-ID: <e96505a8-b554-f61e-3940-0b9e9c7850ff@web.de>
+Date: Sat, 12 Oct 2019 15:55:44 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.1
 MIME-Version: 1.0
+Content-Language: en-US
+X-Provags-ID: V03:K1:lfuKZ77lF7iOIkLERuu8Fipch5A0vXrXLcCnxR+nhPRJzXd1O5n
+ LxtG8xETpSQLuwurZpMMSk18/YBSZFblP0REDBZ1L8B8W+J1enbIClSuRXZM2U636EPlAdU
+ S3YQIZEHCfo17jED1mBt9bw8l4iqtJbPm5M/y1b/ZwljtvrU9fXxrTkWfVmPiKECb279KRI
+ 4ooFcnZez1ZBL+Ob666AQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:pQ0RpfS4Wdw=:uaTSn9e6mWPRfwImIcKNNn
+ gbKBjD+IcCl0LnR+GI7YbPxI9NHXx2bC3TJZBIOoyS5GzmoBlMO//dYkNo2uLZXnUjH200Jpt
+ 8zERy+C+52/xfGQ3X4d4fNqX5ajvNqqsg2K+C5hzZucy1Nev3vKwFOszsefvn0NPqvwqmpDTX
+ Rx1BfUG0cWG+8phexbs2k79CrpUXXsONZ2BVo/EMlto3a4ShKDN+XCCGbg7sViK9yXbF0L8dI
+ 149SfMdzlDEOHol+dP9+Mybwzb7zghMlvp5uM7bOaOds0NpXcvgKJkU4ZpX45qZg9+bNTRXMV
+ eaJXLuO3y3BWuWPVcoVQOPfL7ofA/WkioRgI7FAQMVDmgjhgx6Ca3oJVAZtxizEWL3jFYxoY+
+ XSRx+41uAh7MWnRcmSLrn1vcPuC4jZDYpr2OPMt5Lpbk8YNkLlAqCbPvM/P/A3GRmlG3wT31I
+ fFIWjRJkQlq7BOgEsXEtiutjoS7l1z4pIz9w0bP9VmdzRseH8X9bBecWfTnJ8cTwKrvPqixHr
+ UMwf7NxUmPxqlrW3m20aU6iLz7S4iDm+gvU2ODtQ8hAoRj5izjE5yqVOrGobrbYJ9ihoQlvYB
+ SV6Eqys8nJJ/Hp5E45wco1FZd6ag3U47owsGUgw2OtvC6et+X2vGy8o4z6daIxLvviQE4PVxB
+ 1i0vRfAjrBDKGQu7U4g4tT5eMoK9b+qKSVW+gw8nu9byLJ1zS3ylLB9Pj5U8f8YCmeSACyGGO
+ aJQ+J88lB0Ds325YCHmASepaOrdrZ49Y2knScabV8LxY+TBYPSoTASpTeaQxKFCpu3aVOBcVW
+ vnkDZh57/z6H3MBE/B4oNwRbtzg0cd0guB1KjdEx2zKI5Kf4iwr6apo+tuor6n/swAmhY1Mtc
+ wZFz1xYsLwM69g89dS48Ovy1CK6xDuBBr/uUDVNlV3LDqYL2DtY4R0wUF1zDym3PAB5PmyRrC
+ HKadU2KCVlpaSklYdrTdRKKt2tHNAyir0sX5e046sSwVIZFbijkerbEOf641xVdjijCbW1VAY
+ AouQ4cZ5de/BHvsRfVPQ/JN1IE5dPXFNJO0OiFm/gZ/1U6zvm9LyUaz6j2oWpG1gl3WPPPgjB
+ Y2c4halA+RbF8KESIRFoRe0+8bzeWI8RqCVbHw95cw4HHF4N7SQrUCq0/E8VzmdCSKhe7S78V
+ Ci0ZHZ3WHYbXhNmEHwAC/fyEVigjVGvbpI1HqlS0XMM7Xby6upoc1+wk7xlFsuPQ3ugnAdNyB
+ zZhdSqycu8dIa4Ue408mD2tIttdm7Uai71Zpu9lZyiU4MRA4VQ9KwZ0pM4Vs=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191012_061150_291654_40F4408D 
-X-CRM114-Status: GOOD (  21.83  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191012_065603_432645_7B454079 
+X-CRM114-Status: UNSURE (   6.17  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (markus.elfring[at]web.de)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -64,7 +133,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,427 +144,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: lars@metafoo.de, alexandre.torgue@st.com, linux-iio@vger.kernel.org,
- pmeerw@pmeerw.net, linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
- knaack.h@gmx.de, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: kernel-janitors@vger.kernel.org, Aditya Pakki <pakki001@umn.edu>,
+ Kangjie Lu <kjlu@umn.edu>, LKML <linux-kernel@vger.kernel.org>,
+ Navid Emamdoost <emamd001@umn.edu>, Stephen McCamant <smccaman@umn.edu>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 9 Oct 2019 15:48:38 +0200
-Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
-
-> Add support for runtime PM & sleep.
-> Provide pclk to regmap as registers access doesn't need full power
-> (e.g. regulator). Always restore HFSEL when resuming. It may get lost
-> depending on low power level that has been achieved.
-> 
-> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
-I'm far from an expert on this stuff, but seems correct to me.
-
-Applied to the togreg branch of iio.git and pushed out as testing for
-the autobuilders to poke at it.
-
-Thanks,
-
-Jonathan
-
-> ---
->  drivers/iio/dac/stm32-dac-core.c | 138 ++++++++++++++++++++++++++++++---------
->  drivers/iio/dac/stm32-dac.c      |  94 +++++++++++++++++++++++++-
->  2 files changed, 199 insertions(+), 33 deletions(-)
-> 
-> diff --git a/drivers/iio/dac/stm32-dac-core.c b/drivers/iio/dac/stm32-dac-core.c
-> index d0fb312..9e6b4cd 100644
-> --- a/drivers/iio/dac/stm32-dac-core.c
-> +++ b/drivers/iio/dac/stm32-dac-core.c
-> @@ -11,6 +11,7 @@
->  #include <linux/delay.h>
->  #include <linux/module.h>
->  #include <linux/of_platform.h>
-> +#include <linux/pm_runtime.h>
->  #include <linux/regulator/consumer.h>
->  #include <linux/reset.h>
->  
-> @@ -50,6 +51,41 @@ static const struct regmap_config stm32_dac_regmap_cfg = {
->  	.max_register = 0x3fc,
->  };
->  
-> +static int stm32_dac_core_hw_start(struct device *dev)
-> +{
-> +	struct stm32_dac_common *common = dev_get_drvdata(dev);
-> +	struct stm32_dac_priv *priv = to_stm32_dac_priv(common);
-> +	int ret;
-> +
-> +	ret = regulator_enable(priv->vref);
-> +	if (ret < 0) {
-> +		dev_err(dev, "vref enable failed: %d\n", ret);
-> +		return ret;
-> +	}
-> +
-> +	ret = clk_prepare_enable(priv->pclk);
-> +	if (ret < 0) {
-> +		dev_err(dev, "pclk enable failed: %d\n", ret);
-> +		goto err_regulator_disable;
-> +	}
-> +
-> +	return 0;
-> +
-> +err_regulator_disable:
-> +	regulator_disable(priv->vref);
-> +
-> +	return ret;
-> +}
-> +
-> +static void stm32_dac_core_hw_stop(struct device *dev)
-> +{
-> +	struct stm32_dac_common *common = dev_get_drvdata(dev);
-> +	struct stm32_dac_priv *priv = to_stm32_dac_priv(common);
-> +
-> +	clk_disable_unprepare(priv->pclk);
-> +	regulator_disable(priv->vref);
-> +}
-> +
->  static int stm32_dac_probe(struct platform_device *pdev)
->  {
->  	struct device *dev = &pdev->dev;
-> @@ -66,6 +102,8 @@ static int stm32_dac_probe(struct platform_device *pdev)
->  	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
->  	if (!priv)
->  		return -ENOMEM;
-> +	platform_set_drvdata(pdev, &priv->common);
-> +
->  	cfg = (const struct stm32_dac_cfg *)
->  		of_match_device(dev->driver->of_match_table, dev)->data;
->  
-> @@ -74,11 +112,19 @@ static int stm32_dac_probe(struct platform_device *pdev)
->  	if (IS_ERR(mmio))
->  		return PTR_ERR(mmio);
->  
-> -	regmap = devm_regmap_init_mmio(dev, mmio, &stm32_dac_regmap_cfg);
-> +	regmap = devm_regmap_init_mmio_clk(dev, "pclk", mmio,
-> +					   &stm32_dac_regmap_cfg);
->  	if (IS_ERR(regmap))
->  		return PTR_ERR(regmap);
->  	priv->common.regmap = regmap;
->  
-> +	priv->pclk = devm_clk_get(dev, "pclk");
-> +	if (IS_ERR(priv->pclk)) {
-> +		ret = PTR_ERR(priv->pclk);
-> +		dev_err(dev, "pclk get failed\n");
-> +		return ret;
-> +	}
-> +
->  	priv->vref = devm_regulator_get(dev, "vref");
->  	if (IS_ERR(priv->vref)) {
->  		ret = PTR_ERR(priv->vref);
-> @@ -86,33 +132,22 @@ static int stm32_dac_probe(struct platform_device *pdev)
->  		return ret;
->  	}
->  
-> -	ret = regulator_enable(priv->vref);
-> -	if (ret < 0) {
-> -		dev_err(dev, "vref enable failed\n");
-> -		return ret;
-> -	}
-> +	pm_runtime_get_noresume(dev);
-> +	pm_runtime_set_active(dev);
-> +	pm_runtime_enable(dev);
-> +
-> +	ret = stm32_dac_core_hw_start(dev);
-> +	if (ret)
-> +		goto err_pm_stop;
->  
->  	ret = regulator_get_voltage(priv->vref);
->  	if (ret < 0) {
->  		dev_err(dev, "vref get voltage failed, %d\n", ret);
-> -		goto err_vref;
-> +		goto err_hw_stop;
->  	}
->  	priv->common.vref_mv = ret / 1000;
->  	dev_dbg(dev, "vref+=%dmV\n", priv->common.vref_mv);
->  
-> -	priv->pclk = devm_clk_get(dev, "pclk");
-> -	if (IS_ERR(priv->pclk)) {
-> -		ret = PTR_ERR(priv->pclk);
-> -		dev_err(dev, "pclk get failed\n");
-> -		goto err_vref;
-> -	}
-> -
-> -	ret = clk_prepare_enable(priv->pclk);
-> -	if (ret < 0) {
-> -		dev_err(dev, "pclk enable failed\n");
-> -		goto err_vref;
-> -	}
-> -
->  	priv->rst = devm_reset_control_get_exclusive(dev, NULL);
->  	if (!IS_ERR(priv->rst)) {
->  		reset_control_assert(priv->rst);
-> @@ -128,39 +163,79 @@ static int stm32_dac_probe(struct platform_device *pdev)
->  					 priv->common.hfsel ?
->  					 STM32H7_DAC_CR_HFSEL : 0);
->  		if (ret)
-> -			goto err_pclk;
-> +			goto err_hw_stop;
->  	}
->  
-> -	platform_set_drvdata(pdev, &priv->common);
->  
->  	ret = of_platform_populate(pdev->dev.of_node, NULL, NULL, dev);
->  	if (ret < 0) {
->  		dev_err(dev, "failed to populate DT children\n");
-> -		goto err_pclk;
-> +		goto err_hw_stop;
->  	}
->  
-> +	pm_runtime_put(dev);
-> +
->  	return 0;
->  
-> -err_pclk:
-> -	clk_disable_unprepare(priv->pclk);
-> -err_vref:
-> -	regulator_disable(priv->vref);
-> +err_hw_stop:
-> +	stm32_dac_core_hw_stop(dev);
-> +err_pm_stop:
-> +	pm_runtime_disable(dev);
-> +	pm_runtime_set_suspended(dev);
-> +	pm_runtime_put_noidle(dev);
->  
->  	return ret;
->  }
->  
->  static int stm32_dac_remove(struct platform_device *pdev)
->  {
-> -	struct stm32_dac_common *common = platform_get_drvdata(pdev);
-> +	pm_runtime_get_sync(&pdev->dev);
-> +	of_platform_depopulate(&pdev->dev);
-> +	stm32_dac_core_hw_stop(&pdev->dev);
-> +	pm_runtime_disable(&pdev->dev);
-> +	pm_runtime_set_suspended(&pdev->dev);
-> +	pm_runtime_put_noidle(&pdev->dev);
-> +
-> +	return 0;
-> +}
-> +
-> +static int __maybe_unused stm32_dac_core_resume(struct device *dev)
-> +{
-> +	struct stm32_dac_common *common = dev_get_drvdata(dev);
->  	struct stm32_dac_priv *priv = to_stm32_dac_priv(common);
-> +	int ret;
->  
-> -	of_platform_depopulate(&pdev->dev);
-> -	clk_disable_unprepare(priv->pclk);
-> -	regulator_disable(priv->vref);
-> +	if (priv->common.hfsel) {
-> +		/* restore hfsel (maybe lost under low power state) */
-> +		ret = regmap_update_bits(priv->common.regmap, STM32_DAC_CR,
-> +					 STM32H7_DAC_CR_HFSEL,
-> +					 STM32H7_DAC_CR_HFSEL);
-> +		if (ret)
-> +			return ret;
-> +	}
-> +
-> +	return pm_runtime_force_resume(dev);
-> +}
-> +
-> +static int __maybe_unused stm32_dac_core_runtime_suspend(struct device *dev)
-> +{
-> +	stm32_dac_core_hw_stop(dev);
->  
->  	return 0;
->  }
->  
-> +static int __maybe_unused stm32_dac_core_runtime_resume(struct device *dev)
-> +{
-> +	return stm32_dac_core_hw_start(dev);
-> +}
-> +
-> +static const struct dev_pm_ops stm32_dac_core_pm_ops = {
-> +	SET_SYSTEM_SLEEP_PM_OPS(pm_runtime_force_suspend, stm32_dac_core_resume)
-> +	SET_RUNTIME_PM_OPS(stm32_dac_core_runtime_suspend,
-> +			   stm32_dac_core_runtime_resume,
-> +			   NULL)
-> +};
-> +
->  static const struct stm32_dac_cfg stm32h7_dac_cfg = {
->  	.has_hfsel = true,
->  };
-> @@ -182,6 +257,7 @@ static struct platform_driver stm32_dac_driver = {
->  	.driver = {
->  		.name = "stm32-dac-core",
->  		.of_match_table = stm32_dac_of_match,
-> +		.pm = &stm32_dac_core_pm_ops,
->  	},
->  };
->  module_platform_driver(stm32_dac_driver);
-> diff --git a/drivers/iio/dac/stm32-dac.c b/drivers/iio/dac/stm32-dac.c
-> index cce26a3..f22c1d9 100644
-> --- a/drivers/iio/dac/stm32-dac.c
-> +++ b/drivers/iio/dac/stm32-dac.c
-> @@ -13,6 +13,7 @@
->  #include <linux/kernel.h>
->  #include <linux/module.h>
->  #include <linux/platform_device.h>
-> +#include <linux/pm_runtime.h>
->  
->  #include "stm32-dac-core.h"
->  
-> @@ -20,6 +21,8 @@
->  #define STM32_DAC_CHANNEL_2		2
->  #define STM32_DAC_IS_CHAN_1(ch)		((ch) & STM32_DAC_CHANNEL_1)
->  
-> +#define STM32_DAC_AUTO_SUSPEND_DELAY_MS	2000
-> +
->  /**
->   * struct stm32_dac - private data of DAC driver
->   * @common:		reference to DAC common data
-> @@ -49,15 +52,34 @@ static int stm32_dac_set_enable_state(struct iio_dev *indio_dev, int ch,
->  				      bool enable)
->  {
->  	struct stm32_dac *dac = iio_priv(indio_dev);
-> +	struct device *dev = indio_dev->dev.parent;
->  	u32 msk = STM32_DAC_IS_CHAN_1(ch) ? STM32_DAC_CR_EN1 : STM32_DAC_CR_EN2;
->  	u32 en = enable ? msk : 0;
->  	int ret;
->  
-> +	/* already enabled / disabled ? */
-> +	mutex_lock(&indio_dev->mlock);
-> +	ret = stm32_dac_is_enabled(indio_dev, ch);
-> +	if (ret < 0 || enable == !!ret) {
-> +		mutex_unlock(&indio_dev->mlock);
-> +		return ret < 0 ? ret : 0;
-> +	}
-> +
-> +	if (enable) {
-> +		ret = pm_runtime_get_sync(dev);
-> +		if (ret < 0) {
-> +			pm_runtime_put_noidle(dev);
-> +			mutex_unlock(&indio_dev->mlock);
-> +			return ret;
-> +		}
-> +	}
-> +
->  	ret = regmap_update_bits(dac->common->regmap, STM32_DAC_CR, msk, en);
-> +	mutex_unlock(&indio_dev->mlock);
->  	if (ret < 0) {
->  		dev_err(&indio_dev->dev, "%s failed\n", en ?
->  			"Enable" : "Disable");
-> -		return ret;
-> +		goto err_put_pm;
->  	}
->  
->  	/*
-> @@ -68,7 +90,20 @@ static int stm32_dac_set_enable_state(struct iio_dev *indio_dev, int ch,
->  	if (en && dac->common->hfsel)
->  		udelay(1);
->  
-> +	if (!enable) {
-> +		pm_runtime_mark_last_busy(dev);
-> +		pm_runtime_put_autosuspend(dev);
-> +	}
-> +
->  	return 0;
-> +
-> +err_put_pm:
-> +	if (enable) {
-> +		pm_runtime_mark_last_busy(dev);
-> +		pm_runtime_put_autosuspend(dev);
-> +	}
-> +
-> +	return ret;
->  }
->  
->  static int stm32_dac_get_value(struct stm32_dac *dac, int channel, int *val)
-> @@ -272,6 +307,7 @@ static int stm32_dac_chan_of_init(struct iio_dev *indio_dev)
->  static int stm32_dac_probe(struct platform_device *pdev)
->  {
->  	struct device_node *np = pdev->dev.of_node;
-> +	struct device *dev = &pdev->dev;
->  	struct iio_dev *indio_dev;
->  	struct stm32_dac *dac;
->  	int ret;
-> @@ -296,9 +332,61 @@ static int stm32_dac_probe(struct platform_device *pdev)
->  	if (ret < 0)
->  		return ret;
->  
-> -	return devm_iio_device_register(&pdev->dev, indio_dev);
-> +	/* Get stm32-dac-core PM online */
-> +	pm_runtime_get_noresume(dev);
-> +	pm_runtime_set_active(dev);
-> +	pm_runtime_set_autosuspend_delay(dev, STM32_DAC_AUTO_SUSPEND_DELAY_MS);
-> +	pm_runtime_use_autosuspend(dev);
-> +	pm_runtime_enable(dev);
-> +
-> +	ret = iio_device_register(indio_dev);
-> +	if (ret)
-> +		goto err_pm_put;
-> +
-> +	pm_runtime_mark_last_busy(dev);
-> +	pm_runtime_put_autosuspend(dev);
-> +
-> +	return 0;
-> +
-> +err_pm_put:
-> +	pm_runtime_disable(dev);
-> +	pm_runtime_set_suspended(dev);
-> +	pm_runtime_put_noidle(dev);
-> +
-> +	return ret;
->  }
->  
-> +static int stm32_dac_remove(struct platform_device *pdev)
-> +{
-> +	struct iio_dev *indio_dev = platform_get_drvdata(pdev);
-> +
-> +	pm_runtime_get_sync(&pdev->dev);
-> +	iio_device_unregister(indio_dev);
-> +	pm_runtime_disable(&pdev->dev);
-> +	pm_runtime_set_suspended(&pdev->dev);
-> +	pm_runtime_put_noidle(&pdev->dev);
-> +
-> +	return 0;
-> +}
-> +
-> +static int __maybe_unused stm32_dac_suspend(struct device *dev)
-> +{
-> +	struct iio_dev *indio_dev = dev_get_drvdata(dev);
-> +	int channel = indio_dev->channels[0].channel;
-> +	int ret;
-> +
-> +	/* Ensure DAC is disabled before suspend */
-> +	ret = stm32_dac_is_enabled(indio_dev, channel);
-> +	if (ret)
-> +		return ret < 0 ? ret : -EBUSY;
-> +
-> +	return pm_runtime_force_suspend(dev);
-> +}
-> +
-> +static const struct dev_pm_ops stm32_dac_pm_ops = {
-> +	SET_SYSTEM_SLEEP_PM_OPS(stm32_dac_suspend, pm_runtime_force_resume)
-> +};
-> +
->  static const struct of_device_id stm32_dac_of_match[] = {
->  	{ .compatible = "st,stm32-dac", },
->  	{},
-> @@ -307,9 +395,11 @@ MODULE_DEVICE_TABLE(of, stm32_dac_of_match);
->  
->  static struct platform_driver stm32_dac_driver = {
->  	.probe = stm32_dac_probe,
-> +	.remove = stm32_dac_remove,
->  	.driver = {
->  		.name = "stm32-dac",
->  		.of_match_table = stm32_dac_of_match,
-> +		.pm = &stm32_dac_pm_ops,
->  	},
->  };
->  module_platform_driver(stm32_dac_driver);
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGVsbG8sCgpJIHRyaWVkIGFub3RoZXIgc2NyaXB0IGZvciB0aGUgc2VtYW50aWMgcGF0Y2ggbGFu
+Z3VhZ2Ugb3V0LgpUaGlzIHNvdXJjZSBjb2RlIGFuYWx5c2lzIGFwcHJvYWNoIHBvaW50cyBvdXQg
+dGhhdCB0aGUgaW1wbGVtZW50YXRpb24Kb2YgdGhlIGZ1bmN0aW9uIOKAnHJvY2tjaGlwX2Nsa19y
+ZWdpc3Rlcl9wbGzigJ0gY29udGFpbnMgYWxzbyBhIGNhbGwKb2YgdGhlIGZ1bmN0aW9uIOKAnGtt
+ZW1kdXDigJ0uCmh0dHBzOi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0
+L3RvcnZhbGRzL2xpbnV4LmdpdC90cmVlL2RyaXZlcnMvY2xrL3JvY2tjaGlwL2Nsay1wbGwuYz9p
+ZD0xYzBjYzVmMWFlNWVlNWE2OTEzNzA0YzBkNzVhNmU5OTYwNGVlMzBhI245MTMKaHR0cHM6Ly9l
+bGl4aXIuYm9vdGxpbi5jb20vbGludXgvdjUuNC1yYzIvc291cmNlL2RyaXZlcnMvY2xrL3JvY2tj
+aGlwL2Nsay1wbGwuYyNMOTEzCgoqIERvIHlvdSBmaW5kIHRoZSB1c2FnZSBvZiB0aGUgZm9ybWF0
+IHN0cmluZyDigJwlczogY291bGQgbm90IGFsbG9jYXRlCiAgcmF0ZSB0YWJsZSBmb3IgJXNcbuKA
+nSBzdGlsbCBhcHByb3ByaWF0ZSBhdCB0aGlzIHBsYWNlPwoKKiBJcyB0aGVyZSBhIG5lZWQgdG8g
+YWRqdXN0IHRoZSBlcnJvciBoYW5kbGluZyBoZXJlPwoKUmVnYXJkcywKTWFya3VzCgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
+IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
