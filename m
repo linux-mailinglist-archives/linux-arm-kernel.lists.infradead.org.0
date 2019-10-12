@@ -2,61 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AAA23D4CB8
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 06:16:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 444F4D4CBF
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 12 Oct 2019 06:19:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=tRrgBYvp+mSspNVz5ByhuxttwgCCsD7877itlaek/Tg=; b=iz0z9t1nHfBDzeU6agaaoMvy5
-	6iK0XckBug/Rdf2vJdHOQSwmYh78Ars/22iW8V0c1lmvr87s5YspMI4yXFqpBZttrDEoQg6C+5Ia8
-	ByF6IvcbhtXXrjXDRQUmLHhBi3W29V1GSVcZySBqalXlEeMaAAXFXm2Y08VDWWkuHB8xgOlI0VrfD
-	lF7B5dE8+B7i+YRQAjjYiINvEME7QlnWvqlMyi7wIdiL3zpb3YMzt4DeC+9UwZ4aHuBWOr7visrPZ
-	0w/H5SGABsHoAv2Q3IpmRlT4eQkwpp42+yO8CnB6+e2+63K1LjrqpEFEHOuAgdmX8LdXeuYiTHi43
-	xKNcP6Mbw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+fiNp+ZmYPcvuPSKavL/twf1HUVUGGw54kmTXe+/B9Y=; b=mLRwLGJqxjrC9L
+	i6Cm5irMVM49bCQV7dcprZ2MQHC7RBJewlPkfFXmBURLMNBFPHY9zFdm7lRVF4l7prdhTy7rBIuQh
+	3cjgZAQCO9AnQ7duMk8ZnuDDkyRuJoKjvIDcVPO6JY6e8+AeBTLcaH9tZV34BKPHa/5Oqmz9xP7IB
+	zKQtKnwOA4xxS/rhrd5vgvL7eIy9XFKCw5THxl6q+p8V9ourqeqZm0/kEmiRduoRDYYKjI7UgszXK
+	0iniwWeBILVhmlqtg8ea4tMitFSEyAWouQ14B/AaENSWaTXKdHXq/EeE/6pK8ffH8zVA419tGUB82
+	zbU0Zj6w0y3AdHhaSW3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJ8pN-0000c5-Ek; Sat, 12 Oct 2019 04:16:25 +0000
-Received: from mx2a.mailbox.org ([80.241.60.219])
+	id 1iJ8s1-0000vn-WB; Sat, 12 Oct 2019 04:19:10 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJ8pB-0000as-Uo
- for linux-arm-kernel@lists.infradead.org; Sat, 12 Oct 2019 04:16:16 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:1:0])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mx2a.mailbox.org (Postfix) with ESMTPS id A095FA18A9;
- Sat, 12 Oct 2019 06:16:08 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
- by gerste.heinlein-support.de (gerste.heinlein-support.de [91.198.250.173])
- (amavisd-new, port 10030)
- with ESMTP id XP4SfIU7eOyJ; Sat, 12 Oct 2019 06:16:03 +0200 (CEST)
-Date: Sat, 12 Oct 2019 15:15:41 +1100
-From: Aleksa Sarai <cyphar@cyphar.com>
-To: Linus Torvalds <torvalds@linux-foundation.org>
-Subject: Re: [PATCH v14 2/6] namei: LOOKUP_IN_ROOT: chroot-like path resolution
-Message-ID: <20191012041541.milbmfbjpj5bcl5a@yavin.dot.cyphar.com>
-References: <20191010054140.8483-1-cyphar@cyphar.com>
- <20191010054140.8483-3-cyphar@cyphar.com>
- <CAHk-=wh8L50f31vW8BwRUXhLiq3eoCQ3tg8ER4Yp2dzuU1w5rQ@mail.gmail.com>
- <20191012040815.gnc43cfmo5mnv67u@yavin.dot.cyphar.com>
+ id 1iJ8rs-0000vV-Qu
+ for linux-arm-kernel@lists.infradead.org; Sat, 12 Oct 2019 04:19:02 +0000
+Received: by mail-pg1-x544.google.com with SMTP id p30so6906851pgl.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 11 Oct 2019 21:19:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Biq3dW4bW0477lomZDFZTi490SFYFw1BtO4yj510/vM=;
+ b=r4RIe8BNwJ0mRu0383jbVNv+Pew63+jHslfI95XxABq09NjQfA2VbtjGuA/gXOLAQl
+ HZetYhW/n8CUHfMwH+Y/FRz0K1JSfvFnABT3Ywkd2sDXc97PjH/UNuAVYbf7TQ7Vw/+C
+ nDzAyJqC2ovtyVsY9x9bWkGB57LysASSXRfqls9P+Xs+CwKeCOCvAIkMhtdwb8dc2csx
+ RaQ/2BfeD5ZLEhTvJyyVcMc62wuRuAHNtxzSWPhLn3emvnNagm/59SAH8BfJGCsgei6h
+ KPjHK6QiSX2LhCf7rkvGvgxYHV6TDPoeFBIDb39q6g3YEv+9ZdsqQ474ZBj0zpWCjXo0
+ vI+g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Biq3dW4bW0477lomZDFZTi490SFYFw1BtO4yj510/vM=;
+ b=acVDnarr23VSWgSmRiZ6Ie33QS9D2zWKcNsAO2cmzHGA5cgjCIumtERFjJ7eG2qNBx
+ XMpbBldgypKPyMJJPuDbi9SkBfM1hk0deyfewlj+52HnE1uiMkGM/EIsQ4TpEoWZtIXA
+ 8XgUTtiEf3ZHnhKNSFFYGJs/iy/VR8wNs1CjS5NRqeZHf0comPfniAxs2YRg4NB9eRUm
+ z0eKNXOogiW2loj5e/WCcHMStome/IfOin4dFMeCPxyuw1TAKTk2enb0BWGdKJtJofxd
+ QUV3oe+EeIcKsMn5g8ddbD/3+a0u3YEx93y3NsIDmy4OsAhOXTBdQH25iqh9MVGND4zN
+ 1GJA==
+X-Gm-Message-State: APjAAAWVRuSv/5NeDg8hdvhxVsQfdcu+KynvD8EHBmKe4o+JUY2shnHp
+ 53+4gkB5jSke7jsgErwY1ReYXg==
+X-Google-Smtp-Source: APXvYqyVEDPBqKwv5CKlG8eF2KQdfnZBkXGmGTJfcvzir7jHGT9V5OIUDE2xY5S2OQRADy06KWyO9Q==
+X-Received: by 2002:a62:8305:: with SMTP id h5mr19838213pfe.190.1570853939670; 
+ Fri, 11 Oct 2019 21:18:59 -0700 (PDT)
+Received: from localhost.localdomain
+ (104-188-17-28.lightspeed.sndgca.sbcglobal.net. [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id u9sm11142953pfl.138.2019.10.11.21.18.58
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 11 Oct 2019 21:18:58 -0700 (PDT)
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Olof Johansson <olof@lixom.net>, Maxime Ripard <mripard@kernel.org>,
+ Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <Anson.Huang@nxp.com>,
+ Jagan Teki <jagan@amarulasolutions.com>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ Dinh Nguyen <dinguyen@kernel.org>,
+ Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>
+Subject: [PATCH] arm64: defconfig: Enable Qualcomm SPI and QSPI controller
+Date: Fri, 11 Oct 2019 21:18:55 -0700
+Message-Id: <20191012041855.511313-1-bjorn.andersson@linaro.org>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-In-Reply-To: <20191012040815.gnc43cfmo5mnv67u@yavin.dot.cyphar.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_211614_298957_960E5BCF 
-X-CRM114-Status: GOOD (  29.68  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191011_211900_935834_3E002240 
+X-CRM114-Status: UNSURE (   9.20  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [80.241.60.219 listed in list.dnswl.org]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,179 +104,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, Linux-sh list <linux-sh@vger.kernel.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Alexei Starovoitov <ast@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- David Howells <dhowells@redhat.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- sparclinux@vger.kernel.org, Jiri Olsa <jolsa@redhat.com>,
- linux-arch <linux-arch@vger.kernel.org>,
- linux-s390 <linux-s390@vger.kernel.org>, Tycho Andersen <tycho@tycho.ws>,
- Aleksa Sarai <asarai@suse.de>, Shuah Khan <shuah@kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-mips@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
- linux-m68k <linux-m68k@lists.linux-m68k.org>,
- Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
- Shuah Khan <skhan@linuxfoundation.org>, Namhyung Kim <namhyung@kernel.org>,
- David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
- "J. Bruce Fields" <bfields@fieldses.org>,
- GNU C Library <libc-alpha@sourceware.org>, linux-parisc@vger.kernel.org,
- Linux API <linux-api@vger.kernel.org>, Chanho Min <chanho.min@lge.com>,
- Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
- Eric Biederman <ebiederm@xmission.com>, alpha <linux-alpha@vger.kernel.org>,
- linux-fsdevel <linux-fsdevel@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- Linux Containers <containers@lists.linux-foundation.org>
-Content-Type: multipart/mixed; boundary="===============0631774035370456507=="
+Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Enable the drivers for GENI SPI and QSPI controllers found on the
+Qualcomm SDM845 platform, among others.
 
---===============0631774035370456507==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="2tj3n7ljtot3r57d"
-Content-Disposition: inline
+Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+---
+ arch/arm64/configs/defconfig | 2 ++
+ 1 file changed, 2 insertions(+)
 
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index 688c8f200034..dcada299ff4d 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -391,7 +391,9 @@ CONFIG_SPI_MESON_SPIFC=m
+ CONFIG_SPI_ORION=y
+ CONFIG_SPI_PL022=y
+ CONFIG_SPI_ROCKCHIP=y
++CONFIG_SPI_QCOM_QSPI=m
+ CONFIG_SPI_QUP=y
++CONFIG_SPI_QCOM_GENI=m
+ CONFIG_SPI_S3C64XX=y
+ CONFIG_SPI_SPIDEV=m
+ CONFIG_SPI_SUN6I=y
+-- 
+2.23.0
 
---2tj3n7ljtot3r57d
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On 2019-10-12, Aleksa Sarai <cyphar@cyphar.com> wrote:
-> On 2019-10-10, Linus Torvalds <torvalds@linux-foundation.org> wrote:
-> > On Wed, Oct 9, 2019 at 10:42 PM Aleksa Sarai <cyphar@cyphar.com> wrote:
-> > >
-> > > --- a/fs/namei.c
-> > > +++ b/fs/namei.c
-> > > @@ -2277,6 +2277,11 @@ static const char *path_init(struct nameidata =
-*nd, unsigned flags)
-> > >
-> > >         nd->m_seq =3D read_seqbegin(&mount_lock);
-> > >
-> > > +       /* LOOKUP_IN_ROOT treats absolute paths as being relative-to-=
-dirfd. */
-> > > +       if (flags & LOOKUP_IN_ROOT)
-> > > +               while (*s =3D=3D '/')
-> > > +                       s++;
-> > > +
-> > >         /* Figure out the starting path and root (if needed). */
-> > >         if (*s =3D=3D '/') {
-> > >                 error =3D nd_jump_root(nd);
-> >=20
-> > Hmm. Wouldn't this make more sense all inside the if (*s =3D- '/') test?
-> > That way if would be where we check for "should we start at the root",
-> > which seems to make more sense conceptually.
->=20
-> I don't really agree (though I do think that both options are pretty
-> ugly). Doing it before the block makes it clear that absolute paths are
-> just treated relative-to-dirfd -- doing it inside the block makes it
-> look more like "/" is a special-case for nd_jump_root(). And while that
-
-Sorry, I meant "special-case for LOOKUP_IN_ROOT".
-
-> is somewhat true, this is just a side-effect of making the code more
-> clean -- my earlier versions reworked the dirfd handling to always grab
-> nd->root first if LOOKUP_IS_SCOPED. I switched to this method based on
-> Al's review.
->=20
-> In fairness, I do agree that the lonely while loop looks ugly.
-
-And with the old way I did it (where we grabbed nd->root first) the
-semantics were slightly more clear -- stripping leading "/"s doesn't
-really look as "clearly obvious" as grabbing nd->root beforehand and
-treating "/"s normally. But the code was also needlessly more complex.
-
-> > That test for '/' currently has a "} else if (..)", but that's
-> > pointless since it ends with a "return" anyway. So the "else" logic is
-> > just noise.
->=20
-> This depends on the fact that LOOKUP_BENEATH always triggers -EXDEV for
-> nd_jump_root() -- if we ever add another "scoped lookup" flag then the
-> logic will have to be further reworked.
->=20
-> (It should be noted that the new version doesn't always end with a
-> "return", but you could change it to act that way given the above
-> assumption.)
->=20
-> > And if you get rid of the unnecessary else, moving the LOOKUP_IN_ROOT
-> > inside the if-statement works fine.
-> >=20
-> > So this could be something like
-> >=20
-> >     --- a/fs/namei.c
-> >     +++ b/fs/namei.c
-> >     @@ -2194,11 +2196,19 @@ static const char *path_init(struct
-> > nameidata *nd, unsigned flags)
-> >=20
-> >         nd->m_seq =3D read_seqbegin(&mount_lock);
-> >         if (*s =3D=3D '/') {
-> >     -           set_root(nd);
-> >     -           if (likely(!nd_jump_root(nd)))
-> >     -                   return s;
-> >     -           return ERR_PTR(-ECHILD);
-> >     -   } else if (nd->dfd =3D=3D AT_FDCWD) {
-> >     +           /* LOOKUP_IN_ROOT treats absolute paths as being
-> > relative-to-dirfd. */
-> >     +           if (!(flags & LOOKUP_IN_ROOT)) {
-> >     +                   set_root(nd);
-> >     +                   if (likely(!nd_jump_root(nd)))
-> >     +                           return s;
-> >     +                   return ERR_PTR(-ECHILD);
-> >     +           }
-> >     +
-> >     +           /* Skip initial '/' for LOOKUP_IN_ROOT */
-> >     +           do { s++; } while (*s =3D=3D '/');
-> >     +   }
-> >     +
-> >     +   if (nd->dfd =3D=3D AT_FDCWD) {
-> >                 if (flags & LOOKUP_RCU) {
-> >                         struct fs_struct *fs =3D current->fs;
-> >                         unsigned seq;
-> >=20
-> > instead. The patch ends up slightly bigger (due to the re-indentation)
-> > but now it handles all the "start at root" in the same place. Doesn't
-> > that make sense?
->=20
-> It is correct (though I'd need to clean it up a bit to handle
-> nd_jump_root() correctly), and if you really would like me to change it
-> I will -- but I just don't agree that it's cleaner.
-
---=20
-Aleksa Sarai
-Senior Software Engineer (Containers)
-SUSE Linux GmbH
-<https://www.cyphar.com/>
-
---2tj3n7ljtot3r57d
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXaFTZwAKCRCdlLljIbnQ
-EsoyAQDTzuZiYFf1pW7tBymiBU+fSwe8/adLefrS9DH9oll0LQD+M2OnaEH8wDH5
-iC8HumWtmk7eUf1CcqNfwVk4mwQXYwU=
-=dEoe
------END PGP SIGNATURE-----
-
---2tj3n7ljtot3r57d--
-
-
---===============0631774035370456507==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0631774035370456507==--
-
