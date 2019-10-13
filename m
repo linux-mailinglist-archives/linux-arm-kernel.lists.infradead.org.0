@@ -2,92 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9F84D5832
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 13 Oct 2019 23:03:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C171CD5864
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 13 Oct 2019 23:50:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eHTDwQPYujjgsKmLTywOXcLUCGF1YcO2FwA1iko/ni8=; b=P4eK4tYA959en5
-	d5r9RBUxCqbZ9PUbYpo38Gd+y9Aic6hl2YOLibs8dvRiuEncYfw3MOqdnw8F3JJCmOO6z7qWCIOdf
-	/U5W8BNq564Ooq5hetO1NOlYFGesuEeOkRN4NiwQoGtJ/AcULcRN3DO59yMLLo+r5k4I8JZcWJLep
-	WF4aIKjAK/yYUGeV4nhqML+nnLollF5Im1XcKDsrHPJ+odCHDzLpXqhxwkqBT+0a4cRCHyNrD16b7
-	2ZgrG9f60bcPYxBa1vFvTRzfwQrO9ZT963M+NZ4pyG6876zHr5OYnHfYhXkC8srtcfS0rp6oMKg3v
-	INEfFg0JGY4wx7l55Qkw==;
+	List-Owner; bh=SD89rV2crMKKdocmZQ2HvkrJ5oWi53mHKCCWBqHTZ2o=; b=Ir9BE1NAct52HQ
+	h1OSwpvdb+2f8ZXLTb/X2vTmbm+fg0x/D4L1joQwECqLrRHN8An2uPM6MFq4kD+JCnfUDtMNc2ekr
+	lLqGhKwfPkwSSnopelIEa76CEloRp1l/yikcW75yukqv+Yg/MUrTOAPFGO7a1SCOHGDnCAK2PYwxX
+	DaMW7VTrtqXfQwnSe5XhmHAPuMjVY4iHCGC/WR7A14pX4i6WKxCQpqfVg+DbVkpseQt46GFojlukC
+	HSD7GwEk3cwsUu6IshSOGerb2/oAYtBzUi08e+ioP4dJTu/HAnOKRTio0Uea+IPIbMMinF6t+7ViQ
+	m3LO9lL9A1sEaEMzupFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJl10-0006pS-GD; Sun, 13 Oct 2019 21:02:58 +0000
-Received: from gate2.alliedtelesis.co.nz ([2001:df5:b000:5::4])
+	id 1iJlkl-0005xC-17; Sun, 13 Oct 2019 21:50:15 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJl0r-0006n7-LP
- for linux-arm-kernel@lists.infradead.org; Sun, 13 Oct 2019 21:02:51 +0000
-Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (Client did not present a certificate)
- by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id E94EE8011F;
- Mon, 14 Oct 2019 10:02:35 +1300 (NZDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
- s=mail181024; t=1571000555;
- bh=aTyDQx9xSa+g9n9I5ovNf7kTdG/X4cEbtfakvmWPRvI=;
- h=From:To:CC:Subject:Date:References:In-Reply-To;
- b=QCY1k3xnbMrq6iEXOGpaStm2wCIvQqooEyXNcbgzawxjRzR/+nZWoW1EVug6Sak81
- +p/IH3cOJa3lDdAbSo+ZIvDMYC2ZAQIcWHmmXyKmGkjFsEJQEEGpRCZArVKsyisa9k
- SoxiEfspKPsK0r6/uYIINh1fsoVNYl+55wxzGfYUdoJdJYAW5b8Z13AvQF+vmyzF/8
- FYCHkcTrWt2tTP6C2RdafXAZyq3vjuoZqcHYvnQ8gXFg8T9gxQ8Sdx8X2i/lE6Ot6p
- 1YpLWs0gw+wHCnaQKDrstc4YY3Mu2vqUDDDdkHHQrGEaTlcvTxyXjjnn6vYP5VhPNZ
- pALbp6svuulAw==
-Received: from svr-chch-ex1.atlnz.lc (Not Verified[10.32.16.77]) by
- mmarshal3.atlnz.lc with Trustwave SEG (v7, 5, 8, 10121)
- id <B5da390eb0000>; Mon, 14 Oct 2019 10:02:35 +1300
-Received: from svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8::77) by
- svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8::77) with Microsoft SMTP Server
- (TLS) id 15.0.1156.6; Mon, 14 Oct 2019 10:02:35 +1300
-Received: from svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8]) by
- svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8%12]) with mapi id
- 15.00.1156.000; Mon, 14 Oct 2019 10:02:35 +1300
-From: Chris Packham <Chris.Packham@alliedtelesis.co.nz>
-To: "maz@kernel.org" <maz@kernel.org>, "scott.branden@broadcom.com"
- <scott.branden@broadcom.com>, "geert@linux-m68k.org" <geert@linux-m68k.org>
-Subject: Re: [PATCH v2 2/2] pinctrl: iproc: use unique name for irq chip
-Thread-Topic: [PATCH v2 2/2] pinctrl: iproc: use unique name for irq chip
-Thread-Index: AQHVeX3zc8UV+9y5lE6TCaRj1KlYYqdN9V8AgAAMPQCAAJXSAIAJrrkA
-Date: Sun, 13 Oct 2019 21:02:34 +0000
-Message-ID: <1f29cade7a0405c33b8e76ea6a21939f6116371a.camel@alliedtelesis.co.nz>
-References: <20191003000310.17099-1-chris.packham@alliedtelesis.co.nz>
- <20191003000310.17099-3-chris.packham@alliedtelesis.co.nz>
- <CAMuHMdV7syxxtnHEcgFBrf5DLo-M_71tZFWHHQ6kTO=2A1eVhg@mail.gmail.com>
- <86blutdlap.wl-maz@kernel.org>
- <44510e8c-4e9b-603f-2c26-19db9121d68c@broadcom.com>
-In-Reply-To: <44510e8c-4e9b-603f-2c26-19db9121d68c@broadcom.com>
-Accept-Language: en-NZ, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [2001:df5:b000:22:94ca:f8ed:f039:abe3]
-Content-ID: <51B1B091E91BEC42B9FC58CC7D24ED0E@atlnz.lc>
+ id 1iJlkd-0004mK-89; Sun, 13 Oct 2019 21:50:09 +0000
+Received: from i59f7e0c5.versanet.de ([89.247.224.197] helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1iJlkV-0004sv-Rh; Sun, 13 Oct 2019 23:50:00 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: Markus Elfring <Markus.Elfring@web.de>
+Subject: Re: clk: rockchip: Checking a kmemdup() call in
+ rockchip_clk_register_pll()
+Date: Sun, 13 Oct 2019 23:49:54 +0200
+Message-ID: <2588953.0pqkEXWxhN@phil>
+In-Reply-To: <29d12079-d888-e090-da5a-c407c13d696b@web.de>
+References: <e96505a8-b554-f61e-3940-0b9e9c7850ff@web.de>
+ <5801053.xxhhKtLrcJ@diego> <29d12079-d888-e090-da5a-c407c13d696b@web.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191013_140250_222475_D6D1C709 
-X-CRM114-Status: GOOD (  23.52  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191013_145007_451589_9C994ABE 
+X-CRM114-Status: GOOD (  22.04  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,103 +57,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "sbranden@broadcom.com" <sbranden@broadcom.com>,
- "rayagonda.kokatanur@broadcom.com" <rayagonda.kokatanur@broadcom.com>,
- "rjui@broadcom.com" <rjui@broadcom.com>,
- "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
- "bcm-kernel-feedback-list@broadcom.com"
- <bcm-kernel-feedback-list@broadcom.com>,
- "li.jin@broadcom.com" <li.jin@broadcom.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Stephen Boyd <sboyd@kernel.org>, Kangjie Lu <kjlu@umn.edu>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Stephen McCamant <smccaman@umn.edu>, kernel-janitors@vger.kernel.org,
+ LKML <linux-kernel@vger.kernel.org>, linux-rockchip@lists.infradead.org,
+ Navid Emamdoost <emamd001@umn.edu>, Aditya Pakki <pakki001@umn.edu>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi LinusW, Scott, Geert, MarcZ,
-
-On Mon, 2019-10-07 at 10:10 -0700, Scott Branden wrote:
-> 
-> On 2019-10-07 1:14 a.m., Marc Zyngier wrote:
-> > On Mon, 07 Oct 2019 08:30:50 +0100,
-> > Geert Uytterhoeven <geert@linux-m68k.org> wrote:
-> > > Hi Chris,
-> > > 
-> > > CC MarcZ
-> > > 
-> > > On Thu, Oct 3, 2019 at 2:03 AM Chris Packham
-> > > <chris.packham@alliedtelesis.co.nz> wrote:
-> > > > Use the dev_name(dev) for the irqc->name so that we get unique names
-> > > > when we have multiple instances of this driver.
-> > > > 
-> > > > Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
-> > > 
-> > > A while ago, Marc Zyngier pointed out that the irq_chip .name field
-> > > should contain the device's class name, not the instance's name.
-> > > Hence the current code is correct?
-> > 
-> > Thanks Geert for looping me in. The main reasons why I oppose this
-> > kind of "let's show as much information as we can in /proc/interrupts"
-> > are:
-> > 
-> > - It clutters the output badly: the formatting of this file, which is
-> >    bad enough when you have a small number of CPUs, becomes unreadable
-> >    when you have a large number of them *and* stupidly long strings
-> >    that only make sense on a given platform.
-> > 
-> > - Like it or not, /proc is ABI. We don't change things randomly there
-> >    without a good reason, and debugging isn't one of them.
-> > 
-> > - Debug information belongs to debugfs, where we already have plenty
-> >    of stuff (see CONFIG_GENERIC_IRQ_DEBUGFS). I'd rather we improve
-> >    this infrastructure if needed, rather than add platform specific
-> >    hacks.
-> > 
-> > </rant>
-> > 
-> > Thanks,
-> > 
-> > 	M.
-> 
-> Thanks Marc/Geert.  Sounds like we should drop patch 2 from series.
-
-Sorry for not responding earlier (I was on vacation for a week). I'm
-fine with dropping this patch.
-
-> > 
-> > > See also "[PATCH 0/4] irqchip: renesas: Use proper irq_chip name and parent"
-> > > (https://lore.kernel.org/lkml/20190607095858.10028-1-geert+renesas@glider.be/)
-> > > Note that the irqchip patches in that series have been applied; the gpio
-> > > patches haven't been applied yet.
-> > > 
-> > > > --- a/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
-> > > > +++ b/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
-> > > > @@ -858,7 +858,7 @@ static int iproc_gpio_probe(struct platform_device *pdev)
-> > > >                  struct gpio_irq_chip *girq;
-> > > > 
-> > > >                  irqc = &chip->irqchip;
-> > > > -               irqc->name = "bcm-iproc-gpio";
-> > > > +               irqc->name = dev_name(dev);
-> > > >                  irqc->irq_ack = iproc_gpio_irq_ack;
-> > > >                  irqc->irq_mask = iproc_gpio_irq_mask;
-> > > >                  irqc->irq_unmask = iproc_gpio_irq_unmask;
-> > > 
-> > > Gr{oetje,eeting}s,
-> > > 
-> > >                          Geert
-> > > 
-> > > -- 
-> > > Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-> > > 
-> > > In personal conversations with technical people, I call myself a hacker. But
-> > > when I'm talking to journalists I just say "programmer" or something like that.
-> > >                                  -- Linus Torvalds
-> > > 
-> 
-> 
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QW0gU29ubnRhZywgMTMuIE9rdG9iZXIgMjAxOSwgMTA6NDU6MDkgQ0VTVCBzY2hyaWViIE1hcmt1
+cyBFbGZyaW5nOgo+ID4+IGh0dHBzOi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJu
+ZWwvZ2l0L3RvcnZhbGRzL2xpbnV4LmdpdC90cmVlL2RyaXZlcnMvY2xrL3JvY2tjaGlwL2Nsay1w
+bGwuYz9pZD0xYzBjYzVmMWFlNWVlNWE2OTEzNzA0YzBkNzVhNmU5OTYwNGVlMzBhI245MTMKPiA+
+PiBodHRwczovL2VsaXhpci5ib290bGluLmNvbS9saW51eC92NS40LXJjMi9zb3VyY2UvZHJpdmVy
+cy9jbGsvcm9ja2NoaXAvY2xrLXBsbC5jI0w5MTMKPiA+Pgo+ID4+ICogRG8geW91IGZpbmQgdGhl
+IHVzYWdlIG9mIHRoZSBmb3JtYXQgc3RyaW5nIOKAnCVzOiBjb3VsZCBub3QgYWxsb2NhdGUKPiA+
+PiAgIHJhdGUgdGFibGUgZm9yICVzXG7igJ0gc3RpbGwgYXBwcm9wcmlhdGUgYXQgdGhpcyBwbGFj
+ZT8KPiA+Cj4gPiBJZiB0aGVyZSBpcyBhbiBpbnRlcm5hbCAibm8tbWVtb3J5IiBvdXRwdXQgZnJv
+bSBpbnNpZGUga21lbWR1cCBub3csCj4gPiBJIGd1ZXNzIHRoZSBvbmUgaW4gdGhlIGNsb2NrIGRy
+aXZlciB3b3VsZCBiZSBhIGR1cGxpY2F0ZSBhbmQgY291bGQgZ28gYXdheS4KPiAKPiBIb3cgZG8g
+eW91IHRoaW5rIGFib3V0IHRvIHJlY2hlY2sgaW5mb3JtYXRpb24gc291cmNlcyBhcm91bmQKPiB0
+aGUgTGludXggYWxsb2NhdGlvbiBmYWlsdXJlIHJlcG9ydD8KPiBodHRwczovL2dpdC5rZXJuZWwu
+b3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dpdC90b3J2YWxkcy9saW51eC5naXQvdHJlZS9Eb2N1
+bWVudGF0aW9uL3Byb2Nlc3MvY29kaW5nLXN0eWxlLnJzdD9pZD1kYTk0MDAxMjM5Y2NlYjkzYzEz
+MmEzMTkyOGQ2ZGRjNDIxNDg2MmQ1I244NzgKPiAKPiAKPiA+PiAqIElzIHRoZXJlIGEgbmVlZCB0
+byBhZGp1c3QgdGhlIGVycm9yIGhhbmRsaW5nIGhlcmU/Cj4gPgo+ID4gVGhlcmUgaXMgbm8gbmVl
+ZCBmb3IgYWRkaXRpb25hbCBlcnJvciBoYW5kbGluZy4KPiAKPiBJZiB5b3Ugd291bGQgbGlrZSB0
+byBvbWl0IHRoZSBtYWNybyBjYWxsIOKAnFdBUk7igJ0sIEkgd291bGQgZXhwZWN0IGFsc28KPiB0
+byBleHByZXNzIGEgY29ycmVzcG9uZGluZyBudWxsIHBvaW50ZXIgY2hlY2suCgpTbyBJIGd1ZXNz
+IHdlIHdhbnQgc29tZXRoaW5nIGxpa2UgdGhlIGNoYW5nZSBhdCB0aGUgYm90dG9tLgoKCj4gPiBM
+aWtlIGlmIHRoZSByYXRlLXRhYmxlIGNvdWxkIG5vdCBiZSBkdXBsaWNhdGVkLAo+ID4gdGhlIGNs
+b2NrIHdpbGwgc3RpbGwgcmVwb3J0IHRoZSBjb3JyZWN0IGNsb2NrcmF0ZQo+ID4geW91IGNhbiBq
+dXN0IG5vdCBzZXQgYSBuZXcgcmF0ZS4KPiAKPiBIb3cgbXVjaCB3aWxsIGEgZGlmZmVyZW50IHN5
+c3RlbSBjb25maWd1cmF0aW9uIG1hdHRlciBmaW5hbGx5Pwo+IChEbyB5b3UgcmVhbGx5IHdhbnQg
+dG8gdHJlYXQgdGhpcyBzZXR0aW5nIGFzIOKAnG9wdGlvbmFs4oCdPykKPiAKPiA+IEFuZCBmb3Ig
+YSBzeXN0ZW0gaXQncyBhbHdheXMgYmV0dGVyIHRvIGhhdmUgdGhlIGNsb2NrIGRyaXZlciBwcmVz
+ZW50Cj4gPiB0aGFuIGZvciBhbGwgZGV2aWNlLWRyaXZlcnMgdG8gZmFpbCBwcm9iaW5nLiBFc3Bl
+Y2lhbGx5IGFzIHRoaXMgc3RhcnQgYXMKPiA+IGNvcmUgY2xvY2sgZHJpdmVyLCBzbyB0aGVyZSBp
+cyBubyBkZWZlcnJpbmcgcG9zc2libGUuCj4gCj4gSSBpbWFnaW5lIHRoYXQgc3VjaCBhIHZpZXcg
+Y2FuIGJlIGNsYXJpZmllZCBmdXJ0aGVyLgoKVGhlIGNvcmUgc29jIGNsb2NrIGRyaXZlciBnZXRz
+IGluaXRpYWxpemVkIHRocm91Z2ggQ0xLX09GX0RFQ0xBUkUoKSwKYWthIHJlYWwgZWFybHkgZHVy
+aW5nIGJvb3QuIFNvIGlmIHRoZSBrbWVtZHVwIGZhaWxzIHRoZXJlIGNhbiBub3QgYmUKYW55IC1F
+UFJPQkVfREVGRVIsIGFzIHRoZXJlIGlzIG5vIGtlcm5lbC1kcml2ZXItbW9kZWwgcnVubmluZyB5
+ZXQuCgpBbGwgb3RoZXIgY29tcG9uZW50cyBvZiB0aGUgc3lzdGVtIG9mIGNvdXJzZSBkZXBlbmQg
+b24gdGhlIGNsb2NrLQpjb250cm9sbGVyIGJlaW5nIGF2YWlsYWJsZSwgc28gdGhhdCB3YXkgdGhl
+IHN5c3RlbSBjYW4gYXQgbGVhc3QgY29tZQp1cCBmdXJ0aGVyIHNvIHRoYXQgcGVvcGxlIG1pZ2h0
+IGJlIGFibGUgdG8gZGVidWcgdGhlaXIgaXNzdWUgZnVydGhlci4KClRoZSBvdGhlciBvcHRpb24g
+d291bGQgYmUgdG8gcGFuaWMsIGJ1dCB0aGUga2VybmVsIHNob3VsZCBub3QKcGFuaWMgaWYgb3Ro
+ZXIgb3B0aW9ucyBhcmUgYXZhaWxhYmxlIC0gYW5kIGNvbnRpbnVpbmcgd2l0aCBhIHN0YXRpYwpw
+bGwgZnJlcXVlbmN5IGlzIGxlc3MgaW52YXNpdmUgaW4gdGhlIGVycm9yIGNhc2UuCgpIZWlrbwoK
+LS0tLS0tIDg8IC0tLS0tLS0KZGlmZiAtLWdpdCBhL2RyaXZlcnMvY2xrL3JvY2tjaGlwL2Nsay1w
+bGwuYyBiL2RyaXZlcnMvY2xrL3JvY2tjaGlwL2Nsay1wbGwuYwppbmRleCAxOTg0MTdkNTYzMDAu
+LjE3YmZhYzYxMWU3OSAxMDA2NDQKLS0tIGEvZHJpdmVycy9jbGsvcm9ja2NoaXAvY2xrLXBsbC5j
+CisrKyBiL2RyaXZlcnMvY2xrL3JvY2tjaGlwL2Nsay1wbGwuYwpAQCAtOTA5LDE0ICs5MDksMTYg
+QEAgc3RydWN0IGNsayAqcm9ja2NoaXBfY2xrX3JlZ2lzdGVyX3BsbChzdHJ1Y3Qgcm9ja2NoaXBf
+Y2xrX3Byb3ZpZGVyICpjdHgsCiAJCWZvciAobGVuID0gMDsgcmF0ZV90YWJsZVtsZW5dLnJhdGUg
+IT0gMDsgKQogCQkJbGVuKys7CiAKLQkJcGxsLT5yYXRlX2NvdW50ID0gbGVuOwogCQlwbGwtPnJh
+dGVfdGFibGUgPSBrbWVtZHVwKHJhdGVfdGFibGUsCiAJCQkJCXBsbC0+cmF0ZV9jb3VudCAqCiAJ
+CQkJCXNpemVvZihzdHJ1Y3Qgcm9ja2NoaXBfcGxsX3JhdGVfdGFibGUpLAogCQkJCQlHRlBfS0VS
+TkVMKTsKLQkJV0FSTighcGxsLT5yYXRlX3RhYmxlLAotCQkJIiVzOiBjb3VsZCBub3QgYWxsb2Nh
+dGUgcmF0ZSB0YWJsZSBmb3IgJXNcbiIsCi0JCQlfX2Z1bmNfXywgbmFtZSk7CisKKwkJLyoKKwkJ
+ICogU2V0IG51bSByYXRlcyB0byAwIGlmIGttZW1kdXAgZmFpbHMuIFRoYXQgd2F5IHRoZSBjbG9j
+aworCQkgKiBhdCBsZWFzdCBjYW4gcmVwb3J0IGl0cyByYXRlIGFuZCBzdGF5cyB1c2FibGUuCisJ
+CSAqLworCQlwbGwtPnJhdGVfY291bnQgPSBwbGwtPnJhdGVfdGFibGUgPyBsZW4gOiAwOwogCX0K
+IAogCXN3aXRjaCAocGxsX3R5cGUpIHsKCgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
+bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
+YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
