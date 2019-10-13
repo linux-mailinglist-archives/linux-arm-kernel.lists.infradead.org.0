@@ -2,70 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF4ABD579B
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 13 Oct 2019 21:11:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DABFD57AF
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 13 Oct 2019 21:20:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+W2EAqnBSseaSgaBbk2z14hUizP6bCMtZ4Rw6C1mxgE=; b=HJPWSrdglNxcqr
-	pFucCRcvUoDUMCRYjxa/O5gjYTeluqpuym7hwhixJRS701WJaeYZHa3ATVeF1HCxkXYu/yckx8cd/
-	Y7GwyzmD7BaVPRXwtKjAxExAkHq/nWt90scx3hKHsZzkFqylrtJtMe/TtmnpCfCXEeG4iyLc7uZQa
-	lsdkQb/QXDDEA+SAjF4wxQKoH4ojUGcnZ5n1yW8IRPRBS27COOZembPlfriGm+HZYYlcoqZ+pIjo+
-	Sor4uFs2cGRCKYN1dRG1T6JOvU+1ubO6ukH2fvRnu8OHgG6bhxQWfKBL/lfwByLVsGFV6GfdwBVRt
-	3NV9zWNyvtstMKf0NHaQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iTYcEhn8N3oT4LlHBVQx69Ni/Y7QOeLWBPi1aIukoc8=; b=qmRNp3t9zPmhWT
+	tULeTAvH44Rxz0tWPcopElOFwjS6kEhcDfOgxhQ85hrPHSF0OxBah91LUdNPs0dY3MvSGWULw8Olw
+	uiOjyPeFpi64Mg0ScskMDTUMNzI5dv9DNcVdFQBAvbXA6F5srQvjy+nflk7f7ejMWjj9rqYNLfiPR
+	qy/0foFNf9cDS3f2KsbSzxBMqbL+0F1BzeScgk0WyygSp2NJsLvU5a51lnnRCju61j641BOJospMo
+	h3NMCCzFLxYNZPUGd06ZmXvogF/xzFBNSEGzaJRQB9pOv4HXbJ/QXlCAu5w2Q/rUSfOAf8OnqK2hp
+	CGonXBh+hZnGpN+L3bTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJjGd-0004ve-Es; Sun, 13 Oct 2019 19:10:59 +0000
+	id 1iJjPb-0007Ug-1I; Sun, 13 Oct 2019 19:20:15 +0000
 Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJjGT-0004tz-0r; Sun, 13 Oct 2019 19:10:50 +0000
-Received: by mail-pg1-x543.google.com with SMTP id f14so3661174pgi.9;
- Sun, 13 Oct 2019 12:10:46 -0700 (PDT)
+ id 1iJjPL-0007T6-OQ; Sun, 13 Oct 2019 19:20:01 +0000
+Received: by mail-pg1-x543.google.com with SMTP id i76so8796423pgc.0;
+ Sun, 13 Oct 2019 12:19:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=b80mjczMKdynxDiqihftIRC/nvOfe2fufAmH1zUWecg=;
- b=Rnt3TaLC3t5HfsHxd7aOpUWt1ltyyk0x1kQ4RXg7fRL316JzXDZRbp2fDirHoNbT+p
- TkG0KrYAXKYZNnszzkD7/wFIkEvaGtbd6sfhQ9e1SXbZgrRjSeI1ZAOdRbbwp9vIhfgU
- iCEGzzxe/taIIbL0bD56GdvxKmVDDlcE1Vnjet4RvBSzT7GlQ3a+GswEBA7O057MD433
- sZzmLWGxZq9bfq5CEi4K3+GMVHY/tdb7BA11kXrydINEflM9jUm+rQRyrwdTux7LKIgh
- h/gqD6dw+6LHAe+ajJrvsqNJBYbke0Zs0T56BFwmnZGs7Hz0ldSo7y/uJhwQpGC8aFmR
- 0o5w==
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=lRxf/vrG9t+cMEQuqxixOE+c6Dr/iWC77uPoe58nNNw=;
+ b=SGgntrP+Yup2ENd2fVKPff1wGrEmryh+1fCrncAsrikd8e/Zv5U+MRWQjaRWvSgzIf
+ KbGwvo4VXV9KBF87iDQg5td72rnePTD/8dUMXkThgsJqxyXarShHHjIEHQtnCgcKLSLj
+ OEc4AKKg0ybxc2l37/axgwlTKXC0mCkXNjEJ/2Ky+NuHHZ+YA+So8cCcUIq8thXGJZeO
+ IJUTWwL2je6M/QY7Xjion2ZYGYDVN3jg19p/HahQGwgCIPo5zraGRx2NLi3/XzJUYut1
+ S8qOa3kvMgWuGk2EP0QBpqxn/rdpckje1xED3tOilCi9MzEB4F5NdNw1dYfw6n5WsLyf
+ ZI+w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=b80mjczMKdynxDiqihftIRC/nvOfe2fufAmH1zUWecg=;
- b=OyY0JugCHbBiKjMlthNv/BF2gYIyr5/48YoWYJKj5dVhg5aMrzmdkQKo2wt55++bsL
- nfhMUPJd7MuBX10EYCXggYZI0uaoVC83nj0cHU2JuxzsdPvY8QaHva07FolPaD9FA8qB
- 5t4UIxqEy8JElKVu+M/nUpAmDHoDRGxFOo2f7M9HQP2FAZQHOLS4e8TL32pj/U0PcxAk
- OhIFTV6PCScbXaisX7tam58ud8RKGm3cLICz69wDRZJnphrxK0omUxabnrQMXCzQnxk0
- DwK7F1M5r3KdATx9vGE5h7opLyv5zIb2rnOHSet8mu0zKfjgznTAnxgo+I/9l5Q0Pkz2
- moBQ==
-X-Gm-Message-State: APjAAAVjm1JO+8Wq8EneQsdQX66dja/7qly7PCMtZzOSjl7f6Ox0jliz
- bXHiYpKG2rZPNGz3WyIgGpI=
-X-Google-Smtp-Source: APXvYqxQzbjm7g/LJpdZWfeo4Uaggr8/CzxmLN7hdm1fYG9ceaKdu+4kP3AREI2KrAAK0x40piPAqg==
-X-Received: by 2002:a17:90a:bc41:: with SMTP id
- t1mr31936123pjv.67.1570993846203; 
- Sun, 13 Oct 2019 12:10:46 -0700 (PDT)
-Received: from wambui.zuku.co.ke ([197.237.61.225])
- by smtp.googlemail.com with ESMTPSA id m5sm15261216pgt.15.2019.10.13.12.10.37
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 13 Oct 2019 12:10:45 -0700 (PDT)
-From: Wambui Karuga <wambui.karugax@gmail.com>
-To: outreachy-kernel@googlegroups.com
-Subject: [PATCH v2] staging: rtl8723bs: use DIV_ROUND_UP helper macro
-Date: Sun, 13 Oct 2019 22:10:27 +0300
-Message-Id: <20191013191027.6470-1-wambui.karugax@gmail.com>
-X-Mailer: git-send-email 2.23.0
+ bh=lRxf/vrG9t+cMEQuqxixOE+c6Dr/iWC77uPoe58nNNw=;
+ b=EeRnZZLpBfJXRurz2g7Sk/bDuDANAcYE/vbM51lYinRdP9qaGzH8s91iuxqHGLPyzi
+ aZDQc7VP93ZaCgFdC3qX2Hq0XEdOLEES9DnD1SIPmTscr5v2HRZNLtcCC6jYAfo7dTgQ
+ MOWxXbGb7drApkBqe9KRUWYFy8Ax7COt2ltknrJflOkWa2sBFgCx8KKugLNrte2qto51
+ tNMsXk9B78Ok79QVncg8gW6SxoVaSBFkN8kfHa5FwA/e+yLjM8wYs5eUHbJjyIN8RoX/
+ CLtrbJ0HgdJBa5WEPVq6LvyyLqKC31AE0jQLof99YgamzmIWt+DTXz83cY3ztxcUOfVu
+ 2T3A==
+X-Gm-Message-State: APjAAAUk43eMnOKxtTZ3K6KyLKWGjfi/EwYF4kM/4wsctSdL9qwXDDfc
+ kBdu4LdgwkUcfzgvKuPOTXc=
+X-Google-Smtp-Source: APXvYqzLbTKziQGuwKu2hH5qEstlBYM5Nko/pZSX4t8b9AAXB+d9CizX6GPr1c5GZDxHfs6dk7++fQ==
+X-Received: by 2002:a63:1b07:: with SMTP id b7mr11328013pgb.166.1570994398196; 
+ Sun, 13 Oct 2019 12:19:58 -0700 (PDT)
+Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
+ by smtp.gmail.com with ESMTPSA id
+ 20sm16619394pfp.153.2019.10.13.12.19.56
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sun, 13 Oct 2019 12:19:57 -0700 (PDT)
+Subject: Re: [PATCH v1 3/3] ARM: dts: bcm2711: Enable GENET support for the
+ RPi4
+To: Stefan Wahren <wahrenst@gmx.net>, matthias.bgg@kernel.org,
+ "David S . Miller" <davem@davemloft.net>
+References: <20191011184822.866-1-matthias.bgg@kernel.org>
+ <20191011184822.866-4-matthias.bgg@kernel.org>
+ <a514751e-e82a-b5ea-34d3-46468c851a80@gmail.com>
+ <c7fac096-4a0a-1d52-2284-4fe86554fbc8@gmx.net>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Message-ID: <15b182b4-488a-c023-91ff-e0e253dc41f9@gmail.com>
+Date: Sun, 13 Oct 2019 12:19:55 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.2
 MIME-Version: 1.0
+In-Reply-To: <c7fac096-4a0a-1d52-2284-4fe86554fbc8@gmx.net>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191013_121049_087657_063541D2 
-X-CRM114-Status: UNSURE (   9.98  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191013_121959_821567_909F6973 
+X-CRM114-Status: GOOD (  20.15  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -76,7 +85,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wambui.karugax[at]gmail.com)
+ provider (f.fainelli[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -96,56 +105,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, eric@anholt.net,
- bcm-kernel-feedback-list@broadcom.com, wahrenst@gmx.net,
- linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Matthias Brugger <mbrugger@suse.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, linux-kernel@vger.kernel.org,
+ Eric Anholt <eric@anholt.net>, Rob Herring <robh+dt@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use the DIV_ROUND_UP macro to replace open-coded divisor calculation
-to improve readability.
-Issue found using coccinelle:
-@@
-expression n,d;
-@@
-(
-- ((n + d - 1) / d)
-+ DIV_ROUND_UP(n,d)
-|
-- ((n + (d - 1)) / d)
-+ DIV_ROUND_UP(n,d)
-)
 
-Signed-off-by: Wambui Karuga <wambui.karugax@gmail.com>
----
-Changes in v2:
-  - Remove comment that explained previously used calculation.
----
- drivers/staging/rtl8723bs/hal/rtl8723b_hal_init.c | 5 ++---
- 1 file changed, 2 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/staging/rtl8723bs/hal/rtl8723b_hal_init.c b/drivers/staging/rtl8723bs/hal/rtl8723b_hal_init.c
-index 87535a4c2e14..22931ab3a5fc 100644
---- a/drivers/staging/rtl8723bs/hal/rtl8723b_hal_init.c
-+++ b/drivers/staging/rtl8723bs/hal/rtl8723b_hal_init.c
-@@ -4156,9 +4156,8 @@ void SetHwReg8723B(struct adapter *padapter, u8 variable, u8 *val)
- 				break;
- 			}
- 
--			/*  The value of ((usNavUpper + HAL_NAV_UPPER_UNIT_8723B - 1) / HAL_NAV_UPPER_UNIT_8723B) */
--			/*  is getting the upper integer. */
--			usNavUpper = (usNavUpper + HAL_NAV_UPPER_UNIT_8723B - 1) / HAL_NAV_UPPER_UNIT_8723B;
-+			usNavUpper = DIV_ROUND_UP(usNavUpper,
-+						  HAL_NAV_UPPER_UNIT_8723B);
- 			rtw_write8(padapter, REG_NAV_UPPER, (u8)usNavUpper);
- 		}
- 		break;
+On 10/13/2019 11:41 AM, Stefan Wahren wrote:
+> Hi Florian,
+> 
+> Am 11.10.19 um 21:31 schrieb Florian Fainelli:
+>> On 10/11/19 11:48 AM, matthias.bgg@kernel.org wrote:
+>>> From: Matthias Brugger <mbrugger@suse.com>
+>>>
+>>> Enable Gigabit Ethernet support on the Raspberry Pi 4
+>>> Model B.
+>>>
+>>> Signed-off-by: Matthias Brugger <mbrugger@suse.com>
+>>>
+>>> ---
+>>>
+>>>  arch/arm/boot/dts/bcm2711-rpi-4-b.dts | 22 ++++++++++++++++++++++
+>>>  arch/arm/boot/dts/bcm2711.dtsi        | 18 ++++++++++++++++++
+>>>  2 files changed, 40 insertions(+)
+>>>
+>>> diff --git a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
+>>> index cccc1ccd19be..958553d62670 100644
+>>> --- a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
+>>> +++ b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
+>>> @@ -97,6 +97,28 @@
+>>>  	status = "okay";
+>>>  };
+>>>
+>>> +&genet {
+>>> +	phy-handle = <&phy1>;
+>>> +	phy-mode = "rgmii";
+>> Can you check that things still work against David Miller's net-next?
+>> Tree, in particular the BCM54213PE PHY might be matched by the BCM54210E
+>> entry in drivers/net/phy/broadcom.c and I just fixed an issue in how
+>> RGMII delays were configured:
+>>
+>> https://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next.git/commit/?id=fea7fda7f50a6059220f83251e70709e45cc8040
+>>
+>> This might require you to change the 'phy-mode' property to what is
+>> appropriate.
+> 
+> i applied your changes, kept the phy-mode above and the interfaces cames
+> up. But there is a lot of packet loss using ping. After applying this
+> downstream patch [1] the packet loss doesn't occur.
+
+Packet loss is symptomatic of a mis-configured RGMII interface between
+the MAC and the PHY.
+
+> 
+> Is the packet loss a possible cause of the wrong phy-mode and mentioned
+> patch only a workaround?
+
+The patch at [1] is not doing much with respect to RGMII delays, so it
+will just keep whatever was configured prior to Linux taking over the
+PHY. The addition of the BCM54213PE entry makes use of the
+bcm54xx_config_init() callback, which does not call
+bcm54xx_config_clock_delay() for the BCM54213PE PHY model, which is why
+it "solves" the packet loss by preserving whatever was already configured.
+
+I would suggest checking with the Pi folks whether 'rgmii' is really the
+right mode of operation here (that is, the PHY is not adding TXC or RXC
+delays at all), or it just happens to work by virtue of the PHY device
+defaulting to a certain mode *and* the PHY device driver in Linux not
+attempting to correctly change the RX/TX clock delays based on the
+phy_interface_t value (aka: maintain the status quo).
+
+Thanks for checking!
+
+> 
+> [1] -
+> https://github.com/raspberrypi/linux/commit/360c8e98883f9cd075564be8a7fc25ac0785dee4
+> 
+
 -- 
-2.23.0
-
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
