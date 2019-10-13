@@ -2,87 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B657D558D
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 13 Oct 2019 11:52:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9EE9D55AA
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 13 Oct 2019 12:34:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=mI5sXnRnK5xwjxdMiGqf8CipnvP2K/8rSWtj1QdMEfM=; b=dCf
-	DQ0Z94nhCqnUlyED7EXxE/ys/fSp9gU5K5aad3qDzgdXdjAlG3mt4kFkYmLQGYi6KJ0vNFrTfSkZW
-	MnWaGAYQ9jmMEHw1sSWVMXkUBRCELLP/Jikj6utG7EkA5mGoiO1Lczmt1Na5SGaSlBNDslqd8Y6rG
-	RLWqPpQ9vQtIcHCPqfmm+5D33u1eXqiMf/d31zkm/H6B2dZY1vCjK2vh1bf55ap4/6WO3UBzlTgKP
-	6pwU/fphnphRH1bKUmHpiiCAR6F1r/mEQPiUwc+i7jK/mcuydmDRqMDYCyGQyRDyXe6fhON6iynj/
-	IzyW7YznsOaQsZontS3uf4NZj5ECrpQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Lv5WYX+px5JBw+gh/WJ1aApyJVDMIjS/A9JSJSciS0I=; b=GJDjomQ1Kd0lwC
+	4jrrihpKHIZp3QYglNPIeIdxPTWsTWRoUem2YwwRLA+L42pDAjbtsqsBuHsDzjIyDAH/TgXvvXin/
+	WMasIvZE5a4JhjGOhobNjf0Ag8iKq9gPcb/sE9Lt6O+0BdqF6cQ7se16bKNTKg9AVpb1fGluTU4kd
+	b4IdGFEC5u8m2W9/qzY9ptbYkwT5934Y1aj+UCsN7O4r+dvJTf5j0+WlDWICHA5ijtuXRS7w31pbl
+	dX0UiunxNSMFjLjNNhTKi1hhk/8N8T84rEO3Vn7rMH1xn+gWPrqPci5NuA7QY3nnbdPwjBSYAGonf
+	DDNk9i0wjgvFIU/9jcrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJaYW-0007EM-4z; Sun, 13 Oct 2019 09:52:52 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iJbCq-00027x-Di; Sun, 13 Oct 2019 10:34:32 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJaYP-0007Du-Ao
- for linux-arm-kernel@lists.infradead.org; Sun, 13 Oct 2019 09:52:46 +0000
-Received: by mail-pg1-x543.google.com with SMTP id e10so4349956pgd.11
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 13 Oct 2019 02:52:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=oVbcWGk35k5Q1qfCCoPLo5OTcQvgf1ti/1rQCVc1eng=;
- b=uMprRuYLykmiHhp5TBKFo3xKrwJZjIfvn/WUUhjJvFw/5EqmHG7xXSBalUKsN8jS6L
- u0ws98BpTp2RcemhERLAMQk2XRBdKJB0O+GgQjFBfu7nsf5HhIwh8Q2qWqQ4CYT6G1pi
- bnEjpA7SuCRPq1zueL/rfz5oFyOC2855zQaFXoLWcT2kFybar8QSxtzY4fj228tWxX0f
- 068M4PJBKzA8sL8e2WBTdtSng00VvVtrwQDkfdx1VomYIKBua7OpbA8aKJE5BjF0acyD
- usI4Ir8j15abxFNnqcjuMeNuE6uH+XwnEzhWbNXKoT/Zp8sDkecWVT/sboQCeLfsxQMM
- 5dYg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=oVbcWGk35k5Q1qfCCoPLo5OTcQvgf1ti/1rQCVc1eng=;
- b=XNPa64Rdzoqrw6PAua2JtADT+QzNJKtEOhq94vmZNh7VwsJ7n5DKJ2BHV/EGBkXZiY
- wCJ2EJsEeoXAplOU0doDipANiIrnrqOW0kzrYe+S/ZLzjANDNSdsT135/+TTpocdgSsN
- GqZ53czHvthV9X05Lv7vgQHQjwgcg+TOy2lwRdXTkSixYL5P0UzY9IoWBm1x4s0wshC7
- 4noIqG6bCD88naUn/pFD0wIYoytAhmoMd5O3a09OvMVr+6lhBCZqJfkvWgy+eXE+YUkv
- xzy57EsRRNubLKq0JqfpmHrcRCmxrb8mPsKfx275KNb23kkrO3jg3YBaEqJ/ix7/ZTcn
- qdDQ==
-X-Gm-Message-State: APjAAAV03lNB1DW+TwyOk4yJXhwaTw8/d1yr50rfV71WoRemF8uPQTYS
- GrHX25ci1MsOSubQ9pXdMldfjS7r
-X-Google-Smtp-Source: APXvYqyEhlVYUi1cjlL9F6YppEzIxRu9WBMCP3njIbsbqOUMH8o3eHPlhqT+QtLOXSZwZuU0M4V8Ew==
-X-Received: by 2002:a62:ee01:: with SMTP id e1mr27248354pfi.3.1570960361910;
- Sun, 13 Oct 2019 02:52:41 -0700 (PDT)
-Received: from localhost.localdomain ([106.51.243.12])
- by smtp.gmail.com with ESMTPSA id s18sm13205167pji.30.2019.10.13.02.52.39
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 13 Oct 2019 02:52:41 -0700 (PDT)
-From: afzal mohammed <afzal.mohd.ma@gmail.com>
-To: Russell King <linux@armlinux.org.uk>,
- Vladimir Murzin <vladimir.murzin@arm.com>
-Subject: [PATCH] ARM: v7m: remove register save to stack before svc
-Date: Sun, 13 Oct 2019 15:22:37 +0530
-Message-Id: <20191013095237.4413-1-afzal.mohd.ma@gmail.com>
-X-Mailer: git-send-email 2.18.0
+ id 1iJbCi-00026m-A8
+ for linux-arm-kernel@lists.infradead.org; Sun, 13 Oct 2019 10:34:26 +0000
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why)
+ by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
+ (Exim 4.80) (envelope-from <maz@kernel.org>)
+ id 1iJbCa-0000M3-CM; Sun, 13 Oct 2019 12:34:16 +0200
+Date: Sun, 13 Oct 2019 11:34:15 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Andrew Murray <andrew.murray@arm.com>, Lorenzo Pieralisi
+ <lorenzo.pieralisi@arm.com>
+Subject: Re: [PATCH v3] PCI: aardvark: Use LTSSM state to build link
+ training flag
+Message-ID: <20191013113415.3c653526@why>
+In-Reply-To: <20191001080546.GI42880@e119886-lin.cambridge.arm.com>
+References: <20190522213351.21366-3-repk@triplefau.lt>
+ <20190930154017.GF42880@e119886-lin.cambridge.arm.com>
+ <20190930165230.GA12568@voidbox>
+ <20191001080546.GI42880@e119886-lin.cambridge.arm.com>
+Organization: Approximate
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+MIME-Version: 1.0
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: andrew.murray@arm.com, repk@triplefau.lt,
+ ellierevves@gmail.com, lorenzo.pieralisi@arm.com, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, helgaas@kernel.org, thomas.petazzoni@bootlin.com,
+ linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191013_025245_395807_E08C9FDE 
-X-CRM114-Status: GOOD (  10.88  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191013_033424_498375_CA1D4186 
+X-CRM114-Status: GOOD (  32.90  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (afzal.mohd.ma[at]gmail.com)
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,65 +72,164 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Ellie Reeves <ellierevves@gmail.com>, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Remi Pommarel <repk@triplefau.lt>,
+ Bjorn Helgaas <helgaas@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-r0-r3 & r12 registers are saved & restored, before & after svc
-respectively. Intention was to preserve those registers across thread to
-handler mode switch.
+On Tue, 1 Oct 2019 09:05:46 +0100
+Andrew Murray <andrew.murray@arm.com> wrote:
 
-On v7-M, hardware saves the register context upon exception in AAPCS
-complaint way. Restoring r0-r3 & r12 is done from stack location where
-hardware saves it, not from the location on stack where these registers
-were saved.
+Hi Lorenzo,
 
-To clarify, on stm32f429 discovery board:
+> On Mon, Sep 30, 2019 at 06:52:30PM +0200, Remi Pommarel wrote:
+> > On Mon, Sep 30, 2019 at 04:40:18PM +0100, Andrew Murray wrote:  
+> > > On Wed, May 22, 2019 at 11:33:51PM +0200, Remi Pommarel wrote:  
+> > > > Aardvark's PCI_EXP_LNKSTA_LT flag in its link status register is not
+> > > > implemented and does not reflect the actual link training state (the
+> > > > flag is always set to 0). In order to support link re-training feature
+> > > > this flag has to be emulated. The Link Training and Status State
+> > > > Machine (LTSSM) flag in Aardvark LMI config register could be used as
+> > > > a link training indicator. Indeed if the LTSSM is in L0 or upper state
+> > > > then link training has completed (see [1]).
+> > > > 
+> > > > Unfortunately because after asking a link retraining it takes a while
+> > > > for the LTSSM state to become less than 0x10 (due to L0s to recovery
+> > > > state transition delays), LTSSM can still be in L0 while link training
+> > > > has not finished yet. So this waits for link to be in recovery or lesser
+> > > > state before returning after asking for a link retrain.
+> > > > 
+> > > > [1] "PCI Express Base Specification", REV. 4.0
+> > > >     PCI Express, February 19 2014, Table 4-14
+> > > > 
+> > > > Signed-off-by: Remi Pommarel <repk@triplefau.lt>
+> > > > ---
+> > > > Changes since v1:
+> > > >   - Rename retraining flag field
+> > > >   - Fix DEVCTL register writing
+> > > > 
+> > > > Changes since v2:
+> > > >   - Rewrite patch logic so it is more legible
+> > > > 
+> > > > Please note that I will unlikely be able to answer any comments from May
+> > > > 24th to June 10th.
+> > > > ---
+> > > >  drivers/pci/controller/pci-aardvark.c | 29 ++++++++++++++++++++++++++-
+> > > >  1 file changed, 28 insertions(+), 1 deletion(-)
+> > > > 
+> > > > diff --git a/drivers/pci/controller/pci-aardvark.c b/drivers/pci/controller/pci-aardvark.c
+> > > > index 134e0306ff00..8803083b2174 100644
+> > > > --- a/drivers/pci/controller/pci-aardvark.c
+> > > > +++ b/drivers/pci/controller/pci-aardvark.c
+> > > > @@ -180,6 +180,8 @@
+> > > >  #define LINK_WAIT_MAX_RETRIES		10
+> > > >  #define LINK_WAIT_USLEEP_MIN		90000
+> > > >  #define LINK_WAIT_USLEEP_MAX		100000
+> > > > +#define RETRAIN_WAIT_MAX_RETRIES	10
+> > > > +#define RETRAIN_WAIT_USLEEP_US		2000
+> > > >  
+> > > >  #define MSI_IRQ_NUM			32
+> > > >  
+> > > > @@ -239,6 +241,17 @@ static int advk_pcie_wait_for_link(struct advk_pcie *pcie)
+> > > >  	return -ETIMEDOUT;
+> > > >  }
+> > > >  
+> > > > +static void advk_pcie_wait_for_retrain(struct advk_pcie *pcie)
+> > > > +{
+> > > > +	size_t retries;
+> > > > +
+> > > > +	for (retries = 0; retries < RETRAIN_WAIT_MAX_RETRIES; ++retries) {
+> > > > +		if (!advk_pcie_link_up(pcie))
+> > > > +			break;
+> > > > +		udelay(RETRAIN_WAIT_USLEEP_US);
+> > > > +	}
+> > > > +}
+> > > > +
+> > > >  static void advk_pcie_setup_hw(struct advk_pcie *pcie)
+> > > >  {
+> > > >  	u32 reg;
+> > > > @@ -426,11 +439,20 @@ advk_pci_bridge_emul_pcie_conf_read(struct pci_bridge_emul *bridge,
+> > > >  		return PCI_BRIDGE_EMUL_HANDLED;
+> > > >  	}
+> > > >  
+> > > > +	case PCI_EXP_LNKCTL: {
+> > > > +		/* u32 contains both PCI_EXP_LNKCTL and PCI_EXP_LNKSTA */
+> > > > +		u32 val = advk_readl(pcie, PCIE_CORE_PCIEXP_CAP + reg) &
+> > > > +			~(PCI_EXP_LNKSTA_LT << 16);  
+> > > 
+> > > The commit message says "the flag is always set to 0" - therefore I guess
+> > > you don't *need* to mask out the LT bit here? I assume this is just
+> > > belt-and-braces but thought I'd check incase I've misunderstood or if your
+> > > commit message is inaccurate.
+> > > 
+> > > In any case masking out the bit (or adding a comment) makes this code more
+> > > readable as the reader doesn't need to know what the hardware does with this
+> > > bit.  
+> > 
+> > Actually vendor eventually responded that the bit was reserved, but
+> > during my tests it remains to 0.
+> > 
+> > So yes I am masking this out mainly for belt-and-braces and legibility.  
+> 
+> Thanks for the clarification.
+> 
+> >   
+> > > > +		if (!advk_pcie_link_up(pcie))
+> > > > +			val |= (PCI_EXP_LNKSTA_LT << 16);
+> > > > +		*value = val;
+> > > > +		return PCI_BRIDGE_EMUL_HANDLED;
+> > > > +	}
+> > > > +
+> > > >  	case PCI_CAP_LIST_ID:
+> > > >  	case PCI_EXP_DEVCAP:
+> > > >  	case PCI_EXP_DEVCTL:
+> > > >  	case PCI_EXP_LNKCAP:
+> > > > -	case PCI_EXP_LNKCTL:
+> > > >  		*value = advk_readl(pcie, PCIE_CORE_PCIEXP_CAP + reg);
+> > > >  		return PCI_BRIDGE_EMUL_HANDLED;
+> > > >  	default:
+> > > > @@ -447,8 +469,13 @@ advk_pci_bridge_emul_pcie_conf_write(struct pci_bridge_emul *bridge,
+> > > >  
+> > > >  	switch (reg) {
+> > > >  	case PCI_EXP_DEVCTL:
+> > > > +		advk_writel(pcie, new, PCIE_CORE_PCIEXP_CAP + reg);
+> > > > +		break;  
+> > > 
+> > > Why is this here?
+> > >   
+> > 
+> > Before PCI_EXP_DEVCTL and PCI_EXP_LNKCTL were doing the same thing, but
+> > as now PCI_EXP_LNKCTL does extra things (i.e. wait for link to
+> > successfully retrain), they do have different behaviours.
+> > 
+> > So this is here so PCI_EXP_DEVCTL keeps its old behaviour and do not
+> > wait for link retrain in case an unrelated (PCI_EXP_LNKCTL_RL) bit is
+> > set.  
+> 
+> Oh yes, of course!
+> 
+> Thanks and:
+> 
+> Reviewed-by: Andrew Murray <andrew.murray@arm.com>
 
-1. before svc, sp - 0x90009ff8
-2. r0-r3,r12 saved to 0x90009ff8 - 0x9000a00b
-3. upon svc, h/w decrements sp by 32 & pushes registers onto stack
-4. after svc,  sp - 0x90009fd8
-5. r0-r3,r12 restored from 0x90009fd8 - 0x90009feb
+Is there any hope for this workaround to make it into 5.4?
 
-Above means r0-r3,r12 is not restored from the location where they are
-saved, but since hardware pushes the registers onto stack, the registers
-are restored correctly.
+My EspressoBin (which is blessed with this joke of a PCIe controller)
+is pretty much a doorstop without it and dies with a SError early at
+boot.
 
-Note that during register saving to stack (step 2), it goes past
-0x9000a000. And it seems, based on objdump, there are global symbols
-residing there, and it perhaps can cause issues on a non-XIP Kernel
-(on XIP, data section is setup later).
+FWIW:
 
-Based on the analysis above, manually saving registers onto stack is at
-best no-op and at worst can cause data section corruption. Hence remove
-storing of registers onto stack before svc.
+Tested-by: Marc Zyngier <maz@kernel.org>
 
-Fixes: b70cd406d7fe ("ARM: 8671/1: V7M: Preserve registers across switch from Thread to Handler mode")
-
-Signed-off-by: afzal mohammed <afzal.mohd.ma@gmail.com>
----
- arch/arm/mm/proc-v7m.S | 1 -
- 1 file changed, 1 deletion(-)
-
-diff --git a/arch/arm/mm/proc-v7m.S b/arch/arm/mm/proc-v7m.S
-index efebf4120a0c..1a49d503eafc 100644
---- a/arch/arm/mm/proc-v7m.S
-+++ b/arch/arm/mm/proc-v7m.S
-@@ -132,7 +132,6 @@ ENDPROC(cpu_cm7_proc_fin)
- 	dsb
- 	mov	r6, lr			@ save LR
- 	ldr	sp, =init_thread_union + THREAD_START_SP
--	stmia	sp, {r0-r3, r12}
- 	cpsie	i
- 	svc	#0
- 1:	cpsid	i
+	M.
 -- 
-2.23.0
-
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
