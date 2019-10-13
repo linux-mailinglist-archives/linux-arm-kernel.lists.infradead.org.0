@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F163D5690
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 13 Oct 2019 17:08:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9384D5691
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 13 Oct 2019 17:08:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=rxLeuXDm2NrgE/15Rwcv/UirInfp+O7SqXiLy7bnWTs=; b=sbgbTmYKQ5jH43YuZtPyrXTYD
-	d6174aEOZsWB+jb5wXLxT10m7/LTr+kRTbEE+QHHsw/mC2eWewp3Q4bAltjiol/TGBVOtopBtCAe+
-	IimNPhuVLk+2ultChSJcQpyS+9vQWWY8+E/B/oGFpDRg0DwwwIR8PDiAmagNjOUADY69zwkj9ar3x
-	QFFXSwbczV0uZ69u+XUtJsDbHhqcuywNyMpJJTr1ztXFnKdbBUFeAxK31C8uWP37nYYG5DRKr5bBM
-	g74s/kPZBsqBtQ/dTHU7znGLdVoqhJIjDgwtEq6Qjt9db3ZjbTBLGMTJgoyhaxrtUdzIMangm+sgA
-	koeFf1I7g==;
+	 bh=d7ZOn/dAf73tPg98buNruudAvs4vrDabn7ykG73V04g=; b=LSW7MWm/iy/V8NQCkRQ9e8tIB
+	+pQJIbfGiPBD6bXIPe0f3ceqYRdo1GEVBRUHXJlYm7AvICoPkiuZMCCAOXxIeirePvhWZ5SjFSz4w
+	CKoO7gKgI3C8CeTk/wEzCjO7vOxYckDSDRHhFZ/fqJmXJMNtXBw+oCesIquJZKL8GKHDIaVnrT3FN
+	Z6O28HzeWcA04hnD04ESUE8Pj2+je7VX9noLANtp+ld+/rBmOy7oAD518aQwfpJQxGMhkeKgVrbh3
+	ROqPXhM/N2guHnACL5iC3yFSvPTxz+7azQaL0T3Wr7UhXzbTXSnfJwHcESUULYz4jXjroE4OPIICl
+	rK8BaGf8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJfTx-00047L-Gc; Sun, 13 Oct 2019 15:08:29 +0000
+	id 1iJfU9-0004Jr-Fg; Sun, 13 Oct 2019 15:08:41 +0000
 Received: from atrey.karlin.mff.cuni.cz ([195.113.26.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJfTh-00045R-RD
- for linux-arm-kernel@lists.infradead.org; Sun, 13 Oct 2019 15:08:15 +0000
+ id 1iJfTo-0004Ac-MR
+ for linux-arm-kernel@lists.infradead.org; Sun, 13 Oct 2019 15:08:22 +0000
 Received: by atrey.karlin.mff.cuni.cz (Postfix, from userid 512)
- id 3837C80239; Sun, 13 Oct 2019 17:07:56 +0200 (CEST)
-Date: Sun, 13 Oct 2019 17:08:07 +0200
+ id D044680238; Sun, 13 Oct 2019 17:08:03 +0200 (CEST)
+Date: Sun, 13 Oct 2019 17:08:15 +0200
 From: Pavel Machek <pavel@ucw.cz>
 To: Tony Lindgren <tony@atomide.com>
-Subject: Re: [PATCH 7/8] ARM: OMAP2+: Allow core oswr for omap4
-Message-ID: <20191013150806.GE13278@amd>
+Subject: Re: [PATCH 8/8] ARM: OMAP2+: Initialize voltage controller for omap4
+Message-ID: <20191013150815.GF13278@amd>
 References: <20191010001224.41826-1-tony@atomide.com>
- <20191010001224.41826-8-tony@atomide.com>
+ <20191010001224.41826-9-tony@atomide.com>
 MIME-Version: 1.0
-In-Reply-To: <20191010001224.41826-8-tony@atomide.com>
+In-Reply-To: <20191010001224.41826-9-tony@atomide.com>
 User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191013_080814_030066_0B113D28 
-X-CRM114-Status: GOOD (  13.78  )
+X-CRM114-CacheID: sfid-20191013_080820_974440_B607E0F1 
+X-CRM114-Status: GOOD (  11.95  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -60,83 +60,68 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Merlijn Wajer <merlijn@wizzup.org>, linux-omap@vger.kernel.org,
  Sebastian Reichel <sre@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============5302955438175212347=="
+Content-Type: multipart/mixed; boundary="===============2479985975132430250=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============5302955438175212347==
+--===============2479985975132430250==
 Content-Type: multipart/signed; micalg=pgp-sha1;
-	protocol="application/pgp-signature"; boundary="vmttodhTwj0NAgWp"
+	protocol="application/pgp-signature"; boundary="TeJTyD9hb8KJN2Jy"
 Content-Disposition: inline
 
 
---vmttodhTwj0NAgWp
+--TeJTyD9hb8KJN2Jy
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Wed 2019-10-09 17:12:23, Tony Lindgren wrote:
-> Commit f74297dd9354 ("ARM: OMAP2+: Make sure LOGICRETSTATE bits are not
-> cleared") disabled oswr (open switch retention) for per and core domains
-> as various GPIO related issues were noticed if the bootloader had
-> configured the bits for LOGICRETSTATE for per and core domains.
+On Wed 2019-10-09 17:12:24, Tony Lindgren wrote:
+> We're missing initializing the PRM_VOLTCTRL register for voltage
+> controller. Let's add omap4_vc_init_pmic_signaling() similar to what we
+> have for omap3 and enable voltage control for retention.
 >=20
-> With the recent gpio-omap fixes, mostly related to commit e6818d29ea15
-> ("gpio: gpio-omap: configure edge detection for level IRQs for idle
-> wakeup"), things now behave for enabling core oswr for omap4.
+> This brings down droid4 power consumption with mainline kernel to somewhe=
+re
+> between 40 and 50mW from about 70 to 80 mW for the whole device when runn=
+ing
+> idle with LCD and backlight off, WLAN connected, and USB and modem modules
+> unloaded.
 >=20
-> Cc: Merlijn Wajer <merlijn@wizzup.org>
-> Cc: Pavel Machek <pavel@ucw.cz>
-> Cc: Sebastian Reichel <sre@kernel.org>
-> Signed-off-by: Tony Lindgren <tony@atomide.com>
+> Mostly just rmmod of omap2430, ohci-platform and phy-mapphone-mdm6600 are
+> needed to idle USB and shut down the modem. And after that measuring idle
+> power consumption can be done with reading sysfs entry every ten seconds =
+for
+> /sys/class/power_supply/battery/power_avg. Then rmmod of phy-cpcap-usb wi=
+ll
+> save few more mW, but will disable the debug UART.
+>=20
+> Note that sometimes CM_L4PER_UART1_CLKCTRL at 0x4a009540 does not idle
+> properly after unloading of phy-mapphone-mdm6600.
 
-2,7,8 basically modify same lines of code? Should that be done in one
-patch?
-
-Best regards,
-
+Acked-by: Pavel Machek <pavel@ucw.cz>
 									Pavel
-> =20
-> -	/*
-> -	 * Bootloader or kexec boot may have LOGICRETSTATE cleared
-> -	 * for some domains. This is the case when kexec booting from
-> -	 * Android kernels that support off mode for example.
-> -	 * Make sure it's set at least for core and per, otherwise
-> -	 * we currently will see lost GPIO interrupts for wlcore and
-> -	 * smsc911x at least if per hits retention during idle.
-> -	 */
-> -	if (!strncmp(pwrdm->name, "core", 4)
-> -		pwrdm_set_logic_retst(pwrdm, PWRDM_POWER_RET);
-> -
-> -	if (!strncmp(pwrdm->name, "l4per", 5)
-> +	if (!strncmp(pwrdm->name, "core", 4) ||
-> +	    !strncmp(pwrdm->name, "l4per", 5))
->  		pwrdm_set_logic_retst(pwrdm, PWRDM_POWER_OFF);
-> =20
->  	pwrst =3D kmalloc(sizeof(struct power_state), GFP_ATOMIC);
-
 --=20
 (english) http://www.livejournal.com/~pavelmachek
 (cesky, pictures) http://atrey.karlin.mff.cuni.cz/~pavel/picture/horses/blo=
 g.html
 
---vmttodhTwj0NAgWp
+--TeJTyD9hb8KJN2Jy
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: Digital signature
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iEYEARECAAYFAl2jPdYACgkQMOfwapXb+vIJzACeMNSoapkU3z/f5DKDV6Y0WjlP
-2mUAoJQ12bblkgVJi+y4SH2xOqtXPW2x
-=yYl4
+iEYEARECAAYFAl2jPd8ACgkQMOfwapXb+vKc6QCfTInHiCOojLoYl+MSblD5nQ+O
+DR4AoKLHNZ8Zwjp6K/Te03yOdXiHsdQx
+=5UcY
 -----END PGP SIGNATURE-----
 
---vmttodhTwj0NAgWp--
+--TeJTyD9hb8KJN2Jy--
 
 
---===============5302955438175212347==
+--===============2479985975132430250==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -147,5 +132,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============5302955438175212347==--
+--===============2479985975132430250==--
 
