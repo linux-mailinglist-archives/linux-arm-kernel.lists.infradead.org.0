@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6BE94D5541
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 13 Oct 2019 10:09:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0ED1BD553C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 13 Oct 2019 10:08:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N8SjJWYSyPPOt5i9oWQK6IhLJV5xpPoxtcpG0p5eySM=; b=pL5FCI4uLLOst8
-	G9TUOvHXgMbzXOPy9OU5G+3d/aYElZtUHwiueaJsy405e+JT6isKjz1G7EtdKONWL8TWuTQU9l7wc
-	gdK18NPMEa7OdWGN/Ezcxdj9FD0A3vruDAHnwkcSYfCKSuf1t+ta+/kG6F+l+OGxVTGhe39loSb+C
-	GHEZVfDw5f87DwfIA7xVe/hfk/Kq1iwR/oSRqbeqgjo8h/+ItcDNClkb96lXPIZ6PtYTMX7u+g5/M
-	+HwqMNT0KkIx51OrSSpXcoA8cB2Vl4EV+/BFheASGZf8l2rVbrSwwdf3hBhFNSstG5XBsDfRWa7Z5
-	r/YVmNY2zzNGRjrvX9kA==;
+	List-Owner; bh=9NfrqmQhgyD4kZaqrVcNTN95vVgpzN8646mH8n6fQpE=; b=QSBRrpAAbljfk6
+	4u0jEkRApCLWGshPywHKwVzBNPAwVKX1jcvfmn3zEk/uoLy5EWqd2i+0MtbhCL1TWtfde5OOMl3eO
+	yZt6u5xZab2h5osVNlYfr+eCmiXuO1D3dzg0Ky848Fj6meA9OUXxN48PwCr2/7eg3MbHpaIKqfAFj
+	bsWfUu5rXF8lMxMHl0zuxEnXfWXiqYTHdlISiu7aAdi41zby/Tbyg+NH2IK7ysQEhldHWKpRrQTtz
+	dGYHg45B+WnkmhKWOGN+2LmkIFJq1kmSTsTG0yHXU7U5ERgDT3yqKO1TOkRkEihW+FpWsgQnxGiOy
+	QG3chs6djzypAv03AlRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJYwP-0000np-Ic; Sun, 13 Oct 2019 08:09:25 +0000
+	id 1iJYvk-0008VW-Bz; Sun, 13 Oct 2019 08:08:44 +0000
 Received: from onstation.org ([52.200.56.107])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJYvI-0008Ig-GD
- for linux-arm-kernel@lists.infradead.org; Sun, 13 Oct 2019 08:08:20 +0000
+ id 1iJYvI-0008In-Ft
+ for linux-arm-kernel@lists.infradead.org; Sun, 13 Oct 2019 08:08:19 +0000
 Received: from localhost.localdomain (c-98-239-145-235.hsd1.wv.comcast.net
  [98.239.145.235])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested) (Authenticated sender: masneyb)
- by onstation.org (Postfix) with ESMTPSA id 20CFA3F23F;
+ by onstation.org (Postfix) with ESMTPSA id 747043F240;
  Sun, 13 Oct 2019 08:08:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=onstation.org;
  s=default; t=1570954092;
- bh=RFVcO9gNV5m28sPqWhNYJuMIlJLrDv2gh/shvbSVCKM=;
+ bh=fCQk30Py/+ejOB6T/yjmxeEYet6RNMz5CEDRqHL14uA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=eAWPAgXhu/zLzu/tIO9VKC21LDCT1yLHYXIU2BBh3mm5Bj60waonRBKKpK+YpjaKT
- iL0LRToFu87l/7LLYHFqgQLzBSkhyH+ODJDhNeNMqIqB6moDQLXnaUmwAoEHnR+unz
- FO2GvpasrZqWSfegYO5Q2ZfR3kJjOzZf1s1foEsw=
+ b=RaTOnR2MHLKR4hz0Hx233RsKRmnj3c0LgYy396DYdXYd3lQ0C5UqzRZL57sNF8kGd
+ bi5sVXsJSybb7PGAXe67D2r77PSoEbOx93IanjQtt2Pkjigc45puQKbXAE1izFfNDO
+ 5O67WD0Gm1giWRsYyy+La7ldTMGl84v+Y2GX+2gU=
 From: Brian Masney <masneyb@onstation.org>
 To: agross@kernel.org,
 	bjorn.andersson@linaro.org
-Subject: [PATCH 3/5] ARM: qcom_defconfig: add anx78xx HDMI bridge support
-Date: Sun, 13 Oct 2019 04:08:02 -0400
-Message-Id: <20191013080804.10231-4-masneyb@onstation.org>
+Subject: [PATCH 4/5] ARM: dts: qcom: msm8974: add ocmem node
+Date: Sun, 13 Oct 2019 04:08:03 -0400
+Message-Id: <20191013080804.10231-5-masneyb@onstation.org>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20191013080804.10231-1-masneyb@onstation.org>
 References: <20191013080804.10231-1-masneyb@onstation.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191013_010816_605730_4BFF445D 
-X-CRM114-Status: UNSURE (   9.87  )
+X-CRM114-CacheID: sfid-20191013_010816_596753_9B4E3B09 
+X-CRM114-Status: UNSURE (   9.50  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -85,26 +85,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the Analogix anx78xx driver so that the external display over HDMI
-can be used on Nexus 5 phones.
+Add ocmem node that is needed in order to support the GPU upstream.
 
 Signed-off-by: Brian Masney <masneyb@onstation.org>
 ---
- arch/arm/configs/qcom_defconfig | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm/boot/dts/qcom-msm8974.dtsi | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
 
-diff --git a/arch/arm/configs/qcom_defconfig b/arch/arm/configs/qcom_defconfig
-index 32fc8a24e5c7..f95cc49a1ddb 100644
---- a/arch/arm/configs/qcom_defconfig
-+++ b/arch/arm/configs/qcom_defconfig
-@@ -149,6 +149,7 @@ CONFIG_MEDIA_SUPPORT=y
- CONFIG_DRM=y
- CONFIG_DRM_MSM=m
- CONFIG_DRM_PANEL_SIMPLE=y
-+CONFIG_DRM_ANALOGIX_ANX78XX=m
- CONFIG_FB=y
- CONFIG_FRAMEBUFFER_CONSOLE=y
- # CONFIG_LCD_CLASS_DEVICE is not set
+diff --git a/arch/arm/boot/dts/qcom-msm8974.dtsi b/arch/arm/boot/dts/qcom-msm8974.dtsi
+index 39a3a1d63889..bdbde5125a56 100644
+--- a/arch/arm/boot/dts/qcom-msm8974.dtsi
++++ b/arch/arm/boot/dts/qcom-msm8974.dtsi
+@@ -1087,6 +1087,25 @@
+ 			};
+ 		};
+ 
++		ocmem@fdd00000 {
++			compatible = "qcom,msm8974-ocmem";
++			reg = <0xfdd00000 0x2000>,
++			      <0xfec00000 0x180000>;
++			reg-names = "ctrl",
++			            "mem";
++			clocks = <&rpmcc RPM_SMD_OCMEMGX_CLK>,
++			         <&mmcc OCMEMCX_OCMEMNOC_CLK>;
++			clock-names = "core",
++			              "iface";
++
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			gmu_sram: gmu-sram@0 {
++				reg = <0x0 0x100000>;
++			};
++		};
++
+ 		mdss: mdss@fd900000 {
+ 			status = "disabled";
+ 
 -- 
 2.21.0
 
