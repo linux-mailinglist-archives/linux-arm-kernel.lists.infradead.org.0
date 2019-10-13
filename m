@@ -2,92 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9781FD55B6
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 13 Oct 2019 12:54:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61C29D55D9
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 13 Oct 2019 13:40:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=+JvPjPH9RcEd4Z6nN3/F7SvTSKN1adsaPNK0oSjk+4Y=; b=LLR
-	4hHYm9QFLPpQWvfnJHN4fNEcS6kc5PhRuFbLrp+4nCN+rKTxOYkvlzx58LXjQMaC4nq5drbaPHddP
-	J0Pn0vsPdV6A0ePFu2PEryQ/mbEllwU/uDpDdo2rqdqj3T1yZZyXUE189JeLoNmsoQsIhkn8lDOJV
-	IAGvDHQEYjstvApJAqgLyZtU8HODHDqndbxvN/AoQBIS34ozIE/mOXM33E4BO29ElLSkQ11zpIi0H
-	aUHnajci2JFEMO057zmwmis4dtolZpHGq2jmY9yAC02rMrIv0bdhhUJsPdOW7HpxxuGlwIbOCkaa8
-	/YRy3+gTcJ4stWlycSseiE/3m79enFw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=C+/A8ZxXDnkT4yymGdXzJI+n5k1uxcMj4Q8LV96YNg8=; b=tVPsuyEZ2eRB4+mK37mlXd+wE
+	NaK3HbjMZwRaJEDc5S1KDCrT7Tg074TBVopx4yiIkcPVp3fM4JJy9Wu0pgQUb/Su0R1fjXEIs0EbA
+	xBIl/MCIRtwLAJp7L9agYVWPw1YAeY4KnEJQeMPfJd2TYuYtL2rHJ+LngWcK89kMaSHYQ5oE5xaQo
+	VCC77F5+hS/LO8kZnsvHWBe8nQl3MLx+3UOIrRfPob/UWO873CPh7f5cAj4WvsFIRdAEw3/igqcFL
+	GAD2JKBwOcakD7ipwmoZ0xubh5plxib/GlVauHwQ1Jh4IIM5tVa3idljWG3mYICJpgiEfFfv9mEPx
+	r5zTiOEBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJbWG-0008L0-0Y; Sun, 13 Oct 2019 10:54:36 +0000
-Received: from mout.gmx.net ([212.227.17.22])
+	id 1iJcEk-0006bV-88; Sun, 13 Oct 2019 11:40:34 +0000
+Received: from atrey.karlin.mff.cuni.cz ([195.113.26.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJbW8-0008KS-Cd
- for linux-arm-kernel@lists.infradead.org; Sun, 13 Oct 2019 10:54:30 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1570964044;
- bh=P1UgswCUcghz6yIDHCpeyknx90qBZRzXKgVlFd7eCdQ=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
- b=Hazt7CS8w6v7l3PeNig4oBTVsQl+5I8ySOkCGte5W+gEnNzpCKMkb1dShKpoGAKCW
- ns+js783PPeaES6CUDQ9WCawQ0osxmfnZ8mBk6U/lfw3/mDQO82KaMD3qK769L0gZo
- 91NtoEYrT08hXbMtIdcQ/9vNHbFYU+YsUxvJYeTU=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from localhost.localdomain ([37.4.249.112]) by mail.gmx.com
- (mrgmx105 [212.227.17.168]) with ESMTPSA (Nemesis) id
- 1M1Hdq-1iLGCc1IeQ-002km6; Sun, 13 Oct 2019 12:54:04 +0200
-From: Stefan Wahren <wahrenst@gmx.net>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
- Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
- Pavel Machek <pavel@ucw.cz>
-Subject: [PATCH] ARM: dts: bcm2837-rpi-cm3: Avoid leds-gpio probing issue
-Date: Sun, 13 Oct 2019 12:53:23 +0200
-Message-Id: <1570964003-20227-1-git-send-email-wahrenst@gmx.net>
-X-Mailer: git-send-email 2.7.4
-X-Provags-ID: V03:K1:rD0/Aj9OsYtuwDKTD1Asm7wvmhiAAdzSvgHj2hhtz4zJHwfn8gY
- eQEqPkZg4HhyshXGfuuE5EO6kpFG5C4oBy5q6gGSXfR06cp5r4eBApjjJYja0GR98v1WSqm
- zBGi0NiTAm8qgOCOzqYBTvYUEz8qdiuQIfxv+idJ1wtdVdVipSxYyMxrdwkMZ8hp64ZNZT/
- nQGx5ZFIng+B30yOE2ZsA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:uxI6S7LwlPs=:mmtcYysXtk12sBd4sSpTyK
- sH5Rac4tKDW3Jjzp9lXc5qGXFOnZ2xOoiS9WZTl1M7FvGTAzqg9WyHtVz3dQ6PyRRmGE6Aqzg
- Wvj4VYE/Bxvppf3Cn1Qsa+zrguD5TbN310rcuNu8pBTSGwKuY/R+DB/H2mwc4jU8paWIeZOPF
- AQ2fGoHT95vD5FLUgfe1/TqSxSdqxxW+1lGuJfoCHAjAtLpWbpG8QLjWCTq0O20lFJuT+XqYG
- u5pJhG/S8d8spGPGacajBXARG9vfWjGHDJ8X0lBmuHJytInQI62IjDuQCJJONFqRfkJQb6Dj3
- /p+4V1qwetdvUICCy2bZGwJOezGuhGFNwOelsZ5REg/x9huRfxDm8CWC0wdhFnAYO06xSwLEG
- adIp3E1m8P9p7HV0FgKixZPI1Tw4rJi/uK2B+SLS6oXF8kHQ2EdpuS7WDVH7rK7bqHi/WVKCH
- KZMkfKZnjgh4pAxK6Gp7Du2xrwL4yL22fg3jQAq9lu06QGU+taBKLRGP5FQksadz5hmKM9TIM
- aSAG6buNXs2vnwUdZyYwwzfJRP/vsKBBbA0F75mtn4W7wiKzKg73EUfNSln1+Zg5TJ7mowVEz
- k4dkVA7/wR8RcP2ZN7RZdB2EqWRWDp4VMIx/ok9rgzBzW0HWBvBdh/P4oICIoD+BK/sr6a9HZ
- 2LvvcfcFOVi48EeSWuM8R0RDcxCEl9i9SHIIgz6EjWiZz9GgnCYX4lOK6F7Xw+3o7+0Jg8Y7z
- 79B8WjdSNYAZsSFLJm/8X8jONQNmWPaL6K3fbv7Ai2r9pqmD/k0b1lftYXWU5wmwcpBvp+WUC
- sbxo+5vAWGbJFKb+vPUPW2GDNqt59yfnBOf9gYT0eME7WARqv9T/pSFH41X6FLUBAksdjE1ZU
- q9qs2nW1fkGwbgEVLS7UwVJ3sqUnB6dWjq6WRYmVyf+siRSu1yz0CI3dVz0u37IWEwxip3yUr
- hqOkrsDCWQIUPTCpbkYI7NiEdztz3W51QygBPrewVwdCZLa+/8Z7+goJzZndlyw1hCJkdmA2c
- jzk39CEEoSI//yOFlSc5ZBGMIKqup3laJoepfcsq3GoAnh70xl0I5RTkSVbRswd/AV/C7ItAb
- YocSC3OqsqusQfWqgvhBeNKw++ksuAecLIFGZCmkzUk/OZ/PZ2HVcnIGPeEba/WE4opnAEjPD
- NJ0J/Sen2FyL/1fp0VOx88AmhYlkbMx+StHX7JrPHbOf/zlAjCTZY+CKGISyQLBrM8YxpRJFf
- KfKYVNWqP7TQmkSIN5ybCminYG6OcGq0itehPDQ==
+ id 1iJcEa-0006aY-LU
+ for linux-arm-kernel@lists.infradead.org; Sun, 13 Oct 2019 11:40:27 +0000
+Received: by atrey.karlin.mff.cuni.cz (Postfix, from userid 512)
+ id E42AF80249; Sun, 13 Oct 2019 13:40:00 +0200 (CEST)
+Date: Sun, 13 Oct 2019 13:38:17 +0200
+From: Pavel Machek <pavel@ucw.cz>
+To: Tony Lindgren <tony@atomide.com>
+Subject: Re: [PATCH 1/8] ARM: OMAP2+: Remove unused wakeup_cpu
+Message-ID: <20191013113817.GE26237@amd>
+References: <20191010001224.41826-1-tony@atomide.com>
+ <20191010001224.41826-2-tony@atomide.com>
+MIME-Version: 1.0
+In-Reply-To: <20191010001224.41826-2-tony@atomide.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191013_035428_764147_748770E5 
-X-CRM114-Status: GOOD (  14.19  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191013_044024_858581_8E1C26AF 
+X-CRM114-Status: GOOD (  10.52  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.113.26.193 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.22 listed in list.dnswl.org]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,69 +58,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- Linus Walleij <linus.walleij@linaro.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- Dan Murphy <dmurphy@ti.com>, linux-leds@vger.kernel.org,
- Stefan Wahren <wahrenst@gmx.net>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Merlijn Wajer <merlijn@wizzup.org>, linux-omap@vger.kernel.org,
+ Sebastian Reichel <sre@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============1191912582871940712=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-bcm2835-rpi.dtsi defines the behavior of the ACT LED, which is available
-on all Raspberry Pi boards. But there is no driver for this particual
-GPIO on CM3 in mainline yet, so this node was left incomplete without
-the actual GPIO definition. Since commit 025bf37725f1 ("gpio: Fix return
-value mismatch of function gpiod_get_from_of_node()") this causing probe
-issues of the leds-gpio driver for users of the CM3 dtsi file.
 
-  leds-gpio: probe of leds failed with error -2
+--===============1191912582871940712==
+Content-Type: multipart/signed; micalg=pgp-sha1;
+	protocol="application/pgp-signature"; boundary="maH1Gajj2nflutpK"
+Content-Disposition: inline
 
-Until we have the necessary GPIO driver hide the ACT node for CM3
-to avoid this.
 
-Reported-by: Fredrik Yhlen <fredrik.yhlen@endian.se>
-Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
-Fixes: a54fe8a6cf66 ("ARM: dts: add Raspberry Pi Compute Module 3 and IO board")
-Cc: Linus Walleij <linus.walleij@linaro.org>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>
----
- arch/arm/boot/dts/bcm2837-rpi-cm3.dtsi | 8 ++++++++
- 1 file changed, 8 insertions(+)
+--maH1Gajj2nflutpK
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Hi,
+On Wed 2019-10-09 17:12:17, Tony Lindgren wrote:
+> After commit 32d174ed1bd7 ("ARM: OMAP4: MPUSS PM: remove unnecessary
+> shim functions for powerdomain control") this is no longer used.
+>=20
+> The code continues execution after context restore on the same CPU,
+> so we can just use pm_info->pwrdm.
+>=20
+> Cc: Merlijn Wajer <merlijn@wizzup.org>
+> Cc: Pavel Machek <pavel@ucw.cz>
 
-i'm not sure the behavior change in leds-gpio was intended.
+Acked-by: Pavel Machek <pavel@ucw.cz>
 
-Regards
-Stefan
+--=20
+(english) http://www.livejournal.com/~pavelmachek
+(cesky, pictures) http://atrey.karlin.mff.cuni.cz/~pavel/picture/horses/blo=
+g.html
 
-diff --git a/arch/arm/boot/dts/bcm2837-rpi-cm3.dtsi b/arch/arm/boot/dts/bcm2837-rpi-cm3.dtsi
-index 7c3cb7e..925cb37 100644
---- a/arch/arm/boot/dts/bcm2837-rpi-cm3.dtsi
-+++ b/arch/arm/boot/dts/bcm2837-rpi-cm3.dtsi
-@@ -9,6 +9,14 @@
- 		reg = <0 0x40000000>;
- 	};
+--maH1Gajj2nflutpK
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: Digital signature
 
-+	leds {
-+		/*
-+		 * Since there is no upstream GPIO driver yet,
-+		 * remove the incomplete node.
-+		 */
-+		/delete-node/ act;
-+	};
-+
- 	reg_3v3: fixed-regulator {
- 		compatible = "regulator-fixed";
- 		regulator-name = "3V3";
---
-2.7.4
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
 
+iEYEARECAAYFAl2jDKkACgkQMOfwapXb+vKtLACfVZ9KXYe7o/TIDG5OEIN9EC3R
+NzQAn1+QROYC4Pb01avEehDBz1epcXDX
+=h1+g
+-----END PGP SIGNATURE-----
+
+--maH1Gajj2nflutpK--
+
+
+--===============1191912582871940712==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1191912582871940712==--
+
