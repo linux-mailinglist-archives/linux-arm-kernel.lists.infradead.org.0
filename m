@@ -2,54 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 150BAD661D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 17:30:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1D36D6625
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 17:32:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+RZQnCefMPHYJBIce2ClDn+vnlNM6/p5DoXA519kPw0=; b=dyEM+6fa89rzY3l/rkwTCAOno
-	g+37LydFOCXF6uWVnhiP7QMVT0Ceyuw09xMfJqDBRv+hGAwscLzVU02bL1cJmBDeYj8Kvp/159iiW
-	irg1367kNhYp0coyDzGrkAErTRaK6+PoqZMSi0/YwpRt69dEjVu1DwDrtSDnsESJ8diPPNslqGmSO
-	BwmAPjO+V3AigUyOmVkYFZw2Zgi1JD1OLFHN/I8utSCFgAQtA7GHmp99Yky76DjMqPx25eZinhcbV
-	JqZUxhPNN6EBPGSWnWgOeZ09QdM+tczmNYLcSkLF+leiG9oNaYstPZ10dW0mXQlVL9lle+Xhw+Yaq
-	/K7NNh/FQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=cTmFURRaoi96WIx9h7dAi0yt94yC4Vrhmb5S+NE4iS8=; b=NXT
+	sDlb7m9aH1zzCDBSPT0alO6XPx8uuQE1onRFGWAKxwBAEOkt4dMVZX4rZmJoq7hGwe3XZRwkhDarq
+	488jPmR2hQuSprehMoEpkrvL+2Tb5YQz0w+7I6uOuLcSNo4X+uKUeGzF+7IQncQ6XnJ/071f0RxFk
+	0eOdmeHIgsSjkoaNh2Q2dXn/BIjm72L974x58GQQI9TPgNBs3usJNxURsdnVhRPFTQOsP4k+yL38d
+	Qb4HrEy8Ule9qFlC9CqSiL8y3p5fY5e/rZDgGw1+co7HwZOIXbxsLvpYf0iUeG1/SsGBX0cL8ktBW
+	hjWpn9z8xhiIoD22gXJ5GZPqOOeQy8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iK2IY-0000rg-BP; Mon, 14 Oct 2019 15:30:14 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iK2IO-0000A3-Gr
- for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 15:30:06 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EB9C028;
- Mon, 14 Oct 2019 08:30:02 -0700 (PDT)
-Received: from dawn-kernel.cambridge.arm.com (unknown [10.1.197.116])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 25D5B3F68E;
- Mon, 14 Oct 2019 08:30:02 -0700 (PDT)
-Subject: Re: [PATCH] arm64: cpufeature: Don't expose ZFR0 to userspace when
- SVE is not enabled
-To: Julien Grall <julien.grall@arm.com>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20191014102113.16546-1-julien.grall@arm.com>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <82ee2a7c-1061-f954-4ff1-3dfb94ec3419@arm.com>
-Date: Mon, 14 Oct 2019 16:30:01 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.0
-MIME-Version: 1.0
-In-Reply-To: <20191014102113.16546-1-julien.grall@arm.com>
-Content-Language: en-US
+	id 1iK2L0-0001Yz-VA; Mon, 14 Oct 2019 15:32:46 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iK2Ks-0001Y5-Ka
+ for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 15:32:40 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 79FA41A0199;
+ Mon, 14 Oct 2019 17:32:32 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 6D7AB1A00EA;
+ Mon, 14 Oct 2019 17:32:32 +0200 (CEST)
+Received: from fsr-ub1864-103.ea.freescale.net
+ (fsr-ub1864-103.ea.freescale.net [10.171.82.17])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id F329520624;
+ Mon, 14 Oct 2019 17:32:31 +0200 (CEST)
+From: Daniel Baluta <daniel.baluta@nxp.com>
+To: shawnguo@kernel.org
+Subject: [PATCH] firmware: imx: Remove call to devm_of_platform_populate
+Date: Mon, 14 Oct 2019 18:32:28 +0300
+Message-Id: <20191014153228.25167-1-daniel.baluta@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_083004_626461_513419E3 
-X-CRM114-Status: GOOD (  19.79  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191014_083238_815737_EB08F6A8 
+X-CRM114-Status: UNSURE (   9.15  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -63,69 +65,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, will@kernel.org, Dave.Martin@arm.com
+Cc: festevam@gmail.com, s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
+ linux@rempel-privat.de, linux-imx@nxp.com, kernel@pengutronix.de,
+ daniel.baluta@nxp.com, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Julien,
+IMX DSP device is created by SOF layer. The current call to
+devm_of_platform_populate is not needed and it doesn't produce
+any effects.
 
-Some minor nits in the description.
+Fixes: ffbf23d50353915d ("firmware: imx: Add DSP IPC protocol interface)
+Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
+---
+ drivers/firmware/imx/imx-dsp.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-On 14/10/2019 11:21, Julien Grall wrote:
-> The kernel may not support SVE if CONFIG_ARM64_SVE is not set and
-> will hide the feature from the from userspace.
-> 
-> Unfortunately, the fields of ID_AA64ZFR0_EL1 are still exposed and could
-> lead to undefined behavior in userspace.
-> 
-> The kernel should not used the register when CONFIG_SVE is disabled.
+diff --git a/drivers/firmware/imx/imx-dsp.c b/drivers/firmware/imx/imx-dsp.c
+index a43d2db5cbdb..4265e9dbed84 100644
+--- a/drivers/firmware/imx/imx-dsp.c
++++ b/drivers/firmware/imx/imx-dsp.c
+@@ -114,7 +114,7 @@ static int imx_dsp_probe(struct platform_device *pdev)
+ 
+ 	dev_info(dev, "NXP i.MX DSP IPC initialized\n");
+ 
+-	return devm_of_platform_populate(dev);
++	return 0;
+ out:
+ 	kfree(chan_name);
+ 	for (j = 0; j < i; j++) {
+-- 
+2.17.1
 
-s/used/use ?
-
-> Therefore, we only need to hidden them from the userspace.
-
-s/hidden/hide ?
-
-With the above:
-
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-
-> 
-> Signed-off-by: Julien Grall <julien.grall@arm.com>
-> Fixes: 06a916feca2b ('arm64: Expose SVE2 features for userspace')
-> ---
->   arch/arm64/kernel/cpufeature.c | 15 ++++++++++-----
->   1 file changed, 10 insertions(+), 5 deletions(-)
-> 
-> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> index cabebf1a7976..80f459ad0190 100644
-> --- a/arch/arm64/kernel/cpufeature.c
-> +++ b/arch/arm64/kernel/cpufeature.c
-> @@ -176,11 +176,16 @@ static const struct arm64_ftr_bits ftr_id_aa64pfr1[] = {
->   };
->   
->   static const struct arm64_ftr_bits ftr_id_aa64zfr0[] = {
-> -	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_SM4_SHIFT, 4, 0),
-> -	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_SHA3_SHIFT, 4, 0),
-> -	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_BITPERM_SHIFT, 4, 0),
-> -	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_AES_SHIFT, 4, 0),
-> -	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_SVEVER_SHIFT, 4, 0),
-> +	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_SVE),
-> +		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_SM4_SHIFT, 4, 0),
-> +	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_SVE),
-> +		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_SHA3_SHIFT, 4, 0),
-> +	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_SVE),
-> +		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_BITPERM_SHIFT, 4, 0),
-> +	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_SVE),
-> +		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_AES_SHIFT, 4, 0),
-> +	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_SVE),
-> +		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_SVEVER_SHIFT, 4, 0),
->   	ARM64_FTR_END,
->   };
->   
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
