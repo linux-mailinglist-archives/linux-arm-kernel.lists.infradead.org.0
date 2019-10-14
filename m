@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C563ED5B92
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 08:42:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F7AAD5B93
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 08:42:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vyaOIunqBTAwCUWWavS/wY884/W4j5kKc9rgdCq6K6s=; b=p9bDHJbnA8a3Ug
-	zj5lr5vyxmSVOYTTI0JUYcyswPB9t/uBp90nhxOYzVnmz3tGPxgvSp6iHljjQkcrTZOMX3hpe2W3i
-	ELu/7A5NbayIgrr67XnC3KdMGUBpGtv4BziPp4XsKu8QChdSlSGJ1Z4OhkFs7bA1OA/l8RdhjXC9q
-	zhCOkxPGXtVa/T+5NPjjgtycWoD37fOCdY6OpJ5n4x2N2XFCljijusHmAdzYFzhQVob3wM+pDwNC4
-	JOD1VLgGNmnwtbgQRxlNop1QoB7PmHVYzEZ/WOeCxSqvIj57x8d4jAiXe094I4bVJ4UN4Os4MJiBj
-	OOdxuK8WyKg12pI3KEag==;
+	List-Owner; bh=Bw1w2LKAPqIHD+/Mlp6jVdf2PVn6IDEMcFkofBdky5U=; b=SA+wTUTb/PYShX
+	xkjjXTQ+EVLgoWZ43KHh+YTQREVChwyWcq7ms99hQVlTDuUVnKrDMx79lRtdJtjgkCHKs/YPhQj4a
+	42fGU5VG/THoJtUsSY6wCNJYvpXeX8WzWAWREFlYKAyfdL9jJjm3koFduWxlcf0s0G3DVjyd88kF8
+	Q6R+UTuo7RwzmrayiB+oCE0Dwjui2oc03Mt27u2XUwb9nqJ58UlD1lhXgbRkHoa9w5tLsgBW/TQJb
+	xodHsiIX5B7HRGdtarSpPXUG4bbh2IBrIrHhOur/Gm9paP1ulwoHjto50cPGJzTsoikpilAemmWEY
+	QXC4x3Rv/YYOTB++DTrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJu3M-0000mJ-5d; Mon, 14 Oct 2019 06:42:00 +0000
+	id 1iJu3W-0000zM-Uj; Mon, 14 Oct 2019 06:42:10 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJu2K-0000F0-Nk; Mon, 14 Oct 2019 06:41:01 +0000
-X-UUID: f972b40383eb4a6689f7d0c0726a0f5d-20191013
-X-UUID: f972b40383eb4a6689f7d0c0726a0f5d-20191013
+ id 1iJu2M-0000Ds-V4; Mon, 14 Oct 2019 06:41:03 +0000
+X-UUID: 8f5cceac05b94de890a3071040947015-20191013
+X-UUID: 8f5cceac05b94de890a3071040947015-20191013
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <yong.wu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 720285428; Sun, 13 Oct 2019 22:40:09 -0800
-Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ with ESMTP id 46969119; Sun, 13 Oct 2019 22:40:09 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 13 Oct 2019 23:38:48 -0700
+ 15.0.1395.4; Sun, 13 Oct 2019 23:39:04 -0700
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 14 Oct 2019 14:38:46 +0800
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 14 Oct 2019 14:39:02 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 14 Oct 2019 14:38:46 +0800
+ Transport; Mon, 14 Oct 2019 14:39:02 +0800
 From: Yong Wu <yong.wu@mediatek.com>
 To: Matthias Brugger <matthias.bgg@gmail.com>, Joerg Roedel <joro@8bytes.org>, 
  Will Deacon <will.deacon@arm.com>
-Subject: [PATCH v3 2/7] iommu/mediatek: Add pgtlock in the iotlb_sync
-Date: Mon, 14 Oct 2019 14:38:16 +0800
-Message-ID: <1571035101-4213-3-git-send-email-yong.wu@mediatek.com>
+Subject: [PATCH v3 4/7] iommu/mediatek: Delete the leaf in the tlb flush
+Date: Mon, 14 Oct 2019 14:38:18 +0800
+Message-ID: <1571035101-4213-5-git-send-email-yong.wu@mediatek.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1571035101-4213-1-git-send-email-yong.wu@mediatek.com>
 References: <1571035101-4213-1-git-send-email-yong.wu@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 6E419CE018A08EE746BCEFAA9D613D0F51462EF49F84CF64C7595C095F5042E12000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191013_234056_817175_E89D3215 
-X-CRM114-Status: GOOD (  10.35  )
+X-CRM114-CacheID: sfid-20191013_234059_034096_31FC280E 
+X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -86,40 +86,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The commit 4d689b619445 ("iommu/io-pgtable-arm-v7s: Convert to IOMMU API
-TLB sync") help move the tlb_sync of unmap from v7s into the iommu
-framework. It helps add a new function "mtk_iommu_iotlb_sync", But it
-lacked the dom->pgtlock, then it will cause the variable "tlb_flush_active"
-may be changed unexpectedly, we could see this warning log randomly:
+In our tlb range flush, we don't care the "leaf". Remove it to simplify
+the code. no functional change.
 
-mtk-iommu 10205000.iommu: Partial TLB flush timed out, falling back to
-full flush
-
-This patch adds dom->pgtlock in mtk_iommu_iotlb_sync to fix this issue.
-
-Fixes: 4d689b619445 ("iommu/io-pgtable-arm-v7s: Convert to IOMMU API TLB sync")
 Signed-off-by: Yong Wu <yong.wu@mediatek.com>
 ---
- drivers/iommu/mtk_iommu.c | 5 +++++
- 1 file changed, 5 insertions(+)
+ drivers/iommu/mtk_iommu.c | 16 ++++------------
+ 1 file changed, 4 insertions(+), 12 deletions(-)
 
 diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-index 76b9388..5f594d6 100644
+index 8712afc..19f936c 100644
 --- a/drivers/iommu/mtk_iommu.c
 +++ b/drivers/iommu/mtk_iommu.c
-@@ -453,7 +453,12 @@ static void mtk_iommu_flush_iotlb_all(struct iommu_domain *domain)
- static void mtk_iommu_iotlb_sync(struct iommu_domain *domain,
- 				 struct iommu_iotlb_gather *gather)
- {
-+	struct mtk_iommu_domain *dom = to_mtk_domain(domain);
-+	unsigned long flags;
-+
-+	spin_lock_irqsave(&dom->pgtlock, flags);
- 	mtk_iommu_tlb_sync(mtk_iommu_get_m4u_data());
-+	spin_unlock_irqrestore(&dom->pgtlock, flags);
+@@ -174,8 +174,7 @@ static void mtk_iommu_tlb_flush_all(void *cookie)
  }
  
- static phys_addr_t mtk_iommu_iova_to_phys(struct iommu_domain *domain,
+ static void mtk_iommu_tlb_add_flush_nosync(unsigned long iova, size_t size,
+-					   size_t granule, bool leaf,
+-					   void *cookie)
++					   size_t granule, void *cookie)
+ {
+ 	struct mtk_iommu_data *data = cookie;
+ 
+@@ -219,14 +218,7 @@ static void mtk_iommu_tlb_sync(void *cookie)
+ static void mtk_iommu_tlb_flush_walk(unsigned long iova, size_t size,
+ 				     size_t granule, void *cookie)
+ {
+-	mtk_iommu_tlb_add_flush_nosync(iova, size, granule, false, cookie);
+-	mtk_iommu_tlb_sync(cookie);
+-}
+-
+-static void mtk_iommu_tlb_flush_leaf(unsigned long iova, size_t size,
+-				     size_t granule, void *cookie)
+-{
+-	mtk_iommu_tlb_add_flush_nosync(iova, size, granule, true, cookie);
++	mtk_iommu_tlb_add_flush_nosync(iova, size, granule, cookie);
+ 	mtk_iommu_tlb_sync(cookie);
+ }
+ 
+@@ -245,7 +237,7 @@ static void mtk_iommu_tlb_flush_page_nosync(struct iommu_iotlb_gather *gather,
+ static const struct iommu_flush_ops mtk_iommu_flush_ops = {
+ 	.tlb_flush_all = mtk_iommu_tlb_flush_all,
+ 	.tlb_flush_walk = mtk_iommu_tlb_flush_walk,
+-	.tlb_flush_leaf = mtk_iommu_tlb_flush_leaf,
++	.tlb_flush_leaf = mtk_iommu_tlb_flush_walk,
+ 	.tlb_add_page = mtk_iommu_tlb_flush_page_nosync,
+ };
+ 
+@@ -475,7 +467,7 @@ static void mtk_iommu_iotlb_sync(struct iommu_domain *domain,
+ 		spin_lock_irqsave(&dom->pgtlock, flags);
+ 
+ 	mtk_iommu_tlb_add_flush_nosync(gather->start, length, gather->pgsize,
+-				       false, data);
++				       data);
+ 	mtk_iommu_tlb_sync(data);
+ 
+ 	if (!is_in_gather)
 -- 
 1.9.1
 
