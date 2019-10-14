@@ -2,87 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77B15D5D9E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 10:38:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD5D3D5E0D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 11:00:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=PIR0ZYxwBa+7jfcTqcBxuxB1OMTUJFIG38iCMIwRV10=; b=sI5JD53LIxoxEVintVia1Guh9
-	LX7wwNboJzyp2aUH8ANA/a5rR9sOqu1WastnohtEV5ReAnEWypsuzTwmwSg54TI+SevCCTUd8DNgx
-	IMm6chQT7YKh//fwtHubMz4u4+Zz71MIIrr5wgXLv/DKzVdowre695QrRpSSxTD30hnUs9jaJSEhk
-	UVjxLHeKmeygaHGp1NcVu0Ad6Rwy9s2vC8ZpMZ64rBnVa6TY02pGdHXJNetpvt1YbB5Wr/SwjWUEB
-	6hCe5OnfXh/V5Nx89HjKAzFqXOCFAZavxL+dasrg0zqd4xDTpKc9YDIBfSy6llE8Y9kw1++em0MW2
-	jXv8lrFzA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lqQNrdE9ue+/Fw3QBHZ4dV1Ju4MKopO9xXUu4Z4Xfbw=; b=NVjjeLi4Ov2AAO
+	LQGOrPOxuozj6/MscreH6ZYa54YObeRT+bj8zLUScK3Dm5sCkae+E1lJMVmYHyKIFjcXJJpJS7ftz
+	p5yO8NRpdPx5XeZFsvChJRpCc1fiZ/9rZ416HMt/NjwzZocsiiVX/6XmY6b7A2yvIehXrVVkFNqRZ
+	QOAwrkzKryFduLZpmaUe+GZtZin59jgUhqVKzu3Pz+R1mhYEwFMnKGa1ZlgHB0YArtlVrH4jGhV58
+	G5qYJegVkIN7ukFlDt6e1lpHO6rR5gESI+e6nRXfmMqBzxJo4U8uP5drOvWRWm5b8zYpACpWQ44T8
+	NfjWQGtE76mnpn9Hzzmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJvrq-00014F-Vw; Mon, 14 Oct 2019 08:38:14 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1iJwDa-000132-N8; Mon, 14 Oct 2019 09:00:42 +0000
+Received: from mail-qt1-f193.google.com ([209.85.160.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJvrg-00013V-6a
- for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 08:38:05 +0000
-Received: from mail-wr1-f71.google.com (mail-wr1-f71.google.com
- [209.85.221.71])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id B2AD3859FC
+ id 1iJwDS-00012F-NJ
+ for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 09:00:36 +0000
+Received: by mail-qt1-f193.google.com with SMTP id m61so24395262qte.7
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 14 Oct 2019 08:38:02 +0000 (UTC)
-Received: by mail-wr1-f71.google.com with SMTP id h4so2389705wrx.15
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 14 Oct 2019 01:38:02 -0700 (PDT)
+ Mon, 14 Oct 2019 02:00:32 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=+0+jYoRl9oEFQs2yc70KUPcvIdquCCUud08IyDTa0Sk=;
- b=fcqvfN9gUMtUdxChruKGWZ25mSah4nIAVQ4B1MKdpwKRpk6pTE2GX0rhFcfX40/PDJ
- aNCKxSMPfnxJPFohASh0UAKUP9Q9++D/pEdDzpCPXv9Pn1VtYqWCIEpwpYO+CKesg8do
- O3z2tC+N5jFqLC43CT6bt35JPih0a6djyyYrCCiiJev4nsejqa2dEjXbtX5pufDSW7Bs
- lEdPmMhogzZDfGxHZ41g/uUNtoSHgjK8rGUg06SrHAGAk6ZDWLsTKcgsTVvqLdlF9igq
- 9cpeqOd90Gj5hf4kXkdLBWVaMVS1dMSZsRNvFlCKAki4iR3oJYVJJBH/tW/Vo/7uJOMq
- iTmA==
-X-Gm-Message-State: APjAAAWx8Uf16ocQQlM9BXK1mZZaohU2RHASadePgPjt6avD8W+8rJbR
- tKfDbo+rpFuKAI/NkEMsU5QaeMa7QqFBdK2j7CWV+M7PVwUg06Zu0vDS1pmalknReuyeL+0JAnz
- xBzCNjOAT2o9DPrmfZMkksx9wjskcjf3JlH4=
-X-Received: by 2002:adf:ef83:: with SMTP id d3mr24269914wro.398.1571042281386; 
- Mon, 14 Oct 2019 01:38:01 -0700 (PDT)
-X-Google-Smtp-Source: APXvYqx1Z5KT0VRMmx0ICRJQ57vVQt4XOO7A3AyHOiVUdwcd70YI9rxvp4vdD5PKGwKw9pM+rhgrew==
-X-Received: by 2002:adf:ef83:: with SMTP id d3mr24269904wro.398.1571042281249; 
- Mon, 14 Oct 2019 01:38:01 -0700 (PDT)
-Received: from [192.168.1.81]
- (host81-157-241-145.range81-157.btcentralplus.com. [81.157.241.145])
- by smtp.gmail.com with ESMTPSA id x5sm22878762wrt.75.2019.10.14.01.37.59
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 14 Oct 2019 01:38:00 -0700 (PDT)
-Subject: Re: [RFC v4 00/18] objtool: Add support for arm64
-To: Raphael Gault <raphael.gault@arm.com>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- jpoimboe@redhat.com
-References: <20190816122403.14994-1-raphael.gault@arm.com>
-From: Julien Thierry <jthierry@redhat.com>
-Message-ID: <f4fd76e1-ae15-3796-77a3-102ccc1ee028@redhat.com>
-Date: Mon, 14 Oct 2019 09:37:58 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=mvbtG5z1dl1r9yvNurN3pUa34WevfFu4F3FIQf1Nshw=;
+ b=cXRNcxMAbrjaOYLg0dNt4Rma/y7TSXvi1rHuoMZypOsQBe7sHBxPDgNiunL7bia+lt
+ 9P0yg9uQh70NeuN2l+9qtBW3/COmqA1vcza+WwX3AeKHcF4Wyh+JJdqvXB/BeSXKr2g2
+ Jp262KIJw5KQFGMZWdKzrfSMplrrhZIUjFs+xBm8rVVgRy+sDmLLvoL4TJES+wCwjGbR
+ EOfNZVNGIPlQ0tj7gtvSiak3kjCysErzUQrqKwNV+kmh5cLVeUQdJ+V1BbmTtqaisD+t
+ 6ocEwXsEl3J4MF3b3CFBb1SymkMDrluKej1Wz+ba6tR5B7HJnfFNYi0kD67DTKqhKE7K
+ xzAA==
+X-Gm-Message-State: APjAAAXXq9FAnphU37G2o3OgQj+cTr+qiJpsNnmzDBRQRv82wTxC1OOj
+ qRGD5v86cZuFfnznePP/nSnv+UCHFD2TianJcFoWwg==
+X-Google-Smtp-Source: APXvYqy8+8BBI6DNXDwKfCH+1w/2xH0+EE9PMaAbl80s+BM2xELFwnnG6hFBOWyL/geb5dj52kiemzfHp6srlG77ODs=
+X-Received: by 2002:aed:3c67:: with SMTP id u36mr31039533qte.142.1571043631870; 
+ Mon, 14 Oct 2019 02:00:31 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190816122403.14994-1-raphael.gault@arm.com>
-Content-Language: en-US
+References: <20191013221310.30748-1-sebastian@breakpoint.cc>
+In-Reply-To: <20191013221310.30748-1-sebastian@breakpoint.cc>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Mon, 14 Oct 2019 11:00:15 +0200
+Message-ID: <CAK8P3a3kxOSzD7pbEi2w8-ZiWnzxqRE4j5xNQxgSmKOErPLKgQ@mail.gmail.com>
+Subject: Re: [RFC PATCH 0/6 v2] Queued spinlocks/RW-locks for ARM
+To: Sebastian Andrzej Siewior <sebastian@breakpoint.cc>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_013804_256445_FDEB9F00 
-X-CRM114-Status: GOOD (  19.56  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191014_020034_757581_D64CFB43 
+X-CRM114-Status: GOOD (  13.29  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.193 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.193 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,39 +82,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, raph.gault+kdev@gmail.com, peterz@infradead.org,
- catalin.marinas@arm.com, will.deacon@arm.com, julien.thierry.kdev@gmail.com
+Cc: Peter Zijlstra <peterz@infradead.org>, Russell King <linux@armlinux.org.uk>,
+ Ingo Molnar <mingo@redhat.com>, Waiman Long <longman@redhat.com>,
+ Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Mon, Oct 14, 2019 at 12:13 AM Sebastian Andrzej Siewior
+<sebastian@breakpoint.cc> wrote:
+>
+> I added support for queued-RW and -spinlocks for ARM. I followed Arnd's
+> suggestion and added support for xchg() on 8bit and 16bit variables (V6
+> CPUs) via the SH implementation. This makes it possible to remove the
+> current ticket based locking implementation.
+>
+> The numbers should be the same as in v1 posted here:
+>    http://lkml.kernel.org/r/20191007214439.27891-1-sebastian@breakpoint.cc
+>
+> The only thing changed is that patch #1-#3 wire up the missing xchg and
+> the patches #4 and #5 additionally remove the old implementation while
+> adding the missing bits for the queued implementation.
 
+I like this, just had two very minor comments.
 
-On 8/16/19 1:23 PM, Raphael Gault wrote:
-> Hi,
-> 
+I'm adding it to my randconfig build bot for more testing and will let you know
+in case I find any problems.
 
-[...]
-
-> As of now, objtool only supports the x86_64 architecture but the
-> groundwork has already been done in order to add support for other
-> architectures without too much effort.
-> 
-> This series of patches adds support for the arm64 architecture
-> based on the Armv8.5 Architecture Reference Manual.
-> 
-
-I was wondering about the current status of these patches. Is anyone 
-actively working on this?
-
-If not, I can pick that up and try to make this go forward.
-
-Cheers,
-
--- 
-Julien Thierry
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
