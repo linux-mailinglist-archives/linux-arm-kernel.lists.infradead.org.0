@@ -2,48 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 767EBD6473
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 15:53:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51EC4D6482
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 15:57:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=d4KV+rVvf+OiQZ0uUFaKpjouYN+5wISXIcVBb5n0cpQ=; b=GCtM0Jg2stkw16
-	wvX/euVHDefkR+Tjc7hQAiWBQjUpHSK3DfqRlFQvcAzlXC3drcBTtu0ciI1iorUy5X39dY3VXQ0Pf
-	LdRCzbHHHKXvAQTm2/VkuVsKDLOgfD4Iqoy+vtU+TwUbf3KCzR6hAPu5J9AVCfj59Sq0u573Ztvxc
-	3XCdS0vtq8WfDWRMLgnlcvGDwuEJ2pfuEZouCAFT9gLsTsYGk8/8H9pRS/Nb7I11FRrjF3+O0BMng
-	yYC9jof1UsXHshr1UZiJB1EtJfiixCphoA0Ifw3ZiD4UhBXckN6uzxJKiv1iG2uiXMeWxXrLMicN7
-	C6rQE57wa+Ng7xGiyB6Q==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZcSm9gPasbMQJ+0pyZl0CpDrhSxqbK2Q08XX2Dfi1QM=; b=cLABKIWo6Ljqo/
+	sCclsNY3zaLAuOojGYd3Ro1mga9upu0+/DF1RFd1bIAN1fYqs37YON0im5r6Ldj3+32+8gIs4dlXM
+	ZWrOHbUHuG/bqUShWcyp+Ovgn+cvXGz6EKlWgs57q0PVGJRdeoFc8dER2XTDMLY9SWds2f1voR2QZ
+	U4C6GJWVL+Nqj+UU88hdYMGGqHofFFqMhaMUK95X/+e9sSwQnUKEHXbE4FMzz1MRw26sSad4KkjhB
+	DCaiYA2dI+zZNxEExwm4TA+Lom6xmOvypm9r0/7x7/hiuL2jdB/atCUYiLcaW7xAj9H2v3sT7wPWO
+	RIyYPfiabaS1qAUMkihg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iK0mv-0001Id-6s; Mon, 14 Oct 2019 13:53:29 +0000
-Received: from vps.xff.cz ([195.181.215.36])
+	id 1iK0qy-00031k-5u; Mon, 14 Oct 2019 13:57:40 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iK0mk-0001Hb-CQ
- for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 13:53:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1571061192; bh=46QzCIBZ/9atA9i8sP3TsXg10uJJ6p13+mX/uBQH05Y=;
- h=From:To:Cc:Subject:Date:From;
- b=qeaJSpN7BUJp2ZteQ5BjyIkVRC6U0UOhE7/gTCpY+DprLpl8kJMvhno9FN5fEXAj/
- vqfuwWbW7gK6ALcnPDN5dGh0qLtwAAR92w1PbxUXFpnTl3wx9TeUVdsvoQiTHkucCk
- 6LgmSYX/mtr2I/n5v+Sbbo87xQkbzlHzWd6xUGPY=
-From: megous@megous.com
-To: 
-Subject: [PATCH] pwm: sun4i: Fix incorrect calculation of duty_cycle/period
-Date: Mon, 14 Oct 2019 15:53:03 +0200
-Message-Id: <20191014135303.2944058-1-megous@megous.com>
+ id 1iK0qn-00030o-II
+ for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 13:57:31 +0000
+Received: from mail-qt1-f175.google.com (mail-qt1-f175.google.com
+ [209.85.160.175])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 84D1721928
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 14 Oct 2019 13:57:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571061444;
+ bh=LLH2uQ5gYg+SBXTksDYlU+T3+fs82qQa6ba8XCr/GLI=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=WhWA0Z26YBfhBAV8RCEZEMYp1v+sqt+colar2WnzuXDlL8iW6T6nbdwUUz7lR8xRD
+ k0e4PvOQpMwHU+2BFSDNQzxl86uVe5XU5vttQ3NcDIoX47dI8JTqJVYmbE02q9jLiH
+ nUhPVzxIyECh8oC7bBNWteH980agEaehLbva3a1w=
+Received: by mail-qt1-f175.google.com with SMTP id o12so25567861qtf.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 14 Oct 2019 06:57:24 -0700 (PDT)
+X-Gm-Message-State: APjAAAWjCoZ1WRgFBSJEbBE9H4N+yEsdhE5Sp0N0pWKea6EJKhVpG0kn
+ LNgU7Dm5ELrOKvHBn3gowNQFNbexWAE6JdlzVw==
+X-Google-Smtp-Source: APXvYqwX1KUTrKD9PfICXLuavHN6lAAtm6esRog7N3VFNyl9RY+ZCu7FqNsYVhKlnuWqdkfPcoK1JtogLpjhrB86EEs=
+X-Received: by 2002:ac8:6782:: with SMTP id b2mr32574382qtp.143.1571061443573; 
+ Mon, 14 Oct 2019 06:57:23 -0700 (PDT)
 MIME-Version: 1.0
+References: <20191014091622.23562-1-benjamin.gaignard@st.com>
+In-Reply-To: <20191014091622.23562-1-benjamin.gaignard@st.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Mon, 14 Oct 2019 08:57:11 -0500
+X-Gmail-Original-Message-ID: <CAL_Jsq+Z7G31vBhHn_csntOsBLnZoLFU0qZHk67kdC1kahd4kQ@mail.gmail.com>
+Message-ID: <CAL_Jsq+Z7G31vBhHn_csntOsBLnZoLFU0qZHk67kdC1kahd4kQ@mail.gmail.com>
+Subject: Re: [PATCH v3] dt-bindings: display: Convert stm32 display bindings
+ to json-schema
+To: Benjamin Gaignard <benjamin.gaignard@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_065318_591242_F864CBC9 
-X-CRM114-Status: UNSURE (   7.78  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 2.3 (++)
+X-CRM114-CacheID: sfid-20191014_065729_643865_8E35862C 
+X-CRM114-Status: GOOD (  22.90  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -53,7 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 2.5 TO_EQ_FM_DIRECT_MX     To == From and direct-to-MX
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,57 +86,243 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ondrej Jirman <megous@megous.com>,
- "open list:PWM SUBSYSTEM" <linux-pwm@vger.kernel.org>,
- open list <linux-kernel@vger.kernel.org>, Maxime Ripard <mripard@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Thierry Reding <thierry.reding@gmail.com>,
- =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- "moderated list:ARM/Allwinner sunXi SoC support"
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Alexandre Torgue <alexandre.torgue@st.com>, David Airlie <airlied@linux.ie>,
+ Philippe Cornu <philippe.cornu@st.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Yannick Fertre <yannick.fertre@st.com>, Daniel Vetter <daniel@ffwll.ch>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
  <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Ondrej Jirman <megous@megous.com>
+On Mon, Oct 14, 2019 at 4:16 AM Benjamin Gaignard
+<benjamin.gaignard@st.com> wrote:
+>
+> Convert the STM32 display binding to DT schema format using json-schema.
+> Split the original bindings in two yaml files:
+> - one for display controller (ltdc)
+> - one for DSI controller
+>
+> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+> ---
+> changes in v3:
+> - use (GPL-2.0-only OR BSD-2-Clause) license
+>
+> changes in v2:
+> - use BSD-2-Clause license
+> - add panel property
+> - fix identation
+> - remove pinctrl-names: true
+> - remove pinctrl-[0-9]+: true
+> - rework ports block to include port@0 and port@1
+> - use const for #adress-cells and #size-cells
+> - add additionalProperties: false
+>
+>  .../devicetree/bindings/display/st,stm32-dsi.yaml  | 151 +++++++++++++++++++++
+>  .../devicetree/bindings/display/st,stm32-ltdc.txt  | 144 --------------------
+>  .../devicetree/bindings/display/st,stm32-ltdc.yaml |  81 +++++++++++
+>  3 files changed, 232 insertions(+), 144 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/display/st,stm32-dsi.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/display/st,stm32-ltdc.txt
+>  create mode 100644 Documentation/devicetree/bindings/display/st,stm32-ltdc.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/display/st,stm32-dsi.yaml b/Documentation/devicetree/bindings/display/st,stm32-dsi.yaml
+> new file mode 100644
+> index 000000000000..8dd727c7533e
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/st,stm32-dsi.yaml
+> @@ -0,0 +1,151 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/st,stm32-dsi.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: STMicroelectronics STM32 DSI host controller
+> +
+> +maintainers:
+> +  - Philippe Cornu <philippe.cornu@st.com>
+> +  - Yannick Fertre <yannick.fertre@st.com>
+> +
+> +description:
+> +  The STMicroelectronics STM32 DSI controller uses the Synopsys DesignWare MIPI-DSI host controller.
+> +
+> +properties:
+> +  compatible:
+> +    const: st,stm32-dsi
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: Module Clock
+> +      - description: DSI bus clock
+> +      - description: Pixel clock
+> +    minItems: 2
+> +    maxItems: 3
+> +
+> +  clock-names:
+> +    items:
+> +      - const: pclk
+> +      - const: ref
+> +      - const: px_clk
+> +    minItems: 2
+> +    maxItems: 3
+> +
+> +  resets:
+> +    maxItems: 1
+> +
+> +  reset-names:
+> +    items:
+> +      - const: apb
+> +
+> +  phy-dsi-supply:
+> +    maxItems: 1
+> +    description:
+> +        Phandle of the regulator that provides the supply voltage.
+> +
+> +  ports:
+> +    type: object
+> +    description:
+> +      A node containing DSI input & output port nodes with endpoint
+> +      definitions as documented in
+> +      Documentation/devicetree/bindings/media/video-interfaces.txt
+> +      Documentation/devicetree/bindings/graph.txt
+> +    properties:
+> +      port@0:
+> +        type: object
+> +        description:
+> +          DSI input port node, connected to the ltdc rgb output port.
+> +
+> +      port@1:
+> +        type: object
+> +        description:
+> +          DSI output port node, connected to a panel or a bridge input port"
+> +
+> +patternProperties:
+> +  "^(panel|panel-dsi)@[0-9]$":
+> +    type: object
+> +    description:
+> +      A node containing the panel or bridge description as documented in
+> +      Documentation/devicetree/bindings/display/mipi-dsi-bus.txt
+> +    properties:
+> +      port@0:
 
-Since 5.4-rc1, pwm_apply_state calls ->get_state after ->apply
-if available, and this revealed an issue with integer precision
-when calculating duty_cycle and period for the currently set
-state in ->get_state callback.
+You can drop this. The unit address for the panel port is decided by
+the panel binding, not this one.
 
-This issue manifested in broken backlight on several Allwinner
-based devices.
+> +        type: object
+> +        description:
+> +          Panel or bridge port node, connected to the DSI output port (port@1)
 
-Previously this worked, because ->apply updated the passed state
-directly.
+[...]
 
-Fixes: deb9c462f4e53 ("pwm: sun4i: Don't update the state for the caller of pwm_apply_state")
-Signed-off-by: Ondrej Jirman <megous@megous.com>
----
- drivers/pwm/pwm-sun4i.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+> diff --git a/Documentation/devicetree/bindings/display/st,stm32-ltdc.yaml b/Documentation/devicetree/bindings/display/st,stm32-ltdc.yaml
+> new file mode 100644
+> index 000000000000..94a4137f7236
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/st,stm32-ltdc.yaml
+> @@ -0,0 +1,81 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/st,stm32-ltdc.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: STMicroelectronics STM32 lcd-tft display controller
+> +
+> +maintainers:
+> +  - Philippe Cornu <philippe.cornu@st.com>
+> +  - Yannick Fertre <yannick.fertre@st.com>
+> +
+> +properties:
+> +  compatible:
+> +    const: st,stm32-ltdc
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    minItems: 2
+> +    maxItems: 2
 
-diff --git a/drivers/pwm/pwm-sun4i.c b/drivers/pwm/pwm-sun4i.c
-index 6f5840a1a82d..05273725a9ff 100644
---- a/drivers/pwm/pwm-sun4i.c
-+++ b/drivers/pwm/pwm-sun4i.c
-@@ -137,10 +137,10 @@ static void sun4i_pwm_get_state(struct pwm_chip *chip,
- 
- 	val = sun4i_pwm_readl(sun4i_pwm, PWM_CH_PRD(pwm->hwpwm));
- 
--	tmp = prescaler * NSEC_PER_SEC * PWM_REG_DTY(val);
-+	tmp = (u64)prescaler * NSEC_PER_SEC * PWM_REG_DTY(val);
- 	state->duty_cycle = DIV_ROUND_CLOSEST_ULL(tmp, clk_rate);
- 
--	tmp = prescaler * NSEC_PER_SEC * PWM_REG_PRD(val);
-+	tmp = (u64)prescaler * NSEC_PER_SEC * PWM_REG_PRD(val);
- 	state->period = DIV_ROUND_CLOSEST_ULL(tmp, clk_rate);
- }
- 
--- 
-2.23.0
+Need to describe what each interrupt is.
 
+items:
+  - description: ...
+  - description: ...
+
+> +
+> +  clocks:
+> +    maxItems: 1
+> +
+> +  clock-names:
+> +    items:
+> +      - const: lcd
+> +
+> +  resets:
+> +    maxItems: 1
+> +
+> +  port:
+> +    type: object
+> +    description:
+> +      "Video port for DPI RGB output.
+> +      ltdc has one video port with up to 2 endpoints:
+> +      - for external dpi rgb panel or bridge, using gpios.
+> +      - for internal dpi input of the MIPI DSI host controller.
+> +      Note: These 2 endpoints cannot be activated simultaneously.
+> +      Please refer to the bindings defined in
+> +      Documentation/devicetree/bindings/media/video-interfaces.txt."
+> +
+> +  dma-ranges:
+> +    maxItems: 1
+
+dma-ranges goes in bus nodes, not device nodes.
+
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - clocks
+> +  - clock-names
+> +  - resets
+> +  - port
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/clock/stm32mp1-clks.h>
+> +    #include <dt-bindings/reset/stm32mp1-resets.h>
+> +    ltdc: display-controller@40016800 {
+> +        compatible = "st,stm32-ltdc";
+> +        reg = <0x5a001000 0x400>;
+> +        interrupts = <GIC_SPI 88 IRQ_TYPE_LEVEL_HIGH>,
+> +                     <GIC_SPI 89 IRQ_TYPE_LEVEL_HIGH>;
+> +        clocks = <&rcc LTDC_PX>;
+> +        clock-names = "lcd";
+> +        resets = <&rcc LTDC_R>;
+> +
+> +        port {
+> +             ltdc_out_dsi: endpoint {
+> +                     remote-endpoint = <&dsi_in>;
+> +             };
+> +        };
+> +    };
+> +
+> +...
+> +
+> --
+> 2.15.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
