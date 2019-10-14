@@ -2,79 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51EC4D6482
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 15:57:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C47CCD646A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 15:51:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZcSm9gPasbMQJ+0pyZl0CpDrhSxqbK2Q08XX2Dfi1QM=; b=cLABKIWo6Ljqo/
-	sCclsNY3zaLAuOojGYd3Ro1mga9upu0+/DF1RFd1bIAN1fYqs37YON0im5r6Ldj3+32+8gIs4dlXM
-	ZWrOHbUHuG/bqUShWcyp+Ovgn+cvXGz6EKlWgs57q0PVGJRdeoFc8dER2XTDMLY9SWds2f1voR2QZ
-	U4C6GJWVL+Nqj+UU88hdYMGGqHofFFqMhaMUK95X/+e9sSwQnUKEHXbE4FMzz1MRw26sSad4KkjhB
-	DCaiYA2dI+zZNxEExwm4TA+Lom6xmOvypm9r0/7x7/hiuL2jdB/atCUYiLcaW7xAj9H2v3sT7wPWO
-	RIyYPfiabaS1qAUMkihg==;
+	List-Owner; bh=wnJfEsQryW13EL6zkR4cj+9p/yqqgYujek+pQMf7k0s=; b=gZAvWU5A1OUf4M
+	F51oHRQBMlworQqmG4brPFh+9haVYvPZrPPqGoKj8fYrfY1HtDCmrxohxzp9LruXoJQQjcPv4vDRA
+	bnucu1oKEbWSVjVaAewRhI2nL9WJ7b2F62jKeO6+1PU5TzfSfXW/jBkxYZBwVVOcMd73yWeL8jjpR
+	t8852SgZvzDuT7ZbFkfQhUWcNUie5R5nVZP2Nbfr2i+hhoOReh7KHYczgDqQPWuF7Ey8kPf56cWei
+	R3qKCAVh5X8WJuZXYUA8rIYwo7lAO0wKJWrnrcr4Hy02iNjCKYv5VZyXdEqafapIZiK0ZWQZKQBUV
+	Jm7TS/b6TP95gStxH2iQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iK0qy-00031k-5u; Mon, 14 Oct 2019 13:57:40 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iK0lF-0000t8-B3; Mon, 14 Oct 2019 13:51:45 +0000
+Received: from relay9-d.mail.gandi.net ([217.70.183.199])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iK0qn-00030o-II
- for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 13:57:31 +0000
-Received: from mail-qt1-f175.google.com (mail-qt1-f175.google.com
- [209.85.160.175])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 84D1721928
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 14 Oct 2019 13:57:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571061444;
- bh=LLH2uQ5gYg+SBXTksDYlU+T3+fs82qQa6ba8XCr/GLI=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=WhWA0Z26YBfhBAV8RCEZEMYp1v+sqt+colar2WnzuXDlL8iW6T6nbdwUUz7lR8xRD
- k0e4PvOQpMwHU+2BFSDNQzxl86uVe5XU5vttQ3NcDIoX47dI8JTqJVYmbE02q9jLiH
- nUhPVzxIyECh8oC7bBNWteH980agEaehLbva3a1w=
-Received: by mail-qt1-f175.google.com with SMTP id o12so25567861qtf.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 14 Oct 2019 06:57:24 -0700 (PDT)
-X-Gm-Message-State: APjAAAWjCoZ1WRgFBSJEbBE9H4N+yEsdhE5Sp0N0pWKea6EJKhVpG0kn
- LNgU7Dm5ELrOKvHBn3gowNQFNbexWAE6JdlzVw==
-X-Google-Smtp-Source: APXvYqwX1KUTrKD9PfICXLuavHN6lAAtm6esRog7N3VFNyl9RY+ZCu7FqNsYVhKlnuWqdkfPcoK1JtogLpjhrB86EEs=
-X-Received: by 2002:ac8:6782:: with SMTP id b2mr32574382qtp.143.1571061443573; 
- Mon, 14 Oct 2019 06:57:23 -0700 (PDT)
+ id 1iK0l4-0000rz-Gv
+ for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 13:51:36 +0000
+X-Originating-IP: 88.190.179.123
+Received: from localhost (unknown [88.190.179.123])
+ (Authenticated sender: repk@triplefau.lt)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 70DC2FF820;
+ Mon, 14 Oct 2019 13:51:23 +0000 (UTC)
+Date: Mon, 14 Oct 2019 16:00:26 +0200
+From: Remi Pommarel <repk@triplefau.lt>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH v3] PCI: aardvark: Use LTSSM state to build link training
+ flag
+Message-ID: <20191014140026.GB1426@voidbox>
+References: <20190522213351.21366-3-repk@triplefau.lt>
+ <20190930154017.GF42880@e119886-lin.cambridge.arm.com>
+ <20190930165230.GA12568@voidbox>
+ <20191001080546.GI42880@e119886-lin.cambridge.arm.com>
+ <20191013113415.3c653526@why>
+ <20191014100129.GA18832@e121166-lin.cambridge.arm.com>
+ <20191014130627.GA1426@voidbox>
+ <eda65141ee1006fe3a93a9989867dc31@www.loen.fr>
 MIME-Version: 1.0
-References: <20191014091622.23562-1-benjamin.gaignard@st.com>
-In-Reply-To: <20191014091622.23562-1-benjamin.gaignard@st.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Mon, 14 Oct 2019 08:57:11 -0500
-X-Gmail-Original-Message-ID: <CAL_Jsq+Z7G31vBhHn_csntOsBLnZoLFU0qZHk67kdC1kahd4kQ@mail.gmail.com>
-Message-ID: <CAL_Jsq+Z7G31vBhHn_csntOsBLnZoLFU0qZHk67kdC1kahd4kQ@mail.gmail.com>
-Subject: Re: [PATCH v3] dt-bindings: display: Convert stm32 display bindings
- to json-schema
-To: Benjamin Gaignard <benjamin.gaignard@st.com>
+Content-Disposition: inline
+In-Reply-To: <eda65141ee1006fe3a93a9989867dc31@www.loen.fr>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_065729_643865_8E35862C 
-X-CRM114-Status: GOOD (  22.90  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191014_065134_835915_4309AA15 
+X-CRM114-Status: GOOD (  44.70  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.199 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,243 +69,238 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Alexandre Torgue <alexandre.torgue@st.com>, David Airlie <airlied@linux.ie>,
- Philippe Cornu <philippe.cornu@st.com>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Yannick Fertre <yannick.fertre@st.com>, Daniel Vetter <daniel@ffwll.ch>,
- linux-stm32@st-md-mailman.stormreply.com,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Ellie Reeves <ellierevves@gmail.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Bjorn Helgaas <helgaas@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Andrew Murray <andrew.murray@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 14, 2019 at 4:16 AM Benjamin Gaignard
-<benjamin.gaignard@st.com> wrote:
->
-> Convert the STM32 display binding to DT schema format using json-schema.
-> Split the original bindings in two yaml files:
-> - one for display controller (ltdc)
-> - one for DSI controller
->
-> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
-> ---
-> changes in v3:
-> - use (GPL-2.0-only OR BSD-2-Clause) license
->
-> changes in v2:
-> - use BSD-2-Clause license
-> - add panel property
-> - fix identation
-> - remove pinctrl-names: true
-> - remove pinctrl-[0-9]+: true
-> - rework ports block to include port@0 and port@1
-> - use const for #adress-cells and #size-cells
-> - add additionalProperties: false
->
->  .../devicetree/bindings/display/st,stm32-dsi.yaml  | 151 +++++++++++++++++++++
->  .../devicetree/bindings/display/st,stm32-ltdc.txt  | 144 --------------------
->  .../devicetree/bindings/display/st,stm32-ltdc.yaml |  81 +++++++++++
->  3 files changed, 232 insertions(+), 144 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/display/st,stm32-dsi.yaml
->  delete mode 100644 Documentation/devicetree/bindings/display/st,stm32-ltdc.txt
->  create mode 100644 Documentation/devicetree/bindings/display/st,stm32-ltdc.yaml
->
-> diff --git a/Documentation/devicetree/bindings/display/st,stm32-dsi.yaml b/Documentation/devicetree/bindings/display/st,stm32-dsi.yaml
-> new file mode 100644
-> index 000000000000..8dd727c7533e
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/st,stm32-dsi.yaml
-> @@ -0,0 +1,151 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/display/st,stm32-dsi.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: STMicroelectronics STM32 DSI host controller
-> +
-> +maintainers:
-> +  - Philippe Cornu <philippe.cornu@st.com>
-> +  - Yannick Fertre <yannick.fertre@st.com>
-> +
-> +description:
-> +  The STMicroelectronics STM32 DSI controller uses the Synopsys DesignWare MIPI-DSI host controller.
-> +
-> +properties:
-> +  compatible:
-> +    const: st,stm32-dsi
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    items:
-> +      - description: Module Clock
-> +      - description: DSI bus clock
-> +      - description: Pixel clock
-> +    minItems: 2
-> +    maxItems: 3
-> +
-> +  clock-names:
-> +    items:
-> +      - const: pclk
-> +      - const: ref
-> +      - const: px_clk
-> +    minItems: 2
-> +    maxItems: 3
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +  reset-names:
-> +    items:
-> +      - const: apb
-> +
-> +  phy-dsi-supply:
-> +    maxItems: 1
-> +    description:
-> +        Phandle of the regulator that provides the supply voltage.
-> +
-> +  ports:
-> +    type: object
-> +    description:
-> +      A node containing DSI input & output port nodes with endpoint
-> +      definitions as documented in
-> +      Documentation/devicetree/bindings/media/video-interfaces.txt
-> +      Documentation/devicetree/bindings/graph.txt
-> +    properties:
-> +      port@0:
-> +        type: object
-> +        description:
-> +          DSI input port node, connected to the ltdc rgb output port.
-> +
-> +      port@1:
-> +        type: object
-> +        description:
-> +          DSI output port node, connected to a panel or a bridge input port"
-> +
-> +patternProperties:
-> +  "^(panel|panel-dsi)@[0-9]$":
-> +    type: object
-> +    description:
-> +      A node containing the panel or bridge description as documented in
-> +      Documentation/devicetree/bindings/display/mipi-dsi-bus.txt
-> +    properties:
-> +      port@0:
+On Mon, Oct 14, 2019 at 02:45:34PM +0100, Marc Zyngier wrote:
+> Hi Remi,
+> 
+> On 2019-10-14 14:06, Remi Pommarel wrote:
+> > Hi Lorenzo, Marc,
+> > 
+> > On Mon, Oct 14, 2019 at 11:01:29AM +0100, Lorenzo Pieralisi wrote:
+> > > On Sun, Oct 13, 2019 at 11:34:15AM +0100, Marc Zyngier wrote:
+> > > > On Tue, 1 Oct 2019 09:05:46 +0100
+> > > > Andrew Murray <andrew.murray@arm.com> wrote:
+> > > >
+> > > > Hi Lorenzo,
+> > > >
+> > > > > On Mon, Sep 30, 2019 at 06:52:30PM +0200, Remi Pommarel wrote:
+> > > > > > On Mon, Sep 30, 2019 at 04:40:18PM +0100, Andrew Murray wrote:
+> > > > > > > On Wed, May 22, 2019 at 11:33:51PM +0200, Remi Pommarel
+> > > wrote:
+> > > > > > > > Aardvark's PCI_EXP_LNKSTA_LT flag in its link status
+> > > register is not
+> > > > > > > > implemented and does not reflect the actual link training
+> > > state (the
+> > > > > > > > flag is always set to 0). In order to support link
+> > > re-training feature
+> > > > > > > > this flag has to be emulated. The Link Training and Status
+> > > State
+> > > > > > > > Machine (LTSSM) flag in Aardvark LMI config register could
+> > > be used as
+> > > > > > > > a link training indicator. Indeed if the LTSSM is in L0 or
+> > > upper state
+> > > > > > > > then link training has completed (see [1]).
+> > > > > > > >
+> > > > > > > > Unfortunately because after asking a link retraining it
+> > > takes a while
+> > > > > > > > for the LTSSM state to become less than 0x10 (due to L0s
+> > > to recovery
+> > > > > > > > state transition delays), LTSSM can still be in L0 while
+> > > link training
+> > > > > > > > has not finished yet. So this waits for link to be in
+> > > recovery or lesser
+> > > > > > > > state before returning after asking for a link retrain.
+> > > > > > > >
+> > > > > > > > [1] "PCI Express Base Specification", REV. 4.0
+> > > > > > > >     PCI Express, February 19 2014, Table 4-14
+> > > > > > > >
+> > > > > > > > Signed-off-by: Remi Pommarel <repk@triplefau.lt>
+> > > > > > > > ---
+> > > > > > > > Changes since v1:
+> > > > > > > >   - Rename retraining flag field
+> > > > > > > >   - Fix DEVCTL register writing
+> > > > > > > >
+> > > > > > > > Changes since v2:
+> > > > > > > >   - Rewrite patch logic so it is more legible
+> > > > > > > >
+> > > > > > > > Please note that I will unlikely be able to answer any
+> > > comments from May
+> > > > > > > > 24th to June 10th.
+> > > > > > > > ---
+> > > > > > > >  drivers/pci/controller/pci-aardvark.c | 29
+> > > ++++++++++++++++++++++++++-
+> > > > > > > >  1 file changed, 28 insertions(+), 1 deletion(-)
+> > > > > > > >
+> > > > > > > > diff --git a/drivers/pci/controller/pci-aardvark.c
+> > > b/drivers/pci/controller/pci-aardvark.c
+> > > > > > > > index 134e0306ff00..8803083b2174 100644
+> > > > > > > > --- a/drivers/pci/controller/pci-aardvark.c
+> > > > > > > > +++ b/drivers/pci/controller/pci-aardvark.c
+> > > > > > > > @@ -180,6 +180,8 @@
+> > > > > > > >  #define LINK_WAIT_MAX_RETRIES		10
+> > > > > > > >  #define LINK_WAIT_USLEEP_MIN		90000
+> > > > > > > >  #define LINK_WAIT_USLEEP_MAX		100000
+> > > > > > > > +#define RETRAIN_WAIT_MAX_RETRIES	10
+> > > > > > > > +#define RETRAIN_WAIT_USLEEP_US		2000
+> > > > > > > >
+> > > > > > > >  #define MSI_IRQ_NUM			32
+> > > > > > > >
+> > > > > > > > @@ -239,6 +241,17 @@ static int
+> > > advk_pcie_wait_for_link(struct advk_pcie *pcie)
+> > > > > > > >  	return -ETIMEDOUT;
+> > > > > > > >  }
+> > > > > > > >
+> > > > > > > > +static void advk_pcie_wait_for_retrain(struct advk_pcie
+> > > *pcie)
+> > > > > > > > +{
+> > > > > > > > +	size_t retries;
+> > > > > > > > +
+> > > > > > > > +	for (retries = 0; retries < RETRAIN_WAIT_MAX_RETRIES;
+> > > ++retries) {
+> > > > > > > > +		if (!advk_pcie_link_up(pcie))
+> > > > > > > > +			break;
+> > > > > > > > +		udelay(RETRAIN_WAIT_USLEEP_US);
+> > > > > > > > +	}
+> > > > > > > > +}
+> > > > > > > > +
+> > > > > > > >  static void advk_pcie_setup_hw(struct advk_pcie *pcie)
+> > > > > > > >  {
+> > > > > > > >  	u32 reg;
+> > > > > > > > @@ -426,11 +439,20 @@
+> > > advk_pci_bridge_emul_pcie_conf_read(struct pci_bridge_emul *bridge,
+> > > > > > > >  		return PCI_BRIDGE_EMUL_HANDLED;
+> > > > > > > >  	}
+> > > > > > > >
+> > > > > > > > +	case PCI_EXP_LNKCTL: {
+> > > > > > > > +		/* u32 contains both PCI_EXP_LNKCTL and PCI_EXP_LNKSTA
+> > > */
+> > > > > > > > +		u32 val = advk_readl(pcie, PCIE_CORE_PCIEXP_CAP + reg)
+> > > &
+> > > > > > > > +			~(PCI_EXP_LNKSTA_LT << 16);
+> > > > > > >
+> > > > > > > The commit message says "the flag is always set to 0" -
+> > > therefore I guess
+> > > > > > > you don't *need* to mask out the LT bit here? I assume this
+> > > is just
+> > > > > > > belt-and-braces but thought I'd check incase I've
+> > > misunderstood or if your
+> > > > > > > commit message is inaccurate.
+> > > > > > >
+> > > > > > > In any case masking out the bit (or adding a comment) makes
+> > > this code more
+> > > > > > > readable as the reader doesn't need to know what the
+> > > hardware does with this
+> > > > > > > bit.
+> > > > > >
+> > > > > > Actually vendor eventually responded that the bit was
+> > > reserved, but
+> > > > > > during my tests it remains to 0.
+> > > > > >
+> > > > > > So yes I am masking this out mainly for belt-and-braces and
+> > > legibility.
+> > > > >
+> > > > > Thanks for the clarification.
+> > > > >
+> > > > > >
+> > > > > > > > +		if (!advk_pcie_link_up(pcie))
+> > > > > > > > +			val |= (PCI_EXP_LNKSTA_LT << 16);
+> > > > > > > > +		*value = val;
+> > > > > > > > +		return PCI_BRIDGE_EMUL_HANDLED;
+> > > > > > > > +	}
+> > > > > > > > +
+> > > > > > > >  	case PCI_CAP_LIST_ID:
+> > > > > > > >  	case PCI_EXP_DEVCAP:
+> > > > > > > >  	case PCI_EXP_DEVCTL:
+> > > > > > > >  	case PCI_EXP_LNKCAP:
+> > > > > > > > -	case PCI_EXP_LNKCTL:
+> > > > > > > >  		*value = advk_readl(pcie, PCIE_CORE_PCIEXP_CAP + reg);
+> > > > > > > >  		return PCI_BRIDGE_EMUL_HANDLED;
+> > > > > > > >  	default:
+> > > > > > > > @@ -447,8 +469,13 @@
+> > > advk_pci_bridge_emul_pcie_conf_write(struct pci_bridge_emul *bridge,
+> > > > > > > >
+> > > > > > > >  	switch (reg) {
+> > > > > > > >  	case PCI_EXP_DEVCTL:
+> > > > > > > > +		advk_writel(pcie, new, PCIE_CORE_PCIEXP_CAP + reg);
+> > > > > > > > +		break;
+> > > > > > >
+> > > > > > > Why is this here?
+> > > > > > >
+> > > > > >
+> > > > > > Before PCI_EXP_DEVCTL and PCI_EXP_LNKCTL were doing the same
+> > > thing, but
+> > > > > > as now PCI_EXP_LNKCTL does extra things (i.e. wait for link to
+> > > > > > successfully retrain), they do have different behaviours.
+> > > > > >
+> > > > > > So this is here so PCI_EXP_DEVCTL keeps its old behaviour and
+> > > do not
+> > > > > > wait for link retrain in case an unrelated (PCI_EXP_LNKCTL_RL)
+> > > bit is
+> > > > > > set.
+> > > > >
+> > > > > Oh yes, of course!
+> > > > >
+> > > > > Thanks and:
+> > > > >
+> > > > > Reviewed-by: Andrew Murray <andrew.murray@arm.com>
+> > > >
+> > > > Is there any hope for this workaround to make it into 5.4?
+> > > >
+> > > > My EspressoBin (which is blessed with this joke of a PCIe
+> > > controller)
+> > > > is pretty much a doorstop without it and dies with a SError early
+> > > at
+> > > > boot.
+> > > >
+> > > > FWIW:
+> > > >
+> > > > Tested-by: Marc Zyngier <maz@kernel.org>
+> > > 
+> > > Hi Marc,
+> > > 
+> > > First thing I will have to mark it as a Fixes: (if Remi can provide
+> > > me with a tag that'd be great), usually we send fixes at -rc* for
+> > > patches that fix code that went in the current (eg 5.4) material,
+> > > I will ask Bjorn to see if we can send this in one of the upcoming
+> > > -rc* even if it fixes older code.
+> > 
+> > Sure, I think this could be considered a fix for the following commit :
+> > Fixes: 8a3ebd8de328 ("PCI: aardvark: Implement emulated root PCI
+> > bridge config space")
+> > 
+> > Moreover, Marc, I am also a bit supprised that you did not have to use
+> > [1] to even be able to boot.
+> 
+> No, I don't have that one, and yet the system boots fine (although PCI
+> doesn't get much use on this box). I guess I'm lucky...
+> 
+> > Also if you want to be completely immune to this kind of SError (that
+> > could theoretically happen if the link goes down for other reasons than
+> > being retrained) you would have to use mainline ATF along with [2]. But
+> > the chances to hit that are low (could only happen in case of link
+> > errors).
+> 
+> Now you've got me worried. Can you point me to that ATF patch? I'm quite
+> curious as to how you recover from an SError on a v8.0 CPU given that it
+> has no syndrome information and may as well signal "CPU on fire!"...
+> 
 
-You can drop this. The unit address for the panel port is decided by
-the panel binding, not this one.
+The patch is at [1]. Please note that this is done quite similarly for
+rcar.
 
-> +        type: object
-> +        description:
-> +          Panel or bridge port node, connected to the DSI output port (port@1)
+[1] https://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/1541
 
-[...]
-
-> diff --git a/Documentation/devicetree/bindings/display/st,stm32-ltdc.yaml b/Documentation/devicetree/bindings/display/st,stm32-ltdc.yaml
-> new file mode 100644
-> index 000000000000..94a4137f7236
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/st,stm32-ltdc.yaml
-> @@ -0,0 +1,81 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/display/st,stm32-ltdc.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: STMicroelectronics STM32 lcd-tft display controller
-> +
-> +maintainers:
-> +  - Philippe Cornu <philippe.cornu@st.com>
-> +  - Yannick Fertre <yannick.fertre@st.com>
-> +
-> +properties:
-> +  compatible:
-> +    const: st,stm32-ltdc
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    minItems: 2
-> +    maxItems: 2
-
-Need to describe what each interrupt is.
-
-items:
-  - description: ...
-  - description: ...
-
-> +
-> +  clocks:
-> +    maxItems: 1
-> +
-> +  clock-names:
-> +    items:
-> +      - const: lcd
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +  port:
-> +    type: object
-> +    description:
-> +      "Video port for DPI RGB output.
-> +      ltdc has one video port with up to 2 endpoints:
-> +      - for external dpi rgb panel or bridge, using gpios.
-> +      - for internal dpi input of the MIPI DSI host controller.
-> +      Note: These 2 endpoints cannot be activated simultaneously.
-> +      Please refer to the bindings defined in
-> +      Documentation/devicetree/bindings/media/video-interfaces.txt."
-> +
-> +  dma-ranges:
-> +    maxItems: 1
-
-dma-ranges goes in bus nodes, not device nodes.
-
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - clocks
-> +  - clock-names
-> +  - resets
-> +  - port
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/clock/stm32mp1-clks.h>
-> +    #include <dt-bindings/reset/stm32mp1-resets.h>
-> +    ltdc: display-controller@40016800 {
-> +        compatible = "st,stm32-ltdc";
-> +        reg = <0x5a001000 0x400>;
-> +        interrupts = <GIC_SPI 88 IRQ_TYPE_LEVEL_HIGH>,
-> +                     <GIC_SPI 89 IRQ_TYPE_LEVEL_HIGH>;
-> +        clocks = <&rcc LTDC_PX>;
-> +        clock-names = "lcd";
-> +        resets = <&rcc LTDC_R>;
-> +
-> +        port {
-> +             ltdc_out_dsi: endpoint {
-> +                     remote-endpoint = <&dsi_in>;
-> +             };
-> +        };
-> +    };
-> +
-> +...
-> +
-> --
-> 2.15.0
->
+-- 
+Remi
 
 _______________________________________________
 linux-arm-kernel mailing list
