@@ -2,68 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4FF5D69FC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 21:17:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32E42D6A00
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 21:19:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ek/5B4E6nTCr6QBtKjqW+Q9FuVOwo/zx1s/neQec+tc=; b=IwIfAsYwkOOEUI
-	Mx+RyhWxyfP4IkrqpPN+IWeSVU4Vmh+8E7sZN0pymDXntuzcQzzJh+UCZPmLtdwJyyKA3vtZ9oUXl
-	BFyPGqPr3N0c7b/eQd0Sw1hMahsdtBZD37e4HzENsxRFznt2Cvcuj4kfl7/vu+Td72xlEqpoWor66
-	rKALEncWgamXF9UfdEAUdGLbbIlQ8nd+HV30w9LSsomzPB7fdCi09o5aTd56ezQs0+bjt5FZj/QxR
-	rpzDads21Bztru2X+KWPujkI68jUNYGPDyNXRWBq4V5/cTVW0Z645zLpBIYuTiB5yyKMRAn/85oR8
-	gp2guirQgs0vn+GtQeDQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=aXXmuzkfYFULcsaOQar0WQ6r0yx7VBer3avi29JUm5M=; b=nc9/8aAwAW+YAw
+	4TrV0yhIFjP5p2MvHjC0BF52OYSl9uQCBI6iMZfYHodJ1V3gelHOa1wPFjHNA9DzId3RNuK6ac5th
+	YWjUZHUNkYnHXBpjDGG7BaHdtfGcrNRWBvL1o1ZVx9yBNw6guOVPws84oUKs6MSyEmT1NkeTUwcTd
+	iMlVKOcj8fxm4opbZ13Bq3jVuQXDHBZ+BlQAjL9TGQ2dfSoKm6OAoPEcTmYRp78ZOABAD2F+1/NBL
+	KrfcK3ObQZGZOtrpsQas+4bEjOZru34F7TqzjUqT6bANbsLzAPSUktcoGH+mozy2mKX4DfXKv20u3
+	s80qOGt2FqnTGBV4+yqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iK5qW-0005bo-Aq; Mon, 14 Oct 2019 19:17:32 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iK5sC-0006Gz-Se; Mon, 14 Oct 2019 19:19:16 +0000
+Received: from gateway34.websitewelcome.com ([192.185.149.101])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iK5qK-0005bI-Mk
- for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 19:17:21 +0000
-Received: from akpm3.svl.corp.google.com (unknown [104.133.8.65])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E75B9217F9;
- Mon, 14 Oct 2019 19:17:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571080640;
- bh=GVOpKJU8+fX2Cvw0U5HfH5hzn91D4G2Rk4nes27+pag=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=FR3WzbMF70HWxk7LTH30/6dEQ8O2Dy6iHIYsz3roW7gGsiv/bCa+/sQvvUktTZ/BO
- sea8B8Iv2qQrW/t9KU/O3J+J0m3QYNRD0hYc9BPn9xPN45izvaOitFObeTCJxIolf7
- oGAogT4n2dH58KrM+gstDU8nD3TYaBLq3dqW2/DM=
-Date: Mon, 14 Oct 2019 12:17:19 -0700
-From: Andrew Morton <akpm@linux-foundation.org>
-To: David Hildenbrand <david@redhat.com>
-Subject: Re: [PATCH v6 04/10] mm/memory_hotplug: Don't access uninitialized
- memmaps in shrink_zone_span()
-Message-Id: <20191014121719.cb9b9efe51a7e9e985b38075@linux-foundation.org>
-In-Reply-To: <5a4573de-bd8a-6cd3-55d0-86d503a236fd@redhat.com>
-References: <20191006085646.5768-1-david@redhat.com>
- <20191006085646.5768-5-david@redhat.com>
- <5a4573de-bd8a-6cd3-55d0-86d503a236fd@redhat.com>
-X-Mailer: Sylpheed 3.7.0 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-Mime-Version: 1.0
+ id 1iK5s3-0006G0-DZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 19:19:08 +0000
+Received: from cm10.websitewelcome.com (cm10.websitewelcome.com [100.42.49.4])
+ by gateway34.websitewelcome.com (Postfix) with ESMTP id 5A20D11EDD97
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 14 Oct 2019 14:18:53 -0500 (CDT)
+Received: from gator4166.hostgator.com ([108.167.133.22]) by cmsmtp with SMTP
+ id K5roi1thgHunhK5roiflJJ; Mon, 14 Oct 2019 14:18:53 -0500
+X-Authority-Reason: nr=8
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=embeddedor.com; s=default; h=Content-Type:MIME-Version:Message-ID:Subject:
+ Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=Z6hy7j2bf2J0P83dPxoUJpQb5DqOP18QhotJKCAr1Fk=; b=T+ZcWALctqO2RNH+PdtNf3wdXf
+ xxQgqYhkamefp5TT7wBcrfhixu+fVcq+nWT3UGYiz9SXenkq8HXJdIbENEk7rb3aO6vbUhf3FQEUD
+ 3lho4t1+FKXgfExwK3Sa8WOLN+lHYRy9JW0rusqrsypXCnDr85+YlMQrgLPSZGeQm7dglGByDvSwu
+ CNie5O6UWiNqGYUQdItd/UAgmCW+jxofPvvcoR4FrCDdxS7qdIQw3WMHzBJiSBxvppEe05VZXqGeI
+ hVkmz3Y0QhmmNNG7XVU9Tl5siVzjJQ65elzEAg+anzaXbUjns60laMlVoq9zvajdpAZF092P8/yWp
+ xk7s8JqQ==;
+Received: from [187.192.22.73] (port=54766 helo=embeddedor)
+ by gator4166.hostgator.com with esmtpa (Exim 4.92)
+ (envelope-from <gustavo@embeddedor.com>)
+ id 1iK5rm-000wQV-S6; Mon, 14 Oct 2019 14:18:51 -0500
+Date: Mon, 14 Oct 2019 14:18:30 -0500
+From: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
+To: Felipe Balbi <balbi@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Vladimir Zapolskiy <vz@mleia.com>,
+ Sylvain Lemieux <slemieux.tyco@gmail.com>,
+ Arnd Bergmann <arnd@arndb.de>, Roland Stigge <stigge@antcom.de>
+Subject: [PATCH] usb: udc: lpc32xx: fix bad bit shift operation
+Message-ID: <20191014191830.GA10721@embeddedor>
+MIME-Version: 1.0
+Content-Disposition: inline
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - gator4166.hostgator.com
+X-AntiAbuse: Original Domain - lists.infradead.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - embeddedor.com
+X-BWhitelist: no
+X-Source-IP: 187.192.22.73
+X-Source-L: No
+X-Exim-ID: 1iK5rm-000wQV-S6
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-Source-Sender: (embeddedor) [187.192.22.73]:54766
+X-Source-Auth: gustavo@embeddedor.com
+X-Email-Count: 8
+X-Source-Cap: Z3V6aWRpbmU7Z3V6aWRpbmU7Z2F0b3I0MTY2Lmhvc3RnYXRvci5jb20=
+X-Local-Domain: yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_121720_763432_54D53625 
-X-CRM114-Status: UNSURE (   9.51  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191014_121907_541275_D4063078 
+X-CRM114-Status: GOOD (  10.23  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [192.185.149.101 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,31 +106,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, Michal Hocko <mhocko@suse.com>,
- linux-ia64@vger.kernel.org, Pavel Tatashin <pasha.tatashin@soleen.com>,
- linux-sh@vger.kernel.org, "Aneesh Kumar K . V" <aneesh.kumar@linux.ibm.com>,
- x86@kernel.org, linux-kernel@vger.kernel.org, linux-mm@kvack.org,
- Dan Williams <dan.j.williams@intel.com>, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org, Oscar Salvador <osalvador@suse.de>
+Cc: linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ "Gustavo A. R. Silva" <gustavo@embeddedor.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 14 Oct 2019 11:32:13 +0200 David Hildenbrand <david@redhat.com> wrote:
+It seems that the right variable to use in this case is *i*, instead of
+*n*, otherwise there is an undefined behavior when right shifiting by more
+than 31 bits when multiplying n by 8; notice that *n* can take values
+equal or greater than 4 (4, 8, 16, ...).
 
-> > Fixes: d0dc12e86b31 ("mm/memory_hotplug: optimize memory hotplug")
-> 
-> @Andrew, can you convert that to
-> 
-> Fixes: f1dd2cd13c4b ("mm, memory_hotplug: do not associate hotadded 
-> memory to zones until online") # visible after d0dc12e86b319
-> 
-> and add
-> 
-> Cc: stable@vger.kernel.org # v4.13+
+Also, notice that under the current conditions (bl = 3), we are skiping
+the handling of bytes 3, 7, 31... So, fix this by updating this logic
+and limit *bl* up to 4 instead of up to 3.
 
-Done, thanks.
+This fix is based on function udc_stuff_fifo().
+
+Addresses-Coverity-ID: 1454834 ("Bad bit shift operation")
+Fixes: 24a28e428351 ("USB: gadget driver for LPC32xx")
+Cc: stable@vger.kernel.org
+Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
+---
+ drivers/usb/gadget/udc/lpc32xx_udc.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/usb/gadget/udc/lpc32xx_udc.c b/drivers/usb/gadget/udc/lpc32xx_udc.c
+index 2b1f3cc7819b..bf6c81e2f8cc 100644
+--- a/drivers/usb/gadget/udc/lpc32xx_udc.c
++++ b/drivers/usb/gadget/udc/lpc32xx_udc.c
+@@ -1177,11 +1177,11 @@ static void udc_pop_fifo(struct lpc32xx_udc *udc, u8 *data, u32 bytes)
+ 			tmp = readl(USBD_RXDATA(udc->udp_baseaddr));
+ 
+ 			bl = bytes - n;
+-			if (bl > 3)
+-				bl = 3;
++			if (bl > 4)
++				bl = 4;
+ 
+ 			for (i = 0; i < bl; i++)
+-				data[n + i] = (u8) ((tmp >> (n * 8)) & 0xFF);
++				data[n + i] = (u8) ((tmp >> (i * 8)) & 0xFF);
+ 		}
+ 		break;
+ 
+-- 
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
