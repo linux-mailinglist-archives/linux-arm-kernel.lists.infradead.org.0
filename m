@@ -2,85 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10CD7D694F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 20:17:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C0DC1D6959
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 20:20:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HH08AYPZ4x6NMENN8SoelFAhJPkQL6PLu8Msf17T6X4=; b=hLhwZKb+VtjXdi
-	7kHaugFpNnqLIwKEN6StlbM6+quY0h0uWUzapW0ZAbqBQe1M+eK2qzEQAIWnd6T5KWadL2BPfwEi3
-	3sRqjW6Jq5Dxl1t1rEQGyqC2dhleXWowAmP4K44YiU2pVGINJVVnfTGQdA/edjI9auUA9WoR8vU2/
-	6EyiSOVdbt4hnm51bTa03g6eCwfqxd8MRjW0UNKQbE6FrG22GY5t4jIdbN8VEulSww0NcFru9wKQu
-	CI0An0bESwKkuBNb48NERhblIRdwz1wlhDb9LtKsIiPbxmOep+lkm9vjkW4DgMcgwmmS8VIkrmALd
-	xO8leEybQWsl+k02esng==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fPXRAIp1r0e01Ll4GrheTQsjq0m779hCm0XW2gjYKyU=; b=tm/mymWRXuG+cv
+	UixuyJYlsXizQ4zaNZwpbXfpaEcFD0hRB9fkaGz9rU7JnBVxMrmTdKG/5rC0yMU5mjxacmH6yIVxo
+	rud2zlygasaI8bEv+hb73brhUG9ytBozGC1IlZM6gn/tvlyQ4Ki5bIhmowLIrPJOosc6GMkyy3mZW
+	GXWwhHnbE9yqa/QynICYA5xYnGt7rVLmlWMKjDnGMG6LTeWVfjAoKOJ3xGMjezp3gvOLhBho3iL2t
+	J/uP/YprCOlzRMta4wzwGYSPvHRNA/F2VGgTIV0JuSlj5/UqgjwFarZy9nYd9wTkCzRig0IwpJnnl
+	6MxzXx6Hh3uZwfjySJ1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iK4uB-0000uA-Tu; Mon, 14 Oct 2019 18:17:15 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1iK4xU-0002X5-6f; Mon, 14 Oct 2019 18:20:40 +0000
+Received: from mout.gmx.net ([212.227.15.19])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iK4u1-0000sn-Ov; Mon, 14 Oct 2019 18:17:07 +0000
-Received: by mail-ot1-f66.google.com with SMTP id y39so14597591ota.7;
- Mon, 14 Oct 2019 11:17:05 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ckXq7H/VDyEuDBGMiSrOJq+fYS3KZI2dTxrNxPrWB1k=;
- b=JcRQHyo31/IM+DB8JYt/d5SYsz918FAXcHQlquHxmI5UcLUUgEjZ65eWM9adRo6Nnp
- yNJopA4N67sFU/FJbuDD8K0GQbrheoob9jHXZnbCao/S89SGC58LxH5NwI0sZ1TeE7I2
- t3001iwjRcHellXQqJx6XEBVcqmDeu511d1D2BCnu02FrpC17rtnHMw0OjdFuAeeg61f
- adnjXbJIeXo33wGW9QWnF8BZaDc3aU7u66wmd5n7nP9oN/vhZbFotLRY20e7IIrjJ/97
- lo6UoagKkIG29+k1BU/XCbHTJ9BIUtEifPsQfY4vsazIPDi2mkr4xZGrxPh64yegJwr+
- bcug==
-X-Gm-Message-State: APjAAAUtxbEB94I0j4l64oIYfX2Q3SLHHlDS+kihwLqXkesAlNHJ1fhQ
- uATgHbG4hYxaOpJSJ+XfeZrAeXc=
-X-Google-Smtp-Source: APXvYqykid9kSCG1CYJVW2KOEUFr4Yc+gJ5hvhWeq8D1eMHp1wcYxUdLkGAG0vEh1DCoe19itZwiaw==
-X-Received: by 2002:a9d:58cc:: with SMTP id s12mr12635611oth.291.1571077025089; 
- Mon, 14 Oct 2019 11:17:05 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id k24sm5352026oic.29.2019.10.14.11.17.04
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 14 Oct 2019 11:17:04 -0700 (PDT)
-Date: Mon, 14 Oct 2019 13:17:03 -0500
-From: Rob Herring <robh@kernel.org>
-To: Corentin Labbe <clabbe@baylibre.com>
-Subject: Re: [PATCH v2 1/4] dt-bindings: crypto: Add DT bindings
- documentation for amlogic-crypto
-Message-ID: <20191014181703.GA14399@bogus>
-References: <1571031104-6880-1-git-send-email-clabbe@baylibre.com>
- <1571031104-6880-2-git-send-email-clabbe@baylibre.com>
+ id 1iK4xG-0002Vz-RS; Mon, 14 Oct 2019 18:20:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1571076922;
+ bh=lUDqvF4Xmlo26d5vz+FQYhlAXDFrVQbg6WijSZdbKqk=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=ZDVRRFHnWNUCgWcY0u5eLnj7vUw1N1cKROVVf1Uagz48d5+2jsoLsJQ24Iq10YiXd
+ NOyFaqjto94EsUXoiBHEgFdiwmHXP+KLXgIc+73mRsqnihaPOfTjZfmo0jG6e1WF2i
+ 9DHTDN3cxQyGkl3OmKX+svCm0yvsZ9dL1VQ+nhBQ=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.1.162] ([37.4.249.112]) by mail.gmx.com (mrgmx004
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 1MyKDe-1i7tAs1M6O-00ydUc; Mon, 14
+ Oct 2019 20:15:22 +0200
+Subject: Re: lan78xx and phy_state_machine
+To: Daniel Wagner <dwagner@suse.de>, bcm-kernel-feedback-list@broadcom.com
+References: <20191014140604.iddhmg5ckqhzlbkw@beryllium.lan>
+ <20191014143213.ishkkg7bkiwu6wi3@beryllium.lan>
+From: Stefan Wahren <wahrenst@gmx.net>
+Message-ID: <e652167b-11e6-ec20-c340-d9ed828cc853@gmx.net>
+Date: Mon, 14 Oct 2019 20:15:21 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1571031104-6880-2-git-send-email-clabbe@baylibre.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191014143213.ishkkg7bkiwu6wi3@beryllium.lan>
+Content-Language: en-US
+X-Provags-ID: V03:K1:LLdHi9yNPfO5bx4nSBKarNJ+TSiW5ygKzRRSkZCyJwmnq18bnbc
+ g9Lc28wgd1IC2huwjlq0jYxaSQ3DUG/xwrKHsAXHN9xIWuWwUUg/P7p+SGGrxSP12b0YSnL
+ bQzhEccoKFSah/qRooAE5u1tb5dak5IKxtnxzfkzgeox7MqErGRkgRI/yNPa2VVebHS42op
+ 3RbupBmp2LzFDtFFszW5w==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:wzmmERjZ9C0=:jT8VePYse0PJ5t6Dsix/vN
+ xrfJacsKeGPE5ohQPinxabD+Y3GuULb9D5AvXsMIfU9yVpAXvFTzZ27PZnRFEELF2cnLkwzY9
+ QBiSfjcTKAzf7nwxxSDtxBp3FP4nF9avZglW3yPOkLRTkXbossMS9MPGFodDPKmvIwY8qLlpL
+ XQgmSMqTI6gntrbKMTRsEqFhC1KHL6/oAuJZ63ZsWdABRDFCR63skRCEQje5biLnRq8brVFuN
+ L5VDsy/V7VgQEH3HT37mJbneEL/Q5a/A8fIBdDKCQyDNxXOlHghZGKfs8kbyo8+ARXZ4CNS7h
+ NQ5jGj34O+KlAOvYYXLuL++nBCUs3aaLeLz0+VUdE1IGsq2QzCND4XFNPvvpIEU/GuetkVssX
+ lZcTa1Dw1tFvgvsNVPIUKwTjsUHsT7ltBjQLLWBoYK5HNIpzmhMWkieLPZz9zzctkUYaE3iyV
+ 8RJCKkwBgVeTXfXZk4hoiHOcUkFHCpll9GQrXhrqjly0T8x2+Xq6tuceX2QwpEdHKsovmL1qf
+ f2TTkVy4o9L3qY/DpXKMG+KUsO2iZHefg3M7j9U90eNJYS3f/O7nIkSC0bYBj9WKpDTUNWzfh
+ Jh+EWLAWCcGR2F9nSOpdIMX78e7ZPZrrTdm/1mk2OpaxsVGdIsWQax2pQNwZBVrO1ULZwZEA5
+ 50JqlDagsXuOxLph9hKNSdnM3hJ9TnsyXv118LHjkprxDYJy0D3W4pObyQzQyxKpgZ+VC4i6a
+ 67naFuf1y/wdDtIG24yfEXBoAgSTHimyD7beFcYys2qFX209dN9CClRgWHfPNXKje3El7MRzd
+ HmiR0retBQllTm7D5zLKDl+ldCdgsK+ZQXNwjTvk/nJdhNHVSg9SZuMKmJCABLQzzIHL/Nqng
+ 7PDSddVx2rl+xdLCBb50Sl2DfFjMd3cuzIsaA+7AqJAS5WkncNfBm6x2B65Aj5jioBd9mXnU1
+ yQB5IUEM/n39YBZ7WAwd4XZUgYnI2tYQIUi7AYALPvwNTMFHcabEqJAfneHtafSk96RmWjGkQ
+ OF9dzgUXM6bo0SONtq2nx/PBPOFC89Vco26VFn0QXYRKgTHZBYvDF7hS/VZS3wHIz3J9TX7A9
+ R3dyaQIpQ7OKeN1V0IRTAfTrsgazbIIiCt1JLmKsV/cu5JrL9ZjjV6Qdxxw0MfzlNT8A4z9Z/
+ xnVTc35RKRGOtW1tU7DN1c/oDNT7LTooEHweH6anXS9XbfV1e/WWQfYcvi0jI4zYfpYIyfHST
+ zLvdxPriSvXnetKFmRNlGFtLpJ3TeCWnZewzyxlRlXMCAJ3aHJrUUmlYHY2A=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_111705_810378_00791D83 
-X-CRM114-Status: UNSURE (   8.21  )
+X-CRM114-CacheID: sfid-20191014_112029_852530_23E01AAD 
+X-CRM114-Status: UNSURE (   7.69  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.5 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
+ no trust [212.227.15.19 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
+ provider (wahrenst[at]gmx.net)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,29 +102,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- herbert@gondor.apana.org.au, martin.blumenstingl@googlemail.com,
- khilman@baylibre.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-crypto@vger.kernel.org, linux-amlogic@lists.infradead.org,
- davem@davemloft.net, linux-arm-kernel@lists.infradead.org,
- Corentin Labbe <clabbe@baylibre.com>
+Cc: linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 14 Oct 2019 05:31:41 +0000, Corentin Labbe wrote:
-> This patch adds documentation for Device-Tree bindings for the
-> Amlogic GXL cryptographic offloader driver.
-> 
-> Signed-off-by: Corentin Labbe <clabbe@baylibre.com>
-> ---
->  .../bindings/crypto/amlogic,gxl-crypto.yaml   | 52 +++++++++++++++++++
->  1 file changed, 52 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/crypto/amlogic,gxl-crypto.yaml
-> 
+Hello Daniel,
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Am 14.10.19 um 16:32 schrieb Daniel Wagner:
+>> I've trying to boot a RPi 3 Model B+ in 64 bit mode. While I can get
+>> my configuratin booting with v5.2.20, the current kernel v5.3.6 hangs
+>> when initializing the eth interface.
+> FWIW, 5.4.0-rc3 doesn't boot neither.
+
+i'm unable to reproduce this issue with my RPi 3B+
+
+rootfs: ARCH
+Bootloader: U-Boot
+Linux: 5.4.0-rc3, arm64/defconfig
+
+Are you using a vanilla kernel?
+Which configuration?
+Is Ethernet cable connected during boot?
+Does ACT LED stop blinking?
+What is your criteria to decide "doesn't boot"?
+
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
