@@ -2,66 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1BC2AD5B11
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 08:13:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46F98D5B45
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 08:20:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ub69O8eHajy/mahW3CWiLdog5/7dbvK8hlM4pemX36Y=; b=at6O6tQbophV+B
-	+DEW6Q7e+ilXtAu0QQGOM+gLWQt0D8qWuVuyMJwu4CY+43Jjy4vOvAg23JHWBVQWjinAvZbPAMKtO
-	Pi/8Ok7Y233Xu7/SqIWyXQ7vTA2xtCubSiIeK/vsisWVkQ7gExK0fonfmYAW8QfxKC8GqOTEgCTfs
-	wCiFzp0P1ZlR5uIowwv75Wu9ZSrEgIE0BxDIjoyx3RZUygEPQDWDzcpUcAqIxVInv+2tizpe3vOg8
-	3r/51+neg5ZLPzuVoW1ZSDhdXUhQAAYM0aldAb1yY+S+sYcWlighEP6qRdQ2yZf8pcH1VpOnDUIGM
-	owBA9dDNjTx3DFRLUm8A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7oEOw483DeLI+x7Vfz7bdKuqIpqDghu0FihyM9ceiqc=; b=WZ8tJ8p/j6xuq7
+	4JVFtJv61XZakXyjMHxRCCdCAZeLV0IoNIAJvefEF4P6MYy5LlEHG45yNbNjvY1a7FRubOSpXeyga
+	MAL8gxZ8fhttfCTuU2Bn7MIdKzCp30d+CyPMG2AZVIN+0wyIQUbQpC/kSRCpNU0i5WXkPLaEHVf5E
+	LuIk0evhyDgb4TRNZmvxHM2h8RdTkB1QjdSIfYh7QN8cBm0dgHeVivof2Tay4OiPQpAKz1tGmKQxb
+	kgJWVmQ548Ew/MmIaQSRns784SfUIYJCL/zO91OXTvu6yyRL+5DakwZeFe8rd5e2ab/H22LQNaNmp
+	AiLkactKxWAcvlVdVpkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJtbl-0004Hd-UK; Mon, 14 Oct 2019 06:13:29 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1iJti9-0006Bf-2G; Mon, 14 Oct 2019 06:20:05 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJtbd-0004GW-LO
- for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 06:13:23 +0000
-Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 92DBC18C626919661A6C;
- Mon, 14 Oct 2019 14:13:11 +0800 (CST)
-Received: from [127.0.0.1] (10.177.223.23) by DGGEMS413-HUB.china.huawei.com
- (10.3.19.213) with Microsoft SMTP Server id 14.3.439.0; Mon, 14 Oct 2019
- 14:13:03 +0800
-Subject: Re: [PATCH 3/3] arm64: configs: unset CPU_BIG_ENDIAN
-To: Arnd Bergmann <arnd@arndb.de>
-References: <20190926193030.5843-1-anders.roxell@linaro.org>
- <20190926193030.5843-5-anders.roxell@linaro.org>
- <bf5db3a5-96da-752c-49ea-d0de899882d5@huawei.com>
- <CADYN=9LB9RHgRkQj=HcKDz1x9jqmT464Kseh2wZU5VvcLit+bQ@mail.gmail.com>
- <d978673e-cbd1-5ab5-b2a4-cdb407d0f98c@huawei.com>
- <CAK8P3a0kBz1-i-3miCo1vMuoM39ivXa3oxOE9VnCqDO-nfNOxw@mail.gmail.com>
- <20191011102747.lpbaur2e4nqyf7sw@willie-the-truck>
- <73701e9f-bee1-7ae8-2277-7a3576171cd4@huawei.com>
- <CAK8P3a1C8cFB6DS9eVXTEiTQu1kPzy65JvL=BxqEe5MTkds8sQ@mail.gmail.com>
-From: Hanjun Guo <guohanjun@huawei.com>
-Message-ID: <e6df09ba-a016-65c0-5b56-f7b91a7c9dd8@huawei.com>
-Date: Mon, 14 Oct 2019 14:12:03 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
- Thunderbird/52.5.0
+ id 1iJthw-0006BG-5s
+ for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 06:19:53 +0000
+Received: from dragon (li937-157.members.linode.com [45.56.119.157])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2CB8020854;
+ Mon, 14 Oct 2019 06:19:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571033991;
+ bh=G3j79Lr1xNDLJ1DZYooCMhYnk2SpMlhTRuB05XZTAZ4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=vqMBWKBv5wMMlKQRyLwibF7IThEe5J/kd4Ka2k3MCrCrk044Qr3UxvEykUO4KJh2A
+ zX5Am2AhoaK48PbKepzLZCeuqdAGpuEO670ySVDUx2VCDwmoCa6rX9t3MVTBDX93Cj
+ CtQOuEm7exBDrrhJijqGKHhK1LrU68E3M8jJNMsc=
+Date: Mon, 14 Oct 2019 14:19:31 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Wen He <wen.he_1@nxp.com>
+Subject: Re: [v2 1/2] arm64: dts: ls1028a: Update the clock providers for the
+ Mali DP500
+Message-ID: <20191014061930.GB12262@dragon>
+References: <20190920083419.5092-1-wen.he_1@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <CAK8P3a1C8cFB6DS9eVXTEiTQu1kPzy65JvL=BxqEe5MTkds8sQ@mail.gmail.com>
-Content-Language: en-US
-X-Originating-IP: [10.177.223.23]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20190920083419.5092-1-wen.he_1@nxp.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191013_231321_872270_3C34FE35 
-X-CRM114-Status: GOOD (  15.15  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191013_231952_242088_280FE313 
+X-CRM114-Status: UNSURE (   9.81  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,57 +78,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anders Roxell <anders.roxell@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, John Garry <john.garry@huawei.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Olof Johansson <olof@lixom.net>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
+ linux-devel@linux.nxdi.nxp.com, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Arnd,
-
-On 2019/10/12 22:05, Arnd Bergmann wrote:
-> On Sat, Oct 12, 2019 at 9:33 AM Hanjun Guo <guohanjun@huawei.com> wrote:
->>
->> On 2019/10/11 18:27, Will Deacon wrote:
->> [...]
->>>
->>> Does anybody use BIG_ENDIAN? If we're not even building it then maybe we
->>> should get rid of it altogether on arm64. I don't know of any supported
->>> userspace that supports it or any CPUs that are unable to run little-endian
->>> binaries.
->>
->> FWIW, massive telecommunication products (based on ARM64) form Huawei are using
->> BIG_ENDIAN, and will use BIG_ENDIAN in the near future as well.
+On Fri, Sep 20, 2019 at 04:34:18PM +0800, Wen He wrote:
+> In order to maximise performance of the LCD Controller's 64-bit AXI
+> bus, for any give speed bin of the device, the AXI master interface
+> clock(ACLK) clock can be up to CPU_frequency/2, which is already
+> capable of optimal performance. In general, ACLK is always expected
+> to be equal to CPU_frequency/2. APB slave interface clock(PCLK) and
+> Main processing clock(PCLK) both are tied to the same clock as ACLK.
 > 
-> Ok, thanks for the information -- that definitely makes it clear that
-> it cannot go
-> away anytime soon (though it doesn't stop us from change the
-> allmodconfig default
-> if we decide that's a good idea).
-
-I agree with you.
-
+> This change followed the LS1028A Architecture Specification Manual.
 > 
-> Do you know if there are currently any patches against mainline to
-> make big-endian
-> work in products, or is everything working out of the box?
+> Signed-off-by: Wen He <wen.he_1@nxp.com>
 
-We are not using mainline kernel for product, but LTS 4.4 is working
-fine, and also we tested LTS 4.19 kernel without any other big-endian
-patches, the latest big-endian bug we found is this:
-
-a6002ec5a8c6 arm64: opcodes.h: Add arm big-endian config options before including arm header
-
-The running kernel code covered but Huawei's telecommunication products
-is limited, but I think ARM64 arch code is working fine for big-endian.
-
-Thanks
-Hanjun
-
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
