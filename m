@@ -2,84 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8129BD6589
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 16:46:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A45CCD658F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 16:48:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LJN6CYdKNVhLkBt9XgpjWN74HK7dIJdACG3/N7k9fSw=; b=nglNtdM1kz8ANf
-	lHsREiXUlY+HGkFMXoMHlfL2kr6UZ1/gFwuAufIZs0wk9g/qmiI5nheOSpMNVAIKU28bo8uAehdMj
-	3upfXuW70AUozD0MJEwwcOCGLBjbbv09lPGXN/gao4bveLkRlqZ/ez8yX9nRJwLaJi3EVmp647jTD
-	p6sWTPF/lGPTA2uiv7kAAsQHGJiVlxaIVQJFtV9SgSIP9P26kGLdJGAnrPp5iY5iGXIVDP92K0HOY
-	7bg+sHvSrJTMpGGqHqPE2rPAKKoomOtwOrt2VLhZT3knYSfejC8aMq71bnuSE+voOX+f9+kFMhE9i
-	eiqu09srDLrsNgq9JMGQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=pO/gPAv8N/IvYkapmp07nAq5hQdU8FARpOisjTpNQ+4=; b=kcpfNsmtZqA0BZ
+	FAagJb+I7Rzg3/wEJQEwiByNaMnAmybR5IIR3bbrh4sZoe3OshiMd5yPqQQnqFvaZDxjqkqrouwpC
+	o6YRhpiBWOHuHIsHwgu1hmsI3jjiluhkJ08SDmZbAt/LsGCkc+1AAhrP53y7GJ+KQz4SWW7f8jIcx
+	Eto8yBqGfXscV8mnzVnMXjgdskPvA6tYX01ZF182TnnRHwjffzreotqIB2+7bdxxDfSuhgLi742o9
+	gKE37HtCe1FicBnT0fzulZAApv4nEhaqfVnMz5H7SB8t54eBjKfkVYxqULCQziVFpn79YJQGLOREA
+	9RX9OdklLlraEv6bX+Ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iK1cK-0007jP-L3; Mon, 14 Oct 2019 14:46:36 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1iK1eK-0008A1-CT; Mon, 14 Oct 2019 14:48:40 +0000
+Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iK1cB-0007hk-SU
- for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 14:46:29 +0000
-Received: by mail-pl1-x643.google.com with SMTP id f21so8113075plj.10
+ id 1iK1eB-00089D-6B
+ for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 14:48:32 +0000
+Received: by mail-qk1-x742.google.com with SMTP id h126so16094932qke.10
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 14 Oct 2019 07:46:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=/Wwkp/o/TiWYKqra6/GbJ8zgmOghxSCR6LMZILbN3AA=;
- b=Qq0dACQaYNnCu7w+uH1q+EXCWhrXZyYx63Ucp9eQ3kdJr7sZiRBBHuY2+z3Z5QsgZg
- 5+mv9yf4faaNnydUHWvdHrKOzLzgTLkF84l8AJOsgPuw2vlXPxhNy7EEEXpu9T2aBQD4
- VPgSMXX1H96agXRdv7DYYmYgaIaWqfeRRKo30bJvZ/95X7ncj3YzjrPZ3wAgATaIlDKP
- 1w7mfR2l5lSq+jNmMZ4GWj/0k7OFml0qq4+orA/4i0/IMLqJRo83iMebCeg2g9JihrdC
- AW5vSRtIcD2aACwhC+D03rlxE33OBEfHaBfhSsKWhx9PVskRgov+Z+r6UfbHGu0TUOBf
- 0Q7w==
+ Mon, 14 Oct 2019 07:48:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=JbF4z6Po+L7uELtvdMJOGe3JlbdY9qB4rUYqWGj1Jjo=;
+ b=apn9r32Fkdb3gKR0IDz6l0B6b5jFruaQ2x60IIBI0cQZGzTpLbDfFHfuKgL1o7ISE+
+ 9+kiU11Ir/MaJLMRI2nGXGNB06/xK/rVMoyKR3GBpkOl/oWCF5py7YGV7C6rVCkNiekq
+ Om8BY5kGZRUGGL2KbCZi4qznGAoTxdccQzG7K1XVZuDx7S7qOGjsOVEij7vfRMrXZVpp
+ owCvJsrg4XBKRBiVJl2WJo7USRaojC8T5yEREMLQ/bWiDouDNqP0LXddoTYhtHAYQbeM
+ 3G+STd63oOBvztiAZV4llOLahw/ncibKbdMzdfpuFhx8i3rfFJjLNDAHvWh+TzL0h1oP
+ 710A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=/Wwkp/o/TiWYKqra6/GbJ8zgmOghxSCR6LMZILbN3AA=;
- b=GGIIZgZC41vkOY0WqHrNXhWLXtZiLW6dKR0SQVLU6Fy818DFdCCZbf2QcA3KzEs04f
- wppjNfVC385g1ANammO4A0ltYJNMSNWY/iIa9c9JUzOFPTANn7LWCGMFvJurxgWBLAkX
- G4fUdTJocZ0rWRUYQYp4Esnip9YjEjYm9e4zWs01uHOKEbI6BN9UR4WrVzJAGYwFLQ3/
- h5mFibKy5NUYJBWuO98Rfq3ILf3z8E19gWU3gibxDTFZaBGrhyh5DSCsfRmASF1cGvCn
- 6lDlOAn1HlwjyFJZNvd0qp4wryrqJ9RIzwZ25ABfa6VrgUmEgPG0j+8QIH8DCVItSjoT
- dDBA==
-X-Gm-Message-State: APjAAAWalbwG9RoTX62k3LNYQdkP5/tagJ89lJAvpARXmOOFsBTkCjry
- He17SdJxebinrUKhNoTcq4sh
-X-Google-Smtp-Source: APXvYqwhz1BoUwO6T+uzR5BRZcg5sa7AjCGGCeVyBJ/eYxnWT37A9NIdF8NVa4rvrqjOx7h6M/y/AA==
-X-Received: by 2002:a17:902:bcc8:: with SMTP id
- o8mr30767347pls.256.1571064387153; 
- Mon, 14 Oct 2019 07:46:27 -0700 (PDT)
-Received: from mani ([103.59.133.81])
- by smtp.gmail.com with ESMTPSA id p190sm22003538pfb.160.2019.10.14.07.46.23
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 14 Oct 2019 07:46:26 -0700 (PDT)
-Date: Mon, 14 Oct 2019 20:16:20 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: ulf.hansson@linaro.org, afaerber@suse.de, robh+dt@kernel.org,
- sboyd@kernel.org
-Subject: Re: [PATCH v4 7/7] arm64: configs: Enable Actions Semi platform in
- defconfig
-Message-ID: <20191014144620.GC8583@mani>
-References: <20190916154546.24982-1-manivannan.sadhasivam@linaro.org>
- <20190916154546.24982-8-manivannan.sadhasivam@linaro.org>
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=JbF4z6Po+L7uELtvdMJOGe3JlbdY9qB4rUYqWGj1Jjo=;
+ b=byat1TyQiwZoz7I/p6cHDeXlLh03I3NQ0K+a363VOh8UaNImp2qQ1FbQBMLlqAUYH/
+ hmkYxgvmuzj4Ibw8zEBYDzIqwEGwl3gWq4NeYhMiWJgr9Hgbz7MqDvADMgx/eHvOcTZr
+ ziK9WZ8sq6lsNHbs5hmxonHa/hFkqWPBwfirTiguz4ZCsOTFyzlCLzh8/eYdf5xpVnCG
+ rgJI6FbXN4sJzzkI6Ea1R7M67NWasi3nANj0+cL9NKI/KuqU3nFACIS95dQLO1yNwtRv
+ SskoBTC9BZtQJUSaQMEOrfhyO6Hw41q3GmUyqF+646suWyJh77xwfb8yG24V1civcWOe
+ 9GzQ==
+X-Gm-Message-State: APjAAAXUvhm11Ao/eyMdgtPOJwzx63aSQwNm+1r+6YMC1BEN3g4UDhzY
+ VuP7sWlZWFNzs87iMb21zg/k7g==
+X-Google-Smtp-Source: APXvYqy2fGQKFYZ7/E+TOArAVSi2bDSBKCavlDZJ5/ZyDDWiVT4LH6C1CIF02J7b7Y3Nzqe0Zo08hQ==
+X-Received: by 2002:a37:67cb:: with SMTP id
+ b194mr29937925qkc.238.1571064507496; 
+ Mon, 14 Oct 2019 07:48:27 -0700 (PDT)
+Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
+ [73.69.118.222])
+ by smtp.gmail.com with ESMTPSA id h29sm10517230qtb.46.2019.10.14.07.48.26
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 14 Oct 2019 07:48:26 -0700 (PDT)
+From: Pavel Tatashin <pasha.tatashin@soleen.com>
+To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
+ linux-kernel@vger.kernel.org, catalin.marinas@arm.com, will@kernel.org,
+ steve.capper@arm.com, linux-arm-kernel@lists.infradead.org,
+ marc.zyngier@arm.com, james.morse@arm.com, vladimir.murzin@arm.com,
+ mark.rutland@arm.com, tglx@linutronix.de
+Subject: [PATCH] arm64: hibernate: check pgd table allocation
+Date: Mon, 14 Oct 2019 10:48:24 -0400
+Message-Id: <20191014144824.159061-1-pasha.tatashin@soleen.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190916154546.24982-8-manivannan.sadhasivam@linaro.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_074627_979289_7682B4F9 
-X-CRM114-Status: GOOD (  15.25  )
+X-CRM114-CacheID: sfid-20191014_074831_232514_7BEA1C3E 
+X-CRM114-Status: GOOD (  11.48  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -101,45 +100,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-mmc@vger.kernel.org,
- linus.walleij@linaro.org, linux-actions@lists.infradead.org,
- linux-kernel@vger.kernel.org, thomas.liau@actions-semi.com,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 16, 2019 at 09:15:46PM +0530, Manivannan Sadhasivam wrote:
-> Since the Actions Semi platform can now boot a distro, enable it in
-> ARM64 defconfig.
-> 
-> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+There is a bug in create_safe_exec_page(), when page table is allocated
+it is not checked that table is allocated successfully:
 
-Applied for v5.5.
+But it is dereferenced in: pgd_none(READ_ONCE(*pgdp)).  Check that
+allocation was successful.
 
-Thanks,
-Mani
+Fixes: 82869ac57b5d ("arm64: kernel: Add support for hibernate/suspend-to-disk")
 
-> ---
->  arch/arm64/configs/defconfig | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-> index 0e58ef02880c..8e27777d6687 100644
-> --- a/arch/arm64/configs/defconfig
-> +++ b/arch/arm64/configs/defconfig
-> @@ -29,6 +29,7 @@ CONFIG_BLK_DEV_INITRD=y
->  CONFIG_KALLSYMS_ALL=y
->  # CONFIG_COMPAT_BRK is not set
->  CONFIG_PROFILING=y
-> +CONFIG_ARCH_ACTIONS=y
->  CONFIG_ARCH_AGILEX=y
->  CONFIG_ARCH_SUNXI=y
->  CONFIG_ARCH_ALPINE=y
-> -- 
-> 2.17.1
-> 
+Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
+---
+ arch/arm64/kernel/hibernate.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
+index e0a7fce0e01c..a96b2921d22c 100644
+--- a/arch/arm64/kernel/hibernate.c
++++ b/arch/arm64/kernel/hibernate.c
+@@ -201,6 +201,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
+ 				 gfp_t mask)
+ {
+ 	int rc = 0;
++	pgd_t *trans_pgd;
+ 	pgd_t *pgdp;
+ 	pud_t *pudp;
+ 	pmd_t *pmdp;
+@@ -215,7 +216,13 @@ static int create_safe_exec_page(void *src_start, size_t length,
+ 	memcpy((void *)dst, src_start, length);
+ 	__flush_icache_range(dst, dst + length);
+ 
+-	pgdp = pgd_offset_raw(allocator(mask), dst_addr);
++	trans_pgd = allocator(mask);
++	if (!trans_pgd) {
++		rc = -ENOMEM;
++		goto out;
++	}
++
++	pgdp = pgd_offset_raw(trans_pgd, dst_addr);
+ 	if (pgd_none(READ_ONCE(*pgdp))) {
+ 		pudp = allocator(mask);
+ 		if (!pudp) {
+-- 
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
