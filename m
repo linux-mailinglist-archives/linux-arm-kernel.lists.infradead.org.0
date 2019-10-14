@@ -2,59 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D70C0D6450
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 15:46:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9874BD645B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 15:49:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
 	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=AwbGqJm8oP1Udk4wwVGbiqy4bdi+91TH08gwZ2AzGxA=; b=cFikAP5UnIgDm2sSPGxPeW8oV
-	5oAnZ+dhnErviLyAQ06DUrVfziZrTSlOzIF0fYkq1TC5WRp5Jugtv1b2ST++wUOQBQp14Obzp+I32
-	DV8eUCDEaGpiBE2Rk+CdH2YznEse+H/jXrwrVtOynBEwR65CMeV+IK5j8pkNwz6mvqjzN76/aNT/B
-	Nt6tlH0/+ElwsfU1e+pj6ZWzyGWxJjig9m12lVkO+dgtGMejNLQHFK1sh0ti3WbU5bMpUcAxpB0aS
-	Wy7/cSGbvD+VuGB2eS4GHAX9fMiVh+sQXdsSJA0E1KNJmcfZNk9uJh3VVdzdgDI1s/rB8N99XgB3+
-	Ctv7IbKwQ==;
+	 bh=cULGSTuoXdTOvlPp2dgE18XJJv5elJZqXRlG1xG0HeM=; b=bNq5NND39cXarfkLRROO/xROs
+	65V7AD5OcYT4t4cwi1ipDKaR2uyi3mNxgFBpKofxw2CF/5uq7hp69Iw8Y7F0LCrvpBwddvt/Ipq2y
+	uBJ+sgLrCumv7BEkOLED4EoeX+G9vsLrPOVXuVf5ilrS/yeOoDbbmlQwhU1eli0toHc2Um2XS36Br
+	fi7HcEnWoAULR+WMqpiQVJ5UuVXZKxEWfOSEWksLd2rlnBEQlzHNpBpSQ0MLaDI1Iht5OUYvF04Ra
+	cs5D7SgTZ/jc470VAuIPVcbRgHJg+uire5bcj3a+VlbU5hAfD3SdGc+v9df6tbMCkps9BWWeMLIK8
+	TwT+xD/vA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iK0fW-0006su-O4; Mon, 14 Oct 2019 13:45:50 +0000
+	id 1iK0im-0007UU-Dn; Mon, 14 Oct 2019 13:49:12 +0000
 Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iK0fN-0006rr-W9
- for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 13:45:44 +0000
+ id 1iK0ie-0007Tx-51
+ for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 13:49:05 +0000
 Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
  (envelope-from <maz@kernel.org>)
- id 1iK0fG-0001Nm-P1; Mon, 14 Oct 2019 15:45:34 +0200
-To: Remi Pommarel <repk@triplefau.lt>
-Subject: Re: [PATCH v3] PCI: aardvark: Use LTSSM state to build link training
- flag
+ id 1iK0iY-0001Qb-NC; Mon, 14 Oct 2019 15:48:58 +0200
+To: Benjamin GAIGNARD <benjamin.gaignard@st.com>
+Subject: Re: [PATCH] ARM: dts: stm32: Enable high resolution timer
 X-PHP-Originating-Script: 0:main.inc
 MIME-Version: 1.0
-Date: Mon, 14 Oct 2019 14:45:34 +0100
+Date: Mon, 14 Oct 2019 14:48:58 +0100
 From: Marc Zyngier <maz@kernel.org>
-In-Reply-To: <20191014130627.GA1426@voidbox>
-References: <20190522213351.21366-3-repk@triplefau.lt>
- <20190930154017.GF42880@e119886-lin.cambridge.arm.com>
- <20190930165230.GA12568@voidbox>
- <20191001080546.GI42880@e119886-lin.cambridge.arm.com>
- <20191013113415.3c653526@why>
- <20191014100129.GA18832@e121166-lin.cambridge.arm.com>
- <20191014130627.GA1426@voidbox>
-Message-ID: <eda65141ee1006fe3a93a9989867dc31@www.loen.fr>
+In-Reply-To: <61dda183-cd53-153b-8ed1-e2ecb8f96e03@st.com>
+References: <20190927084819.645-1-benjamin.gaignard@st.com>
+ <da48ce9633441cd0186518fa7ce1d528@www.loen.fr>
+ <341949c8-7864-5d65-2797-988022724a4c@st.com>
+ <ff11797da8f049b354797689754fde52@www.loen.fr>
+ <69af57d1-13a9-9e35-78f2-4a0d17bdaf6d@st.com>
+ <e376301a8e9ec02dfd7713748abed83e@www.loen.fr>
+ <61dda183-cd53-153b-8ed1-e2ecb8f96e03@st.com>
+Message-ID: <a42dd20677cddd8d09ea91a369a4e10b@www.loen.fr>
 X-Sender: maz@kernel.org
 User-Agent: Roundcube Webmail/0.7.2
 X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: repk@triplefau.lt, lorenzo.pieralisi@arm.com,
- andrew.murray@arm.com, ellierevves@gmail.com, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, helgaas@kernel.org, thomas.petazzoni@bootlin.com,
- linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Rcpt-To: benjamin.gaignard@st.com, alexandre.torgue@st.com,
+ robh+dt@kernel.org, mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_064542_194770_1A09BEB4 
-X-CRM114-Status: GOOD (  39.47  )
+X-CRM114-CacheID: sfid-20191014_064904_336528_27620A79 
+X-CRM114-Status: GOOD (  15.71  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -73,245 +72,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ellie Reeves <ellierevves@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, Bjorn Helgaas <helgaas@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Andrew Murray <andrew.murray@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ Alexandre TORGUE <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Remi,
-
-On 2019-10-14 14:06, Remi Pommarel wrote:
-> Hi Lorenzo, Marc,
->
-> On Mon, Oct 14, 2019 at 11:01:29AM +0100, Lorenzo Pieralisi wrote:
->> On Sun, Oct 13, 2019 at 11:34:15AM +0100, Marc Zyngier wrote:
->> > On Tue, 1 Oct 2019 09:05:46 +0100
->> > Andrew Murray <andrew.murray@arm.com> wrote:
->> >
->> > Hi Lorenzo,
->> >
->> > > On Mon, Sep 30, 2019 at 06:52:30PM +0200, Remi Pommarel wrote:
->> > > > On Mon, Sep 30, 2019 at 04:40:18PM +0100, Andrew Murray wrote:
->> > > > > On Wed, May 22, 2019 at 11:33:51PM +0200, Remi Pommarel 
->> wrote:
->> > > > > > Aardvark's PCI_EXP_LNKSTA_LT flag in its link status 
->> register is not
->> > > > > > implemented and does not reflect the actual link training 
->> state (the
->> > > > > > flag is always set to 0). In order to support link 
->> re-training feature
->> > > > > > this flag has to be emulated. The Link Training and Status 
->> State
->> > > > > > Machine (LTSSM) flag in Aardvark LMI config register could 
->> be used as
->> > > > > > a link training indicator. Indeed if the LTSSM is in L0 or 
->> upper state
->> > > > > > then link training has completed (see [1]).
->> > > > > >
->> > > > > > Unfortunately because after asking a link retraining it 
->> takes a while
->> > > > > > for the LTSSM state to become less than 0x10 (due to L0s 
->> to recovery
->> > > > > > state transition delays), LTSSM can still be in L0 while 
->> link training
->> > > > > > has not finished yet. So this waits for link to be in 
->> recovery or lesser
->> > > > > > state before returning after asking for a link retrain.
->> > > > > >
->> > > > > > [1] "PCI Express Base Specification", REV. 4.0
->> > > > > >     PCI Express, February 19 2014, Table 4-14
->> > > > > >
->> > > > > > Signed-off-by: Remi Pommarel <repk@triplefau.lt>
->> > > > > > ---
->> > > > > > Changes since v1:
->> > > > > >   - Rename retraining flag field
->> > > > > >   - Fix DEVCTL register writing
->> > > > > >
->> > > > > > Changes since v2:
->> > > > > >   - Rewrite patch logic so it is more legible
->> > > > > >
->> > > > > > Please note that I will unlikely be able to answer any 
->> comments from May
->> > > > > > 24th to June 10th.
->> > > > > > ---
->> > > > > >  drivers/pci/controller/pci-aardvark.c | 29 
->> ++++++++++++++++++++++++++-
->> > > > > >  1 file changed, 28 insertions(+), 1 deletion(-)
->> > > > > >
->> > > > > > diff --git a/drivers/pci/controller/pci-aardvark.c 
->> b/drivers/pci/controller/pci-aardvark.c
->> > > > > > index 134e0306ff00..8803083b2174 100644
->> > > > > > --- a/drivers/pci/controller/pci-aardvark.c
->> > > > > > +++ b/drivers/pci/controller/pci-aardvark.c
->> > > > > > @@ -180,6 +180,8 @@
->> > > > > >  #define LINK_WAIT_MAX_RETRIES		10
->> > > > > >  #define LINK_WAIT_USLEEP_MIN		90000
->> > > > > >  #define LINK_WAIT_USLEEP_MAX		100000
->> > > > > > +#define RETRAIN_WAIT_MAX_RETRIES	10
->> > > > > > +#define RETRAIN_WAIT_USLEEP_US		2000
->> > > > > >
->> > > > > >  #define MSI_IRQ_NUM			32
->> > > > > >
->> > > > > > @@ -239,6 +241,17 @@ static int 
->> advk_pcie_wait_for_link(struct advk_pcie *pcie)
->> > > > > >  	return -ETIMEDOUT;
->> > > > > >  }
->> > > > > >
->> > > > > > +static void advk_pcie_wait_for_retrain(struct advk_pcie 
->> *pcie)
->> > > > > > +{
->> > > > > > +	size_t retries;
->> > > > > > +
->> > > > > > +	for (retries = 0; retries < RETRAIN_WAIT_MAX_RETRIES; 
->> ++retries) {
->> > > > > > +		if (!advk_pcie_link_up(pcie))
->> > > > > > +			break;
->> > > > > > +		udelay(RETRAIN_WAIT_USLEEP_US);
->> > > > > > +	}
->> > > > > > +}
->> > > > > > +
->> > > > > >  static void advk_pcie_setup_hw(struct advk_pcie *pcie)
->> > > > > >  {
->> > > > > >  	u32 reg;
->> > > > > > @@ -426,11 +439,20 @@ 
->> advk_pci_bridge_emul_pcie_conf_read(struct pci_bridge_emul *bridge,
->> > > > > >  		return PCI_BRIDGE_EMUL_HANDLED;
->> > > > > >  	}
->> > > > > >
->> > > > > > +	case PCI_EXP_LNKCTL: {
->> > > > > > +		/* u32 contains both PCI_EXP_LNKCTL and PCI_EXP_LNKSTA 
->> */
->> > > > > > +		u32 val = advk_readl(pcie, PCIE_CORE_PCIEXP_CAP + reg) 
->> &
->> > > > > > +			~(PCI_EXP_LNKSTA_LT << 16);
->> > > > >
->> > > > > The commit message says "the flag is always set to 0" - 
->> therefore I guess
->> > > > > you don't *need* to mask out the LT bit here? I assume this 
->> is just
->> > > > > belt-and-braces but thought I'd check incase I've 
->> misunderstood or if your
->> > > > > commit message is inaccurate.
->> > > > >
->> > > > > In any case masking out the bit (or adding a comment) makes 
->> this code more
->> > > > > readable as the reader doesn't need to know what the 
->> hardware does with this
->> > > > > bit.
->> > > >
->> > > > Actually vendor eventually responded that the bit was 
->> reserved, but
->> > > > during my tests it remains to 0.
->> > > >
->> > > > So yes I am masking this out mainly for belt-and-braces and 
->> legibility.
->> > >
->> > > Thanks for the clarification.
->> > >
->> > > >
->> > > > > > +		if (!advk_pcie_link_up(pcie))
->> > > > > > +			val |= (PCI_EXP_LNKSTA_LT << 16);
->> > > > > > +		*value = val;
->> > > > > > +		return PCI_BRIDGE_EMUL_HANDLED;
->> > > > > > +	}
->> > > > > > +
->> > > > > >  	case PCI_CAP_LIST_ID:
->> > > > > >  	case PCI_EXP_DEVCAP:
->> > > > > >  	case PCI_EXP_DEVCTL:
->> > > > > >  	case PCI_EXP_LNKCAP:
->> > > > > > -	case PCI_EXP_LNKCTL:
->> > > > > >  		*value = advk_readl(pcie, PCIE_CORE_PCIEXP_CAP + reg);
->> > > > > >  		return PCI_BRIDGE_EMUL_HANDLED;
->> > > > > >  	default:
->> > > > > > @@ -447,8 +469,13 @@ 
->> advk_pci_bridge_emul_pcie_conf_write(struct pci_bridge_emul *bridge,
->> > > > > >
->> > > > > >  	switch (reg) {
->> > > > > >  	case PCI_EXP_DEVCTL:
->> > > > > > +		advk_writel(pcie, new, PCIE_CORE_PCIEXP_CAP + reg);
->> > > > > > +		break;
->> > > > >
->> > > > > Why is this here?
->> > > > >
->> > > >
->> > > > Before PCI_EXP_DEVCTL and PCI_EXP_LNKCTL were doing the same 
->> thing, but
->> > > > as now PCI_EXP_LNKCTL does extra things (i.e. wait for link to
->> > > > successfully retrain), they do have different behaviours.
->> > > >
->> > > > So this is here so PCI_EXP_DEVCTL keeps its old behaviour and 
->> do not
->> > > > wait for link retrain in case an unrelated (PCI_EXP_LNKCTL_RL) 
->> bit is
->> > > > set.
->> > >
->> > > Oh yes, of course!
->> > >
->> > > Thanks and:
->> > >
->> > > Reviewed-by: Andrew Murray <andrew.murray@arm.com>
->> >
->> > Is there any hope for this workaround to make it into 5.4?
->> >
->> > My EspressoBin (which is blessed with this joke of a PCIe 
->> controller)
->> > is pretty much a doorstop without it and dies with a SError early 
->> at
->> > boot.
->> >
->> > FWIW:
->> >
->> > Tested-by: Marc Zyngier <maz@kernel.org>
+On 2019-10-14 10:31, Benjamin GAIGNARD wrote:
+> On 9/27/19 2:59 PM, Marc Zyngier wrote:
+>> On 2019-09-27 13:44, Benjamin GAIGNARD wrote:
+>>> On 9/27/19 2:41 PM, Marc Zyngier wrote:
+>>>> On 2019-09-27 13:36, Benjamin GAIGNARD wrote:
+>>>>> On 9/27/19 1:22 PM, Marc Zyngier wrote:
+>>>>>> On 2019-09-27 09:48, Benjamin Gaignard wrote:
+>>>>>>> Adding always-on makes arm arch_timer claim to be an high 
+>>>>>>> resolution
+>>>>>>> timer.
+>>>>>>> That is possible because power mode won't stop clocking the 
+>>>>>>> timer.
+>>>>>>
+>>>>>> The "always-on" is not about the clock. It is about the 
+>>>>>> comparator.
+>>>>>> The clock itself is *guaranteed* to always tick. If it didn't,
+>>>>>> that'd be
+>>>>>> an integration bug, and a pretty bad one.
+>>>>>>
+>>>>>> What you're claiming here is that your CPU never enters a 
+>>>>>> low-power
+>>>>>> mode?
+>>>>>> Ever? I find this very hard to believe.
+>>>>>>
+>>>>>> Furthermore, claiming that always-on is the way to force the
+>>>>>> arch-timer
+>>>>>> to be an hrtimer is factually wrong. This is what happens *if*
+>>>>>> this is
+>>>>>> the only timer in the system. The only case this is true is for
+>>>>>> virtual
+>>>>>> machines. Anything else has a global timer somewhere that will 
+>>>>>> allow
+>>>>>> the arch timers to be used as an hrtimer.
+>>>>>>
+>>>>>> I'm pretty sure you too have a global timer somewhere in your 
+>>>>>> system.
+>>>>>> Enable it, and enjoy hrtimers without having to lie about the
+>>>>>> properties
+>>>>>> of your system! ;-)
+>>>>>
+>>>>> Hi Marc,
+>>>>>
+>>>>> This SoC doesn't have any other global timer. Use arch_time is 
+>>>>> the
+>>>>> only
+>>>>> we have to provide hrtimer on this system.
+>>>>
+>>>> And you don't have any form of power management either? What 
+>>>> happens
+>>>> when
+>>>> your CPU goes into idle? If your system does any form of power
+>>>> management
+>>>> *and* doesn't have a separate timer, it is remarkably broken.
+>>>
+>>> Even in low-power modes this timer is always powered and clocked so 
+>>> it
+>>> is working fine.
 >>
->> Hi Marc,
+>> You're missing the point again. It is not about the clock, but the
+>> comparator
+>> that is internal to the CPU, and not functional when the CPU is in 
+>> its
+>> lowest
+>> power mode. See also the verbiage in [1] (44.3 STGEN functional
+>> description),
+>> which indicates that the clock source actually dies in low-power 
+>> mode
+>> (going
+>> against the architecture which mandates it to be always-on).
 >>
->> First thing I will have to mark it as a Fixes: (if Remi can provide
->> me with a tag that'd be great), usually we send fixes at -rc* for
->> patches that fix code that went in the current (eg 5.4) material,
->> I will ask Bjorn to see if we can send this in one of the upcoming
->> -rc* even if it fixes older code.
+>> Also, coming back to your earlier assertion ("This SoC doesn't have
+>> any other
+>> global timer"): The documentation at [1] shows at least 17 timers 
+>> that
+>> could
+>> be used and avoid this dirty hack.
+>>
+>> So for what it is worth, NAK to this patch.
 >
-> Sure, I think this could be considered a fix for the following commit 
-> :
-> Fixes: 8a3ebd8de328 ("PCI: aardvark: Implement emulated root PCI
-> bridge config space")
 >
-> Moreover, Marc, I am also a bit supprised that you did not have to 
-> use
-> [1] to even be able to boot.
+> Hi Marc,
+>
+> I have listen your remarks and propose another way to solve this 
+> issue:
+>
+> https://lkml.org/lkml/2019/10/9/690
 
-No, I don't have that one, and yet the system boots fine (although PCI
-doesn't get much use on this box). I guess I'm lucky...
-
-> Also if you want to be completely immune to this kind of SError (that
-> could theoretically happen if the link goes down for other reasons 
-> than
-> being retrained) you would have to use mainline ATF along with [2]. 
-> But
-> the chances to hit that are low (could only happen in case of link
-> errors).
-
-Now you've got me worried. Can you point me to that ATF patch? I'm 
-quite
-curious as to how you recover from an SError on a v8.0 CPU given that 
-it
-has no syndrome information and may as well signal "CPU on fire!"...
-
-Thanks,
+I don't think you have. You're just trying to move the same dirty hack 
+to
+another place instead of properly describing your hardware, and Thomas
+has pointed you in the same direction.
 
          M.
-
->
-> [1] [v3] PCI: aardvark: Use LTSSM state to build link training flag
->     https://patchwork.ozlabs.org/patch/1115864/
-> [2] [v3] PCI: aardvark: Don't rely on jiffies while holding spinlock
->     https://patchwork.ozlabs.org/patch/1168349/
-
 -- 
 Jazz is not dead. It just smells funny...
 
