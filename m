@@ -2,35 +2,34 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 145C5D65D4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 17:05:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73370D65E2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 17:07:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9v6WpXyLvIWcwM9/J4PrHc/M752HXlqK9CMVpZe41DE=; b=FEsMYJwoEStR4h
-	Upi+RPXcT45YZaZoP8ESokYiOvDiXhYeNeHYgzIR+5M+xdNsu2m3wbDxmHWJRGk3E6Okp1eJhr0H0
-	VDhbVG2gcOoapIUETxDr7lUMe+EKu39eZSw9JpN5/zF3xMtnc8FTP0rCQTOPPyfPWcTNFIq6MjXBq
-	4D3u6u3xi4pPQBrJ0DvYvuUjdtbdq/LDYntQUrecIB4LnBF/WcGQpHe/KynoxO/KN0us9SmSVB4XS
-	aP1YNg0NsM/409RLhNAgnS7NTp/BBNpmo6wvBI5nrp2zVd+At6rovjQaffkoursQOA8ov+VoU3bQv
-	78PD2wnrMhXZPgCQKJCA==;
+	List-Owner; bh=KXw1Lxz6M02oruvPw1EGW3NqeRPTudNuhvhUOiluKaE=; b=Ddkk1wNigZ1QTr
+	s1TC5dKUB0T4iFRh/Cr9R7btcMyMaTMFM8LE8JxzZSI6e8KpZcRmIECJwf6Qq93cdhff30QLXo88D
+	4KpmiWNjGI/UCgorMLoqMfV3f6xnj7Dn2IrlYmDvuN0sJhEkM0pcg9gWrsje8zZ7EbPnh3BO69nX0
+	GtA6t544tgC+ybrdXCvWnFyogiZRqw3X1gSH90XTC9Fz9swIBjHDhEw/rOKcAwXHp3776D/HeS7NZ
+	CQV5DIm7afQfibl6cHTOy6s94gScfDg6zgld8h1Aldlxebt+cZ0uTrrXHmw2BvQQpQ604JIh0rhyk
+	9oaU3IQIy8Ydw7hSJWjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iK1uM-0007wW-Qu; Mon, 14 Oct 2019 15:05:14 +0000
+	id 1iK1wL-0000NY-89; Mon, 14 Oct 2019 15:07:17 +0000
 Received: from willy by bombadil.infradead.org with local (Exim 4.92.3 #3 (Red
- Hat Linux)) id 1iK1uE-0007fP-VL; Mon, 14 Oct 2019 15:05:06 +0000
-Date: Mon, 14 Oct 2019 08:05:06 -0700
+ Hat Linux)) id 1iK1wE-0000ND-79; Mon, 14 Oct 2019 15:07:10 +0000
+Date: Mon, 14 Oct 2019 08:07:10 -0700
 From: Matthew Wilcox <willy@infradead.org>
 To: Walter Wu <walter-zh.wu@mediatek.com>
-Subject: Re: [PATCH 1/2] kasan: detect negative size in memory operation
- function
-Message-ID: <20191014150506.GX32665@bombadil.infradead.org>
-References: <20191014103632.17930-1-walter-zh.wu@mediatek.com>
+Subject: Re: [PATCH 2/2] kasan: add test for invalid size in memmove
+Message-ID: <20191014150710.GY32665@bombadil.infradead.org>
+References: <20191014103654.17982-1-walter-zh.wu@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191014103632.17930-1-walter-zh.wu@mediatek.com>
+In-Reply-To: <20191014103654.17982-1-walter-zh.wu@mediatek.com>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -53,21 +52,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 14, 2019 at 06:36:32PM +0800, Walter Wu wrote:
-> @@ -110,8 +111,9 @@ void *memset(void *addr, int c, size_t len)
->  #undef memmove
->  void *memmove(void *dest, const void *src, size_t len)
->  {
-> -	check_memory_region((unsigned long)src, len, false, _RET_IP_);
-> -	check_memory_region((unsigned long)dest, len, true, _RET_IP_);
-> +	if (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
-> +	!check_memory_region((unsigned long)dest, len, true, _RET_IP_))
+On Mon, Oct 14, 2019 at 06:36:54PM +0800, Walter Wu wrote:
+> Test size is negative numbers in memmove in order to verify
+> whether it correctly get KASAN report.
 
-This indentation is wrong.  Should be:
-+	if (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
-+	    !check_memory_region((unsigned long)dest, len, true, _RET_IP_))
+You're not testing negative numbers, though.  memmove() takes an unsigned
+type, so you're testing a very large number.
 
-(also in one subsequent function)
 
 _______________________________________________
 linux-arm-kernel mailing list
