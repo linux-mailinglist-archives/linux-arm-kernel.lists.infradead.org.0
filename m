@@ -2,72 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 20DEAD5EA9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 11:22:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60ADED5EBD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 11:23:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5AUC51iQuyvwauhsb1wgxPir57zWkOKeY1vpO5TYdpo=; b=AxfogNVEsEPtyq
-	JtThoshbi+pNPOJgcuQi/dJhQGnk0h+6OH5oDW/Lqi09ADlbrt3qlitRjtg3MhOBLSneVKurWBWiD
-	4F6vmqkjwk5GaYe1xa3vWfk2riji96nLsyS7AmdZz+jtEDaGODprvxlur6VP+im2iymMXPJZ2FAP0
-	NL/tdNWj3wwOkwBifPIwdz97ONuVM+PA3FQZykH9bR9QkIzLRtvahsKfmvLGU0hxosftrwcE72aJw
-	yKzDr/+ODXGf6wfd5DgqzMFnL+xCdB3YR3O88KyyOcqmllaimUP00AfDq6BwCslKLiz6FdQDjWCre
-	H3iM2S8M2g/pE2ND5BxA==;
+	List-Owner; bh=SA5GGpOtJ0ZOLparaJvu9ghU8p1Da9joMjrRAglSB/8=; b=moEl9tWBOrnlnR
+	bQ7q5y0p2DHUUPHRjEeE+A7c6YmCjSGdetarnuYp2M0tD1svym9HBrZToP9iMBuo3kUBd5wp6XNqh
+	4zdVpALAHvfnF8ghs3VgeOE75LHi6rfrF+W1XuFUgS7F0Ty7cCyBITlMnfdhbPxT9KQookGRniY06
+	VkW9/Fq+x8BgqOP56wXdF7rjEVb3Erwdrqe7gjOivKUyeZWzajnJNNRDxUcYjLmUdrb74r30q2spS
+	7g/pdFUiT+It6jr2UaFT3oX1VYePJd8WFE48pYKR1t6NeexZhtvhpWHVdC3FL3z9k7COfhrTGyS5X
+	1824h7NuSzlwpsSJSjYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJwYb-0002sJ-FZ; Mon, 14 Oct 2019 09:22:25 +0000
+	id 1iJwZx-0003Cg-PD; Mon, 14 Oct 2019 09:23:49 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJwYP-0002rp-Ox
- for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 09:22:15 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ id 1iJwZl-0003C0-7e
+ for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 09:23:39 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
  by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x9E9AxtX005158; Mon, 14 Oct 2019 11:22:04 +0200
+ x9E9Biq9022257; Mon, 14 Oct 2019 11:23:19 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=+UdmFryc7CqLY9wR1in6JPCFjzpSqhmUkouJfW3L6Tc=;
- b=B0IQWFkN09Qp9sLv2p8XbH4n/Z3MiF4vRyzUS1kjQaFoKyO5WhRB3hTs0hyG6ykISRF1
- d28rasJuSu7mUC3pNU7NenEv3i+uFjUApdi0okgZuiuBLeCwSbgRxEJr+ogwevrXka0o
- YAHcyzylkfp0f5Rt1oj/MwKmf0asJD46tkuvOQb9A9NEF6PxdDdbsdr+pgS+5b7d/2jb
- xLcpLS3MV57MIwKu5K/kzufDTIoRh4crgq764XdSvJHgVgKL/pipMJr59dP+Rmf1OUzi
- Tkj17XJBotfocHrM/2qOcn6aRX5tJktI4fJk4YK8mmK2vFGH18HcpwOa1DC4J5UsmjGy xA== 
+ bh=gEmBsIEorhGPSpDkFEP6FJmifXJuypR7WyitQNE9F3U=;
+ b=IFqMGZb+TTWAv7lhNQiinPV3XsSxyxdw6e/u3hIocGh75+SUDJ52xgajrfxq2PIxOZ9T
+ O/U6R+Jk1PL8X2a1Kxh476tABtb5XWgeTuzzMLOjTWKqWFgF13XVn6vSP01kvLgxkbav
+ 2el7XkOb22YokGc/v7MlbkVdH6c8JdVperl5hlEvgPqbGv/zUAY1P1cxdzoKUmIiwOp4
+ nm+m8Z0ld5DRzlauPqP7gJ13kRXhUzZBfOcy/e8JTmNn4MvsHcm5cEDH2dFyazqlBDSn
+ gquyoiW7aRZhBEmlakpzjvIYpxaF/tgEROKMNBbwAsjDy3bPYnW2iyZMZ3Kkfs/k+/Lr BA== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2vk5qj1ck1-1
+ by mx08-00178001.pphosted.com with ESMTP id 2vk3y9hshw-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 14 Oct 2019 11:22:04 +0200
+ Mon, 14 Oct 2019 11:23:19 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 3FCA9100034;
- Mon, 14 Oct 2019 11:22:03 +0200 (CEST)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id B2A6510002A;
+ Mon, 14 Oct 2019 11:23:18 +0200 (CEST)
 Received: from Webmail-eu.st.com (Safex1hubcas21.st.com [10.75.90.44])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 21C752B8C63;
- Mon, 14 Oct 2019 11:22:03 +0200 (CEST)
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id A2F032B189A;
+ Mon, 14 Oct 2019 11:23:18 +0200 (CEST)
 Received: from SAFEX1HUBCAS22.st.com (10.75.90.93) by SAFEX1HUBCAS21.st.com
  (10.75.90.44) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 14 Oct
- 2019 11:22:03 +0200
+ 2019 11:23:18 +0200
 Received: from localhost (10.201.20.122) by Webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 14 Oct 2019 11:22:02
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 14 Oct 2019 11:23:18
  +0200
 From: Benjamin Gaignard <benjamin.gaignard@st.com>
-To: <rui.zhang@intel.com>, <edubezval@gmail.com>, <daniel.lezcano@linaro.org>, 
- <amit.kucheria@verdurent.com>, <robh+dt@kernel.org>,
- <mark.rutland@arm.com>, <alexandre.torgue@st.com>
-Subject: [PATCH v3] dt-bindings: thermal: Convert stm32 thermal bindings to
+To: <daniel.lezcano@linaro.org>, <tglx@linutronix.de>, <robh+dt@kernel.org>,
+ <alexandre.torgue@st.com>
+Subject: [PATCH v3] dt-bindings: timer: Convert stm32 timer bindings to
  json-schema
-Date: Mon, 14 Oct 2019 11:22:00 +0200
-Message-ID: <20191014092200.24179-1-benjamin.gaignard@st.com>
+Date: Mon, 14 Oct 2019 11:23:16 +0200
+Message-ID: <20191014092316.24337-1-benjamin.gaignard@st.com>
 X-Mailer: git-send-email 2.15.0
 MIME-Version: 1.0
 X-Originating-IP: [10.201.20.122]
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
  definitions=2019-10-14_06:2019-10-10,2019-10-14 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_022214_102917_6DC327E4 
-X-CRM114-Status: GOOD (  17.49  )
+X-CRM114-CacheID: sfid-20191014_022337_568717_F76D7687 
+X-CRM114-Status: GOOD (  15.23  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -95,50 +94,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Benjamin Gaignard <benjamin.gaignard@st.com>,
- linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Benjamin Gaignard <benjamin.gaignard@st.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-stm32@st-md-mailman.stormreply.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the STM32 thermal binding to DT schema format using json-schema
+Convert the STM32 timer binding to DT schema format using json-schema
 
 Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
 ---
 changes in v3:
 - use (GPL-2.0-only OR BSD-2-Clause) license
-- fix indentation
+- fix identation
 - add additionalProperties: false
-- add #thermal-sensor-cells property 
 
- .../bindings/thermal/st,stm32-thermal.yaml         | 79 ++++++++++++++++++++++
- .../devicetree/bindings/thermal/stm32-thermal.txt  | 61 -----------------
- 2 files changed, 79 insertions(+), 61 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/thermal/st,stm32-thermal.yaml
- delete mode 100644 Documentation/devicetree/bindings/thermal/stm32-thermal.txt
+ .../devicetree/bindings/timer/st,stm32-timer.txt   | 22 ----------
+ .../devicetree/bindings/timer/st,stm32-timer.yaml  | 47 ++++++++++++++++++++++
+ 2 files changed, 47 insertions(+), 22 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/timer/st,stm32-timer.txt
+ create mode 100644 Documentation/devicetree/bindings/timer/st,stm32-timer.yaml
 
-diff --git a/Documentation/devicetree/bindings/thermal/st,stm32-thermal.yaml b/Documentation/devicetree/bindings/thermal/st,stm32-thermal.yaml
+diff --git a/Documentation/devicetree/bindings/timer/st,stm32-timer.txt b/Documentation/devicetree/bindings/timer/st,stm32-timer.txt
+deleted file mode 100644
+index 8ef28e70d6e8..000000000000
+--- a/Documentation/devicetree/bindings/timer/st,stm32-timer.txt
++++ /dev/null
+@@ -1,22 +0,0 @@
+-. STMicroelectronics STM32 timer
+-
+-The STM32 MCUs family has several general-purpose 16 and 32 bits timers.
+-
+-Required properties:
+-- compatible : Should be "st,stm32-timer"
+-- reg : Address and length of the register set
+-- clocks : Reference on the timer input clock
+-- interrupts : Reference to the timer interrupt
+-
+-Optional properties:
+-- resets: Reference to a reset controller asserting the timer
+-
+-Example:
+-
+-timer5: timer@40000c00 {
+-	compatible = "st,stm32-timer";
+-	reg = <0x40000c00 0x400>;
+-	interrupts = <50>;
+-	resets = <&rrc 259>;
+-	clocks = <&clk_pmtr1>;
+-};
+diff --git a/Documentation/devicetree/bindings/timer/st,stm32-timer.yaml b/Documentation/devicetree/bindings/timer/st,stm32-timer.yaml
 new file mode 100644
-index 000000000000..c0f59c56003d
+index 000000000000..176aa3c9baf8
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/thermal/st,stm32-thermal.yaml
-@@ -0,0 +1,79 @@
++++ b/Documentation/devicetree/bindings/timer/st,stm32-timer.yaml
+@@ -0,0 +1,47 @@
 +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/thermal/st,stm32-thermal.yaml#
++$id: http://devicetree.org/schemas/timer/st,stm32-timer.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: STMicroelectronics STM32 digital thermal sensor (DTS) binding
++title: STMicroelectronics STM32 general-purpose 16 and 32 bits timers bindings
 +
 +maintainers:
-+  - David Hernandez Sanchez <david.hernandezsanchez@st.com>
++  - Benjamin Gaignard <benjamin.gaignard@st.com>
 +
 +properties:
 +  compatible:
-+    const: st,stm32-thermal
++    const: st,stm32-timer
 +
 +  reg:
 +    maxItems: 1
@@ -149,20 +175,14 @@ index 000000000000..c0f59c56003d
 +  clocks:
 +    maxItems: 1
 +
-+  clock-names:
-+    items:
-+      - const: pclk
-+
-+  "#thermal-sensor-cells":
-+    const: 0
++  resets:
++    maxItems: 1
 +
 +required:
-+  - "#thermal-sensor-cells"
 +  - compatible
 +  - reg
 +  - interrupts
 +  - clocks
-+  - clock-names
 +
 +additionalProperties: false
 +
@@ -170,107 +190,14 @@ index 000000000000..c0f59c56003d
 +  - |
 +    #include <dt-bindings/interrupt-controller/arm-gic.h>
 +    #include <dt-bindings/clock/stm32mp1-clks.h>
-+    dts: thermal@50028000 {
-+        compatible = "st,stm32-thermal";
-+        reg = <0x50028000 0x100>;
-+        clocks = <&rcc TMPSENS>;
-+        clock-names = "pclk";
-+        #thermal-sensor-cells = <0>;
-+        interrupts = <GIC_SPI 147 IRQ_TYPE_LEVEL_HIGH>;
++    timer: timer@40000c00 {
++        compatible = "st,stm32-timer";
++        reg = <0x40000c00 0x400>;
++        interrupts = <50>;
++        clocks = <&clk_pmtr1>;
 +    };
 +
-+    thermal-zones {
-+        cpu_thermal: cpu-thermal {
-+            polling-delay-passive = <0>;
-+            polling-delay = <0>;
-+
-+            thermal-sensors = <&dts>;
-+            trips {
-+                cpu_alert1: cpu-alert1 {
-+                    temperature = <85000>;
-+                    hysteresis = <0>;
-+                    type = "passive";
-+                };
-+
-+                cpu_crit: cpu-crit {
-+                    temperature = <120000>;
-+                    hysteresis = <0>;
-+                    type = "critical";
-+                };
-+            };
-+
-+            cooling-maps {
-+            };
-+        };
-+    };
 +...
-diff --git a/Documentation/devicetree/bindings/thermal/stm32-thermal.txt b/Documentation/devicetree/bindings/thermal/stm32-thermal.txt
-deleted file mode 100644
-index 8c0d5a4d8031..000000000000
---- a/Documentation/devicetree/bindings/thermal/stm32-thermal.txt
-+++ /dev/null
-@@ -1,61 +0,0 @@
--Binding for Thermal Sensor for STMicroelectronics STM32 series of SoCs.
--
--On STM32 SoCs, the Digital Temperature Sensor (DTS) is in charge of managing an
--analog block which delivers a frequency depending on the internal SoC's
--temperature. By using a reference frequency, DTS is able to provide a sample
--number which can be translated into a temperature by the user.
--
--DTS provides interrupt notification mechanism by threshold. This mechanism
--offers two temperature trip points: passive and critical. The first is intended
--for passive cooling notification while the second is used for over-temperature
--reset.
--
--Required parameters:
---------------------
--
--compatible: 	Should be "st,stm32-thermal"
--reg: 		This should be the physical base address and length of the
--		sensor's registers.
--clocks: 	Phandle of the clock used by the thermal sensor.
--		  See: Documentation/devicetree/bindings/clock/clock-bindings.txt
--clock-names: 	Should be "pclk" for register access clock and reference clock.
--		  See: Documentation/devicetree/bindings/resource-names.txt
--#thermal-sensor-cells: Should be 0. See ./thermal.txt for a description.
--interrupts:	Standard way to define interrupt number.
--
--Example:
--
--	thermal-zones {
--		cpu_thermal: cpu-thermal {
--			polling-delay-passive = <0>;
--			polling-delay = <0>;
--
--			thermal-sensors = <&thermal>;
--
--			trips {
--				cpu_alert1: cpu-alert1 {
--					temperature = <85000>;
--					hysteresis = <0>;
--					type = "passive";
--				};
--
--				cpu-crit: cpu-crit {
--					temperature = <120000>;
--					hysteresis = <0>;
--					type = "critical";
--				};
--			};
--
--			cooling-maps {
--			};
--		};
--	};
--
--	thermal: thermal@50028000 {
--		compatible = "st,stm32-thermal";
--		reg = <0x50028000 0x100>;
--		clocks = <&rcc TMPSENS>;
--		clock-names = "pclk";
--		#thermal-sensor-cells = <0>;
--		interrupts = <GIC_SPI 147 IRQ_TYPE_LEVEL_HIGH>;
--	};
 -- 
 2.15.0
 
