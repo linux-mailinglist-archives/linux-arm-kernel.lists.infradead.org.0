@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97457D5CC3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 09:53:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A14D6D5CC4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 09:53:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JtHoWln9d7Jxfinna1b6VgBUVPJkyHW7O6ak7e2R5zI=; b=JJSEwFAgXI7f87
-	Xfc6rW1rO3yihRkPqPg3rCpx3O/2BYKdz29gFuOsIz3IUDw/jfDoNEKLwIAL3lk1zpOsPIDtuRgSQ
-	r6u4CgxXa0SZ4bEUp5z596B4E5VUOGk0+XPkB9DrJOKvgjiQKYOJOQ6QVWb3FbZ4OoZcyKGvPv0Bk
-	fFAIDeN5eVrPZpV5kQqr3iRP2FT528SfEL06dVn5daeXpz9M64wwxYHvz12n1CygYxW323hsAxB1L
-	bHbt1OpRl8GmffVxUDa036QRxbf3Q614CiI32yNZRAk+bNf8GTYCBUZQFoPkS+voZBowR0UmDCmne
-	f4SevhwWL0CwhsSrx0bg==;
+	List-Owner; bh=CfQG3MtAdeMZOh4iLsaLCpj42I5OKFiTIpKJmJbEkpU=; b=VSiG37tXegxlqL
+	xsJYAI5y0t9/5ZKTcNeHSX3aEqcRVAMEgUW5iLvdoEYF5i+LC7/Ar6J52n5RZNZMGU9gLRpeY4Mzn
+	HHH/l2E839t4VSfljpShu1MI2/M14N2QHNAAkrUzbhbDZ13MHND0nNE4KOjadIsLB2zCi1yJCXalo
+	LjG84c7YBmZN00nfmSJQ5luXoURVL08/oXVl3KANSKuQeWe9T7k/rqonkHZm5udjFEt/9AA0d3c4T
+	bkfEebUVfqWfplY5EeDqhMpvGDb/rDU2yyeKjL2BrJ2WEhW6Zlpf2J6DrpGN5xnQwFdw84lOMYVj9
+	9RHYdkTgUM6PT0Kstgzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJvAn-0007DA-45; Mon, 14 Oct 2019 07:53:45 +0000
+	id 1iJvAz-0007TH-Rr; Mon, 14 Oct 2019 07:53:57 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJvAJ-00072I-Vr
- for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 07:53:17 +0000
+ id 1iJvAe-0007KW-8x
+ for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 07:53:38 +0000
 Received: from localhost (unknown [122.167.124.160])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BB8B820854;
- Mon, 14 Oct 2019 07:53:14 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E997120854;
+ Mon, 14 Oct 2019 07:53:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571039595;
- bh=7ebQ8kTue/iy+/rFQ6iW23VOTWInv0+ZApP4SxVaAYg=;
+ s=default; t=1571039615;
+ bh=P8XFRaZj1VIoW3IbXhwvG/bv7PGeiuZZ5NlCw4f1mA8=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Fr+KavdQrDOvFkyPt3NkhLK5ayBfbpX2bQzkoxok+TVIUuUoDC82MBC5uBVo01LM4
- hci88/NGW3fCtaVm/DaN4Gw/ift+Ek8hO8KElzDK7tFXfX7ahwe3qBvc0ax1BTJCM5
- EFDWog7UuV7m2N7CrRoFoUE7Mx4T7N5bG/vi/MV8=
-Date: Mon, 14 Oct 2019 13:23:11 +0530
+ b=obWXoQJtK9LfknGhzMO1NyIDmWN0fGS6b97zRNiymEy4Rui/zKRMvcAX0Diai3nWb
+ ARFASeMUIQ6bihmsVegYoBqccrGqQiXxo9aY6UwlgXelQug4VNvgZvRAN54vAXf0cD
+ Q6/48ln+tfwIMFm7BzlS3Bnp8mVlmv3+L9nGOKds=
+Date: Mon, 14 Oct 2019 13:23:32 +0530
 From: Vinod Koul <vkoul@kernel.org>
 To: Markus Elfring <Markus.Elfring@web.de>
-Subject: Re: [PATCH] dmaengine: zx: Use devm_platform_ioremap_resource() in
- zx_dma_probe()
-Message-ID: <20191014075311.GJ2654@vkoul-mobl>
-References: <85de79fa-1ca5-a1e5-0296-9e8a2066f134@web.de>
+Subject: Re: [PATCH] dmaengine: at_xdmac: Use
+ devm_platform_ioremap_resource() in at_xdmac_probe()
+Message-ID: <20191014075332.GK2654@vkoul-mobl>
+References: <377247f3-b53a-a9d9-66c7-4b8515de3809@web.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <85de79fa-1ca5-a1e5-0296-9e8a2066f134@web.de>
+In-Reply-To: <377247f3-b53a-a9d9-66c7-4b8515de3809@web.de>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_005316_079261_D3C52A1B 
-X-CRM114-Status: UNSURE (   7.86  )
+X-CRM114-CacheID: sfid-20191014_005336_340484_B75034CE 
+X-CRM114-Status: UNSURE (   8.06  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -78,18 +78,18 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
- dmaengine@vger.kernel.org, Dan Williams <dan.j.williams@intel.com>,
- Shawn Guo <shawnguo@kernel.org>, Jun Nie <jun.nie@linaro.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Nicolas Ferre <nicolas.ferre@atmel.com>, kernel-janitors@vger.kernel.org,
+ LKML <linux-kernel@vger.kernel.org>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>, dmaengine@vger.kernel.org,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 22-09-19, 14:37, Markus Elfring wrote:
+On 22-09-19, 10:48, Markus Elfring wrote:
 > From: Markus Elfring <elfring@users.sourceforge.net>
-> Date: Sun, 22 Sep 2019 14:32:12 +0200
+> Date: Sun, 22 Sep 2019 10:37:31 +0200
 > 
 > Simplify this function implementation by using a known wrapper function.
 > 
