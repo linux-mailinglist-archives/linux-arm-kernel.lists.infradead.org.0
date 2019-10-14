@@ -2,90 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D06ACD5C94
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 09:41:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 416FED5C96
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 09:44:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aXyiD03G4f+T1yZCEI8iN0bp3eZ6jP8QSHvnlOrDtHk=; b=mfLSp5t0iIa5Xk
-	4pjWTI37SWVq+i6j9YOg7sindu05ChhuqRWEQr6Lo2DkroqxMU6VAG4QDN2DYdV9pFQtDFFW/+zc2
-	nbq6mkyr2CCwB6Hm/AWQizSLbXRRFToV55CMVb0VDvVdPJ1LT8T+BlgqAUM7BpZ6eA1GrrUxXNrF2
-	yrYrUO12L7xT6encnXHKHv/nBwitMej2GHmhMFthGgZJ2nEzzBr31hXUGvaf+OagRJQ0meE81OhDd
-	8OlIpxgltoPpurtRd1sktX4n4InpaFZ1CIPd1PP5rixovJ/9jkf0bnoOVG5FRrbBm3j5Jttpi4dGQ
-	N0Qg+QP88y1tZlIvuing==;
+	List-Owner; bh=x+9JCxnPbO4g5dogwXZzXI8XcGZGtyJXELYZjFSnWg0=; b=bqj5jpv8lhrn2e
+	P4DDJ/q8OOb7GCaA+8JE0LnGMLrxvPnTW5GAsmgqykchjEenKLj0/GmlXw/CbSAFPV9GFRKStHxTc
+	kIYOru7704qzwJUWcb9RTzAIG7s8cOJpErBc+vUXiPMcnlF4jvWOuDQ0VnQL3BdmlUEKLXzGWrm5e
+	tVEQ2weMZ+1FOx3LBk0/uURBee9kjYDKXYn+jdv/eePOLsE3S07isLUP8RJJ2JHpOw2mSJSQ2Xzng
+	xMh3vbtF2GixfhI+gw6d3+VwcCkdmY9xUfGP+QMsTR7dmK1NA3mNikdjG7b+b0dU0SHvfIAhvN0fE
+	2zLMOuQRugn/LyJNrqxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJuyv-0001yJ-Pt; Mon, 14 Oct 2019 07:41:29 +0000
-Received: from mail-yw1-xc42.google.com ([2607:f8b0:4864:20::c42])
+	id 1iJv1e-0002cl-47; Mon, 14 Oct 2019 07:44:18 +0000
+Received: from mail-qk1-f196.google.com ([209.85.222.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJuyl-0001y0-OJ
- for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 07:41:21 +0000
-Received: by mail-yw1-xc42.google.com with SMTP id w140so5813560ywd.0
+ id 1iJv1W-0002cR-GA
+ for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 07:44:11 +0000
+Received: by mail-qk1-f196.google.com with SMTP id x134so15090336qkb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 14 Oct 2019 00:41:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=sEN7o3yuO56xvPDuUwKgUiAGNAgWvdh9IYFyMwir9eg=;
- b=ULg0x+kVwo2eT+iIl7xEqgOGbAzw68nEs+Tf1EX6WbkwD6JZiL1PJq9RZFvkDJEthU
- ocfdC+Pu3HU8yKboyYft824CwBNxjIEzx8zyCCvt9khKX2P3rnlv1B/RrEDuwgE/1mG/
- dO9bqvuIwHg7kYFJ6cR8Rxh98z5xxnACgBkXR6UU0aSIjsvAx7CLSTrvS1W1Yc6B2hbM
- xVKkvAsHm4h5LvwOcL7O3xZNwPSbX/1EH8Ha7BFbRmH59L7FLoc17rAHr/p/fi2/0aQd
- XhR8EuPvAa5rR0cGHGbuZEBAsY6jzipW6b/VsB7pAItTeOGbyHWLGnGRGwAir0skqH6K
- QqgA==
+ Mon, 14 Oct 2019 00:44:10 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=sEN7o3yuO56xvPDuUwKgUiAGNAgWvdh9IYFyMwir9eg=;
- b=NjEx9Mqa43cIa0qDQAu9QIeVI1i8BWMY/rDYnB9dpnPozgoZx6/rd50JxsJf+2yylP
- kcA27g5h+47xvb08Kaa68q+M24zj8/7clzIP7E00SzYB8c4b3jJV9MWyQwrPwRWPqr2e
- iLsQV3RUsYfdUXWSJQvRDYB5/KJBjlsVQHIicwejeDk7eP7OrebraGCsjsTmJ6wSAMFt
- HUpXokZhJ8RYfhTqXEXdKfuN5PikHcKe7GCIhZTgiWlvQSZeuy25h88W4WxnyF6ld3Cz
- 3kwGV2e/FmkfFEpDZ2nwmLo5TjrtuRPu4+4xSBj+rLxfuXYufAjXl8M/JUz7Cfu6DwX4
- Fy+A==
-X-Gm-Message-State: APjAAAUvQElLXE0jhriBS0t/klqwe6mvGxwSFj8S07Ahq1gpaqUd7UbA
- 0HtPzC2JOSnnUpvw0F2G0U0KWGZwEuDTopbEJ1ngtw==
-X-Google-Smtp-Source: APXvYqw4VB+FAxVRs0lcX+ZIr7P8ykk483BJkOe9a1ta9sipUpx8Dmb1cwz7VKpxf94e6Vopzx6wAvxttFQCwsQ1L0I=
-X-Received: by 2002:a81:254d:: with SMTP id l74mr12130385ywl.409.1571038877410; 
- Mon, 14 Oct 2019 00:41:17 -0700 (PDT)
+ bh=Th8+PaRjqfrVclFmGSa4ziCjIND3/k2iwSpjIet79bA=;
+ b=mmrkWxcr4KirI1wHC6yclWCFKJBuJomBBBUi8T6GiuqpA5OyfvbeHNheZTEBkGj2ra
+ yJgZG/cj7pDH+0q/p1C7z1FxLa+yQxiowd80lZBwZfXwnLu/5sUXmKgBppjRyQ9YaBjY
+ 1uO+hTo5jHy2I0XYtQ5ELsPMOs/UNOeuk3hZdWCgjLiTyN61aD2N5c9Yhsc5qGAtVRXF
+ 0crMzVMDmJ7hUgAAivrWhZFC5lvOcufGbxLpOL5Dr2IyrPY1ytThUfvvWZq2VIxYUB9U
+ xMEV1JdKdYHKkjzgrTkJl6edGFBte8zNOs+7q78unhYjIxq/EzsSGz/pT6/ZUHD07r1h
+ wD2g==
+X-Gm-Message-State: APjAAAUFeoNPkhE8xDkKqrZyoM1SbWC4vRw+upDGsVUo5opWweTE3O7M
+ xs1lG4cXOxuwrPETK4ury+JeNzaDRl4ANcipo/w=
+X-Google-Smtp-Source: APXvYqyc3WuiQQNChn49ipIYrsi7R8Cr3Z39fmTe75l40EWivcSBqQ8SM08Qr+aAqEkiACVAE48OuzJZkDMb4DgD8ZI=
+X-Received: by 2002:a37:9442:: with SMTP id w63mr28085661qkd.138.1571039049189; 
+ Mon, 14 Oct 2019 00:44:09 -0700 (PDT)
 MIME-Version: 1.0
-References: <20191011000609.29728-1-keescook@chromium.org>
- <20191011000609.29728-26-keescook@chromium.org>
-In-Reply-To: <20191011000609.29728-26-keescook@chromium.org>
-From: Max Filippov <jcmvbkbc@gmail.com>
-Date: Mon, 14 Oct 2019 00:41:06 -0700
-Message-ID: <CAMo8BfKexMmMusB3XOeaMOZHdU4ccz+PMGA=Jy+KQhgD8H_8UQ@mail.gmail.com>
-Subject: Re: [PATCH v2 25/29] xtensa: Move EXCEPTION_TABLE to RO_DATA segment
-To: Kees Cook <keescook@chromium.org>
+References: <20191013221310.30748-1-sebastian@breakpoint.cc>
+ <20191013221310.30748-7-sebastian@breakpoint.cc>
+In-Reply-To: <20191013221310.30748-7-sebastian@breakpoint.cc>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Mon, 14 Oct 2019 09:43:53 +0200
+Message-ID: <CAK8P3a2hYteGizk=--_Z1kE200_ORL52QEK5RBTMtXt5_UzmhA@mail.gmail.com>
+Subject: Re: [PATCH 6/6] ARM: Inline locking functions for !PREEMPTION
+To: Sebastian Andrzej Siewior <sebastian@breakpoint.cc>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_004119_817770_42B82EA6 
-X-CRM114-Status: UNSURE (   9.86  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.9 (+)
+X-CRM114-CacheID: sfid-20191014_004410_540160_FB4736E5 
+X-CRM114-Status: GOOD (  14.75  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.9 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.5 FROM_LOCAL_NOVOWEL     From: localpart has series of non-vowel
- letters 1.0 HK_RANDOM_FROM         From username looks random
- 0.6 HK_RANDOM_ENVFROM      Envelope sender username looks random
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c42 listed in]
- [list.dnswl.org]
+ no trust [209.85.222.196 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jcmvbkbc[at]gmail.com)
+ provider (arndbergmann[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.222.196 listed in wl.mailspike.net]
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,41 +83,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-Arch <linux-arch@vger.kernel.org>,
- linux-s390 <linux-s390@vger.kernel.org>, Michal Simek <monstr@monstr.eu>,
- "maintainer:X86 ARCHITECTURE..." <x86@kernel.org>,
- "open list:IA64 \(Itanium\) PL..." <linux-ia64@vger.kernel.org>,
- linux-c6x-dev@linux-c6x.org, Arnd Bergmann <arnd@arndb.de>,
- "open list:TENSILICA XTENSA PORT \(xtensa\)" <linux-xtensa@linux-xtensa.org>,
- Michael Ellerman <mpe@ellerman.id.au>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, linuxppc-dev@lists.ozlabs.org,
- Yoshinori Sato <ysato@users.sourceforge.jp>, Borislav Petkov <bp@alien8.de>,
- "open list:PARISC ARCHITECTURE" <linux-parisc@vger.kernel.org>,
- Andy Lutomirski <luto@kernel.org>,
- "open list:ALPHA PORT" <linux-alpha@vger.kernel.org>,
- LKML <linux-kernel@vger.kernel.org>,
- Rick Edgecombe <rick.p.edgecombe@intel.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Peter Zijlstra <peterz@infradead.org>, Russell King <linux@armlinux.org.uk>,
+ Ingo Molnar <mingo@redhat.com>, Waiman Long <longman@redhat.com>,
+ Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 10, 2019 at 5:16 PM Kees Cook <keescook@chromium.org> wrote:
+On Mon, Oct 14, 2019 at 12:14 AM Sebastian Andrzej Siewior
+<sebastian@breakpoint.cc> wrote:
 >
-> Since the EXCEPTION_TABLE is read-only, collapse it into RO_DATA.
+> On non-preemptive kernels, the locking instruction is less than 64 bytes
+> and it makes sense to inline it. With PREEMPTION the kernel becomes very
+> big if the locks are inlined.
 >
-> Signed-off-by: Kees Cook <keescook@chromium.org>
+> Signed-off-by: Sebastian Andrzej Siewior <sebastian@breakpoint.cc>
 > ---
->  arch/xtensa/kernel/vmlinux.lds.S | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
 
-Acked-by: Max Filippov <jcmvbkbc@gmail.com>
+At the moment, we have two architectures selecting all 28 symbols
+and you are adding a third, all other architecture select none of them.
 
--- 
-Thanks.
--- Max
+This tells me that the configurability has gone a little overboard. How about
+adding a shortcut ARCH_INLINE_ALL_SPINLOCKS that selects the 28
+symbols and using that for arm/arm64/s390?
+
+Also, the output of 'size vmlinux' before and after the patch for
+multi_v7_defconfig would be useful to have in the changelog, as there
+are a couple of platforms that are particularly sensitive to object code
+size changes.
+
+      Arnd
+
+> diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
+> index 4c780e7387208..21edc8e649261 100644
+> --- a/arch/arm/Kconfig
+> +++ b/arch/arm/Kconfig
+> @@ -26,6 +26,32 @@ config ARM
+>         select ARCH_HAS_TICK_BROADCAST if GENERIC_CLOCKEVENTS_BROADCAST
+>         select ARCH_HAVE_CUSTOM_GPIO_H
+>         select ARCH_HAS_GCOV_PROFILE_ALL
+> +       select ARCH_INLINE_READ_LOCK if !PREEMPTION
+> +       select ARCH_INLINE_READ_LOCK_BH if !PREEMPTION
+> +       select ARCH_INLINE_READ_LOCK_IRQ if !PREEMPTION
+> +       select ARCH_INLINE_READ_LOCK_IRQSAVE if !PREEMPTION
+> +       select ARCH_INLINE_READ_UNLOCK if !PREEMPTION
+> +       select ARCH_INLINE_READ_UNLOCK_BH if !PREEMPTION
+> +       select ARCH_INLINE_READ_UNLOCK_IRQ if !PREEMPTION
+> +       select ARCH_INLINE_READ_UNLOCK_IRQRESTORE if !PREEMPTION
+> +       select ARCH_INLINE_WRITE_LOCK if !PREEMPTION
+> +       select ARCH_INLINE_WRITE_LOCK_BH if !PREEMPTION
+> +       select ARCH_INLINE_WRITE_LOCK_IRQ if !PREEMPTION
+> +       select ARCH_INLINE_WRITE_LOCK_IRQSAVE if !PREEMPTION
+> +       select ARCH_INLINE_WRITE_UNLOCK if !PREEMPTION
+> +       select ARCH_INLINE_WRITE_UNLOCK_BH if !PREEMPTION
+> +       select ARCH_INLINE_WRITE_UNLOCK_IRQ if !PREEMPTION
+> +       select ARCH_INLINE_WRITE_UNLOCK_IRQRESTORE if !PREEMPTION
+> +       select ARCH_INLINE_SPIN_TRYLOCK if !PREEMPTION
+> +       select ARCH_INLINE_SPIN_TRYLOCK_BH if !PREEMPTION
+> +       select ARCH_INLINE_SPIN_LOCK if !PREEMPTION
+> +       select ARCH_INLINE_SPIN_LOCK_BH if !PREEMPTION
+> +       select ARCH_INLINE_SPIN_LOCK_IRQ if !PREEMPTION
+> +       select ARCH_INLINE_SPIN_LOCK_IRQSAVE if !PREEMPTION
+> +       select ARCH_INLINE_SPIN_UNLOCK if !PREEMPTION
+> +       select ARCH_INLINE_SPIN_UNLOCK_BH if !PREEMPTION
+> +       select ARCH_INLINE_SPIN_UNLOCK_IRQ if !PREEMPTION
+> +       select ARCH_INLINE_SPIN_UNLOCK_IRQRESTORE if !PREEMPTION
+>         select ARCH_KEEP_MEMBLOCK if HAVE_ARCH_PFN_VALID || KEXEC
+>         select ARCH_MIGHT_HAVE_PC_PARPORT
+>         select ARCH_NO_SG_CHAIN if !ARM_HAS_SG_CHAIN
+> --
+> 2.23.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
