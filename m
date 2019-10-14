@@ -2,94 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14603D6599
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 16:51:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02FD4D659D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 16:52:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0Jyrnit88SPNjoHVhrtQEI/A6QiWlRLVHaQgeozF/YQ=; b=Y0hAMFTJROyeJM
-	6tmdtYSIOu0H8bBFh1sPy7gkrhldb66PBppvIMgFoL4+2WP6AB8hTXu0T4ku4uyxRQ5R46CxpS7Sm
-	VCjp1ldNsZYUk1hIaCAcw0L0xm4qXCEXi/TL82K5epUOpnL8veweWopHCtqiL7hh7twspN3c71qBm
-	ij4edjtoODX5Lz0UnnBKrtWrMSZwrYdHFwMT8UKTpVTeApD1pZr4hlZM0ysHZAerc4LKmr5ENST2d
-	qO6dHy9dNcSOJLJ1IerNprc74McAftTc0XEtZaKQnoafcNfP/rN+WfFVhYlJByoEwh09k2Cxqoond
-	VMs3urTdC36//txEkCQQ==;
+	List-Owner; bh=CaGGzAslIUtr1lPVlMMvuixiFuG90j2z000ZTqOl+9k=; b=H9e+ArLwZBhecM
+	JTIFBjU/qgSWOhk1bMU4bgo7CG7ni8Q4lWB30s7ENefyFVCETbnSpmdjWI+QmTr5HBUnYWXe0QLEJ
+	FfMpVZEZdPUId1I1p/xFHPh9O1K9zUqtPYmLiBaD9CYJZN3bHwsWh5uEcpLph9jbAwX9zJo9tPB4t
+	oVN6Jt3TmUByaX/0cpu7Rx/jt1kJYO3Uvr6D68fAqY1/iMfbohyieHmhP2PTJvAn4eS+AEuDwM9Bl
+	nyqgiohqf2HjRgDI8Az3j871ytA9iXjeZRTXYtjRHQYLyOMsqu89kj4/+1AAjWhCZiuG66rX6J5+M
+	G4U196E1BOFFQO1jGX4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iK1hH-0001bp-EP; Mon, 14 Oct 2019 14:51:43 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iK1h4-0001aC-EQ
- for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 14:51:31 +0000
-Received: by mail-qt1-x843.google.com with SMTP id n7so25780540qtb.6
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 14 Oct 2019 07:51:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=k8cAZuPl6XV2WDQXDBabAxPwA0HPU6DlRuaDvX64hUE=;
- b=iSVi5SyyXkhPFLimDA9bP2kUxsggWZd6tYNgic0OT+oV1mg8uNvVVig1qIPxE3J7w2
- J3FhOxzTZpudzWnNgrkuDsEVcgwWQFOIUq/6RoTHaeroh6d9xjo8rXLYcSzqb2eOP/J8
- 6Sild2t4N9JgE0F0OHSRZxMi2ICTFNF96+lOHtDqhTGWTyedkYvJWnUPSlwUye+Zzxwh
- /01FiE2vizs9yjyLrjyqolAxquIXoBpHprHQhIAU2Y71F9QUPPYh8eYUgAUAfgJq7Va6
- skAFdm487H7g1SQm8aGsqi+mY+2IPqEMw9elAgHl9o1YwagV78PqJVOkeFjTRYalLHwh
- /toQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=k8cAZuPl6XV2WDQXDBabAxPwA0HPU6DlRuaDvX64hUE=;
- b=CKGop0a4Te2qDkVvqi/BONxmQIbbz+TWrd5YOWrMoFtGohiuzq2+ZSLAKDJqJeG6S2
- CeEzTh5Zs4TF0Pw81WuKTSWGkMNKd1SlcmtUaKL5zc8BQHGa6eglrEuQYI8UVENbb8ZG
- 0vZr638i0eR6se+FTcchGIUhIgp9yJbyGI7rJtbyK861LBL4Do+RWXSPcpF96IIJudMn
- qttJbfmmA3F63yTDR0zJGfUlhUXAxAkOxEicQ21JpGjVdH9KG9z+4AsJrqE3SapTDkVX
- 1CyUJJP0twUgYL+GLRJL1Uq1qoicbqLY4uzQNND8gcDqrgdemFiONwLwikgO3crjqtes
- loNQ==
-X-Gm-Message-State: APjAAAWqRkJEP51q5rCsXJhrKOD3VSga/7Q9NutxJEdLjpTGf6Iq8KBh
- 2BiYQzxgBCvq1VcqSy5UDsc6Ww==
-X-Google-Smtp-Source: APXvYqwE3oTkh5m6IRNf9shvJzMEDIrzoKOeL0YvN1NLoZs9oq4KbIQH4AFxlqEvf59XpXbCInkklw==
-X-Received: by 2002:ac8:7152:: with SMTP id h18mr33667358qtp.377.1571064687562; 
- Mon, 14 Oct 2019 07:51:27 -0700 (PDT)
-Received: from soleen.tm1wkky2jk1uhgkn0ivaxijq1c.bx.internal.cloudapp.net
- ([40.117.208.181])
- by smtp.gmail.com with ESMTPSA id g19sm11529214qtb.2.2019.10.14.07.51.26
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 14 Oct 2019 07:51:26 -0700 (PDT)
-Date: Mon, 14 Oct 2019 14:51:25 +0000
-From: Pavel Tatashin <pasha.tatashin@soleen.com>
-To: James Morse <james.morse@arm.com>
-Subject: Re: [PATCH v6 03/17] arm64: hibernate: check pgd table allocation
-Message-ID: <20191014145125.ahemooviyznqgpdh@soleen.tm1wkky2jk1uhgkn0ivaxijq1c.bx.internal.cloudapp.net>
-References: <20191004185234.31471-1-pasha.tatashin@soleen.com>
- <20191004185234.31471-4-pasha.tatashin@soleen.com>
- <b5f965b5-bbd6-9e53-c085-d1a0c0dceca7@arm.com>
+	id 1iK1hp-0001um-F7; Mon, 14 Oct 2019 14:52:17 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iK1hg-0001tw-Ll
+ for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 14:52:10 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D970E337;
+ Mon, 14 Oct 2019 07:52:07 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F16313F68E;
+ Mon, 14 Oct 2019 07:52:06 -0700 (PDT)
+Date: Mon, 14 Oct 2019 15:52:04 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: Re: [PATCH 1/3] arm64: cpufeature: Fix the type of no FP/SIMD
+ capability
+Message-ID: <20191014145204.GS27757@arm.com>
+References: <20191010171517.28782-1-suzuki.poulose@arm.com>
+ <20191010171517.28782-2-suzuki.poulose@arm.com>
+ <20191011113620.GG27757@arm.com>
+ <4ba5c423-4e2a-d810-cd36-32a16ad42c91@arm.com>
+ <20191011142137.GH27757@arm.com>
+ <418b0c4b-cbcd-4263-276d-1e9edc5eee0b@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <b5f965b5-bbd6-9e53-c085-d1a0c0dceca7@arm.com>
-User-Agent: NeoMutt/20180716
+In-Reply-To: <418b0c4b-cbcd-4263-276d-1e9edc5eee0b@arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_075130_486636_3A6CA40B 
-X-CRM114-Status: UNSURE (   9.48  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191014_075208_868844_43843638 
+X-CRM114-Status: GOOD (  28.04  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,27 +66,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sashal@kernel.org, mark.rutland@arm.com, vladimir.murzin@arm.com,
- corbet@lwn.net, marc.zyngier@arm.com, catalin.marinas@arm.com,
- bhsharma@redhat.com, kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
- jmorris@namei.org, linux-mm@kvack.org, ebiederm@xmission.com,
- matthias.bgg@gmail.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, will@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Thanks for splitting [0] into two ... but this fix depends on the previous patch - which
-> isn't an issue that anyone can hit, and doesn't match Greg's 'stable-kernel-rules'.
-> 
-> Please separate out this patch - and post it on its own as a stand-alone fix that can be
-> sent to the stable trees.
+On Fri, Oct 11, 2019 at 06:28:43PM +0100, Suzuki K Poulose wrote:
 > 
 > 
-> Mixing fixes with other patches leads to problems like this. It isn't possible to pick
-> this fix independently of the cleanup in the previous patch.
+> On 11/10/2019 15:21, Dave Martin wrote:
+> >On Fri, Oct 11, 2019 at 01:13:18PM +0100, Suzuki K Poulose wrote: > Hi Dave
+> >>
+> >>On 11/10/2019 12:36, Dave Martin wrote:
+> >>>On Thu, Oct 10, 2019 at 06:15:15PM +0100, Suzuki K Poulose wrote:
+> >>>>The NO_FPSIMD capability is defined with scope SYSTEM, which implies
+> >>>>that the "absence" of FP/SIMD on at least one CPU is detected only
+> >>>>after all the SMP CPUs are brought up. However, we use the status
+> >>>>of this capability for every context switch. So, let us change
+> >>>>the scop to LOCAL_CPU to allow the detection of this capability
+> >>>>as and when the first CPU without FP is brought up.
+> >>>>
+> >>>>Also, the current type allows hotplugged CPU to be brought up without
+> >>>>FP/SIMD when all the current CPUs have FP/SIMD and we have the userspace
+> >>>>up. Fix both of these issues by changing the capability to
+> >>>>BOOT_RESTRICTED_LOCAL_CPU_FEATURE.
+> >>>>
+> >>>>Fixes: 82e0191a1aa11abf ("arm64: Support systems without FP/ASIMD")
+> >>>>Cc: Will Deacon <will@kernel.org>
+> >>>>Cc: Mark Rutland <mark.rutland@arm.com>
+> >>>>Cc: Catalin Marinas <catalin.marinas@arm.com>
+> >>>>Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+> >>>>---
+> >>>>  arch/arm64/kernel/cpufeature.c | 2 +-
+> >>>>  1 file changed, 1 insertion(+), 1 deletion(-)
+> >>>>
+> >>>>diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+> >>>>index 9323bcc40a58..0f9eace6c64b 100644
+> >>>>--- a/arch/arm64/kernel/cpufeature.c
+> >>>>+++ b/arch/arm64/kernel/cpufeature.c
+> >>>>@@ -1361,7 +1361,7 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
+> >>>>  	{
+> >>>>  		/* FP/SIMD is not implemented */
+> >>>>  		.capability = ARM64_HAS_NO_FPSIMD,
+> >>>>-		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
+> >>>>+		.type = ARM64_CPUCAP_BOOT_RESTRICTED_CPU_LOCAL_FEATURE,
+> >>>
+> >>>ARM64_HAS_NO_FPSIMD is really a disability, not a capability.
+> >>>
+> >>>Although we have other things that smell like this (CPU errata for
+> >>>example), I wonder whether inverting the meaning in the case would
+> >>>make the situation easier to understand.
+> >>
+> >>Yes, it is indeed a disability, more on that below.
+> >>
+> >>>
+> >>>So, we'd have ARM64_HAS_FPSIMD, with a minimum (signed) feature field
+> >>>value of 0.  Then this just looks like an ARM64_CPUCAP_SYSTEM_FEATURE
+> >>>IIUC.  We'd just need to invert the sense of the check in
+> >>>system_supports_fpsimd().
+> >>
+> >>This is particularly something we want to avoid with this patch. We want
+> >>to make sure that we have the up-to-date status of the disability right
+> >>when it happens. i.e, a CPU without FP/SIMD is brought up. With SYSTEM_FEATURE
+> >>you have to wait until we bring all the CPUs up. Also, for HAS_FPSIMD,
+> >>you must wait until all the CPUs are up, unlike the negated capability.
+> >
+> >I don't see why waiting for the random defective early CPU to come up is
+> >better than waiting for all the early CPUs to come up and then deciding.
+> >
+> >Kernel-mode NEON aside, the status of this cap should not matter until
+> >we enter userspace for the first time.
+> >
+> >The only issue is if e.g., crypto drivers that can use kernel-mode NEON
+> >probe for it before all early CPUs are up, and so cache the wrong
+> >decision.  The current approach doesn't cope with that anyway AFAICT.
+> 
+> This approach does in fact. With LOCAL_CPU scope, the moment a defective
+> CPU turns up, we mark the "capability" and thus the kernel cannot use
+> the neon then onwards, unlike the existing case where we have time till
+> we boot all the CPUs (even when the boot CPU may be defective).
 
-Thank you, I sent it out as a separate fix.
+I guess that makes sense.
+
+I'm now wondering what happens if anything tries to use kernel-mode NEON
+before SVE is initialised -- which doesn't happen until cpufeatures
+configures the system features.
+
+I don't think your proposed change makes anything worse here, but it may
+need looking into.
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
