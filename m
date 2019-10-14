@@ -2,71 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38D14D6790
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 18:43:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2802D67B6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 18:50:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kHkIJ0LlSjDk9NID8Mmj8LM8IUiiUQm8fmgYT4pfFLs=; b=jyOML6ys1cyg9P
-	DYu2jbzZn4QqPDx7lU/sZvumJg1GVGb2Nw5M8c/AC2NOueHb36nqZ/+Rj9zgNdbNkVFJnYAFpDr8V
-	A8BiT3LcGopg2s13VVg/CSYiHc0+iYulQ81WnZxzISTCiQkgZNZwDVzz6OtCTpFLlpkB6d+0+cVBL
-	Iv0U+SSenDwA3urKms8GKDpfOnFByzndC0H6bfXH/aKTf+pNRIOh7JLgltjKWYzyXm3a7xkSzo1gT
-	e9zXYSCXADZvJAz5MPnm3zWVtOCiTsqO/QVILw6DvQ2JxkLrJZH9MdnMaY8pPEhyiXN+KNescF93C
-	6HF+DMxLbMR2zPRV8bwg==;
+	List-Owner; bh=Vu7VrnXZQasj/dcjtU0e1zAMFZme46AOoo6W6TdpJg0=; b=iQtDPudClZ6PWt
+	bJEydv5+fuWXzCWZgd9Uc8TwxOd7jWXtWy6iIgJ7iP0Q9kxQ+XfJbde5oeCUVOVPRhjgwu9P21EvK
+	x73PySye0nSr3SQqwHfpwKeFee+AOKlUVHOIYVRRY3DLz7v9HcuyOqfe9aY9j8xy1fkf/R3y5oXKQ
+	7nhewhdykAkLd4RJxDxGijEuQ8WAPraAg5LPw3qfgMHLC1+LKF10Q/VMPFYQAZHvtgzbrBcIWGPQx
+	macQ3ic3pd6wuIDG33dKNmg+7pQNf4pM3jtd09E1NTFtl4z4MXuwXpRoGxLrs/6lRihONTay5BFB4
+	L/fCAiS85g0MC3tuvp7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iK3RO-0005eP-Oq; Mon, 14 Oct 2019 16:43:26 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iK3RG-0005e3-LZ
- for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 16:43:20 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 198E020663;
- Mon, 14 Oct 2019 16:43:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571071398;
- bh=jUkpYa09cbg1NzerOrin8aZ7t3IhBLvxGwVjSWwxP/4=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=c/Zw+j9iow5A3WE1EqcqrrZM1mcChVGUdIlChBTLsWqihd5EbBNpKFtHUO82WI21j
- H1RdbzXkdW8CARvqTt7gJaoWHEVzeBtJ5MkhsI8TKYUS5uX1YydYJ8qjh5DMLV0351
- hvZ7PCqAJPZIY2Xl0EV7mknvJX2/l9RBzNySfwjY=
-Date: Mon, 14 Oct 2019 17:43:14 +0100
-From: Will Deacon <will@kernel.org>
-To: Julien Grall <julien.grall@arm.com>
-Subject: Re: [PATCH] arm64: cpufeature: Don't expose ZFR0 to userspace when
- SVE is not enabled
-Message-ID: <20191014164313.hu2dnf5rokntzhhp@willie-the-truck>
-References: <20191014102113.16546-1-julien.grall@arm.com>
+	id 1iK3YU-0000B9-La; Mon, 14 Oct 2019 16:50:46 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iK3YG-0000A2-9K
+ for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 16:50:33 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E53E728;
+ Mon, 14 Oct 2019 09:50:29 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
+ [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E14FA3F718;
+ Mon, 14 Oct 2019 09:50:28 -0700 (PDT)
+Date: Mon, 14 Oct 2019 17:50:26 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Remi Pommarel <repk@triplefau.lt>
+Subject: Re: [PATCH v3] PCI: aardvark: Use LTSSM state to build link training
+ flag
+Message-ID: <20191014165026.GC2928@e121166-lin.cambridge.arm.com>
+References: <20190522213351.21366-3-repk@triplefau.lt>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191014102113.16546-1-julien.grall@arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <20190522213351.21366-3-repk@triplefau.lt>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_094319_087611_9D808371 
-X-CRM114-Status: UNSURE (   9.68  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191014_095032_412644_39162364 
+X-CRM114-Status: GOOD (  23.48  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,27 +62,126 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, Dave.Martin@arm.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, suzuki.poulose@arm.com
+Cc: Ellie Reeves <ellierevves@gmail.com>, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Bjorn Helgaas <helgaas@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 14, 2019 at 11:21:13AM +0100, Julien Grall wrote:
-> The kernel may not support SVE if CONFIG_ARM64_SVE is not set and
-> will hide the feature from the from userspace.
+On Wed, May 22, 2019 at 11:33:51PM +0200, Remi Pommarel wrote:
+> Aardvark's PCI_EXP_LNKSTA_LT flag in its link status register is not
+> implemented and does not reflect the actual link training state (the
+> flag is always set to 0). In order to support link re-training feature
+> this flag has to be emulated. The Link Training and Status State
+> Machine (LTSSM) flag in Aardvark LMI config register could be used as
+> a link training indicator. Indeed if the LTSSM is in L0 or upper state
+> then link training has completed (see [1]).
+> 
+> Unfortunately because after asking a link retraining it takes a while
+> for the LTSSM state to become less than 0x10 (due to L0s to recovery
+> state transition delays), LTSSM can still be in L0 while link training
+> has not finished yet. So this waits for link to be in recovery or lesser
+> state before returning after asking for a link retrain.
+> 
+> [1] "PCI Express Base Specification", REV. 4.0
+>     PCI Express, February 19 2014, Table 4-14
+> 
+> Signed-off-by: Remi Pommarel <repk@triplefau.lt>
+> ---
+> Changes since v1:
+>   - Rename retraining flag field
+>   - Fix DEVCTL register writing
+> 
+> Changes since v2:
+>   - Rewrite patch logic so it is more legible
+> 
+> Please note that I will unlikely be able to answer any comments from May
+> 24th to June 10th.
+> ---
+>  drivers/pci/controller/pci-aardvark.c | 29 ++++++++++++++++++++++++++-
+>  1 file changed, 28 insertions(+), 1 deletion(-)
 
-I don't understand this sentence.
+Merged in pci/aardvark, to be decided if we target one of the
+upcoming -rc* or v5.5.
 
-> Unfortunately, the fields of ID_AA64ZFR0_EL1 are still exposed and could
-> lead to undefined behavior in userspace.
+Thanks and apologies for the delay.
 
-Undefined in what way? Generally, we can't stop exposing things that
-we've exposed previously in case somebody has started relying on them, so
-this needs better justification.
+Lorenzo
 
-Will
+> 
+> diff --git a/drivers/pci/controller/pci-aardvark.c b/drivers/pci/controller/pci-aardvark.c
+> index 134e0306ff00..8803083b2174 100644
+> --- a/drivers/pci/controller/pci-aardvark.c
+> +++ b/drivers/pci/controller/pci-aardvark.c
+> @@ -180,6 +180,8 @@
+>  #define LINK_WAIT_MAX_RETRIES		10
+>  #define LINK_WAIT_USLEEP_MIN		90000
+>  #define LINK_WAIT_USLEEP_MAX		100000
+> +#define RETRAIN_WAIT_MAX_RETRIES	10
+> +#define RETRAIN_WAIT_USLEEP_US		2000
+>  
+>  #define MSI_IRQ_NUM			32
+>  
+> @@ -239,6 +241,17 @@ static int advk_pcie_wait_for_link(struct advk_pcie *pcie)
+>  	return -ETIMEDOUT;
+>  }
+>  
+> +static void advk_pcie_wait_for_retrain(struct advk_pcie *pcie)
+> +{
+> +	size_t retries;
+> +
+> +	for (retries = 0; retries < RETRAIN_WAIT_MAX_RETRIES; ++retries) {
+> +		if (!advk_pcie_link_up(pcie))
+> +			break;
+> +		udelay(RETRAIN_WAIT_USLEEP_US);
+> +	}
+> +}
+> +
+>  static void advk_pcie_setup_hw(struct advk_pcie *pcie)
+>  {
+>  	u32 reg;
+> @@ -426,11 +439,20 @@ advk_pci_bridge_emul_pcie_conf_read(struct pci_bridge_emul *bridge,
+>  		return PCI_BRIDGE_EMUL_HANDLED;
+>  	}
+>  
+> +	case PCI_EXP_LNKCTL: {
+> +		/* u32 contains both PCI_EXP_LNKCTL and PCI_EXP_LNKSTA */
+> +		u32 val = advk_readl(pcie, PCIE_CORE_PCIEXP_CAP + reg) &
+> +			~(PCI_EXP_LNKSTA_LT << 16);
+> +		if (!advk_pcie_link_up(pcie))
+> +			val |= (PCI_EXP_LNKSTA_LT << 16);
+> +		*value = val;
+> +		return PCI_BRIDGE_EMUL_HANDLED;
+> +	}
+> +
+>  	case PCI_CAP_LIST_ID:
+>  	case PCI_EXP_DEVCAP:
+>  	case PCI_EXP_DEVCTL:
+>  	case PCI_EXP_LNKCAP:
+> -	case PCI_EXP_LNKCTL:
+>  		*value = advk_readl(pcie, PCIE_CORE_PCIEXP_CAP + reg);
+>  		return PCI_BRIDGE_EMUL_HANDLED;
+>  	default:
+> @@ -447,8 +469,13 @@ advk_pci_bridge_emul_pcie_conf_write(struct pci_bridge_emul *bridge,
+>  
+>  	switch (reg) {
+>  	case PCI_EXP_DEVCTL:
+> +		advk_writel(pcie, new, PCIE_CORE_PCIEXP_CAP + reg);
+> +		break;
+> +
+>  	case PCI_EXP_LNKCTL:
+>  		advk_writel(pcie, new, PCIE_CORE_PCIEXP_CAP + reg);
+> +		if (new & PCI_EXP_LNKCTL_RL)
+> +			advk_pcie_wait_for_retrain(pcie);
+>  		break;
+>  
+>  	case PCI_EXP_RTCTL:
+> -- 
+> 2.20.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
