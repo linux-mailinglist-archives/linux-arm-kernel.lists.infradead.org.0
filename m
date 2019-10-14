@@ -2,154 +2,114 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39BE3D5D21
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 10:07:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E1EEED5D27
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 10:10:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1Wi+AmzuBxvSoFpUFsBCWrXn0UaX2lc9lxjpEV+VAVg=; b=uwcDqxIjmXa0In
-	+LqtPXxZ55kWLliAOxbCOc6wgUzWx19abXxAbKAHxAm27OPZkGOOFF0RqdEVHo5O29lNx7PBvtusj
-	ABRJ0l1M0pApjUFysrvijN6foVdhdkvRA9LbUZwxoltpT81f5yjgzPKnvmah53SG4TJecWgCxpUTP
-	PkCTAlNM0xo94AG+ZoBYCmRl6Ft3g9AA32rqkVvMGdhTKwwqBJ+yWCyIztroVCvlIlPZwFXuIZGif
-	kRJVF6NaNCf1wQEJoI3cOK7B/PtUfTvSttRY+NUQ28qQNf8kUIymYchwQZuKDR6NHi8iqYmlvT/5n
-	tSwU57lQYj92KGd69vDA==;
+	List-Owner; bh=14OQCBOJsokj1v8JW+2/Ey8hboCywEcJccOhuloUrjA=; b=s0b5PNRU5rObgR
+	bV0G8p32WshEC/RML3ixmcLFdwwRAP7U2UnSrK/85iqKWiKXHxqtjwozWeVWdKTWi8Aox/wlJopkF
+	C3MMQ3ucgDClGJoN7VY9HtwLPBNHUlrO32ZCC0G7L0fTRON4PFsgbWV6KAOLC7Kh4aQS/kaWSUVtF
+	nzM6b/tU8q/k3yoBx/XNgGfZSRBnTFvOAr8+Ky8Ry7jdEDrlxnh8ImdXjJo718gdBZ72RHypIeVe4
+	6LHMhx9U9LbIIt6vyrXdUH5l50iO/QVp28hO0fDx6dWI/1p77brBs9a+eIp2HysH42YIXyPtQf57Q
+	WQUOAMy0SdqYxQ0xNwjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJvNx-00071j-Tv; Mon, 14 Oct 2019 08:07:21 +0000
-Received: from esa3.microchip.iphmx.com ([68.232.153.233])
+	id 1iJvR3-0000Cs-Mm; Mon, 14 Oct 2019 08:10:33 +0000
+Received: from mail-eopbgr70040.outbound.protection.outlook.com ([40.107.7.40]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJvNp-000713-Rr
- for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 08:07:15 +0000
-Received-SPF: Pass (esa3.microchip.iphmx.com: domain of
- Nicolas.Ferre@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
- envelope-from="Nicolas.Ferre@microchip.com";
- x-sender="Nicolas.Ferre@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa3.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
- envelope-from="Nicolas.Ferre@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa3.microchip.iphmx.com;
- spf=Pass smtp.mailfrom=Nicolas.Ferre@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: UGibkiNXvUrWCamX0QhV/TVfkCUPClDol4r975xAvpWbFkWoyeQsksUUzhASPeKXYq5h88knQH
- dIsQICU744mUQSIzy9g6WtID+A/4p8RzqoY8JC9Ozz8HMZqcGutC+g58WYYKqRP/wtZVwgtlzN
- aWH5ZyTxTeaZccJpNRc/rd4pWZMSMffCZVNrxYe8qI8dPyRjPiJouToeJ5p2GFfsEdUvT3djub
- lYjJ3sJ+GlY21iOK5jPNHZ6cODw7wQQiIX0mhL6UOnMM/UjjW23aRXmJ90sUEdss3EdqRirE6q
- n1A=
-X-IronPort-AV: E=Sophos;i="5.67,295,1566889200"; d="scan'208";a="52825359"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 14 Oct 2019 01:07:08 -0700
-Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
- chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Mon, 14 Oct 2019 01:07:08 -0700
-Received: from NAM05-DM3-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.71) with Microsoft SMTP Server
- (version=TLS1_2, 
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
- Transport; Mon, 14 Oct 2019 01:07:07 -0700
+ id 1iJvQv-0000BZ-DO
+ for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 08:10:26 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=mc9Ab1U3yFO4g4p/9+Y4rgeCwI8OP7B1VWOO/rcQCl8+GssOeZApWVif9BPZyqglYEA5bDI7qj5jTeLyJUm2NT59lnmtlyk4pBmlK+M3F+zMhDJNBRSIy1K5T18bKZG5W2AM+ydAYdILi6zYMJPwiNxo6/tGIPTxxKkt7Epgv6pgH9hjacKtzdAr9bcgdv0UJ3kVXLgeqH5rUTnW9W9XdXtHWPTXSJH+cFztvjE/XhIFxc33L2ux4LQpDnpab5aO85eArw4Ir8OJ+P8Nllhu7oTOqo7qDEL2I+T19RFnbnlc93fOvZ/DUSlsvWeUcVGgpZSKh+jC3MmG6EUnYGD+rQ==
+ b=gdztRfgapVG2kEx3PHGVQ5zQp+7EuCKnge9rulJHcRft5DHEybjgFXXOGM2uM21yNQ3yznqMc5FTB+USvBXT5yyX155BztioUpnOm1Dh+IDizhtcbDRWbKW3etroRKPgp5hmNk1cfbcJWmacQh09Nw63TWlscsMYIoc8bkOHDDqV36/bhukE5fHHcczOAGfm0gGX0JVjNZreBunbqf5fDnAyuYa4XmkaQoracOCTqGzpr4ZiJSkNnkJde/Cc8kr/ERhW2/D4d7w6pbCXMtMd5U6LgBax6P4ambLWmYNFDBH2Zd/I2l0HayWOC+t9+11t3iXN1UFuK+BUFkhJiSnueA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=69bGrsCcMw9SrK8ASlgWJrARW2eXSNnJcEUg3g8hF/A=;
- b=KA0eiC360Lify4tAcxyuvq3kRWAyqqYKNDqCUK5mSIjjbZBuzsPcDQk0SvWbRRbAtsIj2I38KsXysSVBvcYcFkgVIKCpohUcr+FsB85GGHaRyM6fVk1vGzHl32nG0lMuATwNGBNtrNJRBo45m9gQUXVd8iMVEeU3812h6StaFREHqI0VHMnE/sRQec/7yWLw7xxGgUdtxTx13h595P8U/u59+VV2Pp4Q4wbr76mEugtuBCdyAp27ATHeeGqXJhjtLUhEfFL8ihcr0Nvz1QQGljPY1tBndQKeLPDhdVyUxihZDFQpis7mIP/9O6WMl9rWx2hro0drqIQF3KC2jZ6wUg==
+ bh=RsdcaDiZgjM6BdeYqsK3P0pA8rLqX+f0TZWoch4vjD8=;
+ b=UVQ19uJNODtiHyGMM2A3nrb2yttmn5rv0MIu+JphIjthuCGa3uBBmc7kOvOwLsfMP6FtXbZ/GT2ZOOyMuVAFwMp8i/Xd1ck4eLMhlSFgNNpkY1miAPxgfZFrEy+9k+YMtL+MVgLOJurZ4j8RXXTx1IUA2u2enP9s7frwiy9Tde2RASp3zsWHkvQiCQBcTFdCtmgdNDusbsDTf7DE1HP6Ne3o87y+WX1HRiMd2qOg13RZo14hHPqp0s8HZ4aTo7IMoOtPoDS1kgHRCuZBcQsbhoKmNVIPNc3IVmN0k69T1hdojFDVQhkXDfLMB21qfFq4sPn5ZEaRPjIsI8VQX4t3Fg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microchip.com; dmarc=pass action=none
- header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=microchiptechnology.onmicrosoft.com;
- s=selector2-microchiptechnology-onmicrosoft-com;
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=69bGrsCcMw9SrK8ASlgWJrARW2eXSNnJcEUg3g8hF/A=;
- b=FJlbAtTjFOJanN1xR4pU0npzktiPZtVJJBxHzRQROXbJJXHfY7gg8ijdGQQCiVoZf8LIlLiAhU2J1yJzkSMeQw64ZLEQNrOgTomwjZTwGBovnHghCQSi6SyydqXMQOjfWF+A/ArZ5p6a1SRH0p3Ruv34YkJychn6Ii1AfoPBVaw=
-Received: from MWHPR11MB1662.namprd11.prod.outlook.com (10.172.55.15) by
- MWHPR11MB1550.namprd11.prod.outlook.com (10.172.53.146) with Microsoft SMTP
+ bh=RsdcaDiZgjM6BdeYqsK3P0pA8rLqX+f0TZWoch4vjD8=;
+ b=d6h8bAndJ/Hxf5vIZhBoGVIVO2Hul2l/G5ZWDE8LVWVuQ3r+knUbVj3tNKGY62NZ4WJG8JB39MvAk24gzLLM81QQd7dYrUsL8+ROis1C1DEaocAqekNipUiUH7zAEq6D+iBaH3UNFxHx7HWzuw8NICoAYdJ50SsW0DYmYVwoY5o=
+Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (20.179.232.15) by
+ VE1PR04MB6495.eurprd04.prod.outlook.com (20.179.233.10) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2347.17; Mon, 14 Oct 2019 08:07:03 +0000
-Received: from MWHPR11MB1662.namprd11.prod.outlook.com
- ([fe80::5d81:aef1:f63:3735]) by MWHPR11MB1662.namprd11.prod.outlook.com
- ([fe80::5d81:aef1:f63:3735%3]) with mapi id 15.20.2347.021; Mon, 14 Oct 2019
- 08:07:03 +0000
-From: <Nicolas.Ferre@microchip.com>
-To: <natechancellor@gmail.com>, <stern@rowland.harvard.edu>,
- <gregkh@linuxfoundation.org>
-Subject: Re: [PATCH] USB: host: ohci-at91: Remove unused variable regs in
- at91_stop_hc
-Thread-Topic: [PATCH] USB: host: ohci-at91: Remove unused variable regs in
- at91_stop_hc
-Thread-Index: AQHVgmZcvPN8nyQjlE2+eKw+69w/ZQ==
-Date: Mon, 14 Oct 2019 08:07:03 +0000
-Message-ID: <bff9bdd9-bc3c-e333-7b4a-df53194de06f@microchip.com>
-References: <20191011185950.1470-1-natechancellor@gmail.com>
-In-Reply-To: <20191011185950.1470-1-natechancellor@gmail.com>
+ 15.20.2347.19; Mon, 14 Oct 2019 08:10:20 +0000
+Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
+ ([fe80::35d1:8d88:10f4:561]) by VE1PR04MB6638.eurprd04.prod.outlook.com
+ ([fe80::35d1:8d88:10f4:561%5]) with mapi id 15.20.2347.021; Mon, 14 Oct 2019
+ 08:10:20 +0000
+From: Robin Gong <yibin.gong@nxp.com>
+To: Vinod Koul <vkoul@kernel.org>
+Subject: RE: [PATCH v1] dmaengine: imx-sdma: fix kernel hangs with SLUB slab
+ allocator
+Thread-Topic: [PATCH v1] dmaengine: imx-sdma: fix kernel hangs with SLUB slab
+ allocator
+Thread-Index: AQHVcr1VGWNo2EzDlEmVbBRWEyoOA6dZ5eeAgAAA+QCAAADW8A==
+Date: Mon, 14 Oct 2019 08:10:20 +0000
+Message-ID: <VE1PR04MB66386213FCB0ADA44EB195E589900@VE1PR04MB6638.eurprd04.prod.outlook.com>
+References: <1569347584-3478-1-git-send-email-yibin.gong@nxp.com>
+ <20191014080215.GL2654@vkoul-mobl> <20191014080544.GM2654@vkoul-mobl>
+In-Reply-To: <20191014080544.GM2654@vkoul-mobl>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-clientproxiedby: BYAPR05CA0032.namprd05.prod.outlook.com
- (2603:10b6:a03:c0::45) To MWHPR11MB1662.namprd11.prod.outlook.com
- (2603:10b6:301:e::15)
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [213.41.198.74]
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=yibin.gong@nxp.com; 
+x-originating-ip: [119.31.174.66]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 3a7fa174-84e5-4535-c565-08d7507d7f2f
-x-ms-traffictypediagnostic: MWHPR11MB1550:
-x-microsoft-antispam-prvs: <MWHPR11MB155050286C8463CD0FA023D9E0900@MWHPR11MB1550.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3513;
+x-ms-office365-filtering-correlation-id: 2a226c7a-1c48-406b-8d08-08d7507df4d7
+x-ms-office365-filtering-ht: Tenant
+x-ms-traffictypediagnostic: VE1PR04MB6495:|VE1PR04MB6495:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VE1PR04MB64957A98BC831A805572549889900@VE1PR04MB6495.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2276;
 x-forefront-prvs: 01901B3451
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(39860400002)(376002)(346002)(366004)(136003)(396003)(189003)(199004)(31696002)(36756003)(86362001)(476003)(2616005)(4744005)(446003)(7736002)(66066001)(81166006)(11346002)(14454004)(8936002)(478600001)(6116002)(486006)(316002)(81156014)(5660300002)(8676002)(31686004)(3846002)(2906002)(54906003)(305945005)(6246003)(2171002)(26005)(229853002)(256004)(186003)(25786009)(14444005)(6506007)(386003)(99286004)(52116002)(64756008)(66556008)(66476007)(110136005)(66946007)(53546011)(4326008)(71200400001)(71190400001)(6436002)(102836004)(6486002)(76176011)(6512007)(66446008);
- DIR:OUT; SFP:1101; SCL:1; SRVR:MWHPR11MB1550;
- H:MWHPR11MB1662.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: microchip.com does not designate
+ SFS:(10009020)(4636009)(396003)(39860400002)(366004)(346002)(136003)(376002)(199004)(189003)(229853002)(486006)(6246003)(53546011)(476003)(478600001)(7416002)(6506007)(25786009)(6436002)(5660300002)(55016002)(316002)(54906003)(86362001)(2906002)(6116002)(446003)(11346002)(3846002)(9686003)(6916009)(14454004)(81156014)(66946007)(76116006)(66476007)(256004)(64756008)(33656002)(8936002)(81166006)(66556008)(14444005)(8676002)(7736002)(74316002)(305945005)(99286004)(76176011)(102836004)(7696005)(52536014)(26005)(186003)(4326008)(66066001)(71200400001)(71190400001)(4001150100001)(66446008);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR04MB6495;
+ H:VE1PR04MB6638.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 1ki0uJd5ug6SdS7z95iRgu4psRiZkJa6elxaIITAF1Uh6JTIZ+lu1YOxBRUo4vHi/7RG5Qjvwqgy5t6qbJ0wMZg38eQyrz4fdMyJooN9zBTuJ/qWHkJDrt/m661Vf63PZxgoFHKCK9lwhXAQlTP12NRvBwOiawxdFBa8G6SVVblwVnvTIHwk212MPyMU3z3cuIhyi3yVRiyay686zBdi3qEBO2fA6WxZCWsZ8+QSIjPWGy0wtwXi1z7Swyc7T8zdRCPUCP9zuz3NrOK+ZC8HS9WKhzSAwk+5eMtw2vlYtYseaQsxLnqkXX0Nss0U06gvNQhwh749TGxwfMuHsxu9g7jwiiKcMqrr5EqnpgAMVMgRcSiCyJXNIl5dVJOjvQap9SqKFfrfWByxOuItQd4hQUnbSI/rvZeQ0m9BazYdkdc=
-x-ms-exchange-transport-forked: True
-Content-ID: <F28BCB39B94F694A9D7886C008FC048D@namprd11.prod.outlook.com>
+x-microsoft-antispam-message-info: 9xBVZnQXUVUzESBrTV84z11xI5lurhaU3DOIKaNIx2h0+3Gn5SycRVyUJ9A41p9WI45DHF0H3YIEY79pq2B0Sp6JgxXFCvDgsD57z8lqBitnYeKTAZg9y9pgaeUBSq8Nq9Yl+U51oQBFAX2ZTh8k3S53UqeCjE51pxwSdcPgEgRek8iAuDiVmcUeKkgNHXIFhO0CmkVOWrR8P6NokBVB4banAgsR0PgS6Mgxpe82RtH3cT+n+2NAwhqzkCqPcRh8spGCahxIrSdjx1H9mUIJlJS+tnztZ+S3WPlbq1rKXRQBkkA1cUZXXukbfk5wgC2hIv258KMS9f8r4nJ5XWB3+HnCw81UHaWgGf7t9LL6rLmzGjqch+ko02F2Ll+dG/bMGAO0Gicx8U0ofGJsYYntPxbzb6kAQKaKz0NPOB9uD1c=
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3a7fa174-84e5-4535-c565-08d7507d7f2f
-X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Oct 2019 08:07:03.2645 (UTC)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2a226c7a-1c48-406b-8d08-08d7507df4d7
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Oct 2019 08:10:20.3686 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 1f/SbE9mQvxlRdfVMrCYerUbycIYwD9X0MDZGdvjIHQ/1Ien4qS5PQfGaf6JeWIWAgjf1hDe/7IYCPPP3t8EUJ/+2lgzCBjIIQv28rPYK40=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR11MB1550
+X-MS-Exchange-CrossTenant-userprincipalname: hQJrwwCzbKgOk/4HAE7m5/JS6/Q5rUo4f9TlAijAqAgCsbAI6tSsOWRUY7c7oOkBLypiW+KsrrXL5A0tUCs8gg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6495
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_010713_961681_1380E375 
-X-CRM114-Status: UNSURE (   9.02  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191014_011025_457327_39F31BAC 
+X-CRM114-Status: GOOD (  14.23  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.153.233 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.7.40 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -162,46 +122,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
+ "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "J.Lambrecht@TELEVIC.com" <J.Lambrecht@televic.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/10/2019 at 20:59, Nathan Chancellor wrote:
-> drivers/usb/host/ohci-at91.c:118:28: warning: unused variable 'regs'
-> [-Wunused-variable]
->          struct ohci_regs __iomem *regs = hcd->regs;
->                                    ^
-> 1 warning generated.
+On 2019-10-14 Vinod Koul <vkoul@kernel.org> wrote:
+> On 14-10-19, 13:32, Vinod Koul wrote:
+> > On 24-09-19, 09:49, Robin Gong wrote:
+> > > Illegal memory will be touch if SDMA_SCRIPT_ADDRS_ARRAY_SIZE_V3
+> > > (41) exceed the size of structure sdma_script_start_addrs(40), thus
+> > > cause memory corrupt such as slob block header so that kernel trap
+> > > into while() loop forever in slob_free(). Please refer to below code
+> > > piece in imx-sdma.c:
+> > > for (i = 0; i < sdma->script_number; i++)
+> > > 	if (addr_arr[i] > 0)
+> > > 		saddr_arr[i] = addr_arr[i]; /* memory corrupt here */ That issue
+> > > was brought by commit a572460be9cf ("dmaengine: imx-sdma: Add
+> > > support for version 3 firmware") because
+> > > SDMA_SCRIPT_ADDRS_ARRAY_SIZE_V3
+> > > (38->41 3 scripts added) not align with script number added in
+> > > sdma_script_start_addrs(2 scripts).
+> >
+> > Applied, thanks
 > 
-> Fixes: 9c4567fa0a44 ("USB: host: ohci-at91: completely shutdown the controller in at91_stop_hc()")
-> Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
-
-Acked-by: Nicolas Ferre <nicolas.ferre@microchip.com>
-
-> ---
->   drivers/usb/host/ohci-at91.c | 1 -
->   1 file changed, 1 deletion(-)
+> And after applying I noticed the patch title is not apt. The patch title should
+> reflect the change and not the cause or result.
 > 
-> diff --git a/drivers/usb/host/ohci-at91.c b/drivers/usb/host/ohci-at91.c
-> index 513e48397743..b635c6a1b1a9 100644
-> --- a/drivers/usb/host/ohci-at91.c
-> +++ b/drivers/usb/host/ohci-at91.c
-> @@ -115,7 +115,6 @@ static void at91_start_hc(struct platform_device *pdev)
->   static void at91_stop_hc(struct platform_device *pdev)
->   {
->   	struct usb_hcd *hcd = platform_get_drvdata(pdev);
-> -	struct ohci_regs __iomem *regs = hcd->regs;
->   	struct ohci_at91_priv *ohci_at91 = hcd_to_ohci_at91_priv(hcd);
->   
->   	dev_dbg(&pdev->dev, "stop\n");
+> So I have modified the title to: "dmaengine: imx-sdma: fix size check for sdma
+> script_number"
+Yes, You are right, thanks Vinod.
 > 
-
-
--- 
-Nicolas Ferre
+> Thanks
+> --
+> ~Vinod
 
 _______________________________________________
 linux-arm-kernel mailing list
