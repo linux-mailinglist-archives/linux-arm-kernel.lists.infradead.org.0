@@ -2,46 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91009D6975
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 20:32:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD10CD697C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 20:33:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n14RK8LC6IUcQ0Lt9QjXRIM4pXyuTNdMeX/cBaAroig=; b=hsTM/hDiIRQXMh
-	MpMQ+DFqnWICO8Zo5/yTKj4POfgAAZZVULtUw21eJ3Ua9p56uHURhKXmggRUy4JqTY2RtYu2jA+j3
-	9De7EYnaHVTT3lXt9+gw7y8GcRGYsuc9b9c8KN2HhTRkloZB+IHoqrqeVK2jeCBWTq83Hxn8EZ0pg
-	msqIXf4dzAVyawrGqPLd/llPrR/fsyJlF66V7QrPbekySlhvn/atcUnN4hyqUGezq6XkgYUCrdgV0
-	lYbmSbPW75M3ayf8txzcSu8JXsuep8ZbZk371fttdYs9kk1hL4N7agqjYWOrjQsn9g195IjfEEA6L
-	CY6ZpuO0bugu6De8gWEQ==;
+	List-Owner; bh=B4sIb5pIJOgKpz3CEimbDqyI8t4QgvayYgVySpMjBM4=; b=FMm7erfF3Ti7iP
+	jfQzQYMUv+uWVxdLiOUEY/6RZUYLmXoWWB2Q7l9oDysB33xFuhb+o5zQB7HakpWH9ovc9A5q3dwi+
+	o8eX5m0eGw6Ucgr3W8sn6jrAczPYn8l3rFJwv1LTUE2W1Ey4wPNYjgQiZhd/Dej9wlfiwcaQhcgYE
+	IPSQ5hKa3E7paZibE0FEInzVKm4Ei/t0B1b2QW/2wiixGEVyTB00WY7bSA1fXEWE1PDdloHVwiQ28
+	mhSY2wpXZD7lk14JF1VgQvISn4llDckVEt055Ew41IzT/U6iTNiJGKeUYoNbTna3UDAKMS5H0qKG8
+	S+rxRU99+uRYbkpWNBxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iK595-0006kC-3E; Mon, 14 Oct 2019 18:32:39 +0000
+	id 1iK59W-0007Dq-3h; Mon, 14 Oct 2019 18:33:06 +0000
 Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iK58K-0006EH-70; Mon, 14 Oct 2019 18:31:54 +0000
+ id 1iK58L-0006FH-6d; Mon, 14 Oct 2019 18:31:54 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id E07EDBB7A;
- Mon, 14 Oct 2019 18:31:50 +0000 (UTC)
+ by mx1.suse.de (Postfix) with ESMTP id E3DD2BB7F;
+ Mon, 14 Oct 2019 18:31:51 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org,
  bcm-kernel-feedback-list@broadcom.com,
  linux-rpi-kernel@lists.infradead.org, iommu@lists.linux-foundation.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH RFC 3/5] ARM: let machines select dma-direct over arch's DMA
- implementation
-Date: Mon, 14 Oct 2019 20:31:05 +0200
-Message-Id: <20191014183108.24804-4-nsaenzjulienne@suse.de>
+Subject: [PATCH RFC 4/5] dma/direct: check for overflows in ARM's dma_capable()
+Date: Mon, 14 Oct 2019 20:31:06 +0200
+Message-Id: <20191014183108.24804-5-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191014183108.24804-1-nsaenzjulienne@suse.de>
 References: <20191014183108.24804-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_113152_396381_AFBEBD44 
-X-CRM114-Status: GOOD (  12.39  )
+X-CRM114-CacheID: sfid-20191014_113153_393437_8AF12608 
+X-CRM114-Status: GOOD (  10.23  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -70,70 +69,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A bounce buffering feature is already available in ARM, dmabounce.c, yet
-it doesn't support high memory which some devices need. Instead of
-fixing it, provide a means for devices to enable dma-direct, which is the
-preferred way of doing DMA now days.
+The Raspberry Pi 4 has a 1GB ZONE_DMA area starting at address
+0x00000000 and a mapping between physical and DMA memory offset by
+0xc0000000.  It transpires that, on non LPAE systems, any attempt to
+translate physical addresses outside of ZONE_DMA will result in an
+overflow. The resulting DMA addresses will not be detected by arm's
+dma_capable() as they still fit in the device's DMA mask.
+
+Fix this by failing to validate a DMA address smaller than the lowest
+possible DMA address.
 
 Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
- arch/arm/include/asm/mach/arch.h | 1 +
- arch/arm/mm/init.c               | 8 +++++++-
- 2 files changed, 8 insertions(+), 1 deletion(-)
+ arch/arm/include/asm/dma-direct.h | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/arch/arm/include/asm/mach/arch.h b/arch/arm/include/asm/mach/arch.h
-index e7df5a822cab..3542bf502573 100644
---- a/arch/arm/include/asm/mach/arch.h
-+++ b/arch/arm/include/asm/mach/arch.h
-@@ -33,6 +33,7 @@ struct machine_desc {
- #ifdef CONFIG_ZONE_DMA
- 	phys_addr_t		dma_zone_size;	/* size of DMA-able area */
- #endif
-+	bool			dma_direct;
+diff --git a/arch/arm/include/asm/dma-direct.h b/arch/arm/include/asm/dma-direct.h
+index b67e5fc1fe43..ee8ad47a14e3 100644
+--- a/arch/arm/include/asm/dma-direct.h
++++ b/arch/arm/include/asm/dma-direct.h
+@@ -2,6 +2,8 @@
+ #ifndef ASM_ARM_DMA_DIRECT_H
+ #define ASM_ARM_DMA_DIRECT_H 1
  
- 	unsigned int		video_start;	/* start of video RAM	*/
- 	unsigned int		video_end;	/* end of video RAM	*/
-diff --git a/arch/arm/mm/init.c b/arch/arm/mm/init.c
-index 0a63379a4d1a..556f70665353 100644
---- a/arch/arm/mm/init.c
-+++ b/arch/arm/mm/init.c
-@@ -19,6 +19,7 @@
- #include <linux/gfp.h>
- #include <linux/memblock.h>
- #include <linux/dma-contiguous.h>
-+#include <linux/dma-direct.h>
- #include <linux/sizes.h>
- #include <linux/stop_machine.h>
- #include <linux/swiotlb.h>
-@@ -119,6 +120,8 @@ void __init setup_dma_zone(const struct machine_desc *mdesc)
- 	 */
- 	if (IS_ENABLED(CONFIG_ARM_LPAE))
- 		arm_dma_direct = true;
-+	else
-+		arm_dma_direct = mdesc->dma_direct;
- 
- #ifdef CONFIG_ZONE_DMA
- 	if (mdesc->dma_zone_size) {
-@@ -126,7 +129,10 @@ void __init setup_dma_zone(const struct machine_desc *mdesc)
- 		arm_dma_limit = PHYS_OFFSET + arm_dma_zone_size - 1;
- 	} else
- 		arm_dma_limit = 0xffffffff;
++#include <linux/memblock.h>
 +
- 	arm_dma_pfn_limit = arm_dma_limit >> PAGE_SHIFT;
-+
-+	zone_dma_bits = ilog2(arm_dma_limit) + 1;
- #endif
- }
- 
-@@ -482,7 +488,7 @@ static void __init free_highpages(void)
-  */
- void __init mem_init(void)
+ static inline dma_addr_t __phys_to_dma(struct device *dev, phys_addr_t paddr)
  {
--#ifdef CONFIG_ARM_LPAE
-+#ifdef CONFIG_SWIOTLB
- 	swiotlb_init(1);
- #endif
+ 	unsigned int offset = paddr & ~PAGE_MASK;
+@@ -21,6 +23,10 @@ static inline bool dma_capable(struct device *dev, dma_addr_t addr, size_t size)
+ 	if (!dev->dma_mask)
+ 		return 0;
  
++	/* Check if address overflowed */
++	if (addr < __phys_to_dma(dev, PFN_UP(min_low_pfn)))
++		return 0;
++
+ 	mask = *dev->dma_mask;
+ 
+ 	limit = (mask + 1) & ~mask;
 -- 
 2.23.0
 
