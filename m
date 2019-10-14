@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4DB16D5AA7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 07:20:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29FE9D5AA4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 07:19:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9ugbSMgRJE2GMLjG2WeIwN0G1KfG6qutvjnKkezV1Q0=; b=uQkpDvwVFanrWJ
-	ZS1EIf7QvTXr8k3jdO+foejv+jPckEI/kfENeY9FY9eIPK9RI4TjJjugDaGnfEvyPlseiPZWKwWTl
-	gVSNkJb78oBorzlKTJpF6X6yYqHHeTmBHF3Mnjwlpw6q/vSBT0St5xjtX+qyrcMKN9CN7WJGTUHJ5
-	B0KJKTpTGNUFP0xHM4A2cT25Je3HWGoGfgjfCcKIxlEVT0+UhRWSJIkuCZikHgkxxxDb8dQyqElBx
-	lCLde520eyznrtpj98F0fnZX6R+DGceSlTlf8vFXUhQBqwWcHxauTqiYr90XIIIbXmsZilhKkhxE7
-	Kf/fpE29NuqfqZ4mGv+Q==;
+	List-Owner; bh=ZeIkPWy1Wrt5d4jBVKhedbbhSaa/ARLftHdwFetepvk=; b=eMYHH3po7SVI/7
+	A2xu9EGSnTntutI5wOHZQNZIuqtXPZVfmXVOGZ6Tk9otQAhGXqd9DNYcp1OieytGiI0k5aL7ix/ym
+	Ky9iBBBUtguaB8f6AMnB59bAYP7XQn12qyKHm5ay9nwI0HH+9vaq4aFyYt+dVOwh0IXuIy6RJX0j2
+	hrf5QrNDlyy0bXd5uL3Nln2gEFmIes9MHCZKqFDnofz/Z3sRTJbK911NxQlqbc+yuKqfrgPipro9O
+	ImPq25aZdPgg3BeluKwqtgrTcSZTApKJDyRN+92sFPcpa6QQuIOSu3pKnt/oJG6wFS7tBfF19Qoa9
+	fFrp6Q2HFo9jtGXVZyQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJslu-0007xX-Nz; Mon, 14 Oct 2019 05:19:54 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1iJslh-0007je-Kc; Mon, 14 Oct 2019 05:19:41 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJskq-00076w-8u; Mon, 14 Oct 2019 05:18:50 +0000
-Received: by mail-wr1-x443.google.com with SMTP id p4so2128606wrm.8;
- Sun, 13 Oct 2019 22:18:46 -0700 (PDT)
+ id 1iJsks-000778-VO; Mon, 14 Oct 2019 05:18:52 +0000
+Received: by mail-wm1-x342.google.com with SMTP id v17so15300649wml.4;
+ Sun, 13 Oct 2019 22:18:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=EBOdxnEDjlDgTl8vnBYCTotGM7/cUtbcpepjO3ITy9M=;
- b=HqkvtcIx4fKEctevUUEDQOTu5HEOMNeeAb9/shYTajmx2Re/0dOg1GgHRiGwRty25s
- SBXJQNvNb2cGCcm5Pr+mmn3TFcjitR29pNr5hTE5vHoaExHo8O3GchfAqK8qhCxwcp0M
- To+wZDV4lGbYpLkAXnxH4Y+TOzbDmZA5CBbj45dpvNfib4XDDh/qM+S/SQWi4SfmEmrD
- 9tHxoOaHiMbQtyH49+CbHYjrOwcU2Ii4+hAdRWN8tmtzEHtWJi5/iGX2Y3EKm+TyvPNj
- rYhmL7eE99NfYYG6be3fuPNZU/N6+HPDQjBYtYFyDho9EIJYOP/CJ5ZOOn37Cg2iujeY
- YseA==
+ bh=r27WGXUs+Wuhk1pzsYshNkJtTiZw35ZkKYZGAVQI7mQ=;
+ b=ZxW7qDEfgKxLpLZQCQX6vWykm+r7cYH88LGy7TAuV6zMHBGE8rm/Lt25gNvc93Cxyj
+ OQ7R1pmBFKqrjpOXlRkqgRMkB/KgBa3fm7bRqz0xyLeET4uYqtzxJp29dtNBjxSB5/V7
+ kPqKrycbvQI3nd0E3rd+5OpQTVp1AZx17u0+NwOJ5ctEvClATX8lSF9sIQrhI0w43+5O
+ ujAwS4nWWQJzR1MxNtnX89x/aWs9R4OJ+o383l12cX7GBbZVxTGVETBUH9BM5cKZArgT
+ E3BqB8b1D17Zpkh7rQPwM+8vVn8uv57UOQl9bNy0pcOntwiHs4Z0K/okXHQITln4NRY8
+ 8BQQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=EBOdxnEDjlDgTl8vnBYCTotGM7/cUtbcpepjO3ITy9M=;
- b=Vkmth2L1MlEd7Myx3d4hr6iMfBcdfCwAxy4H9yb2C8w7+uMLLyeCcDR/4dzo712lst
- VrppweqrNXqF4A4iLXe641sBQ3JKOBwP2HjrWlwBogv5P5GclLstkKvyuL/nVJ35XB7E
- BDcUOJQuzW48uIoAOTNv1UkgLT4I4VYyBgrLZXO+xX1eAlDMRP0g9emq5R0HizTDuwOH
- SwOmzmmGR8sbaXAxFacEanj9GxOD+MkRME9nriZCDZwtQ9TneLMjNdyDTBc2cfuLA220
- IE7m9tg81Rk0O1lnIAkaEf+awfHKbE5Lq3xJ0UEn+JpeAMoOJwPCrd18It+yIVsVRlgg
- O/og==
-X-Gm-Message-State: APjAAAUsUSLaRx/MNVlU2ZoBOGMCtS+kqk0WXaSP+blLp9wBUoamDCqp
- GLpkTFchBbSGt7Xe1ON+MLQ=
-X-Google-Smtp-Source: APXvYqwQWNWKOAY7LNNHT2Gdp/MtDgCTCxVyDv07ozqa2/PmSE2211R5Hb8liynHEB7CXUTmglwy8Q==
-X-Received: by 2002:adf:dd88:: with SMTP id x8mr13266930wrl.140.1571030325603; 
- Sun, 13 Oct 2019 22:18:45 -0700 (PDT)
+ bh=r27WGXUs+Wuhk1pzsYshNkJtTiZw35ZkKYZGAVQI7mQ=;
+ b=CGTkrdiAMEx/pPAOIMULKaa5V/3QeNLUGV/mAjKVDSTKACIGPd32CDeE8IYmZeSRJN
+ lBlgqWhMLBLruSEjQWCfShBMxoTigHjsnTW5WM9R/74bd5A4nW6l0mbicUjFMUHuznrh
+ uKRLZaoZ5/XmhgYRrYc4Xdg/u7vVsu8Yf4VQm5QO5JTn+lGMHcJemx9TYSYZv+J4ILYQ
+ 9+A4txeF1AxNwz19Xg0GdMKQaqB73n/DdXSlz5wakgNKpEUFTkgRfaLUBh1xxL6qnk+w
+ bu30b50e6l4BJVQWPXmVhxHxqJWRUr7rrVVOOvW57G46JbIkI6GBCvWYQpXpwvwkcT+p
+ 9iMQ==
+X-Gm-Message-State: APjAAAXWcqJFedmbPYujtPvZPCDZxmtBdIMpUmQrqtQtZZjxC7bU6+Pd
+ rY3lx3gcsI7SISHe5/4hESM=
+X-Google-Smtp-Source: APXvYqzTsLHoZpuvisvBX8HutF5saEpyzHk2Up8rAkU+EmCCb/EqrEqbZTDKe8KERdgRDuazda+ssg==
+X-Received: by 2002:a7b:cb54:: with SMTP id v20mr5811046wmj.119.1571030326771; 
+ Sun, 13 Oct 2019 22:18:46 -0700 (PDT)
 Received: from Red.localdomain ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id 5sm14660340wrk.86.2019.10.13.22.18.44
+ by smtp.googlemail.com with ESMTPSA id 5sm14660340wrk.86.2019.10.13.22.18.45
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 13 Oct 2019 22:18:45 -0700 (PDT)
+ Sun, 13 Oct 2019 22:18:46 -0700 (PDT)
 From: Corentin Labbe <clabbe.montjoie@gmail.com>
 To: davem@davemloft.net, herbert@gondor.apana.org.au, khilman@baylibre.com,
  mark.rutland@arm.com, robh+dt@kernel.org,
  martin.blumenstingl@googlemail.com
-Subject: [PATCH v2 1/4] dt-bindings: crypto: Add DT bindings documentation for
- amlogic-crypto
-Date: Mon, 14 Oct 2019 07:18:36 +0200
-Message-Id: <20191014051839.32274-2-clabbe.montjoie@gmail.com>
+Subject: [PATCH v2 2/4] MAINTAINERS: Add myself as maintainer of amlogic crypto
+Date: Mon, 14 Oct 2019 07:18:37 +0200
+Message-Id: <20191014051839.32274-3-clabbe.montjoie@gmail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20191014051839.32274-1-clabbe.montjoie@gmail.com>
 References: <20191014051839.32274-1-clabbe.montjoie@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191013_221848_310064_173E9DEA 
-X-CRM114-Status: GOOD (  10.15  )
+X-CRM114-CacheID: sfid-20191013_221851_030436_4C46974C 
+X-CRM114-Status: UNSURE (   7.17  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -107,73 +107,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds documentation for Device-Tree bindings for the
-Amlogic GXL cryptographic offloader driver.
+I will maintain the amlogic crypto driver.
 
 Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
 ---
- .../bindings/crypto/amlogic,gxl-crypto.yaml   | 52 +++++++++++++++++++
- 1 file changed, 52 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/crypto/amlogic,gxl-crypto.yaml
+ MAINTAINERS | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/crypto/amlogic,gxl-crypto.yaml b/Documentation/devicetree/bindings/crypto/amlogic,gxl-crypto.yaml
-new file mode 100644
-index 000000000000..5becc60a0e28
---- /dev/null
-+++ b/Documentation/devicetree/bindings/crypto/amlogic,gxl-crypto.yaml
-@@ -0,0 +1,52 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/crypto/amlogic,gxl-crypto.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 36c5d6ee01f9..a8487a0999ce 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -1477,6 +1477,13 @@ F:	drivers/soc/amlogic/
+ F:	drivers/rtc/rtc-meson*
+ N:	meson
+ 
++ARM/Amlogic Meson SoC Crypto Drivers
++M:	Corentin Labbe <clabbe@baylibre.com>
++L:	linux-crypto@vger.kernel.org
++S:	Maintained
++F:	drivers/crypto/amlogic/
++F:	Documentation/devicetree/bindings/crypto/amlogic*
 +
-+title: Amlogic GXL Cryptographic Offloader
-+
-+maintainers:
-+  - Corentin Labbe <clabbe@baylibre.com>
-+
-+properties:
-+  compatible:
-+    items:
-+    - const: amlogic,gxl-crypto
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    items:
-+      - description: "Interrupt for flow 0"
-+      - description: "Interrupt for flow 1"
-+
-+  clocks:
-+    maxItems: 1
-+
-+  clock-names:
-+    const: blkmv
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/interrupt-controller/irq.h>
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/clock/gxbb-clkc.h>
-+
-+    crypto: crypto@c883e000 {
-+        compatible = "amlogic,gxl-crypto";
-+        reg = <0x0 0xc883e000 0x0 0x36>;
-+        interrupts = <GIC_SPI 188 IRQ_TYPE_EDGE_RISING>, <GIC_SPI 189 IRQ_TYPE_EDGE_RISING>;
-+        clocks = <&clkc CLKID_BLKMV>;
-+        clock-names = "blkmv";
-+    };
+ ARM/Amlogic Meson SoC Sound Drivers
+ M:	Jerome Brunet <jbrunet@baylibre.com>
+ L:	alsa-devel@alsa-project.org (moderated for non-subscribers)
 -- 
 2.21.0
 
