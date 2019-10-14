@@ -2,108 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1EEED5D27
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 10:10:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC8D7D5D57
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 10:24:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=14OQCBOJsokj1v8JW+2/Ey8hboCywEcJccOhuloUrjA=; b=s0b5PNRU5rObgR
-	bV0G8p32WshEC/RML3ixmcLFdwwRAP7U2UnSrK/85iqKWiKXHxqtjwozWeVWdKTWi8Aox/wlJopkF
-	C3MMQ3ucgDClGJoN7VY9HtwLPBNHUlrO32ZCC0G7L0fTRON4PFsgbWV6KAOLC7Kh4aQS/kaWSUVtF
-	nzM6b/tU8q/k3yoBx/XNgGfZSRBnTFvOAr8+Ky8Ry7jdEDrlxnh8ImdXjJo718gdBZ72RHypIeVe4
-	6LHMhx9U9LbIIt6vyrXdUH5l50iO/QVp28hO0fDx6dWI/1p77brBs9a+eIp2HysH42YIXyPtQf57Q
-	WQUOAMy0SdqYxQ0xNwjw==;
+	List-Owner; bh=QPuluDbtwsMpjMiIy6lIbiCv2gvQQYI/1RUG91LrJug=; b=XGrqe2f9LypfHP
+	a/dfqdRmjkwwNIHa+EkWTZHox73tCKsfGQdVMG5mEoGPM0bvl9qIsAS36YqmyMj6vZ5TN28ryzrVl
+	fmL12vc3mHcjuTDYWqqZjJDnv7PfxqPmaFp7Ss2443B+4EgRnPyc8lXeJ+uoOlWL5PPqHhVY+Hyb5
+	zh8bdUuy8shswLUiWEZhCGsKt+SBu1UMJuYHyoRtV9ah8Vi0x35/WGfY8xTQEcQAfruR7Ej9Q34Et
+	aPZgiurwF8lDY//PgEjmQfWUxdfuPMYLn88eYmQN3uHM4SPcD9r3517CgDpPcXzN10FR89QUucW2T
+	pmWXyZCR0rFnBMJF7NmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJvR3-0000Cs-Mm; Mon, 14 Oct 2019 08:10:33 +0000
-Received: from mail-eopbgr70040.outbound.protection.outlook.com ([40.107.7.40]
- helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+	id 1iJvew-00047y-CO; Mon, 14 Oct 2019 08:24:54 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJvQv-0000BZ-DO
- for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 08:10:26 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=gdztRfgapVG2kEx3PHGVQ5zQp+7EuCKnge9rulJHcRft5DHEybjgFXXOGM2uM21yNQ3yznqMc5FTB+USvBXT5yyX155BztioUpnOm1Dh+IDizhtcbDRWbKW3etroRKPgp5hmNk1cfbcJWmacQh09Nw63TWlscsMYIoc8bkOHDDqV36/bhukE5fHHcczOAGfm0gGX0JVjNZreBunbqf5fDnAyuYa4XmkaQoracOCTqGzpr4ZiJSkNnkJde/Cc8kr/ERhW2/D4d7w6pbCXMtMd5U6LgBax6P4ambLWmYNFDBH2Zd/I2l0HayWOC+t9+11t3iXN1UFuK+BUFkhJiSnueA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=RsdcaDiZgjM6BdeYqsK3P0pA8rLqX+f0TZWoch4vjD8=;
- b=UVQ19uJNODtiHyGMM2A3nrb2yttmn5rv0MIu+JphIjthuCGa3uBBmc7kOvOwLsfMP6FtXbZ/GT2ZOOyMuVAFwMp8i/Xd1ck4eLMhlSFgNNpkY1miAPxgfZFrEy+9k+YMtL+MVgLOJurZ4j8RXXTx1IUA2u2enP9s7frwiy9Tde2RASp3zsWHkvQiCQBcTFdCtmgdNDusbsDTf7DE1HP6Ne3o87y+WX1HRiMd2qOg13RZo14hHPqp0s8HZ4aTo7IMoOtPoDS1kgHRCuZBcQsbhoKmNVIPNc3IVmN0k69T1hdojFDVQhkXDfLMB21qfFq4sPn5ZEaRPjIsI8VQX4t3Fg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=RsdcaDiZgjM6BdeYqsK3P0pA8rLqX+f0TZWoch4vjD8=;
- b=d6h8bAndJ/Hxf5vIZhBoGVIVO2Hul2l/G5ZWDE8LVWVuQ3r+knUbVj3tNKGY62NZ4WJG8JB39MvAk24gzLLM81QQd7dYrUsL8+ROis1C1DEaocAqekNipUiUH7zAEq6D+iBaH3UNFxHx7HWzuw8NICoAYdJ50SsW0DYmYVwoY5o=
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (20.179.232.15) by
- VE1PR04MB6495.eurprd04.prod.outlook.com (20.179.233.10) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2347.19; Mon, 14 Oct 2019 08:10:20 +0000
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::35d1:8d88:10f4:561]) by VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::35d1:8d88:10f4:561%5]) with mapi id 15.20.2347.021; Mon, 14 Oct 2019
- 08:10:20 +0000
-From: Robin Gong <yibin.gong@nxp.com>
-To: Vinod Koul <vkoul@kernel.org>
-Subject: RE: [PATCH v1] dmaengine: imx-sdma: fix kernel hangs with SLUB slab
- allocator
-Thread-Topic: [PATCH v1] dmaengine: imx-sdma: fix kernel hangs with SLUB slab
- allocator
-Thread-Index: AQHVcr1VGWNo2EzDlEmVbBRWEyoOA6dZ5eeAgAAA+QCAAADW8A==
-Date: Mon, 14 Oct 2019 08:10:20 +0000
-Message-ID: <VE1PR04MB66386213FCB0ADA44EB195E589900@VE1PR04MB6638.eurprd04.prod.outlook.com>
-References: <1569347584-3478-1-git-send-email-yibin.gong@nxp.com>
- <20191014080215.GL2654@vkoul-mobl> <20191014080544.GM2654@vkoul-mobl>
-In-Reply-To: <20191014080544.GM2654@vkoul-mobl>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=yibin.gong@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 2a226c7a-1c48-406b-8d08-08d7507df4d7
-x-ms-office365-filtering-ht: Tenant
-x-ms-traffictypediagnostic: VE1PR04MB6495:|VE1PR04MB6495:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VE1PR04MB64957A98BC831A805572549889900@VE1PR04MB6495.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2276;
-x-forefront-prvs: 01901B3451
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(39860400002)(366004)(346002)(136003)(376002)(199004)(189003)(229853002)(486006)(6246003)(53546011)(476003)(478600001)(7416002)(6506007)(25786009)(6436002)(5660300002)(55016002)(316002)(54906003)(86362001)(2906002)(6116002)(446003)(11346002)(3846002)(9686003)(6916009)(14454004)(81156014)(66946007)(76116006)(66476007)(256004)(64756008)(33656002)(8936002)(81166006)(66556008)(14444005)(8676002)(7736002)(74316002)(305945005)(99286004)(76176011)(102836004)(7696005)(52536014)(26005)(186003)(4326008)(66066001)(71200400001)(71190400001)(4001150100001)(66446008);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR04MB6495;
- H:VE1PR04MB6638.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 9xBVZnQXUVUzESBrTV84z11xI5lurhaU3DOIKaNIx2h0+3Gn5SycRVyUJ9A41p9WI45DHF0H3YIEY79pq2B0Sp6JgxXFCvDgsD57z8lqBitnYeKTAZg9y9pgaeUBSq8Nq9Yl+U51oQBFAX2ZTh8k3S53UqeCjE51pxwSdcPgEgRek8iAuDiVmcUeKkgNHXIFhO0CmkVOWrR8P6NokBVB4banAgsR0PgS6Mgxpe82RtH3cT+n+2NAwhqzkCqPcRh8spGCahxIrSdjx1H9mUIJlJS+tnztZ+S3WPlbq1rKXRQBkkA1cUZXXukbfk5wgC2hIv258KMS9f8r4nJ5XWB3+HnCw81UHaWgGf7t9LL6rLmzGjqch+ko02F2Ll+dG/bMGAO0Gicx8U0ofGJsYYntPxbzb6kAQKaKz0NPOB9uD1c=
+ id 1iJven-00046O-SF
+ for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 08:24:47 +0000
+Received: by mail-ed1-x543.google.com with SMTP id j8so2349602eds.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 14 Oct 2019 01:24:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
+ h=sender:date:from:to:cc:subject:message-id:mail-followup-to
+ :references:mime-version:content-disposition
+ :content-transfer-encoding:in-reply-to:user-agent;
+ bh=j6O20ev7OAGuxzIa80e5vDAXtGyW2LTnu77UaffpJCE=;
+ b=Y4BN43Jpv0jfoCynOGvEDGKo3T6kpHMLPm53oR14RzhJHTd72+n1dQ0OGJ9I2DF8nB
+ nUKRKB13dTXGGk1RRtEVF+rvE18LGdvkNZX0pMhlUVzriDowDxd348l4hTZUMEyOeGgL
+ s6JbWIbh6q5eB8PT/rnkOECWPPfoI++bA31+c=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :mail-followup-to:references:mime-version:content-disposition
+ :content-transfer-encoding:in-reply-to:user-agent;
+ bh=j6O20ev7OAGuxzIa80e5vDAXtGyW2LTnu77UaffpJCE=;
+ b=ThcD9lQDo9W6g/pfO+sghTK6biE+6vxSbcDACGBK01hWwPFOaskgyfRbqvtcXL+kwM
+ bscg7N+VFyHVSMcnvvmExkpkmHigNJftL06pzb0A6lgHsuBbDPloKKFsZpnkmzrEAnjV
+ J6xWLxuk5JI9oxhleTXmWhoXwLEXzsbIBYuzKPVVP3FWqJ/JgF4yB5One4xYwe+idcPX
+ LTe+mfdH0zYStO1t4Ke8PXrcivyNwLNnIO8atOIOqtD/ub5e798Ewjqrkd74N5i6zGt7
+ I+pBUO9pUHNWMUe9NGhVT84CwcKWmMbkc21xbgYWgfHfFNfSDXq6zeHSQYLlv338XjuV
+ vTAw==
+X-Gm-Message-State: APjAAAX5RmWsJROetZW1gkrgvKATE9r8tKbsgRLIU4a/aTSivgW5z6FL
+ +tu5NhwbI1C6MG4No4mFtSMxTQ==
+X-Google-Smtp-Source: APXvYqwXYHlLsNH8IZ0yHVKT+WNEtOwUbzIAoI04sPQqxR0KrJVKvhaWJIh+WyCfN2js9VOglylnJA==
+X-Received: by 2002:a17:906:3b10:: with SMTP id
+ g16mr27774667ejf.34.1571041483656; 
+ Mon, 14 Oct 2019 01:24:43 -0700 (PDT)
+Received: from phenom.ffwll.local (212-51-149-96.fiber7.init7.net.
+ [212.51.149.96])
+ by smtp.gmail.com with ESMTPSA id k18sm2218817ejc.16.2019.10.14.01.24.42
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 14 Oct 2019 01:24:42 -0700 (PDT)
+Date: Mon, 14 Oct 2019 10:24:33 +0200
+From: Daniel Vetter <daniel@ffwll.ch>
+To: Ville =?iso-8859-1?Q?Syrj=E4l=E4?= <ville.syrjala@linux.intel.com>
+Subject: Re: [PATCH] drm: add fb max width/height fields to drm_mode_config
+Message-ID: <20191014082433.GA11828@phenom.ffwll.local>
+Mail-Followup-To: Ville =?iso-8859-1?Q?Syrj=E4l=E4?=
+ <ville.syrjala@linux.intel.com>, 
+ Rob Clark <robdclark@gmail.com>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Sean Paul <seanpaul@chromium.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+References: <1569634131-13875-1-git-send-email-jsanka@codeaurora.org>
+ <1569634131-13875-2-git-send-email-jsanka@codeaurora.org>
+ <20190930103931.GZ1208@intel.com>
+ <f6d3c2b6ad897ce8b2fdcaab44993eed@codeaurora.org>
+ <20191002134535.GU1208@intel.com>
+ <CAF6AEGtETiKLggNEKm+YyH8PMzpXpp119PjV2f6jdbU4UYxiAQ@mail.gmail.com>
+ <20191003102718.GC1208@intel.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2a226c7a-1c48-406b-8d08-08d7507df4d7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Oct 2019 08:10:20.3686 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: hQJrwwCzbKgOk/4HAE7m5/JS6/Q5rUo4f9TlAijAqAgCsbAI6tSsOWRUY7c7oOkBLypiW+KsrrXL5A0tUCs8gg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6495
+Content-Disposition: inline
+In-Reply-To: <20191003102718.GC1208@intel.com>
+X-Operating-System: Linux phenom 5.2.0-2-amd64 
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_011025_457327_39F31BAC 
-X-CRM114-Status: GOOD (  14.23  )
+X-CRM114-CacheID: sfid-20191014_012445_919080_D228C93A 
+X-CRM114-Status: GOOD (  31.86  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.7.40 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -122,50 +114,147 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
- "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "J.Lambrecht@TELEVIC.com" <J.Lambrecht@televic.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, Rob Clark <robdclark@gmail.com>,
+ Sean Paul <seanpaul@chromium.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-10-14 Vinod Koul <vkoul@kernel.org> wrote:
-> On 14-10-19, 13:32, Vinod Koul wrote:
-> > On 24-09-19, 09:49, Robin Gong wrote:
-> > > Illegal memory will be touch if SDMA_SCRIPT_ADDRS_ARRAY_SIZE_V3
-> > > (41) exceed the size of structure sdma_script_start_addrs(40), thus
-> > > cause memory corrupt such as slob block header so that kernel trap
-> > > into while() loop forever in slob_free(). Please refer to below code
-> > > piece in imx-sdma.c:
-> > > for (i = 0; i < sdma->script_number; i++)
-> > > 	if (addr_arr[i] > 0)
-> > > 		saddr_arr[i] = addr_arr[i]; /* memory corrupt here */ That issue
-> > > was brought by commit a572460be9cf ("dmaengine: imx-sdma: Add
-> > > support for version 3 firmware") because
-> > > SDMA_SCRIPT_ADDRS_ARRAY_SIZE_V3
-> > > (38->41 3 scripts added) not align with script number added in
-> > > sdma_script_start_addrs(2 scripts).
-> >
-> > Applied, thanks
-> 
-> And after applying I noticed the patch title is not apt. The patch title should
-> reflect the change and not the cause or result.
-> 
-> So I have modified the title to: "dmaengine: imx-sdma: fix size check for sdma
-> script_number"
-Yes, You are right, thanks Vinod.
-> 
-> Thanks
-> --
-> ~Vinod
+On Thu, Oct 03, 2019 at 01:27:18PM +0300, Ville Syrj=E4l=E4 wrote:
+> On Wed, Oct 02, 2019 at 03:55:10PM -0400, Rob Clark wrote:
+> > On Wed, Oct 2, 2019 at 9:45 AM Ville Syrj=E4l=E4
+> > <ville.syrjala@linux.intel.com> wrote:
+> > >
+> > > On Tue, Oct 01, 2019 at 02:20:55PM -0700, Jeykumar Sankaran wrote:
+> > > > On 2019-09-30 03:39, Ville Syrj=E4l=E4 wrote:
+> > > > > On Fri, Sep 27, 2019 at 06:28:51PM -0700, Jeykumar Sankaran wrote:
+> > > > >> The mode_config max width/height values determine the maximum
+> > > > >> resolution the pixel reader can handle.
+> > > > >
+> > > > > Not according to the docs I "fixed" a while ago.
+> > > > >
+> > > > >> But the same values are
+> > > > >> used to restrict the size of the framebuffer creation. Hardware's
+> > > > >> with scaling blocks can operate on framebuffers larger/smaller t=
+han
+> > > > >> that of the pixel reader resolutions by scaling them down/up bef=
+ore
+> > > > >> rendering.
+> > > > >>
+> > > > >> This changes adds a separate framebuffer max width/height fields
+> > > > >> in drm_mode_config to allow vendors to set if they are different
+> > > > >> than that of the default max resolution values.
+> > > > >
+> > > > > If you're going to change the meaning of the old values you need
+> > > > > to fix the drivers too.
+> > > > >
+> > > > > Personally I don't see too much point in this since you most like=
+ly
+> > > > > want to validate all the other timings as well, and so likely need
+> > > > > some kind of mode_valid implementation anyway. Hence to validate
+> > > > > modes there's not much benefit of having global min/max values.
+> > > > >
+> > > > https://patchwork.kernel.org/patch/10467155/
+> > > >
+> > > > I believe you are referring to this patch.
+> > > >
+> > > > I am primarily interested in the scaling scenario mentioned here. M=
+SM
+> > > > and a few other hardware have scaling block that are used both ways:
+> > > >
+> > > > 1) Where FB limits are larger than the display limits. Scalar block=
+s are
+> > > > used to
+> > > >     downscale the framebuffers and render within display limits.
+> > > >
+> > > > In this scenario, with your patch, are you suggesting the drivers
+> > > > maintain the
+> > > > display limits locally and use those values in fill_modes() /
+> > > > mode_valid() to filter
+> > > > out invalid modes explicitly instead of mode_config.max_width/heigh=
+t?
+> > > >
+> > > > 2) Where FB limits are smaller than display limits. Enforced for
+> > > > performance reasons on low tier hardware.
+> > > > It reduces the fetch bandwidth and uses post blending scalar block =
+to
+> > > > scale up the pixel stream
+> > > > to match the display resolution.
+> > >
+> > > As Daniel mentioned in that discussion your typical userspace
+> > > assumes that it can use a single unscaled framebuffer with any
+> > > advertised mode. Hence I believe limiting the mode list based
+> > > on the max framebuffer size is pretty much required unless
+> > > you want to break existing userspace.
+> > >
+> > > In i915 I went a bit further than that recently and now we
+> > > filter the mode list based on the maximum plane size [1]
+> > > (which can be less than the max fb size and less than the
+> > > maximum crtc dimensions). And again that's because userspace
+> > > assumes that it can just use a single unscaled fullscreen
+> > > plane to cover the entire crtc.
+> > >
+> > > These assumption are also carved into the legacy setcrtc uapi
+> > > where you can't even specify multiple framebuffers. In theory
+> > > a driver could internally use multiple planes to overcome some
+> > > of the limitations, but in i915 at least we don't.
+> > >
+> > > [1] https://cgit.freedesktop.org/drm/drm-intel/commit/?id=3D2d20411e2=
+5a3bf3d2914a2219f47ed48dc57aed5
+> > >
+> > > >
+> > > > Any suggestions on how this topology can be handled with a single s=
+et of
+> > > > max/min values?
+> > > >
+> > >
+> > > I think a safe way to relax these rules would be to either:
+> > > a) Add a client cap by which userspace can inform the kernel
+> > >    it understands there are more complicated limits at play
+> > >    and thus can't assume that everything will just work
+
++1 on this approach. We already have that for 3d modes, another client cap
+for "modes bigger than max fb" sounds like a good idea.
+
+For "max plane size" I'm leaning towards drivers should virtualize at
+least the primary plane if that's needed to scan out the biggest
+resolution. Since there's way too much userspace which will simply not
+work otherwise (iirc that's what a bunch of dual-pipe dsi drivers did).
+
+> > > b) Maybe we could just tie that in with the atomic cap since
+> > >    atomic clients are pretty much required to do the TEST_ONLY
+> > >    dance anyway, so one might hope they have a working fallback
+> > >    strategy. Though I suspect eg. the modesetting ddx wouldn't
+> > >    like this. But we no longer allow atomic with X anyway so
+> > >    that partcular argument may not hold much weight anymore.
+> > =
+
+> > What was the conclusion of the hack to not expose atomic to
+> > modesetting ddx, due to the brokenness of it's atomic use?  I guess
+> > that could also make the modesetting case go away..
+> =
+
+> I thought it went in? Maybe I'm mistaken.
+
+I did:
+
+commit 26b1d3b527e7bf3e24b814d617866ac5199ce68d
+Author: Daniel Vetter <daniel.vetter@ffwll.ch>
+Date:   Thu Sep 5 20:53:18 2019 +0200
+
+    drm/atomic: Take the atomic toys away from X
+
+Cheers, Daniel
+-- =
+
+Daniel Vetter
+Software Engineer, Intel Corporation
+http://blog.ffwll.ch
 
 _______________________________________________
 linux-arm-kernel mailing list
