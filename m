@@ -2,65 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43F28D6832
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 19:17:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03A5FD6837
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 19:18:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VuV3Adtr9Z4AOPgjOz8iFS7jtN5Zzx/pB1h1HfMacm8=; b=UpFni5RNe9usuY
-	f9BeEODGar1uMarY8VXAr1bWsgfu4enoPwiUiF0uiM5o05EUcUXgmn1+J4p/dirQBo75v5HWXqMMT
-	OVOoqP7jPIBDcf69ShLSHIXHgu0gkhhgJY7+hiU+hPr8XYi+LVCPHQevx7qJwMqjb4ycbOA/FdVZ9
-	L+IzVk82jldlCjZmWp3QOg3D5teglZgZkb8XwOQeAmeynjIhW23kqMIm9vRf8ZmSEjU9U40cCZfdU
-	GoOqhJfi3cI1G5xwFMfMZKEispZ50EYHOemGvHigMsmYkpR6ECgy7sL5rvSqlA/FV5CHZV7mCEa5q
-	Cnl/CH0AwSIfURxCTSzg==;
+	List-Owner; bh=dR0FrSE7VtCD14BJpTu6gL0vtar+DHlWsEu95uTO9Bw=; b=aNVoMwFJLPC5Vj
+	MWaRKwr8PAHVuHS/TiuO7NK8R4UGOvo/1+iXNKZ6Sv4U1VhZACTL8l0LohnAexGPoeisuJNEbCcf7
+	GwhnDSpXdJls+vLTJ9KiKYm1SkmGWYtNT/dx7idfwBxf2cMp5ypS1zas354F6hygGddllqafkqn0W
+	7N1yEOTqOIJd0SOkQpeSgQFo+/j4BnY+ASX8bzSkTr5bG4RZ7O3cntLiOEQJq6O2G/8CE3qkJkIN8
+	P3Y0RDZ3ATtRCSRe9ReSwKCBoDRDPIld5AW6RzeOVEzu4VXJ0HVCVJQhC085YwIYVO+BW9HL+q6lp
+	zut2/rxr7BkXWVGqSvgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iK3yS-0001j8-5I; Mon, 14 Oct 2019 17:17:36 +0000
+	id 1iK3zO-0001zl-UE; Mon, 14 Oct 2019 17:18:34 +0000
 Received: from mail-oi1-f193.google.com ([209.85.167.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iK3yK-0001ik-CQ
- for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 17:17:29 +0000
-Received: by mail-oi1-f193.google.com with SMTP id w144so14370511oia.6
+ id 1iK3zF-0001zE-Pg
+ for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 17:18:27 +0000
+Received: by mail-oi1-f193.google.com with SMTP id k25so14352372oiw.13
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 14 Oct 2019 10:17:28 -0700 (PDT)
+ Mon, 14 Oct 2019 10:18:25 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=+b0QR5MF7DVCOWcWE3GZU/teF1mt8LRV+r1yfAkDfws=;
- b=ra+AF9zQh1j4y5qlcE7o2Dl4BM/UVMgSeqtOtRAsDGhs2nTn8HCQj68HpXTeaUdoe+
- vvfypgGbYgh8K4pgzlYX6VDR2umRZFwwpO1hR/Og2kjaHcNBqfZ+uwCVYAVYxk+yQ36+
- 8oMFfl12A4KsPd+VRhScJyhuLjpr4bEpYXFUcjbNPJ8aXtdVSiVRWk2faiKkyMnDrosn
- 2K+9ovpJ2QDCqhzJpezUkWCVBftcdpzH0I5rdj8JubLzX0rHHdVemQNY6/DxhnYOh49J
- oO2DrBvNCPWEd1mkeXYD7HvxKakm/korZPNwnAPFg+tNW2xGGM2d2RrcYQE7BBwGUcC/
- xGFA==
-X-Gm-Message-State: APjAAAX1iFNstY2x+yCFZMhwkSPzoT0QLKPzASNgtc0snTgamTAnrR9U
- x5Pspmgv4tcEKMBUlF+rlg==
-X-Google-Smtp-Source: APXvYqwYipBsJ3yRLmNQwqolPY8YtV2dTSLL7DuXyoSS8Rs5Z+4QzavFZ+eAv1k7qSeBpao+RCMibA==
-X-Received: by 2002:aca:d44e:: with SMTP id l75mr25527685oig.44.1571073447359; 
- Mon, 14 Oct 2019 10:17:27 -0700 (PDT)
+ bh=woBF22Zo3gSgEXnFBjrpZBAJnkenQ3ulqN1pWDAJfBI=;
+ b=T7If1aa2ZlLvRoi78B1wg4BoIY8ez8FhsTHLdNDJ7l3Vm2ll4oyiqkRM/IA9v+y3s2
+ RQwfNNDk7Gr1gyGiFTaMWekCLlUEYBbNqOu/45alBJY3PktziU6CYlMgXqF4bGLYYCLO
+ zaRN8vYoyQUQusPuNNcuNZ3KBj6hlvPtOEzLAKJ6cdUeDgBtpH6upu6NqEzMEU04bY4o
+ cAhTUhV0N7z9k0CaQAxHWb+Gx9wEN/fLVIPQRp0bgsUi4ul6jbotQ+GbBA79TNtZ2odv
+ I9m0iEWVQodHKdEGYQ2GlMr9mzX6E+d3N3UgtKzFtTl3vxvp5Nhz0j5v/gu7h3lGQYHr
+ 3M6w==
+X-Gm-Message-State: APjAAAWoGaRngRlHrro/LvRSxCh5saIn5CiJ6cXGsZjbAjkJembotxN7
+ UwZ2G2J7HjrXbAAmsPLAKA==
+X-Google-Smtp-Source: APXvYqyr/1vK3/H8M3hQGrLJtcS3+95Pa3jcICVvxpRAUDlmEdNi7d5eXvtMuY3v1sivDQUgc/Dw4w==
+X-Received: by 2002:aca:4994:: with SMTP id w142mr25900821oia.88.1571073505046; 
+ Mon, 14 Oct 2019 10:18:25 -0700 (PDT)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id n127sm5749817oia.0.2019.10.14.10.17.26
+ by smtp.gmail.com with ESMTPSA id v6sm5638740oie.4.2019.10.14.10.18.23
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 14 Oct 2019 10:17:26 -0700 (PDT)
-Date: Mon, 14 Oct 2019 12:17:26 -0500
+ Mon, 14 Oct 2019 10:18:24 -0700 (PDT)
+Date: Mon, 14 Oct 2019 12:18:22 -0500
 From: Rob Herring <robh@kernel.org>
 To: Benjamin Gaignard <benjamin.gaignard@st.com>
-Subject: Re: [PATCH v3] dt-bindings: media: Convert stm32 cec bindings to
+Subject: Re: [PATCH v3] dt-bindings: media: Convert stm32 dcmi bindings to
  json-schema
-Message-ID: <20191014171726.GA5625@bogus>
+Message-ID: <20191014171822.GA7421@bogus>
 References: <20191014092021.24020-1-benjamin.gaignard@st.com>
+ <20191014092021.24020-2-benjamin.gaignard@st.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191014092021.24020-1-benjamin.gaignard@st.com>
+In-Reply-To: <20191014092021.24020-2-benjamin.gaignard@st.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_101728_423208_7F50F0E8 
-X-CRM114-Status: GOOD (  10.62  )
+X-CRM114-CacheID: sfid-20191014_101825_827704_818EE6EA 
+X-CRM114-Status: GOOD (  10.32  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
@@ -68,6 +69,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [209.85.167.193 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.193 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
@@ -76,8 +79,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -102,24 +103,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 14 Oct 2019 11:20:20 +0200, Benjamin Gaignard wrote:
-> Convert the STM32 cec binding to DT schema format using json-schema
+On Mon, 14 Oct 2019 11:20:21 +0200, Benjamin Gaignard wrote:
+> Convert the STM32 dcmi binding to DT schema format using json-schema
 > 
 > Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
 > ---
 > changes in v3:
-> - use (GPL-2.0-only OR BSD-2-Clause) license
+> -use (GPL-2.0-only OR BSD-2-Clause) license
 > 
 > changes in v2:
 > - use BSD-2-Clause license
+> - remove useless dma descriptions
+> - fix clock property
 > - add additionalProperties: false
-> - remove pinctrl-names and pinctrl-[0-9]
+> - fix reset indentation
 > 
->  .../devicetree/bindings/media/st,stm32-cec.txt     | 19 --------
->  .../devicetree/bindings/media/st,stm32-cec.yaml    | 54 ++++++++++++++++++++++
->  2 files changed, 54 insertions(+), 19 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/media/st,stm32-cec.txt
->  create mode 100644 Documentation/devicetree/bindings/media/st,stm32-cec.yaml
+>  .../devicetree/bindings/media/st,stm32-dcmi.txt    | 45 -----------
+>  .../devicetree/bindings/media/st,stm32-dcmi.yaml   | 86 ++++++++++++++++++++++
+>  2 files changed, 86 insertions(+), 45 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/media/st,stm32-dcmi.txt
+>  create mode 100644 Documentation/devicetree/bindings/media/st,stm32-dcmi.yaml
 > 
 
 Applied, thanks.
