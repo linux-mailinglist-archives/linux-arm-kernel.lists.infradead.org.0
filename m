@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C74AD6398
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 15:17:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE610D63A6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 15:19:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CGp1ke84RpakttTXUDHOgEhdeUKDvyjVygPkXviTGjE=; b=MfDFQYkHgcnXew
-	aXL2QbeLhSuf0M8L0bHpa3CyF3JCcZv9lh9JXtn9EcYR4klbHbomIYxky7IpeNwxXbkjLFAEZWeGU
-	wF2D0uDtQmyCbD9lCsP85qRXev9mkMIMRYKh8ZzQJMY3/n0dEClBuCvuEyqiAIZO+bYfHKO1b/R66
-	MeYkU5JM6OXmxUvBh0JnGmmXxcyaRZUUc8Bj8ShhiYEPo/T7N+19rM8KShAjUzFXNZ+MuY1O75aJw
-	MThtrDeDrqlk9REduIiOVZdysjdEzfAEKFyZpQ0ugTRXR/p0a/ERnGv1MZVriSbCOer6DiNUKrdOL
-	nU5smm8v87CiLA/DVVPw==;
+	List-Owner; bh=66O7RPlzlIxn9xe5uudApJAOCGNcXcuiLV0ii2QERow=; b=gCVvPDqA6jFd8k
+	+Zk9QmTR/cfTIyYBQttotHjq+0Dzo+Y2k3+MB5ACgM2YC3AcTI/M0+ANy7GvwlfX4MIK2T+x/Ykpi
+	u1zCmoLkH7CsaXJFDrGKEoTAZzRl+9udJuBV+kVd5BzlbquWaml9QMfAzBaYkIBmEqwHv/iQGOxwI
+	GTgy6RvK8jpxpatoAEjT8xa+M2Gl8yUZ4+Voix/g84lGRNOI5d7LiOTD7nkx02XPUwrlKrnl9QzmE
+	feqth5etIUwjDvB45Z4XtFxbrKBV4xPt+aelNAeOj2fvnXeg1Q5J4j449QZNbGJoQJ8eJDwQ2rsL0
+	hkxOLxQxXopwI9vuD6Kw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iK0EG-0002MT-OX; Mon, 14 Oct 2019 13:17:40 +0000
+	id 1iK0GF-0002r9-A4; Mon, 14 Oct 2019 13:19:43 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iK0E7-0002M5-1D
- for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 13:17:32 +0000
+ id 1iK0G6-0002qc-OP
+ for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 13:19:35 +0000
 Received: from dragon (li937-157.members.linode.com [45.56.119.157])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D849E2089C;
- Mon, 14 Oct 2019 13:17:19 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 951792089C;
+ Mon, 14 Oct 2019 13:19:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571059050;
- bh=wZFd2MDNuLSRO61MvQmIIhnzwvRFGkA4X4MW5UdN0Rc=;
+ s=default; t=1571059174;
+ bh=MU22sQWtNGFLaZ7VVqgGHyuBGYvlxHzP0ot2WRE8360=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ftXr9mSljbN7pe2DI95fWgfux9IioFn7rCw2JUvOBdNO6O7z2spqatskV3l0SPyDU
- P3Fz70jEFDmxTPOJkMO5C79bWq0HJAh3mUV0QNqVeyl73eCDlsckSYKlzQtsgle8oc
- ErB3UXWSsibDoLQXS5OGFyy83XbCgCHtKs9pZmTo=
-Date: Mon, 14 Oct 2019 21:16:59 +0800
+ b=x1IPsy689yDs6DOJ+UDQFYiFEPtUfEEg2ylZHz+HN23IhQD8lS5HaltQMyR8fv3k9
+ SFLdKbJ6UcFj0XnYJ7Yb7XMhNYLboGNr+mleC2gMYP2WTyxpqrVXMSFYKGihBc/Fbd
+ ZCd61AiUskpO1DDYa6I4420bsg6mkBgsWGKvKESk=
+Date: Mon, 14 Oct 2019 21:18:52 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH V2 1/3] arm64: dts: imx8mm-evk: Adjust i2c nodes
- following alphabetical sort
-Message-ID: <20191014131654.GW12262@dragon>
-References: <1570497955-19481-1-git-send-email-Anson.Huang@nxp.com>
+To: Yinbo Zhu <yinbo.zhu@nxp.com>
+Subject: Re: [PATCH v3] arm64: dts: enable otg mode for dwc3 usb ip on
+ layerscape
+Message-ID: <20191014131847.GX12262@dragon>
+References: <20191008025642.19519-1-yinbo.zhu@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1570497955-19481-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <20191008025642.19519-1-yinbo.zhu@nxp.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_061731_096168_D2BE0EF6 
-X-CRM114-Status: UNSURE (   7.33  )
+X-CRM114-CacheID: sfid-20191014_061934_813508_6D658444 
+X-CRM114-Status: UNSURE (   9.48  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -78,23 +78,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, ping.bai@nxp.com,
- daniel.baluta@nxp.com, s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, Linux-imx@nxp.com, kernel@pengutronix.de,
- leonard.crestez@nxp.com, festevam@gmail.com,
- linux-arm-kernel@lists.infradead.org, jun.li@nxp.com
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, xiaobo.xie@nxp.com, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, jiafei.pan@nxp.com,
+ Ran Wang <ran.wang_1@nxp.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 08, 2019 at 09:25:53AM +0800, Anson Huang wrote:
-> The iomuxc node is being put at end of file because of its huge
-> pinctrl data. I2C devices should be placed in alphabetical sort.
+On Tue, Oct 08, 2019 at 10:56:42AM +0800, Yinbo Zhu wrote:
+> layerscape otg function should be supported HNP SRP and ADP protocol
+> accroing to rm doc, but dwc3 code not realize it and use id pin to
+> detect who is host or device(0 is host 1 is device) this patch is to
+> enable OTG mode on ls1028ardb ls1088ardb and ls1046ardb in dts
 > 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> Signed-off-by: Yinbo Zhu <yinbo.zhu@nxp.com>
 
-Applied all, thanks.
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
