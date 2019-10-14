@@ -2,55 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 938FCD5B8A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 08:41:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5517ED5B9B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 08:49:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8IpmsuXZBwjBfPG4i2NXhyC6ENnBAeoi6UsDq718yVM=; b=iMh5wuT1nCWWio
-	U+7f17ayPWqNnN01kQJFlvB2ONSp0v2cdu0MVMMlVIgdW1FBTOVuIceqKEaZs5Va7NhoWFbtrz4VJ
-	DI+pE18fJ6acMckkDqVp7hq4dTDikppBuzHOIdFTyiY9u7mlltYpFQLmwbwRTpoz8OO+0r+HRdqB0
-	WB9GSxk3JXQ15mHqcTWPhSHd8iRAc3qCEtuwvUKkpXyQ5OCx3+ZFVqzVKIfzC10b7zf7RhjiJd4DB
-	7JvJWTYNp748JV/qwltn8d7RHXEIvCmJm2NmBBtZhn1abf7m+8yM4boGm8+ma5GsoKfqjsRd5hrb2
-	VAihCGh3EYtNLrJ9ovnA==;
+	List-Owner; bh=tiXl4VjWidvmUO1tXd9dvbGLhqJRv3o2NDEPhMpjg4s=; b=ss1pmuseyLcPQa
+	7yIkI4FmUcuUCduiQlCXfcrmVviH+CYJBkLgrRLByMXyD16HZezlKChzMEeGR5N1rIPMV6NjlzVM8
+	6pAbGs7/KxTPugNZL00Sx/1NiDd2mFQG8s+aqAqhLZEej7Ib/qjMN2LLuKQLda3LSlv2sUr9MWyWW
+	wWsMQfT6fQH0q6yZ3sJSzR1bz5ZFCERq6iK4syUpmXEUCMiRZUhOiLC0lTFWDhukDsROdl6vAnRf+
+	HMOPActXgyyLaDLEHGuq5W4DCMqHOu67t9Vqeiw4p77+ZmbqemkFGQhg1X21HpCZqOu7pFX7VMExC
+	kmfl344aufA/+2cUlE7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJu2z-0000Sh-RE; Mon, 14 Oct 2019 06:41:37 +0000
+	id 1iJuAt-0003m9-MG; Mon, 14 Oct 2019 06:49:47 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJu2J-0000Ds-JK; Mon, 14 Oct 2019 06:40:58 +0000
-X-UUID: 3545ca067c8347f68fb7c45d408e7899-20191013
-X-UUID: 3545ca067c8347f68fb7c45d408e7899-20191013
+ id 1iJuAj-0003ke-Lm; Mon, 14 Oct 2019 06:49:39 +0000
+X-UUID: b250f06a762b442fa0d2b76fcc406505-20191013
+X-UUID: b250f06a762b442fa0d2b76fcc406505-20191013
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <yong.wu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1981822719; Sun, 13 Oct 2019 22:40:09 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 13 Oct 2019 23:39:21 -0700
+ with ESMTP id 948367882; Sun, 13 Oct 2019 22:48:50 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 13 Oct 2019 23:39:28 -0700
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 14 Oct 2019 14:39:19 +0800
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 14 Oct 2019 14:39:27 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 14 Oct 2019 14:39:19 +0800
+ Transport; Mon, 14 Oct 2019 14:39:26 +0800
 From: Yong Wu <yong.wu@mediatek.com>
 To: Matthias Brugger <matthias.bgg@gmail.com>, Joerg Roedel <joro@8bytes.org>, 
  Will Deacon <will.deacon@arm.com>
-Subject: [PATCH v3 6/7] iommu/mediatek: Use writel for TLB range invalidation
-Date: Mon, 14 Oct 2019 14:38:20 +0800
-Message-ID: <1571035101-4213-7-git-send-email-yong.wu@mediatek.com>
+Subject: [PATCH v3 7/7] iommu/mediatek: Reduce the tlb flush timeout value
+Date: Mon, 14 Oct 2019 14:38:21 +0800
+Message-ID: <1571035101-4213-8-git-send-email-yong.wu@mediatek.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1571035101-4213-1-git-send-email-yong.wu@mediatek.com>
 References: <1571035101-4213-1-git-send-email-yong.wu@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 48748A048541F6C83B435A62F409553627F6DD0F6DA3E74D7B897F19B48032702000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191013_234055_661641_CB205327 
-X-CRM114-Status: GOOD (  11.07  )
+X-CRM114-CacheID: sfid-20191013_234937_717609_28AD965B 
+X-CRM114-Status: GOOD (  11.28  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -85,30 +86,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use writel for the register F_MMU_INV_RANGE which is for triggering the
-HW work. We expect all the setting(iova_start/iova_end...) have already
-been finished before F_MMU_INV_RANGE.
+Reduce the tlb timeout value from 100000us to 1000us. the original value
+is so long that affect the multimedia performance. This is only a minor
+improvement rather than fixing a issue.
 
-Signed-off-by: Anan.Sun <anan.sun@mediatek.com>
 Signed-off-by: Yong Wu <yong.wu@mediatek.com>
 ---
- drivers/iommu/mtk_iommu.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ drivers/iommu/mtk_iommu.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-index dbbacc3..d285457 100644
+index d285457..c9d49af 100644
 --- a/drivers/iommu/mtk_iommu.c
 +++ b/drivers/iommu/mtk_iommu.c
-@@ -187,8 +187,7 @@ static void mtk_iommu_tlb_flush_range_sync(unsigned long iova, size_t size,
- 		writel_relaxed(iova, data->base + REG_MMU_INVLD_START_A);
- 		writel_relaxed(iova + size - 1,
- 			       data->base + REG_MMU_INVLD_END_A);
--		writel_relaxed(F_MMU_INV_RANGE,
--			       data->base + REG_MMU_INVALIDATE);
-+		writel(F_MMU_INV_RANGE, data->base + REG_MMU_INVALIDATE);
+@@ -191,7 +191,7 @@ static void mtk_iommu_tlb_flush_range_sync(unsigned long iova, size_t size,
  
  		/* tlb sync */
  		ret = readl_poll_timeout_atomic(data->base + REG_MMU_CPE_DONE,
+-						tmp, tmp != 0, 10, 100000);
++						tmp, tmp != 0, 10, 1000);
+ 		if (ret) {
+ 			dev_warn(data->dev,
+ 				 "Partial TLB flush timed out, falling back to full flush\n");
 -- 
 1.9.1
 
