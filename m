@@ -2,55 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4AAED6733
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 18:23:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D33A0D6738
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 18:24:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=q23df0oSfIWVe7U0CMPI/L5rnl4+oeOPZpzOIYKxoZc=; b=aRMSSh9c8aUilG
-	UkJ4jZctYez0p0ey3x84II5URpUgIGR2oSSO9K14jOGERA71/7VCohqz9hixiU/sNV0JWFE2bCPAA
-	tpiudj/EPTSYxDdsVVIRh/tNH4SurDrw3OtUZxGqC+gXeBzfgsDO6vQ31Wlqw/eZdA7cc77+zzVvS
-	VvMrvlWVaOosu6aJL6RaPdBSDheJ9OCfF1KndopMTg5blxY2lFCrHBxibCl9UPfuf43ogUGBkBpZm
-	yBN+z14eCkwTAqR/k3rb29J89wKrOL0h3OdNhxWMe90NfMnmL+rvhsZM5rJt64INL0EczaQ8cZHz/
-	wWaLuRZ4zcpEj6XAJ0Ww==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XMUF/78/mxBIVQoKO0RYb3dZNE5mRQ2IaJduOSuPEoc=; b=QF6EEQytSNlBIR
+	NbxcVKbgVvDW6lJtpOOz1RUOmO7TD9eTiWwQ8AUzj/QGZ/IhEwsk53p8nNDqa62HB2nIwplLngjrD
+	vHeULfqGbwYmco+46HAVn1FLSzUT0LQR9Cpot+hY344ci/qlMHlLZHctsL0NxZyi6gcNyi3vfCNu1
+	mdr4jWbZDAdhieMur+pNiD1bbznG06cKcB+ZWptkYmoivZZiaFG6xyWd3JCl8F759tFDUxM4xVPKv
+	XNKKl7I4QPVd6MGgyoiozzm01vd3OpQf6LHy5TTkZ1oOxrsmS2JeOWKOV3DeP2p4GM5/YloOJWRgU
+	/EJn8aFsk0Fa8w6wm8pQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iK38I-0005IP-4g; Mon, 14 Oct 2019 16:23:42 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1iK38d-0005aj-0q; Mon, 14 Oct 2019 16:24:03 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iK382-0005Gw-3J; Mon, 14 Oct 2019 16:23:30 +0000
-X-UUID: bcc38493f70642568ff5ae4ef0bbe282-20191014
-X-UUID: bcc38493f70642568ff5ae4ef0bbe282-20191014
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <walter-zh.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 126172491; Mon, 14 Oct 2019 08:23:19 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 14 Oct 2019 09:23:18 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 15 Oct 2019 00:23:17 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Tue, 15 Oct 2019 00:23:15 +0800
-From: Walter Wu <walter-zh.wu@mediatek.com>
-To: Andrey Ryabinin <aryabinin@virtuozzo.com>, Alexander Potapenko
- <glider@google.com>, Dmitry Vyukov <dvyukov@google.com>, Matthias Brugger
- <matthias.bgg@gmail.com>
-Subject: [PATCH v2 1/2] kasan: detect negative size in memory operation
- function
-Date: Tue, 15 Oct 2019 00:23:16 +0800
-Message-ID: <20191014162316.28314-1-walter-zh.wu@mediatek.com>
-X-Mailer: git-send-email 2.18.0
+ id 1iK38K-0005Na-Cp
+ for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 16:23:46 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iK38D-0000Uw-2f; Mon, 14 Oct 2019 18:23:37 +0200
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iK38B-0005mj-6S; Mon, 14 Oct 2019 18:23:35 +0200
+Date: Mon, 14 Oct 2019 18:23:35 +0200
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: megous@megous.com
+Subject: Re: [PATCH] pwm: sun4i: Fix incorrect calculation of duty_cycle/period
+Message-ID: <20191014162335.xgjy6kij2ippjc7h@pengutronix.de>
+References: <20191014135303.2944058-1-megous@megous.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20191014135303.2944058-1-megous@megous.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_092326_144084_CEA802AE 
-X-CRM114-Status: GOOD (  13.38  )
+X-CRM114-CacheID: sfid-20191014_092344_479452_B67033B5 
+X-CRM114-Status: GOOD (  19.50  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -58,8 +56,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,198 +67,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Walter Wu <walter-zh.wu@mediatek.com>, wsd_upstream@mediatek.com,
- linux-kernel@vger.kernel.org, kasan-dev@googlegroups.com, linux-mm@kvack.org,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "open list:PWM SUBSYSTEM" <linux-pwm@vger.kernel.org>,
+ open list <linux-kernel@vger.kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Thierry Reding <thierry.reding@gmail.com>,
+ kernel@pengutronix.de, "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-KASAN missed detecting size is negative numbers in memset(), memcpy(),
-and memmove(), it will cause out-of-bounds bug, so needs to be detected
-by KASAN.
+On Mon, Oct 14, 2019 at 03:53:03PM +0200, megous@megous.com wrote:
+> From: Ondrej Jirman <megous@megous.com>
+> =
 
-If size is negative numbers, then it has three reasons to be
-defined as heap-out-of-bounds bug type.
-1) Casting negative numbers to size_t would indeed turn up as
-   a large size_t and its value will be larger than ULONG_MAX/2,
-   so that this can qualify as out-of-bounds.
-2) If KASAN has new bug type and user-space passes negative size,
-   then there are duplicate reports. So don't produce new bug type
-   in order to prevent duplicate reports by some systems (e.g. syzbot)
-   to report the same bug twice.
-3) When size is negative numbers, it may be passed from user-space.
-   So we always print heap-out-of-bounds in order to prevent that
-   kernel-space and user-space have the same bug but have duplicate
-   reports.
+> Since 5.4-rc1, pwm_apply_state calls ->get_state after ->apply
+> if available, and this revealed an issue with integer precision
+> when calculating duty_cycle and period for the currently set
+> state in ->get_state callback.
+> =
 
-KASAN report:
+> This issue manifested in broken backlight on several Allwinner
+> based devices.
+> =
 
- BUG: KASAN: heap-out-of-bounds in kmalloc_memmove_invalid_size+0x70/0xa0
- Read of size 18446744073709551608 at addr ffffff8069660904 by task cat/72
+> Previously this worked, because ->apply updated the passed state
+> directly.
+> =
 
- CPU: 2 PID: 72 Comm: cat Not tainted 5.4.0-rc1-next-20191004ajb-00001-gdb8af2f372b2-dirty #1
- Hardware name: linux,dummy-virt (DT)
- Call trace:
-  dump_backtrace+0x0/0x288
-  show_stack+0x14/0x20
-  dump_stack+0x10c/0x164
-  print_address_description.isra.9+0x68/0x378
-  __kasan_report+0x164/0x1a0
-  kasan_report+0xc/0x18
-  check_memory_region+0x174/0x1d0
-  memmove+0x34/0x88
-  kmalloc_memmove_invalid_size+0x70/0xa0
+> Fixes: deb9c462f4e53 ("pwm: sun4i: Don't update the state for the caller =
+of pwm_apply_state")
+> Signed-off-by: Ondrej Jirman <megous@megous.com>
+> ---
+>  drivers/pwm/pwm-sun4i.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+> =
 
-[1] https://bugzilla.kernel.org/show_bug.cgi?id=199341
+> diff --git a/drivers/pwm/pwm-sun4i.c b/drivers/pwm/pwm-sun4i.c
+> index 6f5840a1a82d..05273725a9ff 100644
+> --- a/drivers/pwm/pwm-sun4i.c
+> +++ b/drivers/pwm/pwm-sun4i.c
+> @@ -137,10 +137,10 @@ static void sun4i_pwm_get_state(struct pwm_chip *ch=
+ip,
+>  =
 
-Changes in v2:
-Fix the indentation bug, thanks for the reminder Matthew.
+>  	val =3D sun4i_pwm_readl(sun4i_pwm, PWM_CH_PRD(pwm->hwpwm));
+>  =
 
-Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
-Reported -by: Dmitry Vyukov <dvyukov@google.com>
-Suggested-by: Dmitry Vyukov <dvyukov@google.com>
-Reviewed-by: Dmitry Vyukov <dvyukov@google.com>
----
- mm/kasan/common.c         | 13 ++++++++-----
- mm/kasan/generic.c        |  5 +++++
- mm/kasan/generic_report.c | 18 ++++++++++++++++++
- mm/kasan/tags.c           |  5 +++++
- mm/kasan/tags_report.c    | 18 ++++++++++++++++++
- 5 files changed, 54 insertions(+), 5 deletions(-)
+> -	tmp =3D prescaler * NSEC_PER_SEC * PWM_REG_DTY(val);
+> +	tmp =3D (u64)prescaler * NSEC_PER_SEC * PWM_REG_DTY(val);
+>  	state->duty_cycle =3D DIV_ROUND_CLOSEST_ULL(tmp, clk_rate);
+>  =
 
-diff --git a/mm/kasan/common.c b/mm/kasan/common.c
-index 6814d6d6a023..16a370023425 100644
---- a/mm/kasan/common.c
-+++ b/mm/kasan/common.c
-@@ -102,7 +102,8 @@ EXPORT_SYMBOL(__kasan_check_write);
- #undef memset
- void *memset(void *addr, int c, size_t len)
- {
--	check_memory_region((unsigned long)addr, len, true, _RET_IP_);
-+	if (!check_memory_region((unsigned long)addr, len, true, _RET_IP_))
-+		return NULL;
- 
- 	return __memset(addr, c, len);
- }
-@@ -110,8 +111,9 @@ void *memset(void *addr, int c, size_t len)
- #undef memmove
- void *memmove(void *dest, const void *src, size_t len)
- {
--	check_memory_region((unsigned long)src, len, false, _RET_IP_);
--	check_memory_region((unsigned long)dest, len, true, _RET_IP_);
-+	if (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
-+	    !check_memory_region((unsigned long)dest, len, true, _RET_IP_))
-+		return NULL;
- 
- 	return __memmove(dest, src, len);
- }
-@@ -119,8 +121,9 @@ void *memmove(void *dest, const void *src, size_t len)
- #undef memcpy
- void *memcpy(void *dest, const void *src, size_t len)
- {
--	check_memory_region((unsigned long)src, len, false, _RET_IP_);
--	check_memory_region((unsigned long)dest, len, true, _RET_IP_);
-+	if (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
-+	    !check_memory_region((unsigned long)dest, len, true, _RET_IP_))
-+		return NULL;
- 
- 	return __memcpy(dest, src, len);
- }
-diff --git a/mm/kasan/generic.c b/mm/kasan/generic.c
-index 616f9dd82d12..02148a317d27 100644
---- a/mm/kasan/generic.c
-+++ b/mm/kasan/generic.c
-@@ -173,6 +173,11 @@ static __always_inline bool check_memory_region_inline(unsigned long addr,
- 	if (unlikely(size == 0))
- 		return true;
- 
-+	if (unlikely((long)size < 0)) {
-+		kasan_report(addr, size, write, ret_ip);
-+		return false;
-+	}
-+
- 	if (unlikely((void *)addr <
- 		kasan_shadow_to_mem((void *)KASAN_SHADOW_START))) {
- 		kasan_report(addr, size, write, ret_ip);
-diff --git a/mm/kasan/generic_report.c b/mm/kasan/generic_report.c
-index 36c645939bc9..52a92c7db697 100644
---- a/mm/kasan/generic_report.c
-+++ b/mm/kasan/generic_report.c
-@@ -107,6 +107,24 @@ static const char *get_wild_bug_type(struct kasan_access_info *info)
- 
- const char *get_bug_type(struct kasan_access_info *info)
- {
-+	/*
-+	 * If access_size is negative numbers, then it has three reasons
-+	 * to be defined as heap-out-of-bounds bug type.
-+	 * 1) Casting negative numbers to size_t would indeed turn up as
-+	 *    a large size_t and its value will be larger than ULONG_MAX/2,
-+	 *    so that this can qualify as out-of-bounds.
-+	 * 2) If KASAN has new bug type and user-space passes negative size,
-+	 *    then there are duplicate reports. So don't produce new bug type
-+	 *    in order to prevent duplicate reports by some systems
-+	 *    (e.g. syzbot) to report the same bug twice.
-+	 * 3) When size is negative numbers, it may be passed from user-space.
-+	 *    So we always print heap-out-of-bounds in order to prevent that
-+	 *    kernel-space and user-space have the same bug but have duplicate
-+	 *    reports.
-+	 */
-+	if ((long)info->access_size < 0)
-+		return "heap-out-of-bounds";
-+
- 	if (addr_has_shadow(info->access_addr))
- 		return get_shadow_bug_type(info);
- 	return get_wild_bug_type(info);
-diff --git a/mm/kasan/tags.c b/mm/kasan/tags.c
-index 0e987c9ca052..b829535a3ad7 100644
---- a/mm/kasan/tags.c
-+++ b/mm/kasan/tags.c
-@@ -86,6 +86,11 @@ bool check_memory_region(unsigned long addr, size_t size, bool write,
- 	if (unlikely(size == 0))
- 		return true;
- 
-+	if (unlikely((long)size < 0)) {
-+		kasan_report(addr, size, write, ret_ip);
-+		return false;
-+	}
-+
- 	tag = get_tag((const void *)addr);
- 
- 	/*
-diff --git a/mm/kasan/tags_report.c b/mm/kasan/tags_report.c
-index 969ae08f59d7..f7ae474aef3a 100644
---- a/mm/kasan/tags_report.c
-+++ b/mm/kasan/tags_report.c
-@@ -36,6 +36,24 @@
- 
- const char *get_bug_type(struct kasan_access_info *info)
- {
-+	/*
-+	 * If access_size is negative numbers, then it has three reasons
-+	 * to be defined as heap-out-of-bounds bug type.
-+	 * 1) Casting negative numbers to size_t would indeed turn up as
-+	 *    a large size_t and its value will be larger than ULONG_MAX/2,
-+	 *    so that this can qualify as out-of-bounds.
-+	 * 2) If KASAN has new bug type and user-space passes negative size,
-+	 *    then there are duplicate reports. So don't produce new bug type
-+	 *    in order to prevent duplicate reports by some systems
-+	 *    (e.g. syzbot) to report the same bug twice.
-+	 * 3) When size is negative numbers, it may be passed from user-space.
-+	 *    So we always print heap-out-of-bounds in order to prevent that
-+	 *    kernel-space and user-space have the same bug but have duplicate
-+	 *    reports.
-+	 */
-+	if ((long)info->access_size < 0)
-+		return "heap-out-of-bounds";
-+
- #ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
- 	struct kasan_alloc_meta *alloc_meta;
- 	struct kmem_cache *cache;
--- 
-2.18.0
+> -	tmp =3D prescaler * NSEC_PER_SEC * PWM_REG_PRD(val);
+> +	tmp =3D (u64)prescaler * NSEC_PER_SEC * PWM_REG_PRD(val);
+>  	state->period =3D DIV_ROUND_CLOSEST_ULL(tmp, clk_rate);
 
+The issue is real and the fix looks right. So take my
+
+Acked-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
+
+There are a few more issues though:
+
+- The dty value is calculated as (simplified):
+
+    dty =3D prd * state->duty_cycle / state->period
+
+  which gives suboptimal values in some cases.
+
+- The algorithm does 2 divisions (and one too early) instead of a single
+  one at the end, which is both ineffective and gives away precision.
+
+- the test in sun4i_pwm_apply about cstate.period !=3D state->period and
+  the same for duty is probably less useful now because it compares
+  requested values with actually implemented ones.
+
+- it's unclear what the "surprising values" are that sun4i_pwm_calculate
+  talks about in a comment. (And IMHO you should always round down.)
+
+- Having a comment describing the implemented duty_cycle and period
+  depending on how the registers are set would be helpful to understand
+  the implemented algorithm.
+
+- If there is a publically available datasheet adding a link to it in
+  the header of the driver would be great.
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
 
 _______________________________________________
 linux-arm-kernel mailing list
