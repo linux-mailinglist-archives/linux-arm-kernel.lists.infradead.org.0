@@ -2,69 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD335D5CE6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 09:58:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3415BD5CED
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 09:59:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=64pDARYcIe2F6knVvZa6IcnILOnLPfq+ZsLlseCj4XY=; b=cJ+1EiNTE9TZE9
-	8BVVN1ZOPy4dZcBIATmOqpOM3YwnlDkPlUOKZ33EijFLhAGmjFYMUo35jh5IlsTzORKP8++J7Lv//
-	aq91atGD6RKCkZSRVU10xigWOn9KPXw7Z1CiKLtotGVUQTvYWZn4/ZFNMf9c5239OgeWFMuMD393O
-	JnFBvlMzlXtM3qzKYp1EjG14mKzQ24NIRpTA2e7QJOpdYrIZWbxuSE6A5lI93Qzvc2xymOnsu+l5I
-	sq1cpkCqVrUnZ7zWqdqKS9+9YujeGD4woDX4Tdr1soLuNj7T/2xYhVVCG5JWd68RNBiPm3yuSISNq
-	JYFQsZ3CcsLdBjkQK4Zg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GOBwgokFGGeunY5vF/NLZM8fZiJ77B3mbnoPGxDlO2M=; b=u52xnm3GuRc6g4
+	u+Pl+Z15YkJH8pPfReWZ0QY3XZl+Yo2VtIVagd/S148GLzyomZdasRadTkTFnuKH1eSdTHcFQeE9d
+	BtR9f6MNLYlNyHNJSBXuiEp0iI15olMgQDil9RqLhKRnmYAKQKasyvudSi732HCJSmnyf2QSEiF79
+	E3edrEoqSVOCUIbKwW4/f2KmiUSXYlPr3UN/LU7Q8jrZOMTRvkI+RUnQhdOMpP0qAWDZx5k5yM1Ll
+	y5kYKq46hv9iIpK5WilQeh2rNfTsH7h2opovpgeGZKQSrhF7S6Ghlo/lp0JuID6IciSdaWBDbMRqf
+	jeGwI19fzy94J5FaUBOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJvFe-0001Tj-P1; Mon, 14 Oct 2019 07:58:46 +0000
+	id 1iJvFu-0001jx-Nu; Mon, 14 Oct 2019 07:59:02 +0000
 Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJvFK-0001R8-N7
- for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 07:58:28 +0000
-Received: by mail-pl1-x643.google.com with SMTP id u20so7665217plq.4
+ id 1iJvFN-0001SR-ER
+ for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 07:58:30 +0000
+Received: by mail-pl1-x643.google.com with SMTP id j11so7655891plk.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 14 Oct 2019 00:58:25 -0700 (PDT)
+ Mon, 14 Oct 2019 00:58:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=zq2idAI5QbvylMcTdhYX+jOntNKTXawDb3g0tY+VUeA=;
- b=TKC44juvLTUtOYvpPffnlXP32PiHITQ0NlscI2DsA1ZlP2f8WlOfRj2IgtnwP0l1UV
- 5LMi+89UernAosrovcPZHraOa8vrDUVwPWROkXS9WdQ2IlE1QpwUN1e6+3wC/U3P7NgM
- RBxBl2nftHGmCp+yGAW67KXNoJzHwZ7pFGxNU=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=RoLTcDXevgrBk0cPxImrXSQB650BgpVWWTWZfcg9k7g=;
+ b=ZDFa3M3vzS9eSdA3uEcRGaERyso/RAE0I9rzowdu2DiynsrrBk/5P/SW+3FcaW4p+I
+ l80/46yx3MeUTyzGTPHQ6+uVjVorGRfCIPq+u1GHN+5ej1DAkVp63/NlREYxcetta9oP
+ UqGKHWlfrBYx6UvRl1IDHSFQPMRRi08rbTJmw=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=zq2idAI5QbvylMcTdhYX+jOntNKTXawDb3g0tY+VUeA=;
- b=CeLEqS4G3+KkqhmzGjq2DV2G76CEzCehExcLjjHWVvTigaUryr0oi0NQ2uRsb2j+a2
- exTBZAJRF3W5fUxxThYrpYDZpyq5CvVJzJF5td9ilcrY0k1yridwL+YR1m82/fSLsGa6
- IdQzPBS7cVGQ8PIE6ycGChkA8KaA66Ld6xvmeoEVQPINuH1vD2vP5zjH/uD1B2UEdboO
- S7kd7F8NCXj5k9cQQh8ml6mOCGBL95/CO1xJG2g4znzXUluEk/yEdpiYE8I6nLEXeJv6
- DjUDp6rFZ5s2UkYBijJjAD3Qk3unyIkFKSQmCllO6WYri/mpQuE/PmBxbCISJxU3jeUm
- bOnA==
-X-Gm-Message-State: APjAAAWGShc1fj5HjMdKxKg+k01oVN4lV4+zQRgCEXCWFDwAu8mkwGnU
- 366tn8VDJdnyHCtmtS57EFUaNA==
-X-Google-Smtp-Source: APXvYqyU9jl6fv3LCoiUISoY8naIYvEm7WwIxhwcvFc1NYVD8n+0kvaFnILKpFP/YkqfvXWNwwQKug==
-X-Received: by 2002:a17:902:8342:: with SMTP id
- z2mr28568440pln.309.1571039905128; 
- Mon, 14 Oct 2019 00:58:25 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=RoLTcDXevgrBk0cPxImrXSQB650BgpVWWTWZfcg9k7g=;
+ b=k+YscXDqnt2bVUSidhazeCR0Q441Th2lAATP9LS/KLE478h8IOy1ChI/5f6UsDvLw4
+ YK+byeL1LjVCfzZCj7Zwd1SdmjNSC5sFUple5ba4dE3sbbx4ndCbE6R4vm6yOF4SeY45
+ W4XdDTbWMh5cZretfdMbV7vt0kKlWIv3Vx+aeVFIIJwXKTl+TQc34DtZtgcZUPbd+S2t
+ g7Q7T1cgrcwHhylUIJAaQvmJ8HTRSGqd0ZKO4GaqUDZ6S3TyAS9ntQFiRJOAHfOYjHfX
+ 2+NQQsA9872BkqeJmytmJ+vpIwpMVUsAaIjiMGjzcLR01+LEn5Lt23sH5Wwwi/FxZT0b
+ CcUA==
+X-Gm-Message-State: APjAAAWDMZiX5iP11PSazkkmj84SsYvKJxCT+JADhDxH42sQ5NAl8mkQ
+ cStVczLuR3TOjknpZLjbGaMUow==
+X-Google-Smtp-Source: APXvYqzxOi3qsmmD13lzmgWeKmLblbUGcBQHAJG0proj9EHyiNN1q/oNb/wc6i7hbeVFXK+LlMi+Cw==
+X-Received: by 2002:a17:902:8608:: with SMTP id
+ f8mr27938903plo.185.1571039908818; 
+ Mon, 14 Oct 2019 00:58:28 -0700 (PDT)
 Received: from pihsun-z840.tpe.corp.google.com
  ([2401:fa00:1:10:7889:7a43:f899:134c])
- by smtp.googlemail.com with ESMTPSA id q76sm36695998pfc.86.2019.10.14.00.58.23
+ by smtp.googlemail.com with ESMTPSA id q76sm36695998pfc.86.2019.10.14.00.58.26
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 14 Oct 2019 00:58:24 -0700 (PDT)
+ Mon, 14 Oct 2019 00:58:28 -0700 (PDT)
 From: Pi-Hsun Shih <pihsun@chromium.org>
 To: 
-Subject: [PATCH v20 0/4] Add support for mt8183 SCP.
-Date: Mon, 14 Oct 2019 15:58:05 +0800
-Message-Id: <20191014075812.181942-1-pihsun@chromium.org>
+Subject: [PATCH v20 1/4] dt-bindings: Add a binding for Mediatek SCP
+Date: Mon, 14 Oct 2019 15:58:06 +0800
+Message-Id: <20191014075812.181942-2-pihsun@chromium.org>
 X-Mailer: git-send-email 2.23.0.700.g56cf767bdb-goog
+In-Reply-To: <20191014075812.181942-1-pihsun@chromium.org>
+References: <20191014075812.181942-1-pihsun@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_005826_751459_EF5DA19A 
-X-CRM114-Status: GOOD (  18.35  )
+X-CRM114-CacheID: sfid-20191014_005829_489095_16017A40 
+X-CRM114-Status: GOOD (  15.82  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -94,12 +96,15 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
+Cc: Ohad Ben-Cohen <ohad@wizery.com>, Rob Herring <robh@kernel.org>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Erin Lo <erin.lo@mediatek.com>,
  "open list:REMOTE PROCESSOR REMOTEPROC SUBSYSTEM"
  <linux-remoteproc@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring <robh+dt@kernel.org>,
  "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Pi-Hsun Shih <pihsun@chromium.org>,
+ Pi-Hsun Shih <pihsun@chromium.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Mark Rutland <mark.rutland@arm.com>,
  "moderated list:ARM/Mediatek SoC support"
  <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -107,152 +112,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for controlling and communicating with mt8183's system
-control processor (SCP), using the remoteproc & rpmsg framework.
-And also add a cros_ec driver for CrOS EC host command over rpmsg.
+From: Erin Lo <erin.lo@mediatek.com>
 
-The overall structure of the series is:
-* remoteproc/mtk_scp.c: Control the start / stop of SCP (Patch 2).
-* remoteproc/mtk_scp_ipi.c: Communicates to SCP using inter-processor
-  interrupt (IPI) and shared memory (Patch 2).
-* rpmsg/mtk_rpmsg.c: Wrapper to wrap the IPI communication into a rpmsg
-  device. Supports name service for SCP firmware to
-  announce channels (Patch 3).
-* add scp dts node to mt8183 platform (Patch 4).
+Add a DT binding documentation of SCP for the
+MT8183 SoC from Mediatek.
 
-Changes from v19:
- - Fix an incorrect include in mtk_rpmsg.h (linux/device.h ->
-   linux/platform_device.h)
-
-Changes from v18:
- - Change the way shared memory is handled, and drop patch 3.
-
-Changes from v17:
- - Fix mixture use of __iomem found by sparse.
- - Change the ipi handler to take a u32 instead of enum scp_ipi_id.
- - Mark mtk_rpmsg_{prepare,unprepare,stop} as static.
-
-Changes from v16:
- - Change the desc_lock mutex to be a per-id lock.
- - Put the execution of handler inside the per-id lock, to prevent race
-   between scp_ipi_unregister and handler being run.
- - Move the initialization of mutex to before scp_ipi_register.
-
-Changes from v15:
- - Fix a bug on incorrect usage of wait_event_timeout return value.
-
-Changes from v14:
- - Fix a typo on variable in DEBUG section.
-
-Changes from v13:
- - Move include/linux/platform_data/mtk_scp.h to
-   include/linux/remoteproc/mtk_scp.h.
- - Rename scp_get_reserve_* to scp_get_reserved_*.
- - Add lock for access of scp->ipi_desc.
- - Lock the whole ipi_send function.
- - Move more setting of cache size from SCP firmware to kernel driver,
-   to prevent problem while loading firmware onto DRAM.
- - Minor fixes addressing comment.
-
-Changes from v12:
- - Initialize cache before firmware load, to avoid problem while loading
-   large firmware.
- - Disable watchdog before stopping SCP, to avoid extra warning message.
- - Fix new warnings by checkpatch.
-
-Changes from v11:
- - Fixed a bug that mtk_rpmsg_endpoint is not properly cleaned up if
-   rproc_boot fails.
- - Add missing documentation in comment.
-
-Changes from v10:
- - Drop applied cros_ec_rpmsg patches.
- - Add clock reset before loading SCP firmware.
- - Fix some type mismatch warnings when printing debug messages.
-
-Changes from v9:
- - Remove reserve-memory-vpu_share node.
- - Remove change to cros_ec_commands.h (That is already in
-   https://lore.kernel.org/lkml/20190518063949.GY4319@dell/T/)
-
-Changes from v8:
- - Rebased onto https://patchwork.kernel.org/cover/10962385/.
- - Drop merged cros_ec_rpmsg patch, and add scp dts node patch.
- - Add more reserved memory region.
-
-Changes from v7:
- - Rebase onto https://lore.kernel.org/patchwork/patch/1059196/.
- - Fix clock enable/disable timing for SCP driver.
- - Add more SCP IPI ID.
-
-Changes from v6:
- - Decouple mtk_rpmsg from mtk_scp.
- - Change data of EC response to be aligned to 4 bytes.
+Signed-off-by: Erin Lo <erin.lo@mediatek.com>
+Signed-off-by: Pi-Hsun Shih <pihsun@chromium.org>
+Reviewed-by: Rob Herring <robh@kernel.org>
+---
+Changes from v19 ... v6:
+ - No change.
 
 Changes from v5:
- - Add device tree binding document for cros_ec_rpmsg.
- - Better document in comments for cros_ec_rpmsg.
- - Remove dependency on CONFIG_ in binding tree document.
+ - Remove dependency on CONFIG_RPMSG_MTK_SCP.
 
 Changes from v4:
- - Merge patch 6 (Load ELF firmware) into patch 2, so the driver loads
-   ELF firmware by default, and no longer accept plain binary.
- - rpmsg_device listed in device tree (as a child of the SCP node) would
-   have it's device tree node mapped to the rpmsg_device, so the rpmsg
-   driver can use the properties on device tree.
+ - Add detail of more properties.
+ - Document the usage of mtk,rpmsg-name in subnode from the new design.
 
 Changes from v3:
- - Make writing to SCP SRAM aligned.
- - Add a new patch (Patch 6) to load ELF instead of bin firmware.
- - Add host event support for EC driver.
- - Fix some bugs found in testing (missing spin_lock_init,
-   rproc_subdev_unprepare to rproc_subdev_stop).
- - Fix some coding style issue found by checkpatch.pl.
+ - No change.
 
 Changes from v2:
- - Fold patch 3 into patch 2 in v2.
- - Move IPI id around to support cross-testing for old and new firmware.
- - Finish more TODO items.
+ - No change. I realized that for this patch series, there's no need to
+   add anything under the mt8183-scp node (neither the mt8183-rpmsg or
+   the cros-ec-rpmsg) for them to work, since mt8183-rpmsg is added
+   directly as a rproc_subdev by code, and cros-ec-rpmsg is dynamically
+   created by SCP name service.
 
 Changes from v1:
- - Extract functions and rename variables in mtk_scp.c.
- - Do cleanup properly in mtk_rpmsg.c, which also removes the problem of
-   short-lived work items.
- - Code format fix based on feedback for cros_ec_rpmsg.c.
- - Extract feature detection for SCP into separate patch (Patch 6).
-
-Eddie Huang (1):
-  arm64: dts: mt8183: add scp node
-
-Erin Lo (2):
-  dt-bindings: Add a binding for Mediatek SCP
-  remoteproc/mediatek: add SCP support for mt8183
-
-Pi-Hsun Shih (1):
-  rpmsg: add rpmsg support for mt8183 SCP.
-
- .../bindings/remoteproc/mtk,scp.txt           |  36 ++
- arch/arm64/boot/dts/mediatek/mt8183-evb.dts   |  11 +
- arch/arm64/boot/dts/mediatek/mt8183.dtsi      |  12 +
- drivers/remoteproc/Kconfig                    |  10 +
- drivers/remoteproc/Makefile                   |   1 +
- drivers/remoteproc/mtk_common.h               |  94 +++
- drivers/remoteproc/mtk_scp.c                  | 583 ++++++++++++++++++
- drivers/remoteproc/mtk_scp_ipi.c              | 176 ++++++
- drivers/rpmsg/Kconfig                         |   9 +
- drivers/rpmsg/Makefile                        |   1 +
- drivers/rpmsg/mtk_rpmsg.c                     | 414 +++++++++++++
- include/linux/remoteproc/mtk_scp.h            | 143 +++++
- include/linux/rpmsg/mtk_rpmsg.h               |  38 ++
- 13 files changed, 1528 insertions(+)
+ - No change.
+---
+ .../bindings/remoteproc/mtk,scp.txt           | 36 +++++++++++++++++++
+ 1 file changed, 36 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/remoteproc/mtk,scp.txt
- create mode 100644 drivers/remoteproc/mtk_common.h
- create mode 100644 drivers/remoteproc/mtk_scp.c
- create mode 100644 drivers/remoteproc/mtk_scp_ipi.c
- create mode 100644 drivers/rpmsg/mtk_rpmsg.c
- create mode 100644 include/linux/remoteproc/mtk_scp.h
- create mode 100644 include/linux/rpmsg/mtk_rpmsg.h
 
+diff --git a/Documentation/devicetree/bindings/remoteproc/mtk,scp.txt b/Documentation/devicetree/bindings/remoteproc/mtk,scp.txt
+new file mode 100644
+index 000000000000..3ba668bab14b
+--- /dev/null
++++ b/Documentation/devicetree/bindings/remoteproc/mtk,scp.txt
+@@ -0,0 +1,36 @@
++Mediatek SCP Bindings
++----------------------------------------
++
++This binding provides support for ARM Cortex M4 Co-processor found on some
++Mediatek SoCs.
++
++Required properties:
++- compatible		Should be "mediatek,mt8183-scp"
++- reg			Should contain the address ranges for the two memory
++			regions, SRAM and CFG.
++- reg-names		Contains the corresponding names for the two memory
++			regions. These should be named "sram" & "cfg".
++- clocks		Clock for co-processor (See: ../clock/clock-bindings.txt)
++- clock-names		Contains the corresponding name for the clock. This
++			should be named "main".
++
++Subnodes
++--------
++
++Subnodes of the SCP represent rpmsg devices. The names of the devices are not
++important. The properties of these nodes are defined by the individual bindings
++for the rpmsg devices - but must contain the following property:
++
++- mtk,rpmsg-name	Contains the name for the rpmsg device. Used to match
++			the subnode to rpmsg device announced by SCP.
++
++Example:
++
++	scp: scp@10500000 {
++		compatible = "mediatek,mt8183-scp";
++		reg = <0 0x10500000 0 0x80000>,
++		      <0 0x105c0000 0 0x5000>;
++		reg-names = "sram", "cfg";
++		clocks = <&infracfg CLK_INFRA_SCPSYS>;
++		clock-names = "main";
++	};
 -- 
 2.23.0.700.g56cf767bdb-goog
 
