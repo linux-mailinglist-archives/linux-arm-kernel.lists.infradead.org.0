@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DECED6565
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 16:41:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41562D6571
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 16:44:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fgguBNet1Zzr24dCOMjNMJSPyqXVDG6mAKFkDhImiEo=; b=fb2LfLy/Xq5ELj
-	mlwF39r6mq9fgjV5iKg6kFiE2NqVQTm8E7l/1k0bAn5PTKSrTvkIsuHzOWE/korYG0aNE/9tl0WDy
-	OqCNYiMo6JKX5Cdzm52VGmlBNDpQuohvL1MvV9Lthf+59f2yJkk0R2/Oj2JxalSwjKzNrHkNdST1D
-	XVuEl/mGANjP0VpUZUh0hQCI8ws9j0lPxoArdlZKUKqVG/XZ1w/7sxlJO3ASDduC1U5RU9CGZFpBI
-	MtZT4sLrXI+NN6sOowA5JQlhmiwAAknuD9SFK+HHwVO3O3x8NMTDv0HSUuMsTld53PfHF9P9F/ojC
-	mV+SoA3OTQpH2cPIDQRw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=pmbDDP1IWE3p8FD9hc/LYuNwYhrVGlZPj32Ir2f8L7E=; b=kX78Pk6iwFyRvT
+	C34MxQu2DCRTBr1JSUL9kObXrXTzS6YRfq27RcCgfWaDk4P4Ac58nft75OjrToOE2myh87z8FPLXw
+	tb2kuEL5YQj9UOL/PXYFu9oq6yztNjI5dGT5x6m8BuCLxvt+25sRiB5T0uu72n5XzU21VlEVSNdbu
+	zsFuyDrNmfIr1ORgJv/zQTCJ1+nf32AvnAWn+KU9fMTfaVtcv3MXz48d0uocMK2GI88ZxIgogCCtd
+	YuL0zCLeQXPOhk0flVNb4iENcM4GbrdVs1b/GjUW5bsMexEUrVF/ph1oj20MtVaF8EX8Eemf6CGg6
+	umjCbsY4JbVjtmqWmYRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iK1XG-0004yg-1t; Mon, 14 Oct 2019 14:41:22 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iK1X7-0004xy-Ff
- for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 14:41:15 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 698BE337;
- Mon, 14 Oct 2019 07:41:10 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 80C9E3F68E;
- Mon, 14 Oct 2019 07:41:09 -0700 (PDT)
-Date: Mon, 14 Oct 2019 15:41:07 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Julien Grall <julien.grall@arm.com>
-Subject: Re: [PATCH] arm64: cpufeature: Don't expose ZFR0 to userspace when
- SVE is not enabled
-Message-ID: <20191014144105.GR27757@arm.com>
-References: <20191014102113.16546-1-julien.grall@arm.com>
+	id 1iK1Zp-0005TJ-CH; Mon, 14 Oct 2019 14:44:01 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iK1ZP-0005H2-Un; Mon, 14 Oct 2019 14:43:37 +0000
+Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 10FAAC7B7A72E24E84C1;
+ Mon, 14 Oct 2019 22:43:31 +0800 (CST)
+Received: from localhost (10.133.213.239) by DGGEMS411-HUB.china.huawei.com
+ (10.3.19.211) with Microsoft SMTP Server id 14.3.439.0; Mon, 14 Oct 2019
+ 22:43:21 +0800
+From: YueHaibing <yuehaibing@huawei.com>
+To: <narmstrong@baylibre.com>, <jbrunet@baylibre.com>,
+ <mturquette@baylibre.com>, <sboyd@kernel.org>, <khilman@baylibre.com>
+Subject: [PATCH -next] clk: meson: axg-audio: use
+ devm_platform_ioremap_resource() to simplify code
+Date: Mon, 14 Oct 2019 22:43:16 +0800
+Message-ID: <20191014144316.18696-1-yuehaibing@huawei.com>
+X-Mailer: git-send-email 2.10.2.windows.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191014102113.16546-1-julien.grall@arm.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+X-Originating-IP: [10.133.213.239]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_074113_570030_4A0EDCED 
-X-CRM114-Status: GOOD (  19.38  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191014_074336_172007_603242B5 
+X-CRM114-Status: UNSURE (   8.04  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.191 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -61,66 +63,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, will@kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, suzuki.poulose@arm.com
+Cc: linux-amlogic@lists.infradead.org, YueHaibing <yuehaibing@huawei.com>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 14, 2019 at 11:21:13AM +0100, Julien Grall wrote:
-> The kernel may not support SVE if CONFIG_ARM64_SVE is not set and
-> will hide the feature from the from userspace.
-> 
-> Unfortunately, the fields of ID_AA64ZFR0_EL1 are still exposed and could
-> lead to undefined behavior in userspace.
-> 
-> The kernel should not used the register when CONFIG_SVE is disabled.
-> Therefore, we only need to hidden them from the userspace.
-> 
-> Signed-off-by: Julien Grall <julien.grall@arm.com>
-> Fixes: 06a916feca2b ('arm64: Expose SVE2 features for userspace')
+Use devm_platform_ioremap_resource() to simplify the code a bit.
+This is detected by coccinelle.
 
-Reviewed-by: Dave Martin <Dave.Martin@arm.com>
+Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+---
+ drivers/clk/meson/axg-audio.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
-> ---
->  arch/arm64/kernel/cpufeature.c | 15 ++++++++++-----
->  1 file changed, 10 insertions(+), 5 deletions(-)
-> 
-> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> index cabebf1a7976..80f459ad0190 100644
-> --- a/arch/arm64/kernel/cpufeature.c
-> +++ b/arch/arm64/kernel/cpufeature.c
-> @@ -176,11 +176,16 @@ static const struct arm64_ftr_bits ftr_id_aa64pfr1[] = {
->  };
->  
->  static const struct arm64_ftr_bits ftr_id_aa64zfr0[] = {
-> -	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_SM4_SHIFT, 4, 0),
-> -	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_SHA3_SHIFT, 4, 0),
-> -	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_BITPERM_SHIFT, 4, 0),
-> -	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_AES_SHIFT, 4, 0),
-> -	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_SVEVER_SHIFT, 4, 0),
-> +	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_SVE),
-> +		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_SM4_SHIFT, 4, 0),
-> +	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_SVE),
-> +		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_SHA3_SHIFT, 4, 0),
-> +	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_SVE),
-> +		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_BITPERM_SHIFT, 4, 0),
-> +	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_SVE),
-> +		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_AES_SHIFT, 4, 0),
-> +	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_SVE),
-> +		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_SVEVER_SHIFT, 4, 0),
->  	ARM64_FTR_END,
->  };
->  
-> -- 
-> 2.11.0
-> 
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+diff --git a/drivers/clk/meson/axg-audio.c b/drivers/clk/meson/axg-audio.c
+index 18b23cd..d7d7cff 100644
+--- a/drivers/clk/meson/axg-audio.c
++++ b/drivers/clk/meson/axg-audio.c
+@@ -1016,7 +1016,6 @@ static int axg_audio_clkc_probe(struct platform_device *pdev)
+ 	const struct audioclk_data *data;
+ 	struct axg_audio_reset_data *rst;
+ 	struct regmap *map;
+-	struct resource *res;
+ 	void __iomem *regs;
+ 	struct clk_hw *hw;
+ 	int ret, i;
+@@ -1025,8 +1024,7 @@ static int axg_audio_clkc_probe(struct platform_device *pdev)
+ 	if (!data)
+ 		return -EINVAL;
+ 
+-	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	regs = devm_ioremap_resource(dev, res);
++	regs = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(regs))
+ 		return PTR_ERR(regs);
+ 
+-- 
+2.7.4
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
