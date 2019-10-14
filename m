@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26C6FD6350
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 15:05:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12669D636A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 14 Oct 2019 15:08:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:
-	Subject:To:From:Date:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xl2bUEBaKU3Lxm68X84kzibps8mluJU/j+8cpB4XGI4=; b=nSu1OlU8PdWXQT
-	ybC9Aa/W2fwlZX50OFxWpBNtRD3jFGU5rTUnKtb/36pEliWwIWKSrS2PXGAo4K3X9KfnjNPh36Y9j
-	BDAclXtowtkoIE7DIPJG6KFzvABteRqU+Bcxw75oKMvFoT9PDECiSSSn3Srm8NwrkJ21zdLvE8SK+
-	RYzRTTATOe7c4QF39ueBgPpSfG6UERxOWuJikaDS2eZOFacOK8ajXJr3tXVtHjaWgbieeUCYnuHN8
-	wdMcgLsw1GA7jqFQQUKGhB8ERtRGBnrS3gOnbT4hO24miOHLFSdOUx37YUIYEaNKj8OggdJ6lfRUA
-	4dnMOSb1yIFP4O9mwhfA==;
+	List-Owner; bh=0U3rNKNX/xp5UwRCqBA6jqhs1Vyzhu0SMR4B4RULNvg=; b=RgaJgGBw1eOig2
+	dpj0CG9aHw0BG5DE4rHpETvSG7rEEoyyO98U0vWlm3TorM2kTq7hkaTysW8GIeICV6imJeiSy+3sW
+	jz5ElUbIhocHeWq4wdTgmCw15mU233th0RQ9k3UiJjbOve+iR/Vf6v9JORE9bRaHf7cJBT4kLTqgu
+	C01ZHHuX8YfgXVrPolcVegEWDpPXV+BBuFqYAy5j1wRWyoNfK/BYu5iARO/EpXRw/fBK+bwwIHm5E
+	8+bZhnW9lRiOTBwr7th2EqOe0T/UXa5V9KZV3uvbj8lQ6mvG0Nhe2QZEIUx+yqjh16uaQ0LIx7wb1
+	bGdsnYOhJgPkNsOPJuyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iK02i-0006N4-9V; Mon, 14 Oct 2019 13:05:44 +0000
-Received: from mail.kmu-office.ch ([2a02:418:6a02::a2])
+	id 1iK05d-0006ut-5p; Mon, 14 Oct 2019 13:08:45 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iK02Z-0006MB-BZ
- for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 13:05:37 +0000
-Received: from webmail.kmu-office.ch (unknown [IPv6:2a02:418:6a02::a3])
- by mail.kmu-office.ch (Postfix) with ESMTPSA id B60D05C0D8D;
- Mon, 14 Oct 2019 15:05:33 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=agner.ch; s=dkim;
- t=1571058333;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=kZd7XBX9aEBfupYIDrL6C3iWlKimqPnjge24gYsrWBI=;
- b=uVAmm5MtRkmGnn/nVge4cUF0Bxhk87yUE7hLXFeamzFbwksekZQzEtF3cA/sJlazPCZvf5
- VPz+GHOO07OyUH2QabwXy3kNh89dZLTg2wr0gr9Fo+dNq1LcA2GIseN3PKWwS4avru2xlN
- sO8B+7553/LeTLzD0gmnSIN+wsHJvYM=
+ id 1iK05Q-0006uL-Dh
+ for linux-arm-kernel@lists.infradead.org; Mon, 14 Oct 2019 13:08:34 +0000
+Received: from dragon (li937-157.members.linode.com [45.56.119.157])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A2B90217D9;
+ Mon, 14 Oct 2019 13:08:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571058512;
+ bh=h6rziWwo7iOTHA7xwgtBI1rft22mR5Qb12OeTENjx58=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=gAxActGlQNHy8WXiGjxlWNyABj2KSH62ujfHtNUGiNQTyFM/Ospbo9b7UKtm7ia6V
+ dcRxUA/tXZ4sEdC1sbFWNsCj41vf4ks8PWcx083rE9qS4C6lWAGX7YxnxPah1W+Gak
+ ieGD+LwwuWTx7O6L3iBc8BvTu+NZGePiySe8e7Iw=
+Date: Mon, 14 Oct 2019 21:08:11 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Leonard Crestez <leonard.crestez@nxp.com>
+Subject: Re: [PATCH v2 1/3] clk: imx8mq: Define gates for pll1/2 fixed dividers
+Message-ID: <20191014130809.GU12262@dragon>
+References: <cover.1570461771.git.leonard.crestez@nxp.com>
+ <e0fbd662171cfa00e0170a5cfb7d09016c7f70dc.1570461771.git.leonard.crestez@nxp.com>
 MIME-Version: 1.0
-Date: Mon, 14 Oct 2019 15:05:33 +0200
-From: Stefan Agner <stefan@agner.ch>
-To: Robert Chiras <robert.chiras@nxp.com>
-Subject: Re: [PATCH v4 05/14] drm/mxsfb: Update register definitions using bit
- manipulation defines
-In-Reply-To: <1567078215-31601-6-git-send-email-robert.chiras@nxp.com>
-References: <1567078215-31601-1-git-send-email-robert.chiras@nxp.com>
- <1567078215-31601-6-git-send-email-robert.chiras@nxp.com>
-Message-ID: <d8f114db8b81ca5a6d78debaf946e4de@agner.ch>
-X-Sender: stefan@agner.ch
-User-Agent: Roundcube Webmail/1.3.9
+Content-Disposition: inline
+In-Reply-To: <e0fbd662171cfa00e0170a5cfb7d09016c7f70dc.1570461771.git.leonard.crestez@nxp.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_060535_692297_43C037D9 
-X-CRM114-Status: GOOD (  20.53  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191014_060832_512656_67491FBE 
+X-CRM114-Status: GOOD (  14.32  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -65,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,156 +77,151 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marex@denx.de>, Mark Rutland <mark.rutland@arm.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, devicetree@vger.kernel.org,
- David Airlie <airlied@linux.ie>, Fabio Estevam <festevam@gmail.com>,
- =?UTF-8?Q?Guido_G=C3=BCnther?= <agx@sigxcpu.org>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, Daniel Vetter <daniel@ffwll.ch>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
+ Anson Huang <Anson.Huang@nxp.com>, Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>, linux-imx@nxp.com,
+ kernel@pengutronix.de, Fabio Estevam <fabio.estevam@nxp.com>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Abel Vesa <abel.vesa@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAxOS0wOC0yOSAxMzozMCwgUm9iZXJ0IENoaXJhcyB3cm90ZToKPiBVc2UgQklUKHgpIGFu
-ZCBHRU5fTUFTSyhoLCBsKSBmb3IgYmV0dGVyIHJlcHJlc2VudGF0aW9uIHRoZSBpbnNpZGUgb2YK
-PiB2YXJpb3VzIHJlZ2lzdGVycy4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBSb2JlcnQgQ2hpcmFzIDxy
-b2JlcnQuY2hpcmFzQG54cC5jb20+Cj4gVGVzdGVkLWJ5OiBHdWlkbyBHw7xudGhlciA8YWd4QHNp
-Z3hjcHUub3JnPgo+IC0tLQo+ICBkcml2ZXJzL2dwdS9kcm0vbXhzZmIvbXhzZmJfcmVncy5oIHwg
-MTUxICsrKysrKysrKysrKysrKysrKysrKystLS0tLS0tLS0tLS0tLS0KPiAgMSBmaWxlIGNoYW5n
-ZWQsIDg5IGluc2VydGlvbnMoKyksIDYyIGRlbGV0aW9ucygtKQo+IAo+IGRpZmYgLS1naXQgYS9k
-cml2ZXJzL2dwdS9kcm0vbXhzZmIvbXhzZmJfcmVncy5oCj4gYi9kcml2ZXJzL2dwdS9kcm0vbXhz
-ZmIvbXhzZmJfcmVncy5oCj4gaW5kZXggNzE0MjZhYS4uOWZjYjFkYiAxMDA2NDQKPiAtLS0gYS9k
-cml2ZXJzL2dwdS9kcm0vbXhzZmIvbXhzZmJfcmVncy5oCj4gKysrIGIvZHJpdmVycy9ncHUvZHJt
-L214c2ZiL214c2ZiX3JlZ3MuaAo+IEBAIC00MCw2NiArNDAsOTMgQEAKPiAgI2RlZmluZSBMQ0RD
-X0FTX0JVRgkJCTB4MjIwCj4gICNkZWZpbmUgTENEQ19BU19ORVhUX0JVRgkJMHgyMzAKPiAgCj4g
-LSNkZWZpbmUgQ1RSTF9TRlRSU1QJCQkoMSA8PCAzMSkKPiAtI2RlZmluZSBDVFJMX0NMS0dBVEUJ
-CQkoMSA8PCAzMCkKPiAtI2RlZmluZSBDVFJMX0JZUEFTU19DT1VOVAkJKDEgPDwgMTkpCj4gLSNk
-ZWZpbmUgQ1RSTF9WU1lOQ19NT0RFCQkJKDEgPDwgMTgpCj4gLSNkZWZpbmUgQ1RSTF9ET1RDTEtf
-TU9ERQkJKDEgPDwgMTcpCj4gLSNkZWZpbmUgQ1RSTF9EQVRBX1NFTEVDVAkJKDEgPDwgMTYpCj4g
-LSNkZWZpbmUgQ1RSTF9TRVRfQlVTX1dJRFRIKHgpCQkoKCh4KSAmIDB4MykgPDwgMTApCj4gLSNk
-ZWZpbmUgQ1RSTF9HRVRfQlVTX1dJRFRIKHgpCQkoKCh4KSA+PiAxMCkgJiAweDMpCj4gLSNkZWZp
-bmUgQ1RSTF9CVVNfV0lEVEhfTUFTSwkJKDB4MyA8PCAxMCkKPiAtI2RlZmluZSBDVFJMX1NFVF9X
-T1JEX0xFTkdUSCh4KQkJKCgoeCkgJiAweDMpIDw8IDgpCj4gLSNkZWZpbmUgQ1RSTF9HRVRfV09S
-RF9MRU5HVEgoeCkJCSgoKHgpID4+IDgpICYgMHgzKQo+IC0jZGVmaW5lIENUUkxfTUFTVEVSCQkJ
-KDEgPDwgNSkKPiAtI2RlZmluZSBDVFJMX0RGMTYJCQkoMSA8PCAzKQo+IC0jZGVmaW5lIENUUkxf
-REYxOAkJCSgxIDw8IDIpCj4gLSNkZWZpbmUgQ1RSTF9ERjI0CQkJKDEgPDwgMSkKPiAtI2RlZmlu
-ZSBDVFJMX1JVTgkJCSgxIDw8IDApCj4gLQo+IC0jZGVmaW5lIENUUkwxX1JFQ09WRVJZX09OX1VO
-REVSRkxPVwkoMSA8PCAyNCkKPiAtI2RlZmluZSBDVFJMMV9GSUZPX0NMRUFSCQkoMSA8PCAyMSkK
-PiAtI2RlZmluZSBDVFJMMV9TRVRfQllURV9QQUNLQUdJTkcoeCkJKCgoeCkgJiAweGYpIDw8IDE2
-KQo+IC0jZGVmaW5lIENUUkwxX0dFVF9CWVRFX1BBQ0tBR0lORyh4KQkoKCh4KSA+PiAxNikgJiAw
-eGYpCj4gLSNkZWZpbmUgQ1RSTDFfQ1VSX0ZSQU1FX0RPTkVfSVJRX0VOCSgxIDw8IDEzKQo+IC0j
-ZGVmaW5lIENUUkwxX0NVUl9GUkFNRV9ET05FX0lSUQkoMSA8PCA5KQo+IC0KPiAtI2RlZmluZSBD
-VFJMMl9PVVRTVEFORElOR19SRVFTX19SRVFfMTYJCSg0IDw8IDIxKQo+IC0KClRoaXMgaXMgaW50
-cm9kdWNlZCB0d28gcGF0Y2hlcyBlYXJsaWVyIGp1c3QgdG8gYmUgcmVtb3ZlZCBoZXJlLiBJCnN1
-Z2dlc3QgdG8gcmVvcmRlciB0aGlzIHBhdGNoIGluIGZyb250IG9mICJkcm0vbXhzZmI6IEFkZCBk
-ZWZpbmVzIGZvcgp0aGUgcmVzdCBvZiByZWdpc3RlcnMiLCBiYXNpY2FsbHkgY29udmVydCBmaXJz
-dCB0byB1c2luZyBCSVQvR0VOTUFTSwpldGMsIGFuZCB0aGVuIGludHJvZHVjZSB0aGUgbmV3IHJl
-cXVlc3QuCgoKPiAtI2RlZmluZSBUUkFOU0ZFUl9DT1VOVF9TRVRfVkNPVU5UKHgpCSgoKHgpICYg
-MHhmZmZmKSA8PCAxNikKPiAtI2RlZmluZSBUUkFOU0ZFUl9DT1VOVF9HRVRfVkNPVU5UKHgpCSgo
-KHgpID4+IDE2KSAmIDB4ZmZmZikKPiAtI2RlZmluZSBUUkFOU0ZFUl9DT1VOVF9TRVRfSENPVU5U
-KHgpCSgoeCkgJiAweGZmZmYpCj4gLSNkZWZpbmUgVFJBTlNGRVJfQ09VTlRfR0VUX0hDT1VOVCh4
-KQkoKHgpICYgMHhmZmZmKQo+IC0KPiAtI2RlZmluZSBWRENUUkwwX0VOQUJMRV9QUkVTRU5UCQko
-MSA8PCAyOCkKPiAtI2RlZmluZSBWRENUUkwwX1ZTWU5DX0FDVF9ISUdICQkoMSA8PCAyNykKPiAt
-I2RlZmluZSBWRENUUkwwX0hTWU5DX0FDVF9ISUdICQkoMSA8PCAyNikKPiAtI2RlZmluZSBWRENU
-UkwwX0RPVENMS19BQ1RfRkFMTElORwkoMSA8PCAyNSkKPiAtI2RlZmluZSBWRENUUkwwX0VOQUJM
-RV9BQ1RfSElHSAkJKDEgPDwgMjQpCj4gLSNkZWZpbmUgVkRDVFJMMF9WU1lOQ19QRVJJT0RfVU5J
-VAkoMSA8PCAyMSkKPiAtI2RlZmluZSBWRENUUkwwX1ZTWU5DX1BVTFNFX1dJRFRIX1VOSVQJKDEg
-PDwgMjApCj4gLSNkZWZpbmUgVkRDVFJMMF9IQUxGX0xJTkUJCSgxIDw8IDE5KQo+IC0jZGVmaW5l
-IFZEQ1RSTDBfSEFMRl9MSU5FX01PREUJCSgxIDw8IDE4KQo+IC0jZGVmaW5lIFZEQ1RSTDBfU0VU
-X1ZTWU5DX1BVTFNFX1dJRFRIKHgpICgoeCkgJiAweDNmZmZmKQo+IC0jZGVmaW5lIFZEQ1RSTDBf
-R0VUX1ZTWU5DX1BVTFNFX1dJRFRIKHgpICgoeCkgJiAweDNmZmZmKQo+IC0KPiAtI2RlZmluZSBW
-RENUUkwyX1NFVF9IU1lOQ19QRVJJT0QoeCkJKCh4KSAmIDB4M2ZmZmYpCj4gLSNkZWZpbmUgVkRD
-VFJMMl9HRVRfSFNZTkNfUEVSSU9EKHgpCSgoeCkgJiAweDNmZmZmKQo+IC0KPiAtI2RlZmluZSBW
-RENUUkwzX01VWF9TWU5DX1NJR05BTFMJKDEgPDwgMjkpCj4gLSNkZWZpbmUgVkRDVFJMM19WU1lO
-Q19PTkxZCQkoMSA8PCAyOCkKPiAtI2RlZmluZSBTRVRfSE9SX1dBSVRfQ05UKHgpCQkoKCh4KSAm
-IDB4ZmZmKSA8PCAxNikKPiAtI2RlZmluZSBHRVRfSE9SX1dBSVRfQ05UKHgpCQkoKCh4KSA+PiAx
-NikgJiAweGZmZikKPiAtI2RlZmluZSBTRVRfVkVSVF9XQUlUX0NOVCh4KQkJKCh4KSAmIDB4ZmZm
-ZikKPiAtI2RlZmluZSBHRVRfVkVSVF9XQUlUX0NOVCh4KQkJKCh4KSAmIDB4ZmZmZikKPiAtCj4g
-LSNkZWZpbmUgVkRDVFJMNF9TRVRfRE9UQ0xLX0RMWSh4KQkoKCh4KSAmIDB4NykgPDwgMjkpIC8q
-IHY0IG9ubHkgKi8KPiAtI2RlZmluZSBWRENUUkw0X0dFVF9ET1RDTEtfRExZKHgpCSgoKHgpID4+
-IDI5KSAmIDB4NykgLyogdjQgb25seSAqLwo+IC0jZGVmaW5lIFZEQ1RSTDRfU1lOQ19TSUdOQUxT
-X09OCQkoMSA8PCAxOCkKPiAtI2RlZmluZSBTRVRfRE9UQ0xLX0hfVkFMSURfREFUQV9DTlQoeCkJ
-KCh4KSAmIDB4M2ZmZmYpCj4gLQo+IC0jZGVmaW5lIERFQlVHMF9IU1lOQwkJCSgxIDwgMjYpCj4g
-LSNkZWZpbmUgREVCVUcwX1ZTWU5DCQkJKDEgPCAyNSkKPiArLyogcmVnIGJpdCBtYW5pcHVsYXRp
-b24gKi8KPiArI2RlZmluZSBSRUdfUFVUKHgsIGgsIGwpICgoKHgpIDw8IChsKSkgJiBHRU5NQVNL
-KGgsIGwpKQo+ICsjZGVmaW5lIFJFR19HRVQoeCwgaCwgbCkgKCgoeCkgJiBHRU5NQVNLKGgsIGwp
-KSA+PiAobCkpCj4gKwo+ICsjZGVmaW5lIENUUkxfU0ZUUlNUCQkJQklUKDMxKQo+ICsjZGVmaW5l
-IENUUkxfQ0xLR0FURQkJCUJJVCgzMCkKPiArI2RlZmluZSBDVFJMX1NISUZUX0RJUih4KQkJUkVH
-X1BVVCgoeCksIDI2LCAyNikKPiArI2RlZmluZSBDVFJMX1NISUZUX05VTSh4KQkJUkVHX1BVVCgo
-eCksIDI1LCAyMSkKPiArI2RlZmluZSBDVFJMX0JZUEFTU19DT1VOVAkJQklUKDE5KQo+ICsjZGVm
-aW5lIENUUkxfVlNZTkNfTU9ERQkJCUJJVCgxOCkKPiArI2RlZmluZSBDVFJMX0RPVENMS19NT0RF
-CQlCSVQoMTcpCj4gKyNkZWZpbmUgQ1RSTF9EQVRBX1NFTEVDVAkJQklUKDE2KQo+ICsjZGVmaW5l
-IENUUkxfSU5QVVRfU1dJWlpMRSh4KQkJUkVHX1BVVCgoeCksIDE1LCAxNCkKPiArI2RlZmluZSBD
-VFJMX0NTQ19TV0laWkxFKHgpCQlSRUdfUFVUKCh4KSwgMTMsIDEyKQo+ICsjZGVmaW5lIENUUkxf
-U0VUX0JVU19XSURUSCh4KQkJUkVHX1BVVCgoeCksIDExLCAxMCkKPiArI2RlZmluZSBDVFJMX0dF
-VF9CVVNfV0lEVEgoeCkJCVJFR19HRVQoKHgpLCAxMSwgMTApCj4gKyNkZWZpbmUgQ1RSTF9CVVNf
-V0lEVEhfTUFTSwkJUkVHX1BVVCgoMHgzKSwgMTEsIDEwKQo+ICsjZGVmaW5lIENUUkxfU0VUX1dP
-UkRfTEVOR1RIKHgpCQlSRUdfUFVUKCh4KSwgOSwgOCkKPiArI2RlZmluZSBDVFJMX0dFVF9XT1JE
-X0xFTkdUSCh4KQkJUkVHX0dFVCgoeCksIDksIDgpCj4gKyNkZWZpbmUgQ1RSTF9NQVNURVIJCQlC
-SVQoNSkKPiArI2RlZmluZSBDVFJMX0RGMTYJCQlCSVQoMykKPiArI2RlZmluZSBDVFJMX0RGMTgJ
-CQlCSVQoMikKPiArI2RlZmluZSBDVFJMX0RGMjQJCQlCSVQoMSkKPiArI2RlZmluZSBDVFJMX1JV
-TgkJCUJJVCgwKQo+ICsKPiArI2RlZmluZSBDVFJMMV9SRUNPVkVSWV9PTl9VTkRFUkZMT1cJQklU
-KDI0KQo+ICsjZGVmaW5lIENUUkwxX0ZJRk9fQ0xFQVIJCUJJVCgyMSkKPiArCj4gKy8qCj4gKyAq
-IEJZVEVfUEFDS0FHSU5HCj4gKyAqCj4gKyAqIFRoaXMgYml0ZmllbGQgaXMgdXNlZCB0byBzaG93
-IHdoaWNoIGRhdGEgYnl0ZXMgaW4gYSAzMi1iaXQgd29yZCBhcmVhIHZhbGlkLgo+ICsgKiBEZWZh
-dWx0IHZhbHVlIDB4ZiBpbmRpY2F0ZXMgdGhhdCBhbGwgYnl0ZXMgYXJlIHZhbGlkLiBGb3IgOC1i
-aXQgdHJhbnNmZXJzLAo+ICsgKiBhbnkgY29tYmluYXRpb24gaW4gdGhpcyBiaXRmaWVsZCB3aWxs
-IG1lYW4gdmFsaWQgZGF0YSBpcyBwcmVzZW50IGluIHRoZQo+ICsgKiBjb3JyZXNwb25kaW5nIGJ5
-dGVzLiBJbiB0aGUgMTYtYml0IG1vZGUsIGEgMTYtYml0IGhhbGYtd29yZCBpcyB2YWxpZCBvbmx5
-IGlmCj4gKyAqIGFkamFjZW50IGJpdHMgWzE6MF0gb3IgWzM6Ml0gb3IgYm90aCBhcmUgMS4gQSB2
-YWx1ZSBvZiAweDAgd2lsbCBtZWFuIHRoYXQKPiArICogbm9uZSBvZiB0aGUgYnl0ZXMgYXJlIHZh
-bGlkIGFuZCBzaG91bGQgbm90IGJlIHVzZWQuIEZvciBleGFtcGxlLCBzZXQgdGhlIGJpdAo+ICsg
-KiBmaWVsZCB2YWx1ZSB0byAweDcgaWYgdGhlIGRpc3BsYXkgZGF0YSBpcyBhcnJhbmdlZCBpbiB0
-aGUgMjQtYml0IHVucGFja2VkCj4gKyAqIGZvcm1hdCAoQS1SLUctQiB3aGVyZSBBIHZhbHVlIGRv
-ZXMgbm90IGhhdmUgYmUgdHJhbnNtaXR0ZWQpLgo+ICsgKi8KPiArI2RlZmluZSBDVFJMMV9TRVRf
-QllURV9QQUNLQUdJTkcoeCkJUkVHX1BVVCgoeCksIDE5LCAxNikKPiArI2RlZmluZSBDVFJMMV9H
-RVRfQllURV9QQUNLQUdJTkcoeCkJUkVHX0dFVCgoeCksIDE5LCAxNikKPiArCj4gKyNkZWZpbmUg
-Q1RSTDFfQ1VSX0ZSQU1FX0RPTkVfSVJRX0VOCUJJVCgxMykKPiArI2RlZmluZSBDVFJMMV9DVVJf
-RlJBTUVfRE9ORV9JUlEJQklUKDkpCj4gKwo+ICsjZGVmaW5lIENUUkwyX09VVFNUQU5ESU5HX1JF
-UVMoeCkJUkVHX1BVVCgoeCksIDIzLCAyMSkKPiArI2RlZmluZSBSRVFfMQkwCj4gKyNkZWZpbmUg
-UkVRXzIJMQo+ICsjZGVmaW5lIFJFUV80CTIKPiArI2RlZmluZSBSRVFfOAkzCj4gKyNkZWZpbmUg
-UkVRXzE2CTQKCkNhbiB5b3UgcHJlZml4IHRoZW0gd2l0aCBDVFJMMl8/IEkgdGhpbmsgaXQgaXMg
-bW9yZSBpbiBsaW5lIHdpdGggb3RoZXIKZGVmaW5lcy4KCi0tClN0ZWZhbgoKPiArCj4gKyNkZWZp
-bmUgVFJBTlNGRVJfQ09VTlRfU0VUX1ZDT1VOVCh4KQlSRUdfUFVUKCh4KSwgMzEsIDE2KQo+ICsj
-ZGVmaW5lIFRSQU5TRkVSX0NPVU5UX0dFVF9WQ09VTlQoeCkJUkVHX0dFVCgoeCksIDMxLCAxNikK
-PiArI2RlZmluZSBUUkFOU0ZFUl9DT1VOVF9TRVRfSENPVU5UKHgpCVJFR19QVVQoKHgpLCAxNSwg
-MCkKPiArI2RlZmluZSBUUkFOU0ZFUl9DT1VOVF9HRVRfSENPVU5UKHgpCVJFR19HRVQoKHgpLCAx
-NSwgMCkKPiArCj4gKyNkZWZpbmUgVkRDVFJMMF9FTkFCTEVfUFJFU0VOVAkJQklUKDI4KQo+ICsj
-ZGVmaW5lIFZEQ1RSTDBfVlNZTkNfQUNUX0hJR0gJCUJJVCgyNykKPiArI2RlZmluZSBWRENUUkww
-X0hTWU5DX0FDVF9ISUdICQlCSVQoMjYpCj4gKyNkZWZpbmUgVkRDVFJMMF9ET1RDTEtfQUNUX0ZB
-TExJTkcJQklUKDI1KQo+ICsjZGVmaW5lIFZEQ1RSTDBfRU5BQkxFX0FDVF9ISUdICQlCSVQoMjQp
-Cj4gKyNkZWZpbmUgVkRDVFJMMF9WU1lOQ19QRVJJT0RfVU5JVAlCSVQoMjEpCj4gKyNkZWZpbmUg
-VkRDVFJMMF9WU1lOQ19QVUxTRV9XSURUSF9VTklUCUJJVCgyMCkKPiArI2RlZmluZSBWRENUUkww
-X0hBTEZfTElORQkJQklUKDE5KQo+ICsjZGVmaW5lIFZEQ1RSTDBfSEFMRl9MSU5FX01PREUJCUJJ
-VCgxOCkKPiArI2RlZmluZSBWRENUUkwwX1NFVF9WU1lOQ19QVUxTRV9XSURUSCh4KSBSRUdfUFVU
-KCh4KSwgMTcsIDApCj4gKyNkZWZpbmUgVkRDVFJMMF9HRVRfVlNZTkNfUFVMU0VfV0lEVEgoeCkg
-UkVHX0dFVCgoeCksIDE3LCAwKQo+ICsKPiArI2RlZmluZSBWRENUUkwyX1NFVF9IU1lOQ19QRVJJ
-T0QoeCkJUkVHX1BVVCgoeCksIDE1LCAwKQo+ICsjZGVmaW5lIFZEQ1RSTDJfR0VUX0hTWU5DX1BF
-UklPRCh4KQlSRUdfR0VUKCh4KSwgMTUsIDApCj4gKwo+ICsjZGVmaW5lIFZEQ1RSTDNfTVVYX1NZ
-TkNfU0lHTkFMUwlCSVQoMjkpCj4gKyNkZWZpbmUgVkRDVFJMM19WU1lOQ19PTkxZCQlCSVQoMjgp
-Cj4gKyNkZWZpbmUgU0VUX0hPUl9XQUlUX0NOVCh4KQkJUkVHX1BVVCgoeCksIDI3LCAxNikKPiAr
-I2RlZmluZSBHRVRfSE9SX1dBSVRfQ05UKHgpCQlSRUdfR0VUKCh4KSwgMjcsIDE2KQo+ICsjZGVm
-aW5lIFNFVF9WRVJUX1dBSVRfQ05UKHgpCQlSRUdfUFVUKCh4KSwgMTUsIDApCj4gKyNkZWZpbmUg
-R0VUX1ZFUlRfV0FJVF9DTlQoeCkJCVJFR19HRVQoKHgpLCAxNSwgMCkKPiArCj4gKyNkZWZpbmUg
-VkRDVFJMNF9TRVRfRE9UQ0xLX0RMWSh4KQlSRUdfUFVUKCh4KSwgMzEsIDI5KSAvKiB2NCBvbmx5
-ICovCj4gKyNkZWZpbmUgVkRDVFJMNF9HRVRfRE9UQ0xLX0RMWSh4KQlSRUdfR0VUKCh4KSwgMzEs
-IDI5KSAvKiB2NCBvbmx5ICovCj4gKyNkZWZpbmUgVkRDVFJMNF9TWU5DX1NJR05BTFNfT04JCUJJ
-VCgxOCkKPiArI2RlZmluZSBTRVRfRE9UQ0xLX0hfVkFMSURfREFUQV9DTlQoeCkJUkVHX1BVVCgo
-eCksIDE3LCAwKQo+ICsKPiArI2RlZmluZSBERUJVRzBfSFNZTkMJCQlCSVQoMjYpCj4gKyNkZWZp
-bmUgREVCVUcwX1ZTWU5DCQkJQklUKDI1KQo+ICAKPiAgI2RlZmluZSBNWFNGQl9NSU5fWFJFUwkJ
-CTEyMAo+ICAjZGVmaW5lIE1YU0ZCX01JTl9ZUkVTCQkJMTIwCj4gQEAgLTExNiw3ICsxNDMsNyBA
-QAo+ICAjZGVmaW5lIFNUTUxDRElGXzE4QklUIDIgLyogcGl4ZWwgZGF0YSBidXMgdG8gdGhlIGRp
-c3BsYXkgaXMgb2YgMTggYml0IHdpZHRoICovCj4gICNkZWZpbmUgU1RNTENESUZfMjRCSVQgMyAv
-KiBwaXhlbCBkYXRhIGJ1cyB0byB0aGUgZGlzcGxheSBpcyBvZiAyNCBiaXQgd2lkdGggKi8KPiAg
-Cj4gLSNkZWZpbmUgTVhTRkJfU1lOQ19EQVRBX0VOQUJMRV9ISUdIX0FDVAkoMSA8PCA2KQo+IC0j
-ZGVmaW5lIE1YU0ZCX1NZTkNfRE9UQ0xLX0ZBTExJTkdfQUNUCSgxIDw8IDcpIC8qIG5lZ2F0aXZl
-IGVkZ2Ugc2FtcGxpbmcgKi8KPiArI2RlZmluZSBNWFNGQl9TWU5DX0RBVEFfRU5BQkxFX0hJR0hf
-QUNUCUJJVCg2KQo+ICsjZGVmaW5lIE1YU0ZCX1NZTkNfRE9UQ0xLX0ZBTExJTkdfQUNUCUJJVCg3
-KSAvKiBuZWdhdGl2ZSBlZGdlIHNhbXBsaW5nICovCj4gIAo+ICAjZW5kaWYgLyogX19NWFNGQl9S
-RUdTX0hfXyAqLwoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtYXJtLWtlcm5lbAo=
+On Mon, Oct 07, 2019 at 06:24:53PM +0300, Leonard Crestez wrote:
+> On imx8mq there are 9 fixed-factor dividers for SYS_PLL1 and SYS_PLL2
+> each with their own gate but these gates are not currently defined in
+> the clock tree.
+> 
+> Add them between sys1/2_pll_out and the fixed dividers.
+> 
+> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+
+It conflicts with Laurentiu's patch "clk: imx8mq: Add VIDEO2_PLL clock".
+Can you rebase your patch on top of my clk/imx branch please?
+
+Shawn
+
+> ---
+>  drivers/clk/imx/clk-imx8mq.c             | 62 ++++++++++++++++--------
+>  include/dt-bindings/clock/imx8mq-clock.h | 22 ++++++++-
+>  2 files changed, 63 insertions(+), 21 deletions(-)
+> 
+> diff --git a/drivers/clk/imx/clk-imx8mq.c b/drivers/clk/imx/clk-imx8mq.c
+> index 41fc9c63356e..2350d0d84c37 100644
+> --- a/drivers/clk/imx/clk-imx8mq.c
+> +++ b/drivers/clk/imx/clk-imx8mq.c
+> @@ -344,30 +344,52 @@ static int imx8mq_clocks_probe(struct platform_device *pdev)
+>  
+>  	clks[IMX8MQ_SYS1_PLL_OUT] = imx_clk_sccg_pll("sys1_pll_out", sys1_pll_out_sels, ARRAY_SIZE(sys1_pll_out_sels), 0, 0, 0, base + 0x30, CLK_IS_CRITICAL);
+>  	clks[IMX8MQ_SYS2_PLL_OUT] = imx_clk_sccg_pll("sys2_pll_out", sys2_pll_out_sels, ARRAY_SIZE(sys2_pll_out_sels), 0, 0, 1, base + 0x3c, CLK_IS_CRITICAL);
+>  	clks[IMX8MQ_SYS3_PLL_OUT] = imx_clk_sccg_pll("sys3_pll_out", sys3_pll_out_sels, ARRAY_SIZE(sys3_pll_out_sels), 0, 0, 1, base + 0x48, CLK_IS_CRITICAL);
+>  	clks[IMX8MQ_DRAM_PLL_OUT] = imx_clk_sccg_pll("dram_pll_out", dram_pll_out_sels, ARRAY_SIZE(dram_pll_out_sels), 0, 0, 0, base + 0x60, CLK_IS_CRITICAL);
+> -	/* SYS PLL fixed output */
+> -	clks[IMX8MQ_SYS1_PLL_40M] = imx_clk_fixed_factor("sys1_pll_40m", "sys1_pll_out", 1, 20);
+> -	clks[IMX8MQ_SYS1_PLL_80M] = imx_clk_fixed_factor("sys1_pll_80m", "sys1_pll_out", 1, 10);
+> -	clks[IMX8MQ_SYS1_PLL_100M] = imx_clk_fixed_factor("sys1_pll_100m", "sys1_pll_out", 1, 8);
+> -	clks[IMX8MQ_SYS1_PLL_133M] = imx_clk_fixed_factor("sys1_pll_133m", "sys1_pll_out", 1, 6);
+> -	clks[IMX8MQ_SYS1_PLL_160M] = imx_clk_fixed_factor("sys1_pll_160m", "sys1_pll_out", 1, 5);
+> -	clks[IMX8MQ_SYS1_PLL_200M] = imx_clk_fixed_factor("sys1_pll_200m", "sys1_pll_out", 1, 4);
+> -	clks[IMX8MQ_SYS1_PLL_266M] = imx_clk_fixed_factor("sys1_pll_266m", "sys1_pll_out", 1, 3);
+> -	clks[IMX8MQ_SYS1_PLL_400M] = imx_clk_fixed_factor("sys1_pll_400m", "sys1_pll_out", 1, 2);
+> -	clks[IMX8MQ_SYS1_PLL_800M] = imx_clk_fixed_factor("sys1_pll_800m", "sys1_pll_out", 1, 1);
+> -
+> -	clks[IMX8MQ_SYS2_PLL_50M] = imx_clk_fixed_factor("sys2_pll_50m", "sys2_pll_out", 1, 20);
+> -	clks[IMX8MQ_SYS2_PLL_100M] = imx_clk_fixed_factor("sys2_pll_100m", "sys2_pll_out", 1, 10);
+> -	clks[IMX8MQ_SYS2_PLL_125M] = imx_clk_fixed_factor("sys2_pll_125m", "sys2_pll_out", 1, 8);
+> -	clks[IMX8MQ_SYS2_PLL_166M] = imx_clk_fixed_factor("sys2_pll_166m", "sys2_pll_out", 1, 6);
+> -	clks[IMX8MQ_SYS2_PLL_200M] = imx_clk_fixed_factor("sys2_pll_200m", "sys2_pll_out", 1, 5);
+> -	clks[IMX8MQ_SYS2_PLL_250M] = imx_clk_fixed_factor("sys2_pll_250m", "sys2_pll_out", 1, 4);
+> -	clks[IMX8MQ_SYS2_PLL_333M] = imx_clk_fixed_factor("sys2_pll_333m", "sys2_pll_out", 1, 3);
+> -	clks[IMX8MQ_SYS2_PLL_500M] = imx_clk_fixed_factor("sys2_pll_500m", "sys2_pll_out", 1, 2);
+> -	clks[IMX8MQ_SYS2_PLL_1000M] = imx_clk_fixed_factor("sys2_pll_1000m", "sys2_pll_out", 1, 1);
+> +
+> +	/* SYS PLL1 fixed output */
+> +	clks[IMX8MQ_SYS1_PLL_40M_CG] = imx_clk_gate("sys1_pll_40m_cg", "sys1_pll_out", base + 0x30, 9);
+> +	clks[IMX8MQ_SYS1_PLL_80M_CG] = imx_clk_gate("sys1_pll_80m_cg", "sys1_pll_out", base + 0x30, 11);
+> +	clks[IMX8MQ_SYS1_PLL_100M_CG] = imx_clk_gate("sys1_pll_100m_cg", "sys1_pll_out", base + 0x30, 13);
+> +	clks[IMX8MQ_SYS1_PLL_133M_CG] = imx_clk_gate("sys1_pll_133m_cg", "sys1_pll_out", base + 0x30, 15);
+> +	clks[IMX8MQ_SYS1_PLL_160M_CG] = imx_clk_gate("sys1_pll_160m_cg", "sys1_pll_out", base + 0x30, 17);
+> +	clks[IMX8MQ_SYS1_PLL_200M_CG] = imx_clk_gate("sys1_pll_200m_cg", "sys1_pll_out", base + 0x30, 19);
+> +	clks[IMX8MQ_SYS1_PLL_266M_CG] = imx_clk_gate("sys1_pll_266m_cg", "sys1_pll_out", base + 0x30, 21);
+> +	clks[IMX8MQ_SYS1_PLL_400M_CG] = imx_clk_gate("sys1_pll_400m_cg", "sys1_pll_out", base + 0x30, 23);
+> +	clks[IMX8MQ_SYS1_PLL_800M_CG] = imx_clk_gate("sys1_pll_800m_cg", "sys1_pll_out", base + 0x30, 25);
+> +
+> +	clks[IMX8MQ_SYS1_PLL_40M] = imx_clk_fixed_factor("sys1_pll_40m", "sys1_pll_40m_cg", 1, 20);
+> +	clks[IMX8MQ_SYS1_PLL_80M] = imx_clk_fixed_factor("sys1_pll_80m", "sys1_pll_80m_cg", 1, 10);
+> +	clks[IMX8MQ_SYS1_PLL_100M] = imx_clk_fixed_factor("sys1_pll_100m", "sys1_pll_100m_cg", 1, 8);
+> +	clks[IMX8MQ_SYS1_PLL_133M] = imx_clk_fixed_factor("sys1_pll_133m", "sys1_pll_133m_cg", 1, 6);
+> +	clks[IMX8MQ_SYS1_PLL_160M] = imx_clk_fixed_factor("sys1_pll_160m", "sys1_pll_160m_cg", 1, 5);
+> +	clks[IMX8MQ_SYS1_PLL_200M] = imx_clk_fixed_factor("sys1_pll_200m", "sys1_pll_200m_cg", 1, 4);
+> +	clks[IMX8MQ_SYS1_PLL_266M] = imx_clk_fixed_factor("sys1_pll_266m", "sys1_pll_266m_cg", 1, 3);
+> +	clks[IMX8MQ_SYS1_PLL_400M] = imx_clk_fixed_factor("sys1_pll_400m", "sys1_pll_400m_cg", 1, 2);
+> +	clks[IMX8MQ_SYS1_PLL_800M] = imx_clk_fixed_factor("sys1_pll_800m", "sys1_pll_800m_cg", 1, 1);
+> +
+> +	/* SYS PLL2 fixed output */
+> +	clks[IMX8MQ_SYS2_PLL_50M_CG] = imx_clk_gate("sys2_pll_50m_cg", "sys2_pll_out", base + 0x3c, 9);
+> +	clks[IMX8MQ_SYS2_PLL_100M_CG] = imx_clk_gate("sys2_pll_100m_cg", "sys2_pll_out", base + 0x3c, 11);
+> +	clks[IMX8MQ_SYS2_PLL_125M_CG] = imx_clk_gate("sys2_pll_125m_cg", "sys2_pll_out", base + 0x3c, 13);
+> +	clks[IMX8MQ_SYS2_PLL_166M_CG] = imx_clk_gate("sys2_pll_166m_cg", "sys2_pll_out", base + 0x3c, 15);
+> +	clks[IMX8MQ_SYS2_PLL_200M_CG] = imx_clk_gate("sys2_pll_200m_cg", "sys2_pll_out", base + 0x3c, 17);
+> +	clks[IMX8MQ_SYS2_PLL_250M_CG] = imx_clk_gate("sys2_pll_250m_cg", "sys2_pll_out", base + 0x3c, 19);
+> +	clks[IMX8MQ_SYS2_PLL_333M_CG] = imx_clk_gate("sys2_pll_333m_cg", "sys2_pll_out", base + 0x3c, 21);
+> +	clks[IMX8MQ_SYS2_PLL_500M_CG] = imx_clk_gate("sys2_pll_500m_cg", "sys2_pll_out", base + 0x3c, 23);
+> +	clks[IMX8MQ_SYS2_PLL_1000M_CG] = imx_clk_gate("sys2_pll_1000m_cg", "sys2_pll_out", base + 0x3c, 25);
+> +
+> +	clks[IMX8MQ_SYS2_PLL_50M] = imx_clk_fixed_factor("sys2_pll_50m", "sys2_pll_50m_cg", 1, 20);
+> +	clks[IMX8MQ_SYS2_PLL_100M] = imx_clk_fixed_factor("sys2_pll_100m", "sys2_pll_100m_cg", 1, 10);
+> +	clks[IMX8MQ_SYS2_PLL_125M] = imx_clk_fixed_factor("sys2_pll_125m", "sys2_pll_125m_cg", 1, 8);
+> +	clks[IMX8MQ_SYS2_PLL_166M] = imx_clk_fixed_factor("sys2_pll_166m", "sys2_pll_166m_cg", 1, 6);
+> +	clks[IMX8MQ_SYS2_PLL_200M] = imx_clk_fixed_factor("sys2_pll_200m", "sys2_pll_200m_cg", 1, 5);
+> +	clks[IMX8MQ_SYS2_PLL_250M] = imx_clk_fixed_factor("sys2_pll_250m", "sys2_pll_250m_cg", 1, 4);
+> +	clks[IMX8MQ_SYS2_PLL_333M] = imx_clk_fixed_factor("sys2_pll_333m", "sys2_pll_333m_cg", 1, 3);
+> +	clks[IMX8MQ_SYS2_PLL_500M] = imx_clk_fixed_factor("sys2_pll_500m", "sys2_pll_500m_cg", 1, 2);
+> +	clks[IMX8MQ_SYS2_PLL_1000M] = imx_clk_fixed_factor("sys2_pll_1000m", "sys2_pll_1000m_cg", 1, 1);
+>  
+>  	np = dev->of_node;
+>  	base = devm_platform_ioremap_resource(pdev, 0);
+>  	if (WARN_ON(IS_ERR(base)))
+>  		return PTR_ERR(base);
+> diff --git a/include/dt-bindings/clock/imx8mq-clock.h b/include/dt-bindings/clock/imx8mq-clock.h
+> index 65463673d25e..853c9a9e66fd 100644
+> --- a/include/dt-bindings/clock/imx8mq-clock.h
+> +++ b/include/dt-bindings/clock/imx8mq-clock.h
+> @@ -401,7 +401,27 @@
+>  #define IMX8MQ_CLK_GPIO5_ROOT			263
+>  
+>  #define IMX8MQ_CLK_SNVS_ROOT			264
+>  #define IMX8MQ_CLK_GIC				265
+>  
+> -#define IMX8MQ_CLK_END				266
+> +#define IMX8MQ_SYS1_PLL_40M_CG			266
+> +#define IMX8MQ_SYS1_PLL_80M_CG			267
+> +#define IMX8MQ_SYS1_PLL_100M_CG			268
+> +#define IMX8MQ_SYS1_PLL_133M_CG			269
+> +#define IMX8MQ_SYS1_PLL_160M_CG			270
+> +#define IMX8MQ_SYS1_PLL_200M_CG			271
+> +#define IMX8MQ_SYS1_PLL_266M_CG			272
+> +#define IMX8MQ_SYS1_PLL_400M_CG			273
+> +#define IMX8MQ_SYS1_PLL_800M_CG			274
+> +#define IMX8MQ_SYS2_PLL_50M_CG			275
+> +#define IMX8MQ_SYS2_PLL_100M_CG			276
+> +#define IMX8MQ_SYS2_PLL_125M_CG			277
+> +#define IMX8MQ_SYS2_PLL_166M_CG			278
+> +#define IMX8MQ_SYS2_PLL_200M_CG			279
+> +#define IMX8MQ_SYS2_PLL_250M_CG			280
+> +#define IMX8MQ_SYS2_PLL_333M_CG			281
+> +#define IMX8MQ_SYS2_PLL_500M_CG			282
+> +#define IMX8MQ_SYS2_PLL_1000M_CG		283
+> +
+> +#define IMX8MQ_CLK_END				284
+> +
+>  #endif /* __DT_BINDINGS_CLOCK_IMX8MQ_H */
+> -- 
+> 2.17.1
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
