@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C0D7D8216
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 23:22:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9225D8219
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 23:23:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=1KsxtlMChpa2YUZpvEZneI96zPuaEtMW2Piie18bX+0=; b=lV0zuVpmfcsvcPraneOsZGAFSI
-	3o2X1wgUt8Hqt9K9iLkZ0U6i3t3AiI7aZkUPWEBV+G9R9URldIkfc/8G7QiyvIEwNlbZ+0SdUA0An
-	ypRggJU1kI9uAldJilj7H+ZL405a1LqfTrbJFg6poKb2CxcjoFFHJQ56YzqrpYx9LP9X6/tsaohPx
-	WvtsNZcZdXxs9guJ4WLov2c8Kb5yT4AHA4r8v2C8BpMY/ueIUp7dvsmqWx6K3AB+ZepmSagUJWHKi
-	ey0Ld0iXYwY45nBNqN4hFQyJeCMsgAJzkQtf9N7KVDbN9HI1DSqkqlgei62MkeS6ih+fOvSgz5zHq
-	gIiM5b4w==;
+	bh=4g6iu4AjeoQTyMIHNjMo8VKEx2IpDtZFWTgoA+4wPjw=; b=Cbd/I0LlM5Sv4TCFkYHQQCyYj7
+	DO0iJLO0oIt89NH4l3kFXpIDp14/2JykaLDuXC2KzXGGWTOfbYgmjuRewdJh3WM9SvS0jQP7ZWzda
+	IfmO627hO7Cv+k0p2AbqeaYOslK8ImNxItyScH85nu8/9IxI237WQxCtSqQf9aCXoMBEMtwWkVztq
+	gQUS4eflWf4tJxYNNa7rofGng7XEBACDp6VqITk/BKf+1IZhvLQRAGfRqfxSV8X6+XNmLCbTOUrIL
+	igvUqtNayteCVbr1NjHCZC7ZGGudJXNKHaGP/v71KqNd7dc4/UDlA/g67Oz+Y+O0+Hc0BGOEXyRYR
+	h6FfIxXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKUGq-0003xg-2r; Tue, 15 Oct 2019 21:22:20 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iKUHX-0004if-PN; Tue, 15 Oct 2019 21:23:03 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKUFU-00031l-OZ
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 21:20:58 +0000
-Received: by mail-wm1-x342.google.com with SMTP id 3so517261wmi.3
+ id 1iKUFW-00032u-Pv
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 21:21:00 +0000
+Received: by mail-wm1-x344.google.com with SMTP id y135so3201583wmc.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 15 Oct 2019 14:20:56 -0700 (PDT)
+ Tue, 15 Oct 2019 14:20:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=rDuhlvBwT6uhRxkYGcIkKsWqjq/99jBo0tsPSyIyS1M=;
- b=saIqH2d+hiYz0leLDWU+UOsYxldo9oKXimdPq0hgyllb9sRTvKMMiWYCIKMvNjTvx0
- UuD6Mlko6ETxXOXHxJeKVu8sk7V051KVJtQCEvY7mmD56ZxQX+XV3Ec2Bi+296aEe4NZ
- T/bbut1dKnKc0bTqMoV7Ky0CZW1RTMXdTgW6A8MsyynCt+LTBmD+1LsSX2WEtVGt/8LZ
- GuO591E35WtjZxvJRSqmRpxvAGi2ea/GLf8qV7Tvx0x6+hXpJIkxoci7vJYY+jKRkfPg
- xzzibw8S51kFex9fzjjjG1F/ofnYkbYlIvAtEPVNLfoJ6Jg863nVaoXx0nhaFBIF8x4m
- LX5A==
+ bh=DCrRB45TPzffk/SG7GSckRQdVqj6ZXw8oOiajo6TgQI=;
+ b=UAVuIDOUvZZyV9kO0gvn+x6GUYOnygxkODoUfALvIsMaw6iKXTdPjrTQ1/2tAq/O+V
+ 1gI0fI2ihrg8U0u8VsqX9bK7m++OeZO+pOB4s8FbkLSkgh5GetHpRKSuEnkcYvoO6vRv
+ QZLjyukx3tERcSOtM/HXqRD1WPjjaSkRE4pKDGKxpLkNftixSK+CeITcMNnCZWHKP/sR
+ J25T4HwG8yZeq/mXdvFlXV0aQt/TIeNhid+EFeQXv+3PhmV2hdOGaCJ/ymUvDXk+OmgG
+ p2Wx3iSa82S9gQCS5xVVCQl/pjBO3YH1S9Mcch1qDEDGpthT5JAAyg4VPMOmYKvU0tRY
+ //Lg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=rDuhlvBwT6uhRxkYGcIkKsWqjq/99jBo0tsPSyIyS1M=;
- b=CKj1x63l28asCnuj82/tQrMN2k+c5//BQnuBo/ivm4KusolxHeV5STFSuF6dpx4Wax
- vbLjUmWzSNjV/bYcDCID38Gh5B6qTjO+r4r6IpkCfPgvwTDQR15iDjVggnl1ucH86f8Y
- pxV+m7gLR3lB7/IRPVhvmV2szSks6Md7Tr2+odR86pwOFlTBG8uyOznw2oVXCahuYU/2
- q0WKsVpYTIRuhJcRJJ2Dezl9jnGiBw+24lXKPeBe8d+2q2YVLs2vO9xB7mrE1IWT+pQl
- nR+mt4N5s4rSv5sEkQutVi2pbIbj+E4JMZP2CyyDRrqy37w1zr+5ze0GjIccNNXpz86W
- ig2Q==
-X-Gm-Message-State: APjAAAUuKRW+snqJyrAtRxtrphDn4Xum4x/kWv8xsCxJIw9Tkj79+ChE
- xf7HQaFrom0VMWzFEH/Y673B9A==
-X-Google-Smtp-Source: APXvYqzsG0Havf3lVAWtlB+9gFIRq1BAC5ZnbgJMgm9uWjQ7BLw/fiVfBDesO7cFSGEAMf1/LcxEzQ==
-X-Received: by 2002:a05:600c:21da:: with SMTP id
- x26mr381977wmj.152.1571174455434; 
- Tue, 15 Oct 2019 14:20:55 -0700 (PDT)
+ bh=DCrRB45TPzffk/SG7GSckRQdVqj6ZXw8oOiajo6TgQI=;
+ b=oVushefkOhSgQ7ek4RFYT8KInjMI4KXeiOv/4AFUxqMEsHyR3o3X1motOz5v4yCY/c
+ 7orup5YJORh625SiLhDgEqqe8tBMVTEJFwXaSNIaXWgIKwV1bSH+FdjRJNQ5OH7NBSEz
+ uF+43HHVw13WjmF0vioZ5VRkYAIZrbVno+XGKRfUj4sBtT43GeASlckPlxXd2Ry0RUDR
+ FsA+O8lYjUrRzTzfXX7d4r73tpm2gNQFXJ7mg8iyGtfiLCkAab8vK3FlsDXR42S/f7oq
+ 0fPcpK8OTLMLdyDRvubNqgfLefbHiI+zp1rwZ9LxkWoDwiCkwHTCnZKmPLYRbHgAcEZb
+ AkHg==
+X-Gm-Message-State: APjAAAUbed1orqLyrQF9fKVMrIZz+dWMVfDi59XpuoGmkL56jxH3yME4
+ TDG9ztisMTD055O/SYWq+3X6mw==
+X-Google-Smtp-Source: APXvYqy4BIPufvC95A9MJQDTfCl0bC0PyKdCFW22iNvtafhJog5HkDLu3m0vixfc3Ae+wpStOmoTnA==
+X-Received: by 2002:a7b:cb95:: with SMTP id m21mr432615wmi.36.1571174456914;
+ Tue, 15 Oct 2019 14:20:56 -0700 (PDT)
 Received: from linaro.org ([2a00:23c5:6815:3901:39d2:21a2:678a:9501])
- by smtp.gmail.com with ESMTPSA id g185sm517649wme.10.2019.10.15.14.20.54
+ by smtp.gmail.com with ESMTPSA id g185sm517649wme.10.2019.10.15.14.20.55
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 15 Oct 2019 14:20:55 -0700 (PDT)
+ Tue, 15 Oct 2019 14:20:56 -0700 (PDT)
 From: Mike Leach <mike.leach@linaro.org>
 To: mike.leach@linaro.org, coresight@lists.linaro.org,
  linux-arm-kernel@lists.infradead.org, linux-doc@vger.kernel.org
-Subject: [PATCH v3 05/11] coresight: etm4x: Improve usability of sysfs -
- include/exclude addr.
-Date: Tue, 15 Oct 2019 22:19:58 +0100
-Message-Id: <20191015212004.24748-6-mike.leach@linaro.org>
+Subject: [PATCH v3 06/11] coresight: etm4x: Improve usability of sysfs - CID
+ and VMID masks.
+Date: Tue, 15 Oct 2019 22:19:59 +0100
+Message-Id: <20191015212004.24748-7-mike.leach@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191015212004.24748-1-mike.leach@linaro.org>
 References: <20191015212004.24748-1-mike.leach@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_142056_807602_9465E116 
-X-CRM114-Status: GOOD (  14.94  )
+X-CRM114-CacheID: sfid-20191015_142058_902811_B7DB6883 
+X-CRM114-Status: GOOD (  14.22  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,62 +105,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Setting include / exclude on a range had to be done by setting
-the bit in 'mode' before setting the range. However, setting this
-bit also had the effect of altering the current range as well.
+Context ID and VM ID masks required 2 value inputs, even when the
+second value is ignored as insufficient CID / VMID comparators are
+implemented.
 
-Changed to only set include / exclude setting of a range at the point of
-setting that range. Either use a 3rd input parameter as the include exclude
-value, or if not present use the current value of 'mode'. Do not change
-current range when 'mode' changes.
+Permit a single value to be used if that is sufficient to cover all
+implemented comparators.
 
 Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 Signed-off-by: Mike Leach <mike.leach@linaro.org>
 ---
- .../hwtracing/coresight/coresight-etm4x-sysfs.c    | 14 +++++++++-----
- 1 file changed, 9 insertions(+), 5 deletions(-)
+ drivers/hwtracing/coresight/coresight-etm4x-sysfs.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-index 2dbad7162557..d772765dcd29 100644
+index d772765dcd29..d6fcb9fee97a 100644
 --- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
 +++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-@@ -297,8 +297,6 @@ static ssize_t mode_store(struct device *dev,
- 
- 	spin_lock(&drvdata->spinlock);
- 	config->mode = val & ETMv4_MODE_ALL;
--	etm4_set_mode_exclude(drvdata,
--			      config->mode & ETM_MODE_EXCLUDE ? true : false);
- 
- 	if (drvdata->instrp0 == true) {
- 		/* start by clearing instruction P0 field */
-@@ -972,8 +970,12 @@ static ssize_t addr_range_store(struct device *dev,
- 	unsigned long val1, val2;
+@@ -1794,6 +1794,7 @@ static ssize_t ctxid_masks_store(struct device *dev,
+ 	unsigned long val1, val2, mask;
  	struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
  	struct etmv4_config *config = &drvdata->config;
-+	int elements, exclude;
++	int nr_inputs;
  
--	if (sscanf(buf, "%lx %lx", &val1, &val2) != 2)
-+	elements = sscanf(buf, "%lx %lx %x", &val1, &val2, &exclude);
-+
-+	/*  exclude is optional, but need at least two parameter */
-+	if (elements < 2)
- 		return -EINVAL;
- 	/* lower address comparator cannot have a higher address value */
- 	if (val1 > val2)
-@@ -1001,9 +1003,11 @@ static ssize_t addr_range_store(struct device *dev,
  	/*
- 	 * Program include or exclude control bits for vinst or vdata
- 	 * whenever we change addr comparators to ETM_ADDR_TYPE_RANGE
-+	 * use supplied value, or default to bit set in 'mode'
+ 	 * Don't use contextID tracing if coming from a PID namespace.  See
+@@ -1809,7 +1810,9 @@ static ssize_t ctxid_masks_store(struct device *dev,
  	 */
--	etm4_set_mode_exclude(drvdata,
--			      config->mode & ETM_MODE_EXCLUDE ? true : false);
-+	if (elements != 3)
-+		exclude = config->mode & ETM_MODE_EXCLUDE;
-+	etm4_set_mode_exclude(drvdata, exclude ? true : false);
+ 	if (!drvdata->ctxid_size || !drvdata->numcidc)
+ 		return -EINVAL;
+-	if (sscanf(buf, "%lx %lx", &val1, &val2) != 2)
++	/* one mask if <= 4 comparators, two for up to 8 */
++	nr_inputs = sscanf(buf, "%lx %lx", &val1, &val2);
++	if ((drvdata->numcidc > 4) && (nr_inputs != 2))
+ 		return -EINVAL;
  
- 	spin_unlock(&drvdata->spinlock);
- 	return size;
+ 	spin_lock(&drvdata->spinlock);
+@@ -1983,6 +1986,7 @@ static ssize_t vmid_masks_store(struct device *dev,
+ 	unsigned long val1, val2, mask;
+ 	struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
+ 	struct etmv4_config *config = &drvdata->config;
++	int nr_inputs;
+ 
+ 	/*
+ 	 * only implemented when vmid tracing is enabled, i.e. at least one
+@@ -1990,7 +1994,9 @@ static ssize_t vmid_masks_store(struct device *dev,
+ 	 */
+ 	if (!drvdata->vmid_size || !drvdata->numvmidc)
+ 		return -EINVAL;
+-	if (sscanf(buf, "%lx %lx", &val1, &val2) != 2)
++	/* one mask if <= 4 comparators, two for up to 8 */
++	nr_inputs = sscanf(buf, "%lx %lx", &val1, &val2);
++	if ((drvdata->numvmidc > 4) && (nr_inputs != 2))
+ 		return -EINVAL;
+ 
+ 	spin_lock(&drvdata->spinlock);
 -- 
 2.17.1
 
