@@ -2,74 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1C90D79C1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 17:28:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71CA8D79C2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 17:28:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d3kb0EushMCnedPq3BhZgz9b8q9AwBbrYrZx+c0dlMA=; b=tM3cqfJC61GQ5S
-	XzGlelO7Tx0mI7ULtUfEdQLQUvDXvztOMjYMfk5ELCx/bgQ38sVPrAjo4Q78H+N2xhZXIQxOHsasN
-	xvM1dEzYmibkHkMcaz72Iyb2FLDsA7qoGBtyj7njmi0WamRm899Nl7vwzfmjeg1DlmhrcjeO3ZjZZ
-	sFp7mmlFPoZ8Bd1SGW/NhLDNAM62MwpvPmUXRaLDgVr3J1o1mNzsHs3fgSbsqlhj8NhD8G4P6+pMn
-	H7a1wsP81YI8Pj4F+vugE3Kpe5du0fJ0qNE+dlu+GvYHczxIFQ/6OK11EyRfByp8W6VZ4l8yQ/ZLz
-	3Hvf1IBB7e5KlGevIHEQ==;
+	List-Owner; bh=AvHJ1CtWhiV7uDMYP5/x8o8ABcgONn6E8NxQI3wqH5w=; b=lU+dkKtpXHsFcQ
+	0nYV6hzdutbzIVm41cm8X5B3PVR8EucHL+cBFuTqMzSlCqiuDVZhcnqhM4KKha0enFDZwhlJxVVlM
+	O3vw05h2oCB0QJ4+f1TV+yJ/bWHbX+IrmK62Ssb+0rvB20VfY99LwrC60PyOkJ8hQx7jN2sePx14q
+	zubcLjrifSrBbIYbuZlu2Yn8pJMz7HwxlkXoVpij7bH9Jz+z4kE8FgopTvFnBJ1YnOktMiAa0LDrB
+	JqZNFZ/Eb+K1ftYPioUQBpcfW5cN1TmHTAoMsnhjju9BAVeYUp4+ANbe3XtCv0cff0RHovObr+tzD
+	J7MeNRb20QWzQT75jfFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKOk0-000196-2e; Tue, 15 Oct 2019 15:28:04 +0000
+	id 1iKOkD-0001Ly-Ru; Tue, 15 Oct 2019 15:28:17 +0000
 Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKOjN-0000iT-Ic
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 15:27:26 +0000
-Received: by mail-pf1-x441.google.com with SMTP id q5so12679775pfg.13
+ id 1iKOjO-0000jp-Jd
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 15:27:28 +0000
+Received: by mail-pf1-x441.google.com with SMTP id v4so12707017pff.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 15 Oct 2019 08:27:25 -0700 (PDT)
+ Tue, 15 Oct 2019 08:27:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=3STC62uX1LOFWn2/FmxkJuEB5bdiiyaCnOBZryIGQaY=;
- b=IS5v+aCvGsRk59ZFIRRyaOwbReneKHG1yZP1HIsbfySuDdJzYuaycAtnOW3Ut3NhOo
- HeyllnaQGFHUcNlxNy3bEFfyrPw1WY9vEyAS/treqiRAIAy7vy4/ncxSm6YYEpikCR/z
- at9JRXUCombNSkBeKfNYWrmIPN4oZE805oweUprVfQ83xLIhlEXjghyKyHZ9YgVEBTRi
- 8HHgk1ve3VEPx4Y8c7W6uEkFoNRdGLpCeTzLESoULdBy0Ndfk+cdeXxvfm8Qbyr/7ew4
- n3sjvLMygBuHu6yUAOueFtseAXnAGB6fgkASI6bAxm1mJpmfyfyujnaAi5ctm31kSS0i
- Ycgw==
+ bh=xG29MGJ5CXLDB3OOeAsHPCpV9V/he2gmaGhRj12zAvM=;
+ b=ewW4jt+Rm4ILwy/V1r4b05l/ehBuqPG4B7JYkFZZxWSmMHSQPlj/qWixRJ3DmjydIt
+ x9wVWu6qUn/JVnaq+vCsqB1g7GeyN2KIvmP5h1xUlPBlfrfh9qy0XCWRiaD4WJ9c0agF
+ 3thAVlnBZ8htxJRy/B7m21Ba8ByKuCsiPO/zNzpGcqObsRgjMxl3ZMfiLiwf+j2lIblw
+ jcqyx0VOkrV2kL0ZvGjxJXc2WXNqvius5aOBPVoPM0MuIMV5kkSkAL93nCPDcPLiu4xn
+ lwDLS6aX5fHH6/WXdW2exIdEc0eTG+xXgLsWuUZnsT4uH3Mdmmn0lwuXrQCa2wvLXeD2
+ Mk+Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=3STC62uX1LOFWn2/FmxkJuEB5bdiiyaCnOBZryIGQaY=;
- b=VSNa+5u0P3JanyhayFhsQxG5aRQzFUGLn4gJ1dgq9OvtVE1pQ8Q0GZU0c2PRpPu2KC
- wWBsI9q/rkfHu9jxo/jWzMJofHmu8jGWCZo79IAaexGJDXAEFjfv7/ovJeRc8AuxWIwC
- dNDJ6MtEnUtu14xeBWeQxRHUA6bW6+nDHnq1vo3Kj6tyzS1ho5d28yw71EGXbMq+B9kz
- gnwMZdmqcWccahSRVeI3J/pV6/qWDuyM0RWcVXWosiguST6MBOeyVvmMO/10j5H1VyNH
- H+bjk1wf94Z7b+G93z/gsSIcxlsiPU+Y69JDCPs440a++8Aelz/c4whlTEC7dzj0Hwjo
- K+OQ==
-X-Gm-Message-State: APjAAAWLwHzlvJg9BeVb9J3x7hNjt7FO2qzb59loqfYO1BGo4DFL4S87
- iXuGTga3ZkxkDR3HkTNiZqsPiKXe9qM=
-X-Google-Smtp-Source: APXvYqzBLhQZidCNp2+fuvAICwYLOr5FvcIHI1/8XBIqLSmL5cmk/+85uIsm9eI1OJKkhxm0j/KVfw==
-X-Received: by 2002:a17:90a:bc06:: with SMTP id
- w6mr42632084pjr.138.1571153244400; 
- Tue, 15 Oct 2019 08:27:24 -0700 (PDT)
+ bh=xG29MGJ5CXLDB3OOeAsHPCpV9V/he2gmaGhRj12zAvM=;
+ b=WMTpSD5Yby7/CmhGjniGuX/GLx7DjAfEBmp1ykYy9gNMvq+/NxJwNiT/uAMeOMT8vl
+ 8pXM7X6sPseNx/gXIIObNscwBNY+fAjVSq060M9punmqusCKB9nLOIUfG5qanNwguBYd
+ TTenvsss4+YAtjVdT9JPylhfQiRcNuMSr9j6QhEBCMkNLC88TBcV4uNy4zCdKZGG5Zo4
+ r6l3IPfk0m4RXvxWKKaHzDTgeiuYvvhSkGmHNmj4Ys2X7ywWvTakbicesmWHKnRkmyG/
+ WPmNx9A25RLwpK1l4z0162wAu2DDkXP0JoV58So6Fqk+0MLIQrRxFscKMhn5LG+fXAwk
+ qwZQ==
+X-Gm-Message-State: APjAAAVyU70MJy7oHc7+PhtUDKFyL5H5jfYvhBoFGZne3+V7v95rNTG9
+ QzrHUIRmnEOF05+CoRzdsWLfwfVHLzc=
+X-Google-Smtp-Source: APXvYqxVh/cl4OUEupiwqXnRInN9WWLmr51jkzllV8dQR7RJIlChmXn+S0+rq2wiFk3+GmRjBQs4VA==
+X-Received: by 2002:a62:685:: with SMTP id 127mr37228208pfg.227.1571153245811; 
+ Tue, 15 Oct 2019 08:27:25 -0700 (PDT)
 Received: from localhost.lan (c-67-185-54-80.hsd1.wa.comcast.net.
  [67.185.54.80])
- by smtp.gmail.com with ESMTPSA id w11sm21158957pgl.82.2019.10.15.08.27.22
+ by smtp.gmail.com with ESMTPSA id w11sm21158957pgl.82.2019.10.15.08.27.24
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 15 Oct 2019 08:27:23 -0700 (PDT)
+ Tue, 15 Oct 2019 08:27:24 -0700 (PDT)
 From: Andrey Smirnov <andrew.smirnov@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 3/4] arm64: dts: zii-ultra: Add node for accelerometer
-Date: Tue, 15 Oct 2019 08:26:53 -0700
-Message-Id: <20191015152654.26726-3-andrew.smirnov@gmail.com>
+Subject: [PATCH 4/4] arm64: dts: zii-ultra: Add node for switch watchdog
+Date: Tue, 15 Oct 2019 08:26:54 -0700
+Message-Id: <20191015152654.26726-4-andrew.smirnov@gmail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20191015152654.26726-1-andrew.smirnov@gmail.com>
 References: <20191015152654.26726-1-andrew.smirnov@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_082725_633831_EE0A71D5 
-X-CRM114-Status: GOOD (  11.76  )
+X-CRM114-CacheID: sfid-20191015_082726_669185_F55AF227 
+X-CRM114-Status: GOOD (  10.57  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -109,7 +108,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add I2C node for accelerometer present on both Zest and RMB3 boards.
+Add I2C node for switch watchdog present on both Zest and RMB3 boards.
 
 Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
 Cc: Fabio Estevam <festevam@gmail.com>
@@ -119,45 +118,25 @@ Cc: Shawn Guo <shawnguo@kernel.org>
 Cc: linux-arm-kernel@lists.infradead.org,
 Cc: linux-kernel@vger.kernel.org
 ---
- .../boot/dts/freescale/imx8mq-zii-ultra.dtsi   | 18 ++++++++++++++++++
- 1 file changed, 18 insertions(+)
+ arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi | 5 +++++
+ 1 file changed, 5 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi b/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi
-index 21eb52341ba8..8395c5a73ba6 100644
+index 8395c5a73ba6..e058ad908b2e 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi
 +++ b/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi
-@@ -262,6 +262,18 @@
- 	pinctrl-0 = <&pinctrl_i2c1>;
- 	status = "okay";
- 
-+	accel@1c {
-+		compatible = "fsl,mma8451";
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pinctrl_accel>;
-+		reg = <0x1c>;
-+		interrupt-parent = <&gpio3>;
-+		interrupts = <20 IRQ_TYPE_LEVEL_LOW>;
-+		interrupt-names = "INT2";
-+		vdd-supply = <&reg_gen_3p3>;
-+		vddio-supply = <&reg_gen_3p3>;
-+	};
+@@ -400,6 +400,11 @@
+ 		reg = <0x2c>;
+ 		reset-gpios = <&gpio3 25 GPIO_ACTIVE_LOW>;
+ 	};
 +
- 	ucs1002: charger@32 {
- 		compatible = "microchip,ucs1002";
- 		pinctrl-names = "default";
-@@ -522,6 +534,12 @@
++	watchdog@38 {
++		compatible = "zii,rave-wdt";
++		reg = <0x38>;
++	};
  };
  
- &iomuxc {
-+	pinctrl_accel: accelgrp {
-+		fsl,pins = <
-+			MX8MQ_IOMUXC_SAI5_RXC_GPIO3_IO20		0x41
-+		>;
-+	};
-+
- 	pinctrl_fec1: fec1grp {
- 		fsl,pins = <
- 			MX8MQ_IOMUXC_ENET_MDC_ENET1_MDC			0x3
+ &i2c4 {
 -- 
 2.21.0
 
