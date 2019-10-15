@@ -2,56 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 380B9D7536
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 13:38:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B079D754F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 13:42:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=msexBYFrFP+axIDobs/mAAqg/sclyQTtXKVW4XXHUUQ=; b=I91z7g5C+4iRF/RTm0C6XSbDl
-	b6cwHVEDb+pOqKiPo+vPHoLOz0k1Gq2rj45qJgy+NezV1WdJp8ezrzhtRZX53hzUdPO9O0QRlGJks
-	yFmDonHeSJXhtPaWqfliEccmlhnKEchMbKSMQNuYvKaPKQIJN2afhDMJQqT7frXeB6xYtCq0JABQD
-	JszSVPFbTatePcut5qu1ZF+H4WvX4bAnPv9pVA6NeJWnKaJ/a8/+5Osz7CXoLIWqxcmfQ4Vh0KNy6
-	+tVlLk/QwPX8OpMm6vjahxZd3T7+nUlNZUGjW3IGNnUTF5rcP+9RsijotTyhbgepfrC7XUuzgPbWm
-	9DQfLqInA==;
+	 bh=fUuSLt9UgF1l0OucV5WhU6fMVpP3iTip2AlP7FqSZEI=; b=Ar8GYjQ8jZHcj4tJzzqfJVpY5
+	r6fo3fzLAwlIpr26kY7xgcDoI/e5dHMFD29ATQ1e+1OBEEqwYjuVYnFjz4bnylhOyOMLWp/mvfXbD
+	DtyW4T3lBFHfrwZRrfU/1Kd2d7Yc7tqU9PEBemywsPIQDpbzqDspg6+HjUYaDtgDwjgaX2S2y2WOj
+	YiMXpr5gwlgF0brFVqUuEP/tmRnSyoDprqqF09kRPMxqlZhRf4ZtrIhg+BUWNK6F54BrWn/fkV1pm
+	3D4jygUIg1a+95K45ILJUG52q+NW+cukb/E1GbBLCuB4TiiMVXnAhQgPpbG8yEsgK0NTO/UU5l7zD
+	Gl4IhQEyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKLA9-0006iG-8q; Tue, 15 Oct 2019 11:38:49 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKLA0-0006hk-Ep; Tue, 15 Oct 2019 11:38:42 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 28B18337;
- Tue, 15 Oct 2019 04:38:39 -0700 (PDT)
-Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F0F553F68E;
- Tue, 15 Oct 2019 04:38:36 -0700 (PDT)
-Subject: Re: [PATCH v3 3/7] iommu/mediatek: Use gather to achieve the tlb
- range flush
-To: Yong Wu <yong.wu@mediatek.com>
-References: <1571035101-4213-1-git-send-email-yong.wu@mediatek.com>
- <1571035101-4213-4-git-send-email-yong.wu@mediatek.com>
- <f35c8a3a-0693-facf-2050-65d3f7628929@arm.com>
- <1571117166.19130.83.camel@mhfsdcap03>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <5d03ebcb-0cd1-a9ad-0f4e-c219e351396c@arm.com>
-Date: Tue, 15 Oct 2019 12:38:35 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1iKLDf-0000Wx-78; Tue, 15 Oct 2019 11:42:27 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iKLDU-0000WZ-Kj; Tue, 15 Oct 2019 11:42:18 +0000
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id C88C110CC1F8;
+ Tue, 15 Oct 2019 11:42:13 +0000 (UTC)
+Received: from [10.36.116.26] (ovpn-116-26.ams2.redhat.com [10.36.116.26])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 4AD4560127;
+ Tue, 15 Oct 2019 11:42:04 +0000 (UTC)
+Subject: Re: [PATCH V6 1/2] mm/page_alloc: Make alloc_gigantic_page()
+ available for general use
+To: Anshuman Khandual <anshuman.khandual@arm.com>, linux-mm@kvack.org
+References: <1571131302-32290-1-git-send-email-anshuman.khandual@arm.com>
+ <1571131302-32290-2-git-send-email-anshuman.khandual@arm.com>
+From: David Hildenbrand <david@redhat.com>
+Organization: Red Hat GmbH
+Message-ID: <9da1f196-51bd-06ac-c5dc-b55776fce2be@redhat.com>
+Date: Tue, 15 Oct 2019 13:42:03 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.0
 MIME-Version: 1.0
-In-Reply-To: <1571117166.19130.83.camel@mhfsdcap03>
-Content-Language: en-GB
+In-Reply-To: <1571131302-32290-2-git-send-email-anshuman.khandual@arm.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
+ (mx1.redhat.com [10.5.110.65]); Tue, 15 Oct 2019 11:42:15 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_043840_588691_85A95221 
-X-CRM114-Status: GOOD (  24.12  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191015_044216_726012_151AAE53 
+X-CRM114-Status: GOOD (  25.54  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -64,133 +71,155 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: youlin.pei@mediatek.com, anan.sun@mediatek.com,
- Nicolas Boichat <drinkcat@chromium.org>, cui.zhang@mediatek.com,
- srv_heupstream@mediatek.com, chao.hao@mediatek.com,
- Joerg Roedel <joro@8bytes.org>, edison.hsieh@mediatek.com,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- Evan Green <evgreen@chromium.org>, Tomasz Figa <tfiga@google.com>,
- iommu@lists.linux-foundation.org, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
+ James Hogan <jhogan@kernel.org>, Heiko Carstens <heiko.carstens@de.ibm.com>,
+ Michal Hocko <mhocko@kernel.org>, Dave Hansen <dave.hansen@intel.com>,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, Andrea Arcangeli <aarcange@redhat.com>,
+ linux-s390@vger.kernel.org, Jason Gunthorpe <jgg@ziepe.ca>,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ David Rientjes <rientjes@google.com>, linux-snps-arc@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, Kees Cook <keescook@chromium.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>, linuxppc-dev@lists.ozlabs.org,
+ Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
+ Oscar Salvador <osalvador@suse.de>, Christophe Leroy <christophe.leroy@c-s.fr>,
+ Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
+ Vineet Gupta <vgupta@synopsys.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Mel Gorman <mgorman@techsingularity.net>,
+ "David S. Miller" <davem@davemloft.net>,
+ Mike Kravetz <mike.kravetz@oracle.com>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 15/10/2019 06:26, Yong Wu wrote:
-> On Mon, 2019-10-14 at 15:21 +0100, Robin Murphy wrote:
->> On 14/10/2019 07:38, Yong Wu wrote:
->>> Use the iommu_gather mechanism to achieve the tlb range flush.
->>> Gather the iova range in the "tlb_add_page", then flush the merged iova
->>> range in iotlb_sync.
->>>
->>> Note: If iotlb_sync comes from iommu_iotlb_gather_add_page, we have to
->>> avoid retry the lock since the spinlock have already been acquired.
->>
->> I think this could probably be even simpler - once the actual
->> register-poking is all confined to mtk_iommu_tlb_sync(), you should be
->> able get rid of the per-domain locking in map/unmap and just have a
->> single per-IOMMU lock to serialise syncs. The io-pgtable code itself
->> hasn't needed external locking for a while now.
+On 15.10.19 11:21, Anshuman Khandual wrote:
+> alloc_gigantic_page() implements an allocation method where it scans over
+> various zones looking for a large contiguous memory block which could not
+> have been allocated through the buddy allocator. A subsequent patch which
+> tests arch page table helpers needs such a method to allocate PUD_SIZE
+> sized memory block. In the future such methods might have other use cases
+> as well. So alloc_gigantic_page() has been split carving out actual memory
+> allocation method and made available via new alloc_gigantic_page_order()
+> which is wrapped under CONFIG_CONTIG_ALLOC.
 > 
-> This is more simpler! Thanks very much. I will try this.
+> Cc: Andrew Morton <akpm@linux-foundation.org>
+> Cc: Vlastimil Babka <vbabka@suse.cz>
+> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> Cc: Thomas Gleixner <tglx@linutronix.de>
+> Cc: Mike Rapoport <rppt@linux.vnet.ibm.com>
+> Cc: Mike Kravetz <mike.kravetz@oracle.com>
+> Cc: Jason Gunthorpe <jgg@ziepe.ca>
+> Cc: Dan Williams <dan.j.williams@intel.com>
+> Cc: Peter Zijlstra <peterz@infradead.org>
+> Cc: Michal Hocko <mhocko@kernel.org>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: Mark Brown <broonie@kernel.org>
+> Cc: Steven Price <Steven.Price@arm.com>
+> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
+> Cc: Kees Cook <keescook@chromium.org>
+> Cc: Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>
+> Cc: Matthew Wilcox <willy@infradead.org>
+> Cc: Sri Krishna chowdary <schowdary@nvidia.com>
+> Cc: Dave Hansen <dave.hansen@intel.com>
+> Cc: Russell King - ARM Linux <linux@armlinux.org.uk>
+> Cc: Michael Ellerman <mpe@ellerman.id.au>
+> Cc: Paul Mackerras <paulus@samba.org>
+> Cc: Martin Schwidefsky <schwidefsky@de.ibm.com>
+> Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
+> Cc: "David S. Miller" <davem@davemloft.net>
+> Cc: Vineet Gupta <vgupta@synopsys.com>
+> Cc: James Hogan <jhogan@kernel.org>
+> Cc: Paul Burton <paul.burton@mips.com>
+> Cc: Ralf Baechle <ralf@linux-mips.org>
+> Cc: Kirill A. Shutemov <kirill@shutemov.name>
+> Cc: Gerald Schaefer <gerald.schaefer@de.ibm.com>
+> Cc: Christophe Leroy <christophe.leroy@c-s.fr>
+> Cc: David Rientjes <rientjes@google.com>
+> Cc: Andrea Arcangeli <aarcange@redhat.com>
+> Cc: Oscar Salvador <osalvador@suse.de>
+> Cc: Mel Gorman <mgorman@techsingularity.net>
+> Cc: linux-snps-arc@lists.infradead.org
+> Cc: linux-mips@vger.kernel.org
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-ia64@vger.kernel.org
+> Cc: linuxppc-dev@lists.ozlabs.org
+> Cc: linux-s390@vger.kernel.org
+> Cc: linux-sh@vger.kernel.org
+> Cc: sparclinux@vger.kernel.org
+> Cc: x86@kernel.org
+> Cc: linux-kernel@vger.kernel.org
+> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+> ---
+>   include/linux/gfp.h |  3 ++
+>   mm/hugetlb.c        | 76 +----------------------------------
+>   mm/page_alloc.c     | 98 +++++++++++++++++++++++++++++++++++++++++++++
+>   3 files changed, 102 insertions(+), 75 deletions(-)
 > 
-> The only concern is there is no lock in the iova_to_phys then, maybe use
-> the new lock instead.
+> diff --git a/include/linux/gfp.h b/include/linux/gfp.h
+> index fb07b503dc45..379ad23437d1 100644
+> --- a/include/linux/gfp.h
+> +++ b/include/linux/gfp.h
+> @@ -589,6 +589,9 @@ static inline bool pm_suspended_storage(void)
+>   /* The below functions must be run on a range from a single zone. */
+>   extern int alloc_contig_range(unsigned long start, unsigned long end,
+>   			      unsigned migratetype, gfp_t gfp_mask);
+> +extern struct page *alloc_gigantic_page_order(unsigned int order,
+> +					      gfp_t gfp_mask, int nid,
+> +					      nodemask_t *nodemask);
+>   #endif
+>   void free_contig_range(unsigned long pfn, unsigned int nr_pages);
+>   
+> diff --git a/mm/hugetlb.c b/mm/hugetlb.c
+> index 977f9a323a7a..d199556a4a2c 100644
+> --- a/mm/hugetlb.c
+> +++ b/mm/hugetlb.c
+> @@ -1023,86 +1023,12 @@ static void free_gigantic_page(struct page *page, unsigned int order)
+>   }
+>   
+>   #ifdef CONFIG_CONTIG_ALLOC
+> -static int __alloc_gigantic_page(unsigned long start_pfn,
+> -				unsigned long nr_pages, gfp_t gfp_mask)
+> -{
+> -	unsigned long end_pfn = start_pfn + nr_pages;
+> -	return alloc_contig_range(start_pfn, end_pfn, MIGRATE_MOVABLE,
+> -				  gfp_mask);
+> -}
+> -
+> -static bool pfn_range_valid_gigantic(struct zone *z,
+> -			unsigned long start_pfn, unsigned long nr_pages)
+> -{
+> -	unsigned long i, end_pfn = start_pfn + nr_pages;
+> -	struct page *page;
+> -
+> -	for (i = start_pfn; i < end_pfn; i++) {
+> -		if (!pfn_valid(i))
+> -			return false;
+> -
+> -		page = pfn_to_page(i);
 
-iova_to_phys isn't issuing any syncs, so you don't need any locking 
-there - if anyone calls that in a way which races against the given 
-address being unmapped and remapped they can't expect a meaningful 
-result anyway.
+Am I missing something or should here really be a pfn_to_online_page() 
+here instead of a pfn_valid() ?
 
-Robin.
 
->>> Suggested-by: Tomasz Figa <tfiga@chromium.org>
->>> Signed-off-by: Yong Wu <yong.wu@mediatek.com>
->>> ---
->>> 1) This is the special case backtrace:
->>>
->>>    mtk_iommu_iotlb_sync+0x50/0xa0
->>>    mtk_iommu_tlb_flush_page_nosync+0x5c/0xd0
->>>    __arm_v7s_unmap+0x174/0x598
->>>    arm_v7s_unmap+0x30/0x48
->>>    mtk_iommu_unmap+0x50/0x78
->>>    __iommu_unmap+0xa4/0xf8
->>>
->>> 2) The checking "if (gather->start == ULONG_MAX) return;" also is
->>> necessary. It will happened when unmap only go to _flush_walk, then
->>> enter this tlb_sync.
->>> ---
->>>    drivers/iommu/mtk_iommu.c | 29 +++++++++++++++++++++++++----
->>>    drivers/iommu/mtk_iommu.h |  1 +
->>>    2 files changed, 26 insertions(+), 4 deletions(-)
->>>
->>> diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
->>> index 5f594d6..8712afc 100644
->>> --- a/drivers/iommu/mtk_iommu.c
->>> +++ b/drivers/iommu/mtk_iommu.c
->>> @@ -234,7 +234,12 @@ static void mtk_iommu_tlb_flush_page_nosync(struct iommu_iotlb_gather *gather,
->>>    					    unsigned long iova, size_t granule,
->>>    					    void *cookie)
->>>    {
->>> -	mtk_iommu_tlb_add_flush_nosync(iova, granule, granule, true, cookie);
->>> +	struct mtk_iommu_data *data = cookie;
->>> +	struct iommu_domain *domain = &data->m4u_dom->domain;
->>> +
->>> +	data->is_in_tlb_gather_add_page = true;
->>> +	iommu_iotlb_gather_add_page(domain, gather, iova, granule);
->>> +	data->is_in_tlb_gather_add_page = false;
->>>    }
->>>    
->>>    static const struct iommu_flush_ops mtk_iommu_flush_ops = {
->>> @@ -453,12 +458,28 @@ static void mtk_iommu_flush_iotlb_all(struct iommu_domain *domain)
->>>    static void mtk_iommu_iotlb_sync(struct iommu_domain *domain,
->>>    				 struct iommu_iotlb_gather *gather)
->>>    {
->>> +	struct mtk_iommu_data *data = mtk_iommu_get_m4u_data();
->>>    	struct mtk_iommu_domain *dom = to_mtk_domain(domain);
->>> +	bool is_in_gather = data->is_in_tlb_gather_add_page;
->>> +	size_t length = gather->end - gather->start;
->>>    	unsigned long flags;
->>>    
->>> -	spin_lock_irqsave(&dom->pgtlock, flags);
->>> -	mtk_iommu_tlb_sync(mtk_iommu_get_m4u_data());
->>> -	spin_unlock_irqrestore(&dom->pgtlock, flags);
->>> +	if (gather->start == ULONG_MAX)
->>> +		return;
->>> +
->>> +	/*
->>> +	 * Avoid acquire the lock when it's in gather_add_page since the lock
->>> +	 * has already been held.
->>> +	 */
->>> +	if (!is_in_gather)
->>> +		spin_lock_irqsave(&dom->pgtlock, flags);
->>> +
->>> +	mtk_iommu_tlb_add_flush_nosync(gather->start, length, gather->pgsize,
->>> +				       false, data);
->>> +	mtk_iommu_tlb_sync(data);
->>> +
->>> +	if (!is_in_gather)
->>> +		spin_unlock_irqrestore(&dom->pgtlock, flags);
->>>    }
->>>    
->>>    static phys_addr_t mtk_iommu_iova_to_phys(struct iommu_domain *domain,
->>> diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
->>> index fc0f16e..d29af1d 100644
->>> --- a/drivers/iommu/mtk_iommu.h
->>> +++ b/drivers/iommu/mtk_iommu.h
->>> @@ -58,6 +58,7 @@ struct mtk_iommu_data {
->>>    	struct iommu_group		*m4u_group;
->>>    	bool                            enable_4GB;
->>>    	bool				tlb_flush_active;
->>> +	bool				is_in_tlb_gather_add_page;
->>>    
->>>    	struct iommu_device		iommu;
->>>    	const struct mtk_iommu_plat_data *plat_data;
->>>
-> 
-> 
+-- 
+
+Thanks,
+
+David / dhildenb
 
 _______________________________________________
 linux-arm-kernel mailing list
