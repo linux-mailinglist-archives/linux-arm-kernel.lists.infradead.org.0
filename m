@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BAC0FD83AD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 00:30:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82068D83B1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 00:32:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OV56QpoKERZ++jGNeatoaguviWx52f00Tw+Y4rqvioc=; b=hfMNLDaSDOX5yc
-	SZSdnBjn9uL+N2u2EkqWOZzl3raU75QbrHmggy0v0KIu5tpoQA/AZUSXQe7Kxh635q3/DBRwiunhk
-	BVbv2b0HGecHuNdvwTvvnZhYYKCPgqcOJjwFesiHEhVYwQaCGSd3EnWblU7xMhL2IZLqTEt89ytgl
-	KZJFt/wzrLAA0wsyVk19jvZgjPF6cbdpNRBPh5EPmdT3wchXahyWD2z7/VcauEkaqtU4mLzXFrY0R
-	sc8OUOfYs7JeCfA9sErODLYp5e0lXKLDgKiE+fU6mCijVH2iBHEMGVgmGhkyXfoFiUS8C7CUkS2Up
-	O5W20A/vHnN0P09Vg0MA==;
+	List-Owner; bh=uXCM3O9dIJKtFKkxKnIyD9dxkWLbVpkwe0fIX79C9wY=; b=C0vi0BiR425Lvz
+	D4QT0fj4ggtgZOGrV+/d/Uw0DL5IKHs6DVKPA6PzFYY4gaSs5IAZ90FcBySxVKhImkH5NIHIQ9QGI
+	k1uevH14cEywtR5qEJeH3sShRctz3SOFbXCQBlQHXfFPFJNgkmsKSuRXbOJuSi4kuJVaonegtceh8
+	MGReHMylObrSBCufu3NlE3ODLOG32cRtVtgoGj+4cClTfUT3V875dljw8Cq5A4GF5ipBKBSIeXaAY
+	DbM8zVsST0r3NueVWIyrt2GYgBUDboV2HVsMyIWoc0bkxTD3JwCGuFrCB9Xl6x5n4bCb9pLIaoa7S
+	Ag2tCBAstYiOSB6HNCfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKVKj-0005H4-Q5; Tue, 15 Oct 2019 22:30:25 +0000
+	id 1iKVMM-0005cQ-JY; Tue, 15 Oct 2019 22:32:06 +0000
 Received: from chamillionaire.breakpoint.cc ([2a0a:51c0:0:12e:520::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKVKa-0005G9-LJ
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 22:30:18 +0000
+ id 1iKVME-0005bx-3Y
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 22:31:59 +0000
 Received: from bigeasy by Chamillionaire.breakpoint.cc with local (Exim 4.92)
  (envelope-from <sebastian@breakpoint.cc>)
- id 1iKVKY-0007J4-1r; Wed, 16 Oct 2019 00:30:14 +0200
-Date: Wed, 16 Oct 2019 00:30:14 +0200
+ id 1iKVMB-0007JX-62; Wed, 16 Oct 2019 00:31:55 +0200
+Date: Wed, 16 Oct 2019 00:31:55 +0200
 From: Sebastian Andrzej Siewior <sebastian@breakpoint.cc>
 To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH 6/6] ARM: Inline locking functions for !PREEMPTION
-Message-ID: <20191015223011.nyjbtylco6isjvb6@flow>
+Subject: [PATCH 1/6 v2] sh: Move cmpxchg-xchg.h to asm-generic
+Message-ID: <20191015223154.7wcsc7x5edrpasfc@flow>
 References: <20191013221310.30748-1-sebastian@breakpoint.cc>
- <20191013221310.30748-7-sebastian@breakpoint.cc>
- <CAK8P3a2hYteGizk=--_Z1kE200_ORL52QEK5RBTMtXt5_UzmhA@mail.gmail.com>
- <CAK8P3a1Mu0Ghy1VtD7NBKQ4-ZMsYQe_bjYBAshRMTYTWtxzbPw@mail.gmail.com>
+ <20191013221310.30748-2-sebastian@breakpoint.cc>
+ <CAK8P3a0q+03=uNcnnHrGqHGOcAO3-mytxSmoBWLtHY+5StMNOQ@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAK8P3a1Mu0Ghy1VtD7NBKQ4-ZMsYQe_bjYBAshRMTYTWtxzbPw@mail.gmail.com>
+In-Reply-To: <CAK8P3a0q+03=uNcnnHrGqHGOcAO3-mytxSmoBWLtHY+5StMNOQ@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_153016_702334_D5305DB1 
-X-CRM114-Status: GOOD (  14.51  )
+X-CRM114-CacheID: sfid-20191015_153158_149605_F47A9958 
+X-CRM114-Status: UNSURE (   9.33  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -62,59 +62,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>, Russell King <linux@armlinux.org.uk>,
+Cc: linux-arch <linux-arch@vger.kernel.org>, Rich Felker <dalias@libc.org>,
+ Yoshinori Sato <ysato@users.sourceforge.jp>,
+ Linux-sh list <linux-sh@vger.kernel.org>,
+ Peter Zijlstra <peterz@infradead.org>, Russell King <linux@armlinux.org.uk>,
  Ingo Molnar <mingo@redhat.com>, Waiman Long <longman@redhat.com>,
  Will Deacon <will@kernel.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-10-14 12:01:02 [+0200], Arnd Bergmann wrote:
-> On Mon, Oct 14, 2019 at 9:43 AM Arnd Bergmann <arnd@arndb.de> wrote:
-> > On Mon, Oct 14, 2019 at 12:14 AM Sebastian Andrzej Siewior <sebastian@breakpoint.cc> wrote
-> >
-> > Also, the output of 'size vmlinux' before and after the patch for
-> > multi_v7_defconfig would be useful to have in the changelog, as there
-> > are a couple of platforms that are particularly sensitive to object code
-> > size changes.
-> 
-> To follow up, here are the numbers I get, building the linux-5.4-rc2
-> multi_v7_defconfig with clang-9, comparing the original spinlock
-> and the qspinlock, combined with inlining all locks or leaving them
-> out of line:
-> 
->    text    data     bss     dec     hex filename
-> 15294816 6958636 404480 22657932 159bb8c vmlinux-orig
-> 16004898 6962060 404480 23371438 1649eae vmlinux-orig-inline
-> 15198619 6958812 404560 22561991 15844c7 vmlinux-qlock-noinline
-> 15622897 6962116 404560 22989573 15ecb05 vmlinux-qlock-inline
-> 
-> This gives us a 1.5% size increase over the original code with
-> inlining, or a 0.5% decrease without inlining, or about 1.9% size
-> difference for the Kconfig change itself, which does sound
-> significant.
-
-I had 2% increase (vmlinux-orig -> vmlinux-qlock-inline) but my vmlinux
-was only half the size. Performance wise the inlining improved the
-hackbench numbers in my test. How do we account that?
-
-> Maybe it should be configurable?
-
-Any comment from the locking department? I would prefer to avoid an
-extra knob for it. 
-The v7 config is PREEMPT_NONE and HZ_100. Based on the perf numbers I
-posted last time: with inlining I get more or less to the performance of
-the ticket implementation on imx6 and it makes no difference on AM572x.
-Let me run the hackbench test with the multi_v7_defconfig on my two
-boards with ORIG/qlock/qlock-inline and come with some numbers here.
-
->       Arnd
-
-Sebastian
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlIGhlYWRlciBmaWxlIGlzIHZlcnkgZ2VuZXJpYyBhbmQgY291bGQgYmUgcmV1c2VkIGJ5IG90
+aGVyCmFyY2hpdGVjdHVyZXMgYXMgbG9uZyBhcyB0aGV5IHByb3ZpZGUgX19jbXB4Y2hnX3UzMigp
+LgoKTW92ZSBzaCdzIGNtcHhjaGcteGNoZy5oIHRvIGFzbS1nZW5lcmljLgoKQ2M6IFlvc2hpbm9y
+aSBTYXRvIDx5c2F0b0B1c2Vycy5zb3VyY2Vmb3JnZS5qcD4KQ2M6IFJpY2ggRmVsa2VyIDxkYWxp
+YXNAbGliYy5vcmc+CkNjOiBBcm5kIEJlcmdtYW5uIDxhcm5kQGFybmRiLmRlPgpDYzogbGludXgt
+c2hAdmdlci5rZXJuZWwub3JnCkNjOiBsaW51eC1hcmNoQHZnZXIua2VybmVsLm9yZwpBY2tlZC1i
+eTogQXJuZCBCZXJnbWFubiA8YXJuZEBhcm5kYi5kZT4KU2lnbmVkLW9mZi1ieTogU2ViYXN0aWFu
+IEFuZHJ6ZWogU2lld2lvciA8c2ViYXN0aWFuQGJyZWFrcG9pbnQuY2M+Ci0tLQp2MeKApnYyOiBz
+QF9fQVNNX1NIX0NNUFhDSEdfWENIR19IQF9fQVNNX0dFTkVSSUNfQ01QWENIR19YQ0hHX0hACgog
+YXJjaC9zaC9pbmNsdWRlL2FzbS9LYnVpbGQgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgfCAxICsKIHthcmNoL3NoL2luY2x1ZGUvYXNtID0+IGluY2x1ZGUvYXNtLWdlbmVyaWN9L2Nt
+cHhjaGcteGNoZy5oIHwgNiArKystLS0KIDIgZmlsZXMgY2hhbmdlZCwgNCBpbnNlcnRpb25zKCsp
+LCAzIGRlbGV0aW9ucygtKQogcmVuYW1lIHthcmNoL3NoL2luY2x1ZGUvYXNtID0+IGluY2x1ZGUv
+YXNtLWdlbmVyaWN9L2NtcHhjaGcteGNoZy5oICg5MSUpCgpkaWZmIC0tZ2l0IGEvYXJjaC9zaC9p
+bmNsdWRlL2FzbS9LYnVpbGQgYi9hcmNoL3NoL2luY2x1ZGUvYXNtL0tidWlsZAppbmRleCA1MWE1
+NGRmMjJjMTEwLi4wOGMxZDk2Mjg2ZDlkIDEwMDY0NAotLS0gYS9hcmNoL3NoL2luY2x1ZGUvYXNt
+L0tidWlsZAorKysgYi9hcmNoL3NoL2luY2x1ZGUvYXNtL0tidWlsZApAQCAtMSw1ICsxLDYgQEAK
+ICMgU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjAKIGdlbmVyYXRlZC15ICs9IHN5c2Nh
+bGxfdGFibGUuaAorZ2VuZXJpYy15ICs9IGNtcHhjaGcteGNoZy5oCiBnZW5lcmljLXkgKz0gY29t
+cGF0LmgKIGdlbmVyaWMteSArPSBjdXJyZW50LmgKIGdlbmVyaWMteSArPSBkZWxheS5oCmRpZmYg
+LS1naXQgYS9hcmNoL3NoL2luY2x1ZGUvYXNtL2NtcHhjaGcteGNoZy5oIGIvaW5jbHVkZS9hc20t
+Z2VuZXJpYy9jbXB4Y2hnLXhjaGcuaApzaW1pbGFyaXR5IGluZGV4IDkxJQpyZW5hbWUgZnJvbSBh
+cmNoL3NoL2luY2x1ZGUvYXNtL2NtcHhjaGcteGNoZy5oCnJlbmFtZSB0byBpbmNsdWRlL2FzbS1n
+ZW5lcmljL2NtcHhjaGcteGNoZy5oCmluZGV4IGMzNzNmMjFlZmU0ZDkuLmM5YWNkNmZmODc0MWQg
+MTAwNjQ0Ci0tLSBhL2FyY2gvc2gvaW5jbHVkZS9hc20vY21weGNoZy14Y2hnLmgKKysrIGIvaW5j
+bHVkZS9hc20tZ2VuZXJpYy9jbXB4Y2hnLXhjaGcuaApAQCAtMSw2ICsxLDYgQEAKIC8qIFNQRFgt
+TGljZW5zZS1JZGVudGlmaWVyOiBHUEwtMi4wICovCi0jaWZuZGVmIF9fQVNNX1NIX0NNUFhDSEdf
+WENIR19ICi0jZGVmaW5lIF9fQVNNX1NIX0NNUFhDSEdfWENIR19ICisjaWZuZGVmIF9fQVNNX0dF
+TkVSSUNfQ01QWENIR19YQ0hHX0gKKyNkZWZpbmUgX19BU01fR0VORVJJQ19DTVBYQ0hHX1hDSEdf
+SAogCiAvKgogICogQ29weXJpZ2h0IChDKSAyMDE2IFJlZCBIYXQsIEluYy4KQEAgLTQ3LDQgKzQ3
+LDQgQEAgc3RhdGljIGlubGluZSB1bnNpZ25lZCBsb25nIHhjaGdfdTgodm9sYXRpbGUgdTggKm0s
+IHVuc2lnbmVkIGxvbmcgdmFsKQogCXJldHVybiBfX3hjaGdfY21weGNoZyhtLCB2YWwsIHNpemVv
+ZiAqbSk7CiB9CiAKLSNlbmRpZiAvKiBfX0FTTV9TSF9DTVBYQ0hHX1hDSEdfSCAqLworI2VuZGlm
+IC8qIF9fQVNNX0dFTkVSSUNfQ01QWENIR19YQ0hHX0ggKi8KLS0gCjIuMjMuMAoKCl9fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwg
+bWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
+bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
