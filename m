@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1F46D8405
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 00:48:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B752D840A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 00:48:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,68 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=06prx+2AMclzrpa9R+0NPToYccuMir1E1YrCRev7Msk=; b=Hf/rGZKau0dA+DmTHn4B+ABDkt
-	IC513dhYu7DRgsS7QeXdM5wpBrOCjV0XJzmF0FGkbxkkuSZ0q71E1CBIgEvzzTdGLDhzT9VDnXSiw
-	UDdSmYEL29G5THBdautUHgxj+/T14z2Zfsoxc5HZzkBRSh6OHGjRJLFW/zozVxhmnluc2GykfUxvC
-	iPPwRuqOL5k3nt8tfZwS7sfjw5h4xoVKVJk7YVhyRNlM92XTDBy7BopXHDVO5B3eEaMj58Cq5kQTv
-	yreQhqtmEvEE0Mw/5a3+loIuwN9kbe9rHvci4QK6JTq4tMFRDWbuoCbYCf7VXqqvee6dcZrZIFQVg
-	uOmb4upA==;
+	bh=EZlbidNW4PyayT2EmnrA6zRGbxe/F7f5nHKx1coriAE=; b=Olzv8fhpY59RXlKRRtRf+ZbYLJ
+	uzpq1Ax9rUSQcExkp1ZYK8eBOG7dA2+yTC/sFuqKUlcj6jxcxby/J8Sy7KCo450EcsWEykLMoLx+V
+	EEus1OaHbpVyTGScqfTMkPqkDN18LzJysrXMxRQrBh9M775WKgHf3oHoCLtfOu06J141Eb7/CEOdf
+	BeNIo9CczB7SthpXDlmpQ1fUZXU4GcyMH2f+FN4wzz1/hMg/dTyGYwi+cQmjF3sw+EiRJ4iF6IL+Y
+	JRpsc3oO41IkBRaCXnbm5pKrIJ60zofZkWcXtQK7DctRpQJE/32JCS4xAkYYBXfsLGi6orrn6Eosj
+	4HteGmtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKVc2-0005Ok-Tj; Tue, 15 Oct 2019 22:48:18 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1iKVca-00061f-Re; Tue, 15 Oct 2019 22:48:52 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKVak-0004UK-KD
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 22:47:00 +0000
-Received: by mail-pg1-x544.google.com with SMTP id 23so13036364pgk.3
+ id 1iKVau-0004gE-LL
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 22:47:10 +0000
+Received: by mail-pg1-x543.google.com with SMTP id t3so13019139pga.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 15 Oct 2019 15:46:58 -0700 (PDT)
+ Tue, 15 Oct 2019 15:47:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Xkl1PEm6PjOKAdBEuYy5l8ljzm4XzkefiTF2G+osw9g=;
- b=WfxjInaH8u7IeDqrg3R8m7CSa3YmVXEHADW0204Wh2b1NKxFkH0maH6HGfUvTHCTJH
- SX0t74KIu8UHc3mc4LQhFSJ5LP2p56s/JawwceVz8t5qhGbBxM8Hyr5evin/CH7kpEYI
- i/dP4QgPlyIFLgPrCsZARwLppOdt1ywuYPJqQ=
+ bh=MqCNoFXBnDQS65g3QEqNb06DM9l3Y39pluZuZL8mhfQ=;
+ b=JzRUUJ0N7j75JfIwIlSihcUiHylr54bI1uG5EWH0+1obdUFxbvz/3Gcp0Mksm3QbSD
+ DSqVZw4UVHxDaQO24T8/j09J3QdOIRgtDqEJFmTEVROpqXxxapfyhmLfN7QY4nk7MdEn
+ ufhPEsGN1tPujh+8NcN+TtgLs+5SM7woNqW80=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=Xkl1PEm6PjOKAdBEuYy5l8ljzm4XzkefiTF2G+osw9g=;
- b=o1BtVM6AY1JeyOXtTj7XLzBfNuGkrUqFnEowiRSCbYcDy+8KBEbdkqvYjEBdIv6fFu
- +GhgUgYTB9T0Trc3XjHXMLSoOvrRdKf/iY432L3k3h4FiTr7kk8h7JrdiQvPsETNLf7Y
- gFLBYaG5iL7U50OGXD9D+cCD+iIpIZPGnp9w1oI3y9hy89zCZI1mStrg2xD37OrfFnzu
- 7Y8D4UrsBU1ihSViDj+dnbDoF14dnWq4i0RFRzuFmBQ5OEieOom8pUpyAizCFGl3eBTI
- FCLXaiDUT1Xzkl5saCZ3bXddNXt3ZnR0w1lor0OAztr5+ixAwc7cW0/mq8PjPL3j9elz
- upmw==
-X-Gm-Message-State: APjAAAXysXvfGmsQc4Vl5nDOSVMOZ+KGUDh1c92X/YiU4TgBlP6Kb2YE
- /X6LfoJMHaDdA07bZ/tC8q7oSQ==
-X-Google-Smtp-Source: APXvYqwd4d6rKMvAQu8jUWvGRjFaibW9gAyF1bRumkomfCdN6jllEUE7XSWEANlcX3OUnyZHyND6QQ==
-X-Received: by 2002:a17:90a:32a6:: with SMTP id
- l35mr976437pjb.55.1571179617670; 
- Tue, 15 Oct 2019 15:46:57 -0700 (PDT)
+ bh=MqCNoFXBnDQS65g3QEqNb06DM9l3Y39pluZuZL8mhfQ=;
+ b=cyHU5z4AiiCQMsWRumBoZi9AcV/ZJS9fxX56IQpSrH0j1Ng2Q3RcNkI0BATQi+nw6T
+ BZX+GwYz10D2OXpCYeSyMFoh7tZR+DUh1B6QValeQjcPlrhfn6p7VbiD+Gfao+xxWJWQ
+ t6+95PknrxPXH1i9rGh32Z1xp3NI0Q8KZFka+u7fUdTZcociDTbuZvC7+t6WTtyc2Wg0
+ bqjltdC3OJ7NJQqoJQqeBVqO6zwILpqd9euJMPsneKA0wfRTqqxxCRH+IYjjIBVoDTQA
+ i312MI+pq7PLRPcuBXKRxim9/6ld3KAPSSDp2XPofmTGRQDGw0tOAIOSQw5wdIP9FD1W
+ B0yQ==
+X-Gm-Message-State: APjAAAXc/eqpBiczbRaV2wVhg3wBS8+sAgW42lBF5wondDx7qbpxhYkl
+ HsDFirw6PZSK2N+/Pr4N5ySTgg==
+X-Google-Smtp-Source: APXvYqzi7hgCzLARhsxWspbuNKNQZPbT03PPel95bsqKxHHQyI6qpvtcPvYbcr1fQZy38ofNrCeknA==
+X-Received: by 2002:a62:5ac3:: with SMTP id o186mr41145786pfb.20.1571179627935; 
+ Tue, 15 Oct 2019 15:47:07 -0700 (PDT)
 Received: from lbrmn-mmayer.ric.broadcom.com ([192.19.228.250])
- by smtp.gmail.com with ESMTPSA id e127sm23019837pfe.37.2019.10.15.15.46.56
+ by smtp.gmail.com with ESMTPSA id e127sm23019837pfe.37.2019.10.15.15.47.06
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 15 Oct 2019 15:46:57 -0700 (PDT)
+ Tue, 15 Oct 2019 15:47:07 -0700 (PDT)
 From: Markus Mayer <mmayer@broadcom.com>
 To: Brian Norris <computersforpeace@gmail.com>,
  Florian Fainelli <f.fainelli@gmail.com>,
  Gregory Fong <gregory.0xf0@gmail.com>
-Subject: [PATCH 7/8] memory: brcmstb: dpfe: Compute checksum at
- __send_command() time
-Date: Tue, 15 Oct 2019 15:45:12 -0700
-Message-Id: <20191015224513.16969-8-mmayer@broadcom.com>
+Subject: [PATCH 8/8] memory: brcmstb: dpfe: Fixup API version/commands for 7211
+Date: Tue, 15 Oct 2019 15:45:13 -0700
+Message-Id: <20191015224513.16969-9-mmayer@broadcom.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191015224513.16969-1-mmayer@broadcom.com>
 References: <20191015224513.16969-1-mmayer@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_154658_703138_A2AE90A3 
-X-CRM114-Status: GOOD (  15.97  )
+X-CRM114-CacheID: sfid-20191015_154708_734799_B77AB8EA 
+X-CRM114-Status: GOOD (  17.29  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -109,91 +107,98 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Florian Fainelli <f.fainelli@gmail.com>
 
-Instead of pre-computing the checksum, do it at the time we send the
-command, this reduces the possibility of introducing errors as well as
-limits the amount of code necessary while adding new commands and/or new
-API versions. The MSG_CHKSUM enumeration value is no longer necessary
-and is removed.
+7211 uses a newer version of API v2 which is half way between what was
+defined as API v3 and what used to be called API v2 but was used with
+DPFE firmwares with major versions 1.x.x.x. Starting with **the new**
+API v2, we are no longer getting loadable firmware images, so the
+capability to load it is removed (like v3).
+
+To avoid spreading more confusion, map 7268/7271/7278 to the old DPFE
+API version 2, 7211 to the new API v2 and introduce the specific
+commands for that, and leave newer versions to map to API v3.
 
 Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 Signed-off-by: Markus Mayer <mmayer@broadcom.com>
 ---
- drivers/memory/brcmstb_dpfe.c | 23 ++++++++++-------------
- 1 file changed, 10 insertions(+), 13 deletions(-)
+ drivers/memory/brcmstb_dpfe.c | 44 ++++++++++++++++++++++++++++-------
+ 1 file changed, 36 insertions(+), 8 deletions(-)
 
 diff --git a/drivers/memory/brcmstb_dpfe.c b/drivers/memory/brcmstb_dpfe.c
-index cf320302d2c0..7c6e85ad25a7 100644
+index 7c6e85ad25a7..82b415be18d1 100644
 --- a/drivers/memory/brcmstb_dpfe.c
 +++ b/drivers/memory/brcmstb_dpfe.c
-@@ -127,7 +127,6 @@ enum dpfe_msg_fields {
- 	MSG_COMMAND,
- 	MSG_ARG_COUNT,
- 	MSG_ARG0,
--	MSG_CHKSUM,
- 	MSG_FIELD_MAX	= 16 /* Max number of arguments */
+@@ -231,9 +231,13 @@ static struct attribute *dpfe_v3_attrs[] = {
  };
+ ATTRIBUTE_GROUPS(dpfe_v3);
  
-@@ -243,21 +242,18 @@ static const struct dpfe_api dpfe_api_v2 = {
- 			[MSG_COMMAND] = 1,
- 			[MSG_ARG_COUNT] = 1,
- 			[MSG_ARG0] = 1,
--			[MSG_CHKSUM] = 4,
- 		},
- 		[DPFE_CMD_GET_REFRESH] = {
- 			[MSG_HEADER] = DPFE_MSG_TYPE_COMMAND,
- 			[MSG_COMMAND] = 2,
- 			[MSG_ARG_COUNT] = 1,
- 			[MSG_ARG0] = 1,
--			[MSG_CHKSUM] = 5,
- 		},
- 		[DPFE_CMD_GET_VENDOR] = {
- 			[MSG_HEADER] = DPFE_MSG_TYPE_COMMAND,
- 			[MSG_COMMAND] = 2,
- 			[MSG_ARG_COUNT] = 1,
- 			[MSG_ARG0] = 2,
--			[MSG_CHKSUM] = 6,
- 		},
+-/* API v2 firmware commands */
+-static const struct dpfe_api dpfe_api_v2 = {
+-	.version = 2,
++/*
++ * Old API v2 firmware commands, as defined in the rev 0.61 specification, we
++ * use a version set to 1 to denote that it is not compatible with the new API
++ * v2 and onwards.
++ */
++static const struct dpfe_api dpfe_api_old_v2 = {
++	.version = 1,
+ 	.fw_name = "dpfe.bin",
+ 	.sysfs_attrs = dpfe_v2_groups,
+ 	.command = {
+@@ -258,6 +262,30 @@ static const struct dpfe_api dpfe_api_v2 = {
  	}
  };
-@@ -273,18 +269,11 @@ static const struct dpfe_api dpfe_api_v3 = {
- 			[MSG_COMMAND] = 0x0101,
- 			[MSG_ARG_COUNT] = 1,
- 			[MSG_ARG0] = 1,
--			[MSG_CHKSUM] = 0x104,
- 		},
- 		[DPFE_CMD_GET_REFRESH] = {
- 			[MSG_HEADER] = DPFE_MSG_TYPE_COMMAND,
- 			[MSG_COMMAND] = 0x0202,
- 			[MSG_ARG_COUNT] = 0,
--			/*
--			 * This is a bit ugly. Without arguments, the checksum
--			 * follows right after the argument count and not at
--			 * offset MSG_CHKSUM.
--			 */
--			[MSG_ARG0] = 0x203,
- 		},
- 		/* There's no GET_VENDOR command in API v3. */
- 	},
-@@ -432,9 +421,17 @@ static int __send_command(struct brcmstb_dpfe_priv *priv, unsigned int cmd,
- 		return -ETIMEDOUT;
- 	}
  
-+	/* Compute checksum over the message */
-+	chksum_idx = msg[MSG_ARG_COUNT] + MSG_ARG_COUNT + 1;
-+	chksum = get_msg_chksum(msg, chksum_idx);
-+
- 	/* Write command and arguments to message area */
--	for (i = 0; i < MSG_FIELD_MAX; i++)
--		writel_relaxed(msg[i], regs + DCPU_MSG_RAM(i));
-+	for (i = 0; i < MSG_FIELD_MAX; i++) {
-+		if (i == chksum_idx)
-+			writel_relaxed(chksum, regs + DCPU_MSG_RAM(i));
-+		else
-+			writel_relaxed(msg[i], regs + DCPU_MSG_RAM(i));
++/*
++ * API v2 firmware commands, as defined in the rev 0.8 specification, named new
++ * v2 here
++ */
++static const struct dpfe_api dpfe_api_new_v2 = {
++	.version = 2,
++	.fw_name = NULL, /* We expect the firmware to have been downloaded! */
++	.sysfs_attrs = dpfe_v2_groups,
++	.command = {
++		[DPFE_CMD_GET_INFO] = {
++			[MSG_HEADER] = DPFE_MSG_TYPE_COMMAND,
++			[MSG_COMMAND] = 0x101,
++		},
++		[DPFE_CMD_GET_REFRESH] = {
++			[MSG_HEADER] = DPFE_MSG_TYPE_COMMAND,
++			[MSG_COMMAND] = 0x201,
++		},
++		[DPFE_CMD_GET_VENDOR] = {
++			[MSG_HEADER] = DPFE_MSG_TYPE_COMMAND,
++			[MSG_COMMAND] = 0x202,
++		},
 +	}
++};
++
+ /* API v3 firmware commands */
+ static const struct dpfe_api dpfe_api_v3 = {
+ 	.version = 3,
+@@ -390,7 +418,7 @@ static void __finalize_command(struct brcmstb_dpfe_priv *priv)
+ 	 * It depends on the API version which MBOX register we have to write to
+ 	 * to signal we are done.
+ 	 */
+-	release_mbox = (priv->dpfe_api->version < 3)
++	release_mbox = (priv->dpfe_api->version < 2)
+ 			? REG_TO_HOST_MBOX : REG_TO_DCPU_MBOX;
+ 	writel_relaxed(0, priv->regs + release_mbox);
+ }
+@@ -886,10 +914,10 @@ static int brcmstb_dpfe_remove(struct platform_device *pdev)
  
- 	/* Tell DCPU there is a command waiting */
- 	writel_relaxed(1, regs + REG_TO_DCPU_MBOX);
+ static const struct of_device_id brcmstb_dpfe_of_match[] = {
+ 	/* Use legacy API v2 for a select number of chips */
+-	{ .compatible = "brcm,bcm7268-dpfe-cpu", .data = &dpfe_api_v2 },
+-	{ .compatible = "brcm,bcm7271-dpfe-cpu", .data = &dpfe_api_v2 },
+-	{ .compatible = "brcm,bcm7278-dpfe-cpu", .data = &dpfe_api_v2 },
+-	{ .compatible = "brcm,bcm7211-dpfe-cpu", .data = &dpfe_api_v2 },
++	{ .compatible = "brcm,bcm7268-dpfe-cpu", .data = &dpfe_api_old_v2 },
++	{ .compatible = "brcm,bcm7271-dpfe-cpu", .data = &dpfe_api_old_v2 },
++	{ .compatible = "brcm,bcm7278-dpfe-cpu", .data = &dpfe_api_old_v2 },
++	{ .compatible = "brcm,bcm7211-dpfe-cpu", .data = &dpfe_api_new_v2 },
+ 	/* API v3 is the default going forward */
+ 	{ .compatible = "brcm,dpfe-cpu", .data = &dpfe_api_v3 },
+ 	{}
 -- 
 2.17.1
 
