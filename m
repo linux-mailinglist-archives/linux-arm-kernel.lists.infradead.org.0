@@ -2,89 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27A58D8061
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 21:36:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 173B5D8067
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 21:38:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=31nB91Ahb2kKPM+iMT43nD+tWs46uErmdtnICgKzqOo=; b=A5TZN1bZM6XGt1
-	+t/zo9xLlZNBxgOaWCzxV/r232iZ9RiEV9lOkXiNkqasC5Jv0o7f2+bfUWmZmhXrm1Pn8oJiYS0g9
-	Iqlzi23tiOF0eXK7Ux2BD6+eZy/1kf+OOr0rnzxv5j9Ckwuqv4sSzqeeNNt4igKZzGeqoCK2smTu/
-	On0fXA4yJ23hlMrbCa9VmeEiIPUC+PEjD02A23QDhfucDzEbZKQ0HS/YtnUdEniybdYZWDGz8YtSF
-	YCMDSg/dFMq9E5iZinv27CX4TaxjcVjGJ2AF0zZPYi2mhYvCqP+8CuCYOimn+vAFP4l/5ivnbWf9v
-	sTAxi35DoxHj36Bi7dTw==;
+	List-Owner; bh=rXz48m3TnuYq4FwRTq3xZVeBs+qYrvVCqmONbX4KBM8=; b=uwFNbdqrJRYnTg
+	aCD8qmcos4D2/3nJT9yaOurtT1WXMrAbtl2yOPsyCdgQTtG2PTJ97j7T3zA3lQ0oZxat6xFtkkcUh
+	h5nuPkXMdqjkL3x2Irgf3WnVc7jx6QwjGa3NY52oMtbQ0SJ3On8I0N7dihzJm9zXmA0sBDBSNxJA3
+	oly93FBs0xedF0jG4e1UJ/+rowDIXZdmMRZynwCSjBXUc0L5Uxf3Ki30mjQQ3rMhI1ZOlVAQSWwR+
+	Ff42h/WTBpkuDOn6ByfhOSLPqjZOkW2mNECmGc/Ppn5TAfNtMGNOdgrFnvVdosqEqXqAP/3ydZU7F
+	Cl4jU1m7YbfoB5LzN3Xg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKScC-0001La-Tg; Tue, 15 Oct 2019 19:36:16 +0000
-Received: from mout.gmx.net ([212.227.15.18])
+	id 1iKSeY-0001hM-QS; Tue, 15 Oct 2019 19:38:42 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKSc3-0001Kz-4s; Tue, 15 Oct 2019 19:36:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1571168148;
- bh=8CtZdk//uT3mD5UzLBd+cEolu2bZMY/XSWPKvl77iw0=;
- h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
- b=GtKf/9+n3AwqBfQQfX9adpD3gPsyKPR2YKPBuvzNb5Qd3jN8m0kO9xrMsMNxbeERW
- y27/AeTxcmP5rcgwgWWPNyGMDCISMV8/p7yeARZymdLWC5Y6TpLcsHfKh66lYdUm8K
- JkkHCq8aDPiNal0Zt/OS73x4NFmqvqy0Tr/g5pJE=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [192.168.1.162] ([37.4.249.112]) by mail.gmx.com (mrgmx004
- [212.227.17.190]) with ESMTPSA (Nemesis) id 1MJmKh-1iearN1SK9-00K63U; Tue, 15
- Oct 2019 21:35:48 +0200
-Subject: Re: [PATCH v1 3/3] ARM: dts: bcm2711: Enable GENET support for the
- RPi4
-To: Florian Fainelli <f.fainelli@gmail.com>, matthias.bgg@kernel.org,
- "David S . Miller" <davem@davemloft.net>
-References: <20191011184822.866-1-matthias.bgg@kernel.org>
- <20191011184822.866-4-matthias.bgg@kernel.org>
- <a514751e-e82a-b5ea-34d3-46468c851a80@gmail.com>
-From: Stefan Wahren <wahrenst@gmx.net>
-Message-ID: <7ac16f46-8f75-a91a-c096-7645da8f044a@gmx.net>
-Date: Tue, 15 Oct 2019 21:35:43 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ id 1iKSeO-0001gv-P1; Tue, 15 Oct 2019 19:38:34 +0000
+Received: by mail-wm1-x342.google.com with SMTP id f22so290844wmc.2;
+ Tue, 15 Oct 2019 12:38:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=E3B63BPD8WhwxK8F76UGDMYTwfefF6997Iwnobico4A=;
+ b=Xllzek0xvgC6jyu0c/eT0B5b5aeiV60nBgSZGPvRxpjAoFKIPpaVMpzpzUkMuwHAmw
+ /9XxR1AfJJy7ypuSC5x5YBD6yucZzrC8bTLEmJ9zZLxf67zI/wsARAkzC87m7QXamiyL
+ 5CmBD6IAoEJIka4UWE8kxjnrDCTvNBq6pOXElaCBtaO4tHLrQxlGrU6uyxb7ggFHBT/R
+ o/bIdwVJEl9koupbRlYlRttmxeAdLwHs2HQ//RWJ2KkqdlqeYa0rQV3OyCt01UjXQmPg
+ oP+C8ofnMK5bSOykDzNEyUPCRinX/wFGvxYvNNuS/kwkzJZagqQbXmtJwjw9zoUb81+x
+ 1OyQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=E3B63BPD8WhwxK8F76UGDMYTwfefF6997Iwnobico4A=;
+ b=qZ0mI3OTe7Gw9bs/hHqtFtuKk6znxWKTSoTE/r1/9Kll5H4QvWnDwOJdSXS5uQQwsJ
+ MV1XPBFIRYmfiR0RA3LE38af1IdMVf7Q/tXCSgy0BUPlqCL4tpWrtw0/sYS+ObZ+GVPP
+ 1KJGZhUJbYe8/qSDj/PKaZ9jkOjF6D5bqFUfLHbFCjbGzslDByG01X6ity/biYgaReRL
+ WTLex/q6Ztd5JQs68X/Pqoegt6dWkKEIGAmPs6aDueIWe21Eo9edNGLRPqpPGhp4LIXG
+ eFJ+PktHYGCP/6G4cVzzC+I1zB7AQpxCz8iSaKeAIZcmeQ0+TKagcL2jNh6J72qAwRqr
+ b33Q==
+X-Gm-Message-State: APjAAAVpPq6xGICvzfE5rhsPTgBR2jTZNpD2Io1UPRdfLCnEbuBOc8lV
+ j1z1SJmSV1dVKfMKi4GsiNM=
+X-Google-Smtp-Source: APXvYqweDgbFaIKgQlfsCgzo3guTMj64bM+rRO3BOaL1eG4Xww1rEpLEQ4okEl1oQARRe7th47z9jA==
+X-Received: by 2002:a1c:f305:: with SMTP id q5mr137336wmq.137.1571168311140;
+ Tue, 15 Oct 2019 12:38:31 -0700 (PDT)
+Received: from ?IPv6:2003:ea:8f26:6400:44d1:b396:5862:c59e?
+ (p200300EA8F26640044D1B3965862C59E.dip0.t-ipconnect.de.
+ [2003:ea:8f26:6400:44d1:b396:5862:c59e])
+ by smtp.googlemail.com with ESMTPSA id h125sm335917wmf.31.2019.10.15.12.38.29
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 15 Oct 2019 12:38:30 -0700 (PDT)
+Subject: Re: lan78xx and phy_state_machine
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Woojung Huh <woojung.huh@microchip.com>,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>
+References: <20191014140604.iddhmg5ckqhzlbkw@beryllium.lan>
+ <20191014163004.GP25745@shell.armlinux.org.uk>
+ <20191014192529.z7c5x6hzixxeplvw@beryllium.lan>
+ <25cfc92d-f72b-d195-71b1-f5f238c7988d@gmx.net>
+ <b9afd836-613a-dc63-f77b-f9a77d33acc4@gmail.com>
+ <20191014221211.GR25745@shell.armlinux.org.uk>
+From: Heiner Kallweit <hkallweit1@gmail.com>
+Message-ID: <524267e6-df8e-d884-aeef-1ed8700e4e58@gmail.com>
+Date: Tue, 15 Oct 2019 21:38:22 +0200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <a514751e-e82a-b5ea-34d3-46468c851a80@gmail.com>
+In-Reply-To: <20191014221211.GR25745@shell.armlinux.org.uk>
 Content-Language: en-US
-X-Provags-ID: V03:K1:WJUZ0VvS2rEzkhQZcFikR4IvYJzLmGQBvy4te06VSqGg/4lR+v8
- gH+1SiXGIh2ZeN2Bidjxg1HQMyO8XuwtSk5bAflNdJx3XLft2M4Y7VrABhA9dFsMVpSqBGP
- wgvvuLzS03PwqHCefpFa8n4CkYSy+c7kvVEntLdYiPuSySrVcsYiYmkplEDK9LJ3BNpbMBN
- 6NBpyK9r3gyxIzqAgeg0Q==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:6NCl5YU0F1c=:UqxKtymJXFQBSh/VJde4rl
- H/4yHI7y4KLeiL0vJQbqhPKjoE9y4ynssQ5MG6pWmiQqRa9B1T1FW7QZMJmydiX+Z2nkdjpcI
- qHjtTP4DxUMM+WehFU9H9uq4Qtgd1muixOn8U9C+BHzha/coD2kyz3vH2px0d+Qn2N5ITyx/9
- 0l5hbATotfHHCkRyX1ARgtaDhNX+tifYuySkq996cDYbNwSkf7oSVO2hakgL2NF9ffGpkKD8L
- YTURIf8B0wQ7aQqW81v2St891OWA5G7ZhNqlpCpgsFE/Rl4NlX5pX6fxrz8MYbSpRZ0rCdAbF
- 8YCnV44MjA2rVMD9FxuL7Ym40V+KeCEkXNa44ssHhr/YlXln1dIehgfrpUHHXJd4VKi0yQklR
- CseAlSLrfvLhIeBAeEcR/Ew7H6OtTGzNmUw2Hg/hIFNoUmAQTm/TXxIondk9SeQh07pg24/sO
- oA8FgvvoQNokuC26xvilTkWAk8wwY2bNVKh/y/7REgn8wsVx/vPTRHfp248ONJIi2sgJVVq6f
- PXufm7dVLil8xugop8WIDpoL5PL1mIufaLsKcIj9fR0HjifASfA2saId8BOOMDrckVV38ZZO0
- wz8jQU8Q1uFwycupylT5wQPDLQpJv5WFs7dmiBJew7qGNih/0kJsCTuWhG8YaQ5/V3D8EwC5k
- kO9rUFFYigyhaDonSx8dtI+HVb3OWrjtf+CYgNJQIdIKh1uIKdKsNpC2cOKS+MuXBME/onRhL
- XKCIB78Zt8p1JZFJEWGvdGeHZooVU3M+NRt37XoTqGpwKq16aRnucUuTwWYBWT2fA9auE1BGg
- Hnmen07mk/6KU/20M9pXaEyb8OjnBM7VUL9EorseyP+QaXYnPprjowfyb++2kfSEdgCrrxnJX
- uOilv3uXgpLjr8SyDkrbo//hWsPDt6XqnwECfZSOqHAWI6I3kLubW1Ft5BNLQqOt32ufdRBrv
- QRdqyVGuZ9G73mpGhnHY6hzF8StoProePrni/iXcjXZc+pKZrRyDup/pZ2VtnzcIAzTDst3ah
- Ovzmw66eyn77d2PcJjn394+z/FZB1TH8+rrc4Qd8EVR7PX5w8QDFY9BE5WaAg1eUEloKCfGM6
- PckBgSsdP/1QEObbrkRbRFIya9m0Z20YHaQeybgvGdxoxK+MS3fVH/n/Ln4LvaXdbVw5e7fZG
- bd7WEfN3DfcSYsEkVPGWrJJg4FUFZjFwrrGn6/K2j+AJItPawInKiZvACqKNH8LiLAs/3kRnD
- K/udraqJUtuwlkHnJOUaXcuYuwHQmORb5o7aDGltEGhMfUJVjbdXs2qIPp+s=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_123607_524486_A2A557A3 
-X-CRM114-Status: GOOD (  15.84  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191015_123832_838827_DBFB950B 
+X-CRM114-Status: GOOD (  20.06  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.18 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
+ provider (hkallweit1[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (hkallweit1[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -104,71 +110,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Matthias Brugger <mbrugger@suse.com>, linux-kernel@vger.kernel.org,
- Eric Anholt <eric@anholt.net>, Rob Herring <robh+dt@kernel.org>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-arm-kernel@lists.infradead.org
+Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
+ Daniel Wagner <dwagner@suse.de>, netdev@vger.kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, Stefan Wahren <wahrenst@gmx.net>,
+ linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Florian,
-
-Am 11.10.19 um 21:31 schrieb Florian Fainelli:
-> On 10/11/19 11:48 AM, matthias.bgg@kernel.org wrote:
->> From: Matthias Brugger <mbrugger@suse.com>
+On 15.10.2019 00:12, Russell King - ARM Linux admin wrote:
+> On Mon, Oct 14, 2019 at 10:20:15PM +0200, Heiner Kallweit wrote:
+>> On 14.10.2019 21:51, Stefan Wahren wrote:
+>>> [add more recipients]
+>>>
+>>> Am 14.10.19 um 21:25 schrieb Daniel Wagner:
+>>>> Moving the phy_prepare_link() up in phy_connect_direct() ensures that
+>>>> phydev->adjust_link is set when the phy_check_link_status() is called.
+>>>>
+>>>> diff --git a/drivers/net/phy/phy_device.c
+>>>> b/drivers/net/phy/phy_device.c index 9d2bbb13293e..2a61812bcb0d 100644
+>>>> --- a/drivers/net/phy/phy_device.c +++ b/drivers/net/phy/phy_device.c
+>>>> @@ -951,11 +951,12 @@ int phy_connect_direct(struct net_device *dev,
+>>>> struct phy_device *phydev, if (!dev) return -EINVAL;
+>>>>
+>>>> +       phy_prepare_link(phydev, handler);
+>>>> +
+>>>>         rc = phy_attach_direct(dev, phydev, phydev->dev_flags, interface);
+>>>>         if (rc)
 >>
->> Enable Gigabit Ethernet support on the Raspberry Pi 4
->> Model B.
->>
->> Signed-off-by: Matthias Brugger <mbrugger@suse.com>
->>
->> ---
->>
->>  arch/arm/boot/dts/bcm2711-rpi-4-b.dts | 22 ++++++++++++++++++++++
->>  arch/arm/boot/dts/bcm2711.dtsi        | 18 ++++++++++++++++++
->>  2 files changed, 40 insertions(+)
->>
->> diff --git a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
->> index cccc1ccd19be..958553d62670 100644
->> --- a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
->> +++ b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
->> @@ -97,6 +97,28 @@
->>  	status = "okay";
->>  };
->>
->> +&genet {
->> +	phy-handle = <&phy1>;
->> +	phy-mode = "rgmii";
-> Can you check that things still work against David Miller's net-next?
-> Tree, in particular the BCM54213PE PHY might be matched by the BCM54210E
-> entry in drivers/net/phy/broadcom.c and I just fixed an issue in how
-> RGMII delays were configured:
->
-> https://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next.git/commit/?id=fea7fda7f50a6059220f83251e70709e45cc8040
->
-> This might require you to change the 'phy-mode' property to what is
-> appropriate.
+>> If phy_attach_direct() fails we may have to reset phydev->adjust_link to NULL,
+>> as we do in phy_disconnect(). Apart from that change looks good to me.
+> 
+> Sorry, but it doesn't look good to me.
+> 
+> I think there's a deeper question here - why is the phy state machine
+> trying to call the link change function during attach?
+After your comment I had a closer look at the lm78xx driver and few things
+look suspicious:
 
-since i didn't get a reply from the Pi folks yet, i tried all the other
-rgmii variants on top of this branch [1].
+- lan78xx_phy_init() (incl. the call to phy_connect_direct()) is called
+  after register_netdev(). This may cause races.
 
-But none of them worked.
+- The following is wrong, irq = 0 doesn't mean polling.
+  PHY_POLL is defined as -1. Also in case of irq = 0 phy_interrupt_is_valid()
+  returns true.
 
-In case of "rgmii-id" i'm getting:
+	/* if phyirq is not set, use polling mode in phylib */
+	if (dev->domain_data.phyirq > 0)
+		phydev->irq = dev->domain_data.phyirq;
+	else
+		phydev->irq = 0;
 
-unknown phy mode: 9
+- Manually calling genphy_config_aneg() in lan78xx_phy_init() isn't
+  needed, however this should not cause our problem.
 
-and for "rgmii-rxid":
+Bugs in the network driver would also explain why the issue doesn't occur
+on other systems. Once we know more about the actual root cause
+maybe phylib can be extended to detect that situation and warn.
 
-unknown phy mode: 10
-
-In those cases the PHY didn't even probe. Did i missed something?
-
-[1] - https://github.com/lategoodbye/rpi-zero/commits/bcm2711-genet
+> At this point, the PHY hasn't been "started" so it shouldn't be
+> doing that.
+> 
+> Note the documentation, specifically phy.rst's "Keeping Close Tabs on
+> the PAL" section.  Drivers are at liberty to use phy_prepare_link()
+> _after_ phy_attach(), which means there is a window for
+> phydev->adjust_link to be NULL.  It should _not_ be called at this
+> point.
+> 
 
 
 _______________________________________________
