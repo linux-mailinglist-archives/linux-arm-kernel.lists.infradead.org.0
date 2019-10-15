@@ -2,80 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 046F2D8406
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 00:48:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 268C5D840B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 00:49:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Gm+eOFl6pgumMKhagKbwEUhSGBkFgc4Dx3H10vqcHh8=; b=BUL4Gz311Km+Kz
-	ZkQsI1C6eVmzLqkvBbZGtRa3A9yHoDPX6TKoFATiVA83a3MP7gDUVlSeCyotbeKx31dTP1iR2hzbr
-	VF4iFAE8yLUj9CTblJzG5ysACb2bX9ZnMtGeTrJyyD9RQTVYSO6D+yFUFjm+p9ZDPYXOFvQmioOA8
-	WiAaC4IreqhPOsaB6CevjYaNMz5WW1yaiXPKu38R3Ho2bcd8xkXHQPLLi8nwy/bD/guD05Cwnxl1l
-	B6kgr6KxxwH1lb5ucF92nFdZ7Z3gHNjaER6H7UTgVxJ8JT8V7/F3DIp/jy7IN3pt46eL9sHEZn3Yg
-	zIstjQgmv0P2CfiDEvaQ==;
+	List-Owner; bh=h9nxld2hrgLCAuyJ1LbsP5W5U3EAmYCQmZQmxmKRV9w=; b=Z47wKxDi99DZmD
+	9Veo8gs7HMLuUfArLflfQOw7C/yGCmnjJ976ZXH/8N5+IlxXxVAokbNC8uZteAnw/uHILjMpBvrDy
+	Hon0UJYv6Ps6/ircblOmY3601Vt8I5ml0heFiAJSZYib/ege/dPXbGM3/jF8D5TfWFGmAS//QsxjA
+	fJKfVgKSRUbN8gAdRlebCgfHaQEYh3T3Y66fD0ZxYsqhzX8yd4kRgwySK6sDkEhsB2GqF0MiKvmO8
+	3gRhZGhxjDI2HRZRTOcuz5HnNPEl0bVxdkuZiAltE9ruPEw9RZMv+I7cAvxoCkbCPunFf1ylfTEBQ
+	E3fSr3rzGzRyatSEoH9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKVcD-0005hu-A2; Tue, 15 Oct 2019 22:48:29 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
+	id 1iKVcq-0006EW-Ja; Tue, 15 Oct 2019 22:49:08 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKVan-0004WI-1I
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 22:47:04 +0000
-Received: by mail-oi1-f193.google.com with SMTP id x3so18353269oig.2
+ id 1iKVbc-0005ID-HD
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 22:47:55 +0000
+Received: by mail-ot1-f66.google.com with SMTP id g13so18438656otp.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 15 Oct 2019 15:47:00 -0700 (PDT)
+ Tue, 15 Oct 2019 15:47:52 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=C6wXRtpbEpzp24GuIHDI6uFCDF6VV7WToyM7YY1OIxQ=;
- b=p4iXA//AdB5lp/xY+rib3s9ND0I8Y7upmQ3bmOp8TnkEDfO7PZyNKunh0b9Drn+jEn
- pJ+vxF5OSce/7ljet/h4fcMCJoKbxIXrVbW2zFAqLYH/KoobG4PAVlNbrFRPsJGeyty8
- K98jFPpuch75Jlkl71FvWi2wcrwoYVNAyDHDBjgO4rQVjpDSXK38+AJJiTT2fKp9HQxy
- lXoIvv0+tfXCisuvDmIior/ORDUxRmIVlLFPTjYFnnR2ZLtvkwG/z0Vx6JLnFcQd1c0d
- 5kVtmZr0yTIT+0pPlc2lnKGWxubE9Haa7n0/OI0iiNwrf2Y4oI+dBcsDpsA/DGxxqu3E
- hE0Q==
-X-Gm-Message-State: APjAAAWhQx0iFV4Ltk3MBEOiY5Yboq0mWbt+G2SZwDtfcC/EhJLFYo8k
- ySzKRLxLmI1EsZsYbAdNOaevVPM=
-X-Google-Smtp-Source: APXvYqzfVvWw5j9mzVQMN0v7Wf66qbF22TX9XvtdfnrJk4RPIsSapGqhtHO196+2gpIJxuthWNa7BQ==
-X-Received: by 2002:aca:aac5:: with SMTP id t188mr807467oie.39.1571179619358; 
- Tue, 15 Oct 2019 15:46:59 -0700 (PDT)
+ bh=L29Q7uBjfh2/8GkHTrSFKn53EJrq5c7glms3MlDnD+8=;
+ b=QvQe4MlaHAMuemAuowPPPXmiAs968Zrz86YAm7HTBtLRL3R3t588gSXOsypa88ywhr
+ 6kq6OVD82p5bHzB2Qhtvp0H67W89XdDh+Vuf4/iSrUjXJXd6e5PEFqtK0EguUsRwvrZO
+ Hh5GyWypNv6bkvBEJnWDP0Etrmzb3TmmvFEBqlAh/Xivsl7SlEmKtp95RAysvNOpRVKY
+ WSCtLfqukuAPZVVPEXoR6cpKkp1e3e/iDlYoZXuX4FOWJX61OWoVoA6c+cTicFVs9npR
+ A0B/PmgdydYWjY9QlZxQI45rvPQVwihoJH7yFuD73zIMulrL0WzhTQMwz3R7sWv4ZK5N
+ HN2A==
+X-Gm-Message-State: APjAAAUAatlegfZqJRVTIhzTArMSk0SXSJ3bZCVI7dI22tc2ePedYHcz
+ 5K+ZflD81hPpvRYAZNAkCA==
+X-Google-Smtp-Source: APXvYqw5mXf86Bg84vSsRwYWEsXXpCgsWXJFetgM2DHfYHCqXad5KFgjFqh2gh6OrmOLdlLnZxsqHQ==
+X-Received: by 2002:a9d:7147:: with SMTP id y7mr17614612otj.62.1571179671509; 
+ Tue, 15 Oct 2019 15:47:51 -0700 (PDT)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id x38sm7204509ota.59.2019.10.15.15.46.58
+ by smtp.gmail.com with ESMTPSA id a69sm6826546oib.14.2019.10.15.15.47.50
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 15 Oct 2019 15:46:58 -0700 (PDT)
-Date: Tue, 15 Oct 2019 17:46:58 -0500
+ Tue, 15 Oct 2019 15:47:51 -0700 (PDT)
+Date: Tue, 15 Oct 2019 17:47:50 -0500
 From: Rob Herring <robh@kernel.org>
 To: Kamel Bouhara <kamel.bouhara@bootlin.com>
-Subject: Re: [PATCH 1/3] dt-bindings: Add vendor prefix for Overkiz SAS
-Message-ID: <20191015224658.GA13080@bogus>
+Subject: Re: [PATCH 2/3] dt-bindings: arm: at91: Document Kizbox3 HS board
+ binding
+Message-ID: <20191015224750.GA14460@bogus>
 References: <20191011125022.16329-1-kamel.bouhara@bootlin.com>
- <20191011125022.16329-2-kamel.bouhara@bootlin.com>
+ <20191011125022.16329-3-kamel.bouhara@bootlin.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191011125022.16329-2-kamel.bouhara@bootlin.com>
+In-Reply-To: <20191011125022.16329-3-kamel.bouhara@bootlin.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_154701_197486_518D962E 
-X-CRM114-Status: UNSURE (   9.51  )
+X-CRM114-CacheID: sfid-20191015_154752_611483_68A91561 
+X-CRM114-Status: UNSURE (   9.86  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.2 (+)
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
+ no trust [209.85.210.66 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
- 0.1 URIBL_SBL_A Contains URL's A record listed in the Spamhaus SBL
- blocklist [URIs: www.overkiz.com]
- 0.6 URIBL_SBL Contains an URL's NS IP listed in the Spamhaus SBL
- blocklist [URIs: www.overkiz.com]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -83,6 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -107,17 +105,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 11 Oct 2019 14:50:20 +0200, Kamel Bouhara wrote:
-> Overkiz is a smarthome solutions provider, more information on:
-> https://www.overkiz.com
+On Fri, 11 Oct 2019 14:50:21 +0200, Kamel Bouhara wrote:
+> Document devicetree binding of SAMA5D27 Kizbox3 HS board from Overkiz
+> SAS.
 > 
 > Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
 > ---
->  Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
->  1 file changed, 2 insertions(+)
+>  Documentation/devicetree/bindings/arm/atmel-at91.yaml | 7 +++++++
+>  1 file changed, 7 insertions(+)
 > 
 
-Acked-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
