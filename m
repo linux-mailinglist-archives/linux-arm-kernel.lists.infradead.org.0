@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1484D7937
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 16:53:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B83B8D7936
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 16:53:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jOwYtREjZUcA6evZfUXJ2QepwV45mwt298Bw3mK3jTQ=; b=UC+P/HmxAkTsnO
-	zA25Vkg9W9LesDen7tmvrLZP2Bp2qBaqHmBKvmfx1Rh7I6pCqQPNn9GsBOXFyWeGSIiqNup/JMp9v
-	YAgAdIaJpG6sc25YWnJVEWoPMXHdgWrXEPiNlEATrWDFElVF8zR34hVeA79jLmxtNg4u/9mCyB060
-	ZxopXOMuHP3E4TtSPWb/1lHY9h2Uo+ubxlPN0s/MSevuIE4NG1F85CqCRWcXYPF1GS2QiUtbpkK8R
-	4TBxhPz8gpqDDjdVP3d3gem84Z0ny7pMZzcN2TrjrJTM3gCb2c0FRzf95HhirmwyN/oh5hMt46jDW
-	51UxIsFln+0OperyAe5A==;
+	List-Owner; bh=fAPBfL+M/ynb4Ibc3f90du+JikdLf51aXrYHFHQ1s4I=; b=rIMJ+9IvXUCBx+
+	BVMXHZdSexpxRxaFVhT1SqzQ7uPEq6H8fR2mhDbmIN2g9rejDDggp+KSpIvNcsV9qFkVo63EgsTDV
+	Ow8ZSVVj3ADSRD6ZLNAHZnTBqfOZ2zQ+1SZvNl6WR1AO3GtHyw/eb0NoPqJU5y6FKP6x0KNO5LYFp
+	cbpm9tXEp1eHB57MXo4RsO5EBqlNGp+iy9zQj2oOn1YTrGeoh7Xf8Tank/7OPRxq+sQpVXefTxWq1
+	O2hLCrMIH8E1yI/AFifr71/KVBqIycjPzV/GSw6uXvQ2c8dNksDaWXSsyXI3FKeq+3WcUQpr/4XBh
+	F4BsGNphcWHx2scxBmMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKOCQ-0003El-E0; Tue, 15 Oct 2019 14:53:22 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1iKOCD-00030g-8Z; Tue, 15 Oct 2019 14:53:09 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKOB9-0002Eh-Qt
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 14:52:05 +0000
-Received: by mail-wm1-x341.google.com with SMTP id v17so20582788wml.4
+ id 1iKOBB-0002Gf-ID
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 14:52:07 +0000
+Received: by mail-wr1-x441.google.com with SMTP id y18so14797892wrn.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 15 Oct 2019 07:52:02 -0700 (PDT)
+ Tue, 15 Oct 2019 07:52:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=yEZBP16nHW2RPcRxavfdMwmjl1huY8K+6hT/6zFfEzs=;
- b=ZUjtyZ4ZeuWmh4zTLAG2FyIShRg7/OsCE25XJV+7YoQUzX6v3dSVaLIW6XVZQhKp2o
- afgFeVzkwjFJRFFqoyIvnX7/7PrQglJLmyZHy8cxnlw2kafXEyBpO4z+kFoOLG0dAxkY
- H40uVdG4/mJFb3dNs8LRX2fXFx1bHGDFoD9DbJ6Oly9r9gHXzQ8zpLhhfb+GhnSTBvaN
- /hzuZIhsgNFHQYUY/Ppu8Aqw2rYzXiq16RX91ShOfv/kXEK+3a1Nv7Ld8bPPJa7de+mG
- lcrAT7bLioSA4ZPUUrwLI9nWR4X/p1EEhZyuQ8blUWlUnsQwuXu0D/xHff5FQDC6uIDu
- ZcRg==
+ bh=VAVoEu24xaohbwzafdzyJGlubUQKQUGPXTLnsYm65Y8=;
+ b=bwzp0QANI9ZAtq8ebhpNJc/C77CZR6FTzH+/cfmEERClacgLvpuSHHtyidwDPuvey7
+ 2+srWChtSJ08u/VocrpNHSezMmgEXrfg73hmVJ5V6I/IX8cmSHM9mweDVIYm3IFNz0Dm
+ AXDFxGntAmh8J/NR1hmE1LCeCRUbmf+sdpB01ElSB8Jq5+afFFPUYW1h/xor3y9tPXst
+ nSBA5TwwZP8lGioiDP7Ika8JxvuIsNcGTVQb5E6x7U7uP4c1vFKfl2Xh1Xf95g/yEsDs
+ 72MZ32zM32bT+1Th+LMSK/H6r6ntFyZHVKe+GNZZsPnQrIU0czOC4kLlz5uGvZqufrcD
+ 6/+Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=yEZBP16nHW2RPcRxavfdMwmjl1huY8K+6hT/6zFfEzs=;
- b=VF63wMO6dn+Qxfrl7+nmaV2wvegWJlmVDKxHOlRYMoOQsHJXrTx/3juCaSGVjUTidI
- 0PB096c2pKS6NkHuW1ARfi9wtj1GgOr9J8N5+ZMlxTtahwiHeCMyNn4uuuIIoIL+P84T
- 4Ov99us4w1njqiBhUaN/6/VG/0Q+K9RSRFHwE89iGrGIVB31YG7fWtFTRthFS2C7/8/N
- B9NRjJjWOG84r7YCM/XnPo3JEM6XB4tHsVmVav2KkUbEfYjAMQIKElXjhUYhm0OKv/a6
- FVjSvuNG9U3XNa0Yy1bm48UZOfgwCSsLuog6Bbw/fy9c2Yzv7OcO3roIt9wvgMuJnFlv
- jzkA==
-X-Gm-Message-State: APjAAAV+qT2FDZiFn7MDKN/uMPSPovAgabA4h2rqRF+Lf8L/wJg647nW
- nGa3swqDG7+B0yyLfv2H5mY=
-X-Google-Smtp-Source: APXvYqyJfag8Rywn8xKOzMaRcnGItNxyVt4QbdJ54reFHlzPLxgGyeV667E9ugpTZWtOcXSEEOS8lw==
-X-Received: by 2002:a7b:cb0b:: with SMTP id u11mr19511255wmj.125.1571151121269; 
- Tue, 15 Oct 2019 07:52:01 -0700 (PDT)
+ bh=VAVoEu24xaohbwzafdzyJGlubUQKQUGPXTLnsYm65Y8=;
+ b=PUG1tv2S4hmOS1KknJ8DNIarUAH0de5eFZkwSP5Go//7//xXuyBtYzIWHULID9ubnq
+ iowtS2cbP8A4FQD5ZyPIHQ95ZPD0Azu6vaKQQwlLifg1dp0gZXSXmDuaOLhxYjUQOPCF
+ P6+WE0LosJBZU5XsD5GFWPpQB0lv/D/Zi2n3pBxGZSfa9rtLlRGASkzCBXjjLXNGaFnE
+ svI24ou59Gbd+ba+4q5pDOHSh+8N5Yq91G3XJxf8ui1iwzR5FoDwqrVgejqNBoiwiCRi
+ IMyAm6giOJ6MbLFtr9kJXOkoLQBzIrR91zpuJSOHCz4I6FeRgf6NT8lml2E+WSNlzQX3
+ mFHA==
+X-Gm-Message-State: APjAAAUdwFEbCw9t1C5u4o+mG8+9+RpYCEVg+KlCidrrPnI2I/fQJQIK
+ GJyUy3RdKu5L29qCQBpzveCgvnqH
+X-Google-Smtp-Source: APXvYqxhVxHqqgJpZEbxh6+QhqKe7xvgm6z1kpI/OiC4NTY0obJUmvAeKLRYIWZ9KloWkVuO1upBRw==
+X-Received: by 2002:adf:ea07:: with SMTP id q7mr14227941wrm.102.1571151123439; 
+ Tue, 15 Oct 2019 07:52:03 -0700 (PDT)
 Received: from localhost (p2E5BE2CE.dip0.t-ipconnect.de. [46.91.226.206])
- by smtp.gmail.com with ESMTPSA id r10sm24764805wml.46.2019.10.15.07.51.59
+ by smtp.gmail.com with ESMTPSA id u11sm20954003wmd.32.2019.10.15.07.52.02
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 15 Oct 2019 07:52:00 -0700 (PDT)
+ Tue, 15 Oct 2019 07:52:02 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Russell King <linux@armlinux.org.uk>,
 	arm@kernel.org
-Subject: [PATCH 4/6] ARM: Register with kernel restart handler
-Date: Tue, 15 Oct 2019 16:51:45 +0200
-Message-Id: <20191015145147.1106247-5-thierry.reding@gmail.com>
+Subject: [PATCH 5/6] ARM64: Remove arm_pm_restart()
+Date: Tue, 15 Oct 2019 16:51:46 +0200
+Message-Id: <20191015145147.1106247-6-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191015145147.1106247-1-thierry.reding@gmail.com>
 References: <20191015145147.1106247-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_075203_915893_BE1DAC82 
-X-CRM114-Status: GOOD (  15.01  )
+X-CRM114-CacheID: sfid-20191015_075206_088384_B4597068 
+X-CRM114-Status: GOOD (  13.99  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -114,59 +114,58 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Guenter Roeck <linux@roeck-us.net>
 
-By making use of the kernel restart handler, board specific restart
-handlers can be prioritized amongst available mechanisms for a particular
-board or system.
-
-Select the default priority of 128 to indicate that the restart callback
-in the machine description is the default restart mechanism.
+All users of arm_pm_restart() have been converted to use the kernel
+restart handler.
 
 Acked-by: Arnd Bergmann <arnd@arndb.de>
 Reviewed-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+Tested-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+Acked-by: Catalin Marinas <catalin.marinas@arm.com>
 Signed-off-by: Guenter Roeck <linux@roeck-us.net>
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
- arch/arm/kernel/setup.c | 20 ++++++++++++++++++--
- 1 file changed, 18 insertions(+), 2 deletions(-)
+ arch/arm64/include/asm/system_misc.h | 2 --
+ arch/arm64/kernel/process.c          | 7 +------
+ 2 files changed, 1 insertion(+), 8 deletions(-)
 
-diff --git a/arch/arm/kernel/setup.c b/arch/arm/kernel/setup.c
-index d0a464e317ea..d403648195de 100644
---- a/arch/arm/kernel/setup.c
-+++ b/arch/arm/kernel/setup.c
-@@ -1073,6 +1073,20 @@ void __init hyp_mode_check(void)
- #endif
- }
+diff --git a/arch/arm64/include/asm/system_misc.h b/arch/arm64/include/asm/system_misc.h
+index 1ab63cfbbaf1..d02c5e5ea015 100644
+--- a/arch/arm64/include/asm/system_misc.h
++++ b/arch/arm64/include/asm/system_misc.h
+@@ -32,8 +32,6 @@ void hook_debug_fault_code(int nr, int (*fn)(unsigned long, unsigned int,
+ struct mm_struct;
+ extern void __show_regs(struct pt_regs *);
  
-+static void (*__arm_pm_restart)(enum reboot_mode reboot_mode, const char *cmd);
-+
-+static int arm_restart(struct notifier_block *nb, unsigned long action,
-+		       void *data)
-+{
-+	__arm_pm_restart(action, data);
-+	return NOTIFY_DONE;
-+}
-+
-+static struct notifier_block arm_restart_nb = {
-+	.notifier_call = arm_restart,
-+	.priority = 128,
-+};
-+
- void __init setup_arch(char **cmdline_p)
+-extern void (*arm_pm_restart)(enum reboot_mode reboot_mode, const char *cmd);
+-
+ #endif	/* __ASSEMBLY__ */
+ 
+ #endif	/* __ASM_SYSTEM_MISC_H */
+diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+index a47462def04b..f11d2b261b4e 100644
+--- a/arch/arm64/kernel/process.c
++++ b/arch/arm64/kernel/process.c
+@@ -64,8 +64,6 @@ EXPORT_SYMBOL(__stack_chk_guard);
+ void (*pm_power_off)(void);
+ EXPORT_SYMBOL_GPL(pm_power_off);
+ 
+-void (*arm_pm_restart)(enum reboot_mode reboot_mode, const char *cmd);
+-
+ static void __cpu_do_idle(void)
  {
- 	const struct machine_desc *mdesc;
-@@ -1132,8 +1146,10 @@ void __init setup_arch(char **cmdline_p)
- 	paging_init(mdesc);
- 	request_standard_resources(mdesc);
+ 	dsb(sy);
+@@ -195,10 +193,7 @@ void machine_restart(char *cmd)
+ 		efi_reboot(reboot_mode, NULL);
  
--	if (mdesc->restart)
--		arm_pm_restart = mdesc->restart;
-+	if (mdesc->restart) {
-+		__arm_pm_restart = mdesc->restart;
-+		register_restart_handler(&arm_restart_nb);
-+	}
+ 	/* Now call the architecture specific reboot code. */
+-	if (arm_pm_restart)
+-		arm_pm_restart(reboot_mode, cmd);
+-	else
+-		do_kernel_restart(cmd);
++	do_kernel_restart(cmd);
  
- 	unflatten_device_tree();
- 
+ 	/*
+ 	 * Whoops - the architecture was unable to reboot.
 -- 
 2.23.0
 
