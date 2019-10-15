@@ -2,108 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E564ED83D5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 00:37:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B0A6D83D7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 00:37:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o8tAixSCI73R23U6zXQVbTL6U+t6K/aYPwTpN3itom8=; b=hpRfTpWB3ydcdQ
-	tBXMY1i6Dgk6el4t2JMyHuJPg7leUwVXhT/x6rfPkkwLuenxtrHtlH4uV0bGjWKumIBLM74qvNuuz
-	15YHGZR1fRRwYrLc0nB1Zw55gNi947pYh9uf3w5/VTFTX33+a+63Yk/T2J9DPTNUNr9eWxgASccwt
-	yMYREAq9aOyhuTDR/k0oUNwnSFlRUyPN5QEBRoc5QSs5LA7kxQ2qTo+mkpNf5sl0NFDjDjgrnxdVF
-	7Vv82pCL7w91bEKqJmpu1wEj1hGfT+yOXMQfDKMXvgmQOoupCdk9j3OEfM6WqkiRsFouPHLiBX1r4
-	2S5+twrBLsYJVDc/Q+Sw==;
+	List-Owner; bh=/wuX1DIugbihwBUJK9aMQo6iLEm9cnbmfXxCNifDey4=; b=ZSH3HC7/Cn4zUP
+	WSCgXUfTHbFZ7zYfU3UHq6HoQkP4T0x5mnmqO42US/8Smoc0rQaTVqNU1uuCYInvtjvcloTCSEpEv
+	IhfzVRtqD3+Iv+oOV6KOKaOTdeGhqpO2IeDbTQTkLyqK15eLo3/ehelx4UWL3g9MbBsPtbpI6ION0
+	5wOLhV6ehp3s6daDYiiRc8t4oGwkuf2kntj7tKV7tmTVFGGvhVJGwRWcZTMZvZ+CeOmFd4eeHZOjW
+	yY3/+1JPd7uLetVA7bHIQoqPfEZb/39MMkD6Juv8NoqljX12NA6uwkLULVyStUMBsYJTvPeub4Jb0
+	pPEx79xrWZOyJDh5n6AA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKVR7-0007hv-1x; Tue, 15 Oct 2019 22:37:01 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1iKVRx-0007xk-Im; Tue, 15 Oct 2019 22:37:53 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKVQz-0007gl-3y
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 22:36:54 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1571179006;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references:openpgp:openpgp;
- bh=wSh+n+8u5QLmMxe2hYGq+Rqu0J/BQ5npWNcVhzyY+e4=;
- b=DwvqdxmAIq1tPxrBzakC8cnsu57armpiMvMNOhTjTXk6TIaODHzknS9tMnRxJ6vMwHs/zo
- sewvryoICqcsFJL+Dmzg/tIBEKQ3GhURgSnk4MffH/QeIIwsDT4AjD6rb36ythNby5d9mt
- 2vBa42qMEAsMjnWko56GmI6Gd4lEO7o=
-Received: from mail-wr1-f71.google.com (mail-wr1-f71.google.com
- [209.85.221.71]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-264-LBDNhuuYMt6WgmRMOa8jwg-1; Tue, 15 Oct 2019 18:36:44 -0400
-Received: by mail-wr1-f71.google.com with SMTP id f4so7089348wrj.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 15 Oct 2019 15:36:44 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=lwwAcBIi9gz4rDVsHFX2Q7ZJ02GG7jdgtvkZrgQZWFY=;
- b=E8YKry6SO6WthUKT1Gt7kS84UMj8VDRmwYAODW3iOGZkMGmXKLgV6xCJ50tOhhb8D9
- ZZkhtJZTsO2096PwR5uOGZR/nstI8i400+siiehGYfz7bWA3ev1fT673LOttKDOxTrxr
- QGae/cEYph9mKvgGyy9NDb+WL1mMPUV/UN24MBmTkPJa0e6NR46VEC+NbBOQkDGJ2kIr
- ClomWkbtIzpruwPvdRMMzCZVMidCTiDnNJR/hsdwff2nFg1r3+TT1FKnT1CEZ+vgUp9N
- EvLZv6hsAd4bTYwNOv54eiBVUL4f7H+8hhkL9SMunm8dfB2Mry8xZdyJO3+3zeJuvCeI
- RhNQ==
-X-Gm-Message-State: APjAAAVV7zSiIuDljZQZGCxCXKwiLHhO7WyjrCU8B7FHm/JPDjpFxhsn
- Exrdv9z71hrWhue3K0DiK9DfUigx44IL8V1lMw0wSgebnr7Sa5hIiWVWCs4NLzH/vpmruv7iN4a
- wA4/4Y/NB2O5wNrRPsRejKnShdAnoq/UXv4Y=
-X-Received: by 2002:a05:600c:3cb:: with SMTP id
- z11mr537732wmd.134.1571179003421; 
- Tue, 15 Oct 2019 15:36:43 -0700 (PDT)
-X-Google-Smtp-Source: APXvYqyR41EszL4/UT/53Ec9vQZG6o/Omkzfs8QOJ0pfXMxxw7MFiXPeS9FywecPK4MHNGK9zwKlCQ==
-X-Received: by 2002:a05:600c:3cb:: with SMTP id
- z11mr537711wmd.134.1571179003137; 
- Tue, 15 Oct 2019 15:36:43 -0700 (PDT)
-Received: from ?IPv6:2001:b07:6468:f312:ddc7:c53c:581a:7f3e?
- ([2001:b07:6468:f312:ddc7:c53c:581a:7f3e])
- by smtp.gmail.com with ESMTPSA id c18sm20828908wrv.10.2019.10.15.15.36.41
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 15 Oct 2019 15:36:42 -0700 (PDT)
-Subject: Re: [PATCH v5 3/6] timekeeping: Add clocksource to
- system_time_snapshot
-To: Thomas Gleixner <tglx@linutronix.de>
-References: <20191015104822.13890-1-jianyong.wu@arm.com>
- <20191015104822.13890-4-jianyong.wu@arm.com>
- <9274d21c-2c43-2e0d-f086-6aaba3863603@redhat.com>
- <alpine.DEB.2.21.1910152212580.2518@nanos.tec.linutronix.de>
-From: Paolo Bonzini <pbonzini@redhat.com>
-Openpgp: preference=signencrypt
-Message-ID: <aa1ec910-b7b6-2568-4583-5fa47aac367f@redhat.com>
-Date: Wed, 16 Oct 2019 00:36:42 +0200
+ id 1iKVRo-0007xN-MT
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 22:37:46 +0000
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 9BFA33086218;
+ Tue, 15 Oct 2019 22:37:42 +0000 (UTC)
+Received: from llong.remote.csb (ovpn-123-27.rdu2.redhat.com [10.10.123.27])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id A2EA8608C2;
+ Tue, 15 Oct 2019 22:37:41 +0000 (UTC)
+Subject: Re: [PATCH 6/6] ARM: Inline locking functions for !PREEMPTION
+To: Sebastian Andrzej Siewior <sebastian@breakpoint.cc>,
+ Arnd Bergmann <arnd@arndb.de>
+References: <20191013221310.30748-1-sebastian@breakpoint.cc>
+ <20191013221310.30748-7-sebastian@breakpoint.cc>
+ <CAK8P3a2hYteGizk=--_Z1kE200_ORL52QEK5RBTMtXt5_UzmhA@mail.gmail.com>
+ <CAK8P3a1Mu0Ghy1VtD7NBKQ4-ZMsYQe_bjYBAshRMTYTWtxzbPw@mail.gmail.com>
+ <20191015223011.nyjbtylco6isjvb6@flow>
+From: Waiman Long <longman@redhat.com>
+Organization: Red Hat
+Message-ID: <38a78a18-43ec-9425-6ad9-3ffe106690c5@redhat.com>
+Date: Tue, 15 Oct 2019 18:37:41 -0400
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <alpine.DEB.2.21.1910152212580.2518@nanos.tec.linutronix.de>
+In-Reply-To: <20191015223011.nyjbtylco6isjvb6@flow>
 Content-Language: en-US
-X-MC-Unique: LBDNhuuYMt6WgmRMOa8jwg-1
-X-Mimecast-Spam-Score: 0
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.42]); Tue, 15 Oct 2019 22:37:42 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_153653_232317_96A1DF38 
-X-CRM114-Status: GOOD (  12.69  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191015_153744_778251_CA005C30 
+X-CRM114-Status: GOOD (  20.81  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [205.139.110.120 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -115,41 +75,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark.Rutland@arm.com, justin.he@arm.com, kvm@vger.kernel.org,
- suzuki.poulose@arm.com, maz@kernel.org, richardcochran@gmail.com,
- Jianyong Wu <jianyong.wu@arm.com>, linux-kernel@vger.kernel.org,
- sean.j.christopherson@intel.com, yangbo.lu@nxp.com, Kaly.Xin@arm.com,
- john.stultz@linaro.org, netdev@vger.kernel.org, nd@arm.com, will@kernel.org,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
- Steve.Capper@arm.com
+Cc: Peter Zijlstra <peterz@infradead.org>, Ingo Molnar <mingo@redhat.com>,
+ Will Deacon <will@kernel.org>, Russell King <linux@armlinux.org.uk>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 15/10/19 22:13, Thomas Gleixner wrote:
-> On Tue, 15 Oct 2019, Paolo Bonzini wrote:
->> On 15/10/19 12:48, Jianyong Wu wrote:
->>>  
+On 10/15/19 6:30 PM, Sebastian Andrzej Siewior wrote:
+> On 2019-10-14 12:01:02 [+0200], Arnd Bergmann wrote:
+>> On Mon, Oct 14, 2019 at 9:43 AM Arnd Bergmann <arnd@arndb.de> wrote:
+>>> On Mon, Oct 14, 2019 at 12:14 AM Sebastian Andrzej Siewior <sebastian@breakpoint.cc> wrote
 >>>
+>>> Also, the output of 'size vmlinux' before and after the patch for
+>>> multi_v7_defconfig would be useful to have in the changelog, as there
+>>> are a couple of platforms that are particularly sensitive to object code
+>>> size changes.
+>> To follow up, here are the numbers I get, building the linux-5.4-rc2
+>> multi_v7_defconfig with clang-9, comparing the original spinlock
+>> and the qspinlock, combined with inlining all locks or leaving them
+>> out of line:
 >>
->> Reviewed-by: Paolo Bonzini <pbonzini@redhat.com>
-> 
-> You're sure about having reviewed that in detail?
+>>    text    data     bss     dec     hex filename
+>> 15294816 6958636 404480 22657932 159bb8c vmlinux-orig
+>> 16004898 6962060 404480 23371438 1649eae vmlinux-orig-inline
+>> 15198619 6958812 404560 22561991 15844c7 vmlinux-qlock-noinline
+>> 15622897 6962116 404560 22989573 15ecb05 vmlinux-qlock-inline
+>>
+>> This gives us a 1.5% size increase over the original code with
+>> inlining, or a 0.5% decrease without inlining, or about 1.9% size
+>> difference for the Kconfig change itself, which does sound
+>> significant.
+> I had 2% increase (vmlinux-orig -> vmlinux-qlock-inline) but my vmlinux
+> was only half the size. Performance wise the inlining improved the
+> hackbench numbers in my test. How do we account that?
+>
+>> Maybe it should be configurable?
+> Any comment from the locking department? I would prefer to avoid an
+> extra knob for it. 
+> The v7 config is PREEMPT_NONE and HZ_100. Based on the perf numbers I
+> posted last time: with inlining I get more or less to the performance of
+> the ticket implementation on imx6 and it makes no difference on AM572x.
+> Let me run the hackbench test with the multi_v7_defconfig on my two
+> boards with ORIG/qlock/qlock-inline and come with some numbers here.
 
-I did review the patch; the void* ugliness is not in this one, and I do
-have some other qualms on that one.
+Perhaps, we should not just looking at the all inlined or all uninlined
+cases. Different variants of the lock and unlock functions can differ
+widely in size depends on how the irq handling code is handled in each
+architecture. Maybe we can inline the small ones but leave the bigger
+ones uninlined. That can increase performance without too much overhead
+in kernel size.
 
-> This changelog is telling absolutely nothing WHY anything outside of the
-> timekeeping core code needs access to the current clocksource. Neither does
-> it tell why it is safe to provide the pointer to random callers.
-
-Agreed on the changelog, but the pointer to a clocksource is already
-part of the timekeeping external API via struct system_counterval_t.
-get_device_system_crosststamp for example expects a clocksource pointer
-but provides no way to get such a pointer.
-
-Paolo
+Cheers,
+Longman
 
 
 _______________________________________________
