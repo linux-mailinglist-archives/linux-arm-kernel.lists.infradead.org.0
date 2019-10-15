@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D6D4D7A77
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 17:51:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBEBFD7A71
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 17:51:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=elMn+nLvUnk28o56jEKxpnCgFyzTLSnBOCW1AyhPJ/Q=; b=QzbK238C0A3L8Y
-	rba4cffivNvvPaVYPsgdAUFX4ngH3TiQRhgPFw3RrFwT4L4qyELZ5KtY85ULIwd/n9Dnv29W0pZCY
-	d1WTywujwXM+aDtkHQWtu3B02AUyqQhF4KhTNWJgsVAMX8rVaCUI/bMJ1CQ24yfDcd5RGhPPWCstt
-	uisq5WLSrwdtSZoUzJoD7RWu6lhspyL9LVoxxW4plormYu2KAlD+VtNSgSCcYGaD2DRi5m5VwKZ5g
-	AthGryUsJIe36wCaNMeeuiToqmy774gcp0alnKBroBJ0OjA0TEdlOL5y13b6p7s/KzcfCBA98gSkS
-	Vd8+/8nh6XwjtWRdVtxA==;
+	List-Owner; bh=dvMOoDoTs+MhKTcs6xEKXZjNXpBqd/57CzsJgf88lwI=; b=e06gbvqd6R/0Hi
+	57U6vdS9b+oVcmTVQaiyRKPnP3hpAzj4zvglxzoJ6Sts+nmSVphbdhtyTp3iTEjTmxU4nZbVcWgle
+	uOhp2oDy8/liR7/LjKkLeXlUbnuA/X6oT6kpY17XoGHDeggZ/zP7IOj/DlLsDkdX3ZPpbd0iLPice
+	h8w6TJweCZlz31roityzz+obeRX7sRDvcGeHek2dR/BXtGs9cqVLFcBGJYxw9cPLqJF0clvuffYCe
+	/G7kVtTYhrfJqTYjFVddgNHIgrWz6AoryFePVLbSWKJOSYV/Lgd05FBkqRSFfHkdB+8syeriN64ls
+	MwMDeZh2rpTmqZE7nBgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKP6O-0003M6-Q2; Tue, 15 Oct 2019 15:51:12 +0000
+	id 1iKP6B-0003A4-GT; Tue, 15 Oct 2019 15:50:59 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKP5V-0002dq-Js
+ id 1iKP5W-0002fU-B1
  for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 15:50:22 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BDB0C28;
- Tue, 15 Oct 2019 08:50:16 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A3ECE1000;
+ Tue, 15 Oct 2019 08:50:17 -0700 (PDT)
 Received: from e110467-lin.cambridge.arm.com (e110467-lin.cambridge.arm.com
  [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id F09D83F68E;
- Tue, 15 Oct 2019 08:50:15 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id F29C53F68E;
+ Tue, 15 Oct 2019 08:50:16 -0700 (PDT)
 From: Robin Murphy <robin.murphy@arm.com>
 To: will@kernel.org,
 	catalin.marinas@arm.com
-Subject: [PATCH 2/8] arm64: Import latest Cortex Strings memcpy implementation
-Date: Tue, 15 Oct 2019 16:49:57 +0100
-Message-Id: <4344614c354e942fb2b70ab4f3bf5055024ff6df.1571073960.git.robin.murphy@arm.com>
+Subject: [PATCH 3/8] arm64: Import latest version of Cortex Strings' memcmp
+Date: Tue, 15 Oct 2019 16:49:58 +0100
+Message-Id: <104120b064cc9fac3e7a8d5f93605a32361ca239.1571073960.git.robin.murphy@arm.com>
 X-Mailer: git-send-email 2.21.0.dirty
 In-Reply-To: <cover.1571073960.git.robin.murphy@arm.com>
 References: <cover.1571073960.git.robin.murphy@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_085017_816622_5D9AFEC4 
-X-CRM114-Status: GOOD (  18.20  )
+X-CRM114-CacheID: sfid-20191015_085018_562709_9F87204B 
+X-CRM114-Status: GOOD (  22.24  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,403 +69,29 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Sam Tebbs <sam.tebbs@arm.com>
 
-Import the latest Cortex Strings memcpy implementation into memcpy,
-copy_{from, to and in}_user. The implementation of the user routines is
-separated into two forms: one for when UAO is enabled and one for when
-UAO is disabled, with the two being chosen between with a runtime patch.
-This avoids executing the many NOPs emitted when UAO is disabled.
+Import the latest version of Cortex Strings' memcmp function.
 
-The upstream source is src/aarch64/memcpy.S as of commit 9e048b995da4 in
-https://git.linaro.org/toolchain/cortex-strings.git.
+The upstream source is src/aarch64/memcmp.S as of commit f77e4c932b4f
+in https://git.linaro.org/toolchain/cortex-strings.git.
 
 Signed-off-by: Sam Tebbs <sam.tebbs@arm.com>
-[ rm: add UAO fixups, streamline copy_exit paths, expand commit message ]
+[ rm: update attribution, expand commit message ]
 Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 ---
- arch/arm64/include/asm/alternative.h |  36 ----
- arch/arm64/lib/copy_from_user.S      | 115 +++++++---
- arch/arm64/lib/copy_in_user.S        | 130 +++++++++---
- arch/arm64/lib/copy_template.S       | 304 +++++++++++++--------------
- arch/arm64/lib/copy_template_user.S  |  24 +++
- arch/arm64/lib/copy_to_user.S        | 113 +++++++---
- arch/arm64/lib/copy_user_fixup.S     |  14 ++
- arch/arm64/lib/memcpy.S              |  48 +++--
- 8 files changed, 495 insertions(+), 289 deletions(-)
- create mode 100644 arch/arm64/lib/copy_template_user.S
- create mode 100644 arch/arm64/lib/copy_user_fixup.S
+ arch/arm64/lib/memcmp.S | 317 ++++++++++++++--------------------------
+ 1 file changed, 109 insertions(+), 208 deletions(-)
 
-diff --git a/arch/arm64/include/asm/alternative.h b/arch/arm64/include/asm/alternative.h
-index b9f8d787eea9..01f19f3cb46a 100644
---- a/arch/arm64/include/asm/alternative.h
-+++ b/arch/arm64/include/asm/alternative.h
-@@ -220,36 +220,6 @@ alternative_endif
-  * unprivileged instructions, and USER() only works for single instructions.
-  */
- #ifdef CONFIG_ARM64_UAO
--	.macro uao_ldp l, reg1, reg2, addr, post_inc
--		alternative_if_not ARM64_HAS_UAO
--8888:			ldp	\reg1, \reg2, [\addr], \post_inc;
--8889:			nop;
--			nop;
--		alternative_else
--			ldtr	\reg1, [\addr];
--			ldtr	\reg2, [\addr, #8];
--			add	\addr, \addr, \post_inc;
--		alternative_endif
--
--		_asm_extable	8888b,\l;
--		_asm_extable	8889b,\l;
--	.endm
--
--	.macro uao_stp l, reg1, reg2, addr, post_inc
--		alternative_if_not ARM64_HAS_UAO
--8888:			stp	\reg1, \reg2, [\addr], \post_inc;
--8889:			nop;
--			nop;
--		alternative_else
--			sttr	\reg1, [\addr];
--			sttr	\reg2, [\addr, #8];
--			add	\addr, \addr, \post_inc;
--		alternative_endif
--
--		_asm_extable	8888b,\l;
--		_asm_extable	8889b,\l;
--	.endm
--
- 	.macro uao_user_alternative l, inst, alt_inst, reg, addr, post_inc
- 		alternative_if_not ARM64_HAS_UAO
- 8888:			\inst	\reg, [\addr], \post_inc;
-@@ -262,12 +232,6 @@ alternative_endif
- 		_asm_extable	8888b,\l;
- 	.endm
- #else
--	.macro uao_ldp l, reg1, reg2, addr, post_inc
--		USER(\l, ldp \reg1, \reg2, [\addr], \post_inc)
--	.endm
--	.macro uao_stp l, reg1, reg2, addr, post_inc
--		USER(\l, stp \reg1, \reg2, [\addr], \post_inc)
--	.endm
- 	.macro uao_user_alternative l, inst, alt_inst, reg, addr, post_inc
- 		USER(\l, \inst \reg, [\addr], \post_inc)
- 	.endm
-diff --git a/arch/arm64/lib/copy_from_user.S b/arch/arm64/lib/copy_from_user.S
-index 680e74409ff9..8928c38d8c76 100644
---- a/arch/arm64/lib/copy_from_user.S
-+++ b/arch/arm64/lib/copy_from_user.S
-@@ -20,51 +20,114 @@
-  *	x0 - bytes not copied
-  */
- 
--	.macro ldrb1 ptr, regB, val
--	uao_user_alternative 9998f, ldrb, ldtrb, \ptr, \regB, \val
-+	.macro ldrb1 reg, ptr, offset=0
-+	8888: ldtrb \reg, [\ptr, \offset]
-+	_asm_extable_faultaddr	8888b,9998f;
- 	.endm
- 
--	.macro strb1 ptr, regB, val
--	strb \ptr, [\regB], \val
-+	.macro strb1 reg, ptr, offset=0
-+	strb \reg, [\ptr, \offset]
- 	.endm
- 
--	.macro ldrh1 ptr, regB, val
--	uao_user_alternative 9998f, ldrh, ldtrh, \ptr, \regB, \val
-+	.macro ldrb1_reg reg, ptr, offset
-+	add \ptr, \ptr, \offset
-+	8888: ldtrb \reg, [\ptr]
-+	sub \ptr, \ptr, \offset
-+	_asm_extable_faultaddr	8888b,9998f;
- 	.endm
- 
--	.macro strh1 ptr, regB, val
--	strh \ptr, [\regB], \val
-+	.macro strb1_reg reg, ptr, offset
-+	strb \reg, [\ptr, \offset]
- 	.endm
- 
--	.macro ldr1 ptr, regB, val
--	uao_user_alternative 9998f, ldr, ldtr, \ptr, \regB, \val
-+	.macro ldr1 reg, ptr, offset=0
-+	8888: ldtr \reg, [\ptr, \offset]
-+	_asm_extable_faultaddr	8888b,9998f;
- 	.endm
- 
--	.macro str1 ptr, regB, val
--	str \ptr, [\regB], \val
-+	.macro str1 reg, ptr, offset=0
-+	str \reg, [\ptr, \offset]
- 	.endm
- 
--	.macro ldp1 ptr, regB, regC, val
--	uao_ldp 9998f, \ptr, \regB, \regC, \val
-+	.macro ldp1 regA, regB, ptr, offset=0
-+	8888: ldtr \regA, [\ptr, \offset]
-+	8889: ldtr \regB, [\ptr, \offset + 8]
-+	_asm_extable_faultaddr	8888b,9998f;
-+	_asm_extable_faultaddr	8889b,9998f;
- 	.endm
- 
--	.macro stp1 ptr, regB, regC, val
--	stp \ptr, \regB, [\regC], \val
-+	.macro stp1 regA, regB, ptr, offset=0
-+	stp \regA, \regB, [\ptr, \offset]
-+	.endm
-+
-+	.macro ldp1_pre regA, regB, ptr, offset
-+	8888: ldtr \regA, [\ptr, \offset]
-+	8889: ldtr \regB, [\ptr, \offset + 8]
-+	add \ptr, \ptr, \offset
-+	_asm_extable_faultaddr	8888b,9998f;
-+	_asm_extable_faultaddr	8889b,9998f;
-+	.endm
-+
-+	.macro stp1_pre regA, regB, ptr, offset
-+	stp \regA, \regB, [\ptr, \offset]!
-+	.endm
-+
-+	.macro ldrb1_nuao reg, ptr, offset=0
-+	8888: ldrb \reg, [\ptr, \offset]
-+	_asm_extable_faultaddr	8888b,9998f;
-+	.endm
-+
-+	.macro strb1_nuao reg, ptr, offset=0
-+	strb \reg, [\ptr, \offset]
-+	.endm
-+
-+	.macro ldrb1_nuao_reg reg, ptr, offset=0
-+	8888: ldrb \reg, [\ptr, \offset]
-+	_asm_extable_faultaddr	8888b,9998f;
-+	.endm
-+
-+	.macro strb1_nuao_reg reg, ptr, offset=0
-+	strb \reg, [\ptr, \offset]
-+	.endm
-+
-+	.macro ldr1_nuao reg, ptr, offset=0
-+	8888: ldr \reg, [\ptr, \offset]
-+	_asm_extable_faultaddr	8888b,9998f;
-+	.endm
-+
-+	.macro str1_nuao reg, ptr, offset=0
-+	str \reg, [\ptr, \offset]
-+	.endm
-+
-+	.macro ldp1_nuao  regA, regB, ptr, offset=0
-+	8888: ldp \regA, \regB, [\ptr, \offset]
-+	_asm_extable_faultaddr	8888b,9998f;
-+	.endm
-+
-+	.macro stp1_nuao regA, regB, ptr, offset=0
-+	stp \regA, \regB, [\ptr, \offset]
-+	.endm
-+
-+	.macro ldp1_pre_nuao regA, regB, ptr, offset
-+	8888: ldp \regA, \regB, [\ptr, \offset]!
-+	_asm_extable_faultaddr	8888b,9998f;
-+	.endm
-+
-+	.macro stp1_pre_nuao regA, regB, ptr, offset
-+	stp \regA, \regB, [\ptr, \offset]!
-+	.endm
-+
-+	.macro copy_exit
-+	b	.Luaccess_finish
- 	.endm
- 
--end	.req	x5
- ENTRY(__arch_copy_from_user)
- 	uaccess_enable_not_uao x3, x4, x5
--	add	end, x0, x2
--#include "copy_template.S"
-+#include "copy_template_user.S"
-+.Luaccess_finish:
- 	uaccess_disable_not_uao x3, x4
--	mov	x0, #0				// Nothing to copy
-+	mov	x0, #0
- 	ret
- ENDPROC(__arch_copy_from_user)
- EXPORT_SYMBOL(__arch_copy_from_user)
--
--	.section .fixup,"ax"
--	.align	2
--9998:	sub	x0, end, dst			// bytes not copied
--	ret
--	.previous
-+#include "copy_user_fixup.S"
-diff --git a/arch/arm64/lib/copy_in_user.S b/arch/arm64/lib/copy_in_user.S
-index 0bedae3f3792..2aecdc300c8d 100644
---- a/arch/arm64/lib/copy_in_user.S
-+++ b/arch/arm64/lib/copy_in_user.S
-@@ -21,52 +21,132 @@
-  * Returns:
-  *	x0 - bytes not copied
-  */
--	.macro ldrb1 ptr, regB, val
--	uao_user_alternative 9998f, ldrb, ldtrb, \ptr, \regB, \val
-+
-+	.macro ldrb1 reg, ptr, offset=0
-+	8888: ldtrb \reg, [\ptr, \offset]
-+	_asm_extable_faultaddr	8888b,9998f;
- 	.endm
- 
--	.macro strb1 ptr, regB, val
--	uao_user_alternative 9998f, strb, sttrb, \ptr, \regB, \val
-+	.macro strb1 reg, ptr, offset=0
-+	8888: sttrb \reg, [\ptr, \offset]
-+	_asm_extable_faultaddr	8888b,9998f;
- 	.endm
- 
--	.macro ldrh1 ptr, regB, val
--	uao_user_alternative 9998f, ldrh, ldtrh, \ptr, \regB, \val
-+	.macro ldrb1_reg reg, ptr, offset
-+	add \ptr, \ptr, \offset
-+	8888: ldtrb \reg, [\ptr]
-+	sub \ptr, \ptr, \offset
-+	_asm_extable_faultaddr	8888b,9998f;
- 	.endm
- 
--	.macro strh1 ptr, regB, val
--	uao_user_alternative 9998f, strh, sttrh, \ptr, \regB, \val
-+	.macro strb1_reg reg, ptr, offset
-+	add \ptr, \ptr, \offset
-+	8888: sttrb \reg, [\ptr]
-+	sub \ptr, \ptr, \offset
-+	_asm_extable_faultaddr	8888b,9998f;
- 	.endm
- 
--	.macro ldr1 ptr, regB, val
--	uao_user_alternative 9998f, ldr, ldtr, \ptr, \regB, \val
-+	.macro ldr1 reg, ptr, offset=0
-+	8888: ldtr \reg, [\ptr, \offset]
-+	_asm_extable_faultaddr	8888b,9998f;
- 	.endm
- 
--	.macro str1 ptr, regB, val
--	uao_user_alternative 9998f, str, sttr, \ptr, \regB, \val
-+	.macro str1 reg, ptr, offset=0
-+	8888: sttr \reg, [\ptr, \offset]
-+	_asm_extable_faultaddr	8888b,9998f;
- 	.endm
- 
--	.macro ldp1 ptr, regB, regC, val
--	uao_ldp 9998f, \ptr, \regB, \regC, \val
-+	.macro ldp1 regA, regB, ptr, offset=0
-+	8888: ldtr \regA, [\ptr, \offset]
-+	8889: ldtr \regB, [\ptr, \offset + 8]
-+	_asm_extable_faultaddr	8888b,9998f;
-+	_asm_extable_faultaddr	8889b,9998f;
- 	.endm
- 
--	.macro stp1 ptr, regB, regC, val
--	uao_stp 9998f, \ptr, \regB, \regC, \val
-+	.macro stp1 regA, regB, ptr, offset=0
-+	8888: sttr \regA, [\ptr, \offset]
-+	8889: sttr \regB, [\ptr, \offset + 8]
-+	_asm_extable_faultaddr	8888b,9998f;
-+	_asm_extable_faultaddr	8889b,9998f;
- 	.endm
- 
--end	.req	x5
-+	.macro ldp1_pre regA, regB, ptr, offset
-+	8888: ldtr \regA, [\ptr, \offset]
-+	8889: ldtr \regB, [\ptr, \offset + 8]
-+	add \ptr, \ptr, \offset
-+	_asm_extable_faultaddr	8888b,9998f;
-+	_asm_extable_faultaddr	8889b,9998f;
-+	.endm
-+
-+	.macro stp1_pre regA, regB, ptr, offset
-+	8888: sttr \regA, [\ptr, \offset]
-+	8889: sttr \regB, [\ptr, \offset + 8]
-+	add \ptr, \ptr, \offset
-+	_asm_extable_faultaddr	8888b,9998f;
-+	_asm_extable_faultaddr	8889b,9998f;
-+	.endm
-+
-+	.macro ldrb1_nuao reg, ptr, offset=0
-+	8888: ldrb \reg, [\ptr, \offset]
-+	_asm_extable_faultaddr	8888b,9998f;
-+	.endm
-+
-+	.macro strb1_nuao reg, ptr, offset=0
-+	8888: strb \reg, [\ptr, \offset]
-+	_asm_extable_faultaddr	8888b,9998f;
-+	.endm
-+
-+	.macro ldrb1_nuao_reg reg, ptr, offset=0
-+	8888: ldrb \reg, [\ptr, \offset]
-+	_asm_extable_faultaddr	8888b,9998f;
-+	.endm
-+
-+	.macro strb1_nuao_reg reg, ptr, offset=0
-+	8888: strb \reg, [\ptr, \offset]
-+	_asm_extable_faultaddr	8888b,9998f;
-+	.endm
-+
-+	.macro ldr1_nuao reg, ptr, offset=0
-+	8888: ldr \reg, [\ptr, \offset]
-+	_asm_extable_faultaddr	8888b,9998f;
-+	.endm
-+
-+	.macro str1_nuao reg, ptr, offset=0
-+	8888: str \reg, [\ptr, \offset]
-+	_asm_extable_faultaddr	8888b,9998f;
-+	.endm
-+
-+	.macro ldp1_nuao  regA, regB, ptr, offset=0
-+	8888: ldp \regA, \regB, [\ptr, \offset]
-+	_asm_extable_faultaddr	8888b,9998f;
-+	.endm
-+
-+	.macro stp1_nuao regA, regB, ptr, offset=0
-+	8888: stp \regA, \regB, [\ptr, \offset]
-+	_asm_extable_faultaddr	8888b,9998f;
-+	.endm
-+
-+	.macro ldp1_pre_nuao regA, regB, ptr, offset
-+	8888: ldp \regA, \regB, [\ptr, \offset]!
-+	_asm_extable_faultaddr	8888b,9998f;
-+	.endm
-+
-+	.macro stp1_pre_nuao regA, regB, ptr, offset
-+	8888: stp \regA, \regB, [\ptr, \offset]!
-+	_asm_extable_faultaddr	8888b,9998f;
-+	.endm
-+
-+	.macro copy_exit
-+	b	.Luaccess_finish
-+	.endm
- 
- ENTRY(__arch_copy_in_user)
- 	uaccess_enable_not_uao x3, x4, x5
--	add	end, x0, x2
--#include "copy_template.S"
-+#include "copy_template_user.S"
-+.Luaccess_finish:
- 	uaccess_disable_not_uao x3, x4
- 	mov	x0, #0
- 	ret
- ENDPROC(__arch_copy_in_user)
- EXPORT_SYMBOL(__arch_copy_in_user)
--
--	.section .fixup,"ax"
--	.align	2
--9998:	sub	x0, end, dst			// bytes not copied
--	ret
--	.previous
-+#include "copy_user_fixup.S"
-diff --git a/arch/arm64/lib/copy_template.S b/arch/arm64/lib/copy_template.S
-index 488df234c49a..c03694a6a342 100644
---- a/arch/arm64/lib/copy_template.S
-+++ b/arch/arm64/lib/copy_template.S
+diff --git a/arch/arm64/lib/memcmp.S b/arch/arm64/lib/memcmp.S
+index b297bdaaf549..728dcf5a3673 100644
+--- a/arch/arm64/lib/memcmp.S
++++ b/arch/arm64/lib/memcmp.S
 @@ -1,13 +1,12 @@
  /* SPDX-License-Identifier: GPL-2.0-only */
  /*
 - * Copyright (C) 2013 ARM Ltd.
 - * Copyright (C) 2013 Linaro.
-+ * Copyright (c) 2012 Linaro Limited. All rights reserved.
-+ * Copyright (c) 2015 ARM Ltd. All rights reserved.
++ * Copyright (c) 2013, 2018 Linaro Limited. All rights reserved.
++ * Copyright (c) 2017 ARM Ltd. All rights reserved.
   *
 - * This code is based on glibc cortex strings work originally authored by Linaro
 - * be found @
@@ -477,581 +103,335 @@ index 488df234c49a..c03694a6a342 100644
 + * https://git.linaro.org/toolchain/cortex-strings.git
   */
  
+ #include <linux/linkage.h>
+@@ -25,223 +24,125 @@
+ *  x0 - a compare result, maybe less than, equal to, or greater than ZERO
+ */
  
-@@ -21,161 +20,146 @@
-  * Returns:
-  *	x0 - dest
-  */
--dstin	.req	x0
--src	.req	x1
--count	.req	x2
--tmp1	.req	x3
--tmp1w	.req	w3
--tmp2	.req	x4
--tmp2w	.req	w4
--dst	.req	x6
-+ #define dstin	x0
-+ #define src	x1
-+ #define count	x2
-+ #define dst	x3
-+ #define srcend	x4
-+ #define dstend	x5
-+ #define A_l	x6
-+ #define A_lw	w6
-+ #define A_h	x7
-+ #define A_hw	w7
-+ #define B_l	x8
-+ #define B_lw	w8
-+ #define B_h	x9
-+ #define C_l	x10
-+ #define C_h	x11
-+ #define D_l	x12
-+ #define D_h	x13
-+ #define E_l	src
-+ #define E_h	count
-+ #define F_l	srcend
-+ #define F_h	dst
-+ #define tmp1	x9
- 
--A_l	.req	x7
--A_h	.req	x8
--B_l	.req	x9
--B_h	.req	x10
--C_l	.req	x11
--C_h	.req	x12
--D_l	.req	x13
--D_h	.req	x14
-+	prfm	PLDL1KEEP, [src]
-+	add	srcend, src, count
-+	add	dstend, dstin, count
-+	cmp	count, 16
-+	b.ls	L(copy16)
-+	cmp	count, 96
-+	b.hi	L(copy_long)
- 
--	mov	dst, dstin
--	cmp	count, #16
--	/*When memory length is less than 16, the accessed are not aligned.*/
--	b.lo	.Ltiny15
--
--	neg	tmp2, src
--	ands	tmp2, tmp2, #15/* Bytes to reach alignment. */
--	b.eq	.LSrcAligned
--	sub	count, count, tmp2
--	/*
--	* Copy the leading memory data from src to dst in an increasing
--	* address order.By this way,the risk of overwriting the source
--	* memory data is eliminated when the distance between src and
--	* dst is less than 16. The memory accesses here are alignment.
--	*/
--	tbz	tmp2, #0, 1f
--	ldrb1	tmp1w, src, #1
--	strb1	tmp1w, dst, #1
-+	/* Medium copies: 17..96 bytes.  */
-+	sub	tmp1, count, 1
-+	ldp1	A_l, A_h, src
-+	tbnz	tmp1, 6, L(copy96)
-+	ldp1	D_l, D_h, srcend, -16
-+	tbz	tmp1, 5, 1f
-+	ldp1	B_l, B_h, src, 16
-+	ldp1	C_l, C_h, srcend, -32
-+	stp1	B_l, B_h, dstin, 16
-+	stp1	C_l, C_h, dstend, -32
- 1:
--	tbz	tmp2, #1, 2f
--	ldrh1	tmp1w, src, #2
--	strh1	tmp1w, dst, #2
-+	stp1	A_l, A_h, dstin
-+	stp1	D_l, D_h, dstend, -16
-+	copy_exit
-+
-+	.p2align 4
-+	/* Small copies: 0..16 bytes.  */
-+L(copy16):
-+	cmp	count, 8
-+	b.lo	1f
-+	ldr1	A_l, src
-+	ldr1	A_h, srcend, -8
-+	str1	A_l, dstin
-+	str1	A_h, dstend, -8
-+	copy_exit
-+	.p2align 4
-+1:
-+	tbz	count, 2, 1f
-+	ldr1	A_lw, src
-+	ldr1	A_hw, srcend, -4
-+	str1	A_lw, dstin
-+	str1	A_hw, dstend, -4
-+	copy_exit
-+
-+	/* Copy 0..3 bytes.  Use a branchless sequence that copies the same
-+	   byte 3 times if count==1, or the 2nd byte twice if count==2.  */
-+1:
-+	cbz	count, 2f
-+	lsr	tmp1, count, 1
-+	ldrb1	A_lw, src
-+	ldrb1	A_hw, srcend, -1
-+	ldrb1_reg	B_lw, src, tmp1
-+	strb1	A_lw, dstin
-+	strb1_reg	B_lw, dstin, tmp1
-+	strb1	A_hw, dstend, -1
-+2:	copy_exit
-+
-+	.p2align 4
-+	/* Copy 64..96 bytes.  Copy 64 bytes from the start and
-+	   32 bytes from the end.  */
-+L(copy96):
-+	ldp1	B_l, B_h, src, 16
-+	ldp1	C_l, C_h, src, 32
-+	ldp1	D_l, D_h, src, 48
-+	ldp1	E_l, E_h, srcend, -32
-+	ldp1	F_l, F_h, srcend, -16
-+	stp1	A_l, A_h, dstin
-+	stp1	B_l, B_h, dstin, 16
-+	stp1	C_l, C_h, dstin, 32
-+	stp1	D_l, D_h, dstin, 48
-+	stp1	E_l, E_h, dstend, -32
-+	stp1	F_l, F_h, dstend, -16
-+	copy_exit
-+
-+	/* Align DST to 16 byte alignment so that we don't cross cache line
-+	   boundaries on both loads and stores.	 There are at least 96 bytes
-+	   to copy, so copy 16 bytes unaligned and then align.	The loop
-+	   copies 64 bytes per iteration and prefetches one iteration ahead.  */
-+
-+	.p2align 4
-+L(copy_long):
-+	and	tmp1, dstin, 15
-+	bic	dst, dstin, 15
-+	ldp1	D_l, D_h, src
-+	sub	src, src, tmp1
-+	add	count, count, tmp1	/* Count is now 16 too large.  */
-+	ldp1	A_l, A_h, src, 16
-+	stp1	D_l, D_h, dstin
-+	ldp1	B_l, B_h, src, 32
-+	ldp1	C_l, C_h, src, 48
-+	ldp1_pre	D_l, D_h, src, 64
-+	subs	count, count, 128 + 16	/* Test and readjust count.  */
-+	b.ls	2f
-+1:
-+	stp1	A_l, A_h, dst, 16
-+	ldp1	A_l, A_h, src, 16
-+	stp1	B_l, B_h, dst, 32
-+	ldp1	B_l, B_h, src, 32
-+	stp1	C_l, C_h, dst, 48
-+	ldp1	C_l, C_h, src, 48
-+	stp1_pre	D_l, D_h, dst, 64
-+	ldp1_pre	D_l, D_h, src, 64
-+	subs	count, count, 64
-+	b.hi	1b
-+
-+	/* Write the last full set of 64 bytes.	 The remainder is at most 64
-+	   bytes, so it is safe to always copy 64 bytes from the end even if
-+	   there is just 1 byte left.  */
- 2:
--	tbz	tmp2, #2, 3f
--	ldr1	tmp1w, src, #4
--	str1	tmp1w, dst, #4
--3:
--	tbz	tmp2, #3, .LSrcAligned
--	ldr1	tmp1, src, #8
--	str1	tmp1, dst, #8
--
--.LSrcAligned:
--	cmp	count, #64
--	b.ge	.Lcpy_over64
--	/*
--	* Deal with small copies quickly by dropping straight into the
--	* exit block.
--	*/
--.Ltail63:
--	/*
--	* Copy up to 48 bytes of data. At this point we only need the
--	* bottom 6 bits of count to be accurate.
--	*/
--	ands	tmp1, count, #0x30
--	b.eq	.Ltiny15
--	cmp	tmp1w, #0x20
--	b.eq	1f
--	b.lt	2f
--	ldp1	A_l, A_h, src, #16
--	stp1	A_l, A_h, dst, #16
--1:
--	ldp1	A_l, A_h, src, #16
--	stp1	A_l, A_h, dst, #16
--2:
--	ldp1	A_l, A_h, src, #16
--	stp1	A_l, A_h, dst, #16
--.Ltiny15:
--	/*
--	* Prefer to break one ldp/stp into several load/store to access
--	* memory in an increasing address order,rather than to load/store 16
--	* bytes from (src-16) to (dst-16) and to backward the src to aligned
--	* address,which way is used in original cortex memcpy. If keeping
--	* the original memcpy process here, memmove need to satisfy the
--	* precondition that src address is at least 16 bytes bigger than dst
--	* address,otherwise some source data will be overwritten when memove
--	* call memcpy directly. To make memmove simpler and decouple the
--	* memcpy's dependency on memmove, withdrew the original process.
--	*/
--	tbz	count, #3, 1f
--	ldr1	tmp1, src, #8
--	str1	tmp1, dst, #8
--1:
--	tbz	count, #2, 2f
--	ldr1	tmp1w, src, #4
--	str1	tmp1w, dst, #4
--2:
--	tbz	count, #1, 3f
--	ldrh1	tmp1w, src, #2
--	strh1	tmp1w, dst, #2
--3:
--	tbz	count, #0, .Lexitfunc
--	ldrb1	tmp1w, src, #1
--	strb1	tmp1w, dst, #1
--
--	b	.Lexitfunc
--
--.Lcpy_over64:
--	subs	count, count, #128
--	b.ge	.Lcpy_body_large
--	/*
--	* Less than 128 bytes to copy, so handle 64 here and then jump
--	* to the tail.
--	*/
--	ldp1	A_l, A_h, src, #16
--	stp1	A_l, A_h, dst, #16
--	ldp1	B_l, B_h, src, #16
--	ldp1	C_l, C_h, src, #16
--	stp1	B_l, B_h, dst, #16
--	stp1	C_l, C_h, dst, #16
--	ldp1	D_l, D_h, src, #16
--	stp1	D_l, D_h, dst, #16
--
--	tst	count, #0x3f
--	b.ne	.Ltail63
--	b	.Lexitfunc
--
--	/*
--	* Critical loop.  Start at a new cache line boundary.  Assuming
--	* 64 bytes per line this ensures the entire loop is in one line.
--	*/
--	.p2align	L1_CACHE_SHIFT
--.Lcpy_body_large:
--	/* pre-get 64 bytes data. */
--	ldp1	A_l, A_h, src, #16
--	ldp1	B_l, B_h, src, #16
--	ldp1	C_l, C_h, src, #16
--	ldp1	D_l, D_h, src, #16
--1:
--	/*
--	* interlace the load of next 64 bytes data block with store of the last
--	* loaded 64 bytes data.
--	*/
--	stp1	A_l, A_h, dst, #16
--	ldp1	A_l, A_h, src, #16
--	stp1	B_l, B_h, dst, #16
--	ldp1	B_l, B_h, src, #16
--	stp1	C_l, C_h, dst, #16
--	ldp1	C_l, C_h, src, #16
--	stp1	D_l, D_h, dst, #16
--	ldp1	D_l, D_h, src, #16
--	subs	count, count, #64
--	b.ge	1b
--	stp1	A_l, A_h, dst, #16
--	stp1	B_l, B_h, dst, #16
--	stp1	C_l, C_h, dst, #16
--	stp1	D_l, D_h, dst, #16
--
--	tst	count, #0x3f
--	b.ne	.Ltail63
--.Lexitfunc:
-+	ldp1	E_l, E_h, srcend, -64
-+	stp1	A_l, A_h, dst, 16
-+	ldp1	A_l, A_h, srcend, -48
-+	stp1	B_l, B_h, dst, 32
-+	ldp1	B_l, B_h, srcend, -32
-+	stp1	C_l, C_h, dst, 48
-+	ldp1	C_l, C_h, srcend, -16
-+	stp1	D_l, D_h, dst, 64
-+	stp1	E_l, E_h, dstend, -64
-+	stp1	A_l, A_h, dstend, -48
-+	stp1	B_l, B_h, dstend, -32
-+	stp1	C_l, C_h, dstend, -16
-+	copy_exit
-diff --git a/arch/arm64/lib/copy_template_user.S b/arch/arm64/lib/copy_template_user.S
-new file mode 100644
-index 000000000000..3db24dcdab05
---- /dev/null
-+++ b/arch/arm64/lib/copy_template_user.S
-@@ -0,0 +1,24 @@
-+/* SPDX-License-Identifier: GPL-2.0-only */
-+
 +#define L(l) .L ## l
 +
-+	alternative_if_not ARM64_HAS_UAO
-+	b	L(copy_non_uao)
-+	alternative_else_nop_endif
-+#include "copy_template.S"
-+
-+#define ldp1 ldp1_nuao
-+#define ldp1_pre ldp1_pre_nuao
-+#define stp1 stp1_nuao
-+#define stp1_pre stp1_pre_nuao
-+#define ldr1 ldr1_nuao
-+#define str1 str1_nuao
-+#define ldrb1 ldrb1_nuao
-+#define strb1 strb1_nuao
-+#define ldrb1_reg ldrb1_nuao_reg
-+#define strb1_reg strb1_nuao_reg
-+
-+L(copy_non_uao):
-+#undef L
-+#define L(l) .Lnuao ## l
-+#include "copy_template.S"
-diff --git a/arch/arm64/lib/copy_to_user.S b/arch/arm64/lib/copy_to_user.S
-index 2d88c736e8f2..d49db097bc31 100644
---- a/arch/arm64/lib/copy_to_user.S
-+++ b/arch/arm64/lib/copy_to_user.S
-@@ -19,51 +19,114 @@
-  * Returns:
-  *	x0 - bytes not copied
-  */
--	.macro ldrb1 ptr, regB, val
--	ldrb  \ptr, [\regB], \val
-+
-+	.macro ldrb1 reg, ptr, offset=0
-+	ldrb \reg, [\ptr, \offset]
- 	.endm
+ /* Parameters and result.  */
+-src1		.req	x0
+-src2		.req	x1
+-limit		.req	x2
+-result		.req	x0
++#define src1		x0
++#define src2		x1
++#define limit		x2
++#define result		w0
  
--	.macro strb1 ptr, regB, val
--	uao_user_alternative 9998f, strb, sttrb, \ptr, \regB, \val
-+	.macro strb1 reg, ptr, offset=0
-+	8888: sttrb \reg, [\ptr, \offset]
-+	_asm_extable_faultaddr	8888b,9998f;
- 	.endm
+ /* Internal variables.  */
+-data1		.req	x3
+-data1w		.req	w3
+-data2		.req	x4
+-data2w		.req	w4
+-has_nul		.req	x5
+-diff		.req	x6
+-endloop		.req	x7
+-tmp1		.req	x8
+-tmp2		.req	x9
+-tmp3		.req	x10
+-pos		.req	x11
+-limit_wd	.req	x12
+-mask		.req	x13
++#define data1		x3
++#define data1w		w3
++#define data1h		x4
++#define data2		x5
++#define data2w		w5
++#define data2h		x6
++#define tmp1		x7
++#define tmp2		x8
  
--	.macro ldrh1 ptr, regB, val
--	ldrh  \ptr, [\regB], \val
-+	.macro ldrb1_reg reg, ptr, offset
-+	ldrb \reg, [\ptr, \offset]
- 	.endm
+ WEAK(memcmp)
+-	cbz	limit, .Lret0
+-	eor	tmp1, src1, src2
+-	tst	tmp1, #7
+-	b.ne	.Lmisaligned8
+-	ands	tmp1, src1, #7
+-	b.ne	.Lmutual_align
+-	sub	limit_wd, limit, #1 /* limit != 0, so no underflow.  */
+-	lsr	limit_wd, limit_wd, #3 /* Convert to Dwords.  */
+-	/*
+-	* The input source addresses are at alignment boundary.
+-	* Directly compare eight bytes each time.
+-	*/
+-.Lloop_aligned:
+-	ldr	data1, [src1], #8
+-	ldr	data2, [src2], #8
+-.Lstart_realigned:
+-	subs	limit_wd, limit_wd, #1
+-	eor	diff, data1, data2	/* Non-zero if differences found.  */
+-	csinv	endloop, diff, xzr, cs	/* Last Dword or differences.  */
+-	cbz	endloop, .Lloop_aligned
++	subs	limit, limit, 8
++	b.lo	L(less8)
  
--	.macro strh1 ptr, regB, val
--	uao_user_alternative 9998f, strh, sttrh, \ptr, \regB, \val
-+	.macro strb1_reg reg, ptr, offset
-+	add \ptr, \ptr, \offset
-+	8888: sttrb \reg, [\ptr]
-+	sub \ptr, \ptr, \offset
-+	_asm_extable_faultaddr	8888b,9998f;
- 	.endm
+-	/* Not reached the limit, must have found a diff.  */
+-	tbz	limit_wd, #63, .Lnot_limit
++	ldr	data1, [src1], 8
++	ldr	data2, [src2], 8
++	cmp	data1, data2
++	b.ne	L(return)
  
--	.macro ldr1 ptr, regB, val
--	ldr \ptr, [\regB], \val
-+	.macro ldr1 reg, ptr, offset=0
-+	ldr \reg, [\ptr, \offset]
- 	.endm
+-	/* Limit % 8 == 0 => the diff is in the last 8 bytes. */
+-	ands	limit, limit, #7
+-	b.eq	.Lnot_limit
+-	/*
+-	* The remained bytes less than 8. It is needed to extract valid data
+-	* from last eight bytes of the intended memory range.
+-	*/
+-	lsl	limit, limit, #3	/* bytes-> bits.  */
+-	mov	mask, #~0
+-CPU_BE( lsr	mask, mask, limit )
+-CPU_LE( lsl	mask, mask, limit )
+-	bic	data1, data1, mask
+-	bic	data2, data2, mask
++	subs	limit, limit, 8
++	b.gt	L(more16)
  
--	.macro str1 ptr, regB, val
--	uao_user_alternative 9998f, str, sttr, \ptr, \regB, \val
-+	.macro str1 reg, ptr, offset=0
-+	8888: sttr \reg, [\ptr, \offset]
-+	_asm_extable_faultaddr	8888b,9998f;
- 	.endm
+-	orr	diff, diff, mask
+-	b	.Lnot_limit
++	ldr	data1, [src1, limit]
++	ldr	data2, [src2, limit]
++	b	L(return)
  
--	.macro ldp1 ptr, regB, regC, val
--	ldp \ptr, \regB, [\regC], \val
-+	.macro ldp1 regA, regB, ptr, offset=0
-+	ldp \regA, \regB, [\ptr, \offset]
- 	.endm
+-.Lmutual_align:
+-	/*
+-	* Sources are mutually aligned, but are not currently at an
+-	* alignment boundary. Round down the addresses and then mask off
+-	* the bytes that precede the start point.
+-	*/
+-	bic	src1, src1, #7
+-	bic	src2, src2, #7
+-	ldr	data1, [src1], #8
+-	ldr	data2, [src2], #8
+-	/*
+-	* We can not add limit with alignment offset(tmp1) here. Since the
+-	* addition probably make the limit overflown.
+-	*/
+-	sub	limit_wd, limit, #1/*limit != 0, so no underflow.*/
+-	and	tmp3, limit_wd, #7
+-	lsr	limit_wd, limit_wd, #3
+-	add	tmp3, tmp3, tmp1
+-	add	limit_wd, limit_wd, tmp3, lsr #3
+-	add	limit, limit, tmp1/* Adjust the limit for the extra.  */
++L(more16):
++	ldr	data1, [src1], 8
++	ldr	data2, [src2], 8
++	cmp	data1, data2
++	bne	L(return)
  
--	.macro stp1 ptr, regB, regC, val
--	uao_stp 9998f, \ptr, \regB, \regC, \val
-+	.macro stp1 regA, regB, ptr, offset=0
-+	8888: sttr \regA, [\ptr, \offset]
-+	8889: sttr \regB, [\ptr, \offset + 8]
-+	_asm_extable_faultaddr	8888b,9998f;
-+	_asm_extable_faultaddr	8889b,9998f;
-+	.endm
-+
-+	.macro ldp1_pre regA, regB, ptr, offset
-+	ldp \regA, \regB, [\ptr, \offset]!
-+	.endm
-+
-+	.macro stp1_pre regA, regB, ptr, offset
-+	8888: sttr \regA, [\ptr, \offset]
-+	8889: sttr \regB, [\ptr, \offset + 8]
-+	add \ptr, \ptr, \offset
-+	_asm_extable_faultaddr	8888b,9998f;
-+	_asm_extable_faultaddr	8889b,9998f;
-+	.endm
-+
-+	.macro ldrb1_nuao reg, ptr, offset=0
-+	ldrb \reg, [\ptr, \offset]
-+	.endm
-+
-+	.macro strb1_nuao reg, ptr, offset=0
-+	8888: strb \reg, [\ptr, \offset]
-+	_asm_extable_faultaddr	8888b,9998f;
-+	.endm
-+
-+	.macro ldrb1_nuao_reg reg, ptr, offset=0
-+	ldrb \reg, [\ptr, \offset]
-+	.endm
-+
-+	.macro strb1_nuao_reg reg, ptr, offset=0
-+	strb \reg, [\ptr, \offset]
-+	.endm
-+
-+	.macro ldr1_nuao reg, ptr, offset=0
-+	ldr \reg, [\ptr, \offset]
-+	.endm
-+
-+	.macro str1_nuao reg, ptr, offset=0
-+	8888: str \reg, [\ptr, \offset]
-+	_asm_extable_faultaddr	8888b,9998f;
-+	.endm
-+
-+	.macro ldp1_nuao  regA, regB, ptr, offset=0
-+	ldp \regA, \regB, [\ptr, \offset]
-+	.endm
-+
-+	.macro ldp1_pre_nuao regA, regB, ptr, offset
-+	ldp \regA, \regB, [\ptr, \offset]!
-+	.endm
-+
-+	.macro stp1_nuao regA, regB, ptr, offset=0
-+	8888: stp \regA, \regB, [\ptr, \offset]
-+	_asm_extable_faultaddr	8888b,9998f;
-+	.endm
-+
-+	.macro stp1_pre_nuao regA, regB, ptr, offset
-+	8888: stp \regA, \regB, [\ptr, \offset]!
-+	_asm_extable_faultaddr	8888b,9998f;
-+	.endm
-+
-+	.macro copy_exit
-+	b	.Luaccess_finish
- 	.endm
+-	lsl	tmp1, tmp1, #3/* Bytes beyond alignment -> bits.*/
+-	neg	tmp1, tmp1/* Bits to alignment -64.  */
+-	mov	tmp2, #~0
+-	/*mask off the non-intended bytes before the start address.*/
+-CPU_BE( lsl	tmp2, tmp2, tmp1 )/*Big-endian.Early bytes are at MSB*/
+-	/* Little-endian.  Early bytes are at LSB.  */
+-CPU_LE( lsr	tmp2, tmp2, tmp1 )
++	/* Jump directly to comparing the last 16 bytes for 32 byte (or less)
++	   strings.  */
++	subs	limit, limit, 16
++	b.ls	L(last_bytes)
  
--end	.req	x5
- ENTRY(__arch_copy_to_user)
- 	uaccess_enable_not_uao x3, x4, x5
--	add	end, x0, x2
--#include "copy_template.S"
-+#include "copy_template_user.S"
-+.Luaccess_finish:
- 	uaccess_disable_not_uao x3, x4
- 	mov	x0, #0
- 	ret
- ENDPROC(__arch_copy_to_user)
- EXPORT_SYMBOL(__arch_copy_to_user)
+-	orr	data1, data1, tmp2
+-	orr	data2, data2, tmp2
+-	b	.Lstart_realigned
++	/* We overlap loads between 0-32 bytes at either side of SRC1 when we
++	   try to align, so limit it only to strings larger than 128 bytes.  */
++	cmp	limit, 96
++	b.ls	L(loop16)
+ 
+-	/*src1 and src2 have different alignment offset.*/
+-.Lmisaligned8:
+-	cmp	limit, #8
+-	b.lo	.Ltiny8proc /*limit < 8: compare byte by byte*/
++	/* Align src1 and adjust src2 with bytes not yet done.  */
++	and	tmp1, src1, 15
++	add	limit, limit, tmp1
++	sub	src1, src1, tmp1
++	sub	src2, src2, tmp1
+ 
+-	and	tmp1, src1, #7
+-	neg	tmp1, tmp1
+-	add	tmp1, tmp1, #8/*valid length in the first 8 bytes of src1*/
+-	and	tmp2, src2, #7
+-	neg	tmp2, tmp2
+-	add	tmp2, tmp2, #8/*valid length in the first 8 bytes of src2*/
+-	subs	tmp3, tmp1, tmp2
+-	csel	pos, tmp1, tmp2, hi /*Choose the maximum.*/
++	/* Loop performing 16 bytes per iteration using aligned src1.
++	   Limit is pre-decremented by 16 and must be larger than zero.
++	   Exit if <= 16 bytes left to do or if the data is not equal.  */
++	.p2align 4
++L(loop16):
++	ldp	data1, data1h, [src1], 16
++	ldp	data2, data2h, [src2], 16
++	subs	limit, limit, 16
++	ccmp	data1, data2, 0, hi
++	ccmp	data1h, data2h, 0, eq
++	b.eq	L(loop16)
+ 
+-	sub	limit, limit, pos
+-	/*compare the proceeding bytes in the first 8 byte segment.*/
+-.Ltinycmp:
+-	ldrb	data1w, [src1], #1
+-	ldrb	data2w, [src2], #1
+-	subs	pos, pos, #1
+-	ccmp	data1w, data2w, #0, ne  /* NZCV = 0b0000.  */
+-	b.eq	.Ltinycmp
+-	cbnz	pos, 1f /*diff occurred before the last byte.*/
++	cmp	data1, data2
++	bne	L(return)
++	mov	data1, data1h
++	mov	data2, data2h
++	cmp	data1, data2
++	bne	L(return)
++
++	/* Compare last 1-16 bytes using unaligned access.  */
++L(last_bytes):
++	add	src1, src1, limit
++	add	src2, src2, limit
++	ldp	data1, data1h, [src1]
++	ldp	data2, data2h, [src2]
++	cmp	data1, data2
++	bne	L(return)
++	mov	data1, data1h
++	mov	data2, data2h
++	cmp	data1, data2
++
++	/* Compare data bytes and set return value to 0, -1 or 1.  */
++L(return):
++#ifndef __AARCH64EB__
++	rev	data1, data1
++	rev	data2, data2
++#endif
++	cmp	data1, data2
++L(ret_eq):
++	cset	result, ne
++	cneg	result, result, lo
++	ret
++
++	.p2align 4
++	/* Compare up to 8 bytes.  Limit is [-8..-1].  */
++L(less8):
++	adds	limit, limit, 4
++	b.lo	L(less4)
++	ldr	data1w, [src1], 4
++	ldr	data2w, [src2], 4
+ 	cmp	data1w, data2w
+-	b.eq	.Lstart_align
+-1:
+-	sub	result, data1, data2
+-	ret
 -
--	.section .fixup,"ax"
--	.align	2
--9998:	sub	x0, end, dst			// bytes not copied
+-.Lstart_align:
+-	lsr	limit_wd, limit, #3
+-	cbz	limit_wd, .Lremain8
+-
+-	ands	xzr, src1, #7
+-	b.eq	.Lrecal_offset
+-	/*process more leading bytes to make src1 aligned...*/
+-	add	src1, src1, tmp3 /*backwards src1 to alignment boundary*/
+-	add	src2, src2, tmp3
+-	sub	limit, limit, tmp3
+-	lsr	limit_wd, limit, #3
+-	cbz	limit_wd, .Lremain8
+-	/*load 8 bytes from aligned SRC1..*/
+-	ldr	data1, [src1], #8
+-	ldr	data2, [src2], #8
+-
+-	subs	limit_wd, limit_wd, #1
+-	eor	diff, data1, data2  /*Non-zero if differences found.*/
+-	csinv	endloop, diff, xzr, ne
+-	cbnz	endloop, .Lunequal_proc
+-	/*How far is the current SRC2 from the alignment boundary...*/
+-	and	tmp3, tmp3, #7
+-
+-.Lrecal_offset:/*src1 is aligned now..*/
+-	neg	pos, tmp3
+-.Lloopcmp_proc:
+-	/*
+-	* Divide the eight bytes into two parts. First,backwards the src2
+-	* to an alignment boundary,load eight bytes and compare from
+-	* the SRC2 alignment boundary. If all 8 bytes are equal,then start
+-	* the second part's comparison. Otherwise finish the comparison.
+-	* This special handle can garantee all the accesses are in the
+-	* thread/task space in avoid to overrange access.
+-	*/
+-	ldr	data1, [src1,pos]
+-	ldr	data2, [src2,pos]
+-	eor	diff, data1, data2  /* Non-zero if differences found.  */
+-	cbnz	diff, .Lnot_limit
+-
+-	/*The second part process*/
+-	ldr	data1, [src1], #8
+-	ldr	data2, [src2], #8
+-	eor	diff, data1, data2  /* Non-zero if differences found.  */
+-	subs	limit_wd, limit_wd, #1
+-	csinv	endloop, diff, xzr, ne/*if limit_wd is 0,will finish the cmp*/
+-	cbz	endloop, .Lloopcmp_proc
+-.Lunequal_proc:
+-	cbz	diff, .Lremain8
+-
+-/* There is difference occurred in the latest comparison. */
+-.Lnot_limit:
+-/*
+-* For little endian,reverse the low significant equal bits into MSB,then
+-* following CLZ can find how many equal bits exist.
+-*/
+-CPU_LE( rev	diff, diff )
+-CPU_LE( rev	data1, data1 )
+-CPU_LE( rev	data2, data2 )
+-
+-	/*
+-	* The MS-non-zero bit of DIFF marks either the first bit
+-	* that is different, or the end of the significant data.
+-	* Shifting left now will bring the critical information into the
+-	* top bits.
+-	*/
+-	clz	pos, diff
+-	lsl	data1, data1, pos
+-	lsl	data2, data2, pos
+-	/*
+-	* We need to zero-extend (char is unsigned) the value and then
+-	* perform a signed subtraction.
+-	*/
+-	lsr	data1, data1, #56
+-	sub	result, data1, data2, lsr #56
 -	ret
--	.previous
-+#include "copy_user_fixup.S"
-diff --git a/arch/arm64/lib/copy_user_fixup.S b/arch/arm64/lib/copy_user_fixup.S
-new file mode 100644
-index 000000000000..32fae9e2e799
---- /dev/null
-+++ b/arch/arm64/lib/copy_user_fixup.S
-@@ -0,0 +1,14 @@
-+/* SPDX-License-Identifier: GPL-2.0-only */
-+
-+addr	.req	x15
-+.section .fixup,"ax"
-+.align	2
-+9998:
-+	// If it falls in the src range then it was a load that failed,
-+	// otherwise it was a store
-+	cmp addr, src
-+	ccmp addr, srcend, #0x0, ge
-+	csel x0, srcend, dstend, lt
-+	sub x0, x0, addr
-+	ret
-+
-diff --git a/arch/arm64/lib/memcpy.S b/arch/arm64/lib/memcpy.S
-index d79f48994dbb..c4a2fe0d0317 100644
---- a/arch/arm64/lib/memcpy.S
-+++ b/arch/arm64/lib/memcpy.S
-@@ -24,43 +24,57 @@
-  * Returns:
-  *	x0 - dest
-  */
--	.macro ldrb1 ptr, regB, val
--	ldrb  \ptr, [\regB], \val
-+
-+ #define L(l) .L ## l
-+
-+	.macro ldrb1 reg, ptr, offset=0
-+	ldrb \reg, [\ptr, \offset]
- 	.endm
- 
--	.macro strb1 ptr, regB, val
--	strb \ptr, [\regB], \val
-+	.macro strb1 reg, ptr, offset=0
-+	strb \reg, [\ptr, \offset]
- 	.endm
- 
--	.macro ldrh1 ptr, regB, val
--	ldrh  \ptr, [\regB], \val
-+	.macro ldr1 reg, ptr, offset=0
-+	ldr \reg, [\ptr, \offset]
- 	.endm
- 
--	.macro strh1 ptr, regB, val
--	strh \ptr, [\regB], \val
-+	.macro str1 reg, ptr, offset=0
-+	str \reg, [\ptr, \offset]
- 	.endm
- 
--	.macro ldr1 ptr, regB, val
--	ldr \ptr, [\regB], \val
-+	.macro ldp1 regA, regB, ptr, offset=0
-+	ldp \regA, \regB, [\ptr, \offset]
- 	.endm
- 
--	.macro str1 ptr, regB, val
--	str \ptr, [\regB], \val
-+	.macro stp1 regA, regB, ptr, offset=0
-+	stp \regA, \regB, [\ptr, \offset]
- 	.endm
- 
--	.macro ldp1 ptr, regB, regC, val
--	ldp \ptr, \regB, [\regC], \val
-+	.macro ldrb1_reg reg, ptr, offset
-+	ldrb1 \reg, \ptr, \offset
- 	.endm
- 
--	.macro stp1 ptr, regB, regC, val
--	stp \ptr, \regB, [\regC], \val
-+	.macro strb1_reg reg, ptr, offset
-+	strb1 \reg, \ptr, \offset
-+	.endm
-+
-+	.macro ldp1_pre regA, regB, ptr, offset
-+	ldp \regA, \regB, [\ptr, \offset]!
-+	.endm
-+
-+	.macro stp1_pre regA, regB, ptr, offset
-+	stp \regA, \regB, [\ptr, \offset]!
-+	.endm
-+
-+	.macro copy_exit
-+	ret
- 	.endm
- 
- 	.weak memcpy
- ENTRY(__memcpy)
- ENTRY(memcpy)
- #include "copy_template.S"
+-
+-.Lremain8:
+-	/* Limit % 8 == 0 =>. all data are equal.*/
+-	ands	limit, limit, #7
+-	b.eq	.Lret0
+-
+-.Ltiny8proc:
+-	ldrb	data1w, [src1], #1
+-	ldrb	data2w, [src2], #1
+-	subs	limit, limit, #1
+-
+-	ccmp	data1w, data2w, #0, ne  /* NZCV = 0b0000. */
+-	b.eq	.Ltiny8proc
+-	sub	result, data1, data2
 -	ret
- ENDPIPROC(memcpy)
- EXPORT_SYMBOL(memcpy)
- ENDPROC(__memcpy)
+-.Lret0:
+-	mov	result, #0
++	b.ne	L(return)
++	sub	limit, limit, 4
++L(less4):
++	adds	limit, limit, 4
++	beq	L(ret_eq)
++L(byte_loop):
++	ldrb	data1w, [src1], 1
++	ldrb	data2w, [src2], 1
++	subs	limit, limit, 1
++	ccmp	data1w, data2w, 0, ne	/* NZCV = 0b0000.  */
++	b.eq	L(byte_loop)
++	sub	result, data1w, data2w
+ 	ret
+ ENDPIPROC(memcmp)
+ EXPORT_SYMBOL_NOKASAN(memcmp)
 -- 
 2.21.0.dirty
 
