@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D041D7B89
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 18:30:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F1DC7D7B91
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 18:30:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RyMzM36x7+ErWf3sf5ACiEsI5CnEfJRlhix3pLbXBj4=; b=mRyEZyzf+zL9Vt
-	INVXyyiC7JDNq+ZLZtRxb0zIAZcCVaR92XdS36qG9wDpgu4sy9r2or5YMGEgIBrs616p2KMXDK0yY
-	oz1JWBoyN9inDEIZvuZgbp42IlUwGRrM1A8Yl1w1AdH9z/Qn8LtpBxXAt+GpcPuIy/qw05ME2biX3
-	NonCVAROFeUeSsAiohn0UFOgiGGXgPUxPE26JYVhaIvChAFPjIeExf1d29YxyOL7+gtmdnUWX8Ykh
-	zOGD9z4/QLWERQviyyKtMjo9qKKYN50jOAgeQ9t4gj1iMkO70oqlShX1l67ggIifS4PqaDYDQ8FL7
-	vFGLgxBMNUu0YCNsoXPQ==;
+	List-Owner; bh=kmRk/GOm6tiE5PV8PJFgTayDjs1u/QG7LnCFYZPKEAA=; b=rwfLqFthMjmCSX
+	mCrfohkwTSuE5DMAMGvoAQMY5wSDj4iBwg20jo0ysSpMoT7s1I7+ao5tU23ZQvYiT+n9lZRePP23P
+	9A1Gj+XcMTYTdl0/kh/hDetgB9LzFo8zZBsP+zDFD2JcyxsqFcAsOAtfLl0Pv0HTpwEt0IPK2vwdK
+	IpguAujpDm6SeFLy9qk+6QQXtaJKC/6adCCH05OtObe0aO3bhlehDz0j761pq/8vF6mMn0DCvIC0o
+	/OAmLUxvv5OXkyTHF8V70uDABVdOdW6Nzw04q6FClpQqsfynYrLyKeqOTYCWkJ/4/vxXKnRvRd8Zd
+	DRbQ+3ImTjDyqcX9fA4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKPiH-0006oY-To; Tue, 15 Oct 2019 16:30:21 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iKPiW-00088X-IP; Tue, 15 Oct 2019 16:30:36 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKPho-0006Y5-J5
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 16:29:54 +0000
-Received: by mail-wr1-x444.google.com with SMTP id o28so2025173wro.7
+ id 1iKPhs-0006YT-6B
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 16:29:57 +0000
+Received: by mail-wm1-x344.google.com with SMTP id a6so21552538wma.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 15 Oct 2019 09:29:52 -0700 (PDT)
+ Tue, 15 Oct 2019 09:29:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=TpzOutponfPCE66kYKUzbnWZf9wUFokgB1aEqqzJRN4=;
- b=TR4JS+xJjiL5PpcHHo1bHsLqgAf+I5G1almKK9qnnQzdIlAxJQSuZ/rWVUob/0MFkq
- SV/xJ5oLSpNwuKp5jHNjYJ7YhQc2GuhMxpZT8MMiCiTTy+LJmhTKm/L5wjxRPTyDTp6k
- zHTFBSzk35o0PbIRGO1Wz6W6eP5IYIoOiwEX/BIZQmaAFfiGMRPff1rsbx9NfXLGOFoz
- je2ycnzqgxzx7DjSkM4YUeO64k44Tybyx6Tyz8XaRCS1Bq2H5ekyXM85v7Z7wQZVm7ad
- pMyH23XPihr4kOjhbL7Y5z11Q3FBYxp4SPlpjBwDwsozBheOOq8ppytZclKbuRRVyQxj
- yCkA==
+ bh=8EjDBNijVRoZjfqMLlXDaOnDwnymZTKSpRUqb0jAneU=;
+ b=e4QJXQ4+hWtGPr3XXRL/OH8/hcXhMLaLfbqe37lsaMUbNRHvJMGGZp4XqiMur9ZIIc
+ JuCMN1+nF/9t76VBmQ+bJFDSWppF2nOw7LSqfJHA9DEsVgtNBbmcgJpX21co1+0bzS7U
+ ZDTmR1lzUv9uuaFF4QThMXFdM66UiBcnmiF11V9n7305SH7gf0aI5yrqgt3T8h/6Hs5m
+ rb6AzpQ9daKybqWNfHD7m65mrL/RLjzbaZRoKmHGvth2WUrVbieH1uBum2ttR+uAANMh
+ /M1hRnoNbhQiSVPrP+GTWO/Cl9Pg6LvKp9UDmIYDWpuJbB9qQf84cAByW1s9aYp4JZQm
+ zfSA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=TpzOutponfPCE66kYKUzbnWZf9wUFokgB1aEqqzJRN4=;
- b=qMEFhoJkun1oJFmdnM2s4d5yykzuO8/ZGsUSVVJzIxuxDxJjx2lAMG6c01dT9AmL2e
- rNc51kMcy6jSX045WNGym9fo1xjVXjinBrziMr2iuhbi40Y3Uc+JU1ZsiuiW4TTSsTFc
- Z53ludY1yrOVMf812TnJQQhRgXBcUebtrQ7aSVXzlulxHepG/c1rtCKjg6w9wxV1RXkh
- zjyq5RtOekUpFzLs5ebtbhHRyC/WxYOrywIga5Q2lsLeoZU4zuSut7ePkC64lPNsaaIU
- hrNnhpvT+ChqRGZI3JhYPyALGZEbHIwAg3gkyfAH7UOQ1l5V2d3SlL2ejnGSnXwUP3Sp
- AGaQ==
-X-Gm-Message-State: APjAAAWHqObU8k2WYxSNVTEfNAVsJjQBUZTqTCTOVr94hY2bGvxtfXRM
- EAt7pgQsSXtCtXwOvcK0OfY=
-X-Google-Smtp-Source: APXvYqxWF5drIRUxDhcv3ypIwvXmMeeoDfbseM/6FwwVczfTNOW4OPmxA+jqeGDYOiXzFwUS8zQ88Q==
-X-Received: by 2002:adf:ebd1:: with SMTP id v17mr23996540wrn.204.1571156990937; 
- Tue, 15 Oct 2019 09:29:50 -0700 (PDT)
+ bh=8EjDBNijVRoZjfqMLlXDaOnDwnymZTKSpRUqb0jAneU=;
+ b=ruDZd12TtJmrzyciDKlcGGkc6gfLFxCoE0liTQaB7Kypgk3J9dZ0N6flQUz5DGc+xR
+ bwgOU5nvnhVjj4IrG9spiCRf/zPOt9ryIXbaXrvFjj4HY+Im74gSo8+fK81XwuwfsZ8i
+ /TJOnZMC2n4e7IkxXT/nsGpx76jUTiGYZZtUAC/IqBCDSEb6eKCk8YR4p4JGpv3KKsKu
+ hptI9SNmPGRHwcD5VzcB73P1rGBNFiX8pZxqhmJmm37UN+zVAuiFQ74seSgm7LaPHwTM
+ RQHyc91xifVCDDuMFYDovNJKQUPKFu7FP++rcMgVAp1ZGGHiypVoQyey9BlVsJ7Vx8GK
+ Bvaw==
+X-Gm-Message-State: APjAAAXBwCE5uwZQPpxAjUvHoSTHZoaiRu/Trt9HS2D4/WyvyufyPL8B
+ 8BD6PxYRxr5VSn4kYaL1Xd0=
+X-Google-Smtp-Source: APXvYqziuZ6APvE5dI6UfqFlO5qrIoevHEqZUCi0rk13IQn0bCyF6RN2yeZd4Q+L34CkWrYJ3uVxGQ==
+X-Received: by 2002:a7b:cd83:: with SMTP id y3mr21928223wmj.150.1571156992846; 
+ Tue, 15 Oct 2019 09:29:52 -0700 (PDT)
 Received: from localhost (p2E5BE2CE.dip0.t-ipconnect.de. [46.91.226.206])
- by smtp.gmail.com with ESMTPSA id z13sm16541534wrm.64.2019.10.15.09.29.49
+ by smtp.gmail.com with ESMTPSA id t123sm37314754wma.40.2019.10.15.09.29.51
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 15 Oct 2019 09:29:49 -0700 (PDT)
+ Tue, 15 Oct 2019 09:29:51 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Arnd Bergmann <arnd@arndb.de>
-Subject: [RFC 1/3] memory: Introduce memory controller mini-framework
-Date: Tue, 15 Oct 2019 18:29:43 +0200
-Message-Id: <20191015162945.1203736-2-thierry.reding@gmail.com>
+Subject: [RFC 2/3] memory: tegra186: Register as memory controller
+Date: Tue, 15 Oct 2019 18:29:44 +0200
+Message-Id: <20191015162945.1203736-3-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191015162945.1203736-1-thierry.reding@gmail.com>
 References: <20191015162945.1203736-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_092952_627034_69815F8E 
-X-CRM114-Status: GOOD (  20.19  )
+X-CRM114-CacheID: sfid-20191015_092956_254947_868D0A4E 
+X-CRM114-Status: GOOD (  13.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -108,180 +108,55 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Thierry Reding <treding@nvidia.com>
 
-This new framework is currently nothing more than a registry of memory
-controllers, with the goal being to order device probing. One use-case
-where this is useful, for example, is a memory controller device which
-needs to program some registers before the system MMU can be enabled.
-Associating the memory controller with the SMMU allows the SMMU driver
-to defer the probe until the memory controller has been registered.
-
-One such example is Tegra186 where the memory controller contains some
-registers that are used to program stream IDs for the various memory
-clients (display, USB, PCI, ...) in the system. Programming these SIDs
-is required for the memory clients to emit the proper SIDs as part of
-their memory requests. The memory controller driver therefore needs to
-be programmed prior to the SMMU driver. To achieve that, the memory
-controller will be referenced via phandle from the SMMU device tree
-node, the SMMU driver can then use the memory controller framework to
-find it and defer probe until it has been registered.
+Registering as memory controller allows other drivers to obtain a
+reference to it. This is mostly useful as a way of ordering probe
+between devices depending on one another.
 
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
- drivers/memory/Makefile           |  1 +
- drivers/memory/core.c             | 99 +++++++++++++++++++++++++++++++
- include/linux/memory-controller.h | 25 ++++++++
- 3 files changed, 125 insertions(+)
- create mode 100644 drivers/memory/core.c
- create mode 100644 include/linux/memory-controller.h
+ drivers/memory/tegra/tegra186.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/memory/Makefile b/drivers/memory/Makefile
-index 27b493435e61..d16e7dca8ef9 100644
---- a/drivers/memory/Makefile
-+++ b/drivers/memory/Makefile
-@@ -3,6 +3,7 @@
- # Makefile for memory devices
- #
+diff --git a/drivers/memory/tegra/tegra186.c b/drivers/memory/tegra/tegra186.c
+index 441213a35930..e94e960a79f4 100644
+--- a/drivers/memory/tegra/tegra186.c
++++ b/drivers/memory/tegra/tegra186.c
+@@ -4,6 +4,7 @@
+  */
  
-+obj-y				+= core.o
- obj-$(CONFIG_DDR)		+= jedec_ddr_data.o
- ifeq ($(CONFIG_DDR),y)
- obj-$(CONFIG_OF)		+= of_memory.o
-diff --git a/drivers/memory/core.c b/drivers/memory/core.c
-new file mode 100644
-index 000000000000..1772e839305a
---- /dev/null
-+++ b/drivers/memory/core.c
-@@ -0,0 +1,99 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2019 NVIDIA Corporation.
-+ */
-+
+ #include <linux/io.h>
 +#include <linux/memory-controller.h>
-+#include <linux/of.h>
+ #include <linux/module.h>
+ #include <linux/mod_devicetable.h>
+ #include <linux/platform_device.h>
+@@ -11,6 +12,7 @@
+ #include <dt-bindings/memory/tegra186-mc.h>
+ 
+ struct tegra_mc {
++	struct memory_controller base;
+ 	struct device *dev;
+ 	void __iomem *regs;
+ };
+@@ -548,7 +550,7 @@ static int tegra186_mc_probe(struct platform_device *pdev)
+ 	if (IS_ERR(mc->regs))
+ 		return PTR_ERR(mc->regs);
+ 
+-	mc->dev = &pdev->dev;
++	mc->base.dev = &pdev->dev;
+ 
+ 	for (i = 0; i < ARRAY_SIZE(tegra186_mc_clients); i++) {
+ 		const struct tegra_mc_client *client = &tegra186_mc_clients[i];
+@@ -571,6 +573,10 @@ static int tegra186_mc_probe(struct platform_device *pdev)
+ 			client->name, override, security);
+ 	}
+ 
++	err = memory_controller_register(&mc->base);
++	if (err < 0)
++		return err;
 +
-+static DEFINE_MUTEX(controllers_lock);
-+static LIST_HEAD(controllers);
-+
-+static void memory_controller_release(struct kref *ref)
-+{
-+	struct memory_controller *mc = container_of(ref, struct memory_controller, ref);
-+
-+	WARN_ON(!list_empty(&mc->list));
-+}
-+
-+int memory_controller_register(struct memory_controller *mc)
-+{
-+	kref_init(&mc->ref);
-+
-+	mutex_lock(&controllers_lock);
-+	list_add_tail(&mc->list, &controllers);
-+	mutex_unlock(&controllers_lock);
-+
-+	return 0;
-+}
-+EXPORT_SYMBOL_GPL(memory_controller_register);
-+
-+void memory_controller_unregister(struct memory_controller *mc)
-+{
-+	mutex_lock(&controllers_lock);
-+	list_del_init(&mc->list);
-+	mutex_unlock(&controllers_lock);
-+
-+	kref_put(&mc->ref, memory_controller_release);
-+}
-+EXPORT_SYMBOL_GPL(memory_controller_unregister);
-+
-+static struct memory_controller *
-+of_memory_controller_get(struct device *dev, struct device_node *np,
-+			 const char *con_id)
-+{
-+	const char *cells = "#memory-controller-cells";
-+	const char *names = "memory-controller-names";
-+	const char *prop = "memory-controllers";
-+	struct memory_controller *mc;
-+	struct of_phandle_args args;
-+	int index = 0, err;
-+
-+	if (con_id) {
-+		index = of_property_match_string(np, names, con_id);
-+		if (index < 0)
-+			return ERR_PTR(index);
-+	}
-+
-+	err = of_parse_phandle_with_args(np, prop, cells, index, &args);
-+	if (err) {
-+		if (err == -ENOENT)
-+			err = -ENODEV;
-+
-+		return ERR_PTR(err);
-+	}
-+
-+	mutex_lock(&controllers_lock);
-+
-+	list_for_each_entry(mc, &controllers, list) {
-+		if (mc->dev && mc->dev->of_node == args.np) {
-+			kref_get(&mc->ref);
-+			mutex_unlock(&controllers_lock);
-+			goto unlock;
-+		}
-+	}
-+
-+	mc = ERR_PTR(-EPROBE_DEFER);
-+
-+unlock:
-+	mutex_unlock(&controllers_lock);
-+	of_node_put(args.np);
-+	return mc;
-+}
-+
-+struct memory_controller *
-+memory_controller_get(struct device *dev, const char *con_id)
-+{
-+	if (IS_ENABLED(CONFIG_OF) && dev && dev->of_node)
-+		return of_memory_controller_get(dev, dev->of_node, con_id);
-+
-+	return ERR_PTR(-ENODEV);
-+}
-+EXPORT_SYMBOL_GPL(memory_controller_get);
-+
-+void memory_controller_put(struct memory_controller *mc)
-+{
-+	if (mc)
-+		kref_put(&mc->ref, memory_controller_release);
-+}
-+EXPORT_SYMBOL_GPL(memory_controller_put);
-diff --git a/include/linux/memory-controller.h b/include/linux/memory-controller.h
-new file mode 100644
-index 000000000000..4b06b2ea1d14
---- /dev/null
-+++ b/include/linux/memory-controller.h
-@@ -0,0 +1,25 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2019 NVIDIA Corporation.
-+ */
-+
-+#ifndef _LINUX_MEMORY_CONTROLLER_H
-+#define _LINUX_MEMORY_CONTROLLER_H
-+
-+#include <linux/device.h>
-+#include <linux/list.h>
-+
-+struct memory_controller {
-+	struct device *dev;
-+	struct kref ref;
-+	struct list_head list;
-+};
-+
-+int memory_controller_register(struct memory_controller *mc);
-+void memory_controller_unregister(struct memory_controller *mc);
-+
-+struct memory_controller *memory_controller_get(struct device *dev,
-+						const char *con_id);
-+void memory_controller_put(struct memory_controller *mc);
-+
-+#endif
+ 	platform_set_drvdata(pdev, mc);
+ 
+ 	return err;
 -- 
 2.23.0
 
