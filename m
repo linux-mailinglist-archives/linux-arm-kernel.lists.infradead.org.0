@@ -2,83 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0AFF6D7B96
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 18:30:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BE82D7BDA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 18:38:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jmFQsTHXFLHJiD5EkFMWAEiCyHPbp5XyXRq7aj4NNQQ=; b=Y4dpTglF/s43ib
-	Dbato4xoxMZ5HvHOu+d+RPeib88QVblVuIDEvU1CR7b05pPlnIcb3E/AWeyGZ0TEHXlqZcg7NFIIP
-	Wbe8lGXsIyHGX9u+8AidU8cBnhMv02/G/3NqMDJq8W+aoGFPGnpzMXkrFdtkyf/44dSlCFOY3QnfJ
-	v5Q6pse99fVn1p1SAMfAmgNoOpFsMBZwfr6zZbebIVPhAZzjdfRP81lrdHFLEmb04m2zZtZ8846UB
-	SFC+DwitecpxEkFvnMRUvxxcBJGFXP27IRl2if2FuWMeWtjt/D+443skLCDOKyTMj/9pG/4JuOOeF
-	vyeW0gpubOuygBzhEkIw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lg2lXpmofy+uhqxhSDexxzeMX65Ov5Y40gsDOy2OrGM=; b=ddanP44XX72PA5
+	FiBejlupJ6SlKI4VI8grHv34Zw9a2/YGRYA47TMTTOw4PFarq93Ca1d2oqZrzQWt4Vcga2KQ8KYHn
+	O6dl4+GjqrkeQn92ZZ8mAQHLOV4TUe+uMgPJCh9X+9Gg0y+RMq/TkcKuUKYSywDSjyUyqhXtOq2A2
+	uL+44/AZU3itks1YxD6LyarGevcJ/NP0UN9BgCV4uBkSDfPy8W2q24bTTQSkTY6Ze5ehIrQWqU1VX
+	bLVt0STxHiHTRn5EEEFFfNxmCHVAsL9CGKE0ENXQFNGx2rUBkPrYWn9paMfI+yWy3HOCoS6CKOzql
+	T2gweHKmoT/8G6Kk5o2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKPin-0008T2-3H; Tue, 15 Oct 2019 16:30:53 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iKPpb-0002VS-KB; Tue, 15 Oct 2019 16:37:55 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKPhs-0006aF-KI
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 16:29:58 +0000
-Received: by mail-wr1-x442.google.com with SMTP id b9so24680277wrs.0
+ id 1iKPpS-0002Uy-IS
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 16:37:48 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1571157464;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references:openpgp:openpgp;
+ bh=1jEbQ5iqOThUFULFTyIFEug52/ZAJJCm7u+tNv/e0Pk=;
+ b=eAy7IcvHZyJZgNteHAkya8+rdSXPrC4gFj0wpf9kWa5zrm1CjPK+zzAIruK9G7UVZ/F12o
+ DPKGqr8kmnRbdmT147jvloYoExZ+n7p1f/P8/r9YOfDcrgKxNnq2i+OJjJ45jt/e+h2tin
+ 4ITMZ+kTQJGya8Zw5srolvIWmN11C3Q=
+Received: from mail-wr1-f71.google.com (mail-wr1-f71.google.com
+ [209.85.221.71]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-317-4U7k6LDJM3OAL-Jks9XYLQ-1; Tue, 15 Oct 2019 12:37:40 -0400
+Received: by mail-wr1-f71.google.com with SMTP id a15so1342573wrr.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 15 Oct 2019 09:29:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=JvkdWrZIuVB4wEQZQVs5mAArtaBmF1bFpmfJLPYELHc=;
- b=c9iAWGuv1XKyHTA7scMFN2stJQ00qiFgIav/YIaYpT/gsyQUB45XlCLD/GVMFPFjaL
- 1N636dgDqAWWFtQQuyx3UguhBhZ8LpG1khVGnZwJA4tc1R0lf37t+ajkrIdT4ugOzpaR
- VyfWCEdLwm/s0C2YSocndvVNe4El3u/AnW8iUSzz91jeVT8NhZe83063/1WNAo6jr6Jc
- uJl2ZYGBJq1DRyxkyijvc9qyGCs9XGzOx44DqruBqaN4ZO1yLf8ZR7925pneGyqAw+vm
- lRmjy7vWfxVGSSxnaKDcL9vznyjC2U0NqHVxx4jIKnw4w5+llBb3/V4s3CU0r68rNQou
- mcZQ==
+ Tue, 15 Oct 2019 09:37:40 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=JvkdWrZIuVB4wEQZQVs5mAArtaBmF1bFpmfJLPYELHc=;
- b=uP2nIwfk0L0W6ZLe8CSXJfe7DB+IyVNtqLUMJxXp0RsFD9STjUr2wO5zUcEow2caaP
- 72yQFqadnE9O6y8/j8gFaTJ2WNI/z9V4EvBwxoXTbYw2NXtPQf0WYEC/MgogDHd6H+Va
- kdHhJIqV0ZAErqHLDwBUn5+8X0mDK2LkC3iMo44uwgMwRcXIqQgufyJzlff0kNl2TCMK
- awXvvL1hY4TJPrafixUSu/riTtvz0jwWr1X4WcA9oP92YXa69FLOivdQpmDmmHQ52XXQ
- muZEKDfxtSd08qUKUrDidQiKnVsum21cTQa975DYKXvdjJWgdMkLmiesun1vkn16JVje
- JTlg==
-X-Gm-Message-State: APjAAAWbK2vgam7Kiqj6roU0jDTpMzJtvhtcCvIOqtN/hu5tHJtZiHnZ
- Vl4zZmm7dT/7Xo0+Go3QzaA=
-X-Google-Smtp-Source: APXvYqxoxfeOmJ+UjotH/Ka0LqpXHcSy2mQ+oNsgtxdm/eawKd9g2S88Wjj+MkFv0YlMhAQ9t9zt4A==
-X-Received: by 2002:adf:dcc6:: with SMTP id x6mr31056334wrm.81.1571156994875; 
- Tue, 15 Oct 2019 09:29:54 -0700 (PDT)
-Received: from localhost (p2E5BE2CE.dip0.t-ipconnect.de. [46.91.226.206])
- by smtp.gmail.com with ESMTPSA id s9sm24373148wme.36.2019.10.15.09.29.53
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 15 Oct 2019 09:29:53 -0700 (PDT)
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: [RFC 3/3] iommu: arm-smmu: Get reference to memory controller
-Date: Tue, 15 Oct 2019 18:29:45 +0200
-Message-Id: <20191015162945.1203736-4-thierry.reding@gmail.com>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191015162945.1203736-1-thierry.reding@gmail.com>
-References: <20191015162945.1203736-1-thierry.reding@gmail.com>
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=/afoUvKJ/G8ziRnWqBlZqbL4cc1xk25yfAVgZZ9J6P4=;
+ b=DzRd349tO+YJ+MfdNktf314JXJskrI1zwjM0O37QTgliDt4x1a6Ad3ScZEim3lTa61
+ LMCTSKt9zcO5MfPnZ5n3Ig5GnVvdDZb9xdMVW+RFazt6ufK6bdnD/5xGFt3O0i7AbIs5
+ 60/7qiK1e2qAFHc6O9/PaBQmhW9CUXRNeI8PZDQJ3NuouEYUfV8ZFhKCXaJZVBCSiSQd
+ W48oy788Mmr4lC2j0qf421KSE+3Rl6pH+9eTBRpXfTusw8qhxbbeRKWBM6SztgWOUgV4
+ fGRitHkmg4HUANXI+yYa113+TIm3YycQj7FaIwJmqxJQQK/QWifzxej+sQ9aScAtSACo
+ UYXA==
+X-Gm-Message-State: APjAAAWU/suggQzxlAImD31RcD6+m6fFkfLpD9leQvBiehVsaOaZ6FA9
+ 9M6TtkTxr2MI5EYUiDrN9dbK53QXkZF1ZV5DCGeIypWHYuYtvoBG0BwM2QbHnPeLR/04WtZA+4A
+ 4HudbOxuWXr7W/hrkrKjQa1itIVVj4SY+388=
+X-Received: by 2002:a5d:4108:: with SMTP id l8mr30326060wrp.391.1571157459636; 
+ Tue, 15 Oct 2019 09:37:39 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqxipARbWgSrbXCwl1TEPdWRJHBQlN9VqVPvaKOq4EkdjYSYjz5KQDey2GKDwlfZaBSNuv9Oqg==
+X-Received: by 2002:a5d:4108:: with SMTP id l8mr30326034wrp.391.1571157459287; 
+ Tue, 15 Oct 2019 09:37:39 -0700 (PDT)
+Received: from ?IPv6:2001:b07:6468:f312:d001:591b:c73b:6c41?
+ ([2001:b07:6468:f312:d001:591b:c73b:6c41])
+ by smtp.gmail.com with ESMTPSA id r65sm26602863wmr.9.2019.10.15.09.37.38
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 15 Oct 2019 09:37:38 -0700 (PDT)
+Subject: Re: [PATCH v5 3/6] timekeeping: Add clocksource to
+ system_time_snapshot
+To: Jianyong Wu <jianyong.wu@arm.com>, netdev@vger.kernel.org,
+ yangbo.lu@nxp.com, john.stultz@linaro.org, tglx@linutronix.de,
+ sean.j.christopherson@intel.com, maz@kernel.org, richardcochran@gmail.com,
+ Mark.Rutland@arm.com, will@kernel.org, suzuki.poulose@arm.com
+References: <20191015104822.13890-1-jianyong.wu@arm.com>
+ <20191015104822.13890-4-jianyong.wu@arm.com>
+From: Paolo Bonzini <pbonzini@redhat.com>
+Openpgp: preference=signencrypt
+Message-ID: <9274d21c-2c43-2e0d-f086-6aaba3863603@redhat.com>
+Date: Tue, 15 Oct 2019 18:37:39 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <20191015104822.13890-4-jianyong.wu@arm.com>
+Content-Language: en-US
+X-MC-Unique: 4U7k6LDJM3OAL-Jks9XYLQ-1
+X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_092956_810843_E723C530 
-X-CRM114-Status: GOOD (  12.54  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191015_093746_737079_6905E02A 
+X-CRM114-Status: GOOD (  16.10  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [207.211.31.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (thierry.reding[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -98,76 +114,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Will Deacon <will@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
- iommu@lists.linux-foundation.org, linux-tegra@vger.kernel.org,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: justin.he@arm.com, kvm@vger.kernel.org, Steve.Capper@arm.com,
+ linux-kernel@vger.kernel.org, Kaly.Xin@arm.com, nd@arm.com,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Thierry Reding <treding@nvidia.com>
+On 15/10/19 12:48, Jianyong Wu wrote:
+> Sometimes, we need check current clocksource outside of
+> timekeeping area. Add clocksource to system_time_snapshot then
+> we can get clocksource as well as system time.
+> 
+> Signed-off-by: Jianyong Wu <jianyong.wu@arm.com>
+> Suggested-by: Paolo Bonzini <pbonzini@redhat.com>
+> ---
+>  include/linux/timekeeping.h | 35 ++++++++++++++++++-----------------
+>  kernel/time/timekeeping.c   |  7 ++++---
+>  2 files changed, 22 insertions(+), 20 deletions(-)
+> 
+> diff --git a/include/linux/timekeeping.h b/include/linux/timekeeping.h
+> index a8ab0f143ac4..964c14fbbf69 100644
+> --- a/include/linux/timekeeping.h
+> +++ b/include/linux/timekeeping.h
+> @@ -194,23 +194,6 @@ extern bool timekeeping_rtc_skipresume(void);
+>  
+>  extern void timekeeping_inject_sleeptime64(const struct timespec64 *delta);
+>  
+> -/*
+> - * struct system_time_snapshot - simultaneous raw/real time capture with
+> - *	counter value
+> - * @cycles:	Clocksource counter value to produce the system times
+> - * @real:	Realtime system time
+> - * @raw:	Monotonic raw system time
+> - * @clock_was_set_seq:	The sequence number of clock was set events
+> - * @cs_was_changed_seq:	The sequence number of clocksource change events
+> - */
+> -struct system_time_snapshot {
+> -	u64		cycles;
+> -	ktime_t		real;
+> -	ktime_t		raw;
+> -	unsigned int	clock_was_set_seq;
+> -	u8		cs_was_changed_seq;
+> -};
+> -
+>  /*
+>   * struct system_device_crosststamp - system/device cross-timestamp
+>   *	(syncronized capture)
+> @@ -236,6 +219,24 @@ struct system_counterval_t {
+>  	struct clocksource	*cs;
+>  };
+>  
+> +/*
+> + * struct system_time_snapshot - simultaneous raw/real time capture with
+> + *	counter value
+> + * @sc:		Contains clocksource and clocksource counter value to produce
+> + * 	the system times
+> + * @real:	Realtime system time
+> + * @raw:	Monotonic raw system time
+> + * @clock_was_set_seq:	The sequence number of clock was set events
+> + * @cs_was_changed_seq:	The sequence number of clocksource change events
+> + */
+> +struct system_time_snapshot {
+> +	struct system_counterval_t sc;
+> +	ktime_t		real;
+> +	ktime_t		raw;
+> +	unsigned int	clock_was_set_seq;
+> +	u8		cs_was_changed_seq;
+> +};
+> +
+>  /*
+>   * Get cross timestamp between system clock and device clock
+>   */
+> diff --git a/kernel/time/timekeeping.c b/kernel/time/timekeeping.c
+> index 44b726bab4bd..66ff089605b3 100644
+> --- a/kernel/time/timekeeping.c
+> +++ b/kernel/time/timekeeping.c
+> @@ -983,7 +983,8 @@ void ktime_get_snapshot(struct system_time_snapshot *systime_snapshot)
+>  		nsec_raw  = timekeeping_cycles_to_ns(&tk->tkr_raw, now);
+>  	} while (read_seqcount_retry(&tk_core.seq, seq));
+>  
+> -	systime_snapshot->cycles = now;
+> +	systime_snapshot->sc.cycles = now;
+> +	systime_snapshot->sc.cs = tk->tkr_mono.clock;
+>  	systime_snapshot->real = ktime_add_ns(base_real, nsec_real);
+>  	systime_snapshot->raw = ktime_add_ns(base_raw, nsec_raw);
+>  }
+> @@ -1189,12 +1190,12 @@ int get_device_system_crosststamp(int (*get_time_fn)
+>  		 * clocksource change
+>  		 */
+>  		if (!history_begin ||
+> -		    !cycle_between(history_begin->cycles,
+> +		    !cycle_between(history_begin->sc.cycles,
+>  				   system_counterval.cycles, cycles) ||
+>  		    history_begin->cs_was_changed_seq != cs_was_changed_seq)
+>  			return -EINVAL;
+>  		partial_history_cycles = cycles - system_counterval.cycles;
+> -		total_history_cycles = cycles - history_begin->cycles;
+> +		total_history_cycles = cycles - history_begin->sc.cycles;
+>  		discontinuity =
+>  			history_begin->clock_was_set_seq != clock_was_set_seq;
+>  
+> 
 
-Use the memory controller framework to obtain a reference to the memory
-controller to which the SMMU will make memory requests. This allows the
-two drivers to properly order their probes so that the memory controller
-can be programmed first.
-
-An example where this is required is Tegra186 where the stream IDs need
-to be associated with memory clients before memory requests are emitted
-with the correct stream ID.
-
-Signed-off-by: Thierry Reding <treding@nvidia.com>
----
- drivers/iommu/arm-smmu.c | 12 ++++++++++++
- drivers/iommu/arm-smmu.h |  2 ++
- 2 files changed, 14 insertions(+)
-
-diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-index b18aac4c105e..8dd214244926 100644
---- a/drivers/iommu/arm-smmu.c
-+++ b/drivers/iommu/arm-smmu.c
-@@ -2015,6 +2015,18 @@ static int arm_smmu_device_probe(struct platform_device *pdev)
- 	}
- 	smmu->dev = dev;
- 
-+	smmu->mc = memory_controller_get(dev, NULL);
-+	if (IS_ERR(smmu->mc)) {
-+		err = PTR_ERR(smmu->mc);
-+
-+		if (err != -ENODEV) {
-+			dev_err(dev, "failed to get memory controller: %d\n", err);
-+			return err;
-+		}
-+
-+		smmu->mc = NULL;
-+	}
-+
- 	if (dev->of_node)
- 		err = arm_smmu_device_dt_probe(pdev, smmu);
- 	else
-diff --git a/drivers/iommu/arm-smmu.h b/drivers/iommu/arm-smmu.h
-index b19b6cae9b5e..40b6d42eb3ab 100644
---- a/drivers/iommu/arm-smmu.h
-+++ b/drivers/iommu/arm-smmu.h
-@@ -17,6 +17,7 @@
- #include <linux/io-64-nonatomic-hi-lo.h>
- #include <linux/io-pgtable.h>
- #include <linux/iommu.h>
-+#include <linux/memory-controller.h>
- #include <linux/mutex.h>
- #include <linux/spinlock.h>
- #include <linux/types.h>
-@@ -224,6 +225,7 @@ enum arm_smmu_implementation {
- 
- struct arm_smmu_device {
- 	struct device			*dev;
-+	struct memory_controller	*mc;
- 
- 	void __iomem			*base;
- 	unsigned int			numpage;
--- 
-2.23.0
+Reviewed-by: Paolo Bonzini <pbonzini@redhat.com>
 
 
 _______________________________________________
