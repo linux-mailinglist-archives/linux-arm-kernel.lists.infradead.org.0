@@ -2,69 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4AF55D6D79
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 05:13:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6353D6D98
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 05:19:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z9ubTpkJ87Dvfw4EMmWWNMDtlUiyWeZt0bjaK1oRQCw=; b=LAd5e8cwdAyoeF
-	RZSHdHiiHqWfG8gwOZrz+KV1zE0bH2k0IzkBysxxNAfOxHype92Bb9J6bG/0sAuVrukSRgrkxyVqi
-	Eqscr76rENKWiFQO8WcISobeg0rdtxIRpSvGJSFLUrU9o6DYlyKJde1EX9e0C9WjoKZJQtxpNwFT7
-	oGSpOob0ANCEuyWktrHJyFXcvitO1h3JwPCvtvPMUMXdA04ZFaY+77JmPCX7qqMuW5/XIDKO/JxdC
-	1Bt7voY2PxT74uwT9g6pr6TXwKT7EdRSfftT5xivhsL8F+f8LtNGUbvCSWYzSoP994257piBWboeS
-	UwFjal0STK7ojZBbF7gw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=38JacLlSRmvsTP4JXDNU9pE3wHqv47Arzp79/LZkTNE=; b=YD9Cj6L8AG0WFY
+	eA8hZZQIpIoM1OHt9AsBrY1fiuWklvy5AWNmhXymDA2FGNUhZKu06TQAMqs1CmycQJG4wgNJG7owG
+	yrDeZ4jomDf7FC9anaul97q9vllB01Xq20ItABFhwuzolw+SvSlNPKzcy5HWh62JmRe4KkOkIo3cn
+	BVz4RgxGo3PEZ8YtXa7iyXZEJEmCGJdJfsFx8nwrkAJ48Hy789xd2GdLEKqT6Hbu5N2YuInRl9S0v
+	bAku4j9CS60H8nfD3qcwmM17g9w/DTXcBQDooA3230He5wBUjdEniov1DtDN/NtmUZZWQzxTfivj+
+	mQwIyqxu7xkMQX62ikIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKDHI-0000C1-2T; Tue, 15 Oct 2019 03:13:40 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1iKDN0-0002Ki-73; Tue, 15 Oct 2019 03:19:34 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKDH9-0000BK-5P
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 03:13:33 +0000
-Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 5A4D272D82E6D5D0C390;
- Tue, 15 Oct 2019 11:13:26 +0800 (CST)
-Received: from [127.0.0.1] (10.177.223.23) by DGGEMS413-HUB.china.huawei.com
- (10.3.19.213) with Microsoft SMTP Server id 14.3.439.0; Tue, 15 Oct 2019
- 11:13:17 +0800
-Subject: Re: [PATCH 3/3] arm64: configs: unset CPU_BIG_ENDIAN
-To: Will Deacon <will@kernel.org>, Russell King - ARM Linux admin
- <linux@armlinux.org.uk>
-References: <20190926193030.5843-1-anders.roxell@linaro.org>
- <20190926193030.5843-5-anders.roxell@linaro.org>
- <bf5db3a5-96da-752c-49ea-d0de899882d5@huawei.com>
- <CADYN=9LB9RHgRkQj=HcKDz1x9jqmT464Kseh2wZU5VvcLit+bQ@mail.gmail.com>
- <d978673e-cbd1-5ab5-b2a4-cdb407d0f98c@huawei.com>
- <CAK8P3a0kBz1-i-3miCo1vMuoM39ivXa3oxOE9VnCqDO-nfNOxw@mail.gmail.com>
- <20191011102747.lpbaur2e4nqyf7sw@willie-the-truck>
- <20191011103342.GL25745@shell.armlinux.org.uk>
- <CAK8P3a1ADTc0woWWNjpeqYEtgb=snj264P4QNWOj7ZRMDv8WNg@mail.gmail.com>
- <20191012145055.GO25745@shell.armlinux.org.uk>
- <20191014162416.uz33olqhgvzioqdk@willie-the-truck>
-From: Hanjun Guo <guohanjun@huawei.com>
-Message-ID: <bc3bfa97-af61-ce7a-5392-55cd50474a37@huawei.com>
-Date: Tue, 15 Oct 2019 11:13:05 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
- Thunderbird/52.5.0
+ id 1iKDMp-0002JR-4d; Tue, 15 Oct 2019 03:19:25 +0000
+X-UUID: 0f88498c9d744b0fb8dd02ff98236ba0-20191014
+X-UUID: 0f88498c9d744b0fb8dd02ff98236ba0-20191014
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <jerry-ch.chen@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 409594783; Mon, 14 Oct 2019 19:19:10 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 14 Oct 2019 20:16:15 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 15 Oct 2019 11:16:13 +0800
+Received: from [172.21.84.99] (172.21.84.99) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 15 Oct 2019 11:16:13 +0800
+Message-ID: <1571109375.3706.40.camel@mtksdccf07>
+Subject: Re: [RFC PATCH V3 3/3] platform: mtk-isp: Add Mediatek FD driver
+From: Jerry-ch Chen <Jerry-ch.Chen@mediatek.com>
+To: <tfiga@chromium.org>
+Date: Tue, 15 Oct 2019 11:16:15 +0800
+In-Reply-To: <20190906101125.3784-4-Jerry-Ch.chen@mediatek.com>
+References: <20190906101125.3784-1-Jerry-Ch.chen@mediatek.com>
+ <20190906101125.3784-4-Jerry-Ch.chen@mediatek.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-In-Reply-To: <20191014162416.uz33olqhgvzioqdk@willie-the-truck>
-Content-Language: en-US
-X-Originating-IP: [10.177.223.23]
-X-CFilter-Loop: Reflected
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_201331_751988_296E5ADF 
-X-CRM114-Status: GOOD (  16.31  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191014_201923_198129_90091E9E 
+X-CRM114-Status: GOOD (  20.70  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,49 +73,736 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anders Roxell <anders.roxell@linaro.org>, Arnd Bergmann <arnd@arndb.de>,
- Catalin Marinas <catalin.marinas@arm.com>, John Garry <john.garry@huawei.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, Olof
- Johansson <olof@lixom.net>, Chunrong Guo <chunrong.guo@nxp.com>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Sean Cheng =?UTF-8?Q?=28=E9=84=AD=E6=98=87=E5=BC=98=29?=
+ <Sean.Cheng@mediatek.com>, "laurent.pinchart+renesas@ideasonboard.com"
+ <laurent.pinchart+renesas@ideasonboard.com>,
+ Rynn Wu =?UTF-8?Q?=28=E5=90=B3=E8=82=B2=E6=81=A9=29?= <Rynn.Wu@mediatek.com>,
+ Christie Yu =?UTF-8?Q?=28=E6=B8=B8=E9=9B=85=E6=83=A0=29?=
+ <christie.yu@mediatek.com>, srv_heupstream <srv_heupstream@mediatek.com>,
+ Jungo Lin =?UTF-8?Q?=28=E6=9E=97=E6=98=8E=E4=BF=8A=29?=
+ <jungo.lin@mediatek.com>,
+ Po-Yang Huang =?UTF-8?Q?=28=E9=BB=83=E6=9F=8F=E9=99=BD=29?=
+ <po-yang.huang@mediatek.com>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "tfiga@chromium.org" <tfiga@chromium.org>,
+ CK Hu =?UTF-8?Q?=28=E8=83=A1=E4=BF=8A=E5=85=89=29?= <ck.hu@mediatek.com>, Sj
+ Huang =?UTF-8?Q?=28=E9=BB=83=E4=BF=A1=E7=92=8B=29?= <sj.huang@mediatek.com>,
+ "yuzhao@chromium.org" <yuzhao@chromium.org>, "lkml@metux.net" <lkml@metux.net>,
+ "zwisler@chromium.org" <zwisler@chromium.org>,
+ Frederic Chen =?UTF-8?Q?=28=E9=99=B3=E4=BF=8A=E5=85=83=29?=
+ <Frederic.Chen@mediatek.com>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>, hans.verkuil@cisco.com,
+ "mchehab@kernel.org" <mchehab@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019/10/15 0:24, Will Deacon wrote:
-> On Sat, Oct 12, 2019 at 03:50:55PM +0100, Russell King - ARM Linux admin wrote:
->> On Sat, Oct 12, 2019 at 12:47:45AM +0200, Arnd Bergmann wrote:
->>> On Fri, Oct 11, 2019 at 12:33 PM Russell King - ARM Linux admin
->>> <linux@armlinux.org.uk> wrote:
->>>> 32-bit ARM experience is that telco class users really like big
->>>> endian.
->>>
->>> Right, basically anyone with a large code base migrated over from a
->>> big-endian MIPS or PowerPC legacy that found it cheaper to change
->>> the rest of the world than to fix their own code.
->>
->> I think you need to step off your soap box!  Big endian isn't going
->> away, and it likely has nothing to do with code bases.  Just look at
->> networking and telco protocols.  Everything in that world tends to
->> be big endian.  BE is what is understood in that world, and there's
->> little we can do to change it.
->>
->> Demanding that they switch to LE is tantamount to you demanding that
->> their entire world change - it ain't going to happen.
+Hi Tomasz,
+
+On Fri, 2019-09-06 at 18:11 +0800, Jerry-ch Chen wrote:
+> From: Jerry-ch Chen <jerry-ch.chen@mediatek.com>
 > 
-> Oh, I wasn't demanding anything! Just interested to know if big-endian is
-> actually being used because it's not something that I'm able to test
-> sensibly and I haven't see anywhere near the amount of (public) effort to
-> keep it supported as for little-endian. However, having asked the question,
-> it's clear that it does have some users so we'll keep maintaining it on a
-> best-effort basis and rely on those users to let us know if anything breaks.
+> This patch adds the driver of Face Detection (FD) unit in
+> Mediatek camera system, providing face detection function.
+> 
+> The mtk-isp directory will contain drivers for multiple IP
+> blocks found in Mediatek ISP system. It will include ISP Pass 1
+> driver (CAM), sensor interface driver, DIP driver and face
+> detection driver.
+> 
+> Signed-off-by: Jerry-ch Chen <jerry-ch.chen@mediatek.com>
+> ---
+>  drivers/media/platform/Kconfig                |    2 +
+>  drivers/media/platform/Makefile               |    2 +
+>  drivers/media/platform/mtk-isp/fd/Kconfig     |   19 +
+>  drivers/media/platform/mtk-isp/fd/Makefile    |    5 +
+>  drivers/media/platform/mtk-isp/fd/mtk_fd.h    |  148 ++
+>  drivers/media/platform/mtk-isp/fd/mtk_fd_40.c | 1219 +++++++++++++++++
+>  include/uapi/linux/mtk-fd-v4l2-controls.h     |   69 +
+>  include/uapi/linux/v4l2-controls.h            |    4 +
+>  8 files changed, 1468 insertions(+)
+>  create mode 100644 drivers/media/platform/mtk-isp/fd/Kconfig
+>  create mode 100644 drivers/media/platform/mtk-isp/fd/Makefile
+>  create mode 100644 drivers/media/platform/mtk-isp/fd/mtk_fd.h
+>  create mode 100644 drivers/media/platform/mtk-isp/fd/mtk_fd_40.c
+>  create mode 100644 include/uapi/linux/mtk-fd-v4l2-controls.h
+> 
 
-Sure, we (Huawei kernel team) did that and we will do that in the future
-as well.
+[snip]
 
-Thanks
-Hanjun
+> +
+> +static void mtk_fd_hw_job_finish(struct mtk_fd_dev *fd,
+> +				 enum vb2_buffer_state vb_state)
+> +{
+> +	struct mtk_fd_ctx *ctx;
+> +	struct vb2_v4l2_buffer *src_vbuf = NULL, *dst_vbuf = NULL;
+> +
+> +	ctx = v4l2_m2m_get_curr_priv(fd->m2m_dev);
+> +	src_vbuf = v4l2_m2m_src_buf_remove(ctx->fh.m2m_ctx);
+> +	dst_vbuf = v4l2_m2m_dst_buf_remove(ctx->fh.m2m_ctx);
+> +
+> +	v4l2_m2m_buf_copy_metadata(src_vbuf, dst_vbuf,
+> +				   V4L2_BUF_FLAG_TSTAMP_SRC_MASK);
+> +	v4l2_m2m_buf_done(src_vbuf, vb_state);
+> +	v4l2_m2m_buf_done(dst_vbuf, vb_state);
+> +	v4l2_m2m_job_finish(fd->m2m_dev, ctx->fh.m2m_ctx);
+> +}
+> +
+
+
+> +static void mtk_fd_ipi_handler(void *data, unsigned int len, void *priv)
+> +{
+> +	struct mtk_fd_dev *fd = (struct mtk_fd_dev *)priv;
+> +	struct device *dev = fd->dev;
+> +	struct ipi_message *fd_ack_msg = (struct ipi_message *)data;
+> +	struct fd_ack_param *fd_ack = &fd_ack_msg->fd_ack_param;
+> +
+> +	dev_dbg(fd->dev, "fd_ipi_ack_id: %d\n", fd_ack_msg->cmd_id);
+> +	switch (fd_ack_msg->cmd_id) {
+> +	case MTK_FD_IPI_CMD_INIT_ACK:
+> +		return;
+> +	case MTK_FD_IPI_CMD_ENQ_ACK:
+> +		if (fd_ack->ret_code) {
+> +			dev_err(dev, "ipi ret: %d, message: %d\n",
+> +				fd_ack->ret_code, fd_ack->ret_msg);
+> +			pm_runtime_put((fd->dev));
+> +			mtk_fd_hw_job_finish(fd, VB2_BUF_STATE_ERROR);
+> +		}
+> +		return;
+> +	case MTK_FD_IPI_CMD_RESET_ACK:
+> +		return;
+> +	}
+> +}
+> +
+> +static int mtk_fd_hw_connect(struct mtk_fd_dev *fd)
+> +{
+> +	int ret;
+> +
+> +	ret = rproc_boot(fd->rproc_handle);
+> +
+> +	if (ret < 0) {
+> +		/**
+> +		 * Return 0 if downloading firmware successfully,
+> +		 * otherwise it is failed
+> +		 */
+> +		dev_err(fd->dev, "Failed to boot rproc\n");
+> +		return ret;
+> +	}
+> +
+> +	ret = scp_ipi_register(fd->scp_pdev, SCP_IPI_FD_CMD,
+> +			       mtk_fd_ipi_handler, fd);
+> +	if (ret) {
+> +		dev_err(fd->dev, "Failed to register IPI cmd handler\n");
+> +		goto err_rproc_shutdown;
+> +	}
+> +
+> +	fd->fd_stream_count++;
+> +	if (fd->fd_stream_count == 1) {
+> +		if (mtk_fd_hw_enable(fd)) {
+> +			ret = -EINVAL;
+> +			goto err_rproc_shutdown;
+> +		}
+> +	}
+> +	return 0;
+> +
+> +err_rproc_shutdown:
+> +	rproc_shutdown(fd->rproc_handle);
+> +	return ret;
+> +}
+> +
+> +static void mtk_fd_hw_disconnect(struct mtk_fd_dev *fd)
+> +{
+> +	fd->fd_stream_count--;
+> +
+> +	if (fd->fd_stream_count == 0) {
+> +		if (!IS_ERR(fd->rs_dma_buf))
+> +			mtk_fd_free_dma_handle(fd);
+> +
+> +		rproc_shutdown(fd->rproc_handle);
+> +	}
+> +}
+> +
+> +static int mtk_fd_hw_job_exec(struct mtk_fd_dev *fd,
+> +			      struct fd_enq_param *fd_param)
+> +{
+> +	struct ipi_message fd_ipi_msg;
+> +	int ret;
+> +
+> +	pm_runtime_get_sync((fd->dev));
+> +
+> +	reinit_completion(&fd->fd_irq_done);
+> +	fd_ipi_msg.cmd_id = MTK_FD_IPI_CMD_ENQUEUE;
+> +	memcpy(&fd_ipi_msg.fd_enq_param, fd_param, sizeof(struct fd_enq_param));
+> +	ret = scp_ipi_send(fd->scp_pdev, SCP_IPI_FD_CMD, &fd_ipi_msg,
+> +			   sizeof(fd_ipi_msg), MTK_FD_IPI_SEND_TIMEOUT);
+> +	if (ret) {
+> +		pm_runtime_put((fd->dev));
+> +		mtk_fd_hw_job_finish(fd, VB2_BUF_STATE_ERROR);
+> +		return ret;
+> +	}
+> +	return 0;
+> +}
+> +
+> +static int mtk_fd_vb2_buf_out_validate(struct vb2_buffer *vb)
+> +{
+> +	struct vb2_v4l2_buffer *v4l2_buf = to_vb2_v4l2_buffer(vb);
+> +
+> +	if (v4l2_buf->field == V4L2_FIELD_ANY)
+> +		v4l2_buf->field = V4L2_FIELD_NONE;
+> +	if (v4l2_buf->field != V4L2_FIELD_NONE)
+> +		return -EINVAL;
+> +
+> +	return 0;
+> +}
+> +
+> +static int mtk_fd_vb2_buf_prepare(struct vb2_buffer *vb)
+> +{
+> +	struct vb2_v4l2_buffer *vbuf = to_vb2_v4l2_buffer(vb);
+> +	struct vb2_queue *vq = vb->vb2_queue;
+> +	struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
+> +	struct device *dev = ctx->dev;
+> +	struct v4l2_pix_format_mplane *pixfmt;
+> +
+> +	switch (vq->type) {
+> +	case V4L2_BUF_TYPE_META_CAPTURE:
+> +		if (vb2_plane_size(vb, 0) < ctx->dst_fmt.buffersize) {
+> +			dev_dbg(dev, "meta size %d is too small\n");
+> +			return -EINVAL;
+> +		}
+> +		break;
+> +	case V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE:
+> +		pixfmt = &ctx->src_fmt;
+> +
+> +		if (vbuf->field == V4L2_FIELD_ANY)
+> +			vbuf->field = V4L2_FIELD_NONE;
+> +
+> +		if (vb->num_planes > 2 || vbuf->field != V4L2_FIELD_NONE) {
+> +			dev_dbg(dev, "plane or field %d not supported\n",
+> +				vb->num_planes, vbuf->field);
+> +			return -EINVAL;
+> +		}
+> +		if (vb2_plane_size(vb, 0) < pixfmt->plane_fmt[0].sizeimage) {
+> +			dev_dbg(dev, "plane %d is too small\n");
+> +			return -EINVAL;
+> +		}
+> +		break;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static void mtk_fd_vb2_buf_queue(struct vb2_buffer *vb)
+> +{
+> +	struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vb->vb2_queue);
+> +	struct vb2_v4l2_buffer *vbuf = to_vb2_v4l2_buffer(vb);
+> +
+> +	v4l2_m2m_buf_queue(ctx->fh.m2m_ctx, vbuf);
+> +}
+> +
+> +static int mtk_fd_vb2_queue_setup(struct vb2_queue *vq,
+> +				  unsigned int *num_buffers,
+> +				  unsigned int *num_planes,
+> +				  unsigned int sizes[],
+> +				  struct device *alloc_devs[])
+> +{
+> +	struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
+> +	unsigned int size[2];
+> +	unsigned int plane;
+> +
+> +	switch (vq->type) {
+> +	case V4L2_BUF_TYPE_META_CAPTURE:
+> +		size[0] = ctx->dst_fmt.buffersize;
+> +		break;
+> +	case V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE:
+> +		size[0] = ctx->src_fmt.plane_fmt[0].sizeimage;
+> +		if (*num_planes == 2)
+> +			size[1] = ctx->src_fmt.plane_fmt[1].sizeimage;
+> +		break;
+> +	}
+> +
+> +	if (*num_planes > 2)
+> +		return -EINVAL;
+> +	if (*num_planes == 0) {
+> +		if (vq->type == V4L2_BUF_TYPE_META_CAPTURE) {
+> +			sizes[0] = ctx->dst_fmt.buffersize;
+> +			*num_planes = 1;
+> +			return 0;
+> +		}
+> +
+> +		*num_planes = ctx->src_fmt.num_planes;
+> +		for (plane = 0; plane < *num_planes; plane++)
+> +			sizes[plane] = ctx->src_fmt.plane_fmt[plane].sizeimage;
+> +		return 0;
+> +	}
+> +
+> +	for (plane = 0; plane < *num_planes; plane++) {
+> +		if (sizes[plane] < size[plane])
+> +			return -EINVAL;
+> +	}
+> +	return 0;
+> +}
+> +
+> +static int mtk_fd_vb2_start_streaming(struct vb2_queue *vq, unsigned int count)
+> +{
+> +	struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
+> +
+> +	if (vq->type == V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE)
+> +		return mtk_fd_hw_connect(ctx->fd_dev);
+> +	else
+> +		return 0;
+> +}
+> +
+> +static int mtk_fd_job_abort(struct mtk_fd_dev *fd)
+> +{
+> +	u32 ret;
+> +
+> +	ret = wait_for_completion_timeout(&fd->fd_irq_done,
+> +					  msecs_to_jiffies(MTK_FD_HW_TIMEOUT));
+> +	/* Reset FD HW */
+> +	if (!ret) {
+> +		struct ipi_message fd_ipi_msg;
+> +
+> +		fd_ipi_msg.cmd_id = MTK_FD_IPI_CMD_RESET;
+> +		if (scp_ipi_send(fd->scp_pdev, SCP_IPI_FD_CMD, &fd_ipi_msg,
+> +				 sizeof(fd_ipi_msg), MTK_FD_IPI_SEND_TIMEOUT))
+> +			dev_err(fd->dev, "FD Reset HW error\n");
+> +		return -ETIMEDOUT;
+> +	}
+> +	return 0;
+> +}
+> +
+
+Continue the discussion about job abort in RFC v2,
+
+I think the job_abort callback in v4l2_m2m_ops() might be useful.
+
+ref:
+https://elixir.bootlin.com/linux/v5.4-rc2/source/drivers/media/v4l2-core/v4l2-mem2mem.c#L398
+https://elixir.bootlin.com/linux/v5.4-rc2/source/include/media/v4l2-mem2mem.h#L43
+
+in drivers/media/v4l2-core/v4l2-mem2mem.c #398 v4l2_m2m_cancel_job()
+...
+if (m2m_ctx->job_flags & TRANS_RUNNING) {
+	spin_unlock_irqrestore(&m2m_dev->job_spinlock, flags);
+	if (m2m_dev->m2m_ops->job_abort)
+		m2m_dev->m2m_ops->job_abort(m2m_ctx->priv);
+	dprintk("m2m_ctx %p running, will wait to complete\n", m2m_ctx);
+	wait_event(m2m_ctx->finished,
+			!(m2m_ctx->job_flags & TRANS_RUNNING));
+} ...
+
+If this operation is set, we might use the v4l2_m2m_cancel_job() when
+suspend, and it will do mtk_fd_job_abort() here.
+
+
+> +static void mtk_fd_vb2_stop_streaming(struct vb2_queue *vq)
+> +{
+> +	struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
+> +	struct mtk_fd_dev *fd = ctx->fd_dev;
+> +	struct vb2_v4l2_buffer *vb;
+> +	struct v4l2_m2m_ctx *m2m_ctx = ctx->fh.m2m_ctx;
+> +	struct v4l2_m2m_queue_ctx *queue_ctx;
+> +
+> +	mtk_fd_job_abort(fd);
+> +	queue_ctx = V4L2_TYPE_IS_OUTPUT(vq->type) ?
+> +					&m2m_ctx->out_q_ctx :
+> +					&m2m_ctx->cap_q_ctx;
+> +	while ((vb = v4l2_m2m_buf_remove(queue_ctx)))
+> +		v4l2_m2m_buf_done(vb, VB2_BUF_STATE_ERROR);
+> +
+> +	if (vq->type == V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE)
+> +		mtk_fd_hw_disconnect(fd);
+> +}
+> +
+
+[snip]
+
+> +struct v4l2_ctrl_config mtk_fd_controls[] = {
+> +	{
+> +		.id = V4L2_CID_MTK_FD_SCALE_DOWN_IMG_WIDTH,
+> +		.name = "FD scale image widths",
+> +		.type = V4L2_CTRL_TYPE_U16,
+> +		.min = MTK_FD_OUTPUT_MIN_WIDTH,
+> +		.max = MTK_FD_OUTPUT_MAX_WIDTH,
+> +		.step = 1,
+> +		.def = MTK_FD_OUTPUT_MAX_WIDTH,
+> +		.dims = { MTK_FD_SCALE_ARR_NUM },
+> +	},
+> +	{
+> +		.id = V4L2_CID_MTK_FD_SCALE_DOWN_IMG_HEIGHT,
+> +		.name = "FD scale image heights",
+> +		.type = V4L2_CTRL_TYPE_U16,
+> +		.min = MTK_FD_OUTPUT_MIN_HEIGHT,
+> +		.max = MTK_FD_OUTPUT_MAX_HEIGHT,
+> +		.step = 1,
+> +		.def = MTK_FD_OUTPUT_MAX_HEIGHT,
+> +		.dims = { MTK_FD_SCALE_ARR_NUM },
+> +	},
+> +	{
+> +		.id = V4L2_CID_MTK_FD_SCALE_IMG_NUM,
+> +		.name = "FD scale size counts",
+> +		.type = V4L2_CTRL_TYPE_INTEGER,
+> +		.min = 0,
+> +		.max = MTK_FD_SCALE_ARR_NUM,
+> +		.step = 1,
+> +		.def = 0,
+> +	},
+> +	{
+> +		.id = V4L2_CID_MTK_FD_DETECT_POSE,
+> +		.name = "FD detect face angle and directions",
+> +		.type = V4L2_CTRL_TYPE_U16,
+> +		.min = 0,
+> +		.max = 0xffff,
+> +		.step = 1,
+> +		.def = 0x3ff,
+> +		.dims = { MTK_FD_FACE_ANGLE_NUM},
+> +	},
+> +	{
+> +		.id = V4L2_CID_MTK_FD_DETECT_SPEED,
+> +		.name = "FD detection speedup",
+> +		.type = V4L2_CTRL_TYPE_INTEGER,
+> +		.min = 0,
+> +		.max = MTK_FD_MAX_SPEEDUP,
+> +		.step = 1,
+> +		.def = 0,
+> +	},
+> +	{
+> +		.id = V4L2_CID_MTK_FD_DETECTION_MODEL,
+> +		.name = "FD use extra model",
+> +		.type = V4L2_CTRL_TYPE_BOOLEAN,
+> +		.min = 0,
+> +		.max = 1,
+> +		.step = 1,
+> +		.def = 0,
+> +	},
+> +};
+> +
+
+[snip]
+
+> +static int mtk_vfd_release(struct file *filp)
+> +{
+> +	struct mtk_fd_ctx *ctx = container_of(filp->private_data,
+> +					      struct mtk_fd_ctx, fh);
+> +
+> +	v4l2_m2m_ctx_release(ctx->fh.m2m_ctx);
+> +
+> +	v4l2_ctrl_handler_free(&ctx->hdl);
+> +	v4l2_fh_del(&ctx->fh);
+> +	v4l2_fh_exit(&ctx->fh);
+> +
+> +	kfree(ctx);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct v4l2_file_operations fd_video_fops = {
+> +	.owner = THIS_MODULE,
+> +	.open = mtk_vfd_open,
+> +	.release = mtk_vfd_release,
+> +	.poll = v4l2_m2m_fop_poll,
+> +	.unlocked_ioctl = video_ioctl2,
+> +	.mmap = v4l2_m2m_fop_mmap,
+> +#ifdef CONFIG_COMPAT
+> +	.compat_ioctl32 = v4l2_compat_ioctl32,
+> +#endif
+> +
+> +};
+> +
+> +static void mtk_fd_fill_user_param(struct user_param *user_param,
+> +				   struct v4l2_ctrl_handler *hdl)
+> +{
+> +	struct v4l2_ctrl *ctrl;
+> +	int i;
+> +
+> +	ctrl = v4l2_ctrl_find(hdl, V4L2_CID_MTK_FD_SCALE_DOWN_IMG_WIDTH);
+> +	if (ctrl)
+> +		for (i = 0; i < ctrl->elems; i++)
+> +			user_param->scale_img_width[i] = ctrl->p_new.p_u16[i];
+> +	ctrl = v4l2_ctrl_find(hdl, V4L2_CID_MTK_FD_SCALE_DOWN_IMG_HEIGHT);
+> +	if (ctrl)
+> +		for (i = 0; i < ctrl->elems; i++)
+> +			user_param->scale_img_height[i] = ctrl->p_new.p_u16[i];
+> +	ctrl = v4l2_ctrl_find(hdl, V4L2_CID_MTK_FD_SCALE_IMG_NUM);
+> +	if (ctrl)
+> +		user_param->scale_img_num = ctrl->val;
+> +
+> +	ctrl = v4l2_ctrl_find(hdl, V4L2_CID_MTK_FD_DETECT_POSE);
+> +	if (ctrl)
+> +		for (i = 0; i < ctrl->elems; i++)
+> +			user_param->face_directions[i] = ctrl->p_new.p_u16[i];
+> +	ctrl = v4l2_ctrl_find(hdl, V4L2_CID_MTK_FD_DETECT_SPEED);
+> +	if (ctrl)
+> +		user_param->fd_speedup = ctrl->val;
+> +	ctrl = v4l2_ctrl_find(hdl, V4L2_CID_MTK_FD_DETECTION_MODEL);
+> +	if (ctrl)
+> +		user_param->fd_extra_model = ctrl->val;
+> +}
+> +
+> +static void mtk_fd_device_run(void *priv)
+> +{
+> +	struct mtk_fd_ctx *ctx = priv;
+> +	struct mtk_fd_dev *fd = ctx->fd_dev;
+> +	struct vb2_v4l2_buffer *src_buf, *dst_buf;
+> +	struct fd_enq_param fd_param;
+> +
+> +	src_buf = v4l2_m2m_next_src_buf(ctx->fh.m2m_ctx);
+> +	dst_buf = v4l2_m2m_next_dst_buf(ctx->fh.m2m_ctx);
+> +
+> +	fd_param.src_img[0].dma_addr =
+> +		vb2_dma_contig_plane_dma_addr(&src_buf->vb2_buf, 0);
+> +	fd_param.user_result.dma_addr =
+> +		vb2_dma_contig_plane_dma_addr(&dst_buf->vb2_buf, 0);
+> +	fd_param.output_vaddr = (u64)vb2_plane_vaddr(&dst_buf->vb2_buf, 0);
+> +	fd_param.user_param.src_img_fmt =
+> +		get_fd_img_fmt(ctx->src_fmt.pixelformat);
+> +	if (ctx->src_fmt.num_planes == 2)
+> +		fd_param.src_img[1].dma_addr =
+> +			vb2_dma_contig_plane_dma_addr(&src_buf->vb2_buf, 1);
+> +	mtk_fd_fill_user_param(&fd_param.user_param, &ctx->hdl);
+> +
+> +	/* Complete request controls if any */
+> +	v4l2_ctrl_request_complete(src_buf->vb2_buf.req_obj.req, &ctx->hdl);
+> +
+> +	fd->output = (struct fd_user_output *)fd_param.output_vaddr;
+> +	mtk_fd_hw_job_exec(fd, &fd_param);
+> +}
+> +
+> +static struct v4l2_m2m_ops fd_m2m_ops = {
+> +	.device_run = mtk_fd_device_run,
+> +};
+> +
+> +static const struct media_device_ops fd_m2m_media_ops = {
+> +	.req_validate	= vb2_request_validate,
+> +	.req_queue	= v4l2_m2m_request_queue,
+> +};
+
+[snip]
+
+> +
+> +static int mtk_fd_suspend(struct device *dev)
+> +{
+> +	struct mtk_fd_dev *fd = dev_get_drvdata(dev);
+> +
+> +	if (pm_runtime_suspended(dev))
+> +		return 0;
+> +
+> +	if (fd->fd_stream_count)
+> +		if (mtk_fd_job_abort(fd))
+> +			mtk_fd_hw_job_finish(fd, VB2_BUF_STATE_ERROR);
+> +
+
+To avoid mtk_fd_hw_job_finish() trigger the next job,
+I suppose that we could use v4l2_m2m_cancel_job instead of job_abort and
+job_finish here.
+
+/**
+ * v4l2_m2m_cancel_job() - cancel pending jobs for the context
+ * @m2m_ctx: m2m context with jobs to be canceled
+ *
+ * In case of streamoff or release called on any context,
+ * 1] If the context is currently running, then abort job will be called
+ * 2] If the context is queued, then the context will be removed from
+ *    the job_queue
+ */
+
+or another way,
+we may add a flag and implement mtk_fd_job_ready() that reads the flag
+if we suspend, we set the flag and do job_abort and job_finish, even if
+it try enqueue, it will still not really queue the job, until we reset
+the flag in mtk_fd_resume().
+
+how do you think?
+
+> +	/* suspend FD HW */
+> +	writel(0x0, fd->fd_base + MTK_FD_REG_OFFSET_INT_EN);
+> +	writel(0x0, fd->fd_base + MTK_FD_REG_OFFSET_HW_ENABLE);
+> +	clk_disable_unprepare(fd->fd_clk);
+> +	dev_dbg(dev, "%s:disable clock\n", __func__);
+> +
+> +	return 0;
+> +}
+> +
+> +static int mtk_fd_resume(struct device *dev)
+> +{
+> +	struct mtk_fd_dev *fd = dev_get_drvdata(dev);
+> +	int ret;
+> +
+> +	if (pm_runtime_suspended(dev))
+> +		return 0;
+> +
+> +	ret = clk_prepare_enable(fd->fd_clk);
+> +	if (ret < 0) {
+> +		dev_dbg(dev, "Failed to open fd clk:%d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	/* resume FD HW */
+> +	writel(MTK_FD_SET_HW_ENABLE, fd->fd_base + MTK_FD_REG_OFFSET_HW_ENABLE);
+> +	writel(0x1, fd->fd_base + MTK_FD_REG_OFFSET_INT_EN);
+> +	dev_dbg(dev, "%s:enable clock\n", __func__);
+> +
+> +	return 0;
+> +}
+> +
+> +static int mtk_fd_runtime_suspend(struct device *dev)
+> +{
+> +	struct mtk_fd_dev *fd = dev_get_drvdata(dev);
+> +
+> +	clk_disable_unprepare(fd->fd_clk);
+> +	return 0;
+> +}
+> +
+> +static int mtk_fd_runtime_resume(struct device *dev)
+> +{
+> +	struct mtk_fd_dev *fd = dev_get_drvdata(dev);
+> +	int ret;
+> +
+> +	ret = clk_prepare_enable(fd->fd_clk);
+> +	if (ret < 0) {
+> +		dev_err(dev, "Failed to open fd clk:%d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct dev_pm_ops mtk_fd_pm_ops = {
+> +	SET_SYSTEM_SLEEP_PM_OPS(mtk_fd_suspend, mtk_fd_resume)
+> +	SET_RUNTIME_PM_OPS(mtk_fd_runtime_suspend, mtk_fd_runtime_resume, NULL)
+> +};
+> +
+> +static const struct of_device_id mtk_fd_of_ids[] = {
+> +	{ .compatible = "mediatek,mt8183-fd", },
+> +	{}
+> +};
+> +MODULE_DEVICE_TABLE(of, mtk_fd_of_ids);
+> +
+> +static struct platform_driver mtk_fd_driver = {
+> +	.probe   = mtk_fd_probe,
+> +	.remove  = mtk_fd_remove,
+> +	.driver  = {
+> +		.name  = "mtk-fd-4.0",
+> +		.of_match_table = of_match_ptr(mtk_fd_of_ids),
+> +		.pm = &mtk_fd_pm_ops,
+> +	}
+> +};
+> +module_platform_driver(mtk_fd_driver);
+> +
+> +MODULE_DESCRIPTION("Mediatek FD driver");
+> +MODULE_LICENSE("GPL");
+> diff --git a/include/uapi/linux/mtk-fd-v4l2-controls.h b/include/uapi/linux/mtk-fd-v4l2-controls.h
+> new file mode 100644
+> index 000000000000..9b814de05b0c
+> --- /dev/null
+> +++ b/include/uapi/linux/mtk-fd-v4l2-controls.h
+> @@ -0,0 +1,69 @@
+> +/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
+> +//
+> +// Copyright (c) 2019 MediaTek Inc.
+> +/*
+> + * For V4L2_CID_MTK_FD_DETECT_POSE, User can set the desired face direction to
+> + * be detected for each face angle, there are five face angle and 12 directions.
+> + * Below shows the definition of face angle and face direction,
+> + * and a recommended usage of for face detection, the more selected directions
+> + * the longer HW process time needed.
+> + *
+> + * enum face_angle {
+> + *	MTK_FD_FACE_FRONT,
+> + *	MTK_FD_FACE_RIGHT_50,
+> + *	MTK_FD_FACE_LEFT_50,
+> + *	MTK_FD_FACE_RIGHT_90,
+> + *	MTK_FD_FACE_LEFT_90,
+> + *	MTK_FD_FACE_ANGLE_NUM,
+> + * };
+> + *
+> + * struct face_direction_def {
+> + *	__u16 MTK_FD_FACE_DIR_0 : 1,
+> + *		MTK_FD_FACE_DIR_30 : 1,
+> + *		MTK_FD_FACE_DIR_60 : 1,
+> + *		MTK_FD_FACE_DIR_90 : 1,
+> + *		MTK_FD_FACE_DIR_120 : 1,
+> + *		MTK_FD_FACE_DIR_150 : 1,
+> + *		MTK_FD_FACE_DIR_180 : 1,
+> + *		MTK_FD_FACE_DIR_210 : 1,
+> + *		MTK_FD_FACE_DIR_240 : 1,
+> + *		MTK_FD_FACE_DIR_270 : 1,
+> + *		MTK_FD_FACE_DIR_300 : 1,
+> + *		MTK_FD_FACE_DIR_330 : 1,
+> + *		: 4;
+> + * };
+> + *
+> + * Sample usage:
+> + * u16 face_directions[MTK_FD_FACE_ANGLE_NUM] = {0};
+> + *
+> + *	face_directions[MTK_FD_FACE_FRONT] = 0x3ff;
+> + *
+> + */
+> +
+> +#ifndef __UAPI_MTK_FD_V4L2_CONTROLS_H__
+> +#define __UAPI_MTK_FD_V4L2_CONTROLS_H__
+> +
+> +#include <linux/v4l2-controls.h>
+> +
+> +/* Set the face angle and directions to be detected */
+> +#define V4L2_CID_MTK_FD_DETECT_POSE		(V4L2_CID_USER_MTK_FD_BASE + 1)
+> +
+> +/* Set image widths for an input image to be scaled down for face detection */
+> +#define V4L2_CID_MTK_FD_SCALE_DOWN_IMG_WIDTH	(V4L2_CID_USER_MTK_FD_BASE + 2)
+> +
+> +/* Set image heights for an input image to be scaled down for face detection */
+> +#define V4L2_CID_MTK_FD_SCALE_DOWN_IMG_HEIGHT	(V4L2_CID_USER_MTK_FD_BASE + 3)
+> +
+> +/* Set the length of scale down size array */
+> +#define V4L2_CID_MTK_FD_SCALE_IMG_NUM		(V4L2_CID_USER_MTK_FD_BASE + 4)
+> +
+> +/* Set the detection speed, usually reducing accuracy. */
+> +#define V4L2_CID_MTK_FD_DETECT_SPEED		(V4L2_CID_USER_MTK_FD_BASE + 5)
+> +
+> +/* Select the detection model or algorithm to be used. */
+> +#define V4L2_CID_MTK_FD_DETECTION_MODEL		(V4L2_CID_USER_MTK_FD_BASE + 6)
+> +
+> +/* We reserve 16 controls for this driver. */
+> +#define V4L2_CID_MTK_FD_MAX			16
+> +
+
+For these control IDs, I think the following should be remained as chip
+specific controls.
+V4L2_CID_MTK_FD_SCALE_DOWN_IMG_WIDTH,
+V4L2_CID_MTK_FD_SCALE_DOWN_IMG_HEIGHT and V4L2_CID_MTK_FD_SCALE_IMG_NUM 
+
+Hope there would be standardizing face detection api that cover the rest
+controls: V4L2_CID_MTK_FD_DETECT_POSE, V4L2_CID_MTK_FD_DETECT_SPEED and
+V4L2_CID_MTK_FD_DETECTION_MODEL
+
+Would you have any suggestions on how to propose the standard face
+detection apis?
+
+Thanks and best regards
+Jerry
+
+> +#endif /* __UAPI_MTK_FD_V4L2_CONTROLS_H__ */
+> diff --git a/include/uapi/linux/v4l2-controls.h b/include/uapi/linux/v4l2-controls.h
+> index 3dcfc6148f99..eae876ea6d0a 100644
+> --- a/include/uapi/linux/v4l2-controls.h
+> +++ b/include/uapi/linux/v4l2-controls.h
+> @@ -192,6 +192,10 @@ enum v4l2_colorfx {
+>   * We reserve 16 controls for this driver. */
+>  #define V4L2_CID_USER_IMX_BASE			(V4L2_CID_USER_BASE + 0x10b0)
+>  
+> +/* The base for the mediatek FD driver controls */
+> +/* We reserve 16 controls for this driver. */
+> +#define V4L2_CID_USER_MTK_FD_BASE		(V4L2_CID_USER_BASE + 0x10d0)
+> +
+>  /* MPEG-class control IDs */
+>  /* The MPEG controls are applicable to all codec controls
+>   * and the 'MPEG' part of the define is historical */
+
+
 
 
 _______________________________________________
