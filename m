@@ -2,81 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 268C5D840B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 00:49:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 45415D840C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 00:49:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h9nxld2hrgLCAuyJ1LbsP5W5U3EAmYCQmZQmxmKRV9w=; b=Z47wKxDi99DZmD
-	9Veo8gs7HMLuUfArLflfQOw7C/yGCmnjJ976ZXH/8N5+IlxXxVAokbNC8uZteAnw/uHILjMpBvrDy
-	Hon0UJYv6Ps6/ircblOmY3601Vt8I5ml0heFiAJSZYib/ege/dPXbGM3/jF8D5TfWFGmAS//QsxjA
-	fJKfVgKSRUbN8gAdRlebCgfHaQEYh3T3Y66fD0ZxYsqhzX8yd4kRgwySK6sDkEhsB2GqF0MiKvmO8
-	3gRhZGhxjDI2HRZRTOcuz5HnNPEl0bVxdkuZiAltE9ruPEw9RZMv+I7cAvxoCkbCPunFf1ylfTEBQ
-	E3fSr3rzGzRyatSEoH9A==;
+	List-Owner; bh=cZ3WCZrtkpD8jj2ShUjsbp7pPGtjVQ9lu1dBZM6xEWs=; b=hyyDXZGUuSLvVO
+	mpTCuzwAXI0+/SJToNO96JE5/wUxDZxESNXmk92ntB+8Du+U5msnUsNMk0QbMfcoL7pFabr2vHf/N
+	OOvslvesu9YOItLkskf3XwMvh6iIp1d3AS5WPBoPNO9c7bV0vZOKYUOEmtAdoNzFYvtHM/J/ycX/j
+	QrUW0toAi/qgvc8z9VzKtL1tqZumq4YgNye0m5eoydFDRr5xuuMg6iZmJ2nGA5GEclHCtmplrR9/F
+	fNmRwzRKbte81DSoCP6Z0Jq0Te79cuRe4mX3co5r9e+jbPoBq5V6pPu61XuF4ssgpUFHuSlY/C4Gb
+	Jdc+lJnPZn6azf7V9SSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKVcq-0006EW-Ja; Tue, 15 Oct 2019 22:49:08 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1iKVdB-0006TC-8r; Tue, 15 Oct 2019 22:49:29 +0000
+Received: from mail-qt1-f195.google.com ([209.85.160.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKVbc-0005ID-HD
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 22:47:55 +0000
-Received: by mail-ot1-f66.google.com with SMTP id g13so18438656otp.8
+ id 1iKVbz-0005dK-8P
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 22:48:18 +0000
+Received: by mail-qt1-f195.google.com with SMTP id j31so33159581qta.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 15 Oct 2019 15:47:52 -0700 (PDT)
+ Tue, 15 Oct 2019 15:48:14 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=L29Q7uBjfh2/8GkHTrSFKn53EJrq5c7glms3MlDnD+8=;
- b=QvQe4MlaHAMuemAuowPPPXmiAs968Zrz86YAm7HTBtLRL3R3t588gSXOsypa88ywhr
- 6kq6OVD82p5bHzB2Qhtvp0H67W89XdDh+Vuf4/iSrUjXJXd6e5PEFqtK0EguUsRwvrZO
- Hh5GyWypNv6bkvBEJnWDP0Etrmzb3TmmvFEBqlAh/Xivsl7SlEmKtp95RAysvNOpRVKY
- WSCtLfqukuAPZVVPEXoR6cpKkp1e3e/iDlYoZXuX4FOWJX61OWoVoA6c+cTicFVs9npR
- A0B/PmgdydYWjY9QlZxQI45rvPQVwihoJH7yFuD73zIMulrL0WzhTQMwz3R7sWv4ZK5N
- HN2A==
-X-Gm-Message-State: APjAAAUAatlegfZqJRVTIhzTArMSk0SXSJ3bZCVI7dI22tc2ePedYHcz
- 5K+ZflD81hPpvRYAZNAkCA==
-X-Google-Smtp-Source: APXvYqw5mXf86Bg84vSsRwYWEsXXpCgsWXJFetgM2DHfYHCqXad5KFgjFqh2gh6OrmOLdlLnZxsqHQ==
-X-Received: by 2002:a9d:7147:: with SMTP id y7mr17614612otj.62.1571179671509; 
- Tue, 15 Oct 2019 15:47:51 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id a69sm6826546oib.14.2019.10.15.15.47.50
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 15 Oct 2019 15:47:51 -0700 (PDT)
-Date: Tue, 15 Oct 2019 17:47:50 -0500
-From: Rob Herring <robh@kernel.org>
-To: Kamel Bouhara <kamel.bouhara@bootlin.com>
-Subject: Re: [PATCH 2/3] dt-bindings: arm: at91: Document Kizbox3 HS board
- binding
-Message-ID: <20191015224750.GA14460@bogus>
-References: <20191011125022.16329-1-kamel.bouhara@bootlin.com>
- <20191011125022.16329-3-kamel.bouhara@bootlin.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=wW3J+M7tQtun5YRjxCSwb5z0yIjaole3jnpKo6pDabQ=;
+ b=puRoVbWG4dOmyh/oKMXyMFVsgCaILqmX5jox1iAuaxzWdo/Gvu+yvujC3FXWDt+0JO
+ 0r21a8FhPlPPJ44LHnq6C5kd/s7f73JSFVmWzyvn7QM+VKOzamTk3nW/IuPq8AFdItjj
+ 1TZD6CD2IKXexJWrc2pRwdLX2KP3O6e4KVeWu4b22aLmgZiHAxNj6IqB005Lqi509P1R
+ OXwcHzafhRAXyIf0DzMY6DllXGUPR8tMB0ZOPwCshKiAMndi3fPXDo3IorV+v84ksEwY
+ tRzN2XpiB6L30HdfMSuqGTujDXQUNMpcOnO4OpBbAcbJfJrqNk19SREtseRReqKON00l
+ puAQ==
+X-Gm-Message-State: APjAAAWN4cLAEHkUzUrTWwsR5JwwdXQDHnKsFQl92Li3maQuYjm+ZRIH
+ AfVckFujJUoAdj7ADBRKAoJWEZMUQCqlOoIcAdY=
+X-Google-Smtp-Source: APXvYqzuDdko7JYdTFtGKHiBiAl0jsW9GZst76Bv9tRU8XgfeONW2Ydu9g66d9gYrVqLOb1ZNjGHuUY3H7h52Tx8+HI=
+X-Received: by 2002:a0c:c70a:: with SMTP id w10mr21449240qvi.222.1571179692640; 
+ Tue, 15 Oct 2019 15:48:12 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191011125022.16329-3-kamel.bouhara@bootlin.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20191013221310.30748-1-sebastian@breakpoint.cc>
+ <20191013221310.30748-7-sebastian@breakpoint.cc>
+ <CAK8P3a2hYteGizk=--_Z1kE200_ORL52QEK5RBTMtXt5_UzmhA@mail.gmail.com>
+ <CAK8P3a1Mu0Ghy1VtD7NBKQ4-ZMsYQe_bjYBAshRMTYTWtxzbPw@mail.gmail.com>
+ <20191015223011.nyjbtylco6isjvb6@flow>
+ <38a78a18-43ec-9425-6ad9-3ffe106690c5@redhat.com>
+In-Reply-To: <38a78a18-43ec-9425-6ad9-3ffe106690c5@redhat.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 16 Oct 2019 00:47:55 +0200
+Message-ID: <CAK8P3a1Mh9dtVuWwV1to60v=BnYE7PFDxLhoxLc19_TX=Tu27A@mail.gmail.com>
+Subject: Re: [PATCH 6/6] ARM: Inline locking functions for !PREEMPTION
+To: Waiman Long <longman@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_154752_611483_68A91561 
-X-CRM114-Status: UNSURE (   9.86  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191015_154815_351069_83FF21E0 
+X-CRM114-Status: GOOD (  17.90  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
+ no trust [209.85.160.195 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
+ [209.85.160.195 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
+ provider (arndbergmann[at]gmail.com)
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -94,28 +87,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Kamel Bouhara <kamel.bouhara@bootlin.com>, linux-kernel@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Peter Zijlstra <peterz@infradead.org>, Russell King <linux@armlinux.org.uk>,
+ Sebastian Andrzej Siewior <sebastian@breakpoint.cc>,
+ Ingo Molnar <mingo@redhat.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 11 Oct 2019 14:50:21 +0200, Kamel Bouhara wrote:
-> Document devicetree binding of SAMA5D27 Kizbox3 HS board from Overkiz
-> SAS.
-> 
-> Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
-> ---
->  Documentation/devicetree/bindings/arm/atmel-at91.yaml | 7 +++++++
->  1 file changed, 7 insertions(+)
-> 
+On Wed, Oct 16, 2019 at 12:37 AM Waiman Long <longman@redhat.com> wrote:
+> On 10/15/19 6:30 PM, Sebastian Andrzej Siewior wrote:
+> > On 2019-10-14 12:01:02 [+0200], Arnd Bergmann wrote:
+> >> On Mon, Oct 14, 2019 at 9:43 AM Arnd Bergmann <arnd@arndb.de> wrote:
+> >>> On Mon, Oct 14, 2019 at 12:14 AM Sebastian Andrzej Siewior <sebastian@breakpoint.cc> wrote
+> >> Maybe it should be configurable?
+> > Any comment from the locking department? I would prefer to avoid an
+> > extra knob for it.
+> > The v7 config is PREEMPT_NONE and HZ_100. Based on the perf numbers I
+> > posted last time: with inlining I get more or less to the performance of
+> > the ticket implementation on imx6 and it makes no difference on AM572x.
+> > Let me run the hackbench test with the multi_v7_defconfig on my two
+> > boards with ORIG/qlock/qlock-inline and come with some numbers here.
+>
+> Perhaps, we should not just looking at the all inlined or all uninlined
+> cases. Different variants of the lock and unlock functions can differ
+> widely in size depends on how the irq handling code is handled in each
+> architecture. Maybe we can inline the small ones but leave the bigger
+> ones uninlined. That can increase performance without too much overhead
+> in kernel size.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+We also have CONFIG_CC_OPTIMIZE_FOR_SIZE, which at the moment
+only controls the -O2 / -Os options, but basing it on that would be
+an easy way to avoid another user-visible option.
+
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
