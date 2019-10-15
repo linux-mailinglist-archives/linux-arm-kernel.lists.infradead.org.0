@@ -2,49 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1FA8D7D9A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 19:25:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9F13D7DA4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 19:26:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8taF24Nfzi677rbKz54y++mI8rrgiIWeZKWQKaZoeog=; b=Gq9UdRNQeQW1WI
-	6Le6mjJSbxm27L7zB7uNsO1/qOnGXrpl9vG2vRaM4BmwNWTd2yF3YyYqDhlXswhh8TPA9n/Au0a4F
-	eNe+yAlXzYlIuIQNVifESxW1smMI3yKb35SgWLZgb5zKaaWsjCdDDghwtKJZPesGo4Tj5a29qmAgC
-	mWrG4Q+xpyfEcMgPjXZYw18Wu8+QRlyUYhVygC4j19G2lioXkB2edc96Hzc4MMWhcXgJv16XsSfg4
-	bcL379tEP/WchM5UipIjCyRo1w94AVzBztwuNEJ9YMxSnN1GI6af/PN6FqabqXwM/eOUDVZFUXNQq
-	FgmKPEsM/CUdovU8Ijmg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=D+bwQLMW0fzUzb9qhpoLjJkACYEYxQLh0F4xUJFGS+U=; b=rpt2gLMchcenjJ
+	pwRP3xRcSE10GCiJOS8RzbhASScGY4l8bl4zcbgi4ZFUkkf2mRkQTOJBj5nHN9Itnx+42u3eQrozN
+	UXLkugj8xV/Y5BUWI+Jy2Xr8VohA4DtV6LkgXh+nBNjKMnuVdrLQKePbnTnQ8vfQ8+6VI0HzeAUkF
+	P4nENDtZU9I4WQLowEj10Lr0KH/GEEHl8qxMsL70wUGyfRkyTpSuF2PaBqO2iYeIwKebXy1UBH17b
+	Pe2sw11ce9SrEhqnXkunn4JU74UlHL/jJaaEOHOHJVEX73d8k+doqYDu6Z1dNLcLdnS9KN4QUk7d5
+	aWMEoTcj7GUSIQQhuzIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKQZR-00021w-J2; Tue, 15 Oct 2019 17:25:17 +0000
+	id 1iKQaA-0003Vi-EH; Tue, 15 Oct 2019 17:26:02 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKQZ8-0001zD-U7
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 17:25:00 +0000
+ id 1iKQa1-0003Ut-GP
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 17:25:55 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 53CC0337;
- Tue, 15 Oct 2019 10:24:58 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 000F23F68E;
- Tue, 15 Oct 2019 10:24:55 -0700 (PDT)
-Date: Tue, 15 Oct 2019 18:24:53 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Jianyong Wu <jianyong.wu@arm.com>
-Subject: Re: [PATCH v5 1/6] psci: Export psci_ops.conduit symbol as modules
- will use it.
-Message-ID: <20191015172453.GE24604@lakrids.cambridge.arm.com>
-References: <20191015104822.13890-1-jianyong.wu@arm.com>
- <20191015104822.13890-2-jianyong.wu@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 393C2337;
+ Tue, 15 Oct 2019 10:25:51 -0700 (PDT)
+Received: from eglon.cambridge.arm.com (unknown [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A39673F68E;
+ Tue, 15 Oct 2019 10:25:49 -0700 (PDT)
+From: James Morse <james.morse@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2] arm64: entry.S: Do not preempt from IRQ before all
+ cpufeatures are enabled
+Date: Tue, 15 Oct 2019 18:25:44 +0100
+Message-Id: <20191015172544.186627-1-james.morse@arm.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191015104822.13890-2-jianyong.wu@arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_102459_011184_C69BC47C 
-X-CRM114-Status: GOOD (  17.20  )
+X-CRM114-CacheID: sfid-20191015_102553_635346_40566303 
+X-CRM114-Status: GOOD (  19.89  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,85 +58,149 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: maz@kernel.org, justin.he@arm.com, kvm@vger.kernel.org,
- suzuki.poulose@arm.com, netdev@vger.kernel.org, richardcochran@gmail.com,
- Steve.Capper@arm.com, linux-kernel@vger.kernel.org,
- sean.j.christopherson@intel.com, Kaly.Xin@arm.com, john.stultz@linaro.org,
- yangbo.lu@nxp.com, pbonzini@redhat.com, tglx@linutronix.de, nd@arm.com,
- will@kernel.org, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
+Cc: Juri Lelli <juri.lelli@redhat.com>, Mark Rutland <mark.rutland@arm.com>,
+ Julien Thierry <julien.thierry@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Ingo Molnar <mingo@redhat.com>, James Morse <james.morse@arm.com>,
+ Will Deacon <will@kernel.org>, Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 15, 2019 at 06:48:17PM +0800, Jianyong Wu wrote:
-> If arm_smccc_1_1_invoke used in modules, psci_ops.conduit should
-> be export.
-> 
-> Signed-off-by: Jianyong Wu <jianyong.wu@arm.com>
+From: Julien Thierry <julien.thierry@arm.com>
 
-I have a patch queued [1] in the arm64 tree which adds
-arm_smccc_1_1_get_conduit() for this purpose.
+Preempting from IRQ-return means that the task has its PSTATE saved
+on the stack, which will get restored when the task is resumed and does
+the actual IRQ return.
 
-Please use that, adding an EXPORT_SYMBOL() if necessary.
+However, enabling some CPU features requires modifying the PSTATE. This
+means that, if a task was scheduled out during an IRQ-return before all
+CPU features are enabled, the task might restore a PSTATE that does not
+include the feature enablement changes once scheduled back in.
 
-Thanks,
-Mark.
+* Task 1:
 
-[1] https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/commit/?h=for-next/smccc-conduit-cleanup&id=6b7fe77c334ae59fed9500140e08f4f896b36871
+PAN == 0 ---|                          |---------------
+            |                          |<- return from IRQ, PSTATE.PAN = 0
+            | <- IRQ                   |
+            +--------+ <- preempt()  +--
+                                     ^
+                                     |
+                                     reschedule Task 1, PSTATE.PAN == 1
+* Init:
+        --------------------+------------------------
+                            ^
+                            |
+                            enable_cpu_features
+                            set PSTATE.PAN on all CPUs
 
-> ---
->  drivers/firmware/psci/psci.c | 6 ++++++
->  include/linux/arm-smccc.h    | 2 +-
->  include/linux/psci.h         | 1 +
->  3 files changed, 8 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/firmware/psci/psci.c b/drivers/firmware/psci/psci.c
-> index f82ccd39a913..35c4eaab1451 100644
-> --- a/drivers/firmware/psci/psci.c
-> +++ b/drivers/firmware/psci/psci.c
-> @@ -212,6 +212,12 @@ static unsigned long psci_migrate_info_up_cpu(void)
->  			      0, 0, 0);
->  }
->  
-> +enum psci_conduit psci_get_conduit(void)
-> +{
-> +	return psci_ops.conduit;
-> +}
-> +EXPORT_SYMBOL(psci_get_conduit);
-> +
->  static void set_conduit(enum psci_conduit conduit)
->  {
->  	switch (conduit) {
-> diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
-> index 552cbd49abe8..a6e4d3e3d10a 100644
-> --- a/include/linux/arm-smccc.h
-> +++ b/include/linux/arm-smccc.h
-> @@ -357,7 +357,7 @@ asmlinkage void __arm_smccc_hvc(unsigned long a0, unsigned long a1,
->   * The return value also provides the conduit that was used.
->   */
->  #define arm_smccc_1_1_invoke(...) ({					\
-> -		int method = psci_ops.conduit;				\
-> +		int method = psci_get_conduit();			\
->  		switch (method) {					\
->  		case PSCI_CONDUIT_HVC:					\
->  			arm_smccc_1_1_hvc(__VA_ARGS__);			\
-> diff --git a/include/linux/psci.h b/include/linux/psci.h
-> index a8a15613c157..e5cedc986049 100644
-> --- a/include/linux/psci.h
-> +++ b/include/linux/psci.h
-> @@ -42,6 +42,7 @@ struct psci_operations {
->  	enum smccc_version smccc_version;
->  };
->  
-> +extern enum psci_conduit psci_get_conduit(void);
->  extern struct psci_operations psci_ops;
->  
->  #if defined(CONFIG_ARM_PSCI_FW)
-> -- 
-> 2.17.1
-> 
+Worse than this, since PSTATE is untouched when task switching is done,
+a task missing the new bits in PSTATE might affect another task, if both
+do direct calls to schedule() (outside of IRQ/exception contexts).
+
+Fix this by preventing preemption on IRQ-return until features are
+enabled on all CPUs.
+
+This way the only PSTATE values that are saved on the stack are from
+synchronous exceptions. These are expected to be fatal this early, the
+exception is BRK for WARN_ON(), but as this uses do_debug_exception()
+which keeps IRQs masked, it shouldn't call schedule().
+
+Signed-off-by: Julien Thierry <julien.thierry@arm.com>
+[Replaced a really cool hack, with an even simpler static key in C.
+ expanded commit message with Julien's cover-letter ascii art]
+Signed-off-by: James Morse <james.morse@arm.com>
+---
+The suspicious __sched annotation here is to stop this symbol from
+appearing in wchan. I haven't managed to make this happen, but I
+can't see what stops it.
+
+Previous version:
+https://lore.kernel.org/linux-arm-kernel/20191010163447.136049-1-james.morse@arm.com/
+
+
+I think the reason we don't see this happen because cpufeature enable calls
+happen early, when there is not a lot going on. I couldn't hit it when
+trying. I believe Julien did, by adding sleep statements(?) to kthread().
+
+If we want to send this to stable, the first feature that depended on this
+was PAN:
+Fixes: 7209c868600b ("arm64: mm: Set PSTATE.PAN from the cpu_enable_pan() call")
+
+ arch/arm64/kernel/entry.S   |  2 +-
+ arch/arm64/kernel/process.c | 18 ++++++++++++++++++
+ include/linux/sched.h       |  1 +
+ 3 files changed, 20 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
+index 84a822748c84..07b621bcaf1f 100644
+--- a/arch/arm64/kernel/entry.S
++++ b/arch/arm64/kernel/entry.S
+@@ -680,7 +680,7 @@ alternative_if ARM64_HAS_IRQ_PRIO_MASKING
+ 	orr	x24, x24, x0
+ alternative_else_nop_endif
+ 	cbnz	x24, 1f				// preempt count != 0 || NMI return path
+-	bl	preempt_schedule_irq		// irq en/disable is done inside
++	bl	arm64_preempt_schedule_irq	// irq en/disable is done inside
+ 1:
+ #endif
+ 
+diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+index a47462def04b..f088ecf5d4c9 100644
+--- a/arch/arm64/kernel/process.c
++++ b/arch/arm64/kernel/process.c
+@@ -17,6 +17,7 @@
+ #include <linux/sched/task.h>
+ #include <linux/sched/task_stack.h>
+ #include <linux/kernel.h>
++#include <linux/lockdep.h>
+ #include <linux/mm.h>
+ #include <linux/stddef.h>
+ #include <linux/sysctl.h>
+@@ -44,6 +45,7 @@
+ #include <asm/alternative.h>
+ #include <asm/arch_gicv3.h>
+ #include <asm/compat.h>
++#include <asm/cpufeature.h>
+ #include <asm/cacheflush.h>
+ #include <asm/exec.h>
+ #include <asm/fpsimd.h>
+@@ -633,3 +635,19 @@ static int __init tagged_addr_init(void)
+ 
+ core_initcall(tagged_addr_init);
+ #endif	/* CONFIG_ARM64_TAGGED_ADDR_ABI */
++
++asmlinkage void __sched arm64_preempt_schedule_irq(void)
++{
++	lockdep_assert_irqs_disabled();
++
++	/*
++	 * Preempting a task from an IRQ means we leave copies of PSTATE
++	 * on the stack. cpufeature's enable calls may modify PSTATE, but
++	 * resuming one of these preempted tasks would undo those changes.
++	 *
++	 * Only allow a task to be preempted once cpufeatures have been
++	 * enabled.
++	 */
++	if (static_branch_likely(&arm64_const_caps_ready))
++		preempt_schedule_irq();
++}
+diff --git a/include/linux/sched.h b/include/linux/sched.h
+index 2c2e56bd8913..67a1d86981a9 100644
+--- a/include/linux/sched.h
++++ b/include/linux/sched.h
+@@ -223,6 +223,7 @@ extern long schedule_timeout_uninterruptible(long timeout);
+ extern long schedule_timeout_idle(long timeout);
+ asmlinkage void schedule(void);
+ extern void schedule_preempt_disabled(void);
++asmlinkage void preempt_schedule_irq(void);
+ 
+ extern int __must_check io_schedule_prepare(void);
+ extern void io_schedule_finish(int token);
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
