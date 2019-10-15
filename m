@@ -2,74 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 426E7D7C6A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 18:54:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37871D7C86
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 18:57:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8KVXvd0EC9vDysBKGDbTL+d3ZEfw3e5ibG2PMR/5EA4=; b=HQTO9m/cCP8ae6
-	suiKFqnGxp9ggopDonjAlxpjPah8xNKfzT3z23BHLG19uXHl69FbqvslPPV/QOAY3W22biz+kpykv
-	EC87mR1RcgYa0Jyh3oxTHaSGTagJtpEKps0NI8E5lZ2cAnO5d6k7SdvT90prUza9mB96xHW2JWLQL
-	paVLmA/09f9/gFQplEJHTcFGH4z5/HMkbR6kjmmmxwZFv3D1KzWpbAlnqgCg1q7qw70LG2Nl9lZVk
-	FFG1MVRW/qm+HXpSbBl0taDx9hnG7K/d4qjTNgG7Z9IylrNBgk0xKor8Mo0o+yyavgxCopTogDXZL
-	zZskG+YEbOIR1BN+Sj/g==;
+	List-Owner; bh=mhtRaZc0G/YoVvExk0TBdNc9HbZqXtxkEu16Myd2KtA=; b=EcaK4Qfy6C9nDT
+	89DywnC9/tN3cTJ+5SmM8rplP8nXOGSvhWUrkgm8e8nCeNDK9JQYR3FI0mWDG3XSCjSCQ0qzpDv6a
+	4OdKX8vKGysyrAPfdPLq8evoTpcIEicYVJ3CVTEv+xIBjOSj3Py9ZnLK60dBvTA0OEliW54S/iUWm
+	HfRkzZ3Wn39TQU1cdMjzG8JrBJt584ChTy7CPlNCzQkfU2Ae6XUW5RDl/dlt/S2wf1QCLrFFQc1r9
+	PlDZNYJgMSONQXCLKYcd1O2anCnnUwNbNRg+c9M+ffc2mWVZdIcIjBvHcy1zWYNYjU65a2fgdtg1Q
+	JE9f73HjogEY89GbEvmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKQ5p-0002Wf-Iz; Tue, 15 Oct 2019 16:54:41 +0000
-Received: from mail.skyhub.de ([2a01:4f8:190:11c2::b:1457])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKQ5e-0002Lx-Mc
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 16:54:32 +0000
-Received: from zn.tnic (p200300EC2F157800C5C9C957E5FD72EA.dip0.t-ipconnect.de
- [IPv6:2003:ec:2f15:7800:c5c9:c957:e5fd:72ea])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.skyhub.de (SuperMail on ZX Spectrum 128k) with ESMTPSA id 48D971EC0C9F;
- Tue, 15 Oct 2019 18:54:23 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alien8.de; s=dkim;
- t=1571158463;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:in-reply-to:in-reply-to:  references:references;
- bh=rnMDMAxve5tu5ORyg7bCimEqvhkoKSIi/WDG5Ckj2mw=;
- b=UhqyUbUZxF1aKEZWmjOecjXQ40If2V00t93Kg4amOFs1vb1YblTprErgXmjYAMMbFs1i2U
- rBG4AYHzxbTMLCTcsNJJf17cTI1+Sh6IITzgESuitrr3eMc1W3eIWHwig8gGPLDTSj8piu
- pPldqgdkCAB3vxJ1gR+l+JfeKn/aG08=
-Date: Tue, 15 Oct 2019 18:54:13 +0200
-From: Borislav Petkov <bp@alien8.de>
-To: Segher Boessenkool <segher@kernel.crashing.org>
-Subject: Re: [PATCH v2 01/29] powerpc: Rename "notes" PT_NOTE to "note"
-Message-ID: <20191015165412.GD596@zn.tnic>
-References: <20191011000609.29728-1-keescook@chromium.org>
- <20191011000609.29728-2-keescook@chromium.org>
- <20191011082519.GI9749@gate.crashing.org>
- <201910110910.48270FC97@keescook>
- <20191011162552.GK9749@gate.crashing.org>
+	id 1iKQ88-0004P5-CV; Tue, 15 Oct 2019 16:57:04 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iKQ7x-0004Nc-2U; Tue, 15 Oct 2019 16:56:54 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D4DFA337;
+ Tue, 15 Oct 2019 09:56:51 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B74A23F68E;
+ Tue, 15 Oct 2019 09:56:49 -0700 (PDT)
+Date: Tue, 15 Oct 2019 17:56:47 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Markus Elfring <Markus.Elfring@web.de>
+Subject: Re: [PATCH] PCI: dwc: Use PTR_ERR_OR_ZERO() in five functions
+Message-ID: <20191015165647.GD25674@e121166-lin.cambridge.arm.com>
+References: <95c9dfae-af81-82ad-e989-1fdf5f29808e@web.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191011162552.GK9749@gate.crashing.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <95c9dfae-af81-82ad-e989-1fdf5f29808e@web.de>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_095430_895687_2304D29D 
-X-CRM114-Status: UNSURE (   7.62  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191015_095653_204105_8E97A42A 
+X-CRM114-Status: GOOD (  15.25  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,37 +59,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- Michal Simek <monstr@monstr.eu>, Dave Hansen <dave.hansen@linux.intel.com>,
- linux-ia64@vger.kernel.org, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, linux-xtensa@linux-xtensa.org,
- Will Deacon <will@kernel.org>, x86@kernel.org,
- Heiko Carstens <heiko.carstens@de.ibm.com>, linux-kernel@vger.kernel.org,
- Yoshinori Sato <ysato@users.sourceforge.jp>, linux-parisc@vger.kernel.org,
- Andy Lutomirski <luto@kernel.org>, linux-alpha@vger.kernel.org,
- Rick Edgecombe <rick.p.edgecombe@intel.com>, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org, linux-c6x-dev@linux-c6x.org
+Cc: linux-samsung-soc@vger.kernel.org, YueHaibing <yuehaibing@huawei.com>,
+ linux-pci@vger.kernel.org, Binghui Wang <wangbinghui@hisilicon.com>,
+ kernel-janitors@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Yue Wang <yue.wang@Amlogic.com>,
+ Kukjin Kim <kgene@kernel.org>, Kevin Hilman <khilman@baylibre.com>,
+ Jingoo Han <jingoohan1@gmail.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ linux-amlogic@lists.infradead.org, zhong jiang <zhongjiang@huawei.com>,
+ Xiaowei Song <songxiaowei@hisilicon.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 11, 2019 at 11:25:52AM -0500, Segher Boessenkool wrote:
-> Names *matter*, internal names doubly so.  So why replace a good name with
-> a worse name?  Because it is slightly less work for you?
+On Fri, Sep 06, 2019 at 08:50:07PM +0200, Markus Elfring wrote:
+> From: Markus Elfring <elfring@users.sourceforge.net>
+> Date: Fri, 6 Sep 2019 20:40:06 +0200
+> 
+> Simplify these function implementations by using a known function.
+> 
+> Generated by: scripts/coccinelle/api/ptr_ret.cocci
+> 
+> Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
+> ---
+>  drivers/pci/controller/dwc/pci-exynos.c |  5 +----
+>  drivers/pci/controller/dwc/pci-meson.c  | 10 ++--------
+>  drivers/pci/controller/dwc/pcie-kirin.c | 10 ++--------
+>  3 files changed, 5 insertions(+), 20 deletions(-)
 
-So if we agree on the name "notes" and we decide to rename the other
-arches, this should all be done in a separate patchset anyway, and ontop
-of this one. And I believe Kees wouldn't mind doing it ontop since he's
-gotten his hands dirty already. :-P
+https://lore.kernel.org/linux-pci/20190527140952.GB7202@ulmo/
 
-Thx.
+Dropped, sorry.
 
--- 
-Regards/Gruss,
-    Boris.
+Lorenzo
 
-https://people.kernel.org/tglx/notes-about-netiquette
+> diff --git a/drivers/pci/controller/dwc/pci-exynos.c b/drivers/pci/controller/dwc/pci-exynos.c
+> index cee5f2f590e2..b6ab1cc5d895 100644
+> --- a/drivers/pci/controller/dwc/pci-exynos.c
+> +++ b/drivers/pci/controller/dwc/pci-exynos.c
+> @@ -92,10 +92,7 @@ static int exynos5440_pcie_get_mem_resources(struct platform_device *pdev,
+> 
+>  	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+>  	ep->mem_res->elbi_base = devm_ioremap_resource(dev, res);
+> -	if (IS_ERR(ep->mem_res->elbi_base))
+> -		return PTR_ERR(ep->mem_res->elbi_base);
+> -
+> -	return 0;
+> +	return PTR_ERR_OR_ZERO(ep->mem_res->elbi_base);
+>  }
+> 
+>  static int exynos5440_pcie_get_clk_resources(struct exynos_pcie *ep)
+> diff --git a/drivers/pci/controller/dwc/pci-meson.c b/drivers/pci/controller/dwc/pci-meson.c
+> index e35e9eaa50ee..713059918002 100644
+> --- a/drivers/pci/controller/dwc/pci-meson.c
+> +++ b/drivers/pci/controller/dwc/pci-meson.c
+> @@ -182,10 +182,7 @@ static int meson_pcie_get_mems(struct platform_device *pdev,
+> 
+>  	/* Meson SoC has two PCI controllers use same phy register*/
+>  	mp->mem_res.phy_base = meson_pcie_get_mem_shared(pdev, mp, "phy");
+> -	if (IS_ERR(mp->mem_res.phy_base))
+> -		return PTR_ERR(mp->mem_res.phy_base);
+> -
+> -	return 0;
+> +	return PTR_ERR_OR_ZERO(mp->mem_res.phy_base);
+>  }
+> 
+>  static void meson_pcie_power_on(struct meson_pcie *mp)
+> @@ -259,10 +256,7 @@ static int meson_pcie_probe_clocks(struct meson_pcie *mp)
+>  		return PTR_ERR(res->general_clk);
+> 
+>  	res->clk = meson_pcie_probe_clock(dev, "pcie", 0);
+> -	if (IS_ERR(res->clk))
+> -		return PTR_ERR(res->clk);
+> -
+> -	return 0;
+> +	return PTR_ERR_OR_ZERO(res->clk);
+>  }
+> 
+>  static inline void meson_elb_writel(struct meson_pcie *mp, u32 val, u32 reg)
+> diff --git a/drivers/pci/controller/dwc/pcie-kirin.c b/drivers/pci/controller/dwc/pcie-kirin.c
+> index c19617a912bd..75b1f1dde747 100644
+> --- a/drivers/pci/controller/dwc/pcie-kirin.c
+> +++ b/drivers/pci/controller/dwc/pcie-kirin.c
+> @@ -138,10 +138,7 @@ static long kirin_pcie_get_clk(struct kirin_pcie *kirin_pcie,
+>  		return PTR_ERR(kirin_pcie->apb_sys_clk);
+> 
+>  	kirin_pcie->pcie_aclk = devm_clk_get(dev, "pcie_aclk");
+> -	if (IS_ERR(kirin_pcie->pcie_aclk))
+> -		return PTR_ERR(kirin_pcie->pcie_aclk);
+> -
+> -	return 0;
+> +	return PTR_ERR_OR_ZERO(kirin_pcie->pcie_aclk);
+>  }
+> 
+>  static long kirin_pcie_get_resource(struct kirin_pcie *kirin_pcie,
+> @@ -174,10 +171,7 @@ static long kirin_pcie_get_resource(struct kirin_pcie *kirin_pcie,
+> 
+>  	kirin_pcie->sysctrl =
+>  		syscon_regmap_lookup_by_compatible("hisilicon,hi3660-sctrl");
+> -	if (IS_ERR(kirin_pcie->sysctrl))
+> -		return PTR_ERR(kirin_pcie->sysctrl);
+> -
+> -	return 0;
+> +	return PTR_ERR_OR_ZERO(kirin_pcie->sysctrl);
+>  }
+> 
+>  static int kirin_pcie_phy_init(struct kirin_pcie *kirin_pcie)
+> --
+> 2.23.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
