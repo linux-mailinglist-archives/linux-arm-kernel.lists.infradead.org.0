@@ -2,66 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45347D7F9F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 21:10:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0FB48D7FA3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 21:10:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=9qHoIfbFd+IEJQIuCMZmmPNjDTQVnQSnRU1br0awob8=; b=nMW
-	tDPvRKmL1RYClf8gVBFtqrzBfb4Z0jf10Fo71SJGu+qhLEZKaXOtZXP5mohtM7LoG8NGb18OP56xu
-	sTa8418CjDuXtOczaU/fZUwAsYYDowrcd4LYgitdITtESH0o5zWUigUYc/E8qT+hUVrbNbrId5PIG
-	CJ5p/ZtTlOAqq3DpcqE18SPJ/FQ77uQ1EeslVMlEc4pfqloPaR3WsRvKFjnyR/5JH8g/CBz6BbFa3
-	9qSdcRRMmoFpQ7dqdzHGLdV1Dufw2hYS2brliqZjRiCgRw6jQqx0REmk2q2CUH6gxO0/Q/eXldP0I
-	khfXg5yFERtOFSZnTviI7ACLm6hC7lg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=g++ergQeF+qtQlkL9ekjMjNuXOM4bN71Po73r/npm70=; b=Ka+D4uJeOxqHZnThnhJ+st/7xH
+	tJoVUfamcIRiXn2+JV28JsGCLjbpw3krfc7RWX4+7yR75MuF2elHgabPdSZfFr1oQKTJGsu/ASepz
+	q8SZD9Qm7RlLY+GVAZJtGj9Ygc8Kvzq42/oQFuW03fQjTWndSOCXqPYwsVS/gTkQOM4ca0RadvqvY
+	8IJnomRsDwbZr8gruDRQLRX9zHhqi5puNFGewumKOcj/hC1cSOIEmcWkubypjGVR2oMPtsMiJ/UjE
+	UzXk4bBCFsBeWHEEIX97uCOPI8fV721Jp2C/dV6MsfMIcI0Y/xfWTG9+tIUpOPxKrUhyV/v06P8md
+	/iYlHAkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKSDH-000707-Bi; Tue, 15 Oct 2019 19:10:31 +0000
+	id 1iKSDY-0007AF-Pa; Tue, 15 Oct 2019 19:10:48 +0000
 Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKSD3-0006rf-HD; Tue, 15 Oct 2019 19:10:18 +0000
-Received: by mail-wm1-x344.google.com with SMTP id p7so230384wmp.4;
- Tue, 15 Oct 2019 12:10:11 -0700 (PDT)
+ id 1iKSD3-0006yo-J5; Tue, 15 Oct 2019 19:10:18 +0000
+Received: by mail-wm1-x344.google.com with SMTP id r19so243770wmh.2;
+ Tue, 15 Oct 2019 12:10:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=q85wWT1Ntix0umS+jHesJR+Bc8njDJ95cdjzzQg8isg=;
- b=Qtue6CQgRcmNCCevDgHkx1nw6nwFmlUixidcjbgaIDm4CTFvf9nEgb5BaqJwTwk33t
- qDClhJVxShLHZtTLCcaqSqt1ubXo5CHnT1ckRwUGXiQb06xdXNw8cAWPvChjA/mQidDW
- 3Xa6unKQyCYmR+lI0WDYtykal4JiuA690wKtJ8Kmclf0Ot8Lajas8/OG3zshPSp044Gd
- ZuUssuVp1oVhFQyWdfoCXOa5v6ofDAuiaou4inXUVvR/KbSVqwpwI4hAr9oDnrnJaCj6
- +PxyeVYecH51/ZEKinF324uy+IMrEfsgDT5hV3ha/+xaBnEGP22pQplalarGlqT19JF3
- vldA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=iUvBerQddYmthJVayR0YUavvmPSsApA6rPHT7ry9gZM=;
+ b=CQPBccpCjw/Sso/I1eghm8gDdbDrvw6bhKk463W434QzPsmH/EcDrwH5OjhZgnD85q
+ T979D8d+4CXOBqNJUM+WwpZdgiD0jqvwxuJLKTDtvf14rf4EKtMZN9s76jmm+BhGN8QV
+ JcolqoGCKfGCJMy4tjp7dWc3rsP2kY6Rh4hGk604EgvTKQC+I74h//Fa3MSsvwweztxD
+ +zDgOwHK6PStVZPGrPh2EPP/XkHhCIOzVTnvFAi2MQG3ZtkQMeCmzjnGj7+iRIQyYK2h
+ +23Ndauj8wLvqom7LpzbhcDP4Y8r4OSdIbE+c+DNKJhDUyPmt6IUMdCL48noVtMa1UA9
+ jsMA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=q85wWT1Ntix0umS+jHesJR+Bc8njDJ95cdjzzQg8isg=;
- b=gAXQE2EmqIfYcMyOHUEAYVL7DGxhZ840KKyHTHN528AdwuWY5H4yKkObqDPp9Hlsx0
- InxGUhj9oj8ssrT7HarTjqIQj1k8gHYCIgKgpAutS3NpKbL+Ym3sMAb2+e/Vh2Te0MHm
- pj32/tcLBQbrCT/2OrGr+M5Du2x+ntqDVWQxw42jneqzLmiXzyQ+Gsc873xPfi4lD2l8
- FRpnDTVmV+Gp8SOrtrnQ+U/JHAIhL/SWQxPOrNS0OLmGz7fhSifAZB9LJgB3r39GDZW4
- PshwmnuG4cMFHBowX0w2Sz84fhp1obzKrKmtkteR0UC/foaX3cq3hstnbtS67vuLVm73
- 8aJQ==
-X-Gm-Message-State: APjAAAX9AIi5w7TmcUgKf2vlQo++hrB0ywYKrwriGQfHB2ivL8e4kVu3
- 15JMVdT3leR9VKE5qZPDtpI=
-X-Google-Smtp-Source: APXvYqzKZdq6eLHh6x7PFZAJKQx0U0RnCiTFPg+KYwQ0VlKMan5QzmHnChRFPM30ZpQC7osTfYxqhA==
-X-Received: by 2002:a7b:cd87:: with SMTP id y7mr61400wmj.93.1571166610784;
- Tue, 15 Oct 2019 12:10:10 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=iUvBerQddYmthJVayR0YUavvmPSsApA6rPHT7ry9gZM=;
+ b=G2DrW6+SidbcyDohD75Cq+6h8lVUw4ctYWjR52gCvnb0w3xtdZz1tTDWRf5akvimv9
+ 44soEzccSRnAphkcnj4TWfG0cL++wKUFQI9UImLjmo6X5pGNNz6GgoD3u1Ule1zqbVVF
+ W+uyVwqkpNORWt9cBW91r3AVS+kUp5BPX09hWMSkraU6fTCTDEzztbsZBsPEy5QVOXRt
+ m4hcWVaL5fK9NqeMBlY07PoIsLPhZfNIn0NvfkarYArBtUn6+A/o6FEacBvrK3rZmMD0
+ CBH9jMVjfzENXQapDAW4B/+MHdwZ41g3MqeqQly+hMnWJrC7Pkns7DMX74V78pDfVAo/
+ n+fA==
+X-Gm-Message-State: APjAAAWOVFeRFqH85m8JJrDRNkAQt4nUnr27kf67GKxBJ2rqHdbRgWeX
+ EhUcM48L64c7YUiAzeDv9As=
+X-Google-Smtp-Source: APXvYqyBlK332ZryIQ0G96MVaBD1a1pECjFocKt//rUbE5ZTMRxlSfCkSM0UjXKmzCeVAUuZhl9iGQ==
+X-Received: by 2002:a7b:ce89:: with SMTP id q9mr31686wmj.2.1571166611570;
+ Tue, 15 Oct 2019 12:10:11 -0700 (PDT)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id u26sm25089984wrd.87.2019.10.15.12.10.09
+ by smtp.gmail.com with ESMTPSA id u26sm25089984wrd.87.2019.10.15.12.10.10
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 15 Oct 2019 12:10:10 -0700 (PDT)
+ Tue, 15 Oct 2019 12:10:11 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
 To: heiko@sntech.de
-Subject: [PATCH 1/2] arm64: dts: rockchip: rk3399-rock-pi-4: restyle rockchip,
- pins
-Date: Tue, 15 Oct 2019 21:09:59 +0200
-Message-Id: <20191015191000.2890-1-jbx6244@gmail.com>
+Subject: [PATCH 2/2] include: dt-bindings: rockchip: remove RK_FUNC defines
+Date: Tue, 15 Oct 2019 21:10:00 +0200
+Message-Id: <20191015191000.2890-2-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20191015191000.2890-1-jbx6244@gmail.com>
+References: <20191015191000.2890-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_121017_577357_86EA5BCA 
-X-CRM114-Status: GOOD (  10.61  )
+X-CRM114-CacheID: sfid-20191015_121017_625359_D9CA311F 
+X-CRM114-Status: UNSURE (   9.97  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
@@ -103,56 +107,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The define RK_FUNC_1 is no longer used,
-so restyle the rockchip,pins definitions.
+The defines RK_FUNC_1, RK_FUNC_2, RK_FUNC_3 and RK_FUNC_4
+are no longer used, so remove them to prevent
+that someone start using them again.
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dts | 18 +++++++-----------
- 1 file changed, 7 insertions(+), 11 deletions(-)
+ include/dt-bindings/pinctrl/rockchip.h | 4 ----
+ 1 file changed, 4 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dts b/arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dts
-index 1ae1ebd4e..188d9dfc2 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dts
-@@ -486,21 +486,18 @@
+diff --git a/include/dt-bindings/pinctrl/rockchip.h b/include/dt-bindings/pinctrl/rockchip.h
+index dc5c1c73d..2798b6c03 100644
+--- a/include/dt-bindings/pinctrl/rockchip.h
++++ b/include/dt-bindings/pinctrl/rockchip.h
+@@ -50,9 +50,5 @@
+ #define RK_PD7		31
  
- 	sdio0 {
- 		sdio0_bus4: sdio0-bus4 {
--			rockchip,pins =
--				<2 20 RK_FUNC_1 &pcfg_pull_up_20ma>,
--				<2 21 RK_FUNC_1 &pcfg_pull_up_20ma>,
--				<2 22 RK_FUNC_1 &pcfg_pull_up_20ma>,
--				<2 23 RK_FUNC_1 &pcfg_pull_up_20ma>;
-+			rockchip,pins = <2 RK_PC4 1 &pcfg_pull_up_20ma>,
-+					<2 RK_PC5 1 &pcfg_pull_up_20ma>,
-+					<2 RK_PC6 1 &pcfg_pull_up_20ma>,
-+					<2 RK_PC7 1 &pcfg_pull_up_20ma>;
- 		};
+ #define RK_FUNC_GPIO	0
+-#define RK_FUNC_1	1
+-#define RK_FUNC_2	2
+-#define RK_FUNC_3	3
+-#define RK_FUNC_4	4
  
- 		sdio0_cmd: sdio0-cmd {
--			rockchip,pins =
--				<2 24 RK_FUNC_1 &pcfg_pull_up_20ma>;
-+			rockchip,pins = <2 RK_PD0 1 &pcfg_pull_up_20ma>;
- 		};
- 
- 		sdio0_clk: sdio0-clk {
--			rockchip,pins =
--				<2 25 RK_FUNC_1 &pcfg_pull_none_20ma>;
-+			rockchip,pins = <2 RK_PD1 1 &pcfg_pull_none_20ma>;
- 		};
- 	};
- 
-@@ -532,8 +529,7 @@
- 
- 	wifi {
- 		wifi_enable_h: wifi-enable-h {
--			rockchip,pins =
--				<0 RK_PB2 RK_FUNC_GPIO &pcfg_pull_none>;
-+			rockchip,pins = <0 RK_PB2 RK_FUNC_GPIO &pcfg_pull_none>;
- 		};
- 
- 		wifi_host_wake_l: wifi-host-wake-l {
+ #endif
 -- 
 2.11.0
 
