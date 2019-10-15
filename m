@@ -2,77 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D2E32D728A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 11:52:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB3DED728E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 11:52:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZQ33k6b6SHIoux292JvZQmQBTD3hqvOM68auocnHPh0=; b=rZ9ijNJj/OEuf3
-	l2HOHTqtjmfAnfkp+Iq1uKBEO8CZrO30LtNqRe8/3FWxzJOBAxxdqM0DcAlP/UxRS5sS/8xFAt5LK
-	pT/VgFckhPZ7Cnxu6EMwFGYwbFtSZdMBvk2Qq+ixhU8BboRQJPkn3/A51bpxc2ipwcPHQMLCoMjyA
-	0Xz5h6J748+ryMEvQvuTm1bxvFlxoKbOLMyUoACKJu4FjLOIqzDDe2WFrKlD9C76xee6qAP5YJj4N
-	Gyw1OY9hDH7YZzQWRJilP9CT+3sG/dz3m5+RXuZXvxicwTFgMF3D5YxWSqR9Wc+XKdA7TA8yixNWK
-	zjXLr0ILS4ch4+Wda4UQ==;
+	List-Owner; bh=3chMDsIU5+h3vTZomSOTuzZgGIra3ffVuwwKos8u4Zg=; b=T9StCPwLudVUCM
+	EXHBaAs7YKTpPHINRhiU696/Nm9xQ8tDVvKTQuXPYL5vJm2ZY1HGiQ6iWx9mH6gO2KsZ6Gdk/7Qho
+	UiA5lvN5X164O0TA5q9HA7EXELMfIz1GCz8W4Ma2BqY4xQ+vhhjizJjj9I1vzxXSt5B9gcWnwlP7C
+	AQOd/paOknr+iUntjrWACw4ulVIYvnKJc/+m7Rha5APjaxbW5HzggNzFZKwuXUYITX4PuhAX6ousI
+	FV+pWEodQo5gXEI3MJNrhzboDPOT10/mCQqrL45fCMQLrvGsTWID3PIxSqQzlukR0sNfZb03KC/vu
+	VvzKLwVox2cTgg/QyCFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKJUu-0007ha-O4; Tue, 15 Oct 2019 09:52:08 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
+	id 1iKJVK-0007wi-Gs; Tue, 15 Oct 2019 09:52:34 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKJUn-0007hA-4o
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 09:52:02 +0000
-Received: by mail-oi1-f193.google.com with SMTP id o205so16229298oib.12
+ id 1iKJVA-0007wI-PI
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 09:52:26 +0000
+Received: by mail-wr1-x443.google.com with SMTP id j18so23008532wrq.10
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 15 Oct 2019 02:52:00 -0700 (PDT)
+ Tue, 15 Oct 2019 02:52:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=kUv+jbQ6sA3ILwnXcSwb49q5EyrlDX4mVKsVLguHMmA=;
+ b=wkV7eEs+to/QY5bvJp/AEk6but1NCSZiLFX7wX5B7T+Tnf0bR/7Rjyonx8ZgJmKvLt
+ TDLset7/oWfQTw0wPJhCNg8eQjOF93XpW3cujEPWpeerfyo87isjCdWTKH85mTRVlEqo
+ oGJQo13/6KtKKhNsl5I33ZipP3F6Eo3gUf/A2UINAKrgbSvKZlHaoPC1o6KYQ/paTl7K
+ njIW4K/KDxCeBYiG6/+vS9Gd+xiWcEtx8dEM/cz+CDlfl6inbGSw83GEs8Xd579UspQq
+ VmMnfoGtxLvyRNrfgQ0tVfeb5F+YVzbgOsGzjxHv4MmzD0/ajemMVQOBHCug7PqOo9+4
+ V7vg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=0CYH4j0srWEiMsF+OANP2Wo3C2QtrbO2vNC7ScJyUA8=;
- b=s7XtJg5AEvSMZm3dg2AODTuCGERw7dyeZzDxjUAN8x+NHNIY3QcEGcFS003gZv9kR3
- +sUFfupcnkcaBZk9yWTHagNqnyt13RTIXnPp/peX/1QauSUNpQSBiDu3VJ2DxK9jeHcL
- Zkae8lHin/ACFkg9rUy2M4+YTgQr9pcu7xqrBnXkQ1TaM01lIbjSx8Q+aNM9tSLGgGGs
- 93cg2dPDilhNZvJmqYxj3lsTj7YnJLyK57FqUTqulFpMvUV+fOSnyta+uFhbCrpqPlPw
- XIdnT3aGZLPcxaz64DyXdu3dJogIqe+OVX7Q+FV2xww/ylWJBhdVdmzb9MLhKAtBaxgb
- 9JAQ==
-X-Gm-Message-State: APjAAAX9JjB88Y0Ge/gtJ7AQDcb9nYebfDZ1OLbJswFRZVN6FfysaGyW
- xJY2chnIR38CoJMINR7Qm8j0Vd0uosWyE0dZh/9pBlrp
-X-Google-Smtp-Source: APXvYqwlKwjCfbaD/Fu4Kccv/2hAco6cGIIYZtyu2Fqx7giwBiOA8FU9ug4GAzQwht8aPR23rojHPBuumOCb+IuEQ+k=
-X-Received: by 2002:aca:4bd2:: with SMTP id y201mr3095361oia.102.1571133119807; 
- Tue, 15 Oct 2019 02:51:59 -0700 (PDT)
+ bh=kUv+jbQ6sA3ILwnXcSwb49q5EyrlDX4mVKsVLguHMmA=;
+ b=Df0Kol96cidAqU1EfBCbswNoPEsw2wzjTKWrnL5RuhbB9hJCp9CSJpodjQ+hUMmYgg
+ XDtLurAmqjFjch+HnUEAmZkBUg54tiPA64Wj7oQbv+PwwyamSUuzWLY2S+wuqfMLi8sG
+ /4H8+ar5SHCW1RTXeB6F6TaCyo4UM94wRMnsvD3JyGqX+8LIF9u6+hvAEQqOQly5yRBq
+ F1lIpGYZYQhcuF3r1h0n3yJB0MrDCq1HtTdKrwmDpbW9nePTSEvc+0YwqAqt7TJs4eo/
+ Z6uhLy5X0U5YjFJRBfs/4C/kG5tFMx+1vjQ58D1DvfsPKAETU6UUg4w5qucpNd8oLm81
+ GVIg==
+X-Gm-Message-State: APjAAAUepF6H9pkwd7NQCbIF16qA4K7RNssoRYbyERx4xpFj/Hvcht2m
+ DtG21WxZ+nD+E5bm9VfuuMGWhJEpaNk8z6J7vjbKADSKJI8Vug==
+X-Google-Smtp-Source: APXvYqxp6JuomjYQWylOXgkp7jnukknifCdqtFnGK/fZ9Cju84Q0VTtUwqS0LcSTEXb301Zb4f+yPr3iFUL/qcUbL3M=
+X-Received: by 2002:a5d:43c9:: with SMTP id v9mr29013622wrr.200.1571133143010; 
+ Tue, 15 Oct 2019 02:52:23 -0700 (PDT)
 MIME-Version: 1.0
-References: <4a877f1c7189a7c45b59a6ebfc3de607e8758949.1567434470.git.michal.simek@xilinx.com>
- <CAMuHMdWY2VsY-CyAxSvpm1XYicAWqU7NORSQofQ+T195DwyLUg@mail.gmail.com>
- <7284590f-2b74-1b47-2d61-783ad8d5f46f@monstr.eu>
-In-Reply-To: <7284590f-2b74-1b47-2d61-783ad8d5f46f@monstr.eu>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Tue, 15 Oct 2019 11:51:48 +0200
-Message-ID: <CAMuHMdWZYALZB1bP5Mtoq4Nj5iubzdWBf1vRY9Mh5QvjCDhBgA@mail.gmail.com>
-Subject: Re: [PATCH] serial: core: Use cons->index for preferred console
- registration
-To: Michal Simek <monstr@monstr.eu>
+References: <20191010171517.28782-1-suzuki.poulose@arm.com>
+ <20191010171517.28782-2-suzuki.poulose@arm.com>
+ <20191011113620.GG27757@arm.com>
+ <4ba5c423-4e2a-d810-cd36-32a16ad42c91@arm.com>
+ <20191011142137.GH27757@arm.com>
+ <418b0c4b-cbcd-4263-276d-1e9edc5eee0b@arm.com>
+ <20191014145204.GS27757@arm.com>
+ <12e002e7-42e8-c205-e42c-3348359d2f98@arm.com>
+ <20191014155009.GM24047@e103592.cambridge.arm.com>
+ <CAKv+Gu83oa3+DKNFowVkE=mZfLorAvGQ3GVPiZtsXzQBcsMCWg@mail.gmail.com>
+ <2764d8ed-0796-64cc-e3c6-356ba6e67967@arm.com>
+In-Reply-To: <2764d8ed-0796-64cc-e3c6-356ba6e67967@arm.com>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Tue, 15 Oct 2019 11:52:11 +0200
+Message-ID: <CAKv+Gu8wH3HTso+vVMaEUPWAqwg+WrJ5mMo14Detvy5HSd_JOg@mail.gmail.com>
+Subject: Re: [PATCH 1/3] arm64: cpufeature: Fix the type of no FP/SIMD
+ capability
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_025201_188554_87A291B4 
-X-CRM114-Status: GOOD (  21.75  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20191015_025224_832576_E42DAD10 
+X-CRM114-Status: GOOD (  33.99  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,104 +101,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Michal Simek <michal.simek@xilinx.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- Jiri Slaby <jslaby@suse.com>, Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <Mark.Rutland@arm.com>,
+ Catalin Marinas <Catalin.Marinas@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "will@kernel.org" <will@kernel.org>, Dave P Martin <Dave.Martin@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Michal,
-
-On Tue, Oct 15, 2019 at 11:22 AM Michal Simek <monstr@monstr.eu> wrote:
-> On 15. 10. 19 11:19, Geert Uytterhoeven wrote:
-> > On Mon, Sep 2, 2019 at 4:29 PM Michal Simek <michal.simek@xilinx.com> wrote:
-> >> The reason for this patch is xilinx_uartps driver which create one dynamic
-> >> instance per IP with unique major and minor combinations. drv->nr is in
-> >> this case all the time setup to 1. That means that uport->line is all the
-> >> time setup to 0 and drv->tty_driver->name_base is doing shift in name to
-> >> for example ttyPS3.
-> >>
-> >> register_console() is looping over console_cmdline array and looking for
-> >> proper name/index combination which is in our case ttyPS/3.
-> >> That's why every instance of driver needs to be registered with proper
-> >> combination of name/number (ttyPS/3). Using uport->line is doing
-> >> registration with ttyPS/0 which is wrong that's why proper console index
-> >> should be used which is in cons->index field.
-> >>
-> >> Also it is visible that recording console should be done based on
-> >> information about console not about the port but in most cases numbers are
-> >> the same and xilinx_uartps is only one exception now.
-> >>
-> >> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
-> >
-> > This is now commit 91daae03188e0dd1 ("serial: core: Use cons->index
-> > for preferred console registration") in tty-next.
-> >
-> > This has been bisected to break the serial console on (at least)
-> > r8a7791/koelsch and r8a7795/h3-salvator-xs.
-> >
-> > The line "printk: console [ttySC0] enabled" is no longer printed.
-> > The system continues booting without any serial console output, and the
-> > login prompt never appears on the serial console.
-> >
-> > Reverting this commit fixes the issue.
+On Tue, 15 Oct 2019 at 11:44, Suzuki K Poulose <suzuki.poulose@arm.com> wrote:
 >
-> Sorry for trouble with this patch. Can you please point me to dts files
-> for these boards and also what's the value you have in uport->line and
+>
+>
+> On 14/10/2019 17:57, Ard Biesheuvel wrote:
+> > On Mon, 14 Oct 2019 at 17:50, Dave P Martin <Dave.Martin@arm.com> wrote:
+> >>
+> >> On Mon, Oct 14, 2019 at 04:45:40PM +0100, Suzuki K Poulose wrote:
+> >>>
+> >>>
+> >>> On 14/10/2019 15:52, Dave Martin wrote:
+> >>>> On Fri, Oct 11, 2019 at 06:28:43PM +0100, Suzuki K Poulose wrote:
+> >>>>>
+> >>>>>
+> >>>>> On 11/10/2019 15:21, Dave Martin wrote:
+> >>>>>> On Fri, Oct 11, 2019 at 01:13:18PM +0100, Suzuki K Poulose wrote: > Hi Dave
+> >>>>>>>
+> >>>>>>> On 11/10/2019 12:36, Dave Martin wrote:
+> >>>>>>>> On Thu, Oct 10, 2019 at 06:15:15PM +0100, Suzuki K Poulose wrote:
+> >>>>>>>>> The NO_FPSIMD capability is defined with scope SYSTEM, which implies
+> >>>>>>>>> that the "absence" of FP/SIMD on at least one CPU is detected only
+> >>>>>>>>> after all the SMP CPUs are brought up. However, we use the status
+> >>>>>>>>> of this capability for every context switch. So, let us change
+> >>>>>>>>> the scop to LOCAL_CPU to allow the detection of this capability
+> >>>>>>>>> as and when the first CPU without FP is brought up.
+> >>>>>>>>>
+> >>>>>>>>> Also, the current type allows hotplugged CPU to be brought up without
+> >>>>>>>>> FP/SIMD when all the current CPUs have FP/SIMD and we have the userspace
+> >>>>>>>>> up. Fix both of these issues by changing the capability to
+> >>>>>>>>> BOOT_RESTRICTED_LOCAL_CPU_FEATURE.
+> >>>>>>>>>
+> >>>>>>>>> Fixes: 82e0191a1aa11abf ("arm64: Support systems without FP/ASIMD")
+> >>>>>>>>> Cc: Will Deacon <will@kernel.org>
+> >>>>>>>>> Cc: Mark Rutland <mark.rutland@arm.com>
+> >>>>>>>>> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> >>>>>>>>> Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+> >>>>>>>>> ---
+> >>>>>>>>>    arch/arm64/kernel/cpufeature.c | 2 +-
+> >>>>>>>>>    1 file changed, 1 insertion(+), 1 deletion(-)
+> >>>>>>>>>
+> >>>>>>>>> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+> >>>>>>>>> index 9323bcc40a58..0f9eace6c64b 100644
+> >>>>>>>>> --- a/arch/arm64/kernel/cpufeature.c
+> >>>>>>>>> +++ b/arch/arm64/kernel/cpufeature.c
+> >>>>>>>>> @@ -1361,7 +1361,7 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
+> >>>>>>>>>         {
+> >>>>>>>>>                 /* FP/SIMD is not implemented */
+> >>>>>>>>>                 .capability = ARM64_HAS_NO_FPSIMD,
+> >>>>>>>>> -              .type = ARM64_CPUCAP_SYSTEM_FEATURE,
+> >>>>>>>>> +              .type = ARM64_CPUCAP_BOOT_RESTRICTED_CPU_LOCAL_FEATURE,
+> >>>>>>>>
+> >>>>>>>> ARM64_HAS_NO_FPSIMD is really a disability, not a capability.
+> >>>>>>>>
+> >>>>>>>> Although we have other things that smell like this (CPU errata for
+> >>>>>>>> example), I wonder whether inverting the meaning in the case would
+> >>>>>>>> make the situation easier to understand.
+> >>>>>>>
+> >>>>>>> Yes, it is indeed a disability, more on that below.
+> >>>>>>>
+> >>>>>>>>
+> >>>>>>>> So, we'd have ARM64_HAS_FPSIMD, with a minimum (signed) feature field
+> >>>>>>>> value of 0.  Then this just looks like an ARM64_CPUCAP_SYSTEM_FEATURE
+> >>>>>>>> IIUC.  We'd just need to invert the sense of the check in
+> >>>>>>>> system_supports_fpsimd().
+> >>>>>>>
+> >>>>>>> This is particularly something we want to avoid with this patch. We want
+> >>>>>>> to make sure that we have the up-to-date status of the disability right
+> >>>>>>> when it happens. i.e, a CPU without FP/SIMD is brought up. With SYSTEM_FEATURE
+> >>>>>>> you have to wait until we bring all the CPUs up. Also, for HAS_FPSIMD,
+> >>>>>>> you must wait until all the CPUs are up, unlike the negated capability.
+> >>>>>>
+> >>>>>> I don't see why waiting for the random defective early CPU to come up is
+> >>>>>> better than waiting for all the early CPUs to come up and then deciding.
+> >>>>>>
+> >>>>>> Kernel-mode NEON aside, the status of this cap should not matter until
+> >>>>>> we enter userspace for the first time.
+> >>>>>>
+> >>>>>> The only issue is if e.g., crypto drivers that can use kernel-mode NEON
+> >>>>>> probe for it before all early CPUs are up, and so cache the wrong
+> >>>>>> decision.  The current approach doesn't cope with that anyway AFAICT.
+> >>>>>
+> >>>>> This approach does in fact. With LOCAL_CPU scope, the moment a defective
+> >>>>> CPU turns up, we mark the "capability" and thus the kernel cannot use
+> >>>>> the neon then onwards, unlike the existing case where we have time till
+> >>>>> we boot all the CPUs (even when the boot CPU may be defective).
+> >>>>
+> >>>> I guess that makes sense.
+> >>>>
+> >>>> I'm now wondering what happens if anything tries to use kernel-mode NEON
+> >>>> before SVE is initialised -- which doesn't happen until cpufeatures
+> >>>> configures the system features.
+> >>>>
+> >>>> I don't think your proposed change makes anything worse here, but it may
+> >>>> need looking into.
+> >>>
+> >>> We could throw in a WARN_ON() in kernel_neon() to make sure that the SVE
+> >>> is initialised ?
+> >>
+> >> Could do, at least as an experiment.
+> >>
+> >> Ard, do you have any thoughts on this?
+> >>
+> >
+> > All in-kernel NEON code checks whether the NEON is usable, so I'd
+> > expect that check to return 'false' if it is too early in the boot for
+> > the NEON to be used at all.
+>
+> Ok. That implies, we need a check to make sure SVE set up is complete,
+> which we don't at the moment, as we default to assume FP/SIMD is available.
+>
+> "system_can_use_fpsimd()" instead of the "system_supports_fpsimd() where
+> the former should indicate:
+>
+>   system_supports_fpsimd() && sve_setup_complete()
+>
+> Where the sve_setup_complete() can itself be a static key, initialized
+> very early if we have !CONFIG_SVE. Otherwise, set from sve_setup().
+>
+>
+> Thoughts ?
 
-arch/arm/boot/dts/r8a7791-koelsch.dts
-arch/arm64/boot/dts/renesas/r8a7795-salvator-xs.dts
-
-> uport->cons->index?
-
-On r8a7791/koelsch:
-
-    Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
-    platform serial8250: uport->line = 0, uport->cons->index = -1
-    platform serial8250: uport->line = 1, uport->cons->index = -1
-    platform serial8250: uport->line = 2, uport->cons->index = -1
-    platform serial8250: uport->line = 3, uport->cons->index = -1
-    SuperH (H)SCI(F) driver initialized
-  * sh-sci e6e60000.serial: uport->line = 0, uport->cons->index = -1
-  * e6e60000.serial: ttySC0 at MMIO 0xe6e60000 (irq = 79, base_baud =
-0) is a scif
-    printk: console [ttySC0] enabled
-    sh-sci e6e68000.serial: uport->line = 1, uport->cons->index = 0
-    e6e68000.serial: ttySC1 at MMIO 0xe6e68000 (irq = 80, base_baud =
-0) is a scif
-
-On r8a7795/salvator-xs:
-
-    sh-sci e6550000.serial: uport->line = 1, uport->cons->index = -1
-    e6550000.serial: ttySC1 at MMIO 0xe6550000 (irq = 34, base_baud =
-0) is a hscif
-  * sh-sci e6e88000.serial: uport->line = 0, uport->cons->index = -1
-  * e6e88000.serial: ttySC0 at MMIO 0xe6e88000 (irq = 120, base_baud =
-0) is a scif
-    printk: console [ttySC0] enabled
-
-Actual serial consoles marked with *.
-
-There are no 8250 serial ports in the system, shmobile_defconfig just includes
-driver support for it.
-
-Thanks!
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Yes, that sounds reasonable. If we fold that into the implementation
+of may_use_simd(), we shouldn't need any other changes to the clients
+AFAICT
 
 _______________________________________________
 linux-arm-kernel mailing list
