@@ -2,155 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9A36D7DBB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 19:28:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F44BD7DBC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 19:29:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NtauA3urfk6/nD1cgVNo9lhaW0DY8Arc1o+AU9xKNl0=; b=nvliNETLpNnYJN
-	UeDdW9KCvxeGqu2SfOTglYB750Q8ThwulZWIikQexFkwj7wu1dC0Dd95BZvQ40vyHdwQ1gaYEmVBh
-	cXNndqQbPl2ePIxriYPdDu+SD7+6eRzwJW8vuMuoO2LowD6dn90yNFppH+lXexhU0GfuHGcgiFpkX
-	SLmqvxKC9MFgfoVDZwQtLnQzekzlbopBNskbeZ9ER+t66PGH2FEnr/fjrIbhFQEWCx9T5+FTxRHCT
-	n1d0z1qzUd3e67a+aT4EUPRqtejnqdlfiPfAvBU5IpiBS1lHE+XAGUpt/ijpj2kTeu9tsBK28AghV
-	LxCd4NyOIwSQREF2sUdA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=r8XcKV+iaKBAfBvNEDJCyOWuLK3fvkwyIW7Ftyks5mA=; b=Qw1lI7OPGg6YCM
+	hTEDBgsDmutJ1RzQvN12xYD9MyQpzTvmgnotXCSa09KJBMEbdXEOLm7wH/I0i+UMxR2h3iK8qSVRj
+	emptIBcLYYu5yGL/1Kx0/wvmk2QnRGm6RyajNINQVnewRBu/f0fIqC+GASVi5z3sr2XNnPukR54yv
+	xhsuxoebaJL0KJyDy1wYy0TZ8orWNCssWlNol4MeH6IZZrhOgSvKA0qVYkkIWTYuXDjlMeHH/3aYP
+	IkvvonRxH4zh10Yt/ACh0eXns08Zh0btrUwAtKWw1k4p7leX4YMQNF8bHQ5XlaAo97yzrJuOALV4Q
+	mr0m7dfMlRO+GR8EO5Pg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKQcp-0003vs-Pv; Tue, 15 Oct 2019 17:28:47 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKQcg-0003vP-OL
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 17:28:40 +0000
-Received: by mail-wr1-x443.google.com with SMTP id v8so24878550wrt.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 15 Oct 2019 10:28:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=os9QbobI/azFwebbSSsC+cAsD4UdKi+4CFDnUTNOSIM=;
- b=l6nrblgIbU24zNLPqZG/epYqsa51L5zQLG3cko19z4h1nobzFwePwrrfGuf8f7zU/o
- rTfdbu4epZo4g2TJZnzZppWSZg+CZoCNhOlOAeW4jpyw2o8cyZiZEPsQ/d2petEgmRPo
- ZVUSggCGs6sIkTr8SRClw5ok2tGE6xC/r4K1sLKIvJ9og1go8NlDnkPVIJYVGlUXAYmo
- qGTh686y0vobBsm4OXjnBC/HcQO9kKFIM6JwqAGh8bht6aNIulfk1ZUyzACv6I7o9NYC
- 6ELC8n4kqjCWCNOoqtbUHwvr8FnjEGKpTQcJHeQWoWIIFUgy6Uvwric3Xv/yuSoOD04B
- tyDg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=os9QbobI/azFwebbSSsC+cAsD4UdKi+4CFDnUTNOSIM=;
- b=Rh7D/fS2MwOsAZDT+X3PHTP7GUh2NRs5kS+4ipya8zGPv3xTRcG5o/43ybgF1Mc5wg
- GibLDAxM/f8q2MUmwMe5TWsgl7pHM8tqWwlPeJt82O4FKSBMt1Y/qQhyp4GFwdeVDO9X
- jaeKM930VJLsFhM+1KyYwN5EbxOtfyp7/dFvhzQvsFnVLvR6jeBwl4YX91C6lR4I7Lle
- fzeAvpI/lJTMtVH1LJlbGBgP1dlJpG6d68lXwLHMOo8KCOV9h89sXlDorpRbWhYVqceh
- Hh0qmO5uRxMQq8KeDLafzSsZ5jTA6wHcHCoUY+B88cU8KQDdC57szqf+/ex0j9sUFzkN
- 92bQ==
-X-Gm-Message-State: APjAAAWS2zllNZFiAJ+VLXzNTdFwQd8WyO4p1DxLMQtk/gnX1pV2Lk6L
- OxVyIHs7tcsXhbEkVnngYXg=
-X-Google-Smtp-Source: APXvYqzbpLksD7L6SiaxGgptV5DhQ/yPuA6f+CYEpTwS6TyWLO4tyGvCKPtrSa1/OgLxq4CPtNTY+w==
-X-Received: by 2002:adf:ecc7:: with SMTP id s7mr2293920wro.305.1571160516387; 
- Tue, 15 Oct 2019 10:28:36 -0700 (PDT)
-Received: from [10.67.50.53] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id x16sm16157023wrl.32.2019.10.15.10.28.33
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 15 Oct 2019 10:28:35 -0700 (PDT)
-Subject: Re: [PATCH v2 0/6] PAXB INTx support with proper model
-To: Srinath Mannam <srinath.mannam@broadcom.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>,
- Andy Shevchenko <andy.shevchenko@gmail.com>, Arnd Bergmann <arnd@arndb.de>
-References: <1566982488-9673-1-git-send-email-srinath.mannam@broadcom.com>
- <107116f2-a5ff-c545-1864-eb5885c4c60e@gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- mQGiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
- xGlkaOSDuu09rxuW+69Y2f1TzjFuGpBk4ysWOR85O2Nx8AJ6fYGCoeTbovrNlGT1M9obSFGQ
- X3IzRnWoqlfudjTO5TKoqkbOgpYqIo5n1QbEjCCwCwCg3DOH/4ug2AUUlcIT9/l3pGvoRJ0E
- AICDzi3l7pmC5IWn2n1mvP5247urtHFs/uusE827DDj3K8Upn2vYiOFMBhGsxAk6YKV6IP0d
- ZdWX6fqkJJlu9cSDvWtO1hXeHIfQIE/xcqvlRH783KrihLcsmnBqOiS6rJDO2x1eAgC8meAX
- SAgsrBhcgGl2Rl5gh/jkeA5ykwbxA/9u1eEuL70Qzt5APJmqVXR+kWvrqdBVPoUNy/tQ8mYc
- nzJJ63ng3tHhnwHXZOu8hL4nqwlYHRa9eeglXYhBqja4ZvIvCEqSmEukfivk+DlIgVoOAJbh
- qIWgvr3SIEuR6ayY3f5j0f2ejUMYlYYnKdiHXFlF9uXm1ELrb0YX4GMHz7QnRmxvcmlhbiBG
- YWluZWxsaSA8Zi5mYWluZWxsaUBnbWFpbC5jb20+iGYEExECACYCGyMGCwkIBwMCBBUCCAME
- FgIDAQIeAQIXgAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2DvCVAJ4u4/bPF4P3jxb4qEY8I2gS
- 6hG0gACffNWlqJ2T4wSSn+3o7CCZNd7SLSC5BA0ESM+4EhAQAL/o09boR9D3Vk1Tt7+gpYr3
- WQ6hgYVON905q2ndEoA2J0dQxJNRw3snabHDDzQBAcqOvdi7YidfBVdKi0wxHhSuRBfuOppu
- pdXkb7zxuPQuSveCLqqZWRQ+Cc2QgF7SBqgznbe6Ngout5qXY5Dcagk9LqFNGhJQzUGHAsIs
- hap1f0B1PoUyUNeEInV98D8Xd/edM3mhO9nRpUXRK9Bvt4iEZUXGuVtZLT52nK6Wv2EZ1TiT
- OiqZlf1P+vxYLBx9eKmabPdm3yjalhY8yr1S1vL0gSA/C6W1o/TowdieF1rWN/MYHlkpyj9c
- Rpc281gAO0AP3V1G00YzBEdYyi0gaJbCEQnq8Vz1vDXFxHzyhgGz7umBsVKmYwZgA8DrrB0M
- oaP35wuGR3RJcaG30AnJpEDkBYHznI2apxdcuTPOHZyEilIRrBGzDwGtAhldzlBoBwE3Z3MY
- 31TOpACu1ZpNOMysZ6xiE35pWkwc0KYm4hJA5GFfmWSN6DniimW3pmdDIiw4Ifcx8b3mFrRO
- BbDIW13E51j9RjbO/nAaK9ndZ5LRO1B/8Fwat7bLzmsCiEXOJY7NNpIEpkoNoEUfCcZwmLrU
- +eOTPzaF6drw6ayewEi5yzPg3TAT6FV3oBsNg3xlwU0gPK3v6gYPX5w9+ovPZ1/qqNfOrbsE
- FRuiSVsZQ5s3AAMFD/9XjlnnVDh9GX/r/6hjmr4U9tEsM+VQXaVXqZuHKaSmojOLUCP/YVQo
- 7IiYaNssCS4FCPe4yrL4FJJfJAsbeyDykMN7wAnBcOkbZ9BPJPNCbqU6dowLOiy8AuTYQ48m
- vIyQ4Ijnb6GTrtxIUDQeOBNuQC/gyyx3nbL/lVlHbxr4tb6YkhkO6shjXhQh7nQb33FjGO4P
- WU11Nr9i/qoV8QCo12MQEo244RRA6VMud06y/E449rWZFSTwGqb0FS0seTcYNvxt8PB2izX+
- HZA8SL54j479ubxhfuoTu5nXdtFYFj5Lj5x34LKPx7MpgAmj0H7SDhpFWF2FzcC1bjiW9mjW
- HaKaX23Awt97AqQZXegbfkJwX2Y53ufq8Np3e1542lh3/mpiGSilCsaTahEGrHK+lIusl6mz
- Joil+u3k01ofvJMK0ZdzGUZ/aPMZ16LofjFA+MNxWrZFrkYmiGdv+LG45zSlZyIvzSiG2lKy
- kuVag+IijCIom78P9jRtB1q1Q5lwZp2TLAJlz92DmFwBg1hyFzwDADjZ2nrDxKUiybXIgZp9
- aU2d++ptEGCVJOfEW4qpWCCLPbOT7XBr+g/4H3qWbs3j/cDDq7LuVYIe+wchy/iXEJaQVeTC
- y5arMQorqTFWlEOgRA8OP47L9knl9i4xuR0euV6DChDrguup2aJVU4hPBBgRAgAPAhsMBQJU
- X9LxBQkeXB3fAAoJEGFXmRW1Y3YOj4UAn3nrFLPZekMeqX5aD/aq/dsbXSfyAKC45Go0YyxV
- HGuUuzv+GKZ6nsysJ7kCDQRXG8fwARAA6q/pqBi5PjHcOAUgk2/2LR5LjjesK50bCaD4JuNc
- YDhFR7Vs108diBtsho3w8WRd9viOqDrhLJTroVckkk74OY8r+3t1E0Dd4wHWHQZsAeUvOwDM
- PQMqTUBFuMi6ydzTZpFA2wBR9x6ofl8Ax+zaGBcFrRlQnhsuXLnM1uuvS39+pmzIjasZBP2H
- UPk5ifigXcpelKmj6iskP3c8QN6x6GjUSmYx+xUfs/GNVSU1XOZn61wgPDbgINJd/THGdqiO
- iJxCLuTMqlSsmh1+E1dSdfYkCb93R/0ZHvMKWlAx7MnaFgBfsG8FqNtZu3PCLfizyVYYjXbV
- WO1A23riZKqwrSJAATo5iTS65BuYxrFsFNPrf7TitM8E76BEBZk0OZBvZxMuOs6Z1qI8YKVK
- UrHVGFq3NbuPWCdRul9SX3VfOunr9Gv0GABnJ0ET+K7nspax0xqq7zgnM71QEaiaH17IFYGS
- sG34V7Wo3vyQzsk7qLf9Ajno0DhJ+VX43g8+AjxOMNVrGCt9RNXSBVpyv2AMTlWCdJ5KI6V4
- KEzWM4HJm7QlNKE6RPoBxJVbSQLPd9St3h7mxLcne4l7NK9eNgNnneT7QZL8fL//s9K8Ns1W
- t60uQNYvbhKDG7+/yLcmJgjF74XkGvxCmTA1rW2bsUriM533nG9gAOUFQjURkwI8jvMAEQEA
- AYkCaAQYEQIACQUCVxvH8AIbAgIpCRBhV5kVtWN2DsFdIAQZAQIABgUCVxvH8AAKCRCH0Jac
- RAcHBIkHD/9nmfog7X2ZXMzL9ktT++7x+W/QBrSTCTmq8PK+69+INN1ZDOrY8uz6htfTLV9+
- e2W6G8/7zIvODuHk7r+yQ585XbplgP0V5Xc8iBHdBgXbqnY5zBrcH+Q/oQ2STalEvaGHqNoD
- UGyLQ/fiKoLZTPMur57Fy1c9rTuKiSdMgnT0FPfWVDfpR2Ds0gpqWePlRuRGOoCln5GnREA/
- 2MW2rWf+CO9kbIR+66j8b4RUJqIK3dWn9xbENh/aqxfonGTCZQ2zC4sLd25DQA4w1itPo+f5
- V/SQxuhnlQkTOCdJ7b/mby/pNRz1lsLkjnXueLILj7gNjwTabZXYtL16z24qkDTI1x3g98R/
- xunb3/fQwR8FY5/zRvXJq5us/nLvIvOmVwZFkwXc+AF+LSIajqQz9XbXeIP/BDjlBNXRZNdo
- dVuSU51ENcMcilPr2EUnqEAqeczsCGpnvRCLfVQeSZr2L9N4svNhhfPOEscYhhpHTh0VPyxI
- pPBNKq+byuYPMyk3nj814NKhImK0O4gTyCK9b+gZAVvQcYAXvSouCnTZeJRrNHJFTgTgu6E0
- caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
- 6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9Za0Dx0yyp44iD1OvHtkEI
- M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <88449493-4a32-1eda-434d-317b149173eb@gmail.com>
-Date: Tue, 15 Oct 2019 10:28:24 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1iKQdB-0004AY-DY; Tue, 15 Oct 2019 17:29:09 +0000
+Received: from muru.com ([72.249.23.125])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iKQcv-00047e-4u
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 17:28:56 +0000
+Received: from atomide.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTPS id 8EFDE8108;
+ Tue, 15 Oct 2019 17:29:20 +0000 (UTC)
+Date: Tue, 15 Oct 2019 10:28:43 -0700
+From: Tony Lindgren <tony@atomide.com>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>, Tero Kristo <t-kristo@ti.com>
+Subject: Re: [PATCH 05/25] crypto: omap - switch to skcipher API
+Message-ID: <20191015172843.GB5610@atomide.com>
+References: <20191014121910.7264-1-ard.biesheuvel@linaro.org>
+ <20191014121910.7264-6-ard.biesheuvel@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <107116f2-a5ff-c545-1864-eb5885c4c60e@gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191014121910.7264-6-ard.biesheuvel@linaro.org>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_102838_817853_72D83E13 
-X-CRM114-Status: GOOD (  19.40  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191015_102853_280896_B111EE47 
+X-CRM114-Status: GOOD (  21.64  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ no trust [72.249.23.125 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -162,67 +60,898 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pci@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org
+Cc: Herbert Xu <herbert@gondor.apana.org.au>,
+ Eric Biggers <ebiggers@google.com>, linux-crypto@vger.kernel.org,
+ linux-omap@vger.kernel.org, "David S. Miller" <davem@davemloft.net>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 9/4/19 10:16 AM, Florian Fainelli wrote:
-> On 8/28/19 1:54 AM, Srinath Mannam wrote:
->> This patch series adds PCIe legacy interrupt (INTx) support to the iProc
->> PCIe driver by modeling it with its own IRQ domain. All 4 interrupts INTA,
->> INTB, INTC, INTD share the same interrupt line connected to the GIC
->> in the system. This is now modeled by using its own IRQ domain.
->>
->> Also update all relevant devicetree files to adapt to the new model.
->>
->> This patch set is based on Linux-5.2-rc4.
->>
->> Changes from v1:
->>   - Addressed Rob, Lorenzo, Arnd's comments
->>     - Used child node for interrupt controller.
->>   - Addressed Andy Shevchenko's comments
->>     - Replaced while loop with do-while.
+* Ard Biesheuvel <ard.biesheuvel@linaro.org> [191014 12:20]:
+> Commit 7a7ffe65c8c5 ("crypto: skcipher - Add top-level skcipher interface")
+> dated 20 august 2015 introduced the new skcipher API which is supposed to
+> replace both blkcipher and ablkcipher. While all consumers of the API have
+> been converted long ago, some producers of the ablkcipher remain, forcing
+> us to keep the ablkcipher support routines alive, along with the matching
+> code to expose [a]blkciphers via the skcipher API.
 > 
-> Lorenzo, Bjorn, if you are good with the binding and PCI host driver
-> changes, you can take patches 1-2 through your tree, and I will queue up
-> the others through the Broadcom ARM SoC pull requests. If not, please
-> feel free to add a:
-> 
-> Acked-by: Florian Fainelli <f.fainelli@gmail.com>
+> So switch this driver to the skcipher API, allowing us to finally drop the
+> blkcipher code in the near future.
 
-I am starting to queue Device Tree patches for 5.5 and I need to know
-whether I should be picking up patches 2 through 6, or if you are going
-to do this, thank you.
+Adding Tero to loop as I think he was the last one to update this code.
 
-> 
->>
->> Ray Jui (6):
->>   dt-bindings: pci: Update iProc PCI binding for INTx support
->>   PCI: iproc: Add INTx support with better modeling
->>   arm: dts: Change PCIe INTx mapping for Cygnus
->>   arm: dts: Change PCIe INTx mapping for NSP
->>   arm: dts: Change PCIe INTx mapping for HR2
->>   arm64: dts: Change PCIe INTx mapping for NS2
->>
->>  .../devicetree/bindings/pci/brcm,iproc-pcie.txt    |  48 ++++++++--
->>  arch/arm/boot/dts/bcm-cygnus.dtsi                  |  30 ++++++-
->>  arch/arm/boot/dts/bcm-hr2.dtsi                     |  30 ++++++-
->>  arch/arm/boot/dts/bcm-nsp.dtsi                     |  45 ++++++++--
->>  arch/arm64/boot/dts/broadcom/northstar2/ns2.dtsi   |  28 +++++-
->>  drivers/pci/controller/pcie-iproc.c                | 100 ++++++++++++++++++++-
->>  drivers/pci/controller/pcie-iproc.h                |   6 ++
->>  7 files changed, 260 insertions(+), 27 deletions(-)
->>
-> 
-> 
+Regards,
 
+Tony
 
--- 
-Florian
+> Cc: Tony Lindgren <tony@atomide.com>
+> Cc: linux-omap@vger.kernel.org
+> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> ---
+>  drivers/crypto/omap-aes.c | 208 +++++++++---------
+>  drivers/crypto/omap-aes.h |   4 +-
+>  drivers/crypto/omap-des.c | 232 +++++++++-----------
+>  3 files changed, 206 insertions(+), 238 deletions(-)
+> 
+> diff --git a/drivers/crypto/omap-aes.c b/drivers/crypto/omap-aes.c
+> index 2f53fbb74100..329fddbe8a39 100644
+> --- a/drivers/crypto/omap-aes.c
+> +++ b/drivers/crypto/omap-aes.c
+> @@ -142,8 +142,8 @@ int omap_aes_write_ctrl(struct omap_aes_dev *dd)
+>  			__le32_to_cpu(dd->ctx->key[i]));
+>  	}
+>  
+> -	if ((dd->flags & (FLAGS_CBC | FLAGS_CTR)) && dd->req->info)
+> -		omap_aes_write_n(dd, AES_REG_IV(dd, 0), dd->req->info, 4);
+> +	if ((dd->flags & (FLAGS_CBC | FLAGS_CTR)) && dd->req->iv)
+> +		omap_aes_write_n(dd, AES_REG_IV(dd, 0), (void *)dd->req->iv, 4);
+>  
+>  	if ((dd->flags & (FLAGS_GCM)) && dd->aead_req->iv) {
+>  		rctx = aead_request_ctx(dd->aead_req);
+> @@ -382,11 +382,11 @@ int omap_aes_crypt_dma_start(struct omap_aes_dev *dd)
+>  
+>  static void omap_aes_finish_req(struct omap_aes_dev *dd, int err)
+>  {
+> -	struct ablkcipher_request *req = dd->req;
+> +	struct skcipher_request *req = dd->req;
+>  
+>  	pr_debug("err: %d\n", err);
+>  
+> -	crypto_finalize_ablkcipher_request(dd->engine, req, err);
+> +	crypto_finalize_skcipher_request(dd->engine, req, err);
+>  
+>  	pm_runtime_mark_last_busy(dd->dev);
+>  	pm_runtime_put_autosuspend(dd->dev);
+> @@ -403,10 +403,10 @@ int omap_aes_crypt_dma_stop(struct omap_aes_dev *dd)
+>  }
+>  
+>  static int omap_aes_handle_queue(struct omap_aes_dev *dd,
+> -				 struct ablkcipher_request *req)
+> +				 struct skcipher_request *req)
+>  {
+>  	if (req)
+> -		return crypto_transfer_ablkcipher_request_to_engine(dd->engine, req);
+> +		return crypto_transfer_skcipher_request_to_engine(dd->engine, req);
+>  
+>  	return 0;
+>  }
+> @@ -414,10 +414,10 @@ static int omap_aes_handle_queue(struct omap_aes_dev *dd,
+>  static int omap_aes_prepare_req(struct crypto_engine *engine,
+>  				void *areq)
+>  {
+> -	struct ablkcipher_request *req = container_of(areq, struct ablkcipher_request, base);
+> -	struct omap_aes_ctx *ctx = crypto_ablkcipher_ctx(
+> -			crypto_ablkcipher_reqtfm(req));
+> -	struct omap_aes_reqctx *rctx = ablkcipher_request_ctx(req);
+> +	struct skcipher_request *req = container_of(areq, struct skcipher_request, base);
+> +	struct omap_aes_ctx *ctx = crypto_skcipher_ctx(
+> +			crypto_skcipher_reqtfm(req));
+> +	struct omap_aes_reqctx *rctx = skcipher_request_ctx(req);
+>  	struct omap_aes_dev *dd = rctx->dd;
+>  	int ret;
+>  	u16 flags;
+> @@ -427,8 +427,8 @@ static int omap_aes_prepare_req(struct crypto_engine *engine,
+>  
+>  	/* assign new request to device */
+>  	dd->req = req;
+> -	dd->total = req->nbytes;
+> -	dd->total_save = req->nbytes;
+> +	dd->total = req->cryptlen;
+> +	dd->total_save = req->cryptlen;
+>  	dd->in_sg = req->src;
+>  	dd->out_sg = req->dst;
+>  	dd->orig_out = req->dst;
+> @@ -469,8 +469,8 @@ static int omap_aes_prepare_req(struct crypto_engine *engine,
+>  static int omap_aes_crypt_req(struct crypto_engine *engine,
+>  			      void *areq)
+>  {
+> -	struct ablkcipher_request *req = container_of(areq, struct ablkcipher_request, base);
+> -	struct omap_aes_reqctx *rctx = ablkcipher_request_ctx(req);
+> +	struct skcipher_request *req = container_of(areq, struct skcipher_request, base);
+> +	struct omap_aes_reqctx *rctx = skcipher_request_ctx(req);
+>  	struct omap_aes_dev *dd = rctx->dd;
+>  
+>  	if (!dd)
+> @@ -505,26 +505,26 @@ static void omap_aes_done_task(unsigned long data)
+>  	pr_debug("exit\n");
+>  }
+>  
+> -static int omap_aes_crypt(struct ablkcipher_request *req, unsigned long mode)
+> +static int omap_aes_crypt(struct skcipher_request *req, unsigned long mode)
+>  {
+> -	struct omap_aes_ctx *ctx = crypto_ablkcipher_ctx(
+> -			crypto_ablkcipher_reqtfm(req));
+> -	struct omap_aes_reqctx *rctx = ablkcipher_request_ctx(req);
+> +	struct omap_aes_ctx *ctx = crypto_skcipher_ctx(
+> +			crypto_skcipher_reqtfm(req));
+> +	struct omap_aes_reqctx *rctx = skcipher_request_ctx(req);
+>  	struct omap_aes_dev *dd;
+>  	int ret;
+>  
+> -	pr_debug("nbytes: %d, enc: %d, cbc: %d\n", req->nbytes,
+> +	pr_debug("nbytes: %d, enc: %d, cbc: %d\n", req->cryptlen,
+>  		  !!(mode & FLAGS_ENCRYPT),
+>  		  !!(mode & FLAGS_CBC));
+>  
+> -	if (req->nbytes < aes_fallback_sz) {
+> +	if (req->cryptlen < aes_fallback_sz) {
+>  		SYNC_SKCIPHER_REQUEST_ON_STACK(subreq, ctx->fallback);
+>  
+>  		skcipher_request_set_sync_tfm(subreq, ctx->fallback);
+>  		skcipher_request_set_callback(subreq, req->base.flags, NULL,
+>  					      NULL);
+>  		skcipher_request_set_crypt(subreq, req->src, req->dst,
+> -					   req->nbytes, req->info);
+> +					   req->cryptlen, req->iv);
+>  
+>  		if (mode & FLAGS_ENCRYPT)
+>  			ret = crypto_skcipher_encrypt(subreq);
+> @@ -545,10 +545,10 @@ static int omap_aes_crypt(struct ablkcipher_request *req, unsigned long mode)
+>  
+>  /* ********************** ALG API ************************************ */
+>  
+> -static int omap_aes_setkey(struct crypto_ablkcipher *tfm, const u8 *key,
+> +static int omap_aes_setkey(struct crypto_skcipher *tfm, const u8 *key,
+>  			   unsigned int keylen)
+>  {
+> -	struct omap_aes_ctx *ctx = crypto_ablkcipher_ctx(tfm);
+> +	struct omap_aes_ctx *ctx = crypto_skcipher_ctx(tfm);
+>  	int ret;
+>  
+>  	if (keylen != AES_KEYSIZE_128 && keylen != AES_KEYSIZE_192 &&
+> @@ -571,32 +571,32 @@ static int omap_aes_setkey(struct crypto_ablkcipher *tfm, const u8 *key,
+>  	return 0;
+>  }
+>  
+> -static int omap_aes_ecb_encrypt(struct ablkcipher_request *req)
+> +static int omap_aes_ecb_encrypt(struct skcipher_request *req)
+>  {
+>  	return omap_aes_crypt(req, FLAGS_ENCRYPT);
+>  }
+>  
+> -static int omap_aes_ecb_decrypt(struct ablkcipher_request *req)
+> +static int omap_aes_ecb_decrypt(struct skcipher_request *req)
+>  {
+>  	return omap_aes_crypt(req, 0);
+>  }
+>  
+> -static int omap_aes_cbc_encrypt(struct ablkcipher_request *req)
+> +static int omap_aes_cbc_encrypt(struct skcipher_request *req)
+>  {
+>  	return omap_aes_crypt(req, FLAGS_ENCRYPT | FLAGS_CBC);
+>  }
+>  
+> -static int omap_aes_cbc_decrypt(struct ablkcipher_request *req)
+> +static int omap_aes_cbc_decrypt(struct skcipher_request *req)
+>  {
+>  	return omap_aes_crypt(req, FLAGS_CBC);
+>  }
+>  
+> -static int omap_aes_ctr_encrypt(struct ablkcipher_request *req)
+> +static int omap_aes_ctr_encrypt(struct skcipher_request *req)
+>  {
+>  	return omap_aes_crypt(req, FLAGS_ENCRYPT | FLAGS_CTR);
+>  }
+>  
+> -static int omap_aes_ctr_decrypt(struct ablkcipher_request *req)
+> +static int omap_aes_ctr_decrypt(struct skcipher_request *req)
+>  {
+>  	return omap_aes_crypt(req, FLAGS_CTR);
+>  }
+> @@ -606,10 +606,10 @@ static int omap_aes_prepare_req(struct crypto_engine *engine,
+>  static int omap_aes_crypt_req(struct crypto_engine *engine,
+>  			      void *req);
+>  
+> -static int omap_aes_cra_init(struct crypto_tfm *tfm)
+> +static int omap_aes_init_tfm(struct crypto_skcipher *tfm)
+>  {
+> -	const char *name = crypto_tfm_alg_name(tfm);
+> -	struct omap_aes_ctx *ctx = crypto_tfm_ctx(tfm);
+> +	const char *name = crypto_tfm_alg_name(&tfm->base);
+> +	struct omap_aes_ctx *ctx = crypto_skcipher_ctx(tfm);
+>  	struct crypto_sync_skcipher *blk;
+>  
+>  	blk = crypto_alloc_sync_skcipher(name, 0, CRYPTO_ALG_NEED_FALLBACK);
+> @@ -618,7 +618,7 @@ static int omap_aes_cra_init(struct crypto_tfm *tfm)
+>  
+>  	ctx->fallback = blk;
+>  
+> -	tfm->crt_ablkcipher.reqsize = sizeof(struct omap_aes_reqctx);
+> +	crypto_skcipher_set_reqsize(tfm, sizeof(struct omap_aes_reqctx));
+>  
+>  	ctx->enginectx.op.prepare_request = omap_aes_prepare_req;
+>  	ctx->enginectx.op.unprepare_request = NULL;
+> @@ -657,9 +657,9 @@ static int omap_aes_gcm_cra_init(struct crypto_aead *tfm)
+>  	return 0;
+>  }
+>  
+> -static void omap_aes_cra_exit(struct crypto_tfm *tfm)
+> +static void omap_aes_exit_tfm(struct crypto_skcipher *tfm)
+>  {
+> -	struct omap_aes_ctx *ctx = crypto_tfm_ctx(tfm);
+> +	struct omap_aes_ctx *ctx = crypto_skcipher_ctx(tfm);
+>  
+>  	if (ctx->fallback)
+>  		crypto_free_sync_skcipher(ctx->fallback);
+> @@ -671,7 +671,10 @@ static void omap_aes_gcm_cra_exit(struct crypto_aead *tfm)
+>  {
+>  	struct omap_aes_ctx *ctx = crypto_aead_ctx(tfm);
+>  
+> -	omap_aes_cra_exit(crypto_aead_tfm(tfm));
+> +	if (ctx->fallback)
+> +		crypto_free_sync_skcipher(ctx->fallback);
+> +
+> +	ctx->fallback = NULL;
+>  
+>  	if (ctx->ctr)
+>  		crypto_free_skcipher(ctx->ctr);
+> @@ -679,78 +682,68 @@ static void omap_aes_gcm_cra_exit(struct crypto_aead *tfm)
+>  
+>  /* ********************** ALGS ************************************ */
+>  
+> -static struct crypto_alg algs_ecb_cbc[] = {
+> +static struct skcipher_alg algs_ecb_cbc[] = {
+>  {
+> -	.cra_name		= "ecb(aes)",
+> -	.cra_driver_name	= "ecb-aes-omap",
+> -	.cra_priority		= 300,
+> -	.cra_flags		= CRYPTO_ALG_TYPE_ABLKCIPHER |
+> -				  CRYPTO_ALG_KERN_DRIVER_ONLY |
+> -				  CRYPTO_ALG_ASYNC | CRYPTO_ALG_NEED_FALLBACK,
+> -	.cra_blocksize		= AES_BLOCK_SIZE,
+> -	.cra_ctxsize		= sizeof(struct omap_aes_ctx),
+> -	.cra_alignmask		= 0,
+> -	.cra_type		= &crypto_ablkcipher_type,
+> -	.cra_module		= THIS_MODULE,
+> -	.cra_init		= omap_aes_cra_init,
+> -	.cra_exit		= omap_aes_cra_exit,
+> -	.cra_u.ablkcipher = {
+> -		.min_keysize	= AES_MIN_KEY_SIZE,
+> -		.max_keysize	= AES_MAX_KEY_SIZE,
+> -		.setkey		= omap_aes_setkey,
+> -		.encrypt	= omap_aes_ecb_encrypt,
+> -		.decrypt	= omap_aes_ecb_decrypt,
+> -	}
+> +	.base.cra_name		= "ecb(aes)",
+> +	.base.cra_driver_name	= "ecb-aes-omap",
+> +	.base.cra_priority	= 300,
+> +	.base.cra_flags		= CRYPTO_ALG_KERN_DRIVER_ONLY |
+> +				  CRYPTO_ALG_ASYNC |
+> +				  CRYPTO_ALG_NEED_FALLBACK,
+> +	.base.cra_blocksize	= AES_BLOCK_SIZE,
+> +	.base.cra_ctxsize	= sizeof(struct omap_aes_ctx),
+> +	.base.cra_module	= THIS_MODULE,
+> +
+> +	.min_keysize		= AES_MIN_KEY_SIZE,
+> +	.max_keysize		= AES_MAX_KEY_SIZE,
+> +	.setkey			= omap_aes_setkey,
+> +	.encrypt		= omap_aes_ecb_encrypt,
+> +	.decrypt		= omap_aes_ecb_decrypt,
+> +	.init			= omap_aes_init_tfm,
+> +	.exit			= omap_aes_exit_tfm,
+>  },
+>  {
+> -	.cra_name		= "cbc(aes)",
+> -	.cra_driver_name	= "cbc-aes-omap",
+> -	.cra_priority		= 300,
+> -	.cra_flags		= CRYPTO_ALG_TYPE_ABLKCIPHER |
+> -				  CRYPTO_ALG_KERN_DRIVER_ONLY |
+> -				  CRYPTO_ALG_ASYNC | CRYPTO_ALG_NEED_FALLBACK,
+> -	.cra_blocksize		= AES_BLOCK_SIZE,
+> -	.cra_ctxsize		= sizeof(struct omap_aes_ctx),
+> -	.cra_alignmask		= 0,
+> -	.cra_type		= &crypto_ablkcipher_type,
+> -	.cra_module		= THIS_MODULE,
+> -	.cra_init		= omap_aes_cra_init,
+> -	.cra_exit		= omap_aes_cra_exit,
+> -	.cra_u.ablkcipher = {
+> -		.min_keysize	= AES_MIN_KEY_SIZE,
+> -		.max_keysize	= AES_MAX_KEY_SIZE,
+> -		.ivsize		= AES_BLOCK_SIZE,
+> -		.setkey		= omap_aes_setkey,
+> -		.encrypt	= omap_aes_cbc_encrypt,
+> -		.decrypt	= omap_aes_cbc_decrypt,
+> -	}
+> +	.base.cra_name		= "cbc(aes)",
+> +	.base.cra_driver_name	= "cbc-aes-omap",
+> +	.base.cra_priority	= 300,
+> +	.base.cra_flags		= CRYPTO_ALG_KERN_DRIVER_ONLY |
+> +				  CRYPTO_ALG_ASYNC |
+> +				  CRYPTO_ALG_NEED_FALLBACK,
+> +	.base.cra_blocksize	= AES_BLOCK_SIZE,
+> +	.base.cra_ctxsize	= sizeof(struct omap_aes_ctx),
+> +	.base.cra_module	= THIS_MODULE,
+> +
+> +	.min_keysize		= AES_MIN_KEY_SIZE,
+> +	.max_keysize		= AES_MAX_KEY_SIZE,
+> +	.setkey			= omap_aes_setkey,
+> +	.encrypt		= omap_aes_cbc_encrypt,
+> +	.decrypt		= omap_aes_cbc_decrypt,
+> +	.init			= omap_aes_init_tfm,
+> +	.exit			= omap_aes_exit_tfm,
+>  }
+>  };
+>  
+> -static struct crypto_alg algs_ctr[] = {
+> +static struct skcipher_alg algs_ctr[] = {
+>  {
+> -	.cra_name		= "ctr(aes)",
+> -	.cra_driver_name	= "ctr-aes-omap",
+> -	.cra_priority		= 300,
+> -	.cra_flags		= CRYPTO_ALG_TYPE_ABLKCIPHER |
+> -				  CRYPTO_ALG_KERN_DRIVER_ONLY |
+> -				  CRYPTO_ALG_ASYNC | CRYPTO_ALG_NEED_FALLBACK,
+> -	.cra_blocksize		= AES_BLOCK_SIZE,
+> -	.cra_ctxsize		= sizeof(struct omap_aes_ctx),
+> -	.cra_alignmask		= 0,
+> -	.cra_type		= &crypto_ablkcipher_type,
+> -	.cra_module		= THIS_MODULE,
+> -	.cra_init		= omap_aes_cra_init,
+> -	.cra_exit		= omap_aes_cra_exit,
+> -	.cra_u.ablkcipher = {
+> -		.min_keysize	= AES_MIN_KEY_SIZE,
+> -		.max_keysize	= AES_MAX_KEY_SIZE,
+> -		.ivsize		= AES_BLOCK_SIZE,
+> -		.setkey		= omap_aes_setkey,
+> -		.encrypt	= omap_aes_ctr_encrypt,
+> -		.decrypt	= omap_aes_ctr_decrypt,
+> -	}
+> -} ,
+> +	.base.cra_name		= "ctr(aes)",
+> +	.base.cra_driver_name	= "ctr-aes-omap",
+> +	.base.cra_priority	= 300,
+> +	.base.cra_flags		= CRYPTO_ALG_KERN_DRIVER_ONLY |
+> +				  CRYPTO_ALG_ASYNC |
+> +				  CRYPTO_ALG_NEED_FALLBACK,
+> +	.base.cra_blocksize	= AES_BLOCK_SIZE,
+> +	.base.cra_ctxsize	= sizeof(struct omap_aes_ctx),
+> +	.base.cra_module	= THIS_MODULE,
+> +
+> +	.min_keysize		= AES_MIN_KEY_SIZE,
+> +	.max_keysize		= AES_MAX_KEY_SIZE,
+> +	.ivsize			= AES_BLOCK_SIZE,
+> +	.setkey			= omap_aes_setkey,
+> +	.encrypt		= omap_aes_ctr_encrypt,
+> +	.decrypt		= omap_aes_ctr_decrypt,
+> +	.init			= omap_aes_init_tfm,
+> +	.exit			= omap_aes_exit_tfm,
+> +}
+>  };
+>  
+>  static struct omap_aes_algs_info omap_aes_algs_info_ecb_cbc[] = {
+> @@ -1121,7 +1114,7 @@ static int omap_aes_probe(struct platform_device *pdev)
+>  {
+>  	struct device *dev = &pdev->dev;
+>  	struct omap_aes_dev *dd;
+> -	struct crypto_alg *algp;
+> +	struct skcipher_alg *algp;
+>  	struct aead_alg *aalg;
+>  	struct resource res;
+>  	int err = -ENOMEM, i, j, irq = -1;
+> @@ -1215,9 +1208,9 @@ static int omap_aes_probe(struct platform_device *pdev)
+>  			for (j = 0; j < dd->pdata->algs_info[i].size; j++) {
+>  				algp = &dd->pdata->algs_info[i].algs_list[j];
+>  
+> -				pr_debug("reg alg: %s\n", algp->cra_name);
+> +				pr_debug("reg alg: %s\n", algp->base.cra_name);
+>  
+> -				err = crypto_register_alg(algp);
+> +				err = crypto_register_skcipher(algp);
+>  				if (err)
+>  					goto err_algs;
+>  
+> @@ -1230,9 +1223,8 @@ static int omap_aes_probe(struct platform_device *pdev)
+>  	    !dd->pdata->aead_algs_info->registered) {
+>  		for (i = 0; i < dd->pdata->aead_algs_info->size; i++) {
+>  			aalg = &dd->pdata->aead_algs_info->algs_list[i];
+> -			algp = &aalg->base;
+>  
+> -			pr_debug("reg alg: %s\n", algp->cra_name);
+> +			pr_debug("reg alg: %s\n", aalg->base.cra_name);
+>  
+>  			err = crypto_register_aead(aalg);
+>  			if (err)
+> @@ -1257,7 +1249,7 @@ static int omap_aes_probe(struct platform_device *pdev)
+>  err_algs:
+>  	for (i = dd->pdata->algs_info_size - 1; i >= 0; i--)
+>  		for (j = dd->pdata->algs_info[i].registered - 1; j >= 0; j--)
+> -			crypto_unregister_alg(
+> +			crypto_unregister_skcipher(
+>  					&dd->pdata->algs_info[i].algs_list[j]);
+>  
+>  err_engine:
+> @@ -1290,7 +1282,7 @@ static int omap_aes_remove(struct platform_device *pdev)
+>  
+>  	for (i = dd->pdata->algs_info_size - 1; i >= 0; i--)
+>  		for (j = dd->pdata->algs_info[i].registered - 1; j >= 0; j--)
+> -			crypto_unregister_alg(
+> +			crypto_unregister_skcipher(
+>  					&dd->pdata->algs_info[i].algs_list[j]);
+>  
+>  	for (i = dd->pdata->aead_algs_info->size - 1; i >= 0; i--) {
+> diff --git a/drivers/crypto/omap-aes.h b/drivers/crypto/omap-aes.h
+> index 2d4b1f87a1c9..2d3575231e31 100644
+> --- a/drivers/crypto/omap-aes.h
+> +++ b/drivers/crypto/omap-aes.h
+> @@ -112,7 +112,7 @@ struct omap_aes_reqctx {
+>  #define OMAP_AES_CACHE_SIZE	0
+>  
+>  struct omap_aes_algs_info {
+> -	struct crypto_alg	*algs_list;
+> +	struct skcipher_alg	*algs_list;
+>  	unsigned int		size;
+>  	unsigned int		registered;
+>  };
+> @@ -162,7 +162,7 @@ struct omap_aes_dev {
+>  	struct aead_queue	aead_queue;
+>  	spinlock_t		lock;
+>  
+> -	struct ablkcipher_request	*req;
+> +	struct skcipher_request		*req;
+>  	struct aead_request		*aead_req;
+>  	struct crypto_engine		*engine;
+>  
+> diff --git a/drivers/crypto/omap-des.c b/drivers/crypto/omap-des.c
+> index b19d7e5d55ec..4c4dbc2b377e 100644
+> --- a/drivers/crypto/omap-des.c
+> +++ b/drivers/crypto/omap-des.c
+> @@ -34,6 +34,7 @@
+>  #include <linux/interrupt.h>
+>  #include <crypto/scatterwalk.h>
+>  #include <crypto/internal/des.h>
+> +#include <crypto/internal/skcipher.h>
+>  #include <crypto/algapi.h>
+>  #include <crypto/engine.h>
+>  
+> @@ -98,7 +99,7 @@ struct omap_des_reqctx {
+>  #define OMAP_DES_CACHE_SIZE	0
+>  
+>  struct omap_des_algs_info {
+> -	struct crypto_alg	*algs_list;
+> +	struct skcipher_alg	*algs_list;
+>  	unsigned int		size;
+>  	unsigned int		registered;
+>  };
+> @@ -139,7 +140,7 @@ struct omap_des_dev {
+>  
+>  	struct tasklet_struct	done_task;
+>  
+> -	struct ablkcipher_request	*req;
+> +	struct skcipher_request	*req;
+>  	struct crypto_engine		*engine;
+>  	/*
+>  	 * total is used by PIO mode for book keeping so introduce
+> @@ -261,8 +262,8 @@ static int omap_des_write_ctrl(struct omap_des_dev *dd)
+>  			       __le32_to_cpu(dd->ctx->key[i]));
+>  	}
+>  
+> -	if ((dd->flags & FLAGS_CBC) && dd->req->info)
+> -		omap_des_write_n(dd, DES_REG_IV(dd, 0), dd->req->info, 2);
+> +	if ((dd->flags & FLAGS_CBC) && dd->req->iv)
+> +		omap_des_write_n(dd, DES_REG_IV(dd, 0), (void *)dd->req->iv, 2);
+>  
+>  	if (dd->flags & FLAGS_CBC)
+>  		val |= DES_REG_CTRL_CBC;
+> @@ -456,8 +457,8 @@ static int omap_des_crypt_dma(struct crypto_tfm *tfm,
+>  
+>  static int omap_des_crypt_dma_start(struct omap_des_dev *dd)
+>  {
+> -	struct crypto_tfm *tfm = crypto_ablkcipher_tfm(
+> -					crypto_ablkcipher_reqtfm(dd->req));
+> +	struct crypto_tfm *tfm = crypto_skcipher_tfm(
+> +					crypto_skcipher_reqtfm(dd->req));
+>  	int err;
+>  
+>  	pr_debug("total: %d\n", dd->total);
+> @@ -491,11 +492,11 @@ static int omap_des_crypt_dma_start(struct omap_des_dev *dd)
+>  
+>  static void omap_des_finish_req(struct omap_des_dev *dd, int err)
+>  {
+> -	struct ablkcipher_request *req = dd->req;
+> +	struct skcipher_request *req = dd->req;
+>  
+>  	pr_debug("err: %d\n", err);
+>  
+> -	crypto_finalize_ablkcipher_request(dd->engine, req, err);
+> +	crypto_finalize_skcipher_request(dd->engine, req, err);
+>  
+>  	pm_runtime_mark_last_busy(dd->dev);
+>  	pm_runtime_put_autosuspend(dd->dev);
+> @@ -514,10 +515,10 @@ static int omap_des_crypt_dma_stop(struct omap_des_dev *dd)
+>  }
+>  
+>  static int omap_des_handle_queue(struct omap_des_dev *dd,
+> -				 struct ablkcipher_request *req)
+> +				 struct skcipher_request *req)
+>  {
+>  	if (req)
+> -		return crypto_transfer_ablkcipher_request_to_engine(dd->engine, req);
+> +		return crypto_transfer_skcipher_request_to_engine(dd->engine, req);
+>  
+>  	return 0;
+>  }
+> @@ -525,9 +526,9 @@ static int omap_des_handle_queue(struct omap_des_dev *dd,
+>  static int omap_des_prepare_req(struct crypto_engine *engine,
+>  				void *areq)
+>  {
+> -	struct ablkcipher_request *req = container_of(areq, struct ablkcipher_request, base);
+> -	struct omap_des_ctx *ctx = crypto_ablkcipher_ctx(
+> -			crypto_ablkcipher_reqtfm(req));
+> +	struct skcipher_request *req = container_of(areq, struct skcipher_request, base);
+> +	struct omap_des_ctx *ctx = crypto_skcipher_ctx(
+> +			crypto_skcipher_reqtfm(req));
+>  	struct omap_des_dev *dd = omap_des_find_dev(ctx);
+>  	struct omap_des_reqctx *rctx;
+>  	int ret;
+> @@ -538,8 +539,8 @@ static int omap_des_prepare_req(struct crypto_engine *engine,
+>  
+>  	/* assign new request to device */
+>  	dd->req = req;
+> -	dd->total = req->nbytes;
+> -	dd->total_save = req->nbytes;
+> +	dd->total = req->cryptlen;
+> +	dd->total_save = req->cryptlen;
+>  	dd->in_sg = req->src;
+>  	dd->out_sg = req->dst;
+>  	dd->orig_out = req->dst;
+> @@ -568,8 +569,8 @@ static int omap_des_prepare_req(struct crypto_engine *engine,
+>  	if (dd->out_sg_len < 0)
+>  		return dd->out_sg_len;
+>  
+> -	rctx = ablkcipher_request_ctx(req);
+> -	ctx = crypto_ablkcipher_ctx(crypto_ablkcipher_reqtfm(req));
+> +	rctx = skcipher_request_ctx(req);
+> +	ctx = crypto_skcipher_ctx(crypto_skcipher_reqtfm(req));
+>  	rctx->mode &= FLAGS_MODE_MASK;
+>  	dd->flags = (dd->flags & ~FLAGS_MODE_MASK) | rctx->mode;
+>  
+> @@ -582,9 +583,9 @@ static int omap_des_prepare_req(struct crypto_engine *engine,
+>  static int omap_des_crypt_req(struct crypto_engine *engine,
+>  			      void *areq)
+>  {
+> -	struct ablkcipher_request *req = container_of(areq, struct ablkcipher_request, base);
+> -	struct omap_des_ctx *ctx = crypto_ablkcipher_ctx(
+> -			crypto_ablkcipher_reqtfm(req));
+> +	struct skcipher_request *req = container_of(areq, struct skcipher_request, base);
+> +	struct omap_des_ctx *ctx = crypto_skcipher_ctx(
+> +			crypto_skcipher_reqtfm(req));
+>  	struct omap_des_dev *dd = omap_des_find_dev(ctx);
+>  
+>  	if (!dd)
+> @@ -619,18 +620,18 @@ static void omap_des_done_task(unsigned long data)
+>  	pr_debug("exit\n");
+>  }
+>  
+> -static int omap_des_crypt(struct ablkcipher_request *req, unsigned long mode)
+> +static int omap_des_crypt(struct skcipher_request *req, unsigned long mode)
+>  {
+> -	struct omap_des_ctx *ctx = crypto_ablkcipher_ctx(
+> -			crypto_ablkcipher_reqtfm(req));
+> -	struct omap_des_reqctx *rctx = ablkcipher_request_ctx(req);
+> +	struct omap_des_ctx *ctx = crypto_skcipher_ctx(
+> +			crypto_skcipher_reqtfm(req));
+> +	struct omap_des_reqctx *rctx = skcipher_request_ctx(req);
+>  	struct omap_des_dev *dd;
+>  
+> -	pr_debug("nbytes: %d, enc: %d, cbc: %d\n", req->nbytes,
+> +	pr_debug("nbytes: %d, enc: %d, cbc: %d\n", req->cryptlen,
+>  		 !!(mode & FLAGS_ENCRYPT),
+>  		 !!(mode & FLAGS_CBC));
+>  
+> -	if (!IS_ALIGNED(req->nbytes, DES_BLOCK_SIZE)) {
+> +	if (!IS_ALIGNED(req->cryptlen, DES_BLOCK_SIZE)) {
+>  		pr_err("request size is not exact amount of DES blocks\n");
+>  		return -EINVAL;
+>  	}
+> @@ -646,15 +647,15 @@ static int omap_des_crypt(struct ablkcipher_request *req, unsigned long mode)
+>  
+>  /* ********************** ALG API ************************************ */
+>  
+> -static int omap_des_setkey(struct crypto_ablkcipher *cipher, const u8 *key,
+> +static int omap_des_setkey(struct crypto_skcipher *cipher, const u8 *key,
+>  			   unsigned int keylen)
+>  {
+> -	struct omap_des_ctx *ctx = crypto_ablkcipher_ctx(cipher);
+> +	struct omap_des_ctx *ctx = crypto_skcipher_ctx(cipher);
+>  	int err;
+>  
+>  	pr_debug("enter, keylen: %d\n", keylen);
+>  
+> -	err = verify_ablkcipher_des_key(cipher, key);
+> +	err = verify_skcipher_des_key(cipher, key);
+>  	if (err)
+>  		return err;
+>  
+> @@ -664,15 +665,15 @@ static int omap_des_setkey(struct crypto_ablkcipher *cipher, const u8 *key,
+>  	return 0;
+>  }
+>  
+> -static int omap_des3_setkey(struct crypto_ablkcipher *cipher, const u8 *key,
+> +static int omap_des3_setkey(struct crypto_skcipher *cipher, const u8 *key,
+>  			    unsigned int keylen)
+>  {
+> -	struct omap_des_ctx *ctx = crypto_ablkcipher_ctx(cipher);
+> +	struct omap_des_ctx *ctx = crypto_skcipher_ctx(cipher);
+>  	int err;
+>  
+>  	pr_debug("enter, keylen: %d\n", keylen);
+>  
+> -	err = verify_ablkcipher_des3_key(cipher, key);
+> +	err = verify_skcipher_des3_key(cipher, key);
+>  	if (err)
+>  		return err;
+>  
+> @@ -682,22 +683,22 @@ static int omap_des3_setkey(struct crypto_ablkcipher *cipher, const u8 *key,
+>  	return 0;
+>  }
+>  
+> -static int omap_des_ecb_encrypt(struct ablkcipher_request *req)
+> +static int omap_des_ecb_encrypt(struct skcipher_request *req)
+>  {
+>  	return omap_des_crypt(req, FLAGS_ENCRYPT);
+>  }
+>  
+> -static int omap_des_ecb_decrypt(struct ablkcipher_request *req)
+> +static int omap_des_ecb_decrypt(struct skcipher_request *req)
+>  {
+>  	return omap_des_crypt(req, 0);
+>  }
+>  
+> -static int omap_des_cbc_encrypt(struct ablkcipher_request *req)
+> +static int omap_des_cbc_encrypt(struct skcipher_request *req)
+>  {
+>  	return omap_des_crypt(req, FLAGS_ENCRYPT | FLAGS_CBC);
+>  }
+>  
+> -static int omap_des_cbc_decrypt(struct ablkcipher_request *req)
+> +static int omap_des_cbc_decrypt(struct skcipher_request *req)
+>  {
+>  	return omap_des_crypt(req, FLAGS_CBC);
+>  }
+> @@ -707,13 +708,13 @@ static int omap_des_prepare_req(struct crypto_engine *engine,
+>  static int omap_des_crypt_req(struct crypto_engine *engine,
+>  			      void *areq);
+>  
+> -static int omap_des_cra_init(struct crypto_tfm *tfm)
+> +static int omap_des_init_tfm(struct crypto_skcipher *tfm)
+>  {
+> -	struct omap_des_ctx *ctx = crypto_tfm_ctx(tfm);
+> +	struct omap_des_ctx *ctx = crypto_skcipher_ctx(tfm);
+>  
+>  	pr_debug("enter\n");
+>  
+> -	tfm->crt_ablkcipher.reqsize = sizeof(struct omap_des_reqctx);
+> +	crypto_skcipher_set_reqsize(tfm, sizeof(struct omap_des_reqctx));
+>  
+>  	ctx->enginectx.op.prepare_request = omap_des_prepare_req;
+>  	ctx->enginectx.op.unprepare_request = NULL;
+> @@ -722,103 +723,78 @@ static int omap_des_cra_init(struct crypto_tfm *tfm)
+>  	return 0;
+>  }
+>  
+> -static void omap_des_cra_exit(struct crypto_tfm *tfm)
+> -{
+> -	pr_debug("enter\n");
+> -}
+> -
+>  /* ********************** ALGS ************************************ */
+>  
+> -static struct crypto_alg algs_ecb_cbc[] = {
+> +static struct skcipher_alg algs_ecb_cbc[] = {
+>  {
+> -	.cra_name		= "ecb(des)",
+> -	.cra_driver_name	= "ecb-des-omap",
+> -	.cra_priority		= 100,
+> -	.cra_flags		= CRYPTO_ALG_TYPE_ABLKCIPHER |
+> -				  CRYPTO_ALG_KERN_DRIVER_ONLY |
+> +	.base.cra_name		= "ecb(des)",
+> +	.base.cra_driver_name	= "ecb-des-omap",
+> +	.base.cra_priority	= 100,
+> +	.base.cra_flags		= CRYPTO_ALG_KERN_DRIVER_ONLY |
+>  				  CRYPTO_ALG_ASYNC,
+> -	.cra_blocksize		= DES_BLOCK_SIZE,
+> -	.cra_ctxsize		= sizeof(struct omap_des_ctx),
+> -	.cra_alignmask		= 0,
+> -	.cra_type		= &crypto_ablkcipher_type,
+> -	.cra_module		= THIS_MODULE,
+> -	.cra_init		= omap_des_cra_init,
+> -	.cra_exit		= omap_des_cra_exit,
+> -	.cra_u.ablkcipher = {
+> -		.min_keysize	= DES_KEY_SIZE,
+> -		.max_keysize	= DES_KEY_SIZE,
+> -		.setkey		= omap_des_setkey,
+> -		.encrypt	= omap_des_ecb_encrypt,
+> -		.decrypt	= omap_des_ecb_decrypt,
+> -	}
+> +	.base.cra_blocksize	= DES_BLOCK_SIZE,
+> +	.base.cra_ctxsize	= sizeof(struct omap_des_ctx),
+> +	.base.cra_module	= THIS_MODULE,
+> +
+> +	.min_keysize		= DES_KEY_SIZE,
+> +	.max_keysize		= DES_KEY_SIZE,
+> +	.setkey			= omap_des_setkey,
+> +	.encrypt		= omap_des_ecb_encrypt,
+> +	.decrypt		= omap_des_ecb_decrypt,
+> +	.init			= omap_des_init_tfm,
+>  },
+>  {
+> -	.cra_name		= "cbc(des)",
+> -	.cra_driver_name	= "cbc-des-omap",
+> -	.cra_priority		= 100,
+> -	.cra_flags		= CRYPTO_ALG_TYPE_ABLKCIPHER |
+> -				  CRYPTO_ALG_KERN_DRIVER_ONLY |
+> +	.base.cra_name		= "cbc(des)",
+> +	.base.cra_driver_name	= "cbc-des-omap",
+> +	.base.cra_priority	= 100,
+> +	.base.cra_flags		= CRYPTO_ALG_KERN_DRIVER_ONLY |
+>  				  CRYPTO_ALG_ASYNC,
+> -	.cra_blocksize		= DES_BLOCK_SIZE,
+> -	.cra_ctxsize		= sizeof(struct omap_des_ctx),
+> -	.cra_alignmask		= 0,
+> -	.cra_type		= &crypto_ablkcipher_type,
+> -	.cra_module		= THIS_MODULE,
+> -	.cra_init		= omap_des_cra_init,
+> -	.cra_exit		= omap_des_cra_exit,
+> -	.cra_u.ablkcipher = {
+> -		.min_keysize	= DES_KEY_SIZE,
+> -		.max_keysize	= DES_KEY_SIZE,
+> -		.ivsize		= DES_BLOCK_SIZE,
+> -		.setkey		= omap_des_setkey,
+> -		.encrypt	= omap_des_cbc_encrypt,
+> -		.decrypt	= omap_des_cbc_decrypt,
+> -	}
+> +	.base.cra_blocksize	= DES_BLOCK_SIZE,
+> +	.base.cra_ctxsize	= sizeof(struct omap_des_ctx),
+> +	.base.cra_module	= THIS_MODULE,
+> +
+> +	.min_keysize		= DES_KEY_SIZE,
+> +	.max_keysize		= DES_KEY_SIZE,
+> +	.ivsize			= DES_BLOCK_SIZE,
+> +	.setkey			= omap_des_setkey,
+> +	.encrypt		= omap_des_cbc_encrypt,
+> +	.decrypt		= omap_des_cbc_decrypt,
+> +	.init			= omap_des_init_tfm,
+>  },
+>  {
+> -	.cra_name		= "ecb(des3_ede)",
+> -	.cra_driver_name	= "ecb-des3-omap",
+> -	.cra_priority		= 100,
+> -	.cra_flags		= CRYPTO_ALG_TYPE_ABLKCIPHER |
+> -				  CRYPTO_ALG_KERN_DRIVER_ONLY |
+> +	.base.cra_name		= "ecb(des3_ede)",
+> +	.base.cra_driver_name	= "ecb-des3-omap",
+> +	.base.cra_priority	= 100,
+> +	.base.cra_flags		= CRYPTO_ALG_KERN_DRIVER_ONLY |
+>  				  CRYPTO_ALG_ASYNC,
+> -	.cra_blocksize		= DES_BLOCK_SIZE,
+> -	.cra_ctxsize		= sizeof(struct omap_des_ctx),
+> -	.cra_alignmask		= 0,
+> -	.cra_type		= &crypto_ablkcipher_type,
+> -	.cra_module		= THIS_MODULE,
+> -	.cra_init		= omap_des_cra_init,
+> -	.cra_exit		= omap_des_cra_exit,
+> -	.cra_u.ablkcipher = {
+> -		.min_keysize	= 3*DES_KEY_SIZE,
+> -		.max_keysize	= 3*DES_KEY_SIZE,
+> -		.setkey		= omap_des3_setkey,
+> -		.encrypt	= omap_des_ecb_encrypt,
+> -		.decrypt	= omap_des_ecb_decrypt,
+> -	}
+> +	.base.cra_blocksize	= DES3_EDE_BLOCK_SIZE,
+> +	.base.cra_ctxsize	= sizeof(struct omap_des_ctx),
+> +	.base.cra_module	= THIS_MODULE,
+> +
+> +	.min_keysize		= DES3_EDE_KEY_SIZE,
+> +	.max_keysize		= DES3_EDE_KEY_SIZE,
+> +	.setkey			= omap_des3_setkey,
+> +	.encrypt		= omap_des_ecb_encrypt,
+> +	.decrypt		= omap_des_ecb_decrypt,
+> +	.init			= omap_des_init_tfm,
+>  },
+>  {
+> -	.cra_name		= "cbc(des3_ede)",
+> -	.cra_driver_name	= "cbc-des3-omap",
+> -	.cra_priority		= 100,
+> -	.cra_flags		= CRYPTO_ALG_TYPE_ABLKCIPHER |
+> -				  CRYPTO_ALG_KERN_DRIVER_ONLY |
+> +	.base.cra_name		= "cbc(des3_ede)",
+> +	.base.cra_driver_name	= "cbc-des3-omap",
+> +	.base.cra_priority	= 100,
+> +	.base.cra_flags		= CRYPTO_ALG_KERN_DRIVER_ONLY |
+>  				  CRYPTO_ALG_ASYNC,
+> -	.cra_blocksize		= DES_BLOCK_SIZE,
+> -	.cra_ctxsize		= sizeof(struct omap_des_ctx),
+> -	.cra_alignmask		= 0,
+> -	.cra_type		= &crypto_ablkcipher_type,
+> -	.cra_module		= THIS_MODULE,
+> -	.cra_init		= omap_des_cra_init,
+> -	.cra_exit		= omap_des_cra_exit,
+> -	.cra_u.ablkcipher = {
+> -		.min_keysize	= 3*DES_KEY_SIZE,
+> -		.max_keysize	= 3*DES_KEY_SIZE,
+> -		.ivsize		= DES_BLOCK_SIZE,
+> -		.setkey		= omap_des3_setkey,
+> -		.encrypt	= omap_des_cbc_encrypt,
+> -		.decrypt	= omap_des_cbc_decrypt,
+> -	}
+> +	.base.cra_blocksize	= DES3_EDE_BLOCK_SIZE,
+> +	.base.cra_ctxsize	= sizeof(struct omap_des_ctx),
+> +	.base.cra_module	= THIS_MODULE,
+> +
+> +	.min_keysize		= DES3_EDE_KEY_SIZE,
+> +	.max_keysize		= DES3_EDE_KEY_SIZE,
+> +	.ivsize			= DES3_EDE_BLOCK_SIZE,
+> +	.setkey			= omap_des3_setkey,
+> +	.encrypt		= omap_des_cbc_encrypt,
+> +	.decrypt		= omap_des_cbc_decrypt,
+> +	.init			= omap_des_init_tfm,
+>  }
+>  };
+>  
+> @@ -976,7 +952,7 @@ static int omap_des_probe(struct platform_device *pdev)
+>  {
+>  	struct device *dev = &pdev->dev;
+>  	struct omap_des_dev *dd;
+> -	struct crypto_alg *algp;
+> +	struct skcipher_alg *algp;
+>  	struct resource *res;
+>  	int err = -ENOMEM, i, j, irq = -1;
+>  	u32 reg;
+> @@ -1071,9 +1047,9 @@ static int omap_des_probe(struct platform_device *pdev)
+>  		for (j = 0; j < dd->pdata->algs_info[i].size; j++) {
+>  			algp = &dd->pdata->algs_info[i].algs_list[j];
+>  
+> -			pr_debug("reg alg: %s\n", algp->cra_name);
+> +			pr_debug("reg alg: %s\n", algp->base.cra_name);
+>  
+> -			err = crypto_register_alg(algp);
+> +			err = crypto_register_skcipher(algp);
+>  			if (err)
+>  				goto err_algs;
+>  
+> @@ -1086,7 +1062,7 @@ static int omap_des_probe(struct platform_device *pdev)
+>  err_algs:
+>  	for (i = dd->pdata->algs_info_size - 1; i >= 0; i--)
+>  		for (j = dd->pdata->algs_info[i].registered - 1; j >= 0; j--)
+> -			crypto_unregister_alg(
+> +			crypto_unregister_skcipher(
+>  					&dd->pdata->algs_info[i].algs_list[j]);
+>  
+>  err_engine:
+> @@ -1119,7 +1095,7 @@ static int omap_des_remove(struct platform_device *pdev)
+>  
+>  	for (i = dd->pdata->algs_info_size - 1; i >= 0; i--)
+>  		for (j = dd->pdata->algs_info[i].registered - 1; j >= 0; j--)
+> -			crypto_unregister_alg(
+> +			crypto_unregister_skcipher(
+>  					&dd->pdata->algs_info[i].algs_list[j]);
+>  
+>  	tasklet_kill(&dd->done_task);
+> -- 
+> 2.20.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
