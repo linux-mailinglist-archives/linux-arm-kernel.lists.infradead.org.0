@@ -2,90 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 071BAD7665
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 14:22:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1C47D767C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 14:27:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e92d9GT2MM+uhvFOvm14ssw16iIrMc6gIGCnlFH73l4=; b=J5hniFSho0BNu7
-	rDGiNGHgbjYg0NTCPd3En4usELA7nL5eYlka3Hp5vN8J4n0GPEbOblJhcOCGqwpe2CnCrk3RH/OjM
-	HitnqiRqZTJ+lCuVy/Ugp6c1EpuQokXxLnSl0GYq8zVCfLg57zHwd4fmO1GDbN944Ob4R0b/wAeA7
-	05u9fCAIDXWtAHzqUn/As5x9w5uf37QPP5WMFitC6rj78HneuaawweFTCyK+D5pBuCHsg478Xgv1E
-	j60RUjoAjlk72ZlR0+c6i65dATJzTN8TS3TwJSERierQ6+28gUFdE8sqfQE4E0AsMR2Zliw3RcL38
-	8ExII9rx6jhYOJ3VDWBw==;
+	List-Owner; bh=zqGu33M+cnHNRihpvFxAsTOVZRzPJL3AKEjQ8ckT0bc=; b=OPgQuY7drUTdGg
+	NBhJJbterhgZ2VbgTkcTEldtgVxEqHUS91EgOsjUg0p9WMpvzslhqTZ0VI2sN0MC3S1uruv7HcM2s
+	m3n65LVPfWGw+iqBmmqP234iKQTDHL9ysXNtTOiN+XywNrADwtMc+9hAMxU0K518YgMslKZ8836Bl
+	ZYgAxkJJVbaEgXT0UpFCNqGuxghPVpK1FHpDMp9XE65NGx4+pbUrcjMAaimDYn1kDNdRQtwgxxZqU
+	GRJLHfn9Zh8cVVXVF78/+hzZZIDi8E+V/EaXnj6TaUOTSFttw42m5V8WTPPzg4Af2GlPd34tziH2j
+	DusHxjhx9C1teiGMNB9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKLq3-0008LM-Fq; Tue, 15 Oct 2019 12:22:07 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKLpo-0008Kk-Jz
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 12:21:54 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x9FCFmPp020760; Tue, 15 Oct 2019 14:21:51 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=wOAgDQIJnROZAAJDyr+SKVedGsOlBqMHloQwYXC54zg=;
- b=hbMN9KfBnbPvy/ENhoWH7nIonEnhqLmUYAPxlpPks/UlEic8jbAl5cVYd+aZuBuLdM4C
- b7ftUgxaN4UbOgBhRBm03r0EE0AHUMkNeBlifUJpSmOHdpfEMzfAXgA2SATjcp9NSXD9
- ExbS9cAXItEO2DkPj9uxOQdlTUkPp5CwtXaKJd6/zvzfXi4ibNVZGw+EivPSH0+xLEDb
- buSqd+kwRC60njyxokkAektWw1bBHYialOyfZVKw7AszIhE6EftQmmwSWKq/fNm8klye
- FV9rVspCXZOTv02SySdFxGFY91bYhgrGeBH4NVPx/dbgLriZ8IMzXGTeYwTSq9FYn60Y 7Q== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2vk4kx0375-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 15 Oct 2019 14:21:51 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 9C251100034;
- Tue, 15 Oct 2019 14:21:50 +0200 (CEST)
-Received: from Webmail-eu.st.com (Safex1hubcas21.st.com [10.75.90.44])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 8E2952C7E81;
- Tue, 15 Oct 2019 14:21:50 +0200 (CEST)
-Received: from SAFEX1HUBCAS23.st.com (10.75.90.46) by SAFEX1HUBCAS21.st.com
- (10.75.90.44) with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 15 Oct
- 2019 14:21:50 +0200
-Received: from [10.48.0.192] (10.48.0.192) by webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0;
- Tue, 15 Oct 2019 14:21:50 +0200
-Subject: Re: [PATCH] i2c: i2c-stm32f7: fix a race in slave mode with
- arbitration loss irq
-To: <wsa@the-dreams.de>
-References: <1569919869-3218-1-git-send-email-fabrice.gasnier@st.com>
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
-Message-ID: <e53f9766-632d-0417-7a6e-7cf3e08f471e@st.com>
-Date: Tue, 15 Oct 2019 14:21:49 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1iKLur-0001fs-6H; Tue, 15 Oct 2019 12:27:05 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iKLui-0001fB-R4; Tue, 15 Oct 2019 12:26:58 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0AB1D337;
+ Tue, 15 Oct 2019 05:26:55 -0700 (PDT)
+Received: from [10.162.42.142] (p8cg001049571a15.blr.arm.com [10.162.42.142])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 182753F68E; Tue, 15 Oct 2019 05:26:41 -0700 (PDT)
+Subject: Re: [PATCH V6 2/2] mm/debug: Add tests validating architecture page
+ table helpers
+To: Michal Hocko <mhocko@kernel.org>
+References: <1571131302-32290-1-git-send-email-anshuman.khandual@arm.com>
+ <1571131302-32290-3-git-send-email-anshuman.khandual@arm.com>
+ <20191015114611.GC317@dhcp22.suse.cz>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <cb441eab-6cde-5537-6f94-f183f119c92e@arm.com>
+Date: Tue, 15 Oct 2019 17:57:08 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-In-Reply-To: <1569919869-3218-1-git-send-email-fabrice.gasnier@st.com>
+In-Reply-To: <20191015114611.GC317@dhcp22.suse.cz>
 Content-Language: en-US
-X-Originating-IP: [10.48.0.192]
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
- definitions=2019-10-15_05:2019-10-15,2019-10-15 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_052152_963812_7EF95A42 
-X-CRM114-Status: GOOD (  23.35  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191015_052656_965952_86C70CBF 
+X-CRM114-Status: GOOD (  13.93  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,86 +63,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.torgue@st.com, linux-kernel@vger.kernel.org,
- pierre-yves.mordret@st.com, alain.volmat@st.com, linux-i2c@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
+ James Hogan <jhogan@kernel.org>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, Dave Hansen <dave.hansen@intel.com>,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
+ Jason Gunthorpe <jgg@ziepe.ca>, Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Kees Cook <keescook@chromium.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
+ Christophe Leroy <christophe.leroy@c-s.fr>,
+ Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, Paul Burton <paul.burton@mips.com>,
+ Mike Rapoport <rppt@linux.vnet.ibm.com>, Vineet Gupta <vgupta@synopsys.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/1/19 10:51 AM, Fabrice Gasnier wrote:
-> When in slave mode, an arbitration loss (ARLO) may be detected before the
-> slave had a chance to detect the stop condition (STOPF in ISR).
-> This is seen when two master + slave adapters switch their roles. It
-> provokes the i2c bus to be stuck, busy as SCL line is stretched.
-> - the I2C_SLAVE_STOP event is never generated due to STOPF flag is set but
->   don't generate an irq (race with ARLO irq, STOPIE is masked). STOPF flag
->   remains set until next master xfer (e.g. when STOPIE irq get unmasked).
->   In this case, completion is generated too early: immediately upon new
->   transfer request (then it doesn't send all data).
-> - Some data get stuck in TXDR register. As a consequence, the controller
->   stretches the SCL line: the bus gets busy until a future master transfer
->   triggers the bus busy / recovery mechanism (this can take time... and
->   may never happen at all)
-> 
-> So choice is to let the STOPF being detected by the slave isr handler,
-> to properly handle this stop condition. E.g. don't mask IRQs in error
-> handler, when the slave is running.
-> 
-> Fixes: 60d609f30de2 ("i2c: i2c-stm32f7: Add slave support")
-> 
-> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
-> ---
 
 
-Hi Wolfram, all,
-
-Gentle reminder on this patch.
-
-Thanks in advance !
-Best Regards,
-Fabrice
-
->  drivers/i2c/busses/i2c-stm32f7.c | 17 ++++++++++-------
->  1 file changed, 10 insertions(+), 7 deletions(-)
+On 10/15/2019 05:16 PM, Michal Hocko wrote:
+> On Tue 15-10-19 14:51:42, Anshuman Khandual wrote:
+>> This adds tests which will validate architecture page table helpers and
+>> other accessors in their compliance with expected generic MM semantics.
+>> This will help various architectures in validating changes to existing
+>> page table helpers or addition of new ones.
+>>
+>> Test page table and memory pages creating it's entries at various level are
+>> all allocated from system memory with required size and alignments. But if
+>> memory pages with required size and alignment could not be allocated, then
+>> all depending individual tests are just skipped afterwards. This test gets
+>> called right after init_mm_internals() required for alloc_contig_range() to
+>> work correctly.
+>>
+>> This gets build and run when CONFIG_DEBUG_VM_PGTABLE is selected along with
+>> CONFIG_VM_DEBUG. Architectures willing to subscribe this test also need to
+>> select CONFIG_ARCH_HAS_DEBUG_VM_PGTABLE which for now is limited to x86 and
+>> arm64. Going forward, other architectures too can enable this after fixing
+>> build or runtime problems (if any) with their page table helpers.
 > 
-> diff --git a/drivers/i2c/busses/i2c-stm32f7.c b/drivers/i2c/busses/i2c-stm32f7.c
-> index 266d1c2..3a8ab0c 100644
-> --- a/drivers/i2c/busses/i2c-stm32f7.c
-> +++ b/drivers/i2c/busses/i2c-stm32f7.c
-> @@ -1501,7 +1501,7 @@ static irqreturn_t stm32f7_i2c_isr_error(int irq, void *data)
->  	void __iomem *base = i2c_dev->base;
->  	struct device *dev = i2c_dev->dev;
->  	struct stm32_i2c_dma *dma = i2c_dev->dma;
-> -	u32 mask, status;
-> +	u32 status;
->  
->  	status = readl_relaxed(i2c_dev->base + STM32F7_I2C_ISR);
->  
-> @@ -1526,12 +1526,15 @@ static irqreturn_t stm32f7_i2c_isr_error(int irq, void *data)
->  		f7_msg->result = -EINVAL;
->  	}
->  
-> -	/* Disable interrupts */
-> -	if (stm32f7_i2c_is_slave_registered(i2c_dev))
-> -		mask = STM32F7_I2C_XFER_IRQ_MASK;
-> -	else
-> -		mask = STM32F7_I2C_ALL_IRQ_MASK;
-> -	stm32f7_i2c_disable_irq(i2c_dev, mask);
-> +	if (!i2c_dev->slave_running) {
-> +		u32 mask;
-> +		/* Disable interrupts */
-> +		if (stm32f7_i2c_is_slave_registered(i2c_dev))
-> +			mask = STM32F7_I2C_XFER_IRQ_MASK;
-> +		else
-> +			mask = STM32F7_I2C_ALL_IRQ_MASK;
-> +		stm32f7_i2c_disable_irq(i2c_dev, mask);
-> +	}
->  
->  	/* Disable dma */
->  	if (i2c_dev->use_dma) {
-> 
+> A highlevel description of tests and what they are testing for would be
+> really appreciated. Who wants to run these tests and why/when? What kind
+> of bugs would get detected? In short why do we really need/want this
+> code in the tree?
+
+Sure, will do.
 
 _______________________________________________
 linux-arm-kernel mailing list
