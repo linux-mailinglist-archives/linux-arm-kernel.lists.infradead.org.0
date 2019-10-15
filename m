@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7250BD74AC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 13:15:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5884D74A7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 13:14:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=IJPXObluuRgCUosaax6E3oAisDq7XmT5K8hb+q6PVUQ=; b=Bpu
-	4XIx+SZxWPQb4mEFvPRgsK+Vs02W9Bpzo2DO3ZEYZItlM8zl02ZDrkJ+P95vNrlFq9ExMX0mOtjJ9
-	gpw/J9smcM95aYGwqH/6fo8JJ0Hiso5j4YLeSojfOkX64kmTH2FfSFldG9fmncFtJPcAZSYwSA4Yx
-	TXMF40t0BtvxdatYkIsD9JZA0SLHKw14UnZkGh6B8W9rvYYWcYtomqUv6zvf2xoKKZYdiS+GyiPAt
-	G95jFS8dq8tU8i1nZTrPWNQRp45Wl++tI4XQqQokBByeUgjfcpNM4TvbCTXcdEuznDoQBIaoIUu2l
-	hRVAX0rMMR/MF+GUl3NDi7yhxc/v/Wg==;
+	References:List-Owner; bh=+VDj6KL4pKVqr0tKcbYARlrW/WlVvgz3WYi5R110adc=; b=gVl
+	qYjdF1Cw/WMHfCkTEmdkDKkN9q3sQPPX26ZqRV5QViN+JYgM2W7QpMfJXSbk6UmBRaA/0qK5GJd61
+	u30noqmku/aHykc4oyP/2EkNZ8qDO0iSOeRhLbAflgrnMSVOcfbnfzKNCGfx3OeCCfAAAdUUzz3rc
+	qSRO9NPJnNZwcnRpYIqUNxtL3kbQH8cf4s8sPqIdUIyZAD/7yZZUk2DE7PWcH3p6Afh/VqVWGsfaN
+	aK9iLuBMj+dpEQ/idN0Z744iettKf7LvomP6tetfq18m7SDo8FqyCTIkPzfmIiAGOnn22QAATpJJ/
+	U5enNVh4+PmUvC+lG2VJ53SeLYeIYxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKKn4-0001Di-9e; Tue, 15 Oct 2019 11:14:58 +0000
+	id 1iKKmL-0000Z9-Ss; Tue, 15 Oct 2019 11:14:13 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKKkd-00079I-V1
+ id 1iKKkd-000794-QX
  for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 11:12:32 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
@@ -29,30 +29,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=MgY4bxFY17PHIsD8EZBTx9xqaC4wci+W07NNCCTrDxg=; b=VwP6mNLys83T
- EwBLJHsdCOVbIVn37RACoo2clg2uiG8A75BZCWyB8SkdNmik8S3qKBqyu9p3lifRyVwlk5El3NuqH
- j7ZLSxWvsmkOvsrkqJClQ25fp6J8yTQ43dk/RHxMcwvzByv3WmEbGcMZky64KIeD/4jvJUw83VMXe
- RJgEI=;
+ List-Archive; bh=SS+GQ758n0tok8uAi2IAvQDQHUGGy2vhXECqaYim69w=; b=kPqwQP9DNq7E
+ VaHOBsJXH0vFkEpWwMHD8fUI8HRV0Up+AQZghuDA3YnogwTAdmZxeF7IhYI3kQEb5ucd72xIbsBCy
+ zWi1MMPuZdjGiD1Kx+z8RA2jis1acR+jgDzkKG2/IPBDI7WLEbIO5vHr5pPuJB22vvsi5Si5ln97V
+ UuNCo=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iKKka-00021B-7B; Tue, 15 Oct 2019 11:12:24 +0000
+ id 1iKKkZ-000210-O7; Tue, 15 Oct 2019 11:12:23 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id A18602741CD7; Tue, 15 Oct 2019 12:12:23 +0100 (BST)
+ id 3B81127419E4; Tue, 15 Oct 2019 12:12:23 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
 To: Alexandru Ardelean <alexandru.ardelean@analog.com>
-Subject: Applied "spi: spidev: use new `delay` field for spi transfers" to the
- spi tree
-In-Reply-To: <20190926105147.7839-14-alexandru.ardelean@analog.com>
+Subject: Applied "spi: tegra114: change format for `spi_set_cs_timing()`
+ function" to the spi tree
+In-Reply-To: <20190926105147.7839-15-alexandru.ardelean@analog.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20191015111223.A18602741CD7@ypsilon.sirena.org.uk>
+Message-Id: <20191015111223.3B81127419E4@ypsilon.sirena.org.uk>
 Date: Tue, 15 Oct 2019 12:12:23 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_041227_993750_F5164A70 
-X-CRM114-Status: GOOD (  13.63  )
+X-CRM114-CacheID: sfid-20191015_041227_872497_3B11284F 
+X-CRM114-Status: GOOD (  15.12  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -91,7 +91,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: spidev: use new `delay` field for spi transfers
+   spi: tegra114: change format for `spi_set_cs_timing()` function
 
 has been applied to the spi tree at
 
@@ -116,42 +116,133 @@ to this mail.
 Thanks,
 Mark
 
-From 8e319dd5f1ebbc1fffa9e550b2a643cbce7515b1 Mon Sep 17 00:00:00 2001
+From 8105936684681195d9073880b06a123b2e316811 Mon Sep 17 00:00:00 2001
 From: Alexandru Ardelean <alexandru.ardelean@analog.com>
-Date: Thu, 26 Sep 2019 13:51:41 +0300
-Subject: [PATCH] spi: spidev: use new `delay` field for spi transfers
+Date: Thu, 26 Sep 2019 13:51:42 +0300
+Subject: [PATCH] spi: tegra114: change format for `spi_set_cs_timing()`
+ function
 
-The `delay` field has type `struct spi_delay`.
-This allows users to specify nano-second or clock-cycle delays (if needed).
+The initial version of `spi_set_cs_timing()` was implemented with
+consideration only for clock-cycles as delay.
 
-Converting to use `delay` is straightforward: it's just assigning the
-value to `delay.value` and hard-coding the `delay.unit` to
-`SPI_DELAY_UNIT_USECS`.
-
-This keeps the uapi for spidev un-changed. Changing it can be part of
-another changeset and discussion.
+For cases like `CS setup` time, it's sometimes needed that micro-seconds
+(or nano-seconds) are required, or sometimes even longer delays, for cases
+where the device needs a little longer to start transferring that after CS
+is asserted.
 
 Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
-Link: https://lore.kernel.org/r/20190926105147.7839-14-alexandru.ardelean@analog.com
+Link: https://lore.kernel.org/r/20190926105147.7839-15-alexandru.ardelean@analog.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/spidev.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/spi/spi-tegra114.c | 22 ++++++++++++++++++++--
+ drivers/spi/spi.c          | 16 ++++++++++------
+ include/linux/spi/spi.h    |  9 ++++++---
+ 3 files changed, 36 insertions(+), 11 deletions(-)
 
-diff --git a/drivers/spi/spidev.c b/drivers/spi/spidev.c
-index d63235dcb231..1e217e3e9486 100644
---- a/drivers/spi/spidev.c
-+++ b/drivers/spi/spidev.c
-@@ -265,7 +265,8 @@ static int spidev_message(struct spidev_data *spidev,
- 		k_tmp->tx_nbits = u_tmp->tx_nbits;
- 		k_tmp->rx_nbits = u_tmp->rx_nbits;
- 		k_tmp->bits_per_word = u_tmp->bits_per_word;
--		k_tmp->delay_usecs = u_tmp->delay_usecs;
-+		k_tmp->delay.value = u_tmp->delay_usecs;
-+		k_tmp->delay.unit = SPI_DELAY_UNIT_USECS;
- 		k_tmp->speed_hz = u_tmp->speed_hz;
- 		k_tmp->word_delay.value = u_tmp->word_delay_usecs;
- 		k_tmp->word_delay.unit = SPI_DELAY_UNIT_USECS;
+diff --git a/drivers/spi/spi-tegra114.c b/drivers/spi/spi-tegra114.c
+index 8133dc49d34f..e6a450d9b4f0 100644
+--- a/drivers/spi/spi-tegra114.c
++++ b/drivers/spi/spi-tegra114.c
+@@ -723,15 +723,31 @@ static void tegra_spi_deinit_dma_param(struct tegra_spi_data *tspi,
+ 	dma_release_channel(dma_chan);
+ }
+ 
+-static void tegra_spi_set_hw_cs_timing(struct spi_device *spi, u8 setup_dly,
+-				       u8 hold_dly, u8 inactive_dly)
++static int tegra_spi_set_hw_cs_timing(struct spi_device *spi,
++				      struct spi_delay *setup,
++				      struct spi_delay *hold,
++				      struct spi_delay *inactive)
+ {
+ 	struct tegra_spi_data *tspi = spi_master_get_devdata(spi->master);
++	u8 setup_dly, hold_dly, inactive_dly;
+ 	u32 setup_hold;
+ 	u32 spi_cs_timing;
+ 	u32 inactive_cycles;
+ 	u8 cs_state;
+ 
++	if ((setup && setup->unit != SPI_DELAY_UNIT_SCK) ||
++	    (hold && hold->unit != SPI_DELAY_UNIT_SCK) ||
++	    (inactive && inactive->unit != SPI_DELAY_UNIT_SCK)) {
++		dev_err(&spi->dev,
++			"Invalid delay unit %d, should be SPI_DELAY_UNIT_SCK\n",
++			SPI_DELAY_UNIT_SCK);
++		return -EINVAL;
++	}
++
++	setup_dly = setup ? setup->value : 0;
++	hold_dly = hold ? hold->value : 0;
++	inactive_dly = inactive ? inactive->value : 0;
++
+ 	setup_dly = min_t(u8, setup_dly, MAX_SETUP_HOLD_CYCLES);
+ 	hold_dly = min_t(u8, hold_dly, MAX_SETUP_HOLD_CYCLES);
+ 	if (setup_dly && hold_dly) {
+@@ -758,6 +774,8 @@ static void tegra_spi_set_hw_cs_timing(struct spi_device *spi, u8 setup_dly,
+ 		tspi->spi_cs_timing2 = spi_cs_timing;
+ 		tegra_spi_writel(tspi, spi_cs_timing, SPI_CS_TIMING2);
+ 	}
++
++	return 0;
+ }
+ 
+ static u32 tegra_spi_setup_transfer_one(struct spi_device *spi,
+diff --git a/drivers/spi/spi.c b/drivers/spi/spi.c
+index 2e448078a117..6beeb363515c 100644
+--- a/drivers/spi/spi.c
++++ b/drivers/spi/spi.c
+@@ -3269,15 +3269,19 @@ EXPORT_SYMBOL_GPL(spi_setup);
+ /**
+  * spi_set_cs_timing - configure CS setup, hold, and inactive delays
+  * @spi: the device that requires specific CS timing configuration
+- * @setup: CS setup time in terms of clock count
+- * @hold: CS hold time in terms of clock count
+- * @inactive_dly: CS inactive delay between transfers in terms of clock count
++ * @setup: CS setup time specified via @spi_delay
++ * @hold: CS hold time specified via @spi_delay
++ * @inactive: CS inactive delay between transfers specified via @spi_delay
++ *
++ * Return: zero on success, else a negative error code.
+  */
+-void spi_set_cs_timing(struct spi_device *spi, u8 setup, u8 hold,
+-		       u8 inactive_dly)
++int spi_set_cs_timing(struct spi_device *spi, struct spi_delay *setup,
++		      struct spi_delay *hold, struct spi_delay *inactive)
+ {
+ 	if (spi->controller->set_cs_timing)
+-		spi->controller->set_cs_timing(spi, setup, hold, inactive_dly);
++		return spi->controller->set_cs_timing(spi, setup, hold,
++						      inactive);
++	return -ENOTSUPP;
+ }
+ EXPORT_SYMBOL_GPL(spi_set_cs_timing);
+ 
+diff --git a/include/linux/spi/spi.h b/include/linux/spi/spi.h
+index fe5b85df2c79..f9b4ba2db08d 100644
+--- a/include/linux/spi/spi.h
++++ b/include/linux/spi/spi.h
+@@ -524,8 +524,8 @@ struct spi_controller {
+ 	 * to configure specific CS timing through spi_set_cs_timing() after
+ 	 * spi_setup().
+ 	 */
+-	void (*set_cs_timing)(struct spi_device *spi, u8 setup_clk_cycles,
+-			      u8 hold_clk_cycles, u8 inactive_clk_cycles);
++	int (*set_cs_timing)(struct spi_device *spi, struct spi_delay *setup,
++			     struct spi_delay *hold, struct spi_delay *inactive);
+ 
+ 	/* bidirectional bulk transfers
+ 	 *
+@@ -1068,7 +1068,10 @@ static inline void spi_message_free(struct spi_message *m)
+ 	kfree(m);
+ }
+ 
+-extern void spi_set_cs_timing(struct spi_device *spi, u8 setup, u8 hold, u8 inactive_dly);
++extern int spi_set_cs_timing(struct spi_device *spi,
++			     struct spi_delay *setup,
++			     struct spi_delay *hold,
++			     struct spi_delay *inactive);
+ 
+ extern int spi_setup(struct spi_device *spi);
+ extern int spi_async(struct spi_device *spi, struct spi_message *message);
 -- 
 2.20.1
 
