@@ -2,53 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9678D7A81
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 17:52:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64A00D7A99
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 17:54:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rp0fY18/xtVcxQdAUxGQZMrACSD1JYDx5aC8RvHRNTs=; b=SlaDMoaQnBLPjO
-	svskcFHn6q86lKYwN2bDZXGbAqinxeEaLzx+CUxV+HqZZF6omtUcP8Z1OSLA1AanCifL5WhDRlNU0
-	FKwdaYJH4cuIPCfSWpswaACuiJG7InplqlP5Xzq/E9FgCv+0wB1FNeMEOiqH6TG8RlWNuijaMVuUs
-	rYIcOphFeA2S3LLtglsWgXQskkb93iMxa3bPkWCaRdFTEzMEmrxXtbCAdLDdnf0XEUbh9ePK3LOnP
-	/tGJZiUsVZAOoBJd44UPCoh/KnK0yZ1d1g3jBwIqc7X1C01zTmHF8/uoHIN3imlbeaLdICf4BY4OX
-	U8rvPQ6ab3k8xOUdy2xg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=b/DcDsoA3y7drIMCOXcdhV5QPmz2Ajf3D12UPfqyISo=; b=S7ydRblQmb1XiN
+	XjkI9UhSqClccSy0FoIa7xUAzGc99hYCsIwRJm3mJJaQqLK8GEWZC3xm+9uoGysWWPkLAM8FVJd46
+	Xd/+PpCWFjzcx5OkY0WclqPUmsY43Q8IS7PRfFfOZHnnH0FImsUGdfq5WcvVkUXlCH/jO8o6SZHtm
+	MTZj6rZg1Efbke5AE70CGeNXWMsjg8epqOu8EP5SrzpGH2JIoDjTAcfFQrdreLyFQHEUDdhKqQdHC
+	Bd5IusPsTAjZs2dQ0yUsHsOpCVwMxloO/k8VqUabMC4ppQx/gD3fiwMcjwA4r+4jmXnHD8CPAZNbR
+	oxk0QFPo2JKmEHaW4XMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKP7D-000429-8o; Tue, 15 Oct 2019 15:52:03 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKP5b-0002pl-23
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 15:50:26 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 231B21650;
- Tue, 15 Oct 2019 08:50:22 -0700 (PDT)
-Received: from e110467-lin.cambridge.arm.com (e110467-lin.cambridge.arm.com
- [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 71C953F68E;
- Tue, 15 Oct 2019 08:50:21 -0700 (PDT)
-From: Robin Murphy <robin.murphy@arm.com>
-To: will@kernel.org,
-	catalin.marinas@arm.com
-Subject: [PATCH 8/8] arm64: Tidy up _asm_extable_faultaddr usage
-Date: Tue, 15 Oct 2019 16:50:03 +0100
-Message-Id: <c8a3fb5b1fcc74fd867b0701e59834f8229935bb.1571073960.git.robin.murphy@arm.com>
-X-Mailer: git-send-email 2.21.0.dirty
-In-Reply-To: <cover.1571073960.git.robin.murphy@arm.com>
-References: <cover.1571073960.git.robin.murphy@arm.com>
+	id 1iKP9b-0005Od-VA; Tue, 15 Oct 2019 15:54:31 +0000
+Received: from imap1.codethink.co.uk ([176.9.8.82])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iKP9R-0005NB-D1
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 15:54:22 +0000
+Received: from [167.98.27.226] (helo=rainbowdash.codethink.co.uk)
+ by imap1.codethink.co.uk with esmtpsa (Exim 4.84_2 #1 (Debian))
+ id 1iKP9M-0007JU-6w; Tue, 15 Oct 2019 16:54:16 +0100
+Received: from ben by rainbowdash.codethink.co.uk with local (Exim 4.92.2)
+ (envelope-from <ben@rainbowdash.codethink.co.uk>)
+ id 1iKP9L-0006aI-I0; Tue, 15 Oct 2019 16:54:15 +0100
+From: "Ben Dooks (Codethink)" <ben.dooks@codethink.co.uk>
+To: linux-kernel@lists.codethink.co.uk
+Subject: [PATCH] power: reset: fix __le32 cast in reset code
+Date: Tue, 15 Oct 2019 16:54:14 +0100
+Message-Id: <20191015155414.25267-1-ben.dooks@codethink.co.uk>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_085023_250000_714EE5FC 
-X-CRM114-Status: GOOD (  11.93  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191015_085421_592953_C4C2907E 
+X-CRM114-Status: GOOD (  11.09  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [176.9.8.82 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -61,396 +59,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sam.tebbs@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Sebastian Reichel <sre@kernel.org>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ "Ben Dooks \(Codethink\)" <ben.dooks@codethink.co.uk>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-To match the way the USER() shorthand wraps _asm_extable entries,
-introduce USER_F() to wrap _asm_extable_faultaddr and clean up a bit.
+The writel() takes standard integers, not __le32 so
+fix the following sparse warnings by removing the
+cpu_to_le32() calls.
 
-Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+drivers/power/reset/at91-reset.c:134:9: warning: cast from restricted __le32
+drivers/power/reset/at91-reset.c:143:9: warning: cast from restricted __le32
+
+This has made no code changes, the md5sums pre and post applying
+this patch are the same. The at91 should be natively little endian
+anyway.
+
+Signed-off-by: Ben Dooks <ben.dooks@codethink.co.uk>
 ---
- arch/arm64/include/asm/assembler.h |  4 ++
- arch/arm64/lib/copy_from_user.S    | 36 +++++----------
- arch/arm64/lib/copy_in_user.S      | 72 ++++++++++--------------------
- arch/arm64/lib/copy_to_user.S      | 33 +++++---------
- 4 files changed, 51 insertions(+), 94 deletions(-)
+Cc: Sebastian Reichel <sre@kernel.org>
+Cc: Nicolas Ferre <nicolas.ferre@microchip.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Cc: Ludovic Desroches <ludovic.desroches@microchip.com>
+Cc: linux-pm@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+---
+ drivers/power/reset/at91-reset.c | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm64/include/asm/assembler.h b/arch/arm64/include/asm/assembler.h
-index 02bb156cbf0e..959f6fa493ef 100644
---- a/arch/arm64/include/asm/assembler.h
-+++ b/arch/arm64/include/asm/assembler.h
-@@ -155,6 +155,10 @@ alternative_endif
- 9999:	x;					\
- 	_asm_extable	9999b, l
+diff --git a/drivers/power/reset/at91-reset.c b/drivers/power/reset/at91-reset.c
+index 44ca983a49a1..d94e3267c3b6 100644
+--- a/drivers/power/reset/at91-reset.c
++++ b/drivers/power/reset/at91-reset.c
+@@ -131,7 +131,7 @@ static int at91sam9g45_restart(struct notifier_block *this, unsigned long mode,
+ static int sama5d3_restart(struct notifier_block *this, unsigned long mode,
+ 			   void *cmd)
+ {
+-	writel(cpu_to_le32(AT91_RSTC_KEY | AT91_RSTC_PERRST | AT91_RSTC_PROCRST),
++	writel(AT91_RSTC_KEY | AT91_RSTC_PERRST | AT91_RSTC_PROCRST,
+ 	       at91_rstc_base);
  
-+#define USER_F(l, x...)				\
-+9999:	x;					\
-+	_asm_extable_faultaddr	9999b, l
-+
- /*
-  * Register aliases.
-  */
-diff --git a/arch/arm64/lib/copy_from_user.S b/arch/arm64/lib/copy_from_user.S
-index 8928c38d8c76..d0bcfad5dafd 100644
---- a/arch/arm64/lib/copy_from_user.S
-+++ b/arch/arm64/lib/copy_from_user.S
-@@ -21,8 +21,7 @@
-  */
+ 	return NOTIFY_DONE;
+@@ -140,9 +140,7 @@ static int sama5d3_restart(struct notifier_block *this, unsigned long mode,
+ static int samx7_restart(struct notifier_block *this, unsigned long mode,
+ 			 void *cmd)
+ {
+-	writel(cpu_to_le32(AT91_RSTC_KEY | AT91_RSTC_PROCRST),
+-	       at91_rstc_base);
+-
++	writel(AT91_RSTC_KEY | AT91_RSTC_PROCRST, at91_rstc_base);
+ 	return NOTIFY_DONE;
+ }
  
- 	.macro ldrb1 reg, ptr, offset=0
--	8888: ldtrb \reg, [\ptr, \offset]
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, ldtrb \reg, [\ptr, \offset])
- 	.endm
- 
- 	.macro strb1 reg, ptr, offset=0
-@@ -31,9 +30,8 @@
- 
- 	.macro ldrb1_reg reg, ptr, offset
- 	add \ptr, \ptr, \offset
--	8888: ldtrb \reg, [\ptr]
-+	USER_F(9998f, ldtrb \reg, [\ptr])
- 	sub \ptr, \ptr, \offset
--	_asm_extable_faultaddr	8888b,9998f;
- 	.endm
- 
- 	.macro strb1_reg reg, ptr, offset
-@@ -41,8 +39,7 @@
- 	.endm
- 
- 	.macro ldr1 reg, ptr, offset=0
--	8888: ldtr \reg, [\ptr, \offset]
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, ldtr \reg, [\ptr, \offset])
- 	.endm
- 
- 	.macro str1 reg, ptr, offset=0
-@@ -50,10 +47,8 @@
- 	.endm
- 
- 	.macro ldp1 regA, regB, ptr, offset=0
--	8888: ldtr \regA, [\ptr, \offset]
--	8889: ldtr \regB, [\ptr, \offset + 8]
--	_asm_extable_faultaddr	8888b,9998f;
--	_asm_extable_faultaddr	8889b,9998f;
-+	USER_F(9998f, ldtr \regA, [\ptr, \offset])
-+	USER_F(9998f, ldtr \regB, [\ptr, \offset + 8])
- 	.endm
- 
- 	.macro stp1 regA, regB, ptr, offset=0
-@@ -61,11 +56,9 @@
- 	.endm
- 
- 	.macro ldp1_pre regA, regB, ptr, offset
--	8888: ldtr \regA, [\ptr, \offset]
--	8889: ldtr \regB, [\ptr, \offset + 8]
-+	USER_F(9998f, ldtr \regA, [\ptr, \offset])
-+	USER_F(9998f, ldtr \regB, [\ptr, \offset + 8])
- 	add \ptr, \ptr, \offset
--	_asm_extable_faultaddr	8888b,9998f;
--	_asm_extable_faultaddr	8889b,9998f;
- 	.endm
- 
- 	.macro stp1_pre regA, regB, ptr, offset
-@@ -73,8 +66,7 @@
- 	.endm
- 
- 	.macro ldrb1_nuao reg, ptr, offset=0
--	8888: ldrb \reg, [\ptr, \offset]
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, ldrb \reg, [\ptr, \offset])
- 	.endm
- 
- 	.macro strb1_nuao reg, ptr, offset=0
-@@ -82,8 +74,7 @@
- 	.endm
- 
- 	.macro ldrb1_nuao_reg reg, ptr, offset=0
--	8888: ldrb \reg, [\ptr, \offset]
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, ldrb \reg, [\ptr, \offset])
- 	.endm
- 
- 	.macro strb1_nuao_reg reg, ptr, offset=0
-@@ -91,8 +82,7 @@
- 	.endm
- 
- 	.macro ldr1_nuao reg, ptr, offset=0
--	8888: ldr \reg, [\ptr, \offset]
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, ldr \reg, [\ptr, \offset])
- 	.endm
- 
- 	.macro str1_nuao reg, ptr, offset=0
-@@ -100,8 +90,7 @@
- 	.endm
- 
- 	.macro ldp1_nuao  regA, regB, ptr, offset=0
--	8888: ldp \regA, \regB, [\ptr, \offset]
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, ldp \regA, \regB, [\ptr, \offset])
- 	.endm
- 
- 	.macro stp1_nuao regA, regB, ptr, offset=0
-@@ -109,8 +98,7 @@
- 	.endm
- 
- 	.macro ldp1_pre_nuao regA, regB, ptr, offset
--	8888: ldp \regA, \regB, [\ptr, \offset]!
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, ldp \regA, \regB, [\ptr, \offset]!)
- 	.endm
- 
- 	.macro stp1_pre_nuao regA, regB, ptr, offset
-diff --git a/arch/arm64/lib/copy_in_user.S b/arch/arm64/lib/copy_in_user.S
-index 2aecdc300c8d..25fdedc6eed8 100644
---- a/arch/arm64/lib/copy_in_user.S
-+++ b/arch/arm64/lib/copy_in_user.S
-@@ -23,117 +23,93 @@
-  */
- 
- 	.macro ldrb1 reg, ptr, offset=0
--	8888: ldtrb \reg, [\ptr, \offset]
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, ldtrb \reg, [\ptr, \offset])
- 	.endm
- 
- 	.macro strb1 reg, ptr, offset=0
--	8888: sttrb \reg, [\ptr, \offset]
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, sttrb \reg, [\ptr, \offset])
- 	.endm
- 
- 	.macro ldrb1_reg reg, ptr, offset
- 	add \ptr, \ptr, \offset
--	8888: ldtrb \reg, [\ptr]
-+	USER_F(9998f, ldtrb \reg, [\ptr])
- 	sub \ptr, \ptr, \offset
--	_asm_extable_faultaddr	8888b,9998f;
- 	.endm
- 
- 	.macro strb1_reg reg, ptr, offset
- 	add \ptr, \ptr, \offset
--	8888: sttrb \reg, [\ptr]
-+	USER_F(9998f, sttrb \reg, [\ptr])
- 	sub \ptr, \ptr, \offset
--	_asm_extable_faultaddr	8888b,9998f;
- 	.endm
- 
- 	.macro ldr1 reg, ptr, offset=0
--	8888: ldtr \reg, [\ptr, \offset]
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, ldtr \reg, [\ptr, \offset])
- 	.endm
- 
- 	.macro str1 reg, ptr, offset=0
--	8888: sttr \reg, [\ptr, \offset]
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, sttr \reg, [\ptr, \offset])
- 	.endm
- 
- 	.macro ldp1 regA, regB, ptr, offset=0
--	8888: ldtr \regA, [\ptr, \offset]
--	8889: ldtr \regB, [\ptr, \offset + 8]
--	_asm_extable_faultaddr	8888b,9998f;
--	_asm_extable_faultaddr	8889b,9998f;
-+	USER_F(9998f, ldtr \regA, [\ptr, \offset])
-+	USER_F(9998f, ldtr \regB, [\ptr, \offset + 8])
- 	.endm
- 
- 	.macro stp1 regA, regB, ptr, offset=0
--	8888: sttr \regA, [\ptr, \offset]
--	8889: sttr \regB, [\ptr, \offset + 8]
--	_asm_extable_faultaddr	8888b,9998f;
--	_asm_extable_faultaddr	8889b,9998f;
-+	USER_F(9998f, sttr \regA, [\ptr, \offset])
-+	USER_F(9998f, sttr \regB, [\ptr, \offset + 8])
- 	.endm
- 
- 	.macro ldp1_pre regA, regB, ptr, offset
--	8888: ldtr \regA, [\ptr, \offset]
--	8889: ldtr \regB, [\ptr, \offset + 8]
-+	USER_F(9998f, ldtr \regA, [\ptr, \offset])
-+	USER_F(9998f, ldtr \regB, [\ptr, \offset + 8])
- 	add \ptr, \ptr, \offset
--	_asm_extable_faultaddr	8888b,9998f;
--	_asm_extable_faultaddr	8889b,9998f;
- 	.endm
- 
- 	.macro stp1_pre regA, regB, ptr, offset
--	8888: sttr \regA, [\ptr, \offset]
--	8889: sttr \regB, [\ptr, \offset + 8]
-+	USER_F(9998f, sttr \regA, [\ptr, \offset])
-+	USER_F(9998f, sttr \regB, [\ptr, \offset + 8])
- 	add \ptr, \ptr, \offset
--	_asm_extable_faultaddr	8888b,9998f;
--	_asm_extable_faultaddr	8889b,9998f;
- 	.endm
- 
- 	.macro ldrb1_nuao reg, ptr, offset=0
--	8888: ldrb \reg, [\ptr, \offset]
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, ldrb \reg, [\ptr, \offset])
- 	.endm
- 
- 	.macro strb1_nuao reg, ptr, offset=0
--	8888: strb \reg, [\ptr, \offset]
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, strb \reg, [\ptr, \offset])
- 	.endm
- 
- 	.macro ldrb1_nuao_reg reg, ptr, offset=0
--	8888: ldrb \reg, [\ptr, \offset]
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, ldrb \reg, [\ptr, \offset])
- 	.endm
- 
- 	.macro strb1_nuao_reg reg, ptr, offset=0
--	8888: strb \reg, [\ptr, \offset]
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, strb \reg, [\ptr, \offset])
- 	.endm
- 
- 	.macro ldr1_nuao reg, ptr, offset=0
--	8888: ldr \reg, [\ptr, \offset]
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, ldr \reg, [\ptr, \offset])
- 	.endm
- 
- 	.macro str1_nuao reg, ptr, offset=0
--	8888: str \reg, [\ptr, \offset]
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, str \reg, [\ptr, \offset])
- 	.endm
- 
- 	.macro ldp1_nuao  regA, regB, ptr, offset=0
--	8888: ldp \regA, \regB, [\ptr, \offset]
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, ldp \regA, \regB, [\ptr, \offset])
- 	.endm
- 
- 	.macro stp1_nuao regA, regB, ptr, offset=0
--	8888: stp \regA, \regB, [\ptr, \offset]
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, stp \regA, \regB, [\ptr, \offset])
- 	.endm
- 
- 	.macro ldp1_pre_nuao regA, regB, ptr, offset
--	8888: ldp \regA, \regB, [\ptr, \offset]!
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, ldp \regA, \regB, [\ptr, \offset]!)
- 	.endm
- 
- 	.macro stp1_pre_nuao regA, regB, ptr, offset
--	8888: stp \regA, \regB, [\ptr, \offset]!
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, stp \regA, \regB, [\ptr, \offset]!)
- 	.endm
- 
- 	.macro copy_exit
-diff --git a/arch/arm64/lib/copy_to_user.S b/arch/arm64/lib/copy_to_user.S
-index d49db097bc31..744c57460619 100644
---- a/arch/arm64/lib/copy_to_user.S
-+++ b/arch/arm64/lib/copy_to_user.S
-@@ -25,8 +25,7 @@
- 	.endm
- 
- 	.macro strb1 reg, ptr, offset=0
--	8888: sttrb \reg, [\ptr, \offset]
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, sttrb \reg, [\ptr, \offset])
- 	.endm
- 
- 	.macro ldrb1_reg reg, ptr, offset
-@@ -35,9 +34,8 @@
- 
- 	.macro strb1_reg reg, ptr, offset
- 	add \ptr, \ptr, \offset
--	8888: sttrb \reg, [\ptr]
-+	USER_F(9998f, sttrb \reg, [\ptr])
- 	sub \ptr, \ptr, \offset
--	_asm_extable_faultaddr	8888b,9998f;
- 	.endm
- 
- 	.macro ldr1 reg, ptr, offset=0
-@@ -45,8 +43,7 @@
- 	.endm
- 
- 	.macro str1 reg, ptr, offset=0
--	8888: sttr \reg, [\ptr, \offset]
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, sttr \reg, [\ptr, \offset])
- 	.endm
- 
- 	.macro ldp1 regA, regB, ptr, offset=0
-@@ -54,10 +51,8 @@
- 	.endm
- 
- 	.macro stp1 regA, regB, ptr, offset=0
--	8888: sttr \regA, [\ptr, \offset]
--	8889: sttr \regB, [\ptr, \offset + 8]
--	_asm_extable_faultaddr	8888b,9998f;
--	_asm_extable_faultaddr	8889b,9998f;
-+	USER_F(9998f, sttr \regA, [\ptr, \offset])
-+	USER_F(9998f, sttr \regB, [\ptr, \offset + 8])
- 	.endm
- 
- 	.macro ldp1_pre regA, regB, ptr, offset
-@@ -65,11 +60,9 @@
- 	.endm
- 
- 	.macro stp1_pre regA, regB, ptr, offset
--	8888: sttr \regA, [\ptr, \offset]
--	8889: sttr \regB, [\ptr, \offset + 8]
-+	USER_F(9998f, sttr \regA, [\ptr, \offset])
-+	USER_F(9998f, sttr \regB, [\ptr, \offset + 8])
- 	add \ptr, \ptr, \offset
--	_asm_extable_faultaddr	8888b,9998f;
--	_asm_extable_faultaddr	8889b,9998f;
- 	.endm
- 
- 	.macro ldrb1_nuao reg, ptr, offset=0
-@@ -77,8 +70,7 @@
- 	.endm
- 
- 	.macro strb1_nuao reg, ptr, offset=0
--	8888: strb \reg, [\ptr, \offset]
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, strb \reg, [\ptr, \offset])
- 	.endm
- 
- 	.macro ldrb1_nuao_reg reg, ptr, offset=0
-@@ -94,8 +86,7 @@
- 	.endm
- 
- 	.macro str1_nuao reg, ptr, offset=0
--	8888: str \reg, [\ptr, \offset]
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, str \reg, [\ptr, \offset])
- 	.endm
- 
- 	.macro ldp1_nuao  regA, regB, ptr, offset=0
-@@ -107,13 +98,11 @@
- 	.endm
- 
- 	.macro stp1_nuao regA, regB, ptr, offset=0
--	8888: stp \regA, \regB, [\ptr, \offset]
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, stp \regA, \regB, [\ptr, \offset])
- 	.endm
- 
- 	.macro stp1_pre_nuao regA, regB, ptr, offset
--	8888: stp \regA, \regB, [\ptr, \offset]!
--	_asm_extable_faultaddr	8888b,9998f;
-+	USER_F(9998f, stp \regA, \regB, [\ptr, \offset]!)
- 	.endm
- 
- 	.macro copy_exit
 -- 
-2.21.0.dirty
+2.23.0
 
 
 _______________________________________________
