@@ -2,52 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37871D7C86
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 18:57:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 640CCD7CF8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 19:09:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mhtRaZc0G/YoVvExk0TBdNc9HbZqXtxkEu16Myd2KtA=; b=EcaK4Qfy6C9nDT
-	89DywnC9/tN3cTJ+5SmM8rplP8nXOGSvhWUrkgm8e8nCeNDK9JQYR3FI0mWDG3XSCjSCQ0qzpDv6a
-	4OdKX8vKGysyrAPfdPLq8evoTpcIEicYVJ3CVTEv+xIBjOSj3Py9ZnLK60dBvTA0OEliW54S/iUWm
-	HfRkzZ3Wn39TQU1cdMjzG8JrBJt584ChTy7CPlNCzQkfU2Ae6XUW5RDl/dlt/S2wf1QCLrFFQc1r9
-	PlDZNYJgMSONQXCLKYcd1O2anCnnUwNbNRg+c9M+ffc2mWVZdIcIjBvHcy1zWYNYjU65a2fgdtg1Q
-	JE9f73HjogEY89GbEvmg==;
+	List-Owner; bh=xuDMz/qyBz1y6d/HWn53/X/b8+WxdSn61ajVVQWjfHM=; b=hbSwU0PEkSIl70
+	MuCDjsQ0Jc6NCwjeV29MCMzDIeiiJqGaNVGNQs0UXxwwZRLZFMfzcu+TYmQC0194rv4nbwJbODSWo
+	JvFNTBAdVgen4oFRwXVzO3D0b5bpgJRi7B3m4zOH3LQcz7uA7gRpUqAu3657tCoUYdqRRPdQm7eIx
+	XJf4arK4UNwFK83AhHsVaxevjrBeiK0gk8W7UDyFX3Gd9uFytJ+tXXYTVW54a8Pv2dfWg2U2gE90m
+	Y5suK9f7lzInb/Vbppapjs3/EQ7rFxYo3w7dPR0aW2SVG34muQoGW/jaQWd6nRnmDIixSJXbdwX22
+	FDXV27IUT3H42LWqkoCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKQ88-0004P5-CV; Tue, 15 Oct 2019 16:57:04 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKQ7x-0004Nc-2U; Tue, 15 Oct 2019 16:56:54 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D4DFA337;
- Tue, 15 Oct 2019 09:56:51 -0700 (PDT)
-Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B74A23F68E;
- Tue, 15 Oct 2019 09:56:49 -0700 (PDT)
-Date: Tue, 15 Oct 2019 17:56:47 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Markus Elfring <Markus.Elfring@web.de>
-Subject: Re: [PATCH] PCI: dwc: Use PTR_ERR_OR_ZERO() in five functions
-Message-ID: <20191015165647.GD25674@e121166-lin.cambridge.arm.com>
-References: <95c9dfae-af81-82ad-e989-1fdf5f29808e@web.de>
+	id 1iKQK9-00007b-Vu; Tue, 15 Oct 2019 17:09:30 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iKQK0-00006o-1r
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 17:09:21 +0000
+Received: by mail-ot1-f67.google.com with SMTP id c10so17602735otd.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 15 Oct 2019 10:09:19 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=JHMlVw4tvcimgqLNE6cW+4izJ5ZEdiASsMVMnyNWIFE=;
+ b=lmNSHb+aGFML9nQdxRLpLwL5SzqocS9nbPL0E1rRk6iP2eMKKHWcoxhQgUPv0VBXtR
+ +0sVWNh20Gl4S+eV3HnDR/Qa7MT3KB7dpUy9kBXZKT0+6tXxB8nN9I4RfxFjnnGub+w5
+ mQIwtb+bKgZUL/MPozEfeMH0GvyA0pL1Fy5jRzfCvZpLUVYZEaOZnd2JLdJfgSDBuFy6
+ yB1xzT9w35sN6qg0Es4n+PpX2wvpxdmuGkoZ1Bl4HGV3aX2GBjtCuFRPUW52O7G40kt5
+ nTBbU2sV63APEFsHltOaC3GfUeJSst+sp3o20t0xiIY9HqmwM6dHazIJ3DG0xCZvNi31
+ 5AJQ==
+X-Gm-Message-State: APjAAAVMRquAMFrHgy0G/AfhYEi4po/4nCKa2zA0BbrhWk5ZWtz3ahkD
+ AfqZFtV9cmxzBRxayTg8cw==
+X-Google-Smtp-Source: APXvYqy2X9I15W25gmPVuvvFHsnO6LRLZtuacdrohlwkKPnx10p92ZlfGBeUKRra5d48a54FxaB9Kg==
+X-Received: by 2002:a9d:70c3:: with SMTP id w3mr22943854otj.246.1571159359034; 
+ Tue, 15 Oct 2019 10:09:19 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id o184sm6585474oia.28.2019.10.15.10.09.18
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 15 Oct 2019 10:09:18 -0700 (PDT)
+Date: Tue, 15 Oct 2019 12:09:17 -0500
+From: Rob Herring <robh@kernel.org>
+To: Benjamin Gaignard <benjamin.gaignard@st.com>
+Subject: Re: [PATCH v4] dt-bindings: display: Convert stm32 display bindings
+ to json-schema
+Message-ID: <20191015170917.GA8078@bogus>
+References: <20191015123151.14828-1-benjamin.gaignard@st.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <95c9dfae-af81-82ad-e989-1fdf5f29808e@web.de>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20191015123151.14828-1-benjamin.gaignard@st.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_095653_204105_8E97A42A 
-X-CRM114-Status: GOOD (  15.25  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191015_100920_097223_BEE0948F 
+X-CRM114-Status: GOOD (  12.25  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.67 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,115 +92,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, YueHaibing <yuehaibing@huawei.com>,
- linux-pci@vger.kernel.org, Binghui Wang <wangbinghui@hisilicon.com>,
- kernel-janitors@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Yue Wang <yue.wang@Amlogic.com>,
- Kukjin Kim <kgene@kernel.org>, Kevin Hilman <khilman@baylibre.com>,
- Jingoo Han <jingoohan1@gmail.com>, Bjorn Helgaas <bhelgaas@google.com>,
- linux-amlogic@lists.infradead.org, zhong jiang <zhongjiang@huawei.com>,
- Xiaowei Song <songxiaowei@hisilicon.com>, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
+ airlied@linux.ie, philippe.cornu@st.com, dri-devel@lists.freedesktop.org,
+ linux-kernel@vger.kernel.org, yannick.fertre@st.com, robh+dt@kernel.org,
+ daniel@ffwll.ch, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org,
+ Benjamin Gaignard <benjamin.gaignard@st.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 06, 2019 at 08:50:07PM +0200, Markus Elfring wrote:
-> From: Markus Elfring <elfring@users.sourceforge.net>
-> Date: Fri, 6 Sep 2019 20:40:06 +0200
+On Tue, 15 Oct 2019 14:31:51 +0200, Benjamin Gaignard wrote:
+> Convert the STM32 display binding to DT schema format using json-schema.
+> Split the original bindings in two yaml files:
+> - one for display controller (ltdc)
+> - one for DSI controller
 > 
-> Simplify these function implementations by using a known function.
-> 
-> Generated by: scripts/coccinelle/api/ptr_ret.cocci
-> 
-> Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
+> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
 > ---
->  drivers/pci/controller/dwc/pci-exynos.c |  5 +----
->  drivers/pci/controller/dwc/pci-meson.c  | 10 ++--------
->  drivers/pci/controller/dwc/pcie-kirin.c | 10 ++--------
->  3 files changed, 5 insertions(+), 20 deletions(-)
+> changes in v4:
+> - describe interruptions items
+> - remove unit address from port property
+> - remove dma-ranges (DT patches send too)
+> 
+> changes in v3:
+> - use (GPL-2.0-only OR BSD-2-Clause) license
+> 
+> changes in v2:
+> - use BSD-2-Clause license
+> - add panel property
+> - fix identation
+> - remove pinctrl-names: true
+> - remove pinctrl-[0-9]+: true
+> - rework ports block to include port@0 and port@1
+> - use const for #adress-cells and #size-cells
+> - add additionalProperties: false
+>  .../devicetree/bindings/display/st,stm32-dsi.yaml  | 151 +++++++++++++++++++++
+>  .../devicetree/bindings/display/st,stm32-ltdc.txt  | 144 --------------------
+>  .../devicetree/bindings/display/st,stm32-ltdc.yaml |  81 +++++++++++
+>  3 files changed, 232 insertions(+), 144 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/display/st,stm32-dsi.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/display/st,stm32-ltdc.txt
+>  create mode 100644 Documentation/devicetree/bindings/display/st,stm32-ltdc.yaml
+> 
 
-https://lore.kernel.org/linux-pci/20190527140952.GB7202@ulmo/
+Applied, thanks.
 
-Dropped, sorry.
-
-Lorenzo
-
-> diff --git a/drivers/pci/controller/dwc/pci-exynos.c b/drivers/pci/controller/dwc/pci-exynos.c
-> index cee5f2f590e2..b6ab1cc5d895 100644
-> --- a/drivers/pci/controller/dwc/pci-exynos.c
-> +++ b/drivers/pci/controller/dwc/pci-exynos.c
-> @@ -92,10 +92,7 @@ static int exynos5440_pcie_get_mem_resources(struct platform_device *pdev,
-> 
->  	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
->  	ep->mem_res->elbi_base = devm_ioremap_resource(dev, res);
-> -	if (IS_ERR(ep->mem_res->elbi_base))
-> -		return PTR_ERR(ep->mem_res->elbi_base);
-> -
-> -	return 0;
-> +	return PTR_ERR_OR_ZERO(ep->mem_res->elbi_base);
->  }
-> 
->  static int exynos5440_pcie_get_clk_resources(struct exynos_pcie *ep)
-> diff --git a/drivers/pci/controller/dwc/pci-meson.c b/drivers/pci/controller/dwc/pci-meson.c
-> index e35e9eaa50ee..713059918002 100644
-> --- a/drivers/pci/controller/dwc/pci-meson.c
-> +++ b/drivers/pci/controller/dwc/pci-meson.c
-> @@ -182,10 +182,7 @@ static int meson_pcie_get_mems(struct platform_device *pdev,
-> 
->  	/* Meson SoC has two PCI controllers use same phy register*/
->  	mp->mem_res.phy_base = meson_pcie_get_mem_shared(pdev, mp, "phy");
-> -	if (IS_ERR(mp->mem_res.phy_base))
-> -		return PTR_ERR(mp->mem_res.phy_base);
-> -
-> -	return 0;
-> +	return PTR_ERR_OR_ZERO(mp->mem_res.phy_base);
->  }
-> 
->  static void meson_pcie_power_on(struct meson_pcie *mp)
-> @@ -259,10 +256,7 @@ static int meson_pcie_probe_clocks(struct meson_pcie *mp)
->  		return PTR_ERR(res->general_clk);
-> 
->  	res->clk = meson_pcie_probe_clock(dev, "pcie", 0);
-> -	if (IS_ERR(res->clk))
-> -		return PTR_ERR(res->clk);
-> -
-> -	return 0;
-> +	return PTR_ERR_OR_ZERO(res->clk);
->  }
-> 
->  static inline void meson_elb_writel(struct meson_pcie *mp, u32 val, u32 reg)
-> diff --git a/drivers/pci/controller/dwc/pcie-kirin.c b/drivers/pci/controller/dwc/pcie-kirin.c
-> index c19617a912bd..75b1f1dde747 100644
-> --- a/drivers/pci/controller/dwc/pcie-kirin.c
-> +++ b/drivers/pci/controller/dwc/pcie-kirin.c
-> @@ -138,10 +138,7 @@ static long kirin_pcie_get_clk(struct kirin_pcie *kirin_pcie,
->  		return PTR_ERR(kirin_pcie->apb_sys_clk);
-> 
->  	kirin_pcie->pcie_aclk = devm_clk_get(dev, "pcie_aclk");
-> -	if (IS_ERR(kirin_pcie->pcie_aclk))
-> -		return PTR_ERR(kirin_pcie->pcie_aclk);
-> -
-> -	return 0;
-> +	return PTR_ERR_OR_ZERO(kirin_pcie->pcie_aclk);
->  }
-> 
->  static long kirin_pcie_get_resource(struct kirin_pcie *kirin_pcie,
-> @@ -174,10 +171,7 @@ static long kirin_pcie_get_resource(struct kirin_pcie *kirin_pcie,
-> 
->  	kirin_pcie->sysctrl =
->  		syscon_regmap_lookup_by_compatible("hisilicon,hi3660-sctrl");
-> -	if (IS_ERR(kirin_pcie->sysctrl))
-> -		return PTR_ERR(kirin_pcie->sysctrl);
-> -
-> -	return 0;
-> +	return PTR_ERR_OR_ZERO(kirin_pcie->sysctrl);
->  }
-> 
->  static int kirin_pcie_phy_init(struct kirin_pcie *kirin_pcie)
-> --
-> 2.23.0
-> 
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
