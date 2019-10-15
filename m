@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B155D748A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 13:13:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7FA9BD74AA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 13:14:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=/dq0gBn6r/reHBs8/KtNhj+LrpE142rOy+K7T0cwjW4=; b=YMC
-	WLBv6n4s5lWgAYwt4g01a9jE1kTBcGV0WTo7b7eTIiMXwO8s8xXUAuYyGM7gwtnzHpVL4o6UkP8wM
-	4XfkFv0n/vi2NdaYMFkWltIL65qJRYkFcK86Pf0/81fX+H0wZsfFCXiNuyk6ml4knvDVjJYbHYOlg
-	HbUQTbaHxFpckF95j1AaXjej3eFxF608oLTgyKg0bzQaXEWwX+k4Bm2r+tA4fPZ/afg8MW5jm1JbB
-	kguSTNYACubfrBPCsfwEERGxLeVpfHIZeXvOlEGV6GrF5yDiVGLaPA8G4QYgyzWFC/umQNBnn0t4N
-	JSxMVQGRs/bJEjMjgX0CyEoTKk9zdUw==;
+	References:List-Owner; bh=CGYVSUhvSFRrvDwJBInOAdksPGtw74MXRWm9lgAkyx8=; b=Cj1
+	Ne+v4ZOy4ddv13wlF9Jh0X3Ubaf/YQ4RiAQK2vBuqUuy75+6UzfwVQqV4W/kEnvf3DoD/JeKPH5Y4
+	xX9isvMylRopCKI0TNDH7WpSTrVtDV4vNECyWuzKcWNd1dcAuLbv+8hC9vTq+BUYpTt4CEsjuKjLS
+	NGlDJFm1wPpwiI+sNrm/K/cBqBJUSuUyVNc8z5LaxMfE1OomxkPU3i1ufCaruS4XEZdRbCM9nEo9U
+	G4cqBMpMxOn01YljZh5ZlXk8njqPiPA3pYyNApPfjOa26x6H3gfUdaJDP4mnLWfiskDKJJodaH6pk
+	kpo3MJG9JwpmjoAn4St5oclKvHNrBpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKKlU-0007Y1-FS; Tue, 15 Oct 2019 11:13:20 +0000
+	id 1iKKmo-00010x-G5; Tue, 15 Oct 2019 11:14:42 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKKkc-00078Z-Mv
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 11:12:28 +0000
+ id 1iKKkd-00078k-9G
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 11:12:31 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=sM7E8taO+faCX1B08W8bz1doM9EMVFx0kjcSL7W4bos=; b=Im4sf9CqkWHp
- mxoldhr3R0kBLyeAxNQS4R5lsFBSqqwL85EeL2CQZ5Vb2cXaaIQSToWzqAw8VC9CRYWslE2gA55YT
- eMTQMl0oVsc2ThniTsjucqHuAnJEJGwlDUkBtYe9hiLyiWZYC7XYSw2rgxT89c6spHK38smJMP4Eu
- x4UaM=;
+ List-Archive; bh=SdFplOdARAiXBlTlJSvHykmSu/OcgUoZEZ9Bc5ESoPY=; b=qf0oDaBGPypQ
+ vHYzI8emcLmoeAewd9mYDvNs8jm97ENdNYLGHwm1UdTJXkO7yNmcU4F+VyqAHMnIwzMQxKPClHmUG
+ +rnqzRG/kAQk2f1CApikAhDqbdMekRksxnKzOTbtAlzlVb+AtG5W5DJwpK89CONxD8Ss9XEQgL1Wc
+ uf8bI=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iKKkY-00020b-AU; Tue, 15 Oct 2019 11:12:22 +0000
+ id 1iKKkZ-00020m-6B; Tue, 15 Oct 2019 11:12:23 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id CAFB92741CD7; Tue, 15 Oct 2019 12:12:21 +0100 (BST)
+ id A2DE12741CD7; Tue, 15 Oct 2019 12:12:22 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
 To: Alexandru Ardelean <alexandru.ardelean@analog.com>
-Subject: Applied "spi: spi-axi: extend support for the `delay` field" to the
- spi tree
-In-Reply-To: <20190926105147.7839-20-alexandru.ardelean@analog.com>
+Subject: Applied "spi: spi-fsl-espi: convert transfer delay to `spi_delay`
+ format" to the spi tree
+In-Reply-To: <20190926105147.7839-17-alexandru.ardelean@analog.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20191015111221.CAFB92741CD7@ypsilon.sirena.org.uk>
-Date: Tue, 15 Oct 2019 12:12:21 +0100 (BST)
+Message-Id: <20191015111222.A2DE12741CD7@ypsilon.sirena.org.uk>
+Date: Tue, 15 Oct 2019 12:12:22 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_041226_744149_644E5A9A 
-X-CRM114-Status: GOOD (  14.93  )
+X-CRM114-CacheID: sfid-20191015_041227_340901_EEB4BF2B 
+X-CRM114-Status: GOOD (  17.61  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -91,7 +91,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: spi-axi: extend support for the `delay` field
+   spi: spi-fsl-espi: convert transfer delay to `spi_delay` format
 
 has been applied to the spi tree at
 
@@ -116,60 +116,124 @@ to this mail.
 Thanks,
 Mark
 
-From acc7720de3cb9721ac07f68309dd6d7aae8e9a7a Mon Sep 17 00:00:00 2001
+From 3984d39b0e41ac4de8b4530ae3911ccf52ed4bbf Mon Sep 17 00:00:00 2001
 From: Alexandru Ardelean <alexandru.ardelean@analog.com>
-Date: Thu, 26 Sep 2019 13:51:47 +0300
-Subject: [PATCH] spi: spi-axi: extend support for the `delay` field
+Date: Thu, 26 Sep 2019 13:51:44 +0300
+Subject: [PATCH] spi: spi-fsl-espi: convert transfer delay to `spi_delay`
+ format
 
-The AXI SPI engine driver uses the `delay_usecs` field from `spi_transfer`
-to configure delays, which the controller will execute.
-This change extends the logic to also include the `delay` value, in case it
-is used (instead if `delay_usecs`).
+The way the max delay is computed for this controller, it looks like it is
+searching for the max delay from an SPI message a using that.
+
+No idea if this is valid. But this change should support both `delay_usecs`
+and the new `delay` data which is of `spi_delay` type.
 
 Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
-Link: https://lore.kernel.org/r/20190926105147.7839-20-alexandru.ardelean@analog.com
+Link: https://lore.kernel.org/r/20190926105147.7839-17-alexandru.ardelean@analog.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/spi-axi-spi-engine.c | 16 +++++++++++++---
- 1 file changed, 13 insertions(+), 3 deletions(-)
+ drivers/spi/spi-fsl-espi.c | 16 +++++++++++++---
+ drivers/spi/spi.c          |  9 +++++----
+ include/linux/spi/spi.h    |  1 +
+ 3 files changed, 19 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/spi/spi-axi-spi-engine.c b/drivers/spi/spi-axi-spi-engine.c
-index 74842f6019ed..eb9b78a90dcf 100644
---- a/drivers/spi/spi-axi-spi-engine.c
-+++ b/drivers/spi/spi-axi-spi-engine.c
-@@ -163,10 +163,21 @@ static void spi_engine_gen_xfer(struct spi_engine_program *p, bool dry,
+diff --git a/drivers/spi/spi-fsl-espi.c b/drivers/spi/spi-fsl-espi.c
+index f20326714b9d..f72daf66f3f3 100644
+--- a/drivers/spi/spi-fsl-espi.c
++++ b/drivers/spi/spi-fsl-espi.c
+@@ -437,6 +437,7 @@ static int fsl_espi_do_one_msg(struct spi_master *master,
+ 			       struct spi_message *m)
+ {
+ 	unsigned int delay_usecs = 0, rx_nbits = 0;
++	unsigned int delay_nsecs = 0, delay_nsecs1 = 0;
+ 	struct spi_transfer *t, trans = {};
+ 	int ret;
+ 
+@@ -445,8 +446,16 @@ static int fsl_espi_do_one_msg(struct spi_master *master,
+ 		goto out;
+ 
+ 	list_for_each_entry(t, &m->transfers, transfer_list) {
+-		if (t->delay_usecs > delay_usecs)
+-			delay_usecs = t->delay_usecs;
++		if (t->delay_usecs) {
++			if (t->delay_usecs > delay_usecs) {
++				delay_usecs = t->delay_usecs;
++				delay_nsecs = delay_usecs * 1000;
++			}
++		} else {
++			delay_nsecs1 = spi_delay_to_ns(&t->delay, t);
++			if (delay_nsecs1 > delay_nsecs)
++				delay_nsecs = delay_nsecs1;
++		}
+ 		if (t->rx_nbits > rx_nbits)
+ 			rx_nbits = t->rx_nbits;
+ 	}
+@@ -457,7 +466,8 @@ static int fsl_espi_do_one_msg(struct spi_master *master,
+ 	trans.len = m->frame_length;
+ 	trans.speed_hz = t->speed_hz;
+ 	trans.bits_per_word = t->bits_per_word;
+-	trans.delay_usecs = delay_usecs;
++	trans.delay.value = delay_nsecs;
++	trans.delay.unit = SPI_DELAY_UNIT_NSECS;
+ 	trans.rx_nbits = rx_nbits;
+ 
+ 	if (trans.len)
+diff --git a/drivers/spi/spi.c b/drivers/spi/spi.c
+index 21628b0728f1..5414a10afd65 100644
+--- a/drivers/spi/spi.c
++++ b/drivers/spi/spi.c
+@@ -1120,7 +1120,7 @@ static void _spi_transfer_delay_ns(u32 ns)
+ 	}
  }
  
- static void spi_engine_gen_sleep(struct spi_engine_program *p, bool dry,
--	struct spi_engine *spi_engine, unsigned int clk_div, unsigned int delay)
-+	struct spi_engine *spi_engine, unsigned int clk_div,
-+	struct spi_transfer *xfer)
+-static int _spi_delay_to_ns(struct spi_delay *_delay, struct spi_transfer *xfer)
++int spi_delay_to_ns(struct spi_delay *_delay, struct spi_transfer *xfer)
  {
- 	unsigned int spi_clk = clk_get_rate(spi_engine->ref_clk);
- 	unsigned int t;
-+	int delay;
-+
-+	if (xfer->delay_usecs) {
-+		delay = xfer->delay_usecs;
-+	} else {
-+		delay = spi_delay_to_ns(&xfer->delay, xfer);
-+		if (delay < 0)
-+			return;
-+		delay /= 1000;
-+	}
+ 	u32 delay = _delay->value;
+ 	u32 unit = _delay->unit;
+@@ -1153,6 +1153,7 @@ static int _spi_delay_to_ns(struct spi_delay *_delay, struct spi_transfer *xfer)
  
- 	if (delay == 0)
- 		return;
-@@ -218,8 +229,7 @@ static int spi_engine_compile_message(struct spi_engine *spi_engine,
- 			spi_engine_gen_cs(p, dry, spi, true);
+ 	return delay;
+ }
++EXPORT_SYMBOL_GPL(spi_delay_to_ns);
  
- 		spi_engine_gen_xfer(p, dry, xfer);
--		spi_engine_gen_sleep(p, dry, spi_engine, clk_div,
--			xfer->delay_usecs);
-+		spi_engine_gen_sleep(p, dry, spi_engine, clk_div, xfer);
+ int spi_delay_exec(struct spi_delay *_delay, struct spi_transfer *xfer)
+ {
+@@ -1161,7 +1162,7 @@ int spi_delay_exec(struct spi_delay *_delay, struct spi_transfer *xfer)
+ 	if (!_delay)
+ 		return -EINVAL;
  
- 		cs_change = xfer->cs_change;
- 		if (list_is_last(&xfer->transfer_list, &msg->transfers))
+-	delay = _spi_delay_to_ns(_delay, xfer);
++	delay = spi_delay_to_ns(_delay, xfer);
+ 	if (delay < 0)
+ 		return delay;
+ 
+@@ -3333,11 +3334,11 @@ static int _spi_xfer_word_delay_update(struct spi_transfer *xfer,
+ {
+ 	int delay1, delay2;
+ 
+-	delay1 = _spi_delay_to_ns(&xfer->word_delay, xfer);
++	delay1 = spi_delay_to_ns(&xfer->word_delay, xfer);
+ 	if (delay1 < 0)
+ 		return delay1;
+ 
+-	delay2 = _spi_delay_to_ns(&spi->word_delay, xfer);
++	delay2 = spi_delay_to_ns(&spi->word_delay, xfer);
+ 	if (delay2 < 0)
+ 		return delay2;
+ 
+diff --git a/include/linux/spi/spi.h b/include/linux/spi/spi.h
+index cfd87b18f077..c40d6af2bf07 100644
+--- a/include/linux/spi/spi.h
++++ b/include/linux/spi/spi.h
+@@ -103,6 +103,7 @@ struct spi_delay {
+ 	u8	unit;
+ };
+ 
++extern int spi_delay_to_ns(struct spi_delay *_delay, struct spi_transfer *xfer);
+ extern int spi_delay_exec(struct spi_delay *_delay, struct spi_transfer *xfer);
+ 
+ /**
 -- 
 2.20.1
 
