@@ -2,75 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B398BD83E7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 00:45:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB784D83F1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 00:46:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=qpbTbcaCcy02Plh7VFpx/2JSuFMe3oyKqf3PmEBuAYk=; b=Ahq
-	2O6cNfWtvDj6TZFEJNYSxlk1bk4nWDAZKu0NlbSyb8PUU1oWJZrbOGbXorRLClAxHnYg7H0eB3cq4
-	1OAXj+I+//eXImyJW90zR19QIizizQDylVgt44HMTXTyYEXzsU12NPWDdSu6amFlGt6u9xqQC2BDW
-	vQRWceAwg1u97xWXprOsFQQ/cVvGRDcK7NzTUkN8W3EuiSkXB4TB5fw6IZrpbI5ZPUE1g+QiJxCAe
-	27f9SDKGF5+KF/ZwTb23DkUbU27l9fFkuMCgBkU+BJEQOVSlUZ4FaTVPC386P5gOMZLLf/zb6aSis
-	+DxGn4L7kOKJCXyjlpX8hK5sOEzbxgQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=+G3PQMlTWp2tA2a0U8Ux3LJuimDPAdGw3mmWLUV/Zm8=; b=gHcSP256Aum0YX5UziPxfBmbKZ
+	bKuKtsOXY46zolQjXkXRb3aL1ZdcmTsHjiZp9shs0QkHPGOj6hjkDfTOwv/IyUk6yFNKpvufv5YhW
+	Xg0oQmOnNV7zGWpuZuRz8I4+aqNWxZTfUtq26dKZDpjvW3otF62DEL3YangHclZ0sWAJ+SAsMEzbk
+	3XjkRd6d+txCcIMi6fPG7A9ADVyJUQkBgEJb8NHx2hf8L+S2dAlHoLoS1+upUJ7c5OJ6c008wuwI8
+	HTwpVtQSZ0aqDb5JHULmbP80YnB/FdeoJDRKXXRiAPKr/ED8nJ7VIuvbuEuMyaZTPbHfmiP4ZIZqN
+	4oo0D7LA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKVZe-0003PN-Sn; Tue, 15 Oct 2019 22:45:50 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1iKVZz-0003cW-9B; Tue, 15 Oct 2019 22:46:11 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKVZW-0003P6-UA
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 22:45:44 +0000
-Received: by mail-pg1-x544.google.com with SMTP id e10so9032132pgd.11
+ id 1iKVZi-0003Zu-I5
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 22:45:56 +0000
+Received: by mail-pl1-x641.google.com with SMTP id j11so10283216plk.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 15 Oct 2019 15:45:42 -0700 (PDT)
+ Tue, 15 Oct 2019 15:45:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=1bUylbnf/ijYUFyNHUOHrR4ReBx5Q/B7TVQ4ppAfqII=;
- b=T2jYhvr6TiadcqROfJ20FGuCM4Knyni6wsNlhfGxDMfXJAqmO2ladct5sVE19s7OCD
- y/xBOe+IFExKYknpQItRxW5zjsCXlDVa2TeOXNqR8JumpobSizb95jd3mLpL+doMVUJ0
- 7OoKVGtGysY2GVTTOZHq6p8NfkU+tJqeNWdqk=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=NszovcrmeizweFufzZjrkW8f6hhK6QnYuVsht4WHchE=;
+ b=MiDaGBSUt8KaxANsMCLt/lqC4wjaFlMnpMkUl7eV8BUrp00yAkHdwbpj1MErqfLbtd
+ IGrR5a5ucjrZ0ZgOFLgMqVDre1osREK130TeFuIfWhqNhOqezR7cbbCrsvot70LZah4f
+ ekQWx4vDVJkOHSiuYF12fYV/JxInqNfT6FcCU=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=1bUylbnf/ijYUFyNHUOHrR4ReBx5Q/B7TVQ4ppAfqII=;
- b=fy1JwpuzhofhI2bxDk/BOFjEqgr43P+1E1lnSjrDjoxFkH5tEYXuPaLogyZ1RjgC2n
- TawMVolFsWOfc8NLaawUpLfuboZtaopBkIMZ0l6b+5LhRh6PBDa5L4aR35my1yOhy7BM
- WHbC05J3Nw6YetB4oLEuA4VCWfTxyq9d3OnwdncXOB5pa03PGlp1eNKa5+biHmF/XaYt
- g+31+/LJ5rsyvmTBpkv1B2aTBnQYVaKnrpZqZP8rfAg6RJUMLnsjZSO9gnqXx8R9EmDH
- IsHbQjMf3Vd8XzLQsuWAJvvkIkcFtYlo5FqVczqnMA2KU3QgKcJZl/tmsW3T5az/LeYV
- tipQ==
-X-Gm-Message-State: APjAAAUf0HXAQwlQfFhoS6eaPQ0gsdIMwAt8QfeUEf55jSXUojxbPqQh
- SBKgObGXQLwARoHhU16zF3MjFQ==
-X-Google-Smtp-Source: APXvYqx5rLiQZDfHCEtsdvgAeiEL0ltx797XfMMt09+s8XlB6C/EHFEv7HECzEYYXWRWpIkANCaihg==
-X-Received: by 2002:a63:2f84:: with SMTP id
- v126mr40876731pgv.100.1571179541407; 
- Tue, 15 Oct 2019 15:45:41 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=NszovcrmeizweFufzZjrkW8f6hhK6QnYuVsht4WHchE=;
+ b=OipoDMR2UpM0v4xrl0bjVLIA9WIh8kkwfrJjfmvPLcXShZLU7AX3Dz9IPzPlj7shtc
+ 1h8S56q0uHXgZzMrKqs4vcB8lJtv4YQqq9HGsqD1WPwOpl4i3xVqcFBLBlAynSpNvNew
+ nl8mvpiC7chtnWymWPMV2ZleZnedG7RJzGvYrjsHUQJ7Y8ugqsgu87y8zaaaxMMJ/aMo
+ HQV9W5prAta76E2rjoU8+y1qGj6gnUXy4MAhrIjcTMJabYkZH32f5Dip8CiP9IiqllN7
+ sVfwn6lJruV068CAzZBGaiQ69ay9ktD1ii3xX10ZXIG0aA3UCFBB2epDQd9Lpc6V/DN4
+ 0JDQ==
+X-Gm-Message-State: APjAAAUxptXHz70V7oQNXQ5Ba4iVAhTBD8aXecT9ZouF7FnDzUvT+vxU
+ 5XcV6Dwg6ev/iVcwROp3J4+umQ==
+X-Google-Smtp-Source: APXvYqziY7vPjk2T010iyMGZDzq6jJCb4rzcDFVf3OVxNv8oL/5/7Ll+wdzceBfFHS9rEv4TmwI94g==
+X-Received: by 2002:a17:902:d204:: with SMTP id
+ t4mr35234943ply.253.1571179553270; 
+ Tue, 15 Oct 2019 15:45:53 -0700 (PDT)
 Received: from lbrmn-mmayer.ric.broadcom.com ([192.19.228.250])
- by smtp.gmail.com with ESMTPSA id e127sm23019837pfe.37.2019.10.15.15.45.39
+ by smtp.gmail.com with ESMTPSA id e127sm23019837pfe.37.2019.10.15.15.45.51
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 15 Oct 2019 15:45:40 -0700 (PDT)
+ Tue, 15 Oct 2019 15:45:52 -0700 (PDT)
 From: Markus Mayer <mmayer@broadcom.com>
 To: Brian Norris <computersforpeace@gmail.com>,
  Florian Fainelli <f.fainelli@gmail.com>,
  Gregory Fong <gregory.0xf0@gmail.com>
-Subject: [PATCH 0/8] memory: brcmstb: dpfe: introduce DPFE API v2.5
-Date: Tue, 15 Oct 2019 15:45:05 -0700
-Message-Id: <20191015224513.16969-1-mmayer@broadcom.com>
+Subject: [PATCH 1/8] memory: brcmstb: dpfe: rename struct private_data
+Date: Tue, 15 Oct 2019 15:45:06 -0700
+Message-Id: <20191015224513.16969-2-mmayer@broadcom.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191015224513.16969-1-mmayer@broadcom.com>
+References: <20191015224513.16969-1-mmayer@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_154542_977637_D6A44972 
-X-CRM114-Status: UNSURE (   9.23  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191015_154554_602598_32CF4952 
+X-CRM114-Status: GOOD (  12.93  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -103,32 +106,144 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Here are a few changes for the DPFE driver for Broadcom STB.
+To avoid potential (future) conflicts with other data structures we
+rename "struct private_data" to "struct brcmstb_dpfe_priv".
 
-The changes and enhancements fall into a few categories:
+Signed-off-by: Markus Mayer <mmayer@broadcom.com>
+---
+ drivers/memory/brcmstb_dpfe.c | 28 ++++++++++++++--------------
+ 1 file changed, 14 insertions(+), 14 deletions(-)
 
-- some code cleanup
-- support for deferring firmware download if the rootfs isn't yet available
-- introduce a "new v2 API", which is half way between the existing APIs
-  v2 (now called "old v2") and v3
-
-Florian Fainelli (2):
-  memory: brcmstb: dpfe: Compute checksum at __send_command() time
-  memory: brcmstb: dpfe: Fixup API version/commands for 7211
-
-Markus Mayer (6):
-  memory: brcmstb: dpfe: rename struct private_data
-  memory: brcmstb: dpfe: initialize priv->dev
-  memory: brcmstb: dpfe: add locking around DCPU enable/disable
-  memory: brcmstb: dpfe: move init_data into
-    brcmstb_dpfe_download_firmware()
-  memory: brcmstb: dpfe: pass *priv as argument to
-    brcmstb_dpfe_download_firmware()
-  memory: brcmstb: dpfe: support for deferred firmware download
-
- drivers/memory/brcmstb_dpfe.c | 164 +++++++++++++++++++++-------------
- 1 file changed, 101 insertions(+), 63 deletions(-)
-
+diff --git a/drivers/memory/brcmstb_dpfe.c b/drivers/memory/brcmstb_dpfe.c
+index 6827ed484750..0c4c01d2bf48 100644
+--- a/drivers/memory/brcmstb_dpfe.c
++++ b/drivers/memory/brcmstb_dpfe.c
+@@ -180,7 +180,7 @@ struct dpfe_api {
+ };
+ 
+ /* Things we need for as long as we are active. */
+-struct private_data {
++struct brcmstb_dpfe_priv {
+ 	void __iomem *regs;
+ 	void __iomem *dmem;
+ 	void __iomem *imem;
+@@ -343,7 +343,7 @@ static unsigned int get_msg_chksum(const u32 msg[], unsigned int max)
+ 	return sum;
+ }
+ 
+-static void __iomem *get_msg_ptr(struct private_data *priv, u32 response,
++static void __iomem *get_msg_ptr(struct brcmstb_dpfe_priv *priv, u32 response,
+ 				 char *buf, ssize_t *size)
+ {
+ 	unsigned int msg_type;
+@@ -382,7 +382,7 @@ static void __iomem *get_msg_ptr(struct private_data *priv, u32 response,
+ 	return ptr;
+ }
+ 
+-static void __finalize_command(struct private_data *priv)
++static void __finalize_command(struct brcmstb_dpfe_priv *priv)
+ {
+ 	unsigned int release_mbox;
+ 
+@@ -395,7 +395,7 @@ static void __finalize_command(struct private_data *priv)
+ 	writel_relaxed(0, priv->regs + release_mbox);
+ }
+ 
+-static int __send_command(struct private_data *priv, unsigned int cmd,
++static int __send_command(struct brcmstb_dpfe_priv *priv, unsigned int cmd,
+ 			  u32 result[])
+ {
+ 	const u32 *msg = priv->dpfe_api->command[cmd];
+@@ -517,7 +517,7 @@ static int __verify_firmware(struct init_data *init,
+ 
+ /* Verify checksum by reading back the firmware from co-processor RAM. */
+ static int __verify_fw_checksum(struct init_data *init,
+-				struct private_data *priv,
++				struct brcmstb_dpfe_priv *priv,
+ 				const struct dpfe_firmware_header *header,
+ 				u32 checksum)
+ {
+@@ -578,7 +578,7 @@ static int brcmstb_dpfe_download_firmware(struct platform_device *pdev,
+ 	unsigned int dmem_size, imem_size;
+ 	struct device *dev = &pdev->dev;
+ 	bool is_big_endian = false;
+-	struct private_data *priv;
++	struct brcmstb_dpfe_priv *priv;
+ 	const struct firmware *fw;
+ 	const u32 *dmem, *imem;
+ 	const void *fw_blob;
+@@ -647,7 +647,7 @@ static int brcmstb_dpfe_download_firmware(struct platform_device *pdev,
+ }
+ 
+ static ssize_t generic_show(unsigned int command, u32 response[],
+-			    struct private_data *priv, char *buf)
++			    struct brcmstb_dpfe_priv *priv, char *buf)
+ {
+ 	int ret;
+ 
+@@ -665,7 +665,7 @@ static ssize_t show_info(struct device *dev, struct device_attribute *devattr,
+ 			 char *buf)
+ {
+ 	u32 response[MSG_FIELD_MAX];
+-	struct private_data *priv;
++	struct brcmstb_dpfe_priv *priv;
+ 	unsigned int info;
+ 	ssize_t ret;
+ 
+@@ -688,7 +688,7 @@ static ssize_t show_refresh(struct device *dev,
+ {
+ 	u32 response[MSG_FIELD_MAX];
+ 	void __iomem *info;
+-	struct private_data *priv;
++	struct brcmstb_dpfe_priv *priv;
+ 	u8 refresh, sr_abort, ppre, thermal_offs, tuf;
+ 	u32 mr4;
+ 	ssize_t ret;
+@@ -721,7 +721,7 @@ static ssize_t store_refresh(struct device *dev, struct device_attribute *attr,
+ 			  const char *buf, size_t count)
+ {
+ 	u32 response[MSG_FIELD_MAX];
+-	struct private_data *priv;
++	struct brcmstb_dpfe_priv *priv;
+ 	void __iomem *info;
+ 	unsigned long val;
+ 	int ret;
+@@ -747,7 +747,7 @@ static ssize_t show_vendor(struct device *dev, struct device_attribute *devattr,
+ 			   char *buf)
+ {
+ 	u32 response[MSG_FIELD_MAX];
+-	struct private_data *priv;
++	struct brcmstb_dpfe_priv *priv;
+ 	void __iomem *info;
+ 	ssize_t ret;
+ 	u32 mr5, mr6, mr7, mr8, err;
+@@ -778,7 +778,7 @@ static ssize_t show_dram(struct device *dev, struct device_attribute *devattr,
+ 			 char *buf)
+ {
+ 	u32 response[MSG_FIELD_MAX];
+-	struct private_data *priv;
++	struct brcmstb_dpfe_priv *priv;
+ 	ssize_t ret;
+ 	u32 mr4, mr5, mr6, mr7, mr8, err;
+ 
+@@ -808,7 +808,7 @@ static int brcmstb_dpfe_resume(struct platform_device *pdev)
+ static int brcmstb_dpfe_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+-	struct private_data *priv;
++	struct brcmstb_dpfe_priv *priv;
+ 	struct init_data init;
+ 	struct resource *res;
+ 	int ret;
+@@ -867,7 +867,7 @@ static int brcmstb_dpfe_probe(struct platform_device *pdev)
+ 
+ static int brcmstb_dpfe_remove(struct platform_device *pdev)
+ {
+-	struct private_data *priv = dev_get_drvdata(&pdev->dev);
++	struct brcmstb_dpfe_priv *priv = dev_get_drvdata(&pdev->dev);
+ 
+ 	sysfs_remove_groups(&pdev->dev.kobj, priv->dpfe_api->sysfs_attrs);
+ 
 -- 
 2.17.1
 
