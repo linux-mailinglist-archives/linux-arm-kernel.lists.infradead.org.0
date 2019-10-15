@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6AC7DD74BC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 13:17:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1F71D74C1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 13:18:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=KZ6imjb/iojNvSQXHsf/gt0SxcN31qgG9szJK01bVKk=; b=AcU
-	7LX92VeMOhOmLgfKriSr+q3CJmw+5DfeWDh//CLKEdYSf22VHO+3CZCvDlRtQCZb2xCNx42L2k7eO
-	FGdk8qidaZfmFOlzaqAu6AaAblNWCM2PBcXrvo34m2Hds84VISk09G+W03zioUIDqP0f9AoBWc7Ha
-	usE0AGaDDmbRKSaZ4wFJ+npeKcalS9LJLVX4WIkcMDFSS/239NG8hOhntLy58DvVoAzRbhuS5gnbA
-	N7W140caILq9Yp9GAe97H4b0Rd7Xep2EpkY+j8wvwqPbUUK+VBh6nmYwrQsCYW/Z9WlfpNg4EhUJ8
-	hZGyjcMqKSE4Jpv/rCiI6KzFArcPGng==;
+	References:List-Owner; bh=Zlq7Hl0IkpR+/TwxjVsOqsf5+mAUGi8r0Z+M4ln0e6A=; b=Xnz
+	39sG8WfucyQJJbEuTSgFFCxc/ekhYj9Q1KH1DvXre0thZ+KCjFuigqpoEfEJw+htkqkP1lptTDz/6
+	5NNZBjQJnFsFkeMMvATQPwVgLNNx91TYyl015NwX0yMgseSAikDSf70W+RveBZNCRfdFWfmWn4q7m
+	7N3APdIz5CNVL91MRvQdTxUJE28DRCo2O3s/ie6OrcSiHFsnTfIUt4l/cK1REUaMkyFigFOB1Lvoa
+	uZp3xbIcxErjFEp7ZQtRLWjr9UcT3OOqbtvgrPMo6nVIrQs8SZpeDpwn5gBuUs9aqF/ZIdxNZEv2L
+	x0m1P6STXabKbWEvdQ8VE5j7XeMi5rw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKKot-0003sM-VV; Tue, 15 Oct 2019 11:16:51 +0000
+	id 1iKKq7-0004r1-2Y; Tue, 15 Oct 2019 11:18:07 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKKki-0007Dl-9A
+ id 1iKKkj-0007F1-Ey
  for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 11:12:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
@@ -29,30 +29,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=hcgiqdEyI9PH+KFyB4vAYOotphpi9n8TG47zzpEovkw=; b=pvMUQoEXcckW
- TRyel8KX6H7ubLdWla3JdIS+IhrM8474tKseujZ4Nzecig0d4ZBeMK1CwudMNGlSTXzMcjSxWRHIs
- Y500ow0mZlVobwiMB9ylRtHn9m5QykkHrwpPBof8ag11jiEvBTDx5WAutdBp+KXUba7NfJ+1NT52l
- GmWzs=;
+ List-Archive; bh=HxCw+GrSFAjIDABzZL5hlFUSN3/Z4sQnIyk1p1c3V9o=; b=xg2pQfOmcooJ
+ 4JAirHEZx2LJXvvRwu2jLT98sArjuGfJ6Vv2q2DBDgRJzElWIwXgR3VYyzJ0hyuPpWnp9cDidcvRy
+ 42aD6hF4rIWxagTMPBJpvh2aYxO9OVBAdLfthyE2/wVSowC1NKzQ0hGShSRLPMJB7JUjwasETD8/Z
+ tmNJw=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iKKke-00022m-Tk; Tue, 15 Oct 2019 11:12:28 +0000
+ id 1iKKkf-000234-Ec; Tue, 15 Oct 2019 11:12:29 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 604662741CD7; Tue, 15 Oct 2019 12:12:28 +0100 (BST)
+ id E15C92741DCA; Tue, 15 Oct 2019 12:12:28 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
 To: Alexandru Ardelean <alexandru.ardelean@analog.com>
-Subject: Applied "spi: make `cs_change_delay` the first user of the
- `spi_delay` logic" to the spi tree
-In-Reply-To: <20190926105147.7839-4-alexandru.ardelean@analog.com>
+Subject: Applied "spi: move `cs_change_delay` backwards compat logic outside
+ switch" to the spi tree
+In-Reply-To: <20190926105147.7839-2-alexandru.ardelean@analog.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20191015111228.604662741CD7@ypsilon.sirena.org.uk>
+Message-Id: <20191015111228.E15C92741DCA@ypsilon.sirena.org.uk>
 Date: Tue, 15 Oct 2019 12:12:28 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_041232_626000_41A4E6C0 
-X-CRM114-Status: GOOD (  18.89  )
+X-CRM114-CacheID: sfid-20191015_041233_510574_8DCC3F4A 
+X-CRM114-Status: GOOD (  14.41  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -91,7 +91,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: make `cs_change_delay` the first user of the `spi_delay` logic
+   spi: move `cs_change_delay` backwards compat logic outside switch
 
 has been applied to the spi tree at
 
@@ -116,173 +116,49 @@ to this mail.
 Thanks,
 Mark
 
-From 329f0dac4cad9fa4b1439a88180d91bcb5c4eaf8 Mon Sep 17 00:00:00 2001
+From 6b3f236a998550dba91a46a22feb1cc02f39fb06 Mon Sep 17 00:00:00 2001
 From: Alexandru Ardelean <alexandru.ardelean@analog.com>
-Date: Thu, 26 Sep 2019 13:51:31 +0300
-Subject: [PATCH] spi: make `cs_change_delay` the first user of the `spi_delay`
- logic
+Date: Thu, 26 Sep 2019 13:51:29 +0300
+Subject: [PATCH] spi: move `cs_change_delay` backwards compat logic outside
+ switch
 
-Since the logic for `spi_delay` struct + `spi_delay_exec()` has been copied
-from the `cs_change_delay` logic, it's natural to make this delay, the
-first user.
-
-The `cs_change_delay` logic requires that the default remain 10 uS, in case
-it is unspecified/unconfigured. So, there is some special handling needed
-to do that.
-
-The ADIS library is one of the few users of the new `cs_change_delay`
-parameter for an spi_transfer.
-
-The introduction of the `spi_delay` struct, requires that the users of of
-`cs_change_delay` get an update. This change also updates the ADIS library.
+The `cs_change_delay` backwards compatibility value could be moved outside
+of the switch statement.
+The only reason to do it, is to make the next patches easier to diff.
 
 Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
-Link: https://lore.kernel.org/r/20190926105147.7839-4-alexandru.ardelean@analog.com
+Link: https://lore.kernel.org/r/20190926105147.7839-2-alexandru.ardelean@analog.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/iio/imu/adis.c  | 24 ++++++++++++------------
- drivers/spi/spi.c       | 28 +++++++---------------------
- include/linux/spi/spi.h |  4 +---
- 3 files changed, 20 insertions(+), 36 deletions(-)
+ drivers/spi/spi.c | 11 +++++------
+ 1 file changed, 5 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/iio/imu/adis.c b/drivers/iio/imu/adis.c
-index 1631c255deab..2cd2cc2316c6 100644
---- a/drivers/iio/imu/adis.c
-+++ b/drivers/iio/imu/adis.c
-@@ -39,24 +39,24 @@ int adis_write_reg(struct adis *adis, unsigned int reg,
- 			.len = 2,
- 			.cs_change = 1,
- 			.delay_usecs = adis->data->write_delay,
--			.cs_change_delay = adis->data->cs_change_delay,
--			.cs_change_delay_unit = SPI_DELAY_UNIT_USECS,
-+			.cs_change_delay.value = adis->data->cs_change_delay,
-+			.cs_change_delay.unit = SPI_DELAY_UNIT_USECS,
- 		}, {
- 			.tx_buf = adis->tx + 2,
- 			.bits_per_word = 8,
- 			.len = 2,
- 			.cs_change = 1,
- 			.delay_usecs = adis->data->write_delay,
--			.cs_change_delay = adis->data->cs_change_delay,
--			.cs_change_delay_unit = SPI_DELAY_UNIT_USECS,
-+			.cs_change_delay.value = adis->data->cs_change_delay,
-+			.cs_change_delay.unit = SPI_DELAY_UNIT_USECS,
- 		}, {
- 			.tx_buf = adis->tx + 4,
- 			.bits_per_word = 8,
- 			.len = 2,
- 			.cs_change = 1,
- 			.delay_usecs = adis->data->write_delay,
--			.cs_change_delay = adis->data->cs_change_delay,
--			.cs_change_delay_unit = SPI_DELAY_UNIT_USECS,
-+			.cs_change_delay.value = adis->data->cs_change_delay,
-+			.cs_change_delay.unit = SPI_DELAY_UNIT_USECS,
- 		}, {
- 			.tx_buf = adis->tx + 6,
- 			.bits_per_word = 8,
-@@ -139,16 +139,16 @@ int adis_read_reg(struct adis *adis, unsigned int reg,
- 			.len = 2,
- 			.cs_change = 1,
- 			.delay_usecs = adis->data->write_delay,
--			.cs_change_delay = adis->data->cs_change_delay,
--			.cs_change_delay_unit = SPI_DELAY_UNIT_USECS,
-+			.cs_change_delay.value = adis->data->cs_change_delay,
-+			.cs_change_delay.unit = SPI_DELAY_UNIT_USECS,
- 		}, {
- 			.tx_buf = adis->tx + 2,
- 			.bits_per_word = 8,
- 			.len = 2,
- 			.cs_change = 1,
- 			.delay_usecs = adis->data->read_delay,
--			.cs_change_delay = adis->data->cs_change_delay,
--			.cs_change_delay_unit = SPI_DELAY_UNIT_USECS,
-+			.cs_change_delay.value = adis->data->cs_change_delay,
-+			.cs_change_delay.unit = SPI_DELAY_UNIT_USECS,
- 		}, {
- 			.tx_buf = adis->tx + 4,
- 			.rx_buf = adis->rx,
-@@ -156,8 +156,8 @@ int adis_read_reg(struct adis *adis, unsigned int reg,
- 			.len = 2,
- 			.cs_change = 1,
- 			.delay_usecs = adis->data->read_delay,
--			.cs_change_delay = adis->data->cs_change_delay,
--			.cs_change_delay_unit = SPI_DELAY_UNIT_USECS,
-+			.cs_change_delay.value = adis->data->cs_change_delay,
-+			.cs_change_delay.unit = SPI_DELAY_UNIT_USECS,
- 		}, {
- 			.rx_buf = adis->rx + 2,
- 			.bits_per_word = 8,
 diff --git a/drivers/spi/spi.c b/drivers/spi/spi.c
-index 7499a4efbaba..b69c14082c52 100644
+index 9bb36c32cbf9..7ba981cdb86b 100644
 --- a/drivers/spi/spi.c
 +++ b/drivers/spi/spi.c
-@@ -1160,9 +1160,9 @@ EXPORT_SYMBOL_GPL(spi_delay_exec);
- static void _spi_transfer_cs_change_delay(struct spi_message *msg,
- 					  struct spi_transfer *xfer)
- {
--	u32 delay = xfer->cs_change_delay;
--	u32 unit = xfer->cs_change_delay_unit;
--	u32 hz;
-+	u32 delay = xfer->cs_change_delay.value;
-+	u32 unit = xfer->cs_change_delay.unit;
-+	int ret;
+@@ -1114,16 +1114,15 @@ static void _spi_transfer_cs_change_delay(struct spi_message *msg,
+ 	u32 hz;
  
  	/* return early on "fast" mode - for everything but USECS */
- 	if (!delay) {
-@@ -1171,27 +1171,13 @@ static void _spi_transfer_cs_change_delay(struct spi_message *msg,
+-	if (!delay && unit != SPI_DELAY_UNIT_USECS)
++	if (!delay) {
++		if (unit == SPI_DELAY_UNIT_USECS)
++			_spi_transfer_delay_ns(10000);
  		return;
- 	}
++	}
  
--	switch (unit) {
--	case SPI_DELAY_UNIT_USECS:
--		delay *= 1000;
--		break;
--	case SPI_DELAY_UNIT_NSECS: /* nothing to do here */
--		break;
--	case SPI_DELAY_UNIT_SCK:
--		/* if there is no effective speed know, then approximate
--		 * by underestimating with half the requested hz
--		 */
--		hz = xfer->effective_speed_hz ?: xfer->speed_hz / 2;
--		delay *= DIV_ROUND_UP(1000000000, hz);
--		break;
--	default:
-+	ret = spi_delay_exec(&xfer->cs_change_delay, xfer);
-+	if (ret) {
- 		dev_err_once(&msg->spi->dev,
- 			     "Use of unsupported delay unit %i, using default of 10us\n",
--			     xfer->cs_change_delay_unit);
--		delay = 10000;
-+			     unit);
-+		_spi_transfer_delay_ns(10000);
- 	}
--	/* now sleep for the requested amount of time */
--	_spi_transfer_delay_ns(delay);
- }
- 
- /*
-diff --git a/include/linux/spi/spi.h b/include/linux/spi/spi.h
-index 8f643de3197b..7670be934643 100644
---- a/include/linux/spi/spi.h
-+++ b/include/linux/spi/spi.h
-@@ -778,7 +778,6 @@ extern void spi_res_release(struct spi_controller *ctlr,
-  * @cs_change: affects chipselect after this transfer completes
-  * @cs_change_delay: delay between cs deassert and assert when
-  *      @cs_change is set and @spi_transfer is not the last in @spi_message
-- * @cs_change_delay_unit: unit of cs_change_delay
-  * @delay_usecs: microseconds to delay after this transfer before
-  *	(optionally) changing the chipselect status, then starting
-  *	the next transfer or completing this @spi_message.
-@@ -900,8 +899,7 @@ struct spi_transfer {
- 	u8		bits_per_word;
- 	u8		word_delay_usecs;
- 	u16		delay_usecs;
--	u16		cs_change_delay;
--	u8		cs_change_delay_unit;
-+	struct spi_delay	cs_change_delay;
- 	u32		speed_hz;
- 	u16		word_delay;
- 
+ 	switch (unit) {
+ 	case SPI_DELAY_UNIT_USECS:
+-		/* for compatibility use default of 10us */
+-		if (!delay)
+-			delay = 10000;
+-		else
+-			delay *= 1000;
++		delay *= 1000;
+ 		break;
+ 	case SPI_DELAY_UNIT_NSECS: /* nothing to do here */
+ 		break;
 -- 
 2.20.1
 
