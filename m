@@ -2,71 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 111EDD792B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 16:52:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EBA8CD792C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 16:52:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=CdO2N38HCDyO6uZUmZht6KzKwcnwyyfoI2hhOf9qQxc=; b=WSUI+2NkyLPGjp
-	Uo8OeaVOSUdFHm9baH52bkuc1svuIfmkmqfEGfgF5UPTxQOWka976VtPm98z4X/zKc0+a5FZXY53h
-	dnLt2hg09oMhs6oyGQo4nVwGCn5ObTR8emXa0/nbBKu6zJsBV8BaYJU8KvXedo2bGAhxrPMIEbPby
-	UNXvc2QgdnnB0+oFxjS97B/MJbA8ok/h2KYR58HOH5VHFbSgM//UCc911Y2w/6cK8ElP2o+kDfQ0f
-	MOSjokZ/Vs29VQdHnv11hNZuoK7y/+1I70vBbKQON33JGhsVMIimu3rTbpVNFtHszfC9iy8TkOXFJ
-	dFuIhjoz5+cQucoILYKg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=J14HKF9qoOG1oEug3h//03TGSsHKwIbhEZl/9Bj80YY=; b=iWwxXUWSeKQfBr
+	Bz70wBW14hB2JDBjluev0IhHfSkvtMPiM/SlBcMu3umPX6JfhOZBNQZGvZS/C6PR/HfMp7sBCV9tK
+	bKWHBnNhvNtjkO7oNxIpU/t3u9Km2P7x2jErmHA1yHPHnLz3yXoPajNYrWedjYOTcp6QSfdZ55wvV
+	eV+hcVxvfMUQ/yddFAGBSGaDHnvohae8n+VjnQUoKRWFezXbQ8xlRPDVoh5Tz0mfIxTAPFjvsdpkQ
+	aqNQMX2eIFPCUC5xee08ND5+JnOnGU1SvsVkUJVayxt6YYmxNHnESv+MrtQ3nStFSxhkwX2rKrvZE
+	ANRzMN3mbNVziz7C/c3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKOB7-00026X-SP; Tue, 15 Oct 2019 14:52:01 +0000
+	id 1iKOBU-0002F2-LM; Tue, 15 Oct 2019 14:52:24 +0000
 Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKOAy-00025Y-JS
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 14:51:54 +0000
-Received: by mail-wr1-x444.google.com with SMTP id b9so24276181wrs.0
+ id 1iKOB0-00026A-Aa
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 14:51:55 +0000
+Received: by mail-wr1-x444.google.com with SMTP id j18so24232485wrq.10
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 15 Oct 2019 07:51:52 -0700 (PDT)
+ Tue, 15 Oct 2019 07:51:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=WoLI6uxqNutCvB1E5NYLK0N5G2eYt5SdmA96QNH7WAk=;
- b=EHF7mD5NCAVyiwZ06oKRXxO8ZP2vDGlLT3SaNy3jgx2+xHAWyLBc91gSjOUs1HfW/+
- uuDkFQengYvCKjUSPOXfufZBidobXJTUHzg9cOKZ8uWAr0mFjylHg1vJaLLvuN/rFpa6
- YYx2aLELiG4kFhhtEvZa7g1euP2mzJJoacgmLNBiIWpAXv5Os9sT8GN0hwNf3JSmMm+P
- Pup6WfzbJWH/uEqYIJvlqjmqjFitArYQcwDw1TZKiWCkPvHxzsgG4NfLrG+CcQUQ2mNf
- Nmx+A4BMzLe+3yLVkLErpmmso0TgyrQL62nqLcOHVtaPVlkXiNerqICyvsCdFNxCkggx
- 3ybw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=sOwxqSgHZxMZdu9ssMgHTsDS+mnGgiLSMmbVloE6vbY=;
+ b=ZXZGHlL63ydImQPyc4zgxHXLABtnTrA0ujmNUW/5fSN9oX2fgDJSdZct1rKiZq7U6w
+ qK7ocDo8F6PsS3WS/8igClWmBijsp9y4xSSGTu2SDlfrwYyfYIHS8JSOqblUoAmiR65+
+ lnvQvkShhanpn9Zi6Yl+6rkavRryE3gcMiUXT/irG7lJavQQr8AeLFoavXaFugKAvE8B
+ /UzwRDzUCjBeORDi/EQ7rvWvuw5xQp9ytTFZhRMLxGNLfTlc30zm28e1cFAVH30R4xlr
+ QIBVMzo5EwnXWkwhWgqcRGuEJeXdcq0BbrQ2zk0S9iLZuQJQhaWm98vxgoH5M+UfEmrs
+ FG/g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=WoLI6uxqNutCvB1E5NYLK0N5G2eYt5SdmA96QNH7WAk=;
- b=U06eHYRglJsOYQe3omx/MoiXX2ts0CUqpBAAobGbOZVpEX3R9joOxryYNpbFhehe6u
- 66wFZxbAwSgCvTD4QmixF9I7PHhW09CfGwCsopznUQiD8oRbCoBAWEeq6tBIPlIaLlkw
- oIjpgAB71Tt4rcqEaaRX+3jOU+yeXASGFZUT+OeafvCfsrzTOXAzbY5EfEzMdI3g/AHf
- 0S0OTNi8iSUpA0srkCmDoLGi0ZB7apRbs5Eu3NORwWwkD3jW6+7QFkqrItVGNaPolJGG
- EHBbW1WkXMpUms4Bf7NySJcSj/slKaQ7rCoMMuMVE7NwChAlsaa6Pyn2Gpb+jTrsiUxK
- KefQ==
-X-Gm-Message-State: APjAAAXh/092Cq3OyekSLLCqDKDkjzfvtiUiT0N/qb9N0qvrndtZ7Z6X
- EYjKzEYlnoWFmEstkiM0v8w=
-X-Google-Smtp-Source: APXvYqw0NwqbXq2J1uiXVlbRjhIaOLcqGzUMa9l6dQT7jR59OUq6/cFTa/H6xdWVej7rCvwaX+Sy4A==
-X-Received: by 2002:a5d:5451:: with SMTP id w17mr31546117wrv.183.1571151110542; 
- Tue, 15 Oct 2019 07:51:50 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=sOwxqSgHZxMZdu9ssMgHTsDS+mnGgiLSMmbVloE6vbY=;
+ b=FHDTFisx2SGw3zMrZEZDO5VDRBAsOOoGr00pq7KjjB19hXo30MK0CKDwz47wW8vu3x
+ mn/ncUDKAsLbP0JnZTXuengXXmn+ofTUODTeqeiIvqE9aXrWPw8gNBOnBLBECEH8mh8C
+ Q0vnlBszRjxBYFlfuUMD1opVooAAjSOA4duQPQ8mX/RQYhRlPSdwDDlwEmvaMBYip5Lp
+ nWB+8KBRoMypcN4Xdf67RCX9W/BLxfR2/K6vGoKP9SwB2G/Px8f1mB8qK+xa+s/tyqhW
+ U1EcI/pAvhMCjQnw/xBgS637ImSloisQHCbUXP6ljjufb6mapfTqZh2KaVSKVmMRbUYt
+ SLGQ==
+X-Gm-Message-State: APjAAAXAqlz2L/m1Hys8GmbXaLkT4wyGWMEPBYcCQ/M2rCS4GS4Jn8DP
+ IV/M4hkupoWGltSrZsmeCP0=
+X-Google-Smtp-Source: APXvYqz/BdsRzyqG3XrQgmIgTu/QqiScZaC1zr9bB3ppKgDcu54YcJ7GSRiIiKWZTmmy2eliI4ExaQ==
+X-Received: by 2002:adf:a497:: with SMTP id g23mr14202920wrb.135.1571151112765; 
+ Tue, 15 Oct 2019 07:51:52 -0700 (PDT)
 Received: from localhost (p2E5BE2CE.dip0.t-ipconnect.de. [46.91.226.206])
- by smtp.gmail.com with ESMTPSA id o19sm27425286wmh.27.2019.10.15.07.51.48
+ by smtp.gmail.com with ESMTPSA id n18sm19111771wmi.20.2019.10.15.07.51.51
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 15 Oct 2019 07:51:49 -0700 (PDT)
+ Tue, 15 Oct 2019 07:51:51 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Russell King <linux@armlinux.org.uk>,
 	arm@kernel.org
-Subject: [PATCH 0/6] ARM/arm64: arm_pm_restart removal
-Date: Tue, 15 Oct 2019 16:51:41 +0200
-Message-Id: <20191015145147.1106247-1-thierry.reding@gmail.com>
+Subject: [PATCH 1/6] ARM: prima2: Register with kernel restart handler
+Date: Tue, 15 Oct 2019 16:51:42 +0200
+Message-Id: <20191015145147.1106247-2-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20191015145147.1106247-1-thierry.reding@gmail.com>
+References: <20191015145147.1106247-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_075152_641722_C92E13E6 
-X-CRM114-Status: GOOD (  11.79  )
+X-CRM114-CacheID: sfid-20191015_075154_364384_77EB8D16 
+X-CRM114-Status: GOOD (  14.69  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -110,40 +112,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Thierry Reding <treding@nvidia.com>
+From: Guenter Roeck <linux@roeck-us.net>
 
-Hi Russell, ARM SoC maintainers,
+Register with kernel restart handler instead of setting arm_pm_restart
+directly. By doing this, the prima2 reset handler can be prioritized
+among other restart methods available on a particular board.
 
-here's the full set of patches that remove arm_pm_restart as discussed
-earlier. There's some background on the series in this thread:
+Select a high priority of 192 since the original code overwrites the
+default arm restart handler.
 
-	https://lore.kernel.org/linux-arm-kernel/20170130110512.6943-1-thierry.reding@gmail.com/
+Acked-by: Arnd Bergmann <arnd@arndb.de>
+Reviewed-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+Signed-off-by: Guenter Roeck <linux@roeck-us.net>
+Signed-off-by: Thierry Reding <treding@nvidia.com>
+---
+ arch/arm/mach-prima2/rstc.c | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
 
-I also have a set of patches that build on top of this and try to add
-something slightly more formal by adding a power/reset framework that
-driver can register with. If we can get this series merged, I'll find
-some time to refresh those patches and send out for review again.
-
-Thierry
-
-Guenter Roeck (6):
-  ARM: prima2: Register with kernel restart handler
-  ARM: xen: Register with kernel restart handler
-  drivers: firmware: psci: Register with kernel restart handler
-  ARM: Register with kernel restart handler
-  ARM64: Remove arm_pm_restart()
-  ARM: Remove arm_pm_restart()
-
- arch/arm/include/asm/system_misc.h   |  1 -
- arch/arm/kernel/reboot.c             |  6 +-----
- arch/arm/kernel/setup.c              | 20 ++++++++++++++++++--
- arch/arm/mach-prima2/rstc.c          | 11 +++++++++--
- arch/arm/xen/enlighten.c             | 12 ++++++++++--
- arch/arm64/include/asm/system_misc.h |  2 --
- arch/arm64/kernel/process.c          |  7 +------
- drivers/firmware/psci/psci.c         | 12 ++++++++++--
- 8 files changed, 49 insertions(+), 22 deletions(-)
-
+diff --git a/arch/arm/mach-prima2/rstc.c b/arch/arm/mach-prima2/rstc.c
+index 9d56606ac87f..825dd5fcc37b 100644
+--- a/arch/arm/mach-prima2/rstc.c
++++ b/arch/arm/mach-prima2/rstc.c
+@@ -64,11 +64,18 @@ static struct reset_controller_dev sirfsoc_reset_controller = {
+ 
+ #define SIRFSOC_SYS_RST_BIT  BIT(31)
+ 
+-static void sirfsoc_restart(enum reboot_mode mode, const char *cmd)
++static int sirfsoc_restart(struct notifier_block *nb, unsigned long action,
++			   void *data)
+ {
+ 	writel(SIRFSOC_SYS_RST_BIT, sirfsoc_rstc_base);
++	return NOTIFY_DONE;
+ }
+ 
++static struct notifier_block sirfsoc_restart_nb = {
++	.notifier_call  = sirfsoc_restart,
++	.priority       = 192,
++};
++
+ static int sirfsoc_rstc_probe(struct platform_device *pdev)
+ {
+ 	struct device_node *np = pdev->dev.of_node;
+@@ -79,7 +86,7 @@ static int sirfsoc_rstc_probe(struct platform_device *pdev)
+ 	}
+ 
+ 	sirfsoc_reset_controller.of_node = np;
+-	arm_pm_restart = sirfsoc_restart;
++	register_restart_handler(&sirfsoc_restart_nb);
+ 
+ 	if (IS_ENABLED(CONFIG_RESET_CONTROLLER))
+ 		reset_controller_register(&sirfsoc_reset_controller);
 -- 
 2.23.0
 
