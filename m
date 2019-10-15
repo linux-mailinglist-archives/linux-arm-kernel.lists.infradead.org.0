@@ -2,52 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D75F3D7FC6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 21:19:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97152D7FFD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 21:20:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ocw6yWuIxm+1spfOAMkc9yojcu/8isSb1mus3Y1u8uo=; b=oUdqtYYY/ufTJ0
-	+usV3KWb/2/5O5ibi0OUzYhBcStqHsEQVwOq2ez/RzcBljJMvx88jtgIaWfLzUYhdHWjYn7/MTmep
-	edflGzktlbsxhVpTTTd50JJJ66LuoZslELthCWzPbVfxT65pF4igIycBmsvx1+Y7XHdscmTyFbTmh
-	eCjT53mZE+9E+f55jZycPCEdBMhfZD+iZHU8w5T5Oj5v1EEPF7LOO4kfVPKdNdOqRuEbI7bKqf/sP
-	7+/JIKYMWheXxzuHMe0eN7qahF/r+D5VCuFXXDMJ+ONiAg5CWpGyvfoKPiGL7xz009esHgdpOyfhf
-	JxuFX40jxejgRYUsPzMA==;
+	List-Owner; bh=2zO/eN2Dg3jFJc8gIcm1I1MWooNnns65u3XWr8UR4cI=; b=jfEOjRWN8NoeM7
+	VAg7xzxuzE0Kv6t6/LKnnJ0P/AbnOx+D+bpeHe03GqJ/F+WprWRpi/L8DxQn9Ys+RaauxtPl52AF9
+	XpDZ2+wOfeBwBzSRzYvaXQUQlm0296V9GCWApyBZMNxQPPtm7FHOx5nHHygow7exc7KvHPh531Amr
+	OT485Kpu7fcNi0dZNiin7OteoHh7YcHf5XAhSgFnh1NLwuLbA4V+qrP5VJsehUb05Y7XNqiOGiBRu
+	y6eixZwcMn1jTHzqexTPtD43zyNecZDBx8++8mGhf2QKCZPRznp0nwY0pOJJUfIZgPX0Th8MLKxSM
+	56drAnNdm5BEYzgCOT9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKSLL-0001Rz-JY; Tue, 15 Oct 2019 19:18:51 +0000
-Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
+	id 1iKSNJ-0003Y4-P7; Tue, 15 Oct 2019 19:20:53 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKSLA-0001Q7-8R
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 19:18:42 +0000
-Received: from localhost ([127.0.0.1] helo=localhost.localdomain)
- by Galois.linutronix.de with esmtp (Exim 4.80)
- (envelope-from <bigeasy@linutronix.de>)
- id 1iKSL2-00067i-HU; Tue, 15 Oct 2019 21:18:32 +0200
-From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 02/34] arm64: Use CONFIG_PREEMPTION
-Date: Tue, 15 Oct 2019 21:17:49 +0200
-Message-Id: <20191015191821.11479-3-bigeasy@linutronix.de>
-In-Reply-To: <20191015191821.11479-1-bigeasy@linutronix.de>
-References: <20191015191821.11479-1-bigeasy@linutronix.de>
+ id 1iKSN5-0003X1-IK; Tue, 15 Oct 2019 19:20:40 +0000
+Received: by mail-ot1-f67.google.com with SMTP id m19so17992939otp.1;
+ Tue, 15 Oct 2019 12:20:38 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=h5H37sJ61LUD/ljVtDlhAsfO5sV6TmGgopvlbfaEWZ8=;
+ b=g+FuRQIzgK6cQT9Vz8Q/DYUSpk8FmsK71weG8OO3c2JvUcPoYa44RkFccKGujMVXoM
+ 9fqKEAH0lu7K3gSc87FZ9wpHthcccFPOw7oNZrcR/oASETA3J4UrZ9g8eovI9+KmjGCc
+ 6NTuGVGhkskJQbaexkSJXDIGO1KivTmFIG9yUyH5zfvJE8fIMF048WP9FxPnYVld2/b5
+ 0XfB6ghoi/tawwDSgNSoYy6Cg/hckVDoI/7BjkGnGfWs6f4YmV/EC60CCOuansa7rXWl
+ tjY6juk/iuyRvXy10osSaCKShAzDxYlPA3hDOO1qeM+hAgc8ayFtH0CEmakFoRVGnSm2
+ fSSg==
+X-Gm-Message-State: APjAAAX6QvMphbszc9Ye06AHItXiNazFBqsyjZ7Jpm7XqaoaWbrQILmn
+ UsTLXTei4s9BfHynNjqhkw==
+X-Google-Smtp-Source: APXvYqwDWbiw9IcWLzy5NFqYMdjvTEqwdZgk4ryuCSiUp5VaQHf/4LJS4ik6SQYzDlQ79863axHHdA==
+X-Received: by 2002:a9d:7d02:: with SMTP id v2mr3381533otn.301.1571167237726; 
+ Tue, 15 Oct 2019 12:20:37 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id t12sm6526227otl.35.2019.10.15.12.20.36
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 15 Oct 2019 12:20:36 -0700 (PDT)
+Date: Tue, 15 Oct 2019 14:20:36 -0500
+From: Rob Herring <robh@kernel.org>
+To: Argus Lin <argus.lin@mediatek.com>
+Subject: Re: [PATCH 1/3] dt-bindings: pwrap: mediatek: add pwrap support for
+ MT6779
+Message-ID: <20191015192036.GA26160@bogus>
+References: <1570088901-23211-1-git-send-email-argus.lin@mediatek.com>
+ <1570088901-23211-2-git-send-email-argus.lin@mediatek.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1570088901-23211-2-git-send-email-argus.lin@mediatek.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_121840_439379_45FB2F50 
-X-CRM114-Status: GOOD (  12.96  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191015_122039_610208_875820D1 
+X-CRM114-Status: UNSURE (   9.88  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a0a:51c0:0:12e:550:0:0:1 listed in]
- [list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.67 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,190 +92,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, tglx@linutronix.de,
- Will Deacon <will@kernel.org>,
- Sebastian Andrzej Siewior <bigeasy@linutronix.de>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ wsd_upstream@mediatek.com, argus.lin@mediatek.com,
+ Chenglin Xu <chenglin.xu@mediatek.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Sean Wang <sean.wang@mediatek.com>,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ henryc.chen@mediatek.com, flora.fu@mediatek.com,
+ Christophe Jaillet <christophe.jaillet@wanadoo.fr>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ Chen Zhong <chen.zhong@mediatek.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Thomas Gleixner <tglx@linutronix.de>
+On Thu, 3 Oct 2019 15:48:19 +0800, Argus Lin wrote:
+> Add binding document of pwrap for MT6779 SoCs.
+> 
+> Signed-off-by: Argus Lin <argus.lin@mediatek.com>
+> ---
+>  Documentation/devicetree/bindings/soc/mediatek/pwrap.txt | 1 +
+>  1 file changed, 1 insertion(+)
+> 
 
-CONFIG_PREEMPTION is selected by CONFIG_PREEMPT and by CONFIG_PREEMPT_RT.
-Both PREEMPT and PREEMPT_RT require the same functionality which today
-depends on CONFIG_PREEMPT.
-
-Switch the Kconfig dependency, entry code and preemption handling over
-to use CONFIG_PREEMPTION. Add PREEMPT_RT output in show_stack().
-
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
-Cc: linux-arm-kernel@lists.infradead.org
-Signed-off-by: Thomas Gleixner <tglx@linutronix.de>
-[bigeasy: +traps.c, Kconfig]
-Signed-off-by: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
----
- arch/arm64/Kconfig                 | 52 +++++++++++++++---------------
- arch/arm64/crypto/sha256-glue.c    |  2 +-
- arch/arm64/include/asm/assembler.h |  6 ++--
- arch/arm64/include/asm/preempt.h   |  4 +--
- arch/arm64/kernel/entry.S          |  2 +-
- arch/arm64/kernel/traps.c          |  3 ++
- 6 files changed, 36 insertions(+), 33 deletions(-)
-
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 950a56b71ff0d..4a621d6c6e676 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -35,32 +35,32 @@ config ARM64
- 	select ARCH_HAS_TEARDOWN_DMA_OPS if IOMMU_SUPPORT
- 	select ARCH_HAS_TICK_BROADCAST if GENERIC_CLOCKEVENTS_BROADCAST
- 	select ARCH_HAVE_NMI_SAFE_CMPXCHG
--	select ARCH_INLINE_READ_LOCK if !PREEMPT
--	select ARCH_INLINE_READ_LOCK_BH if !PREEMPT
--	select ARCH_INLINE_READ_LOCK_IRQ if !PREEMPT
--	select ARCH_INLINE_READ_LOCK_IRQSAVE if !PREEMPT
--	select ARCH_INLINE_READ_UNLOCK if !PREEMPT
--	select ARCH_INLINE_READ_UNLOCK_BH if !PREEMPT
--	select ARCH_INLINE_READ_UNLOCK_IRQ if !PREEMPT
--	select ARCH_INLINE_READ_UNLOCK_IRQRESTORE if !PREEMPT
--	select ARCH_INLINE_WRITE_LOCK if !PREEMPT
--	select ARCH_INLINE_WRITE_LOCK_BH if !PREEMPT
--	select ARCH_INLINE_WRITE_LOCK_IRQ if !PREEMPT
--	select ARCH_INLINE_WRITE_LOCK_IRQSAVE if !PREEMPT
--	select ARCH_INLINE_WRITE_UNLOCK if !PREEMPT
--	select ARCH_INLINE_WRITE_UNLOCK_BH if !PREEMPT
--	select ARCH_INLINE_WRITE_UNLOCK_IRQ if !PREEMPT
--	select ARCH_INLINE_WRITE_UNLOCK_IRQRESTORE if !PREEMPT
--	select ARCH_INLINE_SPIN_TRYLOCK if !PREEMPT
--	select ARCH_INLINE_SPIN_TRYLOCK_BH if !PREEMPT
--	select ARCH_INLINE_SPIN_LOCK if !PREEMPT
--	select ARCH_INLINE_SPIN_LOCK_BH if !PREEMPT
--	select ARCH_INLINE_SPIN_LOCK_IRQ if !PREEMPT
--	select ARCH_INLINE_SPIN_LOCK_IRQSAVE if !PREEMPT
--	select ARCH_INLINE_SPIN_UNLOCK if !PREEMPT
--	select ARCH_INLINE_SPIN_UNLOCK_BH if !PREEMPT
--	select ARCH_INLINE_SPIN_UNLOCK_IRQ if !PREEMPT
--	select ARCH_INLINE_SPIN_UNLOCK_IRQRESTORE if !PREEMPT
-+	select ARCH_INLINE_READ_LOCK if !PREEMPTION
-+	select ARCH_INLINE_READ_LOCK_BH if !PREEMPTION
-+	select ARCH_INLINE_READ_LOCK_IRQ if !PREEMPTION
-+	select ARCH_INLINE_READ_LOCK_IRQSAVE if !PREEMPTION
-+	select ARCH_INLINE_READ_UNLOCK if !PREEMPTION
-+	select ARCH_INLINE_READ_UNLOCK_BH if !PREEMPTION
-+	select ARCH_INLINE_READ_UNLOCK_IRQ if !PREEMPTION
-+	select ARCH_INLINE_READ_UNLOCK_IRQRESTORE if !PREEMPTION
-+	select ARCH_INLINE_WRITE_LOCK if !PREEMPTION
-+	select ARCH_INLINE_WRITE_LOCK_BH if !PREEMPTION
-+	select ARCH_INLINE_WRITE_LOCK_IRQ if !PREEMPTION
-+	select ARCH_INLINE_WRITE_LOCK_IRQSAVE if !PREEMPTION
-+	select ARCH_INLINE_WRITE_UNLOCK if !PREEMPTION
-+	select ARCH_INLINE_WRITE_UNLOCK_BH if !PREEMPTION
-+	select ARCH_INLINE_WRITE_UNLOCK_IRQ if !PREEMPTION
-+	select ARCH_INLINE_WRITE_UNLOCK_IRQRESTORE if !PREEMPTION
-+	select ARCH_INLINE_SPIN_TRYLOCK if !PREEMPTION
-+	select ARCH_INLINE_SPIN_TRYLOCK_BH if !PREEMPTION
-+	select ARCH_INLINE_SPIN_LOCK if !PREEMPTION
-+	select ARCH_INLINE_SPIN_LOCK_BH if !PREEMPTION
-+	select ARCH_INLINE_SPIN_LOCK_IRQ if !PREEMPTION
-+	select ARCH_INLINE_SPIN_LOCK_IRQSAVE if !PREEMPTION
-+	select ARCH_INLINE_SPIN_UNLOCK if !PREEMPTION
-+	select ARCH_INLINE_SPIN_UNLOCK_BH if !PREEMPTION
-+	select ARCH_INLINE_SPIN_UNLOCK_IRQ if !PREEMPTION
-+	select ARCH_INLINE_SPIN_UNLOCK_IRQRESTORE if !PREEMPTION
- 	select ARCH_KEEP_MEMBLOCK
- 	select ARCH_USE_CMPXCHG_LOCKREF
- 	select ARCH_USE_QUEUED_RWLOCKS
-diff --git a/arch/arm64/crypto/sha256-glue.c b/arch/arm64/crypto/sha256-glue.c
-index e273faca924f9..999da59f03a9d 100644
---- a/arch/arm64/crypto/sha256-glue.c
-+++ b/arch/arm64/crypto/sha256-glue.c
-@@ -97,7 +97,7 @@ static int sha256_update_neon(struct shash_desc *desc, const u8 *data,
- 		 * input when running on a preemptible kernel, but process the
- 		 * data block by block instead.
- 		 */
--		if (IS_ENABLED(CONFIG_PREEMPT) &&
-+		if (IS_ENABLED(CONFIG_PREEMPTION) &&
- 		    chunk + sctx->count % SHA256_BLOCK_SIZE > SHA256_BLOCK_SIZE)
- 			chunk = SHA256_BLOCK_SIZE -
- 				sctx->count % SHA256_BLOCK_SIZE;
-diff --git a/arch/arm64/include/asm/assembler.h b/arch/arm64/include/asm/assembler.h
-index b8cf7c85ffa2a..2cc0dd8bd9f78 100644
---- a/arch/arm64/include/asm/assembler.h
-+++ b/arch/arm64/include/asm/assembler.h
-@@ -699,8 +699,8 @@ USER(\label, ic	ivau, \tmp2)			// invalidate I line PoU
-  * where <label> is optional, and marks the point where execution will resume
-  * after a yield has been performed. If omitted, execution resumes right after
-  * the endif_yield_neon invocation. Note that the entire sequence, including
-- * the provided patchup code, will be omitted from the image if CONFIG_PREEMPT
-- * is not defined.
-+ * the provided patchup code, will be omitted from the image if
-+ * CONFIG_PREEMPTION is not defined.
-  *
-  * As a convenience, in the case where no patchup code is required, the above
-  * sequence may be abbreviated to
-@@ -728,7 +728,7 @@ USER(\label, ic	ivau, \tmp2)			// invalidate I line PoU
- 	.endm
- 
- 	.macro		if_will_cond_yield_neon
--#ifdef CONFIG_PREEMPT
-+#ifdef CONFIG_PREEMPTION
- 	get_current_task	x0
- 	ldr		x0, [x0, #TSK_TI_PREEMPT]
- 	sub		x0, x0, #PREEMPT_DISABLE_OFFSET
-diff --git a/arch/arm64/include/asm/preempt.h b/arch/arm64/include/asm/preempt.h
-index d499516470149..80e946b2abee2 100644
---- a/arch/arm64/include/asm/preempt.h
-+++ b/arch/arm64/include/asm/preempt.h
-@@ -79,11 +79,11 @@ static inline bool should_resched(int preempt_offset)
- 	return pc == preempt_offset;
- }
- 
--#ifdef CONFIG_PREEMPT
-+#ifdef CONFIG_PREEMPTION
- void preempt_schedule(void);
- #define __preempt_schedule() preempt_schedule()
- void preempt_schedule_notrace(void);
- #define __preempt_schedule_notrace() preempt_schedule_notrace()
--#endif /* CONFIG_PREEMPT */
-+#endif /* CONFIG_PREEMPTION */
- 
- #endif /* __ASM_PREEMPT_H */
-diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-index e304fe04b098d..a3f5e757983ff 100644
---- a/arch/arm64/kernel/entry.S
-+++ b/arch/arm64/kernel/entry.S
-@@ -669,7 +669,7 @@ ENDPROC(el1_sync)
- 
- 	irq_handler
- 
--#ifdef CONFIG_PREEMPT
-+#ifdef CONFIG_PREEMPTION
- 	ldr	x24, [tsk, #TSK_TI_PREEMPT]	// get preempt count
- alternative_if ARM64_HAS_IRQ_PRIO_MASKING
- 	/*
-diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
-index 34739e80211bc..0bf934257744d 100644
---- a/arch/arm64/kernel/traps.c
-+++ b/arch/arm64/kernel/traps.c
-@@ -143,9 +143,12 @@ void show_stack(struct task_struct *tsk, unsigned long *sp)
- 
- #ifdef CONFIG_PREEMPT
- #define S_PREEMPT " PREEMPT"
-+#elif defined(CONFIG_PREEMPT_RT)
-+#define S_PREEMPT " PREEMPT_RT"
- #else
- #define S_PREEMPT ""
- #endif
-+
- #define S_SMP " SMP"
- 
- static int __die(const char *str, int err, struct pt_regs *regs)
--- 
-2.23.0
-
+Acked-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
