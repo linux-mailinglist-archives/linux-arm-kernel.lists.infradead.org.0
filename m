@@ -2,57 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88212D74B2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 13:16:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E28FD74BE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 13:17:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=KihAQ+Y49gfqMaAnPGt/l0lH8+ZQtvNgHDYqzVeFjHk=; b=fle
-	8Nh8DRfgoVJaLbIWutdezq96FhFOsT8L6NPKoosLeX2QsOx325unGd1P0PgI294G1lxbvuZGuhzfa
-	mapnL8bXyDhFKPhDtinaNm7FLdDLCC6gToBx30FFJl+gPqA25fCDVgHORC7juqmOjmbzb8Sa2OYuv
-	BXFT/3x4AvQsjenXF4srj9hrhZh0drkOB8zNgjYSBHZunbhZeeDuGNEVUDIJqxufITdSz+iDi8eIy
-	nWCbXOgGi4jmVfTM5kcHphwp6Ma/DvuS+XRQB4845YESIj6h1lh2kRk4UyqTh9OCUB6IaTQbpXGsC
-	WTDpeSacBWXXdUeapvdK70W4sJlpL1Q==;
+	References:List-Owner; bh=LYjRH5SNESFJmA8c5tBOpUQi1DsY52ih1tYHJwFO+VQ=; b=Pyp
+	/VE3XEt2tovg0Sk1eH6Vt4HSzTTkQfTfiz2qzZDT6c2aH0rmjNldwSAvlswl6gOJNaY8stb5FXBrQ
+	UaF6xaHfHF2NmrLRGo4WaJb2vdSwRNp/DvoYI+fDcuiNHU2iSYwAu/3b8tdtb1xc1kpc3KNw7M6fy
+	8sfNnVhcFDApqOZ/6Pxe1Xx8QLbB/CkipbSvQlk5MQtgUyojFVUwXR5TB3MgksrxD2ayzx1tgGA1H
+	OZI1xhWlcT4DXT6UMJSI+pO8v3ni6FbjXhqNik2DP8gNdx/HFxNPQZqj8nxRL3iM0xMk+ZNYn9lrG
+	c1H1exyDXBaItKs7BlQd/spMDX1JYiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKKo7-0003Ai-KO; Tue, 15 Oct 2019 11:16:03 +0000
+	id 1iKKpQ-0004ID-R8; Tue, 15 Oct 2019 11:17:24 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKKkf-0007Ax-H8
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 11:12:34 +0000
+ id 1iKKkf-0007Ab-DV
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 11:12:36 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=jhntVV8cMh3g2DE+tP5NtnjXltLwNEBM5VGM4l2YeWo=; b=BUeaAr6FBBFX
- KV8hBtInuEG/LI03TciqxvDgqD4spKMnmZLVKWKWQpHWxeOf0NEbPSkvwn21Q9VMm8v7s4mvtxcYc
- ELM4ZB4hsj5a8LA8VG2efNIARtxfWaQ3gCn+8Y5aW0zGTYrmX6ZzjOu6uHosiQ4hwrg2hmA5bmFhV
- Mg5yg=;
+ List-Archive; bh=FImbjSlBLQU6w2z/iCVuGjm90w0sbr42HLTIqyphFao=; b=lKXNwCEX34O8
+ QSn0eqeuZDlrRCmkFQWcaizKE9uEyt7EkP1Tlvs/bu/BCYsCWvgWbuHG8C4KquopBhtZk63eNXqsT
+ HTTHFRh/pReCMuafjBIFg+DW1DDkp4s2OYPR4tQl2i0Nyxc+SN51u3pBuzN3+6/TBfMvBa/PSwH1O
+ mti7k=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iKKkb-00021c-BH; Tue, 15 Oct 2019 11:12:25 +0000
+ id 1iKKkb-00021k-Oh; Tue, 15 Oct 2019 11:12:25 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id A83BD27419E4; Tue, 15 Oct 2019 12:12:24 +0100 (BST)
+ id 44F652741CD7; Tue, 15 Oct 2019 12:12:25 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
 To: Alexandru Ardelean <alexandru.ardelean@analog.com>
-Subject: Applied "spi: tegra114: use `spi_transfer_delay_exec` helper" to the
- spi tree
-In-Reply-To: <20190926105147.7839-11-alexandru.ardelean@analog.com>
+Subject: Applied "spi: core,
+ atmel: convert `word_delay_usecs` -> `word_delay` for spi_device" to
+ the spi tree
+In-Reply-To: <20190926105147.7839-8-alexandru.ardelean@analog.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20191015111224.A83BD27419E4@ypsilon.sirena.org.uk>
-Date: Tue, 15 Oct 2019 12:12:24 +0100 (BST)
+Message-Id: <20191015111225.44F652741CD7@ypsilon.sirena.org.uk>
+Date: Tue, 15 Oct 2019 12:12:25 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_041229_599875_B561A592 
-X-CRM114-Status: GOOD (  16.22  )
+X-CRM114-CacheID: sfid-20191015_041229_673283_8782A9F2 
+X-CRM114-Status: GOOD (  18.99  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -91,7 +92,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: tegra114: use `spi_transfer_delay_exec` helper
+   spi: core,atmel: convert `word_delay_usecs` -> `word_delay` for spi_device
 
 has been applied to the spi tree at
 
@@ -116,76 +117,171 @@ to this mail.
 Thanks,
 Mark
 
-From cd13152bce34cd71f560a7c4a8f66096f2445984 Mon Sep 17 00:00:00 2001
+From 6c613f68aabf33385c01e949204ac5ed30887161 Mon Sep 17 00:00:00 2001
 From: Alexandru Ardelean <alexandru.ardelean@analog.com>
-Date: Thu, 26 Sep 2019 13:51:38 +0300
-Subject: [PATCH] spi: tegra114: use `spi_transfer_delay_exec` helper
+Date: Thu, 26 Sep 2019 13:51:35 +0300
+Subject: [PATCH] spi: core,atmel: convert `word_delay_usecs` -> `word_delay`
+ for spi_device
 
-The tegra114 driver has a weird/separate `tegra_spi_transfer_delay()`
-function that does 2 delays: one mdelay() and one udelay().
+This change does a conversion from the `word_delay_usecs` -> `word_delay`
+for the `spi_device` struct.
 
-This was introduced via commit f4fade12d506e14867a2b0a5e2f7aaf227297d8b
-("spi/tegra114: Correct support for cs_change").
+This allows users to specify inter-word delays in other unit types
+(nano-seconds or clock cycles), depending on how users want.
 
-There doesn't seem to be a mention in that commit message to suggest a
-specific need/use-case for having the 2 delay calls.
-For the most part, udelay() should be sufficient.
+The Atmel SPI driver is the only current user of the `word_delay_usecs`
+field (from the `spi_device` struct).
+So, it needed a slight conversion to use the `word_delay` as an `spi_delay`
+struct.
 
-This change replaces it with the new `spi_transfer_delay_exec()`, which
-should do the same thing.
+In SPI core, the only required mechanism is to update the `word_delay`
+information per `spi_transfer`. This requires a bit more logic than before,
+because it needs that both delays be converted to a common unit
+(nano-seconds) for comparison.
 
 Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
-Link: https://lore.kernel.org/r/20190926105147.7839-11-alexandru.ardelean@analog.com
+Link: https://lore.kernel.org/r/20190926105147.7839-8-alexandru.ardelean@analog.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/spi-tegra114.c | 17 +++--------------
- 1 file changed, 3 insertions(+), 14 deletions(-)
+ drivers/spi/spi-atmel.c | 26 ++++++++++++++++++++++++--
+ drivers/spi/spi.c       | 24 ++++++++++++++++++++++--
+ include/linux/spi/spi.h |  7 ++-----
+ 3 files changed, 48 insertions(+), 9 deletions(-)
 
-diff --git a/drivers/spi/spi-tegra114.c b/drivers/spi/spi-tegra114.c
-index 39374c2edcf3..8133dc49d34f 100644
---- a/drivers/spi/spi-tegra114.c
-+++ b/drivers/spi/spi-tegra114.c
-@@ -984,17 +984,6 @@ static int tegra_spi_setup(struct spi_device *spi)
- 	return 0;
+diff --git a/drivers/spi/spi-atmel.c b/drivers/spi/spi-atmel.c
+index 3ed5e663da6f..1471b049f99a 100644
+--- a/drivers/spi/spi-atmel.c
++++ b/drivers/spi/spi-atmel.c
+@@ -1149,12 +1149,31 @@ atmel_spi_pdc_interrupt(int irq, void *dev_id)
+ 	return ret;
  }
  
--static void tegra_spi_transfer_delay(int delay)
--{
--	if (!delay)
--		return;
--
--	if (delay >= 1000)
--		mdelay(delay / 1000);
--
--	udelay(delay % 1000);
--}
--
- static void tegra_spi_transfer_end(struct spi_device *spi)
++static int atmel_word_delay_csr(struct spi_device *spi, struct atmel_spi *as)
++{
++	struct spi_delay *delay = &spi->word_delay;
++	u32 value = delay->value;
++
++	switch (delay->unit) {
++	case SPI_DELAY_UNIT_NSECS:
++		value /= 1000;
++		break;
++	case SPI_DELAY_UNIT_USECS:
++		break;
++	default:
++		return -EINVAL;
++	}
++
++	return (as->spi_clk / 1000000 * value) >> 5;
++}
++
+ static int atmel_spi_setup(struct spi_device *spi)
  {
- 	struct tegra_spi_data *tspi = spi_master_get_devdata(spi->master);
-@@ -1098,7 +1087,7 @@ static int tegra_spi_transfer_one_message(struct spi_master *master,
- complete_xfer:
- 		if (ret < 0 || skip) {
- 			tegra_spi_transfer_end(spi);
--			tegra_spi_transfer_delay(xfer->delay_usecs);
-+			spi_transfer_delay_exec(xfer);
- 			goto exit;
- 		} else if (list_is_last(&xfer->transfer_list,
- 					&msg->transfers)) {
-@@ -1106,11 +1095,11 @@ static int tegra_spi_transfer_one_message(struct spi_master *master,
- 				tspi->cs_control = spi;
- 			else {
- 				tegra_spi_transfer_end(spi);
--				tegra_spi_transfer_delay(xfer->delay_usecs);
-+				spi_transfer_delay_exec(xfer);
- 			}
- 		} else if (xfer->cs_change) {
- 			tegra_spi_transfer_end(spi);
--			tegra_spi_transfer_delay(xfer->delay_usecs);
-+			spi_transfer_delay_exec(xfer);
+ 	struct atmel_spi	*as;
+ 	struct atmel_spi_device	*asd;
+ 	u32			csr;
+ 	unsigned int		bits = spi->bits_per_word;
++	int			word_delay_csr;
+ 
+ 	as = spi_master_get_devdata(spi->master);
+ 
+@@ -1178,11 +1197,14 @@ static int atmel_spi_setup(struct spi_device *spi)
+ 	 */
+ 	csr |= SPI_BF(DLYBS, 0);
+ 
++	word_delay_csr = atmel_word_delay_csr(spi, as);
++	if (word_delay_csr < 0)
++		return word_delay_csr;
++
+ 	/* DLYBCT adds delays between words.  This is useful for slow devices
+ 	 * that need a bit of time to setup the next transfer.
+ 	 */
+-	csr |= SPI_BF(DLYBCT,
+-			(as->spi_clk / 1000000 * spi->word_delay_usecs) >> 5);
++	csr |= SPI_BF(DLYBCT, word_delay_csr);
+ 
+ 	asd = spi->controller_state;
+ 	if (!asd) {
+diff --git a/drivers/spi/spi.c b/drivers/spi/spi.c
+index b69c14082c52..307e440dd92d 100644
+--- a/drivers/spi/spi.c
++++ b/drivers/spi/spi.c
+@@ -3281,6 +3281,26 @@ void spi_set_cs_timing(struct spi_device *spi, u8 setup, u8 hold,
+ }
+ EXPORT_SYMBOL_GPL(spi_set_cs_timing);
+ 
++static int _spi_xfer_word_delay_update(struct spi_transfer *xfer,
++				       struct spi_device *spi)
++{
++	int delay1, delay2;
++
++	delay1 = _spi_delay_to_ns(&xfer->word_delay, xfer);
++	if (delay1 < 0)
++		return delay1;
++
++	delay2 = _spi_delay_to_ns(&spi->word_delay, xfer);
++	if (delay2 < 0)
++		return delay2;
++
++	if (delay1 < delay2)
++		memcpy(&xfer->word_delay, &spi->word_delay,
++		       sizeof(xfer->word_delay));
++
++	return 0;
++}
++
+ static int __spi_validate(struct spi_device *spi, struct spi_message *message)
+ {
+ 	struct spi_controller *ctlr = spi->controller;
+@@ -3416,8 +3436,8 @@ static int __spi_validate(struct spi_device *spi, struct spi_message *message)
+ 				return -EINVAL;
  		}
  
+-		if (xfer->word_delay_usecs < spi->word_delay_usecs)
+-			xfer->word_delay_usecs = spi->word_delay_usecs;
++		if (_spi_xfer_word_delay_update(xfer, spi))
++			return -EINVAL;
  	}
+ 
+ 	message->status = -EINPROGRESS;
+diff --git a/include/linux/spi/spi.h b/include/linux/spi/spi.h
+index 6cb67ad53ffa..ebeb272aeb0f 100644
+--- a/include/linux/spi/spi.h
++++ b/include/linux/spi/spi.h
+@@ -139,7 +139,7 @@ extern int spi_delay_exec(struct spi_delay *_delay, struct spi_transfer *xfer);
+  *	the spi_master.
+  * @cs_gpiod: gpio descriptor of the chipselect line (optional, NULL when
+  *	not using a GPIO line)
+- * @word_delay_usecs: microsecond delay to be inserted between consecutive
++ * @word_delay: delay to be inserted between consecutive
+  *	words of a transfer
+  *
+  * @statistics: statistics for the spi_device
+@@ -189,7 +189,7 @@ struct spi_device {
+ 	const char		*driver_override;
+ 	int			cs_gpio;	/* LEGACY: chip select gpio */
+ 	struct gpio_desc	*cs_gpiod;	/* chip select gpio desc */
+-	uint8_t			word_delay_usecs; /* inter-word delay */
++	struct spi_delay	word_delay; /* inter-word delay */
+ 
+ 	/* the statistics */
+ 	struct spi_statistics	statistics;
+@@ -781,8 +781,6 @@ extern void spi_res_release(struct spi_controller *ctlr,
+  * @delay_usecs: microseconds to delay after this transfer before
+  *	(optionally) changing the chipselect status, then starting
+  *	the next transfer or completing this @spi_message.
+- * @word_delay_usecs: microseconds to inter word delay after each word size
+- *	(set by bits_per_word) transmission.
+  * @word_delay: inter word delay to be introduced after each word size
+  *	(set by bits_per_word) transmission.
+  * @effective_speed_hz: the effective SCK-speed that was used to
+@@ -897,7 +895,6 @@ struct spi_transfer {
+ #define	SPI_NBITS_DUAL		0x02 /* 2bits transfer */
+ #define	SPI_NBITS_QUAD		0x04 /* 4bits transfer */
+ 	u8		bits_per_word;
+-	u8		word_delay_usecs;
+ 	u16		delay_usecs;
+ 	struct spi_delay	cs_change_delay;
+ 	struct spi_delay	word_delay;
 -- 
 2.20.1
 
