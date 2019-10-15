@@ -2,86 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3AF94D7D1A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 19:12:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F42ED7D3D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 19:17:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s2t7d/KuydbRzn0LQ0U6lDOs531pcm7GzOgbf6w368M=; b=e+5mz1lkc5KMWd
-	z9398yB6VuGRl1NCGoNxGTakDExTDZIbVOU9PlsA5IbDNU2tcvNxNyApGGmeakQa3osbge7jvtiIP
-	uOXIXINbIZhYH9slLlT5fSW1qTGM+cV3U3l0uf1F8qrNJufC2RziH9Oaa4R47JBZEpmkmW6v3JlcK
-	sWvEy9zp0eGPYPa2Qe8vL4/A155w4qPBhqz9G4ydYgZEu2loaKdFWEfA44xkvww5JA8ePNKeKtPvl
-	W7wapTNY4vHRCr7694QMRZhqqcbTutRv+dQE4q5KFjiNziCk0V2FXWF4ZaMIvxS1WPOct+Sg29uN4
-	Cw8u/mEQhhoFOPz/8W/w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=7xUWtyfaIC4YlbTxRsDUVdS8fRVsUwxO323H7IMFhHA=; b=gGD
+	mxoUthsYetPuf+Oih/i29slgIYuTUJIvOjY7jPGifaEMFl/LyYMfOVk3Mdh0RFndyGL/0OH0hfq72
+	MWPCk0SukoqRz6T5mQN0JJ2VwHglc2cC5M1yh+Cu70yFlWeBBUShoavkry2EsPKHxGHVK105SVOWO
+	ewzVpphIWFQXKCjat6kLgoMJLjcO1XtTN4Hqq2En6UvCX45q8LnuFkGVc79U4rt/fjJ3AgwKwVI5z
+	74XjertenNpRqez5RedhzQfv8MrCo1jI6UiHCNSvJ0nQHQqYwKAMLcHKUc82poxt/9Z7qiafMxOx5
+	oLVtZ/BlBy+dV9FchKz2SuGgADI1+UA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKQMw-0002ry-Ck; Tue, 15 Oct 2019 17:12:22 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1iKQRd-0005iT-O1; Tue, 15 Oct 2019 17:17:13 +0000
+Received: from mout.gmx.net ([212.227.15.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKQM2-0002M6-P5
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 17:11:28 +0000
-Received: by mail-ot1-f66.google.com with SMTP id 41so17596778oti.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 15 Oct 2019 10:11:25 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=VxDGjraqfzXc9uftKDsuNClpdLGxHQLLKEDl6Bl0yGY=;
- b=irJRKfAnrTcis8cuGjkq+3gYkUde8p28XbLS3oCAoLfHpsuaqgbBOqxO0ay1JD73mF
- wTeEK7wsrNVayUDJ5/BKoZuzn/sf2ciuc0sWYwe1V6/yZQYs0NQkBbuD+jeXhvglBDLO
- bW3/PuyzmncGn0m99aG/IGwcEVm8JNCgWy/crO0oyISS1op7PMGaRznw+eBdTqfqX3mr
- u5xPbBmB3xoMciY09opOE8iy0ifIuGm3pAsxzicYGgYvnEdbUo96ptYv8h06rAamwtYc
- 5o6CPLXIpsbafgUOQxvokaiS6jplh4wE1xV8wfvLPZY0ppimBujIAbFgqwGjcnTgKbNw
- KPFg==
-X-Gm-Message-State: APjAAAUqvuWkjpXsuwcLdu19UNq7fuiLaF4jpTQXnwXvT9SG0ZtAREAH
- YK9u1okQdcbqAlOB24J2fg==
-X-Google-Smtp-Source: APXvYqy4sZEG/+W6xEOtw6Rd/8zS/h+KMn+CPYcc4g5SttNj/xXlDflbSBhC8AEgrAAvxTNzzBDmEw==
-X-Received: by 2002:a9d:2a88:: with SMTP id e8mr30901276otb.188.1571159484997; 
- Tue, 15 Oct 2019 10:11:24 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id x6sm6874566ote.69.2019.10.15.10.11.24
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 15 Oct 2019 10:11:24 -0700 (PDT)
-Date: Tue, 15 Oct 2019 12:11:23 -0500
-From: Rob Herring <robh@kernel.org>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH 4/4] dt-bindings: iio: adc: exynos: Use defines instead
- of clock numbers
-Message-ID: <20191015171123.GA11947@bogus>
-References: <20191002160744.11307-1-krzk@kernel.org>
- <20191002160744.11307-4-krzk@kernel.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191002160744.11307-4-krzk@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1iKQQq-0004xX-7m; Tue, 15 Oct 2019 17:16:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1571159776;
+ bh=pWV8t98N4Fo6WzlbK05g/TVgMxifM1N6xBHlNciUcE8=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
+ b=kSR6/xH+HDHvrO3CO4SQ/kQOCfer1nNoIp8hFH1MfZaC2GVbaIZfFXT6mXxMFMAa7
+ jTfmm3fq4Qa4GRx/fqXkan0YnhZ/Exm0SSBpYfajTU09gG56+qXhrT2oBgkiJCcQlN
+ lTvgdkYLRebTrVqKPmhNFzPBK+gIg5V4hkMFMrm4=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from localhost.localdomain ([37.4.249.112]) by mail.gmx.com
+ (mrgmx005 [212.227.17.190]) with ESMTPSA (Nemesis) id
+ 1M7sHo-1iPM7G0QNO-004zt6; Tue, 15 Oct 2019 19:16:16 +0200
+From: Stefan Wahren <wahrenst@gmx.net>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: [GIT PULL 1/3] bcm2835-dt-next-2019-10-15
+Date: Tue, 15 Oct 2019 19:15:23 +0200
+Message-Id: <1571159725-5090-1-git-send-email-wahrenst@gmx.net>
+X-Mailer: git-send-email 2.7.4
+X-Provags-ID: V03:K1:dfZx3uAk0vysgtmYoY6k3UPO7+uWCLJU/YbcuOWHM3bUaop1Kfc
+ FdW5t1UZI4gqdAQSn7/POzYMdoPfZ+Ox6/2uHh3do52Bcx0lLROu9rlI+a5II62DuzvRmUG
+ 6cYs7xrKRSWAHRACx8eCiYvDfSP8DvtsTWlc9mFBmHjUfK+G9pJpycZeRt3vu4f7YskTHe/
+ +ykUGtHcFwPt8sXHOpFAQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:wyIlnAb9bcA=:RB4gxlwT01gSsq4Bmz8/05
+ DlmkjBB/Z9cOI2zys9IFQNgv2YbZBUovkOoFl0EjDkHUdGYKtePogDa/2CtfAmsH/0Z1l8OUW
+ zQlevcJQkviYadwRxcMy7FlU5lYOEQqTZVQVmMbchWicu4876i9Etwx3BK3K9tH/erziGQZBs
+ 6gHGDSi9Ca2a7iJxYvGP/MhwEOiBWwIYhGKxBQk4tWZrvvb8VpbExhS/RarSQVcopi7fwi0i8
+ ALu8nowNm2PyU4j7ufap5qO7/e9A4REJrG6yQx30s4kgcEtu1vFjk/gK4qRZahrVTUzuJqBkT
+ 2S95HEjUAriCT7Ki6jQF7CAK9VWxBF651li20hXsLhABZkfhXp9L2Kpqc9zVJYKvDPKSicArO
+ 8UaHyakTvVDx8z/Dy9fCkea+by/AT0pFzh/z1s6XjFAsY8zI1NMID9vF8Am/A20NB9US7V/z5
+ EbQ3C7vVf13MIlOXE2SSSfXzk31IoeIW8UkcXeOiuHW3PruEDoLFIKt7KyLWvWE3AAOegmRNc
+ LCK99P1CSe/nSR+7h32VpL0L8Nw40fDHhWItwObcLRbWMavig7HT6aWOXBR6/q08I1dwE8i3R
+ uCMKgEzbp/fn8ZvBF963HCkAGrQbtL3vh1X3RSaBepkVK4dfdNUrAG+W/Wrcoop2ax0xiH7hQ
+ WyKItgPxxGOBJIMJu8hqcrUMuODhZiOAcUWWSGiQNooDsj/2X/cpww+bz/PH39942Z8Y9JJgH
+ B0mSsZRJ7qOIEZcAxKdVdf2zEwft3O3ND9gHorwQur1YzC9mrxxAB3P5jYnPEor8OZiGmKf3O
+ 8pYjURdHxcjfDPcXCTlln0M6wC8UUa6ZtqYQNUxJwO9YVNot28f5cvkDfvTjMOGITgmccdpxF
+ JjWejq09Nff/UBUeVVHq/e92KMdic6czcHAFZP06qs1JcG4cHivCqFaxRDxjAoQiBeMGrf1uI
+ eybHJsBBdIF66DbXzSIKFer9cLsikiA3Rgq6j3ENoICZFfuORQplJsNTNYGVaBKffmPDi0hTD
+ TjTD5xcqcu/Gq5XZGZvBYUEzIJbq6AIgwvs+P4do5JI9b4Ikh45bS4XZ7CAOxBMJ01fWU/fhB
+ Uy1oC7ulH7zulaT47AUY0GdEKJj2N8WYprxyQJ5e8zpaIC5oOH4fPYpL275yjx7vesC0wzJQV
+ 9Rzj/lHDsNdOlVkQqtkDUJEgqrL0HmNZRrWzzmW7Mfz/Gd/+fNjCfn65lEq+UN4qobAk+As+H
+ fko+Wqbh+gnpIHer4TU5Gi5+sJ+fbeurRDsw7QA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_101126_890591_98FD3EC0 
-X-CRM114-Status: GOOD (  11.17  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191015_101624_575457_756C1243 
+X-CRM114-Status: GOOD (  14.23  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
+ no trust [212.227.15.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ provider (wahrenst[at]gmx.net)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,29 +95,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- linux-samsung-soc@vger.kernel.org, devicetree@vger.kernel.org,
- linux-iio@vger.kernel.org, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org, Eric Anholt <eric@anholt.net>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, Stefan Wahren <wahrenst@gmx.net>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed,  2 Oct 2019 18:07:44 +0200, Krzysztof Kozlowski wrote:
-> Make the examples in Exynos ADC bindings more readable and bring them
-> closer to real DTS by using defines for clocks.
-> 
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> ---
->  .../devicetree/bindings/iio/adc/samsung,exynos-adc.yaml     | 6 ++++--
->  1 file changed, 4 insertions(+), 2 deletions(-)
-> 
+Hi Florian,
 
-Applied, thanks.
+The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
 
-Rob
+  Linux 5.4-rc1 (2019-09-30 10:35:40 -0700)
+
+are available in the git repository at:
+
+  git://github.com/anholt/linux tags/bcm2835-dt-next-2019-10-15
+
+for you to fetch changes up to 46fdee06aeefedfc62a4c33b2c4a7a74682ac755:
+
+  arm64: dts: broadcom: Add reference to RPi 4 B (2019-10-10 19:14:28 +0200)
+
+----------------------------------------------------------------
+This pull request introduce initial Raspberry Pi 4 support. But all the fancy
+stuff like GENET, PCIe, xHCI, 40 bit DMA and V3D is missing.
+
+----------------------------------------------------------------
+Stefan Wahren (7):
+      ARM: dts: bcm283x: Remove simple-bus from fixed clocks
+      ARM: dts: bcm283x: Remove brcm,bcm2835-pl011 compatible
+      ARM: dts: bcm283x: Move BCM2835/6/7 specific to bcm2835-common.dtsi
+      dt-bindings: arm: Convert BCM2835 board/soc bindings to json-schema
+      dt-bindings: arm: bcm2835: Add Raspberry Pi 4 to DT schema
+      ARM: dts: Add minimal Raspberry Pi 4 support
+      arm64: dts: broadcom: Add reference to RPi 4 B
+
+ .../devicetree/bindings/arm/bcm/bcm2835.yaml       |  54 ++
+ .../devicetree/bindings/arm/bcm/brcm,bcm2835.txt   |  67 --
+ arch/arm/boot/dts/Makefile                         |   1 +
+ arch/arm/boot/dts/bcm2711-rpi-4-b.dts              | 123 +++
+ arch/arm/boot/dts/bcm2711.dtsi                     | 844 +++++++++++++++++++++
+ arch/arm/boot/dts/bcm2835-common.dtsi              | 194 +++++
+ arch/arm/boot/dts/bcm2835-rpi.dtsi                 |   4 -
+ arch/arm/boot/dts/bcm2835.dtsi                     |   1 +
+ arch/arm/boot/dts/bcm2836.dtsi                     |   1 +
+ arch/arm/boot/dts/bcm2837.dtsi                     |   1 +
+ arch/arm/boot/dts/bcm283x-rpi-usb-peripheral.dtsi  |   7 +
+ arch/arm/boot/dts/bcm283x.dtsi                     | 190 +----
+ arch/arm64/boot/dts/broadcom/Makefile              |   3 +-
+ arch/arm64/boot/dts/broadcom/bcm2711-rpi-4-b.dts   |   2 +
+ 14 files changed, 1236 insertions(+), 256 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/arm/bcm/bcm2835.yaml
+ delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm2835.txt
+ create mode 100644 arch/arm/boot/dts/bcm2711-rpi-4-b.dts
+ create mode 100644 arch/arm/boot/dts/bcm2711.dtsi
+ create mode 100644 arch/arm/boot/dts/bcm2835-common.dtsi
+ create mode 100644 arch/arm/boot/dts/bcm283x-rpi-usb-peripheral.dtsi
+ create mode 100644 arch/arm64/boot/dts/broadcom/bcm2711-rpi-4-b.dts
 
 _______________________________________________
 linux-arm-kernel mailing list
