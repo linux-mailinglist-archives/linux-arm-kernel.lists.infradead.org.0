@@ -2,93 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0AE06D7221
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 11:23:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9271ED7262
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 11:36:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1x5DRb9w5sBZBwple9/r9PD0pVU+J4VA2Teb3NQpaXM=; b=qHvwDWDxxyMr3z
-	7ErBzXGqFknC0TG9ylJzl1eV9rK6AZmTmpbE0OVaySiVyF0GeXfgM1daCAXcoM198F4GBx6qx2Ll1
-	dJgJkdOyQ/NM4xda550qTAVERcHq0EPe5IYMRYg2K6tQPcIchOMObl3BPLY05XcW2n1zZvWcC/m4X
-	Uukr0dq9jNlUEQzQzJfsumb49Qp0nmarG2cI9zv3Qq76JWXU+QdLreSx9sbiUe/JVwojZR1S6XMx3
-	QITFsaOTJ03G73nrrbDiEKQqKpQSLc5c47wNJrrGBW8H9QJZx86qnf8P7IF6tohG40fFhcuUP2GWA
-	6n9KmQ2zYvAi3q6vlxWw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=72AWqDmpnBzk9+l/694zA8f3jdhYvsKPJ0aAO+YFcN4=; b=PRtXOV1F8hzAr5
+	MSO7sxE2Y/aSXkIsD41dlPXfvROBzmhZQrWEjt4Rr5TfhuC+jam3RcjsVeuKrJagDjwb2hnXVEDhd
+	M3/2kmu8lpiFqNEcq0I+1ghNy+Spm5mucJx9/4+e0bUjVzssxU5NMgZ+srFVoCAH67P3JMyOt7t5Z
+	RsGDiWnvRcY3jSXtD83Xttha8a7AwyFVS1+RECNbJ0eBviCdPo8Bh21nJatEZGQxIUI3RC74s7V9C
+	OM/jdJNmAiqti2nUNV3DYPGw4Nsoh0m9I7xBn5VfzXsw5N9BG63Us+DaJA8tt07HskmBp9zG3/gRO
+	e+GpqaNIQxVuXIzK8fSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKJ2r-0003UO-8F; Tue, 15 Oct 2019 09:23:09 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iKJFt-0000YA-5u; Tue, 15 Oct 2019 09:36:37 +0000
+Received: from mail-yb1-xb44.google.com ([2607:f8b0:4864:20::b44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKJ2O-0003FA-Ke
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 09:22:42 +0000
-Received: by mail-wr1-x441.google.com with SMTP id n14so22865416wrw.9
+ id 1iKJFk-0000XE-4V
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 09:36:29 +0000
+Received: by mail-yb1-xb44.google.com with SMTP id 4so6341376ybq.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 15 Oct 2019 02:22:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=monstr-eu.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=2je19/jggqbWGMcPX5ioTjzRrP7lElzkm+gR+CMtb1s=;
- b=t6ymZoFbHyXWn7joBIpKhc1/Fk7hGoXzMT7H0wq4ZeHllCiAji04Xri2PLIyIEe0K4
- aV6Hd+5tLEJuEjhpZeMxPh8uWPYl5fmPcVXoNvUvMWxnL3HIDs5SQsJOka8gOtVcgJyu
- bTpCLu48QLSl0y06glXhzj3r6eN+YadDUz6uElqozVW/mfDvsLeeRm/I9qRi/tkmMXAO
- 9WF1Cuo7ga1gWqH2yhmo/ZMPYfPMdTUcgNEOM5+x7JLI7uA72NdHfzZDfWEzN5Aohpz7
- 2Uy6krH2/5nS8XW+mUcWCpiOi7ozFkAK89bTklLmSPjCTPV7snMkcD/xR1vclSk1E6hX
- /MhA==
+ Tue, 15 Oct 2019 02:36:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=iMrIAnZ82+rBIfraJTHtx7CjmsFJKaDtLSbFOzwjTXE=;
+ b=BAFaP7aiq5gaPqOXng6TMHCql16AL4AFgl/Ejp3CUchGQwSKQfszAhzzzSYft1g+Au
+ wXKXNKpIVW4gbP/z/8XCCYi0piqNvBZ5K87ZITK8rHCNUPgV71PzYzf/lzI04N3v04R0
+ AFO739QhqbEbQldEQBXF5xF0eOgFgAvg/O8ZNzkWCczS2gfDS0DiheutwA59ZjDJh5DF
+ Wax26kW6RPj7B/JCgYzZxl/Zyv4ga/kmXr++znOZLPWHwNnSmLhQPJl0M7/yXqfwkqGL
+ xz/9M0V+2jCusklQLCnkwfSHFA2S18BsdfUwAQ34M6LX5XLdSaKy6dKQROBIRUQ0lued
+ NoZw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=2je19/jggqbWGMcPX5ioTjzRrP7lElzkm+gR+CMtb1s=;
- b=uSzCVgLT8H4YsnjsIDIwJ2tTWWtyS+KgeVb5KRUoev4zgRlD3wyqtgfCLOcTDUSrnL
- 8obIVZIRYuDfsb3F0OC2ipNud4wk1xDj4Ex+WqXq9oVQh20a3MTAnlpmdMK3XIsqnUVZ
- nw++/MXRbZGG9j/TLeFEtweD5hymHFrOrWV9Y7bU+WaM89JdC8HOwKgPbQdi/Y42tI50
- lZvtfvkzKmYsGUnXqXW+s7g/b1GzOY0Obbvvg0Fi1q1MbvySmDdHOhLr41E6d4qR/h8i
- jBoK0kDCveQU5T9iIPgnjEQOsW5QRrQ1+6SwPmKxvLpD1z1e7lO/OtMbkrgNR4lR+38J
- XRQw==
-X-Gm-Message-State: APjAAAXcJ3uFGbPoJTz/3uUgwTJOPHAcE7CvLxGaT+yCEqg580nPPg6w
- f8VglKbeo1Ml9yieP+rdBi1t9g==
-X-Google-Smtp-Source: APXvYqwtTGnp6OslciBY1LUwBRbdzvF4fDuwq90HSlfX12UVnZt+lZAJaFSOB1eOJV7AXXat0IRRuA==
-X-Received: by 2002:a05:6000:1283:: with SMTP id
- f3mr27844709wrx.370.1571131357654; 
- Tue, 15 Oct 2019 02:22:37 -0700 (PDT)
-Received: from [74.125.133.108] ([149.199.62.130])
- by smtp.gmail.com with ESMTPSA id z6sm19523901wro.16.2019.10.15.02.22.33
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 15 Oct 2019 02:22:36 -0700 (PDT)
-Subject: Re: [PATCH] serial: core: Use cons->index for preferred console
- registration
-To: Geert Uytterhoeven <geert@linux-m68k.org>,
- Michal Simek <michal.simek@xilinx.com>
-References: <4a877f1c7189a7c45b59a6ebfc3de607e8758949.1567434470.git.michal.simek@xilinx.com>
- <CAMuHMdWY2VsY-CyAxSvpm1XYicAWqU7NORSQofQ+T195DwyLUg@mail.gmail.com>
-From: Michal Simek <monstr@monstr.eu>
-Message-ID: <7284590f-2b74-1b47-2d61-783ad8d5f46f@monstr.eu>
-Date: Tue, 15 Oct 2019 11:22:28 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=iMrIAnZ82+rBIfraJTHtx7CjmsFJKaDtLSbFOzwjTXE=;
+ b=N6/zqgR0GljUyKfPdFFF2i449F9xayAAYnD8c2caROZu49GFvZiZL21ruDwF2/CRG5
+ N7fwAuZYcYbmnWMa5fZ/9BwvXuWLTvdpVUtbD5XV5da6iUKZlYPSX6ppGz7WuKv00vBG
+ /4vl4JsdwPpg+yRFS1A2Y4VwXjSbwbg21G4uNAAvolxfSZTVad8vdhcoLVLau4B235P+
+ gimmGJ9Bo1aNwWdntGpCQxjIEJZZpxMgvUVbDMVa+VHkzwJnYjroauVzz9DB6khMNPbQ
+ qbjOT2T/z7keXiHznWL7Nk7bCQNGmLIWw0lBjFbM/+LJdBGMgEiPlP8NnSYoMV/FhTq5
+ Dblg==
+X-Gm-Message-State: APjAAAVv226vSO41b3hRv8ECIT4nKYwpoG7g/kS7IWKdQ7wQYp+Cp9wP
+ NxN1bw2weoR+3OmcqcQ8JGZLHYN+lI3iC9EwND0=
+X-Google-Smtp-Source: APXvYqzfBkWPsmhmg21XCDLG9UYkB1oSENrt2pQtpaUbfuRqWjAfwiBnCv2x3+R8EmW7I7Sm1/xRSnskoDfK7ldkr3M=
+X-Received: by 2002:a25:7909:: with SMTP id u9mr24585102ybc.33.1571132185981; 
+ Tue, 15 Oct 2019 02:36:25 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <CAMuHMdWY2VsY-CyAxSvpm1XYicAWqU7NORSQofQ+T195DwyLUg@mail.gmail.com>
-Content-Language: en-US
+References: <20190830125436.16959-1-ganapat@localhost.localdomain>
+ <CAKTKpr43RyG0fTp3nOQP--F80JYD1aCHEU5TJNZCK8LPCLfswQ@mail.gmail.com>
+In-Reply-To: <CAKTKpr43RyG0fTp3nOQP--F80JYD1aCHEU5TJNZCK8LPCLfswQ@mail.gmail.com>
+From: Ganapatrao Kulkarni <gklkml16@gmail.com>
+Date: Tue, 15 Oct 2019 15:06:14 +0530
+Message-ID: <CAKTKpr7r2v8K6WLThvO8jBXjv7FiFbgFOG5McsW3FnqgVoRXqA@mail.gmail.com>
+Subject: Re: [PATCH v5 0/2] Add CCPI2 PMU support
+To: linux-doc@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>, 
+ linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_022240_884442_B8ED1E9B 
-X-CRM114-Status: GOOD (  20.87  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191015_023628_203565_08C8E376 
+X-CRM114-Status: GOOD (  14.82  )
+X-Spam-Score: 1.7 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:b44 listed in]
  [list.dnswl.org]
+ 0.6 HK_RANDOM_ENVFROM      Envelope sender username looks random
+ 1.0 HK_RANDOM_FROM         From username looks random
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (gklkml16[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (gklkml16[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,68 +98,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- Jiri Slaby <jslaby@suse.com>, Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Ganapatrao Kulkarni <gkulkarni@marvell.com>, Jonathan Corbet <corbet@lwn.net>,
+ Jan Glauber <jglauber@marvell.com>,
+ Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
+ Robert Richter <rrichter@marvell.com>, Will Deacon <will@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Geert,
+Hi Will,
 
-On 15. 10. 19 11:19, Geert Uytterhoeven wrote:
-> Hi Michal,
-> 
-> On Mon, Sep 2, 2019 at 4:29 PM Michal Simek <michal.simek@xilinx.com> wrote:
->> The reason for this patch is xilinx_uartps driver which create one dynamic
->> instance per IP with unique major and minor combinations. drv->nr is in
->> this case all the time setup to 1. That means that uport->line is all the
->> time setup to 0 and drv->tty_driver->name_base is doing shift in name to
->> for example ttyPS3.
->>
->> register_console() is looping over console_cmdline array and looking for
->> proper name/index combination which is in our case ttyPS/3.
->> That's why every instance of driver needs to be registered with proper
->> combination of name/number (ttyPS/3). Using uport->line is doing
->> registration with ttyPS/0 which is wrong that's why proper console index
->> should be used which is in cons->index field.
->>
->> Also it is visible that recording console should be done based on
->> information about console not about the port but in most cases numbers are
->> the same and xilinx_uartps is only one exception now.
->>
->> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
-> 
-> This is now commit 91daae03188e0dd1 ("serial: core: Use cons->index
-> for preferred console registration") in tty-next.
-> 
-> This has been bisected to break the serial console on (at least)
-> r8a7791/koelsch and r8a7795/h3-salvator-xs.
-> 
-> The line "printk: console [ttySC0] enabled" is no longer printed.
-> The system continues booting without any serial console output, and the
-> login prompt never appears on the serial console.
-> 
-> Reverting this commit fixes the issue.
+On Sun, Oct 13, 2019 at 10:45 PM Ganapatrao Kulkarni <gklkml16@gmail.com> wrote:
+>
+> Hi Will, Mark,
+>
+> On Fri, Aug 30, 2019 at 6:24 PM ganapat <gklkml16@gmail.com> wrote:
+> >
+> > From: Ganapatrao Kulkarni <gkulkarni@marvell.com>
+> >
+> > Add Cavium Coherent Processor Interconnect (CCPI2) PMU
+> > support in ThunderX2 Uncore driver.
+> >
+> > v5:
+> >         Fixed minor bug of v4 (timer callback fuction
+> >         was getting initialized to NULL for all PMUs).
+> >
+> > v4:
+> >         Update with review comments [2].
+> >         Changed Counter read to 2 word read since single dword read is misbhehaving(hw issue).
+> >
+> > [2] https://lkml.org/lkml/2019/7/23/231
+> >
+> > v3: Rebased to 5.3-rc1
+> >
+> > v2: Updated with review comments [1]
+> >
+> > [1] https://lkml.org/lkml/2019/6/14/965
+> >
+> > v1: initial patch
+> >
+> >
+> > Ganapatrao Kulkarni (2):
+> >   Documentation: perf: Update documentation for ThunderX2 PMU uncore
+> >     driver
+> >   drivers/perf: Add CCPI2 PMU support in ThunderX2 UNCORE driver.
+> >
+> >  .../admin-guide/perf/thunderx2-pmu.rst        |  20 +-
+> >  drivers/perf/thunderx2_pmu.c                  | 267 +++++++++++++++---
+> >  2 files changed, 245 insertions(+), 42 deletions(-)
+> >
+> > --
+> > 2.17.1
+> >
+>
+> Any comments on this patchset?
 
-Sorry for trouble with this patch. Can you please point me to dts files
-for these boards and also what's the value you have in uport->line and
-uport->cons->index?
+If no further comments, can you please queue it to next?
 
 Thanks,
-Michal
+Ganapat
 
-
--- 
-Michal Simek, Ing. (M.Eng), OpenPGP -> KeyID: FE3D1F91
-w: www.monstr.eu p: +42-0-721842854
-Maintainer of Linux kernel - Xilinx Microblaze
-Maintainer of Linux kernel - Xilinx Zynq ARM and ZynqMP ARM64 SoCs
-U-Boot custodian - Xilinx Microblaze/Zynq/ZynqMP/Versal SoCs
-
+>
+> Thanks,
+> Ganapat
 
 _______________________________________________
 linux-arm-kernel mailing list
