@@ -2,84 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7938D835A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 00:12:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7E54D8368
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 00:16:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XpErCmFjvN9DRqL/nzzKuelnvYWC23vnfFoiWwQyd0g=; b=Ft9CF2puko3wX/
-	18Y3xTHGeqvwwYc7nWeIavW5w6BPfozltS9C8TUAgqSu3JzuNEJ6nPzavevFV8w532kAq6bv2+vtZ
-	iW4i6EF/R/FxLM4cbyzkzM4mY5PQxmaGa38Lggm+DhEAKNoVTRjeiUIKSttnjOEKCL+DHSog6uUZT
-	Tlqwg6Gc6U2gAOILIvDxIMPIGCsu+ptlahKDGEC/xkjumq0G9tiJlBr61j+JND+j7dO3ze0zQUc9V
-	lH+Nle6/oerUH3H0biK+1c9ZzvdHdxIYIO/hfbDw1D0/jvejX/tZklWuZSVO7Qw2O74nD1M020fuD
-	rnj6bVWOdal3EC3QMX+A==;
+	List-Owner; bh=xnmYNgneYzxmYbAY6gg1W8iXAf/WLGaClV+xiCEWzPI=; b=oqW4CX2NsQbxe1
+	GjgEJ0u6quV85lrtSizxigMYjH6AZYjZjMbYpgOOVM8EdBmZn0s6qTrfPfQVS7aaalJQ83nJeOwTK
+	fhyT5ggwU4jMnxGful5gLwLGzanu3x77akwe47QJry0bB7/R8do4yz5YlLeBqRAhMt/p7PgSy/GBN
+	ZloyMMZlpknfz9d0kc9YgR6qX2J4d90/F5GVyFZREWpRAU70vkUOhMHR3tTX7Ji+DGKDLZ6tirbqt
+	f/hKzEMUTTnVh1NsZteejPKHH5LYIohN0fiyPvkHvUHwcyheF5DLEE956/ibyhteqpzQBa7Y26foh
+	KJ34boavG7OlmqivQtmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKV2z-0006BS-MX; Tue, 15 Oct 2019 22:12:05 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1iKV78-00085A-Jl; Tue, 15 Oct 2019 22:16:22 +0000
+Received: from namei.org ([65.99.196.166])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKV2p-0004ln-4H; Tue, 15 Oct 2019 22:11:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=VQY7kyXQnV7HJfQmywx1SmCW7S/WPSYFdOWu76GYWnY=; b=Gs3ZYcFMXya+INRHGOSEM2hnZ
- V4Lxsuo5n2EqcV+3JNqXnyg8k8J1cqtxpWUEFy7J/PBXX6e7F8/Xk1vAGU5CMpYzf35fePzKYAksB
- YlhdDdWjaPeETOOpUcuLbxkJLJy13Sr2BM57hwJIPJvfQkUJIid2+WDgVWpuxbDolpuCkBesV6SnE
- dn2fS+AFcM2jMlKxtFrHVg0jm2eupU2RNL94eNWUodfXZbA+HvsVBQG4awdesxQc5jjzrsIB0eb/a
- lFYaaxlv3JIfIUFfUTFihRZZ5kJXRypiUPhykdUDWKqszGKq3XMOwpz14p3S4oOfAK9W/jL+qT57i
- o4DTegDDw==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:51296)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1iKV0T-00076f-Jh; Tue, 15 Oct 2019 23:09:29 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1iKV0P-0006YJ-W2; Tue, 15 Oct 2019 23:09:26 +0100
-Date: Tue, 15 Oct 2019 23:09:25 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Heiner Kallweit <hkallweit1@gmail.com>
-Subject: Re: lan78xx and phy_state_machine
-Message-ID: <20191015220925.GW25745@shell.armlinux.org.uk>
-References: <20191014140604.iddhmg5ckqhzlbkw@beryllium.lan>
- <20191014163004.GP25745@shell.armlinux.org.uk>
- <20191014192529.z7c5x6hzixxeplvw@beryllium.lan>
- <25cfc92d-f72b-d195-71b1-f5f238c7988d@gmx.net>
- <b9afd836-613a-dc63-f77b-f9a77d33acc4@gmail.com>
- <20191014221211.GR25745@shell.armlinux.org.uk>
- <524267e6-df8e-d884-aeef-1ed8700e4e58@gmail.com>
+ id 1iKV6x-00083s-2N; Tue, 15 Oct 2019 22:16:12 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by namei.org (8.14.4/8.14.4) with ESMTP id x9FMFdwG018373;
+ Tue, 15 Oct 2019 22:15:39 GMT
+Date: Wed, 16 Oct 2019 09:15:39 +1100 (AEDT)
+From: James Morris <jmorris@namei.org>
+To: James Morse <james.morse@arm.com>
+Subject: Re: [PATCH V4 0/2] Add support for arm64 to carry ima measurement
+In-Reply-To: <0053eb68-0905-4679-c97a-00c5cb6f1abb@arm.com>
+Message-ID: <alpine.LRH.2.21.1910160914090.11167@namei.org>
+References: <20191011003600.22090-1-prsriva@linux.microsoft.com>
+ <87d92514-e5e4-a79f-467f-f24a4ed279b6@arm.com>
+ <b35b239c-990c-0d5b-0298-8f9e35064e2b@linux.microsoft.com>
+ <0053eb68-0905-4679-c97a-00c5cb6f1abb@arm.com>
+User-Agent: Alpine 2.21 (LRH 202 2017-01-01)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <524267e6-df8e-d884-aeef-1ed8700e4e58@gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_151155_173064_A8A774E6 
-X-CRM114-Status: GOOD (  18.26  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191015_151611_189991_1699E3C7 
+X-CRM114-Status: UNSURE (   5.07  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,83 +59,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Woojung Huh <woojung.huh@microchip.com>, Andrew Lunn <andrew@lunn.ch>,
- Florian Fainelli <f.fainelli@gmail.com>, Daniel Wagner <dwagner@suse.de>,
- netdev@vger.kernel.org,
- Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
- bcm-kernel-feedback-list@broadcom.com, Stefan Wahren <wahrenst@gmx.net>,
- linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, jean-philippe@linaro.org, arnd@arndb.de,
+ yamada.masahiro@socionext.com, sboyd@kernel.org, catalin.marinas@arm.com,
+ ard.biesheuvel@linaro.org, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, zohar@linux.ibm.com,
+ prsriva <prsriva@linux.microsoft.com>, takahiro.akashi@linaro.org, duwe@lst.de,
+ bauerman@linux.ibm.com, allison@lohutok.net, linux-integrity@vger.kernel.org,
+ tglx@linutronix.de, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 15, 2019 at 09:38:22PM +0200, Heiner Kallweit wrote:
-> On 15.10.2019 00:12, Russell King - ARM Linux admin wrote:
-> > On Mon, Oct 14, 2019 at 10:20:15PM +0200, Heiner Kallweit wrote:
-> >> On 14.10.2019 21:51, Stefan Wahren wrote:
-> >>> [add more recipients]
-> >>>
-> >>> Am 14.10.19 um 21:25 schrieb Daniel Wagner:
-> >>>> Moving the phy_prepare_link() up in phy_connect_direct() ensures that
-> >>>> phydev->adjust_link is set when the phy_check_link_status() is called.
-> >>>>
-> >>>> diff --git a/drivers/net/phy/phy_device.c
-> >>>> b/drivers/net/phy/phy_device.c index 9d2bbb13293e..2a61812bcb0d 100644
-> >>>> --- a/drivers/net/phy/phy_device.c +++ b/drivers/net/phy/phy_device.c
-> >>>> @@ -951,11 +951,12 @@ int phy_connect_direct(struct net_device *dev,
-> >>>> struct phy_device *phydev, if (!dev) return -EINVAL;
-> >>>>
-> >>>> +       phy_prepare_link(phydev, handler);
-> >>>> +
-> >>>>         rc = phy_attach_direct(dev, phydev, phydev->dev_flags, interface);
-> >>>>         if (rc)
-> >>
-> >> If phy_attach_direct() fails we may have to reset phydev->adjust_link to NULL,
-> >> as we do in phy_disconnect(). Apart from that change looks good to me.
-> > 
-> > Sorry, but it doesn't look good to me.
-> > 
-> > I think there's a deeper question here - why is the phy state machine
-> > trying to call the link change function during attach?
-> After your comment I had a closer look at the lm78xx driver and few things
-> look suspicious:
+On Tue, 15 Oct 2019, James Morse wrote:
+
+> > The IMA logs are event logs for module load time signature validation(based on policies)
+> > which are backed by the TPM. No SecureBoot information is present in the log other than
+> > the boot aggregate.
 > 
-> - lan78xx_phy_init() (incl. the call to phy_connect_direct()) is called
->   after register_netdev(). This may cause races.
+> Okay, so SecureBoot is optional with this thing.
 
-That isn't a problem.  We have lots of network device drivers that do
-this - in their open() function.
+Correct. Verified boot is one alternative.
 
-> - The following is wrong, irq = 0 doesn't mean polling.
->   PHY_POLL is defined as -1. Also in case of irq = 0 phy_interrupt_is_valid()
->   returns true.
-> 
-> 	/* if phyirq is not set, use polling mode in phylib */
-> 	if (dev->domain_data.phyirq > 0)
-> 		phydev->irq = dev->domain_data.phyirq;
-> 	else
-> 		phydev->irq = 0;
-
-Also unlikely to be the cause of this problem.  phy_connect_direct() is
-called with an adjust link function, which is set via
-phy_prepare_link() in phy_connect_direct(), before interrupts are even
-considered.
-
-So, the window for the bug is somewhere before the call to
-phy_prepare_link() in phy_connect_direct(), but after
-lan78xx_mdio_init().
-
-> - Manually calling genphy_config_aneg() in lan78xx_phy_init() isn't
->   needed, however this should not cause our problem.
-
-Again, way after the point where phydev->adjust_link is non-NULL,
-so this can't be it.
 
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+James Morris
+<jmorris@namei.org>
+
 
 _______________________________________________
 linux-arm-kernel mailing list
