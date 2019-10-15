@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82382D718A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 10:49:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10CB9D718E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 10:50:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,29 +11,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=zE0Sj4FeOcTReW36WMa/7lk2zfh9o9W1gpfXxMqJZsM=; b=T+vze9AW6L3bJq6J3TShIG56cb
-	jGWA9QSfaGQrebzjGKWnWSNzCSdAwNmbDd39Dm7feYvhcV/bqdnmBzqgfKO3XGZy35e2fjnIsqbwl
-	SAp7u/QvaFUn8DgJ5csdE2ksYHYi1VJ4wHTawf6eNF0d+CxD8z1GV8l3YWVaDJVF9mcFm7gG0ZYJb
-	Qq4j8JdldBa4YHaoZg5TOfNDB5bjhPvSarSoMsTpgSHkSXdMnAnhUJk+6CafdVfM3BZMpPkgK7Chy
-	iP8hbaroMS8P+JyjHrHUtQfK9Z/nBDDOWj95LvGS6t/lhX76rsKai5+4+KkZdSUdAQ5LMg+4g5LfA
-	1T9pnVXg==;
+	bh=2M0il3KSbpx7G9xdDUR08NaCz5OQrEsvzcj/MeWTMHQ=; b=cW/NJF2xqVLcyfSCdo9mwanw5Z
+	zdQU2Veo9yBgcZwi5J6DDUWjL9SnyMChQxvTjAKyrUqSYLRQiKGmi+VM1CiNpxS3gvCTpYSb8835N
+	9ddNTXFJUgkKQjlsdQ3H4Nyopww78NoJhU/yWc0l3cYuJmuHAjtfzYZPZDQxJW7FQ3JgCfIi52BjD
+	CDeJe625rzE6J5w8sC6tVN8G1bPhaMpMppy+GetFTRubtWGrtsc1nXxxTpcVYs6xCJRC3l0XJbZNm
+	x+1rV/uAtHfvBx3bBQ+iDEC1qpV9XZLBmQohtUTA8vRONAFSRwSFwlKp3uI/s0LCdM/V6XWmTZXDk
+	IioU8orQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKIWZ-0004v7-G9; Tue, 15 Oct 2019 08:49:47 +0000
+	id 1iKIWr-00058V-Nj; Tue, 15 Oct 2019 08:50:05 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKIV4-0003dA-An
+ id 1iKIV5-0003eU-Du
  for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 08:48:16 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 10B311A0A1F;
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E976D1A00B8;
  Tue, 15 Oct 2019 10:48:13 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 383401A07D5;
- Tue, 15 Oct 2019 10:48:06 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 1B1921A0A32;
+ Tue, 15 Oct 2019 10:48:07 +0200 (CEST)
 Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id EC4EF40314;
- Tue, 15 Oct 2019 16:47:56 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 7046F4031C;
+ Tue, 15 Oct 2019 16:47:58 +0800 (SGT)
 From: Xiaowei Bao <xiaowei.bao@nxp.com>
 To: Zhiqiang.Hou@nxp.com, bhelgaas@google.com, robh+dt@kernel.org,
  mark.rutland@arm.com, shawnguo@kernel.org, leoyang.li@nxp.com,
@@ -41,16 +41,17 @@ To: Zhiqiang.Hou@nxp.com, bhelgaas@google.com, robh+dt@kernel.org,
  andrew.murray@arm.com, mingkai.hu@nxp.com, linux-pci@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v2 5/6] arm64: dts: lx2160a: Add PCIe EP node
-Date: Tue, 15 Oct 2019 16:37:01 +0800
-Message-Id: <20191015083702.21792-6-xiaowei.bao@nxp.com>
+Subject: [PATCH v2 6/6] misc: pci_endpoint_test: Add the layerscape PCIe GEN4
+ EP device support
+Date: Tue, 15 Oct 2019 16:37:02 +0800
+Message-Id: <20191015083702.21792-7-xiaowei.bao@nxp.com>
 X-Mailer: git-send-email 2.9.5
 In-Reply-To: <20191015083702.21792-1-xiaowei.bao@nxp.com>
 References: <20191015083702.21792-1-xiaowei.bao@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_014814_678859_58CED839 
-X-CRM114-Status: UNSURE (   7.23  )
+X-CRM114-CacheID: sfid-20191015_014815_613450_493107D2 
+X-CRM114-Status: UNSURE (   6.86  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -79,117 +80,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the LX2160A PCIe EP node.
+Add the layerscape PCIE GEN4 EP device support in pci_endpoint_test driver.
 
 Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
 ---
 v2: 
  - No change.
 
- arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi | 56 ++++++++++++++++++++++++++
- 1 file changed, 56 insertions(+)
+ drivers/misc/pci_endpoint_test.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi b/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
-index f60e5ac..18330df 100644
---- a/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
-+++ b/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
-@@ -1005,6 +1005,15 @@
- 			status = "disabled";
- 		};
+diff --git a/drivers/misc/pci_endpoint_test.c b/drivers/misc/pci_endpoint_test.c
+index 6e208a0..8b145a7 100644
+--- a/drivers/misc/pci_endpoint_test.c
++++ b/drivers/misc/pci_endpoint_test.c
+@@ -65,6 +65,7 @@
+ #define PCI_ENDPOINT_TEST_IRQ_NUMBER		0x28
  
-+		pcie_ep@3400000 {
-+			compatible = "fsl,lx2160a-pcie-ep";
-+			reg = <0x00 0x03400000 0x0 0x00100000
-+			       0x80 0x00000000 0x8 0x00000000>;
-+			reg-names = "regs", "addr_space";
-+			apio-wins = <8>;
-+			status = "disabled";
-+		};
-+
- 		pcie@3500000 {
- 			compatible = "fsl,lx2160a-pcie";
- 			reg = <0x00 0x03500000 0x0 0x00100000   /* controller registers */
-@@ -1032,6 +1041,15 @@
- 			status = "disabled";
- 		};
+ #define PCI_DEVICE_ID_TI_AM654			0xb00c
++#define PCI_DEVICE_ID_LX2160A			0x8d80
  
-+		pcie_ep@3500000 {
-+			compatible = "fsl,lx2160a-pcie-ep";
-+			reg = <0x00 0x03500000 0x0 0x00100000
-+			       0x88 0x00000000 0x8 0x00000000>;
-+			reg-names = "regs", "addr_space";
-+			apio-wins = <8>;
-+			status = "disabled";
-+		};
-+
- 		pcie@3600000 {
- 			compatible = "fsl,lx2160a-pcie";
- 			reg = <0x00 0x03600000 0x0 0x00100000   /* controller registers */
-@@ -1059,6 +1077,16 @@
- 			status = "disabled";
- 		};
- 
-+		pcie_ep@3600000 {
-+			compatible = "fsl,lx2160a-pcie-ep";
-+			reg = <0x00 0x03600000 0x0 0x00100000
-+			       0x90 0x00000000 0x8 0x00000000>;
-+			reg-names = "regs", "addr_space";
-+			apio-wins = <256>;
-+			max-functions = /bits/ 8 <2>;
-+			status = "disabled";
-+		};
-+
- 		pcie@3700000 {
- 			compatible = "fsl,lx2160a-pcie";
- 			reg = <0x00 0x03700000 0x0 0x00100000   /* controller registers */
-@@ -1086,6 +1114,15 @@
- 			status = "disabled";
- 		};
- 
-+		pcie_ep@3700000 {
-+			compatible = "fsl,lx2160a-pcie-ep";
-+			reg = <0x00 0x03700000 0x0 0x00100000
-+			       0x98 0x00000000 0x8 0x00000000>;
-+			reg-names = "regs", "addr_space";
-+			apio-wins = <8>;
-+			status = "disabled";
-+		};
-+
- 		pcie@3800000 {
- 			compatible = "fsl,lx2160a-pcie";
- 			reg = <0x00 0x03800000 0x0 0x00100000   /* controller registers */
-@@ -1113,6 +1150,16 @@
- 			status = "disabled";
- 		};
- 
-+		pcie_ep@3800000 {
-+			compatible = "fsl,lx2160a-pcie-ep";
-+			reg = <0x00 0x03800000 0x0 0x00100000
-+			       0xa0 0x00000000 0x8 0x00000000>;
-+			reg-names = "regs", "addr_space";
-+			apio-wins = <256>;
-+			max-functions = /bits/ 8 <2>;
-+			status = "disabled";
-+		};
-+
- 		pcie@3900000 {
- 			compatible = "fsl,lx2160a-pcie";
- 			reg = <0x00 0x03900000 0x0 0x00100000   /* controller registers */
-@@ -1140,5 +1187,14 @@
- 			status = "disabled";
- 		};
- 
-+		pcie_ep@3900000 {
-+			compatible = "fsl,lx2160a-pcie-ep";
-+			reg = <0x00 0x03900000 0x0 0x00100000
-+			       0xa8 0x00000000 0x8 0x00000000>;
-+			reg-names = "regs", "addr_space";
-+			apio-wins = <8>;
-+			status = "disabled";
-+		};
-+
- 	};
- };
+ #define is_am654_pci_dev(pdev)		\
+ 		((pdev)->device == PCI_DEVICE_ID_TI_AM654)
+@@ -793,6 +794,7 @@ static const struct pci_device_id pci_endpoint_test_tbl[] = {
+ 	{ PCI_DEVICE(PCI_VENDOR_ID_TI, PCI_DEVICE_ID_TI_DRA74x) },
+ 	{ PCI_DEVICE(PCI_VENDOR_ID_TI, PCI_DEVICE_ID_TI_DRA72x) },
+ 	{ PCI_DEVICE(PCI_VENDOR_ID_FREESCALE, 0x81c0) },
++	{ PCI_DEVICE(PCI_VENDOR_ID_FREESCALE, PCI_DEVICE_ID_LX2160A) },
+ 	{ PCI_DEVICE_DATA(SYNOPSYS, EDDA, NULL) },
+ 	{ PCI_DEVICE(PCI_VENDOR_ID_TI, PCI_DEVICE_ID_TI_AM654),
+ 	  .driver_data = (kernel_ulong_t)&am654_data
 -- 
 2.9.5
 
