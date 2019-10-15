@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D8DDD74AF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 13:15:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7250BD74AC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 13:15:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=jGrL0i2UPRtHZd/0J4Z20UZWHxKvQMa0VOOPdsFp83E=; b=tyQ
-	pcs8+69yHNhVKU45YsM1N6cCepTWAK+DUhJq/NkEJAWQ0bkBLiIKNErPNoKccShk2APcwMmCqe6zl
-	FVKu4GznOuzXK21geo5aOjTsLUjH3QtdxeX4O/TqHZtFFF23eLb4meQiqPXyndvgWceKqwDPu3lWd
-	zWleH95pZWK+w/fVvN4RSxrbhk4/Dw0XAd546uol44kNQAFZLKnUTTXz7CE8/HoCI+rWe/CxkvTco
-	aybTgg0lHikpETo2+Jc6LjCOoaj8YUOjLGOdL9j6lFAyzcYYpmMhsPgPj0V1w+dbu5vQtV87S8Rfy
-	NTXMLOMUKq6xfMnGyj333W8kDMoAmxg==;
+	References:List-Owner; bh=IJPXObluuRgCUosaax6E3oAisDq7XmT5K8hb+q6PVUQ=; b=Bpu
+	4XIx+SZxWPQb4mEFvPRgsK+Vs02W9Bpzo2DO3ZEYZItlM8zl02ZDrkJ+P95vNrlFq9ExMX0mOtjJ9
+	gpw/J9smcM95aYGwqH/6fo8JJ0Hiso5j4YLeSojfOkX64kmTH2FfSFldG9fmncFtJPcAZSYwSA4Yx
+	TXMF40t0BtvxdatYkIsD9JZA0SLHKw14UnZkGh6B8W9rvYYWcYtomqUv6zvf2xoKKZYdiS+GyiPAt
+	G95jFS8dq8tU8i1nZTrPWNQRp45Wl++tI4XQqQokBByeUgjfcpNM4TvbCTXcdEuznDoQBIaoIUu2l
+	hRVAX0rMMR/MF+GUl3NDi7yhxc/v/Wg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKKnI-0001Tp-Ju; Tue, 15 Oct 2019 11:15:12 +0000
+	id 1iKKn4-0001Di-9e; Tue, 15 Oct 2019 11:14:58 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKKke-00079t-D0
+ id 1iKKkd-00079I-V1
  for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 11:12:32 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
@@ -29,30 +29,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=XCG6nXMGLYQhVpZyzuReMuwYH4A65umGWgOZuO0RXAo=; b=ffme7iF5Ra6w
- 6h7DVHdA2T9b4sS225fPXOlD4FCRb0nxCGP+SCFCkfVTukpRnWCdaHAwOpvxY+r74L8zTbdt15Qlz
- E96ZCiw9zJlbabXCFJlzIafub6qVaakYc8BQYC71qO+w33ROIZvQBaYCXu88D/ziYmHMaqYhxvO1r
- TmH40=;
+ List-Archive; bh=MgY4bxFY17PHIsD8EZBTx9xqaC4wci+W07NNCCTrDxg=; b=VwP6mNLys83T
+ EwBLJHsdCOVbIVn37RACoo2clg2uiG8A75BZCWyB8SkdNmik8S3qKBqyu9p3lifRyVwlk5El3NuqH
+ j7ZLSxWvsmkOvsrkqJClQ25fp6J8yTQ43dk/RHxMcwvzByv3WmEbGcMZky64KIeD/4jvJUw83VMXe
+ RJgEI=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iKKka-00021J-Hd; Tue, 15 Oct 2019 11:12:24 +0000
+ id 1iKKka-00021B-7B; Tue, 15 Oct 2019 11:12:24 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 0F45627419E4; Tue, 15 Oct 2019 12:12:23 +0100 (BST)
+ id A18602741CD7; Tue, 15 Oct 2019 12:12:23 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
 To: Alexandru Ardelean <alexandru.ardelean@analog.com>
-Subject: Applied "spi: spi-loopback-test: use new `delay` field" to the spi
- tree
-In-Reply-To: <20190926105147.7839-13-alexandru.ardelean@analog.com>
+Subject: Applied "spi: spidev: use new `delay` field for spi transfers" to the
+ spi tree
+In-Reply-To: <20190926105147.7839-14-alexandru.ardelean@analog.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20191015111224.0F45627419E4@ypsilon.sirena.org.uk>
+Message-Id: <20191015111223.A18602741CD7@ypsilon.sirena.org.uk>
 Date: Tue, 15 Oct 2019 12:12:23 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_041228_454325_8D689CD2 
-X-CRM114-Status: GOOD (  13.46  )
+X-CRM114-CacheID: sfid-20191015_041227_993750_F5164A70 
+X-CRM114-Status: GOOD (  13.63  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -91,7 +91,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: spi-loopback-test: use new `delay` field
+   spi: spidev: use new `delay` field for spi transfers
 
 has been applied to the spi tree at
 
@@ -116,56 +116,42 @@ to this mail.
 Thanks,
 Mark
 
-From 867bd8868bbd16e17bbd26c5959abc3118902218 Mon Sep 17 00:00:00 2001
+From 8e319dd5f1ebbc1fffa9e550b2a643cbce7515b1 Mon Sep 17 00:00:00 2001
 From: Alexandru Ardelean <alexandru.ardelean@analog.com>
-Date: Thu, 26 Sep 2019 13:51:40 +0300
-Subject: [PATCH] spi: spi-loopback-test: use new `delay` field
+Date: Thu, 26 Sep 2019 13:51:41 +0300
+Subject: [PATCH] spi: spidev: use new `delay` field for spi transfers
 
-This change replaces the use of the `delay_usecs` field with the new
-`delay` field. The code/test still uses micro-seconds, but they are now
-configured and used via the `struct spi_delay` format of the `delay` field.
+The `delay` field has type `struct spi_delay`.
+This allows users to specify nano-second or clock-cycle delays (if needed).
+
+Converting to use `delay` is straightforward: it's just assigning the
+value to `delay.value` and hard-coding the `delay.unit` to
+`SPI_DELAY_UNIT_USECS`.
+
+This keeps the uapi for spidev un-changed. Changing it can be part of
+another changeset and discussion.
 
 Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
-Link: https://lore.kernel.org/r/20190926105147.7839-13-alexandru.ardelean@analog.com
+Link: https://lore.kernel.org/r/20190926105147.7839-14-alexandru.ardelean@analog.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/spi-loopback-test.c | 12 +++++++++---
- 1 file changed, 9 insertions(+), 3 deletions(-)
+ drivers/spi/spidev.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/spi/spi-loopback-test.c b/drivers/spi/spi-loopback-test.c
-index 6f18d4952767..b6d79cd156fb 100644
---- a/drivers/spi/spi-loopback-test.c
-+++ b/drivers/spi/spi-loopback-test.c
-@@ -298,12 +298,18 @@ static struct spi_test spi_tests[] = {
- 			{
- 				.tx_buf = TX(0),
- 				.rx_buf = RX(0),
--				.delay_usecs = 1000,
-+				.delay = {
-+					.value = 1000,
-+					.unit = SPI_DELAY_UNIT_USECS,
-+				},
- 			},
- 			{
- 				.tx_buf = TX(0),
- 				.rx_buf = RX(0),
--				.delay_usecs = 1000,
-+				.delay = {
-+					.value = 1000,
-+					.unit = SPI_DELAY_UNIT_USECS,
-+				},
- 			},
- 		},
- 	},
-@@ -537,7 +543,7 @@ static int spi_test_check_elapsed_time(struct spi_device *spi,
- 		unsigned long long nbits = (unsigned long long)BITS_PER_BYTE *
- 					   xfer->len;
- 
--		delay_usecs += xfer->delay_usecs;
-+		delay_usecs += xfer->delay.value;
- 		if (!xfer->speed_hz)
- 			continue;
- 		estimated_time += div_u64(nbits * NSEC_PER_SEC, xfer->speed_hz);
+diff --git a/drivers/spi/spidev.c b/drivers/spi/spidev.c
+index d63235dcb231..1e217e3e9486 100644
+--- a/drivers/spi/spidev.c
++++ b/drivers/spi/spidev.c
+@@ -265,7 +265,8 @@ static int spidev_message(struct spidev_data *spidev,
+ 		k_tmp->tx_nbits = u_tmp->tx_nbits;
+ 		k_tmp->rx_nbits = u_tmp->rx_nbits;
+ 		k_tmp->bits_per_word = u_tmp->bits_per_word;
+-		k_tmp->delay_usecs = u_tmp->delay_usecs;
++		k_tmp->delay.value = u_tmp->delay_usecs;
++		k_tmp->delay.unit = SPI_DELAY_UNIT_USECS;
+ 		k_tmp->speed_hz = u_tmp->speed_hz;
+ 		k_tmp->word_delay.value = u_tmp->word_delay_usecs;
+ 		k_tmp->word_delay.unit = SPI_DELAY_UNIT_USECS;
 -- 
 2.20.1
 
