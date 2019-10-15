@@ -2,71 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2FF9D7F7F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 21:01:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A3C6D7F80
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 21:01:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oJOn/1FV4+0nF9u75y5alUral433OItLjSvLB4E9Sqc=; b=j4cTcHqSR/k4la
-	9YaXn4vfmNvpWgRxKSdi8A8YOK3EriInoT/KS8e1QKGF8v31bHX/OcUgiB011D1/qUcK9ObuWWXV5
-	aXiN8B9Ja6izBQFbfQhrjug9TqsZyrK5Lg1FrzbnbeY1868/J4T0ewyqAu8knHOavF8Til5hj7KM5
-	qMHQsXqdiGP1rEmdZpEuSvcWWY6G4jZ7T8X9oNm865lphvEkNnNMRsBycGJeutaUkXN9xm1G3iTeD
-	AKEieVb2afQVGMeNNSi9rD3n0j7+KotpK4qHoLMY+esNLDfu4dmwuPaY5I5JWu9c7Byos8gpr1egZ
-	3yhdMVxapBuZA0T2Ji6Q==;
+	List-Owner; bh=I9ojKqD3RCDn8EfCtpiAMd3ISVHjEEBtxES5BCHyhmg=; b=D2mRdOU3pBW9eI
+	2ANY3LJFUfn9yxbTHZV1tTAKOvZb52sXWa86ppUbfkh7OwUNeoC4Z2HjfjTIzczW8XMJa4p7QZ0/0
+	2mlxQde7l0k65FNhKA9u3Oi1Pc3LtJzE1UE2ZGUhF9MG4vj70oNIKbFTMdM9p52TdbZqe+xfCzYNM
+	9SCT7GjLeRT6Qt90QxMzVfQbKtDViFxtYGYSiglS+Vk26LtE9mUkb9ucKTmrZh9PzDYT2P7i8qgC2
+	uEv27VAmFRG4WmdD0zrYtvAD+csZWOTDO6rLqxXpvIfg2fwDZ+p/UMDPdMpso6wy7Sb1jB5evnHVe
+	1dffuyH7iyMRQnIG4Hdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKS4J-00037z-No; Tue, 15 Oct 2019 19:01:15 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1iKS4k-0003NK-9N; Tue, 15 Oct 2019 19:01:42 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKS3r-0002OJ-Kt; Tue, 15 Oct 2019 19:01:00 +0000
-Received: by mail-ot1-f65.google.com with SMTP id e11so17905229otl.5;
- Tue, 15 Oct 2019 12:00:47 -0700 (PDT)
+ id 1iKS48-00039V-Gh
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 19:01:07 +0000
+Received: by mail-oi1-f195.google.com with SMTP id k25so17757017oiw.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 15 Oct 2019 12:01:04 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=hp+e/XzrZOsUlcsoMFFN5qSzcFIMEZCM+YYALCx114o=;
- b=ZAuHlFn58C52QIUY7Nuz7jzP7kk1xOWdyw/sEH2cogJy7b/o3RfP1VN472+EL4cgu1
- GP/DtzACE2HyfbyO/G6bDZGoXvpShemllZZtXM/ALxuseDQ+7RJG5ZLRerTvfV6mgHxo
- KkN4YToU+aqWlVTfBRb1XZacwz6m+Op8Gl7njAUHycJdim48VyfoSMpT2wc5Wqpb27Sd
- QQvNVUbRhkk+EF9cyzTokS1mckpwFGxBPV77d4iYs+MeNCOB7xwkuPBhFooOvpRg3puN
- P/WEaB4+IPGeJsEKslGQv+S7rpadT8O9Xuug0oe4rP7486waLS+H4aSUnplgJWcSQuMz
- ztuA==
-X-Gm-Message-State: APjAAAVygnjHwMaQMC9RYDJzHTQjntn4MQZPR156uA99h902IvtDPu1O
- JiIPw0gVbzzZO1xx0pTBLw==
-X-Google-Smtp-Source: APXvYqz2lsFOsoKMnXxtnOj8CPhDijUN329kcBws3qA3JeZj1vIj2mFKXCylZvqBmzugsYRfMd4HuQ==
-X-Received: by 2002:a9d:5907:: with SMTP id t7mr20286521oth.118.1571166046567; 
- Tue, 15 Oct 2019 12:00:46 -0700 (PDT)
+ bh=wDHyOUpqrv7nCNXxMncnfKZuhS0DDSRvQf7daN1HJps=;
+ b=eIwejepnB097E5P18VcUqs881SvKkuGA7hcQ0FBV205qDJRvtky9yEMs4tgFpSWNkI
+ JsQR/atr21P5V56nTAAQgcotXapaxnoBpJGOckLYedfIDOUx2XgPY4vSkjTBe0yo/KOk
+ /OWG+K1uVzfcXlZWLYlHDDM4TM/yx9nApy+WltRs+reh/RcMxA4Vmm6AZHJcvK0JAdgh
+ O/nLBG4NIvglTlB9tjlT0eM+HDoZWDopBICcpBDgWVITkI9skkGjWwZsHSFeggBpfQk8
+ 5WPZuJDsykCoxsSYZj6/m/a3626PM9Cu1IY8RO9xSyczFZyrB4F5HoDqjtDTghtnj1oU
+ rxfw==
+X-Gm-Message-State: APjAAAVs3hqMJ2ZoyXPVcD0ncgkyMVZmPmgZ82GWQq8fvfB3rNts8UFU
+ UnDO8YnVXnDglc92GHPm3g==
+X-Google-Smtp-Source: APXvYqzWSK8f7AUbAV3hUyGym4wGyacoh1czYoWtoJaS6CqSc2Sr8mD/Lh+uTddneZJ19P8nSkiI4Q==
+X-Received: by 2002:aca:1c02:: with SMTP id c2mr41124oic.73.1571166063181;
+ Tue, 15 Oct 2019 12:01:03 -0700 (PDT)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id 23sm25341oir.50.2019.10.15.12.00.45
+ by smtp.gmail.com with ESMTPSA id 101sm7119645otd.18.2019.10.15.12.01.02
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 15 Oct 2019 12:00:45 -0700 (PDT)
-Date: Tue, 15 Oct 2019 14:00:45 -0500
+ Tue, 15 Oct 2019 12:01:02 -0700 (PDT)
+Date: Tue, 15 Oct 2019 14:01:01 -0500
 From: Rob Herring <robh@kernel.org>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: Re: [PATCH 4/7] dt-bindings: interrupt-controller: Add
- brcm,bcm7211-l1-intc binding
-Message-ID: <20191015190045.GA28661@bogus>
-References: <20191001224842.9382-1-f.fainelli@gmail.com>
- <20191001224842.9382-5-f.fainelli@gmail.com>
+To: "Chia-Wei, Wang" <chiawei_wang@aspeedtech.com>
+Subject: Re: [PATCH 2/2] dt-bindings: peci: aspeed: Add AST2600 compatible
+Message-ID: <20191015190101.GA29195@bogus>
+References: <20191002061200.29888-1-chiawei_wang@aspeedtech.com>
+ <20191002061200.29888-3-chiawei_wang@aspeedtech.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191001224842.9382-5-f.fainelli@gmail.com>
+In-Reply-To: <20191002061200.29888-3-chiawei_wang@aspeedtech.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_120047_701036_D2236B7B 
-X-CRM114-Status: GOOD (  12.02  )
+X-CRM114-CacheID: sfid-20191015_120104_703125_23189D3A 
+X-CRM114-Status: UNSURE (   9.50  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
+ no trust [209.85.167.195 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
@@ -75,9 +79,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -91,36 +92,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- Jason Cooper <jason@lakedaemon.net>, Scott Branden <sbranden@broadcom.com>,
- Marc Zyngier <maz@kernel.org>, linux-kernel@vger.kernel.org,
- Eric Anholt <eric@anholt.net>,
- "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
- <bcm-kernel-feedback-list@broadcom.com>, Stefan Wahren <wahrenst@gmx.net>,
- Ray Jui <rjui@broadcom.com>, Thomas Gleixner <tglx@linutronix.de>,
- "moderated list:BROADCOM BCM2835 ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- "moderated list:BROADCOM BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ jae.hyun.yoo@linux.intel.com, ryan_chen@aspeedtech.com,
+ linux-aspeed@lists.ozlabs.org, andrew@aj.id.au, openbmc@lists.ozlabs.org,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, joel@jms.id.au,
+ jason.m.bills@linux.intel.com, chiawei_wang@aspeedtech.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue,  1 Oct 2019 15:48:39 -0700, Florian Fainelli wrote:
-> BCM7211 uses a very similar root interrupt controller than what exists on
-> BCM2836, define a specific compatible string to key off specific
-> behavior.
+On Wed, 2 Oct 2019 14:12:00 +0800, "Chia-Wei, Wang" wrote:
+> Document the AST2600 PECI controller compatible string.
 > 
-> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+> Signed-off-by: Chia-Wei, Wang <chiawei_wang@aspeedtech.com>
 > ---
->  .../bindings/interrupt-controller/brcm,bcm2836-l1-intc.txt    | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
+>  Documentation/devicetree/bindings/peci/peci-aspeed.txt | 1 +
+>  1 file changed, 1 insertion(+)
 > 
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Acked-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
