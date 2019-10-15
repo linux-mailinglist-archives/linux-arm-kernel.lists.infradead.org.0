@@ -2,83 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA812D7700
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 15:03:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B96D4D7714
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 15:07:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qOEEJfAMpQZ45T4shDx1/4ZiyvGr6ungwH/ltAfLr98=; b=eU3ZZWgfwqW1aT
-	gtBfNddR3z22fa8Amb/HTB22avcxiV6og1NQlyDwrWo9JK+sCGib83cv21rwiILBVNeQ+6Qw75DD6
-	PNJZhUtw5mSV78Iv8lkh5YpePQfaz9nivhgmv9B0JRLSp1PDWMafrXrGC9I06e5hr+pl6DmVLTeth
-	oCa8grVp9ktyOJdniFwKGsSFAvV2yyhn6VdOOXUPJkb6doFB+6Yq0EE/wyaV8ycGGC89ETSzgTQco
-	rRrWolFs1EiEA0Xc9dvRmWZoyT1U6Dq5dTOq+ZhDwMf/WDLAMLa2NmqBchTHNd1Zv5A4fQC8b+HSf
-	IgTs93tv5OL1mfq5S+UQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=rKQaeAmfREL6pFjO+5nx9z7OUu1Z11yiBKkO2PmHUYs=; b=niRV+isnt273Z4f1VtFRfpzQc
+	VGKDEPuTJqx5GQBfNJPEHCgabQgJHOQ9dSQhWFz9bcR+fvsFwWY6QsA0XM7aKtsR4IPsJbEKlWukH
+	WdKyC/ZKOISxh3EvwBbGZxyy5Vk1OalYuvWweRGsM9TuwhFr+9cOowfPUvASh+UMdNXhCKhXZ1Y3s
+	ZZLIbFe4hkdtB1hkHhxUak1hq0ICAxFaOZ/gUL8BUyVRerx9somoI3XGTeoRBGanEw/LD5Ks405NS
+	LNhaWAvvCW2Wlqya0jWQWAyaDQLwDLisXVInYDY2nNDAiilQGih78mQPpGvczM2XokWz1qZl3CZx0
+	pkOVT801g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKMUD-0007r9-6I; Tue, 15 Oct 2019 13:03:37 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1iKMXy-0001Bd-2Y; Tue, 15 Oct 2019 13:07:30 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKMU0-0007kb-PW
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 13:03:26 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x9FD19iU028733; Tue, 15 Oct 2019 15:03:10 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=VHS+BxJ9bqoSYa+xH/IlFL4fMa0/Sv3mZVO6EbWq22c=;
- b=0Lj58A9xHYrxKdris99TmusVli4cURzyHTxxKuLM7DKc4aq6Qe/2a5y2kZbCOr/QZwTY
- OPdz2wDm6ziwgXKcppkiWLBH33LxmcGX6nbjkUtd6yS7Hvoywy9xZX12wnd0yxlyyGcR
- dfAzfeLIzRZcvxat5fWjIUqgE3ahLoqEc8WsbWEbWmYJ/MxaAf22DYvrDpSre0WdZ7Fb
- PzHVq1hX780fNsak25CV4sMZnKuiYLzS11o7nSi5rxCiyXn4+eveluM2VK5cEkU5IGta
- xajiHrem7QQCYzcu0eAZ75UyryHND4Opg/FlSSFIYHwDbPsFBbJ0bAr3FJR3E3HXZpga 8A== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2vk4a18aw0-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 15 Oct 2019 15:03:10 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id BCB6F10002A;
- Tue, 15 Oct 2019 15:03:09 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 8EA7D206463;
- Tue, 15 Oct 2019 15:03:09 +0200 (CEST)
-Received: from localhost (10.75.127.49) by SFHDAG3NODE2.st.com (10.75.127.8)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 15 Oct 2019 15:03:09
- +0200
-From: Alain Volmat <alain.volmat@st.com>
-To: <wsa@the-dreams.de>, <robh+dt@kernel.org>
-Subject: [PATCH] i2c: i2c-stm32f7: rework slave_id allocation
-Date: Tue, 15 Oct 2019 15:03:09 +0200
-Message-ID: <1571144589-3066-1-git-send-email-alain.volmat@st.com>
-X-Mailer: git-send-email 2.7.4
+ id 1iKMXo-0001AU-21; Tue, 15 Oct 2019 13:07:21 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id D5344B300;
+ Tue, 15 Oct 2019 13:07:12 +0000 (UTC)
+Message-ID: <d57feba7e3956136a5d77cebbbf2807c2950d6df.camel@suse.de>
+Subject: Re: [PATCH RFC 4/5] dma/direct: check for overflows in ARM's
+ dma_capable()
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Christoph Hellwig <hch@infradead.org>
+Date: Tue, 15 Oct 2019 15:07:08 +0200
+In-Reply-To: <20191015102346.GA9071@infradead.org>
+References: <20191014183108.24804-1-nsaenzjulienne@suse.de>
+ <20191014183108.24804-5-nsaenzjulienne@suse.de>
+ <20191015102346.GA9071@infradead.org>
+User-Agent: Evolution 3.32.4 
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.49]
-X-ClientProxiedBy: SFHDAG5NODE2.st.com (10.75.127.14) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
- definitions=2019-10-15_05:2019-10-15,2019-10-15 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_060325_216405_BAA56250 
-X-CRM114-Status: GOOD (  15.64  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191015_060720_389674_8B4C3F1D 
+X-CRM114-Status: GOOD (  17.74  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,47 +61,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
- linux-kernel@vger.kernel.org, pierre-yves.mordret@st.com,
- linux-i2c@vger.kernel.org, mcoquelin.stm32@gmail.com, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: f.fainelli@gmail.com, linux-kernel@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, iommu@lists.linux-foundation.org,
+ mbrugger@suse.com, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, Robin Murphy <robin.murphy@arm.com>,
+ linux-arm-kernel@lists.infradead.org, wahrenst@gmx.net
+Content-Type: multipart/mixed; boundary="===============3001416789493559718=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The IP can handle two slave addresses. One address can either be
-7 bits or 10 bits while the other can only be 7 bits.
-In order to ensure that a 10 bits address can always be allocated
-(assuming there is only one 7 bits address already allocated),
-pick up the 7-bits only address slot in priority when performing a 7-bits
-address allocation.
 
-Fixes: 60d609f3 ("i2c: i2c-stm32f7: Add slave support")
+--===============3001416789493559718==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-QilbOjg9rL1IFStaY+t4"
 
-Signed-off-by: Alain Volmat <alain.volmat@st.com>
----
- drivers/i2c/busses/i2c-stm32f7.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/i2c/busses/i2c-stm32f7.c b/drivers/i2c/busses/i2c-stm32f7.c
-index d36cf08461f7..cfae01b15243 100644
---- a/drivers/i2c/busses/i2c-stm32f7.c
-+++ b/drivers/i2c/busses/i2c-stm32f7.c
-@@ -1265,7 +1265,7 @@ static int stm32f7_i2c_get_free_slave_id(struct stm32f7_i2c_dev *i2c_dev,
- 	 * slave[0] supports 7-bit and 10-bit slave address
- 	 * slave[1] supports 7-bit slave address only
- 	 */
--	for (i = 0; i < STM32F7_I2C_MAX_SLAVE; i++) {
-+	for (i = STM32F7_I2C_MAX_SLAVE - 1; i >= 0; i--) {
- 		if (i == 1 && (slave->flags & I2C_CLIENT_PEC))
- 			continue;
- 		if (!i2c_dev->slave[i]) {
--- 
-2.7.4
+--=-QilbOjg9rL1IFStaY+t4
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
+On Tue, 2019-10-15 at 03:23 -0700, Christoph Hellwig wrote:
+> On Mon, Oct 14, 2019 at 08:31:06PM +0200, Nicolas Saenz Julienne wrote:
+> > The Raspberry Pi 4 has a 1GB ZONE_DMA area starting at address
+> > 0x00000000 and a mapping between physical and DMA memory offset by
+> > 0xc0000000.  It transpires that, on non LPAE systems, any attempt to
+> > translate physical addresses outside of ZONE_DMA will result in an
+> > overflow. The resulting DMA addresses will not be detected by arm's
+> > dma_capable() as they still fit in the device's DMA mask.
+> >=20
+> > Fix this by failing to validate a DMA address smaller than the lowest
+> > possible DMA address.
+>=20
+> I think the main problem here is that arm doesn't respect the
+> bus_dma_mask.  If you replace the arm version of dma_capable with
+> the generic one, does that fi the issue for you as well?
+
+Yeah, that was my fist thought too, but it doesn't help.
+
+So with RPi4's DMA mapping:
+
+soc {
+	dma-ranges =3D <0xc0000000  0x0 0x00000000  0x3c000000>;
+	[...]
+};
+
+You'll get a 32bit bus dma map (log2i(0xc0000000 + 0x3c000000) + 1 =3D 32).
+
+Trouble is, taking into account arm's multi_v7_defconfig uses 32bit address=
+es,
+most phys_to_dma() translations are likely to overflow. For example phys
+0x60000000 will be translated to DMA 0x20000000, which is no good.
+
+No mask is going to catch this, and both dma_capable() implementations will
+fail.
+
+> We need to untangle the various macros arm uses for the direct mapping
+> and eventually we should be able to use the linux/dma-direct.h helpers
+> directly.  Here is a branch with some simple preps I had.  Freshly
+> rebased, not actually tested:
+>=20
+>=20
+http://git.infradead.org/users/hch/misc.git/shortlog/refs/heads/arm-generic=
+-dma-preps
+
+Noted, looks good to me.
+
+Actually, an alternative to this patch would be to kill all custom
+dma_capable() implementations, which are mostly redundant, and add these ex=
+tra
+checks conditional to the DMA address size in the generic version. I'll try=
+ to
+respin this if I manage to understand what's going on with x86/sta211-fixup=
+.c.
+
+
+--=-QilbOjg9rL1IFStaY+t4
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl2lxHwACgkQlfZmHno8
+x/5Qcgf9EYUZQRbilIK5s8eKqWcMhlpK7Df2P6SPXLkx+Vmkt2iYDyTfPLwB0Avl
+I9aSjwDP/vRSkR7DgiKGQkh2PtdHWFDUoCerdQnJb69v+DiObndKo5Zd0XCtbYx+
++gPtyf43YhEGosmXi6aTI7pEh7HBYqu8ORrFJrdWaff3K5LJ8p4Phkkckup0NjHH
+Ddq96VamoZdnKmA171GZ6HNgUdYn8cOjUBA5DLOWK5LAX2rAd1g6bNCgs/GcUL4l
+sjoBu3utxJ9O9oe5reVU2XYfmX65xZqHqd1KkwN51Qo/w483+Hn0eSEclTVqT3hm
+8tkxAlJWOPwPdLB8706dF6mwsGp2Lw==
+=CUJl
+-----END PGP SIGNATURE-----
+
+--=-QilbOjg9rL1IFStaY+t4--
+
+
+
+--===============3001416789493559718==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3001416789493559718==--
+
+
