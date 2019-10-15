@@ -2,54 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E420D74C4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 13:18:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 70F53D74C6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 13:18:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1HbT3ShXhLDUAW3kWPYTjU+n5c6dnNHGkJ6lbE4O8xc=; b=prvVaMhrlyf5+G
-	2uFa2waeaWokAq+NPmrWRHhhapYvEHYCpYkzex/qUQhMEgFiZF6966gU2g6FV/Byd/VYfg30VqZdt
-	qIiEvxF73HL46wTmwJmH87Sqzvj0Qmzox6jwl2T4ErjLA4eXrU3uy492McGR8I/AwpzeUkHgStKfs
-	Xl3GqNXGxlT8k+U8UcA61vFFBRwVDYgf7VbwCe5Luxw34zRtZxVVI3e0W8Trxb47FIXr5VFZdYqyb
-	J+I3pTq1Of9GUJeLEi23ov5O52pBN6l3TB9Ri1Ib9CDwdHpKKykUO22o9S4cikYdIGYBsacs92CE+
-	4vNK2QWcuJ+AZrnbbd3w==;
+	List-Owner; bh=3sO0zM/qZD0a6tHROSHmHpb9Y5YJlOhxlz4GPGOtsS8=; b=GjUGfKBH5kdn30
+	mWrp6+hJ0ur54fV62UOJo6foydwZxHJLdnvKhPBeimyq7LwxB7cqfkW3YCttuCVeoxbtgjj7hgURI
+	skf7PY7Vwa+zTUC60AcWJ91Ensn9cxYT5rVmUB6V7VDlreMgCZKKTvrx8Vu97SS8vrn6w/FPepfWD
+	OfkiK0r/Z6n4+hNMKy8npZFK9CQxbXnSwwh+Tgmqo20B912ZE+hglpifQv8BU5arskF6x7SGiE7xz
+	pL5eHn3Oorf3VRc2BkxitNxRlO4hoT0HWdcruzAMUmNlarjSY7hmzZ5RgXg2/R/O9tRcYlpBKWM1p
+	XAuWx1knrKliE6qzFVzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKKqg-0005L5-KD; Tue, 15 Oct 2019 11:18:42 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKKoZ-0003m3-7G
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 11:16:32 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0E40F337;
- Tue, 15 Oct 2019 04:16:30 -0700 (PDT)
-Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 262F63F68E;
- Tue, 15 Oct 2019 04:16:29 -0700 (PDT)
-Date: Tue, 15 Oct 2019 12:16:24 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Remi Pommarel <repk@triplefau.lt>
-Subject: Re: [PATCH v3] PCI: aardvark: Don't rely on jiffies while holding
- spinlock
-Message-ID: <20191015111623.GA7193@e121166-lin.cambridge.arm.com>
-References: <20190927085502.1758-1-repk@triplefau.lt>
+	id 1iKKqw-0005gW-4N; Tue, 15 Oct 2019 11:18:58 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iKKpc-0004gN-7N
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 11:17:38 +0000
+Received: from mail-qt1-f169.google.com (mail-qt1-f169.google.com
+ [209.85.160.169])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5019921848
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 15 Oct 2019 11:17:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571138255;
+ bh=oJs4Nz/w5KcJqHZkCZCLIDvyah4l8VweCXBAgTjhNYs=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=b32Cjb9nv5iuC2edc5oLuv0kNikzaqCU+laPpIrHyWfA8edNBRj1164v0Qeu5TZMV
+ 0HSmF28RcGMyGbff/ShNudJDFleGB1X4fqOU0hmQCS4/tzdj69jEUTxZC1RhnA7D4i
+ 98hOmbzOfncbKIOuXNIoFEX/G4MYJ+zTiy4ETvxo=
+Received: by mail-qt1-f169.google.com with SMTP id w14so29917600qto.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 15 Oct 2019 04:17:35 -0700 (PDT)
+X-Gm-Message-State: APjAAAU5o8Ay49B391klkMQbZ/5pMqMOrJ7id71tnnTUyTFkHByvE4x0
+ XVKIjkZQElIklHh3Fcp9j8NQK4rS0LM81eA55A==
+X-Google-Smtp-Source: APXvYqxZBQjXM06pV3GgKICK1b1Wdn//r19XqyM/3vYWnaPxKSp5jNZnSkfg00Qy9v7U1ZTrW9FlkUNkrdvCpYUlXGI=
+X-Received: by 2002:ac8:6782:: with SMTP id b2mr37959337qtp.143.1571138254502; 
+ Tue, 15 Oct 2019 04:17:34 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190927085502.1758-1-repk@triplefau.lt>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20190924214630.12817-1-robh@kernel.org>
+ <20190924214630.12817-3-robh@kernel.org>
+ <20190925102423.GR9720@e119886-lin.cambridge.arm.com>
+ <CAL_JsqKN709cOLtDLdKXmDzeNLYtGekMT2BiZic4x45UopenwA@mail.gmail.com>
+ <20190930151346.GD42880@e119886-lin.cambridge.arm.com>
+ <CAL_Jsq+3S7+E+a5E122aR7s0a9SxkMyxw2t=OkO4pS5QUR+0CA@mail.gmail.com>
+ <20191015110254.GA5160@e121166-lin.cambridge.arm.com>
+In-Reply-To: <20191015110254.GA5160@e121166-lin.cambridge.arm.com>
+From: Rob Herring <robh@kernel.org>
+Date: Tue, 15 Oct 2019 06:17:22 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqJwmiUZmJSmRU4RAecKd=Zw+vGKGrHZ4UXrAwOGCNMF5g@mail.gmail.com>
+Message-ID: <CAL_JsqJwmiUZmJSmRU4RAecKd=Zw+vGKGrHZ4UXrAwOGCNMF5g@mail.gmail.com>
+Subject: Re: [PATCH 02/11] PCI: altera: Use pci_parse_request_of_pci_ranges()
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_041631_363626_BB6C715E 
-X-CRM114-Status: GOOD (  18.73  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191015_041736_338480_8E6DFA75 
+X-CRM114-Status: GOOD (  25.05  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,76 +91,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bjorn Helgaas <bhelgaas@google.com>, linux-pci@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>, linux-kernel@vger.kernel.org
+Cc: PCI <linux-pci@vger.kernel.org>, rfi@lists.rocketboards.org,
+ Ley Foon Tan <lftan@altera.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Andrew Murray <andrew.murray@arm.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 27, 2019 at 10:55:02AM +0200, Remi Pommarel wrote:
-> advk_pcie_wait_pio() can be called while holding a spinlock (from
-> pci_bus_read_config_dword()), then depends on jiffies in order to
-> timeout while polling on PIO state registers. In the case the PIO
-> transaction failed, the timeout will never happen and will also cause
-> the cpu to stall.
-> 
-> This decrements a variable and wait instead of using jiffies.
-> 
-> Signed-off-by: Remi Pommarel <repk@triplefau.lt>
-> ---
-> Changes since v1:
->   - Reduce polling delay
->   - Change size_t into int for loop counter
-> Changes since v2:
->   - Keep timeout to 1ms by increasing retry counter
-> ---
->  drivers/pci/controller/pci-aardvark.c | 10 +++++-----
->  1 file changed, 5 insertions(+), 5 deletions(-)
+On Tue, Oct 15, 2019 at 6:03 AM Lorenzo Pieralisi
+<lorenzo.pieralisi@arm.com> wrote:
+>
+> On Mon, Sep 30, 2019 at 12:36:22PM -0500, Rob Herring wrote:
+> > On Mon, Sep 30, 2019 at 10:13 AM Andrew Murray <andrew.murray@arm.com> wrote:
+> > >
+> > > On Wed, Sep 25, 2019 at 07:33:35AM -0500, Rob Herring wrote:
+> > > > On Wed, Sep 25, 2019 at 5:24 AM Andrew Murray <andrew.murray@arm.com> wrote:
+> > > > >
+> > > > > On Tue, Sep 24, 2019 at 04:46:21PM -0500, Rob Herring wrote:
+> > > > > > Convert altera host bridge to use the common
+> > > > > > pci_parse_request_of_pci_ranges().
+> > > > > >
+> > > > > > Cc: Ley Foon Tan <lftan@altera.com>
+> > > > > > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> > > > > > Cc: Bjorn Helgaas <bhelgaas@google.com>
+> > > > > > Cc: rfi@lists.rocketboards.org
+> > > > > > Signed-off-by: Rob Herring <robh@kernel.org>
+> > > > > > ---
+> > > >
+> > > > > > @@ -833,9 +800,8 @@ static int altera_pcie_probe(struct platform_device *pdev)
+> > > > > >               return ret;
+> > > > > >       }
+> > > > > >
+> > > > > > -     INIT_LIST_HEAD(&pcie->resources);
+> > > > > > -
+> > > > > > -     ret = altera_pcie_parse_request_of_pci_ranges(pcie);
+> > > > > > +     ret = pci_parse_request_of_pci_ranges(dev, &pcie->resources,
+> > > > >
+> > > > > Does it matter that we now map any given IO ranges whereas we didn't
+> > > > > previously?
+> > > > >
+> > > > > As far as I can tell there are no users that pass an IO range, if they
+> > > > > did then with the existing code the probe would fail and they'd get
+> > > > > a "I/O range found for %pOF. Please provide an io_base pointer...".
+> > > > > However with the new code if any IO range was given (which would
+> > > > > probably represent a misconfiguration), then we'd proceed to map the
+> > > > > IO range. When that IO is used, who knows what would happen.
+> > > >
+> > > > Yeah, I'm assuming that the DT doesn't have an IO range if IO is not
+> > > > supported. IMO, it is not the kernel's job to validate the DT.
+> > >
+> > > Sure. Is it worth mentioning in the commit message this subtle change
+> > > in behaviour?
+> >
+> > Will do.
+>
+> Hi Rob,
+>
+> I would like to merge this series, are you resending it ? It does not
+> apply to v5.4-rc1, if you rebase it please also update this patch
+> log, as per comments above (I can do it too but if you resend it
+> there is no point).
 
-Applied to pci/aardvark, thanks.
+Yes, I plan to resend it.
 
-Lorenzo
-
-> diff --git a/drivers/pci/controller/pci-aardvark.c b/drivers/pci/controller/pci-aardvark.c
-> index fc0fe4d4de49..7b5c9d6c8706 100644
-> --- a/drivers/pci/controller/pci-aardvark.c
-> +++ b/drivers/pci/controller/pci-aardvark.c
-> @@ -175,7 +175,8 @@
->  	(PCIE_CONF_BUS(bus) | PCIE_CONF_DEV(PCI_SLOT(devfn))	| \
->  	 PCIE_CONF_FUNC(PCI_FUNC(devfn)) | PCIE_CONF_REG(where))
->  
-> -#define PIO_TIMEOUT_MS			1
-> +#define PIO_RETRY_CNT			500
-> +#define PIO_RETRY_DELAY			2 /* 2 us*/
->  
->  #define LINK_WAIT_MAX_RETRIES		10
->  #define LINK_WAIT_USLEEP_MIN		90000
-> @@ -383,17 +384,16 @@ static void advk_pcie_check_pio_status(struct advk_pcie *pcie)
->  static int advk_pcie_wait_pio(struct advk_pcie *pcie)
->  {
->  	struct device *dev = &pcie->pdev->dev;
-> -	unsigned long timeout;
-> +	int i;
->  
-> -	timeout = jiffies + msecs_to_jiffies(PIO_TIMEOUT_MS);
-> -
-> -	while (time_before(jiffies, timeout)) {
-> +	for (i = 0; i < PIO_RETRY_CNT; i++) {
->  		u32 start, isr;
->  
->  		start = advk_readl(pcie, PIO_START);
->  		isr = advk_readl(pcie, PIO_ISR);
->  		if (!start && isr)
->  			return 0;
-> +		udelay(PIO_RETRY_DELAY);
->  	}
->  
->  	dev_err(dev, "config read/write timed out\n");
-> -- 
-> 2.20.1
-> 
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
