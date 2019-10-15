@@ -2,67 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7650D6E96
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 07:26:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1C89D6E9D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 07:28:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AqNMsCqd2Sx3hUr3n1fkg2iDYFn3IZgxW1mBhT+LdIA=; b=W77hfkV+tEoysN
-	lkyrH7FM3yjWX842M+XSvh8aJzY82xX/m+Wabdp2GJFMr7pdZ9M1fC6HsWiFnVwD7QykbqZdor0Kc
-	7PEQbNau7zeu/KB0kIQo1TJ7vBRlN0Gm5+d4t1cD8NamZ5CgggP3zwqaWsLwgrU58a9j4xWYfkWo2
-	0JRbhin42sSUb3nxDlq0gfz+hUuFXIaITbCF9Jq+7cYW6XRxnO6bFDXR1Lb4xAIxtYzUIgquMHVKD
-	4DjkWJ2cwpghw1cf+Uasrd2bfaCpiPODLHjc9BRuiaBsIlmyjDoG558QhYPVFanV5noAxiMo9e+Y6
-	aa+UzYHB7tBCKsz6Xy9Q==;
+	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:To:References:
+	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vqBDnEKk2HA8/+FAV/fJ6zh0DKgnM3up7QYQ5JhtH+E=; b=Ahtl99M8jo2IQp
+	uieZSJYhPMH2GBMlpYE3LzzR+A0YfYDrrSuvfIww77JReUss2ktaFKQ64Uyd9UlgziZTVbvl/ZZES
+	FJ+Mx6ai1+cWyYZEmQQb2Oeg4pPA3VdvPTI0v5CwvUxYvvzYXcRkA3ivnwKabIfQ3dxjTyRTdr+Co
+	bWgsk51d4esb1RyvPZhhUoOnKzmyh2xBM+MwHKGpDYuMg4JpiPd/r0tei6JWaDzdunxZOOlMK5AuM
+	0GIyuSnzg9PeQ8jl2mcKLVweh4jLQcZfhyy0J5wdbmLOq1zfrw6uTbI8cs7PHrdH6LN0RjlX13pmQ
+	z4NEJq2ypWhWkgQq/d8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKFLs-0003S7-MP; Tue, 15 Oct 2019 05:26:32 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1iKFNe-0003oJ-Q0; Tue, 15 Oct 2019 05:28:22 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKFLa-0003QC-T4; Tue, 15 Oct 2019 05:26:19 +0000
-X-UUID: b71fde98b79948e19a1e88813da263a5-20191014
-X-UUID: b71fde98b79948e19a1e88813da263a5-20191014
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <yong.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 9074176; Mon, 14 Oct 2019 21:26:04 -0800
-Received: from MTKMBS32DR.mediatek.inc (172.27.6.104) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 14 Oct 2019 22:26:09 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS32DR.mediatek.inc
- (172.27.6.104) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Tue, 15 Oct 2019 13:26:05 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 15 Oct 2019 13:26:04 +0800
-Message-ID: <1571117166.19130.83.camel@mhfsdcap03>
-Subject: Re: [PATCH v3 3/7] iommu/mediatek: Use gather to achieve the tlb
- range flush
-From: Yong Wu <yong.wu@mediatek.com>
-To: Robin Murphy <robin.murphy@arm.com>
-Date: Tue, 15 Oct 2019 13:26:06 +0800
-In-Reply-To: <f35c8a3a-0693-facf-2050-65d3f7628929@arm.com>
-References: <1571035101-4213-1-git-send-email-yong.wu@mediatek.com>
- <1571035101-4213-4-git-send-email-yong.wu@mediatek.com>
- <f35c8a3a-0693-facf-2050-65d3f7628929@arm.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1iKFNO-0003lc-TH; Tue, 15 Oct 2019 05:28:08 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id B44C960610; Tue, 15 Oct 2019 05:28:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1571117284;
+ bh=8FGb2J/wiGU3r55lQEJRsCKstDbZ2Qwho5EqzVqSYf8=;
+ h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
+ b=ZPScUZ097khnhvCjqBo3DN6ry6G/nvTioZK2/Sb9Qt3uKF5GwuUARlqkxQoH8g2uV
+ lAHfAV9TvQCGA97sZmRdIhGTLjuGBIl/LDXk4vRe8vyE+DXRJycjrHgISE054COpDL
+ To1f1VWHsnXvyB2eqz3jjRkDtIVWsMgsu7nR7ICI=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.8 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,MISSING_DATE,MISSING_MID,SPF_NONE autolearn=no
+ autolearn_force=no version=3.4.0
+Received: from potku.adurom.net (88-114-240-156.elisa-laajakaista.fi
+ [88.114.240.156])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ (Authenticated sender: kvalo@smtp.codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id BD25E60610;
+ Tue, 15 Oct 2019 05:28:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1571117283;
+ bh=8FGb2J/wiGU3r55lQEJRsCKstDbZ2Qwho5EqzVqSYf8=;
+ h=Subject:From:In-Reply-To:References:To:Cc:From;
+ b=VuLGlA8lk9NyjZcl8MpkH9/FQvmn9bmr9SU1UhdN/yFzeLu4OBTAyX7nXo9qB8+Y0
+ 17PxNEnrlPmE62lGxKz2TQB0gDq8+ioS2p81qCejvHX+tWMxAiSBP5ZddMUUTutCaI
+ RXiTXq/az4elXX5fFhUe6TrTRvkz/b9OkPmdvU/g=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org BD25E60610
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ spf=none smtp.mailfrom=kvalo@codeaurora.org
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 493B811D3A4FB41E5FE1A33A5F26255A7FD2DDEB47E946C9A789C9EA07E415032000:8
-X-MTK: N
+Subject: Re: =?utf-8?q?=5BPATCH=5D_net/wireless=3A_Delete_unnecessary_checks_bef?==?utf-8?q?ore_the_macro_call_=E2=80=9Cdev=5Fkfree=5Fskb=E2=80=9D?=
+From: Kalle Valo <kvalo@codeaurora.org>
+In-Reply-To: <ea6c6fef-9868-196b-d914-23faf12d7f5c@web.de>
+References: <ea6c6fef-9868-196b-d914-23faf12d7f5c@web.de>
+To: Markus Elfring <Markus.Elfring@web.de>
+User-Agent: pwcli/0.0.0-git (https://github.com/kvalo/pwcli/) Python/2.7.12
+Message-Id: <20191015052804.B44C960610@smtp.codeaurora.org>
+Date: Tue, 15 Oct 2019 05:28:04 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_222617_177449_59D1F43B 
-X-CRM114-Status: GOOD (  24.28  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191014_222806_971147_FA265E68 
+X-CRM114-Status: UNSURE (   7.97  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,130 +96,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: youlin.pei@mediatek.com, anan.sun@mediatek.com,
- Nicolas Boichat <drinkcat@chromium.org>, cui.zhang@mediatek.com,
- srv_heupstream@mediatek.com, chao.hao@mediatek.com,
- Joerg Roedel <joro@8bytes.org>, edison.hsieh@mediatek.com,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- Evan Green <evgreen@chromium.org>, Tomasz
- Figa <tfiga@google.com>, iommu@lists.linux-foundation.org,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Ryder Lee <ryder.lee@mediatek.com>, Stanislaw Gruszka <sgruszka@redhat.com>,
+ kernel-janitors@vger.kernel.org, linux-wireless@vger.kernel.org,
+ LKML <linux-kernel@vger.kernel.org>, ath10k@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ Solomon Peachy <pizza@shaftnet.org>, Roy Luo <royluo@google.com>,
+ Lorenzo Bianconi <lorenzo.bianconi83@gmail.com>,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
+ Felix Fietkau <nbd@nbd.name>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2019-10-14 at 15:21 +0100, Robin Murphy wrote:
-> On 14/10/2019 07:38, Yong Wu wrote:
-> > Use the iommu_gather mechanism to achieve the tlb range flush.
-> > Gather the iova range in the "tlb_add_page", then flush the merged iova
-> > range in iotlb_sync.
-> > 
-> > Note: If iotlb_sync comes from iommu_iotlb_gather_add_page, we have to
-> > avoid retry the lock since the spinlock have already been acquired.
-> 
-> I think this could probably be even simpler - once the actual 
-> register-poking is all confined to mtk_iommu_tlb_sync(), you should be 
-> able get rid of the per-domain locking in map/unmap and just have a 
-> single per-IOMMU lock to serialise syncs. The io-pgtable code itself 
-> hasn't needed external locking for a while now.
-
-This is more simpler! Thanks very much. I will try this.
-
-The only concern is there is no lock in the iova_to_phys then, maybe use
-the new lock instead.
-
-> 
-> Robin.
-> 
-> > Suggested-by: Tomasz Figa <tfiga@chromium.org>
-> > Signed-off-by: Yong Wu <yong.wu@mediatek.com>
-> > ---
-> > 1) This is the special case backtrace:
-> > 
-> >   mtk_iommu_iotlb_sync+0x50/0xa0
-> >   mtk_iommu_tlb_flush_page_nosync+0x5c/0xd0
-> >   __arm_v7s_unmap+0x174/0x598
-> >   arm_v7s_unmap+0x30/0x48
-> >   mtk_iommu_unmap+0x50/0x78
-> >   __iommu_unmap+0xa4/0xf8
-> > 
-> > 2) The checking "if (gather->start == ULONG_MAX) return;" also is
-> > necessary. It will happened when unmap only go to _flush_walk, then
-> > enter this tlb_sync.
-> > ---
-> >   drivers/iommu/mtk_iommu.c | 29 +++++++++++++++++++++++++----
-> >   drivers/iommu/mtk_iommu.h |  1 +
-> >   2 files changed, 26 insertions(+), 4 deletions(-)
-> > 
-> > diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-> > index 5f594d6..8712afc 100644
-> > --- a/drivers/iommu/mtk_iommu.c
-> > +++ b/drivers/iommu/mtk_iommu.c
-> > @@ -234,7 +234,12 @@ static void mtk_iommu_tlb_flush_page_nosync(struct iommu_iotlb_gather *gather,
-> >   					    unsigned long iova, size_t granule,
-> >   					    void *cookie)
-> >   {
-> > -	mtk_iommu_tlb_add_flush_nosync(iova, granule, granule, true, cookie);
-> > +	struct mtk_iommu_data *data = cookie;
-> > +	struct iommu_domain *domain = &data->m4u_dom->domain;
-> > +
-> > +	data->is_in_tlb_gather_add_page = true;
-> > +	iommu_iotlb_gather_add_page(domain, gather, iova, granule);
-> > +	data->is_in_tlb_gather_add_page = false;
-> >   }
-> >   
-> >   static const struct iommu_flush_ops mtk_iommu_flush_ops = {
-> > @@ -453,12 +458,28 @@ static void mtk_iommu_flush_iotlb_all(struct iommu_domain *domain)
-> >   static void mtk_iommu_iotlb_sync(struct iommu_domain *domain,
-> >   				 struct iommu_iotlb_gather *gather)
-> >   {
-> > +	struct mtk_iommu_data *data = mtk_iommu_get_m4u_data();
-> >   	struct mtk_iommu_domain *dom = to_mtk_domain(domain);
-> > +	bool is_in_gather = data->is_in_tlb_gather_add_page;
-> > +	size_t length = gather->end - gather->start;
-> >   	unsigned long flags;
-> >   
-> > -	spin_lock_irqsave(&dom->pgtlock, flags);
-> > -	mtk_iommu_tlb_sync(mtk_iommu_get_m4u_data());
-> > -	spin_unlock_irqrestore(&dom->pgtlock, flags);
-> > +	if (gather->start == ULONG_MAX)
-> > +		return;
-> > +
-> > +	/*
-> > +	 * Avoid acquire the lock when it's in gather_add_page since the lock
-> > +	 * has already been held.
-> > +	 */
-> > +	if (!is_in_gather)
-> > +		spin_lock_irqsave(&dom->pgtlock, flags);
-> > +
-> > +	mtk_iommu_tlb_add_flush_nosync(gather->start, length, gather->pgsize,
-> > +				       false, data);
-> > +	mtk_iommu_tlb_sync(data);
-> > +
-> > +	if (!is_in_gather)
-> > +		spin_unlock_irqrestore(&dom->pgtlock, flags);
-> >   }
-> >   
-> >   static phys_addr_t mtk_iommu_iova_to_phys(struct iommu_domain *domain,
-> > diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
-> > index fc0f16e..d29af1d 100644
-> > --- a/drivers/iommu/mtk_iommu.h
-> > +++ b/drivers/iommu/mtk_iommu.h
-> > @@ -58,6 +58,7 @@ struct mtk_iommu_data {
-> >   	struct iommu_group		*m4u_group;
-> >   	bool                            enable_4GB;
-> >   	bool				tlb_flush_active;
-> > +	bool				is_in_tlb_gather_add_page;
-> >   
-> >   	struct iommu_device		iommu;
-> >   	const struct mtk_iommu_plat_data *plat_data;
-> > 
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+TWFya3VzIEVsZnJpbmcgPE1hcmt1cy5FbGZyaW5nQHdlYi5kZT4gd3JvdGU6Cgo+IEZyb206IE1h
+cmt1cyBFbGZyaW5nIDxlbGZyaW5nQHVzZXJzLnNvdXJjZWZvcmdlLm5ldD4KPiBEYXRlOiBUaHUs
+IDIyIEF1ZyAyMDE5IDEwOjIwOjEwICswMjAwCj4gCj4gVGhlIGRldl9rZnJlZV9za2IoKSBmdW5j
+dGlvbiBwZXJmb3JtcyBhbHNvIGlucHV0IHBhcmFtZXRlciB2YWxpZGF0aW9uLgo+IFRodXMgdGhl
+IHRlc3QgYXJvdW5kIHRoZSBzaG93biBjYWxscyBpcyBub3QgbmVlZGVkLgo+IAo+IFRoaXMgaXNz
+dWUgd2FzIGRldGVjdGVkIGJ5IHVzaW5nIHRoZSBDb2NjaW5lbGxlIHNvZnR3YXJlLgo+IAo+IFNp
+Z25lZC1vZmYtYnk6IE1hcmt1cyBFbGZyaW5nIDxlbGZyaW5nQHVzZXJzLnNvdXJjZWZvcmdlLm5l
+dD4KClBhdGNoIGFwcGxpZWQgdG8gd2lyZWxlc3MtZHJpdmVycy1uZXh0LmdpdCwgdGhhbmtzLgoK
+ODY4YWQyMTQ5NjAyIG5ldC93aXJlbGVzczogRGVsZXRlIHVubmVjZXNzYXJ5IGNoZWNrcyBiZWZv
+cmUgdGhlIG1hY3JvIGNhbGwg4oCcZGV2X2tmcmVlX3NrYuKAnQoKLS0gCmh0dHBzOi8vcGF0Y2h3
+b3JrLmtlcm5lbC5vcmcvcGF0Y2gvMTExMDg3NDEvCgpodHRwczovL3dpcmVsZXNzLndpa2kua2Vy
+bmVsLm9yZy9lbi9kZXZlbG9wZXJzL2RvY3VtZW50YXRpb24vc3VibWl0dGluZ3BhdGNoZXMKCgpf
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0t
+a2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcK
+aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2Vy
+bmVsCg==
