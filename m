@@ -2,50 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A1AFD73E6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 12:51:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEC6DD7425
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 13:03:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=kiHPN9Y/I1HsMl/uM/6vYBsDITcTSx5FZvI0LPIbgMU=; b=nz7+xUC8flUO6Powd+MyL5sgaT
-	XJAB6SK39sULVbxf3rnTGcfmyY4ZhgUSxipuY75mD08mRnzT2pBdZuWfQEhP1QdYrt/O6QEN9ZtuB
-	EixJFh1h/9iQvSx5hPJriwKcPcH5P5+weooTDO+7FqxIhHEwjluELOHaSKCqRLQiY8DnZenuF23v6
-	BsvADac5pfRhZhxoHBHf1UaJ92MjWmCdyJWF6bU2/VkJ7ZB1HhI1+KlfJqQS+eKRa7YSxN5ZC7zKN
-	w4nVQr4F/ZBT/mr6NeH3KJGmpIOfe+PSVTlq7OKhvkxSvQqkNDuKQK+UTUv3BR/rpTQ+yS4w9KEFl
-	+qQzXtzw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uIJyL/MCl9g962TqkcttKMzCRRxNtjnlCqleU1vpbls=; b=R+kKrw1HJyeTiL
+	1rSy/ltkOFKye1ZCXhMUK5SP+4yCJms1YfPzhQpfQlXBFZFle8NaCrWSGbV/OSyYnxpTwKQ8pcp5I
+	ghO8Q28DOqUyk+h0lOt36AuChkNTVsB5SfgK0KiRHK2uwHozPdkvYf5sUJjFXTWSXKOeB0Cr17JBs
+	HPeYUPxoT+DXOapvsynZxlTbtF/tsMU2OqXlCiHAoFWLCRqqCoxaqOhqhAU6vdtbeYI8ODyKMRGqz
+	GjagIoMh7fHRrI2Pp7kYKT3aKlWiKrZPI+fiuWoNcjSCdGnz6iQELlH0Wu0j7BtXXsebvAJoBEi8p
+	1Y8djA9omlDMudm4bRrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKKPv-0007jm-5X; Tue, 15 Oct 2019 10:51:03 +0000
+	id 1iKKbd-00035T-Tt; Tue, 15 Oct 2019 11:03:09 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKKOL-0005KE-GU
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 10:49:27 +0000
+ id 1iKKbW-00034O-9G
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 11:03:03 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1742D28;
- Tue, 15 Oct 2019 03:49:25 -0700 (PDT)
-Received: from entos-d05.shanghai.arm.com (entos-d05.shanghai.arm.com
- [10.169.40.35])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 240B03F68E;
- Tue, 15 Oct 2019 03:49:19 -0700 (PDT)
-From: Jianyong Wu <jianyong.wu@arm.com>
-To: netdev@vger.kernel.org, yangbo.lu@nxp.com, john.stultz@linaro.org,
- tglx@linutronix.de, pbonzini@redhat.com, sean.j.christopherson@intel.com,
- maz@kernel.org, richardcochran@gmail.com, Mark.Rutland@arm.com,
- will@kernel.org, suzuki.poulose@arm.com
-Subject: [PATCH v5 6/6] kvm: arm64: Add capability check extension for ptp_kvm
-Date: Tue, 15 Oct 2019 18:48:22 +0800
-Message-Id: <20191015104822.13890-7-jianyong.wu@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191015104822.13890-1-jianyong.wu@arm.com>
-References: <20191015104822.13890-1-jianyong.wu@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D119A28;
+ Tue, 15 Oct 2019 04:02:59 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CED563F68E;
+ Tue, 15 Oct 2019 04:02:58 -0700 (PDT)
+Date: Tue, 15 Oct 2019 12:02:54 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH 02/11] PCI: altera: Use pci_parse_request_of_pci_ranges()
+Message-ID: <20191015110254.GA5160@e121166-lin.cambridge.arm.com>
+References: <20190924214630.12817-1-robh@kernel.org>
+ <20190924214630.12817-3-robh@kernel.org>
+ <20190925102423.GR9720@e119886-lin.cambridge.arm.com>
+ <CAL_JsqKN709cOLtDLdKXmDzeNLYtGekMT2BiZic4x45UopenwA@mail.gmail.com>
+ <20190930151346.GD42880@e119886-lin.cambridge.arm.com>
+ <CAL_Jsq+3S7+E+a5E122aR7s0a9SxkMyxw2t=OkO4pS5QUR+0CA@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAL_Jsq+3S7+E+a5E122aR7s0a9SxkMyxw2t=OkO4pS5QUR+0CA@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_034925_623353_47085EB7 
-X-CRM114-Status: UNSURE (   9.34  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191015_040302_367032_D1E2583F 
+X-CRM114-Status: GOOD (  20.86  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,53 +65,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: justin.he@arm.com, kvm@vger.kernel.org, Steve.Capper@arm.com,
- jianyong.wu@arm.com, linux-kernel@vger.kernel.org, Kaly.Xin@arm.com,
- nd@arm.com, kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: PCI <linux-pci@vger.kernel.org>, rfi@lists.rocketboards.org,
+ Ley Foon Tan <lftan@altera.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Andrew Murray <andrew.murray@arm.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Let userspace check if there is kvm ptp service in host.
-before VMs migrate to a another host, VMM may check if this
-cap is available to determine the migration behaviour.
+On Mon, Sep 30, 2019 at 12:36:22PM -0500, Rob Herring wrote:
+> On Mon, Sep 30, 2019 at 10:13 AM Andrew Murray <andrew.murray@arm.com> wrote:
+> >
+> > On Wed, Sep 25, 2019 at 07:33:35AM -0500, Rob Herring wrote:
+> > > On Wed, Sep 25, 2019 at 5:24 AM Andrew Murray <andrew.murray@arm.com> wrote:
+> > > >
+> > > > On Tue, Sep 24, 2019 at 04:46:21PM -0500, Rob Herring wrote:
+> > > > > Convert altera host bridge to use the common
+> > > > > pci_parse_request_of_pci_ranges().
+> > > > >
+> > > > > Cc: Ley Foon Tan <lftan@altera.com>
+> > > > > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> > > > > Cc: Bjorn Helgaas <bhelgaas@google.com>
+> > > > > Cc: rfi@lists.rocketboards.org
+> > > > > Signed-off-by: Rob Herring <robh@kernel.org>
+> > > > > ---
+> > >
+> > > > > @@ -833,9 +800,8 @@ static int altera_pcie_probe(struct platform_device *pdev)
+> > > > >               return ret;
+> > > > >       }
+> > > > >
+> > > > > -     INIT_LIST_HEAD(&pcie->resources);
+> > > > > -
+> > > > > -     ret = altera_pcie_parse_request_of_pci_ranges(pcie);
+> > > > > +     ret = pci_parse_request_of_pci_ranges(dev, &pcie->resources,
+> > > >
+> > > > Does it matter that we now map any given IO ranges whereas we didn't
+> > > > previously?
+> > > >
+> > > > As far as I can tell there are no users that pass an IO range, if they
+> > > > did then with the existing code the probe would fail and they'd get
+> > > > a "I/O range found for %pOF. Please provide an io_base pointer...".
+> > > > However with the new code if any IO range was given (which would
+> > > > probably represent a misconfiguration), then we'd proceed to map the
+> > > > IO range. When that IO is used, who knows what would happen.
+> > >
+> > > Yeah, I'm assuming that the DT doesn't have an IO range if IO is not
+> > > supported. IMO, it is not the kernel's job to validate the DT.
+> >
+> > Sure. Is it worth mentioning in the commit message this subtle change
+> > in behaviour?
+> 
+> Will do.
 
-Signed-off-by: Jianyong Wu <jianyong.wu@arm.com>
-Suggested-by: Marc Zyngier <maz@kernel.org>
----
- include/uapi/linux/kvm.h | 1 +
- virt/kvm/arm/arm.c       | 1 +
- 2 files changed, 2 insertions(+)
+Hi Rob,
 
-diff --git a/include/uapi/linux/kvm.h b/include/uapi/linux/kvm.h
-index 2fe12b40d503..a0bff6002bd9 100644
---- a/include/uapi/linux/kvm.h
-+++ b/include/uapi/linux/kvm.h
-@@ -993,6 +993,7 @@ struct kvm_ppc_resize_hpt {
- #define KVM_CAP_ARM_SVE 170
- #define KVM_CAP_ARM_PTRAUTH_ADDRESS 171
- #define KVM_CAP_ARM_PTRAUTH_GENERIC 172
-+#define KVM_CAP_ARM_KVM_PTP 173
- 
- #ifdef KVM_CAP_IRQ_ROUTING
- 
-diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
-index bd5c55916d0d..80999985160b 100644
---- a/virt/kvm/arm/arm.c
-+++ b/virt/kvm/arm/arm.c
-@@ -201,6 +201,7 @@ int kvm_vm_ioctl_check_extension(struct kvm *kvm, long ext)
- 	case KVM_CAP_MP_STATE:
- 	case KVM_CAP_IMMEDIATE_EXIT:
- 	case KVM_CAP_VCPU_EVENTS:
-+	case KVM_CAP_ARM_KVM_PTP:
- 		r = 1;
- 		break;
- 	case KVM_CAP_ARM_SET_DEVICE_ADDR:
--- 
-2.17.1
+I would like to merge this series, are you resending it ? It does not
+apply to v5.4-rc1, if you rebase it please also update this patch
+log, as per comments above (I can do it too but if you resend it
+there is no point).
 
+Thanks,
+Lorenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
