@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C18CD820D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 23:22:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23D6BD820C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 23:21:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,64 +11,63 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=cZDLiBd5AcPmOa8GFfXrZNC0nEb12QSgRN2dPc/MmIw=; b=es2WUq77zx9tAedIH3iCjiSRGi
-	4x15bg8Jv+Gqd31rfHtarAap/Vjeb1RRRK57DQtOD7o/d7Ua5G9y3lteVqktDWicwILKFYdHJERK2
-	47ZRRfDPXesGUm2z0+aEXKHwjlfcS9fFQ9p7R5tOWKmDeY14BUYvdBHzLjg4o2loN7g0bhuwrAuHx
-	iybiSOKcGMuUowCQ2I3WrgmrSXwn58fn92ciC2B0xrugJ2B3CBUFEO3UufDYCYpWwf/zj1v3ahGBh
-	E6xcdXKvy5CIGXSmgPCUGVxeUJRYDMFGtRkjMfDKLeK7OjCUd2CfN286zBTIRi8SDnuhSuNyihj+x
-	zqaiMUmA==;
+	bh=9Z4SVfK1DmrRidBislJiHGNPbDjH4VuxZFaX1KSzaWI=; b=PXljEDlhvNbyY62G9PrXuzgy0A
+	RqVeSjeQ7Of/zDgLBfvwUHonFO/WgU2dwWgkiGvFL+ur6Ybv6Ot0D6K9iMyakmPvA6Y2Z6hsoi6iB
+	sGBKMJE8t4a0GGuMN44Jo6EMOmdMZiFY63n8nfUmTY5IDktLT9k6ux6fjd693YHLSgHfPzHXG+4EW
+	uLqPiH2Fd6VmTkXukuQzHKlH1sRqwJuVNcnz/xvMP+OjVuXp+rJsoJ342JTF27GVI6mM5ZXudbNm7
+	JyPEMFSX47K6OBIhRX1Q5IMICPTxQBxV2bpMXldUy+JzhwQOfxLE0yRZE7Y3CKpggqxJxQ8NgCyrv
+	PPGQ4/DQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKUGX-0003lN-Oo; Tue, 15 Oct 2019 21:22:01 +0000
+	id 1iKUGN-0003Ww-K9; Tue, 15 Oct 2019 21:21:51 +0000
 Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKUFT-00030e-Vu
+ id 1iKUFT-00031C-L4
  for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 21:20:58 +0000
-Received: by mail-wr1-x442.google.com with SMTP id z9so25523807wrl.11
+Received: by mail-wr1-x442.google.com with SMTP id j11so25558658wrp.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 15 Oct 2019 14:20:54 -0700 (PDT)
+ Tue, 15 Oct 2019 14:20:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=S3UAHvYOfzaEuKOyFm5bIC6hR9X0XbyeBd523nH5LjI=;
- b=xcD5Ld1HPwUSEVIVpOpCpXkrJCxGgE0dzmg8piQwSelX0dhdTPrJmP9RPfDEKFHtOZ
- DxaSlUo2Uf5MnFv3cq1KcjYEQts+YXvhsyn1sZMD8ijkfC+t2EhF7Ha/xSJ6FinS9Nfj
- NqaduGkLueoeY2dbeTcNl/M/usynHnzlPxo2fRrZOqHC+lCI2i+Kq+CAUpKeERK8r0Sh
- lRluCKn4Wm9aRv+1QpYKaG9o+sx1RB34xNh0AGMnzeDvqWyqFRRhrxuTHvzNqVPhopkD
- km5zbIiICHfL5yCQJU9MpJLj64IJVTXpywzRcZzkS0aovrAKBx/ZxLXK90KQR96SZGL+
- ZGUw==
+ bh=JOcTLOqG6/8JBYdUtCKUjnzDdNgGAk3Lo1/s5SPM2vQ=;
+ b=txHkyKEHnouHy5st53YylZ9aOwOE/Nv5QboOO2n6gYm2emk+vDvLPN0A5ycD1abeHA
+ 8lk8l3WlyW/uy7wkh3zX6aYjwjKKVxEJps+ArOvRlLy2sxDr4604CEOf2nEFA9J9Rlf1
+ ZsMyYMssCf5h6eztKHJ+mdRsc7XR3pkSQ6rdf6sgnnz/IW4E8nnjoJyXomJyWhUEMpFR
+ kKwTT6NDoVN8a45nKrMhL+4jjfOFai1phnO2fs2HYWD+zWXPSXOGcDPlGOpVwUVGTdNT
+ Z0VArCUgeiI9MKrjxYPnHmtH+pxgfLIDE9Fl5rCU4bqX/2gI3mHxwGGLLBySw7CtzQRa
+ cdLQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=S3UAHvYOfzaEuKOyFm5bIC6hR9X0XbyeBd523nH5LjI=;
- b=mCaE0YCYdoVdA6CCdgFrQMjwXIdrdS5nfzQCOzHpm1yBHf8t9py1eRNlxORzLFvqov
- eOfYeuYwUzCBiH26tTMPjiGk+0PBXRGzksYGZGuzLuiMcLWer3rbO6l5lMyE+N7pqiTl
- Ubl/dBwNfGYu+KWSgUl7Cln3+lw92PWs3AJHHalJEHZQ9KlhHaz3br5Onzm+7dLHrfl0
- yDmJkcD4S87Zr3HKKq/t3wLfxNyrn5eNHZCuQokNJdAu9xEtPj8w+HCMB2kVLQqEjitn
- xRItAdVJA+S9RZujphfZ/LUTe4vOQRKAx+8TxHMD4denXCs+/iYc0RFZqbuXi7tLMj2r
- cPKg==
-X-Gm-Message-State: APjAAAX0RE/2fEDmxse+pguWUSirve2j+VEa6qCInVXCZ3gwQrAyKyM8
- tPG9B3wSv4ly75gPz3to+dSBig==
-X-Google-Smtp-Source: APXvYqyzczWIc0NWBtEJtC3oudlkwG9WnR9D8/zcSa7AAMvPP2xM3ZOa49CggmwNX4G9OF3hlwisiQ==
-X-Received: by 2002:a5d:5386:: with SMTP id d6mr31586944wrv.155.1571174453471; 
- Tue, 15 Oct 2019 14:20:53 -0700 (PDT)
+ bh=JOcTLOqG6/8JBYdUtCKUjnzDdNgGAk3Lo1/s5SPM2vQ=;
+ b=c+gVCvbp7U0hnVkShIkLE4dJsRJfoqS3TGWwcqnOE6zy2A799+g6BFdLXollpWyDGH
+ 9DPy7avonRMPjmdVBmNwlf+xkGIBEsIExFWSTkCgjspfm0Ktm6ZXb+ibRBEbh3bZMyz0
+ zoCwFxTyPLF+jClZKwJrzr9xtHrqnRPSDCUTWnbB9Y1FfjbyZAGuo9VZ5TtJdE0QXuOt
+ Qhd4iRqPmO7gLLk3dPXbsKisq+7d4jX3awjeFFVDRsySeWK71UmQEaDpmnJ5HmxEqT66
+ hYL2OvT/2HfoAjoasyD79ibBAdLY8wtA8HmM1Xhz3kzobMzCtSuWf+sSNUpqVYSP6MWa
+ o/UQ==
+X-Gm-Message-State: APjAAAVv0StpdsZscu75Vpe8x6LTv8n9XqzPgXyVuQ2GjEzPwD9BTIO7
+ WEOoLUHqWgWCRUy7ozSUH3bbjg==
+X-Google-Smtp-Source: APXvYqz4Jr5RkrAR2YTxHroI0VVN3aiOOOy7zJSyn5Vbz8lAOydfpR7X29BrEx4tNDJ7mtRmQepUcQ==
+X-Received: by 2002:a5d:4a81:: with SMTP id o1mr31198630wrq.291.1571174454488; 
+ Tue, 15 Oct 2019 14:20:54 -0700 (PDT)
 Received: from linaro.org ([2a00:23c5:6815:3901:39d2:21a2:678a:9501])
- by smtp.gmail.com with ESMTPSA id g185sm517649wme.10.2019.10.15.14.20.52
+ by smtp.gmail.com with ESMTPSA id g185sm517649wme.10.2019.10.15.14.20.53
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 15 Oct 2019 14:20:53 -0700 (PDT)
+ Tue, 15 Oct 2019 14:20:54 -0700 (PDT)
 From: Mike Leach <mike.leach@linaro.org>
 To: mike.leach@linaro.org, coresight@lists.linaro.org,
  linux-arm-kernel@lists.infradead.org, linux-doc@vger.kernel.org
-Subject: [PATCH v3 03/11] coresight: etm4x: Add missing API to set EL match on
- address filters
-Date: Tue, 15 Oct 2019 22:19:56 +0100
-Message-Id: <20191015212004.24748-4-mike.leach@linaro.org>
+Subject: [PATCH v3 04/11] coresight: etm4x: Fix issues with start-stop logic.
+Date: Tue, 15 Oct 2019 22:19:57 +0100
+Message-Id: <20191015212004.24748-5-mike.leach@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191015212004.24748-1-mike.leach@linaro.org>
 References: <20191015212004.24748-1-mike.leach@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_142056_021365_5FF5A783 
-X-CRM114-Status: GOOD (  11.15  )
+X-CRM114-CacheID: sfid-20191015_142055_688536_A06E95D9 
+X-CRM114-Status: GOOD (  15.63  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -105,76 +104,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TRCACATRn registers have match bits for secure and non-secure exception
-levels which are not accessible by the sysfs API.
-This adds a new sysfs parameter to enable this - addr_exlevel_s_ns.
+Fixes the following issues when using the ETMv4 start-stop logic.
 
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+1) Setting a start or a stop address should not automatically set the
+start-stop status to 'on'. The value set by the user in 'mode' must
+be respected or start instances could be missed.
+2) Missing API for controlling TRCVIPCSSCTLR - start stop control by
+PE comparators.
+3) Default ETM configuration sets a trace all range, and correctly sets
+the start-stop status bit. This was not being correctly reflected in
+the 'mode' parameter.
+
 Signed-off-by: Mike Leach <mike.leach@linaro.org>
 ---
- .../coresight/coresight-etm4x-sysfs.c         | 42 +++++++++++++++++++
- 1 file changed, 42 insertions(+)
+ .../coresight/coresight-etm4x-sysfs.c         | 39 +++++++++++++++++--
+ drivers/hwtracing/coresight/coresight-etm4x.c |  1 +
+ 2 files changed, 36 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-index cc8156318018..45fa7743eea4 100644
+index 45fa7743eea4..2dbad7162557 100644
 --- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
 +++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-@@ -1233,6 +1233,47 @@ static ssize_t addr_context_store(struct device *dev,
- }
- static DEVICE_ATTR_RW(addr_context);
+@@ -217,6 +217,7 @@ static ssize_t reset_store(struct device *dev,
  
-+static ssize_t addr_exlevel_s_ns_show(struct device *dev,
-+				      struct device_attribute *attr,
-+				      char *buf)
+ 	/* No start-stop filtering for ViewInst */
+ 	config->vissctlr = 0x0;
++	config->vipcssctlr = 0x0;
+ 
+ 	/* Disable seq events */
+ 	for (i = 0; i < drvdata->nrseqstate-1; i++)
+@@ -1059,8 +1060,6 @@ static ssize_t addr_start_store(struct device *dev,
+ 	config->addr_val[idx] = (u64)val;
+ 	config->addr_type[idx] = ETM_ADDR_TYPE_START;
+ 	config->vissctlr |= BIT(idx);
+-	/* SSSTATUS, bit[9] - turn on start/stop logic */
+-	config->vinst_ctrl |= BIT(9);
+ 	spin_unlock(&drvdata->spinlock);
+ 	return size;
+ }
+@@ -1116,8 +1115,6 @@ static ssize_t addr_stop_store(struct device *dev,
+ 	config->addr_val[idx] = (u64)val;
+ 	config->addr_type[idx] = ETM_ADDR_TYPE_STOP;
+ 	config->vissctlr |= BIT(idx + 16);
+-	/* SSSTATUS, bit[9] - turn on start/stop logic */
+-	config->vinst_ctrl |= BIT(9);
+ 	spin_unlock(&drvdata->spinlock);
+ 	return size;
+ }
+@@ -1274,6 +1271,39 @@ static ssize_t addr_exlevel_s_ns_store(struct device *dev,
+ }
+ static DEVICE_ATTR_RW(addr_exlevel_s_ns);
+ 
++static ssize_t vinst_pe_cmp_start_stop_show(struct device *dev,
++					    struct device_attribute *attr,
++					    char *buf)
 +{
-+	u8 idx;
 +	unsigned long val;
 +	struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
 +	struct etmv4_config *config = &drvdata->config;
 +
-+	spin_lock(&drvdata->spinlock);
-+	idx = config->addr_idx;
-+	val = BMVAL(config->addr_acc[idx], 14, 8);
-+	spin_unlock(&drvdata->spinlock);
++	if (!drvdata->nr_pe_cmp)
++		return -EINVAL;
++	val = config->vipcssctlr;
 +	return scnprintf(buf, PAGE_SIZE, "%#lx\n", val);
 +}
-+
-+static ssize_t addr_exlevel_s_ns_store(struct device *dev,
-+				       struct device_attribute *attr,
-+				       const char *buf, size_t size)
++static ssize_t vinst_pe_cmp_start_stop_store(struct device *dev,
++					     struct device_attribute *attr,
++					     const char *buf, size_t size)
 +{
-+	u8 idx;
 +	unsigned long val;
 +	struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
 +	struct etmv4_config *config = &drvdata->config;
 +
-+	if (kstrtoul(buf, 0, &val))
++	if (kstrtoul(buf, 16, &val))
 +		return -EINVAL;
-+
-+	if (val & ~((GENMASK(14, 8) >> 8))
++	if (!drvdata->nr_pe_cmp)
 +		return -EINVAL;
 +
 +	spin_lock(&drvdata->spinlock);
-+	idx = config->addr_idx;
-+	/* clear Exlevel_ns & Exlevel_s bits[14:12, 11:8], bit[15] is res0 */
-+	config->addr_acc[idx] &= ~(GENMASK(14, 8));
-+	config->addr_acc[idx] |= (val << 8);
++	config->vipcssctlr = val;
 +	spin_unlock(&drvdata->spinlock);
 +	return size;
 +}
-+static DEVICE_ATTR_RW(addr_exlevel_s_ns);
++static DEVICE_ATTR_RW(vinst_pe_cmp_start_stop);
 +
  static ssize_t seq_idx_show(struct device *dev,
  			    struct device_attribute *attr,
  			    char *buf)
-@@ -2038,6 +2079,7 @@ static struct attribute *coresight_etmv4_attrs[] = {
- 	&dev_attr_addr_stop.attr,
+@@ -2080,6 +2110,7 @@ static struct attribute *coresight_etmv4_attrs[] = {
  	&dev_attr_addr_ctxtype.attr,
  	&dev_attr_addr_context.attr,
-+	&dev_attr_addr_exlevel_s_ns.attr,
+ 	&dev_attr_addr_exlevel_s_ns.attr,
++	&dev_attr_vinst_pe_cmp_start_stop.attr,
  	&dev_attr_seq_idx.attr,
  	&dev_attr_seq_state.attr,
  	&dev_attr_seq_event.attr,
+diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+index efe120925f9d..d5148afdbe80 100644
+--- a/drivers/hwtracing/coresight/coresight-etm4x.c
++++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+@@ -887,6 +887,7 @@ static void etm4_set_default_filter(struct etmv4_config *config)
+ 	 * in the started state
+ 	 */
+ 	config->vinst_ctrl |= BIT(9);
++	config->mode |= ETM_MODE_VIEWINST_STARTSTOP;
+ 
+ 	/* No start-stop filtering for ViewInst */
+ 	config->vissctlr = 0x0;
 -- 
 2.17.1
 
