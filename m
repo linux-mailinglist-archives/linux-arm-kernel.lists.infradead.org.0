@@ -2,78 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66234D750F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 13:33:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66B5ED7514
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 13:34:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7XiHxxiWeiN1iwZKGhJ6V1NN67hHI03R83Tuvv969gE=; b=ArAFB7Bdp2qo1X
-	MMoHDGE/BJQTL8M7LzKScpc9wZ5dqQq0/R4aHw46tqJg8u0Ks7luQtt/uJciGN3vbgTreZnTi+sB9
-	D5u7lc3NIjODR7mm55xgscEUxzVurY7U78X4mVcjP+jBV7LhHQ4yEF2iIX78kg6Okbnh1n+u5/XE6
-	ZXgr+7s50XItE+DOAoXpTAIuGc+HVQ4M2T0KYdMTKLZAlCPoOZ8OkKXeZB151eEg2WBP7fmhCrUm/
-	tyhK6J5t9aZ4E1tbO1IP6Aty6a9jDTKeH2ZamEH6YM4Anksud7v87UrQ3+WnQH773ukSHW2rnIpOk
-	0651bABMP0R+chdVZERQ==;
+	List-Owner; bh=PrdiDrpCIxWOUVzN7k6wNCgO2u8GRAdn8URK2+c3qmQ=; b=NOqO7WBCpYvcqq
+	EXFGN1PFYEaPe2QaNgpRARoHYzDO9sfBM5h0njdAhDFnjiC+2aRe0BAvBiIhZp4eifmG2ivG388Ci
+	D8//07Pat1I1KRfqJig5Ws4W/tEjeMQlkNxEM60JPchWMwVmZ0jiXBpPyYfT4qm3/qCKdDQzeKNkk
+	+8zthBjghezW9X3EaRgNY1hkKdSzB6W9AuKkHa903ZjFv1Q8NVyuPTsYNWYD7nTtWrdUdtOdD7sQA
+	R1lTU2jFksWuU4z6cyiJuMbkfzf1/fE7nlVhxhiFvWYq2rXWgwRxbHC47CMrJ251+9tDTUOAxYLkv
+	ot+/w3AvTe3NpTUV4a0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKL5O-0003w7-3q; Tue, 15 Oct 2019 11:33:54 +0000
+	id 1iKL5Z-00046q-SH; Tue, 15 Oct 2019 11:34:05 +0000
 Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKL4r-0003dF-Sr
+ id 1iKL4s-0003df-9d
  for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 11:33:24 +0000
-Received: by mail-wr1-x443.google.com with SMTP id r5so23365859wrm.12
+Received: by mail-wr1-x443.google.com with SMTP id j18so23395169wrq.10
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 15 Oct 2019 04:33:21 -0700 (PDT)
+ Tue, 15 Oct 2019 04:33:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=qDD2ziTUH4iVa0dzLE+0MqtrcwtEloFCQjzGa/0salE=;
- b=UKUn63uYSPaK29ydxiYmSknSs81jDHNuTMRX1J5rZqWRKtzQRtgYKONVZBUv4gEPso
- 5GeJinkiduOh0IbwrGej/wJPrKKqCP0ASaiobuINL9/sQoCl4eBw1LHdGEZ+qgUqdIhL
- is6wfVj2XvWrXp9TvdGXppR4eGhs3YvjUht8aBRq8xi4UWX+88iPKhcyVYgNWHU4ZGg0
- utp8lrJFUvERfqO7bMuSCegmjZCKVbEmA0HFyJmDKkZLVPcpXycMW3Qx/Q/XRA/+Xcu3
- OL2BJHCuipRRgJZnImMjaXbO9cYA4zwpBcAzc2cFSAxp1QChHTL9iIJ5wi2ZjOQrNG+J
- lHUA==
+ bh=XD8DbPS/ne8UaQDhNONqYd7ghmzPvUyX1U8dT7qrutE=;
+ b=sTOUlTSqbfOR8WzwLDXV6yG6Z9aZKsrcpdiNzhvasyfpICO2KPmjYjQnkWJomOYXzq
+ 7dqF8grMJWWWcJrG/5DxoUy0RBqLVuzfaXcS1BQOIiWiKJjiCg0/rchM5UENSbKvn52K
+ AVnz3oInfGvkKF9AKiy8Qn62DNx2SalFP6Cb+WDHqYVJU3AibtkJdlgXdpn/AshicxLG
+ dygpvlVEXSReT/2G2u+gQvzBRMbGq2t2LD0vtHCTz5R6HNU3zuGNV7GO2M7MtzPU0pL5
+ UOL7GghYHRrt/JxjWWy4xTsuRmWWbaWByAFX/m1HnzAZID2aeYKCPdDh++kyFNrijqmD
+ 7x3w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=qDD2ziTUH4iVa0dzLE+0MqtrcwtEloFCQjzGa/0salE=;
- b=sFNoWP/00zxitaK4qgIzW5RsWFP9NFAJjfIevDioQp3oRjSb8Go8nNBsfr280MVypz
- HYVbPx/j7UymMVK8NaGFDvxpUFCmE9UYUCrNC25y3tAMESvJYN+NVVzbu3El3cE8s4KR
- TV9Utc4SOApS3ANwMK06l9hmaBXCQ4KRsowpas8DMkuOEmy5I6kWluSbOjjhqrWrQWi9
- RhOxD1oityPTpWnl6oKZIG0w6JQ5mw6BHjJhp3bTapLUhyuZrXIvUA3vrRXEQhuQ2Z4u
- UkrW7JAB2Lc5Q1yxReBthRT/ShYRv2y46RLcFBggemS/x3eaIWPnNL7guATFUv8ps43t
- Giqg==
-X-Gm-Message-State: APjAAAVBesKU7ZZ74WOgUvQArmFIDEXI3b1UAyUlG+exSbN97NSQgofY
- iJ2hq7DrzBp3WCJ7raMnCCkfSwTuRMeluQ==
-X-Google-Smtp-Source: APXvYqzvHDrAswuxfaKhLlsc6gVx/1CV0JI9RaDviWLgIieIrtHFyZ5gMV1lLmSdngWnO/oDbDSaIA==
-X-Received: by 2002:a5d:50c9:: with SMTP id f9mr28942541wrt.36.1571139200081; 
+ bh=XD8DbPS/ne8UaQDhNONqYd7ghmzPvUyX1U8dT7qrutE=;
+ b=CN2xvfwvuLff0sRHOqjPhBGU3EFFDdyBp4yMPfautbW43ksV8dBB7ZpA6jq21Brc+J
+ T9DbQw4Qb21+dZUjdSxdBxd8F2eEqWLa+XZX82FvamDQ1AJM4y3DvfvwCClV6hs9T2hZ
+ QCwSd7raUt2Q1dFtw/T5tGvEXjLBB6522OQcWl1YpdQMkEy1nbdVEqQX2DDsAK5yAInC
+ Xxz7kfLaMRWdwXHd5erQA2Ev0C0h1YEnTLVxqx1irrZfAiSnM3V6p+2BoqlGvlk2MA47
+ Zs5DVOZj5iNr3+qNn4Pcyrdp6BqmnjBbzzoOxEM2jVT9bacwh/pzewGMLpJX8wMq8qtQ
+ E3cg==
+X-Gm-Message-State: APjAAAVQmJz2Va76sLgVFCMqgx1kGR5Ao50bhDMLexCDvEp1S/10UAVe
+ Yy2WOudX9OAhQgMNyt/lXMt6Hw==
+X-Google-Smtp-Source: APXvYqz3/ywYvl/yxSTgmzwEzMwNVIMbEibD2CeaLA2BdzUCSeyNo38qIG9VG3Gn1s8EEwD5aZnjkQ==
+X-Received: by 2002:adf:cc8e:: with SMTP id p14mr32243806wrj.301.1571139200760; 
  Tue, 15 Oct 2019 04:33:20 -0700 (PDT)
 Received: from bender.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id 63sm32395096wri.25.2019.10.15.04.33.19
+ by smtp.gmail.com with ESMTPSA id 63sm32395096wri.25.2019.10.15.04.33.20
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 15 Oct 2019 04:33:19 -0700 (PDT)
+ Tue, 15 Oct 2019 04:33:20 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH 1/3] drm/meson: add RDMA register bits defines
-Date: Tue, 15 Oct 2019 13:33:15 +0200
-Message-Id: <20191015113317.8870-2-narmstrong@baylibre.com>
+Subject: [PATCH 2/3] drm/meson: add RDMA module driver
+Date: Tue, 15 Oct 2019 13:33:16 +0200
+Message-Id: <20191015113317.8870-3-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20191015113317.8870-1-narmstrong@baylibre.com>
 References: <20191015113317.8870-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_043321_930014_CD3C8B3D 
-X-CRM114-Status: UNSURE (   9.11  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20191015_043322_349811_94323E55 
+X-CRM114-Status: GOOD (  23.38  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
@@ -84,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,81 +101,257 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Amlogic VPU embeds a "Register DMA" that can write a sequence of registers
-on the VPU AHB bus, either manually or triggered by an internal IRQ event like
-VSYNC or a line input counter.
+The VPU embeds a "Register DMA" that can write a sequence of registers
+on the VPU AHB bus, either manually or triggered by an internal IRQ
+event like VSYNC or a line input counter.
 
-This adds the register defines.
+The initial implementation handles a single channel (over 8), triggered
+by the VSYNC irq and does not handle the RDMA irq.
+
+The RDMA will be usefull to reset and program the AFBC decoder unit
+on each vsync without involving the interrupt handler that can
+be masked for a long period of time, producing display glitches.
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- drivers/gpu/drm/meson/meson_registers.h | 48 +++++++++++++++++++++++++
- 1 file changed, 48 insertions(+)
+ drivers/gpu/drm/meson/Makefile     |   2 +-
+ drivers/gpu/drm/meson/meson_drv.c  |  14 +++-
+ drivers/gpu/drm/meson/meson_drv.h  |   6 ++
+ drivers/gpu/drm/meson/meson_rdma.c | 123 +++++++++++++++++++++++++++++
+ drivers/gpu/drm/meson/meson_rdma.h |  20 +++++
+ 5 files changed, 161 insertions(+), 4 deletions(-)
+ create mode 100644 drivers/gpu/drm/meson/meson_rdma.c
+ create mode 100644 drivers/gpu/drm/meson/meson_rdma.h
 
-diff --git a/drivers/gpu/drm/meson/meson_registers.h b/drivers/gpu/drm/meson/meson_registers.h
-index 547bee04b46e..8ea00546cd4e 100644
---- a/drivers/gpu/drm/meson/meson_registers.h
-+++ b/drivers/gpu/drm/meson/meson_registers.h
-@@ -1211,11 +1211,59 @@
- #define RDMA_AHB_START_ADDR_7 0x110e
- #define RDMA_AHB_END_ADDR_7 0x110f
- #define RDMA_ACCESS_AUTO 0x1110
-+#define		RDMA_ACCESS_TRIGGER_CHAN3	GENMASK(31, 24)
-+#define		RDMA_ACCESS_TRIGGER_CHAN2	GENMASK(23, 16)
-+#define		RDMA_ACCESS_TRIGGER_CHAN1	GENMASK(15, 8)
-+#define		RDMA_ACCESS_TRIGGER_STOP	0
-+#define		RDMA_ACCESS_TRIGGER_VSYNC	1
-+#define		RDMA_ACCESS_TRIGGER_LINE	32
-+#define		RDMA_ACCESS_RW_FLAG_CHAN3	BIT(7)
-+#define		RDMA_ACCESS_RW_FLAG_CHAN2	BIT(6)
-+#define		RDMA_ACCESS_RW_FLAG_CHAN1	BIT(5)
-+#define		RDMA_ACCESS_ADDR_INC_CHAN3	BIT(3)
-+#define		RDMA_ACCESS_ADDR_INC_CHAN2	BIT(2)
-+#define		RDMA_ACCESS_ADDR_INC_CHAN1	BIT(1)
- #define RDMA_ACCESS_AUTO2 0x1111
-+#define		RDMA_ACCESS_RW_FLAG_CHAN7	BIT(7)
-+#define		RDMA_ACCESS_RW_FLAG_CHAN6	BIT(6)
-+#define		RDMA_ACCESS_RW_FLAG_CHAN5	BIT(5)
-+#define		RDMA_ACCESS_RW_FLAG_CHAN4	BIT(4)
-+#define		RDMA_ACCESS_ADDR_INC_CHAN7	BIT(3)
-+#define		RDMA_ACCESS_ADDR_INC_CHAN6	BIT(2)
-+#define		RDMA_ACCESS_ADDR_INC_CHAN5	BIT(1)
-+#define		RDMA_ACCESS_ADDR_INC_CHAN4	BIT(0)
- #define RDMA_ACCESS_AUTO3 0x1112
-+#define		RDMA_ACCESS_TRIGGER_CHAN7	GENMASK(31, 24)
-+#define		RDMA_ACCESS_TRIGGER_CHAN6	GENMASK(23, 16)
-+#define		RDMA_ACCESS_TRIGGER_CHAN5	GENMASK(15, 8)
-+#define		RDMA_ACCESS_TRIGGER_CHAN4	GENMASK(7, 0)
- #define RDMA_ACCESS_MAN 0x1113
-+#define		RDMA_ACCESS_MAN_RW_FLAG		BIT(2)
-+#define		RDMA_ACCESS_MAN_ADDR_INC	BIT(1)
-+#define		RDMA_ACCESS_MAN_START		BIT(0)
- #define RDMA_CTRL 0x1114
-+#define		RDMA_IRQ_CLEAR_CHAN7	BIT(31)
-+#define		RDMA_IRQ_CLEAR_CHAN6	BIT(30)
-+#define		RDMA_IRQ_CLEAR_CHAN5	BIT(29)
-+#define		RDMA_IRQ_CLEAR_CHAN4	BIT(28)
-+#define		RDMA_IRQ_CLEAR_CHAN3	BIT(27)
-+#define		RDMA_IRQ_CLEAR_CHAN2	BIT(26)
-+#define		RDMA_IRQ_CLEAR_CHAN1	BIT(25)
-+#define		RDMA_IRQ_CLEAR_CHAN_MAN	BIT(24)
-+#define		RDMA_DEFAULT_CONFIG	(BIT(7) | BIT(6))
-+#define		RDMA_CTRL_AHB_WR_BURST	GENMASK(5, 4)
-+#define		RDMA_CTRL_AHB_RD_BURST	GENMASK(3, 2)
-+#define		RDMA_CTRL_SW_RESET	BIT(1)
-+#define		RDMA_CTRL_FREE_CLK_EN	BIT(0)
- #define RDMA_STATUS 0x1115
-+#define		RDMA_IRQ_STAT_CHAN7	BIT(31)
-+#define		RDMA_IRQ_STAT_CHAN6	BIT(30)
-+#define		RDMA_IRQ_STAT_CHAN5	BIT(29)
-+#define		RDMA_IRQ_STAT_CHAN4	BIT(28)
-+#define		RDMA_IRQ_STAT_CHAN3	BIT(27)
-+#define		RDMA_IRQ_STAT_CHAN2	BIT(26)
-+#define		RDMA_IRQ_STAT_CHAN1	BIT(25)
-+#define		RDMA_IRQ_STAT_CHAN_MAN	BIT(24)
- #define RDMA_STATUS2 0x1116
- #define RDMA_STATUS3 0x1117
- #define L_GAMMA_CNTL_PORT 0x1400
+diff --git a/drivers/gpu/drm/meson/Makefile b/drivers/gpu/drm/meson/Makefile
+index b1fa055aaed3..9e36f0c7b816 100644
+--- a/drivers/gpu/drm/meson/Makefile
++++ b/drivers/gpu/drm/meson/Makefile
+@@ -1,7 +1,7 @@
+ # SPDX-License-Identifier: GPL-2.0-only
+ meson-drm-y := meson_drv.o meson_plane.o meson_crtc.o meson_venc_cvbs.o
+ meson-drm-y += meson_viu.o meson_vpp.o meson_venc.o meson_vclk.o meson_overlay.o
+-meson-drm-y += meson_osd_afbcd.o
++meson-drm-y += meson_osd_afbcd.o meson_rdma.o
+ 
+ obj-$(CONFIG_DRM_MESON) += meson-drm.o
+ obj-$(CONFIG_DRM_MESON_DW_HDMI) += meson_dw_hdmi.o
+diff --git a/drivers/gpu/drm/meson/meson_drv.c b/drivers/gpu/drm/meson/meson_drv.c
+index 0f31e70bb94f..2200d8b5252e 100644
+--- a/drivers/gpu/drm/meson/meson_drv.c
++++ b/drivers/gpu/drm/meson/meson_drv.c
+@@ -33,6 +33,7 @@
+ #include "meson_venc_cvbs.h"
+ #include "meson_viu.h"
+ #include "meson_vpp.h"
++#include "meson_rdma.h"
+ 
+ #define DRIVER_NAME "meson"
+ #define DRIVER_DESC "Amlogic Meson DRM driver"
+@@ -295,8 +296,11 @@ static int meson_drv_bind_master(struct device *dev, bool has_components)
+ 	meson_venc_init(priv);
+ 	meson_vpp_init(priv);
+ 	meson_viu_init(priv);
+-	if (priv->afbcd.ops)
+-		priv->afbcd.ops->init(priv);
++	if (priv->afbcd.ops) {
++		ret = priv->afbcd.ops->init(priv);
++		if (ret)
++			return ret;
++	}
+ 
+ 	/* Encoder Initialization */
+ 
+@@ -367,12 +371,16 @@ static void meson_drv_unbind(struct device *dev)
+ 		meson_canvas_free(priv->canvas, priv->canvas_id_vd1_2);
+ 	}
+ 
++	if (priv->afbcd.ops) {
++		priv->afbcd.ops->reset(priv);
++		meson_rdma_free(priv);
++	}
++
+ 	drm_dev_unregister(drm);
+ 	drm_irq_uninstall(drm);
+ 	drm_kms_helper_poll_fini(drm);
+ 	drm_mode_config_cleanup(drm);
+ 	drm_dev_put(drm);
+-
+ }
+ 
+ static const struct component_master_ops meson_drv_master_ops = {
+diff --git a/drivers/gpu/drm/meson/meson_drv.h b/drivers/gpu/drm/meson/meson_drv.h
+index de25349be8aa..9995d74c5ded 100644
+--- a/drivers/gpu/drm/meson/meson_drv.h
++++ b/drivers/gpu/drm/meson/meson_drv.h
+@@ -139,6 +139,12 @@ struct meson_drm {
+ 		u64 modifier;
+ 		u32 format;
+ 	} afbcd;
++
++	struct {
++		dma_addr_t addr_phys;
++		uint32_t *addr;
++		unsigned int offset;
++	} rdma;
+ };
+ 
+ static inline int meson_vpu_is_compatible(struct meson_drm *priv,
+diff --git a/drivers/gpu/drm/meson/meson_rdma.c b/drivers/gpu/drm/meson/meson_rdma.c
+new file mode 100644
+index 000000000000..13fd9b173439
+--- /dev/null
++++ b/drivers/gpu/drm/meson/meson_rdma.c
+@@ -0,0 +1,123 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * Copyright (C) 2019 BayLibre, SAS
++ * Author: Neil Armstrong <narmstrong@baylibre.com>
++ */
++
++#include <linux/bitfield.h>
++#include <linux/dma-mapping.h>
++
++#include "meson_drv.h"
++#include "meson_registers.h"
++#include "meson_rdma.h"
++
++/*
++ * The VPU embeds a "Register DMA" that can write a sequence of registers
++ * on the VPU AHB bus, either manually or triggered by an internal IRQ
++ * event like VSYNC or a line input counter.
++ * The initial implementation handles a single channel (over 8), triggered
++ * by the VSYNC irq and does not handle the RDMA irq.
++ */
++
++int meson_rdma_init(struct meson_drm *priv)
++{
++	/* Allocate a PAGE buffer */
++	priv->rdma.addr = dma_alloc_coherent(priv->dev, SZ_4K,
++					     &priv->rdma.addr_phys,
++					     GFP_KERNEL);
++	if (!priv->rdma.addr)
++		return -ENOMEM;
++
++	priv->rdma.offset = 0;
++
++	writel_relaxed(RDMA_CTRL_SW_RESET,
++		       priv->io_base + _REG(RDMA_CTRL));
++	writel_relaxed(RDMA_DEFAULT_CONFIG |
++		       FIELD_PREP(RDMA_CTRL_AHB_WR_BURST, 3) |
++		       FIELD_PREP(RDMA_CTRL_AHB_RD_BURST, 0),
++		       priv->io_base + _REG(RDMA_CTRL));
++
++	return 0;
++}
++
++void meson_rdma_free(struct meson_drm *priv)
++{
++	if (!priv->rdma.addr && !priv->rdma.addr_phys)
++		return;
++
++	meson_rdma_stop(priv);
++
++	dma_free_coherent(priv->dev, SZ_4K,
++			  priv->rdma.addr, priv->rdma.addr_phys);
++
++	priv->rdma.addr = NULL;
++	priv->rdma.addr_phys = (dma_addr_t)NULL;
++}
++
++void meson_rdma_setup(struct meson_drm *priv)
++{
++	/* Channel 1: Write Flag, No Address Increment */
++	writel_bits_relaxed(RDMA_ACCESS_RW_FLAG_CHAN1 |
++			    RDMA_ACCESS_ADDR_INC_CHAN1,
++			    RDMA_ACCESS_RW_FLAG_CHAN1,
++			    priv->io_base + _REG(RDMA_ACCESS_AUTO));
++}
++
++void meson_rdma_stop(struct meson_drm *priv)
++{
++	writel_bits_relaxed(RDMA_IRQ_CLEAR_CHAN1,
++			    RDMA_IRQ_CLEAR_CHAN1,
++			    priv->io_base + _REG(RDMA_CTRL));
++
++	/* Stop Channel 1 */
++	writel_bits_relaxed(RDMA_ACCESS_TRIGGER_CHAN1,
++			    FIELD_PREP(RDMA_ACCESS_ADDR_INC_CHAN1,
++				       RDMA_ACCESS_TRIGGER_STOP),
++			    priv->io_base + _REG(RDMA_ACCESS_AUTO));
++}
++
++static void meson_rdma_writel(struct meson_drm *priv, uint32_t val,
++			      uint32_t reg)
++{
++	if (priv->rdma.offset == SZ_4K) {
++		dev_warn_once(priv->dev, "%s: overflow\n", __func__);
++		return;
++	}
++
++	priv->rdma.addr[priv->rdma.offset++] = reg;
++	priv->rdma.addr[priv->rdma.offset++] = val;
++}
++
++/*
++ * This will add the register to the RDMA buffer and write it to the
++ * hardware at the same time.
++ * When meson_rdma_flush is called, the RDMA will replay the register
++ * writes in order.
++ */
++void meson_rdma_writel_sync(struct meson_drm *priv, uint32_t val, uint32_t reg)
++{
++	meson_rdma_writel(priv, val, reg);
++
++	writel_relaxed(val, priv->io_base + _REG(reg));
++}
++
++void meson_rdma_flush(struct meson_drm *priv)
++{
++	meson_rdma_stop(priv);
++
++	/* Start of Channel 1 register writes buffer */
++	writel(priv->rdma.addr_phys,
++	       priv->io_base + _REG(RDMA_AHB_START_ADDR_1));
++
++	/* Last byte on Channel 1 register writes buffer */
++	writel(priv->rdma.addr_phys + (priv->rdma.offset * 8) - 1,
++	       priv->io_base + _REG(RDMA_AHB_END_ADDR_1));
++
++	/* Trigger Channel 1 on VSYNC event */
++	writel_bits_relaxed(RDMA_ACCESS_TRIGGER_CHAN1,
++			    FIELD_PREP(RDMA_ACCESS_TRIGGER_CHAN1,
++				       RDMA_ACCESS_TRIGGER_VSYNC),
++			    priv->io_base + _REG(RDMA_ACCESS_AUTO));
++
++	priv->rdma.offset = 0;
++}
+diff --git a/drivers/gpu/drm/meson/meson_rdma.h b/drivers/gpu/drm/meson/meson_rdma.h
+new file mode 100644
+index 000000000000..84c882f97d28
+--- /dev/null
++++ b/drivers/gpu/drm/meson/meson_rdma.h
+@@ -0,0 +1,20 @@
++/* SPDX-License-Identifier: GPL-2.0+ */
++/*
++ * Copyright (C) 2019 BayLibre, SAS
++ * Author: Neil Armstrong <narmstrong@baylibre.com>
++ */
++
++#ifndef __MESON_RDMA_H
++#define __MESON_RDMA_H
++
++#include "meson_drv.h"
++
++int meson_rdma_init(struct meson_drm *priv);
++void meson_rdma_free(struct meson_drm *priv);
++void meson_rdma_setup(struct meson_drm *priv);
++void meson_rdma_stop(struct meson_drm *priv);
++
++void meson_rdma_writel_sync(struct meson_drm *priv, uint32_t val, uint32_t reg);
++void meson_rdma_flush(struct meson_drm *priv);
++
++#endif /* __MESON_RDMA_H */
 -- 
 2.22.0
 
