@@ -2,52 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42BF2D7B4B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 18:23:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0124D7B54
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 18:24:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=FFnwPNaHN+GtrlArowfRamrqK/LufgM0Rh80ULPADQM=; b=b/X/G92yqUhxPd
-	nigM08+yU+zob+AmM0oAWz/sBKP69dSGKHPxRtqJmo1hyk4CY7MTBSJn+FoIjuOKe8aDaP9S4bYom
-	4ijVeUfLApdYfWksYG4doAxFaJejaCayUpencYU90MKvCJ/sGtIT/rplnVyZhWCk6EHTqvMhxjSTX
-	74mRgxPvifetEK9iGOsBzoe48SuxtJbQ+L4806Zanu0YH0iQ9gWemoS7nNXmXqJHv2KO0/PXKUKVc
-	dyFbuX5UkgFgccSEM8SSU38CxlyEzyEpwUwzdLXb6yd87ctre2TS59Hc1++x3TXXJacbqYpRM9Knq
-	jxkN2fDFVXUAMKrsORwA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=V/ehYoONhf3OXR0HRlC5/1ffTttFR1bqEPFZVgo7IQI=; b=WsTrjUqihuXyDd
+	s/NUtxukOuP56p8oQOZAeOanpKxnTq6MaWmGqFU8RXTKCkCf/DRd5q6toRiGHXn0Bzvc8qK/smo/8
+	GjDn/xCo+Tx1BqyYVD8vLz4mvc6VpMIou91nqKjAPMFGb6NQSF1ZJzGaD9Cvk4eNofp+rnnGgA+Hp
+	FwyRBKxSzwLzhvS0qXL3uTKWwkNPqbZY3uPOuJWh8u6jhfUmEsQ1FZaetqpz3wv1kSb0OJksxFqOM
+	n/c26S1Lyl9XsPVifSzXPyyCVBJTvJRlZDNPTmLYifvGJyvpsK8LhViTUMD7O//nXIV2n8HP4gBxo
+	EADwE3nLUgxBVPB6O8rg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKPbo-0002ua-Se; Tue, 15 Oct 2019 16:23:40 +0000
-Received: from imap1.codethink.co.uk ([176.9.8.82])
+	id 1iKPcM-0003Lz-TR; Tue, 15 Oct 2019 16:24:14 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKPbg-0002u6-Gu
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 16:23:34 +0000
-Received: from [167.98.27.226] (helo=rainbowdash.codethink.co.uk)
- by imap1.codethink.co.uk with esmtpsa (Exim 4.84_2 #1 (Debian))
- id 1iKPbW-0008HM-QE; Tue, 15 Oct 2019 17:23:22 +0100
-Received: from ben by rainbowdash.codethink.co.uk with local (Exim 4.92.2)
- (envelope-from <ben@rainbowdash.codethink.co.uk>)
- id 1iKPbW-0003a6-FT; Tue, 15 Oct 2019 17:23:22 +0100
-From: "Ben Dooks (Codethink)" <ben.dooks@codethink.co.uk>
-To: linux-kernel@lists.codethink.co.uk
-Subject: [PATCH] net: stmmac: fix argument to stmmac_pcs_ctrl_ane()
-Date: Tue, 15 Oct 2019 17:23:21 +0100
-Message-Id: <20191015162321.13723-1-ben.dooks@codethink.co.uk>
-X-Mailer: git-send-email 2.23.0
+ id 1iKPcD-0003LC-LO
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 16:24:06 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 81B3F2086A;
+ Tue, 15 Oct 2019 16:24:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571156644;
+ bh=+3bA41N9zG3Na8eiZmgyqf6wPpM7u7VDlcQ7i85yw3Y=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=StYJMA5/BLxta6Bq7ntiXfwvCAGN+ItksqqushdPMj8/N5YyCsnDGO0W16VHdpGB0
+ IxG4cxi6wDfDKCaXcI8oBfLjDBrt6KHc8VekcXdhf8yBRzt7ba+Z1BuhDx6bOHJUOo
+ GMMMTfPhgpPP4m43Rut46SbGtc+mKa19vvgUyeJ0=
+Date: Tue, 15 Oct 2019 17:23:59 +0100
+From: Will Deacon <will@kernel.org>
+To: Yunfeng Ye <yeyunfeng@huawei.com>, sudeep.holla@arm.com
+Subject: Re: [PATCH V2] arm64: psci: Reduce waiting time of cpu_psci_cpu_kill()
+Message-ID: <20191015162358.bt5rffidkv2j4xqb@willie-the-truck>
+References: <18068756-0f39-6388-3290-cf03746e767d@huawei.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <18068756-0f39-6388-3290-cf03746e767d@huawei.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_092332_710676_8187D56E 
-X-CRM114-Status: GOOD (  11.31  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191015_092405_718427_35B923FF 
+X-CRM114-Status: GOOD (  21.12  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [176.9.8.82 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,59 +76,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <joabreu@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- "Ben Dooks \(Codethink\)" <ben.dooks@codethink.co.uk>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: "kstewart@linuxfoundation.org" <kstewart@linuxfoundation.org>,
+ "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ David Laight <David.Laight@ACULAB.COM>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "wuyun.wu@huawei.com" <wuyun.wu@huawei.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The stmmac_pcs_ctrl_ane() expects a register address as
-argument 1, but for some reason the mac_device_info is
-being passed.
+Hi,
 
-Fix the warning (and possible bug) from sparse:
+On Sat, Sep 21, 2019 at 07:21:17PM +0800, Yunfeng Ye wrote:
+> If psci_ops.affinity_info() fails, it will sleep 10ms, which will not
+> take so long in the right case. Use usleep_range() instead of msleep(),
+> reduce the waiting time, and give a chance to busy wait before sleep.
 
-drivers/net/ethernet/stmicro/stmmac/stmmac_main.c:2613:17: warning: incorrect type in argument 1 (different address spaces)
-drivers/net/ethernet/stmicro/stmmac/stmmac_main.c:2613:17:    expected void [noderef] <asn:2> *ioaddr
-drivers/net/ethernet/stmicro/stmmac/stmmac_main.c:2613:17:    got struct mac_device_info *hw
+Can you elaborate on "the right case" please? It's not clear to me
+exactly what problem you're solving here.
 
-Signed-off-by: Ben Dooks <ben.dooks@codethink.co.uk>
----
-Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>
-Cc: Jose Abreu <joabreu@synopsys.com>
-Cc: "David S. Miller" <davem@davemloft.net>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: netdev@vger.kernel.org
-Cc: linux-stm32@st-md-mailman.stormreply.com
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
----
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+I've also added Sudeep to the thread, since I'd like his ack on the change.
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index c76a1336a451..3947c95121c6 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -2610,7 +2610,7 @@ static int stmmac_hw_setup(struct net_device *dev, bool init_ptp)
- 	}
- 
- 	if (priv->hw->pcs)
--		stmmac_pcs_ctrl_ane(priv, priv->hw, 1, priv->hw->ps, 0);
-+		stmmac_pcs_ctrl_ane(priv, priv->ioaddr, 1, priv->hw->ps, 0);
- 
- 	/* set TX and RX rings length */
- 	stmmac_set_rings_length(priv);
--- 
-2.23.0
+Will
 
+>  arch/arm64/kernel/psci.c | 17 +++++++++++++----
+>  1 file changed, 13 insertions(+), 4 deletions(-)
+> 
+> diff --git a/arch/arm64/kernel/psci.c b/arch/arm64/kernel/psci.c
+> index c9f72b2..99b3122 100644
+> --- a/arch/arm64/kernel/psci.c
+> +++ b/arch/arm64/kernel/psci.c
+> @@ -82,6 +82,7 @@ static void cpu_psci_cpu_die(unsigned int cpu)
+>  static int cpu_psci_cpu_kill(unsigned int cpu)
+>  {
+>  	int err, i;
+> +	unsigned long timeout;
+> 
+>  	if (!psci_ops.affinity_info)
+>  		return 0;
+> @@ -91,16 +92,24 @@ static int cpu_psci_cpu_kill(unsigned int cpu)
+>  	 * while it is dying. So, try again a few times.
+>  	 */
+> 
+> -	for (i = 0; i < 10; i++) {
+> +	i = 0;
+> +	timeout = jiffies + msecs_to_jiffies(100);
+> +	do {
+>  		err = psci_ops.affinity_info(cpu_logical_map(cpu), 0);
+>  		if (err == PSCI_0_2_AFFINITY_LEVEL_OFF) {
+>  			pr_info("CPU%d killed.\n", cpu);
+>  			return 0;
+>  		}
+> 
+> -		msleep(10);
+> -		pr_info("Retrying again to check for CPU kill\n");
+> -	}
+> +		/* busy-wait max 1ms */
+> +		if (i++ < 100) {
+> +			cond_resched();
+> +			udelay(10);
+> +			continue;
+> +		}
+> +
+> +		usleep_range(100, 1000);
+> +	} while (time_before(jiffies, timeout));
+> 
+>  	pr_warn("CPU%d may not have shut down cleanly (AFFINITY_INFO reports %d)\n",
+>  			cpu, err);
+> -- 
+> 2.7.4.huawei.3
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
