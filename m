@@ -2,60 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D932D70D9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 10:17:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38EFAD7132
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 10:37:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=4tYmvftwGULqhNF+cpLh+6XQRdr6mfV+VrlavP4yS+w=; b=hGswnGayhf/OcSTqeCR+d+jN9
-	eijXH/Yur7AUNG0sv4+d6vw6X7wfkoQKzz2k9S+pMk9smz/lR63qhm73wb/UzNqmm0EYGlm6xV6Bk
-	R53O+i42xswWl1QX7E0udZkw3LocDhqdTzDm1H6nEHCAP+yQPj8rF4RLw23aRI39cOtPk4pUz+XnL
-	d49uUJEyEyKfNpHBSpL86yBjM9q7U/ku18P5o2E7DXFM6LiCuvsnkGWqaqO5td89YS6JU5Fac7Pwj
-	11xPlPg04nW2J5xLqsRSNMCGzwBvT1nduYMhUEhW5DNEJJRrcqL31HYBYhYCBkoiMb9n9pvOml+5D
-	ZAyPCkoqQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=BAjyxbLUiZJTG/sZgeLWPaa0GoBjwLbJu8HUXlPofK8=; b=nUo
+	0zje6chSNOfaDFXll7Pk+vN9/9QYBv0tGcVS1j6vva/8a88vGi8hsA8Z2uyqa1QkBo4RMv3S6XP8N
+	ogKLTenZCKZ9r2qmLyZkiIouwLeSXnct4WrppgCWmE/Ur2vunznYqBmEdDY6X8utVXg+U6PzRyZMK
+	UxVsaIAArJPk0bQrka6gc2l2E+YXgF98cDLA8w4lve7Olj7GaeypmH7mm37NfhTT/hUH3a13t5FL/
+	3FxHo1v+PeVHch8OXOYO6e9Mt0z8W3n3D9jqAaTKNhVi+wfb5Rvt0w7crqtIix6MhzfdX/NInhIH+
+	aIOIyQW3sHecnnFTlKV9DX0Y1mgtJLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKI0h-00080N-7f; Tue, 15 Oct 2019 08:16:51 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1iKIKa-0007Ni-7e; Tue, 15 Oct 2019 08:37:24 +0000
+Received: from lucky1.263xmail.com ([211.157.147.134])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKI0X-0007yk-Mj
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 08:16:43 +0000
-Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 684F722A77D763E6CFE1;
- Tue, 15 Oct 2019 16:16:30 +0800 (CST)
-Received: from [127.0.0.1] (10.202.227.179) by DGGEMS413-HUB.china.huawei.com
- (10.3.19.213) with Microsoft SMTP Server id 14.3.439.0;
- Tue, 15 Oct 2019 16:16:22 +0800
-Subject: Re: [PATCH for-stable-5.3 1/2] ACPI/PPTT: Add support for ACPI 6.3
- thread flag
-To: Sasha Levin <sashal@kernel.org>
-References: <1571054162-71090-1-git-send-email-john.garry@huawei.com>
- <1571054162-71090-2-git-send-email-john.garry@huawei.com>
- <20191014232958.GC31224@sasha-vm>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <635a839b-bc1e-37ab-bd47-a554acc9b282@huawei.com>
-Date: Tue, 15 Oct 2019 09:16:13 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.3.0
-MIME-Version: 1.0
-In-Reply-To: <20191014232958.GC31224@sasha-vm>
-X-Originating-IP: [10.202.227.179]
-X-CFilter-Loop: Reflected
+ id 1iKIKE-0007Eg-3z; Tue, 15 Oct 2019 08:37:03 +0000
+Received: from localhost (unknown [192.168.167.97])
+ by lucky1.263xmail.com (Postfix) with ESMTP id E0D254640C;
+ Tue, 15 Oct 2019 16:36:52 +0800 (CST)
+X-MAIL-GRAY: 0
+X-MAIL-DELIVERY: 1
+X-ADDR-CHECKED4: 1
+X-ANTISPAM-LEVEL: 2
+X-ABS-CHECKED: 0
+Received: from localhost.localdomain (unknown [58.22.7.114])
+ by smtp.263.net (postfix) whith ESMTP id
+ P25378T140653736490752S1571128611740140_; 
+ Tue, 15 Oct 2019 16:36:53 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <a164980249f6313d1ae2b1bbeea0409b>
+X-RL-SENDER: jay.xu@rock-chips.com
+X-SENDER: xjq@rock-chips.com
+X-LOGIN-NAME: jay.xu@rock-chips.com
+X-FST-TO: linus.walleij@linaro.org
+X-SENDER-IP: 58.22.7.114
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+From: Jianqun Xu <jay.xu@rock-chips.com>
+To: linus.walleij@linaro.org, robh+dt@kernel.org, mark.rutland@arm.com,
+ heiko@sntech.de, linux-gpio@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH v3 0/2] pinctrl: rockchip: support rk3308 SoC
+Date: Tue, 15 Oct 2019 16:36:48 +0800
+Message-Id: <20191015083650.7337-1-jay.xu@rock-chips.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_011641_913708_0A27B2F0 
-X-CRM114-Status: GOOD (  10.81  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191015_013702_338572_3540D85B 
+X-CRM114-Status: UNSURE (   8.15  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [211.157.147.134 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [211.157.147.134 listed in wl.mailspike.net]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,53 +80,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wanghuiqiang@huawei.com, gregkh@linuxfoundation.org,
- catalin.marinas@arm.com, guohanjun@huawei.com, rjw@rjwysocki.net,
- linux-kernel@vger.kernel.org, stable@vger.kernel.org, linuxarm@huawei.com,
- linux-acpi@vger.kernel.org, rrichter@marvell.com, jeremy.linton@arm.com,
- sudeep.holla@arm.com, will@kernel.org, linux-arm-kernel@lists.infradead.org,
- lenb@kernel.org
+Cc: Jianqun Xu <jay.xu@rock-chips.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 15/10/2019 00:29, Sasha Levin wrote:
-> On Mon, Oct 14, 2019 at 07:56:01PM +0800, John Garry wrote:
->> From: Jeremy Linton <jeremy.linton@arm.com>
->>
->> Commit bbd1b70639f785a970d998f35155c713f975e3ac upstream.
->>
->> ACPI 6.3 adds a flag to the CPU node to indicate whether
->> the given PE is a thread. Add a function to return that
->> information for a given linux logical CPU.
->>
->> Signed-off-by: Jeremy Linton <jeremy.linton@arm.com>
->> Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
->> Reviewed-by: Robert Richter <rrichter@marvell.com>
->> Acked-by: Rafael J. Wysocki <rafael.j.wysocki@intel.com>
->> Signed-off-by: Will Deacon <will@kernel.org>
->> Signed-off-by: John Garry <john.garry@huawei.com>
->
-> How far back should these patches be backported?
->
+Add support for rk3308 SoC from rockchip.
 
-Hi Sasha,
+Jianqun Xu (2):
+  dt-bindings: pinctrl: rockchip: add rk3308 SoC support
+  pinctrl: rockchip: add rk3308 SoC support
 
-This patchset is for 5.3, and I sent a separate patchset for 4.19, since 
-the backport is a little different and required some hand modification - 
- 
-https://lore.kernel.org/linux-arm-kernel/1571046986-231263-1-git-send-email-john.garry@huawei.com/. 
-4.19 is as far back as we want.
+ .../bindings/pinctrl/rockchip,pinctrl.txt     |   1 +
+ drivers/pinctrl/pinctrl-rockchip.c            | 382 +++++++++++++++++-
+ 2 files changed, 382 insertions(+), 1 deletion(-)
 
-Please note that the patches in this 5.3 series are relevant for 5.2 
-also, but since 5.2 is EOL, I didn't mention it. We did test 5.2, so you 
-can add there also.
+-- 
+changes since v2:
+- Add Acked-by: Rob Herring <robh@kernel.org>
 
-Please let me know if any more questions.
+changes since v1:
+- Add type case for pull get/set
+- Add Reviewed-by: Heiko Stuebner <heiko@sntech.de>
 
-All the best,
-John
+
+2.17.1
 
 
 
