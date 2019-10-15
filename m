@@ -2,83 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C3B1D6DD9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 05:33:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C1A5D6DEB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 05:44:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CHK2JVYbITSILBgttzXMXRd+UG9WfYt2TIEjowVwuNg=; b=DS44/P+eZzzdC5
-	Y1X5MLXpJNVEV9ygXjCHxAQ5qGBE2nLpAHc90Uy+eWDhg57Fv+75RDXeF4rwFmRO2Oa1OahPkcx3k
-	O8BqyYNS6nBSJBwU1Vrq+eSwtqOcUv4tsmKh3ZQA+sUOQ+hQZXvjaJtBky9TV6Lyf7WNXKFeVpXFn
-	bNVJAqCCDEB/QvcsUxa+jGQ87xOP1aURWv0MkY09swTI9D9IdjViBgAytyTEJH4voS/XLOuOziYFQ
-	/hwHmOgWfP3vU8G4mxc6itG4qFMSyvDa4kGxU4+f5j+EHFnrA6zHQ7q/tLFjUnAB7Q+dqjq1KKN8o
-	EDRt/1m066cohqi6W6RQ==;
+	List-Owner; bh=IcxuxXuK9Ybund/HlPzakLNp/2naEh+K6YQPXZE5C+Q=; b=cjOLDwBygAEu5Y
+	Kvhi4s9m8Xw9H7ldN+SogwuL5dasJg4f2aaCksyQuov+g/mOMl793ZUnWGdRRS5W51sagQ+eY0hat
+	vAHobpb2t1WHw9vBf/+ajyxQtaHS5oSjhndYxKhI+2GZ7NMHbpZEzURPVj4ydWUD1aUQ8GwrceyYK
+	99XZlSMqbm0ieeCIrQda+wNV+Et6bPvV1+BjpZZHP5UzHVvY0sAYWLdKBVEOmcMBSi8O+jattCCAA
+	h894T7SuU0g3TAhBPMMX1+cN+/qyyvvRYZhWA1urjMdkfhkWZuA66Kl2tBdm0KaCJ6rt56k1S09xA
+	VouyQytL/3RudU4+4X0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKDao-00085n-SN; Tue, 15 Oct 2019 03:33:50 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1iKDl0-0002pU-Qi; Tue, 15 Oct 2019 03:44:22 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKDad-00085T-Fv
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 03:33:41 +0000
-Received: by mail-qt1-x841.google.com with SMTP id 3so28621081qta.1
+ id 1iKDko-0002p7-Ay
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 03:44:11 +0000
+Received: by mail-qk1-x743.google.com with SMTP id u184so17940646qkd.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 14 Oct 2019 20:33:38 -0700 (PDT)
+ Mon, 14 Oct 2019 20:44:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=IoqlYSn6f47iVl1XpzbZCGv/lzEESLkqVt79Fah3kvU=;
- b=r364D0CXUs/RIyg+BE17NPnWLo7+lJLvcslcFTnRlcBnQ15kuedlF4dvMOOBlAt7w0
- wQZLONeWcT+PqpWNjjdOgMdnNDTILLcVWJV1eI8+0VinCSriBxSV7UhF0JTnOmNhYITQ
- AUWtX/7PTApLH/QlyvGlsfwTDm9ZdYcQ6bHzw2T09dZLRRd9+b716K7i6N/+uAJQqf3B
- J52NG9bCO82Zt65nvxDtuXVlRx8kPM50d+aZaUtIz15J16RJUil4WdpnTGBoRXPMxs/F
- /ZUIWjgGN/wW9GTUu8uyjEw1IvuORXMPZFZjbrHcr4hgr//V8hnN4Gds/UMW6FbhjtEp
- lfpw==
+ bh=voz4i+v+frHsSQ8PRqlMxILgaKVhYjtinkOnPqt0d44=;
+ b=wXk34FGCnDMKI8b3FXI7D9xaCgxD/y6Q9rbb36RCr0LZKiYrzCuPXbqv2Bv6VGoRuU
+ bTe3ibnOMobN28LsH8Edn1hWcSPokpkncM7Dfgp1cAHTl7lYafygzCv7MlgbicKd/89a
+ 8fFFaCKGPceBmTMcYN/tocdizAYPV1VH1Cff0XEMQxaBspzTFgl9KHg0KoWB9nWhOod3
+ tixOZVKvgzY3bMsxjury0RRAHv27CTPbiJI5//IXsThoIofDeEaMSWOuLhBsPnkzIk1s
+ E3L8BRiamiDUaBRL9UP8ZcNv5CQJvGstxAO05J1za86dfWVGFd+OVPPWaEHkq0HAPnqi
+ 1vIg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=IoqlYSn6f47iVl1XpzbZCGv/lzEESLkqVt79Fah3kvU=;
- b=WTDoeK6zTf582pAsUk4P3YVDleY9rhDv6hG/rO4A/uf3FGMUbX9mYsNWh6PzWiVxMq
- MpD4HnCpH4iv+vjz+DeuHnDWN8ADnicTRScWMfLcep49Fr0swNNq2EslD4qU2l2WtPVO
- n+97gncSkCbXcfdrdctqgkTumQI3d8B2W1tGjOCXlfo5gm6I7wfIexKMcghqiTswVlFG
- PEdCDIgVoF9kq21W7/Mf5vAXbTX6FfuAsYxvRBp5PHlG8FvDSNxgJ3z8VaCa3eBeZvnw
- geINK80yNuMfJAjDKCRa8CzD6MQC7La414Q7WseLIZ4z+czLeh0atniU4mLy4K1w+/zV
- xaVQ==
-X-Gm-Message-State: APjAAAXYHMUVsVd3Su23znVCwrCz1+5vjn+0HcM6paFDML2U+m+U0gFe
- nMtJXknWDJVsjRzqpGwU/zfmaQ==
-X-Google-Smtp-Source: APXvYqwF0LiIAkUb+Pei6jRulZDB2CLozJpjxik4oEXpRN60Qj+NAFS0aBAdJXYSXLMlJ0gA3tBStw==
-X-Received: by 2002:a0c:95a5:: with SMTP id s34mr16780251qvs.72.1571110417517; 
- Mon, 14 Oct 2019 20:33:37 -0700 (PDT)
+ bh=voz4i+v+frHsSQ8PRqlMxILgaKVhYjtinkOnPqt0d44=;
+ b=EdpF1Hki62gsNWdkCcXDPRMnglUcH1ijrvf5nGYsRCbSQqTMrWBHvB9BeaVSo6KpJx
+ f7mbSmuUUA4cXr42ky+HE/xsLdaWhM72+fao3Fh/XCaJsSeNCXjRPji1ISOlPFl2Ld1a
+ JnduKLlw6yOFmv68uEh1Pvm93IxjpSp9sWFE6X5p36mmGeWOjU6UpmuEJJpSI2yjUNik
+ FzB1RQWiuCf4wEzPFQUjL6QmlP/72ncZY5KihF1aCD8WhZKq7Yz6kr4Gaq+hXIS3hxP4
+ kgNLG2NlmHhBSBJQfKaa1I5N2L5WA6OR7e+jEW0Zm517wIApSq6a3E5fXbhp/mbngQB8
+ UZwA==
+X-Gm-Message-State: APjAAAXFIF6rxnBeMegiNWpRQmSNIxiWEdN8wGU/n2+kP9LrV6XUJWyz
+ D4wrOeHplNMTHEAMXMs9IarHwQ==
+X-Google-Smtp-Source: APXvYqxl07qVjJTJXXP4+zknqXS+FKQmmzKDInMZVbg9FIyNlsJ+TQJsQjGD31aO1KIAXnprEVjLmw==
+X-Received: by 2002:ae9:f50a:: with SMTP id o10mr33521733qkg.372.1571111048572; 
+ Mon, 14 Oct 2019 20:44:08 -0700 (PDT)
 Received: from leoy-ThinkPad-X240s (li937-157.members.linode.com.
  [45.56.119.157])
- by smtp.gmail.com with ESMTPSA id w85sm9460755qkb.57.2019.10.14.20.33.31
+ by smtp.gmail.com with ESMTPSA id g194sm9801676qke.46.2019.10.14.20.44.03
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 14 Oct 2019 20:33:36 -0700 (PDT)
-Date: Tue, 15 Oct 2019 11:33:27 +0800
+ Mon, 14 Oct 2019 20:44:07 -0700 (PDT)
+Date: Tue, 15 Oct 2019 11:44:00 +0800
 From: Leo Yan <leo.yan@linaro.org>
 To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: Re: [PATCH v3 3/6] perf cs-etm: Support thread stack
-Message-ID: <20191015033327.GB6336@leoy-ThinkPad-X240s>
+Subject: Re: [PATCH v3 6/6] perf cs-etm: Synchronize instruction sample with
+ the thread stack
+Message-ID: <20191015034400.GC6336@leoy-ThinkPad-X240s>
 References: <20191005091614.11635-1-leo.yan@linaro.org>
- <20191005091614.11635-4-leo.yan@linaro.org>
- <20191011175353.GA13688@xps15>
+ <20191005091614.11635-7-leo.yan@linaro.org>
+ <20191011201750.GD13688@xps15>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191011175353.GA13688@xps15>
+In-Reply-To: <20191011201750.GD13688@xps15>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_203339_544770_E430D353 
-X-CRM114-Status: GOOD (  24.95  )
+X-CRM114-CacheID: sfid-20191014_204410_406445_2B32F8CD 
+X-CRM114-Status: GOOD (  26.41  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -113,131 +114,99 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mathieu,
-
-On Fri, Oct 11, 2019 at 11:53:53AM -0600, Mathieu Poirier wrote:
-> On Sat, Oct 05, 2019 at 05:16:11PM +0800, Leo Yan wrote:
-> > Since Arm CoreSight doesn't support thread stack, the decoding cannot
-> > display symbols with indented spaces to reflect the stack depth.
+On Fri, Oct 11, 2019 at 02:17:50PM -0600, Mathieu Poirier wrote:
+> On Sat, Oct 05, 2019 at 05:16:14PM +0800, Leo Yan wrote:
+> > The synthesized flow use 'tidq->packet' for instruction samples; on the
+> > other hand, 'tidp->prev_packet' is used to generate the thread stack and
+> > the branch samples, this results in the instruction samples using one
+> > packet ahead than thread stack and branch samples ('tidp->prev_packet'
+> > vs 'tidq->packet').
 > > 
-> > This patch adds support thread stack for Arm CoreSight, this allows
-> > 'perf script' to display properly for option '-F,+callindent'.
+> > This leads to an instruction's callchain error as shows in below
+> > example:
 > > 
-> > Before:
+> >   main  1579        100      instructions:
+> >   	ffff000010214854 perf_event_update_userpage+0x4c ([kernel.kallsyms])
+> >   	ffff000010214850 perf_event_update_userpage+0x48 ([kernel.kallsyms])
+> >   	ffff000010219360 perf_swevent_add+0x88 ([kernel.kallsyms])
+> >   	ffff0000102135f4 event_sched_in.isra.57+0xbc ([kernel.kallsyms])
+> >   	ffff0000102137a0 group_sched_in+0x60 ([kernel.kallsyms])
+> >   	ffff000010213b84 flexible_sched_in+0xfc ([kernel.kallsyms])
+> >   	ffff00001020c0b4 visit_groups_merge+0x12c ([kernel.kallsyms])
 > > 
-> >   # perf script -F,+callindent
-> >             main  2808          1          branches: coresight_test1                      ffff8634f5c8 coresight_test1+0x3c (/root/coresight_test/libcstest.so)
-> >             main  2808          1          branches: printf@plt                           aaaaba8d37ec main+0x28 (/root/coresight_test/main)
-> >             main  2808          1          branches: printf@plt                           aaaaba8d36bc printf@plt+0xc (/root/coresight_test/main)
-> >             main  2808          1          branches: _init                                aaaaba8d3650 _init+0x30 (/root/coresight_test/main)
-> >             main  2808          1          branches: _dl_fixup                            ffff86373b4c _dl_runtime_resolve+0x40 (/lib/aarch64-linux-gnu/ld-2.28.so)
-> >             main  2808          1          branches: _dl_lookup_symbol_x                  ffff8636e078 _dl_fixup+0xb8 (/lib/aarch64-linux-gnu/ld-2.28.so)
-> >   [...]
+> > In the callchain log, for the two continuous lines the up line contains
+> > one child function info and the followed line contains the caller
+> > function info, and so forth.  So the first two lines are:
 > > 
-> > After:
+> >   perf_event_update_userpage+0x4c  => the sampled instruction
+> >   perf_event_update_userpage+0x48  => the parent function's calling
 > > 
-> >   # perf script -F,+callindent
-> >             main  2808          1          branches:                 coresight_test1                                      ffff8634f5c8 coresight_test1+0x3c (/root/coresight_test/libcstest.so)
-> >             main  2808          1          branches:                 printf@plt                                           aaaaba8d37ec main+0x28 (/root/coresight_test/main)
-> >             main  2808          1          branches:                     printf@plt                                       aaaaba8d36bc printf@plt+0xc (/root/coresight_test/main)
-> >             main  2808          1          branches:                     _init                                            aaaaba8d3650 _init+0x30 (/root/coresight_test/main)
-> >             main  2808          1          branches:                     _dl_fixup                                        ffff86373b4c _dl_runtime_resolve+0x40 (/lib/aarch64-linux-gnu/ld-2.28.s
-> >             main  2808          1          branches:                         _dl_lookup_symbol_x                          ffff8636e078 _dl_fixup+0xb8 (/lib/aarch64-linux-gnu/ld-2.28.so)
-> >   [...]
+> > The child function and parent function both are the same function
+> > perf_event_update_userpage(), but this isn't a recursive function, thus
+> > the sequence for perf_event_update_userpage() calling itself shouldn't
+> > never happen.  This callchain error is caused by the instruction sample
+> > using an ahead packet than the thread stack, the thread stack is deferred
+> > to process the new packet and misses to pop stack if it is just a return
+> > packet.
+> > 
+> > To fix this issue, we can simply change to use 'tidq->prev_packet' to
+> > generate the instruction samples, this allows the thread stack to push
+> > and pop synchronously with instruction sample.  Finally, the callchain
+> > can be displayed correctly as below:
+> > 
+> >   main  1579        100      instructions:
+> > 	ffff000010214854 perf_event_update_userpage+0x4c ([kernel.kallsyms])
+> > 	ffff000010219360 perf_swevent_add+0x88 ([kernel.kallsyms])
+> > 	ffff0000102135f4 event_sched_in.isra.57+0xbc ([kernel.kallsyms])
+> > 	ffff0000102137a0 group_sched_in+0x60 ([kernel.kallsyms])
+> > 	ffff000010213b84 flexible_sched_in+0xfc ([kernel.kallsyms])
+> > 	ffff00001020c0b4 visit_groups_merge+0x12c ([kernel.kallsyms])
 > > 
 > > Signed-off-by: Leo Yan <leo.yan@linaro.org>
 > > ---
-> >  tools/perf/util/cs-etm.c | 44 ++++++++++++++++++++++++++++++++++++++++
-> >  1 file changed, 44 insertions(+)
+> >  tools/perf/util/cs-etm.c | 4 ++--
+> >  1 file changed, 2 insertions(+), 2 deletions(-)
 > > 
 > > diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-> > index 58ceba7b91d5..780abbfd1833 100644
+> > index 56e501cd2f5f..fa969dcb45d2 100644
 > > --- a/tools/perf/util/cs-etm.c
 > > +++ b/tools/perf/util/cs-etm.c
-> > @@ -1117,6 +1117,45 @@ static void cs_etm__copy_insn(struct cs_etm_queue *etmq,
-> >  			   sample->insn_len, (void *)sample->insn);
-> >  }
+> > @@ -1419,7 +1419,7 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
+> >  	struct cs_etm_packet *tmp;
+> >  	int ret;
+> >  	u8 trace_chan_id = tidq->trace_chan_id;
+> > -	u64 instrs_executed = tidq->packet->instr_count;
+> > +	u64 instrs_executed = tidq->prev_packet->instr_count;
 > >  
-> > +static void cs_etm__add_stack_event(struct cs_etm_queue *etmq,
-> > +				    struct cs_etm_traceid_queue *tidq)
-> > +{
-> > +	struct cs_etm_auxtrace *etm = etmq->etm;
-> > +	u8 trace_chan_id = tidq->trace_chan_id;
-> > +	int insn_len;
-> > +	u64 from_ip, to_ip;
-> > +
-> > +	if (etm->synth_opts.thread_stack) {
-> > +		from_ip = cs_etm__last_executed_instr(tidq->prev_packet);
-> > +		to_ip = cs_etm__first_executed_instr(tidq->packet);
-> > +
-> > +		insn_len = cs_etm__instr_size(etmq, trace_chan_id,
-> > +					      tidq->prev_packet->isa, from_ip);
-> > +
-> > +		/*
-> > +		 * Create thread stacks by keeping track of calls and returns;
-> > +		 * any call pushes thread stack, return pops the stack, and
-> > +		 * flush stack when the trace is discontinuous.
-> > +		 */
-> > +		thread_stack__event(tidq->thread, tidq->prev_packet->cpu,
-> > +				    tidq->prev_packet->flags,
-> > +				    from_ip, to_ip, insn_len,
-> > +				    etmq->buffer->buffer_nr);
+> >  	tidq->period_instructions += instrs_executed;
+> >  
+> > @@ -1450,7 +1450,7 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
+> >  		 */
+> >  		s64 offset = (instrs_executed - instrs_over - 1);
+> >  		u64 addr = cs_etm__instr_addr(etmq, trace_chan_id,
+> > -					      tidq->packet, offset);
+> > +					      tidq->prev_packet, offset);
 > 
-> Details are a little fuzzy in my head but I'm pretty sure
-> we want trace_chan_id here.  
+> I have tested this set in --per-thread mode and things are working as
+> advertised. Did you see how things look like in CPU-wide scenarios?
 
-Thanks a lot for reviewing!
+I am not sure I checked the callchain for CPU-wide scenarios, but I
+didn't pay attention for the case when the trace data is switching
+between CPUs, especially if connect with your comment in patch 03,
+with wrong buffer ID it might cause the wrong callchain for CPU-wide
+scenarios.
 
-This is good point.  After a quick look for the code, seems
-TO_CS_QUEUE_NR() is the right thing to use at here for buffer
-number.
+Will do more testing for CPU-wide scenarios in next spin.
 
-Will look more closely to the code and apply changes in next
-version.
-
-Thanks,
+Thanks for the suggestions.
 Leo Yan
 
-> > +	} else {
-> > +		/*
-> > +		 * The thread stack can be output via thread_stack__process();
-> > +		 * thus the detailed information about paired calls and returns
-> > +		 * will be facilitated by Python script for the db-export.
-> > +		 *
-> > +		 * Need to set trace buffer number and flush thread stack if the
-> > +		 * trace buffer number has been alternate.
-> > +		 */
-> > +		thread_stack__set_trace_nr(tidq->thread,
-> > +					   tidq->prev_packet->cpu,
-> > +					   etmq->buffer->buffer_nr);
+> Thanks,
+> Mathieu
 > 
-> Same here.
-> 
-> > +	}
-> > +}
-> > +
-> >  static int cs_etm__synth_instruction_sample(struct cs_etm_queue *etmq,
-> >  					    struct cs_etm_traceid_queue *tidq,
-> >  					    u64 addr, u64 period)
-> > @@ -1393,6 +1432,9 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
-> >  		tidq->period_instructions = instrs_over;
-> >  	}
 > >  
-> > +	if (tidq->prev_packet->last_instr_taken_branch)
-> > +		cs_etm__add_stack_event(etmq, tidq);
-> > +
-> >  	if (etm->sample_branches) {
-> >  		bool generate_sample = false;
-> >  
-> > @@ -2593,6 +2635,8 @@ int cs_etm__process_auxtrace_info(union perf_event *event,
-> >  		itrace_synth_opts__set_default(&etm->synth_opts,
-> >  				session->itrace_synth_opts->default_no_sample);
-> >  		etm->synth_opts.callchain = false;
-> > +		etm->synth_opts.thread_stack =
-> > +				session->itrace_synth_opts->thread_stack;
-> >  	}
-> >  
-> >  	err = cs_etm__synth_events(etm, session);
+> >  		ret = cs_etm__synth_instruction_sample(
+> >  			etmq, tidq, addr, etm->instructions_sample_period);
 > > -- 
 > > 2.17.1
 > > 
