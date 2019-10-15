@@ -2,55 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4902AD74DD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 13:24:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D083D7529
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 13:37:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=yig8KrjYHKNVpVNBJHPDrEpkR1pPCLL81puOKimGV0A=; b=P7BK8PcnKzxUJAj1cr+YdYQ+m
-	cwVLLCxQsGS6g/33kmflSfjaHGcaIV/dKqn6YbJOTvsxl0/rLPYxPrlnSAfZqmnHrAOTPk1pCKqDm
-	Rg4T/DsB/hKsVwN0WPkDuznkKoRNCe+kbbsrD4Yg1XtFEU4V38Ctw6UOUeUmQjKJdDO0StLuXILik
-	W0OhKZpD+KRPt9FSE7aXZmSA6vRS7EC3ueO7P35TO0fK1yh7hRQSGWb0p7wpnlSrnph2jUd/a0U46
-	jwc4DhwTBfzRQUGD39oafJ0ERDkFjEpkl1GcaMy8j3grHfjyNfdionSETlp+9eJ5ZgDmIDJbUsmLP
-	658EiiC4A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Lh+UJ8Tc1Ct4AFtcqfiZLhOZzXc1Q54KX25DfTvzFaU=; b=Wk2sCfPTpwO2vP
+	A4jKSZ9n19QZ9pLorGoFYDb/Kav/nQNlrcQ2VvegQb+FsRUtoMLr08Hn8EHnr9qgAAllZX5pZBKwk
+	POFPryw8bcOWaUzh9htU39+xUXbsZ/dCDtsuk9BWkmhFiE6p4Bghj5PM164wATycpgprfH4mmddyS
+	n2zGNIaQ8QLsAas6bUuABQ9SoEUamCvqVTZm/dHF7HLJ0OUvHDvxh4Cx7Ru4glmNMEctoeDEsTP01
+	G06czgAMMer1e5omcPazd2bsWLhf9yZelRmB7f//hVWJfKx8Nv5y3WPbH2pYKOtyAmkouiAnvtDZv
+	sR4W8xjI/hIQH6ZguFRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKKw3-0007iB-1v; Tue, 15 Oct 2019 11:24:15 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKKvt-0007hm-EA; Tue, 15 Oct 2019 11:24:07 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EAE3D1000;
- Tue, 15 Oct 2019 04:24:04 -0700 (PDT)
-Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BC9373F68E;
- Tue, 15 Oct 2019 04:24:02 -0700 (PDT)
-Subject: Re: [PATCH v3 4/7] iommu/mediatek: Delete the leaf in the tlb flush
-To: Yong Wu <yong.wu@mediatek.com>
-References: <1571035101-4213-1-git-send-email-yong.wu@mediatek.com>
- <1571035101-4213-5-git-send-email-yong.wu@mediatek.com>
- <20c74c20-864e-88af-3c58-ad3bb7600bcc@arm.com>
- <1571117118.19130.81.camel@mhfsdcap03>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <888d299a-b314-2735-bc73-dd68b92c33af@arm.com>
-Date: Tue, 15 Oct 2019 12:24:01 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1iKL8P-0006IH-5L; Tue, 15 Oct 2019 11:37:01 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iKL8H-0006H9-4p; Tue, 15 Oct 2019 11:36:54 +0000
+Received: from DGGEMS406-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 0CEA856F593A920B9B6C;
+ Tue, 15 Oct 2019 19:36:47 +0800 (CST)
+Received: from localhost (10.133.213.239) by DGGEMS406-HUB.china.huawei.com
+ (10.3.19.206) with Microsoft SMTP Server id 14.3.439.0; Tue, 15 Oct 2019
+ 19:36:36 +0800
+From: YueHaibing <yuehaibing@huawei.com>
+To: <mturquette@baylibre.com>, <sboyd@kernel.org>, <matthias.bgg@gmail.com>,
+ <kstewart@linuxfoundation.org>, <allison@lohutok.net>,
+ <yuehaibing@huawei.com>, <tglx@linutronix.de>, <weiyi.lu@mediatek.com>
+Subject: [PATCH -next] clk: mediatek: mt2712: use
+ devm_platform_ioremap_resource() to simplify code
+Date: Tue, 15 Oct 2019 19:26:44 +0800
+Message-ID: <20191015112644.19816-1-yuehaibing@huawei.com>
+X-Mailer: git-send-email 2.10.2.windows.1
 MIME-Version: 1.0
-In-Reply-To: <1571117118.19130.81.camel@mhfsdcap03>
-Content-Language: en-GB
+X-Originating-IP: [10.133.213.239]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_042405_562730_85698F3E 
-X-CRM114-Status: GOOD (  19.15  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191015_043653_362798_46195A33 
+X-CRM114-Status: UNSURE (   7.84  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -63,99 +64,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: youlin.pei@mediatek.com, anan.sun@mediatek.com,
- Nicolas Boichat <drinkcat@chromium.org>, cui.zhang@mediatek.com,
- srv_heupstream@mediatek.com, edison.hsieh@mediatek.com,
- Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Evan Green <evgreen@chromium.org>,
- chao.hao@mediatek.com, Tomasz Figa <tfiga@google.com>,
- iommu@lists.linux-foundation.org, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-mediatek@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 15/10/2019 06:25, Yong Wu wrote:
-> On Mon, 2019-10-14 at 15:22 +0100, Robin Murphy wrote:
->> On 14/10/2019 07:38, Yong Wu wrote:
->>> In our tlb range flush, we don't care the "leaf". Remove it to simplify
->>> the code. no functional change.
->>
->> Presumably you don't care about the granule either?
-> 
-> Yes. I only keep "granule" to satisfy the format of "tlb_flush_walk",
-> then it's no need add a new helper function.
+Use devm_platform_ioremap_resource() to simplify the code a bit.
+This is detected by coccinelle.
 
-Ah, I'd failed to make the connection that it ends up wired in directly 
-to the callbacks in patch #5 - indeed there's no point churning the 
-mtk_iommu_tlb_add_flush_nosync() callsites here if they're just getting 
-removed later anyway. In that case,
+Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+---
+ drivers/clk/mediatek/clk-mt2712.c | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
-Reviewed-by: Robin Murphy <robin.murphy@arm.com>
+diff --git a/drivers/clk/mediatek/clk-mt2712.c b/drivers/clk/mediatek/clk-mt2712.c
+index 354c26f..a3bd9a1 100644
+--- a/drivers/clk/mediatek/clk-mt2712.c
++++ b/drivers/clk/mediatek/clk-mt2712.c
+@@ -1306,9 +1306,8 @@ static int clk_mt2712_top_probe(struct platform_device *pdev)
+ 	int r, i;
+ 	struct device_node *node = pdev->dev.of_node;
+ 	void __iomem *base;
+-	struct resource *res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+ 
+-	base = devm_ioremap_resource(&pdev->dev, res);
++	base = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(base)) {
+ 		pr_err("%s(): ioremap failed\n", __func__);
+ 		return PTR_ERR(base);
+@@ -1394,9 +1393,8 @@ static int clk_mt2712_mcu_probe(struct platform_device *pdev)
+ 	int r;
+ 	struct device_node *node = pdev->dev.of_node;
+ 	void __iomem *base;
+-	struct resource *res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+ 
+-	base = devm_ioremap_resource(&pdev->dev, res);
++	base = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(base)) {
+ 		pr_err("%s(): ioremap failed\n", __func__);
+ 		return PTR_ERR(base);
+-- 
+2.7.4
 
->>> Signed-off-by: Yong Wu <yong.wu@mediatek.com>
->>> ---
->>>    drivers/iommu/mtk_iommu.c | 16 ++++------------
->>>    1 file changed, 4 insertions(+), 12 deletions(-)
->>>
->>> diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
->>> index 8712afc..19f936c 100644
->>> --- a/drivers/iommu/mtk_iommu.c
->>> +++ b/drivers/iommu/mtk_iommu.c
->>> @@ -174,8 +174,7 @@ static void mtk_iommu_tlb_flush_all(void *cookie)
->>>    }
->>>    
->>>    static void mtk_iommu_tlb_add_flush_nosync(unsigned long iova, size_t size,
->>> -					   size_t granule, bool leaf,
->>> -					   void *cookie)
->>> +					   size_t granule, void *cookie)
->>>    {
->>>    	struct mtk_iommu_data *data = cookie;
->>>    
->>> @@ -219,14 +218,7 @@ static void mtk_iommu_tlb_sync(void *cookie)
->>>    static void mtk_iommu_tlb_flush_walk(unsigned long iova, size_t size,
->>>    				     size_t granule, void *cookie)
->>>    {
->>> -	mtk_iommu_tlb_add_flush_nosync(iova, size, granule, false, cookie);
->>> -	mtk_iommu_tlb_sync(cookie);
->>> -}
->>> -
->>> -static void mtk_iommu_tlb_flush_leaf(unsigned long iova, size_t size,
->>> -				     size_t granule, void *cookie)
->>> -{
->>> -	mtk_iommu_tlb_add_flush_nosync(iova, size, granule, true, cookie);
->>> +	mtk_iommu_tlb_add_flush_nosync(iova, size, granule, cookie);
->>>    	mtk_iommu_tlb_sync(cookie);
->>>    }
->>>    
->>> @@ -245,7 +237,7 @@ static void mtk_iommu_tlb_flush_page_nosync(struct iommu_iotlb_gather *gather,
->>>    static const struct iommu_flush_ops mtk_iommu_flush_ops = {
->>>    	.tlb_flush_all = mtk_iommu_tlb_flush_all,
->>>    	.tlb_flush_walk = mtk_iommu_tlb_flush_walk,
->>> -	.tlb_flush_leaf = mtk_iommu_tlb_flush_leaf,
->>> +	.tlb_flush_leaf = mtk_iommu_tlb_flush_walk,
->>>    	.tlb_add_page = mtk_iommu_tlb_flush_page_nosync,
->>>    };
->>>    
->>> @@ -475,7 +467,7 @@ static void mtk_iommu_iotlb_sync(struct iommu_domain *domain,
->>>    		spin_lock_irqsave(&dom->pgtlock, flags);
->>>    
->>>    	mtk_iommu_tlb_add_flush_nosync(gather->start, length, gather->pgsize,
->>> -				       false, data);
->>> +				       data);
->>>    	mtk_iommu_tlb_sync(data);
->>>    
->>>    	if (!is_in_gather)
->>>
->>
->> _______________________________________________
->> Linux-mediatek mailing list
->> Linux-mediatek@lists.infradead.org
->> http://lists.infradead.org/mailman/listinfo/linux-mediatek
-> 
-> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
