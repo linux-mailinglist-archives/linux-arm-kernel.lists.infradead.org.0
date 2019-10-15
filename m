@@ -2,55 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D52D6D780E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 16:11:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AD57D7817
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 16:13:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QafqSKMvzMo5vnS7c4T/T7hHR5m+uAF/4uep/7KCJqg=; b=oxPAeD3SRAKGx6
-	jH5E+P5JZlMZu7JtnGoEFzOpBXDpglQH5CL8SZCra1nuw7kJqaTzTmOkJj+RFW3qpV/5J1URm+EPB
-	V7bPv3ejibrZO4DFxL1VJzP3IT+DpFk/kullMANnUS4QNgf8ihky2Ec4Jmx+DKDsYYLCNGLpTEKA0
-	o4B0MZbIu001ij/J3UQJc/1ukUQhPKlt5RufIFaavnvMsCvdYpRJFCGvYOQpd8yjP93QsNxoqhVDd
-	ExDd08NzBvl9heiRDQrdXVLKq8MugXFishIBDjHvvnGlpK0tLSBZfgsVYQ9SOO04lB8UPIBv7+fnd
-	wM8TIExHxPJkX7EbWPag==;
+	List-Owner; bh=BJAcpcsyJHrP9pIK1CGB6oSSCys7lqeCpwEpRBuVt+Y=; b=KOYaqen0K0SEZI
+	Wydnyj5KMKf4rBRivmmHrIKORB561tVfHvcSyFtHVi9PdeSit+48reHcViyIJHnY42elII5nPUybW
+	gdhX2bJzgJTUQQuocr8QcEZO1ip54vbRyPS01+JEkvVla3l2nN/gqAaCFpIOKKGT7EuHiXQP34WQX
+	4tRZaPtzDsmWXafQmv/CrwLx7HROptJzmBh+6ga/+xWAMItpi8Z0YD3G8nxWZO/s7t1ttEUXbuvy/
+	q8CuqN7EGHsQhspBDQLet2mzxGR8GTV4DnHtZNZ33g//Cg3RhkQ6PB0DBV2uJukn5Dt6OCFR29YGX
+	ZpUgncSTZBgjjHPlrbxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKNXs-0001Qd-DP; Tue, 15 Oct 2019 14:11:28 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iKNa9-0002cQ-UT; Tue, 15 Oct 2019 14:13:50 +0000
+Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKNXg-0001PV-5A
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 14:11:17 +0000
-Received: from kresse.hi.pengutronix.de ([2001:67c:670:100:1d::2a])
- by metis.ext.pengutronix.de with esmtp (Exim 4.92)
- (envelope-from <l.stach@pengutronix.de>)
- id 1iKNXX-0008Mj-FA; Tue, 15 Oct 2019 16:11:07 +0200
-Message-ID: <178c5c3a962c05380b3d94b8acd5f454c9e2786a.camel@pengutronix.de>
-Subject: Re: [PATCH] soc: imx: gpc: fix initialiser format
-From: Lucas Stach <l.stach@pengutronix.de>
-To: Ben Dooks <ben.dooks@codethink.co.uk>, linux-kernel@lists.codethink.co.uk
-Date: Tue, 15 Oct 2019 16:11:07 +0200
-In-Reply-To: <20191015140909.778-1-ben.dooks@codethink.co.uk>
-References: <20191015140909.778-1-ben.dooks@codethink.co.uk>
-User-Agent: Evolution 3.30.5-1.1 
+ id 1iKNZt-0002aM-H9
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 14:13:35 +0000
+Received: by mail-vs1-xe42.google.com with SMTP id d3so13267115vsr.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 15 Oct 2019 07:13:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=YhnnS+fONegzJKouW6TGJYBzAX4jJpOzISUMhIfFdCE=;
+ b=haOGaYC/1KpBT/vZYB+zjBwPW0pfiZ9pk+jzE6qpTtML9GwFS2Ys1CErgD5FIvPiB+
+ X0ToEA3MXJvRPHR9pr3mqn44Qeg1eiBHtuWFLadTcT838sJ27Bdf2bXC4JFczewUcDwk
+ /Dc/CxazPnZRkv8scafnNFeJ6raAwhqzfwh40y+ueE186kUodVfkPFgQ8vQ5+KYF2z/+
+ J5zhBocRy6yw1MxIaA4QWZDuIdwQ+ySN//DZYJewJpFVJO7Iak1lO3oRZq2PikbPV/07
+ TFqzaYgK9VHbCEHSto/sb5hkTXvjqWzsds595DHF0kyv2w3YPBVzQrUCaGfOLUvmYlcQ
+ Qq2w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=YhnnS+fONegzJKouW6TGJYBzAX4jJpOzISUMhIfFdCE=;
+ b=ql4Z3hAOajPxirJsce9XzsZkSqPfqyYmLZKLZeAGbVAc/EYDnW0OxXHa+noKaHQhCe
+ pcWzWhtn5+855+vjTdC0gjCppH9FCiQH5eRdB3nyrLes4Yre1s6og2qoK40ZQV37H+tW
+ cDw9jfnD+Ul+MK9IkS+RDAiqLUTBCgkn2A8GwzB8phgRG6PL2xU6By2inA81TECLwv6D
+ PyBgvKlwW0OriAlUYzjSPZrXVXjfIzzVh21QLva1AK4zgFV521Qk+TXOgd/mdtsehyIy
+ YnM+j+mvpoU4VaiLU1qi3W1WWIKYD6utY1ltVWJSXOgr3i8AE186ns9Ged1jGtDrqkxW
+ hlow==
+X-Gm-Message-State: APjAAAVcqYPWawqUeUg7z5omIVOXgvwLSa0pMaVpwtnzO/Q1qhwzvkTr
+ PUDQVjktdVPpZgsYnHeYrFIRt8xO/KksWLVFtM9JNA==
+X-Google-Smtp-Source: APXvYqzA32Mk0LaXO6v1xRVVKG/ySz/eTgRyhMT2tMHZp7seOXpAOAcCIYGvFFlIHW1pgcDj3L8ihVXHbmmd+HuPNOA=
+X-Received: by 2002:a67:ef89:: with SMTP id r9mr20863437vsp.200.1571148811398; 
+ Tue, 15 Oct 2019 07:13:31 -0700 (PDT)
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::2a
-X-SA-Exim-Mail-From: l.stach@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+References: <20191010202802.1132272-1-arnd@arndb.de>
+ <20191010203043.1241612-1-arnd@arndb.de>
+ <20191010203043.1241612-8-arnd@arndb.de>
+In-Reply-To: <20191010203043.1241612-8-arnd@arndb.de>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Tue, 15 Oct 2019 16:12:55 +0200
+Message-ID: <CAPDyKFquppMx=hpPkwU65DbW_XGgm0oww+zOS2Z-OVE6Kr0xxA@mail.gmail.com>
+Subject: Re: [PATCH 08/36] ARM: exynos: stop selecting PLAT_SAMSUNG
+To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_071116_203748_AC90A7D5 
-X-CRM114-Status: GOOD (  13.97  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191015_071333_582093_FC6A8C37 
+X-CRM114-Status: GOOD (  18.12  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,79 +92,148 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
+ Olof Johansson <olof@lixom.net>, "Enrico Weigelt,
+ metux IT consult" <info@metux.net>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Di, 2019-10-15 at 15:09 +0100, Ben Dooks wrote:
-> Make the initialiers in imx_gpc_domains C99 format to fix the
-> following sparse warnings:
-> 
-> drivers/soc/imx/gpc.c:252:30: warning: obsolete array initializer, use C99 syntax
-> drivers/soc/imx/gpc.c:258:29: warning: obsolete array initializer, use C99 syntax
-> drivers/soc/imx/gpc.c:269:34: warning: obsolete array initializer, use C99 syntax
-> drivers/soc/imx/gpc.c:278:30: warning: obsolete array initializer, use C99 syntax
-> 
-> Signed-off-by: Ben Dooks <ben.dooks@codethink.co.uk>
-
-Reviewed-by: Lucas Stach <l.stach@pengutronix.de>
-
+On Thu, 10 Oct 2019 at 22:34, Arnd Bergmann <arnd@arndb.de> wrote:
+>
+> Now that no code in arch/arm is shared between mach-exynos and the
+> others, make the split formal.
+>
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 > ---
-> Cc: Shawn Guo <shawnguo@kernel.org>
-> Cc: Sascha Hauer <s.hauer@pengutronix.de>
-> Cc: Pengutronix Kernel Team <kernel@pengutronix.de>
-> Cc: Fabio Estevam <festevam@gmail.com>
-> Cc: NXP Linux Team <linux-imx@nxp.com>
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-kernel@vger.kernel.org
-> ---
->  drivers/soc/imx/gpc.c | 8 ++++----
->  1 file changed, 4 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/soc/imx/gpc.c b/drivers/soc/imx/gpc.c
-> index d9231bd3c691..98b9d9a902ae 100644
-> --- a/drivers/soc/imx/gpc.c
-> +++ b/drivers/soc/imx/gpc.c
-> @@ -249,13 +249,13 @@ static struct genpd_power_state imx6_pm_domain_pu_state = {
->  };
->  
->  static struct imx_pm_domain imx_gpc_domains[] = {
-> -	[GPC_PGC_DOMAIN_ARM] {
-> +	[GPC_PGC_DOMAIN_ARM] = {
->  		.base = {
->  			.name = "ARM",
->  			.flags = GENPD_FLAG_ALWAYS_ON,
->  		},
->  	},
-> -	[GPC_PGC_DOMAIN_PU] {
-> +	[GPC_PGC_DOMAIN_PU] = {
->  		.base = {
->  			.name = "PU",
->  			.power_off = imx6_pm_domain_power_off,
-> @@ -266,7 +266,7 @@ static struct imx_pm_domain imx_gpc_domains[] = {
->  		.reg_offs = 0x260,
->  		.cntr_pdn_bit = 0,
->  	},
-> -	[GPC_PGC_DOMAIN_DISPLAY] {
-> +	[GPC_PGC_DOMAIN_DISPLAY] = {
->  		.base = {
->  			.name = "DISPLAY",
->  			.power_off = imx6_pm_domain_power_off,
-> @@ -275,7 +275,7 @@ static struct imx_pm_domain imx_gpc_domains[] = {
->  		.reg_offs = 0x240,
->  		.cntr_pdn_bit = 4,
->  	},
-> -	[GPC_PGC_DOMAIN_PCI] {
-> +	[GPC_PGC_DOMAIN_PCI] = {
->  		.base = {
->  			.name = "PCI",
->  			.power_off = imx6_pm_domain_power_off,
+>  arch/arm/Kconfig.debug        | 8 ++++----
+>  arch/arm/Makefile             | 1 -
+>  arch/arm/mach-exynos/Makefile | 4 ----
+>  arch/arm/plat-samsung/Kconfig | 4 ++--
+>  drivers/mmc/host/Kconfig      | 2 +-
 
+For the mmc part:
+
+Acked-by: Ulf Hansson <ulf.hansson@linaro.org>
+
+Kind regards
+Uffe
+
+
+>  5 files changed, 7 insertions(+), 12 deletions(-)
+>
+> diff --git a/arch/arm/Kconfig.debug b/arch/arm/Kconfig.debug
+> index d05b836dfeb2..9c4f2d6deb06 100644
+> --- a/arch/arm/Kconfig.debug
+> +++ b/arch/arm/Kconfig.debug
+> @@ -998,7 +998,7 @@ choice
+>                   via SCIFA4 on Renesas SH-Mobile AG5 (SH73A0).
+>
+>         config DEBUG_S3C_UART0
+> -               depends on PLAT_SAMSUNG
+> +               depends on PLAT_SAMSUNG || ARCH_EXYNOS
+>                 select DEBUG_EXYNOS_UART if ARCH_EXYNOS
+>                 select DEBUG_S3C24XX_UART if ARCH_S3C24XX
+>                 select DEBUG_S3C64XX_UART if ARCH_S3C64XX
+> @@ -1010,7 +1010,7 @@ choice
+>                   by the boot-loader before use.
+>
+>         config DEBUG_S3C_UART1
+> -               depends on PLAT_SAMSUNG
+> +               depends on PLAT_SAMSUNG || ARCH_EXYNOS
+>                 select DEBUG_EXYNOS_UART if ARCH_EXYNOS
+>                 select DEBUG_S3C24XX_UART if ARCH_S3C24XX
+>                 select DEBUG_S3C64XX_UART if ARCH_S3C64XX
+> @@ -1022,7 +1022,7 @@ choice
+>                   by the boot-loader before use.
+>
+>         config DEBUG_S3C_UART2
+> -               depends on PLAT_SAMSUNG
+> +               depends on PLAT_SAMSUNG || ARCH_EXYNOS
+>                 select DEBUG_EXYNOS_UART if ARCH_EXYNOS
+>                 select DEBUG_S3C24XX_UART if ARCH_S3C24XX
+>                 select DEBUG_S3C64XX_UART if ARCH_S3C64XX
+> @@ -1034,7 +1034,7 @@ choice
+>                   by the boot-loader before use.
+>
+>         config DEBUG_S3C_UART3
+> -               depends on PLAT_SAMSUNG && (ARCH_EXYNOS || ARCH_S5PV210)
+> +               depends on ARCH_EXYNOS || ARCH_S5PV210
+>                 select DEBUG_EXYNOS_UART if ARCH_EXYNOS
+>                 select DEBUG_S3C64XX_UART if ARCH_S3C64XX
+>                 select DEBUG_S5PV210_UART if ARCH_S5PV210
+> diff --git a/arch/arm/Makefile b/arch/arm/Makefile
+> index db857d07114f..f492d7c338fe 100644
+> --- a/arch/arm/Makefile
+> +++ b/arch/arm/Makefile
+> @@ -233,7 +233,6 @@ machine-$(CONFIG_PLAT_SPEAR)                += spear
+>
+>  # Platform directory name.  This list is sorted alphanumerically
+>  # by CONFIG_* macro name.
+> -plat-$(CONFIG_ARCH_EXYNOS)     += samsung
+>  plat-$(CONFIG_ARCH_OMAP)       += omap
+>  plat-$(CONFIG_ARCH_S3C64XX)    += samsung
+>  plat-$(CONFIG_ARCH_S5PV210)    += samsung
+> diff --git a/arch/arm/mach-exynos/Makefile b/arch/arm/mach-exynos/Makefile
+> index 0fd3fcf8bfb0..53fa363c8e44 100644
+> --- a/arch/arm/mach-exynos/Makefile
+> +++ b/arch/arm/mach-exynos/Makefile
+> @@ -3,10 +3,6 @@
+>  # Copyright (c) 2010-2011 Samsung Electronics Co., Ltd.
+>  #              http://www.samsung.com/
+>
+> -ccflags-$(CONFIG_ARCH_MULTIPLATFORM) += -I$(srctree)/$(src)/include -I$(srctree)/arch/arm/plat-samsung/include
+> -
+> -# Core
+> -
+>  obj-$(CONFIG_ARCH_EXYNOS)      += exynos.o exynos-smc.o firmware.o
+>
+>  obj-$(CONFIG_EXYNOS_CPU_SUSPEND) += pm.o sleep.o
+> diff --git a/arch/arm/plat-samsung/Kconfig b/arch/arm/plat-samsung/Kconfig
+> index 832ab0e6cd72..e31a156a27df 100644
+> --- a/arch/arm/plat-samsung/Kconfig
+> +++ b/arch/arm/plat-samsung/Kconfig
+> @@ -4,7 +4,7 @@
+>
+>  config PLAT_SAMSUNG
+>         bool
+> -       depends on PLAT_S3C24XX || ARCH_S3C64XX || ARCH_EXYNOS || ARCH_S5PV210
+> +       depends on PLAT_S3C24XX || ARCH_S3C64XX || ARCH_S5PV210
+>         default y
+>         select GENERIC_IRQ_CHIP
+>         select NO_IOPORT_MAP
+> @@ -240,7 +240,7 @@ config SAMSUNG_PM_DEBUG
+>         bool "Samsung PM Suspend debug"
+>         depends on PM && DEBUG_KERNEL
+>         depends on PLAT_S3C24XX || ARCH_S3C64XX || ARCH_S5PV210
+> -       depends on DEBUG_EXYNOS_UART || DEBUG_S3C24XX_UART || DEBUG_S3C2410_UART
+> +       depends on DEBUG_S3C24XX_UART || DEBUG_S3C2410_UART
+>         help
+>           Say Y here if you want verbose debugging from the PM Suspend and
+>           Resume code. See <file:Documentation/arm/samsung-s3c24xx/suspend.rst>
+> diff --git a/drivers/mmc/host/Kconfig b/drivers/mmc/host/Kconfig
+> index 49ea02c467bf..400a581c918c 100644
+> --- a/drivers/mmc/host/Kconfig
+> +++ b/drivers/mmc/host/Kconfig
+> @@ -275,7 +275,7 @@ config MMC_SDHCI_TEGRA
+>
+>  config MMC_SDHCI_S3C
+>         tristate "SDHCI support on Samsung S3C SoC"
+> -       depends on MMC_SDHCI && PLAT_SAMSUNG
+> +       depends on MMC_SDHCI && (PLAT_SAMSUNG || ARCH_EXYNOS)
+>         help
+>           This selects the Secure Digital Host Controller Interface (SDHCI)
+>           often referrered to as the HSMMC block in some of the Samsung S3C
+> --
+> 2.20.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
