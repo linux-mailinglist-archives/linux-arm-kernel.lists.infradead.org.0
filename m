@@ -2,75 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B96D8D7698
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 14:31:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 79A0BD7699
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 14:31:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=RGZHFWNeKkFv9WhUUpysCvydRCVr433HDqkFNhiOJRk=; b=GLdnPEJrdhDs7G
-	RdreMRa0lr/XNjL3vl46kjbL8CrLbDDlKzvJcnET2601SFTVvUjTwGFTa7I25eUvzJtPCdiP/OI+r
-	o0a0tXxNxKZ9cHY41TrG8rb+5fsBWRuYJUbaaeM8CdG8/CMaHSyjUsyytaNA0ppLi9NxW0KtwzzRu
-	HigLMBxQPZ4TIHIZNky6t0r8o1ZDK1DzF659edXcy+grEVXVODerG4JfsNtI/7HCVQ/cvDuA6aSBV
-	PGgf7QRtdt7/tx2wPy4R7McGkSWCTO0ow8rg+WgtHyK/LlWuN/FISIkBeBTT9v53Dk85r0Q8YZy3G
-	bhBvtzOpCzb59rrRXXOg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=p9dpJll62CY80bHc+q9kDLg8sbgOKQTdNfGnuHICVlo=; b=nWOcc6SWpMI9pE
+	gzZ4naPjXLJaNVedxh6/N/5WYyebmxcamQ+x8cxiw1z1DkCBMV9ak6YCt289nL0BWCpinhjpFy8wJ
+	TSynUcwQUrlJ2UZ8yAN3I1fTog/NWP3Mal3D8s6Nl3X47PbC53auY0AHXKjN692dfiQibxsMDDlNk
+	BCAqSo3N8Be2zz7dGHDx/OR/jWfUK1QIzxJpK+cW+cjH68feW9omxibqhfl5Hrja1F75e+IXSaD7w
+	8E6rZi4jpXprEBFZoTHhttSzgo/YMh86YoXB7vGAwYwD3p/GgVAEljNRDZVIncAeT8V+7HHLq1tL/
+	BF04znbireu+tRpG/VGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKLzA-0003gq-4o; Tue, 15 Oct 2019 12:31:32 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1iKLzR-0003uq-DL; Tue, 15 Oct 2019 12:31:49 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKLyt-0003YQ-Tz
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 12:31:17 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x9FCFiFX020740; Tue, 15 Oct 2019 14:31:05 +0200
+ id 1iKLyu-0003Z2-NV
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 12:31:18 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x9FCG5YL004950; Tue, 15 Oct 2019 14:31:07 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=C/kzveCydwhm/NSFFbbmhm40wMyVsaHpKZ6dysDlYG0=;
- b=qyuKPHoeTpOW3iueqds4b/gZvPAxhVUcK9So+HFG+eldZacdjcWHeND1gDmE85oUoSYn
- UJ5DieWVV5C73w8PSyW5bCGbC9eFU/it5YT7dZqaEhoqEniIJqr4bpEvtPFAxw7UuJwK
- bKefzXdgx9k7WWSktRdMQ9QEC8IecSV0pUNPaYiO++nMUImGpAn41CSY87abBH+PGYc9
- bJONXibjSpSo1HnKljA0SOF05ESnvCO+4GvyYdxy8eFhUqugk4Ia1fIxNZWv4bCsYMqm
- xqDW+YeICJBOMPF+CKqUwbzvxs3h2F6uwy+VrIhB46w/VRbTuCYVgjyVBlye1of6INU3 kQ== 
+ : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=STMicroelectronics;
+ bh=+GjgENcAkDTPR2yM3bgmWF3aAKS3dbofBQg0yNbTFkc=;
+ b=ExuPmFlPOX1rNbfPHOuK+LXPbeoDHm5YfR6qwbcsoWg9B5MrUD4QBkYUC/flMmdgHkLO
+ nLFy5NxEitnXVJzVQOefdwBEPEY3xc+e9FduxbqQ66yQQH3M0FPeOQBLSoqpMLkGg2wR
+ GCO7DNFyQ/WMVH+NmdsqvMYpLlybn77f3p76gBdk5r8flP3JL2LLOeGI5KWnlB+5+zn4
+ V8BJikIW/vq7s/lWx5RjG8jJMg4idXpOWoOp6gbqNs65Y+0/PRxUVEV1aOn6TcoZdOrM
+ pJxRjcJ55dm+MRXfyVgpzPxIpL+167KXdKJ/XXQlGW/wbkWMfra2jokSsfh4K83mB6xM yw== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2vk4kx04f4-1
+ by mx08-00178001.pphosted.com with ESMTP id 2vk3y9rhh8-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 15 Oct 2019 14:31:05 +0200
+ Tue, 15 Oct 2019 14:31:07 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 24DA6100034;
- Tue, 15 Oct 2019 14:31:05 +0200 (CEST)
-Received: from Webmail-eu.st.com (Safex1hubcas22.st.com [10.75.90.92])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 106AA2C7EA9;
- Tue, 15 Oct 2019 14:31:05 +0200 (CEST)
-Received: from SAFEX1HUBCAS21.st.com (10.75.90.44) by Safex1hubcas22.st.com
- (10.75.90.92) with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 15 Oct
- 2019 14:31:05 +0200
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id E5275100034;
+ Tue, 15 Oct 2019 14:31:06 +0200 (CEST)
+Received: from Webmail-eu.st.com (Safex1hubcas24.st.com [10.75.90.94])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id D611E2C7EAA;
+ Tue, 15 Oct 2019 14:31:06 +0200 (CEST)
+Received: from SAFEX1HUBCAS21.st.com (10.75.90.44) by Safex1hubcas24.st.com
+ (10.75.90.94) with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 15 Oct
+ 2019 14:31:06 +0200
 Received: from localhost (10.129.4.186) by Webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 15 Oct 2019 14:31:04
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 15 Oct 2019 14:31:06
  +0200
 From: Benjamin Gaignard <benjamin.gaignard@st.com>
 To: <alexandre.torgue@st.com>, <robh+dt@kernel.org>, <mark.rutland@arm.com>
-Subject: [PATCH] ARM: dts: stm32f429: remove useless dma-ranges property
-Date: Tue, 15 Oct 2019 14:30:57 +0200
-Message-ID: <20191015123058.14669-1-benjamin.gaignard@st.com>
+Subject: [PATCH] ARM: dts: stm32f469: remove useless dma-ranges property
+Date: Tue, 15 Oct 2019 14:30:58 +0200
+Message-ID: <20191015123058.14669-2-benjamin.gaignard@st.com>
 X-Mailer: git-send-email 2.15.0
+In-Reply-To: <20191015123058.14669-1-benjamin.gaignard@st.com>
+References: <20191015123058.14669-1-benjamin.gaignard@st.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.129.4.186]
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
  definitions=2019-10-15_05:2019-10-15,2019-10-15 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_053116_293340_A0D6CE22 
-X-CRM114-Status: GOOD (  13.31  )
+X-CRM114-CacheID: sfid-20191015_053117_055345_6B3ED906 
+X-CRM114-Status: GOOD (  12.99  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -104,21 +108,21 @@ on bus node.
 
 Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
 ---
- arch/arm/boot/dts/stm32429i-eval.dts | 1 -
+ arch/arm/boot/dts/stm32f469-disco.dts | 1 -
  1 file changed, 1 deletion(-)
 
-diff --git a/arch/arm/boot/dts/stm32429i-eval.dts b/arch/arm/boot/dts/stm32429i-eval.dts
-index ba08624c6237..21bc657f21c3 100644
---- a/arch/arm/boot/dts/stm32429i-eval.dts
-+++ b/arch/arm/boot/dts/stm32429i-eval.dts
-@@ -234,7 +234,6 @@
- 	status = "okay";
- 	pinctrl-0 = <&ltdc_pins>;
- 	pinctrl-names = "default";
+diff --git a/arch/arm/boot/dts/stm32f469-disco.dts b/arch/arm/boot/dts/stm32f469-disco.dts
+index a3ff04940aec..c928126d5b7e 100644
+--- a/arch/arm/boot/dts/stm32f469-disco.dts
++++ b/arch/arm/boot/dts/stm32f469-disco.dts
+@@ -166,7 +166,6 @@
+ };
+ 
+ &ltdc {
 -	dma-ranges;
+ 	status = "okay";
  
  	port {
- 		ltdc_out_rgb: endpoint {
 -- 
 2.15.0
 
