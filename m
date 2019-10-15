@@ -2,86 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4B9DD782A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 16:14:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51996D782E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 16:15:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EMZ1DfwSTEOsuA04ET9QUZMUj4LMcOg+28NBQyK1sP4=; b=N82WHSQGy+YOjo
-	YMO+au8nkzjraoZh0VnsL4JYazanwu12+iDkAjNJpDEu/s4FSgCtXSYW/aSlEZPHds5894+eavALo
-	hfUOJhwepMXEoQYp+gZXqicLyRjbf1avxGqvGTWYtD9Sc/7D0GDLAERjWSsxKtUcbFSzCEZeTunch
-	l/Ua2+AcnlYue2uSxxt71qQOkfGSvw34MoHlou7yHbvxGD4BEfJSUQABeMCitfWUfkn039F5N5G0X
-	+TVHK6U+8S2ei8JZLFA89xEI0i1JmdLQ8iPU4OQ7O5DcqVtfobSn+wmjz2Qk/fXcYNq7s/jojgw3N
-	+5KKR/jBWAmMN8P1Qi2Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=d5gq9VInVK+a4c/PP8STeaXr3Uh4/s0KwYjFwYdcvK4=; b=DMoGqK2yavJOFl
+	ZC8jdHmSDsY++23GfrzzzOuAarmtI5oZlnOeeUC186ji6h9UC9w0/5Fcy8Qd1jLhaBPKgOiOEP38f
+	W6qXT6FxRq9TgxmoF4TjV58gd9xcnXwDz2VpVI5TY5i95afxabINBDGZJ3GbMWJWvkUcCJ485jWrr
+	C9MT08V4E9D36qqGDe6EZQRysIT4wax3BjbY0GBmlsgd4X+71NkxokxpkutUh0uJpWZxLy9agq9as
+	33M0GF8/1HFjjt2jWeVEE9vxhQrqMaI82JtCSIV2tyjFKsx7lewi5mzEUmFYvCLcU01v6EZP8H4ng
+	XpZbVNEtYZOMucocfGsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKNao-00034X-4S; Tue, 15 Oct 2019 14:14:30 +0000
-Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
+	id 1iKNba-0003Vv-MH; Tue, 15 Oct 2019 14:15:18 +0000
+Received: from imap1.codethink.co.uk ([176.9.8.82])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKNa1-0002ea-3X
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 14:13:43 +0000
-Received: by mail-vs1-xe41.google.com with SMTP id v19so13258249vsv.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 15 Oct 2019 07:13:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=b/eFKQ/v4cr/yPgp0izVLyHlXJnLa4HICmgwi01lXvc=;
- b=y1zTKzdTdmsrc43HicE1W4OcK2myObdXuvjFUiN6jPSz0v4CsQcuh/7ktoHHvscwUe
- WAwmr+69J8UQWkzDEau4wVhaYHdaO4IdBaGAc7OY4t7+8gjIaturNOu7H8P+woacKeaX
- Q2AZx29vX20cH0G+wE6lGHbjFqhEgd6TDQt5NFwoEMYBFVyy98pBTsVcCU/gKEmrlJdN
- kXucwpHKaYU3S/aY7SwELglpgMrbYVpYBXYvalu8VW/Qx9KsRMtEKMtH8+zawqcSiAaB
- Tm6cWyWtdfchVHsvvoCwiwb379LpR2fZ0vwCzFIUCU3Atp7GrKAl4d9J2wJ6rvb4hXrN
- eWsw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=b/eFKQ/v4cr/yPgp0izVLyHlXJnLa4HICmgwi01lXvc=;
- b=akDR87NFryaCehHf3UD1vlFkzdjMPJwJvFSEVcKCIjbRgFBUbrv2FljXwuzTrugRR5
- jU579qIP9FxxoA43TLDMqA4iPOX0oimLGkXn9hhnXqnNhdh4ZOPOP/yZ4fW4ZXVXG542
- RiKweswcX3MY3VpeuCA6FkGLw6edCq1hp+2JT46gzXKW4KlHyYPsa6KB1XEUYLuc26MR
- EiExcZnwKCI6pO+SgZN5m49v9Z7jmoeXcX8xxjqIT/TS1sU8dJUK/yetH2tCbREm0vrj
- wqFNaaaXshxCX2E2UpUfH4kV7ak0w+devdxKq0cPFbrqZGwxxdoNIKY2gtvfEOfHzg/9
- az4A==
-X-Gm-Message-State: APjAAAWXxibSUysSR3BOIdSf3u6y1Sf7Ck3r/lRbqcemCGPfnpfTDVAl
- s7Exb05ywjMgSnwpHvQ9ZxmCKGNbQDjcZzdlZ190UQ==
-X-Google-Smtp-Source: APXvYqxluszvLcVxMEdWdPelTTF58EOAxfZDkgM4jA/rH5H2Cc2i74AuIVwFlZIgVdMLDs2o7gG3CCQM2jc+SegK0h8=
-X-Received: by 2002:a05:6102:5e1:: with SMTP id
- w1mr4153604vsf.191.1571148818927; 
- Tue, 15 Oct 2019 07:13:38 -0700 (PDT)
+ id 1iKNbL-0003V9-Gy
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 14:15:05 +0000
+Received: from [167.98.27.226] (helo=rainbowdash.codethink.co.uk)
+ by imap1.codethink.co.uk with esmtpsa (Exim 4.84_2 #1 (Debian))
+ id 1iKNbD-0004US-5j; Tue, 15 Oct 2019 15:14:55 +0100
+Received: from ben by rainbowdash.codethink.co.uk with local (Exim 4.92.2)
+ (envelope-from <ben@rainbowdash.codethink.co.uk>)
+ id 1iKNbC-00041B-O8; Tue, 15 Oct 2019 15:14:54 +0100
+From: Ben Dooks <ben.dooks@codethink.co.uk>
+To: linux-kernel@lists.codethink.co.uk
+Subject: [PATCH] thermal: stm32: make stm_thermal_pm_ops static
+Date: Tue, 15 Oct 2019 15:14:54 +0100
+Message-Id: <20191015141454.15402-1-ben.dooks@codethink.co.uk>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-References: <20191010202802.1132272-1-arnd@arndb.de>
- <20191010203043.1241612-1-arnd@arndb.de>
- <20191010203043.1241612-11-arnd@arndb.de>
-In-Reply-To: <20191010203043.1241612-11-arnd@arndb.de>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Tue, 15 Oct 2019 16:13:02 +0200
-Message-ID: <CAPDyKFqkRApT-q4ssi1Hn2cmLY=0K7bKXdo-D42q+xACFcC9dQ@mail.gmail.com>
-Subject: Re: [PATCH 11/36] ARM: s5pv210: split from plat-samsung
-To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_071341_202424_1968A01B 
-X-CRM114-Status: GOOD (  19.79  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191015_071504_051203_79F67FBC 
+X-CRM114-Status: GOOD (  12.59  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [176.9.8.82 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,186 +59,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, Linus Walleij <linus.walleij@linaro.org>,
- Liam Girdwood <lgirdwood@gmail.com>, Thierry Reding <thierry.reding@gmail.com>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>, linux-spi@vger.kernel.org,
- linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
- =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>,
- linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
- linux-pwm@vger.kernel.org,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Sangbeom Kim <sbkim73@samsung.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Takashi Iwai <tiwai@suse.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Faiz Abbas <faiz_abbas@ti.com>, Olof Johansson <olof@lixom.net>
+Cc: Amit Kucheria <amit.kucheria@verdurent.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, linux-pm@vger.kernel.org,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
+ Ben Dooks <ben.dooks@codethink.co.uk>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, Zhang Rui <rui.zhang@intel.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 10 Oct 2019 at 22:38, Arnd Bergmann <arnd@arndb.de> wrote:
->
-> These can be build completely independently, so split
-> the two Kconfig symbols.
->
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> ---
->  arch/arm/Kconfig.debug        | 6 +++---
->  arch/arm/Makefile             | 1 -
->  arch/arm/plat-samsung/Kconfig | 2 +-
->  drivers/mmc/host/Kconfig      | 2 +-
->  drivers/pwm/Kconfig           | 2 +-
->  drivers/spi/Kconfig           | 2 +-
->  drivers/tty/serial/Kconfig    | 2 +-
->  sound/soc/samsung/Kconfig     | 2 +-
->  8 files changed, 9 insertions(+), 10 deletions(-)
+The stm_thermal_pm_ops struct is not exported to any
+other units, so make it static to avoid the following
+sparse warning:
 
-For the mmc parts:
+drivers/thermal/st/stm_thermal.c:599:1: warning: symbol 'stm_thermal_pm_ops' was not declared. Should it be static?
 
-Acked-by: Ulf Hansson <ulf.hansson@linaro.org>
+Signed-off-by: Ben Dooks <ben.dooks@codethink.co.uk>
+---
+Cc: Zhang Rui <rui.zhang@intel.com>
+Cc: Daniel Lezcano <daniel.lezcano@linaro.org>
+Cc: Amit Kucheria <amit.kucheria@verdurent.com>
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Cc: Alexandre Torgue <alexandre.torgue@st.com>
+Cc: linux-pm@vger.kernel.org
+Cc: linux-stm32@st-md-mailman.stormreply.com
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+---
+ drivers/thermal/st/stm_thermal.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Kind regards
-Uffe
+diff --git a/drivers/thermal/st/stm_thermal.c b/drivers/thermal/st/stm_thermal.c
+index cf9ddc52f30e..40bc13c68fba 100644
+--- a/drivers/thermal/st/stm_thermal.c
++++ b/drivers/thermal/st/stm_thermal.c
+@@ -596,7 +596,7 @@ static int stm_thermal_resume(struct device *dev)
+ }
+ #endif /* CONFIG_PM_SLEEP */
+ 
+-SIMPLE_DEV_PM_OPS(stm_thermal_pm_ops, stm_thermal_suspend, stm_thermal_resume);
++static SIMPLE_DEV_PM_OPS(stm_thermal_pm_ops, stm_thermal_suspend, stm_thermal_resume);
+ 
+ static const struct thermal_zone_of_device_ops stm_tz_ops = {
+ 	.get_temp	= stm_thermal_get_temp,
+-- 
+2.23.0
 
-
->
-> diff --git a/arch/arm/Kconfig.debug b/arch/arm/Kconfig.debug
-> index 9c4f2d6deb06..4c4e97ae4fcb 100644
-> --- a/arch/arm/Kconfig.debug
-> +++ b/arch/arm/Kconfig.debug
-> @@ -998,7 +998,7 @@ choice
->                   via SCIFA4 on Renesas SH-Mobile AG5 (SH73A0).
->
->         config DEBUG_S3C_UART0
-> -               depends on PLAT_SAMSUNG || ARCH_EXYNOS
-> +               depends on PLAT_SAMSUNG || ARCH_S5PV210 || ARCH_EXYNOS
->                 select DEBUG_EXYNOS_UART if ARCH_EXYNOS
->                 select DEBUG_S3C24XX_UART if ARCH_S3C24XX
->                 select DEBUG_S3C64XX_UART if ARCH_S3C64XX
-> @@ -1010,7 +1010,7 @@ choice
->                   by the boot-loader before use.
->
->         config DEBUG_S3C_UART1
-> -               depends on PLAT_SAMSUNG || ARCH_EXYNOS
-> +               depends on PLAT_SAMSUNG || ARCH_S5PV210 || ARCH_EXYNOS
->                 select DEBUG_EXYNOS_UART if ARCH_EXYNOS
->                 select DEBUG_S3C24XX_UART if ARCH_S3C24XX
->                 select DEBUG_S3C64XX_UART if ARCH_S3C64XX
-> @@ -1022,7 +1022,7 @@ choice
->                   by the boot-loader before use.
->
->         config DEBUG_S3C_UART2
-> -               depends on PLAT_SAMSUNG || ARCH_EXYNOS
-> +               depends on PLAT_SAMSUNG || ARCH_S5PV210 || ARCH_EXYNOS
->                 select DEBUG_EXYNOS_UART if ARCH_EXYNOS
->                 select DEBUG_S3C24XX_UART if ARCH_S3C24XX
->                 select DEBUG_S3C64XX_UART if ARCH_S3C64XX
-> diff --git a/arch/arm/Makefile b/arch/arm/Makefile
-> index f492d7c338fe..a1bc15cda751 100644
-> --- a/arch/arm/Makefile
-> +++ b/arch/arm/Makefile
-> @@ -235,7 +235,6 @@ machine-$(CONFIG_PLAT_SPEAR)                += spear
->  # by CONFIG_* macro name.
->  plat-$(CONFIG_ARCH_OMAP)       += omap
->  plat-$(CONFIG_ARCH_S3C64XX)    += samsung
-> -plat-$(CONFIG_ARCH_S5PV210)    += samsung
->  plat-$(CONFIG_PLAT_ORION)      += orion
->  plat-$(CONFIG_PLAT_PXA)                += pxa
->  plat-$(CONFIG_PLAT_S3C24XX)    += samsung
-> diff --git a/arch/arm/plat-samsung/Kconfig b/arch/arm/plat-samsung/Kconfig
-> index 740bdb23f38a..1530946cc672 100644
-> --- a/arch/arm/plat-samsung/Kconfig
-> +++ b/arch/arm/plat-samsung/Kconfig
-> @@ -4,7 +4,7 @@
->
->  config PLAT_SAMSUNG
->         bool
-> -       depends on PLAT_S3C24XX || ARCH_S3C64XX || ARCH_S5PV210
-> +       depends on PLAT_S3C24XX || ARCH_S3C64XX
->         default y
->         select GENERIC_IRQ_CHIP
->         select NO_IOPORT_MAP
-> diff --git a/drivers/mmc/host/Kconfig b/drivers/mmc/host/Kconfig
-> index 400a581c918c..16a0e5430b44 100644
-> --- a/drivers/mmc/host/Kconfig
-> +++ b/drivers/mmc/host/Kconfig
-> @@ -275,7 +275,7 @@ config MMC_SDHCI_TEGRA
->
->  config MMC_SDHCI_S3C
->         tristate "SDHCI support on Samsung S3C SoC"
-> -       depends on MMC_SDHCI && (PLAT_SAMSUNG || ARCH_EXYNOS)
-> +       depends on MMC_SDHCI && (PLAT_SAMSUNG || ARCH_S5PV210 || ARCH_EXYNOS)
->         help
->           This selects the Secure Digital Host Controller Interface (SDHCI)
->           often referrered to as the HSMMC block in some of the Samsung S3C
-> diff --git a/drivers/pwm/Kconfig b/drivers/pwm/Kconfig
-> index e3a2518503ed..8eb738cac0c7 100644
-> --- a/drivers/pwm/Kconfig
-> +++ b/drivers/pwm/Kconfig
-> @@ -394,7 +394,7 @@ config PWM_ROCKCHIP
->
->  config PWM_SAMSUNG
->         tristate "Samsung PWM support"
-> -       depends on PLAT_SAMSUNG || ARCH_EXYNOS
-> +       depends on PLAT_SAMSUNG || ARCH_S5PV210 || ARCH_EXYNOS
->         help
->           Generic PWM framework driver for Samsung.
->
-> diff --git a/drivers/spi/Kconfig b/drivers/spi/Kconfig
-> index 6f7fdcbb9151..355391ee643d 100644
-> --- a/drivers/spi/Kconfig
-> +++ b/drivers/spi/Kconfig
-> @@ -625,7 +625,7 @@ config SPI_S3C24XX_FIQ
->
->  config SPI_S3C64XX
->         tristate "Samsung S3C64XX series type SPI"
-> -       depends on (PLAT_SAMSUNG || ARCH_EXYNOS || COMPILE_TEST)
-> +       depends on (PLAT_SAMSUNG || ARCH_S5PV210 || ARCH_EXYNOS || COMPILE_TEST)
->         help
->           SPI driver for Samsung S3C64XX and newer SoCs.
->
-> diff --git a/drivers/tty/serial/Kconfig b/drivers/tty/serial/Kconfig
-> index 4789b5d62f63..17f01cf3009c 100644
-> --- a/drivers/tty/serial/Kconfig
-> +++ b/drivers/tty/serial/Kconfig
-> @@ -237,7 +237,7 @@ config SERIAL_CLPS711X_CONSOLE
->
->  config SERIAL_SAMSUNG
->         tristate "Samsung SoC serial support"
-> -       depends on PLAT_SAMSUNG || ARCH_EXYNOS
-> +       depends on PLAT_SAMSUNG || ARCH_S5PV210 || ARCH_EXYNOS
->         select SERIAL_CORE
->         help
->           Support for the on-chip UARTs on the Samsung S3C24XX series CPUs,
-> diff --git a/sound/soc/samsung/Kconfig b/sound/soc/samsung/Kconfig
-> index 638983123d8f..7a0035dd9995 100644
-> --- a/sound/soc/samsung/Kconfig
-> +++ b/sound/soc/samsung/Kconfig
-> @@ -1,7 +1,7 @@
->  # SPDX-License-Identifier: GPL-2.0-only
->  menuconfig SND_SOC_SAMSUNG
->         tristate "ASoC support for Samsung"
-> -       depends on PLAT_SAMSUNG || ARCH_EXYNOS || COMPILE_TEST
-> +       depends on PLAT_SAMSUNG || ARCH_S5PV210 || ARCH_EXYNOS || COMPILE_TEST
->         depends on COMMON_CLK
->         select SND_SOC_GENERIC_DMAENGINE_PCM
->         ---help---
-> --
-> 2.20.0
->
->
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
