@@ -2,47 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 02D49D7C31
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 18:43:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7C96D7C46
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 18:49:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IEyVvJsScGe1/j64Qi/CpxPinsarFso1U6XWzoWhBWs=; b=Y7M0iVUy5z87pX
-	eMDRWvGhWbFvupH4kXbbI9j3UP2S16Bn9dUwPjtV5we59DTqKjI7RBi9/5m5OyNyN02glzN8TY3Tt
-	U3TDAydaVKOuUK47FMBEZoljGHgkFTAed2SGQaYYAIBAIp3mRfQqEoQxbOWdNW8emqdtw6sy6BKy0
-	untqunlQzthty/JxtJIX/PQxpjPr3cHp1s20XpOccTzzOQJ4qG8UoIny9tmHSi9djLEyXXDt6/MCw
-	jmJMcPRljeA17hBZvjiYgVDlx7AzINLgmkLzQ3ja3FiekCtfV+FJbytN1uZO506ZvcwDrtd8Uu3wI
-	Uwa1jxXj6UHi+3rHcbnw==;
+	List-Owner; bh=rbJMKu9r7nuPZcyv18+iAkrWT5ogQ+D1e8QE1IPtkYQ=; b=LIzqzJBosuiwVH
+	w7fj0h1uC8F8B2L8t5LnKf5wV8VjvjVM+sqdN8Lm3f66gsDraaMikoYh4BL2tVh+doWeJtyxkueFa
+	ID+yzgeOiMJTz6dGQPs25K/zd4cNQL3itqdDo4bCS9IiXE31LrwPN0gvCKxIhZ/b19TPKNLO5VUT7
+	BHzWn/IqevUPB17agu4jdK44CZst45eeAAZN2CNtLENO8CzyLVaorwAsY/Bl2aTZGqlM7nMJ38kCn
+	0s0Fx3Dte7BcqbLhOq11w7nQ58Qx4lNRfBX5CnyAL6AEhTOqbj3Nc3IQIdtLNz/L3+XAFzd4wjVK5
+	xghYRGlXzdMQhKA8utUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKPul-0005C5-R0; Tue, 15 Oct 2019 16:43:15 +0000
+	id 1iKQ0e-0008Ma-SO; Tue, 15 Oct 2019 16:49:20 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKPud-0005AU-Gt
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 16:43:08 +0000
+ id 1iKQ0U-0008Lo-TQ
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 16:49:12 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 09AD6337;
- Tue, 15 Oct 2019 09:43:07 -0700 (PDT)
-Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E03A23F68E;
- Tue, 15 Oct 2019 09:43:05 -0700 (PDT)
-Date: Tue, 15 Oct 2019 17:43:03 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Abhishek Shah <abhishek.shah@broadcom.com>
-Subject: Re: [PATCH 1/1] PCI: iproc: Invalidate PAXB address mapping before
- programming it
-Message-ID: <20191015164303.GC25674@e121166-lin.cambridge.arm.com>
-References: <20190906035813.24046-1-abhishek.shah@broadcom.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1ED34337;
+ Tue, 15 Oct 2019 09:49:10 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 38C063F68E;
+ Tue, 15 Oct 2019 09:49:07 -0700 (PDT)
+Date: Tue, 15 Oct 2019 17:49:05 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH v2 09/12] arm64: traps: Fix inconsistent faulting
+ instruction skipping
+Message-ID: <20191015164904.GY27757@arm.com>
+References: <1570733080-21015-1-git-send-email-Dave.Martin@arm.com>
+ <1570733080-21015-10-git-send-email-Dave.Martin@arm.com>
+ <20191011152453.GF33537@lakrids.cambridge.arm.com>
+ <20191015152108.GX27757@arm.com>
+ <20191015164204.GC24604@lakrids.cambridge.arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190906035813.24046-1-abhishek.shah@broadcom.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20191015164204.GC24604@lakrids.cambridge.arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_094307_601571_F452EB1D 
-X-CRM114-Status: GOOD (  20.29  )
+X-CRM114-CacheID: sfid-20191015_094911_037332_158CE7EE 
+X-CRM114-Status: GOOD (  29.63  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,93 +65,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
- linux-kernel@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- linux-pci@vger.kernel.org, Bjorn Helgaas <bhelgaas@google.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Yu-cheng Yu <yu-cheng.yu@intel.com>, Amit Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, linux-arch@vger.kernel.org,
+ Eugene Syromiatnikov <esyr@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ "H.J. Lu" <hjl.tools@gmail.com>, Andrew Jones <drjones@redhat.com>,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, Richard Henderson <richard.henderson@linaro.org>,
+ Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
+ Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Florian Weimer <fweimer@redhat.com>,
+ linux-kernel@vger.kernel.org, Sudakshina Das <sudi.das@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 06, 2019 at 09:28:13AM +0530, Abhishek Shah wrote:
-> Invalidate PAXB inbound/outbound address mapping each time before
-> programming it. This is helpful for the cases where we need to
-> reprogram inbound/outbound address mapping without resetting PAXB.
-> kexec kernel is one such example.
-
-This looks like a hack, explain to us please what it actually solves and
-why a full reset is not necessary.
-
-> Signed-off-by: Abhishek Shah <abhishek.shah@broadcom.com>
-> Reviewed-by: Ray Jui <ray.jui@broadcom.com>
-> Reviewed-by: Vikram Mysore Prakash <vikram.prakash@broadcom.com>
-
-Patches are reviewed on public mailing lists, remove tags given
-on internal reviews - they are not relevant.
-
-> ---
->  drivers/pci/controller/pcie-iproc.c | 28 ++++++++++++++++++++++++++++
->  1 file changed, 28 insertions(+)
+On Tue, Oct 15, 2019 at 05:42:04PM +0100, Mark Rutland wrote:
+> On Tue, Oct 15, 2019 at 04:21:09PM +0100, Dave Martin wrote:
+> > On Fri, Oct 11, 2019 at 04:24:53PM +0100, Mark Rutland wrote:
+> > > On Thu, Oct 10, 2019 at 07:44:37PM +0100, Dave Martin wrote:
+> > > > Correct skipping of an instruction on AArch32 works a bit
+> > > > differently from AArch64, mainly due to the different CPSR/PSTATE
+> > > > semantics.
+> > > > 
+> > > > There have been various attempts to get this right.  Currenty
+> > > > arm64_skip_faulting_instruction() mostly does the right thing, but
+> > > > does not advance the IT state machine for the AArch32 case.
+> > > > 
+> > > > arm64_compat_skip_faulting_instruction() handles the IT state
+> > > > machine but is local to traps.c, and porting other code to use it
+> > > > will make a mess since there are some call sites that apply for
+> > > > both the compat and native cases.
+> > > > 
+> > > > Since manual instruction skipping implies a trap, it's a relatively
+> > > > slow path.
+> > > > 
+> > > > So, make arm64_skip_faulting_instruction() handle both compat and
+> > > > native, and get rid of the arm64_compat_skip_faulting_instruction()
+> > > > special case.
+> > > > 
+> > > > Fixes: 32a3e635fb0e ("arm64: compat: Add CNTFRQ trap handler")
+> > > > Fixes: 1f1c014035a8 ("arm64: compat: Add condition code checks and IT advance")
+> > > > Fixes: 6436beeee572 ("arm64: Fix single stepping in kernel traps")
+> > > > Fixes: bd35a4adc413 ("arm64: Port SWP/SWPB emulation support from arm")
+> > > > Signed-off-by: Dave Martin <Dave.Martin@arm.com>
+> > > > ---
+> > > >  arch/arm64/kernel/traps.c | 18 ++++++++----------
+> > > >  1 file changed, 8 insertions(+), 10 deletions(-)
+> > > 
+> > > This looks good to me; it's certainly easier to reason about.
+> > > 
+> > > I couldn't spot a place where we do the wrong thing today, given AFAICT
+> > > all the instances in arch/arm64/kernel/armv8_deprecated.c would be
+> > > UNPREDICTABLE within an IT block.
+> > > 
+> > > It might be worth calling out an example in the commit message to
+> > > justify the fixes tags.
+> > 
+> > IIRC I found no bug here; rather we have pointlessly fragmented code,
+> > so I followed the "if fixing the same bug in multiple places, merge
+> > those places so you need only fix it in one place next time" rule.
 > 
-> diff --git a/drivers/pci/controller/pcie-iproc.c b/drivers/pci/controller/pcie-iproc.c
-> index e3ca46497470..99a9521ba7ab 100644
-> --- a/drivers/pci/controller/pcie-iproc.c
-> +++ b/drivers/pci/controller/pcie-iproc.c
-> @@ -1245,6 +1245,32 @@ static int iproc_pcie_map_dma_ranges(struct iproc_pcie *pcie)
->  	return ret;
->  }
->  
-> +static void iproc_pcie_invalidate_mapping(struct iproc_pcie *pcie)
-> +{
-> +	struct iproc_pcie_ib *ib = &pcie->ib;
-> +	struct iproc_pcie_ob *ob = &pcie->ob;
-> +	int idx;
-> +
-> +	if (pcie->ep_is_internal)
-
-What's this check for and why leaving mappings in place is safe for
-this category of IPs ?
-
-> +		return;
-> +
-> +	if (pcie->need_ob_cfg) {
-> +		/* iterate through all OARR mapping regions */
-> +		for (idx = ob->nr_windows - 1; idx >= 0; idx--) {
-> +			iproc_pcie_write_reg(pcie,
-> +					     MAP_REG(IPROC_PCIE_OARR0, idx), 0);
-> +		}
-> +	}
-> +
-> +	if (pcie->need_ib_cfg) {
-> +		/* iterate through all IARR mapping regions */
-> +		for (idx = 0; idx < ib->nr_regions; idx++) {
-> +			iproc_pcie_write_reg(pcie,
-> +					     MAP_REG(IPROC_PCIE_IARR0, idx), 0);
-> +		}
-> +	}
-> +}
-> +
->  static int iproce_pcie_get_msi(struct iproc_pcie *pcie,
->  			       struct device_node *msi_node,
->  			       u64 *msi_addr)
-> @@ -1517,6 +1543,8 @@ int iproc_pcie_setup(struct iproc_pcie *pcie, struct list_head *res)
->  	iproc_pcie_perst_ctrl(pcie, true);
->  	iproc_pcie_perst_ctrl(pcie, false);
->  
-> +	iproc_pcie_invalidate_mapping(pcie);
-
-It makes more sense to call this in the .shutdown() method if I
-understand what it does.
-
-Lorenzo
-
->  	if (pcie->need_ob_cfg) {
->  		ret = iproc_pcie_map_ranges(pcie, res);
->  		if (ret) {
-> -- 
-> 2.17.1
+> Sure thing, that makes sense to me.
 > 
+> > Since arm64_skip_faulting_instruction() is most of the way to being
+> > generically usable anyway, this series merges all the special-case
+> > handling into it.
+> > 
+> > I could add something like
+> > 
+> > --8<--
+> > 
+> > This allows this fiddly operation to be maintained in a single
+> > place rather than trying to maintain fragmented versions spread
+> > around arch/arm64.
+> > 
+> > -->8--
+> > 
+> > Any good?
+> 
+> My big concern is that the commit message reads as a fix, implying that
+> there's an existing correctness bug. I think that simplifying it to make
+> it clearer that it's a cleanup/improvement would be preferable.
+> 
+> How about:
+> 
+> | arm64: unify native/compat instruction skipping
+> |
+> | Skipping of an instruction on AArch32 works a bit differently from
+> | AArch64, mainly due to the different CPSR/PSTATE semantics.
+> |
+> | Currently arm64_skip_faulting_instruction() is only suitable for
+> | AArch64, and arm64_compat_skip_faulting_instruction() handles the IT
+> | state machine but is local to traps.c.
+> | 
+> | Since manual instruction skipping implies a trap, it's a relatively
+> | slow path.
+> | 
+> | So, make arm64_skip_faulting_instruction() handle both compat and
+> | native, and get rid of the arm64_compat_skip_faulting_instruction()
+> | special case.
+> |
+> | Signed-off-by: Dave Martin <Dave.Martin@arm.com>
+
+And drop the Fixes tags.  Yes, I think that's reasonable.
+
+I think I was probably glossing over the fact that we don't need to get
+the ITSTATE machine advance correct for the compat insn emulation; as
+you say, I can't see what else this patch "fixes".
+
+> With that, feel free to add:
+>
+> Reviewed-by: Mark Rutland <mark.rutland@arm.com>
+
+Thanks!
+
+> We could even point out that the armv8_deprecated cases are
+> UNPREDICTABLE in an IT block, and correctly emulated either way.
+
+Yes, I'll add something along those lines.
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
