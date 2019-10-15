@@ -2,63 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 25F1FD8181
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 23:12:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CDB1D8217
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 15 Oct 2019 23:22:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U9opahYerZYGEtZuPkwPzXPxemZfZb1g4or45i63MQM=; b=F2BcEFm7j6PMi1
-	hYxc0qEIC3i7FAVQLDd7jDMegZ+aAUVXi5ihkmA+/FvIuc/lDrV6+PZDDbV9b4oMhnpfCdC/hul/4
-	FkKSr2GmRiYs+8KEbTUntddUBo53odYtDZciodaZG9CwKFAqtKNNvTUZqSTeHUNJj7JtxqtKJbCGJ
-	+p1WkX5gM80Bm//5rLZ0PINNBKmygRvp2XNDcMVvyT3j1wC3mSEAPYzbvazjwr1/5PZnrnr0nuWU5
-	19tpguqW3e7yjgvay0+uX1cDgMax3K3c78P2YnwzAjzsd16VPH3NbNabGEaXy+AJiO0EtxHBel6WL
-	BVHPq92brkV7YSsH0oEQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=GvsXxEMqQCo7c04lawMu20HSWgFVXpw7YtWp7mWBT5k=; b=tw2
+	2dJT6fyERCnh3D0GZh12oXKnvRaRr6yN5QO3g8WOWpn5zRnMjzCAIzsRYufjrc1tk8CLdc/i3Laz0
+	DfMc9rGaLQ9WTsMskNiv48AWrC0BxgqiQasrSVVTpXA1uUzkoZ7qalfbH4Z03UFblMPV+LbrUrKg2
+	yMMnDs3LnYiWO0dE89m0tqxGFq0pUL35AStjlIrfhKaLcreo9IHJqr/fOkk7V4PC41u8/ipttB34J
+	d0Cs2d40ZVoERovxGCXrjCGxWwR0vs9rGotO/EZAeAMgBOgdUjTiL/bnwWMt1tdZL7y/zpQf16frG
+	8nmL7CET5mdEkLZGivGgQg7BXrIfMcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKU6x-0008Gg-NK; Tue, 15 Oct 2019 21:12:07 +0000
-Received: from www381.your-server.de ([78.46.137.84])
+	id 1iKUH1-0004Eq-Sl; Tue, 15 Oct 2019 21:22:31 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKU6q-0008Fx-Dw
- for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 21:12:02 +0000
-Received: from sslproxy01.your-server.de ([88.198.220.130])
- by www381.your-server.de with esmtpsa (TLSv1.2:DHE-RSA-AES256-GCM-SHA384:256)
- (Exim 4.89_1) (envelope-from <lars@metafoo.de>)
- id 1iKU6b-0007VH-CM; Tue, 15 Oct 2019 23:11:45 +0200
-Received: from [93.104.114.34] (helo=[192.168.178.20])
- by sslproxy01.your-server.de with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.89)
- (envelope-from <lars@metafoo.de>)
- id 1iKU6a-0002ns-Tt; Tue, 15 Oct 2019 23:11:45 +0200
-Subject: Re: [PATCH][RFC] iio: core: add a class hierarchy on iio device lock
-To: Olivier MOYSAN <olivier.moysan@st.com>, Jonathan Cameron <jic23@kernel.org>
-References: <20191011151314.5365-1-olivier.moysan@st.com>
- <20191012095747.3acd95e6@archlinux>
- <db362ddf-390e-0847-1269-f3cd0c757d2a@st.com>
-From: Lars-Peter Clausen <lars@metafoo.de>
-Message-ID: <9ddc41c4-3d84-cc94-5494-a5ef06697ce8@metafoo.de>
-Date: Tue, 15 Oct 2019 23:11:43 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <db362ddf-390e-0847-1269-f3cd0c757d2a@st.com>
-Content-Language: en-US
-X-Authenticated-Sender: lars@metafoo.de
-X-Virus-Scanned: Clear (ClamAV 0.101.4/25603/Tue Oct 15 10:57:00 2019)
+ id 1iKUFT-00030W-9U
+ for linux-arm-kernel@lists.infradead.org; Tue, 15 Oct 2019 21:20:58 +0000
+Received: by mail-wr1-x442.google.com with SMTP id v8so25554720wrt.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 15 Oct 2019 14:20:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=gQc1r1ib/WAI/h8loP6CN8X5jrpz3S38qvA1z7LgOPY=;
+ b=bbmlUFcW3Hlhbp/CMbhjjOr4SasG3lOEMH8bDrHAR9UUlKDgHAvfGJSv8+mRGUKMBk
+ 1lIcgmdXlK4U5TjVYJEuT9HjsOC7L0qgXMtuI0d4B5U1HvVKvhIHk5WuxdonpurZQUXW
+ vS5fGv+VFj6hHpqShaW5Is33c7bthlwr6rVYZdhvB0emV5TySylAD5Wywog46vMxf2gd
+ FEjF28f6P7EW/RtLPB7hYYwkSzyYdPAz+w45thbCQLCQ8RGXqvh6HhwcpJ0sdBt9b+cK
+ IbzM609UKMyNjo6ZFc5u8ztqv/Pb1A/7IzWdtX2YFPMcwYz2lJZIo3kbDCLNdokDQUse
+ 5IaQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=gQc1r1ib/WAI/h8loP6CN8X5jrpz3S38qvA1z7LgOPY=;
+ b=gE2JkyaZeBQqoL3KrGg1RMJL1A9mHP/3fmyTysEE5FgezV8/pWi2lCa9qy1JazPaqn
+ I289qo/9JYCsICoPjGQ14lpFM8wYDM14iMeSqnZrm8lfm3eAZAzo96ojQb0Ir4pvsP/I
+ 4izRrsF1TvxlLqFTcvmG9V8Hqz20NNr1LHxdXAX0A5Mv3JgdJeVQLEmMzCIEZ5tQh1NQ
+ SW7wC1Ksn7zr98EfGC/uoyMwLjzr/g5r3snwDGvSA3PNoi5VgARTl2y3GOH9il/aWPoU
+ CjL0vLXpVGjnH4yytGb3GlMA5UWnmzEbKZeiSTSH6pnIfyP+yVW8F5wgcsB5QnkiyLTz
+ xUlA==
+X-Gm-Message-State: APjAAAUsWLkDdforNIFlAuG+jVKquLYjn25FUO/W7Mr0/lDnOiX9476v
+ P40yXvD1kmBAdBeNDX5mfTfMdg==
+X-Google-Smtp-Source: APXvYqweUupN2R/PZTaLYqLXTlbWF/L6LtoymPyIcmk/AGFkqrkRyH8nw4C3r0u1Mi+6Gg/deRZYHw==
+X-Received: by 2002:adf:fa86:: with SMTP id h6mr32118497wrr.186.1571174450393; 
+ Tue, 15 Oct 2019 14:20:50 -0700 (PDT)
+Received: from linaro.org ([2a00:23c5:6815:3901:39d2:21a2:678a:9501])
+ by smtp.gmail.com with ESMTPSA id g185sm517649wme.10.2019.10.15.14.20.49
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 15 Oct 2019 14:20:49 -0700 (PDT)
+From: Mike Leach <mike.leach@linaro.org>
+To: mike.leach@linaro.org, coresight@lists.linaro.org,
+ linux-arm-kernel@lists.infradead.org, linux-doc@vger.kernel.org
+Subject: [PATCH v3 00/11] coresight: etm4x: Fixes and updates for sysfs API
+Date: Tue, 15 Oct 2019 22:19:53 +0100
+Message-Id: <20191015212004.24748-1-mike.leach@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_141200_471847_CA2F6A41 
-X-CRM114-Status: GOOD (  24.99  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191015_142055_330485_950165D0 
+X-CRM114-Status: UNSURE (   8.89  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [78.46.137.84 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,106 +93,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre TORGUE <alexandre.torgue@st.com>,
- "linux-iio@vger.kernel.org" <linux-iio@vger.kernel.org>,
- "pmeerw@pmeerw.net" <pmeerw@pmeerw.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- "knaack.h@gmx.de" <knaack.h@gmx.de>, Fabrice GASNIER <fabrice.gasnier@st.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Benjamin GAIGNARD <benjamin.gaignard@st.com>
+Cc: gregkh@linuxfoundation.org, suzuki.poulose@arm.com,
+ mathieu.poirier@linaro.org, corbet@lwn.net
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/14/19 5:59 PM, Olivier MOYSAN wrote:
-> Hello Jonathan,
-> 
-> Thanks for your comment.
-> 
-> On 10/12/19 10:57 AM, Jonathan Cameron wrote:
->> On Fri, 11 Oct 2019 17:13:14 +0200
->> Olivier Moysan <olivier.moysan@st.com> wrote:
->>
->>> The aim of this patch is to correct a recursive locking warning,
->>> detected when setting CONFIG_PROVE_LOCKING flag (as shown in message below).
->>> This message was initially triggered by the following call sequence
->>> in stm32-dfsdm-adc.c driver, when using IIO hardware consumer interface.
->>>
->>> in stm32_dfsdm_read_raw()
->>> 	iio_device_claim_direct_mode
->>> 		mutex_lock(&indio_dev->mlock);			-> lock on dfsdm device
->>> 	iio_hw_consumer_enable
->>> 		iio_update_buffers
->>> 			mutex_lock(&indio_dev->mlock);		-> lock on hw consumer device
->> Hmm.  I'm not sure I follow the logic.  That lock is
->> for one thing and one thing only, preventing access
->> to the iio device that are unsafe when it is running
->> in a buffered mode.  We shouldn't be in a position where
->> we both say don't do this if we are in buffered mode, + enter
->> buffered mode whilst doing this, or we need special functions
->> for entering buffering mode if in this state.  We are in
->> some sense combining internal driver logic with overall
->> IIO states.  IIO shouldn't care that the device is using
->> the same methods under the hood for buffered and non
->> buffered operations.
->>
->> I can't really recall how this driver works.   Is it actually
->> possible to have multiple hw_consumers at the same time?
->>
->> So do we end up with multiple buffers registered and have
->> to demux out to the read_raw + the actual buffered path?
->> Given we have a bit of code saying grab one sample, I'm
->> going to guess we don't...
->>
->> If so, the vast majority of the buffer setup code in IIO
->> is irrelevant here and we just need to call a few of
->> the callbacks from this driver directly... (I think
->> though I haven't chased through every corner.
->>
->> I'd rather avoid introducing this nesting for a corner
->> case that makes no 'semantic' sense in IIO as it leaves us
->> in two separate states at the same time that the driver
->> is trying to make mutually exclusive.  We can't both
->> not be in buffered mode, and in buffered mode.
->>
->> Thanks and good luck with this nasty corner!
->>
->> Jonathan
->>
-> Here I consider the following use case:
-> A single conversion is performed. The dfsdm (filter) is chained with a 
-> front-end, which can be an ADC or a sensor. So we have two IIO devices, 
-> the dfsdm and its front-end handled through the hw consumer interface.
-> 
-> You are right. There is something wrong here, in buffered/non-buffered 
-> mode mixing.
-> iio_hw_consumer_enable() call is used to enable the front-end device. 
-> But this interface is intended for buffered mode.
-> So this is not coherent with the expected single conversion mode, 
-> indeed. Another interface is required to manage the front-end device. I 
-> have a poor knowledge of iio framework, but it seems to me that there is 
-> no interface to manage this.
-> 
-> My understanding regarding mlock, is that it is used to protect the 
-> state of the iio device.
-> I we want to do a conversion from the chained devices, I think we need 
-> to activate the first device
-> and keep it performing conversion, as long as the second device has done 
-> its conversion.
-> We need to protect both devices, and we should have to do it in a nested 
-> way.
-> So, I guess that anyway, nested mutexes would be required in this case.
->
+Review of ETMV4 sysfs code resulted in a number of minor issues being
+discovered.
 
-Others like regmap have solved this by having a lockclass per instance.
-Although that is not ideal either since it will slow down lockdep.
+Patch set fixes these issues:-
+1) Update for ETM v4.4 archtecture.
+2) Add missing single shot comparator API.
+3) Misc fixes and improvements to sysfs API
+4) Updated programmers documentation and reference.
 
-See
-https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/include/linux/regmap.h#n629
+Changes since v2 (reviews from Mathieu and Leo):-
+  Patch 0002 now adds stable tag. Tested on 4.9, 4.14, 4.19
+  Applies to coresight/next (5.4-rc1)
+  Documentation changed to .rst format to match recent updates that
+  converted other CoreSight .txt files.
+  Misc typo / comment changes.
+
+Changes since v1 (from reviews by Mathieu and Leo):-
+  Usability patch split into 2 separate functional patches.
+  Docs patch split into 3 patches.
+  Misc style and comment typo fixes.
+
+Mike Leach (11):
+  coresight: etm4x: Fixes for ETM v4.4 architecture updates.
+  coresight: etm4x: Fix input validation for sysfs.
+  coresight: etm4x: Add missing API to set EL match on address filters
+  coresight: etm4x: Fix issues with start-stop logic.
+  coresight: etm4x: Improve usability of sysfs - include/exclude addr.
+  coresight: etm4x: Improve usability of sysfs - CID and VMID masks.
+  coresight: etm4x: Add view comparator settings API to sysfs.
+  coresight: etm4x: Add missing single-shot control API to sysfs
+  coresight: etm4x: docs: Update ABI doc for sysfs features added.
+  coresight: docs: Create common sub-directory for coresight trace.
+  coresight: etm4x: docs: Adds detailed document for programming etm4x.
+
+ .../testing/sysfs-bus-coresight-devices-etm4x | 183 ++--
+ .../{ => coresight}/coresight-cpu-debug.rst   |   0
+ .../coresight/coresight-etm4x-reference.rst   | 798 ++++++++++++++++++
+ .../trace/{ => coresight}/coresight.rst       |   2 +-
+ Documentation/trace/{ => coresight}/stm.rst   |   0
+ MAINTAINERS                                   |   3 +-
+ .../coresight/coresight-etm4x-sysfs.c         | 312 ++++++-
+ drivers/hwtracing/coresight/coresight-etm4x.c |  32 +-
+ drivers/hwtracing/coresight/coresight-etm4x.h |  17 +-
+ 9 files changed, 1245 insertions(+), 102 deletions(-)
+ rename Documentation/trace/{ => coresight}/coresight-cpu-debug.rst (100%)
+ create mode 100644 Documentation/trace/coresight/coresight-etm4x-reference.rst
+ rename Documentation/trace/{ => coresight}/coresight.rst (99%)
+ rename Documentation/trace/{ => coresight}/stm.rst (100%)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
