@@ -2,64 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2AF2AD8E9C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 12:51:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46BCDD8EA1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 12:51:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c8Uyqyddpkt9xb12OGe5IEKigxFYxh0yrY7GqCuNG1E=; b=M894HR7mje+pse
-	9N/scTGK6ZD+QN/GbEzHbSc8/IAioECaW0Ba3EUiVILNWP9gdVmlYfvgQwjG0JiAc1QuqDDZ5sxx+
-	M7OrJJ+wZjV+3y/NEd2gBiF03xPiOR5JZopJFa2BmRxYGePKyHXSDBF9vP+HYhu8nIGfDyzxzHOJ6
-	f2VQ9LrKlOmp1oWtDAjPqB9ajFtW8QdB0S4nJswo9dbHaP8rSPLzhhwNc6a+kAxJQJUEGo7coLa86
-	WkYSyOFUrUwr5Yav4KwyFgtJm8ugEv13afIuX0PghRi7RXIRp2AdJcRkybMbakKf2OeNMeLNmIDaF
-	fzgWkmKFow8cdZjwBTVA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=X7OOugNf6ZkO97Cr1xmh7p1Gou1nEOcXYGi8O2bZJYQ=; b=oWggQ6FrRVEhMq
+	YDRtEMr04wZA1biPk6Ay4rY9FVwKofGziwkRwf16ckbEr/tA6xs06ryHiOyAfohevjFK0gyH1LgnF
+	DnlEmtV2yA2Sbd+vzzsBucd+MwHQHWBdAGXjijNn6sPhvmQQyEKAQlGZMEdPsdjDs4trwsuXIFBY6
+	nTAafAb1NxWTuks280PAdneDKL7ZmhXAvbVtxAzO23s80+fDZWVuPedijeXFir0/bzxudTMFiZIrM
+	k+pVz2y+szJ5meq/9y4qiC+yJu/64W9jbv4FxIr9Z/8PwRCLL7mnqH66I4d/RwWBg2Jqgk1amA3Z1
+	gnv67bEf6CgDBM9HX57w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKgtp-0006Rd-1S; Wed, 16 Oct 2019 10:51:25 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1iKguB-0006lU-El; Wed, 16 Oct 2019 10:51:47 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKgpk-0001gx-IU; Wed, 16 Oct 2019 10:47:14 +0000
-Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 9F395AB5777B958083A6;
- Wed, 16 Oct 2019 18:47:10 +0800 (CST)
-Received: from localhost (10.133.213.239) by DGGEMS410-HUB.china.huawei.com
- (10.3.19.210) with Microsoft SMTP Server id 14.3.439.0; Wed, 16 Oct 2019
- 18:47:04 +0800
-From: YueHaibing <yuehaibing@huawei.com>
-To: <herbert@gondor.apana.org.au>, <mpm@selenic.com>, <arnd@arndb.de>,
- <gregkh@linuxfoundation.org>, <nicolas.ferre@microchip.com>,
- <alexandre.belloni@bootlin.com>, <ludovic.desroches@microchip.com>,
- <f.fainelli@gmail.com>, <rjui@broadcom.com>, <sbranden@broadcom.com>,
- <bcm-kernel-feedback-list@broadcom.com>, <eric@anholt.net>,
- <wahrenst@gmx.net>, <l.stelmach@samsung.com>, <kgene@kernel.org>,
- <krzk@kernel.org>, <khilman@baylibre.com>, <dsaxena@plexity.net>,
- <patrice.chotard@st.com>
-Subject: [PATCH -next 13/13] hwrng: xgene - use
- devm_platform_ioremap_resource() to simplify code
-Date: Wed, 16 Oct 2019 18:46:21 +0800
-Message-ID: <20191016104621.26056-14-yuehaibing@huawei.com>
-X-Mailer: git-send-email 2.10.2.windows.1
-In-Reply-To: <20191016104621.26056-1-yuehaibing@huawei.com>
-References: <20191016104621.26056-1-yuehaibing@huawei.com>
+ id 1iKgqg-0002WL-Rj
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 10:48:12 +0000
+Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E2B082067D;
+ Wed, 16 Oct 2019 10:48:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571222890;
+ bh=07rVU4c3g4na3tble0oZH4I39t8BhRk9LVlpWAumvJk=;
+ h=From:To:Cc:Subject:Date:From;
+ b=aDQagmLwbaDJGfvlBPUs9yb0aQojuyzTHc5tGZGKSfQU16vdXTILpDJpII0pAnYsA
+ mUYMUVjzavGQmMTA+ZQaMLgMhJsKrxR/QD5VdCeiEZyg7LNIGX3azfat2yP9GHJ9qr
+ gdbIYXH+4nJEmDivR3edQO406vE8FqUAOCOk+d9o=
+From: Maxime Ripard <mripard@kernel.org>
+To: Chen-Yu Tsai <wens@csie.org>,
+	Maxime Ripard <mripard@kernel.org>
+Subject: [PATCH] ARM: dts: sun9i: Add missing watchdog clocks
+Date: Wed, 16 Oct 2019 12:48:05 +0200
+Message-Id: <20191016104805.65390-1-mripard@kernel.org>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-X-Originating-IP: [10.133.213.239]
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_034712_810370_E6C5A71A 
-X-CRM114-Status: UNSURE (   9.22  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191016_034810_938161_D54FCA11 
+X-CRM114-Status: GOOD (  10.27  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,48 +74,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, YueHaibing <yuehaibing@huawei.com>,
- linux-kernel@vger.kernel.org, linux-rpi-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org, linux-crypto@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use devm_platform_ioremap_resource() to simplify the code a bit.
-This is detected by coccinelle.
+The watchdog has a clock, but it wasn't always listed.  Add it to the
+devicetree where it's missing.
 
-Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+Signed-off-by: Maxime Ripard <mripard@kernel.org>
 ---
- drivers/char/hw_random/xgene-rng.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ arch/arm/boot/dts/sun9i-a80.dtsi | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/char/hw_random/xgene-rng.c b/drivers/char/hw_random/xgene-rng.c
-index 7e568db..d7516a4 100644
---- a/drivers/char/hw_random/xgene-rng.c
-+++ b/drivers/char/hw_random/xgene-rng.c
-@@ -313,7 +313,6 @@ static struct hwrng xgene_rng_func = {
+diff --git a/arch/arm/boot/dts/sun9i-a80.dtsi b/arch/arm/boot/dts/sun9i-a80.dtsi
+index b9b6fb00be28..b5c46934b5b1 100644
+--- a/arch/arm/boot/dts/sun9i-a80.dtsi
++++ b/arch/arm/boot/dts/sun9i-a80.dtsi
+@@ -947,6 +947,7 @@
+ 			compatible = "allwinner,sun6i-a31-wdt";
+ 			reg = <0x06000ca0 0x20>;
+ 			interrupts = <GIC_SPI 24 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&osc24M>;
+ 		};
  
- static int xgene_rng_probe(struct platform_device *pdev)
- {
--	struct resource *res;
- 	struct xgene_rng_dev *ctx;
- 	int rc = 0;
+ 		pio: pinctrl@6000800 {
+@@ -1154,6 +1155,7 @@
+ 			compatible = "allwinner,sun6i-a31-wdt";
+ 			reg = <0x08001000 0x20>;
+ 			interrupts = <GIC_SPI 36 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&osc24M>;
+ 		};
  
-@@ -324,8 +323,7 @@ static int xgene_rng_probe(struct platform_device *pdev)
- 	ctx->dev = &pdev->dev;
- 	platform_set_drvdata(pdev, ctx);
- 
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	ctx->csr_base = devm_ioremap_resource(&pdev->dev, res);
-+	ctx->csr_base = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(ctx->csr_base))
- 		return PTR_ERR(ctx->csr_base);
- 
+ 		prcm@8001400 {
 -- 
-2.7.4
-
+2.23.0
 
 
 _______________________________________________
