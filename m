@@ -2,55 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF043D93F6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 16:33:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D04EBD93F7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 16:33:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rYOSWYy7ocBBh7+/6lh5Rn0DogWc8kFqkgPm8TP+5+Y=; b=c+MkPeidUaD3qp
-	/f4CPZL25ds4+daOzL+ct10zfhdI0LvOnouNmsFzC53njHJs7SvHv0TuB744+H61FRerZMT4c+HI+
-	GL4AR9/luhNlhZ1gk1pGif0LwZO/UBTAqthW0LzvejrSCMQ7zgVzQ8gsHwBfI0Z9iIb2oBs998Wiv
-	NG5vG8fBEMSJZUk5kbkiKOtJFIwjmg8fDxGtvMxGYaXKLPoK6LKatAA6dT9rTFaBXqD2oqNWPnZuz
-	7fPxAvjFlTReRYLkuEQnzCkCqkbdi+f98A7guIaasyQNDL0r1CYNc1kvcnCGWLolN8jDFCWkNQwWd
-	Vifu6R3OFUky/RZw2gIg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=zQeSXF5UjIRaMg0x8EuRwxGtjleuaqtpjJHCwS9CUew=; b=Y4I
+	/cGwdwiligUm7v0eGPL/z6oqy7VwE5ehlQtma4Ar7nq2wz8fpNNw76J7VPsrrD3LAly3jzgiEvYsk
+	ihcSj8Vzqk15pxJ2kXOOLqN6kq7JStf1oiUQ4zWbj+adz2iS01I724+m4ZEScX42lCv6yJ3gNm3kI
+	r0xrGzXHtzsVhrdCZhsVF088dM3HqOi8Mb99i3wSKbdI13ZlV2sq9Kw2FptN1ENX/f8gk0CkmZ7dh
+	lVBD9wX8/89NsWIaALW4nt5B83h7khXTLArPglGXxf4fhJJb1xpnxweRPbF3j+umF5+27ePNIPGn8
+	0yQf9PQaTpYusZ4O3q9WdAtWDF+Q3wQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKkMP-00006m-O5; Wed, 16 Oct 2019 14:33:09 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKkMG-00005W-0j
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 14:33:01 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2492D142F;
- Wed, 16 Oct 2019 07:32:57 -0700 (PDT)
-Received: from arrakis.emea.arm.com (unknown [10.1.196.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7C5453F68E;
- Wed, 16 Oct 2019 07:32:54 -0700 (PDT)
-Date: Wed, 16 Oct 2019 15:32:52 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v12 0/4] fix double page fault in cow_user_page for pfn
- mapping
-Message-ID: <20191016143252.GJ49619@arrakis.emea.arm.com>
-References: <20191011140939.6115-1-justin.he@arm.com>
- <20191015001834.wwkd46t6dwicta7n@willie-the-truck>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191015001834.wwkd46t6dwicta7n@willie-the-truck>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+	id 1iKkMj-0000NM-3G; Wed, 16 Oct 2019 14:33:29 +0000
+Received: from xavier.telenet-ops.be ([2a02:1800:120:4::f00:14])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iKkMY-0000Jl-0Z
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 14:33:20 +0000
+Received: from ramsan ([84.194.98.4]) by xavier.telenet-ops.be with bizsmtp
+ id EEZ82100N05gfCL01EZ856; Wed, 16 Oct 2019 16:33:08 +0200
+Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1iKkMO-0003nj-CK; Wed, 16 Oct 2019 16:33:08 +0200
+Received: from geert by rox.of.borg with local (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1iKkMO-0007YO-Aq; Wed, 16 Oct 2019 16:33:08 +0200
+From: Geert Uytterhoeven <geert+renesas@glider.be>
+To: Magnus Damm <magnus.damm@gmail.com>,
+ Chris Brandt <chris.brandt@renesas.com>
+Subject: [PATCH] soc: renesas: Add missing check for non-zero product register
+ address
+Date: Wed, 16 Oct 2019 16:33:06 +0200
+Message-Id: <20191016143306.28995-1-geert+renesas@glider.be>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_073300_103586_6C6404D8 
-X-CRM114-Status: GOOD (  15.51  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191016_073318_266479_19A28E50 
+X-CRM114-Status: GOOD (  11.43  )
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a02:1800:120:4:0:0:f00:14 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,44 +65,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kaly Xin <Kaly.Xin@arm.com>,
- Jia He <justin.he@arm.com>, Suzuki Poulose <Suzuki.Poulose@arm.com>,
- Marc Zyngier <maz@kernel.org>, x86@kernel.org, hejianet@gmail.com,
- linux-kernel@vger.kernel.org, Matthew Wilcox <willy@infradead.org>,
- linux-mm@kvack.org, James Morse <james.morse@arm.com>,
- linux-arm-kernel@lists.infradead.org, "H. Peter Anvin" <hpa@zytor.com>,
- Borislav Petkov <bp@alien8.de>, Thomas Gleixner <tglx@linutronix.de>,
- nd@arm.com, Andrew Morton <akpm@linux-foundation.org>,
- "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
+Cc: linux-renesas-soc@vger.kernel.org,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 15, 2019 at 01:18:34AM +0100, Will Deacon wrote:
-> On Fri, Oct 11, 2019 at 10:09:35PM +0800, Jia He wrote:
-> > When we tested pmdk unit test vmmalloc_fork TEST1 in arm64 guest, there
-> > will be a double page fault in __copy_from_user_inatomic of cow_user_page.
-> > 
-> > As told by Catalin: "On arm64 without hardware Access Flag, copying from
-> > user will fail because the pte is old and cannot be marked young. So we
-> > always end up with zeroed page after fork() + CoW for pfn mappings. we
-> > don't always have a hardware-managed access flag on arm64."
-> > 
-> > -Changes
-> > v12:
-> >     refine PATCH 01, remove the !! since C languages can convert unsigned
-> >     to bool (Catalin)
-> 
-> Thanks. I think it's a bit late to take something like this for 5.4 now,
-> especially as the current behaviour has always been there. Hopefully
-> somebody can queue it for 5.5 instead.
+If the DTB for a device with an RZ/A2 SoC lacks a device node for the
+BSID register, the ID validation code falls back to using a register at
+address 0x0, which leads to undefined behavior (e.g. reading back a
+random value).
 
-I can queue this through the arm64 tree for 5.5 if I get an ack on the
-x86 patch (3/4) or I don't hear any complaints.
+This could be fixed by letting fam_rza2.reg point to the actual BSID
+register.  However, the hardcoded fallbacks were meant for backwards
+compatibility with old DTBs only, not for new SoCs.  Hence fix this by
+validating renesas_family.reg before using it.
 
+Fixes: 175f435f44b724e3 ("soc: renesas: identify RZ/A2")
+Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+---
+ drivers/soc/renesas/renesas-soc.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/soc/renesas/renesas-soc.c b/drivers/soc/renesas/renesas-soc.c
+index 5dc2ae55f746a48a..85aaf85ce6b192d9 100644
+--- a/drivers/soc/renesas/renesas-soc.c
++++ b/drivers/soc/renesas/renesas-soc.c
+@@ -337,7 +337,7 @@ static int __init renesas_soc_init(void)
+ 	if (np) {
+ 		chipid = of_iomap(np, 0);
+ 		of_node_put(np);
+-	} else if (soc->id) {
++	} else if (soc->id && family->reg) {
+ 		chipid = ioremap(family->reg, 4);
+ 	}
+ 	if (chipid) {
 -- 
-Catalin
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
