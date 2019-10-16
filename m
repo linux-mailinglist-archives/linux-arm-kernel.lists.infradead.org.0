@@ -2,60 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 996E9D8BAA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 10:48:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A7FDD8BB6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 10:50:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/qi7UMi2ZYxgJcPq58nl8OXP8AYqZRf159hVPsGK4bY=; b=GNIm812dzelbYjAE18zSudBQV
-	pqaYeRvYsJpsyMbovRiTRfyswoP7T7S6lQEroBSf5uVyphjp8eIP4nQS5LBwaWNiYE9ld1QBlmfRv
-	yyloldnthIxdh+s2wIhkUUEtlRxx8lt4MX2wAEoXJsJo2A44HRExeOgorEEVL/XtoF1nLbpYWfgBd
-	no5x+a3yuxj7sxzcQ6/Xo7yRDLpUSNptjkwRCxZFmrdVWUeOTxjOqrBvQjg5mkAw6odfjXFoMtrPF
-	NWdaZ6sIO/ZmBkiJADE5kNsoRu9JHPFY6IRwdjdSUsrvcoBsx/nb9dWIVdAd/yFfUsSG06yz2NZuA
-	DIj7TJsYQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MpM42pSpMnQBRI3ibZ4nVLjAlhL8jr33Dtt64ckavdA=; b=QVc3REhkWTVohw
+	q4w/6xooEW4RVtyFnAuYWvkGeB8HysieN/e6QP+RfNquplWXSESSZn/uigqRX5RztmmarAVuWST1T
+	GjaLHsAIONflC+oOHn+NaTq4HwQde09vps6tFOTrDrkWccqJBs+l0SBu1maOu+fEY5C9YfIZpIwpd
+	KiFDPT+bhL8m8FJlePO05+4Wp99xoq3LTSajhPjwYb1iWsSlZUv7wwRa4mElBkqW6eqlI6iT/5nXh
+	AJTL3Ty6uM4dcS7Y3VdKMHpt6EqMU9a18JS9uTKr+P++e/dv1Euj41N/3wjGXjgtmA+5dq6GMCnmz
+	OfizduOJAfSaJxSHmolQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKeyj-0002TQ-A7; Wed, 16 Oct 2019 08:48:21 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1iKf0c-0002uW-Uo; Wed, 16 Oct 2019 08:50:18 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKeya-0002S4-H3
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 08:48:14 +0000
-Received: from DGGEMS412-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 8F356CBF38CF2F34D498;
- Wed, 16 Oct 2019 16:47:59 +0800 (CST)
-Received: from [127.0.0.1] (10.202.227.179) by DGGEMS412-HUB.china.huawei.com
- (10.3.19.212) with Microsoft SMTP Server id 14.3.439.0;
- Wed, 16 Oct 2019 16:47:53 +0800
-Subject: Re: [RFC PATCH 0/6] SMMUv3 PMCG IMP DEF event support
-To: Robin Murphy <robin.murphy@arm.com>, <lorenzo.pieralisi@arm.com>,
- <guohanjun@huawei.com>, <sudeep.holla@arm.com>, <mark.rutland@arm.com>,
- <will@kernel.org>
-References: <1569854031-237636-1-git-send-email-john.garry@huawei.com>
- <66a3ce9f-d3cd-110f-7353-46e6eaf25b7c@arm.com>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <1d546b4b-a2ad-49da-b532-951232093a9f@huawei.com>
-Date: Wed, 16 Oct 2019 09:47:45 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.3.0
+ id 1iKf0J-0002s6-Kr
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 08:50:01 +0000
+Received: by mail-io1-xd44.google.com with SMTP id n26so52706243ioj.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 16 Oct 2019 01:49:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=nkFKCgNZd30QrMCh3RiyW6uUTpINk4yhCuU9i7apvF8=;
+ b=oDLHRvC6Da2CfSONZTkFu1bX2HUbVJbI71A8Kmnp8x1j9NKcOadDyR4zX0/SUlCeDW
+ 6EP3b8kcsQfyUBkTYAd4jBTbJotQJjQ39oVD+mG36pdochYrgL1N9fvZ+4W/6s0/hKDV
+ BglF9H8nLhQu+PPWgzunU49/vZjl42IXUCUpU=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=nkFKCgNZd30QrMCh3RiyW6uUTpINk4yhCuU9i7apvF8=;
+ b=MCjeAi95IwabMk1IsC5GZItnid0Q031B+244x64mCStnX26/LJ5ESY4+e1AV6quYRX
+ SofP0cD23HZt/PzcSbfg52NXoyPOPvXt22pkRu6rpN1AQfagMdNZOXe7cs9f+rc7H7sw
+ lvTqjbJTDNya/4c6lqhbaHgR/46Mn3QHBZqxkdY1i1CATJ6hXqwUItn+83zOYQbTbSga
+ IO7SQVMnB0nvpXEO+0vTB/cXJ/ida8xo4oEjMl/G7B8mz60huzmx1sz/BA7uOMVEW0Ww
+ E9sKKRzBHqSRL2JrvF/WEmWTvWwZVtZOLTxywhjV4TlwO+ODFEEa418pR9HGs3UdaT3i
+ CY2g==
+X-Gm-Message-State: APjAAAVS/jc5fq7MPGPNrsfyKvia6dnU5B/i9eGlbcYAHrAF+goG48A6
+ LWAPuk46BTkHK0ADCVJeazDtGSNeTIn3K7Us/e6X6CNSF/Y=
+X-Google-Smtp-Source: APXvYqwM/YfYZ+riS2Cum5gGH058KHcCEur2jM3FQN+H7YrTWDuxynyVSyvoqlYwq/gm6khtHfKG1I7SfwJJ3PPT7kg=
+X-Received: by 2002:a6b:5c0f:: with SMTP id z15mr8252242ioh.173.1571215796031; 
+ Wed, 16 Oct 2019 01:49:56 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <66a3ce9f-d3cd-110f-7353-46e6eaf25b7c@arm.com>
-X-Originating-IP: [10.202.227.179]
-X-CFilter-Loop: Reflected
+References: <20191005141913.22020-1-jagan@amarulasolutions.com>
+ <20191005141913.22020-6-jagan@amarulasolutions.com>
+ <20191007105708.raxavxk4n7bvxh7x@gilmour>
+ <CAMty3ZCiwOGgwbsjTHvEZhwHGhsgb6_FeBs9hHgLai9=rV2_HQ@mail.gmail.com>
+ <20191016080306.44pmo3rfmtnkgosq@gilmour>
+In-Reply-To: <20191016080306.44pmo3rfmtnkgosq@gilmour>
+From: Jagan Teki <jagan@amarulasolutions.com>
+Date: Wed, 16 Oct 2019 14:19:44 +0530
+Message-ID: <CAMty3ZCTE=W+TNRvdowec-eYB625j97uG8F3fzVMtRFsKsqFFQ@mail.gmail.com>
+Subject: Re: [PATCH v10 5/6] arm64: dts: allwinner: a64: Add MIPI DSI pipeline
+To: Maxime Ripard <mripard@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_014812_737910_5115F459 
-X-CRM114-Status: GOOD (  23.83  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191016_014959_823363_8D2A41C8 
+X-CRM114-Status: GOOD (  24.42  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,125 +92,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nleeder@codeaurora.org, rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
- shameerali.kolothum.thodi@huawei.com, linuxarm@huawei.com,
- iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org,
- lenb@kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, David Airlie <airlied@linux.ie>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Michael Trimarchi <michael@amarulasolutions.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Icenowy Zheng <icenowy@aosc.io>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 15/10/2019 19:00, Robin Murphy wrote:
-> Hi John,
+On Wed, Oct 16, 2019 at 1:33 PM Maxime Ripard <mripard@kernel.org> wrote:
 >
-> On 30/09/2019 15:33, John Garry wrote:
->> This patchset adds IMP DEF event support for the SMMUv3 PMCG.
->>
->> It is marked as an RFC as the method to identify the PMCG implementation
->> may be a quite disliked. And, in general, the series is somewhat
->> incomplete.
->>
->> So the background is that the PMCG supports IMP DEF events, yet we
->> have no
->> method to identify the PMCG to know the IMP DEF events.
->>
->> A method for identifying the PMCG implementation could be using
->> PMDEVARCH, but we cannot rely on this being set properly, as whether this
->> is implemented is not defined in SMMUv3 spec.
->>
->> Another method would be perf event aliasing, but this method of event
->> matching is based on CPU id, which would not guarantee same
->> uniqueness as PMCG implementation.
->>
->> Yet another method could be to continue using ACPI OEM ID in the IORT
->> code, but this does not scale. And it is not suitable if we ever add DT
->> support to the PMCG driver.
->>
->> The method used in this series is based on matching on the parent SMMUv3
->> IIDR. We store this IIDR contents in the arm smmu structure as the first
->> element, which means that we don't have to expose SMMU APIs - this is
->> the part which may be disliked.
->>
->> The final two patches switch the pre-existing PMCG model identification
->> from ACPI OEM ID to the same parent SMMUv3 IIDR matching.
->>
->> For now, we only consider SMMUv3' nodes being the associated node for
->> PMCG.
+> On Mon, Oct 14, 2019 at 05:37:50PM +0530, Jagan Teki wrote:
+> > On Mon, Oct 7, 2019 at 4:27 PM Maxime Ripard <mripard@kernel.org> wrote:
+> > >
+> > > On Sat, Oct 05, 2019 at 07:49:12PM +0530, Jagan Teki wrote:
+> > > > Add MIPI DSI pipeline for Allwinner A64.
+> > > >
+> > > > - dsi node, with A64 compatible since it doesn't support
+> > > >   DSI_SCLK gating unlike A33
+> > > > - dphy node, with A64 compatible with A33 fallback since
+> > > >   DPHY on A64 and A33 is similar
+> > > > - finally, attach the dsi_in to tcon0 for complete MIPI DSI
+> > > >
+> > > > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+> > > > Tested-by: Merlijn Wajer <merlijn@wizzup.org>
+> > > > ---
+> > > >  arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 38 +++++++++++++++++++
+> > > >  1 file changed, 38 insertions(+)
+> > > >
+> > > > diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+> > > > index 69128a6dfc46..ad4170b8aee0 100644
+> > > > --- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+> > > > +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+> > > > @@ -382,6 +382,12 @@
+> > > >                                       #address-cells = <1>;
+> > > >                                       #size-cells = <0>;
+> > > >                                       reg = <1>;
+> > > > +
+> > > > +                                     tcon0_out_dsi: endpoint@1 {
+> > > > +                                             reg = <1>;
+> > > > +                                             remote-endpoint = <&dsi_in_tcon0>;
+> > > > +                                             allwinner,tcon-channel = <1>;
+> > > > +                                     };
+> > > >                               };
+> > > >                       };
+> > > >               };
+> > > > @@ -1003,6 +1009,38 @@
+> > > >                       status = "disabled";
+> > > >               };
+> > > >
+> > > > +             dsi: dsi@1ca0000 {
+> > > > +                     compatible = "allwinner,sun50i-a64-mipi-dsi";
+> > > > +                     reg = <0x01ca0000 0x1000>;
+> > > > +                     interrupts = <GIC_SPI 89 IRQ_TYPE_LEVEL_HIGH>;
+> > > > +                     clocks = <&ccu CLK_BUS_MIPI_DSI>;
+> > > > +                     clock-names = "bus";
+> > >
+> > > This won't validate with the bindings you have either here, since it
+> > > still expects bus and mod.
+> > >
+> > > I guess in that cas, we can just drop clock-names, which will require
+> > > a bit of work on the driver side as well.
+> >
+> > Okay.
+> > mod clock is not required for a64, ie reason we have has_mod_clk quirk
+> > patch. Adjust the clock-names: on dt-bindings would make sense here,
+> > what do you think?
 >
+> I'm confused, what are you suggesting?
 
-Hi Robin,
+Sorry for the confusion.
 
-> Two significant concerns right off the bat:
->
-> - It seems more common than not for silicon designers to fail to
-> implement IIDR correctly, so it's only a matter of time before
-> inevitably needing to bring back some firmware-level identifier
-> abstraction (if not already - does Hi161x have PMCGs?)
+The mod clock is not required for A64 and we have a patch for handling
+mod clock using has_mod_clk quirk(on the series), indeed the mod clock
+is available in A31 and not needed for A64. So, to satisfy this
+requirement the clock-names on dt-bindings can update to make mod
+clock-name is optional and bus clock is required.
 
-Maybe there's a way that we can switch to this method, and leave the 
-door open for an easy way to support firmware-level identifier again, if 
-ever needed. I'm not too pushed - this was secondary to just allowing 
-the PMCG driver know the associated SMMU model.
+I'm not exactly sure, this is correct but trying to understand if it
+is possible or not? something like
 
-And, no, hi161x does not have any PMCGs.
+   clocks:
+      minItems: 1
+      maxItems: 2
+     items:
+       - description: Bus Clock
+       - description: Module Clock
 
->
-> - This seems like a step in entirely the wrong direction for supporting
->.
-
-So to support PMCGs that reference a Named Component or Root Complex, I 
-thought that the IORT parsing code would have to do some secondary 
-lookup to the associated SMMU, through the Named Component or Root 
-Complex node.
-
-What was your idea here?
-
-Note: I do acknowledge that an overall issue is that we assume all PMCG 
-IMP DEF events are same for a given SMMU model.
-
->
-> Interpreting the Node Reference is definitely a welcome improvement over
-> matching table headers, but absent a truly compelling argument to the
-> contrary, I'd rather retain the "PMCG model" abstraction in between that
-> and the driver itself (especially since those can trivially be hung off
-> compatibles once it comes to DT support).
-
-For DT, I would assume that we just use compatible strings would allow 
-us to identify the PMCG model.
-
-On a related matter, is there still a need to deal with scenarios of the 
-PMCG being located within the SMMU register map? As you may remember, we 
-did have this issue but relocated the PMCG to outside the SMMU register 
-map in a later chip rev.
-
-Cheers,
-John
-
->
-> Thanks,
-> Robin.
->
->>
->> John Garry (6):
->>    ACPI/IORT: Set PMCG device parent
->>    iommu/arm-smmu-v3: Record IIDR in arm_smmu_device structure
->>    perf/smmuv3: Retrieve parent SMMUv3 IIDR
->>    perf/smmuv3: Support HiSilicon hip08 (hi1620) IMP DEF events
->>    perf/smmuv3: Match implementation options based on parent SMMU IIDR
->>    ACPI/IORT: Drop code to set the PMCG software-defined model
->>
->>   drivers/acpi/arm64/iort.c     | 69 ++++++++++++++--------------
->>   drivers/iommu/arm-smmu-v3.c   |  5 +++
->>   drivers/perf/arm_smmuv3_pmu.c | 84 ++++++++++++++++++++++++++++++-----
->>   include/linux/acpi_iort.h     |  8 ----
->>   4 files changed, 112 insertions(+), 54 deletions(-)
->>
->
-> .
->
-
-
+   clock-names:
+      minItems: 1
+      maxItems: 2
+     items:
+       - const: bus
+       - const: mod
 
 _______________________________________________
 linux-arm-kernel mailing list
