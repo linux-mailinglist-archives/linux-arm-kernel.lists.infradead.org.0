@@ -2,173 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0877D8CE1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 11:49:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3B55D8CF4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 11:52:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r1dnpJ2SyLo0AVb60W3BKQVwhKpEITonBii+3H8XNbU=; b=uc40fWLEszq0IG
-	CxPHIWEIooJBEbIWILD6kRrU+WvHIGMEYRL2YBM0s2sWQWKJhKWAznl5E7AuRQv8fL1muFOZLbAG/
-	F3sZVvaE+ZRHTVBxHOjAlBwa/iN5v/2A90/dO0GTExyRONnnEElSIVtz/SSrCYo2Yxre7X+3ZUsrN
-	namHriXvyfgy9qMexrPSNyZR6v0RUnl7hgvU4z0eMYj8xIGR2rm9gLKFw4LFvoD6OnMba2pkCRAsO
-	PQyxxdx/oEq8D4bmHAn+NW02Ym9SjJP0dCcAoouj57srNoqWhqod6bG3kZGb9XzWzA24FA37E53jw
-	atfKVY0Cbtk9SVLMTOWQ==;
+	List-Owner; bh=OW5i8guO+h2/0uH8m9gTfApUN8csjGDFBPWyzIiHFDA=; b=H95S5HOgKsiE8c
+	FEt0isZsHVNUHktimU4Dc6WNa9Rnco/1AHaoO6mxY414878lO6kzz/I4jMDvj9ULdVg3qGYVpT2O0
+	iChTOb185IX+cHlG1WnrncH/Svn8DcNnQzbbm1mSjPgFA4zwu7IJD826BrFFJx/4XCxW5RnP/lXZD
+	lxQNpHiZNZ5WifQyR48bUencaByWMrAVYU0JA0KC0G4nz2zgr1rlD+o3dquGtMlWUJC4I0wvyphHL
+	XQXGj8nj1Bundlh9Ni0jYAqpynV9OfjOhW4AGrR9ahwedR6AsN2z2YiUI3IHOZXpC1eevvgkoQkjz
+	ipJ2FecX4Dr+39AKvlXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKfvh-0005NP-Iy; Wed, 16 Oct 2019 09:49:17 +0000
-Received: from mail-eopbgr20067.outbound.protection.outlook.com ([40.107.2.67]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
+	id 1iKfyi-0000b3-Vv; Wed, 16 Oct 2019 09:52:25 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKfvW-0005MI-N5
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 09:49:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=md1nR1RKcd65vE73GmnLziOpKuVHsxBM/wC6YDptQMQ=;
- b=rJzxmKhToi3XOP7o48OaaNb6pmwjkemOR8HNU9P4fqjBPg27dsAEiuvqAVGjfxdhekI3+WY+wmtwl8nFj/chL7f21kiL4ES/+1PioBdTERoKbtpRoqLWKiTUUMzUNmWV2VeJq8TPRKjYmp+hKq0kEu6mb/kWOjElEhSiRL1uohk=
-Received: from VI1PR0802CA0038.eurprd08.prod.outlook.com
- (2603:10a6:800:a9::24) by DBBPR08MB4300.eurprd08.prod.outlook.com
- (2603:10a6:10:c5::18) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2347.16; Wed, 16 Oct
- 2019 09:49:02 +0000
-Received: from DB5EUR03FT007.eop-EUR03.prod.protection.outlook.com
- (2a01:111:f400:7e0a::205) by VI1PR0802CA0038.outlook.office365.com
- (2603:10a6:800:a9::24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2347.18 via Frontend
- Transport; Wed, 16 Oct 2019 09:49:02 +0000
-Authentication-Results: spf=temperror (sender IP is 63.35.35.123)
- smtp.mailfrom=arm.com; lists.infradead.org; dkim=pass (signature was
- verified) header.d=armh.onmicrosoft.com;lists.infradead.org; dmarc=none
- action=none header.from=arm.com;
-Received-SPF: TempError (protection.outlook.com: error in processing during
- lookup of arm.com: DNS Timeout)
-Received: from 64aa7808-outbound-1.mta.getcheckrecipient.com (63.35.35.123) by
- DB5EUR03FT007.mail.protection.outlook.com (10.152.20.148) with
- Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.20.2305.15 via Frontend Transport; Wed, 16 Oct 2019 09:49:00 +0000
-Received: ("Tessian outbound e4042aced47b:v33");
- Wed, 16 Oct 2019 09:48:52 +0000
-X-CR-MTA-TID: 64aa7808
-Received: from a94b262de10b.2 (ip-172-16-0-2.eu-west-1.compute.internal
- [104.47.10.51]) by 64aa7808-outbound-1.mta.getcheckrecipient.com id
- EE9EE450-8095-41AA-A1E6-80ECD47E18E2.1; 
- Wed, 16 Oct 2019 09:48:47 +0000
-Received: from EUR03-DB5-obe.outbound.protection.outlook.com
- (mail-db5eur03lp2051.outbound.protection.outlook.com [104.47.10.51])
- by 64aa7808-outbound-1.mta.getcheckrecipient.com with ESMTPS id a94b262de10b.2
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384);
- Wed, 16 Oct 2019 09:48:47 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=C80+LbR2D9qOnBYC3+CHdrKI3OWh7f7ktLkeXRcVnm4mvRDArA+0f+LKsv2qxXWY5DlTtMK7/7/A3efA90bJSSLQVb49gvZfFwoCc4N44zHsKg48i2amwY7xsksu1c3C91BFzKTOgKZgTH9tttiutCc3HO9w3VUoBlJXSAzOLq2cYIcGZMJvXggHFaI66S30TKp/jG9S++2sMC3UXfpMLq87zYijY5AVcPP5v2vg6ZifqS67BxMne8PDXSp4ITkakfPT7FFzt5gyx4Ys5C+UCwiQUjHAZxmGm/rGZ8t4M6TWpWqy/JxhXmNjyVNTrlCry59zIdSNroLffF3HXOulUg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=md1nR1RKcd65vE73GmnLziOpKuVHsxBM/wC6YDptQMQ=;
- b=VwomxDPEapQkiBfO5XAftvOwoen8mOgtu997BtA3tlVXudDsguS2H8pRx2vFG9xWH+rBxEYO6gPWVfeYGtMFsTA1h3HKvqImASgkcdUHMQ+liR2MxtRLCIQTfVnD6JLX1KPpx1jgs8qtL1uyTBTATaS22ihA5AgUPdwOIdTE6l12lVYHoC1KK0/UDo8jDcjaU+/V+Ci3c/efbAwIV63r7ZVOxwy/FQ09Rv3ZlGj8cW5uu1cEeVN3kgsztowvtG7vagM4o7TMjNI4eS+lp5eAjoU5ILRBPyaPVKP3dz2DdKE6yjpxio4dXXm0UFSRf1t/WObJKTJONWnbQIZfwgrmtw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=arm.com; dmarc=pass action=none header.from=arm.com; dkim=pass
- header.d=arm.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=md1nR1RKcd65vE73GmnLziOpKuVHsxBM/wC6YDptQMQ=;
- b=rJzxmKhToi3XOP7o48OaaNb6pmwjkemOR8HNU9P4fqjBPg27dsAEiuvqAVGjfxdhekI3+WY+wmtwl8nFj/chL7f21kiL4ES/+1PioBdTERoKbtpRoqLWKiTUUMzUNmWV2VeJq8TPRKjYmp+hKq0kEu6mb/kWOjElEhSiRL1uohk=
-Received: from HE1PR0801MB1676.eurprd08.prod.outlook.com (10.168.146.150) by
- HE1PR0801MB1996.eurprd08.prod.outlook.com (10.168.97.23) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2347.16; Wed, 16 Oct 2019 09:48:43 +0000
-Received: from HE1PR0801MB1676.eurprd08.prod.outlook.com
- ([fe80::b056:4113:e0bd:110d]) by HE1PR0801MB1676.eurprd08.prod.outlook.com
- ([fe80::b056:4113:e0bd:110d%6]) with mapi id 15.20.2347.023; Wed, 16 Oct 2019
- 09:48:43 +0000
-From: "Jianyong Wu (Arm Technology China)" <Jianyong.Wu@arm.com>
-To: Thomas Gleixner <tglx@linutronix.de>, Paolo Bonzini <pbonzini@redhat.com>
-Subject: RE: [PATCH v5 3/6] timekeeping: Add clocksource to
- system_time_snapshot
-Thread-Topic: [PATCH v5 3/6] timekeeping: Add clocksource to
- system_time_snapshot
-Thread-Index: AQHVg0Y1dymHk2OcFEiql6VhclDWladb5yqAgAA8TwCAACgCAIAAlJeAgAAfkWA=
-Date: Wed, 16 Oct 2019 09:48:43 +0000
-Message-ID: <HE1PR0801MB1676EC775B7BFA5FC7E4F9D5F4920@HE1PR0801MB1676.eurprd08.prod.outlook.com>
-References: <20191015104822.13890-1-jianyong.wu@arm.com>
- <20191015104822.13890-4-jianyong.wu@arm.com>
- <9274d21c-2c43-2e0d-f086-6aaba3863603@redhat.com>
- <alpine.DEB.2.21.1910152212580.2518@nanos.tec.linutronix.de>
- <aa1ec910-b7b6-2568-4583-5fa47aac367f@redhat.com>
- <alpine.DEB.2.21.1910160914230.2518@nanos.tec.linutronix.de>
-In-Reply-To: <alpine.DEB.2.21.1910160914230.2518@nanos.tec.linutronix.de>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-ts-tracking-id: ad2c70a2-bd34-4e39-aaa2-98de92e436d4.1
-x-checkrecipientchecked: true
-Authentication-Results-Original: spf=none (sender IP is )
- smtp.mailfrom=Jianyong.Wu@arm.com; 
-x-originating-ip: [113.29.88.7]
-x-ms-publictraffictype: Email
-X-MS-Office365-Filtering-Correlation-Id: df38e70a-f5df-49a4-fa18-08d7521e1268
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-TrafficTypeDiagnostic: HE1PR0801MB1996:|HE1PR0801MB1996:|DBBPR08MB4300:
-x-ms-exchange-transport-forked: True
-X-Microsoft-Antispam-PRVS: <DBBPR08MB43005E19EE793B61B9939214F4920@DBBPR08MB4300.eurprd08.prod.outlook.com>
-x-checkrecipientrouted: true
-x-ms-oob-tlc-oobclassifiers: OLM:9508;OLM:9508;
-x-forefront-prvs: 0192E812EC
-X-Forefront-Antispam-Report-Untrusted: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(376002)(136003)(396003)(39860400002)(366004)(54534003)(13464003)(199004)(189003)(7416002)(66446008)(66556008)(14454004)(64756008)(33656002)(2906002)(11346002)(9686003)(66476007)(66066001)(7696005)(6246003)(74316002)(99286004)(446003)(186003)(76116006)(66946007)(76176011)(26005)(14444005)(256004)(6436002)(55016002)(25786009)(71200400001)(229853002)(81166006)(8676002)(102836004)(81156014)(6506007)(5660300002)(6116002)(8936002)(478600001)(53546011)(86362001)(4326008)(71190400001)(316002)(110136005)(54906003)(55236004)(486006)(305945005)(476003)(7736002)(52536014)(3846002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:HE1PR0801MB1996;
- H:HE1PR0801MB1676.eurprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: arm.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Untrusted: BCL:0;
-X-Microsoft-Antispam-Message-Info-Original: 9Snvoq8lL1JLJMP+38lHxCRE+PIej1tuIP3XSAk+w1B9yoRP10Mc3lTXjeM7kREmMYyJWLTOaWQxlgTc+2Cgex76TEnTUQugZ6SWKbnQUM8eiKnmspeoknnIR2n58axsJ8rgmVx23zlIZYY1eCXiX3tEnEjvllFjijiDThP6ecpVGAxeUP+waa7ZaHWLxtUx8inxkzbuGYN1xICYNOO/Drm1tAX1VmRNNEjjTwLV2BWo1WY9haRX0gcktRFELFylO1LEQejf0z8nmvGpbXyffc97mgRH5bravTWXdH0cpZ+pWUPWOnaCS3QVUtAuMZM7DbZDMyeU/3uM6u2EPa1ohIzXH3jay9YSpQ1LQmwfkLyKibraHW/tbUCyw3esRjUCRwLBMhz30r8wouFVBdJXUwTKhZoCkfeWwUMOI3G8vfM=
+ id 1iKfyR-0000Uz-Eb; Wed, 16 Oct 2019 09:52:10 +0000
+X-UUID: d94ffddf695147afadb08d4e2c20ea19-20191016
+X-UUID: d94ffddf695147afadb08d4e2c20ea19-20191016
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <wen.su@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1122120472; Wed, 16 Oct 2019 01:52:01 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 16 Oct 2019 02:41:57 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 16 Oct 2019 17:41:56 +0800
+Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Wed, 16 Oct 2019 17:41:56 +0800
+From: Wen Su <Wen.Su@mediatek.com>
+To: Lee Jones <lee.jones@linaro.org>, Rob Herring <robh+dt@kernel.org>, "Mark
+ Brown" <broonie@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH 2/4] mfd: Add for PMIC MT6359 registers definition
+Date: Wed, 16 Oct 2019 17:39:44 +0800
+Message-ID: <1571218786-15073-3-git-send-email-Wen.Su@mediatek.com>
+X-Mailer: git-send-email 1.9.1
+In-Reply-To: <1571218786-15073-1-git-send-email-Wen.Su@mediatek.com>
+References: <1571218786-15073-1-git-send-email-Wen.Su@mediatek.com>
 MIME-Version: 1.0
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: HE1PR0801MB1996
-Original-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=Jianyong.Wu@arm.com; 
-X-EOPAttributedMessage: 0
-X-MS-Exchange-Transport-CrossTenantHeadersStripped: DB5EUR03FT007.eop-EUR03.prod.protection.outlook.com
-X-Forefront-Antispam-Report: CIP:63.35.35.123; IPV:CAL; SCL:-1; CTRY:IE;
- EFV:NLI; SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(396003)(346002)(136003)(376002)(13464003)(199004)(54534003)(189003)(99286004)(53546011)(52536014)(47776003)(7696005)(76176011)(186003)(8676002)(81156014)(81166006)(229853002)(76130400001)(33656002)(8936002)(9686003)(8746002)(25786009)(26005)(4326008)(55016002)(70206006)(70586007)(102836004)(66066001)(6506007)(6246003)(63350400001)(486006)(356004)(126002)(476003)(5660300002)(446003)(11346002)(336012)(6116002)(3846002)(23726003)(305945005)(74316002)(7736002)(14454004)(478600001)(26826003)(86362001)(54906003)(2906002)(22756006)(110136005)(50466002)(316002)(97756001)(14444005)(46406003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DBBPR08MB4300;
- H:64aa7808-outbound-1.mta.getcheckrecipient.com; FPR:; SPF:TempError; LANG:en;
- PTR:ec2-63-35-35-123.eu-west-1.compute.amazonaws.com; A:1; MX:1; 
-X-MS-Office365-Filtering-Correlation-Id-Prvs: f9a840f1-f54a-4c21-bd4a-08d7521e0821
-NoDisclaimer: True
-X-Forefront-PRVS: 0192E812EC
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 3s/2mndNGkmrNJapKeTlA/lloEBmBHKbZT45ND9nmvRF87b53bnVaAhiOzntLRO/BX0khYh6Mw4QCz557JcW/YfiDjZmTrUEpwwLsZAoY1n73kArszPWPPgYbqc8wIw0yNqkH0uSY6WxWV+hqbLyNNzz2yReoKlyQT1ldWIiJZt4vrCpE/9FU2KXZi5p7Udfhdquy6iNAKjfAKlN0JEo/qvDicD0ou/FD+DdVzFKPKK2zNv5saNvSc3fD8TDT/Neqx9a0cHP20AZuyvY/ELwI4cgCyyfOwagESoZVofOtQpJYbqM2A6nA60mM8gvfpBs5Pluvqfrp2EHHQFyitoL+hQv7RtsExvPauRflL2KGtJBxcy0XgdKB7B1gTIC/6gKugtO1oQDQ7Y18CNIB4eRfYW6y2U+wg9QgV71vAhbUxA=
-X-OriginatorOrg: arm.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Oct 2019 09:49:00.7090 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: df38e70a-f5df-49a4-fa18-08d7521e1268
-X-MS-Exchange-CrossTenant-Id: f34e5979-57d9-4aaa-ad4d-b122a662184d
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=f34e5979-57d9-4aaa-ad4d-b122a662184d; Ip=[63.35.35.123];
- Helo=[64aa7808-outbound-1.mta.getcheckrecipient.com]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DBBPR08MB4300
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_024906_781299_46657D4B 
-X-CRM114-Status: GOOD (  25.82  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191016_025207_524713_51F2FE5D 
+X-CRM114-Status: UNSURE (   8.82  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.2.67 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -180,118 +73,571 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>,
- "Justin He \(Arm Technology China\)" <Justin.He@arm.com>,
- "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
- Suzuki Poulose <Suzuki.Poulose@arm.com>, "maz@kernel.org" <maz@kernel.org>,
- "richardcochran@gmail.com" <richardcochran@gmail.com>,
- "yangbo.lu@nxp.com" <yangbo.lu@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "sean.j.christopherson@intel.com" <sean.j.christopherson@intel.com>,
- "Kaly Xin \(Arm Technology China\)" <Kaly.Xin@arm.com>,
- "john.stultz@linaro.org" <john.stultz@linaro.org>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>, nd <nd@arm.com>,
- "will@kernel.org" <will@kernel.org>,
- "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Steve Capper <Steve.Capper@arm.com>
+Cc: Mark
+ Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org, wen.su@mediatek.com,
+ wsd_upstream@mediatek.com, linux-kernel@vger.kernel.org,
+ Liam Girdwood <lgirdwood@gmail.com>, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi tglx,
+From: "wen.su" <wen.su@mediatek.com>
 
-> -----Original Message-----
-> From: Thomas Gleixner <tglx@linutronix.de>
-> Sent: Wednesday, October 16, 2019 3:29 PM
-> To: Paolo Bonzini <pbonzini@redhat.com>
-> Cc: Jianyong Wu (Arm Technology China) <Jianyong.Wu@arm.com>;
-> netdev@vger.kernel.org; yangbo.lu@nxp.com; john.stultz@linaro.org;
-> sean.j.christopherson@intel.com; maz@kernel.org;
-> richardcochran@gmail.com; Mark Rutland <Mark.Rutland@arm.com>;
-> will@kernel.org; Suzuki Poulose <Suzuki.Poulose@arm.com>; linux-
-> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
-> kvmarm@lists.cs.columbia.edu; kvm@vger.kernel.org; Steve Capper
-> <Steve.Capper@arm.com>; Kaly Xin (Arm Technology China)
-> <Kaly.Xin@arm.com>; Justin He (Arm Technology China)
-> <Justin.He@arm.com>; nd <nd@arm.com>
-> Subject: Re: [PATCH v5 3/6] timekeeping: Add clocksource to
-> system_time_snapshot
-> 
-> On Wed, 16 Oct 2019, Paolo Bonzini wrote:
-> > On 15/10/19 22:13, Thomas Gleixner wrote:
-> > > On Tue, 15 Oct 2019, Paolo Bonzini wrote:
-> > >> On 15/10/19 12:48, Jianyong Wu wrote:
-> > >>>
-> > >>>
-> > >>
-> > >> Reviewed-by: Paolo Bonzini <pbonzini@redhat.com>
-> > >
-> > > You're sure about having reviewed that in detail?
-> >
-> > I did review the patch; the void* ugliness is not in this one, and I
-> > do have some other qualms on that one.
-> >
-> > > This changelog is telling absolutely nothing WHY anything outside of
-> > > the timekeeping core code needs access to the current clocksource.
-> > > Neither does it tell why it is safe to provide the pointer to random callers.
-> >
-> > Agreed on the changelog, but the pointer to a clocksource is already
-> > part of the timekeeping external API via struct system_counterval_t.
-> > get_device_system_crosststamp for example expects a clocksource
-> > pointer but provides no way to get such a pointer.
-> 
-> That's a completely different beast, really.
-> 
-> The clocksource pointer is handed in by the caller and the core code validates
-> if the clocksource is the same as the current system clocksource and not the
-> other way round.
-> 
-> So there is no need for getting that pointer from the core code because the
-> caller knows already which clocksource needs to be active to make.the whole
-> cross device timestamp correlation work. And in that case it's the callers
-> responsibility to ensure that the pointer is valid which is the case for the
-> current use cases.
-> 
-I thinks there is something misunderstanding of my patch. See patch 4/6, the reason why I add clocksource is that I want to check if the current clocksouce is
-arm_arch_counter in virt/kvm/arm/psci.c and nothing to do with get_device_system_crosststamp.
+This adds MediaTek PMIC MT6359 registers definition for the
+following sub modules:
 
-So I really need a mechanism to do that check.
+- Regulator
+- RTC
+- Interrupt
 
-Thanks
-Jianyong
+Signed-off-by: wen.su <wen.su@mediatek.com>
+---
+ include/linux/mfd/mt6359/registers.h | 531 +++++++++++++++++++++++++++++++++++
+ 1 file changed, 531 insertions(+)
+ create mode 100644 include/linux/mfd/mt6359/registers.h
 
-> From your other reply:
-> 
-> > Why add a global id?  ARM can add it to archdata similar to how x86
-> > has vclock_mode.  But I still think the right thing to do is to
-> > include the full system_counterval_t in the result of
-> > ktime_get_snapshot.  (More in a second, feel free to reply to the other
-> email only).
-> 
-> No, the clocksource pointer is not going to be exposed as there is no
-> guarantee that it will be still around after the call returns.
-> 
-> It's not even guaranteed to be correct when the store happens in Wu's patch
-> simply because the store is done outside of the seqcount protected region.
+diff --git a/include/linux/mfd/mt6359/registers.h b/include/linux/mfd/mt6359/registers.h
+new file mode 100644
+index 0000000..32f627e
+--- /dev/null
++++ b/include/linux/mfd/mt6359/registers.h
+@@ -0,0 +1,531 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (c) 2019 MediaTek Inc.
++ */
++
++#ifndef __MFD_MT6359_REGISTERS_H__
++#define __MFD_MT6359_REGISTERS_H__
++
++/* PMIC Registers */
++#define MT6359_SWCID                         0xa
++#define MT6359_MISC_TOP_INT_CON0             0x188
++#define MT6359_MISC_TOP_INT_STATUS0          0x194
++#define MT6359_TOP_INT_STATUS0               0x19e
++#define MT6359_SCK_TOP_INT_CON0              0x528
++#define MT6359_SCK_TOP_INT_STATUS0           0x534
++#define MT6359_EOSC_CALI_CON0                0x53a
++#define MT6359_EOSC_CALI_CON1                0x53c
++#define MT6359_RTC_MIX_CON0                  0x53e
++#define MT6359_RTC_MIX_CON1                  0x540
++#define MT6359_RTC_MIX_CON2                  0x542
++#define MT6359_RTC_DSN_ID                    0x580
++#define MT6359_RTC_DSN_REV0                  0x582
++#define MT6359_RTC_DBI                       0x584
++#define MT6359_RTC_DXI                       0x586
++#define MT6359_RTC_BBPU                      0x588
++#define MT6359_RTC_IRQ_STA                   0x58a
++#define MT6359_RTC_IRQ_EN                    0x58c
++#define MT6359_RTC_CII_EN                    0x58e
++#define MT6359_RTC_AL_MASK                   0x590
++#define MT6359_RTC_TC_SEC                    0x592
++#define MT6359_RTC_TC_MIN                    0x594
++#define MT6359_RTC_TC_HOU                    0x596
++#define MT6359_RTC_TC_DOM                    0x598
++#define MT6359_RTC_TC_DOW                    0x59a
++#define MT6359_RTC_TC_MTH                    0x59c
++#define MT6359_RTC_TC_YEA                    0x59e
++#define MT6359_RTC_AL_SEC                    0x5a0
++#define MT6359_RTC_AL_MIN                    0x5a2
++#define MT6359_RTC_AL_HOU                    0x5a4
++#define MT6359_RTC_AL_DOM                    0x5a6
++#define MT6359_RTC_AL_DOW                    0x5a8
++#define MT6359_RTC_AL_MTH                    0x5aa
++#define MT6359_RTC_AL_YEA                    0x5ac
++#define MT6359_RTC_OSC32CON                  0x5ae
++#define MT6359_RTC_POWERKEY1                 0x5b0
++#define MT6359_RTC_POWERKEY2                 0x5b2
++#define MT6359_RTC_PDN1                      0x5b4
++#define MT6359_RTC_PDN2                      0x5b6
++#define MT6359_RTC_SPAR0                     0x5b8
++#define MT6359_RTC_SPAR1                     0x5ba
++#define MT6359_RTC_PROT                      0x5bc
++#define MT6359_RTC_DIFF                      0x5be
++#define MT6359_RTC_CALI                      0x5c0
++#define MT6359_RTC_WRTGR                     0x5c2
++#define MT6359_RTC_CON                       0x5c4
++#define MT6359_RTC_SEC_CTRL                  0x5c6
++#define MT6359_RTC_INT_CNT                   0x5c8
++#define MT6359_RTC_SEC_DAT0                  0x5ca
++#define MT6359_RTC_SEC_DAT1                  0x5cc
++#define MT6359_RTC_SEC_DAT2                  0x5ce
++#define MT6359_RTC_SEC_DSN_ID                0x600
++#define MT6359_RTC_SEC_DSN_REV0              0x602
++#define MT6359_RTC_SEC_DBI                   0x604
++#define MT6359_RTC_SEC_DXI                   0x606
++#define MT6359_RTC_TC_SEC_SEC                0x608
++#define MT6359_RTC_TC_MIN_SEC                0x60a
++#define MT6359_RTC_TC_HOU_SEC                0x60c
++#define MT6359_RTC_TC_DOM_SEC                0x60e
++#define MT6359_RTC_TC_DOW_SEC                0x610
++#define MT6359_RTC_TC_MTH_SEC                0x612
++#define MT6359_RTC_TC_YEA_SEC                0x614
++#define MT6359_RTC_SEC_CK_PDN                0x616
++#define MT6359_RTC_SEC_WRTGR                 0x618
++#define MT6359_PSC_TOP_INT_CON0              0x910
++#define MT6359_PSC_TOP_INT_STATUS0           0x91c
++#define MT6359_BM_TOP_INT_CON0               0xc32
++#define MT6359_BM_TOP_INT_CON1               0xc38
++#define MT6359_BM_TOP_INT_STATUS0            0xc4a
++#define MT6359_BM_TOP_INT_STATUS1            0xc4c
++#define MT6359_HK_TOP_INT_CON0               0xf92
++#define MT6359_HK_TOP_INT_STATUS0            0xf9e
++#define MT6359_BUCK_TOP_INT_CON0             0x1418
++#define MT6359_BUCK_TOP_INT_STATUS0          0x1424
++#define MT6359_BUCK_VPU_CON0                 0x1488
++#define MT6359_BUCK_VPU_DBG0                 0x14a6
++#define MT6359_BUCK_VPU_DBG1                 0x14a8
++#define MT6359_BUCK_VPU_ELR0                 0x14ac
++#define MT6359_BUCK_VCORE_CON0               0x1508
++#define MT6359_BUCK_VCORE_DBG0               0x1526
++#define MT6359_BUCK_VCORE_DBG1               0x1528
++#define MT6359_BUCK_VCORE_SSHUB_CON0         0x152a
++#define MT6359_BUCK_VCORE_ELR0               0x1534
++#define MT6359_BUCK_VGPU11_CON0              0x1588
++#define MT6359_BUCK_VGPU11_DBG0              0x15a6
++#define MT6359_BUCK_VGPU11_DBG1              0x15a8
++#define MT6359_BUCK_VGPU11_ELR0              0x15ac
++#define MT6359_BUCK_VMODEM_CON0              0x1688
++#define MT6359_BUCK_VMODEM_DBG0              0x16a6
++#define MT6359_BUCK_VMODEM_DBG1              0x16a8
++#define MT6359_BUCK_VMODEM_ELR0              0x16ae
++#define MT6359_BUCK_VPROC1_CON0              0x1708
++#define MT6359_BUCK_VPROC1_DBG0              0x1726
++#define MT6359_BUCK_VPROC1_DBG1              0x1728
++#define MT6359_BUCK_VPROC1_ELR0              0x172e
++#define MT6359_BUCK_VPROC2_CON0              0x1788
++#define MT6359_BUCK_VPROC2_DBG0              0x17a6
++#define MT6359_BUCK_VPROC2_DBG1              0x17a8
++#define MT6359_BUCK_VPROC2_ELR0              0x17b2
++#define MT6359_BUCK_VS1_CON0                 0x1808
++#define MT6359_BUCK_VS1_DBG0                 0x1826
++#define MT6359_BUCK_VS1_DBG1                 0x1828
++#define MT6359_BUCK_VS1_ELR0                 0x1834
++#define MT6359_BUCK_VS2_CON0                 0x1888
++#define MT6359_BUCK_VS2_DBG0                 0x18a6
++#define MT6359_BUCK_VS2_DBG1                 0x18a8
++#define MT6359_BUCK_VS2_ELR0                 0x18b4
++#define MT6359_BUCK_VPA_CON0                 0x1908
++#define MT6359_BUCK_VPA_CON1                 0x190e
++#define MT6359_BUCK_VPA_CFG0                 0x1910
++#define MT6359_BUCK_VPA_CFG1                 0x1912
++#define MT6359_BUCK_VPA_DBG0                 0x1914
++#define MT6359_BUCK_VPA_DBG1                 0x1916
++#define MT6359_VGPUVCORE_ANA_CON2            0x198e
++#define MT6359_VGPUVCORE_ANA_CON13           0x19a4
++#define MT6359_VPROC1_ANA_CON3               0x19b2
++#define MT6359_VPROC2_ANA_CON3               0x1a0e
++#define MT6359_VMODEM_ANA_CON3               0x1a1a
++#define MT6359_VPU_ANA_CON3                  0x1a26
++#define MT6359_VS1_ANA_CON0                  0x1a2c
++#define MT6359_VS2_ANA_CON0                  0x1a34
++#define MT6359_VPA_ANA_CON0                  0x1a3c
++#define MT6359_LDO_TOP_INT_CON0              0x1b14
++#define MT6359_LDO_TOP_INT_CON1              0x1b1a
++#define MT6359_LDO_TOP_INT_STATUS0           0x1b28
++#define MT6359_LDO_TOP_INT_STATUS1           0x1b2a
++#define MT6359_LDO_VSRAM_PROC1_ELR           0x1b40
++#define MT6359_LDO_VSRAM_PROC2_ELR           0x1b42
++#define MT6359_LDO_VSRAM_OTHERS_ELR          0x1b44
++#define MT6359_LDO_VSRAM_MD_ELR              0x1b46
++#define MT6359_LDO_VFE28_CON0                0x1b88
++#define MT6359_LDO_VFE28_MON                 0x1b8a
++#define MT6359_LDO_VXO22_CON0                0x1b98
++#define MT6359_LDO_VXO22_MON                 0x1b9a
++#define MT6359_LDO_VRF18_CON0                0x1ba8
++#define MT6359_LDO_VRF18_MON                 0x1baa
++#define MT6359_LDO_VRF12_CON0                0x1bb8
++#define MT6359_LDO_VRF12_MON                 0x1bba
++#define MT6359_LDO_VEFUSE_CON0               0x1bc8
++#define MT6359_LDO_VEFUSE_MON                0x1bca
++#define MT6359_LDO_VCN33_1_CON0              0x1bd8
++#define MT6359_LDO_VCN33_1_MON               0x1bda
++#define MT6359_LDO_VCN33_1_MULTI_SW          0x1be8
++#define MT6359_LDO_VCN33_2_CON0              0x1c08
++#define MT6359_LDO_VCN33_2_MON               0x1c0a
++#define MT6359_LDO_VCN33_2_MULTI_SW          0x1c18
++#define MT6359_LDO_VCN13_CON0                0x1c1a
++#define MT6359_LDO_VCN13_MON                 0x1c1c
++#define MT6359_LDO_VCN18_CON0                0x1c2a
++#define MT6359_LDO_VCN18_MON                 0x1c2c
++#define MT6359_LDO_VA09_CON0                 0x1c3a
++#define MT6359_LDO_VA09_MON                  0x1c3c
++#define MT6359_LDO_VCAMIO_CON0               0x1c4a
++#define MT6359_LDO_VCAMIO_MON                0x1c4c
++#define MT6359_LDO_VA12_CON0                 0x1c5a
++#define MT6359_LDO_VA12_MON                  0x1c5c
++#define MT6359_LDO_VAUX18_CON0               0x1c88
++#define MT6359_LDO_VAUX18_MON                0x1c8a
++#define MT6359_LDO_VAUD18_CON0               0x1c98
++#define MT6359_LDO_VAUD18_MON                0x1c9a
++#define MT6359_LDO_VIO18_CON0                0x1ca8
++#define MT6359_LDO_VIO18_MON                 0x1caa
++#define MT6359_LDO_VEMC_CON0                 0x1cb8
++#define MT6359_LDO_VEMC_MON                  0x1cba
++#define MT6359_LDO_VSIM1_CON0                0x1cc8
++#define MT6359_LDO_VSIM1_MON                 0x1cca
++#define MT6359_LDO_VSIM2_CON0                0x1cd8
++#define MT6359_LDO_VSIM2_MON                 0x1cda
++#define MT6359_LDO_VUSB_CON0                 0x1d08
++#define MT6359_LDO_VUSB_MON                  0x1d0a
++#define MT6359_LDO_VUSB_MULTI_SW             0x1d18
++#define MT6359_LDO_VRFCK_CON0                0x1d1a
++#define MT6359_LDO_VRFCK_MON                 0x1d1c
++#define MT6359_LDO_VBBCK_CON0                0x1d2a
++#define MT6359_LDO_VBBCK_MON                 0x1d2c
++#define MT6359_LDO_VBIF28_CON0               0x1d3a
++#define MT6359_LDO_VBIF28_MON                0x1d3c
++#define MT6359_LDO_VIBR_CON0                 0x1d4a
++#define MT6359_LDO_VIBR_MON                  0x1d4c
++#define MT6359_LDO_VIO28_CON0                0x1d5a
++#define MT6359_LDO_VIO28_MON                 0x1d5c
++#define MT6359_LDO_VM18_CON0                 0x1d88
++#define MT6359_LDO_VM18_MON                  0x1d8a
++#define MT6359_LDO_VUFS_CON0                 0x1d98
++#define MT6359_LDO_VUFS_MON                  0x1d9a
++#define MT6359_LDO_VSRAM_PROC1_CON0          0x1e88
++#define MT6359_LDO_VSRAM_PROC1_MON           0x1e8a
++#define MT6359_LDO_VSRAM_PROC1_VOSEL1        0x1e8e
++#define MT6359_LDO_VSRAM_PROC2_CON0          0x1ea6
++#define MT6359_LDO_VSRAM_PROC2_MON           0x1ea8
++#define MT6359_LDO_VSRAM_PROC2_VOSEL1        0x1eac
++#define MT6359_LDO_VSRAM_OTHERS_CON0         0x1f08
++#define MT6359_LDO_VSRAM_OTHERS_MON          0x1f0a
++#define MT6359_LDO_VSRAM_OTHERS_VOSEL1       0x1f0e
++#define MT6359_LDO_VSRAM_OTHERS_SSHUB        0x1f26
++#define MT6359_LDO_VSRAM_MD_CON0             0x1f2c
++#define MT6359_LDO_VSRAM_MD_MON              0x1f2e
++#define MT6359_LDO_VSRAM_MD_VOSEL1           0x1f32
++#define MT6359_VFE28_ANA_CON0                0x1f88
++#define MT6359_VAUX18_ANA_CON0               0x1f8c
++#define MT6359_VUSB_ANA_CON0                 0x1f90
++#define MT6359_VBIF28_ANA_CON0               0x1f94
++#define MT6359_VCN33_1_ANA_CON0              0x1f98
++#define MT6359_VCN33_2_ANA_CON0              0x1f9c
++#define MT6359_VEMC_ANA_CON0                 0x1fa0
++#define MT6359_VSIM1_ANA_CON0                0x1fa4
++#define MT6359_VSIM2_ANA_CON0                0x1fa8
++#define MT6359_VIO28_ANA_CON0                0x1fac
++#define MT6359_VIBR_ANA_CON0                 0x1fb0
++#define MT6359_VRF18_ANA_CON0                0x2008
++#define MT6359_VEFUSE_ANA_CON0               0x200c
++#define MT6359_VCN18_ANA_CON0                0x2010
++#define MT6359_VCAMIO_ANA_CON0               0x2014
++#define MT6359_VAUD18_ANA_CON0               0x2018
++#define MT6359_VIO18_ANA_CON0                0x201c
++#define MT6359_VM18_ANA_CON0                 0x2020
++#define MT6359_VUFS_ANA_CON0                 0x2024
++#define MT6359_VRF12_ANA_CON0                0x202a
++#define MT6359_VCN13_ANA_CON0                0x202e
++#define MT6359_VA09_ANA_CON0                 0x2032
++#define MT6359_VA12_ANA_CON0                 0x2036
++#define MT6359_VXO22_ANA_CON0                0x2088
++#define MT6359_VRFCK_ANA_CON0                0x208c
++#define MT6359_VBBCK_ANA_CON0                0x2094
++#define MT6359_AUD_TOP_INT_CON0              0x2328
++#define MT6359_AUD_TOP_INT_STATUS0           0x2334
++
++#define MT6359_RG_BUCK_VPU_EN_ADDR		MT6359_BUCK_VPU_CON0
++#define MT6359_RG_BUCK_VPU_LP_ADDR		MT6359_BUCK_VPU_CON0
++#define MT6359_RG_BUCK_VPU_LP_SHIFT             1
++#define MT6359_DA_VPU_VOSEL_ADDR		MT6359_BUCK_VPU_DBG0
++#define MT6359_DA_VPU_VOSEL_MASK                0x7F
++#define MT6359_DA_VPU_VOSEL_SHIFT               0
++#define MT6359_DA_VPU_EN_ADDR			MT6359_BUCK_VPU_DBG1
++#define MT6359_RG_BUCK_VPU_VOSEL_ADDR		MT6359_BUCK_VPU_ELR0
++#define MT6359_RG_BUCK_VPU_VOSEL_MASK           0x7F
++#define MT6359_RG_BUCK_VPU_VOSEL_SHIFT          0
++#define MT6359_RG_BUCK_VCORE_EN_ADDR		MT6359_BUCK_VCORE_CON0
++#define MT6359_RG_BUCK_VCORE_LP_ADDR		MT6359_BUCK_VCORE_CON0
++#define MT6359_RG_BUCK_VCORE_LP_SHIFT           1
++#define MT6359_DA_VCORE_VOSEL_ADDR		MT6359_BUCK_VCORE_DBG0
++#define MT6359_DA_VCORE_VOSEL_MASK              0x7F
++#define MT6359_DA_VCORE_VOSEL_SHIFT             0
++#define MT6359_DA_VCORE_EN_ADDR			MT6359_BUCK_VCORE_DBG1
++#define MT6359_RG_BUCK_VCORE_SSHUB_EN_ADDR      MT6359_BUCK_VCORE_SSHUB_CON0
++#define MT6359_RG_BUCK_VCORE_SSHUB_VOSEL_ADDR   MT6359_BUCK_VCORE_SSHUB_CON0
++#define MT6359_RG_BUCK_VCORE_SSHUB_VOSEL_MASK   0x7F
++#define MT6359_RG_BUCK_VCORE_SSHUB_VOSEL_SHIFT  4
++#define MT6359_RG_BUCK_VCORE_VOSEL_ADDR         MT6359_BUCK_VCORE_ELR0
++#define MT6359_RG_BUCK_VCORE_VOSEL_MASK         0x7F
++#define MT6359_RG_BUCK_VCORE_VOSEL_SHIFT        0
++#define MT6359_RG_BUCK_VGPU11_EN_ADDR           MT6359_BUCK_VGPU11_CON0
++#define MT6359_RG_BUCK_VGPU11_LP_ADDR           MT6359_BUCK_VGPU11_CON0
++#define MT6359_RG_BUCK_VGPU11_LP_SHIFT          1
++#define MT6359_DA_VGPU11_VOSEL_ADDR             MT6359_BUCK_VGPU11_DBG0
++#define MT6359_DA_VGPU11_VOSEL_MASK             0x7F
++#define MT6359_DA_VGPU11_VOSEL_SHIFT            0
++#define MT6359_DA_VGPU11_EN_ADDR                MT6359_BUCK_VGPU11_DBG1
++#define MT6359_RG_BUCK_VGPU11_VOSEL_ADDR        MT6359_BUCK_VGPU11_ELR0
++#define MT6359_RG_BUCK_VGPU11_VOSEL_MASK        0x7F
++#define MT6359_RG_BUCK_VGPU11_VOSEL_SHIFT       0
++#define MT6359_RG_BUCK_VMODEM_EN_ADDR           MT6359_BUCK_VMODEM_CON0
++#define MT6359_RG_BUCK_VMODEM_LP_ADDR           MT6359_BUCK_VMODEM_CON0
++#define MT6359_RG_BUCK_VMODEM_LP_SHIFT          1
++#define MT6359_DA_VMODEM_VOSEL_ADDR             MT6359_BUCK_VMODEM_DBG0
++#define MT6359_DA_VMODEM_VOSEL_MASK             0x7F
++#define MT6359_DA_VMODEM_VOSEL_SHIFT            0
++#define MT6359_DA_VMODEM_EN_ADDR                MT6359_BUCK_VMODEM_DBG1
++#define MT6359_RG_BUCK_VMODEM_VOSEL_ADDR        MT6359_BUCK_VMODEM_ELR0
++#define MT6359_RG_BUCK_VMODEM_VOSEL_MASK        0x7F
++#define MT6359_RG_BUCK_VMODEM_VOSEL_SHIFT       0
++#define MT6359_RG_BUCK_VPROC1_EN_ADDR           MT6359_BUCK_VPROC1_CON0
++#define MT6359_RG_BUCK_VPROC1_LP_ADDR           MT6359_BUCK_VPROC1_CON0
++#define MT6359_RG_BUCK_VPROC1_LP_SHIFT          1
++#define MT6359_DA_VPROC1_VOSEL_ADDR             MT6359_BUCK_VPROC1_DBG0
++#define MT6359_DA_VPROC1_VOSEL_MASK             0x7F
++#define MT6359_DA_VPROC1_VOSEL_SHIFT            0
++#define MT6359_DA_VPROC1_EN_ADDR                MT6359_BUCK_VPROC1_DBG1
++#define MT6359_RG_BUCK_VPROC1_VOSEL_ADDR        MT6359_BUCK_VPROC1_ELR0
++#define MT6359_RG_BUCK_VPROC1_VOSEL_MASK        0x7F
++#define MT6359_RG_BUCK_VPROC1_VOSEL_SHIFT       0
++#define MT6359_RG_BUCK_VPROC2_EN_ADDR           MT6359_BUCK_VPROC2_CON0
++#define MT6359_RG_BUCK_VPROC2_LP_ADDR           MT6359_BUCK_VPROC2_CON0
++#define MT6359_RG_BUCK_VPROC2_LP_SHIFT          1
++#define MT6359_DA_VPROC2_VOSEL_ADDR             MT6359_BUCK_VPROC2_DBG0
++#define MT6359_DA_VPROC2_VOSEL_MASK             0x7F
++#define MT6359_DA_VPROC2_VOSEL_SHIFT            0
++#define MT6359_DA_VPROC2_EN_ADDR                MT6359_BUCK_VPROC2_DBG1
++#define MT6359_RG_BUCK_VPROC2_VOSEL_ADDR        MT6359_BUCK_VPROC2_ELR0
++#define MT6359_RG_BUCK_VPROC2_VOSEL_MASK        0x7F
++#define MT6359_RG_BUCK_VPROC2_VOSEL_SHIFT       0
++#define MT6359_RG_BUCK_VS1_EN_ADDR              MT6359_BUCK_VS1_CON0
++#define MT6359_RG_BUCK_VS1_LP_ADDR              MT6359_BUCK_VS1_CON0
++#define MT6359_RG_BUCK_VS1_LP_SHIFT             1
++#define MT6359_DA_VS1_VOSEL_ADDR                MT6359_BUCK_VS1_DBG0
++#define MT6359_DA_VS1_VOSEL_MASK                0x7F
++#define MT6359_DA_VS1_VOSEL_SHIFT               0
++#define MT6359_DA_VS1_EN_ADDR			MT6359_BUCK_VS1_DBG1
++#define MT6359_RG_BUCK_VS1_VOSEL_ADDR           MT6359_BUCK_VS1_ELR0
++#define MT6359_RG_BUCK_VS1_VOSEL_MASK           0x7F
++#define MT6359_RG_BUCK_VS1_VOSEL_SHIFT          0
++#define MT6359_RG_BUCK_VS2_EN_ADDR              MT6359_BUCK_VS2_CON0
++#define MT6359_RG_BUCK_VS2_LP_ADDR              MT6359_BUCK_VS2_CON0
++#define MT6359_RG_BUCK_VS2_LP_SHIFT             1
++#define MT6359_DA_VS2_VOSEL_ADDR		MT6359_BUCK_VS2_DBG0
++#define MT6359_DA_VS2_VOSEL_MASK                0x7F
++#define MT6359_DA_VS2_VOSEL_SHIFT               0
++#define MT6359_DA_VS2_EN_ADDR			MT6359_BUCK_VS2_DBG1
++#define MT6359_RG_BUCK_VS2_VOSEL_ADDR           MT6359_BUCK_VS2_ELR0
++#define MT6359_RG_BUCK_VS2_VOSEL_MASK           0x7F
++#define MT6359_RG_BUCK_VS2_VOSEL_SHIFT          0
++#define MT6359_RG_BUCK_VPA_EN_ADDR              MT6359_BUCK_VPA_CON0
++#define MT6359_RG_BUCK_VPA_LP_ADDR              MT6359_BUCK_VPA_CON0
++#define MT6359_RG_BUCK_VPA_LP_SHIFT             1
++#define MT6359_RG_BUCK_VPA_VOSEL_ADDR           MT6359_BUCK_VPA_CON1
++#define MT6359_RG_BUCK_VPA_VOSEL_MASK           0x3F
++#define MT6359_RG_BUCK_VPA_VOSEL_SHIFT          0
++#define MT6359_DA_VPA_VOSEL_ADDR                MT6359_BUCK_VPA_DBG0
++#define MT6359_DA_VPA_VOSEL_MASK                0x3F
++#define MT6359_DA_VPA_VOSEL_SHIFT               0
++#define MT6359_DA_VPA_EN_ADDR                   MT6359_BUCK_VPA_DBG1
++#define MT6359_RG_VGPU11_FCCM_ADDR              MT6359_VGPUVCORE_ANA_CON2
++#define MT6359_RG_VGPU11_FCCM_SHIFT             9
++#define MT6359_RG_VCORE_FCCM_ADDR		MT6359_VGPUVCORE_ANA_CON13
++#define MT6359_RG_VCORE_FCCM_SHIFT              5
++#define MT6359_RG_VPROC1_FCCM_ADDR		MT6359_VPROC1_ANA_CON3
++#define MT6359_RG_VPROC1_FCCM_SHIFT             1
++#define MT6359_RG_VPROC2_FCCM_ADDR              MT6359_VPROC2_ANA_CON3
++#define MT6359_RG_VPROC2_FCCM_SHIFT             1
++#define MT6359_RG_VMODEM_FCCM_ADDR              MT6359_VMODEM_ANA_CON3
++#define MT6359_RG_VMODEM_FCCM_SHIFT             1
++#define MT6359_RG_VPU_FCCM_ADDR                 MT6359_VPU_ANA_CON3
++#define MT6359_RG_VPU_FCCM_SHIFT                1
++#define MT6359_RG_VS1_FPWM_ADDR                 MT6359_VS1_ANA_CON0
++#define MT6359_RG_VS1_FPWM_SHIFT                3
++#define MT6359_RG_VS2_FPWM_ADDR			MT6359_VS2_ANA_CON0
++#define MT6359_RG_VS2_FPWM_SHIFT                3
++#define MT6359_RG_VPA_MODESET_ADDR              MT6359_VPA_ANA_CON0
++#define MT6359_RG_VPA_MODESET_SHIFT             1
++#define MT6359_RG_LDO_VSRAM_PROC1_VOSEL_ADDR	MT6359_LDO_VSRAM_PROC1_ELR
++#define MT6359_RG_LDO_VSRAM_PROC1_VOSEL_MASK    0x7F
++#define MT6359_RG_LDO_VSRAM_PROC1_VOSEL_SHIFT   0
++#define MT6359_RG_LDO_VSRAM_PROC2_VOSEL_ADDR    MT6359_LDO_VSRAM_PROC2_ELR
++#define MT6359_RG_LDO_VSRAM_PROC2_VOSEL_MASK    0x7F
++#define MT6359_RG_LDO_VSRAM_PROC2_VOSEL_SHIFT   0
++#define MT6359_RG_LDO_VSRAM_OTHERS_VOSEL_ADDR   MT6359_LDO_VSRAM_OTHERS_ELR
++#define MT6359_RG_LDO_VSRAM_OTHERS_VOSEL_MASK   0x7F
++#define MT6359_RG_LDO_VSRAM_OTHERS_VOSEL_SHIFT  0
++#define MT6359_RG_LDO_VSRAM_MD_VOSEL_ADDR       MT6359_LDO_VSRAM_MD_ELR
++#define MT6359_RG_LDO_VSRAM_MD_VOSEL_MASK       0x7F
++#define MT6359_RG_LDO_VSRAM_MD_VOSEL_SHIFT      0
++#define MT6359_RG_LDO_VFE28_EN_ADDR             MT6359_LDO_VFE28_CON0
++#define MT6359_DA_VFE28_B_EN_ADDR               MT6359_LDO_VFE28_MON
++#define MT6359_RG_LDO_VXO22_EN_ADDR		MT6359_LDO_VXO22_CON0
++#define MT6359_RG_LDO_VXO22_EN_SHIFT            0
++#define MT6359_DA_VXO22_B_EN_ADDR               MT6359_LDO_VXO22_MON
++#define MT6359_RG_LDO_VRF18_EN_ADDR             MT6359_LDO_VRF18_CON0
++#define MT6359_RG_LDO_VRF18_EN_SHIFT            0
++#define MT6359_DA_VRF18_B_EN_ADDR               MT6359_LDO_VRF18_MON
++#define MT6359_RG_LDO_VRF12_EN_ADDR             MT6359_LDO_VRF12_CON0
++#define MT6359_RG_LDO_VRF12_EN_SHIFT            0
++#define MT6359_DA_VRF12_B_EN_ADDR               MT6359_LDO_VRF12_MON
++#define MT6359_RG_LDO_VEFUSE_EN_ADDR            MT6359_LDO_VEFUSE_CON0
++#define MT6359_RG_LDO_VEFUSE_EN_SHIFT           0
++#define MT6359_DA_VEFUSE_B_EN_ADDR              MT6359_LDO_VEFUSE_MON
++#define MT6359_RG_LDO_VCN33_1_EN_0_ADDR         MT6359_LDO_VCN33_1_CON0
++#define MT6359_RG_LDO_VCN33_1_EN_0_MASK         0x1
++#define MT6359_RG_LDO_VCN33_1_EN_0_SHIFT        0
++#define MT6359_DA_VCN33_1_B_EN_ADDR             MT6359_LDO_VCN33_1_MON
++#define MT6359_RG_LDO_VCN33_1_EN_1_ADDR         MT6359_LDO_VCN33_1_MULTI_SW
++#define MT6359_RG_LDO_VCN33_1_EN_1_SHIFT        15
++#define MT6359_RG_LDO_VCN33_2_EN_0_ADDR		MT6359_LDO_VCN33_2_CON0
++#define MT6359_RG_LDO_VCN33_2_EN_0_SHIFT        0
++#define MT6359_DA_VCN33_2_B_EN_ADDR             MT6359_LDO_VCN33_2_MON
++#define MT6359_RG_LDO_VCN33_2_EN_1_ADDR         MT6359_LDO_VCN33_2_MULTI_SW
++#define MT6359_RG_LDO_VCN33_2_EN_1_MASK         0x1
++#define MT6359_RG_LDO_VCN33_2_EN_1_SHIFT        15
++#define MT6359_RG_LDO_VCN13_EN_ADDR             MT6359_LDO_VCN13_CON0
++#define MT6359_RG_LDO_VCN13_EN_SHIFT            0
++#define MT6359_DA_VCN13_B_EN_ADDR               MT6359_LDO_VCN13_MON
++#define MT6359_RG_LDO_VCN18_EN_ADDR             MT6359_LDO_VCN18_CON0
++#define MT6359_DA_VCN18_B_EN_ADDR               MT6359_LDO_VCN18_MON
++#define MT6359_RG_LDO_VA09_EN_ADDR		MT6359_LDO_VA09_CON0
++#define MT6359_RG_LDO_VA09_EN_SHIFT             0
++#define MT6359_DA_VA09_B_EN_ADDR                MT6359_LDO_VA09_MON
++#define MT6359_RG_LDO_VCAMIO_EN_ADDR		MT6359_LDO_VCAMIO_CON0
++#define MT6359_RG_LDO_VCAMIO_EN_SHIFT           0
++#define MT6359_DA_VCAMIO_B_EN_ADDR              MT6359_LDO_VCAMIO_MON
++#define MT6359_RG_LDO_VA12_EN_ADDR              MT6359_LDO_VA12_CON0
++#define MT6359_RG_LDO_VA12_EN_SHIFT             0
++#define MT6359_DA_VA12_B_EN_ADDR		MT6359_LDO_VA12_MON
++#define MT6359_RG_LDO_VAUX18_EN_ADDR            MT6359_LDO_VAUX18_CON0
++#define MT6359_DA_VAUX18_B_EN_ADDR              MT6359_LDO_VAUX18_MON
++#define MT6359_RG_LDO_VAUD18_EN_ADDR            MT6359_LDO_VAUD18_CON0
++#define MT6359_DA_VAUD18_B_EN_ADDR              MT6359_LDO_VAUD18_MON
++#define MT6359_RG_LDO_VIO18_EN_ADDR             MT6359_LDO_VIO18_CON0
++#define MT6359_RG_LDO_VIO18_EN_SHIFT            0
++#define MT6359_DA_VIO18_B_EN_ADDR               MT6359_LDO_VIO18_MON
++#define MT6359_RG_LDO_VEMC_EN_ADDR              MT6359_LDO_VEMC_CON0
++#define MT6359_RG_LDO_VEMC_EN_SHIFT             0
++#define MT6359_DA_VEMC_B_EN_ADDR                MT6359_LDO_VEMC_MON
++#define MT6359_RG_LDO_VSIM1_EN_ADDR             MT6359_LDO_VSIM1_CON0
++#define MT6359_RG_LDO_VSIM1_EN_SHIFT            0
++#define MT6359_DA_VSIM1_B_EN_ADDR               MT6359_LDO_VSIM1_MON
++#define MT6359_RG_LDO_VSIM2_EN_ADDR		MT6359_LDO_VSIM2_CON0
++#define MT6359_RG_LDO_VSIM2_EN_SHIFT            0
++#define MT6359_DA_VSIM2_B_EN_ADDR               MT6359_LDO_VSIM2_MON
++#define MT6359_RG_LDO_VUSB_EN_0_ADDR            MT6359_LDO_VUSB_CON0
++#define MT6359_RG_LDO_VUSB_EN_0_MASK            0x1
++#define MT6359_RG_LDO_VUSB_EN_0_SHIFT           0
++#define MT6359_DA_VUSB_B_EN_ADDR                MT6359_LDO_VUSB_MON
++#define MT6359_RG_LDO_VUSB_EN_1_ADDR            MT6359_LDO_VUSB_MULTI_SW
++#define MT6359_RG_LDO_VUSB_EN_1_MASK            0x1
++#define MT6359_RG_LDO_VUSB_EN_1_SHIFT           15
++#define MT6359_RG_LDO_VRFCK_EN_ADDR             MT6359_LDO_VRFCK_CON0
++#define MT6359_RG_LDO_VRFCK_EN_SHIFT            0
++#define MT6359_DA_VRFCK_B_EN_ADDR               MT6359_LDO_VRFCK_MON
++#define MT6359_RG_LDO_VBBCK_EN_ADDR             MT6359_LDO_VBBCK_CON0
++#define MT6359_RG_LDO_VBBCK_EN_SHIFT            0
++#define MT6359_DA_VBBCK_B_EN_ADDR               MT6359_LDO_VBBCK_MON
++#define MT6359_RG_LDO_VBIF28_EN_ADDR            MT6359_LDO_VBIF28_CON0
++#define MT6359_DA_VBIF28_B_EN_ADDR              MT6359_LDO_VBIF28_MON
++#define MT6359_RG_LDO_VIBR_EN_ADDR              MT6359_LDO_VIBR_CON0
++#define MT6359_RG_LDO_VIBR_EN_SHIFT             0
++#define MT6359_DA_VIBR_B_EN_ADDR                MT6359_LDO_VIBR_MON
++#define MT6359_RG_LDO_VIO28_EN_ADDR             MT6359_LDO_VIO28_CON0
++#define MT6359_RG_LDO_VIO28_EN_SHIFT            0
++#define MT6359_DA_VIO28_B_EN_ADDR               MT6359_LDO_VIO28_MON
++#define MT6359_RG_LDO_VM18_EN_ADDR		MT6359_LDO_VM18_CON0
++#define MT6359_RG_LDO_VM18_EN_SHIFT             0
++#define MT6359_DA_VM18_B_EN_ADDR                MT6359_LDO_VM18_MON
++#define MT6359_RG_LDO_VUFS_EN_ADDR              MT6359_LDO_VUFS_CON0
++#define MT6359_RG_LDO_VUFS_EN_SHIFT		0
++#define MT6359_DA_VUFS_B_EN_ADDR                MT6359_LDO_VUFS_MON
++#define MT6359_RG_LDO_VSRAM_PROC1_EN_ADDR       MT6359_LDO_VSRAM_PROC1_CON0
++#define MT6359_DA_VSRAM_PROC1_B_EN_ADDR         MT6359_LDO_VSRAM_PROC1_MON
++#define MT6359_DA_VSRAM_PROC1_VOSEL_ADDR        MT6359_LDO_VSRAM_PROC1_VOSEL1
++#define MT6359_DA_VSRAM_PROC1_VOSEL_MASK        0x7F
++#define MT6359_DA_VSRAM_PROC1_VOSEL_SHIFT       8
++#define MT6359_RG_LDO_VSRAM_PROC2_EN_ADDR       MT6359_LDO_VSRAM_PROC2_CON0
++#define MT6359_DA_VSRAM_PROC2_B_EN_ADDR         MT6359_LDO_VSRAM_PROC2_MON
++#define MT6359_DA_VSRAM_PROC2_VOSEL_ADDR        MT6359_LDO_VSRAM_PROC2_VOSEL1
++#define MT6359_DA_VSRAM_PROC2_VOSEL_MASK        0x7F
++#define MT6359_DA_VSRAM_PROC2_VOSEL_SHIFT       8
++#define MT6359_RG_LDO_VSRAM_OTHERS_EN_ADDR      MT6359_LDO_VSRAM_OTHERS_CON0
++#define MT6359_DA_VSRAM_OTHERS_B_EN_ADDR        MT6359_LDO_VSRAM_OTHERS_MON
++#define MT6359_DA_VSRAM_OTHERS_VOSEL_ADDR       MT6359_LDO_VSRAM_OTHERS_VOSEL1
++#define MT6359_DA_VSRAM_OTHERS_VOSEL_MASK       0x7F
++#define MT6359_DA_VSRAM_OTHERS_VOSEL_SHIFT      8
++#define MT6359_RG_LDO_VSRAM_OTHERS_SSHUB_EN_ADDR \
++						MT6359_LDO_VSRAM_OTHERS_SSHUB
++#define MT6359_RG_LDO_VSRAM_OTHERS_SSHUB_VOSEL_ADDR \
++						MT6359_LDO_VSRAM_OTHERS_SSHUB
++#define MT6359_RG_LDO_VSRAM_OTHERS_SSHUB_VOSEL_MASK	0x7F
++#define MT6359_RG_LDO_VSRAM_OTHERS_SSHUB_VOSEL_SHIFT	1
++#define MT6359_RG_LDO_VSRAM_MD_EN_ADDR          MT6359_LDO_VSRAM_MD_CON0
++#define MT6359_DA_VSRAM_MD_B_EN_ADDR            MT6359_LDO_VSRAM_MD_MON
++#define MT6359_DA_VSRAM_MD_VOSEL_ADDR           MT6359_LDO_VSRAM_MD_VOSEL1
++#define MT6359_DA_VSRAM_MD_VOSEL_MASK		0x7F
++#define MT6359_DA_VSRAM_MD_VOSEL_SHIFT          8
++#define MT6359_RG_VCN33_1_VOSEL_ADDR		MT6359_VCN33_1_ANA_CON0
++#define MT6359_RG_VCN33_1_VOSEL_MASK            0xF
++#define MT6359_RG_VCN33_1_VOSEL_SHIFT           8
++#define MT6359_RG_VCN33_2_VOSEL_ADDR            MT6359_VCN33_2_ANA_CON0
++#define MT6359_RG_VCN33_2_VOSEL_MASK            0xF
++#define MT6359_RG_VCN33_2_VOSEL_SHIFT           8
++#define MT6359_RG_VEMC_VOSEL_ADDR               MT6359_VEMC_ANA_CON0
++#define MT6359_RG_VEMC_VOSEL_MASK               0xF
++#define MT6359_RG_VEMC_VOSEL_SHIFT              8
++#define MT6359_RG_VSIM1_VOSEL_ADDR              MT6359_VSIM1_ANA_CON0
++#define MT6359_RG_VSIM1_VOSEL_MASK              0xF
++#define MT6359_RG_VSIM1_VOSEL_SHIFT             8
++#define MT6359_RG_VSIM2_VOSEL_ADDR              MT6359_VSIM2_ANA_CON0
++#define MT6359_RG_VSIM2_VOSEL_MASK              0xF
++#define MT6359_RG_VSIM2_VOSEL_SHIFT             8
++#define MT6359_RG_VIO28_VOSEL_ADDR		MT6359_VIO28_ANA_CON0
++#define MT6359_RG_VIO28_VOSEL_MASK              0xF
++#define MT6359_RG_VIO28_VOSEL_SHIFT             8
++#define MT6359_RG_VIBR_VOSEL_ADDR               MT6359_VIBR_ANA_CON0
++#define MT6359_RG_VIBR_VOSEL_MASK               0xF
++#define MT6359_RG_VIBR_VOSEL_SHIFT              8
++#define MT6359_RG_VRF18_VOSEL_ADDR              MT6359_VRF18_ANA_CON0
++#define MT6359_RG_VRF18_VOSEL_MASK              0xF
++#define MT6359_RG_VRF18_VOSEL_SHIFT             8
++#define MT6359_RG_VEFUSE_VOSEL_ADDR		MT6359_VEFUSE_ANA_CON0
++#define MT6359_RG_VEFUSE_VOSEL_MASK             0xF
++#define MT6359_RG_VEFUSE_VOSEL_SHIFT            8
++#define MT6359_RG_VCAMIO_VOSEL_ADDR             MT6359_VCAMIO_ANA_CON0
++#define MT6359_RG_VCAMIO_VOSEL_MASK             0xF
++#define MT6359_RG_VCAMIO_VOSEL_SHIFT            8
++#define MT6359_RG_VIO18_VOSEL_ADDR              MT6359_VIO18_ANA_CON0
++#define MT6359_RG_VIO18_VOSEL_MASK              0xF
++#define MT6359_RG_VIO18_VOSEL_SHIFT             8
++#define MT6359_RG_VM18_VOSEL_ADDR               MT6359_VM18_ANA_CON0
++#define MT6359_RG_VM18_VOSEL_MASK               0xF
++#define MT6359_RG_VM18_VOSEL_SHIFT              8
++#define MT6359_RG_VUFS_VOSEL_ADDR               MT6359_VUFS_ANA_CON0
++#define MT6359_RG_VUFS_VOSEL_MASK               0xF
++#define MT6359_RG_VUFS_VOSEL_SHIFT              8
++#define MT6359_RG_VRF12_VOSEL_ADDR              MT6359_VRF12_ANA_CON0
++#define MT6359_RG_VRF12_VOSEL_MASK              0xF
++#define MT6359_RG_VRF12_VOSEL_SHIFT             8
++#define MT6359_RG_VCN13_VOSEL_ADDR		MT6359_VCN13_ANA_CON0
++#define MT6359_RG_VCN13_VOSEL_MASK              0xF
++#define MT6359_RG_VCN13_VOSEL_SHIFT             8
++#define MT6359_RG_VA09_VOSEL_ADDR		MT6359_VA09_ANA_CON0
++#define MT6359_RG_VA09_VOSEL_MASK               0xF
++#define MT6359_RG_VA09_VOSEL_SHIFT              8
++#define MT6359_RG_VA12_VOSEL_ADDR               MT6359_VA12_ANA_CON0
++#define MT6359_RG_VA12_VOSEL_MASK               0xF
++#define MT6359_RG_VA12_VOSEL_SHIFT              8
++#define MT6359_RG_VXO22_VOSEL_ADDR              MT6359_VXO22_ANA_CON0
++#define MT6359_RG_VXO22_VOSEL_MASK              0xF
++#define MT6359_RG_VXO22_VOSEL_SHIFT             8
++#define MT6359_RG_VRFCK_VOSEL_ADDR              MT6359_VRFCK_ANA_CON0
++#define MT6359_RG_VRFCK_VOSEL_MASK              0xF
++#define MT6359_RG_VRFCK_VOSEL_SHIFT             8
++#define MT6359_RG_VBBCK_VOSEL_ADDR              MT6359_VBBCK_ANA_CON0
++#define MT6359_RG_VBBCK_VOSEL_MASK              0xF
++#define MT6359_RG_VBBCK_VOSEL_SHIFT             8
++
++#endif /* __MFD_MT6359_REGISTERS_H__ */
+-- 
+1.9.1
 
-Yeah, all of the elements in system_time_snapshot should be captured in consistency. So
-I think the consistency will be guaranteed if the store ops added in the seqcount region.
-
-> 
-> Vs. arch data: arch data is an opaque struct, so you'd need to store a pointer
-> which has the same issue as the clocksource pointer itself.
-> 
-> If we want to convey information then it has to be in the generic part of
-> struct clocksource.
-> 
-> In fact we could even simplify the existing get_device_system_crosststamp()
-> use case by using the ID field.
-> 
-> Thanks,
-> 
-> 	tglx
 
 _______________________________________________
 linux-arm-kernel mailing list
