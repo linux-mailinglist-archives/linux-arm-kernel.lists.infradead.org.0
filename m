@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB173D9AB6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 22:03:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA37ED9AB7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 22:03:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7QuDed4A6CgfN8d2TNm50p744d5dA+/KD9HAMkTlhSc=; b=msqTLw+50F9hJ3
-	XXXjaCavnAhR29osyfIbGIi3L58Og48Lj46zdvP9cbaJ9ZLIIuYpCkbkA6qucMuXXQSPq5XpXRen1
-	l62VZZq4JkT5u1HlM1oOoDiSjRt60jg+wU4xTGTje3pf3h8+PO9qdsYQyS9uhYwS1tmSp3f6fUPcQ
-	wRNtMgjDDZqC7EFZbyJa2RbNBwVIA58jdGcdArG1q5EUw8R/WEFvSMeSZfIPkjidKQ4R3al8J5u1u
-	O0HhpZ/wunQjENbPd7c16E8mf5irOrhYdDZdVDSPDZp9M6LXVq6xkS3qdjXADXWkf8pJi86JVuZ6W
-	/+vBnOb7LVwnh52Tu9Hg==;
+	List-Owner; bh=WN5jJniGPP0yJ8LXg7I7sIiNnDGzciFHcX/9FqggTcc=; b=IlzoAtN8C0lb+a
+	NEu8v9X3Csv1WFIeL3R6jbqcE3RIUr36cnNuwBTvhzXRVwcLnExYobfrY72TjwYJ6WcpyeD2jXMt5
+	DQkCDeaA/vSpbl0iA+QGMhSS3e9/LgcTs00FkNKk/cVuzY2bWyzuWVfaFu16QlC1+GFjNnqtb5NxD
+	6iDE0SvDnXeBZfHLO7ATNGauEpgHRNUR+IQQNjH/ZhwmEhKS771ESWoTFddbcBXAs5o8SAr10vLNc
+	K1wdQwaFZtxp6AqWBVogdn4oulp+pF2Qx7O/IMINBOFBa5Ouh/epaYjJ4Jr+Y6qHhdE2J9OVxvRuQ
+	aKpKtnhN5RcTL9ls0kGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKpW9-0006DO-QQ; Wed, 16 Oct 2019 20:03:33 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1iKpWQ-0006RY-11; Wed, 16 Oct 2019 20:03:50 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKpTT-00047R-4a
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 20:00:48 +0000
-Received: by mail-qt1-x841.google.com with SMTP id j31so37988860qta.5
+ id 1iKpTU-00049q-47
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 20:00:50 +0000
+Received: by mail-qk1-x743.google.com with SMTP id u22so23943907qkk.11
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 16 Oct 2019 13:00:46 -0700 (PDT)
+ Wed, 16 Oct 2019 13:00:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=1tiYj23HzXJX4ZgHt0ym5ajKMNsnlXF/xQZzBPKQP48=;
- b=bptSRtBN3xr8useYmB7iLV+OcV0ABHihVJ91UYRzIEEb848dVyygGn+GE2+y3sD+H/
- Ehgz4BslCL365594q2uwcmw87mAuhVCKVq/TyG5alBLrXhyPibXYtKRBQWqMAkZ9CoYC
- 9gsBU+jwTuKTMeH0NqgRU0ie6dAH9U4KR8K9yJfl/vmKON73ksH2ohoeFCWPK6TWnGs/
- JY6rS3hpFuit6exKgtq1rRDzbjh8aCparhwYVDnwi0yOtbtg6XsW3ND76Y4zZO7Kgb/v
- K5H0M1+2n/9/qGjrK17r20FGbMgWr0Qfx2uD66/tMR219XpCScNUfnH9v+OJDVSWzhgA
- YK4A==
+ bh=MH284WpfdMmTT4sRM0t5AqX3XpYou6gu7tWPymm7DjQ=;
+ b=DuqfqRWMPOvEPNM2SwMz7BaMdbSnbr2AOXFceodEDGBgvpTPxvzCCJRKO0XMXLWKTh
+ p5mnTcTZu0KDFMwnKTHbaqAZXwXzW6PFYUveTxH/wBfPgzGiNCjn6GlWf+4Nvr1oufFO
+ 6V5GE/32z3BR70juhuUHJ2Hz52ZWJMuLiPhG90YCqIEOJXq8wQx1xpZz76Bqv5Dcsx6P
+ 6sZ/O1FIS2CgbuXRByzyFtw17uNhQjJiSkouOqEmo+3ol6GZE2Cc8gXwjti8Bt0HuDJd
+ jNPp9QaZq6Kdh5YZ6MEpUQ5Sad/E+JSdbx+Q59PlgQop26kj0b3Bg5LY8JloRVaBAb+J
+ YKdg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=1tiYj23HzXJX4ZgHt0ym5ajKMNsnlXF/xQZzBPKQP48=;
- b=QdsOmlV2Dg7OJ1IX5YH4PW30qbFUt+bVO/cKw2Y/G0DtlP0y1E4aC7UrPMIkluq1B5
- QN9yYvPdgwafGNMyivIAKKivswV4/1/MV9pXn1sPVKcy3UPhXzk3F006T4lVSSOf9T3Z
- Hb+DspewJ9YnQYvVuNvkV5aG7PRIPQgnt8Kpb/wKi984TfwIAlMOYvMmI8MUBfvf7rX6
- kQxyDi7iRYyaWfVEd0mp2Gn3mUc4Mj74WmXniW7FsRC6H4vPfjFAbRQax4uLX1zdQeVp
- SlrCgSRxR2sNMUDtOvU1/NtH07DqfJ6p9yznkgaDt7EbY0evkQL5BbLZFbloIu1eY2Zf
- BPyw==
-X-Gm-Message-State: APjAAAVaMrrj+rppalBovG3w/tiFpPxZavAlQ6uCRMLqij2pBdg416Ib
- 9o6uaC/QWgfcqSb5Kp7JjFOLEcO06uw=
-X-Google-Smtp-Source: APXvYqwmRVQSdQU55owY+pKif3Q4GJGRGYVJkFk5zjZ7AznjZD2B0mWV7kq/8erD2qHWWjyifhfziA==
-X-Received: by 2002:ac8:550d:: with SMTP id j13mr46331075qtq.37.1571256045529; 
- Wed, 16 Oct 2019 13:00:45 -0700 (PDT)
+ bh=MH284WpfdMmTT4sRM0t5AqX3XpYou6gu7tWPymm7DjQ=;
+ b=A79k+aCG8J+o9phJlICCbaHT4gi8BJl5k5owGzUIqrx4eOLArEiNoHNhyBNYeN8YAq
+ XuL8tXAPWOV0kCBTbW/jff4UvaWyGJK2Rr82x4BK2G1w84eBhau9hPD2DFzPLX351CWL
+ wpEzfyzsTD7UW5IBkQWwJ1KvmCmX7qfVBOviwxdvn4LyG61QI1cbujrpOYscjVcZ4R5i
+ 8x88nC2NKCP1Bdl17fzL+WZlFVu/9eFokQPVYb2Z8aWimXnVEwW64LiKvJCOKxnDq7QM
+ 06n8Eh4u+hcUu2tZru1HyDiQ9f6hraXybuyNES96zsHEmsGOk8L7szH5esXmloES9dOO
+ YNKA==
+X-Gm-Message-State: APjAAAWGzNPs11xl6SyzPvhHp39+qfSE9a5FxdguLOZtSw+3gOd7pyxS
+ gA2HvSnEFv9YKrL7Ji6Jfaf5Ig==
+X-Google-Smtp-Source: APXvYqwQfg+AMEijbvYInDKw1rQxmB6TO6d7tt0LCd8e4XMQCW2+/wCpDuDVQi3KUQIh6WJn1VFpNg==
+X-Received: by 2002:a37:c40d:: with SMTP id d13mr6599119qki.371.1571256047252; 
+ Wed, 16 Oct 2019 13:00:47 -0700 (PDT)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id c204sm13342030qkb.90.2019.10.16.13.00.43
+ by smtp.gmail.com with ESMTPSA id c204sm13342030qkb.90.2019.10.16.13.00.45
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 16 Oct 2019 13:00:44 -0700 (PDT)
+ Wed, 16 Oct 2019 13:00:46 -0700 (PDT)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  ebiederm@xmission.com, kexec@lists.infradead.org,
@@ -66,23 +66,23 @@ To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  matthias.bgg@gmail.com, bhsharma@redhat.com, linux-mm@kvack.org,
  mark.rutland@arm.com, steve.capper@arm.com, rfontana@redhat.com,
  tglx@linutronix.de
-Subject: [PATCH v7 05/25] arm64: hibernate: pass the allocated pgdp to ttbr0
-Date: Wed, 16 Oct 2019 16:00:14 -0400
-Message-Id: <20191016200034.1342308-6-pasha.tatashin@soleen.com>
+Subject: [PATCH v7 06/25] arm64: hibernate: use get_safe_page directly
+Date: Wed, 16 Oct 2019 16:00:15 -0400
+Message-Id: <20191016200034.1342308-7-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191016200034.1342308-1-pasha.tatashin@soleen.com>
 References: <20191016200034.1342308-1-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_130047_293518_CBF88ED7 
-X-CRM114-Status: GOOD (  11.09  )
+X-CRM114-CacheID: sfid-20191016_130048_240667_DA5FAFFF 
+X-CRM114-Status: GOOD (  11.87  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -109,29 +109,91 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-ttbr0 should be set to the beginning of pgdp, however, currently
-in create_safe_exec_page it is set to pgdp after pgd_offset_raw(),
-which works by accident.
+create_safe_exec_page() uses hibernate's allocator to create a set of page
+table to map a single page that will contain the relocation code.
+
+Remove the allocator related arguments, and use get_safe_page directly, as
+it is done in other local functions in this file to simplify function
+prototype.
+
+Removing this function pointer makes it easier to refactor the code later.
 
 Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
-Reviewed-by: James Morse <james.morse@arm.com>
+Reviewed-by: Matthias Brugger <mbrugger@suse.com>
 ---
- arch/arm64/kernel/hibernate.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/kernel/hibernate.c | 17 +++++++----------
+ 1 file changed, 7 insertions(+), 10 deletions(-)
 
 diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
-index a96b2921d22c..ef46ce66d7e8 100644
+index ef46ce66d7e8..34297716643f 100644
 --- a/arch/arm64/kernel/hibernate.c
 +++ b/arch/arm64/kernel/hibernate.c
-@@ -269,7 +269,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
- 	 */
- 	cpu_set_reserved_ttbr0();
- 	local_flush_tlb_all();
--	write_sysreg(phys_to_ttbr(virt_to_phys(pgdp)), ttbr0_el1);
-+	write_sysreg(phys_to_ttbr(virt_to_phys(trans_pgd)), ttbr0_el1);
- 	isb();
+@@ -196,9 +196,7 @@ EXPORT_SYMBOL(arch_hibernation_header_restore);
+  */
+ static int create_safe_exec_page(void *src_start, size_t length,
+ 				 unsigned long dst_addr,
+-				 phys_addr_t *phys_dst_addr,
+-				 void *(*allocator)(gfp_t mask),
+-				 gfp_t mask)
++				 phys_addr_t *phys_dst_addr)
+ {
+ 	int rc = 0;
+ 	pgd_t *trans_pgd;
+@@ -206,7 +204,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
+ 	pud_t *pudp;
+ 	pmd_t *pmdp;
+ 	pte_t *ptep;
+-	unsigned long dst = (unsigned long)allocator(mask);
++	unsigned long dst = get_safe_page(GFP_ATOMIC);
  
- 	*phys_dst_addr = virt_to_phys((void *)dst);
+ 	if (!dst) {
+ 		rc = -ENOMEM;
+@@ -216,7 +214,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
+ 	memcpy((void *)dst, src_start, length);
+ 	__flush_icache_range(dst, dst + length);
+ 
+-	trans_pgd = allocator(mask);
++	trans_pgd = (void *)get_safe_page(GFP_ATOMIC);
+ 	if (!trans_pgd) {
+ 		rc = -ENOMEM;
+ 		goto out;
+@@ -224,7 +222,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
+ 
+ 	pgdp = pgd_offset_raw(trans_pgd, dst_addr);
+ 	if (pgd_none(READ_ONCE(*pgdp))) {
+-		pudp = allocator(mask);
++		pudp = (void *)get_safe_page(GFP_ATOMIC);
+ 		if (!pudp) {
+ 			rc = -ENOMEM;
+ 			goto out;
+@@ -234,7 +232,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
+ 
+ 	pudp = pud_offset(pgdp, dst_addr);
+ 	if (pud_none(READ_ONCE(*pudp))) {
+-		pmdp = allocator(mask);
++		pmdp = (void *)get_safe_page(GFP_ATOMIC);
+ 		if (!pmdp) {
+ 			rc = -ENOMEM;
+ 			goto out;
+@@ -244,7 +242,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
+ 
+ 	pmdp = pmd_offset(pudp, dst_addr);
+ 	if (pmd_none(READ_ONCE(*pmdp))) {
+-		ptep = allocator(mask);
++		ptep = (void *)get_safe_page(GFP_ATOMIC);
+ 		if (!ptep) {
+ 			rc = -ENOMEM;
+ 			goto out;
+@@ -530,8 +528,7 @@ int swsusp_arch_resume(void)
+ 	 */
+ 	rc = create_safe_exec_page(__hibernate_exit_text_start, exit_size,
+ 				   (unsigned long)hibernate_exit,
+-				   &phys_hibernate_exit,
+-				   (void *)get_safe_page, GFP_ATOMIC);
++				   &phys_hibernate_exit);
+ 	if (rc) {
+ 		pr_err("Failed to create safe executable page for hibernate_exit code.\n");
+ 		goto out;
 -- 
 2.23.0
 
