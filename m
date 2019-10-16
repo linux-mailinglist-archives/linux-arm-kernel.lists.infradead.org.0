@@ -2,57 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4DE4FD991B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 20:24:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C13B9D993D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 20:31:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7nsgN3HHDeUrIdBXC9XY0iGXRVjTF4qF9Eno8NtMeM4=; b=FJ8BdZ3hX5IjKO
-	oRbuuMrgXtBe8WkXOfkULnAZ4fwhHmtbYLskxLsK/osLIvx8xwN4j/AEPqVDmiLKXZJG2thY3GZG/
-	csP9eHy2fQSV5Vojg8osp7ki5y7jJWuV3v3ic9qes2WIfBzNP2TJ2XSpkHWdmlzLi7+juaZO3kjW9
-	6s+7JeRsHxXb2JP5faxvUbgzHKqv3AZYdPmuiYS5PqNSYCwHLaZ66V75yQdyumM6Mej6nI73Zd+h+
-	1nfrAm+iOI0CzEQvrhdYEl0nhVzbAgFefaArKERpwEv8/zzdAKLrDblsGclg9omsCTC5oBeoQ6YHm
-	b/lMkcYbtK1tiYA7NeaQ==;
+	List-Owner; bh=DqTN1odXhhuxpwibzA7hT0CRUgXCkgJnaV0t4TBmWEQ=; b=d8P9eWiiMVc974
+	RXzqzx1sYiBDx8roJZUNciHe882tVy6O6H1nsyrmepxKb4ggrPe5jqPUuvX/gdOQWY5jRYbX/qJ4A
+	DLWAKInEJYqUnQJ4CIAxwC3e5egAe+lxTxaxOddiZI9aj6UKcZLjWscPaiZEzZkzeXGrjD17oZWoz
+	cWCo8iqTaL2G5UyXaFasCDKhMhsDvtRXTdkdO8Qn7FSyiWH/Tatrz/Ux0F6iPRIGz94z0pokri9Ku
+	HzI14lwaelK7GwoPVXvtbpL7Bc3ip94VFiIhbOdhEaGFrj8DTnasV3yCfM5V4kVXk8F1i0AvM82Hp
+	7d+Fc10m+Vo4gggKf9UA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKny9-0006op-Is; Wed, 16 Oct 2019 18:24:21 +0000
-Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
+	id 1iKo5A-0001cW-IV; Wed, 16 Oct 2019 18:31:36 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKnxw-0006oS-1l
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 18:24:09 +0000
-Received: from localhost (unknown
- [IPv6:2603:3023:50c:85e1:5314:1b70:2a53:887e])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id 12B9C142612A7;
- Wed, 16 Oct 2019 11:24:00 -0700 (PDT)
-Date: Wed, 16 Oct 2019 14:23:59 -0400 (EDT)
-Message-Id: <20191016.142359.416946718751400991.davem@davemloft.net>
-To: alexandre.belloni@bootlin.com
-Subject: Re: [PATCH 2/2] net: lpc_eth: parse phy nodes from device tree
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <20191010204530.15150-2-alexandre.belloni@bootlin.com>
-References: <20191010204530.15150-1-alexandre.belloni@bootlin.com>
- <20191010204530.15150-2-alexandre.belloni@bootlin.com>
-X-Mailer: Mew version 6.8 on Emacs 26.2
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Wed, 16 Oct 2019 11:24:00 -0700 (PDT)
+ id 1iKo50-0001bm-Tc
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 18:31:28 +0000
+Received: from localhost (li1825-44.members.linode.com [172.104.248.44])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A6BFE21D7A;
+ Wed, 16 Oct 2019 18:31:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571250685;
+ bh=2wAyGU0cUCFqc/8Sq42nh9uu/5+uzjYvLgMet1RoezY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=znZ2ibZLzc9MrZ18ZkPUt9B1GkhgYfZs48gTIYNPKAhAJj+ur1wnb2WgjiTvyD7rE
+ /VJ1ImpjowBfY0Yy0lbF6tGBpvspvNwQTnIQUI/StDFOYY+4cb2Pgx1n3dlW6CKi2T
+ Lz1SOiwZwIAybVdgHpd15pwIQMy6k5tTIYdf2uEQ=
+Date: Wed, 16 Oct 2019 11:31:21 -0700
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+Subject: Re: [stable 4.19][PATCH 1/4] ARM: dts: am4372: Set memory bandwidth
+ limit for DISPC
+Message-ID: <20191016183121.GD801860@kroah.com>
+References: <20191015065937.23169-1-mathieu.poirier@linaro.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191015065937.23169-1-mathieu.poirier@linaro.org>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_112408_094817_114C6D0A 
-X-CRM114-Status: GOOD (  11.61  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191016_113126_977181_04884E88 
+X-CRM114-Status: UNSURE (   9.62  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,36 +74,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, slemieux.tyco@gmail.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- vz@mleia.com
+Cc: linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ stable@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Date: Thu, 10 Oct 2019 22:45:30 +0200
-
-> When connected to a micrel phy, phy_find_first doesn't work properly
-> because the first phy found is on address 0, the broadcast address but, the
-> first thing the phy driver is doing is disabling this broadcast address.
-> The phy is then available only on address 1 but the mdio driver doesn't
-> know about it.
+On Tue, Oct 15, 2019 at 12:59:34AM -0600, Mathieu Poirier wrote:
+> From: Peter Ujfalusi <peter.ujfalusi@ti.com>
 > 
-> Instead, register the mdio bus using of_mdiobus_register and try to find
-> the phy description in device tree before falling back to phy_find_first.
+> commit f90ec6cdf674248dcad85bf9af6e064bf472b841 upstream
 > 
-> This ultimately also allows to describe the interrupt the phy is connected
-> to.
+> Set memory bandwidth limit to filter out resolutions above 720p@60Hz to
+> avoid underflow errors due to the bandwidth needs of higher resolutions.
 > 
-> Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+> am43xx can not provide enough bandwidth to DISPC to correctly handle
+> 'high' resolutions.
+> 
+> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
+> Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ti.com>
+> Signed-off-by: Tony Lindgren <tony@atomide.com>
+> Cc: stable <stable@vger.kernel.org> # 4.19
+> Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> ---
+>  arch/arm/boot/dts/am4372.dtsi | 2 ++
+>  1 file changed, 2 insertions(+)
 
-I asked you to address Andrew's feedback.
+What about 5.3?  Is this ok there?
 
-You can't let this sit for days like that.
+thanks,
 
-Therefore, I'm dropping your patches.
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
