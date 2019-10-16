@@ -2,62 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F5CCD9AB3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 22:03:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB173D9AB6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 22:03:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bcWoR+2Chqvz8CbnwsTRDPyXa9jQSLYrotlLE1O2GOw=; b=uSNe2fntsr3dtN
-	9rrDi80PV/fBhxHjH80hmvC2w7jqhOpsuaCGvE+PBnlZ6tWJQv6R7l8/gKon/9J7UPgyXpTEGXa5P
-	KvVW8BCW/jUQlLdfm5HySOrUfGSXn8pEtfOWLQ3zw+zQQBemL3tDr8o+Ui2/Z4ljW+mc2/mvAGMTW
-	vgDHlEfN0nyrdDLrzmrQ4b0esPrlUC3MfpgNbBv83I+1MLSw/GlKki5SZLb4edvh3in7k3R/rE1Y/
-	15v7Rt/O412PhdgKHnnwDwLuNiZ1u8NQLk+EuTJEiq8TwRvPMoIe7tRa2T38hFZEbZU2/ewCOLk11
-	U9yz4M6wGEhlei4xpaxA==;
+	List-Owner; bh=7QuDed4A6CgfN8d2TNm50p744d5dA+/KD9HAMkTlhSc=; b=msqTLw+50F9hJ3
+	XXXjaCavnAhR29osyfIbGIi3L58Og48Lj46zdvP9cbaJ9ZLIIuYpCkbkA6qucMuXXQSPq5XpXRen1
+	l62VZZq4JkT5u1HlM1oOoDiSjRt60jg+wU4xTGTje3pf3h8+PO9qdsYQyS9uhYwS1tmSp3f6fUPcQ
+	wRNtMgjDDZqC7EFZbyJa2RbNBwVIA58jdGcdArG1q5EUw8R/WEFvSMeSZfIPkjidKQ4R3al8J5u1u
+	O0HhpZ/wunQjENbPd7c16E8mf5irOrhYdDZdVDSPDZp9M6LXVq6xkS3qdjXADXWkf8pJi86JVuZ6W
+	/+vBnOb7LVwnh52Tu9Hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKpVj-0005re-Ga; Wed, 16 Oct 2019 20:03:07 +0000
-Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+	id 1iKpW9-0006DO-QQ; Wed, 16 Oct 2019 20:03:33 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKpTQ-00045T-QE
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 20:00:46 +0000
-Received: by mail-qk1-x742.google.com with SMTP id e66so3419902qkf.13
+ id 1iKpTT-00047R-4a
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 20:00:48 +0000
+Received: by mail-qt1-x841.google.com with SMTP id j31so37988860qta.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 16 Oct 2019 13:00:44 -0700 (PDT)
+ Wed, 16 Oct 2019 13:00:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=bEALksuMGDCoXJUsPuJK9KjzrlYMPFHPnYP/iTi6nJA=;
- b=PmgVNinlAhKoCy38ovygoke5eHkmtndpc1qCG+WMEy9t9CEaDFzQKRRgmdC+/OTIAr
- cClxqiICWNaO9nHeEsZv1j3YqYY8c2OLUOt90mSsJlaqZ0yME3UdcMJnjBBcAFw/MxOB
- 1gU5t4NkzRJAnW47EOb8ae4y2t+V1JiAo3wDbEYc0YRWeJM0RtUeU8C3aWxAqgm21r2X
- 2TjH36zN66FahrRc6sj/m312DAfD5zn543Be9cOWsRTaprJZ2ao3oHfuJffHHQSvKTfH
- Y7lPKpfR61Aw+x4ek1rgWv3PvQp/5zoyFWjLSW5+KPcvj4n3qAvnRZospNLcs5gjEocg
- UXTA==
+ bh=1tiYj23HzXJX4ZgHt0ym5ajKMNsnlXF/xQZzBPKQP48=;
+ b=bptSRtBN3xr8useYmB7iLV+OcV0ABHihVJ91UYRzIEEb848dVyygGn+GE2+y3sD+H/
+ Ehgz4BslCL365594q2uwcmw87mAuhVCKVq/TyG5alBLrXhyPibXYtKRBQWqMAkZ9CoYC
+ 9gsBU+jwTuKTMeH0NqgRU0ie6dAH9U4KR8K9yJfl/vmKON73ksH2ohoeFCWPK6TWnGs/
+ JY6rS3hpFuit6exKgtq1rRDzbjh8aCparhwYVDnwi0yOtbtg6XsW3ND76Y4zZO7Kgb/v
+ K5H0M1+2n/9/qGjrK17r20FGbMgWr0Qfx2uD66/tMR219XpCScNUfnH9v+OJDVSWzhgA
+ YK4A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=bEALksuMGDCoXJUsPuJK9KjzrlYMPFHPnYP/iTi6nJA=;
- b=RABR3rmeAQ0atdb+jcKoplZJ50Frl8Qoaxs3+GKaGUqZyubVx9VB1lbZ96XFvOy7Vs
- Mnk5pWYq484nHJkK51WbtGTVfRLpVCBGEUp/uWVLU/7cNkJq3UlLBteBIufjRds4Tobh
- 6sAPymUI3US8BWImiWi1E0PC53zWGVZOeBcvDU4rYJtFl2WbxmR1ow4j2rDGzH5l7QNK
- kSvuEc3M97BGeSirKgkl0mj/iYVqvBqvJtE7iMjoxgUyTuMk3SW+kR+1c6+IPF6lt3Iv
- ArwfHllapl0fQu1tg2iCdCaJt7Zlngbz4ilaBRWn/1Kp1LVHGwi72GRBZ70m4efFN/9D
- vlsQ==
-X-Gm-Message-State: APjAAAXXYepUlFnBVF49WKEnhpRLPZSbut24t4vINFM+UfwInRqGqAtg
- +rRdLHNG+kVFZea/Gy3vN/iyXg==
-X-Google-Smtp-Source: APXvYqzyH+2jZ2ynpwq6pYQufa7x4iWmQOZSfM/oXRiz2GauBXOrA822WeZtbs4kkqeqKB/SnonOpw==
-X-Received: by 2002:a37:56c6:: with SMTP id
- k189mr41781172qkb.124.1571256043570; 
- Wed, 16 Oct 2019 13:00:43 -0700 (PDT)
+ bh=1tiYj23HzXJX4ZgHt0ym5ajKMNsnlXF/xQZzBPKQP48=;
+ b=QdsOmlV2Dg7OJ1IX5YH4PW30qbFUt+bVO/cKw2Y/G0DtlP0y1E4aC7UrPMIkluq1B5
+ QN9yYvPdgwafGNMyivIAKKivswV4/1/MV9pXn1sPVKcy3UPhXzk3F006T4lVSSOf9T3Z
+ Hb+DspewJ9YnQYvVuNvkV5aG7PRIPQgnt8Kpb/wKi984TfwIAlMOYvMmI8MUBfvf7rX6
+ kQxyDi7iRYyaWfVEd0mp2Gn3mUc4Mj74WmXniW7FsRC6H4vPfjFAbRQax4uLX1zdQeVp
+ SlrCgSRxR2sNMUDtOvU1/NtH07DqfJ6p9yznkgaDt7EbY0evkQL5BbLZFbloIu1eY2Zf
+ BPyw==
+X-Gm-Message-State: APjAAAVaMrrj+rppalBovG3w/tiFpPxZavAlQ6uCRMLqij2pBdg416Ib
+ 9o6uaC/QWgfcqSb5Kp7JjFOLEcO06uw=
+X-Google-Smtp-Source: APXvYqwmRVQSdQU55owY+pKif3Q4GJGRGYVJkFk5zjZ7AznjZD2B0mWV7kq/8erD2qHWWjyifhfziA==
+X-Received: by 2002:ac8:550d:: with SMTP id j13mr46331075qtq.37.1571256045529; 
+ Wed, 16 Oct 2019 13:00:45 -0700 (PDT)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id c204sm13342030qkb.90.2019.10.16.13.00.42
+ by smtp.gmail.com with ESMTPSA id c204sm13342030qkb.90.2019.10.16.13.00.43
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 16 Oct 2019 13:00:42 -0700 (PDT)
+ Wed, 16 Oct 2019 13:00:44 -0700 (PDT)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  ebiederm@xmission.com, kexec@lists.infradead.org,
@@ -67,24 +66,23 @@ To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  matthias.bgg@gmail.com, bhsharma@redhat.com, linux-mm@kvack.org,
  mark.rutland@arm.com, steve.capper@arm.com, rfontana@redhat.com,
  tglx@linutronix.de
-Subject: [PATCH v7 04/25] arm64: kexec: make dtb_mem always enabled
-Date: Wed, 16 Oct 2019 16:00:13 -0400
-Message-Id: <20191016200034.1342308-5-pasha.tatashin@soleen.com>
+Subject: [PATCH v7 05/25] arm64: hibernate: pass the allocated pgdp to ttbr0
+Date: Wed, 16 Oct 2019 16:00:14 -0400
+Message-Id: <20191016200034.1342308-6-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191016200034.1342308-1-pasha.tatashin@soleen.com>
 References: <20191016200034.1342308-1-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_130044_888043_A8716237 
-X-CRM114-Status: UNSURE (   9.76  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191016_130047_293518_CBF88ED7 
+X-CRM114-Status: GOOD (  11.09  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -111,56 +109,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently, dtb_mem is enabled only when CONFIG_KEXEC_FILE is
-enabled. This adds ugly ifdefs to c files.
-
-Always enabled dtb_mem, when it is not used, it is NULL.
-Change the dtb_mem to phys_addr_t, as it is a physical address.
+ttbr0 should be set to the beginning of pgdp, however, currently
+in create_safe_exec_page it is set to pgdp after pgd_offset_raw(),
+which works by accident.
 
 Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
+Reviewed-by: James Morse <james.morse@arm.com>
 ---
- arch/arm64/include/asm/kexec.h    | 4 ++--
- arch/arm64/kernel/machine_kexec.c | 6 +-----
- 2 files changed, 3 insertions(+), 7 deletions(-)
+ arch/arm64/kernel/hibernate.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/include/asm/kexec.h b/arch/arm64/include/asm/kexec.h
-index 12a561a54128..ad6afed69078 100644
---- a/arch/arm64/include/asm/kexec.h
-+++ b/arch/arm64/include/asm/kexec.h
-@@ -90,14 +90,14 @@ static inline void crash_prepare_suspend(void) {}
- static inline void crash_post_resume(void) {}
- #endif
- 
--#ifdef CONFIG_KEXEC_FILE
- #define ARCH_HAS_KIMAGE_ARCH
- 
- struct kimage_arch {
- 	void *dtb;
--	unsigned long dtb_mem;
-+	phys_addr_t dtb_mem;
- };
- 
-+#ifdef CONFIG_KEXEC_FILE
- extern const struct kexec_file_ops kexec_image_ops;
- 
- struct kimage;
-diff --git a/arch/arm64/kernel/machine_kexec.c b/arch/arm64/kernel/machine_kexec.c
-index 8e9c924423b4..ae1bad0156cd 100644
---- a/arch/arm64/kernel/machine_kexec.c
-+++ b/arch/arm64/kernel/machine_kexec.c
-@@ -203,11 +203,7 @@ void machine_kexec(struct kimage *kimage)
- 	 * In kexec_file case, the kernel starts directly without purgatory.
+diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
+index a96b2921d22c..ef46ce66d7e8 100644
+--- a/arch/arm64/kernel/hibernate.c
++++ b/arch/arm64/kernel/hibernate.c
+@@ -269,7 +269,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
  	 */
- 	cpu_soft_restart(reboot_code_buffer_phys, kimage->head, kimage->start,
--#ifdef CONFIG_KEXEC_FILE
--						kimage->arch.dtb_mem);
--#else
--						0);
--#endif
-+			 kimage->arch.dtb_mem);
+ 	cpu_set_reserved_ttbr0();
+ 	local_flush_tlb_all();
+-	write_sysreg(phys_to_ttbr(virt_to_phys(pgdp)), ttbr0_el1);
++	write_sysreg(phys_to_ttbr(virt_to_phys(trans_pgd)), ttbr0_el1);
+ 	isb();
  
- 	BUG(); /* Should never get here. */
- }
+ 	*phys_dst_addr = virt_to_phys((void *)dst);
 -- 
 2.23.0
 
