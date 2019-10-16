@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42CA5D886D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 08:02:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 985B1D886E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 08:02:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Oi8Yp1ZQwDlEdAck6tAT7I4vILLUAnGdfJyA1NxNojE=; b=tP3I45NCfPqBwq
-	nX1usBvbvJzDecfZ3bVtqAsp+IrmtXKNRJeEB6K2/dx3sZCuhFHDZ/VU6usKRZIjvoNcHmAkVyqBs
-	7eDEyshqfQ8h2DhdTD9hpScfYmPWVfLESURpurqMhz3DnVP0zG7i89jmwD+JagjcU9Om67ZN5+cSb
-	sv1/GRQFEoatnapNqYPNKgQEzmconoPuOUanUc3bV63g0gzpausWBDalN+65klVD10291r0FPgGss
-	iMulATa7K9oN2T2G+fTe9h636GFF6vogEhAalkafGaa/KUF/ayMmH6yPaTlGR5wcz3FofYwvhhg4B
-	8Ql54jPSdIc1+5K4BRJg==;
+	List-Owner; bh=2+yX5frXCEbGAIIKCM61iBpm+GfaPQ9GTxVJgI9ErrQ=; b=FS9p+OVJT1zhd8
+	+DtdsU+UPkbO0YdMTvr3e9uvPnY5Vg+ziSRdca+TjNuJlmJFR8ziAi4CqiF2UFDJVeHSoy4mGlrpi
+	38B+KPPBQF6Sf+ecu4avyW8NIBzMA8Qz2VjIQG7edA53cUw0GBKK1aqwQsx3azpRLhH0pund8wSJV
+	3KCG0BcFvTfN7ZMW0lhhcSHmzYEZXLE7v9ts5fC9yhzLacXIG2UgKXHgOB3FhPOpSGLUXmLAMlFXU
+	p8b6LYXZgl5ezSU5EQPVr83/nhDcz3aNACsdRlxdAAivPNc6+pyWJZO8EwuXevzvakuklPjsFkiqf
+	vJvREWDmXhR00RMFwjSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKcNa-0001JX-MZ; Wed, 16 Oct 2019 06:01:50 +0000
+	id 1iKcNn-0001W8-PE; Wed, 16 Oct 2019 06:02:03 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKcMS-0000Tf-Uc
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 06:00:42 +0000
+ id 1iKcMs-0000rD-Hb
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 06:01:08 +0000
 Received: from localhost (unknown [171.76.123.182])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C446C20872;
- Wed, 16 Oct 2019 06:00:39 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 49D722067D;
+ Wed, 16 Oct 2019 06:01:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571205640;
- bh=8eaAxPL2KayDUCaf1S4jMsM2BVtAzQbFkkpPFytTUFY=;
+ s=default; t=1571205666;
+ bh=g+I0EDKeU/EL9t/PNSPY6ssOjQta6vTW/9jfk4rmiAc=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=p0oW49M8iTuaGttBcVoEKOWVs23gzFxq5ABXZPBb+81Jc/W1q9vsSS7JEaIKFhweD
- 6RvihGSk/RZHyGSIMalD3BYzyGW8+oUt2A6axpbrJPlzv+koyRmbES8V5eXzB6gUIi
- jZRCKUX2Xt+fNWGe2gkC3Hia/45pfMwRm/1vwlSc=
-Date: Wed, 16 Oct 2019 11:30:35 +0530
+ b=i0P5lOVy2VTN3hflsQGO+R+2RhTH/oMNOdiB2ujdfwGRibgwBOwjLGDdVPsTdBe7r
+ pWDCKujljyw2TO2qQ8Sxd+w7lZJgMFXSkduSHJWEilH7EUFm2llu7JPz5FrIvTpK3z
+ fn58kGWFNRcshhfrNqMDUogqwt5YcVmj4g5M6alI=
+Date: Wed, 16 Oct 2019 11:31:01 +0530
 From: Vinod Koul <vkoul@kernel.org>
 To: Bjorn Andersson <bjorn.andersson@linaro.org>
-Subject: Re: [PATCH] arm64: defconfig: Enable Qualcomm socinfo driver
-Message-ID: <20191016060035.GF2654@vkoul-mobl>
-References: <20191011234828.374419-1-bjorn.andersson@linaro.org>
+Subject: Re: [PATCH] arm64: defconfig: Enable Qualcomm SPI and QSPI controller
+Message-ID: <20191016060101.GG2654@vkoul-mobl>
+References: <20191012041855.511313-1-bjorn.andersson@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191011234828.374419-1-bjorn.andersson@linaro.org>
+In-Reply-To: <20191012041855.511313-1-bjorn.andersson@linaro.org>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_230041_020614_2ECBBCE9 
-X-CRM114-Status: GOOD (  15.40  )
+X-CRM114-CacheID: sfid-20191015_230106_605661_15E475DB 
+X-CRM114-Status: GOOD (  13.16  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,7 +76,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anson Huang <Anson.Huang@nxp.com>, Arnd Bergmann <arnd@arndb.de>,
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <Anson.Huang@nxp.com>,
  Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
  Maxime Ripard <mripard@kernel.org>,
  Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
@@ -89,13 +89,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11-10-19, 16:48, Bjorn Andersson wrote:
-> The Qualcomm socinfo driver provides SoC information to userspace using
-> the standard soc interface as well as a number of debugfs entries.
-> 
-> Enable this to allow certain user space tools to acquire this
-> information, as well as getting developers access to the information in
-> debugfs that is useful when reporting bugs.
+On 11-10-19, 21:18, Bjorn Andersson wrote:
+> Enable the drivers for GENI SPI and QSPI controllers found on the
+> Qualcomm SDM845 platform, among others.
 
 lgtm, tested on db845c
 
@@ -105,21 +101,23 @@ Tested-by: Vinod Koul <vkoul@kernel.org>
 > 
 > Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 > ---
->  arch/arm64/configs/defconfig | 1 +
->  1 file changed, 1 insertion(+)
+>  arch/arm64/configs/defconfig | 2 ++
+>  1 file changed, 2 insertions(+)
 > 
 > diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-> index 45e55dfe1ee4..a5953b0b382d 100644
+> index 688c8f200034..dcada299ff4d 100644
 > --- a/arch/arm64/configs/defconfig
 > +++ b/arch/arm64/configs/defconfig
-> @@ -744,6 +744,7 @@ CONFIG_QCOM_SMEM=y
->  CONFIG_QCOM_SMD_RPM=y
->  CONFIG_QCOM_SMP2P=y
->  CONFIG_QCOM_SMSM=y
-> +CONFIG_QCOM_SOCINFO=m
->  CONFIG_ARCH_R8A774A1=y
->  CONFIG_ARCH_R8A774C0=y
->  CONFIG_ARCH_R8A7795=y
+> @@ -391,7 +391,9 @@ CONFIG_SPI_MESON_SPIFC=m
+>  CONFIG_SPI_ORION=y
+>  CONFIG_SPI_PL022=y
+>  CONFIG_SPI_ROCKCHIP=y
+> +CONFIG_SPI_QCOM_QSPI=m
+>  CONFIG_SPI_QUP=y
+> +CONFIG_SPI_QCOM_GENI=m
+>  CONFIG_SPI_S3C64XX=y
+>  CONFIG_SPI_SPIDEV=m
+>  CONFIG_SPI_SUN6I=y
 > -- 
 > 2.23.0
 
