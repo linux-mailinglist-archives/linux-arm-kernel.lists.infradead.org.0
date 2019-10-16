@@ -2,67 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 141E1D91DF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 15:01:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B29C4D91E5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 15:02:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z1+q5vKXnnKjtdZURaEidK4TeqfGOtJItAMGHT0Zl3w=; b=CFh/CBX3q79ED1
-	BHwWI2QOWBcegkNJfGwcGmLZvLwy2A8bJKwcHfYpwC5hUI7E3zybw1l1c3IxunM3zm99qHk9JflJn
-	DXmw2vmfOmorWC1u5xoJYNm8G7tiNk+8JRmr4EDnR94x55Piu8NJtkAME7xcfAs+wTBaHH8x+zpgO
-	7ovDZ867PvWnziuaImowG1acvhlZUOPqb8Ip51TFD4ARitpzdVMW15VgS7sdf9sdTWNCppJdr2nTv
-	YHo0l34kLW0ElUS3zjzD/G+cR1oQ2BYT5CeUvyufJvQdcN0C9ZicWGfsWuEepdb2fKKleu9VSFOst
-	jBWkjympEHPMmXPcfh1Q==;
+	List-Owner; bh=KomG551XfBcFjngc7RH6JjO69JXaG86aswvgE2N+yCs=; b=R9I0E3NgQFiMTr
+	hOBATD1M3aq7mtMwg8NKUkK+LynqkikHIkEnUjnPc2O/a2E42reIPh1g/wL+wlvbEdZ3M44jPWg0W
+	oaQB5/8HQRQu2ZE0aY9/8+KxxRiKsTvTMdkNM2KKOODBXFxmMJNhTO0+VhL/dtww4nWLK2OtqWfzb
+	3hCJhFznyX+8R+VQY9w+zIEZntGzMCcKhyHnGRP2Jr+GTADvUvaafi/1kwfPjUcaWxF5WxD/KCh48
+	iSFMR2yqG03YWg7MNJQh5UNI/eSEkS+/cW4pNFhXE1xuruXMIQf1WzMvGVjYEQsRCwCO+TfGdjpKc
+	J+RkpNfzBwBT6jvOKulA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKiw1-00072s-Vm; Wed, 16 Oct 2019 13:01:49 +0000
+	id 1iKiwl-0007Yq-MS; Wed, 16 Oct 2019 13:02:35 +0000
 Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKivq-00072F-Bm
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 13:01:39 +0000
-Received: by mail-qt1-x844.google.com with SMTP id t20so30572000qtr.10
+ id 1iKiwY-0007YI-NO
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 13:02:24 +0000
+Received: by mail-qt1-x844.google.com with SMTP id c21so35871610qtj.12
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 16 Oct 2019 06:01:38 -0700 (PDT)
+ Wed, 16 Oct 2019 06:02:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=jnE8lBSLY3wNnqyY4G8WlYMgwsueTd/EoUksCVuD65E=;
- b=BAyU5dplrFadafcQV8wzsDzA1AsMPOKwhq1dJebWhm730gL3t0WiDFQHtMnfwYBf5T
- 4Q3eSK6Qq4ex1FD2/Q5f/ZdJRQSYJ1upnqdfq3Y9yHAx9LPaJFHmMZqahRBIUgFvjzG7
- kyskQIhOvG9uaorqTV6HcCGjVmLrbZ2w962+QDCXzJ0IcaDaXG4uCWBfNqNI7CzZMpMm
- KfYK2f7WJ819fImO5EARWvL30f98knyldXDIOVxA13Gm0P7QnI/xQLDZmA5o0ZP+3CEZ
- 7FaSVGt6ptwWaA+rQepImmf1YT97mShCV2ZnEtliGHHwPrzqBbDrhpGaTFsBaPbXHvGt
- 4Rvw==
+ :cc; bh=nb+Zwv6A9Mb4GfSnlLYIs35QuTFmhM3ANMKIRmvC9YI=;
+ b=k2uI+8mjSnh09Xb8YO7vjSmrVkGwUmx1Mp2fIXodTr8e5zJG/RhUZ9a4R+Ze4LnTtK
+ 23eqK1hAdLmvlmjfJOSbPS4YfGjjwoWeVeiQ+Xb31T7+BLKRnSsZTG8bubsr/JjuWR8/
+ 4AoHL4EfhG2bs+gtfdfHzxYOGI6VlOer+aiNFAYVyl0lTx8F9Exqaf+DH5uL1DIBgUWq
+ az80mzMXkF5Qj+VH8cvhDzRyTKlq6rMPJ+BBA7Hc+HqVwGTu0TqjW645pYwiPf3AA+0a
+ +KCJvGnQa4kJUbsEam72ESp8wY9Nbn1BJVHcrIjHvnYP/AFdzm1XjUN1Ycnd6i+IGoll
+ aUyA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=jnE8lBSLY3wNnqyY4G8WlYMgwsueTd/EoUksCVuD65E=;
- b=nvPl3GEGdB2/daTSdKqNIRx7fqfsOAQwCHTI42yKXOZ0C0Y2qaIPPq71AlYtBEA50C
- f81OXtu2xYiEwYMHpKFtkIaIczBeuz6zoaYTJ+zX++QWrdGAsQezNe5qus/I5GjhJKjA
- kwMWsPiyceh8OjPN/GPCDcFfzuyuoH7cq7VmII6BoqjrUQ0pn0N2t0UoLYRwS9cmT3Va
- Nwywcab/OgFf8sgwakPqcZP7e+Ux8pzbTc/U2C/jNKlqCx0NntMzTGgSs0eM2n4JQ8tS
- lRUNCwgsIG57Ul2gvzKU5nu2hNpQ39BZbtMGXUsMu4tPaSwcg4s7RF0Wk2lfUVO+pKLR
- tNCg==
-X-Gm-Message-State: APjAAAWRC55/of8D17vPizaVAQyCgeAjG6XHLewXVi5c4ZZBozI6zCvl
- 7z3j0PJERJebrfNux6d4aIP0ahfX8cH9mKsCVSOq5g==
-X-Google-Smtp-Source: APXvYqwW5pJtOTNrnLrO03T1G9+Fcg/NuG1gN7wmIq4pJ8cxsc7jBg6TJfq5ooHjs4qjHlf1A3fmee9vr4kyD9kiJvg=
-X-Received: by 2002:ac8:2a38:: with SMTP id k53mr13105733qtk.387.1571230897593; 
- Wed, 16 Oct 2019 06:01:37 -0700 (PDT)
+ bh=nb+Zwv6A9Mb4GfSnlLYIs35QuTFmhM3ANMKIRmvC9YI=;
+ b=YJnYKIsnCAfihr57EmMSYciWZzUHaNECzCsSwL3IOkh5vKIthNcuz0pUVTv84p7pQe
+ WiW3gsrAfU0YSyorlbq1gh95VYFU93a9BIYPVrEIKY9Lgoe0GSSIKtJg9KYCbZhyiE7x
+ suIg5/M3cG7KM9NRWS6LMYHQU0WlEv82VaoTiVOLxPenHJ5x/OPKPFsGRVBl8S8sE52B
+ CJS9X2pZ08lDtUIkbwYFOFJ53PIwTWmK5s/hK6E40/YDQ6zvFNxRmNaHEP0K/aOtIfTR
+ GixCSlQ1a9Mr6SqsyKrqw2AhFFIvfy3JMM0w0Q66fMSDEqkbEfCHjhmz5uTDEQUALC7u
+ 6JIw==
+X-Gm-Message-State: APjAAAUwXSJFfJqUATu0fN8d9oXIiU69qK5UbXdazbCDgdgXu+YMa9Hv
+ tQ0YR59/zW4OI3VQxOuLppo28psQ++BIYxA7ZRpKhjn6
+X-Google-Smtp-Source: APXvYqyW4cbiSWGzBxQIXio3vIu0cmY2K6dYV01TTkd8mDKAjaYz3de0ceDV/3tatxQgqUQRv2lL843vXSRKNrVKh8k=
+X-Received: by 2002:ac8:2f9b:: with SMTP id l27mr43816025qta.218.1571230942027; 
+ Wed, 16 Oct 2019 06:02:22 -0700 (PDT)
 MIME-Version: 1.0
 References: <20191014121910.7264-1-ard.biesheuvel@linaro.org>
- <20191014121910.7264-7-ard.biesheuvel@linaro.org>
-In-Reply-To: <20191014121910.7264-7-ard.biesheuvel@linaro.org>
+ <20191014121910.7264-16-ard.biesheuvel@linaro.org>
+In-Reply-To: <20191014121910.7264-16-ard.biesheuvel@linaro.org>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 16 Oct 2019 15:01:26 +0200
-Message-ID: <CACRpkdZVTG-kKp0790uFU1-SRsq5tZ1ibPqm7hoCqXHJVYfuGw@mail.gmail.com>
-Subject: Re: [PATCH 06/25] crypto: ux500 - switch to skcipher API
+Date: Wed, 16 Oct 2019 15:02:10 +0200
+Message-ID: <CACRpkdZLha2jExo2dzfxpCLw2SydWxkOw1FDLy+iwY9i7hADpg@mail.gmail.com>
+Subject: Re: [PATCH 15/25] crypto: ixp4xx - switch to skcipher API
 To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_060138_409006_E0497D7F 
-X-CRM114-Status: GOOD (  11.00  )
+X-CRM114-CacheID: sfid-20191016_060222_762967_79F0893C 
+X-CRM114-Status: GOOD (  10.80  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -91,9 +91,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "David S. Miller" <davem@davemloft.net>, Eric Biggers <ebiggers@google.com>,
- linux-crypto@vger.kernel.org, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Herbert Xu <herbert@gondor.apana.org.au>
+Cc: Herbert Xu <herbert@gondor.apana.org.au>,
+ Eric Biggers <ebiggers@google.com>, Linus Walleij <linusw@kernel.org>,
+ Krzysztof Halasa <khalasa@piap.pl>, linux-crypto@vger.kernel.org,
+ Imre Kaloz <kaloz@openwrt.org>, "David S. Miller" <davem@davemloft.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -112,7 +114,9 @@ On Mon, Oct 14, 2019 at 2:19 PM Ard Biesheuvel
 > So switch this driver to the skcipher API, allowing us to finally drop the
 > blkcipher code in the near future.
 >
-> Cc: Linus Walleij <linus.walleij@linaro.org>
+> Cc: Linus Walleij <linusw@kernel.org>
+> Cc: Imre Kaloz <kaloz@openwrt.org>
+> Cc: Krzysztof Halasa <khalasa@piap.pl>
 > Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 
 Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
