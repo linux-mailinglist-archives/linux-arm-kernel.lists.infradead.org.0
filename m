@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BBEB5D91D0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 15:00:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E66E4D91D3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 15:00:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9pY/YNzLKoOXAyu9s34ji8aEgUE5k20z6XvezDYDiOw=; b=VBddSGa2venPjF
-	RXA9IJ/GXdruRHOcyoBm/+6jG7IzecNb2PUthGCfRs0wX24ZMBoQmKVB/8mSksVA032QGxWYIhx+a
-	e2wKJgaUNMFf9v2DNdMIp4y/KKZdmeFvv7+1SoaufEmU+FeJTZAqU6DQX7hHKbKJK5rR/pna5II5Z
-	/Z9U+YPbf0l3zbzPex2tYhYP8OqSVXpCyVpsuuYq4MHTMhVGahTs1vSvPs/Ag5mfXLKGvEl/8dWqf
-	wRpsm6hl1mCc0ZOBRhxroJToKk2P5McGisF2drk0g+NWCGDg3yMe7+aiuJK6DTG0j9P9XuIAw9BJY
-	0U6ioRKKFz2HJj70XdAw==;
+	List-Owner; bh=8nUcZfLs2HgvPyZimgOHWs96LuWnWBuFElbIbOdYomQ=; b=nF1sahmM2oC9yw
+	AmTyxm2SY3efxDp5njbY+pCat0R6wFu9qZ4v5Jvp1BakNcCpGex0MG2Y1B3EDvH2twiXIEkjqUK61
+	xjJ71x5DvXFIz4TJ51dWD3tqKqZ/0/V5kC7tnkrT2Ho7WaGqYr/3Rv1/PvQP4AYTo/a7cMhSIijxt
+	yzM36g7ocNb2Ldrqg9b3A6sixe690YHRmrbrgyxAtyg6KinUX8W2UlkgB1n2xTdjQENpAu5rdJMFD
+	n+heBEt5TpnI3KfvEWXppb2YmSSllai7ESh+hQEaiJK7NSrn0/W1hVlnwChlaHC8vH8FzahKn7tcX
+	lPsO8uZkPvK4jtQhrRbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKiuE-0004NA-Um; Wed, 16 Oct 2019 12:59:58 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iKiuV-0004dy-SZ; Wed, 16 Oct 2019 13:00:16 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKitj-0004AB-Kp
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 12:59:29 +0000
-Received: by mail-wr1-x441.google.com with SMTP id b9so27983442wrs.0
+ id 1iKitl-0004Ax-Af
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 12:59:31 +0000
+Received: by mail-wr1-x444.google.com with SMTP id r3so27973234wrj.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 16 Oct 2019 05:59:25 -0700 (PDT)
+ Wed, 16 Oct 2019 05:59:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=abGc2CSWjTlOkZ/qOD8jVoBxXH6yqwawEWK9EHJHevc=;
- b=qk4PanY+Zdp8HqSblcgOtxexMTnZ9eziJPAHTePPRv/ZCz2RLkCdgAyc/p6coscr/7
- 3f1LRGqmyx07u02EP0X2nT76Z8/MKZ96GL86nbHzGSeVMme+6/54zFb27EgIsgCtPQ3B
- 6O7mrsTo3w0pwvke9h3y6BDZ5UGsc1Pj+QJ2VQ7NgvdkPg4wd2+ubx95/6+KSwBk6OhV
- gs5GG/wiAgcOvM5GRakN1xOezl/SuMsW3wwZJSlNn+wPUkd72YdS7rYof6vOe62uzR5a
- LGT302bWsnWbLVCmaYceR/X35nlddv6ACILECSN7/PI82S5sw9NYj+y7IAmaR+6kOY3r
- P+pA==
+ bh=dR351hSk2KLsLkv+qBJUXfTUKT/j75dNRsV/i2s9Zfc=;
+ b=eT/flQ5l0i11577h0NpYiNwpRb0OdvW49A9KFCcpztdDYdxIqpD0NlebB+UGUMHWpx
+ 5fBrQTJE4XWXoW+ivRG0+w83DDVFpobRdZgzbG3LRxZsm5ntetU1O6VIFIZjsVMyl5ly
+ OlCAaEyl7MsQOgYVofq5kkWbLxaAAuxTIllwrreIyZZ7PWz/Kg8MBnTYK1AtXIfAa2mY
+ 47G/So4/jagQQCWDmOrsZVFe5QkikEz6AapR7pTGOiCruDQVPq1hyLPJYZgqHtq3vT6u
+ rWrCCRzyWlujhekz86Izx+30cZuPH0ZiNOuE3Nml26twXbTOxkkCKNbLoA2IaJr5wnvJ
+ kT6w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=abGc2CSWjTlOkZ/qOD8jVoBxXH6yqwawEWK9EHJHevc=;
- b=unZ9S18UOX6L/sJ+jb4r2wyPo0HL03/29bdNF7OUKlBDOK5OwIEUvkW8t0H1/eMo/N
- u+SacNKcKxaUVIn7MsL5Yo94tNnrSkjPkZyOcU4rea7aSEWNBlSrt9Q7TG+9OJ4QX2kx
- U+qRpPkTdzbgvs+zpwfrT4DCaCKWzalU6N63b2pjBPDHVrvr/iCaHh+lXWSn9TvJYSy7
- w/qgAJqOAQigaSsxB2yEk3bkXGkK44qoq06nDSvs9N80wWkOANUNVs8pol6HvyDNxcAb
- CV7JRIp9N7OFhG5Dir1bDu6aL8onqyig3N0RU6IgvlJXnenhZH3ZTuslGy//Uocmwnn9
- v1Gw==
-X-Gm-Message-State: APjAAAWoL6q8eufnMwrxlI1l9QhLq0+QWRPzUzAfK6TONX9IB5QAZ/ap
- BcdOC7RnQEVdJR4+SYQ8p5k=
-X-Google-Smtp-Source: APXvYqwK61+ZWts0PsXQ9pWHrCrawQg5bZT77gk8e1PC8UhIo+wMl/2EQpDF4mm2cguue2c2hRK7EA==
-X-Received: by 2002:adf:dc42:: with SMTP id m2mr2753239wrj.314.1571230764008; 
- Wed, 16 Oct 2019 05:59:24 -0700 (PDT)
+ bh=dR351hSk2KLsLkv+qBJUXfTUKT/j75dNRsV/i2s9Zfc=;
+ b=baW1lz7Vvu1m954tPaCa2ExPcaCuIVvEiMfjpuG0xZ6woY1q5ud/VtqnlAlw4eg2QC
+ gKAJAOphrkyHEeDs/Ee9tR2EqndSpQgioMm5qRJmT5I3d3L/h3xKTMeXgNQpyv+vlhDX
+ PgWUBb8Wv8vnQ/itNURNcEFdvbAMCnvSqRzZXgk60R4iLQvm15mwwIshyGR0f3cgqKom
+ REsgHuqwaRxf5HqsfogP/UHAvdIV1APWPKFp1rca0zf/C32YLjkesZ6K+8iXQWAujS1E
+ ew310PDN5sGC6yPNWvh3CBjcajVSDB+Kd4PIgSsnRXCLG+UTd01q4p7OYdv+gxsdzoSD
+ 6Ykg==
+X-Gm-Message-State: APjAAAXRn8Fo7yYmdfrHXRNdrwDgOEKhTPDIYSSxSonhRZd4IhxSKM8x
+ t5UpMB7w/30XeW2iAm4x5Rc=
+X-Google-Smtp-Source: APXvYqx4QwSzyJemRDUAHXxLR65wDPnCmDTCaDOG3HSRImU7gA2kcMZcoPyD8Lx6xOqfuZ/HmtUWVw==
+X-Received: by 2002:adf:910d:: with SMTP id j13mr2626813wrj.128.1571230766433; 
+ Wed, 16 Oct 2019 05:59:26 -0700 (PDT)
 Received: from localhost (p2E5BE2CE.dip0.t-ipconnect.de. [46.91.226.206])
- by smtp.gmail.com with ESMTPSA id e9sm8010855wme.3.2019.10.16.05.59.22
+ by smtp.gmail.com with ESMTPSA id w125sm4617515wmg.32.2019.10.16.05.59.25
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 16 Oct 2019 05:59:22 -0700 (PDT)
+ Wed, 16 Oct 2019 05:59:25 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>,
  Michael Turquette <mturquette@baylibre.com>,
  Stephen Boyd <sboyd@kernel.org>
-Subject: [PATCH 1/5] clk: tegra: Remove last remains of TEGRA210_CLK_SOR1_SRC
-Date: Wed, 16 Oct 2019 14:59:15 +0200
-Message-Id: <20191016125919.1773898-2-thierry.reding@gmail.com>
+Subject: [PATCH 2/5] clk: tegra: Move SOR0 implementation to Tegra124
+Date: Wed, 16 Oct 2019 14:59:16 +0200
+Message-Id: <20191016125919.1773898-3-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191016125919.1773898-1-thierry.reding@gmail.com>
 References: <20191016125919.1773898-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_055927_687229_4A079F62 
-X-CRM114-Status: GOOD (  13.36  )
+X-CRM114-CacheID: sfid-20191016_055929_387754_9D032C0B 
+X-CRM114-Status: GOOD (  15.43  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (thierry.reding[at]gmail.com)
@@ -110,60 +110,150 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Thierry Reding <treding@nvidia.com>
 
-Later SoC generations implement this clock as SOR1_OUT. For consistency,
-the Tegra210 implementation was adapted to match the same name in commit
-4d1dc4018573 ("dt-bindings: clock: tegra: Add sor1_out clock").
-
-Clean up the remaining pieces by adopting the new name for the internal
-identifiers and remove the old alias. Note that since both SOR1_SRC and
-SOR1_OUT were referring to the same device tree clock ID, this does not
-break device tree ABI.
+The SOR0 clock on Tegra210 is very different from the SOR0 clock found
+on Tegra124. Move the Tegra124 implementation to the Tegra124 driver so
+that a custom implementation can be provided on Tegra210 without
+clashing with the existing clock.
 
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
- drivers/clk/tegra/clk-id.h               | 2 +-
- drivers/clk/tegra/clk-tegra210.c         | 2 +-
- include/dt-bindings/clock/tegra210-car.h | 1 -
- 3 files changed, 2 insertions(+), 3 deletions(-)
+ drivers/clk/tegra/clk-tegra-periph.c |  8 -----
+ drivers/clk/tegra/clk-tegra124.c     | 49 ++++++++++++++++++++++++++++
+ 2 files changed, 49 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/clk/tegra/clk-id.h b/drivers/clk/tegra/clk-id.h
-index de466b4446da..ae02885c9475 100644
---- a/drivers/clk/tegra/clk-id.h
-+++ b/drivers/clk/tegra/clk-id.h
-@@ -238,7 +238,7 @@ enum clk_id {
- 	tegra_clk_sor0,
- 	tegra_clk_sor0_lvds,
- 	tegra_clk_sor1,
--	tegra_clk_sor1_src,
-+	tegra_clk_sor1_out,
- 	tegra_clk_spdif,
- 	tegra_clk_spdif_2x,
- 	tegra_clk_spdif_in,
-diff --git a/drivers/clk/tegra/clk-tegra210.c b/drivers/clk/tegra/clk-tegra210.c
-index df172d5772d7..019287df6c12 100644
---- a/drivers/clk/tegra/clk-tegra210.c
-+++ b/drivers/clk/tegra/clk-tegra210.c
-@@ -2353,7 +2353,7 @@ static struct tegra_clk tegra210_clks[tegra_clk_max] __initdata = {
- 	[tegra_clk_sor0] = { .dt_id = TEGRA210_CLK_SOR0, .present = true },
- 	[tegra_clk_sor0_lvds] = { .dt_id = TEGRA210_CLK_SOR0_LVDS, .present = true },
- 	[tegra_clk_sor1] = { .dt_id = TEGRA210_CLK_SOR1, .present = true },
--	[tegra_clk_sor1_src] = { .dt_id = TEGRA210_CLK_SOR1_SRC, .present = true },
-+	[tegra_clk_sor1_out] = { .dt_id = TEGRA210_CLK_SOR1_OUT, .present = true },
- 	[tegra_clk_gpu] = { .dt_id = TEGRA210_CLK_GPU, .present = true },
- 	[tegra_clk_pll_g_ref] = { .dt_id = TEGRA210_CLK_PLL_G_REF, .present = true, },
- 	[tegra_clk_uartb_8] = { .dt_id = TEGRA210_CLK_UARTB, .present = true },
-diff --git a/include/dt-bindings/clock/tegra210-car.h b/include/dt-bindings/clock/tegra210-car.h
-index 6b77e721f6b1..b43b9e84e62e 100644
---- a/include/dt-bindings/clock/tegra210-car.h
-+++ b/include/dt-bindings/clock/tegra210-car.h
-@@ -309,7 +309,6 @@
- #define TEGRA210_CLK_CLK_OUT_3 279
- #define TEGRA210_CLK_BLINK 280
- /* 281 */
--#define TEGRA210_CLK_SOR1_SRC 282
- #define TEGRA210_CLK_SOR1_OUT 282
- /* 283 */
- #define TEGRA210_CLK_XUSB_HOST_SRC 284
+diff --git a/drivers/clk/tegra/clk-tegra-periph.c b/drivers/clk/tegra/clk-tegra-periph.c
+index 1ed85f120a1b..0d07c0ba49b6 100644
+--- a/drivers/clk/tegra/clk-tegra-periph.c
++++ b/drivers/clk/tegra/clk-tegra-periph.c
+@@ -262,7 +262,6 @@
+ static DEFINE_SPINLOCK(PLLP_OUTA_lock);
+ static DEFINE_SPINLOCK(PLLP_OUTB_lock);
+ static DEFINE_SPINLOCK(PLLP_OUTC_lock);
+-static DEFINE_SPINLOCK(sor0_lock);
+ 
+ #define MUX_I2S_SPDIF(_id)						\
+ static const char *mux_pllaout0_##_id##_2x_pllp_clkm[] = { "pll_a_out0", \
+@@ -587,11 +586,6 @@ static u32 mux_pllp_pllre_clkm_idx[] = {
+ 	[0] = 0, [1] = 2, [2] = 3,
+ };
+ 
+-static const char *mux_clkm_plldp_sor0lvds[] = {
+-	"clk_m", "pll_dp", "sor0_lvds",
+-};
+-#define mux_clkm_plldp_sor0lvds_idx NULL
+-
+ static const char * const mux_dmic1[] = {
+ 	"pll_a_out0", "dmic1_sync_clk", "pll_p", "clk_m"
+ };
+@@ -731,14 +725,12 @@ static struct tegra_periph_init_data periph_clks[] = {
+ 	MUX8("hdmi_audio", mux_pllp3_pllc_clkm, CLK_SOURCE_HDMI_AUDIO, 176, TEGRA_PERIPH_NO_RESET, tegra_clk_hdmi_audio),
+ 	MUX8("clk72mhz", mux_pllp3_pllc_clkm, CLK_SOURCE_CLK72MHZ, 177, TEGRA_PERIPH_NO_RESET, tegra_clk_clk72Mhz),
+ 	MUX8("clk72mhz", mux_pllp_out3_pllp_pllc_clkm, CLK_SOURCE_CLK72MHZ, 177, TEGRA_PERIPH_NO_RESET, tegra_clk_clk72Mhz_8),
+-	MUX8_NOGATE_LOCK("sor0_lvds", mux_pllp_pllm_plld_plla_pllc_plld2_clkm, CLK_SOURCE_SOR0, tegra_clk_sor0_lvds, &sor0_lock),
+ 	MUX_FLAGS("csite", mux_pllp_pllc_pllm_clkm, CLK_SOURCE_CSITE, 73, TEGRA_PERIPH_ON_APB, tegra_clk_csite, CLK_IGNORE_UNUSED),
+ 	MUX_FLAGS("csite", mux_pllp_pllre_clkm, CLK_SOURCE_CSITE, 73, TEGRA_PERIPH_ON_APB, tegra_clk_csite_8, CLK_IGNORE_UNUSED),
+ 	NODIV("disp1", mux_pllp_pllm_plld_plla_pllc_plld2_clkm, CLK_SOURCE_DISP1, 29, 7, 27, 0, tegra_clk_disp1, NULL),
+ 	NODIV("disp1", mux_pllp_plld_plld2_clkm, CLK_SOURCE_DISP1, 29, 7, 27, 0, tegra_clk_disp1_8, NULL),
+ 	NODIV("disp2", mux_pllp_pllm_plld_plla_pllc_plld2_clkm, CLK_SOURCE_DISP2, 29, 7, 26, 0, tegra_clk_disp2, NULL),
+ 	NODIV("disp2", mux_pllp_plld_plld2_clkm, CLK_SOURCE_DISP2, 29, 7, 26, 0, tegra_clk_disp2_8, NULL),
+-	NODIV("sor0", mux_clkm_plldp_sor0lvds, CLK_SOURCE_SOR0, 14, 3, 182, 0, tegra_clk_sor0, &sor0_lock),
+ 	UART("uarta", mux_pllp_pllc_pllm_clkm, CLK_SOURCE_UARTA, 6, tegra_clk_uarta),
+ 	UART("uartb", mux_pllp_pllc_pllm_clkm, CLK_SOURCE_UARTB, 7, tegra_clk_uartb),
+ 	UART("uartc", mux_pllp_pllc_pllm_clkm, CLK_SOURCE_UARTC, 55, tegra_clk_uartc),
+diff --git a/drivers/clk/tegra/clk-tegra124.c b/drivers/clk/tegra/clk-tegra124.c
+index 0224fdc4766f..2e41141af7b5 100644
+--- a/drivers/clk/tegra/clk-tegra124.c
++++ b/drivers/clk/tegra/clk-tegra124.c
+@@ -27,6 +27,7 @@
+ 
+ #define CLK_SOURCE_CSITE 0x1d4
+ #define CLK_SOURCE_EMC 0x19c
++#define CLK_SOURCE_SOR0 0x414
+ 
+ #define RST_DFLL_DVCO			0x2f4
+ #define DVFS_DFLL_RESET_SHIFT		0
+@@ -91,6 +92,22 @@
+ /* Tegra CPU clock and reset control regs */
+ #define CLK_RST_CONTROLLER_CPU_CMPLX_STATUS	0x470
+ 
++#define MASK(x) (BIT(x) - 1)
++
++#define MUX8_NOGATE_LOCK(_name, _parents, _offset, _clk_id, _lock)	\
++	TEGRA_INIT_DATA_TABLE(_name, NULL, NULL, _parents, _offset,	\
++			      29, MASK(3), 0, 0, 8, 1, TEGRA_DIVIDER_ROUND_UP,\
++			      0, TEGRA_PERIPH_NO_GATE, _clk_id,\
++			      _parents##_idx, 0, _lock)
++
++#define NODIV(_name, _parents, _offset, \
++			      _mux_shift, _mux_mask, _clk_num, \
++			      _gate_flags, _clk_id, _lock)		\
++	TEGRA_INIT_DATA_TABLE(_name, NULL, NULL, _parents, _offset,\
++			_mux_shift, _mux_mask, 0, 0, 0, 0, 0,\
++			_clk_num, (_gate_flags) | TEGRA_PERIPH_NO_DIV,\
++			_clk_id, _parents##_idx, 0, _lock)
++
+ #ifdef CONFIG_PM_SLEEP
+ static struct cpu_clk_suspend_context {
+ 	u32 clk_csite_src;
+@@ -110,6 +127,7 @@ static DEFINE_SPINLOCK(pll_e_lock);
+ static DEFINE_SPINLOCK(pll_re_lock);
+ static DEFINE_SPINLOCK(pll_u_lock);
+ static DEFINE_SPINLOCK(emc_lock);
++static DEFINE_SPINLOCK(sor0_lock);
+ 
+ /* possible OSC frequencies in Hz */
+ static unsigned long tegra124_input_freq[] = {
+@@ -987,12 +1005,29 @@ static struct tegra_devclk devclks[] __initdata = {
+ 	{ .con_id = "hda2hdmi", .dt_id = TEGRA124_CLK_HDA2HDMI },
+ };
+ 
++static const char *mux_pllp_pllm_plld_plla_pllc_plld2_clkm[] = {
++	"pll_p", "pll_m", "pll_d_out0", "pll_a_out0", "pll_c",
++	"pll_d2_out0", "clk_m"
++};
++#define mux_pllp_pllm_plld_plla_pllc_plld2_clkm_idx NULL
++
++static const char *mux_clkm_plldp_sor0lvds[] = {
++	"clk_m", "pll_dp", "sor0_lvds",
++};
++#define mux_clkm_plldp_sor0lvds_idx NULL
++
++static struct tegra_periph_init_data tegra124_periph[] = {
++	MUX8_NOGATE_LOCK("sor0_lvds", mux_pllp_pllm_plld_plla_pllc_plld2_clkm, CLK_SOURCE_SOR0, tegra_clk_sor0_lvds, &sor0_lock),
++	NODIV("sor0", mux_clkm_plldp_sor0lvds, CLK_SOURCE_SOR0, 14, 3, 182, 0, tegra_clk_sor0, &sor0_lock),
++};
++
+ static struct clk **clks;
+ 
+ static __init void tegra124_periph_clk_init(void __iomem *clk_base,
+ 					    void __iomem *pmc_base)
+ {
+ 	struct clk *clk;
++	unsigned int i;
+ 
+ 	/* xusb_ss_div2 */
+ 	clk = clk_register_fixed_factor(NULL, "xusb_ss_div2", "xusb_ss_src", 0,
+@@ -1033,6 +1068,20 @@ static __init void tegra124_periph_clk_init(void __iomem *clk_base,
+ 	clk_register_clkdev(clk, "cml1", NULL);
+ 	clks[TEGRA124_CLK_CML1] = clk;
+ 
++	for (i = 0; i < ARRAY_SIZE(tegra124_periph); i++) {
++		struct tegra_periph_init_data *init = &tegra124_periph[i];
++		struct clk **clkp;
++
++		clkp = tegra_lookup_dt_id(init->clk_id, tegra124_clks);
++		if (!clkp) {
++			pr_warn("clock %u not found\n", init->clk_id);
++			continue;
++		}
++
++		clk = tegra_clk_register_periph_data(clk_base, init);
++		*clkp = clk;
++	}
++
+ 	tegra_periph_clk_init(clk_base, pmc_base, tegra124_clks, &pll_p_params);
+ }
+ 
 -- 
 2.23.0
 
