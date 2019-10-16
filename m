@@ -2,72 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA4A4D9858
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 19:13:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A5B5D987D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 19:29:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S0Xg7ruQTZwbecDUtOkj3+Njb0tx/5d+Re9aPvDxKog=; b=doz9cE0t3ZhmZj
-	/L4m22FQd7BYn71T3vDDOPaHOdHDPzwk8vef8mB8hvBeO69XvUx9H1u5g2pKBYy/MsH9zeHkAfUEE
-	ijRsEDThVI3ga07eUhkaLndWpd9tL4D0r1iMKJhDUYgdwbhsCNUHRYypZNCZNYembLeNR4XYGuK7U
-	UnhIr1pzu6DxYtXsP3JsZmAkeN9byd9vavevWUXTP2NMPx58hJeTfA6Njqptcy3UETahWPQfYWw7r
-	yQEL7YALrWTTDQ3Q3632bs/6FcgSb/Ds6tqdTqfXIqYOIOEXIZrB8zqW1JDt5MvlDDdvjuubCIA5d
-	QpbA3iwqjYjWhvPNmZaQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=RpoLcCgxX3xYmAcQqyq0ZtQbeTHyAm8Obizvm6Y89Zw=; b=BxKRvJEkYJcXhZ
+	22384BCGd/k0TxNQDaOJ6guvgq+vg2KkUVAtSxZ3f6OcpGniv9KBb4JC05MeZeLOD2fINdofxsEIY
+	7/ych+EtSDx0h6R1uY3+Zng4R4IFzgD6WtsMlBqnBrRJzg1h3Mc6PUkAbygNchX7BoAmd+VaGja9X
+	LZ5UIxVDZLK67c3jdszmWaHH6wd+SWyYhp2XQtJEtXkmHe8bhW/BzAmKSW5B3/HTpSrJCo1uzl7Yn
+	Cvi2SNK7Rgtru5gciAjU557wG/07Ap4FdXLMdGl0V4o26w/XV7ZRWaETn1qu+L7LYOcxXPU343AX6
+	04/VtVExqjTcD6cGu1PQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKmr3-00074o-R1; Wed, 16 Oct 2019 17:12:57 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKmqt-00074C-VH
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 17:12:51 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2506F2067D;
- Wed, 16 Oct 2019 17:12:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571245967;
- bh=b/9i89MU0L92FkRsn4FGraZ0KFeKSvci2lxOfIwZqVk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=i8Ij4T6XFtyD8QXjKDulzh1MNMYY9ixh2IMW9tDZPcQNNttkyEyrIHVFqDn/NRpl6
- jM7daRaFCeke64hevMmoYRawrTTo0+h7Tm1zVnk4zEIUI91N6Nkdqq3AaB4GHzoeMs
- uJXvLh0yqQhiCJ+CuYV3cOPDdU/HZqpZ7gzcda+4=
-Date: Wed, 16 Oct 2019 18:12:42 +0100
-From: Will Deacon <will@kernel.org>
-To: James Morse <james.morse@arm.com>
-Subject: Re: [PATCH] arm64: mm: fix inverted PAR_EL1.F check
-Message-ID: <20191016171242.zve2khjwegm5nntm@willie-the-truck>
-References: <20191016110304.44932-1-mark.rutland@arm.com>
- <99261f9e-98ab-ca79-9514-b900306f49df@arm.com>
- <20191016164916.pcyjmmdnnup7wg44@willie-the-truck>
- <65090dc0-8b83-a7c5-acc6-293d0d7e81e0@arm.com>
+	id 1iKn7K-0003yn-Vy; Wed, 16 Oct 2019 17:29:47 +0000
+Received: from muru.com ([72.249.23.125])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iKn6w-0003q9-6B
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 17:29:23 +0000
+Received: from hillo.muru.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTP id 7BD498176;
+ Wed, 16 Oct 2019 17:29:51 +0000 (UTC)
+From: Tony Lindgren <tony@atomide.com>
+To: linux-omap@vger.kernel.org
+Subject: [PATCH 1/2] ARM: OMAP2+: Drop unused enable_wakeup and disable_wakeup
+Date: Wed, 16 Oct 2019 10:29:08 -0700
+Message-Id: <20191016172909.7115-1-tony@atomide.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <65090dc0-8b83-a7c5-acc6-293d0d7e81e0@arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_101249_826444_3CCE2585 
-X-CRM114-Status: GOOD (  11.45  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191016_102922_267751_282870BD 
+X-CRM114-Status: GOOD (  11.70  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [72.249.23.125 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,30 +56,149 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Tero Kristo <t-kristo@ti.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 16, 2019 at 05:55:04PM +0100, James Morse wrote:
-> On 16/10/2019 17:49, Will Deacon wrote:
-> > On Wed, Oct 16, 2019 at 05:29:27PM +0100, James Morse wrote:
-> >> With this this patch the 'spurious' message is printed, and the kernel keeps running [0].
-> >>
-> >> If its useful:
-> >> Tested-by: James Morse <james.morse@arm.com>
-> > 
-> > Thanks, I'll pick this up along with the other patch to the field definition
-> > (did you have that one too?)
-> 
-> No... is it in rc3?
+We're only using static _enable_wakeup(), the others have no callers.
 
-No: 1571197377-48650-1-git-send-email-yangyingliang@huawei.com
+Signed-off-by: Tony Lindgren <tony@atomide.com>
+---
+ arch/arm/mach-omap2/omap_hwmod.c | 97 --------------------------------
+ arch/arm/mach-omap2/omap_hwmod.h |  3 -
+ 2 files changed, 100 deletions(-)
 
-Will
+diff --git a/arch/arm/mach-omap2/omap_hwmod.c b/arch/arm/mach-omap2/omap_hwmod.c
+--- a/arch/arm/mach-omap2/omap_hwmod.c
++++ b/arch/arm/mach-omap2/omap_hwmod.c
+@@ -623,39 +623,6 @@ static int _enable_wakeup(struct omap_hwmod *oh, u32 *v)
+ 	return 0;
+ }
+ 
+-/**
+- * _disable_wakeup: clear OCP_SYSCONFIG.ENAWAKEUP bit in the hardware
+- * @oh: struct omap_hwmod *
+- *
+- * Prevent the hardware module @oh to send wakeups.  Returns -EINVAL
+- * upon error or 0 upon success.
+- */
+-static int _disable_wakeup(struct omap_hwmod *oh, u32 *v)
+-{
+-	if (!oh->class->sysc ||
+-	    !((oh->class->sysc->sysc_flags & SYSC_HAS_ENAWAKEUP) ||
+-	      (oh->class->sysc->idlemodes & SIDLE_SMART_WKUP) ||
+-	      (oh->class->sysc->idlemodes & MSTANDBY_SMART_WKUP)))
+-		return -EINVAL;
+-
+-	if (!oh->class->sysc->sysc_fields) {
+-		WARN(1, "omap_hwmod: %s: offset struct for sysconfig not provided in class\n", oh->name);
+-		return -EINVAL;
+-	}
+-
+-	if (oh->class->sysc->sysc_flags & SYSC_HAS_ENAWAKEUP)
+-		*v &= ~(0x1 << oh->class->sysc->sysc_fields->enwkup_shift);
+-
+-	if (oh->class->sysc->idlemodes & SIDLE_SMART_WKUP)
+-		_set_slave_idlemode(oh, HWMOD_IDLEMODE_SMART, v);
+-	if (oh->class->sysc->idlemodes & MSTANDBY_SMART_WKUP)
+-		_set_master_standbymode(oh, HWMOD_IDLEMODE_SMART, v);
+-
+-	/* XXX test pwrdm_get_wken for this hwmod's subsystem */
+-
+-	return 0;
+-}
+-
+ static struct clockdomain *_get_clkdm(struct omap_hwmod *oh)
+ {
+ 	struct clk_hw_omap *clk;
+@@ -3867,70 +3834,6 @@ void __iomem *omap_hwmod_get_mpu_rt_va(struct omap_hwmod *oh)
+  * for context save/restore operations?
+  */
+ 
+-/**
+- * omap_hwmod_enable_wakeup - allow device to wake up the system
+- * @oh: struct omap_hwmod *
+- *
+- * Sets the module OCP socket ENAWAKEUP bit to allow the module to
+- * send wakeups to the PRCM, and enable I/O ring wakeup events for
+- * this IP block if it has dynamic mux entries.  Eventually this
+- * should set PRCM wakeup registers to cause the PRCM to receive
+- * wakeup events from the module.  Does not set any wakeup routing
+- * registers beyond this point - if the module is to wake up any other
+- * module or subsystem, that must be set separately.  Called by
+- * omap_device code.  Returns -EINVAL on error or 0 upon success.
+- */
+-int omap_hwmod_enable_wakeup(struct omap_hwmod *oh)
+-{
+-	unsigned long flags;
+-	u32 v;
+-
+-	spin_lock_irqsave(&oh->_lock, flags);
+-
+-	if (oh->class->sysc &&
+-	    (oh->class->sysc->sysc_flags & SYSC_HAS_ENAWAKEUP)) {
+-		v = oh->_sysc_cache;
+-		_enable_wakeup(oh, &v);
+-		_write_sysconfig(v, oh);
+-	}
+-
+-	spin_unlock_irqrestore(&oh->_lock, flags);
+-
+-	return 0;
+-}
+-
+-/**
+- * omap_hwmod_disable_wakeup - prevent device from waking the system
+- * @oh: struct omap_hwmod *
+- *
+- * Clears the module OCP socket ENAWAKEUP bit to prevent the module
+- * from sending wakeups to the PRCM, and disable I/O ring wakeup
+- * events for this IP block if it has dynamic mux entries.  Eventually
+- * this should clear PRCM wakeup registers to cause the PRCM to ignore
+- * wakeup events from the module.  Does not set any wakeup routing
+- * registers beyond this point - if the module is to wake up any other
+- * module or subsystem, that must be set separately.  Called by
+- * omap_device code.  Returns -EINVAL on error or 0 upon success.
+- */
+-int omap_hwmod_disable_wakeup(struct omap_hwmod *oh)
+-{
+-	unsigned long flags;
+-	u32 v;
+-
+-	spin_lock_irqsave(&oh->_lock, flags);
+-
+-	if (oh->class->sysc &&
+-	    (oh->class->sysc->sysc_flags & SYSC_HAS_ENAWAKEUP)) {
+-		v = oh->_sysc_cache;
+-		_disable_wakeup(oh, &v);
+-		_write_sysconfig(v, oh);
+-	}
+-
+-	spin_unlock_irqrestore(&oh->_lock, flags);
+-
+-	return 0;
+-}
+-
+ /**
+  * omap_hwmod_assert_hardreset - assert the HW reset line of submodules
+  * contained in the hwmod module.
+diff --git a/arch/arm/mach-omap2/omap_hwmod.h b/arch/arm/mach-omap2/omap_hwmod.h
+--- a/arch/arm/mach-omap2/omap_hwmod.h
++++ b/arch/arm/mach-omap2/omap_hwmod.h
+@@ -646,9 +646,6 @@ int omap_hwmod_get_resource_byname(struct omap_hwmod *oh, unsigned int type,
+ struct powerdomain *omap_hwmod_get_pwrdm(struct omap_hwmod *oh);
+ void __iomem *omap_hwmod_get_mpu_rt_va(struct omap_hwmod *oh);
+ 
+-int omap_hwmod_enable_wakeup(struct omap_hwmod *oh);
+-int omap_hwmod_disable_wakeup(struct omap_hwmod *oh);
+-
+ int omap_hwmod_for_each_by_class(const char *classname,
+ 				 int (*fn)(struct omap_hwmod *oh,
+ 					   void *user),
+-- 
+2.23.0
 
 _______________________________________________
 linux-arm-kernel mailing list
