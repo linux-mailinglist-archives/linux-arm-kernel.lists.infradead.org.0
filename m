@@ -2,32 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38030D8E53
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 12:47:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40037D8E67
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 12:47:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4SmM0HwnNz77CeAhZZWGXYrv65z1IxOv+KifVZYwOrA=; b=kfAzqCMzKEnuMP
-	PXAqxqnj7c2TLemJM4nuz66J/lrIt7OP8mokGdmntAiQlQ4jnLR0fWEfpX8SumfvXH1VHN0Ci10GU
-	sPg1OHm4ZkCBE5z7B1MgjkOdXsMLuWQHo58qJgHfN9ST7pxvRfnAukXZb9c8elLF1WxASfBQuVEXU
-	zIhIfUuR3ACV5hbU3KP8zEn8qUb1kNNx2+L9Q8eVpG6bJNTcbyBLvwQxqD2PrW6AMq4JFVqhWc/9k
-	kZWrUq943E4DgDGg+HFny/sdkpqnPzPZjT8qq+uEyXbqkOQkf1+deWWn7Ui5PyiVnWn1wokTK3Y1X
-	BCYcXZjqcWQTCbiTheZQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FmHyz5mn1vK4OhnpjINdw3wMKJaVsgPulKrk4tiZpYg=; b=PWaMJNQFRbz5rz
+	Wtw33cJEBTikaNOHHltkVOHV9EIy8+qT27m9iTRuA+lJD8eWNLjlPL9j0dVts9W0hhLIMaoMpgcSD
+	H22nU1N4axW7L4MYj0YJb2Njngn13Dfu7A885AMkZdTNIV2fDRDhCxKNL8+m8Eyf2KsDE1VNMZcr3
+	6ISxuwKaygkqFJ9pwp1O+PFKU7P9gNC+aG//9Gq4da5Dx+Aj6h49pPAeA//dY4eeh26ZD0CeXozeg
+	uhq2vdJMSmj6pdgG9E/j/Ecoytqy7bvhci8thBxOkspiRxrlVPDZL7/SxVcxBsiRW8ra8jG7xI5au
+	XpaBCIFd480TaxQqcA9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKgpo-0001UT-NF; Wed, 16 Oct 2019 10:47:16 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1iKgq7-0001n6-3I; Wed, 16 Oct 2019 10:47:35 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKgpN-0001P7-87; Wed, 16 Oct 2019 10:46:50 +0000
-Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 58013CFF3E76FCB7C8C4;
+ id 1iKgpN-0001PA-8I; Wed, 16 Oct 2019 10:46:50 +0000
+Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 8B09BB85DC26B4258360;
  Wed, 16 Oct 2019 18:46:44 +0800 (CST)
-Received: from localhost (10.133.213.239) by DGGEMS409-HUB.china.huawei.com
- (10.3.19.209) with Microsoft SMTP Server id 14.3.439.0; Wed, 16 Oct 2019
- 18:46:34 +0800
+Received: from localhost (10.133.213.239) by DGGEMS401-HUB.china.huawei.com
+ (10.3.19.201) with Microsoft SMTP Server id 14.3.439.0; Wed, 16 Oct 2019
+ 18:46:36 +0800
 From: YueHaibing <yuehaibing@huawei.com>
 To: <herbert@gondor.apana.org.au>, <mpm@selenic.com>, <arnd@arndb.de>,
  <gregkh@linuxfoundation.org>, <nicolas.ferre@microchip.com>,
@@ -37,17 +37,19 @@ To: <herbert@gondor.apana.org.au>, <mpm@selenic.com>, <arnd@arndb.de>,
  <wahrenst@gmx.net>, <l.stelmach@samsung.com>, <kgene@kernel.org>,
  <krzk@kernel.org>, <khilman@baylibre.com>, <dsaxena@plexity.net>,
  <patrice.chotard@st.com>
-Subject: [PATCH -next 00/13] hwrng: use devm_platform_ioremap_resource() to
- simplify code
-Date: Wed, 16 Oct 2019 18:46:08 +0800
-Message-ID: <20191016104621.26056-1-yuehaibing@huawei.com>
+Subject: [PATCH -next 01/13] hwrng: atmel - use
+ devm_platform_ioremap_resource() to simplify code
+Date: Wed, 16 Oct 2019 18:46:09 +0800
+Message-ID: <20191016104621.26056-2-yuehaibing@huawei.com>
 X-Mailer: git-send-email 2.10.2.windows.1
+In-Reply-To: <20191016104621.26056-1-yuehaibing@huawei.com>
+References: <20191016104621.26056-1-yuehaibing@huawei.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.133.213.239]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_034649_459722_7ACA1756 
-X-CRM114-Status: UNSURE (   4.15  )
+X-CRM114-CacheID: sfid-20191016_034649_460292_E9688BC5 
+X-CRM114-Status: UNSURE (   8.36  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -55,7 +57,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ medium trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -78,40 +80,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-devm_platform_ioremap_resource() internally have platform_get_resource()
-and devm_ioremap_resource() in it. So instead of calling them separately
-use devm_platform_ioremap_resource() directly.
+Use devm_platform_ioremap_resource() to simplify the code a bit.
+This is detected by coccinelle.
 
-YueHaibing (13):
-  hwrng: atmel - use devm_platform_ioremap_resource() to simplify code
-  hwrng: bcm2835 - use devm_platform_ioremap_resource() to simplify code
-  hwrng: exynos - use devm_platform_ioremap_resource() to simplify code
-  hwrng: hisi - use devm_platform_ioremap_resource() to simplify code
-  hwrng: ks-sa - use devm_platform_ioremap_resource() to simplify code
-  hwrng: meson - use devm_platform_ioremap_resource() to simplify code
-  hwrng: npcm - use devm_platform_ioremap_resource() to simplify code
-  hwrng: omap - use devm_platform_ioremap_resource() to simplify code
-  hwrng: pasemi - use devm_platform_ioremap_resource() to simplify code
-  hwrng: pic32 - use devm_platform_ioremap_resource() to simplify code
-  hwrng: st - use devm_platform_ioremap_resource() to simplify code
-  hwrng: tx4939 - use devm_platform_ioremap_resource() to simplify code
-  hwrng: xgene - use devm_platform_ioremap_resource() to simplify code
+Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+---
+ drivers/char/hw_random/atmel-rng.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
- drivers/char/hw_random/atmel-rng.c   | 4 +---
- drivers/char/hw_random/bcm2835-rng.c | 5 +----
- drivers/char/hw_random/exynos-trng.c | 4 +---
- drivers/char/hw_random/hisi-rng.c    | 4 +---
- drivers/char/hw_random/ks-sa-rng.c   | 4 +---
- drivers/char/hw_random/meson-rng.c   | 4 +---
- drivers/char/hw_random/npcm-rng.c    | 4 +---
- drivers/char/hw_random/omap-rng.c    | 4 +---
- drivers/char/hw_random/pasemi-rng.c  | 4 +---
- drivers/char/hw_random/pic32-rng.c   | 4 +---
- drivers/char/hw_random/st-rng.c      | 4 +---
- drivers/char/hw_random/tx4939-rng.c  | 4 +---
- drivers/char/hw_random/xgene-rng.c   | 4 +---
- 13 files changed, 13 insertions(+), 40 deletions(-)
-
+diff --git a/drivers/char/hw_random/atmel-rng.c b/drivers/char/hw_random/atmel-rng.c
+index e557057..b3138ec2 100644
+--- a/drivers/char/hw_random/atmel-rng.c
++++ b/drivers/char/hw_random/atmel-rng.c
+@@ -62,15 +62,13 @@ static void atmel_trng_disable(struct atmel_trng *trng)
+ static int atmel_trng_probe(struct platform_device *pdev)
+ {
+ 	struct atmel_trng *trng;
+-	struct resource *res;
+ 	int ret;
+ 
+ 	trng = devm_kzalloc(&pdev->dev, sizeof(*trng), GFP_KERNEL);
+ 	if (!trng)
+ 		return -ENOMEM;
+ 
+-	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	trng->base = devm_ioremap_resource(&pdev->dev, res);
++	trng->base = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(trng->base))
+ 		return PTR_ERR(trng->base);
+ 
 -- 
 2.7.4
 
