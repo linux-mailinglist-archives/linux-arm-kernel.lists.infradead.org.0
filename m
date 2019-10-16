@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2F50D9841
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 19:09:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FF89D9847
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 19:09:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=E0pQm25TrQJbBEEr1zp2XYUNehi+MsKaKuidV0qBICc=; b=AdIH8CKdpgspUNHs2ph8o/U4G1
-	AyC5pKr1uciJ9UE0FdefVIJfdewmQARj2LoOw4bablcGdSJ+JS5NVkLURqZLnpiqGr0DLrnbTnW20
-	YlYBjVZEpj363KPU7lzZ/no1FVFP8DTsxJ3iKfgGLCYOPaegF8DWiqeOYOhF9SACSQXLXOM5KRO7i
-	JQbFh13b7kRQlQjvgR4GZbosKWHEHTA2WkJhC32l7FkUz7kbyzL19KBc1nZble5A/L/i8UnTJ1B41
-	zllc1rtaiGbpMOV+x0Rb/78zgkriAzjIq1mtMZDQyE63ymuqgpGEUsfsPyCBSVQRbiC0nhp4DIPlV
-	RfuAfkSA==;
+	bh=Qoqsw4JXT4raF0mcz+2L3qZfk1HAz8X5GnfheCysfio=; b=jZAPEtb51MzSn2MvRgxrsGlX7A
+	uMBZ2UPVonou+35S9ahHi/Dd5wkDBKt/3TfYQ2eLBdSE+hoGKpOmNWBiYDV/RsnddW+WVYmAPUvao
+	rXenqq29PK9hY7KZ/8LeVNqal7llbKqXh6Sex12/W/uVDHmfPWvGzgtwQ78Ags3Hk9pvubheqezOz
+	N/gX61v/IYHuL7GGSsShJKxctR41x3/EwX4okXbi1zB6xCAKrtJegCMo1BsNbs/ppv3Xv4KCsP6K5
+	hBz0/s9EHtvUH078Pd086vXPQ88DBvhiU22Z78yejB2vackw/YnAnTk3mxL65THgx9Sxev36BQjei
+	D2GmwebQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKmnJ-00046U-FG; Wed, 16 Oct 2019 17:09:05 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1iKmnb-0004PN-2H; Wed, 16 Oct 2019 17:09:23 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKmml-0003n0-Aw; Wed, 16 Oct 2019 17:08:32 +0000
-Received: by mail-lf1-x144.google.com with SMTP id a19so5219925lfg.12;
- Wed, 16 Oct 2019 10:08:30 -0700 (PDT)
+ id 1iKmmo-0003oL-1P; Wed, 16 Oct 2019 17:08:35 +0000
+Received: by mail-lf1-x142.google.com with SMTP id 195so5157134lfj.6;
+ Wed, 16 Oct 2019 10:08:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=FuDtedlY48DcctCZGWagsRf8MsM87uwA3mMuVGQ2AP8=;
- b=j+a1VT2OS4bm7ECykAC43ju60WarYAfWCbRzuFLrL1hxbpgI3Z4j7pRhUEai/49rJ9
- i48Z56uH5ua66STUHM58TXOltWf4jqVt4q70XzNx6Xa/pb+7PaTc9wej5Uc6Wn5/krkQ
- Vb5+qH2HJrsvo4vOpu/boufSBlQMCwGX9+hcTLZy3E696r2y0B23YccJG92eOKxRjjzJ
- fvBSjdk9kz2z5Rin4tvxtefT/UsjzQ9A2Vht8QkBkV33orbNGrGwyM5GMDqwjZP8Jlgj
- qKETLs4Jb5W07NgAbvDu2uVy5YSvJHNegP8luJGJOGZUHoKkAQ9Dvqv6sVk1rmMfwZP/
- zr2Q==
+ bh=tPzq/4pAdFPsSANJ/9NHJEoF3soP3uhPziVivyFbVzY=;
+ b=p2tUHLOCFaKYtSzu+8kqWT2Dzna3tCZCKO0yQhQ0QcSNFhesJBaDW4i8xBo9fc8T3f
+ g4eJS93zAfvcr0wQv321p5gCDYU8yH11j7caUaImTHabE7jMqFUhfsMfEfncCCqpvda1
+ JxleoaFtrXcAMuQ0kM0H7K6Uh6gAE7Iqnx3mwfp69rfGBM6pO7eiVCa7GjaVPh5JmNON
+ cnFSELeJrbWBRGjeHBuHMwLciJgxseg5AG5TFGnCrsxzIDYHgYDX4RSIahqW49/yQDuo
+ gmMmpIVwBMdBUFEMHczk+8drg+XldueaYcTmFPEZ85TA3lhIOO/rfDiJle9687mWEZOV
+ IMlA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=FuDtedlY48DcctCZGWagsRf8MsM87uwA3mMuVGQ2AP8=;
- b=g9kMrnehqXaI2m0LAtbKkII3u2Otbin07CoeAOWamgNN7oSdVKNYCB5QC7LpgSJd1D
- hIw2ZPVH7M9vzwwzMIIDFGDQeau6WMEqRYXhkYmu/WnwgJ9YQkGFkx4iIdII/41x53q5
- 96u1Ds+w7soscMafHqyHs9aB2A6V5knHiFopMIXAwjJ/9t8k/9PVhhEvtO5qyft51deU
- k+rrrmPNIjeUEAJgZdXiPt75wpcQ5WpsTvl3NCHbKlmywvEldXDoeWUJi253Te10V3RL
- LNUvULEIK5aAobzfHnw2FL0aaK8Cmb3bNG1i8HDnzfCJif6BkXFjXZaa/2r7GsO0zJuR
- JFbg==
-X-Gm-Message-State: APjAAAWUpVmlOhq+ZqMhwKpmC0VKlUSpliE4SEQYC9SiAR1vev51F4su
- Zpv6grIbUGUGyWtVM27bN5w=
-X-Google-Smtp-Source: APXvYqybaFGO1u4fZEPYMstx4sfISrbUPkeIsHhbcRYljDhIpvBSINMvFHrAxe5eS+JI8E/hZaMnnA==
-X-Received: by 2002:a19:6a08:: with SMTP id u8mr1490535lfu.74.1571245709687;
- Wed, 16 Oct 2019 10:08:29 -0700 (PDT)
+ bh=tPzq/4pAdFPsSANJ/9NHJEoF3soP3uhPziVivyFbVzY=;
+ b=KVbIhXLcTDRwvfXKKvQPrHEl1agbNgwoYtiY1YJL9pbeUJuN2BFxv6hh0MD0MimIT8
+ UMTbhNG+RfywT9FV1ELv4yGsE4pU8HFvbrRF0zm2mRpmtYcF2HXyyjma6XwH59e6HcV3
+ 6nlmAbXfZHxIYfSIexRTRKjb05UBrbxVY1PV9j8B00En0p04kqQQqCLCMmj52fxP/e0X
+ ucws9F7Qsox35mi12zzVLeNDKkKuNHxwx1rZ0L3KBcugPRMo6J9DY9vvvfUUgNJjtW2N
+ AAzQo+CtLusz7kplngOTn3HYoiY/ZEZv3/CsPbHw6c97dk8gsNC8V+HPAM8U8zzOpCoW
+ JaNQ==
+X-Gm-Message-State: APjAAAX2f5BVbvghU3ex50rleHDte3Eag87y6OkxEjzpj5VF6FlktWUy
+ EO6ZI0sd4MRxui7oGuynmVg=
+X-Google-Smtp-Source: APXvYqztlIKXFcwsX9T4q5xwz9eoGg3GnsOg0q124ETsT305HLl5q3GH2LzOddyA4J/Q6XbgkwM9Cw==
+X-Received: by 2002:ac2:4830:: with SMTP id 16mr521889lft.35.1571245712219;
+ Wed, 16 Oct 2019 10:08:32 -0700 (PDT)
 Received: from localhost.localdomain ([87.101.228.250])
- by smtp.gmail.com with ESMTPSA id q24sm6299182ljj.6.2019.10.16.10.08.27
+ by smtp.gmail.com with ESMTPSA id q24sm6299182ljj.6.2019.10.16.10.08.29
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Wed, 16 Oct 2019 10:08:29 -0700 (PDT)
+ Wed, 16 Oct 2019 10:08:31 -0700 (PDT)
 From: Christian Hewitt <christianshewitt@gmail.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 1/2] arm64: dts: meson-gxm-vega-s96: set rc-vega-s9x ir keymap
-Date: Wed, 16 Oct 2019 21:07:36 +0400
-Message-Id: <1571245657-4471-2-git-send-email-christianshewitt@gmail.com>
+Subject: [PATCH 2/2] arm64: dts: meson-gxbb-vega-s95: set rc-vega-s9x ir keymap
+Date: Wed, 16 Oct 2019 21:07:37 +0400
+Message-Id: <1571245657-4471-3-git-send-email-christianshewitt@gmail.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1571245657-4471-1-git-send-email-christianshewitt@gmail.com>
 References: <1571245657-4471-1-git-send-email-christianshewitt@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_100831_376832_1628D92B 
-X-CRM114-Status: UNSURE (   9.98  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191016_100834_142133_FF4943BA 
+X-CRM114-Status: GOOD (  11.84  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (christianshewitt[at]gmail.com)
@@ -106,25 +105,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add an IR node to the Vega S96 dts to include the rc-vega-s9x keymap.
+Add the rc-vega-s9x keymap to the existing IR node in the device tree.
 
 Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
 ---
- arch/arm64/boot/dts/amlogic/meson-gxm-vega-s96.dts | 4 ++++
- 1 file changed, 4 insertions(+)
+ arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-gxm-vega-s96.dts b/arch/arm64/boot/dts/amlogic/meson-gxm-vega-s96.dts
-index e2ea675..0bdf51d 100644
---- a/arch/arm64/boot/dts/amlogic/meson-gxm-vega-s96.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-gxm-vega-s96.dts
-@@ -35,3 +35,7 @@
- 		reg = <0>;
- 	};
- };
-+
-+&ir {
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi
+index 43b11e3..0cc6d18 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi
+@@ -152,6 +152,7 @@
+ 	status = "okay";
+ 	pinctrl-0 = <&remote_input_ao_pins>;
+ 	pinctrl-names = "default";
 +	linux,rc-map-name = "rc-vega-s9x";
-+};
+ };
+ 
+ &pwm_ef {
 -- 
 2.7.4
 
