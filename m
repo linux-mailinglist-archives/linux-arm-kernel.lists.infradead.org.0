@@ -2,59 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFEAAD95B6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 17:37:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 45FCDD95FA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 17:51:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B7iTgOVHXv3cobpePgkr/GIQogcv+ghY0tkLi/BNjHs=; b=DMprdknd1Gahyq
-	eNLkBu8039lTtRfzYzCdQlENLQAWpqp+i3OSu1AiECK3aSzEY3Q7tL0cdd4pXtriMNorxvMUCVexP
-	v7cJDWeeuf8JC0ciw9D9YzZQyHbBVdwQCv9TWfX1ANrb/RMY73YVBKnVZqUDl1NS/Bv5bu9KPxXVl
-	Bmb22EPHS7uOEwI+MAFG9E0QVx2QUsk8qbnbcOowvwvldJngfsyiwakWcitPM81L3yJiTh2Dchyhw
-	LoAwAfkDPzX1APR3MnRVNLpva6L5DN2a1+V0GjQmcCJA/fdXh9flx3nLzcj40NSVtrZvBLN9D+SNA
-	ulQBHLN26LPxY9Wn7jpQ==;
+	List-Owner; bh=qtV7fiA3G3F/vg2h6Gx4OH9Zy22dQfLBw+jYyg4Stu8=; b=BDA2YK0Xd28Wsm
+	lzQ2ta3MU5XW9MIEgu9OkdyLuSfpx4P87HTTUlmIrovef39LG6xB1TLFGo369YCHK9L8G99bGrs1/
+	C6ImDzrT7suYBHNiMgXuFqmxOR7YpZw1a5B59pnQBzujy+tS75ITJqRL2sUvEwDfARXdBaYPEQi73
+	+e4KlgHzBrjOpiT2eUB8PNDWLlm0QhIy3iKZlKYJENYwdBKUbdTw5pDHUyohx0PG5fHr/p5XaNRTE
+	sGuvGcGhj39ImS50w+cHOc6JgDNFxt/PB8ezBbTiH/AkCOJPGXhwSaBPzv/GWkP0z3Dzw+74wz3w5
+	XwuklUv6ziCvdls2O3PA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKlMI-0003Bz-6x; Wed, 16 Oct 2019 15:37:06 +0000
+	id 1iKla5-0008JZ-9z; Wed, 16 Oct 2019 15:51:21 +0000
 Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKlM8-0003BP-UO; Wed, 16 Oct 2019 15:36:58 +0000
+ id 1iKlZt-0008IQ-GT; Wed, 16 Oct 2019 15:51:10 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
  s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
  Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=+5f6dY8evhyxODaTKehL/4N9iRbwuC90F8UXeraO9vA=; b=KGODKytivjW/MSdVeEUIQ+rVkz
- 3ilT5scwlhtrAdRHOF5qItaKrEvpjoegAiPCMPGunYirlMsdopw/WifZ62cYSu1bXEWg3cGchJyqv
- I2zBjIlQlLU5Ufceb9tXkmUxGwTa9MBw9eRtzdp5iw7V2/FWc8ui2HX70BCRCMcncdK8=;
+ bh=B2YdhfhEgWZqOqKtmmkSBnl7J2karsMTF9JaNWGz1es=; b=SWKnuxxTJ8loDpThNmUspjv0mz
+ IC3p36PrAKtL9tp1IZgO4lCUtA53uqlL4O4okRoMJVUc6BFIgmE72tsjC7t1me4tCZ9q1lmBCYNwD
+ XQfkQtXJMwo6GhiFZSmXTyMYxzgmGDvehHy+Lhq4vgIR41Hpcc0bO8n+syvCJDqy03LU=;
 Received: from andrew by vps0.lunn.ch with local (Exim 4.92.2)
  (envelope-from <andrew@lunn.ch>)
- id 1iKlLy-0008Fe-Gc; Wed, 16 Oct 2019 17:36:46 +0200
-Date: Wed, 16 Oct 2019 17:36:46 +0200
+ id 1iKlZr-0008Je-TX; Wed, 16 Oct 2019 17:51:07 +0200
+Date: Wed, 16 Oct 2019 17:51:07 +0200
 From: Andrew Lunn <andrew@lunn.ch>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Daniel Wagner <dwagner@suse.de>
 Subject: Re: lan78xx and phy_state_machine
-Message-ID: <20191016153646.GG17013@lunn.ch>
+Message-ID: <20191016155107.GH17013@lunn.ch>
 References: <20191014140604.iddhmg5ckqhzlbkw@beryllium.lan>
- <20191014163004.GP25745@shell.armlinux.org.uk>
- <20191014192529.z7c5x6hzixxeplvw@beryllium.lan>
- <25cfc92d-f72b-d195-71b1-f5f238c7988d@gmx.net>
- <b9afd836-613a-dc63-f77b-f9a77d33acc4@gmail.com>
- <20191014221211.GR25745@shell.armlinux.org.uk>
- <524267e6-df8e-d884-aeef-1ed8700e4e58@gmail.com>
- <20191015220925.GW25745@shell.armlinux.org.uk>
+ <20191015005327.GJ19861@lunn.ch>
+ <20191015171653.ejgfegw3hkef3mbo@beryllium.lan>
+ <20191016142501.2c76q7kkfmfcnqns@beryllium.lan>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191015220925.GW25745@shell.armlinux.org.uk>
+In-Reply-To: <20191016142501.2c76q7kkfmfcnqns@beryllium.lan>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_083656_979565_0AFA035C 
-X-CRM114-Status: UNSURE (   6.59  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191016_085109_553586_5D1B1CCE 
+X-CRM114-Status: GOOD (  12.70  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -82,37 +77,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Woojung Huh <woojung.huh@microchip.com>,
- linux-rpi-kernel@lists.infradead.org, Florian Fainelli <f.fainelli@gmail.com>,
- Daniel Wagner <dwagner@suse.de>, netdev@vger.kernel.org,
- Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
- bcm-kernel-feedback-list@broadcom.com, Stefan Wahren <wahrenst@gmx.net>,
- linux-arm-kernel@lists.infradead.org, Heiner Kallweit <hkallweit1@gmail.com>
+Cc: Woojung Huh <woojung.huh@microchip.com>, netdev@vger.kernel.org,
+ UNGLinuxDriver@microchip.com, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> > - lan78xx_phy_init() (incl. the call to phy_connect_direct()) is called
-> >   after register_netdev(). This may cause races.
-> 
-> That isn't a problem.  We have lots of network device drivers that do
-> this - in their open() function.
+Hi Daniel
 
-Hi Russell
+Please could you give this a go. It is totally untested, not even
+compile tested...
 
-Actually, here is it. lan7801_phy_init() finds the PHY device and
-connects it to the MAC. lan78xx_open() calls phy_start(), with the
-assumption lan7801_phy_init() has been called.
-
-But the stack trace just provided shows this assumption is wrong. As
-soon a register_netdev() is called, the kernel auto configuration is
-kicking in and opening the device.
-
-lan78xx_phy_init() needs to happen before register_netdev(), or inside
-lan78xx_open().
-
+Thanks
 	Andrew
+
+From 235549a687ad91c1500289fb32ee1c775d06d16d Mon Sep 17 00:00:00 2001
+From: Andrew Lunn <andrew@lunn.ch>
+Date: Wed, 16 Oct 2019 10:42:07 -0500
+Subject: [PATCH] net: usb: lan78xx: Connect PHY before registering MAC
+
+As soon as the netdev is registers, the kernel can start using the
+interface. If the driver connects the MAC to the PHY after the netdev
+is registered, there is a race condition where the interface can be
+opened without having the PHY connected.
+
+Change the order to close this race condition.
+
+Fixes: 92571a1aae40 ("lan78xx: Connect phy early")
+Reported-by: Daniel Wagner <dwagner@suse.de>
+Signed-off-by: Andrew Lunn <andrew@lunn.ch>
+---
+ drivers/net/usb/lan78xx.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/drivers/net/usb/lan78xx.c b/drivers/net/usb/lan78xx.c
+index 58f5a219fb65..62948098191f 100644
+--- a/drivers/net/usb/lan78xx.c
++++ b/drivers/net/usb/lan78xx.c
+@@ -3782,10 +3782,14 @@ static int lan78xx_probe(struct usb_interface *intf,
+ 	/* driver requires remote-wakeup capability during autosuspend. */
+ 	intf->needs_remote_wakeup = 1;
+ 
++	ret = lan78xx_phy_init(dev);
++	if (ret < 0)
++		goto out4;
++
+ 	ret = register_netdev(netdev);
+ 	if (ret != 0) {
+ 		netif_err(dev, probe, netdev, "couldn't register the device\n");
+-		goto out4;
++		goto out5;
+ 	}
+ 
+ 	usb_set_intfdata(intf, dev);
+@@ -3798,14 +3802,10 @@ static int lan78xx_probe(struct usb_interface *intf,
+ 	pm_runtime_set_autosuspend_delay(&udev->dev,
+ 					 DEFAULT_AUTOSUSPEND_DELAY);
+ 
+-	ret = lan78xx_phy_init(dev);
+-	if (ret < 0)
+-		goto out5;
+-
+ 	return 0;
+ 
+ out5:
+-	unregister_netdev(netdev);
++	phy_disconnect(netdev->phydev);
+ out4:
+ 	usb_free_urb(dev->urb_intr);
+ out3:
+-- 
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
