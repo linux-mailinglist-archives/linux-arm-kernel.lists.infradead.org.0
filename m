@@ -2,91 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 131DAD9BDD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 22:32:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25583D9C1C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 22:58:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JW956WCMOwsHvWGUcFX2MJIZtZmUxKP+hsAdhI8aioI=; b=spTiKSdyF8u+wD
-	1DDOqHzK7JMJw10tiaIvGBuZFZe4I9hICCpQOH4RH87+DmR4rSCl6fnkIb6CTQ+7Svz/y4iKkzC0+
-	KVPHGz9d3gNsNDNeoMTRo7AEm4mEb+doWIai+tLavwIgetQHOmyOpHgrF3wKpz1Ac/S0L9WZGU1eV
-	P5R6zQzTEPZf5IK0sT2Ac2X0hvblDCq30gmyE/dK5HPmC79R9pb/HTGlo50CrzGTHR+RZoLK41/Q+
-	QWSYpIJx6tWvRJrjRa626zSOwhA8s1t7aG7Ve4qR56AAxZfNagZiSTjyLSkN9z8doLjKJzQCuRuFz
-	GupAOSZIVuQ+ZO5s2ffg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cxEPma3XMFvrlIgqUTc3CHTT0PRHwEACtimUbdIFvZs=; b=JDWN8FZcUmlXZC
+	n+AGIhDSuXyzzjVjZJHsUaUvY3vrxagtNvnS3cFhbeEdu/G1DzTFVLRGvS+t10Dgq6QeI1Zo1hnFM
+	FTDiDoZ61/pDRYK1pEq6LcRig7mfctl0Vo89r3D+ic3LHfu55m+a0qAvFMNLI3bwEclq/BTnroCAY
+	QlvzfxDK9NFMTmh1xzdymd6N23X7aE0lyHEgF8YygyRUh18zYe24QGur5vyBjZ/ELlYxDmset6GH6
+	jFxTfZRZlEiUKjjPdGgSCsYr1m/2Ew5L/qu2HK7uAJo+7xBhpys4FKHGwuOOpcWmVP55Lis7PSYI2
+	ZnXENtgRsVIvI52sQeVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKpyL-0001Wp-0R; Wed, 16 Oct 2019 20:32:41 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1iKqN3-00043Y-To; Wed, 16 Oct 2019 20:58:13 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKpy8-0001WT-MZ
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 20:32:30 +0000
-Received: by mail-pl1-x644.google.com with SMTP id f21so11797865plj.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 16 Oct 2019 13:32:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=0x0f.com; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=QJRz2ZBCOtaw3AEGb2XPo0CsgmmvmJQzag5UcwcjBaw=;
- b=eTxNXnOKCPKxxsn3bIBFR7anyKEgL2XRidpZv+WcTa38kItiezDEvD5JjvGCCSs+7p
- +c34Om1neANbjcBKask22h+B+A3rhLuHHzMnshEbgfYHvGRFjxBlYir3+KZNj9PD7+bw
- 6i0iBA2daqj6El0RLjyBLVcQSmMveditUQHZo=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=QJRz2ZBCOtaw3AEGb2XPo0CsgmmvmJQzag5UcwcjBaw=;
- b=kJvFqAiDjzhaurbK7vp1YU/0Ksd4ttWaZ5BZlJFcZAOruKo9ksg/qJAQG1pgxwCjzR
- zTmGc6wGJnFG1gU6QTNaoBbM7nrIrtoa6ufBUDHHJbgyHtS7K/Xn7S5OL0yINrKWbkiR
- rCvWmYMMwPejiK29pXjHM3Qw0m9hcAQLsS15KhQcu+9ZwUfbgKx13gUvSPP2skcrRbd9
- IUwHTCLNL0K7vFM2a7KZYrd2QoNpsJkF0sgDtRcpu+uAPnzLbsxzRkh/hmLJ4IveisRp
- OyLomoaKSFC1Vyd6UQVYmsh5pPyZWIR5ATHlgsSLxhyQJ3iUMRTP4n6/MfF2RMzt+Vxm
- Pj2g==
-X-Gm-Message-State: APjAAAVdoTKY83JJSkn8gBiRVNiukiiqHNHqmUltpwk/FlZuM2ho+U+4
- 3yPoVATvZHHKnZPjGOuhBPYq0g==
-X-Google-Smtp-Source: APXvYqyUc62vDZ/uWYv8OWO99Dvo9BD5ZJfTxm2G0UESZVycda+kmxA41w91q7dN5a7I8vv61of8rA==
-X-Received: by 2002:a17:902:bc48:: with SMTP id
- t8mr116238plz.255.1571257947335; 
- Wed, 16 Oct 2019 13:32:27 -0700 (PDT)
-Received: from shiro (p1092222-ipngn200709sizuokaden.shizuoka.ocn.ne.jp.
- [220.106.235.222])
- by smtp.gmail.com with ESMTPSA id k95sm32839pje.10.2019.10.16.13.32.25
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 16 Oct 2019 13:32:26 -0700 (PDT)
-Date: Thu, 17 Oct 2019 05:32:20 +0900
-From: Daniel Palmer <daniel@0x0f.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH 2/4] ARM: mstar: Add machine for MStar infinity family SoCs
-Message-ID: <20191016203219.GA5191@shiro>
-References: <20191014061617.10296-1-daniel@0x0f.com>
- <20191014061617.10296-2-daniel@0x0f.com>
- <CAK8P3a2U7U31eF_POU2=eCU+E1DH-wnR2uHr-VZYWLy25hLjKg@mail.gmail.com>
+ id 1iKqMu-00042k-CC
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 20:58:06 +0000
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 700B38A1C92;
+ Wed, 16 Oct 2019 20:58:03 +0000 (UTC)
+Received: from llong.remote.csb (dhcp-17-59.bos.redhat.com [10.18.17.59])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 9CBF65C1D6;
+ Wed, 16 Oct 2019 20:57:59 +0000 (UTC)
+Subject: Re: [PATCH v5 3/5] locking/qspinlock: Introduce CNA into the slow
+ path of qspinlock
+To: Alex Kogan <alex.kogan@oracle.com>, linux@armlinux.org.uk,
+ peterz@infradead.org, mingo@redhat.com, will.deacon@arm.com, arnd@arndb.de,
+ linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, tglx@linutronix.de, bp@alien8.de,
+ hpa@zytor.com, x86@kernel.org, guohanjun@huawei.com, jglauber@marvell.com
+References: <20191016042903.61081-1-alex.kogan@oracle.com>
+ <20191016042903.61081-4-alex.kogan@oracle.com>
+From: Waiman Long <longman@redhat.com>
+Organization: Red Hat
+Message-ID: <6f346e41-c787-b84b-8433-f73f31a7d7ff@redhat.com>
+Date: Wed, 16 Oct 2019 16:57:59 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAK8P3a2U7U31eF_POU2=eCU+E1DH-wnR2uHr-VZYWLy25hLjKg@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191016042903.61081-4-alex.kogan@oracle.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
+ (mx1.redhat.com [10.5.110.69]); Wed, 16 Oct 2019 20:58:03 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_133228_849335_1F7C3D77 
-X-CRM114-Status: GOOD (  21.76  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191016_135804_465046_27D0F1F2 
+X-CRM114-Status: GOOD (  42.74  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,78 +76,396 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: rahul.x.yadav@oracle.com, dave.dice@oracle.com, steven.sistare@oracle.com,
+ daniel.m.jordan@oracle.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> > +
-> > +static void __init infinity_map_io(void)
-> > +{
-> > +       iotable_init(infinity_io_desc, ARRAY_SIZE(infinity_io_desc));
-> > +       miu_flush = (void __iomem *)(infinity_io_desc[0].virtual
-> > +                       + INFINITY_L3BRIDGE_FLUSH);
-> > +       miu_status = (void __iomem *)(infinity_io_desc[0].virtual
-> > +                       + INFINITY_L3BRIDGE_STATUS);
-> > +}
-> 
-> If you do this a little later in .init_machine, you can use a simple ioremap()
-> rather than picking a hardcoded physical address. It looks like nothing
-> uses the mapping before you set soc_mb anyway.
+On 10/16/19 12:29 AM, Alex Kogan wrote:
+> In CNA, spinning threads are organized in two queues, a main queue for
+> threads running on the same node as the current lock holder, and a
+> secondary queue for threads running on other nodes. After acquiring the
+> MCS lock and before acquiring the spinlock, the lock holder scans the
+> main queue looking for a thread running on the same node (pre-scan). If
+> found (call it thread T), all threads in the main queue between the
+> current lock holder and T are moved to the end of the secondary queue.
+> If such T is not found, we make another scan of the main queue when
+> unlocking the MCS lock (post-scan), starting at the position where
+> pre-scan stopped. If both scans fail to find such T, the MCS lock is
+> passed to the first thread in the secondary queue. If the secondary queue
+> is empty, the lock is passed to the next thread in the main queue.
+> For more details, see https://arxiv.org/abs/1810.05600.
+>
+> Note that this variant of CNA may introduce starvation by continuously
+> passing the lock to threads running on the same node. This issue
+> will be addressed later in the series.
+>
+> Enabling CNA is controlled via a new configuration option
+> (NUMA_AWARE_SPINLOCKS). By default, the CNA variant is patched in at the
+> boot time only if we run on a multi-node machine in native environment and
+> the new config is enabled. (For the time being, the patching requires
+> CONFIG_PARAVIRT_SPINLOCKS to be enabled as well. However, this should be
+> resolved once static_call() is available.) This default behavior can be
+> overridden with the new kernel boot command-line option
+> "numa_spinlock=on/off" (default is "auto").
+>
+> Signed-off-by: Alex Kogan <alex.kogan@oracle.com>
+> Reviewed-by: Steve Sistare <steven.sistare@oracle.com>
+> ---
+>  arch/x86/Kconfig                 |  19 +++
+>  arch/x86/include/asm/qspinlock.h |   4 +
+>  arch/x86/kernel/alternative.c    |  41 +++++++
+>  kernel/locking/mcs_spinlock.h    |   2 +-
+>  kernel/locking/qspinlock.c       |  34 +++++-
+>  kernel/locking/qspinlock_cna.h   | 258 +++++++++++++++++++++++++++++++++++++++
+>  6 files changed, 353 insertions(+), 5 deletions(-)
+>  create mode 100644 kernel/locking/qspinlock_cna.h
+>
+> diff --git a/arch/x86/Kconfig b/arch/x86/Kconfig
+> index d6e1faa28c58..1d480f190def 100644
+> --- a/arch/x86/Kconfig
+> +++ b/arch/x86/Kconfig
+> @@ -1573,6 +1573,25 @@ config NUMA
+>  
+>  	  Otherwise, you should say N.
+>  
+> +config NUMA_AWARE_SPINLOCKS
+> +	bool "Numa-aware spinlocks"
+> +	depends on NUMA
+> +	depends on QUEUED_SPINLOCKS
+> +	# For now, we depend on PARAVIRT_SPINLOCKS to make the patching work.
+> +	# This is awkward, but hopefully would be resolved once static_call()
+> +	# is available.
+> +	depends on PARAVIRT_SPINLOCKS
+> +	default y
+> +	help
+> +	  Introduce NUMA (Non Uniform Memory Access) awareness into
+> +	  the slow path of spinlocks.
+> +
+> +	  In this variant of qspinlock, the kernel will try to keep the lock
+> +	  on the same node, thus reducing the number of remote cache misses,
+> +	  while trading some of the short term fairness for better performance.
+> +
+> +	  Say N if you want absolute first come first serve fairness.
+> +
+>  config AMD_NUMA
+>  	def_bool y
+>  	prompt "Old style AMD Opteron NUMA detection"
 
-I've moved this into infinity_barriers_init() using ioremap() as suggested.
-I'd like to keep the fixed remap address for now as there are some
-drivers in the vendor code that might be useful until rewrites are done but 
-are littered with hard coded addresses.
+I forgot to mention that you should also document the new boot command
+line option at Documentation/admin-guide/kernel-parameters.txt.
 
-> > +static DEFINE_SPINLOCK(infinity_mb_lock);
-> > +
-> > +static void infinity_mb(void)
-> > +{
-> > +       unsigned long flags;
-> > +
-> > +       spin_lock_irqsave(&infinity_mb_lock, flags);
-> > +       /* toggle the flush miu pipe fire bit */
-> > +       writel_relaxed(0, miu_flush);
-> > +       writel_relaxed(INFINITY_L3BRIDGE_FLUSH_TRIGGER, miu_flush);
-> > +       while (!(readl_relaxed(miu_status) & INFINITY_L3BRIDGE_STATUS_DONE)) {
-> > +               /* wait for flush to complete */
-> > +       }
-> > +       spin_unlock_irqrestore(&infinity_mb_lock, flags);
-> > +}
-> 
-> Wow, this is a heavy barrier. From your description it doesn't sound like
-> there is anything to be done about it unfortunately.
 
-It's possible there is a better way once I can find out what the L3 bridge
-actually is. There is a small amount of documentation for the miu (DDR
-controller) that says it has an 8 or 4 operation configurable pipeline but
-this flushing bit is in a totally different area that's only documented
-by the comment about it in u-boot.
+> diff --git a/arch/x86/include/asm/qspinlock.h b/arch/x86/include/asm/qspinlock.h
+> index 444d6fd9a6d8..6fa8fcc5c7af 100644
+> --- a/arch/x86/include/asm/qspinlock.h
+> +++ b/arch/x86/include/asm/qspinlock.h
+> @@ -27,6 +27,10 @@ static __always_inline u32 queued_fetch_set_pending_acquire(struct qspinlock *lo
+>  	return val;
+>  }
+>  
+> +#ifdef CONFIG_NUMA_AWARE_SPINLOCKS
+> +extern void __cna_queued_spin_lock_slowpath(struct qspinlock *lock, u32 val);
+> +#endif
+> +
+>  #ifdef CONFIG_PARAVIRT_SPINLOCKS
+>  extern void native_queued_spin_lock_slowpath(struct qspinlock *lock, u32 val);
+>  extern void __pv_init_lock_hash(void);
+> diff --git a/arch/x86/kernel/alternative.c b/arch/x86/kernel/alternative.c
+> index 9d3a971ea364..e0e66bd8b251 100644
+> --- a/arch/x86/kernel/alternative.c
+> +++ b/arch/x86/kernel/alternative.c
+> @@ -698,6 +698,33 @@ static void __init int3_selftest(void)
+>  	unregister_die_notifier(&int3_exception_nb);
+>  }
+>  
+> +#if defined(CONFIG_NUMA_AWARE_SPINLOCKS)
+> +/*
+> + * Constant (boot-param configurable) flag selecting the NUMA-aware variant
+> + * of spinlock.  Possible values: -1 (off) / 0 (auto, default) / 1 (on).
+> + */
+> +static int numa_spinlock_flag;
+> +
+> +static int __init numa_spinlock_setup(char *str)
+> +{
+> +	if (!strcmp(str, "auto")) {
+> +		numa_spinlock_flag = 0;
+> +		return 1;
+> +	} else if (!strcmp(str, "on")) {
+> +		numa_spinlock_flag = 1;
+> +		return 1;
+> +	} else if (!strcmp(str, "off")) {
+> +		numa_spinlock_flag = -1;
+> +		return 1;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +__setup("numa_spinlock=", numa_spinlock_setup);
+> +
+> +#endif
+> +
+>  void __init alternative_instructions(void)
+>  {
+>  	int3_selftest();
+> @@ -738,6 +765,20 @@ void __init alternative_instructions(void)
+>  	}
+>  #endif
+>  
+> +#if defined(CONFIG_NUMA_AWARE_SPINLOCKS)
+> +	/*
+> +	 * By default, switch to the NUMA-friendly slow path for
+> +	 * spinlocks when we have multiple NUMA nodes in native environment.
+> +	 */
+> +	if ((numa_spinlock_flag == 1) ||
+> +	    (numa_spinlock_flag == 0 && nr_node_ids > 1 &&
+> +		    pv_ops.lock.queued_spin_lock_slowpath ==
+> +			native_queued_spin_lock_slowpath)) {
+> +		pv_ops.lock.queued_spin_lock_slowpath =
+> +		    __cna_queued_spin_lock_slowpath;
+> +	}
+> +#endif
+> +
+>  	apply_paravirt(__parainstructions, __parainstructions_end);
+>  
+>  	restart_nmi();
+> diff --git a/kernel/locking/mcs_spinlock.h b/kernel/locking/mcs_spinlock.h
+> index 52d06ec6f525..e40b9538b79f 100644
+> --- a/kernel/locking/mcs_spinlock.h
+> +++ b/kernel/locking/mcs_spinlock.h
+> @@ -17,7 +17,7 @@
+>  
+>  struct mcs_spinlock {
+>  	struct mcs_spinlock *next;
+> -	int locked; /* 1 if lock acquired */
+> +	unsigned int locked; /* 1 if lock acquired */
+>  	int count;  /* nesting count, see qspinlock.c */
+>  };
+>  
+> diff --git a/kernel/locking/qspinlock.c b/kernel/locking/qspinlock.c
+> index c06d1e8075d9..6d8c4a52e44e 100644
+> --- a/kernel/locking/qspinlock.c
+> +++ b/kernel/locking/qspinlock.c
+> @@ -11,7 +11,7 @@
+>   *          Peter Zijlstra <peterz@infradead.org>
+>   */
+>  
+> -#ifndef _GEN_PV_LOCK_SLOWPATH
+> +#if !defined(_GEN_PV_LOCK_SLOWPATH) && !defined(_GEN_CNA_LOCK_SLOWPATH)
+>  
+>  #include <linux/smp.h>
+>  #include <linux/bug.h>
+> @@ -70,7 +70,8 @@
+>  /*
+>   * On 64-bit architectures, the mcs_spinlock structure will be 16 bytes in
+>   * size and four of them will fit nicely in one 64-byte cacheline. For
+> - * pvqspinlock, however, we need more space for extra data. To accommodate
+> + * pvqspinlock, however, we need more space for extra data. The same also
+> + * applies for the NUMA-aware variant of spinlocks (CNA). To accommodate
+>   * that, we insert two more long words to pad it up to 32 bytes. IOW, only
+>   * two of them can fit in a cacheline in this case. That is OK as it is rare
+>   * to have more than 2 levels of slowpath nesting in actual use. We don't
+> @@ -79,7 +80,7 @@
+>   */
+>  struct qnode {
+>  	struct mcs_spinlock mcs;
+> -#ifdef CONFIG_PARAVIRT_SPINLOCKS
+> +#if defined(CONFIG_PARAVIRT_SPINLOCKS) || defined(CONFIG_NUMA_AWARE_SPINLOCKS)
+>  	long reserved[2];
+>  #endif
+>  };
+> @@ -103,6 +104,8 @@ struct qnode {
+>   * Exactly fits one 64-byte cacheline on a 64-bit architecture.
+>   *
+>   * PV doubles the storage and uses the second cacheline for PV state.
+> + * CNA also doubles the storage and uses the second cacheline for
+> + * CNA-specific state.
+>   */
+>  static DEFINE_PER_CPU_ALIGNED(struct qnode, qnodes[MAX_NODES]);
+>  
+> @@ -316,7 +319,7 @@ static __always_inline void __mcs_pass_lock(struct mcs_spinlock *node,
+>  #define try_clear_tail	__try_clear_tail
+>  #define mcs_pass_lock		__mcs_pass_lock
+>  
+> -#endif /* _GEN_PV_LOCK_SLOWPATH */
+> +#endif /* _GEN_PV_LOCK_SLOWPATH && _GEN_CNA_LOCK_SLOWPATH */
+>  
+>  /**
+>   * queued_spin_lock_slowpath - acquire the queued spinlock
+> @@ -589,6 +592,29 @@ void queued_spin_lock_slowpath(struct qspinlock *lock, u32 val)
+>  EXPORT_SYMBOL(queued_spin_lock_slowpath);
+>  
+>  /*
+> + * Generate the code for NUMA-aware spinlocks
+> + */
+> +#if !defined(_GEN_CNA_LOCK_SLOWPATH) && defined(CONFIG_NUMA_AWARE_SPINLOCKS)
+> +#define _GEN_CNA_LOCK_SLOWPATH
+> +
+> +#undef pv_wait_head_or_lock
+> +#define pv_wait_head_or_lock		cna_pre_scan
+> +
+> +#undef try_clear_tail
+> +#define try_clear_tail			cna_try_change_tail
+> +
+> +#undef mcs_pass_lock
+> +#define mcs_pass_lock			cna_pass_lock
+> +
+> +#undef  queued_spin_lock_slowpath
+> +#define queued_spin_lock_slowpath	__cna_queued_spin_lock_slowpath
+> +
+> +#include "qspinlock_cna.h"
+> +#include "qspinlock.c"
+> +
+> +#endif
+> +
+> +/*
+>   * Generate the paravirt code for queued_spin_unlock_slowpath().
+>   */
+>  #if !defined(_GEN_PV_LOCK_SLOWPATH) && defined(CONFIG_PARAVIRT_SPINLOCKS)
+> diff --git a/kernel/locking/qspinlock_cna.h b/kernel/locking/qspinlock_cna.h
+> new file mode 100644
+> index 000000000000..4d095f742d31
+> --- /dev/null
+> +++ b/kernel/locking/qspinlock_cna.h
+> @@ -0,0 +1,258 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +#ifndef _GEN_CNA_LOCK_SLOWPATH
+> +#error "do not include this file"
+> +#endif
+> +
+> +#include <linux/topology.h>
+> +
+> +/*
+> + * Implement a NUMA-aware version of MCS (aka CNA, or compact NUMA-aware lock).
+> + *
+> + * In CNA, spinning threads are organized in two queues, a main queue for
+> + * threads running on the same NUMA node as the current lock holder, and a
+> + * secondary queue for threads running on other nodes. Schematically, it
+> + * looks like this:
+> + *
+> + *    cna_node
+> + *   +----------+    +--------+        +--------+
+> + *   |mcs:next  | -> |mcs:next| -> ... |mcs:next| -> NULL      [Main queue]
+> + *   |mcs:locked| -+ +--------+        +--------+
+> + *   +----------+  |
+> + *                 +----------------------+
+> + *                                        \/
+> + *                 +--------+         +--------+
+> + *                 |mcs:next| -> ...  |mcs:next|          [Secondary queue]
+> + *                 +--------+         +--------+
+> + *                     ^                    |
+> + *                     +--------------------+
+> + *
+> + * N.B. locked = 1 if secondary queue is absent. Othewrise, it contains the
+> + * encoded pointer to the tail of the secondary queue, which is organized as a
+> + * circular list.
+> + *
+> + * After acquiring the MCS lock and before acquiring the spinlock, the lock
+> + * holder scans the main queue looking for a thread running on the same node
+> + * (pre-scan). If found (call it thread T), all threads in the main queue
+> + * between the current lock holder and T are moved to the end of the secondary
+> + * queue.  If such T is not found, we make another scan of the main queue when
+> + * unlocking the MCS lock (post-scan), starting at the node where pre-scan
+> + * stopped. If both scans fail to find such T, the MCS lock is passed to the
+> + * first thread in the secondary queue. If the secondary queue is empty, the
+> + * lock is passed to the next thread in the main queue.
+> + *
+> + * For more details, see https://arxiv.org/abs/1810.05600.
+> + *
+> + * Authors: Alex Kogan <alex.kogan@oracle.com>
+> + *          Dave Dice <dave.dice@oracle.com>
+> + */
+> +
+> +struct cna_node {
+> +	struct mcs_spinlock	mcs;
+> +	int			numa_node;
+> +	u32			encoded_tail;
+> +	u32			pre_scan_result; /* 0 or an encoded tail */
+> +};
+> +
+> +static void __init cna_init_nodes_per_cpu(unsigned int cpu)
+> +{
+> +	struct mcs_spinlock *base = per_cpu_ptr(&qnodes[0].mcs, cpu);
+> +	int numa_node = cpu_to_node(cpu);
+> +	int i;
+> +
+> +	for (i = 0; i < MAX_NODES; i++) {
+> +		struct cna_node *cn = (struct cna_node *)grab_mcs_node(base, i);
+> +
+> +		cn->numa_node = numa_node;
+> +		cn->encoded_tail = encode_tail(cpu, i);
+> +		/*
+> +		 * @encoded_tail has to be larger than 1, so we do not confuse
+> +		 * it with other valid values for @locked or @pre_scan_result
+> +		 * (0 or 1)
+> +		 */
+> +		WARN_ON(cn->encoded_tail <= 1);
+> +	}
+> +}
+> +
+> +static void __init cna_init_nodes(void)
+> +{
+> +	unsigned int cpu;
+> +
+> +	BUILD_BUG_ON(sizeof(struct cna_node) > sizeof(struct qnode));
+> +	/* we store an ecoded tail word in the node's @locked field */
+> +	BUILD_BUG_ON(sizeof(u32) > sizeof(unsigned int));
+> +
+> +	for_each_possible_cpu(cpu)
+> +		cna_init_nodes_per_cpu(cpu);
+> +}
+> +early_initcall(cna_init_nodes);
+typedef int (*initcall_t)(void);
 
-> Two possible issues I see here:
-> 
-> * It looks like it relies on CONFIG_ARM_HEAVY_BARRIER, but your Kconfig
->   entry does not select that. In many configurations, CACHE_L2X0 would
->   be set, but there is no need for yours on the Cortex-A7.
+So cna_init_nodes() should return an integer value. You can just return
+0 in this case.
 
-Fixed.
- 
->    Not sure if it matters in practice, as almost nothing uses fiq any more.
->    OTOH, maybe the lock is not needed at all? AFAICT if the sequence
->    gets interrupted by a handler that also calls mb(), you would still
->    continue in the original thread while observing a full l3 barrier. ;-)
+> +
+> +static inline bool cna_try_change_tail(struct qspinlock *lock, u32 val,
+> +				       struct mcs_spinlock *node)
+> +{
+> +	struct mcs_spinlock *head_2nd, *tail_2nd;
+> +	u32 new;
+> +
+> +	/* If the secondary queue is empty, do what MCS does. */
+> +	if (node->locked <= 1)
+> +		return __try_clear_tail(lock, val, node);
+> +
+> +	/*
+> +	 * Try to update the tail value to the last node in the secondary queue.
+> +	 * If successful, pass the lock to the first thread in the secondary
+> +	 * queue. Doing those two actions effectively moves all nodes from the
+> +	 * secondary queue into the main one.
+> +	 */
+> +	tail_2nd = decode_tail(node->locked);
+> +	head_2nd = tail_2nd->next;
+> +	new = ((struct cna_node *)tail_2nd)->encoded_tail + _Q_LOCKED_VAL;
+> +
+> +	if (atomic_try_cmpxchg_relaxed(&lock->val, &val, new)) {
+> +		/*
+> +		 * Try to reset @next in tail_2nd to NULL, but no need to check
+> +		 * the result - if failed, a new successor has updated it.
+> +		 */
+> +		cmpxchg64_relaxed(&tail_2nd->next, head_2nd, NULL);
 
-I've taken the lock out and tested that the ethernet isn't sending garbage
-and everything looks good.
+Why do you use cmpxchg64*()? That can be problematic when compiling on
+32-bit architecture. I think you should just use cmpxhg_relaxed() for
+automatic sizing.
 
-I'm still hoping for some feedback on the other parts of the series.
-I'll post a v2 series in a few days.
 
-Thanks!
+> +		arch_mcs_pass_lock(&head_2nd->locked, 1);
+> +		return true;
+> +	}
+> +
+> +	return false;
+> +}
 
-Daniel
+Cheers,
+Longman
+
 
 _______________________________________________
 linux-arm-kernel mailing list
