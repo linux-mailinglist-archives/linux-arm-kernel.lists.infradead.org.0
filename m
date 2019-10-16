@@ -2,58 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D04EBD93F7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 16:33:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB926D9404
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 16:37:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=zQeSXF5UjIRaMg0x8EuRwxGtjleuaqtpjJHCwS9CUew=; b=Y4I
-	/cGwdwiligUm7v0eGPL/z6oqy7VwE5ehlQtma4Ar7nq2wz8fpNNw76J7VPsrrD3LAly3jzgiEvYsk
-	ihcSj8Vzqk15pxJ2kXOOLqN6kq7JStf1oiUQ4zWbj+adz2iS01I724+m4ZEScX42lCv6yJ3gNm3kI
-	r0xrGzXHtzsVhrdCZhsVF088dM3HqOi8Mb99i3wSKbdI13ZlV2sq9Kw2FptN1ENX/f8gk0CkmZ7dh
-	lVBD9wX8/89NsWIaALW4nt5B83h7khXTLArPglGXxf4fhJJb1xpnxweRPbF3j+umF5+27ePNIPGn8
-	0yQf9PQaTpYusZ4O3q9WdAtWDF+Q3wQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9Mgfd27/pofI6b5XcwKGW0F5rZWKgjlKeJD9+acDvgk=; b=uq72KnTFLu6QsM
+	9oD4kIpp66Q/1A5KpT+SvcLqQXsF2tR/xJoy74zpx3GCXcvHQ5hcmL38omv34liKlQ41BCBACquO1
+	Owisbw2ei/ke0gDPDuwj6QP2b5eQgN8KDl5O7EKxS51ZRIF1PXkAGpI2jLSmEh0+GzFChs3Z16sgZ
+	kShUnIl9cH7overYQK+wssNgn2DUHPUUYzUK+HMVuWc1T4HRQgd2iJwlweG6+Mwgl6uZmVfkToZ1o
+	FfZl5sgKBXj2tinFzA3iktjWiuVKD0HHV8PiILE0HRMvPddUSmGM5O/x7DLbdPDzZjlXfmWMWczZV
+	K4rIPL0NIRsTTO4XIpqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKkMj-0000NM-3G; Wed, 16 Oct 2019 14:33:29 +0000
-Received: from xavier.telenet-ops.be ([2a02:1800:120:4::f00:14])
+	id 1iKkQZ-0003EZ-Fa; Wed, 16 Oct 2019 14:37:27 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKkMY-0000Jl-0Z
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 14:33:20 +0000
-Received: from ramsan ([84.194.98.4]) by xavier.telenet-ops.be with bizsmtp
- id EEZ82100N05gfCL01EZ856; Wed, 16 Oct 2019 16:33:08 +0200
-Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
- (envelope-from <geert@linux-m68k.org>)
- id 1iKkMO-0003nj-CK; Wed, 16 Oct 2019 16:33:08 +0200
-Received: from geert by rox.of.borg with local (Exim 4.90_1)
- (envelope-from <geert@linux-m68k.org>)
- id 1iKkMO-0007YO-Aq; Wed, 16 Oct 2019 16:33:08 +0200
-From: Geert Uytterhoeven <geert+renesas@glider.be>
-To: Magnus Damm <magnus.damm@gmail.com>,
- Chris Brandt <chris.brandt@renesas.com>
-Subject: [PATCH] soc: renesas: Add missing check for non-zero product register
- address
-Date: Wed, 16 Oct 2019 16:33:06 +0200
-Message-Id: <20191016143306.28995-1-geert+renesas@glider.be>
-X-Mailer: git-send-email 2.17.1
+ id 1iKkQR-0003DI-9W
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 14:37:21 +0000
+Received: from mail-qt1-f174.google.com (mail-qt1-f174.google.com
+ [209.85.160.174])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 842D421D71
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 16 Oct 2019 14:37:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571236636;
+ bh=X2GehGlKpD9lRul9sZZxg3YDBY4r/SNmAqq/G02/MsQ=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=J1zh27+Wuj86qP5t/cSHiHmrE5j+2/EKO8vshMsJZPdM/ziHaE3jaCnTRaDXBhvkZ
+ MB1rQEJqznAMIe9l86vXn5MIpatne/SAGyhuQnQtZwZqWIrrmbVp12PHPGTO2V041B
+ 5uOJdPxU7yc9pA3whm6AzKqbq1228ocbP10nCV3c=
+Received: by mail-qt1-f174.google.com with SMTP id m61so36414760qte.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 16 Oct 2019 07:37:16 -0700 (PDT)
+X-Gm-Message-State: APjAAAVydOWiSSYNBG5rOnsJ/msgWNC0cfU3B8O2ba3CdWi44VTrHNKZ
+ t8RBSvADgl/UciOymGo7VMb516ccFR0t69BfBA==
+X-Google-Smtp-Source: APXvYqzhDBYQpZpTKTkGucI5uSlDTKGSsILvDTFcMjUBxyh7iwqlJescRQev3Ye7KywOInTZhaOJbRKBkZidndcMh9k=
+X-Received: by 2002:ac8:6782:: with SMTP id b2mr45137956qtp.143.1571236635546; 
+ Wed, 16 Oct 2019 07:37:15 -0700 (PDT)
+MIME-Version: 1.0
+References: <20191016141644.81210-1-mripard@kernel.org>
+In-Reply-To: <20191016141644.81210-1-mripard@kernel.org>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Wed, 16 Oct 2019 09:37:03 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqLXDp_fHH9yL0KO-C1YsmNvxb6nOSJ3fcW-KM3zTW1WYQ@mail.gmail.com>
+Message-ID: <CAL_JsqLXDp_fHH9yL0KO-C1YsmNvxb6nOSJ3fcW-KM3zTW1WYQ@mail.gmail.com>
+Subject: Re: [PATCH] dt-bindings: pinctrl: Convert Allwinner Pin Controller to
+ a schema
+To: Maxime Ripard <mripard@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_073318_266479_19A28E50 
-X-CRM114-Status: GOOD (  11.43  )
-X-Spam-Score: -0.4 (/)
+X-CRM114-CacheID: sfid-20191016_073719_377321_139C7643 
+X-CRM114-Status: GOOD (  25.99  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.4 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:1800:120:4:0:0:f00:14 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,47 +86,293 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-renesas-soc@vger.kernel.org,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Linus Walleij <linus.walleij@linaro.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Frank Rowand <frowand.list@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If the DTB for a device with an RZ/A2 SoC lacks a device node for the
-BSID register, the ID validation code falls back to using a register at
-address 0x0, which leads to undefined behavior (e.g. reading back a
-random value).
+On Wed, Oct 16, 2019 at 9:16 AM Maxime Ripard <mripard@kernel.org> wrote:
+>
+> The Allwinner SoCs have a pin controller supported in Linux, with a
+> matching Device Tree binding.
+>
+> Now that we have the DT validation in place, let's convert the device tree
+> bindings for that controller over to a YAML schemas.
+>
+> Signed-off-by: Maxime Ripard <mripard@kernel.org>
+> ---
+>  .../pinctrl/allwinner,sun4i-a10-pinctrl.yaml  | 239 ++++++++++++++++++
+>  .../pinctrl/allwinner,sunxi-pinctrl.txt       | 164 ------------
+>  2 files changed, 239 insertions(+), 164 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/pinctrl/allwinner,sun4i-a10-pinctrl.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/pinctrl/allwinner,sunxi-pinctrl.txt
+>
+> diff --git a/Documentation/devicetree/bindings/pinctrl/allwinner,sun4i-a10-pinctrl.yaml b/Documentation/devicetree/bindings/pinctrl/allwinner,sun4i-a10-pinctrl.yaml
+> new file mode 100644
+> index 000000000000..11edbbc5c1d2
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/pinctrl/allwinner,sun4i-a10-pinctrl.yaml
+> @@ -0,0 +1,239 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/pinctrl/allwinner,sun4i-a10-pinctrl.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Allwinner A10 Pin Controller Device Tree Bindings
+> +
+> +maintainers:
+> +  - Chen-Yu Tsai <wens@csie.org>
+> +  - Maxime Ripard <maxime.ripard@bootlin.com>
+> +
+> +properties:
+> +  "#gpio-cells":
+> +    const: 3
+> +    description:
+> +      GPIO consumers must use three arguments, first the number of the
+> +      bank, then the pin number inside that bank, and finally the GPIO
+> +      flags.
+> +
+> +  "#interrupt-cells":
+> +    const: 3
+> +    description:
+> +      Interrupts consumers must use three arguments, first the number
+> +      of the bank, then the pin number inside that bank, and finally
+> +      the interrupts flags.
+> +
+> +  compatible:
+> +    enum:
+> +      - allwinner,sun4i-a10-pinctrl
+> +      - allwinner,sun5i-a10s-pinctrl
+> +      - allwinner,sun5i-a13-pinctrl
+> +      - allwinner,sun6i-a31-pinctrl
+> +      - allwinner,sun6i-a31-r-pinctrl
+> +      - allwinner,sun6i-a31s-pinctrl
+> +      - allwinner,sun7i-a20-pinctrl
+> +      - allwinner,sun8i-a23-pinctrl
+> +      - allwinner,sun8i-a23-r-pinctrl
+> +      - allwinner,sun8i-a33-pinctrl
+> +      - allwinner,sun8i-a83t-pinctrl
+> +      - allwinner,sun8i-a83t-r-pinctrl
+> +      - allwinner,sun8i-h3-pinctrl
+> +      - allwinner,sun8i-h3-r-pinctrl
+> +      - allwinner,sun8i-r40-pinctrl
+> +      - allwinner,sun8i-v3-pinctrl
+> +      - allwinner,sun8i-v3s-pinctrl
+> +      - allwinner,sun9i-a80-pinctrl
+> +      - allwinner,sun9i-a80-r-pinctrl
+> +      - allwinner,sun50i-a64-pinctrl
+> +      - allwinner,sun50i-a64-r-pinctrl
+> +      - allwinner,sun50i-h5-pinctrl
+> +      - allwinner,sun50i-h6-pinctrl
+> +      - allwinner,sun50i-h6-r-pinctrl
+> +      - allwinner,suniv-f1c100s-pinctrl
+> +      - nextthing,gr8-pinctrl
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    minItems: 1
+> +    maxItems: 5
 
-This could be fixed by letting fam_rza2.reg point to the actual BSID
-register.  However, the hardcoded fallbacks were meant for backwards
-compatibility with old DTBs only, not for new SoCs.  Hence fix this by
-validating renesas_family.reg before using it.
+This probably warrants a description.
 
-Fixes: 175f435f44b724e3 ("soc: renesas: identify RZ/A2")
-Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
----
- drivers/soc/renesas/renesas-soc.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+> +
+> +  clocks:
+> +    items:
+> +      - description: Bus Clock
+> +      - description: High Frequency Oscillator
+> +      - description: Low Frequency Oscillator
+> +
+> +  clock-names:
+> +    items:
+> +      - const: apb
+> +      - const: hosc
+> +      - const: losc
+> +
+> +  resets:
+> +    maxItems: 1
+> +
+> +  gpio-controller: true
+> +  interrupt-controller: true
+> +  gpio-line-names: true
+> +
+> +  input-debounce:
+> +    $ref: /schemas/types.yaml#/definitions/uint32-array
+> +    description:
+> +      Debouncing periods in microseconds, one period per interrupt
+> +      bank found in the controller
 
-diff --git a/drivers/soc/renesas/renesas-soc.c b/drivers/soc/renesas/renesas-soc.c
-index 5dc2ae55f746a48a..85aaf85ce6b192d9 100644
---- a/drivers/soc/renesas/renesas-soc.c
-+++ b/drivers/soc/renesas/renesas-soc.c
-@@ -337,7 +337,7 @@ static int __init renesas_soc_init(void)
- 	if (np) {
- 		chipid = of_iomap(np, 0);
- 		of_node_put(np);
--	} else if (soc->id) {
-+	} else if (soc->id && family->reg) {
- 		chipid = ioremap(family->reg, 4);
- 	}
- 	if (chipid) {
--- 
-2.17.1
+Don't you know the max # of interrupt banks?
 
+> +
+> +patternProperties:
+> +  # It's pretty scary, but the basic idea is that:
+> +  #   - One node name can start with either s- or r- for PRCM nodes,
+> +  #   - Then, the name itself can be any repetition of <string>- (to
+> +  #     accomodate with nodes like uart4-rts-cts-pins), where each
+> +  #     string can be either starting with 'p' but in a string longer
+> +  #     than 3, or something that doesn't start with 'p',
+> +  #   - Then, the bank name is optional and will be between pa and pg,
+> +  #     pl or pm. Some pins groups that have several options will have
+> +  #     the pin numbers then,
+> +  #   - Finally, the name will end with either -pin or pins.
+> +
+> +  "^([rs]-)?(([a-z0-9]{3,}|[a-oq-z][a-z0-9]*?)?-)+?(p[a-ilm][0-9]*?-)??pins?$":
+> +    type: object
+> +
+> +    properties:
+> +      pins: true
+> +      function: true
+> +      bias-disable: true
+> +      bias-pull-up: true
+> +      bias-pull-down: true
+> +
+> +      drive-strength:
+> +        allOf:
+> +          - $ref: /schemas/types.yaml#/definitions/uint32
+> +          - enum: [ 10, 20, 30, 40 ]
+> +
+> +    required:
+> +      - pins
+> +      - function
+> +
+> +    additionalProperties: false
+> +
+> +  "^vcc-p[a-hlm]-supply$":
+> +    $ref: /schemas/types.yaml#/definitions/phandle
+
+You can drop this as *-supply is defined already.
+
+> +    description:
+> +      Regulators used by the framebuffer. These should be named
+
+framebuffer?
+
+> +      according to the names in the device design.
+> +
+> +required:
+> +  - "#gpio-cells"
+> +  - "#interrupt-cells"
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - clocks
+> +  - clock-names
+> +  - gpio-controller
+> +  - interrupt-controller
+> +
+> +allOf:
+> +  # FIXME: We should have the pin bank supplies here, but not a lot of
+> +  # boards are defining it at the moment so it would generate a lot of
+> +  # warnings.
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          enum:
+> +            - allwinner,sun9i-a80-pinctrl
+> +
+> +    then:
+> +      properties:
+> +        interrupts:
+> +          minItems: 5
+> +          maxItems: 5
+> +
+> +    else:
+> +      if:
+> +        properties:
+> +          compatible:
+> +            enum:
+> +              - allwinner,sun6i-a31-pinctrl
+> +              - allwinner,sun6i-a31s-pinctrl
+> +              - allwinner,sun50i-h6-pinctrl
+> +
+> +      then:
+> +        properties:
+> +          interrupts:
+> +            minItems: 4
+> +            maxItems: 4
+> +
+> +      else:
+> +        if:
+
+json-schema needs an 'elif' to avoid this increasing indent...
+
+> +          properties:
+> +            compatible:
+> +              enum:
+> +                - allwinner,sun8i-a23-pinctrl
+> +                - allwinner,sun8i-a83t-pinctrl
+> +                - allwinner,sun50i-a64-pinctrl
+> +                - allwinner,sun50i-h5-pinctrl
+> +                - allwinner,suniv-f1c100s-pinctrl
+> +
+> +        then:
+> +          properties:
+> +            interrupts:
+> +              minItems: 3
+> +              maxItems: 3
+> +
+> +        else:
+> +          if:
+> +            properties:
+> +              compatible:
+> +                enum:
+> +                  - allwinner,sun6i-a31-r-pinctrl
+> +                  - allwinner,sun8i-a33-pinctrl
+> +                  - allwinner,sun8i-h3-pinctrl
+> +                  - allwinner,sun8i-v3-pinctrl
+> +                  - allwinner,sun8i-v3s-pinctrl
+> +                  - allwinner,sun9i-a80-r-pinctrl
+> +                  - allwinner,sun50i-h6-r-pinctrl
+> +
+> +          then:
+> +            properties:
+> +              interrupts:
+> +                minItems: 2
+> +                maxItems: 2
+> +
+> +          else:
+> +            properties:
+> +              interrupts:
+> +                minItems: 1
+> +                maxItems: 1
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/sun5i-ccu.h>
+> +
+> +    pio: pinctrl@1c20800 {
+> +        compatible = "allwinner,sun5i-a13-pinctrl";
+> +        reg = <0x01c20800 0x400>;
+> +        interrupts = <28>;
+> +        clocks = <&ccu CLK_APB0_PIO>, <&osc24M>, <&osc32k>;
+> +        clock-names = "apb", "hosc", "losc";
+> +        gpio-controller;
+> +        interrupt-controller;
+> +        #interrupt-cells = <3>;
+> +        #gpio-cells = <3>;
+> +
+> +        uart1_pe_pins: uart1-pe-pins {
+> +            pins = "PE10", "PE11";
+> +            function = "uart1";
+> +        };
+> +
+> +        uart1_pg_pins: uart1-pg-pins {
+> +            pins = "PG3", "PG4";
+> +            function = "uart1";
+> +        };
+> +    };
 
 _______________________________________________
 linux-arm-kernel mailing list
