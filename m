@@ -2,107 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB7D0D961F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 18:00:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2493D96C8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 18:16:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=XvasW26arJqebXlrpz/lgfGaMvc15u1OQKYLxS1+rxc=; b=QWLacfxOPSkdPC
-	r2/VgAMHI2NyNjsMW79HKMz2pkvrBBfdKxh2OJCcOVe0ZNwXKFQ3lj5GrU9z1lC4XpOoqQx+b0YaK
-	Qjd9edyP9kTWTvF+k7jKAVOGRYixZCjfmt8p6/UJU9QwVv6TtOUlZP7I1YF+qs20Nj4AOGUtsO4A5
-	I1JWIBZsEb38ImNsnyhoAldoUwayWni2DcA5SCy02/TWmOqCbl8CB4DUuIDYgUpzClaRm+C6Iy9JL
-	gcGPW7XwdHdK2uTyySe7YxNLCQnUF0GJJr+vIuzfpKiBXnWqYU1bQvAKcuU50qmAxSy5Df1XCRqzp
-	y4E7qtZm/z1S6Q3YuyEg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=goHyazcVqj52cDn6eCrJsAvuM2XTyvhEkMfGebJ2fdk=; b=rJCFbyaUXWbXP7
+	iOOnyuWhbPgogZoWs+uHFPVBnjGyU0KbS4QhKw/mNQyypMnF6+mJMQxDc0+sj/0m/gqkDxbEsiJhl
+	lNj2+b/xqUJi4BPbOf7KHuNIr9CJVep7DEjRVuSePV19eImMzOIQ26KHF0R8BuqjC9puGwtVicYuy
+	cttRt7gj8VY3FW6yWKqgQSWDYRCJU9TZ9Xk3kEdGY5Z/vGJMlJwTvwbYSxjKyBjNjJ8+zYmLwU4Zz
+	cSp4L3Cr6ztuEbuVqgP6PTx/z2yPs7lU0b3QvgMUGvMFAnhYcnECMqJAXnUAv41dn+NtMq8lhNosB
+	JWaxee2x7Jo1ejxynKYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKlih-0003bQ-4J; Wed, 16 Oct 2019 16:00:15 +0000
-Received: from mail-eopbgr140081.outbound.protection.outlook.com
- ([40.107.14.81] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1iKlyJ-0003px-Iv; Wed, 16 Oct 2019 16:16:23 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKliR-0003Um-QV
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 16:00:01 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Lp9fQj7irYirL04vh0yp4XhhYv7KRltXXVFvNynAIz+SfjZw8UKrL2XHqG8he6GSrWQS+V9DEbMn7RKa87Ct9vjqmZWD8v6d7uGtS2RPslto6Q8VfV5shEFWNV7rWTV6oBL+ZE/TaHYbpsspzIGoJ/6K+WC7vcf33PCWfSTeEus7dD/3BweLPJWchYTIJMaiJRQTJ9I6Uw92aawrps+sPM7Nln2tmBh313eIGD7otoeAwBnBOgwgJytyZdxEKgHmD9+k5E03rpNy933xKn4vwcPJOjN/9Nb0oIh6J6wfV+Hf74p7SU3i7Rnyilzl8njMWjRkSFg4d2z8XnKohBxZxQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=T6Ahsux/oCqXs30SJCwnXjrqt2oCUgizyF4ltv4PT2c=;
- b=d7JD7o+uJtqHDf3Dre3weAUMG3B9wesYUimlrAB37CfV2CFuMxwq1jCoxrE+FnC9ad+s0/E4/6SJ8e19HXmnm5SlU3tuIXQKsBzDOxJ48gAxpp0LqAf8+gFR6IBr6TBKOvxQgywqsdJxw9KiOyIhXKKbcYppbpdTt5GI136hpcEl24CQwAXGHwGoqeWMCETFhPR3oHcVsEThfXhsStvksmIlqK9YOH7B/FQwpT3iHg5VTlTB55hFVcPqShhFHld4EGh4zJjNubFHfedniA1vaScMMEilfdoCRpZ418mTgYaI5//zsu04cKH69jrHCzxF7Bu3MslozMu3Ghr7RmPreg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=T6Ahsux/oCqXs30SJCwnXjrqt2oCUgizyF4ltv4PT2c=;
- b=QWmDgKMz2KHinrLgmSVIFRKbH9+A4Ro5ymIsSMuE20q9CM9Te0QCArGoiahATcmwP7XDHlVOPV5QyFOu7XxuzjccxjU9VIawWrplXZM3WRav14dXMPuYYo/LoEkElpmTdir3UFJ6gKlDR1fDoLRRDiLXBAcsUDN9wCMBPcX2m0w=
-Received: from VI1PR0402MB3485.eurprd04.prod.outlook.com (52.134.3.153) by
- VI1PR0402MB3453.eurprd04.prod.outlook.com (52.134.3.33) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2347.22; Wed, 16 Oct 2019 15:59:54 +0000
-Received: from VI1PR0402MB3485.eurprd04.prod.outlook.com
- ([fe80::ec9b:b8ee:6fa4:7f9e]) by VI1PR0402MB3485.eurprd04.prod.outlook.com
- ([fe80::ec9b:b8ee:6fa4:7f9e%6]) with mapi id 15.20.2347.023; Wed, 16 Oct 2019
- 15:59:54 +0000
-From: Horia Geanta <horia.geanta@nxp.com>
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>, "linux-crypto@vger.kernel.org"
- <linux-crypto@vger.kernel.org>
-Subject: Re: [PATCH 16/25] crypto: mxs - switch to skcipher API
-Thread-Topic: [PATCH 16/25] crypto: mxs - switch to skcipher API
-Thread-Index: AQHVgomysWWO9xvSwkmhz+CnuRW5ww==
-Date: Wed, 16 Oct 2019 15:59:54 +0000
-Message-ID: <VI1PR0402MB3485D17490694EAEC115371E98920@VI1PR0402MB3485.eurprd04.prod.outlook.com>
-References: <20191014121910.7264-1-ard.biesheuvel@linaro.org>
- <20191014121910.7264-17-ard.biesheuvel@linaro.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=horia.geanta@nxp.com; 
-x-originating-ip: [212.146.100.6]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 7fa95d06-a18d-454c-f2c8-08d75251e296
-x-ms-office365-filtering-ht: Tenant
-x-ms-traffictypediagnostic: VI1PR0402MB3453:|VI1PR0402MB3453:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR0402MB3453E4BCFCEBA903B92C9CF198920@VI1PR0402MB3453.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7219;
-x-forefront-prvs: 0192E812EC
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(136003)(39860400002)(366004)(346002)(396003)(199004)(189003)(26005)(9686003)(110136005)(186003)(5660300002)(76176011)(25786009)(4744005)(66946007)(66476007)(66556008)(76116006)(64756008)(66446008)(91956017)(102836004)(53546011)(2501003)(71200400001)(71190400001)(99286004)(7696005)(229853002)(6436002)(81166006)(54906003)(6246003)(55016002)(3846002)(8936002)(81156014)(316002)(8676002)(2906002)(6506007)(6116002)(4326008)(305945005)(7416002)(52536014)(74316002)(33656002)(7736002)(486006)(476003)(14454004)(86362001)(446003)(478600001)(44832011)(66066001)(256004);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0402MB3453;
- H:VI1PR0402MB3485.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: Jeb6UQvug9WHpPvGzGEYHlDh7jLduCPMhNBZDnSDUyiK7vh+fhN44cYuOCoj3v+pH31b3/VwXc1P6/5fYqqp8nczrBhjTx4sQq50X/BawDwnVbXlk+VwkJd/EESyqLIVhhqQD3th5UOX4nc8jbFSuhG1dm+EZVu+I75plxZePZbBKg9Dtr7AAdtMezejVN58/gnYgB+OPwUcBVkOHikwsyObsLpjsGTfiuMdNn1gdqNbHLOSREtk9v5Aeu+zhmW0ECp+AHayBiCIYmOflWB9KcSubRCnZDShbBIdBdM9BB5EBKczlEkt89GIsZyd0oDidm454RA1dUP9DEpFF3JbO4+FXQ2bkbDCSVFGeRsdT+qVhKoTwe3HImzFxDoGwtan4wTb5bFpGHt55my2B6rblYyqvk4HUaB/U4klLst85K4=
+ id 1iKly2-0003iD-Jj
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 16:16:08 +0000
+Received: by mail-lf1-x141.google.com with SMTP id f23so2477014lfk.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 16 Oct 2019 09:16:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=1ylL1eydi6OUMBpWNcbTT5Kqt/V1VFfcpzawFZbwf6M=;
+ b=kDSeyOj2cXVo7ubdqGLKFFuJ5cwxCUGu2SnwcczXReu8aRgDcead9Wx74qE6k3g3pE
+ /07VqXUD5t1xAzaAb2w/P2S+kDu9v7iCNXin8iwCbXhpcKi8EG1A2GmMevstjIgJsKAV
+ 9T4qEBQcU5aRhoXOw+QwOeSdEIjAMq1EE0I4c9TmZKtTP7eCND+NEHSTRHfMMM9JN4lZ
+ p/ITNKm/aLkWLrIn27E60n4e65CNws8LVq/AMlALEwJ5P8dJbhOA8n0PXVL/+h5p+6L9
+ UqVqldxfOwPgSaioISiX3JNEN7mxF8WoKmEyn4UvRK3STHuPAdDOgxkeBJhX6pkJRBiX
+ a14A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=1ylL1eydi6OUMBpWNcbTT5Kqt/V1VFfcpzawFZbwf6M=;
+ b=eDkhysWmcxyVje8Yd8uoI5dolksVtacdgJOaTg1AwLhde+vqi7oSTDADepuuLjabDt
+ KFhVz6dzTn5SH9ri4GA/zik1ShpRYXHz0nWrzvMA2qk2tfNVvYNJST95YRnJso1THPhm
+ i0/izUJj2wiNTjnQri5frcLy7AmMGEj2YuEr40F5RdqP5qYIiQCjXfx4wJpEQq//p103
+ uvLCaW7Nzf6Q471BNoRLIGGVJcfUL+O+CvTALlONh18zQ0/pQlcw3fcPmv9ajVbaXr5l
+ cq77fwaz15klMIB1uC8z3W7rVtm2Z3qPTshlFhrvjUBMdJghR5AHC1ZGZtGz/CWhpXgs
+ 8Jnw==
+X-Gm-Message-State: APjAAAUqDKG17XyAl/sIJZ2bvDQri4YQlZri3BDi2kG3TdQi+vVqn76Q
+ HKWIw2QyIQD0BP4vGJDAoi2xqLQ2NBY94Q0890Y=
+X-Google-Smtp-Source: APXvYqxro5i35Ft6ZD3j7iIxrRJ7VRGx4dCwTbmqD/NDL7ZHsmxJkNf1lH2oVljT+08Fxt5pyVK8s657Msykgea09JE=
+X-Received: by 2002:ac2:5610:: with SMTP id v16mr25010105lfd.93.1571242563292; 
+ Wed, 16 Oct 2019 09:16:03 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7fa95d06-a18d-454c-f2c8-08d75251e296
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Oct 2019 15:59:54.2647 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: NqkCFiIDEWdlL8VzUh6lLIm7nWTeTkUc/4a9zz+BozI83VSjwFCe7kA/JOmuFfZP4lZH3pX90WfknhRJHi6rmA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0402MB3453
+References: <20191012200524.23512-1-alistair@alistair23.me>
+ <20191016144946.p3tm67vh5lqigndn@gilmour>
+ <CAGb2v67QrTJjSO99UNs-=3ZZnK948am11=izRTHT6gZ06E28eA@mail.gmail.com>
+In-Reply-To: <CAGb2v67QrTJjSO99UNs-=3ZZnK948am11=izRTHT6gZ06E28eA@mail.gmail.com>
+From: Alistair Francis <alistair23@gmail.com>
+Date: Wed, 16 Oct 2019 09:10:54 -0700
+Message-ID: <CAKmqyKO1QugY=JHORoGnPjTqZQV-jMfey8T3144vaqTwNoCwqA@mail.gmail.com>
+Subject: Re: [PATCH] arm64: dts: sun50i: sopine-baseboard: Expose serial1,
+ serial2 and serial3
+To: Chen-Yu Tsai <wens@csie.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_085959_984767_E05F4AA3 
-X-CRM114-Status: UNSURE (   8.20  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191016_091606_716219_2A9D4350 
+X-CRM114-Status: GOOD (  17.34  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.14.81 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (alistair23[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (alistair23[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -121,41 +97,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Herbert Xu <herbert@gondor.apana.org.au>,
- Eric Biggers <ebiggers@google.com>, Fabio Estevam <festevam@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, "David S. Miller" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-2"
-Content-Transfer-Encoding: quoted-printable
+Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Alistair Francis <alistair@alistair23.me>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/14/2019 3:19 PM, Ard Biesheuvel wrote:
-> Commit 7a7ffe65c8c5 ("crypto: skcipher - Add top-level skcipher interface=
-")
-> dated 20 august 2015 introduced the new skcipher API which is supposed to
-> replace both blkcipher and ablkcipher. While all consumers of the API have
-> been converted long ago, some producers of the ablkcipher remain, forcing
-> us to keep the ablkcipher support routines alive, along with the matching
-> code to expose [a]blkciphers via the skcipher API.
-> =
+On Wed, Oct 16, 2019 at 7:54 AM Chen-Yu Tsai <wens@csie.org> wrote:
+>
+> On Wed, Oct 16, 2019 at 10:49 PM Maxime Ripard <mripard@kernel.org> wrote:
+> >
+> > Hi,
+> >
+> > On Sat, Oct 12, 2019 at 01:05:24PM -0700, Alistair Francis wrote:
+> > > Follow what the sun50i-a64-pine64.dts does and expose all 5 serial
+> > > connections.
+> > >
+> > > Signed-off-by: Alistair Francis <alistair@alistair23.me>
+> > > ---
+> > >  .../allwinner/sun50i-a64-sopine-baseboard.dts | 25 +++++++++++++++++++
+> > >  1 file changed, 25 insertions(+)
+> > >
+> > > diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
+> > > index 124b0b030b28..49c37b21ab36 100644
+> > > --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
+> > > +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
+> > > @@ -56,6 +56,10 @@
+> > >       aliases {
+> > >               ethernet0 = &emac;
+> > >               serial0 = &uart0;
+> > > +             serial1 = &uart1;
+> > > +             serial2 = &uart2;
+> > > +             serial3 = &uart3;
+> > > +             serial4 = &uart4;
+> > >       };
+> > >
+> > >       chosen {
+> > > @@ -280,6 +284,27 @@
+> > >       };
+> > >  };
+> > >
+> > > +/* On Pi-2 connector */
+> > > +&uart2 {
+> > > +     pinctrl-names = "default";
+> > > +     pinctrl-0 = <&uart2_pins>;
+> > > +     status = "disabled";
+> > > +};
+> > > +
+> > > +/* On Euler connector */
+> > > +&uart3 {
+> > > +     pinctrl-names = "default";
+> > > +     pinctrl-0 = <&uart3_pins>;
+> > > +     status = "disabled";
+> > > +};
+> > > +
+> > > +/* On Euler connector, RTS/CTS optional */
+> > > +&uart4 {
+> > > +     pinctrl-names = "default";
+> > > +     pinctrl-0 = <&uart4_pins>;
+> > > +     status = "disabled";
+> > > +};
+> >
+> > Since these are all the default muxing, maybe we should just set that
+> > in the DTSI?
+>
+> Maybe not, since people may want to only use RX/TX, and leave the other
+> two pins for GPIO?
 
-> So switch this driver to the skcipher API, allowing us to finally drop the
-> blkcipher code in the near future.
-> =
+I think this makes the most sense for the default.
 
-> Cc: Shawn Guo <shawnguo@kernel.org>
-> Cc: Sascha Hauer <s.hauer@pengutronix.de>
-> Cc: Pengutronix Kernel Team <kernel@pengutronix.de>
-> Cc: Fabio Estevam <festevam@gmail.com>
-> Cc: NXP Linux Team <linux-imx@nxp.com>
-> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Tested-by: Horia Geant=E3 <horia.geanta@nxp.com>
+Alistair
 
-Thanks,
-Horia
+>
+> ChenYu
 
 _______________________________________________
 linux-arm-kernel mailing list
