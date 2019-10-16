@@ -2,58 +2,138 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F42ED8EA6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 12:52:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E06A6D8EBC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 12:57:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1ljCwZ+S46ESGJgFnZV5H6dN2+RedL+sCdCv+47bngA=; b=YzeDT28oUVYklGUKPYEg1sYtL
-	E/Mbd6gBDCnV2eabDPdkQxkjTZsZg6/GryT2P12cCBNn+zm75XUPDuAaEMMQBblj9CzYPy/ai6KWU
-	xqGuk45NCWX11zrvqsqGbRW1d+cUspWUGJXvc6MfcwDkbOHQ3G1FEg/yZbVFBPxluXXlbGI/3qw43
-	R66eWmGZ26EkL6rykOpa9MOqfgKijVp8gJTSKwaBj5g1WHLMX8DappyFzmnh7L6tiQyG3mTv8JTBQ
-	yErj2crLIxVjORkWNyweCx/HycO8ya/p6UXpDgnn4XqZbGrw7Iq5ORbFlRGKetwTWLwH5yCRjNqd2
-	5sU8jJKzQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FZl70VeXP93aWd2uY1ZYCaro33oMtxDS3D3DujPdrJM=; b=AyTUWOxRuvbLwf
+	W5aSYbNppMvmiklvseWHS8icrE7YBTfbTXz+iPUar2oFjrKz9tcyjGuH4mr2ccpQObKAiStkw5ydC
+	Nchz8+WlZMXGg1QuwxwsPBOdrG7ftFGptyo3uahXz38mbI+fjY9eCAf5ke7Em/R5/+8MFN/wLi1SG
+	O1RFJr0w4ie8xHeIJhHEpqboUtjw00psaZEQO79Bgd9GCDT9HB1lTil3vdpo2chu+g4GTRvfa+/WK
+	dfk3MdpTyUGdmO2mhxcG2o9CO1Gh6WUI+mqSrUuaZ7Q4dCI0rZmQ6irg4yLE8QDCy5m8tie7pCG8w
+	JKhfM3p6npqUpGbgmBaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKgv8-0007ba-JM; Wed, 16 Oct 2019 10:52:46 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKgtw-0006lK-FT
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 10:51:34 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 54E0628;
- Wed, 16 Oct 2019 03:51:31 -0700 (PDT)
-Received: from [192.168.1.123] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 037943F6C4;
- Wed, 16 Oct 2019 03:51:28 -0700 (PDT)
-Subject: Re: [RFC PATCH 0/6] SMMUv3 PMCG IMP DEF event support
-To: John Garry <john.garry@huawei.com>, lorenzo.pieralisi@arm.com,
- guohanjun@huawei.com, sudeep.holla@arm.com, mark.rutland@arm.com,
- will@kernel.org
-References: <1569854031-237636-1-git-send-email-john.garry@huawei.com>
- <66a3ce9f-d3cd-110f-7353-46e6eaf25b7c@arm.com>
- <1d546b4b-a2ad-49da-b532-951232093a9f@huawei.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <fc2df5d8-561a-b25b-e8f1-79aeb913687f@arm.com>
-Date: Wed, 16 Oct 2019 11:51:22 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
+	id 1iKgzG-0001Rp-4Q; Wed, 16 Oct 2019 10:57:02 +0000
+Received: from mail-eopbgr740083.outbound.protection.outlook.com
+ ([40.107.74.83] helo=NAM01-BN3-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iKgz5-0001Ql-G0
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 10:56:52 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=jwWXQAcfD2/YoGE/wAbAFa8+UvYPR+3E/zXjVXhuXe4zo+iJR7e13TCihwEnSuJXbFBisFIzlTgF3QlW0Qaj01Sh4PP5sC/JI8i9+vEn7V8Hr2vZ/O8V6mVLoZEHvHz4veh+Tr1i2lTzp7bqESdbLjP0UY7K7/fUuJnkuTh6l9KFxrWpdpRsoNHg2YLKyQ5uxEoHxPEBYFtijj5tJPpBMkHq2rL2aHMGaPsC/gi96AoJKlSB4Qh4ifuDU1Ij6HCWR4Ip1iQPdJsUmo7Z6GiM4OnPBdbw9PFRCd4ojjx4rya/LvhucRVUDX0Nu/kw9wPZSG2ar1DQ8k8I23OWWc4hZA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=++B+ydka1g41fIu7Ox/Ms6mOQ5TA5T48D86VqWS/dOA=;
+ b=m9gjC6dl150aW+33AqgMSaW/bI7XzUcRcu6dVXI+X7NF1SMoJ+LeM+TMTW7UE7rNGoNB8d7x1fkBU6JW9XQKvgxsTkoIX6Xw+uTxIfU48Aj6t7C6gOp8Zy9SFMfAePloI5vsu12NznMLAmelWKVOqLeaF48AJ9W1dLruZOzdzi9gW4q9+FE2y39k8kMNawhGwplLj8kK24jVVxFbHwu2sJKDke5IBDY8cY+L4KHrLW4Te0VVs6HEtEUMKPyllbOgEhF5pzPNvE/MW2nR09Xi8rgqJvWa3eXPYhn8z/NPrJOCFXZTyaD4GJ+XfRfoiTW+/OaXfQ5OoTSEeTs6Jtft6w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 149.199.60.83) smtp.rcpttodomain=linaro.org smtp.mailfrom=xilinx.com;
+ dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
+ not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=++B+ydka1g41fIu7Ox/Ms6mOQ5TA5T48D86VqWS/dOA=;
+ b=qAfErY00l/+l12nBM1ZreTv2w4mn0lEE4uhcpCrBCK6BcsR/WbE9VTIeaerKJMEBpwhP9EfcHsknBjZ9gGkBg7esvn//3M0qzxplkt9t+XaB9L9pnd2e/g/H/O6w73Ww+z6HTXBiT7BEorhe4WMWUtli6sORlGp2LJYXhSjH93o=
+Received: from MWHPR0201CA0102.namprd02.prod.outlook.com
+ (2603:10b6:301:75::43) by BL0PR02MB4803.namprd02.prod.outlook.com
+ (2603:10b6:208:5d::24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2347.17; Wed, 16 Oct
+ 2019 10:56:48 +0000
+Received: from SN1NAM02FT064.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e44::209) by MWHPR0201CA0102.outlook.office365.com
+ (2603:10b6:301:75::43) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2347.16 via Frontend
+ Transport; Wed, 16 Oct 2019 10:56:47 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.83)
+ smtp.mailfrom=xilinx.com; linaro.org; dkim=none (message not signed)
+ header.d=none;linaro.org; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ SN1NAM02FT064.mail.protection.outlook.com (10.152.72.143) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2347.16
+ via Frontend Transport; Wed, 16 Oct 2019 10:56:47 +0000
+Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1iKgz0-0006CF-NR; Wed, 16 Oct 2019 03:56:46 -0700
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1iKgyv-0002aI-K4; Wed, 16 Oct 2019 03:56:41 -0700
+Received: from xsj-pvapsmtp01 (smtp.xilinx.com [149.199.38.66])
+ by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id x9GAuUEf027448; 
+ Wed, 16 Oct 2019 03:56:30 -0700
+Received: from [172.30.17.123] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <michals@xilinx.com>)
+ id 1iKgyk-0002Ya-Ho; Wed, 16 Oct 2019 03:56:30 -0700
+Subject: Re: [PATCH v2 0/2] drivers: firmware: xilinx: Add support for versal
+ soc
+To: Jolly Shah <jolly.shah@xilinx.com>, ard.biesheuvel@linaro.org,
+ mingo@kernel.org, gregkh@linuxfoundation.org, matt@codeblueprint.co.uk,
+ sudeep.holla@arm.com, hkallweit1@gmail.com, keescook@chromium.org,
+ dmitry.torokhov@gmail.com, michal.simek@xilinx.com, robh+dt@kernel.org,
+ mark.rutland@arm.com
+References: <1570474343-21524-1-git-send-email-jolly.shah@xilinx.com>
+From: Michal Simek <michal.simek@xilinx.com>
+Message-ID: <7d1939c2-ad64-87d0-3ad7-b7de2400065d@xilinx.com>
+Date: Wed, 16 Oct 2019 12:56:26 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <1d546b4b-a2ad-49da-b532-951232093a9f@huawei.com>
-Content-Language: en-GB
+In-Reply-To: <1570474343-21524-1-git-send-email-jolly.shah@xilinx.com>
+Content-Language: en-US
+X-RCIS-Action: ALLOW
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:NLI; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(4636009)(346002)(396003)(376002)(39860400002)(136003)(189003)(199004)(65956001)(70206006)(70586007)(4326008)(230700001)(6246003)(65806001)(2486003)(23676004)(7416002)(47776003)(36386004)(76176011)(50466002)(478600001)(426003)(305945005)(126002)(476003)(106002)(11346002)(2616005)(446003)(9786002)(316002)(31686004)(31696002)(486006)(44832011)(336012)(8676002)(58126008)(26005)(8936002)(186003)(5660300002)(36756003)(81156014)(4744005)(2906002)(229853002)(6666004)(356004)(81166006)(921003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BL0PR02MB4803; H:xsj-pvapsmtpgw01; FPR:;
+ SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; MX:1; A:1; 
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: cf4ebe50-c1fc-45a2-db1a-08d752278a3b
+X-MS-TrafficTypeDiagnostic: BL0PR02MB4803:
+X-Microsoft-Antispam-PRVS: <BL0PR02MB480344F7A5A67F09E7A046DCC6920@BL0PR02MB4803.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:6430;
+X-Forefront-PRVS: 0192E812EC
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: GaJw5ZJd9eUkskWw45tmr/jNw8/1GFTtg95vzO/FfWUyf4cm7NfBF7YxACUHBqsxx0cohgaqlPuGyug/cRK/T13aZELEVEHMGH8RElSh/T06dRAzr62Rz7UwZ+PKO9BBdHI/3RSeKQbhMfWXZYPLk/z5GR28XkrMtunMp7g/oUsN1IH76f+tG0Fa1L0Wti+AIhPwZX1Qk3m21djXafZGZpinl3An5AOJMkjqTkmxp1q2yD51ONxgYvwk3xHucK9QkbLbXGLMbPAKU+diPvOsZjsxA7WkO5I1PYEDx/Ob6TgaA74AnLuZtlV5TbqAIEHtmduwU//MJU4Dd26b5OwWawADDXsky6LeOQx8OjhryFCKOJ64kRx0QN/a2dCLinp1/GmjYkYj03blOfhz5Dh6kv5o+v7wXtzz/vBJlgszVg4=
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Oct 2019 10:56:47.1464 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: cf4ebe50-c1fc-45a2-db1a-08d752278a3b
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR02MB4803
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_035132_635063_A779EEC5 
-X-CRM114-Status: GOOD (  30.43  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191016_035651_536997_4488F203 
+X-CRM114-Status: GOOD (  12.31  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.74.83 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,134 +145,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nleeder@codeaurora.org, rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
- shameerali.kolothum.thodi@huawei.com, linuxarm@huawei.com,
- iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org,
- lenb@kernel.org
+Cc: devicetree@vger.kernel.org, rajanv@xilinx.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-10-16 9:47 am, John Garry wrote:
-> On 15/10/2019 19:00, Robin Murphy wrote:
->> Hi John,
->>
->> On 30/09/2019 15:33, John Garry wrote:
->>> This patchset adds IMP DEF event support for the SMMUv3 PMCG.
->>>
->>> It is marked as an RFC as the method to identify the PMCG implementation
->>> may be a quite disliked. And, in general, the series is somewhat
->>> incomplete.
->>>
->>> So the background is that the PMCG supports IMP DEF events, yet we
->>> have no
->>> method to identify the PMCG to know the IMP DEF events.
->>>
->>> A method for identifying the PMCG implementation could be using
->>> PMDEVARCH, but we cannot rely on this being set properly, as whether 
->>> this
->>> is implemented is not defined in SMMUv3 spec.
->>>
->>> Another method would be perf event aliasing, but this method of event
->>> matching is based on CPU id, which would not guarantee same
->>> uniqueness as PMCG implementation.
->>>
->>> Yet another method could be to continue using ACPI OEM ID in the IORT
->>> code, but this does not scale. And it is not suitable if we ever add DT
->>> support to the PMCG driver.
->>>
->>> The method used in this series is based on matching on the parent SMMUv3
->>> IIDR. We store this IIDR contents in the arm smmu structure as the first
->>> element, which means that we don't have to expose SMMU APIs - this is
->>> the part which may be disliked.
->>>
->>> The final two patches switch the pre-existing PMCG model identification
->>> from ACPI OEM ID to the same parent SMMUv3 IIDR matching.
->>>
->>> For now, we only consider SMMUv3' nodes being the associated node for
->>> PMCG.
->>
+On 07. 10. 19 20:52, Jolly Shah wrote:
+> Versal is xilinx's next generation soc. This patch adds
+> driver support required to be compatible with versal device
 > 
-> Hi Robin,
+> v2:
+>   No changes. Resending to include DT maintaners
 > 
->> Two significant concerns right off the bat:
->>
->> - It seems more common than not for silicon designers to fail to
->> implement IIDR correctly, so it's only a matter of time before
->> inevitably needing to bring back some firmware-level identifier
->> abstraction (if not already - does Hi161x have PMCGs?)
+> Jolly Shah (2):
+>   dt-bindings: firmware: Add bindings for Versal firmware
+>   drivers: firmware: xilinx: Add support for versal soc
 > 
-> Maybe there's a way that we can switch to this method, and leave the 
-> door open for an easy way to support firmware-level identifier again, if 
-> ever needed. I'm not too pushed - this was secondary to just allowing 
-> the PMCG driver know the associated SMMU model.
-
-But that's the part I'm not buying - there's no clear advantage to 
-pushing that complexity down into the PMCG driver, vs. leaving the IORT 
-code responsible for translating an SMMU model into a PMCG model, yet 
-the aforementioned disadvantages jump out right away.
-
-> And, no, hi161x does not have any PMCGs.
-
-Hooray, I guess :)
-
->>
->> - This seems like a step in entirely the wrong direction for supporting
->> .
+>  .../bindings/firmware/xilinx/xlnx,zynqmp-firmware.txt    | 16 +++++++++++++++-
+>  drivers/firmware/xilinx/zynqmp.c                         |  8 ++++++--
+>  2 files changed, 21 insertions(+), 3 deletions(-)
 > 
-> So to support PMCGs that reference a Named Component or Root Complex, I 
-> thought that the IORT parsing code would have to do some secondary 
-> lookup to the associated SMMU, through the Named Component or Root 
-> Complex node.
-> 
-> What was your idea here?
 
-The associated SMMU has no relevance in that context - the reason for 
-the Node Reference to point to a non-SMMU node is for devices that 
-implement their own embedded TLB (e.g. AMBA DTI masters) and expose a 
-standard PMCG interface to monitor it. It isn't reasonable to expect any 
-old PCIe controller or on-chip-accelerator driver to expose a fake SMMU 
-IIDR just to keep some other driver happy.
+Applied both.
+I just removed drivers from subject of 2/2.
 
-> Note: I do acknowledge that an overall issue is that we assume all PMCG 
-> IMP DEF events are same for a given SMMU model.
-
-That assumption does technically fail already - I know MMU-600 has 
-different IMP-DEF events for its TCU and TBUs, however as long as we can 
-get as far as "this is some part of an MMU-600" the driver should be 
-able to figure out the rest (annoyingly it looks like both PMCG types 
-expose the same PMCG_ID_REGS information, but they should be 
-distinguishable by PMCG_CEIDn).
-
->> Interpreting the Node Reference is definitely a welcome improvement over
->> matching table headers, but absent a truly compelling argument to the
->> contrary, I'd rather retain the "PMCG model" abstraction in between that
->> and the driver itself (especially since those can trivially be hung off
->> compatibles once it comes to DT support).
-> 
-> For DT, I would assume that we just use compatible strings would allow 
-> us to identify the PMCG model.
-
-Right, that was largely my point - DT probing can start with a PMCG 
-model, so it's a lot more logical for ACPI probing to do the same, with 
-the actual PMCG model determination hidden away in the ACPI code. That's 
-the basis of the current design.
-
-I have been nagging the architects that PMCGs not having their own IIDR 
-is an unwelcome hole in the spec, so hopefully this might get a bit 
-easier some day.
-
-> On a related matter, is there still a need to deal with scenarios of the 
-> PMCG being located within the SMMU register map? As you may remember, we 
-> did have this issue but relocated the PMCG to outside the SMMU register 
-> map in a later chip rev.
-
-MMU-600 has its TCU PMCG page 0 in the middle of its SMMU page 0 space, 
-but given that it's an Arm IP, I expect that when the heat gets turned 
-up for making it work, it's most likely to be under me ;)
-
-Robin.
+Thanks,
+Michal
 
 _______________________________________________
 linux-arm-kernel mailing list
