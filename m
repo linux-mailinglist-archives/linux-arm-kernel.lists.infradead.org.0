@@ -2,71 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB227D9B38
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 22:14:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9E05D9B47
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 22:15:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ua/TA/GCucUaH1J0NIzwWwH0qdM7BnmMQslY3i8r25w=; b=Fv5a5JbIBbs4Ay
-	8BvlXlgPxK0NoVdDgZMgqB5NYfrT/5yXB+BlyTEZVXjBdz5UvKICDxaeFlC6EyMSUOaygYg33EICQ
-	RtDAkUrl8gTYYcnCq8wvb530Qc0cEzNp38PRJmez6pq7nlo3n45B+4fwVAV2axlBSV5KNY7Z+UbNX
-	AsG+1OrXO/uXgg5UCyorSp6V9Fii8TTXGghrTjIYnIrbiTWDvjosAgzbCgO+K3wulnR2946IcueBh
-	vZS+oacYiWZ8OqLJzGnh8wDnmhcfd5wcZg9kF12eUp130sXAhhtos8sqt1WSsG9mG4V5DPojyRGC1
-	I471ocp8MOx+VV2YrnVw==;
+	List-Owner; bh=weIowodrziZ7WqpFDSKGUS0Cnfk4/ZAkLF8z8sAeco4=; b=sTHyamrKNZfCEj
+	Jhn9NeKkLwNRlGc/aZz32b48pGelt/nzunmSWM88oXMHZaHPZC58cwC6jkmftwZcdpd6DYheCh7uV
+	62p9SK+nWKl2nDTmqfkPJ2Mg6IDQw9a0HnxmGpexIS8tW/QYyRbOVVlsEHun0uGFZGp+j76dw6aNd
+	v8ECW4Ob/jaP2oFCK728kqbZ/Thu5epCFuunWb9ahHPoTpUaEsWxHbl9P0wPtnl9gABEKQ851/KhR
+	T4NXklA6NYWlC0RsQoZorP8W6ATUmb3xNpHk9En04NoEIOTRXHQ+MftkaXDKfKYB4zHB7NJH9pkgR
+	sGrDa9XtNjSNORne2jXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKpgN-0008F0-BC; Wed, 16 Oct 2019 20:14:07 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1iKphJ-0000ey-Up; Wed, 16 Oct 2019 20:15:05 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKpZT-0001wQ-VX; Wed, 16 Oct 2019 20:07:02 +0000
-Received: by mail-ot1-f67.google.com with SMTP id e11so21280283otl.5;
- Wed, 16 Oct 2019 13:06:59 -0700 (PDT)
+ id 1iKpZU-0001yT-Uc; Wed, 16 Oct 2019 20:07:03 +0000
+Received: by mail-oi1-f194.google.com with SMTP id t84so99545oih.10;
+ Wed, 16 Oct 2019 13:07:00 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=JIj9ILT7VVE9OfDmkYQ8ktnxwCT3rx9dL7R3IKVsvuI=;
- b=awOh5GNXv5Yoda06uyayBHBgKg7H2Q/Yfdy5eLlxahPHVEMtGdv4pZkCZ8HvNE4ov4
- RqMrCFWd7rDE8POXXMCEoi7VvTXA+vcGDLuraLmKj+Of4/LSlaKPjU8VML0DPAwnXeBD
- 8+ZQ/csM36xnWeIsdBUPKlFH4d3SadOZU1T5NW/5L80jcY7zkOaO65PX/UBkC+H4yRG4
- I8fHi9e4+zHg0Hsi2qYHU3pCksj+cabaA5A8GpzC+//fTGCw0+2KTd4J4OMXs3LhRBpB
- wRKfu2oLpD9xGudnCC3NEynKxcS1UVBgW6mjDkeWKqFQ+kdAc/vmNH6LFp4yxM3De5n2
- /gpQ==
-X-Gm-Message-State: APjAAAWwZn9muq+K6MfndfUe3KR8yA+wd02wVm/0RY9SPvpAIOFkNLLo
- DPuWqDpZwIOYgC/qkqdt/A==
-X-Google-Smtp-Source: APXvYqxoimT0iMDdNMBOkPALG3bNj2ukak3LOt++z8YyoJ8J+qkFKwFheJMFoSp4/qlthDVO+w/7CQ==
-X-Received: by 2002:a9d:61cd:: with SMTP id h13mr49260otk.84.1571256418364;
- Wed, 16 Oct 2019 13:06:58 -0700 (PDT)
+ bh=YA57ID7HssfptBArCep2MY8T32tzTOpp6n73JZLWHrY=;
+ b=dPzORixcbNK9Op4NTTnu88CWAidekrpFDEITBTaD6NWb3WwK98d94aL+2nuQU0AjZn
+ YxYan36A+eprVqXPcWQ8gxDAcOWHenEA2L7PqsQnTNnVnAMgaC86grFQ2HGy+14pOrzj
+ FB+d7Z0imEpD0o32+CwCnV3WDwR4FLyVup7xliumoZB+bvAXq3k3rWqsG6Tucbwc2HLv
+ zF3/G7hkVbT5lrsJ0liajCr6AjFD/0BekSFKxfA7esnCayaMsq60KUg9V4VYEFY7j6Uj
+ ALUq+E0hDPVF0a/7/qXUG44KITM5FVFSA9krGBB1gZEQSocKZRAxcMh+7dqDXEKVqJgq
+ oLUw==
+X-Gm-Message-State: APjAAAWEQXPegIWIdghcZwAYhOTfZNiHPzvCN6/vAFSPnHLYqfGXT1BQ
+ 4sZ/jZowcbxaBoXBRLC8/A==
+X-Google-Smtp-Source: APXvYqyakPWBO0mkOpMpK5U/GSZnT1haaiWULUW+yiLTI26g2Lgw4JGeutIuaV6f+nslk+Tc2+/0YA==
+X-Received: by 2002:aca:5b02:: with SMTP id p2mr111363oib.94.1571256420107;
+ Wed, 16 Oct 2019 13:07:00 -0700 (PDT)
 Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id a9sm7412463oie.7.2019.10.16.13.06.56
+ by smtp.googlemail.com with ESMTPSA id a9sm7412463oie.7.2019.10.16.13.06.58
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 16 Oct 2019 13:06:57 -0700 (PDT)
+ Wed, 16 Oct 2019 13:06:59 -0700 (PDT)
 From: Rob Herring <robh@kernel.org>
 To: Andrew Murray <andrew.murray@arm.com>, Bjorn Helgaas <bhelgaas@google.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: [PATCH v2 04/25] PCI: altera: Use pci_parse_request_of_pci_ranges()
-Date: Wed, 16 Oct 2019 15:06:26 -0500
-Message-Id: <20191016200647.32050-5-robh@kernel.org>
+Subject: [PATCH v2 05/25] PCI: dwc: Use pci_parse_request_of_pci_ranges()
+Date: Wed, 16 Oct 2019 15:06:27 -0500
+Message-Id: <20191016200647.32050-6-robh@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191016200647.32050-1-robh@kernel.org>
 References: <20191016200647.32050-1-robh@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_130700_061595_1F6DD942 
-X-CRM114-Status: GOOD (  14.57  )
+X-CRM114-CacheID: sfid-20191016_130701_018406_919843E2 
+X-CRM114-Status: GOOD (  12.28  )
 X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.194 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.67 listed in wl.mailspike.net]
+ no trust [209.85.167.194 listed in list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -75,7 +75,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -110,110 +109,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert altera host bridge to use the common
+Convert the Designware host bridge to use the common
 pci_parse_request_of_pci_ranges().
 
-There's no need to assign the resources to a temporary list first. Just
-use bridge->windows directly and remove all the temporary list handling.
-
-If an I/O range is present, then it will now be mapped. It's expected
-that h/w which doesn't support I/O range will not define one.
-
-Cc: Ley Foon Tan <lftan@altera.com>
+Cc: Jingoo Han <jingoohan1@gmail.com>
+Cc: Gustavo Pimentel <gustavo.pimentel@synopsys.com>
 Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Cc: Andrew Murray <andrew.murray@arm.com>
 Cc: Bjorn Helgaas <bhelgaas@google.com>
-Cc: rfi@lists.rocketboards.org
 Signed-off-by: Rob Herring <robh@kernel.org>
 ---
 v2:
-- Remove temporary resource list
----
- drivers/pci/controller/pcie-altera.c | 41 ++--------------------------
- 1 file changed, 2 insertions(+), 39 deletions(-)
+- New patch
 
-diff --git a/drivers/pci/controller/pcie-altera.c b/drivers/pci/controller/pcie-altera.c
-index d2497ca43828..ba025efeae28 100644
---- a/drivers/pci/controller/pcie-altera.c
-+++ b/drivers/pci/controller/pcie-altera.c
-@@ -92,7 +92,6 @@ struct altera_pcie {
- 	u8			root_bus_nr;
- 	struct irq_domain	*irq_domain;
- 	struct resource		bus_range;
--	struct list_head	resources;
- 	const struct altera_pcie_data	*pcie_data;
- };
- 
-@@ -670,39 +669,6 @@ static void altera_pcie_isr(struct irq_desc *desc)
- 	chained_irq_exit(chip, desc);
- }
- 
--static int altera_pcie_parse_request_of_pci_ranges(struct altera_pcie *pcie)
--{
--	int err, res_valid = 0;
--	struct device *dev = &pcie->pdev->dev;
--	struct resource_entry *win;
+ .../pci/controller/dwc/pcie-designware-host.c | 28 ++++++-------------
+ 1 file changed, 8 insertions(+), 20 deletions(-)
+
+diff --git a/drivers/pci/controller/dwc/pcie-designware-host.c b/drivers/pci/controller/dwc/pcie-designware-host.c
+index 0f36a926059a..aeec8b65eb97 100644
+--- a/drivers/pci/controller/dwc/pcie-designware-host.c
++++ b/drivers/pci/controller/dwc/pcie-designware-host.c
+@@ -319,7 +319,7 @@ int dw_pcie_host_init(struct pcie_port *pp)
+ 	struct device *dev = pci->dev;
+ 	struct device_node *np = dev->of_node;
+ 	struct platform_device *pdev = to_platform_device(dev);
+-	struct resource_entry *win, *tmp;
++	struct resource_entry *win;
+ 	struct pci_bus *child;
+ 	struct pci_host_bridge *bridge;
+ 	struct resource *cfg_res;
+@@ -342,31 +342,19 @@ int dw_pcie_host_init(struct pcie_port *pp)
+ 	if (!bridge)
+ 		return -ENOMEM;
+
+-	ret = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff,
+-					&bridge->windows, &pp->io_base);
+-	if (ret)
+-		return ret;
 -
--	err = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff,
--						    &pcie->resources, NULL);
--	if (err)
--		return err;
--
--	err = devm_request_pci_bus_resources(dev, &pcie->resources);
--	if (err)
--		goto out_release_res;
--
--	resource_list_for_each_entry(win, &pcie->resources) {
--		struct resource *res = win->res;
--
--		if (resource_type(res) == IORESOURCE_MEM)
--			res_valid |= !(res->flags & IORESOURCE_PREFETCH);
--	}
--
--	if (res_valid)
--		return 0;
--
--	dev_err(dev, "non-prefetchable memory resource required\n");
--	err = -EINVAL;
--
--out_release_res:
--	pci_free_resource_list(&pcie->resources);
--	return err;
--}
--
- static int altera_pcie_init_irq_domain(struct altera_pcie *pcie)
- {
- 	struct device *dev = &pcie->pdev->dev;
-@@ -833,9 +799,8 @@ static int altera_pcie_probe(struct platform_device *pdev)
+-	ret = devm_request_pci_bus_resources(dev, &bridge->windows);
++	ret = pci_parse_request_of_pci_ranges(dev, &bridge->windows, NULL);
+ 	if (ret)
  		return ret;
- 	}
- 
--	INIT_LIST_HEAD(&pcie->resources);
--
--	ret = altera_pcie_parse_request_of_pci_ranges(pcie);
-+	ret = pci_parse_request_of_pci_ranges(dev, &bridge->windows,
-+					      NULL);
- 	if (ret) {
- 		dev_err(dev, "Failed add resources\n");
- 		return ret;
-@@ -853,7 +818,6 @@ static int altera_pcie_probe(struct platform_device *pdev)
- 	cra_writel(pcie, P2A_INT_ENA_ALL, P2A_INT_ENABLE);
- 	altera_pcie_host_init(pcie);
- 
--	list_splice_init(&pcie->resources, &bridge->windows);
- 	bridge->dev.parent = dev;
- 	bridge->sysdata = pcie;
- 	bridge->busnr = pcie->root_bus_nr;
-@@ -884,7 +848,6 @@ static int altera_pcie_remove(struct platform_device *pdev)
- 
- 	pci_stop_root_bus(bridge->bus);
- 	pci_remove_root_bus(bridge->bus);
--	pci_free_resource_list(&pcie->resources);
- 	altera_pcie_irq_teardown(pcie);
- 
- 	return 0;
--- 
+
+ 	/* Get the I/O and memory ranges from DT */
+-	resource_list_for_each_entry_safe(win, tmp, &bridge->windows) {
++	resource_list_for_each_entry(win, &bridge->windows) {
+ 		switch (resource_type(win->res)) {
+ 		case IORESOURCE_IO:
+-			ret = devm_pci_remap_iospace(dev, win->res,
+-						     pp->io_base);
+-			if (ret) {
+-				dev_warn(dev, "Error %d: failed to map resource %pR\n",
+-					 ret, win->res);
+-				resource_list_destroy_entry(win);
+-			} else {
+-				pp->io = win->res;
+-				pp->io->name = "I/O";
+-				pp->io_size = resource_size(pp->io);
+-				pp->io_bus_addr = pp->io->start - win->offset;
+-			}
++			pp->io = win->res;
++			pp->io->name = "I/O";
++			pp->io_size = resource_size(pp->io);
++			pp->io_bus_addr = pp->io->start - win->offset;
++			pp->io_base = pci_pio_to_address(pp->io->start);
+ 			break;
+ 		case IORESOURCE_MEM:
+ 			pp->mem = win->res;
+--
 2.20.1
-
 
 _______________________________________________
 linux-arm-kernel mailing list
