@@ -2,54 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 203E9D975C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 18:29:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A0C4D9768
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 18:31:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dVg2NuIuErvjysNxx++/b/dWeSMYw2ow3HlWNfNNaOk=; b=WGVCsol9gG7TZS
-	o3ncznRHhKP13qaoVbhbnElpQUs+G2pe4wMAAV8J6Z1746Kaw1XnuLJK1DHWv9jGqb1TI47cEo2e+
-	pGIk/ouQ0f9+bzlQXLuifqY22z1pIx+w5uWKKYDt+8eQFHVgJ0ocUmUEZHDb6xW0b7oF4DUhGNm3X
-	6vNVr7qZzSTOtPG/5T2ocUxmHPG0PVau7yv1Peg/zl0nelf74zLPydRhRMS0fBwa+9vqWYI1EiFiy
-	rpW42wBMd2Qjwq/2JYv25k/49oDGcTSLlTn3GBAROqAaf1IUP6c2ZbfjO8lJ5qHuZyIj3YLfHwBG0
-	3Bkf7rOxYGss7OqHgpiw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=m2fv2w1s3FamurM8mXu39X8q4nK2W799ghaHozbBEDU=; b=BDKTX5ny6t21tORHuYbwG+dS+
+	6Wan0dKnxL/ncqUbeW0wKkYo6vBvRp8bxF26sB0YKvVRtWp+QthRosunHAAUhfPHBUyKV/VXUuPPY
+	rrTApQ+3jrnvp845WhqKIn0JKLXHgLJsVJ6NRqzRd9fC0kL2K4JGqMcKkUuKRQhBetUSTySB1G+zY
+	SdDOw1kP92b+5lzgllIaTCvmO6taSEIVLO8ZLQe4vVljqMp5TxrVyiQVoc53K7fiGnlMwTnKuizLl
+	r1WHblgViO73DnAhw5bvN56lS4BzBXpsobh9EqjWnw94DTBouLSFIx5syjSvUJ/LWRsVeKgfs7McC
+	0TCBEzbiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKmBC-0001X4-Jf; Wed, 16 Oct 2019 16:29:42 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKmB1-0001Vh-T8
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 16:29:34 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AB43728;
- Wed, 16 Oct 2019 09:29:29 -0700 (PDT)
-Received: from [10.1.196.105] (unknown [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C79623F68E;
- Wed, 16 Oct 2019 09:29:28 -0700 (PDT)
-Subject: Re: [PATCH] arm64: mm: fix inverted PAR_EL1.F check
-To: Mark Rutland <mark.rutland@arm.com>, linux-arm-kernel@lists.infradead.org
-References: <20191016110304.44932-1-mark.rutland@arm.com>
-From: James Morse <james.morse@arm.com>
-Message-ID: <99261f9e-98ab-ca79-9514-b900306f49df@arm.com>
-Date: Wed, 16 Oct 2019 17:29:27 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1iKmCw-00034f-Db; Wed, 16 Oct 2019 16:31:30 +0000
+Received: from vulcan.natalenko.name ([104.207.131.136])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iKmCg-00033D-Oy; Wed, 16 Oct 2019 16:31:16 +0000
+Received: from mail.natalenko.name (vulcan.natalenko.name
+ [IPv6:fe80::5400:ff:fe0c:dfa0])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by vulcan.natalenko.name (Postfix) with ESMTPSA id 6EDFE604743;
+ Wed, 16 Oct 2019 18:31:09 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=natalenko.name;
+ s=dkim-20170712; t=1571243469;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=f5ClBeSGQZuxuvvXCwUIlZlu0fB+e4NrR7Ixq109qtA=;
+ b=iE77W2j8VjWmzkRi/PaQJs9KBZb+JRoq905SOA3jxnUN0ya9MuZ6FLFA4MZ2EOwPwOBqY1
+ vYRKZ3u/eXr+hC+h/9/VqBG42FtUILGopQs/N8dtrpLXv6xezUQNH3Al6HsUZ5NUfJm9Xs
+ d3qEHU6kHT30Nqw9HYLnPAGR4myTvh0=
 MIME-Version: 1.0
-In-Reply-To: <20191016110304.44932-1-mark.rutland@arm.com>
-Content-Language: en-GB
+Date: Wed, 16 Oct 2019 18:31:09 +0200
+From: Oleksandr Natalenko <oleksandr@natalenko.name>
+To: Lorenzo Bianconi <lorenzo@kernel.org>
+Subject: Re: mt76x2e hardware restart
+In-Reply-To: <f7695bc79d40bbc96744a639b1243027@natalenko.name>
+References: <deaafa7a3e9ea2111ebb5106430849c6@natalenko.name>
+ <c6d621759c190f7810d898765115f3b4@natalenko.name>
+ <9d581001e2e6cece418329842b2b0959@natalenko.name>
+ <20191012165028.GA8739@lore-desk-wlan.lan>
+ <f7695bc79d40bbc96744a639b1243027@natalenko.name>
+Message-ID: <96f43a2103a9f2be152c53f867f5805c@natalenko.name>
+X-Sender: oleksandr@natalenko.name
+User-Agent: Roundcube Webmail/1.3.10
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=natalenko.name; 
+ s=arc-20170712; t=1571243469;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=f5ClBeSGQZuxuvvXCwUIlZlu0fB+e4NrR7Ixq109qtA=;
+ b=EJlYGk6WtfIdQNWtMr2cQy9J8J7w28KTQLCRDdRHUa6oxniLZklcRFvYgF2g6mTRl3kBNh
+ BKWTFueWGni/EjMP8AJQaXYrdeiOYsbjJk88ugWY98jLPwAQZDwktXhL5Stx8WhyrOWI5J
+ jtiAdepknOAnKo2f2TYUEwqzAsYBrP0=
+ARC-Seal: i=1; s=arc-20170712; d=natalenko.name; t=1571243469; a=rsa-sha256;
+ cv=none;
+ b=jJrQEg6/HMw06QL5mt4o5gVFnTj55BAufh0fnZYwOph+/Zla/u4ds82EcRRkFszIQdYDPV
+ Ghplm+tOxd3O/p9j55laqVbtbQy30GsDKV5Ol/rOG4saVke9YVU9wm/lHzsD24mqmZ5amP
+ DfKMcjCDf9SVTnJXreOUpcdtkGpS2ko=
+ARC-Authentication-Results: i=1; vulcan.natalenko.name;
+ auth=pass smtp.auth=oleksandr@natalenko.name
+ smtp.mailfrom=oleksandr@natalenko.name
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_092931_981303_7AB77A37 
-X-CRM114-Status: GOOD (  14.48  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191016_093115_126225_0660FD55 
+X-CRM114-Status: UNSURE (   7.41  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [104.207.131.136 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,77 +101,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Ryder Lee <ryder.lee@mediatek.com>, Stanislaw Gruszka <sgruszka@redhat.com>,
+ netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Roy Luo <royluo@google.com>, Lorenzo Bianconi <lorenzo.bianconi83@gmail.com>,
+ "David S. Miller" <davem@davemloft.net>, Kalle Valo <kvalo@codeaurora.org>,
+ Felix Fietkau <nbd@nbd.name>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mark,
+Hello.
 
-On 16/10/2019 12:03, Mark Rutland wrote:
-> When detecting a spurious EL1 translation fault, we have the CPU retry
-> the translation using an AT S1E1R instruction, and inspect PAR_EL1 to
-> determine if the fault was spurious.
+On 15.10.2019 18:52, Oleksandr Natalenko wrote:
+> Thanks for the answer and the IRC discussion. As agreed I've applied
+> [1] and [2], and have just swapped the card to try it again. So far,
+> it works fine in 5 GHz band in 802.11ac mode as an AP.
 > 
-> When PAR_EL1.F == 0, the AT instruction successfully translated the
-> address without a fault, which implies the original fault was spurious.
-> However, in this case we return false and treat the original fault as if
-> it was not spurious.
+> I'll give it more load with my phone over evening, and we can discuss
+> what to do next (if needed) tomorrow again. Or feel free to drop me an
+> email today.
 > 
-> Invert the return value so that we treat such a case as spurious.
+> Thanks for your efforts.
+> 
+> [1]
+> https://github.com/LorenzoBianconi/wireless-drivers-next/commit/cf3436c42a297967235a9c9778620c585100529e.patch
+> [2]
+> https://github.com/LorenzoBianconi/wireless-drivers-next/commit/aad256eb62620f9646d39c1aa69234f50c89eed8.patch
 
-With d0b7a302d58a reverted I can use A57's #1387217[1] to hit this spurious case.
-(it needs planetary alignment too).
+As agreed, here are iperf3 results, AP to STA distance is 2 meters.
 
-With this this patch the 'spurious' message is printed, and the kernel keeps running [0].
+Client sends, TCP:
 
-If its useful:
-Tested-by: James Morse <james.morse@arm.com>
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-10.00  sec  70.4 MBytes  59.0 Mbits/sec  3800             
+sender
+[  5]   0.00-10.03  sec  70.0 MBytes  58.6 Mbits/sec                  
+receiver
 
+Client receives, TCP:
 
-Thanks,
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-10.06  sec   196 MBytes   163 Mbits/sec  3081             
+sender
+[  5]   0.00-10.01  sec   191 MBytes   160 Mbits/sec                  
+receiver
 
-James
+Client sends, UDP, 128 streams:
 
+[ ID] Interval           Transfer     Bitrate         Jitter    
+Lost/Total Datagrams
+[SUM]   0.00-10.00  sec   160 MBytes   134 Mbits/sec  0.000 ms  0/115894 
+(0%)  sender
+[SUM]   0.00-10.01  sec   160 MBytes   134 Mbits/sec  0.347 ms  0/115892 
+(0%)  receiver
 
-[0] survivable spurious translation fault:
-[ 2186.464077] ------------[ cut here ]------------
-[ 2186.468687] Ignoring spurious kernel translation fault at virtual address fffffdfffe5fd020
-[ 2186.476950] WARNING: CPU: 7 PID: 0 at ../arch/arm64/mm/fault.c:315
-__do_kernel_fault+0xf0/0x120
-[ 2186.485634] Modules linked in: crct10dif_ce ip_tables x_tables ipv6 nf_defrag_ipv6
-[ 2186.493197] CPU: 7 PID: 0 Comm: swapper/7 Tainted: G        W
-5.4.0-rc3-00002-g08245819bd8b #125
-[ 2186.502663] Hardware name: AMD Seattle (Rev.B0) Development Board (Overdrive) (DT)
-[ 2186.510219] pstate: 40000085 (nZcv daIf -PAN -UAO)
-[ 2186.514998] pc : __do_kernel_fault+0xf0/0x120
-[ 2186.519342] lr : __do_kernel_fault+0xf0/0x120
+Client receives, UDP, 128 streams:
 
-[ 2186.606470] Call trace:
-[ 2186.608906]  __do_kernel_fault+0xf0/0x120
-[ 2186.612904]  do_translation_fault+0x40/0x70
-[ 2186.617075]  do_mem_abort+0x3c/0x98
-[ 2186.620551]  el1_da+0x20/0x94
-[ 2186.623507]  __memcpy_fromio+0x44/0x98
-[ 2186.627245]  __ghes_peek_estatus.isra.13+0x54/0xc8
-[ 2186.632023]  ghes_proc+0x40/0x158
-[ 2186.635325]  ghes_poll_func+0x38/0x68
-[ 2186.638977]  call_timer_fn.isra.31+0x20/0x78
-[ 2186.643234]  run_timer_softirq+0x33c/0x398
-[ 2186.647317]  __do_softirq+0x114/0x230
-[ 2186.650968]  irq_exit+0xcc/0xd8
-[ 2186.654097]  __handle_domain_irq+0x60/0xb8
-[ 2186.658180]  gic_handle_irq+0x58/0xb0
-[ 2186.661829]  el1_irq+0xb8/0x180
-[ 2186.664958]  arch_cpu_idle+0x10/0x18
-[ 2186.668521]  do_idle+0x1c4/0x290
-[ 2186.671736]  cpu_startup_entry+0x20/0x40
-[ 2186.675647]  secondary_start_kernel+0x1bc/0x218
-[ 2186.680165] ---[ end trace b0c5d14deb160e8f ]---
+[ ID] Interval           Transfer     Bitrate         Jitter    
+Lost/Total Datagrams
+[SUM]   0.00-10.01  sec   119 MBytes  99.4 Mbits/sec  0.000 ms  0/85888 
+(0%)  sender
+[SUM]   0.00-10.00  sec   119 MBytes  99.5 Mbits/sec  0.877 ms  0/85888 
+(0%)  receiver
 
-[1]
-https://static.docs.arm.com/epm049219/220/Arm_Cortex_A57_MPCore_Software_Developers_Errata_Notice_SDEN_v22.pdf
+Given the HW is not the most powerful, the key point here is that 
+nothing crashed after doing these tests.
+
+-- 
+   Oleksandr Natalenko (post-factum)
 
 _______________________________________________
 linux-arm-kernel mailing list
