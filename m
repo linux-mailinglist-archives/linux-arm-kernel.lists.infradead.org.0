@@ -2,76 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BEECCDA20F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 01:22:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5CB5DA221
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 01:26:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Mime-Version:Message-ID:To:From:In-Reply-To:Subject:
-	Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:List-Owner;
-	 bh=NQ37PPM+jjpSUjoLU2OkX/APUituwp0bg8aj58H2Udg=; b=HnazeArvzZkXGyBA1e9kbpEJu
-	tJg05gyoivqYR6J1PoWKRUW90M3JQ502K+M1C4cKFPAC4rObJCL+zrVaQpAEjyGT8nlw3dbeyM75x
-	IruB6O5v6VV0hyEhERMbLkP58hF+luvoJmUDQd4HbQNIMV38TABLyJ2ERugAD5Yf1t+1eeoGMaChQ
-	1YrFT1vo/DruUd35WbCGxWk10kl0yeTgb7bcwKuksRvA9rPM9hrckr8OfO+Xzo7c7rRw8YMLz0fcW
-	9hSoVayh+s860fY0Slvm5iDPz8XPCeBVAiGEMj+6jcE6TUv2lgcJ1XXinPVoklbLXZCduXdThN7+0
-	doVbCzavg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
+	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LthFCiaFDdWYVJVhbrNTrB24NT/3VvZt+ex/w4YDjRk=; b=kahrFBTnVa6UN/
+	olgAn881wgsskQ/NsnBa5tr0f4ORtAQZ1B/swhdWH7GPwn+b4gh7zliyUm7spkf7YCIgfRrnYvLLZ
+	kTBgIl/FShHRZtaX7LgMUjwbmUm2Q3wa+XsBaUDGcuiTuYSqfT1skhNakHfXENIv5JmR5svnPmii2
+	GyhJkO8gFPGhfW6FOkkC9LL123qi5ZGzUBiJ4eG9OKwdIQxQ420W9cN1Vd3onmptkaDCnXNJpZeKr
+	ZBJPPpy4VLM7E3qTJDmeqXcoPbOUhMVXZSpgBjWfnH5mcJv+iv7l5lZK3toakD+fI/X1atFJ4AZ02
+	xvlu813SrP5dQpJdpAUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKscO-0003hT-IX; Wed, 16 Oct 2019 23:22:12 +0000
-Received: from mail-pl1-f196.google.com ([209.85.214.196])
+	id 1iKsg7-0005du-Jj; Wed, 16 Oct 2019 23:26:03 +0000
+Received: from new4-smtp.messagingengine.com ([66.111.4.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKscF-0003gz-Ob
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 23:22:05 +0000
-Received: by mail-pl1-f196.google.com with SMTP id f21so151791plj.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 16 Oct 2019 16:22:01 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:subject:in-reply-to:cc:from:to:message-id
- :mime-version:content-transfer-encoding;
- bh=HsCb3Mo3Xna7EYoMwhTJhD9MwGz7SJTZ9CRewHqki9A=;
- b=qj2nLgCmi5pUxhMJ6ebRiHMJpz/YTsxxkPB38hDjViJW5c69gYL/P58IPNFAyzb91N
- j52NAnzPVuK52BtOQC9S880lGsDZO1mkOZAXOFR6NYb9YibXwQcfWEJcphFsmzRur8La
- d1h3Qp3CveC06/msYGhUNb6HbDueMuzo+GBt9di8ZeuVfzeO66Mu1/yB0wn2xywTfbXB
- IGMXhHLpoVwgnU4j4GKnkJZalSPBcBW2tuwFIfaJQSrue3wI1qCui1fsJt8F0oz27tVi
- RWq2PNqCy3TXbu3L0v3AhD03htD2SSsINDs/iKfwI83FixYKWEOkzTtOx6v+b99DpDGO
- mG6Q==
-X-Gm-Message-State: APjAAAXbK/G9tRLdkiy9TsbeHEshjM2jg4PB/w0njp1RgTpLXoegdoa/
- rN72MylQ9nVYLy7MV8gXVwuzeA==
-X-Google-Smtp-Source: APXvYqzC7/HZK7+EXjzcJodZ++wliiU8C+JhMyLSizkgklN8FOVzzDMtBBSarQIk1rdVlB0KCrwo5w==
-X-Received: by 2002:a17:902:122:: with SMTP id 31mr749931plb.274.1571268119937; 
- Wed, 16 Oct 2019 16:21:59 -0700 (PDT)
-Received: from localhost ([12.206.222.5])
- by smtp.gmail.com with ESMTPSA id 14sm167819pfn.21.2019.10.16.16.21.59
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 16 Oct 2019 16:21:59 -0700 (PDT)
-Date: Wed, 16 Oct 2019 16:21:59 -0700 (PDT)
-X-Google-Original-Date: Wed, 16 Oct 2019 16:21:55 PDT (-0700)
-Subject: Re: [PATCH v10 3/3] mm: fix double page fault on arm64 if PTE_AF is
- cleared
-In-Reply-To: <20191008123943.j7q6dlu2qb2az6xa@willie-the-truck>
-From: Palmer Dabbelt <palmer@sifive.com>
-To: will@kernel.org
-Message-ID: <mhng-dd251518-8ac0-40fa-9f62-20715d9ba906@palmer-si-x1e>
-Mime-Version: 1.0 (MHng)
+ id 1iKsfv-0005cx-C2
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 23:25:52 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailnew.nyi.internal (Postfix) with ESMTP id E4BBF71D9;
+ Wed, 16 Oct 2019 19:25:49 -0400 (EDT)
+Received: from imap2 ([10.202.2.52])
+ by compute4.internal (MEProxy); Wed, 16 Oct 2019 19:25:49 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
+ mime-version:message-id:in-reply-to:references:date:from:to:cc
+ :subject:content-type; s=fm1; bh=PyvonOcPHFz8rKcmNUUFHGzSVRwDPRH
+ 8KZMA87K8oiQ=; b=fKdKzNRokgPjUVrX9f1xJPPL5FlrS4plG8on1QguhO/iuAm
+ Lo5Bj90672xyJdYbVyUa3VgU+Y+2HxL9CkP0vDPDXqrFPk+HkdlPyJ4zBZOv6xbR
+ AC06UzWdsdc6mXOjcwLUnmdpUOsjkr4FOvdCxovZ3hqBTA0w1TGdN2G30G0VO3RL
+ y+DaHnPWZIefPFmx6XBoejbEezNpp+qPUdeq4tbizZE0+K4cemSW7YXaAZ1uQ9J6
+ 8Va/knlMgkD3GnObd56nZ5XAmwW1JTMe+VDA8wFrthzeujiwezQhlsCJ5LH0EZHV
+ ajOg3EZJo/sEcpxTujDRiODK+6fjOKw7+beFf4A==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=PyvonO
+ cPHFz8rKcmNUUFHGzSVRwDPRH8KZMA87K8oiQ=; b=omb7k96+2VHVf6VjCeeafg
+ 0siHqz/O6s1Oy7hU2nmQ2wlCw8vd3jsuThXLkkCGtgONeG8jLeNFNxXPzZe7+OKn
+ T/7e/jEO//cUsQpRyq8dul+GAUJ3agO093ZnPtkKuf73btmkch0y6Efs/TIK6gtP
+ kVQZpB24Tnqbs+4tnsWgzLDWBwGCUPly78dIr64T4MDegNqzj2pE8BaAug0Fm8OK
+ bv6VUc/RuGRqXlPU+DPQzz2eLqBkn0NHbCZFSNi670PzweDU9nYRrT+Od8LsXGTL
+ dx07/zq5jEtosWNBfLbr8XI27LOg+bN/6TW0mlO2mGuCSkWtAjN9cFveoc2MyShw
+ ==
+X-ME-Sender: <xms:_aanXUngCArMrXAA7-s9c4Qrm5auYWXdza9M0WOYns1PrME8q-OgOQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrjeeigddvtdcutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehnughr
+ vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucfrrghrrg
+ hmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghr
+ ufhiiigvpedt
+X-ME-Proxy: <xmx:_aanXSOwracCb3LzQKBJVZOovmxxNA0-0f4Zw9_sMVL51RQo6XuC5g>
+ <xmx:_aanXat8h366CpTcUuN8cE1t1VuiwpVN_HSoPB3fEVwg1In-bqXS2w>
+ <xmx:_aanXVw3N8k8rS7lIIEsu9nO1S99HVu_3B09uTkoA1XFM6F3kpdcWQ>
+ <xmx:_aanXTz6edeXMD7h5uZtGS_XNOlxgfyiI49h0Dnq5VCKKbB13GyWCg>
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+ id E351AE00BE; Wed, 16 Oct 2019 19:25:48 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.1.7-360-g7dda896-fmstable-20191004v2
+Mime-Version: 1.0
+Message-Id: <5fc76c3b-4727-4c4b-88a1-59c9618ccb30@www.fastmail.com>
+In-Reply-To: <CACRpkdbmbyNmW8tL_L0agBajomPybXsjn9ix_F5-B3fZnfuW9A@mail.gmail.com>
+References: <20191008044153.12734-1-andrew@aj.id.au>
+ <CACRpkda5cWaA7R3XzyiERCCgwUrjnXd+wCBeKvt-wtjex7wNDg@mail.gmail.com>
+ <2de90789-c374-4821-89f9-5d5f01e7d2d6@www.fastmail.com>
+ <CACRpkdbmbyNmW8tL_L0agBajomPybXsjn9ix_F5-B3fZnfuW9A@mail.gmail.com>
+Date: Thu, 17 Oct 2019 09:56:45 +1030
+From: "Andrew Jeffery" <andrew@aj.id.au>
+To: "Linus Walleij" <linus.walleij@linaro.org>
+Subject: Re: [PATCH 0/7] pinctrl: Fixes for AST2600 support
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_162203_800670_11E42769 
-X-CRM114-Status: GOOD (  21.70  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20191016_162551_716316_A4CAC463 
+X-CRM114-Status: UNSURE (   8.94  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.214.196 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.214.196 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.230 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,80 +106,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark.Rutland@arm.com, Justin.He@arm.com, Kaly.Xin@arm.com,
- Catalin.Marinas@arm.com, linux-kernel@vger.kernel.org, willy@infradead.org,
- linux-mm@kvack.org, James.Morse@arm.com, linux-arm-kernel@lists.infradead.org,
- punitagrawal@gmail.com, maz@kernel.org, hejianet@gmail.com, tglx@linutronix.de,
- nd@arm.com, akpm@linux-foundation.org, kirill.shutemov@linux.intel.com
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Johnny Huang <johnny_huang@aspeedtech.com>,
+ linux-aspeed <linux-aspeed@lists.ozlabs.org>,
+ Ryan Chen <ryanchen.aspeed@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCAwOCBPY3QgMjAxOSAwNTozOTo0NCBQRFQgKC0wNzAwKSwgd2lsbEBrZXJuZWwub3Jn
-IHdyb3RlOgo+IE9uIFR1ZSwgT2N0IDA4LCAyMDE5IGF0IDAyOjE5OjA1QU0gKzAwMDAsIEp1c3Rp
-biBIZSAoQXJtIFRlY2hub2xvZ3kgQ2hpbmEpIHdyb3RlOgo+PiA+IC0tLS0tT3JpZ2luYWwgTWVz
-c2FnZS0tLS0tCj4+ID4gRnJvbTogV2lsbCBEZWFjb24gPHdpbGxAa2VybmVsLm9yZz4KPj4gPiBT
-ZW50OiAyMDE55bm0MTDmnIgx5pelIDIwOjU0Cj4+ID4gVG86IEp1c3RpbiBIZSAoQXJtIFRlY2hu
-b2xvZ3kgQ2hpbmEpIDxKdXN0aW4uSGVAYXJtLmNvbT4KPj4gPiBDYzogQ2F0YWxpbiBNYXJpbmFz
-IDxDYXRhbGluLk1hcmluYXNAYXJtLmNvbT47IE1hcmsgUnV0bGFuZAo+PiA+IDxNYXJrLlJ1dGxh
-bmRAYXJtLmNvbT47IEphbWVzIE1vcnNlIDxKYW1lcy5Nb3JzZUBhcm0uY29tPjsgTWFyYwo+PiA+
-IFp5bmdpZXIgPG1hekBrZXJuZWwub3JnPjsgTWF0dGhldyBXaWxjb3ggPHdpbGx5QGluZnJhZGVh
-ZC5vcmc+OyBLaXJpbGwgQS4KPj4gPiBTaHV0ZW1vdiA8a2lyaWxsLnNodXRlbW92QGxpbnV4Lmlu
-dGVsLmNvbT47IGxpbnV4LWFybS0KPj4gPiBrZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZzsgbGlu
-dXgta2VybmVsQHZnZXIua2VybmVsLm9yZzsgbGludXgtCj4+ID4gbW1Aa3ZhY2sub3JnOyBQdW5p
-dCBBZ3Jhd2FsIDxwdW5pdGFncmF3YWxAZ21haWwuY29tPjsgVGhvbWFzCj4+ID4gR2xlaXhuZXIg
-PHRnbHhAbGludXRyb25peC5kZT47IEFuZHJldyBNb3J0b24gPGFrcG1AbGludXgtCj4+ID4gZm91
-bmRhdGlvbi5vcmc+OyBoZWppYW5ldEBnbWFpbC5jb207IEthbHkgWGluIChBcm0gVGVjaG5vbG9n
-eSBDaGluYSkKPj4gPiA8S2FseS5YaW5AYXJtLmNvbT4KPj4gPiBTdWJqZWN0OiBSZTogW1BBVENI
-IHYxMCAzLzNdIG1tOiBmaXggZG91YmxlIHBhZ2UgZmF1bHQgb24gYXJtNjQgaWYgUFRFX0FGCj4+
-ID4gaXMgY2xlYXJlZAo+PiA+Cj4+ID4gT24gTW9uLCBTZXAgMzAsIDIwMTkgYXQgMDk6NTc6NDBB
-TSArMDgwMCwgSmlhIEhlIHdyb3RlOgo+PiA+ID4gZGlmZiAtLWdpdCBhL21tL21lbW9yeS5jIGIv
-bW0vbWVtb3J5LmMKPj4gPiA+IGluZGV4IGIxY2E1MWEwNzlmMi4uMWY1NmIwMTE4ZWY1IDEwMDY0
-NAo+PiA+ID4gLS0tIGEvbW0vbWVtb3J5LmMKPj4gPiA+ICsrKyBiL21tL21lbW9yeS5jCj4+ID4g
-PiBAQCAtMTE4LDYgKzExOCwxMyBAQCBpbnQgcmFuZG9taXplX3ZhX3NwYWNlIF9fcmVhZF9tb3N0
-bHkgPQo+PiA+ID4gIAkJCQkJMjsKPj4gPiA+ICAjZW5kaWYKPj4gPiA+Cj4+ID4gPiArI2lmbmRl
-ZiBhcmNoX2ZhdWx0c19vbl9vbGRfcHRlCj4+ID4gPiArc3RhdGljIGlubGluZSBib29sIGFyY2hf
-ZmF1bHRzX29uX29sZF9wdGUodm9pZCkKPj4gPiA+ICt7Cj4+ID4gPiArCXJldHVybiBmYWxzZTsK
-Pj4gPiA+ICt9Cj4+ID4gPiArI2VuZGlmCj4+ID4KPj4gPiBLaXJpbGwgaGFzIGFja2VkIHRoaXMs
-IHNvIEknbSBoYXBweSB0byB0YWtlIHRoZSBwYXRjaCBhcy1pcywgaG93ZXZlciBpc24ndAo+PiA+
-IGl0IHRoZSBjYXNlIHRoYXQgL21vc3QvIGFyY2hpdGVjdHVyZXMgd2lsbCB3YW50IHRvIHJldHVy
-biB0cnVlIGZvcgo+PiA+IGFyY2hfZmF1bHRzX29uX29sZF9wdGUoKT8gSW4gd2hpY2ggY2FzZSwg
-d291bGRuJ3QgaXQgbWFrZSBtb3JlIHNlbnNlIGZvcgo+PiA+IHRoYXQgdG8gYmUgdGhlIGRlZmF1
-bHQsIGFuZCBoYXZlIHg4NiBhbmQgYXJtNjQgcHJvdmlkZSBhbiBvdmVycmlkZT8gRm9yCj4+ID4g
-ZXhhbXBsZSwgYXJlbid0IG1vc3QgYXJjaGl0ZWN0dXJlcyBzdGlsbCBnb2luZyB0byBoaXQgdGhl
-IGRvdWJsZSBmYXVsdAo+PiA+IHNjZW5hcmlvIGV2ZW4gd2l0aCB5b3VyIHBhdGNoIGFwcGxpZWQ/
-Cj4+Cj4+IE5vLCBhZnRlciBhcHBseWluZyBteSBwYXRjaCBzZXJpZXMsIG9ubHkgdGhvc2UgYXJj
-aGl0ZWN0dXJlcyB3aGljaCBkb24ndCBwcm92aWRlCj4+IHNldHRpbmcgYWNjZXNzIGZsYWcgYnkg
-aGFyZHdhcmUgQU5EIGRvbid0IGltcGxlbWVudCB0aGVpciBhcmNoX2ZhdWx0c19vbl9vbGRfcHRl
-Cj4+IHdpbGwgaGl0IHRoZSBkb3VibGUgcGFnZSBmYXVsdC4KPj4KPj4gVGhlIG1lYW5pbmcgb2Yg
-dHJ1ZSBmb3IgYXJjaF9mYXVsdHNfb25fb2xkX3B0ZSgpIGlzICJ0aGlzIGFyY2ggZG9lc24ndCBo
-YXZlIHRoZSBoYXJkd2FyZQo+PiBzZXR0aW5nIGFjY2VzcyBmbGFnIHdheSwgaXQgbWlnaHQgY2F1
-c2UgcGFnZSBmYXVsdCBvbiBhbiBvbGQgcHRlIgo+PiBJIGRvbid0IHdhbnQgdG8gY2hhbmdlIG90
-aGVyIGFyY2hpdGVjdHVyZXMnIGRlZmF1bHQgYmVoYXZpb3IgaGVyZS4gU28gYnkgZGVmYXVsdCwK
-Pj4gYXJjaF9mYXVsdHNfb25fb2xkX3B0ZSgpIGlzIGZhbHNlLgo+Cj4gLi4uYW5kIG15IGNvbXBs
-YWludCBpcyB0aGF0IHRoaXMgaXMgdGhlIG1ham9yaXR5IG9mIHN1cHBvcnRlZCBhcmNoaXRlY3R1
-cmVzLAo+IHNvIHlvdSdyZSBmaXhpbmcgc29tZXRoaW5nIGZvciBhcm02NCB3aGljaCBhbHNvIGFm
-ZmVjdHMgYXJtLCBwb3dlcnBjLAo+IGFscGhhLCBtaXBzLCByaXNjdiwgLi4uCj4KPiBDaGFuY2Vz
-IGFyZSwgdGhleSB3b24ndCBldmVuIHJlYWxpc2UgdGhleSBuZWVkIHRvIGltcGxlbWVudAo+IGFy
-Y2hfZmF1bHRzX29uX29sZF9wdGUoKSB1bnRpbCBzb21lYm9keSBydW5zIGludG8gdGhlIGRvdWJs
-ZSBmYXVsdCBhbmQKPiB3YXN0ZXMgbG90cyBvZiB0aW1lIGRlYnVnZ2luZyBpdCBiZWZvcmUgdGhl
-eSBzcG90IHlvdXIgcGF0Y2guCgpJZiBJIHVuZGVyc3RhbmQgdGhlIHNlbWFudGljcyBjb3JyZWN0
-bHksIHdlIHNob3VsZCBoYXZlIHRoaXMgc2V0IHRvIHRydWUuICBJIApkb24ndCBoYXZlIGFueSBj
-b250ZXh0IGhlcmUsIGJ1dCB3ZSd2ZSBnb3QKCiAgICAgICAgICAgICAgICAvKgogICAgICAgICAg
-ICAgICAgICogVGhlIGtlcm5lbCBhc3N1bWVzIHRoYXQgVExCcyBkb24ndCBjYWNoZSBpbnZhbGlk
-CiAgICAgICAgICAgICAgICAgKiBlbnRyaWVzLCBidXQgaW4gUklTQy1WLCBTRkVOQ0UuVk1BIHNw
-ZWNpZmllcyBhbgogICAgICAgICAgICAgICAgICogb3JkZXJpbmcgY29uc3RyYWludCwgbm90IGEg
-Y2FjaGUgZmx1c2g7IGl0IGlzCiAgICAgICAgICAgICAgICAgKiBuZWNlc3NhcnkgZXZlbiBhZnRl
-ciB3cml0aW5nIGludmFsaWQgZW50cmllcy4KICAgICAgICAgICAgICAgICAqLwogICAgICAgICAg
-ICAgICAgbG9jYWxfZmx1c2hfdGxiX3BhZ2UoYWRkcik7CgppbiBkb19wYWdlX2ZhdWx0KCkuCgo+
-PiBCdHcsIGN1cnJlbnRseSBJIG9ubHkgb2JzZXJ2ZWQgdGhpcyBkb3VibGUgcGFnZWZhdWx0IG9u
-IGFybTY0J3MgZ3Vlc3QKPj4gKGhvc3QgaXMgVGh1bmRlclgyKS4gIE9uIFg4NiBndWVzdCAoaG9z
-dCBpcyBJbnRlbChSKSBDb3JlKFRNKSBpNy00NzkwIENQVQo+PiBAIDMuNjBHSHogKSwgdGhlcmUg
-aXMgbm8gc3VjaCBkb3VibGUgcGFnZWZhdWx0LiBJdCBoYXMgdGhlIHNpbWlsYXIgc2V0dGluZwo+
-PiBhY2Nlc3MgZmxhZyB3YXkgYnkgaGFyZHdhcmUuCj4KPiBSaWdodCwgYW5kIHRoYXQncyB3aHkg
-SSdtIG5vdCBjb25jZXJuZWQgYWJvdXQgeDg2IGZvciB0aGlzIHByb2JsZW0uCj4KPiBXaWxsCgpf
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0t
-a2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcK
-aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2Vy
-bmVsCg==
+
+
+On Thu, 17 Oct 2019, at 00:30, Linus Walleij wrote:
+> On Wed, Oct 16, 2019 at 1:42 PM Andrew Jeffery <andrew@aj.id.au> wrote:
+> 
+> > I was hoping to get them into the 5.4 fixes branch: I consider them all fixes
+> 
+> OK I moved them all to fixes.
+
+Thanks.
+
+> 
+> > > I need a shortlist of anything that should go into v5.4 if anything.
+> >
+> > IMO all of them should go into 5.4, as above.
+> 
+> OK
+> 
+> >  It's there something I can do in the future to communicate this better?
+> 
+> Nah it is a complicated process, things need to be done manually
+> at times, overly obsessing with process is counterproductive.
+
+No worries, happy to carry on as is.
+
+Andrew
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
