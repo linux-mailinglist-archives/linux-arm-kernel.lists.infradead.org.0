@@ -2,52 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB6C7D9448
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 16:50:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB967D9451
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 16:51:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=3nQiGaVnc5VoClouHm0XelVgpKDchVjy7KG8CMbWOts=; b=VPO7TpnVQ6oi04+y+Zg/lT45v
-	yyoYmupr7QioJYT3+zYYN/enuUjehKpPLqKi6RX9IGRTXg+Zql+liLJBjPDy5jyMhA4IXxFsy4Gvp
-	lvhsJrBUEawA7gkKqumIcVs/6DKtsrhz9s9qc8EClctNJsfgQ6ffMxUBa9r+erQzhme/+d839diRd
-	Zi8PY4VxOuQ+Am2VBoTX1c/osmtRJamRhAuoSP5OXK9XtfoApnEzO9lFscseI6QG1d9eHGZVhiUIx
-	Ei/TFWhOXDxDCwV6BpS6eLlj+ws4a8JH1HeXGODda+a02MyYdnJYxKyy5zXb48BVP1GFbOMVwvyqa
-	rJPOyH+5Q==;
+	 bh=OBfCBOh4dIeytPe621EWdSkmAQPy1TqAIRmjZSWm+YQ=; b=D2QYytAq8h2LaaHlmLMG8h92B
+	BtfRKggA3WPmv9nvlnJaHIiWEkw8bUyXl8Kr0aN37JfV4lZV4oT1raGUy6jr4MiOe85IAKeOPhwgv
+	GnkAP4n99gL4/nN3Z00HjFNJBD07r0kow8Peirlt5QrcFmhuqpE22lCC6j3O6KJkUvLqzBF1uxekw
+	RtnuJvnnd2B37MEPWtv2r+C2pM5YWPoWPqTTyJ8bMPW4QaeP+hyGPOyvbRdWqeg05oJUR41TZoLYh
+	qvlC1fqSskgBlJDiqBibagJ1MaXNKXUiuw3J4oGKzvKsdjPu4FOd2pNhzQ6TXdnAe1hhYaaBkeAR6
+	YircyyOqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKkch-0008Un-1I; Wed, 16 Oct 2019 14:49:59 +0000
+	id 1iKke0-0001nc-Pe; Wed, 16 Oct 2019 14:51:20 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKkcY-0008UN-0R
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 14:49:51 +0000
+ id 1iKkdm-0001n1-2I
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 14:51:07 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 022C32168B;
- Wed, 16 Oct 2019 14:49:48 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 331AE2168B;
+ Wed, 16 Oct 2019 14:51:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571237389;
- bh=TVHkTQZcT9q9ZjJzYOSkolVYYuNP2y6v7NQ51/mM5q8=;
+ s=default; t=1571237465;
+ bh=Xh/9gWmwBKdF+8neE3kItdxVMfpHXwc3n8w1uZywGNQ=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=bcf31tblggd+MJJkjJ9MWL3/6Xm57VNAYnvAEXEXu/qG9MTqKIwOaCCRWRD6tCt+u
- pUnsMBBBwSJMxdN+D/t5cMU9aJACRsrTR5piIFe6N4GEmJ1uGCotm3uyYDWh+9v5lN
- GO/aBm+6T/Z1kI0UaQXd3CDgadNWxjpsme7Jfbg8=
-Date: Wed, 16 Oct 2019 16:49:46 +0200
+ b=bMkLi5d63UN14+72d9h18uH19CkeKG76vGq+CqQ+wIG2Cyem630Ojwrt9CEOdzh1f
+ nfcG0oLaZc2le2vb93goK32+ObpHGn+url2irqclWJw+pWdZempUJgMh0VLuA1KDwD
+ FgYwaZLYrXiSq3mJDbHG9vjPT2zA1qR1eMkuVBy4=
+Date: Wed, 16 Oct 2019 16:51:03 +0200
 From: Maxime Ripard <mripard@kernel.org>
-To: Alistair Francis <alistair@alistair23.me>
-Subject: Re: [PATCH] arm64: dts: sun50i: sopine-baseboard: Expose serial1,
- serial2 and serial3
-Message-ID: <20191016144946.p3tm67vh5lqigndn@gilmour>
-References: <20191012200524.23512-1-alistair@alistair23.me>
+To: Code Kipper <codekipper@gmail.com>
+Subject: Re: [PATCH v6 1/7] ASoC: sun4i-i2s: Move channel select offset
+Message-ID: <20191016145103.im4h75qi2fcdcmar@gilmour>
+References: <20191016070740.121435-1-codekipper@gmail.com>
+ <20191016070740.121435-2-codekipper@gmail.com>
+ <20191016080420.4cbxn2hdt3wwtrhl@gilmour>
+ <CAEKpxBmNCA4U8-X8iSwOxBZ7T3dp6352S2Kfxc6f5E4N671zvg@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20191012200524.23512-1-alistair@alistair23.me>
+In-Reply-To: <CAEKpxBmNCA4U8-X8iSwOxBZ7T3dp6352S2Kfxc6f5E4N671zvg@mail.gmail.com>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_074950_073843_2D15F48E 
-X-CRM114-Status: GOOD (  14.02  )
+X-CRM114-CacheID: sfid-20191016_075106_128473_4EF42FC3 
+X-CRM114-Status: GOOD (  13.84  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,94 +78,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alistair23@gmail.com, wens@csie.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1477918236341637499=="
+Cc: Linux-ALSA <alsa-devel@alsa-project.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Liam Girdwood <lgirdwood@gmail.com>,
+ "Andrea Venturi \(pers\)" <be17068@iperbole.bo.it>,
+ Chen-Yu Tsai <wens@csie.org>, Mark Brown <broonie@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============7081491837990081521=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============1477918236341637499==
+--===============7081491837990081521==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="n5scbjei5snz6qva"
+	protocol="application/pgp-signature"; boundary="fi6amry3fbotqfax"
 Content-Disposition: inline
 
 
---n5scbjei5snz6qva
+--fi6amry3fbotqfax
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-Hi,
+On Wed, Oct 16, 2019 at 10:41:31AM +0200, Code Kipper wrote:
+> On Wed, 16 Oct 2019 at 10:04, Maxime Ripard <mripard@kernel.org> wrote:
+> >
+> > On Wed, Oct 16, 2019 at 09:07:34AM +0200, codekipper@gmail.com wrote:
+> > > From: Marcus Cooper <codekipper@gmail.com>
+> > >
+> > > On the newer SoCs the offset is used to set the mode of the
+> > > connection. As it is to be used elsewhere then it makes sense
+> > > to move it to the main structure.
+> >
+> > Elsewhere where, and to do what?
+> Thanks...How does this sound?
+>
+> As it is to be used to set the same offset for each TX data channel in use
+> during multi-channel audio then let's move it to the main structure.
 
-On Sat, Oct 12, 2019 at 01:05:24PM -0700, Alistair Francis wrote:
-> Follow what the sun50i-a64-pine64.dts does and expose all 5 serial
-> connections.
->
-> Signed-off-by: Alistair Francis <alistair@alistair23.me>
-> ---
->  .../allwinner/sun50i-a64-sopine-baseboard.dts | 25 +++++++++++++++++++
->  1 file changed, 25 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
-> index 124b0b030b28..49c37b21ab36 100644
-> --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
-> +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
-> @@ -56,6 +56,10 @@
->  	aliases {
->  		ethernet0 = &emac;
->  		serial0 = &uart0;
-> +		serial1 = &uart1;
-> +		serial2 = &uart2;
-> +		serial3 = &uart3;
-> +		serial4 = &uart4;
->  	};
->
->  	chosen {
-> @@ -280,6 +284,27 @@
->  	};
->  };
->
-> +/* On Pi-2 connector */
-> +&uart2 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&uart2_pins>;
-> +	status = "disabled";
-> +};
-> +
-> +/* On Euler connector */
-> +&uart3 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&uart3_pins>;
-> +	status = "disabled";
-> +};
-> +
-> +/* On Euler connector, RTS/CTS optional */
-> +&uart4 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&uart4_pins>;
-> +	status = "disabled";
-> +};
-
-Since these are all the default muxing, maybe we should just set that
-in the DTSI?
+That still doesn't explain why you want to move it to the main
+structure. It's there, it's calculated already, and can be used during
+multi-channel audio if you set it up in the same function. What you
+need to explain is why you can't do it in the same function.
 
 Maxime
 
---n5scbjei5snz6qva
+--fi6amry3fbotqfax
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXacuCgAKCRDj7w1vZxhR
-xakUAQDKMLPFYrXgJoIqujk/rfbeUS2P3a0rGnGDrfrvSZkCMAD+JRTAJwfGyT0T
-0GAa8ejfAZiZ2/8OCoW/Y++QrQ3JhA4=
-=Q2Sd
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXacuVwAKCRDj7w1vZxhR
+xTaQAP0X2iGfJ5IY9S8B+s9Zh5MP11erZjYLItvMfIJTyW5EAgD/QxPJRbfuSz03
+Mqd/XK6k/sf6xBYpSzArepQAruvCDQs=
+=rCXO
 -----END PGP SIGNATURE-----
 
---n5scbjei5snz6qva--
+--fi6amry3fbotqfax--
 
 
---===============1477918236341637499==
+--===============7081491837990081521==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -174,5 +148,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============1477918236341637499==--
+--===============7081491837990081521==--
 
