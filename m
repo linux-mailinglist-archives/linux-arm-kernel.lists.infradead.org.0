@@ -2,63 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31496D9B7B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 22:18:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C7AED9B82
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 22:19:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x5HRL1YTOYwdmZi8LZ0MkPzfUx8Zzz/Whn31b3H+nhA=; b=XIe69IiAC1smMj
-	+uj710rzC2OKTJ9OF/kXQ/HHSPHACOeStZUjf0HhDB339AxvdDKC6IGSRp2ACrB/PkQ4qYcuZhaB+
-	+O9S7kVvhQaKxT1QG56G5Jkb4GZ2/cyaggIKBffPK8mT8PNtFhLJ7C9ZV9E9NcWK0F2yP3PikNx7H
-	3G8QlUqu9LhNaowUIKqKGQZIqaIHWk5mzhVpO99kTNzJk3p5CbejjMpUeSl1n5zOqXwgB0mgQ8mS2
-	d9QtWPdmYB0+zKmCSK+hBZ7+2LaC0omtQtHSW1jL2/SKdxPqvC/YZwvqpTAOVUZbqG/EsdGk7vzws
-	N1Xn5cBCVYYBV+HKX7tg==;
+	List-Owner; bh=1Z+ms8eT1nwR7DJZmbOq6TH/0IYMuQjpr4FuZEly2d0=; b=c91o6u6KpgiObG
+	lR263luGbKnrh6+93QIuM/6nBbn6bnHyNoTW32FwXboW9OnKx1p6c9sExI91d0n1CypoJXgtrT4nE
+	Pip//+OgkrXddWOY87pT0vE5FcKe8+LBQnDoaNQjt6M+RmhFlP2ju+xvQ8YcX/RjmD+WcXdbQpHL5
+	bcHFjITGNj8WdxBuql81CokCwPsLRpEGLKclgD0F8v5gyLmF18u4ww8R1f3Xk8mCPGrj4ajK2PYV0
+	Uy7YQ+Bt46H5t0LtGqCMJcAIRrjyPIkxsPEH2Qd09XKkI0sK6cKrkymMqqE5fkK+1ag/preFk7BTz
+	uAiycE2bOM2pCV1QXNqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKpl2-0005cW-SO; Wed, 16 Oct 2019 20:18:56 +0000
+	id 1iKplQ-0005xi-4A; Wed, 16 Oct 2019 20:19:20 +0000
 Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKpZn-0002Fc-JK; Wed, 16 Oct 2019 20:07:21 +0000
-Received: by mail-oi1-f196.google.com with SMTP id i185so104698oif.9;
- Wed, 16 Oct 2019 13:07:19 -0700 (PDT)
+ id 1iKpZp-0002HN-J4; Wed, 16 Oct 2019 20:07:23 +0000
+Received: by mail-oi1-f196.google.com with SMTP id 83so147848oii.1;
+ Wed, 16 Oct 2019 13:07:21 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=+lDUo/HCLyrc0sWOGTnz5id2tGBLQKtkLPjhxgUhPzY=;
- b=HRZ+X5CtP8/Qi1b9B+7awb6/aM4L8VzuIPiFHjWnSGNkqGHavDOlXHuvxM/Zw76pYX
- 3pJqlqcx8O26stCYm0RDZjtGwgliFIdM0dwC0fibD3M1t/eH9dNPAvcJOgxvr1xUUArJ
- 3zFeqQEo6JrutJ+hTzzloDAqMg+9RkpStIWBHwARAv9N7noXOZB2QGXv5lDTik/ofpSQ
- 27QnojfFDvhEMvK+Xw5NLWefRx2cX9t2BYQgR/OoXLXpY76bbvB7mWBm3gREukgTZ4k0
- yq6DQK8d93SDbrERZ0gcNG2GurMyXDORWK1NnxBqUXUhuwhQpKaKviZsrlwyCJ/JyA80
- xn+w==
-X-Gm-Message-State: APjAAAXOQ6d6ap6N/bs3znjjuUoUbgDwVNPX4tPQe5V5E0PhXV/gebgd
- qwll61RaU0P6+lzkvHX2KQ==
-X-Google-Smtp-Source: APXvYqyAG5FcM4PQq9OSa73PqrKFfTA6OVfMPy95H504g8Gj6pQ81a+5/Od2e9kgvPtJjJw7yifKmA==
-X-Received: by 2002:aca:df87:: with SMTP id w129mr120106oig.50.1571256438533; 
- Wed, 16 Oct 2019 13:07:18 -0700 (PDT)
+ bh=EUvNXVMR7ueFc2YPhgs8zP4YzcDIk6QWtKI1XB6VZ+Y=;
+ b=Cup8ELW1YWLayVTNpYaW57TGUF1+eG2AclGW6naz/92/fmqBUh3Sc+bfVHsnJzu/SI
+ j2kFRGYnXYZ+10AqHhHDNN9CdJObD8lf0mmtGOG3HmPE+scXvxLHTHFSNlvkK8Oeyg67
+ u6SM53iOymvFbvcKVi9nEhQ0J9kaDQAes2n9IGDVkvouF8FhGivgQChMlABLSB8Lpu7y
+ +/Y08TRL/54IgWpiqNfz9/l+KVH2YlRqsLYZXzl4VR3fxv2S3UnlbMpqa8nQY/H5FHmV
+ /mFYQVpg/+9qV7iVH8IhFGZZU9CO4/I9+0kjfaxHCNfrJt/WWUOL1mpbKdI3EvBH/gZZ
+ 88KQ==
+X-Gm-Message-State: APjAAAXHY7+fvcj1/Ben4qqYuWXvHMLqNO69LqBQwL/jAQ+Kwp28tj9J
+ ZsL8hen2vo/vu2iCpOiLVg==
+X-Google-Smtp-Source: APXvYqy/2Fy9rR5BzYiQ6RiCmXGzv9E3TVFk2RmyQBRWYVoIxeJcIYcMHXgrMkV0fEcNz2sBt7+DZg==
+X-Received: by 2002:aca:b9d7:: with SMTP id j206mr112019oif.112.1571256440272; 
+ Wed, 16 Oct 2019 13:07:20 -0700 (PDT)
 Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id a9sm7412463oie.7.2019.10.16.13.07.16
+ by smtp.googlemail.com with ESMTPSA id a9sm7412463oie.7.2019.10.16.13.07.18
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 16 Oct 2019 13:07:17 -0700 (PDT)
+ Wed, 16 Oct 2019 13:07:19 -0700 (PDT)
 From: Rob Herring <robh@kernel.org>
 To: Andrew Murray <andrew.murray@arm.com>, Bjorn Helgaas <bhelgaas@google.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: [PATCH v2 15/25] PCI: xilinx-nwl: Use
- pci_parse_request_of_pci_ranges()
-Date: Wed, 16 Oct 2019 15:06:37 -0500
-Message-Id: <20191016200647.32050-16-robh@kernel.org>
+Subject: [PATCH v2 16/25] PCI: versatile: Use pci_parse_request_of_pci_ranges()
+Date: Wed, 16 Oct 2019 15:06:38 -0500
+Message-Id: <20191016200647.32050-17-robh@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191016200647.32050-1-robh@kernel.org>
 References: <20191016200647.32050-1-robh@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_130719_759591_BAC51761 
-X-CRM114-Status: GOOD (  14.24  )
+X-CRM114-CacheID: sfid-20191016_130721_649890_772F1874 
+X-CRM114-Status: GOOD (  16.09  )
 X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.6 points)
@@ -110,93 +109,126 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the xilinx-nwl host bridge to use the common
+Convert ARM Versatile host bridge to use the common
 pci_parse_request_of_pci_ranges().
 
 There's no need to assign the resources to a temporary list first. Just
 use bridge->windows directly and remove all the temporary list handling.
 
 Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Cc: Andrew Murray <andrew.murray@arm.com>
 Cc: Bjorn Helgaas <bhelgaas@google.com>
-Cc: Michal Simek <michal.simek@xilinx.com>
 Signed-off-by: Rob Herring <robh@kernel.org>
 ---
 v2:
-- New patch
+- Fix 'mem' initial value to 1
+- Remove temporary resource list
+---
+ drivers/pci/controller/pci-versatile.c | 64 +++++---------------------
+ 1 file changed, 11 insertions(+), 53 deletions(-)
 
- drivers/pci/controller/pcie-xilinx-nwl.c | 20 ++++----------------
- 1 file changed, 4 insertions(+), 16 deletions(-)
-
-diff --git a/drivers/pci/controller/pcie-xilinx-nwl.c b/drivers/pci/controller/pcie-xilinx-nwl.c
-index 45c0f344ccd1..e135a4b60489 100644
---- a/drivers/pci/controller/pcie-xilinx-nwl.c
-+++ b/drivers/pci/controller/pcie-xilinx-nwl.c
-@@ -821,8 +821,6 @@ static int nwl_pcie_probe(struct platform_device *pdev)
- 	struct pci_bus *child;
- 	struct pci_host_bridge *bridge;
- 	int err;
--	resource_size_t iobase = 0;
--	LIST_HEAD(res);
-
- 	bridge = devm_pci_alloc_host_bridge(dev, sizeof(*pcie));
- 	if (!bridge)
-@@ -845,24 +843,18 @@ static int nwl_pcie_probe(struct platform_device *pdev)
- 		return err;
- 	}
-
--	err = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff, &res,
--						    &iobase);
-+	err = pci_parse_request_of_pci_ranges(dev, &bridge->windows, NULL);
- 	if (err) {
- 		dev_err(dev, "Getting bridge resources failed\n");
- 		return err;
- 	}
-
--	err = devm_request_pci_bus_resources(dev, &res);
+diff --git a/drivers/pci/controller/pci-versatile.c b/drivers/pci/controller/pci-versatile.c
+index f59ad2728c0b..18697f2ea345 100644
+--- a/drivers/pci/controller/pci-versatile.c
++++ b/drivers/pci/controller/pci-versatile.c
+@@ -62,65 +62,16 @@ static struct pci_ops pci_versatile_ops = {
+ 	.write	= pci_generic_config_write,
+ };
+ 
+-static int versatile_pci_parse_request_of_pci_ranges(struct device *dev,
+-						     struct list_head *res)
+-{
+-	int err, mem = 1, res_valid = 0;
+-	resource_size_t iobase;
+-	struct resource_entry *win, *tmp;
+-
+-	err = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff, res, &iobase);
 -	if (err)
--		goto error;
+-		return err;
 -
- 	err = nwl_pcie_init_irq_domain(pcie);
- 	if (err) {
- 		dev_err(dev, "Failed creating IRQ Domain\n");
--		goto error;
-+		return err;
- 	}
-
--	list_splice_init(&res, &bridge->windows);
- 	bridge->dev.parent = dev;
- 	bridge->sysdata = pcie;
- 	bridge->busnr = pcie->root_busno;
-@@ -874,13 +866,13 @@ static int nwl_pcie_probe(struct platform_device *pdev)
- 		err = nwl_pcie_enable_msi(pcie);
- 		if (err < 0) {
- 			dev_err(dev, "failed to enable MSI support: %d\n", err);
--			goto error;
-+			return err;
- 		}
- 	}
-
- 	err = pci_scan_root_bus_bridge(bridge);
- 	if (err)
--		goto error;
-+		return err;
-
- 	bus = bridge->bus;
-
-@@ -889,10 +881,6 @@ static int nwl_pcie_probe(struct platform_device *pdev)
- 		pcie_bus_configure_settings(child);
- 	pci_bus_add_devices(bus);
- 	return 0;
+-	err = devm_request_pci_bus_resources(dev, res);
+-	if (err)
+-		goto out_release_res;
 -
--error:
--	pci_free_resource_list(&res);
+-	resource_list_for_each_entry_safe(win, tmp, res) {
+-		struct resource *res = win->res;
+-
+-		switch (resource_type(res)) {
+-		case IORESOURCE_IO:
+-			err = devm_pci_remap_iospace(dev, res, iobase);
+-			if (err) {
+-				dev_warn(dev, "error %d: failed to map resource %pR\n",
+-					 err, res);
+-				resource_list_destroy_entry(win);
+-			}
+-			break;
+-		case IORESOURCE_MEM:
+-			res_valid |= !(res->flags & IORESOURCE_PREFETCH);
+-
+-			writel(res->start >> 28, PCI_IMAP(mem));
+-			writel(PHYS_OFFSET >> 28, PCI_SMAP(mem));
+-			mem++;
+-
+-			break;
+-		}
+-	}
+-
+-	if (res_valid)
+-		return 0;
+-
+-	dev_err(dev, "non-prefetchable memory resource required\n");
+-	err = -EINVAL;
+-
+-out_release_res:
+-	pci_free_resource_list(res);
 -	return err;
- }
-
- static struct platform_driver nwl_pcie_driver = {
---
+-}
+-
+ static int versatile_pci_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+ 	struct resource *res;
+-	int ret, i, myslot = -1;
++	struct resource_entry *entry;
++	int ret, i, myslot = -1, mem = 1;
+ 	u32 val;
+ 	void __iomem *local_pci_cfg_base;
+ 	struct pci_bus *bus, *child;
+ 	struct pci_host_bridge *bridge;
+-	LIST_HEAD(pci_res);
+ 
+ 	bridge = devm_pci_alloc_host_bridge(dev, 0);
+ 	if (!bridge)
+@@ -141,10 +92,18 @@ static int versatile_pci_probe(struct platform_device *pdev)
+ 	if (IS_ERR(versatile_cfg_base[1]))
+ 		return PTR_ERR(versatile_cfg_base[1]);
+ 
+-	ret = versatile_pci_parse_request_of_pci_ranges(dev, &pci_res);
++	ret = pci_parse_request_of_pci_ranges(dev, &bridge->windows, NULL);
+ 	if (ret)
+ 		return ret;
+ 
++	resource_list_for_each_entry(entry, &bridge->windows) {
++		if (resource_type(entry->res) == IORESOURCE_MEM) {
++			writel(entry->res->start >> 28, PCI_IMAP(mem));
++			writel(PHYS_OFFSET >> 28, PCI_SMAP(mem));
++			mem++;
++		}
++	}
++
+ 	/*
+ 	 * We need to discover the PCI core first to configure itself
+ 	 * before the main PCI probing is performed
+@@ -197,7 +156,6 @@ static int versatile_pci_probe(struct platform_device *pdev)
+ 	pci_add_flags(PCI_ENABLE_PROC_DOMAINS);
+ 	pci_add_flags(PCI_REASSIGN_ALL_BUS);
+ 
+-	list_splice_init(&pci_res, &bridge->windows);
+ 	bridge->dev.parent = dev;
+ 	bridge->sysdata = NULL;
+ 	bridge->busnr = 0;
+-- 
 2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
