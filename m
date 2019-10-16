@@ -2,83 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0875DD929F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 15:34:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EAC4DD92B7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 15:39:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zxWS13M3swUfpNLcLYV6n1aYYek+v1uEyJhRS7rS72Y=; b=tnwFxHyIKiqoeK
-	YF+DhRnM4Xkv25oodLDJUGo8MtzGVaheutQBlCQBMgpGmLehXvosGWr7aaHeiuQakXKnLYBl33nkq
-	iFUJmXjfa9Hz/GFBxvisgsjvq/SH7IAE/EMScuILOH0PXP80RR95hK3OSsUXLRpMTCbJLigMQKKlF
-	WFFBdli9rdPDfWNVAdBL2DS1+QNyriXSNXMEZgwmYr/7PnuAkuKJpYCM0GlN8RlRXVwVp6AQ/dG/C
-	Z0PTl0zpxyKFWrwAxRfsc9/F8bJXO52xX7MF0eDh1SZqfTwAKjmgiXv1QPJ8R2d+n+gKZT88oS1xS
-	esHGNbZe/r6VoJ4LL9vg==;
+	List-Owner; bh=56UIXuXluu9i+I1ERa1uCQfk5jfoxOeXzOZfUQSqupc=; b=QprDxgNosnL5Dp
+	RuxdNvCUxeUqbVA8vjdAGgSzLuo7/WBC2FGPMvnJgDPpccVhZ4HRoGpQJ3qpGnuySiH+bTbatQW9b
+	9FoHU0l6XY441ZE0PRMFu19crJFMYXqcisDQZF0Zk7QlmoJ+HUlHggQOg3a81IPHm8dtJXAnyz015
+	zNkrnVIZCeic9w37RV8pwM/xVHUcWXOLYeT9bn2VQzM223SWN0sTTLON49RT7LIbCAzDybVIigCfx
+	ua+raXhFy417fdrv2ut0vUWaC6M89JBalvKQhjXV01guRd8i4gHguTJWv0L/zuBFL0yarjzZGjLgx
+	FljLjnHTJYGTRfHqgZhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKjS4-0003Lu-6k; Wed, 16 Oct 2019 13:34:56 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iKjWk-0006Hg-2x; Wed, 16 Oct 2019 13:39:46 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKjR6-0002f3-Pg
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 13:33:58 +0000
-Received: by mail-wr1-x441.google.com with SMTP id j11so28113119wrp.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 16 Oct 2019 06:33:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=dpe0zCbR3c1VkH/n1U/vOC6ekNORqcDkTSfYoQ4laf4=;
- b=vfOKhkD/B4LEg6089Khw6AZt10guS5PRPkM3bMi0lgUqnTMUx0pI1R8LsienxZEMm2
- E05kaPmoQtQvR2H7jKVnidLwW3Vejkt1ELE9yb6dTGA2vAXYEYNry0LWvHFcAA0NMpOv
- k9G0Md+1zn8hR7VVE4Uz7lwin5Z9FyvKKqdFUOnLGNqjbls1aQdFZSeEunuMxh26BU81
- QtFKBERwt2fYrJOFrRPVY3TP6wi6aJ4kvsqpXHpYY4+AV4mzKPJkNxdtZSnIoibCMRuB
- E5ylZ26gQET4N1EgAmHkHImIdXAjm+dZYd0rRiSNOvxBD/pevTw0thJR010OqXlc0IAd
- tDtA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=dpe0zCbR3c1VkH/n1U/vOC6ekNORqcDkTSfYoQ4laf4=;
- b=TS6+e7j9gi47vgjvVevo1jjEZpdQqWRT81qvcasvAEwN459xn+AHIdy7SziyRZ9GoV
- 6FQjX9WsiZV5Oe/75ocVsG5i+mHzIjTzH4KvZG+9MmSVUiDXiNYhQA3pL6ebKk8P/V+v
- Li/JWogLwRbyQtQSMpdUHtbNefAe6cRNdXES6f99/aZV9kcftK5gjDZVZ0GEyQyzPxJ+
- 6tdwhujsiFnPCk05g5wQfIhXCg4me1D1Fv3pHw/6MTvcvf5gAQ8AxK337ZxPOoofwQe0
- gGa4s9w1qnE3rb/Uqa9QLop5lebmanP6FE68M9D2haWX+FeB3QzYNZI66/yZc3YwAhkI
- gjuA==
-X-Gm-Message-State: APjAAAUcWy4G3VgjBaTHvYPKmho0O9nQed7NwcZ+kc+P0bZmFHNoGZtL
- z0ditAofHgHpllCBDIEzoms=
-X-Google-Smtp-Source: APXvYqxz+OWi0tp3OSsbB23tWAXSlMcqgwlRvvpcPVUGZGYuP9JlM3ADHjooxy1QYXOvh/7QHnqaEQ==
-X-Received: by 2002:a5d:5011:: with SMTP id e17mr2790378wrt.160.1571232835526; 
- Wed, 16 Oct 2019 06:33:55 -0700 (PDT)
-Received: from Red.localdomain ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id h17sm3139998wme.6.2019.10.16.06.33.54
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 16 Oct 2019 06:33:54 -0700 (PDT)
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: davem@davemloft.net, herbert@gondor.apana.org.au, mark.rutland@arm.com,
- mripard@kernel.org, robh+dt@kernel.org, wens@csie.org
-Subject: [PATCH 4/4] ARM: dts: sun9i: a80: Add Security System node
-Date: Wed, 16 Oct 2019 15:33:45 +0200
-Message-Id: <20191016133345.9076-5-clabbe.montjoie@gmail.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20191016133345.9076-1-clabbe.montjoie@gmail.com>
+ id 1iKjWc-0006H3-Cq
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 13:39:39 +0000
+Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 75D5D2168B;
+ Wed, 16 Oct 2019 13:39:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571233178;
+ bh=dDExEC2557cmtq3X/4XRJPOkG/r/cnDMPOGXwrWXLoM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=L+FbZCkdkd9GpK7nEZefieerlnRs7S6ZXE6J7iRlAmUzCy5s6bxANCkhxRUWZGaKI
+ sBeLWzxWO4IglbGp0fJVwJQB3DSlTbZ+iVw1IhX0xQvB+Uno4HRiWKjmkaYR9jpDX0
+ yX5gKWGo/5MvUHFZt7/oeBJu1lkFh0OKHV7dWFbY=
+Date: Wed, 16 Oct 2019 15:39:35 +0200
+From: Maxime Ripard <mripard@kernel.org>
+To: Corentin Labbe <clabbe.montjoie@gmail.com>
+Subject: Re: [PATCH 0/4] crypto: add sun8i-ss driver for Allwinner Security
+ System
+Message-ID: <20191016133935.e67kevjyugxn5rki@gilmour>
 References: <20191016133345.9076-1-clabbe.montjoie@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191016133345.9076-1-clabbe.montjoie@gmail.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_063356_849129_07096FFE 
-X-CRM114-Status: GOOD (  11.60  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191016_063938_455757_723B48FF 
+X-CRM114-Status: GOOD (  13.07  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (clabbe.montjoie[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -88,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,45 +77,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-sunxi@googlegroups.com, Corentin Labbe <clabbe.montjoie@gmail.com>,
- linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ herbert@gondor.apana.org.au, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, wens@csie.org, robh+dt@kernel.org,
+ linux-crypto@vger.kernel.org, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patchs the node for sun8i-ss which is availlable on the A80.
+On Wed, Oct 16, 2019 at 03:33:41PM +0200, Corentin Labbe wrote:
+> Hello
+>
+> This patch serie adds support for the second version of Allwinner Security System.
+> The first generation of the Security System is already handled by the sun4i-ss driver.
+> Due to major change, the first driver cannot handle the second one.
+> This new Security System is present on A80 and A83T SoCs.
+>
+> For the moment, the driver support only DES3/AES in ECB/CBC mode.
+> Patchs for CTR/CTS, RSA and RNGs will came later.
+>
+> This serie is tested with CRYPTO_MANAGER_EXTRA_TESTS
+> and tested on:
+> sun8i-a83t-bananapi-m3
+> sun9i-a80-cubieboard4
+>
+> This serie is based on top of the "crypto: add sun8i-ce driver for
+> Allwinner crypto engine" serie.
 
-Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
----
- arch/arm/boot/dts/sun9i-a80.dtsi | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+For the crypto part,
+Acked-by: Maxime Ripard <mripard@kernel.org>
 
-diff --git a/arch/arm/boot/dts/sun9i-a80.dtsi b/arch/arm/boot/dts/sun9i-a80.dtsi
-index b9b6fb00be28..d7498a1a158e 100644
---- a/arch/arm/boot/dts/sun9i-a80.dtsi
-+++ b/arch/arm/boot/dts/sun9i-a80.dtsi
-@@ -457,6 +457,16 @@
- 			reg = <0x01700000 0x100>;
- 		};
- 
-+		crypto: crypto@1c02000 {
-+			compatible = "allwinner,sun9i-a80-crypto";
-+			reg = <0x01c02000 0x1000>;
-+			interrupts = <GIC_SPI 80 IRQ_TYPE_LEVEL_HIGH>;
-+			resets = <&ccu RST_BUS_SS>;
-+			reset-names = "bus";
-+			clocks = <&ccu CLK_BUS_SS>, <&ccu CLK_SS>;
-+			clock-names = "bus", "mod";
-+		};
-+
- 		mmc0: mmc@1c0f000 {
- 			compatible = "allwinner,sun9i-a80-mmc";
- 			reg = <0x01c0f000 0x1000>;
--- 
-2.21.0
+I'll apply patches 3 and 4 once Herbert will have merged the patches 1 and 2
 
+Thanks!
+Maxime
 
 _______________________________________________
 linux-arm-kernel mailing list
