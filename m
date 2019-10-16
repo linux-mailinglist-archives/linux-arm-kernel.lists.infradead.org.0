@@ -2,39 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E6A2D950D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 17:08:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9912FD950E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 17:08:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h0dDPHqY1PmTlR/LxeHsNHzWFJwvmBzGZfTUpK0h29Y=; b=bmk7FzCFWN7491
-	vkF/CAEGWmf8njNCRcaZkbN4QGffQz8csdmxc+dbYQ2I5ALR/vr+NYOucltHIpKeD20hc34m25csP
-	T4bCj36agWo9swkxQoA6+AdP7esEbD2JntrmyWdhyBgNwq++BK4hmUQm5JiKIpeVXPb1Qx7xpSbjh
-	kL8cM+gq1mq+c8CV0Z7IVZIG8KL+G38//DpRLX/+swPGZcqFfeOAliKQLb2xzXpX1V7KJsb+44fSR
-	4eygSVux2z9xIxuy4zKc5DAFqXeGcFbBbRVLWXc1jWPWHRD0nugibd7QWIu6kmQGH8OR0UiZ43W8w
-	4xzDn2MNLn6zPDwDnhkg==;
+	List-Owner; bh=/DjqnNtcm1LIJvw3VrnbYAxKye4VJ6Wp8X7b5Owq7p4=; b=JdwupJis8fp6Yl
+	NlG8pdOVY2s+ZU0HIk78ylqqrl8WgdtU68QCMeiTQee/D9b/JAQLZAozK2mOtl7Dww9sUuPyxE9fa
+	qCo8gGzc/TpJ55AmIVEFCAyHvQqdxQYqco6VaisGtNz2pDVorO9sEK8gIohr7xT6INBLMiJjCnViY
+	E1r7dHOuAzPeC8Depf0BTmEQ9N57HV6u/37OqG2xUZsCodSm3AEeXLvRKFdnH76VAaZWLBDtnrDau
+	7KqhG9UQ+Ni3GpVNd+QJTSIpEmD2rHfW45hRH9qhOcVSVeXtCnKijgmCff0Q0hmEHlIvtCje9oest
+	XBldDHt9zzWT2CM0uYqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKkuR-00067r-CO; Wed, 16 Oct 2019 15:08:19 +0000
-Received: from skedge04.snt-world.com ([91.208.41.69])
+	id 1iKkui-0006K7-76; Wed, 16 Oct 2019 15:08:36 +0000
+Received: from skedge03.snt-world.com ([91.208.41.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKktb-0005Y9-SE
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 15:07:30 +0000
-Received: from sntmail12r.snt-is.com (unknown [10.203.32.182])
+ id 1iKktf-0005d1-TQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 15:07:35 +0000
+Received: from sntmail10s.snt-is.com (unknown [10.203.32.183])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by skedge04.snt-world.com (Postfix) with ESMTPS id E45E57CDEBC;
- Wed, 16 Oct 2019 17:07:25 +0200 (CEST)
-Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail12r.snt-is.com
- (10.203.32.182) with Microsoft SMTP Server (version=TLS1_2,
+ by skedge03.snt-world.com (Postfix) with ESMTPS id B602267A91E;
+ Wed, 16 Oct 2019 17:07:28 +0200 (CEST)
+Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail10s.snt-is.com
+ (10.203.32.183) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Wed, 16 Oct
- 2019 17:07:25 +0200
+ 2019 17:07:28 +0200
 Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
  sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
- 15.01.1713.004; Wed, 16 Oct 2019 17:07:25 +0200
+ 15.01.1713.004; Wed, 16 Oct 2019 17:07:28 +0200
 From: Schrempf Frieder <frieder.schrempf@kontron.de>
 To: "krzk@kernel.org" <krzk@kernel.org>, "robh+dt@kernel.org"
  <robh+dt@kernel.org>, Schrempf Frieder <frieder.schrempf@kontron.de>, "Mark
@@ -42,13 +42,13 @@ To: "krzk@kernel.org" <krzk@kernel.org>, "robh+dt@kernel.org"
  Hauer <s.hauer@pengutronix.de>, Pengutronix Kernel Team
  <kernel@pengutronix.de>, Fabio Estevam <festevam@gmail.com>, NXP Linux Team
  <linux-imx@nxp.com>
-Subject: [PATCH 03/10] ARM: dts: imx6ul-kontron-n6310-s: Move common nodes to
- a separate file
-Thread-Topic: [PATCH 03/10] ARM: dts: imx6ul-kontron-n6310-s: Move common
- nodes to a separate file
-Thread-Index: AQHVhDNridwU/x73F0y3lESzDZ9q0g==
-Date: Wed, 16 Oct 2019 15:07:25 +0000
-Message-ID: <20191016150622.21753-4-frieder.schrempf@kontron.de>
+Subject: [PATCH 04/10] ARM: dts: Add support for two more Kontron evalkit
+ boards 'N6311 S' and 'N6411 S'
+Thread-Topic: [PATCH 04/10] ARM: dts: Add support for two more Kontron evalkit
+ boards 'N6311 S' and 'N6411 S'
+Thread-Index: AQHVhDNsS5ktJLzuU02mNdvRfw+CLg==
+Date: Wed, 16 Oct 2019 15:07:28 +0000
+Message-ID: <20191016150622.21753-5-frieder.schrempf@kontron.de>
 References: <20191016150622.21753-1-frieder.schrempf@kontron.de>
 In-Reply-To: <20191016150622.21753-1-frieder.schrempf@kontron.de>
 Accept-Language: de-DE, en-US
@@ -60,7 +60,7 @@ x-originating-ip: [172.25.9.193]
 x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
 MIME-Version: 1.0
 X-SnT-MailScanner-Information: Please contact the ISP for more information
-X-SnT-MailScanner-ID: E45E57CDEBC.A435B
+X-SnT-MailScanner-ID: B602267A91E.AEA7B
 X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
  Provider for details
 X-SnT-MailScanner-SpamCheck: 
@@ -72,15 +72,15 @@ X-SnT-MailScanner-To: devicetree@vger.kernel.org, festevam@gmail.com,
  robh+dt@kernel.org, s.hauer@pengutronix.de, shawnguo@kernel.org
 X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_080728_253220_08769168 
-X-CRM114-Status: GOOD (  12.56  )
+X-CRM114-CacheID: sfid-20191016_080732_363574_020DDF2E 
+X-CRM114-Status: GOOD (  10.84  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [91.208.41.69 listed in list.dnswl.org]
+ no trust [91.208.41.68 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -104,853 +104,61 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Frieder Schrempf <frieder.schrempf@kontron.de>
 
-The baseboard for the Kontron N6310 SoM is also used for other SoMs
-such as N6311 and N6411. In order to share the code, we move the
-definitions of the baseboard to a separate dtsi file.
+The 'N6311 S' and the 'N6411 S' are similar to the Kontron 'N6310 S'
+evaluation kit boards. Instead of the N6310 SoM, they feature a N6311
+or N6411 SoM.
 
 Signed-off-by: Frieder Schrempf <frieder.schrempf@kontron.de>
 ---
- arch/arm/boot/dts/imx6ul-kontron-n6310-s.dts  | 405 +----------------
- arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi | 412 ++++++++++++++++++
- 2 files changed, 413 insertions(+), 404 deletions(-)
- create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi
+ arch/arm/boot/dts/imx6ul-kontron-n6311-s.dts  | 16 ++++++++++++++++
+ arch/arm/boot/dts/imx6ull-kontron-n6411-s.dts | 16 ++++++++++++++++
+ 2 files changed, 32 insertions(+)
+ create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6311-s.dts
+ create mode 100644 arch/arm/boot/dts/imx6ull-kontron-n6411-s.dts
 
-diff --git a/arch/arm/boot/dts/imx6ul-kontron-n6310-s.dts b/arch/arm/boot/dts/imx6ul-kontron-n6310-s.dts
-index 0205fd56d975..5a3e06d6219b 100644
---- a/arch/arm/boot/dts/imx6ul-kontron-n6310-s.dts
-+++ b/arch/arm/boot/dts/imx6ul-kontron-n6310-s.dts
-@@ -8,413 +8,10 @@
- /dts-v1/;
- 
- #include "imx6ul-kontron-n6310-som.dtsi"
-+#include "imx6ul-kontron-n6x1x-s.dtsi"
- 
- / {
- 	model = "Kontron N6310 S";
- 	compatible = "kontron,imx6ul-n6310-s", "kontron,imx6ul-n6310-som",
- 		     "fsl,imx6ul";
--
--	gpio-leds {
--		compatible = "gpio-leds";
--		pinctrl-names = "default";
--		pinctrl-0 = <&pinctrl_gpio_leds>;
--
--		led1 {
--			label = "debug-led1";
--			gpios = <&gpio1 30 GPIO_ACTIVE_LOW>;
--			default-state = "off";
--			linux,default-trigger = "heartbeat";
--		};
--
--		led2 {
--			label = "debug-led2";
--			gpios = <&gpio5 3 GPIO_ACTIVE_LOW>;
--			default-state = "off";
--		};
--
--		led3 {
--			label = "debug-led3";
--			gpios = <&gpio5 2 GPIO_ACTIVE_LOW>;
--			default-state = "off";
--		};
--	};
--
--	pwm-beeper {
--		compatible = "pwm-beeper";
--		pwms = <&pwm8 0 5000>;
--	};
--
--	reg_3v3: regulator-3v3 {
--		compatible = "regulator-fixed";
--		regulator-name = "3v3";
--		regulator-min-microvolt = <3300000>;
--		regulator-max-microvolt = <3300000>;
--	};
--
--	reg_usb_otg1_vbus: regulator-usb-otg1-vbus {
--		compatible = "regulator-fixed";
--		regulator-name = "usb_otg1_vbus";
--		regulator-min-microvolt = <5000000>;
--		regulator-max-microvolt = <5000000>;
--		gpio = <&gpio1 4 GPIO_ACTIVE_HIGH>;
--		enable-active-high;
--	};
--
--	reg_vref_adc: regulator-vref-adc {
--		compatible = "regulator-fixed";
--		regulator-name = "vref-adc";
--		regulator-min-microvolt = <3300000>;
--		regulator-max-microvolt = <3300000>;
--	};
--};
--
--&adc1 {
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_adc1>;
--	num-channels = <3>;
--	vref-supply = <&reg_vref_adc>;
--	status = "okay";
--};
--
--&can2 {
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_flexcan2>;
--	status = "okay";
--};
--
--&ecspi1 {
--	cs-gpios = <&gpio4 26 GPIO_ACTIVE_HIGH>;
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_ecspi1>;
--	status = "okay";
--
--	eeprom@0 {
--		compatible = "anvo,anv32e61w", "atmel,at25";
--		reg = <0>;
--		spi-max-frequency = <20000000>;
--		spi-cpha;
--		spi-cpol;
--		pagesize = <1>;
--		size = <8192>;
--		address-width = <16>;
--	};
--};
--
--&fec1 {
--	pinctrl-0 = <&pinctrl_enet1>;
--	/delete-node/ mdio;
--};
--
--&fec2 {
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_enet2 &pinctrl_enet2_mdio>;
--	phy-mode = "rmii";
--	phy-handle = <&ethphy2>;
--	status = "okay";
--
--	mdio {
--		#address-cells = <1>;
--		#size-cells = <0>;
--
--		ethphy1: ethernet-phy@1 {
--			reg = <1>;
--			micrel,led-mode = <0>;
--			clocks = <&clks IMX6UL_CLK_ENET_REF>;
--			clock-names = "rmii-ref";
--		};
--
--		ethphy2: ethernet-phy@2 {
--			reg = <2>;
--			micrel,led-mode = <0>;
--			clocks = <&clks IMX6UL_CLK_ENET2_REF>;
--			clock-names = "rmii-ref";
--		};
--	};
--};
--
--&i2c1 {
--	clock-frequency = <100000>;
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_i2c1>;
--	status = "okay";
--};
--
--&i2c4 {
--	clock-frequency = <100000>;
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_i2c4>;
--	status = "okay";
--
--	rtc@32 {
--		compatible = "epson,rx8900";
--		reg = <0x32>;
--	};
--};
--
--&pwm8 {
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_pwm8>;
--	status = "okay";
--};
--
--&snvs_poweroff {
--	status = "okay";
--};
--
--&uart1 {
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_uart1>;
--	status = "okay";
--};
--
--&uart2 {
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_uart2>;
--	linux,rs485-enabled-at-boot-time;
--	rs485-rx-during-tx;
--	rs485-rts-active-low;
--	uart-has-rtscts;
--	status = "okay";
--};
--
--&uart3 {
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_uart3>;
--	fsl,uart-has-rtscts;
--	status = "okay";
--};
--
--&uart4 {
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_uart4>;
--	status = "okay";
--};
--
--&usbotg1 {
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_usbotg1>;
--	dr_mode = "otg";
--	srp-disable;
--	hnp-disable;
--	adp-disable;
--	vbus-supply = <&reg_usb_otg1_vbus>;
--	status = "okay";
--};
--
--&usbotg2 {
--	dr_mode = "host";
--	disable-over-current;
--	status = "okay";
--};
--
--&usdhc1 {
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_usdhc1>;
--	cd-gpios = <&gpio1 19 GPIO_ACTIVE_LOW>;
--	keep-power-in-suspend;
--	wakeup-source;
--	vmmc-supply = <&reg_3v3>;
--	voltage-ranges = <3300 3300>;
--	no-1-8-v;
--	status = "okay";
--};
--
--&usdhc2 {
--	pinctrl-names = "default", "state_100mhz", "state_200mhz";
--	pinctrl-0 = <&pinctrl_usdhc2>;
--	pinctrl-1 = <&pinctrl_usdhc2_100mhz>;
--	pinctrl-2 = <&pinctrl_usdhc2_200mhz>;
--	non-removable;
--	keep-power-in-suspend;
--	wakeup-source;
--	vmmc-supply = <&reg_3v3>;
--	voltage-ranges = <3300 3300>;
--	no-1-8-v;
--	status = "okay";
--};
--
--&wdog1 {
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_wdog>;
--	fsl,ext-reset-output;
--	status = "okay";
--};
--
--&iomuxc {
--	pinctrl-0 = <&pinctrl_reset_out &pinctrl_gpio>;
--
--	pinctrl_adc1: adc1grp {
--		fsl,pins = <
--			MX6UL_PAD_GPIO1_IO02__GPIO1_IO02	0xb0
--			MX6UL_PAD_GPIO1_IO03__GPIO1_IO03	0xb0
--			MX6UL_PAD_GPIO1_IO08__GPIO1_IO08	0xb0
--		>;
--	};
--
--	/* FRAM */
--	pinctrl_ecspi1: ecspi1grp {
--		fsl,pins = <
--			MX6UL_PAD_CSI_DATA07__ECSPI1_MISO	0x100b1
--			MX6UL_PAD_CSI_DATA06__ECSPI1_MOSI	0x100b1
--			MX6UL_PAD_CSI_DATA04__ECSPI1_SCLK	0x100b1
--			MX6UL_PAD_CSI_DATA05__GPIO4_IO26	0x100b1	/* ECSPI1-CS1 */
--		>;
--	};
--
--	pinctrl_enet2: enet2grp {
--		fsl,pins = <
--			MX6UL_PAD_ENET2_RX_EN__ENET2_RX_EN	0x1b0b0
--			MX6UL_PAD_ENET2_RX_ER__ENET2_RX_ER	0x1b0b0
--			MX6UL_PAD_ENET2_RX_DATA0__ENET2_RDATA00	0x1b0b0
--			MX6UL_PAD_ENET2_RX_DATA1__ENET2_RDATA01	0x1b0b0
--			MX6UL_PAD_ENET2_TX_EN__ENET2_TX_EN	0x1b0b0
--			MX6UL_PAD_ENET2_TX_DATA0__ENET2_TDATA00	0x1b0b0
--			MX6UL_PAD_ENET2_TX_DATA1__ENET2_TDATA01	0x1b0b0
--			MX6UL_PAD_ENET2_TX_CLK__ENET2_REF_CLK2	0x4001b009
--		>;
--	};
--
--	pinctrl_enet2_mdio: enet2mdiogrp {
--		fsl,pins = <
--			MX6UL_PAD_GPIO1_IO07__ENET2_MDC         0x1b0b0
--			MX6UL_PAD_GPIO1_IO06__ENET2_MDIO        0x1b0b0
--		>;
--	};
--
--	pinctrl_flexcan2: flexcan2grp{
--		fsl,pins = <
--			MX6UL_PAD_UART2_RTS_B__FLEXCAN2_RX	0x1b020
--			MX6UL_PAD_UART2_CTS_B__FLEXCAN2_TX	0x1b020
--		>;
--	};
--
--	pinctrl_gpio: gpiogrp {
--		fsl,pins = <
--			MX6UL_PAD_SNVS_TAMPER5__GPIO5_IO05	0x1b0b0 /* DOUT1 */
--			MX6UL_PAD_SNVS_TAMPER4__GPIO5_IO04	0x1b0b0 /* DIN1 */
--			MX6UL_PAD_SNVS_TAMPER1__GPIO5_IO01	0x1b0b0 /* DOUT2 */
--			MX6UL_PAD_SNVS_TAMPER0__GPIO5_IO00	0x1b0b0 /* DIN2 */
--		>;
--	};
--
--	pinctrl_gpio_leds: gpioledsgrp {
--		fsl,pins = <
--			MX6UL_PAD_UART5_TX_DATA__GPIO1_IO30	0x1b0b0	/* LED H14 */
--			MX6UL_PAD_SNVS_TAMPER3__GPIO5_IO03	0x1b0b0	/* LED H15 */
--			MX6UL_PAD_SNVS_TAMPER2__GPIO5_IO02	0x1b0b0	/* LED H16 */
--		>;
--	};
--
--	pinctrl_i2c1: i2c1grp {
--		fsl,pins = <
--			MX6UL_PAD_CSI_PIXCLK__I2C1_SCL		0x4001b8b0
--			MX6UL_PAD_CSI_MCLK__I2C1_SDA		0x4001b8b0
--		>;
--	};
--
--	pinctrl_i2c4: i2c4grp {
--		fsl,pins = <
--			MX6UL_PAD_UART2_TX_DATA__I2C4_SCL	0x4001f8b0
--			MX6UL_PAD_UART2_RX_DATA__I2C4_SDA	0x4001f8b0
--		>;
--	};
--
--	pinctrl_pwm8: pwm8grp {
--		fsl,pins = <
--			MX6UL_PAD_CSI_HSYNC__PWM8_OUT		0x110b0
--		>;
--	};
--
--	pinctrl_uart1: uart1grp {
--		fsl,pins = <
--			MX6UL_PAD_UART1_TX_DATA__UART1_DCE_TX	0x1b0b1
--			MX6UL_PAD_UART1_RX_DATA__UART1_DCE_RX	0x1b0b1
--		>;
--	};
--
--	pinctrl_uart2: uart2grp {
--		fsl,pins = <
--			MX6UL_PAD_NAND_DATA04__UART2_DCE_TX	0x1b0b1
--			MX6UL_PAD_NAND_DATA05__UART2_DCE_RX	0x1b0b1
--			MX6UL_PAD_NAND_DATA06__UART2_DCE_CTS	0x1b0b1
--			/*
--			 * mux unused RTS to make sure it doesn't cause
--			 * any interrupts when it is undefined
--			 */
--			MX6UL_PAD_NAND_DATA07__UART2_DCE_RTS	0x1b0b1
--		>;
--	};
--
--	pinctrl_uart3: uart3grp {
--		fsl,pins = <
--			MX6UL_PAD_UART3_TX_DATA__UART3_DCE_TX	0x1b0b1
--			MX6UL_PAD_UART3_RX_DATA__UART3_DCE_RX	0x1b0b1
--			MX6UL_PAD_UART3_CTS_B__UART3_DCE_CTS	0x1b0b1
--			MX6UL_PAD_UART3_RTS_B__UART3_DCE_RTS	0x1b0b1
--		>;
--	};
--
--	pinctrl_uart4: uart4grp {
--		fsl,pins = <
--			MX6UL_PAD_UART4_TX_DATA__UART4_DCE_TX	0x1b0b1
--			MX6UL_PAD_UART4_RX_DATA__UART4_DCE_RX	0x1b0b1
--		>;
--	};
--
--	pinctrl_usbotg1: usbotg1 {
--		fsl,pins = <
--			MX6UL_PAD_GPIO1_IO04__GPIO1_IO04	0x1b0b0
--		>;
--	};
--
--	pinctrl_usdhc1: usdhc1grp {
--		fsl,pins = <
--			MX6UL_PAD_SD1_CMD__USDHC1_CMD		0x17059
--			MX6UL_PAD_SD1_CLK__USDHC1_CLK		0x10059
--			MX6UL_PAD_SD1_DATA0__USDHC1_DATA0	0x17059
--			MX6UL_PAD_SD1_DATA1__USDHC1_DATA1	0x17059
--			MX6UL_PAD_SD1_DATA2__USDHC1_DATA2	0x17059
--			MX6UL_PAD_SD1_DATA3__USDHC1_DATA3	0x17059
--			MX6UL_PAD_UART1_RTS_B__GPIO1_IO19	0x100b1	/* SD1_CD */
--		>;
--	};
--
--	pinctrl_usdhc2: usdhc2grp {
--		fsl,pins = <
--			MX6UL_PAD_NAND_RE_B__USDHC2_CLK		0x10059
--			MX6UL_PAD_NAND_WE_B__USDHC2_CMD		0x17059
--			MX6UL_PAD_NAND_DATA00__USDHC2_DATA0	0x17059
--			MX6UL_PAD_NAND_DATA01__USDHC2_DATA1	0x17059
--			MX6UL_PAD_NAND_DATA02__USDHC2_DATA2	0x17059
--			MX6UL_PAD_NAND_DATA03__USDHC2_DATA3	0x17059
--		>;
--	};
--
--	pinctrl_usdhc2_100mhz: usdhc2-100mhzgrp {
--		fsl,pins = <
--			MX6UL_PAD_NAND_RE_B__USDHC2_CLK		0x100b9
--			MX6UL_PAD_NAND_WE_B__USDHC2_CMD		0x170b9
--			MX6UL_PAD_NAND_DATA00__USDHC2_DATA0	0x170b9
--			MX6UL_PAD_NAND_DATA01__USDHC2_DATA1	0x170b9
--			MX6UL_PAD_NAND_DATA02__USDHC2_DATA2	0x170b9
--			MX6UL_PAD_NAND_DATA03__USDHC2_DATA3	0x170b9
--		>;
--	};
--
--	pinctrl_usdhc2_200mhz: usdhc2-200mhzgrp {
--		fsl,pins = <
--			MX6UL_PAD_NAND_RE_B__USDHC2_CLK		0x100f9
--			MX6UL_PAD_NAND_WE_B__USDHC2_CMD		0x170f9
--			MX6UL_PAD_NAND_DATA00__USDHC2_DATA0	0x170f9
--			MX6UL_PAD_NAND_DATA01__USDHC2_DATA1	0x170f9
--			MX6UL_PAD_NAND_DATA02__USDHC2_DATA2	0x170f9
--			MX6UL_PAD_NAND_DATA03__USDHC2_DATA3	0x170f9
--		>;
--	};
--
--	pinctrl_wdog: wdoggrp {
--		fsl,pins = <
--			MX6UL_PAD_GPIO1_IO09__WDOG1_WDOG_ANY	0x30b0
--		>;
--	};
- };
-diff --git a/arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi b/arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi
+diff --git a/arch/arm/boot/dts/imx6ul-kontron-n6311-s.dts b/arch/arm/boot/dts/imx6ul-kontron-n6311-s.dts
 new file mode 100644
-index 000000000000..08a326ce2cbe
+index 000000000000..239a1af3aeaa
 --- /dev/null
-+++ b/arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi
-@@ -0,0 +1,412 @@
++++ b/arch/arm/boot/dts/imx6ul-kontron-n6311-s.dts
+@@ -0,0 +1,16 @@
 +// SPDX-License-Identifier: GPL-2.0
 +/*
 + * Copyright (C) 2017 exceet electronics GmbH
 + * Copyright (C) 2018 Kontron Electronics GmbH
-+ * Copyright (c) 2019 Krzysztof Kozlowski <krzk@kernel.org>
 + */
 +
++/dts-v1/;
++
++#include "imx6ul-kontron-n6311-som.dtsi"
++#include "imx6ul-kontron-n6x1x-s.dtsi"
++
 +/ {
-+	gpio-leds {
-+		compatible = "gpio-leds";
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pinctrl_gpio_leds>;
-+
-+		led1 {
-+			label = "debug-led1";
-+			gpios = <&gpio1 30 GPIO_ACTIVE_LOW>;
-+			default-state = "off";
-+			linux,default-trigger = "heartbeat";
-+		};
-+
-+		led2 {
-+			label = "debug-led2";
-+			gpios = <&gpio5 3 GPIO_ACTIVE_LOW>;
-+			default-state = "off";
-+		};
-+
-+		led3 {
-+			label = "debug-led3";
-+			gpios = <&gpio5 2 GPIO_ACTIVE_LOW>;
-+			default-state = "off";
-+		};
-+	};
-+
-+	pwm-beeper {
-+		compatible = "pwm-beeper";
-+		pwms = <&pwm8 0 5000>;
-+	};
-+
-+	reg_3v3: regulator-3v3 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "3v3";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+	};
-+
-+	reg_usb_otg1_vbus: regulator-usb-otg1-vbus {
-+		compatible = "regulator-fixed";
-+		regulator-name = "usb_otg1_vbus";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		gpio = <&gpio1 4 GPIO_ACTIVE_HIGH>;
-+		enable-active-high;
-+	};
-+
-+	reg_vref_adc: regulator-vref-adc {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vref-adc";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+	};
++	model = "Kontron N6311 S";
++	compatible = "kontron,imx6ul-n6311-s", "kontron,imx6ul-n6311-som",
++		     "fsl,imx6ul";
 +};
+diff --git a/arch/arm/boot/dts/imx6ull-kontron-n6411-s.dts b/arch/arm/boot/dts/imx6ull-kontron-n6411-s.dts
+new file mode 100644
+index 000000000000..57588a5e1e34
+--- /dev/null
++++ b/arch/arm/boot/dts/imx6ull-kontron-n6411-s.dts
+@@ -0,0 +1,16 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright (C) 2017 exceet electronics GmbH
++ * Copyright (C) 2019 Kontron Electronics GmbH
++ */
 +
-+&adc1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_adc1>;
-+	num-channels = <3>;
-+	vref-supply = <&reg_vref_adc>;
-+	status = "okay";
-+};
++/dts-v1/;
 +
-+&can2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_flexcan2>;
-+	status = "okay";
-+};
++#include "imx6ull-kontron-n6411-som.dtsi"
++#include "imx6ul-kontron-n6x1x-s.dtsi"
 +
-+&ecspi1 {
-+	cs-gpios = <&gpio4 26 GPIO_ACTIVE_HIGH>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_ecspi1>;
-+	status = "okay";
-+
-+	eeprom@0 {
-+		compatible = "anvo,anv32e61w", "atmel,at25";
-+		reg = <0>;
-+		spi-max-frequency = <20000000>;
-+		spi-cpha;
-+		spi-cpol;
-+		pagesize = <1>;
-+		size = <8192>;
-+		address-width = <16>;
-+	};
-+};
-+
-+&fec1 {
-+	pinctrl-0 = <&pinctrl_enet1>;
-+	/delete-node/ mdio;
-+};
-+
-+&fec2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_enet2 &pinctrl_enet2_mdio>;
-+	phy-mode = "rmii";
-+	phy-handle = <&ethphy2>;
-+	status = "okay";
-+
-+	mdio {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		ethphy1: ethernet-phy@1 {
-+			reg = <1>;
-+			micrel,led-mode = <0>;
-+			clocks = <&clks IMX6UL_CLK_ENET_REF>;
-+			clock-names = "rmii-ref";
-+		};
-+
-+		ethphy2: ethernet-phy@2 {
-+			reg = <2>;
-+			micrel,led-mode = <0>;
-+			clocks = <&clks IMX6UL_CLK_ENET2_REF>;
-+			clock-names = "rmii-ref";
-+		};
-+	};
-+};
-+
-+&i2c1 {
-+	clock-frequency = <100000>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_i2c1>;
-+	status = "okay";
-+};
-+
-+&i2c4 {
-+	clock-frequency = <100000>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_i2c4>;
-+	status = "okay";
-+
-+	rtc@32 {
-+		compatible = "epson,rx8900";
-+		reg = <0x32>;
-+	};
-+};
-+
-+&pwm8 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_pwm8>;
-+	status = "okay";
-+};
-+
-+&snvs_poweroff {
-+	status = "okay";
-+};
-+
-+&uart1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_uart1>;
-+	status = "okay";
-+};
-+
-+&uart2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_uart2>;
-+	linux,rs485-enabled-at-boot-time;
-+	rs485-rx-during-tx;
-+	rs485-rts-active-low;
-+	uart-has-rtscts;
-+	status = "okay";
-+};
-+
-+&uart3 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_uart3>;
-+	fsl,uart-has-rtscts;
-+	status = "okay";
-+};
-+
-+&uart4 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_uart4>;
-+	status = "okay";
-+};
-+
-+&usbotg1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_usbotg1>;
-+	dr_mode = "otg";
-+	srp-disable;
-+	hnp-disable;
-+	adp-disable;
-+	vbus-supply = <&reg_usb_otg1_vbus>;
-+	status = "okay";
-+};
-+
-+&usbotg2 {
-+	dr_mode = "host";
-+	disable-over-current;
-+	status = "okay";
-+};
-+
-+&usdhc1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_usdhc1>;
-+	cd-gpios = <&gpio1 19 GPIO_ACTIVE_LOW>;
-+	keep-power-in-suspend;
-+	wakeup-source;
-+	vmmc-supply = <&reg_3v3>;
-+	voltage-ranges = <3300 3300>;
-+	no-1-8-v;
-+	status = "okay";
-+};
-+
-+&usdhc2 {
-+	pinctrl-names = "default", "state_100mhz", "state_200mhz";
-+	pinctrl-0 = <&pinctrl_usdhc2>;
-+	pinctrl-1 = <&pinctrl_usdhc2_100mhz>;
-+	pinctrl-2 = <&pinctrl_usdhc2_200mhz>;
-+	non-removable;
-+	keep-power-in-suspend;
-+	wakeup-source;
-+	vmmc-supply = <&reg_3v3>;
-+	voltage-ranges = <3300 3300>;
-+	no-1-8-v;
-+	status = "okay";
-+};
-+
-+&wdog1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_wdog>;
-+	fsl,ext-reset-output;
-+	status = "okay";
-+};
-+
-+&iomuxc {
-+	pinctrl-0 = <&pinctrl_reset_out &pinctrl_gpio>;
-+
-+	pinctrl_adc1: adc1grp {
-+		fsl,pins = <
-+			MX6UL_PAD_GPIO1_IO02__GPIO1_IO02	0xb0
-+			MX6UL_PAD_GPIO1_IO03__GPIO1_IO03	0xb0
-+			MX6UL_PAD_GPIO1_IO08__GPIO1_IO08	0xb0
-+		>;
-+	};
-+
-+	/* FRAM */
-+	pinctrl_ecspi1: ecspi1grp {
-+		fsl,pins = <
-+			MX6UL_PAD_CSI_DATA07__ECSPI1_MISO	0x100b1
-+			MX6UL_PAD_CSI_DATA06__ECSPI1_MOSI	0x100b1
-+			MX6UL_PAD_CSI_DATA04__ECSPI1_SCLK	0x100b1
-+			MX6UL_PAD_CSI_DATA05__GPIO4_IO26	0x100b1	/* ECSPI1-CS1 */
-+		>;
-+	};
-+
-+	pinctrl_enet2: enet2grp {
-+		fsl,pins = <
-+			MX6UL_PAD_ENET2_RX_EN__ENET2_RX_EN	0x1b0b0
-+			MX6UL_PAD_ENET2_RX_ER__ENET2_RX_ER	0x1b0b0
-+			MX6UL_PAD_ENET2_RX_DATA0__ENET2_RDATA00	0x1b0b0
-+			MX6UL_PAD_ENET2_RX_DATA1__ENET2_RDATA01	0x1b0b0
-+			MX6UL_PAD_ENET2_TX_EN__ENET2_TX_EN	0x1b0b0
-+			MX6UL_PAD_ENET2_TX_DATA0__ENET2_TDATA00	0x1b0b0
-+			MX6UL_PAD_ENET2_TX_DATA1__ENET2_TDATA01	0x1b0b0
-+			MX6UL_PAD_ENET2_TX_CLK__ENET2_REF_CLK2	0x4001b009
-+		>;
-+	};
-+
-+	pinctrl_enet2_mdio: enet2mdiogrp {
-+		fsl,pins = <
-+			MX6UL_PAD_GPIO1_IO07__ENET2_MDC         0x1b0b0
-+			MX6UL_PAD_GPIO1_IO06__ENET2_MDIO        0x1b0b0
-+		>;
-+	};
-+
-+	pinctrl_flexcan2: flexcan2grp{
-+		fsl,pins = <
-+			MX6UL_PAD_UART2_RTS_B__FLEXCAN2_RX	0x1b020
-+			MX6UL_PAD_UART2_CTS_B__FLEXCAN2_TX	0x1b020
-+		>;
-+	};
-+
-+	pinctrl_gpio: gpiogrp {
-+		fsl,pins = <
-+			MX6UL_PAD_SNVS_TAMPER5__GPIO5_IO05	0x1b0b0 /* DOUT1 */
-+			MX6UL_PAD_SNVS_TAMPER4__GPIO5_IO04	0x1b0b0 /* DIN1 */
-+			MX6UL_PAD_SNVS_TAMPER1__GPIO5_IO01	0x1b0b0 /* DOUT2 */
-+			MX6UL_PAD_SNVS_TAMPER0__GPIO5_IO00	0x1b0b0 /* DIN2 */
-+		>;
-+	};
-+
-+	pinctrl_gpio_leds: gpioledsgrp {
-+		fsl,pins = <
-+			MX6UL_PAD_UART5_TX_DATA__GPIO1_IO30	0x1b0b0	/* LED H14 */
-+			MX6UL_PAD_SNVS_TAMPER3__GPIO5_IO03	0x1b0b0	/* LED H15 */
-+			MX6UL_PAD_SNVS_TAMPER2__GPIO5_IO02	0x1b0b0	/* LED H16 */
-+		>;
-+	};
-+
-+	pinctrl_i2c1: i2c1grp {
-+		fsl,pins = <
-+			MX6UL_PAD_CSI_PIXCLK__I2C1_SCL		0x4001b8b0
-+			MX6UL_PAD_CSI_MCLK__I2C1_SDA		0x4001b8b0
-+		>;
-+	};
-+
-+	pinctrl_i2c4: i2c4grp {
-+		fsl,pins = <
-+			MX6UL_PAD_UART2_TX_DATA__I2C4_SCL	0x4001f8b0
-+			MX6UL_PAD_UART2_RX_DATA__I2C4_SDA	0x4001f8b0
-+		>;
-+	};
-+
-+	pinctrl_pwm8: pwm8grp {
-+		fsl,pins = <
-+			MX6UL_PAD_CSI_HSYNC__PWM8_OUT		0x110b0
-+		>;
-+	};
-+
-+	pinctrl_uart1: uart1grp {
-+		fsl,pins = <
-+			MX6UL_PAD_UART1_TX_DATA__UART1_DCE_TX	0x1b0b1
-+			MX6UL_PAD_UART1_RX_DATA__UART1_DCE_RX	0x1b0b1
-+		>;
-+	};
-+
-+	pinctrl_uart2: uart2grp {
-+		fsl,pins = <
-+			MX6UL_PAD_NAND_DATA04__UART2_DCE_TX	0x1b0b1
-+			MX6UL_PAD_NAND_DATA05__UART2_DCE_RX	0x1b0b1
-+			MX6UL_PAD_NAND_DATA06__UART2_DCE_CTS	0x1b0b1
-+			/*
-+			 * mux unused RTS to make sure it doesn't cause
-+			 * any interrupts when it is undefined
-+			 */
-+			MX6UL_PAD_NAND_DATA07__UART2_DCE_RTS	0x1b0b1
-+		>;
-+	};
-+
-+	pinctrl_uart3: uart3grp {
-+		fsl,pins = <
-+			MX6UL_PAD_UART3_TX_DATA__UART3_DCE_TX	0x1b0b1
-+			MX6UL_PAD_UART3_RX_DATA__UART3_DCE_RX	0x1b0b1
-+			MX6UL_PAD_UART3_CTS_B__UART3_DCE_CTS	0x1b0b1
-+			MX6UL_PAD_UART3_RTS_B__UART3_DCE_RTS	0x1b0b1
-+		>;
-+	};
-+
-+	pinctrl_uart4: uart4grp {
-+		fsl,pins = <
-+			MX6UL_PAD_UART4_TX_DATA__UART4_DCE_TX	0x1b0b1
-+			MX6UL_PAD_UART4_RX_DATA__UART4_DCE_RX	0x1b0b1
-+		>;
-+	};
-+
-+	pinctrl_usbotg1: usbotg1 {
-+		fsl,pins = <
-+			MX6UL_PAD_GPIO1_IO04__GPIO1_IO04	0x1b0b0
-+		>;
-+	};
-+
-+	pinctrl_usdhc1: usdhc1grp {
-+		fsl,pins = <
-+			MX6UL_PAD_SD1_CMD__USDHC1_CMD		0x17059
-+			MX6UL_PAD_SD1_CLK__USDHC1_CLK		0x10059
-+			MX6UL_PAD_SD1_DATA0__USDHC1_DATA0	0x17059
-+			MX6UL_PAD_SD1_DATA1__USDHC1_DATA1	0x17059
-+			MX6UL_PAD_SD1_DATA2__USDHC1_DATA2	0x17059
-+			MX6UL_PAD_SD1_DATA3__USDHC1_DATA3	0x17059
-+			MX6UL_PAD_UART1_RTS_B__GPIO1_IO19	0x100b1	/* SD1_CD */
-+		>;
-+	};
-+
-+	pinctrl_usdhc2: usdhc2grp {
-+		fsl,pins = <
-+			MX6UL_PAD_NAND_RE_B__USDHC2_CLK		0x10059
-+			MX6UL_PAD_NAND_WE_B__USDHC2_CMD		0x17059
-+			MX6UL_PAD_NAND_DATA00__USDHC2_DATA0	0x17059
-+			MX6UL_PAD_NAND_DATA01__USDHC2_DATA1	0x17059
-+			MX6UL_PAD_NAND_DATA02__USDHC2_DATA2	0x17059
-+			MX6UL_PAD_NAND_DATA03__USDHC2_DATA3	0x17059
-+		>;
-+	};
-+
-+	pinctrl_usdhc2_100mhz: usdhc2-100mhzgrp {
-+		fsl,pins = <
-+			MX6UL_PAD_NAND_RE_B__USDHC2_CLK		0x100b9
-+			MX6UL_PAD_NAND_WE_B__USDHC2_CMD		0x170b9
-+			MX6UL_PAD_NAND_DATA00__USDHC2_DATA0	0x170b9
-+			MX6UL_PAD_NAND_DATA01__USDHC2_DATA1	0x170b9
-+			MX6UL_PAD_NAND_DATA02__USDHC2_DATA2	0x170b9
-+			MX6UL_PAD_NAND_DATA03__USDHC2_DATA3	0x170b9
-+		>;
-+	};
-+
-+	pinctrl_usdhc2_200mhz: usdhc2-200mhzgrp {
-+		fsl,pins = <
-+			MX6UL_PAD_NAND_RE_B__USDHC2_CLK		0x100f9
-+			MX6UL_PAD_NAND_WE_B__USDHC2_CMD		0x170f9
-+			MX6UL_PAD_NAND_DATA00__USDHC2_DATA0	0x170f9
-+			MX6UL_PAD_NAND_DATA01__USDHC2_DATA1	0x170f9
-+			MX6UL_PAD_NAND_DATA02__USDHC2_DATA2	0x170f9
-+			MX6UL_PAD_NAND_DATA03__USDHC2_DATA3	0x170f9
-+		>;
-+	};
-+
-+	pinctrl_wdog: wdoggrp {
-+		fsl,pins = <
-+			MX6UL_PAD_GPIO1_IO09__WDOG1_WDOG_ANY	0x30b0
-+		>;
-+	};
++/ {
++	model = "Kontron N6411 S";
++	compatible = "kontron,imx6ull-n6411-s", "kontron,imx6ull-n6411-som",
++		     "fsl,imx6ull";
 +};
 -- 
 2.17.1
