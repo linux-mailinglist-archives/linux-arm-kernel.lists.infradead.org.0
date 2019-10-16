@@ -2,62 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7973D8C72
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 11:23:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 412D6D8C96
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 11:35:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=lkSOjjc1p47LxRSIfr1YjccgKIdYjlIemPmAtVQzgSc=; b=AV2lfKfVHCUNCn
-	e5m0u1eifgnGsLXPN4Gl4w+W6GGHcUhnHvc5o5v9NONHq+faL9VVc/Lcj+u6zPp1w44dgOnvfFmKI
-	x9wd5o6H+ND47qLCfYLJwc5IC17b4ytOlDJFWa+tKt7AkqMrjRyJ0+kn55RFPkSNwt32culmUKr95
-	a//WNRbHTnJRQTrgfkLbFwIrFO+dqvG5aI3pT/k3KVmqWXkvv+VwUDGtrD91dnSB3BdBtroM3wUIU
-	iuLZYtlbUEoGPuSlJW2dGBz0uEuwOmgtJhSEGjaaiDeKAERsWj4nTSjA2XCootHFSdhaiIRyUp1s7
-	Bjno+zmoMYJdsWB36vAg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Oq/MPc2hFkaCjaMEvZHxQYQgTvu8ZoX61h76lkwNo5o=; b=IYz9omSp3bKX8B
+	mcxxr34zHybg78gTVyjAv4dsUaYkzpPok9hZ72MZ4eB7PQceon1Ffba8w88D4D0DRGMaRe5HjSLDn
+	czMulnVIuelh6ioPqkYK7lwcwSlXF5ISS3K7/TeeRLPrFdyGt8ixPtDRvqbrncBc7nzLL8d9G0dN1
+	aJmXrZj6+LDgxbeaWCfjG8O9bgJKbJlIbWFkbNOoN4TTdGAbjOLr/bwr+DFED05SSBFVeEPoe2Kwv
+	NO844YyM1qjDB//JA4O2Mjdi9w7IojLnnIMw0oKJVYxcrUj5rb+mkgGLhs8f7h24yE604i8TnhOkZ
+	pM2kE570yrLdfSzgS77A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKfWV-0001zv-SL; Wed, 16 Oct 2019 09:23:15 +0000
-Received: from mail.savoirfairelinux.com ([208.88.110.44])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKfWN-0001zL-EX
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 09:23:08 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.savoirfairelinux.com (Postfix) with ESMTP id BAB1A9C02F3;
- Wed, 16 Oct 2019 05:23:06 -0400 (EDT)
-Received: from mail.savoirfairelinux.com ([127.0.0.1])
- by localhost (mail.savoirfairelinux.com [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id KxQAsgQNqEKS; Wed, 16 Oct 2019 05:23:05 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
- by mail.savoirfairelinux.com (Postfix) with ESMTP id 8348F9C03A3;
- Wed, 16 Oct 2019 05:23:05 -0400 (EDT)
-X-Virus-Scanned: amavisd-new at mail.savoirfairelinux.com
-Received: from mail.savoirfairelinux.com ([127.0.0.1])
- by localhost (mail.savoirfairelinux.com [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id 0pumkyatRjoz; Wed, 16 Oct 2019 05:23:05 -0400 (EDT)
-Received: from gdo-sfl-laptop.home (lfbn-1-7821-217.w92-167.abo.wanadoo.fr
- [92.167.224.217])
- by mail.savoirfairelinux.com (Postfix) with ESMTPSA id F31FA9C02F3;
- Wed, 16 Oct 2019 05:23:03 -0400 (EDT)
-From: Gilles DOFFE <gilles.doffe@savoirfairelinux.com>
-To: devicetree@vger.kernel.org
-Subject: [PATCH v4] ARM: dts: imx6qdl-rex: add gpio expander pca9535
-Date: Wed, 16 Oct 2019 11:22:55 +0200
-Message-Id: <20191016092255.19223-1-gilles.doffe@savoirfairelinux.com>
-X-Mailer: git-send-email 2.20.1
+	id 1iKfiK-0007Y5-QC; Wed, 16 Oct 2019 09:35:28 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iKfiB-0007XN-LD
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 09:35:21 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B9CFA142F;
+ Wed, 16 Oct 2019 02:35:17 -0700 (PDT)
+Received: from [10.1.196.105] (unknown [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E8E053F6C4;
+ Wed, 16 Oct 2019 02:35:14 -0700 (PDT)
+Subject: Re: [PATCH v2] arm64: entry.S: Do not preempt from IRQ before all
+ cpufeatures are enabled
+To: Will Deacon <will@kernel.org>
+References: <20191015172544.186627-1-james.morse@arm.com>
+ <20191015200755.aavtyhq56lewazah@willie-the-truck>
+From: James Morse <james.morse@arm.com>
+Message-ID: <e6d58ed6-2d5e-8c78-c824-d0d5abff8394@arm.com>
+Date: Wed, 16 Oct 2019 10:35:13 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
+In-Reply-To: <20191015200755.aavtyhq56lewazah@willie-the-truck>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_022307_554739_B318AF4D 
-X-CRM114-Status: UNSURE (   8.48  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191016_023519_737607_89A4AE47 
+X-CRM114-Status: GOOD (  16.67  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [208.88.110.44 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -71,73 +63,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Fabio Estevam <festevam@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, rennes@savoirfairelinux.com,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- jerome.oufella@savoirfairelinux.com, Shawn Guo <shawnguo@kernel.org>,
+Cc: Juri Lelli <juri.lelli@redhat.com>, Mark Rutland <mark.rutland@arm.com>,
+ Julien Thierry <julien.thierry@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Ingo Molnar <mingo@redhat.com>, Julien Thierry <julien.thierry.kdev@gmail.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The pca9535 gpio expander is present on the Rex baseboard, but missing
-from the dtsi.
-The pca9535 is on i2c2 bus which is common to the three SOM
-variants (Basic/Pro/Ultra), thus it is activated by default.
-
-Add also the new gpio controller and the associated interrupt line
-MX6QDL_PAD_NANDF_CS3__GPIO6_IO16.
-
-Signed-off-by: Gilles DOFFE <gilles.doffe@savoirfairelinux.com>
----
- arch/arm/boot/dts/imx6qdl-rex.dtsi | 19 +++++++++++++++++++
- 1 file changed, 19 insertions(+)
-
-diff --git a/arch/arm/boot/dts/imx6qdl-rex.dtsi b/arch/arm/boot/dts/imx6qdl-rex.dtsi
-index 97f1659144ea..305b57fadc60 100644
---- a/arch/arm/boot/dts/imx6qdl-rex.dtsi
-+++ b/arch/arm/boot/dts/imx6qdl-rex.dtsi
-@@ -132,6 +132,19 @@
- 	pinctrl-0 = <&pinctrl_i2c2>;
- 	status = "okay";
- 
-+	pca9535: gpio-expander@27 {
-+		compatible = "nxp,pca9535";
-+		reg = <0x27>;
-+		gpio-controller;
-+		#gpio-cells = <2>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pinctrl_pca9535>;
-+		interrupt-parent = <&gpio6>;
-+		interrupts = <16 IRQ_TYPE_LEVEL_LOW>;
-+		interrupt-controller;
-+		#interrupt-cells = <2>;
-+	};
-+
- 	eeprom@57 {
- 		compatible = "atmel,24c02";
- 		reg = <0x57>;
-@@ -237,6 +250,12 @@
- 			>;
- 		};
- 
-+		pinctrl_pca9535: pca9535 {
-+			fsl,pins = <
-+				MX6QDL_PAD_NANDF_CS3__GPIO6_IO16	0x17059
-+		   >;
-+		};
-+
- 		pinctrl_uart1: uart1grp {
- 			fsl,pins = <
- 				MX6QDL_PAD_CSI0_DAT10__UART1_TX_DATA	0x1b0b1
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgV2lsbCwKCk9uIDE1LzEwLzIwMTkgMjE6MDcsIFdpbGwgRGVhY29uIHdyb3RlOgo+IFBhdGNo
+IGxvb2tzIGdvb2QgYXBhcnQgZnJvbSBvbmUgdGhpbmcuLi4KPiAKPiBPbiBUdWUsIE9jdCAxNSwg
+MjAxOSBhdCAwNjoyNTo0NFBNICswMTAwLCBKYW1lcyBNb3JzZSB3cm90ZToKPj4gZGlmZiAtLWdp
+dCBhL2luY2x1ZGUvbGludXgvc2NoZWQuaCBiL2luY2x1ZGUvbGludXgvc2NoZWQuaAo+PiBpbmRl
+eCAyYzJlNTZiZDg5MTMuLjY3YTFkODY5ODFhOSAxMDA2NDQKPj4gLS0tIGEvaW5jbHVkZS9saW51
+eC9zY2hlZC5oCj4+ICsrKyBiL2luY2x1ZGUvbGludXgvc2NoZWQuaAo+PiBAQCAtMjIzLDYgKzIy
+Myw3IEBAIGV4dGVybiBsb25nIHNjaGVkdWxlX3RpbWVvdXRfdW5pbnRlcnJ1cHRpYmxlKGxvbmcg
+dGltZW91dCk7Cj4+ICBleHRlcm4gbG9uZyBzY2hlZHVsZV90aW1lb3V0X2lkbGUobG9uZyB0aW1l
+b3V0KTsKPj4gIGFzbWxpbmthZ2Ugdm9pZCBzY2hlZHVsZSh2b2lkKTsKPj4gIGV4dGVybiB2b2lk
+IHNjaGVkdWxlX3ByZWVtcHRfZGlzYWJsZWQodm9pZCk7Cj4+ICthc21saW5rYWdlIHZvaWQgcHJl
+ZW1wdF9zY2hlZHVsZV9pcnEodm9pZCk7Cj4gCj4gSSBkb24ndCB1bmRlcnN0YW5kIHRoZSBuZWVk
+IGZvciB0aGlzIGh1bmssIHNpbmNlIHdlJ3JlIG9ubHkgY2FsbGluZyB0aGUKPiBmdW5jdGlvbiBm
+cm9tIEMgbm93LiBQbGVhc2UgY291bGQgeW91IGV4cGxhaW4/CgooQSBwcm90b3R5cGUgaXMgbmVl
+ZGVkIHRvIG1ha2UgdGhlIHRoaW5nIGJ1aWxkWzBdLCBidXQpCgp5b3UgbWVhbiB0aGUgYXNtbGlu
+a2FnZT8KClRoZSBkZWZpbml0aW9uIGluIGtlcm5lbC9zY2hlZC9jb3JlLmMgaGFzIGFzbWxpbmth
+Z2UuIEl0IGRvZXMgbm90aGluZyBvbiBhcm02NCwgYnV0IGlmCmFub3RoZXIgYXJjaGl0ZWN0dXJl
+IGRvZXMgYWRkIGEgQyBjYWxsLCBhbmQgdXNlcyBhc21saW5rYWdlIHRvIHRpbmtlciB3aXRoIHRo
+ZSBjYWxsaW5nCmNvbnZlbnRpb24sIGl0IHdvdWxkIG5lZWQgdG8gYmUgaGVyZSBzbyBjYWxsZXJz
+IHVzZSB0aGUgY29ycmVjdCBjb252ZW50aW9uLgoKZS5nLiBmb3IgWDg2XzMyIGRlZmluZXMgYXNt
+bGlua2FnZSBpbiBhcmNoL3g4Ni9pbmNsdWRlL2FzbS9saW5rYWdlLmg6CnwgI2RlZmluZSBhc21s
+aW5rYWdlIENQUF9BU01MSU5LQUdFIF9fYXR0cmlidXRlX18oKHJlZ3Bhcm0oMCkpKQoKVGhpcyBm
+b3JjZXMgYWxsIGFyZ3VtZW50cyBvdXQgb2YgcmVnaXN0ZXJzIGFuZCBvbnRvIHRoZSBzdGFjayBb
+MV0uCgpXaXRob3V0IHRoaXMgYW5ub3RhdGlvbiwgYXNtLT5wcmVlbXB0X3NjaGVkdWxlX2lycSgp
+IGNhbGxlcnMgd291bGQgcHV0IGFyZ3VtZW50cyBvbiB0aGUKc3RhY2ssIGJ1dCBDLT5wcmVlbXB0
+X3NjaGVkdWxlX2lycSgpIGNhbGxlcnMgd291bGQgdXNlIHdoYXRldmVyIHRoZSBDLT5DIGNhbGxp
+bmcKY29udmVudGlvbiBpcywgd2hpY2ggbWlnaHQgbm90IG1hdGNoLgoKc2NoZWR1bGUoKSBmdXJ0
+aGVyIHVwIHRoZSBodW5rIGRvZXMgdGhlIHNhbWUuCgpJIGFncmVlIGl0IGRvZXNuJ3QgbWF0dGVy
+IHRvZGF5LCBidXQgb21pdHRpbmcgaXQgd291bGQgYmUgYSBidWcgZm9yIHRoZSBuZXh0IHVzZXIg
+dG8gZGVidWchCgoKVGhhbmtzLAoKSmFtZXMKClswXSBXaXRob3V0IHRoYXQgaHVuaywKLi4vYXJj
+aC9hcm02NC9rZXJuZWwvcHJvY2Vzcy5jOiBJbiBmdW5jdGlvbiDigJhhcm02NF9wcmVlbXB0X3Nj
+aGVkdWxlX2lyceKAmToKLi4vYXJjaC9hcm02NC9rZXJuZWwvcHJvY2Vzcy5jOjY1MDozOiBlcnJv
+cjogaW1wbGljaXQgZGVjbGFyYXRpb24gb2YgZnVuY3Rpb24K4oCYcHJlZW1wdF9zY2hlZHVsZV9p
+cnHigJk7IGRpZCB5b3UgbWVhbiDigJhwcmVlbXB0X3NjaGVkdWxl4oCZPwpbLVdlcnJvcj1pbXBs
+aWNpdC1mdW5jdGlvbi1kZWNsYXJhdGlvbl0KICAgcHJlZW1wdF9zY2hlZHVsZV9pcnEoKTsKICAg
+Xn5+fn5+fn5+fn5+fn5+fn5+fn4KICAgcHJlZW1wdF9zY2hlZHVsZQpjYzE6IHNvbWUgd2Fybmlu
+Z3MgYmVpbmcgdHJlYXRlZCBhcyBlcnJvcnMKbWFrZVszXTogKioqIFsuLi9zY3JpcHRzL01ha2Vm
+aWxlLmJ1aWxkOjI2NjogYXJjaC9hcm02NC9rZXJuZWwvcHJvY2Vzcy5vXSBFcnJvciAxCm1ha2Vb
+M106ICoqKiBXYWl0aW5nIGZvciB1bmZpbmlzaGVkIGpvYnMuLi4uCm1ha2VbMl06ICoqKiBbLi4v
+c2NyaXB0cy9NYWtlZmlsZS5idWlsZDo1MDk6IGFyY2gvYXJtNjQva2VybmVsXSBFcnJvciAyCm1h
+a2VbMl06ICoqKiBXYWl0aW5nIGZvciB1bmZpbmlzaGVkIGpvYnMuLi4uCm1ha2VbMV06ICoqKiBb
+L2hvbWUvbW9yc2Uva2VybmVsL2xpbnV4L01ha2VmaWxlOjE2NDk6IGFyY2gvYXJtNjRdIEVycm9y
+IDIKbWFrZVsxXTogKioqIFdhaXRpbmcgZm9yIHVuZmluaXNoZWQgam9icy4uLi4KbWFrZTogKioq
+IFsuLi9NYWtlZmlsZToxNzk6IHN1Yi1tYWtlXSBFcnJvciAyCgpbMV0gaHR0cHM6Ly9nY2MuZ251
+Lm9yZy9vbmxpbmVkb2NzL2djYy94ODYtRnVuY3Rpb24tQXR0cmlidXRlcy5odG1sCgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
+IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
