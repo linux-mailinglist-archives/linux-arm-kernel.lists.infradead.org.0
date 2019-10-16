@@ -2,86 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0955D9219
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 15:13:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24D1AD923A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 15:17:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WE3onu8pSt6FvrAg1L6J9iAYxx7EsPuaAoJl6dRNKXg=; b=icEU0VUzyF34ye
-	rnj4/Mc98nfttKyN5b9O9yNm6fuVWnTLbl5WYmOIhZvLKPj/8ZqwU3ODfUrQ7tHYQLD1HV/PUNC9t
-	dEMMEpTIqoOaQpRQYf1QwjMz+dhFRa5fHHr9y9pE8XGShqMM0uHRPtDu75FMMyv2BNEf+KWUp7flu
-	HQZuNK+3ix4x+ThcIjW7JiH1ZZbFVt1deM/sSG1ZKpqNqvqbajz1FSwqAtqTfHS413VGBFCdVmaUZ
-	wo7sva55LXJtaQcnXU/VEWDVFUU7t+m88fs75N8GTanIg2uv+zUDeJkZG+09BYKezyXJKJ/zJoBi6
-	a5jbwmpCQN4aAOWroYxQ==;
+	List-Owner; bh=SBHjmotdlR4vE/lPzolwk77CXT8kL75Qr1XTmkFjfA0=; b=QApZ2s8OnptGFO
+	i6VCVLzraZRsSHtjalNZjm3YzsgLeQQDK06TPShhSKTXFtelhIEgdOPRiebe4yLZbp+eYf1rCQxt/
+	KxEtFNPsaXy3kA8Vikg0+tWPG8aJzA8c/GQUucZVh/cR9+p624tHuswuDE4Y6QByA/tu9VLlFQWWB
+	iekqvk2jMPoLVsWByHbvJXHgeIK94kVFJxY5ehmND1jah8OBS+Vu+/vXqfbDbRaRpqgiOAxeb4XuN
+	jC/ubfJcXofgtJFeKHuSoW2nCFgXPRmXFt4vhX+BIkPuOrAwwaO4mY1/rJXpuUSZCVwakdvUo4UZ4
+	bfohIgeTod5p0ICmVUzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKj6p-0003Ia-Mj; Wed, 16 Oct 2019 13:12:59 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1iKjBK-0005HL-8A; Wed, 16 Oct 2019 13:17:38 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKj6e-0003I9-MV
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 13:12:49 +0000
-Received: by mail-qt1-x843.google.com with SMTP id 3so36054521qta.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 16 Oct 2019 06:12:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=8JThs1XG1ijPDoWXd001r2c0QxpUa5W2X+j98FgzGb4=;
- b=UB9ELyOZDOPd221KTRZ44E6coQpNcftSoMxNazf7t7nDHFWdnlu49LfY4juaUuij+u
- uyg+XuKVTfjGgg6f4yohjI/jki6Ey5vm/kSgHuM8jhxf8/TeIfQLhCTR8hCp5SKkjOEc
- aghKyx6Go8GpAiGyEFJslvNxarC4F497LwkwyzhKWbLaZ7BdJv16xCl6s8xTFOtqdhID
- TJFzruv3A7f6Abldxi7qPSb4ZpmJ2yHh+g3JpVmUCO+vLOrQZZ3rIcfXGEVyYPEgFO+H
- f2kIyl+jZ8TgDuq7pviRq5YjYRyEK5T0FwsIZlAqJsL0s9vXcXnOHCVpJctB3HcgeqZH
- ClHA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=8JThs1XG1ijPDoWXd001r2c0QxpUa5W2X+j98FgzGb4=;
- b=oU8RoV1Apimapn3+oF/ijxjObprUnQYY9MAgEsi1tRBIClu4/WEWvNjJrUNx9A3rHo
- 84QJ4U/frHMwiAT7PQ94OozZEVmFHaCERq0HKSwCLNQCgo8K2yo1HASWlaOiGDiVcEeZ
- mWwDsYKJzjgCyP0cpfQ1Na3SxZsNFDy+5Bcey1VH8czh+T42sZZC/pLYskmQv4Qd6mMq
- 4ixnA0ZYDMPECtkgOq3SDa1d3580dF7A1y6MYRSOqj+JZaCCivi5h1mPWpBCVwiKrEwz
- utZWXWhhXHfVnihFF3HE2t6iNJKEScQWinlpD9H3Ej/dBTHGZVcrTVQx4xY+OeYxV5Ng
- YaKQ==
-X-Gm-Message-State: APjAAAX41hfm6z3DMHJz5QXIHBMjSoA9MjTnpAhacDu3l1YFCFjl26hH
- H13+XW/TJeRKc5YnXBscb/N8oOwObQWiYlpGrS6Omw==
-X-Google-Smtp-Source: APXvYqz4WACK7QZCPQXxStJci3zXaPb5Yc24BDtLg9Q18h0g3nKjgnK1rXsHGJ3td2yB7eQaUO55uFjrFVgjSv4QrKM=
-X-Received: by 2002:aed:2462:: with SMTP id s31mr45553740qtc.40.1571231567878; 
- Wed, 16 Oct 2019 06:12:47 -0700 (PDT)
+ id 1iKjBB-0005Gg-PC
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 13:17:31 +0000
+Received: from localhost (unknown [209.136.236.94])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 638072064A;
+ Wed, 16 Oct 2019 13:17:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571231848;
+ bh=7ICZu5U89hohYmbn6gUIgQxhJVCaU/53F1xp5OJCAdw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=eunc4yEZFEINPkgHN8b4Tbj6+hH1biz99q2FXxR7IDh5zAgJi8zK2UH+lYxO3ePXc
+ 1L4L9fjwTz9sbtvSVgHYS7ATAQyL4PTv+mHRir5ttKx8fj4Cc+ene2SaYhlFb5jjzo
+ pcUTb19YqjH+ArFzlqcanlrooE3Xi81U/oYfy+ck=
+Date: Wed, 16 Oct 2019 06:17:28 -0700
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Stefan-Gabriel Mirea <stefan-gabriel.mirea@nxp.com>
+Subject: Re: [PATCH v7 0/5] Add initial support for S32V234-EVB
+Message-ID: <20191016131728.GA56859@kroah.com>
+References: <1571230107-8493-1-git-send-email-stefan-gabriel.mirea@nxp.com>
 MIME-Version: 1.0
-References: <20191010202802.1132272-1-arnd@arndb.de>
- <20191010203043.1241612-1-arnd@arndb.de>
- <20191010203043.1241612-23-arnd@arndb.de>
-In-Reply-To: <20191010203043.1241612-23-arnd@arndb.de>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 16 Oct 2019 15:12:36 +0200
-Message-ID: <CACRpkdb07KyJDgACuh2ho822pHAUcw2ubu=WJwqxf8NO-Pv+_A@mail.gmail.com>
-Subject: Re: [PATCH 23/36] ARM: s3c: move s3cmci pinctrl handling into board
- files
-To: Arnd Bergmann <arnd@arndb.de>
+Content-Disposition: inline
+In-Reply-To: <1571230107-8493-1-git-send-email-stefan-gabriel.mirea@nxp.com>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_061248_739644_DAB0DA42 
-X-CRM114-Status: GOOD (  12.10  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191016_061729_840551_5BE2F176 
+X-CRM114-Status: GOOD (  14.16  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,39 +72,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>,
- linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
- linux-mmc <linux-mmc@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
- Ben Dooks <ben-linux@fluff.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, corbet@lwn.net,
+ catalin.marinas@arm.com, linux-doc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, leoyang.li@nxp.com, robh+dt@kernel.org,
+ linux-serial@vger.kernel.org, jslaby@suse.com, shawnguo@kernel.org,
+ will@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 10, 2019 at 10:47 PM Arnd Bergmann <arnd@arndb.de> wrote:
+On Wed, Oct 16, 2019 at 03:48:22PM +0300, Stefan-Gabriel Mirea wrote:
+> Hello,
+> 
+> NXP's S32V234[1] ("Treerunner") vision microprocessors are targeted for
+> high-performance, computationally intensive vision and sensor fusion
+> applications that require automotive safety levels. They include leading
+> edge Camera Vision modules like APEX-2, ISP and GPU. The S32V234-EVB and
+> S32V234-SBC boards are available for customer evaluation.
+> 
+> The following patch series introduces minimal enablement support for the
+> NXP S32V234-EVB2[2] board, which leverages most of the SoC capabilities.
+> Up to v2, this series also included the fsl_linflexuart driver, which has
+> been included in Linux 5.4-rc1[3].
+> 
+> In the future, we aim to submit multiple drivers upstream, which can be
+> found in the kernel of our Auto Linux BSP[4] ("ALB"), starting with basic
+> pinmuxing, clock and uSDHC drivers.
+> 
+> For validation, you can use the U-Boot bootloader in the ALB[5], which we
+> build and test with our patched version of the Linaro GCC 6.3.1 2017.05
+> toolchain for ARM 64-bit, with sources available on [6].
+> 
+> Changes in v7:
+> * Rebase the patch 'serial: fsl_linflexuart: Be consistent with the name'
+>   on the tty-next branch in Greg's tty git tree.
 
-> Rather than call the internal s3c_gpio_cfgall_range() function
-> through a platform header, move the code into the set_power
-> callback that is already exported by the board, and add
-> a default implementation.
->
-> In DT mode, the code already does not set the pin config,
-> so nothing changes there.
->
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+I've taken patch 3 in my tty-next tree.  The others should probably go
+through an arm-specific tree, right?
 
-It looks good:
-Acked-by: Linus Walleij <linus.walleij@linaro.org>
+thanks,
 
-It would feel better if someone was actually testing it on these
-boards. I see Ben is listed as maintainer so I bet he will
-pull the board out :)
-
-Yours,
-Linus Walleij
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
