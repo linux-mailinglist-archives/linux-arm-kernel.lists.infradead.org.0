@@ -2,54 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D574D95A8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 17:32:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CFEAAD95B6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 17:37:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0SITFAk42gbp0g3ILeifYFlX5Fb1ZrnqbRjXeyucVV0=; b=IFn2w77uE575Sj
-	DJNBL9Q9paNGu4zXeINlHwFYNre/fyZpARAMwAdGyfy/RcXdsoZ9WQuVaDb9wyYSlhH9lRJNTh1FU
-	NC2V6VjWcIF67KnW6IcoXZWe2mu3Zhxzk2H1KrASY4hc6YoHtBsPdLuBUTU1HCCoMQsALiYRnBsP7
-	A2fwCRVSrCO25/VgdSeYQUgr8oXXGxCWxFAH8CtBWp3WZGEQLVKFCstQO4Adt9ysnFmbOQioYRxtN
-	Uu5DtD5Z3L3jYYtQnm2ZFuL8Z2WE8Sou/ImngU+kr/fZeyhvtIfEk5Qz11jA6kr9n8cvSUCFehELR
-	1vAKpjff8O3gHJQhisYw==;
+	List-Owner; bh=B7iTgOVHXv3cobpePgkr/GIQogcv+ghY0tkLi/BNjHs=; b=DMprdknd1Gahyq
+	eNLkBu8039lTtRfzYzCdQlENLQAWpqp+i3OSu1AiECK3aSzEY3Q7tL0cdd4pXtriMNorxvMUCVexP
+	v7cJDWeeuf8JC0ciw9D9YzZQyHbBVdwQCv9TWfX1ANrb/RMY73YVBKnVZqUDl1NS/Bv5bu9KPxXVl
+	Bmb22EPHS7uOEwI+MAFG9E0QVx2QUsk8qbnbcOowvwvldJngfsyiwakWcitPM81L3yJiTh2Dchyhw
+	LoAwAfkDPzX1APR3MnRVNLpva6L5DN2a1+V0GjQmcCJA/fdXh9flx3nLzcj40NSVtrZvBLN9D+SNA
+	ulQBHLN26LPxY9Wn7jpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKlI1-0001Qv-Ub; Wed, 16 Oct 2019 15:32:41 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKlHr-0001Q4-Fm
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 15:32:32 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 47089142F;
- Wed, 16 Oct 2019 08:32:30 -0700 (PDT)
-Received: from bogus (unknown [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 86B693F68E;
- Wed, 16 Oct 2019 08:32:28 -0700 (PDT)
-Date: Wed, 16 Oct 2019 16:32:21 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Yunfeng Ye <yeyunfeng@huawei.com>
-Subject: Re: [PATCH V2] arm64: psci: Reduce waiting time of cpu_psci_cpu_kill()
-Message-ID: <20191016153221.GA8978@bogus>
-References: <18068756-0f39-6388-3290-cf03746e767d@huawei.com>
- <9df267db-e647-a81d-16bb-b8bfb06c2624@huawei.com>
+	id 1iKlMI-0003Bz-6x; Wed, 16 Oct 2019 15:37:06 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iKlM8-0003BP-UO; Wed, 16 Oct 2019 15:36:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=+5f6dY8evhyxODaTKehL/4N9iRbwuC90F8UXeraO9vA=; b=KGODKytivjW/MSdVeEUIQ+rVkz
+ 3ilT5scwlhtrAdRHOF5qItaKrEvpjoegAiPCMPGunYirlMsdopw/WifZ62cYSu1bXEWg3cGchJyqv
+ I2zBjIlQlLU5Ufceb9tXkmUxGwTa9MBw9eRtzdp5iw7V2/FWc8ui2HX70BCRCMcncdK8=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.92.2)
+ (envelope-from <andrew@lunn.ch>)
+ id 1iKlLy-0008Fe-Gc; Wed, 16 Oct 2019 17:36:46 +0200
+Date: Wed, 16 Oct 2019 17:36:46 +0200
+From: Andrew Lunn <andrew@lunn.ch>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Subject: Re: lan78xx and phy_state_machine
+Message-ID: <20191016153646.GG17013@lunn.ch>
+References: <20191014140604.iddhmg5ckqhzlbkw@beryllium.lan>
+ <20191014163004.GP25745@shell.armlinux.org.uk>
+ <20191014192529.z7c5x6hzixxeplvw@beryllium.lan>
+ <25cfc92d-f72b-d195-71b1-f5f238c7988d@gmx.net>
+ <b9afd836-613a-dc63-f77b-f9a77d33acc4@gmail.com>
+ <20191014221211.GR25745@shell.armlinux.org.uk>
+ <524267e6-df8e-d884-aeef-1ed8700e4e58@gmail.com>
+ <20191015220925.GW25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <9df267db-e647-a81d-16bb-b8bfb06c2624@huawei.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20191015220925.GW25745@shell.armlinux.org.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_083231_569877_99DB6458 
-X-CRM114-Status: GOOD (  20.08  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191016_083656_979565_0AFA035C 
+X-CRM114-Status: UNSURE (   6.59  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [185.16.172.187 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,83 +82,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "kstewart@linuxfoundation.org" <kstewart@linuxfoundation.org>,
- "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- Sudeep Holla <sudeep.holla@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- David Laight <David.Laight@ACULAB.COM>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "tglx@linutronix.de" <tglx@linutronix.de>,
- "wuyun.wu@huawei.com" <wuyun.wu@huawei.com>,
- "will@kernel.org" <will@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Woojung Huh <woojung.huh@microchip.com>,
+ linux-rpi-kernel@lists.infradead.org, Florian Fainelli <f.fainelli@gmail.com>,
+ Daniel Wagner <dwagner@suse.de>, netdev@vger.kernel.org,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
+ bcm-kernel-feedback-list@broadcom.com, Stefan Wahren <wahrenst@gmx.net>,
+ linux-arm-kernel@lists.infradead.org, Heiner Kallweit <hkallweit1@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 09, 2019 at 12:45:16PM +0800, Yunfeng Ye wrote:
-> If psci_ops.affinity_info() fails, it will sleep 10ms, which will not
-> take so long in the right case. Use usleep_range() instead of msleep(),
-> reduce the waiting time, and give a chance to busy wait before sleep.
->
-> Signed-off-by: Yunfeng Ye <yeyunfeng@huawei.com>
-> ---
-> V1->V2:
-> - use usleep_range() instead of udelay() after waiting for a while
->
->  arch/arm64/kernel/psci.c | 17 +++++++++++++----
->  1 file changed, 13 insertions(+), 4 deletions(-)
->
-> diff --git a/arch/arm64/kernel/psci.c b/arch/arm64/kernel/psci.c
-> index c9f72b2..99b3122 100644
-> --- a/arch/arm64/kernel/psci.c
-> +++ b/arch/arm64/kernel/psci.c
-> @@ -82,6 +82,7 @@ static void cpu_psci_cpu_die(unsigned int cpu)
->  static int cpu_psci_cpu_kill(unsigned int cpu)
->  {
->  	int err, i;
-> +	unsigned long timeout;
->
->  	if (!psci_ops.affinity_info)
->  		return 0;
-> @@ -91,16 +92,24 @@ static int cpu_psci_cpu_kill(unsigned int cpu)
->  	 * while it is dying. So, try again a few times.
->  	 */
->
-> -	for (i = 0; i < 10; i++) {
-> +	i = 0;
-> +	timeout = jiffies + msecs_to_jiffies(100);
-> +	do {
->  		err = psci_ops.affinity_info(cpu_logical_map(cpu), 0);
->  		if (err == PSCI_0_2_AFFINITY_LEVEL_OFF) {
->  			pr_info("CPU%d killed.\n", cpu);
->  			return 0;
->  		}
->
-> -		msleep(10);
-> -		pr_info("Retrying again to check for CPU kill\n");
+> > - lan78xx_phy_init() (incl. the call to phy_connect_direct()) is called
+> >   after register_netdev(). This may cause races.
+> 
+> That isn't a problem.  We have lots of network device drivers that do
+> this - in their open() function.
 
-You dropped this message, any particular reason ?
+Hi Russell
 
-> -	}
-> +		/* busy-wait max 1ms */
-> +		if (i++ < 100) {
-> +			cond_resched();
-> +			udelay(10);
-> +			continue;
+Actually, here is it. lan7801_phy_init() finds the PHY device and
+connects it to the MAC. lan78xx_open() calls phy_start(), with the
+assumption lan7801_phy_init() has been called.
 
-Why can't it be simple like loop of 100 * msleep(1) instead of loop of
-10 * msleep(10). The above initial busy wait for 1 ms looks too much
-optimised for your setup where it takes 50-500us, what if it take just
-over 1 ms ?
+But the stack trace just provided shows this assumption is wrong. As
+soon a register_netdev() is called, the kernel auto configuration is
+kicking in and opening the device.
 
-We need more generic solution.
+lan78xx_phy_init() needs to happen before register_netdev(), or inside
+lan78xx_open().
 
---
-Regards,
-Sudeep
+	Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
