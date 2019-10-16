@@ -2,54 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1232CD9D89
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 23:35:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FCADD9DB3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 23:49:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XZnuJKQ1ncafFdoLDXqgntlVX54im1TyRRjo6X+ZUx0=; b=tyjSTavPWHloXj
-	SeuLSsJxFnc0jDLlVIJQvgl6WLx4wU2lf+Ttzyxl5Tz18PGvS7Vnv3q0a+Rty0VDPEOFhSeXk0wec
-	TglSRnfhI27VFqQbS3C/3lsAd32YixxTgpl7LpaPWsj5/ekgS4yYulcMVaCBRAGKkuewkTYLUwQWT
-	mFyzWA2tbI0x+bia59FBXYE7rblNjpvZOy5q9Y4vqaoYQq6OHaj4KE0Zrc/bjSr6vbca6OQyVYKnX
-	9joOQjspRaW41jCqcfHfYfYcSZzFigRNPckSZ7wZ+ZrETEE+uyX2zxJ3c20+bU5So4NCuQZak43Eu
-	8Pk537eJVG+dl89e0Q5g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=d0ffTRpIkTIIeyu9Q1DwzzmYxjv/dm75tL5Jdl6Jeo8=; b=n4Tf5ItaY94ZJXVqpeRUpfZ4G
+	bgvQf/U0f3C4Af0DoM94IUBTTZVe4lQ+PbpZ/6IMvAe2o4cz4P0NEJ+mkTZp6+IyKO1gzLJmbcW2K
+	94t2LPgbAZUJzHOzdyJTL7pBVltPsjnYSFqUMQhCa1qvKfXXVC3bMxUioiKx6PT+Fqoq8itfvvsE0
+	bx2YMGX3K1kO6szlpMqdnkXEwKsNmyGM/3w6Zo9RNrpE6sY3/CVtfphEJsEan1s8OrSpwmrULgEHb
+	xTt32v0EqohNI6NTOTzHEULnUjUImjhG9E1QMp4L3C5Las8JyUPDAIo1YjJRk0gkWfY0QJFKG7s9t
+	Cz9Qem/Ww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKqxH-00019i-Gi; Wed, 16 Oct 2019 21:35:39 +0000
-Received: from chamillionaire.breakpoint.cc ([2a0a:51c0:0:12e:520::1])
+	id 1iKrAn-0004nc-SA; Wed, 16 Oct 2019 21:49:37 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKqx8-00019G-Td
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 21:35:32 +0000
-Received: from bigeasy by Chamillionaire.breakpoint.cc with local (Exim 4.92)
- (envelope-from <sebastian@breakpoint.cc>)
- id 1iKqx5-0007HS-GZ; Wed, 16 Oct 2019 23:35:27 +0200
-Date: Wed, 16 Oct 2019 23:35:27 +0200
-From: Sebastian Andrzej Siewior <sebastian@breakpoint.cc>
-To: Waiman Long <longman@redhat.com>
-Subject: Re: [RFC PATCH 0/6 v2] Queued spinlocks/RW-locks for ARM
-Message-ID: <20191016213527.fnxuxvhr6mgeeoqq@flow>
-References: <20191013221310.30748-1-sebastian@breakpoint.cc>
- <20191016155755.66ges3ybn3awx45l@willie-the-truck>
- <a14cbac0-3eab-c136-ad2d-9b4d8b95a098@redhat.com>
+ id 1iKrAe-0004mw-45
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 21:49:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=ZufvcA61v5agVfmRZclKpGS8RTRtaYHF1QkCoX0ETPs=; b=l51SxgSoH+eyfT2mm1rmGeBDT
+ yhHObXSSp07I53kvAtlsoaAsFbOHIxbXQ+5WvPbqdFhqeM5Btng1ceKWOY/GqEEy2ZUfVTEoxRXTa
+ 1c+E9q1JTFuFWhzN0HvBdTIi9uijXihuIrT+FpqUqznByX6wziQTTDR7YCaC4sXshvUbk=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1iKrAV-0006KC-UE; Wed, 16 Oct 2019 21:49:19 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id EB915274325C; Wed, 16 Oct 2019 22:49:18 +0100 (BST)
+Date: Wed, 16 Oct 2019 22:49:18 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Noralf =?iso-8859-1?Q?Tr=F8nnes?= <noralf@tronnes.org>
+Subject: Re: [PATCH] spi: pxa2xx: Set controller->max_transfer_size in dma mode
+Message-ID: <20191016214918.GA11473@sirena.co.uk>
+References: <20191016195721.3714-1-daniel.vetter@ffwll.ch>
+ <36610873-fa30-a286-d05c-5eceb3cbcb57@tronnes.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <a14cbac0-3eab-c136-ad2d-9b4d8b95a098@redhat.com>
+In-Reply-To: <36610873-fa30-a286-d05c-5eceb3cbcb57@tronnes.org>
+X-Cookie: Auction:
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_143530_954783_336A10CF 
-X-CRM114-Status: GOOD (  11.23  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191016_144928_167299_3C93E339 
+X-CRM114-Status: GOOD (  11.68  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a0a:51c0:0:12e:520:0:0:1 listed in]
- [list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [172.104.155.198 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,53 +79,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Peter Zijlstra <peterz@infradead.org>,
- Russell King <linux@armlinux.org.uk>, Ingo Molnar <mingo@redhat.com>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arm-kernel@lists.infradead.org,
+ Andy Shevchenko <andriy.shevchenko@intel.com>,
+ Daniel Vetter <daniel.vetter@ffwll.ch>,
+ Robert Jarzmik <robert.jarzmik@free.fr>,
+ Haojian Zhuang <haojian.zhuang@gmail.com>, linux-spi@vger.kernel.org,
+ DRI Development <dri-devel@lists.freedesktop.org>,
+ Sam Ravnborg <sam@ravnborg.org>, Daniel Mack <daniel@zonque.org>
+Content-Type: multipart/mixed; boundary="===============5161062621241070062=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-10-16 13:45:13 [-0400], Waiman Long wrote:
-> My own testing on qspinlocks in the past, at least on x86-64, is that it
-> is comparable to ticket lock with one or 2 contending tasks if not
-> better. When there are 3 contending tasks, qspinlock will then be a bit
-> slower than ticket lock because the overhead of using the MCS node for
-> queuing is showing up. Starting with 4 and more contending tasks,
-> qspinlock starts to show its strength and performing better and better
-> with more contending tasks.
-> 
-> So if the target is 4 cores or less, there isn't too much to gain from
-> using qspinlock. Lock function inlining probably has a bigger
-> performance benefit here than switching to qspinlock. Just food for thought.
 
-from my initial numbers:
-|IMX6q
-|~~~~~
-|HZ_100  | PREEMPT_NONE  | PREEMPT_VOLUNTARY 	| PREEMPT
-|Ticket  | 52.103        | 52.284		| 60.5681
-|Q-locks | 54.1804	 | 53.267		| 56.1914
-|Q-locksI| 52.2985       | 49.398		| 56.7441
-|
-|AM572x
-|~~~~~~
-|HZ_100  | PREEMPT_NONE  | PREEMPT_VOLUNTARY 	| PREEMPT
-|Ticket  | 42.3819       | 42.4821     		| 43.2671
-|Q-locks | 40.9141	 | 40.0269	        | 42.65  
-|Q-locksI| 40.0763       | 39.9101     		| 40.7811
+--===============5161062621241070062==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="yrj/dFKFPuw6o+aM"
+Content-Disposition: inline
 
-AM572x (Cortex-A15) has two CPUs, IMX6q (Cortex-A9) has four. Here on
-AM572x q-locks gain ~3.5% (PREEMPT_NONE) without inlining. IMX6q
-performs worse in the same category. However it performs better on
-HZ_250 which I wouldn't expect.
 
-> Cheers,
-> Longman
+--yrj/dFKFPuw6o+aM
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Sebastian
+On Wed, Oct 16, 2019 at 11:30:51PM +0200, Noralf Tr=F8nnes wrote:
+
+> As Andy mentioned, ->max_transfer_size is a callback:
+
+> struct spi_controller {
+> 	/*
+> 	 * on some hardware transfer / message size may be constrained
+> 	 * the limit may depend on device transfer settings
+> 	 */
+> 	size_t (*max_transfer_size)(struct spi_device *spi);
+
+> (I looked at its users and they all return a static or probe time value
+> so not sure why it's a callback.)
+
+Huh, I wonder why we did that...  I can't find any clear record, and
+like you say nothing is using it so we should probably fix it - however
+that's best done separately to this :/  Sorry for the confusion, I
+didn't register what Andy was saying as being pointing out the current
+state of the code.
+
+--yrj/dFKFPuw6o+aM
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl2nkF4ACgkQJNaLcl1U
+h9A+Pwf/W+TqlKqBacstyeP18KY0oRQ7ySrj544UYjH8VdN93ZMgWCSCZ5FgL9tv
+APkLEB1mXcpDeqLbLHKrNBS+8yMpCzqOVIYjmA1COIRm627P28BGBF1IKaFaPg2N
+fjG5vu2nWcgpCjPneFPOdCP0RLEiRd0qWLCbPv4VpKJpYHK4U44/m7bN8iuM9cHB
+Chd4H3kndisVKQXkwsAT6emauaPLaf17Hbhovoar5TlHECfIwOYKanPDPIYqgol6
+uOFs93BJbfky2Wj5rbCNh1F6T2zKpG8ctOvrPrDVvNcVF2vv0+EIlESSGM+aON42
+h/DQKS+S9hNCPnEKRtbjv++nzuZbow==
+=+n2p
+-----END PGP SIGNATURE-----
+
+--yrj/dFKFPuw6o+aM--
+
+
+--===============5161062621241070062==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5161062621241070062==--
+
