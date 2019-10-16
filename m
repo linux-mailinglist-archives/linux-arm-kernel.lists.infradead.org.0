@@ -2,55 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36EF2D8BD0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 10:54:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 097CAD8BEB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 10:57:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=YSU3pgelh6+bVVaCLqVyMyaUTaVcVlqDhaomQdQf3tM=; b=Mq0ZaSio07EWZxzAMXKwEmoQl
-	aguHiHMbElSJiZocF3VW8njvJaazNKk6gWukA6mIF9oLaJSaH3MYLsbAhEjAgiNBb099EZStLDIEv
-	J5SIBvEOttI8x/vgdFEPpLs4/FrCVLnsHm3OhhPhyJHEb76pduZOZjWvNtbyxWQmapSlYr0ce1qP6
-	t/D7ZcqinSNfx0Z2oRVZRPZwrnbEdGodb9tnygqyMVSYfQZ297TGJ5DY3TU37PLfQYZT6fZoYlha+
-	Qn9z05UFqFAFtKTQKSj+iGNb1VhPD5M/uF+AB8U/2gnp04aH8bIgOy87AgOSKf7JJHqXbqsGqaKWT
-	dhOfT+i2g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Y20BQJU7ugWNZQ6jI0dRos7bn3t2QevTludZSxjMohw=; b=BbL4KXGyTJiME1
+	cuvOVmfBOIZ8iQvT0KuLXTdgI1PTg9zHsmPZ1lW6bGVUdBI+FJOfKxE7wn9qIh2EAcumpNNj8giFO
+	scTY1EVPAvA1uW8IOLTmAqFh3PiKMBi4l/pQRI7U4x3GFUk234g2nZfp2ZvrCJqBniQEx76xNpH1y
+	FzhsF8ormr8Vpq/+0V0Qh7uneK7Nd8rS1d9Qv7U8auBnVULjh+VPdzN+bDrF9gd538Is5ppkdIAg/
+	mTkJ8/LkBgB1d8EE7m0MpTvdGfG6uIp+MUdz5IQDq0Qi6G/iIS8N5rag0BnAK/Ir0eI4TI9ttXCJg
+	kJY/xI9BmAnrNJdHhwIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKf4v-0005Rt-TO; Wed, 16 Oct 2019 08:54:45 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1iKf74-00079q-OD; Wed, 16 Oct 2019 08:56:58 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKf4l-0005KU-2J
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 08:54:36 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 455E6AEC4;
- Wed, 16 Oct 2019 08:54:33 +0000 (UTC)
-Message-ID: <52cb6d848c5d1d7d0e8dc359e9c3fe6c00ddceeb.camel@suse.de>
-Subject: Re: [PATCH -next v2] arm64: mm: Fix unused variable warning in
- zone_sizes_init
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Nathan Chancellor <natechancellor@gmail.com>, Catalin Marinas
- <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
-Date: Wed, 16 Oct 2019 10:54:31 +0200
-In-Reply-To: <20191016031107.30045-1-natechancellor@gmail.com>
-References: <20191015224304.20963-1-natechancellor@gmail.com>
- <20191016031107.30045-1-natechancellor@gmail.com>
-User-Agent: Evolution 3.32.4 
+ id 1iKf6x-00078Y-4d
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 08:56:52 +0000
+Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 452EDFC2962ADAF91686;
+ Wed, 16 Oct 2019 16:56:41 +0800 (CST)
+Received: from localhost (10.133.213.239) by DGGEMS413-HUB.china.huawei.com
+ (10.3.19.213) with Microsoft SMTP Server id 14.3.439.0; Wed, 16 Oct 2019
+ 16:56:30 +0800
+From: YueHaibing <yuehaibing@huawei.com>
+To: <mripard@kernel.org>, <paul.kocialkowski@bootlin.com>,
+ <mchehab@kernel.org>, <gregkh@linuxfoundation.org>, <wens@csie.org>
+Subject: [PATCH -next] staging: media: cedrus: use
+ devm_platform_ioremap_resource() to simplify code
+Date: Wed, 16 Oct 2019 16:56:04 +0800
+Message-ID: <20191016085604.21076-1-yuehaibing@huawei.com>
+X-Mailer: git-send-email 2.10.2.windows.1
 MIME-Version: 1.0
+X-Originating-IP: [10.133.213.239]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_015435_261544_AD43F489 
-X-CRM114-Status: GOOD (  12.04  )
+X-CRM114-CacheID: sfid-20191016_015651_350709_F88BC8D2 
+X-CRM114-Status: UNSURE (   9.12  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ medium trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,97 +64,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8684782383161913748=="
+Cc: devel@driverdev.osuosl.org, YueHaibing <yuehaibing@huawei.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Use devm_platform_ioremap_resource() to simplify the code a bit.
+This is detected by coccinelle.
 
---===============8684782383161913748==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-XL1H6941T8hAsoF71YoD"
+Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+---
+ drivers/staging/media/sunxi/cedrus/cedrus_hw.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
-
---=-XL1H6941T8hAsoF71YoD
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-On Tue, 2019-10-15 at 20:11 -0700, Nathan Chancellor wrote:
-> When building arm64 allnoconfig, CONFIG_ZONE_DMA and CONFIG_ZONE_DMA32
-> get disabled so there is a warning about max_dma being unused.
->=20
-> ../arch/arm64/mm/init.c:215:16: warning: unused variable 'max_dma'
-> [-Wunused-variable]
->         unsigned long max_dma =3D min;
->                       ^
-> 1 warning generated.
->=20
-> Add an ifdef around the variable to fix this.
->=20
-> Fixes: 1a8e1cef7603 ("arm64: use both ZONE_DMA and ZONE_DMA32")
-> Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
-> ---
->=20
-> v1 -> v2:
->=20
-> * Fix check for CONFIG_ZONE_DMA32 as pointed out by Will.
->=20
->  arch/arm64/mm/init.c | 2 ++
->  1 file changed, 2 insertions(+)
->=20
-> diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
-> index 44f07fdf7a59..359c3b08b968 100644
-> --- a/arch/arm64/mm/init.c
-> +++ b/arch/arm64/mm/init.c
-> @@ -212,7 +212,9 @@ static void __init zone_sizes_init(unsigned long min,
-> unsigned long max)
->  	struct memblock_region *reg;
->  	unsigned long zone_size[MAX_NR_ZONES], zhole_size[MAX_NR_ZONES];
->  	unsigned long max_dma32 =3D min;
-> +#if defined(CONFIG_ZONE_DMA) || defined(CONFIG_ZONE_DMA32)
->  	unsigned long max_dma =3D min;
-> +#endif
-> =20
->  	memset(zone_size, 0, sizeof(zone_size));
-> =20
-
-Reviewed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-
-Thanks!
+diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_hw.c b/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
+index a942cd9..f19b87c 100644
+--- a/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
++++ b/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
+@@ -146,7 +146,6 @@ static irqreturn_t cedrus_irq(int irq, void *data)
+ int cedrus_hw_probe(struct cedrus_dev *dev)
+ {
+ 	const struct cedrus_variant *variant;
+-	struct resource *res;
+ 	int irq_dec;
+ 	int ret;
+ 
+@@ -225,8 +224,7 @@ int cedrus_hw_probe(struct cedrus_dev *dev)
+ 		goto err_sram;
+ 	}
+ 
+-	res = platform_get_resource(dev->pdev, IORESOURCE_MEM, 0);
+-	dev->base = devm_ioremap_resource(dev->dev, res);
++	dev->base = devm_platform_ioremap_resource(dev->pdev, 0);
+ 	if (IS_ERR(dev->base)) {
+ 		dev_err(dev->dev, "Failed to map registers\n");
+ 
+-- 
+2.7.4
 
 
---=-XL1H6941T8hAsoF71YoD
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl2m2sgACgkQlfZmHno8
-x/7nEwf+LdOYEsxQAo4l3mtCRbpNKjXVZ2OFojqmoIsNuqZIqyPBsjYenMIxAvm2
-ytDau7vxVIP2CaX3ozL3bHrVeEeYW4M3QUZxotu0iIP92s+6wJt5RVPP7eiwESrK
-6m3eCPfbuYbk427JLLliu18X0cpDAgzPtLURkSSs44p9eTIQys0y+1HEexmArZr9
-afEwVp0p+X9hkQPI3+Se3ezBFIzFr3Jo2dC8UTrNy0k4hwIi3MCVD/3FEtXsz1DA
-YS+z16lCsKBk1jCZ9TDcbUsvZ0eaPUSvDpHFWhglqTR7YiDhyPoPrEvcf7DeP2Ah
-KnaMCQsCM47uhChDL7WzDjudTAVKlw==
-=KDT/
------END PGP SIGNATURE-----
-
---=-XL1H6941T8hAsoF71YoD--
-
-
-
---===============8684782383161913748==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8684782383161913748==--
-
-
