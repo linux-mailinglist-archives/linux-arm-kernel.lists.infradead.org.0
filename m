@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A868CD94D7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 17:03:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 67A27D94D6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 17:03:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2g1lTTb63SVUET1olJlyDVxcAkQO6O/7x9ogWD8OruY=; b=J6qHhWjlt0ibAb
-	65xesfMal0Xr6D2lBDlCg+VYLhEir9+dhN20+IQjcVC9C8xJdcdYzQnV7v4gLt4soGkyxujzxVfkW
-	wk5KwRE4R7ToSWFs5kSk8T+Vfnjg8JbdoZw5OLd660PfQY3IsHTEqMeI9zC1xUS7gKSSJupi3JGms
-	iy0U5glF/kc/rcjMJfDdg9/YBcRkQ2/rS6LgybTfVQByT90WrDqmUVNTlV/Md6S9zZ7ovp9cwyh1s
-	8sOhX9b133TEn04y47B0jxBrbDQx48ceJzZYqh/czm4eU8hwULtKrAqY5XljRFSSZOgH4tQqazrAW
-	CeeLskVtYp3lu9O8YC7Q==;
+	List-Owner; bh=n5UMOiyfRxHP+S4WQEFmtoV335W1AFZ993zyZq4BgKw=; b=a8GFMIgMFP3Vc9
+	tzxlZ/1yk1i3OCfmEtkPpBR9kNLZM5W1VaCKg5cip3rUaZFviev1H62QI1rATzjXdQ+xiY5NodT4H
+	p/g4+sz4OckSD+DipvMbJo+tZ+JVTZG9IoZT5mxO0PM7Dg033zUYFHGeRqUJaVo48/TwugvpHX0ie
+	4LWBeWkYSwUhc3O6atANtSEiYv71Hmh7RGxZ7CMIYP4aS10l/yKFjMZtHw4LCvE/ANsfaD9R3AusC
+	NYUPpddJDrJUXfOg71rPawlW7AUUxpRnhCPhm+RMaYnfIqWYgFDdt78g0g/XwTuhFi/C5qo6cdC2W
+	UH50fIFfJwPn793BmVMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKkp1-0000gG-7m; Wed, 16 Oct 2019 15:02:43 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1iKkpH-00017Q-8t; Wed, 16 Oct 2019 15:02:59 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKko1-00006q-Kf
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 15:01:43 +0000
-Received: by mail-wm1-x341.google.com with SMTP id 5so3313369wmg.0
+ id 1iKko5-00009c-0m
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 15:01:46 +0000
+Received: by mail-wr1-x443.google.com with SMTP id j18so28442346wrq.10
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 16 Oct 2019 08:01:41 -0700 (PDT)
+ Wed, 16 Oct 2019 08:01:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=XSMaBnNcLIC/2A/YQA0ncniU4wnlx2r73tbiVGv77iU=;
- b=PLQtZSn+yUCemUGZyaK473m9JcxsoRBCHnK8mKz/zRj0tErRYuBh0OKyDqaROR1GC5
- Mh6xh9x9uLzTwwGKktHHM0dZjuzSU+KBx4vtVd2mze3+9dwxpgKLTF/PXr8PCr0KMoxX
- yHSxmJhCqFcCVaNaG+WSCiBOfADh+tm5sixlRBTne9F8KHURtnekWoDdXMbty/NyjqQP
- +lehwak7dZxc9G+e327uYJdunwZ0TzBBxiKqMTBZF+0/P4y4m3DP/8I8Kzl+8G/dWGN0
- 4BwZu5zF9V1PNhmrLFDwwz1WbevubQhpfziefaGjaTNOIg9eVVWcpLOh6tfi/tPGuwXw
- +heA==
+ bh=GJDCD24q8FHHhxNDtUAkpzQYbJaDZYgAmYeaRlxpr/w=;
+ b=dO4olJtvxy5WdTAk6CiGSGZ/doWOUCerRa2ngeO0GD37wFEQBYSjsutuPLDVbqT8mO
+ Y6IMoGamFUFHX0sMTqJ4QBoJ56ZYmIPvod5t6RiUfjmLhmn+8xP19XUrKbPWKO6JCkT/
+ nHW5ii8489KCW+AgpKSIdQSVKlZlsV5JoibBzTOk8oIA98Q5ApEEh1nO47aFvAg9GLdl
+ 2/KQBpSsJJ0OnjbxDkwEFoXlx2MhB3wzSpVAJJGKzPCJ7F05keQFXpB0ci03+puGuENc
+ yvhd9mLDRE/0SZbaTCcPzjsABsHYIIotHozMjkDoM1UygnHvkRASDdbmA7FnpySj9QA9
+ +PHg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=XSMaBnNcLIC/2A/YQA0ncniU4wnlx2r73tbiVGv77iU=;
- b=cCKGHGT3BFSd/l8UaNBCwSdSgkhV6RdgXppXGRZrRV8GtNLWGVamfEvb8ys7s9Cyz7
- k5wheAslXHJ5sTdepJEj3of83mXkbRUtMZ98mrRTd5bjpnrYvvAhGqQbX5+SxbzsUiXo
- h6HlqGG1yVHPgvo1G3tYjB8vvUxWOpoyNLtDNMS8F+jlBRQNKkntS4vXusBRoIKLKxcG
- fE46KwHljy5Yq8gSZcIGrDrFTkcdENrWi2qTW0oKW0fdABbFEELcQeaAjN/oTpm1ElWc
- KbR4O67ThvHP6F0TZnyu1cyH6Ko/0vDbktf1ZvE0qRRET+uIC5gAuKFJ6qG7v/RTj1lZ
- tNLg==
-X-Gm-Message-State: APjAAAU+p6tPV/NMIBNTThO61Fapj/SUxS9sDi5O4o1u49vVj8bVNkc2
- At0Z/8JJA04kB+Gs/fqrcVY=
-X-Google-Smtp-Source: APXvYqyBZ1qB/ltT/hAuRNTYrYAOkdPTdDbDs8wpfV+2g9pzG0NhOcjvxsBCBCwOCBqByu6ihz8VSw==
-X-Received: by 2002:a05:600c:c1:: with SMTP id u1mr3437767wmm.87.1571238100141; 
- Wed, 16 Oct 2019 08:01:40 -0700 (PDT)
+ bh=GJDCD24q8FHHhxNDtUAkpzQYbJaDZYgAmYeaRlxpr/w=;
+ b=rIgkZgOIi84B54uMa7lNDItU390GAub556iQasQBxBPlegVcN9nkZV1VMWUXSmxbc+
+ b/S978MxKAkaPn1MTnxi7Cbb+tQtJtPFVsRIxlYXsX1SIuynUdTrkzYjEeUNJkbtyzcG
+ Mp9Dhz9DcmZ0nzP4H4+ExHrzx6Ftnzw9eL2gfGppWoM1NmEd837PNAn6vy3F8ruJjZUq
+ xjjtH4Y154zMKFHKPH1gTt11VpspdI5Tj+ry7NMjK6Y5tUCeg5HFRlzuybGNVkfXLyz5
+ kHQqZb0D/qpk/Pnu4lE2E/kjkZU+MIDyLM7awb0O+WkVIYan7U/3WiA360i6kDj/nWRz
+ n/lA==
+X-Gm-Message-State: APjAAAUm2PiXOSSn5cNQpE+9HzjrjP1zomIvuYBvYonkhFfJtirBpiKj
+ LE0RQIeMrVFNIwsuFpD/tlw=
+X-Google-Smtp-Source: APXvYqxajNGwg9e2D3RfLPK/tRVSjQI6X1jb4DR8hLkyw9AlkbnFzdfh7YT0cugXZNRH+p27aat98g==
+X-Received: by 2002:a5d:4685:: with SMTP id u5mr3277509wrq.264.1571238101466; 
+ Wed, 16 Oct 2019 08:01:41 -0700 (PDT)
 Received: from Red.localdomain ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id r18sm3215437wme.48.2019.10.16.08.01.38
+ by smtp.googlemail.com with ESMTPSA id r18sm3215437wme.48.2019.10.16.08.01.40
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 16 Oct 2019 08:01:39 -0700 (PDT)
+ Wed, 16 Oct 2019 08:01:40 -0700 (PDT)
 From: Corentin Labbe <clabbe.montjoie@gmail.com>
 To: catalin.marinas@arm.com, davem@davemloft.net, herbert@gondor.apana.org.au,
  linux@armlinux.org.uk, mark.rutland@arm.com, mripard@kernel.org,
  robh+dt@kernel.org, wens@csie.org, will@kernel.org
-Subject: [PATCH v5 03/11] dt-bindings: crypto: Add DT bindings documentation
- for sun8i-ce Crypto Engine
-Date: Wed, 16 Oct 2019 17:01:23 +0200
-Message-Id: <20191016150131.15430-4-clabbe.montjoie@gmail.com>
+Subject: [PATCH v5 04/11] ARM: dts: sun8i: R40: add crypto engine node
+Date: Wed, 16 Oct 2019 17:01:24 +0200
+Message-Id: <20191016150131.15430-5-clabbe.montjoie@gmail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20191016150131.15430-1-clabbe.montjoie@gmail.com>
 References: <20191016150131.15430-1-clabbe.montjoie@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_080141_814419_5DD7924F 
-X-CRM114-Status: GOOD (  12.04  )
+X-CRM114-CacheID: sfid-20191016_080145_110113_2D70BF31 
+X-CRM114-Status: GOOD (  11.34  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (clabbe.montjoie[at]gmail.com)
@@ -101,119 +100,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Rob Herring <robh@kernel.org>,
- linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com,
- Corentin Labbe <clabbe.montjoie@gmail.com>, linux-crypto@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-sunxi@googlegroups.com, Corentin Labbe <clabbe.montjoie@gmail.com>,
+ linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds documentation for Device-Tree bindings for the
-Crypto Engine cryptographic accelerator driver.
+The Crypto Engine is a hardware cryptographic offloader that supports
+many algorithms.
+It could be found on most Allwinner SoCs.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+This patch enables the Crypto Engine on the Allwinner R40 SoC Device-tree.
+
 Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
 ---
- .../bindings/crypto/allwinner,sun8i-ce.yaml   | 88 +++++++++++++++++++
- 1 file changed, 88 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/crypto/allwinner,sun8i-ce.yaml
+ arch/arm/boot/dts/sun8i-r40.dtsi | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ce.yaml b/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ce.yaml
-new file mode 100644
-index 000000000000..2c459b8c76ff
---- /dev/null
-+++ b/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ce.yaml
-@@ -0,0 +1,88 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/crypto/allwinner,sun8i-ce.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+diff --git a/arch/arm/boot/dts/sun8i-r40.dtsi b/arch/arm/boot/dts/sun8i-r40.dtsi
+index c9c2688db66d..421dfbbfd7ee 100644
+--- a/arch/arm/boot/dts/sun8i-r40.dtsi
++++ b/arch/arm/boot/dts/sun8i-r40.dtsi
+@@ -266,6 +266,15 @@
+ 			#phy-cells = <1>;
+ 		};
+ 
++		crypto: crypto@1c15000 {
++			compatible = "allwinner,sun8i-r40-crypto";
++			reg = <0x01c15000 0x1000>;
++			interrupts = <GIC_SPI 94 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&ccu CLK_BUS_CE>, <&ccu CLK_CE>;
++			clock-names = "bus", "mod";
++			resets = <&ccu RST_BUS_CE>;
++		};
 +
-+title: Allwinner Crypto Engine driver
-+
-+maintainers:
-+  - Corentin Labbe <clabbe.montjoie@gmail.com>
-+
-+properties:
-+  compatible:
-+    enum:
-+      - allwinner,sun8i-h3-crypto
-+      - allwinner,sun8i-r40-crypto
-+      - allwinner,sun50i-a64-crypto
-+      - allwinner,sun50i-h5-crypto
-+      - allwinner,sun50i-h6-crypto
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    items:
-+      - description: Bus clock
-+      - description: Module clock
-+      - description: MBus clock
-+    minItems: 2
-+    maxItems: 3
-+
-+  clock-names:
-+    items:
-+      - const: bus
-+      - const: mod
-+      - const: ram
-+    minItems: 2
-+    maxItems: 3
-+
-+  resets:
-+    maxItems: 1
-+
-+if:
-+  properties:
-+    compatible:
-+      items:
-+        const: allwinner,sun50i-h6-crypto
-+then:
-+  properties:
-+      clocks:
-+        minItems: 3
-+      clock-names:
-+        minItems: 3
-+else:
-+  properties:
-+      clocks:
-+        maxItems: 2
-+      clock-names:
-+        maxItems: 2
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
-+  - resets
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/clock/sun50i-a64-ccu.h>
-+    #include <dt-bindings/reset/sun50i-a64-ccu.h>
-+
-+    crypto: crypto@1c15000 {
-+      compatible = "allwinner,sun8i-h3-crypto";
-+      reg = <0x01c15000 0x1000>;
-+      interrupts = <GIC_SPI 94 IRQ_TYPE_LEVEL_HIGH>;
-+      clocks = <&ccu CLK_BUS_CE>, <&ccu CLK_CE>;
-+      clock-names = "bus", "mod";
-+      resets = <&ccu RST_BUS_CE>;
-+    };
-+
+ 		ehci1: usb@1c19000 {
+ 			compatible = "allwinner,sun8i-r40-ehci", "generic-ehci";
+ 			reg = <0x01c19000 0x100>;
 -- 
 2.21.0
 
