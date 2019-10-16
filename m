@@ -2,118 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B653D975A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 18:29:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 203E9D975C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 18:29:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tdMts6MLIao4u5xgsr/WkXCpmYCyKiVoxaZDtGXwlaA=; b=DfUMDJ4mMWHNpj
-	3g6FKJgQ2EskeWsUqw96FfK5SVsqaJd6+qfhQQVDPn2+PTdHyNtO0NXL+IkoW0RjO8awZHuoCTt9H
-	aHWDSVSDgxMvVXx9NskLQbuw7MJ3+CMphc77VC8x7diOZAc3P0SOho5KIhLYf6TrKnfN1CAlZ7CZk
-	7wH8mj8UD8QTK2Lao5yY1Zz2cBcS1Iyzh8vFsJ1fx5w4A8O5XoDZeRj52lXgvbQWd3JJULTje2x5h
-	SIbU/c/FaOa8nPtQV349efKvDiC4hJKzvD2dq0x2DEAoKbA1N2GRHJ6dGHg7qinxjjr559i4wF4HA
-	o01lfSQtrROr65WhU5rQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dVg2NuIuErvjysNxx++/b/dWeSMYw2ow3HlWNfNNaOk=; b=WGVCsol9gG7TZS
+	o3ncznRHhKP13qaoVbhbnElpQUs+G2pe4wMAAV8J6Z1746Kaw1XnuLJK1DHWv9jGqb1TI47cEo2e+
+	pGIk/ouQ0f9+bzlQXLuifqY22z1pIx+w5uWKKYDt+8eQFHVgJ0ocUmUEZHDb6xW0b7oF4DUhGNm3X
+	6vNVr7qZzSTOtPG/5T2ocUxmHPG0PVau7yv1Peg/zl0nelf74zLPydRhRMS0fBwa+9vqWYI1EiFiy
+	rpW42wBMd2Qjwq/2JYv25k/49oDGcTSLlTn3GBAROqAaf1IUP6c2ZbfjO8lJ5qHuZyIj3YLfHwBG0
+	3Bkf7rOxYGss7OqHgpiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKmAa-0000zP-Jc; Wed, 16 Oct 2019 16:29:04 +0000
-Received: from mail-eopbgr30131.outbound.protection.outlook.com
- ([40.107.3.131] helo=EUR03-AM5-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKmAN-0000yJ-GN
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 16:28:52 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=T4XIA9QH5uxGOZ+JeporiFSHKvU19eu4hU+429EBsajvVIdjyHU1PN6arHKGyWhsvTek0mKtKOJu/dHq7rr1PujPqZfHpK3zeXnZsAbni4C/D1Iubq5zaUNO6r7cIneqV32V5yHsMvKqdK2RnLQ1QpSsONYU2NGYn4gbdDTgYGAB86BCLAn5SBeorlNWWd0QRlxLmidqmoHV2wUZFSYjdHog9q4TsRGirkJfey6cjxc16stk1X+jBIvXjZFM5UKj6QhXM/kmlMwm3aanSQk/HDSs6nAnLKZwK8KvTheuPz7DH/2u6t8Gcf95eUXp+CclBBEj5kKDPmQaQYoSfe/8GQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=EljIL6vBnzA0UbaGNyDZQxy2ZR+kT+6Lb4aBMLRCIf4=;
- b=C7CDCJqQK1MhwePC6j2ij69FxXRtNn+QgGPPyLwozuJAWaQzjrNewjVO47lagqsNJ1zHtU5D+ksVtqKD0ZWW57j6p2dK9sK1C7oZst7r7rzcNNnpfTzejmEUf6fx5SEJLPP+G2isieP+URFYL0QkXPf34NocRJuGXP4xPbIUayP6Spk3ANHA5kCaRnLJKqoysD9vhy/9AWaWm4sZ7ya5KEppkxQKDCffFewBJdHnw3ZsG3vQgPM5MB9+e+mAKpoLo06VxZWKKOoV6v9jDSp/EFTQBUryXzEZmJOgL46L0cMjaPmmKXoyOjPy5vJXpjpUoAuai74JAcSbzADoVDAF7w==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
- dkim=pass header.d=toradex.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=EljIL6vBnzA0UbaGNyDZQxy2ZR+kT+6Lb4aBMLRCIf4=;
- b=lS7aToNdkm6QKIWiv6+TEdSCUS+HAdz2UVvQJW6oYjUbT9vFUTjUECkWjh0gcvGkGbDRhKSLwvyDY1RXdYSP4mJoM0JepQAejv5vfwV8lgdvzoqCXuqnJvietbaiBQcpQMzdEiwkfwqSqf/lu0pmvbGBVOvTOWgcHTtDVl/qf20=
-Received: from VI1PR0502MB3965.eurprd05.prod.outlook.com (52.134.19.20) by
- VI1PR0502MB3629.eurprd05.prod.outlook.com (52.134.7.28) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2347.21; Wed, 16 Oct 2019 16:28:44 +0000
-Received: from VI1PR0502MB3965.eurprd05.prod.outlook.com
- ([fe80::f427:26bb:85cf:abad]) by VI1PR0502MB3965.eurprd05.prod.outlook.com
- ([fe80::f427:26bb:85cf:abad%7]) with mapi id 15.20.2347.023; Wed, 16 Oct 2019
- 16:28:44 +0000
-From: Philippe Schenker <philippe.schenker@toradex.com>
-To: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, Shawn Guo
- <shawnguo@kernel.org>
-Subject: [PATCH v1 2/2] arm: dts: vf-colibri: add recovery mode to i2c
-Thread-Topic: [PATCH v1 2/2] arm: dts: vf-colibri: add recovery mode to i2c
-Thread-Index: AQHVhD7H8G6VDxhlKU2zTwJWkgHwYQ==
-Date: Wed, 16 Oct 2019 16:28:44 +0000
-Message-ID: <20191016162833.1893-2-philippe.schenker@toradex.com>
-References: <20191016162833.1893-1-philippe.schenker@toradex.com>
-In-Reply-To: <20191016162833.1893-1-philippe.schenker@toradex.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: AM0PR02CA0006.eurprd02.prod.outlook.com
- (2603:10a6:208:3e::19) To VI1PR0502MB3965.eurprd05.prod.outlook.com
- (2603:10a6:803:26::20)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=philippe.schenker@toradex.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: git-send-email 2.23.0
-x-originating-ip: [46.140.72.82]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 72a7f2c7-4080-4be9-3a74-08d75255e98c
-x-ms-traffictypediagnostic: VI1PR0502MB3629:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR0502MB3629D6F2504775636C87C829F4920@VI1PR0502MB3629.eurprd05.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:626;
-x-forefront-prvs: 0192E812EC
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(366004)(136003)(346002)(396003)(376002)(39850400004)(189003)(199004)(66066001)(26005)(86362001)(54906003)(36756003)(8676002)(7736002)(4326008)(66946007)(71190400001)(71200400001)(478600001)(6512007)(256004)(14444005)(44832011)(386003)(66556008)(66446008)(66476007)(2906002)(64756008)(6506007)(5660300002)(102836004)(99286004)(316002)(11346002)(186003)(446003)(25786009)(4744005)(1076003)(486006)(14454004)(8936002)(2501003)(81156014)(3846002)(2616005)(50226002)(305945005)(6116002)(76176011)(476003)(6436002)(81166006)(52116002)(110136005)(6486002);
- DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR0502MB3629;
- H:VI1PR0502MB3965.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: toradex.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: B9ZOc+bfuQlrryLjwVFKbjTzv7lgnTLAuglU6L0sxKgVQnaWELhkzPZlCwAcuhfSA1qJoQ3F7DPmHFY7v1mHqftiCt6OMj3jpjJAYNcQ7P7TLZ/HpIRataYUc7S/QfPXcgYC6nad75SmqjrrCs6Sr2/CCmhi6YxjEgg0ZsWmXgUDu5vrD3JoaPvceFHX2E3dn50vNZZcSSqBKbFZpGfWcUguS8Aq3vzAePNh33rLsHggbgI+LNw6eGtU52j8SnydJECd9NUhTX53tCTPi/5gnqdfjZcIUtLqaIMkfGECYZmkWGKVMS3j4Nckizif0+uPo1MDQ54mkZvoRNXjj1E4oa6/hTzIUQh0eYqSqxr66b8hQNoZxuQrbiLoc5lGc+04sXUe0rON3hX6MhfHtPvMin52hlt1uzlP+CCpIQqQw14=
+	id 1iKmBC-0001X4-Jf; Wed, 16 Oct 2019 16:29:42 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iKmB1-0001Vh-T8
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 16:29:34 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AB43728;
+ Wed, 16 Oct 2019 09:29:29 -0700 (PDT)
+Received: from [10.1.196.105] (unknown [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C79623F68E;
+ Wed, 16 Oct 2019 09:29:28 -0700 (PDT)
+Subject: Re: [PATCH] arm64: mm: fix inverted PAR_EL1.F check
+To: Mark Rutland <mark.rutland@arm.com>, linux-arm-kernel@lists.infradead.org
+References: <20191016110304.44932-1-mark.rutland@arm.com>
+From: James Morse <james.morse@arm.com>
+Message-ID: <99261f9e-98ab-ca79-9514-b900306f49df@arm.com>
+Date: Wed, 16 Oct 2019 17:29:27 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-OriginatorOrg: toradex.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 72a7f2c7-4080-4be9-3a74-08d75255e98c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Oct 2019 16:28:44.2522 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: d9995866-0d9b-4251-8315-093f062abab4
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: YiCLaikWFDhQE9ks6aGZk9XsEVXi8K9PZ7bQ7v2tc39va7SVZMMaHLSZSyGvUZDwgaEDw5sdnMqI6YW1lbHmgGtsr+RAwRvxpQfvNi/yx8A=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0502MB3629
+In-Reply-To: <20191016110304.44932-1-mark.rutland@arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_092851_547335_65B5B9A5 
-X-CRM114-Status: GOOD (  11.12  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191016_092931_981303_7AB77A37 
+X-CRM114-Status: GOOD (  14.48  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.3.131 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -125,63 +61,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Max Krummenacher <max.krummenacher@toradex.com>,
- Stefan Agner <stefan.agner@toradex.com>,
- Marcel Ziswiler <marcel.ziswiler@toradex.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Stefan Agner <stefan@agner.ch>,
- Philippe Schenker <philippe.schenker@toradex.com>,
- Rob Herring <robh+dt@kernel.org>, Luka Pivk <luka.pivk@toradex.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch enables the recovery mode now available.
+Hi Mark,
 
-Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
+On 16/10/2019 12:03, Mark Rutland wrote:
+> When detecting a spurious EL1 translation fault, we have the CPU retry
+> the translation using an AT S1E1R instruction, and inspect PAR_EL1 to
+> determine if the fault was spurious.
+> 
+> When PAR_EL1.F == 0, the AT instruction successfully translated the
+> address without a fault, which implies the original fault was spurious.
+> However, in this case we return false and treat the original fault as if
+> it was not spurious.
+> 
+> Invert the return value so that we treat such a case as spurious.
 
----
+With d0b7a302d58a reverted I can use A57's #1387217[1] to hit this spurious case.
+(it needs planetary alignment too).
 
- arch/arm/boot/dts/vf-colibri.dtsi | 10 +++++++++-
- 1 file changed, 9 insertions(+), 1 deletion(-)
+With this this patch the 'spurious' message is printed, and the kernel keeps running [0].
 
-diff --git a/arch/arm/boot/dts/vf-colibri.dtsi b/arch/arm/boot/dts/vf-colibri.dtsi
-index b6a1eeeb2bb4..254402c4f872 100644
---- a/arch/arm/boot/dts/vf-colibri.dtsi
-+++ b/arch/arm/boot/dts/vf-colibri.dtsi
-@@ -129,8 +129,9 @@
- 
- &i2c0 {
- 	clock-frequency = <400000>;
--	pinctrl-names = "default";
-+	pinctrl-names = "default", "gpio";
- 	pinctrl-0 = <&pinctrl_i2c0>;
-+	pinctrl-1 = <&pinctrl_i2c0_gpio>;
- };
- 
- &nfc {
-@@ -308,6 +309,13 @@
- 			>;
- 		};
- 
-+		pinctrl_i2c0_gpio: i2c0gpiogrp {
-+			fsl,pins = <
-+				VF610_PAD_PTB14__GPIO_36		0x37ff
-+				VF610_PAD_PTB15__GPIO_37		0x37ff
-+			>;
-+		};
-+
- 		pinctrl_nfc: nfcgrp {
- 			fsl,pins = <
- 				VF610_PAD_PTD23__NF_IO7		0x28df
--- 
-2.23.0
+If its useful:
+Tested-by: James Morse <james.morse@arm.com>
 
+
+Thanks,
+
+James
+
+
+[0] survivable spurious translation fault:
+[ 2186.464077] ------------[ cut here ]------------
+[ 2186.468687] Ignoring spurious kernel translation fault at virtual address fffffdfffe5fd020
+[ 2186.476950] WARNING: CPU: 7 PID: 0 at ../arch/arm64/mm/fault.c:315
+__do_kernel_fault+0xf0/0x120
+[ 2186.485634] Modules linked in: crct10dif_ce ip_tables x_tables ipv6 nf_defrag_ipv6
+[ 2186.493197] CPU: 7 PID: 0 Comm: swapper/7 Tainted: G        W
+5.4.0-rc3-00002-g08245819bd8b #125
+[ 2186.502663] Hardware name: AMD Seattle (Rev.B0) Development Board (Overdrive) (DT)
+[ 2186.510219] pstate: 40000085 (nZcv daIf -PAN -UAO)
+[ 2186.514998] pc : __do_kernel_fault+0xf0/0x120
+[ 2186.519342] lr : __do_kernel_fault+0xf0/0x120
+
+[ 2186.606470] Call trace:
+[ 2186.608906]  __do_kernel_fault+0xf0/0x120
+[ 2186.612904]  do_translation_fault+0x40/0x70
+[ 2186.617075]  do_mem_abort+0x3c/0x98
+[ 2186.620551]  el1_da+0x20/0x94
+[ 2186.623507]  __memcpy_fromio+0x44/0x98
+[ 2186.627245]  __ghes_peek_estatus.isra.13+0x54/0xc8
+[ 2186.632023]  ghes_proc+0x40/0x158
+[ 2186.635325]  ghes_poll_func+0x38/0x68
+[ 2186.638977]  call_timer_fn.isra.31+0x20/0x78
+[ 2186.643234]  run_timer_softirq+0x33c/0x398
+[ 2186.647317]  __do_softirq+0x114/0x230
+[ 2186.650968]  irq_exit+0xcc/0xd8
+[ 2186.654097]  __handle_domain_irq+0x60/0xb8
+[ 2186.658180]  gic_handle_irq+0x58/0xb0
+[ 2186.661829]  el1_irq+0xb8/0x180
+[ 2186.664958]  arch_cpu_idle+0x10/0x18
+[ 2186.668521]  do_idle+0x1c4/0x290
+[ 2186.671736]  cpu_startup_entry+0x20/0x40
+[ 2186.675647]  secondary_start_kernel+0x1bc/0x218
+[ 2186.680165] ---[ end trace b0c5d14deb160e8f ]---
+
+[1]
+https://static.docs.arm.com/epm049219/220/Arm_Cortex_A57_MPCore_Software_Developers_Errata_Notice_SDEN_v22.pdf
 
 _______________________________________________
 linux-arm-kernel mailing list
