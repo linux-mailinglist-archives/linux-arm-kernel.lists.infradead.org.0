@@ -2,136 +2,114 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E06A6D8EBC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 12:57:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02851D8ECF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 13:02:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FZl70VeXP93aWd2uY1ZYCaro33oMtxDS3D3DujPdrJM=; b=AyTUWOxRuvbLwf
-	W5aSYbNppMvmiklvseWHS8icrE7YBTfbTXz+iPUar2oFjrKz9tcyjGuH4mr2ccpQObKAiStkw5ydC
-	Nchz8+WlZMXGg1QuwxwsPBOdrG7ftFGptyo3uahXz38mbI+fjY9eCAf5ke7Em/R5/+8MFN/wLi1SG
-	O1RFJr0w4ie8xHeIJhHEpqboUtjw00psaZEQO79Bgd9GCDT9HB1lTil3vdpo2chu+g4GTRvfa+/WK
-	dfk3MdpTyUGdmO2mhxcG2o9CO1Gh6WUI+mqSrUuaZ7Q4dCI0rZmQ6irg4yLE8QDCy5m8tie7pCG8w
-	JKhfM3p6npqUpGbgmBaQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=CxQrohBWb/baNClvb+u/RzrHBBGWaZ9HA8yOa6vKgrk=; b=KoBN6+bvD9cZE4
+	DoFji24vMIHgeRwhhJTzcCOzoDckyr45aeIVkPgDz9ZCkogHPJwajxgQUcIPWpUnqPf41jMyI/4G/
+	uVZULb3Miq/N6ejKMwBfsUscDXi1NnACgKNJauChJ+Dsp7Kd1D0HpsuiM2USJDUfFerKL1XQuMaQ0
+	YU4YJDZofsF1Hao7zOOnII/3C1+DUHDhft9YE5qQRkkuh9iX+MgSorjj6Nlyk8dELNEzY3Mtx6dIf
+	j4zw2TrKZrbNgD1ZlgSiSU471aJUFTW01mr3N4xJVHsoAVsYd6pjwCDQwhObPta13T34hdE5vQ8fO
+	XzS32mAgdM+L93ERvH4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKgzG-0001Rp-4Q; Wed, 16 Oct 2019 10:57:02 +0000
-Received: from mail-eopbgr740083.outbound.protection.outlook.com
- ([40.107.74.83] helo=NAM01-BN3-obe.outbound.protection.outlook.com)
+	id 1iKh4F-0003H2-Mn; Wed, 16 Oct 2019 11:02:11 +0000
+Received: from mail-eopbgr10076.outbound.protection.outlook.com ([40.107.1.76]
+ helo=EUR02-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKgz5-0001Ql-G0
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 10:56:52 +0000
+ id 1iKh46-0003Fo-JK
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 11:02:03 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=jwWXQAcfD2/YoGE/wAbAFa8+UvYPR+3E/zXjVXhuXe4zo+iJR7e13TCihwEnSuJXbFBisFIzlTgF3QlW0Qaj01Sh4PP5sC/JI8i9+vEn7V8Hr2vZ/O8V6mVLoZEHvHz4veh+Tr1i2lTzp7bqESdbLjP0UY7K7/fUuJnkuTh6l9KFxrWpdpRsoNHg2YLKyQ5uxEoHxPEBYFtijj5tJPpBMkHq2rL2aHMGaPsC/gi96AoJKlSB4Qh4ifuDU1Ij6HCWR4Ip1iQPdJsUmo7Z6GiM4OnPBdbw9PFRCd4ojjx4rya/LvhucRVUDX0Nu/kw9wPZSG2ar1DQ8k8I23OWWc4hZA==
+ b=kz7torD2zd4MvCR6wU7lK2u9zdqG3isApDfog6wHBjJuHnoW7m8THfXJ92vImUwcFxL1bb+Iw5f9zg7bKvn6Occ8v6KJ7SvR6mIPQ269en2fnVLXs+SM2jzg/eZKhT7y6mgFadyitkp1IxZ6LBp1lJqYhTTo59ao9z7d3nctXJecFWNloQ/MmwP9mdigwxtZRCPW367yrH9N9ihTxQtUhIDue9ZhLjwjvV/m+PdIjk/c+AkoKrWJGWQByNTMWGiXbrLalelAN9gAQssMkjAfbltIhDzdFamZiTtEtZyV6m+fOSx/Mo3t0Nd3OQ+JBDk+kcesX7LUktKyUNrtCGauxQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=++B+ydka1g41fIu7Ox/Ms6mOQ5TA5T48D86VqWS/dOA=;
- b=m9gjC6dl150aW+33AqgMSaW/bI7XzUcRcu6dVXI+X7NF1SMoJ+LeM+TMTW7UE7rNGoNB8d7x1fkBU6JW9XQKvgxsTkoIX6Xw+uTxIfU48Aj6t7C6gOp8Zy9SFMfAePloI5vsu12NznMLAmelWKVOqLeaF48AJ9W1dLruZOzdzi9gW4q9+FE2y39k8kMNawhGwplLj8kK24jVVxFbHwu2sJKDke5IBDY8cY+L4KHrLW4Te0VVs6HEtEUMKPyllbOgEhF5pzPNvE/MW2nR09Xi8rgqJvWa3eXPYhn8z/NPrJOCFXZTyaD4GJ+XfRfoiTW+/OaXfQ5OoTSEeTs6Jtft6w==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.83) smtp.rcpttodomain=linaro.org smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ bh=ZC0s8H2jNEl7qNSIrVIkOcb7mNC+168VZoIPI+EBrkk=;
+ b=EHhLUbpKlg5DXobSTQ5ZVN5/KF8TdOcHi7LMfaifY3W+h4JLBQGdq+0GyP8UXrwnvncERuow7D1gewEwuNxetidd0FNUusDcB/wa0duIY04/ewKgp57JYH6p7liYNY8f6VB3jGmH6QyqCurfipiKbFAu2mV/na0oYbKcN1kwVuWj07jv0K80aQhgPoWsrJ3gTq0xmMWY0MONOYQPNc7QAH0Wk3R47ZRVc4Ie/VibT+xEHmgNAlQX7jdo/gIE2GFztSR4Lz8JW0kRt3gdHEENzGOMhrU2pFP7K3I2BRSBdaTkNKnOlEToi8d6IGqS75Esw6+unwURF+Ro4Ctbe2A51A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=++B+ydka1g41fIu7Ox/Ms6mOQ5TA5T48D86VqWS/dOA=;
- b=qAfErY00l/+l12nBM1ZreTv2w4mn0lEE4uhcpCrBCK6BcsR/WbE9VTIeaerKJMEBpwhP9EfcHsknBjZ9gGkBg7esvn//3M0qzxplkt9t+XaB9L9pnd2e/g/H/O6w73Ww+z6HTXBiT7BEorhe4WMWUtli6sORlGp2LJYXhSjH93o=
-Received: from MWHPR0201CA0102.namprd02.prod.outlook.com
- (2603:10b6:301:75::43) by BL0PR02MB4803.namprd02.prod.outlook.com
- (2603:10b6:208:5d::24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2347.17; Wed, 16 Oct
- 2019 10:56:48 +0000
-Received: from SN1NAM02FT064.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e44::209) by MWHPR0201CA0102.outlook.office365.com
- (2603:10b6:301:75::43) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2347.16 via Frontend
- Transport; Wed, 16 Oct 2019 10:56:47 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
- smtp.mailfrom=xilinx.com; linaro.org; dkim=none (message not signed)
- header.d=none;linaro.org; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
-Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- SN1NAM02FT064.mail.protection.outlook.com (10.152.72.143) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2347.16
- via Frontend Transport; Wed, 16 Oct 2019 10:56:47 +0000
-Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
- by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1iKgz0-0006CF-NR; Wed, 16 Oct 2019 03:56:46 -0700
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1iKgyv-0002aI-K4; Wed, 16 Oct 2019 03:56:41 -0700
-Received: from xsj-pvapsmtp01 (smtp.xilinx.com [149.199.38.66])
- by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id x9GAuUEf027448; 
- Wed, 16 Oct 2019 03:56:30 -0700
-Received: from [172.30.17.123] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <michals@xilinx.com>)
- id 1iKgyk-0002Ya-Ho; Wed, 16 Oct 2019 03:56:30 -0700
-Subject: Re: [PATCH v2 0/2] drivers: firmware: xilinx: Add support for versal
- soc
-To: Jolly Shah <jolly.shah@xilinx.com>, ard.biesheuvel@linaro.org,
- mingo@kernel.org, gregkh@linuxfoundation.org, matt@codeblueprint.co.uk,
- sudeep.holla@arm.com, hkallweit1@gmail.com, keescook@chromium.org,
- dmitry.torokhov@gmail.com, michal.simek@xilinx.com, robh+dt@kernel.org,
- mark.rutland@arm.com
-References: <1570474343-21524-1-git-send-email-jolly.shah@xilinx.com>
-From: Michal Simek <michal.simek@xilinx.com>
-Message-ID: <7d1939c2-ad64-87d0-3ad7-b7de2400065d@xilinx.com>
-Date: Wed, 16 Oct 2019 12:56:26 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <1570474343-21524-1-git-send-email-jolly.shah@xilinx.com>
+ bh=ZC0s8H2jNEl7qNSIrVIkOcb7mNC+168VZoIPI+EBrkk=;
+ b=eavAjY99AxUSXE6kan8codSvCp/JoG73hOZntQU2q7fMn6AyhyhvIBtNVFeWsWxFMfHDfBUjxPTe+XfDtsJdk+0RYE80VMGy1N3buVK8OrrUTsik2VKtDD0L0H5XhUdteJbX/xMBjn1tUSOOK13cGAow1U3XT9OYmtklD9SqXpk=
+Received: from VI1PR0402MB2863.eurprd04.prod.outlook.com (10.175.20.18) by
+ VI1PR0402MB3679.eurprd04.prod.outlook.com (52.134.13.11) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2347.17; Wed, 16 Oct 2019 11:01:57 +0000
+Received: from VI1PR0402MB2863.eurprd04.prod.outlook.com
+ ([fe80::d0fc:54d4:86f4:b1d2]) by VI1PR0402MB2863.eurprd04.prod.outlook.com
+ ([fe80::d0fc:54d4:86f4:b1d2%7]) with mapi id 15.20.2347.023; Wed, 16 Oct 2019
+ 11:01:57 +0000
+From: Stefan-gabriel Mirea <stefan-gabriel.mirea@nxp.com>
+To: Greg KH <gregkh@linuxfoundation.org>
+Subject: Re: [PATCH v6 3/5] serial: fsl_linflexuart: Be consistent with the
+ name
+Thread-Topic: [PATCH v6 3/5] serial: fsl_linflexuart: Be consistent with the
+ name
+Thread-Index: AQHVhBEget+54Njm0Um0wC+XV9FxYQ==
+Date: Wed, 16 Oct 2019 11:01:57 +0000
+Message-ID: <VI1PR0402MB2863EC2DF6464234DE4E0A16DF920@VI1PR0402MB2863.eurprd04.prod.outlook.com>
+References: <1570726348-6420-1-git-send-email-stefan-gabriel.mirea@nxp.com>
+ <1570726348-6420-4-git-send-email-stefan-gabriel.mirea@nxp.com>
+ <20191015190155.GA1140159@kroah.com>
+Accept-Language: en-US
 Content-Language: en-US
-X-RCIS-Action: ALLOW
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:NLI; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(396003)(376002)(39860400002)(136003)(189003)(199004)(65956001)(70206006)(70586007)(4326008)(230700001)(6246003)(65806001)(2486003)(23676004)(7416002)(47776003)(36386004)(76176011)(50466002)(478600001)(426003)(305945005)(126002)(476003)(106002)(11346002)(2616005)(446003)(9786002)(316002)(31686004)(31696002)(486006)(44832011)(336012)(8676002)(58126008)(26005)(8936002)(186003)(5660300002)(36756003)(81156014)(4744005)(2906002)(229853002)(6666004)(356004)(81166006)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BL0PR02MB4803; H:xsj-pvapsmtpgw01; FPR:;
- SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; MX:1; A:1; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: cf4ebe50-c1fc-45a2-db1a-08d752278a3b
-X-MS-TrafficTypeDiagnostic: BL0PR02MB4803:
-X-Microsoft-Antispam-PRVS: <BL0PR02MB480344F7A5A67F09E7A046DCC6920@BL0PR02MB4803.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:6430;
-X-Forefront-PRVS: 0192E812EC
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: GaJw5ZJd9eUkskWw45tmr/jNw8/1GFTtg95vzO/FfWUyf4cm7NfBF7YxACUHBqsxx0cohgaqlPuGyug/cRK/T13aZELEVEHMGH8RElSh/T06dRAzr62Rz7UwZ+PKO9BBdHI/3RSeKQbhMfWXZYPLk/z5GR28XkrMtunMp7g/oUsN1IH76f+tG0Fa1L0Wti+AIhPwZX1Qk3m21djXafZGZpinl3An5AOJMkjqTkmxp1q2yD51ONxgYvwk3xHucK9QkbLbXGLMbPAKU+diPvOsZjsxA7WkO5I1PYEDx/Ob6TgaA74AnLuZtlV5TbqAIEHtmduwU//MJU4Dd26b5OwWawADDXsky6LeOQx8OjhryFCKOJ64kRx0QN/a2dCLinp1/GmjYkYj03blOfhz5Dh6kv5o+v7wXtzz/vBJlgszVg4=
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Oct 2019 10:56:47.1464 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: cf4ebe50-c1fc-45a2-db1a-08d752278a3b
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
- Helo=[xsj-pvapsmtpgw01]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR02MB4803
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=stefan-gabriel.mirea@nxp.com; 
+x-originating-ip: [64.157.242.222]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 40bad12d-7fad-47df-9b09-08d752284326
+x-ms-office365-filtering-ht: Tenant
+x-ms-traffictypediagnostic: VI1PR0402MB3679:|VI1PR0402MB3679:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VI1PR0402MB3679BD349F27ADED558DBF84DF920@VI1PR0402MB3679.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6108;
+x-forefront-prvs: 0192E812EC
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(39860400002)(376002)(366004)(346002)(136003)(396003)(199004)(189003)(53546011)(316002)(102836004)(74316002)(486006)(305945005)(81156014)(7736002)(446003)(86362001)(54906003)(476003)(8676002)(55016002)(6436002)(52536014)(2906002)(9686003)(229853002)(81166006)(186003)(5660300002)(26005)(8936002)(6506007)(4326008)(64756008)(558084003)(33656002)(71200400001)(71190400001)(66946007)(76116006)(91956017)(66476007)(256004)(66446008)(66556008)(7416002)(7696005)(25786009)(76176011)(6916009)(14454004)(66066001)(478600001)(99286004)(6246003)(6116002)(3846002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0402MB3679;
+ H:VI1PR0402MB2863.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: UuN6y66MLXQQjBy69LXejFCBemQkk7g0WqIioDyg4k9YaqNYQDh2wDKzUF3Itph1AeFZDcNR/Ofmk56IUyAllHxIRR+C8ojvoqjfb9FnmUcbGQdMthYxmgm+zxYYHZWUCHC3qhq7LpgoQoC3h25y42UqsZD4HuOlZjOG3I0yepo2qhcuL5ER8WXRPkosQ18jK8PWZNHMuY9cLIvtmgB3vs3WBPZfIcYlDzVVQanaKMwIHDI0FCRBwwPXIowqRKCOlGsZWNAcgW2dbPmHY2tkjgWduI9HBJ9+eKmfsV2adIFrPDgizxI6NaWkPimckuKpNWcrMCvZicnZINu7MymMt8hwsG+/+qn3znFcUCkkfTN+UXuD+/3GqE059ulFhm6IA5QQDNL777afv7XIstZk3TlCYanhsolhy+E0X9XbgT4=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 40bad12d-7fad-47df-9b09-08d752284326
+X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Oct 2019 11:01:57.3348 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 1s8TCWGOPefbN/x1X+R1jkW/j+qHJYPZob1EPJ5ZuTzmPYMWKpkvsvN094+NQ0qd9Ok/W5wCOGGWxMXHRMzrlXOpUxLVduXf64YPbyLKbFk=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0402MB3679
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_035651_536997_4488F203 
-X-CRM114-Status: GOOD (  12.31  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191016_040202_640979_F9AA6BC9 
+X-CRM114-Status: UNSURE (   7.81  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.74.83 listed in list.dnswl.org]
+ no trust [40.107.1.76 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -145,34 +123,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, rajanv@xilinx.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "corbet@lwn.net" <corbet@lwn.net>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
+ "jslaby@suse.com" <jslaby@suse.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "will@kernel.org" <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 07. 10. 19 20:52, Jolly Shah wrote:
-> Versal is xilinx's next generation soc. This patch adds
-> driver support required to be compatible with versal device
+Hello Greg,
+
+On 10/15/2019 10:05 PM, Greg KH wrote:
 > 
-> v2:
->   No changes. Resending to include DT maintaners
-> 
-> Jolly Shah (2):
->   dt-bindings: firmware: Add bindings for Versal firmware
->   drivers: firmware: xilinx: Add support for versal soc
-> 
->  .../bindings/firmware/xilinx/xlnx,zynqmp-firmware.txt    | 16 +++++++++++++++-
->  drivers/firmware/xilinx/zynqmp.c                         |  8 ++++++--
->  2 files changed, 21 insertions(+), 3 deletions(-)
+> This patch does not apply to my tree :(
 > 
 
-Applied both.
-I just removed drivers from subject of 2/2.
+Thanks for letting me know; I will rebase it in v7.
 
-Thanks,
-Michal
+Regards,
+Stefan
 
 _______________________________________________
 linux-arm-kernel mailing list
