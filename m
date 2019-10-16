@@ -2,79 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4BEE7D91CF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 14:59:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BBEB5D91D0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 15:00:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=TowiocKS2AB+hp8Mk0wNiCj530MHVJdqpyTyfNZAJsY=; b=OXKAbZecC02SO9
-	GG20vAvDhtJfIQ8/7Dm+nqsn7jlpA1Y42ti9GRJ7qHQHcAlLgKGnywbib58bIhPNBtqWiDvxCdVlk
-	qpgZgBj7VtwCLzKDqrTuJm4FUYKTdSUBm5OrqEdip/WJnYAKbHWSkjcSrCJcEuBbVJ3Wxlc56Zlkp
-	EECGeHxHoZ6aaB0X73b6sLJDRajZU1rgYBS+McQxprnZbfC2siwHRPg0pKNCs2hm4gdcMWgku+6CH
-	s6vA/uhVW7hoq+laoRlH+xWRj86mUMnU2VfNAQzRYA7bxX8pCqgPDs4m0f8h5Gorh+hzUlbWbmF2d
-	mqwiMeUt9ng8ZCdnSHmQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9pY/YNzLKoOXAyu9s34ji8aEgUE5k20z6XvezDYDiOw=; b=VBddSGa2venPjF
+	RXA9IJ/GXdruRHOcyoBm/+6jG7IzecNb2PUthGCfRs0wX24ZMBoQmKVB/8mSksVA032QGxWYIhx+a
+	e2wKJgaUNMFf9v2DNdMIp4y/KKZdmeFvv7+1SoaufEmU+FeJTZAqU6DQX7hHKbKJK5rR/pna5II5Z
+	/Z9U+YPbf0l3zbzPex2tYhYP8OqSVXpCyVpsuuYq4MHTMhVGahTs1vSvPs/Ag5mfXLKGvEl/8dWqf
+	wRpsm6hl1mCc0ZOBRhxroJToKk2P5McGisF2drk0g+NWCGDg3yMe7+aiuJK6DTG0j9P9XuIAw9BJY
+	0U6ioRKKFz2HJj70XdAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKitw-0004Bk-0I; Wed, 16 Oct 2019 12:59:40 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iKiuE-0004NA-Um; Wed, 16 Oct 2019 12:59:58 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKith-00049s-TK
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 12:59:27 +0000
-Received: by mail-wm1-x342.google.com with SMTP id r17so4636617wme.0
+ id 1iKitj-0004AB-Kp
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 12:59:29 +0000
+Received: by mail-wr1-x441.google.com with SMTP id b9so27983442wrs.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 16 Oct 2019 05:59:23 -0700 (PDT)
+ Wed, 16 Oct 2019 05:59:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=N52hlJnsfFIOOWTHvFp/qjBhOkVh3s/l10lTxbzvdwk=;
- b=lxHREG00JgRNJN6vqVyEtnpLxHeOiwhECvF8ZrlixdqphxFqPyZHJEbdLiUFpK5SxV
- bKWIQk8vpKf7Y1IeVvFkibBp2+Lt7P3G16+cJMZPe1PIwVVBauK6sVJBRVZnFqt1rH39
- W+GBk+3Ogq7gbeddPnEDV9dDaF+gDFpKhFNSFNy0e0bKONaXdPDS6w6yV+9yCYSReH29
- HHjnMyLp7yEddLgg8k3gNp5znnJ+Ks99dK/EFJZzluq5mwmbLCt7PLnF//eIjt8PbS9D
- XTBC9nHpO5jzHnSTvJMIPx0eboVaw6KXgl+xegAjONo0nMXeaNB98Xa2heuZRBDQs4Ow
- UWQg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=abGc2CSWjTlOkZ/qOD8jVoBxXH6yqwawEWK9EHJHevc=;
+ b=qk4PanY+Zdp8HqSblcgOtxexMTnZ9eziJPAHTePPRv/ZCz2RLkCdgAyc/p6coscr/7
+ 3f1LRGqmyx07u02EP0X2nT76Z8/MKZ96GL86nbHzGSeVMme+6/54zFb27EgIsgCtPQ3B
+ 6O7mrsTo3w0pwvke9h3y6BDZ5UGsc1Pj+QJ2VQ7NgvdkPg4wd2+ubx95/6+KSwBk6OhV
+ gs5GG/wiAgcOvM5GRakN1xOezl/SuMsW3wwZJSlNn+wPUkd72YdS7rYof6vOe62uzR5a
+ LGT302bWsnWbLVCmaYceR/X35nlddv6ACILECSN7/PI82S5sw9NYj+y7IAmaR+6kOY3r
+ P+pA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=N52hlJnsfFIOOWTHvFp/qjBhOkVh3s/l10lTxbzvdwk=;
- b=AuAK82gCLGMZz0b7+42J/zElcSuhvizY4WgchOFSEfs9wXHjS+g6xhI3AcFPPbuwsc
- aN2bMnt5fcxifYGljmGb4LzWJImea5fZ3evBY3T4Y3ZRPmVwLbI+7kb7+JQobTahc+TO
- YwnXo13WMdC6JzplIqwoRLWB2hyS7EXVnqbIm7iEqMtWz1IA9zAmaW3+MfRMgFryaqnT
- zMpgvt12kivoXgxy4XYlaKN/kLEkRLklZ/6wCuYqQo+K4RHqhSqo0Tsp3yMNK/4rkezo
- UbWR7q2IZk7VUVKd21o1WLUdRmfX62+BVDe2h99cnSfUOsjKZ3I+AQeZhIo6r+3j3qNd
- V2jw==
-X-Gm-Message-State: APjAAAW3azZf4Mc5UWbEVOqMVHKitiqAK0bxQaHuzNBrXinGz0hZunko
- I2qUTMpgM7+TtV4OJ2U69yg=
-X-Google-Smtp-Source: APXvYqzKpAaGL8t4/0n/9ji8fdyWLeBwMB4yNHH6Lmwr42XuwpJfsJQWrH/atvz/Z0NRGwU8chBFAw==
-X-Received: by 2002:a7b:cf28:: with SMTP id m8mr3366592wmg.63.1571230761785;
- Wed, 16 Oct 2019 05:59:21 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=abGc2CSWjTlOkZ/qOD8jVoBxXH6yqwawEWK9EHJHevc=;
+ b=unZ9S18UOX6L/sJ+jb4r2wyPo0HL03/29bdNF7OUKlBDOK5OwIEUvkW8t0H1/eMo/N
+ u+SacNKcKxaUVIn7MsL5Yo94tNnrSkjPkZyOcU4rea7aSEWNBlSrt9Q7TG+9OJ4QX2kx
+ U+qRpPkTdzbgvs+zpwfrT4DCaCKWzalU6N63b2pjBPDHVrvr/iCaHh+lXWSn9TvJYSy7
+ w/qgAJqOAQigaSsxB2yEk3bkXGkK44qoq06nDSvs9N80wWkOANUNVs8pol6HvyDNxcAb
+ CV7JRIp9N7OFhG5Dir1bDu6aL8onqyig3N0RU6IgvlJXnenhZH3ZTuslGy//Uocmwnn9
+ v1Gw==
+X-Gm-Message-State: APjAAAWoL6q8eufnMwrxlI1l9QhLq0+QWRPzUzAfK6TONX9IB5QAZ/ap
+ BcdOC7RnQEVdJR4+SYQ8p5k=
+X-Google-Smtp-Source: APXvYqwK61+ZWts0PsXQ9pWHrCrawQg5bZT77gk8e1PC8UhIo+wMl/2EQpDF4mm2cguue2c2hRK7EA==
+X-Received: by 2002:adf:dc42:: with SMTP id m2mr2753239wrj.314.1571230764008; 
+ Wed, 16 Oct 2019 05:59:24 -0700 (PDT)
 Received: from localhost (p2E5BE2CE.dip0.t-ipconnect.de. [46.91.226.206])
- by smtp.gmail.com with ESMTPSA id l9sm2253916wme.45.2019.10.16.05.59.20
+ by smtp.gmail.com with ESMTPSA id e9sm8010855wme.3.2019.10.16.05.59.22
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 16 Oct 2019 05:59:20 -0700 (PDT)
+ Wed, 16 Oct 2019 05:59:22 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>,
  Michael Turquette <mturquette@baylibre.com>,
  Stephen Boyd <sboyd@kernel.org>
-Subject: [PATCH 0/5] clk: tegra: SOR clock rework
-Date: Wed, 16 Oct 2019 14:59:14 +0200
-Message-Id: <20191016125919.1773898-1-thierry.reding@gmail.com>
+Subject: [PATCH 1/5] clk: tegra: Remove last remains of TEGRA210_CLK_SOR1_SRC
+Date: Wed, 16 Oct 2019 14:59:15 +0200
+Message-Id: <20191016125919.1773898-2-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20191016125919.1773898-1-thierry.reding@gmail.com>
+References: <20191016125919.1773898-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_055925_973978_0F50C162 
-X-CRM114-Status: GOOD (  15.21  )
+X-CRM114-CacheID: sfid-20191016_055927_687229_4A079F62 
+X-CRM114-Status: GOOD (  13.36  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (thierry.reding[at]gmail.com)
@@ -108,50 +110,60 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Thierry Reding <treding@nvidia.com>
 
-Hi Mike, Stephen,
+Later SoC generations implement this clock as SOR1_OUT. For consistency,
+the Tegra210 implementation was adapted to match the same name in commit
+4d1dc4018573 ("dt-bindings: clock: tegra: Add sor1_out clock").
 
-this is a small series that I've been carrying around for a while now.
-The goal is to rework the SOR clock implementation on older chips to
-make it compatible with the implementation on Tegra186 and later. The
-reason is that Tegra186 and later implement this as part of the BPMP
-(a coprocessor used for boot and power management). BPMP's SOR clock
-implementation is slightly different from the implementation that we
-currently have in the CCF driver for earlier SoCs.
+Clean up the remaining pieces by adopting the new name for the internal
+identifiers and remove the old alias. Note that since both SOR1_SRC and
+SOR1_OUT were referring to the same device tree clock ID, this does not
+break device tree ABI.
 
-The SOR clock is used to drive HDMI and DP outputs on Tegra boards and
-the differences in the clock handling make it very cumbersome to deal
-with the clock in a unified way in the display driver. After these
-patches, however, they work similarly enough to allow the same code path
-to be used in the display driver.
+Signed-off-by: Thierry Reding <treding@nvidia.com>
+---
+ drivers/clk/tegra/clk-id.h               | 2 +-
+ drivers/clk/tegra/clk-tegra210.c         | 2 +-
+ include/dt-bindings/clock/tegra210-car.h | 1 -
+ 3 files changed, 2 insertions(+), 3 deletions(-)
 
-Given that this set of patches needs to go in at the same time as the
-Tegra display driver changes, it'd be great if you could provide an
-Acked-by so that I can take these through the Tegra tree (or the Tegra
-DRM tree). There aren't any build-time dependencies between this and the
-display driver changes, but HDMI/DP won't be functional if this is
-merged at a different time than the display driver changes. The display
-driver changes themselves are fairly large and it isn't exactly clear
-when they will get merged, so things will have to be carefully
-coordinated, which will be easier if I do that myself.
-
-Thanks,
-Thierry
-
-Thierry Reding (5):
-  clk: tegra: Remove last remains of TEGRA210_CLK_SOR1_SRC
-  clk: tegra: Move SOR0 implementation to Tegra124
-  clk: tegra: Rename sor0_lvds to sor0_out
-  clk: tegra: Reimplement SOR clock on Tegra124
-  clk: tegra: Reimplement SOR clocks on Tegra210
-
- drivers/clk/tegra/clk-id.h                    |  4 +-
- drivers/clk/tegra/clk-tegra-periph.c          |  8 --
- drivers/clk/tegra/clk-tegra124.c              | 55 +++++++++++++-
- drivers/clk/tegra/clk-tegra210.c              | 75 ++++++++++++++-----
- .../dt-bindings/clock/tegra124-car-common.h   |  2 +-
- include/dt-bindings/clock/tegra210-car.h      |  5 +-
- 6 files changed, 116 insertions(+), 33 deletions(-)
-
+diff --git a/drivers/clk/tegra/clk-id.h b/drivers/clk/tegra/clk-id.h
+index de466b4446da..ae02885c9475 100644
+--- a/drivers/clk/tegra/clk-id.h
++++ b/drivers/clk/tegra/clk-id.h
+@@ -238,7 +238,7 @@ enum clk_id {
+ 	tegra_clk_sor0,
+ 	tegra_clk_sor0_lvds,
+ 	tegra_clk_sor1,
+-	tegra_clk_sor1_src,
++	tegra_clk_sor1_out,
+ 	tegra_clk_spdif,
+ 	tegra_clk_spdif_2x,
+ 	tegra_clk_spdif_in,
+diff --git a/drivers/clk/tegra/clk-tegra210.c b/drivers/clk/tegra/clk-tegra210.c
+index df172d5772d7..019287df6c12 100644
+--- a/drivers/clk/tegra/clk-tegra210.c
++++ b/drivers/clk/tegra/clk-tegra210.c
+@@ -2353,7 +2353,7 @@ static struct tegra_clk tegra210_clks[tegra_clk_max] __initdata = {
+ 	[tegra_clk_sor0] = { .dt_id = TEGRA210_CLK_SOR0, .present = true },
+ 	[tegra_clk_sor0_lvds] = { .dt_id = TEGRA210_CLK_SOR0_LVDS, .present = true },
+ 	[tegra_clk_sor1] = { .dt_id = TEGRA210_CLK_SOR1, .present = true },
+-	[tegra_clk_sor1_src] = { .dt_id = TEGRA210_CLK_SOR1_SRC, .present = true },
++	[tegra_clk_sor1_out] = { .dt_id = TEGRA210_CLK_SOR1_OUT, .present = true },
+ 	[tegra_clk_gpu] = { .dt_id = TEGRA210_CLK_GPU, .present = true },
+ 	[tegra_clk_pll_g_ref] = { .dt_id = TEGRA210_CLK_PLL_G_REF, .present = true, },
+ 	[tegra_clk_uartb_8] = { .dt_id = TEGRA210_CLK_UARTB, .present = true },
+diff --git a/include/dt-bindings/clock/tegra210-car.h b/include/dt-bindings/clock/tegra210-car.h
+index 6b77e721f6b1..b43b9e84e62e 100644
+--- a/include/dt-bindings/clock/tegra210-car.h
++++ b/include/dt-bindings/clock/tegra210-car.h
+@@ -309,7 +309,6 @@
+ #define TEGRA210_CLK_CLK_OUT_3 279
+ #define TEGRA210_CLK_BLINK 280
+ /* 281 */
+-#define TEGRA210_CLK_SOR1_SRC 282
+ #define TEGRA210_CLK_SOR1_OUT 282
+ /* 283 */
+ #define TEGRA210_CLK_XUSB_HOST_SRC 284
 -- 
 2.23.0
 
