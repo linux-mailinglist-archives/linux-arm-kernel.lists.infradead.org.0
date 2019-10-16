@@ -2,88 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0C9AD8AD7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 10:26:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 83E9ED8AF1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 10:28:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
+	References:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T4t23xaoQ90sPdIvcwfcNRQ0akdGwVwxluYWWjrGqNM=; b=GXq2DrwuCQ7Yiw
-	gl4+a7msSoZ2J3nRzza5i14XbWLVQozs1sgvRsJC8vOeEO5SUYnvv0GPO8cZgFZLjVUFsYO3Wym4y
-	pyoSnNT3RF5xVCRX4JStNMHy0/02zg7Jw4/jRW/3E7FW3K64TH/mWNYHDRz9pLNLszPdkIcEoiliw
-	Q8/tDut+caBkeowz/MfR2RLxtZkkwQKFxUaSkezPWpcFt7Tll1Gzyg0/fb1Sn/B8frEIq+poLdpt4
-	AecFzbv0GTymcbJ3Q1v7ruW7NyY0YsFNdy8FQQA193a7ZjY/dN1m7zK/EfKkOmkr3MGxncuNxC6N1
-	UYN4kkLEigVx6j1zQIPw==;
+	List-Owner; bh=4Uo8igl2S0lnGrGCDs8JQoOYhVn5uCT9cqffL/2UwT0=; b=uyyTzDB4lx7FYI
+	0H8ZaogwyLkYW2UxuxT6/jnwnP3V22isOWCys+chtvHTHUPQNdv4ps8jdvX3lHFBJxIeOmCJjgiWJ
+	QhCY1RB4wSVlVQBKdDen12N+oSEaQMcQ3oeCDsjwoifar65Vb+yD+2JIMn6NfkSONBfVXJfq29ble
+	gOKHM9jdCA81EYWNR3NPga510mEvlE1EtLnt1QnBpX5M545+d9secnoKPEq3udJ7hg9diZGHVXUHQ
+	jC/3C4XEd5KrA5PmvC6XGzUcJqoMeWNjL1vB1kzDNpisGNthU6Osjr0Q4MMr+4Q2UDTDsfq5d5H2y
+	audZqFkCViduJlgFnV6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKed2-00017n-TJ; Wed, 16 Oct 2019 08:25:56 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1iKefu-0001v2-HS; Wed, 16 Oct 2019 08:28:54 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKecp-00013Z-0P
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 08:25:45 +0000
-Received: by mail-lf1-x144.google.com with SMTP id c195so16694741lfg.9
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 16 Oct 2019 01:25:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Xo35Bg7+wZLq9WAYiOuUcTZRMp2CbtvKNgMqelyARTU=;
- b=eFXeazm0o1tL5yIT8cIoz4Wk8anNWAsBOAqZuTJLrcmF2+ZuFXcPF5UVUCWL7aIqil
- IPv3kOP6K1GOt7SHle1XCTL3se7HLV7MPcGNg3WcrI60YQPfUEAm9aUokJNKOpR2EbAA
- e78DxjS58Ht4pQMlOpK4jhBzKtIqSy4nCyWtSESafH71SkFiMrXk5gnX5z+kGwZe4s+D
- y2VQBtcVTbKENFN9vL8/vc6TXOxscGJmF/Jq1j1cum1G2Fb3HvotNml0i/JH6jiGyldY
- NROzHm86nPDDviCEMqX2kExhGpQbdpmN4YLu0WJPUUraOjC0mX+NYkDkyo+WQAtLFgIE
- 8RcQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Xo35Bg7+wZLq9WAYiOuUcTZRMp2CbtvKNgMqelyARTU=;
- b=DvgkoPJB5F0nFeD4E72Kug36v2+jgx2CUI7DtYJn7582Fj94Mhfem8id9+fYz+xIkp
- 7G4sONYvQjMZfkUQTHxqy+wjtsoSAnd7aRUwGG3e24RYM8zUzjqpF0oazJArA6wqSgHx
- vXrZc/Rb3BnEdd/XlNXnJlMrnY6IrckZLZKosFnCH4vpbh87JfTtrVIrNm7Y0/G5VpT9
- 37XlC+lLwO2ALT8IhMdBjw1zBMrj1tYn0rzdGSUSuifhaV3Ac83ztkMMr/RwbbzlyiYp
- uwIQeXye+xQ0kIopfA6KQ83Za2KOWV4HzGrtbp53oKQ+BcfltgZlWcv77Cs1Zs0atesJ
- oNOA==
-X-Gm-Message-State: APjAAAUCSbZIsEZ6FV7ZdwwG6LvGU0Ou/hzYr4BGGwbLqmpv8vjlK+Wf
- f9CBRe6zq5eOY39H5cft+lwgSvMBFZHlZv8uvBJGaA==
-X-Google-Smtp-Source: APXvYqztWV5plJBF/+oigJru3O+68vfnDX1Uj5DGkapsvD7/tG4QkaKTaiMATHeFnEyKvPu9+4MV2xK2aaXCm/MiANI=
-X-Received: by 2002:a19:6f0e:: with SMTP id k14mr24108061lfc.34.1571214340972; 
- Wed, 16 Oct 2019 01:25:40 -0700 (PDT)
+ id 1iKefj-0001uV-DJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 08:28:44 +0000
+Received: from pps.filterd (m0098399.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x9G8RNlG126497
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 16 Oct 2019 04:28:43 -0400
+Received: from e06smtp04.uk.ibm.com (e06smtp04.uk.ibm.com [195.75.94.100])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2vnyevgpru-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 16 Oct 2019 04:28:42 -0400
+Received: from localhost
+ by e06smtp04.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-arm-kernel@lists.infradead.org> from <heiko.carstens@de.ibm.com>;
+ Wed, 16 Oct 2019 09:28:40 +0100
+Received: from b06cxnps3074.portsmouth.uk.ibm.com (9.149.109.194)
+ by e06smtp04.uk.ibm.com (192.168.101.134) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Wed, 16 Oct 2019 09:28:33 +0100
+Received: from d06av23.portsmouth.uk.ibm.com (d06av23.portsmouth.uk.ibm.com
+ [9.149.105.59])
+ by b06cxnps3074.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x9G8SWqN19661040
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 16 Oct 2019 08:28:33 GMT
+Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id C7E88A4057;
+ Wed, 16 Oct 2019 08:28:32 +0000 (GMT)
+Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 1C7A3A4040;
+ Wed, 16 Oct 2019 08:28:32 +0000 (GMT)
+Received: from osiris (unknown [9.152.212.85])
+ by d06av23.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
+ Wed, 16 Oct 2019 08:28:32 +0000 (GMT)
+Date: Wed, 16 Oct 2019 10:28:30 +0200
+From: Heiko Carstens <heiko.carstens@de.ibm.com>
+To: Kees Cook <keescook@chromium.org>
+Subject: Re: [PATCH v2 00/29] vmlinux.lds.h: Refactor EXCEPTION_TABLE and NOTES
+References: <20191011000609.29728-1-keescook@chromium.org>
 MIME-Version: 1.0
-References: <20191016070740.121435-1-codekipper@gmail.com>
- <20191016070740.121435-3-codekipper@gmail.com>
- <20191016080653.3seixioa2xiaobd7@gilmour>
-In-Reply-To: <20191016080653.3seixioa2xiaobd7@gilmour>
-From: Code Kipper <codekipper@gmail.com>
-Date: Wed, 16 Oct 2019 10:25:29 +0200
-Message-ID: <CAEKpxBmuYe-kHpa4cvo6iabTM_qNro2hXVAkjioBZFt9N4pHdA@mail.gmail.com>
-Subject: Re: [PATCH v6 2/7] ASoC: sun4i-i2s: Add functions for RX and TX
- channel offsets
-To: Maxime Ripard <mripard@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20191011000609.29728-1-keescook@chromium.org>
+X-TM-AS-GCONF: 00
+x-cbid: 19101608-0016-0000-0000-000002B87DFE
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 19101608-0017-0000-0000-000033199F8D
+Message-Id: <20191016082830.GC4267@osiris>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-10-16_03:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=958 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1908290000 definitions=main-1910160075
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_012543_550287_36DA6252 
-X-CRM114-Status: GOOD (  21.61  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (codekipper[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+X-CRM114-CacheID: sfid-20191016_012843_457676_C6EE05FE 
+X-CRM114-Status: GOOD (  18.80  )
+X-Spam-Note: SpamAssassin invocation failed
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,67 +92,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-ALSA <alsa-devel@alsa-project.org>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Liam Girdwood <lgirdwood@gmail.com>,
- "Andrea Venturi \(pers\)" <be17068@iperbole.bo.it>,
- Chen-Yu Tsai <wens@csie.org>, Mark Brown <broonie@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Michal Simek <monstr@monstr.eu>, x86@kernel.org, linux-ia64@vger.kernel.org,
+ linux-c6x-dev@linux-c6x.org, Arnd Bergmann <arnd@arndb.de>,
+ linux-xtensa@linux-xtensa.org, Michael Ellerman <mpe@ellerman.id.au>,
+ Dave Hansen <dave.hansen@linux.intel.com>, linux-kernel@vger.kernel.org,
+ linuxppc-dev@lists.ozlabs.org, Yoshinori Sato <ysato@users.sourceforge.jp>,
+ Borislav Petkov <bp@alien8.de>, linux-parisc@vger.kernel.org,
+ Andy Lutomirski <luto@kernel.org>, linux-alpha@vger.kernel.org,
+ Rick Edgecombe <rick.p.edgecombe@intel.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 16 Oct 2019 at 10:06, Maxime Ripard <mripard@kernel.org> wrote:
->
-> Hi,
->
-> On Wed, Oct 16, 2019 at 09:07:35AM +0200, codekipper@gmail.com wrote:
-> > From: Marcus Cooper <codekipper@gmail.com>
-> >
-> > Newer SoCs like the H6 have the channel offset bits in a different
-> > position to what is on the H3. As we will eventually add multi-
-> > channel support then create function calls as opposed to regmap
-> > fields to add support for different devices.
-> >
-> > Signed-off-by: Marcus Cooper <codekipper@gmail.com>
-> > ---
-> >  sound/soc/sunxi/sun4i-i2s.c | 31 +++++++++++++++++++++++++------
-> >  1 file changed, 25 insertions(+), 6 deletions(-)
-> >
-> > diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
-> > index f1a80973c450..875567881f30 100644
-> > --- a/sound/soc/sunxi/sun4i-i2s.c
-> > +++ b/sound/soc/sunxi/sun4i-i2s.c
-> > @@ -157,6 +157,8 @@ struct sun4i_i2s_quirks {
-> >       int     (*set_chan_cfg)(const struct sun4i_i2s *,
-> >                               const struct snd_pcm_hw_params *);
-> >       int     (*set_fmt)(struct sun4i_i2s *, unsigned int);
-> > +     void    (*set_txchanoffset)(const struct sun4i_i2s *, int);
-> > +     void    (*set_rxchanoffset)(const struct sun4i_i2s *);
->
-> The point of removing the regmap_field was that because having a
-> one-size-fits-all function with regmap_field sort of making the
-> abstraction was becoming more and more of a burden to maintain.
->
-> Having functions for each and every register access is exactly the
-> same as using regmap_field here, and the issue we adressed is not with
-> regmap_fields in itself.
->
-> If the H6 has a different register layout, then so be it, create a new
-> set_chan_cfg or set_fmt function for the H6.
-The H3 and the H6 have a similar register layout but the issue here is
-that sooner
-rather than later we would want to be supporting multi-channel audio
-which requires the
-offset to be applied to each TX channel channel select register(8chan
-PCM for HDMI
-requires 4 Tx channels). Currently we're only using one.
-BR,
-CK
->
-> Maxime
+On Thu, Oct 10, 2019 at 05:05:40PM -0700, Kees Cook wrote:
+> Arch maintainers: please send Acks (if you haven't already) for your
+> respective linker script changes; the intention is for this series to
+> land via -tip.
+> 
+> v1: https://lore.kernel.org/lkml/20190926175602.33098-1-keescook@chromium.org
+> v2: clean up commit messages, rename RO_EXCEPTION_TABLE (bp)
+> 
+> 
+> This series works to move the linker sections for NOTES and
+> EXCEPTION_TABLE into the RO_DATA area, where they belong on most
+> (all?) architectures. The problem being addressed was the discovery
+> by Rick Edgecombe that the exception table was accidentally marked
+> executable while he was developing his execute-only-memory series. When
+> permissions were flipped from readable-and-executable to only-executable,
+> the exception table became unreadable, causing things to explode rather
+> badly. :)
+
+Feel free to add
+Acked-by: Heiko Carstens <heiko.carstens@de.ibm.com>
+to every patch in this series which touches s390.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
