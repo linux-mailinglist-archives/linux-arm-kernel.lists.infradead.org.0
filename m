@@ -2,72 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B8F5D9B95
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 22:21:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B43BD9B91
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 22:20:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pQg/aimQ30pxfRcJnv4dGhB/AtLeFJFWXZ7Al+LxUMA=; b=OpbRhf8ySACISb
-	OJOTTXBKoC/jFtk5UAYW3aeVGcioe9UNx/mq8n09RykPo0PMX0ISdc5qw2cFeXq5rgegSOAqBniY0
-	4yfO8uJq3fN/8W5tt5hSJcZYowxRMuxnt3/HPe9wA97F4A5r4C7R2JUmKHWvpFZSXglAkD3WB/McS
-	PVw1xC1b1DbmPQp6ZQez6QBicWdOj+NpCSfnuEhPdzXHQUkGUGAzu+qxtaw1ZJHGmaRNnX81jOu2o
-	cn4t4r/Osdve1+4XshBUz/3IM7smKR0CBS69uNKfwGxcMWmlLFvW6stCZvZTu+x+3eh/x4e8PkgHU
-	6dkIzUxhUid3bCRaXFgg==;
+	List-Owner; bh=66J3mWUJg9e/g3gOR3QvUfKzsi2hsK8fxvVniw4NVlI=; b=UgyjtSCek5jkjD
+	JzttIOiQ4p2WLlkY7p72mWN5Gt2g4z0iSWQdR3+re793hMQSR0a0XKwUvLDwyiQ05o9caruBBoSNY
+	/m1SpEGWsUbpIq5rNTolwdoN6cIdsrjCRUkiTpsZDfBV8fOIV3lTFCd8n3riRKDdss7atliiFHPQb
+	RR3lVnaI/7XpVjyo1pg3PRpbDQKvJVlAWHNQeONu2NMf/cux+GAe+asDb3GiUMlgyJi4PFCTlp2bB
+	jaq47PH1Tr9MSdMsfFJviu7tNSE4rFJTfLvj4xXGC+9fqdre7tLQnOTf4OeEdY06NQVWqVfyzJTqL
+	40rnyzz0bIE411yZCaVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKpmy-0000CY-No; Wed, 16 Oct 2019 20:20:56 +0000
-Received: from mail-ot1-f68.google.com ([209.85.210.68])
+	id 1iKpmo-0008S8-Fx; Wed, 16 Oct 2019 20:20:46 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKpZw-0002N9-Qw; Wed, 16 Oct 2019 20:07:38 +0000
-Received: by mail-ot1-f68.google.com with SMTP id o44so21291262ota.10;
- Wed, 16 Oct 2019 13:07:28 -0700 (PDT)
+ id 1iKpZy-0002Oo-FI; Wed, 16 Oct 2019 20:07:39 +0000
+Received: by mail-oi1-f196.google.com with SMTP id k20so136452oih.3;
+ Wed, 16 Oct 2019 13:07:29 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=XzKyx3hGWss5OyYjnaux42GwkpReDhw7ttXIKJ3XApk=;
- b=acWwH3ycNX+8yrjh7cPmZ9kqRolRvmm0dOfopdStOpEaMoWzV1uypxtbtizJfiwtgo
- dlKK/j4zwkSSMKJ8XFhskUp7gQVVb2eAttGk8cmyPmvvP2ENOQT0X7gKssysVKx44H8l
- qMIOgl8xMfEqLeL40KL6JFpQY8XMqFOfLwdwQbiYi96Gf8BLGUverGqllfVVqgU8hDqM
- Zrmy4Z75q9rArcS5Bs9dYW9caHndI5hB0h+Nxse9S8UezMhrqrDPjd0m6eMvzSr+yuku
- XUHJet0VreQwxh49zETkYHrgiGSWy4SJvkLGaheAbIPtJH1Eg/3PRekqcI0rKe6gMU86
- MOYg==
-X-Gm-Message-State: APjAAAVMFY00MAxkG/MJExZfXqAwahaDXbFLB8odJlvBstWI5OuM18jJ
- +yumsWbLKbx/OI0OyQNBTA==
-X-Google-Smtp-Source: APXvYqzuOOI5O9nPE4chqz7q1M50UXLGHgUlkPl19eYyojabF8hEv3WJogI/0IUIWHhrDxD1NedNKw==
-X-Received: by 2002:a05:6830:1e59:: with SMTP id
- e25mr36910otj.342.1571256447566; 
- Wed, 16 Oct 2019 13:07:27 -0700 (PDT)
+ bh=9dn1tmxzjQTI9PAUk6uuXXt7CY5FAAIGihQa/Sw5ORA=;
+ b=qf7IiCBaSegQff26SAu9hMNfqftLrGSXL6it5vEw1GGqlT3BKvPaDgndHqjoaiJqMk
+ U5UdmPTdt5ncQtT8qARnX+QOmwkeq9HnHfQ1P/lDkWV8u7PwVS6LcI1S+t+qCb9bxvoc
+ PcvB9cJuXcaK6ALdBkJvTG8sxuScyTooEjeFn1cL7FnguWJAaALHBXjrP0h0g/GUNZL/
+ B2P+W6kjpDazsiW4FX6Y2rlB/N/BjMCxofCgsBz9DOGC47c5Rr69Svo1S6fPUQyz58Q+
+ 7MdD1xz0AMlx41JkroSIK4ir2f8UUnAbvMOAmv4abyOyt21D3gmzcR6ZTDgPYFKUxkdm
+ VgRQ==
+X-Gm-Message-State: APjAAAUbIcfY1zq7yS77WR9HvaKlDE2pftbighnsvyQeAgCLloXqIIG+
+ 7Z/LTPbhl+6M5IJhprMgGA==
+X-Google-Smtp-Source: APXvYqy4BvFE0JVjSY2m/IplvmhNeMcI4gWkgM+9uLk0Ec5UKDxEz7AyuW1jP9gWK7a0Hcsgd1QA3Q==
+X-Received: by 2002:a54:410f:: with SMTP id l15mr109468oic.140.1571256449199; 
+ Wed, 16 Oct 2019 13:07:29 -0700 (PDT)
 Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id a9sm7412463oie.7.2019.10.16.13.07.25
+ by smtp.googlemail.com with ESMTPSA id a9sm7412463oie.7.2019.10.16.13.07.27
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 16 Oct 2019 13:07:26 -0700 (PDT)
+ Wed, 16 Oct 2019 13:07:28 -0700 (PDT)
 From: Rob Herring <robh@kernel.org>
 To: Andrew Murray <andrew.murray@arm.com>, Bjorn Helgaas <bhelgaas@google.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: [PATCH v2 20/25] PCI: ftpci100: Use inbound resources for setup
-Date: Wed, 16 Oct 2019 15:06:42 -0500
-Message-Id: <20191016200647.32050-21-robh@kernel.org>
+Subject: [PATCH v2 21/25] PCI: v3-semi: Use inbound resources for setup
+Date: Wed, 16 Oct 2019 15:06:43 -0500
+Message-Id: <20191016200647.32050-22-robh@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191016200647.32050-1-robh@kernel.org>
 References: <20191016200647.32050-1-robh@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_130728_931610_F1969ED9 
-X-CRM114-Status: GOOD (  13.64  )
+X-CRM114-CacheID: sfid-20191016_130730_552711_CA64500D 
+X-CRM114-Status: GOOD (  14.97  )
 X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.68 listed in list.dnswl.org]
+ no trust [209.85.167.196 listed in list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -76,7 +75,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -112,40 +110,82 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 Now that the helpers provide the inbound resources in the host bridge
-'dma_ranges' resource list, convert Faraday ftpci100 host bridge to use
+'dma_ranges' resource list, convert the v3-semi host bridge to use
 the resource list to setup the inbound addresses.
 
 Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 Cc: Bjorn Helgaas <bhelgaas@google.com>
 Reviewed-by: Andrew Murray <andrew.murray@arm.com>
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 Signed-off-by: Rob Herring <robh@kernel.org>
 ---
- drivers/pci/controller/pci-ftpci100.c | 26 +++++++++-----------------
- 1 file changed, 9 insertions(+), 17 deletions(-)
+ drivers/pci/controller/pci-v3-semi.c | 38 ++++++++++++----------------
+ 1 file changed, 16 insertions(+), 22 deletions(-)
 
-diff --git a/drivers/pci/controller/pci-ftpci100.c b/drivers/pci/controller/pci-ftpci100.c
-index 5824913e311b..e6b498de35e1 100644
---- a/drivers/pci/controller/pci-ftpci100.c
-+++ b/drivers/pci/controller/pci-ftpci100.c
-@@ -375,12 +375,11 @@ static int faraday_pci_setup_cascaded_irq(struct faraday_pci *p)
- 	return 0;
+diff --git a/drivers/pci/controller/pci-v3-semi.c b/drivers/pci/controller/pci-v3-semi.c
+index 2209c7671115..bd05221f5a22 100644
+--- a/drivers/pci/controller/pci-v3-semi.c
++++ b/drivers/pci/controller/pci-v3-semi.c
+@@ -598,28 +598,30 @@ static int v3_pci_setup_resource(struct v3_pci *v3,
  }
  
--static int faraday_pci_parse_map_dma_ranges(struct faraday_pci *p,
--					    struct device_node *np)
-+static int faraday_pci_parse_map_dma_ranges(struct faraday_pci *p)
+ static int v3_get_dma_range_config(struct v3_pci *v3,
+-				   struct of_pci_range *range,
++				   struct resource_entry *entry,
+ 				   u32 *pci_base, u32 *pci_map)
+ {
+ 	struct device *dev = v3->dev;
+-	u64 cpu_end = range->cpu_addr + range->size - 1;
+-	u64 pci_end = range->pci_addr + range->size - 1;
++	u64 cpu_addr = entry->res->start;
++	u64 cpu_end = entry->res->end;
++	u64 pci_end = cpu_end - entry->offset;
++	u64 pci_addr = entry->res->start - entry->offset;
+ 	u32 val;
+ 
+-	if (range->pci_addr & ~V3_PCI_BASE_M_ADR_BASE) {
++	if (pci_addr & ~V3_PCI_BASE_M_ADR_BASE) {
+ 		dev_err(dev, "illegal range, only PCI bits 31..20 allowed\n");
+ 		return -EINVAL;
+ 	}
+-	val = ((u32)range->pci_addr) & V3_PCI_BASE_M_ADR_BASE;
++	val = ((u32)pci_addr) & V3_PCI_BASE_M_ADR_BASE;
+ 	*pci_base = val;
+ 
+-	if (range->cpu_addr & ~V3_PCI_MAP_M_MAP_ADR) {
++	if (cpu_addr & ~V3_PCI_MAP_M_MAP_ADR) {
+ 		dev_err(dev, "illegal range, only CPU bits 31..20 allowed\n");
+ 		return -EINVAL;
+ 	}
+-	val = ((u32)range->cpu_addr) & V3_PCI_MAP_M_MAP_ADR;
++	val = ((u32)cpu_addr) & V3_PCI_MAP_M_MAP_ADR;
+ 
+-	switch (range->size) {
++	switch (resource_size(entry->res)) {
+ 	case SZ_1M:
+ 		val |= V3_LB_BASE_ADR_SIZE_1MB;
+ 		break;
+@@ -667,8 +669,8 @@ static int v3_get_dma_range_config(struct v3_pci *v3,
+ 	dev_dbg(dev,
+ 		"DMA MEM CPU: 0x%016llx -> 0x%016llx => "
+ 		"PCI: 0x%016llx -> 0x%016llx base %08x map %08x\n",
+-		range->cpu_addr, cpu_end,
+-		range->pci_addr, pci_end,
++		cpu_addr, cpu_end,
++		pci_addr, pci_end,
+ 		*pci_base, *pci_map);
+ 
+ 	return 0;
+@@ -677,24 +679,16 @@ static int v3_get_dma_range_config(struct v3_pci *v3,
+ static int v3_pci_parse_map_dma_ranges(struct v3_pci *v3,
+ 				       struct device_node *np)
  {
 -	struct of_pci_range range;
 -	struct of_pci_range_parser parser;
- 	struct device *dev = p->dev;
-+	struct pci_host_bridge *bridge = pci_host_bridge_from_priv(p);
++	struct pci_host_bridge *bridge = pci_host_bridge_from_priv(v3);
+ 	struct device *dev = v3->dev;
 +	struct resource_entry *entry;
- 	u32 confreg[3] = {
- 		FARADAY_PCI_MEM1_BASE_SIZE,
- 		FARADAY_PCI_MEM2_BASE_SIZE,
-@@ -389,19 +388,12 @@ static int faraday_pci_parse_map_dma_ranges(struct faraday_pci *p,
  	int i = 0;
- 	u32 val;
  
 -	if (of_pci_dma_range_parser_init(&parser, np)) {
 -		dev_err(dev, "missing dma-ranges property\n");
@@ -156,34 +196,14 @@ index 5824913e311b..e6b498de35e1 100644
 -	 * Get the dma-ranges from the device tree
 -	 */
 -	for_each_of_pci_range(&parser, &range) {
--		u64 end = range.pci_addr + range.size - 1;
 +	resource_list_for_each_entry(entry, &bridge->dma_ranges) {
-+		u64 pci_addr = entry->res->start - entry->offset;
-+		u64 end = entry->res->end - entry->offset;
  		int ret;
+ 		u32 pci_base, pci_map;
  
--		ret = faraday_res_to_memcfg(range.pci_addr, range.size, &val);
-+		ret = faraday_res_to_memcfg(pci_addr, resource_size(entry->res), &val);
- 		if (ret) {
- 			dev_err(dev,
- 				"DMA range %d: illegal MEM resource size\n", i);
-@@ -409,7 +401,7 @@ static int faraday_pci_parse_map_dma_ranges(struct faraday_pci *p,
- 		}
- 
- 		dev_info(dev, "DMA MEM%d BASE: 0x%016llx -> 0x%016llx config %08x\n",
--			 i + 1, range.pci_addr, end, val);
-+			 i + 1, pci_addr, end, val);
- 		if (i <= 2) {
- 			faraday_raw_pci_write_config(p, 0, 0, confreg[i],
- 						     4, val);
-@@ -539,7 +531,7 @@ static int faraday_pci_probe(struct platform_device *pdev)
- 			cur_bus_speed = PCI_SPEED_66MHz;
- 	}
- 
--	ret = faraday_pci_parse_map_dma_ranges(p, dev->of_node);
-+	ret = faraday_pci_parse_map_dma_ranges(p);
- 	if (ret)
- 		return ret;
+-		ret = v3_get_dma_range_config(v3, &range, &pci_base, &pci_map);
++		ret = v3_get_dma_range_config(v3, entry, &pci_base, &pci_map);
+ 		if (ret)
+ 			return ret;
  
 -- 
 2.20.1
