@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1A36D88E3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 09:03:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F735D88ED
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 09:07:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=6J9+O00OAxEgR4R9FP9eVT7aW4ayqXy4OTvWtW3Axmw=; b=r6Nfw6aNS6R/7iKg3srRA5h6U
-	fPJaFHLqSYWbo1DkZCHkUn3Hzxp6rKA1FK+nxvPvvl7bCenPtofS2tytKb/91wLUgB/GPqzJWy3lr
-	uKhi7iibJordJQlhzll+6MTcvEDQ4Vc0y20AZES6/6a2vxsjMAC2v5wFm5RbjijsspJhTXaz3rH3n
-	eBDWpdvcGuT8h5KJ7C5wb1Cdx4dWLY0GUvd1hRom9iIsFG+l38Se6frCrVhn51ToQIOozrc67xsw9
-	9oMpufSyyVbRdCOeE+RxrMxABpfIwMt6rHdqbDNu9rfWWVGK7k8a4m3j4//EoG5q+59XfInTFr4Vt
-	lWKXtn3Og==;
+	 bh=berIjtYCLdMPfYS8ZLfFbQxCRjYq8w5yd2TNXwsWCuI=; b=UuCjyYUQXyb85q5NEN4vZ5E6F
+	6K8Rsv+ykIQdz5VJD+uS0IYPtaxM7DEb2VoyOO2pTbT/fDlVh3q4HuqUT3Uok4E8lHgZeNJsasK+2
+	0ZI77AbQrg+P1f9BqHScGaKO3mRwv0G/xebKpuc0qu5ar9JMFi67tgHM8HdvxUXigCEwPxXW7MBNo
+	TV28fZO6ZARWyRQTB1wMDGkWCEnpW+n9vDEHEQfZ2lvTpjTXxGcKT5U6DK3G6PsB6RN9/TZ6ziKkA
+	czeLZWKviBmlVES0dFudTN0vT71ZDsanGOytY7Olgtb6Ke6u9pGzDCofAd6NZoChEHZa1w7oTJcJW
+	n51O1/Bdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKdLR-0006QM-03; Wed, 16 Oct 2019 07:03:41 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iKdOX-0007yI-1f; Wed, 16 Oct 2019 07:06:53 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKdLD-0006Pz-OL
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 07:03:29 +0000
-Received: by mail-wr1-x442.google.com with SMTP id b9so26660986wrs.0
+ id 1iKdOJ-0007xr-DJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 07:06:41 +0000
+Received: by mail-wr1-x441.google.com with SMTP id r3so26658598wrj.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 16 Oct 2019 00:03:27 -0700 (PDT)
+ Wed, 16 Oct 2019 00:06:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=IGofv4/Ku/88kChkBC96+cWtPXeTqXT9jPete3VOo9U=;
- b=UJ2U78bnOcl8EaGyLODuQSbvDUBNAuvXv1Fmn9uD1LkQiVl/A7ek9KcBDLcZkFrdie
- oq184dD8fZLrrI18nRhQ9Nd5V8GfwWRR06B3gOk0izZ3ZzmMGC9Qcbq2HtJFEDa24ECn
- VtsTeWUF+RY8QHzNx5ecOGMcT3orKuTWjo0sDM6eX8+LcFp/hgYfUbUgyWqc/Fb3zVBk
- IHZ7YTcOqXtBXbUQQ6ybSst9J82WegzReDYIc30PH5TmkPkV9nge4un6wigJEcahw6iN
- WRzrDVexqDA65HlCTCe4QPouzqbFQ+eRAuvwSFaoou4db0l+m4IdJ1n9jSnue+c61r1H
- PBsw==
+ bh=fy0Igawx+eGgGntcbgCob/Oi3WyPHOBuVYeVnj6J198=;
+ b=lXI1+nMFTpbZQCJE2YZmWssTNO/Cd6w7JlpW5EEU5S+fG64Xs+A4c/IIfvcBUYfkR8
+ HBbHuB8GjnQffMSBUl/lDHqdvIzYd1rTCG7mz1SoEJlnWURct9NLPukqgib9FBt1qtHw
+ uaFnTc8mWZvLN/Z93b/L6QW7g7UV6/e9cRdDk10om+BoqCNOjYazgs4jTexpdI7oW4w0
+ w+ZUh+qUVpI9Z+bmlXOi+5iDGjdGBQfWgYXHeRKWH/r7uPnci16jcYE0+yzCBJe4mzd0
+ TNPfsWOY2wVuKUprhPysbFhcXZfY4MZYQz9I4nQZqaG/BcyOpkC7AZGfmxCu8NzG5yTc
+ D5Aw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=IGofv4/Ku/88kChkBC96+cWtPXeTqXT9jPete3VOo9U=;
- b=hKvugDC5DBHCocppwPWqIPxT+5dOtCYGyxoI1xAq6MkrLZALRGPIekRlYN39HZPL4l
- 5HjREuHFgdQk1i+150R7BYhnmSQlB1rmuhPuAodGl0sLN4h9Dlku5lJ8w4sQs7APsdx6
- AjpioyWP7h7Gzno/6hq3hBcX7mJ+5qvfBJjjZqw4gOp407ffUMy1hOh6S8Kjdc2s65M1
- MRJZ2jiEnHvcR6kYU86/gitQWA9uvlL8yJ2N7U/SrtGfh6SzvsTeFpXInXXNLiGdVsx6
- RgH/8ePW60hEiFO5H/Am3ZMlLycaUbzyBfinKLDJTNANB56AT6usoVmGkX8mSwhyKUWl
- hnAA==
-X-Gm-Message-State: APjAAAWa+6RGE6Y5pf+DtVj7LoUUagcV1eyf+/F9GHYeTIPQpnSCMO7D
- vzmI2cdZY2B7quW8fIJHDUI=
-X-Google-Smtp-Source: APXvYqw7t9eK30PIU6CMnErqccHPXcX7RhVu2WwgEF8LtBGQ4aGys5/7upH8IoAYtGMNILl1csS96Q==
-X-Received: by 2002:adf:f04f:: with SMTP id t15mr1256271wro.123.1571209406350; 
- Wed, 16 Oct 2019 00:03:26 -0700 (PDT)
+ bh=fy0Igawx+eGgGntcbgCob/Oi3WyPHOBuVYeVnj6J198=;
+ b=WMff6LRrJrDDULN7MhcE1C36nuo6k17Jwx4rqZ2itNwZesMEFWoPu0CBZ6JN5ubr/c
+ L49e1Ou4MPPdCRajWtM2E57pFJ99c6WtUpa9bo0lKVDsBymG0vviyqkpI9jrDempfQz5
+ Ox6hV3cXBVvwEb4V/gER4qU6zUgRo/qCRhnHUvb/3cA2GZyrispUZdiCv76s/4wiL1eO
+ NL0nGQDmNL4x6e1KHTn0Yz/mE+Q/39J3qzijCPsmG7hkBUClgV7qLjNIXijJEgetjxje
+ gRsEy3CInLP6dlFRS8gUrAFEcIQjDEgcCyIM+3oHsECMcCs1nEg0Sb8fv7IhTvBVD8I/
+ 1rnw==
+X-Gm-Message-State: APjAAAVr5a1+N3u2JI675vh+a+X7VTBg9kyrApt6ttd4EA5Dp9N3Wxii
+ RG/dI8E5LewB4XE9gQ4Ifxs=
+X-Google-Smtp-Source: APXvYqw6N0t13E+81VszyfgVqlQlypn9E08dVdeUj2+xS1aYERza5WnnIUhPE6yvc0WBX33f37mjCg==
+X-Received: by 2002:adf:cd8d:: with SMTP id q13mr1298032wrj.103.1571209597634; 
+ Wed, 16 Oct 2019 00:06:37 -0700 (PDT)
 Received: from localhost (p2E5BE2CE.dip0.t-ipconnect.de. [46.91.226.206])
- by smtp.gmail.com with ESMTPSA id e15sm27177088wrs.49.2019.10.16.00.03.23
+ by smtp.gmail.com with ESMTPSA id n22sm1531230wmk.19.2019.10.16.00.06.36
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 16 Oct 2019 00:03:24 -0700 (PDT)
-Date: Wed, 16 Oct 2019 09:03:22 +0200
+ Wed, 16 Oct 2019 00:06:36 -0700 (PDT)
+Date: Wed, 16 Oct 2019 09:06:35 +0200
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Fabrice Gasnier <fabrice.gasnier@st.com>
-Subject: Re: [PATCH v2 2/3] pwm: stm32: split breakinput apply routine to
- ease PM support
-Message-ID: <20191016070322.GB1296874@ulmo>
+Subject: Re: [PATCH v2 3/3] pwm: stm32: add power management support
+Message-ID: <20191016070635.GC1296874@ulmo>
 References: <1570193633-6600-1-git-send-email-fabrice.gasnier@st.com>
- <1570193633-6600-3-git-send-email-fabrice.gasnier@st.com>
+ <1570193633-6600-4-git-send-email-fabrice.gasnier@st.com>
 MIME-Version: 1.0
-In-Reply-To: <1570193633-6600-3-git-send-email-fabrice.gasnier@st.com>
+In-Reply-To: <1570193633-6600-4-git-send-email-fabrice.gasnier@st.com>
 User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_000327_806583_8B48D90F 
-X-CRM114-Status: GOOD (  22.52  )
+X-CRM114-CacheID: sfid-20191016_000639_476882_A59D0DBF 
+X-CRM114-Status: GOOD (  22.01  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -105,194 +104,153 @@ Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
  mcoquelin.stm32@gmail.com, u.kleine-koenig@pengutronix.de,
  linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
  benjamin.gaignard@st.com
-Content-Type: multipart/mixed; boundary="===============5812028199671344138=="
+Content-Type: multipart/mixed; boundary="===============5870743600026654597=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============5812028199671344138==
+--===============5870743600026654597==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="Yylu36WmvOXNoKYn"
+	protocol="application/pgp-signature"; boundary="QRj9sO5tAVLaXnSD"
 Content-Disposition: inline
 
 
---Yylu36WmvOXNoKYn
+--QRj9sO5tAVLaXnSD
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Fri, Oct 04, 2019 at 02:53:52PM +0200, Fabrice Gasnier wrote:
-> Split breakinput routine that configures STM32 timers 'break' safety
-> feature upon probe, into two routines:
-> - stm32_pwm_apply_breakinputs() sets all the break inputs into registers.
-> - stm32_pwm_probe_breakinputs() probes the device tree break input settin=
-gs
->   before calling stm32_pwm_apply_breakinputs()
+On Fri, Oct 04, 2019 at 02:53:53PM +0200, Fabrice Gasnier wrote:
+> Add suspend/resume PM sleep ops. When going to low power, enforce the PWM
+> channel isn't active. Let the PWM consumers disable it during their own
+> suspend sequence, see [1]. So, perform a check here, and handle the
+> pinctrl states. Also restore the break inputs upon resume, as registers
+> content may be lost when going to low power mode.
 >=20
-> This is a precursor patch to ease PM support. Registers content may get
-> lost during low power. So, break input settings applied upon probe need
-> to be restored upon resume (e.g. by calling stm32_pwm_apply_breakinputs()=
-).
+> [1] https://lkml.org/lkml/2019/2/5/770
 >=20
 > Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
 > ---
->  drivers/pwm/pwm-stm32.c | 48 ++++++++++++++++++++++++++++---------------=
------
->  1 file changed, 28 insertions(+), 20 deletions(-)
+> Changes in v2:
+> Follow Uwe suggestions/remarks:
+> - Add a precursor patch to ease reviewing
+> - Use registers read instead of pwm_get_state
+> - Add a comment to mention registers content may be lost in low power mode
+> ---
+>  drivers/pwm/pwm-stm32.c | 38 ++++++++++++++++++++++++++++++++++++++
+>  1 file changed, 38 insertions(+)
 
-Applied, thanks. I've made some minor changes, mostly for consistency
-with other drivers and the PWM core. See below.
+Applied, thanks. I made two minor changes, though, see below.
 
+>=20
 > diff --git a/drivers/pwm/pwm-stm32.c b/drivers/pwm/pwm-stm32.c
-> index 359b085..cf8658c 100644
+> index cf8658c..546b661 100644
 > --- a/drivers/pwm/pwm-stm32.c
 > +++ b/drivers/pwm/pwm-stm32.c
-> @@ -19,6 +19,12 @@
->  #define CCMR_CHANNEL_MASK  0xFF
->  #define MAX_BREAKINPUT 2
+> @@ -12,6 +12,7 @@
+>  #include <linux/mfd/stm32-timers.h>
+>  #include <linux/module.h>
+>  #include <linux/of.h>
+> +#include <linux/pinctrl/consumer.h>
+>  #include <linux/platform_device.h>
+>  #include <linux/pwm.h>
 > =20
-> +struct stm32_breakinput {
-> +	u32 index;
-> +	u32 level;
-> +	u32 filter;
-> +};
-> +
->  struct stm32_pwm {
->  	struct pwm_chip chip;
->  	struct mutex lock; /* protect pwm config/enable */
-> @@ -26,15 +32,11 @@ struct stm32_pwm {
->  	struct regmap *regmap;
->  	u32 max_arr;
->  	bool have_complementary_output;
-> +	struct stm32_breakinput breakinput[MAX_BREAKINPUT];
-> +	unsigned int nbreakinput;
-
-I changed these to breakinputs and num_breakinputs since they are
-slightly more consistent with the naming elsewhere in PWM.
-
->  	u32 capture[4] ____cacheline_aligned; /* DMA'able buffer */
->  };
-> =20
-> -struct stm32_breakinput {
-> -	u32 index;
-> -	u32 level;
-> -	u32 filter;
-> -};
-> -
->  static inline struct stm32_pwm *to_stm32_pwm_dev(struct pwm_chip *chip)
->  {
->  	return container_of(chip, struct stm32_pwm, chip);
-> @@ -512,15 +514,27 @@ static int stm32_pwm_set_breakinput(struct stm32_pw=
-m *priv,
->  	return (bdtr & bke) ? 0 : -EINVAL;
+> @@ -655,6 +656,42 @@ static int stm32_pwm_remove(struct platform_device *=
+pdev)
+>  	return 0;
 >  }
 > =20
-> -static int stm32_pwm_apply_breakinputs(struct stm32_pwm *priv,
-> +static int stm32_pwm_apply_breakinputs(struct stm32_pwm *priv)
+> +static int __maybe_unused stm32_pwm_suspend(struct device *dev)
 > +{
-> +	int i, ret =3D 0;
+> +	struct stm32_pwm *priv =3D dev_get_drvdata(dev);
+> +	unsigned int ch;
 
-Made i unsigned int.
+I renamed this to just "i", which is more idiomatic for loop variables.
+The function is small enough not to need to differentiate between loop
+variables.
 
+> +	u32 ccer, mask;
 > +
-> +	for (i =3D 0; i < priv->nbreakinput && !ret; i++) {
-> +		ret =3D stm32_pwm_set_breakinput(priv,
-> +					       priv->breakinput[i].index,
-> +					       priv->breakinput[i].level,
-> +					       priv->breakinput[i].filter);
-> +	}
-
-I thought this was a little odd, so I changed it to explicitly check the
-value of ret and return on error.
-
+> +	/* Look for active channels */
+> +	ccer =3D active_channels(priv);
 > +
-> +	return ret;
+> +	for (ch =3D 0; ch < priv->chip.npwm; ch++) {
+> +		mask =3D TIM_CCER_CC1E << (ch * 4);
+> +		if (ccer & mask) {
+> +			dev_err(dev, "The consumer didn't stop us (%s)\n",
+> +				priv->chip.pwms[ch].label);
 
-And then this became "return 0;"
+Changed this to:
 
-> +}
-> +
-> +static int stm32_pwm_probe_breakinputs(struct stm32_pwm *priv,
->  				       struct device_node *np)
->  {
-> -	struct stm32_breakinput breakinput[MAX_BREAKINPUT];
-> -	int nb, ret, i, array_size;
-> +	int nb, ret, array_size;
-> =20
->  	nb =3D of_property_count_elems_of_size(np, "st,breakinput",
->  					     sizeof(struct stm32_breakinput));
-> -
+	"PWM %u still in use by consumer %s\n", i, priv->chip.pwms[i].label
 
-Dropped this since it made the code look cluttered.
+I think that might help clarify which PWM is still enabled in case the
+consumers don't set a label.
 
 Thierry
 
->  	/*
->  	 * Because "st,breakinput" parameter is optional do not make probe
->  	 * failed if it doesn't exist.
-> @@ -531,20 +545,14 @@ static int stm32_pwm_apply_breakinputs(struct stm32=
-_pwm *priv,
->  	if (nb > MAX_BREAKINPUT)
->  		return -EINVAL;
-> =20
-> +	priv->nbreakinput =3D nb;
->  	array_size =3D nb * sizeof(struct stm32_breakinput) / sizeof(u32);
->  	ret =3D of_property_read_u32_array(np, "st,breakinput",
-> -					 (u32 *)breakinput, array_size);
-> +					 (u32 *)priv->breakinput, array_size);
->  	if (ret)
->  		return ret;
-> =20
-> -	for (i =3D 0; i < nb && !ret; i++) {
-> -		ret =3D stm32_pwm_set_breakinput(priv,
-> -					       breakinput[i].index,
-> -					       breakinput[i].level,
-> -					       breakinput[i].filter);
-> -	}
-> -
-> -	return ret;
+> +			return -EBUSY;
+> +		}
+> +	}
+> +
+> +	return pinctrl_pm_select_sleep_state(dev);
+> +}
+> +
+> +static int __maybe_unused stm32_pwm_resume(struct device *dev)
+> +{
+> +	struct stm32_pwm *priv =3D dev_get_drvdata(dev);
+> +	int ret;
+> +
+> +	ret =3D pinctrl_pm_select_default_state(dev);
+> +	if (ret)
+> +		return ret;
+> +
+> +	/* restore breakinput registers that may have been lost in low power */
 > +	return stm32_pwm_apply_breakinputs(priv);
->  }
-> =20
->  static void stm32_pwm_detect_complementary(struct stm32_pwm *priv)
-> @@ -614,7 +622,7 @@ static int stm32_pwm_probe(struct platform_device *pd=
-ev)
->  	if (!priv->regmap || !priv->clk)
->  		return -EINVAL;
-> =20
-> -	ret =3D stm32_pwm_apply_breakinputs(priv, np);
-> +	ret =3D stm32_pwm_probe_breakinputs(priv, np);
->  	if (ret)
->  		return ret;
-> =20
+> +}
+> +
+> +static SIMPLE_DEV_PM_OPS(stm32_pwm_pm_ops, stm32_pwm_suspend, stm32_pwm_=
+resume);
+> +
+>  static const struct of_device_id stm32_pwm_of_match[] =3D {
+>  	{ .compatible =3D "st,stm32-pwm",	},
+>  	{ /* end node */ },
+> @@ -667,6 +704,7 @@ static struct platform_driver stm32_pwm_driver =3D {
+>  	.driver	=3D {
+>  		.name =3D "stm32-pwm",
+>  		.of_match_table =3D stm32_pwm_of_match,
+> +		.pm =3D &stm32_pwm_pm_ops,
+>  	},
+>  };
+>  module_platform_driver(stm32_pwm_driver);
 > --=20
 > 2.7.4
 >=20
 
---Yylu36WmvOXNoKYn
+--QRj9sO5tAVLaXnSD
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl2mwLoACgkQ3SOs138+
-s6GHWBAAwHNWDi4qqGce8HzLiOPsZ7PV4JSn64OsoS8PfEcGLWagSsNg3JN4vG8S
-Hl49Do93zxuquA7pQlxxphQZNfbg4scYnEWZdGN9NPI+HVUiWXxKyKG++k9ZJMR4
-KRVmugkh/Qo+sQOAi5qgafxtj42xMnyGj0jp9FNLJ/ZiYAyTabxPalVbLoEOliPX
-X3QXW/o9RCcqam/n8vyEj+rsAJj9vdctQJl2q20n3AYH/G6Ku1xbr5htG3aWhWG0
-YyvuHEYsTOqo/08TIdbajpkcPzMGh1AjvXwZ6EcNCuM2mGimxv1MH6oWbXyhMO9d
-6u2PP3ttwkni+ogoLaYzN7+7/elSNtP10DfThPDvp2SfS4RTOQ/MwJ3DP8+lbNbD
-p27zLHY5SE3cSZV8RqXlGQ+IlIPThwG66HJNuLzsfbXCon6OXdzd/sw0s3j8tDwq
-V5JEstiS3EDg9mHX7CBH1GWtNm5gYhxMwcWJ5x56yLF/oiHGb+S0MBRjAVjLid9y
-JcmXdks8bCk5BieAkfYmhX6Pa3DVHjMrn+DTWfCb/P+J29woIodOkxwVu7IZdWw/
-katw5Q+2qtuJsXxmgNUsxVABsaZk7Q9KPo1LNbiz4TsCvttRmRNptxSfC2Je6otM
-TSj7eq8zzUcx6GdYGkC6snh+GbHMHn/DyMj+FhmTPdECcsDmiYM=
-=ibpm
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl2mwXsACgkQ3SOs138+
+s6GqmQ//aMbyiuKupfEKiM3NlzeTFHoXGDg+k4W+S9nTP9R1XcCo+LUn9otYurGO
+f44vih/M5jOuxA1RJ3w3Ji1fFOLD4/QXpTCN1nf+E1U0E/wo8HuPjpPJsZGj3vEJ
+YeLxDNmpVe/VID1GKuyACOChqCI0dSvMmZYqbKMSSRhUVNmfja/FnubM6iCQ8xzY
+qqUDkr4R1OCc4EjB9h5L+uBb+vy6iwGxEIZZNuMn3khiVvNTZpiI0D5qGLC0eVLM
+3pDe6BTs/B7sI6OgQ2EJjqne9CbYXT3j/ANty3k4NcPXnMZ2nJT+8anoczxo2ZwB
+zyA5SzMctvcCHNpqrbAZLuOPERTA//X8BisEzJ9YRC1WjKuvJ9ykyXWWtcEnYdyr
+JeS6NNslrxDC1Fl4mrJV4rEJqm01giH2Pz1J0+8FAYYiga9QYQoYqjjxos6NSxde
+PcruGHt6xLWd647jwNGDrrG1G8gz+7xUEVpyHD8xSVXsNZ41Rst3WSkmwmu0vr4Y
+S7y5ylK/O9SW9p3yhyVuQPCc0rk/Mgln4BnOj8jq0FQDNVFosnC0eKX3tI8/CWlB
+Mpe9Rc7W4v3Hr7GBXoNqbNx4Uudfg7exBCc0pk2LFrobvyyjy+1vmKPtW6HnH4k3
+S6h+dAMVH0QFmOimR8+QXtzTSUQ3ik96+Na4q+C44ozzuX/EBNs=
+=+BC6
 -----END PGP SIGNATURE-----
 
---Yylu36WmvOXNoKYn--
+--QRj9sO5tAVLaXnSD--
 
 
---===============5812028199671344138==
+--===============5870743600026654597==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -303,5 +261,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============5812028199671344138==--
+--===============5870743600026654597==--
 
