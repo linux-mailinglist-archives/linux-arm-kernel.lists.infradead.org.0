@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 926A0D8A7D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 10:06:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE4C4D8A7F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 10:07:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xp5EclgcsKKsn0QPoRteJwWeP1bnbdsf0PuTtgbOm1Y=; b=hVOuf1SdSv43Jc
-	evKsJk+KmpsBlZ0Nu9RzlEtLi7r6XUZ255CP+6vsVyvvQrStoQnpBHbX88BAJvwgZ3B6iCJGtP5uU
-	Xyf95fi/rMbz8aLmhz+vv+YsVUDSUBBTmdWKC5V6JSzCczt05Blhwzou31ZeE7t/oXI0SHH6C3Dar
-	q+c/xCpu0K94SXZsp97ibdW+ZZ4rVM8pkvP6CRsJ8+6XrqO40kOmhSVMMMfUZb7iFobGW3bTbvaBI
-	Ohw+bc8eqfJ1coLDPnMGW6JRYaK/65ZwjoaprJVoJPpLgqtaz79dlVKcIus58cnP7V7ENQm5rFHtE
-	XowQC4XoMkAQFZlrZ5Jw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=tLEwhmj1ynEN1BmvqKl10+EPTR4S1Bwbi+jfKCbQOlU=; b=pzcSFZxSQNoRh0vBlHYwavksp
+	J8lN3HHvVr7AxSttvQOM9FOOpSCMiX1mdxR1GVNR8qVvOTkKnrP30f5MZ3u0vS/LJIU+Bld0IWS+2
+	K5Ay52Zn2FK7MkGC+4NM0PMm4U0ck73yYSvgwbL90HBrvMiDbcznmmfyuRktlPfzJwlEwuoo7AeJl
+	i5qVaCj+9WuJE6RhkEAevMEnJ8D391EMiwW+LpFwFsq6nXkaAri92Fa9KlDWwJdu/Y0WprUAA7Xoc
+	Bhuw/23OxTiF0jECva0QO+WLWu+bs3qAiA8sfN1UMZlYcxIgTNxlEPBCzZWw6LYMupBQoLv6IbbY8
+	rRMUlb7Hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKeKB-0000pD-Hk; Wed, 16 Oct 2019 08:06:27 +0000
+	id 1iKeKn-00014e-1Q; Wed, 16 Oct 2019 08:07:05 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKeJz-0000os-Db
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 08:06:18 +0000
-Received: from localhost (unknown [171.76.123.182])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4519E20650;
- Wed, 16 Oct 2019 08:06:14 +0000 (UTC)
+ id 1iKeKe-00014J-FP
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 08:06:57 +0000
+Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A2ACC2168B;
+ Wed, 16 Oct 2019 08:06:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571213175;
- bh=ULxWxdAcTuFv0r9XFK5unvh1UhCWUCjT+N+FdMDZkiI=;
+ s=default; t=1571213216;
+ bh=xmK/fcgmX84/0Ee+b2avihtOo5xXFs3Rgwm4HoHFFVk=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=aYJcH+jghu4SsAyCK/ysYaa/1+B6G1abNBYHIc7qHCoFNltm6aNS/+LRguSfHc5uB
- MKoxw22mhR9Yk+e8H9gkIIn3Gr1vnIPmi/kYgCOOwV+XZrWQGzzikTDPRXYOf2YUiJ
- wHW1Hnw3M1ZlGIoV5pow6OcYhynrU+Hxtw/3Dqpw=
-Date: Wed, 16 Oct 2019 13:36:07 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-Subject: Re: [PATCH] arm64: defconfig: Enable Qualcomm pseudo rng
-Message-ID: <20191016080607.GH2654@vkoul-mobl>
-References: <20191011235035.374569-1-bjorn.andersson@linaro.org>
+ b=2sCOTIwXhDaoFNm4jG9AqcNOAL5y/DtHUL3wIpBu1vOqVsQv3z5Ng4WSchaVw5fYs
+ LRj55cn5IftSfuwc6z3vXQADJOUeQLaEUUZdnE4VX53nAVbIJUr1wgn8+HXfZgMfnk
+ 35aElQtFqu8ybkI0+QOldoez7AnXNX6/TkcAQm8o=
+Date: Wed, 16 Oct 2019 10:06:53 +0200
+From: Maxime Ripard <mripard@kernel.org>
+To: codekipper@gmail.com
+Subject: Re: [PATCH v6 2/7] ASoC: sun4i-i2s: Add functions for RX and TX
+ channel offsets
+Message-ID: <20191016080653.3seixioa2xiaobd7@gilmour>
+References: <20191016070740.121435-1-codekipper@gmail.com>
+ <20191016070740.121435-3-codekipper@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191011235035.374569-1-bjorn.andersson@linaro.org>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <20191016070740.121435-3-codekipper@gmail.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_010615_480195_E2AA5D7B 
-X-CRM114-Status: GOOD (  15.15  )
+X-CRM114-CacheID: sfid-20191016_010656_536954_3EE3DE09 
+X-CRM114-Status: GOOD (  16.07  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,55 +77,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anson Huang <Anson.Huang@nxp.com>, Arnd Bergmann <arnd@arndb.de>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Maxime Ripard <mripard@kernel.org>,
- Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
- Dinh Nguyen <dinguyen@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
- linux-arm-msm@vger.kernel.org, Olof Johansson <olof@lixom.net>,
- Shawn Guo <shawnguo@kernel.org>, Leonard Crestez <leonard.crestez@nxp.com>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: alsa-devel@alsa-project.org, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, lgirdwood@gmail.com, be17068@iperbole.bo.it,
+ wens@csie.org, broonie@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5371282728197108737=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11-10-19, 16:50, Bjorn Andersson wrote:
-> Most Qualcomm platforms contain a pseudo random number generator
-> hardware block. Enable the driver for this block.
 
-This enabled and loads the driver, but doesn't enable the usage.
+--===============5371282728197108737==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="eqduu55cdk37tzbj"
+Content-Disposition: inline
 
-We also need CONFIG_CRYPTO_RNG2 but that gets selected so that part is
-fine. For userspace we need CONFIG_CRYPTO_USER_API_RNG to be added so
-that kernel exports interface to users. So can you add that as well.
 
-Thanks
-> 
-> Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+--eqduu55cdk37tzbj
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+Hi,
+
+On Wed, Oct 16, 2019 at 09:07:35AM +0200, codekipper@gmail.com wrote:
+> From: Marcus Cooper <codekipper@gmail.com>
+>
+> Newer SoCs like the H6 have the channel offset bits in a different
+> position to what is on the H3. As we will eventually add multi-
+> channel support then create function calls as opposed to regmap
+> fields to add support for different devices.
+>
+> Signed-off-by: Marcus Cooper <codekipper@gmail.com>
 > ---
->  arch/arm64/configs/defconfig | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-> index a5953b0b382d..688c8f200034 100644
-> --- a/arch/arm64/configs/defconfig
-> +++ b/arch/arm64/configs/defconfig
-> @@ -855,6 +855,7 @@ CONFIG_NLS_ISO8859_1=y
->  CONFIG_SECURITY=y
->  CONFIG_CRYPTO_ECHAINIV=y
->  CONFIG_CRYPTO_ANSI_CPRNG=y
-> +CONFIG_CRYPTO_DEV_QCOM_RNG=m
->  CONFIG_DMA_CMA=y
->  CONFIG_CMA_SIZE_MBYTES=32
->  CONFIG_PRINTK_TIME=y
-> -- 
-> 2.23.0
+>  sound/soc/sunxi/sun4i-i2s.c | 31 +++++++++++++++++++++++++------
+>  1 file changed, 25 insertions(+), 6 deletions(-)
+>
+> diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
+> index f1a80973c450..875567881f30 100644
+> --- a/sound/soc/sunxi/sun4i-i2s.c
+> +++ b/sound/soc/sunxi/sun4i-i2s.c
+> @@ -157,6 +157,8 @@ struct sun4i_i2s_quirks {
+>  	int	(*set_chan_cfg)(const struct sun4i_i2s *,
+>  				const struct snd_pcm_hw_params *);
+>  	int	(*set_fmt)(struct sun4i_i2s *, unsigned int);
+> +	void	(*set_txchanoffset)(const struct sun4i_i2s *, int);
+> +	void	(*set_rxchanoffset)(const struct sun4i_i2s *);
 
--- 
-~Vinod
+The point of removing the regmap_field was that because having a
+one-size-fits-all function with regmap_field sort of making the
+abstraction was becoming more and more of a burden to maintain.
+
+Having functions for each and every register access is exactly the
+same as using regmap_field here, and the issue we adressed is not with
+regmap_fields in itself.
+
+If the H6 has a different register layout, then so be it, create a new
+set_chan_cfg or set_fmt function for the H6.
+
+Maxime
+
+--eqduu55cdk37tzbj
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXabPnQAKCRDj7w1vZxhR
+xVgGAQC+c07u++gTF9sgMgydEJb6ZU4fnFFVj0WW2BXaQIv3MAD/fN+TY5xe5CTb
+lMZpAVYl2AoGZu9oSTUSKXAUP4bzPwU=
+=Qi0K
+-----END PGP SIGNATURE-----
+
+--eqduu55cdk37tzbj--
+
+
+--===============5371282728197108737==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5371282728197108737==--
+
