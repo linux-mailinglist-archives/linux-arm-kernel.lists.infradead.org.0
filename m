@@ -2,84 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 120BBD88FF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 09:09:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D50AD8900
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 09:09:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j7OCyhPrryHAYgIJ7sWL5w/PUGm+Cvtrbfr3YwsC4Lc=; b=uC6n9oCwGCIMyP
-	/HUJzkgxwcVrY3ttlKrDCwDtoJ+29HavNJ01Z7wYIQW87789SEnK3t7+bhPQioYbBxFe3+O/M8TOf
-	CwyZ2EfeT0o4vSRu5hVb454LZKKyRe7VgHOSB2dNKWJnfFlYrAb5Nf/X2yHgy3UUupIh8SkhcVYgb
-	7xvXcLtxnF9VYEg6K9mJadvNhzPo2e4GcwN9Oyfhv9OAwx5VelCA22kMd29pNw208jKbUPTlgq/Kj
-	UZp8TjTMvf4RFv+fomWsroBeK59ZvMnfBi+Xm7dANNOFahvJInSN8LKkb+zPLuU8fNKqGUwoi09ax
-	5X/klC/Ldk+evsdjNjwA==;
+	List-Owner; bh=fwyZEYPGQm0fOo5bG8wogp72utzI4YvVud7LOxAOmnc=; b=CzQhKsyZGjHbgT
+	9JGlS3egAbBR7fRttepEeBQtCDz57WvPAm1FngKqIGVSN7aS89oC6yD3UidZGSAA1SDvJwQvZ2Uls
+	/HjsUr0RvElQWUXxKcE1DMx+h2I1E8Q5ZVi4Biy2UQQMdKzLiY8c4bW+8ejgtdV3fiVSl6rj6KyAJ
+	lEsaeq2sp0HUz4fsxYQBBrXCK/dNstwCJSFYA8iBu1OmkuXDPZyuUDnyADkjmXMxHPiDdcZdycpyr
+	nGvS4wdRs/KZ3VC98Yrm/yCrNjrw2O9KsFlf5S/IAmfCNBVK9pcnfwX5lOWAUO2RV5P2yOhCIYH8Q
+	g72gBJBx8oU5tymX6ueQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKdQf-0000o7-Qg; Wed, 16 Oct 2019 07:09:05 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1iKdQs-00014D-7m; Wed, 16 Oct 2019 07:09:18 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKdPU-0008PY-Vc
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 07:07:58 +0000
-Received: by mail-lf1-x143.google.com with SMTP id c195so16504187lfg.9
+ id 1iKdPU-0008PW-Op
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 07:07:54 +0000
+Received: by mail-lf1-x144.google.com with SMTP id q12so16486363lfc.11
  for <linux-arm-kernel@lists.infradead.org>;
  Wed, 16 Oct 2019 00:07:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=FfnwO8vvijCwZxuUL06QD5Tx1fxFqAFTG2kXsJEWJMY=;
- b=P7jKcqJWpHrW1gaub0fSy2vbAtI/feqgoOpswUlXO9Je+VTo59n3zc/RFhfKNPOHYo
- X5RCZt1cS1NVGjTKtTS5zTsXPdX2MFhM5jti2LrRKX0HtZjSy6X89TEvTCgHOH6dZApV
- JhSyjrS8Jv3ik/H7deMyV9fRxuNoNZdx8yPbx2I5BvIs5Y1NXhK115S8cbJvzlW7wgwr
- m7YhX1l8TsMUm9UfJOnlonv/WJ92jOmqjnwJc2+N757v9eYaQ0dXoLImO+zfrilQHiuR
- 3zAm4rCjVZcgWEW0V4HPRLXhOKetlFT2zdktVefFU2P696B8kikobkWenLpt4C8fmDap
- BJcA==
+ bh=C5W4rfltqSQyC6633naN9KjlUdmam1uxpZxtzibKLXI=;
+ b=kJgCFEaSbYOV78577b0Ifo8DUmHrNrAiSODv6VkpiQ4SsErZ0fDKXWgP+lG+SP68U1
+ g2+OJWELlDAWIyzUEeuYCzDkjAIq9q3NuZlY4+DKZHtzZyJpUo1TEJQ5Fze/xCow80pj
+ ddwFOQnF3LNlQLSb4GW3fvmmKlH+76ebwhYkbd6muLw/S8pnBs6XTXIiqSZvknfgaFlO
+ XmbwblaP0FEOXpl45+rSovSa7Yo7izxRSGTPovF4k2LamxPDIM3EfkqVC3khx+6jqAmm
+ PUqxpOc+Ite7T0fqQ9TebPT4SlyZiFo/05lf4kx4j9LSGnOoyFywilVOlGmmTRZOXDuq
+ XkqA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=FfnwO8vvijCwZxuUL06QD5Tx1fxFqAFTG2kXsJEWJMY=;
- b=mFUHRUdBtnesdTULP8hak/UNyOYXUBoTiph6MupXZlj+BVJYvEciAXzRm5vqRReHI3
- qc57QPV16VwEUR3qCwZRwQhmuphpL8a6AQDdOlnvQ7nJ+/U5FBivZWNU07y5onyJtfaT
- 6ObTLojqR8G7NBIoKHg6P5nJ0/fkgaZw2BDcovyKP17UgsVYQiaHnr5RRAoVox1YfA+Z
- 47S6+MFS9TNxjM7SpjiAlAqbtJc2g9JBNfLqbTqTMloKzX8zN5mg4CBw+zn1oRDuagVd
- aevKcU+F6CzSlXFjj0+rs7mgYJRLvFI0jY6j4rxC+OtqjPYB4T/elU6N6FFMb2DaEO9T
- /YRA==
-X-Gm-Message-State: APjAAAWRvmOZAwEFK2Exz0b/0GUPT7J0BwV8t/in18+Ddpb8axKSaZGt
- D7QCRnZFocioSu6fvbR5Zuw=
-X-Google-Smtp-Source: APXvYqz5kC5mHtEuZCkmB220wctQYP7NsY41HDsa9pdKX2nuuRVHlx3tF9FC50FqXmDOK4Pu2/vSxg==
-X-Received: by 2002:a05:6512:403:: with SMTP id
- u3mr11797775lfk.135.1571209669188; 
- Wed, 16 Oct 2019 00:07:49 -0700 (PDT)
+ bh=C5W4rfltqSQyC6633naN9KjlUdmam1uxpZxtzibKLXI=;
+ b=TuB98mSUz14kZ6LUwdTWnE4f1dAGWD5cqbSE+3WDoEIDB5pKau2DZPtfhUxgcG5vAh
+ 5TSYBvTaDDSbE7K5vfRlxph5Nn/iST+h3rkpsrjZrSGE7qzvlUDPBaNiIT0NzBTG4gWd
+ dYj4ONZMdA/Pu4Hw505yQb1aMkbjXqSAQiqT59zA738oVmovcHsXpRlGLXmCGr3biTtN
+ TRbysX9lbM2/ar/QxmnVcbU+53vlSaQuVG2R6bxipem2Dk2BSMOIT9cyFNKyYaWxJoKh
+ TB1Jesz8Q9ho21vxg8jqSpWsOHQzV609QadrUPy815e+Ssqwu++d0LdRr6cDZKLd8OLo
+ 8rYw==
+X-Gm-Message-State: APjAAAWdAUwHet9zCEJq8aZcOLXvR6TTSsbz0FWsIw3R52lZW8lFeVTg
+ 89B6WBWEimebFQCnNHifufY=
+X-Google-Smtp-Source: APXvYqx587pbMaOeJksPCwQe5cRGVDrtU25sgCJnYB02iQnvoCaKcxZz7a5nKyeK3Eyk3aql8YmWLw==
+X-Received: by 2002:ac2:59d0:: with SMTP id x16mr23951110lfn.16.1571209670659; 
+ Wed, 16 Oct 2019 00:07:50 -0700 (PDT)
 Received: from localhost.localdomain (c213-102-65-51.bredband.comhem.se.
  [213.102.65.51])
- by smtp.gmail.com with ESMTPSA id j191sm1361493lfj.49.2019.10.16.00.07.47
+ by smtp.gmail.com with ESMTPSA id j191sm1361493lfj.49.2019.10.16.00.07.49
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 16 Oct 2019 00:07:48 -0700 (PDT)
+ Wed, 16 Oct 2019 00:07:49 -0700 (PDT)
 From: codekipper@gmail.com
 To: mripard@kernel.org,
 	wens@csie.org,
 	linux-sunxi@googlegroups.com
-Subject: [PATCH v6 5/7] ASoC: sun4i-i2s: Add functions for RX and TX channel
- mapping
-Date: Wed, 16 Oct 2019 09:07:38 +0200
-Message-Id: <20191016070740.121435-6-codekipper@gmail.com>
+Subject: [PATCH v6 6/7] dt-bindings: ASoC: sun4i-i2s: Add H6 compatible
+Date: Wed, 16 Oct 2019 09:07:39 +0200
+Message-Id: <20191016070740.121435-7-codekipper@gmail.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191016070740.121435-1-codekipper@gmail.com>
 References: <20191016070740.121435-1-codekipper@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_000753_079401_F75781DB 
-X-CRM114-Status: GOOD (  14.02  )
+X-CRM114-CacheID: sfid-20191016_000752_863508_6A9C9A12 
+X-CRM114-Status: UNSURE (   9.45  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -103,137 +102,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, Marcus Cooper <codekipper@gmail.com>,
- lgirdwood@gmail.com, linux-kernel@vger.kernel.org, be17068@iperbole.bo.it,
- broonie@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Jernej Skrabec <jernej.skrabec@siol.net>, alsa-devel@alsa-project.org,
+ Marcus Cooper <codekipper@gmail.com>, lgirdwood@gmail.com,
+ linux-kernel@vger.kernel.org, be17068@iperbole.bo.it, broonie@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Marcus Cooper <codekipper@gmail.com>
+From: Jernej Skrabec <jernej.skrabec@siol.net>
 
-As we will eventually add multi-channel audio support to the i2s
-then create function calls as opposed to regmap fields to add
-support for different devices.
+H6 I2S is very similar to H3, except that it supports up to 16 channels
+and thus few registers have fields on different position.
 
+Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
 Signed-off-by: Marcus Cooper <codekipper@gmail.com>
 ---
- sound/soc/sunxi/sun4i-i2s.c | 45 +++++++++++++++++++++++++++++++++----
- 1 file changed, 41 insertions(+), 4 deletions(-)
+ .../devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml      | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
-index 19988d61a085..63ae9da180f2 100644
---- a/sound/soc/sunxi/sun4i-i2s.c
-+++ b/sound/soc/sunxi/sun4i-i2s.c
-@@ -165,6 +165,8 @@ struct sun4i_i2s_quirks {
- 	void	(*set_rxchanen)(const struct sun4i_i2s *, int);
- 	void	(*set_txchansel)(const struct sun4i_i2s *, int, int);
- 	void	(*set_rxchansel)(const struct sun4i_i2s *, int);
-+	void	(*set_txchanmap)(const struct sun4i_i2s *, int, int);
-+	void	(*set_rxchanmap)(const struct sun4i_i2s *, int);
- };
+diff --git a/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml b/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml
+index eb3992138eec..6928d0a1dcc8 100644
+--- a/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml
++++ b/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml
+@@ -24,6 +24,7 @@ properties:
+       - items:
+           - const: allwinner,sun50i-a64-i2s
+           - const: allwinner,sun8i-h3-i2s
++      - const: allwinner,sun50i-h6-i2s
  
- struct sun4i_i2s {
-@@ -405,8 +407,8 @@ static int sun4i_i2s_set_chan_cfg(const struct sun4i_i2s *i2s,
- 	unsigned int channels = params_channels(params);
+   reg:
+     maxItems: 1
+@@ -59,6 +60,7 @@ allOf:
+               - allwinner,sun8i-a83t-i2s
+               - allwinner,sun8i-h3-i2s
+               - allwinner,sun50i-a64-codec-i2s
++              - allwinner,sun50i-h6-i2s
  
- 	/* Map the channels for playback and capture */
--	regmap_write(i2s->regmap, SUN4I_I2S_TX_CHAN_MAP_REG, 0x76543210);
--	regmap_write(i2s->regmap, SUN4I_I2S_RX_CHAN_MAP_REG, 0x00003210);
-+	i2s->variant->set_txchanmap(i2s, 0, 0x76543210);
-+	i2s->variant->set_rxchanmap(i2s, 0x00003210);
- 
- 	/* Configure the channels */
- 	i2s->variant->set_txchansel(i2s, 0, channels);
-@@ -426,8 +428,8 @@ static int sun8i_i2s_set_chan_cfg(const struct sun4i_i2s *i2s,
- 		slots = i2s->slots;
- 
- 	/* Map the channels for playback and capture */
--	regmap_write(i2s->regmap, SUN8I_I2S_TX_CHAN_MAP_REG, 0x76543210);
--	regmap_write(i2s->regmap, SUN8I_I2S_RX_CHAN_MAP_REG, 0x76543210);
-+	i2s->variant->set_txchanmap(i2s, 0, 0x76543210);
-+	i2s->variant->set_rxchanmap(i2s, 0x00003210);
- 
- 	/* Configure the channels */
- 	i2s->variant->set_txchansel(i2s, 0, channels);
-@@ -534,6 +536,31 @@ static void sun8i_i2s_set_rxchansel(const struct sun4i_i2s *i2s, int channel)
- 			   SUN8I_I2S_TX_CHAN_SEL(channel));
- }
- 
-+static void sun4i_i2s_set_txchanmap(const struct sun4i_i2s *i2s, int output,
-+				    int channel)
-+{
-+	if (output == 0)
-+		regmap_write(i2s->regmap, SUN4I_I2S_TX_CHAN_MAP_REG, channel);
-+}
-+
-+static void sun8i_i2s_set_txchanmap(const struct sun4i_i2s *i2s, int output,
-+				    int channel)
-+{
-+	if (output >= 0 && output < 4)
-+		regmap_write(i2s->regmap,
-+			     SUN8I_I2S_TX_CHAN_MAP_REG + (output * 4), channel);
-+}
-+
-+static void sun4i_i2s_set_rxchanmap(const struct sun4i_i2s *i2s, int channel)
-+{
-+	regmap_write(i2s->regmap, SUN4I_I2S_RX_CHAN_MAP_REG, channel);
-+}
-+
-+static void sun8i_i2s_set_rxchanmap(const struct sun4i_i2s *i2s, int channel)
-+{
-+	regmap_write(i2s->regmap, SUN8I_I2S_RX_CHAN_MAP_REG, channel);
-+}
-+
- static int sun4i_i2s_hw_params(struct snd_pcm_substream *substream,
- 			       struct snd_pcm_hw_params *params,
- 			       struct snd_soc_dai *dai)
-@@ -1154,6 +1181,8 @@ static const struct sun4i_i2s_quirks sun4i_a10_i2s_quirks = {
- 	.set_fmt		= sun4i_i2s_set_soc_fmt,
- 	.set_txchansel		= sun4i_i2s_set_txchansel,
- 	.set_rxchansel		= sun4i_i2s_set_rxchansel,
-+	.set_txchanmap		= sun4i_i2s_set_txchanmap,
-+	.set_rxchanmap		= sun4i_i2s_set_rxchanmap,
- };
- 
- static const struct sun4i_i2s_quirks sun6i_a31_i2s_quirks = {
-@@ -1174,6 +1203,8 @@ static const struct sun4i_i2s_quirks sun6i_a31_i2s_quirks = {
- 	.set_fmt		= sun4i_i2s_set_soc_fmt,
- 	.set_txchansel		= sun4i_i2s_set_txchansel,
- 	.set_rxchansel		= sun4i_i2s_set_rxchansel,
-+	.set_txchanmap		= sun4i_i2s_set_txchanmap,
-+	.set_rxchanmap		= sun4i_i2s_set_rxchanmap,
- };
- 
- /*
-@@ -1199,6 +1230,8 @@ static const struct sun4i_i2s_quirks sun8i_a83t_i2s_quirks = {
- 	.set_fmt		= sun4i_i2s_set_soc_fmt,
- 	.set_txchansel		= sun4i_i2s_set_txchansel,
- 	.set_rxchansel		= sun4i_i2s_set_rxchansel,
-+	.set_txchanmap		= sun4i_i2s_set_txchanmap,
-+	.set_rxchanmap		= sun4i_i2s_set_rxchanmap,
- };
- 
- static const struct sun4i_i2s_quirks sun8i_h3_i2s_quirks = {
-@@ -1223,6 +1256,8 @@ static const struct sun4i_i2s_quirks sun8i_h3_i2s_quirks = {
- 	.set_rxchanen		= sun8i_i2s_set_rxchanen,
- 	.set_txchansel		= sun8i_i2s_set_txchansel,
- 	.set_rxchansel		= sun8i_i2s_set_rxchansel,
-+	.set_txchanmap		= sun8i_i2s_set_txchanmap,
-+	.set_rxchanmap		= sun8i_i2s_set_rxchanmap,
- };
- 
- static const struct sun4i_i2s_quirks sun50i_a64_codec_i2s_quirks = {
-@@ -1243,6 +1278,8 @@ static const struct sun4i_i2s_quirks sun50i_a64_codec_i2s_quirks = {
- 	.set_fmt		= sun4i_i2s_set_soc_fmt,
- 	.set_txchansel		= sun4i_i2s_set_txchansel,
- 	.set_rxchansel		= sun4i_i2s_set_rxchansel,
-+	.set_txchanmap		= sun4i_i2s_set_txchanmap,
-+	.set_rxchanmap		= sun4i_i2s_set_rxchanmap,
- };
- 
- static int sun4i_i2s_init_regmap_fields(struct device *dev,
+     then:
+       required:
 -- 
 2.23.0
 
