@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FD22D951E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 17:10:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18AA6D9520
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 17:10:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=li5vDgNCAYg3IAllAv04O4MOcqjXgdz6BvqlRIs2oL4=; b=eMmW/Su8/rktb3senJ7vNZrbE
-	PUIOAC4K1oc23vRtdaw7VVvLOTu6EhoAJt/mJczzhsCz8yodf5H6jqktr7PAakhTsnSg2ysjtZeRY
-	kX+/5/5CeRdCFutJmBELzxZdL7wyq2//HZ5BiQq95HgiqbuvdJJXvukXvukCElDFTEgNXcQ2taJfl
-	DQP7paAZ0vjplzaWC89LqyS5ePKxkFru37xlWnk46U+50neakhZrKajvmbnY7Ei+lpEHUz0WnyuCQ
-	WI7YjXONJRzZPuY+6dgdeZc2tDvwHIusPWeRAFj3uQ9sXYzm1xT6Cuyl6bSZrR2Zjv03NbC04QRM+
-	RjEw4/33w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ufMVGMrs+b3XOm3NH+Bd/eKM0bjnpy7FHRMleOntc/w=; b=Wgn
+	v4wF2aOtY20WJjsnYjflk3vp4hgxH5so8G9Fq2aNEXTRLXSlEdREbfzj/JOZQIyrFehIhuFAQJDDZ
+	sADmi/SwkWPJ/x5sK95cztnYLUp27X3TvZtF4y5sfjUOm0mYbi8a1cWh1rF7CXLdutRMjrOu3E96b
+	sOe+f2hQi4h/Zb8K3+/hHkRvfX1tS9cU8ezZxugoXkxvWx8NxIk9RwqjLgKzcKVcMvflM8WMjDkFx
+	qPfulfA+jAabeIP51Mrp6+xCZ3vaZ9h8YhgFpK7ydoXBHW+pYT9+JAxyxmn2+wrxC914i9rvrEB9P
+	zwr5yoS2eWQnjOm21TsFP8nr4fpXx9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKkwS-0007yp-5D; Wed, 16 Oct 2019 15:10:24 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1iKkwk-0000Ji-AZ; Wed, 16 Oct 2019 15:10:42 +0000
+Received: from laurent.telenet-ops.be ([2a02:1800:110:4::f00:19])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKkvf-0007VT-I7
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 15:09:37 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 5A413B41A;
- Wed, 16 Oct 2019 15:09:32 +0000 (UTC)
-Message-ID: <83c223c14c55aff1c8c9b30b0760c7e13c928209.camel@suse.de>
-Subject: Re: [PATCH -next v3] arm64: mm: Fix unused variable warning in
- zone_sizes_init
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Catalin Marinas <catalin.marinas@arm.com>, Nathan Chancellor
- <natechancellor@gmail.com>
-Date: Wed, 16 Oct 2019 17:09:30 +0200
-In-Reply-To: <20191016150846.GO49619@arrakis.emea.arm.com>
-References: <20191016031107.30045-1-natechancellor@gmail.com>
- <20191016144713.23792-1-natechancellor@gmail.com>
- <20191016150846.GO49619@arrakis.emea.arm.com>
-User-Agent: Evolution 3.32.4 
-MIME-Version: 1.0
+ id 1iKkvu-0007ig-Lo
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 15:09:52 +0000
+Received: from ramsan ([84.194.98.4]) by laurent.telenet-ops.be with bizsmtp
+ id EF9h2100205gfCL01F9hfC; Wed, 16 Oct 2019 17:09:41 +0200
+Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1iKkvl-0003wJ-0S; Wed, 16 Oct 2019 17:09:41 +0200
+Received: from geert by rox.of.borg with local (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1iKkvk-0007yb-VA; Wed, 16 Oct 2019 17:09:40 +0200
+From: Geert Uytterhoeven <geert+renesas@glider.be>
+To: Magnus Damm <magnus.damm@gmail.com>
+Subject: [PATCH] ARM: shmobile: rcar-gen2: Drop legacy DT clock support
+Date: Wed, 16 Oct 2019 17:09:39 +0200
+Message-Id: <20191016150939.30620-1-geert+renesas@glider.be>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_080935_913533_44A577DE 
-X-CRM114-Status: UNSURE (   9.50  )
+X-CRM114-CacheID: sfid-20191016_080950_900494_EB491149 
+X-CRM114-Status: UNSURE (   8.67  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a02:1800:110:4:0:0:f00:19 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,76 +64,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Will Deacon <will@kernel.org>, linux-kernel@vger.kernel.org,
+Cc: linux-renesas-soc@vger.kernel.org,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============0538727281726772928=="
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+As of commit 362b334b17943d84 ("ARM: dts: r8a7791: Convert to new
+CPG/MSSR bindings"), all upstream R-Car Gen2 device tree source files
+use the unified "Renesas Clock Pulse Generator / Module Standby and
+Software Reset" DT bindings.
 
---===============0538727281726772928==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-pTKSzfeo3TsXii9om14o"
+Hence remove backward compatibility with old R-Car Gen2 device trees
+describing a hierarchical representation of the various CPG and MSTP
+clocks.
 
+Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+---
+To be queued in renesas-devel-for-v5.5.
 
---=-pTKSzfeo3TsXii9om14o
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+The abovementioned commit was part of the v4.15 release.
+The conversion was backported to v4.14.75-ltsi, and included in any
+R-Car BSP based on v4.14 (rcar-3.6.0 and later).
+---
+ arch/arm/mach-shmobile/setup-rcar-gen2.c | 1 -
+ 1 file changed, 1 deletion(-)
 
-On Wed, 2019-10-16 at 16:08 +0100, Catalin Marinas wrote:
-> On Wed, Oct 16, 2019 at 07:47:14AM -0700, Nathan Chancellor wrote:
-> > When building arm64 allnoconfig, CONFIG_ZONE_DMA and CONFIG_ZONE_DMA32
-> > get disabled so there is a warning about max_dma being unused.
-> >=20
-> > ../arch/arm64/mm/init.c:215:16: warning: unused variable 'max_dma'
-> > [-Wunused-variable]
-> >         unsigned long max_dma =3D min;
-> >                       ^
-> > 1 warning generated.
-> >=20
-> > Add __maybe_unused to make this clear to the compiler.
-> >=20
-> > Fixes: 1a8e1cef7603 ("arm64: use both ZONE_DMA and ZONE_DMA32")
-> > Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
->=20
-> Thanks. Queued on top of Nicolas' patches for 5.5. I also added Nicolas'
-> reviewed-by from v2 as I suspect it still stands.
-
-Yes, thanks!
-
-
---=-pTKSzfeo3TsXii9om14o
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl2nMqoACgkQlfZmHno8
-x/4Qowf+KTCudWRBpmrj4nqdjIh9c68rkqpBSsotdsFpXG/8fgt2MYgIFeKjdnnz
-vGK0iAFugF2h6LLKPrx1cUakT9uKC1UeUdyJjGlgfk5dt70XRtsUg8hLQO/tpCCa
-Kn9KtfenH9FZ7MgSOFvxVD4HeN5P65zdGGTPi9g0HFSdPdGiUuLBWKhN2p9RhJL9
-d+pv7fBHFBWgOZSgeg+P6Kjeb1vlUoiLJXiLcs/5SmOzQTCILFOzGT47KUelDwCi
-aE5VOr72KYslTJxxxsVew1ayl1sdlyhDXyryTBgi7rREPiGxGIxDdB/bBmG7L6KR
-9++SMdguf4kZZqZ+Zed5EPkBKdai3w==
-=oxCW
------END PGP SIGNATURE-----
-
---=-pTKSzfeo3TsXii9om14o--
-
-
-
---===============0538727281726772928==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+diff --git a/arch/arm/mach-shmobile/setup-rcar-gen2.c b/arch/arm/mach-shmobile/setup-rcar-gen2.c
+index 9e4bc1865f84abae..2fd3aa6f32124df0 100644
+--- a/arch/arm/mach-shmobile/setup-rcar-gen2.c
++++ b/arch/arm/mach-shmobile/setup-rcar-gen2.c
+@@ -24,7 +24,6 @@
+ #include "rcar-gen2.h"
+ 
+ static const struct of_device_id cpg_matches[] __initconst = {
+-	{ .compatible = "renesas,rcar-gen2-cpg-clocks", },
+ 	{ .compatible = "renesas,r8a7743-cpg-mssr", .data = "extal" },
+ 	{ .compatible = "renesas,r8a7744-cpg-mssr", .data = "extal" },
+ 	{ .compatible = "renesas,r8a7790-cpg-mssr", .data = "extal" },
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0538727281726772928==--
-
-
