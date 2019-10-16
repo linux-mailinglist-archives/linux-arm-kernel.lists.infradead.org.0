@@ -2,69 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6EF48D884B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 07:58:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42C08D884F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 08:00:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Kz2RlNdOyrD1dEo+Qi7VKmRlf2/+tCNPKji6WUU+5AQ=; b=GVYMyydPHolrjt
-	EVWH39mQCYuPu+qC0D2MOmGNbNfG8fJhFrEoS13gWB2qxo8bxOxagt1NjtplcgdUG7Vl0NwZa8RCd
-	VYPkQxNHr20/tvMCB4uND1KloTfl1DMAD7AA9Qzi5O2vxcbSHJP3FHrxdREtfCj12VsCPFNPUSAl4
-	SK5m02W/oiKfxsQN8x/V979bMfb5Z609wycv4M7SeSpXQACTnzCuWM3F/f3Gs3Nhldbuv7jFkJibT
-	2RH+oYPXzc21UrG1yWQRzo0ojegnUI9tDxZ+Fu8fQFMhb4Sw+WQ6SXYLafugfWWQXmm1yt5nl3aAO
-	FnL0gyz8pMhT8QKZv2sw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=inkL/uBBkZ9N03QgLGcihv4yeB6kVEr8E7w///yRaqo=; b=ZxvwiKoO5TYX/u
+	V8gM3rFepgp7vy7dWNTMMk1FP88rLcglrbak2nk8fnfeSWqAbQJEfpNCEmCLfydv4DjsaRSgVaA6+
+	onIP60WWJzFfgeUVX4QRXudhbExYlEh4c52cmQlHQ6UnExLODkV7r/PmkskhI28xBu3r9U9F2mfFW
+	Ew6MNVJBBkgzp2MYXL+UTVjliwqRR45c1LOOE8NIsx1gHlpsvAF+ONKsoWvkPbBKPtfUIYjV/UOLc
+	uC3NANhJiXs6Y6uVKjuupLnvaK61ILTbZDnqKlAKqIGtLgKMo/7kjxx7I59iVTeruRLfgOzjXFlYO
+	8O0Z/4UDQ0TlQFxoPWIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKcKE-00072l-Mk; Wed, 16 Oct 2019 05:58:22 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iKcMb-0000SQ-BT; Wed, 16 Oct 2019 06:00:49 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKcK6-00071u-FV
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 05:58:16 +0000
-Received: from localhost (unknown [171.76.123.182])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9C6CF20872;
- Wed, 16 Oct 2019 05:58:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571205493;
- bh=ptLr0TOYMFKLBYe15U23+xjSz09tfCCDviZntLEmAUQ=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ZJU+JUtVqjvjeez2HGwwKzRhpDVTvYem3TbV8OWVdCZpr+T+nt9ueYhnid90yQQku
- FEqL0qhpY0pkZbWLnwEc9kFOEOJTLC+MbRAwINHnt6kOjq1gqzIzNPOJiQdevOcXCM
- dYVas/tRwUcmsvDi+M2MkYZPfUrfpzjffWEN1sUM=
-Date: Wed, 16 Oct 2019 11:28:08 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-Subject: Re: [PATCH] arm64: defconfig: Enable Qualcomm remoteproc dependencies
-Message-ID: <20191016055808.GD2654@vkoul-mobl>
-References: <20191009001442.15719-1-bjorn.andersson@linaro.org>
+ id 1iKcMN-0000MM-9H; Wed, 16 Oct 2019 06:00:37 +0000
+X-UUID: a78566d9535d48e8ac58976751b41967-20191015
+X-UUID: a78566d9535d48e8ac58976751b41967-20191015
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <jiaxin.yu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 2051561534; Tue, 15 Oct 2019 22:00:27 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 15 Oct 2019 22:59:17 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 16 Oct 2019 13:59:09 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 16 Oct 2019 13:59:08 +0800
+From: Jiaxin Yu <jiaxin.yu@mediatek.com>
+To: <broonie@kernel.org>, <mark.rutland@arm.com>, <robh+dt@kernel.org>,
+ <linux@roeck-us.net>, <wim@linux-watchdog.org>
+Subject: [PATCH v4 0/2] ASoC: mt8183: fix audio playback slowly after playback
+Date: Wed, 16 Oct 2019 13:59:06 +0800
+Message-ID: <1571205548-13704-1-git-send-email-jiaxin.yu@mediatek.com>
+X-Mailer: git-send-email 1.8.1.1.dirty
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191009001442.15719-1-bjorn.andersson@linaro.org>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_225814_540178_254FD904 
-X-CRM114-Status: GOOD (  15.00  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191015_230035_340716_77621965 
+X-CRM114-Status: UNSURE (   8.21  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,68 +72,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anson Huang <Anson.Huang@nxp.com>, Arnd Bergmann <arnd@arndb.de>,
- Catalin Marinas <catalin.marinas@arm.com>, Alex Elder <elder@linaro.org>,
- linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
- Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
- Dinh Nguyen <dinguyen@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
- linux-arm-msm@vger.kernel.org, Olof Johansson <olof@lixom.net>,
- Shawn Guo <shawnguo@kernel.org>, Leonard Crestez <leonard.crestez@nxp.com>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: alsa-devel@alsa-project.org, yong.liang@mediatek.com, lgirdwood@gmail.com,
+ jiaxin.yu@mediatek.com, perex@perex.cz, tzungbi@google.com,
+ linux-mediatek@lists.infradead.org, eason.yen@mediatek.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 08-10-19, 17:14, Bjorn Andersson wrote:
-> Enable the the power domains, reset controllers and remote block device
-> memory access drivers necessary to boot the Audio, Compute and Modem
-> DSPs on Qualcomm SDM845.
-> 
-> None of the power domains are system critical, but needs to be builtin
-> as the driver core prohibits probe deferal past late initcall.
+This series patches add reset controller for MT8183, and audio will use it in 
+machine driver during bootup, they depend on the for-next.
 
-Reviewed-by: Vinod Koul <vkoul@kernel.org>
-Tested-by: Vinod Koul <vkoul@kernel.org>
+v4 changes:
+	1. Fixed wrong signed-off as correct mail suffix.
+	2. Fixed patch subject that add patch version.
 
-> 
-> Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-> ---
->  arch/arm64/configs/defconfig | 5 +++++
->  1 file changed, 5 insertions(+)
-> 
-> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-> index c9a867ac32d4..42f042ba1039 100644
-> --- a/arch/arm64/configs/defconfig
-> +++ b/arch/arm64/configs/defconfig
-> @@ -732,10 +732,13 @@ CONFIG_RPMSG_QCOM_GLINK_SMEM=m
->  CONFIG_RPMSG_QCOM_SMD=y
->  CONFIG_RASPBERRYPI_POWER=y
->  CONFIG_IMX_SCU_SOC=y
-> +CONFIG_QCOM_AOSS_QMP=y
->  CONFIG_QCOM_COMMAND_DB=y
->  CONFIG_QCOM_GENI_SE=y
->  CONFIG_QCOM_GLINK_SSR=m
-> +CONFIG_QCOM_RMTFS_MEM=m
->  CONFIG_QCOM_RPMH=y
-> +CONFIG_QCOM_RPMHPD=y
->  CONFIG_QCOM_SMEM=y
->  CONFIG_QCOM_SMD_RPM=y
->  CONFIG_QCOM_SMP2P=y
-> @@ -780,6 +783,8 @@ CONFIG_PWM_ROCKCHIP=y
->  CONFIG_PWM_SAMSUNG=y
->  CONFIG_PWM_SUN4I=m
->  CONFIG_PWM_TEGRA=m
-> +CONFIG_RESET_QCOM_AOSS=y
-> +CONFIG_RESET_QCOM_PDC=m
->  CONFIG_RESET_TI_SCI=y
->  CONFIG_PHY_XGENE=y
->  CONFIG_PHY_SUN4I_USB=y
-> -- 
-> 2.18.0
+v3 changes:
+	1. https://patchwork.kernel.org/patch/11164283/ and 
+	   https://patchwork.kernel.org/patch/11164305/ has been merged.
+	2. Change the name of mtk_wdt_compatible to mtk_wdt_data.
+	3. Remove toprgu_reset struct and use mtk_wdt_dev instead.
+	4. Get the value of sw_rst_num from .h file.
+	5. Adddd mt2712-resets.h for mt2712.
+	6. Improve commit message.
+
+v2 changes:
+	1. remove "WIP" that in the title of patches
+	2. add hyper link for the patch that depends on
+	3. patchwork list:
+		https://patchwork.kernel.org/cover/11164285/
+		https://patchwork.kernel.org/patch/11164295/
+		https://patchwork.kernel.org/patch/11164299/
+		https://patchwork.kernel.org/patch/11164283/
+		https://patchwork.kernel.org/patch/11164305/
+
+v1 changes:
+	1. patchwork list:
+		https://patchwork.kernel.org/cover/11164173/
+		https://patchwork.kernel.org/patch/11164181/
+		https://patchwork.kernel.org/patch/11164185/
+		https://patchwork.kernel.org/patch/11164187/
+		https://patchwork.kernel.org/patch/11164175/
+
+yong.liang (2):
+  dt-bindings: mediatek: mt8183: Add #reset-cells
+  watchdog: mtk_wdt: mt8183: Add reset controller
+
+ .../devicetree/bindings/watchdog/mtk-wdt.txt  |  10 +-
+ drivers/watchdog/Kconfig                      |   1 +
+ drivers/watchdog/mtk_wdt.c                    | 111 +++++++++++++++++-
+ .../reset-controller/mt2712-resets.h          |  22 ++++
+ .../reset-controller/mt8183-resets.h          |  15 +++
+ 5 files changed, 155 insertions(+), 4 deletions(-)
+ create mode 100644 include/dt-bindings/reset-controller/mt2712-resets.h
 
 -- 
-~Vinod
+2.18.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
