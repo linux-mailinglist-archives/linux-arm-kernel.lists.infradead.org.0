@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91924D86DF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 05:44:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62933D86DE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 05:43:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zcNyk0oslAlDJsQkrqkKABxCJTokQxtER6i57FrszY8=; b=TT7ZPEs3ChhB/V
-	/Y1VIZ7XvAcOy0K38nSb4kdQkusT9fwCIxwX+C8DAZRMMbmxxIgd9wru+G/3g8/Uf3V1Q8hQzXjxl
-	nrsYtTnh3te2jDyElZTwQaX6xm8CpiXZYMRA4xw5oGqzN77Hbaky2sruHsJFEv/G6QRFptTpHuB22
-	J/UuVgb9HHbbs3a8zLwnvhbw6+tsAyTlM9456zgbu5K8StntOr3uokeSTVrDPkj5Da4A7RvbAZ9PC
-	ZEWg1eu+orF04vwqUJtB4rR2FmX7OVhIGwzH42pHYsCifv9ws7o7xbvDC0BDn+KHuk9WA+yABoxNy
-	ROiUcUpnsWQsyYWQkytw==;
+	List-Owner; bh=n1z8WO3dKtDxv1X+vv4NMrEuXFFplYR7NlfiK5twhE0=; b=SybwAHLr7gQgCl
+	PQP0pa4CdgKnXqPoXmTeZUCkYtbCbuGg0RWMD9R1z1jXqtPZpEi51xzQWNoUeLe6n98cZPUlTn6LI
+	PbQuOhtARQ8TYTWKGQUuKIP0hDDH08zBYVbKs7WhTN7K6F3hDYv7szV574ohsbCui/lILCW9SFt05
+	GW2FGc97dFxx//BynZAI6+k2kuxrEYuwVNoPs8gaXY66DX31J6ZX/joY1sojEin9kvOOdGbAf650A
+	XZH5mwihqtCmV+YqbLPT7Jq/zGNt+nuLBw5UE0SuE8/3vxBZ/vjr4fuhkhhgCIYiW6kCkOrgXkq9U
+	M11zqIA2Ct0/X+Lb58ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKaEN-0002TM-CW; Wed, 16 Oct 2019 03:44:11 +0000
+	id 1iKaE8-0002Ge-8X; Wed, 16 Oct 2019 03:43:56 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKaDs-0002EI-Pd; Wed, 16 Oct 2019 03:43:42 +0000
-X-UUID: 07ec8db55d2a4da2aaf986686ec075c5-20191015
-X-UUID: 07ec8db55d2a4da2aaf986686ec075c5-20191015
+ id 1iKaDs-0002EK-Pe; Wed, 16 Oct 2019 03:43:42 +0000
+X-UUID: 02fa519c05974582924ebd22d241f99d-20191015
+X-UUID: 02fa519c05974582924ebd22d241f99d-20191015
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <yong.wu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1208363795; Tue, 15 Oct 2019 19:43:20 -0800
-Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ with ESMTP id 186831098; Tue, 15 Oct 2019 19:43:20 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
  MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 15 Oct 2019 20:33:29 -0700
+ 15.0.1395.4; Tue, 15 Oct 2019 20:33:47 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 16 Oct 2019 11:33:27 +0800
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 16 Oct 2019 11:33:46 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 16 Oct 2019 11:33:26 +0800
+ Transport; Wed, 16 Oct 2019 11:33:45 +0800
 From: Yong Wu <yong.wu@mediatek.com>
 To: Matthias Brugger <matthias.bgg@gmail.com>, Joerg Roedel <joro@8bytes.org>, 
  Will Deacon <will.deacon@arm.com>
-Subject: [PATCH v4 1/7] iommu/mediatek: Correct the flush_iotlb_all callback
-Date: Wed, 16 Oct 2019 11:33:06 +0800
-Message-ID: <1571196792-12382-2-git-send-email-yong.wu@mediatek.com>
+Subject: [PATCH v4 3/7] iommu/mediatek: Use gather to achieve the tlb range
+ flush
+Date: Wed, 16 Oct 2019 11:33:08 +0800
+Message-ID: <1571196792-12382-4-git-send-email-yong.wu@mediatek.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1571196792-12382-1-git-send-email-yong.wu@mediatek.com>
 References: <1571196792-12382-1-git-send-email-yong.wu@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: BDD725E7AB20C2364C197E8B001FBC0EC27465FEDC83224779F452A2E0202FC82000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_204340_837909_F7C58546 
-X-CRM114-Status: GOOD (  11.17  )
+X-CRM114-CacheID: sfid-20191015_204340_839220_78ABB8C4 
+X-CRM114-Status: GOOD (  10.74  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -86,28 +86,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use the correct tlb_flush_all instead of the original one.
+Use the iommu_gather mechanism to achieve the tlb range flush.
+Gather the iova range in the "tlb_add_page", then flush the merged iova
+range in iotlb_sync.
 
-Fixes: 4d689b619445 ("iommu/io-pgtable-arm-v7s: Convert to IOMMU API TLB sync")
+Suggested-by: Tomasz Figa <tfiga@chromium.org>
 Signed-off-by: Yong Wu <yong.wu@mediatek.com>
-Reviewed-by: Robin Murphy <robin.murphy@arm.com>
 ---
- drivers/iommu/mtk_iommu.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/iommu/mtk_iommu.c | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-index 67a483c..76b9388 100644
+index c2f6c78..81ac95f 100644
 --- a/drivers/iommu/mtk_iommu.c
 +++ b/drivers/iommu/mtk_iommu.c
-@@ -447,7 +447,7 @@ static size_t mtk_iommu_unmap(struct iommu_domain *domain,
- 
- static void mtk_iommu_flush_iotlb_all(struct iommu_domain *domain)
+@@ -245,11 +245,9 @@ static void mtk_iommu_tlb_flush_page_nosync(struct iommu_iotlb_gather *gather,
+ 					    void *cookie)
  {
--	mtk_iommu_tlb_sync(mtk_iommu_get_m4u_data());
-+	mtk_iommu_tlb_flush_all(mtk_iommu_get_m4u_data());
+ 	struct mtk_iommu_data *data = cookie;
+-	unsigned long flags;
++	struct iommu_domain *domain = &data->m4u_dom->domain;
+ 
+-	spin_lock_irqsave(&data->tlb_lock, flags);
+-	mtk_iommu_tlb_add_flush_nosync(iova, granule, granule, true, cookie);
+-	spin_unlock_irqrestore(&data->tlb_lock, flags);
++	iommu_iotlb_gather_add_page(domain, gather, iova, granule);
  }
  
- static void mtk_iommu_iotlb_sync(struct iommu_domain *domain,
+ static const struct iommu_flush_ops mtk_iommu_flush_ops = {
+@@ -469,9 +467,15 @@ static void mtk_iommu_iotlb_sync(struct iommu_domain *domain,
+ 				 struct iommu_iotlb_gather *gather)
+ {
+ 	struct mtk_iommu_data *data = mtk_iommu_get_m4u_data();
++	size_t length = gather->end - gather->start;
+ 	unsigned long flags;
+ 
++	if (gather->start == ULONG_MAX)
++		return;
++
+ 	spin_lock_irqsave(&data->tlb_lock, flags);
++	mtk_iommu_tlb_add_flush_nosync(gather->start, length, gather->pgsize,
++				       false, data);
+ 	mtk_iommu_tlb_sync(data);
+ 	spin_unlock_irqrestore(&data->tlb_lock, flags);
+ }
 -- 
 1.9.1
 
