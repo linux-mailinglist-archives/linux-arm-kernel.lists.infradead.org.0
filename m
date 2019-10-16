@@ -2,93 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D70FD94EB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 17:05:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 818BED94F1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 17:06:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RAPM1n3tXVgOY2PolC7IkYHTf06wg0HG0+iTvcCQ3VE=; b=D6GEKLI5WLuQcY
-	eD89TR5DtdDfNM2tZxDPIdhnbPHbaV78z67BJtGXjiM8FuG6FRNG9Bviu+cK8pZRhsN4hnimJMTar
-	Z0CVJgduCrEIoNaJyr2hqeHkaycvu2p2OwgZulqqVfhJoMPlJdg4dyO8S280HrdlxoYPVvCwpZ2hv
-	iq4osO6h3FG0T/mctbHSMmTewpvCsBMdAJGVZq9A62KJpdz+nLTeDAECoqr/he1DeXeJNlIUtN8wj
-	2VpWAKzojlYKrwkTBsKSC6coR48qu0eWPKc14eRL+M9Y/k0dcanlTB5KYMCDUSFhPMokjuN6MozKv
-	xAZ6MPONlXDiHhIjxWOA==;
+	List-Owner; bh=UKulFfvQeeQo6j4iT0C4Iy9zJ38cRbs8XbXHNqp41UQ=; b=Xjox7iGaTmaz9G
+	q07nDDoqyut4eloFTdDjGMKi3BoOauccZnCg87HgM+FqQ2HNlRziENY9H7aCWfpSrkAvl22VPhaMs
+	PhpNhr6Yn8zssZZFgoGGYkIAR+D/LujmjDnDQHyYcDgXT2EkNpdx3pg9TS/5mtq/tkjfiXAtih2aX
+	9N8ee6VHab+/57e8HqXRFDBvk5FJQsGDOOCgOwM51pJpDAr23AEBICIG8U5+OYr2kFf5cqnGuSMwM
+	2yssdUmvA318bghGvzEMVhSG7aH84FMLcRk/ysy72x4RbzlhiREdgl74fMnuXJ3ZnXD2OMLMLUBw9
+	KYjTvj7XSB6CKGdoaJpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKkrr-0003Kj-2S; Wed, 16 Oct 2019 15:05:39 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKkoE-0000K1-Is
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 15:01:57 +0000
-Received: by mail-wr1-x441.google.com with SMTP id z9so28453542wrl.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 16 Oct 2019 08:01:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=e457YyDFVfE5IUj3AWYMM47UgnP78lQnD30EkuZGvV4=;
- b=IbvFwY7y30vzZmQNQZIdNwtpOJW3l/IQEoam6v99L4QEnCH773bL58VkU8OkkT8W+t
- fbTZvpkR8YBT+PlV374xiKueR6wTf99r8NJPMF+vx+jizVYbSRcXaFywAxq70iVM0gX/
- +7OQD6wxYq72vzAiykXQ4gULTs+vzG6TN/NLwwQ3ZUVv4y+YdQ2HUjpVS2kF2NxTTpD5
- BQ3sFQAKhDACFjUnBgP7t0WCQHfwDnanmEAEzd5OmTms90ICnMwBoHoJUGdZSbBGiJXY
- si97Fj9Sm2Puh+Wy5hp92JVLGsEu8j6R74lVyWpbEDRS+UzTzZ8p5pKPQWgmyg8LaEpQ
- jJAQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=e457YyDFVfE5IUj3AWYMM47UgnP78lQnD30EkuZGvV4=;
- b=At2W0KRpa2bVRD7FJTuUrEUIB0wI3vfsKPYtkSPUYNu2d+aUiZ8nDD8fM/sq0K3Qy7
- Ea7sUFPvpsyiAcmt7rGuudZD4xErISe1x9uaAJ6qPy49263JbRlJ4NMfiJtsYMZTplqy
- XNwR0lOsoaQ88FBXv7m2jUpIU9Exxmg1b4JBFM1LZSk9tiTYOVUGBfVuUffpOV95ga0d
- SIX3X308q/4MzedfTBD2sTdiVqglUQjPPBiagt6N27V9FW7pRl07OMejSPILPwedYCGg
- nZWlU7IQ8pqftIwg3Q8OSLDxb48kAhuZGqEw6+99wPzWGaQzfVBFNYlsSsWDbeWbAUiK
- 7BdA==
-X-Gm-Message-State: APjAAAUOp7WHesVgwRuTubEwVv69jypCBPAJFN30oaY1RVJtpocfWTjK
- W/5D3Z50DF0tHxx8PF10jBU=
-X-Google-Smtp-Source: APXvYqyoh/WOojasasugeXydDJgc+8u1z2I8bcvkAOZUBZ1n6Lp44HwStUcdBzPDTzjZHU0Vyq6V+A==
-X-Received: by 2002:adf:e8c6:: with SMTP id k6mr3139239wrn.78.1571238113369;
- Wed, 16 Oct 2019 08:01:53 -0700 (PDT)
-Received: from Red.localdomain ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id r18sm3215437wme.48.2019.10.16.08.01.51
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 16 Oct 2019 08:01:52 -0700 (PDT)
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: catalin.marinas@arm.com, davem@davemloft.net, herbert@gondor.apana.org.au,
- linux@armlinux.org.uk, mark.rutland@arm.com, mripard@kernel.org,
- robh+dt@kernel.org, wens@csie.org, will@kernel.org
-Subject: [PATCH v5 11/11] crypto: sun4i-ss: Move to Allwinner directory
-Date: Wed, 16 Oct 2019 17:01:31 +0200
-Message-Id: <20191016150131.15430-12-clabbe.montjoie@gmail.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20191016150131.15430-1-clabbe.montjoie@gmail.com>
-References: <20191016150131.15430-1-clabbe.montjoie@gmail.com>
+	id 1iKksL-0004rL-PY; Wed, 16 Oct 2019 15:06:09 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iKks6-0004o6-FA
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 15:05:56 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 454971570;
+ Wed, 16 Oct 2019 08:05:53 -0700 (PDT)
+Received: from bogus (unknown [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 48FB13F68E;
+ Wed, 16 Oct 2019 08:05:51 -0700 (PDT)
+Date: Wed, 16 Oct 2019 16:05:45 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Yunfeng Ye <yeyunfeng@huawei.com>
+Subject: Re: [PATCH V2] arm64: psci: Reduce waiting time of cpu_psci_cpu_kill()
+Message-ID: <20191016150545.GA6750@bogus>
+References: <18068756-0f39-6388-3290-cf03746e767d@huawei.com>
+ <20191015162358.bt5rffidkv2j4xqb@willie-the-truck>
+ <ab42357e-f4f9-9019-e8d9-7e9bfe106e9e@huawei.com>
+ <20191016102545.GA11386@bogus>
+ <13d82e24-90bd-0c17-ef7f-aa7fec272f59@huawei.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <13d82e24-90bd-0c17-ef7f-aa7fec272f59@huawei.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_080154_769413_B1548904 
-X-CRM114-Status: GOOD (  13.13  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191016_080554_650224_F7BAC60D 
+X-CRM114-Status: GOOD (  29.81  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (clabbe.montjoie[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,177 +64,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-sunxi@googlegroups.com, Corentin Labbe <clabbe.montjoie@gmail.com>,
- linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: "kstewart@linuxfoundation.org" <kstewart@linuxfoundation.org>,
+ "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>, hushiyuan@huawei.com,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ linfeilong@huawei.com, David Laight <David.Laight@ACULAB.COM>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "wuyun.wu@huawei.com" <wuyun.wu@huawei.com>, Will Deacon <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since we have a dedicated Allwinner directory for crypto driver, move
-the sun4i-ss driver in it.
+On Wed, Oct 16, 2019 at 07:29:59PM +0800, Yunfeng Ye wrote:
+>
+>
+> On 2019/10/16 18:25, Sudeep Holla wrote:
+> > On Wed, Oct 16, 2019 at 11:22:23AM +0800, Yunfeng Ye wrote:
+> >>
+> >>
+> >> On 2019/10/16 0:23, Will Deacon wrote:
+> >>> Hi,
+> >>>
+> >>> On Sat, Sep 21, 2019 at 07:21:17PM +0800, Yunfeng Ye wrote:
+> >>>> If psci_ops.affinity_info() fails, it will sleep 10ms, which will not
+> >>>> take so long in the right case. Use usleep_range() instead of msleep(),
+> >>>> reduce the waiting time, and give a chance to busy wait before sleep.
+> >>>
+> >>> Can you elaborate on "the right case" please? It's not clear to me
+> >>> exactly what problem you're solving here.
+> >>>
+> >> The situation is that when the power is off, we have a battery to save some
+> >> information, but the battery power is limited, so we reduce the power consumption
+> >> by turning off the cores, and need fastly to complete the core shutdown. However, the
+> >> time of cpu_psci_cpu_kill() will take 10ms. We have tested the time that it does not
+> >> need 10ms, and most case is about 50us-500us. if we reduce the time of cpu_psci_cpu_kill(),
+> >> we can reduce 10% - 30% of the total time.
+> >>
+> >
+> > Have you checked why PSCI AFFINITY_INFO not returning LEVEL_OFF quickly
+> > then ? We wait for upto 5s in cpu_wait_death(worst case) before cpu_kill
+> > is called from __cpu_die.
+> >
+> When cpu_wait_death() is done, it means that the cpu core's hardware prepare to
+> die. I think not returning LEVEL_OFF quickly is that hardware need time to handle.
+> I don't know how much time it need is reasonable, but I test that it need about
+> 50us - 500us.
+>
 
-Acked-by: Maxime Ripard <mripard@kernel.org>
-Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
----
- MAINTAINERS                                   |  6 -----
- drivers/crypto/Kconfig                        | 26 ------------------
- drivers/crypto/Makefile                       |  1 -
- drivers/crypto/allwinner/Kconfig              | 27 +++++++++++++++++++
- drivers/crypto/allwinner/Makefile             |  1 +
- .../{sunxi-ss => allwinner/sun4i-ss}/Makefile |  0
- .../sun4i-ss}/sun4i-ss-cipher.c               |  0
- .../sun4i-ss}/sun4i-ss-core.c                 |  0
- .../sun4i-ss}/sun4i-ss-hash.c                 |  0
- .../sun4i-ss}/sun4i-ss-prng.c                 |  0
- .../sun4i-ss}/sun4i-ss.h                      |  0
- 11 files changed, 28 insertions(+), 33 deletions(-)
- rename drivers/crypto/{sunxi-ss => allwinner/sun4i-ss}/Makefile (100%)
- rename drivers/crypto/{sunxi-ss => allwinner/sun4i-ss}/sun4i-ss-cipher.c (100%)
- rename drivers/crypto/{sunxi-ss => allwinner/sun4i-ss}/sun4i-ss-core.c (100%)
- rename drivers/crypto/{sunxi-ss => allwinner/sun4i-ss}/sun4i-ss-hash.c (100%)
- rename drivers/crypto/{sunxi-ss => allwinner/sun4i-ss}/sun4i-ss-prng.c (100%)
- rename drivers/crypto/{sunxi-ss => allwinner/sun4i-ss}/sun4i-ss.h (100%)
+Fair enough.
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 9153c02e1f63..2120c74f476a 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -684,12 +684,6 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/opp/sun50i-nvmem-cpufreq.txt
- F:	drivers/cpufreq/sun50i-cpufreq-nvmem.c
- 
--ALLWINNER SECURITY SYSTEM
--M:	Corentin Labbe <clabbe.montjoie@gmail.com>
--L:	linux-crypto@vger.kernel.org
--S:	Maintained
--F:	drivers/crypto/sunxi-ss/
--
- ALLWINNER CRYPTO DRIVERS
- M:	Corentin Labbe <clabbe.montjoie@gmail.com>
- L:	linux-crypto@vger.kernel.org
-diff --git a/drivers/crypto/Kconfig b/drivers/crypto/Kconfig
-index 610bb52d77d6..9f08ed72eae8 100644
---- a/drivers/crypto/Kconfig
-+++ b/drivers/crypto/Kconfig
-@@ -659,32 +659,6 @@ config CRYPTO_DEV_IMGTEC_HASH
- 	  hardware hash accelerator. Supporting MD5/SHA1/SHA224/SHA256
- 	  hashing algorithms.
- 
--config CRYPTO_DEV_SUN4I_SS
--	tristate "Support for Allwinner Security System cryptographic accelerator"
--	depends on ARCH_SUNXI && !64BIT
--	depends on PM
--	select CRYPTO_MD5
--	select CRYPTO_SHA1
--	select CRYPTO_AES
--	select CRYPTO_LIB_DES
--	select CRYPTO_BLKCIPHER
--	help
--	  Some Allwinner SoC have a crypto accelerator named
--	  Security System. Select this if you want to use it.
--	  The Security System handle AES/DES/3DES ciphers in CBC mode
--	  and SHA1 and MD5 hash algorithms.
--
--	  To compile this driver as a module, choose M here: the module
--	  will be called sun4i-ss.
--
--config CRYPTO_DEV_SUN4I_SS_PRNG
--	bool "Support for Allwinner Security System PRNG"
--	depends on CRYPTO_DEV_SUN4I_SS
--	select CRYPTO_RNG
--	help
--	  Select this option if you want to provide kernel-side support for
--	  the Pseudo-Random Number Generator found in the Security System.
--
- config CRYPTO_DEV_ROCKCHIP
- 	tristate "Rockchip's Cryptographic Engine driver"
- 	depends on OF && ARCH_ROCKCHIP
-diff --git a/drivers/crypto/Makefile b/drivers/crypto/Makefile
-index 90d60eff5ecc..79e2da4a51e4 100644
---- a/drivers/crypto/Makefile
-+++ b/drivers/crypto/Makefile
-@@ -40,7 +40,6 @@ obj-$(CONFIG_CRYPTO_DEV_ROCKCHIP) += rockchip/
- obj-$(CONFIG_CRYPTO_DEV_S5P) += s5p-sss.o
- obj-$(CONFIG_CRYPTO_DEV_SAHARA) += sahara.o
- obj-$(CONFIG_ARCH_STM32) += stm32/
--obj-$(CONFIG_CRYPTO_DEV_SUN4I_SS) += sunxi-ss/
- obj-$(CONFIG_CRYPTO_DEV_TALITOS) += talitos.o
- obj-$(CONFIG_CRYPTO_DEV_UX500) += ux500/
- obj-$(CONFIG_CRYPTO_DEV_VIRTIO) += virtio/
-diff --git a/drivers/crypto/allwinner/Kconfig b/drivers/crypto/allwinner/Kconfig
-index a3e5781fa95e..9c445973ca08 100644
---- a/drivers/crypto/allwinner/Kconfig
-+++ b/drivers/crypto/allwinner/Kconfig
-@@ -5,6 +5,33 @@ config CRYPTO_DEV_ALLWINNER
- 	help
- 	  Say Y here to get to see options for Allwinner hardware crypto devices
- 
-+config CRYPTO_DEV_SUN4I_SS
-+	tristate "Support for Allwinner Security System cryptographic accelerator"
-+	depends on ARCH_SUNXI && !64BIT
-+	depends on PM
-+	depends on CRYPTO_DEV_ALLWINNER
-+	select CRYPTO_MD5
-+	select CRYPTO_SHA1
-+	select CRYPTO_AES
-+	select CRYPTO_LIB_DES
-+	select CRYPTO_BLKCIPHER
-+	help
-+	  Some Allwinner SoC have a crypto accelerator named
-+	  Security System. Select this if you want to use it.
-+	  The Security System handle AES/DES/3DES ciphers in CBC mode
-+	  and SHA1 and MD5 hash algorithms.
-+
-+	  To compile this driver as a module, choose M here: the module
-+	  will be called sun4i-ss.
-+
-+config CRYPTO_DEV_SUN4I_SS_PRNG
-+	bool "Support for Allwinner Security System PRNG"
-+	depends on CRYPTO_DEV_SUN4I_SS
-+	select CRYPTO_RNG
-+	help
-+	  Select this option if you want to provide kernel-side support for
-+	  the Pseudo-Random Number Generator found in the Security System.
-+
- config CRYPTO_DEV_SUN8I_CE
- 	tristate "Support for Allwinner Crypto Engine cryptographic offloader"
- 	select CRYPTO_BLKCIPHER
-diff --git a/drivers/crypto/allwinner/Makefile b/drivers/crypto/allwinner/Makefile
-index 11f02db9ee06..fdb720c5bcc7 100644
---- a/drivers/crypto/allwinner/Makefile
-+++ b/drivers/crypto/allwinner/Makefile
-@@ -1 +1,2 @@
-+obj-$(CONFIG_CRYPTO_DEV_SUN4I_SS) += sun4i-ss/
- obj-$(CONFIG_CRYPTO_DEV_SUN8I_CE) += sun8i-ce/
-diff --git a/drivers/crypto/sunxi-ss/Makefile b/drivers/crypto/allwinner/sun4i-ss/Makefile
-similarity index 100%
-rename from drivers/crypto/sunxi-ss/Makefile
-rename to drivers/crypto/allwinner/sun4i-ss/Makefile
-diff --git a/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c b/drivers/crypto/allwinner/sun4i-ss/sun4i-ss-cipher.c
-similarity index 100%
-rename from drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
-rename to drivers/crypto/allwinner/sun4i-ss/sun4i-ss-cipher.c
-diff --git a/drivers/crypto/sunxi-ss/sun4i-ss-core.c b/drivers/crypto/allwinner/sun4i-ss/sun4i-ss-core.c
-similarity index 100%
-rename from drivers/crypto/sunxi-ss/sun4i-ss-core.c
-rename to drivers/crypto/allwinner/sun4i-ss/sun4i-ss-core.c
-diff --git a/drivers/crypto/sunxi-ss/sun4i-ss-hash.c b/drivers/crypto/allwinner/sun4i-ss/sun4i-ss-hash.c
-similarity index 100%
-rename from drivers/crypto/sunxi-ss/sun4i-ss-hash.c
-rename to drivers/crypto/allwinner/sun4i-ss/sun4i-ss-hash.c
-diff --git a/drivers/crypto/sunxi-ss/sun4i-ss-prng.c b/drivers/crypto/allwinner/sun4i-ss/sun4i-ss-prng.c
-similarity index 100%
-rename from drivers/crypto/sunxi-ss/sun4i-ss-prng.c
-rename to drivers/crypto/allwinner/sun4i-ss/sun4i-ss-prng.c
-diff --git a/drivers/crypto/sunxi-ss/sun4i-ss.h b/drivers/crypto/allwinner/sun4i-ss/sun4i-ss.h
-similarity index 100%
-rename from drivers/crypto/sunxi-ss/sun4i-ss.h
-rename to drivers/crypto/allwinner/sun4i-ss/sun4i-ss.h
--- 
-2.21.0
+> In addition I have not meat the worst case that cpu_wait_death() need upto
+> 5s, and we only take normal case into account.
+>
 
+Good
+
+>
+> > Moreover I don't understand the argument here. The cpu being killed
+> > will be OFF, as soon as it can and firmware controls that and this
+> > change is not related to CPU_OFF. And this CPU calling cpu_kill can
+> > sleep and 10ms is good to enter idle states if it's idle saving power,
+> > so I fail to map the power saving you mention above.
+> >
+> We have hundreds of CPU cores that need to be shut down. For example,
+> a CPU has 200 cores, and the thread to shut down the core is in CPU 0.
+> and the thread need to shut down from core 1 to core 200. However, the
+> implementation of the kernel can only shut down cpu cores one by one, so we
+> need to wait for cpu_kill() to finish before shutting down the next
+> CPU core. If it wait for 10ms each time in cpu_kill, it will takes up
+> about 2 seconds in cpu_kill() total.
+>
+
+OK, thanks for the illustrative example. This make sense to me now. But
+you comparing with battery powered devices confused me and I assumed
+it as some hack to optimise mobile workload.
+
+> >> So change msleep (10) to usleep_range() to reduce the waiting time. In addition,
+> >> we don't want to be scheduled during the sleeping time, some threads may take a
+> >> long time and don't give up the CPU, which affects the time of core shutdown,
+> >> Therefore, we add a chance to busy-wait max 1ms.
+> >>
+> >
+> > On the other hand, usleep_range reduces the timer interval and hence
+> > increases the chance of the callee CPU not to enter deeper idle states.
+> >
+> > What am I missing here ? What's the use case or power off situation
+> > you are talking about above ?
+> >
+> As mentioned above, we are not to save power through msleep to idle state,
+> but to quickly turn off other CPU core's hardware to reduce power consumption.
+
+You still don't provide your use-case in which this is required. I know
+this will be useful for suspend-to-ram. Do you have any other use-case
+that you need to power-off large number of CPUs like this ? Also you
+mentioned battery powered, and I don't think any battery powered device
+has 200 thread like in your example :)
+
+You need to mention few things clearly in the commit log:
+1. How the CPU hotplug operation is serialised in some use-case like
+   suspend-to-ram
+2. How that may impact systems with large number of CPUs
+3. How your change helps to improve that
+
+It may it easy for anyone to understand the motivation for this change.
+The commit message you have doesn't give any clue on all the above and
+hence we have lot of questions.
+
+I will respond to the original patch separately.
+
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
