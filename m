@@ -2,52 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F07C9D90D0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 14:27:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E288D90D6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 14:28:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=OQJYKlG053ITShFhwhzDbNcajjxCK0fpx9Pb5lil1J8=; b=OnLpDl9cHa4+X3
-	yxql+HN/dEBPqv9qt4NVDfqdWujI3fO/1JspheqUUUUWbibewND3KdveT2n3vTvtMdJQZJfMcPlNB
-	N1GNvv21otfIJ/p/jDkKZGOYIJAA2+Xu8BK3LSM4gZrDlWSblOy11OGwEzHO6PGE10f95w6R6WRxA
-	QaAllcx2d4f7XTIeRZ1zdjZ2vLQX/XJllanUssMMEANa/x6oTpP7SkRO1JYYNUxUdYh7d5LqsO9Aj
-	NbJhm1qAg+gI5AGFlFSk6Z19fWySLcmKtrWYI+NPdE27AN8WCSY0Pq5XVfZFAXxY+Tomm2qw+dntO
-	pVIy8h+FLQg2CV5fAozQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=D0sTPDsJfmQg79L0Uxaf2A89JjGJg5T+BN0Y2uQDeF4=; b=Nh9WCsuu4ttzXp
+	6yxjJ7S1ja4U5zyVEe2O7zbyX8DGFk4cfYzxleHskzq4rI9uNk3QwxMb7pRkVbU5YM5+CxeGowUPZ
+	xfWLFgp3+dQdLLM7tV7XVfzVTENF+zlXIItYQisOW9nc7/yJDJft5JDndtvh3JipUFooYuEwB9wRZ
+	gwMdWdbW5pg9FAGdbqvDtL+ugofo7TLCsOraKYAX2g2AKlmizQkynbQ8l56J9uIhDBkkld4I8JUgU
+	qw3E8D9TEhh+Ce6sqNbIdL5fl55HynONjm/vQITo8k0DKx0rq3VSSD4hgDqAuYlgJZjfZwcNw9BXT
+	7xMz2bCNk7y/N/NVTFvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKiON-00056m-9n; Wed, 16 Oct 2019 12:27:03 +0000
-Received: from imap1.codethink.co.uk ([176.9.8.82])
+	id 1iKiPQ-0005P5-EK; Wed, 16 Oct 2019 12:28:08 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKiOC-00055j-Mz
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 12:26:56 +0000
-Received: from [167.98.27.226] (helo=rainbowdash.codethink.co.uk)
- by imap1.codethink.co.uk with esmtpsa (Exim 4.84_2 #1 (Debian))
- id 1iKiNu-0007GA-ME; Wed, 16 Oct 2019 13:26:34 +0100
-Received: from ben by rainbowdash.codethink.co.uk with local (Exim 4.92.2)
- (envelope-from <ben@rainbowdash.codethink.co.uk>)
- id 1iKiNu-0000aZ-6f; Wed, 16 Oct 2019 13:26:34 +0100
-From: "Ben Dooks (Codethink)" <ben.dooks@codethink.co.uk>
-To: linux-kernel@lists.codethink.co.uk
-Subject: [PATCH] crypto: atmel - fix data types for __be{32,64}
-Date: Wed, 16 Oct 2019 13:26:33 +0100
-Message-Id: <20191016122633.2220-1-ben.dooks@codethink.co.uk>
-X-Mailer: git-send-email 2.23.0
+ id 1iKiPG-0005O8-L6
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 12:27:59 +0000
+Received: by mail-qt1-x843.google.com with SMTP id 3so35841768qta.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 16 Oct 2019 05:27:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=RiitUgtPHWYB471TBDHiVHPPALR+DVcpaO06JHpx/Ks=;
+ b=YFoZ+P9HHoSoLVHZecxRW+Z7+f5LggWJqYiP/+udF6k8cZBRCQRsm8W8AwvIMcyD6J
+ zTw6j4UEPKQKVMpk2gJnDJoOksG/VEM42AGDsdK/YZyvHpkkYyC8SKShI7Agk6xfypfJ
+ k0nLAPhKyNxQWeYBhOEk7LuzIHr8mqN/lTDSJFSLPoXiSfAlJVCewPyLfZD8+7j+5AAN
+ FEY34BuDnOTiVkBk1hYZCoocdavCaQCeBlt8eW+zStBLnFGieKwX13ennTtwM4s0iYje
+ F3DBnl5Fg6qyga8kRN1/JGplByRpdSwo3UHi51A8RpphiOx14cymS/FA0PVlTS33uYb9
+ KGTg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=RiitUgtPHWYB471TBDHiVHPPALR+DVcpaO06JHpx/Ks=;
+ b=taKayxGEo859oQmFeAv/C89Wp+GH3D6myr4tujep3Agch8Ph8V7vlOD2OHHU3fGLh3
+ D+PqpMRgM7aCAhanPf2oOdeP01d7wmXD+qx54frgwpWJLCoxPK2Ytk16/pRqcj2+w4/S
+ 1RR4euC8CRhgB1l+uywovL8czhS7Z04GV4mLkXT33pzTk/YL823yepn2iitBEnfuS4zy
+ y3UbGW8yrP/pdNEIX09fXUzz6R2+EGHytbSWzpEaaL9ZUg1sDwHLFFyZKAQfpIftC2TV
+ rscWvJIYRr3nvL3lyE51MPxDH6w1i43fzml0iwBiFWbyDlryYLAvr/wXY5ZuFWQ3CrEy
+ Yw/w==
+X-Gm-Message-State: APjAAAX4Ll8822+/ESmNKqA31Ngq8PTaZ5Mmk8y9RqBC+5W/hwl+hoHS
+ Dqa5tbap80haOBJDNt/qwvWj0Qb4iWGwiPPyIp0HU8Eu
+X-Google-Smtp-Source: APXvYqzDHm0kSmPDqed4NoHcllkNpwqptCmh2deQ0fBpLLPQJG+ftMU1r99mU527MOglkMOMQ/pVQl9DwOdDGZP4UzM=
+X-Received: by 2002:aed:2462:: with SMTP id s31mr45321050qtc.40.1571228876746; 
+ Wed, 16 Oct 2019 05:27:56 -0700 (PDT)
 MIME-Version: 1.0
+References: <20191015173026.9962-1-manivannan.sadhasivam@linaro.org>
+ <20191015173026.9962-2-manivannan.sadhasivam@linaro.org>
+In-Reply-To: <20191015173026.9962-2-manivannan.sadhasivam@linaro.org>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Wed, 16 Oct 2019 14:27:44 +0200
+Message-ID: <CACRpkdY3OC675EjZ4PYhYxnk1XWh4EO-a3JJBha2rdBttySUNQ@mail.gmail.com>
+Subject: Re: [PATCH v2 1/4] dt-bindings: gpio: Add devicetree binding for RDA
+ Micro GPIO controller
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_052655_090923_23C8F364 
-X-CRM114-Status: GOOD (  13.47  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191016_052758_688433_E458FF25 
+X-CRM114-Status: UNSURE (   8.58  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [176.9.8.82 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,226 +93,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, linux-kernel@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- "Ben Dooks \(Codethink\)" <ben.dooks@codethink.co.uk>,
- linux-crypto@vger.kernel.org, "David S. Miller" <davem@davemloft.net>,
- linux-arm-kernel@lists.infradead.org
+Cc: "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ linux-unisoc@lists.infradead.org, Orson Zhai <orsonzhai@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The driver uses a couple of buffers that seem to
-be __be32 or __be64 fields, but declares them as
-u32. This means there are a number of warnings
-from sparse due to casting to/from __beXXX.
+On Tue, Oct 15, 2019 at 7:30 PM Manivannan Sadhasivam
+<manivannan.sadhasivam@linaro.org> wrote:
 
-Fix these by changing the types of the buffer
-and the associated variables.
+> Add YAML devicetree binding for RDA Micro GPIO controller.
+>
+> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 
-drivers/crypto/atmel-aes.c:1023:15: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1023:15: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1023:15: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1023:15: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1023:15: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1023:15: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1059:28: warning: incorrect type in assignment (different base types)
-drivers/crypto/atmel-aes.c:1059:28:    expected unsigned int
-drivers/crypto/atmel-aes.c:1059:28:    got restricted __be32 [usertype]
-drivers/crypto/atmel-aes.c:1550:28: warning: incorrect type in assignment (different base types)
-drivers/crypto/atmel-aes.c:1550:28:    expected unsigned int
-drivers/crypto/atmel-aes.c:1550:28:    got restricted __be32 [usertype]
-drivers/crypto/atmel-aes.c:1561:39: warning: incorrect type in assignment (different base types)
-drivers/crypto/atmel-aes.c:1561:39:    expected unsigned long long [usertype]
-drivers/crypto/atmel-aes.c:1561:39:    got restricted __be64 [usertype]
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:17: warning: cast to restricted __be32
-drivers/crypto/atmel-aes.c:1599:15: warning: incorrect type in assignment (different base types)
-drivers/crypto/atmel-aes.c:1599:15:    expected unsigned int [usertype]
-drivers/crypto/atmel-aes.c:1599:15:    got restricted __be32 [usertype]
-drivers/crypto/atmel-aes.c:1692:17: warning: incorrect type in assignment (different base types)
-drivers/crypto/atmel-aes.c:1692:17:    expected unsigned long long [usertype]
-drivers/crypto/atmel-aes.c:1692:17:    got restricted __be64 [usertype]
-drivers/crypto/atmel-aes.c:1693:17: warning: incorrect type in assignment (different base types)
-drivers/crypto/atmel-aes.c:1693:17:    expected unsigned long long [usertype]
-drivers/crypto/atmel-aes.c:1693:17:    got restricted __be64 [usertype]
-drivers/crypto/atmel-aes.c:1888:63: warning: incorrect type in initializer (different base types)
-drivers/crypto/atmel-aes.c:1888:63:    expected unsigned int
-drivers/crypto/atmel-aes.c:1888:63:    got restricted __le32 [usertype]
+First: this looks awesome to me,
 
-Signed-off-by: Ben Dooks <ben.dooks@codethink.co.uk>
----
-Cc: Herbert Xu <herbert@gondor.apana.org.au>
-Cc: "David S. Miller" <davem@davemloft.net>
-Cc: Nicolas Ferre <nicolas.ferre@microchip.com>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: Ludovic Desroches <ludovic.desroches@microchip.com>
-Cc: linux-crypto@vger.kernel.org
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
-.. (open list)
----
- drivers/crypto/atmel-aes.c | 30 +++++++++++++++---------------
- 1 file changed, 15 insertions(+), 15 deletions(-)
+Second: since this is kind of a first... could we move the standard GPIOchip
+YAML business into a generic gpiochip .yaml file?
 
-diff --git a/drivers/crypto/atmel-aes.c b/drivers/crypto/atmel-aes.c
-index 026f193556f9..6e658be32c2c 100644
---- a/drivers/crypto/atmel-aes.c
-+++ b/drivers/crypto/atmel-aes.c
-@@ -117,7 +117,7 @@ struct atmel_aes_ctx {
- struct atmel_aes_ctr_ctx {
- 	struct atmel_aes_base_ctx	base;
- 
--	u32			iv[AES_BLOCK_SIZE / sizeof(u32)];
-+	__be32			iv[AES_BLOCK_SIZE / sizeof(u32)];
- 	size_t			offset;
- 	struct scatterlist	src[2];
- 	struct scatterlist	dst[2];
-@@ -129,13 +129,13 @@ struct atmel_aes_gcm_ctx {
- 	struct scatterlist	src[2];
- 	struct scatterlist	dst[2];
- 
--	u32			j0[AES_BLOCK_SIZE / sizeof(u32)];
-+	__be32			j0[AES_BLOCK_SIZE / sizeof(u32)];
- 	u32			tag[AES_BLOCK_SIZE / sizeof(u32)];
--	u32			ghash[AES_BLOCK_SIZE / sizeof(u32)];
-+	__be32			ghash[AES_BLOCK_SIZE / sizeof(u32)];
- 	size_t			textlen;
- 
--	const u32		*ghash_in;
--	u32			*ghash_out;
-+	const __be32		*ghash_in;
-+	__be32			*ghash_out;
- 	atmel_aes_fn_t		ghash_resume;
- };
- 
-@@ -388,13 +388,13 @@ static void atmel_aes_write_n(struct atmel_aes_dev *dd, u32 offset,
- }
- 
- static inline void atmel_aes_read_block(struct atmel_aes_dev *dd, u32 offset,
--					u32 *value)
-+					void *value)
- {
- 	atmel_aes_read_n(dd, offset, value, SIZE_IN_WORDS(AES_BLOCK_SIZE));
- }
- 
- static inline void atmel_aes_write_block(struct atmel_aes_dev *dd, u32 offset,
--					 const u32 *value)
-+					 const void *value)
- {
- 	atmel_aes_write_n(dd, offset, value, SIZE_IN_WORDS(AES_BLOCK_SIZE));
- }
-@@ -530,7 +530,7 @@ static inline int atmel_aes_complete(struct atmel_aes_dev *dd, int err)
- }
- 
- static void atmel_aes_write_ctrl_key(struct atmel_aes_dev *dd, bool use_dma,
--				     const u32 *iv, const u32 *key, int keylen)
-+				     const __be32 *iv, const u32 *key, int keylen)
- {
- 	u32 valmr = 0;
- 
-@@ -561,7 +561,7 @@ static void atmel_aes_write_ctrl_key(struct atmel_aes_dev *dd, bool use_dma,
- }
- 
- static inline void atmel_aes_write_ctrl(struct atmel_aes_dev *dd, bool use_dma,
--					const u32 *iv)
-+					const __be32 *iv)
- 
- {
- 	atmel_aes_write_ctrl_key(dd, use_dma, iv,
-@@ -1450,7 +1450,7 @@ static struct crypto_alg aes_cfb64_alg = {
- 
- static int atmel_aes_gcm_ghash(struct atmel_aes_dev *dd,
- 			       const u32 *data, size_t datalen,
--			       const u32 *ghash_in, u32 *ghash_out,
-+			       const __be32 *ghash_in, __be32 *ghash_out,
- 			       atmel_aes_fn_t resume);
- static int atmel_aes_gcm_ghash_init(struct atmel_aes_dev *dd);
- static int atmel_aes_gcm_ghash_finalize(struct atmel_aes_dev *dd);
-@@ -1471,7 +1471,7 @@ atmel_aes_gcm_ctx_cast(struct atmel_aes_base_ctx *ctx)
- 
- static int atmel_aes_gcm_ghash(struct atmel_aes_dev *dd,
- 			       const u32 *data, size_t datalen,
--			       const u32 *ghash_in, u32 *ghash_out,
-+			       const __be32 *ghash_in, __be32 *ghash_out,
- 			       atmel_aes_fn_t resume)
- {
- 	struct atmel_aes_gcm_ctx *ctx = atmel_aes_gcm_ctx_cast(dd->ctx);
-@@ -1558,7 +1558,7 @@ static int atmel_aes_gcm_start(struct atmel_aes_dev *dd)
- 
- 	memcpy(data, iv, ivsize);
- 	memset(data + ivsize, 0, padlen + sizeof(u64));
--	((u64 *)(data + datalen))[-1] = cpu_to_be64(ivsize * 8);
-+	((__be64 *)(data + datalen))[-1] = cpu_to_be64(ivsize * 8);
- 
- 	return atmel_aes_gcm_ghash(dd, (const u32 *)data, datalen,
- 				   NULL, ctx->j0, atmel_aes_gcm_process);
-@@ -1591,7 +1591,7 @@ static int atmel_aes_gcm_length(struct atmel_aes_dev *dd)
- {
- 	struct atmel_aes_gcm_ctx *ctx = atmel_aes_gcm_ctx_cast(dd->ctx);
- 	struct aead_request *req = aead_request_cast(dd->areq);
--	u32 j0_lsw, *j0 = ctx->j0;
-+	__be32 j0_lsw, *j0 = ctx->j0;
- 	size_t padlen;
- 
- 	/* Write incr32(J0) into IV. */
-@@ -1674,7 +1674,7 @@ static int atmel_aes_gcm_tag_init(struct atmel_aes_dev *dd)
- {
- 	struct atmel_aes_gcm_ctx *ctx = atmel_aes_gcm_ctx_cast(dd->ctx);
- 	struct aead_request *req = aead_request_cast(dd->areq);
--	u64 *data = dd->buf;
-+	__be64 *data = dd->buf;
- 
- 	if (likely(dd->flags & AES_FLAGS_GTAGEN)) {
- 		if (!(atmel_aes_read(dd, AES_ISR) & AES_INT_TAGRDY)) {
-@@ -1885,7 +1885,7 @@ static int atmel_aes_xts_process_data(struct atmel_aes_dev *dd)
- 	struct ablkcipher_request *req = ablkcipher_request_cast(dd->areq);
- 	bool use_dma = (req->nbytes >= ATMEL_AES_DMA_THRESHOLD);
- 	u32 tweak[AES_BLOCK_SIZE / sizeof(u32)];
--	static const u32 one[AES_BLOCK_SIZE / sizeof(u32)] = {cpu_to_le32(1), };
-+	static const __le32 one[AES_BLOCK_SIZE / sizeof(u32)] = {cpu_to_le32(1), };
- 	u8 *tweak_bytes = (u8 *)tweak;
- 	int i;
- 
--- 
-2.23.0
+We currently only have pl061-gpio.yaml and this would duplicate a lot
+of the stuff from that yaml file.
 
+If you look at how
+display/panel/panel-common.yaml
+is used from say
+display/panel/ti,nspire.yaml
+
+Could we do something similar and lift out all the generics from
+gpio-pl061.yaml to
+gpio-common.yaml
+and reference that also in the new binding?
+
+If it seems hard, tell me and I can take a stab at it.
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
