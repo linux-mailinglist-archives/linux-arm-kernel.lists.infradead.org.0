@@ -2,62 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D722D9ACC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 22:06:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37BFFD9ACD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 22:06:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WFej5+oiet04hTroldYvwOLGzHGjXqM70l3E/a5pHz0=; b=OwFTv3PRwVHDDw
-	wuxfc8oDW38hLBkxzxG7DtgHRS7A4MV+jL9c5EtpYfiUyX9wyR7rD4bDZxEQMqLMarW2LM3wWIAXb
-	Ayy0frbpsl2vX5gIJMDtkxK3kpyhoasbDrNWm1LL7VHto+oaPEBhiu4UN0m+SEALPkLtNs5dl+llE
-	aSWTjmBDDgIJYwZCqt2IWf4seh53HtlZ8rSuG8Fb4pCbVs3HEN0f8fsW2J+/EG+MbZMQjjhb5ZlhI
-	AuKV4mij1GjH1vRfLmaWEJqchiYsOFjUA9h2sKkfFlOO6m71UPmMLKvc8XR5o2uxTpNOKP5Kr0AOK
-	rloRyF/K4xS2Xr8m6m2Q==;
+	List-Owner; bh=1tal7MnB0FPOfLiyzunzJK88uhsYAsVY/6Ea2BcPN6Y=; b=HJNPJkuDy86+FG
+	Mk/XvVoDTxFbiwMsl3EylhE3e5kueGo8vtoi7jHctfW3UX3ZUne//mJcO8JE1qRZXHOAd5M0aHyLd
+	3XHYl3vsR3eVbJv3p44/6VvW/eggYuKW8RiuGT3o9UQTJiPXo+bZVNVetsM/sO/2hbxraYyacvMFp
+	1k85SC+6U3X8sBK7wyqDeB61nZ/dBpeNBHN1e0agBcwxztnuG1YYbEtTLrxltTqz53iWonSBjDIgq
+	75YO8oB9Ae3Q6PugnfkHQpBX/7A7cU5M1ee7ERo6jpf+rhEr8KWQGftNoaSVJXJJILCnwR2pw+i3u
+	NZhaiDHq//udhkfS7zCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKpYm-0001Ct-Vi; Wed, 16 Oct 2019 20:06:16 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1iKpZB-0001U0-RH; Wed, 16 Oct 2019 20:06:41 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKpTg-0004M9-Fc
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 20:01:04 +0000
-Received: by mail-qt1-x844.google.com with SMTP id u40so37954197qth.11
+ id 1iKpTi-0004No-1s
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 20:01:05 +0000
+Received: by mail-qt1-x841.google.com with SMTP id 3so38074375qta.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 16 Oct 2019 13:01:00 -0700 (PDT)
+ Wed, 16 Oct 2019 13:01:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=zqjz6RgOj4sr7JAtiYy2U5c4q561GRonF/uToZbvMtQ=;
- b=LLthtC7Z0agY8Vp/MZgx+7D2aXNxndD44msqC/X0okCV465MaYJvQsqSE9+VuFAcSr
- TcB4zHdjU/Vswk8EVE4miktspKMn0pTBzroRoTQZWoZwUuzdEfMlqvjz7fmsGvk7T2ZM
- 5/I6z5zILNUJV+Cw2RSB7xPNNP1wAvsp9nbEpm6O6YBGbWiUOh7UTO8ZgtQ344Ql//TO
- 0sQ4gx5pkTjgYDZQX+2z5vaB73fqyIn+te9CcR1939r4/03cZkkz1sr1imWCVBWE1TnF
- OfRxclovnZUw8az+6t8P7XZTvoChwcgxunJzdlAUFWttRw6PXTykHUERYanemEjzSe7y
- WzWQ==
+ bh=To7bUWVp3XvcnHsBm0oiOp1tLIO852ts6wlx+cNajXo=;
+ b=BltQBkOk1uAjUjhwIZhcIGmX8i7xAxK94UWa8kc1Ev2sUhdRynGQocSBFvybfvzGpJ
+ JAvn6za5IMSG3mKEFhxCncIGjbBFFhvbJjU5C+d+HgMhe/nQB9xhG5zXRUT7hf8kQtNB
+ f4BRHRQuQeMik8u7RubhYuH7Le8AdBGyEUW3t9zbbfVpMvtDTd7N4RJ4omu4BA20Dh63
+ byzXqGXUS+JU2iz0g4eoS7s+Q18zVQWDOfX/nI8g08XYD+yFmBMJHYWdcMwFxJiLOHHO
+ Gq8SK6cC+B2TyTl0qMKoEKoFKvVfMTvz5YfdWy5sJgfrhm1ytZSdOKqoCt3w1wrCDWjI
+ JwzQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=zqjz6RgOj4sr7JAtiYy2U5c4q561GRonF/uToZbvMtQ=;
- b=huuDzzqOiXKrn/oIJPSTinzc4wDj7IIXICMrJ4B/qmTxfBA6tFTcDYGpck8jRDlm77
- wSUntE+hSCDllJgbCCW+C0qmiPZ5dQjF9jOQIZ3F8m17eL2g+F/pNV1L6E7f8m549CZ7
- 94fmKM3aZ4WtkJxJLhgVh/qewsfSgpkpilvlIvP3VBkkpDqomHxkI5bh4oNPRaXrx78c
- VbzvAEFRe3BzdyuDxwPHR0ZGFyKXQNSkSDhdvLpq34qeHICS+YLX5Jnsjb3Z5sLqOEcm
- lIpxA2RizQT5ZbtueuzFaAZWHCMZ3Ayk3DEUMCtd0Y1VXuAcyy6jqJNfNTAirrwSgbHc
- hv9w==
-X-Gm-Message-State: APjAAAW3L+UUw7F8ax9hcUsrtostpqm0lm+/Tb0WTMGFVnqzDjRRoIBd
- ZA1nd8847a2sYsephFSolcArkg==
-X-Google-Smtp-Source: APXvYqxeEmEBJ8iuQjzSMlHmkpciqeX2tmKot2rZrpYNF10NaJYEF1ASBSV5ESwtGHI0azLzv5plFw==
-X-Received: by 2002:a05:6214:208:: with SMTP id
- i8mr42898296qvt.108.1571256059489; 
- Wed, 16 Oct 2019 13:00:59 -0700 (PDT)
+ bh=To7bUWVp3XvcnHsBm0oiOp1tLIO852ts6wlx+cNajXo=;
+ b=BzkU4PCeIBTvLdn31MsIhfH00zwNLKpWGTxaKLpPrNs2DoZe4ARvNDQQATqTeiSLu7
+ D1CclXGB5cPngvqp20O9wqTQ/ncv6IN9b3+trCzmEL+oWfF5deRLK9t0GDg8mcvdXxbP
+ rboJ/tQ2V5hNyILXSYH8/Hojn6oVFlD5SJYegog/wR6XGuS/12xArY6mXtoCfTbtQkuZ
+ 9/MHhWpbND4I+YxScA4bKOLjOIxt6HdMn3mYWCxRYkh1Qhe1y5ioN7+VWnh4yYuMEQO3
+ 8F/r3zYURJbvuFFlip2qAfYkNLmLGoTca7VW23w6IH0k11KhieruErKWX4Rwslt8vpRK
+ lakQ==
+X-Gm-Message-State: APjAAAU2ap5Sxk/3eJj4mrTV9pmK6fbd2IRE7tefqFS/wqOIektY8F6H
+ 2qjFvKXmXee+KBXeweZ14sKG3w==
+X-Google-Smtp-Source: APXvYqzrXjWRNzoabbZjIOx0ffX9s+D0y1PdrRPM3VIx35Vt9ZH1Y9308HHhFhRvWQ8N84T1AefQCg==
+X-Received: by 2002:a0c:bf45:: with SMTP id b5mr43086279qvj.150.1571256061093; 
+ Wed, 16 Oct 2019 13:01:01 -0700 (PDT)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id c204sm13342030qkb.90.2019.10.16.13.00.58
+ by smtp.gmail.com with ESMTPSA id c204sm13342030qkb.90.2019.10.16.13.00.59
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 16 Oct 2019 13:00:58 -0700 (PDT)
+ Wed, 16 Oct 2019 13:01:00 -0700 (PDT)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  ebiederm@xmission.com, kexec@lists.infradead.org,
@@ -67,25 +66,23 @@ To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  matthias.bgg@gmail.com, bhsharma@redhat.com, linux-mm@kvack.org,
  mark.rutland@arm.com, steve.capper@arm.com, rfontana@redhat.com,
  tglx@linutronix.de
-Subject: [PATCH v7 14/25] arm64: trans_pgd: pass NULL instead of init_mm to
- *_populate functions
-Date: Wed, 16 Oct 2019 16:00:23 -0400
-Message-Id: <20191016200034.1342308-15-pasha.tatashin@soleen.com>
+Subject: [PATCH v7 15/25] arm64: kexec: move relocation function setup
+Date: Wed, 16 Oct 2019 16:00:24 -0400
+Message-Id: <20191016200034.1342308-16-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191016200034.1342308-1-pasha.tatashin@soleen.com>
 References: <20191016200034.1342308-1-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_130100_630234_77387F93 
-X-CRM114-Status: UNSURE (   9.21  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191016_130102_189841_A0C855DA 
+X-CRM114-Status: GOOD (  12.95  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -112,73 +109,106 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-trans_pgd_* should be independent from mm context because the tables that
-are created by this code are used when there are no mm context around, as
-it is between kernels. Simply replace mm_init's with NULL.
+Currently, kernel relocation function is configured in machine_kexec()
+at the time of kexec reboot by using control_code_page.
+
+This operation, however, is more logical to be done during kexec_load,
+and thus remove from reboot time. Move, setup of this function to
+newly added machine_kexec_post_load().
+
+Because once MMU is enabled, kexec control page will contain more than
+relocation kernel, but also vector table, add pointer to the actual
+function within this page arch.kern_reloc. Currently, it equals to the
+beginning of page, we will add offsets later, when vector table is
+added.
 
 Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
 ---
- arch/arm64/mm/trans_pgd.c | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+ arch/arm64/include/asm/kexec.h    |  1 +
+ arch/arm64/kernel/machine_kexec.c | 28 +++++++++++++++-------------
+ 2 files changed, 16 insertions(+), 13 deletions(-)
 
-diff --git a/arch/arm64/mm/trans_pgd.c b/arch/arm64/mm/trans_pgd.c
-index df3a10d36f62..2b02a646101f 100644
---- a/arch/arm64/mm/trans_pgd.c
-+++ b/arch/arm64/mm/trans_pgd.c
-@@ -67,7 +67,7 @@ static int copy_pte(struct trans_pgd_info *info, pmd_t *dst_pmdp,
- 	dst_ptep = trans_alloc(info);
- 	if (!dst_ptep)
- 		return -ENOMEM;
--	pmd_populate_kernel(&init_mm, dst_pmdp, dst_ptep);
-+	pmd_populate_kernel(NULL, dst_pmdp, dst_ptep);
- 	dst_ptep = pte_offset_kernel(dst_pmdp, start);
+diff --git a/arch/arm64/include/asm/kexec.h b/arch/arm64/include/asm/kexec.h
+index ad6afed69078..00dbcc71aeb2 100644
+--- a/arch/arm64/include/asm/kexec.h
++++ b/arch/arm64/include/asm/kexec.h
+@@ -95,6 +95,7 @@ static inline void crash_post_resume(void) {}
+ struct kimage_arch {
+ 	void *dtb;
+ 	phys_addr_t dtb_mem;
++	phys_addr_t kern_reloc;
+ };
  
- 	src_ptep = pte_offset_kernel(src_pmdp, start);
-@@ -90,7 +90,7 @@ static int copy_pmd(struct trans_pgd_info *info, pud_t *dst_pudp,
- 		dst_pmdp = trans_alloc(info);
- 		if (!dst_pmdp)
- 			return -ENOMEM;
--		pud_populate(&init_mm, dst_pudp, dst_pmdp);
-+		pud_populate(NULL, dst_pudp, dst_pmdp);
- 	}
- 	dst_pmdp = pmd_offset(dst_pudp, start);
+ #ifdef CONFIG_KEXEC_FILE
+diff --git a/arch/arm64/kernel/machine_kexec.c b/arch/arm64/kernel/machine_kexec.c
+index ae1bad0156cd..46718b289a6b 100644
+--- a/arch/arm64/kernel/machine_kexec.c
++++ b/arch/arm64/kernel/machine_kexec.c
+@@ -42,6 +42,7 @@ static void _kexec_image_info(const char *func, int line,
+ 	pr_debug("    start:       %lx\n", kimage->start);
+ 	pr_debug("    head:        %lx\n", kimage->head);
+ 	pr_debug("    nr_segments: %lu\n", kimage->nr_segments);
++	pr_debug("    kern_reloc: %pa\n", &kimage->arch.kern_reloc);
  
-@@ -126,7 +126,7 @@ static int copy_pud(struct trans_pgd_info *info, pgd_t *dst_pgdp,
- 		dst_pudp = trans_alloc(info);
- 		if (!dst_pudp)
- 			return -ENOMEM;
--		pgd_populate(&init_mm, dst_pgdp, dst_pudp);
-+		pgd_populate(NULL, dst_pgdp, dst_pudp);
- 	}
- 	dst_pudp = pud_offset(dst_pgdp, start);
+ 	for (i = 0; i < kimage->nr_segments; i++) {
+ 		pr_debug("      segment[%lu]: %016lx - %016lx, 0x%lx bytes, %lu pages\n",
+@@ -58,6 +59,18 @@ void machine_kexec_cleanup(struct kimage *kimage)
+ 	/* Empty routine needed to avoid build errors. */
+ }
  
-@@ -218,7 +218,7 @@ int trans_pgd_map_page(struct trans_pgd_info *info, pgd_t *trans_pgd,
- 		pudp = trans_alloc(info);
- 		if (!pudp)
- 			return -ENOMEM;
--		pgd_populate(&init_mm, pgdp, pudp);
-+		pgd_populate(NULL, pgdp, pudp);
- 	}
++int machine_kexec_post_load(struct kimage *kimage)
++{
++	void *reloc_code = page_to_virt(kimage->control_code_page);
++
++	memcpy(reloc_code, arm64_relocate_new_kernel,
++	       arm64_relocate_new_kernel_size);
++	kimage->arch.kern_reloc = __pa(reloc_code);
++
++	return 0;
++}
++
++
+ /**
+  * machine_kexec_prepare - Prepare for a kexec reboot.
+  *
+@@ -143,8 +156,7 @@ static void kexec_segment_flush(const struct kimage *kimage)
+  */
+ void machine_kexec(struct kimage *kimage)
+ {
+-	phys_addr_t reboot_code_buffer_phys;
+-	void *reboot_code_buffer;
++	void *reboot_code_buffer = page_to_virt(kimage->control_code_page);
+ 	bool in_kexec_crash = (kimage == kexec_crash_image);
+ 	bool stuck_cpus = cpus_are_stuck_in_kernel();
  
- 	pudp = pud_offset(pgdp, dst_addr);
-@@ -226,7 +226,7 @@ int trans_pgd_map_page(struct trans_pgd_info *info, pgd_t *trans_pgd,
- 		pmdp = trans_alloc(info);
- 		if (!pmdp)
- 			return -ENOMEM;
--		pud_populate(&init_mm, pudp, pmdp);
-+		pud_populate(NULL, pudp, pmdp);
- 	}
+@@ -155,18 +167,8 @@ void machine_kexec(struct kimage *kimage)
+ 	WARN(in_kexec_crash && (stuck_cpus || smp_crash_stop_failed()),
+ 		"Some CPUs may be stale, kdump will be unreliable.\n");
  
- 	pmdp = pmd_offset(pudp, dst_addr);
-@@ -234,7 +234,7 @@ int trans_pgd_map_page(struct trans_pgd_info *info, pgd_t *trans_pgd,
- 		ptep = trans_alloc(info);
- 		if (!ptep)
- 			return -ENOMEM;
--		pmd_populate_kernel(&init_mm, pmdp, ptep);
-+		pmd_populate_kernel(NULL, pmdp, ptep);
- 	}
+-	reboot_code_buffer_phys = page_to_phys(kimage->control_code_page);
+-	reboot_code_buffer = phys_to_virt(reboot_code_buffer_phys);
+-
+ 	kexec_image_info(kimage);
  
- 	ptep = pte_offset_kernel(pmdp, dst_addr);
+-	/*
+-	 * Copy arm64_relocate_new_kernel to the reboot_code_buffer for use
+-	 * after the kernel is shut down.
+-	 */
+-	memcpy(reboot_code_buffer, arm64_relocate_new_kernel,
+-		arm64_relocate_new_kernel_size);
+-
+ 	/* Flush the reboot_code_buffer in preparation for its execution. */
+ 	__flush_dcache_area(reboot_code_buffer, arm64_relocate_new_kernel_size);
+ 
+@@ -202,7 +204,7 @@ void machine_kexec(struct kimage *kimage)
+ 	 * userspace (kexec-tools).
+ 	 * In kexec_file case, the kernel starts directly without purgatory.
+ 	 */
+-	cpu_soft_restart(reboot_code_buffer_phys, kimage->head, kimage->start,
++	cpu_soft_restart(kimage->arch.kern_reloc, kimage->head, kimage->start,
+ 			 kimage->arch.dtb_mem);
+ 
+ 	BUG(); /* Should never get here. */
 -- 
 2.23.0
 
