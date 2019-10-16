@@ -2,85 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2FA93D9445
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 16:49:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB6C7D9448
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 16:50:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YbZberGt6+c/8xUIBzxDDfUI9utK2Y4NYQb5b9fTmfU=; b=ZWQGt6TnskPlWj
-	lP1dI6+ilPDk+xEDEbqCc2EpHWhwGAhOnQO8b+j8UbGSV0md/ULkTWWvOMTJUS4bRaUKj3z3xTHZM
-	bErTIymHNFq+Cei8zg8+MS8dQGM7wWK1TjmfdY/aZiC8nM6LWHAcBKdB0B+E/a2QGM0w31v+coNLA
-	wRQwfoaWA3ZXmERMwsJ3e8jGw2VWjz4St58bJy24umnPS+wm+Bq5n1oTlvYdxjemIjzNGZ1XtEGYb
-	peXqpLUK/RzET2hd9jll8byAVv//Bt3UC73A987959zNfGABLx1Wk1IEGGuWViIeu4Dd2jfT3K06a
-	3YChrbEWPBxz1IU/jGZw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=3nQiGaVnc5VoClouHm0XelVgpKDchVjy7KG8CMbWOts=; b=VPO7TpnVQ6oi04+y+Zg/lT45v
+	yyoYmupr7QioJYT3+zYYN/enuUjehKpPLqKi6RX9IGRTXg+Zql+liLJBjPDy5jyMhA4IXxFsy4Gvp
+	lvhsJrBUEawA7gkKqumIcVs/6DKtsrhz9s9qc8EClctNJsfgQ6ffMxUBa9r+erQzhme/+d839diRd
+	Zi8PY4VxOuQ+Am2VBoTX1c/osmtRJamRhAuoSP5OXK9XtfoApnEzO9lFscseI6QG1d9eHGZVhiUIx
+	Ei/TFWhOXDxDCwV6BpS6eLlj+ws4a8JH1HeXGODda+a02MyYdnJYxKyy5zXb48BVP1GFbOMVwvyqa
+	rJPOyH+5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKkbz-0008DW-Fq; Wed, 16 Oct 2019 14:49:15 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1iKkch-0008Un-1I; Wed, 16 Oct 2019 14:49:59 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKkbr-0008CS-81
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 14:49:08 +0000
-Received: by mail-oi1-x243.google.com with SMTP id k20so20267878oih.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 16 Oct 2019 07:49:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=w1bxrgVA37G+vlASPmtvWKFuCtmhkeFNcRz6WRlmRjU=;
- b=cV/mvzRfHOQQSRtHHeQpRDH7Gm9zRPlfcWS9R5ZhcSzGTi98v3A9AAlhUsyazP7Laz
- 5lmdp7D4vUQEi557gGii1CzHcNk+MgGKFrm/cbfY1drUb2PsXsHH1vYEBIfhUBte9h8R
- +9K66Slzy/v6RP1V8mAbkgQ3peCNr+vnwZ52Z6CdCaYh1cL+7DtTrGfiWg0yNmOAH2fe
- 3ivwLseXQjkqFqEd99cHdWz/ycBGljWtsgl3pL+TsNn8LYHynVV2lxeDQp+j1qJOqsy8
- QgH3QGjL2dSW+TWsc0lbEwc34KDF8Pm5togWdw8MIEuc4PLQkfJQE1Cc3aNOtIo4JYVx
- 4UNA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=w1bxrgVA37G+vlASPmtvWKFuCtmhkeFNcRz6WRlmRjU=;
- b=SiZpky0+Q/nZAfVoZrTrw6ovuWZfhaG2E01RLdG1QT9HynQ1ET9SOrWe8r0FhFl0qs
- eGGHePsFe+IRm4WVgwt3tR8/MNIIAcO230Jesp9K7+QWNl4FRAYEtXOB9JMFzKZOQNBi
- YYf8JjhfoicVN3NDLWmhplj4I7mPtGXANnbbYVRheC8yLD9eWYosHA/FuzZdeR1ZyMah
- Z+UD8xSV5a8KOFXjdaClW/zki5RIaXl6lhrey7c8Cpd0L6Kj0wbJhos50d55WRJOkQgd
- xWSZmkRsXCOPLBBfHh4DTUqM9vZa2aKyH21KOpt7edDW+if/27+DewZhD7WO7eHavDZO
- +EMw==
-X-Gm-Message-State: APjAAAXt2v03f9RajFSdXFG9ecB/B7lxZ8nxFpNQygz6I7ftrLt5dzo0
- UVkk5y51vnpL+2JJ9smWkTA=
-X-Google-Smtp-Source: APXvYqyN5zisgMnkVtiqZYBEqq7Y3oEfz/wNwyVWCQzqSRIXm/Hfh5W+j6xi9TCcQ44CZ63kx7p2kg==
-X-Received: by 2002:aca:dd07:: with SMTP id u7mr4009174oig.106.1571237346163; 
- Wed, 16 Oct 2019 07:49:06 -0700 (PDT)
-Received: from localhost.localdomain ([2604:1380:4111:8b00::1])
- by smtp.gmail.com with ESMTPSA id k3sm7281574otn.38.2019.10.16.07.49.05
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 16 Oct 2019 07:49:05 -0700 (PDT)
-From: Nathan Chancellor <natechancellor@gmail.com>
-To: Catalin Marinas <catalin.marinas@arm.com>,
-	Will Deacon <will@kernel.org>
-Subject: [PATCH -next v3] arm64: mm: Fix unused variable warning in
- zone_sizes_init
-Date: Wed, 16 Oct 2019 07:47:14 -0700
-Message-Id: <20191016144713.23792-1-natechancellor@gmail.com>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191016031107.30045-1-natechancellor@gmail.com>
-References: <20191016031107.30045-1-natechancellor@gmail.com>
+ id 1iKkcY-0008UN-0R
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 14:49:51 +0000
+Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 022C32168B;
+ Wed, 16 Oct 2019 14:49:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571237389;
+ bh=TVHkTQZcT9q9ZjJzYOSkolVYYuNP2y6v7NQ51/mM5q8=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=bcf31tblggd+MJJkjJ9MWL3/6Xm57VNAYnvAEXEXu/qG9MTqKIwOaCCRWRD6tCt+u
+ pUnsMBBBwSJMxdN+D/t5cMU9aJACRsrTR5piIFe6N4GEmJ1uGCotm3uyYDWh+9v5lN
+ GO/aBm+6T/Z1kI0UaQXd3CDgadNWxjpsme7Jfbg8=
+Date: Wed, 16 Oct 2019 16:49:46 +0200
+From: Maxime Ripard <mripard@kernel.org>
+To: Alistair Francis <alistair@alistair23.me>
+Subject: Re: [PATCH] arm64: dts: sun50i: sopine-baseboard: Expose serial1,
+ serial2 and serial3
+Message-ID: <20191016144946.p3tm67vh5lqigndn@gilmour>
+References: <20191012200524.23512-1-alistair@alistair23.me>
 MIME-Version: 1.0
-X-Patchwork-Bot: notify
+In-Reply-To: <20191012200524.23512-1-alistair@alistair23.me>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_074907_286337_08644C75 
-X-CRM114-Status: GOOD (  12.22  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191016_074950_073843_2D15F48E 
+X-CRM114-Status: GOOD (  14.02  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (natechancellor[at]gmail.com)
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -90,6 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,60 +76,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nathan Chancellor <natechancellor@gmail.com>,
- linux-arm-kernel@lists.infradead.org,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: alistair23@gmail.com, wens@csie.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============1477918236341637499=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When building arm64 allnoconfig, CONFIG_ZONE_DMA and CONFIG_ZONE_DMA32
-get disabled so there is a warning about max_dma being unused.
 
-../arch/arm64/mm/init.c:215:16: warning: unused variable 'max_dma'
-[-Wunused-variable]
-        unsigned long max_dma = min;
-                      ^
-1 warning generated.
+--===============1477918236341637499==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="n5scbjei5snz6qva"
+Content-Disposition: inline
 
-Add __maybe_unused to make this clear to the compiler.
 
-Fixes: 1a8e1cef7603 ("arm64: use both ZONE_DMA and ZONE_DMA32")
-Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
----
+--n5scbjei5snz6qva
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-v1 -> v2:
+Hi,
 
-* Fix check for CONFIG_ZONE_DMA32 as pointed out by Will.
+On Sat, Oct 12, 2019 at 01:05:24PM -0700, Alistair Francis wrote:
+> Follow what the sun50i-a64-pine64.dts does and expose all 5 serial
+> connections.
+>
+> Signed-off-by: Alistair Francis <alistair@alistair23.me>
+> ---
+>  .../allwinner/sun50i-a64-sopine-baseboard.dts | 25 +++++++++++++++++++
+>  1 file changed, 25 insertions(+)
+>
+> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
+> index 124b0b030b28..49c37b21ab36 100644
+> --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
+> +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
+> @@ -56,6 +56,10 @@
+>  	aliases {
+>  		ethernet0 = &emac;
+>  		serial0 = &uart0;
+> +		serial1 = &uart1;
+> +		serial2 = &uart2;
+> +		serial3 = &uart3;
+> +		serial4 = &uart4;
+>  	};
+>
+>  	chosen {
+> @@ -280,6 +284,27 @@
+>  	};
+>  };
+>
+> +/* On Pi-2 connector */
+> +&uart2 {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&uart2_pins>;
+> +	status = "disabled";
+> +};
+> +
+> +/* On Euler connector */
+> +&uart3 {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&uart3_pins>;
+> +	status = "disabled";
+> +};
+> +
+> +/* On Euler connector, RTS/CTS optional */
+> +&uart4 {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&uart4_pins>;
+> +	status = "disabled";
+> +};
 
-v2 -> v3:
+Since these are all the default muxing, maybe we should just set that
+in the DTSI?
 
-* Use __maybe_unused attribute instead of preprocessor ifdefs
-  to conform to section 21 of the coding style as pointed out by
-  Catalin.
+Maxime
 
- arch/arm64/mm/init.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+--n5scbjei5snz6qva
+Content-Type: application/pgp-signature; name="signature.asc"
 
-diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
-index 44f07fdf7a59..71b45c58218b 100644
---- a/arch/arm64/mm/init.c
-+++ b/arch/arm64/mm/init.c
-@@ -212,7 +212,7 @@ static void __init zone_sizes_init(unsigned long min, unsigned long max)
- 	struct memblock_region *reg;
- 	unsigned long zone_size[MAX_NR_ZONES], zhole_size[MAX_NR_ZONES];
- 	unsigned long max_dma32 = min;
--	unsigned long max_dma = min;
-+	unsigned long __maybe_unused max_dma = min;
- 
- 	memset(zone_size, 0, sizeof(zone_size));
- 
--- 
-2.23.0
+-----BEGIN PGP SIGNATURE-----
 
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXacuCgAKCRDj7w1vZxhR
+xakUAQDKMLPFYrXgJoIqujk/rfbeUS2P3a0rGnGDrfrvSZkCMAD+JRTAJwfGyT0T
+0GAa8ejfAZiZ2/8OCoW/Y++QrQ3JhA4=
+=Q2Sd
+-----END PGP SIGNATURE-----
+
+--n5scbjei5snz6qva--
+
+
+--===============1477918236341637499==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1477918236341637499==--
+
