@@ -2,61 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4BDCBD9AC0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 22:05:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6DD7D9AC1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 22:05:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yapr/S/olcdG+Kni9GUSsHck4YU1JdAw8EA3NJRQD7k=; b=G1TdBot9Us4ese
-	MaLebG59nOjiY+5xMTwEpbSV5aVndii6w/9in04R3H6t/D9TFIYUoOx0S+SEX+UGj08bubQfFQ6cQ
-	MZMsJsDdQ2Z3K1e/RlVVhimpc7nlLlLtq/nzTIiUl+NDVQWsWZSGx34NjtgMC7YCLlzaWVoZhydnN
-	oqvSpf7GUMKu4k53Wd3dY0Ek77tbmuYAZu4Z2ChqxUl9gumFB9idDJACxpERSVaT8L9fUponmHqts
-	Bpg6nkVvyl1VEDbtfljd9OBRap10sa3Xl5IlkEDJ9Jl14VR1BBcv9Uxt5r2inIlBZixUvJ1A6bbag
-	bup6zJIC86XYCSr4R4pw==;
+	List-Owner; bh=XQ7qDUqNSyGIK8VmY/WAC4VCtGhjcNz+p9c1LKjy9gk=; b=bRs+7bK9DHMXt7
+	uuxeoVCErpIwkUA/MKAZI5nRHmYqkJPdILzgry3SfXxJ3DqBZqlDEcTcZ0/2q7/Rjlq7Ph1EKTq9K
+	Lbuly6nDDhsfWrF/Ini5DogENDJ90FwMepd80bzAxWjabWzujYOUgEr5170Uoh4NP50oTk72mEaok
+	5s+8n4lE43DIiSgXMifJHIntJd4YoOQGGd3bV4ZjmTZ+ZHHsAsLtB0zaCLYewEIg9dmR2V0kjWSKO
+	7K56kwOQBtaymcKMmfefoHARPdhHkrbAmKYdK/q/iGQJkxMO/tDU2RJRKdeTaQiItXQY4nI9i0rId
+	sT7biqDUA9hYFygbkvDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKpXN-0007H6-To; Wed, 16 Oct 2019 20:04:50 +0000
-Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+	id 1iKpXm-0007Wi-Sk; Wed, 16 Oct 2019 20:05:14 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKpTZ-0004El-Ki
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 20:00:55 +0000
-Received: by mail-qk1-x742.google.com with SMTP id 4so23981124qki.6
+ id 1iKpTa-0004GE-Ve
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 20:00:57 +0000
+Received: by mail-qk1-x743.google.com with SMTP id z67so23949933qkb.12
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 16 Oct 2019 13:00:53 -0700 (PDT)
+ Wed, 16 Oct 2019 13:00:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=nna15T41FBOo8C0ScgrwWvHxD4xBB4A7rtr2LOcD0mg=;
- b=TQPiVPXa6rC+kc21T5AmnzQtQWNyHeLwcYOGqGygHSZ+fqUC6+tQeXq3H2/srTI5dS
- vEw9EaypNQQzPeKXsH3RHjmh5y5cLcTDAGhFTQsAIZKI0loaphdsKgusgX5SZkJWrqGS
- uuLke5b1StwZolCe2CpSrX0/fu/GGKG4aO0epbNKb4IEVQ1gFJv03fvfP90Fhb8UHFko
- DRJPJixDzGdMtrAvKc8A5+QSj0H2JImxJYrtOOTwV63s74TYwqaw5sEq9kOU/Rz6HwFX
- J5ESQ9FSmQS2P3y4sK73jjdbXN3u3rRc4rk6pEcv618j9wqmw8xpOwqQuSsHU0s7+oDZ
- B5xg==
+ bh=5ZxNFRGq6aySKnbh1Oqbj2WSIULLh/NVItsrtRq309M=;
+ b=DHDzHYjsQb6yI6qY1fQoUtcLH0+1Kma0wKxCe56jMFwhQJgqTeEMRU4vOPZTdYzPMy
+ lXPEK+JLadZkQTjtdV0irg/Up5wjJCoNIILljZ2SCkgZNI3tThvj9N3DTA2pqHrzLJd9
+ V5cpsqlPXgFQPo5XJgA4oT4yhSxb+cdIU0TTXolKYyPISw0aM+Zvf8C6tMcDqalz4vPf
+ 94cbMpjDcmmISD1BiE9RD34uZD9hX0PbbC7fQg29QHvooaje0pUm3FvJMElwA9DZGFan
+ Me5sR0JK2Cs9VPbYW86U+cQjmE3ZYUXG70SE9m9FQNcpc7iCG/uGoj1WVWpwUTTgp7fF
+ TMhQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=nna15T41FBOo8C0ScgrwWvHxD4xBB4A7rtr2LOcD0mg=;
- b=aPkj1oIW9Iz3mzxluHTS5/fN8c3vzvfe2lfiKcnCs5BXOgBbtQrPnK8e+NYIW1yYE7
- A3pnG9jS38hfEMbcig1KBz7x7er9rT2UkkUA/YK/VHdVGRREvbroJBslo4cBHuROAx53
- JjX9iiZ7oUOgkzaVl2QkV65xMqDzg8EGHCbLJqfleBJJjpruYdTjSqZOjti9jdwhmBUo
- w3PkYKoDX5OkYfNniYWkTu7v803FwThC/5l9S+Br8Wd+FcaYFeWoBkjAIxdag/bum/WU
- wSuS7XlGbdyAB/TVnGwzha19JgNbzPIS9LK/Rg0ZHOjqUqsMK3FucmJ7jL0oluHY4Kms
- OyKA==
-X-Gm-Message-State: APjAAAW3fxLdCsRzrOPSju6FNRpAlDnNalrznNWPutx4YHRh5z2WjuA7
- iVLZU/sxhbE1Iv4yVgCJ6A4GcA==
-X-Google-Smtp-Source: APXvYqwwc0v2zGWdRcDisHGnJhHRf8p5mNSEZfi0uPD1ZI7/TTBqwIA/aASx5yQlegVlk/zNFWbPjg==
-X-Received: by 2002:a37:ef04:: with SMTP id j4mr43731174qkk.482.1571256051867; 
- Wed, 16 Oct 2019 13:00:51 -0700 (PDT)
+ bh=5ZxNFRGq6aySKnbh1Oqbj2WSIULLh/NVItsrtRq309M=;
+ b=Wo3dXgkWgzRQsa8oTqlP2QkfnXwI5XDZf5LrDpE7xoDkb3+Zv/Qz4VGlEiFY41t6Eu
+ O0dvX57HraqDGjE7JiFkRHc4UyXjS7vsy+e0Okck+kuw8h29gmIClCHWoQ/tGiPl0PHQ
+ 3wsrZVrvp6xileybfCMII8TU8OgpqLXiqP/wIlvMq+WJfgi+yH+nHJHhObib4xdCA4TM
+ ICtVuk5P9L+HU3/VSbQRtME1TflQufKsdI88kg9ZiA5o6/PyroXMO5lp2oF5+d9rwD/4
+ RcYVZ7EmI0YwkVIP+8nwdRu99uiPV8JLiXO2hvNO8QO+Jg8oC3bHfDAW8uZq2W+8/N6n
+ XAdg==
+X-Gm-Message-State: APjAAAXfppIcUZPerAT99fRRrVu8PrDOtvRh4LL9OjVPVFgURMkyqvkp
+ ZEqYdEypo0Fbw/8ndxnm6sOHtQ==
+X-Google-Smtp-Source: APXvYqxw2X/+NQDxNRn8Vg7fHnrYD6YMUrUPc3OyvyU+6tmaRXzA0JbXzDikGLUcN+HLCQsXP8OQgA==
+X-Received: by 2002:a05:620a:2f4:: with SMTP id
+ a20mr5379477qko.163.1571256053355; 
+ Wed, 16 Oct 2019 13:00:53 -0700 (PDT)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id c204sm13342030qkb.90.2019.10.16.13.00.50
+ by smtp.gmail.com with ESMTPSA id c204sm13342030qkb.90.2019.10.16.13.00.51
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 16 Oct 2019 13:00:51 -0700 (PDT)
+ Wed, 16 Oct 2019 13:00:52 -0700 (PDT)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  ebiederm@xmission.com, kexec@lists.infradead.org,
@@ -66,23 +67,23 @@ To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  matthias.bgg@gmail.com, bhsharma@redhat.com, linux-mm@kvack.org,
  mark.rutland@arm.com, steve.capper@arm.com, rfontana@redhat.com,
  tglx@linutronix.de
-Subject: [PATCH v7 09/25] arm64: hibernate: add PUD_SECT_RDONLY
-Date: Wed, 16 Oct 2019 16:00:18 -0400
-Message-Id: <20191016200034.1342308-10-pasha.tatashin@soleen.com>
+Subject: [PATCH v7 10/25] arm64: hibernate: add trans_pgd public functions
+Date: Wed, 16 Oct 2019 16:00:19 -0400
+Message-Id: <20191016200034.1342308-11-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191016200034.1342308-1-pasha.tatashin@soleen.com>
 References: <20191016200034.1342308-1-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_130053_726821_4D71B23E 
-X-CRM114-Status: GOOD (  10.59  )
+X-CRM114-CacheID: sfid-20191016_130055_139218_CDF0D290 
+X-CRM114-Status: GOOD (  16.68  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -109,39 +110,149 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is PMD_SECT_RDONLY that is used in pud_* function which is confusing.
+trans_pgd_create_copy() and trans_pgd_map_page() are going to be
+the basis for new shared code that handles page tables for cases
+which are between kernels: kexec, and hibernate.
+
+Note: Eventually, get_safe_page() will be moved into a function pointer
+passed via argument, but for now keep it as is.
 
 Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
-Acked-by: James Morse <james.morse@arm.com>
+Reviewed-by: James Morse <james.morse@arm.com>
 ---
- arch/arm64/include/asm/pgtable-hwdef.h | 1 +
- arch/arm64/kernel/hibernate.c          | 2 +-
- 2 files changed, 2 insertions(+), 1 deletion(-)
+ arch/arm64/kernel/hibernate.c | 93 ++++++++++++++++++++++-------------
+ 1 file changed, 60 insertions(+), 33 deletions(-)
 
-diff --git a/arch/arm64/include/asm/pgtable-hwdef.h b/arch/arm64/include/asm/pgtable-hwdef.h
-index 3df60f97da1f..756a1dfb4f55 100644
---- a/arch/arm64/include/asm/pgtable-hwdef.h
-+++ b/arch/arm64/include/asm/pgtable-hwdef.h
-@@ -110,6 +110,7 @@
- #define PUD_TABLE_BIT		(_AT(pudval_t, 1) << 1)
- #define PUD_TYPE_MASK		(_AT(pudval_t, 3) << 0)
- #define PUD_TYPE_SECT		(_AT(pudval_t, 1) << 0)
-+#define PUD_SECT_RDONLY		(_AT(pudval_t, 1) << 7)		/* AP[2] */
- 
- /*
-  * Level 2 descriptor (PMD).
 diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
-index 1ca8af685e96..ce60bceed357 100644
+index ce60bceed357..ee1442a60945 100644
 --- a/arch/arm64/kernel/hibernate.c
 +++ b/arch/arm64/kernel/hibernate.c
-@@ -436,7 +436,7 @@ static int copy_pud(pgd_t *dst_pgdp, pgd_t *src_pgdp, unsigned long start,
- 				return -ENOMEM;
- 		} else {
- 			set_pud(dst_pudp,
--				__pud(pud_val(pud) & ~PMD_SECT_RDONLY));
-+				__pud(pud_val(pud) & ~PUD_SECT_RDONLY));
- 		}
- 	} while (dst_pudp++, src_pudp++, addr = next, addr != end);
+@@ -182,39 +182,15 @@ int arch_hibernation_header_restore(void *addr)
+ }
+ EXPORT_SYMBOL(arch_hibernation_header_restore);
+ 
+-/*
+- * Copies length bytes, starting at src_start into an new page,
+- * perform cache maintentance, then maps it at the specified address low
+- * address as executable.
+- *
+- * This is used by hibernate to copy the code it needs to execute when
+- * overwriting the kernel text. This function generates a new set of page
+- * tables, which it loads into ttbr0.
+- *
+- * Length is provided as we probably only want 4K of data, even on a 64K
+- * page system.
+- */
+-static int create_safe_exec_page(void *src_start, size_t length,
+-				 unsigned long dst_addr,
+-				 phys_addr_t *phys_dst_addr)
++int trans_pgd_map_page(pgd_t *trans_pgd, void *page,
++		       unsigned long dst_addr,
++		       pgprot_t pgprot)
+ {
+-	void *page = (void *)get_safe_page(GFP_ATOMIC);
+-	pgd_t *trans_pgd;
+ 	pgd_t *pgdp;
+ 	pud_t *pudp;
+ 	pmd_t *pmdp;
+ 	pte_t *ptep;
+ 
+-	if (!page)
+-		return -ENOMEM;
+-
+-	memcpy(page, src_start, length);
+-	__flush_icache_range((unsigned long)page, (unsigned long)page + length);
+-
+-	trans_pgd = (void *)get_safe_page(GFP_ATOMIC);
+-	if (!trans_pgd)
+-		return -ENOMEM;
+-
+ 	pgdp = pgd_offset_raw(trans_pgd, dst_addr);
+ 	if (pgd_none(READ_ONCE(*pgdp))) {
+ 		pudp = (void *)get_safe_page(GFP_ATOMIC);
+@@ -242,6 +218,44 @@ static int create_safe_exec_page(void *src_start, size_t length,
+ 	ptep = pte_offset_kernel(pmdp, dst_addr);
+ 	set_pte(ptep, pfn_pte(virt_to_pfn(page), PAGE_KERNEL_EXEC));
+ 
++	return 0;
++}
++
++/*
++ * Copies length bytes, starting at src_start into an new page,
++ * perform cache maintenance, then maps it at the specified address low
++ * address as executable.
++ *
++ * This is used by hibernate to copy the code it needs to execute when
++ * overwriting the kernel text. This function generates a new set of page
++ * tables, which it loads into ttbr0.
++ *
++ * Length is provided as we probably only want 4K of data, even on a 64K
++ * page system.
++ */
++static int create_safe_exec_page(void *src_start, size_t length,
++				 unsigned long dst_addr,
++				 phys_addr_t *phys_dst_addr)
++{
++	void *page = (void *)get_safe_page(GFP_ATOMIC);
++	pgd_t *trans_pgd;
++	int rc;
++
++	if (!page)
++		return -ENOMEM;
++
++	memcpy(page, src_start, length);
++	__flush_icache_range((unsigned long)page, (unsigned long)page + length);
++
++	trans_pgd = (void *)get_safe_page(GFP_ATOMIC);
++	if (!trans_pgd)
++		return -ENOMEM;
++
++	rc = trans_pgd_map_page(trans_pgd, page, dst_addr,
++				PAGE_KERNEL_EXEC);
++	if (rc)
++		return rc;
++
+ 	/*
+ 	 * Load our new page tables. A strict BBM approach requires that we
+ 	 * ensure that TLBs are free of any entries that may overlap with the
+@@ -462,6 +476,24 @@ static int copy_page_tables(pgd_t *dst_pgdp, unsigned long start,
+ 	return 0;
+ }
+ 
++int trans_pgd_create_copy(pgd_t **dst_pgdp, unsigned long start,
++			  unsigned long end)
++{
++	int rc;
++	pgd_t *trans_pgd = (pgd_t *)get_safe_page(GFP_ATOMIC);
++
++	if (!trans_pgd) {
++		pr_err("Failed to allocate memory for temporary page tables.\n");
++		return -ENOMEM;
++	}
++
++	rc = copy_page_tables(trans_pgd, start, end);
++	if (!rc)
++		*dst_pgdp = trans_pgd;
++
++	return rc;
++}
++
+ /*
+  * Setup then Resume from the hibernate image using swsusp_arch_suspend_exit().
+  *
+@@ -483,12 +515,7 @@ int swsusp_arch_resume(void)
+ 	 * Create a second copy of just the linear map, and use this when
+ 	 * restoring.
+ 	 */
+-	tmp_pg_dir = (pgd_t *)get_safe_page(GFP_ATOMIC);
+-	if (!tmp_pg_dir) {
+-		pr_err("Failed to allocate memory for temporary page tables.\n");
+-		return -ENOMEM;
+-	}
+-	rc = copy_page_tables(tmp_pg_dir, PAGE_OFFSET, PAGE_END);
++	rc = trans_pgd_create_copy(&tmp_pg_dir, PAGE_OFFSET, PAGE_END);
+ 	if (rc)
+ 		return rc;
  
 -- 
 2.23.0
