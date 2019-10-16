@@ -2,67 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EFBC8D8603
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 04:44:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D465AD8628
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 05:01:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=is/1lfCvOVua64lPHq1aZgy2VotRDIJXL7Q3+N/G++k=; b=hOm+UG4OtTDlMD
-	t/YO9vECtInB75OQaBUmJe6wyyQ+SqVq+VqmZPXBGpFtGD71MwojA6NQDFvghfhEHerIPxlUDeZRn
-	rBpvV8yiwzMsRvZd8HdY6xbU8Qrc+yoLyOT2WauR4P7TIviYbvyCo7kp5lIuYj4+k9+/WLeLfrEMv
-	YugsAWz62vZz8+bh/YuvTTNxcPbptStFY6zkBnY5Egs0OGgkc8zGZkoL/87GuKmz20x7gX60Q3Yzs
-	Y3rc8+/VfPyPpQmskMXpXFim9DX/A8o5S+wY3oUA1HI9reGBaK7MwWhCyTX2yRgbXJA8WJCJIbI8F
-	q4hRLwLoBSkL/x7HtdXQ==;
+	List-Owner; bh=S3nm2OjrqFKQCxzceki4ftw8DdpOIdNLTdmLE/oq860=; b=orcs99dea0fcfa
+	31agcqHHzySI1puXuoiTj0Vw+FpkWaImjW8Mzq4U9IrYc4KXRuBlqAgp966gqBi3Gt7fQhbRtmzrf
+	TFC0FW/oSYon461CscdHrKns3RyWuaPC5gFfZY07eicJjLJgikywA4PwjU87J5dEF4P84+qubOk3h
+	wN0QxVoCf8BLfyuTFd9NPmAR4HU0izrdbN7Ilk9i9xjgtN2JhgndVf+sXm2jgsEiN7nsrl93cDLoG
+	v4gF7+DQhhARZK062mnQOmu8SdfsH4/05bHgloJEUb0Qkk2s5FAHX4R/bE2py6DpyQIWDXxuapONn
+	0sXHJlt0nU1bYcSC35zg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKZIB-0004vI-96; Wed, 16 Oct 2019 02:44:03 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1iKZYe-0003FI-3Q; Wed, 16 Oct 2019 03:01:04 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKZI1-0004u1-Hf; Wed, 16 Oct 2019 02:43:55 +0000
-X-UUID: 79678d7d533c46cfac3d4119f5f36175-20191015
-X-UUID: 79678d7d533c46cfac3d4119f5f36175-20191015
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <andrew-sh.cheng@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1993974949; Tue, 15 Oct 2019 18:43:40 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 15 Oct 2019 19:43:47 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 16 Oct 2019 10:43:46 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 16 Oct 2019 10:43:46 +0800
-Message-ID: <1571193828.22071.5.camel@mtksdaap41>
-Subject: Re: [v4, 7/8] cpufreq: mediatek: add opp notification for SVS support
-From: andrew-sh.cheng <andrew-sh.cheng@mediatek.com>
-To: Viresh Kumar <viresh.kumar@linaro.org>
-Date: Wed, 16 Oct 2019 10:43:48 +0800
-In-Reply-To: <20190820033927.72muldasu4xd6wb7@vireshk-i7>
-References: <1565703113-31479-1-git-send-email-andrew-sh.cheng@mediatek.com>
- <1565703113-31479-8-git-send-email-andrew-sh.cheng@mediatek.com>
- <20190820033927.72muldasu4xd6wb7@vireshk-i7>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1iKZYX-0003El-K1
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 03:00:58 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id CAA5D20854;
+ Wed, 16 Oct 2019 03:00:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571194856;
+ bh=Q6EaTHXUZJ+A9ZOpvEPtSB0LVp/m+g/JevPvkuMDYe4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=qx3o05KJQZGZrN0HgUJI3GmkNWw/R2WGNKL6xxxEPanMo+gX0DLd6aQk0eJOA3wsP
+ xDsH36/1uMy6d/v1atqafEYJbtpQKoFXqEFc1chpMzq7pF+9Id5mZLVjbag6n0RV9H
+ qmr+pLv4PT5WFRZ+p10cz4nZlcx3EwxnyQNC/Lt8=
+Date: Wed, 16 Oct 2019 04:00:52 +0100
+From: Will Deacon <will@kernel.org>
+To: Nathan Chancellor <natechancellor@gmail.com>
+Subject: Re: [PATCH -next] arm64: mm: Fix unused variable warning in
+ zone_sizes_init
+Message-ID: <20191016030051.4di67v6swlkz2wzy@willie-the-truck>
+References: <20191015224304.20963-1-natechancellor@gmail.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20191015224304.20963-1-natechancellor@gmail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_194353_590448_575FBB31 
-X-CRM114-Status: GOOD (  22.29  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191015_200057_678010_7E52810C 
+X-CRM114-Status: GOOD (  14.06  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,208 +77,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, Rob
- Herring <robh+dt@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Fan Chen =?UTF-8?Q?=28=E9=99=B3=E5=87=A1=29?= <fan.chen@mediatek.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2019-08-20 at 11:39 +0800, Viresh Kumar wrote:
-> On 13-08-19, 21:31, Andrew-sh.Cheng wrote:
-> > From: "Andrew-sh.Cheng" <andrew-sh.cheng@mediatek.com>
-> > 
-> > cpufreq should listen opp notification and do proper actions
-> > when receiving disable and voltage adjustment events,
-> > which are triggered when SVS is enabled.
-> > 
-> > Signed-off-by: Andrew-sh.Cheng <andrew-sh.cheng@mediatek.com>
-> > ---
-> >  drivers/cpufreq/mediatek-cpufreq.c | 78 ++++++++++++++++++++++++++++++++++++++
-> >  1 file changed, 78 insertions(+)
-> > 
-> > diff --git a/drivers/cpufreq/mediatek-cpufreq.c b/drivers/cpufreq/mediatek-cpufreq.c
-> > index 4dce41b18369..9820c8003507 100644
-> > --- a/drivers/cpufreq/mediatek-cpufreq.c
-> > +++ b/drivers/cpufreq/mediatek-cpufreq.c
-> > @@ -42,6 +42,10 @@ struct mtk_cpu_dvfs_info {
-> >  	struct list_head list_head;
-> >  	int intermediate_voltage;
-> >  	bool need_voltage_tracking;
-> > +	struct mutex lock; /* avoid notify and policy race condition */
-> > +	struct notifier_block opp_nb;
-> > +	int opp_cpu;
-> > +	unsigned long opp_freq;
-> >  };
-> >  
-> >  static LIST_HEAD(dvfs_info_list);
-> > @@ -231,6 +235,7 @@ static int mtk_cpufreq_set_target(struct cpufreq_policy *policy,
-> >  	vproc = dev_pm_opp_get_voltage(opp);
-> >  	dev_pm_opp_put(opp);
-> >  
-> > +	mutex_lock(&info->lock);
-> >  	/*
-> >  	 * If the new voltage or the intermediate voltage is higher than the
-> >  	 * current voltage, scale up voltage first.
-> > @@ -242,6 +247,7 @@ static int mtk_cpufreq_set_target(struct cpufreq_policy *policy,
-> >  			pr_err("cpu%d: failed to scale up voltage!\n",
-> >  			       policy->cpu);
-> >  			mtk_cpufreq_set_voltage(info, old_vproc);
-> > +			mutex_unlock(&info->lock);
-> >  			return ret;
-> >  		}
-> >  	}
-> > @@ -253,6 +259,7 @@ static int mtk_cpufreq_set_target(struct cpufreq_policy *policy,
-> >  		       policy->cpu);
-> >  		mtk_cpufreq_set_voltage(info, old_vproc);
-> >  		WARN_ON(1);
-> > +		mutex_unlock(&info->lock);
-> >  		return ret;
-> >  	}
-> >  
-> > @@ -263,6 +270,7 @@ static int mtk_cpufreq_set_target(struct cpufreq_policy *policy,
-> >  		       policy->cpu);
-> >  		clk_set_parent(cpu_clk, armpll);
-> >  		mtk_cpufreq_set_voltage(info, old_vproc);
-> > +		mutex_unlock(&info->lock);
-> >  		return ret;
-> >  	}
-> >  
-> > @@ -273,6 +281,7 @@ static int mtk_cpufreq_set_target(struct cpufreq_policy *policy,
-> >  		       policy->cpu);
-> >  		mtk_cpufreq_set_voltage(info, inter_vproc);
-> >  		WARN_ON(1);
-> > +		mutex_unlock(&info->lock);
-> >  		return ret;
-> >  	}
-> >  
-> > @@ -288,15 +297,74 @@ static int mtk_cpufreq_set_target(struct cpufreq_policy *policy,
-> >  			clk_set_parent(cpu_clk, info->inter_clk);
-> >  			clk_set_rate(armpll, old_freq_hz);
-> >  			clk_set_parent(cpu_clk, armpll);
-> > +			mutex_unlock(&info->lock);
-> >  			return ret;
-> >  		}
-> >  	}
-> >  
-> > +	info->opp_freq = freq_hz;
-> > +	mutex_unlock(&info->lock);
-> > +
-> >  	return 0;
-> >  }
-> >  
-> >  #define DYNAMIC_POWER "dynamic-power-coefficient"
-> >  
-> > +static int mtk_cpufreq_opp_notifier(struct notifier_block *nb,
-> > +				    unsigned long event, void *data)
-> > +{
-> > +	struct dev_pm_opp *opp = data;
-> > +	struct dev_pm_opp *opp_item;
-> > +	struct mtk_cpu_dvfs_info *info =
-> > +		container_of(nb, struct mtk_cpu_dvfs_info, opp_nb);
-> > +	unsigned long freq, volt;
-> > +	struct cpufreq_policy *policy;
-> > +	int ret = 0;
-> > +
-> > +	if (event == OPP_EVENT_ADJUST_VOLTAGE) {
-> > +		freq = dev_pm_opp_get_freq(opp);
-> > +
-> > +		mutex_lock(&info->lock);
-> > +		if (info->opp_freq == freq) {
-> > +			volt = dev_pm_opp_get_voltage(opp);
-> > +			ret = mtk_cpufreq_set_voltage(info, volt);
-> > +			if (ret)
-> > +				dev_err(info->cpu_dev, "failed to scale voltage: %d\n",
-> > +					ret);
-> > +		}
-> > +		mutex_unlock(&info->lock);
-> > +	} else if (event == OPP_EVENT_DISABLE) {
+On Tue, Oct 15, 2019 at 03:43:04PM -0700, Nathan Chancellor wrote:
+> When building arm64 allnoconfig, CONFIG_ZONE_DMA and CONFIG_ZONE_DMA32
+> get disabled so there is a warning about max_dma being unused.
 > 
-> Does this ever get called for your platform ? Why are you using opp disable ?
-> Maybe we can avoid it completely.
-Hi Viresh~
-This is due to SVS feature need to fix Vproc for calibration.
-When SVS calibration, it want to disable all opp items, except one with
-voltae 1.0V. (SVS will change the voltage field of that opp item, if the
-corresponding voltage is not 1.0V)
-In this way, SVS can make sure there is no other module, include
-thermal, will change Vproc by DVFS driver.
-After SVS calibration done, SVS will enable those disabled opp items
-back.
-
+> ../arch/arm64/mm/init.c:215:16: warning: unused variable 'max_dma'
+> [-Wunused-variable]
+>         unsigned long max_dma = min;
+>                       ^
+> 1 warning generated.
 > 
-> > +		freq = info->opp_freq;
-> > +		opp_item = dev_pm_opp_find_freq_ceil(info->cpu_dev, &freq);
-> > +		if (!IS_ERR(opp_item))
-> > +			dev_pm_opp_put(opp_item);
-> > +		else
-> > +			freq = 0;
-> > +
-> > +		/* case of current opp is disabled */
-> > +		if (freq == 0 || freq != info->opp_freq) {
-> > +			// find an enable opp item
-> > +			freq = 1;
-> > +			opp_item = dev_pm_opp_find_freq_ceil(info->cpu_dev,
-> > +							     &freq);
-> > +			if (!IS_ERR(opp_item)) {
-> > +				dev_pm_opp_put(opp_item);
-> > +				policy = cpufreq_cpu_get(info->opp_cpu);
-> > +				if (policy) {
-> > +					cpufreq_driver_target(policy,
-> > +						freq / 1000,
-> > +						CPUFREQ_RELATION_L);
-> > +					cpufreq_cpu_put(policy);
-> > +				}
-> > +			} else
-> > +				pr_err("%s: all opp items are disabled\n",
-> > +				       __func__);
-> > +		}
-> > +	}
-> > +
-> > +	return notifier_from_errno(ret);
-> > +}
-> > +
-> >  static int mtk_cpu_dvfs_info_init(struct mtk_cpu_dvfs_info *info, int cpu)
-> >  {
-> >  	struct device *cpu_dev;
-> > @@ -383,11 +451,21 @@ static int mtk_cpu_dvfs_info_init(struct mtk_cpu_dvfs_info *info, int cpu)
-> >  	info->intermediate_voltage = dev_pm_opp_get_voltage(opp);
-> >  	dev_pm_opp_put(opp);
-> >  
-> > +	info->opp_cpu = cpu;
-> > +	info->opp_nb.notifier_call = mtk_cpufreq_opp_notifier;
-> > +	ret = dev_pm_opp_register_notifier(cpu_dev, &info->opp_nb);
-> > +	if (ret) {
-> > +		pr_warn("cannot register opp notification\n");
-> > +		goto out_free_opp_table;
-> > +	}
-> > +
-> > +	mutex_init(&info->lock);
-> >  	info->cpu_dev = cpu_dev;
-> >  	info->proc_reg = proc_reg;
-> >  	info->sram_reg = IS_ERR(sram_reg) ? NULL : sram_reg;
-> >  	info->cpu_clk = cpu_clk;
-> >  	info->inter_clk = inter_clk;
-> > +	info->opp_freq = clk_get_rate(cpu_clk);
-> >  
-> >  	/*
-> >  	 * If SRAM regulator is present, software "voltage tracking" is needed
-> > -- 
-> > 2.12.5
+> Add an ifdef around the variable to fix this.
 > 
+> Fixes: 1a8e1cef7603 ("arm64: use both ZONE_DMA and ZONE_DMA32")
+> Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
+> ---
+>  arch/arm64/mm/init.c | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
+> diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
+> index 44f07fdf7a59..c3d6657b9942 100644
+> --- a/arch/arm64/mm/init.c
+> +++ b/arch/arm64/mm/init.c
+> @@ -212,7 +212,9 @@ static void __init zone_sizes_init(unsigned long min, unsigned long max)
+>  	struct memblock_region *reg;
+>  	unsigned long zone_size[MAX_NR_ZONES], zhole_size[MAX_NR_ZONES];
+>  	unsigned long max_dma32 = min;
+> +#if defined(CONFIG_ZONE_DMA) || defined(CONFIG_ZONE_DMA)
+>  	unsigned long max_dma = min;
+> +#endif
 
+This looks bogus to me :/ You're referring to CONFIG_ZONE_DMA twice, and I
+can't see how that symbol even exists on arm64.
 
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
