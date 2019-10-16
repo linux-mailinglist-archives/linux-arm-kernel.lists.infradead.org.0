@@ -2,61 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89530D86BD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 05:35:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BDD1AD86C9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 05:35:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NpnafzZwrW1K5fS19aWY04SwVwQ9UFVcaCajHQem4bI=; b=ZG6uOPxtRI2UTO
-	Tl5lnIOIaAE91fDE3PkVhCmpRTuOwBgpGEMVQ/sAWVwKDBpZanwW/Ipw6/JG0VkzFmAZk4LAruFdH
-	Zf0x4IH4sxCDqRoHCKmehpUEQGU7uUPCWThhSBeBieTm3iN0qD/WwZOTS/OLAv/z4AA8zcIyyi7wo
-	lhxRz8SnPcW1XK44MncmIWkYFFJJQIrSpfge8nq8Orl2EY7OtY9EdFTTwmD/RuEs2/Yq4esF7pcE+
-	xCwxHkVAW2yJuggMWSPjahlp6VU0bdHeCseK6oXnBRuPL+977/CjnTOEzUvSUh3EFuEgVHuulAppB
-	26Ao2JJOb8s/FQuyyerQ==;
+	List-Owner; bh=zqwJdoebH2JGyJn69MuIViHNJChKpnux7ny/TSR8PRg=; b=A3k6tB7PdI/dVz
+	Z8UlL+PLIRSsrP7pXivrSQndACz4UGp4+xJ1yyqU5ytuUW2HlygiktjqMnzAct5a746HHx/YYMXTD
+	VA2aavJ+KhcwGN2KvihvKapU+HtFik5QzVmjfsEtMbscB66dExHOM21J1yeUqFW+LI+0x3mwIqNRz
+	jIhXk8KEx2RhBHtjCHxcvZOBwZBxVmyj3U81CzPzdpYKSygH63rWo5l1X8VxcfK1kqN9UQliAjPQR
+	kqooChAmEv94CZu8ywjs8qKHXopGGh5LvEW/gIAKp6+Bu4IyaNNJENWBTltx9G0RJLwIM/ZweiNQC
+	At6swkPKccrCsmW6nYMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKa5K-0006q1-Uc; Wed, 16 Oct 2019 03:34:50 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1iKa5r-0007GC-U7; Wed, 16 Oct 2019 03:35:23 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKa4g-0006Qz-9x; Wed, 16 Oct 2019 03:34:13 +0000
-X-UUID: b0aad5dd028d4fe2b1ca61d6c58cc848-20191015
-X-UUID: b0aad5dd028d4fe2b1ca61d6c58cc848-20191015
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ id 1iKa4m-0006Vx-1g; Wed, 16 Oct 2019 03:34:17 +0000
+X-UUID: 5b741450edd9438b8ae22bf71297dcec-20191015
+X-UUID: 5b741450edd9438b8ae22bf71297dcec-20191015
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
  (envelope-from <yong.wu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 918233101; Tue, 15 Oct 2019 19:33:54 -0800
-Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 15 Oct 2019 20:34:05 -0700
+ with ESMTP id 1026588013; Tue, 15 Oct 2019 19:34:00 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 15 Oct 2019 20:34:11 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 16 Oct 2019 11:34:03 +0800
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 16 Oct 2019 11:34:09 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 16 Oct 2019 11:34:02 +0800
+ Transport; Wed, 16 Oct 2019 11:34:08 +0800
 From: Yong Wu <yong.wu@mediatek.com>
 To: Matthias Brugger <matthias.bgg@gmail.com>, Joerg Roedel <joro@8bytes.org>, 
  Will Deacon <will.deacon@arm.com>
-Subject: [PATCH v4 5/7] iommu/mediatek: Move the tlb_sync into tlb_flush
-Date: Wed, 16 Oct 2019 11:33:10 +0800
-Message-ID: <1571196792-12382-6-git-send-email-yong.wu@mediatek.com>
+Subject: [PATCH v4 6/7] iommu/mediatek: Get rid of the pgtlock
+Date: Wed, 16 Oct 2019 11:33:11 +0800
+Message-ID: <1571196792-12382-7-git-send-email-yong.wu@mediatek.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1571196792-12382-1-git-send-email-yong.wu@mediatek.com>
 References: <1571196792-12382-1-git-send-email-yong.wu@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: C5018E1BE821F0B12DBD3BFF81ED24D602A6050BF1D33E0E29578E761BD871EC2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_203411_537819_201A33A8 
-X-CRM114-Status: GOOD (  13.72  )
+X-CRM114-CacheID: sfid-20191015_203416_107403_BADDEB6F 
+X-CRM114-Status: GOOD (  12.52  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -84,127 +85,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Right now, the tlb_add_flush_nosync and tlb_sync always appear together.
-we merge the two functions into one(also move the tlb_lock into the new
-function). No functional change.
+Now we have tlb_lock for the HW tlb flush, then pgtable code hasn't
+needed the external "pgtlock" for a while. this patch remove the
+"pgtlock".
 
-Signed-off-by: Chao Hao <chao.hao@mediatek.com>
 Signed-off-by: Yong Wu <yong.wu@mediatek.com>
 ---
- drivers/iommu/mtk_iommu.c | 45 ++++++++++-----------------------------------
- drivers/iommu/mtk_iommu.h |  1 -
- 2 files changed, 10 insertions(+), 36 deletions(-)
+ drivers/iommu/mtk_iommu.c | 25 +++----------------------
+ 1 file changed, 3 insertions(+), 22 deletions(-)
 
 diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-index 1d7254c..0e5f41f 100644
+index 0e5f41f..c2b7ed5 100644
 --- a/drivers/iommu/mtk_iommu.c
 +++ b/drivers/iommu/mtk_iommu.c
-@@ -173,12 +173,16 @@ static void mtk_iommu_tlb_flush_all(void *cookie)
- 	}
- }
+@@ -101,8 +101,6 @@
+ #define MTK_M4U_TO_PORT(id)		((id) & 0x1f)
  
--static void mtk_iommu_tlb_add_flush_nosync(unsigned long iova, size_t size,
-+static void mtk_iommu_tlb_flush_range_sync(unsigned long iova, size_t size,
- 					   size_t granule, void *cookie)
- {
- 	struct mtk_iommu_data *data = cookie;
-+	unsigned long flags;
-+	int ret;
-+	u32 tmp;
- 
- 	for_each_m4u(data) {
-+		spin_lock_irqsave(&data->tlb_lock, flags);
- 		writel_relaxed(F_INVLD_EN1 | F_INVLD_EN0,
- 			       data->base + REG_MMU_INV_SEL);
- 
-@@ -187,21 +191,8 @@ static void mtk_iommu_tlb_add_flush_nosync(unsigned long iova, size_t size,
- 			       data->base + REG_MMU_INVLD_END_A);
- 		writel_relaxed(F_MMU_INV_RANGE,
- 			       data->base + REG_MMU_INVALIDATE);
--		data->tlb_flush_active = true;
--	}
--}
+ struct mtk_iommu_domain {
+-	spinlock_t			pgtlock; /* lock for page table */
 -
--static void mtk_iommu_tlb_sync(void *cookie)
--{
--	struct mtk_iommu_data *data = cookie;
--	int ret;
--	u32 tmp;
--
--	for_each_m4u(data) {
--		/* Avoid timing out if there's nothing to wait for */
--		if (!data->tlb_flush_active)
--			return;
+ 	struct io_pgtable_cfg		cfg;
+ 	struct io_pgtable_ops		*iop;
  
-+		/* tlb sync */
- 		ret = readl_poll_timeout_atomic(data->base + REG_MMU_CPE_DONE,
- 						tmp, tmp != 0, 10, 100000);
- 		if (ret) {
-@@ -211,22 +202,10 @@ static void mtk_iommu_tlb_sync(void *cookie)
- 		}
- 		/* Clear the CPE status */
- 		writel_relaxed(0, data->base + REG_MMU_CPE_DONE);
--		data->tlb_flush_active = false;
-+		spin_unlock_irqrestore(&data->tlb_lock, flags);
- 	}
- }
- 
--static void mtk_iommu_tlb_flush_walk(unsigned long iova, size_t size,
--				     size_t granule, void *cookie)
--{
--	struct mtk_iommu_data *data = cookie;
--	unsigned long flags;
--
--	spin_lock_irqsave(&data->tlb_lock, flags);
--	mtk_iommu_tlb_add_flush_nosync(iova, size, granule, cookie);
--	mtk_iommu_tlb_sync(cookie);
--	spin_unlock_irqrestore(&data->tlb_lock, flags);
--}
--
- static void mtk_iommu_tlb_flush_page_nosync(struct iommu_iotlb_gather *gather,
- 					    unsigned long iova, size_t granule,
- 					    void *cookie)
-@@ -239,8 +218,8 @@ static void mtk_iommu_tlb_flush_page_nosync(struct iommu_iotlb_gather *gather,
- 
- static const struct iommu_flush_ops mtk_iommu_flush_ops = {
- 	.tlb_flush_all = mtk_iommu_tlb_flush_all,
--	.tlb_flush_walk = mtk_iommu_tlb_flush_walk,
--	.tlb_flush_leaf = mtk_iommu_tlb_flush_walk,
-+	.tlb_flush_walk = mtk_iommu_tlb_flush_range_sync,
-+	.tlb_flush_leaf = mtk_iommu_tlb_flush_range_sync,
- 	.tlb_add_page = mtk_iommu_tlb_flush_page_nosync,
- };
- 
-@@ -455,16 +434,12 @@ static void mtk_iommu_iotlb_sync(struct iommu_domain *domain,
+@@ -295,8 +293,6 @@ static int mtk_iommu_domain_finalise(struct mtk_iommu_domain *dom)
  {
  	struct mtk_iommu_data *data = mtk_iommu_get_m4u_data();
- 	size_t length = gather->end - gather->start;
+ 
+-	spin_lock_init(&dom->pgtlock);
+-
+ 	dom->cfg = (struct io_pgtable_cfg) {
+ 		.quirks = IO_PGTABLE_QUIRK_ARM_NS |
+ 			IO_PGTABLE_QUIRK_NO_PERMS |
+@@ -395,18 +391,13 @@ static int mtk_iommu_map(struct iommu_domain *domain, unsigned long iova,
+ {
+ 	struct mtk_iommu_domain *dom = to_mtk_domain(domain);
+ 	struct mtk_iommu_data *data = mtk_iommu_get_m4u_data();
 -	unsigned long flags;
+-	int ret;
  
- 	if (gather->start == ULONG_MAX)
- 		return;
+ 	/* The "4GB mode" M4U physically can not use the lower remap of Dram. */
+ 	if (data->enable_4GB)
+ 		paddr |= BIT_ULL(32);
  
--	spin_lock_irqsave(&data->tlb_lock, flags);
--	mtk_iommu_tlb_add_flush_nosync(gather->start, length, gather->pgsize,
-+	mtk_iommu_tlb_flush_range_sync(gather->start, length, gather->pgsize,
- 				       data);
--	mtk_iommu_tlb_sync(data);
--	spin_unlock_irqrestore(&data->tlb_lock, flags);
+-	spin_lock_irqsave(&dom->pgtlock, flags);
+-	ret = dom->iop->map(dom->iop, iova, paddr, size, prot);
+-	spin_unlock_irqrestore(&dom->pgtlock, flags);
+-
+-	return ret;
++	/* Synchronize with the tlb_lock */
++	return dom->iop->map(dom->iop, iova, paddr, size, prot);
  }
  
- static phys_addr_t mtk_iommu_iova_to_phys(struct iommu_domain *domain,
-diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
-index 8cae22d..ea949a3 100644
---- a/drivers/iommu/mtk_iommu.h
-+++ b/drivers/iommu/mtk_iommu.h
-@@ -57,7 +57,6 @@ struct mtk_iommu_data {
- 	struct mtk_iommu_domain		*m4u_dom;
- 	struct iommu_group		*m4u_group;
- 	bool                            enable_4GB;
--	bool				tlb_flush_active;
- 	spinlock_t			tlb_lock; /* lock for tlb range flush */
+ static size_t mtk_iommu_unmap(struct iommu_domain *domain,
+@@ -414,14 +405,8 @@ static size_t mtk_iommu_unmap(struct iommu_domain *domain,
+ 			      struct iommu_iotlb_gather *gather)
+ {
+ 	struct mtk_iommu_domain *dom = to_mtk_domain(domain);
+-	unsigned long flags;
+-	size_t unmapsz;
+-
+-	spin_lock_irqsave(&dom->pgtlock, flags);
+-	unmapsz = dom->iop->unmap(dom->iop, iova, size, gather);
+-	spin_unlock_irqrestore(&dom->pgtlock, flags);
  
- 	struct iommu_device		iommu;
+-	return unmapsz;
++	return dom->iop->unmap(dom->iop, iova, size, gather);
+ }
+ 
+ static void mtk_iommu_flush_iotlb_all(struct iommu_domain *domain)
+@@ -447,13 +432,9 @@ static phys_addr_t mtk_iommu_iova_to_phys(struct iommu_domain *domain,
+ {
+ 	struct mtk_iommu_domain *dom = to_mtk_domain(domain);
+ 	struct mtk_iommu_data *data = mtk_iommu_get_m4u_data();
+-	unsigned long flags;
+ 	phys_addr_t pa;
+ 
+-	spin_lock_irqsave(&dom->pgtlock, flags);
+ 	pa = dom->iop->iova_to_phys(dom->iop, iova);
+-	spin_unlock_irqrestore(&dom->pgtlock, flags);
+-
+ 	if (data->enable_4GB && pa >= MTK_IOMMU_4GB_MODE_REMAP_BASE)
+ 		pa &= ~BIT_ULL(32);
+ 
 -- 
 1.9.1
 
