@@ -2,62 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73F13D927E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 15:31:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 225CDD9292
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 15:34:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=O1ayVnhYChRPp8Ft+5zlTfIxNBgFBIaBVu1d/SXrx8Y=; b=a0XVkCakLCE8mKlvExvIsJWk5
-	RluaiH85EGK6MJhHd6UUiFwhVt7h1POcufWLQQsLGfv5ptuaD3/tSFKy0ehfj47QC1NgA9HoWGp/e
-	TBjrYnBOcU9u2WvoT1Q+k+s+I7mlmtx8EHtXr5eUgmkSZDuO7HzaHia43S0xu7glQJBT3HDKaiuNF
-	JiRth42ZS1n3L7OwAITPV8MlD5vmMTUCUIpnAdp5TGR3+gaLdYirA4s7voo/EQFyk8SuiXq6YjXOx
-	+bhVP4R7m37CjRNiDxxqJGK3Yo03t7VQ1kVwkeZrjeYMGzZ9xJhkalOX4eXgikAGo63MYrM5sn4E9
-	BVdFxXaJQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=VvRF9SeMacUA9GJ3AcqqtoRBAUCGL5QDjsOcU+KPGoY=; b=bxTNf+aGHjY5qN
+	rMYcVOLxffINB5a2dQNxYHKzwbGMd2DHnbnYo/TJfeXsj2FrJha6qAKVcd8KR5aNkUcf09RoNKRS8
+	uOJwj5YZz+yxGP1B4H5+OMkIFSkD6h4Wj6UeYSpKq9M2RPPl6PORcvDv1M8wgnF/HZ6SpKVAqRlpw
+	OG1kH2p9Oakms7Hed0a90rSyaXEjETJ1kROXciAr1wpHSoEMPyHW18xgwhCRtCQPSX5pm+JMxlcBO
+	EA7rIIi6YKiUPdTih1uSgY9+ypj455R2h/rFbMy+tJpQ9hJVO/Tq4skFm6ogW4v2XMHmahI2uu54F
+	MMlXn3OH2S86kO4vEqGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKjOJ-00023r-WC; Wed, 16 Oct 2019 13:31:04 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1iKjRG-0002dK-GL; Wed, 16 Oct 2019 13:34:06 +0000
+Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKjO9-00022P-Ty
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 13:30:56 +0000
-Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 1ED8C5D4AE5A087F7F66;
- Wed, 16 Oct 2019 21:30:47 +0800 (CST)
-Received: from [127.0.0.1] (10.202.227.179) by DGGEMS414-HUB.china.huawei.com
- (10.3.19.214) with Microsoft SMTP Server id 14.3.439.0;
- Wed, 16 Oct 2019 21:30:37 +0800
-Subject: Re: [PATCH v6 2/2] drivers/perf: Add CCPI2 PMU support in ThunderX2
- UNCORE driver.
-To: Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-References: <1571218608-15933-1-git-send-email-gkulkarni@marvell.com>
- <1571218608-15933-3-git-send-email-gkulkarni@marvell.com>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <b8e1a637-faf4-4567-7d3e-a4f13dfa1cf0@huawei.com>
-Date: Wed, 16 Oct 2019 14:30:30 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.3.0
+ id 1iKjR2-0002c7-0Y
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 13:33:53 +0000
+Received: by mail-wm1-x336.google.com with SMTP id r19so2957833wmh.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 16 Oct 2019 06:33:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=BFXJh5YwdqvqkTvI55Rp72RJZ5nJ2dgoIfxiju6Kc5s=;
+ b=LbcP6M3awlWA/xKI7gZTJ93F41yKo1zgsEX8wdkvb5OapDjr2THcmnkGmwQ5khfy0b
+ m44DA08Ov5qA8YP7ZiTD0f50WTv0CXtHhFXs5uDjNuio5m7NPhVcRwJXZTAznjwHyTcx
+ 1T2mKL5Q11EU07B8ciu3B9WFV8cquhx7F6CelJ9hltIHQSp3mZkNz2uMc0j5OUnIfxQo
+ Vy3Hmh/ZyY3Z+SYMe2eV7hoHHIKcbwyBg1jGo+kSLDSH4knMK8vPyXvTeWuE2oi/c8XE
+ emK/3omGGUYa97U9WgfBfEx5HGsYBfi/k/Hf00HG5bUss2yCWmfLbaGsQYOV6+Psjrx+
+ mAkA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=BFXJh5YwdqvqkTvI55Rp72RJZ5nJ2dgoIfxiju6Kc5s=;
+ b=V+ClOIkl3/9Cbp9h7J3E9G+Z4IiX3Iewn2C5BhlI7n3Ys0VZB41uHhUCqIf2F3z1RG
+ 50kNHYYmTl3TtaNhaOc2n05KNp1txEKpYL2Zcs4Eojdx5YNOEcIe1JCjG8TRJ/f/o9tG
+ QQtWBm4UX3zS4NJzcVQ6rmZehxzbCpym57ysH4P9I3Wyebd+pRx0pqUKsBv8sBLiqDeX
+ ugdmWg2xJbCVotgf7Z3MSTWuqyeTproN5WIoaUJNEKzHNrkRrWeyb+M+bM7dZWmh1SWX
+ 6PTakypjup4SlDBvjziHg2yAo4Sy9SbREPQBu4j4451YZrUAup66frLekoGp73igRikd
+ NFjw==
+X-Gm-Message-State: APjAAAUqnz6IWS0hR4UxUwUw+XhB3nAf2mN/cFUP5ai7WfEbqE5iDZi/
+ t6H7lhbLlGJNDr95Tw+v7Wg=
+X-Google-Smtp-Source: APXvYqxSO35Wwnr4fa2v5+O2FpqGRKcz3QzjOWm+Jz0C/0YUoZHznBT0G3al+EcSCbjzWVXvfBo9pw==
+X-Received: by 2002:a7b:cc0c:: with SMTP id f12mr3458368wmh.40.1571232829451; 
+ Wed, 16 Oct 2019 06:33:49 -0700 (PDT)
+Received: from Red.localdomain ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
+ by smtp.googlemail.com with ESMTPSA id h17sm3139998wme.6.2019.10.16.06.33.48
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 16 Oct 2019 06:33:48 -0700 (PDT)
+From: Corentin Labbe <clabbe.montjoie@gmail.com>
+To: davem@davemloft.net, herbert@gondor.apana.org.au, mark.rutland@arm.com,
+ mripard@kernel.org, robh+dt@kernel.org, wens@csie.org
+Subject: [PATCH 0/4] crypto: add sun8i-ss driver for Allwinner Security System
+Date: Wed, 16 Oct 2019 15:33:41 +0200
+Message-Id: <20191016133345.9076-1-clabbe.montjoie@gmail.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <1571218608-15933-3-git-send-email-gkulkarni@marvell.com>
-X-Originating-IP: [10.202.227.179]
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_063054_141017_44DD7D14 
-X-CRM114-Status: GOOD (  13.23  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191016_063352_053996_EB0BFA16 
+X-CRM114-Status: GOOD (  11.49  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:336 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (clabbe.montjoie[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,111 +97,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "corbet@lwn.net" <corbet@lwn.net>, Jan Glauber <jglauber@marvell.com>,
- Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
- Zhangshaokun <zhangshaokun@hisilicon.com>,
- "gklkml16@gmail.com" <gklkml16@gmail.com>,
- Robert Richter <rrichter@marvell.com>, "will@kernel.org" <will@kernel.org>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-sunxi@googlegroups.com, Corentin Labbe <clabbe.montjoie@gmail.com>,
+ linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hello
 
-> +TX2_EVENT_ATTR(req_pktsent, CCPI2_EVENT_REQ_PKT_SENT);
-> +TX2_EVENT_ATTR(snoop_pktsent, CCPI2_EVENT_SNOOP_PKT_SENT);
-> +TX2_EVENT_ATTR(data_pktsent, CCPI2_EVENT_DATA_PKT_SENT);
-> +TX2_EVENT_ATTR(gic_pktsent, CCPI2_EVENT_GIC_PKT_SENT);
-> +
-> +static struct attribute *ccpi2_pmu_events_attrs[] = {
-> +	&tx2_pmu_event_attr_req_pktsent.attr.attr,
-> +	&tx2_pmu_event_attr_snoop_pktsent.attr.attr,
-> +	&tx2_pmu_event_attr_data_pktsent.attr.attr,
-> +	&tx2_pmu_event_attr_gic_pktsent.attr.attr,
-> +	NULL,
-> +};
+This patch serie adds support for the second version of Allwinner Security System.
+The first generation of the Security System is already handled by the sun4i-ss driver.
+Due to major change, the first driver cannot handle the second one.
+This new Security System is present on A80 and A83T SoCs.
 
-Hi Ganapatrao,
+For the moment, the driver support only DES3/AES in ECB/CBC mode.
+Patchs for CTR/CTS, RSA and RNGs will came later.
 
-Have you considered adding these as uncore pmu-events in the perf tool?
+This serie is tested with CRYPTO_MANAGER_EXTRA_TESTS
+and tested on:
+sun8i-a83t-bananapi-m3
+sun9i-a80-cubieboard4
 
-Some advantages I see:
-- perf list is not swamped with all these uncore events per PMU
-For the Hisi uncore events, we get 100s of events (>600 on the board I 
-just tested, which is crazy)
-- can add more description in the JSON files
-- less stuff in the kernel
+This serie is based on top of the "crypto: add sun8i-ce driver for
+Allwinner crypto engine" serie.
 
-> +
->  static const struct attribute_group l3c_pmu_events_attr_group = {
->  	.name = "events",
->  	.attrs = l3c_pmu_events_attrs,
-> @@ -174,6 +240,11 @@ static const struct attribute_group dmc_pmu_events_attr_group = {
->  	.attrs = dmc_pmu_events_attrs,
->  };
+Regards
 
-[...]
+Corentin Labbe (4):
+  crypto: Add Allwinner sun8i-ss cryptographic offloader
+  dt-bindings: crypto: Add DT bindings documentation for sun8i-ss
+    Security System
+  ARM: dts: sun8i: a83t: Add Security System node
+  ARM: dts: sun9i: a80: Add Security System node
 
->  		tx2_pmu->attr_groups = l3c_pmu_attr_groups;
->  		tx2_pmu->name = devm_kasprintf(dev, GFP_KERNEL,
->  				"uncore_l3c_%d", tx2_pmu->node);
-> @@ -665,10 +846,13 @@ static struct tx2_uncore_pmu *tx2_uncore_pmu_init_dev(struct device *dev,
->  		tx2_pmu->stop_event = uncore_stop_event_l3c;
->  		break;
->  	case PMU_TYPE_DMC:
-> -		tx2_pmu->max_counters = TX2_PMU_MAX_COUNTERS;
-> +		tx2_pmu->max_counters = TX2_PMU_DMC_L3C_MAX_COUNTERS;
-> +		tx2_pmu->counters_mask = 0x3;
->  		tx2_pmu->prorate_factor = TX2_PMU_DMC_CHANNELS;
->  		tx2_pmu->max_events = DMC_EVENT_MAX;
-> +		tx2_pmu->events_mask = 0x1f;
->  		tx2_pmu->hrtimer_interval = TX2_PMU_HRTIMER_INTERVAL;
-> +		tx2_pmu->hrtimer_callback = tx2_hrtimer_callback;
->  		tx2_pmu->attr_groups = dmc_pmu_attr_groups;
->  		tx2_pmu->name = devm_kasprintf(dev, GFP_KERNEL,
->  				"uncore_dmc_%d", tx2_pmu->node);
-> @@ -676,6 +860,21 @@ static struct tx2_uncore_pmu *tx2_uncore_pmu_init_dev(struct device *dev,
->  		tx2_pmu->start_event = uncore_start_event_dmc;
->  		tx2_pmu->stop_event = uncore_stop_event_dmc;
->  		break;
-> +	case PMU_TYPE_CCPI2:
-> +		/* CCPI2 has 8 counters */
-> +		tx2_pmu->max_counters = TX2_PMU_CCPI2_MAX_COUNTERS;
-> +		tx2_pmu->counters_mask = 0x7;
-> +		tx2_pmu->prorate_factor = 1;
-> +		tx2_pmu->max_events = CCPI2_EVENT_MAX;
-> +		tx2_pmu->events_mask = 0x1ff;
-> +		tx2_pmu->attr_groups = ccpi2_pmu_attr_groups;
-> +		tx2_pmu->name = devm_kasprintf(dev, GFP_KERNEL,
-> +				"uncore_ccpi2_%d", tx2_pmu->node);
+ .../bindings/crypto/allwinner,sun8i-ss.yaml   |  64 ++
+ arch/arm/boot/dts/sun8i-a83t.dtsi             |  10 +
+ arch/arm/boot/dts/sun9i-a80.dtsi              |  10 +
+ drivers/crypto/allwinner/Kconfig              |  28 +
+ drivers/crypto/allwinner/Makefile             |   1 +
+ drivers/crypto/allwinner/sun8i-ss/Makefile    |   2 +
+ .../allwinner/sun8i-ss/sun8i-ss-cipher.c      | 438 ++++++++++++
+ .../crypto/allwinner/sun8i-ss/sun8i-ss-core.c | 641 ++++++++++++++++++
+ drivers/crypto/allwinner/sun8i-ss/sun8i-ss.h  | 218 ++++++
+ 9 files changed, 1412 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/crypto/allwinner,sun8i-ss.yaml
+ create mode 100644 drivers/crypto/allwinner/sun8i-ss/Makefile
+ create mode 100644 drivers/crypto/allwinner/sun8i-ss/sun8i-ss-cipher.c
+ create mode 100644 drivers/crypto/allwinner/sun8i-ss/sun8i-ss-core.c
+ create mode 100644 drivers/crypto/allwinner/sun8i-ss/sun8i-ss.h
 
-Do you need to check this for name == NULL?
-
-> +		tx2_pmu->init_cntr_base = init_cntr_base_ccpi2;
-> +		tx2_pmu->start_event = uncore_start_event_ccpi2;
-> +		tx2_pmu->stop_event = uncore_stop_event_ccpi2;
-> +		tx2_pmu->hrtimer_callback = NULL;
-> +		break;
->  	case PMU_TYPE_INVALID:
->  		devm_kfree(dev, tx2_pmu);
->  		return NULL;
-> @@ -744,7 +943,9 @@ static int tx2_uncore_pmu_offline_cpu(unsigned int cpu,
->  	if (cpu != tx2_pmu->cpu)
->  		return 0;
->
-> -	hrtimer_cancel(&tx2_pmu->hrtimer);
-> +	if (tx2_pmu->hrtimer_callback)
-> +		hrtimer_cancel(&tx2_pmu->hrtimer);
-> +
->  	cpumask_copy(&cpu_online_mask_temp, cpu_online_mask);
->  	cpumask_clear_cpu(cpu, &cpu_online_mask_temp);
->  	new_cpu = cpumask_any_and(
->
-
-Thanks,
-John
-
+-- 
+2.21.0
 
 
 _______________________________________________
