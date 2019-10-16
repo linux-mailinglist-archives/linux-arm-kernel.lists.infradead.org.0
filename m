@@ -2,55 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7EF8D9533
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 17:14:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5C2CD953E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 17:15:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=D0Mcs58XKtwT2nWqbTydOwmBrvEqXPHSzyB+IrQSb/U=; b=B320HXD6kyKVif
-	KKJwI5cIJKAUKmNEKAEwN2zEZCyeVuYSlvVRlj+YIQd2HF/q4TDqaqJEg1wIJnmxq8H1Y10oTX6Tp
-	JL9JVXta4RVNslkEr2Exf2G20XTNNKuuA7EatF5+mSZM0OmT25abzQwcoA5loba8uwyuX4OXpH619
-	yBAj5/r+f0gIUM09lsxBNNeeZWNwDkL2sWIdbQjd98/oMfZTzjKzbfXXD/to1U9wHhcsFV4I0hhvO
-	p8DSUVOVByRyjMdUDBr0WFwpPKjfSgFXjRqoFv+AwPPNGVSRrzbovluTMSO/DX+evYUKlDa6ocx0F
-	rKRR/Gb3MFJEiAoEwMvg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ze0WtyBK7SlZfqPUdEC36bNlXYX0UpulSKelVZvCV/4=; b=NVxXDqJ/L0WZq2
+	PbRCD/3z9Dhvw23oRZI9Lfl4d9ZQhHOHX55jxfQSJ7HT4t7BcgaQUCgcBxfbct5t6kLx2nxjesl54
+	z4XULxFSfxDTmLk+EHPp54wvvuzB16HaMYkrGGMew2TDp/5XvBWINSgVmTDc4L3LFjJPRmVRUrDUo
+	Xdv0k/zBT34yKRDyHWkaKsbPZwKO0FABEW22QgXCgu2EYzCHKvQ5D9OiNEgr+MI3NxTHX/IIV0dul
+	TaNQ18XxA4QiVuP/4qVoj+wUVmnj+NgO6oVVYa2dmupnRsh8h2m6MLKi/n+NhAdFsnW6yrN3DvChI
+	s/ED7rxSNFHO4567T2wg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKl0c-0001rx-Iu; Wed, 16 Oct 2019 15:14:42 +0000
+	id 1iKl1J-0002GE-Ap; Wed, 16 Oct 2019 15:15:25 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKl0O-0001rI-PN
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 15:14:30 +0000
+ id 1iKl0T-0001sq-1J
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 15:14:34 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Content-Transfer-Encoding:
- MIME-Version:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=rNDz6lBl54oAMAl4PoUh87ZZXiXfc3HUNKtTz7Vb+bY=; b=rikSPSIpC/ighuL1VSVcnJBIv
- y0hDlNzJ0B28jW/q4J+lBZc1xot0E8tzFPsrr791atMr9lf+o979CCdCvPIgGrtCVNT57P3PraYRe
- /PerpqLx8LphSG2MJou5kFo3fWLMxpo6j9jbk6Z/GH0SHbYIfjWcEWmriV39p7D3iBjUU=;
+ MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
+ :Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From
+ :Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=+5bNbYphCGsY46Tk8+ZQHoFiTpvIW9plEBM0dR4mmpc=; b=O2NGSnRNFlHG3cCeLJCFtEmjhC
+ T+tTIT+8zDoYBYjehc6Y9uAqga+0bs6NSQg2l4knIvh0A1cpxl7xeWCSdOVgoNdCMa8/pKQ9B1UBq
+ xM6dI6qJH87zt1GhaAK6B+naGuQ8fBQt+/kaGHJ05Oo73faXfkSAv/XaFUGGhCWKpzfM=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iKl0I-0005gI-9X; Wed, 16 Oct 2019 15:14:22 +0000
+ id 1iKl0Q-0005gO-RM; Wed, 16 Oct 2019 15:14:30 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 7BF7D2741FD5; Wed, 16 Oct 2019 16:14:21 +0100 (BST)
+ id 523862741FD5; Wed, 16 Oct 2019 16:14:30 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
 To: Catalin Marinas <catalin.marinas@arm.com>,
 	Will Deacon <will@kernel.org>
-Subject: [PATCH v3 0/3] arm64: E0PD support
-Date: Wed, 16 Oct 2019 16:14:18 +0100
-Message-Id: <20191016151421.27708-1-broonie@kernel.org>
+Subject: [PATCH v3 1/3] arm64: Factor out checks for KASLR in KPTI code into
+ separate function
+Date: Wed, 16 Oct 2019 16:14:19 +0100
+Message-Id: <20191016151421.27708-2-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20191016151421.27708-1-broonie@kernel.org>
+References: <20191016151421.27708-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_081428_845143_55C249F4 
-X-CRM114-Status: GOOD (  10.11  )
+X-CRM114-CacheID: sfid-20191016_081433_134519_96B947CE 
+X-CRM114-Status: GOOD (  16.87  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -76,31 +79,123 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
+Cc: Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series adds support for E0PD. We enable E0PD unconditionally where
-present on systems where all the CPUs in the system support E0PD and
-change to not enabling KPTI by default on systems where we have enabled
-E0PD.
+In preparation for E0PD support factor out the checks for interaction
+between KASLR and KPTI done in boot context into a new function
+kaslr_requires_kpti(), in the process clarifying the distinction between
+what we do in boot context and what we do at runtime.
 
-v3: Make E0PD a system wide feature.
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
 
-Mark Brown (3):
-      arm64: Factor out checks for KASLR in KPTI code into separate function
-      arm64: Add initial support for E0PD
-      arm64: Don't use KPTI where we have E0PD
+New patch.
 
- arch/arm64/Kconfig                     | 15 ++++++++
- arch/arm64/include/asm/cpucaps.h       |  3 +-
- arch/arm64/include/asm/mmu.h           | 64 +++++++++++++++++++++++++---------
- arch/arm64/include/asm/pgtable-hwdef.h |  2 ++
- arch/arm64/include/asm/sysreg.h        |  1 +
- arch/arm64/kernel/cpufeature.c         | 29 ++++++++++++++-
- 6 files changed, 95 insertions(+), 19 deletions(-)
+ arch/arm64/include/asm/mmu.h   | 53 +++++++++++++++++++++++-----------
+ arch/arm64/kernel/cpufeature.c |  2 +-
+ 2 files changed, 37 insertions(+), 18 deletions(-)
+
+diff --git a/arch/arm64/include/asm/mmu.h b/arch/arm64/include/asm/mmu.h
+index f217e3292919..55e285fff262 100644
+--- a/arch/arm64/include/asm/mmu.h
++++ b/arch/arm64/include/asm/mmu.h
+@@ -35,10 +35,37 @@ static inline bool arm64_kernel_unmapped_at_el0(void)
+ 	       cpus_have_const_cap(ARM64_UNMAP_KERNEL_AT_EL0);
+ }
+ 
+-static inline bool arm64_kernel_use_ng_mappings(void)
++static inline bool kaslr_requires_kpti(void)
+ {
+ 	bool tx1_bug;
+ 
++	if (!IS_ENABLED(CONFIG_RANDOMIZE_BASE))
++		return false;
++
++	/*
++	 * Systems affected by Cavium erratum 24756 are incompatible
++	 * with KPTI.
++	 */
++	if (!IS_ENABLED(CONFIG_CAVIUM_ERRATUM_27456)) {
++		tx1_bug = false;
++#ifndef MODULE
++	} else if (!static_branch_likely(&arm64_const_caps_ready)) {
++		extern const struct midr_range cavium_erratum_27456_cpus[];
++
++		tx1_bug = is_midr_in_range_list(read_cpuid_id(),
++						cavium_erratum_27456_cpus);
++#endif
++	} else {
++		tx1_bug = __cpus_have_const_cap(ARM64_WORKAROUND_CAVIUM_27456);
++	}
++	if (tx1_bug)
++		return false;
++
++	return kaslr_offset() > 0;
++}
++
++static inline bool arm64_kernel_use_ng_mappings(void)
++{
+ 	/* What's a kpti? Use global mappings if we don't know. */
+ 	if (!IS_ENABLED(CONFIG_UNMAP_KERNEL_AT_EL0))
+ 		return false;
+@@ -52,29 +79,21 @@ static inline bool arm64_kernel_use_ng_mappings(void)
+ 	if (arm64_kernel_unmapped_at_el0())
+ 		return true;
+ 
+-	if (!IS_ENABLED(CONFIG_RANDOMIZE_BASE))
++	/*
++	 * Once we are far enough into boot for capabilities to be
++	 * ready we will have confirmed if we are using non-global
++	 * mappings so don't need to consider anything else here.
++	 */
++	if (static_branch_likely(&arm64_const_caps_ready))
+ 		return false;
+ 
+ 	/*
+ 	 * KASLR is enabled so we're going to be enabling kpti on non-broken
+ 	 * CPUs regardless of their susceptibility to Meltdown. Rather
+ 	 * than force everybody to go through the G -> nG dance later on,
+-	 * just put down non-global mappings from the beginning.
++	 * just put down non-global mappings from the beginning
+ 	 */
+-	if (!IS_ENABLED(CONFIG_CAVIUM_ERRATUM_27456)) {
+-		tx1_bug = false;
+-#ifndef MODULE
+-	} else if (!static_branch_likely(&arm64_const_caps_ready)) {
+-		extern const struct midr_range cavium_erratum_27456_cpus[];
+-
+-		tx1_bug = is_midr_in_range_list(read_cpuid_id(),
+-						cavium_erratum_27456_cpus);
+-#endif
+-	} else {
+-		tx1_bug = __cpus_have_const_cap(ARM64_WORKAROUND_CAVIUM_27456);
+-	}
+-
+-	return !tx1_bug && kaslr_offset() > 0;
++	return kaslr_requires_kpti();
+ }
+ 
+ typedef void (*bp_hardening_cb_t)(void);
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index cabebf1a7976..db311a34a21e 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -1002,7 +1002,7 @@ static bool unmap_kernel_at_el0(const struct arm64_cpu_capabilities *entry,
+ 	}
+ 
+ 	/* Useful for KASLR robustness */
+-	if (IS_ENABLED(CONFIG_RANDOMIZE_BASE) && kaslr_offset() > 0) {
++	if (kaslr_requires_kpti()) {
+ 		if (!__kpti_forced) {
+ 			str = "KASLR";
+ 			__kpti_forced = 1;
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
