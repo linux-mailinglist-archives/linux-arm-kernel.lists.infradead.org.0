@@ -2,116 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CDA08D8F75
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 13:31:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96E0DD8F72
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 13:30:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=izDj6+e7UFCDBDkrE45m4htrtvETYtcZPxUTp6ProlE=; b=oYD9gasW52myxn
-	uqu0cNXCg57opHXVPpLtD48szDLJ5vr1R9kkkdI8xfeMr4LYlIjVfMNe2ecAp3ZycPeTY/sMj/ile
-	lfSXxQxWvIJvR71ctKJLd/LiDwZ0p+uskTPtKTesPZn4a1RNEfFp2I+M0G2DUoJzt1I931SITZbaO
-	kYocYGjXbiJoMxPwrzjSyVvxe8zXZT0qsOHTIK2yDpd2D4puMkrA1BWFgKKfVwdXR0aZ7Cl9cyzC7
-	DrQ4/X4bXaBt6Qn8KxohfQfFWMj+fVdZJuAutlGewwDPuwtR1Hg0bpJYV00fcGV4Biz65v0e/AgD6
-	/m0Z0Lw4Bamynt62W9Yg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=L3LBXMocJwqRq2R27Wjl3enqGZRPojEWfXXWIIzyfec=; b=epgTYlM9DQlt8+
+	OMWwWDPsUz/K7v/1AGM+uwXZ5vaulxg6EeV1PCXLkhNpDnh/bbW1kkcP02jv383FGCT5r27UMOIlE
+	5B3vr5xyxVAPmKSWSUhvpGmVNIm/wIj7P39LeCFI+lhbUAGwdww7txPXK/7UjN/EG1gfKUdHwxEw0
+	xqcLhU/PrXE7zNQda7ASKXWjp0SxqG+LzXSw1Tyv44wG+SfSWCW9GfkQwgUPvL0t6UBgdtEjLrQYw
+	55WNen4NyK8B5BHD8qEPpeEbFD8uq06PTfesf0CIGG6Mlz5JoOnmDszM6iwpokX53tnIofZe67upW
+	2DmZmqMXLXfo+gF2gdcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKhWK-0007ek-UQ; Wed, 16 Oct 2019 11:31:12 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1iKhVg-0007OW-Ac; Wed, 16 Oct 2019 11:30:32 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKhWA-0007dm-LV; Wed, 16 Oct 2019 11:31:04 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x9GBQG43023848; Wed, 16 Oct 2019 13:29:19 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=LG7dUwNIu0+LFfdXsArrTdZw8lqv6tMm88WzwKR6KrA=;
- b=S1dIOLgHhlnWOXh0gObHc7UsclwUejJlDnyrM1B+IDgosRXzZubyieCbZiLXGnEqlKYL
- hpd61tPz7LkYexBy/HvcgZ45lzNg6K5RFrtQsR1/CsvmQpM0HL/LOKFVqbEJoCrjqRaJ
- /E9EoqdTnfvZ+edK6JdPaQOvWKFGFEXldD9L/94lcNehviIcFV2PYLDKjiVqFaJ1Wjsg
- dwmH1cOV1yvdz2fcgJRj41SW6+7vKlTL7PDE7rlsl1xD4adXDF9AaC3xXAi5DlfpperF
- v7x4omaQWAxF3KYwgM0sjlCaITEkEpA4SQIgW0FP7lZAToaCZOv54Gin4gnBg888vRQx Zw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2vk3y9x8wr-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 16 Oct 2019 13:29:19 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 7D01310002A;
- Wed, 16 Oct 2019 13:29:16 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag6node2.st.com [10.75.127.17])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 38E132074CE;
- Wed, 16 Oct 2019 13:29:16 +0200 (CEST)
-Received: from SFHDAG6NODE3.st.com (10.75.127.18) by SFHDAG6NODE2.st.com
- (10.75.127.17) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 16 Oct
- 2019 13:29:15 +0200
-Received: from SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6]) by
- SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6%20]) with mapi id
- 15.00.1473.003; Wed, 16 Oct 2019 13:29:15 +0200
-From: Patrice CHOTARD <patrice.chotard@st.com>
-To: YueHaibing <yuehaibing@huawei.com>, "herbert@gondor.apana.org.au"
- <herbert@gondor.apana.org.au>,
- "mpm@selenic.com" <mpm@selenic.com>, "arnd@arndb.de" <arnd@arndb.de>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "nicolas.ferre@microchip.com" <nicolas.ferre@microchip.com>,
- "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
- "ludovic.desroches@microchip.com" <ludovic.desroches@microchip.com>,
- "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
- "rjui@broadcom.com" <rjui@broadcom.com>,
- "sbranden@broadcom.com" <sbranden@broadcom.com>,
- "bcm-kernel-feedback-list@broadcom.com"
- <bcm-kernel-feedback-list@broadcom.com>,
- "eric@anholt.net" <eric@anholt.net>, "wahrenst@gmx.net" <wahrenst@gmx.net>,
- "l.stelmach@samsung.com" <l.stelmach@samsung.com>,
- "kgene@kernel.org" <kgene@kernel.org>, "krzk@kernel.org" <krzk@kernel.org>,
- "khilman@baylibre.com" <khilman@baylibre.com>,
- "dsaxena@plexity.net" <dsaxena@plexity.net>
-Subject: Re: [PATCH -next 11/13] hwrng: st - use
- devm_platform_ioremap_resource() to simplify code
-Thread-Topic: [PATCH -next 11/13] hwrng: st - use
- devm_platform_ioremap_resource() to simplify code
-Thread-Index: AQHVhA8R7X2BGSeJiEmwGCSOAcwdJ6ddADyA
-Date: Wed, 16 Oct 2019 11:29:15 +0000
-Message-ID: <d9fd5224-a858-e7ea-eb71-2ed6696a6ffd@st.com>
-References: <20191016104621.26056-1-yuehaibing@huawei.com>
- <20191016104621.26056-12-yuehaibing@huawei.com>
-In-Reply-To: <20191016104621.26056-12-yuehaibing@huawei.com>
-Accept-Language: fr-FR, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.46]
-Content-ID: <B3EF5CC03322D04D91346E3040ABD037@st.com>
+ id 1iKhVR-0007Fm-ME
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 11:30:19 +0000
+Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id E10A368E0175608A4F90;
+ Wed, 16 Oct 2019 19:30:15 +0800 (CST)
+Received: from [127.0.0.1] (10.177.251.225) by DGGEMS409-HUB.china.huawei.com
+ (10.3.19.209) with Microsoft SMTP Server id 14.3.439.0;
+ Wed, 16 Oct 2019 19:30:07 +0800
+Subject: Re: [PATCH V2] arm64: psci: Reduce waiting time of cpu_psci_cpu_kill()
+To: Sudeep Holla <sudeep.holla@arm.com>
+References: <18068756-0f39-6388-3290-cf03746e767d@huawei.com>
+ <20191015162358.bt5rffidkv2j4xqb@willie-the-truck>
+ <ab42357e-f4f9-9019-e8d9-7e9bfe106e9e@huawei.com>
+ <20191016102545.GA11386@bogus>
+From: Yunfeng Ye <yeyunfeng@huawei.com>
+Message-ID: <13d82e24-90bd-0c17-ef7f-aa7fec272f59@huawei.com>
+Date: Wed, 16 Oct 2019 19:29:59 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
- definitions=2019-10-16_04:2019-10-16,2019-10-16 signatures=0
+In-Reply-To: <20191016102545.GA11386@bogus>
+Content-Language: en-US
+X-Originating-IP: [10.177.251.225]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_043103_371355_1E6C34F8 
-X-CRM114-Status: GOOD (  18.04  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191016_043017_880329_BC195C5F 
+X-CRM114-Status: GOOD (  22.78  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -123,55 +68,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+Cc: "kstewart@linuxfoundation.org" <kstewart@linuxfoundation.org>,
+ "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>, hushiyuan@huawei.com,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-rpi-kernel@lists.infradead.org" <linux-rpi-kernel@lists.infradead.org>,
- "linux-amlogic@lists.infradead.org" <linux-amlogic@lists.infradead.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>
+ linfeilong@huawei.com, David Laight <David.Laight@ACULAB.COM>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "wuyun.wu@huawei.com" <wuyun.wu@huawei.com>, Will Deacon <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi
 
-On 10/16/19 12:46 PM, YueHaibing wrote:
-> Use devm_platform_ioremap_resource() to simplify the code a bit.
-> This is detected by coccinelle.
->
-> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
-> ---
->  drivers/char/hw_random/st-rng.c | 4 +---
->  1 file changed, 1 insertion(+), 3 deletions(-)
->
-> diff --git a/drivers/char/hw_random/st-rng.c b/drivers/char/hw_random/st-rng.c
-> index 8634483..783c24e 100644
-> --- a/drivers/char/hw_random/st-rng.c
-> +++ b/drivers/char/hw_random/st-rng.c
-> @@ -72,7 +72,6 @@ static int st_rng_read(struct hwrng *rng, void *data, size_t max, bool wait)
->  static int st_rng_probe(struct platform_device *pdev)
->  {
->  	struct st_rng_data *ddata;
-> -	struct resource *res;
->  	struct clk *clk;
->  	void __iomem *base;
->  	int ret;
-> @@ -81,8 +80,7 @@ static int st_rng_probe(struct platform_device *pdev)
->  	if (!ddata)
->  		return -ENOMEM;
->  
-> -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> -	base = devm_ioremap_resource(&pdev->dev, res);
-> +	base = devm_platform_ioremap_resource(pdev, 0);
->  	if (IS_ERR(base))
->  		return PTR_ERR(base);
->  
 
-Reviewed-by: Patrice Chotard <patrice.chotard@st.com>
+On 2019/10/16 18:25, Sudeep Holla wrote:
+> On Wed, Oct 16, 2019 at 11:22:23AM +0800, Yunfeng Ye wrote:
+>>
+>>
+>> On 2019/10/16 0:23, Will Deacon wrote:
+>>> Hi,
+>>>
+>>> On Sat, Sep 21, 2019 at 07:21:17PM +0800, Yunfeng Ye wrote:
+>>>> If psci_ops.affinity_info() fails, it will sleep 10ms, which will not
+>>>> take so long in the right case. Use usleep_range() instead of msleep(),
+>>>> reduce the waiting time, and give a chance to busy wait before sleep.
+>>>
+>>> Can you elaborate on "the right case" please? It's not clear to me
+>>> exactly what problem you're solving here.
+>>>
+>> The situation is that when the power is off, we have a battery to save some
+>> information, but the battery power is limited, so we reduce the power consumption
+>> by turning off the cores, and need fastly to complete the core shutdown. However, the
+>> time of cpu_psci_cpu_kill() will take 10ms. We have tested the time that it does not
+>> need 10ms, and most case is about 50us-500us. if we reduce the time of cpu_psci_cpu_kill(),
+>> we can reduce 10% - 30% of the total time.
+>>
+> 
+> Have you checked why PSCI AFFINITY_INFO not returning LEVEL_OFF quickly
+> then ? We wait for upto 5s in cpu_wait_death(worst case) before cpu_kill
+> is called from __cpu_die.
+> 
+When cpu_wait_death() is done, it means that the cpu core's hardware prepare to
+die. I think not returning LEVEL_OFF quickly is that hardware need time to handle.
+I don't know how much time it need is reasonable, but I test that it need about
+50us - 500us.
 
-Thanks
+In addition I have not meat the worst case that cpu_wait_death() need upto 5s, and
+we only take normal case into account.
+
+thanks.
+
+> Moreover I don't understand the argument here. The cpu being killed
+> will be OFF, as soon as it can and firmware controls that and this
+> change is not related to CPU_OFF. And this CPU calling cpu_kill can
+> sleep and 10ms is good to enter idle states if it's idle saving power,
+> so I fail to map the power saving you mention above.
+> 
+We have hundreds of CPU cores that need to be shut down. For example,
+a CPU has 200 cores, and the thread to shut down the core is in CPU 0.
+and the thread need to shut down from core 1 to core 200. However, the
+implementation of the kernel can only shut down cpu cores one by one, so we
+need to wait for cpu_kill() to finish before shutting down the next
+CPU core. If it wait for 10ms each time in cpu_kill, it will takes up
+about 2 seconds in cpu_kill() total.
+
+It is not to save power through msleep to idle state, but to quickly
+turn off other CPU core's hardware to reduce power consumption.
+
+thanks.
+
+>> So change msleep (10) to usleep_range() to reduce the waiting time. In addition,
+>> we don't want to be scheduled during the sleeping time, some threads may take a
+>> long time and don't give up the CPU, which affects the time of core shutdown,
+>> Therefore, we add a chance to busy-wait max 1ms.
+>>
+> 
+> On the other hand, usleep_range reduces the timer interval and hence
+> increases the chance of the callee CPU not to enter deeper idle states.
+> 
+> What am I missing here ? What's the use case or power off situation
+> you are talking about above ?
+> 
+As mentioned above, we are not to save power through msleep to idle state,  but to quickly
+turn off other CPU core's hardware to reduce power consumption.
+
+>>
+>>> I've also added Sudeep to the thread, since I'd like his ack on the change.
+>>>
+> 
+> Thanks Will.
+> 
+> --
+> Regards,
+> Sudeep
+> 
+> .
+> 
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
