@@ -2,55 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 818BED94F1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 17:06:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5503D94F3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 17:06:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UKulFfvQeeQo6j4iT0C4Iy9zJ38cRbs8XbXHNqp41UQ=; b=Xjox7iGaTmaz9G
-	q07nDDoqyut4eloFTdDjGMKi3BoOauccZnCg87HgM+FqQ2HNlRziENY9H7aCWfpSrkAvl22VPhaMs
-	PhpNhr6Yn8zssZZFgoGGYkIAR+D/LujmjDnDQHyYcDgXT2EkNpdx3pg9TS/5mtq/tkjfiXAtih2aX
-	9N8ee6VHab+/57e8HqXRFDBvk5FJQsGDOOCgOwM51pJpDAr23AEBICIG8U5+OYr2kFf5cqnGuSMwM
-	2yssdUmvA318bghGvzEMVhSG7aH84FMLcRk/ysy72x4RbzlhiREdgl74fMnuXJ3ZnXD2OMLMLUBw9
-	KYjTvj7XSB6CKGdoaJpQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=EAn4MFoTRajdoO8Ks2Nbds3lTABQkDRgBXJNR6bA34I=; b=AI6y5uIl9Ja52V
+	UoAnH4zlL6GypCjKM3S8YJjntjn2jcHD0li36CDjRB+GEOpWhUihCKDcfdPzAQn3HDzMmLMN/cFRp
+	lnVDzDaje5TuTlt47rq3PBSVje7QFm5oyQfHzGKv8V+kHTKN+KgSVaNuGgjy0GRQ3fGBhqQ7zWmMa
+	OH5dH9aB4JS6zpALJApeJhasrgOcMkRV78FYc687dTonIYG5BHH4bJtPDt+oPZpp+xW3BtnKVgWhg
+	di5gAZVgM2DX4DMUiNWdJsfeEHyJDF+ezLQjmZOXJYtw+51d324WsiSr2mzZgnzQ+gvbR8RZ4zN8U
+	gdVghTWITTelgBamiAhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKksL-0004rL-PY; Wed, 16 Oct 2019 15:06:09 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKks6-0004o6-FA
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 15:05:56 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 454971570;
- Wed, 16 Oct 2019 08:05:53 -0700 (PDT)
-Received: from bogus (unknown [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 48FB13F68E;
- Wed, 16 Oct 2019 08:05:51 -0700 (PDT)
-Date: Wed, 16 Oct 2019 16:05:45 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Yunfeng Ye <yeyunfeng@huawei.com>
-Subject: Re: [PATCH V2] arm64: psci: Reduce waiting time of cpu_psci_cpu_kill()
-Message-ID: <20191016150545.GA6750@bogus>
-References: <18068756-0f39-6388-3290-cf03746e767d@huawei.com>
- <20191015162358.bt5rffidkv2j4xqb@willie-the-truck>
- <ab42357e-f4f9-9019-e8d9-7e9bfe106e9e@huawei.com>
- <20191016102545.GA11386@bogus>
- <13d82e24-90bd-0c17-ef7f-aa7fec272f59@huawei.com>
+	id 1iKksr-00059h-Mn; Wed, 16 Oct 2019 15:06:41 +0000
+Received: from skedge03.snt-world.com ([91.208.41.68])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iKkse-000571-Nz
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 15:06:30 +0000
+Received: from sntmail12r.snt-is.com (unknown [10.203.32.182])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by skedge03.snt-world.com (Postfix) with ESMTPS id 48A0767A897;
+ Wed, 16 Oct 2019 17:06:24 +0200 (CEST)
+Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail12r.snt-is.com
+ (10.203.32.182) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Wed, 16 Oct
+ 2019 17:06:23 +0200
+Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
+ sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
+ 15.01.1713.004; Wed, 16 Oct 2019 17:06:23 +0200
+From: Schrempf Frieder <frieder.schrempf@kontron.de>
+To: "krzk@kernel.org" <krzk@kernel.org>, "robh+dt@kernel.org"
+ <robh+dt@kernel.org>, Schrempf Frieder <frieder.schrempf@kontron.de>, "Mark
+ Rutland" <mark.rutland@arm.com>, Shawn Guo <shawnguo@kernel.org>, Sascha
+ Hauer <s.hauer@pengutronix.de>, Pengutronix Kernel Team
+ <kernel@pengutronix.de>, Fabio Estevam <festevam@gmail.com>, NXP Linux Team
+ <linux-imx@nxp.com>, Manivannan Sadhasivam
+ <manivannan.sadhasivam@linaro.org>, Andrey Smirnov
+ <andrew.smirnov@gmail.com>, Aisheng Dong <aisheng.dong@nxp.com>, "Mauro
+ Carvalho Chehab" <mchehab+samsung@kernel.org>, "David S. Miller"
+ <davem@davemloft.net>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Jonathan Cameron <Jonathan.Cameron@huawei.com>, "Paul E. McKenney"
+ <paulmck@linux.ibm.com>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
+Subject: [PATCH 00/10] Add support for more Kontron i.MX6UL/ULL SoMs and boards
+Thread-Topic: [PATCH 00/10] Add support for more Kontron i.MX6UL/ULL SoMs and
+ boards
+Thread-Index: AQHVhDNGmnCbI2WJmkisIF0qUQi7cg==
+Date: Wed, 16 Oct 2019 15:06:23 +0000
+Message-ID: <20191016150622.21753-1-frieder.schrempf@kontron.de>
+Accept-Language: de-DE, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.17.1
+x-originating-ip: [172.25.9.193]
+x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <13d82e24-90bd-0c17-ef7f-aa7fec272f59@huawei.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-SnT-MailScanner-Information: Please contact the ISP for more information
+X-SnT-MailScanner-ID: 48A0767A897.AEFBA
+X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
+ Provider for details
+X-SnT-MailScanner-SpamCheck: 
+X-SnT-MailScanner-From: frieder.schrempf@kontron.de
+X-SnT-MailScanner-To: aisheng.dong@nxp.com, andrew.smirnov@gmail.com,
+ davem@davemloft.net, devicetree@vger.kernel.org, festevam@gmail.com,
+ gregkh@linuxfoundation.org, jonathan.cameron@huawei.com,
+ kernel@pengutronix.de, krzk@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
+ linux-kernel@vger.kernel.org, manivannan.sadhasivam@linaro.org,
+ mark.rutland@arm.com, mchehab+samsung@kernel.org,
+ paulmck@linux.ibm.com, robh+dt@kernel.org, robh@kernel.org,
+ s.hauer@pengutronix.de, shawnguo@kernel.org
+X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_080554_650224_F7BAC60D 
-X-CRM114-Status: GOOD (  29.81  )
+X-CRM114-CacheID: sfid-20191016_080629_110027_788C4814 
+X-CRM114-Status: UNSURE (   9.91  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [91.208.41.68 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,121 +104,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "kstewart@linuxfoundation.org" <kstewart@linuxfoundation.org>,
- "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>, hushiyuan@huawei.com,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- Sudeep Holla <sudeep.holla@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- linfeilong@huawei.com, David Laight <David.Laight@ACULAB.COM>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "tglx@linutronix.de" <tglx@linutronix.de>,
- "wuyun.wu@huawei.com" <wuyun.wu@huawei.com>, Will Deacon <will@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Rob Herring <robh@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 16, 2019 at 07:29:59PM +0800, Yunfeng Ye wrote:
->
->
-> On 2019/10/16 18:25, Sudeep Holla wrote:
-> > On Wed, Oct 16, 2019 at 11:22:23AM +0800, Yunfeng Ye wrote:
-> >>
-> >>
-> >> On 2019/10/16 0:23, Will Deacon wrote:
-> >>> Hi,
-> >>>
-> >>> On Sat, Sep 21, 2019 at 07:21:17PM +0800, Yunfeng Ye wrote:
-> >>>> If psci_ops.affinity_info() fails, it will sleep 10ms, which will not
-> >>>> take so long in the right case. Use usleep_range() instead of msleep(),
-> >>>> reduce the waiting time, and give a chance to busy wait before sleep.
-> >>>
-> >>> Can you elaborate on "the right case" please? It's not clear to me
-> >>> exactly what problem you're solving here.
-> >>>
-> >> The situation is that when the power is off, we have a battery to save some
-> >> information, but the battery power is limited, so we reduce the power consumption
-> >> by turning off the cores, and need fastly to complete the core shutdown. However, the
-> >> time of cpu_psci_cpu_kill() will take 10ms. We have tested the time that it does not
-> >> need 10ms, and most case is about 50us-500us. if we reduce the time of cpu_psci_cpu_kill(),
-> >> we can reduce 10% - 30% of the total time.
-> >>
-> >
-> > Have you checked why PSCI AFFINITY_INFO not returning LEVEL_OFF quickly
-> > then ? We wait for upto 5s in cpu_wait_death(worst case) before cpu_kill
-> > is called from __cpu_die.
-> >
-> When cpu_wait_death() is done, it means that the cpu core's hardware prepare to
-> die. I think not returning LEVEL_OFF quickly is that hardware need time to handle.
-> I don't know how much time it need is reasonable, but I test that it need about
-> 50us - 500us.
->
+From: Frieder Schrempf <frieder.schrempf@kontron.de>
 
-Fair enough.
+In order to support more of the i.MX6UL/ULL-based SoMs and boards by
+Kontron Electronics GmbH, we restructure the devicetrees to share common
+parts and add new devicetrees for the missing boards.
 
-> In addition I have not meat the worst case that cpu_wait_death() need upto
-> 5s, and we only take normal case into account.
->
+Currently there are the following SoM flavors:
+  * N6310: SoM with i.MX6UL-2, 256MB RAM, 256MB SPI NAND
+  * N6311: SoM with i.MX6UL-2, 512MB RAM, 512MB SPI NAND (new)
+  * N6411: SoM with i.MX6ULL, 512MB RAM, 512MB SPI NAND (new)
 
-Good
+Each of the SoMs also features 1MB SPI NOR and an Ethernet PHY. The carrier
+board for the evalkit is the same for all SoMs.
 
->
-> > Moreover I don't understand the argument here. The cpu being killed
-> > will be OFF, as soon as it can and firmware controls that and this
-> > change is not related to CPU_OFF. And this CPU calling cpu_kill can
-> > sleep and 10ms is good to enter idle states if it's idle saving power,
-> > so I fail to map the power saving you mention above.
-> >
-> We have hundreds of CPU cores that need to be shut down. For example,
-> a CPU has 200 cores, and the thread to shut down the core is in CPU 0.
-> and the thread need to shut down from core 1 to core 200. However, the
-> implementation of the kernel can only shut down cpu cores one by one, so we
-> need to wait for cpu_kill() to finish before shutting down the next
-> CPU core. If it wait for 10ms each time in cpu_kill, it will takes up
-> about 2 seconds in cpu_kill() total.
->
+Frieder Schrempf (10):
+  ARM: dts: imx6ul-kontron-n6310: Move common SoM nodes to a separate
+    file
+  ARM: dts: Add support for two more Kontron SoMs N6311 and N6411
+  ARM: dts: imx6ul-kontron-n6310-s: Move common nodes to a separate file
+  ARM: dts: Add support for two more Kontron evalkit boards 'N6311 S'
+    and 'N6411 S'
+  ARM: dts: imx6ul-kontron-n6x1x: Add 'chosen' node with 'stdout-path'
+  ARM: dts: imx6ul-kontron-n6x1x-s: Specify bus-width for SD card and
+    eMMC
+  ARM: dts: imx6ul-kontron-n6x1x-s: Add vbus-supply and overcurrent
+    polarity to usb nodes
+  ARM: dts: imx6ul-kontron-n6x1x-s: Remove an obsolete comment and fix
+    indentation
+  dt-bindings: arm: fsl: Add more Kontron i.MX6UL/ULL compatibles
+  MAINTAINERS: Add an entry for Kontron Electronics ARM board support
 
-OK, thanks for the illustrative example. This make sense to me now. But
-you comparing with battery powered devices confused me and I assumed
-it as some hack to optimise mobile workload.
+ .../devicetree/bindings/arm/fsl.yaml          |  14 +
+ MAINTAINERS                                   |   6 +
+ arch/arm/boot/dts/imx6ul-kontron-n6310-s.dts  | 405 +----------------
+ .../boot/dts/imx6ul-kontron-n6310-som.dtsi    |  95 +---
+ arch/arm/boot/dts/imx6ul-kontron-n6311-s.dts  |  16 +
+ .../boot/dts/imx6ul-kontron-n6311-som.dtsi    |  40 ++
+ arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi | 422 ++++++++++++++++++
+ .../dts/imx6ul-kontron-n6x1x-som-common.dtsi  | 129 ++++++
+ arch/arm/boot/dts/imx6ull-kontron-n6411-s.dts |  16 +
+ .../boot/dts/imx6ull-kontron-n6411-som.dtsi   |  40 ++
+ 10 files changed, 685 insertions(+), 498 deletions(-)
+ create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6311-s.dts
+ create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6311-som.dtsi
+ create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi
+ create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6x1x-som-common.dtsi
+ create mode 100644 arch/arm/boot/dts/imx6ull-kontron-n6411-s.dts
+ create mode 100644 arch/arm/boot/dts/imx6ull-kontron-n6411-som.dtsi
 
-> >> So change msleep (10) to usleep_range() to reduce the waiting time. In addition,
-> >> we don't want to be scheduled during the sleeping time, some threads may take a
-> >> long time and don't give up the CPU, which affects the time of core shutdown,
-> >> Therefore, we add a chance to busy-wait max 1ms.
-> >>
-> >
-> > On the other hand, usleep_range reduces the timer interval and hence
-> > increases the chance of the callee CPU not to enter deeper idle states.
-> >
-> > What am I missing here ? What's the use case or power off situation
-> > you are talking about above ?
-> >
-> As mentioned above, we are not to save power through msleep to idle state,
-> but to quickly turn off other CPU core's hardware to reduce power consumption.
-
-You still don't provide your use-case in which this is required. I know
-this will be useful for suspend-to-ram. Do you have any other use-case
-that you need to power-off large number of CPUs like this ? Also you
-mentioned battery powered, and I don't think any battery powered device
-has 200 thread like in your example :)
-
-You need to mention few things clearly in the commit log:
-1. How the CPU hotplug operation is serialised in some use-case like
-   suspend-to-ram
-2. How that may impact systems with large number of CPUs
-3. How your change helps to improve that
-
-It may it easy for anyone to understand the motivation for this change.
-The commit message you have doesn't give any clue on all the above and
-hence we have lot of questions.
-
-I will respond to the original patch separately.
-
---
-Regards,
-Sudeep
+-- 
+2.17.1
 
 _______________________________________________
 linux-arm-kernel mailing list
