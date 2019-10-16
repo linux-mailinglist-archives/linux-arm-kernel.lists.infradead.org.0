@@ -2,65 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1B1FD9343
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 16:02:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B083D935F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 16 Oct 2019 16:09:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8K6uyeiiWDTSCBCYMUKX5i3672LS+tmaggfDEEd4aTY=; b=r05jG8/2pzu4sWIH1s6cob6d/
-	2w49YzgAJcRHbS5maNGA4dBBgrfhSH05CQGDD/HNOYLfxiRHREu9Luw6CPZ2JaJTvUSdf5lRfT5Jk
-	8at9jnwkN3zmz1iE516JQZN0yJOgA9KftH0kseGszb4xOKcn4Ms2kWYloqn+13kmKxeT3PDhdN4FW
-	mER8Q59wHObNS7JbtGbhvOh6WPxX+fkMDM1AYcAqUXf2TZaE6QI+NtZMiWJiLjNlgH0tqjFQWXcBi
-	Mx6d5gZO802JhfFJ4lvTbiWtN5Qcbs9dddX5jbuGpIVq4/QxxZea+jASOHgkQ4bgtUZFsoppMm9yo
-	bO9XGNS0Q==;
+	 bh=ImV7NF3lWjzDMfYMSMJMrCQIOiHhr2jQoY6xkrVsTCo=; b=RvL6qAZQD7ARzKKiVsMZQBxHU
+	J2tdCjoQ9qHzHGqWljXspKaDaVMTEKHTv7xXi5eAWvFFgVIepf7eneslzGz1xvih/7EhlL+m9QU0D
+	tCKgmzhQVfxXNqC8JEi5+NkP4WPqKfk37QgfGoelt1XNohYjJhtAtEkqPV8bTHZUsWINAYUX9UHHj
+	gUQ2vpXEPgiC4Gkg7C1ZIzQHMid2X+9LruvlEFEcKcToHQdpY0w+/ZjfBjYO4pYwxHGOwckj5Ipqo
+	mpNksgTNNyVwlxeV6nG/8VcCLSalr+FwfHct1tDoEQi5qXnyUnA7fuje/YV1HfiqhJazQtyKv/hrO
+	GU+fjGr3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKjsE-00028s-Dq; Wed, 16 Oct 2019 14:01:58 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1iKjzW-0005RQ-Ox; Wed, 16 Oct 2019 14:09:30 +0000
+Received: from node.akkea.ca ([192.155.83.177])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKjs5-00027f-FG
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 14:01:51 +0000
-Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
- [10.5.11.13])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 477112A09B1;
- Wed, 16 Oct 2019 14:01:48 +0000 (UTC)
-Received: from [10.36.116.19] (ovpn-116-19.ams2.redhat.com [10.36.116.19])
- by smtp.corp.redhat.com (Postfix) with ESMTP id B60E160605;
- Wed, 16 Oct 2019 14:01:45 +0000 (UTC)
-Subject: Re: [PATCH v6 06/10] mm/memory_hotplug: Poison memmap in
- remove_pfn_range_from_zone()
-To: linux-kernel@vger.kernel.org
-References: <20191006085646.5768-1-david@redhat.com>
- <20191006085646.5768-7-david@redhat.com>
-From: David Hildenbrand <david@redhat.com>
-Organization: Red Hat GmbH
-Message-ID: <f5159e91-cef3-de65-af59-7c81e7c84d6d@redhat.com>
-Date: Wed, 16 Oct 2019 16:01:44 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.1
+ id 1iKjzO-0005GI-Ar
+ for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 14:09:24 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by node.akkea.ca (Postfix) with ESMTP id BF7914E2006;
+ Wed, 16 Oct 2019 14:09:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=akkea.ca; s=mail;
+ t=1571234960; bh=SySZbeA7Bkl9noJf9M1eRU1GR1VJDQ6GBVN3/8gwzls=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References;
+ b=E//vSzIc0HA0XOLiPmdNI94K0FsgDWS0JFdxfVGP1lGhrPxfNGSu1gfD6Hvxg1TcK
+ ykUphFTB6HPrkGXg6EtINPvmHQwUJv5WVajCAnb6CPhfUiShH2JocEzLkZLrhSPiD7
+ UQXfWr8oNaaFFsMHtDxvF7+w6FCYpWFcWfMWR+rM=
+X-Virus-Scanned: Debian amavisd-new at mail.akkea.ca
+Received: from node.akkea.ca ([127.0.0.1])
+ by localhost (mail.akkea.ca [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id LbAwgwHeKEyA; Wed, 16 Oct 2019 14:09:20 +0000 (UTC)
+Received: from www.akkea.ca (node.akkea.ca [192.155.83.177])
+ by node.akkea.ca (Postfix) with ESMTPSA id 1C7094E2003;
+ Wed, 16 Oct 2019 14:09:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=akkea.ca; s=mail;
+ t=1571234960; bh=SySZbeA7Bkl9noJf9M1eRU1GR1VJDQ6GBVN3/8gwzls=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References;
+ b=E//vSzIc0HA0XOLiPmdNI94K0FsgDWS0JFdxfVGP1lGhrPxfNGSu1gfD6Hvxg1TcK
+ ykUphFTB6HPrkGXg6EtINPvmHQwUJv5WVajCAnb6CPhfUiShH2JocEzLkZLrhSPiD7
+ UQXfWr8oNaaFFsMHtDxvF7+w6FCYpWFcWfMWR+rM=
 MIME-Version: 1.0
-In-Reply-To: <20191006085646.5768-7-david@redhat.com>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.38]); Wed, 16 Oct 2019 14:01:48 +0000 (UTC)
+Date: Wed, 16 Oct 2019 07:09:20 -0700
+From: Angus Ainslie <angus@akkea.ca>
+To: Leonard Crestez <leonard.crestez@nxp.com>
+Subject: Re: [RFCv3 3/3] interconnect: imx: Add platform driver for imx8mm
+In-Reply-To: <VI1PR04MB70231CD1535CBCB699F045D4EE930@VI1PR04MB7023.eurprd04.prod.outlook.com>
+References: <cover.1565088423.git.leonard.crestez@nxp.com>
+ <cf265add1502a75c4d6e6261ab1570c665e82c83.1565088423.git.leonard.crestez@nxp.com>
+ <a2e09a9b-574f-8410-423e-0b0d8ea5c2ab@posteo.de>
+ <VI1PR04MB7023E441FEE0D9288CAC0F44EEAA0@VI1PR04MB7023.eurprd04.prod.outlook.com>
+ <be41481b-5184-7878-b25e-41b7a1e1b2d5@posteo.de>
+ <7c1452f3d8c13aeadcabf7807049092c@akkea.ca>
+ <VI1PR04MB70231CD1535CBCB699F045D4EE930@VI1PR04MB7023.eurprd04.prod.outlook.com>
+Message-ID: <68e456574e2072740f41fac8c9c2377b@akkea.ca>
+X-Sender: angus@akkea.ca
+User-Agent: Roundcube Webmail/1.3.6
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_070149_535492_5D362A4C 
-X-CRM114-Status: GOOD (  14.47  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191016_070922_418831_720DEC4E 
+X-CRM114-Status: GOOD (  26.94  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,31 +89,216 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, Michal Hocko <mhocko@suse.com>,
- linux-ia64@vger.kernel.org, Pavel Tatashin <pasha.tatashin@soleen.com>,
- linux-sh@vger.kernel.org, x86@kernel.org, linux-mm@kvack.org,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
- Oscar Salvador <osalvador@suse.de>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ =?UTF-8?Q?Artur_=C5=9Awigo=C5=84?= <a.swigon@partner.samsung.com>,
+ Jacky Bai <ping.bai@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>, linux-pm-owner@vger.kernel.org,
+ Alexandre Bailon <abailon@baylibre.com>, Anson Huang <anson.huang@nxp.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>, dl-linux-imx <linux-imx@nxp.com>,
+ devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Martin Kepplinger <martink@posteo.de>,
+ linux-arm-kernel@lists.infradead.org, Aisheng Dong <aisheng.dong@nxp.com>,
+ Saravana Kannan <saravanak@google.com>, Stephen Boyd <sboyd@kernel.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>, kernel@pengutronix.de,
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ Georgi Djakov <georgi.djakov@linaro.org>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 06.10.19 10:56, David Hildenbrand wrote:
-> Let's poison the pages similar to when adding new memory in
-> sparse_add_section(). Also call remove_pfn_range_from_zone() from
-> memunmap_pages(), so we can poison the memmap from there as well.
+On 2019-10-15 07:05, Leonard Crestez wrote:
+> On 10.10.2019 17:43, Angus Ainslie wrote:
+>> 
+>> I've integrated your u-boot and ATF on our board and I have a couple 
+>> of
+>> questions. Our board is running imx8mq B0 (Rev 2.0) silicon.
+>> 
+>> It looks like this line limits the training frequencies to 800 MHz and
+>> 166 MHz
 > 
-> While at it, calculate the pfn in memunmap_pages() only once.
+> Yes! This is due to a hardware errata which was solved in B1: DRAM pll
+> can't be disabled. This means that instead of 25/100/800 freqs are
+> 166/800, and this requires code changes.
+> 
+>> Does 100 MHz and 25 MHz not work on B0 ?
+> 
+> No, lower rates require dram clk from a composite slice (dram_alt_root)
+> 
+>> I added the ddrc_and noc opp as well as the 166MHz opp
+>> 
+>> I also added the interconnects ( do we need them on imx8mq ? )
+> 
+> The interconnect stuff is not required to switch dram frequency, it's
+> for device to make minimum bandwidth requests. It an additional feature
+> on top.
+> 
+> As a hack I configured FEC to do so but a saner example would be to
+> request bandwidth based on display resolution and color depth.
+> 
+>> I had to add a hack as the PM QoS was limiting the bus speed to 399MHz 
+>> ,
+>> if you have any ideas why that would be appreciated.
+> 
+> You probably need to set ethernet down (which is awkward) or better 
+> just
+> drop the interconnect properties and test using the devfreq userspace
+> governor.
+> 
+>> The driver is probing
+>> 
+>> [   12.136537] bus: 'platform': driver_probe_device: matched device
+>> 3d400000.dram-controller with driver imx-ddrc-devfrq
+>> [   12.147259] bus: 'platform': really_probe: probing driver
+>> imx-ddrc-devfreq with device 3d400000.dram-controller
+>> [   12.157382] imx-ddrc-devfreq 3d400000.dram-controller: no pinctrl
+>> handle
+>> [   12.164197] arm_smcc rate 0 800000000
+>> [   12.167880] arm_smcc rate 1 166750000
+>> [   12.171778] of: _opp_add_static_v2: turbo:0 rate:25000000 uv:0
+>> uvmin:0 uvmax:0 latency:0
+>> [   12.179994] of: _opp_add_static_v2: turbo:0 rate:100000000 uv:0
+>> uvmin:0 uvmax:0 latency:0
+>> [   12.188311] of: _opp_add_static_v2: turbo:0 rate:166750000 uv:0
+>> uvmin:0 uvmax:0 latency:0
+>> [   12.196606] of: _opp_add_static_v2: turbo:0 rate:800000000 uv:0
+>> uvmin:0 uvmax:0 latency:0
+>> [   12.204930] imx-ddrc-devfreq 3d400000.dram-controller: events from
+>> pmu imx8_ddr0
+>> [   12.212403] Added freq 0 25000000
+>> [   12.215742] Added freq 1 100000000
+>> [   12.219177] Added freq 2 166750000
+>> [   12.222648] Added freq 3 800000000
+>> [   12.226105] device: 'devfreq0': device_add
+>> [   12.230287] PM: Adding info for No Bus:devfreq0
+>> [   12.234864] driver: 'imx-ddrc-devfreq': driver_bound: bound to 
+>> device
+>> '3d400000.dram-controller'
+>> [   12.243699] bus: 'platform': really_probe: bound device
+>> 3d400000.dram-controller to driver imx-ddrc-devfreq
+>> 
+>> Add seems to run correctly until it tries to adjust the clock to 
+>> 166MHz
+>> 
+>> [   19.555482] ddrc checking rate 800000000 166750000
+>> [   19.555489] ddrc checking rate 166750000 166750000
+>> [   19.560442] bus: 'usb-serial': really_probe: bound device ttyUSB0 
+>> to
+>> driver option1
+>> [   19.568751] imx-ddrc-devfreq 3d400000.dram-controller: ddrc about 
+>> to
+>> change freq 800000000 to 166750000
+>> 
+>> And the board hangs there. Any ideas on how to get past this ?
+> 
+> Please try this ATF patch:
+> 
+> https://github.com/cdleonard/arm-trusted-firmware/commit/783fc2b2c4266bfdb5218e4d9b6b2bc90849e0e9
+> 
 
-FWIW, this comment is stale and could be dropped :)
+Ok applied this to the tree we're using
 
--- 
+https://source.puri.sm/Librem5/arm-trusted-firmware/commit/783fc2b2c4266bfdb5218e4d9b6b2bc90849e0e9
 
-Thanks,
+> I tested switching on imx8mq-evk with B0 SoC but a few additional
+> changes are required in kernel to support switching between rates which
+> are both backed by PLL:
+> 
+> * Mark the PLL CLK_GET_RATE_NOCACHE
 
-David / dhildenb
+Is this what you meant ?
+
+diff --git a/drivers/clk/imx/clk-imx8mq.c b/drivers/clk/imx/clk-imx8mq.c
+index 2813884f69c1..e5f50cf8a264 100644
+--- a/drivers/clk/imx/clk-imx8mq.c
++++ b/drivers/clk/imx/clk-imx8mq.c
+@@ -345,7 +345,7 @@ static int imx8mq_clocks_probe(struct 
+platform_device *pdev)
+         clks[IMX8MQ_SYS1_PLL_OUT] = imx_clk_sccg_pll("sys1_pll_out", 
+sys1_pll_out_sels, ARRAY_SIZE(sys1_pll_out_sels), 0, 0, 0, base + 0x30, 
+CLK_IS_CRITICAL);
+         clks[IMX8MQ_SYS2_PLL_OUT] = imx_clk_sccg_pll("sys2_pll_out", 
+sys2_pll_out_sels, ARRAY_SIZE(sys2_pll_out_sels), 0, 0, 1, base + 0x3c, 
+CLK_IS_CRITICAL);
+         clks[IMX8MQ_SYS3_PLL_OUT] = imx_clk_sccg_pll("sys3_pll_out", 
+sys3_pll_out_sels, ARRAY_SIZE(sys3_pll_out_sels), 0, 0, 1, base + 0x48, 
+CLK_IS_CRITICAL);
+-       clks[IMX8MQ_DRAM_PLL_OUT] = imx_clk_sccg_pll("dram_pll_out", 
+dram_pll_out_sels, ARRAY_SIZE(dram_pll_out_sels), 0, 0, 0, base + 0x60, 
+CLK_IS_CRITICAL);
++       clks[IMX8MQ_DRAM_PLL_OUT] = imx_clk_sccg_pll("dram_pll_out", 
+dram_pll_out_sels, ARRAY_SIZE(dram_pll_out_sels), 0, 0, 0, base + 0x60, 
+CLK_IS_CRITICAL|CLK_GET_RATE_NOCACHE);
+
+         /* SYS PLL1 fixed output */
+         clks[IMX8MQ_SYS1_PLL_40M_CG] = imx_clk_gate("sys1_pll_40m_cg", 
+"sys1_pll_out", base + 0x30, 9);
+
+> * Set the rate to 166935483 exactly (to match clk_get_rate)
+
+Okay I hacked that in
+
+diff --git a/drivers/devfreq/imx-ddrc.c b/drivers/devfreq/imx-ddrc.c
+index 4eed6f50bb8d..a832768a865f 100644
+--- a/drivers/devfreq/imx-ddrc.c
++++ b/drivers/devfreq/imx-ddrc.c
+@@ -436,6 +436,10 @@ static int imx_ddrc_init_freq_info(struct device 
+*dev)
+                         return -ENODEV;
+                 }
+
++               /* B0 hack */
++               if ( freq->rate == 166750000 )
++                       freq->rate = 166935483;
++
+                 pr_err( "arm_smcc rate %d %lu\n", index, freq->rate );
+         }
+
+--- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+@@ -211,7 +211,7 @@
+                         opp-hz = /bits/ 64 <100000000>;
+                 };
+                 opp-166M {
+-                       opp-hz = /bits/ 64 <166750000>;
++                       opp-hz = /bits/ 64 <166935483>;
+                 };
+                 opp-800M {
+                         opp-hz = /bits/ 64 <800000000>;
+
+
+> * Make the rounding in imx-ddrc more generous.
+
+Sorry I don't understand what you mean by this.
+
+Adding the other changes the board no longer hangs when trying to change 
+frequencies but it also doesn't seem to actually change the frequency.
+
+[    3.076426] ddrc checking rate 800000000 166935483
+[    3.081290] ddrc checking rate 166935483 166935483
+[    3.086225] imx-ddrc-devfreq 3d400000.dram-controller: ddrc about to 
+change freq 800000000 to 166935483
+[    3.086891] imx-ddrc-devfreq 3d400000.dram-controller: ddrc changed 
+freq 800000000 to 166935483
+
+root@pureos:~# cat /sys/class/devfreq/devfreq0/cur_freq
+800000000
+root@pureos:~# cat /sys/class/devfreq/devfreq0/target_freq
+166935483
+
+Is this the missing rounding or is there something else missing ?
+
+Thanks
+Angus
+
+
+> 
+> I will integrate these changes into the next version.
+> 
+> --
+> Regards,
+> Leonard
 
 _______________________________________________
 linux-arm-kernel mailing list
