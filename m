@@ -2,58 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD6DBDA67F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 09:32:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3EE46DA69B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 09:41:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vuskFnOrQvh6V71rp12I0iQNMXu5wXXZArOxthftDyc=; b=BXdM+dPcsL1r6+
-	DQNpQXvU96KO0VSxLwRZeawN0kPNnDuL2Ms5F8e+yXPtXxOD7yiHsfNpjB89Ft63kY+Xjdxe3mOTs
-	qL366V5zxVzUfhfJj6I7LTV2YUFf8TOOVXnzG3DleVCCoIW82dH020zxyzHD3jHrLK7eeP1+YDCF+
-	ti0o5KTCQN9qkqvkWjbgt0mFA4pCIPq387vRwIb4TL8QEMd7SLhq1KSxY4Qf5f66WST37MvjNPKDC
-	Y0YbLHkv+7UOeR9ytrC6q0RkbzUBlIaZc1SmE44Og2OYCW+b6VNiq1av7uw5Iiw+0dIzk5aLwkzZj
-	R5Ql2NlrnEkvRK4hWwzg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=PHGD1sprlfiVUzHXjDX+CH4KIvxAvvauNUvl2eF2JYI=; b=kTxcOj04++Z74T88k+fCMHL3L
+	uf2vgv7WJkQEzqSUNdeduaMBenwmN5yEYxK0E/6lCoV/DBsts+IzdwAeMh7POt0xhSRp0dzQ5OZKd
+	XNUL8rB6pYHWTJjwByerccyMImT4JEr0ErXwWvX3as+LX29veAwkInJquL73UC8Q3ZjZ2g6S2lgBt
+	1quGzrxE2pKkhN0WOYRJUPhRtDZE2xENv7MLLqfxwTScoFspObwWQBa/T5Eu9X0+9oNX6CEqDpUiL
+	kLYEuAJWGVpQPYFq3P5GIRUWPIX7+v6zip6n64TqKp/fk8et1GK9TxozXteBjTdRy18J8Sb/S5brc
+	Z/o8EwiEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL0Gi-0002JR-SU; Thu, 17 Oct 2019 07:32:20 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1iL0PG-0006Gc-EX; Thu, 17 Oct 2019 07:41:10 +0000
+Received: from imap1.codethink.co.uk ([176.9.8.82])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL0GZ-0002IH-UM
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 07:32:13 +0000
-Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 38170F1E5786B6648918;
- Thu, 17 Oct 2019 15:32:07 +0800 (CST)
-Received: from [127.0.0.1] (10.133.213.239) by DGGEMS401-HUB.china.huawei.com
- (10.3.19.201) with Microsoft SMTP Server id 14.3.439.0;
- Thu, 17 Oct 2019 15:32:03 +0800
-Subject: Re: [PATCH -next] ASoC: atmel: Fix build error
-To: <codrin.ciubotariu@microchip.com>, <lgirdwood@gmail.com>,
- <broonie@kernel.org>, <perex@perex.cz>, <tiwai@suse.com>,
- <nicolas.ferre@microchip.com>, <alexandre.belloni@bootlin.com>,
- <mirq-linux@rere.qmqm.pl>
-References: <20190928081641.44232-1-yuehaibing@huawei.com>
-From: Yuehaibing <yuehaibing@huawei.com>
-Message-ID: <c0a0ddc9-5ae4-8b5e-1d77-b322970651bd@huawei.com>
-Date: Thu, 17 Oct 2019 15:32:01 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.2.0
+ id 1iL0Ou-0006Ax-LM
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 07:40:50 +0000
+Received: from [167.98.27.226] (helo=[10.35.5.173])
+ by imap1.codethink.co.uk with esmtpsa (Exim 4.84_2 #1 (Debian))
+ id 1iL0On-0005XG-Le; Thu, 17 Oct 2019 08:40:41 +0100
+Subject: Re: [PATCH] net: stmmac: fix argument to stmmac_pcs_ctrl_ane()
+To: David Miller <davem@davemloft.net>
+References: <20191016082205.26899-1-ben.dooks@codethink.co.uk>
+ <20191016.132805.1945227679877403030.davem@davemloft.net>
+From: Ben Dooks <ben.dooks@codethink.co.uk>
+Organization: Codethink Limited.
+Message-ID: <f351aba0-e55b-edf3-e917-945715beaaf7@codethink.co.uk>
+Date: Thu, 17 Oct 2019 08:40:40 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20190928081641.44232-1-yuehaibing@huawei.com>
-X-Originating-IP: [10.133.213.239]
-X-CFilter-Loop: Reflected
+In-Reply-To: <20191016.132805.1945227679877403030.davem@davemloft.net>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_003212_153960_DB6F6504 
-X-CRM114-Status: GOOD (  12.04  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191017_004048_843750_431F3A8A 
+X-CRM114-Status: GOOD (  11.11  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [176.9.8.82 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -67,52 +62,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-kernel@lists.codethink.co.uk, alexandre.torgue@st.com,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org, joabreu@synopsys.com,
+ mcoquelin.stm32@gmail.com, peppe.cavallaro@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-ping..., this issue still in linux-next 20191017
+On 16/10/2019 21:28, David Miller wrote:
+> From: "Ben Dooks (Codethink)" <ben.dooks@codethink.co.uk>
+> Date: Wed, 16 Oct 2019 09:22:05 +0100
+> 
+>> The stmmac_pcs_ctrl_ane() expects a register address as
+>> argument 1, but for some reason the mac_device_info is
+>> being passed.
+>>
+>> Fix the warning (and possible bug) from sparse:
+>>
+>> drivers/net/ethernet/stmicro/stmmac/stmmac_main.c:2613:17: warning: incorrect type in argument 1 (different address spaces)
+>> drivers/net/ethernet/stmicro/stmmac/stmmac_main.c:2613:17:    expected void [noderef] <asn:2> *ioaddr
+>> drivers/net/ethernet/stmicro/stmmac/stmmac_main.c:2613:17:    got struct mac_device_info *hw
+>>
+>> Signed-off-by: Ben Dooks <ben.dooks@codethink.co.uk>
+> 
+> I'm still reviewing this but FYI you did not have to send this
+> twice.
 
-On 2019/9/28 16:16, YueHaibing wrote:
-> when do randbuilding, I got this error:
-> 
-> sound/soc/atmel/atmel_ssc_dai.o: In function `atmel_ssc_set_audio':
-> (.text+0x12f6): undefined reference to `atmel_pcm_pdc_platform_register'
-> 
-> This is because SND_ATMEL_SOC_SSC_DMA=y, SND_ATMEL_SOC_SSC=y,
-> but SND_ATMEL_SOC_SSC_PDC=m. Fix it bt reintroducing the default Kconfig.
-> 
-> Reported-by: Hulk Robot <hulkci@huawei.com>
-> Fixes: 18291410557f ("ASoC: atmel: enable SOC_SSC_PDC and SOC_SSC_DMA in Kconfig")
-> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
-> ---
->  sound/soc/atmel/Kconfig | 4 ++++
->  1 file changed, 4 insertions(+)
-> 
-> diff --git a/sound/soc/atmel/Kconfig b/sound/soc/atmel/Kconfig
-> index f118c22..79e45f2 100644
-> --- a/sound/soc/atmel/Kconfig
-> +++ b/sound/soc/atmel/Kconfig
-> @@ -12,10 +12,14 @@ if SND_ATMEL_SOC
->  config SND_ATMEL_SOC_PDC
->  	tristate
->  	depends on HAS_DMA
-> +	default m if SND_ATMEL_SOC_SSC_PDC=m && SND_ATMEL_SOC_SSC=m
-> +	default y if SND_ATMEL_SOC_SSC_PDC=y || (SND_ATMEL_SOC_SSC_PDC=m && SND_ATMEL_SOC_SSC=y)
->  
->  config SND_ATMEL_SOC_DMA
->  	tristate
->  	select SND_SOC_GENERIC_DMAENGINE_PCM
-> +	default m if SND_ATMEL_SOC_SSC_DMA=m && SND_ATMEL_SOC_SSC=m
-> +	default y if SND_ATMEL_SOC_SSC_DMA=y || (SND_ATMEL_SOC_SSC_DMA=m && SND_ATMEL_SOC_SSC=y)
->  
->  config SND_ATMEL_SOC_SSC
->  	tristate
-> 
+Yes, I accidentally sent the wrong patch out (already apologised
+on the re-send as I noticed it about 10 minutes after sending).
 
+-- 
+Ben Dooks				http://www.codethink.co.uk/
+Senior Engineer				Codethink - Providing Genius
+
+https://www.codethink.co.uk/privacy.html
 
 _______________________________________________
 linux-arm-kernel mailing list
