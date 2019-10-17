@@ -2,57 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED44EDB912
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 23:31:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E982DDB916
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 23:36:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=d8Asx1RoVRgPP/+56YuIgnuq3nxtMbKwSznLVsCtPZY=; b=l9wmEtuSByq1NNoNA01RWNMqI
-	P3bzyy7GhHiui9JOa5A87kCbGaSEInK4olaJGHnpvCmbBZchtn7jr59fRr1oKTFVOv0W17rbALm1+
-	YSaOF5zwpF0sTFc4KxhtuisRppSleqCT0E9QynkKTCGoGCZR9Gf+awk8Gi+0P/MHuokl5x8vY77IS
-	LmlEYGZPPKApaABesEX9iOoTPrdht/Y34agKxLGaX86q62Kp+WOu0f+kGvJMgmzazpGkqUpHxn10K
-	8Y0DPN+I7CBq/CpwrtgN2WtS02cXHtPX1muWcOJoEDgRpi3mKIXg431gr0NwbKArThiRT3TL7OqFK
-	NDLQCWeMg==;
+	 bh=hxsHEHdCixnbQbKYZPrOsObutDCf4b3ZOfe8Qqcgsc0=; b=R5p1Z4mmZ2HZqeYe1KMF3sS7R
+	fFpODkVnrViF/YGZ8RjdfT03oC8tIh1D3hXoMeIqPegU4yCmZMAJFqOEt3+RZa5yN0LsZj3bmMetg
+	xaeRft6zmV5oG8L/xZAMlCnPF3K6WPu1z0Ss65G9KPrjvjcRC0fxlXFn5HRhaWRMdxZtO46dj22Oe
+	kH/ym1ZyYC9mheh8rJuZXLseAhIfnpIjs/lnv3BwWJxuteK+cIztvC26bpiTBlyER2s+N9uagYv6I
+	Cgbrb06Qxrw95VbWfyRiyM+5l64S+cCdngHWf6XRdTArQxQ8kEC6CdY+5LJ7HtrBQJcJlQ+5lfNiN
+	kWdJ5Wwkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLDMj-0003QC-Mw; Thu, 17 Oct 2019 21:31:25 +0000
-Received: from [217.140.110.172] (helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLDMb-0003PP-5z
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 21:31:18 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 501E8329;
- Thu, 17 Oct 2019 14:31:04 -0700 (PDT)
-Received: from [192.168.0.21] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 459A63F68E;
- Thu, 17 Oct 2019 14:31:03 -0700 (PDT)
-Subject: Re: [PATCH v2 1/3] arm64: errata: Hide CTR_EL0.DIC on systems
- affected by Neoverse-N1 #1542419
-To: james.morse@arm.com, linux-arm-kernel@lists.infradead.org
-References: <20191017174300.29770-1-james.morse@arm.com>
- <20191017174300.29770-2-james.morse@arm.com>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <9a2385e5-c94c-4504-9f3e-41531f673e58@arm.com>
-Date: Thu, 17 Oct 2019 22:33:32 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.7.0
+	id 1iLDRl-0005FO-Hi; Thu, 17 Oct 2019 21:36:37 +0000
+Received: from mail.sf-mail.de ([2a01:4f8:1c17:6fae:616d:6c69:616d:6c69])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iLDRL-00054t-DY
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 21:36:13 +0000
+Received: (qmail 27079 invoked from network); 17 Oct 2019 21:31:57 -0000
+Received: from dslb-088-070-126-123.088.070.pools.vodafone-ip.de
+ ([::ffff:88.70.126.123]:55060 HELO daneel.sf-tec.de) (auth=eike@sf-mail.de)
+ by mail.sf-mail.de (Qsmtpd 0.36dev) with (DHE-RSA-AES256-GCM-SHA384 encrypted)
+ ESMTPSA for <hch@lst.de>; Thu, 17 Oct 2019 23:31:57 +0200
+From: Rolf Eike Beer <eike-kernel@sf-tec.de>
+To: Christoph Hellwig <hch@lst.de>
+Subject: Re: [PATCH 07/21] parisc: remove __ioremap
+Date: Thu, 17 Oct 2019 23:35:42 +0200
+Message-ID: <1650819.dOKmve5HLd@daneel.sf-tec.de>
+In-Reply-To: <20191017174554.29840-8-hch@lst.de>
+References: <20191017174554.29840-1-hch@lst.de>
+ <20191017174554.29840-8-hch@lst.de>
 MIME-Version: 1.0
-In-Reply-To: <20191017174300.29770-2-james.morse@arm.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_143117_270166_B16F177A 
-X-CRM114-Status: GOOD (  18.11  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20191017_143611_777127_D0F9CD01 
+X-CRM114-Status: UNSURE (   5.76  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,80 +59,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, will@kernel.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Guo Ren <guoren@kernel.org>,
+ sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
+ Vincent Chen <deanbo422@gmail.com>, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, linux-hexagon@vger.kernel.org, x86@kernel.org,
+ linux-snps-arc@lists.infradead.org, linux-xtensa@linux-xtensa.org,
+ Arnd Bergmann <arnd@arndb.de>, linux-m68k@lists.linux-m68k.org,
+ openrisc@lists.librecores.org, Greentime Hu <green.hu@gmail.com>,
+ linux-mtd@lists.infradead.org, Guan Xuetao <gxt@pku.edu.cn>,
+ linux-arm-kernel@lists.infradead.org, Michal Simek <monstr@monstr.eu>,
+ linux-parisc@vger.kernel.org, linux-mips@vger.kernel.org,
+ linux-alpha@vger.kernel.org, nios2-dev@lists.rocketboards.org
+Content-Type: multipart/mixed; boundary="===============7914512198732888421=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi James,
+--===============7914512198732888421==
+Content-Type: multipart/signed; boundary="nextPart3002460.JnYtLPdinj"; micalg="pgp-sha1"; protocol="application/pgp-signature"
 
-Patch looks correct to me, except for a slightly incorrect comment.
+--nextPart3002460.JnYtLPdinj
+Content-Transfer-Encoding: 7Bit
+Content-Type: text/plain; charset="us-ascii"
 
-On 10/17/2019 06:42 PM, James Morse wrote:
-> Cores affected by Neoverse-N1 #1542419 could execute a stale instruction
-> when a branch is updated to point to freshly generated instructions.
-> 
-> To workaround this issue we need user-space to issue unnecessary
-> icache maintenance that we can trap. Start by hiding CTR_EL0.DIC.
-> 
-> Signed-off-by: James Morse <james.morse@arm.com>
-> 
-> ---
-> Changes since v1:
->   * Enable trap if any CPU has the errata to avoid shearing DIC on big/little.
->   * Update silicon-errata.txt
-> ---
+Christoph Hellwig wrote:
+> __ioremap is always called with the _PAGE_NO_CACHE, so fold the whole
+> thing and rename it to ioremap.  This allows allows to remove the
+                                        ^^^^^^^^^^^^^
+> special EISA quirk to force _PAGE_NO_CACHE.
 
-> diff --git a/arch/arm64/include/asm/cpucaps.h b/arch/arm64/include/asm/cpucaps.h
-> index f19fe4b9acc4..f05afaec18cd 100644
-> --- a/arch/arm64/include/asm/cpucaps.h
-> +++ b/arch/arm64/include/asm/cpucaps.h
-> @@ -52,7 +52,8 @@
->   #define ARM64_HAS_IRQ_PRIO_MASKING		42
->   #define ARM64_HAS_DCPODP			43
->   #define ARM64_WORKAROUND_1463225		44
-> +#define ARM64_WORKAROUND_1542419		45
->   
-> -#define ARM64_NCAPS				45
-> +#define ARM64_NCAPS				46
->   
->   #endif /* __ASM_CPUCAPS_H */
-> diff --git a/arch/arm64/kernel/cpu_errata.c b/arch/arm64/kernel/cpu_errata.c
-> index f593f4cffc0d..6558f48b8b3f 100644
-> --- a/arch/arm64/kernel/cpu_errata.c
-> +++ b/arch/arm64/kernel/cpu_errata.c
-> @@ -87,13 +87,21 @@ has_mismatched_cache_type(const struct arm64_cpu_capabilities *entry,
->   }
->   
->   static void
-> -cpu_enable_trap_ctr_access(const struct arm64_cpu_capabilities *__unused)
-> +cpu_enable_trap_ctr_access(const struct arm64_cpu_capabilities *cap)
->   {
->   	u64 mask = arm64_ftr_reg_ctrel0.strict_mask;
-> +	bool enable_uct_trap = false;
->   
->   	/* Trap CTR_EL0 access on this CPU, only if it has a mismatch */
->   	if ((read_cpuid_cachetype() & mask) !=
->   	    (arm64_ftr_reg_ctrel0.sys_val & mask))
-> +		enable_uct_trap = true;
-> +
-> +	/* ... or if this CPU is affected by an errata */
+Eike
+--nextPart3002460.JnYtLPdinj
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part.
+Content-Transfer-Encoding: 7Bit
 
-That is a bit confusing unfortunately. It may not be "this" CPU that
-is affected by the errata, but any one of the CPUs in the system.
+-----BEGIN PGP SIGNATURE-----
 
-So:
+iF0EABECAB0WIQSaYVDeqwKa3fTXNeNcpIk+abn8TgUCXajergAKCRBcpIk+abn8
+TkOlAJ46117xxLoFzZCiYYebEyVSrw/31gCeMRBoULeYp+iYijM534mn8tCGYHM=
+=d3J8
+-----END PGP SIGNATURE-----
 
-s/this CPU/the system/
+--nextPart3002460.JnYtLPdinj--
 
-should be sufficient.
 
-Otherwise,
 
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+
+
+--===============7914512198732888421==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7914512198732888421==--
+
+
+
+
