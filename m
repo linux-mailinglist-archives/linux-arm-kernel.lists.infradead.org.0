@@ -2,33 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8286DACCC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 14:48:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40C70DACDC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 14:49:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WEgton0f2swL4APzgVAG6Tj1zL5oNf8fNVfwhqNxhVw=; b=IZYjQiXiODLnFA
-	aE+JUf9Vqh7KIg9Ozzfjon956TbdjwF2ia0KdVlS8Lgwg10OvQwbmbMm7+ULZyb0QuoIJkg/0w52D
-	/+p+TmlQFuozuaIYvBlAmOOjxMepLE21GRG2m56dcE6QqWN51cpPOhD7H/vtxmKFnYxKBlmATKLiM
-	0k5f5gmPwkBdauoOVuX/v/4YHY+JKPr9aQmYZ0zDlcfowx4PlBSYD6I5K86tIaCpGnMFgjEMyeKdk
-	wvMWi458WUslmMiaUsZQSlR70Hq3PiMEZ38A7y+T52uR6DzGkasuEGYE+7u/+kwXP+eDYnO9czgan
-	hPanXRwI773L9Gz7spQA==;
+	List-Owner; bh=YZKBAPxJckb62UQecV8LlOUQzYQEiF1ShcC25UWDBUA=; b=YLP94e5BvaCwfH
+	lHIm0IpAA86/hjRvcPpbhnab2nEMEcNhZjcMe9/cz4lOMz3sUZJg9NAfvNfoP48Gz8ohbYPk4+KTt
+	Ba/Naf/H2tokc5XVvPvHtlkoZJzoGrERc+njqSRScyj3ZHiLKQ3U0rX8LmhSDBZBKJ7vuANHNaviN
+	QppsoGYQJHnSUPkaluY/9eKRAqzwrs028DfxObsTaa4K3VZ4zkyJqR/w/4DRHzCVyj1dXAgvcHFVt
+	BlrZFks+W5JXxvQJwIXHWKFqCYoeOZHrdlHBfzQLE1+ba4GIpHx5sPElIaQuLFkaziNf/BknkLWPj
+	eAd8XLZd+/g33OmMUoZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL5D7-0004Wd-GI; Thu, 17 Oct 2019 12:48:57 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1iL5DS-0004rT-Bm; Thu, 17 Oct 2019 12:49:18 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL5CU-0004Gc-6H
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 12:48:20 +0000
-Received: from DGGEMS403-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id B8427EC39B2F6B85D09E;
- Thu, 17 Oct 2019 20:48:16 +0800 (CST)
-Received: from localhost (10.133.213.239) by DGGEMS403-HUB.china.huawei.com
- (10.3.19.203) with Microsoft SMTP Server id 14.3.439.0; Thu, 17 Oct 2019
- 20:48:06 +0800
+ id 1iL5CW-0004GH-4L
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 12:48:21 +0000
+Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id DB37F1BC907B28B1DAF3;
+ Thu, 17 Oct 2019 20:48:15 +0800 (CST)
+Received: from localhost (10.133.213.239) by DGGEMS405-HUB.china.huawei.com
+ (10.3.19.205) with Microsoft SMTP Server id 14.3.439.0; Thu, 17 Oct 2019
+ 20:48:08 +0800
 From: YueHaibing <yuehaibing@huawei.com>
 To: <linus.walleij@linaro.org>, <manivannan.sadhasivam@linaro.org>,
  <afaerber@suse.de>, <f.fainelli@gmail.com>, <rjui@broadcom.com>,
@@ -36,10 +36,10 @@ To: <linus.walleij@linaro.org>, <manivannan.sadhasivam@linaro.org>,
  <jesper.nilsson@axis.com>, <lars.persson@axis.com>,
  <ludovic.desroches@microchip.com>, <nicolas.ferre@microchip.com>,
  <alexandre.belloni@bootlin.com>, <baruch@tkos.co.il>
-Subject: [PATCH -next 02/30] pinctrl: pxa27x: use
+Subject: [PATCH -next 03/30] pinctrl: cygnus-mux: use
  devm_platform_ioremap_resource() to simplify code
-Date: Thu, 17 Oct 2019 20:26:12 +0800
-Message-ID: <20191017122640.22976-3-yuehaibing@huawei.com>
+Date: Thu, 17 Oct 2019 20:26:13 +0800
+Message-ID: <20191017122640.22976-4-yuehaibing@huawei.com>
 X-Mailer: git-send-email 2.10.2.windows.1
 In-Reply-To: <20191017122640.22976-1-yuehaibing@huawei.com>
 References: <20191017122640.22976-1-yuehaibing@huawei.com>
@@ -47,8 +47,8 @@ MIME-Version: 1.0
 X-Originating-IP: [10.133.213.239]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_054818_812905_8A8FE4D9 
-X-CRM114-Status: UNSURE (   8.29  )
+X-CRM114-CacheID: sfid-20191017_054820_337785_B652EAD4 
+X-CRM114-Status: UNSURE (   9.64  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -56,7 +56,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ medium trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -87,43 +87,39 @@ This is detected by coccinelle.
 
 Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 ---
- drivers/pinctrl/pxa/pinctrl-pxa27x.c | 13 ++++---------
- 1 file changed, 4 insertions(+), 9 deletions(-)
+ drivers/pinctrl/bcm/pinctrl-cygnus-mux.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/pinctrl/pxa/pinctrl-pxa27x.c b/drivers/pinctrl/pxa/pinctrl-pxa27x.c
-index 64943e8..48ccfb5 100644
---- a/drivers/pinctrl/pxa/pinctrl-pxa27x.c
-+++ b/drivers/pinctrl/pxa/pinctrl-pxa27x.c
-@@ -508,25 +508,20 @@ static int pxa27x_pinctrl_probe(struct platform_device *pdev)
- 	void __iomem *base_af[8];
- 	void __iomem *base_dir[4];
- 	void __iomem *base_sleep[4];
+diff --git a/drivers/pinctrl/bcm/pinctrl-cygnus-mux.c b/drivers/pinctrl/bcm/pinctrl-cygnus-mux.c
+index dcab220..4344c57 100644
+--- a/drivers/pinctrl/bcm/pinctrl-cygnus-mux.c
++++ b/drivers/pinctrl/bcm/pinctrl-cygnus-mux.c
+@@ -940,7 +940,6 @@ static int cygnus_mux_log_init(struct cygnus_pinctrl *pinctrl)
+ static int cygnus_pinmux_probe(struct platform_device *pdev)
+ {
+ 	struct cygnus_pinctrl *pinctrl;
 -	struct resource *res;
+ 	int i, ret;
+ 	struct pinctrl_pin_desc *pins;
+ 	unsigned num_pins = ARRAY_SIZE(cygnus_pins);
+@@ -953,15 +952,13 @@ static int cygnus_pinmux_probe(struct platform_device *pdev)
+ 	platform_set_drvdata(pdev, pinctrl);
+ 	spin_lock_init(&pinctrl->lock);
  
 -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	base_af[0] = devm_ioremap_resource(&pdev->dev, res);
-+	base_af[0] = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(base_af[0]))
- 		return PTR_ERR(base_af[0]);
+-	pinctrl->base0 = devm_ioremap_resource(&pdev->dev, res);
++	pinctrl->base0 = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(pinctrl->base0)) {
+ 		dev_err(&pdev->dev, "unable to map I/O space\n");
+ 		return PTR_ERR(pinctrl->base0);
+ 	}
  
 -	res = platform_get_resource(pdev, IORESOURCE_MEM, 1);
--	base_dir[0] = devm_ioremap_resource(&pdev->dev, res);
-+	base_dir[0] = devm_platform_ioremap_resource(pdev, 1);
- 	if (IS_ERR(base_dir[0]))
- 		return PTR_ERR(base_dir[0]);
- 
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 2);
--	base_dir[3] = devm_ioremap_resource(&pdev->dev, res);
-+	base_dir[3] = devm_platform_ioremap_resource(pdev, 2);
- 	if (IS_ERR(base_dir[3]))
- 		return PTR_ERR(base_dir[3]);
- 
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 3);
--	base_sleep[0] = devm_ioremap_resource(&pdev->dev, res);
-+	base_sleep[0] = devm_platform_ioremap_resource(pdev, 3);
- 	if (IS_ERR(base_sleep[0]))
- 		return PTR_ERR(base_sleep[0]);
- 
+-	pinctrl->base1 = devm_ioremap_resource(&pdev->dev, res);
++	pinctrl->base1 = devm_platform_ioremap_resource(pdev, 1);
+ 	if (IS_ERR(pinctrl->base1)) {
+ 		dev_err(&pdev->dev, "unable to map I/O space\n");
+ 		return PTR_ERR(pinctrl->base1);
 -- 
 2.7.4
 
