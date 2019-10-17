@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E8C1DAB7B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 13:49:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05922DAB7D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 13:50:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aPmEPOOW37U0Xi1hx7tsa3escLqVCwTukipZPa5M/Ac=; b=NNIESAhCgkD6Wb
-	LxKXmaMXiLyUugKZKDTQ650u/1M9K1SzRsu9gtJCv24yp4KUqVy/ezrFnH2jf3Clp2Hgv44D58Adn
-	+kUh+k3G/caT8O78STjyD82ppxU46QvX2kM7WGoUoTlwG71KQHL0wilFCIMzy/r/shvjBu/fsE3eb
-	QFR8brJ8iveiGk5JbQ1yUlSd5UPUI6UPn1T3OGLEbpvTuid46Lo8/YQSJDwx516zCbdmqcuttaMkg
-	7CFFKb+R8GHFUJJNPkVA0OISY5Bbc66S4uyEKWWJ5GoVM2P8IPM8jZqKiP3W05uIaxeOIgo0ZBSo8
-	5q3DK8t6Tq/xhuFiM+Tw==;
+	List-Owner; bh=8HvJiboo82Vx4Af2YZpKYDaxsEDDvHkZnP/u92bRO/g=; b=A1mw9oHtNpnRDv
+	mKhhQjZeqGlzVcO5GtYQ/tcWKEXP7abrAW4B9V/D5fr7jSO6A79JN4LOqDPgf+PtU6hTUCAgfhB7I
+	piPVQrlRpcN4/AAemuyOcG0EQimhUSakkjrXeYC7zZrXm6HUtTI/UjLjVvIxUNhpyJZWWDAp8EsLL
+	38lRB2uw3+fHa/q+cmhFGKILEx2eJIZjZICXcPCeaKk6+uDTgbkNm+lxmS6NzZJ3B9mSq5eLoKDWN
+	qnZYgpORAf8gvR+HOEX9LaoYRrUxKQ/Ll81L3G3nvtdRd0ua9GDB0WYzeVTty+7jdufKJtG2Ht1pz
+	8Plz2O9ePkvYpV5Xpp1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL4Ho-0001tF-S6; Thu, 17 Oct 2019 11:49:44 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1iL4I3-00029L-QE; Thu, 17 Oct 2019 11:49:59 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL4HL-0001hm-A8
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 11:49:16 +0000
-Received: by mail-lj1-x241.google.com with SMTP id j19so2229930lja.1
+ id 1iL4HM-0001i1-Ff
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 11:49:17 +0000
+Received: by mail-lf1-x142.google.com with SMTP id u28so1634879lfc.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 17 Oct 2019 04:49:14 -0700 (PDT)
+ Thu, 17 Oct 2019 04:49:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=v8LKBRBxcaymYywQC1yoyW7qk1pLqld/GOLoE3N0/Gk=;
- b=Y94hZcrB1Y777DAYUOPKEcDZveCY0YSN4thc+ix3qgL9cYKMOVj69ctzDms1zp9Pck
- jt8E4tROWs+rMeMU4TR/buZTRzbxGNP4SpmvAyNhcttPsW8OXf3f21N6EyvoC2dhf+8l
- MMmTyDhdL9xm3opCRJRWwlpcbPUmnPAaUZ+As=
+ bh=aRODApNsJVV2rJDwziBmWs3j8yPs9YphekPtecPLAiU=;
+ b=a81Dft1duwadDoXnkkFElfwe10DpV2vpElINNcypWE7FBfOQcdZm18KcVc+ATFFWfY
+ kljiMjoHa3+55HWqHvmqVQgGWo9RXUzhVHZjrE0zd8OkR6gSrKFL7ZiKkq1dZa9xeKmK
+ ffSTvwj0Yuxj0ci/iv67cg1+6pSoOtiHZBRI0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=v8LKBRBxcaymYywQC1yoyW7qk1pLqld/GOLoE3N0/Gk=;
- b=dHGcCmEIEDBE4vyrFpB9Ta20NINcSWgGUMljKDQIwTdOlyyg0Z5O3zdeok2XyTcHBp
- /NPxHBb9ibM5PYrc7DHXUwubwW3Qd00Lv9gY4CyI/BPz9evxsAnk3sRMn+Q2rN9qfzT3
- iJvAK1CVrD4IfqK3lrjVptiHjJ0xDq/BnuT+Wp2rEAD2m2MLOW5qp9hAVZ+R+GR0lkzA
- Iil8wxylV1MWGpjRhfOjN6AirR/09/I1vE13WL2PTvIRb7+QZd+epJhy4eEKBKFYRPhL
- 5mvoYJSYye2VZAo5IHTHuaCEZQ7T3lnKmvQGK4v5P+ccDjR5SaVtddTWRtyuq0L9714M
- xmhg==
-X-Gm-Message-State: APjAAAX6jkGFVdlEm+z7mrtE77RJpFv4Nl+psqZQvXiCowQGFxjY5e78
- /8GLeBg7uZMIqIFDiQawozJ7iA==
-X-Google-Smtp-Source: APXvYqwMm83t6Ayeaku/Uq23tNm6C0IkV0iS3pOoZUwg5XfkH0rI651FLIb5bwUm/9F+fKO8u6JQ3A==
-X-Received: by 2002:a2e:8417:: with SMTP id z23mr2192660ljg.28.1571312953668; 
- Thu, 17 Oct 2019 04:49:13 -0700 (PDT)
+ bh=aRODApNsJVV2rJDwziBmWs3j8yPs9YphekPtecPLAiU=;
+ b=QlA1EfoQwzKDMT0HeKLqFSqaaoKyoNELQTCTnKxzFrMG/8RZovbr0iQqDQD4ZWHQNv
+ MxQu2dT1J6eTl4NT9ghnb9qRTcRX6UYIurG88HxUgt+oc+9Y2WQ7RxyqP/rSXTH5b5ff
+ wangNb2RslTqJeYNNgq6ZaSno4jSV5cehFU22csClpARYrnnVZb8TVwWD8G4ZqiTXnPG
+ Pj9kOfIytNhkR/EkYEiJFgu9H4pxsV7Ce0Q/ickudSAj/j7io+ifmuAELkuSggIeYX8x
+ 2sBWDg7aNU8Vic9xcNe92yu7yNnF+z7PHFAwc4bgs9zfX+vpjyTawLXoXiVlslxnJOPA
+ 1TPw==
+X-Gm-Message-State: APjAAAX5ANocpZxOd85sP1Pm0xHe8tzux4E4YmB7TZS+8T4XVsFMgUIQ
+ VcSSaxDwwa4GNhkSk8L69hhzIg==
+X-Google-Smtp-Source: APXvYqyli5l3scW9RbTMDV7OJSAaURiEht8wF2Q1Cz/jerpQFJ/kBqqYjXUNWLCSY1A1nEqVUxLm7w==
+X-Received: by 2002:a19:f707:: with SMTP id z7mr2017958lfe.162.1571312954818; 
+ Thu, 17 Oct 2019 04:49:14 -0700 (PDT)
 Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id x30sm920772ljd.39.2019.10.17.04.49.12
+ by smtp.gmail.com with ESMTPSA id x30sm920772ljd.39.2019.10.17.04.49.13
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 17 Oct 2019 04:49:13 -0700 (PDT)
+ Thu, 17 Oct 2019 04:49:14 -0700 (PDT)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Masahiro Yamada <yamada.masahiro@socionext.com>,
  Andrew Morton <akpm@linux-foundation.org>, Gao Xiang <xiang@kernel.org>
-Subject: [RFC PATCH 1/3] decompress/keepalive.h: prepare for watchdog
- keepalive during kernel decompression
-Date: Thu, 17 Oct 2019 13:49:04 +0200
-Message-Id: <20191017114906.30302-2-linux@rasmusvillemoes.dk>
+Subject: [RFC PATCH 2/3] lib: lz4: wire up watchdog keepalive during
+ decompression
+Date: Thu, 17 Oct 2019 13:49:05 +0200
+Message-Id: <20191017114906.30302-3-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191017114906.30302-1-linux@rasmusvillemoes.dk>
 References: <20191017114906.30302-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_044915_347106_D13C17C0 
-X-CRM114-Status: GOOD (  11.09  )
+X-CRM114-CacheID: sfid-20191017_044916_525769_6C519572 
+X-CRM114-Status: GOOD (  11.01  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -110,38 +110,35 @@ kernel to get through decompression, let alone reach the
 initialization of the appropriate watchdog device driver.
 
 In order to allow booting such boards, the decompression routine needs
-to service the watchdog in its main loop. This adds a header making it
-easy to wire up each decompressor - just include this header and add a
-decompress_keepalive() in the main loop.
-
-Outside of the pre-boot stage, this is always a no-op.
+to service the watchdog in its main loop. This wires up lz4 to do that
+via the decompress_keepalive() macro defined in the new
+linux/decompress/keepalive.h.
 
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- include/linux/decompress/keepalive.h | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
- create mode 100644 include/linux/decompress/keepalive.h
+ lib/lz4/lz4_decompress.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/include/linux/decompress/keepalive.h b/include/linux/decompress/keepalive.h
-new file mode 100644
-index 000000000000..39caa7693624
---- /dev/null
-+++ b/include/linux/decompress/keepalive.h
-@@ -0,0 +1,14 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+
-+#ifndef DECOMPRESS_KEEPALIVE_H
-+#define DECOMPRESS_KEEPALIVE_H
-+
-+#ifdef PREBOOT
-+
-+#endif
-+
-+#ifndef decompress_keepalive
-+#define decompress_keepalive() do { } while (0)
-+#endif
-+
-+#endif /* DECOMPRESS_KEEPALIVE_H */
+diff --git a/lib/lz4/lz4_decompress.c b/lib/lz4/lz4_decompress.c
+index 0c9d3ad17e0f..54ba41d073a6 100644
+--- a/lib/lz4/lz4_decompress.c
++++ b/lib/lz4/lz4_decompress.c
+@@ -39,6 +39,7 @@
+ #include <linux/module.h>
+ #include <linux/kernel.h>
+ #include <asm/unaligned.h>
++#include <linux/decompress/keepalive.h>
+ 
+ /*-*****************************
+  *	Decompression functions
+@@ -129,6 +130,7 @@ static FORCE_INLINE int LZ4_decompress_generic(
+ 
+ 		/* ip < iend before the increment */
+ 		assert(!endOnInput || ip <= iend);
++		decompress_keepalive();
+ 
+ 		/*
+ 		 * A two-stage shortcut for the most common case:
 -- 
 2.20.1
 
