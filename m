@@ -2,93 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 494A4DA40A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 04:51:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A2862DA414
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 05:03:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=tBrsA+ENenSnfYH7FsQrfWuyxxz05Z/BQE4QS7Ut1KI=; b=BZVyUrDdUPivpP
-	jWPzm6L1yADBRyOEl13RlSQJjIBgqcttVh8VU1ACYB8+l0p4HfhdQFOgy49eD/WmyIHM+GZklO/ji
-	RnWtQi88v2bX5enBff2MSRMHkWTm98Urhdc5CU1nN+scl7td75G64S8E+zfu56OCXnhYT0yiWuraB
-	l9ZPmMXjoMp3tIbrcfsnWZ456q2Z2HLRTrUudi/8JwXVDCGshdejAnf9pt1o9khrG1/afIcJatMvQ
-	gfQpdkynC2UuxVzdZojl38XieSHTes0Sid38MPdmyjfl/tPySiS5kWS17Jm3NA3IHu6JEH80VhP1+
-	7MlSO96FoOUfM1Q50HlA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=s7gqI3FKgn7BQe3/8pbK+xvRrg7WL5YpaQfuz86gjNQ=; b=ksA
+	YqBn5e9idNI8cDlCdUivhkrQeYoikGU7zlwTSr7qxGxLF7lZ/NFYqX3QFdT3zeS/jDmoCXzqj3/Hb
+	ZiQqL3dD/2cse7f4PW/+0HULlIJXhlG1r0Li1B74ecviZ7dU9gWgAazGimddPYox1ftrtsUuCtLSq
+	OgUDDi/N+4gqC89AGOfcSYcA29YoKcZodgeJs89d/iOQesDPMqHQYhRcUbfdOaBj6Ikdh3eBoaGks
+	EZa3FNPZNXxe5Ew9+/jkU8FWXLUQuXmFS510nZ2RjLaDgwzKYHm69C3l5inoQyUVvY2xkkuOaXM5w
+	3wiVuW4+CYlwXyUsMQXrOYZJXzElsLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKvsk-0008NQ-FJ; Thu, 17 Oct 2019 02:51:18 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1iKw4A-0003UQ-Pi; Thu, 17 Oct 2019 03:03:06 +0000
+Received: from lucky1.263xmail.com ([211.157.147.131])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKvsd-0008Mq-BY
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 02:51:12 +0000
-Received: by mail-pf1-x444.google.com with SMTP id q7so622125pfh.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 16 Oct 2019 19:51:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=cORw/M2PPp+G7rfLzx7vrbHpIQU4gk/+aw+cEPBwgBE=;
- b=jrel5m/j9YYL8XOd6Xr8q9NmzTehtbTTdMqdGRHxdtRsYMBnhkDhv5LrfkTCXuvQD3
- zrHnNFFX1lZ4euDIoHgnqyGJwMgJSzSVyBKObtskju4sMZtvDrgXz7RexHwNPyzfxTnF
- zHbuPp+QOQz1BshXp2joY6vJfGaDX4q0FFsWjUG4vFMag7VFtc8CRrmWG3Mas9KsmI7c
- SlzATMivqx7PCUhJqu/yMwHNQusEvNdS2HYqwo4VNOhZ78m6PiIBRwWunZv5yzhvDqNX
- bWK6CF5rZouXsk4jeTWWSUTnRg5+caJcC4bxgjGQusjFi1+kQp5oKF9Rab/4iSxALM8A
- Glmw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=cORw/M2PPp+G7rfLzx7vrbHpIQU4gk/+aw+cEPBwgBE=;
- b=evQP5SLYGz3Fk+QxdomgQLIPVYms3Eyu2ReeUE5EUKXcEzqe64wJA39dQbqm52k7Y3
- ogG8q/x+DCzai72qb/fHqiqCLSl3RjVTRAxEt+upydMJ8at0PpP0k3YnTzP6p8U06miz
- x9bOXtPBYp9V3v2J2/R0rqK8o6t/xbu6u01bENdUJpEUt0xjjk0WNgycrdCYzuAiiaUh
- I1ei/d7EAeI+kbCDrlfktU9d9lO9VMgp/+4NdGyfXQ1t2AxpM6ov2dOvRAp6dt6W8tPm
- VvSzy9nw8N64ek8hHLxfMTI3om3cR2ncc9X4iIsMDiuVSWOe93oRqN5SDFhG4LjLyKpc
- 4SkA==
-X-Gm-Message-State: APjAAAWbqSs02a+i+8yzlo+RQ+/xFh4/cUNDb/tppLHo4HUjyywUZG+x
- vnr5E16SOwa0NSyGPHoyhRw=
-X-Google-Smtp-Source: APXvYqzEbs4jwr7g2mmEteoXN2Odjtn7PvD5Fn29n0LJ5zjtrDt5FDJmgMvZZEnW/+K7NTgnLeP62w==
-X-Received: by 2002:a17:90a:17c4:: with SMTP id
- q62mr1348383pja.83.1571280669181; 
- Wed, 16 Oct 2019 19:51:09 -0700 (PDT)
-Received: from suzukaze.ipads-lab.se.sjtu.edu.cn ([89.31.126.54])
- by smtp.gmail.com with ESMTPSA id a17sm467374pfi.178.2019.10.16.19.51.04
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 16 Oct 2019 19:51:08 -0700 (PDT)
-From: Chuhong Yuan <hslester96@gmail.com>
-To: 
-Subject: [PATCH] spi: pxa2xx: Add missed security checks
-Date: Thu, 17 Oct 2019 10:50:58 +0800
-Message-Id: <20191017025058.31528-1-hslester96@gmail.com>
-X-Mailer: git-send-email 2.20.1
-MIME-Version: 1.0
+ id 1iKw42-0003TR-RW; Thu, 17 Oct 2019 03:03:00 +0000
+Received: from localhost (unknown [192.168.167.209])
+ by lucky1.263xmail.com (Postfix) with ESMTP id 9498869F48;
+ Thu, 17 Oct 2019 11:02:50 +0800 (CST)
+X-MAIL-GRAY: 1
+X-MAIL-DELIVERY: 0
+X-ADDR-CHECKED4: 1
+X-ANTISPAM-LEVEL: 2
+X-ABS-CHECKED: 0
+Received: from localhost.localdomain (unknown [58.22.7.114])
+ by smtp.263.net (postfix) whith ESMTP id
+ P17817T140260256241408S1571281364775434_; 
+ Thu, 17 Oct 2019 11:02:50 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <976a90d9e80f3844db1a30634c13818f>
+X-RL-SENDER: andy.yan@rock-chips.com
+X-SENDER: yxj@rock-chips.com
+X-LOGIN-NAME: andy.yan@rock-chips.com
+X-FST-TO: heiko@sntech.de
+X-SENDER-IP: 58.22.7.114
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+From: Andy Yan <andy.yan@rock-chips.com>
+To: heiko@sntech.de, kever.yang@rock-chips.com,
+ linux-rockchip@lists.infradead.org
+Subject: [PATCH 0/2] Add basic dts support for RK3308
+Date: Thu, 17 Oct 2019 11:02:42 +0800
+Message-Id: <20191017030242.32219-1-andy.yan@rock-chips.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_195111_396308_AB1A5385 
-X-CRM114-Status: UNSURE (   8.85  )
+X-CRM114-CacheID: sfid-20191016_200259_054555_0EDB3093 
+X-CRM114-Status: UNSURE (   8.91  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (hslester96[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (hslester96[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [211.157.147.131 listed in list.dnswl.org]
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,44 +76,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chuhong Yuan <hslester96@gmail.com>, linux-kernel@vger.kernel.org,
- Haojian Zhuang <haojian.zhuang@gmail.com>, linux-spi@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, Daniel Mack <daniel@zonque.org>,
- Robert Jarzmik <robert.jarzmik@free.fr>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, obh+dt@kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Andy Yan <andy.yan@rock-chips.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-pxa2xx_spi_init_pdata misses checks for devm_clk_get and
-platform_get_irq.
-Add checks for them to fix the bugs.
+RK3308 is a quad Cortex A35 based SOC with rich audio
+interfaces(I2S/PCM/TDM/PDM/SPDIF/VAD/HDMI ARC), which
+designed for intelligent voice interaction and audio
+input/output processing.
 
-Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
----
- drivers/spi/spi-pxa2xx.c | 6 ++++++
- 1 file changed, 6 insertions(+)
+As the clk and pinctrl drivers are landed, we post
+the basic dts support, make it convenient for other
+module development.
 
-diff --git a/drivers/spi/spi-pxa2xx.c b/drivers/spi/spi-pxa2xx.c
-index bb6a14d1ab0f..2e73d75a6ac5 100644
---- a/drivers/spi/spi-pxa2xx.c
-+++ b/drivers/spi/spi-pxa2xx.c
-@@ -1565,7 +1565,13 @@ pxa2xx_spi_init_pdata(struct platform_device *pdev)
- #endif
- 
- 	ssp->clk = devm_clk_get(&pdev->dev, NULL);
-+	if (IS_ERR(ssp->clk))
-+		return NULL;
-+
- 	ssp->irq = platform_get_irq(pdev, 0);
-+	if (ssp->irq < 0)
-+		return NULL;
-+
- 	ssp->type = type;
- 	ssp->pdev = pdev;
- 	ssp->port_id = pxa2xx_spi_get_port_id(adev);
+
+Andy Yan (2):
+  arm64: dts: rockchip: Add core dts for RK3308 SOC
+  arm64: dts: rockchip: Add basic dts for RK3308 EVB
+
+ .../devicetree/bindings/arm/rockchip.yaml     |    5 +
+ arch/arm64/boot/dts/rockchip/Makefile         |    1 +
+ arch/arm64/boot/dts/rockchip/rk3308-evb.dts   |  206 ++
+ arch/arm64/boot/dts/rockchip/rk3308.dtsi      | 1875 +++++++++++++++++
+ 4 files changed, 2087 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/rockchip/rk3308-evb.dts
+ create mode 100644 arch/arm64/boot/dts/rockchip/rk3308.dtsi
+
 -- 
-2.20.1
+2.17.1
+
+
 
 
 _______________________________________________
