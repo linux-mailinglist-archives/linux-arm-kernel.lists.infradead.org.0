@@ -2,33 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 723A9DAD76
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 14:53:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93965DAD79
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 14:53:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cWynDJ2nrMpCxkBu96o3WwquQXkgtdP2eo72zTBjGD0=; b=HbffGJGfO+jAoq
-	rM4Mg62IdVv5eN08B1qWBPiNl3S/s7Phy4QABgdTyn2Ue8PqulNXfEqiDf/1B3YKx7sSm+0FXLQNP
-	FPmDLGB7/ErdhGPfu3Qs6Y0tFgO5v8/7MKWXmN8eCScCIQYqJil3Ky3l6//1ngG/pZspgrsALBdrG
-	jvisD44ZYt9u2i7/LJJW6xuf3t7k+Bp7vacheq6jqyv7w/eSnUi8Qssd4oE9IaGQ+Ha7VD7c95NZg
-	/8tCEDW1QQcHe5TCvojQIXO+W/rRfx28DvIFNv6qYK37v7xwbfdemx4JB6daxY/Cvfxr8yNrTNDu4
-	axtfwMSD9mUvC02dWfFw==;
+	List-Owner; bh=rH4y5X2c1gotyOTQU9yKTk0SvXmbDhclSZl67i8E+ns=; b=Y2lWDI+9ssvstU
+	WD+GLmqg1n0mtp37md/SytbtOXpSZVumMBLtVZjcPQmTGi9KLhYCnhM1bQVjiZydUJNc/h9bPdV+f
+	5+O/Nlrf6/oNNcDwr7+m67d/rB2wMzUFy6ZKiqkZtLB1kGudrV7M/WM/sFhRKT5SdLi7ClGhaQNPs
+	OzMfJznPyYA8JrWgFRT/Ic1bPQCFDfRov3xGEMKp/5qQ5CYoyUdq2VBkynlwg0o5H9TzKeRiQ93TB
+	TAU+QHnZ3WN5M/sQ3DCGskdlGWaDd4MyC4Zlre82MO6vTkJqANy+Sj6hknSpHeN1U+BumIsbNdawV
+	rh0sPHvxzAPXGqzfuvxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL5HL-000142-Ea; Thu, 17 Oct 2019 12:53:19 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1iL5Hp-0001WJ-F1; Thu, 17 Oct 2019 12:53:49 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL5Cz-0004gk-6n
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 12:48:51 +0000
-Received: from DGGEMS408-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id AD6FDC47F83DD0B94E51;
+ id 1iL5D1-0004gi-6P
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 12:48:52 +0000
+Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id A2D7B6223ADCEBDB3954;
  Thu, 17 Oct 2019 20:48:46 +0800 (CST)
-Received: from localhost (10.133.213.239) by DGGEMS408-HUB.china.huawei.com
- (10.3.19.208) with Microsoft SMTP Server id 14.3.439.0; Thu, 17 Oct 2019
- 20:48:36 +0800
+Received: from localhost (10.133.213.239) by DGGEMS413-HUB.china.huawei.com
+ (10.3.19.213) with Microsoft SMTP Server id 14.3.439.0; Thu, 17 Oct 2019
+ 20:48:39 +0800
 From: YueHaibing <yuehaibing@huawei.com>
 To: <linus.walleij@linaro.org>, <manivannan.sadhasivam@linaro.org>,
  <afaerber@suse.de>, <f.fainelli@gmail.com>, <rjui@broadcom.com>,
@@ -36,10 +36,10 @@ To: <linus.walleij@linaro.org>, <manivannan.sadhasivam@linaro.org>,
  <jesper.nilsson@axis.com>, <lars.persson@axis.com>,
  <ludovic.desroches@microchip.com>, <nicolas.ferre@microchip.com>,
  <alexandre.belloni@bootlin.com>, <baruch@tkos.co.il>
-Subject: [PATCH -next 14/30] pinctrl: at91: use
+Subject: [PATCH -next 15/30] pinctrl: oxnas: use
  devm_platform_ioremap_resource() to simplify code
-Date: Thu, 17 Oct 2019 20:26:24 +0800
-Message-ID: <20191017122640.22976-15-yuehaibing@huawei.com>
+Date: Thu, 17 Oct 2019 20:26:25 +0800
+Message-ID: <20191017122640.22976-16-yuehaibing@huawei.com>
 X-Mailer: git-send-email 2.10.2.windows.1
 In-Reply-To: <20191017122640.22976-1-yuehaibing@huawei.com>
 References: <20191017122640.22976-1-yuehaibing@huawei.com>
@@ -47,8 +47,8 @@ MIME-Version: 1.0
 X-Originating-IP: [10.133.213.239]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_054849_448288_A4E04A56 
-X-CRM114-Status: UNSURE (   9.86  )
+X-CRM114-CacheID: sfid-20191017_054851_414996_C0B4E8BB 
+X-CRM114-Status: UNSURE (   9.16  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -56,7 +56,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -87,31 +87,31 @@ This is detected by coccinelle.
 
 Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 ---
- drivers/pinctrl/pinctrl-at91.c | 4 +---
+ drivers/pinctrl/pinctrl-oxnas.c | 4 +---
  1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/drivers/pinctrl/pinctrl-at91.c b/drivers/pinctrl/pinctrl-at91.c
-index 117075b..0472f3d 100644
---- a/drivers/pinctrl/pinctrl-at91.c
-+++ b/drivers/pinctrl/pinctrl-at91.c
-@@ -1811,7 +1811,6 @@ static const struct of_device_id at91_gpio_of_match[] = {
- static int at91_gpio_probe(struct platform_device *pdev)
- {
- 	struct device_node *np = pdev->dev.of_node;
+diff --git a/drivers/pinctrl/pinctrl-oxnas.c b/drivers/pinctrl/pinctrl-oxnas.c
+index 40dc125..674b7b5 100644
+--- a/drivers/pinctrl/pinctrl-oxnas.c
++++ b/drivers/pinctrl/pinctrl-oxnas.c
+@@ -1196,7 +1196,6 @@ static int oxnas_gpio_probe(struct platform_device *pdev)
+ 	struct oxnas_gpio_bank *bank;
+ 	unsigned int id, ngpios;
+ 	int irq, ret;
 -	struct resource *res;
- 	struct at91_gpio_chip *at91_chip = NULL;
- 	struct gpio_chip *chip;
- 	struct pinctrl_gpio_range *range;
-@@ -1839,8 +1838,7 @@ static int at91_gpio_probe(struct platform_device *pdev)
- 		goto err;
- 	}
+ 	struct gpio_irq_chip *girq;
+ 
+ 	if (of_parse_phandle_with_fixed_args(np, "gpio-ranges",
+@@ -1220,8 +1219,7 @@ static int oxnas_gpio_probe(struct platform_device *pdev)
+ 
+ 	bank = &oxnas_gpio_banks[id];
  
 -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	at91_chip->regbase = devm_ioremap_resource(&pdev->dev, res);
-+	at91_chip->regbase = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(at91_chip->regbase)) {
- 		ret = PTR_ERR(at91_chip->regbase);
- 		goto err;
+-	bank->reg_base = devm_ioremap_resource(&pdev->dev, res);
++	bank->reg_base = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(bank->reg_base))
+ 		return PTR_ERR(bank->reg_base);
+ 
 -- 
 2.7.4
 
