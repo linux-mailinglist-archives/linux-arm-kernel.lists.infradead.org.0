@@ -2,91 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44CE2DB55E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 20:01:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CC83DB561
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 20:01:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SwtM0d1wxloEY3baH/nNSiZHk9tmKUyJhvXOO98vbVo=; b=mjJ+VGjrZxGozs
-	eQ0OrEvA0C9ycCVSXZYfsRHERmyAN3m5g3wC11sCOD6VXw/2DyQTDb4z3xO7HCBaV3aCSW0julivT
-	Q7qGlh58hr2kjyehNmeAXGvSXHVrtZNPqFk+pjw5jC/RWu9BO5gYXD075zfuCAQBT3LDp+X3V+YQt
-	FMKUoMTB25l6aWLGMaU/htyRwfZEt4tVNATBYJIUnWfCn1I3A+OCdFAe3WL1/yPm+Tg+yPz632Mng
-	sJrUQg4QVdQ0mUZUzpMJ082/AsZC42ldilkFNOSkceDaEG88QlELPYqLkOyeVBKYqxDHfS5mDcILN
-	X9kYJW3RIWTgzSQhxBPw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rfc4lNx52mOL+p1xJwQ0GF7kO2sDCCR3FGinCRKGsfM=; b=sZNreohjVuR94W
+	WZWqUtpS0+cKwyRS4prIfeXnmUQbNjvZ8uNDGiQNrj+0LqE2gPUlgwIF9PF0wO3pioOmbUSXlBS6P
+	8RPK7t/uOoorySMNvMhfQ95OlkeK8M4fVVz+g6/7xYhLwaqEwWq0KxOd70n1vz8JvO3lxvDoYo7Ga
+	OTcMQl2NtvSgwm6XtcUt4jjcuJ0jGiJG5cN8llsPi34Kpuax/kcaLfyn4rF+IFSsiyU1+9uEjUS0x
+	fDaR1kuuVm06VqejZqvPgUb3cHasjNY4wZOzzkR8tycEKPiJkya3BlZKhRTAGTfXUUOxMrjJ3nOu9
+	zCsyqqE6ZoAkumSHTD+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLA5c-0006as-4B; Thu, 17 Oct 2019 18:01:32 +0000
-Received: from mout.gmx.net ([212.227.15.15])
+	id 1iLA5v-0006vW-7Y; Thu, 17 Oct 2019 18:01:51 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL9x7-0004hA-G2; Thu, 17 Oct 2019 17:52:48 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1571334755;
- bh=JFTzIpl2vUzTaahVY6jDAfJ94neB1yDBl6CpIuujvEs=;
- h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
- b=Ki9RNvFZHRiS7BNyYH+p5jdMtCDRjjuPiYgffoyx8LO0s2mzsw8cGKG1ms87Z8lAd
- C4E5v2BMnIGuYFmLbN8ts6MRwQeuXrJNk+I1eeA8W53N7hWhQwxB8kbsQQCUuWQezd
- 1PMAd+BlaUqHlvxsJ4LCtI+azN4SjVb7NFqs4P/M=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [192.168.1.162] ([37.4.249.112]) by mail.gmx.com (mrgmx004
- [212.227.17.190]) with ESMTPSA (Nemesis) id 1MYeQr-1iZEYL3Dt5-00VeyV; Thu, 17
- Oct 2019 19:52:34 +0200
-Subject: Re: lan78xx and phy_state_machine
-To: Daniel Wagner <dwagner@suse.de>
-References: <20191014140604.iddhmg5ckqhzlbkw@beryllium.lan>
- <20191015005327.GJ19861@lunn.ch>
- <20191015171653.ejgfegw3hkef3mbo@beryllium.lan>
- <20191016142501.2c76q7kkfmfcnqns@beryllium.lan>
- <20191016155107.GH17013@lunn.ch>
- <20191017065230.krcrrlmedzi6tj3r@beryllium.lan>
- <6f445327-a2bc-fa75-a70a-c117f2205ecd@gmx.net>
- <20191017174133.e4uhsp77zod5vbef@beryllium.lan>
-From: Stefan Wahren <wahrenst@gmx.net>
-Message-ID: <388beb72-c7e6-745a-ad39-cfbde201f373@gmx.net>
-Date: Thu, 17 Oct 2019 19:52:32 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iL9zU-0007a5-Pu
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 17:55:20 +0000
+Received: by mail-pg1-x542.google.com with SMTP id k20so1795264pgi.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 17 Oct 2019 10:55:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=xMgNa2J6ls/HD5ayqGJcA+YAUgf8k0JYvaclXJ7zCwI=;
+ b=QI6kGDRkARPKQR/ErDbRYxcKV+DHgK5LPrYvrEnmPzjZm7O0gVd0TuaYBe8ZzKxCQa
+ K1cB05AJbmv5MyyNu/xCocJ9EWT58H7/qKp1LTMAlKzzkbSVw8lMB3+6y8IT7IIcy6E2
+ 45w6BwFy2O1mYlNKZIYBbdvRNHVL++K9IS9vNd8orcDP7ic2kcuv+CZXnsUl1IHo/IZY
+ rxCU8wPrqp741TTcwHmmPHPkTzrCD9h7nWjA3IUAtoJo69vCaGlEGhLTEe+Xs66Z/hwf
+ SGQzgVESI4AsJ4J4kUmT1ONGIaoyrpInCy9PntgYp1e1D0erCSiRXrF+JxkHDp6raQAV
+ pzaw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=xMgNa2J6ls/HD5ayqGJcA+YAUgf8k0JYvaclXJ7zCwI=;
+ b=k5JSgSQbcZOIZ9Vt09o6cVHqg80wu5S4WPkLPW3iuN+R3dlllkNH5EIKO5OvfuKkA7
+ P764KkMc1g64hNKNruUs+XYo2HZIc8C6iJ6BgBqsCkYMA42/+KHYbkpee+FJK3IK4sz1
+ b+yIkWIiqbKbIjSxNCG8AgI8zYRcfSO8UZkrJIQvwKI+5kCG57ybb/mOc/yLwD9/rFOt
+ npVEZzL11AtaRzBrS2Sq1C/qgT1AGxDmo2fyAce6J9SmbY6qXoZfiEbSS20QDQBB7eMB
+ H/y8ukIQTlt8eRCzJd0a42OZ+sZZGH3iKAqoTHS7CCsAPPEOAP5UyX43zRSYiUAXEqHQ
+ bTfw==
+X-Gm-Message-State: APjAAAUw7a+Npl6vRHbNwOzYmGm+L4gCY/aolC1T6cbLLzkss6ZTJMBo
+ g8oWallNP/mWX+aV5+2e1B9n5o36bnc=
+X-Google-Smtp-Source: APXvYqytRKs044Y0qrtLrIYszwSdvByHnqImd00Ux1wjxvpJfnDsPMGI8argRmHnrWK18d+c1rzdHg==
+X-Received: by 2002:aa7:8a84:: with SMTP id a4mr1490876pfc.99.1571334911350;
+ Thu, 17 Oct 2019 10:55:11 -0700 (PDT)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id k66sm3348801pjb.11.2019.10.17.10.55.10
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 17 Oct 2019 10:55:10 -0700 (PDT)
+Date: Thu, 17 Oct 2019 11:55:08 -0600
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Mike Leach <mike.leach@linaro.org>
+Subject: Re: [PATCH v3 01/11] coresight: etm4x: Fixes for ETM v4.4
+ architecture updates.
+Message-ID: <20191017175508.GA17991@xps15>
+References: <20191015212004.24748-1-mike.leach@linaro.org>
+ <20191015212004.24748-2-mike.leach@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <20191017174133.e4uhsp77zod5vbef@beryllium.lan>
-Content-Language: en-US
-X-Provags-ID: V03:K1:5KbIL5XYuSEW5O/V1kBxP+XAM1gCYsnxDhYduIq3rA8Oy0uC7Ky
- WrWhr1FY/JM0zHjBeePfPlWHTVR10MPMTmF9uFKUUdRVEseGcLSr2Oo3SAjfxpJhSN8WPK8
- 4MJugThd1Byoa3/24fYA5U6g+IsbO3cVN3Yh+VuQzJ9l1i1jOTNp8i5pNe/EdOdOroCrrOC
- 7vo62KvZ1da1yiVHWe4xg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:91lIPmGiGx8=:C0L48Aq/oiCC6QXlTJopFw
- D3XKnrjHPd6US+fO1YEIVJMuoS1rwMbA9pieS5az4QHMkaM/thncsnNHESYIPgLq406E2r4L5
- vVgpf+eBpR7LnxvVo3nNvRjZmnJmCSIkk0kRHdB2LclLeWQ4NxHE79+ZKdshAYBcpNEwMhy98
- 3yA/6+xiKd8cQtC57ljLcWFfJOk/912XNUcDM76yJMFdemYf9jQVrH30UaQSIbPwXlBaEfWym
- HYEqmfBJl6ceVQ1QrlJJYbixI8hR9bMw0vVpNJDFU9MfVsnqspVYIfpohC1T6txz83ylda2YM
- Hso1XPRTekGFUkLyaiqRC623amzKB6z1pF3sMbgOGJodxaM8ti5jk6zMSgGQb2vqdBzxnx50f
- swu7K7D/64xFynb0GurPsj+P1MZKIA9nltiUeAMhqtCs8616fgLUlJ/wpxhL2N3TYV62fQ8a8
- vPwoZSnue4wyhmpOXOx9P1KOzpspyumYBAseoJJa0bZM/CzINH4rmKGN2QbrnbMvfrK9TkV4R
- ODjmeytWRIU7JI12o+BLmu1MITDOe7QTT0IP9WQaOe73n3aE9V1DPsas8lo2Py1QpYpRoCSgK
- EPT3kKARA9s1Q7onKSEYcUs6wvDdufopTM/OkpvVXOL8HlDXzWM2uuj50/YEeePixURv6MeMD
- aBZBjZYSY8G1SV0kma+u1smAt3fE5Tgt+D8+RHgFDj50pT1aUq+o8k6Zq9z2+yWm9nq/syfft
- itwxmOa/b8Fcq1FuXk1iaYc98RQ2VQl6OmbLZh1btnYzTO/Ba3E7FSvA6dBod0trH/AwhSuBR
- nAYVkpoLoucQnmyctDSWzTGTHUHuUQHh6swkHsDlHl7jUsSuParVu4OMWDs2hak0YJYwjtzx4
- mCEfSGmhBbXGM4/W5hQ03AnvakxIWuqFY3yxKdtQQAKixLd1ajFSLiXgvRnoR/Fa6dr9E1Qf2
- 5vW9If6pBB/QF9J04nk5VklHeNd9xBYB10uyYYyEPQv5ofxFZv3Sojj5iPsxg0pdkPcADKoXA
- nwrPsi+08P7QytakrjcLS+9d50lVQKdfUgOPS+AIJbg6r2IMX5+a9Sg6TkwRUseXQ8NCsrco9
- hQ+bb3DAFwPGTvVUGt5xSt8ZZH1WufnC4d8QjA48xTtI0s4QIZvZgXvkTxo5a4VxacvS9jjI8
- xT7ksTCoLuEGWw2rIth+sQQ+W7DsdYXKDq2YJs9XOhAznYRFdO5xVCehYvK/+0OfZlJHd98MH
- EIDOLbVDO0u0Tnpi37RD1hY6+mGWYHFdykooqdJA17oFxEeptVIp0EIPMUPc=
+Content-Disposition: inline
+In-Reply-To: <20191015212004.24748-2-mike.leach@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_105246_407808_0572AFAC 
-X-CRM114-Status: GOOD (  15.77  )
+X-CRM114-CacheID: sfid-20191017_105512_930112_D5B5364E 
+X-CRM114-Status: GOOD (  20.34  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.15 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -107,56 +99,155 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Woojung Huh <woojung.huh@microchip.com>, Andrew Lunn <andrew@lunn.ch>,
- netdev@vger.kernel.org, UNGLinuxDriver@microchip.com,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+Cc: corbet@lwn.net, gregkh@linuxfoundation.org, coresight@lists.linaro.org,
+ suzuki.poulose@arm.com, linux-doc@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Daniel,
+Hi Mike,
 
-Am 17.10.19 um 19:41 schrieb Daniel Wagner:
-> Hi Stefan,
->
-> On Thu, Oct 17, 2019 at 07:05:32PM +0200, Stefan Wahren wrote:
->> Am 17.10.19 um 08:52 schrieb Daniel Wagner:
->>> On Wed, Oct 16, 2019 at 05:51:07PM +0200, Andrew Lunn wrote:
->>>> Please could you give this a go. It is totally untested, not even
->>>> compile tested...
->>> Sure. The system boots but ther is one splat:
->>>
->> this is a known issues since 4.20 [1], [2]. So not related to the crash.
-> Oh, I see.
->
->> Unfortunately, you didn't wrote which kernel version works for you
->> (except of this splat). Only 5.3 or 5.4-rc3 too?
-> With v5.2.20 I was able to boot the system. But after this discussion
-> I would say that was just luck. The race seems to exist for longer and
-> only with my 'special' config I am able to reproduce it.
-okay, let me rephrase my question. You said that 5.4-rc3 didn't even
-boot in your setup. After applying Andrew's patch, does it boot or is it
-a different issue?
->
->> [1] - https://marc.info/?l=linux-netdev&m=154604180927252&w=2
->> [2] - https://patchwork.kernel.org/patch/10888797/
-> Indeed, the irq domain code looks suspicious and Marc pointed out that
-> is dead wrong. Could we just go with [2] and fix this up?
+On Tue, Oct 15, 2019 at 10:19:54PM +0100, Mike Leach wrote:
+> ETMv4.4 adds in support for tracing secure EL2 (per arch 8.x updates).
+> Patch accounts for this new capability.
+> 
+> Reviewed-by: Leo Yan <leo.yan@linaro.org>
+> Signed-off-by: Mike Leach <mike.leach@linaro.org>
+> ---
+>  .../hwtracing/coresight/coresight-etm4x-sysfs.c   | 12 ++++++------
+>  drivers/hwtracing/coresight/coresight-etm4x.c     |  5 ++++-
+>  drivers/hwtracing/coresight/coresight-etm4x.h     | 15 +++++++++++----
+>  3 files changed, 21 insertions(+), 11 deletions(-)
+> 
+> diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> index 219c10eb752c..b6984be0c515 100644
+> --- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> +++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> @@ -738,7 +738,7 @@ static ssize_t s_exlevel_vinst_show(struct device *dev,
+>  	struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
+>  	struct etmv4_config *config = &drvdata->config;
+>  
+> -	val = BMVAL(config->vinst_ctrl, 16, 19);
+> +	val = (config->vinst_ctrl & ETM_EXLEVEL_S_VICTLR_MASK) >> 16;
+>  	return scnprintf(buf, PAGE_SIZE, "%#lx\n", val);
+>  }
+>  
+> @@ -754,8 +754,8 @@ static ssize_t s_exlevel_vinst_store(struct device *dev,
+>  		return -EINVAL;
+>  
+>  	spin_lock(&drvdata->spinlock);
+> -	/* clear all EXLEVEL_S bits (bit[18] is never implemented) */
+> -	config->vinst_ctrl &= ~(BIT(16) | BIT(17) | BIT(19));
+> +	/* clear all EXLEVEL_S bits  */
+> +	config->vinst_ctrl &= ~(ETM_EXLEVEL_S_VICTLR_MASK);
+>  	/* enable instruction tracing for corresponding exception level */
+>  	val &= drvdata->s_ex_level;
+>  	config->vinst_ctrl |= (val << 16);
+> @@ -773,7 +773,7 @@ static ssize_t ns_exlevel_vinst_show(struct device *dev,
+>  	struct etmv4_config *config = &drvdata->config;
+>  
+>  	/* EXLEVEL_NS, bits[23:20] */
+> -	val = BMVAL(config->vinst_ctrl, 20, 23);
+> +	val = (config->vinst_ctrl & ETM_EXLEVEL_NS_VICTLR_MASK) >> 20;
+>  	return scnprintf(buf, PAGE_SIZE, "%#lx\n", val);
+>  }
+>  
+> @@ -789,8 +789,8 @@ static ssize_t ns_exlevel_vinst_store(struct device *dev,
+>  		return -EINVAL;
+>  
+>  	spin_lock(&drvdata->spinlock);
+> -	/* clear EXLEVEL_NS bits (bit[23] is never implemented */
+> -	config->vinst_ctrl &= ~(BIT(20) | BIT(21) | BIT(22));
+> +	/* clear EXLEVEL_NS bits  */
+> +	config->vinst_ctrl &= ~(ETM_EXLEVEL_NS_VICTLR_MASK);
+>  	/* enable instruction tracing for corresponding exception level */
+>  	val &= drvdata->ns_ex_level;
+>  	config->vinst_ctrl |= (val << 20);
+> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+> index 8f98701cadc5..efe120925f9d 100644
+> --- a/drivers/hwtracing/coresight/coresight-etm4x.c
+> +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+> @@ -648,6 +648,7 @@ static void etm4_init_arch_data(void *info)
+>  	 * TRCARCHMAJ, bits[11:8] architecture major versin number
+>  	 */
+>  	drvdata->arch = BMVAL(etmidr1, 4, 11);
+> +	drvdata->config.arch = drvdata->arch;
+>  
+>  	/* maximum size of resources */
+>  	etmidr2 = readl_relaxed(drvdata->base + TRCIDR2);
+> @@ -799,6 +800,7 @@ static u64 etm4_get_ns_access_type(struct etmv4_config *config)
+>  static u64 etm4_get_access_type(struct etmv4_config *config)
+>  {
+>  	u64 access_type = etm4_get_ns_access_type(config);
+> +	u64 s_hyp = (config->arch & 0x0f) >= 0x4 ? ETM_EXLEVEL_S_HYP : 0;
+>  
+>  	/*
+>  	 * EXLEVEL_S, bits[11:8], don't trace anything happening
+> @@ -806,7 +808,8 @@ static u64 etm4_get_access_type(struct etmv4_config *config)
+>  	 */
+>  	access_type |= (ETM_EXLEVEL_S_APP	|
+>  			ETM_EXLEVEL_S_OS	|
+> -			ETM_EXLEVEL_S_HYP);
+> +			s_hyp			|
+> +			ETM_EXLEVEL_S_MON);
+>  
+>  	return access_type;
+>  }
+> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.h b/drivers/hwtracing/coresight/coresight-etm4x.h
+> index 546d790cb01b..b873df38e7d8 100644
+> --- a/drivers/hwtracing/coresight/coresight-etm4x.h
+> +++ b/drivers/hwtracing/coresight/coresight-etm4x.h
+> @@ -181,17 +181,22 @@
+>  /* PowerDown Control Register bits */
+>  #define TRCPDCR_PU			BIT(3)
+>  
+> -/* secure state access levels */
+> +/* secure state access levels - TRCACATRn */
+>  #define ETM_EXLEVEL_S_APP		BIT(8)
+>  #define ETM_EXLEVEL_S_OS		BIT(9)
+> -#define ETM_EXLEVEL_S_NA		BIT(10)
+> -#define ETM_EXLEVEL_S_HYP		BIT(11)
+> -/* non-secure state access levels */
+> +#define ETM_EXLEVEL_S_HYP		BIT(10)
+> +#define ETM_EXLEVEL_S_MON		BIT(11)
+> +/* non-secure state access levels - TRCACATRn */
+>  #define ETM_EXLEVEL_NS_APP		BIT(12)
+>  #define ETM_EXLEVEL_NS_OS		BIT(13)
+>  #define ETM_EXLEVEL_NS_HYP		BIT(14)
+>  #define ETM_EXLEVEL_NS_NA		BIT(15)
+>  
+> +/* secure / non secure masks - TRCVICTLR, IDR3 */
+> +#define ETM_EXLEVEL_S_VICTLR_MASK	GENMASK(19, 16)
+> +/* NS MON (EL3) mode never implemented */
+> +#define ETM_EXLEVEL_NS_VICTLR_MASK	GENMASK(22, 20)
+> +
+>  /**
+>   * struct etmv4_config - configuration information related to an ETMv4
+>   * @mode:	Controls various modes supported by this ETM.
+> @@ -238,6 +243,7 @@
+>   * @vmid_mask0:	VM ID comparator mask for comparator 0-3.
+>   * @vmid_mask1:	VM ID comparator mask for comparator 4-7.
+>   * @ext_inp:	External input selection.
+> + * @arch:	ETM architecture version (for arch dependent config).
+>   */
+>  struct etmv4_config {
+>  	u32				mode;
+> @@ -280,6 +286,7 @@ struct etmv4_config {
+>  	u32				vmid_mask0;
+>  	u32				vmid_mask1;
+>  	u32				ext_inp;
+> +	u8				arch;
+>  };
 
-Sorry, i cannot answer this question.
+I am applying this patch, no need to send it again.
 
-Stefan
-
->
-> Thanks,
-> Daniel
->
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+>  
+>  /**
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
