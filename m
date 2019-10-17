@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 582CADA70D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 10:16:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0760EDA70F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 10:16:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=M3qNha+VVvwLz/HiaTM0ogsdkpojKbwQUmyUG5QJANM=; b=Gvp7EtsexxiPyufO+T4L3Q+LpZ
-	7npsA1JnWmoCpYvQfPYr6ZRfqmDV/NVQsJnYEseUAA5jh0sdMdaiBL9LPrkSEZXMR5H6VCbiQdOmR
-	mV8DwLs64LhueSRrugOFjTYgt8azbuWlGsK529/pWHQ4vU+AjuS8E+VXN+iH2nWiPv3Gz86wCjCJW
-	QLGfqMYu5JXPwXleKTUDLE4zrdNg33VpPtZYF/oxTXydOVN0ZllkjwYsJEnfJAV+yRlBfTglM1ZG+
-	GWCE0EkCPmiVIlKI7y/rf54pEzPgy84IO1AcANGEyoIH8rSDjpH9H9x6oVoOeuQT8MER5p4FOvv3g
-	MRRPDtWg==;
+	bh=Zg8Ir9hPsHAHYKKvvyOuISYtbSRgE3T1FtrwOfCMhXA=; b=pIvTpfDJK5TkTVSYv8sDeWib8T
+	WDCf3ahKDqAcPpRhMpNK15DNKvKia+7pAQTNByXrAyYfsJsVccJZ2UfbXMsWhUTqITDYuK+cKPqKB
+	+idI0ZB0Zd2zigLs0woP818u6jKvHwCfMR3NuGwKWHSIxe5S0rBag+vsoBwRDn/g2x3sYIAJGB/rY
+	Ip7/GNWUuWvYhxJ/qKyJTlVBJP2XPZ6j/iLiPCZSNUQGLApZc7hRNxl7gzOVIHopAYEV55xVN5DAD
+	bp7Fit9IyRKQFNKcZuoGZpyotz9fK2fhTO+0QTdcVJgEaJJvHwrEl35IuOM37ExRPfc5UO7uelA9N
+	RZyTeusQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL0xG-00033M-R3; Thu, 17 Oct 2019 08:16:18 +0000
+	id 1iL0xh-0003U4-AG; Thu, 17 Oct 2019 08:16:45 +0000
 Received: from [217.140.110.172] (helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL0w3-00013w-HA
+ id 1iL0w3-000176-Hg
  for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 08:15:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BE5B7165C;
- Thu, 17 Oct 2019 01:14:52 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DB35228;
+ Thu, 17 Oct 2019 01:14:56 -0700 (PDT)
 Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.0.144])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 5E31D3F6C4;
- Thu, 17 Oct 2019 01:14:49 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 3FB093F6C4;
+ Thu, 17 Oct 2019 01:14:53 -0700 (PDT)
 From: Amit Daniel Kachhap <amit.kachhap@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 03/11] arm64: cpufeature: handle conflicts based on capability
-Date: Thu, 17 Oct 2019 13:44:17 +0530
-Message-Id: <1571300065-10236-4-git-send-email-amit.kachhap@arm.com>
+Subject: [PATCH 04/11] arm64: create macro to park cpu in an infinite loop
+Date: Thu, 17 Oct 2019 13:44:18 +0530
+Message-Id: <1571300065-10236-5-git-send-email-amit.kachhap@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1571300065-10236-1-git-send-email-amit.kachhap@arm.com>
 References: <1571300065-10236-1-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_011503_986577_59A96329 
-X-CRM114-Status: GOOD (  21.14  )
+X-CRM114-CacheID: sfid-20191017_011504_083007_0B6A6E05 
+X-CRM114-Status: GOOD (  10.74  )
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
@@ -76,142 +76,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Kristina Martsenko <kristina.martsenko@arm.com>
+A macro early_park_cpu is added to park the faulted cpu in an infinite
+loop. Currently, this macro is substituted in two instances and is reused
+in the subsequent pointer authentication patch.
 
-Each system capability can be of either boot, local, or system scope,
-depending on when the state of the capability is finalized. When we
-detect a conflict on a late CPU, we either offline the CPU or panic the
-system. We currently always panic if the conflict is caused by a boot
-scope capability, and offline the CPU if the conflict is caused by a
-local or system scope capability.
-
-We're going to want to add a new capability (for pointer authentication)
-which needs to be boot scope but doesn't need to panic the system when a
-conflict is detected. So add a new flag to specify whether the
-capability requires the system to panic or not. Current boot scope
-capabilities are updated to set the flag, so there should be no
-functional change as a result of this patch.
-
-Reviewed-by: Kees Cook <keescook@chromium.org>
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-Signed-off-by: Kristina Martsenko <kristina.martsenko@arm.com>
 Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 ---
 Changes since RFC v2:
- - Updated comment above ARM64_CPUCAP_STRICT_BOOT_CPU_FEATURE [Suzuki]
+ - New patch in this version for code reuse.
 
- arch/arm64/include/asm/cpufeature.h | 18 ++++++++++++++++--
- arch/arm64/kernel/cpufeature.c      | 23 +++++++++--------------
- 2 files changed, 25 insertions(+), 16 deletions(-)
+ arch/arm64/kernel/head.S | 20 ++++++++++++--------
+ 1 file changed, 12 insertions(+), 8 deletions(-)
 
-diff --git a/arch/arm64/include/asm/cpufeature.h b/arch/arm64/include/asm/cpufeature.h
-index 670497d..011a665 100644
---- a/arch/arm64/include/asm/cpufeature.h
-+++ b/arch/arm64/include/asm/cpufeature.h
-@@ -208,6 +208,10 @@ extern struct arm64_ftr_reg arm64_ftr_reg_ctrel0;
-  *     In some non-typical cases either both (a) and (b), or neither,
-  *     should be permitted. This can be described by including neither
-  *     or both flags in the capability's type field.
-+ *
-+ *     In case of a conflict, the CPU is prevented from booting. If the
-+ *     ARM64_CPUCAP_PANIC_ON_CONFLICT flag is specified for the capability,
-+ *     then a kernel panic is triggered.
-  */
- 
- 
-@@ -240,6 +244,8 @@ extern struct arm64_ftr_reg arm64_ftr_reg_ctrel0;
- #define ARM64_CPUCAP_PERMITTED_FOR_LATE_CPU	((u16)BIT(4))
- /* Is it safe for a late CPU to miss this capability when system has it */
- #define ARM64_CPUCAP_OPTIONAL_FOR_LATE_CPU	((u16)BIT(5))
-+/* Panic when a conflict is detected */
-+#define ARM64_CPUCAP_PANIC_ON_CONFLICT		((u16)BIT(6))
+diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
+index 989b194..e58e5975 100644
+--- a/arch/arm64/kernel/head.S
++++ b/arch/arm64/kernel/head.S
+@@ -761,6 +761,16 @@ ENDPROC(__secondary_too_slow)
+ 	.endm
  
  /*
-  * CPU errata workarounds that need to be enabled at boot time if one or
-@@ -279,9 +285,11 @@ extern struct arm64_ftr_reg arm64_ftr_reg_ctrel0;
- 
- /*
-  * CPU feature used early in the boot based on the boot CPU. All secondary
-- * CPUs must match the state of the capability as detected by the boot CPU.
-+ * CPUs must match the state of the capability as detected by the boot CPU. In
-+ * case of a conflict, a kernel panic is triggered.
-  */
--#define ARM64_CPUCAP_STRICT_BOOT_CPU_FEATURE ARM64_CPUCAP_SCOPE_BOOT_CPU
-+#define ARM64_CPUCAP_STRICT_BOOT_CPU_FEATURE		\
-+	(ARM64_CPUCAP_SCOPE_BOOT_CPU | ARM64_CPUCAP_PANIC_ON_CONFLICT)
- 
- struct arm64_cpu_capabilities {
- 	const char *desc;
-@@ -352,6 +360,12 @@ cpucap_late_cpu_permitted(const struct arm64_cpu_capabilities *cap)
- 	return !!(cap->type & ARM64_CPUCAP_PERMITTED_FOR_LATE_CPU);
- }
- 
-+static inline bool
-+cpucap_panic_on_conflict(const struct arm64_cpu_capabilities *cap)
-+{
-+	return !!(cap->type & ARM64_CPUCAP_PANIC_ON_CONFLICT);
-+}
++ * Macro to park the cpu in an infinite loop.
++ */
++	.macro	early_park_cpu
++.Lepc_\@:
++	wfe
++	wfi
++	b	.Lepc_\@
++	.endm
 +
- /*
-  * Generic helper for handling capabilties with multiple (match,enable) pairs
-  * of call backs, sharing the same capability bit.
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index a73400b..4ef40c9 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -1850,10 +1850,8 @@ static void __init enable_cpu_capabilities(u16 scope_mask)
-  * Run through the list of capabilities to check for conflicts.
-  * If the system has already detected a capability, take necessary
-  * action on this CPU.
-- *
-- * Returns "false" on conflicts.
-  */
--static bool verify_local_cpu_caps(u16 scope_mask)
-+static void verify_local_cpu_caps(u16 scope_mask)
- {
- 	int i;
- 	bool cpu_has_cap, system_has_cap;
-@@ -1898,10 +1896,12 @@ static bool verify_local_cpu_caps(u16 scope_mask)
- 		pr_crit("CPU%d: Detected conflict for capability %d (%s), System: %d, CPU: %d\n",
- 			smp_processor_id(), caps->capability,
- 			caps->desc, system_has_cap, cpu_has_cap);
--		return false;
--	}
++/*
+  * Enable the MMU.
+  *
+  *  x0  = SCTLR_EL1 value for turning on the MMU.
+@@ -810,10 +820,7 @@ ENTRY(__cpu_secondary_check52bitva)
  
--	return true;
-+		if (cpucap_panic_on_conflict(caps))
-+			cpu_panic_kernel();
-+		else
-+			cpu_die_early();
-+	}
- }
+ 	update_early_cpu_boot_status \
+ 		CPU_STUCK_IN_KERNEL | CPU_STUCK_REASON_52_BIT_VA, x0, x1
+-1:	wfe
+-	wfi
+-	b	1b
+-
++	early_park_cpu
+ #endif
+ 2:	ret
+ ENDPROC(__cpu_secondary_check52bitva)
+@@ -822,10 +829,7 @@ __no_granule_support:
+ 	/* Indicate that this CPU can't boot and is stuck in the kernel */
+ 	update_early_cpu_boot_status \
+ 		CPU_STUCK_IN_KERNEL | CPU_STUCK_REASON_NO_GRAN, x1, x2
+-1:
+-	wfe
+-	wfi
+-	b	1b
++	early_park_cpu
+ ENDPROC(__no_granule_support)
  
- /*
-@@ -1911,12 +1911,8 @@ static bool verify_local_cpu_caps(u16 scope_mask)
- static void check_early_cpu_features(void)
- {
- 	verify_cpu_asid_bits();
--	/*
--	 * Early features are used by the kernel already. If there
--	 * is a conflict, we cannot proceed further.
--	 */
--	if (!verify_local_cpu_caps(SCOPE_BOOT_CPU))
--		cpu_panic_kernel();
-+
-+	verify_local_cpu_caps(SCOPE_BOOT_CPU);
- }
- 
- static void
-@@ -1964,8 +1960,7 @@ static void verify_local_cpu_capabilities(void)
- 	 * check_early_cpu_features(), as they need to be verified
- 	 * on all secondary CPUs.
- 	 */
--	if (!verify_local_cpu_caps(SCOPE_ALL & ~SCOPE_BOOT_CPU))
--		cpu_die_early();
-+	verify_local_cpu_caps(SCOPE_ALL & ~SCOPE_BOOT_CPU);
- 
- 	verify_local_elf_hwcaps(arm64_elf_hwcaps);
- 
+ #ifdef CONFIG_RELOCATABLE
 -- 
 2.7.4
 
