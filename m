@@ -2,84 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5940ADB82E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 22:17:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E4B8DB868
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 22:42:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pkbFe8nu/WdcK1eoKQPxLiE3u3B31a+eRG3rJEa/AqA=; b=YX/rFfrS9OY4kt
-	7sM7MdFLau3rrRr6CxC93KvjgkQcidQEZVYl6iXfAC2hZn82l46k4hVwcSv9GaQv63WzhTiD6MqvM
-	zUNCL5TQqSsXml0LtH34HafC5MCut5q/XhWB2NItlqFBi2iBkC8puniWIyt8nR9AUeEClvneaWfky
-	1mnlL5L8wBazk61o2bnX9sV0FnF+KUuIGqSHNvVq12XHzjESJ3pw1XnBHHCuO2AOnTiKIk17jbQoa
-	4obM1S/bBSvaSvlAQl3EHZ/dQNbCGGU0sQIhUnM0wZaVpoepM8iy25lly+JreRAWYrKVLm6E+Pj9Z
-	fgSjALxe32QMLu3pcHLQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=IkII/tfRxAjyanisRosRS6EXCjFsB8Av2Kipe3yd6R8=; b=cOmJ8XiABw1JWw
+	s3QuyBJIYTvGTaoPz7OXKW81A771i93VeSHbi0XoWckR/p1DQYvC44/upjcAezvlvXKVowU97n9Px
+	JxOt8WjljYyWIEPVIcKRRa/4xE5Aj9ai2HqV8SSuVFvooVReeGLVN15mrGvFQeKKT+Z4zx88P6vDu
+	1/0fngxyf+6dn0MCdHwN8IZkXZ1VXzVWeP//SwROBk/Ffvl7wATxkfcwCOgXJVUll8qrq01CB3Ho/
+	qgtkC557sWsVri51NRMrXK/4GOBtafI3vvdh60y22WjW6WhUno8XFm+vsqJBdzAuyLISL8BeBQvhG
+	cXDxWqvZ3R336IytJAZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLCD0-0002Kw-Qr; Thu, 17 Oct 2019 20:17:18 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1iLCbR-0001yp-6o; Thu, 17 Oct 2019 20:42:33 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLCCs-0002KV-6a
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 20:17:12 +0000
-Received: by mail-pf1-x441.google.com with SMTP id h195so2341707pfe.5
+ id 1iLCbH-0001yJ-FH
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 20:42:24 +0000
+Received: by mail-pl1-x642.google.com with SMTP id q15so1690605pll.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 17 Oct 2019 13:17:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=ofGJFITzq7+8vbxQSUKGGCUjUrfmHQGStzvLOkyKiXs=;
- b=AAS8hlkY+I6l43Mw/J/dsPGo1XhABdgHfowFi5scReMpiFSY/9Q5OsdOe8kxlvtRU9
- +PlspU1LVUSM2QTjj8YTgdln5gKrv5iJXZhDjQvb5JKmzh5PVR9fX5LL9ApuYcrCGmjl
- oWQnNv8BJnSHKwfSbjRYqpVb2lF6BbnWKLjR3dbLCgIXgjfYaNpWAB2atFD0JMIsWZ26
- HJ6AvdfifoNpw3lAjlKbuHrrMe+6c73SxPXcQlI0rm8RH6AujFuVrWteioiLu0SxNaXm
- uHXwAPP7YFJ2z7HSCqXmEQ7uD/DenqugMpF0FQEUvh9AZsDHYVJ2JqTvR1+CQEsPuyzu
- akfw==
+ Thu, 17 Oct 2019 13:42:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=nPDOMJGsHH0zWzPAXm/wI3oxwPr0hf8L0/bKy7cCfl0=;
+ b=JY5V0+zsgcHQRg+zIlfgYCnfvpm4+2xS++Wrh5CZKpfPmBH97fjeKguHx2KGQ7JcU4
+ B1RXuRi2+tSbaAqaGOzzASRHJj++kOC+LCAmQDJSPeyZb8DnL2mMRwlPiCwzdPiCWlUs
+ Xh6p7h9kKxZsBiq/NA6sEtIH65uq9Hafzf+lUVMfb8ijpYSuTXaNoiTNqv9sFEtuUwOt
+ TbRUWF7kiHt5lcy828hYBACk5tIrtJaTrhPuN5uMVq25g5F/5h3tPmTd5qmwS88pYnAg
+ 2zZJVCktgXrf3VCPK9oywT03Y57xan/2a7SgrdB9dfI6+pIu3+CRznM3ZR/GkKdN2cf/
+ aCKA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ofGJFITzq7+8vbxQSUKGGCUjUrfmHQGStzvLOkyKiXs=;
- b=Bf5KieSXGFNCRruAD0SKQQ6ZB20aAe8V+3LWhSgXWb2tIA3czNx8WvzZewBp1mC2s4
- S13YqloTUUfhgMOXaWQlgNDYImUZj3DRt1sESWZJwHJyGuAkM6gms87rJkb8v1HlL+ST
- LYjr3jlVw7p6N9WxppXm5J8noH3y9oxPzO2L9IAYOouUYiPZCn4JBHi3oU3nj4Olay28
- Ji3zV0sdSybXCuMX/t/zFW9LDroWXvNn5w1S3UIlYCSXvm/o35U75trxcJDVrcRqtekY
- 0Iz2PHgo3sDXNXFYbgYy91q7mJ/K4QQean1ZD07VauRerDQzWOtPqkvB5TFXhmov4PKm
- KU8Q==
-X-Gm-Message-State: APjAAAXkaYvIo9EEL/5Lx5ad11Bee1XoXqQLqaUaSZXUvxXb6QJYNoSw
- v4ae2ABWMev03W+HfRdgWFPR7g==
-X-Google-Smtp-Source: APXvYqx5pBJzpC1RW5OFSewc0MGoctOoaocgKQualnPldFL8Ka92ajSC7yt8FyqESkZsZb/5wmFZlA==
-X-Received: by 2002:a17:90a:9dc5:: with SMTP id
- x5mr6666738pjv.85.1571343428709; 
- Thu, 17 Oct 2019 13:17:08 -0700 (PDT)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id f6sm3927504pfq.169.2019.10.17.13.17.07
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 17 Oct 2019 13:17:08 -0700 (PDT)
-Date: Thu, 17 Oct 2019 14:17:06 -0600
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Mike Leach <mike.leach@linaro.org>
-Subject: Re: [PATCH v3 08/11] coresight: etm4x: Add missing single-shot
- control API to sysfs
-Message-ID: <20191017201705.GA16483@xps15>
-References: <20191015212004.24748-1-mike.leach@linaro.org>
- <20191015212004.24748-9-mike.leach@linaro.org>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=nPDOMJGsHH0zWzPAXm/wI3oxwPr0hf8L0/bKy7cCfl0=;
+ b=VvNqRpRf7sSSnIwKxuGZBLPnnY7//PX6um+yoYejrDdOB4krDlAkbFg+PM5i0S3jo6
+ Q4XiLBV2GiMs5nsMMx5t1XM1ocCrsRcMKbEL3rqF3b1ddwrZ6rVhPUwXYFLUY6XoAhQf
+ 6rSBpH2x+OBN1nxhOvJZdyAFiM1H1G5mBj7NUt4zhcC/ADi0/IURXqUMrGNka2onvzxA
+ 2ge+S9wcB6m2D+hvWkKGmz4QO5BbO3SWJ/NDahTjszhowFDQ0oBBDbNlSqaxLJEwK34c
+ YxKCbqbzBI6el/W3SrmZ7E5Vt/e9uu1KWRGbu7qIwUiupDix0twzy3L52340tlit/GPR
+ RjhA==
+X-Gm-Message-State: APjAAAUJ8GobdapqPjTiO43RfU1w+Kfpf4sje7N0ccH5xCEvLDKDFl48
+ G6NiF/bK+ecpk60pI12nuD0=
+X-Google-Smtp-Source: APXvYqzB6sY5K36yP5ikWTXLkI1rfufnmBl38JrsxdSekitFu0TG7m6r9+16waKtOEprzS9jLoRCDw==
+X-Received: by 2002:a17:902:2e:: with SMTP id 43mr6159836pla.55.1571344941448; 
+ Thu, 17 Oct 2019 13:42:21 -0700 (PDT)
+Received: from dtor-ws.mtv.corp.google.com
+ ([2620:15c:202:201:3adc:b08c:7acc:b325])
+ by smtp.gmail.com with ESMTPSA id b3sm4626365pfd.125.2019.10.17.13.42.19
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 17 Oct 2019 13:42:20 -0700 (PDT)
+From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+To: linux-input@vger.kernel.org
+Subject: [PATCH 00/22] Stop using input_polled_dev in polling drivers
+Date: Thu, 17 Oct 2019 13:41:54 -0700
+Message-Id: <20191017204217.106453-1-dmitry.torokhov@gmail.com>
+X-Mailer: git-send-email 2.23.0.866.gb869b98d4c-goog
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191015212004.24748-9-mike.leach@linaro.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_131710_249072_810824DC 
-X-CRM114-Status: GOOD (  23.65  )
+X-CRM114-CacheID: sfid-20191017_134223_536616_163E1CCF 
+X-CRM114-Status: UNSURE (   9.07  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (dmitry.torokhov[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -100,269 +98,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: corbet@lwn.net, gregkh@linuxfoundation.org, coresight@lists.linaro.org,
- suzuki.poulose@arm.com, linux-doc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Sven Van Asbroeck <TheSven73@gmail.com>, Jacky Bai <ping.bai@nxp.com>,
+ "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
+ Jonathan Bakker <xc-racer2@live.ca>, Marco Felsch <m.felsch@pengutronix.de>,
+ Stefan Agner <stefan@agner.ch>, Eric Anholt <eric@anholt.net>,
+ Jilayne Lovejoy <opensource@jilayne.com>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Miloslav Trmac <mitr@volny.cz>, Anders Roxell <anders.roxell@linaro.org>,
+ Anson Huang <Anson.Huang@nxp.com>, YueHaibing <yuehaibing@huawei.com>,
+ Luca Weiss <luca@z3ntu.xyz>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ linux-arm-kernel@lists.infradead.org, Jeff LaBundy <jeff@labundy.com>,
+ Mukesh Ojha <mojha@codeaurora.org>, Brian Masney <masneyb@onstation.org>,
+ Pavel Machek <pavel@ucw.cz>, Alexios Zavras <alexios.zavras@intel.com>,
+ Steve Winslow <swinslow@gmail.com>,
+ =?UTF-8?q?Ronald=20Tschal=C3=A4r?= <ronald@innovation.ch>,
+ Martin Kepplinger <martink@posteo.de>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Allison Randal <allison@lohutok.net>, Dong Aisheng <aisheng.dong@nxp.com>,
+ Alexander Shiyan <shc_work@mail.ru>, Richard Fontana <rfontana@redhat.com>,
+ Maximilian Luz <luzmaximilian@gmail.com>, linux-kernel@vger.kernel.org,
+ Luis Chamberlain <mcgrof@kernel.org>, Hans Verkuil <hverkuil-cisco@xs4all.nl>,
+ =?UTF-8?q?Pawe=C5=82=20Chmiel?= <pawel.mikolaj.chmiel@gmail.com>,
+ Enrico Weigelt <info@metux.net>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 15, 2019 at 10:20:01PM +0100, Mike Leach wrote:
-> An API to control single-shot comparator operation was missing from sysfs.
-> This adds the parameters to sysfs to allow programming of this feature.
-> 
-> Signed-off-by: Mike Leach <mike.leach@linaro.org>
-> ---
->  .../coresight/coresight-etm4x-sysfs.c         | 122 ++++++++++++++++++
->  drivers/hwtracing/coresight/coresight-etm4x.c |  26 +++-
->  drivers/hwtracing/coresight/coresight-etm4x.h |   2 +
->  3 files changed, 149 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-> index ca1a54411225..43b3f0976034 100644
-> --- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-> +++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-> @@ -239,6 +239,7 @@ static ssize_t reset_store(struct device *dev,
->  	for (i = 0; i < drvdata->nr_resource; i++)
->  		config->res_ctrl[i] = 0x0;
->  
-> +	config->ss_idx = 0x0;
->  	for (i = 0; i < drvdata->nr_ss_cmp; i++) {
->  		config->ss_ctrl[i] = 0x0;
->  		config->ss_pe_cmp[i] = 0x0;
-> @@ -1717,6 +1718,123 @@ static ssize_t res_ctrl_store(struct device *dev,
->  }
->  static DEVICE_ATTR_RW(res_ctrl);
->  
-> +static ssize_t sshot_idx_show(struct device *dev,
-> +			      struct device_attribute *attr, char *buf)
-> +{
-> +	unsigned long val;
-> +	struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
-> +	struct etmv4_config *config = &drvdata->config;
-> +
-> +	val = config->ss_idx;
-> +	return scnprintf(buf, PAGE_SIZE, "%#lx\n", val);
-> +}
-> +
-> +static ssize_t sshot_idx_store(struct device *dev,
-> +			       struct device_attribute *attr,
-> +			       const char *buf, size_t size)
-> +{
-> +	unsigned long val;
-> +	struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
-> +	struct etmv4_config *config = &drvdata->config;
-> +
-> +	if (kstrtoul(buf, 16, &val))
-> +		return -EINVAL;
-> +	if (val >= drvdata->nr_ss_cmp)
-> +		return -EINVAL;
-> +
-> +	spin_lock(&drvdata->spinlock);
-> +	config->ss_idx = val;
-> +	spin_unlock(&drvdata->spinlock);
-> +	return size;
-> +}
-> +static DEVICE_ATTR_RW(sshot_idx);
-> +
-> +static ssize_t sshot_ctrl_show(struct device *dev,
-> +			       struct device_attribute *attr,
-> +			       char *buf)
-> +{
-> +	unsigned long val;
-> +	struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
-> +	struct etmv4_config *config = &drvdata->config;
-> +
-> +	spin_lock(&drvdata->spinlock);
-> +	val = config->ss_ctrl[config->ss_idx];
-> +	spin_unlock(&drvdata->spinlock);
-> +	return scnprintf(buf, PAGE_SIZE, "%#lx\n", val);
-> +}
-> +
-> +static ssize_t sshot_ctrl_store(struct device *dev,
-> +				struct device_attribute *attr,
-> +				const char *buf, size_t size)
-> +{
-> +	u8 idx;
-> +	unsigned long val;
-> +	struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
-> +	struct etmv4_config *config = &drvdata->config;
-> +
-> +	if (kstrtoul(buf, 16, &val))
-> +		return -EINVAL;
-> +
-> +	spin_lock(&drvdata->spinlock);
-> +	idx = config->ss_idx;
-> +	config->ss_ctrl[idx] = val & GENMASK(24, 0);
-> +	/* must clear bit 31 in related status register on programming */
-> +	config->ss_status[idx] &= ~BIT(31);
-> +	spin_unlock(&drvdata->spinlock);
-> +	return size;
-> +}
-> +static DEVICE_ATTR_RW(sshot_ctrl);
-> +
-> +static ssize_t sshot_status_show(struct device *dev,
-> +				 struct device_attribute *attr, char *buf)
-> +{
-> +	unsigned long val;
-> +	struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
-> +	struct etmv4_config *config = &drvdata->config;
-> +
-> +	spin_lock(&drvdata->spinlock);
-> +	val = config->ss_status[config->ss_idx];
-> +	spin_unlock(&drvdata->spinlock);
-> +	return scnprintf(buf, PAGE_SIZE, "%#lx\n", val);
-> +}
-> +static DEVICE_ATTR_RO(sshot_status);
-> +
-> +static ssize_t sshot_pe_ctrl_show(struct device *dev,
-> +				  struct device_attribute *attr,
-> +				  char *buf)
-> +{
-> +	unsigned long val;
-> +	struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
-> +	struct etmv4_config *config = &drvdata->config;
-> +
-> +	spin_lock(&drvdata->spinlock);
-> +	val = config->ss_pe_cmp[config->ss_idx];
-> +	spin_unlock(&drvdata->spinlock);
-> +	return scnprintf(buf, PAGE_SIZE, "%#lx\n", val);
-> +}
-> +
-> +static ssize_t sshot_pe_ctrl_store(struct device *dev,
-> +				   struct device_attribute *attr,
-> +				   const char *buf, size_t size)
-> +{
-> +	u8 idx;
-> +	unsigned long val;
-> +	struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
-> +	struct etmv4_config *config = &drvdata->config;
-> +
-> +	if (kstrtoul(buf, 16, &val))
-> +		return -EINVAL;
-> +
-> +	spin_lock(&drvdata->spinlock);
-> +	idx = config->ss_idx;
-> +	config->ss_pe_cmp[idx] = val & GENMASK(7, 0);
-> +	/* must clear bit 31 in related status register on programming */
-> +	config->ss_status[idx] &= ~BIT(31);
-> +	spin_unlock(&drvdata->spinlock);
-> +	return size;
-> +}
-> +static DEVICE_ATTR_RW(sshot_pe_ctrl);
-> +
->  static ssize_t ctxid_idx_show(struct device *dev,
->  			      struct device_attribute *attr,
->  			      char *buf)
-> @@ -2173,6 +2291,10 @@ static struct attribute *coresight_etmv4_attrs[] = {
->  	&dev_attr_addr_exlevel_s_ns.attr,
->  	&dev_attr_addr_cmp_view.attr,
->  	&dev_attr_vinst_pe_cmp_start_stop.attr,
-> +	&dev_attr_sshot_idx.attr,
-> +	&dev_attr_sshot_ctrl.attr,
-> +	&dev_attr_sshot_pe_ctrl.attr,
-> +	&dev_attr_sshot_status.attr,
->  	&dev_attr_seq_idx.attr,
->  	&dev_attr_seq_state.attr,
->  	&dev_attr_seq_event.attr,
-> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-> index d5148afdbe80..dc3f507e7562 100644
-> --- a/drivers/hwtracing/coresight/coresight-etm4x.c
-> +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-> @@ -168,6 +168,9 @@ static int etm4_enable_hw(struct etmv4_drvdata *drvdata)
->  			       drvdata->base + TRCRSCTLRn(i));
->  
->  	for (i = 0; i < drvdata->nr_ss_cmp; i++) {
-> +		/* always clear status bit on restart if using single-shot */
-> +		if (config->ss_ctrl[i] || config->ss_pe_cmp[i])
-> +			config->ss_status[i] &= ~BIT(31);
->  		writel_relaxed(config->ss_ctrl[i],
->  			       drvdata->base + TRCSSCCRn(i));
->  		writel_relaxed(config->ss_status[i],
-> @@ -467,6 +470,9 @@ static void etm4_disable_hw(void *info)
->  {
->  	u32 control;
->  	struct etmv4_drvdata *drvdata = info;
-> +	struct etmv4_config *config = &drvdata->config;
-> +	struct device *etm_dev = &drvdata->csdev->dev;
-> +	int i;
->  
->  	CS_UNLOCK(drvdata->base);
->  
-> @@ -489,6 +495,18 @@ static void etm4_disable_hw(void *info)
->  	isb();
->  	writel_relaxed(control, drvdata->base + TRCPRGCTLR);
->  
-> +	/* wait for TRCSTATR.PMSTABLE to go to '1' */
-> +	if (coresight_timeout(drvdata->base, TRCSTATR,
-> +			      TRCSTATR_PMSTABLE_BIT, 1))
-> +		dev_err(etm_dev,
-> +			"timeout while waiting for PM stable Trace Status\n");
-> +
-> +	/* read the status of the single shot comparators */
-> +	for (i = 0; i < drvdata->nr_ss_cmp; i++) {
-> +		config->ss_status[i] =
-> +			readl_relaxed(drvdata->base + TRCSSCSRn(i));
-> +	}
-> +
->  	coresight_disclaim_device_unlocked(drvdata->base);
->  
->  	CS_LOCK(drvdata->base);
-> @@ -595,6 +613,7 @@ static void etm4_init_arch_data(void *info)
->  	u32 etmidr4;
->  	u32 etmidr5;
->  	struct etmv4_drvdata *drvdata = info;
-> +	int i;
->  
->  	/* Make sure all registers are accessible */
->  	etm4_os_unlock(drvdata);
-> @@ -718,9 +737,14 @@ static void etm4_init_arch_data(void *info)
->  	drvdata->nr_resource = BMVAL(etmidr4, 16, 19) + 1;
->  	/*
->  	 * NUMSSCC, bits[23:20] the number of single-shot
-> -	 * comparator control for tracing
-> +	 * comparator control for tracing. Read any status regs as these
-> +	 * also contain RO capability data.
->  	 */
->  	drvdata->nr_ss_cmp = BMVAL(etmidr4, 20, 23);
-> +	for (i = 0; i < drvdata->nr_ss_cmp; i++) {
-> +		drvdata->config.ss_status[i] =
-> +			readl_relaxed(drvdata->base + TRCSSCSRn(i));
-> +	}
->  	/* NUMCIDC, bits[27:24] number of Context ID comparators for tracing */
->  	drvdata->numcidc = BMVAL(etmidr4, 24, 27);
->  	/* NUMVMIDC, bits[31:28] number of VMID comparators for tracing */
-> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.h b/drivers/hwtracing/coresight/coresight-etm4x.h
-> index b873df38e7d8..4a695bf90582 100644
-> --- a/drivers/hwtracing/coresight/coresight-etm4x.h
-> +++ b/drivers/hwtracing/coresight/coresight-etm4x.h
-> @@ -227,6 +227,7 @@
->   * @cntr_val:	Sets or returns the value for a counter.
->   * @res_idx:	Resource index selector.
->   * @res_ctrl:	Controls the selection of the resources in the trace unit.
-> + * @ss_idx:	Single-shot index selector.
->   * @ss_ctrl:	Controls the corresponding single-shot comparator resource.
->   * @ss_status:	The status of the corresponding single-shot comparator.
->   * @ss_pe_cmp:	Selects the PE comparator inputs for Single-shot control.
-> @@ -270,6 +271,7 @@ struct etmv4_config {
->  	u32				cntr_val[ETMv4_MAX_CNTR];
->  	u8				res_idx;
->  	u32				res_ctrl[ETM_MAX_RES_SEL];
-> +	u8				ss_idx;
->  	u32				ss_ctrl[ETM_MAX_SS_CMP];
->  	u32				ss_status[ETM_MAX_SS_CMP];
->  	u32				ss_pe_cmp[ETM_MAX_SS_CMP];
+Input devices now support polling mode natively (via input_setup_polling
+API), and input_polled_dev implementation is going away. This series
+switches drivers found in drivers/input to the new scheme.
 
-I have applied patches 4 to 8.  I will do the remaining patches tomorrow or
-early next week.
 
-Thanks,
-Mathieu
+Dmitry Torokhov (21):
+  Input: raspberrypi-ts - switch to using polled mode of input devices
+  Input: sur40 - switch to using polled mode of input devices
+  Input: ts4800-ts - switch to using polled mode of input devices
+  Input: tsc6507x-ts - switch to using polled mode of input devices
+  Input: adc-keys - switch to using polled mode of input devices
+  Input: clps711x-keypad - switch to using polled mode of input devices
+  Input: jornada680_kbd - switch to using polled mode of input devices
+  Input: gpio_keys_polled - switch to using polled mode of input devices
+  Input: apanel - switch to using polled mode of input devices
+  Input: wistron_btns - switch to using polled mode of input devices
+  Input: cobalt_btns - convert to use managed resources
+  Input: cobalt_btns - switch to using polled mode of input devices
+  Input: sgi_btns - switch to using managed resources
+  Input: sgi_btns - switch to using polled mode of input devices
+  Input: rb532_button - switch to using managed resources
+  Input: rb532_button - switch to using polled mode of input devices
+  Input: gpio_decoder - switch to using polled mode of input devices
+  Input: mma8450 - switch to using polled mode of input devices
+  Input: bma150 - switch to using polled mode of input devices
+  Input: kxtj9 - switch to using managed resources
+  Input: kxtj9 - switch to using polled mode of input devices
 
-> -- 
-> 2.17.1
-> 
+Jonathan Bakker (1):
+  Input: bma150 - use managed resources helpers
+
+ drivers/input/keyboard/Kconfig             |   4 -
+ drivers/input/keyboard/adc-keys.c          |  36 ++--
+ drivers/input/keyboard/clps711x-keypad.c   |  70 +++----
+ drivers/input/keyboard/gpio_keys_polled.c  |  65 +++---
+ drivers/input/keyboard/jornada680_kbd.c    |  37 ++--
+ drivers/input/misc/Kconfig                 |  15 --
+ drivers/input/misc/apanel.c                | 153 ++++++--------
+ drivers/input/misc/bma150.c                | 190 +++++------------
+ drivers/input/misc/cobalt_btns.c           |  73 +++----
+ drivers/input/misc/gpio_decoder.c          |  42 ++--
+ drivers/input/misc/kxtj9.c                 | 224 ++++++---------------
+ drivers/input/misc/mma8450.c               | 101 +++++-----
+ drivers/input/misc/rb532_button.c          |  48 ++---
+ drivers/input/misc/sgi_btns.c              |  54 ++---
+ drivers/input/misc/wistron_btns.c          |  51 ++---
+ drivers/input/touchscreen/Kconfig          |   4 -
+ drivers/input/touchscreen/raspberrypi-ts.c |  38 ++--
+ drivers/input/touchscreen/sur40.c          |  92 +++++----
+ drivers/input/touchscreen/tps6507x-ts.c    |  36 ++--
+ drivers/input/touchscreen/ts4800-ts.c      |  68 ++++---
+ 20 files changed, 557 insertions(+), 844 deletions(-)
+
+-- 
+2.23.0.866.gb869b98d4c-goog
+
 
 _______________________________________________
 linux-arm-kernel mailing list
