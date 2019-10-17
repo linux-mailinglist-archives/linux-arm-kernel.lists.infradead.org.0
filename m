@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1CC83DB561
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 20:01:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32EA9DB562
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 20:02:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rfc4lNx52mOL+p1xJwQ0GF7kO2sDCCR3FGinCRKGsfM=; b=sZNreohjVuR94W
-	WZWqUtpS0+cKwyRS4prIfeXnmUQbNjvZ8uNDGiQNrj+0LqE2gPUlgwIF9PF0wO3pioOmbUSXlBS6P
-	8RPK7t/uOoorySMNvMhfQ95OlkeK8M4fVVz+g6/7xYhLwaqEwWq0KxOd70n1vz8JvO3lxvDoYo7Ga
-	OTcMQl2NtvSgwm6XtcUt4jjcuJ0jGiJG5cN8llsPi34Kpuax/kcaLfyn4rF+IFSsiyU1+9uEjUS0x
-	fDaR1kuuVm06VqejZqvPgUb3cHasjNY4wZOzzkR8tycEKPiJkya3BlZKhRTAGTfXUUOxMrjJ3nOu9
-	zCsyqqE6ZoAkumSHTD+A==;
+	List-Owner; bh=yppVXw7dtwInQ3FI1k2cZMyFrz0xmJVkT9BVtWNzzII=; b=T0oelcRe9DKUdo
+	LSjkjzeTDNdVavL+uxZrUIYsfh2Cb8YaqW0IWInaao4P6CSI76+pUf/5tV6+z3lgK6CCUgZ4t58p0
+	j3UygnGw4Hl8yhu5u8/Cnr/aylWgRIGxWHJfN44I7r4s4g5XRTzBH/6Jp1dIfMFvFVdu1WcGsyEco
+	V0xJlARisMLAeF1WGv1geGxo8u+4wpb+M+gLEx4Zf3m2P5JrpPi2u5rf7EA4g1i0VNtxCveNUZVNT
+	cafS4GfpnnRsCp+DXa79VmDGsx9RTD8+nG6wWwougxSfESauxOwWDAoYhO7NOwHhq32ypwHk31D11
+	gWsV9u/xdZJZ3yRO+6fQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLA5v-0006vW-7Y; Thu, 17 Oct 2019 18:01:51 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1iLA6C-0007AW-TP; Thu, 17 Oct 2019 18:02:08 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL9zU-0007a5-Pu
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 17:55:20 +0000
-Received: by mail-pg1-x542.google.com with SMTP id k20so1795264pgi.1
+ id 1iLA1D-0001NL-IL
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 17:57:01 +0000
+Received: by mail-pg1-x543.google.com with SMTP id r1so1767031pgj.12
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 17 Oct 2019 10:55:12 -0700 (PDT)
+ Thu, 17 Oct 2019 10:56:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=xMgNa2J6ls/HD5ayqGJcA+YAUgf8k0JYvaclXJ7zCwI=;
- b=QI6kGDRkARPKQR/ErDbRYxcKV+DHgK5LPrYvrEnmPzjZm7O0gVd0TuaYBe8ZzKxCQa
- K1cB05AJbmv5MyyNu/xCocJ9EWT58H7/qKp1LTMAlKzzkbSVw8lMB3+6y8IT7IIcy6E2
- 45w6BwFy2O1mYlNKZIYBbdvRNHVL++K9IS9vNd8orcDP7ic2kcuv+CZXnsUl1IHo/IZY
- rxCU8wPrqp741TTcwHmmPHPkTzrCD9h7nWjA3IUAtoJo69vCaGlEGhLTEe+Xs66Z/hwf
- SGQzgVESI4AsJ4J4kUmT1ONGIaoyrpInCy9PntgYp1e1D0erCSiRXrF+JxkHDp6raQAV
- pzaw==
+ bh=CV+kRLoR1meiyrf+iynYFFOG1S0zGKS8gpnt6rsIY7A=;
+ b=IY5uWHEiURxMmzWrpoOVU6aBy3Coo+9JB4mSX+nU2b1QJuEcV3zK8dq+Go2wM2smT4
+ kN++rlfzW4+7pMs7OUMhWp5WOon+L5NkmPozkcrdHib00r4C0SIm0JP2mjpJnAu2xRRm
+ 0Kk9WbAZqJDVqgCHzHk037FzgZ7edJJ47aGEKGYIyfPY8Suh9n16hGMF+XG8ew9c2Jpo
+ XqCfPTs6tJ0rsFWDnGYH7//61Iu8MmLuPgAftzr4BWOB5SMtYawaBrD5LhmsQXNihNxt
+ lBqr6UJi8Vk2MRzA7dma8jv1FkUYBvGEibXfY4OdbtoU1xMQsSaXP7GXZJKZKpQsktjF
+ mT3A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=xMgNa2J6ls/HD5ayqGJcA+YAUgf8k0JYvaclXJ7zCwI=;
- b=k5JSgSQbcZOIZ9Vt09o6cVHqg80wu5S4WPkLPW3iuN+R3dlllkNH5EIKO5OvfuKkA7
- P764KkMc1g64hNKNruUs+XYo2HZIc8C6iJ6BgBqsCkYMA42/+KHYbkpee+FJK3IK4sz1
- b+yIkWIiqbKbIjSxNCG8AgI8zYRcfSO8UZkrJIQvwKI+5kCG57ybb/mOc/yLwD9/rFOt
- npVEZzL11AtaRzBrS2Sq1C/qgT1AGxDmo2fyAce6J9SmbY6qXoZfiEbSS20QDQBB7eMB
- H/y8ukIQTlt8eRCzJd0a42OZ+sZZGH3iKAqoTHS7CCsAPPEOAP5UyX43zRSYiUAXEqHQ
- bTfw==
-X-Gm-Message-State: APjAAAUw7a+Npl6vRHbNwOzYmGm+L4gCY/aolC1T6cbLLzkss6ZTJMBo
- g8oWallNP/mWX+aV5+2e1B9n5o36bnc=
-X-Google-Smtp-Source: APXvYqytRKs044Y0qrtLrIYszwSdvByHnqImd00Ux1wjxvpJfnDsPMGI8argRmHnrWK18d+c1rzdHg==
-X-Received: by 2002:aa7:8a84:: with SMTP id a4mr1490876pfc.99.1571334911350;
- Thu, 17 Oct 2019 10:55:11 -0700 (PDT)
+ bh=CV+kRLoR1meiyrf+iynYFFOG1S0zGKS8gpnt6rsIY7A=;
+ b=F/CQDS6XJJ6kIOKStfHZXMGy5EBLQbjQP+ouTgR+SDc/cQMEmKVv2VoUqbRgizJhMh
+ Y/U/nGSFKhOM1SguEp9mB8IO5go+kfqlpdE31kv5Zgyh4fpkALkTJqD53PY+hubKUXMG
+ I5fESRb0jv13SM52Lb2DFCKWQFXJ8GsJKck6isoTLejMYiZiOPk7PQ+unoFd4NidoW74
+ jEtSZiyjZ1lWP24AR/mPm5LjwCrjBu7yqpMoy9COmXf+6D3Fkg/+0LTw4H4TJS+mMXHD
+ EHAOUCNKNWdGQMtDbp6APzuFajOlr+b0Zm86rGPvgXuWRxyf89jL2tNtR6dHMIrqGDzp
+ 3Gjg==
+X-Gm-Message-State: APjAAAU+fVsynsr5i4+u1q83dFRG7dmOTDaZ8GQ1pVWPmFqOcKHHixOt
+ e3SzRC+gFjl6kaC4RhKH4p2VBw==
+X-Google-Smtp-Source: APXvYqxgud/7Z7xQxOExpPNrp+fBYK+PDvAZ7nvGRfXd+cFljZ/QqQUhHWdRosPfhUtc/oq+Vg9kQA==
+X-Received: by 2002:a63:9208:: with SMTP id o8mr5435470pgd.256.1571335018455; 
+ Thu, 17 Oct 2019 10:56:58 -0700 (PDT)
 Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id k66sm3348801pjb.11.2019.10.17.10.55.10
+ by smtp.gmail.com with ESMTPSA id t125sm4584578pfc.80.2019.10.17.10.56.57
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 17 Oct 2019 10:55:10 -0700 (PDT)
-Date: Thu, 17 Oct 2019 11:55:08 -0600
+ Thu, 17 Oct 2019 10:56:57 -0700 (PDT)
+Date: Thu, 17 Oct 2019 11:56:55 -0600
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: Mike Leach <mike.leach@linaro.org>
-Subject: Re: [PATCH v3 01/11] coresight: etm4x: Fixes for ETM v4.4
- architecture updates.
-Message-ID: <20191017175508.GA17991@xps15>
+Subject: Re: [PATCH v3 02/11] coresight: etm4x: Fix input validation for sysfs.
+Message-ID: <20191017175655.GB17991@xps15>
 References: <20191015212004.24748-1-mike.leach@linaro.org>
- <20191015212004.24748-2-mike.leach@linaro.org>
+ <20191015212004.24748-3-mike.leach@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191015212004.24748-2-mike.leach@linaro.org>
+In-Reply-To: <20191015212004.24748-3-mike.leach@linaro.org>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_105512_930112_D5B5364E 
-X-CRM114-Status: GOOD (  20.34  )
+X-CRM114-CacheID: sfid-20191017_105659_698046_1A7128C8 
+X-CRM114-Status: GOOD (  16.86  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -101,150 +100,95 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: corbet@lwn.net, gregkh@linuxfoundation.org, coresight@lists.linaro.org,
  suzuki.poulose@arm.com, linux-doc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+ stable <stable@vger.kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mike,
-
-On Tue, Oct 15, 2019 at 10:19:54PM +0100, Mike Leach wrote:
-> ETMv4.4 adds in support for tracing secure EL2 (per arch 8.x updates).
-> Patch accounts for this new capability.
+On Tue, Oct 15, 2019 at 10:19:55PM +0100, Mike Leach wrote:
+> A number of issues are fixed relating to sysfs input validation:-
+> 
+> 1) bb_ctrl_store() - incorrect compare of bit select field to absolute
+> value. Reworked per ETMv4 specification.
+> 2) seq_event_store() - incorrect mask value - register has two
+> event values.
+> 3) cyc_threshold_store() - must mask with max before checking min
+> otherwise wrapped values can set illegal value below min.
+> 4) res_ctrl_store() - update to mask off all res0 bits.
 > 
 > Reviewed-by: Leo Yan <leo.yan@linaro.org>
+> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 > Signed-off-by: Mike Leach <mike.leach@linaro.org>
+> Fixes: a77de2637c9eb ("coresight: etm4x: moving sysFS entries to a dedicated file")
+> Cc: stable <stable@vger.kernel.org> # 4.9+
 > ---
->  .../hwtracing/coresight/coresight-etm4x-sysfs.c   | 12 ++++++------
->  drivers/hwtracing/coresight/coresight-etm4x.c     |  5 ++++-
->  drivers/hwtracing/coresight/coresight-etm4x.h     | 15 +++++++++++----
->  3 files changed, 21 insertions(+), 11 deletions(-)
+>  .../coresight/coresight-etm4x-sysfs.c         | 21 ++++++++++++-------
+>  1 file changed, 13 insertions(+), 8 deletions(-)
 > 
 > diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-> index 219c10eb752c..b6984be0c515 100644
+> index b6984be0c515..cc8156318018 100644
 > --- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
 > +++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-> @@ -738,7 +738,7 @@ static ssize_t s_exlevel_vinst_show(struct device *dev,
->  	struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
->  	struct etmv4_config *config = &drvdata->config;
+> @@ -652,10 +652,13 @@ static ssize_t cyc_threshold_store(struct device *dev,
 >  
-> -	val = BMVAL(config->vinst_ctrl, 16, 19);
-> +	val = (config->vinst_ctrl & ETM_EXLEVEL_S_VICTLR_MASK) >> 16;
->  	return scnprintf(buf, PAGE_SIZE, "%#lx\n", val);
->  }
->  
-> @@ -754,8 +754,8 @@ static ssize_t s_exlevel_vinst_store(struct device *dev,
+>  	if (kstrtoul(buf, 16, &val))
 >  		return -EINVAL;
->  
->  	spin_lock(&drvdata->spinlock);
-> -	/* clear all EXLEVEL_S bits (bit[18] is never implemented) */
-> -	config->vinst_ctrl &= ~(BIT(16) | BIT(17) | BIT(19));
-> +	/* clear all EXLEVEL_S bits  */
-> +	config->vinst_ctrl &= ~(ETM_EXLEVEL_S_VICTLR_MASK);
->  	/* enable instruction tracing for corresponding exception level */
->  	val &= drvdata->s_ex_level;
->  	config->vinst_ctrl |= (val << 16);
-> @@ -773,7 +773,7 @@ static ssize_t ns_exlevel_vinst_show(struct device *dev,
->  	struct etmv4_config *config = &drvdata->config;
->  
->  	/* EXLEVEL_NS, bits[23:20] */
-> -	val = BMVAL(config->vinst_ctrl, 20, 23);
-> +	val = (config->vinst_ctrl & ETM_EXLEVEL_NS_VICTLR_MASK) >> 20;
->  	return scnprintf(buf, PAGE_SIZE, "%#lx\n", val);
->  }
->  
-> @@ -789,8 +789,8 @@ static ssize_t ns_exlevel_vinst_store(struct device *dev,
->  		return -EINVAL;
->  
->  	spin_lock(&drvdata->spinlock);
-> -	/* clear EXLEVEL_NS bits (bit[23] is never implemented */
-> -	config->vinst_ctrl &= ~(BIT(20) | BIT(21) | BIT(22));
-> +	/* clear EXLEVEL_NS bits  */
-> +	config->vinst_ctrl &= ~(ETM_EXLEVEL_NS_VICTLR_MASK);
->  	/* enable instruction tracing for corresponding exception level */
->  	val &= drvdata->ns_ex_level;
->  	config->vinst_ctrl |= (val << 20);
-> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-> index 8f98701cadc5..efe120925f9d 100644
-> --- a/drivers/hwtracing/coresight/coresight-etm4x.c
-> +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-> @@ -648,6 +648,7 @@ static void etm4_init_arch_data(void *info)
->  	 * TRCARCHMAJ, bits[11:8] architecture major versin number
->  	 */
->  	drvdata->arch = BMVAL(etmidr1, 4, 11);
-> +	drvdata->config.arch = drvdata->arch;
->  
->  	/* maximum size of resources */
->  	etmidr2 = readl_relaxed(drvdata->base + TRCIDR2);
-> @@ -799,6 +800,7 @@ static u64 etm4_get_ns_access_type(struct etmv4_config *config)
->  static u64 etm4_get_access_type(struct etmv4_config *config)
->  {
->  	u64 access_type = etm4_get_ns_access_type(config);
-> +	u64 s_hyp = (config->arch & 0x0f) >= 0x4 ? ETM_EXLEVEL_S_HYP : 0;
->  
->  	/*
->  	 * EXLEVEL_S, bits[11:8], don't trace anything happening
-> @@ -806,7 +808,8 @@ static u64 etm4_get_access_type(struct etmv4_config *config)
->  	 */
->  	access_type |= (ETM_EXLEVEL_S_APP	|
->  			ETM_EXLEVEL_S_OS	|
-> -			ETM_EXLEVEL_S_HYP);
-> +			s_hyp			|
-> +			ETM_EXLEVEL_S_MON);
->  
->  	return access_type;
->  }
-> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.h b/drivers/hwtracing/coresight/coresight-etm4x.h
-> index 546d790cb01b..b873df38e7d8 100644
-> --- a/drivers/hwtracing/coresight/coresight-etm4x.h
-> +++ b/drivers/hwtracing/coresight/coresight-etm4x.h
-> @@ -181,17 +181,22 @@
->  /* PowerDown Control Register bits */
->  #define TRCPDCR_PU			BIT(3)
->  
-> -/* secure state access levels */
-> +/* secure state access levels - TRCACATRn */
->  #define ETM_EXLEVEL_S_APP		BIT(8)
->  #define ETM_EXLEVEL_S_OS		BIT(9)
-> -#define ETM_EXLEVEL_S_NA		BIT(10)
-> -#define ETM_EXLEVEL_S_HYP		BIT(11)
-> -/* non-secure state access levels */
-> +#define ETM_EXLEVEL_S_HYP		BIT(10)
-> +#define ETM_EXLEVEL_S_MON		BIT(11)
-> +/* non-secure state access levels - TRCACATRn */
->  #define ETM_EXLEVEL_NS_APP		BIT(12)
->  #define ETM_EXLEVEL_NS_OS		BIT(13)
->  #define ETM_EXLEVEL_NS_HYP		BIT(14)
->  #define ETM_EXLEVEL_NS_NA		BIT(15)
->  
-> +/* secure / non secure masks - TRCVICTLR, IDR3 */
-> +#define ETM_EXLEVEL_S_VICTLR_MASK	GENMASK(19, 16)
-> +/* NS MON (EL3) mode never implemented */
-> +#define ETM_EXLEVEL_NS_VICTLR_MASK	GENMASK(22, 20)
 > +
->  /**
->   * struct etmv4_config - configuration information related to an ETMv4
->   * @mode:	Controls various modes supported by this ETM.
-> @@ -238,6 +243,7 @@
->   * @vmid_mask0:	VM ID comparator mask for comparator 0-3.
->   * @vmid_mask1:	VM ID comparator mask for comparator 4-7.
->   * @ext_inp:	External input selection.
-> + * @arch:	ETM architecture version (for arch dependent config).
->   */
->  struct etmv4_config {
->  	u32				mode;
-> @@ -280,6 +286,7 @@ struct etmv4_config {
->  	u32				vmid_mask0;
->  	u32				vmid_mask1;
->  	u32				ext_inp;
-> +	u8				arch;
->  };
-
-I am applying this patch, no need to send it again.
-
+> +	/* mask off max threshold before checking min value */
+> +	val &= ETM_CYC_THRESHOLD_MASK;
+>  	if (val < drvdata->ccitmin)
+>  		return -EINVAL;
 >  
->  /**
+> -	config->ccctlr = val & ETM_CYC_THRESHOLD_MASK;
+> +	config->ccctlr = val;
+>  	return size;
+>  }
+>  static DEVICE_ATTR_RW(cyc_threshold);
+> @@ -686,14 +689,16 @@ static ssize_t bb_ctrl_store(struct device *dev,
+>  		return -EINVAL;
+>  	if (!drvdata->nr_addr_cmp)
+>  		return -EINVAL;
+> +
+>  	/*
+> -	 * Bit[7:0] selects which address range comparator is used for
+> -	 * branch broadcast control.
+> +	 * Bit[8] controls include(1) / exclude(0), bits[0-7] select
+> +	 * individual range comparators. If include then at least 1
+> +	 * range must be selected.
+>  	 */
+> -	if (BMVAL(val, 0, 7) > drvdata->nr_addr_cmp)
+> +	if ((val & BIT(8)) && (BMVAL(val, 0, 7) == 0))
+>  		return -EINVAL;
+>  
+> -	config->bb_ctrl = val;
+> +	config->bb_ctrl = val & GENMASK(8, 0);
+>  	return size;
+>  }
+>  static DEVICE_ATTR_RW(bb_ctrl);
+> @@ -1324,8 +1329,8 @@ static ssize_t seq_event_store(struct device *dev,
+>  
+>  	spin_lock(&drvdata->spinlock);
+>  	idx = config->seq_idx;
+> -	/* RST, bits[7:0] */
+> -	config->seq_ctrl[idx] = val & 0xFF;
+> +	/* Seq control has two masks B[15:8] F[7:0] */
+> +	config->seq_ctrl[idx] = val & 0xFFFF;
+>  	spin_unlock(&drvdata->spinlock);
+>  	return size;
+>  }
+> @@ -1580,7 +1585,7 @@ static ssize_t res_ctrl_store(struct device *dev,
+>  	if (idx % 2 != 0)
+>  		/* PAIRINV, bit[21] */
+>  		val &= ~BIT(21);
+> -	config->res_ctrl[idx] = val;
+> +	config->res_ctrl[idx] = val & GENMASK(21, 0);
+>  	spin_unlock(&drvdata->spinlock);
+>  	return size;
+
+This one too, no need to send again.
+
+>  }
 > -- 
 > 2.17.1
 > 
