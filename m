@@ -2,78 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7A63DB773
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 21:26:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4D7CDB781
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 21:29:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ud10r7BkuUvYiNROx142YauqUpeHDRRylqFl3VhbzVk=; b=jCpWPvBBZcx5ps
-	5CgUxANHMhYCGi+2KVUE0pA3SCoaXL+oYhn6Hip38w7cCiOy+EhpiIne8JQofAVIoL2nn34WFI6f4
-	neV4YRqIWIE/yFYhfvgfrNJcxpLFKap5GsrkFs+E87lAofOuwP+mPN7CMLXOepNu/2cfBteiQ8+5A
-	rk9AwDHYyE0oyLwCy+CoDWx8bLxoQfZFRRmWrC59o4eCYqmTigMx1NiT6rMHRjhtScm0bhsHrHFvz
-	tk+ekHCF3r+KkDJl48BQg7ZteUybJ065J+gb8tAiBlW5MyRyRXZwYOetDamea/dJXSC/1cBkDGh8m
-	1/wQtPsnDNyNcBHDNSFg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZdtYezq+FCZUStz+VrTx491qa31V7QV/kxnKASuqBcU=; b=pIKbYdyUIoC2px
+	AcOM09W8kMFFj08M/tytcBPVL+bfUGRwEdc2LbtOSZPiAm54K4hOB+z7BrjD5BW+MbYXcY8OVR+mG
+	q1O5vlhehtNZTJpgozUOoxIYNFtmsZAL8IpUQDjdksH+w4pVzSgBehOWtc44YmF9nhcaaXZZm2TdG
+	33jpQM1nwRK6MZA2V29D2TBVFuSHhtLQ7M3mpG2HN1TgifMkk7pVbxYlFJeMI2VfsmaHuFJu0D0M9
+	PvLXZzLjQqeoQNYLrkQT14VUexmyuKCjD1/ugcZmIYnsQJc8tnydKiep5cSCdseYntkpIV/Nje5H4
+	ex4O5ttwihhi3IzgpSZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLBPc-0000z1-BW; Thu, 17 Oct 2019 19:26:16 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1iLBSc-0001Na-2p; Thu, 17 Oct 2019 19:29:22 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLBPS-0000rb-RW
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 19:26:08 +0000
-Received: by mail-io1-xd44.google.com with SMTP id q1so4505050ion.1
+ id 1iLBSU-0001N9-7e
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 19:29:15 +0000
+Received: by mail-wr1-x444.google.com with SMTP id w18so3086683wrt.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 17 Oct 2019 12:26:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Fags3H8qXAtbjD1auFiMSb1b2IbjWwWbPMcWqBZERaI=;
- b=u569V9s+dhCShH6dj27sogpkTegN9KyYACifmiU87o475C91cnoX4NN18v64I1Hb9/
- pUNe+sjj9kXhrefmWhsJ9SZKQFvvTv62uVra5rrexs5fp4gtGVZrmwz1xvKYf+Sz0m/4
- DOouxaRIJOHCFGMTo2jS23R57IMT3LHhxea6Ne6DmnEVIA2Y6i+h7KOeRErw3q8JaSCE
- TSQ48d0T0WY7yKXgscJbwOHGfO4pOh663wOz232sHearcSSNiNvyvAi/jKJxHoICe+z9
- sRf4GVMq0i4X7oYK6uTbTB3Qzqw9H0qZuCtmUWInmlnPcznRu0pnvqwlR5GY8piQxqCp
- GV4w==
+ Thu, 17 Oct 2019 12:29:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=Y2Yht26P1vktZqaQqNQXULa6hC952BSjLWHUGdYiAU8=;
+ b=fCVM4e+bvdog5i14IO692HIFF2qWjQ0LOWu44jjaqLNYlT57j+YcEM3ekGAQzZxz20
+ 3tXFppYjDQYdLxkimlZWT/gcCRiQyRg320zGG1vYFDcrK67Jq7KAEOqi626aIGH63Im+
+ 8Pds1sqO0H0UNx8RL3YqD6sO/ctMHvtOhdyaRg1CG5km52KKuU321lt6Quh/OP9Tqu1U
+ QWHd+dOgBZtVUrFAJvcjnWoc0ybTzWsXXpklDwCUusD9+qX/2j2lVcI0GRcBE7aln3QR
+ v0icYUOa2IQjV7XpwtuLPAcoX1QGU0ZzDUOK8STZwCPOFF09pCfrSKFCmSGTSSBv41lr
+ iU0w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Fags3H8qXAtbjD1auFiMSb1b2IbjWwWbPMcWqBZERaI=;
- b=PoLDfUd1o7fnsiYY6AILWIeRJgf1F9F9yWul3lEiI1jc6HSrUGkgnpogvcuQTafnN7
- yF+xSSZP9Rwca3auOVqRmZQF2o+aQubegCdTPmwJn0uSC7dEMVSFZoY1MUGM0vcdgUk3
- ouz/iYvrPMZwWO9moHkRE0g1Ikkh61pEecu0U8xxqf9eT3k7i55xggWeFu4qiYNhGSvZ
- 0RdM0cbdvbk/4JGk1af4joVnA6k7Xs4jnSVeJ4l1fccnUiLj64EPOv0wBXz/08odAqBG
- wS7jjVdE/Aov5mbRR358VvdmlCXZgQvV53bq6Lm3P0zufdMbXGiBQVVzTxtudVOQpUMQ
- 7JZQ==
-X-Gm-Message-State: APjAAAVzptUuyJzImaUWRCWc9c9U/RFZGofE3DowvdcMMfYNBHgbVMnO
- UBI6tOgbkTasOjf7579p6paiXZe8/sjZv4Oh7DZu2g==
-X-Google-Smtp-Source: APXvYqzjK0L400i32dIEttvsop7YbCoXXqMdybXgVmbxFJVPJXC46bonyqTofFwl79KV66//rZehudtz5p9arLk59g0=
-X-Received: by 2002:a05:6638:392:: with SMTP id
- y18mr2230970jap.98.1571340365705; 
- Thu, 17 Oct 2019 12:26:05 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=Y2Yht26P1vktZqaQqNQXULa6hC952BSjLWHUGdYiAU8=;
+ b=hSHapoEgfhYNPwjGLZVYKurFcayZC5J/ZIeCiLwBzZ7P9V2yQtpbUItF5B4NLeeMox
+ dZMR2yF2248FzVdOXJflanpV20tlQCtAQ95KjQbnW3QWBqSweCS2HyCXfX1Hwgj3JN4r
+ W2xLRvoXb/Gt3vHhhbudY/yp20lZxVfWxZ0ILuPnQbrBOZzxg+Sfr19j6xN+1r17Ze1x
+ nuhSBMN13hsArtLVVUGi5altqNbyWjWJtSNsV3c0XZemViCOAMksSB0KhH5lFiRFbJhn
+ 9Vnr3Jm8Y3aUjjXaO4/vM35JmLH14k32XFeP2EIw+NekQRdGCmxEUOBwKRpK3G37MOaZ
+ lp5g==
+X-Gm-Message-State: APjAAAXuTbIAh8EKNAb2IIJq2jByCB8wxcpW1FUICt1vmL1ZkE7W2q45
+ C4gX1QHNa3rE/U/jHbDOfgc=
+X-Google-Smtp-Source: APXvYqxX+snzChK31VXq4N7NBXDyDvvBCati/n7FkaOSt0E8/hS5jW4bweg0u6211P5O37rSRC5gSQ==
+X-Received: by 2002:a5d:4d46:: with SMTP id a6mr4350839wru.75.1571340552062;
+ Thu, 17 Oct 2019 12:29:12 -0700 (PDT)
+Received: from [10.230.29.119] ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id k3sm3227342wrn.41.2019.10.17.12.29.09
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 17 Oct 2019 12:29:11 -0700 (PDT)
+Subject: Re: [PATCH] pwm: bcm-iproc: prevent unloading the driver module while
+ in use
+To: =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?= <u.kleine-koenig@pengutronix.de>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Yendapally Reddy Dhananjaya Reddy <yendapally.reddy@broadcom.com>,
+ Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>
+References: <20191017192218.9042-1-u.kleine-koenig@pengutronix.de>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Message-ID: <b5ebfe5b-1c5a-8349-d232-d69f28024d35@gmail.com>
+Date: Thu, 17 Oct 2019 12:29:08 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.2
 MIME-Version: 1.0
-References: <20191015212004.24748-1-mike.leach@linaro.org>
- <20191015212004.24748-4-mike.leach@linaro.org>
- <20191017180035.GC17991@xps15>
-In-Reply-To: <20191017180035.GC17991@xps15>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Thu, 17 Oct 2019 13:25:54 -0600
-Message-ID: <CANLsYkyYVvDJRtBg7B=Zai_h=PDSQqtq-EWBH231X8HJ7NdHdw@mail.gmail.com>
-Subject: Re: [PATCH v3 03/11] coresight: etm4x: Add missing API to set EL
- match on address filters
-To: Mike Leach <mike.leach@linaro.org>
+In-Reply-To: <20191017192218.9042-1-u.kleine-koenig@pengutronix.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_122606_966411_9EB6D0F4 
-X-CRM114-Status: GOOD (  18.42  )
+X-CRM114-CacheID: sfid-20191017_122914_276877_07880AFE 
+X-CRM114-Status: GOOD (  11.56  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
- [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -83,6 +91,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,106 +105,21 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jon Corbet <corbet@lwn.net>, Greg KH <gregkh@linuxfoundation.org>,
- Coresight ML <coresight@lists.linaro.org>,
- "Suzuki K. Poulose" <suzuki.poulose@arm.com>,
- "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-pwm@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 17 Oct 2019 at 12:00, Mathieu Poirier
-<mathieu.poirier@linaro.org> wrote:
->
-> On Tue, Oct 15, 2019 at 10:19:56PM +0100, Mike Leach wrote:
-> > TRCACATRn registers have match bits for secure and non-secure exception
-> > levels which are not accessible by the sysfs API.
-> > This adds a new sysfs parameter to enable this - addr_exlevel_s_ns.
-> >
-> > Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> > Signed-off-by: Mike Leach <mike.leach@linaro.org>
-> > ---
-> >  .../coresight/coresight-etm4x-sysfs.c         | 42 +++++++++++++++++++
-> >  1 file changed, 42 insertions(+)
-> >
-> > diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-> > index cc8156318018..45fa7743eea4 100644
-> > --- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-> > +++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-> > @@ -1233,6 +1233,47 @@ static ssize_t addr_context_store(struct device *dev,
-> >  }
-> >  static DEVICE_ATTR_RW(addr_context);
-> >
-> > +static ssize_t addr_exlevel_s_ns_show(struct device *dev,
-> > +                                   struct device_attribute *attr,
-> > +                                   char *buf)
-> > +{
-> > +     u8 idx;
-> > +     unsigned long val;
-> > +     struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
-> > +     struct etmv4_config *config = &drvdata->config;
-> > +
-> > +     spin_lock(&drvdata->spinlock);
-> > +     idx = config->addr_idx;
-> > +     val = BMVAL(config->addr_acc[idx], 14, 8);
-> > +     spin_unlock(&drvdata->spinlock);
-> > +     return scnprintf(buf, PAGE_SIZE, "%#lx\n", val);
-> > +}
-> > +
-> > +static ssize_t addr_exlevel_s_ns_store(struct device *dev,
-> > +                                    struct device_attribute *attr,
-> > +                                    const char *buf, size_t size)
-> > +{
-> > +     u8 idx;
-> > +     unsigned long val;
-> > +     struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
-> > +     struct etmv4_config *config = &drvdata->config;
-> > +
-> > +     if (kstrtoul(buf, 0, &val))
-> > +             return -EINVAL;
-> > +
-> > +     if (val & ~((GENMASK(14, 8) >> 8))
->
-> This patch isn't compiling for me.  A parenthesis is missing to close the if().
-
-I will fix it because:
-
-1) I've reviewed this patch several times already.
-2) The solution is trivial.
-3) I want to pickup patch 04/11 and there is a dependency with this one.
-
->
->
-> > +             return -EINVAL;
-> > +
-> > +     spin_lock(&drvdata->spinlock);
-> > +     idx = config->addr_idx;
-> > +     /* clear Exlevel_ns & Exlevel_s bits[14:12, 11:8], bit[15] is res0 */
-> > +     config->addr_acc[idx] &= ~(GENMASK(14, 8));
-> > +     config->addr_acc[idx] |= (val << 8);
-> > +     spin_unlock(&drvdata->spinlock);
-> > +     return size;
-> > +}
-> > +static DEVICE_ATTR_RW(addr_exlevel_s_ns);
-> > +
-> >  static ssize_t seq_idx_show(struct device *dev,
-> >                           struct device_attribute *attr,
-> >                           char *buf)
-> > @@ -2038,6 +2079,7 @@ static struct attribute *coresight_etmv4_attrs[] = {
-> >       &dev_attr_addr_stop.attr,
-> >       &dev_attr_addr_ctxtype.attr,
-> >       &dev_attr_addr_context.attr,
-> > +     &dev_attr_addr_exlevel_s_ns.attr,
-> >       &dev_attr_seq_idx.attr,
-> >       &dev_attr_seq_state.attr,
-> >       &dev_attr_seq_event.attr,
-> > --
-> > 2.17.1
-> >
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAxMC8xNy8yMDE5IDEyOjIyIFBNLCBVd2UgS2xlaW5lLUvDtm5pZyB3cm90ZToKPiBUaGUg
+b3duZXIgbWVtYmVyIG9mIHN0cnVjdCBwd21fb3BzIG11c3QgYmUgc2V0IHRvIFRISVNfTU9EVUxF
+IHRvCj4gaW5jcmVhc2UgdGhlIHJlZmVyZW5jZSBjb3VudCBvZiB0aGUgbW9kdWxlIHN1Y2ggdGhh
+dCB0aGUgbW9kdWxlIGNhbm5vdAo+IGJlIHJlbW92ZWQgd2hpbGUgaXRzIGNvZGUgaXMgaW4gdXNl
+Lgo+IAo+IEZpeGVzOiBkYWE1YWJjNDFjODAgKCJwd206IEFkZCBzdXBwb3J0IGZvciBCcm9hZGNv
+bSBpUHJvYyBQV00gY29udHJvbGxlciIpCj4gU2lnbmVkLW9mZi1ieTogVXdlIEtsZWluZS1Lw7Zu
+aWcgPHUua2xlaW5lLWtvZW5pZ0BwZW5ndXRyb25peC5kZT4KClJldmlld2VkLWJ5OiBGbG9yaWFu
+IEZhaW5lbGxpIDxmLmZhaW5lbGxpQGdtYWlsLmNvbT4KLS0gCkZsb3JpYW4KCl9fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
+bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
