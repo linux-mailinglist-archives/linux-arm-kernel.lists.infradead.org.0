@@ -2,54 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F9F4DA2F8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 03:19:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8672FDA320
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 03:27:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pbwWn8dqzglOqukzm7l3dDzAMfPdcAHqf6NyFMw/fcM=; b=D1B4ojMvVX5jFL
-	MPozBD40bTFKR9Kow9eqiJlnuF3AzlIp8d+FwuRVtFbrF7EH7++lkOcg11qYzTWUqzA1ZZsYcvgoe
-	4wOkemc5+7s+oUUyJwz2oGJCvd3akKJoo1irA+8ApyQQZQ3WK6M08iR17iha7dTHQFpmnH5dRDzyJ
-	oTOF5cig1XNgLm76O6bnFuFd3gSvJfjcVyeBQ9CcqQF4X/IU03PijWAhHpdXxhrIOOW6mPK2Nirkq
-	60O7rY9eTTDfKkFqXSKsdSi/hKHw0K4hw8vVyp3rkh3jgey+y/Wj0yzSEE2HuFMCV1ATjYSNLpoMs
-	OasRcrD3qOldQlWwN5dw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=O5btcionLttlV59j1FVUUuWt2GNdy8cim3XpXb0dQwA=; b=iZisa43Ivk8XTe
+	JrDrUpcPovbUiewbSL6PsGp+lSRzC6FwYk2dTfejgQnP+aoKAsqFz0ngcaVz8KYoyT/5MtkiQL0Z8
+	xghZSP4xdpaU/cdROjS4wV+JB+aNQQTaHBmWha0aYLW4KPZk+wd1I394r5EnyWaJsWrbvPSrl08O/
+	Uaz+sqW9d8KFDfMbVvkDt/5109CZqfWM/7BkCNgiH5z6rDA/DFgHWhHdwe/QcHm5WTWT5hd2GdLpZ
+	gNjnZXjHNGUc/Lsb2G8T+KkihJmlvUUL/zgFZTFRJwsrSX7NUIp6xNqiTrq8Ou0k6amL5n3pnHz1G
+	tgdkimtqXxBv1aUeA4Rg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKuSJ-0001zZ-UZ; Thu, 17 Oct 2019 01:19:55 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKuSB-0001yU-VX
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 01:19:49 +0000
-Received: from atomide.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTPS id 182368107;
- Thu, 17 Oct 2019 01:20:13 +0000 (UTC)
-Date: Wed, 16 Oct 2019 18:19:36 -0700
-From: Tony Lindgren <tony@atomide.com>
-To: linux-omap@vger.kernel.org
-Subject: Re: [PATCH 8/8] ARM: OMAP2+: Initialize voltage controller for omap4
-Message-ID: <20191017011936.GL5610@atomide.com>
-References: <20191010001224.41826-1-tony@atomide.com>
- <20191010001224.41826-9-tony@atomide.com>
- <20191016145324.GE5610@atomide.com>
+	id 1iKuZm-0005Ta-1y; Thu, 17 Oct 2019 01:27:38 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iKuZX-0005PO-Sj; Thu, 17 Oct 2019 01:27:25 +0000
+Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 735A76153B773426C5B9;
+ Thu, 17 Oct 2019 09:27:20 +0800 (CST)
+Received: from [127.0.0.1] (10.133.213.239) by DGGEMS409-HUB.china.huawei.com
+ (10.3.19.209) with Microsoft SMTP Server id 14.3.439.0;
+ Thu, 17 Oct 2019 09:27:17 +0800
+Subject: Re: [PATCH -next 00/13] hwrng: use devm_platform_ioremap_resource()
+ to simplify code
+To: Florian Fainelli <f.fainelli@gmail.com>, <herbert@gondor.apana.org.au>,
+ <mpm@selenic.com>, <arnd@arndb.de>, <gregkh@linuxfoundation.org>,
+ <nicolas.ferre@microchip.com>, <alexandre.belloni@bootlin.com>,
+ <ludovic.desroches@microchip.com>, <rjui@broadcom.com>,
+ <sbranden@broadcom.com>, <bcm-kernel-feedback-list@broadcom.com>,
+ <eric@anholt.net>, <wahrenst@gmx.net>, <l.stelmach@samsung.com>,
+ <kgene@kernel.org>, <krzk@kernel.org>, <khilman@baylibre.com>,
+ <dsaxena@plexity.net>, <patrice.chotard@st.com>
+References: <20191016104621.26056-1-yuehaibing@huawei.com>
+ <2c60b926-1e98-cca0-ec17-6b45f9da404a@gmail.com>
+From: Yuehaibing <yuehaibing@huawei.com>
+Message-ID: <7c0269b6-cab3-bded-7f9d-76430be89f9c@huawei.com>
+Date: Thu, 17 Oct 2019 09:27:13 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.2.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191016145324.GE5610@atomide.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <2c60b926-1e98-cca0-ec17-6b45f9da404a@gmail.com>
+X-Originating-IP: [10.133.213.239]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_181948_054726_6F124CF2 
-X-CRM114-Status: GOOD (  15.90  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191016_182724_095062_DDBB7608 
+X-CRM114-Status: UNSURE (   9.60  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,134 +73,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Merlijn Wajer <merlijn@wizzup.org>, Pavel Machek <pavel@ucw.cz>,
- linux-arm-kernel@lists.infradead.org, Sebastian Reichel <sre@kernel.org>
+Cc: linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-rpi-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
+ linux-crypto@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-* Tony Lindgren <tony@atomide.com> [191016 14:54]:
-> * Tony Lindgren <tony@atomide.com> [191010 00:13]:
-> > diff --git a/arch/arm/mach-omap2/vc.c b/arch/arm/mach-omap2/vc.c
-> > --- a/arch/arm/mach-omap2/vc.c
-> > +++ b/arch/arm/mach-omap2/vc.c
-> > @@ -26,6 +26,16 @@
-> >  #include "scrm44xx.h"
-> >  #include "control.h"
-> >  
-> > +#define OMAP4430_AUTO_CTRL_VDD_IVA(x)		((x) << 4)
-> > +#define OMAP4430_AUTO_CTRL_VDD_MPU(x)		((x) << 2)
-> > +#define OMAP4430_AUTO_CTRL_VDD_CORE(x)		((x) << 0)
-> > +#define OMAP4430_AUTO_CTRL_VDD_RET		2
-> > +
-> > +#define OMAP4_VDD_DEFAULT_VAL	\
-> > +	(OMAP4430_AUTO_CTRL_VDD_IVA(OMAP4430_AUTO_CTRL_VDD_RET) | \
-> > +	 OMAP4430_AUTO_CTRL_VDD_MPU(OMAP4430_AUTO_CTRL_VDD_RET) | \
-> > +	 OMAP4430_AUTO_CTRL_VDD_CORE(OMAP4430_AUTO_CTRL_VDD_RET))
-> > +
+
+
+On 2019/10/17 0:44, Florian Fainelli wrote:
+> On 10/16/19 3:46 AM, YueHaibing wrote:
+>> devm_platform_ioremap_resource() internally have platform_get_resource()
+>> and devm_ioremap_resource() in it. So instead of calling them separately
+>> use devm_platform_ioremap_resource() directly.
 > 
-> I noticed I had left out OMAP4430_VDD_IVA_PRESENCE and
-> OMAP4430_VDD_MPU_PRESENCE that should be enabled.
+> Did your coccinelle script not cover
+> drivers/char/hw_random/iproc-rng200.c somehow? Do you mind including it
+> as a separate patch?
 
-And looks like we also need to set the I2C disable bits here
-by default to avoid instant reboots after adding the missing
-PRESENCE bits and entering idle.
+A patch from Markus Elfring has be queued:
 
-I also confirmed that the the scaling is happening for idle
-by comparing the power consumption against the values measured
-after clearing the OMAP4430_AUTO_CTRL bits when scaling is
-not happening.
+commit a68b931932c5574aa5bd459529c766ba577c72b3
+Author: Markus Elfring <elfring@users.sourceforge.net>
+Date:   Wed Sep 18 09:09:22 2019 +0200
 
-Updated patch again below.
+    hwrng: iproc-rng200 - Use devm_platform_ioremap_resource() in iproc_rng200_probe()
 
-Regards,
+    Simplify this function implementation by using a known wrapper function.
 
-Tony
+    This issue was detected by using the Coccinelle software.
 
-8< ------------------------
-From tony Mon Sep 17 00:00:00 2001
-From: Tony Lindgren <tony@atomide.com>
-Date: Wed, 16 Oct 2019 07:37:07 -0700
-Subject: [PATCHv3] ARM: OMAP2+: Initialize voltage controller for omap4
+    Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
+    Reviewed-by: Ray Jui <ray.jui@broadcom.com>
+    Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+    Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
 
-We're missing initializing the PRM_VOLTCTRL register for voltage
-controller. Let's add omap4_vc_init_pmic_signaling() similar to what we
-have for omap3 and enable voltage control for retention.
 
-This brings down droid4 power consumption with mainline kernel to somewhere
-between 40 and 50mW from about 70 to 80 mW for the whole device when
-running idle with LCD and backlight off, WLAN connected, and USB and modem
-modules unloaded.
 
-Mostly just rmmod of omap2430, ohci-platform and phy-mapphone-mdm6600 are
-needed to idle USB and shut down the modem. And after that measuring idle
-power consumption can be done with reading sysfs entry periodically
-for /sys/class/power_supply/battery/power_avg. Then rmmod of phy-cpcap-usb
-will save few more mW, but will disable the debug UART.
 
-Note that sometimes CM_L4PER_UART1_CLKCTRL at 0x4a009540 does not idle
-properly after unloading of phy-mapphone-mdm6600.
+> Thanks
+> 
+>>
+>> YueHaibing (13):
+>>   hwrng: atmel - use devm_platform_ioremap_resource() to simplify code
+>>   hwrng: bcm2835 - use devm_platform_ioremap_resource() to simplify code
+>>   hwrng: exynos - use devm_platform_ioremap_resource() to simplify code
+>>   hwrng: hisi - use devm_platform_ioremap_resource() to simplify code
+>>   hwrng: ks-sa - use devm_platform_ioremap_resource() to simplify code
+>>   hwrng: meson - use devm_platform_ioremap_resource() to simplify code
+>>   hwrng: npcm - use devm_platform_ioremap_resource() to simplify code
+>>   hwrng: omap - use devm_platform_ioremap_resource() to simplify code
+>>   hwrng: pasemi - use devm_platform_ioremap_resource() to simplify code
+>>   hwrng: pic32 - use devm_platform_ioremap_resource() to simplify code
+>>   hwrng: st - use devm_platform_ioremap_resource() to simplify code
+>>   hwrng: tx4939 - use devm_platform_ioremap_resource() to simplify code
+>>   hwrng: xgene - use devm_platform_ioremap_resource() to simplify code
+>>
+>>  drivers/char/hw_random/atmel-rng.c   | 4 +---
+>>  drivers/char/hw_random/bcm2835-rng.c | 5 +----
+>>  drivers/char/hw_random/exynos-trng.c | 4 +---
+>>  drivers/char/hw_random/hisi-rng.c    | 4 +---
+>>  drivers/char/hw_random/ks-sa-rng.c   | 4 +---
+>>  drivers/char/hw_random/meson-rng.c   | 4 +---
+>>  drivers/char/hw_random/npcm-rng.c    | 4 +---
+>>  drivers/char/hw_random/omap-rng.c    | 4 +---
+>>  drivers/char/hw_random/pasemi-rng.c  | 4 +---
+>>  drivers/char/hw_random/pic32-rng.c   | 4 +---
+>>  drivers/char/hw_random/st-rng.c      | 4 +---
+>>  drivers/char/hw_random/tx4939-rng.c  | 4 +---
+>>  drivers/char/hw_random/xgene-rng.c   | 4 +---
+>>  13 files changed, 13 insertions(+), 40 deletions(-)
+>>
+> 
+> 
 
-Cc: Merlijn Wajer <merlijn@wizzup.org>
-Cc: Pavel Machek <pavel@ucw.cz>
-Cc: Sebastian Reichel <sre@kernel.org>
-Signed-off-by: Tony Lindgren <tony@atomide.com>
----
- arch/arm/mach-omap2/vc.c | 29 +++++++++++++++++++++++++++++
- 1 file changed, 29 insertions(+)
-
-diff --git a/arch/arm/mach-omap2/vc.c b/arch/arm/mach-omap2/vc.c
---- a/arch/arm/mach-omap2/vc.c
-+++ b/arch/arm/mach-omap2/vc.c
-@@ -26,6 +26,25 @@
- #include "scrm44xx.h"
- #include "control.h"
- 
-+#define OMAP4430_VDD_IVA_I2C_DISABLE		BIT(14)
-+#define OMAP4430_VDD_MPU_I2C_DISABLE		BIT(13)
-+#define OMAP4430_VDD_CORE_I2C_DISABLE		BIT(12)
-+#define OMAP4430_VDD_IVA_PRESENCE		BIT(9)
-+#define OMAP4430_VDD_MPU_PRESENCE		BIT(8)
-+#define OMAP4430_AUTO_CTRL_VDD_IVA(x)		((x) << 4)
-+#define OMAP4430_AUTO_CTRL_VDD_MPU(x)		((x) << 2)
-+#define OMAP4430_AUTO_CTRL_VDD_CORE(x)		((x) << 0)
-+#define OMAP4430_AUTO_CTRL_VDD_RET		2
-+
-+#define OMAP4_VDD_DEFAULT_VAL	\
-+	(OMAP4430_VDD_IVA_I2C_DISABLE | \
-+	 OMAP4430_VDD_MPU_I2C_DISABLE |	 \
-+	 OMAP4430_VDD_CORE_I2C_DISABLE | \
-+	 OMAP4430_VDD_IVA_PRESENCE | OMAP4430_VDD_MPU_PRESENCE | \
-+	 OMAP4430_AUTO_CTRL_VDD_IVA(OMAP4430_AUTO_CTRL_VDD_RET) | \
-+	 OMAP4430_AUTO_CTRL_VDD_MPU(OMAP4430_AUTO_CTRL_VDD_RET) | \
-+	 OMAP4430_AUTO_CTRL_VDD_CORE(OMAP4430_AUTO_CTRL_VDD_RET))
-+
- /**
-  * struct omap_vc_channel_cfg - describe the cfg_channel bitfield
-  * @sa: bit for slave address
-@@ -542,9 +561,19 @@ static void omap4_set_timings(struct voltagedomain *voltdm, bool off_mode)
- 	writel_relaxed(val, OMAP4_SCRM_CLKSETUPTIME);
- }
- 
-+static void __init omap4_vc_init_pmic_signaling(struct voltagedomain *voltdm)
-+{
-+	if (vc.vd)
-+		return;
-+
-+	vc.vd = voltdm;
-+	voltdm->write(OMAP4_VDD_DEFAULT_VAL, OMAP4_PRM_VOLTCTRL_OFFSET);
-+}
-+
- /* OMAP4 specific voltage init functions */
- static void __init omap4_vc_init_channel(struct voltagedomain *voltdm)
- {
-+	omap4_vc_init_pmic_signaling(voltdm);
- 	omap4_set_timings(voltdm, true);
- 	omap4_set_timings(voltdm, false);
- }
--- 
-2.23.0
 
 _______________________________________________
 linux-arm-kernel mailing list
