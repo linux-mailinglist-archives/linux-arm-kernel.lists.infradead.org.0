@@ -2,51 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22B69DB9B4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 00:23:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2536DB9B7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 00:23:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=AYiFwVeYj5avsDvnvE0+6Sur6cpiDjZZgB9m7UBpyfs=; b=fl0XflIjAVzlcq
-	elJeQZF/r4p9vAjkegWIezDKgG4D4XIqfSqkzyxlPfmhBwKlfJbMynF6j7EhG5GKzMTeQWpsclvFm
-	P79qhVGxhP0VMO3kElXzdQHfM0GFTCNZubOZA047szFFFAMMitY5g5onmYtUcMKHD5G5kgdfKp9h2
-	ZFVrZqNvYHbts3k8TWhGqJIQMBqLiExczoOhkr/tFVuhjQTa0NoOK7n+cWgEDlv42ppZXDaCbrHgP
-	ksIQRVXFAxRiHpPktraqJl9lUAVhCQPhWIPbA+19jsmIE9AGlKvkjxBr04Kys0v6reV2HId6z6hSI
-	mtkvmamsCDrF/Pyz14qQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7p+pe3oZnKhamp6+11+VbF9hG5hJei/zyu1tOG8X8nk=; b=dVK2uxOrS/Lmak
+	2Vhqex6H86ooJB7OmspTODPftop1MvPxwCyxz8cqCLt5u6ZW6t5g1Giv3parlU8yANYpTHHbfEsIG
+	1ZkKnshkN9gVAc8/vCOvcUCDzze+re939lqtFhIOd0ysQjArmx+UmE+JDQbvG4IP3F+QH7TlNsrzB
+	Y6p32HdEwF8tzGaddXY9Mn+DbQt9t80ERIcVOO1Mot4mbZsJ7REryuWpHc+PQMb9wDrfzE8gi6bPg
+	dBEax8CyVjflQz1SqyhOt5R+j6cSjDTuFrEMMeMWmsXnfr03cc+WPrCDEB2Tik4y7UvYGRAkWlZM3
+	RtqA68pmEVQpnYjZu4+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLEAX-0003R8-5o; Thu, 17 Oct 2019 22:22:53 +0000
-Received: from relay5-d.mail.gandi.net ([217.70.183.197])
+	id 1iLEBA-0003wZ-HA; Thu, 17 Oct 2019 22:23:32 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLEAN-0003Oh-1V
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 22:22:46 +0000
+ id 1iLEAw-0003vE-Pw
+ for linux-arm-kernel@bombadil.infradead.org; Thu, 17 Oct 2019 22:23:18 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+ Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=RaBjlHlR9V8fH0PfxX3zJ8UedOQwVCgeMBZU7PUoWP4=; b=ZryC9DQRnW1/9cXKPoIW3+UxVH
+ k/3BwZPTKXmdudOyrwu6j8Mo+1VGxUOyeZyhgVPZCffCoP0MKQADbkRJLzWVsmTo3qcxNWR33k/97
+ /PNemuhX9RB8/2DFAL76F2LY3n9+E6xOGBHsrWJPZTIXEHKmEHJv3z1axhj7LNbJJmGeLQYfwcC1W
+ qEhJj/8NFrikSH5MVv2xTOSlADYifUkujgqkhXnBn2mFPVrwjCWTSY2eU9+XFEoWRLdfApoG/IekF
+ z59is468ll57bJbGVFQTiSh5U8LA7+bbYxo7yao/i7k0GlslAgxObf2QTU/ON775hcOzW/8Tq1oVe
+ PCSzaNDQ==;
+Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iLEAs-0008Ns-Ok
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 22:23:17 +0000
 X-Originating-IP: 86.202.229.42
 Received: from localhost (lfbn-lyo-1-146-42.w86-202.abo.wanadoo.fr
  [86.202.229.42])
  (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 312971C0003;
- Thu, 17 Oct 2019 22:22:32 +0000 (UTC)
+ by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id 194B61BF203;
+ Thu, 17 Oct 2019 22:22:34 +0000 (UTC)
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
 To: "David S . Miller" <davem@davemloft.net>
-Subject: [PATCH net-next v3 0/2] net: lpc_eth: parse phy nodes from device tree
-Date: Fri, 18 Oct 2019 00:22:29 +0200
-Message-Id: <20191017222231.29122-1-alexandre.belloni@bootlin.com>
+Subject: [PATCH net-next v3 1/2] dt-bindings: net: lpc-eth: document optional
+ properties
+Date: Fri, 18 Oct 2019 00:22:30 +0200
+Message-Id: <20191017222231.29122-2-alexandre.belloni@bootlin.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20191017222231.29122-1-alexandre.belloni@bootlin.com>
+References: <20191017222231.29122-1-alexandre.belloni@bootlin.com>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_152243_217158_7025B7CB 
-X-CRM114-Status: UNSURE (   7.33  )
-X-CRM114-Notice: Please train this message.
+X-Spam-Note: CRM114 invocation failed
 X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.197 listed in list.dnswl.org]
+ low trust [217.70.183.201 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -70,25 +86,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Allow describing connected phys using device tree. This solves issues finding
-the phy on the mdio bus and allows decribing the interrupt line the phy is
-possibly connected to.
+The Ethernet controller is also an mdio controller, to be able to parse
+children (phys for example), and mdio node must be present.
 
-Changes in v3:
- - rebased on net-next
- - collected Reviewed-by
+Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Reviewed-by: Andrew Lunn <andrew@lunn.ch>
+---
+ Documentation/devicetree/bindings/net/lpc-eth.txt | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-Changes in v2:
- - move the phy decription in the mdio subnode.
-
-Alexandre Belloni (2):
-  dt-bindings: net: lpc-eth: document optional properties
-  net: lpc_eth: parse phy nodes from device tree
-
- .../devicetree/bindings/net/lpc-eth.txt       |  5 ++++
- drivers/net/ethernet/nxp/lpc_eth.c            | 28 +++++++++++++------
- 2 files changed, 25 insertions(+), 8 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/net/lpc-eth.txt b/Documentation/devicetree/bindings/net/lpc-eth.txt
+index b92e927808b6..cfe0e5991d46 100644
+--- a/Documentation/devicetree/bindings/net/lpc-eth.txt
++++ b/Documentation/devicetree/bindings/net/lpc-eth.txt
+@@ -10,6 +10,11 @@ Optional properties:
+   absent, "rmii" is assumed.
+ - use-iram: Use LPC32xx internal SRAM (IRAM) for DMA buffering
+ 
++Optional subnodes:
++- mdio : specifies the mdio bus, used as a container for phy nodes according to
++  phy.txt in the same directory
++
++
+ Example:
+ 
+ 	mac: ethernet@31060000 {
 -- 
 2.21.0
 
