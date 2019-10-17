@@ -2,67 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0D21DAC35
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 14:29:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCE3ADAC3A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 14:29:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bw6Dmu1qCHucO3BykxNdfcNVqemSuD/+hivWu2ETLnk=; b=JwWE0RI8QkF4+U
-	1vYhGUJCmwp0I+7/r0iH9RCSV7RWWJCisUb05xWjTott36G8F6PF7jx/AeDymIDPyZT5sMa25g9C1
-	6IOJnte/ZZ6ErCpQGKguFxlfkp1QgoGtdQtvOu18/u0z5WNURDjTmfM/VrBG7z0Y1zOrI9EByyZ/3
-	bznLUReuMzTdGtj3UB63Eig8+Ew9pdDgBrDXWHIROAyMYBdlKFMSjWI9C0rFK79Pf79sJXBlaIz3d
-	0HlFYYt6GED/V2bV1N1iBXviKZpU146OExRSM3tY1VY83Oou8ponsGbPx+Y3Vgu2hm2Ry73qLCfH3
-	ul5GLT8xk98jGaQ4xs8Q==;
+	List-Owner; bh=dmwO0YqUfxllphHeNH460hNHEM2m3+kEZzx1saZoQ0M=; b=lYs5m0JL5agSYc
+	n28LQyjB6un1yGmhiRQPJq+Yn8n84Rvpc6XrZ8jr8VrUph2yUT8nl85LeD4K36BNn1YqpQKa9Xy3u
+	ZEHiqueeeoDSeAZgdR1rY7kK0oz7DxCTHvEOW+9t68uFZ4PJkcENFIEFs+lKgpr7prHItq6HBENSQ
+	wipVNXy/ibzJd9wJPTHxumMatwA+YWU+K8FIRZgOaT+tFIYt+v15PbOL6ygZWxprfE1MQebzb9o/V
+	PLmNZPcu+Yh9NzHNgEZ/WHOfZULuzkILH16wIrrA8MMRl5ROijDsmiGmj0qZfdGHSIomQSHhMOfWF
+	RzrMX6/GNGPw7jJNJ+Ig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL4ts-0003Cj-BS; Thu, 17 Oct 2019 12:29:04 +0000
+	id 1iL4uM-0003ra-C7; Thu, 17 Oct 2019 12:29:34 +0000
 Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL4rI-0000wX-Mg
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 12:26:27 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x9HCQHmr086558;
- Thu, 17 Oct 2019 07:26:17 -0500
+ id 1iL4rO-00011B-8V
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 12:26:33 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x9HCQJRg086571;
+ Thu, 17 Oct 2019 07:26:19 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1571315177;
- bh=Bb+NMsmU29SE+RzWfChJoj3IypYlnD56/0aZEsv24kI=;
+ s=ti-com-17Q1; t=1571315179;
+ bh=yP6xPhlj18H6iTp8pG1xyYarjc/HONgaPVPk1rzTYts=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=EUEC5YfnjT7iTVhwzcFK6o9lvoalnQMQKcOei5FY7TvLm581iostC/cYgbLDFAjSf
- l2TpaEQIRiwfvSxgL3id/s0/v4a4sAa6W/tuRy6tj5f6kWRlwKQrj4SIvaB3sZoF++
- L4QwuhQn/ORr7LNOfWLj4pyBTTyZOE/sWofpVun4=
-Received: from DLEE110.ent.ti.com (dlee110.ent.ti.com [157.170.170.21])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x9HCQHI5016697
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 17 Oct 2019 07:26:17 -0500
-Received: from DLEE105.ent.ti.com (157.170.170.35) by DLEE110.ent.ti.com
- (157.170.170.21) with Microsoft SMTP Server (version=TLS1_2,
+ b=cN6IGpc12pN5UdK4ufEN2GnQgH13Wcv/dQ6DBb9a4U/7U3rg4+mKlASdX1hQPxroJ
+ J4GvqO5QsBgTDcJJgVVJjQ1EINcbOnyg+NIBJmot4lk7/wOAXPEDDeT4MeSJ3pDRAm
+ UrrLPy95a1RSDS1zTIRuCh2zg7gVWTY3iRJpCSDk=
+Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id x9HCQJMt118129;
+ Thu, 17 Oct 2019 07:26:19 -0500
+Received: from DFLE108.ent.ti.com (10.64.6.29) by DFLE114.ent.ti.com
+ (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 17
- Oct 2019 07:26:17 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
+ Oct 2019 07:26:19 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE108.ent.ti.com
+ (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Thu, 17 Oct 2019 07:26:09 -0500
+ Frontend Transport; Thu, 17 Oct 2019 07:26:11 -0500
 Received: from sokoban.bb.dnainternet.fi (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x9HCPxNe073246;
- Thu, 17 Oct 2019 07:26:16 -0500
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x9HCPxNf073246;
+ Thu, 17 Oct 2019 07:26:17 -0500
 From: Tero Kristo <t-kristo@ti.com>
 To: <herbert@gondor.apana.org.au>, <davem@davemloft.net>,
  <linux-crypto@vger.kernel.org>, <ard.biesheuvel@linaro.org>
-Subject: [PATCH 09/10] crypto: add timeout to crypto_wait_req
-Date: Thu, 17 Oct 2019 15:25:48 +0300
-Message-ID: <20191017122549.4634-10-t-kristo@ti.com>
+Subject: [PATCH 10/10] crypto: omap-aes: fixup aligned data cleanup
+Date: Thu, 17 Oct 2019 15:25:49 +0300
+Message-ID: <20191017122549.4634-11-t-kristo@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191017122549.4634-1-t-kristo@ti.com>
 References: <20191017122549.4634-1-t-kristo@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_052624_966967_369A3105 
-X-CRM114-Status: GOOD (  12.80  )
+X-CRM114-CacheID: sfid-20191017_052630_693462_51E37286 
+X-CRM114-Status: GOOD (  11.44  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -97,38 +96,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently crypto_wait_req waits indefinitely for an async crypto request
-to complete. This is bad as it can cause for example the crypto test
-manager to hang without any notification as to why it has happened.
-Instead of waiting indefinitely, add a 1 second timeout to the call,
-and provide a warning print if a timeout happens.
+Aligned data cleanup is using wrong pointers in the cleanup calls. Most
+of the time these are right, but can cause mysterious problems in some
+cases. Fix to use the same pointers that were used with the align call.
 
 Signed-off-by: Tero Kristo <t-kristo@ti.com>
 ---
- include/linux/crypto.h | 9 ++++++++-
- 1 file changed, 8 insertions(+), 1 deletion(-)
+ drivers/crypto/omap-aes.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/include/linux/crypto.h b/include/linux/crypto.h
-index 19ea3a371d7b..b8f0e5c3cc0c 100644
---- a/include/linux/crypto.h
-+++ b/include/linux/crypto.h
-@@ -682,8 +682,15 @@ static inline int crypto_wait_req(int err, struct crypto_wait *wait)
- 	switch (err) {
- 	case -EINPROGRESS:
- 	case -EBUSY:
--		wait_for_completion(&wait->completion);
-+		err = wait_for_completion_timeout(&wait->completion,
-+						  msecs_to_jiffies(1000));
- 		reinit_completion(&wait->completion);
-+		if (!err) {
-+			pr_err("%s: timeout for %p\n", __func__, wait);
-+			err = -ETIMEDOUT;
-+			break;
-+		}
-+
- 		err = wait->err;
- 		break;
- 	};
+diff --git a/drivers/crypto/omap-aes.c b/drivers/crypto/omap-aes.c
+index c40876353b19..649abbc92fd4 100644
+--- a/drivers/crypto/omap-aes.c
++++ b/drivers/crypto/omap-aes.c
+@@ -502,10 +502,10 @@ static void omap_aes_done_task(unsigned long data)
+ 		omap_aes_crypt_dma_stop(dd);
+ 	}
+ 
+-	omap_crypto_cleanup(dd->in_sgl, NULL, 0, dd->total_save,
++	omap_crypto_cleanup(dd->in_sg, NULL, 0, dd->total_save,
+ 			    FLAGS_IN_DATA_ST_SHIFT, dd->flags);
+ 
+-	omap_crypto_cleanup(&dd->out_sgl, dd->orig_out, 0, dd->total_save,
++	omap_crypto_cleanup(dd->out_sg, dd->orig_out, 0, dd->total_save,
+ 			    FLAGS_OUT_DATA_ST_SHIFT, dd->flags);
+ 
+ 	/* Update IV output */
 -- 
 2.17.1
 
