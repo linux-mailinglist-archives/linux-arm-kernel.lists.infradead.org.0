@@ -2,91 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3AAABDAC5A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 14:35:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB25CDACB9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 14:48:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jH8X9jCWF0csgX+t3KsqbOPfVzFZd0CGka61d/SJW40=; b=BDt5Fc4yKRx0qF
-	aBlquHss6smroB9f2Q+yxSKkkxJpPB5Rq5A6YmwxG1o0XmlFOktmLL0V1JG9yzlRfzQ31u3gSOErv
-	DixCmifznx4yQhzoICaS3G8a+Ei5AgWS0EkTSTfVDJdKDnn7YouJpwuMj5H75gQt1HhLT+4cf2FzQ
-	9a84zQHbtHgFe9pG3OKDdVBJSmDiNpcQV04phsnyEF5iJ1NshrsPFcpiNfVOa71pF++SwFBeVBCM3
-	3c/uP34fOnnxQr1JfVLw9LgoxrRKOWBA9k4BJwgKu1ILu7yQXyq5z5vKE1ZFcpRsjINEoKLInP89t
-	tbn7OsBw8jN2Iwalg/iA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=8vweLztKut/I+TG1Mt3fu79y7vSEkf193skwGgUYptA=; b=uVyXEpG3hoCGeC
+	Wqu8HndGfJaRrIWdHvqJ27L80L8bmO8Rh+ujMoZS7duFvNVpJYQwjg5xW+RY/NcWPJJeimIVTH7fu
+	4E5+x5FHj8a/zhQjpaPm1G56XSfXbeM2cTDQmj6zMeZq6neZsNvAXoMjFEBdSr8VEQFmdYtP6Segq
+	eW6zrPmOt65jRyzsz3XglZ/DPf8GuChQVETl3EP1FuSALyEOtRjIOH/zS9pbIZqr3j626fPeeFCVz
+	VQag8EmNfJBJR1zAlUf3zGQZx8XEyoQdEjXgKhg4z2rk273XFxq7NSMHsw9u4B4wBtKWuwYSDYVfg
+	pGG20kAGyIFxpHsihLjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL4zp-00068c-W3; Thu, 17 Oct 2019 12:35:14 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1iL5Cl-0004He-2z; Thu, 17 Oct 2019 12:48:35 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL4zY-00067k-Nt
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 12:34:58 +0000
-Received: by mail-lf1-x143.google.com with SMTP id r22so1766052lfm.1
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 17 Oct 2019 05:34:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=rasmusvillemoes.dk; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=uMFWZhVs3nOLCl7bSNvnSRRP4v3iwqBQaN+r4cGzM5w=;
- b=i8IC+ybAH7Xu7kPM1yyi1ejpd2G+foax89r02+eIpDfbysN1/dJVRVOC1WXOjAP7R0
- n7QEgIsfDwQaR6XPB6O7Opdti6NPjAKKHaInhfmR/TBpfvfblOvLNtWbf+AODqeB4c1/
- M934EFwgtgZdAu3sspAjeymnEZ83UQyhEIU70=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=uMFWZhVs3nOLCl7bSNvnSRRP4v3iwqBQaN+r4cGzM5w=;
- b=nW56k9sFvIlDlT7mY2XohJmMb95+UO5mYmSlFrh8RubFgzNlL9RHhjkfDkMBQbLfoV
- lZSNLMNgMQRNPiGVlEUX4TwpI+n6gRNUrqm0vu/A1YwKFhCfQwpefWqMEkk99bN/zjaj
- ZKZ30CNdPQjfXDYY91rzB8HQJklpzPGuNIdutF96eabmFcFG/TJcl2gAxTcJUaah/WxJ
- Rw/ap1UPTuzGEaoasEBAwTlxEAmwvcYC0cn3tGDqxikRCSAz+RFVkVL1pYd9OSZzq2ti
- TsONsToXPgvrif1l5P2Rkvr320Ujiz4ZzxvaTk4BbhCgi8FEYmmMsYFSiQN7mGClMo5h
- A+vw==
-X-Gm-Message-State: APjAAAXyN+QURM6/VuJvKziFBMtX2thSyiO44qQFTNw8Tl2OtfTd+daQ
- TDFaSgJf9uqfcuxtfbdHpZh5v7HmAjwXN40C
-X-Google-Smtp-Source: APXvYqwmJXI9/ifsToGepUzplMqcGqjd91BZPdQ3/V3K6BdotfwTLPKZg1XHe8tNSIfFdS4KkkB5AQ==
-X-Received: by 2002:ac2:50c4:: with SMTP id h4mr1544119lfm.15.1571315694244;
- Thu, 17 Oct 2019 05:34:54 -0700 (PDT)
-Received: from [172.16.11.28] ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id y4sm1124965ljd.82.2019.10.17.05.34.52
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 17 Oct 2019 05:34:53 -0700 (PDT)
-Subject: Re: [RFC PATCH 0/3] watchdog servicing during decompression
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-References: <20191017114906.30302-1-linux@rasmusvillemoes.dk>
- <20191017120310.GD25745@shell.armlinux.org.uk>
-From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
-Message-ID: <c4b6805b-67fe-6bce-1777-2d81e96b4ac9@rasmusvillemoes.dk>
-Date: Thu, 17 Oct 2019 14:34:52 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iL5CT-0004G7-9S
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 12:48:19 +0000
+Received: from DGGEMS408-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 47C9634C1F89D02A68CC;
+ Thu, 17 Oct 2019 20:48:11 +0800 (CST)
+Received: from localhost (10.133.213.239) by DGGEMS408-HUB.china.huawei.com
+ (10.3.19.208) with Microsoft SMTP Server id 14.3.439.0; Thu, 17 Oct 2019
+ 20:48:01 +0800
+From: YueHaibing <yuehaibing@huawei.com>
+To: <linus.walleij@linaro.org>, <manivannan.sadhasivam@linaro.org>,
+ <afaerber@suse.de>, <f.fainelli@gmail.com>, <rjui@broadcom.com>,
+ <sbranden@broadcom.com>, <bcm-kernel-feedback-list@broadcom.com>,
+ <jesper.nilsson@axis.com>, <lars.persson@axis.com>,
+ <ludovic.desroches@microchip.com>, <nicolas.ferre@microchip.com>,
+ <alexandre.belloni@bootlin.com>, <baruch@tkos.co.il>
+Subject: [PATCH -next 00/30] pinctrl: use devm_platform_ioremap_resource() to
+ simplify code
+Date: Thu, 17 Oct 2019 20:26:10 +0800
+Message-ID: <20191017122640.22976-1-yuehaibing@huawei.com>
+X-Mailer: git-send-email 2.10.2.windows.1
 MIME-Version: 1.0
-In-Reply-To: <20191017120310.GD25745@shell.armlinux.org.uk>
-Content-Language: en-US
+X-Originating-IP: [10.133.213.239]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_053456_780904_24F9F009 
-X-CRM114-Status: GOOD (  20.39  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191017_054817_507590_AF1717B4 
+X-CRM114-Status: UNSURE (   5.07  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,52 +68,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
- Masahiro Yamada <yamada.masahiro@socionext.com>, kernel@pengutronix.de,
- Andrew Morton <akpm@linux-foundation.org>, Gao Xiang <xiang@kernel.org>,
+Cc: jonathanh@nvidia.com, geert+renesas@glider.be, narmstrong@baylibre.com,
+ haojian.zhuang@gmail.com, linux-arm-msm@vger.kernel.org, agross@kernel.org,
+ YueHaibing <yuehaibing@huawei.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@axis.com, vz@mleia.com, linux-renesas-soc@vger.kernel.org,
+ linux-gpio@vger.kernel.org, wens@csie.org, thierry.reding@gmail.com,
+ daniel@zonque.org, linux-tegra@vger.kernel.org, linux-oxnas@groups.io,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 17/10/2019 14.03, Russell King - ARM Linux admin wrote:
-> We used to have this on ARM - it was called from the decompressor
-> code via an arch_decomp_wdog() hook.
-> 
-> That code got removed because it is entirely unsuitable for a multi-
-> platform kernel.  This looks like it takes an address for the watchdog
-> from the Kconfig, and builds that into the decompressor, making the
-> decompressor specific to that board or platform.
-> 
-> I'm not sure distros are going to like that given where we are with
-> multiplatform kernels.
+devm_platform_ioremap_resource() internally have platform_get_resource()
+and devm_ioremap_resource() in it. So instead of calling them separately
+use devm_platform_ioremap_resource() directly.
 
-This is definitely not for multiplatform kernels or general distros,
-it's for kernels that are built as part of a BSP for a specific board -
-hence the "Say N unless you know you need this.".
+YueHaibing (30):
+  pinctrl: pxa25x: use devm_platform_ioremap_resource() to simplify code
+  pinctrl: pxa27x: use devm_platform_ioremap_resource() to simplify code
+  pinctrl: cygnus-mux: use devm_platform_ioremap_resource() to simplify
+    code
+  pinctrl: pic32: use devm_platform_ioremap_resource() to simplify code
+  pinctrl: nsp-gpio: use devm_platform_ioremap_resource() to simplify
+    code
+  pinctrl: nsp: use devm_platform_ioremap_resource() to simplify code
+  pinctrl: ns2: use devm_platform_ioremap_resource() to simplify code
+  pinctrl: bcm281xx: use devm_platform_ioremap_resource() to simplify
+    code
+  pinctrl: sunxi: use devm_platform_ioremap_resource() to simplify code
+  pinctrl: tegra: use devm_platform_ioremap_resource() to simplify code
+  pinctrl: msm: use devm_platform_ioremap_resource() to simplify code
+  pinctrl: spear: use devm_platform_ioremap_resource() to simplify code
+  pinctrl: zte: use devm_platform_ioremap_resource() to simplify code
+  pinctrl: at91: use devm_platform_ioremap_resource() to simplify code
+  pinctrl: oxnas: use devm_platform_ioremap_resource() to simplify code
+  pinctrl: pistachio: use devm_platform_ioremap_resource() to simplify
+    code
+  pinctrl: lpc18xx: use devm_platform_ioremap_resource() to simplify
+    code
+  pinctrl: da850-pupd: use devm_platform_ioremap_resource() to simplify
+    code
+  pinctrl: tb10x: use devm_platform_ioremap_resource() to simplify code
+  pinctrl: u300: use devm_platform_ioremap_resource() to simplify code
+  pinctrl: vt8500: use devm_platform_ioremap_resource() to simplify code
+  pinctrl: xway: use devm_platform_ioremap_resource() to simplify code
+  pinctrl: rza2: use devm_platform_ioremap_resource() to simplify code
+  pinctrl: digicolor: use devm_platform_ioremap_resource() to simplify
+    code
+  pinctrl: coh901: use devm_platform_ioremap_resource() to simplify code
+  pinctrl: bm1880: use devm_platform_ioremap_resource() to simplify code
+  pinctrl: artpec6: use devm_platform_ioremap_resource() to simplify
+    code
+  pinctrl: actions: use devm_platform_ioremap_resource() to simplify
+    code
+  pinctrl: at91-pio4: use devm_platform_ioremap_resource() to simplify
+    code
+  pinctrl: iproc: use devm_platform_ioremap_resource() to simplify code
 
-I didn't know it used to exist. But I do know that something like this
-is carried out-of-tree for lots of boards, so I thought I'd try to get
-upstream support.
+ drivers/pinctrl/actions/pinctrl-owl.c      |  4 +---
+ drivers/pinctrl/bcm/pinctrl-bcm281xx.c     |  4 +---
+ drivers/pinctrl/bcm/pinctrl-cygnus-mux.c   |  7 ++-----
+ drivers/pinctrl/bcm/pinctrl-iproc-gpio.c   |  3 +--
+ drivers/pinctrl/bcm/pinctrl-ns2-mux.c      |  6 ++----
+ drivers/pinctrl/bcm/pinctrl-nsp-gpio.c     |  7 ++-----
+ drivers/pinctrl/bcm/pinctrl-nsp-mux.c      |  6 ++----
+ drivers/pinctrl/pinctrl-artpec6.c          |  4 +---
+ drivers/pinctrl/pinctrl-at91-pio4.c        |  3 +--
+ drivers/pinctrl/pinctrl-at91.c             |  4 +---
+ drivers/pinctrl/pinctrl-bm1880.c           |  4 +---
+ drivers/pinctrl/pinctrl-coh901.c           |  4 +---
+ drivers/pinctrl/pinctrl-da850-pupd.c       |  4 +---
+ drivers/pinctrl/pinctrl-digicolor.c        |  4 +---
+ drivers/pinctrl/pinctrl-lpc18xx.c          |  4 +---
+ drivers/pinctrl/pinctrl-oxnas.c            |  4 +---
+ drivers/pinctrl/pinctrl-pic32.c            |  4 +---
+ drivers/pinctrl/pinctrl-pistachio.c        |  4 +---
+ drivers/pinctrl/pinctrl-rza2.c             |  4 +---
+ drivers/pinctrl/pinctrl-tb10x.c            |  4 +---
+ drivers/pinctrl/pinctrl-u300.c             |  4 +---
+ drivers/pinctrl/pinctrl-xway.c             |  4 +---
+ drivers/pinctrl/pxa/pinctrl-pxa25x.c       | 13 ++++---------
+ drivers/pinctrl/pxa/pinctrl-pxa27x.c       | 13 ++++---------
+ drivers/pinctrl/qcom/pinctrl-msm.c         |  3 +--
+ drivers/pinctrl/spear/pinctrl-plgpio.c     |  4 +---
+ drivers/pinctrl/spear/pinctrl-spear.c      |  4 +---
+ drivers/pinctrl/sunxi/pinctrl-sunxi.c      |  4 +---
+ drivers/pinctrl/tegra/pinctrl-tegra-xusb.c |  4 +---
+ drivers/pinctrl/tegra/pinctrl-tegra.c      |  3 +--
+ drivers/pinctrl/vt8500/pinctrl-wmt.c       |  4 +---
+ drivers/pinctrl/zte/pinctrl-zx.c           |  4 +---
+ 32 files changed, 42 insertions(+), 110 deletions(-)
 
-The first two patches, or something like them, would be nice on their
-own, as that would minimize the conflicts when forward-porting the
-board-specific patch. But such a half-implemented feature that requires
-out-of-tree patches to actually do anything useful of course won't fly.
+-- 
+2.7.4
 
-I'm not really a big fan of the third patch, even though it does work
-for all the cases I've encountered so far - I'm sure there would be
-boards where a much more complicated solution would be needed. Another
-method I thought of was to just supply a __weak no-op
-decompress_keepalive(), and then have a config option to point at an
-extra object file to link into the compressed/vmlinux (similar to the
-initramfs_source option that also points to some external resource).
 
-But if the mainline kernel doesn't want anything like this
-re-introduced, that's also fine, that just means a bit of job security.
-
-Rasmus
 
 _______________________________________________
 linux-arm-kernel mailing list
