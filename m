@@ -2,85 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A161DAEC1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 15:50:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C65EDAED1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 15:54:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UeaNszoXZWPjg1vlHTHcZXleNvrPp5PVnFTNUP4cKT4=; b=rHJFycQjbjzOEA
-	VOQefpFTfuLBZQbqseQQ7WTN9av+GRFRfsIKdQTkEkgQbEOztp2+4gNWy4hk1iWqhrfVrEp94KPQf
-	4Y83F8DCwhhdt05MXCpIX1EKqVg3pGHWxLg+8ISvmVCfP/YBMXlNQB4PUBYxZqSdDDCmkYivC/UkQ
-	6m2f7VN+Xs+HGLdu5WwrQeol3BRNQ0LfSimH23szREf9py+ckJg2g4y1O4NsSYVZlFWUJSpHrnIPa
-	ldOgAT38PUkw0QSG6pjG7YLQaWS9c/NwtAM3NoOcq43HHqV2cO7NJ1+UEMCgzNuYBHDzT/XxYkVPM
-	v6/1dOvxq7Cff3CBB8eQ==;
+	List-Owner; bh=QVBxMxzK0jdYdPirxV4U1Bzcwbw9esKI1UA6VhQTQnY=; b=YmVrvSWpHm0hWZ
+	v1QiMkYGgWqWL/SasqUiZaYnTj4p/9A4+fZ2a8bU9reeuhJziqVzNMpWT1oeEvz9A8JiX4VVDBRpQ
+	2IXIYgjHuuw6C26rDd7/CoEwoznXpYJeLz2X0GVRbdS4cDhWDwEXTj+I+lSN0mFv51zECU1szmWze
+	QNAX5obqy/GPSQ6+l/LhQuNgPSdorS5JiHDAUDzHJecftVsmeWlpVTvVircwEImceappvcOzNrC+S
+	LHBkD/KEt+n1n21327U1Xv41T+Ols0it6mKPnWcmBi9l1tZVv6h0yMfR3dKhjse9ErSoVtYvWm3LK
+	ZiTinMErmhn8hWrSwzMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL6AT-0004U7-94; Thu, 17 Oct 2019 13:50:17 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL6AC-0004SK-9w
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 13:50:01 +0000
-Received: by mail-lf1-x144.google.com with SMTP id g21so837463lfh.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 17 Oct 2019 06:49:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=kIxf0CXaMXP19ytls9EVnq9glUVujBoZEFuoo1TReUo=;
- b=WFJDo9JbE2wQezugkwqR86osos1Syqspo2i/9//fCoGIj6FFgH5sXT3dz00jn4CZTX
- yWs6J3/uwlgocDSUtK0dcRGPdXehhbWTcNsMf4su1D/BhDgkJx0CInnSNCvYktAR+x6T
- VTVhyqj7+cakT+AlmFIPqnmA2rkS02Gf4rNlEwTgUSOcOC1xrR9okh4/ktcuvRy9q/wM
- BLkcSEUWWnrSm+vUQCKXW9O00OeRSINOEcAWPrNjSiygah1sMAkT4hfinU5KzOY9J9XE
- w84JJDFvVJ7Y1YAbzgkSCTOabaJpsMJVOQKMVTtJ+z4S+jpWkb1/hdUePd7HOMMPawpA
- leVw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=kIxf0CXaMXP19ytls9EVnq9glUVujBoZEFuoo1TReUo=;
- b=bvLdLJbHonayV++/U+J71SpvyrqtsOc+HeciIhzZgLXdKe6Om0lG5cUS8AIiIURfMI
- yvWounKgt19ygtrsOstuNl4KB3UnT3JzaVbPFtwWcNMrmkxafWZO2AcKrDbpTiWbxLEh
- xqH2Hjimfm9stDmIfIv2Q7ld7x+3V465J15MHczyLCczIwcSgwC6k4iV3bEmtJe1xgPt
- iKEC7b6LWbPvkQZd02lMlFjwgIgWRkRo7XmHkoKgyoB8FKaQFdajNH+VeyO8IngQWMh1
- ElBWXe3xu9cTkBTKTji+PDPVq2kNntDSSnSCj6dm5Am9mMgH+/lxSFuoAObPe9+1zjNC
- 5ncQ==
-X-Gm-Message-State: APjAAAVaWzZqVvA0SAVErgkcl5rTg5sjIYThcyx7rvAisjMbMPWFhL3U
- yQ7mcGoRjyaNFzKW40ePAiysqvaP5LhajDmyek4=
-X-Google-Smtp-Source: APXvYqzgok6YCr+ARGUVfkAfSpmySMXExzm3CebcPHplItyosGcqxrzCElEN0I/T7z61egyDR4W5gGR5z5lBUAkmu9I=
-X-Received: by 2002:a19:855:: with SMTP id 82mr2429104lfi.44.1571320198501;
- Thu, 17 Oct 2019 06:49:58 -0700 (PDT)
+	id 1iL6Eo-0006SB-Fg; Thu, 17 Oct 2019 13:54:46 +0000
+Received: from [217.140.110.172] (helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iL6Ef-0006QF-6v
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 13:54:38 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E73811993;
+ Thu, 17 Oct 2019 06:54:24 -0700 (PDT)
+Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2760A3F6C4;
+ Thu, 17 Oct 2019 06:54:23 -0700 (PDT)
+Date: Thu, 17 Oct 2019 14:54:16 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Yunfeng Ye <yeyunfeng@huawei.com>
+Subject: Re: [PATCH V2] arm64: psci: Reduce waiting time of cpu_psci_cpu_kill()
+Message-ID: <20191017135416.GA26312@bogus>
+References: <18068756-0f39-6388-3290-cf03746e767d@huawei.com>
+ <9df267db-e647-a81d-16bb-b8bfb06c2624@huawei.com>
+ <20191016153221.GA8978@bogus>
+ <0f550044-9ed2-5f72-1335-73417678ba45@huawei.com>
 MIME-Version: 1.0
-References: <CAOMZO5AuCCs27+hYTjs2w9j=nKUv3jzEraR8q1qSDg78F84W4g@mail.gmail.com>
-In-Reply-To: <CAOMZO5AuCCs27+hYTjs2w9j=nKUv3jzEraR8q1qSDg78F84W4g@mail.gmail.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Thu, 17 Oct 2019 10:49:48 -0300
-Message-ID: <CAOMZO5DmHSYybje0bVk_bnVVp_pMRnTbXx8Kd_yRgXVOy12mTA@mail.gmail.com>
-Subject: Re: pinctrl regresssion on mx28
-To: Linus Walleij <linus.walleij@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <0f550044-9ed2-5f72-1335-73417678ba45@huawei.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_065000_372321_B2187FA6 
-X-CRM114-Status: GOOD (  12.01  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191017_065437_339566_DE2C41BE 
+X-CRM114-Status: GOOD (  23.59  )
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,38 +64,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marex@denx.de>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Sascha Hauer <kernel@pengutronix.de>
+Cc: "kstewart@linuxfoundation.org" <kstewart@linuxfoundation.org>,
+ "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>, hushiyuan@huawei.com,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ linfeilong@huawei.com, David Laight <David.Laight@ACULAB.COM>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "wuyun.wu@huawei.com" <wuyun.wu@huawei.com>,
+ "will@kernel.org" <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 17, 2019 at 10:19 AM Fabio Estevam <festevam@gmail.com> wrote:
+On Thu, Oct 17, 2019 at 09:26:15PM +0800, Yunfeng Ye wrote:
 >
-> Hi,
 >
-> I noticed that on a imx28-evk running kernel 5.3.6 the following
-> pinctrl error is seen:
+> On 2019/10/16 23:32, Sudeep Holla wrote:
+> > On Wed, Oct 09, 2019 at 12:45:16PM +0800, Yunfeng Ye wrote:
+> >> If psci_ops.affinity_info() fails, it will sleep 10ms, which will not
+> >> take so long in the right case. Use usleep_range() instead of msleep(),
+> >> reduce the waiting time, and give a chance to busy wait before sleep.
+> >>
+> >> Signed-off-by: Yunfeng Ye <yeyunfeng@huawei.com>
+> >> ---
+> >> V1->V2:
+> >> - use usleep_range() instead of udelay() after waiting for a while
+> >>
+> >>  arch/arm64/kernel/psci.c | 17 +++++++++++++----
+> >>  1 file changed, 13 insertions(+), 4 deletions(-)
+> >>
+> >> diff --git a/arch/arm64/kernel/psci.c b/arch/arm64/kernel/psci.c
+> >> index c9f72b2..99b3122 100644
+> >> --- a/arch/arm64/kernel/psci.c
+> >> +++ b/arch/arm64/kernel/psci.c
+> >> @@ -82,6 +82,7 @@ static void cpu_psci_cpu_die(unsigned int cpu)
+> >>  static int cpu_psci_cpu_kill(unsigned int cpu)
+> >>  {
+> >>  	int err, i;
+> >> +	unsigned long timeout;
+> >>
+> >>  	if (!psci_ops.affinity_info)
+> >>  		return 0;
+> >> @@ -91,16 +92,24 @@ static int cpu_psci_cpu_kill(unsigned int cpu)
+> >>  	 * while it is dying. So, try again a few times.
+> >>  	 */
+> >>
+> >> -	for (i = 0; i < 10; i++) {
+> >> +	i = 0;
+> >> +	timeout = jiffies + msecs_to_jiffies(100);
+> >> +	do {
+> >>  		err = psci_ops.affinity_info(cpu_logical_map(cpu), 0);
+> >>  		if (err == PSCI_0_2_AFFINITY_LEVEL_OFF) {
+> >>  			pr_info("CPU%d killed.\n", cpu);
+> >>  			return 0;
+> >>  		}
+> >>
+> >> -		msleep(10);
+> >> -		pr_info("Retrying again to check for CPU kill\n");
+> >
+> > You dropped this message, any particular reason ?
+> >
+> When reduce the time interval to 1ms, the print message maybe increase 10
+> times. on the other hand, cpu_psci_cpu_kill() will print message on success
+> or failure, which this retry log is not very necessary. of cource, I think
+> use pr_info_once() instead of pr_info() is better.
 >
-> [    3.758280] imx28-pinctrl 80018000.pinctrl: not freeing pin 24
-> (GPMI_RDN) as part of deactivating group gpmi-nand.0 - it is already
-> used for some other setting
-> [    3.773300] imx28-pinctrl 80018000.pinctrl: not freeing pin 25
-> (GPMI_WRN) as part of deactivating group gpmi-nand.0 - it is already
-> used for some other setting
-> [    3.787913] imx28-pinctrl 80018000.pinctrl: not freeing pin 28
-> (GPMI_RESETN) as part of
 
-I have just retried it on a clean 5.3.6 and I am not able to get these
-warnings when the NAND is populated in the socket.
+Yes changing it to pr_info_once is better than dropping it as it gives
+some indication to the firmware if there's scope for improvement.
 
-I only get these messages when the NAND is not present, so I think all is fine.
+> >> -	}
+> >> +		/* busy-wait max 1ms */
+> >> +		if (i++ < 100) {
+> >> +			cond_resched();
+> >> +			udelay(10);
+> >> +			continue;
+> >
+> > Why can't it be simple like loop of 100 * msleep(1) instead of loop of
+> > 10 * msleep(10). The above initial busy wait for 1 ms looks too much
+> > optimised for your setup where it takes 50-500us, what if it take just
+> > over 1 ms ?
+> >
+> msleep() is implemented by jiffies. when HZ=100 or HZ=250, msleep(1) is not
+> accurate. so I think usleep_range() is better. 1 ms looks simple and good, but how
+> about 100us is better? I refer a function sunxi_mc_smp_cpu_kill(), it use
+> usleep_range(50, 100).
+>
 
-Sorry for the noise.
+Again that's specific to sunxi platforms and may work well. While I agree
+msleep(1) may not be accurate, I am still inclined to have a max value
+of 1000(i.e. 1ms) for usleep_range.
+
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
