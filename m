@@ -2,68 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54337DA708
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 10:14:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CDB3ADA717
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 10:18:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2LAEMrZzymolJR0PEUdCl3351Fr1Wu66Gw75gmL8KTc=; b=kbAOOZQArzlJe/
-	lluUyZ08n5kw74cbg8DFwwlUNGmO5CMMUfnBoFb5xGi5sQG+e8GhjlINIkz+RLZWfZBsdB+BWRDSQ
-	QB3qJN7yAOSXeV4PYfL5RmVONfUS9ue7s/xhMv69uaeTqXn60n2H1bffpk0TFXk2a2spHqvCcP8h7
-	OSqRFlQ+Cth0uLiaAK4udmO2v7ogRiGhXvD+dGp4w5VVvflrPq/3g4dCAnA3pDbvHAXfzQQycWVpJ
-	HDaeRuYjhIaXl5GGzMvR3h7znt9ZNvgoBAFXkDwSra7AUkX8xoBEmdDaBQSkq4jrGgzFVDF2rDXNS
-	lF+2MlyJv7DrbtsTk3kA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=0ts0lz2jEGqAbgLyp42gPyA5vGywXKufr65xhOMy/KQ=; b=CgVQgvYpv5MWbl2is2OCpe1H/l
+	nkHtdB0jxawF/6gMWvNJtooti5etkKYO7bMYK7Cb/vtmooMcudTOj0cRgjPQoyxkJHns0/qPBWwrS
+	culWsl5wmxFsXtgAe0GRN0coCyo+0AcHTl7d/FGDBUgdW+pBYi5hFVVMj5fKcPZFkDru3uOXoWxHo
+	jsQ5ZdTak5JAHQzbq73eRb3QTQ3/ouoUHc+6qmq91Ol8hTcBtDTqKs7+g9TkJ0nCZHbd0o/bUMj5c
+	itC+dBfDXsBFEJ8VXbKOcSXSNKGhq5U8NYJ++s+gM4m6koCHbqZz0t08Jr0GkOZMDcFaOrYi7yAwS
+	2PEuKnPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL0vk-0000pq-Hy; Thu, 17 Oct 2019 08:14:44 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL0vc-0000pK-5H
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 08:14:37 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1iL0vR-00060Q-S8; Thu, 17 Oct 2019 10:14:25 +0200
-Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <mfe@pengutronix.de>)
- id 1iL0vO-0005qG-7s; Thu, 17 Oct 2019 10:14:22 +0200
-Date: Thu, 17 Oct 2019 10:14:22 +0200
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Schrempf Frieder <frieder.schrempf@kontron.de>
-Subject: Re: [PATCH 00/10] Add support for more Kontron i.MX6UL/ULL SoMs and
- boards
-Message-ID: <20191017081422.65m5dtqznsanfftp@pengutronix.de>
-References: <20191016150622.21753-1-frieder.schrempf@kontron.de>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191016150622.21753-1-frieder.schrempf@kontron.de>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 10:12:59 up 152 days, 14:31, 99 users,  load average: 0.23, 0.11,
- 0.05
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+	id 1iL0yw-0004kD-Le; Thu, 17 Oct 2019 08:18:02 +0000
+Received: from [217.140.110.172] (helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iL0wS-0001N6-3b
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 08:15:29 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7F99B165C;
+ Thu, 17 Oct 2019 01:15:17 -0700 (PDT)
+Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.0.144])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id D06553F6C4;
+ Thu, 17 Oct 2019 01:15:13 -0700 (PDT)
+From: Amit Daniel Kachhap <amit.kachhap@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [RFC PATCH 09/11] arm64: suspend: restore the kernel ptrauth keys
+Date: Thu, 17 Oct 2019 13:44:23 +0530
+Message-Id: <1571300065-10236-10-git-send-email-amit.kachhap@arm.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1571300065-10236-1-git-send-email-amit.kachhap@arm.com>
+References: <1571300065-10236-1-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_011436_202315_322627D7 
-X-CRM114-Status: GOOD (  17.85  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191017_011528_248991_206D0894 
+X-CRM114-Status: UNSURE (   9.11  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,94 +61,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Aisheng Dong <aisheng.dong@nxp.com>,
- Rob Herring <robh@kernel.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Andrey Smirnov <andrew.smirnov@gmail.com>, Fabio Estevam <festevam@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Jonathan Cameron <Jonathan.Cameron@huawei.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "krzk@kernel.org" <krzk@kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- "Paul E. McKenney" <paulmck@linux.ibm.com>, Shawn Guo <shawnguo@kernel.org>,
- "David S. Miller" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Amit Daniel Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Frieder,
+This patch restores the kernel keys from current task during
+cpu resume after the mmu is turned on and ptrauth is enabled.
 
-On 19-10-16 15:06, Schrempf Frieder wrote:
-> From: Frieder Schrempf <frieder.schrempf@kontron.de>
-> 
-> In order to support more of the i.MX6UL/ULL-based SoMs and boards by
-> Kontron Electronics GmbH, we restructure the devicetrees to share common
-> parts and add new devicetrees for the missing boards.
-> 
-> Currently there are the following SoM flavors:
->   * N6310: SoM with i.MX6UL-2, 256MB RAM, 256MB SPI NAND
->   * N6311: SoM with i.MX6UL-2, 512MB RAM, 512MB SPI NAND (new)
->   * N6411: SoM with i.MX6ULL, 512MB RAM, 512MB SPI NAND (new)
-> 
-> Each of the SoMs also features 1MB SPI NOR and an Ethernet PHY. The carrier
-> board for the evalkit is the same for all SoMs.
-> 
-> Frieder Schrempf (10):
->   ARM: dts: imx6ul-kontron-n6310: Move common SoM nodes to a separate
->     file
->   ARM: dts: Add support for two more Kontron SoMs N6311 and N6411
->   ARM: dts: imx6ul-kontron-n6310-s: Move common nodes to a separate file
->   ARM: dts: Add support for two more Kontron evalkit boards 'N6311 S'
->     and 'N6411 S'
->   ARM: dts: imx6ul-kontron-n6x1x: Add 'chosen' node with 'stdout-path'
->   ARM: dts: imx6ul-kontron-n6x1x-s: Specify bus-width for SD card and
->     eMMC
->   ARM: dts: imx6ul-kontron-n6x1x-s: Add vbus-supply and overcurrent
->     polarity to usb nodes
->   ARM: dts: imx6ul-kontron-n6x1x-s: Remove an obsolete comment and fix
->     indentation
->   dt-bindings: arm: fsl: Add more Kontron i.MX6UL/ULL compatibles
->   MAINTAINERS: Add an entry for Kontron Electronics ARM board support
+Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+---
+Changes since RFC v2:
+ - New patch to support cpu suspend/resume.
 
-Did you send all patches to same To: and Cc:?
+ arch/arm64/kernel/sleep.S | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-Regards,
-  Marco
-
-> 
->  .../devicetree/bindings/arm/fsl.yaml          |  14 +
->  MAINTAINERS                                   |   6 +
->  arch/arm/boot/dts/imx6ul-kontron-n6310-s.dts  | 405 +----------------
->  .../boot/dts/imx6ul-kontron-n6310-som.dtsi    |  95 +---
->  arch/arm/boot/dts/imx6ul-kontron-n6311-s.dts  |  16 +
->  .../boot/dts/imx6ul-kontron-n6311-som.dtsi    |  40 ++
->  arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi | 422 ++++++++++++++++++
->  .../dts/imx6ul-kontron-n6x1x-som-common.dtsi  | 129 ++++++
->  arch/arm/boot/dts/imx6ull-kontron-n6411-s.dts |  16 +
->  .../boot/dts/imx6ull-kontron-n6411-som.dtsi   |  40 ++
->  10 files changed, 685 insertions(+), 498 deletions(-)
->  create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6311-s.dts
->  create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6311-som.dtsi
->  create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi
->  create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6x1x-som-common.dtsi
->  create mode 100644 arch/arm/boot/dts/imx6ull-kontron-n6411-s.dts
->  create mode 100644 arch/arm/boot/dts/imx6ull-kontron-n6411-som.dtsi
-> 
-> -- 
-> 2.17.1
-> 
-> 
-
+diff --git a/arch/arm64/kernel/sleep.S b/arch/arm64/kernel/sleep.S
+index f5b04dd..476e110 100644
+--- a/arch/arm64/kernel/sleep.S
++++ b/arch/arm64/kernel/sleep.S
+@@ -2,6 +2,7 @@
+ #include <linux/errno.h>
+ #include <linux/linkage.h>
+ #include <asm/asm-offsets.h>
++#include <asm/asm_pointer_auth.h>
+ #include <asm/assembler.h>
+ 
+ 	.text
+@@ -137,6 +138,11 @@ ENTRY(_cpu_resume)
+ 	bl	kasan_unpoison_task_stack_below
+ #endif
+ 
++#ifdef CONFIG_ARM64_PTR_AUTH
++	get_current_task x1
++	ptrauth_keys_install_kernel x1, x2, x3, x4
++#endif
++
+ 	ldp	x19, x20, [x29, #16]
+ 	ldp	x21, x22, [x29, #32]
+ 	ldp	x23, x24, [x29, #48]
 -- 
-Pengutronix e.K.                           |                             |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
