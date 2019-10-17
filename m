@@ -2,60 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D85EBDB762
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 21:22:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30CC6DB76E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 21:24:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=EDAzby8BFaqukt5l9VrRM7r7+xDnydW6OmHaBArZZSo=; b=ZRMqUay0O/Ldb0
-	MtW/9minuq26H8iQIyr1Wt9GGiJQvQ6m/R6pJsYqh82ZzDrR8cjo/Pav0eVFNMHM+szJ+WGlJMTyG
-	3X9qP+3TkmWJGZgflxt28O0494nGEnCf0EV+AX3i2ciXFlrwgl5OGKEjuWZxy8nPcKRfGo+qhsjUY
-	v+h2Jobucf1V0zxSoBquSAWQ/L1n9L1DCcKC4nXNyQ80NISIkRmHNvQz7IX8Ak+MgoGHzbOzK1oBM
-	c/TlfOJklf4G+E7xWpr7X3PIdZfyL5i9b1Wn6mNI7lM0WhTq1HIDSTLT9cLpb3Vr3oP7uXdEotzzt
-	dmhuMqvvphW3LDRqfFRw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZsUarnxFmNxZJNA/EUsQbluk60oAbmsS8vnQPr59Mp8=; b=gVWXggEpeKVOw1
+	LWAovnGjApOXhF6lKbYEIJfI0clxeTnWVg3JuHMxdB0hbAk4iIUvq4xQGn9y4tnFLjLPibwx7C3O3
+	wU3IjxdVxKAiFwNtDZXdSuj1/vwk7d43DiBrhnKswqzqSe5ph5vFBoIPxDwTh1PuzC4D0IWjrbV+F
+	1ozVQv5EiKNsXPxilY8Avz8MUvfF9e9EYbS7eHz1tVFYITjsYOPfo9OPsbJVSytHyK/6H64haJPRw
+	Xf9llhFJGRoLSHHgZJRXg61CPgI7ADMdOyGAfsh1c2DlFJwU1/4x2P+8g5Si4GZOv3x7sgS8Ic80l
+	CQHx9LiiiZEsOcksDDIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLBM4-0006S8-Q3; Thu, 17 Oct 2019 19:22:36 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iLBOF-0006oh-JO; Thu, 17 Oct 2019 19:24:51 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLBLu-0006RM-Fb
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 19:22:27 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1iLBLo-0004v9-45; Thu, 17 Oct 2019 21:22:20 +0200
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1iLBLn-00031d-8z; Thu, 17 Oct 2019 21:22:19 +0200
-From: =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-To: Thierry Reding <thierry.reding@gmail.com>,
- Yendapally Reddy Dhananjaya Reddy <yendapally.reddy@broadcom.com>,
- Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>
-Subject: [PATCH] pwm: bcm-iproc: prevent unloading the driver module while in
- use
-Date: Thu, 17 Oct 2019 21:22:18 +0200
-Message-Id: <20191017192218.9042-1-u.kleine-koenig@pengutronix.de>
-X-Mailer: git-send-email 2.23.0
+ id 1iLBO4-0006oH-8d
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 19:24:41 +0000
+Received: by mail-oi1-f194.google.com with SMTP id i16so3168358oie.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 17 Oct 2019 12:24:39 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=JbxUD4/Ch48OCt7IQSmlYFRVjr2GA3XCWfDDRfU4VJU=;
+ b=HkEqJvhhFU1SoKoQqSe4uaq4HmiZfdqnyeBQEVExsxqI/stVoC5JhkptqNfIWlYKWW
+ a9zLLjuqIwyZc5My7yule7h7SMCRb6bsyBU4b0nK/iQorPjrsGk3OpI0P+3lfp2YrtK8
+ VZhak3ABL2Dd4UzTpHYOWST8P4OJ0zvvJeHuaVqkfcikfX1hywRYmBQB1JXju5tvxJXH
+ fB1D8izV76Xc5Yrzkw5Xyt02SyhqFBvgRQo+1b8WKrVgW2H2vStioVwBswYeRDnmS/8N
+ cmlcRCzCbKSZpBmXHrq35Cu6OltjclQ9Q6WLOf38wqpsnOzxwQOxd55xkLxM8bgsS3Yc
+ 9DDw==
+X-Gm-Message-State: APjAAAXVLuyeWwN4Bnzm+aE3aJveOmeMWgvJjLNsx5fpNfVErUen7Fmi
+ x4xGfvTWrx6FvkXPgvVyzg==
+X-Google-Smtp-Source: APXvYqz00kRIlvZzcsK3LPl7hBlSHEH3J1/iOr9YAPvYkaFiiR1Q8p/7vSBVdqGPIDLLZFBz4i9Gjg==
+X-Received: by 2002:aca:ef85:: with SMTP id n127mr4771640oih.42.1571340279227; 
+ Thu, 17 Oct 2019 12:24:39 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id s6sm818858otr.5.2019.10.17.12.24.38
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 17 Oct 2019 12:24:38 -0700 (PDT)
+Date: Thu, 17 Oct 2019 14:24:37 -0500
+From: Rob Herring <robh@kernel.org>
+To: Chris Packham <chris.packham@alliedtelesis.co.nz>
+Subject: Re: [PATCH v2 1/2] dt-bindings: gpio: brcm: Add bindings for xgs-iproc
+Message-ID: <20191017192437.GA24080@bogus>
+References: <20191017031051.20366-1-chris.packham@alliedtelesis.co.nz>
+ <20191017031051.20366-2-chris.packham@alliedtelesis.co.nz>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <20191017031051.20366-2-chris.packham@alliedtelesis.co.nz>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_122226_520538_27228B49 
-X-CRM114-Status: GOOD (  11.63  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191017_122440_304896_2AD5D477 
+X-CRM114-Status: GOOD (  18.55  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.194 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.194 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,29 +91,153 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, sbranden@broadcom.com,
+ linux-gpio@vger.kernel.org, rjui@broadcom.com, linus.walleij@linaro.org,
+ linux-kernel@vger.kernel.org, bgolaszewski@baylibre.com,
+ bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VGhlIG93bmVyIG1lbWJlciBvZiBzdHJ1Y3QgcHdtX29wcyBtdXN0IGJlIHNldCB0byBUSElTX01P
-RFVMRSB0bwppbmNyZWFzZSB0aGUgcmVmZXJlbmNlIGNvdW50IG9mIHRoZSBtb2R1bGUgc3VjaCB0
-aGF0IHRoZSBtb2R1bGUgY2Fubm90CmJlIHJlbW92ZWQgd2hpbGUgaXRzIGNvZGUgaXMgaW4gdXNl
-LgoKRml4ZXM6IGRhYTVhYmM0MWM4MCAoInB3bTogQWRkIHN1cHBvcnQgZm9yIEJyb2FkY29tIGlQ
-cm9jIFBXTSBjb250cm9sbGVyIikKU2lnbmVkLW9mZi1ieTogVXdlIEtsZWluZS1Lw7ZuaWcgPHUu
-a2xlaW5lLWtvZW5pZ0BwZW5ndXRyb25peC5kZT4KLS0tCiBkcml2ZXJzL3B3bS9wd20tYmNtLWlw
-cm9jLmMgfCAxICsKIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKQoKZGlmZiAtLWdpdCBh
-L2RyaXZlcnMvcHdtL3B3bS1iY20taXByb2MuYyBiL2RyaXZlcnMvcHdtL3B3bS1iY20taXByb2Mu
-YwppbmRleCA1NmMzOGNmYWU5MmMuLjFmODI5ZWRkOGVlNyAxMDA2NDQKLS0tIGEvZHJpdmVycy9w
-d20vcHdtLWJjbS1pcHJvYy5jCisrKyBiL2RyaXZlcnMvcHdtL3B3bS1iY20taXByb2MuYwpAQCAt
-MTg3LDYgKzE4Nyw3IEBAIHN0YXRpYyBpbnQgaXByb2NfcHdtY19hcHBseShzdHJ1Y3QgcHdtX2No
-aXAgKmNoaXAsIHN0cnVjdCBwd21fZGV2aWNlICpwd20sCiBzdGF0aWMgY29uc3Qgc3RydWN0IHB3
-bV9vcHMgaXByb2NfcHdtX29wcyA9IHsKIAkuYXBwbHkgPSBpcHJvY19wd21jX2FwcGx5LAogCS5n
-ZXRfc3RhdGUgPSBpcHJvY19wd21jX2dldF9zdGF0ZSwKKwkub3duZXIgPSBUSElTX01PRFVMRSwK
-IH07CiAKIHN0YXRpYyBpbnQgaXByb2NfcHdtY19wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNl
-ICpwZGV2KQotLSAKMi4yMy4wCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5l
-bEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
-bGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Thu, Oct 17, 2019 at 04:10:50PM +1300, Chris Packham wrote:
+> This GPIO controller is present on a number of Broadcom switch ASICs
+> with integrated SoCs. It is similar to the nsp-gpio and iproc-gpio
+> blocks but different enough to require a separate driver.
+> 
+> Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
+> ---
+> 
+> Notes:
+>     Changes in v2:
+>     - Document as DT schema
+>     - Include ngpios, #gpio-cells and gpio-controller properties
+> 
+>  .../bindings/gpio/brcm,xgs-iproc.yaml         | 83 +++++++++++++++++++
+>  1 file changed, 83 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/gpio/brcm,xgs-iproc.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/gpio/brcm,xgs-iproc.yaml b/Documentation/devicetree/bindings/gpio/brcm,xgs-iproc.yaml
+> new file mode 100644
+> index 000000000000..71998551209e
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/gpio/brcm,xgs-iproc.yaml
+> @@ -0,0 +1,83 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/gpio/brcm,xgs-iproc.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Broadcom XGS iProc GPIO controller
+> +
+> +maintainers:
+> +  - Chris Packham <chris.packham@alliedtelesis.co.nz>
+> +
+> +description: |
+> +  This controller is the Chip Common A GPIO present on a number of Broadcom
+> +  switch ASICs with integrated SoCs.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - brcm,iproc-gpio-cca
+
+enum vs. const usage depends on whether you think you'll add more 
+compatibles.
+
+> +
+> +  reg:
+> +    minItems: 2
+> +    maxItems: 2
+> +    description:
+> +      The first region defines the base I/O address containing
+> +      the GPIO controller registers. The second region defines
+> +      the I/O address containing the Chip Common A interrupt
+> +      registers.
+
+items:
+  - description: the I/O address containing the GPIO controller 
+      registers
+  - description: the I/O address containing the Chip Common A interrupt 
+      registers
+
+And minItems/maxItems can be implicit.
+
+> +
+> +  gpio-controller: true
+> +
+> +  '#gpio-cells':
+> +      const: 2
+> +
+> +  ngpios:
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+
+Common property, doesn't need a type definition. Also, it would have to 
+be under an 'allOf' to actually work.
+
+> +    minimum: 0
+> +    maximum: 32
+> +
+> +  interrupt-controller:
+> +    type: boolean
+
+Just 'interrupt-controller: true'
+
+> +
+> +  '#interrupt-cells':
+> +    const: 2
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - "#gpio-cells"
+> +  - gpio-controller
+> +
+> +allOf:
+> + - if:
+> +     properties:
+> +       interrupt-controller:
+> +         contains:
+> +           const: true
+> +   then:
+> +     required:
+> +       - interrupts
+> +       - '#interrupt-cells'
+
+This is mostly handled in the core schema already and 'dependencies' 
+works better for this anyways. All you need here is:
+
+dependencies:
+  interrupt-controller: [ interrupts ]
+
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/irq.h>
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    gpio@18000060 {
+> +        compatible = "brcm,iproc-gpio-cca";
+> +        #gpio-cells = <2>;
+> +        reg = <0x18000060 0x50>,
+> +              <0x18000000 0x50>;
+> +        ngpios = <12>;
+> +        gpio-controller;
+> +        interrupt-controller;
+> +        #interrupt-cells = <2>;
+> +        interrupts = <GIC_SPI 91 IRQ_TYPE_LEVEL_HIGH>;
+> +    };
+> +
+> +
+> +...
+> -- 
+> 2.23.0
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
