@@ -2,85 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30587DB5CE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 20:20:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A17A2DB5DB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 20:22:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fab4Vi1m5vsOM7a8I09mg/oBIk3oJ8c6mLPAw+rmQKg=; b=qioLpay0Pmlla2
-	XE9zs8Pw97NzyqZm/6V7pq09q6FUPkUThrMrVCfrlIpeFdNb9bMq6G1jCKxG24Rrnz1wgjZ7XF8XU
-	0xWYKmweBodHszk7dekuwXOm6CUTy37R8o2ucDnVXa51jWN+WWea6kcprI/qUvSM6Vm9399DXTpWy
-	Fv+WvY9Db7JOtlxm8U8v6h7gjwH4JKLGJdxMrrZaCf9J9gupxlcG/oA7kOCyaMcwUdxL0hI3kgB+Z
-	Xgy32q8+MdSH6B3xA/LHCtVkMdWM5OykR8bUv/6Xtdpa1h+iPOTF97T1UsqyyvTkeYuBhWHrawywE
-	StK/+IRwknpuTRnLbJ2A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=lnQJ4/eprwTDym3XrolU12gSmJ+1Y2rAT6ysBTAE3cs=; b=Jw8v///Nwj1VLQ
+	TfmjUwHVSV4vnn47Dnxq8FGp5kpnTwvXasGE0FckwqMJclEeK3/hFvwcI0ZCCFbxrLY3tabKqbfBC
+	qHiNEAJbCREiJQa+VJN2QU7wEvq61roORCwwUL1rfXlpo1lLQSXaRSwageG4Z6KT5oH8AnBgeEaTG
+	J2+G7ZXZIOSz4ihYmmYkeXITPK/1xO/J89JUqxojy9MsaQDGfw3/V5qhY8u+uwZJBQVAE9rYYL+Kj
+	F6tPlcIpl6FwMFiR4HJ+f6jSExs7sosYS+6AGgHkCmSO+xcm1J/oIuyLWYd3zfC2Fr7pw6upiBJ57
+	yd3Zij4M5JAbzEduKEVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLANh-0005b5-PW; Thu, 17 Oct 2019 18:20:13 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLANO-0005a0-In
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 18:19:55 +0000
-Received: by mail-oi1-f193.google.com with SMTP id a15so3023509oic.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 17 Oct 2019 11:19:53 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=zNcXSWPABIjDXrH4hrGPpnuCzAwqGYL95ldA2v+tK9k=;
- b=U5MEycbO4KlDzjHRkT9PTReNlQ4Wr5YqGpwnkLTX7tHDmhrjIdAH7whGl9JcYpelQa
- AUU2MbqFs2Cze37p8fZlvKSlAYm8JVFHdiKyEWNd0redH5EKIV5Fg+Iu0Uihuz6/SvIl
- tIAAOJS1SLngiIhhy242nocKw+gqczt7BNJmFMrclBNR1GtyVSSXi5v61KFdHqTcoQWe
- QQT+TW7fTBjPEkKE4EZQVd5teqFWcY0OFkk+0tqhyF46XD9P/hobQ5XUPYdCqR/np3TS
- hqx1V6W8v6orjZ62nZqk9zeqZhJRMwXVVqKPCiP+WOcWwKkKcNYqZUM5OJU+wVpXQdaJ
- DQZA==
-X-Gm-Message-State: APjAAAXFaNqtZ6C3mblnRoABdNvaal9ldtXUSJv5Yv/6N7BmM/rX0YId
- 2fpTZRcTilov84WQDlcpWA==
-X-Google-Smtp-Source: APXvYqydJLeSRq37GvjaH17XR/hx71gYtkOaY+q7KmhiTJg1o1MDriVXA4tVPzT17sIi/ahclXwxeg==
-X-Received: by 2002:aca:dcd6:: with SMTP id t205mr4447363oig.128.1571336392417; 
- Thu, 17 Oct 2019 11:19:52 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id e18sm694901oib.57.2019.10.17.11.19.51
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 17 Oct 2019 11:19:51 -0700 (PDT)
-Date: Thu, 17 Oct 2019 13:19:51 -0500
-From: Rob Herring <robh@kernel.org>
-To: Manish Narani <manish.narani@xilinx.com>
-Subject: Re: [PATCH v3 2/8] dt-bindings: mmc: arasan: Update Documentation
- for the input clock
-Message-ID: <20191017181951.GA6853@bogus>
-References: <1571293310-92563-1-git-send-email-manish.narani@xilinx.com>
- <1571293310-92563-3-git-send-email-manish.narani@xilinx.com>
+	id 1iLAPS-0007AQ-At; Thu, 17 Oct 2019 18:22:02 +0000
+Received: from muru.com ([72.249.23.125])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iLAPI-000799-JU
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 18:21:54 +0000
+Received: from hillo.muru.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTP id E581C804F;
+ Thu, 17 Oct 2019 18:22:21 +0000 (UTC)
+From: Tony Lindgren <tony@atomide.com>
+To: linux-omap@vger.kernel.org
+Subject: [PATCH] bus: ti-sysc: Fix watchdog quirk handling
+Date: Thu, 17 Oct 2019 11:21:44 -0700
+Message-Id: <20191017182144.10175-1-tony@atomide.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1571293310-92563-3-git-send-email-manish.narani@xilinx.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_111954_627136_9559F3BB 
-X-CRM114-Status: GOOD (  10.42  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191017_112152_679069_181D075E 
+X-CRM114-Status: GOOD (  12.34  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
+ no trust [72.249.23.125 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,27 +56,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, ulf.hansson@linaro.org,
- rajan.vaja@xilinx.com, nava.manne@xilinx.com, linux-mmc@vger.kernel.org,
- adrian.hunter@intel.com, michal.simek@xilinx.com, robh+dt@kernel.org,
- mdf@kernel.org, linux-arm-kernel@lists.infradead.org, jolly.shah@xilinx.com,
- manish.narani@xilinx.com, linux-kernel@vger.kernel.org, git@xilinx.com
+Cc: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>,
+ Dave Gerlach <d-gerlach@ti.com>, Keerthy <j-keerthy@ti.com>,
+ linux-kernel@vger.kernel.org, "Andrew F . Davis" <afd@ti.com>,
+ Peter Ujfalusi <peter.ujfalusi@ti.com>, Faiz Abbas <faiz_abbas@ti.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-arm-kernel@lists.infradead.org, Roger Quadros <rogerq@ti.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 17 Oct 2019 11:51:44 +0530, Manish Narani wrote:
-> Add documentation for an optional input clock which is essentially used
-> in sampling the input data coming from the card.
-> 
-> Signed-off-by: Manish Narani <manish.narani@xilinx.com>
-> ---
->  Documentation/devicetree/bindings/mmc/arasan,sdhci.txt | 6 +++---
->  1 file changed, 3 insertions(+), 3 deletions(-)
-> 
+I noticed that when probed with ti-sysc, watchdog can trigger on am3, am4
+and dra7 causing a device reset.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Turns out I made several mistakes implementing the watchdog quirk handling:
+
+1. We must do both writes to spr register
+
+2. We must also call the reset quirk on disable
+
+3. On am3 and am4 we need to also set swsup quirk flag
+
+I probably only tested this earlier with watchdog service running when the
+watchdog never gets disabled.
+
+Fixes: 4e23be473e30 ("bus: ti-sysc: Add support for module specific reset quirks")
+Signed-off-by: Tony Lindgren <tony@atomide.com>
+---
+ drivers/bus/ti-sysc.c | 18 ++++++++++++++----
+ 1 file changed, 14 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/bus/ti-sysc.c b/drivers/bus/ti-sysc.c
+--- a/drivers/bus/ti-sysc.c
++++ b/drivers/bus/ti-sysc.c
+@@ -74,6 +74,7 @@ static const char * const clock_names[SYSC_MAX_CLOCKS] = {
+  * @clk_disable_quirk: module specific clock disable quirk
+  * @reset_done_quirk: module specific reset done quirk
+  * @module_enable_quirk: module specific enable quirk
++ * @module_disable_quirk: module specific disable quirk
+  */
+ struct sysc {
+ 	struct device *dev;
+@@ -100,6 +101,7 @@ struct sysc {
+ 	void (*clk_disable_quirk)(struct sysc *sysc);
+ 	void (*reset_done_quirk)(struct sysc *sysc);
+ 	void (*module_enable_quirk)(struct sysc *sysc);
++	void (*module_disable_quirk)(struct sysc *sysc);
+ };
+ 
+ static void sysc_parse_dts_quirks(struct sysc *ddata, struct device_node *np,
+@@ -959,6 +961,9 @@ static int sysc_disable_module(struct device *dev)
+ 	if (ddata->offsets[SYSC_SYSCONFIG] == -ENODEV)
+ 		return 0;
+ 
++	if (ddata->module_disable_quirk)
++		ddata->module_disable_quirk(ddata);
++
+ 	regbits = ddata->cap->regbits;
+ 	reg = sysc_read(ddata, ddata->offsets[SYSC_SYSCONFIG]);
+ 
+@@ -1248,6 +1253,9 @@ static const struct sysc_revision_quirk sysc_revision_quirks[] = {
+ 		   SYSC_MODULE_QUIRK_SGX),
+ 	SYSC_QUIRK("wdt", 0, 0, 0x10, 0x14, 0x502a0500, 0xfffff0f0,
+ 		   SYSC_MODULE_QUIRK_WDT),
++	/* Watchdog on am3 and am4 */
++	SYSC_QUIRK("wdt", 0x44e35000, 0, 0x10, 0x14, 0x502a0500, 0xfffff0f0,
++		   SYSC_MODULE_QUIRK_WDT | SYSC_QUIRK_SWSUP_SIDLE),
+ 
+ #ifdef DEBUG
+ 	SYSC_QUIRK("adc", 0, 0, 0x10, -1, 0x47300001, 0xffffffff, 0),
+@@ -1440,14 +1448,14 @@ static void sysc_reset_done_quirk_wdt(struct sysc *ddata)
+ 				   !(val & 0x10), 100,
+ 				   MAX_MODULE_SOFTRESET_WAIT);
+ 	if (error)
+-		dev_warn(ddata->dev, "wdt disable spr failed\n");
++		dev_warn(ddata->dev, "wdt disable step1 failed\n");
+ 
+-	sysc_write(ddata, wps, 0x5555);
++	sysc_write(ddata, spr, 0x5555);
+ 	error = readl_poll_timeout(ddata->module_va + wps, val,
+ 				   !(val & 0x10), 100,
+ 				   MAX_MODULE_SOFTRESET_WAIT);
+ 	if (error)
+-		dev_warn(ddata->dev, "wdt disable wps failed\n");
++		dev_warn(ddata->dev, "wdt disable step2 failed\n");
+ }
+ 
+ static void sysc_init_module_quirks(struct sysc *ddata)
+@@ -1471,8 +1479,10 @@ static void sysc_init_module_quirks(struct sysc *ddata)
+ 	if (ddata->cfg.quirks & SYSC_MODULE_QUIRK_SGX)
+ 		ddata->module_enable_quirk = sysc_module_enable_quirk_sgx;
+ 
+-	if (ddata->cfg.quirks & SYSC_MODULE_QUIRK_WDT)
++	if (ddata->cfg.quirks & SYSC_MODULE_QUIRK_WDT) {
+ 		ddata->reset_done_quirk = sysc_reset_done_quirk_wdt;
++		ddata->module_disable_quirk = sysc_reset_done_quirk_wdt;
++	}
+ }
+ 
+ static int sysc_clockdomain_init(struct sysc *ddata)
+-- 
+2.23.0
 
 _______________________________________________
 linux-arm-kernel mailing list
