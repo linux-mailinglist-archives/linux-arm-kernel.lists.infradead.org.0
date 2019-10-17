@@ -2,86 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B388DAED5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 15:56:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1DB90DAEFD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 16:01:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a7EBdDfG2/Iz8g1x1xfT4iDYb3xokRejRDOAw8fSC/Y=; b=ZzFRYf6XGk0zZ6
-	XyW3w+4QPRmrnTcd4o5Fd14yoqHR4AtgPddzwbBpqwyLHBB7vADBJC5K1e2EWypkO8Ss/90RXEYIo
-	aGHIY/lGkbv7aTX2rg3c5C8ra1XwyrqV0LLojcK5WKQ0b/3pL3B7Tf40vwZd0Vt+MUtgzIl9pbDP2
-	Cg3FW4WZDuOtV9WGJYJXmMMEYQqMoI0BsE2NoIcfFxC5iRnpDUw7qTBruQMUi24UT7EfMZwU4j9FY
-	7e32QyUJWRwaJiI8ZeZwaKlcrmI5oY2G7PTTUr2QzcYB3x9w78W945fNJ0SzuIkM3RIcsV+L+YWSZ
-	0cfSWJUs4Weh87x7Hbqw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=04a9v3mnLOZRolBOPTyRXfu2ZR892C1tDFbsxTFhWGI=; b=hva/qpl5PfYjb7
+	H9TkD+nyKP6ATtLFZt9M+0yX/spJ5cBEQbRtFTAKyb5knxOnUEy+xHGrL1f8rLuKWUfOFyTOzFAqo
+	jDuyXfAr1y9ycrxXCsTXIpIwQIg13Lr2MpiCPcA6B0zjt/Y959fb8iDORLT4fUfbn+3o43xZRMra0
+	7UwbI8h014ajhiMEIHNXYwNfSVWnvqMNL7hkpjp15NKaWLOvovpUfUsV8/9cvrwbzuwGAH8aiIJZz
+	3LL/R5G64gD+5/OCrRNkF4FHCX/NA/hWKy23Is5+jrgXOIzPQwI1bKr22S5gqi2v2UZqBFbSsTruV
+	aok3/+wXX4B8sxrZglRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL6Fs-0007vs-Hp; Thu, 17 Oct 2019 13:55:52 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1iL6LB-0001IV-5S; Thu, 17 Oct 2019 14:01:21 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL6Fj-0007vH-FZ
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 13:55:44 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x9HDtgnN110592;
- Thu, 17 Oct 2019 08:55:42 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1571320542;
- bh=C776Kapi3cWTibCH4Brb0rSRcF7BNdlCJgOlAUvhd1c=;
- h=Subject:From:To:CC:References:Date:In-Reply-To;
- b=PaZ8FAXMxknrb0WnqgtIp0VotCtpUgrn5aMnO9tjNJRqkvKAr1fPTi5W3t9hBInS9
- Zph/OOhGCWGZhGMG5YlK0uuKP5L1pjCUgtH7Y/MC1Or2SGv3fcAjWMIxEdisnxfigi
- o3G0X3uBS6cbat6EwBvErswPKNJpVFIfSCbFBBRI=
-Received: from DLEE103.ent.ti.com (dlee103.ent.ti.com [157.170.170.33])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x9HDtgVF023638
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 17 Oct 2019 08:55:42 -0500
-Received: from DLEE108.ent.ti.com (157.170.170.38) by DLEE103.ent.ti.com
- (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 17
- Oct 2019 08:55:34 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE108.ent.ti.com
- (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Thu, 17 Oct 2019 08:55:34 -0500
-Received: from [172.24.190.212] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x9HDtdDG103976;
- Thu, 17 Oct 2019 08:55:41 -0500
-Subject: Re: [PATCH] ARM: davinci: dm644x-evm: Add Fixed regulators needed for
- tlv320aic33
-From: Sekhar Nori <nsekhar@ti.com>
-To: Peter Ujfalusi <peter.ujfalusi@ti.com>, <bgolaszewski@baylibre.com>
-References: <20190830102308.22586-1-peter.ujfalusi@ti.com>
- <e6a03603-a901-56a8-c8ad-d528f2d51595@ti.com>
-Message-ID: <4160082f-2f52-aa96-b280-abb5c53cc12e@ti.com>
-Date: Thu, 17 Oct 2019 19:25:39 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <e6a03603-a901-56a8-c8ad-d528f2d51595@ti.com>
+ id 1iL6L4-0001IL-BS
+ for linux-arm-kernel@bombadil.infradead.org; Thu, 17 Oct 2019 14:01:14 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
+ MIME-Version:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:Sender
+ :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=cfcdnZgilcba8b7zQonBZ7jaPHUHfyofUTDCnWrtC64=; b=GRU52aDgGN1gh7Bksw/Gnp2yli
+ 1sTuPFGYpeY4vbsCGPumBlU/EdzO2iO8b7vgjSJIlTW+ldONptsly+0+Bo71OGiIX95n22HGGa8rS
+ wP3rif5mhTG8Xy9Qd70psrvWQpOgEW5NL5awvEqfY8eHaeaAgiviKB7kBScowjm7+xMaBEBIdaTNc
+ J5BqVSScuMKTB6+tQYqlwKxy+Aph6DCYTwsnFaiO3Fd2FhiJeJogFB17+ctHNT0i8Zlzy2iEP7GMD
+ 5Ic+ZlS9ctEtFcxBTeinq2lu0L8BjQ1rou+JueAdcUPVJbo/sWPDGJaEesxYXDIHbWzvb2VnfCRVp
+ UpX1PoxA==;
+Received: from eu-smtp-delivery-151.mimecast.com ([207.82.80.151])
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iL6LS-0004jJ-TO
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 14:01:41 +0000
+Received: from AcuMS.aculab.com (156.67.243.126 [156.67.243.126]) (Using
+ TLS) by relay.mimecast.com with ESMTP id
+ uk-mta-236-V6OhvOg1OhyF6nLWHS1ciQ-1; Thu, 17 Oct 2019 15:00:43 +0100
+Received: from AcuMS.Aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) by
+ AcuMS.aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) with Microsoft SMTP
+ Server (TLS) id 15.0.1347.2; Thu, 17 Oct 2019 15:00:42 +0100
+Received: from AcuMS.Aculab.com ([fe80::43c:695e:880f:8750]) by
+ AcuMS.aculab.com ([fe80::43c:695e:880f:8750%12]) with mapi id 15.00.1347.000; 
+ Thu, 17 Oct 2019 15:00:42 +0100
+From: David Laight <David.Laight@ACULAB.COM>
+To: 'Yunfeng Ye' <yeyunfeng@huawei.com>, Sudeep Holla <sudeep.holla@arm.com>
+Subject: RE: [PATCH V2] arm64: psci: Reduce waiting time of cpu_psci_cpu_kill()
+Thread-Topic: [PATCH V2] arm64: psci: Reduce waiting time of
+ cpu_psci_cpu_kill()
+Thread-Index: AQHVhO5+Vr2ETd8AWEKYYhhOaw9ZuKde3Cgg
+Date: Thu, 17 Oct 2019 14:00:42 +0000
+Message-ID: <c97c87b52f474463bc30ff8033a57e0c@AcuMS.aculab.com>
+References: <18068756-0f39-6388-3290-cf03746e767d@huawei.com>
+ <9df267db-e647-a81d-16bb-b8bfb06c2624@huawei.com>
+ <20191016153221.GA8978@bogus>
+ <0f550044-9ed2-5f72-1335-73417678ba45@huawei.com>
+In-Reply-To: <0f550044-9ed2-5f72-1335-73417678ba45@huawei.com>
+Accept-Language: en-GB, en-US
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.202.205.107]
+MIME-Version: 1.0
+X-MC-Unique: V6OhvOg1OhyF6nLWHS1ciQ-1
+X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_065543_600503_D94D6B62 
-X-CRM114-Status: GOOD (  10.26  )
-X-Spam-Score: -2.5 (--)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+X-CRM114-CacheID: sfid-20191017_150139_011651_6997ED21 
+X-CRM114-Status: GOOD (  12.96  )
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.7 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [207.82.80.151 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,27 +93,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: "kstewart@linuxfoundation.org" <kstewart@linuxfoundation.org>,
+ "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>,
+ "hushiyuan@huawei.com" <hushiyuan@huawei.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linfeilong@huawei.com" <linfeilong@huawei.com>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "wuyun.wu@huawei.com" <wuyun.wu@huawei.com>,
+ "will@kernel.org" <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 17/10/19 4:37 PM, Sekhar Nori wrote:
-> On 30/08/19 3:53 PM, Peter Ujfalusi wrote:
->> The codec driver needs correct regulators in order to probe.
->> Both VCC_3.3V and VCC_1.8V is always on fixed regulators on the board.
->>
->> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
-> 
-> Applied for v5.4
+From: Yunfeng Ye
+> Sent: 17 October 2019 14:26
+...
+> >> -	for (i = 0; i < 10; i++) {
+> >> +	i = 0;
+> >> +	timeout = jiffies + msecs_to_jiffies(100);
+> >> +	do {
+> >>  		err = psci_ops.affinity_info(cpu_logical_map(cpu), 0);
+> >>  		if (err == PSCI_0_2_AFFINITY_LEVEL_OFF) {
+> >>  			pr_info("CPU%d killed.\n", cpu);
+> >>  			return 0;
+> >>  		}
+> >>
+> >> -		msleep(10);
+> >> -		pr_info("Retrying again to check for CPU kill\n");
+> >
+> > You dropped this message, any particular reason ?
+> >
+> When reduce the time interval to 1ms, the print message maybe increase 10 times.
+> on the other hand, cpu_psci_cpu_kill() will print message on success or failure, which
+> this retry log is not very necessary. of cource, I think use pr_info_once() instead of
+> pr_info() is better.
 
-This too causes DM644x boot to break. I can enable DEBUG_LL and post
-logs, but I suspect they will look very similar to the DM365 case.
+Maybe you should print in on (say) the 10th time around the loop.
 
-Thanks,
-Sekhar
+	David
 
+-
+Registered Address Lakeside, Bramley Road, Mount Farm, Milton Keynes, MK1 1PT, UK
+Registration No: 1397386 (Wales)
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
