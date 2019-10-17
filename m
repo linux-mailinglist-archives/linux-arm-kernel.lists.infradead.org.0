@@ -2,70 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C8FE1DA6FA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 10:10:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0EB52DA70C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 10:16:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vVp6f6nXhcQPeviyX3jXCEY5L1SfHOpoFVv3dt8VAR4=; b=B4rl7DQa49yG86
-	OZUCd3NHUQd6FGsASg/kPAqBAmlYR+0egXYbsuFAzMje7jVOHLENtzQIEgnS0ejRXFQ8bOZSkr4DI
-	cXRm7hlYtq0bdtualda5uvJ9ZSBD35/i78WgI87zXVOXMT8cGlJ+et1fagVii0e6YaG2iGDRXyJvj
-	lDowmLE2OIHA3snIAeY7ibdUwJb+5S0MVyWqR2f0h9A2WWLJGqNtIAh7E7w4BMPZvbjdtPN3OCU27
-	qpqEw4PP49Ihufee1w5+cabVP4ofV+KNwIeF9+y09KPjeQ0yRucEglpF9WCIJ2JMQYIo1WepqeESt
-	iDZllDEmLq/pV1VRd27A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=GYK0Lj84M4nhNPvMPRwzGKKEmuWBVN+GNsfy6nz5uu0=; b=W5t
+	zvmRV5TyC7RGRrUr2+FQ9Q7e0VPhQyCOTuVyFttjqbbh9C12UjnsWduBP2A/ImHeSF6vDgbo5Djnt
+	MjeaKWRbof2a8FgY+WQN7dMReYLn2VkWpit6xMONAiE56QtzYDcVpOcDGwbMGHQQ5vrKbwW7njVmU
+	v2JDr7Q4/6bSS7YHT65iwfDqhPt/tGjVww//mKDqGw/HZ05iMYz6zmIv6F0e22ef1GNWkiaYnVTBD
+	pKyfrKnVXlMueXxWgPOvj1/5awq0uMIBsObER5f8mmS+neRbjnDxxs2hsPJ83CWl10Pr5CUbtwJBv
+	nAcR5jr1++ur0pfy9cHxyanL/f8R9+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL0rx-0000CF-5i; Thu, 17 Oct 2019 08:10:49 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL0rn-0000B8-Tq
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 08:10:42 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1iL0rg-0005Vf-3w; Thu, 17 Oct 2019 10:10:32 +0200
-Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <mfe@pengutronix.de>)
- id 1iL0rd-0005p9-Jl; Thu, 17 Oct 2019 10:10:29 +0200
-Date: Thu, 17 Oct 2019 10:10:29 +0200
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Rui Miguel Silva <rmfrfs@gmail.com>
-Subject: Re: [PATCH v2] media: imx7-mipi-csis: Add a check for
- devm_regulator_get
-Message-ID: <20191017081029.q2czy7y5zlbj4ogr@pengutronix.de>
-References: <20191015135915.6530-1-hslester96@gmail.com>
- <20191016090628.7l5u4ytdqr2jlasg@pengutronix.de>
- <m336fsst40.fsf@gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <m336fsst40.fsf@gmail.com>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 10:04:20 up 152 days, 14:22, 99 users,  load average: 0.12, 0.11,
- 0.05
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+	id 1iL0x1-0002pE-Gx; Thu, 17 Oct 2019 08:16:03 +0000
+Received: from [217.140.110.172] (helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iL0vt-0000s9-HQ
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 08:14:56 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A5C4328;
+ Thu, 17 Oct 2019 01:14:40 -0700 (PDT)
+Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.0.144])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 08A103F6C4;
+ Thu, 17 Oct 2019 01:14:36 -0700 (PDT)
+From: Amit Daniel Kachhap <amit.kachhap@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 00/11] arm64: return address signing
+Date: Thu, 17 Oct 2019 13:44:14 +0530
+Message-Id: <1571300065-10236-1-git-send-email-amit.kachhap@arm.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_011041_400183_233E9D9E 
-X-CRM114-Status: GOOD (  20.92  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191017_011453_661530_2A3C1E69 
+X-CRM114-Status: GOOD (  13.17  )
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,102 +57,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, Philipp Zabel <p.zabel@pengutronix.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, Chuhong Yuan <hslester96@gmail.com>,
- linux-kernel@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Steve Longerbeam <slongerbeam@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Amit Daniel Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rui,
+Hi,
 
-On 19-10-16 14:43, Rui Miguel Silva wrote:
-> Hi Marco,
-> On Wed 16 Oct 2019 at 10:06, Marco Felsch wrote:
-> > Hi Chuhong,
-> >
-> > On 19-10-15 21:59, Chuhong Yuan wrote:
-> >> devm_regulator_get may return an error but mipi_csis_phy_init misses
-> >> a check for it.
-> >> This may lead to problems when regulator_set_voltage uses the unchecked
-> >> pointer.
-> >> This patch adds a check for devm_regulator_get to avoid potential risk.
-> >>
-> >> Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
-> >> ---
-> >> Changes in v2:
-> >>   - Add a check in mipi_csis_probe for the modified mipi_csis_phy_init.
-> >
-> > Did you miss the check for -EPROBE_DEFER?
-> >
-> 
-> I think nothing special is really needed to do in case of
-> EPROBE_DEFER, or am I missing something?
-> It just return to probe and probe returns also. I just talked
-> about it because it was not cover in the original code.
+This series improves function return address protection for the arm64 kernel, by
+compiling the kernel with ARMv8.3 Pointer Authentication instructions (ptrauth
+referred hereafter). This should help protect the kernel against attacks using
+return-oriented programming.
 
-Yes, your are right... I shouldn't comment on anything I read with one
-eye. Sorry.
+Patch 9 and 10 are newly added and hence sent as RFC.
 
-Regards,
-  Marco
+This series is based on v5.4-rc2.
 
-> ---
-> Cheers,
-> 	Rui
-> 
-> >
-> > Regards,
-> >   Marco
-> >
-> >>
-> >>  drivers/staging/media/imx/imx7-mipi-csis.c | 8 +++++++-
-> >>  1 file changed, 7 insertions(+), 1 deletion(-)
-> >>
-> >> diff --git a/drivers/staging/media/imx/imx7-mipi-csis.c b/drivers/staging/media/imx/imx7-mipi-csis.c
-> >> index 73d8354e618c..e8a6acaa969e 100644
-> >> --- a/drivers/staging/media/imx/imx7-mipi-csis.c
-> >> +++ b/drivers/staging/media/imx/imx7-mipi-csis.c
-> >> @@ -350,6 +350,8 @@ static void mipi_csis_sw_reset(struct csi_state *state)
-> >>  static int mipi_csis_phy_init(struct csi_state *state)
-> >>  {
-> >>  	state->mipi_phy_regulator = devm_regulator_get(state->dev, "phy");
-> >> +	if (IS_ERR(state->mipi_phy_regulator))
-> >> +		return PTR_ERR(state->mipi_phy_regulator);
-> >>
-> >>  	return regulator_set_voltage(state->mipi_phy_regulator, 1000000,
-> >>  				     1000000);
-> >> @@ -966,7 +968,10 @@ static int mipi_csis_probe(struct platform_device *pdev)
-> >>  		return ret;
-> >>  	}
-> >>
-> >> -	mipi_csis_phy_init(state);
-> >> +	ret = mipi_csis_phy_init(state);
-> >> +	if (ret < 0)
-> >> +		return ret;
-> >> +
-> >>  	mipi_csis_phy_reset(state);
-> >>
-> >>  	mem_res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> >> --
-> >> 2.20.1
-> >>
-> >>
-> >>
-> 
-> 
+High-level changes since RFC v2 [1] (detailed changes are listed in patches):
+ - Moved enabling, key setup and context switch to assembly, to avoid using
+   the pointer auth compiler attribute which Clang does not support (thanks
+   Suzuki for the initial code!).
+ - Added code to restore keys after cpu resume.
+ - __builtin_return_address will now mask pac bits.
+ - Changed gcc compiler options to add ptrauth instructions in all functions
+   and not just non-leaf functions. This may be revisited later due to 
+   performance concerns.
+ - Rebased onto v5.4-rc2.
+ - Added Reviewed-by's.
+
+This series do not implement few things or have known limitations:
+ - ftrace function tracer does not work with this series. But after using
+   the posted series [2] based on -fpatchable-function-entry, it works fine.
+ - kprobes/uprobes and other tracing may need some rework with ptrauth.
+ - kdump, other debug may need some rework with ptrauth.
+ - Generate some randomness for ptrauth keys during kernel early booting.
+
+Feedback welcome!
+
+Thanks,
+Amit Daniel
+
+[1] https://lore.kernel.org/linux-arm-kernel/20190529190332.29753-1-kristina.martsenko@arm.com/
+[2] https://patchwork.kernel.org/patch/10803279/
+
+Amit Daniel Kachhap (3):
+  arm64: create macro to park cpu in infinite loop
+  arm64: suspend: restore the kernel ptrauth keys
+  arm64: mask PAC bits of __builtin_return_address
+
+Kristina Martsenko (8):
+  arm64: cpufeature: add pointer auth meta-capabilities
+  arm64: install user ptrauth keys at kernel exit time
+  arm64: cpufeature: handle conflicts based on capability
+  arm64: enable ptrauth earlier
+  arm64: rename ptrauth key structures to be user-specific
+  arm64: initialize and switch ptrauth kernel keys
+  arm64: unwind: strip PAC from kernel addresses
+  arm64: compile the kernel with ptrauth return address signing
+
+ arch/arm64/Kconfig                        | 21 ++++++++-
+ arch/arm64/Makefile                       |  6 +++
+ arch/arm64/include/asm/asm_pointer_auth.h | 59 +++++++++++++++++++++++
+ arch/arm64/include/asm/compiler.h         | 15 ++++++
+ arch/arm64/include/asm/cpucaps.h          |  4 +-
+ arch/arm64/include/asm/cpufeature.h       | 33 ++++++++++---
+ arch/arm64/include/asm/pointer_auth.h     | 50 ++++++++------------
+ arch/arm64/include/asm/processor.h        |  3 +-
+ arch/arm64/include/asm/smp.h              |  3 ++
+ arch/arm64/kernel/asm-offsets.c           | 15 ++++++
+ arch/arm64/kernel/cpufeature.c            | 53 ++++++++++++---------
+ arch/arm64/kernel/entry.S                 |  6 +++
+ arch/arm64/kernel/head.S                  | 78 +++++++++++++++++++++++++++----
+ arch/arm64/kernel/pointer_auth.c          |  7 +--
+ arch/arm64/kernel/process.c               |  3 +-
+ arch/arm64/kernel/ptrace.c                | 16 +++----
+ arch/arm64/kernel/sleep.S                 |  6 +++
+ arch/arm64/kernel/smp.c                   |  8 ++++
+ arch/arm64/kernel/stacktrace.c            |  3 ++
+ 19 files changed, 306 insertions(+), 83 deletions(-)
+ create mode 100644 arch/arm64/include/asm/asm_pointer_auth.h
+ create mode 100644 arch/arm64/include/asm/compiler.h
 
 -- 
-Pengutronix e.K.                           |                             |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
