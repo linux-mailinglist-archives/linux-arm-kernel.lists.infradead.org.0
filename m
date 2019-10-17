@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67F86DAA1E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 12:34:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30AE6DAA25
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 12:37:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=X/T9srteT+Oa+BjeJNKgGyKjOsk+AWwc/wjyueCoaKU=; b=cjChkHa/BZ21FX
-	BYSNITP0P8p+ywdYWQ9VJY/v2cW7U8aF5tXCI8VZURlJS2zq2dtTlW28Zs5DAp9rzC0qe4UKIthpr
-	Nw/jFuzlLGnY7E5qO4koVqHpbFyvE2y7AtcSpjgRLE3WDOpXMUtYNZGjkitdT8LgoXVLiE9AbadWn
-	EBrW+CF0td0asJF3ZWaj7YBL+MOCZZRF3nf2dPIM/trySSoPGMN0kpg5OFlP01ZvT+y++mNZ4JMTZ
-	rqTZkNpzC6s6VftYChzkda+TvDFsk4ISoL6fdKx8vSS4mubgDA34yOKZwdAR7cXaxedOGzedS2hvw
-	an2P/jndp4ogitznfZdQ==;
+	List-Owner; bh=DudkQQKfNqE3W7GGjNGoVzsBmFITKJbObxJdasp74GM=; b=bn+PCd59/Nc2rt
+	klJd3NmRhqmH3wKGISeE6cU5lKBoD2CpcJz/ezKbPPFYXjbhHnNs66wvkkYJNr5h2hw1cmGpMTbcM
+	KBI4DMazkSPvfLIIy9FiE/PXGR5ypWUkBDejZ/FjPPYKlYgAP1x+Vmwkz/mlOHGy/XvKWeACtKd0O
+	qEHqXkAJNCuiNuwj44Bmn3CkF7p/plLiWiaJuR/GLWLECcp1LXH6Ms/lSoOQBu8pj2rWGBjidpAJG
+	ZC2PalnaMl5fJ6YlgjqP0FYM5Q8ROht+PrrG0gwOxsTAY9O1tpVe6A22m7Us+/rNB5EhoS3oCZ0Ir
+	6d0BXEuzE6YmDRyRs/8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL37J-00070A-Mh; Thu, 17 Oct 2019 10:34:49 +0000
+	id 1iL39q-00008m-4X; Thu, 17 Oct 2019 10:37:26 +0000
 Received: from imap1.codethink.co.uk ([176.9.8.82])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL37B-0006zk-Nn
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 10:34:43 +0000
+ id 1iL39h-00008C-V9
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 10:37:19 +0000
 Received: from [167.98.27.226] (helo=rainbowdash.codethink.co.uk)
  by imap1.codethink.co.uk with esmtpsa (Exim 4.84_2 #1 (Debian))
- id 1iL379-0001lO-Ge; Thu, 17 Oct 2019 11:34:39 +0100
+ id 1iL39f-0001rX-W5; Thu, 17 Oct 2019 11:37:16 +0100
 Received: from ben by rainbowdash.codethink.co.uk with local (Exim 4.92.2)
  (envelope-from <ben@rainbowdash.codethink.co.uk>)
- id 1iL379-0001T1-6z; Thu, 17 Oct 2019 11:34:39 +0100
+ id 1iL39f-0001ev-Gm; Thu, 17 Oct 2019 11:37:15 +0100
 From: "Ben Dooks (Codethink)" <ben.dooks@codethink.co.uk>
 To: linux-kernel@lists.codethink.co.uk
-Subject: [PATCH] mmp: include common.h for mmp_timer_init
-Date: Thu, 17 Oct 2019 11:34:36 +0100
-Message-Id: <20191017103436.5575-1-ben.dooks@codethink.co.uk>
+Subject: [PATCH] mmp: move declaration of mmp_dt_init_timer to common.h
+Date: Thu, 17 Oct 2019 11:37:13 +0100
+Message-Id: <20191017103713.6333-1-ben.dooks@codethink.co.uk>
 X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_033441_922101_6DC29E45 
-X-CRM114-Status: UNSURE (   8.53  )
+X-CRM114-CacheID: sfid-20191017_033718_150276_70CFA0A3 
+X-CRM114-Status: UNSURE (   9.83  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -68,33 +68,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The arch/arm/mach-mmp/time.c should include the
-common.h header for the declaration of mmp_timer_init.
+The mmp_dt_init_timer() is shared by several files in the
+mmp directory, so move the declaration to common.h to
+remove the following sparse warning:
 
-This fixes the following sparse warning:
-
-arch/arm/mach-mmp/time.c:184:13: warning: symbol 'mmp_timer_init' was not declared. Should it be static?
+arch/arm/mach-mmp/time.c:204:13: warning: symbol 'mmp_dt_init_timer' was not declared. Should it be static?
 
 Signed-off-by: Ben Dooks <ben.dooks@codethink.co.uk>
 ---
 Cc: Lubomir Rintel <lkundrak@v3.sk>
 Cc: linux-arm-kernel@lists.infradead.org
 ---
- arch/arm/mach-mmp/time.c | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm/mach-mmp/common.h  | 1 +
+ arch/arm/mach-mmp/mmp-dt.c  | 2 --
+ arch/arm/mach-mmp/mmp2-dt.c | 2 --
+ 3 files changed, 1 insertion(+), 4 deletions(-)
 
-diff --git a/arch/arm/mach-mmp/time.c b/arch/arm/mach-mmp/time.c
-index 483df32583be..0706d8f667de 100644
---- a/arch/arm/mach-mmp/time.c
-+++ b/arch/arm/mach-mmp/time.c
-@@ -35,6 +35,7 @@
- #include "irqs.h"
- #include "cputype.h"
- #include "clock.h"
-+#include "common.h"
+diff --git a/arch/arm/mach-mmp/common.h b/arch/arm/mach-mmp/common.h
+index 483b8b6d3005..5bb6dcf0a8c1 100644
+--- a/arch/arm/mach-mmp/common.h
++++ b/arch/arm/mach-mmp/common.h
+@@ -3,6 +3,7 @@
+ #define ARRAY_AND_SIZE(x)	(x), ARRAY_SIZE(x)
  
- #define TIMERS_VIRT_BASE	TIMERS1_VIRT_BASE
+ extern void mmp_timer_init(int irq, unsigned long rate);
++extern void __init mmp_dt_init_timer(void);
  
+ extern void __init mmp_map_io(void);
+ extern void mmp_restart(enum reboot_mode, const char *);
+diff --git a/arch/arm/mach-mmp/mmp-dt.c b/arch/arm/mach-mmp/mmp-dt.c
+index 35559792d5cc..e205cdaf19bf 100644
+--- a/arch/arm/mach-mmp/mmp-dt.c
++++ b/arch/arm/mach-mmp/mmp-dt.c
+@@ -15,8 +15,6 @@
+ 
+ #include "common.h"
+ 
+-extern void __init mmp_dt_init_timer(void);
+-
+ static const char *const pxa168_dt_board_compat[] __initconst = {
+ 	"mrvl,pxa168-aspenite",
+ 	NULL,
+diff --git a/arch/arm/mach-mmp/mmp2-dt.c b/arch/arm/mach-mmp/mmp2-dt.c
+index 305a9daba6d6..ea63203b8810 100644
+--- a/arch/arm/mach-mmp/mmp2-dt.c
++++ b/arch/arm/mach-mmp/mmp2-dt.c
+@@ -16,8 +16,6 @@
+ 
+ #include "common.h"
+ 
+-extern void __init mmp_dt_init_timer(void);
+-
+ static void __init mmp_init_time(void)
+ {
+ #ifdef CONFIG_CACHE_TAUROS2
 -- 
 2.23.0
 
