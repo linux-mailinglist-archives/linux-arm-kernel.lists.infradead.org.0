@@ -2,57 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F4B7DAF59
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 16:13:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33BC3DAFB8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 16:19:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ZzrerZkG0wJGD1qCY0MIcrRRf47c+D7og5dHbaJ6ztQ=; b=gRYV1EdHM6METZxbh1/C97g4I
-	DbWGAZIbybjZSoaMcIRZwEYQUxgh9Z0lMrasQQpGdIaesSnwlIa3wSEZQmLao5tY2hIEfdVBNnIyI
-	9CKSuCCkwrj7+jh2SotaV3kfDdREkPlU8hIbT7XUjHoFqpCFqUlAcX5VhxoKGdEvXY4tR3FVIOiSq
-	PewcR7pmDk9BJkLfPtfIwzEZeK7aIcukzrq1+J23MX32o/Hkms8CKa6SxJ3JBkTlb6n6ciMQS9tVJ
-	YBnHeBY8Gtv1jpVGAFiqyEAeCY3I6FtSw5eifbUIsLl2E/boEfcpyUyXm2Y8b4EEx3hzyVQfRhrN0
-	hw90Cqlmw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=PmZTJVOXa01bqQa8jOGkrhEm9iHB5T2SP47dVD47+IE=; b=bap9LaEKCGF+hK
+	Do1tK9sDyy7vTNU94gmWuOfpAQLCPKG2o77oxYlFqHpN9ZM8SlhUczxfoeTeMwheHw62ITDs0560G
+	n3c6wrogQY8anGXU6q+kPYEAODAaXBgAHuWfbY83mxq6urXzWYl4ejadoxRtkITP/e2L4EX2MgM6p
+	dGrJRpKIOBjD96EHTrMMdIbaRt98JiuFaj08+09204SpXa+gGELTZUexfimrNe4oflfw+uqsV2LmQ
+	pKA7MLo7g/Gt7tSGcCNKpDYf1K5hdaT86guiz8M0wXPhmGUVwxFIiSzmMz7yDb4CJHA7s1RNRzz65
+	0vViP4vFnuXinZGMIwOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL6X0-0006ub-LF; Thu, 17 Oct 2019 14:13:34 +0000
-Received: from [217.140.110.172] (helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL6Wp-0006tJ-Lt
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 14:13:25 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B3D81F;
- Thu, 17 Oct 2019 07:13:12 -0700 (PDT)
-Received: from dawn-kernel.cambridge.arm.com (unknown [10.1.197.116])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 422213F6C4;
- Thu, 17 Oct 2019 07:13:11 -0700 (PDT)
-Subject: Re: [PATCH 05/11] arm64: enable ptrauth earlier
-To: Amit Daniel Kachhap <amit.kachhap@arm.com>,
- linux-arm-kernel@lists.infradead.org
-References: <1571300065-10236-1-git-send-email-amit.kachhap@arm.com>
- <1571300065-10236-6-git-send-email-amit.kachhap@arm.com>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <ee0a5b0a-196f-1cb4-701b-3295f1932e5d@arm.com>
-Date: Thu, 17 Oct 2019 15:13:10 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.0
+	id 1iL6ca-0000wx-GU; Thu, 17 Oct 2019 14:19:20 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iL6cO-0000rz-0e
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 14:19:09 +0000
+Received: from dragon (li937-157.members.linode.com [45.56.119.157])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6BAAA2089C;
+ Thu, 17 Oct 2019 14:18:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571321946;
+ bh=haIta56mXL6EUqLqr7XmvNCs19Oo0mASjFD/E/c/+EQ=;
+ h=Date:From:To:Cc:Subject:From;
+ b=NgWjSxyehn9xMByyx9DBGJQinP+c3GyAWEAS3LoX7XmMePgHMLoxigeyfMqk8weeB
+ yd+C2Jfoizl5oGDw7f+kxAWySMETd23112/RCPevwn7lbUq2Qz2ebi9fEPAJ2ELUEE
+ DBnFYQqQhuNSMDMHV67G8fQauJD/GEiCAYdc3fNs=
+Date: Thu, 17 Oct 2019 22:18:52 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: soc@kernel.org, arm@kernel.org
+Subject: [GIT PULL] i.MX fixes for 5.4
+Message-ID: <20191017141851.GA22506@dragon>
 MIME-Version: 1.0
-In-Reply-To: <1571300065-10236-6-git-send-email-amit.kachhap@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_071323_804660_4687AA12 
-X-CRM114-Status: GOOD (  25.61  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20191017_071908_088087_B3FE3CBF 
+X-CRM114-Status: GOOD (  12.50  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,101 +74,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- James Morse <james.morse@arm.com>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- Dave Martin <Dave.Martin@arm.com>
+Cc: Stefan Agner <stefan@agner.ch>, Li Yang <leoyang.li@nxp.com>,
+ linux-imx@nxp.com, kernel@pengutronix.de, Fabio Estevam <festevam@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
 
-Hi Amit,
+  Linux 5.4-rc1 (2019-09-30 10:35:40 -0700)
 
-On 17/10/2019 09:14, Amit Daniel Kachhap wrote:
-> From: Kristina Martsenko <kristina.martsenko@arm.com>
-> 
-> When the kernel is compiled with pointer auth instructions, the boot CPU
-> needs to start using address auth very early, so change the cpucap to
-> account for this.
-> 
-> Pointer auth must be enabled before we call C functions, because it is
-> not possible to enter a function with pointer auth disabled and exit it
-> with pointer auth enabled. Note, mismatches between architected and
-> IMPDEF algorithms will still be caught by the cpufeature framework (the
-> separate *_ARCH and *_IMP_DEF cpucaps).
-> 
-> Note the change in behavior: if the boot CPU has address auth and a late
-> CPU does not, then we offline the late CPU. Until now we would have just
-> disabled address auth in this case.
-> 
-> Leave generic authentication as a "system scope" cpucap for now, since
-> initially the kernel will only use address authentication.
-> 
-> Reviewed-by: Kees Cook <keescook@chromium.org>
-> Signed-off-by: Kristina Martsenko <kristina.martsenko@arm.com>
-> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
-> ---
-> Changes since RFC v2:
->   - Moved early enabling from C to assembly, and no longer use the pointer auth
->     C function attribute [Suzuki]
-> 
->   arch/arm64/Kconfig                  |  4 ++++
->   arch/arm64/include/asm/cpufeature.h |  9 +++++++
->   arch/arm64/include/asm/smp.h        |  1 +
->   arch/arm64/kernel/cpufeature.c      | 13 +++-------
->   arch/arm64/kernel/head.S            | 48 +++++++++++++++++++++++++++++++++++++
->   arch/arm64/kernel/smp.c             |  2 ++
->   6 files changed, 67 insertions(+), 10 deletions(-)
-> 
-> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> index 41a9b42..253e3c5 100644
-> --- a/arch/arm64/Kconfig
-> +++ b/arch/arm64/Kconfig
-> @@ -1408,6 +1408,10 @@ config ARM64_PTR_AUTH
->   	  be enabled. However, KVM guest also require VHE mode and hence
->   	  CONFIG_ARM64_VHE=y option to use this feature.
->   
-> +	  If the feature is present on the primary CPU but not a secondary CPU,
-> +	  then the secondary CPU will be offlined. On such a system, this
-> +	  option should not be selected.
+are available in the Git repository at:
 
-We don't offline the CPU, but simply park them. You may want to update this to
-reflect the reality.
+  git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/imx-fixes-5.4
 
-> +
->   endmenu
->   
->   config ARM64_SVE
-> diff --git a/arch/arm64/include/asm/cpufeature.h b/arch/arm64/include/asm/cpufeature.h
-> index 011a665..5d61749 100644
-> --- a/arch/arm64/include/asm/cpufeature.h
-> +++ b/arch/arm64/include/asm/cpufeature.h
-> @@ -291,6 +291,15 @@ extern struct arm64_ftr_reg arm64_ftr_reg_ctrel0;
->   #define ARM64_CPUCAP_STRICT_BOOT_CPU_FEATURE		\
->   	(ARM64_CPUCAP_SCOPE_BOOT_CPU | ARM64_CPUCAP_PANIC_ON_CONFLICT)
->   
-> +/*
-> + * CPU feature used early in the boot based on the boot CPU. It is safe for a
-> + * late CPU to have this feature even though the boot CPU hasn't enabled it,
-> + * although the feature will not be used by Linux in this case. If the boot CPU
-> + * has enabled this feature already, then every late CPU must have it.
-> + */
-> +#define ARM64_CPUCAP_BOOT_CPU_FEATURE			\
-> +	 (ARM64_CPUCAP_SCOPE_BOOT_CPU | ARM64_CPUCAP_PERMITTED_FOR_LATE_CPU)
+for you to fetch changes up to 95993238b29b3f0f9a5eb9db84e0e38e5bfe76d8:
 
-As mentioned in the previous patch, I think this must panic the system if ever a
-CPU turns up without the ptr_auth.
+  ARM: imx_v6_v7_defconfig: Enable CONFIG_DRM_MSM (2019-10-14 21:27:47 +0800)
 
-Otherwise looks fine to me.
+----------------------------------------------------------------
+i.MX fixes for 5.4:
+ - Re-enable SNVS power key for imx6q-logicpd board which was accidentally
+   disabled by a SoC level change.
+ - Fix I2C switches on vf610-zii-scu4-aib board by specifying property
+   i2c-mux-idle-disconnect.
+ - A fix on imx-scu API that reads UID from firmware to avoid kernel NULL
+   pointer dump.
+ - A series from Anson to correct i.MX7 GPT and i.MX8 USDHC IPG clock.
+ - A fix on DRM_MSM Kconfig regression on i.MX5 by adding the option
+   explicitly into imx_v6_v7_defconfig.
+ - Fix ARM regulator states issue for zii-ultra board, which is impacting
+   stability of the board.
+ - A correction on CPU core idle state name for LayerScape LX2160A SoC.
 
-Cheers
-Suzuki
+----------------------------------------------------------------
+Adam Ford (1):
+      ARM: dts: imx6q-logicpd: Re-Enable SNVS power key
+
+Andrey Smirnov (1):
+      ARM: dts: vf610-zii-scu4-aib: Specify 'i2c-mux-idle-disconnect'
+
+Anson Huang (5):
+      soc: imx: imx-scu: Getting UID from SCU should have response
+      ARM: dts: imx7s: Correct GPT's ipg clock source
+      arm64: dts: imx8mq: Use correct clock for usdhc's ipg clk
+      arm64: dts: imx8mm: Use correct clock for usdhc's ipg clk
+      arm64: dts: imx8mn: Use correct clock for usdhc's ipg clk
+
+Fabio Estevam (1):
+      ARM: imx_v6_v7_defconfig: Enable CONFIG_DRM_MSM
+
+Lucas Stach (1):
+      arm64: dts: zii-ultra: fix ARM regulator states
+
+Ran Wang (1):
+      arm64: dts: lx2160a: Correct CPU core idle state name
+
+ arch/arm/boot/dts/imx6-logicpd-som.dtsi            |  4 +++
+ arch/arm/boot/dts/imx7s.dtsi                       |  8 ++---
+ arch/arm/boot/dts/vf610-zii-scu4-aib.dts           |  2 ++
+ arch/arm/configs/imx_v6_v7_defconfig               |  1 +
+ arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi     | 36 +++++++++++-----------
+ arch/arm64/boot/dts/freescale/imx8mm.dtsi          |  6 ++--
+ arch/arm64/boot/dts/freescale/imx8mn.dtsi          |  6 ++--
+ .../arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi |  4 +--
+ arch/arm64/boot/dts/freescale/imx8mq.dtsi          |  4 +--
+ drivers/soc/imx/soc-imx-scu.c                      |  2 +-
+ 10 files changed, 40 insertions(+), 33 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
