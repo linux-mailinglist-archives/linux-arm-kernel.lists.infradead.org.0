@@ -2,66 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8672FDA320
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 03:27:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29C12DA36C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 03:51:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O5btcionLttlV59j1FVUUuWt2GNdy8cim3XpXb0dQwA=; b=iZisa43Ivk8XTe
-	JrDrUpcPovbUiewbSL6PsGp+lSRzC6FwYk2dTfejgQnP+aoKAsqFz0ngcaVz8KYoyT/5MtkiQL0Z8
-	xghZSP4xdpaU/cdROjS4wV+JB+aNQQTaHBmWha0aYLW4KPZk+wd1I394r5EnyWaJsWrbvPSrl08O/
-	Uaz+sqW9d8KFDfMbVvkDt/5109CZqfWM/7BkCNgiH5z6rDA/DFgHWhHdwe/QcHm5WTWT5hd2GdLpZ
-	gNjnZXjHNGUc/Lsb2G8T+KkihJmlvUUL/zgFZTFRJwsrSX7NUIp6xNqiTrq8Ou0k6amL5n3pnHz1G
-	tgdkimtqXxBv1aUeA4Rg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=R0vp/ANynUyxESPDW08A3VPEWrOqE7nPTZNMmkIzJbM=; b=ICAdwk18lsHu0A
+	rWCCQ/qvJGHdZ0m4XDJrSEX/o0ya7eIxYUrPrugKdz30hH9W+EyQ1jh3W/NZ4ZotE6KVqyuVvxIKa
+	atmsyADNu0WPJdsFBruDY3mhd9XskNJhhkvG7DbZaVSwCUOwpXsxsmM6VhVS9JQEiGU4SHOh747JY
+	GmbTYf1X8F3xo1hnaYkKQ6+JKi/HQWo+ywX8oSyMfcEnzsyHdaVJr+9PYEPVmM1lED0mFV6N5+GFY
+	Rj2gJ44CfOG0SP14MpQmErHrtmcNZnPDhbXOYyFmmmIZ8qH4LtY6eXUINaRBkYe8Sq5gTZ0vT16ka
+	Ak4MQ4MrCedJg9Gv8Gow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKuZm-0005Ta-1y; Thu, 17 Oct 2019 01:27:38 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1iKuwS-00067I-V7; Thu, 17 Oct 2019 01:51:04 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKuZX-0005PO-Sj; Thu, 17 Oct 2019 01:27:25 +0000
-Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 735A76153B773426C5B9;
- Thu, 17 Oct 2019 09:27:20 +0800 (CST)
-Received: from [127.0.0.1] (10.133.213.239) by DGGEMS409-HUB.china.huawei.com
- (10.3.19.209) with Microsoft SMTP Server id 14.3.439.0;
- Thu, 17 Oct 2019 09:27:17 +0800
-Subject: Re: [PATCH -next 00/13] hwrng: use devm_platform_ioremap_resource()
- to simplify code
-To: Florian Fainelli <f.fainelli@gmail.com>, <herbert@gondor.apana.org.au>,
- <mpm@selenic.com>, <arnd@arndb.de>, <gregkh@linuxfoundation.org>,
- <nicolas.ferre@microchip.com>, <alexandre.belloni@bootlin.com>,
- <ludovic.desroches@microchip.com>, <rjui@broadcom.com>,
- <sbranden@broadcom.com>, <bcm-kernel-feedback-list@broadcom.com>,
- <eric@anholt.net>, <wahrenst@gmx.net>, <l.stelmach@samsung.com>,
- <kgene@kernel.org>, <krzk@kernel.org>, <khilman@baylibre.com>,
- <dsaxena@plexity.net>, <patrice.chotard@st.com>
-References: <20191016104621.26056-1-yuehaibing@huawei.com>
- <2c60b926-1e98-cca0-ec17-6b45f9da404a@gmail.com>
-From: Yuehaibing <yuehaibing@huawei.com>
-Message-ID: <7c0269b6-cab3-bded-7f9d-76430be89f9c@huawei.com>
-Date: Thu, 17 Oct 2019 09:27:13 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.2.0
+ id 1iKuwK-000666-RS; Thu, 17 Oct 2019 01:50:59 +0000
+X-UUID: 2b5fa9a877d9484e8f5369cc229f8dc4-20191016
+X-UUID: 2b5fa9a877d9484e8f5369cc229f8dc4-20191016
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 916186008; Wed, 16 Oct 2019 17:50:46 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 16 Oct 2019 18:50:46 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 17 Oct 2019 09:50:44 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Thu, 17 Oct 2019 09:50:44 +0800
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Andrey Ryabinin <aryabinin@virtuozzo.com>, Alexander Potapenko
+ <glider@google.com>, Dmitry Vyukov <dvyukov@google.com>, Matthias Brugger
+ <matthias.bgg@gmail.com>
+Subject: [PATCH v2 1/2] kasan: detect negative size in memory operation
+ function
+Date: Thu, 17 Oct 2019 09:50:44 +0800
+Message-ID: <20191017015044.8586-1-walter-zh.wu@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-In-Reply-To: <2c60b926-1e98-cca0-ec17-6b45f9da404a@gmail.com>
-X-Originating-IP: [10.133.213.239]
-X-CFilter-Loop: Reflected
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_182724_095062_DDBB7608 
-X-CRM114-Status: UNSURE (   9.60  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191016_185056_895819_EAF5B0D9 
+X-CRM114-Status: GOOD (  13.50  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,82 +71,199 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-rpi-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
- linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
- linux-crypto@vger.kernel.org
+Cc: Walter Wu <walter-zh.wu@mediatek.com>, wsd_upstream@mediatek.com,
+ linux-kernel@vger.kernel.org, kasan-dev@googlegroups.com, linux-mm@kvack.org,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+KASAN missed detecting size is negative numbers in memset(), memcpy(),
+and memmove(), it will cause out-of-bounds bug, so needs to be detected
+by KASAN.
 
+If size is negative numbers, then it has three reasons to be
+defined as heap-out-of-bounds bug type.
+1) Casting negative numbers to size_t would indeed turn up as
+   a large size_t and its value will be larger than ULONG_MAX/2,
+   so that this can qualify as out-of-bounds.
+2) If KASAN has new bug type and user-space passes negative size,
+   then there are duplicate reports. So don't produce new bug type
+   in order to prevent duplicate reports by some systems (e.g. syzbot)
+   to report the same bug twice.
+3) When size is negative numbers, it may be passed from user-space.
+   So we always print heap-out-of-bounds in order to prevent that
+   kernel-space and user-space have the same bug but have duplicate
+   reports.
 
-On 2019/10/17 0:44, Florian Fainelli wrote:
-> On 10/16/19 3:46 AM, YueHaibing wrote:
->> devm_platform_ioremap_resource() internally have platform_get_resource()
->> and devm_ioremap_resource() in it. So instead of calling them separately
->> use devm_platform_ioremap_resource() directly.
-> 
-> Did your coccinelle script not cover
-> drivers/char/hw_random/iproc-rng200.c somehow? Do you mind including it
-> as a separate patch?
+KASAN report:
 
-A patch from Markus Elfring has be queued:
+ BUG: KASAN: heap-out-of-bounds in kmalloc_memmove_invalid_size+0x70/0xa0
+ Read of size 18446744073709551608 at addr ffffff8069660904 by task cat/72
 
-commit a68b931932c5574aa5bd459529c766ba577c72b3
-Author: Markus Elfring <elfring@users.sourceforge.net>
-Date:   Wed Sep 18 09:09:22 2019 +0200
+ CPU: 2 PID: 72 Comm: cat Not tainted 5.4.0-rc1-next-20191004ajb-00001-gdb8af2f372b2-dirty #1
+ Hardware name: linux,dummy-virt (DT)
+ Call trace:
+  dump_backtrace+0x0/0x288
+  show_stack+0x14/0x20
+  dump_stack+0x10c/0x164
+  print_address_description.isra.9+0x68/0x378
+  __kasan_report+0x164/0x1a0
+  kasan_report+0xc/0x18
+  check_memory_region+0x174/0x1d0
+  memmove+0x34/0x88
+  kmalloc_memmove_invalid_size+0x70/0xa0
 
-    hwrng: iproc-rng200 - Use devm_platform_ioremap_resource() in iproc_rng200_probe()
+[1] https://bugzilla.kernel.org/show_bug.cgi?id=199341
 
-    Simplify this function implementation by using a known wrapper function.
+Changes in v2:
+Fix the indentation bug, thanks for the reminder Matthew.
 
-    This issue was detected by using the Coccinelle software.
+Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
+Reported-by: Dmitry Vyukov <dvyukov@google.com>
+Suggested-by: Dmitry Vyukov <dvyukov@google.com>
+Reviewed-by: Dmitry Vyukov <dvyukov@google.com>
+Cc: Andrey Ryabinin <aryabinin@virtuozzo.com>
+Cc: Alexander Potapenko <glider@google.com>
+---
+ mm/kasan/common.c         | 13 ++++++++-----
+ mm/kasan/generic.c        |  5 +++++
+ mm/kasan/generic_report.c | 18 ++++++++++++++++++
+ mm/kasan/tags.c           |  5 +++++
+ mm/kasan/tags_report.c    | 18 ++++++++++++++++++
+ 5 files changed, 54 insertions(+), 5 deletions(-)
 
-    Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
-    Reviewed-by: Ray Jui <ray.jui@broadcom.com>
-    Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
-    Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
-
-
-
-
-> Thanks
-> 
->>
->> YueHaibing (13):
->>   hwrng: atmel - use devm_platform_ioremap_resource() to simplify code
->>   hwrng: bcm2835 - use devm_platform_ioremap_resource() to simplify code
->>   hwrng: exynos - use devm_platform_ioremap_resource() to simplify code
->>   hwrng: hisi - use devm_platform_ioremap_resource() to simplify code
->>   hwrng: ks-sa - use devm_platform_ioremap_resource() to simplify code
->>   hwrng: meson - use devm_platform_ioremap_resource() to simplify code
->>   hwrng: npcm - use devm_platform_ioremap_resource() to simplify code
->>   hwrng: omap - use devm_platform_ioremap_resource() to simplify code
->>   hwrng: pasemi - use devm_platform_ioremap_resource() to simplify code
->>   hwrng: pic32 - use devm_platform_ioremap_resource() to simplify code
->>   hwrng: st - use devm_platform_ioremap_resource() to simplify code
->>   hwrng: tx4939 - use devm_platform_ioremap_resource() to simplify code
->>   hwrng: xgene - use devm_platform_ioremap_resource() to simplify code
->>
->>  drivers/char/hw_random/atmel-rng.c   | 4 +---
->>  drivers/char/hw_random/bcm2835-rng.c | 5 +----
->>  drivers/char/hw_random/exynos-trng.c | 4 +---
->>  drivers/char/hw_random/hisi-rng.c    | 4 +---
->>  drivers/char/hw_random/ks-sa-rng.c   | 4 +---
->>  drivers/char/hw_random/meson-rng.c   | 4 +---
->>  drivers/char/hw_random/npcm-rng.c    | 4 +---
->>  drivers/char/hw_random/omap-rng.c    | 4 +---
->>  drivers/char/hw_random/pasemi-rng.c  | 4 +---
->>  drivers/char/hw_random/pic32-rng.c   | 4 +---
->>  drivers/char/hw_random/st-rng.c      | 4 +---
->>  drivers/char/hw_random/tx4939-rng.c  | 4 +---
->>  drivers/char/hw_random/xgene-rng.c   | 4 +---
->>  13 files changed, 13 insertions(+), 40 deletions(-)
->>
-> 
-> 
+diff --git a/mm/kasan/common.c b/mm/kasan/common.c
+index 6814d6d6a023..16a370023425 100644
+--- a/mm/kasan/common.c
++++ b/mm/kasan/common.c
+@@ -102,7 +102,8 @@ EXPORT_SYMBOL(__kasan_check_write);
+ #undef memset
+ void *memset(void *addr, int c, size_t len)
+ {
+-	check_memory_region((unsigned long)addr, len, true, _RET_IP_);
++	if (!check_memory_region((unsigned long)addr, len, true, _RET_IP_))
++		return NULL;
+ 
+ 	return __memset(addr, c, len);
+ }
+@@ -110,8 +111,9 @@ void *memset(void *addr, int c, size_t len)
+ #undef memmove
+ void *memmove(void *dest, const void *src, size_t len)
+ {
+-	check_memory_region((unsigned long)src, len, false, _RET_IP_);
+-	check_memory_region((unsigned long)dest, len, true, _RET_IP_);
++	if (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
++	    !check_memory_region((unsigned long)dest, len, true, _RET_IP_))
++		return NULL;
+ 
+ 	return __memmove(dest, src, len);
+ }
+@@ -119,8 +121,9 @@ void *memmove(void *dest, const void *src, size_t len)
+ #undef memcpy
+ void *memcpy(void *dest, const void *src, size_t len)
+ {
+-	check_memory_region((unsigned long)src, len, false, _RET_IP_);
+-	check_memory_region((unsigned long)dest, len, true, _RET_IP_);
++	if (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
++	    !check_memory_region((unsigned long)dest, len, true, _RET_IP_))
++		return NULL;
+ 
+ 	return __memcpy(dest, src, len);
+ }
+diff --git a/mm/kasan/generic.c b/mm/kasan/generic.c
+index 616f9dd82d12..02148a317d27 100644
+--- a/mm/kasan/generic.c
++++ b/mm/kasan/generic.c
+@@ -173,6 +173,11 @@ static __always_inline bool check_memory_region_inline(unsigned long addr,
+ 	if (unlikely(size == 0))
+ 		return true;
+ 
++	if (unlikely((long)size < 0)) {
++		kasan_report(addr, size, write, ret_ip);
++		return false;
++	}
++
+ 	if (unlikely((void *)addr <
+ 		kasan_shadow_to_mem((void *)KASAN_SHADOW_START))) {
+ 		kasan_report(addr, size, write, ret_ip);
+diff --git a/mm/kasan/generic_report.c b/mm/kasan/generic_report.c
+index 36c645939bc9..52a92c7db697 100644
+--- a/mm/kasan/generic_report.c
++++ b/mm/kasan/generic_report.c
+@@ -107,6 +107,24 @@ static const char *get_wild_bug_type(struct kasan_access_info *info)
+ 
+ const char *get_bug_type(struct kasan_access_info *info)
+ {
++	/*
++	 * If access_size is negative numbers, then it has three reasons
++	 * to be defined as heap-out-of-bounds bug type.
++	 * 1) Casting negative numbers to size_t would indeed turn up as
++	 *    a large size_t and its value will be larger than ULONG_MAX/2,
++	 *    so that this can qualify as out-of-bounds.
++	 * 2) If KASAN has new bug type and user-space passes negative size,
++	 *    then there are duplicate reports. So don't produce new bug type
++	 *    in order to prevent duplicate reports by some systems
++	 *    (e.g. syzbot) to report the same bug twice.
++	 * 3) When size is negative numbers, it may be passed from user-space.
++	 *    So we always print heap-out-of-bounds in order to prevent that
++	 *    kernel-space and user-space have the same bug but have duplicate
++	 *    reports.
++	 */
++	if ((long)info->access_size < 0)
++		return "heap-out-of-bounds";
++
+ 	if (addr_has_shadow(info->access_addr))
+ 		return get_shadow_bug_type(info);
+ 	return get_wild_bug_type(info);
+diff --git a/mm/kasan/tags.c b/mm/kasan/tags.c
+index 0e987c9ca052..b829535a3ad7 100644
+--- a/mm/kasan/tags.c
++++ b/mm/kasan/tags.c
+@@ -86,6 +86,11 @@ bool check_memory_region(unsigned long addr, size_t size, bool write,
+ 	if (unlikely(size == 0))
+ 		return true;
+ 
++	if (unlikely((long)size < 0)) {
++		kasan_report(addr, size, write, ret_ip);
++		return false;
++	}
++
+ 	tag = get_tag((const void *)addr);
+ 
+ 	/*
+diff --git a/mm/kasan/tags_report.c b/mm/kasan/tags_report.c
+index 969ae08f59d7..f7ae474aef3a 100644
+--- a/mm/kasan/tags_report.c
++++ b/mm/kasan/tags_report.c
+@@ -36,6 +36,24 @@
+ 
+ const char *get_bug_type(struct kasan_access_info *info)
+ {
++	/*
++	 * If access_size is negative numbers, then it has three reasons
++	 * to be defined as heap-out-of-bounds bug type.
++	 * 1) Casting negative numbers to size_t would indeed turn up as
++	 *    a large size_t and its value will be larger than ULONG_MAX/2,
++	 *    so that this can qualify as out-of-bounds.
++	 * 2) If KASAN has new bug type and user-space passes negative size,
++	 *    then there are duplicate reports. So don't produce new bug type
++	 *    in order to prevent duplicate reports by some systems
++	 *    (e.g. syzbot) to report the same bug twice.
++	 * 3) When size is negative numbers, it may be passed from user-space.
++	 *    So we always print heap-out-of-bounds in order to prevent that
++	 *    kernel-space and user-space have the same bug but have duplicate
++	 *    reports.
++	 */
++	if ((long)info->access_size < 0)
++		return "heap-out-of-bounds";
++
+ #ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
+ 	struct kasan_alloc_meta *alloc_meta;
+ 	struct kmem_cache *cache;
+-- 
+2.18.0
 
 
 _______________________________________________
