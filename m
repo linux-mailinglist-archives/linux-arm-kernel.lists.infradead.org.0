@@ -2,84 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30CC6DB76E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 21:24:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7A63DB773
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 21:26:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZsUarnxFmNxZJNA/EUsQbluk60oAbmsS8vnQPr59Mp8=; b=gVWXggEpeKVOw1
-	LWAovnGjApOXhF6lKbYEIJfI0clxeTnWVg3JuHMxdB0hbAk4iIUvq4xQGn9y4tnFLjLPibwx7C3O3
-	wU3IjxdVxKAiFwNtDZXdSuj1/vwk7d43DiBrhnKswqzqSe5ph5vFBoIPxDwTh1PuzC4D0IWjrbV+F
-	1ozVQv5EiKNsXPxilY8Avz8MUvfF9e9EYbS7eHz1tVFYITjsYOPfo9OPsbJVSytHyK/6H64haJPRw
-	Xf9llhFJGRoLSHHgZJRXg61CPgI7ADMdOyGAfsh1c2DlFJwU1/4x2P+8g5Si4GZOv3x7sgS8Ic80l
-	CQHx9LiiiZEsOcksDDIg==;
+	List-Owner; bh=ud10r7BkuUvYiNROx142YauqUpeHDRRylqFl3VhbzVk=; b=jCpWPvBBZcx5ps
+	5CgUxANHMhYCGi+2KVUE0pA3SCoaXL+oYhn6Hip38w7cCiOy+EhpiIne8JQofAVIoL2nn34WFI6f4
+	neV4YRqIWIE/yFYhfvgfrNJcxpLFKap5GsrkFs+E87lAofOuwP+mPN7CMLXOepNu/2cfBteiQ8+5A
+	rk9AwDHYyE0oyLwCy+CoDWx8bLxoQfZFRRmWrC59o4eCYqmTigMx1NiT6rMHRjhtScm0bhsHrHFvz
+	tk+ekHCF3r+KkDJl48BQg7ZteUybJ065J+gb8tAiBlW5MyRyRXZwYOetDamea/dJXSC/1cBkDGh8m
+	1/wQtPsnDNyNcBHDNSFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLBOF-0006oh-JO; Thu, 17 Oct 2019 19:24:51 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1iLBPc-0000z1-BW; Thu, 17 Oct 2019 19:26:16 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLBO4-0006oH-8d
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 19:24:41 +0000
-Received: by mail-oi1-f194.google.com with SMTP id i16so3168358oie.4
+ id 1iLBPS-0000rb-RW
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 19:26:08 +0000
+Received: by mail-io1-xd44.google.com with SMTP id q1so4505050ion.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 17 Oct 2019 12:24:39 -0700 (PDT)
+ Thu, 17 Oct 2019 12:26:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Fags3H8qXAtbjD1auFiMSb1b2IbjWwWbPMcWqBZERaI=;
+ b=u569V9s+dhCShH6dj27sogpkTegN9KyYACifmiU87o475C91cnoX4NN18v64I1Hb9/
+ pUNe+sjj9kXhrefmWhsJ9SZKQFvvTv62uVra5rrexs5fp4gtGVZrmwz1xvKYf+Sz0m/4
+ DOouxaRIJOHCFGMTo2jS23R57IMT3LHhxea6Ne6DmnEVIA2Y6i+h7KOeRErw3q8JaSCE
+ TSQ48d0T0WY7yKXgscJbwOHGfO4pOh663wOz232sHearcSSNiNvyvAi/jKJxHoICe+z9
+ sRf4GVMq0i4X7oYK6uTbTB3Qzqw9H0qZuCtmUWInmlnPcznRu0pnvqwlR5GY8piQxqCp
+ GV4w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=JbxUD4/Ch48OCt7IQSmlYFRVjr2GA3XCWfDDRfU4VJU=;
- b=HkEqJvhhFU1SoKoQqSe4uaq4HmiZfdqnyeBQEVExsxqI/stVoC5JhkptqNfIWlYKWW
- a9zLLjuqIwyZc5My7yule7h7SMCRb6bsyBU4b0nK/iQorPjrsGk3OpI0P+3lfp2YrtK8
- VZhak3ABL2Dd4UzTpHYOWST8P4OJ0zvvJeHuaVqkfcikfX1hywRYmBQB1JXju5tvxJXH
- fB1D8izV76Xc5Yrzkw5Xyt02SyhqFBvgRQo+1b8WKrVgW2H2vStioVwBswYeRDnmS/8N
- cmlcRCzCbKSZpBmXHrq35Cu6OltjclQ9Q6WLOf38wqpsnOzxwQOxd55xkLxM8bgsS3Yc
- 9DDw==
-X-Gm-Message-State: APjAAAXVLuyeWwN4Bnzm+aE3aJveOmeMWgvJjLNsx5fpNfVErUen7Fmi
- x4xGfvTWrx6FvkXPgvVyzg==
-X-Google-Smtp-Source: APXvYqz00kRIlvZzcsK3LPl7hBlSHEH3J1/iOr9YAPvYkaFiiR1Q8p/7vSBVdqGPIDLLZFBz4i9Gjg==
-X-Received: by 2002:aca:ef85:: with SMTP id n127mr4771640oih.42.1571340279227; 
- Thu, 17 Oct 2019 12:24:39 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id s6sm818858otr.5.2019.10.17.12.24.38
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 17 Oct 2019 12:24:38 -0700 (PDT)
-Date: Thu, 17 Oct 2019 14:24:37 -0500
-From: Rob Herring <robh@kernel.org>
-To: Chris Packham <chris.packham@alliedtelesis.co.nz>
-Subject: Re: [PATCH v2 1/2] dt-bindings: gpio: brcm: Add bindings for xgs-iproc
-Message-ID: <20191017192437.GA24080@bogus>
-References: <20191017031051.20366-1-chris.packham@alliedtelesis.co.nz>
- <20191017031051.20366-2-chris.packham@alliedtelesis.co.nz>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Fags3H8qXAtbjD1auFiMSb1b2IbjWwWbPMcWqBZERaI=;
+ b=PoLDfUd1o7fnsiYY6AILWIeRJgf1F9F9yWul3lEiI1jc6HSrUGkgnpogvcuQTafnN7
+ yF+xSSZP9Rwca3auOVqRmZQF2o+aQubegCdTPmwJn0uSC7dEMVSFZoY1MUGM0vcdgUk3
+ ouz/iYvrPMZwWO9moHkRE0g1Ikkh61pEecu0U8xxqf9eT3k7i55xggWeFu4qiYNhGSvZ
+ 0RdM0cbdvbk/4JGk1af4joVnA6k7Xs4jnSVeJ4l1fccnUiLj64EPOv0wBXz/08odAqBG
+ wS7jjVdE/Aov5mbRR358VvdmlCXZgQvV53bq6Lm3P0zufdMbXGiBQVVzTxtudVOQpUMQ
+ 7JZQ==
+X-Gm-Message-State: APjAAAVzptUuyJzImaUWRCWc9c9U/RFZGofE3DowvdcMMfYNBHgbVMnO
+ UBI6tOgbkTasOjf7579p6paiXZe8/sjZv4Oh7DZu2g==
+X-Google-Smtp-Source: APXvYqzjK0L400i32dIEttvsop7YbCoXXqMdybXgVmbxFJVPJXC46bonyqTofFwl79KV66//rZehudtz5p9arLk59g0=
+X-Received: by 2002:a05:6638:392:: with SMTP id
+ y18mr2230970jap.98.1571340365705; 
+ Thu, 17 Oct 2019 12:26:05 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191017031051.20366-2-chris.packham@alliedtelesis.co.nz>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20191015212004.24748-1-mike.leach@linaro.org>
+ <20191015212004.24748-4-mike.leach@linaro.org>
+ <20191017180035.GC17991@xps15>
+In-Reply-To: <20191017180035.GC17991@xps15>
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+Date: Thu, 17 Oct 2019 13:25:54 -0600
+Message-ID: <CANLsYkyYVvDJRtBg7B=Zai_h=PDSQqtq-EWBH231X8HJ7NdHdw@mail.gmail.com>
+Subject: Re: [PATCH v3 03/11] coresight: etm4x: Add missing API to set EL
+ match on address filters
+To: Mike Leach <mike.leach@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_122440_304896_2AD5D477 
-X-CRM114-Status: GOOD (  18.55  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191017_122606_966411_9EB6D0F4 
+X-CRM114-Status: GOOD (  18.42  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,151 +94,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, sbranden@broadcom.com,
- linux-gpio@vger.kernel.org, rjui@broadcom.com, linus.walleij@linaro.org,
- linux-kernel@vger.kernel.org, bgolaszewski@baylibre.com,
- bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org
+Cc: Jon Corbet <corbet@lwn.net>, Greg KH <gregkh@linuxfoundation.org>,
+ Coresight ML <coresight@lists.linaro.org>,
+ "Suzuki K. Poulose" <suzuki.poulose@arm.com>,
+ "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 17, 2019 at 04:10:50PM +1300, Chris Packham wrote:
-> This GPIO controller is present on a number of Broadcom switch ASICs
-> with integrated SoCs. It is similar to the nsp-gpio and iproc-gpio
-> blocks but different enough to require a separate driver.
-> 
-> Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
-> ---
-> 
-> Notes:
->     Changes in v2:
->     - Document as DT schema
->     - Include ngpios, #gpio-cells and gpio-controller properties
-> 
->  .../bindings/gpio/brcm,xgs-iproc.yaml         | 83 +++++++++++++++++++
->  1 file changed, 83 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/gpio/brcm,xgs-iproc.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/gpio/brcm,xgs-iproc.yaml b/Documentation/devicetree/bindings/gpio/brcm,xgs-iproc.yaml
-> new file mode 100644
-> index 000000000000..71998551209e
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/gpio/brcm,xgs-iproc.yaml
-> @@ -0,0 +1,83 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/gpio/brcm,xgs-iproc.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Broadcom XGS iProc GPIO controller
-> +
-> +maintainers:
-> +  - Chris Packham <chris.packham@alliedtelesis.co.nz>
-> +
-> +description: |
-> +  This controller is the Chip Common A GPIO present on a number of Broadcom
-> +  switch ASICs with integrated SoCs.
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - brcm,iproc-gpio-cca
+On Thu, 17 Oct 2019 at 12:00, Mathieu Poirier
+<mathieu.poirier@linaro.org> wrote:
+>
+> On Tue, Oct 15, 2019 at 10:19:56PM +0100, Mike Leach wrote:
+> > TRCACATRn registers have match bits for secure and non-secure exception
+> > levels which are not accessible by the sysfs API.
+> > This adds a new sysfs parameter to enable this - addr_exlevel_s_ns.
+> >
+> > Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+> > Signed-off-by: Mike Leach <mike.leach@linaro.org>
+> > ---
+> >  .../coresight/coresight-etm4x-sysfs.c         | 42 +++++++++++++++++++
+> >  1 file changed, 42 insertions(+)
+> >
+> > diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> > index cc8156318018..45fa7743eea4 100644
+> > --- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> > +++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> > @@ -1233,6 +1233,47 @@ static ssize_t addr_context_store(struct device *dev,
+> >  }
+> >  static DEVICE_ATTR_RW(addr_context);
+> >
+> > +static ssize_t addr_exlevel_s_ns_show(struct device *dev,
+> > +                                   struct device_attribute *attr,
+> > +                                   char *buf)
+> > +{
+> > +     u8 idx;
+> > +     unsigned long val;
+> > +     struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> > +     struct etmv4_config *config = &drvdata->config;
+> > +
+> > +     spin_lock(&drvdata->spinlock);
+> > +     idx = config->addr_idx;
+> > +     val = BMVAL(config->addr_acc[idx], 14, 8);
+> > +     spin_unlock(&drvdata->spinlock);
+> > +     return scnprintf(buf, PAGE_SIZE, "%#lx\n", val);
+> > +}
+> > +
+> > +static ssize_t addr_exlevel_s_ns_store(struct device *dev,
+> > +                                    struct device_attribute *attr,
+> > +                                    const char *buf, size_t size)
+> > +{
+> > +     u8 idx;
+> > +     unsigned long val;
+> > +     struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> > +     struct etmv4_config *config = &drvdata->config;
+> > +
+> > +     if (kstrtoul(buf, 0, &val))
+> > +             return -EINVAL;
+> > +
+> > +     if (val & ~((GENMASK(14, 8) >> 8))
+>
+> This patch isn't compiling for me.  A parenthesis is missing to close the if().
 
-enum vs. const usage depends on whether you think you'll add more 
-compatibles.
+I will fix it because:
 
-> +
-> +  reg:
-> +    minItems: 2
-> +    maxItems: 2
-> +    description:
-> +      The first region defines the base I/O address containing
-> +      the GPIO controller registers. The second region defines
-> +      the I/O address containing the Chip Common A interrupt
-> +      registers.
+1) I've reviewed this patch several times already.
+2) The solution is trivial.
+3) I want to pickup patch 04/11 and there is a dependency with this one.
 
-items:
-  - description: the I/O address containing the GPIO controller 
-      registers
-  - description: the I/O address containing the Chip Common A interrupt 
-      registers
-
-And minItems/maxItems can be implicit.
-
-> +
-> +  gpio-controller: true
-> +
-> +  '#gpio-cells':
-> +      const: 2
-> +
-> +  ngpios:
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-
-Common property, doesn't need a type definition. Also, it would have to 
-be under an 'allOf' to actually work.
-
-> +    minimum: 0
-> +    maximum: 32
-> +
-> +  interrupt-controller:
-> +    type: boolean
-
-Just 'interrupt-controller: true'
-
-> +
-> +  '#interrupt-cells':
-> +    const: 2
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - "#gpio-cells"
-> +  - gpio-controller
-> +
-> +allOf:
-> + - if:
-> +     properties:
-> +       interrupt-controller:
-> +         contains:
-> +           const: true
-> +   then:
-> +     required:
-> +       - interrupts
-> +       - '#interrupt-cells'
-
-This is mostly handled in the core schema already and 'dependencies' 
-works better for this anyways. All you need here is:
-
-dependencies:
-  interrupt-controller: [ interrupts ]
-
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/irq.h>
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    gpio@18000060 {
-> +        compatible = "brcm,iproc-gpio-cca";
-> +        #gpio-cells = <2>;
-> +        reg = <0x18000060 0x50>,
-> +              <0x18000000 0x50>;
-> +        ngpios = <12>;
-> +        gpio-controller;
-> +        interrupt-controller;
-> +        #interrupt-cells = <2>;
-> +        interrupts = <GIC_SPI 91 IRQ_TYPE_LEVEL_HIGH>;
-> +    };
-> +
-> +
-> +...
-> -- 
-> 2.23.0
-> 
+>
+>
+> > +             return -EINVAL;
+> > +
+> > +     spin_lock(&drvdata->spinlock);
+> > +     idx = config->addr_idx;
+> > +     /* clear Exlevel_ns & Exlevel_s bits[14:12, 11:8], bit[15] is res0 */
+> > +     config->addr_acc[idx] &= ~(GENMASK(14, 8));
+> > +     config->addr_acc[idx] |= (val << 8);
+> > +     spin_unlock(&drvdata->spinlock);
+> > +     return size;
+> > +}
+> > +static DEVICE_ATTR_RW(addr_exlevel_s_ns);
+> > +
+> >  static ssize_t seq_idx_show(struct device *dev,
+> >                           struct device_attribute *attr,
+> >                           char *buf)
+> > @@ -2038,6 +2079,7 @@ static struct attribute *coresight_etmv4_attrs[] = {
+> >       &dev_attr_addr_stop.attr,
+> >       &dev_attr_addr_ctxtype.attr,
+> >       &dev_attr_addr_context.attr,
+> > +     &dev_attr_addr_exlevel_s_ns.attr,
+> >       &dev_attr_seq_idx.attr,
+> >       &dev_attr_seq_state.attr,
+> >       &dev_attr_seq_event.attr,
+> > --
+> > 2.17.1
+> >
 
 _______________________________________________
 linux-arm-kernel mailing list
