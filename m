@@ -2,33 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34ECADAD58
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 14:51:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8608DAD5D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 14:52:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F044o9kEh8E+m7IOVjWuEazLZv3Dp4n8Lh4jdOLnPzA=; b=Jp4lgTRfnJYbT6
-	UsdhKjSJAcq3cHxCxLgTKwLMxBU8jDcIHoNv1lrabJrc29RGHWi60a/Ibf2VeXJOxg4/M5+SgOi2a
-	uTmrkRod+CK5Ue5R9KVg1I8r7zBKIPI3skE9HIwyd+KeBEJlz9JgKffWZN1xyRdsQuIHgHJUkHSX+
-	Q/yQzzOP8E2MlvCt0vL0aY/CoWzyol3zTjo6/p9eJaudgZ3kA0QLTuPiRaGOjOZUuxK9YnetvQQg4
-	eWsAXJ5GuaTVyYcIsdz2BoSOx2Q+mYm2YKNVR2Ih95yfJ2T9DJL1j6CfvtJ3bqbsuoDVgPspJ+xI5
-	4gNu39EqPo5kzP2/TpcQ==;
+	List-Owner; bh=zg6022oS+wRc1V200J9VVwm2AlEjyw7xz1w8GYPde04=; b=rv6FXUofxPQV6P
+	UVuQ9Fe/sOCiCKaJYLj58wy9rKvoO39I15vhGJHya85r3dK1+6wCkjMTsl6rGSZiLznA6xG7yZHBx
+	/jA4UqXCkccru0h/50Zwqd6tlP5DVzJdfoxu0XomSjXvV9T/uzlu9YG3OMKJR10NcFMvL12lTuw8V
+	U/4vG7j8YVr+7Uj7VeXDChU4/9uaaJ1pt4TzKbUBpmX4K0rh4Wx5d5bYbIu+pLDnjIBWnyHJHsYK3
+	UfUfEECzMfMHrn2fHQIs0S5dg1MyBXlNiD83g+HWfVvNCwaJn7CbHUGAjLbZF31srM/QaWCdPhWpO
+	pcpNN2JBUwHaT3YDaoAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL5Fk-00080u-KN; Thu, 17 Oct 2019 12:51:40 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1iL5G3-0008H1-EC; Thu, 17 Oct 2019 12:51:59 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL5Cj-0004Se-FW
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 12:48:35 +0000
-Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id CBF3761E3E7450A6C30C;
- Thu, 17 Oct 2019 20:48:31 +0800 (CST)
-Received: from localhost (10.133.213.239) by DGGEMS414-HUB.china.huawei.com
- (10.3.19.214) with Microsoft SMTP Server id 14.3.439.0; Thu, 17 Oct 2019
- 20:48:21 +0800
+ id 1iL5Cl-0004Ta-Kp
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 12:48:37 +0000
+Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 44A7D8F936FF819573C2;
+ Thu, 17 Oct 2019 20:48:33 +0800 (CST)
+Received: from localhost (10.133.213.239) by DGGEMS402-HUB.china.huawei.com
+ (10.3.19.202) with Microsoft SMTP Server id 14.3.439.0; Thu, 17 Oct 2019
+ 20:48:24 +0800
 From: YueHaibing <yuehaibing@huawei.com>
 To: <linus.walleij@linaro.org>, <manivannan.sadhasivam@linaro.org>,
  <afaerber@suse.de>, <f.fainelli@gmail.com>, <rjui@broadcom.com>,
@@ -36,10 +36,10 @@ To: <linus.walleij@linaro.org>, <manivannan.sadhasivam@linaro.org>,
  <jesper.nilsson@axis.com>, <lars.persson@axis.com>,
  <ludovic.desroches@microchip.com>, <nicolas.ferre@microchip.com>,
  <alexandre.belloni@bootlin.com>, <baruch@tkos.co.il>
-Subject: [PATCH -next 08/30] pinctrl: bcm281xx: use
+Subject: [PATCH -next 09/30] pinctrl: sunxi: use
  devm_platform_ioremap_resource() to simplify code
-Date: Thu, 17 Oct 2019 20:26:18 +0800
-Message-ID: <20191017122640.22976-9-yuehaibing@huawei.com>
+Date: Thu, 17 Oct 2019 20:26:19 +0800
+Message-ID: <20191017122640.22976-10-yuehaibing@huawei.com>
 X-Mailer: git-send-email 2.10.2.windows.1
 In-Reply-To: <20191017122640.22976-1-yuehaibing@huawei.com>
 References: <20191017122640.22976-1-yuehaibing@huawei.com>
@@ -47,15 +47,16 @@ MIME-Version: 1.0
 X-Originating-IP: [10.133.213.239]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_054834_104468_FFDD5675 
-X-CRM114-Status: GOOD (  10.26  )
+X-CRM114-CacheID: sfid-20191017_054835_893765_EFB171FB 
+X-CRM114-Status: UNSURE (   8.70  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -86,27 +87,31 @@ This is detected by coccinelle.
 
 Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 ---
- drivers/pinctrl/bcm/pinctrl-bcm281xx.c | 4 +---
+ drivers/pinctrl/sunxi/pinctrl-sunxi.c | 4 +---
  1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/drivers/pinctrl/bcm/pinctrl-bcm281xx.c b/drivers/pinctrl/bcm/pinctrl-bcm281xx.c
-index bc3b232..f690fc5 100644
---- a/drivers/pinctrl/bcm/pinctrl-bcm281xx.c
-+++ b/drivers/pinctrl/bcm/pinctrl-bcm281xx.c
-@@ -1400,12 +1400,10 @@ static struct pinctrl_desc bcm281xx_pinctrl_desc = {
- static int __init bcm281xx_pinctrl_probe(struct platform_device *pdev)
- {
- 	struct bcm281xx_pinctrl_data *pdata = &bcm281xx_pinctrl;
+diff --git a/drivers/pinctrl/sunxi/pinctrl-sunxi.c b/drivers/pinctrl/sunxi/pinctrl-sunxi.c
+index 0cbca30..b35c324 100644
+--- a/drivers/pinctrl/sunxi/pinctrl-sunxi.c
++++ b/drivers/pinctrl/sunxi/pinctrl-sunxi.c
+@@ -1385,7 +1385,6 @@ int sunxi_pinctrl_init_with_variant(struct platform_device *pdev,
+ 	struct pinctrl_pin_desc *pins;
+ 	struct sunxi_pinctrl *pctl;
+ 	struct pinmux_ops *pmxops;
 -	struct resource *res;
- 	struct pinctrl_dev *pctl;
+ 	int i, ret, last_pin, pin_idx;
+ 	struct clk *clk;
  
- 	/* So far We can assume there is only 1 bank of registers */
+@@ -1396,8 +1395,7 @@ int sunxi_pinctrl_init_with_variant(struct platform_device *pdev,
+ 
+ 	raw_spin_lock_init(&pctl->lock);
+ 
 -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	pdata->reg_base = devm_ioremap_resource(&pdev->dev, res);
-+	pdata->reg_base = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(pdata->reg_base)) {
- 		dev_err(&pdev->dev, "Failed to ioremap MEM resource\n");
- 		return -ENODEV;
+-	pctl->membase = devm_ioremap_resource(&pdev->dev, res);
++	pctl->membase = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(pctl->membase))
+ 		return PTR_ERR(pctl->membase);
+ 
 -- 
 2.7.4
 
