@@ -2,69 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEB95DB23B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 18:22:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43676DB270
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 18:34:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c6hgralxx5uu37Z1Ccw7BttRrunwvyi7gUUIZ1EZ/oI=; b=EAbxuCu9xU5wr1
-	d7w9bxP5YqYjw3avR7omVh2B0W6k7k1HNu5JFIW+RBBOWDLq3V21AV/AHuVf23618Qpp/aUjFcYJ4
-	Ktmywuh0XTJ6wctjucUvN7fgWHXpJfOfJwujYDoj+Q8l0ky5is/LaHgMf1V69qAKPWcmkjeHQQ5Qp
-	gr+xtyjc87vgkAYCTTMPLaUV22IhFJmlVXk1KfXl0c+UIVEZqB9+lVnPF/H3hLIxh9gb4Jd/6HgXx
-	aJFvAq40lpoAm6zzhOjzymhik9HZWlbfR1hRa8Bxp1bGMreBzGaWDiZFr/ApVZJLcF95p8y3Jv22u
-	jPisOBOdFTVIaKgXFNNw==;
+	List-Owner; bh=E7B6AwgGwXy/m0bUasX0UgRmcUY1eRRWzyj7q/1cX9Q=; b=RrJSs1D8Tqwdor
+	3pXqly/r+U6mK2qdbeDEwaEBOBVdkToP+VJ7vAuaf9gi5EA149fAhoGPIcHM1iwPBuOcNTNU5QlhQ
+	2lLp/8qYlxGwkEfiOphUNxIfqCRWyyBhZ4oQip+e/dgW+FwxSsddB9jgfdjtv27k1GNn4xFivfVZQ
+	uSKoGJ3hC967+PtkwyKQ+a1R8Aw+IPQRi+HY/JovRyVO82FZTuF31myaTnlmniM6PxYrk1QqkDfye
+	+dESoaAuRrP96vEzg76TG9zbjWeZRi+03D6yqLWi97c9WLl84DjjTp++0ErJxW9x/Cwmc9PxiUa+s
+	csdCHIerqf+WLk0lwmrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL8Xi-0005JD-Dy; Thu, 17 Oct 2019 16:22:26 +0000
-Received: from vps0.lunn.ch ([185.16.172.187])
+	id 1iL8jc-0000Wn-I9; Thu, 17 Oct 2019 16:34:44 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL8Xa-0005In-An
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 16:22:19 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
- s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=yYGDmTWdpok/xWnLGj7w6mA7xTyvaVCtiqcsC3AJCpQ=; b=2L+jAG8Ywqn73DSlznFpAet952
- vUroIflGLGIMEnu3QNwOuXpyLOY/ZGjiT7ph2pfGXhZQT98B8J/3fdzZvqx8YG07Q8c2jMQF1n8e9
- BoT+kzWK4wzK04r0iA8e+q2ZdrlJO8okRbkptmRX7YAZVwz+3MWII9AgeCnMJ20Ibd8w=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.92.2)
- (envelope-from <andrew@lunn.ch>)
- id 1iL8XW-0005Du-AQ; Thu, 17 Oct 2019 18:22:14 +0200
-Date: Thu, 17 Oct 2019 18:22:14 +0200
-From: Andrew Lunn <andrew@lunn.ch>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: Re: [PATCH v2 2/2] net: lpc_eth: parse phy nodes from device tree
-Message-ID: <20191017162214.GS17013@lunn.ch>
-References: <20191017094757.26885-1-alexandre.belloni@bootlin.com>
- <20191017094757.26885-2-alexandre.belloni@bootlin.com>
+ id 1iL8jS-0000WE-U8
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 16:34:36 +0000
+Received: by mail-ot1-f67.google.com with SMTP id o44so2424726ota.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 17 Oct 2019 09:34:33 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=C3mMcajmmWiTF2tnnxoirKHCmnTAKZDTtWXx5ZDHeWs=;
+ b=e9NqegKITj9YzQfSPA4wwY67OkgZBRwEBU9KpwD2K3fRPAi20hTlfw148WMsKKsuXR
+ HRDrG9FqfG7Qfyh0ymyMG/qSWrXM6QF1e/1zBTvhGVotJG3QeyWMaxSuctOjouK7jnGE
+ YB7l+9/2gMsPl9RQbd3bt/jm9xQnfaMyBDvtM2+PRMEYtJcFR8yhoSaeOpGsl5v7bzdh
+ sCTHHJE86GsbVPUi2Ll//y00gz+iaqCIkt3inMaMxvntGb7OnxO4MzADUIDBpved2bVh
+ i59w5iOdXMZqPJjYaJdGpV0SEupguWG8R+8S1MzKs1Q4scfRixfQVDXABGRc+Q69meLI
+ 79vA==
+X-Gm-Message-State: APjAAAXEzunSK+QmpQg6FE1NgAil5+4GHVjDCBSGdxL3yRFRc+cV/DZ4
+ wKCex2lyyaQc/M/hm7MLjbk9nJ4=
+X-Google-Smtp-Source: APXvYqxmXr4i5Zk+4RgsYpkljl8yHKw0u/wDt5mYRIh6dw01K8bE2nEDXt13Ws7kQI7FRmola1U7ow==
+X-Received: by 2002:a9d:6a93:: with SMTP id l19mr3934654otq.196.1571330072588; 
+ Thu, 17 Oct 2019 09:34:32 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id l30sm711247otl.74.2019.10.17.09.34.31
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 17 Oct 2019 09:34:31 -0700 (PDT)
+Date: Thu, 17 Oct 2019 11:34:30 -0500
+From: Rob Herring <robh@kernel.org>
+To: Maxime Ripard <mripard@kernel.org>
+Subject: Re: [PATCH v3] ASoC: dt-bindings: Convert Allwinner A10 codec to a
+ schema
+Message-ID: <20191017163430.GA18716@bogus>
+References: <20191016104355.65169-1-mripard@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191017094757.26885-2-alexandre.belloni@bootlin.com>
+In-Reply-To: <20191016104355.65169-1-mripard@kernel.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_092218_371384_75E54209 
-X-CRM114-Status: GOOD (  11.19  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191017_093434_970499_A2FFEB3B 
+X-CRM114-Status: GOOD (  13.70  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [185.16.172.187 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [209.85.210.67 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,38 +92,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- Vladimir Zapolskiy <vz@mleia.com>, Sylvain Lemieux <slemieux.tyco@gmail.com>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ alsa-devel@alsa-project.org, lgirdwood@gmail.com,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ broonie@kernel.org, Frank Rowand <frowand.list@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 17, 2019 at 11:47:57AM +0200, Alexandre Belloni wrote:
-> When connected to a micrel phy, phy_find_first doesn't work properly
-> because the first phy found is on address 0, the broadcast address but, the
-> first thing the phy driver is doing is disabling this broadcast address.
-> The phy is then available only on address 1 but the mdio driver doesn't
-> know about it.
+On Wed, 16 Oct 2019 12:43:55 +0200, Maxime Ripard wrote:
+> The Allwinner SoCs have an embedded audio codec that is supported in Linux,
+> with a matching Device Tree binding.
 > 
-> Instead, register the mdio bus using of_mdiobus_register and try to find
-> the phy description in device tree before falling back to phy_find_first.
+> Now that we have the DT validation in place, let's convert the device tree
+> bindings for that controller over to a YAML schemas.
 > 
-> This ultimately also allows to describe the interrupt the phy is connected
-> to.
+> Signed-off-by: Maxime Ripard <mripard@kernel.org>
 > 
-> Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+> ---
+> 
+> Changes from v2:
+>   - Change the audio-routing values to an enum, and enforce boundaries on
+>     the size
+>   - Add restrictions to the possible values of audio-routing
+> 
+> Changes from v1:
+>   - Fix subject prefix
+> ---
+>  .../sound/allwinner,sun4i-a10-codec.yaml      | 267 ++++++++++++++++++
+>  .../devicetree/bindings/sound/sun4i-codec.txt |  94 ------
+>  2 files changed, 267 insertions(+), 94 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-codec.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/sound/sun4i-codec.txt
+> 
 
-Hi Alexandre
-
-It is normal to have a cover note for a patch series.
-
-Otherwise:
-
-Reviewed-by: Andrew Lunn <andrew@lunn.ch>
-
-    Andrew
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
