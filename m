@@ -2,52 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB3C1DB276
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 18:35:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C56ADB280
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 18:36:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xu2UCue987pdiled9OgqWkmIH5gVkl/v/2ui3zXdRVs=; b=Ak0IM+HfxPFNWq
-	Z0K+rM48drd/47bHk0yz2sAVoTypi/CtyEWagU3F5cJi/Qr1MGf2nGkqnYrtGBiBe9ZlwomwPvbnC
-	JwSwvDJ3w7hdZrzPcPwJyxugGQsRrg7CZTVJc1b+O/IUEO1E5BPi29+A4untn/btBHgmyG99D5SCB
-	HkFQhCUrSwdxYAsPJcwllNEGM5HHIkZ/j/K6mz3WzYwsvalrgd6HGHrwveguto/FgQQulQQu9xlcM
-	XOa/srZgisHFjh4oxJC4+4Aq41Q2FqtEhOTRK31C8F7eZNSnLgNFZ5KzzcWiB4oNMjBlqZNT3EIS9
-	tnHs5F8jGIBShKMkOEyQ==;
+	List-Owner; bh=vlbiAq/rIF0M0XMueN5AogTbkTrClWzeDMjP5yZOriI=; b=kCOZLI7NzU3TkU
+	tZbMLPUvKND1yBL17q8KupsVie4qBRg3rFhjjcPjygiM65bgWQg17tVbkGMsZWI4Imx/OOglmZZCK
+	vip48OkG2RcP766mF8CWXvTcc/8SWTeuzZStQHqKrv5G3hfFL3bXgIAigC79APMIycsqf5K9Ej+GX
+	soReCBM2iidDHXx6eHX5FRi2/YBbPLBU1xoQjZrz5WEkvn9PwpssTm1ewe2eXMFsHA3ZwYinqYYrT
+	KBBdrcBwGR56nzbWDkrjAQt0V99e4oDuqKEQm7nTqMhbwhyGx0QXpbx5fpPCX8BqfUmsA4u45UFGL
+	kzscIkzMWEbRB2Ng7SwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL8jp-0000hJ-Ms; Thu, 17 Oct 2019 16:34:57 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL8jZ-0000XB-RK; Thu, 17 Oct 2019 16:34:44 +0000
-Received: from atomide.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTPS id C458C804F;
- Thu, 17 Oct 2019 16:35:10 +0000 (UTC)
-Date: Thu, 17 Oct 2019 09:34:33 -0700
-From: Tony Lindgren <tony@atomide.com>
-To: min.guo@mediatek.com
-Subject: Re: [PATCH v8 6/6] usb: musb: Add support for MediaTek musb controller
-Message-ID: <20191017163433.GN5610@atomide.com>
-References: <20191017094126.29045-1-min.guo@mediatek.com>
- <20191017094126.29045-7-min.guo@mediatek.com>
+	id 1iL8kt-0002LL-5K; Thu, 17 Oct 2019 16:36:03 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iL8kZ-0002HP-RM
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 16:35:45 +0000
+Received: by mail-pg1-x541.google.com with SMTP id p30so1675890pgl.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 17 Oct 2019 09:35:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=n6iC9aFIm7u0dU/zNM/QcsEIHkk1HFiJjgCYQoT2Mo4=;
+ b=rLw/zBLGb832jZnhC2XQDPu8GmL2TDqIyAqgKiHS1bkVHYZkpv31ojFkQe9yoiJosu
+ OATsID2jjJR5fxB+f27xypsvogvi6NjOdJuEY7WyxCWVO7QiPmERQP2+3LNeZNHKeyYy
+ U22+IPML7CXzC6MXwg06aYBKwbQvWV1aigUizyhhQR+EVGzHw+1AhnxJoW8lCCKcuziZ
+ eCRAX7bq4dZl7sJRffrCj8kB0V6/MnbvHkNqZ1ZUfVoC4MD5M4rHy2E4APOoapoH4CAg
+ 2xNy2mueNekGx0CHPQDYJUVPgXpm0OnuDNHVMnK6kDtFcEwWHo03utLEe0wjkTK/Sp3/
+ oztg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=n6iC9aFIm7u0dU/zNM/QcsEIHkk1HFiJjgCYQoT2Mo4=;
+ b=l1Qgx+LijrJS/bPkNVPm8BnHFuaJF+gZsSwxQSHaLVWgquFvNb1yspaOTOQ14fiN99
+ YTlaZipubmCNRUY5Gg1lAHdlr5VFhgTLApr4eapU8RjKhZXLSU6ZoWgXJMupR8CfMDWK
+ fKLhDbMaDhiElOz7hOFT+Bj1a8UCwINySIGoemoKQvZ+noVzLYFHI9ejK2wCRnlGJ9XA
+ +gQjpYVnx1jxTmbjzaZzb2AwvyQ1orhKi2h31tcKUkNY3bTVCtTPyZYQp+f6XBms/5Ul
+ 1g5soP2+QMi886pyqbihu5oZzmTceSi/371rF74J1DoECx5PXyCv0Ig+asRHZXC/aSkJ
+ V6Hg==
+X-Gm-Message-State: APjAAAUgt4LnUzYm0Yncavne8cB4dIz5csWG35RkKaWMIXXScGR+qt9A
+ b4OABsst8HhMHjrQAVJSAHBLLjOlS8A=
+X-Google-Smtp-Source: APXvYqx8QHZBP4DAVpyoFFyUNQRbXJjtCE3kG8SFGsa5w0UJekNJKz/9aCD9K0RXSuH2lXuA6W7rnQ==
+X-Received: by 2002:a63:82:: with SMTP id 124mr5391099pga.112.1571330142686;
+ Thu, 17 Oct 2019 09:35:42 -0700 (PDT)
+Received: from localhost ([2601:602:9200:a1a5:d8f2:392e:5b44:157d])
+ by smtp.gmail.com with ESMTPSA id j10sm3548870pfn.128.2019.10.17.09.35.41
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 17 Oct 2019 09:35:41 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Guillaume La Roque <glaroque@baylibre.com>, amit.kucheria@linaro.org,
+ rui.zhang@intel.com, edubezval@gmail.com, daniel.lezcano@linaro.org
+Subject: Re: [PATCH v7 4/7] arm64: dts: meson: g12: Add minimal thermal zone
+In-Reply-To: <7hsgnsfxpx.fsf@baylibre.com>
+References: <20191004090114.30694-1-glaroque@baylibre.com>
+ <20191004090114.30694-5-glaroque@baylibre.com> <7hsgnsfxpx.fsf@baylibre.com>
+Date: Thu, 17 Oct 2019 09:35:41 -0700
+Message-ID: <7ho8yfba8y.fsf@baylibre.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191017094126.29045-7-min.guo@mediatek.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_093441_976095_846456D3 
-X-CRM114-Status: GOOD (  12.30  )
+X-CRM114-CacheID: sfid-20191017_093543_905635_5956E0F5 
+X-CRM114-Status: UNSURE (   8.53  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,116 +94,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Yonglong Wu <yonglong.wu@mediatek.com>, hdegoede@redhat.com,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, chunfeng.yun@mediatek.com,
- Rob Herring <robh+dt@kernel.org>, Alan Stern <stern@rowland.harvard.edu>,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- Bin Liu <b-liu@ti.com>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-pm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Kevin Hilman <khilman@baylibre.com> writes:
 
-Just few comments for future changes that might help below.
+> Guillaume La Roque <glaroque@baylibre.com> writes:
+>
+>> Add minimal thermal zone for two temperature sensor
+>> One is located close to the DDR and the other one is
+>> located close to the PLLs (between the CPU and GPU)
+>
+> nit: subject should be "arm64: dts: amlogic" (not meson).
+>
+> I fixed it up when applying,
 
-* min.guo@mediatek.com <min.guo@mediatek.com> [191017 09:42]:
-> --- /dev/null
-> +++ b/drivers/usb/musb/mediatek.c
-> +static int musb_usb_role_sx_set(struct device *dev, enum usb_role role)
-> +{
-> +	struct mtk_glue *glue = dev_get_drvdata(dev);
-> +	struct musb *musb = glue->musb;
-> +	u8 devctl = readb(musb->mregs + MUSB_DEVCTL);
-> +	enum usb_role new_role;
-> +
-> +	if (role == glue->role)
-> +		return 0;
-> +
-> +	switch (role) {
-> +	case USB_ROLE_HOST:
-> +		musb->xceiv->otg->state = OTG_STATE_A_WAIT_VRISE;
-> +		glue->phy_mode = PHY_MODE_USB_HOST;
-> +		new_role = USB_ROLE_HOST;
-> +		if (glue->role == USB_ROLE_NONE)
-> +			phy_power_on(glue->phy);
-> +
-> +		devctl |= MUSB_DEVCTL_SESSION;
-> +		musb_writeb(musb->mregs, MUSB_DEVCTL, devctl);
-> +		MUSB_HST_MODE(musb);
-> +		break;
-> +	case USB_ROLE_DEVICE:
-> +		musb->xceiv->otg->state = OTG_STATE_B_IDLE;
-> +		glue->phy_mode = PHY_MODE_USB_DEVICE;
-> +		new_role = USB_ROLE_DEVICE;
-> +		devctl &= ~MUSB_DEVCTL_SESSION;
-> +		musb_writeb(musb->mregs, MUSB_DEVCTL, devctl);
-> +		if (glue->role == USB_ROLE_NONE)
-> +			phy_power_on(glue->phy);
-> +
-> +		MUSB_DEV_MODE(musb);
-> +		break;
-> +	case USB_ROLE_NONE:
-> +		glue->phy_mode = PHY_MODE_USB_OTG;
-> +		new_role = USB_ROLE_NONE;
-> +		devctl &= ~MUSB_DEVCTL_SESSION;
-> +		musb_writeb(musb->mregs, MUSB_DEVCTL, devctl);
-> +		if (glue->role != USB_ROLE_NONE)
-> +			phy_power_off(glue->phy);
-> +
-> +		break;
-> +	default:
-> +		dev_err(glue->dev, "Invalid State\n");
-> +		return -EINVAL;
-> +	}
-> +
-> +	glue->role = new_role;
-> +	phy_set_mode(glue->phy, glue->phy_mode);
-> +
-> +	return 0;
-> +}
+I got it backwards, this one was right, the other ones with "amlogic"
+should be "meson". I (re)fixed it in my 'v5.5/dt64' branch.
 
-For the role change, I recently posted a patch "[PATCH 4/7] usb: musb:
-Add musb_set_host and peripheral and use them for omap2430". That
-should work for you looking at the code above, so later on you might
-want to change to use that. Probably best done as a follow-up patch
-to avoid adding extra dependencies to your series.
-
-Please also note that musb core attempts to do things automagically
-on it's own. So trying to force mode in general does not work reliably.
-This is because VBUS may not yet have risen for example.
-
-The role change is best done based on the USB PHY as then usually
-musb has already switched to the right mode automatically :)
-
-> +static const struct musb_platform_ops mtk_musb_ops = {
-> +	.quirks = MUSB_DMA_INVENTRA,
-> +	.init = mtk_musb_init,
-> +	.get_toggle = mtk_musb_get_toggle,
-> +	.set_toggle = mtk_musb_set_toggle,
-> +	.exit = mtk_musb_exit,
-> +#ifdef CONFIG_USB_INVENTRA_DMA
-> +	.dma_init = musbhs_dma_controller_create_noirq,
-> +	.dma_exit = musbhs_dma_controller_destroy,
-> +#endif
-> +	.clearb = mtk_musb_clearb,
-> +	.clearw = mtk_musb_clearw,
-> +	.busctl_offset = mtk_musb_busctl_offset,
-> +	.set_mode = mtk_musb_set_mode,
-> +};
-
-So you may want to consider getting rid of .set_mode completely
-and rely on USB PHY calls instead.
-
-In some cases you need to use struct phy_companion for set_vbus
-depending how things are wired.
-
-Regards,
-
-Tony
+Kevin
 
 _______________________________________________
 linux-arm-kernel mailing list
