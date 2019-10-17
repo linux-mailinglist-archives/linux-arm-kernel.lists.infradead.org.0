@@ -2,33 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6ADEDAD7D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 14:54:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43A53DAD7C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 14:54:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WhIfY4lVToEgtB+CLHuF2JyRU8C2JqQxZ7PrncwCKUg=; b=odpahUwJn117a/
-	21GOPfi8qymrkOTJNB0oemz5betq9394NLnRvcYm1knW41poytzT9tpaUxOOTKEE0asvKqpWWysxo
-	avxivYjATDwGARIx3RfuYw0lFQ8zvsWILebsQjqVrnxH2EZt0tUbwDZCy/5rWH5YN4krb3lkHhjWz
-	hi9yh5YQd5k16OiJZMihQCcogUJCiFwuHM/g/gBMqW5UpCS8uAaDtrNP7xfyn270wDL9eNsa2XlFE
-	6vAXOQb3fxcNTQJBaMKauRGzFBggp5xkSBrZBVSI+fcFoEYe0E5U+CKoD3mPPTjzUwh69OR3X50HS
-	iCo4fNq/a959Gm8HFaXA==;
+	List-Owner; bh=WUDahQQHutiUUhGUfUpR+tBpSRifp6Ik+y6DOoq3mBE=; b=IVY7zvx3LtIGf7
+	2+5bblxiLGfkQz0g3HyL4oe5wAS8miwMzwv56ST2ikI7h+mikE1roeFZPx9hFMWsjvy90PNbvl68Z
+	LvsPoekWpIZv2V9HkBW897P6LXpXGFEvjNwsX+dd9MrfTg+CLqDhghZHMHoky99G3qa2PbZYm24ju
+	YO4XjcPy5XnnNZRIZgTGcxvhCayu3mJltX0Y4vx2C1O2FBKyD8R04ZuPfVH20UW2DFQhTbel1yRyn
+	exnKlnY1lc9545nvvidmHaELs/kaXLHbE9Fhr5dMF+Z0tzN2yaciia9hoawfxNhk6TfOnPOiS7OUf
+	DDEtO2Z3wcZVQkmPJUsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL5IL-0001x6-5o; Thu, 17 Oct 2019 12:54:21 +0000
+	id 1iL5I4-0001jx-2C; Thu, 17 Oct 2019 12:54:04 +0000
 Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL5D3-0004kD-5U
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 12:48:55 +0000
+ id 1iL5D2-0004kG-V8
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 12:48:54 +0000
 Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 51DAAB3CBACA939ACFF9;
+ by Forcepoint Email with ESMTP id 5F7ED13C54382113A679;
  Thu, 17 Oct 2019 20:48:51 +0800 (CST)
 Received: from localhost (10.133.213.239) by DGGEMS405-HUB.china.huawei.com
  (10.3.19.205) with Microsoft SMTP Server id 14.3.439.0; Thu, 17 Oct 2019
- 20:48:41 +0800
+ 20:48:44 +0800
 From: YueHaibing <yuehaibing@huawei.com>
 To: <linus.walleij@linaro.org>, <manivannan.sadhasivam@linaro.org>,
  <afaerber@suse.de>, <f.fainelli@gmail.com>, <rjui@broadcom.com>,
@@ -36,10 +36,10 @@ To: <linus.walleij@linaro.org>, <manivannan.sadhasivam@linaro.org>,
  <jesper.nilsson@axis.com>, <lars.persson@axis.com>,
  <ludovic.desroches@microchip.com>, <nicolas.ferre@microchip.com>,
  <alexandre.belloni@bootlin.com>, <baruch@tkos.co.il>
-Subject: [PATCH -next 16/30] pinctrl: pistachio: use
+Subject: [PATCH -next 17/30] pinctrl: lpc18xx: use
  devm_platform_ioremap_resource() to simplify code
-Date: Thu, 17 Oct 2019 20:26:26 +0800
-Message-ID: <20191017122640.22976-17-yuehaibing@huawei.com>
+Date: Thu, 17 Oct 2019 20:26:27 +0800
+Message-ID: <20191017122640.22976-18-yuehaibing@huawei.com>
 X-Mailer: git-send-email 2.10.2.windows.1
 In-Reply-To: <20191017122640.22976-1-yuehaibing@huawei.com>
 References: <20191017122640.22976-1-yuehaibing@huawei.com>
@@ -47,8 +47,8 @@ MIME-Version: 1.0
 X-Originating-IP: [10.133.213.239]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_054853_831928_263E0541 
-X-CRM114-Status: UNSURE (   9.51  )
+X-CRM114-CacheID: sfid-20191017_054853_608397_C8FE7F2F 
+X-CRM114-Status: UNSURE (   9.34  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -87,30 +87,29 @@ This is detected by coccinelle.
 
 Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 ---
- drivers/pinctrl/pinctrl-pistachio.c | 4 +---
+ drivers/pinctrl/pinctrl-lpc18xx.c | 4 +---
  1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/drivers/pinctrl/pinctrl-pistachio.c b/drivers/pinctrl/pinctrl-pistachio.c
-index eb40ae9..fa370c1 100644
---- a/drivers/pinctrl/pinctrl-pistachio.c
-+++ b/drivers/pinctrl/pinctrl-pistachio.c
-@@ -1435,7 +1435,6 @@ static const struct of_device_id pistachio_pinctrl_of_match[] = {
- static int pistachio_pinctrl_probe(struct platform_device *pdev)
+diff --git a/drivers/pinctrl/pinctrl-lpc18xx.c b/drivers/pinctrl/pinctrl-lpc18xx.c
+index 06be55d..e467754 100644
+--- a/drivers/pinctrl/pinctrl-lpc18xx.c
++++ b/drivers/pinctrl/pinctrl-lpc18xx.c
+@@ -1324,15 +1324,13 @@ static int lpc18xx_create_group_func_map(struct device *dev,
+ static int lpc18xx_scu_probe(struct platform_device *pdev)
  {
- 	struct pistachio_pinctrl *pctl;
+ 	struct lpc18xx_scu_data *scu;
 -	struct resource *res;
+ 	int ret;
  
- 	pctl = devm_kzalloc(&pdev->dev, sizeof(*pctl), GFP_KERNEL);
- 	if (!pctl)
-@@ -1443,8 +1442,7 @@ static int pistachio_pinctrl_probe(struct platform_device *pdev)
- 	pctl->dev = &pdev->dev;
- 	dev_set_drvdata(&pdev->dev, pctl);
+ 	scu = devm_kzalloc(&pdev->dev, sizeof(*scu), GFP_KERNEL);
+ 	if (!scu)
+ 		return -ENOMEM;
  
 -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	pctl->base = devm_ioremap_resource(&pdev->dev, res);
-+	pctl->base = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(pctl->base))
- 		return PTR_ERR(pctl->base);
+-	scu->base = devm_ioremap_resource(&pdev->dev, res);
++	scu->base = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(scu->base))
+ 		return PTR_ERR(scu->base);
  
 -- 
 2.7.4
