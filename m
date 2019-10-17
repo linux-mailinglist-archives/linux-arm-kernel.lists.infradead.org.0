@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 679A7DA716
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 10:18:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F102ADA718
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 10:18:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=3Q+zYTItgu8dUWm1IUL3nk30nbOGBP0qEF/Zl5X7l7I=; b=PY23LZbsfOyB2WkKQs8RFws62p
-	roG6xoKgJbkSJV1z2FHa7xIh6Tad4pBbzxML6W5FMYwc0UHevuQxGrmQRQfsihAGCbr5jczqvVzZD
-	hSloc+iJ5hEYYxWH7oeXaBLBQTg5tM5KeQUMNkcigxqin6VhnhfTx9mDgLwHfir30NDEBWdoYezdt
-	eKqxra0RyNI+7RCqEbaDLke64Hc+IUxRszDBvtJgNPyspbiywfg9RGoA7vt05ZlkQaAQsCiYTGMCd
-	XrtS6zMURkwArq5Pi/zyMv5MB7IKs1xa+P+2wSEOmAxaOGBnmPnNwTPUUv1LeAAn7SPqINWdReyTf
-	7SqVCmig==;
+	bh=HFnUfm04yYhpWcSZX8CKU6gsyqv/VdQgOdSQGuDdH2w=; b=brLA1cMW46WcjKKSFrWlak2lG1
+	5crXw6JqYWuwGpYdAh0+oFbVHF2zBnL8prMk4Z5gquaIgOAMQH8ifMSx4i+a+3/wK41tj95MysEq0
+	FXv45WbQHU4bU08/5S/NASo66om3urxX/MOpZq51YIbL9+v2Eym24D4xkAjE0TBtXXGmQew4JgEEN
+	/mMia5uAkDPUJ3SIgKYZRm0PC40EDHFTf60jstvrS9vhu4MCPbTxKWqeulKF0Utf2tufn95gZMgnz
+	4LMsRnKM8wiCICHtglRFTc+shYV2PCC1Pe8Dy1LzfYQcSjo+/gHGp+bKhA2RZr1FVCkOtNM3rFCzc
+	1+QN8izA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL0yk-0004Sm-7E; Thu, 17 Oct 2019 08:17:50 +0000
+	id 1iL0zG-0004xm-Vs; Thu, 17 Oct 2019 08:18:23 +0000
 Received: from [217.140.110.172] (helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL0wS-0001bc-6P
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 08:15:30 +0000
+ id 1iL0wS-000256-65
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 08:15:32 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9B48915AD;
- Thu, 17 Oct 2019 01:15:21 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B771428;
+ Thu, 17 Oct 2019 01:15:25 -0700 (PDT)
 Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.0.144])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 00D9F3F6C4;
- Thu, 17 Oct 2019 01:15:17 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 1D0E63F6C4;
+ Thu, 17 Oct 2019 01:15:21 -0700 (PDT)
 From: Amit Daniel Kachhap <amit.kachhap@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [RFC PATCH 10/11] arm64: mask PAC bits of __builtin_return_address
-Date: Thu, 17 Oct 2019 13:44:24 +0530
-Message-Id: <1571300065-10236-11-git-send-email-amit.kachhap@arm.com>
+Subject: [PATCH 11/11] arm64: compile the kernel with ptrauth return address
+ signing
+Date: Thu, 17 Oct 2019 13:44:25 +0530
+Message-Id: <1571300065-10236-12-git-send-email-amit.kachhap@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1571300065-10236-1-git-send-email-amit.kachhap@arm.com>
 References: <1571300065-10236-1-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_011528_435795_D52CD0F8 
-X-CRM114-Status: GOOD (  12.06  )
+X-CRM114-CacheID: sfid-20191017_011528_461741_832A4972 
+X-CRM114-Status: GOOD (  16.97  )
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
@@ -76,57 +77,101 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch redefines __builtin_return_address to mask pac bits
-when Pointer Authentication is enabled. As __builtin_return_address
-is used mostly used to refer to the caller function symbol address
-so masking runtime generated pac bits will make it clear to the user.
+From: Kristina Martsenko <kristina.martsenko@arm.com>
 
-This change fixes the utilities like cat /proc/vmallocinfo to now
-show the correct logs.
+Compile all functions with two ptrauth instructions: PACIASP in the
+prologue to sign the return address, and AUTIASP in the epilogue to
+authenticate the return address (from the stack). If authentication
+fails, the return will cause an instruction abort to be taken, followed
+by an oops and killing the task.
 
+This should help protect the kernel against attacks using
+return-oriented programming. As ptrauth protects the return address, it
+can also serve as a replacement for CONFIG_STACKPROTECTOR, although note
+that it does not protect other parts of the stack.
+
+The new instructions are in the HINT encoding space, so on a system
+without ptrauth they execute as NOPs.
+
+CONFIG_ARM64_PTR_AUTH now not only enables ptrauth for userspace and KVM
+guests, but also automatically builds the kernel with ptrauth
+instructions if the compiler supports it. If there is no compiler
+support, we do not warn that the kernel was built without ptrauth
+instructions.
+
+GCC 7 and 8 support the -msign-return-address option, while GCC 9
+deprecates that option and replaces it with -mbranch-protection. Support
+both options.
+
+Reviewed-by: Kees Cook <keescook@chromium.org>
+Signed-off-by: Kristina Martsenko <kristina.martsenko@arm.com>
 Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 ---
 Changes since RFC v2:
- - New patch
+ - Removed function attribute definition [Suzuki]
+ - Added comments about GCC versions to Kconfig symbols [Kees]
+ - Added a note in Kconfig (and the commit message) about STACKPROTECTOR
+ - Changed GCC option to protect all functions with ptrauth and just non-leaf.
 
- arch/arm64/Kconfig                |  1 +
- arch/arm64/include/asm/compiler.h | 15 +++++++++++++++
- 2 files changed, 16 insertions(+)
- create mode 100644 arch/arm64/include/asm/compiler.h
+ arch/arm64/Kconfig  | 16 +++++++++++++++-
+ arch/arm64/Makefile |  6 ++++++
+ 2 files changed, 21 insertions(+), 1 deletion(-)
 
 diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 253e3c5..8e86f6a 100644
+index 8e86f6a..f83db93 100644
 --- a/arch/arm64/Kconfig
 +++ b/arch/arm64/Kconfig
-@@ -118,6 +118,7 @@ config ARM64
- 	select HAVE_ALIGNED_STRUCT_PAGE if SLUB
- 	select HAVE_ARCH_AUDITSYSCALL
- 	select HAVE_ARCH_BITREVERSE
-+	select HAVE_ARCH_COMPILER_H
- 	select HAVE_ARCH_HUGE_VMAP
- 	select HAVE_ARCH_JUMP_LABEL
- 	select HAVE_ARCH_JUMP_LABEL_RELATIVE
-diff --git a/arch/arm64/include/asm/compiler.h b/arch/arm64/include/asm/compiler.h
-new file mode 100644
-index 0000000..229efca
---- /dev/null
-+++ b/arch/arm64/include/asm/compiler.h
-@@ -0,0 +1,15 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef __ASM_ARM_COMPILER_H
-+#define __ASM_ARM_COMPILER_H
+@@ -1399,11 +1399,17 @@ config ARM64_PTR_AUTH
+ 	  and other attacks.
+ 
+ 	  This option enables these instructions at EL0 (i.e. for userspace).
+-
+ 	  Choosing this option will cause the kernel to initialise secret keys
+ 	  for each process at exec() time, with these keys being
+ 	  context-switched along with the process.
+ 
++	  If the compiler supports the -mbranch-protection or
++	  -msign-return-address flag (e.g. GCC 7 or later), then this option
++	  will also cause the kernel itself to be compiled with return address
++	  protection. In this case, and if the target hardware is known to
++	  support pointer authentication, then CONFIG_STACKPROTECTOR can be
++	  disabled with minimal loss of protection.
 +
-+#ifndef __ASSEMBLY__
+ 	  The feature is detected at runtime. If the feature is not present in
+ 	  hardware it will not be advertised to userspace/KVM guest nor will it
+ 	  be enabled. However, KVM guest also require VHE mode and hence
+@@ -1413,6 +1419,14 @@ config ARM64_PTR_AUTH
+ 	  then the secondary CPU will be offlined. On such a system, this
+ 	  option should not be selected.
+ 
++config CC_HAS_BRANCH_PROT_PAC_RET
++	# GCC 9 or later
++	def_bool $(cc-option,-mbranch-protection=pac-ret+leaf)
 +
-+#if defined(CONFIG_ARM64_PTR_AUTH)
-+#define __builtin_return_address(val)				\
-+	(void *)((unsigned long)__builtin_return_address(val) |	\
-+	(GENMASK(63, 56) | GENMASK(54, VA_BITS)))
-+#endif
++config CC_HAS_SIGN_RETURN_ADDRESS
++	# GCC 7, 8
++	def_bool $(cc-option,-msign-return-address=all)
 +
-+#endif
+ endmenu
+ 
+ config ARM64_SVE
+diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+index 84a3d50..4dbe86a 100644
+--- a/arch/arm64/Makefile
++++ b/arch/arm64/Makefile
+@@ -88,6 +88,12 @@ stack_protector_prepare: prepare0
+ 					include/generated/asm-offsets.h))
+ endif
+ 
++ifeq ($(CONFIG_ARM64_PTR_AUTH),y)
++pac-flags-$(CONFIG_CC_HAS_SIGN_RETURN_ADDRESS) := -msign-return-address=all
++pac-flags-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET) := -mbranch-protection=pac-ret+leaf
++KBUILD_CFLAGS += $(pac-flags-y)
++endif
 +
-+#endif /* __ASM_ARM_COMPILER_H */
+ ifeq ($(CONFIG_CPU_BIG_ENDIAN), y)
+ KBUILD_CPPFLAGS	+= -mbig-endian
+ CHECKFLAGS	+= -D__AARCH64EB__
 -- 
 2.7.4
 
