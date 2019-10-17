@@ -2,34 +2,34 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17EDEDB54E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 19:59:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E777BDB551
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 19:59:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ntdq9XA9Y1uSyS+LcfUaUHZayUJOEpWH2F25iRbwFSM=; b=bIkSXNNM7BdJp0
-	w+s713ca9ShK5TE9TWiWC8qMySVNKP2iFzjB7NAtUoE1mZjywc7KB4y6xjMxJ9C/gCeXjakjhy08T
-	yTCJ2/K0QoPGTqmqz/0W6193O260p4a/OYtD33mMQDHkKXzofiT/wQe5e/ESj8WROF2kCMOOmZ+oc
-	PWpMJQijjJ7emDnDK0/CorIbDuoojo7o8K6T8VJ1+bZCOyBc2XTib8uu5/p+9qBdZABjAiRhy6efW
-	+NBn7OjUiVnUDhuEdxKliU9+BPSsrW/tXXi34XuKF7Bgyi7ASIs8UtMvwCUgrdw9+Mil+mgKhejs9
-	luy5KZZwushV0Egchb+g==;
+	List-Owner; bh=21rFP4veeXUXWCTd9RNOAZOh2cbZavC05QGdFL7ExpA=; b=E1gljxz1wwuBYO
+	r90cOZFZOQUj/uyPAgB6lnhH+FjBrQOd7lw/z4LP1BRpwjzjbeqowaRgIkWapl1INpPH6wTJ6HWnk
+	EkqqZkYgc7yQYIO2rNrlbEDubwd3W7+8jsTNTsjw8oQ5ugwXat5VlenlTKiortPw3re6vKVSowm3U
+	zPT/btNvBABwpGiw79V8BxcnHdqsjzZd/TOspvY1BzJpvC6gcyVR2QSUcn2cBby65vVQiN/0KwpZm
+	nAS6hxymFuHy475nPW+6m5B2fEpHMHE9jCLcilbNGTceCIYvKp8PcxOv/N83ytJDB01M/ieQmekl/
+	aJk1reOiweoJ/pJoddWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLA3X-0003N7-Uh; Thu, 17 Oct 2019 17:59:23 +0000
+	id 1iLA3n-0003YY-Ul; Thu, 17 Oct 2019 17:59:39 +0000
 Received: from [2001:4bb8:18c:d7b:c70:4a89:bc61:3] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL9rR-0006Oi-4E; Thu, 17 Oct 2019 17:46:53 +0000
+ id 1iL9rT-0006Qq-S0; Thu, 17 Oct 2019 17:46:56 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Arnd Bergmann <arnd@arndb.de>, Guo Ren <guoren@kernel.org>,
  Michal Simek <monstr@monstr.eu>, Greentime Hu <green.hu@gmail.com>,
  Vincent Chen <deanbo422@gmail.com>, Guan Xuetao <gxt@pku.edu.cn>,
  x86@kernel.org
-Subject: [PATCH 20/21] csky: remove ioremap_cache
-Date: Thu, 17 Oct 2019 19:45:53 +0200
-Message-Id: <20191017174554.29840-21-hch@lst.de>
+Subject: [PATCH 21/21] csky: use generic ioremap
+Date: Thu, 17 Oct 2019 19:45:54 +0200
+Message-Id: <20191017174554.29840-22-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191017174554.29840-1-hch@lst.de>
 References: <20191017174554.29840-1-hch@lst.de>
@@ -59,51 +59,120 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-No driver that can be used on csky uses ioremap_cache, and this
-interface has been deprecated in favor of memremap.
+Use the generic ioremap_prot and iounmap helpers.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- arch/csky/include/asm/io.h | 2 --
- arch/csky/mm/ioremap.c     | 7 -------
- 2 files changed, 9 deletions(-)
+ arch/csky/Kconfig               |  1 +
+ arch/csky/include/asm/io.h      |  8 +++---
+ arch/csky/include/asm/pgtable.h |  4 +++
+ arch/csky/mm/ioremap.c          | 45 ---------------------------------
+ 4 files changed, 8 insertions(+), 50 deletions(-)
 
+diff --git a/arch/csky/Kconfig b/arch/csky/Kconfig
+index 3973847b5f42..da09c884cc30 100644
+--- a/arch/csky/Kconfig
++++ b/arch/csky/Kconfig
+@@ -17,6 +17,7 @@ config CSKY
+ 	select IRQ_DOMAIN
+ 	select HANDLE_DOMAIN_IRQ
+ 	select DW_APB_TIMER_OF
++	select GENERIC_IOREMAP
+ 	select GENERIC_LIB_ASHLDI3
+ 	select GENERIC_LIB_ASHRDI3
+ 	select GENERIC_LIB_LSHRDI3
 diff --git a/arch/csky/include/asm/io.h b/arch/csky/include/asm/io.h
-index a4b9fb616faa..f572605d5ad5 100644
+index f572605d5ad5..332f51bc68fb 100644
 --- a/arch/csky/include/asm/io.h
 +++ b/arch/csky/include/asm/io.h
-@@ -36,13 +36,11 @@
+@@ -36,11 +36,9 @@
  /*
   * I/O memory mapping functions.
   */
--extern void __iomem *ioremap_cache(phys_addr_t addr, size_t size);
- extern void __iomem *__ioremap(phys_addr_t addr, size_t size, pgprot_t prot);
- extern void iounmap(void *addr);
- 
- #define ioremap(addr, size)		__ioremap((addr), (size), pgprot_noncached(PAGE_KERNEL))
- #define ioremap_wc(addr, size)		__ioremap((addr), (size), pgprot_writecombine(PAGE_KERNEL))
--#define ioremap_cache			ioremap_cache
+-extern void __iomem *__ioremap(phys_addr_t addr, size_t size, pgprot_t prot);
+-extern void iounmap(void *addr);
+-
+-#define ioremap(addr, size)		__ioremap((addr), (size), pgprot_noncached(PAGE_KERNEL))
+-#define ioremap_wc(addr, size)		__ioremap((addr), (size), pgprot_writecombine(PAGE_KERNEL))
++#define ioremap_wc(addr, size) \
++	ioremap_prot((addr), (size), \
++		(_PAGE_IOREMAP & ~_CACHE_MASK) | _CACHE_UNCACHED)
  
  #include <asm-generic/io.h>
  
+diff --git a/arch/csky/include/asm/pgtable.h b/arch/csky/include/asm/pgtable.h
+index 7c21985c60dc..4b2a41e15f2e 100644
+--- a/arch/csky/include/asm/pgtable.h
++++ b/arch/csky/include/asm/pgtable.h
+@@ -86,6 +86,10 @@
+ #define PAGE_USERIO	__pgprot(_PAGE_PRESENT | _PAGE_READ | _PAGE_WRITE | \
+ 				_CACHE_CACHED)
+ 
++#define _PAGE_IOREMAP \
++	(_PAGE_PRESENT | __READABLE | __WRITEABLE | _PAGE_GLOBAL | \
++	 _CACHE_UNCACHED | _PAGE_SO)
++
+ #define __P000	PAGE_NONE
+ #define __P001	PAGE_READONLY
+ #define __P010	PAGE_COPY
 diff --git a/arch/csky/mm/ioremap.c b/arch/csky/mm/ioremap.c
-index e13cd3497628..ae78256a56fd 100644
+index ae78256a56fd..70c8268d3b2b 100644
 --- a/arch/csky/mm/ioremap.c
 +++ b/arch/csky/mm/ioremap.c
-@@ -44,13 +44,6 @@ void __iomem *__ioremap(phys_addr_t phys_addr, size_t size, pgprot_t prot)
- }
- EXPORT_SYMBOL(__ioremap);
+@@ -3,53 +3,8 @@
  
--void __iomem *ioremap_cache(phys_addr_t phys_addr, size_t size)
+ #include <linux/export.h>
+ #include <linux/mm.h>
+-#include <linux/vmalloc.h>
+ #include <linux/io.h>
+ 
+-#include <asm/pgtable.h>
+-
+-static void __iomem *__ioremap_caller(phys_addr_t addr, size_t size,
+-				      pgprot_t prot, void *caller)
 -{
--	return __ioremap_caller(phys_addr, size, PAGE_KERNEL,
+-	phys_addr_t last_addr;
+-	unsigned long offset, vaddr;
+-	struct vm_struct *area;
+-
+-	last_addr = addr + size - 1;
+-	if (!size || last_addr < addr)
+-		return NULL;
+-
+-	offset = addr & (~PAGE_MASK);
+-	addr &= PAGE_MASK;
+-	size = PAGE_ALIGN(size + offset);
+-
+-	area = get_vm_area_caller(size, VM_IOREMAP, caller);
+-	if (!area)
+-		return NULL;
+-
+-	vaddr = (unsigned long)area->addr;
+-
+-	if (ioremap_page_range(vaddr, vaddr + size, addr, prot)) {
+-		free_vm_area(area);
+-		return NULL;
+-	}
+-
+-	return (void __iomem *)(vaddr + offset);
+-}
+-
+-void __iomem *__ioremap(phys_addr_t phys_addr, size_t size, pgprot_t prot)
+-{
+-	return __ioremap_caller(phys_addr, size, prot,
 -				__builtin_return_address(0));
 -}
--EXPORT_SYMBOL(ioremap_cache);
+-EXPORT_SYMBOL(__ioremap);
 -
- void iounmap(void __iomem *addr)
+-void iounmap(void __iomem *addr)
+-{
+-	vunmap((void *)((unsigned long)addr & PAGE_MASK));
+-}
+-EXPORT_SYMBOL(iounmap);
+-
+ pgprot_t phys_mem_access_prot(struct file *file, unsigned long pfn,
+ 			      unsigned long size, pgprot_t vma_prot)
  {
- 	vunmap((void *)((unsigned long)addr & PAGE_MASK));
 -- 
 2.20.1
 
