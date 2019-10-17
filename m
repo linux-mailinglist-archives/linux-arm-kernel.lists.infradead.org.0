@@ -2,63 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D44F7DAF39
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 16:09:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 881ECDAF33
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 16:08:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hgkKHziorTFvQh8sj9gn/yLZBCipIYo72aLspx5CDQk=; b=JMvb/BTy+j8c8J
-	VQldSzOP7m6jaEWaWUIqwH6ShAtLPaErb4MlCXSoG+51akA4LMY9DHwlWA2FfMoy0a0thE9cDQPIL
-	JGItXP62PUx2Jj+P92uHt1NFhHmJeyILz/uZ/Bajxp4NacAW0tiR3k6mAUmJyo2sRR6QOaVOebzZ7
-	Qf51U+LfIXk65z4uFEip1lPyc/kE6Bxq1r/jPEVITnhDpfs+o26pVPxyVdYJr/rw+5OI4LWWQjyLo
-	xXxsdGrxfaYQ0KrqeIfvzIW2znrVzJCtbjeOJrOps4o1Jdpq4ArWBX5S5XAUmsaePDTq+mb+l0X23
-	ILf17EHXZWSud8yDvV9A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/BwA80k7V3bGli3/9YXUmNctFk4d/fodZXEvgGNRFNk=; b=H3BA3nq2xAlOqy
+	j7LJKClgxMHdx65tDjmF+6MaBoizVOO/5Cfv2agqllRpkHD/79KixFiR03dxlUjIMnlp+10Qz0G2B
+	ipjdyTYLyYylaQbN4C7SCV05mE+1dQM2SY7jt41p4q0Qd9gUXSgmePaXv3q+0geEV4DAiirVeDzKE
+	DOc3gcs0jswAZ4bCRIT7xbUOe/mreG+PEG0vPObejqUhwbeAAlFc5m8aZD13Oql4D3s6ksDHSDip0
+	CyvUz9+tbTis37MrNA66kTqTQK2bq0TpYLa9e9J5Dh5Nbejt6PmRIdbAAmOQ7vB/XbE5n21MYbPIS
+	LRGtq2mnLfTtdDj+Tcdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL6So-0004VQ-Jd; Thu, 17 Oct 2019 14:09:14 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1iL6SS-0004FM-Ey; Thu, 17 Oct 2019 14:08:52 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL6SR-0004IX-QT
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 14:08:53 +0000
-Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 30357D36CEBE6D75367F;
- Thu, 17 Oct 2019 22:08:46 +0800 (CST)
-Received: from [127.0.0.1] (10.177.251.225) by DGGEMS411-HUB.china.huawei.com
- (10.3.19.211) with Microsoft SMTP Server id 14.3.439.0;
- Thu, 17 Oct 2019 22:08:40 +0800
-Subject: Re: [PATCH V2] arm64: psci: Reduce waiting time of cpu_psci_cpu_kill()
-To: Sudeep Holla <sudeep.holla@arm.com>
-References: <18068756-0f39-6388-3290-cf03746e767d@huawei.com>
- <20191015162358.bt5rffidkv2j4xqb@willie-the-truck>
- <ab42357e-f4f9-9019-e8d9-7e9bfe106e9e@huawei.com>
- <20191016102545.GA11386@bogus>
- <13d82e24-90bd-0c17-ef7f-aa7fec272f59@huawei.com>
- <20191016150545.GA6750@bogus>
-From: Yunfeng Ye <yeyunfeng@huawei.com>
-Message-ID: <f1f281a4-4114-7193-369a-0062ecbd8cab@huawei.com>
-Date: Thu, 17 Oct 2019 22:08:13 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1iL6SJ-0004E5-CI; Thu, 17 Oct 2019 14:08:44 +0000
+Received: by mail-ot1-f65.google.com with SMTP id z6so2012096otb.2;
+ Thu, 17 Oct 2019 07:08:43 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=4LaxdzcWVgTMeshGXRDImrA5EwGUcbpIabxr8Z7hfxY=;
+ b=oKofthAghBceLY7cYp36jN2gurtPfQaA4veMFJMcnWdLIPhgFA10Kaff6sqS193p3I
+ nZBH9yIzh/R1DqVWjpR5ccDfHGiICMj1CrQoIFgPMdlO9zUBwzP+MZpuW3fokakgHsqG
+ dTfKgUVKXRmGdcyPVXTxMoi2C0CbYwIz1PGl5XCED4yob0cw5RTrtZ/ovZLZ8VI8YR9x
+ M7rQLClgx7yHPJMZCyoAFVQlI6qd3zdEi9axlWts6ENUQM+Pl9cJ/9HjOLULG5ITjxbg
+ WmaCLLNwwOyQAA90DynM74HCBci6ISlorny2Q83Gc05k/HdhJOoPAt5q4CQi9ns3j4OH
+ MzPQ==
+X-Gm-Message-State: APjAAAXWzdsI3vQFnVnbGomUQgjsbI2GVXZHkbVBDq28zX740BzQdyXu
+ B6Xez+IOcMUTLRSQqpEcIw==
+X-Google-Smtp-Source: APXvYqzWR4t2orXzG34Y3uK5tLGUXivPJ3U/zljrWoSmEsG8YVlKGN5S+DXwZjmsakg5G35UsjPEqQ==
+X-Received: by 2002:a05:6830:1510:: with SMTP id
+ k16mr3207388otp.197.1571321322294; 
+ Thu, 17 Oct 2019 07:08:42 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id 91sm639337otn.36.2019.10.17.07.08.41
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 17 Oct 2019 07:08:41 -0700 (PDT)
+Date: Thu, 17 Oct 2019 09:08:41 -0500
+From: Rob Herring <robh@kernel.org>
+To: min.guo@mediatek.com
+Subject: Re: [PATCH RESEND v7 1/6] dt-bindings: usb: musb: Add support for
+ MediaTek musb controller
+Message-ID: <20191017140841.GA20279@bogus>
+References: <20191017082554.27953-1-min.guo@mediatek.com>
+ <20191017082554.27953-2-min.guo@mediatek.com>
 MIME-Version: 1.0
-In-Reply-To: <20191016150545.GA6750@bogus>
-Content-Language: en-US
-X-Originating-IP: [10.177.251.225]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20191017082554.27953-2-min.guo@mediatek.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_070852_049650_53CC7C9B 
-X-CRM114-Status: GOOD (  26.65  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191017_070843_417442_7AA49604 
+X-CRM114-Status: GOOD (  13.39  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.65 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,143 +92,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "kstewart@linuxfoundation.org" <kstewart@linuxfoundation.org>,
- "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>, hushiyuan@huawei.com,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- linfeilong@huawei.com, David Laight <David.Laight@ACULAB.COM>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "tglx@linutronix.de" <tglx@linutronix.de>,
- "wuyun.wu@huawei.com" <wuyun.wu@huawei.com>, Will Deacon <will@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ hdegoede@redhat.com, tony@atomide.com,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Alan Stern <stern@rowland.harvard.edu>, Min Guo <min.guo@mediatek.com>,
+ chunfeng.yun@mediatek.com, linux-mediatek@lists.infradead.org,
+ Bin Liu <b-liu@ti.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 2019/10/16 23:05, Sudeep Holla wrote:
-> On Wed, Oct 16, 2019 at 07:29:59PM +0800, Yunfeng Ye wrote:
->>
->>
->> On 2019/10/16 18:25, Sudeep Holla wrote:
->>> On Wed, Oct 16, 2019 at 11:22:23AM +0800, Yunfeng Ye wrote:
->>>>
->>>>
->>>> On 2019/10/16 0:23, Will Deacon wrote:
->>>>> Hi,
->>>>>
->>>>> On Sat, Sep 21, 2019 at 07:21:17PM +0800, Yunfeng Ye wrote:
->>>>>> If psci_ops.affinity_info() fails, it will sleep 10ms, which will not
->>>>>> take so long in the right case. Use usleep_range() instead of msleep(),
->>>>>> reduce the waiting time, and give a chance to busy wait before sleep.
->>>>>
->>>>> Can you elaborate on "the right case" please? It's not clear to me
->>>>> exactly what problem you're solving here.
->>>>>
->>>> The situation is that when the power is off, we have a battery to save some
->>>> information, but the battery power is limited, so we reduce the power consumption
->>>> by turning off the cores, and need fastly to complete the core shutdown. However, the
->>>> time of cpu_psci_cpu_kill() will take 10ms. We have tested the time that it does not
->>>> need 10ms, and most case is about 50us-500us. if we reduce the time of cpu_psci_cpu_kill(),
->>>> we can reduce 10% - 30% of the total time.
->>>>
->>>
->>> Have you checked why PSCI AFFINITY_INFO not returning LEVEL_OFF quickly
->>> then ? We wait for upto 5s in cpu_wait_death(worst case) before cpu_kill
->>> is called from __cpu_die.
->>>
->> When cpu_wait_death() is done, it means that the cpu core's hardware prepare to
->> die. I think not returning LEVEL_OFF quickly is that hardware need time to handle.
->> I don't know how much time it need is reasonable, but I test that it need about
->> 50us - 500us.
->>
+On Thu, 17 Oct 2019 16:25:49 +0800, <min.guo@mediatek.com> wrote:
+> From: Min Guo <min.guo@mediatek.com>
 > 
-> Fair enough.
+> This adds support for MediaTek musb controller in
+> host, peripheral and otg mode.
 > 
->> In addition I have not meat the worst case that cpu_wait_death() need upto
->> 5s, and we only take normal case into account.
->>
+> Signed-off-by: Min Guo <min.guo@mediatek.com>
+> ---
+> changes in v7:
+> 1. Modify compatible as
+> - compatible : should be one of:
+>                "mediatek,mt2701-musb"
+>                ...
+>                followed by "mediatek,mtk-musb"
+> 2. Change usb connector child node compatible as "gpio-usb-b-connector" 
 > 
-> Good
+> changes in v6:
+> 1. Modify usb connector child node
 > 
->>
->>> Moreover I don't understand the argument here. The cpu being killed
->>> will be OFF, as soon as it can and firmware controls that and this
->>> change is not related to CPU_OFF. And this CPU calling cpu_kill can
->>> sleep and 10ms is good to enter idle states if it's idle saving power,
->>> so I fail to map the power saving you mention above.
->>>
->> We have hundreds of CPU cores that need to be shut down. For example,
->> a CPU has 200 cores, and the thread to shut down the core is in CPU 0.
->> and the thread need to shut down from core 1 to core 200. However, the
->> implementation of the kernel can only shut down cpu cores one by one, so we
->> need to wait for cpu_kill() to finish before shutting down the next
->> CPU core. If it wait for 10ms each time in cpu_kill, it will takes up
->> about 2 seconds in cpu_kill() total.
->>
+> changes in v5:
+> suggested by Rob:
+> 1. Modify compatible as 
+> - compatible : should be one of:
+>                "mediatek,mt-2701"
+>                ...
+>                followed by "mediatek,mtk-musb"
+> 2. Add usb connector child node
 > 
-> OK, thanks for the illustrative example. This make sense to me now. But
-> you comparing with battery powered devices confused me and I assumed
-> it as some hack to optimise mobile workload.
+> changes in v4:
+> suggested by Sergei:
+> 1. String alignment
 > 
-It is not mobile workload, but a arm64 server with hundreds of cpu cores.
-Battery powered is a backup battery for reliability and to prevent
-accidental power failure.
-
->>>> So change msleep (10) to usleep_range() to reduce the waiting time. In addition,
->>>> we don't want to be scheduled during the sleeping time, some threads may take a
->>>> long time and don't give up the CPU, which affects the time of core shutdown,
->>>> Therefore, we add a chance to busy-wait max 1ms.
->>>>
->>>
->>> On the other hand, usleep_range reduces the timer interval and hence
->>> increases the chance of the callee CPU not to enter deeper idle states.
->>>
->>> What am I missing here ? What's the use case or power off situation
->>> you are talking about above ?
->>>
->> As mentioned above, we are not to save power through msleep to idle state,
->> but to quickly turn off other CPU core's hardware to reduce power consumption.
+> changes in v3:
+> 1. no changes
 > 
-> You still don't provide your use-case in which this is required. I know
-> this will be useful for suspend-to-ram. Do you have any other use-case
-> that you need to power-off large number of CPUs like this ? Also you
-> mentioned battery powered, and I don't think any battery powered device
-> has 200 thread like in your example :)
-> 
-The use-case is like suspend-to-disk, but a little different:
-In the abnormal power failure of server equipment, in order to increase
-reliability, there is a backup battery for power supply. Before the battery runs out,
-we need to save the key datas to the disk. In order to maintain the battery power
-supply, a series of power reduction processing is needed, include which all the cores
-need to be shut down quickly, we have max near 200 cores need to shutdown.
-
-Also this modify will be useful for suspend-to-ram too.
-thanks.
-
-> You need to mention few things clearly in the commit log:
-> 1. How the CPU hotplug operation is serialised in some use-case like
->    suspend-to-ram
-> 2. How that may impact systems with large number of CPUs
-> 3. How your change helps to improve that
-> 
-> It may it easy for anyone to understand the motivation for this change.
-> The commit message you have doesn't give any clue on all the above and
-> hence we have lot of questions.
-> 
-ok, thanks.
-
-> I will respond to the original patch separately.
-> 
-> --
-> Regards,
-> Sudeep
-> 
-> .
+> changes in v2:
+> suggested by Bin:
+> 1. Modify DRC to DRD
+> suggested by Rob:
+> 2. Drop the "<soc-model>-musb" in compatible
+> 3. Remove phy-names
+> 4. Add space after comma in clock-names
+> ---
+>  .../devicetree/bindings/usb/mediatek,musb.txt      | 55 ++++++++++++++++++++++
+>  1 file changed, 55 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/usb/mediatek,musb.txt
 > 
 
+Please add Acked-by/Reviewed-by tags when posting new versions. However,
+there's no need to repost patches *only* to add the tags. The upstream
+maintainer will do that for acks received on the version they apply.
+
+If a tag was not added on purpose, please state why and what changed.
 
 _______________________________________________
 linux-arm-kernel mailing list
