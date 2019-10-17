@@ -2,64 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29C12DA36C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 03:51:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 494A4DA40A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 04:51:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=R0vp/ANynUyxESPDW08A3VPEWrOqE7nPTZNMmkIzJbM=; b=ICAdwk18lsHu0A
-	rWCCQ/qvJGHdZ0m4XDJrSEX/o0ya7eIxYUrPrugKdz30hH9W+EyQ1jh3W/NZ4ZotE6KVqyuVvxIKa
-	atmsyADNu0WPJdsFBruDY3mhd9XskNJhhkvG7DbZaVSwCUOwpXsxsmM6VhVS9JQEiGU4SHOh747JY
-	GmbTYf1X8F3xo1hnaYkKQ6+JKi/HQWo+ywX8oSyMfcEnzsyHdaVJr+9PYEPVmM1lED0mFV6N5+GFY
-	Rj2gJ44CfOG0SP14MpQmErHrtmcNZnPDhbXOYyFmmmIZ8qH4LtY6eXUINaRBkYe8Sq5gTZ0vT16ka
-	Ak4MQ4MrCedJg9Gv8Gow==;
+	List-Owner; bh=tBrsA+ENenSnfYH7FsQrfWuyxxz05Z/BQE4QS7Ut1KI=; b=BZVyUrDdUPivpP
+	jWPzm6L1yADBRyOEl13RlSQJjIBgqcttVh8VU1ACYB8+l0p4HfhdQFOgy49eD/WmyIHM+GZklO/ji
+	RnWtQi88v2bX5enBff2MSRMHkWTm98Urhdc5CU1nN+scl7td75G64S8E+zfu56OCXnhYT0yiWuraB
+	l9ZPmMXjoMp3tIbrcfsnWZ456q2Z2HLRTrUudi/8JwXVDCGshdejAnf9pt1o9khrG1/afIcJatMvQ
+	gfQpdkynC2UuxVzdZojl38XieSHTes0Sid38MPdmyjfl/tPySiS5kWS17Jm3NA3IHu6JEH80VhP1+
+	7MlSO96FoOUfM1Q50HlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKuwS-00067I-V7; Thu, 17 Oct 2019 01:51:04 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1iKvsk-0008NQ-FJ; Thu, 17 Oct 2019 02:51:18 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKuwK-000666-RS; Thu, 17 Oct 2019 01:50:59 +0000
-X-UUID: 2b5fa9a877d9484e8f5369cc229f8dc4-20191016
-X-UUID: 2b5fa9a877d9484e8f5369cc229f8dc4-20191016
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <walter-zh.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 916186008; Wed, 16 Oct 2019 17:50:46 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 16 Oct 2019 18:50:46 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 17 Oct 2019 09:50:44 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Thu, 17 Oct 2019 09:50:44 +0800
-From: Walter Wu <walter-zh.wu@mediatek.com>
-To: Andrey Ryabinin <aryabinin@virtuozzo.com>, Alexander Potapenko
- <glider@google.com>, Dmitry Vyukov <dvyukov@google.com>, Matthias Brugger
- <matthias.bgg@gmail.com>
-Subject: [PATCH v2 1/2] kasan: detect negative size in memory operation
- function
-Date: Thu, 17 Oct 2019 09:50:44 +0800
-Message-ID: <20191017015044.8586-1-walter-zh.wu@mediatek.com>
-X-Mailer: git-send-email 2.18.0
+ id 1iKvsd-0008Mq-BY
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 02:51:12 +0000
+Received: by mail-pf1-x444.google.com with SMTP id q7so622125pfh.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 16 Oct 2019 19:51:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=cORw/M2PPp+G7rfLzx7vrbHpIQU4gk/+aw+cEPBwgBE=;
+ b=jrel5m/j9YYL8XOd6Xr8q9NmzTehtbTTdMqdGRHxdtRsYMBnhkDhv5LrfkTCXuvQD3
+ zrHnNFFX1lZ4euDIoHgnqyGJwMgJSzSVyBKObtskju4sMZtvDrgXz7RexHwNPyzfxTnF
+ zHbuPp+QOQz1BshXp2joY6vJfGaDX4q0FFsWjUG4vFMag7VFtc8CRrmWG3Mas9KsmI7c
+ SlzATMivqx7PCUhJqu/yMwHNQusEvNdS2HYqwo4VNOhZ78m6PiIBRwWunZv5yzhvDqNX
+ bWK6CF5rZouXsk4jeTWWSUTnRg5+caJcC4bxgjGQusjFi1+kQp5oKF9Rab/4iSxALM8A
+ Glmw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=cORw/M2PPp+G7rfLzx7vrbHpIQU4gk/+aw+cEPBwgBE=;
+ b=evQP5SLYGz3Fk+QxdomgQLIPVYms3Eyu2ReeUE5EUKXcEzqe64wJA39dQbqm52k7Y3
+ ogG8q/x+DCzai72qb/fHqiqCLSl3RjVTRAxEt+upydMJ8at0PpP0k3YnTzP6p8U06miz
+ x9bOXtPBYp9V3v2J2/R0rqK8o6t/xbu6u01bENdUJpEUt0xjjk0WNgycrdCYzuAiiaUh
+ I1ei/d7EAeI+kbCDrlfktU9d9lO9VMgp/+4NdGyfXQ1t2AxpM6ov2dOvRAp6dt6W8tPm
+ VvSzy9nw8N64ek8hHLxfMTI3om3cR2ncc9X4iIsMDiuVSWOe93oRqN5SDFhG4LjLyKpc
+ 4SkA==
+X-Gm-Message-State: APjAAAWbqSs02a+i+8yzlo+RQ+/xFh4/cUNDb/tppLHo4HUjyywUZG+x
+ vnr5E16SOwa0NSyGPHoyhRw=
+X-Google-Smtp-Source: APXvYqzEbs4jwr7g2mmEteoXN2Odjtn7PvD5Fn29n0LJ5zjtrDt5FDJmgMvZZEnW/+K7NTgnLeP62w==
+X-Received: by 2002:a17:90a:17c4:: with SMTP id
+ q62mr1348383pja.83.1571280669181; 
+ Wed, 16 Oct 2019 19:51:09 -0700 (PDT)
+Received: from suzukaze.ipads-lab.se.sjtu.edu.cn ([89.31.126.54])
+ by smtp.gmail.com with ESMTPSA id a17sm467374pfi.178.2019.10.16.19.51.04
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 16 Oct 2019 19:51:08 -0700 (PDT)
+From: Chuhong Yuan <hslester96@gmail.com>
+To: 
+Subject: [PATCH] spi: pxa2xx: Add missed security checks
+Date: Thu, 17 Oct 2019 10:50:58 +0800
+Message-Id: <20191017025058.31528-1-hslester96@gmail.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_185056_895819_EAF5B0D9 
-X-CRM114-Status: GOOD (  13.50  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191016_195111_396308_AB1A5385 
+X-CRM114-Status: UNSURE (   8.85  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (hslester96[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (hslester96[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,199 +100,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Walter Wu <walter-zh.wu@mediatek.com>, wsd_upstream@mediatek.com,
- linux-kernel@vger.kernel.org, kasan-dev@googlegroups.com, linux-mm@kvack.org,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Chuhong Yuan <hslester96@gmail.com>, linux-kernel@vger.kernel.org,
+ Haojian Zhuang <haojian.zhuang@gmail.com>, linux-spi@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, Daniel Mack <daniel@zonque.org>,
+ Robert Jarzmik <robert.jarzmik@free.fr>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-KASAN missed detecting size is negative numbers in memset(), memcpy(),
-and memmove(), it will cause out-of-bounds bug, so needs to be detected
-by KASAN.
+pxa2xx_spi_init_pdata misses checks for devm_clk_get and
+platform_get_irq.
+Add checks for them to fix the bugs.
 
-If size is negative numbers, then it has three reasons to be
-defined as heap-out-of-bounds bug type.
-1) Casting negative numbers to size_t would indeed turn up as
-   a large size_t and its value will be larger than ULONG_MAX/2,
-   so that this can qualify as out-of-bounds.
-2) If KASAN has new bug type and user-space passes negative size,
-   then there are duplicate reports. So don't produce new bug type
-   in order to prevent duplicate reports by some systems (e.g. syzbot)
-   to report the same bug twice.
-3) When size is negative numbers, it may be passed from user-space.
-   So we always print heap-out-of-bounds in order to prevent that
-   kernel-space and user-space have the same bug but have duplicate
-   reports.
-
-KASAN report:
-
- BUG: KASAN: heap-out-of-bounds in kmalloc_memmove_invalid_size+0x70/0xa0
- Read of size 18446744073709551608 at addr ffffff8069660904 by task cat/72
-
- CPU: 2 PID: 72 Comm: cat Not tainted 5.4.0-rc1-next-20191004ajb-00001-gdb8af2f372b2-dirty #1
- Hardware name: linux,dummy-virt (DT)
- Call trace:
-  dump_backtrace+0x0/0x288
-  show_stack+0x14/0x20
-  dump_stack+0x10c/0x164
-  print_address_description.isra.9+0x68/0x378
-  __kasan_report+0x164/0x1a0
-  kasan_report+0xc/0x18
-  check_memory_region+0x174/0x1d0
-  memmove+0x34/0x88
-  kmalloc_memmove_invalid_size+0x70/0xa0
-
-[1] https://bugzilla.kernel.org/show_bug.cgi?id=199341
-
-Changes in v2:
-Fix the indentation bug, thanks for the reminder Matthew.
-
-Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
-Reported-by: Dmitry Vyukov <dvyukov@google.com>
-Suggested-by: Dmitry Vyukov <dvyukov@google.com>
-Reviewed-by: Dmitry Vyukov <dvyukov@google.com>
-Cc: Andrey Ryabinin <aryabinin@virtuozzo.com>
-Cc: Alexander Potapenko <glider@google.com>
+Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
 ---
- mm/kasan/common.c         | 13 ++++++++-----
- mm/kasan/generic.c        |  5 +++++
- mm/kasan/generic_report.c | 18 ++++++++++++++++++
- mm/kasan/tags.c           |  5 +++++
- mm/kasan/tags_report.c    | 18 ++++++++++++++++++
- 5 files changed, 54 insertions(+), 5 deletions(-)
+ drivers/spi/spi-pxa2xx.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/mm/kasan/common.c b/mm/kasan/common.c
-index 6814d6d6a023..16a370023425 100644
---- a/mm/kasan/common.c
-+++ b/mm/kasan/common.c
-@@ -102,7 +102,8 @@ EXPORT_SYMBOL(__kasan_check_write);
- #undef memset
- void *memset(void *addr, int c, size_t len)
- {
--	check_memory_region((unsigned long)addr, len, true, _RET_IP_);
-+	if (!check_memory_region((unsigned long)addr, len, true, _RET_IP_))
+diff --git a/drivers/spi/spi-pxa2xx.c b/drivers/spi/spi-pxa2xx.c
+index bb6a14d1ab0f..2e73d75a6ac5 100644
+--- a/drivers/spi/spi-pxa2xx.c
++++ b/drivers/spi/spi-pxa2xx.c
+@@ -1565,7 +1565,13 @@ pxa2xx_spi_init_pdata(struct platform_device *pdev)
+ #endif
+ 
+ 	ssp->clk = devm_clk_get(&pdev->dev, NULL);
++	if (IS_ERR(ssp->clk))
 +		return NULL;
- 
- 	return __memset(addr, c, len);
- }
-@@ -110,8 +111,9 @@ void *memset(void *addr, int c, size_t len)
- #undef memmove
- void *memmove(void *dest, const void *src, size_t len)
- {
--	check_memory_region((unsigned long)src, len, false, _RET_IP_);
--	check_memory_region((unsigned long)dest, len, true, _RET_IP_);
-+	if (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
-+	    !check_memory_region((unsigned long)dest, len, true, _RET_IP_))
++
+ 	ssp->irq = platform_get_irq(pdev, 0);
++	if (ssp->irq < 0)
 +		return NULL;
- 
- 	return __memmove(dest, src, len);
- }
-@@ -119,8 +121,9 @@ void *memmove(void *dest, const void *src, size_t len)
- #undef memcpy
- void *memcpy(void *dest, const void *src, size_t len)
- {
--	check_memory_region((unsigned long)src, len, false, _RET_IP_);
--	check_memory_region((unsigned long)dest, len, true, _RET_IP_);
-+	if (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
-+	    !check_memory_region((unsigned long)dest, len, true, _RET_IP_))
-+		return NULL;
- 
- 	return __memcpy(dest, src, len);
- }
-diff --git a/mm/kasan/generic.c b/mm/kasan/generic.c
-index 616f9dd82d12..02148a317d27 100644
---- a/mm/kasan/generic.c
-+++ b/mm/kasan/generic.c
-@@ -173,6 +173,11 @@ static __always_inline bool check_memory_region_inline(unsigned long addr,
- 	if (unlikely(size == 0))
- 		return true;
- 
-+	if (unlikely((long)size < 0)) {
-+		kasan_report(addr, size, write, ret_ip);
-+		return false;
-+	}
 +
- 	if (unlikely((void *)addr <
- 		kasan_shadow_to_mem((void *)KASAN_SHADOW_START))) {
- 		kasan_report(addr, size, write, ret_ip);
-diff --git a/mm/kasan/generic_report.c b/mm/kasan/generic_report.c
-index 36c645939bc9..52a92c7db697 100644
---- a/mm/kasan/generic_report.c
-+++ b/mm/kasan/generic_report.c
-@@ -107,6 +107,24 @@ static const char *get_wild_bug_type(struct kasan_access_info *info)
- 
- const char *get_bug_type(struct kasan_access_info *info)
- {
-+	/*
-+	 * If access_size is negative numbers, then it has three reasons
-+	 * to be defined as heap-out-of-bounds bug type.
-+	 * 1) Casting negative numbers to size_t would indeed turn up as
-+	 *    a large size_t and its value will be larger than ULONG_MAX/2,
-+	 *    so that this can qualify as out-of-bounds.
-+	 * 2) If KASAN has new bug type and user-space passes negative size,
-+	 *    then there are duplicate reports. So don't produce new bug type
-+	 *    in order to prevent duplicate reports by some systems
-+	 *    (e.g. syzbot) to report the same bug twice.
-+	 * 3) When size is negative numbers, it may be passed from user-space.
-+	 *    So we always print heap-out-of-bounds in order to prevent that
-+	 *    kernel-space and user-space have the same bug but have duplicate
-+	 *    reports.
-+	 */
-+	if ((long)info->access_size < 0)
-+		return "heap-out-of-bounds";
-+
- 	if (addr_has_shadow(info->access_addr))
- 		return get_shadow_bug_type(info);
- 	return get_wild_bug_type(info);
-diff --git a/mm/kasan/tags.c b/mm/kasan/tags.c
-index 0e987c9ca052..b829535a3ad7 100644
---- a/mm/kasan/tags.c
-+++ b/mm/kasan/tags.c
-@@ -86,6 +86,11 @@ bool check_memory_region(unsigned long addr, size_t size, bool write,
- 	if (unlikely(size == 0))
- 		return true;
- 
-+	if (unlikely((long)size < 0)) {
-+		kasan_report(addr, size, write, ret_ip);
-+		return false;
-+	}
-+
- 	tag = get_tag((const void *)addr);
- 
- 	/*
-diff --git a/mm/kasan/tags_report.c b/mm/kasan/tags_report.c
-index 969ae08f59d7..f7ae474aef3a 100644
---- a/mm/kasan/tags_report.c
-+++ b/mm/kasan/tags_report.c
-@@ -36,6 +36,24 @@
- 
- const char *get_bug_type(struct kasan_access_info *info)
- {
-+	/*
-+	 * If access_size is negative numbers, then it has three reasons
-+	 * to be defined as heap-out-of-bounds bug type.
-+	 * 1) Casting negative numbers to size_t would indeed turn up as
-+	 *    a large size_t and its value will be larger than ULONG_MAX/2,
-+	 *    so that this can qualify as out-of-bounds.
-+	 * 2) If KASAN has new bug type and user-space passes negative size,
-+	 *    then there are duplicate reports. So don't produce new bug type
-+	 *    in order to prevent duplicate reports by some systems
-+	 *    (e.g. syzbot) to report the same bug twice.
-+	 * 3) When size is negative numbers, it may be passed from user-space.
-+	 *    So we always print heap-out-of-bounds in order to prevent that
-+	 *    kernel-space and user-space have the same bug but have duplicate
-+	 *    reports.
-+	 */
-+	if ((long)info->access_size < 0)
-+		return "heap-out-of-bounds";
-+
- #ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
- 	struct kasan_alloc_meta *alloc_meta;
- 	struct kmem_cache *cache;
+ 	ssp->type = type;
+ 	ssp->pdev = pdev;
+ 	ssp->port_id = pxa2xx_spi_get_port_id(adev);
 -- 
-2.18.0
+2.20.1
 
 
 _______________________________________________
