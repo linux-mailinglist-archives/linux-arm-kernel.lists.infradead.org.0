@@ -2,86 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5EE43DB008
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 16:27:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A2E89DB00F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 16:28:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=oIaVD17Q/PDg9DUwfBaB88EszyT2sJpG8cVEP/FcuQw=; b=NU2tkDAx3YXFL7Jbb5snIMNaVm
-	5tF2i1HKcCnyqB2BfQfae/o2CbBfkETX7QBz6RnzS1VGbIWODDCsxzJn6N0lQBg7JXV5yvtFfXzQq
-	16yxSOmAg2AXgDhDfnlxrcHwPRUiPYCRXYPawIAZwy5QXkkD5i3Ye33AiGrxDuBr1Cc5xCv0cUGzY
-	IWeb4Fj8E19cp9HClh3jlUhedRfIYklkVYDyiFzm/4kVNz87vd6RUB3ndael9RbPmYzNnh44FwH8p
-	ZkGXrq1QYZ1I/ICRv0nziEYt0x/q4jMDRr0+vH24mAtyShW2ealQO7AeNbA5khRzGNnN/p5h8k8Ey
-	aP9q6JIg==;
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ULk0hBqI2itzfX3LdMntbP7gdw4gh5VhJ5yMi3cN/hc=; b=cLv+HWEze72afe
+	/K6DbKilbDdXvftrA02+OXCmlWydnAcUclPkdqmeGeAPORGKA2j8uUwuoors1F040xlMThyZN+Urb
+	APfAIpVTHmGPRwqbzdfH1aYkAcjYd+1v1amlCZwv+OQ8BeiF5K8bHmhKh9nPFoHVLn1O4bait27zG
+	+8kkRvvTcpoFMLgrI7bxcf3Eb+9vj8xaDORQgZcjpyK3CWQ8WzHmT58sfqTscjge06IJz6oFe0Juk
+	dX8CPNljeW9vsLmx63nqhlk6UpkEOc7D1RMHGHCDS6RSyMkmNQlvUwMbYxi8ucdVmTFybEYgDPOiL
+	kO1AncXFCZyO4wP2ya7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL6k0-0008WL-HH; Thu, 17 Oct 2019 14:27:00 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1iL6lK-0000oM-7T; Thu, 17 Oct 2019 14:28:22 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL6jm-0008Uy-6e
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 14:26:48 +0000
-Received: by mail-ed1-x544.google.com with SMTP id v8so1909164eds.2
+ id 1iL6l9-0000nT-As
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 14:28:12 +0000
+Received: by mail-wm1-x343.google.com with SMTP id 5so2809139wmg.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 17 Oct 2019 07:26:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
- bh=pTZm79Y77en4+WVH2R/MS/mKWiM//Hl1RgvICjEclrk=;
- b=TKjxRtPwWpvtdWaMYbV45LyV9HVOzaOpAFbMpF2wo5zHCbYg0VRPUUtdJ1VyU2CUc6
- l/GfxXIxUHAzOJXFyL/sOqbcEBBADqp8Pq1no/2KigSG5eGP/nwp1ooFXzgeBH8HEdjO
- GmJV/kE/BTVPJEGV8LKAdzay5o0rhZDFgVvRTWl/8/mJ/iwqxTg0IqZ6T9qTkiFc8x78
- 2EcQkBTDbFH6XEMf1N3dkNFpK4jjV2/42IkyvXgNWCq+s3Q6czyEmpaIe60dwwf0EJUc
- 0QeFMbdS9HQHYMtc2JQUheqYhHhaL2gcvWIPxKnh27DvXjcivpklLdfmftATrLQDcDfZ
- nO4Q==
+ Thu, 17 Oct 2019 07:28:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=S2aBeWNRxDtTRHfUI9htMJzW/AtuitZvg8GIzAAl28Q=;
+ b=dBe6YjaxoHZnJhbTRjkiiW25KskKFuyEEzNZwJ3xB0fHdrmMgZNiXJ0YOJz+a9Edna
+ SxqTulViehkQ8MxhZ1JzcAs/0ag5fwwYrZZag4c9ffQFKCW1lCuRXqmzkWQwOGWg0d6V
+ ISljxqOj7xejKJGlCLKqFiRnbm9LJcvM4v4nA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to;
- bh=pTZm79Y77en4+WVH2R/MS/mKWiM//Hl1RgvICjEclrk=;
- b=aI5AUHsQr+Ht/C41nwX1WELbyo14aQBIKkFBUaJXeeSh1/+YRVzHIez03izJG6ZsiT
- a7QAJ/sp2fomkrw/AqfKsufmEy00KhpBa0kfQr/wQG2meJ+os7etEAQ9aU8+mt3yT8xY
- FPdYby/glVHNwgZ7jSuAd8r8HHAlLDcRpPWs+hVbtoDhc/mkv4o8AVvsQaLGb5ObMVqw
- s1uPTjjOVds9zG8qeLsFUhjYgZhBiH4ubrN+MfRCgU/UjlV0hFjceMFBj04eK7VWMetu
- KnT3Q+CFx/pocvoO2ZbF9MWZtlz1zpudmEvs0ZDJJh/BIWxHbqJJRX6ggBxI9IWlIo17
- 5M3A==
-X-Gm-Message-State: APjAAAXHUSAmb6kqWFMzadmEvMtQeuJyfq8RXihKn8UxekcsC8NoZr27
- Hp880SFuOMO1QtvH1kSQc6ml4QYY9L4mgG7RJnKoIQ==
-X-Google-Smtp-Source: APXvYqziFMNgpgw2iHsErr96SyZ2uSmSqs5rGVbMozjNUXiBuLfqaEtdRt8edlaf9N0bltup9A+f3kj+ItWHzZYFDds=
-X-Received: by 2002:aa7:dd0f:: with SMTP id i15mr4281166edv.0.1571322404589;
- Thu, 17 Oct 2019 07:26:44 -0700 (PDT)
+ :message-id:subject:to:cc;
+ bh=S2aBeWNRxDtTRHfUI9htMJzW/AtuitZvg8GIzAAl28Q=;
+ b=BRhYUUD3mno3rxZbSLkB6O3dpqhozD+WrMbXTzKx3p88uC2gwKpz3yXmekGxjZdEuJ
+ fsckpbo0uGa80jdpaupNqmDbhJiIZP82idK+njq3/PMhvEwlRq29QIzNl8/4TeZayFnP
+ eIiDyXYk+BVXTwSHnvtlR5177Qim1YNzF8cSxQFDfRB0DOZ/W7MuuOu6FqaNUEPf74VB
+ ixmVkEgIOtHfcIrrMIkALcaCH0IsO9E3CXTvIXVsfDVsTVelIUhLTHV81oLz2xlrPkpV
+ r430Qe9yjkfS1yWOjaRmZKotppvgvJVp4AMzBH9h48RSMIJ6s4qjLEyvER9YpQ80gj+M
+ KJtg==
+X-Gm-Message-State: APjAAAU+A7t50PO5+37uQ4qJANe93EpO4gx2f90rN9tNkbeprOi01cNK
+ nT5u6YKz5cDlqVkqGGhvDQRxKdkt41U83+IL+BdZ8Q==
+X-Google-Smtp-Source: APXvYqw1AUbLjfiWzfHvCBnmIR1upVknDfmaHDyI/L5HIOSueUVlPr33+tGstbzFvY6ybaVHvFP6LjdMT4TIIKsBc+g=
+X-Received: by 2002:a7b:ce12:: with SMTP id m18mr3107079wmc.108.1571322488120; 
+ Thu, 17 Oct 2019 07:28:08 -0700 (PDT)
 MIME-Version: 1.0
-References: <20191016200034.1342308-1-pasha.tatashin@soleen.com>
-In-Reply-To: <20191016200034.1342308-1-pasha.tatashin@soleen.com>
-From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Thu, 17 Oct 2019 10:26:33 -0400
-Message-ID: <CA+CK2bC2KwWufE1DWa4szn_hQ1dbjDVHgYUu7=J4O_kvKXTrHg@mail.gmail.com>
-Subject: Re: [PATCH v7 00/25] arm64: MMU enabled kexec relocation
-To: Pavel Tatashin <pasha.tatashin@soleen.com>,
- James Morris <jmorris@namei.org>, 
- Sasha Levin <sashal@kernel.org>, "Eric W. Biederman" <ebiederm@xmission.com>, 
- kexec mailing list <kexec@lists.infradead.org>,
- LKML <linux-kernel@vger.kernel.org>, 
- Jonathan Corbet <corbet@lwn.net>, Catalin Marinas <catalin.marinas@arm.com>,
- will@kernel.org, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Marc Zyngier <marc.zyngier@arm.com>, 
- James Morse <james.morse@arm.com>, Vladimir Murzin <vladimir.murzin@arm.com>, 
- Matthias Brugger <matthias.bgg@gmail.com>, Bhupesh Sharma <bhsharma@redhat.com>,
- linux-mm <linux-mm@kvack.org>, Mark Rutland <mark.rutland@arm.com>,
- steve.capper@arm.com, 
- rfontana@redhat.com, Thomas Gleixner <tglx@linutronix.de>
+References: <20190906035813.24046-1-abhishek.shah@broadcom.com>
+ <20191015164303.GC25674@e121166-lin.cambridge.arm.com>
+In-Reply-To: <20191015164303.GC25674@e121166-lin.cambridge.arm.com>
+From: Abhishek Shah <abhishek.shah@broadcom.com>
+Date: Thu, 17 Oct 2019 19:57:56 +0530
+Message-ID: <CAKUFe6bQPMirQ01s-ezaQcUU85J+moFKMO8sLZgvtG2EPowrGA@mail.gmail.com>
+Subject: Re: [PATCH 1/1] PCI: iproc: Invalidate PAXB address mapping before
+ programming it
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_072646_673496_466C9E46 
-X-CRM114-Status: GOOD (  16.12  )
+X-CRM114-CacheID: sfid-20191017_072811_388072_E0CF55D2 
+X-CRM114-Status: GOOD (  25.78  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -92,6 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,45 +90,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
+ open list <linux-kernel@vger.kernel.org>,
+ BCM Kernel Feedback <bcm-kernel-feedback-list@broadcom.com>,
+ linux-pci@vger.kernel.org, Bjorn Helgaas <bhelgaas@google.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> https://lore.kernel.org/lkml/45a2f0b8-5bac-8b5d-d595-f92e9acb27ad@arm.com
-> > +     /* Map relocation function va == pa */
-> > +     rc = trans_pgd_map_page(&info, trans_ttbr0,  __va(kern_reloc),
-> > +                             kern_reloc, PAGE_KERNEL_EXEC);
-> > +     if (rc)
-> > +             return rc;
-> James wrote:
-> You can't do this with the page table helpers. We support platforms
-> with no memory in range of TTBR0's VA space. See dd006da21646f
->
-> You will need some idmapped memory to turn the MMU off on a system
-> that booted at EL1. This will need to be in a set of page tables
-> that the helpers can't easily touch - so it should only be a single
-> page. (like the arch code's existing idmap - although that may
-> have been overwritten).
->
-> (I have a machine where this is a problem, if I get the time I will
-> have a stab at making hibernate's safe page idmaped).
-> ---
->
-> As I understand, there are platforms where TTBR0 cannot include all
-> physical memory for idmap. However, kexec must have at least one page
-> idmapped (kimage->control_code_page) to be able to relocate kernel
-> while MMU is enabled:
->
-> I am still trying to fully understand the problem:
-> CONFIG_ARM64_VA_BITS must be smaller than 48 and physical memory must
-> start at a high address for this problem to occur.
->
-> Why can't we simply decrease T0SZ to cover all physical memory?
+Hi Lorenzo,
 
-Is there a way to reproduce this platform with qemu?
+Please see my comments inline:
 
-Pasha
+On Tue, Oct 15, 2019 at 10:13 PM Lorenzo Pieralisi
+<lorenzo.pieralisi@arm.com> wrote:
+>
+> On Fri, Sep 06, 2019 at 09:28:13AM +0530, Abhishek Shah wrote:
+> > Invalidate PAXB inbound/outbound address mapping each time before
+> > programming it. This is helpful for the cases where we need to
+> > reprogram inbound/outbound address mapping without resetting PAXB.
+> > kexec kernel is one such example.
+>
+> This looks like a hack, explain to us please what it actually solves and
+> why a full reset is not necessary.
+>
+The PAXB IP performs address translation(PCI<->AXI address) for both inbound and
+outbound addresses (amongst other things) based on version of IP being used.
+It does so using the IMAP/IARR/OMAP/OARR registers.
+
+These registers get programmed as per mappings specified in device tree during
+PCI driver probe for each RC and do not get reset when kexec/kdump kernel boots.
+This results in driver assuming valid mappings in place for some mapping windows
+during kexec/kdump kernel boot, consequently it skips those windows and
+we run out of available mapping windows, leading to mapping failure.
+
+Normally, we take care of resetting PAXB block in firmware, but in
+primary kernel
+to kexec/kdump kernel handover, no firmware is executed in between.
+So, we just, by default, invalidate the mapping registers each time before
+programming them to solve the issue described above..
+We do not need full reset for handling this.
+
+> > Signed-off-by: Abhishek Shah <abhishek.shah@broadcom.com>
+> > Reviewed-by: Ray Jui <ray.jui@broadcom.com>
+> > Reviewed-by: Vikram Mysore Prakash <vikram.prakash@broadcom.com>
+>
+> Patches are reviewed on public mailing lists, remove tags given
+> on internal reviews - they are not relevant.
+>
+Ok, will remove.
+
+> > ---
+> >  drivers/pci/controller/pcie-iproc.c | 28 ++++++++++++++++++++++++++++
+> >  1 file changed, 28 insertions(+)
+> >
+> > diff --git a/drivers/pci/controller/pcie-iproc.c b/drivers/pci/controller/pcie-iproc.c
+> > index e3ca46497470..99a9521ba7ab 100644
+> > --- a/drivers/pci/controller/pcie-iproc.c
+> > +++ b/drivers/pci/controller/pcie-iproc.c
+> > @@ -1245,6 +1245,32 @@ static int iproc_pcie_map_dma_ranges(struct iproc_pcie *pcie)
+> >       return ret;
+> >  }
+> >
+> > +static void iproc_pcie_invalidate_mapping(struct iproc_pcie *pcie)
+> > +{
+> > +     struct iproc_pcie_ib *ib = &pcie->ib;
+> > +     struct iproc_pcie_ob *ob = &pcie->ob;
+> > +     int idx;
+> > +
+> > +     if (pcie->ep_is_internal)
+>
+> What's this check for and why leaving mappings in place is safe for
+> this category of IPs ?
+For this category of IP(PAXC), no mappings need to be programmed in
+the first place.
+
+>
+> > +             return;
+> > +
+> > +     if (pcie->need_ob_cfg) {
+> > +             /* iterate through all OARR mapping regions */
+> > +             for (idx = ob->nr_windows - 1; idx >= 0; idx--) {
+> > +                     iproc_pcie_write_reg(pcie,
+> > +                                          MAP_REG(IPROC_PCIE_OARR0, idx), 0);
+> > +             }
+> > +     }
+> > +
+> > +     if (pcie->need_ib_cfg) {
+> > +             /* iterate through all IARR mapping regions */
+> > +             for (idx = 0; idx < ib->nr_regions; idx++) {
+> > +                     iproc_pcie_write_reg(pcie,
+> > +                                          MAP_REG(IPROC_PCIE_IARR0, idx), 0);
+> > +             }
+> > +     }
+> > +}
+> > +
+> >  static int iproce_pcie_get_msi(struct iproc_pcie *pcie,
+> >                              struct device_node *msi_node,
+> >                              u64 *msi_addr)
+> > @@ -1517,6 +1543,8 @@ int iproc_pcie_setup(struct iproc_pcie *pcie, struct list_head *res)
+> >       iproc_pcie_perst_ctrl(pcie, true);
+> >       iproc_pcie_perst_ctrl(pcie, false);
+> >
+> > +     iproc_pcie_invalidate_mapping(pcie);
+>
+> It makes more sense to call this in the .shutdown() method if I
+> understand what it does.
+>
+It would work for kexec kernel, but not for kdump kernel as only for
+kexec'ed kernel,
+"device_shutdown" callback is present. We are here taking care of both the cases
+with this patch.
+
+
+Regards,
+Abhishek
+
+> Lorenzo
+>
+> >       if (pcie->need_ob_cfg) {
+> >               ret = iproc_pcie_map_ranges(pcie, res);
+> >               if (ret) {
+> > --
+> > 2.17.1
+> >
 
 _______________________________________________
 linux-arm-kernel mailing list
