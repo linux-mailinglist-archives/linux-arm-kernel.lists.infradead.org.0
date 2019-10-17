@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 489A7DA709
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 10:15:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5728BDA70A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 10:15:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=5pF5FwzHsAkhjrbfT7PrOd2sCwLiKauuc0R9yIl2zgo=; b=A5OxZl3aCGfzBrwiF6JgNR91UG
-	SV17MS149mHxOKIPRpB2OPHwcAVgyVFZm2+HRI2mtBeQVv7sCdn/UMD+gxcCvBxRNJxbv/2cXLXkG
-	fnMZRqK7AaOuudRlRyUEfUqVOcOavrUNcXbtiiaUE6atFKBxIAfG5WEXsXYH983nmYFlaDRZV1Sb7
-	UYiyq+v6/848AB6UQ51cnwK4rIBJz0Ccqh2tnD+Sh9VSmGrhbKy4smlm7nF2rM+BuucSgSPctmC4s
-	xgnqOoGd+oJybBZEyRMaTSlBO754ytrx9eE+nea/nMiIT0IKL3ixYP9q0wEjN0vFOIJqd0tATIf+v
-	c6qqbWvQ==;
+	bh=wyZzh62HwOshySCMETNLnjsRwmxjbKVC2eLnNLm4ZjM=; b=DWra+r/ABjPeyXpKaEZcEK3Bfq
+	wYFe/gtVf7UfZHN7e7Hfb983UYKO9VDCRrVLLFFG22GD4Av+3dD5kvB0WSx2g+2+iwYeTlYVU5HEg
+	nC9EmVRsMqUZ6DmlTomrt/sX0HvhBMftzu5GMkwpGkdnuATTwjnurVDIgulxDkHeZMxS9EGixLlpz
+	6UivZHU/gTUlTDmJCfatAbbsMKGJ+HSeAKvjXYt3/kFd0qumYmOQaB9C2RtaT0FsD8qPGUAXMT5GB
+	KnPlidhwXtsBi63n9ICrLRbv0TvIKRGUXpaeOeJX2U4x5VoDfHrf244NYQVqMpsk3+071VT7IUY2a
+	ud6tMo4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL0wC-00015B-T9; Thu, 17 Oct 2019 08:15:12 +0000
+	id 1iL0wY-0001JY-Re; Thu, 17 Oct 2019 08:15:34 +0000
 Received: from [217.140.110.172] (helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL0vt-0000x9-7d
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 08:14:54 +0000
+ id 1iL0vt-00011r-Gb
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 08:14:55 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C183F15AD;
- Thu, 17 Oct 2019 01:14:44 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DD09215BF;
+ Thu, 17 Oct 2019 01:14:48 -0700 (PDT)
 Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.0.144])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 264F13F6C4;
- Thu, 17 Oct 2019 01:14:40 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 42E7C3F6C4;
+ Thu, 17 Oct 2019 01:14:45 -0700 (PDT)
 From: Amit Daniel Kachhap <amit.kachhap@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 01/11] arm64: cpufeature: add pointer auth meta-capabilities
-Date: Thu, 17 Oct 2019 13:44:15 +0530
-Message-Id: <1571300065-10236-2-git-send-email-amit.kachhap@arm.com>
+Subject: [PATCH 02/11] arm64: install user ptrauth keys at kernel exit time
+Date: Thu, 17 Oct 2019 13:44:16 +0530
+Message-Id: <1571300065-10236-3-git-send-email-amit.kachhap@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1571300065-10236-1-git-send-email-amit.kachhap@arm.com>
 References: <1571300065-10236-1-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_011453_364104_345D286B 
-X-CRM114-Status: GOOD (  12.77  )
+X-CRM114-CacheID: sfid-20191017_011453_640134_26958FCD 
+X-CRM114-Status: GOOD (  16.03  )
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
@@ -78,130 +78,214 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Kristina Martsenko <kristina.martsenko@arm.com>
 
-To enable pointer auth for the kernel, we're going to need to check for
-the presence of address auth and generic auth using alternative_if. We
-currently have two cpucaps for each, but alternative_if needs to check a
-single cpucap. So define meta-capabilities that are present when either
-of the current two capabilities is present.
+As we're going to enable pointer auth within the kernel and use a
+different APIAKey for the kernel itself, then move the user APIAKey
+switch to EL0 exception return.
 
-Leave the existing four cpucaps in place, as they are still needed to
-check for mismatched systems where one CPU has the architected algorithm
-but another has the IMP DEF algorithm.
+The other 4 keys could remain switched during task switch, but are also
+moved to keep things consistent.
 
-Note, the meta-capabilities were present before but were removed in
-commit a56005d32105 ("arm64: cpufeature: Reduce number of pointer auth
-CPU caps from 6 to 4") and commit 1e013d06120c ("arm64: cpufeature: Rework
-ptr auth hwcaps using multi_entry_cap_matches"), as they were not needed
-then. Note, unlike before, the current patch checks the cpucap values
-directly, instead of reading the CPU ID register value.
-
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Reviewed-by: Kees Cook <keescook@chromium.org>
 Signed-off-by: Kristina Martsenko <kristina.martsenko@arm.com>
 Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 ---
 Changes since RFC v2:
- - Small change in commit logs.
+ - Replaced 12 NOPs with a branch in ptrauth_keys_install_user [Catalin]
 
- arch/arm64/include/asm/cpucaps.h    |  4 +++-
- arch/arm64/include/asm/cpufeature.h |  6 ++----
- arch/arm64/kernel/cpufeature.c      | 25 ++++++++++++++++++++++++-
- 3 files changed, 29 insertions(+), 6 deletions(-)
+ arch/arm64/include/asm/asm_pointer_auth.h | 45 +++++++++++++++++++++++++++++++
+ arch/arm64/include/asm/pointer_auth.h     | 30 +--------------------
+ arch/arm64/kernel/asm-offsets.c           | 11 ++++++++
+ arch/arm64/kernel/entry.S                 |  3 +++
+ arch/arm64/kernel/pointer_auth.c          |  3 ---
+ arch/arm64/kernel/process.c               |  1 -
+ 6 files changed, 60 insertions(+), 33 deletions(-)
+ create mode 100644 arch/arm64/include/asm/asm_pointer_auth.h
 
-diff --git a/arch/arm64/include/asm/cpucaps.h b/arch/arm64/include/asm/cpucaps.h
-index f19fe4b..cbecfa5 100644
---- a/arch/arm64/include/asm/cpucaps.h
-+++ b/arch/arm64/include/asm/cpucaps.h
-@@ -52,7 +52,9 @@
- #define ARM64_HAS_IRQ_PRIO_MASKING		42
- #define ARM64_HAS_DCPODP			43
- #define ARM64_WORKAROUND_1463225		44
-+#define ARM64_HAS_ADDRESS_AUTH			45
-+#define ARM64_HAS_GENERIC_AUTH			46
- 
--#define ARM64_NCAPS				45
-+#define ARM64_NCAPS				47
- 
- #endif /* __ASM_CPUCAPS_H */
-diff --git a/arch/arm64/include/asm/cpufeature.h b/arch/arm64/include/asm/cpufeature.h
-index 9cde5d2..670497d 100644
---- a/arch/arm64/include/asm/cpufeature.h
-+++ b/arch/arm64/include/asm/cpufeature.h
-@@ -590,15 +590,13 @@ static inline bool system_supports_cnp(void)
- static inline bool system_supports_address_auth(void)
- {
- 	return IS_ENABLED(CONFIG_ARM64_PTR_AUTH) &&
--		(cpus_have_const_cap(ARM64_HAS_ADDRESS_AUTH_ARCH) ||
--		 cpus_have_const_cap(ARM64_HAS_ADDRESS_AUTH_IMP_DEF));
-+		cpus_have_const_cap(ARM64_HAS_ADDRESS_AUTH);
- }
- 
- static inline bool system_supports_generic_auth(void)
- {
- 	return IS_ENABLED(CONFIG_ARM64_PTR_AUTH) &&
--		(cpus_have_const_cap(ARM64_HAS_GENERIC_AUTH_ARCH) ||
--		 cpus_have_const_cap(ARM64_HAS_GENERIC_AUTH_IMP_DEF));
-+		cpus_have_const_cap(ARM64_HAS_GENERIC_AUTH);
- }
- 
- static inline bool system_uses_irq_prio_masking(void)
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index 9323bcc..a73400b 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -1242,6 +1242,20 @@ static void cpu_enable_address_auth(struct arm64_cpu_capabilities const *cap)
- 	sysreg_clear_set(sctlr_el1, 0, SCTLR_ELx_ENIA | SCTLR_ELx_ENIB |
- 				       SCTLR_ELx_ENDA | SCTLR_ELx_ENDB);
- }
+diff --git a/arch/arm64/include/asm/asm_pointer_auth.h b/arch/arm64/include/asm/asm_pointer_auth.h
+new file mode 100644
+index 0000000..cb21a06
+--- /dev/null
++++ b/arch/arm64/include/asm/asm_pointer_auth.h
+@@ -0,0 +1,45 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++#ifndef __ASM_ASM_POINTER_AUTH_H
++#define __ASM_ASM_POINTER_AUTH_H
 +
-+static bool has_address_auth(const struct arm64_cpu_capabilities *entry,
-+			     int __unused)
-+{
-+	return cpus_have_const_cap(ARM64_HAS_ADDRESS_AUTH_ARCH) ||
-+	       cpus_have_const_cap(ARM64_HAS_ADDRESS_AUTH_IMP_DEF);
-+}
++#include <asm/alternative.h>
++#include <asm/asm-offsets.h>
++#include <asm/cpufeature.h>
++#include <asm/sysreg.h>
 +
-+static bool has_generic_auth(const struct arm64_cpu_capabilities *entry,
-+			     int __unused)
-+{
-+	return cpus_have_const_cap(ARM64_HAS_GENERIC_AUTH_ARCH) ||
-+	       cpus_have_const_cap(ARM64_HAS_GENERIC_AUTH_IMP_DEF);
-+}
++#ifdef CONFIG_ARM64_PTR_AUTH
++
++	.macro ptrauth_keys_install_user tsk, tmp1, tmp2, tmp3
++	mov	\tmp1, #THREAD_KEYS_USER
++	add	\tmp1, \tsk, \tmp1
++alternative_if_not ARM64_HAS_ADDRESS_AUTH
++	b	.Laddr_auth_skip_\@
++alternative_else_nop_endif
++	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_KEY_APIA]
++	msr_s	SYS_APIAKEYLO_EL1, \tmp2
++	msr_s	SYS_APIAKEYHI_EL1, \tmp3
++	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_KEY_APIB]
++	msr_s	SYS_APIBKEYLO_EL1, \tmp2
++	msr_s	SYS_APIBKEYHI_EL1, \tmp3
++	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_KEY_APDA]
++	msr_s	SYS_APDAKEYLO_EL1, \tmp2
++	msr_s	SYS_APDAKEYHI_EL1, \tmp3
++	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_KEY_APDB]
++	msr_s	SYS_APDBKEYLO_EL1, \tmp2
++	msr_s	SYS_APDBKEYHI_EL1, \tmp3
++.Laddr_auth_skip_\@:
++alternative_if ARM64_HAS_GENERIC_AUTH
++	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_KEY_APGA]
++	msr_s	SYS_APGAKEYLO_EL1, \tmp2
++	msr_s	SYS_APGAKEYHI_EL1, \tmp3
++alternative_else_nop_endif
++	.endm
++
++#else /* CONFIG_ARM64_PTR_AUTH */
++
++	.macro ptrauth_keys_install_user tsk, tmp1, tmp2, tmp3
++	.endm
++
++#endif /* CONFIG_ARM64_PTR_AUTH */
++
++#endif /* __ASM_ASM_POINTER_AUTH_H */
+diff --git a/arch/arm64/include/asm/pointer_auth.h b/arch/arm64/include/asm/pointer_auth.h
+index 7a24bad..21c2115 100644
+--- a/arch/arm64/include/asm/pointer_auth.h
++++ b/arch/arm64/include/asm/pointer_auth.h
+@@ -43,26 +43,6 @@ static inline void ptrauth_keys_init(struct ptrauth_keys *keys)
+ 		get_random_bytes(&keys->apga, sizeof(keys->apga));
+ }
+ 
+-#define __ptrauth_key_install(k, v)				\
+-do {								\
+-	struct ptrauth_key __pki_v = (v);			\
+-	write_sysreg_s(__pki_v.lo, SYS_ ## k ## KEYLO_EL1);	\
+-	write_sysreg_s(__pki_v.hi, SYS_ ## k ## KEYHI_EL1);	\
+-} while (0)
+-
+-static inline void ptrauth_keys_switch(struct ptrauth_keys *keys)
+-{
+-	if (system_supports_address_auth()) {
+-		__ptrauth_key_install(APIA, keys->apia);
+-		__ptrauth_key_install(APIB, keys->apib);
+-		__ptrauth_key_install(APDA, keys->apda);
+-		__ptrauth_key_install(APDB, keys->apdb);
+-	}
+-
+-	if (system_supports_generic_auth())
+-		__ptrauth_key_install(APGA, keys->apga);
+-}
+-
+ extern int ptrauth_prctl_reset_keys(struct task_struct *tsk, unsigned long arg);
+ 
+ /*
+@@ -78,20 +58,12 @@ static inline unsigned long ptrauth_strip_insn_pac(unsigned long ptr)
+ }
+ 
+ #define ptrauth_thread_init_user(tsk)					\
+-do {									\
+-	struct task_struct *__ptiu_tsk = (tsk);				\
+-	ptrauth_keys_init(&__ptiu_tsk->thread.keys_user);		\
+-	ptrauth_keys_switch(&__ptiu_tsk->thread.keys_user);		\
+-} while (0)
+-
+-#define ptrauth_thread_switch(tsk)	\
+-	ptrauth_keys_switch(&(tsk)->thread.keys_user)
++	ptrauth_keys_init(&(tsk)->thread.keys_user)
+ 
+ #else /* CONFIG_ARM64_PTR_AUTH */
+ #define ptrauth_prctl_reset_keys(tsk, arg)	(-EINVAL)
+ #define ptrauth_strip_insn_pac(lr)	(lr)
+ #define ptrauth_thread_init_user(tsk)
+-#define ptrauth_thread_switch(tsk)
  #endif /* CONFIG_ARM64_PTR_AUTH */
  
- #ifdef CONFIG_ARM64_PSEUDO_NMI
-@@ -1511,7 +1525,6 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
- 		.field_pos = ID_AA64ISAR1_APA_SHIFT,
- 		.min_field_value = ID_AA64ISAR1_APA_ARCHITECTED,
- 		.matches = has_cpuid_feature,
--		.cpu_enable = cpu_enable_address_auth,
- 	},
- 	{
- 		.desc = "Address authentication (IMP DEF algorithm)",
-@@ -1522,6 +1535,11 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
- 		.field_pos = ID_AA64ISAR1_API_SHIFT,
- 		.min_field_value = ID_AA64ISAR1_API_IMP_DEF,
- 		.matches = has_cpuid_feature,
-+	},
-+	{
-+		.capability = ARM64_HAS_ADDRESS_AUTH,
-+		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
-+		.matches = has_address_auth,
- 		.cpu_enable = cpu_enable_address_auth,
- 	},
- 	{
-@@ -1544,6 +1562,11 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
- 		.min_field_value = ID_AA64ISAR1_GPI_IMP_DEF,
- 		.matches = has_cpuid_feature,
- 	},
-+	{
-+		.capability = ARM64_HAS_GENERIC_AUTH,
-+		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
-+		.matches = has_generic_auth,
-+	},
- #endif /* CONFIG_ARM64_PTR_AUTH */
- #ifdef CONFIG_ARM64_PSEUDO_NMI
- 	{
+ #endif /* __ASM_POINTER_AUTH_H */
+diff --git a/arch/arm64/kernel/asm-offsets.c b/arch/arm64/kernel/asm-offsets.c
+index 2146857..ef0c24b 100644
+--- a/arch/arm64/kernel/asm-offsets.c
++++ b/arch/arm64/kernel/asm-offsets.c
+@@ -40,6 +40,9 @@ int main(void)
+ #endif
+   BLANK();
+   DEFINE(THREAD_CPU_CONTEXT,	offsetof(struct task_struct, thread.cpu_context));
++#ifdef CONFIG_ARM64_PTR_AUTH
++  DEFINE(THREAD_KEYS_USER,	offsetof(struct task_struct, thread.keys_user));
++#endif
+   BLANK();
+   DEFINE(S_X0,			offsetof(struct pt_regs, regs[0]));
+   DEFINE(S_X2,			offsetof(struct pt_regs, regs[2]));
+@@ -127,5 +130,13 @@ int main(void)
+   DEFINE(SDEI_EVENT_INTREGS,	offsetof(struct sdei_registered_event, interrupted_regs));
+   DEFINE(SDEI_EVENT_PRIORITY,	offsetof(struct sdei_registered_event, priority));
+ #endif
++#ifdef CONFIG_ARM64_PTR_AUTH
++  DEFINE(PTRAUTH_KEY_APIA,	offsetof(struct ptrauth_keys, apia));
++  DEFINE(PTRAUTH_KEY_APIB,	offsetof(struct ptrauth_keys, apib));
++  DEFINE(PTRAUTH_KEY_APDA,	offsetof(struct ptrauth_keys, apda));
++  DEFINE(PTRAUTH_KEY_APDB,	offsetof(struct ptrauth_keys, apdb));
++  DEFINE(PTRAUTH_KEY_APGA,	offsetof(struct ptrauth_keys, apga));
++  BLANK();
++#endif
+   return 0;
+ }
+diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
+index 84a8227..b6272a3 100644
+--- a/arch/arm64/kernel/entry.S
++++ b/arch/arm64/kernel/entry.S
+@@ -14,6 +14,7 @@
+ #include <asm/alternative.h>
+ #include <asm/assembler.h>
+ #include <asm/asm-offsets.h>
++#include <asm/asm_pointer_auth.h>
+ #include <asm/cpufeature.h>
+ #include <asm/errno.h>
+ #include <asm/esr.h>
+@@ -341,6 +342,8 @@ alternative_else_nop_endif
+ 	msr	cntkctl_el1, x1
+ 4:
+ #endif
++	ptrauth_keys_install_user tsk, x0, x1, x2
++
+ 	apply_ssbd 0, x0, x1
+ 	.endif
+ 
+diff --git a/arch/arm64/kernel/pointer_auth.c b/arch/arm64/kernel/pointer_auth.c
+index c507b58..95985be 100644
+--- a/arch/arm64/kernel/pointer_auth.c
++++ b/arch/arm64/kernel/pointer_auth.c
+@@ -19,7 +19,6 @@ int ptrauth_prctl_reset_keys(struct task_struct *tsk, unsigned long arg)
+ 
+ 	if (!arg) {
+ 		ptrauth_keys_init(keys);
+-		ptrauth_keys_switch(keys);
+ 		return 0;
+ 	}
+ 
+@@ -41,7 +40,5 @@ int ptrauth_prctl_reset_keys(struct task_struct *tsk, unsigned long arg)
+ 	if (arg & PR_PAC_APGAKEY)
+ 		get_random_bytes(&keys->apga, sizeof(keys->apga));
+ 
+-	ptrauth_keys_switch(keys);
+-
+ 	return 0;
+ }
+diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+index a47462d..5b2b158 100644
+--- a/arch/arm64/kernel/process.c
++++ b/arch/arm64/kernel/process.c
+@@ -505,7 +505,6 @@ __notrace_funcgraph struct task_struct *__switch_to(struct task_struct *prev,
+ 	contextidr_thread_switch(next);
+ 	entry_task_switch(next);
+ 	uao_thread_switch(next);
+-	ptrauth_thread_switch(next);
+ 	ssbs_thread_switch(next);
+ 
+ 	/*
 -- 
 2.7.4
 
