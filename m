@@ -2,72 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B02BFDB000
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 16:25:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5EE43DB008
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 16:27:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9/2G90Y0cqQPfOdx6N4eYHFPQLXkc+sogwfL9At28M0=; b=k2Yqa8yGyBJoO5
-	GDfpVYKD2eJX9nSn5dksN5OKb1e/YppcWkgTxR7HTGdLyGCKjJ8drATvEbz2kP71pEvIbH5d6tKFJ
-	r47yApmB6IUR6TxuL3DFuku1URYNnEgtO3FhWUOI/pN7Zp/irVX0iH4AwPbeHPOH/yV4bB8N/am/Z
-	JvSvLuvc7CQZjUnDgjbPW9TyTh5HNPOSp2XrZ8sUO62upLXfLSOukiNvrFZVa1WCQCSOJIMja3L3G
-	a3vAIusfMAV3MwnvZ5d/rt9rfPuTRfQR2nPa/jV4CWK4JrHFa3zsPx2TP/9OxMC/YRHyWOIfHxwfL
-	MwJe5vcMXFKwqmTVQk2w==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=oIaVD17Q/PDg9DUwfBaB88EszyT2sJpG8cVEP/FcuQw=; b=NU2tkDAx3YXFL7Jbb5snIMNaVm
+	5tF2i1HKcCnyqB2BfQfae/o2CbBfkETX7QBz6RnzS1VGbIWODDCsxzJn6N0lQBg7JXV5yvtFfXzQq
+	16yxSOmAg2AXgDhDfnlxrcHwPRUiPYCRXYPawIAZwy5QXkkD5i3Ye33AiGrxDuBr1Cc5xCv0cUGzY
+	IWeb4Fj8E19cp9HClh3jlUhedRfIYklkVYDyiFzm/4kVNz87vd6RUB3ndael9RbPmYzNnh44FwH8p
+	ZkGXrq1QYZ1I/ICRv0nziEYt0x/q4jMDRr0+vH24mAtyShW2ealQO7AeNbA5khRzGNnN/p5h8k8Ey
+	aP9q6JIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL6ii-00089w-2N; Thu, 17 Oct 2019 14:25:40 +0000
-Received: from eu-smtp-delivery-151.mimecast.com ([146.101.78.151])
+	id 1iL6k0-0008WL-HH; Thu, 17 Oct 2019 14:27:00 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL6iP-00082F-VX
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 14:25:25 +0000
-Received: from AcuMS.aculab.com (156.67.243.126 [156.67.243.126]) (Using
- TLS) by relay.mimecast.com with ESMTP id
- uk-mta-35-wLuQ8dFnOzq0PfuTddZlqw-1; Thu, 17 Oct 2019 15:25:15 +0100
-Received: from AcuMS.Aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) by
- AcuMS.aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) with Microsoft SMTP
- Server (TLS) id 15.0.1347.2; Thu, 17 Oct 2019 15:25:14 +0100
-Received: from AcuMS.Aculab.com ([fe80::43c:695e:880f:8750]) by
- AcuMS.aculab.com ([fe80::43c:695e:880f:8750%12]) with mapi id 15.00.1347.000; 
- Thu, 17 Oct 2019 15:25:14 +0100
-From: David Laight <David.Laight@ACULAB.COM>
-To: 'Yunfeng Ye' <yeyunfeng@huawei.com>, Sudeep Holla <sudeep.holla@arm.com>
-Subject: RE: [PATCH V2] arm64: psci: Reduce waiting time of cpu_psci_cpu_kill()
-Thread-Topic: [PATCH V2] arm64: psci: Reduce waiting time of
- cpu_psci_cpu_kill()
-Thread-Index: AQHVhO5+Vr2ETd8AWEKYYhhOaw9ZuKde3Cgg///1GwCAABHQgA==
-Date: Thu, 17 Oct 2019 14:25:14 +0000
-Message-ID: <173d1913031b4ecb88f0c6e421cc5cf8@AcuMS.aculab.com>
-References: <18068756-0f39-6388-3290-cf03746e767d@huawei.com>
- <9df267db-e647-a81d-16bb-b8bfb06c2624@huawei.com>
- <20191016153221.GA8978@bogus>
- <0f550044-9ed2-5f72-1335-73417678ba45@huawei.com>
- <c97c87b52f474463bc30ff8033a57e0c@AcuMS.aculab.com>
- <1cd555f0-4074-36b7-8426-6f01130051d2@huawei.com>
-In-Reply-To: <1cd555f0-4074-36b7-8426-6f01130051d2@huawei.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.202.205.107]
+ id 1iL6jm-0008Uy-6e
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 14:26:48 +0000
+Received: by mail-ed1-x544.google.com with SMTP id v8so1909164eds.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 17 Oct 2019 07:26:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+ bh=pTZm79Y77en4+WVH2R/MS/mKWiM//Hl1RgvICjEclrk=;
+ b=TKjxRtPwWpvtdWaMYbV45LyV9HVOzaOpAFbMpF2wo5zHCbYg0VRPUUtdJ1VyU2CUc6
+ l/GfxXIxUHAzOJXFyL/sOqbcEBBADqp8Pq1no/2KigSG5eGP/nwp1ooFXzgeBH8HEdjO
+ GmJV/kE/BTVPJEGV8LKAdzay5o0rhZDFgVvRTWl/8/mJ/iwqxTg0IqZ6T9qTkiFc8x78
+ 2EcQkBTDbFH6XEMf1N3dkNFpK4jjV2/42IkyvXgNWCq+s3Q6czyEmpaIe60dwwf0EJUc
+ 0QeFMbdS9HQHYMtc2JQUheqYhHhaL2gcvWIPxKnh27DvXjcivpklLdfmftATrLQDcDfZ
+ nO4Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to;
+ bh=pTZm79Y77en4+WVH2R/MS/mKWiM//Hl1RgvICjEclrk=;
+ b=aI5AUHsQr+Ht/C41nwX1WELbyo14aQBIKkFBUaJXeeSh1/+YRVzHIez03izJG6ZsiT
+ a7QAJ/sp2fomkrw/AqfKsufmEy00KhpBa0kfQr/wQG2meJ+os7etEAQ9aU8+mt3yT8xY
+ FPdYby/glVHNwgZ7jSuAd8r8HHAlLDcRpPWs+hVbtoDhc/mkv4o8AVvsQaLGb5ObMVqw
+ s1uPTjjOVds9zG8qeLsFUhjYgZhBiH4ubrN+MfRCgU/UjlV0hFjceMFBj04eK7VWMetu
+ KnT3Q+CFx/pocvoO2ZbF9MWZtlz1zpudmEvs0ZDJJh/BIWxHbqJJRX6ggBxI9IWlIo17
+ 5M3A==
+X-Gm-Message-State: APjAAAXHUSAmb6kqWFMzadmEvMtQeuJyfq8RXihKn8UxekcsC8NoZr27
+ Hp880SFuOMO1QtvH1kSQc6ml4QYY9L4mgG7RJnKoIQ==
+X-Google-Smtp-Source: APXvYqziFMNgpgw2iHsErr96SyZ2uSmSqs5rGVbMozjNUXiBuLfqaEtdRt8edlaf9N0bltup9A+f3kj+ItWHzZYFDds=
+X-Received: by 2002:aa7:dd0f:: with SMTP id i15mr4281166edv.0.1571322404589;
+ Thu, 17 Oct 2019 07:26:44 -0700 (PDT)
 MIME-Version: 1.0
-X-MC-Unique: wLuQ8dFnOzq0PfuTddZlqw-1
-X-Mimecast-Spam-Score: 0
+References: <20191016200034.1342308-1-pasha.tatashin@soleen.com>
+In-Reply-To: <20191016200034.1342308-1-pasha.tatashin@soleen.com>
+From: Pavel Tatashin <pasha.tatashin@soleen.com>
+Date: Thu, 17 Oct 2019 10:26:33 -0400
+Message-ID: <CA+CK2bC2KwWufE1DWa4szn_hQ1dbjDVHgYUu7=J4O_kvKXTrHg@mail.gmail.com>
+Subject: Re: [PATCH v7 00/25] arm64: MMU enabled kexec relocation
+To: Pavel Tatashin <pasha.tatashin@soleen.com>,
+ James Morris <jmorris@namei.org>, 
+ Sasha Levin <sashal@kernel.org>, "Eric W. Biederman" <ebiederm@xmission.com>, 
+ kexec mailing list <kexec@lists.infradead.org>,
+ LKML <linux-kernel@vger.kernel.org>, 
+ Jonathan Corbet <corbet@lwn.net>, Catalin Marinas <catalin.marinas@arm.com>,
+ will@kernel.org, Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Marc Zyngier <marc.zyngier@arm.com>, 
+ James Morse <james.morse@arm.com>, Vladimir Murzin <vladimir.murzin@arm.com>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, Bhupesh Sharma <bhsharma@redhat.com>,
+ linux-mm <linux-mm@kvack.org>, Mark Rutland <mark.rutland@arm.com>,
+ steve.capper@arm.com, 
+ rfontana@redhat.com, Thomas Gleixner <tglx@linutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_072522_392876_55C22120 
-X-CRM114-Status: GOOD (  16.10  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191017_072646_673496_466C9E46 
+X-CRM114-Status: GOOD (  16.12  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [146.101.78.151 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,64 +103,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "kstewart@linuxfoundation.org" <kstewart@linuxfoundation.org>,
- "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>,
- "hushiyuan@huawei.com" <hushiyuan@huawei.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linfeilong@huawei.com" <linfeilong@huawei.com>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "tglx@linutronix.de" <tglx@linutronix.de>,
- "wuyun.wu@huawei.com" <wuyun.wu@huawei.com>,
- "will@kernel.org" <will@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Yunfeng Ye
- > Sent: 17 October 2019 15:20
-> On 2019/10/17 22:00, David Laight wrote:
-> > From: Yunfeng Ye
-> >> Sent: 17 October 2019 14:26
-> > ...
-> >>>> -	for (i = 0; i < 10; i++) {
-> >>>> +	i = 0;
-> >>>> +	timeout = jiffies + msecs_to_jiffies(100);
-> >>>> +	do {
-> >>>>  		err = psci_ops.affinity_info(cpu_logical_map(cpu), 0);
-> >>>>  		if (err == PSCI_0_2_AFFINITY_LEVEL_OFF) {
-> >>>>  			pr_info("CPU%d killed.\n", cpu);
-> >>>>  			return 0;
-> >>>>  		}
-> >>>>
-> >>>> -		msleep(10);
-> >>>> -		pr_info("Retrying again to check for CPU kill\n");
-> >>>
-> >>> You dropped this message, any particular reason ?
-> >>>
-> >> When reduce the time interval to 1ms, the print message maybe increase 10 times.
-> >> on the other hand, cpu_psci_cpu_kill() will print message on success or failure, which
-> >> this retry log is not very necessary. of cource, I think use pr_info_once() instead of
-> >> pr_info() is better.
-> >
-> > Maybe you should print in on (say) the 10th time around the loop.
-> >
-> Can it like this:
->   pr_info("CPU%d killed with %d loops.\n", cpu, loops);
-> 
-> If put the number of waiting times in the successful printing message, it is
-> not necessary to print the "Retrying ..." message.
+> https://lore.kernel.org/lkml/45a2f0b8-5bac-8b5d-d595-f92e9acb27ad@arm.com
+> > +     /* Map relocation function va == pa */
+> > +     rc = trans_pgd_map_page(&info, trans_ttbr0,  __va(kern_reloc),
+> > +                             kern_reloc, PAGE_KERNEL_EXEC);
+> > +     if (rc)
+> > +             return rc;
+> James wrote:
+> You can't do this with the page table helpers. We support platforms
+> with no memory in range of TTBR0's VA space. See dd006da21646f
+>
+> You will need some idmapped memory to turn the MMU off on a system
+> that booted at EL1. This will need to be in a set of page tables
+> that the helpers can't easily touch - so it should only be a single
+> page. (like the arch code's existing idmap - although that may
+> have been overwritten).
+>
+> (I have a machine where this is a problem, if I get the time I will
+> have a stab at making hibernate's safe page idmaped).
+> ---
+>
+> As I understand, there are platforms where TTBR0 cannot include all
+> physical memory for idmap. However, kexec must have at least one page
+> idmapped (kimage->control_code_page) to be able to relocate kernel
+> while MMU is enabled:
+>
+> I am still trying to fully understand the problem:
+> CONFIG_ARM64_VA_BITS must be smaller than 48 and physical memory must
+> start at a high address for this problem to occur.
+>
+> Why can't we simply decrease T0SZ to cover all physical memory?
 
-That depends on whether you want to know how long it took or why the system
-is 'stuck'.
+Is there a way to reproduce this platform with qemu?
 
-	David
+Pasha
 
--
-Registered Address Lakeside, Bramley Road, Mount Farm, Milton Keynes, MK1 1PT, UK
-Registration No: 1397386 (Wales)
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
