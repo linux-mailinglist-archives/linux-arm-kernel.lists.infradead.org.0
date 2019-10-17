@@ -2,54 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9AAE3DA268
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 01:46:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0247DA28F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 02:07:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dfZukkCAbReJPivVigWAVTtDbG95BSkPSm6GoJxK7nk=; b=ZcrpdThYiJUGfU
-	CzD06PLkiMZDN1M85EN+HTI18oUoa+bzNTKw2387XPijtir6u/D6Gu+SLc80bmrNBA8GeDvYqKRV4
-	wpb0jy0+Yo4HKRbOblLmf65exRuLihfKk5HibWF3oPfMsh5GMcx3GBwakWyfe5Pxscfj6n03D0/bx
-	N0pZlwby+Xg64ithsK1YQ/EJGSTsy2eBR19IR/EU8INK86iGzQQRznzABWnZnPI6EFElbZvZG5i3A
-	AMAk1Q+RI8vqtc3mmvIvmfq7l47M0PCPuJ1GBlfk+Kg+NGzRUUzIXvshw2yyVQPI3UDwhoOAcjax9
-	Ycq2njDVYG2wKBPKYMYg==;
+	List-Owner; bh=CeUpDcXHn1CnayFXIzKinvXOQiLWb3tUmlJ8MNczHWs=; b=tscy7qNQ/ZFw4q
+	dWRvtN+zKqCqRIzxzpkIWV3lxPPLbrGcVhYl8qKVKz8/9m7BpRXQNe2TGazYlO7KteYR8nJDdA4fO
+	OW4M0b3CoTXhBlSzvVSIXBMqVbdJQ4zAJm6x+Wy/tTHXFZgHDCSJY0tUnLx7jeBQ1aFHXyDIqf5/v
+	1lVsDnLsScnsTK9tyt8eiPLfSCBpJlxblS/aKUPvjhhBLPSypY3PzSq77+N8W0u3hyBADZ7eBduFH
+	QDegGNjP8CzxJjR4BUyiX7D/gplbHsjTnLKjkZeC8GMkv0K0D0hr0kQ8UMnAymyuKdnqju0GL4YJu
+	KD/lmLb8+3vuJ94E1NUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKszq-0006Yt-GU; Wed, 16 Oct 2019 23:46:26 +0000
+	id 1iKtJj-0004zT-4o; Thu, 17 Oct 2019 00:06:59 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKsze-0006YJ-UE
- for linux-arm-kernel@lists.infradead.org; Wed, 16 Oct 2019 23:46:17 +0000
+ id 1iKtJZ-0004ys-Uu
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 00:06:51 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 971AB20659;
- Wed, 16 Oct 2019 23:46:11 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0A08320872;
+ Thu, 17 Oct 2019 00:06:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571269574;
- bh=1d+anmR89+BsXGTeKAeDSQMGxC4eYRI2kxsjcdlZMTE=;
+ s=default; t=1571270809;
+ bh=DbAnuXxxI4ql/mIxS5Ri9OMBjzaKAjXqFG3gEGJ1gCQ=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Z6Qx+YjtJmpoUVU8R7/jtOToPUmweQ91tIuV2pHkqKBannSmtgnxpD10pvX/mMjBb
- aThIrnvXcv4Y9U1Lf5Ly6vCeEKvNk3pFBM/Q3I9LjbuPY0fNPzxbINylySRKYve0BK
- mkq4d9FNRSMXljwo1DSsWbBB9x0S6XLS2cSludn0=
-Date: Thu, 17 Oct 2019 00:46:08 +0100
+ b=Xz1C1hik3XHTqGfPEVqTo9ImbCcmors0wQuV4afL0eLWgsqqfDHIPmcGMmrSHBA8w
+ D/szxMBGp/eS2TcvxYEmlnspxC0QqMIUztNT+FdeFI1ZkBeNjiqYKemRCibMMVU95h
+ b655V++6gZTcUWL8kQ1TVhzJVSSFEaazEnFKkxhA=
+Date: Thu, 17 Oct 2019 01:06:45 +0100
 From: Will Deacon <will@kernel.org>
-To: Palmer Dabbelt <palmer@sifive.com>
-Subject: Re: [PATCH v10 3/3] mm: fix double page fault on arm64 if PTE_AF is
- cleared
-Message-ID: <20191016234607.626nzv5kf5fgz25x@willie-the-truck>
-References: <20191008123943.j7q6dlu2qb2az6xa@willie-the-truck>
- <mhng-dd251518-8ac0-40fa-9f62-20715d9ba906@palmer-si-x1e>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: Re: [PATCH 0/3] arm64: Fix support for systems without FP/SIMD
+Message-ID: <20191017000644.uudhadekbeei73uy@willie-the-truck>
+References: <20191010171517.28782-1-suzuki.poulose@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <mhng-dd251518-8ac0-40fa-9f62-20715d9ba906@palmer-si-x1e>
+In-Reply-To: <20191010171517.28782-1-suzuki.poulose@arm.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_164615_018977_143C464B 
-X-CRM114-Status: GOOD (  23.58  )
+X-CRM114-CacheID: sfid-20191016_170650_018538_C9081A33 
+X-CRM114-Status: GOOD (  16.20  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,82 +76,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark.Rutland@arm.com, Justin.He@arm.com, Kaly.Xin@arm.com,
- Catalin.Marinas@arm.com, linux-kernel@vger.kernel.org, willy@infradead.org,
- linux-mm@kvack.org, James.Morse@arm.com, linux-arm-kernel@lists.infradead.org,
- punitagrawal@gmail.com, maz@kernel.org, hejianet@gmail.com, tglx@linutronix.de,
- nd@arm.com, akpm@linux-foundation.org, kirill.shutemov@linux.intel.com
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, dave.martin@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hey Palmer,
-
-On Wed, Oct 16, 2019 at 04:21:59PM -0700, Palmer Dabbelt wrote:
-> On Tue, 08 Oct 2019 05:39:44 PDT (-0700), will@kernel.org wrote:
-> > On Tue, Oct 08, 2019 at 02:19:05AM +0000, Justin He (Arm Technology China) wrote:
-> > > > On Mon, Sep 30, 2019 at 09:57:40AM +0800, Jia He wrote:
-> > > > > diff --git a/mm/memory.c b/mm/memory.c
-> > > > > index b1ca51a079f2..1f56b0118ef5 100644
-> > > > > --- a/mm/memory.c
-> > > > > +++ b/mm/memory.c
-> > > > > @@ -118,6 +118,13 @@ int randomize_va_space __read_mostly =
-> > > > >  					2;
-> > > > >  #endif
-> > > > >
-> > > > > +#ifndef arch_faults_on_old_pte
-> > > > > +static inline bool arch_faults_on_old_pte(void)
-> > > > > +{
-> > > > > +	return false;
-> > > > > +}
-> > > > > +#endif
-> > > >
-> > > > Kirill has acked this, so I'm happy to take the patch as-is, however isn't
-> > > > it the case that /most/ architectures will want to return true for
-> > > > arch_faults_on_old_pte()? In which case, wouldn't it make more sense for
-> > > > that to be the default, and have x86 and arm64 provide an override? For
-> > > > example, aren't most architectures still going to hit the double fault
-> > > > scenario even with your patch applied?
-> > > 
-> > > No, after applying my patch series, only those architectures which don't provide
-> > > setting access flag by hardware AND don't implement their arch_faults_on_old_pte
-> > > will hit the double page fault.
-> > > 
-> > > The meaning of true for arch_faults_on_old_pte() is "this arch doesn't have the hardware
-> > > setting access flag way, it might cause page fault on an old pte"
-> > > I don't want to change other architectures' default behavior here. So by default,
-> > > arch_faults_on_old_pte() is false.
-> > 
-> > ...and my complaint is that this is the majority of supported architectures,
-> > so you're fixing something for arm64 which also affects arm, powerpc,
-> > alpha, mips, riscv, ...
-> > 
-> > Chances are, they won't even realise they need to implement
-> > arch_faults_on_old_pte() until somebody runs into the double fault and
-> > wastes lots of time debugging it before they spot your patch.
+On Thu, Oct 10, 2019 at 06:15:14PM +0100, Suzuki K Poulose wrote:
+> This series fixes the original support for systems without FP/SIMD.
+> We have three set of issues with the current code :
 > 
-> If I understand the semantics correctly, we should have this set to true.  I
-> don't have any context here, but we've got
+> 1) We detect the absence of FP/SIMD after the SMP cpus are brought
+> online (i.e, SYSTEM scope). This means, some of the early kernel threads
+> could run with their TIF_FOREIGN_FPSTATE flag set which might be
+> inherited by applications forked by them (e.g, modprobe from initramfs).
 > 
->                /*
->                 * The kernel assumes that TLBs don't cache invalid
->                 * entries, but in RISC-V, SFENCE.VMA specifies an
->                 * ordering constraint, not a cache flush; it is
->                 * necessary even after writing invalid entries.
->                 */
->                local_flush_tlb_page(addr);
+> Also we allow a hotplugged CPU to boot successfully even if it doesn't
+> have the FP/SIMD when we have decided otherwise at boot and have now
+> advertised the ELF HWCAP for the userspace.
+> Fix this by turning this to a BOOT_RESTRICTED_CPU_LOCAL feature to
+> allow the detection of the feature the very moment a CPU turns up
+> without FP/SIMD and also prevent a conflict after SMP boot.
 > 
-> in do_page_fault().
+> 2) As mentioned above, some tasks could have the TIF flag set,
+> which will never be cleared after we detect the capability.
+> Thus they could get stuck indefinitely in do_notfiy_resume().
+> Fix this by clearing the TIF flag for such tasks but continuing
+> to avoid the save/restore of the FP state.
+> 
+> 3) The compat ELF_HWCAP bits are statically initialised to indicate
+> that the FP/SIMD support is available. This must be updated dynamically
+> to provide the correct flags to the userspace.
+> 
+> Tested with a 32bit Debian Jessie fs on Fast model (with and without
+> FP support).
+> 
+> Suzuki K Poulose (3):
+>   arm64: cpufeature: Fix the type of no FP/SIMD capability
+>   arm64: nofpsmid: Clear TIF_FOREIGN_FPSTATE flag for early tasks
+>   arm64: cpufeature: Set the FP/SIMD compat HWCAP bits properly
 
-Ok, although I think this is really about whether or not your hardware can
-make a pte young when accessed, or whether you take a fault and do it
-by updating the pte explicitly.
-
-v12 of the patches did change the default, so you should be "safe" with
-those either way:
-
-http://lists.infradead.org/pipermail/linux-arm-kernel/2019-October/686030.html
+This looks alright apart from Dave's comments on patch 2. Do you plan to
+address those at all? Some of it looks like scope for future work, but there
+are also some questions about the mechanics of the patch.
 
 Will
 
