@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5728BDA70A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 10:15:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 582CADA70D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 17 Oct 2019 10:16:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=wyZzh62HwOshySCMETNLnjsRwmxjbKVC2eLnNLm4ZjM=; b=DWra+r/ABjPeyXpKaEZcEK3Bfq
-	wYFe/gtVf7UfZHN7e7Hfb983UYKO9VDCRrVLLFFG22GD4Av+3dD5kvB0WSx2g+2+iwYeTlYVU5HEg
-	nC9EmVRsMqUZ6DmlTomrt/sX0HvhBMftzu5GMkwpGkdnuATTwjnurVDIgulxDkHeZMxS9EGixLlpz
-	6UivZHU/gTUlTDmJCfatAbbsMKGJ+HSeAKvjXYt3/kFd0qumYmOQaB9C2RtaT0FsD8qPGUAXMT5GB
-	KnPlidhwXtsBi63n9ICrLRbv0TvIKRGUXpaeOeJX2U4x5VoDfHrf244NYQVqMpsk3+071VT7IUY2a
-	ud6tMo4Q==;
+	bh=M3qNha+VVvwLz/HiaTM0ogsdkpojKbwQUmyUG5QJANM=; b=Gvp7EtsexxiPyufO+T4L3Q+LpZ
+	7npsA1JnWmoCpYvQfPYr6ZRfqmDV/NVQsJnYEseUAA5jh0sdMdaiBL9LPrkSEZXMR5H6VCbiQdOmR
+	mV8DwLs64LhueSRrugOFjTYgt8azbuWlGsK529/pWHQ4vU+AjuS8E+VXN+iH2nWiPv3Gz86wCjCJW
+	QLGfqMYu5JXPwXleKTUDLE4zrdNg33VpPtZYF/oxTXydOVN0ZllkjwYsJEnfJAV+yRlBfTglM1ZG+
+	GWCE0EkCPmiVIlKI7y/rf54pEzPgy84IO1AcANGEyoIH8rSDjpH9H9x6oVoOeuQT8MER5p4FOvv3g
+	MRRPDtWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL0wY-0001JY-Re; Thu, 17 Oct 2019 08:15:34 +0000
+	id 1iL0xG-00033M-R3; Thu, 17 Oct 2019 08:16:18 +0000
 Received: from [217.140.110.172] (helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL0vt-00011r-Gb
- for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 08:14:55 +0000
+ id 1iL0w3-00013w-HA
+ for linux-arm-kernel@lists.infradead.org; Thu, 17 Oct 2019 08:15:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DD09215BF;
- Thu, 17 Oct 2019 01:14:48 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BE5B7165C;
+ Thu, 17 Oct 2019 01:14:52 -0700 (PDT)
 Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.0.144])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 42E7C3F6C4;
- Thu, 17 Oct 2019 01:14:45 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 5E31D3F6C4;
+ Thu, 17 Oct 2019 01:14:49 -0700 (PDT)
 From: Amit Daniel Kachhap <amit.kachhap@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 02/11] arm64: install user ptrauth keys at kernel exit time
-Date: Thu, 17 Oct 2019 13:44:16 +0530
-Message-Id: <1571300065-10236-3-git-send-email-amit.kachhap@arm.com>
+Subject: [PATCH 03/11] arm64: cpufeature: handle conflicts based on capability
+Date: Thu, 17 Oct 2019 13:44:17 +0530
+Message-Id: <1571300065-10236-4-git-send-email-amit.kachhap@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1571300065-10236-1-git-send-email-amit.kachhap@arm.com>
 References: <1571300065-10236-1-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_011453_640134_26958FCD 
-X-CRM114-Status: GOOD (  16.03  )
+X-CRM114-CacheID: sfid-20191017_011503_986577_59A96329 
+X-CRM114-Status: GOOD (  21.14  )
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
@@ -78,214 +78,140 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Kristina Martsenko <kristina.martsenko@arm.com>
 
-As we're going to enable pointer auth within the kernel and use a
-different APIAKey for the kernel itself, then move the user APIAKey
-switch to EL0 exception return.
+Each system capability can be of either boot, local, or system scope,
+depending on when the state of the capability is finalized. When we
+detect a conflict on a late CPU, we either offline the CPU or panic the
+system. We currently always panic if the conflict is caused by a boot
+scope capability, and offline the CPU if the conflict is caused by a
+local or system scope capability.
 
-The other 4 keys could remain switched during task switch, but are also
-moved to keep things consistent.
+We're going to want to add a new capability (for pointer authentication)
+which needs to be boot scope but doesn't need to panic the system when a
+conflict is detected. So add a new flag to specify whether the
+capability requires the system to panic or not. Current boot scope
+capabilities are updated to set the flag, so there should be no
+functional change as a result of this patch.
 
 Reviewed-by: Kees Cook <keescook@chromium.org>
+Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Kristina Martsenko <kristina.martsenko@arm.com>
 Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 ---
 Changes since RFC v2:
- - Replaced 12 NOPs with a branch in ptrauth_keys_install_user [Catalin]
+ - Updated comment above ARM64_CPUCAP_STRICT_BOOT_CPU_FEATURE [Suzuki]
 
- arch/arm64/include/asm/asm_pointer_auth.h | 45 +++++++++++++++++++++++++++++++
- arch/arm64/include/asm/pointer_auth.h     | 30 +--------------------
- arch/arm64/kernel/asm-offsets.c           | 11 ++++++++
- arch/arm64/kernel/entry.S                 |  3 +++
- arch/arm64/kernel/pointer_auth.c          |  3 ---
- arch/arm64/kernel/process.c               |  1 -
- 6 files changed, 60 insertions(+), 33 deletions(-)
- create mode 100644 arch/arm64/include/asm/asm_pointer_auth.h
+ arch/arm64/include/asm/cpufeature.h | 18 ++++++++++++++++--
+ arch/arm64/kernel/cpufeature.c      | 23 +++++++++--------------
+ 2 files changed, 25 insertions(+), 16 deletions(-)
 
-diff --git a/arch/arm64/include/asm/asm_pointer_auth.h b/arch/arm64/include/asm/asm_pointer_auth.h
-new file mode 100644
-index 0000000..cb21a06
---- /dev/null
-+++ b/arch/arm64/include/asm/asm_pointer_auth.h
-@@ -0,0 +1,45 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef __ASM_ASM_POINTER_AUTH_H
-+#define __ASM_ASM_POINTER_AUTH_H
-+
-+#include <asm/alternative.h>
-+#include <asm/asm-offsets.h>
-+#include <asm/cpufeature.h>
-+#include <asm/sysreg.h>
-+
-+#ifdef CONFIG_ARM64_PTR_AUTH
-+
-+	.macro ptrauth_keys_install_user tsk, tmp1, tmp2, tmp3
-+	mov	\tmp1, #THREAD_KEYS_USER
-+	add	\tmp1, \tsk, \tmp1
-+alternative_if_not ARM64_HAS_ADDRESS_AUTH
-+	b	.Laddr_auth_skip_\@
-+alternative_else_nop_endif
-+	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_KEY_APIA]
-+	msr_s	SYS_APIAKEYLO_EL1, \tmp2
-+	msr_s	SYS_APIAKEYHI_EL1, \tmp3
-+	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_KEY_APIB]
-+	msr_s	SYS_APIBKEYLO_EL1, \tmp2
-+	msr_s	SYS_APIBKEYHI_EL1, \tmp3
-+	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_KEY_APDA]
-+	msr_s	SYS_APDAKEYLO_EL1, \tmp2
-+	msr_s	SYS_APDAKEYHI_EL1, \tmp3
-+	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_KEY_APDB]
-+	msr_s	SYS_APDBKEYLO_EL1, \tmp2
-+	msr_s	SYS_APDBKEYHI_EL1, \tmp3
-+.Laddr_auth_skip_\@:
-+alternative_if ARM64_HAS_GENERIC_AUTH
-+	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_KEY_APGA]
-+	msr_s	SYS_APGAKEYLO_EL1, \tmp2
-+	msr_s	SYS_APGAKEYHI_EL1, \tmp3
-+alternative_else_nop_endif
-+	.endm
-+
-+#else /* CONFIG_ARM64_PTR_AUTH */
-+
-+	.macro ptrauth_keys_install_user tsk, tmp1, tmp2, tmp3
-+	.endm
-+
-+#endif /* CONFIG_ARM64_PTR_AUTH */
-+
-+#endif /* __ASM_ASM_POINTER_AUTH_H */
-diff --git a/arch/arm64/include/asm/pointer_auth.h b/arch/arm64/include/asm/pointer_auth.h
-index 7a24bad..21c2115 100644
---- a/arch/arm64/include/asm/pointer_auth.h
-+++ b/arch/arm64/include/asm/pointer_auth.h
-@@ -43,26 +43,6 @@ static inline void ptrauth_keys_init(struct ptrauth_keys *keys)
- 		get_random_bytes(&keys->apga, sizeof(keys->apga));
- }
+diff --git a/arch/arm64/include/asm/cpufeature.h b/arch/arm64/include/asm/cpufeature.h
+index 670497d..011a665 100644
+--- a/arch/arm64/include/asm/cpufeature.h
++++ b/arch/arm64/include/asm/cpufeature.h
+@@ -208,6 +208,10 @@ extern struct arm64_ftr_reg arm64_ftr_reg_ctrel0;
+  *     In some non-typical cases either both (a) and (b), or neither,
+  *     should be permitted. This can be described by including neither
+  *     or both flags in the capability's type field.
++ *
++ *     In case of a conflict, the CPU is prevented from booting. If the
++ *     ARM64_CPUCAP_PANIC_ON_CONFLICT flag is specified for the capability,
++ *     then a kernel panic is triggered.
+  */
  
--#define __ptrauth_key_install(k, v)				\
--do {								\
--	struct ptrauth_key __pki_v = (v);			\
--	write_sysreg_s(__pki_v.lo, SYS_ ## k ## KEYLO_EL1);	\
--	write_sysreg_s(__pki_v.hi, SYS_ ## k ## KEYHI_EL1);	\
--} while (0)
--
--static inline void ptrauth_keys_switch(struct ptrauth_keys *keys)
--{
--	if (system_supports_address_auth()) {
--		__ptrauth_key_install(APIA, keys->apia);
--		__ptrauth_key_install(APIB, keys->apib);
--		__ptrauth_key_install(APDA, keys->apda);
--		__ptrauth_key_install(APDB, keys->apdb);
--	}
--
--	if (system_supports_generic_auth())
--		__ptrauth_key_install(APGA, keys->apga);
--}
--
- extern int ptrauth_prctl_reset_keys(struct task_struct *tsk, unsigned long arg);
+ 
+@@ -240,6 +244,8 @@ extern struct arm64_ftr_reg arm64_ftr_reg_ctrel0;
+ #define ARM64_CPUCAP_PERMITTED_FOR_LATE_CPU	((u16)BIT(4))
+ /* Is it safe for a late CPU to miss this capability when system has it */
+ #define ARM64_CPUCAP_OPTIONAL_FOR_LATE_CPU	((u16)BIT(5))
++/* Panic when a conflict is detected */
++#define ARM64_CPUCAP_PANIC_ON_CONFLICT		((u16)BIT(6))
  
  /*
-@@ -78,20 +58,12 @@ static inline unsigned long ptrauth_strip_insn_pac(unsigned long ptr)
+  * CPU errata workarounds that need to be enabled at boot time if one or
+@@ -279,9 +285,11 @@ extern struct arm64_ftr_reg arm64_ftr_reg_ctrel0;
+ 
+ /*
+  * CPU feature used early in the boot based on the boot CPU. All secondary
+- * CPUs must match the state of the capability as detected by the boot CPU.
++ * CPUs must match the state of the capability as detected by the boot CPU. In
++ * case of a conflict, a kernel panic is triggered.
+  */
+-#define ARM64_CPUCAP_STRICT_BOOT_CPU_FEATURE ARM64_CPUCAP_SCOPE_BOOT_CPU
++#define ARM64_CPUCAP_STRICT_BOOT_CPU_FEATURE		\
++	(ARM64_CPUCAP_SCOPE_BOOT_CPU | ARM64_CPUCAP_PANIC_ON_CONFLICT)
+ 
+ struct arm64_cpu_capabilities {
+ 	const char *desc;
+@@ -352,6 +360,12 @@ cpucap_late_cpu_permitted(const struct arm64_cpu_capabilities *cap)
+ 	return !!(cap->type & ARM64_CPUCAP_PERMITTED_FOR_LATE_CPU);
  }
  
- #define ptrauth_thread_init_user(tsk)					\
--do {									\
--	struct task_struct *__ptiu_tsk = (tsk);				\
--	ptrauth_keys_init(&__ptiu_tsk->thread.keys_user);		\
--	ptrauth_keys_switch(&__ptiu_tsk->thread.keys_user);		\
--} while (0)
--
--#define ptrauth_thread_switch(tsk)	\
--	ptrauth_keys_switch(&(tsk)->thread.keys_user)
-+	ptrauth_keys_init(&(tsk)->thread.keys_user)
- 
- #else /* CONFIG_ARM64_PTR_AUTH */
- #define ptrauth_prctl_reset_keys(tsk, arg)	(-EINVAL)
- #define ptrauth_strip_insn_pac(lr)	(lr)
- #define ptrauth_thread_init_user(tsk)
--#define ptrauth_thread_switch(tsk)
- #endif /* CONFIG_ARM64_PTR_AUTH */
- 
- #endif /* __ASM_POINTER_AUTH_H */
-diff --git a/arch/arm64/kernel/asm-offsets.c b/arch/arm64/kernel/asm-offsets.c
-index 2146857..ef0c24b 100644
---- a/arch/arm64/kernel/asm-offsets.c
-+++ b/arch/arm64/kernel/asm-offsets.c
-@@ -40,6 +40,9 @@ int main(void)
- #endif
-   BLANK();
-   DEFINE(THREAD_CPU_CONTEXT,	offsetof(struct task_struct, thread.cpu_context));
-+#ifdef CONFIG_ARM64_PTR_AUTH
-+  DEFINE(THREAD_KEYS_USER,	offsetof(struct task_struct, thread.keys_user));
-+#endif
-   BLANK();
-   DEFINE(S_X0,			offsetof(struct pt_regs, regs[0]));
-   DEFINE(S_X2,			offsetof(struct pt_regs, regs[2]));
-@@ -127,5 +130,13 @@ int main(void)
-   DEFINE(SDEI_EVENT_INTREGS,	offsetof(struct sdei_registered_event, interrupted_regs));
-   DEFINE(SDEI_EVENT_PRIORITY,	offsetof(struct sdei_registered_event, priority));
- #endif
-+#ifdef CONFIG_ARM64_PTR_AUTH
-+  DEFINE(PTRAUTH_KEY_APIA,	offsetof(struct ptrauth_keys, apia));
-+  DEFINE(PTRAUTH_KEY_APIB,	offsetof(struct ptrauth_keys, apib));
-+  DEFINE(PTRAUTH_KEY_APDA,	offsetof(struct ptrauth_keys, apda));
-+  DEFINE(PTRAUTH_KEY_APDB,	offsetof(struct ptrauth_keys, apdb));
-+  DEFINE(PTRAUTH_KEY_APGA,	offsetof(struct ptrauth_keys, apga));
-+  BLANK();
-+#endif
-   return 0;
- }
-diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-index 84a8227..b6272a3 100644
---- a/arch/arm64/kernel/entry.S
-+++ b/arch/arm64/kernel/entry.S
-@@ -14,6 +14,7 @@
- #include <asm/alternative.h>
- #include <asm/assembler.h>
- #include <asm/asm-offsets.h>
-+#include <asm/asm_pointer_auth.h>
- #include <asm/cpufeature.h>
- #include <asm/errno.h>
- #include <asm/esr.h>
-@@ -341,6 +342,8 @@ alternative_else_nop_endif
- 	msr	cntkctl_el1, x1
- 4:
- #endif
-+	ptrauth_keys_install_user tsk, x0, x1, x2
++static inline bool
++cpucap_panic_on_conflict(const struct arm64_cpu_capabilities *cap)
++{
++	return !!(cap->type & ARM64_CPUCAP_PANIC_ON_CONFLICT);
++}
 +
- 	apply_ssbd 0, x0, x1
- 	.endif
+ /*
+  * Generic helper for handling capabilties with multiple (match,enable) pairs
+  * of call backs, sharing the same capability bit.
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index a73400b..4ef40c9 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -1850,10 +1850,8 @@ static void __init enable_cpu_capabilities(u16 scope_mask)
+  * Run through the list of capabilities to check for conflicts.
+  * If the system has already detected a capability, take necessary
+  * action on this CPU.
+- *
+- * Returns "false" on conflicts.
+  */
+-static bool verify_local_cpu_caps(u16 scope_mask)
++static void verify_local_cpu_caps(u16 scope_mask)
+ {
+ 	int i;
+ 	bool cpu_has_cap, system_has_cap;
+@@ -1898,10 +1896,12 @@ static bool verify_local_cpu_caps(u16 scope_mask)
+ 		pr_crit("CPU%d: Detected conflict for capability %d (%s), System: %d, CPU: %d\n",
+ 			smp_processor_id(), caps->capability,
+ 			caps->desc, system_has_cap, cpu_has_cap);
+-		return false;
+-	}
  
-diff --git a/arch/arm64/kernel/pointer_auth.c b/arch/arm64/kernel/pointer_auth.c
-index c507b58..95985be 100644
---- a/arch/arm64/kernel/pointer_auth.c
-+++ b/arch/arm64/kernel/pointer_auth.c
-@@ -19,7 +19,6 @@ int ptrauth_prctl_reset_keys(struct task_struct *tsk, unsigned long arg)
- 
- 	if (!arg) {
- 		ptrauth_keys_init(keys);
--		ptrauth_keys_switch(keys);
- 		return 0;
- 	}
- 
-@@ -41,7 +40,5 @@ int ptrauth_prctl_reset_keys(struct task_struct *tsk, unsigned long arg)
- 	if (arg & PR_PAC_APGAKEY)
- 		get_random_bytes(&keys->apga, sizeof(keys->apga));
- 
--	ptrauth_keys_switch(keys);
--
- 	return 0;
+-	return true;
++		if (cpucap_panic_on_conflict(caps))
++			cpu_panic_kernel();
++		else
++			cpu_die_early();
++	}
  }
-diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-index a47462d..5b2b158 100644
---- a/arch/arm64/kernel/process.c
-+++ b/arch/arm64/kernel/process.c
-@@ -505,7 +505,6 @@ __notrace_funcgraph struct task_struct *__switch_to(struct task_struct *prev,
- 	contextidr_thread_switch(next);
- 	entry_task_switch(next);
- 	uao_thread_switch(next);
--	ptrauth_thread_switch(next);
- 	ssbs_thread_switch(next);
  
- 	/*
+ /*
+@@ -1911,12 +1911,8 @@ static bool verify_local_cpu_caps(u16 scope_mask)
+ static void check_early_cpu_features(void)
+ {
+ 	verify_cpu_asid_bits();
+-	/*
+-	 * Early features are used by the kernel already. If there
+-	 * is a conflict, we cannot proceed further.
+-	 */
+-	if (!verify_local_cpu_caps(SCOPE_BOOT_CPU))
+-		cpu_panic_kernel();
++
++	verify_local_cpu_caps(SCOPE_BOOT_CPU);
+ }
+ 
+ static void
+@@ -1964,8 +1960,7 @@ static void verify_local_cpu_capabilities(void)
+ 	 * check_early_cpu_features(), as they need to be verified
+ 	 * on all secondary CPUs.
+ 	 */
+-	if (!verify_local_cpu_caps(SCOPE_ALL & ~SCOPE_BOOT_CPU))
+-		cpu_die_early();
++	verify_local_cpu_caps(SCOPE_ALL & ~SCOPE_BOOT_CPU);
+ 
+ 	verify_local_elf_hwcaps(arm64_elf_hwcaps);
+ 
 -- 
 2.7.4
 
