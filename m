@@ -2,79 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B865CDC82C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 17:12:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9EC3DC852
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 17:21:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3gjIqEk4+nNMv2pTDv0K4ZskJ4UsVKdkFbgnVyQb5BM=; b=NVolAlfg7pMkL0
-	JB++IiLN8GsExffpK0sI7MQ2Zkft9W1oeAYkriqrdhEjsg5RQyTCHhg2xCmOcq/dsifewHv8VpZIs
-	ERnoYqiQVNfxBQjqzdIWtsvX39Zvq3DnXDeV45t8WeXOM4nPLWbPLDWhd4xyCLZ1FfonZEZcUKkS4
-	meHcekzXK0JW3aGpJGPXHgsfhHYeV/DvtaBfnBvx6KHs0moHlaSUtDSdXnrWi6NnpHruJlZNA4lIx
-	CUTWT0xZmyyP7aMeq6c9dMhF7qccFKjmEtxHJZ5X9aBqhx3snA6dGOj9DHkPYQDjwyxj0TkiGFm7A
-	JC1SSz+CH496vwvOXggg==;
+	List-Owner; bh=33NSkEtgNvHyoNMPU5h/Tz0rtzhgbDlq5MCVsNRM0gQ=; b=BqMMQiiWdvoMXb
+	rqeGZrxWMocaZ+HmRa5Jw8Z+FQrKyKO7KnxJKeWHZtyDQ8jn6Mlh0DQiMxy6s+pmaD3v8F6yA5QkR
+	GWIhI9KdCTuugbpme9bAAkM/WQO4NiGkWezO+xYTYpolQLnooRq+DLfyng+ODFqvG/5c3FT6hr1Fg
+	z882xUgn1iaQNvfSr2zOaAO88dk3BKyQP2MidiiJLz3XW7Wy1M+Szlk4CwS/IdU72fEmaGojBLn9R
+	mDVXX7CLPkWPfkE/GSIzxIgEHwDA/A+WgTEgj3vVQ/9R5zvPbEhXlR8mdld5V0IE/aPzI0AjI0Txs
+	tdQ6EO9ojCZvHzyn07Lg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLTvr-00043D-Ci; Fri, 18 Oct 2019 15:12:47 +0000
-Received: from mail-wr1-f67.google.com ([209.85.221.67])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLTvh-00042s-RX
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 15:12:39 +0000
-Received: by mail-wr1-f67.google.com with SMTP id n14so6655118wrw.9
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 08:12:36 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:subject:from:to:cc:date:in-reply-to
- :references:user-agent:mime-version:content-transfer-encoding;
- bh=znPvFD0f1zlQCruHGoFCCf395bn0+9S/9gnxw48rV14=;
- b=qRlXTjPfL+4rKFsnoTpr9SlL+iMGH+sc7W2COiK8LkszSbGxrGE8IHf/EWg7lZFh/a
- RVW0EbHXYE3MILMI6fnV8Ixbumk59V3M4qOTtxfq9sJISRgfCjAIenkG28hALqY4dvt3
- d2rJ5dU7rONCKEhAPU7fK6EFe3zJl5EXpdfBJvQC1rY0tTsQvG56Da8Ox7Z4Hu8/5ERY
- sFNsKqL+098FBW1O1taK07f+YXXq1rIIdJdf7iknUPymW4b3SqoUZI8m4AT6NYoUu/Wf
- igkknIJUhnJWmfBnfga748VOuJqScWYms5ekpuLbhDGyELotHOY300Zb3yuAKH8PRXfJ
- VjAg==
-X-Gm-Message-State: APjAAAUSLQVHxHkLA8h13iCApmRmlCyHKlGPdycbTSm58AdNkyedw8G9
- 8eB590XJf+SB9k11qZPHgs0=
-X-Google-Smtp-Source: APXvYqwcRaNHVAbxxBeb+26jHpZVWUA+aTTJ6NMNr8TadunwyujlGbVylSQcPHGSqMJhEzj+5ZUImw==
-X-Received: by 2002:adf:b21a:: with SMTP id u26mr8631871wra.119.1571411555563; 
- Fri, 18 Oct 2019 08:12:35 -0700 (PDT)
-Received: from tfsielt31850 ([77.107.218.170])
- by smtp.gmail.com with ESMTPSA id d11sm6436777wrf.80.2019.10.18.08.12.34
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 18 Oct 2019 08:12:34 -0700 (PDT)
-Message-ID: <236f4f152d55231336edb3e3a223fea6add58ba7.camel@andred.net>
-Subject: Re: [PATCH 1/1] ARM: dts: imx7s: Add power domain for imx7d HSIC
-From: =?ISO-8859-1?Q?Andr=E9?= Draszik <git@andred.net>
-To: Peter Chen <peter.chen@nxp.com>
-Date: Fri, 18 Oct 2019 16:12:33 +0100
-In-Reply-To: <1571023588-9870-1-git-send-email-peter.chen@nxp.com>
-References: <1571023588-9870-1-git-send-email-peter.chen@nxp.com>
-User-Agent: Evolution 3.30.5-1.1 
+	id 1iLU4D-0007eq-Ic; Fri, 18 Oct 2019 15:21:25 +0000
+Received: from [217.140.110.172] (helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iLU43-0007cz-HB
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 15:21:17 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CDC3AC8F;
+ Fri, 18 Oct 2019 08:20:59 -0700 (PDT)
+Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0B4DA3F718;
+ Fri, 18 Oct 2019 08:20:57 -0700 (PDT)
+Date: Fri, 18 Oct 2019 16:20:52 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Yunfeng Ye <yeyunfeng@huawei.com>
+Subject: Re: [PATCH v4] arm64: psci: Reduce the waiting time for
+ cpu_psci_cpu_kill()
+Message-ID: <20191018152052.GA10312@bogus>
+References: <04ab51e4-bc08-8250-4e70-4c87c58c8ad0@huawei.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <04ab51e4-bc08-8250-4e70-4c87c58c8ad0@huawei.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_081237_890282_EC6D61F8 
-X-CRM114-Status: GOOD (  14.49  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20191018_082115_643908_C4D0D3C2 
+X-CRM114-Status: GOOD (  22.07  )
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.67 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.67 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (andre.draszik[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,35 +62,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: shawnguo@kernel.org, kernel@pengutronix.de,
- linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: kstewart@linuxfoundation.org, mark.rutland@arm.com,
+ lorenzo.pieralisi@arm.com, hushiyuan@huawei.com, catalin.marinas@arm.com,
+ linux-kernel@vger.kernel.org, linfeilong@huawei.com, David.Laight@ACULAB.COM,
+ gregkh@linuxfoundation.org, tglx@linutronix.de, wuyun.wu@huawei.com,
+ will@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-UGV0ZXIsCgpUaGFuayB5b3UgZm9yIHRoaXMgcGF0Y2gsIEkgd2FzIG91dCBzbyBJIHdpbGwgdGVz
-dCBpdCBlYXJseSBuZXh0IHdlZWsKYW5kIHJlcG9ydCAodG9nZXRoZXIgd2l0aCB0aGUgVVNCIEhT
-SUMgZHJpdmVyIGZpeGVzKS4KCgpDaGVlcnMsCkFuZHJlJwoKCk9uIE1vbiwgMjAxOS0xMC0xNCBh
-dCAxMToyNiArMDgwMCwgUGV0ZXIgQ2hlbiB3cm90ZToKPiBPdGhlcndpc2UsIHRoZSBzeXN0ZW0g
-d2lsbCBoYW5nIGlmIFVTQiBkcml2ZXIgdHJ5IHRvIGFjY2Vzcwo+IHBvcnRzYyByZWdpc3Rlci4K
-PiAKPiBDYzogQW5kcsOpIERyYXN6aWsgPGdpdEBhbmRyZWQubmV0Pgo+IFNpZ25lZC1vZmYtYnk6
-IFBldGVyIENoZW4gPHBldGVyLmNoZW5AbnhwLmNvbT4KPiAtLS0KPiAgYXJjaC9hcm0vYm9vdC9k
-dHMvaW14N3MuZHRzaSB8IDcgKysrKysrKwo+ICAxIGZpbGUgY2hhbmdlZCwgNyBpbnNlcnRpb25z
-KCspCj4gCj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL2lteDdzLmR0c2kgYi9hcmNo
-L2FybS9ib290L2R0cy9pbXg3cy5kdHNpCj4gaW5kZXggYzFhNGZmZjVjZWRhLi5hNWIzODBmNTMw
-ZjggMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvaW14N3MuZHRzaQo+ICsrKyBiL2Fy
-Y2gvYXJtL2Jvb3QvZHRzL2lteDdzLmR0c2kKPiBAQCAtNjU4LDYgKzY1OCwxMiBAQAo+ICAJCQkJ
-CQlyZWcgPSA8MT47Cj4gIAkJCQkJCXBvd2VyLXN1cHBseSA9IDwmcmVnXzFwMGQ+Owo+ICAJCQkJ
-CX07Cj4gKwo+ICsJCQkJCXBnY19oc2ljX3BoeTogcG93ZXItZG9tYWluQDIgewo+ICsJCQkJCQkj
-cG93ZXItZG9tYWluLWNlbGxzID0gPDA+Owo+ICsJCQkJCQlyZWcgPSA8Mj47Cj4gKwkJCQkJCXBv
-d2VyLXN1cHBseSA9IDwmcmVnXzFwMj47Cj4gKwkJCQkJfTsKPiAgCQkJCX07Cj4gIAkJCX07Cj4g
-IAkJfTsKPiBAQCAtMTEwMSw2ICsxMTA3LDcgQEAKPiAgCQkJCWNvbXBhdGlibGUgPSAiZnNsLGlt
-eDdkLXVzYiIsICJmc2wsaW14MjctdXNiIjsKPiAgCQkJCXJlZyA9IDwweDMwYjMwMDAwIDB4MjAw
-PjsKPiAgCQkJCWludGVycnVwdHMgPSA8R0lDX1NQSSA0MCBJUlFfVFlQRV9MRVZFTF9ISUdIPjsK
-PiArCQkJCXBvd2VyLWRvbWFpbnMgPSA8JnBnY19oc2ljX3BoeT47Cj4gIAkJCQljbG9ja3MgPSA8
-JmNsa3MgSU1YN0RfVVNCX0NUUkxfQ0xLPjsKPiAgCQkJCWZzbCx1c2JwaHkgPSA8JnVzYnBoeW5v
-cDM+Owo+ICAJCQkJZnNsLHVzYm1pc2MgPSA8JnVzYm1pc2MzIDA+OwoKCl9fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
-ZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
-aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Fri, Oct 18, 2019 at 08:46:37PM +0800, Yunfeng Ye wrote:
+> In case like suspend-to-disk and uspend-to-ram, a large number of CPU
+
+s/case/cases/
+s/uspend-to-ram/suspend-to-ram/
+
+> cores need to be shut down. At present, the CPU hotplug operation is
+> serialised, and the CPU cores can only be shut down one by one. In this
+> process, if PSCI affinity_info() does not return LEVEL_OFF quickly,
+> cpu_psci_cpu_kill() needs to wait for 10ms. If hundreds of CPU cores
+> need to be shut down, it will take a long time.
+> 
+> Normally, there is no need to wait 10ms in cpu_psci_cpu_kill(). So
+> change the wait interval from 10 ms to max 1 ms and use usleep_range()
+> instead of msleep() for more accurate timer.
+> 
+> In addition, reducing the time interval will increase the messages
+> output, so remove the "Retry ..." message, instead, put the number of
+> waiting times to the sucessful message.
+> 
+> Signed-off-by: Yunfeng Ye <yeyunfeng@huawei.com>
+> ---
+> v3 -> v4:
+>  - using time_before(jiffies, timeout) to check
+>  - update the comment as review suggest
+> 
+> v2 -> v3:
+>  - update the comment
+>  - remove the busy-wait logic, modify the loop logic and output message
+> 
+> v1 -> v2:
+>  - use usleep_range() instead of udelay() after waiting for a while
+>  arch/arm64/kernel/psci.c | 14 ++++++++------
+>  1 file changed, 8 insertions(+), 6 deletions(-)
+> 
+> diff --git a/arch/arm64/kernel/psci.c b/arch/arm64/kernel/psci.c
+> index c9f72b2665f1..77965c3ba477 100644
+> --- a/arch/arm64/kernel/psci.c
+> +++ b/arch/arm64/kernel/psci.c
+> @@ -81,7 +81,8 @@ static void cpu_psci_cpu_die(unsigned int cpu)
+> 
+>  static int cpu_psci_cpu_kill(unsigned int cpu)
+>  {
+> -	int err, i;
+> +	int err, i = 0;
+> +	unsigned long timeout;
+> 
+>  	if (!psci_ops.affinity_info)
+>  		return 0;
+> @@ -91,16 +92,17 @@ static int cpu_psci_cpu_kill(unsigned int cpu)
+>  	 * while it is dying. So, try again a few times.
+>  	 */
+> 
+> -	for (i = 0; i < 10; i++) {
+> +	timeout = jiffies + msecs_to_jiffies(100);
+> +	do {
+> +		i++;
+>  		err = psci_ops.affinity_info(cpu_logical_map(cpu), 0);
+>  		if (err == PSCI_0_2_AFFINITY_LEVEL_OFF) {
+> -			pr_info("CPU%d killed.\n", cpu);
+> +			pr_info("CPU%d killed (polled %d times)\n", cpu, i);
+
+We can even drop loop counter completely, track time and log that
+instead of loop counter that doesn't give any indication without looking
+into the code.
+
+	start = jiffies, end = start + msecs_to_jiffies(100);
+	do {
+			....
+			pr_info("CPU%d killed (polled %u ms)\n", cpu,
+				jiffies_to_msecs(jiffies - start));
+			....
+	} while (time_before(jiffies, end));
+
+Just my preference. Looks good otherwise.
+
+--
+Regards,
+Sudeep
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
