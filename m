@@ -2,89 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5261DC2F1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 12:39:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9AAAADC302
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 12:45:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ez2AlsC9BNF91iaVQ+ZPeUuIKpUb3MqRbUz9VXXrTGQ=; b=N3let03bYLHLUj
-	tVNMs1EgJx3jdDa9tTmXsWa1DSBqLFFADmSoMkMYeOOfJ4S6s5KOkPMtxqPsQEX2ohReXKm2H5icZ
-	9d2oCCmQYjVrrNTZ9Vyo5rZaQZpPEWRBRssvGv60Vnf32myWw3HrqAVOJn7xAelrkArleJDW8l6gj
-	DmiMb+W/gZFZ7SyZsSNFhmlMv5ySJagHePr5EveYBPfuKxPDIopkxE/Uw7DQQk5GHNI+8sMCAsNQF
-	FZZRYJj+sPnfBTVRROVpuPEg/iWiSdD8r3ZuJxGtPRbJvQ9EybnkvH5NEeL6E+r/jqoBR1hOilru4
-	EbDQSwNNYknURDUy7Nwg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=RciEG4Px83TVS8hpAOI4oYFIMY1iyGeGZ8xZtX3F/W4=; b=ZyKQMGAV0FWiTsuEb9MVCMRbO
+	Rqn9BP/1mBs454VySoftQGkdgDqS08Jnoj4cuUJHbQIfxjk2MOF0GidTVi0kNvMa7J5CuaHTHVRpi
+	ZByLD88MJ2Nh2Hv78M9YwF5z9uLDAaIXk3tpXf+mLFK/+9yVU/XOtNAb6A4Fny/cEz0D2CW1GIvIP
+	De0lHO5JOZokA5AKomArSVsouxQw0cD2uLTmbaR6+Fed2ZJI03Ym7bygM18xrbLuVBRD3I2egkBnK
+	XYTziSIGTPPjkWW0ytJ2aADwSiWHT99adEAM/FgNKAwNbfZXEL6Pxl0l+ggIf3/z6oCRLTFcwD6jf
+	S7y9GKfbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLPfO-0007Cq-LJ; Fri, 18 Oct 2019 10:39:30 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1iLPkv-0000mJ-MX; Fri, 18 Oct 2019 10:45:13 +0000
+Received: from imap1.codethink.co.uk ([176.9.8.82])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLPfF-0007Bw-3z
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 10:39:22 +0000
-Received: by mail-ed1-x543.google.com with SMTP id v8so4201647eds.2
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 03:39:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=TdGZ/O1UBefa0/Aw3vNnx5zYKetp+so1lp2xpas4umw=;
- b=mEHKyOoTqwmR0aTE5OFLDghsTCB1Biaiy9UW26U9qCuaq2iKlynp+5R60NwG2zQoA+
- eQ1yHJYUuhWt6BYmxywdlbb3UKjpI6eNc2EskkhrTvpzSzq8QgmVafMzyay88Cuzewkt
- xWg6HLQqtUDtm1UD+ZxdHdTEJbrL8HuAbvCaT+9u4eiWMq7DDyYHt/CQzpUF6JeHDhru
- oNFOoPhIKHkPPOokpuk8cTKvKlEvCzb7PvbFFKcgK0qZUpBWyB8LIoK2fKEzI5z2ptoN
- 8xRZ0AvKeQKyNA86QSGbipvZjS/4BwpaqwF0fZEUYo8/eVoaC5Uk6aomkkaquXT44XS7
- wU/g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=TdGZ/O1UBefa0/Aw3vNnx5zYKetp+so1lp2xpas4umw=;
- b=lOsSYej6a98HTgQJJWlW2+SgKBfnRIvofWsnlP2RWBqZOI4AM+Eptojt8Wgj2ePDvg
- SkZN9UEiSyiKSPZLg2Ctve3diFNicYMLVaIhjvGWsWV9UxToe4B33wUJUaFe/NxNHdIM
- TowPwGJLKuu9s2NCdnrhHxp+xOouKe0VitFnUpEKlikHZOhJUh8/kKED5KKtA9Hq88vV
- oRQUE7aN4oQ0LTd7UmC52bsQc6+Xiux1YAZiac5/t/QSRlF5+POejfp9GxeBgBOYKj84
- V4tlcbAmsI6RWrG7/ZO3/pwikrcVlnCXOmtCkVuUMeoZg6jCfQylf1nTyZ0HPvWBWY8N
- D/yg==
-X-Gm-Message-State: APjAAAWOgTtUGYk+VKplf3dlLOaVyEgLD9wI1v42deMWnFeuYdZfuqOC
- +UTXdl/Hh9M+JAsNQ32pATdpHyWvsj2rPN61fx0=
-X-Google-Smtp-Source: APXvYqxnhNJ1p2Qw24cDRg7N1pWEV2tiucdyj8NEuD+nENTq7YS/DvNr7sw2b18boMqr51gNammWqfUI3G6dIFr7HYc=
-X-Received: by 2002:a17:906:8313:: with SMTP id
- j19mr8131952ejx.196.1571395159085; 
- Fri, 18 Oct 2019 03:39:19 -0700 (PDT)
+ id 1iLPkb-0000kf-Oa
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 10:44:55 +0000
+Received: from [167.98.27.226] (helo=[10.35.5.173])
+ by imap1.codethink.co.uk with esmtpsa (Exim 4.84_2 #1 (Debian))
+ id 1iLPkY-0007y2-Ky; Fri, 18 Oct 2019 11:44:50 +0100
+Subject: Re: [PATCH] do not export show_fiq_list
+To: linux-kernel@lists.codethink.co.uk
+References: <20191018103513.24096-1-ben.dooks@codethink.co.uk>
+From: Ben Dooks <ben.dooks@codethink.co.uk>
+Organization: Codethink Limited.
+Message-ID: <9319967b-56da-1387-aaf6-261e72b84961@codethink.co.uk>
+Date: Fri, 18 Oct 2019 11:44:49 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <20191017025058.31528-1-hslester96@gmail.com>
- <CAHp75Vd2SMERjtvNumxAF1HSp8GSThmcyx96zkFzUXKwnD5d2Q@mail.gmail.com>
-In-Reply-To: <CAHp75Vd2SMERjtvNumxAF1HSp8GSThmcyx96zkFzUXKwnD5d2Q@mail.gmail.com>
-From: Chuhong Yuan <hslester96@gmail.com>
-Date: Fri, 18 Oct 2019 18:39:08 +0800
-Message-ID: <CANhBUQ2yxGbjk_DgXbip=TPT=evzA5naoJSY9t1_Ep47e9oupw@mail.gmail.com>
-Subject: Re: [PATCH] spi: pxa2xx: Add missed security checks
-To: Andy Shevchenko <andy.shevchenko@gmail.com>
+In-Reply-To: <20191018103513.24096-1-ben.dooks@codethink.co.uk>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_033921_157449_F931609F 
-X-CRM114-Status: GOOD (  17.73  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191018_034453_947283_887BE264 
+X-CRM114-Status: GOOD (  11.91  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (hslester96[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (hslester96[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [176.9.8.82 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,57 +61,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Haojian Zhuang <haojian.zhuang@gmail.com>,
- linux-spi <linux-spi@vger.kernel.org>, Mark Brown <broonie@kernel.org>,
- Daniel Mack <daniel@zonque.org>, Robert Jarzmik <robert.jarzmik@free.fr>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Russell King <linux@armlinux.org.uk>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 18, 2019 at 5:35 PM Andy Shevchenko
-<andy.shevchenko@gmail.com> wrote:
->
-> On Fri, Oct 18, 2019 at 8:59 AM Chuhong Yuan <hslester96@gmail.com> wrote:
-> >
-> > pxa2xx_spi_init_pdata misses checks for devm_clk_get and
-> > platform_get_irq.
-> > Add checks for them to fix the bugs.
-> >
-> > Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
-> > ---
-> >  drivers/spi/spi-pxa2xx.c | 6 ++++++
-> >  1 file changed, 6 insertions(+)
-> >
-> > diff --git a/drivers/spi/spi-pxa2xx.c b/drivers/spi/spi-pxa2xx.c
-> > index bb6a14d1ab0f..2e73d75a6ac5 100644
-> > --- a/drivers/spi/spi-pxa2xx.c
-> > +++ b/drivers/spi/spi-pxa2xx.c
-> > @@ -1565,7 +1565,13 @@ pxa2xx_spi_init_pdata(struct platform_device *pdev)
-> >  #endif
-> >
-> >         ssp->clk = devm_clk_get(&pdev->dev, NULL);
-> > +       if (IS_ERR(ssp->clk))
-> > +               return NULL;
-> > +
-> >         ssp->irq = platform_get_irq(pdev, 0);
-> > +       if (ssp->irq < 0)
-> > +               return NULL;
->
-> I'm not sure they are mandatory for all platforms.
-> To be on the safe side, you simple need to add _optional() to the both
-> call along with above change.
->
+On 18/10/2019 11:35, Ben Dooks (Codethink) wrote:
+> The show_fiq_list() is not used outside the file it is
+> defined in, so make it static and remove the header
+> file declaration (which it did not include) to remove
+> the following sparse warning:
+> 
+> arch/arm/kernel/fiq.c:85:5: warning: symbol 'show_fiq_list' was not declared. Should it be static?
+> 
+> Signed-off-by: Ben Dooks (Codethink) <ben.dooks@codethink.co.uk>
 
-As I know, this is the only one in spi which does not have a check for
-devm_clk_get.
-Even if add _optional(), they still may return errors and need security checks.
+Ignore, this is I clearly can't tell the difference between fiq.c and irq.c
 
-> --
-> With Best Regards,
-> Andy Shevchenko
+
+-- 
+Ben Dooks				http://www.codethink.co.uk/
+Senior Engineer				Codethink - Providing Genius
+
+https://www.codethink.co.uk/privacy.html
 
 _______________________________________________
 linux-arm-kernel mailing list
