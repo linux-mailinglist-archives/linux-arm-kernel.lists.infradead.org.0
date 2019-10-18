@@ -2,57 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9A09DC0E5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 11:28:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA6B0DC116
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 11:33:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=pFh6iyMp5M+W/Tl0y9seAHE+klFrMtEVYQUQM/II7cc=; b=Fr0TtNUpxH4tSCVvM7XufyulQ
-	doVsm5bHl3wPvOCc5SBX6hhgprDVwmeTTJ70vgArBA8M8Wk6Tyashc7xWpYwJ/soObSuBToDn9d+g
-	GOExBTCAQXWE6HJx+OPJkX8CNDlD0fjAOG04sj1IFom9UyurcSwf2xnsCBUoxNBOrD6zy1PMO8PSS
-	mmOTZpHfFOhTv1qw5HTxpcSFzLSesB0WVQ5aQfJTQVcVXbiYK89MGZsagAGs5sUdmWk9uZlaaEl1/
-	jf8QefOD8E+8jYvERTU8InjSIJqX2qeZ5VfLUMWj83otGJhrrYSZlLhJidhoiHGapL5hQByRzNvKp
-	QX8QOc4NQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=vrE/VZnn3c0/dh0DRLi31OhVuw3ROzOdv8s6NbjeiWU=; b=qE1GWxNI9S7F8d
+	Ajb2phTBSs+nX6BmVROdGUaSJactM2/sOfzRff86UetAOjnYdskbhZj564IBeUZ2IVEmIM/IWOJDW
+	396M36VNyV3zE4M8fzRAAyjBmI5gE8UeZTH6FAX6i0vE4hmU7edQbY0Ur3gZqQEqZc1sy8lK99omU
+	o+q5YwScgjIV1X2DGdXGXYzOowL78COm7onBdkTD7YtlEx0eS5qSDiYYajE4Grmd9RTYDSSv5ZYT3
+	r6qhye5amls5SATf19el+xeT6tB+Z9g80zaKSzKdtnrXqpIZdtem/htTFyoxsfVsen2Kq1KdeJTs+
+	vF0VWpYA9RzDUJRqgMPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLOZ5-0006GT-BO; Fri, 18 Oct 2019 09:28:55 +0000
-Received: from [217.140.110.172] (helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLOYw-0006FP-65
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 09:28:47 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 04D1D3E8;
- Fri, 18 Oct 2019 02:28:35 -0700 (PDT)
-Received: from [192.168.1.123] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4E11B3F718;
- Fri, 18 Oct 2019 02:28:34 -0700 (PDT)
-Subject: Re: [PATCH 0/8] arm64: Optimise and update memcpy, user copy and
- string routines
-To: Catalin Marinas <catalin.marinas@arm.com>
-References: <cover.1571073960.git.robin.murphy@arm.com>
- <20191018075422.GB19734@arrakis.emea.arm.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <574404fa-3c19-e1ce-7cab-6144508d0a76@arm.com>
-Date: Fri, 18 Oct 2019 10:28:17 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
+	id 1iLOdP-00081u-H9; Fri, 18 Oct 2019 09:33:23 +0000
+Received: from mail-sh.amlogic.com ([58.32.228.43])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iLOdA-0007zG-Ko; Fri, 18 Oct 2019 09:33:10 +0000
+Received: from droid13.amlogic.com (116.236.93.172) by mail-sh.amlogic.com
+ (10.18.11.5) with Microsoft SMTP Server id 15.1.1591.10; Fri, 18 Oct 2019
+ 17:33:00 +0800
+From: Jianxin Pan <jianxin.pan@amlogic.com>
+To: Kevin Hilman <khilman@baylibre.com>, <linux-amlogic@lists.infradead.org>
+Subject: [PATCH RESEND v3 0/4] arm64: meson: add support for A1 Power Domains
+Date: Fri, 18 Oct 2019 17:32:43 +0800
+Message-ID: <1571391167-79679-1-git-send-email-jianxin.pan@amlogic.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-In-Reply-To: <20191018075422.GB19734@arrakis.emea.arm.com>
-Content-Language: en-GB
+X-Originating-IP: [116.236.93.172]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_022846_269435_50A1E2CF 
-X-CRM114-Status: GOOD (  15.34  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20191018_023308_684066_918990A1 
+X-CRM114-Status: UNSURE (   7.13  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,49 +55,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sam.tebbs@arm.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
+ Victor Wan <victor.wan@amlogic.com>, Jianxin Pan <jianxin.pan@amlogic.com>,
+ linux-pm@vger.kernel.org,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Neil Armstrong <narmstrong@baylibre.com>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Jian Hu <jian.hu@amlogic.com>,
+ Xingyu Chen <xingyu.chen@amlogic.com>, linux-arm-kernel@lists.infradead.org,
+ Jerome Brunet <jbrunet@baylibre.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-10-18 8:54 am, Catalin Marinas wrote:
-> Hi Robin,
-> 
-> On Tue, Oct 15, 2019 at 04:49:55PM +0100, Robin Murphy wrote:
->> Robin Murphy (1):
->>    arm64: Tidy up _asm_extable_faultaddr usage
->>
->> Sam Tebbs (7):
->>    arm64: Allow passing fault address to fixup handlers
->>    arm64: Import latest Cortex Strings memcpy implementation
->>    arm64: Import latest version of Cortex Strings' memcmp
->>    arm64: Import latest version of Cortex Strings' memmove
->>    arm64: Import latest version of Cortex Strings' strcmp
->>    arm64: Import latest version of Cortex Strings' strlen
->>    arm64: Import latest version of Cortex Strings' strncmp
-> 
-> Apart from the kprobes build failure (patch available already), I found
-> two more:
-> 
-> - with CONFIG_KASAN enabled:
-> 
-> arch/arm64/lib/memmove.o: in function `__pi_memmove':
-> arch/arm64/lib/memmove.S:57:(.text+0xc): relocation truncated to fit: R_AARCH64_CONDBR19 against symbol `memcpy' defined in .text section in mm/kasan/common.o
-> 
-> - big endian (I think kbuild robot also reported this):
-> 
-> arch/arm64/lib/strcmp.S: Assembler messages:
-> arch/arm64/lib/strcmp.S:118: Error: immediate value out of range 0 to 63 at operand 3 -- `lsr x2,x2,#560'
-> 
-> I'll drop the series for now (already removed it from for-next/core
-> yesterday) until the above are addressed.
+This patchset introduces a "Secure Power Doamin Controller". In A1/C1, power
+controller registers such as PWRCTRL_FOCRSTN, PWRCTRL_PWR_OFF, PWRCTRL_MEM_PD
+and PWRCTRL_ISO_EN, are in the secure domain, and should be accessed from ATF
+by smc.
 
-Thanks Catalin - I've already fixed the big-endian typo locally, and for 
-the KASAN thing it seems we probably just overlooked an 
-s/memcpy/__memcpy/ conversion, but I'll double-check before resending.
 
-Robin.
+Changes since v1 at [1]:
+- update domain id
+- include dt-bindings in dts
+
+Changes since v1 at [0]:
+- use APIs from sm driver
+- rename pwrc_secure_get_power as Kevin suggested
+- add comments for always on domains
+- replace arch_initcall_sync with builtin_platform_driver
+- fix coding style
+
+[0]  https://lore.kernel.org/linux-amlogic/1568895064-4116-1-git-send-email-jianxin.pan@amlogic.com
+[1]  https://lore.kernel.org/linux-amlogic/1570695678-42623-1-git-send-email-jianxin.pan@amlogic.com
+
+Jianxin Pan (4):
+  dt-bindings: power: add Amlogic secure power domains bindings
+  firmware: meson_sm: Add secure power domain support
+  soc: amlogic: Add support for Secure power domains controller
+  arm64: dts: meson: a1: add secure power domain controller
+
+ .../bindings/power/amlogic,meson-sec-pwrc.yaml     |  42 +++++
+ arch/arm64/boot/dts/amlogic/meson-a1.dtsi          |   8 +
+ drivers/firmware/meson/meson_sm.c                  |   2 +
+ drivers/soc/amlogic/Kconfig                        |  13 ++
+ drivers/soc/amlogic/Makefile                       |   1 +
+ drivers/soc/amlogic/meson-secure-pwrc.c            | 204 +++++++++++++++++++++
+ include/dt-bindings/power/meson-a1-power.h         |  32 ++++
+ include/linux/firmware/meson/meson_sm.h            |   2 +
+ 8 files changed, 304 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
+ create mode 100644 drivers/soc/amlogic/meson-secure-pwrc.c
+ create mode 100644 include/dt-bindings/power/meson-a1-power.h
+
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
