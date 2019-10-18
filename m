@@ -2,83 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59D14DCCD5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 19:32:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3798ADCCDA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 19:32:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s5tyuNB6691zM1tDnWeXhBiEnb0EtoTTsSq9DwSjEbg=; b=XkLQO/+GtrrSTd
-	7DPyDoNN5ivupqHpA1z/mSFDmDvy5uhb8aT7ThXJrA9RynyeJt8MW6b3TPMPQyEraT9eCkIys9zUq
-	XMTh2uR+ekPXkesvK4mLg+DhfTfGhDFQPEsn9gU2bE0NWfN9S46FfXEzJYhdBTMU83NurqpXvwtbe
-	ACDQNH4/KedPwuWv8AK3mj3uZRc70ZvikrDwqjKydqbq2VuH5v3CN/+5AG7HcxcXZYfL0qNJyrhEZ
-	s4l2N4j9qvYEuhd5yLY/LNopx+4PU5USfM8AmD0Gl0f/x1VZyOWpxoaYa8Jp2UY7Viou+9EzgNpfh
-	+24/VhISOz9VEaXJyh0w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=lIYKG2ivtdrdXRK8WODEgy3t6UvvXqeeWvVtkhhxcxI=; b=TMSmTHmZxln+aJ
+	bz6Cl0lJ3FCgTocSDnipod9yOiolifyEtFn3YJGLRd1dLpZHuckveQdnDjK+89aM2tP1QXA2LJtGa
+	r5sTsI15d+1ocDQhByb0V2fQ/C3VwmXUJ0RtopRh6yHANezWDgfSm+ImPe77G0IhYgmd28WWdhx5c
+	ltMyWrBij8pD6D8oG4/f0/oEkMRitvhA62g4tC/R6ztaHXiXxfWLzD3yldZuNM0khOwzMYRQKvpe+
+	dy5CalAT9lWnRGYBvIgvZ0dWL03fnqIVHmR4rCHaYgv5RqownrwJFTfJqKfYugcwzE668az0bhLWT
+	KIyWBrannLUUAf8ipHtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLW6Z-0001E4-9B; Fri, 18 Oct 2019 17:31:59 +0000
-Received: from mail-il1-x142.google.com ([2607:f8b0:4864:20::142])
+	id 1iLW77-0001VF-Re; Fri, 18 Oct 2019 17:32:33 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLW6L-0001DT-To
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 17:31:47 +0000
-Received: by mail-il1-x142.google.com with SMTP id o16so6261305ilq.7
+ id 1iLW6s-0001Tf-VV
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 17:32:20 +0000
+Received: by mail-wm1-x344.google.com with SMTP id 5so7014745wmg.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 10:31:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=4qFr7tmvxRMVc+FCpIKlwmUQdJxMZt6SVR1EnyZDw74=;
- b=PzMMC9cKAiyn6bioJIfC917EgH+5Q+lzj9JvvPPWfPETQhZKhZxhHeX4Rx7Dak39EY
- SKNwhKWjDeCnr0AGBZWMPQPe8zNVlJeRXxeAk2hJWyBA4FL0lYW25P9X4iRuQpZF8Y/W
- z4LmeUxMVctKXzincxllR8g3vWds+F3DUF9bTngvVuZBI9Bms+hzvuOhwmAH2M4rYTP9
- 2WHd8UrO6nIx4H6QDgFPtYWgTIRzyoMCGXJqkfvk52XqGV8CPczQJ7EZsU9lNi7Q5A3G
- iSRTzhJIQHY5ucvFlurOO503a2/URosqxMiLqTFy8TduluG8nJspP5kE40uZK/aZl6F3
- t7Dg==
+ Fri, 18 Oct 2019 10:32:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=1Sw0jFW5jGSGbXDR6kjw3sQ7x0eXAWOU04hu+4Lun0I=;
+ b=F7bCnS3unseU4Pe5IzC5zUpmWlYMdj2YoPBCoyigGCpOa5U4q61E23KUKl7/OO8nS6
+ WUdzxbAus6HqI12ynE+nZwyeZbScvBHaNZ/MS3f0KnUNnx/EplI1jIZL/5iH71+0mdDz
+ dcRy9M6gwI3bMmfZsccnxZpqW7Rd51W1NywMy4/Mp4wT89DnDgdkLVO9fv5sh0RYkPyS
+ Ehf0VdWN6+9r6al9EuDyaJi+pPQ0TMXNqxP6f179NCcs0/5FVY+iBLYjGQ5xJXBeU71O
+ Q8mJc2Fg+yP3dNOPle+Zb1QIZzX2WsgUBZelWPvl8lmHh9R83fIiczy6BM3vNpewfQqr
+ /wPA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=4qFr7tmvxRMVc+FCpIKlwmUQdJxMZt6SVR1EnyZDw74=;
- b=AZb6JegmN89xeVo0q/uvkAQacSmi4ZjRSJXSczICLPD7XcP2zD9d/88tSDsQ9jjbIJ
- eV4Ck6B77wUKxIfU831mARd4eYZ9aAyvye6lPqpQMNiUhUTY3tSylwf00P6TJY9pLT6W
- DsOHDyFtpKTQu1fY3eIVgUSMU+LyqhGMtqErYad7RGYfklEvo0c2c35BbTtUTpGHS0co
- mAYJqmt+OBXkRKiVJOEN4oNDeAUnl0x72i48r+r51qbX/pwTYgripi/+0lZIM0OYI+GA
- qA26FZdzYzyJ9uTrYrD8jpI1EdKd80QrlnU8algAypLdAeqN+7evXhRX54h7UdYfr+/g
- ubMA==
-X-Gm-Message-State: APjAAAWiN9VJZho+WYcg6bFNp/3VMwJSoFl7TplvUZ+vi2AuXD0oADIJ
- mTShqiHYvLlqp7+EFS6NYVy/q9MACyP9qb+vH/Edwg==
-X-Google-Smtp-Source: APXvYqzQg2H4y9jctt1IvHCTaEbMKx3FQ/dOUqJ1O3p6JKEv9W1TkRHxfHw6Y3/H1JlTwwOruu18CR3RAz7N4Q1L83g=
-X-Received: by 2002:a92:86ce:: with SMTP id l75mr11696428ilh.140.1571419904421; 
- Fri, 18 Oct 2019 10:31:44 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=1Sw0jFW5jGSGbXDR6kjw3sQ7x0eXAWOU04hu+4Lun0I=;
+ b=HD0sDfbmxOsqcSIKDJMCMa19H8d4Z6tXU+F54PvbF85aPjoRRnmRhVbDICCk3YGaHK
+ DdG0InyOGGMTV5KKKxhIiQb/1IN6grG+LLk6i2bYzGjT4206tayrICmMs0izev1/Safd
+ e5wf3D56NPZaRSLuKPnFxfDZVqMlI0AbXlFevn9KZgLVzvCA/Kn9MeCGeiDoKzL6Bfhx
+ PnibHiSuUS0v+u1Sug6wRKuC8Wt0b/78AoSxnS7Gz5NtHyi67teCwI/dbQlSdMTTeHAO
+ gHzUnQrbTfM49gT4m4agxO0K68tAvlx4nUJ3dpDr/c3Hpo+Lqlun7Bz8il8/S/SRlDBr
+ 9+5w==
+X-Gm-Message-State: APjAAAW7TkpaTivzG3YC6CoLAbUq23kZcTubktuatho1gAL6s/VWm94D
+ b/d3rkqAvjBkmNKD0rTcoXQXbQ==
+X-Google-Smtp-Source: APXvYqwLL/J/QMgyordUs7NtcgM+iCDETbDA3BzJsTD+EyqWB7RmlJjXBDAvzNb7XcPW3p+O8v6QGw==
+X-Received: by 2002:a05:600c:2201:: with SMTP id
+ z1mr8798906wml.169.1571419936945; 
+ Fri, 18 Oct 2019 10:32:16 -0700 (PDT)
+Received: from localhost.localdomain ([2a01:e0a:32c:e530:1f62:944f:4c42:96a0])
+ by smtp.gmail.com with ESMTPSA id
+ z4sm5911967wrh.93.2019.10.18.10.32.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 18 Oct 2019 10:32:16 -0700 (PDT)
+From: Fabien Parent <fparent@baylibre.com>
+To: linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-i2c@vger.kernel.org
+Subject: [PATCH RESEND v2] i2c: i2c-mt65xx: fix NULL ptr dereference
+Date: Fri, 18 Oct 2019 19:32:13 +0200
+Message-Id: <20191018173213.13282-1-fparent@baylibre.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-References: <20191015212004.24748-1-mike.leach@linaro.org>
- <20191015212004.24748-11-mike.leach@linaro.org>
- <20191018162009.GB12883@xps15>
-In-Reply-To: <20191018162009.GB12883@xps15>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Fri, 18 Oct 2019 11:31:33 -0600
-Message-ID: <CANLsYkyYwNv0dApJws+e=M3h6MKqX7triVgY6qy74oOYJe7FMw@mail.gmail.com>
-Subject: Re: [PATCH v3 10/11] coresight: docs: Create common sub-directory for
- coresight trace.
-To: Mike Leach <mike.leach@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_103145_965486_1F0077B4 
-X-CRM114-Status: GOOD (  18.70  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191018_103219_073817_17695145 
+X-CRM114-Status: GOOD (  12.54  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -93,89 +94,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jon Corbet <corbet@lwn.net>, Greg KH <gregkh@linuxfoundation.org>,
- Coresight ML <coresight@lists.linaro.org>,
- "Suzuki K. Poulose" <suzuki.poulose@arm.com>,
- "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Ulrich Hecht <uli@fpond.eu>, drinkcat@chromium.org, wsa@the-dreams.de,
+ Fabien Parent <fparent@baylibre.com>, hsinyi@chromium.org,
+ matthias.bgg@gmail.com, Cengiz Can <cengiz@kernel.wtf>, tglx@linutronix.de,
+ qii.wang@mediatek.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 18 Oct 2019 at 10:20, Mathieu Poirier
-<mathieu.poirier@linaro.org> wrote:
->
-> On Tue, Oct 15, 2019 at 10:20:03PM +0100, Mike Leach wrote:
-> > There are two files in the Documentation/trace directory relating to
-> > coresight, with more to follow, so create a Documentation/trace/coresight
-> > directory and move existing files there. Update MAINTAINERS to reference
-> > this sub-directory rather than the individual files.
-> >
-> > Signed-off-by: Mike Leach <mike.leach@linaro.org>
-> > ---
-> >  Documentation/trace/{ => coresight}/coresight-cpu-debug.rst | 0
-> >  Documentation/trace/{ => coresight}/coresight.rst           | 2 +-
-> >  Documentation/trace/{ => coresight}/stm.rst                 | 0
-> >  MAINTAINERS                                                 | 3 +--
-> >  4 files changed, 2 insertions(+), 3 deletions(-)
-> >  rename Documentation/trace/{ => coresight}/coresight-cpu-debug.rst (100%)
-> >  rename Documentation/trace/{ => coresight}/coresight.rst (99%)
-> >  rename Documentation/trace/{ => coresight}/stm.rst (100%)
-> >
-> > diff --git a/Documentation/trace/coresight-cpu-debug.rst b/Documentation/trace/coresight/coresight-cpu-debug.rst
-> > similarity index 100%
-> > rename from Documentation/trace/coresight-cpu-debug.rst
-> > rename to Documentation/trace/coresight/coresight-cpu-debug.rst
-> > diff --git a/Documentation/trace/coresight.rst b/Documentation/trace/coresight/coresight.rst
-> > similarity index 99%
-> > rename from Documentation/trace/coresight.rst
-> > rename to Documentation/trace/coresight/coresight.rst
-> > index 72f4b7ef1bad..835e8aa0bf8c 100644
-> > --- a/Documentation/trace/coresight.rst
-> > +++ b/Documentation/trace/coresight/coresight.rst
-> > @@ -493,6 +493,6 @@ Details on how to use the generic STM API can be found here [#second]_.
-> >
-> >  .. [#first] Documentation/ABI/testing/sysfs-bus-coresight-devices-stm
-> >
-> > -.. [#second] Documentation/trace/stm.rst
-> > +.. [#second] Documentation/trace/coresight/stm.rst
-> >
-> >  .. [#third] https://github.com/Linaro/perf-opencsd
-> > diff --git a/Documentation/trace/stm.rst b/Documentation/trace/coresight/stm.rst
-> > similarity index 100%
-> > rename from Documentation/trace/stm.rst
-> > rename to Documentation/trace/coresight/stm.rst
-> > diff --git a/MAINTAINERS b/MAINTAINERS
-> > index 296de2b51c83..f903160b507c 100644
-> > --- a/MAINTAINERS
-> > +++ b/MAINTAINERS
-> > @@ -1608,8 +1608,7 @@ R:      Suzuki K Poulose <suzuki.poulose@arm.com>
-> >  L:   linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
-> >  S:   Maintained
-> >  F:   drivers/hwtracing/coresight/*
-> > -F:   Documentation/trace/coresight.rst
-> > -F:   Documentation/trace/coresight-cpu-debug.rst
-> > +F:   Documentation/trace/coresight/*
-> >  F:   Documentation/devicetree/bindings/arm/coresight.txt
-> >  F:   Documentation/devicetree/bindings/arm/coresight-cpu-debug.txt
-> >  F:   Documentation/ABI/testing/sysfs-bus-coresight-devices-*
->
-> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+Since commit abf4923e97c3 ("i2c: mediatek: disable zero-length transfers
+for mt8183"), there is a NULL pointer dereference for all the SoCs
+that don't have any quirk. mtk_i2c_functionality is not checking that
+the quirks pointer is not NULL before starting to use it.
 
-I'm taking that back - please remove mentions of coresight files in
-Documentation/trace/index.rst.
+This commit add a call to i2c_check_quirks which will check whether
+the quirks pointer is set, and if so will check if the IP has the
+NO_ZERO_LEN quirk.
 
-Since you do have to respin, please split patch 09.  And now that I
-have applied all the other patches, your next revision should be a
-documentation set.
+Fixes: abf4923e97c3 ("i2c: mediatek: disable zero-length transfers for mt8183")
+Signed-off-by: Fabien Parent <fparent@baylibre.com>
+Reviewed-by: Cengiz Can <cengiz@kernel.wtf>
+Reviewed-by: Hsin-Yi Wang <hsinyi@chromium.org>
+Tested-by: Ulrich Hecht <uli@fpond.eu>
 
-Thanks,
-Mathieu
->
-> > --
-> > 2.17.1
-> >
+---
+
+v2:
+	* use i2c_check_quirks to check the quirks
+
+---
+ drivers/i2c/busses/i2c-mt65xx.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/i2c/busses/i2c-mt65xx.c b/drivers/i2c/busses/i2c-mt65xx.c
+index 29eae1bf4f86..2152ec5f535c 100644
+--- a/drivers/i2c/busses/i2c-mt65xx.c
++++ b/drivers/i2c/busses/i2c-mt65xx.c
+@@ -875,7 +875,7 @@ static irqreturn_t mtk_i2c_irq(int irqno, void *dev_id)
+ 
+ static u32 mtk_i2c_functionality(struct i2c_adapter *adap)
+ {
+-	if (adap->quirks->flags & I2C_AQ_NO_ZERO_LEN)
++	if (i2c_check_quirks(adap, I2C_AQ_NO_ZERO_LEN))
+ 		return I2C_FUNC_I2C |
+ 			(I2C_FUNC_SMBUS_EMUL & ~I2C_FUNC_SMBUS_QUICK);
+ 	else
+-- 
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
