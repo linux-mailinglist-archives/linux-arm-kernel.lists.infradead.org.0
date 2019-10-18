@@ -2,49 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2993CDCC8C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 19:23:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E9FCDCC9D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 19:26:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=osm0PZ9+VSSHrZsC1KJlhvZmFVJ7xvlWj9vqDzgpri0=; b=fV4S3pu/ZH0HMZ
-	CUUAYNKQeNiHnxt0cnVhbQeTqZLjO9/dhMwSwdjp+dMXlBvMNHXL7w/odpMBtKD6UKvs3NmAi5+rA
-	Su8HL9Y/jvGo0BohnpIc6jJppt++jEFnZK3YZzshFCYXGXGXHT19e/V7Jc9IRDka6WEgf7Duiso4C
-	+TCP7aKo6PrbccX0SqicCCf2ALUW9UZCgMnqQuICK5/L9LxeUYtzzdTBGck7OlQ39t2DMSeebSMUB
-	3vShrw0vzy0q89YH6Q8CZ3jljU0t4iRGO7gs4JEvdOvS+WafsWIUTN9ZtmVSN0XWu44l2AEgA4nBR
-	QPcTpE2qDS2VcyfVEZRg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=N0vvkNWgAFVZQwHQ3YHExu0LBrIoRKDITrFYLYzboMk=; b=BYF
+	NuymeXUNxCKCK8H11AXIWtupXRjU0+RWe9tHRAo5o38IyP4wq0bso3sTj7RGFaYJ91cOgJPyAPUIZ
+	1/1UQf+A0LHWybcOAjjS7z5HaGEMlDfWneuk1x/yiiG1kv58wEIOO6MKcorTjEkmzH8CdQ//tTlEu
+	ekz48FINEZ+PJnKnWQPXcruTouv1nm6YZ7vCDQqAxnCdwSwaiYNl6staI+GIyypGiLfnUlDM4G04E
+	Gsrmhkkq56jMl4lT7lE5d7dTg2f4JEjFp63+YVohcXXZ78JQRSayr6wVVyp3wyoN62CT+14XKuRob
+	BDK+/KjSG7g7UcdaPPdNyhO9JcZIvjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLVyQ-00029k-0C; Fri, 18 Oct 2019 17:23:34 +0000
+	id 1iLW1C-0004Ch-4h; Fri, 18 Oct 2019 17:26:26 +0000
 Received: from [217.140.110.172] (helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLVyG-00025h-WB
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 17:23:26 +0000
+ id 1iLW0r-00048G-EK
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 17:26:07 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C971D1042;
- Fri, 18 Oct 2019 10:23:13 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B161E1063;
+ Fri, 18 Oct 2019 10:25:54 -0700 (PDT)
+Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 084393F718;
- Fri, 18 Oct 2019 10:23:11 -0700 (PDT)
-Date: Fri, 18 Oct 2019 18:23:09 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Jann Horn <jannh@google.com>
-Subject: Re: [PATCH 18/18] arm64: implement Shadow Call Stack
-Message-ID: <20191018172309.GB18838@lakrids.cambridge.arm.com>
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20191018161033.261971-19-samitolvanen@google.com>
- <CAG48ez2Z8=0__eoQ+Ekp=EApawZXR4ec_xd2TVPQExLoyMwtRQ@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAG48ez2Z8=0__eoQ+Ekp=EApawZXR4ec_xd2TVPQExLoyMwtRQ@mail.gmail.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id E56E63F718;
+ Fri, 18 Oct 2019 10:25:51 -0700 (PDT)
+From: Dave Martin <Dave.Martin@arm.com>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH v3 00/12] arm64: ARMv8.5-A: Branch Target Identification
+ support
+Date: Fri, 18 Oct 2019 18:25:33 +0100
+Message-Id: <1571419545-20401-1-git-send-email-Dave.Martin@arm.com>
+X-Mailer: git-send-email 2.1.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_102325_100404_5A6D7F02 
-X-CRM114-Status: GOOD (  10.58  )
+X-CRM114-CacheID: sfid-20191018_102605_569016_E4135653 
+X-CRM114-Status: GOOD (  15.76  )
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
@@ -64,62 +59,142 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Kernel Hardening <kernel-hardening@lists.openwall.com>,
- Nick Desaulniers <ndesaulniers@google.com>,
- kernel list <linux-kernel@vger.kernel.org>,
- Steven Rostedt <rostedt@goodmis.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Sami Tolvanen <samitolvanen@google.com>, Laura Abbott <labbott@redhat.com>,
- Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Yu-cheng Yu <yu-cheng.yu@intel.com>,
+ Amit Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
+ Eugene Syromiatnikov <esyr@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ "H.J. Lu" <hjl.tools@gmail.com>, Andrew Jones <drjones@redhat.com>,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, Richard Henderson <richard.henderson@linaro.org>,
+ =?UTF-8?q?Kristina=20Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
+ Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Florian Weimer <fweimer@redhat.com>,
+ Sudakshina Das <sudi.das@arm.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 18, 2019 at 07:12:52PM +0200, Jann Horn wrote:
-> On Fri, Oct 18, 2019 at 6:16 PM Sami Tolvanen <samitolvanen@google.com> wrote:
-> > This change implements shadow stack switching, initial SCS set-up,
-> > and interrupt shadow stacks for arm64.
-> [...]
-> > +static inline void scs_save(struct task_struct *tsk)
-> > +{
-> > +       void *s;
-> > +
-> > +       asm volatile("mov %0, x18" : "=r" (s));
-> > +       task_set_scs(tsk, s);
-> > +}
-> > +
-> > +static inline void scs_load(struct task_struct *tsk)
-> > +{
-> > +       asm volatile("mov x18, %0" : : "r" (task_scs(tsk)));
-> > +       task_set_scs(tsk, NULL);
-> > +}
-> 
-> These things should probably be __always_inline or something like
-> that? If the compiler decides not to inline them (e.g. when called
-> from scs_thread_switch()), stuff will blow up, right?
+This patch implements support for ARMv8.5-A Branch Target Identification
+(BTI), which is a control flow integrity protection feature introduced
+as part of the ARMv8.5-A extensions.
 
-I think scs_save() would better live in assembly in cpu_switch_to(),
-where we switch the stack and current. It shouldn't matter whether
-scs_load() is inlined or not, since the x18 value _should_ be invariant
-from the PoV of the task.
+The series is based on v5.4-rc2.
 
-We just need to add a TSK_TI_SCS to asm-offsets.c, and then insert a
-single LDR at the end:
+A branch for this series is available in Git [3].
 
-	mov	sp, x9
-	msr	sp_el0, x1
-#ifdef CONFIG_SHADOW_CALL_STACK
-	ldr	x18, [x1, TSK_TI_SCS]
-#endif
-	ret
+This series supersedes the previous v2 posting [1], and also
+incorporates my proposed ELF GNU property parsing implementation.  (See
+[2] for the ABI spec describing NT_GNU_PROPERTY_TYPE_0).
 
-Thanks,
-Mark.
+Changes:
+
+ * Minor cleanups / nitpick fixes only.
+
+   Since this is an interim update so that Mark Brown can take over
+   development of the series, I haven't fully retested.  The series
+   builds with defconfig.
+
+   There are some outstanding discussion points: see notes in the
+   invidual patches, particularly on patch 5.
+
+
+Notes:
+
+ * No documentation yet.  We could do with some being written before
+   this series gets merged.
+
+ * GCC 9 can compile backwards-compatible BTI-enabled code with
+   -mbranch-protection=bti or -mbranch-protection=standard.
+
+ * Binutils trunk supports the new ELF note, but this wasn't in a release
+   the last time I posted this series.  (The situation _might_ have changed
+   in the meantime...)
+
+   Creation of a BTI-enabled binary requires _everything_ linked in to
+   be BTI-enabled.  For now ld --force-bti can be used to override this,
+   but some things may break until the required C library support is in
+   place.
+
+   There is no straightforward way to mark a .s file as BTI-enabled:
+   scraping the output from gcc -S works as a quick hack for now.
+
+   readelf -n can be used to examing the program properties in an ELF
+   file.
+
+ * Runtime mmap() and mprotect() can be used to enable BTI on a
+   page-by-page basis using the new PROT_BTI, but the code in the
+   affected pages still needs to be written or compiled to contain the
+   appopriate BTI landing pads.
+
+
+[1] [PATCH v2 00/12] arm64: ARMv8.5-A: Branch Target Identification support
+https://lore.kernel.org/lkml/1570733080-21015-1-git-send-email-Dave.Martin@arm.com/
+
+[2] Linux Extensions to gABI
+https://github.com/hjl-tools/linux-abi/wiki/Linux-Extensions-to-gABI
+
+[3] Git branch:
+git://linux-arm.org/linux-dm.git arm64/bti/v3/head
+http://linux-arm.org/git?p=linux-dm.git;a=shortlog;h=refs/heads/arm64/bti/v3/head
+
+
+Dave Martin (12):
+  ELF: UAPI and Kconfig additions for ELF program properties
+  ELF: Add ELF program property parsing support
+  mm: Reserve asm-generic prot flag 0x10 for arch use
+  arm64: docs: cpu-feature-registers: Document ID_AA64PFR1_EL1
+  arm64: Basic Branch Target Identification support
+  elf: Allow arch to tweak initial mmap prot flags
+  arm64: elf: Enable BTI at exec based on ELF program properties
+  arm64: BTI: Decode BYTPE bits when printing PSTATE
+  arm64: traps: Fix inconsistent faulting instruction skipping
+  arm64: traps: Shuffle code to eliminate forward declarations
+  arm64: BTI: Reset BTYPE when skipping emulated instructions
+  KVM: arm64: BTI: Reset BTYPE when skipping emulated instructions
+
+ Documentation/arm64/cpu-feature-registers.rst |  17 ++-
+ Documentation/arm64/elf_hwcaps.rst            |   4 +
+ arch/arm64/Kconfig                            |  31 ++++++
+ arch/arm64/include/asm/cpucaps.h              |   3 +-
+ arch/arm64/include/asm/cpufeature.h           |   6 ++
+ arch/arm64/include/asm/elf.h                  |  50 +++++++++
+ arch/arm64/include/asm/esr.h                  |   2 +-
+ arch/arm64/include/asm/hwcap.h                |   1 +
+ arch/arm64/include/asm/kvm_emulate.h          |   6 +-
+ arch/arm64/include/asm/mman.h                 |  37 +++++++
+ arch/arm64/include/asm/pgtable-hwdef.h        |   1 +
+ arch/arm64/include/asm/pgtable.h              |   2 +-
+ arch/arm64/include/asm/ptrace.h               |   8 ++
+ arch/arm64/include/asm/sysreg.h               |   4 +
+ arch/arm64/include/uapi/asm/hwcap.h           |   1 +
+ arch/arm64/include/uapi/asm/mman.h            |   9 ++
+ arch/arm64/include/uapi/asm/ptrace.h          |   1 +
+ arch/arm64/kernel/cpufeature.c                |  33 ++++++
+ arch/arm64/kernel/cpuinfo.c                   |   1 +
+ arch/arm64/kernel/entry.S                     |  11 ++
+ arch/arm64/kernel/process.c                   |  36 ++++++-
+ arch/arm64/kernel/ptrace.c                    |   2 +-
+ arch/arm64/kernel/signal.c                    |  16 +++
+ arch/arm64/kernel/syscall.c                   |  18 ++++
+ arch/arm64/kernel/traps.c                     | 126 +++++++++++-----------
+ fs/Kconfig.binfmt                             |   6 ++
+ fs/binfmt_elf.c                               | 145 ++++++++++++++++++++++++--
+ fs/compat_binfmt_elf.c                        |   4 +
+ include/linux/elf.h                           |  43 ++++++++
+ include/linux/mm.h                            |   3 +
+ include/uapi/asm-generic/mman-common.h        |   1 +
+ include/uapi/linux/elf.h                      |  11 ++
+ 32 files changed, 560 insertions(+), 79 deletions(-)
+ create mode 100644 arch/arm64/include/asm/mman.h
+ create mode 100644 arch/arm64/include/uapi/asm/mman.h
+
+-- 
+2.1.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
