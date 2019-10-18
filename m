@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 192D9DC01B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 10:38:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A4F9DC033
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 10:44:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=qABCYUP9tL7A8ul7Vxc5bZ86m6BDOeUWwzYMzT82jU0=; b=pT1I6hdsiCzN+3BObjhrMyc5E
-	TSngl9fAeLvzPDLCPTpGw+ZeXlN7JJHppck3Wx1ZwxgC5BIBdFeFuf1ChaIHfDsGgw/cfV/xRNru/
-	zxrtwdktWZlF1cUMnuc/RV4EMpMWVbEmMSf5pHHCLSyviAzN+/yD6mzzIqtAsl7UxTxXePEPt/W/X
-	Ld6CDXZryexomM5MFg0QPo9RvGKzsltZs/zoFe5fB1glso8IOj4MDvqVGsIUzIWnliFWh5OI+JOXo
-	JJHOvX4DyI6GsDlSCslSxxdZEGQ7ROvcNq0tlolyrcvM91b5SS+g/agqcywsCJMkZ9KkqclFs7ruE
-	3yB7i58PQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tiPlrHWrVP7nsmxtOcvYjmRvFdGVmt287jSTsRCIAzo=; b=aPlM6A7um2VcqO
+	Xig7Twu5o5mSz5aNO7E+24zbPX2G5Y706X4NV2/CF0NdHq2KypbLUTODMWUgymAY11rLzgUIbe08P
+	XKgoBTz2uhMGC7Nb0pea1Cv8d4+oaQ5L4X2OKj4FRxvPaPbC8kmeVd35316prUFZhZSqM1ISN7SoC
+	rnTQAWoN9t5yC5BJDFZyui16Qu9dGZ9NiTZ4FtsygeU90DSNkZ1gFR46Gf22k7gX1b2iKJG8juhZJ
+	3UwBmBwwP7DKM1+GwcNMVme1s/k9r2nAG+L6XOHodGVBaIYNLqq97qQQ46kjA+BVgCI/SaZl3mAfu
+	TpWEIMQffdofArUctSBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLNmV-0003UK-Ee; Fri, 18 Oct 2019 08:38:43 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1iLNrz-0005a0-Vv; Fri, 18 Oct 2019 08:44:23 +0000
+Received: from mga09.intel.com ([134.134.136.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLNmI-0003Sq-J6
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 08:38:32 +0000
-Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 8334FBB43E802C608D56;
- Fri, 18 Oct 2019 16:38:22 +0800 (CST)
-Received: from [127.0.0.1] (10.202.227.179) by DGGEMS410-HUB.china.huawei.com
- (10.3.19.210) with Microsoft SMTP Server id 14.3.439.0;
- Fri, 18 Oct 2019 16:38:13 +0800
-Subject: Re: [PATCH v6 2/2] drivers/perf: Add CCPI2 PMU support in ThunderX2
- UNCORE driver.
-To: Ganapatrao Kulkarni <gklkml16@gmail.com>, Will Deacon <will@kernel.org>
-References: <1571218608-15933-1-git-send-email-gkulkarni@marvell.com>
- <1571218608-15933-3-git-send-email-gkulkarni@marvell.com>
- <b8e1a637-faf4-4567-7d3e-a4f13dfa1cf0@huawei.com>
- <CAKTKpr4QoTDjbSxO4CvSH2sNvmrTJKjxi+RZH4mYfyDaaN96Sw@mail.gmail.com>
- <20191017154750.jgn6e3465qrsu53e@willie-the-truck>
- <CAKTKpr5ntp5X6Lvp=rKT_F1E1ftdqtjSWTgpEOqEwaDMH2kc1w@mail.gmail.com>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <f7c91a7d-1f0e-24be-1491-fd0dae7f1daf@huawei.com>
-Date: Fri, 18 Oct 2019 09:38:06 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.3.0
+ id 1iLNrq-0005ZW-SR
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 08:44:16 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga006.fm.intel.com ([10.253.24.20])
+ by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 18 Oct 2019 01:44:13 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.67,311,1566889200"; d="scan'208";a="397870720"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by fmsmga006.fm.intel.com with ESMTP; 18 Oct 2019 01:44:05 -0700
+Received: from andy by smile with local (Exim 4.92.2)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1iLNrf-0008LD-3B; Fri, 18 Oct 2019 11:44:03 +0300
+Date: Fri, 18 Oct 2019 11:44:03 +0300
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+Subject: Re: [PATCH 00/22] Stop using input_polled_dev in polling drivers
+Message-ID: <20191018084403.GR32742@smile.fi.intel.com>
+References: <20191017204217.106453-1-dmitry.torokhov@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <CAKTKpr5ntp5X6Lvp=rKT_F1E1ftdqtjSWTgpEOqEwaDMH2kc1w@mail.gmail.com>
-X-Originating-IP: [10.202.227.179]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20191017204217.106453-1-dmitry.torokhov@gmail.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_013830_800138_06814581 
-X-CRM114-Status: GOOD (  14.98  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191018_014414_960146_75C3E60E 
+X-CRM114-Status: GOOD (  12.49  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [134.134.136.24 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,88 +70,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
- "corbet@lwn.net" <corbet@lwn.net>, Jan Glauber <jglauber@marvell.com>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Robert Richter <rrichter@marvell.com>,
- Zhangshaokun <zhangshaokun@hisilicon.com>,
- Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Sven Van Asbroeck <TheSven73@gmail.com>, Jacky Bai <ping.bai@nxp.com>,
+ "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
+ Jonathan Bakker <xc-racer2@live.ca>, Marco Felsch <m.felsch@pengutronix.de>,
+ Stefan Agner <stefan@agner.ch>, Eric Anholt <eric@anholt.net>,
+ Jilayne Lovejoy <opensource@jilayne.com>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Miloslav Trmac <mitr@volny.cz>, Anders Roxell <anders.roxell@linaro.org>,
+ Alexander Shiyan <shc_work@mail.ru>, YueHaibing <yuehaibing@huawei.com>,
+ Luca Weiss <luca@z3ntu.xyz>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ linux-arm-kernel@lists.infradead.org, linux-input@vger.kernel.org,
+ Jeff LaBundy <jeff@labundy.com>, Mukesh Ojha <mojha@codeaurora.org>,
+ Brian Masney <masneyb@onstation.org>, Pavel Machek <pavel@ucw.cz>,
+ Alexios Zavras <alexios.zavras@intel.com>, Steve Winslow <swinslow@gmail.com>,
+ Ronald =?iso-8859-1?Q?Tschal=E4r?= <ronald@innovation.ch>,
+ Martin Kepplinger <martink@posteo.de>, Allison Randal <allison@lohutok.net>,
+ Dong Aisheng <aisheng.dong@nxp.com>, Anson Huang <Anson.Huang@nxp.com>,
+ Richard Fontana <rfontana@redhat.com>,
+ Maximilian Luz <luzmaximilian@gmail.com>, linux-kernel@vger.kernel.org,
+ Luis Chamberlain <mcgrof@kernel.org>, Hans Verkuil <hverkuil-cisco@xs4all.nl>,
+ =?utf-8?B?UGF3ZcWC?= Chmiel <pawel.mikolaj.chmiel@gmail.com>,
+ Enrico Weigelt <info@metux.net>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 18/10/2019 05:21, Ganapatrao Kulkarni wrote:
-> Hi Will,
->
-> On Thu, Oct 17, 2019 at 9:17 PM Will Deacon <will@kernel.org> wrote:
->>
->> On Thu, Oct 17, 2019 at 12:38:51PM +0530, Ganapatrao Kulkarni wrote:
->>> On Wed, Oct 16, 2019 at 7:01 PM John Garry <john.garry@huawei.com> wrote:
->>>>> +TX2_EVENT_ATTR(req_pktsent, CCPI2_EVENT_REQ_PKT_SENT);
->>>>> +TX2_EVENT_ATTR(snoop_pktsent, CCPI2_EVENT_SNOOP_PKT_SENT);
->>>>> +TX2_EVENT_ATTR(data_pktsent, CCPI2_EVENT_DATA_PKT_SENT);
->>>>> +TX2_EVENT_ATTR(gic_pktsent, CCPI2_EVENT_GIC_PKT_SENT);
->>>>> +
->>>>> +static struct attribute *ccpi2_pmu_events_attrs[] = {
->>>>> +     &tx2_pmu_event_attr_req_pktsent.attr.attr,
->>>>> +     &tx2_pmu_event_attr_snoop_pktsent.attr.attr,
->>>>> +     &tx2_pmu_event_attr_data_pktsent.attr.attr,
->>>>> +     &tx2_pmu_event_attr_gic_pktsent.attr.attr,
->>>>> +     NULL,
->>>>> +};
->>>>
->>>> Hi Ganapatrao,
->>>>
->>>> Have you considered adding these as uncore pmu-events in the perf tool?
->>>>
->>> At the moment no, since the number of events exposed/listed are very few.
->>
->> Then sounds like a perfect time to nip it in the bud before the list grows
->> ;)
->
-> I had internal discussion with architecture team, they have confirmed
-> that, these are the only published events and no plan to add new.
-> However, If any such request comes from HW team in future, i will add
-> them to JSON files.
+On Thu, Oct 17, 2019 at 01:41:54PM -0700, Dmitry Torokhov wrote:
+> Input devices now support polling mode natively (via input_setup_polling
+> API), and input_polled_dev implementation is going away. This series
+> switches drivers found in drivers/input to the new scheme.
+> 
 
-Don't you find perf list is swamped with all the uncore events?
+For all I have been Cc'ed
+Acked-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
 
-For Huawei platform, I find this:
-./perf list pmu | grep "Kernel PMU event" | grep hisi | wc -l
-648
+> 
+> Dmitry Torokhov (21):
+>   Input: raspberrypi-ts - switch to using polled mode of input devices
+>   Input: sur40 - switch to using polled mode of input devices
+>   Input: ts4800-ts - switch to using polled mode of input devices
+>   Input: tsc6507x-ts - switch to using polled mode of input devices
+>   Input: adc-keys - switch to using polled mode of input devices
+>   Input: clps711x-keypad - switch to using polled mode of input devices
+>   Input: jornada680_kbd - switch to using polled mode of input devices
+>   Input: gpio_keys_polled - switch to using polled mode of input devices
+>   Input: apanel - switch to using polled mode of input devices
+>   Input: wistron_btns - switch to using polled mode of input devices
+>   Input: cobalt_btns - convert to use managed resources
+>   Input: cobalt_btns - switch to using polled mode of input devices
+>   Input: sgi_btns - switch to using managed resources
+>   Input: sgi_btns - switch to using polled mode of input devices
+>   Input: rb532_button - switch to using managed resources
+>   Input: rb532_button - switch to using polled mode of input devices
+>   Input: gpio_decoder - switch to using polled mode of input devices
+>   Input: mma8450 - switch to using polled mode of input devices
+>   Input: bma150 - switch to using polled mode of input devices
+>   Input: kxtj9 - switch to using managed resources
+>   Input: kxtj9 - switch to using polled mode of input devices
+> 
+> Jonathan Bakker (1):
+>   Input: bma150 - use managed resources helpers
+> 
+>  drivers/input/keyboard/Kconfig             |   4 -
+>  drivers/input/keyboard/adc-keys.c          |  36 ++--
+>  drivers/input/keyboard/clps711x-keypad.c   |  70 +++----
+>  drivers/input/keyboard/gpio_keys_polled.c  |  65 +++---
+>  drivers/input/keyboard/jornada680_kbd.c    |  37 ++--
+>  drivers/input/misc/Kconfig                 |  15 --
+>  drivers/input/misc/apanel.c                | 153 ++++++--------
+>  drivers/input/misc/bma150.c                | 190 +++++------------
+>  drivers/input/misc/cobalt_btns.c           |  73 +++----
+>  drivers/input/misc/gpio_decoder.c          |  42 ++--
+>  drivers/input/misc/kxtj9.c                 | 224 ++++++---------------
+>  drivers/input/misc/mma8450.c               | 101 +++++-----
+>  drivers/input/misc/rb532_button.c          |  48 ++---
+>  drivers/input/misc/sgi_btns.c              |  54 ++---
+>  drivers/input/misc/wistron_btns.c          |  51 ++---
+>  drivers/input/touchscreen/Kconfig          |   4 -
+>  drivers/input/touchscreen/raspberrypi-ts.c |  38 ++--
+>  drivers/input/touchscreen/sur40.c          |  92 +++++----
+>  drivers/input/touchscreen/tps6507x-ts.c    |  36 ++--
+>  drivers/input/touchscreen/ts4800-ts.c      |  68 ++++---
+>  20 files changed, 557 insertions(+), 844 deletions(-)
+> 
+> -- 
+> 2.23.0.866.gb869b98d4c-goog
+> 
 
-That's because we have so many instances of the same PMUs, not because 
-there are many events per PMU.
-
-TBH, I would like to delete all the events from the hisi uncore kernel 
-drivers, now that they're supported in the perf tool, but I think that 
-would constitute an ABI breakage.
-
-Maybe there is a way to hide them, but I couldn't find it.
-
-John
-
->
-> I have incorporate all your previous comments, Can you please Ack and
-> queue it to 5.5?
->
->>
->> If you can manage with these things in userspace, then I agree with John
->> that it would be preferential to do it that way. It also offers more
->> flexibility if we get the metricgroup stuff working properly (I think it's
->> buggered for big/little atm).
->>
->> Will
->
-> Thanks,
-> Ganapat
->
-> .
->
+-- 
+With Best Regards,
+Andy Shevchenko
 
 
 
