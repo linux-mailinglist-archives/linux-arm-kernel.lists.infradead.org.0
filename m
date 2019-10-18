@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 742D9DCC27
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 19:03:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8506DDCC2E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 19:04:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jn2yY8iUwXh08TSP1aMisxRX6rDeed0DJWyX8vip52o=; b=mCstH7ceSlPc7V
-	8VyJzO5eggD2xyMyKTyNgSUeE7Z3UE/tjnutZx0ljXtxsCMlin40H86J9Y6Gpk1R7MrQIaWf0pVPc
-	h124QmqwcR2K0g2euHiU5vZHctDzXrS6+RE3HX18y+qPqS4StHfI5lDJ6a+TEeG4DPGp8Jk+sdKPr
-	zOh6nUKaFJH9rJ0Lj31D2XXvQootdFVYdsu7Rw4ccvIh+e+rQM9kkn7DRXrOJotnpInkcbBR2rwCW
-	9LqihcenrZVxkF7RoXB0GvR9XTq2A6x/wPSCIXd/ojXwonOFeD3JwLt4bYGif8nuXedDNpR5gZ9NF
-	jtuk+5w4rRtCCMVqpczA==;
+	List-Owner; bh=qlwjXxZxOLLqalAxb+dwyyhRTTbYUEW8PXnapBd3xLA=; b=MwcTQ0pGGr1aiq
+	f7DWWx1DCLRPo8RMYxL2QxTD7NYCmVAWyANJejymfJWt9YVh+IhArtgi7/H3nAtm5MD8e49CmEaEN
+	r46HrV5lPhS20wbg4hX/MiFthGI5Erb4wMG7NZ1KFcsmvpCxmPib5Wa0cyTPqLP7Bt+d3ZRfPijqa
+	bMg3ojtHjVVQKtp3VjXJffHXg2bdasTudkt9LOVTVVHg03kvN5kS64aj7lu6SlgvHax3yCg+E4RPc
+	RDN4XgSdKCM8C3bPbp2jypTFzLtHWaKkWACKIjiLuyWmp6WEXxDRHXD6V/4Mc4h7592J1p8PLp53u
+	zYb951XKhUuUnFtijhPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLVeg-0008Lb-Ia; Fri, 18 Oct 2019 17:03:10 +0000
+	id 1iLVg9-0000H9-S0; Fri, 18 Oct 2019 17:04:41 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLVeV-0008LG-TO
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 17:03:01 +0000
+ id 1iLVg0-0000Gm-8J
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 17:04:33 +0000
 Received: from gandalf.local.home (cpe-66-24-58-225.stny.res.rr.com
  [66.24.58.225])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 819952064A;
- Fri, 18 Oct 2019 17:02:58 +0000 (UTC)
-Date: Fri, 18 Oct 2019 13:02:57 -0400
+ by mail.kernel.org (Postfix) with ESMTPSA id D16F12064A;
+ Fri, 18 Oct 2019 17:04:30 +0000 (UTC)
+Date: Fri, 18 Oct 2019 13:04:29 -0400
 From: Steven Rostedt <rostedt@goodmis.org>
 To: Sami Tolvanen <samitolvanen@google.com>
-Subject: Re: [PATCH 10/18] kprobes: fix compilation without CONFIG_KRETPROBES
-Message-ID: <20191018130257.3376e397@gandalf.local.home>
-In-Reply-To: <20191018161033.261971-11-samitolvanen@google.com>
+Subject: Re: [PATCH 11/18] kprobes: disable kretprobes with SCS
+Message-ID: <20191018130429.5df61f6b@gandalf.local.home>
+In-Reply-To: <20191018161033.261971-12-samitolvanen@google.com>
 References: <20191018161033.261971-1-samitolvanen@google.com>
- <20191018161033.261971-11-samitolvanen@google.com>
+ <20191018161033.261971-12-samitolvanen@google.com>
 X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_100259_972502_5C74DEAA 
-X-CRM114-Status: GOOD (  16.89  )
+X-CRM114-CacheID: sfid-20191018_100432_316700_FD77DD67 
+X-CRM114-Status: GOOD (  16.11  )
 X-Spam-Score: -4.8 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-4.8 points)
@@ -77,79 +77,53 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
-Added Masami who's the maintainer of kprobes.
+[ Added Masami ]
 
--- Steve
-
-
-On Fri, 18 Oct 2019 09:10:25 -0700
+On Fri, 18 Oct 2019 09:10:26 -0700
 Sami Tolvanen <samitolvanen@google.com> wrote:
 
-> kprobe_on_func_entry and arch_kprobe_on_func_entry need to be available
-> even if CONFIG_KRETPROBES is not selected.
+> With CONFIG_KRETPROBES, function return addresses are modified to
+> redirect control flow to kretprobe_trampoline. This is incompatible with
+> return address protection.
 > 
 > Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
 > ---
->  kernel/kprobes.c | 38 +++++++++++++++++++-------------------
->  1 file changed, 19 insertions(+), 19 deletions(-)
+>  arch/Kconfig | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> diff --git a/kernel/kprobes.c b/kernel/kprobes.c
-> index 53534aa258a6..b5e20a4669b8 100644
-> --- a/kernel/kprobes.c
-> +++ b/kernel/kprobes.c
-> @@ -1829,6 +1829,25 @@ unsigned long __weak arch_deref_entry_point(void *entry)
->  	return (unsigned long)entry;
->  }
+> diff --git a/arch/Kconfig b/arch/Kconfig
+> index a222adda8130..4646e3b34925 100644
+> --- a/arch/Kconfig
+> +++ b/arch/Kconfig
+> @@ -171,7 +171,7 @@ config ARCH_USE_BUILTIN_BSWAP
 >  
-> +bool __weak arch_kprobe_on_func_entry(unsigned long offset)
-> +{
-> +	return !offset;
-> +}
-> +
-> +bool kprobe_on_func_entry(kprobe_opcode_t *addr, const char *sym, unsigned long offset)
-> +{
-> +	kprobe_opcode_t *kp_addr = _kprobe_addr(addr, sym, offset);
-> +
-> +	if (IS_ERR(kp_addr))
-> +		return false;
-> +
-> +	if (!kallsyms_lookup_size_offset((unsigned long)kp_addr, NULL, &offset) ||
-> +						!arch_kprobe_on_func_entry(offset))
-> +		return false;
-> +
-> +	return true;
-> +}
-> +
->  #ifdef CONFIG_KRETPROBES
->  /*
->   * This kprobe pre_handler is registered with every kretprobe. When probe
-> @@ -1885,25 +1904,6 @@ static int pre_handler_kretprobe(struct kprobe *p, struct pt_regs *regs)
->  }
->  NOKPROBE_SYMBOL(pre_handler_kretprobe);
->  
-> -bool __weak arch_kprobe_on_func_entry(unsigned long offset)
-> -{
-> -	return !offset;
-> -}
-> -
-> -bool kprobe_on_func_entry(kprobe_opcode_t *addr, const char *sym, unsigned long offset)
-> -{
-> -	kprobe_opcode_t *kp_addr = _kprobe_addr(addr, sym, offset);
-> -
-> -	if (IS_ERR(kp_addr))
-> -		return false;
-> -
-> -	if (!kallsyms_lookup_size_offset((unsigned long)kp_addr, NULL, &offset) ||
-> -						!arch_kprobe_on_func_entry(offset))
-> -		return false;
-> -
-> -	return true;
-> -}
-> -
->  int register_kretprobe(struct kretprobe *rp)
->  {
->  	int ret = 0;
+>  config KRETPROBES
+>  	def_bool y
+> -	depends on KPROBES && HAVE_KRETPROBES
+> +	depends on KPROBES && HAVE_KRETPROBES && ROP_PROTECTION_NONE
 
+Again, this belongs in the arch code.
+
+-- Steve
+
+>  
+>  config USER_RETURN_NOTIFIER
+>  	bool
+
+
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 41a9b4257b72..65557d7e6b5e 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -166,7 +166,7 @@ config ARM64
+ 	select HAVE_STACKPROTECTOR
+ 	select HAVE_SYSCALL_TRACEPOINTS
+ 	select HAVE_KPROBES
+-	select HAVE_KRETPROBES
++	select HAVE_KRETPROBES if ROP_PROTECTION_NONE
+ 	select HAVE_GENERIC_VDSO
+ 	select IOMMU_DMA if IOMMU_SUPPORT
+ 	select IRQ_DOMAIN
 
 _______________________________________________
 linux-arm-kernel mailing list
