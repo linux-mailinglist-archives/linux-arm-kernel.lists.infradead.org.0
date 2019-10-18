@@ -2,69 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD9EBDC9DE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 17:54:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2831DC9C9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 17:52:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pA9lpCiC/peNbXk1T5E98n4OdvM8HHfD2H8lYFVa8PI=; b=NlwS8fORDu3XYV
-	/jy7B/Di2PN0tzGMoViuY3EBq1qUM/JEvtCGYfflr8JB3NxQ+wpZPMWYNrlC2R7JV8/x1BhfC5Fd+
-	p+IQ3v56G4RqBDUlqwWD1UvcUuBbjDzBsMlmMnTT1TdV0bVg1tha78CRgEcDd8qrgMM2UHCRv/gzi
-	Tuo0zoOL/AtE+2ALEIcrq3D2XKoua4CzeMXaIEYg9iAv10I+gwuLwpGl8uSSRsaA3MLFNCCFJhoWM
-	9UJuN9s95g2FMQtM9c6PsID7+Lx90fbW0kXNYOXUzczpi8buJYTYGPZhkDJ/d7KgOTPqvV1Gda23P
-	C3bjp+NqGa1e71fbzJCg==;
+	List-Owner; bh=sZtIuUAZuPXHQDSzKX2/DrH3BoPG+PnJ/o+zQ+RWVP8=; b=BN3yVFQLRUCcV7
+	figQAgj5A7xc/ikLLAIXL/1Nnorpfzc2n4QEF3Ut3VZzUkkVLxFlDjCXXA2yESEZtj4W/LYtODOBJ
+	kkkJjRNrlfSpqdn0JWGfSZ2RWFZV0mjZY/MAl2CACSb6m5m+G9DP4ckJ/kT6pjt1mQPxsJwZQiK1I
+	mRFtsvq66Q+8p/PZpkH82vTmmKGGpv03DdSFLHI7NaeUxnayZEi+mhe9HuXUWgohj/tPoRmjRbFpa
+	o+j3qI0QPmpnapskUZwfyqEE4aTvWrhcGn5iF5zhX68SEkMcQy8jJ9bBQ61PkjJ8r+m8L97rq3MgR
+	LorQdZyeFiPlhrAVEwDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLUZf-0003O0-0a; Fri, 18 Oct 2019 15:53:55 +0000
-Received: from mout.kundenserver.de ([212.227.17.13])
+	id 1iLUXz-0001xa-VE; Fri, 18 Oct 2019 15:52:11 +0000
+Received: from mout.kundenserver.de ([212.227.17.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLUOr-0008Fu-Kq
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 15:42:52 +0000
+ id 1iLUOa-00082i-Qn; Fri, 18 Oct 2019 15:42:35 +0000
 Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
  (mreue108 [212.227.15.145]) with ESMTPA (Nemesis) id
- 1M8yoa-1iRWGW0hh0-0065Ln; Fri, 18 Oct 2019 17:42:22 +0200
+ 1N33AR-1htWxG247x-013P60; Fri, 18 Oct 2019 17:42:23 +0200
 From: Arnd Bergmann <arnd@arndb.de>
 To: Daniel Mack <daniel@zonque.org>, Haojian Zhuang <haojian.zhuang@gmail.com>,
  Robert Jarzmik <robert.jarzmik@free.fr>
-Subject: [PATCH 09/46] watchdog: sa1100: use platform device registration
-Date: Fri, 18 Oct 2019 17:41:24 +0200
-Message-Id: <20191018154201.1276638-9-arnd@arndb.de>
+Subject: [PATCH 11/46] ARM: pxa: cmx270: use platform device for nand
+Date: Fri, 18 Oct 2019 17:41:26 +0200
+Message-Id: <20191018154201.1276638-11-arnd@arndb.de>
 X-Mailer: git-send-email 2.20.0
 In-Reply-To: <20191018154052.1276506-1-arnd@arndb.de>
 References: <20191018154052.1276506-1-arnd@arndb.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:qDo493GPFAz++Q7671EcxnlzzinllHVjM/CFjptshgQp1jXIaEq
- axRtNVML8vy7Kbp4of0v0hu4ghjNw3aE8jK7SdTSmW+EEAVTMbaNX5TiikTP/CGsWeRTW1a
- jDtkCfc4qo0wfK2OBYj/vppBfusq6xJ+kSPFzdhz1u0sL3jbFBHkIgoxgG0tK+PbtRGr8sT
- AV/MHCZnZagCepUOJ0ByA==
+X-Provags-ID: V03:K1:AbuR27vzvwqTV64dzM3JZRxK8+Uh7OaKfpyn+sIT526ScJjmzmK
+ JIJ7LTt+coUJgOsnQwlmCuxVOTtwZTHIFaEmlH7gkm/oxGXEWGKHiHSSjwxG05JZ9zmCL2f
+ nyZ9BJcO99q/LJ6sLR9iDukJXjZznJhvvPK3Q+fjryuiX+0vktVBhsBkwCHvAEsxvI5YUOm
+ Sz3dS9H0qPVlK5FG3CjoQ==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:cooY8u8FubQ=:9naSPVnB74pxkfr2WfdM6B
- YeNT+wFevlI1NKfx/E8MzpHOLE7F9qQrw6vMjOaF28mWqlAcc/715U5K6QA0z8VGSpQY2UKpp
- YRJfAzVpPErVlcoW8rezcbrRs6Y/oRGS081gAfbDjSihiaFOd6BTlHZk3RYZzCCclQfTOua/v
- f/+p9w6/AeNv2CcaI1rq+CdLcDQSHwhlbOv32ecniqLuSjkeHbR3OZWkyKo7dlsjDkNuFlHY6
- IvVwszL7uLayFDTaCkxWxzEfdBwhz/hnLUURj55vfuhW0LHIPQvpoqtsAcwDAC1HfInAAG1Iy
- zg4OZqfJF22IxPkZizInuXtX/gAYQF1/0H85zoBjjzpQQ1Hj28xlHkeSKRCF5OAD7Ajljv9FN
- 0CdCPBrTGqhKDRUyonjHAFWHtBOsuQ5ntruFLlICo6iSZhUoExIo0RzBz1biSYLiLLh068G3i
- FFJNxHyvqnNrvg6XuCiVaZQRTQtLgkD4D77+3hxp8wr7Y264tirpK2ieKOnTKtHOSz+vOxtdY
- 2geU/cIbwJ2iytTCJtuMu/q9SXLRODfsYP9WBUdhFLFpnSt7LmwrmB3/OJrl65NWIQEoA69Jt
- +RtcvhBO46u1kYQTz/ffEFTxH3+jtYppHIvC5S4gBrcuxF/ZIW4OuzUOhwpv3fmIUW7DUhMpA
- Rvbvw6MhfZqrMZCImZmNn9d4BX7nNYHPDeAAi+i18y8nJ80E7XYhPD3/MIbMcmK5p40Ya+7ke
- +TntP/Rd2kC/McQvn6h2rX2Y4a0s54SHOL0RcjoLOyQGP2U6Qj8aVeWYNP/t6O/7o8jAvUAZU
- LqdQGt3ApvkOjmY2WOGY0z49tczcmehFWwz4cRduPqNyjLLKmzMeAhGYDNLj7Z0sTvIlHQVYB
- 62ivIlIIoydxX5bXwuuw==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:l2PtyoVwGKc=:+0UEgTT2WSPL5NZ6La/kPz
+ DHmB450niREfEPyFYAmQeTXByU0r3y2AE91V1gd21WSqwlhgnuOR1J0ph5In0M1ZrAvR+HN18
+ UjDM5XG4d+1SoYl+AMm7duwpjCH9Qh9FigBmRXr2zzSlAWObwWI2GBiWhRf0svOpiLnFJipOm
+ wnhQoVDcOnbCYFFNjxR+vlA8/Uqi8LDRXsFU62jSQNDck7MAbwe0UAkjeKzoQZ+uXHFn1fbw3
+ ebVXOSacNAHlioTZgCEOOiALKXl2rkyuhf5aOl/R/iyEC1T+yM4YrfdrhR/JCxxUYWcUBJRG4
+ PaoQpkISkiKX2VJDMLvXy84shXMYREoDOYZoVAgRnBd2rQv6kMQYhdxrOcwjGKP122/1ZDPSQ
+ wxuP3rvoP7eu6MQD4YUOrUTteACUg6X4sbqgseaE2cP3+RYbVKjNScT/C99qd1bLJJS1it8Ea
+ NUDBqPBIIgAP+nZurYQEhlLtWQJKDNFbTiZp6TuyBBSbI9MLb2M/ICKcxddt2AbTaJBvT4V8Z
+ U5CECnKrQ2LotmlpizOTtf1xNJn7To3sYvMXDJ5GBhbOqjlfxLgg2nsMcRGtFtLl9Y2AZ2Mq8
+ EBDiZ+14CfRIAEY/rmMpMJnr5fzDP4wyN/06P6mUUagvOIKsHdSLoRQuWCUPdXYrPlW5t0iBW
+ AzXkE9Lee68P3GxF01Dy3/d7cNPHSADY1NRiEf1GyRKb5RI01eREEliDC5tzHHakmKlh+3jb1
+ TeWeMUHBxXIsCgqgjqsTTH4hNC/Pm9kGFBdx2YngifU3fYK4xsL1x0luFLt591VEJarvlod1b
+ Fm6SpJWE7rXJxCkPIrtdyMeudmH2lWJnKoN+1qkAdWGdzSOhAmJvFdFZPcMVagyGjFMK08tV6
+ bwZe2eB6qhQFuQjQ1rTg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_084246_368123_E505FEF2 
-X-CRM114-Status: GOOD (  19.44  )
+X-CRM114-CacheID: sfid-20191018_084229_414919_49AE54A5 
+X-CRM114-Status: GOOD (  22.08  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.10 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.13 listed in list.dnswl.org]
+ no trust [212.227.17.10 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -78,361 +79,251 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-watchdog@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
- Guenter Roeck <linux@roeck-us.net>, Wim Van Sebroeck <wim@linux-watchdog.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Vignesh Raghavendra <vigneshr@ti.com>, Arnd Bergmann <arnd@arndb.de>,
+ Richard Weinberger <richard@nod.at>, Linus Walleij <linus.walleij@linaro.org>,
+ linux-kernel@vger.kernel.org, Marek Vasut <marek.vasut@gmail.com>,
+ linux-mtd@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
+ Brian Norris <computersforpeace@gmail.com>,
+ David Woodhouse <dwmw2@infradead.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Rather than relying on machine specific headers to
-pass down the reboot status and the register locations,
-use resources and platform_data.
+The driver traditionally hardcodes the MMIO register address and
+the GPIO numbers from data defined in platform header files.
 
-Aside from this, keep the changes to a minimum.
+To make it indepdendent of that, use a memory resource for the
+registers, and a gpio lookup table to replace the gpio numbers.
 
-Cc: Wim Van Sebroeck <wim@linux-watchdog.org>
-Cc: Guenter Roeck <linux@roeck-us.net>
-Cc: linux-watchdog@vger.kernel.org
+Cc: Miquel Raynal <miquel.raynal@bootlin.com>
+Cc: Richard Weinberger <richard@nod.at>
+Cc: David Woodhouse <dwmw2@infradead.org>
+Cc: Brian Norris <computersforpeace@gmail.com>
+Cc: Marek Vasut <marek.vasut@gmail.com>
+Cc: Vignesh Raghavendra <vigneshr@ti.com>
+Cc: linux-mtd@lists.infradead.org
 Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 ---
- arch/arm/mach-pxa/devices.c               | 11 +++
- arch/arm/mach-pxa/include/mach/regs-ost.h |  2 +
- arch/arm/mach-pxa/include/mach/reset.h    |  2 +-
- arch/arm/mach-pxa/pxa25x.c                |  2 +-
- arch/arm/mach-pxa/pxa27x.c                |  2 +-
- arch/arm/mach-pxa/pxa3xx.c                |  2 +-
- arch/arm/mach-pxa/reset.c                 |  3 -
- arch/arm/mach-sa1100/generic.c            |  6 +-
- arch/arm/mach-sa1100/include/mach/reset.h |  1 -
- drivers/watchdog/sa1100_wdt.c             | 87 ++++++++++++++++-------
- 10 files changed, 83 insertions(+), 35 deletions(-)
+ arch/arm/mach-pxa/cm-x270.c        | 25 +++++++++
+ drivers/mtd/nand/raw/cmx270_nand.c | 88 +++++++++++-------------------
+ 2 files changed, 56 insertions(+), 57 deletions(-)
 
-diff --git a/arch/arm/mach-pxa/devices.c b/arch/arm/mach-pxa/devices.c
-index 233035e6a2ff..fb9b4f6d32de 100644
---- a/arch/arm/mach-pxa/devices.c
-+++ b/arch/arm/mach-pxa/devices.c
-@@ -23,6 +23,8 @@
- #include <linux/platform_data/mmp_dma.h>
- #include <linux/platform_data/mtd-nand-pxa3xx.h>
+diff --git a/arch/arm/mach-pxa/cm-x270.c b/arch/arm/mach-pxa/cm-x270.c
+index 9baad11314f2..6d80400d8887 100644
+--- a/arch/arm/mach-pxa/cm-x270.c
++++ b/arch/arm/mach-pxa/cm-x270.c
+@@ -40,6 +40,10 @@
+ #define GPIO19_WLAN_STRAP	(19)
+ #define GPIO102_WLAN_RST	(102)
  
-+#include <mach/regs-ost.h>
-+#include <mach/reset.h>
- #include "devices.h"
- #include "generic.h"
- 
-@@ -1110,3 +1112,12 @@ void __init pxa2xx_set_dmac_info(struct mmp_dma_platdata *dma_pdata)
- {
- 	pxa_register_device(&pxa2xx_pxa_dma, dma_pdata);
- }
++/* NAND GPIOS */
++#define GPIO_NAND_CS		(11)
++#define GPIO_NAND_RB		(89)
 +
-+void __init pxa_register_wdt(unsigned int reset_status)
+ static unsigned long cmx270_pin_config[] = {
+ 	/* AC'97 */
+ 	GPIO28_AC97_BITCLK,
+@@ -403,6 +407,26 @@ static void __init cmx270_init_spi(void)
+ static inline void cmx270_init_spi(void) {}
+ #endif
+ 
++static struct gpiod_lookup_table cmx270_nand_gpio_table = {
++	.dev_id = "cmx270-nand",
++	.table = {
++		GPIO_LOOKUP("gpio-pxa", GPIO_NAND_CS, "cs", GPIO_ACTIVE_HIGH),
++		GPIO_LOOKUP("gpio-pxa", GPIO_NAND_RB, "rb", GPIO_ACTIVE_HIGH),
++		{ },
++	},
++};
++
++static struct resource cmx270_nand_resources[] __initdata = {
++	DEFINE_RES_MEM(PXA_CS1_PHYS, 12),
++};
++
++static void __init cmx270_init_nand(void)
 +{
-+	struct resource res = DEFINE_RES_MEM(OST_PHYS, OST_LEN);
-+
-+	reset_status &= RESET_STATUS_WATCHDOG;
-+	platform_device_register_resndata(NULL, "sa1100_wdt", -1, &res, 1,
-+					  &reset_status, sizeof(reset_status));
++	platform_device_register_simple("cmx270-nand", -1,
++					cmx270_nand_resources, 1);
++	gpiod_add_lookup_table(&cmx270_nand_gpio_table);
 +}
-diff --git a/arch/arm/mach-pxa/include/mach/regs-ost.h b/arch/arm/mach-pxa/include/mach/regs-ost.h
-index 109d0ed264df..c8001cfc8d6b 100644
---- a/arch/arm/mach-pxa/include/mach/regs-ost.h
-+++ b/arch/arm/mach-pxa/include/mach/regs-ost.h
-@@ -7,6 +7,8 @@
- /*
-  * OS Timer & Match Registers
-  */
-+#define OST_PHYS	0x40A00000
-+#define OST_LEN		0x00000020
- 
- #define OSMR0		io_p2v(0x40A00000)  /* */
- #define OSMR1		io_p2v(0x40A00004)  /* */
-diff --git a/arch/arm/mach-pxa/include/mach/reset.h b/arch/arm/mach-pxa/include/mach/reset.h
-index e1c4d100fd45..963dd190bc13 100644
---- a/arch/arm/mach-pxa/include/mach/reset.h
-+++ b/arch/arm/mach-pxa/include/mach/reset.h
-@@ -8,8 +8,8 @@
- #define RESET_STATUS_GPIO	(1 << 3)	/* GPIO Reset */
- #define RESET_STATUS_ALL	(0xf)
- 
--extern unsigned int reset_status;
- extern void clear_reset_status(unsigned int mask);
-+extern void pxa_register_wdt(unsigned int reset_status);
- 
- /**
-  * init_gpio_reset() - register GPIO as reset generator
-diff --git a/arch/arm/mach-pxa/pxa25x.c b/arch/arm/mach-pxa/pxa25x.c
-index 305047ebd2f1..dfc90b41fba3 100644
---- a/arch/arm/mach-pxa/pxa25x.c
-+++ b/arch/arm/mach-pxa/pxa25x.c
-@@ -240,7 +240,7 @@ static int __init pxa25x_init(void)
- 
- 	if (cpu_is_pxa25x()) {
- 
--		reset_status = RCSR;
-+		pxa_register_wdt(RCSR);
- 
- 		pxa25x_init_pm();
- 
-diff --git a/arch/arm/mach-pxa/pxa27x.c b/arch/arm/mach-pxa/pxa27x.c
-index a81ac88ecbfd..38fdd22c4dc5 100644
---- a/arch/arm/mach-pxa/pxa27x.c
-+++ b/arch/arm/mach-pxa/pxa27x.c
-@@ -337,7 +337,7 @@ static int __init pxa27x_init(void)
- 
- 	if (cpu_is_pxa27x()) {
- 
--		reset_status = RCSR;
-+		pxa_register_wdt(RCSR);
- 
- 		pxa27x_init_pm();
- 
-diff --git a/arch/arm/mach-pxa/pxa3xx.c b/arch/arm/mach-pxa/pxa3xx.c
-index fc84aed99481..7c569fa2a6da 100644
---- a/arch/arm/mach-pxa/pxa3xx.c
-+++ b/arch/arm/mach-pxa/pxa3xx.c
-@@ -463,7 +463,7 @@ static int __init pxa3xx_init(void)
- 
- 	if (cpu_is_pxa3xx()) {
- 
--		reset_status = ARSR;
-+		pxa_register_wdt(ARSR);
- 
- 		/*
- 		 * clear RDH bit every time after reset
-diff --git a/arch/arm/mach-pxa/reset.c b/arch/arm/mach-pxa/reset.c
-index af78405aa4e9..fcb791c5ae3e 100644
---- a/arch/arm/mach-pxa/reset.c
-+++ b/arch/arm/mach-pxa/reset.c
-@@ -11,9 +11,6 @@
- #include <mach/reset.h>
- #include <mach/smemc.h>
- 
--unsigned int reset_status;
--EXPORT_SYMBOL(reset_status);
--
- static void do_hw_reset(void);
- 
- static int reset_gpio = -1;
-diff --git a/arch/arm/mach-sa1100/generic.c b/arch/arm/mach-sa1100/generic.c
-index 4dfb7554649d..6c21f214cd60 100644
---- a/arch/arm/mach-sa1100/generic.c
-+++ b/arch/arm/mach-sa1100/generic.c
-@@ -39,9 +39,6 @@
- #include "generic.h"
- #include <clocksource/pxa.h>
- 
--unsigned int reset_status;
--EXPORT_SYMBOL(reset_status);
--
- #define NR_FREQS	16
- 
- /*
-@@ -319,10 +316,13 @@ static struct platform_device *sa11x0_devices[] __initdata = {
- 
- static int __init sa1100_init(void)
- {
-+	struct resource wdt_res = DEFINE_RES_MEM(0x90000000, 0x20);
- 	pm_power_off = sa1100_power_off;
- 
- 	regulator_has_full_constraints();
- 
-+	platform_device_register_simple("sa1100_wdt", -1, &wdt_res, 1);
 +
- 	return platform_add_devices(sa11x0_devices, ARRAY_SIZE(sa11x0_devices));
- }
- 
-diff --git a/arch/arm/mach-sa1100/include/mach/reset.h b/arch/arm/mach-sa1100/include/mach/reset.h
-index 27695650a567..a6723d45ae2a 100644
---- a/arch/arm/mach-sa1100/include/mach/reset.h
-+++ b/arch/arm/mach-sa1100/include/mach/reset.h
-@@ -10,7 +10,6 @@
- #define RESET_STATUS_GPIO	(1 << 3)	/* GPIO Reset */
- #define RESET_STATUS_ALL	(0xf)
- 
--extern unsigned int reset_status;
- static inline void clear_reset_status(unsigned int mask)
+ void __init cmx270_init(void)
  {
- 	RCSR = mask;
-diff --git a/drivers/watchdog/sa1100_wdt.c b/drivers/watchdog/sa1100_wdt.c
-index 0f6ffc1e7f4e..a24d6a07c7a7 100644
---- a/drivers/watchdog/sa1100_wdt.c
-+++ b/drivers/watchdog/sa1100_wdt.c
-@@ -22,6 +22,7 @@
- #include <linux/types.h>
- #include <linux/kernel.h>
- #include <linux/fs.h>
+ 	pxa2xx_mfp_config(ARRAY_AND_SIZE(cmx270_pin_config));
+@@ -416,4 +440,5 @@ void __init cmx270_init(void)
+ 	cmx270_init_ohci();
+ 	cmx270_init_2700G();
+ 	cmx270_init_spi();
++	cmx270_init_nand();
+ }
+diff --git a/drivers/mtd/nand/raw/cmx270_nand.c b/drivers/mtd/nand/raw/cmx270_nand.c
+index 7af3d0bdcdb8..31cb20858c46 100644
+--- a/drivers/mtd/nand/raw/cmx270_nand.c
++++ b/drivers/mtd/nand/raw/cmx270_nand.c
+@@ -15,18 +15,17 @@
+ #include <linux/mtd/rawnand.h>
+ #include <linux/mtd/partitions.h>
+ #include <linux/slab.h>
+-#include <linux/gpio.h>
++#include <linux/gpio/consumer.h>
+ #include <linux/module.h>
+ #include <linux/soc/pxa/cpu.h>
 +#include <linux/platform_device.h>
- #include <linux/miscdevice.h>
- #include <linux/watchdog.h>
- #include <linux/init.h>
-@@ -30,16 +31,42 @@
- #include <linux/uaccess.h>
- #include <linux/timex.h>
  
--#ifdef CONFIG_ARCH_PXA
--#include <mach/regs-ost.h>
--#endif
-+#define REG_OSMR0  	0x0000  /* OS timer Match Reg. 0 */
-+#define REG_OSMR1  	0x0004  /* OS timer Match Reg. 1 */
-+#define REG_OSMR2  	0x0008  /* OS timer Match Reg. 2 */
-+#define REG_OSMR3  	0x000c  /* OS timer Match Reg. 3 */
-+#define REG_OSCR   	0x0010  /* OS timer Counter Reg. */
-+#define REG_OSSR   	0x0014  /* OS timer Status Reg. */
-+#define REG_OWER   	0x0018  /* OS timer Watch-dog Enable Reg. */
-+#define REG_OIER  	0x001C  /* OS timer Interrupt Enable Reg. */
+ #include <asm/io.h>
+ #include <asm/irq.h>
+ #include <asm/mach-types.h>
  
--#include <mach/reset.h>
-+#define OSSR_M3		(1 << 3)	/* Match status channel 3 */
-+#define OSSR_M2		(1 << 2)	/* Match status channel 2 */
-+#define OSSR_M1		(1 << 1)	/* Match status channel 1 */
-+#define OSSR_M0		(1 << 0)	/* Match status channel 0 */
-+
-+#define OWER_WME	(1 << 0)	/* Watchdog Match Enable */
-+
-+#define OIER_E3		(1 << 3)	/* Interrupt enable channel 3 */
-+#define OIER_E2		(1 << 2)	/* Interrupt enable channel 2 */
-+#define OIER_E1		(1 << 1)	/* Interrupt enable channel 1 */
-+#define OIER_E0		(1 << 0)	/* Interrupt enable channel 0 */
+-#include <mach/addr-map.h>
+-
+-#define GPIO_NAND_CS	(11)
+-#define GPIO_NAND_RB	(89)
++static struct gpio_desc *gpiod_nand_cs;
++static struct gpio_desc *gpiod_nand_rb;
  
- static unsigned long oscr_freq;
- static unsigned long sa1100wdt_users;
- static unsigned int pre_margin;
- static int boot_status;
-+static void __iomem *reg_base;
-+
-+static inline void sa1100_wr(u32 val, u32 offset)
-+{
-+	writel_relaxed(val, reg_base + offset);
-+}
-+
-+static inline u32 sa1100_rd(u32 offset)
-+{
-+	return readl_relaxed(reg_base + offset);
-+}
+ /* MTD structure for CM-X270 board */
+ static struct mtd_info *cmx270_nand_mtd;
+@@ -70,14 +69,14 @@ static void cmx270_read_buf(struct nand_chip *this, u_char *buf, int len)
+ 
+ static inline void nand_cs_on(void)
+ {
+-	gpio_set_value(GPIO_NAND_CS, 0);
++	gpiod_set_value(gpiod_nand_cs, 0);
+ }
+ 
+ static void nand_cs_off(void)
+ {
+ 	dsb();
+ 
+-	gpio_set_value(GPIO_NAND_CS, 1);
++	gpiod_set_value(gpiod_nand_cs, 1);
+ }
  
  /*
-  *	Allow only one person to hold it open
-@@ -50,10 +77,10 @@ static int sa1100dog_open(struct inode *inode, struct file *file)
- 		return -EBUSY;
+@@ -120,48 +119,41 @@ static int cmx270_device_ready(struct nand_chip *this)
+ {
+ 	dsb();
  
- 	/* Activate SA1100 Watchdog timer */
--	writel_relaxed(readl_relaxed(OSCR) + pre_margin, OSMR3);
--	writel_relaxed(OSSR_M3, OSSR);
--	writel_relaxed(OWER_WME, OWER);
--	writel_relaxed(readl_relaxed(OIER) | OIER_E3, OIER);
-+	sa1100_wr(sa1100_rd(REG_OSCR) + pre_margin, REG_OSMR3);
-+	sa1100_wr(OSSR_M3, REG_OSSR);
-+	sa1100_wr(OWER_WME, REG_OWER);
-+	sa1100_wr(sa1100_rd(REG_OIER) | OIER_E3, REG_OIER);
- 	return stream_open(inode, file);
+-	return (gpio_get_value(GPIO_NAND_RB));
++	return (gpiod_get_value(gpiod_nand_rb));
  }
  
-@@ -61,7 +88,7 @@ static int sa1100dog_open(struct inode *inode, struct file *file)
-  * The watchdog cannot be disabled.
-  *
-  * Previous comments suggested that turning off the interrupt by
-- * clearing OIER[E3] would prevent the watchdog timing out but this
-+ * clearing REG_OIER[E3] would prevent the watchdog timing out but this
-  * does not appear to be true (at least on the PXA255).
+ /*
+  * Main initialization routine
   */
- static int sa1100dog_release(struct inode *inode, struct file *file)
-@@ -76,7 +103,7 @@ static ssize_t sa1100dog_write(struct file *file, const char __user *data,
+-static int __init cmx270_init(void)
++static int cmx270_probe(struct platform_device *pdev)
  {
- 	if (len)
- 		/* Refresh OSMR3 timer. */
--		writel_relaxed(readl_relaxed(OSCR) + pre_margin, OSMR3);
-+		sa1100_wr(sa1100_rd(REG_OSCR) + pre_margin, REG_OSMR3);
- 	return len;
- }
- 
-@@ -110,7 +137,7 @@ static long sa1100dog_ioctl(struct file *file, unsigned int cmd,
- 		break;
- 
- 	case WDIOC_KEEPALIVE:
--		writel_relaxed(readl_relaxed(OSCR) + pre_margin, OSMR3);
-+		sa1100_wr(sa1100_rd(REG_OSCR) + pre_margin, REG_OSMR3);
- 		ret = 0;
- 		break;
- 
-@@ -125,7 +152,7 @@ static long sa1100dog_ioctl(struct file *file, unsigned int cmd,
- 		}
- 
- 		pre_margin = oscr_freq * time;
--		writel_relaxed(readl_relaxed(OSCR) + pre_margin, OSMR3);
-+		sa1100_wr(sa1100_rd(REG_OSCR) + pre_margin, REG_OSMR3);
- 		/*fall through*/
- 
- 	case WDIOC_GETTIMEOUT:
-@@ -150,12 +177,22 @@ static struct miscdevice sa1100dog_miscdev = {
- 	.fops		= &sa1100dog_fops,
- };
- 
--static int margin __initdata = 60;		/* (secs) Default is 1 minute */
-+static int margin = 60;		/* (secs) Default is 1 minute */
- static struct clk *clk;
- 
--static int __init sa1100dog_init(void)
-+static int sa1100dog_probe(struct platform_device *pdev)
- {
+ 	struct nand_chip *this;
++	struct device *dev = &pdev->dev;
  	int ret;
-+	int *platform_data;
-+	struct resource *res;
-+
-+	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+	if (!res)
-+		return -ENXIO;
-+	reg_base = devm_ioremap(&pdev->dev, res->start, resource_size(res));
-+	ret = PTR_ERR_OR_ZERO(reg_base);
-+	if (ret)
+ 
+-	if (!(machine_is_armcore() && cpu_is_pxa27x()))
+-		return -ENODEV;
+-
+-	ret = gpio_request(GPIO_NAND_CS, "NAND CS");
++	gpiod_nand_cs = devm_gpiod_get(dev, "cs", GPIOD_OUT_HIGH);
++	ret = PTR_ERR_OR_ZERO(gpiod_nand_cs);
+ 	if (ret) {
+ 		pr_warn("CM-X270: failed to request NAND CS gpio\n");
+ 		return ret;
+ 	}
+ 
+-	gpio_direction_output(GPIO_NAND_CS, 1);
+-
+-	ret = gpio_request(GPIO_NAND_RB, "NAND R/B");
++	gpiod_nand_rb = devm_gpiod_get(dev, "rb", GPIOD_IN);
++	ret = PTR_ERR_OR_ZERO(gpiod_nand_rb);
+ 	if (ret) {
+ 		pr_warn("CM-X270: failed to request NAND R/B gpio\n");
+-		goto err_gpio_request;
 +		return ret;
+ 	}
  
- 	clk = clk_get(NULL, "OSTIMER0");
- 	if (IS_ERR(clk)) {
-@@ -173,13 +210,9 @@ static int __init sa1100dog_init(void)
+-	gpio_direction_input(GPIO_NAND_RB);
+-
+ 	/* Allocate memory for MTD device structure and private data */
+-	this = kzalloc(sizeof(struct nand_chip), GFP_KERNEL);
+-	if (!this) {
+-		ret = -ENOMEM;
+-		goto err_kzalloc;
+-	}
++	this = devm_kzalloc(dev, sizeof(struct nand_chip), GFP_KERNEL);
++	if (!this)
++		return -ENOMEM;
  
- 	oscr_freq = clk_get_rate(clk);
+-	cmx270_nand_io = ioremap(PXA_CS1_PHYS, 12);
++	cmx270_nand_io = devm_platform_ioremap_resource(pdev, 0);
+ 	if (!cmx270_nand_io) {
+ 		pr_debug("Unable to ioremap NAND device\n");
+-		ret = -EINVAL;
+-		goto err_ioremap;
++		return -EINVAL;
+ 	}
  
--	/*
--	 * Read the reset status, and save it for later.  If
--	 * we suspend, RCSR will be cleared, and the watchdog
--	 * reset reason will be lost.
--	 */
--	boot_status = (reset_status & RESET_STATUS_WATCHDOG) ?
--				WDIOF_CARDRESET : 0;
-+	platform_data = pdev->dev.platform_data;
-+	if (platform_data && *platform_data)
-+		boot_status = WDIOF_CARDRESET;
- 	pre_margin = oscr_freq * margin;
+ 	cmx270_nand_mtd = nand_to_mtd(this);
+@@ -189,48 +181,30 @@ static int __init cmx270_init(void)
+ 	ret = nand_scan(this, 1);
+ 	if (ret) {
+ 		pr_notice("No NAND device\n");
+-		goto err_scan;
++		return ret;
+ 	}
  
- 	ret = misc_register(&sa1100dog_miscdev);
-@@ -195,15 +228,21 @@ static int __init sa1100dog_init(void)
- 	return ret;
+ 	/* Register the partitions */
+-	ret = mtd_device_register(cmx270_nand_mtd, partition_info,
+-				  NUM_PARTITIONS);
+-	if (ret)
+-		goto err_scan;
+-
+-	/* Return happy */
+-	return 0;
+-
+-err_scan:
+-	iounmap(cmx270_nand_io);
+-err_ioremap:
+-	kfree(this);
+-err_kzalloc:
+-	gpio_free(GPIO_NAND_RB);
+-err_gpio_request:
+-	gpio_free(GPIO_NAND_CS);
+-
+-	return ret;
+-
++	return mtd_device_register(cmx270_nand_mtd, partition_info,
++				   NUM_PARTITIONS);
  }
+-module_init(cmx270_init);
  
--static void __exit sa1100dog_exit(void)
-+static int sa1100dog_remove(struct platform_device *pdev)
+ /*
+  * Clean up routine
+  */
+-static void __exit cmx270_cleanup(void)
++static int cmx270_remove(struct platform_device *pdev)
  {
- 	misc_deregister(&sa1100dog_miscdev);
- 	clk_disable_unprepare(clk);
- 	clk_put(clk);
-+
+-	/* Release resources, unregister device */
+ 	nand_release(mtd_to_nand(cmx270_nand_mtd));
+ 
+-	gpio_free(GPIO_NAND_RB);
+-	gpio_free(GPIO_NAND_CS);
+-
+-	iounmap(cmx270_nand_io);
+-
+-	kfree(mtd_to_nand(cmx270_nand_mtd));
 +	return 0;
  }
- 
--module_init(sa1100dog_init);
--module_exit(sa1100dog_exit);
-+struct platform_driver sa1100dog_driver = {
-+	.driver.name = "sa1100_wdt",
-+	.probe	  = sa1100dog_probe,
-+	.remove	  = sa1100dog_remove,
+-module_exit(cmx270_cleanup);
++
++static struct platform_driver cmx270_nand_driver = {
++	.driver.name = "cmx270-nand",
++	.probe = cmx270_probe,
++	.remove = cmx270_remove,
 +};
-+module_platform_driver(sa1100dog_driver);
++module_platform_driver(cmx270_nand_driver);
  
- MODULE_AUTHOR("Oleg Drokin <green@crimea.edu>");
- MODULE_DESCRIPTION("SA1100/PXA2xx Watchdog");
+ MODULE_LICENSE("GPL");
+ MODULE_AUTHOR("Mike Rapoport <mike@compulab.co.il>");
 -- 
 2.20.0
 
