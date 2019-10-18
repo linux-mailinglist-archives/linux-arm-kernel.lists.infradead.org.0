@@ -2,73 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03EFFDCA71
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 18:11:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E1067DCA7B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 18:11:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=mTT+JiEqH5uyX5axuk8FDFPxGq4EUrGVA6BqrcAKZPQ=; b=g+fSJL/tdOKgGR
-	IUXhEztZPv+Erv8eGJ7ArcKjkSvlu4NtW/OL1wdh/1/PHJHuBggwC7UZ+mg6pXLzek0Bn7F7+va42
-	ro8aZpHzdNh0KaEmBzHWtTn0KMp0cQeEqa1owHpB8J2XsMP1GSapA2rCZpvVgRplOoLGEpcbuU4LR
-	kJMJU5pw7Sw8tXgoaign0bsW9ZB20EplFqV4hf27GCvuGhd8E5fPZX087nXCUnHTLtImUeMyFCYsy
-	szl1pHEEQ4BggbJPBvgHLAtq6iJJPcuL1QUMaQhdPMftPMwZeUJU0jXOxtAQqGQFMrSigj+s+baCl
-	SWF0SuUWK+OCoxza482Q==;
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
+	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=luCzNxDO82sWMFEn0Gs+MBJbhsDGsvd8vNrsp7AsHf4=; b=fQxG2Z0W9ZPUb8
+	Vgr9VTEyGiSYq2S7lSnH7UNxfvyocPqo7caokYMGPi5n7DRa6jpQt10gEepG3RreLFzp1Wb1KQcH6
+	sH7kA8lB1BSbt/w2aE+4HzKkicLCWfBAg3BNxL+H7z3PMt7PodQuCVdYvj2rUy96TLeksgdjuF9IZ
+	HgHEBLM/w40Dejq2gtA2t3N0bnsKdEhS9JXTyfiwUiywj/xeURkOrK0IBFFtTO6ry/ILEqLbnITjf
+	ANLXOk7pEXiMGcTsN1tgNOnK66qlGygqa1ip67514AA9VH+Ebsuy5kQ7UK0UqPp6lmxnJkPRffUAh
+	oE2RV+zL+gcsO/8Zz5UQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLUqR-0001Tj-Mi; Fri, 18 Oct 2019 16:11:15 +0000
-Received: from mail-yw1-xc4a.google.com ([2607:f8b0:4864:20::c4a])
+	id 1iLUqt-0001xV-JU; Fri, 18 Oct 2019 16:11:43 +0000
+Received: from mail-pl1-x649.google.com ([2607:f8b0:4864:20::649])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLUpz-0001Se-0j
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 16:10:48 +0000
-Received: by mail-yw1-xc4a.google.com with SMTP id y70so4764262ywd.8
+ id 1iLUq1-0001TB-C9
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 16:10:50 +0000
+Received: by mail-pl1-x649.google.com with SMTP id 99so4015047plc.18
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 09:10:45 -0700 (PDT)
+ Fri, 18 Oct 2019 09:10:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:message-id:mime-version:subject:from:to:cc;
- bh=t+DRDqz67Twe6Iyofi8RQAeNodEvIc7fNPUNsIrBR+w=;
- b=qgbEQaGzHqaPH3cxTJE6CGTvZ+cRjHUHTkYr1B9DStapni7EFSvFnUDWSGPFTm7gwQ
- BQRlnzPOMPn4q93e238qrgFaMvCQf9Spzz7SINiIlVpuYks/Wu8Nwa1QmimiSJxpH3pA
- zXtHmrE7MTXaAB6BLpC8vL3pFXfn9A40pGj+qHFCNXTwD0ywpccoB55v3hYAWCkjkCgv
- t4a0qzeiaiVD3qeEEiRLETv6os7mi6JMjFcZQ7HZ3TsPYfuCCRN07OVVFEBv060hDwM0
- Oe2+l3QRysVBZMWOYZ/v2Sou4QvuVNVoxWjAknk7l6ulOzhXQHgz5ej8/LwC2yX3JfcO
- auvQ==
+ h=date:in-reply-to:message-id:mime-version:references:subject:from:to
+ :cc; bh=fOGiRQkTcafFw3kdPLJfkScWMPKQ55OPiVpVgBq1L2Y=;
+ b=gMmfpLUmWSms+DWxdPHIfAD6vs9RBHnPXI+iTSb/gCG+R7cNXs2b5uBPJCYTEo7izz
+ /Raf56KKS95suuvqh1yzOQjpOZYsH/4vRvMlKN0ZIyyBfnU2AeT4YoERdtJm3yrC4+vY
+ 0OxEL7940UbAaXzNMVID1dP6HRdAhIQ6wFjNYG57zbpFHwZ0WwfTPVCFFZhJpOF/t3A9
+ 9CLRQ0xV3QFyyGRY1rJZV9hFziEOlin2nV27aZ33hx/xGULb4Cz9V3pJJJy/KJcOVnua
+ JRuCV/9ChbbioD0f/pMbO9vPUsu8raQ2egyKkU/VBLQwhJoGxgstGPYnuLnJSbGzElKZ
+ XzGg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
- bh=t+DRDqz67Twe6Iyofi8RQAeNodEvIc7fNPUNsIrBR+w=;
- b=BR8dc3tjF2qnzx6W6zK0KaFNEhLMsUPWVCF5Bu6TpilC/4eGy4SMksJ+SBVJ0qeSGR
- 4knn0BsYllA0mKM4MGPJQO4raDvVZykYWK6U6c40waOmgm1FJk2ZFnHxYFgHcQRTbsov
- H6V4pMBosRNHMpmsouQuld8q1tHoQ/zimrJ2RSuAJqWHyzD9CjUqtCD3cwXPCpC4jGZs
- 9JJ0pA0hlaqXJh2zJvSdvLLlWvLp48yadaQ2dQcfpnOF6J8Hw/NIuwXNmCCaAppNuQbK
- QKojYhY1V9dyN5Ft3OszaORHD/hDdDPDdT4VbO4D1r0g+09kG1LVUflW8PuHnkIowpyC
- 99lQ==
-X-Gm-Message-State: APjAAAVDxUobNsH8+5mpb88p3/L+OWgCi8Vrda4cNG8E3U2iNaYXfuvw
- 60bXW4++WDrZrnPlMZFzOrvuizXSEh00mYqfOM8=
-X-Google-Smtp-Source: APXvYqyvgW1/nPqoxtlaKdWfjDEG7KEXwdtGVI7DdMRD1tlwHR6z5N+W9oDyStEa7Ea2uqFWOqGCG100k3GuhoDibZE=
-X-Received: by 2002:a25:a324:: with SMTP id d33mr6752834ybi.58.1571415044349; 
- Fri, 18 Oct 2019 09:10:44 -0700 (PDT)
-Date: Fri, 18 Oct 2019 09:10:15 -0700
-Message-Id: <20191018161033.261971-1-samitolvanen@google.com>
+ h=x-gm-message-state:date:in-reply-to:message-id:mime-version
+ :references:subject:from:to:cc;
+ bh=fOGiRQkTcafFw3kdPLJfkScWMPKQ55OPiVpVgBq1L2Y=;
+ b=XkgsXViKQeZsY+lxmDKhmewHS4m3TuI0xjjoGBWtjXAoDDiffzN8GlOQFsy0xZ6Utz
+ HUKbpTFyRxtjYs8meH4TJDk7BmLZ5iHySgUjjuB8zcUBYO22waWpsfWnvfryjl1wUkSr
+ ZSmeCRc6PV22X+MJrD0qqknna29QZuutvZ8O0HOEB0q0hrvr56dYm+EyDXxbrd7BrzGZ
+ 1IjUdJeX4+wK46bNW/H/EE6UUMhyB/YVGdkb0GhAXf9aynkeZTraIE9mzjKE4DpNR1ue
+ LRys8hS2mhUZb9AhC9uq9l8+a+EeBth0gSLno51nyEbvcK3Kd3wnu8gBhAsM7FfQTKE/
+ 9C3g==
+X-Gm-Message-State: APjAAAWg0nweXBhDsyJmUdTRpII65XLrvoT0gd1NNjK/HlM/7Rb3MWN2
+ TP+vCz9OIY3AxCax0GJ0OP3XSGH41YdIstRbwTE=
+X-Google-Smtp-Source: APXvYqxdcdFBRFb0HNyGzQvnCMLB0keAhMf4yh0jcUv/6ytScnNhV6MYVkz//a3X1pTXSJd9ILJJXg39d/ovVZN0Qvw=
+X-Received: by 2002:a63:3c5a:: with SMTP id i26mr10727727pgn.207.1571415047168; 
+ Fri, 18 Oct 2019 09:10:47 -0700 (PDT)
+Date: Fri, 18 Oct 2019 09:10:16 -0700
+In-Reply-To: <20191018161033.261971-1-samitolvanen@google.com>
+Message-Id: <20191018161033.261971-2-samitolvanen@google.com>
 Mime-Version: 1.0
+References: <20191018161033.261971-1-samitolvanen@google.com>
 X-Mailer: git-send-email 2.23.0.866.gb869b98d4c-goog
-Subject: [PATCH 00/18] add support for Clang's Shadow Call Stack
+Subject: [PATCH 01/18] arm64: mm: don't use x18 in
+ idmap_kpti_install_ng_mappings
 From: Sami Tolvanen <samitolvanen@google.com>
 To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
  Steven Rostedt <rostedt@goodmis.org>,
  Ard Biesheuvel <ard.biesheuvel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_091047_090398_0CD19A4A 
-X-CRM114-Status: GOOD (  14.83  )
+X-CRM114-CacheID: sfid-20191018_091049_441622_9933EBF0 
+X-CRM114-Status: GOOD (  10.20  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c4a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:649 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
@@ -104,102 +108,124 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch series adds support for Clang's Shadow Call Stack (SCS)
-mitigation, which uses a separately allocated shadow stack to protect
-against return address overwrites. More information can be found here:
+idmap_kpti_install_ng_mappings uses x18 as a temporary register, which
+will result in a conflict when x18 is reserved. Use x16 and x17 instead
+where needed.
 
-  https://clang.llvm.org/docs/ShadowCallStack.html
+Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
+---
+ arch/arm64/mm/proc.S | 63 ++++++++++++++++++++++----------------------
+ 1 file changed, 32 insertions(+), 31 deletions(-)
 
-SCS is currently supported only on arm64, where the compiler requires
-the x18 register to be reserved for holding the current task's shadow
-stack pointer. Because of this, the series includes four patches from
-Ard to remove x18 usage from assembly code and to reserve the register
-from general allocation.
-
-With -fsanitize=shadow-call-stack, the compiler injects instructions
-to all non-leaf C functions to store the return address to the shadow
-stack and unconditionally load it again before returning. As a result,
-SCS is incompatible with features that rely on modifying function
-return addresses to alter control flow, such as function graph tracing
-and kretprobes. A copy of the return address is still kept in the
-kernel stack for compatibility with stack unwinding, for example.
-
-SCS has a minimal performance overhead, but allocating shadow stacks
-increases kernel memory usage. The feature is therefore mostly useful
-on hardware that lacks support for PAC instructions. This series adds
-a ROP protection choice to the kernel configuration, where other
-return address protection options can be selected as they are added to
-the kernel.
-
-
-Ard Biesheuvel (4):
-  arm64/lib: copy_page: avoid x18 register in assembler code
-  arm64: kvm: stop treating register x18 as caller save
-  arm64: kernel: avoid x18 as an arbitrary temp register
-  arm64: kbuild: reserve reg x18 from general allocation by the compiler
-
-Sami Tolvanen (14):
-  arm64: mm: don't use x18 in idmap_kpti_install_ng_mappings
-  add support for Clang's Shadow Call Stack (SCS)
-  scs: add accounting
-  scs: add support for stack usage debugging
-  trace: disable function graph tracing with SCS
-  kprobes: fix compilation without CONFIG_KRETPROBES
-  kprobes: disable kretprobes with SCS
-  arm64: reserve x18 only with Shadow Call Stack
-  arm64: preserve x18 when CPU is suspended
-  arm64: efi: restore x18 if it was corrupted
-  arm64: vdso: disable Shadow Call Stack
-  arm64: kprobes: fix kprobes without CONFIG_KRETPROBES
-  arm64: disable SCS for hypervisor code
-  arm64: implement Shadow Call Stack
-
- Makefile                             |   6 +
- arch/Kconfig                         |  41 ++++-
- arch/arm64/Kconfig                   |   1 +
- arch/arm64/Makefile                  |   4 +
- arch/arm64/include/asm/scs.h         |  60 ++++++++
- arch/arm64/include/asm/stacktrace.h  |   4 +
- arch/arm64/include/asm/thread_info.h |   3 +
- arch/arm64/kernel/Makefile           |   1 +
- arch/arm64/kernel/asm-offsets.c      |   3 +
- arch/arm64/kernel/cpu-reset.S        |   4 +-
- arch/arm64/kernel/efi-rt-wrapper.S   |   7 +-
- arch/arm64/kernel/entry.S            |  23 +++
- arch/arm64/kernel/head.S             |   9 ++
- arch/arm64/kernel/irq.c              |   2 +
- arch/arm64/kernel/probes/kprobes.c   |   2 +
- arch/arm64/kernel/process.c          |   3 +
- arch/arm64/kernel/scs.c              |  39 +++++
- arch/arm64/kernel/smp.c              |   4 +
- arch/arm64/kernel/vdso/Makefile      |   2 +-
- arch/arm64/kvm/hyp/Makefile          |   3 +-
- arch/arm64/kvm/hyp/entry.S           |  12 +-
- arch/arm64/lib/copy_page.S           |  38 ++---
- arch/arm64/mm/proc.S                 |  69 +++++----
- drivers/base/node.c                  |   6 +
- fs/proc/meminfo.c                    |   4 +
- include/linux/compiler-clang.h       |   2 +
- include/linux/compiler_types.h       |   4 +
- include/linux/mmzone.h               |   3 +
- include/linux/scs.h                  |  88 +++++++++++
- init/init_task.c                     |   6 +
- init/main.c                          |   3 +
- kernel/Makefile                      |   1 +
- kernel/fork.c                        |   9 ++
- kernel/kprobes.c                     |  38 ++---
- kernel/sched/core.c                  |   2 +
- kernel/sched/sched.h                 |   1 +
- kernel/scs.c                         | 221 +++++++++++++++++++++++++++
- kernel/trace/Kconfig                 |   1 +
- mm/page_alloc.c                      |   6 +
- mm/vmstat.c                          |   3 +
- 40 files changed, 656 insertions(+), 82 deletions(-)
- create mode 100644 arch/arm64/include/asm/scs.h
- create mode 100644 arch/arm64/kernel/scs.c
- create mode 100644 include/linux/scs.h
- create mode 100644 kernel/scs.c
-
+diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
+index a1e0592d1fbc..fdabf40a83c8 100644
+--- a/arch/arm64/mm/proc.S
++++ b/arch/arm64/mm/proc.S
+@@ -250,15 +250,15 @@ ENTRY(idmap_kpti_install_ng_mappings)
+ 	/* We're the boot CPU. Wait for the others to catch up */
+ 	sevl
+ 1:	wfe
+-	ldaxr	w18, [flag_ptr]
+-	eor	w18, w18, num_cpus
+-	cbnz	w18, 1b
++	ldaxr	w17, [flag_ptr]
++	eor	w17, w17, num_cpus
++	cbnz	w17, 1b
+ 
+ 	/* We need to walk swapper, so turn off the MMU. */
+ 	pre_disable_mmu_workaround
+-	mrs	x18, sctlr_el1
+-	bic	x18, x18, #SCTLR_ELx_M
+-	msr	sctlr_el1, x18
++	mrs	x17, sctlr_el1
++	bic	x17, x17, #SCTLR_ELx_M
++	msr	sctlr_el1, x17
+ 	isb
+ 
+ 	/* Everybody is enjoying the idmap, so we can rewrite swapper. */
+@@ -281,9 +281,9 @@ skip_pgd:
+ 	isb
+ 
+ 	/* We're done: fire up the MMU again */
+-	mrs	x18, sctlr_el1
+-	orr	x18, x18, #SCTLR_ELx_M
+-	msr	sctlr_el1, x18
++	mrs	x17, sctlr_el1
++	orr	x17, x17, #SCTLR_ELx_M
++	msr	sctlr_el1, x17
+ 	isb
+ 
+ 	/*
+@@ -353,46 +353,47 @@ skip_pte:
+ 	b.ne	do_pte
+ 	b	next_pmd
+ 
++	.unreq	cpu
++	.unreq	num_cpus
++	.unreq	swapper_pa
++	.unreq	cur_pgdp
++	.unreq	end_pgdp
++	.unreq	pgd
++	.unreq	cur_pudp
++	.unreq	end_pudp
++	.unreq	pud
++	.unreq	cur_pmdp
++	.unreq	end_pmdp
++	.unreq	pmd
++	.unreq	cur_ptep
++	.unreq	end_ptep
++	.unreq	pte
++
+ 	/* Secondary CPUs end up here */
+ __idmap_kpti_secondary:
+ 	/* Uninstall swapper before surgery begins */
+-	__idmap_cpu_set_reserved_ttbr1 x18, x17
++	__idmap_cpu_set_reserved_ttbr1 x16, x17
+ 
+ 	/* Increment the flag to let the boot CPU we're ready */
+-1:	ldxr	w18, [flag_ptr]
+-	add	w18, w18, #1
+-	stxr	w17, w18, [flag_ptr]
++1:	ldxr	w16, [flag_ptr]
++	add	w16, w16, #1
++	stxr	w17, w16, [flag_ptr]
+ 	cbnz	w17, 1b
+ 
+ 	/* Wait for the boot CPU to finish messing around with swapper */
+ 	sevl
+ 1:	wfe
+-	ldxr	w18, [flag_ptr]
+-	cbnz	w18, 1b
++	ldxr	w16, [flag_ptr]
++	cbnz	w16, 1b
+ 
+ 	/* All done, act like nothing happened */
+-	offset_ttbr1 swapper_ttb, x18
++	offset_ttbr1 swapper_ttb, x16
+ 	msr	ttbr1_el1, swapper_ttb
+ 	isb
+ 	ret
+ 
+-	.unreq	cpu
+-	.unreq	num_cpus
+-	.unreq	swapper_pa
+ 	.unreq	swapper_ttb
+ 	.unreq	flag_ptr
+-	.unreq	cur_pgdp
+-	.unreq	end_pgdp
+-	.unreq	pgd
+-	.unreq	cur_pudp
+-	.unreq	end_pudp
+-	.unreq	pud
+-	.unreq	cur_pmdp
+-	.unreq	end_pmdp
+-	.unreq	pmd
+-	.unreq	cur_ptep
+-	.unreq	end_ptep
+-	.unreq	pte
+ ENDPROC(idmap_kpti_install_ng_mappings)
+ 	.popsection
+ #endif
 -- 
 2.23.0.866.gb869b98d4c-goog
 
