@@ -2,77 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E0CEDCA95
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 18:13:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CDD09DCA97
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 18:13:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HocY0Gno6rpATTkNjMOw2BVNFy2xrTurE64aaKllcqs=; b=ZDx+iTcMJSdhEg
-	I+WlZ6TdsfLDNmtcRRkp3dSGJJq4hlWk5zK/3tmKLO6vEffeOysTWwFuEvKsEP2CWytRSrXNHJc89
-	8RaTaPELPnnlT/58qncrBMocKP29ruCprJkvVYzC42nPDNCsh0JHuRMvVnlfkVl3TazWv8WkhA8+a
-	ylDwXGj5VxS7iezNGQM79S2+kAh7QZNluT041XWhsE+D+zpM2LqM4SWnISvSSBA2w2GZ534CavYT+
-	8J+2YZSLje23oz5hJrJ0njNntH3wkDn/AYMN29MbmID3DPGkGNbZ6XmkHhrzH4r0RVYe3VWOYbTZb
-	Y1bbPG2+4f7T7ByrjMew==;
+	List-Owner; bh=aSls6LqNIL6lllKYTxdnKtTYE8YJer5lO4Qiq9sScHg=; b=npChJyHdw1FRCi
+	UjVrgxIXiOoGKS+/xo4MRT8ai+DYZBkCkL2g9PXN0Y3WFLwA67Hny28Ak0cC94mydT0dtMyjUY+iS
+	F/Ar0O9Z5hxGMIxsq35VYsLJMwNs0UsKywWTUi2chyTsAtU1zLRRWP3UEY/SaxA+SURnaainb+UPn
+	OaQ4qfc33Izvh7p4ewJRYNZi0vOqWbpBYsUOrGIcopBNrnYS9MenqZhja/LhPSVZtDz7AI4yR4fWZ
+	fycLRojGvpAEglGLTYvA59Gz7RQ4JYQ/KgJ9iYr4v3MGuzToZ9+og1IkGoDsRekx/TEHfdfqZVtBe
+	y8vPZX2I1wNXDFbID0KA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLUsH-0003VL-Fe; Fri, 18 Oct 2019 16:13:09 +0000
-Received: from mail-pg1-x54a.google.com ([2607:f8b0:4864:20::54a])
+	id 1iLUsZ-0003qN-Vl; Fri, 18 Oct 2019 16:13:28 +0000
+Received: from mail-pf1-f201.google.com ([209.85.210.201])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLUqK-0001iK-BE
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 16:11:11 +0000
-Received: by mail-pg1-x54a.google.com with SMTP id w13so4578138pge.15
+ id 1iLUqN-0001lM-75
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 16:11:14 +0000
+Received: by mail-pf1-f201.google.com with SMTP id z4so4989097pfn.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 09:11:06 -0700 (PDT)
+ Fri, 18 Oct 2019 09:11:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=nb/Sj1uUqCudVY1GzIbe2UX9PioIzl4YsjEJIj4hCD8=;
- b=V/G2C0eHJuPFOwRh3Dly/jwzcNCfbqXZV4MkzwN2SNOr80mirycaX1gRYAdHm2nLaX
- L3s1Hdym5MJqVVC7EbxIONG5E9OrsLDGm/g9rxl9q6VkEYbJizPFWhrE2SoYG1EEa5bd
- kmq3AFfoHkK/lcfP+YMHK2P6rD4c7/BqU34GihwEPvGXsvWycorPC3nB1T5iQJLYZ0wp
- HthLQe47pJySnkhLNgFPMCMXC5bz7pk/D1ENZQ/6v4J+34an+emFSzLC4n5CC8ZphyVn
- M8eWlCdd8FlM2IxWOnFsNm/Gruld+HPi/gc5fIJl8YF1FQBw3r+c3wE58gfz3/IRXdN9
- WEUg==
+ :cc; bh=W3WDjYH/VAvmVL4+53CGlFooJvBVNnR4Xo1gyIsB1cA=;
+ b=KV/ow4iF9rNc040TkpTO6MVpIairBWehEzBlCF7oKFaCOnaCnM5zX4GvWthj1gqY0d
+ PX9Y3DI/oK29Df6zneqURkzRbTBLJqkuaLffnq7A4El6cHZNlrUbQpzFcfL4ESnRkS+0
+ kFhJ8Srmh16l8pEUmTU/JhFulu4JDEH9dAL61TECT+ox0IG5tl+4w5amGJdnwnMlbBfZ
+ fvGk8hbTsGc8lLqAgbYtD+1aodLStTRQ0VjzQsrgM1JFg2d+31jVYMY7X6BIqzpdsBol
+ R753jt71O16ZF2aSp6FFKGjB7W8gPpZIrKVa5w89N/ZSJgIv+lGCKKJdnaWyQl7QvbhY
+ plHA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=nb/Sj1uUqCudVY1GzIbe2UX9PioIzl4YsjEJIj4hCD8=;
- b=I0pHyxMAQyyBQOQ5+/Ynh9dC6vNzBU0+95srnI3w6Ot90suW3zeHa/TKgUg6LJs7Ub
- 2KnaVvJINSGZqfcg1l6l+PyPcL6NerUt6T6vyHTpPZZTS2dICffpLDjDtawJVeFryjqE
- OWZJHL3nvJKdLG805DVV2yBIhIMj4sjJ2INee0hMfbCx2lHT+XGMgWJkoF4as3Is9bjI
- m1bv4UXOAED0vXa1KBFe78FqsPu5JDBtT7CwrtYIs9m3SSWC7aOWi/b3KUsVHdYx+9yq
- dH7T69dLgryiZ4m8i/VV8HFQLQAqxx2u6JiP5dmvqXtPLiI240dKe3fxp2CWu3+EuebF
- 1Iqw==
-X-Gm-Message-State: APjAAAVBtj9T1jCvxGX2xbyvSjm2WxhIdKSxBV1RaQmtLg4cbPmzo0Sd
- P9K4esWPyHe49xE5Z7+FAcZWA1kT1ujbiTSb430=
-X-Google-Smtp-Source: APXvYqw0i1ys5Qza3Rohx9re+KGxZAQHbujZiTFqNgG2/0VGDxLHssWCSip4KyplPyALaC1/Qrg6JgVmOYQ2+WCmJ30=
-X-Received: by 2002:a63:ce07:: with SMTP id y7mr10981743pgf.234.1571415065039; 
- Fri, 18 Oct 2019 09:11:05 -0700 (PDT)
-Date: Fri, 18 Oct 2019 09:10:21 -0700
+ bh=W3WDjYH/VAvmVL4+53CGlFooJvBVNnR4Xo1gyIsB1cA=;
+ b=i5MV0SjOdX4lZMEWTuKchecHwhMD3O2LsVBpGoQkMi1DwhB/OZX4SDL2Cw/AmeQUqO
+ Uj5YVXz1FJHjur3hxoswhyRZ7iAuZUtMW0SAByLSWMiemxadd8b/Qj5oqouvC5ZKB6lz
+ rMuElZIB9ft6kOZ4VFDrQlgIcEW0B7JuGlIK4PWkXCdhINH/7BI4vvLSa3x6H7qas6FT
+ 0Hxz+o73KLhU508TMzJz+LVnCZOebwq2tAxPKKatdnSkVHYpg+mZ9fm6ahPch1j7xjoC
+ dalKLD7R6ykoIMqRMbe0rNQZjrzPEsfhfh15NkhGb9tbrxSiNauFOQHcJzuktouBu7v5
+ Y9Ww==
+X-Gm-Message-State: APjAAAXe/iCS2eSZ7MvTK0xkraiNdShD7lhplpjoabFZ/GzIn8kHrj+g
+ VNCwdOtinFb5/JBwMuVSZW5uo6x5CLpE2FNNeOE=
+X-Google-Smtp-Source: APXvYqwgwFmbX6ZGPldjZxfBYIvVprCTpRWpmeoJv1AAdr3RY4ifrVx/55EnGx/lsXIR5pOg65l4zkBFehMDe52czU4=
+X-Received: by 2002:a63:cf46:: with SMTP id b6mr10822679pgj.90.1571415067795; 
+ Fri, 18 Oct 2019 09:11:07 -0700 (PDT)
+Date: Fri, 18 Oct 2019 09:10:22 -0700
 In-Reply-To: <20191018161033.261971-1-samitolvanen@google.com>
-Message-Id: <20191018161033.261971-7-samitolvanen@google.com>
+Message-Id: <20191018161033.261971-8-samitolvanen@google.com>
 Mime-Version: 1.0
 References: <20191018161033.261971-1-samitolvanen@google.com>
 X-Mailer: git-send-email 2.23.0.866.gb869b98d4c-goog
-Subject: [PATCH 06/18] add support for Clang's Shadow Call Stack (SCS)
+Subject: [PATCH 07/18] scs: add accounting
 From: Sami Tolvanen <samitolvanen@google.com>
 To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
  Steven Rostedt <rostedt@goodmis.org>,
  Ard Biesheuvel <ard.biesheuvel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_091108_473670_D6498881 
-X-CRM114-Status: GOOD (  21.07  )
+X-CRM114-CacheID: sfid-20191018_091112_317350_AAA23B6D 
+X-CRM114-Status: GOOD (  12.59  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:54a listed in]
- [list.dnswl.org]
+ no trust [209.85.210.201 listed in list.dnswl.org]
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -107,514 +106,178 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This change adds generic support for Clang's Shadow Call Stack, which
-uses a shadow stack to protect return addresses from being overwritten
-by an attacker. Details are available here:
-
-  https://clang.llvm.org/docs/ShadowCallStack.html
+This change adds accounting for the memory allocated for shadow stacks.
 
 Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
 ---
- Makefile                       |   6 ++
- arch/Kconfig                   |  39 ++++++++
- include/linux/compiler-clang.h |   2 +
- include/linux/compiler_types.h |   4 +
- include/linux/scs.h            |  88 ++++++++++++++++++
- init/init_task.c               |   6 ++
- init/main.c                    |   3 +
- kernel/Makefile                |   1 +
- kernel/fork.c                  |   9 ++
- kernel/sched/core.c            |   2 +
- kernel/sched/sched.h           |   1 +
- kernel/scs.c                   | 162 +++++++++++++++++++++++++++++++++
- 12 files changed, 323 insertions(+)
- create mode 100644 include/linux/scs.h
- create mode 100644 kernel/scs.c
+ drivers/base/node.c    |  6 ++++++
+ fs/proc/meminfo.c      |  4 ++++
+ include/linux/mmzone.h |  3 +++
+ kernel/scs.c           | 20 ++++++++++++++++++++
+ mm/page_alloc.c        |  6 ++++++
+ mm/vmstat.c            |  3 +++
+ 6 files changed, 42 insertions(+)
 
-diff --git a/Makefile b/Makefile
-index ffd7a912fc46..e401fa500f62 100644
---- a/Makefile
-+++ b/Makefile
-@@ -846,6 +846,12 @@ ifdef CONFIG_LIVEPATCH
- KBUILD_CFLAGS += $(call cc-option, -flive-patching=inline-clone)
- endif
- 
-+ifdef CONFIG_SHADOW_CALL_STACK
-+KBUILD_CFLAGS	+= -fsanitize=shadow-call-stack
-+DISABLE_SCS	:= -fno-sanitize=shadow-call-stack
-+export DISABLE_SCS
-+endif
-+
- # arch Makefile may override CC so keep this after arch Makefile is included
- NOSTDINC_FLAGS += -nostdinc -isystem $(shell $(CC) -print-file-name=include)
- 
-diff --git a/arch/Kconfig b/arch/Kconfig
-index 5f8a5d84dbbe..a222adda8130 100644
---- a/arch/Kconfig
-+++ b/arch/Kconfig
-@@ -521,6 +521,45 @@ config STACKPROTECTOR_STRONG
- 	  about 20% of all kernel functions, which increases the kernel code
- 	  size by about 2%.
- 
-+config ARCH_SUPPORTS_SHADOW_CALL_STACK
-+	bool
-+	help
-+	  An architecture should select this if it supports Clang's Shadow
-+	  Call Stack, has asm/scs.h, and implements runtime support for shadow
-+	  stack switching.
-+
-+config SHADOW_CALL_STACK_VMAP
-+	def_bool n
-+	depends on SHADOW_CALL_STACK
-+	help
-+	  Use virtually mapped shadow call stacks. Selecting this option
-+	  provides better stack exhaustion protection, but increases per-thread
-+	  memory consumption as a full page is allocated for each shadow stack.
-+
-+choice
-+	prompt "Return-oriented programming (ROP) protection"
-+	default ROP_PROTECTION_NONE
-+	help
-+	  This option controls kernel protections against return-oriented
-+	  programming (ROP) attacks.
-+
-+config ROP_PROTECTION_NONE
-+	bool "None"
-+
-+config SHADOW_CALL_STACK
-+	bool "Clang Shadow Call Stack"
-+	depends on ARCH_SUPPORTS_SHADOW_CALL_STACK
-+	depends on CC_IS_CLANG && CLANG_VERSION >= 70000
-+	help
-+	  This option enables Clang's Shadow Call Stack, which uses a shadow
-+	  stack to protect function return addresses from being overwritten by
-+	  an attacker. More information can be found from Clang's
-+	  documentation:
-+
-+	    https://clang.llvm.org/docs/ShadowCallStack.html
-+
-+endchoice
-+
- config HAVE_ARCH_WITHIN_STACK_FRAMES
- 	bool
- 	help
-diff --git a/include/linux/compiler-clang.h b/include/linux/compiler-clang.h
-index 333a6695a918..9af08391f205 100644
---- a/include/linux/compiler-clang.h
-+++ b/include/linux/compiler-clang.h
-@@ -42,3 +42,5 @@
-  * compilers, like ICC.
-  */
- #define barrier() __asm__ __volatile__("" : : : "memory")
-+
-+#define __noscs		__attribute__((no_sanitize("shadow-call-stack")))
-diff --git a/include/linux/compiler_types.h b/include/linux/compiler_types.h
-index 72393a8c1a6c..be5d5be4b1ae 100644
---- a/include/linux/compiler_types.h
-+++ b/include/linux/compiler_types.h
-@@ -202,6 +202,10 @@ struct ftrace_likely_data {
- # define randomized_struct_fields_end
- #endif
- 
-+#ifndef __noscs
-+# define __noscs
-+#endif
-+
- #ifndef asm_volatile_goto
- #define asm_volatile_goto(x...) asm goto(x)
- #endif
-diff --git a/include/linux/scs.h b/include/linux/scs.h
-new file mode 100644
-index 000000000000..dfbd80faa528
---- /dev/null
-+++ b/include/linux/scs.h
-@@ -0,0 +1,88 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Shadow Call Stack support.
-+ *
-+ * Copyright (C) 2018 Google LLC
-+ */
-+
-+#ifndef _LINUX_SCS_H
-+#define _LINUX_SCS_H
-+
-+#include <linux/gfp.h>
-+#include <linux/sched.h>
-+#include <asm/page.h>
-+
+diff --git a/drivers/base/node.c b/drivers/base/node.c
+index 296546ffed6c..111e58ec231e 100644
+--- a/drivers/base/node.c
++++ b/drivers/base/node.c
+@@ -415,6 +415,9 @@ static ssize_t node_read_meminfo(struct device *dev,
+ 		       "Node %d AnonPages:      %8lu kB\n"
+ 		       "Node %d Shmem:          %8lu kB\n"
+ 		       "Node %d KernelStack:    %8lu kB\n"
 +#ifdef CONFIG_SHADOW_CALL_STACK
-+
-+#ifdef CONFIG_SHADOW_CALL_STACK_VMAP
-+# define SCS_SIZE		PAGE_SIZE
-+#else
-+# define SCS_SIZE		1024
++		       "Node %d ShadowCallStack:%8lu kB\n"
 +#endif
-+
-+#define SCS_GFP			(GFP_KERNEL | __GFP_ZERO)
-+
-+extern unsigned long init_shadow_call_stack[];
-+
-+static inline void *task_scs(struct task_struct *tsk)
-+{
-+	return task_thread_info(tsk)->shadow_call_stack;
-+}
-+
-+static inline void task_set_scs(struct task_struct *tsk, void *s)
-+{
-+	task_thread_info(tsk)->shadow_call_stack = s;
-+}
-+
-+extern void scs_init(void);
-+extern void scs_set_init_magic(struct task_struct *tsk);
-+extern void scs_task_init(struct task_struct *tsk);
-+extern void scs_task_reset(struct task_struct *tsk);
-+extern int scs_prepare(struct task_struct *tsk, int node);
-+extern bool scs_corrupted(struct task_struct *tsk);
-+extern void scs_release(struct task_struct *tsk);
-+
-+#else /* CONFIG_SHADOW_CALL_STACK */
-+
-+static inline void *task_scs(struct task_struct *tsk)
-+{
-+	return 0;
-+}
-+
-+static inline void task_set_scs(struct task_struct *tsk, void *s)
-+{
-+}
-+
-+static inline void scs_init(void)
-+{
-+}
-+
-+static inline void scs_set_init_magic(struct task_struct *tsk)
-+{
-+}
-+
-+static inline void scs_task_init(struct task_struct *tsk)
-+{
-+}
-+
-+static inline void scs_task_reset(struct task_struct *tsk)
-+{
-+}
-+
-+static inline int scs_prepare(struct task_struct *tsk, int node)
-+{
-+	return 0;
-+}
-+
-+static inline bool scs_corrupted(struct task_struct *tsk)
-+{
-+	return false;
-+}
-+
-+static inline void scs_release(struct task_struct *tsk)
-+{
-+}
-+
-+#endif /* CONFIG_SHADOW_CALL_STACK */
-+
-+#endif /* _LINUX_SCS_H */
-diff --git a/init/init_task.c b/init/init_task.c
-index 9e5cbe5eab7b..5e55ff45bbbf 100644
---- a/init/init_task.c
-+++ b/init/init_task.c
-@@ -11,6 +11,7 @@
- #include <linux/mm.h>
- #include <linux/audit.h>
- #include <linux/numa.h>
-+#include <linux/scs.h>
- 
- #include <asm/pgtable.h>
- #include <linux/uaccess.h>
-@@ -184,6 +185,11 @@ struct task_struct init_task
- };
- EXPORT_SYMBOL(init_task);
- 
+ 		       "Node %d PageTables:     %8lu kB\n"
+ 		       "Node %d NFS_Unstable:   %8lu kB\n"
+ 		       "Node %d Bounce:         %8lu kB\n"
+@@ -438,6 +441,9 @@ static ssize_t node_read_meminfo(struct device *dev,
+ 		       nid, K(node_page_state(pgdat, NR_ANON_MAPPED)),
+ 		       nid, K(i.sharedram),
+ 		       nid, sum_zone_node_page_state(nid, NR_KERNEL_STACK_KB),
 +#ifdef CONFIG_SHADOW_CALL_STACK
-+unsigned long init_shadow_call_stack[SCS_SIZE / sizeof(long)]
-+	__init_task_data __aligned(SCS_SIZE);
++		       nid, sum_zone_node_page_state(nid, NR_KERNEL_SCS_BYTES) / 1024,
 +#endif
-+
- /*
-  * Initial thread structure. Alignment of this is handled by a special
-  * linker map entry.
-diff --git a/init/main.c b/init/main.c
-index 91f6ebb30ef0..fb8bcdd729b9 100644
---- a/init/main.c
-+++ b/init/main.c
-@@ -93,6 +93,7 @@
- #include <linux/rodata_test.h>
- #include <linux/jump_label.h>
- #include <linux/mem_encrypt.h>
-+#include <linux/scs.h>
+ 		       nid, K(sum_zone_node_page_state(nid, NR_PAGETABLE)),
+ 		       nid, K(node_page_state(pgdat, NR_UNSTABLE_NFS)),
+ 		       nid, K(sum_zone_node_page_state(nid, NR_BOUNCE)),
+diff --git a/fs/proc/meminfo.c b/fs/proc/meminfo.c
+index ac9247371871..df352e4bab90 100644
+--- a/fs/proc/meminfo.c
++++ b/fs/proc/meminfo.c
+@@ -103,6 +103,10 @@ static int meminfo_proc_show(struct seq_file *m, void *v)
+ 	show_val_kb(m, "SUnreclaim:     ", sunreclaim);
+ 	seq_printf(m, "KernelStack:    %8lu kB\n",
+ 		   global_zone_page_state(NR_KERNEL_STACK_KB));
++#ifdef CONFIG_SHADOW_CALL_STACK
++	seq_printf(m, "ShadowCallStack:%8lu kB\n",
++		   global_zone_page_state(NR_KERNEL_SCS_BYTES) / 1024);
++#endif
+ 	show_val_kb(m, "PageTables:     ",
+ 		    global_zone_page_state(NR_PAGETABLE));
  
- #include <asm/io.h>
- #include <asm/bugs.h>
-@@ -578,6 +579,8 @@ asmlinkage __visible void __init start_kernel(void)
- 	char *after_dashes;
- 
- 	set_task_stack_end_magic(&init_task);
-+	scs_set_init_magic(&init_task);
-+
- 	smp_setup_processor_id();
- 	debug_objects_early_init();
- 
-diff --git a/kernel/Makefile b/kernel/Makefile
-index daad787fb795..313dbd44d576 100644
---- a/kernel/Makefile
-+++ b/kernel/Makefile
-@@ -102,6 +102,7 @@ obj-$(CONFIG_TRACEPOINTS) += trace/
- obj-$(CONFIG_IRQ_WORK) += irq_work.o
- obj-$(CONFIG_CPU_PM) += cpu_pm.o
- obj-$(CONFIG_BPF) += bpf/
-+obj-$(CONFIG_SHADOW_CALL_STACK) += scs.o
- 
- obj-$(CONFIG_PERF_EVENTS) += events/
- 
-diff --git a/kernel/fork.c b/kernel/fork.c
-index bcdf53125210..ae7ebe9f0586 100644
---- a/kernel/fork.c
-+++ b/kernel/fork.c
-@@ -94,6 +94,7 @@
- #include <linux/livepatch.h>
- #include <linux/thread_info.h>
- #include <linux/stackleak.h>
-+#include <linux/scs.h>
- 
- #include <asm/pgtable.h>
- #include <asm/pgalloc.h>
-@@ -451,6 +452,8 @@ void put_task_stack(struct task_struct *tsk)
- 
- void free_task(struct task_struct *tsk)
- {
-+	scs_release(tsk);
-+
- #ifndef CONFIG_THREAD_INFO_IN_TASK
- 	/*
- 	 * The task is finally done with both the stack and thread_info,
-@@ -834,6 +837,8 @@ void __init fork_init(void)
- 			  NULL, free_vm_stack_cache);
- #endif
- 
-+	scs_init();
-+
- 	lockdep_init_task(&init_task);
- 	uprobes_init();
- }
-@@ -907,6 +912,7 @@ static struct task_struct *dup_task_struct(struct task_struct *orig, int node)
- 	clear_user_return_notifier(tsk);
- 	clear_tsk_need_resched(tsk);
- 	set_task_stack_end_magic(tsk);
-+	scs_task_init(tsk);
- 
- #ifdef CONFIG_STACKPROTECTOR
- 	tsk->stack_canary = get_random_canary();
-@@ -2022,6 +2028,9 @@ static __latent_entropy struct task_struct *copy_process(
- 				 args->tls);
- 	if (retval)
- 		goto bad_fork_cleanup_io;
-+	retval = scs_prepare(p, node);
-+	if (retval)
-+		goto bad_fork_cleanup_thread;
- 
- 	stackleak_task_init(p);
- 
-diff --git a/kernel/sched/core.c b/kernel/sched/core.c
-index dd05a378631a..e7faeb383008 100644
---- a/kernel/sched/core.c
-+++ b/kernel/sched/core.c
-@@ -6013,6 +6013,8 @@ void init_idle(struct task_struct *idle, int cpu)
- 	raw_spin_lock_irqsave(&idle->pi_lock, flags);
- 	raw_spin_lock(&rq->lock);
- 
-+	scs_task_reset(idle);
-+
- 	__sched_fork(0, idle);
- 	idle->state = TASK_RUNNING;
- 	idle->se.exec_start = sched_clock();
-diff --git a/kernel/sched/sched.h b/kernel/sched/sched.h
-index 0db2c1b3361e..c153003a011c 100644
---- a/kernel/sched/sched.h
-+++ b/kernel/sched/sched.h
-@@ -58,6 +58,7 @@
- #include <linux/profile.h>
- #include <linux/psi.h>
- #include <linux/rcupdate_wait.h>
-+#include <linux/scs.h>
- #include <linux/security.h>
- #include <linux/stop_machine.h>
- #include <linux/suspend.h>
+diff --git a/include/linux/mmzone.h b/include/linux/mmzone.h
+index bda20282746b..fcb8c1708f9e 100644
+--- a/include/linux/mmzone.h
++++ b/include/linux/mmzone.h
+@@ -200,6 +200,9 @@ enum zone_stat_item {
+ 	NR_MLOCK,		/* mlock()ed pages found and moved off LRU */
+ 	NR_PAGETABLE,		/* used for pagetables */
+ 	NR_KERNEL_STACK_KB,	/* measured in KiB */
++#if IS_ENABLED(CONFIG_SHADOW_CALL_STACK)
++	NR_KERNEL_SCS_BYTES,	/* measured in bytes */
++#endif
+ 	/* Second 128 byte cacheline */
+ 	NR_BOUNCE,
+ #if IS_ENABLED(CONFIG_ZSMALLOC)
 diff --git a/kernel/scs.c b/kernel/scs.c
-new file mode 100644
-index 000000000000..47324e8d313b
---- /dev/null
+index 47324e8d313b..0e3cba49ea1a 100644
+--- a/kernel/scs.c
 +++ b/kernel/scs.c
-@@ -0,0 +1,162 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Shadow Call Stack support.
-+ *
-+ * Copyright (C) 2019 Google LLC
-+ */
-+
-+#include <linux/cpuhotplug.h>
-+#include <linux/mm.h>
-+#include <linux/slab.h>
-+#include <linux/scs.h>
-+#include <linux/vmalloc.h>
-+#include <asm/scs.h>
-+
-+#define SCS_END_MAGIC	0xaf0194819b1635f6UL
-+
-+static inline void *__scs_base(struct task_struct *tsk)
+@@ -7,9 +7,11 @@
+ 
+ #include <linux/cpuhotplug.h>
+ #include <linux/mm.h>
++#include <linux/mmzone.h>
+ #include <linux/slab.h>
+ #include <linux/scs.h>
+ #include <linux/vmalloc.h>
++#include <linux/vmstat.h>
+ #include <asm/scs.h>
+ 
+ #define SCS_END_MAGIC	0xaf0194819b1635f6UL
+@@ -59,6 +61,11 @@ static void scs_free(void *s)
+ 	vfree_atomic(s);
+ }
+ 
++static struct page *__scs_page(struct task_struct *tsk)
 +{
-+	return (void *)((uintptr_t)task_scs(tsk) & ~(SCS_SIZE - 1));
++	return vmalloc_to_page(__scs_base(tsk));
 +}
 +
-+#ifdef CONFIG_SHADOW_CALL_STACK_VMAP
-+
-+/* Keep a cache of shadow stacks */
-+#define SCS_CACHE_SIZE 2
-+static DEFINE_PER_CPU(void *, scs_cache[SCS_CACHE_SIZE]);
-+
-+static void *scs_alloc(int node)
+ static int scs_cleanup(unsigned int cpu)
+ {
+ 	int i;
+@@ -92,6 +99,11 @@ static inline void scs_free(void *s)
+ 	kmem_cache_free(scs_cache, s);
+ }
+ 
++static struct page *__scs_page(struct task_struct *tsk)
 +{
-+	int i;
-+
-+	for (i = 0; i < SCS_CACHE_SIZE; i++) {
-+		void *s;
-+
-+		s = this_cpu_xchg(scs_cache[i], NULL);
-+		if (s) {
-+			memset(s, 0, SCS_SIZE);
-+			return s;
-+		}
-+	}
-+
-+	return __vmalloc_node_range(SCS_SIZE, SCS_SIZE,
-+				    VMALLOC_START, VMALLOC_END,
-+				    SCS_GFP, PAGE_KERNEL, 0,
-+				    node, __builtin_return_address(0));
++	return virt_to_page(__scs_base(tsk));
 +}
 +
-+static void scs_free(void *s)
+ void __init scs_init(void)
+ {
+ 	scs_cache = kmem_cache_create("scs_cache", SCS_SIZE, SCS_SIZE,
+@@ -128,6 +140,12 @@ void scs_set_init_magic(struct task_struct *tsk)
+ 	scs_load(tsk);
+ }
+ 
++static void scs_account(struct task_struct *tsk, int account)
 +{
-+	int i;
-+
-+	for (i = 0; i < SCS_CACHE_SIZE; i++) {
-+		if (this_cpu_cmpxchg(scs_cache[i], 0, s) != 0)
-+			continue;
-+
-+		return;
-+	}
-+
-+	vfree_atomic(s);
++	mod_zone_page_state(page_zone(__scs_page(tsk)), NR_KERNEL_SCS_BYTES,
++		account * SCS_SIZE);
 +}
 +
-+static int scs_cleanup(unsigned int cpu)
-+{
-+	int i;
-+	void **cache = per_cpu_ptr(scs_cache, cpu);
-+
-+	for (i = 0; i < SCS_CACHE_SIZE; i++) {
-+		vfree(cache[i]);
-+		cache[i] = NULL;
-+	}
-+
-+	return 0;
-+}
-+
-+void __init scs_init(void)
-+{
-+	cpuhp_setup_state(CPUHP_BP_PREPARE_DYN, "scs:scs_cache", NULL,
-+		scs_cleanup);
-+}
-+
-+#else /* !CONFIG_SHADOW_CALL_STACK_VMAP */
-+
-+static struct kmem_cache *scs_cache;
-+
-+static inline void *scs_alloc(int node)
-+{
-+	return kmem_cache_alloc_node(scs_cache, SCS_GFP, node);
-+}
-+
-+static inline void scs_free(void *s)
-+{
-+	kmem_cache_free(scs_cache, s);
-+}
-+
-+void __init scs_init(void)
-+{
-+	scs_cache = kmem_cache_create("scs_cache", SCS_SIZE, SCS_SIZE,
-+				0, NULL);
-+	WARN_ON(!scs_cache);
-+}
-+
-+#endif /* CONFIG_SHADOW_CALL_STACK_VMAP */
-+
-+static inline unsigned long *scs_magic(struct task_struct *tsk)
-+{
-+	return (unsigned long *)(__scs_base(tsk) + SCS_SIZE - sizeof(long));
-+}
-+
-+static inline void scs_set_magic(struct task_struct *tsk)
-+{
-+	*scs_magic(tsk) = SCS_END_MAGIC;
-+}
-+
-+void scs_task_init(struct task_struct *tsk)
-+{
-+	task_set_scs(tsk, NULL);
-+}
-+
-+void scs_task_reset(struct task_struct *tsk)
-+{
-+	task_set_scs(tsk, __scs_base(tsk));
-+}
-+
-+void scs_set_init_magic(struct task_struct *tsk)
-+{
-+	scs_save(tsk);
-+	scs_set_magic(tsk);
-+	scs_load(tsk);
-+}
-+
-+int scs_prepare(struct task_struct *tsk, int node)
-+{
-+	void *s;
-+
-+	s = scs_alloc(node);
-+	if (!s)
-+		return -ENOMEM;
-+
-+	task_set_scs(tsk, s);
-+	scs_set_magic(tsk);
-+
-+	return 0;
-+}
-+
-+bool scs_corrupted(struct task_struct *tsk)
-+{
-+	return *scs_magic(tsk) != SCS_END_MAGIC;
-+}
-+
-+void scs_release(struct task_struct *tsk)
-+{
-+	void *s;
-+
-+	s = __scs_base(tsk);
-+	if (!s)
-+		return;
-+
-+	WARN_ON(scs_corrupted(tsk));
-+
-+	scs_task_init(tsk);
-+	scs_free(s);
-+}
+ int scs_prepare(struct task_struct *tsk, int node)
+ {
+ 	void *s;
+@@ -138,6 +156,7 @@ int scs_prepare(struct task_struct *tsk, int node)
+ 
+ 	task_set_scs(tsk, s);
+ 	scs_set_magic(tsk);
++	scs_account(tsk, 1);
+ 
+ 	return 0;
+ }
+@@ -157,6 +176,7 @@ void scs_release(struct task_struct *tsk)
+ 
+ 	WARN_ON(scs_corrupted(tsk));
+ 
++	scs_account(tsk, -1);
+ 	scs_task_init(tsk);
+ 	scs_free(s);
+ }
+diff --git a/mm/page_alloc.c b/mm/page_alloc.c
+index ecc3dbad606b..fe17d69d98a7 100644
+--- a/mm/page_alloc.c
++++ b/mm/page_alloc.c
+@@ -5361,6 +5361,9 @@ void show_free_areas(unsigned int filter, nodemask_t *nodemask)
+ 			" managed:%lukB"
+ 			" mlocked:%lukB"
+ 			" kernel_stack:%lukB"
++#ifdef CONFIG_SHADOW_CALL_STACK
++			" shadow_call_stack:%lukB"
++#endif
+ 			" pagetables:%lukB"
+ 			" bounce:%lukB"
+ 			" free_pcp:%lukB"
+@@ -5382,6 +5385,9 @@ void show_free_areas(unsigned int filter, nodemask_t *nodemask)
+ 			K(zone_managed_pages(zone)),
+ 			K(zone_page_state(zone, NR_MLOCK)),
+ 			zone_page_state(zone, NR_KERNEL_STACK_KB),
++#ifdef CONFIG_SHADOW_CALL_STACK
++			zone_page_state(zone, NR_KERNEL_SCS_BYTES) / 1024,
++#endif
+ 			K(zone_page_state(zone, NR_PAGETABLE)),
+ 			K(zone_page_state(zone, NR_BOUNCE)),
+ 			K(free_pcp),
+diff --git a/mm/vmstat.c b/mm/vmstat.c
+index 6afc892a148a..9fe4afe670fe 100644
+--- a/mm/vmstat.c
++++ b/mm/vmstat.c
+@@ -1118,6 +1118,9 @@ const char * const vmstat_text[] = {
+ 	"nr_mlock",
+ 	"nr_page_table_pages",
+ 	"nr_kernel_stack",
++#if IS_ENABLED(CONFIG_SHADOW_CALL_STACK)
++	"nr_shadow_call_stack_bytes",
++#endif
+ 	"nr_bounce",
+ #if IS_ENABLED(CONFIG_ZSMALLOC)
+ 	"nr_zspages",
 -- 
 2.23.0.866.gb869b98d4c-goog
 
