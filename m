@@ -2,85 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFCF2DC498
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 14:22:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5AB81DC49F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 14:23:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=vAv2x2B+cIphXHVyeYmt+RansfyEWccMo9/EsM4eAvU=; b=PXgx3P52cYsDnBHYmf77ZGuYA
-	Z3zxeLG/M9aKHU1i50+GOrO3Ts1+0TPLpcavIF6Kp2nznRy0z+VRgmVGdM8cPx50G22lzX73VI/nJ
-	02wmIKdi+J9Uo9eGQv2CumyUrHSCmC2CxoXHPohIREsnmPPLa06r0ENlHJB7gYkqVXd3U1SzupOOm
-	m7TJI3YNJiktgS9VqQ+rPRjN/aMCpPT2CPRPan5M0ge/iM1q8tZFmMK9NmxF0xvotqsDBFn/EMZYN
-	C8uzkYmEZynoPX16+Mo2FSMsVErm/ilx7YfQfTIrVe9ntDeXNW9WznBBtt85oYQIWjUbfSv+93lrG
-	aNMRunu5A==;
+	 bh=R7lyAdIL+FWjo06r2SsSAzHOS2OFxEz4gVhjqRRUmjc=; b=gUIvLv8gj8GXWvNCnfssjKMBw
+	RVtHo77em80ePMsm4u5L9Yw7nHIVGvSCnbPTHv04T6g9qirua8HTICabNHdzI2K41esM8cxytzDUY
+	bZaMIat5Ra9QuPFxFbbWLQCSTaUf7NR1FRm0hfiuTy+i+uUgRZRG6DFYV7YgJSXeMY9MZ9NxzmEcn
+	a+W5dOoLDPjVZUx5R2qJ4u75NHudelZF55+NVuB3acpAZjFbpOQFYUFn5PEb1htQAuUrcCqYjMSiM
+	BgZzpLtTmpztBm/I//HD6q1ezIAAyTh1dDNlaBf683mYPCtu4aOiqfa13F01mTW4bUeh8Cl4MEYPu
+	7w7L4LVPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLRGV-0000W5-Mt; Fri, 18 Oct 2019 12:21:55 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1iLRHa-0000uR-Uj; Fri, 18 Oct 2019 12:23:02 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLRGL-0000VC-0Q
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 12:21:46 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x9ICLfuG086145;
- Fri, 18 Oct 2019 07:21:41 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1571401302;
- bh=iMCXi1bXhcu5PpTfDwyLXE84r6Q/7AsOhkancNxD5Gg=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=XVdq3vnWT4AGBIDr0qlgJ35EJv53Za9UPViN4sRNJXYTD3iIqTFNINS+DFkSwr1sV
- rxbyAXtp6OKlWt8c+koi1E027N1RjFflSLjc1eOFbaDXjQ/HwxXMiY0lM+Fm9J/GZq
- rlkv7FIv9JpuDxCH/oXQIFyDfAFUSZDjFDetq4LE=
-Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x9ICLfuU055675
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 18 Oct 2019 07:21:41 -0500
-Received: from DFLE103.ent.ti.com (10.64.6.24) by DFLE102.ent.ti.com
- (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Fri, 18
- Oct 2019 07:21:41 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Fri, 18 Oct 2019 07:21:41 -0500
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x9ICLdO8006490;
- Fri, 18 Oct 2019 07:21:40 -0500
-Subject: Re: [PATCH v2 0/4] Add Mailbox nodes for TI K3 AM65x & J721E SoCs
-To: Suman Anna <s-anna@ti.com>, Nishanth Menon <nm@ti.com>
-References: <20190725001020.23781-1-s-anna@ti.com>
- <e27abe06-2df0-fdae-6fe5-080a40ee3bdd@ti.com>
-From: Tero Kristo <t-kristo@ti.com>
-Message-ID: <8b692766-08a4-6bad-768e-56acba5eb9de@ti.com>
-Date: Fri, 18 Oct 2019 15:21:39 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iLRHN-0000to-9W
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 12:22:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=U3dJ0jvghwMGVqBxc3PnWpd0/84N0qDOR0AfqivgCs0=; b=okgp8TgAY9raSFQvFqd7sCPfJ
+ /XJe9dvTf4EmVNZF1IANs85VJ8PcWWqB/ZZnWzPkmqpHUKz8+7EwoU1DSxGDZTU2+ovV7PmA62PTz
+ D38ZX1QHxMdlT9Tp1Gulz9gL7NjwvaAbvROLWATtMUg1595KwxeDJWXVgMUjkOFB69/E8=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1iLRHD-0003YC-Vw; Fri, 18 Oct 2019 12:22:40 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id BDB0D2741DEA; Fri, 18 Oct 2019 13:22:38 +0100 (BST)
+Date: Fri, 18 Oct 2019 13:22:38 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v3 1/3] arm64: Factor out checks for KASLR in KPTI code
+ into separate function
+Message-ID: <20191018122238.GB4828@sirena.co.uk>
+References: <20191016151421.27708-1-broonie@kernel.org>
+ <20191016151421.27708-2-broonie@kernel.org>
+ <20191018120102.GA55431@arrakis.emea.arm.com>
 MIME-Version: 1.0
-In-Reply-To: <e27abe06-2df0-fdae-6fe5-080a40ee3bdd@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+In-Reply-To: <20191018120102.GA55431@arrakis.emea.arm.com>
+X-Cookie: Smear the road with a runner!!
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_052145_131675_0DAC2BF5 
-X-CRM114-Status: GOOD (  19.27  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191018_052249_351343_3161AC9B 
+X-CRM114-Status: GOOD (  14.84  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [172.104.155.198 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,73 +81,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============6965336626006658351=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 09/10/2019 23:19, Suman Anna wrote:
-> Hi Tero,
-> 
-> On 7/24/19 7:10 PM, Suman Anna wrote:
->> Hi Tero, Nishanth,
->>
->> The following series is a revised version of the series [1] that adds
->> the Mailbox DT nodes and the sub-mailboxes used to communicate between
->> the main MPU processor running Linux and the various R5F and DSP remote
->> processors present on the TI K3 AM65x and J721E SoC families. Patches
->> are based on v5.3-rc1 + the HwSpinlock DT node series [2], and are
->> intended for the 5.4 merge window. Functionality is verified using a
->> out-of-tree unit-test module and some additional loopback test nodes
->> available here [3] for reference.
->>
->> Changes in v2:
->>   - All clusters are enabled by default in base dtsi files
->>   - The sub-mailboxes are moved to the actual board dts files
->>   - Unused clusters disabled in the board dts files
-> 
-> Looks like you missed picking this series up for 5.4. Can you please
-> pick this up for 5.5? Let me know if you want me to repost the series,
-> the last patch has a conflict when applying on top of 5.4-rc1 due to
-> some additional nodes in the board dts file.
 
-Yep, I missed this.
+--===============6965336626006658351==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="3lcZGd9BuhuYXNfi"
+Content-Disposition: inline
 
-Queuing up towards 5.5 now, thanks.
 
--Tero
+--3lcZGd9BuhuYXNfi
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-> 
-> regards
-> Suman
-> 
->>
->> regards
->> Suman
->>
->> [1] https://patchwork.kernel.org/cover/11053401/
->> [2] https://patchwork.kernel.org/cover/11053311/
->> [3] https://github.com/sumananna/mailbox/commits/mbox/test/5.3-rc1-k3-v2
->>
->> Suman Anna (4):
->>    arm64: dts: ti: k3-am65-main: Add mailbox cluster nodes
->>    arm64: dts: ti: k3-am65-base-board: Add IPC sub-mailbox nodes for R5Fs
->>    arm64: dts: ti: k3-j721e-main: Add mailbox cluster nodes
->>    arm64: dts: ti: k3-j721e-common-proc-board: Add IPC sub-mailbox nodes
->>
->>   arch/arm64/boot/dts/ti/k3-am65-main.dtsi      | 108 ++++++++++++++++++
->>   .../arm64/boot/dts/ti/k3-am654-base-board.dts |  58 ++++++++++
->>   .../dts/ti/k3-j721e-common-proc-board.dts     |  93 +++++++++++++++
->>   arch/arm64/boot/dts/ti/k3-j721e-main.dtsi     | 108 ++++++++++++++++++
->>   4 files changed, 367 insertions(+)
->>
-> 
+On Fri, Oct 18, 2019 at 01:01:02PM +0100, Catalin Marinas wrote:
+> On Wed, Oct 16, 2019 at 04:14:19PM +0100, Mark Brown wrote:
 
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+> >  	if (arm64_kernel_unmapped_at_el0())
+> >  		return true;
+
+> > -	if (!IS_ENABLED(CONFIG_RANDOMIZE_BASE))
+> > +	/*
+> > +	 * Once we are far enough into boot for capabilities to be
+> > +	 * ready we will have confirmed if we are using non-global
+> > +	 * mappings so don't need to consider anything else here.
+> > +	 */
+> > +	if (static_branch_likely(&arm64_const_caps_ready))
+> >  		return false;
+
+> While that's a step in the right direction, I'd like to see
+> {PTE,PMD}_MAYBE_NG move away from the current use of
+> arm64_kernel_use_ng_mappings(). These macros are used during early
+> during boot and we seem to rely on cpu_hwcaps not being populated yet
+> (arm64_kernel_unmapped_at_el0() checking it via cpus_have_const_cap()).
+
+> Could we have a global variable (boot or a pgtable attr type) which we
+> populate during early boot and subsequently use in the PTE_MAYBE_NG
+> macro?
+
+I did look at that but figured that now E0PD is a system capability the
+existing variables that the cpu capabilities stuff uses wound up being
+set at pretty much the same times so we could just reuse them and avoid
+having to worry about anything being out of sync or if the update to
+flip to non-global mappings was being done in a concurrency safe manner.
+
+--3lcZGd9BuhuYXNfi
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl2pro0ACgkQJNaLcl1U
+h9DazAf+IQ9fJnZXcKCMbM3mcyVZkhW8dzuxiot6pSJUb9x/wwEqamYkAfYLYpUj
+uGWSaX0s70qVP8SKZLP6ONBYffLbwKeg1Kj3148cYP2HXjecfidSLdWLE4KNG0wD
+4TL5pi6VO4dcdTKXmLgluh8+RLUzX7hmqDAt02tIVeRMMNpPLGBXaC8YtiX70o4F
+ZpmCYVQCbOMHJssBOXQEg1HW6JT4qOocTHmqTYfdxww/+pM1iJk55QiHNhE707XR
+qfzVgBQTLbY2nBmo3NXRMr7goy83g/QRTwtwE4gC/TDvDc5+nM6TRMvA2twCMcOB
+dW3drnRIHWrUrUnneLd7WpbPWE1rPw==
+=zbrE
+-----END PGP SIGNATURE-----
+
+--3lcZGd9BuhuYXNfi--
+
+
+--===============6965336626006658351==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6965336626006658351==--
+
