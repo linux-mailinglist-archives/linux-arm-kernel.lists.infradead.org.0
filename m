@@ -2,85 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8010ADCDD2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 20:19:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CAAAEDCDFF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 20:33:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=14lzT9cotM9RU+NYCdprnyUF3FAbz3f0/vaBU+CZPs0=; b=DS+zFo2aSqLPEt
-	KVYjp8XQYUmGZnl5xAW/tzUeXLuyMCLo92dPY+iZMWLPANhlpYWRRQeVf41FzfOB4MTjyt02acuhW
-	faoRfkFhfudfAlpl1zgOzkwJCT1n7GCA4FywEgZx2LnbaSCmAw2D8IvmyodNXNHTSh1VdooH9dRLc
-	7AEtYSwUCjESuDmZMrIqgntz87BoiIpDoHkbljswBvE0sdo1eEuwcQ99gf8tZIQradcxrcZOHQQhd
-	gGHfI9AAA81mTQHaQY0RFUe6T85/JFUQRjtjbgVft6Zduwj8CbEAtVLIWcBe7OPJzJMUtY1rwkC8y
-	c1xgNkLSZOFixCrIAi7Q==;
+	List-Owner; bh=purByqfRciZNHqvkRP3HR6hMVbFayVyZRNz9VqKseTc=; b=g9ZudLlZVLL0ZU
+	SMmdmLSULdo9GA4ts5eM9+X25h7Iib/vQ0fIj8LBE8K8/NrqR9YRpi1V7lve6di0Z1ba5rDZQNeKT
+	ETF+iFjM7sxLuj2mba58tf7Hj1p4r3sXP2EfnS9O1eyLaNP6QzjEDJ4CWiXgIUA/cWhYYNHVlCQBf
+	jzn58p+bmstSCF4fuISYd77YyrmCQ05Md6tsf6+3b85hh53Xe/61LSI3Epb2HxTpONfjESSlEIyVU
+	F+klktgY1VYJOyZgsZmdY902Q0QzyCapfASfdi8dDSDGmOYc9z3FkpWkIalNFtLinUIO/VQKVbD2I
+	w4+tYpxY/3uqrJgjTW8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLWqm-0001Pz-JI; Fri, 18 Oct 2019 18:19:44 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1iLX3r-0007QF-Cy; Fri, 18 Oct 2019 18:33:15 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLWon-00085L-Hf
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 18:17:43 +0000
-Received: by mail-pl1-x642.google.com with SMTP id t10so3220088plr.8
+ id 1iLX3j-0007Pb-6E
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 18:33:08 +0000
+Received: by mail-lf1-x144.google.com with SMTP id q28so2169138lfa.5
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 11:17:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=v9YW7BHNgsQ/SyyPbXQbYasZCLbj5buK6hp2Stw/kRY=;
- b=hJcc17Pd04cJA9HC+GwMAMjYVUY11jji7LMtJg0uX3pJdY5BbI2BFW0vbvi+yrWNz2
- 8nDsrbt4SefCcegWAfhpV1uSHk8BJ9PXRXnyjzPdYtazh1O5lcgZhGE6zCb2lJOfdree
- xXRnqRdH7uKj9Pms/4+rIb+CNct97IEgJLAe2neoEwUUc0VcAdAotoXBAS0q7OW67pCV
- N2ARLR1P9E732WCxfon75MUVThi+EwBib+mU6HGk1+FNlVkb9cS5GbchqGqmQGfTYyMp
- mnI9CNShj6oOspxWy0WylGQJg99plx0jN7qJz+d+UeHSh6+NnqGdqu9qgxYjVnswNoBE
- wy5A==
+ Fri, 18 Oct 2019 11:33:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=GbeDXmo9y5jCjWaekiMahqEUs5l1VadqHf+/T7BBGBs=;
+ b=O7PltKw1VMi2RMM6PRtWFNe7pkAjXUVERibQ18qTBqg7hBcss0b4ODK8OPurRIOyua
+ XPNO9lzWQL2sUCEhn5yIUWxen7VKw9wyTrwnHMKPZjCRfIiXPFfWEAVvv4QRuiFlh5t+
+ pDRldcEsIeZnSgRVmFGygqa8PjlBtiqr3OTvL/LcpFDouIoV77L0apIZSU2+TZrDMUpN
+ J+BIMIzJe4Gnl2MdVigjlwfITa9bcZsVYbInVJd7VmqoxFJ+R1oQWwmYYSQ+CRxNdp2b
+ XI5aTFXOgs9ze9UHzbxQYe24jao6bo43OiCrhgGontQOfGlZavqZSXXnyWO9GEdwqm9A
+ B7LA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=v9YW7BHNgsQ/SyyPbXQbYasZCLbj5buK6hp2Stw/kRY=;
- b=T1E2gh15J8EpCbxs2XDuNJqGZrta1vyUx6QTG2tkobl/LUPcax8lF8PhIGAROYxesK
- 0vKwsRiyyaS4FH8lmcjlS+AEE7UlW3DpuT7IFMEooOjp6Gakb3OABhBOJyy1T5CVtIwv
- SfjQOcyamaSTKqXEop8Hv75hoWI/b27XE4gNz9fVR1nyHe36RTdP5gTVw/CZxAu9VMOh
- yssvYHMDck+ytjbWnsLkkL63Aw5jsHzxloiRjwQH1D+4vyLYF0tNeIQGWBC3aQ/6vtti
- 4mF5Cu2iPHNiyNYFaGNvaJTe8hpJLMpp46/anTh2duczUWOS1pMkEEEPEO3clHiT+wJ+
- Xs2A==
-X-Gm-Message-State: APjAAAUFGrz61Xt+qnW8sVc/y6q8CPVOT3TxYXxouo/Fw1DSDpQhLVCK
- g8cm9wJRizzQ7btVCnhYv1ZSPfdiv1A=
-X-Google-Smtp-Source: APXvYqwAW1evszJK3zfKVU5qC+kUrzT5nkGmV8rakyUXPWbliiBzm+rVT0a7YhJdlz/GJxIQ+EvtqA==
-X-Received: by 2002:a17:902:9a88:: with SMTP id
- w8mr11523945plp.129.1571422651552; 
- Fri, 18 Oct 2019 11:17:31 -0700 (PDT)
-Received: from localhost ([2601:602:9200:a1a5:4083:538b:22e5:c2ac])
- by smtp.gmail.com with ESMTPSA id h8sm7654640pfo.64.2019.10.18.11.17.30
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 18 Oct 2019 11:17:31 -0700 (PDT)
-From: Kevin Hilman <khilman@baylibre.com>
-To: Jerome Brunet <jbrunet@baylibre.com>,
- Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH] arm64: dts: meson-g12b-khadas-vim3: add missing frddr_a
- status property
-In-Reply-To: <1jbluef2sd.fsf@starbuckisacylon.baylibre.com>
-References: <20191018140216.4257-1-narmstrong@baylibre.com>
- <1jbluef2sd.fsf@starbuckisacylon.baylibre.com>
-Date: Fri, 18 Oct 2019 11:17:30 -0700
-Message-ID: <7hbludc405.fsf@baylibre.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=GbeDXmo9y5jCjWaekiMahqEUs5l1VadqHf+/T7BBGBs=;
+ b=i0/uDLBAEmNHk8SqBato1YGJJsYtOyuR3ftr1On2gZ0PUb+cD3H1x/O7OSh53gF5GU
+ fYj8b4NT/NCAiVQ4nUUmlFU+OMpXw5kz3PDrDCoUPByfXqRNWgznFQXIezNkatQPJChD
+ 244bZXlQpdyLYE1THDEvz1gYE9klx4upyRzueBza2uAgpo2ZMaKpR/dSOq5J4/WiY3LX
+ TFaW3KclPvfDYApAfP0M8zaLb8MWdFo6SlGMVTMru0Vx61+cIZ5jrlWRNj0ippGQ948P
+ HvVskfzzXSiaxBzC/Zb+AxMKR/Yq4qT6u/YzUZ2FZSLwKXKMLV8xSTCtczVfaahxfAY3
+ sjaA==
+X-Gm-Message-State: APjAAAUYg4uLxYVHIQD3oaYSX6XrYlQQDTpVeY0iEQlKbqzUvm5SBO3b
+ e0VPOH7Ecf3KnN2kFlXUOvea+Zwyg9hNx1tiLBk=
+X-Google-Smtp-Source: APXvYqwxRkqeBTGe2ipFXhHWevOzmHfCv3O5pvZN9gCYzK7L+ln0quOJ8iSVEtAb24QIwyqCIFqfSWgnDz92fMJhPwc=
+X-Received: by 2002:ac2:55b4:: with SMTP id y20mr6942077lfg.173.1571423584708; 
+ Fri, 18 Oct 2019 11:33:04 -0700 (PDT)
 MIME-Version: 1.0
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20191018161033.261971-7-samitolvanen@google.com>
+ <CAKwvOd=z3RxvJeNV1sBE=Y1b6HgXdnT4M9bwMrUNZcvcSOqwTw@mail.gmail.com>
+ <CABCJKud6+F=yhTo6xTXkHhtLWcSE99K=NcfKW_5E4swS4seKMw@mail.gmail.com>
+In-Reply-To: <CABCJKud6+F=yhTo6xTXkHhtLWcSE99K=NcfKW_5E4swS4seKMw@mail.gmail.com>
+From: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
+Date: Fri, 18 Oct 2019 20:32:53 +0200
+Message-ID: <CANiq72=PSzufQkW+2fikdDfZ5ZR1sw2epvxv--mytWZkTZQ9sg@mail.gmail.com>
+Subject: Re: [PATCH 06/18] add support for Clang's Shadow Call Stack (SCS)
+To: Sami Tolvanen <samitolvanen@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_111741_623146_3DB83103 
-X-CRM114-Status: GOOD (  10.98  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191018_113307_234588_55C78066 
+X-CRM114-Status: GOOD (  13.06  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (miguel.ojeda.sandonis[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -95,52 +95,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, christianshewitt@gmail.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Kernel Hardening <kernel-hardening@lists.openwall.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Jerome Brunet <jbrunet@baylibre.com> writes:
-
-> On Fri 18 Oct 2019 at 16:02, Neil Armstrong <narmstrong@baylibre.com> wrote:
+On Fri, Oct 18, 2019 at 7:11 PM Sami Tolvanen <samitolvanen@google.com> wrote:
 >
->> In the process of moving the VIM3 audio nodes to a G12B specific dtsi
->> for enabling the SM1 based VIM3L, the frddr_a status = "okay" property
->> got dropped.
->> This re-enables the frddr_a node to fix audio support.
->>
->> Fixes: 4f26cc1c96c9 ("arm64: dts: khadas-vim3: move common nodes into meson-khadas-vim3.dtsi")
->> Reported-by: Christian Hewitt <christianshewitt@gmail.com>
->> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
->> ---
->>  arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi | 4 ++++
->>  1 file changed, 4 insertions(+)
->>
->> diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
->> index 554863429aa6..e2094575f528 100644
->> --- a/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
->> +++ b/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
->> @@ -152,6 +152,10 @@
->>  	clock-latency = <50000>;
->>  };
->>  
->> +&frddr_a {
->> +	status = "okay";
->> +};
->> +
->>  &frddr_b {
->>  	status = "okay";
->>  };
+> On Fri, Oct 18, 2019 at 10:08 AM 'Nick Desaulniers' via Clang Built
+> Linux <clang-built-linux@googlegroups.com> wrote:
+> > > diff --git a/include/linux/compiler-clang.h b/include/linux/compiler-clang.h
+> > > index 333a6695a918..9af08391f205 100644
+> > > --- a/include/linux/compiler-clang.h
+> > > +++ b/include/linux/compiler-clang.h
+> > > @@ -42,3 +42,5 @@
+> > >   * compilers, like ICC.
+> > >   */
+> > >  #define barrier() __asm__ __volatile__("" : : : "memory")
+> > > +
+> > > +#define __noscs                __attribute__((no_sanitize("shadow-call-stack")))
+> >
+> > It looks like this attribute, (and thus a requirement to use this
+> > feature), didn't exist until Clang 7.0: https://godbolt.org/z/p9u1we
+> > (as noted above)
+> >
+> > I think it's better to put __noscs behind a __has_attribute guard in
+> > include/linux/compiler_attributes.h.  Otherwise, what will happen when
+> > Clang 6.0 sees __noscs, for example? (-Wunknown-sanitizers will
+> > happen).
 >
-> Acked-by: Jerome Brunet <jbrunet@baylibre.com>
+> Good point, I'll fix this in v2. Thanks.
 
-Queued as a fix for v5.4-rc,
++1, please CC whenever you send it!
 
-Thanks,
-
-Kevin
+Cheers,
+Miguel
 
 _______________________________________________
 linux-arm-kernel mailing list
