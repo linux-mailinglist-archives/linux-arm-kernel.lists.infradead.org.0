@@ -2,56 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A82ACDCD9E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 20:11:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A9ABDCD94
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 20:10:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=dCARRP0iUSvgMktzB5/volFEWiMqw9ESLKSI9J5j/68=; b=dUV
-	H/vuPRsGisdUGuX2FueaitmtaRViyUTqDotLNymSClqa7oOR3FqpIu/K+VlUirWJFWaMdePyC5gb2
-	azcKmcyVLxxPt1MITho1jNB5tBwCURadcx7ILT2HIOkylpkbRLtEIi8n4UC8BRZ2K8or+MFuRAiGZ
-	bYDPOT5moDhiTaIz1M2b9keMsUUH0ArmD8YSy3TZPjG4e/dAQYINpFuDTlHwZOkf+Q6wPcjHHoJSH
-	38I6VgVCsUhsJ2eWuTUW8au430Oh3asmT07SLZnsFGO4SdemHlpKY1YSvpAFKUZIyhYTw0GkdMOsF
-	jgAzG6KBcv9GvQJzolrBUeb/jbeI+WA==;
+	References:List-Owner; bh=CblIgZZs0t743XTycrSPYTtdWnlL9bsXihdVGQbfb+E=; b=AhH
+	/h3PPubHVKjKFeuCuyJsu5ty0XWBBp8lt2wmhlVU0xfDTuhwRhYHge++BS7Z3Ildvy90yiJkVjqoc
+	Z6khfSEZ07MhbNFj3+YV4zAF+bqQK6+iF0iVOUfeAmnT5pYzMaYaTQDVD0beZof91Oj4wP7SaERxX
+	HAkqq3MwqxBtXB9IuzlgNN/R7pKwhV7f4SCVl3pDCL+AuvHzcQcAi/EOuxw4s3YW03UZLS9u87tuJ
+	J3Vcd/UvmPK61R34oy2xitjM2HpilP9Ov+X+Vtp9Fjws0hc18E9cFDBxXTEkjVC7ex5UKy0yTzeBL
+	wS2pWKU9T6B5+LLF6Sw0nnd4RxdYNrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLWik-0003wv-1U; Fri, 18 Oct 2019 18:11:26 +0000
+	id 1iLWhg-0001fz-1w; Fri, 18 Oct 2019 18:10:20 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLWeg-0007lc-Tj
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 18:07:23 +0000
+ id 1iLWed-0007hO-QT
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 18:07:16 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=TAo9yk+ODQykf7+bvZAj2kUivCR7dyFpgBIQM5brJ9k=; b=ZmQnt+eEhkgg
- O7IKbdWy0MryxJyt34EqbHmcbksgpM6MmIzy4n76aL9Q2RwyO8wpduItQCcLmbmg4qHvpbkOvQjvC
- ahQbZVkzauus1zyoLirnxxlaNkMjFAmwi8swdiSS8BByuP8A0i92hMMrj4xuSbVI7HlxKNL/NU5HO
- JePJ8=;
+ List-Archive; bh=+ZlHeGfrpTjU6PQ+KNMsRurvdye1OzjdR9gSL9BV4SI=; b=H3r14kUnkG0l
+ U1iBqWReaeJqBm21j0q+n2hHSJ0LuU3dI1tGjzx190rpeKfL1bJdIqtNpF6062wW5H11AjyBc+Pmc
+ m2lOlH5B62G6ZdF2IxA6bDcvmikWRbw6WshgxPR8LjFpIWYFbeUUlmcSPFq1T+LpPWVTMDbWunVGs
+ VBtdo=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iLWec-0004Hl-Db; Fri, 18 Oct 2019 18:07:10 +0000
+ id 1iLWeb-0004HK-Ig; Fri, 18 Oct 2019 18:07:09 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id DC1D52743273; Fri, 18 Oct 2019 19:07:09 +0100 (BST)
+ id 17FD42743259; Fri, 18 Oct 2019 19:07:09 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
-To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Subject: Applied "spi: pxa2xx: Sort headers" to the spi tree
-In-Reply-To: <20191018105429.82782-2-andriy.shevchenko@linux.intel.com>
+To: Gregory CLEMENT <gregory.clement@bootlin.com>
+Subject: Applied "spi: atmel: Remove and fix erroneous comments" to the spi
+ tree
+In-Reply-To: <20191017141846.7523-2-gregory.clement@bootlin.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20191018180709.DC1D52743273@ypsilon.sirena.org.uk>
+Message-Id: <20191018180709.17FD42743259@ypsilon.sirena.org.uk>
 Date: Fri, 18 Oct 2019 19:07:09 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_110715_167744_0A6FF3E7 
-X-CRM114-Status: GOOD (  13.27  )
+X-CRM114-CacheID: sfid-20191018_110712_006984_43C34AB4 
+X-CRM114-Status: GOOD (  15.34  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -77,9 +78,12 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Haojian Zhuang <haojian.zhuang@gmail.com>, linux-spi@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, Daniel Mack <daniel@zonque.org>,
- Robert Jarzmik <robert.jarzmik@free.fr>, linux-arm-kernel@lists.infradead.org
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Mark Brown <broonie@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -88,7 +92,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: pxa2xx: Sort headers
+   spi: atmel: Remove and fix erroneous comments
 
 has been applied to the spi tree at
 
@@ -113,65 +117,49 @@ to this mail.
 Thanks,
 Mark
 
-From 5ce2570513bc012020e1faaa20333a6955845f06 Mon Sep 17 00:00:00 2001
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Date: Fri, 18 Oct 2019 13:54:26 +0300
-Subject: [PATCH] spi: pxa2xx: Sort headers
+From 4d8672d17450b457c0dbbcfe9868438036b4647c Mon Sep 17 00:00:00 2001
+From: Gregory CLEMENT <gregory.clement@bootlin.com>
+Date: Thu, 17 Oct 2019 16:18:40 +0200
+Subject: [PATCH] spi: atmel: Remove and fix erroneous comments
 
-Sort the headers in alphabetic order in order to ease the maintenance
-for this part.
+Since CSAAT functionality support has been added. Some comments become
+wrong. Fix them to match the current driver behavior.
 
-Signed-off-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Link: https://lore.kernel.org/r/20191018105429.82782-2-andriy.shevchenko@linux.intel.com
+Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
+Link: https://lore.kernel.org/r/20191017141846.7523-2-gregory.clement@bootlin.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/spi-pxa2xx.c | 24 ++++++++++++------------
- 1 file changed, 12 insertions(+), 12 deletions(-)
+ drivers/spi/spi-atmel.c | 10 +++-------
+ 1 file changed, 3 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/spi/spi-pxa2xx.c b/drivers/spi/spi-pxa2xx.c
-index 59d1406a9c96..670734b3d56a 100644
---- a/drivers/spi/spi-pxa2xx.c
-+++ b/drivers/spi/spi-pxa2xx.c
-@@ -4,27 +4,27 @@
-  * Copyright (C) 2013, Intel Corporation
-  */
+diff --git a/drivers/spi/spi-atmel.c b/drivers/spi/spi-atmel.c
+index e34ab587b980..7a17c3e2a8ee 100644
+--- a/drivers/spi/spi-atmel.c
++++ b/drivers/spi/spi-atmel.c
+@@ -312,11 +312,9 @@ static bool atmel_spi_is_v2(struct atmel_spi *as)
+  * transmitted")  Not so!  Workaround uses nCSx pins as GPIOs; or newer
+  * controllers have CSAAT and friends.
+  *
+- * Since the CSAAT functionality is a bit weird on newer controllers as
+- * well, we use GPIO to control nCSx pins on all controllers, updating
+- * MR.PCS to avoid confusing the controller.  Using GPIOs also lets us
+- * support active-high chipselects despite the controller's belief that
+- * only active-low devices/systems exists.
++ * Even controller newer than ar91rm9200, using GPIOs can make sens as
++ * it lets us support active-high chipselects despite the controller's
++ * belief that only active-low devices/systems exists.
+  *
+  * However, at91rm9200 has a second erratum whereby nCS0 doesn't work
+  * right when driven with GPIO.  ("Mode Fault does not allow more than one
+@@ -1193,8 +1191,6 @@ static int atmel_spi_setup(struct spi_device *spi)
+ 	if (!as->use_cs_gpios)
+ 		csr |= SPI_BIT(CSAAT);
  
-+#include <linux/acpi.h>
- #include <linux/bitops.h>
--#include <linux/init.h>
--#include <linux/module.h>
-+#include <linux/clk.h>
-+#include <linux/delay.h>
- #include <linux/device.h>
--#include <linux/ioport.h>
--#include <linux/errno.h>
- #include <linux/err.h>
-+#include <linux/errno.h>
-+#include <linux/gpio/consumer.h>
-+#include <linux/gpio.h>
-+#include <linux/init.h>
- #include <linux/interrupt.h>
-+#include <linux/ioport.h>
- #include <linux/kernel.h>
-+#include <linux/module.h>
-+#include <linux/of_device.h>
- #include <linux/pci.h>
- #include <linux/platform_device.h>
-+#include <linux/pm_runtime.h>
-+#include <linux/slab.h>
- #include <linux/spi/pxa2xx_spi.h>
- #include <linux/spi/spi.h>
--#include <linux/delay.h>
--#include <linux/gpio.h>
--#include <linux/gpio/consumer.h>
--#include <linux/slab.h>
--#include <linux/clk.h>
--#include <linux/pm_runtime.h>
--#include <linux/acpi.h>
--#include <linux/of_device.h>
+-	/* DLYBS is mostly irrelevant since we manage chipselect using GPIOs.
+-	 */
+ 	csr |= SPI_BF(DLYBS, 0);
  
- #include "spi-pxa2xx.h"
- 
+ 	word_delay_csr = atmel_word_delay_csr(spi, as);
 -- 
 2.20.1
 
