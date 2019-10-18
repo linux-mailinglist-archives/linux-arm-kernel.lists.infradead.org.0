@@ -2,63 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A4F9DC033
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 10:44:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96394DC071
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 11:01:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tiPlrHWrVP7nsmxtOcvYjmRvFdGVmt287jSTsRCIAzo=; b=aPlM6A7um2VcqO
-	Xig7Twu5o5mSz5aNO7E+24zbPX2G5Y706X4NV2/CF0NdHq2KypbLUTODMWUgymAY11rLzgUIbe08P
-	XKgoBTz2uhMGC7Nb0pea1Cv8d4+oaQ5L4X2OKj4FRxvPaPbC8kmeVd35316prUFZhZSqM1ISN7SoC
-	rnTQAWoN9t5yC5BJDFZyui16Qu9dGZ9NiTZ4FtsygeU90DSNkZ1gFR46Gf22k7gX1b2iKJG8juhZJ
-	3UwBmBwwP7DKM1+GwcNMVme1s/k9r2nAG+L6XOHodGVBaIYNLqq97qQQ46kjA+BVgCI/SaZl3mAfu
-	TpWEIMQffdofArUctSBw==;
+	List-Owner; bh=ldayQCyMVKQ46nuVm+WRxPxkuX1YW3r9fDJltuHWU9U=; b=S+EKxvVfg2GuTC
+	PZpourDZR/0QskLFZeHGgdLNhiyxzvyG40H+HculHOAQRgB6LiE2o6udtqzvvu8BtSRvFIKnjnzdN
+	4JYGBwvg6MsLJzmKZRFeBbmiWfkg+CEymxSi2G1JhNZlOBTxB39xOXG/rDBgsQclINYh33aG4qP1x
+	+xBhGHfa8iYlblFq3N43PdT0lElE4GnGHcK7koF6aBKiE+q8egGdYuEsv3poNRQDgjuI6T+afqwe5
+	tinsl5FWHphoyQf2HH3yLNoRqMwPIfj8acUlSe8P9UiXUUyNycDoivwAO2ojG88Nyj+0mxIihTm/S
+	K/BS5w4ATeRlJBYVCATg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLNrz-0005a0-Vv; Fri, 18 Oct 2019 08:44:23 +0000
-Received: from mga09.intel.com ([134.134.136.24])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLNrq-0005ZW-SR
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 08:44:16 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga006.fm.intel.com ([10.253.24.20])
- by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 18 Oct 2019 01:44:13 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.67,311,1566889200"; d="scan'208";a="397870720"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by fmsmga006.fm.intel.com with ESMTP; 18 Oct 2019 01:44:05 -0700
-Received: from andy by smile with local (Exim 4.92.2)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1iLNrf-0008LD-3B; Fri, 18 Oct 2019 11:44:03 +0300
-Date: Fri, 18 Oct 2019 11:44:03 +0300
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-Subject: Re: [PATCH 00/22] Stop using input_polled_dev in polling drivers
-Message-ID: <20191018084403.GR32742@smile.fi.intel.com>
-References: <20191017204217.106453-1-dmitry.torokhov@gmail.com>
+	id 1iLO8V-0003lB-VD; Fri, 18 Oct 2019 09:01:28 +0000
+Received: from [217.140.110.172] (helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iLO8N-0003jQ-IQ
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 09:01:21 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8B6653E8;
+ Fri, 18 Oct 2019 02:01:07 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ D87763F718; Fri, 18 Oct 2019 02:01:05 -0700 (PDT)
+Date: Fri, 18 Oct 2019 10:01:03 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Jeremy Linton <jeremy.linton@arm.com>
+Subject: Re: Relax CPU features sanity checking on heterogeneous architectures
+Message-ID: <20191018090103.GC19734@arrakis.emea.arm.com>
+References: <b3606e76af42f7ecf65b1bfc2a5ed30a@codeaurora.org>
+ <20191011105010.GA29364@lakrids.cambridge.arm.com>
+ <20191011143343.541da66c@why>
+ <20191011135431.GB33537@lakrids.cambridge.arm.com>
+ <aee2d915-3801-cc35-2a37-0c7d0ad7488e@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191017204217.106453-1-dmitry.torokhov@gmail.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+In-Reply-To: <aee2d915-3801-cc35-2a37-0c7d0ad7488e@arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_014414_960146_75C3E60E 
-X-CRM114-Status: GOOD (  12.49  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191018_020119_694840_AB080A3C 
+X-CRM114-Status: GOOD (  26.59  )
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.24 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,100 +65,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sven Van Asbroeck <TheSven73@gmail.com>, Jacky Bai <ping.bai@nxp.com>,
- "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
- Jonathan Bakker <xc-racer2@live.ca>, Marco Felsch <m.felsch@pengutronix.de>,
- Stefan Agner <stefan@agner.ch>, Eric Anholt <eric@anholt.net>,
- Jilayne Lovejoy <opensource@jilayne.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Miloslav Trmac <mitr@volny.cz>, Anders Roxell <anders.roxell@linaro.org>,
- Alexander Shiyan <shc_work@mail.ru>, YueHaibing <yuehaibing@huawei.com>,
- Luca Weiss <luca@z3ntu.xyz>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- linux-arm-kernel@lists.infradead.org, linux-input@vger.kernel.org,
- Jeff LaBundy <jeff@labundy.com>, Mukesh Ojha <mojha@codeaurora.org>,
- Brian Masney <masneyb@onstation.org>, Pavel Machek <pavel@ucw.cz>,
- Alexios Zavras <alexios.zavras@intel.com>, Steve Winslow <swinslow@gmail.com>,
- Ronald =?iso-8859-1?Q?Tschal=E4r?= <ronald@innovation.ch>,
- Martin Kepplinger <martink@posteo.de>, Allison Randal <allison@lohutok.net>,
- Dong Aisheng <aisheng.dong@nxp.com>, Anson Huang <Anson.Huang@nxp.com>,
- Richard Fontana <rfontana@redhat.com>,
- Maximilian Luz <luzmaximilian@gmail.com>, linux-kernel@vger.kernel.org,
- Luis Chamberlain <mcgrof@kernel.org>, Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- =?utf-8?B?UGF3ZcWC?= Chmiel <pawel.mikolaj.chmiel@gmail.com>,
- Enrico Weigelt <info@metux.net>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>, rnayak@codeaurora.org,
+ suzuki.poulose@arm.com, Marc Zyngier <maz@kernel.org>,
+ linux-kernel@vger.kernel.org, bjorn.andersson@linaro.org,
+ linux-arm-msm@vger.kernel.org, andrew.murray@arm.com, will@kernel.org,
+ Dave.Martin@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 17, 2019 at 01:41:54PM -0700, Dmitry Torokhov wrote:
-> Input devices now support polling mode natively (via input_setup_polling
-> API), and input_polled_dev implementation is going away. This series
-> switches drivers found in drivers/input to the new scheme.
-> 
+On Thu, Oct 17, 2019 at 04:39:23PM -0500, Jeremy Linton wrote:
+> On 10/11/19 8:54 AM, Mark Rutland wrote:
+> > On Fri, Oct 11, 2019 at 02:33:43PM +0100, Marc Zyngier wrote:
+> > > On Fri, 11 Oct 2019 11:50:11 +0100
+> > > Mark Rutland <mark.rutland@arm.com> wrote:
+> > > > On Fri, Oct 11, 2019 at 11:19:00AM +0530, Sai Prakash Ranjan wrote:
+> > > > > On latest QCOM SoCs like SM8150 and SC7180 with big.LITTLE arch, below
+> > > > > warnings are observed during bootup of big cpu cores.
+> > > > 
+> > > > For reference, which CPUs are in those SoCs?
+> > > > 
+> > > > > SM8150:
+> > > > > 
+> > > > > [    0.271177] CPU features: SANITY CHECK: Unexpected variation in
+> > > > > SYS_ID_AA64PFR0_EL1. Boot CPU: 0x00000011112222, CPU4: 0x00000011111112
+> > > > 
+> > > > The differing fields are EL3, EL2, and EL1: the boot CPU supports
+> > > > AArch64 and AArch32 at those exception levels, while the secondary only
+> > > > supports AArch64.
+> > > > 
+> > > > Do we handle this variation in KVM?
+> > > 
+> > > We do, at least at vcpu creation time (see kvm_reset_vcpu). But if one
+> > > of the !AArch32 CPU comes in late in the game (after we've started a
+> > > guest), all bets are off (we'll schedule the 32bit guest on that CPU,
+> > > enter the guest, immediately take an Illegal Exception Return, and
+> > > return to userspace with KVM_EXIT_FAIL_ENTRY).
+> > 
+> > Ouch. We certainly can't remove the warning untill we deal with that
+> > somehow, then.
 
-For all I have been Cc'ed
-Acked-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Luckily, qemu refuses to start a guest on two different CPU types.
 
+> > > Not sure we could do better, given the HW. My preference would be to
+> > > fail these CPUs if they aren't present at boot time.
+
+That's my preference as well.
+
+> > I agree; I think we need logic to check the ID register fields against
+> > their EXACT, {LOWER,HIGHER}_SAFE, etc rules regardless of whether we
+> > have an associated cap. That can then abort a late onlining of a CPU
+> > which violates those rules w.r.t. the finalised system value.
 > 
-> Dmitry Torokhov (21):
->   Input: raspberrypi-ts - switch to using polled mode of input devices
->   Input: sur40 - switch to using polled mode of input devices
->   Input: ts4800-ts - switch to using polled mode of input devices
->   Input: tsc6507x-ts - switch to using polled mode of input devices
->   Input: adc-keys - switch to using polled mode of input devices
->   Input: clps711x-keypad - switch to using polled mode of input devices
->   Input: jornada680_kbd - switch to using polled mode of input devices
->   Input: gpio_keys_polled - switch to using polled mode of input devices
->   Input: apanel - switch to using polled mode of input devices
->   Input: wistron_btns - switch to using polled mode of input devices
->   Input: cobalt_btns - convert to use managed resources
->   Input: cobalt_btns - switch to using polled mode of input devices
->   Input: sgi_btns - switch to using managed resources
->   Input: sgi_btns - switch to using polled mode of input devices
->   Input: rb532_button - switch to using managed resources
->   Input: rb532_button - switch to using polled mode of input devices
->   Input: gpio_decoder - switch to using polled mode of input devices
->   Input: mma8450 - switch to using polled mode of input devices
->   Input: bma150 - switch to using polled mode of input devices
->   Input: kxtj9 - switch to using managed resources
->   Input: kxtj9 - switch to using polled mode of input devices
+> Except one of the cases is the user who doesn't care about aarch32 @ el2/1
+> and just wants to add another core to their 64-bit "clean" OS.
 > 
-> Jonathan Bakker (1):
->   Input: bma150 - use managed resources helpers
+> So my $.02 is the online should only fail if someone has actually started a
+> 32-bit guest on the machine.
+
+I don't really think it's worth the hassle. This could even be racy
+(32-bit guest starting at the same time with a CPU being onlined), so it
+needs extra care.
+
+If you have such platform, just make sure that you don't have
+incompatible CPUs coming up late (during boot it should be fine).
+
+> > I suspect that we may want to split the notion of
+> > safe-for-{user,kernel-guest} in the feature tables, as if nothing else
+> > it will force us to consider those cases separately when adding new
+> > stuff.
 > 
->  drivers/input/keyboard/Kconfig             |   4 -
->  drivers/input/keyboard/adc-keys.c          |  36 ++--
->  drivers/input/keyboard/clps711x-keypad.c   |  70 +++----
->  drivers/input/keyboard/gpio_keys_polled.c  |  65 +++---
->  drivers/input/keyboard/jornada680_kbd.c    |  37 ++--
->  drivers/input/misc/Kconfig                 |  15 --
->  drivers/input/misc/apanel.c                | 153 ++++++--------
->  drivers/input/misc/bma150.c                | 190 +++++------------
->  drivers/input/misc/cobalt_btns.c           |  73 +++----
->  drivers/input/misc/gpio_decoder.c          |  42 ++--
->  drivers/input/misc/kxtj9.c                 | 224 ++++++---------------
->  drivers/input/misc/mma8450.c               | 101 +++++-----
->  drivers/input/misc/rb532_button.c          |  48 ++---
->  drivers/input/misc/sgi_btns.c              |  54 ++---
->  drivers/input/misc/wistron_btns.c          |  51 ++---
->  drivers/input/touchscreen/Kconfig          |   4 -
->  drivers/input/touchscreen/raspberrypi-ts.c |  38 ++--
->  drivers/input/touchscreen/sur40.c          |  92 +++++----
->  drivers/input/touchscreen/tps6507x-ts.c    |  36 ++--
->  drivers/input/touchscreen/ts4800-ts.c      |  68 ++++---
->  20 files changed, 557 insertions(+), 844 deletions(-)
-> 
-> -- 
-> 2.23.0.866.gb869b98d4c-goog
-> 
+> As i'm sure everyone knows, this is all going to happen again with el0
+> support. I wonder if some of this more "advanced" functionality should be
+> buried behind EXPERT. At least on ACPI its possible to tell at early boot if
+> the machine is heterogeneous (not necessarily in which ways) and just
+> automatically sanitize away 32-bit support and some of the stickier things
+> when a heterogeneous machine is detected.
+
+We should improve (remove) the warnings for things we know the kernel
+can handled during boot. For example, 32-bit not available on all CPUs
+during boot should be fine as we just disable the feature. However, late
+onlining of a CPU that does not support the already advertised features
+should be blocked.
 
 -- 
-With Best Regards,
-Andy Shevchenko
-
-
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
