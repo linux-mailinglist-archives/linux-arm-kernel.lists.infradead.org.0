@@ -2,84 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 206F5DCEDC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 21:00:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9405DCEE3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 21:00:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=yC/Sxj3hRZfeM2lWp2lwlE00/DWuEKxgseI1usWq5sM=; b=EoNK6LwzCsYebhFCK2XviJWUv7
-	Zt45mLfpKhH4NCsGAlB25n5qeVPvECyA8dXkNBKYnSblmmIVgMklah+ZTSMlvuuboTe/qsqmYMBGc
-	I8MqwaI3EX2XcLZpBmcR+OngJkpEPAorAqst4V9zrt5GgLu8pZkhkdLyKnZLy7BBpYRilpeOr/HoC
-	AXStlCTC1un9UANia+SjFQN/7s0F8ro8l4HXG+8OSOSdTyDsbvD06799SeBGfTsaFAESXey0CxYxC
-	hBINuD7H2baLmAk0SNIXYz6bgZfFI5CENmxudTC8hMr3q3pXg7wd5nyFjHPcFi9l9roA/NJERT648
-	ng/+l8tA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0P8ktVvkHOR0sN8DddpiAIyIWh+yJhUbNZ9j1f/y1Q0=; b=WtdUrwDPQ0+JbY
+	diM1xFaPAQx3l2YtV93lhsaHQ5F218noCvLQaPhATQ9jqwsShS891MOtGmFnlKOUqsfWtxoPZXK9+
+	KbmN0NQ55SdN8bej3bEYpn5xQ7Sj4MNBjevBJe/8X3XmzxZEcBHi+QV8/Oh4hePK4rFSw+D0oI/tk
+	MJn4KlmuZPJiP5OljU8s9i4Pek2gHOCeztucs29Sf2IV75nz8uOK2c5ed9iLIsfkiXMjQmQiyG5yR
+	hCJOS91QjWF1ODsmiCnzORJKVgwmRWwetV1QQwTa8s9iV8506GIEI0VbvkjCmqvNRluqcZPVXO6Yt
+	H3nj2UKKNKYIG7ItlFfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLXTj-0003S8-1t; Fri, 18 Oct 2019 18:59:59 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iLXUc-0005Jo-S7; Fri, 18 Oct 2019 19:00:54 +0000
+Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLXTZ-0003RS-Cl
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 18:59:50 +0000
-Received: by mail-wm1-x342.google.com with SMTP id r19so7217795wmh.2
+ id 1iLXUR-0005JA-9p
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 19:00:44 +0000
+Received: by mail-ua1-x944.google.com with SMTP id n2so2036275ual.11
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 11:59:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=tZnkkMS8Ppjf38TtJcQbsEMS2EZYYG5QiaTxSNSCmAU=;
- b=rrxq9qqc7DgaH0HdEaOBvv78Dadshyt0uH4Z2FokNryqzqMWRO9eBvltcFm378Xa++
- bwaJgv2+CmHnK4W62vOlGirt6vd3UCbbdZ17FAS7Tnxhlnwmn6t2YgwG2KXuUqv/xh8/
- JWMuZtrDA78BqXBQhp5njd+VT24TGBglgmNqUCNydzutvdXmW1FqwEczsgajwiwItPje
- 1xuEjON5lFv9tDjd8ilU5/Gh8uJItE6kxL4/1KehGMCuhIroFz/aqjqNaQ0JB32vMbSq
- aSCqW3xJGB/xwuuw0EmLIAET75ep0kSOzGDGZS4YwKGHTymaRw5Pb2V3rjqLclTaIJi0
- RTUg==
+ Fri, 18 Oct 2019 12:00:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=dHnooVFY2SD/hhEM3K3r0PH8N73JFv2NbOv8bRM4m2E=;
+ b=fGjlwqaPn26KxRb9o+F4zrhfo5SkElhAWo4zrZYkQX9pYzl+Gat5G9cEzwzzgLT0yN
+ 01vXJtveJQV2qNvuL3dsYa3uHnA44CbQiyZWnm0OfAnXngfbQBE6/GoC7xkKTjBJoQ1W
+ I3TlO2mOikI6Kr/w+ct+2TTOTmiNs0XrL0v8Qsjwm5i6295ZB9suC9+VQPpZngTAqbXp
+ lbTN8AhrIsPleMkGbxdHNZqq0UgR8TbuoHXfoDLAHfBp5Dt4CXqh/ghNRZE/atlkwC4C
+ f/z8a9w78sIenvmPm6uGln+51flj9Z7ABSXfofYGZvMWcJmJ0vLmRcx9Etw4H3lXK2ux
+ qiHQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=tZnkkMS8Ppjf38TtJcQbsEMS2EZYYG5QiaTxSNSCmAU=;
- b=PCbf8pthAN3WIvFgvIg+EF2GpzdyKWacn4Z468IB3XNyizSDZkTxZ4N05FgHgcDHHk
- MtUTEdQqEWcS0UZKweT2CU0/1QvzQRfASMSPcCm6GCZjUF3yXvouHw4MIOmDB89tx31a
- OvtmTWiTFYy5cg817jVgpBYDLDhJj8Vq2vE9QyM4OTQsyiOsNufMYcpD+kPCIsGO8bIE
- r69QQxtkzOvPs/kwH1Cku1xhm8QlK5E7Uk8PhYTnxSe0P5lKgXmJ+5x9cf2kDiTOqj8P
- VlZfi7caxdQOhYLebKxKBU9Asfz5ezC+/H+syj6RTawPEoF2E2niMyD1dNM9rwsPc7w1
- C3OQ==
-X-Gm-Message-State: APjAAAWyvqR2axL1Ug5L4K6WStP8qrMdzURFWISljaR51rvEXiXKSFez
- t/kbuZgGnWpAtczQJSIy7XpXNN1/
-X-Google-Smtp-Source: APXvYqwOa7xYCv/z3IBAcMPtD7kUb+dbcqrunj0PNN8ffzwuvTxLzcPJEazdIN4Y+Utte6EaBlzaBg==
-X-Received: by 2002:a1c:5609:: with SMTP id k9mr8690094wmb.103.1571425187005; 
- Fri, 18 Oct 2019 11:59:47 -0700 (PDT)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id a204sm8327224wmh.21.2019.10.18.11.59.43
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 18 Oct 2019 11:59:45 -0700 (PDT)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: bcm-kernel-feedback-list@broadcom.com, Stefan Wahren <wahrenst@gmx.net>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Eric Anholt <eric@anholt.net>, Ray Jui <rjui@broadcom.com>,
- Scott Branden <sbranden@broadcom.com>, Pavel Machek <pavel@ucw.cz>
-Subject: Re: [PATCH] ARM: dts: bcm2837-rpi-cm3: Avoid leds-gpio probing issue
-Date: Fri, 18 Oct 2019 11:59:41 -0700
-Message-Id: <20191018185941.14223-1-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <1570964003-20227-1-git-send-email-wahrenst@gmx.net>
-References: <1570964003-20227-1-git-send-email-wahrenst@gmx.net>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=dHnooVFY2SD/hhEM3K3r0PH8N73JFv2NbOv8bRM4m2E=;
+ b=tpqC/teudn7u88gRIEmFo5UyHZ8QOwLDBa8bGbvkdmyvhPnM5h22rqimrh1dMZyBWA
+ PGZbsWwe8glAD6Xa1Dpskzw1n32QIRY+B1KdcvzPtDdY3UAMAj4tNWxdkGzQ2tV9RHSP
+ CiW9IdaHLw1V8ZCo5DMSlG/yWJ0nR/4HCUqSQ4CXrMyXd9/H9VHhMXtwAxW0e+u9iZJy
+ +GsOa84QtTC29NhzPTM8alTZVlBigaHFt9/CuUTUzVX4ytqYiKrMsNOwGu6V4ZQaZRdH
+ lbdmHOOtMw6BRynZFz5yrwfjMQ2g9RLY59CbADP+aYKUwxgEqBoUz3jBb0df4mSV/vqa
+ C/Nw==
+X-Gm-Message-State: APjAAAUfuFg9BgXjGTjOyI5jWWIbrymZYVBhVXYfJF0i9C1CAccTcTr0
+ 9qBvyAj8N0RROtwW41ADH4LE+jfVE08M1ci9Rd6yXA==
+X-Google-Smtp-Source: APXvYqy+QiLkN9pfvjcYpnB+QYepyp79m5l6k8r6HsNNtj0nqOOoe5lpxNRIDuav5cK0cYo+BuFsIE1uUC/SJFG20xg=
+X-Received: by 2002:a1f:b202:: with SMTP id b2mr6191356vkf.59.1571425241664;
+ Fri, 18 Oct 2019 12:00:41 -0700 (PDT)
+MIME-Version: 1.0
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20191018161033.261971-6-samitolvanen@google.com>
+ <CAKwvOd=SZ+f6hiLb3_-jytcKMPDZ77otFzNDvbwpOSsNMnifSg@mail.gmail.com>
+In-Reply-To: <CAKwvOd=SZ+f6hiLb3_-jytcKMPDZ77otFzNDvbwpOSsNMnifSg@mail.gmail.com>
+From: Sami Tolvanen <samitolvanen@google.com>
+Date: Fri, 18 Oct 2019 12:00:30 -0700
+Message-ID: <CABCJKuf1cTHqvAC2hyCWjQbNEdGjx8dtfHGWwEvrEWzv+f7vZg@mail.gmail.com>
+Subject: Re: [PATCH 05/18] arm64: kbuild: reserve reg x18 from general
+ allocation by the compiler
+To: Nick Desaulniers <ndesaulniers@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_115949_453846_C674F6E4 
-X-CRM114-Status: GOOD (  15.33  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191018_120043_362826_FD921508 
+X-CRM114-Status: GOOD (  13.37  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -89,6 +86,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,39 +99,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- Linus Walleij <linus.walleij@linaro.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Dan Murphy <dmurphy@ti.com>,
- linux-leds@vger.kernel.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Kernel Hardening <kernel-hardening@lists.openwall.com>,
+ LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, 13 Oct 2019 12:53:23 +0200, Stefan Wahren <wahrenst@gmx.net> wrote:
-> bcm2835-rpi.dtsi defines the behavior of the ACT LED, which is available
-> on all Raspberry Pi boards. But there is no driver for this particual
-> GPIO on CM3 in mainline yet, so this node was left incomplete without
-> the actual GPIO definition. Since commit 025bf37725f1 ("gpio: Fix return
-> value mismatch of function gpiod_get_from_of_node()") this causing probe
-> issues of the leds-gpio driver for users of the CM3 dtsi file.
-> 
->   leds-gpio: probe of leds failed with error -2
-> 
-> Until we have the necessary GPIO driver hide the ACT node for CM3
-> to avoid this.
-> 
-> Reported-by: Fredrik Yhlen <fredrik.yhlen@endian.se>
-> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
-> Fixes: a54fe8a6cf66 ("ARM: dts: add Raspberry Pi Compute Module 3 and IO board")
-> Cc: Linus Walleij <linus.walleij@linaro.org>
-> Cc: Krzysztof Kozlowski <krzk@kernel.org>
-> ---
+On Fri, Oct 18, 2019 at 10:32 AM 'Nick Desaulniers' via Clang Built
+Linux <clang-built-linux@googlegroups.com> wrote:
+> > and remove the mention from
+> > the LL/SC compiler flag override.
+>
+> was that cut/dropped from this patch?
+>
+> >
+> > Link: https://patchwork.kernel.org/patch/9836881/
+>
+> ^ Looks like it. Maybe it doesn't matter, but if sending a V2, maybe
+> the commit message to be updated?
 
-Applied to devicetree/fixes, thanks!
---
-Florian
+True. The original patch is from 2017 and the relevant part of
+arm64/lib/Makefile no longer exists. I'll update this accordingly.
+
+> I like how this does not conditionally reserve it based on the CONFIG
+> for SCS.  Hopefully later patches don't wrap it, but I haven't looked
+> through all of them yet.
+
+In a later patch x18 is only reserved with SCS. I'm fine with dropping
+that patch and reserving it always, but wouldn't mind hearing thoughts
+from the maintainers about this first.
+
+Sami
 
 _______________________________________________
 linux-arm-kernel mailing list
