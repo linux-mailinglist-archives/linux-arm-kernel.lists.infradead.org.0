@@ -2,51 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10BE9DC013
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 10:35:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 192D9DC01B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 10:38:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DK6Rv0EChfUQ0ZSCh4r57cLuoyqhgkjCadV4+FMvGYk=; b=MaFDhl5LerjbFE
-	6wp0KopgGw+K+5SPviwc1dZ86+0TqAs0L0jm6ERrRRyTjVGPRwSovdcoPH+qwKsGYNNj1XdFNdUZb
-	/oM/+IBvk/puo+wLAY3+jaNn/CPHK58B6rlhFzneLN301c9bIDRlpoCdQwe6dm+jwuqQR3CCfg08Q
-	Io9/+uNWLxujBIrTHLzR0jBp+0Kce/a2m5zKXug3hQ4Co6q7WrknThUrpJVLz+B9QBko5IqVy3hs0
-	f+DDUfqy/CyR+M/shckV7al3zMFXLj2Rh28Rzx1Wu1EhG8h7nnv4vmuZdlkG47htFp4zKYj0mHl+S
-	4BGGi5xpgVcifKvIPqqw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=qABCYUP9tL7A8ul7Vxc5bZ86m6BDOeUWwzYMzT82jU0=; b=pT1I6hdsiCzN+3BObjhrMyc5E
+	TSngl9fAeLvzPDLCPTpGw+ZeXlN7JJHppck3Wx1ZwxgC5BIBdFeFuf1ChaIHfDsGgw/cfV/xRNru/
+	zxrtwdktWZlF1cUMnuc/RV4EMpMWVbEmMSf5pHHCLSyviAzN+/yD6mzzIqtAsl7UxTxXePEPt/W/X
+	Ld6CDXZryexomM5MFg0QPo9RvGKzsltZs/zoFe5fB1glso8IOj4MDvqVGsIUzIWnliFWh5OI+JOXo
+	JJHOvX4DyI6GsDlSCslSxxdZEGQ7ROvcNq0tlolyrcvM91b5SS+g/agqcywsCJMkZ9KkqclFs7ruE
+	3yB7i58PQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLNjC-0001mW-Rb; Fri, 18 Oct 2019 08:35:18 +0000
-Received: from mail-sz.amlogic.com ([211.162.65.117])
+	id 1iLNmV-0003UK-Ee; Fri, 18 Oct 2019 08:38:43 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLNi4-0000ST-W3; Fri, 18 Oct 2019 08:34:10 +0000
-Received: from droid12-sz.software.amlogic (10.28.8.22) by mail-sz.amlogic.com
- (10.28.11.5) with Microsoft SMTP Server id 15.1.1591.10;
- Fri, 18 Oct 2019 16:33:54 +0800
-From: Xingyu Chen <xingyu.chen@amlogic.com>
-To: Wim Van Sebroeck <wim@linux-watchdog.org>, Guenter Roeck
- <linux@roeck-us.net>, Kevin Hilman <khilman@baylibre.com>, Neil Armstrong
- <narmstrong@baylibre.com>
-Subject: [PATCH v2 4/4] arm64: dts: a1: add secure watchdog controller
-Date: Fri, 18 Oct 2019 16:33:41 +0800
-Message-ID: <1571387622-35132-5-git-send-email-xingyu.chen@amlogic.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1571387622-35132-1-git-send-email-xingyu.chen@amlogic.com>
-References: <1571387622-35132-1-git-send-email-xingyu.chen@amlogic.com>
+ id 1iLNmI-0003Sq-J6
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 08:38:32 +0000
+Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 8334FBB43E802C608D56;
+ Fri, 18 Oct 2019 16:38:22 +0800 (CST)
+Received: from [127.0.0.1] (10.202.227.179) by DGGEMS410-HUB.china.huawei.com
+ (10.3.19.210) with Microsoft SMTP Server id 14.3.439.0;
+ Fri, 18 Oct 2019 16:38:13 +0800
+Subject: Re: [PATCH v6 2/2] drivers/perf: Add CCPI2 PMU support in ThunderX2
+ UNCORE driver.
+To: Ganapatrao Kulkarni <gklkml16@gmail.com>, Will Deacon <will@kernel.org>
+References: <1571218608-15933-1-git-send-email-gkulkarni@marvell.com>
+ <1571218608-15933-3-git-send-email-gkulkarni@marvell.com>
+ <b8e1a637-faf4-4567-7d3e-a4f13dfa1cf0@huawei.com>
+ <CAKTKpr4QoTDjbSxO4CvSH2sNvmrTJKjxi+RZH4mYfyDaaN96Sw@mail.gmail.com>
+ <20191017154750.jgn6e3465qrsu53e@willie-the-truck>
+ <CAKTKpr5ntp5X6Lvp=rKT_F1E1ftdqtjSWTgpEOqEwaDMH2kc1w@mail.gmail.com>
+From: John Garry <john.garry@huawei.com>
+Message-ID: <f7c91a7d-1f0e-24be-1491-fd0dae7f1daf@huawei.com>
+Date: Fri, 18 Oct 2019 09:38:06 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.3.0
 MIME-Version: 1.0
-X-Originating-IP: [10.28.8.22]
+In-Reply-To: <CAKTKpr5ntp5X6Lvp=rKT_F1E1ftdqtjSWTgpEOqEwaDMH2kc1w@mail.gmail.com>
+X-Originating-IP: [10.202.227.179]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_013409_053301_99722D06 
-X-CRM114-Status: UNSURE (   7.32  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191018_013830_800138_06814581 
+X-CRM114-Status: GOOD (  14.98  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.191 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -59,43 +70,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Qianggui Song <qianggui.song@amlogic.com>, devicetree@vger.kernel.org,
- linux-watchdog@vger.kernel.org, Jianxin Pan <jianxin.pan@amlogic.com>,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Jian Hu <jian.hu@amlogic.com>, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org, Xingyu Chen <xingyu.chen@amlogic.com>,
- Jerome Brunet <jbrunet@baylibre.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
+ "corbet@lwn.net" <corbet@lwn.net>, Jan Glauber <jglauber@marvell.com>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Robert Richter <rrichter@marvell.com>,
+ Zhangshaokun <zhangshaokun@hisilicon.com>,
+ Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable secure watchdog controller for Meson-A1 SoC
+On 18/10/2019 05:21, Ganapatrao Kulkarni wrote:
+> Hi Will,
+>
+> On Thu, Oct 17, 2019 at 9:17 PM Will Deacon <will@kernel.org> wrote:
+>>
+>> On Thu, Oct 17, 2019 at 12:38:51PM +0530, Ganapatrao Kulkarni wrote:
+>>> On Wed, Oct 16, 2019 at 7:01 PM John Garry <john.garry@huawei.com> wrote:
+>>>>> +TX2_EVENT_ATTR(req_pktsent, CCPI2_EVENT_REQ_PKT_SENT);
+>>>>> +TX2_EVENT_ATTR(snoop_pktsent, CCPI2_EVENT_SNOOP_PKT_SENT);
+>>>>> +TX2_EVENT_ATTR(data_pktsent, CCPI2_EVENT_DATA_PKT_SENT);
+>>>>> +TX2_EVENT_ATTR(gic_pktsent, CCPI2_EVENT_GIC_PKT_SENT);
+>>>>> +
+>>>>> +static struct attribute *ccpi2_pmu_events_attrs[] = {
+>>>>> +     &tx2_pmu_event_attr_req_pktsent.attr.attr,
+>>>>> +     &tx2_pmu_event_attr_snoop_pktsent.attr.attr,
+>>>>> +     &tx2_pmu_event_attr_data_pktsent.attr.attr,
+>>>>> +     &tx2_pmu_event_attr_gic_pktsent.attr.attr,
+>>>>> +     NULL,
+>>>>> +};
+>>>>
+>>>> Hi Ganapatrao,
+>>>>
+>>>> Have you considered adding these as uncore pmu-events in the perf tool?
+>>>>
+>>> At the moment no, since the number of events exposed/listed are very few.
+>>
+>> Then sounds like a perfect time to nip it in the bud before the list grows
+>> ;)
+>
+> I had internal discussion with architecture team, they have confirmed
+> that, these are the only published events and no plan to add new.
+> However, If any such request comes from HW team in future, i will add
+> them to JSON files.
 
-Signed-off-by: Xingyu Chen <xingyu.chen@amlogic.com>
----
- arch/arm64/boot/dts/amlogic/meson-a1.dtsi | 6 ++++++
- 1 file changed, 6 insertions(+)
+Don't you find perf list is swamped with all the uncore events?
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-index 7210ad0..047c323 100644
---- a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-@@ -93,6 +93,12 @@
- 				clock-names = "xtal", "pclk", "baud";
- 				status = "disabled";
- 			};
-+
-+			watchdog {
-+				compatible = "amlogic,meson-sec-wdt";
-+				secure-monitor = <&sm>;
-+				status = "okay";
-+			};
- 		};
- 
- 		gic: interrupt-controller@ff901000 {
--- 
-2.7.4
+For Huawei platform, I find this:
+./perf list pmu | grep "Kernel PMU event" | grep hisi | wc -l
+648
+
+That's because we have so many instances of the same PMUs, not because 
+there are many events per PMU.
+
+TBH, I would like to delete all the events from the hisi uncore kernel 
+drivers, now that they're supported in the perf tool, but I think that 
+would constitute an ABI breakage.
+
+Maybe there is a way to hide them, but I couldn't find it.
+
+John
+
+>
+> I have incorporate all your previous comments, Can you please Ack and
+> queue it to 5.5?
+>
+>>
+>> If you can manage with these things in userspace, then I agree with John
+>> that it would be preferential to do it that way. It also offers more
+>> flexibility if we get the metricgroup stuff working properly (I think it's
+>> buggered for big/little atm).
+>>
+>> Will
+>
+> Thanks,
+> Ganapat
+>
+> .
+>
+
 
 
 _______________________________________________
