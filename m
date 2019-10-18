@@ -2,69 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43076DCA8D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 18:12:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4407DCA94
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 18:12:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eidiNV5JQXMGqkjWsKDBj+n7kFwkXj9f+4G5UQmtG8c=; b=MwhcinvNBh/K8U
-	i4JlOm8jimlK2k6Y0P3DFTDvr7QlMfyCOx5Zw3GWPcTMm8nFg9c9NJODRK0TuNWueoUc5/lZlWXz6
-	F/ax5ni4yH+EbFDwcrUX1Wi8JxNUrjdaufy2POqVd7L9M+3FfEJ6eNLoJ8Jhc6P4DecXmy9dolWgI
-	CqbK3A5ZTuQmd50pU5v7nsNOreDSFIDhlLTkniWC4BQRRrJk4UeJhSHXMUPtKJsdmyn7NE/we/fsz
-	z490y7hKfQ1i6iBnT4/arVmQ2CfXa6lQ84WWH0116jN8Pg+JNjGoGcZwLck3KoJBm89ZlvL+1c9eo
-	fdYBGicicF3dNBFy9jmA==;
+	List-Owner; bh=wtjMzzc59R2wxZq223KzbMKzGgoRoQAumIN1bbUiSTQ=; b=YdTmsmg8ha9tQ3
+	cq3Q2YIEy2Cl24iUKENCNjJJznDgl3KKAOMWwsyMHyAZVgsytCByxEKGq6Bzkp6hKpA0jfpkBYvsp
+	iFIDHwXZFdv/SIXXKU5xXFSB4yyfG0O/rWr/U6ncJqEI0P2ABOdrWjxiES4lknxxu+jYsdN/ZqOig
+	nQmoHQ70ssl27ehR6LqehPIs25qDrLX2ooPBlXq/2M5Zvuzljb6pJuCihaaV53nJL2493wiiMr46C
+	Mc+HyCM72swc4lJ6blwAf0XRFpXuohzLvRDZJGV+Cav1V4nKiSAonc9Ik1VkezWoNgn4EIza3tISY
+	eNEbNz9H/Jr+wpmactzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLUrt-0002tT-Aj; Fri, 18 Oct 2019 16:12:45 +0000
-Received: from mail-pf1-x44a.google.com ([2607:f8b0:4864:20::44a])
+	id 1iLUs4-0003H2-SV; Fri, 18 Oct 2019 16:12:56 +0000
+Received: from mail-vs1-xe49.google.com ([2607:f8b0:4864:20::e49])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLUqD-0001cU-Ti
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 16:11:03 +0000
-Received: by mail-pf1-x44a.google.com with SMTP id s139so4953202pfc.21
+ id 1iLUqI-0001fj-5j
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 16:11:08 +0000
+Received: by mail-vs1-xe49.google.com with SMTP id j2so1571140vso.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 09:10:59 -0700 (PDT)
+ Fri, 18 Oct 2019 09:11:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=SzRVhVCQSEs4UpxvfljRvYSxQu5VFVx82TZExeQC7I8=;
- b=TZOVdcpBJiow5T4VOPKVfmYmovhUmd2ZBG9xflMRKW8S5BQ2L7yu5g6JY0/TCCHH+I
- XufZXerCCZfchS8x9jnvOoLMze/QWKGKm/0eGk215XJdEA1kME5jv8jnjb92Pb1eVWkw
- yiTgUjP8Rao1lkPZ3wsgn20YfPu5vdw09AcOGQOKuwSW35OqEXFlPzTQhP7pZvaCNMAW
- MWtaplAUSr+50SFN34KRGzFF9OlQtJcKYXSWZanQMwKs4H+DZ9A3MX4sVyK4cRYJFJ+w
- rlR21WxyyCXlD1Tc/Mn6bTnrGGsiH8nauEVx60lyfrl/C39gDgUhzHfYMSQ6uZ9ljLwO
- QH/g==
+ :cc; bh=soVi6argGh8CkyJ/tZS/XQoN8aAv6F/7ncnrrIAGrbI=;
+ b=RTWmB+YRhbyTrupTegTePDqh83wahNiLo24V/vkd3XNh2/VjRfOzsP8l9UA07iBYVh
+ cNCOrmz1KApedjuZfTuf+oEAy7uJ9vOjlPpxsg7OkJReg5LlWaNnJSadKKQxT6uV8oo9
+ DYHGRvWBz3/GUdtlA0wIAJuRmYFSW5vXFhnZ39LEFxcVI9DqpO8eIN9kDWvp9NjS8BGy
+ xN5pkbK5dusYfEE++LF7k5cNY+Cu1x/v4ps1Ft2zcALY7q2NKOD2KsdADykKFGjX/ek9
+ pgnN2RfC3QCLk3Iaa8HyaKxHiBf6citZAP2zBGFrT6GXMyCWAMsRsDGnPTlW+RbabIhg
+ vExA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=SzRVhVCQSEs4UpxvfljRvYSxQu5VFVx82TZExeQC7I8=;
- b=jLIXIk2dMk0I4YsFRDyr8hGpWDToqdxrZ/LcyEmhB14Kl5n0oyR+ktgOnYVfyD19JL
- 6UgMGnKuzwv3dPsXZweLXUKqqEJtlZGalBCwQjond7VNqVe3MnYkyE9WE/ney8gLt5QE
- dMa3QAQ/+hzhuk7QQBZK6OKogwJR1TjfNWVxO3Zq+JRsDgKcBE+cbbMz+vcD7XoZyF6I
- IA/aWe+h/lLtSHaDyLOjxT0wstPF+QTguz4SgV8Ak657m8aF4ID7thPaSjRTLUzKY8B5
- bzttyuhX5Ra+9CFYRtdU6USmOzI6QCIw2675BDf9Wc7ZMqdtzFuX20S8w7juxrgfRy1Z
- DpnQ==
-X-Gm-Message-State: APjAAAVlaOQptXKBKWU6VVG025IfLUXohD073WjAv8lfv1ce6rcNHkYh
- l3UB39Ppu9lRMMaquQzSqlzx6F7O0in7mP/kZQM=
-X-Google-Smtp-Source: APXvYqymenYk+Nj4KHMBe+/txGcAk8emmf58ZAJAVtmISgexrXgZK+srN7qpXD3xJ732mL5rywUz419mv8CrbkTon24=
-X-Received: by 2002:a65:68c2:: with SMTP id k2mr10843389pgt.241.1571415058696; 
- Fri, 18 Oct 2019 09:10:58 -0700 (PDT)
-Date: Fri, 18 Oct 2019 09:10:19 -0700
+ bh=soVi6argGh8CkyJ/tZS/XQoN8aAv6F/7ncnrrIAGrbI=;
+ b=jqNSF7wRFfPPu3zvLfXFGNaozmB+0zyVeCoioNg+mn7OINoTLXNqmdNFofxJCc5tnY
+ dGdN6ykW0tnY3Ix7g1fPwwYy+2kdndr0d1v1awC533obdyPm2U84VUmaSn104mLf/mFn
+ avLFsA2Xzn1457Hul1jr+o057FfeqosZfEdmGLnDLSzTGy5pMe7ygJdKP4x4VqSVXwx8
+ pyBK64lNSvLbOnIZ5ilyCe4oefdt2H04ujSIjNYHoUlTK26cu40lzbCXKQp85TdOJ06v
+ /r4UxchobC9HXkwZ2IVsVDzuryJWOYGhoYx9cqLi8e+ddrxQCLf9RZiCgPp72XLGMuoH
+ sdvQ==
+X-Gm-Message-State: APjAAAUZUWvBTKfZ9I+lnq5DE9O17mlnjN0regE/GTIr70CYWK3vVA42
+ sIzrggA4PH/+kVVzVSksWnw//YkSVeYDGPrwBoI=
+X-Google-Smtp-Source: APXvYqzkAvflPUA4hxOT5c7IqsE0Ybkf3fYa0ytmTSeu2hOJz51kZPeU6sdMsbUTLU2Tls8gLg9QkcQsftcMtRZzrhY=
+X-Received: by 2002:a67:e34b:: with SMTP id s11mr5965401vsm.195.1571415062790; 
+ Fri, 18 Oct 2019 09:11:02 -0700 (PDT)
+Date: Fri, 18 Oct 2019 09:10:20 -0700
 In-Reply-To: <20191018161033.261971-1-samitolvanen@google.com>
-Message-Id: <20191018161033.261971-5-samitolvanen@google.com>
+Message-Id: <20191018161033.261971-6-samitolvanen@google.com>
 Mime-Version: 1.0
 References: <20191018161033.261971-1-samitolvanen@google.com>
 X-Mailer: git-send-email 2.23.0.866.gb869b98d4c-goog
-Subject: [PATCH 04/18] arm64: kernel: avoid x18 as an arbitrary temp register
+Subject: [PATCH 05/18] arm64: kbuild: reserve reg x18 from general allocation
+ by the compiler
 From: Sami Tolvanen <samitolvanen@google.com>
 To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
  Steven Rostedt <rostedt@goodmis.org>,
  Ard Biesheuvel <ard.biesheuvel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_091102_036067_C7C6684D 
-X-CRM114-Status: UNSURE (   8.64  )
+X-CRM114-CacheID: sfid-20191018_091106_339791_9026F713 
+X-CRM114-Status: UNSURE (   9.99  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -72,7 +73,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:44a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e49 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
@@ -110,34 +111,31 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 
-The code in __cpu_soft_restart() uses x18 as an arbitrary temp register,
-which will shortly be disallowed. So use x8 instead.
+Before we can start using register x18 for a special purpose (as permitted
+by the AAPCS64 ABI), we need to tell the compiler that it is off limits
+for general allocation. So tag it as 'fixed', and remove the mention from
+the LL/SC compiler flag override.
 
-Link: https://patchwork.kernel.org/patch/9836877/
+Link: https://patchwork.kernel.org/patch/9836881/
 Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
 ---
- arch/arm64/kernel/cpu-reset.S | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/arm64/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/kernel/cpu-reset.S b/arch/arm64/kernel/cpu-reset.S
-index 6ea337d464c4..32c7bf858dd9 100644
---- a/arch/arm64/kernel/cpu-reset.S
-+++ b/arch/arm64/kernel/cpu-reset.S
-@@ -42,11 +42,11 @@ ENTRY(__cpu_soft_restart)
- 	mov	x0, #HVC_SOFT_RESTART
- 	hvc	#0				// no return
+diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+index 2c0238ce0551..1c7b276bc7c5 100644
+--- a/arch/arm64/Makefile
++++ b/arch/arm64/Makefile
+@@ -55,7 +55,7 @@ endif
  
--1:	mov	x18, x1				// entry
-+1:	mov	x8, x1				// entry
- 	mov	x0, x2				// arg0
- 	mov	x1, x3				// arg1
- 	mov	x2, x4				// arg2
--	br	x18
-+	br	x8
- ENDPROC(__cpu_soft_restart)
+ KBUILD_CFLAGS	+= -mgeneral-regs-only $(lseinstr) $(brokengasinst)	\
+ 		   $(compat_vdso) $(cc_has_k_constraint)
+-KBUILD_CFLAGS	+= -fno-asynchronous-unwind-tables
++KBUILD_CFLAGS	+= -fno-asynchronous-unwind-tables -ffixed-x18
+ KBUILD_CFLAGS	+= $(call cc-disable-warning, psabi)
+ KBUILD_AFLAGS	+= $(lseinstr) $(brokengasinst) $(compat_vdso)
  
- .popsection
 -- 
 2.23.0.866.gb869b98d4c-goog
 
