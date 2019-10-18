@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B3CBDCBF7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 18:53:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA5B0DCBFC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 18:54:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PpKlIgfuDUAN0VflP2up7guMb6sApRIvZEQGmF3jBd8=; b=MY7rfzo8F0/NAb
-	XJRVfN8CPAPFJBtYPaFTqyPhel0hlSbf3ZFEFWOWRots25MtG9Lag1JD2heYQQ0WNfF1UZSFpbU5E
-	fF+4BnHWEE692fHtOGoths0+TWaiBW8gTu/upwP5Y87bjLVPVxC5DR9vmdbYy05DWuBdo5aWD3ooM
-	oa6e7nqrN02Shxa1mUZJWhDxBTlzcxkTS2VsfzCvx/46JOJJn2BxK7hcm/szQU3lpK+qN/EUNqFPc
-	J3qWvoXBNP0OslRWUXaOfeLuFfdcoBIhVIq3rv33/boVWAYj4U9uhuFsoU5XIRYoMdEDpav+z+gU1
-	cPufxyGtHJVKlq5gbPaQ==;
+	List-Owner; bh=GgQ7KHPbprGqjqIvA4zovoln4WgvRTpgPcDfzJoGZlc=; b=at2bQPZmYsF6Ki
+	jXndtcLJ1cMsa7wdUHvSVOzXz5PS8qMlyY5CXvidJWOM4L502+L8PnKQz7nSEVP6rJ4ChcazGQsmk
+	6vCK3y86GdfBt6htGXOyyN6ivnAcf2cj4s2mZdO2Mk2DRb+kV72yXgnvCVQi1kjsVlVWJ+c1SST8l
+	T2reWP1ZfKLzH5XBP7pBqwm3b62OR03Iz9kHPzS/LYD3ayWpfGPW823Sk4BLdXz9OZHBWCRkEZowK
+	3GK7vIF4vYLSQGHgC4sewLHTb63nHdUnMhPJ076m6qcmrV7LWkh+grwVHNmLyEbFdBOWG5VzRsbhO
+	5lXhERnpTQjsoOPikcdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLVVB-0003On-VN; Fri, 18 Oct 2019 16:53:21 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iLVWV-0003lP-Kb; Fri, 18 Oct 2019 16:54:43 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLVV2-0003Np-5G
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 16:53:13 +0000
-Received: by mail-pg1-x543.google.com with SMTP id e15so3664353pgu.13
+ id 1iLVWM-0003kj-KL
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 16:54:35 +0000
+Received: by mail-wr1-x441.google.com with SMTP id p14so7011375wro.4
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 09:53:11 -0700 (PDT)
+ Fri, 18 Oct 2019 09:54:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=NlVpUWWb77Jgx8c6AKiFTKsV64mXcIM59rzR3NbF5X0=;
- b=l/5bNc1UOgviL8cXU+xAaLQOtmOhi56H7mopre3Lu97/kYO2lo5DMOwuqzo16GPpU7
- en2sBDgJn/rwquPVBU6NOvsJuW2lX6njpbipp3wFM2DBhFIibFMM7Ji7fEC+5JJ3IyVd
- xmgPjfeDjfUjmiuPFwMOJKKQPuPQXWocZgmkWMoeUMAGd+Y1IMhD+QsOMDWHzASPJjmn
- lB5yUIilNr+WEfcrkyxzN7+9VZZe/t2KW0WOBj8DSGeKn0smaVryK+M4jM3Lud2alJ9k
- WAQharx87X1yFjofhhWaCKeNztbH7vyUakUyu1a+f2UZ/C/+XEK3z2xhCu3JouqnP4le
- Y57w==
+ bh=LS0jfvIIecs+OvBAsmjsVuR4UJ3S5OKog133XvRo+zI=;
+ b=G3ODp2LYYhc7I9PzVDJ1ElXhV/36MfDO5Zo+vFWbkekAoLjlWkEoBffhS1py5i3bS2
+ jAQtktHkDGE1f1XfFkeEXYYvsQoB4ESDm8sIs/CERJdxv+3OwYAAJRgmKnsPeIEJ1ygB
+ SFY96EOTdAs5J/F8BWWGtlAGW0TJ+2eIxcgUI6Epe4ECaeqI2fsxfRqI7gJ5jEKoUY8k
+ zWVzSBLaKivNJjdM7Wx9nfJjmP7vy9ZGYobrHtRh1UUOUZHzstZpT3xkkeRVA5zciy+I
+ 7Y22kqvci3fiWIDEspwZezDEVqouts6IsWsQoRRP0SGO6kK4Y4r4QEs64g65gedgA4th
+ B5PQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=NlVpUWWb77Jgx8c6AKiFTKsV64mXcIM59rzR3NbF5X0=;
- b=ryEap5aaLWXh/s5XCmvEpa1epOzyozDmlHlI9URPDYx5sNd3x0DGvueFSZVjeUljZi
- 07Yy+ashxhLnveKvWSxbTD9MMBER5HVRWZEv21HJ4N0AhVhAd8UP6Rq+j11FSeKxAIE3
- BM7S9IKKCSUmo2vsf0gSN3GHmX4piIMgSZdqJbC+IA05qnVlLI9lfyTU+OV4KeSR0fc/
- Qw1BnWEFdJOKZ4c6qRL2dQmRn+Qa0rT9x3XV1O58jBKn2OVDJ0Y6+DMhUgKfSX5RZXpS
- fLToL5umTWyFBNnw8eNUMce4yUoZTr1+rlQBzybrxfjXUwJC/32g0NHD7YFVtNRuh7w0
- eLMA==
-X-Gm-Message-State: APjAAAUlkmHbx/RDSRqmRoAMEHKaSyBPKrhxBpzqodvdVRllb4C0Idew
- GAxPp1yTFVqGrMz0MUJL5q+Rew==
-X-Google-Smtp-Source: APXvYqy4EO909F7HnCUZ2Fmo7UCAUkdG66jUJnEgoxHT/sDHoXa2mMyp6Et3xVZh7h0kG3B3iUDOAg==
-X-Received: by 2002:a17:90a:a00c:: with SMTP id
- q12mr12481013pjp.102.1571417590960; 
- Fri, 18 Oct 2019 09:53:10 -0700 (PDT)
-Received: from tuxbook-pro (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id k66sm6624950pjb.11.2019.10.18.09.53.09
+ bh=LS0jfvIIecs+OvBAsmjsVuR4UJ3S5OKog133XvRo+zI=;
+ b=NM3+80WrU3JmB155tbddWot9E26rnYOTmQrTMy7PUVCdTxYIE7yB2yFdQrGzg069Xq
+ uMB8b6tsD3DMnLKteoAo8sSK+QGpb06i2/AhbWkLJywr3GttIGJplZHlWXIFmG2yKavu
+ LB30OY1I2dcuVzYzAuYNI3ER/WmBnFI+CsELLqdewVu9LtZyPKKa4bqVUjOPuj4jDb92
+ m4l3XBg9Wbdt3WOGYWhMaoeys1gIrU358xqcnlmsRAASr4zQXKNkekD8ZOMljMTZgfj6
+ tYSFAHsuaa70HkTGWHGs5Jhjqfc4RJYN5p90nfYmBWBidLWXb96eDTq9rmH0vEfmLznp
+ cxKg==
+X-Gm-Message-State: APjAAAUc1uMwSVvipdDnW2HJd9NyxmlESkvSKvXGyIEE87BP0V4uCKQ1
+ HWU77p1NVsnHa5wIFfP3c+9u31135+AWWw==
+X-Google-Smtp-Source: APXvYqzO9oMRXBG5Ptw9stadi08HLw+TY4CT3ikXjwfWs4hMqXSJMurl7l53TfvcJx1KTtMRY2ITzQ==
+X-Received: by 2002:adf:d08d:: with SMTP id y13mr8293096wrh.138.1571417672706; 
+ Fri, 18 Oct 2019 09:54:32 -0700 (PDT)
+Received: from holly.lan (cpc141214-aztw34-2-0-cust773.18-1.cable.virginm.net.
+ [86.9.19.6])
+ by smtp.gmail.com with ESMTPSA id c4sm6007302wru.31.2019.10.18.09.54.31
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 18 Oct 2019 09:53:10 -0700 (PDT)
-Date: Fri, 18 Oct 2019 09:53:07 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Sibi Sankar <sibis@codeaurora.org>
-Subject: Re: [PATCH] arm64: defconfig: Enable Qualcomm remoteproc dependencies
-Message-ID: <20191018165307.GD1669@tuxbook-pro>
-References: <20191009001442.15719-1-bjorn.andersson@linaro.org>
- <95a80ff0e89a568d223fab6eb1f9362a@codeaurora.org>
+ Fri, 18 Oct 2019 09:54:31 -0700 (PDT)
+Date: Fri, 18 Oct 2019 17:54:30 +0100
+From: Daniel Thompson <daniel.thompson@linaro.org>
+To: Lee Jones <lee.jones@linaro.org>
+Subject: Re: [PATCH 2/4] mfd: cs5535-mfd: Remove mfd_cell->id hack
+Message-ID: <20191018165430.abyhbdodrjurx6g7@holly.lan>
+References: <20191018125608.5362-1-lee.jones@linaro.org>
+ <20191018125608.5362-3-lee.jones@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <95a80ff0e89a568d223fab6eb1f9362a@codeaurora.org>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <20191018125608.5362-3-lee.jones@linaro.org>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_095312_202917_5646B243 
-X-CRM114-Status: GOOD (  11.63  )
+X-CRM114-CacheID: sfid-20191018_095434_672556_AE92FFF0 
+X-CRM114-Status: GOOD (  14.78  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -100,49 +99,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel-owner@vger.kernel.org, Anson Huang <Anson.Huang@nxp.com>,
- Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
- Alex Elder <elder@linaro.org>, linux-kernel@vger.kernel.org,
- Maxime Ripard <mripard@kernel.org>,
- Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
- Dinh Nguyen <dinguyen@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
- linux-arm-msm@vger.kernel.org, Olof Johansson <olof@lixom.net>,
- Shawn Guo <shawnguo@kernel.org>, Leonard Crestez <leonard.crestez@nxp.com>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: arnd@arndb.de, linus.walleij@linaro.org, linux-kernel@vger.kernel.org,
+ broonie@kernel.org, dilinger@queued.net, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri 18 Oct 03:38 PDT 2019, Sibi Sankar wrote:
-
-> On 2019-10-09 05:44, Bjorn Andersson wrote:
-[..]
-> > diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-[..]
-> > @@ -780,6 +783,8 @@ CONFIG_PWM_ROCKCHIP=y
-> >  CONFIG_PWM_SAMSUNG=y
-> >  CONFIG_PWM_SUN4I=m
-> >  CONFIG_PWM_TEGRA=m
-> > +CONFIG_RESET_QCOM_AOSS=y
+On Fri, Oct 18, 2019 at 01:56:06PM +0100, Lee Jones wrote:
+> The current implementation abuses the platform 'id' mfd_cell member
+> to index into the correct resources entry.  If we place all cells
+> into their numbered slots, we can cycle through all the cell entries
+> and only process the populated ones which avoids this behaviour.
 > 
-> I should probably fix this ^^
+> Signed-off-by: Lee Jones <lee.jones@linaro.org>
+> ---
+>  drivers/mfd/cs5535-mfd.c | 31 +++++++++++++------------------
+>  1 file changed, 13 insertions(+), 18 deletions(-)
 > 
+> diff --git a/drivers/mfd/cs5535-mfd.c b/drivers/mfd/cs5535-mfd.c
+> index 2c47afc22d24..b01e5bb4ed03 100644
+> --- a/drivers/mfd/cs5535-mfd.c
+> +++ b/drivers/mfd/cs5535-mfd.c
+> @@ -115,16 +110,16 @@ static int cs5535_mfd_probe(struct pci_dev *pdev,
+>  		return err;
+>  
+>  	/* fill in IO range for each cell; subdrivers handle the region */
+> -	for (i = 0; i < ARRAY_SIZE(cs5535_mfd_cells); i++) {
+> -		int bar = cs5535_mfd_cells[i].id;
+> -		struct resource *r = &cs5535_mfd_resources[bar];
+> +	for (i = 0; i < NR_BARS; i++) {
+> +		struct mfd_cell *cell = &cs5535_mfd_cells[i];
+> +		struct resource *r = &cs5535_mfd_resources[i];
+>  
+> -		r->flags = IORESOURCE_IO;
+> -		r->start = pci_resource_start(pdev, bar);
+> -		r->end = pci_resource_end(pdev, bar);
+> +		if (!cell)
+> +			continue;
 
-Please do, afaict this driver should be tristate.
+cell will never be null. Should this be cell->num_resources instead?
 
-Regards,
-Bjorn
 
-> > +CONFIG_RESET_QCOM_PDC=m
-> >  CONFIG_RESET_TI_SCI=y
-> >  CONFIG_PHY_XGENE=y
-> >  CONFIG_PHY_SUN4I_USB=y
-> 
-> -- 
-> -- Sibi Sankar --
-> Qualcomm Innovation Center, Inc. is a member of Code Aurora Forum,
-> a Linux Foundation Collaborative Project.
+Daniel.
 
 _______________________________________________
 linux-arm-kernel mailing list
