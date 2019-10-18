@@ -2,72 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23426DCB11
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 18:32:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95522DCB09
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 18:31:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wLxKauKEOGd5dJIgeT2kYxVc9eWcIgDGy3ARDd75OFE=; b=V4RLdqIZwkffoQ
-	CTfa9ExP25zcP2dgeVsDHyRQroQB9EBL1Yki2TYvIoR2U/xZ4R4u6b7agjpdpIoV9y1h7jTtRCnvt
-	4zxaGJlXolzSE8mGcifq+1jvn/sF6lKJHpJLSs5vmMhl+/rDineZC3oAMl5ZxEF9IsulNBhx+oube
-	Hj4OBEwJlAOX7w6Dj6yDXKK5rm1sRQOARW8eBS+OmU9O6UcSMVBn9+N+w9q0oxPevrEph6Z6Kshfi
-	GXn/d7Ozl6bUYhdP3mXaxls+HHu4r4AZI3dQLDe1t41gKKxOGmD8U5gtC8ORauNO7dHGjFGT3LC1y
-	+jytbMjRBedzL8aWz3mQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=04V3ydgqO1wuZyVcR3VpPrvVR6LojBHfJK/YmhLZqq0=; b=quD
+	ca/79Pnds1o2LkXuIhQh+W3iXdyB3FxxhbXzSgErRpc+3LWJ5aMmw44xQO2iS9E1+PdKeCs/f2HVc
+	muI5n6BcyfcRRz0HwzvG07908OR/kPu8i8qbhJU6wtunG2Wa4mChzh1v9Y57uhwqeZebjFam/7mkJ
+	QDjaDFS1dP/Tp0BF5XG45aLCZr3UNtnOimMllycYBYH6tiKE1ViEzTPvwR/79DpZmw2VNxR93CJHs
+	0xRN119QWgGE3NaWK2TjWvDUYRrJMlE7SXRNpSHB8VC3KxHZQq8elfXNvt0kd80D/bnmT1eOtypx3
+	r9pkkQ99sjuCs0y9IGWcERyhUi4flcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLVBP-00017c-Q0; Fri, 18 Oct 2019 16:32:55 +0000
-Received: from mout.kundenserver.de ([212.227.17.10])
+	id 1iLV9c-0008En-Fe; Fri, 18 Oct 2019 16:31:04 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLVAD-0000Ix-Rp
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 16:31:46 +0000
-Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
- (mreue107 [212.227.15.145]) with ESMTPA (Nemesis) id
- 1M6VNX-1iNR6h1hd3-006tHV; Fri, 18 Oct 2019 18:31:38 +0200
-From: Arnd Bergmann <arnd@arndb.de>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 6/6] ARM: orion: unify Makefile/Kconfig files
-Date: Fri, 18 Oct 2019 18:29:19 +0200
-Message-Id: <20191018163047.1284736-6-arnd@arndb.de>
-X-Mailer: git-send-email 2.20.0
-In-Reply-To: <20191018163047.1284736-1-arnd@arndb.de>
-References: <20191018163047.1284736-1-arnd@arndb.de>
-MIME-Version: 1.0
-X-Provags-ID: V03:K1:TuAspewuqamCkrx/L3rEFa20b0IEdAzjEp5Ax35Eax97TyknExo
- gu9rruc4dHOViCbXKw+zFUxTcxQMIZRxRcenbZPsB5vap29EcChhJ2OtGRVa23QxEgPwEOn
- 2Se2m7JdCDRdexlhC7GFoCbzh455TGBEptrFcaJ8DeswfZ2upE4P5z842xNGkNmQ9WD/5li
- hhWFHwkvo2QIMruats2UQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:kdju0oXzgYg=:BqOAqLqMsSQt/gCpjxHBGq
- YeRxManuVjEw9CwFxmfC5zlBP4jyfsopEFM+NlgGaxbzgzsUQl0zjbF4K7DISv4wWyM+VuNko
- 7wIBwZ6yAclzicUyMQqYkz4USMUPxhbYuhBAbsS+OuLTyFtp42O3lCwXL8LDLNUKXXb9sIT27
- xIJAm/3+2p4gutoKZ7oiHc69DvDmw5t1Y+hY8ZQ4k5KqJ7oM8bqQ/kas9IrcakHozzsdaEE3C
- b/tMa+41QPoUZgJgfLwIFbnvf/9p8sQPsWQS4tsdw7kDBt5yqGcy3mRUddbuenBx1p9ywwauk
- GHwJoZvpsIWBcCVFLb+qGuQDQsKhs0i/2RB2kQWn4G1kS94N+nUJQG0sJCjfA+YrBcw0evska
- UOZGh4jXoi1T5bAx4R60OLQ6s687E/IqxuSsUJx3EBpWOfraIK1WZIiFhp2wmN8AKT1NLXKvU
- /574RVdAB35T+glaFdHMtKfe4ZeMuiHMv1mB/n9OLdMdF5VCWAYPW6jAe/pPs/GaJFZCocTlt
- +yitiTiIOt6GB+8OLygamOYbKZnskMit3c98T98AdiMlezvsTJA90C3RRDPetxXwgrrl83avx
- Wk3gkcSWA3VDNfc5Ah6WjOZShvfJ6y76xHL3nat5Nv2nYrJbdChuq4hWDBHbqichjJUKqsTd5
- QRQUGa/VVOZlLEySNvPfogmcEKcz620D7uB6JzeNhUI4Rq3DEPe/y68A5eaAvVB0NjtoEu/MU
- L0maSUChlArky+n3jUnFDQZHzfuom/hxknNOGa5p6CgAiDMXqY8wvYZQ0Xoe8ShzxmyKhICGs
- 7F1qE5tJmbc+6z5IoFYtcnVs8F7nYzBvuPtgWlsnLiSsoHLsrbAobpgNy6vmrsQya3qb6thAy
- bRem2s2fBsBTdhEy1sBw==
+ id 1iLV9I-0008Dn-5T; Fri, 18 Oct 2019 16:30:45 +0000
+Received: by mail-pl1-x643.google.com with SMTP id k7so3108870pll.1;
+ Fri, 18 Oct 2019 09:30:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=ioUxflPJk241Sd8uCqW+4LLu7go7mYYjazg2y5D+euI=;
+ b=Noahe+cw+oe1BNvUPmv9cmXuYAKMcdh3TkhmHpUDgLyEFiBRsD2jru5PXvGJv6MqXD
+ /XE4wG0iZksfhB3BVRXjItDttPFMoTynMQEr4YV3TzLLTmoj2anNAaQxKvmiwQtaGAYW
+ ebL2vANtuNHEEWUB7RMeOcu/IHGCk56GOas1WYXY1J1qi9OmkvE1W1CQ2hLaOSqbZ7wC
+ jfGIXBjPUYCaCteWsopRhzZPIPrQjFGm7/5E1yJI1WYUzlxKDM7ItznQIpyo3BYb58Tu
+ HuaAgYGftDjRcrkxwaBmPCVYz/uxrugxf8eOXf9Ex0kEZJRbcZNZT4JMpBNXeqqjElUq
+ jc3g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=ioUxflPJk241Sd8uCqW+4LLu7go7mYYjazg2y5D+euI=;
+ b=KoIVtV8OouBiXpNlwRSDMWVzD4GeEspMohJBNBNjexAPLBF3KgnxIpX8JgTqU8b1St
+ 6eS3joKBngon9yYXxIdrouO9pLt37Va7rhoRyomAR2MbcYayk+VKI//vAu69JtMdOSAc
+ hqajnGXA8GlnQA5qSGXNKkzSDEOZocPZwgrYRMrq6VTNFgLpFRwmuzNcZaAy9I7fdbVK
+ VvjrfckAY2GKa7YubbhXodYBPF12uu/DdqXhG6UMoxmpJg+/l70EzFqR9DaxcVy92m9P
+ /lZN6d9U8y45IJsW9czrIXxCw5wdH+/6CvzIFYjntqhdG5tIAQS0uJRSdyBrERn7nbmz
+ OM0g==
+X-Gm-Message-State: APjAAAWnfIquc3qQHkyjFr3/lPsdjINtgH4F+3V8cYZHaipukeBELobX
+ gDG2ILh2HKdF50fbyC8fFjM=
+X-Google-Smtp-Source: APXvYqz9AgnO5wJDvm1Pg6p/ZgeOIqLXWnWPY63JzbbCx7GJI5f+EhGIc58hMebd7OYELWuIV0XCUg==
+X-Received: by 2002:a17:902:9682:: with SMTP id
+ n2mr10572124plp.52.1571416243179; 
+ Fri, 18 Oct 2019 09:30:43 -0700 (PDT)
+Received: from localhost.localdomain ([94.204.252.234])
+ by smtp.gmail.com with ESMTPSA id u3sm6401575pfn.134.2019.10.18.09.30.36
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Fri, 18 Oct 2019 09:30:42 -0700 (PDT)
+From: Christian Hewitt <christianshewitt@gmail.com>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] arm64: dts: meson: khadas-vim3: move audio nodes to common
+ dtsi
+Date: Fri, 18 Oct 2019 20:29:45 +0400
+Message-Id: <1571416185-6449-1-git-send-email-christianshewitt@gmail.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_093142_397257_3C4CBCE3 
-X-CRM114-Status: GOOD (  13.88  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191018_093044_235343_49FE3B59 
+X-CRM114-Status: GOOD (  13.05  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.10 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.10 listed in wl.mailspike.net]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (christianshewitt[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,662 +96,273 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Jason Cooper <jason@lakedaemon.net>,
- Arnd Bergmann <arnd@arndb.de>, Gregory Clement <gregory.clement@bootlin.com>,
- linux-kernel@vger.kernel.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: Christian Hewitt <christianshewitt@gmail.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is no reason to keep these separate, so move them into
-the generic files.
+Move VIM3 audio nodes to meson-khadas-vim3.dtsi to enable audio for all
+boards in the VIM3 family including VIM3L.
 
-Cc: Jason Cooper <jason@lakedaemon.net>
-Cc: Andrew Lunn <andrew@lunn.ch>
-Cc: Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
-Cc: Gregory Clement <gregory.clement@bootlin.com>
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+This change depends on [1] being merged/applied first.
+
+[1] https://patchwork.kernel.org/patch/11198535/
+
+Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
 ---
- arch/arm/mach-orion/Kconfig          | 232 ++++++++++++++++++++++++++-
- arch/arm/mach-orion/Kconfig.dove     |  34 ----
- arch/arm/mach-orion/Kconfig.mv78xx0  |  34 ----
- arch/arm/mach-orion/Kconfig.orion5x  | 170 --------------------
- arch/arm/mach-orion/Makefile         |  54 +++++--
- arch/arm/mach-orion/Makefile.dove    |   6 -
- arch/arm/mach-orion/Makefile.mv78xx0 |   5 -
- arch/arm/mach-orion/Makefile.orion5x |  24 ---
- 8 files changed, 268 insertions(+), 291 deletions(-)
- delete mode 100644 arch/arm/mach-orion/Kconfig.dove
- delete mode 100644 arch/arm/mach-orion/Kconfig.mv78xx0
- delete mode 100644 arch/arm/mach-orion/Kconfig.orion5x
- delete mode 100644 arch/arm/mach-orion/Makefile.dove
- delete mode 100644 arch/arm/mach-orion/Makefile.mv78xx0
- delete mode 100644 arch/arm/mach-orion/Makefile.orion5x
+ .../boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi   | 89 ----------------------
+ arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi | 88 +++++++++++++++++++++
+ 2 files changed, 88 insertions(+), 89 deletions(-)
 
-diff --git a/arch/arm/mach-orion/Kconfig b/arch/arm/mach-orion/Kconfig
-index bad1fe673674..67e1e0b0c831 100644
---- a/arch/arm/mach-orion/Kconfig
-+++ b/arch/arm/mach-orion/Kconfig
-@@ -3,12 +3,238 @@ config PLAT_ORION
- 	select CLKSRC_MMIO
- 	select COMMON_CLK
- 	select GENERIC_IRQ_CHIP
-+	select GPIOLIB
- 	select IRQ_DOMAIN
-+	select MVEBU_MBUS
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
+index 69019d0..190e934 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
+@@ -5,8 +5,6 @@
+  * Copyright (c) 2019 Christian Hewitt <christianshewitt@gmail.com>
+  */
  
- config PLAT_ORION_LEGACY
- 	bool
- 	select PLAT_ORION
+-#include <dt-bindings/sound/meson-g12a-tohdmitx.h>
+-
+ / {
+ 	vddcpu_a: regulator-vddcpu-a {
+ 		/*
+@@ -45,69 +43,6 @@
+ 		regulator-boot-on;
+ 		regulator-always-on;
+ 	};
+-
+-	sound {
+-		compatible = "amlogic,axg-sound-card";
+-		model = "G12A-KHADAS-VIM3";
+-		audio-aux-devs = <&tdmout_b>;
+-		audio-routing = "TDMOUT_B IN 0", "FRDDR_A OUT 1",
+-				"TDMOUT_B IN 1", "FRDDR_B OUT 1",
+-				"TDMOUT_B IN 2", "FRDDR_C OUT 1",
+-				"TDM_B Playback", "TDMOUT_B OUT";
+-
+-		assigned-clocks = <&clkc CLKID_MPLL2>,
+-				  <&clkc CLKID_MPLL0>,
+-				  <&clkc CLKID_MPLL1>;
+-		assigned-clock-parents = <0>, <0>, <0>;
+-		assigned-clock-rates = <294912000>,
+-				       <270950400>,
+-				       <393216000>;
+-		status = "okay";
+-
+-		dai-link-0 {
+-			sound-dai = <&frddr_a>;
+-		};
+-
+-		dai-link-1 {
+-			sound-dai = <&frddr_b>;
+-		};
+-
+-		dai-link-2 {
+-			sound-dai = <&frddr_c>;
+-		};
+-
+-		/* 8ch hdmi interface */
+-		dai-link-3 {
+-			sound-dai = <&tdmif_b>;
+-			dai-format = "i2s";
+-			dai-tdm-slot-tx-mask-0 = <1 1>;
+-			dai-tdm-slot-tx-mask-1 = <1 1>;
+-			dai-tdm-slot-tx-mask-2 = <1 1>;
+-			dai-tdm-slot-tx-mask-3 = <1 1>;
+-			mclk-fs = <256>;
+-
+-			codec {
+-				sound-dai = <&tohdmitx TOHDMITX_I2S_IN_B>;
+-			};
+-		};
+-
+-		/* hdmi glue */
+-		dai-link-4 {
+-			sound-dai = <&tohdmitx TOHDMITX_I2S_OUT>;
+-
+-			codec {
+-				sound-dai = <&hdmi_tx>;
+-			};
+-		};
+-	};
+-};
+-
+-&arb {
+-	status = "okay";
+-};
+-
+-&clkc_audio {
+-	status = "okay";
+ };
  
--source "arch/arm/mach-orion/Kconfig.dove"
--source "arch/arm/mach-orion/Kconfig.mv78xx0"
--source "arch/arm/mach-orion/Kconfig.orion5x"
-+menuconfig ARCH_DOVE
-+	bool "Marvell Dove" if ARCH_MULTI_V7
-+	select CPU_PJ4
-+	select PINCTRL
-+	select PINCTRL_DOVE
-+	select PLAT_ORION_LEGACY
-+	select PM_GENERIC_DOMAINS if PM
-+	help
-+	  Support for the Marvell Dove SoC 88AP510
-+
-+if ARCH_DOVE
-+
-+config MACH_DOVE_DB
-+	bool "Marvell DB-MV88AP510 Development Board"
-+	select I2C_BOARDINFO if I2C
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  Marvell DB-MV88AP510 Development Board.
-+
-+config MACH_CM_A510
-+	bool "CompuLab CM-A510 Board"
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  CompuLab CM-A510 Board.
-+
-+endif
-+
-+menuconfig ARCH_MV78XX0
-+	bool "Marvell MV78xx0"
-+	depends on ARCH_MULTI_V5
-+	select CPU_FEROCEON
-+	select FORCE_PCI
-+	select PLAT_ORION_LEGACY
-+	help
-+	  Support for the following Marvell MV78xx0 series SoCs:
-+	  MV781x0, MV782x0.
-+
-+if ARCH_MV78XX0
-+
-+config MACH_DB78X00_BP
-+	bool "Marvell DB-78x00-BP Development Board"
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  Marvell DB-78x00-BP Development Board.
-+
-+config MACH_RD78X00_MASA
-+	bool "Marvell RD-78x00-mASA Reference Design"
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  Marvell RD-78x00-mASA Reference Design.
-+
-+config MACH_TERASTATION_WXL
-+	bool "Buffalo WLX (Terastation Duo) NAS"
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  Buffalo WXL Nas.
-+
-+endif
-+
-+# SPDX-License-Identifier: GPL-2.0-only
-+menuconfig ARCH_ORION5X
-+	bool "Marvell Orion"
-+	depends on MMU && ARCH_MULTI_V5
-+	select CPU_FEROCEON
-+	select GENERIC_CLOCKEVENTS
-+	select FORCE_PCI
-+	select PHYLIB if NETDEVICES
-+	select PLAT_ORION_LEGACY
-+	help
-+	  Support for the following Marvell Orion 5x series SoCs:
-+	  Orion-1 (5181), Orion-VoIP (5181L), Orion-NAS (5182),
-+	  Orion-2 (5281), Orion-1-90 (6183).
-+
-+if ARCH_ORION5X
-+
-+config ARCH_ORION5X_DT
-+	bool "Marvell Orion5x Flattened Device Tree"
-+	select USE_OF
-+	select ORION_CLK
-+	select ORION_IRQCHIP
-+	select ORION_TIMER
-+	select PINCTRL
-+	select PINCTRL_ORION
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  Marvell Orion5x using flattened device tree.
-+
-+config MACH_DB88F5281
-+	bool "Marvell Orion-2 Development Board"
-+	select I2C_BOARDINFO if I2C
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  Marvell Orion-2 (88F5281) Development Board
-+
-+config MACH_RD88F5182
-+	bool "Marvell Orion-NAS Reference Design"
-+	select I2C_BOARDINFO if I2C
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  Marvell Orion-NAS (88F5182) RD2
-+
-+config MACH_RD88F5182_DT
-+	bool "Marvell Orion-NAS Reference Design (Flattened Device Tree)"
-+	select ARCH_ORION5X_DT
-+	select I2C_BOARDINFO if I2C
-+	help
-+	  Say 'Y' here if you want your kernel to support the Marvell
-+	  Orion-NAS (88F5182) RD2, Flattened Device Tree.
-+
-+config MACH_KUROBOX_PRO
-+	bool "KuroBox Pro"
-+	select I2C_BOARDINFO if I2C
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  KuroBox Pro platform.
-+
-+config MACH_DNS323
-+	bool "D-Link DNS-323"
-+	select I2C_BOARDINFO if I2C
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  D-Link DNS-323 platform.
-+
-+config MACH_TS209
-+	bool "QNAP TS-109/TS-209"
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  QNAP TS-109/TS-209 platform.
-+
-+config MACH_TERASTATION_PRO2
-+	bool "Buffalo Terastation Pro II/Live"
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  Buffalo Terastation Pro II/Live platform.
-+
-+config MACH_LINKSTATION_PRO
-+	bool "Buffalo Linkstation Pro/Live"
-+	select I2C_BOARDINFO if I2C
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  Buffalo Linkstation Pro/Live platform. Both v1 and
-+	  v2 devices are supported.
-+
-+config MACH_LINKSTATION_MINI
-+	bool "Buffalo Linkstation Mini (Flattened Device Tree)"
-+	select ARCH_ORION5X_DT
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  Buffalo Linkstation Mini (LS-WSGL) platform.
-+
-+config MACH_LINKSTATION_LS_HGL
-+	bool "Buffalo Linkstation LS-HGL"
-+	select I2C_BOARDINFO if I2C
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  Buffalo Linkstation LS-HGL platform.
-+
-+config MACH_TS409
-+	bool "QNAP TS-409"
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  QNAP TS-409 platform.
-+
-+config MACH_WRT350N_V2
-+	bool "Linksys WRT350N v2"
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  Linksys WRT350N v2 platform.
-+
-+config MACH_TS78XX
-+	bool "Technologic Systems TS-78xx"
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  Technologic Systems TS-78xx platform.
-+
-+config MACH_MV2120
-+	bool "HP Media Vault mv2120"
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  HP Media Vault mv2120 or mv5100.
-+
-+config MACH_D2NET_DT
-+	bool "LaCie d2 Network / Big Disk Network (Flattened Device Tree)"
-+	select ARCH_ORION5X_DT
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  LaCie d2 Network NAS.
-+
-+config MACH_NET2BIG
-+	bool "LaCie 2Big Network"
-+	select I2C_BOARDINFO if I2C
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  LaCie 2Big Network NAS.
-+
-+config MACH_MSS2_DT
-+	bool "Maxtor Shared Storage II (Flattened Device Tree)"
-+	select ARCH_ORION5X_DT
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  Maxtor Shared Storage II platform.
-+
-+config MACH_WNR854T
-+	bool "Netgear WNR854T"
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  Netgear WNR854T platform.
-+
-+config MACH_RD88F5181L_GE
-+	bool "Marvell Orion-VoIP GE Reference Design"
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  Marvell Orion-VoIP GE (88F5181L) RD.
-+
-+config MACH_RD88F5181L_FXO
-+	bool "Marvell Orion-VoIP FXO Reference Design"
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  Marvell Orion-VoIP FXO (88F5181L) RD.
-+
-+config MACH_RD88F6183AP_GE
-+	bool "Marvell Orion-1-90 AP GE Reference Design"
-+	help
-+	  Say 'Y' here if you want your kernel to support the
-+	  Marvell Orion-1-90 (88F6183) AP GE RD.
-+
-+endif
-diff --git a/arch/arm/mach-orion/Kconfig.dove b/arch/arm/mach-orion/Kconfig.dove
-deleted file mode 100644
-index c30c69c664ea..000000000000
---- a/arch/arm/mach-orion/Kconfig.dove
-+++ /dev/null
-@@ -1,34 +0,0 @@
--# SPDX-License-Identifier: GPL-2.0
--menuconfig ARCH_DOVE
--	bool "Marvell Dove" if ARCH_MULTI_V7
--	select CPU_PJ4
--	select GPIOLIB
--	select MVEBU_MBUS
--	select PINCTRL
--	select PINCTRL_DOVE
--	select PLAT_ORION_LEGACY
--	select PM_GENERIC_DOMAINS if PM
--	help
--	  Support for the Marvell Dove SoC 88AP510
--
--if ARCH_DOVE
--
--config DOVE_LEGACY
--	bool
--
--config MACH_DOVE_DB
--	bool "Marvell DB-MV88AP510 Development Board"
--	select DOVE_LEGACY
--	select I2C_BOARDINFO if I2C
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  Marvell DB-MV88AP510 Development Board.
--
--config MACH_CM_A510
--	bool "CompuLab CM-A510 Board"
--	select DOVE_LEGACY
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  CompuLab CM-A510 Board.
--
--endif
-diff --git a/arch/arm/mach-orion/Kconfig.mv78xx0 b/arch/arm/mach-orion/Kconfig.mv78xx0
-deleted file mode 100644
-index ea52c7fabb79..000000000000
---- a/arch/arm/mach-orion/Kconfig.mv78xx0
-+++ /dev/null
-@@ -1,34 +0,0 @@
--# SPDX-License-Identifier: GPL-2.0-only
--menuconfig ARCH_MV78XX0
--	bool "Marvell MV78xx0"
--	depends on ARCH_MULTI_V5
--	select CPU_FEROCEON
--	select GPIOLIB
--	select MVEBU_MBUS
--	select FORCE_PCI
--	select PLAT_ORION_LEGACY
--	help
--	  Support for the following Marvell MV78xx0 series SoCs:
--	  MV781x0, MV782x0.
--
--if ARCH_MV78XX0
--
--config MACH_DB78X00_BP
--	bool "Marvell DB-78x00-BP Development Board"
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  Marvell DB-78x00-BP Development Board.
--
--config MACH_RD78X00_MASA
--	bool "Marvell RD-78x00-mASA Reference Design"
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  Marvell RD-78x00-mASA Reference Design.
--
--config MACH_TERASTATION_WXL
--	bool "Buffalo WLX (Terastation Duo) NAS"
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  Buffalo WXL Nas.
--
--endif
-diff --git a/arch/arm/mach-orion/Kconfig.orion5x b/arch/arm/mach-orion/Kconfig.orion5x
-deleted file mode 100644
-index cf9cb3d2590e..000000000000
---- a/arch/arm/mach-orion/Kconfig.orion5x
-+++ /dev/null
-@@ -1,170 +0,0 @@
--# SPDX-License-Identifier: GPL-2.0-only
--menuconfig ARCH_ORION5X
--	bool "Marvell Orion"
--	depends on MMU && ARCH_MULTI_V5
--	select CPU_FEROCEON
--	select GENERIC_CLOCKEVENTS
--	select GPIOLIB
--	select MVEBU_MBUS
--	select FORCE_PCI
--	select PHYLIB if NETDEVICES
--	select PLAT_ORION_LEGACY
--	help
--	  Support for the following Marvell Orion 5x series SoCs:
--	  Orion-1 (5181), Orion-VoIP (5181L), Orion-NAS (5182),
--	  Orion-2 (5281), Orion-1-90 (6183).
--
--if ARCH_ORION5X
--
--config ARCH_ORION5X_DT
--	bool "Marvell Orion5x Flattened Device Tree"
--	select USE_OF
--	select ORION_CLK
--	select ORION_IRQCHIP
--	select ORION_TIMER
--	select PINCTRL
--	select PINCTRL_ORION
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  Marvell Orion5x using flattened device tree.
--
--config MACH_DB88F5281
--	bool "Marvell Orion-2 Development Board"
--	select I2C_BOARDINFO if I2C
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  Marvell Orion-2 (88F5281) Development Board
--
--config MACH_RD88F5182
--	bool "Marvell Orion-NAS Reference Design"
--	select I2C_BOARDINFO if I2C
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  Marvell Orion-NAS (88F5182) RD2
--
--config MACH_RD88F5182_DT
--	bool "Marvell Orion-NAS Reference Design (Flattened Device Tree)"
--	select ARCH_ORION5X_DT
--	select I2C_BOARDINFO if I2C
--	help
--	  Say 'Y' here if you want your kernel to support the Marvell
--	  Orion-NAS (88F5182) RD2, Flattened Device Tree.
--
--config MACH_KUROBOX_PRO
--	bool "KuroBox Pro"
--	select I2C_BOARDINFO if I2C
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  KuroBox Pro platform.
--
--config MACH_DNS323
--	bool "D-Link DNS-323"
--	select I2C_BOARDINFO if I2C
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  D-Link DNS-323 platform.
--
--config MACH_TS209
--	bool "QNAP TS-109/TS-209"
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  QNAP TS-109/TS-209 platform.
--
--config MACH_TERASTATION_PRO2
--	bool "Buffalo Terastation Pro II/Live"
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  Buffalo Terastation Pro II/Live platform.
--
--config MACH_LINKSTATION_PRO
--	bool "Buffalo Linkstation Pro/Live"
--	select I2C_BOARDINFO if I2C
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  Buffalo Linkstation Pro/Live platform. Both v1 and
--	  v2 devices are supported.
--
--config MACH_LINKSTATION_MINI
--	bool "Buffalo Linkstation Mini (Flattened Device Tree)"
--	select ARCH_ORION5X_DT
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  Buffalo Linkstation Mini (LS-WSGL) platform.
--
--config MACH_LINKSTATION_LS_HGL
--	bool "Buffalo Linkstation LS-HGL"
--	select I2C_BOARDINFO if I2C
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  Buffalo Linkstation LS-HGL platform.
--
--config MACH_TS409
--	bool "QNAP TS-409"
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  QNAP TS-409 platform.
--
--config MACH_WRT350N_V2
--	bool "Linksys WRT350N v2"
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  Linksys WRT350N v2 platform.
--
--config MACH_TS78XX
--	bool "Technologic Systems TS-78xx"
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  Technologic Systems TS-78xx platform.
--
--config MACH_MV2120
--	bool "HP Media Vault mv2120"
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  HP Media Vault mv2120 or mv5100.
--
--config MACH_D2NET_DT
--	bool "LaCie d2 Network / Big Disk Network (Flattened Device Tree)"
--	select ARCH_ORION5X_DT
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  LaCie d2 Network NAS.
--
--config MACH_NET2BIG
--	bool "LaCie 2Big Network"
--	select I2C_BOARDINFO if I2C
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  LaCie 2Big Network NAS.
--
--config MACH_MSS2_DT
--	bool "Maxtor Shared Storage II (Flattened Device Tree)"
--	select ARCH_ORION5X_DT
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  Maxtor Shared Storage II platform.
--
--config MACH_WNR854T
--	bool "Netgear WNR854T"
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  Netgear WNR854T platform.
--
--config MACH_RD88F5181L_GE
--	bool "Marvell Orion-VoIP GE Reference Design"
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  Marvell Orion-VoIP GE (88F5181L) RD.
--
--config MACH_RD88F5181L_FXO
--	bool "Marvell Orion-VoIP FXO Reference Design"
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  Marvell Orion-VoIP FXO (88F5181L) RD.
--
--config MACH_RD88F6183AP_GE
--	bool "Marvell Orion-1-90 AP GE Reference Design"
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  Marvell Orion-1-90 (88F6183) AP GE RD.
--
--endif
-diff --git a/arch/arm/mach-orion/Makefile b/arch/arm/mach-orion/Makefile
-index ded450d9bda3..bcfba0c64587 100644
---- a/arch/arm/mach-orion/Makefile
-+++ b/arch/arm/mach-orion/Makefile
-@@ -1,21 +1,45 @@
- # SPDX-License-Identifier: GPL-2.0-only
--#
--# Makefile for the linux kernel.
--#
--ccflags-$(CONFIG_ARCH_MULTIPLATFORM) := -I$(srctree)/$(src)/include
+ &cpu0 {
+@@ -152,18 +87,6 @@
+ 	clock-latency = <50000>;
+ };
  
--orion-gpio-$(CONFIG_GPIOLIB)      += gpio.o
--obj-$(CONFIG_PLAT_ORION_LEGACY)   += irq.o pcie.o time.o common.o mpp.o
--obj-$(CONFIG_PLAT_ORION_LEGACY)   += $(orion-gpio-y)
-+orion-gpio-$(CONFIG_GPIOLIB)		+= gpio.o
-+obj-$(CONFIG_PLAT_ORION_LEGACY)		+= irq.o time.o common.o mpp.o
-+obj-$(CONFIG_PLAT_ORION_LEGACY)		+= $(orion-gpio-y)
- 
--ifdef CONFIG_ARCH_DOVE
--include $(src)/Makefile.dove
-+ifdef CONFIG_PCI
-+obj-$(CONFIG_PLAT_ORION_LEGACY)		+= pcie.o
-+obj-$(CONFIG_ARCH_DOVE)			+= dove-pcie.o
-+obj-$(CONFIG_ARCH_MV78XX0)		+= mv78xx0-pcie.o
-+obj-$(CONFIG_ARCH_ORION5X)		+= orion5x-pci.o
- endif
- 
--ifdef CONFIG_ARCH_MV78XX0
--include $(src)/Makefile.mv78xx0
--endif
-+obj-$(CONFIG_ARCH_DOVE)			+= dove-common.o dove-irq.o dove-mpp.o
-+obj-$(CONFIG_MACH_DOVE_DB)		+= dove-db-setup.o
-+obj-$(CONFIG_MACH_CM_A510)		+= cm-a510.o
- 
--ifdef CONFIG_ARCH_ORION5X
--include $(src)/Makefile.orion5x
--endif
-+obj-$(CONFIG_ARCH_MV78XX0)		+= mv78xx0-common.o mv78xx0-mpp.o mv78xx0-irq.o
-+obj-$(CONFIG_MACH_DB78X00_BP)		+= db78x00-bp-setup.o
-+obj-$(CONFIG_MACH_RD78X00_MASA)		+= rd78x00-masa-setup.o
-+obj-$(CONFIG_MACH_TERASTATION_WXL)	+= buffalo-wxl-setup.o
-+
-+obj-$(CONFIG_ARCH_ORION5X)		+= orion5x.o orion5x-irq.o orion5x-mpp.o
-+obj-$(CONFIG_MACH_DB88F5281)		+= db88f5281-setup.o
-+obj-$(CONFIG_MACH_RD88F5182)		+= rd88f5182-setup.o
-+obj-$(CONFIG_MACH_KUROBOX_PRO)		+= kurobox_pro-setup.o
-+obj-$(CONFIG_MACH_TERASTATION_PRO2)	+= terastation_pro2-setup.o
-+obj-$(CONFIG_MACH_LINKSTATION_PRO)	+= kurobox_pro-setup.o
-+obj-$(CONFIG_MACH_LINKSTATION_LS_HGL)	+= ls_hgl-setup.o
-+obj-$(CONFIG_MACH_DNS323)		+= dns323-setup.o
-+obj-$(CONFIG_MACH_TS209)		+= ts209-setup.o tsx09-common.o
-+obj-$(CONFIG_MACH_TS409)		+= ts409-setup.o tsx09-common.o
-+obj-$(CONFIG_MACH_WRT350N_V2)		+= wrt350n-v2-setup.o
-+obj-$(CONFIG_MACH_TS78XX)		+= ts78xx-setup.o
-+obj-$(CONFIG_MACH_MV2120)		+= mv2120-setup.o
-+obj-$(CONFIG_MACH_NET2BIG)		+= net2big-setup.o
-+obj-$(CONFIG_MACH_WNR854T)		+= wnr854t-setup.o
-+obj-$(CONFIG_MACH_RD88F5181L_GE)	+= rd88f5181l-ge-setup.o
-+obj-$(CONFIG_MACH_RD88F5181L_FXO)	+= rd88f5181l-fxo-setup.o
-+obj-$(CONFIG_MACH_RD88F6183AP_GE)	+= rd88f6183ap-ge-setup.o
-+
-+obj-$(CONFIG_ARCH_ORION5X_DT)		+= board-dt.o
-+obj-$(CONFIG_MACH_D2NET_DT)		+= board-d2net.o
-+obj-$(CONFIG_MACH_MSS2_DT)		+= board-mss2.o
-+obj-$(CONFIG_MACH_RD88F5182_DT)		+= board-rd88f5182.o
-diff --git a/arch/arm/mach-orion/Makefile.dove b/arch/arm/mach-orion/Makefile.dove
-deleted file mode 100644
-index 1e85d595836a..000000000000
---- a/arch/arm/mach-orion/Makefile.dove
-+++ /dev/null
-@@ -1,6 +0,0 @@
--# SPDX-License-Identifier: GPL-2.0
--obj-y				+= dove-common.o
--obj-$(CONFIG_DOVE_LEGACY)	+= dove-irq.o dove-mpp.o
--obj-$(CONFIG_PCI)		+= dove-pcie.o
--obj-$(CONFIG_MACH_DOVE_DB)	+= dove-db-setup.o
--obj-$(CONFIG_MACH_CM_A510)	+= cm-a510.o
-diff --git a/arch/arm/mach-orion/Makefile.mv78xx0 b/arch/arm/mach-orion/Makefile.mv78xx0
-deleted file mode 100644
-index c56ee058808a..000000000000
---- a/arch/arm/mach-orion/Makefile.mv78xx0
-+++ /dev/null
-@@ -1,5 +0,0 @@
--# SPDX-License-Identifier: GPL-2.0
--obj-y				+= mv78xx0-common.o mv78xx0-mpp.o mv78xx0-irq.o mv78xx0-pcie.o
--obj-$(CONFIG_MACH_DB78X00_BP)	+= db78x00-bp-setup.o
--obj-$(CONFIG_MACH_RD78X00_MASA)	+= rd78x00-masa-setup.o
--obj-$(CONFIG_MACH_TERASTATION_WXL) += buffalo-wxl-setup.o
-diff --git a/arch/arm/mach-orion/Makefile.orion5x b/arch/arm/mach-orion/Makefile.orion5x
-deleted file mode 100644
-index a36c5e504698..000000000000
---- a/arch/arm/mach-orion/Makefile.orion5x
-+++ /dev/null
-@@ -1,24 +0,0 @@
--# SPDX-License-Identifier: GPL-2.0
--obj-y				+= orion5x.o orion5x-pci.o orion5x-irq.o orion5x-mpp.o
--obj-$(CONFIG_MACH_DB88F5281)	+= db88f5281-setup.o
--obj-$(CONFIG_MACH_RD88F5182)	+= rd88f5182-setup.o
--obj-$(CONFIG_MACH_KUROBOX_PRO)	+= kurobox_pro-setup.o
--obj-$(CONFIG_MACH_TERASTATION_PRO2)	+= terastation_pro2-setup.o
--obj-$(CONFIG_MACH_LINKSTATION_PRO) += kurobox_pro-setup.o
--obj-$(CONFIG_MACH_LINKSTATION_LS_HGL) += ls_hgl-setup.o
--obj-$(CONFIG_MACH_DNS323)	+= dns323-setup.o
--obj-$(CONFIG_MACH_TS209)	+= ts209-setup.o tsx09-common.o
--obj-$(CONFIG_MACH_TS409)	+= ts409-setup.o tsx09-common.o
--obj-$(CONFIG_MACH_WRT350N_V2)	+= wrt350n-v2-setup.o
--obj-$(CONFIG_MACH_TS78XX)	+= ts78xx-setup.o
--obj-$(CONFIG_MACH_MV2120)	+= mv2120-setup.o
--obj-$(CONFIG_MACH_NET2BIG)	+= net2big-setup.o
--obj-$(CONFIG_MACH_WNR854T)	+= wnr854t-setup.o
--obj-$(CONFIG_MACH_RD88F5181L_GE)	+= rd88f5181l-ge-setup.o
--obj-$(CONFIG_MACH_RD88F5181L_FXO)	+= rd88f5181l-fxo-setup.o
--obj-$(CONFIG_MACH_RD88F6183AP_GE)	+= rd88f6183ap-ge-setup.o
+-&frddr_a {
+-        status = "okay";
+-};
 -
--obj-$(CONFIG_ARCH_ORION5X_DT)		+= board-dt.o
--obj-$(CONFIG_MACH_D2NET_DT)	+= board-d2net.o
--obj-$(CONFIG_MACH_MSS2_DT)	+= board-mss2.o
--obj-$(CONFIG_MACH_RD88F5182_DT)	+= board-rd88f5182.o
+-&frddr_b {
+-	status = "okay";
+-};
+-
+-&frddr_c {
+-	status = "okay";
+-};
+-
+ &pwm_ab {
+ 	pinctrl-0 = <&pwm_a_e_pins>;
+ 	pinctrl-names = "default";
+@@ -179,15 +102,3 @@
+ 	clock-names = "clkin1";
+ 	status = "okay";
+ };
+-
+-&tdmif_b {
+-	status = "okay";
+-};
+-
+-&tdmout_b {
+-	status = "okay";
+-};
+-
+-&tohdmitx {
+-	status = "okay";
+-};
+diff --git a/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi b/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
+index 90815fa..3f5c373 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
+@@ -7,6 +7,7 @@
+ 
+ #include <dt-bindings/input/input.h>
+ #include <dt-bindings/gpio/meson-g12a-gpio.h>
++#include <dt-bindings/sound/meson-g12a-tohdmitx.h>
+ 
+ / {
+ 	model = "Khadas VIM3";
+@@ -76,6 +77,61 @@
+ 		clock-names = "ext_clock";
+ 	};
+ 
++	sound {
++		compatible = "amlogic,axg-sound-card";
++		model = "G12A-KHADAS-VIM3";
++		audio-aux-devs = <&tdmout_b>;
++		audio-routing = "TDMOUT_B IN 0", "FRDDR_A OUT 1",
++				"TDMOUT_B IN 1", "FRDDR_B OUT 1",
++				"TDMOUT_B IN 2", "FRDDR_C OUT 1",
++				"TDM_B Playback", "TDMOUT_B OUT";
++
++		assigned-clocks = <&clkc CLKID_MPLL2>,
++				  <&clkc CLKID_MPLL0>,
++				  <&clkc CLKID_MPLL1>;
++		assigned-clock-parents = <0>, <0>, <0>;
++		assigned-clock-rates = <294912000>,
++				       <270950400>,
++				       <393216000>;
++		status = "okay";
++
++		dai-link-0 {
++			sound-dai = <&frddr_a>;
++		};
++
++		dai-link-1 {
++			sound-dai = <&frddr_b>;
++		};
++
++		dai-link-2 {
++			sound-dai = <&frddr_c>;
++		};
++
++		/* 8ch hdmi interface */
++		dai-link-3 {
++			sound-dai = <&tdmif_b>;
++			dai-format = "i2s";
++			dai-tdm-slot-tx-mask-0 = <1 1>;
++			dai-tdm-slot-tx-mask-1 = <1 1>;
++			dai-tdm-slot-tx-mask-2 = <1 1>;
++			dai-tdm-slot-tx-mask-3 = <1 1>;
++			mclk-fs = <256>;
++
++			codec {
++				sound-dai = <&tohdmitx TOHDMITX_I2S_IN_B>;
++			};
++		};
++
++		/* hdmi glue */
++		dai-link-4 {
++			sound-dai = <&tohdmitx TOHDMITX_I2S_OUT>;
++
++			codec {
++				sound-dai = <&hdmi_tx>;
++			};
++		};
++	};
++
+ 	dc_in: regulator-dc_in {
+ 		compatible = "regulator-fixed";
+ 		regulator-name = "DC_IN";
+@@ -171,6 +227,14 @@
+ 	};
+ };
+ 
++&arb {
++	status = "okay";
++};
++
++&clkc_audio {
++	status = "okay";
++};
++
+ &cec_AO {
+ 	pinctrl-0 = <&cec_ao_a_h_pins>;
+ 	pinctrl-names = "default";
+@@ -206,6 +270,18 @@
+         amlogic,tx-delay-ns = <2>;
+ };
+ 
++&frddr_a {
++	status = "okay";
++};
++
++&frddr_b {
++	status = "okay";
++};
++
++&frddr_c {
++	status = "okay";
++};
++
+ &hdmi_tx {
+ 	status = "okay";
+ 	pinctrl-0 = <&hdmitx_hpd_pins>, <&hdmitx_ddc_pins>;
+@@ -328,6 +404,18 @@
+ 	vqmmc-supply = <&emmc_1v8>;
+ };
+ 
++&tdmif_b {
++	status = "okay";
++};
++
++&tdmout_b {
++	status = "okay";
++};
++
++&tohdmitx {
++	status = "okay";
++};
++
+ &uart_A {
+ 	status = "okay";
+ 	pinctrl-0 = <&uart_a_pins>, <&uart_a_cts_rts_pins>;
 -- 
-2.20.0
+2.7.4
 
 
 _______________________________________________
