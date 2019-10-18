@@ -2,71 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9178CDC93F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 17:45:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59FD8DC94A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 17:47:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2EfLXuWtW0/VG94oqlcQZ12Y7YhffgHSNARSIX/jYF8=; b=ExDli84lv+DyLR
-	vgyO+Nqpx0BHTDC5rpMG9S8DWhIAggm3g+RUXiFhZNcKPKD4AIBs1YtAhWZyCsDEHUc8dluzaVqvA
-	fL73iFQ69O36q7q516KHdfz6bPITkKdnBBwlmXyNSKl/L6HmugcnQnzejfHCjoXAWXyv9Xx5nhMyD
-	E5koa1nTpCBiQMaI/qGqiiSGhCyai8vHs8kIPseCDzFFRnuUkpyPBoC9memN+GPQkcS2qFc//qO9b
-	RszWy7nkfk7k34zEWcXvefzGsrag1owtOqyjz4BRJDl8gtVYoxCse34Xd69sGtwwKcq6zjrGw/gav
-	yvcaUQGxPnh15BGQmoAQ==;
+	List-Owner; bh=xJowE3ol/oIxoA+gbVBilczgPiw4TMdPWOHdliE4sVA=; b=C4CejyxMmzUagE
+	m4lhcJGD6UVFrMVOOPoCj7YFFdQ7JPKYRZpkXuaiQNRqU46AJXNRd4Ihd9Nc1sHN8vojiJxtcEQSZ
+	6ZNhlmB/vz6rE8O5jGp39PXf+HF1HJtFjXB2v8UjQauTeXnrszuq6R+i9jmjJVhZlujxdmG13dM2E
+	JEbxR6yyBQ0L5MMElrH4ZQxvz4n/hJ5jFLE8INsm3RU0ocK+xaxbPDJqYw8bu75/Qz3tha3wN/54r
+	xB6GNqNvIuJqaZ78xxLYxh+1Cu/hgVRAvXoXcqw6Oo/LLYYauS5K/OCUheX07uhBSKK0jVvIi3dH3
+	9bERRhwkc6p/o2kRVjVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLURP-0001H8-GK; Fri, 18 Oct 2019 15:45:23 +0000
-Received: from mout.kundenserver.de ([212.227.17.10])
+	id 1iLUTV-0004Qq-Vo; Fri, 18 Oct 2019 15:47:33 +0000
+Received: from mout.kundenserver.de ([217.72.192.73])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLUOa-00082Z-Ex
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 15:42:30 +0000
+ id 1iLUOc-00083p-F9
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 15:42:36 +0000
 Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
  (mreue108 [212.227.15.145]) with ESMTPA (Nemesis) id
- 1MLR9p-1idIMQ30kt-00IYEY; Fri, 18 Oct 2019 17:42:21 +0200
+ 1M3UdI-1iM2cm1zbW-000bi3; Fri, 18 Oct 2019 17:42:22 +0200
 From: Arnd Bergmann <arnd@arndb.de>
 To: Daniel Mack <daniel@zonque.org>, Haojian Zhuang <haojian.zhuang@gmail.com>,
  Robert Jarzmik <robert.jarzmik@free.fr>
-Subject: [PATCH 08/46] ARM: pxa: move regs-lcd.h into driver
-Date: Fri, 18 Oct 2019 17:41:23 +0200
-Message-Id: <20191018154201.1276638-8-arnd@arndb.de>
+Subject: [PATCH 10/46] ARM: pxa: pxa2xx-ac97-lib: use IRQ resource
+Date: Fri, 18 Oct 2019 17:41:25 +0200
+Message-Id: <20191018154201.1276638-10-arnd@arndb.de>
 X-Mailer: git-send-email 2.20.0
 In-Reply-To: <20191018154052.1276506-1-arnd@arndb.de>
 References: <20191018154052.1276506-1-arnd@arndb.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:5LAnEr6iwK59JevwtHrYZroQN0McBCT7qyhw48WP7uThIH9moug
- DFbvYgETyVbB08XUvk/zUJ/9z1oe9LvNnc2kbVl+FKRiYDVArMPrcONKrV/8VAlPlQOcbrK
- 1VjYR2TCvM5GjapZzXH33Oa7HA+ZdVo7VtqkozzDGGiJ931w9rlOBRhqlL+lgwmC+ZJyUZ7
- S7kjWYmaVoMwEA+Y4OF0g==
+X-Provags-ID: V03:K1:ohXLc/rKHD3S0qlftz4r0qHFku7fe6p+1ct87Kb4VLl6S2fZF1V
+ iGCq0WFspg+WijCvfLITNxSD/Wxoicw6WYyOj7Oew32wHt9rtFM4cZbUl6MFjgYnwS5aJwp
+ gnY12Cf8fZ+beQoQBVvDnqYITrRIeU3MnbcDHDCb+osw0wruJFcEWNYc2htFYZdifop/Ijr
+ aNUEF2uzfNwNBWZqoHDhQ==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:vHxA+ZpjrdY=:XNCy9TULDG9fJPLTSxJWH9
- RzrjppOcb3r1l6j92A6STsqoCsmwOnL/W8eWKBqCbgTGwEXQPhIwj3WHlDUmNSeLMgNWQ8LO/
- yGSXtK9RIIhblaQhJ8WwUkKIwh2quYl52HNmdKFMdXVXsZrp4skV4BS4CBN80WNRt+JL2PtNJ
- JNB1Vk6RMXsLJWIzvHbxfQ0/bEFjIjH+xrst3yv7cA4d2AV9hsydUDw1mO27RX6Fz/Ic2CifQ
- ixlCP9W3blwBWzF4xIYW4kPaIZuhZwz32D6sLwsJ3N/tbRsi/isqTBk7fsAa0rJBSQgscpf+j
- 2c0f+eQFxy3kea8sdTSskHXuBdGuU2R7DEkqDJkmm0Pd51dsiEe1Dbo0LUEH3H9bY/V311xYl
- Ve24rNLJhOWk4bOpbk5Ok9QLPTRnR2pl59v9oHQfyvICrdmR4it2dnv87jDdYgoqUIR3lndjF
- MbiZSDCepHhYWhUXab5eqIZTsynSLEpfuXDFCLyv5bZFPM3D9VEbTCvgqL4MNTUswVfQgESAj
- 9veFgI3CpZkztrXyX2x6T0EgGAvOAMPaSchSyX/Y5hAQVG5Awc9H6FuoUEMqy9dN9lkZZzS2L
- hkC/ToH3fuv8bDPmPwGdrpaGPUo02QISaTfJxW8mJJJ51CyS7psslutJqgXDxN872C6mvKl9E
- w3oXbWi5LSyYkqbc3hYRZv4RtwENikgUnq4YxkqGCt3XxAWVilcQo93g7XYcbX47OndD3q+Km
- gvjD81yBDg5OGm7UgZC2ghsIVyu+YayYRjN16jXk1VzXS/Eiuawe3ON77og0MHmHdwvu5JxEg
- 4zHCADbvpnH2aMDhvMzuTICkExfS8JO52Aq7YYcL5CNYZojvmlba3ZS9RJ6FPFdZXcjK+HICO
- tV684DZtaYjUf1cF8AHA==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:+5ta5rdfDEU=:cAi+iWvuqWj7bT0cLJh0d1
+ jB20bnFKegpC31k2ZLI5eH2UfPsYMwACCYdEORmmXOTWhJBllOslDxD5IeNy+5EtV6boYIiSP
+ Qu9ToTNhpEJXM186zH94RpSoLPZiMHcUj3GKtnwz2aiT9BFJ9NgAYaDAkOpkUc1jlAPOAA+H7
+ 2iCKyaoty5fBW8UdvHKcCeH4z0hfqedBTSw3W4bUKxQfJEeH9Vigmy/4yo1X3WGSGlnMrR9Us
+ ttTz1f2JSaE8kYijcS0cS1efCLs/Vo8un5yKvAmkMZ7cDw6gQ1MRhK6JcKYOtZ5Ekvpd1lWu2
+ yma6lMIoGokc1yM5OGkD7iTDad1OkLlmb/ck0x/LdO292YGQxl4xOXL70mVapMLmESVKA5A1r
+ LQmBDtotsjbz/HZBG/k1OZW8via4xXJxYWp8WYCXE1qXgqndM6TH4eClXYABy0l9ZMOMK7z1W
+ QxnWBrQycoErlG5xd9fmY3jRqmAZcj+ys3XfBproU8Q01bTZV6keemePaXoIYdmSKInqpbHkF
+ zAuNiGGyqPogbvRTigFf+m34Ua3iCpKxsRltBbC8KG8YLZNRxRYxxfzmZ8yEC6nntxdgiuxkS
+ pEKrz6cf3856i9E2Cyhq4XGMutylHcn+0PzSY2nyNWAtNrAHI6WmpuRJ2doI1fRSeFYAaTaiM
+ 3fnUu+4xerpLucJ3i5bDuo+23x3B1/QvCkGzic/i6D3+mLjygLuvxPEkVX7+XTqt5QShkxMxU
+ lvOghBI8NsW5Q+0YKNM3V5FdMbW+N7wiNumgVoiXhXxRBDMW3Xl6TMZN9eZ2OlUNZTyXPHCw2
+ H/5NdjtQYgnr1D78grhXvf4QML7HDCJqyezKQ/2w7BCE0OaK50xmO58vNIqmBH0ob8Cce7Jgg
+ Zdt5GCT5KmIRVpERms6w==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_084228_817764_E59B247E 
-X-CRM114-Status: GOOD (  12.20  )
+X-CRM114-CacheID: sfid-20191018_084230_848597_8E74E552 
+X-CRM114-Status: GOOD (  16.13  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.10 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.10 listed in list.dnswl.org]
+ no trust [217.72.192.73 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -80,114 +78,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-fbdev@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org
+Cc: Linus Walleij <linus.walleij@linaro.org>, alsa-devel@alsa-project.org,
+ Arnd Bergmann <arnd@arndb.de>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Only the pxafb driver uses this header, so move it into the
-same directory. The SMART_* macros are required by some
-platform data definitions and can go into the
-linux/platform_data/video-pxafb.h header.
+The pxa2xx-ac97-lib code is the last driver to use mach/irqs.h
+for PXA. Almost everything already passes the interrupt as
+a resource, so use it from there.
 
-Cc: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-Cc: dri-devel@lists.freedesktop.org
-Cc: linux-fbdev@vger.kernel.org
+The one exception is the mxm8x10 machine, which apparently has
+a resource-less device. Replacing it with the correct one
+enables the driver here as well.
+
+Cc: alsa-devel@alsa-project.org
 Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 ---
- .../video/fbdev/pxa3xx-regs.h                 | 19 ----------------
- drivers/video/fbdev/pxafb.c                   |  1 +
- include/linux/platform_data/video-pxafb.h     | 22 ++++++++++++++++++-
- 3 files changed, 22 insertions(+), 20 deletions(-)
- rename arch/arm/mach-pxa/include/mach/regs-lcd.h => drivers/video/fbdev/pxa3xx-regs.h (90%)
+ arch/arm/mach-pxa/mxm8x10.c |  8 ++------
+ sound/arm/pxa2xx-ac97-lib.c | 10 +++++++---
+ 2 files changed, 9 insertions(+), 9 deletions(-)
 
-diff --git a/arch/arm/mach-pxa/include/mach/regs-lcd.h b/drivers/video/fbdev/pxa3xx-regs.h
-similarity index 90%
-rename from arch/arm/mach-pxa/include/mach/regs-lcd.h
-rename to drivers/video/fbdev/pxa3xx-regs.h
-index 6a434675f84a..6a96610ef9b5 100644
---- a/arch/arm/mach-pxa/include/mach/regs-lcd.h
-+++ b/drivers/video/fbdev/pxa3xx-regs.h
-@@ -177,23 +177,4 @@
- #define PRSR_ST_OK	(1 << 9)	/* Status OK */
- #define PRSR_CON_NT	(1 << 10)	/* Continue to Next Command */
+diff --git a/arch/arm/mach-pxa/mxm8x10.c b/arch/arm/mach-pxa/mxm8x10.c
+index fde386f6cffe..35546b59c88e 100644
+--- a/arch/arm/mach-pxa/mxm8x10.c
++++ b/arch/arm/mach-pxa/mxm8x10.c
+@@ -26,6 +26,7 @@
+ #include <linux/platform_data/video-pxafb.h>
+ #include <linux/platform_data/mmc-pxamci.h>
+ #include <linux/platform_data/usb-ohci-pxa27x.h>
++#include <linux/platform_data/asoc-pxa.h>
+ #include "pxa320.h"
  
--#define SMART_CMD_A0			 (0x1 << 8)
--#define SMART_CMD_READ_STATUS_REG	 (0x0 << 9)
--#define SMART_CMD_READ_FRAME_BUFFER	((0x0 << 9) | SMART_CMD_A0)
--#define SMART_CMD_WRITE_COMMAND		 (0x1 << 9)
--#define SMART_CMD_WRITE_DATA		((0x1 << 9) | SMART_CMD_A0)
--#define SMART_CMD_WRITE_FRAME		((0x2 << 9) | SMART_CMD_A0)
--#define SMART_CMD_WAIT_FOR_VSYNC	 (0x3 << 9)
--#define SMART_CMD_NOOP			 (0x4 << 9)
--#define SMART_CMD_INTERRUPT		 (0x5 << 9)
+ #include "mxm8x10.h"
+@@ -356,14 +357,9 @@ void __init mxm_8x10_usb_host_init(void)
+ 	pxa_set_ohci_info(&mxm_8x10_ohci_platform_data);
+ }
+ 
+-/* AC97 Sound Support */
+-static struct platform_device mxm_8x10_ac97_device = {
+-	.name = "pxa2xx-ac97"
+-};
 -
--#define SMART_CMD(x)	(SMART_CMD_WRITE_COMMAND | ((x) & 0xff))
--#define SMART_DAT(x)	(SMART_CMD_WRITE_DATA | ((x) & 0xff))
--
--/* SMART_DELAY() is introduced for software controlled delay primitive which
-- * can be inserted between command sequences, unused command 0x6 is used here
-- * and delay ranges from 0ms ~ 255ms
-- */
--#define SMART_CMD_DELAY		(0x6 << 9)
--#define SMART_DELAY(ms)		(SMART_CMD_DELAY | ((ms) & 0xff))
- #endif /* __ASM_ARCH_REGS_LCD_H */
-diff --git a/drivers/video/fbdev/pxafb.c b/drivers/video/fbdev/pxafb.c
-index e68b8a69db92..a65453c6c390 100644
---- a/drivers/video/fbdev/pxafb.c
-+++ b/drivers/video/fbdev/pxafb.c
-@@ -72,6 +72,7 @@
- #define DEBUG_VAR 1
+ void __init mxm_8x10_ac97_init(void)
+ {
+-	platform_device_register(&mxm_8x10_ac97_device);
++	pxa_set_ac97_info(NULL);
+ }
  
- #include "pxafb.h"
-+#include "pxa3xx-regs.h"
+ /* NAND flash Support */
+diff --git a/sound/arm/pxa2xx-ac97-lib.c b/sound/arm/pxa2xx-ac97-lib.c
+index 9b5c1f0f8998..8c79d224f03b 100644
+--- a/sound/arm/pxa2xx-ac97-lib.c
++++ b/sound/arm/pxa2xx-ac97-lib.c
+@@ -21,7 +21,6 @@
  
- /* Bits which should not be set in machine configuration structures */
- #define LCCR0_INVALID_CONFIG_MASK	(LCCR0_OUM | LCCR0_BM | LCCR0_QDM |\
-diff --git a/include/linux/platform_data/video-pxafb.h b/include/linux/platform_data/video-pxafb.h
-index b3d574778326..6333bac166a5 100644
---- a/include/linux/platform_data/video-pxafb.h
-+++ b/include/linux/platform_data/video-pxafb.h
-@@ -8,7 +8,6 @@
-  */
+ #include <sound/pxa2xx-lib.h>
  
- #include <linux/fb.h>
--#include <mach/regs-lcd.h>
+-#include <mach/irqs.h>
+ #include <mach/regs-ac97.h>
+ #include <linux/platform_data/asoc-pxa.h>
  
- /*
-  * Supported LCD connections
-@@ -153,6 +152,27 @@ struct pxafb_mach_info {
- void pxa_set_fb_info(struct device *, struct pxafb_mach_info *);
- unsigned long pxafb_get_hsync_time(struct device *dev);
+@@ -319,6 +318,7 @@ EXPORT_SYMBOL_GPL(pxa2xx_ac97_hw_resume);
+ int pxa2xx_ac97_hw_probe(struct platform_device *dev)
+ {
+ 	int ret;
++	int irq;
+ 	pxa2xx_audio_ops_t *pdata = dev->dev.platform_data;
  
-+/* smartpanel related */
-+#define SMART_CMD_A0			 (0x1 << 8)
-+#define SMART_CMD_READ_STATUS_REG	 (0x0 << 9)
-+#define SMART_CMD_READ_FRAME_BUFFER	((0x0 << 9) | SMART_CMD_A0)
-+#define SMART_CMD_WRITE_COMMAND		 (0x1 << 9)
-+#define SMART_CMD_WRITE_DATA		((0x1 << 9) | SMART_CMD_A0)
-+#define SMART_CMD_WRITE_FRAME		((0x2 << 9) | SMART_CMD_A0)
-+#define SMART_CMD_WAIT_FOR_VSYNC	 (0x3 << 9)
-+#define SMART_CMD_NOOP			 (0x4 << 9)
-+#define SMART_CMD_INTERRUPT		 (0x5 << 9)
+ 	if (pdata) {
+@@ -387,7 +387,11 @@ int pxa2xx_ac97_hw_probe(struct platform_device *dev)
+ 	if (ret)
+ 		goto err_clk2;
+ 
+-	ret = request_irq(IRQ_AC97, pxa2xx_ac97_irq, 0, "AC97", NULL);
++	irq = platform_get_irq(dev, 0);
++	if (!irq)
++		goto err_irq;
 +
-+#define SMART_CMD(x)	(SMART_CMD_WRITE_COMMAND | ((x) & 0xff))
-+#define SMART_DAT(x)	(SMART_CMD_WRITE_DATA | ((x) & 0xff))
-+
-+/* SMART_DELAY() is introduced for software controlled delay primitive which
-+ * can be inserted between command sequences, unused command 0x6 is used here
-+ * and delay ranges from 0ms ~ 255ms
-+ */
-+#define SMART_CMD_DELAY		(0x6 << 9)
-+#define SMART_DELAY(ms)		(SMART_CMD_DELAY | ((ms) & 0xff))
-+
- #ifdef CONFIG_FB_PXA_SMARTPANEL
- extern int pxafb_smart_queue(struct fb_info *info, uint16_t *cmds, int);
- extern int pxafb_smart_flush(struct fb_info *info);
++	ret = request_irq(irq, pxa2xx_ac97_irq, 0, "AC97", NULL);
+ 	if (ret < 0)
+ 		goto err_irq;
+ 
+@@ -413,7 +417,7 @@ void pxa2xx_ac97_hw_remove(struct platform_device *dev)
+ 	if (cpu_is_pxa27x())
+ 		gpio_free(reset_gpio);
+ 	GCR |= GCR_ACLINK_OFF;
+-	free_irq(IRQ_AC97, NULL);
++	free_irq(platform_get_irq(dev, 0), NULL);
+ 	if (ac97conf_clk) {
+ 		clk_put(ac97conf_clk);
+ 		ac97conf_clk = NULL;
 -- 
 2.20.0
 
