@@ -2,58 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE950DC6D1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 16:04:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F1E4DC6D6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 16:04:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rY5j82zArALjac7ROqpna0mIada3hTc0cj31pSN6xmw=; b=az3mxbcfbJsHyw
-	wb3X4AU+bqFGf6DZBYYoijdABmYj8UF/QWHgmeGjhOk8DJesX8wN++YETibp1Yh6us4ZvEdVdfltq
-	zOq4VRO7DBPlsZkgbILGpi/JnmVS8+xPda/szxNA3jUwf2WzkrpVH1lHGHTaBOK+hbI7PNJ8D4z+V
-	O1X5uE73o6eWFU2T8KjF92V6Os8rIg1U81k4L37vq+FEUOFriOV89m+T+NeJNxmdu+3X32JB4w7Vh
-	pP5mmyu03cRgkw9PoV5V/PXXrqKXjWlFVugr92D5TWrfCrU+crhvgE67qBi+YS0tvOO1j256FL4Gf
-	dkgtNJo9uuIZVbxU7Bng==;
+	List-Owner; bh=V2EYi2tChNKIEcJZeKtdb2yUFL/HDA4Xk/Zm6yKw8dE=; b=sHQkrzt+AHcLOr
+	qw23bPkFu3PtbJrUSvOhIBFPCEEU9+9hBp0X3LIbYphtq1GxbpcCUMLRrtkH0Nt6cVzRuEuMqFbA9
+	2K+bD7IIYTIXmq6a4Gk4b9eTwtrX1sBnSXLpXJaXSpnyDJP9NL8rtKrzVX6RKqxsEKW5usniCZ1cW
+	9ehSnn54cp8b7UH+B9xOpyhsPZUCT47w9aaYF/wEOey/y4h/LYvIjImgE9Y52HSdcFjvzhUJpwjFV
+	vpk67aqhY1/kFXzJ0CRKYaEtAPvvHebg332ASehcWtYygS6hoojHdoQ78vwDSAKvhC3p5ot4HKuY7
+	2VO4pI9pdRMj1FJ7nENQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLSrM-00088H-7b; Fri, 18 Oct 2019 14:04:04 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1iLSrz-00005C-Pi; Fri, 18 Oct 2019 14:04:43 +0000
+Received: from mail-il1-x144.google.com ([2607:f8b0:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLSqi-0007jB-BL
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 14:03:26 +0000
-X-Originating-IP: 86.207.98.53
-Received: from localhost
- (aclermont-ferrand-651-1-259-53.w86-207.abo.wanadoo.fr [86.207.98.53])
- (Authenticated sender: kamel.bouhara@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 4403420008;
- Fri, 18 Oct 2019 14:03:15 +0000 (UTC)
-From: Kamel Bouhara <kamel.bouhara@bootlin.com>
-To: Rob Herring <robh+dt@kernel.org>,
- Nicolas Ferre <nicolas.ferre@microchip.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/2] ARM: dts: at91: add a common kizboxmini dtsi file
-Date: Fri, 18 Oct 2019 16:03:04 +0200
-Message-Id: <20191018140304.31547-3-kamel.bouhara@bootlin.com>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191018140304.31547-1-kamel.bouhara@bootlin.com>
-References: <20191018140304.31547-1-kamel.bouhara@bootlin.com>
+ id 1iLSrm-0008VS-FF; Fri, 18 Oct 2019 14:04:32 +0000
+Received: by mail-il1-x144.google.com with SMTP id c12so5660899ilm.1;
+ Fri, 18 Oct 2019 07:04:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=hFzoYmplkki9kyOBFxHB/h7HTLnl6ZxTVUTZz24IbTM=;
+ b=Mv2Cc5fhH95jd20n/Sf2opUMvxeC4GuDidaIvU95LAnx2bjFB31zzog/P6oqWNI58d
+ XM4kMQNx9ix/JvgLSWiV7rzZz237lTyUC6xWCtOCj91cdMKPCsv6byLDvUndFWxaGk0L
+ HaFovSd7qTmKH50MXUduQUJKddS1QIt0tOelQnPWH60Wn/uylOnx7KRn78t7S3kM9aK7
+ nsz2w2pVnCnOPthzSr12A/S8UYEgfISBV/Ngbi5zNtoleFlCH6MWRuOKtu7jbM4ue7kk
+ OiblLeg1doD4dboEnAuQMI+pSP1pjHIH7bya5MdqmBmJVTXcYLqH7s0TZljYFeuCIxlI
+ cWgA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=hFzoYmplkki9kyOBFxHB/h7HTLnl6ZxTVUTZz24IbTM=;
+ b=iJrez1uZwJa9sK9DK8vlhIRsY+vYULEpsOrPDS+hVzsDWof/O9PfekXo40zh4bA2FM
+ 3Vs6jTVySOjMwHkt0ribai3KlAPEJ5c+W9mc3ymZRAz599fGihG8OX6RSD3YsFwEhQ33
+ XPQl/yDn/Ohk9QVuxm28UhaXa6aJvShkNJs1E9UskXG+tVnCQo203QTuvrfYP8KfwskX
+ Gkkpk0JJ2tBUPNBvE57goDY/FzWemK2uTXDrN8FxRRjcnKkmzd1fxsYofPUCP+zGoqEf
+ vebNNuM96TAit4FFspLsn2VlXFwuaC2DnCN35m1HBRNqSDNVQvENYCdW7ACO0wxGoZop
+ 8EwA==
+X-Gm-Message-State: APjAAAXTJrnARQi/9vNJZi++ikMjyTcCeumNfXnC1WczEJHKzM0Dc1yS
+ hYiQ6fVRJ/vr+Ws62/h/I7VrPLN0ltbRaBaovVI=
+X-Google-Smtp-Source: APXvYqz5b2jpVcV5HjYOaFTUFnpF8IRGwxXAMSHZl48NFIAtlszEF0ulaRrEut4XiC3rkm7Hkfuu3yszlbUbKSTUifA=
+X-Received: by 2002:a92:c80b:: with SMTP id v11mr10713556iln.6.1571407464959; 
+ Fri, 18 Oct 2019 07:04:24 -0700 (PDT)
 MIME-Version: 1.0
+References: <20191007131649.1768-1-linux.amoon@gmail.com>
+ <20191007131649.1768-6-linux.amoon@gmail.com>
+ <CAFBinCAoJLZj9Kh+SfF4Q+0OCzac2+huon_BU=Q3yE7Fu38U3w@mail.gmail.com>
+ <7hsgo4cgeg.fsf@baylibre.com>
+ <CANAwSgRfcFa6uBNtpqz6y=9Uwsa4gcp_4tDD+Chhg4SynJCq0Q@mail.gmail.com>
+ <CAFBinCA6ZoeR4m4bhj08HF1DqxY1qB5mygpaQCGbo3d8M+Wr9Q@mail.gmail.com>
+ <CANAwSgSeYTnUkLnjw-RORw76Fyj3_WT0cdM9D0vFsY8g=9L94Q@mail.gmail.com>
+ <1jwode9lba.fsf@starbuckisacylon.baylibre.com>
+In-Reply-To: <1jwode9lba.fsf@starbuckisacylon.baylibre.com>
+From: Anand Moon <linux.amoon@gmail.com>
+Date: Fri, 18 Oct 2019 19:34:14 +0530
+Message-ID: <CANAwSgSoK4X3_QbO3YpZRXNTpPJ+zVeid=w93f14Eyk8Dd32EQ@mail.gmail.com>
+Subject: Re: [RFCv1 5/5] arm64/ARM: configs: Change CONFIG_PWM_MESON from m to
+ y
+To: Jerome Brunet <jbrunet@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_070324_653620_DFD61DB2 
-X-CRM114-Status: GOOD (  14.13  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191018_070430_506786_76B8D15A 
+X-CRM114-Status: GOOD (  17.57  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (linux.amoon[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,129 +98,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Kamel Bouhara <kamel.bouhara@bootlin.com>,
- Mickael GARDET <m.gardet@overkiz.com>, linux-kernel@vger.kernel.org,
- =?UTF-8?q?K=C3=A9vin=20RAYMOND?= <k.raymond@overkiz.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Linux Kernel <linux-kernel@vger.kernel.org>, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-U3BsaXQgdGhlIEtpemJveCBNaW5pIGJvYXJkcyBpbnRvIHR3byBib2FyZCBjb25maWd1cmF0aW9u
-LCB0aGUKS2l6Ym94bWluaSBNb3RoZXIgYm9hcmQgYW5kIHRoZSBLaXpib3htaW5pIFJhaWxESU4g
-Ym9hcmQuCgpTaWduZWQtb2ZmLWJ5OiBLYW1lbCBCb3VoYXJhIDxrYW1lbC5ib3VoYXJhQGJvb3Rs
-aW4uY29tPgpTaWduZWQtb2ZmLWJ5OiBLw6l2aW4gUkFZTU9ORCA8ay5yYXltb25kQG92ZXJraXou
-Y29tPgpTaWduZWQtb2ZmLWJ5OiBNaWNrYWVsIEdBUkRFVCA8bS5nYXJkZXRAb3Zlcmtpei5jb20+
-Ci0tLQogYXJjaC9hcm0vYm9vdC9kdHMvTWFrZWZpbGUgICAgICAgICAgICAgICAgICAgIHwgICAy
-ICsKIGFyY2gvYXJtL2Jvb3QvZHRzL2F0OTEta2l6Ym94bWluaS1tYi5kdHMgICAgICB8ICAzOCAr
-KysrCiBhcmNoL2FybS9ib290L2R0cy9hdDkxLWtpemJveG1pbmktcmQuZHRzICAgICAgfCAgNTQg
-KysrKysrCiBhcmNoL2FybS9ib290L2R0cy9hdDkxLWtpemJveG1pbmlfY29tbW9uLmR0c2kgfCAx
-NjYgKysrKysrKysrKysrKysrKysrCiA0IGZpbGVzIGNoYW5nZWQsIDI2MCBpbnNlcnRpb25zKCsp
-CiBjcmVhdGUgbW9kZSAxMDA2NDQgYXJjaC9hcm0vYm9vdC9kdHMvYXQ5MS1raXpib3htaW5pLW1i
-LmR0cwogY3JlYXRlIG1vZGUgMTAwNjQ0IGFyY2gvYXJtL2Jvb3QvZHRzL2F0OTEta2l6Ym94bWlu
-aS1yZC5kdHMKIGNyZWF0ZSBtb2RlIDEwMDY0NCBhcmNoL2FybS9ib290L2R0cy9hdDkxLWtpemJv
-eG1pbmlfY29tbW9uLmR0c2kKCmRpZmYgLS1naXQgYS9hcmNoL2FybS9ib290L2R0cy9NYWtlZmls
-ZSBiL2FyY2gvYXJtL2Jvb3QvZHRzL01ha2VmaWxlCmluZGV4IGM5NzZiNzJhNGM5NC4uNmIzYTY1
-ZjNmNmY4IDEwMDY0NAotLS0gYS9hcmNoL2FybS9ib290L2R0cy9NYWtlZmlsZQorKysgYi9hcmNo
-L2FybS9ib290L2R0cy9NYWtlZmlsZQpAQCAtMzgsNiArMzgsOCBAQCBkdGItJChDT05GSUdfU09D
-X0FUOTFTQU05KSArPSBcCiAJYXQ5MS1hcmlldHRhZzI1LmR0YiBcCiAJYXQ5MS1jb3Npbm9fbWVn
-YTI1NjAuZHRiIFwKIAlhdDkxLWtpemJveG1pbmkuZHRiIFwKKwlhdDkxLWtpemJveG1pbmktbWIu
-ZHRiIFwKKwlhdDkxLWtpemJveG1pbmktcmQuZHRiIFwKIAlhdDkxLXdiNDVuLmR0YiBcCiAJYXQ5
-MXNhbTlnMTVlay5kdGIgXAogCWF0OTFzYW05ZzI1ZWsuZHRiIFwKZGlmZiAtLWdpdCBhL2FyY2gv
-YXJtL2Jvb3QvZHRzL2F0OTEta2l6Ym94bWluaS1tYi5kdHMgYi9hcmNoL2FybS9ib290L2R0cy9h
-dDkxLWtpemJveG1pbmktbWIuZHRzCm5ldyBmaWxlIG1vZGUgMTAwNjQ0CmluZGV4IDAwMDAwMDAw
-MDAwMC4uNTI5MjFmNTQ3ZGQ2Ci0tLSAvZGV2L251bGwKKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMv
-YXQ5MS1raXpib3htaW5pLW1iLmR0cwpAQCAtMCwwICsxLDM4IEBACisvLyBTUERYLUxpY2Vuc2Ut
-SWRlbnRpZmllcjogR1BMLTIuMAorLyoKKyAqIENvcHlyaWdodCAoQykgMjAxNS0yMDE4IE92ZXJr
-aXogU0FTCisgKiAgIEF1dGhvcjogTWlja2FlbCBHYXJkZXQgPG0uZ2FyZGV0QG92ZXJraXouY29t
-PgorICogICAgICAgICAgIEvDqXZpbiBSYXltb25kIDxrLnJheW1vbmRAb3Zlcmtpei5jb20+Cisg
-Ki8KKy9kdHMtdjEvOworI2luY2x1ZGUgImF0OTEta2l6Ym94bWluaV9jb21tb24uZHRzaSIKKwor
-LyB7CisJbW9kZWwgPSAiT3ZlcmtpeiBLaXpib3ggTWluaSBNb3RoZXIgQm9hcmQiOworCWNvbXBh
-dGlibGUgPSAib3ZlcmtpeixraXpib3htaW5pLW1iIiwgImF0bWVsLGF0OTFzYW05ZzI1IiwKKwkJ
-ICAgICAiYXRtZWwsYXQ5MXNhbTl4NSIsICJhdG1lbCxhdDkxc2FtOSI7CisKKwljbG9ja3Mgewor
-CQlzbG93X3h0YWwgeworCQkJY2xvY2stZnJlcXVlbmN5ID0gPDMyNzY4PjsKKwkJfTsKKwl9Owor
-CisJcHdtX2xlZHMgeworCQlibHVlIHsKKwkJCWxhYmVsID0gInB3bTpibHVlOnVzZXIiOworCQkJ
-cHdtcyA9IDwmcHdtMCAyIDEwMDAwMDAwIDA+OworCQkJbWF4LWJyaWdodG5lc3MgPSA8MjU1PjsK
-KwkJCWxpbnV4LGRlZmF1bHQtdHJpZ2dlciA9ICJub25lIjsKKwkJfTsKKwl9OworfTsKKworJnVz
-YjAgeworCW51bS1wb3J0cyA9IDwyPjsKK307CisKKyZydGMgeworCXN0YXR1cyA9ICJva2F5IjsK
-K307CisKZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL2F0OTEta2l6Ym94bWluaS1yZC5k
-dHMgYi9hcmNoL2FybS9ib290L2R0cy9hdDkxLWtpemJveG1pbmktcmQuZHRzCm5ldyBmaWxlIG1v
-ZGUgMTAwNjQ0CmluZGV4IDAwMDAwMDAwMDAwMC4uMWQyZGI4ZTE2MjcxCi0tLSAvZGV2L251bGwK
-KysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvYXQ5MS1raXpib3htaW5pLXJkLmR0cwpAQCAtMCwwICsx
-LDU0IEBACisvLyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogR1BMLTIuMAorLyoKKyAqIENvcHly
-aWdodCAoQykgMjAxNS0yMDE4IE92ZXJraXogU0FTCisgKiAgIEF1dGhvcjogTWlja2FlbCBHYXJk
-ZXQgPG0uZ2FyZGV0QG92ZXJraXouY29tPgorICogICAgICAgICAgIEvDqXZpbiBSYXltb25kIDxr
-LnJheW1vbmRAb3Zlcmtpei5jb20+CisgKi8KKy9kdHMtdjEvOworI2luY2x1ZGUgImF0OTEta2l6
-Ym94bWluaV9jb21tb24uZHRzaSIKKworLyB7CisJbW9kZWwgPSAiT3ZlcmtpeiBLaXpib3ggTWlu
-aSBSYWlsRElOIjsKKwljb21wYXRpYmxlID0gIm92ZXJraXosa2l6Ym94bWluaS1yZCIsICJhdG1l
-bCxhdDkxc2FtOWcyNSIsCisJCSAgICAgImF0bWVsLGF0OTFzYW05eDUiLCAiYXRtZWwsYXQ5MXNh
-bTkiOworCisJY2xvY2tzIHsKKwkJc2xvd194dGFsIHsKKwkJCWNsb2NrLWZyZXF1ZW5jeSA9IDwz
-Mjc2OD47CisJCX07CisJCWFkY19vcF9jbGsgeworCQkJc3RhdHVzID0gIm9rYXkiOworCQl9Owor
-CX07Cit9OworCismcGluY3RybCB7CisJYWRjMCB7CisJCXBpbmN0cmxfYWRjMF9hZDU6IGFkYzBf
-YWQ1LTAgeworCQkJLyogcHVsbC11cCBkaXNhYmxlICovCisJCQlhdG1lbCxwaW5zID0gPEFUOTFf
-UElPQiAxNiBBVDkxX1BFUklQSF9HUElPIEFUOTFfUElOQ1RSTF9OT05FPjsKKwkJfTsKKwl9Owor
-fTsKKworJnVzYXJ0MCB7CisJc3RhdHVzID0gImRpc2FibGVkIjsKK307CisKKyZydGMgeworCXN0
-YXR1cyA9ICJva2F5IjsKK307CisKKyZsZWRzIHsKKwlibHVlIHsKKwkJc3RhdHVzID0gIm9rYXki
-OworCX07Cit9OworCismYWRjMCB7CisJYXRtZWwsYWRjLXZyZWYgPSA8MjUwMD47CisJcGluY3Ry
-bC1uYW1lcyA9ICJkZWZhdWx0IjsKKwlwaW5jdHJsLTAgPSA8JnBpbmN0cmxfYWRjMF9hZDU+Owor
-CWF0bWVsLGFkYy1jaGFubmVscy11c2VkID0gPDB4MDAyMD47CisJc3RhdHVzID0gIm9rYXkiOwor
-fTsKZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL2F0OTEta2l6Ym94bWluaV9jb21tb24u
-ZHRzaSBiL2FyY2gvYXJtL2Jvb3QvZHRzL2F0OTEta2l6Ym94bWluaV9jb21tb24uZHRzaQpuZXcg
-ZmlsZSBtb2RlIDEwMDY0NAppbmRleCAwMDAwMDAwMDAwMDAuLjI1OThiNzc2YTI3OAotLS0gL2Rl
-di9udWxsCisrKyBiL2FyY2gvYXJtL2Jvb3QvZHRzL2F0OTEta2l6Ym94bWluaV9jb21tb24uZHRz
-aQpAQCAtMCwwICsxLDE2NiBAQAorLy8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjAK
-Ky8qCisgKiBhdDkxLWtpemJveG1pbmkuZHRzIC0gRGV2aWNlIFRyZWUgZmlsZSBmb3IgT3Zlcmtp
-eiBLaXpib3ggbWluaSBib2FyZAorICoKKyAqIENvcHlyaWdodCAoQykgMjAxNC0yMDE4IE92ZXJr
-aXogU0FTCisgKiAgIEF1dGhvcjogQW50b2luZSBBdWJlcnQgPGEuYXViZXJ0QG92ZXJraXouY29t
-PgorICogICAgICAgICAgIEdhw6tsIFBvcnRheSA8Zy5wb3J0YXlAb3Zlcmtpei5jb20+CisgKiAg
-ICAgICAgICAgS8OpdmluIFJheW1vbmQgPGsucmF5bW9uZEBvdmVya2l6LmNvbT4KKyAqICAgICAg
-ICAgICBEb3JpYW4gUm9jaXBvbiA8ZC5yb2NpcG9uQG92ZXJraXouY29tPgorICovCisjaW5jbHVk
-ZSAiYXQ5MXNhbTlnMjUuZHRzaSIKKworLyB7CisJY2hvc2VuIHsKKwkJYm9vdGFyZ3MgPSAidWJp
-Lm10ZD11YmkiOworCQlzdGRvdXQtcGF0aCA9ICZkYmd1OworCX07CisKKwltZW1vcnkgeworCQly
-ZWcgPSA8MHgyMDAwMDAwMCAweDgwMDAwMDA+OworCX07CisKKwljbG9ja3MgeworCQltYWluX3h0
-YWwgeworCQkJY2xvY2stZnJlcXVlbmN5ID0gPDEyMDAwMDAwPjsKKwkJfTsKKworCQlhZGNfb3Bf
-Y2xrIHsKKwkJCXN0YXR1cyA9ICJkaXNhYmxlZCI7CisJCX07CisJfTsKKworCWdwaW9fa2V5cyB7
-CisJCWNvbXBhdGlibGUgPSAiZ3Bpby1rZXlzIjsKKwkJI2FkZHJlc3MtY2VsbHMgPSA8MT47CisJ
-CSNzaXplLWNlbGxzID0gPDA+OworCisJCXByb2cgeworCQkJbGFiZWwgPSAiUEJfUFJPRyI7CisJ
-CQlncGlvcyA9IDwmcGlvQyAxNyBHUElPX0FDVElWRV9MT1c+OworCQkJbGludXgsY29kZSA9IDww
-eDEwMj47CisJCQl3YWtldXAtc291cmNlOworCQl9OworCisJCXJlc2V0IHsKKwkJCWxhYmVsID0g
-IlBCX1JTVCI7CisJCQlncGlvcyA9IDwmcGlvQyAxNiBHUElPX0FDVElWRV9MT1c+OworCQkJbGlu
-dXgsY29kZSA9IDwweDEwMD47CisJCQl3YWtldXAtc291cmNlOworCQl9OworCX07CisKKwlsZWRz
-OiBwd21fbGVkcyB7CisJCWNvbXBhdGlibGUgPSAicHdtLWxlZHMiOworCisJCWJsdWUgeworCQkJ
-bGFiZWwgPSAicHdtOmJsdWU6dXNlciI7CisJCQlwd21zID0gPCZwd20wIDIgMTAwMDAwMDAgMD47
-CisJCQltYXgtYnJpZ2h0bmVzcyA9IDwyNTU+OworCQkJbGludXgsZGVmYXVsdC10cmlnZ2VyID0g
-Im5vbmUiOworCQkJc3RhdHVzID0gImRpc2FibGVkIjsKKwkJfTsKKworCQlncmVlbiB7CisJCQls
-YWJlbCA9ICJwd206Z3JlZW46dXNlciI7CisJCQlwd21zID0gPCZwd20wIDAgMTAwMDAwMDAgMD47
-CisJCQltYXgtYnJpZ2h0bmVzcyA9IDwyNTU+OworCQkJbGludXgsZGVmYXVsdC10cmlnZ2VyID0g
-ImRlZmF1bHQtb24iOworCQl9OworCisJCXJlZCB7CisJCQlsYWJlbCA9ICJwd206cmVkOnVzZXIi
-OworCQkJcHdtcyA9IDwmcHdtMCAxIDEwMDAwMDAwIDA+OworCQkJbWF4LWJyaWdodG5lc3MgPSA8
-MjU1PjsKKwkJCWxpbnV4LGRlZmF1bHQtdHJpZ2dlciA9ICJkZWZhdWx0LW9uIjsKKwkJfTsKKwl9
-OworfTsKKworJnVzYXJ0MCB7CisJYXRtZWwsdXNlLWRtYS1yeDsKKwlhdG1lbCx1c2UtZG1hLXR4
-OworCXN0YXR1cyA9ICJva2F5IjsKK307CisKKyZtYWNiMCB7CisJcGh5LW1vZGUgPSAicm1paSI7
-CisJc3RhdHVzID0gIm9rYXkiOworfTsKKworJnB3bTAgeworCXBpbmN0cmwtbmFtZXMgPSAiZGVm
-YXVsdCI7CisJcGluY3RybC0wID0gPCZwaW5jdHJsX3B3bTBfcHdtMF8xCisJCSAgICAgJnBpbmN0
-cmxfcHdtMF9wd20xXzEKKwkJICAgICAmcGluY3RybF9wd20wX3B3bTJfMT47CisJc3RhdHVzID0g
-Im9rYXkiOworfTsKKworJmRiZ3UgeworCXN0YXR1cyA9ICJva2F5IjsKK307CisKKyZ3YXRjaGRv
-ZyB7CisJc3RhdHVzID0gIm9rYXkiOworfTsKKworJmFkYzAgeworCXN0YXR1cyA9ICJkaXNhYmxl
-ZCI7Cit9OworCismcnRjIHsKKwlzdGF0dXMgPSAiZGlzYWJsZWQiOworfTsKKworJmViaSB7CisJ
-cGluY3RybC0wID0gPCZwaW5jdHJsX2ViaV9hZGRyX25hbmQKKwkJCSZwaW5jdHJsX2ViaV9kYXRh
-XzBfNz47CisJcGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsKKwlzdGF0dXMgPSAib2theSI7Cit9
-OworCismbmFuZF9jb250cm9sbGVyIHsKKwlzdGF0dXMgPSAib2theSI7CisJcGluY3RybC0wID0g
-PCZwaW5jdHJsX25hbmRfb2Vfd2UKKwkJICAgICAmcGluY3RybF9uYW5kX2NzCisJCSAgICAgJnBp
-bmN0cmxfbmFuZF9yYj47CisJcGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsKKworCW5hbmRAMyB7
-CisJCXJlZyA9IDwweDMgMHgwIDB4ODAwMDAwPjsKKwkJcmItZ3Bpb3MgPSA8JnBpb0QgNSBHUElP
-X0FDVElWRV9ISUdIPjsKKwkJY3MtZ3Bpb3MgPSA8JnBpb0QgNCBHUElPX0FDVElWRV9ISUdIPjsK
-KwkJbmFuZC1idXMtd2lkdGggPSA8OD47CisJCW5hbmQtZWNjLW1vZGUgPSAiaHciOworCQluYW5k
-LWVjYy1zdHJlbmd0aCA9IDw0PjsKKwkJbmFuZC1lY2Mtc3RlcC1zaXplID0gPDUxMj47CisJCW5h
-bmQtb24tZmxhc2gtYmJ0OworCQlsYWJlbCA9ICJhdG1lbF9uYW5kIjsKKworCQlwYXJ0aXRpb25z
-IHsKKwkJCWNvbXBhdGlibGUgPSAiZml4ZWQtcGFydGl0aW9ucyI7CisJCQkjYWRkcmVzcy1jZWxs
-cyA9IDwxPjsKKwkJCSNzaXplLWNlbGxzID0gPDE+OworCisJCQlib290c3RyYXBAMCB7CisJCQkJ
-bGFiZWwgPSAiYm9vdHN0cmFwIjsKKwkJCQlyZWcgPSA8MHgwIDB4MjAwMDA+OworCQkJfTsKKwor
-CQkJdWJpQDIwMDAwIHsKKwkJCQlsYWJlbCA9ICJ1YmkiOworCQkJCXJlZyA9IDwweDIwMDAwIDB4
-N2ZlMDAwMD47CisJCQl9OworCQl9OworCX07Cit9OworCismdXNiMCB7CisJbnVtLXBvcnRzID0g
-PDE+OworCXN0YXR1cyA9ICJva2F5IjsKK307CisKKyZ1c2IxIHsKKwlzdGF0dXMgPSAib2theSI7
-Cit9OworCi0tIAoyLjIzLjAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi Jerome / Neil / Martin,
+
+On Wed, 9 Oct 2019 at 17:34, Jerome Brunet <jbrunet@baylibre.com> wrote:
+>
+>
+> On Wed 09 Oct 2019 at 10:48, Anand Moon <linux.amoon@gmail.com> wrote:
+> >
+> > Kernel command line: console=ttyAML0,115200n8
+> > root=PARTUUID=45d7d61e-01 rw rootwait
+> > earlyprintk=serial,ttyAML0,115200 initcall_debug printk.time=y
+> >
+> > [0] https://pastebin.com/eBgJrSKe
+> >
+> >> you can also try the command line parameter "clk_ignore_unused" (it's
+> >> just a gut feeling: maybe a "critical" clock is being disabled because
+> >> it's not wired up correctly).
+> >>
+> >
+> > It look like some clk issue after I added the *clk_ignore_unused* to
+> > kernel command line
+> > it booted further to login prompt and cpufreq DVFS seem to be loaded.
+> > So I could conclude this is clk issue.below is the boot log
+> >
+> > Kernel command line: console=ttyAML0,115200n8
+> > root=PARTUUID=45d7d61e-01 rw rootwait
+> > earlyprintk=serial,ttyAML0,115200 initcall_debug printk.time=y
+> > clk_ignore_unused
+> >
+> > [1] https://pastebin.com/Nsk0wZQJ
+> >
+>
+> Next step it to try narrow down the clock causing the issue.
+> Remove clk_ignore_unused from the command line and add CLK_INGORE_UNUSED
+> to the flag of some clocks your clock controller (g12a I think) until
+>
+> The peripheral clock gates already have this flag (something we should
+> fix someday) so don't bother looking there.
+>
+> Most likely the source of the pwm is getting disabled between the
+> late_init call and the probe of the PWM module. Since the pwm is already
+> active (w/o a driver), gating the clock source shuts dowm the power to
+> the cores.
+>
+> Looking a the possible inputs in pwm driver, I'd bet on fdiv4.
+>
+
+I had give this above steps a try but with little success.
+I am still looking into this much close.
+
+Well I am not the expert in clk or bus configuration.
+but after looking into the datasheet of for clk configuration
+I found some bus are not configured correctly.
+
+As per Amlogic's kernel S922X (Hardkernel)
+below link share the bus controller.
+
+[0] https://github.com/hardkernel/linux/blob/odroidn2-4.9.y/arch/arm64/boot/dts/amlogic/mesong12b.dtsi#L295-L315
+
+looking in to current dts changes it looks bit wrong to me.
+
+*As per 6.1 Memory Map*
+apb_efuse: bus@30000  --> apb_efuse: bus@ff630000
+periphs: bus@34400    --> periphs: bus@ff634400
+dmc: bus@38000        --> dmc: bus@ff638000
+hiu: bus@3c000        --> hiu: bus@ff63c0000
+
+Also the order of these is not correct.
+
+Down the line in the datasheet some of the interrupt GIC bit are not
+mapped correctly for example.
+
+*As per 6.9.2 Interrupt Control Source*
+223 SD_EMMC_C
+222 SD_EMMC_B
+221 SD_EMMC_A
+
+and so on.
+Please share your thought if these changes are valid.
+
+Best Regards
+-Anand
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
