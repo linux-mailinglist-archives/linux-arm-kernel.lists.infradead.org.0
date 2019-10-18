@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9428ADC42A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 13:46:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DDF52DC447
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 14:01:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yGVP2X6u7uVr+LGm5PGN4qrJpfhdoZ/jCQAF6egFt2s=; b=qenJjHIJTvY52i
-	DJSQqTG2Z4xJv3glUZhNqQHMiGQ865RwXD55l9XEU7SKQNpsL+W/1bGMEZwIj8QYZNbIConFUbEgn
-	+nqTrrGnkEUjGIuktknLIj4QuvPVLeokFI5tHP8f5eVSah07YebgbZiEzdxF3DM5VPe1ClisI3Ud/
-	7VBq1ILv+gyOb4qJq+44dXD7qRMlUnhUxGxPl6TDsvneLnNDgOqSkTI02Mkl2kh44pzpZ8322qPww
-	U+im9oMnTrvmopFrAsZN2Bqyw37Oa16vo255yQNcnae6VbNDla6+2pAIMN+gV2Gv+hJ1829gZE4/W
-	dhjKpof+rpw8Frim7qIg==;
+	List-Owner; bh=/lFp21wlyXK9x+dlAiD4d4ms9I3zCpOFtjHNZRAWMOQ=; b=ABkJPZOh4VFc6U
+	g2hIH7a1Mne6QYprpxEGwp+qsaSmWMizGGZ2R1ad9bcq0zp0Q+RpdFL9uko8IBT4rmb/ovisS1itX
+	QQAh8BhtCTN8QQjyI4H/Bm6Hx42tjO+voUTHVcUJI8KqmlVWsi4ge8Ymgx5+raGNLLFynuaslvSMq
+	C5F2R/sWAhX+wr28biT7J6b8AoQvuEt1Yms2fRyqFe0AUb0eEdLrix7Ri+38KPjhn32fSSFuepz8A
+	nHKAmMywA84XX54Ax/mMTKhxlQupE3rN/SZb3ZED3mmbgJVJjSEdAGO5kE29JolsqWSI5k0CFGnvc
+	rU5SgD3I0ZgQCzfdYTow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLQho-0002h4-Sz; Fri, 18 Oct 2019 11:46:04 +0000
+	id 1iLQwf-0000Pe-2O; Fri, 18 Oct 2019 12:01:25 +0000
 Received: from [217.140.110.172] (helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLQhf-0002cc-To
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 11:45:57 +0000
+ id 1iLQwW-0000OZ-Bq
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 12:01:17 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4D43DCA3;
- Fri, 18 Oct 2019 04:45:45 -0700 (PDT)
-Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7F1EE3F6C4;
- Fri, 18 Oct 2019 04:45:43 -0700 (PDT)
-Date: Fri, 18 Oct 2019 12:45:29 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Yunfeng Ye <yeyunfeng@huawei.com>
-Subject: Re: [PATCH V3] arm64: psci: Reduce waiting time for
- cpu_psci_cpu_kill()
-Message-ID: <20191018114529.GA15116@bogus>
-References: <433980c7-f246-f741-f00c-fce103a60af7@huawei.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 64211CA3;
+ Fri, 18 Oct 2019 05:01:05 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ CD3653F6C4; Fri, 18 Oct 2019 05:01:04 -0700 (PDT)
+Date: Fri, 18 Oct 2019 13:01:02 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH v3 1/3] arm64: Factor out checks for KASLR in KPTI code
+ into separate function
+Message-ID: <20191018120102.GA55431@arrakis.emea.arm.com>
+References: <20191016151421.27708-1-broonie@kernel.org>
+ <20191016151421.27708-2-broonie@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <433980c7-f246-f741-f00c-fce103a60af7@huawei.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20191016151421.27708-2-broonie@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_044556_004469_836BC2C8 
-X-CRM114-Status: GOOD (  21.41  )
+X-CRM114-CacheID: sfid-20191018_050116_447358_4CF9D7FA 
+X-CRM114-Status: GOOD (  15.59  )
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
@@ -62,85 +63,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kstewart@linuxfoundation.org, lorenzo.pieralisi@arm.com,
- ard.biesheuvel@linaro.org, "hushiyuan@huawei.com" <hushiyuan@huawei.com>,
- catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
- "linfeilong@huawei.com" <linfeilong@huawei.com>, David.Laight@ACULAB.COM,
- gregkh@linuxfoundation.org, tglx@linutronix.de, wuyun.wu@huawei.com,
- will@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 18, 2019 at 07:24:14PM +0800, Yunfeng Ye wrote:
-> In a case like suspend-to-disk, a large number of CPU cores need to be
-
-Add suspend-to-ram also to list, i.e.
-"In case like suspend-to-disk and suspend-to-ram, a large number..."
-
-> shut down. At present, the CPU hotplug operation is serialised, and the
-> CPU cores can only be shut down one by one. In this process, if PSCI
-> affinity_info() does not return LEVEL_OFF quickly, cpu_psci_cpu_kill()
-> needs to wait for 10ms. If hundreds of CPU cores need to be shut down,
-> it will take a long time.
->
-> Normally, it is no need to wait 10ms in cpu_psci_cpu_kill(). So change
-
-s/it is/there is/
-
-> the wait interval from 10 ms to max 1 ms and use usleep_range() instead
-> of msleep() for more accurate schedule.
->
-
-s/for more accurate schedule/for more accurate timer/
-
-> In addition, reduce the time interval will increase the messages output,
-
-s/reduce/reducing/
-
-> so remove the "Retry ..." message, instead, put the number of waiting
-> times to the sucessful message.
-> 
-> Signed-off-by: Yunfeng Ye <yeyunfeng@huawei.com>
-> ---
-> v2 -> v3:
->  - update the comment
->  - remove the busy-wait logic, modify the loop logic and output message
-> 
-> v1 -> v2:
->  - use usleep_range() instead of udelay() after waiting for a while
-> 
->  arch/arm64/kernel/psci.c | 7 +++----
->  1 file changed, 3 insertions(+), 4 deletions(-)
-> 
-> diff --git a/arch/arm64/kernel/psci.c b/arch/arm64/kernel/psci.c
-> index c9f72b2665f1..00b8c0825a08 100644
-> --- a/arch/arm64/kernel/psci.c
-> +++ b/arch/arm64/kernel/psci.c
-> @@ -91,15 +91,14 @@ static int cpu_psci_cpu_kill(unsigned int cpu)
->  	 * while it is dying. So, try again a few times.
+On Wed, Oct 16, 2019 at 04:14:19PM +0100, Mark Brown wrote:
+> +static inline bool arm64_kernel_use_ng_mappings(void)
+> +{
+>  	/* What's a kpti? Use global mappings if we don't know. */
+>  	if (!IS_ENABLED(CONFIG_UNMAP_KERNEL_AT_EL0))
+>  		return false;
+> @@ -52,29 +79,21 @@ static inline bool arm64_kernel_use_ng_mappings(void)
+>  	if (arm64_kernel_unmapped_at_el0())
+>  		return true;
+>  
+> -	if (!IS_ENABLED(CONFIG_RANDOMIZE_BASE))
+> +	/*
+> +	 * Once we are far enough into boot for capabilities to be
+> +	 * ready we will have confirmed if we are using non-global
+> +	 * mappings so don't need to consider anything else here.
+> +	 */
+> +	if (static_branch_likely(&arm64_const_caps_ready))
+>  		return false;
+>  
+>  	/*
+>  	 * KASLR is enabled so we're going to be enabling kpti on non-broken
+>  	 * CPUs regardless of their susceptibility to Meltdown. Rather
+>  	 * than force everybody to go through the G -> nG dance later on,
+> -	 * just put down non-global mappings from the beginning.
+> +	 * just put down non-global mappings from the beginning
 >  	 */
-> 
-> -	for (i = 0; i < 10; i++) {
-> +	for (i = 0; i < 100; i++) {
->  		err = psci_ops.affinity_info(cpu_logical_map(cpu), 0);
->  		if (err == PSCI_0_2_AFFINITY_LEVEL_OFF) {
-> -			pr_info("CPU%d killed.\n", cpu);
-> +			pr_info("CPU%d killed by waiting %d loops.\n", cpu, i);
->  			return 0;
->  		}
-> 
-> -		msleep(10);
-> -		pr_info("Retrying again to check for CPU kill\n");
-> +		usleep_range(100, 1000);
+> -	if (!IS_ENABLED(CONFIG_CAVIUM_ERRATUM_27456)) {
+> -		tx1_bug = false;
+> -#ifndef MODULE
+> -	} else if (!static_branch_likely(&arm64_const_caps_ready)) {
+> -		extern const struct midr_range cavium_erratum_27456_cpus[];
+> -
+> -		tx1_bug = is_midr_in_range_list(read_cpuid_id(),
+> -						cavium_erratum_27456_cpus);
+> -#endif
+> -	} else {
+> -		tx1_bug = __cpus_have_const_cap(ARM64_WORKAROUND_CAVIUM_27456);
+> -	}
+> -
+> -	return !tx1_bug && kaslr_offset() > 0;
+> +	return kaslr_requires_kpti();
+>  }
 
-Since usleep_range can return anytime between 100us to 1ms, does it make
-sense to check for (time_before(jiffies, timeout)) you had in v2 ?
+While that's a step in the right direction, I'd like to see
+{PTE,PMD}_MAYBE_NG move away from the current use of
+arm64_kernel_use_ng_mappings(). These macros are used during early
+during boot and we seem to rely on cpu_hwcaps not being populated yet
+(arm64_kernel_unmapped_at_el0() checking it via cpus_have_const_cap()).
 
---
-Regards,
-Sudeep
+Could we have a global variable (boot or a pgtable attr type) which we
+populate during early boot and subsequently use in the PTE_MAYBE_NG
+macro?
+
+Thanks.
+
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
