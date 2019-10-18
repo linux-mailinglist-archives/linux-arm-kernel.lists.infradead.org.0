@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 420BDDCD9A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 20:11:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A260DCD9B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 20:11:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=qEt9O62eJ5Vp1tgmfUuMfXdGKRpNXs+h87UHRCDhDwo=; b=ClW
-	fDUCwv9JophZIQbyyd4xb+aJNqhhzxZvDzzx1vokbSHUa/T/6OybkSjsDkPWwe5X+LeZKiKfjAx3U
-	/XgkGfrtI2JQUsCnTtW/3OYp7Sqqlm5nwo0aJTwPwxlaTQbwu1nUKX8B6t/RFxLJVfaYUi4q3MGKn
-	JWraA/9i1TJ6/cGvgKiBBNmF1gs1I4oOBcUoRSlrgi+dE1fqllZNdlvdxYHYCL8Edb7oZuJjr3RK+
-	rhVzcy4WLcLr8OiRgzLzci2r5XByUWWFVR7+zlaDENZeNuutMBwKrYRYNjTqGuI2fmJFTRVTgYAri
-	XcV1p0cVk5GWucH7QmcLrMRQEjusFOw==;
+	References:List-Owner; bh=szQ/vYV7NFeoGLUUDcYygIUD/5a9uiBEJrvZPjaObhA=; b=VkK
+	9xsi8K0JbWyVS26Ge57tgQZfRDQj5yn7VYOhhX8rcHW1qkfe+QupbhAhjK/WuJolHPOMU2WSutJ9v
+	ZL59TusI/sdJJUVnH5u8KdEbapD0As8Pm97ZqAkGjVkUXkoE4clynSsfl/im7ViIj9TZmOjoJuyoK
+	pGk4DOs8G09wFENU0bsewlsYlpDMdHdepgD34fbwGB8l6RefEMsaeCJd8XQqGJsLifCrCi3O3gnay
+	N5qkqN2yruMaNco6BAW+aiFtaChLhfnEmrXwMGqrKoRof+cHqH3/NC/wYmcUVegGrTeorl5ShH9vc
+	UYcQyWwixkGMd6hJ7PdmO2zdEz7uUgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLWiA-0003QT-GK; Fri, 18 Oct 2019 18:10:50 +0000
+	id 1iLWiN-0003hu-Ty; Fri, 18 Oct 2019 18:11:03 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLWef-0007kJ-P5
+ id 1iLWeg-0007lS-J0
  for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 18:07:20 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
@@ -29,30 +29,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=djFLKeCvPYC1JI92wnKGfQBYAzanIKZZLgVKtsjqlsM=; b=hjAvJWo86YgT
- YloZHOX/P9PXV5w7GM4QznPW9FfFp8TN4tma8sqPWc6YUDmdTEBIXkqAvpFAeJbYV4KdFWyd8lI5z
- NfE+vYFsMl/6cqI6GQRHR36pqObYoO3MxIhgvJ0/9gwdo2nmOIIKBpbKp52QAKO3GF/BrEPiPnNND
- 8u55M=;
+ List-Archive; bh=t/gffXnLEnapErkIM7XMWv5utc8YEivVkOgKwMKPBdM=; b=hHurjcxQzNRI
+ 6WpaH4hMHMHxuU3WbZPyQtbF3fAjI53z84Il8FNt9q0I7+xo5gTNBvTxQgqzxj/LXMOI+o9v093xa
+ cNwhP4WaCg79z8VWNwQK0zs/zeXhDHaGMfyjr2jsuC5FCDVpoJq+4QqPwgtg8sL/GPugjQqO+ikyQ
+ znL8o=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iLWea-0004Gu-25; Fri, 18 Oct 2019 18:07:08 +0000
+ id 1iLWeb-0004HQ-U5; Fri, 18 Oct 2019 18:07:09 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 8A5912741DEA; Fri, 18 Oct 2019 19:07:07 +0100 (BST)
+ id 490C22743276; Fri, 18 Oct 2019 19:07:09 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
-To: Mans Rullgard <mans@mansr.com>
-Subject: Applied "spi: atmel: fix handling of cs_change set on non-last xfer"
- to the spi tree
-In-Reply-To: <20191018153504.4249-1-gregory.clement@bootlin.com>
+To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Subject: Applied "spi: pxa2xx: Replace of_device.h with mod_devicetable.h and
+ of.h" to the spi tree
+In-Reply-To: <20191018105429.82782-5-andriy.shevchenko@linux.intel.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20191018180707.8A5912741DEA@ypsilon.sirena.org.uk>
-Date: Fri, 18 Oct 2019 19:07:07 +0100 (BST)
+Message-Id: <20191018180709.490C22743276@ypsilon.sirena.org.uk>
+Date: Fri, 18 Oct 2019 19:07:09 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_110713_938083_217B9638 
-X-CRM114-Status: GOOD (  17.42  )
+X-CRM114-CacheID: sfid-20191018_110714_740481_F4651859 
+X-CRM114-Status: GOOD (  14.44  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -78,13 +78,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Gregory CLEMENT <gregory.clement@bootlin.com>,
- Nicolas Ferre <nicolas.ferre@atmel.com>, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org, Ludovic Desroches <ludovic.desroches@microchip.com>,
- Mark Brown <broonie@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Haojian Zhuang <haojian.zhuang@gmail.com>, linux-spi@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, Daniel Mack <daniel@zonque.org>,
+ Robert Jarzmik <robert.jarzmik@free.fr>, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -93,11 +89,11 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: atmel: fix handling of cs_change set on non-last xfer
+   spi: pxa2xx: Replace of_device.h with mod_devicetable.h and of.h
 
 has been applied to the spi tree at
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.4
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.5
 
 All being well this means that it will be integrated into the linux-next
 tree (usually sometime in the next 24 hours) and sent to Linus during
@@ -118,65 +114,36 @@ to this mail.
 Thanks,
 Mark
 
-From fed8d8c7a6dc2a76d7764842853d81c770b0788e Mon Sep 17 00:00:00 2001
-From: Mans Rullgard <mans@mansr.com>
-Date: Fri, 18 Oct 2019 17:35:04 +0200
-Subject: [PATCH] spi: atmel: fix handling of cs_change set on non-last xfer
+From ae8fbf1d2403bc187a5d8fe82fbf2205d89cdb60 Mon Sep 17 00:00:00 2001
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Date: Fri, 18 Oct 2019 13:54:29 +0300
+Subject: [PATCH] spi: pxa2xx: Replace of_device.h with mod_devicetable.h and
+ of.h
 
-The driver does the wrong thing when cs_change is set on a non-last
-xfer in a message.  When cs_change is set, the driver deactivates the
-CS and leaves it off until a later xfer again has cs_change set whereas
-it should be briefly toggling CS off and on again.
+There is nothing in use from of_device.h. The definitions and macros
+are available thru mod_devicetable.h and of.h.
 
-This patch brings the behaviour of the driver back in line with the
-documentation and common sense.  The delay of 10 us is the same as is
-used by the default spi_transfer_one_message() function in spi.c.
-[gregory: rebased on for-5.5 from spi tree]
-Fixes: 8090d6d1a415 ("spi: atmel: Refactor spi-atmel to use SPI framework queue")
-Signed-off-by: Mans Rullgard <mans@mansr.com>
-Acked-by: Nicolas Ferre <nicolas.ferre@atmel.com>
-Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
-Link: https://lore.kernel.org/r/20191018153504.4249-1-gregory.clement@bootlin.com
+Signed-off-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Link: https://lore.kernel.org/r/20191018105429.82782-5-andriy.shevchenko@linux.intel.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/spi-atmel.c | 10 +++-------
- 1 file changed, 3 insertions(+), 7 deletions(-)
+ drivers/spi/spi-pxa2xx.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/spi/spi-atmel.c b/drivers/spi/spi-atmel.c
-index acf318e7330c..2f8c79ce05c8 100644
---- a/drivers/spi/spi-atmel.c
-+++ b/drivers/spi/spi-atmel.c
-@@ -302,7 +302,6 @@ struct atmel_spi {
- 	bool			use_cs_gpios;
- 
- 	bool			keep_cs;
--	bool			cs_active;
- 
- 	u32			fifo_size;
- };
-@@ -1376,11 +1375,9 @@ static int atmel_spi_one_transfer(struct spi_master *master,
- 				 &msg->transfers)) {
- 			as->keep_cs = true;
- 		} else {
--			as->cs_active = !as->cs_active;
--			if (as->cs_active)
--				cs_activate(as, msg->spi);
--			else
--				cs_deactivate(as, msg->spi);
-+			cs_deactivate(as, msg->spi);
-+			udelay(10);
-+			cs_activate(as, msg->spi);
- 		}
- 	}
- 
-@@ -1403,7 +1400,6 @@ static int atmel_spi_transfer_one_message(struct spi_master *master,
- 	atmel_spi_lock(as);
- 	cs_activate(as, spi);
- 
--	as->cs_active = true;
- 	as->keep_cs = false;
- 
- 	msg->status = 0;
+diff --git a/drivers/spi/spi-pxa2xx.c b/drivers/spi/spi-pxa2xx.c
+index 684a5585ac7f..443c1f4d2a9a 100644
+--- a/drivers/spi/spi-pxa2xx.c
++++ b/drivers/spi/spi-pxa2xx.c
+@@ -18,7 +18,8 @@
+ #include <linux/ioport.h>
+ #include <linux/kernel.h>
+ #include <linux/module.h>
+-#include <linux/of_device.h>
++#include <linux/mod_devicetable.h>
++#include <linux/of.h>
+ #include <linux/pci.h>
+ #include <linux/platform_device.h>
+ #include <linux/pm_runtime.h>
 -- 
 2.20.1
 
