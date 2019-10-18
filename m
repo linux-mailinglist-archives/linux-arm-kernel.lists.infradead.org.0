@@ -2,48 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C74CDDCAE2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 18:21:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8C8BDCAE9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 18:22:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UO5MuIkPdT3M+O1zs/xwBceShFi31oHq0eo1j7U4E+I=; b=XFDp1XtHGoSY2k
-	/ZeqGyRzS9fgYiyRBymAHur+TfHozfXJeLCeyQs+86VsrSeCihdSi9uNwonoKpa8FacoGkSv4EaZb
-	HrK9i+jnuKZIzwMHaaqx8i1sy5W5eRgidWnuhAzxO/fyxkJuLmA+jYElgdTKu4Va9KHPUHOoxiasM
-	GygYDxSXmP4Nslom/bfo0o7s/jcemABhX1BWlXtEjK4u1EIOtBSLpfhpnk6R5T5gGFY0nn2HGAAbX
-	HpNmQ6gznJ5aU3VKmZSn5fv9IPy015+2MQF3uRG2ZzHrus6OhOipjxJRP8KvzYHSFMzwe7waRB3CR
-	zeq4w+IQsvmaKFzFE00g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=1MBRKAvAHKkQp1f2ci3jI1j5wG6jZuc+4FSE7I1UKoY=; b=t357+TLRzAmh1VikeyKFE+5SS
+	3EFOm7WROZ0T4PY/XyEmIwJc4cSvCkeOsIa7S53U//FEbqsnYmPvu1syhxvbox9e55PzxsWDYQqsC
+	dxWlDNJOwbihkKAArJgq5hRn3+J4nI8+0F3GSwr7J/kBeTlEsxhMfTBGf+2ryxiCxBy78cdbolir1
+	Q/d19sFwXbaOrKCJaHvAkDY1dlTmjomgM+aJQ+W2SlbkGT8wJibb8Dg1OQCC+5FzLcnEeW6bfb2+H
+	h9xp9mkaPJO5pjvANfLfHqjbdED9sGiqXdq0DZoxCfbT2z816BfoDnDUQhyGxMSkT/7kPZVoyndhW
+	Z/5ctLOiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLUzp-000350-2A; Fri, 18 Oct 2019 16:20:57 +0000
+	id 1iLV0u-0003SP-4C; Fri, 18 Oct 2019 16:22:04 +0000
 Received: from [217.140.110.172] (helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLUze-0002zw-8g; Fri, 18 Oct 2019 16:20:47 +0000
+ id 1iLV0i-0003Q2-KY
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 16:21:54 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 98337C8F;
- Fri, 18 Oct 2019 09:20:35 -0700 (PDT)
-Received: from [10.1.194.43] (e112269-lin.cambridge.arm.com [10.1.194.43])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1B9163F718;
- Fri, 18 Oct 2019 09:20:32 -0700 (PDT)
-Subject: Re: [PATCH v12 07/22] riscv: mm: Add p?d_leaf() definitions
-To: Christoph Hellwig <hch@infradead.org>
-References: <20191018101248.33727-1-steven.price@arm.com>
- <20191018101248.33727-8-steven.price@arm.com>
- <20191018155743.GG25386@infradead.org>
-From: Steven Price <steven.price@arm.com>
-Message-ID: <fe6a0fe4-e789-fb4b-4481-b3934234e16f@arm.com>
-Date: Fri, 18 Oct 2019 17:20:30 +0100
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9EB30CA2;
+ Fri, 18 Oct 2019 09:21:37 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7E10B3F718;
+ Fri, 18 Oct 2019 09:21:36 -0700 (PDT)
+Subject: Re: [PATCH 2/2] mfd: mfd-core: Honour Device Tree's request to
+ disable a child-device
+To: Lee Jones <lee.jones@linaro.org>, broonie@kernel.org,
+ linus.walleij@linaro.org, daniel.thompson@linaro.org, arnd@arndb.de
+References: <20191018122647.3849-1-lee.jones@linaro.org>
+ <20191018122647.3849-3-lee.jones@linaro.org>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <b7c59d6e-2ad8-30a1-013a-53c116f7b6ba@arm.com>
+Date: Fri, 18 Oct 2019 17:21:35 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20191018155743.GG25386@infradead.org>
+In-Reply-To: <20191018122647.3849-3-lee.jones@linaro.org>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_092046_351488_1CEA4CC6 
-X-CRM114-Status: GOOD (  13.02  )
+X-CRM114-CacheID: sfid-20191018_092152_722015_E58EA148 
+X-CRM114-Status: GOOD (  20.91  )
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
@@ -63,40 +65,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, linux-mm@kvack.org,
- "H. Peter Anvin" <hpa@zytor.com>, linux-riscv@lists.infradead.org,
- Will Deacon <will@kernel.org>, "Liang, Kan" <kan.liang@linux.intel.com>,
- Alexandre Ghiti <alex@ghiti.fr>, x86@kernel.org,
- Ingo Molnar <mingo@redhat.com>, Palmer Dabbelt <palmer@sifive.com>,
- Albert Ou <aou@eecs.berkeley.edu>, Arnd Bergmann <arnd@arndb.de>,
- =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
- Paul Walmsley <paul.walmsley@sifive.com>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-kernel@vger.kernel.org,
- James Morse <james.morse@arm.com>, Andrew Morton <akpm@linux-foundation.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-arm-kernel@lists.infradead.org, baohua@kernel.org,
+ linux-kernel@vger.kernel.org, stephan@gerhold.net
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 18/10/2019 16:57, Christoph Hellwig wrote:
->> +	return pud_present(pud)
->> +		&& (pud_val(pud) & (_PAGE_READ | _PAGE_WRITE | _PAGE_EXEC));
->> +}
+On 18/10/2019 13:26, Lee Jones wrote:
+> Until now, MFD has assumed all child devices passed to it (via
+> mfd_cells) are to be registered.  It does not take into account
+> requests from Device Tree and the like to disable child devices
+> on a per-platform basis.
 > 
-> The operators always need to go before the line break, not after it
-> per linux coding style.  There are a few more spots like this, so please
-> audit the whole series for it.
+> Well now it does.
+> 
+> Reported-by: Barry Song <Baohua.Song@csr.com>
+> Reported-by: Stephan Gerhold <stephan@gerhold.net>
+> Signed-off-by: Lee Jones <lee.jones@linaro.org>
+> ---
+>   drivers/mfd/mfd-core.c | 5 +++++
+>   1 file changed, 5 insertions(+)
+> 
+> diff --git a/drivers/mfd/mfd-core.c b/drivers/mfd/mfd-core.c
+> index eafdadd58e8b..24c139633524 100644
+> --- a/drivers/mfd/mfd-core.c
+> +++ b/drivers/mfd/mfd-core.c
+> @@ -182,6 +182,11 @@ static int mfd_add_device(struct device *parent, int id,
+>   	if (parent->of_node && cell->of_compatible) {
+>   		for_each_child_of_node(parent->of_node, np) {
+>   			if (of_device_is_compatible(np, cell->of_compatible)) {
+> +				if (!of_device_is_available(np)) {
+> +					/* Ignore disabled devices error free */
+> +					ret = 0;
+> +					goto fail_alias;
+> +				}
 
-Fair enough. In this case I was just copying the example in pte_huge()
-that already existed - but you're right this isn't the kernel coding style.
+Is it possible for a device to have multiple children of the same type? 
+If so, it seems like this might not work as desired if, say, the first 
+child was disabled but subsequent ones weren't.
 
-Thanks,
+It might make sense to use for_each_available_child_of_node() for the 
+outer loop, then check afterwards if anything was found.
 
-Steve
+Robin.
+
+>   				pdev->dev.of_node = np;
+>   				pdev->dev.fwnode = &np->fwnode;
+>   				break;
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
