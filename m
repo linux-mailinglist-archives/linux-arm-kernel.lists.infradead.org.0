@@ -2,95 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B312FDCF32
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 21:18:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DCBADCF35
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 21:19:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9nZYRam0kL1p2JAPsOEdbQRkq0uFYIq7yzGpTX2M69o=; b=sX2XVMz83WQc01
-	98/uQnuCwopcUbTWHvcTbIodHivYArG6seoZUWrmE9uP+8e+hNp1/Ap3fj95KtphKMBbNmqbvSxN/
-	whmzwVCm5zIrHo7/KuBx6O6ZbO0ENpNYcbDWJQx4NKbQ7MJXS5VDw4TU/2fhXSiGtz2QUp9OUNCZa
-	314Qan0tc0Pr87ECA39DpncM2+UmHNaqY7Mc1abhDni1Hs9XGmh9l5SK8JTTSSVw71HlFsvHZwIPc
-	xWf7hmYu+PPBDgpSbM03mhh7jt6H/cDJ96fY7XF/ULmUA/i4ifjDfiTYl+Ati7/txtnb+Eeq/nDO7
-	lXNnKRifIEA0vyMChSNw==;
+	List-Owner; bh=ott4Ioz6ogbVrdDvFjZ2TTWQbN/pO1LfAh8xakSET4I=; b=NhpntmaMxv1NUf
+	lU8OUViKJiLCU70fApRg+KmYgYrn81bcgdWv+dt+iFHoXDu53ev60rPht3PBuxM7+79sJcKJO3ycM
+	iGd95fOzwYrK1xKq3Fg1ZWd7tU55Cus/2DKplzZQpnrlKXLH7EKlHLLpJkLXFZPyrgyRQGCQKdY0+
+	J6iis4n504DzNW+g6mT/OSTUETSjBYo1OlygqfzK2EiJyrB71UMahxuw2Cb51F8QygyeiCl+hcera
+	EpfJJjwIQywNcKMBqO8VyXix3uuhY1z/GSUco/jXnPaml75SWjFks6G+rk89ZhkCW3QKKVn6/U2zd
+	T5I9wd6gv219SWJogY2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLXlL-0003cK-Ds; Fri, 18 Oct 2019 19:18:11 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1iLXmR-0003vB-Qm; Fri, 18 Oct 2019 19:19:19 +0000
+Received: from mail-qt1-f196.google.com ([209.85.160.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLXl8-0003bC-TW
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 19:18:00 +0000
-Received: by mail-lf1-x142.google.com with SMTP id u16so5520269lfq.3
+ id 1iLXmH-0003uq-US
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 19:19:11 +0000
+Received: by mail-qt1-f196.google.com with SMTP id j31so10663283qta.5
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 12:17:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=linux-foundation.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=gfI0AJSthc554vKx2lGALI0At1GBVKK3lR5urVM2u5o=;
- b=VgncGr5yjc//ouu/7v1mSUHDd6fZju6z/Ht4L7uJcHz8C5ZjHqzHf/QU+HEdUYxEO2
- 0wbGYwcxszbE4giQskHtZ5f0P2usEjfcHedLpFS+fuP/DSwO6J6N7ZCr6xa/ushP5O/t
- SIhcZZVoAesRsxU+OQYIUywvth6XYUmMSzw1s=
+ Fri, 18 Oct 2019 12:19:09 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=gfI0AJSthc554vKx2lGALI0At1GBVKK3lR5urVM2u5o=;
- b=dOWWGfwBi6Uv2DHftx1G78swy1P8XbL/P8u8x2cZdIN7qxGIkI/oKZqY+gx62hJ41D
- SrWFjTfP+DZhuxJseiQ5CqRBEdwsao1DqdqR+c5ZVD5O9Fft0Zjc+s0y6SGMbyMmD8mD
- vtGYCKicNmB60202yOAtqd9kYetkfwgBNHroI/DXqwcM8kzqUU80WtKkaylgoqH/y+IL
- C5gKOhrvzMIy3i+7FjdoYcaCkqPetHIKn/S+m2bHbNcdVaxAOViJ/XuMldUr0ynjYOq7
- Tj0SH3esWXHZD9kohzIaqpz3AjSr5xZUqX/Dy/l/hJSYoycDKuXCtUOSiJgCtfURa5VL
- 7IEw==
-X-Gm-Message-State: APjAAAWGebSWzud7LXaZMDHZAEzEdQxKURibjG2T+GNUZkI84I2eYPRF
- E3imrBFcZWZUf32WCG6qWjtyUUkrtl8=
-X-Google-Smtp-Source: APXvYqxy2/XNSVddLpubGRQoSu/kN+DhsHMjlxgWI1LA5PXKuk8Z6lRBTQSNntf24mMxYs1JOykBTg==
-X-Received: by 2002:ac2:52b1:: with SMTP id r17mr7003953lfm.25.1571426272117; 
- Fri, 18 Oct 2019 12:17:52 -0700 (PDT)
-Received: from mail-lf1-f52.google.com (mail-lf1-f52.google.com.
- [209.85.167.52])
- by smtp.gmail.com with ESMTPSA id p86sm3181163lja.100.2019.10.18.12.17.50
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 18 Oct 2019 12:17:51 -0700 (PDT)
-Received: by mail-lf1-f52.google.com with SMTP id z12so5503224lfj.9
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 12:17:50 -0700 (PDT)
-X-Received: by 2002:a19:f709:: with SMTP id z9mr7071645lfe.170.1571426270371; 
- Fri, 18 Oct 2019 12:17:50 -0700 (PDT)
+ bh=E3U4XGKYJwhdQD0/oZgkQawFhyEgJU1s1iV2DJRNVE0=;
+ b=Y2L00TQ3/GpG9UkB1U1TM1VcCRK2YeqJMy5RIEnAv7pO8B1WgVh0njlFZYS5wqS+RP
+ kadh9zsvOG4T+WoNc1IsP+6/t6l7B+c4AW9NDak3pejy3R1rbEoCgq6VzXvday9KndWo
+ VCMY7YgnAGgdhw3rGwRjx8ZBByjYR3EuJJJ6AkwF6G3nA0DELH1CyRV1WAsKrseK18QQ
+ N4UjZU4HOUO0TdqmGfmFD9boY9KCElirBDfS3tsqFpaGQjf7BkhV7RwlX56v14vUjoVb
+ MNssHwwzlk4z4AzDoAxrreq5NkbO6mJp136nZIsCtJACI5AF2pVRBSmAr/A1JF6zuz30
+ lbnA==
+X-Gm-Message-State: APjAAAVSeOltK6+MZGS0w7vjalTXbEdLNYnv+D0NiWZtUebrYztslwoa
+ BbgBJB1x7lTrAiHMAjH8MsdVJNMLvWBJZqO7U/g=
+X-Google-Smtp-Source: APXvYqxSdwLbuKUmnS6HRUngapjYIWC2HNoTLspIqQPpMjTGmKepluzI6LCX3jGsQESRx9rOP5yHQqeQSsLxa9EJpzQ=
+X-Received: by 2002:aed:3c67:: with SMTP id u36mr11534406qte.142.1571426348391; 
+ Fri, 18 Oct 2019 12:19:08 -0700 (PDT)
 MIME-Version: 1.0
-References: <20191017234348.wcbbo2njexn7ixpk@willie-the-truck>
- <CAHk-=wjPZYxiTs3F0Vbrd3kRizJGq-rQ_jqH1+8XR9Ai_kBoXg@mail.gmail.com>
- <20191018174153.slpmkvsz45hb6cts@willie-the-truck>
-In-Reply-To: <20191018174153.slpmkvsz45hb6cts@willie-the-truck>
-From: Linus Torvalds <torvalds@linux-foundation.org>
-Date: Fri, 18 Oct 2019 12:17:34 -0700
-X-Gmail-Original-Message-ID: <CAHk-=whmtB98b8=YL2b8HzPKRadk2A9pL0aasmvgebhePrDP9w@mail.gmail.com>
-Message-ID: <CAHk-=whmtB98b8=YL2b8HzPKRadk2A9pL0aasmvgebhePrDP9w@mail.gmail.com>
-Subject: Re: [GIT PULL] arm64: Fixes for -rc4
-To: Will Deacon <will@kernel.org>
+References: <20191018163047.1284736-1-arnd@arndb.de>
+ <20191018163047.1284736-6-arnd@arndb.de>
+ <20191018190135.GF24810@lunn.ch>
+In-Reply-To: <20191018190135.GF24810@lunn.ch>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Fri, 18 Oct 2019 21:18:52 +0200
+Message-ID: <CAK8P3a1hw7Zi_g=F2ZThDW0FCKO1941f0yM8b0OA4d0toTRpUQ@mail.gmail.com>
+Subject: Re: [PATCH 6/6] ARM: orion: unify Makefile/Kconfig files
+To: Andrew Lunn <andrew@lunn.ch>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_121759_002858_5064ACEC 
-X-CRM114-Status: GOOD (  11.91  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191018_121909_984363_CB37B345 
+X-CRM114-Status: GOOD (  11.49  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
+ no trust [209.85.160.196 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.196 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,51 +84,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux ARM Kernel Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Gregory Clement <gregory.clement@bootlin.com>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+ Jason Cooper <jason@lakedaemon.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 18, 2019 at 10:42 AM Will Deacon <will@kernel.org> wrote:
+On Fri, Oct 18, 2019 at 9:01 PM Andrew Lunn <andrew@lunn.ch> wrote:
 >
-> Thanks, that's helpful to know for next time. I guess I'm most surprised by
-> the discrepancy between the shortlog and the diffstat, whereas I intuitively
-> expected them to be generated in the same way.
+> On Fri, Oct 18, 2019 at 06:29:19PM +0200, Arnd Bergmann wrote:
+> > +config MACH_TERASTATION_WXL
+> > +     bool "Buffalo WLX (Terastation Duo) NAS"
+> > +     help
+> > +       Say 'Y' here if you want your kernel to support the
+> > +       Buffalo WXL Nas.
+> > +
+> > +endif
+> > +
+> > +# SPDX-License-Identifier: GPL-2.0-only
+> > +menuconfig ARCH_ORION5X
+> > +     bool "Marvell Orion"
+> > +     depends on MMU && ARCH_MULTI_V5
+> > +     select CPU_FEROCEON
+> > +     select GENERIC_CLOCKEVENTS
+> > +     select FORCE_PCI
+> > +     select PHYLIB if NETDEVICES
+> > +     select PLAT_ORION_LEGACY
+> > +     help
+> > +       Support for the following Marvell Orion 5x series SoCs:
+> > +       Orion-1 (5181), Orion-VoIP (5181L), Orion-NAS (5182),
+> > +       Orion-2 (5281), Orion-1-90 (6183).
+>
+> Hi Arnd
+>
+> I don't think this SPDX line should be in the middle of the file?
 
-So logs and diffs are fundamentally different.
+Fixed now, thanks!
 
-A log is an operation on a _set_ of commits (that's the whole point -
-you don't list the beginning and the end, you list all the commits in
-between), while a diff is fundamentally an operation on two end-points
-and shows the code difference between those two points.
-
-And the summary versions of those operations (shortlog and diffstat)
-are no different.
-
-So as a set operation, "shortlog" has no issues with multiple merge
-bases. Doing a shortlog is still just a set difference between your
-commits and the upstream commits, and the number of merge bases is
-irrelevant. "List all commits that I have, but upstream doesn't have"
-is a very straightforward and natural set operation.
-
-But as a "two endpoints" operation, diffstat has real problems any
-time you have more than two endpoints - when you have multiple merge
-bases, you fundamentally have more than two endpoints: you have all of
-the merge bases, and then you have your end result.
-
-What you doing the merge does is to turn the multiple merge bases into
-just one point: the thing you merged against now becomes the common
-merge point, and now you have a "two endpoints" for the diffstat: the
-thing you merged against, and your end result are now the two points
-that you can diff against.
-
-But the shortlog is always correct, because it just doesn't even care
-about that whole issue.
-
-                Linus
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
