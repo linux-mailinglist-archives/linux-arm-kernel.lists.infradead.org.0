@@ -2,76 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F1B8DC584
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 14:56:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A51D2DC588
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 14:57:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=djiuv7Ko/+LyqIHdDsKXN8iUWNkfsarvHftyWoJqYIQ=; b=Ekm
-	AtCd72BlXSkWllE/JjDQctrTsHTlquE0kcnKMWvFGsHcEcJhp1HS2BtMXGmhTEHAAWvvzx9keAIfx
-	TX1QPabFULvxnleORRwDNLPstj4MZy00ecuFUa8pSwJ2+MBXwguRxZ/6WrMw8GQxx63sKBfXckRjQ
-	RmCUDFAa9VqbIkQ6K8loBQS4tC+dOK/GxgpfdJ0NUFby9guIzrPDJR9ZzhpS/KUeUPAuFULkHBWc1
-	AVBU/O8IrHmyt8WOzDQs+AfztyiC9nbxbs8R00QiY6/357mzjjv+dQLwD1xipZ10UWhX4rmvxmCmy
-	u/kp0kcNh8SbipllOmdziOc0dniabsg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=sbZFuaSCbhOt+Fv0Z5FusX0zdm0wghL8blGySyuNAEk=; b=tOIB5I2c1RNCl4QhJ2prQS9Wvc
+	x48bO+I/A4NpgzbDXeuM91r/0HhDBJQ+wpHSjR+an0ES6TjznSXRQLh0d5NzXGwsfsVVcUv3EkI+L
+	KbxVmecEpoqVVyYP1iQvLBwze8qEcB0UVwyoA4dVbXVFhNMFsoR6wyrj4waFZTfSxDH4fLcCptqQH
+	KVEYn4nw546rqBd4vRVxfGh3Wzhg+za/6CknW3MlvYbiaO1jia6Qxj8L+5hGJATXhooKuinqfBb1D
+	/emTqJ545vxCp9d9dAn5De4i6/aELoj6SRxmbC9rSzpALX9MBAEFe/PkBBx5ZvXxY+7jqiiKf6f19
+	bccQGtQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLRnt-0007wj-Mc; Fri, 18 Oct 2019 12:56:25 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iLRoL-00088o-O0; Fri, 18 Oct 2019 12:56:53 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLRng-0007uN-6e
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 12:56:13 +0000
-Received: by mail-wr1-x442.google.com with SMTP id o18so6128477wrv.13
+ id 1iLRnh-0007ux-47
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 12:56:14 +0000
+Received: by mail-wr1-x444.google.com with SMTP id o18so6128527wrv.13
  for <linux-arm-kernel@lists.infradead.org>;
  Fri, 18 Oct 2019 05:56:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=CD+bty2JgPn943TXaARoc4H7hkdb+h7lncGCHmaCcN0=;
- b=EaxXB8yxpjgjqwE0bD1jv7eEoqqaOonz1N2djpz721OFIF0SOlfI2YHO/fm1KnHC4r
- E1soMZAW3KI1TxX1d9HBNyCSz/R368Z52LRPE6EQHZdTkLOTfghR6vtw2Waes46H4NQU
- EWUtsUBLSXS2wgkez92ZoF5W4Amxmyu2a5iZCIpDHeyGtcmfXqHXtyTmfDEKvv0Do/Wb
- AdypkdXk1CaPdm2bHf91rOLbVNY+s5kVI0C7B+93s0pwpwb04GrhekXCaEFBJlA0uuIb
- LQlIOFFhfzXzRiV+OQJmj/pVLVG+j7hD1TWykpN6gz0WRFfli4EB1Dk8z6N1S4iJoJF2
- VvmA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=RI1bFjYRN5JoMtaeqs26PN1sSu7fROvvqss/8HZl7T4=;
+ b=Tkump4dkVHciY3EeN1den7fHXElV+9LPol0+LGG3Z7MWtrr7yGuf5RVZ41hMkz6dL7
+ pQDq79k4nyRfYaA1srfAPUUjnTfnixSxG/3HVivTenEJ1j+axHw4aH9c3ZleE1gp7cQf
+ DrZWH2k2B12+nwMszZ5/5W7wHgoITM5o+D8IVlOdJrE7lFGvHcjP31AoaUprRjTU3XyB
+ t7sm2PpXhN4LLXJPIYLbVz7vh7qVTByPvW24Iid7J8l6L+YZ5OEVulRWRaIcWLQVxj/Y
+ yLvz2i2tfSl6U88FWJPSqnspRFwayraj9hJakM3sJQFRaBIAjORWXkWMfgOnq6qUtDqQ
+ 3ErA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=CD+bty2JgPn943TXaARoc4H7hkdb+h7lncGCHmaCcN0=;
- b=QafKEPMfE1qf+PqR4wD+vMpRIzdo+p76y8s0iuwR2Gj6XeKr8w/Yq9JuC6wiAMg2z8
- kz52TwYEdY6/XvT5pts/OUbsYrRH7dnsuaMgpKq+DgIjdUBTAf7IJxXcaNpu1tcg7yMu
- lu3X/ez1+hlV2P98Zf0MgQb6q51pipV8Az12OQ4ZD7dvVGJQWkLUrobqHbAd4bkwcaF/
- vMB4aEsAN0Ck0odmyBtuxraHsl6ONY7+oSByIlRyRTA0Brmu9B+3nGQUDOXit3v2DhO3
- /Zw600+IUmbXL2wgJTgg9TFUA7ujC5G9YTrKoGqdOxUu8eC0gwlgPTPfjNBN/0555NMx
- 3ghw==
-X-Gm-Message-State: APjAAAV+dosm/MPuQwza13NOCilGkQstxmOahKEnQeYKjZuq874Dk+sy
- JObbNPiHa7K1Swt/OAcsfuKByA==
-X-Google-Smtp-Source: APXvYqzhKfBhrK7QtUfqpevfqJ71ENZUKgC+sVTep3qJNI5X9AKSvISdqmAywnq/+lv1DRUZSA48gw==
-X-Received: by 2002:a5d:488f:: with SMTP id g15mr8279585wrq.9.1571403370810;
- Fri, 18 Oct 2019 05:56:10 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=RI1bFjYRN5JoMtaeqs26PN1sSu7fROvvqss/8HZl7T4=;
+ b=bpxpJIW9pzUGEIpmOEX0lIXy6DlxR62SHbA6RrebBKc6Kbi/wHja0AqOt9n3EV6NIq
+ GHpOjva5BE9vn0Yp07/9oBSyGoO0W3cTMjjAfv+eSX99dw7FRy7/f97vapLOJ4e3Rknl
+ whisxpLdWt2jaOEpdFMjPyNJq22+NGZYOXwSXzWbbMAL+EJ791JmM5r4Iwe2d6gwuwrG
+ xkQMXbqbX/cn1suHmYrrLMISm0i2NcS8PDOM8NUpbstAa/baL7AocghAC8KL+oAQceUe
+ v3GqT+Y19DQa8palGiQQspbspl9WCtxXHtUhQ7tzYgCyp0HWCNhKpb7eCizXSK2V0AOs
+ ipjQ==
+X-Gm-Message-State: APjAAAWPIE1cSIf/MdKEXV3q15xOM716wCvTxkext9xrSgdsacSg/p2a
+ eA0miL8o43nzJYkOBPbXhF2TDA==
+X-Google-Smtp-Source: APXvYqxviqehwQj2KMJTxb29i2NMIz5kZ16QzwRcaK4PH4t57iD2gSga5z/RCWxme78LpO7Yl7arYg==
+X-Received: by 2002:adf:e292:: with SMTP id v18mr7628000wri.190.1571403371768; 
+ Fri, 18 Oct 2019 05:56:11 -0700 (PDT)
 Received: from localhost.localdomain ([95.149.164.47])
  by smtp.gmail.com with ESMTPSA id q14sm6058491wre.27.2019.10.18.05.56.10
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 18 Oct 2019 05:56:10 -0700 (PDT)
+ Fri, 18 Oct 2019 05:56:11 -0700 (PDT)
 From: Lee Jones <lee.jones@linaro.org>
 To: broonie@kernel.org, linus.walleij@linaro.org, daniel.thompson@linaro.org,
  arnd@arndb.de
-Subject: [PATCH 0/4] Remove mfd_clone_cell() from the MFD API
-Date: Fri, 18 Oct 2019 13:56:04 +0100
-Message-Id: <20191018125608.5362-1-lee.jones@linaro.org>
+Subject: [PATCH 1/4] mfd: cs5535-mfd: Use PLATFORM_DEVID_* defines and tidy
+ error message
+Date: Fri, 18 Oct 2019 13:56:05 +0100
+Message-Id: <20191018125608.5362-2-lee.jones@linaro.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191018125608.5362-1-lee.jones@linaro.org>
+References: <20191018125608.5362-1-lee.jones@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_055612_252484_BE64F1B8 
-X-CRM114-Status: UNSURE (   7.95  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191018_055613_161636_D1C8E6DE 
+X-CRM114-Status: GOOD (  12.85  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -101,22 +105,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-mfd_clone_cell() only has one user and it quite easy to replicate
-using the existing MFD registration API in the traditional way.
-Here we convert the user and remove the superfluous helper.
+In most contexts '-1' doesn't really mean much to the casual observer.
+In almost all cases, it's better to use a human readable define.  In
+this case PLATFORM_DEVID_* defines have already been provided for this
+purpose.
 
-Lee Jones (4):
-  mfd: cs5535-mfd: Use PLATFORM_DEVID_* defines and tidy error message
-  mfd: cs5535-mfd: Remove mfd_cell->id hack
-  mfd: cs5535-mfd: Register clients using their own dedicated MFD cell
-    entries
-  mfd: mfd-core: Remove mfd_clone_cell()
+While we're here, let's be specific about the 'MFD devices' which
+failed.  It will help when trying to distinguish with of the 2 sets of
+sub-devices we actually failed to register.
 
- drivers/mfd/cs5535-mfd.c | 70 ++++++++++++++++++++++++++--------------
- drivers/mfd/mfd-core.c   | 33 -------------------
- include/linux/mfd/core.h | 18 -----------
- 3 files changed, 45 insertions(+), 76 deletions(-)
+Signed-off-by: Lee Jones <lee.jones@linaro.org>
+---
+ drivers/mfd/cs5535-mfd.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
+diff --git a/drivers/mfd/cs5535-mfd.c b/drivers/mfd/cs5535-mfd.c
+index f1825c0ccbd0..2c47afc22d24 100644
+--- a/drivers/mfd/cs5535-mfd.c
++++ b/drivers/mfd/cs5535-mfd.c
+@@ -127,10 +127,11 @@ static int cs5535_mfd_probe(struct pci_dev *pdev,
+ 		cs5535_mfd_cells[i].id = 0;
+ 	}
+ 
+-	err = mfd_add_devices(&pdev->dev, -1, cs5535_mfd_cells,
++	err = mfd_add_devices(&pdev->dev, PLATFORM_DEVID_NONE, cs5535_mfd_cells,
+ 			      ARRAY_SIZE(cs5535_mfd_cells), NULL, 0, NULL);
+ 	if (err) {
+-		dev_err(&pdev->dev, "MFD add devices failed: %d\n", err);
++		dev_err(&pdev->dev,
++			"Failed to add CS5532 sub-devices: %d\n", err);
+ 		goto err_disable;
+ 	}
+ 
 -- 
 2.17.1
 
