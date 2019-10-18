@@ -2,74 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0EB0DBE5D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 09:31:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B76A6DBEC7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 09:51:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FR5AF5Z9w5ze6+gvSiSYeIgPTTNcR/tqKy2Df4zGe8Q=; b=ZV0Jl+o/OkhXUC
-	RI19yQkceKHl9+JWNpJkD9nojC/mB+JTJd2buFva8l+iqQu1a8E5ven8SeoxuecJZMJ3feEYsyezL
-	gGbAtcXc1SMYjmZSV7ax/lbfo2ZPFnvlhyoiLUBiBIpiLQoZxhSNoQNK7I+j8Pnx8LQdY8liJd1br
-	xrtrGFfyezqFOY9NAtA4JE+n50cXHKr83I/NgXomqURRSPLlvG/wMo9W7bXK4+hnBGf20dR50lh67
-	NTOgifrsSYifFRLdWJWY5i9zAj6+NMwkXKuk42opNBGWRk/AHRkeFfE/B0HmsVEfIp5kv7rUTLhSp
-	fT12mrkgQmvAMFFr0CyA==;
+	List-Owner; bh=y/tdtDmIfEKvGDGlnFPBGl4SFtDxr18WqVjVqIADE10=; b=VxrNa1oZ1r9oX1
+	s0guqdzs8sNE4ZNa3tNGty21aNqsJT5mDQl2qaHP0gAjBjehO7rSUyur91G89ANkPdrdoDEVhftdI
+	9WmD5+qed1vUK4wrsas1kJKvQIGQ1N1zJDudI1k1y39lKLaNaWf8viAvB3lhEKzO2BZdLDpkOe5rp
+	PgQKbBRFuRy1HkpX2scY0lg9EN5pGwXkbOfltlS+gk4l9mZj+O8mN3h/YnQBG+RKq2EZXM/yizyca
+	DS5ZaAuBp/w44FkOxgOtpjNJ2hKkqb5seIRwfn1uYIYdWUNLGl/kZYneQFqmnL94F4lV7dS0JtGFX
+	LhcCs0AJQwpTumI0ZaHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLMjT-0002ww-02; Fri, 18 Oct 2019 07:31:31 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1iLN2c-0001FB-BH; Fri, 18 Oct 2019 07:51:18 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLMj5-0002kG-BR; Fri, 18 Oct 2019 07:31:08 +0000
-Received: by mail-ot1-f65.google.com with SMTP id e11so4167187otl.5;
- Fri, 18 Oct 2019 00:31:06 -0700 (PDT)
+ id 1iLN2O-0001DE-VU
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 07:51:07 +0000
+Received: by mail-wr1-x443.google.com with SMTP id b9so5132352wrs.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 18 Oct 2019 00:51:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=fM8b15WIQPLm6gJ8nUY/1hpjjf4QWro/MmV8xFN9zZg=;
+ b=l3Rtf2YaDcnhqcYIac502Y6vhF6tmfGOqiAvN0tOqRaiXcGmeaWFzVBq0KxmtYW0pl
+ tjP+okI9vW/AfAbBKGa4Fi4N2sXPAsYSct2k+7kBbp+B6UdCkuyCPtuMyAAHVLvl+lBI
+ irVWh359lC7QQP4jprQSdsKNfxJ8c+vrMKu+tbnEu3iez5trFLKkOOWxSBpLzzNqDXuX
+ 7zubQUIElPgvwVprzYYPbKiaa2TpeupW3P+YcZD6PoO+4YHe5prRDO0heFx09e3SfRJC
+ h9QaMd2VHT4gQoGkf9BqkcIj5j5JOyQgRf7KuA203aUZrd6EllCvjaVrBGQkKppACWXH
+ 12Zg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=1vcvhB5CLF/+MeUyHDDl7fZL+tAXhkabxwY8RzqlUc4=;
- b=ayEUbJ2MoEqAlFXxalbn7dZzJl2TLzODSsOWvI+Wo2ADnk0q8rM3wtqLvASqMi1KaI
- nFQVXuuPD9eSRYKrB9OoOiUaaWYQhHG5XkVp2KOveruOgWw4N2PuLpIxIva9zuU2DdEr
- yiPT9/GNscV45iHrIsoQrucHJHQtnwz7eWsCsCkT0bBkI/4Ph67DyOyhxWULzdEu9C0I
- 4K9Iaq9XUofh0T6ZMPD7ad+6oRiBRCjKssrNnX04arv54pBz91T3iI67bmU5NWLzO89n
- ZAop13ajo5dmgWga7x5oG+Z40ct4ACY7QdqhrLOh3iDRHYyM6y/NX3QANhhZ7We8hLik
- FJiw==
-X-Gm-Message-State: APjAAAXpFeMpL78piSe3KY5piVBbWKJkwOYiifArLT8CdOatyGSXWUuF
- SU+JXW5GKgxOu1tyqha4WXk4sG+unA6qWRu3eLo=
-X-Google-Smtp-Source: APXvYqz5ZTzm2szPG0oqRjP0bYm68wI5cC2zWPx8OuV5blCVSPhZgU0siPaT+bnCFclqt0wG9CC25EAYDHrDP1i11C0=
-X-Received: by 2002:a9d:70d0:: with SMTP id w16mr6117171otj.107.1571383865678; 
- Fri, 18 Oct 2019 00:31:05 -0700 (PDT)
+ bh=fM8b15WIQPLm6gJ8nUY/1hpjjf4QWro/MmV8xFN9zZg=;
+ b=MmkevYkwymYrf1wikul9KmpSfxInk80c2Yxvhyt+n2DNfFq09Kx6FxmQP6ocp91hVJ
+ W37ct8erJNjJk0MyRvMgyjRNmC63vXYlpTDFDQUtfnFfYmE6sjAgGpYwjN3Xtuk2Da2i
+ Lgq2DF8taf141JkMNdKydMIG4Pz6JencvwD3eOyerUT18wIov60bw5E0/yl0o9chiWuN
+ 4SLT43fIrHW6Fnc6Smt2tGy1HJedDmmasWyLU98v8maqFxI3DK2bpImmLkjYTDL+66F/
+ HQiWjwcXGcS8u7FGyD/jmkSSeURZF5i0JqKrhn1QrFziLasq8ud9GfY+s+QfCvaHB00q
+ woYA==
+X-Gm-Message-State: APjAAAWkmDHDBcrmpYXncLi8R8J0zb/1JJWdI6TYhZXudjh3v0NVBaBn
+ NuhMsplAiHI7ZRx1/IOpA37nwG9E+6VibwSrrTFZGg==
+X-Google-Smtp-Source: APXvYqwku8nt+MuAp1XiPYKGAIOaqnVm6JsBbUb/b9RmMmXJil36H+o1ul75jyBq7sk1LCp/3vysGh2vqJeRYWoDVRA=
+X-Received: by 2002:adf:d08d:: with SMTP id y13mr6266832wrh.138.1571385059925; 
+ Fri, 18 Oct 2019 00:50:59 -0700 (PDT)
 MIME-Version: 1.0
-References: <20191017174554.29840-1-hch@lst.de>
- <20191017174554.29840-14-hch@lst.de>
-In-Reply-To: <20191017174554.29840-14-hch@lst.de>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Fri, 18 Oct 2019 09:30:54 +0200
-Message-ID: <CAMuHMdWaQ15j7fQ9-8XKgrSwgf96nT=yY+FCPWPxoPC9LGqvbQ@mail.gmail.com>
-Subject: Re: [PATCH 13/21] m68k: rename __iounmap and mark it static
-To: Christoph Hellwig <hch@lst.de>
+References: <20191007145909.29979-1-mjourdan@baylibre.com>
+ <8563127e-fe2c-a633-556b-8a883cebb171@xs4all.nl>
+ <977c48e8-8275-c96a-688b-ccfbb873eb79@baylibre.com>
+ <65a88bfc-d82b-1487-7983-507149b11673@xs4all.nl>
+ <acef4f1e-0b59-30f5-f31f-9fc22f393072@baylibre.com>
+ <fb6edb95-069e-abeb-416e-2327da0a87ab@xs4all.nl>
+In-Reply-To: <fb6edb95-069e-abeb-416e-2327da0a87ab@xs4all.nl>
+From: Maxime Jourdan <mjourdan@baylibre.com>
+Date: Fri, 18 Oct 2019 09:50:49 +0200
+Message-ID: <CAMO6nazotuiZQROoA4+b8tHZ-qpR4TS1RZWV6=fyPVCdsxz1Zg@mail.gmail.com>
+Subject: Re: [PATCH 0/2] media: meson: vdec: Add compliant H264 support
+To: Hans Verkuil <hverkuil@xs4all.nl>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_003107_396181_C9539A0F 
-X-CRM114-Status: GOOD (  14.32  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20191018_005105_075775_A6DE5DCE 
+X-CRM114-Status: GOOD (  24.62  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,96 +92,155 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-ia64@vger.kernel.org" <linux-ia64@vger.kernel.org>,
- Linux-sh list <linux-sh@vger.kernel.org>,
+Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Guo Ren <guoren@kernel.org>, sparclinux <sparclinux@vger.kernel.org>,
- linux-riscv@lists.infradead.org, Vincent Chen <deanbo422@gmail.com>,
- Linux-Arch <linux-arch@vger.kernel.org>,
- linux-s390 <linux-s390@vger.kernel.org>,
- "open list:QUALCOMM HEXAGON..." <linux-hexagon@vger.kernel.org>,
- the arch/x86 maintainers <x86@kernel.org>,
- arcml <linux-snps-arc@lists.infradead.org>, linux-xtensa@linux-xtensa.org,
- Arnd Bergmann <arnd@arndb.de>, linux-m68k <linux-m68k@lists.linux-m68k.org>,
- Openrisc <openrisc@lists.librecores.org>, Greentime Hu <green.hu@gmail.com>,
- MTD Maling List <linux-mtd@lists.infradead.org>, Guan Xuetao <gxt@pku.edu.cn>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Michal Simek <monstr@monstr.eu>, Parisc List <linux-parisc@vger.kernel.org>,
- linux-mips@vger.kernel.org, alpha <linux-alpha@vger.kernel.org>,
- nios2-dev@lists.rocketboards.org
+ Hans Verkuil <hans.verkuil@cisco.com>, linux-amlogic@lists.infradead.org,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Christoph,
-
-On Thu, Oct 17, 2019 at 7:53 PM Christoph Hellwig <hch@lst.de> wrote:
-> m68k uses __iounmap as the name for an internal helper that is only
-> used for some CPU types.  Mark it static and give it a better name.
+On Wed, Oct 9, 2019 at 2:01 PM Hans Verkuil <hverkuil@xs4all.nl> wrote:
 >
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
-
-Thanks for your patch!
-
-> --- a/arch/m68k/mm/kmap.c
-> +++ b/arch/m68k/mm/kmap.c
-> @@ -52,6 +52,7 @@ static inline void free_io_area(void *addr)
+> On 10/8/19 3:40 PM, Maxime Jourdan wrote:
+> > On 07/10/2019 18:39, Hans Verkuil wrote:
+> >> On 10/7/19 6:24 PM, Maxime Jourdan wrote:
+> >>> On 07/10/2019 17:12, Hans Verkuil wrote:
+> >>>> On 10/7/19 4:59 PM, Maxime Jourdan wrote:
+> >>>>> Hello,
+> >>>>>
+> >>>>> This patch series aims to bring H.264 support as well as compliance update
+> >>>>> to the amlogic stateful video decoder driver.
+> >>>>>
+> >>>>> There is 1 issue that remains currently:
+> >>>>>
+> >>>>>    - The following codepath had to be commented out from v4l2-compliance as
+> >>>>> it led to stalling:
+> >>>>>
+> >>>>> if (node->codec_mask & STATEFUL_DECODER) {
+> >>>>>      struct v4l2_decoder_cmd cmd;
+> >>>>>      buffer buf_cap(m2m_q);
+> >>>>>
+> >>>>>      memset(&cmd, 0, sizeof(cmd));
+> >>>>>      cmd.cmd = V4L2_DEC_CMD_STOP;
+> >>>>>
+> >>>>>      /* No buffers are queued, call STREAMON, then STOP */
+> >>>>>      fail_on_test(node->streamon(q.g_type()));
+> >>>>>      fail_on_test(node->streamon(m2m_q.g_type()));
+> >>>>>      fail_on_test(doioctl(node, VIDIOC_DECODER_CMD, &cmd));
+> >>>>>
+> >>>>>      fail_on_test(buf_cap.querybuf(node, 0));
+> >>>>>      fail_on_test(buf_cap.qbuf(node));
+> >>>>>      fail_on_test(buf_cap.dqbuf(node));
+> >>>>>      fail_on_test(!(buf_cap.g_flags() & V4L2_BUF_FLAG_LAST));
+> >>>>>      for (unsigned p = 0; p < buf_cap.g_num_planes(); p++)
+> >>>>>          fail_on_test(buf_cap.g_bytesused(p));
+> >>>>>      fail_on_test(node->streamoff(q.g_type()));
+> >>>>>      fail_on_test(node->streamoff(m2m_q.g_type()));
+> >>>>>
+> >>>>>      /* Call STREAMON, queue one CAPTURE buffer, then STOP */
+> >>>>>      fail_on_test(node->streamon(q.g_type()));
+> >>>>>      fail_on_test(node->streamon(m2m_q.g_type()));
+> >>>>>      fail_on_test(buf_cap.querybuf(node, 0));
+> >>>>>      fail_on_test(buf_cap.qbuf(node));
+> >>>>>      fail_on_test(doioctl(node, VIDIOC_DECODER_CMD, &cmd));
+> >>>>>
+> >>>>>      fail_on_test(buf_cap.dqbuf(node));
+> >>>>>      fail_on_test(!(buf_cap.g_flags() & V4L2_BUF_FLAG_LAST));
+> >>>>>      for (unsigned p = 0; p < buf_cap.g_num_planes(); p++)
+> >>>>>          fail_on_test(buf_cap.g_bytesused(p));
+> >>>>>      fail_on_test(node->streamoff(q.g_type()));
+> >>>>>      fail_on_test(node->streamoff(m2m_q.g_type()));
+> >>>>> }
+> >>>>>
+> >>>>> The reason for this is because the driver has a limitation where all
+> >>>>> capturebuffers must be queued to the driver before STREAMON is effective.
+> >>>>> The firmware needs to know in advance what all the buffers are before
+> >>>>> starting to decode.
+> >>>>> This limitation is enforced via q->min_buffers_needed.
+> >>>>> As such, in this compliance codepath, STREAMON is never actually called
+> >>>>> driver-side and there is a stall on fail_on_test(buf_cap.dqbuf(node));
+> >>>>
+> >>>> That's interesting. I will have to look more closely at this.
 >
->  #define IO_SIZE                (256*1024)
+> This requires a helper function in videobuf2-v4l2.c.
 >
-> +static void __free_io_area(void *addr, unsigned long size);
->  static struct vm_struct *iolist;
+> In vdec_decoder_cmd you would need code like this:
 >
->  static struct vm_struct *get_io_area(unsigned long size)
-> @@ -90,7 +91,7 @@ static inline void free_io_area(void *addr)
->                 if (tmp->addr == addr) {
->                         *p = tmp->next;
->                         /* remove gap added in get_io_area() */
-> -                       __iounmap(tmp->addr, tmp->size - IO_SIZE);
-> +                       __free_io_area(tmp->addr, tmp->size - IO_SIZE);
->                         kfree(tmp);
->                         return;
->                 }
-> @@ -249,12 +250,13 @@ void iounmap(void __iomem *addr)
->  }
->  EXPORT_SYMBOL(iounmap);
+>         if (!vb2_start_streaming_called(&capture_queue)) {
+>                 vb2_dequeue_empty_last_buf(&capture_queue);
+>                 return 0;
+>         }
 >
-> +#ifndef CPU_M68040_OR_M68060_ONLY
-
-Can you please move this block up, instead of adding more #ifdef cluttery?
-That would also remove the need for a forward declaration.
-
->  /*
-> - * __iounmap unmaps nearly everything, so be careful
-> + * __free_io_area unmaps nearly everything, so be careful
->   * Currently it doesn't free pointer/page tables anymore but this
->   * wasn't used anyway and might be added later.
->   */
-> -void __iounmap(void *addr, unsigned long size)
-> +static void __free_io_area(void *addr, unsigned long size)
->  {
->         unsigned long virtaddr = (unsigned long)addr;
->         pgd_t *pgd_dir;
-> @@ -297,6 +299,7 @@ void __iounmap(void *addr, unsigned long size)
+> The vb2_dequeue_empty_last_buf (function name can probably be improved upon!)
+> does nothing if no capture buffers were queued, otherwise it takes the first
+> buffer, sets the LAST flag and sets bytesused to 0 and marks it as DONE.
 >
->         flush_tlb_all();
->  }
-> +#endif /* CPU_M68040_OR_M68060_ONLY */
+> The driver cannot do this directly, since the buffers were never queued to the
+> driver and are owned by vb2.
 >
->  /*
->   * Set new cache mode for some kernel address space.
+> This is something that needs to be done for any codec driver that sets
+> min_buffers_needed to a value > 1.
+>
+> The vb2 function would look something like this:
+>
+> void vb2_dqbuf_empty_last_buf(struct vb2_queue *q)
+> {
+>         struct vb2_buffer *vb;
+>         struct vb2_v4l2_buffer *vbuf;
+>         unsigned int i;
+>
+>         if (WARN_ON(q->is_output))
+>                 return;
+>         if (list_empty(&q->queued_list))
+>                 return;
+>         vb = list_first_entry(&q->queued_list, struct vb2_buffer, queued_entry);
+>         list_del(&vb->queued_entry);
+>         for (i = 0; i < vb->num_planes; i++)
+>                 vb2_set_plane_payload(vb, i, 0)
+>         vbuf = to_vb2_v4l2_buffer(vb);
+>         vbuf->flags |= V4L2_BUF_FLAG_LAST;
+>         vb2_buffer_done(vb, VB2_BUF_STATE_DONE);
+> }
+> EXPORT_SYMBOL_GPL(vb2_dqbuf_empty_last_buf);
+>
+> Neither compiled, nor tested, and I think this should be in v4l2-mem2mem.c instead of
+> in videobuf2-v4l2.c since this is very m2m specific.
+>
+> So see this as a suggestion :-)
+>
+> Anyway, the key take-away from this is that userspace does not know if your driver
+> behaves the way it does, so STOP should still produce a sane expected result.
+>
+> Which in this is just a single empty capture buffer marked LAST.
 
-Gr{oetje,eeting}s,
+Thanks, this makes sense. It doesn't quite fit the current usage
+unfortunately as the test in v4l2-compliance goes like this:
 
-                        Geert
+fail_on_test(doioctl(node, VIDIOC_DECODER_CMD, &cmd));
+fail_on_test(buf_cap.querybuf(node, 0));
+fail_on_test(buf_cap.qbuf(node));
+fail_on_test(buf_cap.dqbuf(node));
+fail_on_test(!(buf_cap.g_flags() & V4L2_BUF_FLAG_LAST));
 
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+Since the buffer is queued after issuing the stop cmd, it is not
+possible to flag it as DONE in vdec_decoder_cmd.
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+A solution would be to hijack vidioc_qbuf and flag the buffer if a
+stop has been issued previously and the capture queue is not
+streaming. Would that be okay ?
+
+Maxime
+
+>
+> Regards,
+>
+>         Hans
 
 _______________________________________________
 linux-arm-kernel mailing list
