@@ -2,60 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0B52DCBB3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 18:41:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB531DCBC1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 18:43:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E/BPmD6II6PcrRxo0hFqEK87X0dQTn4dpjUve3ZTb1Y=; b=O0273bIjvI88SI
-	kP54DjaF+0xd3NC0LSkbpNlQim8PJ2OWGmdp/y+y2qAzAKL6nERt19QHjqI9fzwBrOPBEHrytcwVs
-	Hi+kW50SN0VBZQ8Mu5vJmzw5uz667+h+uCUUSZ94COW1+wehjdGgT78LwIEOIyUXYMmeegq2ra/cC
-	bMEA1Tde7D4CbufInSZNpbu4eXlnssoE2xAUQeiOgNcLVSNdF3XVecGHot/nvBfb/QQcFL24a3nIs
-	rRHYRislcmPvqTeJyjUWVUoUyx11pb4/01B9Y1VQSKaFTyYXyjkGrMPPw8bt29JH9dCY/EEztLHmn
-	p4C8F3gl+knodB7I1q1g==;
+	List-Owner; bh=5OIpAoOzX6c1bch61sEWDUCrxbslR6rR/hT+gdCYk6A=; b=AM3FyZ2f2D59ZG
+	M/ODT8Fyi47Yq8R6Y2/iaf2yl4u1lskUNnVw+G7YVVrku13rud/sarl7KmgxhJyVEhBbTgG0gmDFZ
+	VIkwM6BARwa3pKTLGYTTJ/1FA1EMjMgzU3Nfr+AJwxk7ph36hqcuFWkhtsV9eOl0YspGD7PIqZnQD
+	IsWs0lO81Tc9CuAv23qT/kmXFaU8vpyoUACmI8qM6HjeS4EJe/+RQSI1Il1oqlBbY4tgB+a2BLhJm
+	0HLuD4D0qOEbMOX+FxXQ2m1NJkTS2Tk4CjwyiZNRpPiLP5ailKO+DgMrDxP6UDmQzCo/RZqH+47qv
+	V/0On1BnWq8buEg1ODzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLVJT-00070G-06; Fri, 18 Oct 2019 16:41:15 +0000
-Received: from [217.140.110.172] (helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLVJE-0006er-0T
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 16:41:01 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CFA99FD9;
- Fri, 18 Oct 2019 09:40:43 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E85553F718;
- Fri, 18 Oct 2019 09:40:40 -0700 (PDT)
-Date: Fri, 18 Oct 2019 17:40:38 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH v2 09/12] arm64: traps: Fix inconsistent faulting
- instruction skipping
-Message-ID: <20191018164037.GG27757@arm.com>
-References: <1570733080-21015-1-git-send-email-Dave.Martin@arm.com>
- <1570733080-21015-10-git-send-email-Dave.Martin@arm.com>
- <20191011152453.GF33537@lakrids.cambridge.arm.com>
- <20191015152108.GX27757@arm.com>
- <20191015164204.GC24604@lakrids.cambridge.arm.com>
- <20191015164904.GY27757@arm.com>
+	id 1iLVM0-0007WT-6x; Fri, 18 Oct 2019 16:43:52 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iLVLj-0007VC-Kv
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 16:43:43 +0000
+Received: by mail-pl1-x643.google.com with SMTP id q24so3093969plr.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 18 Oct 2019 09:43:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=itPDN3uOMullCrqvdWp4VHOtEiVy99lUJjyxqObTixM=;
+ b=a4KqHH64Syi3Jkb+d0eVgCpN+31SnDYFhDKhObeeBYgIxsVpB28MK9tNghzsFxuX+N
+ VbAKU58UasFmej23pHOk0QrDLH7oKDm4M3dk3bgCtTUWOgQmltwfMriaPvVLpxp3C0pC
+ kYoPXPqJx0ajXSrYjPEgK8592+nVdo/5DSLpSz/Itc5Br1qMc82P+2UjLLk4LyZ199qw
+ YdBPa6JePJa0Fd7+ocz3Fs2qom1i2u3DIw3HjxianaEOsPf5x+/L3CFK6vBNgDV9SqT3
+ pgNBOC5FZlvErDViSZm4W/P+hr6vWNgjySr+vmQ1yyL5jifp07AxbcGC3bkxHitLbGMK
+ lX4A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=itPDN3uOMullCrqvdWp4VHOtEiVy99lUJjyxqObTixM=;
+ b=abEvTQdytRwZVrhooiECmDUFnTimGV3ovlVW+NN/kWmDa8QR8d52zbgDrkEIyPlmkn
+ 6y7B7ZoQJZbmIhQjVX9guCjYEXGkup70ydRmIjwnkh3vJKMIVq6RqINZUkzluKZKG/QY
+ HNdyXwcjSOzlZeBBji2TGUaIGypHiUYXAZDNW3BYEqJvSajD+bvpBmUlfzQJXgdFm5Cw
+ ZHkwgqxVQUOwXwg7SPsOaF/fTBK7Ehk9rPtj6PtkONUbH1AlskajmtPzEfN+F7EH0amG
+ XfhRnWo/jhc3hWrktGuJ58cKPJpRw9pkCW6RxMMc14TvMF/WcYBDGdostpoSO62g2GgN
+ o3Sg==
+X-Gm-Message-State: APjAAAXmn+QSs3xNj1sd0P4F5xHUC18vhY2hvlEEwoLzrvnw3cojEPJ9
+ 82YREAsL+OCvENxxPKU6Waxu0OhUk6pQZLh37b1Ctg==
+X-Google-Smtp-Source: APXvYqxjABHlLirt3mzHAGsgLEpxUZMPZex/FsD7C0vJFW62s876ojGzoWlX6A4J5FwacSy764TFAtK8KXx4Wiz+QQw=
+X-Received: by 2002:a17:902:9b83:: with SMTP id
+ y3mr10710877plp.179.1571417011191; 
+ Fri, 18 Oct 2019 09:43:31 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191015164904.GY27757@arm.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20191018161033.261971-2-samitolvanen@google.com>
+In-Reply-To: <20191018161033.261971-2-samitolvanen@google.com>
+From: Nick Desaulniers <ndesaulniers@google.com>
+Date: Fri, 18 Oct 2019 09:43:20 -0700
+Message-ID: <CAKwvOd=rspmzW+v=nG=07H5XZ2OPWVbhDusYEe3k5+mZ79JvwA@mail.gmail.com>
+Subject: Re: [PATCH 01/18] arm64: mm: don't use x18 in
+ idmap_kpti_install_ng_mappings
+To: Sami Tolvanen <samitolvanen@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_094100_151296_F03F0401 
-X-CRM114-Status: GOOD (  32.39  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20191018_094341_783133_9854FDC0 
+X-CRM114-Status: GOOD (  15.87  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,146 +99,154 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Andrew Jones <drjones@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, linux-arch@vger.kernel.org,
- Eugene Syromiatnikov <esyr@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- "H.J. Lu" <hjl.tools@gmail.com>, Yu-cheng Yu <yu-cheng.yu@intel.com>,
- Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- Jann Horn <jannh@google.com>, Richard Henderson <richard.henderson@linaro.org>,
- Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
- Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org, Florian Weimer <fweimer@redhat.com>,
- linux-kernel@vger.kernel.org, Sudakshina Das <sudi.das@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, kernel-hardening@lists.openwall.com,
+ LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 15, 2019 at 05:49:05PM +0100, Dave Martin wrote:
-> On Tue, Oct 15, 2019 at 05:42:04PM +0100, Mark Rutland wrote:
-> > On Tue, Oct 15, 2019 at 04:21:09PM +0100, Dave Martin wrote:
-> > > On Fri, Oct 11, 2019 at 04:24:53PM +0100, Mark Rutland wrote:
-> > > > On Thu, Oct 10, 2019 at 07:44:37PM +0100, Dave Martin wrote:
-> > > > > Correct skipping of an instruction on AArch32 works a bit
-> > > > > differently from AArch64, mainly due to the different CPSR/PSTATE
-> > > > > semantics.
-> > > > > 
-> > > > > There have been various attempts to get this right.  Currenty
-> > > > > arm64_skip_faulting_instruction() mostly does the right thing, but
-> > > > > does not advance the IT state machine for the AArch32 case.
-> > > > > 
-> > > > > arm64_compat_skip_faulting_instruction() handles the IT state
-> > > > > machine but is local to traps.c, and porting other code to use it
-> > > > > will make a mess since there are some call sites that apply for
-> > > > > both the compat and native cases.
-> > > > > 
-> > > > > Since manual instruction skipping implies a trap, it's a relatively
-> > > > > slow path.
-> > > > > 
-> > > > > So, make arm64_skip_faulting_instruction() handle both compat and
-> > > > > native, and get rid of the arm64_compat_skip_faulting_instruction()
-> > > > > special case.
-> > > > > 
-> > > > > Fixes: 32a3e635fb0e ("arm64: compat: Add CNTFRQ trap handler")
-> > > > > Fixes: 1f1c014035a8 ("arm64: compat: Add condition code checks and IT advance")
-> > > > > Fixes: 6436beeee572 ("arm64: Fix single stepping in kernel traps")
-> > > > > Fixes: bd35a4adc413 ("arm64: Port SWP/SWPB emulation support from arm")
-> > > > > Signed-off-by: Dave Martin <Dave.Martin@arm.com>
-> > > > > ---
-> > > > >  arch/arm64/kernel/traps.c | 18 ++++++++----------
-> > > > >  1 file changed, 8 insertions(+), 10 deletions(-)
-> > > > 
-> > > > This looks good to me; it's certainly easier to reason about.
-> > > > 
-> > > > I couldn't spot a place where we do the wrong thing today, given AFAICT
-> > > > all the instances in arch/arm64/kernel/armv8_deprecated.c would be
-> > > > UNPREDICTABLE within an IT block.
-> > > > 
-> > > > It might be worth calling out an example in the commit message to
-> > > > justify the fixes tags.
-> > > 
-> > > IIRC I found no bug here; rather we have pointlessly fragmented code,
-> > > so I followed the "if fixing the same bug in multiple places, merge
-> > > those places so you need only fix it in one place next time" rule.
-> > 
-> > Sure thing, that makes sense to me.
-> > 
-> > > Since arm64_skip_faulting_instruction() is most of the way to being
-> > > generically usable anyway, this series merges all the special-case
-> > > handling into it.
-> > > 
-> > > I could add something like
-> > > 
-> > > --8<--
-> > > 
-> > > This allows this fiddly operation to be maintained in a single
-> > > place rather than trying to maintain fragmented versions spread
-> > > around arch/arm64.
-> > > 
-> > > -->8--
-> > > 
-> > > Any good?
-> > 
-> > My big concern is that the commit message reads as a fix, implying that
-> > there's an existing correctness bug. I think that simplifying it to make
-> > it clearer that it's a cleanup/improvement would be preferable.
-> > 
-> > How about:
-> > 
-> > | arm64: unify native/compat instruction skipping
-> > |
-> > | Skipping of an instruction on AArch32 works a bit differently from
-> > | AArch64, mainly due to the different CPSR/PSTATE semantics.
-> > |
-> > | Currently arm64_skip_faulting_instruction() is only suitable for
-> > | AArch64, and arm64_compat_skip_faulting_instruction() handles the IT
-> > | state machine but is local to traps.c.
-> > | 
-> > | Since manual instruction skipping implies a trap, it's a relatively
-> > | slow path.
-> > | 
-> > | So, make arm64_skip_faulting_instruction() handle both compat and
-> > | native, and get rid of the arm64_compat_skip_faulting_instruction()
-> > | special case.
-> > |
-> > | Signed-off-by: Dave Martin <Dave.Martin@arm.com>
-> 
-> And drop the Fixes tags.  Yes, I think that's reasonable.
-> 
-> I think I was probably glossing over the fact that we don't need to get
-> the ITSTATE machine advance correct for the compat insn emulation; as
-> you say, I can't see what else this patch "fixes".
-> 
-> > With that, feel free to add:
-> >
-> > Reviewed-by: Mark Rutland <mark.rutland@arm.com>
-> 
-> Thanks!
-> 
-> > We could even point out that the armv8_deprecated cases are
-> > UNPREDICTABLE in an IT block, and correctly emulated either way.
-> 
-> Yes, I'll add something along those lines.
+On Fri, Oct 18, 2019 at 9:10 AM Sami Tolvanen <samitolvanen@google.com> wrote:
+>
+> idmap_kpti_install_ng_mappings uses x18 as a temporary register, which
+> will result in a conflict when x18 is reserved. Use x16 and x17 instead
+> where needed.
+>
+> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
 
-Taking another look, I now can't track down where e.g., SWP in an IT
-block is specified to be UNPREDICTABLE.  I only see e.g.,
-ARM DDI 0487E.a Section 1.8.2 ("F1.8.2 Partial deprecation of IT"),
-which only deprecates the affected instructions.
+TIL about .req/.unreq.  Seems like a nice way of marking "variable"
+lifetime.  Technically, only `pte` needed to be moved to reuse
+{w|x}16, but moving most the unreqs together is nicer than splitting
+them apart. The usage all looks correct to me.
+Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
 
-The legacy AArch32 SWP{B} insn is obsoleted by ARMv8, but the whole
-point of the armv8_deprecated stuff is to provide some backwards
-compatiblity with v7.
+> ---
+>  arch/arm64/mm/proc.S | 63 ++++++++++++++++++++++----------------------
+>  1 file changed, 32 insertions(+), 31 deletions(-)
+>
+> diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
+> index a1e0592d1fbc..fdabf40a83c8 100644
+> --- a/arch/arm64/mm/proc.S
+> +++ b/arch/arm64/mm/proc.S
+> @@ -250,15 +250,15 @@ ENTRY(idmap_kpti_install_ng_mappings)
+>         /* We're the boot CPU. Wait for the others to catch up */
+>         sevl
+>  1:     wfe
+> -       ldaxr   w18, [flag_ptr]
+> -       eor     w18, w18, num_cpus
+> -       cbnz    w18, 1b
+> +       ldaxr   w17, [flag_ptr]
+> +       eor     w17, w17, num_cpus
+> +       cbnz    w17, 1b
+>
+>         /* We need to walk swapper, so turn off the MMU. */
+>         pre_disable_mmu_workaround
+> -       mrs     x18, sctlr_el1
+> -       bic     x18, x18, #SCTLR_ELx_M
+> -       msr     sctlr_el1, x18
+> +       mrs     x17, sctlr_el1
+> +       bic     x17, x17, #SCTLR_ELx_M
+> +       msr     sctlr_el1, x17
+>         isb
+>
+>         /* Everybody is enjoying the idmap, so we can rewrite swapper. */
+> @@ -281,9 +281,9 @@ skip_pgd:
+>         isb
+>
+>         /* We're done: fire up the MMU again */
+> -       mrs     x18, sctlr_el1
+> -       orr     x18, x18, #SCTLR_ELx_M
+> -       msr     sctlr_el1, x18
+> +       mrs     x17, sctlr_el1
+> +       orr     x17, x17, #SCTLR_ELx_M
+> +       msr     sctlr_el1, x17
+>         isb
+>
+>         /*
+> @@ -353,46 +353,47 @@ skip_pte:
+>         b.ne    do_pte
+>         b       next_pmd
+>
+> +       .unreq  cpu
+> +       .unreq  num_cpus
+> +       .unreq  swapper_pa
+> +       .unreq  cur_pgdp
+> +       .unreq  end_pgdp
+> +       .unreq  pgd
+> +       .unreq  cur_pudp
+> +       .unreq  end_pudp
+> +       .unreq  pud
+> +       .unreq  cur_pmdp
+> +       .unreq  end_pmdp
+> +       .unreq  pmd
+> +       .unreq  cur_ptep
+> +       .unreq  end_ptep
+> +       .unreq  pte
+> +
+>         /* Secondary CPUs end up here */
+>  __idmap_kpti_secondary:
+>         /* Uninstall swapper before surgery begins */
+> -       __idmap_cpu_set_reserved_ttbr1 x18, x17
+> +       __idmap_cpu_set_reserved_ttbr1 x16, x17
+>
+>         /* Increment the flag to let the boot CPU we're ready */
+> -1:     ldxr    w18, [flag_ptr]
+> -       add     w18, w18, #1
+> -       stxr    w17, w18, [flag_ptr]
+> +1:     ldxr    w16, [flag_ptr]
+> +       add     w16, w16, #1
+> +       stxr    w17, w16, [flag_ptr]
+>         cbnz    w17, 1b
+>
+>         /* Wait for the boot CPU to finish messing around with swapper */
+>         sevl
+>  1:     wfe
+> -       ldxr    w18, [flag_ptr]
+> -       cbnz    w18, 1b
+> +       ldxr    w16, [flag_ptr]
+> +       cbnz    w16, 1b
+>
+>         /* All done, act like nothing happened */
+> -       offset_ttbr1 swapper_ttb, x18
+> +       offset_ttbr1 swapper_ttb, x16
+>         msr     ttbr1_el1, swapper_ttb
+>         isb
+>         ret
+>
+> -       .unreq  cpu
+> -       .unreq  num_cpus
+> -       .unreq  swapper_pa
+>         .unreq  swapper_ttb
+>         .unreq  flag_ptr
+> -       .unreq  cur_pgdp
+> -       .unreq  end_pgdp
+> -       .unreq  pgd
+> -       .unreq  cur_pudp
+> -       .unreq  end_pudp
+> -       .unreq  pud
+> -       .unreq  cur_pmdp
+> -       .unreq  end_pmdp
+> -       .unreq  pmd
+> -       .unreq  cur_ptep
+> -       .unreq  end_ptep
+> -       .unreq  pte
+>  ENDPROC(idmap_kpti_install_ng_mappings)
+>         .popsection
+>  #endif
+> --
+> 2.23.0.866.gb869b98d4c-goog
+>
 
 
-So, this needs a closer look.
-
-I'll leave the Fixes tags for now, so that the archaeology doesn't need
-to redone if we decide that this patch does fix incorrect behaviour.
-
-Cheers
----Dave
+-- 
+Thanks,
+~Nick Desaulniers
 
 _______________________________________________
 linux-arm-kernel mailing list
