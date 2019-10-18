@@ -2,75 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DC09DBF8B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 10:11:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5959DDBFC4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 10:21:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Te9W9NWDobdWFUt5eyE7VjuFft7q0fyU6qhAnJE72ns=; b=RfHcOisKGkE9uh
-	BodsjczTEM4m2Ym7cJQgO20DtLEvgs7ezsZQG2y4boAgOBfOpagouySdkdRcPp7QHHW3xs7jaguoi
-	kNzxQgOxanQC/9NFnIoKHacTqVhxMlysKUIuO597Ogz1Le4u7775zuYHx0CHjAq62F1rqeHTmb2iq
-	ruvqjt0ZPQs4Ziu/Va7g9K/Dc0gNC7Sli04XyLt6qXWGj+BL83BvLUGBTWhHSZ9yu/2wOCm21UhGN
-	XrHbmvHTYeUbi0Vs9J2qGDv/HtvLs870DJ2Hc3UQwbhSfd+aFJyDlqxB8x5IzafNDn0fQbGnZB45G
-	Kr9sH1gDQL7G3jgKnuYQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QO6UTRepBtFb5R1s4HMuZ57VKwPCEtESJ8L6iIIEzZQ=; b=TU/jTCcElORV2h
+	bUovsy2MgjaMlOGZFSd5Z3/+NwYrfcc0UzbWQnn/v64VSqUXB4F/nkGYHUc4CIKukPZS9pbA9YjIC
+	EQvDNBosYqmU021HD2V8EFNhgGyKFdEwkTWd/VPIrlcm6TgoEo7AWor6uH3RZntSch/4nwPlcdmpT
+	KS0NETI7YemSm2ZL+y+yQ7v2NktbBTmSKa6cSB/eCTAzzQq/Gxpfo+y1zymx9jYYeTXQU+DNzVlzc
+	7gStqM+Va3eASoiXeuJjekRU4bufsASHAvizicA+6K7JvhZxwge/fFvVSGPbMSmrJGwWOA+6Pv2Fz
+	FAPFSgwst4iBIIvNK2xg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLNLj-0001Kt-DT; Fri, 18 Oct 2019 08:11:03 +0000
-Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
+	id 1iLNVr-0004rt-3V; Fri, 18 Oct 2019 08:21:31 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLNLW-0001KN-Gs
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 08:10:52 +0000
-Received: by mail-vs1-xe42.google.com with SMTP id m22so3440683vsl.9
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 01:10:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=hXiuhqjxfmBX/sG2OrevgXIiWecPGwPXk32tr5vuY04=;
- b=VwYlda01p1jGwF9Bcpj6zOR1x8neb/OGEpTbgXNmPn+0y3Ixie8hgSCR3GFMOMUQkO
- V9k0dUGqfvEGDXD71rbpvBsM2ctpv9jf3FpwvpX0hX4bz6Ekp05C5xf1Q6IdUk4Nyj6K
- YjRQ6pYobbBbJLhsXDmp2c13cqewriR1/czWC50D/ab4buHLg0b+4UATUYxC6rn0X0jc
- I+7ajpjy4re9wt4olcthlE5/90vhGY1EXdh0oi0gDqIu+WMsuXgBpYpy+eCQtU55pAHO
- UJqq4/ahTtdJr4RKEOVoIaGPgKrSvPFXJemWwoqt7v49mmou6EbE9yLTmRrqW5D+9EQm
- kW7w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=hXiuhqjxfmBX/sG2OrevgXIiWecPGwPXk32tr5vuY04=;
- b=mKSABj4YQtHx7gTA9+Bd8xe6ei5BMl7YdXhgljZY9vHIH19GfnCU6tYKmCDy0b1Y4/
- 2SdY92NLOIEV11rmLRYzazX4BV6muoIIh/RRJefxvW+cINwnu7EmTd9JQBk5Lvv3o1gS
- +9h+LZzMQLj3ZrsXwxiKbNt1MS6CQFJGoT7XNqn+ND8Ipfucq1HIUL1J2GJVZKTkPFe7
- R+CFO6qS6YIAwpJvJoSjpjk5K94yGhxbwPgWfIIQALX25efzrLncAAIoW2pgwCo0rc4l
- dVMPtNvr5QJlaUgIfYCqL/mLEUdK4j8omTip9nu61M4BKGNDQrhAkkehPZzGASKms3wH
- Z7OQ==
-X-Gm-Message-State: APjAAAXFIKYQjDGACpzNQEM33uwbP2lsBqGdiTOC4N56gE30AyeqT/u3
- l9vr8uok4jc1xjk0Ic6M1fTV2qqPoPeUPuYgShjfGg==
-X-Google-Smtp-Source: APXvYqyYp0Yvnrsx2yfirIPl8CPOyfzoTsCZB6XxogSt1B4qW14k/8FyrHl8CQQX7yj4RKVw1UPExyXKcs5k4Nz0dnk=
-X-Received: by 2002:a67:cf05:: with SMTP id y5mr4906975vsl.34.1571386249087;
- Fri, 18 Oct 2019 01:10:49 -0700 (PDT)
+ id 1iLNVi-0004rA-V7
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 08:21:25 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x9I8GwCa004597; Fri, 18 Oct 2019 10:21:09 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=gSYSCXccs9DhicnJdZYsTLDwYosR5Ljw+yyIPovM2yU=;
+ b=gWp0QO/xNev/cjQnwT7BcMX/uzKloJS6XRgjcniJ+d3Kf4TDpJwo/1oMtmJdh2db94wR
+ T1i83m6RhCV6RzWz8POl7f/yGb/+3Iq+6qLMwizKUBnZTVtvCa+HGH1naGOIHuU/5E4V
+ 8BnDrs56NL4LC+//b/RXy9m9m7qxlG1hfksZsucmB9wptNE70mE0/JA0A0ppNtX/ryNy
+ mh3OIgYSP8hlGKUvr/NweNThwU2lAHIgxzqqP+7aye6yw5Cj1JiRVdwdGjfxT9w1WLqA
+ XVqQaX1Nj3iv2KgLGuk6M1iGQ6THYUuFi6XPP2HK1nzW5efBL8qanNyTJiUrkyYDBU/C Aw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2vk3ya8y4q-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 18 Oct 2019 10:21:09 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 9EC42100034;
+ Fri, 18 Oct 2019 10:21:08 +0200 (CEST)
+Received: from Webmail-eu.st.com (Safex1hubcas22.st.com [10.75.90.92])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 6F12E2B894D;
+ Fri, 18 Oct 2019 10:21:08 +0200 (CEST)
+Received: from SAFEX1HUBCAS23.st.com (10.75.90.46) by Safex1hubcas22.st.com
+ (10.75.90.92) with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 18 Oct
+ 2019 10:21:08 +0200
+Received: from localhost (10.201.21.218) by webmail-ga.st.com (10.75.90.48)
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 18 Oct 2019 10:21:07
+ +0200
+From: Olivier Moysan <olivier.moysan@st.com>
+To: <lgirdwood@gmail.com>, <broonie@kernel.org>, <perex@perex.cz>,
+ <tiwai@suse.com>, <mcoquelin.stm32@gmail.com>,
+ <alexandre.torgue@st.com>, <alsa-devel@alsa-project.org>,
+ <linux-arm-kernel@lists.infradead.org>,
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ <linux-kernel@vger.kernel.org>, <olivier.moysan@st.com>,
+ <arnaud.pouliquen@st.com>
+Subject: [PATCH] ASoC: stm32: sai: fix sysclk management on shutdown
+Date: Fri, 18 Oct 2019 10:20:40 +0200
+Message-ID: <20191018082040.31022-1-olivier.moysan@st.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-References: <20191010113937.15962-1-ulf.hansson@linaro.org>
-In-Reply-To: <20191010113937.15962-1-ulf.hansson@linaro.org>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Fri, 18 Oct 2019 10:10:13 +0200
-Message-ID: <CAPDyKFqcq6z=y67hQ4Gk8PayQ6R=b8B3hSv374A+4u-zuvrFaQ@mail.gmail.com>
-Subject: Re: [PATCH 00/13] cpuidle: psci: Support hierarchical CPU arrangement
-To: Sudeep Holla <sudeep.holla@arm.com>,
- Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>
+X-Originating-IP: [10.201.21.218]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
+ definitions=2019-10-18_02:2019-10-17,2019-10-18 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_011050_594076_37A35CF0 
-X-CRM114-Status: GOOD (  20.19  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191018_012123_471322_0C7CEDF5 
+X-CRM114-Status: GOOD (  15.99  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -91,100 +98,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kevin Hilman <khilman@kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Linux PM <linux-pm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: benjamin.gaignard@st.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 10 Oct 2019 at 13:40, Ulf Hansson <ulf.hansson@linaro.org> wrote:
->
-> This series enables initial support for hierarchical CPU arrangement, managed
-> by PSCI and its corresponding cpuidle driver. It's based on using the generic
-> PM domain (genpd), which nowadays also supports devices belonging to CPUs.
->
-> The last DTS patch enables the hierarchical topology to be used for the Qcom
-> 410c Dragonboard, which supports the PSCI OS-initiated mode.
->
-> Do note, most of the code in this series have been posted earlier, but from the
-> latest version being reviewed, we agreed on that it was better to re-work the
-> PSCI backend driver as a first step, simply to get a clean interface towards the
-> cpuidle driver.
->
-> Summary of the main-changes since the last submission [1]:
->
->  - Moved implementation from the psci FW dricer into cpuidle-psci.
->
->  - Re-requesting review of the DT bindings, as we have moved to yaml. No
->    changes as such, but tried to clarify a few things in the text.
->
->  - Drop the patch enabling support for CPU hotplug, postponing that to the next
->    step.
->
->  - Respect the hierarchical topology in DT only when OSI mode is supported.
->    This is to start simple and we can always extend the support on top.
->
-> The series is also available at:
-> git.linaro.org/people/ulf.hansson/linux-pm.git next
->
-> Kind regards
-> Ulf Hansson
->
-> [1]
-> https://lwn.net/Articles/788306/
->
->
-> Lina Iyer (1):
->   cpuidle: dt: Support hierarchical CPU idle states
->
-> Ulf Hansson (12):
->   cpuidle: psci: Fix potential access to unmapped memory
->   dt: psci: Update DT bindings to support hierarchical PSCI states
->   firmware: psci: Export functions to manage the OSI mode
->   of: base: Add of_get_cpu_state_node() to get idle states for a CPU
->     node
->   cpuidle: psci: Simplify OF parsing of CPU idle state nodes
->   cpuidle: psci: Support hierarchical CPU idle states
->   cpuidle: psci: Prepare to use OS initiated suspend mode via PM domains
->   cpuidle: psci: Add support for PM domains by using genpd
->   cpuidle: psci: Add a helper to attach a CPU to its PM domain
->   cpuidle: psci: Attach CPU devices to their PM domains
->   cpuidle: psci: Manage runtime PM in the idle path
->   arm64: dts: Convert to the hierarchical CPU topology layout for
->     MSM8916
->
->  .../devicetree/bindings/arm/psci.yaml         | 153 +++++++++
->  arch/arm64/boot/dts/qcom/msm8916.dtsi         |  57 +++-
->  drivers/cpuidle/Makefile                      |   4 +-
->  drivers/cpuidle/cpuidle-psci-domain.c         | 302 ++++++++++++++++++
->  drivers/cpuidle/cpuidle-psci.c                | 106 ++++--
->  drivers/cpuidle/cpuidle-psci.h                |  17 +
->  drivers/cpuidle/dt_idle_states.c              |   5 +-
->  drivers/firmware/psci/psci.c                  |  18 +-
->  drivers/of/base.c                             |  36 +++
->  include/linux/of.h                            |   8 +
->  include/linux/psci.h                          |   2 +
->  11 files changed, 673 insertions(+), 35 deletions(-)
->  create mode 100644 drivers/cpuidle/cpuidle-psci-domain.c
->  create mode 100644 drivers/cpuidle/cpuidle-psci.h
->
-> --
-> 2.17.1
->
+The commit below, adds a call to sysclk callback on shutdown.
+This introduces a regression in stm32 SAI driver, as some clock
+services are called twice, leading to unbalanced calls.
+Move processing related to mclk from shutdown to sysclk callback.
+When requested frequency is 0, assume shutdown and release mclk.
 
-Sudeep, Lorenzo,
+Fixes: 2458adb8f92a ("SoC: simple-card-utils: set 0Hz to sysclk when shutdown")
 
-Just wanted to give you a gentle ping about this series, especially
-patch1 is kind of urgent.
+Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
+---
+ sound/soc/stm/stm32_sai_sub.c | 21 +++++++++++----------
+ 1 file changed, 11 insertions(+), 10 deletions(-)
 
-Kind regards
-Uffe
+diff --git a/sound/soc/stm/stm32_sai_sub.c b/sound/soc/stm/stm32_sai_sub.c
+index d7501f88aaa6..a4060813bc74 100644
+--- a/sound/soc/stm/stm32_sai_sub.c
++++ b/sound/soc/stm/stm32_sai_sub.c
+@@ -505,10 +505,20 @@ static int stm32_sai_set_sysclk(struct snd_soc_dai *cpu_dai,
+ 	if (dir == SND_SOC_CLOCK_OUT && sai->sai_mclk) {
+ 		ret = regmap_update_bits(sai->regmap, STM_SAI_CR1_REGX,
+ 					 SAI_XCR1_NODIV,
+-					 (unsigned int)~SAI_XCR1_NODIV);
++					 freq ? 0 : SAI_XCR1_NODIV);
+ 		if (ret < 0)
+ 			return ret;
+ 
++		/* Assume shutdown if requested frequency is 0Hz */
++		if (!freq) {
++			/* Release mclk rate only if rate was actually set */
++			if (sai->mclk_rate) {
++				clk_rate_exclusive_put(sai->sai_mclk);
++				sai->mclk_rate = 0;
++			}
++			return 0;
++		}
++
+ 		/* If master clock is used, set parent clock now */
+ 		ret = stm32_sai_set_parent_clock(sai, freq);
+ 		if (ret)
+@@ -1093,15 +1103,6 @@ static void stm32_sai_shutdown(struct snd_pcm_substream *substream,
+ 
+ 	regmap_update_bits(sai->regmap, STM_SAI_IMR_REGX, SAI_XIMR_MASK, 0);
+ 
+-	regmap_update_bits(sai->regmap, STM_SAI_CR1_REGX, SAI_XCR1_NODIV,
+-			   SAI_XCR1_NODIV);
+-
+-	/* Release mclk rate only if rate was actually set */
+-	if (sai->mclk_rate) {
+-		clk_rate_exclusive_put(sai->sai_mclk);
+-		sai->mclk_rate = 0;
+-	}
+-
+ 	clk_disable_unprepare(sai->sai_ck);
+ 
+ 	spin_lock_irqsave(&sai->irq_lock, flags);
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
