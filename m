@@ -2,92 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97A10DCAD2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 18:18:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A2CD4DCAD7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 18:20:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mtl42UjAGsweL0B7k660DBTNR97NtQybXylRKrYAiSE=; b=V16Xhht4DMU7gL
-	kP8CtA2U8DYsZ+fXeoqvq0DEngEoHIin/A3+M2dVW85BFPBZebPDDHjPknwNcGY9uqnbJ0fM96ON/
-	MiEqut9/r7UAjaacuIYCHjwu1lIOTqEoHcMHMb1m+wjadzR1lNwXPgEEZvJiooUR2LXmfbP/nVuy2
-	vSvMrVuUu+TWJlFv9kPuTO0XtsHIBRLabvepUL4UsJLtk9awvp9cXKWxeLFxjM+A+svZPZ/GaIgcp
-	hRyt5hAeg3epcTScHAnK6enHxeyyCmWSxKYqSdmAW5mR+nufWJR28CxZO8OLmijc3VEa4o8rDJskc
-	hzPyDNDvFPo4UdIKo00g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=v101SA6JZ+xuk/8b47IUfFJWChzBeHMo/4I+HUZvyKg=; b=bgAck5/vthJsU+
+	SaliDI1ArXpn7vsvWuhkFmhW6OBr6HrsrkhlDp8V6zlenr0p2XQlICsdHMgitmcTVziozy/a1dN/6
+	zLapRoz2CdtiZKRhDqRAledlNvPcRuTCILHQwhpSZAJ0/R5MHEN2d9EQ2LPOutXCpiNiGdQPNaUys
+	y/ZzSvRJr+thFoDB8M9XSp+OvjbSqYAl4q/zchqS5xTF/2X9JV4k/+WW9aVENwyoC/tbWCIKyBUmt
+	3VLThSAgCCq0BGvsL+BNi34fjVV9/I14sFOMaYRadONYDigfHiaInlGkSCSSRS27rQc0LiMi9qpwa
+	SfH9qxzfOA+wMLn95jMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLUx5-0000dj-Rq; Fri, 18 Oct 2019 16:18:07 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1iLUz6-0001L9-KR; Fri, 18 Oct 2019 16:20:12 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLUvP-0007sr-Ns
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 16:16:28 +0000
-Received: by mail-pg1-x542.google.com with SMTP id w3so3636198pgt.5
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 09:16:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=oaroF0WUJMUYVpfV8UYXOFXbvChWxVu2DUZPN4JELyM=;
- b=w9jp3Y07WnmqTkP784fYbHH+8auQtKM0dqVcUHNldOBXW/Y6Qjl/88AhiQyZl6SmTE
- kXq1HQtdYkgeMR987xz9Etxx5LMaBNOb1LIn0Jvy0gHLGAqD1/R0Yc6qRHkvWhpUv5FL
- LI78We8AZMTmBkwBSejbWLY4itqqTSIcXTINBLQ4KnIOPyoSwnaTtOp8yrRAgZnWd3r9
- qgxhQHeqIk1aB3uorfmxs0ZmpPV9r09ne6HzoIU8S1dgSysg+ngbVEzEBAzkxCoE5OGP
- U03S1wenBsp4ShmjkKAkOIVxkGbaVgbXn0gz6iDKpeY3G4PtRz7jP3B+d4/1q0JF7x2j
- Qq0Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=oaroF0WUJMUYVpfV8UYXOFXbvChWxVu2DUZPN4JELyM=;
- b=Pe4V34ycMMIu54+U9UVbWB/Mg/AOeTclvBnP/A26NF2uO/P+ls40cXpfpUeHVoNpUQ
- NUlFfToDUvNmKrTb8Krq5KjRFLwSckLmq2i/sokRpVaVh77oyQJtGq2rkyP3X+yLYFD0
- XGzBV3JofBs36S+yPNDR2S+i7E4W+JZeYOm6Yg57o7dJxwm41UFJYPd5kaIfeR5Cg/R9
- 4plai9Y0fBK4FFL1t652+ty+vIo3VhslO9/nNh2exKKCR0US9GJG2V9GdUw34/iUlGcT
- Avz+chTaA7Qk4jwnEOfmpifyqF0Nq2ldjdDxqctgrqCjRJLtH6gIb0A7Gxrc0SWWfn9L
- 0cWw==
-X-Gm-Message-State: APjAAAWoiUdIlZ1JZMsitkvA1Wa68v6ud19Mq/H8gsH+uHqc6XmaHSfP
- WVPw21dF3tBR+aPOMlq3rsckPg==
-X-Google-Smtp-Source: APXvYqwwOOhTbNl+RWTVYaBKh/Bi1hyoDNEFUGuBEyIevVh/iKJUTYVf1kxb/M/QCJ5g8bRwsqNTrQ==
-X-Received: by 2002:a63:6287:: with SMTP id w129mr631633pgb.162.1571415381786; 
- Fri, 18 Oct 2019 09:16:21 -0700 (PDT)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id w6sm8193747pfj.17.2019.10.18.09.16.20
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 18 Oct 2019 09:16:21 -0700 (PDT)
-Date: Fri, 18 Oct 2019 10:16:18 -0600
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Mike Leach <mike.leach@linaro.org>
-Subject: Re: [PATCH v3 09/11] coresight: etm4x: docs: Update ABI doc for
- sysfs features added.
-Message-ID: <20191018161618.GA12883@xps15>
-References: <20191015212004.24748-1-mike.leach@linaro.org>
- <20191015212004.24748-10-mike.leach@linaro.org>
+ id 1iLUyo-0001KZ-6Z
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 16:19:56 +0000
+Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
+ [10.5.11.14])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id AA51610C0943;
+ Fri, 18 Oct 2019 16:19:53 +0000 (UTC)
+Received: from llong.remote.csb (dhcp-17-59.bos.redhat.com [10.18.17.59])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id BFA125D9CA;
+ Fri, 18 Oct 2019 16:19:51 +0000 (UTC)
+Subject: Re: [PATCH v5 0/5] Add NUMA-awareness to qspinlock
+To: Alex Kogan <alex.kogan@oracle.com>, linux@armlinux.org.uk,
+ peterz@infradead.org, mingo@redhat.com, will.deacon@arm.com, arnd@arndb.de,
+ linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, tglx@linutronix.de, bp@alien8.de,
+ hpa@zytor.com, x86@kernel.org, guohanjun@huawei.com, jglauber@marvell.com
+References: <20191016042903.61081-1-alex.kogan@oracle.com>
+From: Waiman Long <longman@redhat.com>
+Organization: Red Hat
+Message-ID: <312ebdff-b1fe-489d-384a-bb3f268500f1@redhat.com>
+Date: Fri, 18 Oct 2019 12:19:51 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191015212004.24748-10-mike.leach@linaro.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20191016042903.61081-1-alex.kogan@oracle.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
+ (mx1.redhat.com [10.5.110.66]); Fri, 18 Oct 2019 16:19:53 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_091624_125769_F2ABF2E3 
-X-CRM114-Status: GOOD (  20.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191018_091954_281135_40EC4E6B 
+X-CRM114-Status: GOOD (  30.49  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,617 +74,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: corbet@lwn.net, gregkh@linuxfoundation.org, coresight@lists.linaro.org,
- suzuki.poulose@arm.com, linux-doc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: rahul.x.yadav@oracle.com, dave.dice@oracle.com, steven.sistare@oracle.com,
+ daniel.m.jordan@oracle.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 15, 2019 at 10:20:02PM +0100, Mike Leach wrote:
-> Update document to include the new sysfs features added during this
-> patchset.
-> 
-> Updated to reflect the new sysfs component nameing schema.
-
-In most cases describing different actions in a changelog is a good indication
-that more than one patch is needed.  This case is somewhat on the fence since
-changes are trivial.  
-
-Since Jonathan maintains the documentation subsystem the decision is left to
-him.  Whether Jonathan wants the patch split or will simply take it as is:
-
-Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>  
-
-> 
-> Signed-off-by: Mike Leach <mike.leach@linaro.org>
-> ---
->  .../testing/sysfs-bus-coresight-devices-etm4x | 183 +++++++++++-------
->  1 file changed, 115 insertions(+), 68 deletions(-)
-> 
-> diff --git a/Documentation/ABI/testing/sysfs-bus-coresight-devices-etm4x b/Documentation/ABI/testing/sysfs-bus-coresight-devices-etm4x
-> index 36258bc1b473..112c50ae9986 100644
-> --- a/Documentation/ABI/testing/sysfs-bus-coresight-devices-etm4x
-> +++ b/Documentation/ABI/testing/sysfs-bus-coresight-devices-etm4x
-> @@ -1,4 +1,4 @@
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/enable_source
-> +What:		/sys/bus/coresight/devices/etm<N>/enable_source
->  Date:		April 2015
->  KernelVersion:  4.01
->  Contact:        Mathieu Poirier <mathieu.poirier@linaro.org>
-> @@ -8,82 +8,82 @@ Description:	(RW) Enable/disable tracing on this specific trace entiry.
->  		of coresight components linking the source to the sink is
->  		configured and managed automatically by the coresight framework.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/cpu
-> +What:		/sys/bus/coresight/devices/etm<N>/cpu
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) The CPU this tracing entity is associated with.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/nr_pe_cmp
-> +What:		/sys/bus/coresight/devices/etm<N>/nr_pe_cmp
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Indicates the number of PE comparator inputs that are
->  		available for tracing.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/nr_addr_cmp
-> +What:		/sys/bus/coresight/devices/etm<N>/nr_addr_cmp
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Indicates the number of address comparator pairs that are
->  		available for tracing.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/nr_cntr
-> +What:		/sys/bus/coresight/devices/etm<N>/nr_cntr
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Indicates the number of counters that are available for
->  		tracing.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/nr_ext_inp
-> +What:		/sys/bus/coresight/devices/etm<N>/nr_ext_inp
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Indicates how many external inputs are implemented.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/numcidc
-> +What:		/sys/bus/coresight/devices/etm<N>/numcidc
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Indicates the number of Context ID comparators that are
->  		available for tracing.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/numvmidc
-> +What:		/sys/bus/coresight/devices/etm<N>/numvmidc
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Indicates the number of VMID comparators that are available
->  		for tracing.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/nrseqstate
-> +What:		/sys/bus/coresight/devices/etm<N>/nrseqstate
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Indicates the number of sequencer states that are
->  		implemented.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/nr_resource
-> +What:		/sys/bus/coresight/devices/etm<N>/nr_resource
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Indicates the number of resource selection pairs that are
->  		available for tracing.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/nr_ss_cmp
-> +What:		/sys/bus/coresight/devices/etm<N>/nr_ss_cmp
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Indicates the number of single-shot comparator controls that
->  		are available for tracing.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/reset
-> +What:		/sys/bus/coresight/devices/etm<N>/reset
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(W) Cancels all configuration on a trace unit and set it back
->  		to its boot configuration.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/mode
-> +What:		/sys/bus/coresight/devices/etm<N>/mode
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
-> @@ -91,302 +91,349 @@ Description: 	(RW) Controls various modes supported by this ETM, for example
->  		P0 instruction tracing, branch broadcast, cycle counting and
->  		context ID tracing.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/pe
-> +What:		/sys/bus/coresight/devices/etm<N>/pe
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) Controls which PE to trace.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/event
-> +What:		/sys/bus/coresight/devices/etm<N>/event
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) Controls the tracing of arbitrary events from bank 0 to 3.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/event_instren
-> +What:		/sys/bus/coresight/devices/etm<N>/event_instren
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) Controls the behavior of the events in bank 0 to 3.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/event_ts
-> +What:		/sys/bus/coresight/devices/etm<N>/event_ts
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) Controls the insertion of global timestamps in the trace
->  		streams.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/syncfreq
-> +What:		/sys/bus/coresight/devices/etm<N>/syncfreq
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) Controls how often trace synchronization requests occur.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/cyc_threshold
-> +What:		/sys/bus/coresight/devices/etm<N>/cyc_threshold
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) Sets the threshold value for cycle counting.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/bb_ctrl
-> +What:		/sys/bus/coresight/devices/etm<N>/bb_ctrl
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) Controls which regions in the memory map are enabled to
->  		use branch broadcasting.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/event_vinst
-> +What:		/sys/bus/coresight/devices/etm<N>/event_vinst
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) Controls instruction trace filtering.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/s_exlevel_vinst
-> +What:		/sys/bus/coresight/devices/etm<N>/s_exlevel_vinst
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) In Secure state, each bit controls whether instruction
->  		tracing is enabled for the corresponding exception level.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/ns_exlevel_vinst
-> +What:		/sys/bus/coresight/devices/etm<N>/ns_exlevel_vinst
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) In non-secure state, each bit controls whether instruction
->  		tracing is enabled for the corresponding exception level.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/addr_idx
-> +What:		/sys/bus/coresight/devices/etm<N>/addr_idx
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) Select which address comparator or pair (of comparators) to
->  		work with.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/addr_instdatatype
-> +What:		/sys/bus/coresight/devices/etm<N>/addr_instdatatype
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) Controls what type of comparison the trace unit performs.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/addr_single
-> +What:		/sys/bus/coresight/devices/etm<N>/addr_single
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) Used to setup single address comparator values.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/addr_range
-> +What:		/sys/bus/coresight/devices/etm<N>/addr_range
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) Used to setup address range comparator values.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/seq_idx
-> +What:		/sys/bus/coresight/devices/etm<N>/seq_idx
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) Select which sequensor.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/seq_state
-> +What:		/sys/bus/coresight/devices/etm<N>/seq_state
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) Use this to set, or read, the sequencer state.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/seq_event
-> +What:		/sys/bus/coresight/devices/etm<N>/seq_event
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) Moves the sequencer state to a specific state.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/seq_reset_event
-> +What:		/sys/bus/coresight/devices/etm<N>/seq_reset_event
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) Moves the sequencer to state 0 when a programmed event
->  		occurs.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/cntr_idx
-> +What:		/sys/bus/coresight/devices/etm<N>/cntr_idx
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) Select which counter unit to work with.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/cntrldvr
-> +What:		/sys/bus/coresight/devices/etm<N>/cntrldvr
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) This sets or returns the reload count value of the
->  		specific counter.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/cntr_val
-> +What:		/sys/bus/coresight/devices/etm<N>/cntr_val
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) This sets or returns the current count value of the
->                  specific counter.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/cntr_ctrl
-> +What:		/sys/bus/coresight/devices/etm<N>/cntr_ctrl
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) Controls the operation of the selected counter.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/res_idx
-> +What:		/sys/bus/coresight/devices/etm<N>/res_idx
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) Select which resource selection unit to work with.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/res_ctrl
-> +What:		/sys/bus/coresight/devices/etm<N>/res_ctrl
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description: 	(RW) Controls the selection of the resources in the trace unit.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/ctxid_idx
-> +What:		/sys/bus/coresight/devices/etm<N>/ctxid_idx
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(RW) Select which context ID comparator to work with.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/ctxid_pid
-> +What:		/sys/bus/coresight/devices/etm<N>/ctxid_pid
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(RW) Get/Set the context ID comparator value to trigger on.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/ctxid_masks
-> +What:		/sys/bus/coresight/devices/etm<N>/ctxid_masks
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(RW) Mask for all 8 context ID comparator value
->  		registers (if implemented).
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/vmid_idx
-> +What:		/sys/bus/coresight/devices/etm<N>/vmid_idx
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(RW) Select which virtual machine ID comparator to work with.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/vmid_val
-> +What:		/sys/bus/coresight/devices/etm<N>/vmid_val
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(RW) Get/Set the virtual machine ID comparator value to
->  		trigger on.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/vmid_masks
-> +What:		/sys/bus/coresight/devices/etm<N>/vmid_masks
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(RW) Mask for all 8 virtual machine ID comparator value
->  		registers (if implemented).
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/mgmt/trcoslsr
-> +What:		/sys/bus/coresight/devices/etm<N>/addr_exlevel_s_ns
-> +Date:		August 2019
-> +KernelVersion:	5.4
-> +Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
-> +Description:	(RW) Set the Exception Level matching bits for secure and
-> +		non-secure exception levels.
-> +
-> +What:		/sys/bus/coresight/devices/etm<N>/vinst_pe_cmp_start_stop
-> +Date:		August 2019
-> +KernelVersion:	5.4
-> +Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
-> +Description:	(RW) Access the start stop control register for PE input
-> +		comparators.
-> +
-> +What:		/sys/bus/coresight/devices/etm<N>/addr_cmp_view
-> +Date:		August 2019
-> +KernelVersion:	5.4
-> +Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
-> +Description:	(R) Print the current settings for the selected address
-> +		comparator.
-> +
-> +What:		/sys/bus/coresight/devices/etm<N>/sshot_idx
-> +Date:		August 2019
-> +KernelVersion:	5.4
-> +Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
-> +Description:	(RW) Select the single shot control register to access.
-> +
-> +What:		/sys/bus/coresight/devices/etm<N>/sshot_ctrl
-> +Date:		August 2019
-> +KernelVersion:	5.4
-> +Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
-> +Description:	(RW) Access the selected single shot control register.
-> +
-> +What:		/sys/bus/coresight/devices/etm<N>/sshot_status
-> +Date:		August 2019
-> +KernelVersion:	5.4
-> +Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
-> +Description:	(R) Print the current value of the selected single shot
-> +		status register.
-> +
-> +What:		/sys/bus/coresight/devices/etm<N>/sshot_pe_ctrl
-> +Date:		August 2019
-> +KernelVersion:	5.4
-> +Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
-> +Description:	(RW) Access the selected single show PE comparator control
-> +		register.
-> +
-> +What:		/sys/bus/coresight/devices/etm<N>/mgmt/trcoslsr
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Print the content of the OS Lock Status Register (0x304).
->  		The value it taken directly  from the HW.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/mgmt/trcpdcr
-> +What:		/sys/bus/coresight/devices/etm<N>/mgmt/trcpdcr
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Print the content of the Power Down Control Register
->  		(0x310).  The value is taken directly from the HW.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/mgmt/trcpdsr
-> +What:		/sys/bus/coresight/devices/etm<N>/mgmt/trcpdsr
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Print the content of the Power Down Status Register
->  		(0x314).  The value is taken directly from the HW.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/mgmt/trclsr
-> +What:		/sys/bus/coresight/devices/etm<N>/mgmt/trclsr
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Print the content of the SW Lock Status Register
->  		(0xFB4).  The value is taken directly from the HW.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/mgmt/trcauthstatus
-> +What:		/sys/bus/coresight/devices/etm<N>/mgmt/trcauthstatus
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Print the content of the Authentication Status Register
->  		(0xFB8).  The value is taken directly from the HW.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/mgmt/trcdevid
-> +What:		/sys/bus/coresight/devices/etm<N>/mgmt/trcdevid
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Print the content of the Device ID Register
->  		(0xFC8).  The value is taken directly from the HW.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/mgmt/trcdevtype
-> +What:		/sys/bus/coresight/devices/etm<N>/mgmt/trcdevtype
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Print the content of the Device Type Register
->  		(0xFCC).  The value is taken directly from the HW.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/mgmt/trcpidr0
-> +What:		/sys/bus/coresight/devices/etm<N>/mgmt/trcpidr0
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Print the content of the Peripheral ID0 Register
->  		(0xFE0).  The value is taken directly from the HW.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/mgmt/trcpidr1
-> +What:		/sys/bus/coresight/devices/etm<N>/mgmt/trcpidr1
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Print the content of the Peripheral ID1 Register
->  		(0xFE4).  The value is taken directly from the HW.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/mgmt/trcpidr2
-> +What:		/sys/bus/coresight/devices/etm<N>/mgmt/trcpidr2
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Print the content of the Peripheral ID2 Register
->  		(0xFE8).  The value is taken directly from the HW.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/mgmt/trcpidr3
-> +What:		/sys/bus/coresight/devices/etm<N>/mgmt/trcpidr3
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Print the content of the Peripheral ID3 Register
->  		(0xFEC).  The value is taken directly from the HW.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/mgmt/trcconfig
-> +What:		/sys/bus/coresight/devices/etm<N>/mgmt/trcconfig
->  Date:		February 2016
->  KernelVersion:	4.07
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Print the content of the trace configuration register
->  		(0x010) as currently set by SW.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/mgmt/trctraceid
-> +What:		/sys/bus/coresight/devices/etm<N>/mgmt/trctraceid
->  Date:		February 2016
->  KernelVersion:	4.07
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Print the content of the trace ID register (0x040).
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/trcidr/trcidr0
-> +What:		/sys/bus/coresight/devices/etm<N>/trcidr/trcidr0
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Returns the tracing capabilities of the trace unit (0x1E0).
->  		The value is taken directly from the HW.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/trcidr/trcidr1
-> +What:		/sys/bus/coresight/devices/etm<N>/trcidr/trcidr1
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Returns the tracing capabilities of the trace unit (0x1E4).
->  		The value is taken directly from the HW.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/trcidr/trcidr2
-> +What:		/sys/bus/coresight/devices/etm<N>/trcidr/trcidr2
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
-> @@ -394,7 +441,7 @@ Description:	(R) Returns the maximum size of the data value, data address,
->  		VMID, context ID and instuction address in the trace unit
->  		(0x1E8).  The value is taken directly from the HW.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/trcidr/trcidr3
-> +What:		/sys/bus/coresight/devices/etm<N>/trcidr/trcidr3
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
-> @@ -403,42 +450,42 @@ Description:	(R) Returns the value associated with various resources
->  		architecture specification for more details (0x1E8).
->  		The value is taken directly from the HW.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/trcidr/trcidr4
-> +What:		/sys/bus/coresight/devices/etm<N>/trcidr/trcidr4
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Returns how many resources the trace unit supports (0x1F0).
->  		The value is taken directly from the HW.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/trcidr/trcidr5
-> +What:		/sys/bus/coresight/devices/etm<N>/trcidr/trcidr5
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Returns how many resources the trace unit supports (0x1F4).
->  		The value is taken directly from the HW.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/trcidr/trcidr8
-> +What:		/sys/bus/coresight/devices/etm<N>/trcidr/trcidr8
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Returns the maximum speculation depth of the instruction
->  		trace stream. (0x180).  The value is taken directly from the HW.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/trcidr/trcidr9
-> +What:		/sys/bus/coresight/devices/etm<N>/trcidr/trcidr9
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Returns the number of P0 right-hand keys that the trace unit
->  		can use (0x184).  The value is taken directly from the HW.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/trcidr/trcidr10
-> +What:		/sys/bus/coresight/devices/etm<N>/trcidr/trcidr10
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
->  Description:	(R) Returns the number of P1 right-hand keys that the trace unit
->  		can use (0x188).  The value is taken directly from the HW.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/trcidr/trcidr11
-> +What:		/sys/bus/coresight/devices/etm<N>/trcidr/trcidr11
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
-> @@ -446,7 +493,7 @@ Description:	(R) Returns the number of special P1 right-hand keys that the
->  		trace unit can use (0x18C).  The value is taken directly from
->  		the HW.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/trcidr/trcidr12
-> +What:		/sys/bus/coresight/devices/etm<N>/trcidr/trcidr12
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
-> @@ -454,7 +501,7 @@ Description:	(R) Returns the number of conditional P1 right-hand keys that
->  		the trace unit can use (0x190).  The value is taken directly
->  		from the HW.
->  
-> -What:		/sys/bus/coresight/devices/<memory_map>.etm/trcidr/trcidr13
-> +What:		/sys/bus/coresight/devices/etm<N>/trcidr/trcidr13
->  Date:		April 2015
->  KernelVersion:	4.01
->  Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
-> -- 
-> 2.17.1
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMTAvMTYvMTkgMTI6MjggQU0sIEFsZXggS29nYW4gd3JvdGU6Cj4gQ2hhbmdlcyBmcm9tIHY0
+Ogo+IC0tLS0tLS0tLS0tLS0tLS0KPgo+IC0gU3dpdGNoIHRvIGEgZGV0ZXJtaW5pc3RpYyBib3Vu
+ZCBvbiB0aGUgbnVtYmVyIG9mIGludHJhLW5vZGUgaGFuZG9mZnMsCj4gYXMgc3VnZ2VzdGVkIGJ5
+IExvbmdtYW4uCj4KPiAtIFNjYW4gdGhlIG1haW4gcXVldWUgYWZ0ZXIgYWNxdWlyaW5nIHRoZSBN
+Q1MgbG9jayBhbmQgYmVmb3JlIGFjcXVpcmluZyAKPiB0aGUgc3BpbmxvY2sgKHByZS1zY2FuKSwg
+YXMgc3VnZ2VzdGVkIGJ5IExvbmdtYW4uIElmIG5vIHRocmVhZCBpcyBmb3VuZCAKPiBpbiBwcmUt
+c2NhbiwgdHJ5IGFnYWluIGFmdGVyIGFjcXVpcmluZyB0aGUgc3BpbmxvY2ssIHJlc3VtaW5nIGZy
+b20gdGhlCj4gc2FtZSBwbGFjZSB3aGVyZSBwcmUtc2NhbiBzdG9wcGVkLgo+Cj4gLSBDb252ZXJ0
+IHRoZSBzZWNvbmRhcnkgcXVldWUgdG8gYSBjeWNsaWMgbGlzdCBzdWNoIHRoYXQgdGhlIHRhaWzi
+gJlzIEBuZXh0Cj4gcG9pbnRzIHRvIHRoZSBoZWFkIG9mIHRoZSBxdWV1ZS4gU3RvcmUgdGhlIHBv
+aW50ZXIgdG8gdGhlIHNlY29uZGFyeSBxdWV1ZQo+IHRhaWwgKHJhdGhlciB0aGFuIGhlYWQpIGlu
+IEBsb2NrZWQuIFRoaXMgZWxpbWluYXRlcyB0aGUgbmVlZCBmb3IgdGhlIEB0YWlsCj4gZmllbGQg
+aW4gQ05BIG5vZGVzLCBtYWtpbmcgc3BhY2UgZm9yIGZpZWxkcyByZXF1aXJlZCBieSB0aGUgdHdv
+IGNoYW5nZXMKPiBhYm92ZS4KPgo+IC0gQ2hhbmdlIGFyY2hfbWNzX3NwaW5fbG9ja19jb250ZW5k
+ZWQoKSB0byBhcmNoX21jc19zcGluX2xvY2soKSwgYW5kCj4gZml4IG1pc3VzZSBvZiBvbGQgbWFj
+cm8gbmFtZXMsIGFzIHN1Z2dlc3RlZCBieSBIYW5qdW4uCj4KPgo+IFN1bW1hcnkKPiAtLS0tLS0t
+Cj4KPiBMb2NrIHRocm91Z2hwdXQgY2FuIGJlIGluY3JlYXNlZCBieSBoYW5kaW5nIGEgbG9jayB0
+byBhIHdhaXRlciBvbiB0aGUKPiBzYW1lIE5VTUEgbm9kZSBhcyB0aGUgbG9jayBob2xkZXIsIHBy
+b3ZpZGVkIGNhcmUgaXMgdGFrZW4gdG8gYXZvaWQKPiBzdGFydmF0aW9uIG9mIHdhaXRlcnMgb24g
+b3RoZXIgTlVNQSBub2Rlcy4gVGhpcyBwYXRjaCBpbnRyb2R1Y2VzIENOQQo+IChjb21wYWN0IE5V
+TUEtYXdhcmUgbG9jaykgYXMgdGhlIHNsb3cgcGF0aCBmb3IgcXNwaW5sb2NrLiBJdCBpcwo+IGVu
+YWJsZWQgdGhyb3VnaCBhIGNvbmZpZ3VyYXRpb24gb3B0aW9uIChOVU1BX0FXQVJFX1NQSU5MT0NL
+UykuCj4KPiBDTkEgaXMgYSBOVU1BLWF3YXJlIHZlcnNpb24gb2YgdGhlIE1DUyBsb2NrLiBTcGlu
+bmluZyB0aHJlYWRzIGFyZQo+IG9yZ2FuaXplZCBpbiB0d28gcXVldWVzLCBhIG1haW4gcXVldWUg
+Zm9yIHRocmVhZHMgcnVubmluZyBvbiB0aGUgc2FtZQo+IG5vZGUgYXMgdGhlIGN1cnJlbnQgbG9j
+ayBob2xkZXIsIGFuZCBhIHNlY29uZGFyeSBxdWV1ZSBmb3IgdGhyZWFkcwo+IHJ1bm5pbmcgb24g
+b3RoZXIgbm9kZXMuIFRocmVhZHMgc3RvcmUgdGhlIElEIG9mIHRoZSBub2RlIG9uIHdoaWNoCj4g
+dGhleSBhcmUgcnVubmluZyBpbiB0aGVpciBxdWV1ZSBub2Rlcy4gQWZ0ZXIgYWNxdWlyaW5nIHRo
+ZSBNQ1MgbG9jayBhbmQKPiBiZWZvcmUgYWNxdWlyaW5nIHRoZSBzcGlubG9jaywgdGhlIGxvY2sg
+aG9sZGVyIHNjYW5zIHRoZSBtYWluIHF1ZXVlCj4gbG9va2luZyBmb3IgYSB0aHJlYWQgcnVubmlu
+ZyBvbiB0aGUgc2FtZSBub2RlIChwcmUtc2NhbikuIElmIGZvdW5kIChjYWxsCj4gaXQgdGhyZWFk
+IFQpLCBhbGwgdGhyZWFkcyBpbiB0aGUgbWFpbiBxdWV1ZSBiZXR3ZWVuIHRoZSBjdXJyZW50IGxv
+Y2sKPiBob2xkZXIgYW5kIFQgYXJlIG1vdmVkIHRvIHRoZSBlbmQgb2YgdGhlIHNlY29uZGFyeSBx
+dWV1ZS4gIElmIHN1Y2ggVAo+IGlzIG5vdCBmb3VuZCwgd2UgbWFrZSBhbm90aGVyIHNjYW4gb2Yg
+dGhlIG1haW4gcXVldWUgYWZ0ZXIgYWNxdWlyaW5nIAo+IHRoZSBzcGlubG9jayB3aGVuIHVubG9j
+a2luZyB0aGUgTUNTIGxvY2sgKHBvc3Qtc2NhbiksIHN0YXJ0aW5nIGF0IHRoZQo+IG5vZGUgd2hl
+cmUgcHJlLXNjYW4gc3RvcHBlZC4gSWYgYm90aCBzY2FucyBmYWlsIHRvIGZpbmQgc3VjaCBULCB0
+aGUKPiBNQ1MgbG9jayBpcyBwYXNzZWQgdG8gdGhlIGZpcnN0IHRocmVhZCBpbiB0aGUgc2Vjb25k
+YXJ5IHF1ZXVlLiBJZiB0aGUKPiBzZWNvbmRhcnkgcXVldWUgaXMgZW1wdHksIHRoZSBNQ1MgbG9j
+ayBpcyBwYXNzZWQgdG8gdGhlIG5leHQgdGhyZWFkIGluIHRoZQo+IG1haW4gcXVldWUuIFRvIGF2
+b2lkIHN0YXJ2YXRpb24gb2YgdGhyZWFkcyBpbiB0aGUgc2Vjb25kYXJ5IHF1ZXVlLCB0aG9zZQo+
+IHRocmVhZHMgYXJlIG1vdmVkIGJhY2sgdG8gdGhlIGhlYWQgb2YgdGhlIG1haW4gcXVldWUgYWZ0
+ZXIgYSBjZXJ0YWluCj4gbnVtYmVyIG9mIGludHJhLW5vZGUgbG9jayBoYW5kLW9mZnMuCj4KPiBN
+b3JlIGRldGFpbHMgYXJlIGF2YWlsYWJsZSBhdCBodHRwczovL2FyeGl2Lm9yZy9hYnMvMTgxMC4w
+NTYwMC4KPgo+IFdlIGhhdmUgZG9uZSBzb21lIHBlcmZvcm1hbmNlIGV2YWx1YXRpb24gd2l0aCB0
+aGUgbG9ja3RvcnR1cmUgbW9kdWxlCj4gYXMgd2VsbCBhcyB3aXRoIHNldmVyYWwgYmVuY2htYXJr
+cyBmcm9tIHRoZSB3aWxsLWl0LXNjYWxlIHJlcG8uCj4gVGhlIGZvbGxvd2luZyBsb2NrdG9ydHVy
+ZSByZXN1bHRzIGFyZSBmcm9tIGFuIE9yYWNsZSBYNS00IHNlcnZlcgo+IChmb3VyIEludGVsIFhl
+b24gRTctODg5NSB2MyBAIDIuNjBHSHogc29ja2V0cyB3aXRoIDE4IGh5cGVydGhyZWFkZWQKPiBj
+b3JlcyBlYWNoKS4gRWFjaCBudW1iZXIgcmVwcmVzZW50cyBhbiBhdmVyYWdlIChvdmVyIDI1IHJ1
+bnMpIG9mIHRoZQo+IHRvdGFsIG51bWJlciBvZiBvcHMgKHgxMF43KSByZXBvcnRlZCBhdCB0aGUg
+ZW5kIG9mIGVhY2ggcnVuLiBUaGUgCj4gc3RhbmRhcmQgZGV2aWF0aW9uIGlzIGFsc28gcmVwb3J0
+ZWQgaW4gKCksIGFuZCBpbiBnZW5lcmFsIGlzIGFib3V0IDMlCj4gZnJvbSB0aGUgYXZlcmFnZS4g
+VGhlICdzdG9jaycga2VybmVsIGlzIHY1LjQuMC1yYzEsCj4gY29tbWl0IGQ5MGYyZGY2M2M1Yywg
+Y29tcGlsZWQgaW4gdGhlIGRlZmF1bHQgY29uZmlndXJhdGlvbi4gCj4gJ3BhdGNoLUNOQScgaXMg
+dGhlIG1vZGlmaWVkIGtlcm5lbCB3aXRoIE5VTUFfQVdBUkVfU1BJTkxPQ0tTIHNldDsgCj4gdGhl
+IHNwZWVkdXAgaXMgY2FsY3VsYXRlZCBkaXZpZGluZyAncGF0Y2gtQ05BJyBieSAnc3RvY2snLgo+
+Cj4gI3RociAgCSBzdG9jayAgICAgICAgcGF0Y2gtQ05BICAgc3BlZWR1cCAocGF0Y2gtQ05BL3N0
+b2NrKQo+ICAgMSAgMi42NzQgKDAuMTE4KSAgMi43MzYgKDAuMTE5KSAgMS4wMjMKPiAgIDIgIDIu
+NTg4ICgwLjE0MSkgIDIuNjAzICgwLjEwOCkgIDEuMDA2Cj4gICA0ICA0LjIzMCAoMC4xMjApICA0
+LjIyMCAoMC4xMjcpICAwLjk5OAo+ICAgOCAgNS4zNjIgKDAuMTgxKSAgNi42NzkgKDAuMTgyKSAg
+MS4yNDYKPiAgMTYgIDYuNjM5ICgwLjEzMykgIDguMDUwICgwLjIwMCkgIDEuMjEzCj4gIDMyICA3
+LjM1OSAoMC4xNDkpICA4Ljc5MiAoMC4xNjgpICAxLjE5NQo+ICAzNiAgNy40NDMgKDAuMTQyKSAg
+OC44NzMgKDAuMjMwKSAgMS4xOTIKPiAgNzIgIDYuNTU0ICgwLjE0NykgIDkuMzE3ICgwLjE1OCkg
+IDEuNDIxCj4gMTA4ICA2LjE1NiAoMC4wOTMpICA5LjQwNCAoMC4xOTEpICAxLjUyOAo+IDE0MiAg
+NS42NTkgKDAuMDkzKSAgOS4zNjEgKDAuMTg0KSAgMS42NTQKPgo+IFRoZSBmb2xsb3dpbmcgdGFi
+bGVzIGNvbnRhaW4gdGhyb3VnaHB1dCByZXN1bHRzIChvcHMvdXMpIGZyb20gdGhlIHNhbWUKPiBz
+ZXR1cCBmb3Igd2lsbC1pdC1zY2FsZS9vcGVuMV90aHJlYWRzOiAKPgo+ICN0aHIgIAkgc3RvY2sg
+ICAgICAgIHBhdGNoLUNOQSAgIHNwZWVkdXAgKHBhdGNoLUNOQS9zdG9jaykKPiAgIDEgIDAuNTMy
+ICgwLjAwMikgIDAuNTMyICgwLjAwMykgIDEuMDAwCj4gICAyICAwLjc4NSAoMC4wMjQpICAwLjc3
+OSAoMC4wMjUpICAwLjk5Mgo+ICAgNCAgMS40MjYgKDAuMDE4KSAgMS40MDkgKDAuMDIxKSAgMC45
+ODgKPiAgIDggIDEuNzc5ICgwLjEwMSkgIDEuNzExICgwLjEyNykgIDAuOTYyCj4gIDE2ICAxLjc2
+MSAoMC4wOTMpICAxLjY3MSAoMC4xMDQpICAwLjk0OQo+ICAzMiAgMC45MzUgKDAuMDYzKSAgMS42
+MTkgKDAuMDkzKSAgMS43MzEKPiAgMzYgIDAuOTM2ICgwLjA4MikgIDEuNTkxICgwLjA4NikgIDEu
+Njk5Cj4gIDcyICAwLjgzOSAoMC4wNDMpICAxLjY2NyAoMC4wOTcpICAxLjk4OAo+IDEwOCAgMC44
+NDIgKDAuMDM1KSAgMS43MDEgKDAuMDkxKSAgMi4wMjEKPiAxNDIgIDAuODMwICgwLjAzNykgIDEu
+NzE0ICgwLjA5OCkgIDIuMDY2Cj4KPiBhbmQgd2lsbC1pdC1zY2FsZS9sb2NrMl90aHJlYWRzOgo+
+Cj4gI3RociAgCSBzdG9jayAgICAgICAgcGF0Y2gtQ05BICAgc3BlZWR1cCAocGF0Y2gtQ05BL3N0
+b2NrKQo+ICAgMSAgMS41NTUgKDAuMDA5KSAgMS41NzcgKDAuMDAyKSAgMS4wMTQKPiAgIDIgIDIu
+NjQ0ICgwLjA2MCkgIDIuNjgyICgwLjA2MikgIDEuMDE0Cj4gICA0ICA1LjE1OSAoMC4yMDUpICA1
+LjE5NyAoMC4yMzEpICAxLjAwNwo+ICAgOCAgNC4zMDIgKDAuMjIxKSAgNC4yNzkgKDAuMzE4KSAg
+MC45OTUKPiAgMTYgIDQuMjU5ICgwLjExMSkgIDQuMDg3ICgwLjE2MykgIDAuOTYwCj4gIDMyICAy
+LjU4MyAoMC4xMTIpICA0LjA3NyAoMC4xMjApICAxLjU3OAo+ICAzNiAgMi40OTkgKDAuMTA2KSAg
+NC4wNzYgKDAuMTA2KSAgMS42MzEKPiAgNzIgIDEuOTc5ICgwLjA4NSkgIDQuMDc3ICgwLjEyMykg
+IDIuMDYxCj4gMTA4ICAyLjA5NiAoMC4wOTApICA0LjA0MyAoMC4xMzApICAxLjkyOQo+IDE0MiAg
+MS45MTMgKDAuMTA5KSAgMy45ODQgKDAuMTA4KSAgMi4wODIKPgo+IE91ciBldmFsdWF0aW9uIHNo
+b3dzIHRoYXQgQ05BIGFsc28gaW1wcm92ZXMgcGVyZm9ybWFuY2Ugb2YgdXNlciAKPiBhcHBsaWNh
+dGlvbnMgdGhhdCBoYXZlIGhvdCBwdGhyZWFkIG11dGV4ZXMuIFRob3NlIG11dGV4ZXMgYXJlIAo+
+IGJsb2NraW5nLCBhbmQgd2FpdGluZyB0aHJlYWRzIHBhcmsgYW5kIHVucGFyayB2aWEgdGhlIGZ1
+dGV4IAo+IG1lY2hhbmlzbSBpbiB0aGUga2VybmVsLiBHaXZlbiB0aGF0IGtlcm5lbCBmdXRleCBj
+aGFpbnMsIHdoaWNoCj4gYXJlIGhhc2hlZCBieSB0aGUgbXV0ZXggYWRkcmVzcywgYXJlIGVhY2gg
+cHJvdGVjdGVkIGJ5IGEgCj4gY2hhaW4tc3BlY2lmaWMgc3BpbiBsb2NrLCB0aGUgY29udGVudGlv
+biBvbiBhIHVzZXItbW9kZSBtdXRleCAKPiB0cmFuc2xhdGVzIGludG8gY29udGVudGlvbiBvbiBh
+IGtlcm5lbCBsZXZlbCBzcGlubG9jay4gCj4KPiBIZXJlIGFyZSB0aGUgcmVzdWx0cyBmb3IgdGhl
+IGxldmVsZGIg4oCYcmVhZHJhbmRvbeKAmSBiZW5jaG1hcms6Cj4KPiAjdGhyICAJIHN0b2NrICAg
+ICAgICBwYXRjaC1DTkEgICBzcGVlZHVwIChwYXRjaC1DTkEvc3RvY2spCj4gICAxICAwLjUzMiAo
+MC4wMDcpICAwLjUzNSAoMC4wMTUpICAxLjAwNgo+ICAgMiAgMC42NjUgKDAuMDMwKSAgMC42NzMg
+KDAuMDM0KSAgMS4wMTEKPiAgIDQgIDAuNzE1ICgwLjAyMykgIDAuNzE2ICgwLjAyNikgIDEuMDAy
+Cj4gICA4ICAwLjY4NiAoMC4wMjMpICAwLjY4NiAoMC4wMjQpICAxLjAwMQo+ICAxNiAgMC43MTkg
+KDAuMDMwKSAgMC43MzcgKDAuMDI1KSAgMS4wMjUKPiAgMzIgIDAuNzQwICgwLjAzNCkgIDAuOTU5
+ICgwLjEwNSkgIDEuMjk2Cj4gIDM2ICAwLjczMCAoMC4wMjQpICAxLjA3OSAoMC4xMTIpICAxLjQ3
+OAo+ICA3MiAgMC42NTIgKDAuMDE4KSAgMS4xNjAgKDAuMDI0KSAgMS43NzgKPiAxMDggIDAuNjIy
+ICgwLjAxNikgIDEuMTU3ICgwLjAyOCkgIDEuODYwCj4gMTQyICAwLjYwMCAoMC4wMTUpICAxLjE0
+NSAoMC4wMzUpICAxLjkwOAo+Cj4gQWRkaXRpb25hbCBwZXJmb3JtYW5jZSBudW1iZXJzIGFyZSBh
+dmFpbGFibGUgaW4gcHJldmlvdXMgcmV2aXNpb25zCj4gb2YgdGhlIHNlcmllcy4KPgo+IEZ1cnRo
+ZXIgY29tbWVudHMgYXJlIHdlbGNvbWUgYW5kIGFwcHJlY2lhdGVkLgo+Cj4gQWxleCBLb2dhbiAo
+NSk6Cj4gICBsb2NraW5nL3FzcGlubG9jazogUmVuYW1lIG1jcyBsb2NrL3VubG9jayBtYWNyb3Mg
+YW5kIG1ha2UgdGhlbSBtb3JlCj4gICAgIGdlbmVyaWMKPiAgIGxvY2tpbmcvcXNwaW5sb2NrOiBS
+ZWZhY3RvciB0aGUgcXNwaW5sb2NrIHNsb3cgcGF0aAo+ICAgbG9ja2luZy9xc3BpbmxvY2s6IElu
+dHJvZHVjZSBDTkEgaW50byB0aGUgc2xvdyBwYXRoIG9mIHFzcGlubG9jawo+ICAgbG9ja2luZy9x
+c3BpbmxvY2s6IEludHJvZHVjZSBzdGFydmF0aW9uIGF2b2lkYW5jZSBpbnRvIENOQQo+ICAgbG9j
+a2luZy9xc3BpbmxvY2s6IEludHJvZHVjZSB0aGUgc2h1ZmZsZSByZWR1Y3Rpb24gb3B0aW1pemF0
+aW9uIGludG8KPiAgICAgQ05BCj4KPiAgYXJjaC9hcm0vaW5jbHVkZS9hc20vbWNzX3NwaW5sb2Nr
+LmggfCAgIDYgKy0KPiAgYXJjaC94ODYvS2NvbmZpZyAgICAgICAgICAgICAgICAgICAgfCAgMTkg
+KysrCj4gIGFyY2gveDg2L2luY2x1ZGUvYXNtL3FzcGlubG9jay5oICAgIHwgICA0ICsKPiAgYXJj
+aC94ODYva2VybmVsL2FsdGVybmF0aXZlLmMgICAgICAgfCAgNDEgKysrKysKPiAgaW5jbHVkZS9h
+c20tZ2VuZXJpYy9tY3Nfc3BpbmxvY2suaCAgfCAgIDQgKy0KPiAga2VybmVsL2xvY2tpbmcvbWNz
+X3NwaW5sb2NrLmggICAgICAgfCAgMjAgKy0tCj4gIGtlcm5lbC9sb2NraW5nL3FzcGlubG9jay5j
+ICAgICAgICAgIHwgIDc3ICsrKysrKysrLQo+ICBrZXJuZWwvbG9ja2luZy9xc3BpbmxvY2tfY25h
+LmggICAgICB8IDMxMiArKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysKPiAga2Vy
+bmVsL2xvY2tpbmcvcXNwaW5sb2NrX3BhcmF2aXJ0LmggfCAgIDIgKy0KPiAgOSBmaWxlcyBjaGFu
+Z2VkLCA0NjIgaW5zZXJ0aW9ucygrKSwgMjMgZGVsZXRpb25zKC0pCj4gIGNyZWF0ZSBtb2RlIDEw
+MDY0NCBrZXJuZWwvbG9ja2luZy9xc3BpbmxvY2tfY25hLmgKPgpJIGhhdmUgcmV2aWV3ZWQgdGhp
+cyBwYXRjaHNldC4gQXNpZGVzIGZyb20gYSBmZXcgaXNzdWVzIEkgaGFkIHJhaXNlZCBpbgplYXJs
+aWVyIGVtYWlscywgSSBkb24ndCBzZWUgb3RoZXIgcHJvYmxlbXMgaW4gdGhlIGNvZGUuIFRoYW5r
+cyBmb3IgeW91cgpoYXJkIHdvcmsuIEkgdGhpbmsgd2UgYXJlIGFsbW9zdCB0aGVyZS4KCkNoZWVy
+cywKTG9uZ21hbgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
+aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
+L2xpbnV4LWFybS1rZXJuZWwK
