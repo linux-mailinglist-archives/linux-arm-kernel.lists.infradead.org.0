@@ -2,73 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B37C8DD07B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 22:38:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DBC9DD082
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 22:39:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Mime-Version:Message-ID:To:From:In-Reply-To:Subject:
-	Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:List-Owner;
-	 bh=6fBVKeKVVCGcoiKHsD1UPCxM8wzipJAipHxh7Ray7a4=; b=tA5/ZV6mfK5bFNoQmgtmFoAx7
-	xad9yeTLkWcHOXrje6YWpGhggxGOtamZimHUcl3SVx1Oh2XV+9MD8ueI8BaOhQ91ZxPYnEl6+wVY9
-	/yQIO+Nr7rg6jP9G+elQFNoNUz9xyGMdNkWK3j/Nn/1zWSI9Ehs5Wqp2jqFWXNnTPjgw2nkex0eWI
-	JOKlfOFj1qKU8zig7t7QeX+2QQSdYhOqWHEMpMMx+m6jlJplkypsYKAOFr/34+YzO2qYngsqNYOv7
-	kR6Q+My+DlAlSdi7S9eyP2BRNpPGnqit7dwLxEUe2OlNop9J370uLQGEEVtXp/XQFuihoQDlwnrEh
-	qmWvNOqIg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xKyK+gDlB6mOdq93Bugo7GnZbfKKttyCFuVB3oRQmO0=; b=kais0Q0Q/l414E
+	Csv4gmk697r1IZ9k3JLzgZ5Ldpk+JkpsMf2Iyen3NnTf+51AyL+XM0kp7Zx/WD4hjReWqKyR6eHFt
+	jWQRvHvm3njHzdbmjbfSg+mIlKGTGVQeBPjwVZOvHllICk77XSAuveNeIk7+Ozb4ZabVvGtfMndks
+	aHxG1Vl8Sw214sXExYLsJU34VmqEQ0AHUyHvbN8KbvZrE8b77RYq6/+H5YFC6OG6gq0TZCkx2h+ge
+	WUhaClq6U3iTEMUoQIAGNmCGQOTYFml2tcMFiK363gW+K4BNY6cpd6ifjGwD16jGuRzJBXCJWdyMG
+	OXZ+USLhpoTaeWR7cHlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLZ0y-0003gd-1U; Fri, 18 Oct 2019 20:38:24 +0000
+	id 1iLZ1p-000452-2Y; Fri, 18 Oct 2019 20:39:17 +0000
 Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLZ0k-0003g3-Lt
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 20:38:12 +0000
-Received: by mail-pl1-x642.google.com with SMTP id d22so3395116pll.7
+ id 1iLZ1e-00043j-4w
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 20:39:07 +0000
+Received: by mail-pl1-x642.google.com with SMTP id s17so3388985plp.6
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 13:38:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sifive.com; s=google;
- h=date:subject:in-reply-to:cc:from:to:message-id:mime-version
- :content-transfer-encoding;
- bh=Js8UyXKzcNoEJJmDg2fB7ETZw1UXZrdaUdx46TnSzV4=;
- b=PmFQYioVvRr2wRTUyHxpUOWHMVdu2thIjey8wW+t1W0rNA8gV8xD+qzVNMJgwsoJ+s
- 0vY1RJJoS5FGWiyKZ0yzgg4GvAK997c+qFIJ7rda8sls+g72uwDctwaE9TgXDCSGCNRB
- 673GKj5l/F5sgl/YxgqJD3cG2/ziJBAzhM7pJFcqjOlGlgykC+mTzeLDbc/ZsX63X4NR
- JvARjArPuTkFdVl7WNt3JU/En33mF6//9NP6rkGcJ6wsBWuPfYWYI2NQxniixZcLot4g
- a7vvRgCmgXXN77Sacj+NOQVObFJHbEaZIxAqegMjy8bGOiid9UwyAJuG3Rqb3PllEgJn
- RMRA==
+ Fri, 18 Oct 2019 13:39:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=sA9QYMiGhI7MttA/PLlqrtMzG0s83akjTEVC2Hk0Y0Y=;
+ b=DN5MEvFgVMu4M4/XCLw9BRIhFBFz5/fxRslD8rf+iBz/h2hn6x8mBLdHOrnXuEO4cf
+ vCZZ3UVlc1wh7a40ehAmlIXKkUx76Z/vfG+pIworaMVo9p1R2FuXCucWWS84hmof1jfX
+ hBEPTm5IBCXfvNU9ZsmPS3MVRpbXxmym8TAwhZ7tHD9vtpbt99ui/Qb+DwxKB69ExLRQ
+ S8dDorBNDNK51e8KQpVTnyU1cXa/9sijPaH20LMzhui9CVrfHwVpiDXjMsMciohHfbMu
+ eHVms76z/2lQhmX9raIBDs5TQGc1rIGb2eMvJS1W8RDwF9Oe8fWetD//OkFfRZ9eV/2E
+ boRQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:subject:in-reply-to:cc:from:to:message-id
- :mime-version:content-transfer-encoding;
- bh=Js8UyXKzcNoEJJmDg2fB7ETZw1UXZrdaUdx46TnSzV4=;
- b=MtXJ8hwfrGM8O9FKiLhDrLA/EytAMosXjaQpPnzvCug2xtocIg1VCfp7g0HY/KAiOr
- oYOceWuxMiQ/jqQKpwkiMI0kqJSPkS66cBpXzzfLI5Xa4X6FkLTTy2Na39IGl9Hstxqf
- miLnsRmEZXcB6Cb+e6O7zsBP41fx3+MiMFd2GMxYzhTAmr7zxPgVTuSYF4P0Q0qQ2GvF
- 0Ui9Kdse89ra4l6rXBu+meJI2eLEkQoYHV/B+gLxaVE/9dFLw7Z+vJFRh69BTWKpXa9o
- LQzV/TOBSBbBKJPX5UC/A8Y9RiXP6eKpCjnXUP9iifsh9kiCxSTpYAbqTtzb868Qf6I3
- viFg==
-X-Gm-Message-State: APjAAAWcLcq0/Skax5yxGMbPJ+bhr58yFHL+GMfGaYq1TqquxfXdnI+a
- whukFCZuzykA9V0R/BbbSPvKDw==
-X-Google-Smtp-Source: APXvYqx2jdlimEr6T3ephzi5HPyQ4wjtemZopyPGMNsdL8fHGE93OsN+AwxNxupLGPcLH65It1Ds+g==
-X-Received: by 2002:a17:902:fe04:: with SMTP id
- g4mr4203122plj.58.1571431089200; 
- Fri, 18 Oct 2019 13:38:09 -0700 (PDT)
-Received: from localhost ([152.179.112.46])
- by smtp.gmail.com with ESMTPSA id bb15sm6704697pjb.2.2019.10.18.13.38.08
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=sA9QYMiGhI7MttA/PLlqrtMzG0s83akjTEVC2Hk0Y0Y=;
+ b=abpA+yyy6xxJAPNjE0VJJfJ0wFcACVfIWdiUhpiaC2UVi9tXzIFtOpdvpeAQFYcXgy
+ Y8ogqFyuEk0OA5xJcupX5FYIr9VsU68lQ5Ko7iZVPijMi4xI6Ycu+idxK88BoDaRbTND
+ P5NDG9ewH41QTFRxUJEgb2I04KGsvnZuQezvaUdTKn7YBwjoJaikvjdEnPz7dyXcDajc
+ uaWELwegWfvm6clPhAxgtcQ664V5MmTAZhJ2Q6rQrXwMNANhbIF9d3cWvSeobtPgXpH+
+ wKVQ8tNa1HMq19PxyhcAWmmA7ixygcx4XTvzl9wPjs38hzWWdvr99CIUkfWAjzE10C3X
+ Om4Q==
+X-Gm-Message-State: APjAAAW2AvvgpFHcV7MTPnKBxdCu1HhwTCxYWMEpK9BHi0fUQIc3U84a
+ abNoAuWQBx48Ro9zzECKZxE=
+X-Google-Smtp-Source: APXvYqyIxdE8kbIPAupy1VRv2Z5sSpuL6L3+Lx1OQzb/YVFns+e38GVIZHMuR66stuh9mPN8FKSWQA==
+X-Received: by 2002:a17:902:ff14:: with SMTP id
+ f20mr1803901plj.216.1571431145094; 
+ Fri, 18 Oct 2019 13:39:05 -0700 (PDT)
+Received: from dtor-ws ([2620:15c:202:201:3adc:b08c:7acc:b325])
+ by smtp.gmail.com with ESMTPSA id 196sm7859249pfz.99.2019.10.18.13.39.03
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 18 Oct 2019 13:38:08 -0700 (PDT)
-Date: Fri, 18 Oct 2019 13:38:08 -0700 (PDT)
-X-Google-Original-Date: Fri, 18 Oct 2019 13:36:06 PDT (-0700)
-Subject: Re: [PATCH v10 3/3] mm: fix double page fault on arm64 if PTE_AF is
- cleared
-In-Reply-To: <20191016234607.626nzv5kf5fgz25x@willie-the-truck>
-From: Palmer Dabbelt <palmer@sifive.com>
-To: will@kernel.org
-Message-ID: <mhng-265b415f-c8ff-4727-a8fa-2f3e51937ba6@palmer-si-x1c4>
-Mime-Version: 1.0 (MHng)
+ Fri, 18 Oct 2019 13:39:04 -0700 (PDT)
+Date: Fri, 18 Oct 2019 13:39:02 -0700
+From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: Fwd: [PATCH 29/46] Input: touchscreen: use wrapper for pxa2xx
+ ac97 registers
+Message-ID: <20191018203902.GQ35946@dtor-ws>
+References: <20191018154052.1276506-1-arnd@arndb.de>
+ <20191018154201.1276638-29-arnd@arndb.de>
+ <20191018184815.GP35946@dtor-ws>
+ <CAK8P3a27==9TeS-RWEvrpnxh+6McqRF-xeb8WPj9pHOn+0zbOQ@mail.gmail.com>
+ <CAK8P3a0AP8q9Hk1DB+E=xFGV5RqXnkjkcZRobgU1NRDFMH00AA@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAK8P3a0AP8q9Hk1DB+E=xFGV5RqXnkjkcZRobgU1NRDFMH00AA@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_133810_775992_443E5087 
-X-CRM114-Status: GOOD (  24.44  )
+X-CRM114-CacheID: sfid-20191018_133906_188459_75FF8FA7 
+X-CRM114-Status: GOOD (  20.49  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -77,6 +83,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (dmitry.torokhov[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -97,95 +105,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark.Rutland@arm.com, Justin.He@arm.com, Kaly.Xin@arm.com,
- Catalin.Marinas@arm.com, linux-kernel@vger.kernel.org, willy@infradead.org,
- linux-mm@kvack.org, James.Morse@arm.com, linux-arm-kernel@lists.infradead.org,
- punitagrawal@gmail.com, maz@kernel.org, hejianet@gmail.com, tglx@linutronix.de,
- nd@arm.com, akpm@linux-foundation.org, kirill.shutemov@linux.intel.com
+Cc: ALSA Development Mailing List <alsa-devel@alsa-project.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Haojian Zhuang <haojian.zhuang@gmail.com>, Daniel Mack <daniel@zonque.org>,
+ "open list:HID CORE LAYER" <linux-input@vger.kernel.org>,
+ Robert Jarzmik <robert.jarzmik@free.fr>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 16 Oct 2019 16:46:08 PDT (-0700), will@kernel.org wrote:
-> Hey Palmer,
->
-> On Wed, Oct 16, 2019 at 04:21:59PM -0700, Palmer Dabbelt wrote:
->> On Tue, 08 Oct 2019 05:39:44 PDT (-0700), will@kernel.org wrote:
->> > On Tue, Oct 08, 2019 at 02:19:05AM +0000, Justin He (Arm Technology China) wrote:
->> > > > On Mon, Sep 30, 2019 at 09:57:40AM +0800, Jia He wrote:
->> > > > > diff --git a/mm/memory.c b/mm/memory.c
->> > > > > index b1ca51a079f2..1f56b0118ef5 100644
->> > > > > --- a/mm/memory.c
->> > > > > +++ b/mm/memory.c
->> > > > > @@ -118,6 +118,13 @@ int randomize_va_space __read_mostly =
->> > > > >  					2;
->> > > > >  #endif
->> > > > >
->> > > > > +#ifndef arch_faults_on_old_pte
->> > > > > +static inline bool arch_faults_on_old_pte(void)
->> > > > > +{
->> > > > > +	return false;
->> > > > > +}
->> > > > > +#endif
->> > > >
->> > > > Kirill has acked this, so I'm happy to take the patch as-is, however isn't
->> > > > it the case that /most/ architectures will want to return true for
->> > > > arch_faults_on_old_pte()? In which case, wouldn't it make more sense for
->> > > > that to be the default, and have x86 and arm64 provide an override? For
->> > > > example, aren't most architectures still going to hit the double fault
->> > > > scenario even with your patch applied?
->> > >
->> > > No, after applying my patch series, only those architectures which don't provide
->> > > setting access flag by hardware AND don't implement their arch_faults_on_old_pte
->> > > will hit the double page fault.
->> > >
->> > > The meaning of true for arch_faults_on_old_pte() is "this arch doesn't have the hardware
->> > > setting access flag way, it might cause page fault on an old pte"
->> > > I don't want to change other architectures' default behavior here. So by default,
->> > > arch_faults_on_old_pte() is false.
->> >
->> > ...and my complaint is that this is the majority of supported architectures,
->> > so you're fixing something for arm64 which also affects arm, powerpc,
->> > alpha, mips, riscv, ...
->> >
->> > Chances are, they won't even realise they need to implement
->> > arch_faults_on_old_pte() until somebody runs into the double fault and
->> > wastes lots of time debugging it before they spot your patch.
->>
->> If I understand the semantics correctly, we should have this set to true.  I
->> don't have any context here, but we've got
->>
->>                /*
->>                 * The kernel assumes that TLBs don't cache invalid
->>                 * entries, but in RISC-V, SFENCE.VMA specifies an
->>                 * ordering constraint, not a cache flush; it is
->>                 * necessary even after writing invalid entries.
->>                 */
->>                local_flush_tlb_page(addr);
->>
->> in do_page_fault().
->
-> Ok, although I think this is really about whether or not your hardware can
-> make a pte young when accessed, or whether you take a fault and do it
-> by updating the pte explicitly.
->
-> v12 of the patches did change the default, so you should be "safe" with
-> those either way:
->
-> http://lists.infradead.org/pipermail/linux-arm-kernel/2019-October/686030.html
+On Fri, Oct 18, 2019 at 09:39:31PM +0200, Arnd Bergmann wrote:
+> On Fri, Oct 18, 2019 at 8:48 PM Dmitry Torokhov
+> <dmitry.torokhov@gmail.com> wrote:
+> >
+> > On Fri, Oct 18, 2019 at 05:41:44PM +0200, Arnd Bergmann wrote:
+> > > To avoid a dependency on the pxa platform header files with
+> > > hardcoded registers, change the driver to call a wrapper
+> > > in the pxa2xx-ac97-lib that encapsulates all the other
+> > > ac97 stuff.
+> >
+> > Not supper happy about adding module dependencies. Can we include
+> > mach/regs-ac97.h from include/sound/pxa2xx-lib.h and use static inlines?
+> > Someone needs to include mach/regs-ac97.h in the end...
+> >
+> > Or there is something later in the series that needs it?
+> 
+> One of the goals of the series is to completely remove all mach/*.h headers
+> and place them somewhere else, ideally inaccessible to device drivers.
+> 
+> In case of mach/regs-ac97.h, the later patch "ASoC: pxa: ac97: use normal
+> MMIO accessors" passes the physical register base address as a platform
+> device resource that gets ioremapped in the ac97 driver, rather than
+> hardcoding the virtual address in a global header.
+> 
+> I agree that the exported function is still ugly, but I hope it's enough of
+> an improvement over the previous state that we can do it anyway.
+> 
+> If you have any better ideas though, I can give that a try, too.
+> One possibility would be a higher-level interface exported on top
+> of 'struct snd_ac97', but I could not figure out how to do this.
 
-OK, that fence is because we allow invalid translations to be cached, which is a 
-completely different issue.
+No, I do mot really have better ideas given your stated goals and I
+guess there is not really much benefit on spending too much effort
+polishing essentially one driver.
 
-RISC-V implementations are allowed to have software managed accessed/dirty 
-bits.  For some reason I thought we were relying on the firmware to handle 
-this, but I can't actually find the code so I might be crazy.  Wherever it's 
-done, there's no spec enforcing it so we should leave this true on RISC-V.
+Acked-by: Dmitry Torokhov <dmitry.torokhov@gmail.com>
 
-Thanks!
+Thanks.
 
-> Will
+-- 
+Dmitry
 
 _______________________________________________
 linux-arm-kernel mailing list
