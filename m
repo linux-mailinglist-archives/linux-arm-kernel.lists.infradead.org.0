@@ -2,69 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A647DCAAF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 18:15:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AB3BDCAAC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 18:14:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jT2/2WSb3U7Gfo6QnvZYcMfQoJz2WKBG4hQNu/4Xh7o=; b=ChmER3Z6fcpp/0
-	4FaVDwCKHH3pvXClaKVGBIDOQamVyk7noYUp0FmJb8VSM8+8GwrQx8/6CfR/LMKnf2kXzKy8b5+8U
-	UbWXlXzx6yugBFpotrHXLaMXinkCryleWZFdue1p8NOo+w6KOT9R87W1FfB2bfx8IZv+ItcRtLWyA
-	tcaCEJaNF/PFYPNoxqsAK0PzYetBqcg95N3Y4ttjjX7YJxlRRc4OVOhK8L9FOdk8Ge3SPz4S9KfB2
-	EeCoBXg8kQEwPMxchKtukFQ1zpvpPpeYrwT6puTXY5uCAeG/7J5Y9mQsUawpd2UQDkUQIAI1+MUAN
-	4CWPCGw91pOXaRZrK/3A==;
+	List-Owner; bh=Sgec1mvFUL6cZ3iszoxGQ7quBUe8MZkiTDzO7qok+bA=; b=WfeOHHB5aSDl2o
+	wsXJfzYmBZerBKrZBGxrRZgzx2OxdSk29Bspxxt+Sk+ShCAUImWuY9BZz6zODmzGejYR7qahoXXA/
+	6G5KgrfWRzMH+jsDGsZKqHi0hJnjZONhdLz2Mq7ZpjHhJ89GHXO9v4xLhXyz9veR2CEEDDFRdcR1J
+	G1SpNnY5kiMxLqV7hcZa3o8gH8qYxXdzuSbXs1P3MQAZhDBtFPpQSFGONbq0W1i1/imEVlIzsm/Pz
+	iwO2qDvidyqU2C1kDwedoxZg0OloLF0+FpdAT9bTsQ17dm5iFzKYbtKL1ZAwDRO05SaEqMSTxKw8y
+	jkk1mSbx1wvLC0CSPEpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLUuK-0005Mb-Hq; Fri, 18 Oct 2019 16:15:16 +0000
-Received: from mail-pf1-x449.google.com ([2607:f8b0:4864:20::449])
+	id 1iLUtu-00055p-99; Fri, 18 Oct 2019 16:14:50 +0000
+Received: from mail-pg1-x54a.google.com ([2607:f8b0:4864:20::54a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLUqY-0001zt-FP
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 16:11:24 +0000
-Received: by mail-pf1-x449.google.com with SMTP id x10so4958641pfr.20
+ id 1iLUqa-000224-Qx
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 16:11:26 +0000
+Received: by mail-pg1-x54a.google.com with SMTP id u20so667798pga.4
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 09:11:21 -0700 (PDT)
+ Fri, 18 Oct 2019 09:11:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=K1ZhNofnBR/XSzepuNm2GXj6CjTITzvlb/GIVw7T7D4=;
- b=sClupJ7s2vyir/7TQw4u1wskJ40f2afok9L62g3bdETWOSrvPIoJbt2TUVhCDZl2Ll
- jSD1Pe1pU7jtmC4+A/khfQCqIGy7o+x3Glnf1WXjzHqx9iAelj7PV0FH9T6XgXbpgXPr
- QmyFwYa7yB+qCqYypJwWf511MkYFKNAU+aHSUjTgdgKc/LGoN7I1EdcPjslTcJn6Nsnh
- zpS9sYd2YqSiWR32qZg1jO6XyvMv14Qmysa4U0MKWEQOtGZOZsv14zS5QNAzrCYTZwhv
- xDZy49ncrITpJUlYkIIuqsGVZMQ4LMcDek2uuDnjzpOLCvDTsilhXvrJN1MvHxPElje/
- wDsw==
+ :cc; bh=J6SOPI1rQkBRz/oAhlc59Qnl/pEg0yYrtpuJkIBOBkk=;
+ b=XB6QWz3NWtjFWDb+Z+2Cr8pmFgRAQYSnL3Uid2Hg1L3X4a6VceEhm2xwPy1aK+VoSw
+ 9aDveAT40bEva7mRzlDierznfNSbLqDMAgSgjhFynz+GencRC+yEXI9GlTtBT22sGU3p
+ BgssCzMTgiVVKQ7dMBIH2LGWSYP103Svydpv/Qk8+Xt+dKrQ9nOnszXcbv17KY+4wwg4
+ NXeKJ9olZaMc5VRteVjdV9T7bI7kUuufX9b3S6ryE8d0aJM7RC3oqJ3jQ0cSx2x8TLsX
+ ddVquFcsQoFiGmYXXscZ5m21z4LgANVA4sAoVnGTE5uNuWZVS07mkE/xs/dMfJWy0ygM
+ tC4g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=K1ZhNofnBR/XSzepuNm2GXj6CjTITzvlb/GIVw7T7D4=;
- b=E7l2qSS3fqFMgd9A9uya4RzlIkytiRX7EZ3VPdjig5zbds6QFB+8681JBIweXuBKS7
- JXtdP96/elWR/S4oPwJdmU9R8oeOjbYDQD2Vgw1bbKSymM7JIpaIdPoWCkK1Vi9lFFby
- tugYw/eXZV0McBvurlSZie5FAeOurfX+yxJZrpV/0hrHQBNGe3BWZhyBdyBXCjE85sud
- 2ezowe0l8Pswn53HA34xTmsafdGcGXxBSNpa67rb/ZT6iGh4LKs0XGzs6gPiksQCoX9A
- nZ1XPAbM3/8cznG+W11XEVugVdLrYy6TI5hz3+NQKB6BFGMNsUFEVFbl5yMeIvxYhFgk
- 7u2Q==
-X-Gm-Message-State: APjAAAUvF2KBGDx3GUGu552REbyDa9TlpLrjckp9FtcmC+UVenblYgfw
- I9IR+cpTUVCG+7nqB6hrngelT9p+t7h7u2Y4lbs=
-X-Google-Smtp-Source: APXvYqxQZgJ8+dUeSHjL/X4r9AY12JB0O/dDMacaQgZEGqyCDds26CgWDH7ZPg+xHY8lSTXkA3/VdzbOvvEqn3IOjDM=
-X-Received: by 2002:a63:eb52:: with SMTP id b18mr10634742pgk.205.1571415080458; 
- Fri, 18 Oct 2019 09:11:20 -0700 (PDT)
-Date: Fri, 18 Oct 2019 09:10:27 -0700
+ bh=J6SOPI1rQkBRz/oAhlc59Qnl/pEg0yYrtpuJkIBOBkk=;
+ b=TRKgTMtsZAv/Q0tpN4xUDHOCo+6Y+jd7SGyRz3UO1tF9i5Ajukd9rPYNOCPwSZvXyc
+ eWPEMPwg1St9KqA7lASzkEaiFbATbHenmwpoAY33gYPidv7C2YTAXRwJdCT5jqolWD/5
+ wmz3eN1nSK33VsqLaS+slPYdgfZhPHSV+9d7oIo5rEHvDv32Uz5qFb9Z4HSmxCad+Kup
+ EeUn20HA6aBLDG30if9+9UdIFR/mI1aXmrLV8uRccVz4f53pPfM4Odta8xyfJm2WKO6h
+ kvmpPNVkT79cxHI0Vos58B4FTrkF6FCcqvD1KsLK/mahPyjBrRMPdnCh+IaUvGJAxHxS
+ XFRg==
+X-Gm-Message-State: APjAAAWIKYgHjC51sv214rtRziJEhRKjlOvEuDE69XJnytcRD7VbPjq/
+ dyiK5BeJaaflrs1pnmljbdorcATtA+RhDsW++Ho=
+X-Google-Smtp-Source: APXvYqx8PtU7/rtmLemGGFK39JXzIOz2FvaCxezwKfcFnavxjhOconPajgJzRwBjZVVbgrCp+Uo7fSkc9snzmg9De7Q=
+X-Received: by 2002:a63:1e59:: with SMTP id p25mr10856086pgm.361.1571415082807; 
+ Fri, 18 Oct 2019 09:11:22 -0700 (PDT)
+Date: Fri, 18 Oct 2019 09:10:28 -0700
 In-Reply-To: <20191018161033.261971-1-samitolvanen@google.com>
-Message-Id: <20191018161033.261971-13-samitolvanen@google.com>
+Message-Id: <20191018161033.261971-14-samitolvanen@google.com>
 Mime-Version: 1.0
 References: <20191018161033.261971-1-samitolvanen@google.com>
 X-Mailer: git-send-email 2.23.0.866.gb869b98d4c-goog
-Subject: [PATCH 12/18] arm64: reserve x18 only with Shadow Call Stack
+Subject: [PATCH 13/18] arm64: preserve x18 when CPU is suspended
 From: Sami Tolvanen <samitolvanen@google.com>
 To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
  Steven Rostedt <rostedt@goodmis.org>,
  Ard Biesheuvel <ard.biesheuvel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_091122_560548_DFDFA589 
-X-CRM114-Status: UNSURE (   8.91  )
+X-CRM114-CacheID: sfid-20191018_091125_024578_23B1C6AB 
+X-CRM114-Status: UNSURE (   7.83  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -72,7 +72,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:449 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:54a listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
@@ -108,38 +108,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Only reserve x18 with CONFIG_SHADOW_CALL_STACK. Note that all external
-kernel modules must also have x18 reserved if the kernel uses SCS.
+Don't lose the current task's shadow stack when the CPU is suspended.
 
 Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
 ---
- arch/arm64/Makefile | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+ arch/arm64/mm/proc.S | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
-index 1c7b276bc7c5..ef76101201b2 100644
---- a/arch/arm64/Makefile
-+++ b/arch/arm64/Makefile
-@@ -55,7 +55,7 @@ endif
+diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
+index fdabf40a83c8..9a8bd4bc8549 100644
+--- a/arch/arm64/mm/proc.S
++++ b/arch/arm64/mm/proc.S
+@@ -73,6 +73,9 @@ alternative_endif
+ 	stp	x8, x9, [x0, #48]
+ 	stp	x10, x11, [x0, #64]
+ 	stp	x12, x13, [x0, #80]
++#ifdef CONFIG_SHADOW_CALL_STACK
++	stp	x18, xzr, [x0, #96]
++#endif
+ 	ret
+ ENDPROC(cpu_do_suspend)
  
- KBUILD_CFLAGS	+= -mgeneral-regs-only $(lseinstr) $(brokengasinst)	\
- 		   $(compat_vdso) $(cc_has_k_constraint)
--KBUILD_CFLAGS	+= -fno-asynchronous-unwind-tables -ffixed-x18
-+KBUILD_CFLAGS	+= -fno-asynchronous-unwind-tables
- KBUILD_CFLAGS	+= $(call cc-disable-warning, psabi)
- KBUILD_AFLAGS	+= $(lseinstr) $(brokengasinst) $(compat_vdso)
- 
-@@ -72,6 +72,10 @@ stack_protector_prepare: prepare0
- 					include/generated/asm-offsets.h))
- endif
- 
-+ifeq ($(CONFIG_SHADOW_CALL_STACK), y)
-+KBUILD_CFLAGS	+= -ffixed-x18
-+endif
-+
- ifeq ($(CONFIG_CPU_BIG_ENDIAN), y)
- KBUILD_CPPFLAGS	+= -mbig-endian
- CHECKFLAGS	+= -D__AARCH64EB__
+@@ -89,6 +92,9 @@ ENTRY(cpu_do_resume)
+ 	ldp	x9, x10, [x0, #48]
+ 	ldp	x11, x12, [x0, #64]
+ 	ldp	x13, x14, [x0, #80]
++#ifdef CONFIG_SHADOW_CALL_STACK
++	ldp	x18, x19, [x0, #96]
++#endif
+ 	msr	tpidr_el0, x2
+ 	msr	tpidrro_el0, x3
+ 	msr	contextidr_el1, x4
 -- 
 2.23.0.866.gb869b98d4c-goog
 
