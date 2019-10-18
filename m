@@ -2,75 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B809DCCDD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 19:32:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 164BDDCCEA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 19:36:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d+dZCOUsckdgPpXVoe7qICSQ/iV80jANOm1B2+AHM5E=; b=h9SVks4Qj9B9HS
-	5jIE12bWkDKnnRQHxHSUWeouRtD6IVyq6rNu4+zfXcNXOY8/ySR2taV9Hvac/Y6w/6UEV5naX0FDG
-	JLDLjqq1a9FeVD6wwBKjbJQnyf3uslds4qZLoXhDPDq42y+jx0BYSy2EVQRr+/vYPvxOZLtAUijaa
-	PDmKIKpLx49C7i8DjL3p/JsXBygqZFI+aFQf7H5RURhIK/FETVvCoIkDgBORrqP6KsoFtU4mEO/JJ
-	N08H+OeRQDGMujzl73OZRS9StrMTCXK9pZdoNFG1zTTS8Ecij/g9yWWyrKOuLCFG/s/XWjxMayH7A
-	YdLVcb/ekeRCfHZVR0og==;
+	List-Owner; bh=yRLNK+mcuqaZCKXd7YDFEVFCYguuFhEI9fmyEArbTyQ=; b=MrkpnyB/5Yw+Pt
+	w7i8HZpuwhV2D8qBiqSKmrN9Y4xuvybcMMzaClViyMOEd75JWZ6zrDX43O929uAi2KYHx91+RPyjE
+	+fSfVKZkRX/uimJvRnd+d8CbFFTIpUgOPV9yw7JIPeTi3zeTB1ec5yWbXtKH6pJ9uXDkD2/qg1d+4
+	GqpA4M5OsGvI6+XW5Ykuof8BmnGXdBAZQf5p1ADrU3oNWfjFtacgSgW27V7ecy7WUGyqHHo2EHZ1J
+	RZGWa/l3RLFu6K4FH2kEiqTpd1haP3LZ/Bz/DDvOj8Il7shjnKEjqHeG3KoBRwjRs+ldXE6d+7v3p
+	ODYneu1xu1bpomCdNFOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLW7O-0001jU-FY; Fri, 18 Oct 2019 17:32:50 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1iLWAd-0003Vq-W7; Fri, 18 Oct 2019 17:36:12 +0000
+Received: from mail-vk1-xa44.google.com ([2607:f8b0:4864:20::a44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLW77-0001fV-Md
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 17:32:35 +0000
-Received: by mail-pf1-x442.google.com with SMTP id q5so4283149pfg.13
+ id 1iLWAU-0003VO-Mo
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 17:36:03 +0000
+Received: by mail-vk1-xa44.google.com with SMTP id 70so1545582vkz.8
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 10:32:33 -0700 (PDT)
+ Fri, 18 Oct 2019 10:36:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=LUCkDiO1QUpPk5cl+dZgUeLa1d4lsLLAG2MEy31ElWU=;
- b=Q2GrSm+Odfy9jVEDqMmfnpv1JF6tDvJ9iXYBvf5rjH3en0ATo4AgQjw2pQDojlKoaS
- 9fBS4aMFJ5dZwD9OigzTjU849InPSdBgGRC+uZEt3xD+a4RKHVALWELFRgwg2SA4Hrzq
- zb2RgQ0REmeyvR9a4FeSiZ73kVsr69wvb6c31MRdP3Bvd2XsEJze6gbRaEFiobpWXpeP
- Jy5YplzkCXmKDyVKqgUBpRu2Xoxis9XWxkxStyjOq8Q2jrPByqwE/lIB22HRWbIoxhAw
- w2b9PGOjxqmyIOBybNGNqSsdSOP6Tyg2PirfWZOi7lJ8gecCO3g1JCJKWpU8SIivdJr/
- RIuA==
+ :cc; bh=X/WE+Ltkav02W5Zb5upG5+z14WBcxmzY6UajsHAAkG8=;
+ b=rqUeUBF2GjWBXilazZj9859Wfei7InxGqjTwVagtcsCAMDedJITzk/dHkG81u/5B25
+ Gan6lZGpmCBzOPsFbOcLdMfJHcanUI3ep3+QI28fjn1kEs0jS+efCiF08LN3Uhod55ul
+ o8MP7rP7XrPgS4JSx27FU21kQ12QN3Wjs/CPcWCMbRpii0kbteuK5/OL7iTAWeDLTvWA
+ jsB/YzyHAUd/9ZRrx4gkDsHmik9l/UDkv60LU9h8R7oCv8bO6FmJh0SKGXfbqcmhOOuj
+ TsDMzO/cgJUDzggj3lyoH43dj6kglYl7LaJ+KzJCv+UJh/CE9CVwdjB4QV3MViu23LeS
+ hq6A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=LUCkDiO1QUpPk5cl+dZgUeLa1d4lsLLAG2MEy31ElWU=;
- b=Vz6J8GEyyGIUTGcH0+9+wBgwDeTFlaEbnETuS6ianIluUetQylPZfVwh+ZiqzyZPAB
- ZKXLeGVh7fy6cvCwS5Ab5vgqB1jnXXeSGCQForLOOxqDV0VGdnmgxBkqUlmsoECWnnkB
- fHCiA8Yk22S7VNeku2r69EjkeitEoUHJJqLgJkljLHNfWvN+nnNyqjqpret/ou/BCQRT
- XuJjpImyy8S2YgUMhNTEx8nUt/0+7SGFRnDH9w7CeQtNB2omjJyGbumfyzXfK+2gs1l5
- FHWqgixICeIcynAhB2dWnsS0EV0e8LDttZHD/5p6WboQZQtZ+8cmSc7sbGUEXaku36pm
- r0Wg==
-X-Gm-Message-State: APjAAAX7fxD8HwiH6VC373JrWYUur3hoY5Oi5KinEL8Bere7AkP5OXJM
- 0Mp3ARh4CbKEMBcRT015Hew5qxmqr1awV0784AiTmw==
-X-Google-Smtp-Source: APXvYqyiP1Zzh4FMjPyyDPFh7Wpil1drk2/6fs3Sl6Id4xkJb/P7azXpHLFJ3B/tWIF35J82NWyTkkF5okrslIJan50=
-X-Received: by 2002:a63:5448:: with SMTP id e8mr11186188pgm.10.1571419951879; 
- Fri, 18 Oct 2019 10:32:31 -0700 (PDT)
+ bh=X/WE+Ltkav02W5Zb5upG5+z14WBcxmzY6UajsHAAkG8=;
+ b=q/MuqR6/ylqVoc4zKV4CI/6FaxgPR5UK8jIM+tiNC8j0UqFhRFSkhnuDZrwBnFh84b
+ v2tG5IUEAl7YUEyENLme/mIPxucmSXozDf1louMaq7w5OnPnCRbbMHUkTNrCkds5zN/6
+ mh57QHiHqonoNL3lgvKzovvSovnvgG6Nuko3KSp4R6BnAfbvtPS7CN1hG2HperxH7SpT
+ NFLT5t79s9mbILTyYvIZWUWX8z9+KBwaj4zzdeJE6jJR1yfB39k8k1aMtX9WdXXXkYLx
+ 1D+BkscK9Ny1Y/lqouo9+Gxv4axmQTt20Q5cioghUHl0ozWpEyu59OPLNgehl4GnFD27
+ ar9w==
+X-Gm-Message-State: APjAAAXSpx5tC4YxlJdRbgsrgaaA0U2kcCuF/U27RmFHliE7ium34L7y
+ 2ftop27AssKaPMRf2/Pr0FJ39pz3px7oSjVjJqC4Xw==
+X-Google-Smtp-Source: APXvYqyF6j/BTFaba8M4VvcJmblj6dt3v+IOFiO9LsV/Gfg5OdquXzqLTFgu5d+0ejdtz8qWcSto/Fr46l8MKCQgdZE=
+X-Received: by 2002:a1f:a8c8:: with SMTP id r191mr6141200vke.35.1571420160894; 
+ Fri, 18 Oct 2019 10:36:00 -0700 (PDT)
 MIME-Version: 1.0
 References: <20191018161033.261971-1-samitolvanen@google.com>
- <20191018161033.261971-6-samitolvanen@google.com>
-In-Reply-To: <20191018161033.261971-6-samitolvanen@google.com>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Fri, 18 Oct 2019 10:32:20 -0700
-Message-ID: <CAKwvOd=SZ+f6hiLb3_-jytcKMPDZ77otFzNDvbwpOSsNMnifSg@mail.gmail.com>
-Subject: Re: [PATCH 05/18] arm64: kbuild: reserve reg x18 from general
- allocation by the compiler
-To: Sami Tolvanen <samitolvanen@google.com>
+ <20191018161033.261971-19-samitolvanen@google.com>
+ <CAG48ez2Z8=0__eoQ+Ekp=EApawZXR4ec_xd2TVPQExLoyMwtRQ@mail.gmail.com>
+ <20191018172309.GB18838@lakrids.cambridge.arm.com>
+In-Reply-To: <20191018172309.GB18838@lakrids.cambridge.arm.com>
+From: Sami Tolvanen <samitolvanen@google.com>
+Date: Fri, 18 Oct 2019 10:35:49 -0700
+Message-ID: <CABCJKue27Aba_MJqB68Bh282zyL=LSQSBXV5TAb-NfsOAqJRnQ@mail.gmail.com>
+Subject: Re: [PATCH 18/18] arm64: implement Shadow Call Stack
+To: Mark Rutland <mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_103233_824772_7AA12008 
-X-CRM114-Status: GOOD (  16.65  )
+X-CRM114-CacheID: sfid-20191018_103602_766909_4597B08E 
+X-CRM114-Status: GOOD (  10.32  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:a44 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
@@ -98,75 +99,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+Cc: Kees Cook <keescook@chromium.org>,
  Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, kernel-hardening@lists.openwall.com,
- LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ kernel list <linux-kernel@vger.kernel.org>,
+ Steven Rostedt <rostedt@goodmis.org>,
  clang-built-linux <clang-built-linux@googlegroups.com>,
+ Kernel Hardening <kernel-hardening@lists.openwall.com>,
  Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
  Dave Martin <Dave.Martin@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 18, 2019 at 9:11 AM Sami Tolvanen <samitolvanen@google.com> wrote:
+On Fri, Oct 18, 2019 at 10:23 AM Mark Rutland <mark.rutland@arm.com> wrote:
+> I think scs_save() would better live in assembly in cpu_switch_to(),
+> where we switch the stack and current. It shouldn't matter whether
+> scs_load() is inlined or not, since the x18 value _should_ be invariant
+> from the PoV of the task.
+
+Note that there's also a call to scs_save in cpu_die, because the
+current task's shadow stack pointer is only stored in x18 and we don't
+want to lose it.
+
+> We just need to add a TSK_TI_SCS to asm-offsets.c, and then insert a
+> single LDR at the end:
 >
-> From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
->
-> Before we can start using register x18 for a special purpose (as permitted
-> by the AAPCS64 ABI), we need to tell the compiler that it is off limits
-> for general allocation. So tag it as 'fixed',
+>         mov     sp, x9
+>         msr     sp_el0, x1
+> #ifdef CONFIG_SHADOW_CALL_STACK
+>         ldr     x18, [x1, TSK_TI_SCS]
+> #endif
+>         ret
 
-yep, but...
+TSK_TI_SCS is already defined, so yes, we could move this to
+cpu_switch_to. I would still prefer to have the overflow check that's
+in scs_thread_switch though.
 
-> and remove the mention from
-> the LL/SC compiler flag override.
-
-was that cut/dropped from this patch?
-
->
-> Link: https://patchwork.kernel.org/patch/9836881/
-
-^ Looks like it. Maybe it doesn't matter, but if sending a V2, maybe
-the commit message to be updated?
-
-> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-
-If sending a V2 with the above cleaned up, you may also include:
-Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
-
-I like how this does not conditionally reserve it based on the CONFIG
-for SCS.  Hopefully later patches don't wrap it, but I haven't looked
-through all of them yet.
-
-> ---
->  arch/arm64/Makefile | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
-> index 2c0238ce0551..1c7b276bc7c5 100644
-> --- a/arch/arm64/Makefile
-> +++ b/arch/arm64/Makefile
-> @@ -55,7 +55,7 @@ endif
->
->  KBUILD_CFLAGS  += -mgeneral-regs-only $(lseinstr) $(brokengasinst)     \
->                    $(compat_vdso) $(cc_has_k_constraint)
-> -KBUILD_CFLAGS  += -fno-asynchronous-unwind-tables
-> +KBUILD_CFLAGS  += -fno-asynchronous-unwind-tables -ffixed-x18
->  KBUILD_CFLAGS  += $(call cc-disable-warning, psabi)
->  KBUILD_AFLAGS  += $(lseinstr) $(brokengasinst) $(compat_vdso)
->
-> --
-> 2.23.0.866.gb869b98d4c-goog
->
-
-
--- 
-Thanks,
-~Nick Desaulniers
+Sami
 
 _______________________________________________
 linux-arm-kernel mailing list
