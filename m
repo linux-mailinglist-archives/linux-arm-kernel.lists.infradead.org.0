@@ -2,48 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BA57DC137
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 11:39:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1FF0DC1AB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 11:48:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nzc2LTgDhQld9X1oLXoZQtOlAwol35LddxeEaGyqmJs=; b=t5po3HgUQY3GmZ
-	edn3LYmPAmfBnf6BNhKoemyocpEElcpbCeFymTPjBcjzTnz29VW9OaVRPsSk9do6ZfJecN3VcQw/I
-	kNimXRroV8WNvXscnSnZu6Dc5S71qNsBzUbX7+tJEa5ebCEGzJyPHHsMlfMSRpA+0kQ7sTCl+LYqU
-	5m8r9REGFyivkqU4AQBIiudyH8KcFupzaDG9K/njzErR0COL9+xXgo57IERdTjyc251W2hcf3IGZD
-	MIoE6XimJBWXH+SnOJQJi51ozJAmhUWrHwVtJRWAPA0pwxjmfaZjZLMK6ZLvAchwAVxjIRXqlfcQE
-	MDYNGs9X4wA1w+f8k+bA==;
+	List-Owner; bh=oi8WEzswOMpc55N8Bjio+p9IdYTOTRLHcdQFSnTjmWU=; b=G2mGo+XOu12W7n
+	RRDQl7o8vHWSQ/z2vKnzxj991SadvXanZEMaIRa43laKn0yJD7/wp1v/Zz3EKaP0c4fmG8d1lwWlk
+	rvTayF/2O5usn5Tzft8BC8QSkz2txdIxIcq9/sbNSO3zlnQn7DJFvxCGjt6+yAXpQ+wsr7S7qGPfY
+	9cRWJGDUA2+XwRpzL68d6BYwBm9FUL1xJBq9chyz+RNI9d3Dd1a3jD/eluO0Rp9I1qMTPeYHqKHlM
+	UvLyWi4WOrqBAMRVH1eFb9tBxPjp91QAFlD1XlXH1eAYRdV+5tcjkXuDA7ctZcZLG2Q5298KweuNz
+	iOCAvjYFhgJ45LPcGTnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLOiu-0002sb-Vk; Fri, 18 Oct 2019 09:39:04 +0000
+	id 1iLOsN-0006es-DK; Fri, 18 Oct 2019 09:48:51 +0000
 Received: from [217.140.110.172] (helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLOik-0002rH-LC
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 09:38:56 +0000
+ id 1iLOsD-0006e1-L1
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 09:48:43 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8AE093E8;
- Fri, 18 Oct 2019 02:38:43 -0700 (PDT)
-Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BE60F3F718;
- Fri, 18 Oct 2019 02:38:41 -0700 (PDT)
-Date: Fri, 18 Oct 2019 10:38:39 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: Re: [PATCH 01/13] cpuidle: psci: Fix potential access to unmapped
- memory
-Message-ID: <20191018093839.GB25918@e121166-lin.cambridge.arm.com>
-References: <20191010113937.15962-1-ulf.hansson@linaro.org>
- <20191010113937.15962-2-ulf.hansson@linaro.org>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 93D4A3E8;
+ Fri, 18 Oct 2019 02:48:30 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ AD0C23F6C4; Fri, 18 Oct 2019 02:48:27 -0700 (PDT)
+Date: Fri, 18 Oct 2019 10:48:25 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH V9 2/2] arm64/mm: Enable memory hot remove
+Message-ID: <20191018094825.GD19734@arrakis.emea.arm.com>
+References: <1570609308-15697-1-git-send-email-anshuman.khandual@arm.com>
+ <1570609308-15697-3-git-send-email-anshuman.khandual@arm.com>
+ <20191010113433.GI28269@mbp>
+ <f51cdb20-ddc4-4fb7-6c45-791d2e1e690c@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191010113937.15962-2-ulf.hansson@linaro.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <f51cdb20-ddc4-4fb7-6c45-791d2e1e690c@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_023854_739892_5261D606 
-X-CRM114-Status: GOOD (  18.05  )
+X-CRM114-CacheID: sfid-20191018_024841_731436_F0B6288A 
+X-CRM114-Status: GOOD (  18.88  )
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
@@ -63,62 +64,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-pm@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, linux-arm-msm@vger.kernel.org,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Kevin Hilman <khilman@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, david@redhat.com, linux-mm@kvack.org,
+ arunks@codeaurora.org, cpandya@codeaurora.org, ira.weiny@intel.com,
+ will@kernel.org, steven.price@arm.com, valentin.schneider@arm.com,
+ suzuki.poulose@arm.com, Robin.Murphy@arm.com, broonie@kernel.org, cai@lca.pw,
+ ard.biesheuvel@arm.com, dan.j.williams@intel.com,
+ linux-arm-kernel@lists.infradead.org, osalvador@suse.de, steve.capper@arm.com,
+ logang@deltatee.com, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, akpm@linux-foundation.org,
+ mgorman@techsingularity.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 10, 2019 at 01:39:25PM +0200, Ulf Hansson wrote:
-> When the WFI state have been selected, the in-parameter idx to
-> psci_enter_idle_state() is zero. In this case, we must not index the state
-> array as "state[idx - 1]", as it means accessing data outside the array.
-> Fix the bug by pre-checking if idx is zero.
+On Fri, Oct 11, 2019 at 08:26:32AM +0530, Anshuman Khandual wrote:
+> On 10/10/2019 05:04 PM, Catalin Marinas wrote:
+> > Mark Rutland mentioned at some point that, as a preparatory patch to
+> > this series, we'd need to make sure we don't hot-remove memory already
+> > given to the kernel at boot. Any plans here?
 > 
-> Fixes: 9ffeb6d08c3a ("PSCI: cpuidle: Refactor CPU suspend power_state parameter handling")
-> Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
-> ---
->  drivers/cpuidle/cpuidle-psci.c | 6 +++---
->  1 file changed, 3 insertions(+), 3 deletions(-)
+> Hmm, this series just enables platform memory hot remove as required from
+> generic memory hotplug framework. The path here is triggered either from
+> remove_memory() or __remove_memory() which takes physical memory range
+> arguments like (nid, start, size) and do the needful. arch_remove_memory()
+> should never be required to test given memory range for anything including
+> being part of the boot memory.
+
+Assuming arch_remove_memory() doesn't (cannot) check, is there a risk on
+arm64 that, for example, one removes memory available at boot and then
+kexecs a new kernel? Does the kexec tool present the new kernel with the
+original memory map?
+
+I can see x86 has CONFIG_FIRMWARE_MEMMAP suggesting that it is used by
+kexec. try_remove_memory() calls firmware_map_remove() so maybe they
+solve this problem differently.
+
+Correspondingly, after an arch_add_memory(), do we want a kexec kernel
+to access it? x86 seems to use the firmware_map_add_hotplug() mechanism.
+
+Adding James as well for additional comments on kexec scenarios.
+
+> IIUC boot memory added to system with memblock_add() lose all it's identity
+> after the system is up and running. In order to reject any attempt to hot
+> remove boot memory, platform needs to remember all those memory that came
+> early in the boot and then scan through it during arch_remove_memory().
 > 
-> diff --git a/drivers/cpuidle/cpuidle-psci.c b/drivers/cpuidle/cpuidle-psci.c
-> index f3c1a2396f98..2e91c8d6c211 100644
-> --- a/drivers/cpuidle/cpuidle-psci.c
-> +++ b/drivers/cpuidle/cpuidle-psci.c
-> @@ -27,10 +27,10 @@ static DEFINE_PER_CPU_READ_MOSTLY(u32 *, psci_power_state);
->  static int psci_enter_idle_state(struct cpuidle_device *dev,
->  				struct cpuidle_driver *drv, int idx)
->  {
-> -	u32 *state = __this_cpu_read(psci_power_state);
-> +	u32 *states = __this_cpu_read(psci_power_state);
-> +	u32 state = idx ? states[idx - 1] : 0;
->  
-> -	return CPU_PM_CPU_IDLE_ENTER_PARAM(psci_cpu_suspend_enter,
-> -					   idx, state[idx - 1]);
-> +	return CPU_PM_CPU_IDLE_ENTER_PARAM(psci_cpu_suspend_enter, idx, state);
+> Ideally, it is the responsibility of [_]remove_memory() callers like ACPI
+> driver, DAX etc to make sure they never attempt to hot remove a memory
+> range, which never got hot added by them in the first place. Also, unlike
+> /sys/devices/system/memory/probe there is no 'unprobe' interface where the
+> user can just trigger boot memory removal. Hence, unless there is a bug in
+> ACPI, DAX or other callers, there should never be any attempt to hot remove
+> boot memory in the first place.
 
-Technically we don't dereference that array entry but I agree this
-is ugly and potentially broken.
+That's fine if these callers give such guarantees. I just want to make
+sure someone checked all the possible scenarios for memory hot-remove.
 
-My preference is aligning it with ACPI code and allocate one more
-entry in the psci_power_state array (useless for wfi, agreed but
-at least we remove this (-1) handling from the code).
-
-Thanks,
-Lorenzo
-
->  }
->  
->  static struct cpuidle_driver psci_idle_driver __initdata = {
-> -- 
-> 2.17.1
-> 
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
