@@ -2,88 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DD4EDD087
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 22:39:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82070DD0A5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 22:52:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cO39ZxXCrJzrXFuthB2tm8B5L1zTVot0Kzj6IuTvwWE=; b=nYZePcvbw/c1wJ
-	HlwJ3R48bCYw+Pe6WFNswN+sagjb92eX9BKTUIl6oLTdxQ2XH1V7wI+m5y0JoNw15nJiUCba4WRl8
-	NnS796Rd9sCJwqSZGy+LpNFCNq4dmqpKUTwZfdlwlpO1o2GiK623qcUeY0j3IoPK8NH9An2jhioIz
-	IvQMORswTYjd2vnu3ViC1C4DipdS9rEJsZfjbRKijIRn83uF9br/yzsOhpDHJGNukO6hFGPjvRTZ5
-	wwgUyCT5V3dX6s5BPeUg6+F+bqgLfmzogqN5JrxdtNDiDO71aeB+k3mP8leraNd9fxakKtLLzb/RH
-	du4buDUUotuk8oxWFQ2w==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=1zWzCj88ARv7Iivi2lirQ9qZilxBhOa3iZ1F77r0yFs=; b=WdqYVEgVWuX4cEsGNy6Yrh38CI
+	LRe9MEYiwoWUJ1RMVGh49BuIeOXu43yZqhUCrdCKGtdyGtNSoQdVOWyn3fqMyA8qBi9S4tjYujl69
+	BPaiThziOGhtoO7sTHGFuwmF7J9zZLYTPvK22ok+uHu3dM1c6+QtIN3D5Wav7PnKuFSphlmfOa8Af
+	ntgWKPJRw/CQjEXQOM1sf7qwOU1BNbRl0ew9PP9vmuBmQ57J69vkUjUGVAbs18GGx1chgmfkSPhDc
+	x+zzT0kxvpsWrCPKgA3iR+znqpfzebrk9bGWHxvhnIeAF7IVEL/Dl+lOVgokIWkmgryRTlL4nhRGp
+	C2ykgrmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLZ2O-0004PG-5I; Fri, 18 Oct 2019 20:39:52 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1iLZEO-0001FT-8U; Fri, 18 Oct 2019 20:52:16 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLZ2B-0004Oa-5J
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 20:39:40 +0000
-Received: by mail-pl1-x644.google.com with SMTP id j11so3404952plk.3
+ id 1iLZEF-0001Eu-Fm
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 20:52:09 +0000
+Received: by mail-wr1-x442.google.com with SMTP id o18so7549295wrv.13
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 13:39:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=yF7MutHrwkvSGB6U3XIdCr2BIBwvqm916Bsky0mGSyw=;
- b=jpxaFdev7vpkQkBEd6ufvN8+8Syuaax8emVkCAdb5pwQ08+Kx9HfaUAmG/dNO0LruH
- Ru0kVaNEtVe9TtUPNBK2HDfoNRda5QO7P3o/5lHaePEV6vpjkyLRnGWMWfpfNkOLwic4
- dD99vIdupsM6P3loEyJhDAG6j4eJzxkjjn3GzbzghzvuQGp9pzx4ygzylPs+RjDUDHiZ
- 7S1C/WpfwV1W36dmHXS0Rl0SrBDOkRGXe+A3yaivtT3PLAWohYyWenjZBURub3C84fD4
- Y2JMkDGtadl07MZ+5Ewc/wwtOmdgYKepH691VkKehLXyc8PrvAZ5aF3mDaPp3Rh6DsJs
- qvZg==
+ Fri, 18 Oct 2019 13:52:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=rasmusvillemoes.dk; s=google;
+ h=subject:to:references:from:message-id:date:user-agent:mime-version
+ :in-reply-to:content-language:content-transfer-encoding;
+ bh=uGEXsE8/NXoRF+D14w+boPYF50JZvz72YuC6YAN3OA0=;
+ b=IBXlhzy0RGoAwB2ojEYPz7abKSVVtIzYBJwWK4c2HgNYuYnc1H23Y0feBGiRroGP5j
+ JubIc4JzQMtDXZ7uQ2jlmTdmFKQ4Bt4Hz0G5tO902wI3BGWJDjMXjHQyCP4UQrcIkQmy
+ OLOi1qgwk8pQzNaoyvNk5TUdcbynJpX0xd/4U=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=yF7MutHrwkvSGB6U3XIdCr2BIBwvqm916Bsky0mGSyw=;
- b=OXCa3EnWnFO/nOsGyWS8+9cZ0OBwneg7glj0vTam50C0GeX1mJ7d8ouLM/u5NQ3EjP
- zY/oziAk+0lQRCFpKZt/CDJnfPhQzf99mLjVZH83ayVEdz0tlsOSbcfqF4rDDwWrZowd
- ft6bZDqNw0Ns9kEtNuNTkN+49ZWHL4tasU2cXdbg+XJkFcmVIpNS+xfWw6aiaee8xZ78
- HmjnRTt1Fj0rFhCX3+dzG9BXh5Dy0XrAgSzO8CeB5HHlKbWRQDnCLULwN/iNyWrxMTkP
- c4QvriIR+BvZUD6EYDn39vwXb46soVT51XX5ZTgu7hWvmyRjq/FRPHUJ18NGmQxqcup3
- JRag==
-X-Gm-Message-State: APjAAAWxOWHK/Cj8PNs92ZXSLHq7zgQL3OqdciUCXnHJvS4FaTXyJz7e
- VMc/ruKN4oUAslPEav5Xuak=
-X-Google-Smtp-Source: APXvYqwMMoMg/Sj3XuNx6NavhISCBWY4vd22WowubXqMjUc6xYCpcf344nB/pSVMbxAZVJeeJlF6GA==
-X-Received: by 2002:a17:902:6acb:: with SMTP id
- i11mr12268939plt.16.1571431178249; 
- Fri, 18 Oct 2019 13:39:38 -0700 (PDT)
-Received: from dtor-ws ([2620:15c:202:201:3adc:b08c:7acc:b325])
- by smtp.gmail.com with ESMTPSA id v3sm7071068pfn.18.2019.10.18.13.39.37
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 18 Oct 2019 13:39:37 -0700 (PDT)
-Date: Fri, 18 Oct 2019 13:39:35 -0700
-From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH 25/46] ARM: pxa: mainstone-wm97xx: use gpio lookup table
-Message-ID: <20191018203935.GR35946@dtor-ws>
-References: <20191018154052.1276506-1-arnd@arndb.de>
- <20191018154201.1276638-25-arnd@arndb.de>
- <20191018183940.GM35946@dtor-ws>
- <CAK8P3a1Fc=ogknDRGJ3Sn8bZ8tsR_ebE8_bDtF_kZ4AZ5YG_+g@mail.gmail.com>
- <CAK8P3a00s4=6YHS_2K1r6=i+artkjgxjHJGVHBLuCj1ft5sqFQ@mail.gmail.com>
+ h=x-gm-message-state:subject:to:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=uGEXsE8/NXoRF+D14w+boPYF50JZvz72YuC6YAN3OA0=;
+ b=PbZO1JBgNXfPp6W0amS+4ii1m5ZXOlCc4VokBvnueCgOZlZSxHZfWzJpLT6hbvlLWC
+ LMTayECDN7Rar3BArrtk4A6Vp3EOqlAkPhJLtUTcOMPlp+w8y8F2swAROMhFKNaBLPFL
+ O7McKPywLR8o3Tk6AJeKhEibZOFxKArnixjg6cfht/HAOHbEMKqkbiwkzvxB9kPOrBo8
+ BQInj3wx2G6fACvSkVTKJofAsh42GmTxcR7BudZtzBbTByT1wEWF4NXmBrITtteW8kwc
+ T5HNYYCv8MewxyFXeLyhfw/+S/Ye+dSdPFHRc9R7XWBT+d282QjlyvKlfpoSHsN2fVZA
+ MCGQ==
+X-Gm-Message-State: APjAAAVnmjqArw/5m9g26y3pue0gr+xvCFaWAbPBJVDFslhz0ljMuMFO
+ hrprxqckgBqKFjkULwlyXIxNIOmQG+bVvda/
+X-Google-Smtp-Source: APXvYqz0kY5/OxYYxhR/1u58qGdFKWyMZCctPVLRK43Po/wT6eyex+6FLmeTJjDYNDpKlXaZ7a7AbA==
+X-Received: by 2002:adf:9101:: with SMTP id j1mr8966445wrj.71.1571431925821;
+ Fri, 18 Oct 2019 13:52:05 -0700 (PDT)
+Received: from [192.168.1.149] (ip-5-186-115-54.cgn.fibianet.dk.
+ [5.186.115.54])
+ by smtp.gmail.com with ESMTPSA id n15sm8053302wrw.47.2019.10.18.13.52.04
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 18 Oct 2019 13:52:05 -0700 (PDT)
+Subject: Re: [PATCH 0/7] towards QE support on ARM
+To: Leo Li <leoyang.li@nxp.com>, Qiang Zhao <qiang.zhao@nxp.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Jiri Slaby
+ <jslaby@suse.com>, Timur Tabi <timur@kernel.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>
+References: <20191018125234.21825-1-linux@rasmusvillemoes.dk>
+ <VE1PR04MB6687DA0268FAF03D3E77A23B8F6C0@VE1PR04MB6687.eurprd04.prod.outlook.com>
+From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+Message-ID: <e02fa027-9c78-3272-d2d7-7ad2b0ed3ab0@rasmusvillemoes.dk>
+Date: Fri, 18 Oct 2019 22:52:03 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAK8P3a00s4=6YHS_2K1r6=i+artkjgxjHJGVHBLuCj1ft5sqFQ@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <VE1PR04MB6687DA0268FAF03D3E77A23B8F6C0@VE1PR04MB6687.eurprd04.prod.outlook.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_133939_205333_8C0C6C73 
-X-CRM114-Status: GOOD (  14.62  )
+X-CRM114-CacheID: sfid-20191018_135207_525025_3C5950EE 
+X-CRM114-Status: GOOD (  18.28  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (dmitry.torokhov[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -104,47 +107,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linus Walleij <linus.walleij@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Haojian Zhuang <haojian.zhuang@gmail.com>, Marek Vasut <marek.vasut@gmail.com>,
- Daniel Mack <daniel@zonque.org>,
- "open list:HID CORE LAYER" <linux-input@vger.kernel.org>,
- Robert Jarzmik <robert.jarzmik@free.fr>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 18, 2019 at 09:37:28PM +0200, Arnd Bergmann wrote:
-> On Fri, Oct 18, 2019 at 8:39 PM Dmitry Torokhov
-> <dmitry.torokhov@gmail.com> wrote:
-> >
-> > On Fri, Oct 18, 2019 at 05:41:40PM +0200, Arnd Bergmann wrote:
-> > > This driver hardcodes gpio numbers without a header file.
-> > > Use lookup tables instead.
-> > >
-> > > Cc: Marek Vasut <marek.vasut@gmail.com>
-> > > Cc: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-> > > Cc: linux-input@vger.kernel.org
-> > > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> >
-> >
-> > Acked-by: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-> >
-> > Arnd, do you have these devices by chance? I had stached patches
-> > converting wm97xx core to use threaded ISR and it would be great if
-> > someone could test them...
+On 18/10/2019 22.16, Leo Li wrote:
 > 
-> Unfortunately I don't, but I'm hoping that someone can test my series
-> on any hardware they might have.
+>>
+>> There have been several attempts in the past few years to allow building the
+>> QUICC engine drivers for platforms other than PPC. This is (the beginning of)
+>> yet another attempt. I hope I can get someone to pick up these relatively
+>> trivial patches (I _think_ they shouldn't change functionality at all), and then
+>> I'll continue slowly working towards removing the PPC32 dependency for
+>> CONFIG_QUICC_ENGINE.
 > 
-> If you like, send me your patches and I'll add them to this series.
+> Hi Rasmus,
+> 
+> I don't fully understand the motivation of this work.  As far as I know the QUICC ENGINE is only used on PowerPC based SoCs. 
 
-OK, I'll do that, thanks.
+Hm, you're not the Leo Li that participated in this thread
+<https://lore.kernel.org/lkml/AM3PR04MB11857AE8D2B0BE56121B97D391C90@AM3PR04MB1185.eurprd04.prod.outlook.com/T/#u>?
 
--- 
-Dmitry
+
+ Can you give an example on how is it used on ARM system?
+
+LS1021A, for example, which is the one I'm aiming for getting fully
+supported in mainline.
+<https://www.nxp.com/products/processors-and-microcontrollers/arm-processors/layerscape-communication-process/qoriq-layerscape-1021a-dual-core-communications-processor-with-lcd-controller:LS1021A>
+
+The forks at https://github.com/qoriq-open-source/linux.git have various
+degrees of support (grep for commits saying stuff like "remove PPCisms"
+- some versions can be found on
+<https://lore.kernel.org/lkml/?q=remove+ppcisms>). Our current kernel is
+based on commits from the now-vanished 4.1 branch, and unfortunately at
+least the 4.14 branch (LSDK-18.06-V4.14) trivially doesn't build on ARM,
+despite the PPC32 dependency having been removed from CONFIG_QUICC_ENGINE.
+
+>>
+>> Tested on an MPC8309-derived board.
+> 
+> MPC8309 is also PPC based.
+
+True, of course. This is just some first few steps, and I'm not claiming
+that this is sufficient to make the QE drivers build on ARM yet. But I
+have a customer with both mpc8309-based and ls1021a-based platforms, and
+they want to run the same, as-close-to-mainline-as-possible, kernel on
+both. So I will take a piecemeal approach, and try to make sure I don't
+break the ppc boards in the process (just building and booting one board
+is of course not sufficient, but better than nothing). Once I get to
+actually build some of the QE drivers for ARM, I'll of course also test
+them.
+
+Rasmus
 
 _______________________________________________
 linux-arm-kernel mailing list
