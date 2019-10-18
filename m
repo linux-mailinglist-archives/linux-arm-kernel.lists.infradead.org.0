@@ -2,89 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC888DD166
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 23:53:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 749F2DD16B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 23:55:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wy5TtBNASoxLH+Dp6RNMCiRJLCMd0lNyNnsThJtLak8=; b=BuAlEYyZLgehXj
-	HYCREyvc7kdLHfxXb3eFIEyQUpjqpOKjKdqe7NO61NLNpWBD0886d0DLZpytGm10EPd/W4AS1YA0M
-	EWxUgjTX3nxvHYAVgkUTJYTpALQ18tLY2Bh1OOW7VSqt+0fZzEKOQXFePsjkMp3KxGaFiC7GbyLsT
-	85G25m4KYKeyJBlgm7pDESr0TkkBwRPTK/d4ssecvbMDjVmX7Pra4Mxp0ApMsw9uEjoM0RbCHWpAX
-	Npt3BNFJz3Z5e1agpLRnV0X1xx6qt4Kdy73/t+3Ffzrx7izsa7CiR+WszY2ZAySXgMK+QmOkYTquF
-	kynF1Se9/VNuF/rfcBpg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VeE8Vw//Ua/R066KMjqdAKn/g5kh2RgcLSFX5Ahboc0=; b=KyZ5rECUK4Utxy
+	K7gLCTSDR2vcxOoWnGynOyirm+Zg/N3ADap6GDBF1ahRO2Pjf96dzOKFact6ADktUEvfCef0+d/xQ
+	gj+qeGq7d4ofMin2GpeTligkeL+EZKNGaU6Lkzr/eru6i/rXw+P2rsuOBm0Gy0Tm5czsRrYyabHzh
+	Qec3iTm/UT44nBqo3X4i/X7VhoNtSC3GRajP6pq1Wj8YDbUdA7ay/IH+7/W3hIUf0bZkTuwvmkCWK
+	Beb6rciz+bNpkAmyQU6/5HfHYWVTkMwA1c/th/LZR9C0wL0qjzSTFQEt9lpp6Mq70jTTXse1kN2o+
+	72Y88FemJ7YRw+gVH+zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLaB9-0005qa-Ug; Fri, 18 Oct 2019 21:52:59 +0000
-Received: from mail-ot1-f68.google.com ([209.85.210.68])
+	id 1iLaDP-0007Vd-PR; Fri, 18 Oct 2019 21:55:19 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLaB1-0005po-D5
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 21:52:53 +0000
-Received: by mail-ot1-f68.google.com with SMTP id c10so6198465otd.9
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 14:52:50 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=HvighmfITJLDYGeaiDUTpHYE/uCdU2psCtkCA9EvB0w=;
- b=s2gFK726NEP5mlpV8IS22tGnmsEjqARatFF2d7vJHJnRASViJ7Snq9jhbU49QNc6on
- a3WdkECpc5vBg7jW5Ap/ih68ZLBnPOnD4HGLJHv3+Oa4xMs1vMw7u4WlirHlRq9jxlsW
- nSfTCOQyXTLJzyymO0hJiPGpILYKUFviezK7Z1kUPzZb7KMRChspL2z+2rmH+J4u0sTl
- XVQbAPzdLteACXOWehnUUUwUH0Bwtd2UAraakASrm8W6ItoGWS8sKCjUecq+KXw54BJc
- hnC80wxheiuH8R4YGArV6jcsrT4oI0Kyezu1+d/HT8vzXHo8gELYWcx4gsglFw1dhtL/
- Jt0Q==
-X-Gm-Message-State: APjAAAXiDgNZZbepeGWMlU3ZOgEYhgX0A95FlxMagkqOe1NoZD6zQW/s
- 26U6N+0b57GoXFNH+FIkTjkw24ps
-X-Google-Smtp-Source: APXvYqwRDg5Ra9YOcBtR9m7e7DrikV3wzyW1r1PyUNRR6iYlDSLwNMp5JUzRxhFVOD55L4smuY6krw==
-X-Received: by 2002:a9d:51c1:: with SMTP id d1mr8800262oth.70.1571435569354;
- Fri, 18 Oct 2019 14:52:49 -0700 (PDT)
-Received: from mail-ot1-f41.google.com (mail-ot1-f41.google.com.
- [209.85.210.41])
- by smtp.gmail.com with ESMTPSA id 67sm1862943otq.34.2019.10.18.14.52.48
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 18 Oct 2019 14:52:48 -0700 (PDT)
-Received: by mail-ot1-f41.google.com with SMTP id o44so6203364ota.10
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 14:52:48 -0700 (PDT)
-X-Received: by 2002:a9d:4d0d:: with SMTP id n13mr9769808otf.74.1571435568401; 
- Fri, 18 Oct 2019 14:52:48 -0700 (PDT)
+ id 1iLaDB-0006i1-EX
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 21:55:11 +0000
+Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
+ [10.5.11.15])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 4B51D307C65B;
+ Fri, 18 Oct 2019 21:55:04 +0000 (UTC)
+Received: from llong.remote.csb (ovpn-120-190.rdu2.redhat.com [10.10.120.190])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id A5E5A5D713;
+ Fri, 18 Oct 2019 21:55:01 +0000 (UTC)
+Subject: Re: [PATCH v5 3/5] locking/qspinlock: Introduce CNA into the slow
+ path of qspinlock
+To: Alex Kogan <alex.kogan@oracle.com>
+References: <20191016042903.61081-1-alex.kogan@oracle.com>
+ <20191016042903.61081-4-alex.kogan@oracle.com>
+ <6ce50aeb-6b87-5d1c-9011-4329e8dadfec@redhat.com>
+ <1B59E517-D418-46DF-BC58-174BAFC5EC23@oracle.com>
+From: Waiman Long <longman@redhat.com>
+Organization: Red Hat
+Message-ID: <3b8afb53-18e8-bd1d-9def-e1e7bdc73087@redhat.com>
+Date: Fri, 18 Oct 2019 17:55:01 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-References: <20191018125234.21825-1-linux@rasmusvillemoes.dk>
- <VE1PR04MB6687DA0268FAF03D3E77A23B8F6C0@VE1PR04MB6687.eurprd04.prod.outlook.com>
- <e02fa027-9c78-3272-d2d7-7ad2b0ed3ab0@rasmusvillemoes.dk>
-In-Reply-To: <e02fa027-9c78-3272-d2d7-7ad2b0ed3ab0@rasmusvillemoes.dk>
-From: Li Yang <leoyang.li@nxp.com>
-Date: Fri, 18 Oct 2019 16:52:37 -0500
-X-Gmail-Original-Message-ID: <CADRPPNREUK1SVxO4P5qb2COn+T04dtYgpVEzrveKUt16hBqAtQ@mail.gmail.com>
-Message-ID: <CADRPPNREUK1SVxO4P5qb2COn+T04dtYgpVEzrveKUt16hBqAtQ@mail.gmail.com>
-Subject: Re: [PATCH 0/7] towards QE support on ARM
-To: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+In-Reply-To: <1B59E517-D418-46DF-BC58-174BAFC5EC23@oracle.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.42]); Fri, 18 Oct 2019 21:55:04 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_145251_440437_A5E73B83 
-X-CRM114-Status: GOOD (  24.94  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20191018_145505_539602_44D690F0 
+X-CRM114-Status: GOOD (  26.09  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.68 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pku.leo[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,89 +74,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Timur Tabi <timur@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
- Jiri Slaby <jslaby@suse.com>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Qiang Zhao <qiang.zhao@nxp.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arch@vger.kernel.org, Hanjun Guo <guohanjun@huawei.com>,
+ Arnd Bergmann <arnd@arndb.de>, Peter Zijlstra <peterz@infradead.org>,
+ dave.dice@oracle.com, Jan Glauber <jglauber@marvell.com>, x86@kernel.org,
+ Will Deacon <will.deacon@arm.com>, linux@armlinux.org.uk,
+ linux-kernel@vger.kernel.org, Rahul Yadav <rahul.x.yadav@oracle.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>, hpa@zytor.com,
+ Steven Sistare <steven.sistare@oracle.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Daniel Jordan <daniel.m.jordan@oracle.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 18, 2019 at 3:54 PM Rasmus Villemoes
-<linux@rasmusvillemoes.dk> wrote:
->
-> On 18/10/2019 22.16, Leo Li wrote:
-> >
-> >>
-> >> There have been several attempts in the past few years to allow building the
-> >> QUICC engine drivers for platforms other than PPC. This is (the beginning of)
-> >> yet another attempt. I hope I can get someone to pick up these relatively
-> >> trivial patches (I _think_ they shouldn't change functionality at all), and then
-> >> I'll continue slowly working towards removing the PPC32 dependency for
-> >> CONFIG_QUICC_ENGINE.
-> >
-> > Hi Rasmus,
-> >
-> > I don't fully understand the motivation of this work.  As far as I know the QUICC ENGINE is only used on PowerPC based SoCs.
->
-> Hm, you're not the Leo Li that participated in this thread
-> <https://lore.kernel.org/lkml/AM3PR04MB11857AE8D2B0BE56121B97D391C90@AM3PR04MB1185.eurprd04.prod.outlook.com/T/#u>?
-
-Oops, I totally forgot about this discussion which is just three years
-ago.  :)  The QE-HDLC on LS1021a is kind of a special case.
-
->
->
->  Can you give an example on how is it used on ARM system?
->
-> LS1021A, for example, which is the one I'm aiming for getting fully
-> supported in mainline.
-> <https://www.nxp.com/products/processors-and-microcontrollers/arm-processors/layerscape-communication-process/qoriq-layerscape-1021a-dual-core-communications-processor-with-lcd-controller:LS1021A>
->
-> The forks at https://github.com/qoriq-open-source/linux.git have various
-> degrees of support (grep for commits saying stuff like "remove PPCisms"
-> - some versions can be found on
-> <https://lore.kernel.org/lkml/?q=remove+ppcisms>). Our current kernel is
-> based on commits from the now-vanished 4.1 branch, and unfortunately at
-> least the 4.14 branch (LSDK-18.06-V4.14) trivially doesn't build on ARM,
-> despite the PPC32 dependency having been removed from CONFIG_QUICC_ENGINE.
-
-Can you try the 4.14 branch from a newer LSDK release?  LS1021a should
-be supported platform on LSDK.  If it is broken, something is wrong.
-
->
-> >>
-> >> Tested on an MPC8309-derived board.
-> >
-> > MPC8309 is also PPC based.
->
-> True, of course. This is just some first few steps, and I'm not claiming
-> that this is sufficient to make the QE drivers build on ARM yet. But I
-> have a customer with both mpc8309-based and ls1021a-based platforms, and
-> they want to run the same, as-close-to-mainline-as-possible, kernel on
-> both. So I will take a piecemeal approach, and try to make sure I don't
-> break the ppc boards in the process (just building and booting one board
-> is of course not sufficient, but better than nothing). Once I get to
-> actually build some of the QE drivers for ARM, I'll of course also test
-> them.
-
-Understood.  Zhao Qiang also maintains some patches similar to your
-patchset and I think they are tested on ARM.  But the review of these
-patches from last submission didn't finish.  It looks like your
-patches are better divided but not really verified on ARM.  Zhao
-Qiang's patches are tested but maybe need some final touch for
-cleaning up.  I will let you guys decide what is the best approach to
-make this upstreamed.
-
-Regards,
-Leo
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMTAvMTgvMTkgNTozNyBQTSwgQWxleCBLb2dhbiB3cm90ZToKPj4gT24gT2N0IDE4LCAyMDE5
+LCBhdCAxMjowMyBQTSwgV2FpbWFuIExvbmcgPGxvbmdtYW5AcmVkaGF0LmNvbT4gd3JvdGU6Cj4+
+Cj4+IE9uIDEwLzE2LzE5IDEyOjI5IEFNLCBBbGV4IEtvZ2FuIHdyb3RlOgo+Pj4gK3N0YXRpYyBp
+bmxpbmUgdm9pZCBjbmFfcGFzc19sb2NrKHN0cnVjdCBtY3Nfc3BpbmxvY2sgKm5vZGUsCj4+PiAr
+CQkJCSBzdHJ1Y3QgbWNzX3NwaW5sb2NrICpuZXh0KQo+Pj4gK3sKPj4+ICsJc3RydWN0IGNuYV9u
+b2RlICpjbiA9IChzdHJ1Y3QgY25hX25vZGUgKilub2RlOwo+Pj4gKwlzdHJ1Y3QgbWNzX3NwaW5s
+b2NrICpuZXh0X2hvbGRlciA9IG5leHQsICp0YWlsXzJuZDsKPj4+ICsJdTMyIHZhbCA9IDE7Cj4+
+PiArCj4+PiArCXUzMiBzY2FuID0gY24tPnByZV9zY2FuX3Jlc3VsdDsKPj4+ICsKPj4+ICsJLyoK
+Pj4+ICsJICogY2hlY2sgaWYgYSBzdWNjZXNzb3IgZnJvbSB0aGUgc2FtZSBudW1hIG5vZGUgaGFz
+IG5vdCBiZWVuIGZvdW5kIGluCj4+PiArCSAqIHByZS1zY2FuLCBhbmQgaWYgc28sIHRyeSB0byBm
+aW5kIGl0IGluIHBvc3Qtc2NhbiBzdGFydGluZyBmcm9tIHRoZQo+Pj4gKwkgKiBub2RlIHdoZXJl
+IHByZS1zY2FuIHN0b3BwZWQgKHN0b3JlZCBpbiBAcHJlX3NjYW5fcmVzdWx0KQo+Pj4gKwkgKi8K
+Pj4+ICsJaWYgKHNjYW4gPiAwKQo+Pj4gKwkJc2NhbiA9IGNuYV9zY2FuX21haW5fcXVldWUobm9k
+ZSwgZGVjb2RlX3RhaWwoc2NhbikpOwo+Pj4gKwo+Pj4gKwlpZiAoIXNjYW4pIHsgLyogaWYgZm91
+bmQgYSBzdWNjZXNzb3IgZnJvbSB0aGUgc2FtZSBudW1hIG5vZGUgKi8KPj4+ICsJCW5leHRfaG9s
+ZGVyID0gbm9kZS0+bmV4dDsKPj4+ICsJCS8qCj4+PiArCQkgKiBtYWtlIHN1cmUgQHZhbCBnZXRz
+IDEgaWYgY3VycmVudCBob2xkZXIncyBAbG9ja2VkIGlzIDAgYXMKPj4+ICsJCSAqIHdlIGhhdmUg
+dG8gc3RvcmUgYSBub24temVybyB2YWx1ZSBpbiBzdWNjZXNzb3IncyBAbG9ja2VkCj4+PiArCQkg
+KiB0byBwYXNzIHRoZSBsb2NrCj4+PiArCQkgKi8KPj4+ICsJCXZhbCA9IG5vZGUtPmxvY2tlZCAr
+IChub2RlLT5sb2NrZWQgPT0gMCk7Cj4+IG5vZGUtPmxvY2tlZCBjYW4gYmUgMCB3aGVuIHRoZSBj
+cHUgZW50ZXJzIGludG8gYW4gZW1wdHkgTUNTIHF1ZXVlLiBXZQo+PiBjb3VsZCB1bmNvbmRpdGlv
+bmFsbHkgc2V0IG5vZGUtPmxvY2tlZCB0byAxIGZvciB0aGlzIGNhc2UgaW4gcXNwaW5sb2NrLmMK
+Pj4gb3Igd2l0aCB5b3VyIGFib3ZlIGNvZGUuCj4gUmlnaHQsIEkgd2FzIGRvaW5nIHRoYXQgaW4g
+dGhlIGZpcnN0IHR3byB2ZXJzaW9ucyBvZiB0aGUgc2VyaWVzLiBJdCBhZGRzIAo+IHVubmVjZXNz
+YXJ5IHN0b3JlIGludG8gQGxvY2tlZCBmb3Igbm9uLUNOQSB2YXJpYW50cywgYW5kIGV2ZW4gaWYg
+aXQgZG9lcyBub3QKPiBoYXZlIGFueSByZWFsIHBlcmZvcm1hbmNlIGltcGxpY2F0aW9ucywgSSB0
+aGluayBQZXRlciBkaWQgbm90IGxpa2UgdGhhdCAob3IsIAo+IGF0IGxlYXN0LCB0aGUgY29tbWVu
+dCBJIGhhZCB0byBleHBsYWluIHdoeSB3ZSBuZWVkZWQgdGhhdCBzdG9yZSkuCj4KPj4gUGVyaGFw
+cywgYSBjb21tZW50IGFib3V0IHdoZW4gbm9kZS0+bG9ja2VkIHdpbGwKPj4gYmUgMC4KPiBZZWFo
+LCBJIHdhcyB0aW5rZXJpbmcgd2l0aCB0aGlzIGNvbW1lbnQuIEhlcmUgaXMgaG93IGl0IHJlYWQg
+aW4gdjM6Cj4gLyoKPiAgKiBXZSB1bmxvY2sgYSBzdWNjZXNzb3IgYnkgcGFzc2luZyBhIG5vbi16
+ZXJvIHZhbHVlLAo+ICAqIHNvIHNldCBAdmFsIHRvIDEgaWZmIEBsb2NrZWQgaXMgMCwgd2hpY2gg
+d2lsbCBoYXBwZW4KPiAgKiBpZiB3ZSBhY3F1aXJlZCB0aGUgTUNTIGxvY2sgd2hlbiBpdHMgcXVl
+dWUgd2FzIGVtcHR5Cj4gICovCj4KPiBJIGNhbiBjaGFuZ2UgYmFjayB0byBzb21ldGhpbmcgbGlr
+ZSB0aGF0IGlmIGl0IGlzIGJldHRlci4KVGhhdCBsb29rcyBPSy4KPj4gSXQgbWF5IGJlIGVhc2ll
+ciB0byB1bmRlcnN0YW5kIGlmIHlvdSBqdXN0IGRvCj4+Cj4+ICAgICB2YWwgPSBub2RlLT5sb2Nr
+ZWQgPyBub2RlLT5sb2NrZWQgOiAxOwo+IFlvdeKAmXJlIHJpZ2h0LCB0aGF04oCZcyBhbm90aGVy
+IHBvc3NpYmlsaXR5Lgo+IEhvd2V2ZXIsIGl0IGFkZHMgeWV0IGFub3RoZXIgaWYtc3RhdGVtZW50
+IG9uIHRoZSBjcml0aWNhbCBwYXRoLCB3aGljaCBJIHdhcwo+IHRyeWluZyB0byBhdm9pZCB0aGF0
+LgoKSGF2ZSB5b3UgY29tcGFyZWQgdGhlIGdlbmVyYXRlZCBhc3NlbWJseSBjb2RlIGlmIG9uZSBp
+cyBiZXR0ZXIgdGhhbiB0aGUKb3RoZXI/IEkgYW0gT0sgd2l0aCB3aGF0ZXZlciBvbmUgZ2VuZXJh
+dGVzIGEgYmV0dGVyIGNvZGUsIGJ1dCBvZnRlbiB0aW1lCmNtb3ZlIGlzIHVzZWQgZm9yID86IHN0
+YXRlbWVudHMuIElmIHRoZSBzYW1lIGNvZGUgaXMgZ2VuZXJhdGVkLCBJIHdpbGwKcHJlZmVyIGFu
+IGVhc2llciB0byB1bmRlcnN0YW5kIHN0YXRlbWVudC4KCkNoZWVycywKTG9uZ21hbgoKCgpfX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
+bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
+cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
+Cg==
