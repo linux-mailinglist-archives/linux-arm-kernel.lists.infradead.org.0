@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 47B71DD039
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 22:28:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8332FDD02F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 22:27:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RYNKwXGq5hnIAsY7YtnTmXJZfZNNywBs5+H8/dr0x20=; b=eLsETxOujhIw5m
-	6Cc4/XB+Owgig7iAqARlQ4cqylzbSW8rRUu4g68s3gjtC6F5nqCZAZZPAXpAzgJ2C+1YdXyHSCPgh
-	PU71X+QAgteGmu7RN0IMmW1jFkmJQEYrY9qa6EOD79/mCnD9Fb68Hep7TXOGRABaf75B5ybGr8gp2
-	jzvbLJdc71dtm3ageiF+vwZxPLbsdmqZ2mncwee0r0xB6Tit/vw6gYyQIalQ7pq9ncgNfIVfbmFqr
-	0HjktISfg+3DtFbeV34P3BhVwTb7etKCkC0qJZVqc6n6j3t6Ru4X+jn4KuMTGlcWH+fVIFgzpgIC9
-	ifnTDKDefejU/i550qwA==;
+	List-Owner; bh=8fFkpaBMwtEJVXxirr9K6d59DiAIeE1fzD5okBx3Wes=; b=JT8whhE5aWNM4P
+	8s60+n72vvcUUWpVokyWuvDNreqlXX5PoiEz+rS+IyGK7255LYAo7/1Qprt7s49ZnlOMpKLbrTNQo
+	iR/hcERfyn3VTo+0NB2+j8rQdVfjLs5J3pXSRn7jRoZN9iss+ZTkHRHcAy7iguuHIRsekqW7Q2zRe
+	DgLVhjOlakBlRAcSJYyAv+Qw8kqDX9cQcp6uvopO+IrJgt5XCtY1WeuED1Ahx53JLt9yqNWC5Jslb
+	nttOtNOJ5TkHjra5zy/FR7bEHPlT/HuD7c3Kl3YtXmrBFL41Sdxy0uH7ct2rfKkn8eMtSjLisW/T3
+	Y+r9aaBZCu/EfiFV9AOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLYqt-0007cs-Bd; Fri, 18 Oct 2019 20:27:59 +0000
+	id 1iLYqQ-00073u-1s; Fri, 18 Oct 2019 20:27:30 +0000
 Received: from mo6-p04-ob.smtp.rzone.de ([2a01:238:20a:202:5304::2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLYom-0005el-Ay
+ id 1iLYom-0005eq-Ay
  for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 20:25:51 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1571430346;
  s=strato-dkim-0002; d=goldelico.com;
  h=References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
  X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=25DfecDcdh+DVwUyD4qgXCP+yn92mKOk4bVidKb69Io=;
- b=qZXysuwEkZvAAs0491Hkf2OGGoVTWelRs3O6POx7tb8ozLoCBO7kW1Y8EVtr6vBOD2
- 1ACK3DDOw15d0dfcPq84pIq55DBzj4v3+uneopDy/serQviJzT4xCIYiYY8AO/Rhhxxg
- MpaNf0Zp0qmSXOysszf3cnT5vXbxBSl1rlt6+nmC8D5jXFGCmj2T5O1fUlgEZxTwPlOZ
- UO5GfS4edeWF8knQi9vIpJ5E4TYZY0ZdLOGjt9rGPDLVjtuoMGQwwkKEXe323BPQR9BG
- 3vGIgFdm+Kub8A5ibU7nkFmrU0sxjSNJRphSSjNWg0IRh/QCG6TFrPWmVt3647jJeUU7
- Ci9g==
+ bh=NW3mRlbGbfeDunz3kPNWIYRsTEKfeJ6w6UloX2TJNho=;
+ b=BuIg6fQGNX042f5EDzojv0pgsexLKF7rJscJXGglOYrzs1rxnbFPUoNwRE1oMzwT1v
+ P/LiIYPqyeFS04y4H2XYRPeUMZpmuf7adm3jaBUommf4VjR4ENVvLPRG9y+PpctFaEvm
+ NL+Wxp9SEzF1Y+DjakBnvi0W3j+yF73L6a3Rac1XKIX+gt0cS4aL2uph0cUicOGjjLVh
+ Oqj0NHaLMhTblIpiDdNavrORWzl7HaVeCS+85NLABMnj55nrFLCc+mQQdYPiT+N5n7Ft
+ ku2T6A5/C++VNQwjjTBUmT6U0y/cqGVNXD4dIyMMFBlVBP7p2pj4d7aXXGfopAbVYFv/
+ 8sKg==
 X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMhflhwDubTJ9o1mfYzBGHXH6F3CFF60="
 X-RZG-CLASS-ID: mo00
 Received: from iMac.fritz.box by smtp.strato.de (RZmta 44.28.1 DYNA|AUTH)
- with ESMTPSA id R0b2a8v9IKPbDUt
+ with ESMTPSA id R0b2a8v9IKPcDUu
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
  521 ECDH bits, eq. 15360 bits RSA))
  (Client did not present a certificate);
- Fri, 18 Oct 2019 22:25:37 +0200 (CEST)
+ Fri, 18 Oct 2019 22:25:38 +0200 (CEST)
 From: "H. Nikolaus Schaller" <hns@goldelico.com>
 To: =?UTF-8?q?Beno=C3=AEt=20Cousson?= <bcousson@baylibre.com>,
  Tony Lindgren <tony@atomide.com>, Rob Herring <robh+dt@kernel.org>,
@@ -58,16 +58,17 @@ To: =?UTF-8?q?Beno=C3=AEt=20Cousson?= <bcousson@baylibre.com>,
  Thomas Gleixner <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  John Stultz <john.stultz@linaro.org>, Bjorn Helgaas <bhelgaas@google.com>
-Subject: [PATCH 7/9] mmc: core: fix wl1251 sdio quirks
-Date: Fri, 18 Oct 2019 22:25:28 +0200
-Message-Id: <388ccc1b96dc9aaa5953cdb45097888869ab7e5f.1571430329.git.hns@goldelico.com>
+Subject: [PATCH 8/9] net: wireless: ti: wl1251 use new
+ SDIO_VENDOR_ID_TI_WL1251 definition
+Date: Fri, 18 Oct 2019 22:25:29 +0200
+Message-Id: <ddc2d28c3cd12e69ccad0819e5ed97ca204d04dc.1571430329.git.hns@goldelico.com>
 X-Mailer: git-send-email 2.19.1
 In-Reply-To: <cover.1571430329.git.hns@goldelico.com>
 References: <cover.1571430329.git.hns@goldelico.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_132548_552320_212082C3 
-X-CRM114-Status: GOOD (  11.60  )
+X-CRM114-CacheID: sfid-20191018_132548_559134_910C7C76 
+X-CRM114-Status: GOOD (  13.93  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -106,36 +107,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-wl1251 and wl1271 have different vendor id and device id.
-So we need to handle both with sdio quirks.
+SDIO_VENDOR_ID_TI_WL1251 is now defined in mmc/sdio_ids.h separately
+from SDIO_VENDOR_ID_TI for wl1271.
 
 Fixes: 884f38607897 ("mmc: core: move some sdio IDs out of quirks file")
 
 Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
 Cc: <stable@vger.kernel.org> # 4.11.0
 ---
- drivers/mmc/core/quirks.h | 7 +++++++
- 1 file changed, 7 insertions(+)
+ drivers/net/wireless/ti/wl1251/sdio.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/mmc/core/quirks.h b/drivers/mmc/core/quirks.h
-index 2d2d9ea8be4f..3dba15bccce2 100644
---- a/drivers/mmc/core/quirks.h
-+++ b/drivers/mmc/core/quirks.h
-@@ -119,7 +119,14 @@ static const struct mmc_fixup mmc_ext_csd_fixups[] = {
- 	END_FIXUP
+diff --git a/drivers/net/wireless/ti/wl1251/sdio.c b/drivers/net/wireless/ti/wl1251/sdio.c
+index c54a273713ed..42b55f3a50df 100644
+--- a/drivers/net/wireless/ti/wl1251/sdio.c
++++ b/drivers/net/wireless/ti/wl1251/sdio.c
+@@ -52,7 +52,7 @@ static void wl1251_sdio_interrupt(struct sdio_func *func)
+ }
+ 
+ static const struct sdio_device_id wl1251_devices[] = {
+-	{ SDIO_DEVICE(SDIO_VENDOR_ID_TI, SDIO_DEVICE_ID_TI_WL1251) },
++	{ SDIO_DEVICE(SDIO_VENDOR_ID_TI_WL1251, SDIO_DEVICE_ID_TI_WL1251) },
+ 	{}
  };
- 
-+
- static const struct mmc_fixup sdio_fixup_methods[] = {
-+	SDIO_FIXUP(SDIO_VENDOR_ID_TI_WL1251, SDIO_DEVICE_ID_TI_WL1251,
-+		   add_quirk, MMC_QUIRK_NONSTD_FUNC_IF),
-+
-+	SDIO_FIXUP(SDIO_VENDOR_ID_TI_WL1251, SDIO_DEVICE_ID_TI_WL1251,
-+		   add_quirk, MMC_QUIRK_DISABLE_CD),
-+
- 	SDIO_FIXUP(SDIO_VENDOR_ID_TI, SDIO_DEVICE_ID_TI_WL1271,
- 		   add_quirk, MMC_QUIRK_NONSTD_FUNC_IF),
- 
+ MODULE_DEVICE_TABLE(sdio, wl1251_devices);
 -- 
 2.19.1
 
