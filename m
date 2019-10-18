@@ -2,56 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D00F2DC47A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 14:14:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE94CDC482
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 14:15:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pRJ6hRcEQyO7koO3fBQPWT9ElD68rNsdB0th+NFCoQg=; b=W9OSIpAwVYXdmX
-	RkBi5x9IMG/oZWU8RhkTXFSXkP0Y6RLrXXumTDknU5wLW5qgPiq2j6/fS8RlZjRP5Z96ylpWCXLQy
-	2Gz+Ut4moiPFXWbqbY4wYnY5C5YkGNX1hwADsM6s7Nfj6BIuff1boRxFLuPNc9Tk2P5HtGVf0ovcC
-	iipggP2/arW7wcqaRTDNn1P5OnV2EVe81oQT20vER3n1VEbWyuo52bsvmRYaiJx8p7yTi9sf0u+zt
-	RM8mobefS9HTIlVgXI6sRw9cOwdYG5WEjCty4UOXhY7Oljki0UdA4YQwtfU9K0NyrCnS6pIyGzQ5r
-	D4FSaUezb73ZAhafjLlQ==;
+	List-Owner; bh=wqTJnIn7PTnhGH2MXTBAr00Npffql2GkWgcaAWWReqs=; b=WrxRq9+xQwGhgE
+	lzl1DVXEFRFRmPwb72ubd/gyIZ28CzS+wM6cs9du2Ovc+y05AKQe9IPSEybNPA6Iq1vaPSc/tTZo6
+	2Dt3JFuIxFfwjke3S7J2DKbkrbkifQs7evbaoBpjdpQTDPMJjszHxO1a1w1T5ZiK9QBpSKBY7UrK8
+	J8wf/HmaC6wYA2Qce3w5pZoGZ+Gun7g2X5ovmCYAfxBpDzcB20H2p8cHSQ74kqIklktGHTqjc5whP
+	UyetLPhdvdt05S+NJSVUiOS0Ut3pWLDc5+faVHjYoRVSiJ5Gy28QswOYN2u72Vnr4sMgtpeifyx9E
+	Og1mitCKKE7R3n/R4+TA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLR9b-0005HO-8I; Fri, 18 Oct 2019 12:14:47 +0000
-Received: from [217.140.110.172] (helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLR9S-0005GI-CZ; Fri, 18 Oct 2019 12:14:39 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 67A0FCA3;
- Fri, 18 Oct 2019 05:14:26 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BE2E53F6C4;
- Fri, 18 Oct 2019 05:14:25 -0700 (PDT)
-Date: Fri, 18 Oct 2019 13:14:24 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Christoph Hellwig <hch@infradead.org>
-Subject: Re: [PATCH v2 01/25] resource: Add a resource_list_get_entry_of_type
- helper
-Message-ID: <20191018121424.GF47056@e119886-lin.cambridge.arm.com>
-References: <20191016200647.32050-1-robh@kernel.org>
- <20191016200647.32050-2-robh@kernel.org>
- <20191017072519.GA19517@infradead.org>
+	id 1iLRA3-0005e4-IF; Fri, 18 Oct 2019 12:15:15 +0000
+Received: from esa3.microchip.iphmx.com ([68.232.153.233])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iLR9i-0005Ty-6z
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 12:14:56 +0000
+Received-SPF: Pass (esa3.microchip.iphmx.com: domain of
+ Ludovic.Desroches@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
+ envelope-from="Ludovic.Desroches@microchip.com";
+ x-sender="Ludovic.Desroches@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa3.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
+ envelope-from="Ludovic.Desroches@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa3.microchip.iphmx.com;
+ dkim=none (message not signed) header.i=none;
+ spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: WpcM4t+h+BiSE5DAkXqotBcFPlp7WhdvXZzB+lFIrne06zK9oZZQtt/2uL6ioL8hRCVMTmzKTY
+ 1I7aE6yfQ7Tvd78K9cB7L7cca9Zpw/cDYRkKA4fQe9wg0cogpmgQUq25RnZ+oiufmSGojNgfux
+ BanWzd7u24H2pi0KDtDD8ycCQA/dPxSXw3myTUhUPk4Qm9Yxl8DWBIrqi/lcQy9BPIPaSRBJlt
+ XD7RgHNjgKOy1nojLVf/1rNcQmMl5c9oQxedlxweIG56qVKoRj75XapEjtthOWIo751UnZNNnk
+ F2M=
+X-IronPort-AV: E=Sophos;i="5.67,311,1566889200"; d="scan'208";a="53522909"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 18 Oct 2019 05:14:50 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Fri, 18 Oct 2019 05:14:49 -0700
+Received: from localhost (10.10.85.251) by chn-vm-ex02.mchp-main.com
+ (10.10.85.144) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
+ Transport; Fri, 18 Oct 2019 05:14:50 -0700
+Date: Fri, 18 Oct 2019 14:15:23 +0200
+From: Ludovic Desroches <ludovic.desroches@microchip.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>
+Subject: Re: [PATCH v2 1/3] dt-bindings: sdhci-of-at91: new compatible string
+ and update properties
+Message-ID: <20191018121522.vq2co7b42kb2ykox@M43218.corp.atmel.com>
+Mail-Followup-To: Ulf Hansson <ulf.hansson@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ DTML <devicetree@vger.kernel.org>,
+ Nicolas Ferre <nicolas.ferre@microchip.com>,
+ Adrian Hunter <adrian.hunter@intel.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, claudiu.beznea@microchip.com,
+ Eugen.Hristev@microchip.com
+References: <20191011103340.26749-1-ludovic.desroches@microchip.com>
+ <CAPDyKFqxfBG-CDd_O9d8X89GZmNFXh=CoFE2QqptgtLtOU5=_Q@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191017072519.GA19517@infradead.org>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+In-Reply-To: <CAPDyKFqxfBG-CDd_O9d8X89GZmNFXh=CoFE2QqptgtLtOU5=_Q@mail.gmail.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_051438_472619_D4A9D47A 
-X-CRM114-Status: GOOD (  12.17  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20191018_051454_284349_29710FA8 
+X-CRM114-Status: GOOD (  19.36  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.153.233 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,46 +107,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>,
- Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>, linux-pci@vger.kernel.org,
- Linus Walleij <linus.walleij@linaro.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Toan Le <toan@os.amperecomputing.com>, Will Deacon <will@kernel.org>,
- Rob Herring <robh@kernel.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Michal Simek <michal.simek@xilinx.com>, linux-rockchip@lists.infradead.org,
- bcm-kernel-feedback-list@broadcom.com, Shawn Lin <shawn.lin@rock-chips.com>,
- Ray Jui <rjui@broadcom.com>, Hou Zhiqiang <Zhiqiang.Hou@nxp.com>,
- Ryder Lee <ryder.lee@mediatek.com>, linux-mediatek@lists.infradead.org,
- Bjorn Helgaas <bhelgaas@google.com>, linux-arm-kernel@lists.infradead.org,
- Scott Branden <sbranden@broadcom.com>, Jingoo Han <jingoohan1@gmail.com>,
- rfi@lists.rocketboards.org, linux-renesas-soc@vger.kernel.org,
- Tom Joseph <tjoseph@cadence.com>, Simon Horman <horms@verge.net.au>,
- Srinath Mannam <srinath.mannam@broadcom.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Ley Foon Tan <lftan@altera.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Eugen.Hristev@microchip.com,
+ Adrian Hunter <adrian.hunter@intel.com>, claudiu.beznea@microchip.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 17, 2019 at 12:25:19AM -0700, Christoph Hellwig wrote:
-> On Wed, Oct 16, 2019 at 03:06:23PM -0500, Rob Herring wrote:
-> > +static inline struct resource_entry *resource_list_get_entry_of_type(struct list_head *list,
-> > +							      unsigned long type)
+On Fri, Oct 18, 2019 at 12:56:14PM +0200, Ulf Hansson wrote:
+> On Fri, 11 Oct 2019 at 12:33, Ludovic Desroches
+> <ludovic.desroches@microchip.com> wrote:
+> >
+> > There is a new compatible string for the SAM9X60 sdhci device. It involves
+> > an update of the properties about the clocks stuff.
+> >
+> > Signed-off-by: Ludovic Desroches <ludovic.desroches@microchip.com>
 > 
-> This adds a way too long line.
+> This doesn't apply any more, can you please re-spin it?
+
+Sure, I'll rebase these patches and send a v2
+
+Regards
+
+Ludovic
+
 > 
-> Part of that is that the name just seems way too long as well, any
-> good shorter name?  resourse_list_first_type?
-
-I think it's really helpful to use the word 'first' in there somewhere,
-it makes it a little clearer on what happens if there are multiple of
-the same type of resource.
-
-Thanks,
-
-Andrew Murray
+> Kind regards
+> Uffe
+> 
+> 
+> > ---
+> >
+> > Changes:
+> > - v2: remove the extra example and fix node label
+> >
+> > This patch conflicts with Nicolas' one: "dt-bindings: sdhci-of-at91: add
+> > the microchip,sdcal-inverted property". Let me know which one has to be
+> > rebased or you can handle it.
+> >
+> > Ludovic
+> >
+> >
+> >  .../devicetree/bindings/mmc/sdhci-atmel.txt       | 15 ++++++++++++---
+> >  1 file changed, 12 insertions(+), 3 deletions(-)
+> >
+> > diff --git a/Documentation/devicetree/bindings/mmc/sdhci-atmel.txt b/Documentation/devicetree/bindings/mmc/sdhci-atmel.txt
+> > index 1b662d7171a0..5d541ad4d4eb 100644
+> > --- a/Documentation/devicetree/bindings/mmc/sdhci-atmel.txt
+> > +++ b/Documentation/devicetree/bindings/mmc/sdhci-atmel.txt
+> > @@ -5,17 +5,26 @@ Documentation/devicetree/bindings/mmc/mmc.txt and the properties used by the
+> >  sdhci-of-at91 driver.
+> >
+> >  Required properties:
+> > -- compatible:          Must be "atmel,sama5d2-sdhci".
+> > +- compatible:          Must be "atmel,sama5d2-sdhci" or "microchip,sam9x60-sdhci".
+> >  - clocks:              Phandlers to the clocks.
+> > -- clock-names:         Must be "hclock", "multclk", "baseclk";
+> > +- clock-names:         Must be "hclock", "multclk", "baseclk" for
+> > +                       "atmel,sama5d2-sdhci".
+> > +                       Must be "hclock", "multclk" for "microchip,sam9x60-sdhci".
+> > +
+> > +Optional properties:
+> > +- assigned-clocks:     The same with "multclk".
+> > +- assigned-clock-rates The rate of "multclk" in order to not rely on the
+> > +                       gck configuration set by previous components.
+> >
+> >
+> >  Example:
+> >
+> > -sdmmc0: sdio-host@a0000000 {
+> > +mmc0: sdio-host@a0000000 {
+> >         compatible = "atmel,sama5d2-sdhci";
+> >         reg = <0xa0000000 0x300>;
+> >         interrupts = <31 IRQ_TYPE_LEVEL_HIGH 0>;
+> >         clocks = <&sdmmc0_hclk>, <&sdmmc0_gclk>, <&main>;
+> >         clock-names = "hclock", "multclk", "baseclk";
+> > +       assigned-clocks = <&sdmmc0_gclk>;
+> > +       assigned-clock-rates = <480000000>;
+> >  };
+> > --
+> > 2.23.0
+> >
 
 _______________________________________________
 linux-arm-kernel mailing list
