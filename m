@@ -2,54 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F7FDDC2A9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 12:20:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4C78DC2AE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 12:20:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U5J9ZBRRWOy5ykp2b9at3Vk6LBZt2yxOEDyU2uMj+dE=; b=dVrDVltou/+Kij
-	4LDUH1CEjSN6SG1sj65TKZMfdcSd5YHyLDw1f3wSIjmzgF4JkUAVclvlzJ9x8xSFRWe9HQhnIO1tK
-	df1rlTldtv2QX1+6gVHMY5SwCTL48OtSWcVABnIJxg3S50RXi+2CdDBVMdU9t1EeqSZ8GM5wzMPdE
-	m5l6fy3MfbBNu17OBByyme+nfPSOlZpauWl4px9LJJuiEMu/ZGQQ9II7UkoBIXCwqsqze0NlZZr9k
-	j53bFp71sSbmP7WZld8xOknILDMqmTS3oscuXHTGuFHvsstamKZUjiw6rqY3PpRp7clVRi+nlA7Cj
-	AkgTYpsJF6HctzAQkiEQ==;
+	List-Owner; bh=vrUajJ2mD/RaN6gfWrnxiem7H8jNCelKMgN6WvBsSN0=; b=D07hDDSywfcC6h
+	La2iSZE3PVelkiCmd0emnP0Tc3bdZuY0WWqNplIN3WcuBa+ok2UUpNeJeaHYb/US6TWDZM1M7CfTj
+	rIzq9XRvp1hFG9ucAPV0VLV0PxJq6XnF8V39X8eB47T4uyrB4lppjG/GzpxXUjA+XQqwgFONHJ4UE
+	8hybCAwrjDXpvgKX4vT7BpmVgLJLw2n54GlyGoQlolXWRYbnFNllfN0i6CuLXjjX3QCNaRfpG+EvQ
+	sELMd8a/mGRrhP37VFlMT3RtJnJ0bqWUdQq1oindqmuEJ11ZPHRjoPy4vIBR4bNFq94p2jm+Nb2JE
+	OkJjw1SCcCceEoF3JgQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLPMj-0007NG-6k; Fri, 18 Oct 2019 10:20:13 +0000
-Received: from [217.140.110.172] (helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLPGn-0000Jl-It
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 10:14:07 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3BD66A64;
- Fri, 18 Oct 2019 03:14:05 -0700 (PDT)
-Received: from e112269-lin.cambridge.arm.com (e112269-lin.cambridge.arm.com
- [10.1.194.43])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A70733F6C4;
- Fri, 18 Oct 2019 03:14:02 -0700 (PDT)
-From: Steven Price <steven.price@arm.com>
-To: linux-mm@kvack.org
-Subject: [PATCH v12 22/22] arm64: mm: Display non-present entries in ptdump
-Date: Fri, 18 Oct 2019 11:12:48 +0100
-Message-Id: <20191018101248.33727-23-steven.price@arm.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191018101248.33727-1-steven.price@arm.com>
-References: <20191018101248.33727-1-steven.price@arm.com>
+	id 1iLPNJ-0000ey-Tv; Fri, 18 Oct 2019 10:20:49 +0000
+Received: from cloudserver094114.home.pl ([79.96.170.134])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iLPLH-0006Dy-1F
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 10:18:45 +0000
+Received: from 79.184.255.51.ipv4.supernova.orange.pl (79.184.255.51) (HELO
+ kreacher.localnet)
+ by serwer1319399.home.pl (79.96.170.134) with SMTP (IdeaSmtpServer 0.83.292)
+ id 2fe1e6cc54d2dbbb; Fri, 18 Oct 2019 12:18:33 +0200
+From: "Rafael J. Wysocki" <rjw@rjwysocki.net>
+To: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+Subject: Re: [PATCH V5 1/4] ACPI: Support Generic Initiator only domains
+Date: Fri, 18 Oct 2019 12:18:33 +0200
+Message-ID: <1895971.7mY3IlW731@kreacher>
+In-Reply-To: <20191004114330.104746-2-Jonathan.Cameron@huawei.com>
+References: <20191004114330.104746-1-Jonathan.Cameron@huawei.com>
+ <20191004114330.104746-2-Jonathan.Cameron@huawei.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_031405_706643_9BC00CEE 
-X-CRM114-Status: GOOD (  12.81  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20191018_031843_271331_106F3149 
+X-CRM114-Status: GOOD (  21.79  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,75 +57,204 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, x86@kernel.org,
- Arnd Bergmann <arnd@arndb.de>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, linux-kernel@vger.kernel.org,
- Steven Price <steven.price@arm.com>,
- =?UTF-8?q?J=C3=A9r=C3=B4me=20Glisse?= <jglisse@redhat.com>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
- James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
- Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org, "Liang, Kan" <kan.liang@linux.intel.com>
+Cc: linux-acpi@vger.kernel.org, x86@kernel.org, linux-kernel@vger.kernel.org,
+ linuxarm@huawei.com, Keith Busch <keith.busch@intel.com>, linux-mm@kvack.org,
+ jglisse@redhat.com, Andrew Morton <akpm@linux-foundation.org>,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Previously the /sys/kernel/debug/kernel_page_tables file would only show
-lines for entries present in the page tables. However it is useful to
-also show non-present entries as this makes the size and level of the
-holes more visible. This aligns the behaviour with x86 which also shows
-holes.
+On Friday, October 4, 2019 1:43:27 PM CEST Jonathan Cameron wrote:
+> Generic Initiators are a new ACPI concept that allows for the
+> description of proximity domains that contain a device which
+> performs memory access (such as a network card) but neither
+> host CPU nor Memory.
+> 
+> This patch has the parsing code and provides the infrastructure
+> for an architecture to associate these new domains with their
+> nearest memory processing node.
+> 
+> Signed-off-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
 
-Signed-off-by: Steven Price <steven.price@arm.com>
----
- arch/arm64/mm/dump.c | 25 +++++++++++++------------
- 1 file changed, 13 insertions(+), 12 deletions(-)
+This depends on the series from Dan at:
 
-diff --git a/arch/arm64/mm/dump.c b/arch/arm64/mm/dump.c
-index 9d9b740a86d2..3203dd8e6d0a 100644
---- a/arch/arm64/mm/dump.c
-+++ b/arch/arm64/mm/dump.c
-@@ -269,21 +269,22 @@ static void note_page(struct ptdump_state *pt_st, unsigned long addr, int level,
- 		if (st->current_prot) {
- 			note_prot_uxn(st, addr);
- 			note_prot_wx(st, addr);
--			pt_dump_seq_printf(st->seq, "0x%016lx-0x%016lx   ",
-+		}
-+
-+		pt_dump_seq_printf(st->seq, "0x%016lx-0x%016lx   ",
- 				   st->start_address, addr);
- 
--			delta = (addr - st->start_address) >> 10;
--			while (!(delta & 1023) && unit[1]) {
--				delta >>= 10;
--				unit++;
--			}
--			pt_dump_seq_printf(st->seq, "%9lu%c %s", delta, *unit,
--				   pg_level[st->level].name);
--			if (pg_level[st->level].bits)
--				dump_prot(st, pg_level[st->level].bits,
--					  pg_level[st->level].num);
--			pt_dump_seq_puts(st->seq, "\n");
-+		delta = (addr - st->start_address) >> 10;
-+		while (!(delta & 1023) && unit[1]) {
-+			delta >>= 10;
-+			unit++;
- 		}
-+		pt_dump_seq_printf(st->seq, "%9lu%c %s", delta, *unit,
-+				   pg_level[st->level].name);
-+		if (st->current_prot && pg_level[st->level].bits)
-+			dump_prot(st, pg_level[st->level].bits,
-+				  pg_level[st->level].num);
-+		pt_dump_seq_puts(st->seq, "\n");
- 
- 		if (addr >= st->marker[1].start_address) {
- 			st->marker++;
--- 
-2.20.1
+https://lore.kernel.org/linux-acpi/CAPcyv4gBSX58CWH4HZ28w0_cZRzJrhgdEFHa2g8KDqyv8aFqZQ@mail.gmail.com/T/#m1acce3ae8f29f680c0d95fd1e840e703949fbc48
+
+AFAICS, so please respin when that one hits the Linus' tree.
+
+> ---
+>  drivers/acpi/numa/srat.c       | 62 +++++++++++++++++++++++++++++++++-
+>  drivers/base/node.c            |  3 ++
+>  include/asm-generic/topology.h |  3 ++
+>  include/linux/nodemask.h       |  1 +
+>  include/linux/topology.h       |  7 ++++
+>  5 files changed, 75 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/acpi/numa/srat.c b/drivers/acpi/numa/srat.c
+> index eadbf90e65d1..fe34315a9234 100644
+> --- a/drivers/acpi/numa/srat.c
+> +++ b/drivers/acpi/numa/srat.c
+> @@ -170,6 +170,38 @@ acpi_table_print_srat_entry(struct acpi_subtable_header *header)
+>  		}
+>  		break;
+>  
+> +	case ACPI_SRAT_TYPE_GENERIC_AFFINITY:
+> +	{
+> +		struct acpi_srat_generic_affinity *p =
+> +			(struct acpi_srat_generic_affinity *)header;
+> +		char name[9] = {};
+> +
+> +		if (p->device_handle_type == 0) {
+> +			/*
+> +			 * For pci devices this may be the only place they
+> +			 * are assigned a proximity domain
+> +			 */
+> +			pr_debug("SRAT Generic Initiator(Seg:%u BDF:%u) in proximity domain %d %s\n",
+> +				 *(u16 *)(&p->device_handle[0]),
+> +				 *(u16 *)(&p->device_handle[2]),
+> +				 p->proximity_domain,
+> +				 (p->flags & ACPI_SRAT_GENERIC_AFFINITY_ENABLED) ?
+> +				"enabled" : "disabled");
+> +		} else {
+> +			/*
+> +			 * In this case we can rely on the device having a
+> +			 * proximity domain reference
+> +			 */
+> +			memcpy(name, p->device_handle, 8);
+> +			pr_info("SRAT Generic Initiator(HID=%.8s UID=%.4s) in proximity domain %d %s\n",
+> +				(char *)(&p->device_handle[0]),
+> +				(char *)(&p->device_handle[8]),
+> +				p->proximity_domain,
+> +				(p->flags & ACPI_SRAT_GENERIC_AFFINITY_ENABLED) ?
+> +				"enabled" : "disabled");
+> +		}
+> +	}
+> +	break;
+>  	default:
+>  		pr_warn("Found unsupported SRAT entry (type = 0x%x)\n",
+>  			header->type);
+> @@ -378,6 +410,32 @@ acpi_parse_gicc_affinity(union acpi_subtable_headers *header,
+>  	return 0;
+>  }
+>  
+> +static int __init
+> +acpi_parse_gi_affinity(union acpi_subtable_headers *header,
+> +		       const unsigned long end)
+> +{
+> +	struct acpi_srat_generic_affinity *gi_affinity;
+> +	int node;
+> +
+> +	gi_affinity = (struct acpi_srat_generic_affinity *)header;
+> +	if (!gi_affinity)
+> +		return -EINVAL;
+> +	acpi_table_print_srat_entry(&header->common);
+> +
+> +	if (!(gi_affinity->flags & ACPI_SRAT_GENERIC_AFFINITY_ENABLED))
+> +		return -EINVAL;
+> +
+> +	node = acpi_map_pxm_to_node(gi_affinity->proximity_domain);
+> +	if (node == NUMA_NO_NODE || node >= MAX_NUMNODES) {
+> +		pr_err("SRAT: Too many proximity domains.\n");
+> +		return -EINVAL;
+> +	}
+> +	node_set(node, numa_nodes_parsed);
+> +	node_set_state(node, N_GENERIC_INITIATOR);
+> +
+> +	return 0;
+> +}
+> +
+>  static int __initdata parsed_numa_memblks;
+>  
+>  static int __init
+> @@ -433,7 +491,7 @@ int __init acpi_numa_init(void)
+>  
+>  	/* SRAT: System Resource Affinity Table */
+>  	if (!acpi_table_parse(ACPI_SIG_SRAT, acpi_parse_srat)) {
+> -		struct acpi_subtable_proc srat_proc[3];
+> +		struct acpi_subtable_proc srat_proc[4];
+>  
+>  		memset(srat_proc, 0, sizeof(srat_proc));
+>  		srat_proc[0].id = ACPI_SRAT_TYPE_CPU_AFFINITY;
+> @@ -442,6 +500,8 @@ int __init acpi_numa_init(void)
+>  		srat_proc[1].handler = acpi_parse_x2apic_affinity;
+>  		srat_proc[2].id = ACPI_SRAT_TYPE_GICC_AFFINITY;
+>  		srat_proc[2].handler = acpi_parse_gicc_affinity;
+> +		srat_proc[3].id = ACPI_SRAT_TYPE_GENERIC_AFFINITY;
+> +		srat_proc[3].handler = acpi_parse_gi_affinity;
+>  
+>  		acpi_table_parse_entries_array(ACPI_SIG_SRAT,
+>  					sizeof(struct acpi_table_srat),
+> diff --git a/drivers/base/node.c b/drivers/base/node.c
+> index 296546ffed6c..e5863baa8cb6 100644
+> --- a/drivers/base/node.c
+> +++ b/drivers/base/node.c
+> @@ -977,6 +977,8 @@ static struct node_attr node_state_attr[] = {
+>  #endif
+>  	[N_MEMORY] = _NODE_ATTR(has_memory, N_MEMORY),
+>  	[N_CPU] = _NODE_ATTR(has_cpu, N_CPU),
+> +	[N_GENERIC_INITIATOR] = _NODE_ATTR(has_generic_initiator,
+> +					   N_GENERIC_INITIATOR),
+>  };
+>  
+>  static struct attribute *node_state_attrs[] = {
+> @@ -988,6 +990,7 @@ static struct attribute *node_state_attrs[] = {
+>  #endif
+>  	&node_state_attr[N_MEMORY].attr.attr,
+>  	&node_state_attr[N_CPU].attr.attr,
+> +	&node_state_attr[N_GENERIC_INITIATOR].attr.attr,
+>  	NULL
+>  };
+>  
+> diff --git a/include/asm-generic/topology.h b/include/asm-generic/topology.h
+> index 238873739550..54d0b4176a45 100644
+> --- a/include/asm-generic/topology.h
+> +++ b/include/asm-generic/topology.h
+> @@ -71,6 +71,9 @@
+>  #ifndef set_cpu_numa_mem
+>  #define set_cpu_numa_mem(cpu, node)
+>  #endif
+> +#ifndef set_gi_numa_mem
+> +#define set_gi_numa_mem(gi, node)
+> +#endif
+>  
+>  #endif	/* !CONFIG_NUMA || !CONFIG_HAVE_MEMORYLESS_NODES */
+>  
+> diff --git a/include/linux/nodemask.h b/include/linux/nodemask.h
+> index 27e7fa36f707..1aebf766fb52 100644
+> --- a/include/linux/nodemask.h
+> +++ b/include/linux/nodemask.h
+> @@ -399,6 +399,7 @@ enum node_states {
+>  #endif
+>  	N_MEMORY,		/* The node has memory(regular, high, movable) */
+>  	N_CPU,		/* The node has one or more cpus */
+> +	N_GENERIC_INITIATOR,	/* The node is a GI only node */
+>  	NR_NODE_STATES
+>  };
+>  
+> diff --git a/include/linux/topology.h b/include/linux/topology.h
+> index eb2fe6edd73c..05ccf011e489 100644
+> --- a/include/linux/topology.h
+> +++ b/include/linux/topology.h
+> @@ -140,6 +140,13 @@ static inline void set_numa_mem(int node)
+>  }
+>  #endif
+>  
+> +#ifndef set_gi_numa_mem
+> +static inline void set_gi_numa_mem(int gi, int node)
+> +{
+> +	_node_numa_mem_[gi] = node;
+> +}
+> +#endif
+> +
+>  #ifndef node_to_mem_node
+>  static inline int node_to_mem_node(int node)
+>  {
+> 
+
+
+
 
 
 _______________________________________________
