@@ -2,86 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DBC9DD082
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 22:39:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5DD4EDD087
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 22:39:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xKyK+gDlB6mOdq93Bugo7GnZbfKKttyCFuVB3oRQmO0=; b=kais0Q0Q/l414E
-	Csv4gmk697r1IZ9k3JLzgZ5Ldpk+JkpsMf2Iyen3NnTf+51AyL+XM0kp7Zx/WD4hjReWqKyR6eHFt
-	jWQRvHvm3njHzdbmjbfSg+mIlKGTGVQeBPjwVZOvHllICk77XSAuveNeIk7+Ozb4ZabVvGtfMndks
-	aHxG1Vl8Sw214sXExYLsJU34VmqEQ0AHUyHvbN8KbvZrE8b77RYq6/+H5YFC6OG6gq0TZCkx2h+ge
-	WUhaClq6U3iTEMUoQIAGNmCGQOTYFml2tcMFiK363gW+K4BNY6cpd6ifjGwD16jGuRzJBXCJWdyMG
-	OXZ+USLhpoTaeWR7cHlQ==;
+	List-Owner; bh=cO39ZxXCrJzrXFuthB2tm8B5L1zTVot0Kzj6IuTvwWE=; b=nYZePcvbw/c1wJ
+	HlwJ3R48bCYw+Pe6WFNswN+sagjb92eX9BKTUIl6oLTdxQ2XH1V7wI+m5y0JoNw15nJiUCba4WRl8
+	NnS796Rd9sCJwqSZGy+LpNFCNq4dmqpKUTwZfdlwlpO1o2GiK623qcUeY0j3IoPK8NH9An2jhioIz
+	IvQMORswTYjd2vnu3ViC1C4DipdS9rEJsZfjbRKijIRn83uF9br/yzsOhpDHJGNukO6hFGPjvRTZ5
+	wwgUyCT5V3dX6s5BPeUg6+F+bqgLfmzogqN5JrxdtNDiDO71aeB+k3mP8leraNd9fxakKtLLzb/RH
+	du4buDUUotuk8oxWFQ2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLZ1p-000452-2Y; Fri, 18 Oct 2019 20:39:17 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1iLZ2O-0004PG-5I; Fri, 18 Oct 2019 20:39:52 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLZ1e-00043j-4w
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 20:39:07 +0000
-Received: by mail-pl1-x642.google.com with SMTP id s17so3388985plp.6
+ id 1iLZ2B-0004Oa-5J
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 20:39:40 +0000
+Received: by mail-pl1-x644.google.com with SMTP id j11so3404952plk.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 13:39:06 -0700 (PDT)
+ Fri, 18 Oct 2019 13:39:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=sA9QYMiGhI7MttA/PLlqrtMzG0s83akjTEVC2Hk0Y0Y=;
- b=DN5MEvFgVMu4M4/XCLw9BRIhFBFz5/fxRslD8rf+iBz/h2hn6x8mBLdHOrnXuEO4cf
- vCZZ3UVlc1wh7a40ehAmlIXKkUx76Z/vfG+pIworaMVo9p1R2FuXCucWWS84hmof1jfX
- hBEPTm5IBCXfvNU9ZsmPS3MVRpbXxmym8TAwhZ7tHD9vtpbt99ui/Qb+DwxKB69ExLRQ
- S8dDorBNDNK51e8KQpVTnyU1cXa/9sijPaH20LMzhui9CVrfHwVpiDXjMsMciohHfbMu
- eHVms76z/2lQhmX9raIBDs5TQGc1rIGb2eMvJS1W8RDwF9Oe8fWetD//OkFfRZ9eV/2E
- boRQ==
+ bh=yF7MutHrwkvSGB6U3XIdCr2BIBwvqm916Bsky0mGSyw=;
+ b=jpxaFdev7vpkQkBEd6ufvN8+8Syuaax8emVkCAdb5pwQ08+Kx9HfaUAmG/dNO0LruH
+ Ru0kVaNEtVe9TtUPNBK2HDfoNRda5QO7P3o/5lHaePEV6vpjkyLRnGWMWfpfNkOLwic4
+ dD99vIdupsM6P3loEyJhDAG6j4eJzxkjjn3GzbzghzvuQGp9pzx4ygzylPs+RjDUDHiZ
+ 7S1C/WpfwV1W36dmHXS0Rl0SrBDOkRGXe+A3yaivtT3PLAWohYyWenjZBURub3C84fD4
+ Y2JMkDGtadl07MZ+5Ewc/wwtOmdgYKepH691VkKehLXyc8PrvAZ5aF3mDaPp3Rh6DsJs
+ qvZg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=sA9QYMiGhI7MttA/PLlqrtMzG0s83akjTEVC2Hk0Y0Y=;
- b=abpA+yyy6xxJAPNjE0VJJfJ0wFcACVfIWdiUhpiaC2UVi9tXzIFtOpdvpeAQFYcXgy
- Y8ogqFyuEk0OA5xJcupX5FYIr9VsU68lQ5Ko7iZVPijMi4xI6Ycu+idxK88BoDaRbTND
- P5NDG9ewH41QTFRxUJEgb2I04KGsvnZuQezvaUdTKn7YBwjoJaikvjdEnPz7dyXcDajc
- uaWELwegWfvm6clPhAxgtcQ664V5MmTAZhJ2Q6rQrXwMNANhbIF9d3cWvSeobtPgXpH+
- wKVQ8tNa1HMq19PxyhcAWmmA7ixygcx4XTvzl9wPjs38hzWWdvr99CIUkfWAjzE10C3X
- Om4Q==
-X-Gm-Message-State: APjAAAW2AvvgpFHcV7MTPnKBxdCu1HhwTCxYWMEpK9BHi0fUQIc3U84a
- abNoAuWQBx48Ro9zzECKZxE=
-X-Google-Smtp-Source: APXvYqyIxdE8kbIPAupy1VRv2Z5sSpuL6L3+Lx1OQzb/YVFns+e38GVIZHMuR66stuh9mPN8FKSWQA==
-X-Received: by 2002:a17:902:ff14:: with SMTP id
- f20mr1803901plj.216.1571431145094; 
- Fri, 18 Oct 2019 13:39:05 -0700 (PDT)
+ bh=yF7MutHrwkvSGB6U3XIdCr2BIBwvqm916Bsky0mGSyw=;
+ b=OXCa3EnWnFO/nOsGyWS8+9cZ0OBwneg7glj0vTam50C0GeX1mJ7d8ouLM/u5NQ3EjP
+ zY/oziAk+0lQRCFpKZt/CDJnfPhQzf99mLjVZH83ayVEdz0tlsOSbcfqF4rDDwWrZowd
+ ft6bZDqNw0Ns9kEtNuNTkN+49ZWHL4tasU2cXdbg+XJkFcmVIpNS+xfWw6aiaee8xZ78
+ HmjnRTt1Fj0rFhCX3+dzG9BXh5Dy0XrAgSzO8CeB5HHlKbWRQDnCLULwN/iNyWrxMTkP
+ c4QvriIR+BvZUD6EYDn39vwXb46soVT51XX5ZTgu7hWvmyRjq/FRPHUJ18NGmQxqcup3
+ JRag==
+X-Gm-Message-State: APjAAAWxOWHK/Cj8PNs92ZXSLHq7zgQL3OqdciUCXnHJvS4FaTXyJz7e
+ VMc/ruKN4oUAslPEav5Xuak=
+X-Google-Smtp-Source: APXvYqwMMoMg/Sj3XuNx6NavhISCBWY4vd22WowubXqMjUc6xYCpcf344nB/pSVMbxAZVJeeJlF6GA==
+X-Received: by 2002:a17:902:6acb:: with SMTP id
+ i11mr12268939plt.16.1571431178249; 
+ Fri, 18 Oct 2019 13:39:38 -0700 (PDT)
 Received: from dtor-ws ([2620:15c:202:201:3adc:b08c:7acc:b325])
- by smtp.gmail.com with ESMTPSA id 196sm7859249pfz.99.2019.10.18.13.39.03
+ by smtp.gmail.com with ESMTPSA id v3sm7071068pfn.18.2019.10.18.13.39.37
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 18 Oct 2019 13:39:04 -0700 (PDT)
-Date: Fri, 18 Oct 2019 13:39:02 -0700
+ Fri, 18 Oct 2019 13:39:37 -0700 (PDT)
+Date: Fri, 18 Oct 2019 13:39:35 -0700
 From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
 To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: Fwd: [PATCH 29/46] Input: touchscreen: use wrapper for pxa2xx
- ac97 registers
-Message-ID: <20191018203902.GQ35946@dtor-ws>
+Subject: Re: [PATCH 25/46] ARM: pxa: mainstone-wm97xx: use gpio lookup table
+Message-ID: <20191018203935.GR35946@dtor-ws>
 References: <20191018154052.1276506-1-arnd@arndb.de>
- <20191018154201.1276638-29-arnd@arndb.de>
- <20191018184815.GP35946@dtor-ws>
- <CAK8P3a27==9TeS-RWEvrpnxh+6McqRF-xeb8WPj9pHOn+0zbOQ@mail.gmail.com>
- <CAK8P3a0AP8q9Hk1DB+E=xFGV5RqXnkjkcZRobgU1NRDFMH00AA@mail.gmail.com>
+ <20191018154201.1276638-25-arnd@arndb.de>
+ <20191018183940.GM35946@dtor-ws>
+ <CAK8P3a1Fc=ogknDRGJ3Sn8bZ8tsR_ebE8_bDtF_kZ4AZ5YG_+g@mail.gmail.com>
+ <CAK8P3a00s4=6YHS_2K1r6=i+artkjgxjHJGVHBLuCj1ft5sqFQ@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAK8P3a0AP8q9Hk1DB+E=xFGV5RqXnkjkcZRobgU1NRDFMH00AA@mail.gmail.com>
+In-Reply-To: <CAK8P3a00s4=6YHS_2K1r6=i+artkjgxjHJGVHBLuCj1ft5sqFQ@mail.gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_133906_188459_75FF8FA7 
-X-CRM114-Status: GOOD (  20.49  )
+X-CRM114-CacheID: sfid-20191018_133939_205333_8C0C6C73 
+X-CRM114-Status: GOOD (  14.62  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (dmitry.torokhov[at]gmail.com)
@@ -105,10 +104,10 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ALSA Development Mailing List <alsa-devel@alsa-project.org>,
- Linus Walleij <linus.walleij@linaro.org>,
+Cc: Linus Walleij <linus.walleij@linaro.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Haojian Zhuang <haojian.zhuang@gmail.com>, Daniel Mack <daniel@zonque.org>,
+ Haojian Zhuang <haojian.zhuang@gmail.com>, Marek Vasut <marek.vasut@gmail.com>,
+ Daniel Mack <daniel@zonque.org>,
  "open list:HID CORE LAYER" <linux-input@vger.kernel.org>,
  Robert Jarzmik <robert.jarzmik@free.fr>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
@@ -117,44 +116,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 18, 2019 at 09:39:31PM +0200, Arnd Bergmann wrote:
-> On Fri, Oct 18, 2019 at 8:48 PM Dmitry Torokhov
+On Fri, Oct 18, 2019 at 09:37:28PM +0200, Arnd Bergmann wrote:
+> On Fri, Oct 18, 2019 at 8:39 PM Dmitry Torokhov
 > <dmitry.torokhov@gmail.com> wrote:
 > >
-> > On Fri, Oct 18, 2019 at 05:41:44PM +0200, Arnd Bergmann wrote:
-> > > To avoid a dependency on the pxa platform header files with
-> > > hardcoded registers, change the driver to call a wrapper
-> > > in the pxa2xx-ac97-lib that encapsulates all the other
-> > > ac97 stuff.
+> > On Fri, Oct 18, 2019 at 05:41:40PM +0200, Arnd Bergmann wrote:
+> > > This driver hardcodes gpio numbers without a header file.
+> > > Use lookup tables instead.
+> > >
+> > > Cc: Marek Vasut <marek.vasut@gmail.com>
+> > > Cc: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+> > > Cc: linux-input@vger.kernel.org
+> > > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 > >
-> > Not supper happy about adding module dependencies. Can we include
-> > mach/regs-ac97.h from include/sound/pxa2xx-lib.h and use static inlines?
-> > Someone needs to include mach/regs-ac97.h in the end...
 > >
-> > Or there is something later in the series that needs it?
+> > Acked-by: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+> >
+> > Arnd, do you have these devices by chance? I had stached patches
+> > converting wm97xx core to use threaded ISR and it would be great if
+> > someone could test them...
 > 
-> One of the goals of the series is to completely remove all mach/*.h headers
-> and place them somewhere else, ideally inaccessible to device drivers.
+> Unfortunately I don't, but I'm hoping that someone can test my series
+> on any hardware they might have.
 > 
-> In case of mach/regs-ac97.h, the later patch "ASoC: pxa: ac97: use normal
-> MMIO accessors" passes the physical register base address as a platform
-> device resource that gets ioremapped in the ac97 driver, rather than
-> hardcoding the virtual address in a global header.
-> 
-> I agree that the exported function is still ugly, but I hope it's enough of
-> an improvement over the previous state that we can do it anyway.
-> 
-> If you have any better ideas though, I can give that a try, too.
-> One possibility would be a higher-level interface exported on top
-> of 'struct snd_ac97', but I could not figure out how to do this.
+> If you like, send me your patches and I'll add them to this series.
 
-No, I do mot really have better ideas given your stated goals and I
-guess there is not really much benefit on spending too much effort
-polishing essentially one driver.
-
-Acked-by: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-
-Thanks.
+OK, I'll do that, thanks.
 
 -- 
 Dmitry
