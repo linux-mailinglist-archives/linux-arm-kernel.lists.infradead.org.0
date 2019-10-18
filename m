@@ -2,66 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D82A7DBE39
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 09:21:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0EB0DBE5D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 09:31:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=l1CfjfUc4CRf7IVQmhCyELsnkMPCHlJfIxtRe8VTf3s=; b=NyLTIsVwG0DIKktZrI1ymYKrJ
-	eMSXjNzIDLAFfAjg10w8XEdr+v9jZZsTBR4I2Dqi+MrOLpTbvH5kMYer0lyBGy8L9A1xH3MZJuRKa
-	DHBrkzzFIoYpEyHT70oBi2u4qYgwlggGUdvbWH73xGPKRdlX8kzYUY0cUgZrhuaBy2dvqz5LJTtGi
-	NaVNZGpWLbJf4rRTau4giSrW3qpWbTa/Pm5XyhoazEUy9G7cX/T8YmTTcrrrx3zS5ISYNNLHsXzJn
-	e/Hw9M5N1iPtwwsvL353V4sY0JJuz6cZjzW46YXO/lQMn0Qu5YIJ01qrbmqbdfyORky0cni328R3A
-	mq+2o/Vtg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FR5AF5Z9w5ze6+gvSiSYeIgPTTNcR/tqKy2Df4zGe8Q=; b=ZV0Jl+o/OkhXUC
+	RI19yQkceKHl9+JWNpJkD9nojC/mB+JTJd2buFva8l+iqQu1a8E5ven8SeoxuecJZMJ3feEYsyezL
+	gGbAtcXc1SMYjmZSV7ax/lbfo2ZPFnvlhyoiLUBiBIpiLQoZxhSNoQNK7I+j8Pnx8LQdY8liJd1br
+	xrtrGFfyezqFOY9NAtA4JE+n50cXHKr83I/NgXomqURRSPLlvG/wMo9W7bXK4+hnBGf20dR50lh67
+	NTOgifrsSYifFRLdWJWY5i9zAj6+NMwkXKuk42opNBGWRk/AHRkeFfE/B0HmsVEfIp5kv7rUTLhSp
+	fT12mrkgQmvAMFFr0CyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLMZV-0006dP-4Q; Fri, 18 Oct 2019 07:21:13 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1iLMjT-0002ww-02; Fri, 18 Oct 2019 07:31:31 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLMZL-0006cY-Go; Fri, 18 Oct 2019 07:21:05 +0000
-Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1iLMZE-0002Pk-F0; Fri, 18 Oct 2019 09:20:56 +0200
-To: Stephen Boyd <swboyd@chromium.org>
-Subject: Re: Relax CPU features sanity checking on heterogeneous architectures
-X-PHP-Originating-Script: 0:main.inc
+ id 1iLMj5-0002kG-BR; Fri, 18 Oct 2019 07:31:08 +0000
+Received: by mail-ot1-f65.google.com with SMTP id e11so4167187otl.5;
+ Fri, 18 Oct 2019 00:31:06 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=1vcvhB5CLF/+MeUyHDDl7fZL+tAXhkabxwY8RzqlUc4=;
+ b=ayEUbJ2MoEqAlFXxalbn7dZzJl2TLzODSsOWvI+Wo2ADnk0q8rM3wtqLvASqMi1KaI
+ nFQVXuuPD9eSRYKrB9OoOiUaaWYQhHG5XkVp2KOveruOgWw4N2PuLpIxIva9zuU2DdEr
+ yiPT9/GNscV45iHrIsoQrucHJHQtnwz7eWsCsCkT0bBkI/4Ph67DyOyhxWULzdEu9C0I
+ 4K9Iaq9XUofh0T6ZMPD7ad+6oRiBRCjKssrNnX04arv54pBz91T3iI67bmU5NWLzO89n
+ ZAop13ajo5dmgWga7x5oG+Z40ct4ACY7QdqhrLOh3iDRHYyM6y/NX3QANhhZ7We8hLik
+ FJiw==
+X-Gm-Message-State: APjAAAXpFeMpL78piSe3KY5piVBbWKJkwOYiifArLT8CdOatyGSXWUuF
+ SU+JXW5GKgxOu1tyqha4WXk4sG+unA6qWRu3eLo=
+X-Google-Smtp-Source: APXvYqz5ZTzm2szPG0oqRjP0bYm68wI5cC2zWPx8OuV5blCVSPhZgU0siPaT+bnCFclqt0wG9CC25EAYDHrDP1i11C0=
+X-Received: by 2002:a9d:70d0:: with SMTP id w16mr6117171otj.107.1571383865678; 
+ Fri, 18 Oct 2019 00:31:05 -0700 (PDT)
 MIME-Version: 1.0
-Date: Fri, 18 Oct 2019 08:20:56 +0100
-From: Marc Zyngier <maz@kernel.org>
-In-Reply-To: <5da8c868.1c69fb81.ae709.97ff@mx.google.com>
-References: <b3606e76af42f7ecf65b1bfc2a5ed30a@codeaurora.org>
- <20191011105010.GA29364@lakrids.cambridge.arm.com>
- <7910f428bd96834c15fb56262f3c10f8@codeaurora.org>
- <20191011143442.515659f4@why>
- <ac7599b30461d6a814e4f36d68bba6c2@codeaurora.org>
- <5da8c868.1c69fb81.ae709.97ff@mx.google.com>
-Message-ID: <c9285391dbbe936d3f242bdd0d226b93@www.loen.fr>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/0.7.2
-X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: swboyd@chromium.org, saiprakash.ranjan@codeaurora.org,
- mark.rutland@arm.com, rnayak@codeaurora.org, suzuki.poulose@arm.com,
- catalin.marinas@arm.com, linux-arm-kernel-bounces@lists.infradead.org,
- linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
- bjorn.andersson@linaro.org, linux-arm-msm@vger.kernel.org,
- andrew.murray@arm.com, will@kernel.org, dave.martin@arm.com,
- linux-arm-kernel@lists.infradead.org, marc.w.gonzalez@free.fr
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+References: <20191017174554.29840-1-hch@lst.de>
+ <20191017174554.29840-14-hch@lst.de>
+In-Reply-To: <20191017174554.29840-14-hch@lst.de>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Fri, 18 Oct 2019 09:30:54 +0200
+Message-ID: <CAMuHMdWaQ15j7fQ9-8XKgrSwgf96nT=yY+FCPWPxoPC9LGqvbQ@mail.gmail.com>
+Subject: Re: [PATCH 13/21] m68k: rename __iounmap and mark it static
+To: Christoph Hellwig <hch@lst.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_002103_712490_0F5902A3 
-X-CRM114-Status: GOOD (  12.43  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191018_003107_396181_C9539A0F 
+X-CRM114-Status: GOOD (  14.32  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.65 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,86 +81,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>, rnayak@codeaurora.org,
- suzuki.poulose@arm.com, catalin.marinas@arm.com,
- linux-arm-kernel <linux-arm-kernel-bounces@lists.infradead.org>,
- marc.w.gonzalez@free.fr, linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
- bjorn.andersson@linaro.org, linux-arm-msm@vger.kernel.org,
- andrew.murray@arm.com, will@kernel.org, dave.martin@arm.com,
- linux-arm-kernel@lists.infradead.org
+Cc: "linux-ia64@vger.kernel.org" <linux-ia64@vger.kernel.org>,
+ Linux-sh list <linux-sh@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Guo Ren <guoren@kernel.org>, sparclinux <sparclinux@vger.kernel.org>,
+ linux-riscv@lists.infradead.org, Vincent Chen <deanbo422@gmail.com>,
+ Linux-Arch <linux-arch@vger.kernel.org>,
+ linux-s390 <linux-s390@vger.kernel.org>,
+ "open list:QUALCOMM HEXAGON..." <linux-hexagon@vger.kernel.org>,
+ the arch/x86 maintainers <x86@kernel.org>,
+ arcml <linux-snps-arc@lists.infradead.org>, linux-xtensa@linux-xtensa.org,
+ Arnd Bergmann <arnd@arndb.de>, linux-m68k <linux-m68k@lists.linux-m68k.org>,
+ Openrisc <openrisc@lists.librecores.org>, Greentime Hu <green.hu@gmail.com>,
+ MTD Maling List <linux-mtd@lists.infradead.org>, Guan Xuetao <gxt@pku.edu.cn>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Michal Simek <monstr@monstr.eu>, Parisc List <linux-parisc@vger.kernel.org>,
+ linux-mips@vger.kernel.org, alpha <linux-alpha@vger.kernel.org>,
+ nios2-dev@lists.rocketboards.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-10-17 21:00, Stephen Boyd wrote:
-> Quoting Sai Prakash Ranjan (2019-10-11 06:40:13)
->> On 2019-10-11 19:04, Marc Zyngier wrote:
->> > On Fri, 11 Oct 2019 18:47:39 +0530
->> > Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org> wrote:
->> >
->> >> Hi Mark,
->> >>
->> >> Thanks a lot for the detailed explanations, I did have a look at 
->> all
->> >> the variations before posting this.
->> >>
->> >> On 2019-10-11 16:20, Mark Rutland wrote:
->> >> > Hi,
->> >> >
->> >> > On Fri, Oct 11, 2019 at 11:19:00AM +0530, Sai Prakash Ranjan 
->> wrote:
->> >> >> On latest QCOM SoCs like SM8150 and SC7180 with big.LITTLE 
->> arch, below
->> >> >> warnings are observed during bootup of big cpu cores.
->> >> >
->> >> > For reference, which CPUs are in those SoCs?
->> >> >
->> >>
->> >> SM8150 is based on Cortex-A55(little cores) and Cortex-A76(big 
->> cores).
->> >> I'm afraid I cannot give details about SC7180 yet.
->> >>
->> >> >> SM8150:
->> >> >> >> [    0.271177] CPU features: SANITY CHECK: Unexpected 
->> variation in
->> >> >> SYS_ID_AA64PFR0_EL1. Boot CPU: 0x00000011112222, CPU4: >> 
->> 0x00000011111112
->> >> >
->> >> > The differing fields are EL3, EL2, and EL1: the boot CPU 
->> supports
->> >> > AArch64 and AArch32 at those exception levels, while the 
->> secondary only
->> >> > supports AArch64.
->> >> >
->> >> > Do we handle this variation in KVM?
->> >>
->> >> We do not support KVM.
->> >
->> > Mainline does. You don't get to pick and choose what is supported 
->> or
->> > not.
->> >
->>
->> Ok thats good.
->>
+Hi Christoph,
+
+On Thu, Oct 17, 2019 at 7:53 PM Christoph Hellwig <hch@lst.de> wrote:
+> m68k uses __iounmap as the name for an internal helper that is only
+> used for some CPU types.  Mark it static and give it a better name.
 >
-> I want KVM on sc7180. How do I get it? Is something going to not 
-> work?
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
 
-If this SoC is anythinig like SM8150, 32bit guests will be hit and 
-miss,
-depending on the CPU your guest runs on, or is migrated to. We need to
-either drop capabilities from the 32bit-capable CPU, or prevent the
-non-32bit capable CPU from booting if a 32bit guest has been started.
+Thanks for your patch!
 
-You just have to hope that the kernel is entered at EL2, and that QC's
-"value add" has been moved somewhere else...
+> --- a/arch/m68k/mm/kmap.c
+> +++ b/arch/m68k/mm/kmap.c
+> @@ -52,6 +52,7 @@ static inline void free_io_area(void *addr)
+>
+>  #define IO_SIZE                (256*1024)
+>
+> +static void __free_io_area(void *addr, unsigned long size);
+>  static struct vm_struct *iolist;
+>
+>  static struct vm_struct *get_io_area(unsigned long size)
+> @@ -90,7 +91,7 @@ static inline void free_io_area(void *addr)
+>                 if (tmp->addr == addr) {
+>                         *p = tmp->next;
+>                         /* remove gap added in get_io_area() */
+> -                       __iounmap(tmp->addr, tmp->size - IO_SIZE);
+> +                       __free_io_area(tmp->addr, tmp->size - IO_SIZE);
+>                         kfree(tmp);
+>                         return;
+>                 }
+> @@ -249,12 +250,13 @@ void iounmap(void __iomem *addr)
+>  }
+>  EXPORT_SYMBOL(iounmap);
+>
+> +#ifndef CPU_M68040_OR_M68060_ONLY
 
-         M.
+Can you please move this block up, instead of adding more #ifdef cluttery?
+That would also remove the need for a forward declaration.
+
+>  /*
+> - * __iounmap unmaps nearly everything, so be careful
+> + * __free_io_area unmaps nearly everything, so be careful
+>   * Currently it doesn't free pointer/page tables anymore but this
+>   * wasn't used anyway and might be added later.
+>   */
+> -void __iounmap(void *addr, unsigned long size)
+> +static void __free_io_area(void *addr, unsigned long size)
+>  {
+>         unsigned long virtaddr = (unsigned long)addr;
+>         pgd_t *pgd_dir;
+> @@ -297,6 +299,7 @@ void __iounmap(void *addr, unsigned long size)
+>
+>         flush_tlb_all();
+>  }
+> +#endif /* CPU_M68040_OR_M68060_ONLY */
+>
+>  /*
+>   * Set new cache mode for some kernel address space.
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
 -- 
-Jazz is not dead. It just smells funny...
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
