@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E95DDC38B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 13:02:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9299DC394
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 13:02:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=oqlhq3DAxtY1wiwts9bv2be8Dbz8PYdb05r0XzyrZRs=; b=bOR8If58rBRLgJEnhZCLLY1ns3
-	4UbNNY1FzEiCO4b1RVQbjS0MpvsOyp0A76bA0OOWYv7x/0MyfV6kPJC1MTk/2QjPO29L/9bp9/73g
-	y5XnGCTCg7ham00Dxvd1FhvVxLXaBQAI9/8yGSb3hFJBZOHPmLIwm6hYHMftUilueH/rLTlM6lYcy
-	rLhghlCllbtQAGUYuDkyB8W6obzzuKD8FgfktgTItyALelz4bllWmEuOnk3rjPHFvyLuJu3wZKmEx
-	MWAbGmXOJrqNZrcpdgY1rXojyZRcK5qUSjDdXslW95T8kacrdlVwmgXVLdhPYpmVOrIsHU2lF2Zwf
-	PHHIdNJA==;
+	bh=LC9ZLJ12mCWJgGLbgxuqLXLs83msYXULkx+uBxej9YY=; b=e+knXAAhoPj2JDR9MdnukO3gKV
+	Adw0Q8qjgdq06NyXCMxQjtjcqx3aWGJ6wOHHSi8JSb8SspAV99kjFT/0jlY+rXT1TOqpUk35AOMXk
+	uvwqn/60G1LGbLWPCkCmLCFGHo5RVlZkgY0b+NT0Uzuhb0bK7pfE3DQwGZbnB/xNSUUv2mKgauNCn
+	vNo8GJ0ggW4NuwBJve3GoNIKc2cTP9Tt+iE72pHC1LQrziWJiU6ca4bXskN9XUF5Xc8B+2goDBaBG
+	3lkWOMtSvnr7/l3NNu5uc1QT2Ac4CNsYUcqOUI6BxyY9anz4pTTMCIRmyr/fhWdAclX4YtYMeFGIk
+	TGIso/WA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLQ1g-0002Ux-12; Fri, 18 Oct 2019 11:02:32 +0000
-Received: from andre.telenet-ops.be ([2a02:1800:120:4::f00:15])
+	id 1iLQ1v-0002l3-A5; Fri, 18 Oct 2019 11:02:47 +0000
+Received: from laurent.telenet-ops.be ([2a02:1800:110:4::f00:19])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLQ0R-0001Qq-KW
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 11:01:17 +0000
-Received: from ramsan ([84.194.98.4]) by andre.telenet-ops.be with bizsmtp
- id Ez142100r05gfCL01z14st; Fri, 18 Oct 2019 13:01:09 +0200
+ id 1iLQ0V-0001QD-Mi
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 11:01:21 +0000
+Received: from ramsan ([84.194.98.4]) by laurent.telenet-ops.be with bizsmtp
+ id Ez142100u05gfCL01z148Q; Fri, 18 Oct 2019 13:01:05 +0200
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1iLQ0G-0005q3-Oc; Fri, 18 Oct 2019 13:01:04 +0200
+ id 1iLQ0G-0005q3-NO; Fri, 18 Oct 2019 13:01:04 +0200
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1iLPEt-0006rw-Qt; Fri, 18 Oct 2019 12:12:07 +0200
+ id 1iLPEt-0006ry-Rb; Fri, 18 Oct 2019 12:12:07 +0200
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: arm-soc <arm@kernel.org>,
 	arm-soc <soc@kernel.org>
-Subject: [PULL 1/5] Renesas ARM DT updates for v5.5
-Date: Fri, 18 Oct 2019 12:11:32 +0200
-Message-Id: <20191018101136.26350-2-geert+renesas@glider.be>
+Subject: [PULL 2/5] Renesas ARM64 defconfig updates for v5.5
+Date: Fri, 18 Oct 2019 12:11:33 +0200
+Message-Id: <20191018101136.26350-3-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191018101136.26350-1-geert+renesas@glider.be>
 References: <20191018101136.26350-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_040115_847028_0C98A4F6 
-X-CRM114-Status: UNSURE (   7.94  )
+X-CRM114-CacheID: sfid-20191018_040119_930791_266D0395 
+X-CRM114-Status: UNSURE (   8.54  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -51,7 +51,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:1800:120:4:0:0:f00:15 listed in]
+ low trust [2a02:1800:110:4:0:0:f00:19 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -83,29 +83,23 @@ The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel.git tags/renesas-arm-dt-for-v5.5-tag1
+  git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel.git tags/renesas-arm64-defconfig-for-v5.5-tag1
 
-for you to fetch changes up to 84cd9d3442b755b804618b265d39ab99df829ab2:
+for you to fetch changes up to d8b178741e5ba571fbcc187c9e3cf9c0eaebf328:
 
-  ARM: dts: emev2: Add whitespace for GPIO nodes (2019-10-01 09:51:42 +0200)
-
-----------------------------------------------------------------
-Renesas ARM DT updates for v5.5
-
-  - Whitespace cleanups.
+  arm64: defconfig: Enable R8A774B1 SoC (2019-10-01 09:51:58 +0200)
 
 ----------------------------------------------------------------
-Geert Uytterhoeven (2):
-      ARM: dts: gose: Replace spaces by TABs
-      ARM: dts: lager: Replace spaces by TABs
+Renesas ARM64 defconfig updates for v5.5
 
-Magnus Damm (1):
-      ARM: dts: emev2: Add whitespace for GPIO nodes
+  - Enable support for the new RZ/G2N (r8a774b1) SoC.
 
- arch/arm/boot/dts/emev2.dtsi        |   4 ++
- arch/arm/boot/dts/r8a7790-lager.dts |   8 +--
- arch/arm/boot/dts/r8a7793-gose.dts  | 110 ++++++++++++++++++------------------
- 3 files changed, 63 insertions(+), 59 deletions(-)
+----------------------------------------------------------------
+Biju Das (1):
+      arm64: defconfig: Enable R8A774B1 SoC
+
+ arch/arm64/configs/defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
