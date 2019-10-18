@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0553DD00A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 22:26:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F7BDDD006
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 22:26:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=E3Bwv5JyeZmSp0+9uHcMZwUKU4xWvLmCLQ1uFSigVkE=; b=hY3rNyG2MN+5gN
-	Yn2Dq7Ru+shCfCxNXneRoFlHUPU/Kmdb8vzQQ0RohE1CWDxCGRm83fGqy2TOUq3OjhCyrdx5B4fbg
-	PpdaTSSFvAi7xeyv4oalPDmutILEVMKtZeTKeObwPEv02BCZ9zlmBjSUIzfuNk+EpYk26rJmZ6yQ3
-	Qvscbt6m9u625A9ofAqVPnT0m9mueLx3SAUsd4bNEOqkNM4ou05zNU+xkG7H6rEAGO+X+Exqw7ytU
-	UXC3HiGWMXAiFQAy+1N3N674e5eE15Q3CwqkMc3yoxKlWY4mPgI6qacT4jnLNT8Il8KZKmUw6UgBi
-	qMWL38p3GjGEaFEpZTpw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BY33fMu6u5J3WBF4ySOYz6SxTZyUO7asM1ekF3+HGA4=; b=eS5X+7nXGIglpO
+	OcxVLjMmMItMfUQo/tWppmCeHdHDyfoiVzcqDD0GS7QYKeuIEr6azK6N7AEpSzfDMgQPKnukaT4w2
+	QP9geCm1VFpuJDucLjJ123oSMbjkos/uP9mQ9asgKNmbM2//iCM6XMpCbwtTFY7R7NXbS5pLXE1Uo
+	nY8Bb5upoI4Xb4lGKK7U5G1wMfdHYIq2Bwc4aEqHK0ZG8rAWsIp6DKOXR+S0sDH9XhzOI5S1DE0AU
+	R4Dbut6iZXOFy1uiZ0VQGeGmU+qSDHg0XWUkxKw2/8s9b1Sl7ZLww2pQuqqU4X0ggW7w/dzuLjYiO
+	fIyJxYOlwurYUzc9/Ekw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLYpE-0005sE-SW; Fri, 18 Oct 2019 20:26:16 +0000
-Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::2])
+	id 1iLYox-0005g9-R2; Fri, 18 Oct 2019 20:25:59 +0000
+Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLYoh-0005dV-V3
+ id 1iLYoh-0005dU-Up
  for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 20:25:46 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1571430338;
  s=strato-dkim-0002; d=goldelico.com;
- h=Message-Id:Date:Subject:Cc:To:From:X-RZG-CLASS-ID:X-RZG-AUTH:From:
- Subject:Sender;
- bh=i+n9s4XwY9DLFEIv0Q1xv72dgRxe/+bXdwtMcjVj36s=;
- b=NGDmNK+p0UwR3qtqh6jvE15U8kHfnuBWhUAghCC995OIWU8UQMwUsjZcYC3QsNQDrb
- KwXuO6tZPKyXvDhDebzYphsDDe9+VO9kmBTdHc7vbjDjvqnkkfgGusn8JERHjI7wtcmi
- e5565FzrFgcU1RaOFMgq8ZzR0ZF4auwi/rNwp4qMdvj20jcewrveefj+1cC8JJdxXYnJ
- foUkCvgYknPtLI7NkbDPYsQ14lFNoZNymTQx+bNZFm54hTTvaMhV+rAK7NBeLUv7Huug
- DryU8AgmMO19q8B6sDGCxdOwQzsDggVu8I+QcKQ9onnRsiPeHi6BdaFYGTyWoPiNhbN3
- aQlw==
+ h=References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
+ X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
+ bh=zcdfWj+2+6EC1O3T7iHzLiOQtZr9s+nZaO5ZI9hQu2A=;
+ b=iNIpccyVT5zxh3njflFN2eklAkslFvdUo5vi3dI2mJChFL7dWogy9rTrypaKJUlvX1
+ d6N14+tyRSljee90UJQFZaKB1lyLyl5rUd+Kt4zsW562BrrEjtzDaig86krprP0Da60m
+ RJ9i8PNxIJZgxURORuJGy2KZW0P6b2y1uyCQb/uBE2hz44I4LJpe6f1Cxgv+jFvq11w5
+ Pg8OuE1JNr7oXRfflJGaL9h36mTtR4faCSgLU7XJduxCB/2UGy6ouct+zz2v8yVL1qIr
+ XAlW0T9nTTAKqxktuats8N561Z1AMTY+P5qezTyY0fCLNDPIodQASF/bMnChwCvrY0Gr
+ 9e/g==
 X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMhflhwDubTJ9o1mfYzBGHXH6F3CFF60="
 X-RZG-CLASS-ID: mo00
 Received: from iMac.fritz.box by smtp.strato.de (RZmta 44.28.1 DYNA|AUTH)
- with ESMTPSA id R0b2a8v9IKPVDUm
+ with ESMTPSA id R0b2a8v9IKPXDUn
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
  521 ECDH bits, eq. 15360 bits RSA))
  (Client did not present a certificate);
- Fri, 18 Oct 2019 22:25:31 +0200 (CEST)
+ Fri, 18 Oct 2019 22:25:33 +0200 (CEST)
 From: "H. Nikolaus Schaller" <hns@goldelico.com>
 To: =?UTF-8?q?Beno=C3=AEt=20Cousson?= <bcousson@baylibre.com>,
  Tony Lindgren <tony@atomide.com>, Rob Herring <robh+dt@kernel.org>,
@@ -58,23 +58,23 @@ To: =?UTF-8?q?Beno=C3=AEt=20Cousson?= <bcousson@baylibre.com>,
  Thomas Gleixner <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  John Stultz <john.stultz@linaro.org>, Bjorn Helgaas <bhelgaas@google.com>
-Subject: [PATCH 0/9] OpenPandora: make wl1251 connected to mmc3 sdio port of
- OpenPandora work again
-Date: Fri, 18 Oct 2019 22:25:21 +0200
-Message-Id: <cover.1571430329.git.hns@goldelico.com>
+Subject: [PATCH 1/9] Documentation: dt: wireless: update wl1251 for sdio
+Date: Fri, 18 Oct 2019 22:25:22 +0200
+Message-Id: <55f79e39c13586ebd579b37e8b0055003611a2b2.1571430329.git.hns@goldelico.com>
 X-Mailer: git-send-email 2.19.1
+In-Reply-To: <cover.1571430329.git.hns@goldelico.com>
+References: <cover.1571430329.git.hns@goldelico.com>
 MIME-Version: 1.0
-DT: Pandora: fixes and extensions
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_132544_589087_0285B99D 
-X-CRM114-Status: GOOD (  11.83  )
+X-CRM114-CacheID: sfid-20191018_132544_587825_40D55A3A 
+X-CRM114-Status: GOOD (  11.57  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5302:0:0:2 listed in]
+ low trust [2a01:238:20a:202:5302:0:0:3 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
@@ -106,52 +106,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The standard method for sdio devices connected to
+an sdio interface is to define them as a child node
+like we can see with wlcore.
 
-Here we have a set of scattered patches to make the OpenPandora WiFi work again.
+Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
+---
+ .../bindings/net/wireless/ti,wl1251.txt       | 26 +++++++++++++++++++
+ 1 file changed, 26 insertions(+)
 
-v4.7 did break the pdata-quirks which made the mmc3 interface
-fail completely, because some code now assumes device tree
-based instantiation.
-
-Fixes: 81eef6ca9201 ("mmc: omap_hsmmc: Use dma_request_chan() for requesting DMA channel")
-
-v4.11 did break the sdio qirks for wl1251 which made the driver no longer
-load, although the device was found as an sdio client.
-
-Fixes: 884f38607897 ("mmc: core: move some sdio IDs out of quirks file")
-
-To solve these issues:
-* we convert mmc3 and wl1251 initialization from pdata-quirks
-  to device tree
-* we make the wl1251 driver read properties from device tree
-* we fix the mmc core vendor ids and quirks
-* we fix the wl1251 (and wl1271) driver to use only vendor ids
-  from header file instead of (potentially conflicting) local
-  definitions
-
-
-H. Nikolaus Schaller (9):
-  Documentation: dt: wireless: update wl1251 for sdio
-  net: wireless: ti: wl1251 add device tree support
-  DTS: ARM: pandora-common: define wl1251 as child node of mmc3
-  mmc: host: omap_hsmmc: add code for special init of wl1251 to get rid
-    of pandora_wl1251_init_card
-  omap: pdata-quirks: remove openpandora quirks for mmc3 and wl1251
-  mmc: sdio: fix wl1251 vendor id
-  mmc: core: fix wl1251 sdio quirks
-  net: wireless: ti: wl1251 use new SDIO_VENDOR_ID_TI_WL1251 definition
-  net: wireless: ti: remove local VENDOR_ID and DEVICE_ID definitions
-
- .../bindings/net/wireless/ti,wl1251.txt       | 26 +++++++++++++
- arch/arm/boot/dts/omap3-pandora-common.dtsi   | 37 ++++++++++++++++++-
- arch/arm/mach-omap2/pdata-quirks.c            | 13 +++----
- drivers/mmc/core/quirks.h                     |  7 ++++
- drivers/mmc/host/omap_hsmmc.c                 | 21 +++++++++++
- drivers/net/wireless/ti/wl1251/sdio.c         | 23 +++++++-----
- drivers/net/wireless/ti/wlcore/sdio.c         |  8 ----
- include/linux/mmc/sdio_ids.h                  |  2 +
- 8 files changed, 111 insertions(+), 26 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/net/wireless/ti,wl1251.txt b/Documentation/devicetree/bindings/net/wireless/ti,wl1251.txt
+index bb2fcde6f7ff..88612ff29f2d 100644
+--- a/Documentation/devicetree/bindings/net/wireless/ti,wl1251.txt
++++ b/Documentation/devicetree/bindings/net/wireless/ti,wl1251.txt
+@@ -35,3 +35,29 @@ Examples:
+ 		ti,power-gpio = <&gpio3 23 GPIO_ACTIVE_HIGH>; /* 87 */
+ 	};
+ };
++
++&mmc3 {
++	vmmc-supply = <&wlan_en>;
++
++	bus-width = <4>;
++	non-removable;
++	ti,non-removable;
++	cap-power-off-card;
++
++	pinctrl-names = "default";
++	pinctrl-0 = <&mmc3_pins>;
++
++	#address-cells = <1>;
++	#size-cells = <0>;
++
++	wlan: wl1251@1 {
++		compatible = "ti,wl1251";
++
++		reg = <1>;
++
++		interrupt-parent = <&gpio1>;
++		interrupts = <21 IRQ_TYPE_LEVEL_HIGH>;	/* GPIO_21 */
++
++		ti,wl1251-has-eeprom;
++	};
++};
 -- 
 2.19.1
 
