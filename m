@@ -2,78 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A345EDCC76
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 19:18:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99EF5DCC77
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 19:19:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=veK634EwRGJDPD/sWGzKgwJcF725fxARLuyRjRpeMTo=; b=srB
-	yQJqiaXoi8pfuTT9jS+egw/+jMdiB2IqUb/DuOBJI1omemf35UjOIAtcvmO0Lsc1fL3AotToopce3
-	aHyp2LzQ7903pHCIaAv4EBPAM1NX7/XqpB24TJwgoCRwo2qLiG9O/x7tLduLED4rpJ0fTFyBLD69l
-	InP5Vw/EhFeey/ux4zRY8dgttN5wBdE2WrAiSJh5U0lVPqSm0mFyEbrCh5DVE5Lczqt3k5dUlJXkT
-	BVSGImOi4w0UfCaXDi9kVI+yYndZt9oyHQK4VZ5G9ug4l0E5EflWBFmNHzC4+o/tWgTODKoyiSN+8
-	VSU0P4nMBqx8dv39TFRyUEAxQjFoYRw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AZCTwV5VOwaPUk96pJ8P6tra2k4JXQXr1hqR7y3yJLs=; b=eU2kOQzlEkTJus
+	FbqzTgxV6kg/YbWXj9YMAOU6tsZYwXYhr+a2xiy2iNBbStBg4zGoB9O9A4wkoZUPHbGMkz2KDDatB
+	CL8hikGa1FdJtMC+LAxvd73ZvC80aNtgyMqmwliaZ1b6sj0WPBQUsA2JirCVy12V6TM54zZ7dp7fK
+	MqAA2D6ZBvpe7WhPidO5FxSxaSkJI0nbERiyWFEbwpeuGrCey0z80/OvlcvrMU/mYu59ZOhyqXKkU
+	xchwhLpLjNCZA2LHO/sXKsOVDMsl94EaDIQAlHD6ICbN9KsDGHjA5jl27LWlw5M8iUd6Qlu7xPhG5
+	Vj8Gb3ITOdEF+PxaNUDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLVtu-0007Uj-6d; Fri, 18 Oct 2019 17:18:54 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iLVu9-0007ea-3y; Fri, 18 Oct 2019 17:19:09 +0000
+Received: from mail-ua1-x941.google.com ([2607:f8b0:4864:20::941])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLVtl-0007U3-7i
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 17:18:46 +0000
-Received: by mail-wr1-x441.google.com with SMTP id q13so2095539wrs.12
+ id 1iLVtt-0007ZL-Bc
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 17:18:55 +0000
+Received: by mail-ua1-x941.google.com with SMTP id n2so1934551ual.11
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 10:18:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=aihx5FHQPpH1Yb8AcbtFXJvvU6CvBhqtm6uMOVhsCJc=;
- b=FJmB8kV3D28NhiPfXSwLydr1yXLm7MmBIklXpTtJL+zFQns6+LR31CmNPeVQx6RCOm
- JTtrKN4i3IEPS08F8r/WEZkhjd9RTFe9TkuK+SWVrv46jET0mzCHAOS056Rg14Hj+i93
- SCo9nAh2f/zqn4g5poVCV2F/DNMPQV9nAUPADNBqhfhF6xL4v4/2EaAbuQRYRxcmzomx
- EAF67q4QViT9haVjxMtYO4x03EuAi/f/hOq32jjTB9xLIJnNoZQsTnvrZEY3DfHVNfmC
- aDg4CjLrKqVIZBGvON97Uc29dOKbgNJzOUB8E1IDr0+RgUzGgvHSujbt6K/V+9qk/5NH
- 9uuw==
+ Fri, 18 Oct 2019 10:18:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=0HIzf5D0wGbvpmxHvIyOvn+49UWE2lHPyTZCg3y02sw=;
+ b=vsQmN/ApjkODa5g1BT612x/4GGL20gZVZE8EGaFhwsXbdCcFD/fycGlyho4gxOJTFH
+ UNt9ub/I4P/h809X5D4yAx7rCwQfs1BEVFWXiVYtxsoUMxjlzIEJPcfVyB8tF344B2aC
+ FjFd1SH8THaH/Pw81yxXP9FQn01T7I+/YsrNyL9mssL2T1CuwuFiQluKl0/fFUrg4HLq
+ GlWt1dVIFhyf7eCqu7QIp5RVLWS2ZUOsoD7wzE3W1jtwUAY4NHDTbaS0+XPgu0S1K6/l
+ VhJ5hk4oAgFzg9fAGqgifT4d4FsvndIJvJc42Q3EHtKExcLFN4z8Qliw6bt6wkdvd8lR
+ FnJw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=aihx5FHQPpH1Yb8AcbtFXJvvU6CvBhqtm6uMOVhsCJc=;
- b=aTHftyuveUgGRZMOyznGcWLdhlkgWChCNb3XNnW0298DoKu2JJhg9SBmPvCmwhL/ch
- FzVweCfjcErjtAzzWEcs4hHutJXB1ww3e1M43m10G8jlA3GmNuUuO9lOVEpvyo8utHJ8
- +/1c5Krigl4EKPxuYJuinhpu7e1pauL288kUcQWDUT8AZrA7nfOx1JadS2rYsCp5vocW
- NITMStb8tPNiAuox5HQ+/ILBEhK8IJGn7ltAUVttjsRsn39f9NDNiBmPOOtxl9l8Zz8/
- 6BQzrMLmJ+u5GfyCdCJOBBdHnKKYsfBkyG7/xaLXpwsWBI4BhztN7V1k/RDWT6VCr8Xl
- 0xFw==
-X-Gm-Message-State: APjAAAXAB82sH5Tfa16dw2VT3L4AYFHF7GahH4nkhJt4f12sxZE9x1O9
- cZeBSzjdwb9FvNA5345gbv5dvszb
-X-Google-Smtp-Source: APXvYqw8kgwVhj6Gqz7AFfxKlcKHCJkMbDSJ7WC1jqBt4EYgqlfj/r/v5j1+M+RvM4h6+tuvkuq+CA==
-X-Received: by 2002:adf:fc49:: with SMTP id e9mr8353158wrs.172.1571419123276; 
- Fri, 18 Oct 2019 10:18:43 -0700 (PDT)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id a13sm6539803wrf.73.2019.10.18.10.18.40
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 18 Oct 2019 10:18:42 -0700 (PDT)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] MAINTAINERS: Remove Gregory and Brian for ARCH_BRCMSTB
-Date: Fri, 18 Oct 2019 10:18:35 -0700
-Message-Id: <20191018171835.12666-1-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=0HIzf5D0wGbvpmxHvIyOvn+49UWE2lHPyTZCg3y02sw=;
+ b=AkUxdJ/Af8GWsE8eYwbfNDxabm3fDqtCuT5jnyX7YJgTMjZObu7bOvsGb1EcrdIMyt
+ tlWkInAKC8tIWy+1tWEZSB/dsHaD83O1XB3/RnBrYDnZ4ElUKjxNMjCXkmoLoLl/74eu
+ fchb2AmI/aGyoQaMB6BHqnRb5BDRcXMYaTWBp0YMaGil/3QahvaBfIhUdetILAnAdheZ
+ Sz3ERKmKtHJ7DsjeZRpO4UIHxfn/JrWI4yh7yIIMQmbUfYW7HuGz8gP6nl8sqeqoPmwN
+ Nq1YYhK/z8okO1SV4UeF4IsBjXiBmXVeH4NhqsnYWFTmTb1rZ4XMMjFs47Vk093BDSmK
+ wwwQ==
+X-Gm-Message-State: APjAAAUeyRUVcKz8qZXuF/vBzn+EbEQVcwL2yxaw+HEQ+OR08mSmk6JJ
+ jd//ZPIqUWXWc64a7BXBzEQOFe28alIun08ualA9tA==
+X-Google-Smtp-Source: APXvYqz95u8SOpZ8CKpbA/DJiP9eST+uXrcgaIItAAur7JD+mN8MzKVC12sI0+N58LUhcO4C5kYwuTsqYm/TbJd/HRQ=
+X-Received: by 2002:ab0:6387:: with SMTP id y7mr6108565uao.110.1571419131321; 
+ Fri, 18 Oct 2019 10:18:51 -0700 (PDT)
+MIME-Version: 1.0
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20191018161033.261971-19-samitolvanen@google.com>
+ <CAG48ez2Z8=0__eoQ+Ekp=EApawZXR4ec_xd2TVPQExLoyMwtRQ@mail.gmail.com>
+In-Reply-To: <CAG48ez2Z8=0__eoQ+Ekp=EApawZXR4ec_xd2TVPQExLoyMwtRQ@mail.gmail.com>
+From: Sami Tolvanen <samitolvanen@google.com>
+Date: Fri, 18 Oct 2019 10:18:40 -0700
+Message-ID: <CABCJKudM-Jupwj9eMMjg3rb1=6rTDBEcWi-KkzPSeSGd8tSxGg@mail.gmail.com>
+Subject: Re: [PATCH 18/18] arm64: implement Shadow Call Stack
+To: Jann Horn <jannh@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_101845_300203_96E5F9EF 
-X-CRM114-Status: UNSURE (   8.74  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191018_101853_443107_F42AAA4A 
+X-CRM114-Status: GOOD (  12.81  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:941 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -83,6 +85,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,50 +98,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: briannorris@chromium.org, computersforpeace@gmail.com,
- bcm-kernel-feedback-list@broadcom.com, Florian Fainelli <f.fainelli@gmail.com>,
- gregory.0xf0@gmail.com
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Kernel Hardening <kernel-hardening@lists.openwall.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ kernel list <linux-kernel@vger.kernel.org>,
+ Steven Rostedt <rostedt@goodmis.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The last time Gregory and Brian did a review was sometime around 2015,
-since then, they have not been active for ARCH_BRCMSTB changes.
-Following the position of other maintainers and Harald Welte's position
-here:
+On Fri, Oct 18, 2019 at 10:13 AM Jann Horn <jannh@google.com> wrote:
+> These things should probably be __always_inline or something like
+> that? If the compiler decides not to inline them (e.g. when called
+> from scs_thread_switch()), stuff will blow up, right?
 
-[1] http://laforge.gnumonks.org/blog/20180307-mchardy-gpl/
+Correct. I'll change these to __always_inline in v2. I think there
+might be other places in the kernel where not inlining a static inline
+function would break things, but there's no need to add more.
 
-remove both of them.
+> This is different from the intended protection level according to
+> <https://clang.llvm.org/docs/ShadowCallStack.html#security>, which
+> talks about "a runtime that avoids exposing the address of the shadow
+> call stack to attackers that can read arbitrary memory". Of course,
+> that's extremely hard to implement in the context of the kernel, where
+> you can see all the memory management data structures and all physical
+> memory.
 
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
----
-Brian, Gregory,
+Yes, the security guarantees in the kernel are different as hiding
+shadow stack pointers is more challenging.
 
-I don't expect you two to object to this, but if you would like to stay
-active, let me know, thanks! This is intended to go in v5.5
+> You might want to write something in the cover letter about what the
+> benefits of this mechanism compared to STACKPROTECTOR are in the
+> context of the kernel, including a specific description of which types
+> of attacker capabilities this is supposed to defend against.
 
- MAINTAINERS | 2 --
- 1 file changed, 2 deletions(-)
+Sure, I'll add something about that in v2. Thanks.
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 14a939a9e1e7..e3f50d8ccac0 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -3242,8 +3242,6 @@ S:	Maintained
- F:	drivers/usb/gadget/udc/bcm63xx_udc.*
- 
- BROADCOM BCM7XXX ARM ARCHITECTURE
--M:	Brian Norris <computersforpeace@gmail.com>
--M:	Gregory Fong <gregory.0xf0@gmail.com>
- M:	Florian Fainelli <f.fainelli@gmail.com>
- M:	bcm-kernel-feedback-list@broadcom.com
- L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
--- 
-2.17.1
-
+Sami
 
 _______________________________________________
 linux-arm-kernel mailing list
