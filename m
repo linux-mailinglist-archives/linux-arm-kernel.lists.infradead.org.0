@@ -2,73 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 586BFDC67C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 15:50:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66E87DC6C2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 16:02:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UbKrK92VR+AUVFLl8tnmwuXJa9O0imVjwvKPNFGQPKM=; b=k1cH6D4SqOdi13
-	2cBeMY88ZcqsEqwZbro70OrhYN+Oo2lHPBnVy6nEXnOTxmjymal7hgq+CQubO2jWM31n65csnIrCY
-	wGTxYhK0wqI2svP5+tV5lVncqJzX2Uug5kfwQJOqdV7XqSnDJXhsJuJQQXt7zJpxAKczW9Xt8l4KN
-	JuJiEJwkjI0dPN65+D9+Agy/O8RLY4XKOHWyTgIxiVRR5ZaG6h9HuQtAA4Tr68k8LsZ5uQ+VVi61V
-	IFJZCMEIhPReylxBstLjZfrbqL6DXrS6cHuhLS5TUGhF4RsgiSaFLGPLIsmc+1+P9I8BWwZnxeD78
-	u12rl23YZ6MU4frBW0zw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=sjr44AKgr2w+XkKrAIrOZIz57ytU66cnzpH+9JGhl5E=; b=KjM
+	PGcE4ZSQgqs36OGlEad2uz02G2vKssSvpcrJ8CFCOGvUd0jbHUVEJVmfzzNsF6zWDJhgImp4PxxYD
+	Ll/nO6fu2j7pvMW5JGQ3Y/TIqLXIzgrUCgjIyexxXFzSaeJp/XRF9SMm5ei46MOMxntpgeDOR7BY6
+	e02PWfVprRGbU4EFposZKJ1sNx9kZ8MnXWPxYM7jOfmIHjrlggAo3j2Oj+vLF0gLp14m5l4NLOeTJ
+	cQtGBeLCx9ImDKTT0QP2+hkBlSRe1d3Yf3Um827pvzzrwJ6rj/sZYmDyyiS+CYFTcqYlNZd5Ck/8b
+	5QOFYsEpbrmYtv3fxl0Yh5Z37NT9LaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLSeM-0003lh-SG; Fri, 18 Oct 2019 13:50:38 +0000
-Received: from honk.sigxcpu.org ([24.134.29.49])
+	id 1iLSpp-0007O5-9L; Fri, 18 Oct 2019 14:02:29 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLSeD-0003jv-Ip
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 13:50:31 +0000
-Received: from localhost (localhost [127.0.0.1])
- by honk.sigxcpu.org (Postfix) with ESMTP id 27700FB04;
- Fri, 18 Oct 2019 15:50:24 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
-Received: from honk.sigxcpu.org ([127.0.0.1])
- by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id TA8MpUsK2edw; Fri, 18 Oct 2019 15:50:23 +0200 (CEST)
-Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
- id B98DB49A41; Fri, 18 Oct 2019 15:50:22 +0200 (CEST)
-Date: Fri, 18 Oct 2019 15:50:22 +0200
-From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
-To: "To : Lucas Stach" <l.stach@pengutronix.de>,
- Russell King <linux+etnaviv@armlinux.org.uk>,
- Christian Gmeiner <christian.gmeiner@gmail.com>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>,
- NXP Linux Team <linux-imx@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
- Anson Huang <Anson.Huang@nxp.com>, Carlo Caione <ccaione@baylibre.com>,
- Andrey Smirnov <andrew.smirnov@gmail.com>,
- "Angus Ainslie (Purism)" <angus@akkea.ca>,
- etnaviv@lists.freedesktop.org, dri-devel@lists.freedesktop.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH v2 2/2] dt-bindings: etnaviv: Add #cooling-cells
-Message-ID: <20191018135022.GA6728@bogon.m.sigxcpu.org>
-References: <cover.1568255903.git.agx@sigxcpu.org>
- <6e9d761598b2361532146f43161fd05f3eee6545.1568255903.git.agx@sigxcpu.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <6e9d761598b2361532146f43161fd05f3eee6545.1568255903.git.agx@sigxcpu.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1iLSph-0007NB-0T
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 14:02:22 +0000
+Received: by mail-wm1-x344.google.com with SMTP id i16so6322730wmd.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 18 Oct 2019 07:02:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id;
+ bh=5CBhhjtiBJtUXHuswumRAbaakqLfJts+720cWrlZy9c=;
+ b=1NWmH2z09GHgfCyPShOXPz55FcFZFXlrnCPaYhAZih6ufwpGt+uGcHES/YgS9G7AyD
+ TjlWzGp6QSZQ/Plj7Fg6fa1O+o4He8g8mCl4ro2Qf8zYu74l0DlJDuuExcUb634mNFCw
+ DflImEbV562DXqYFLZw4V/We6w8h2+tnJ7E0UlfJWYIvCX24zIBTPt9IA5Kb5Qa7yE/S
+ JivwaOkaLNSMziiVx06+bCqUhMoX5fjguDJS3XovMLj7wvtFrbVH90QDiqKOEPMPJizh
+ yqVC9Afj54xJ/asNWENDEnQNCT1SQnzq0VtWHktFadEnMNCwArFK4iGSXQoR5mBhWwnK
+ K1Hg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=5CBhhjtiBJtUXHuswumRAbaakqLfJts+720cWrlZy9c=;
+ b=FP1jFBsAM7skvje+EEqDNGg+raOfMt8WBl3FOJn3wts2IswdyxphCbAq13nXLuoLWi
+ SHXz0Dm0A+AZv6j+hjlevS4TmI8RtNQKKGnLLCrV6pkj/KYFz5oXa7J5v9TJqQ7/Z7rL
+ EC42xZduRhX97CUYRm39lUAMqgtX5Q2pZGwksbU3+ELBrb16r2lRkU05psmRo1RS9A+W
+ HP1NRHC5gC+7uWsYjYyGbmFEh1aGBfZqd6exJNpLubqu4/xhdpq454RQVd7hHEnyNFLN
+ mZ5El5Ch5eTRwJqDEX6PwpxXHeEsBk1j7J4LRVYGyDTu0/Fyn2vh9Q6c1QZxioYZTyB/
+ mJMQ==
+X-Gm-Message-State: APjAAAUrSnLw+rrv+aF8n4wuI5eUwo3DCSO7xFM0URKQfUYEZT3H1/zn
+ OjD67JnWmDH78vDLnO/CvVAqww==
+X-Google-Smtp-Source: APXvYqyr9cCO6BLTmqktOcB+bPXp/GVMRJ2LggJBrT8KsUPIinP6v+fUvqFypckvyoAm85yxqbHaoA==
+X-Received: by 2002:a7b:cb54:: with SMTP id v20mr7544842wmj.91.1571407338885; 
+ Fri, 18 Oct 2019 07:02:18 -0700 (PDT)
+Received: from localhost.localdomain ([163.172.76.58])
+ by smtp.gmail.com with ESMTPSA id w7sm4499671wmd.22.2019.10.18.07.02.18
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 18 Oct 2019 07:02:18 -0700 (PDT)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: khilman@baylibre.com
+Subject: [PATCH] arm64: dts: meson-g12b-khadas-vim3: add missing frddr_a
+ status property
+Date: Fri, 18 Oct 2019 14:02:16 +0000
+Message-Id: <20191018140216.4257-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_065029_782958_7B08D6AC 
-X-CRM114-Status: GOOD (  15.70  )
+X-CRM114-CacheID: sfid-20191018_070221_080690_A8B9FD99 
+X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [24.134.29.49 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,55 +90,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: linux-amlogic@lists.infradead.org, christianshewitt@gmail.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Neil Armstrong <narmstrong@baylibre.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-On Wed, Sep 11, 2019 at 07:40:36PM -0700, Guido G=FCnther wrote:
-> Add #cooling-cells for when the gpu acts as a cooling device.
-> =
+In the process of moving the VIM3 audio nodes to a G12B specific dtsi
+for enabling the SM1 based VIM3L, the frddr_a status = "okay" property
+got dropped.
+This re-enables the frddr_a node to fix audio support.
 
-> Signed-off-by: Guido G=FCnther <agx@sigxcpu.org>
-> ---
->  .../devicetree/bindings/display/etnaviv/etnaviv-drm.txt          | 1 +
->  1 file changed, 1 insertion(+)
-> =
+Fixes: 4f26cc1c96c9 ("arm64: dts: khadas-vim3: move common nodes into meson-khadas-vim3.dtsi")
+Reported-by: Christian Hewitt <christianshewitt@gmail.com>
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+---
+ arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-> diff --git a/Documentation/devicetree/bindings/display/etnaviv/etnaviv-dr=
-m.txt b/Documentation/devicetree/bindings/display/etnaviv/etnaviv-drm.txt
-> index 8def11b16a24..640592e8ab2e 100644
-> --- a/Documentation/devicetree/bindings/display/etnaviv/etnaviv-drm.txt
-> +++ b/Documentation/devicetree/bindings/display/etnaviv/etnaviv-drm.txt
-> @@ -21,6 +21,7 @@ Required properties:
->  Optional properties:
->  - power-domains: a power domain consumer specifier according to
->    Documentation/devicetree/bindings/power/power_domain.txt
-> +- #cooling-cells: : If used as a cooling device, must be <2>
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
+index 554863429aa6..e2094575f528 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
+@@ -152,6 +152,10 @@
+ 	clock-latency = <50000>;
+ };
+ 
++&frddr_a {
++	status = "okay";
++};
++
+ &frddr_b {
+ 	status = "okay";
+ };
+-- 
+2.17.1
 
-The other patch of the series made it into linux-next already but this
-documentation fixup didn't. Anything i can do to get this applied as
-well so documentation stays in sync?
-Cheers,
- -- Guido
-
->  =
-
->  example:
->  =
-
-> -- =
-
-> 2.23.0.rc1
-> =
-
-> =
-
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
