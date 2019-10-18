@@ -2,40 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA6B0DC116
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 11:33:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0959CDC118
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 11:33:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vrE/VZnn3c0/dh0DRLi31OhVuw3ROzOdv8s6NbjeiWU=; b=qE1GWxNI9S7F8d
-	Ajb2phTBSs+nX6BmVROdGUaSJactM2/sOfzRff86UetAOjnYdskbhZj564IBeUZ2IVEmIM/IWOJDW
-	396M36VNyV3zE4M8fzRAAyjBmI5gE8UeZTH6FAX6i0vE4hmU7edQbY0Ur3gZqQEqZc1sy8lK99omU
-	o+q5YwScgjIV1X2DGdXGXYzOowL78COm7onBdkTD7YtlEx0eS5qSDiYYajE4Grmd9RTYDSSv5ZYT3
-	r6qhye5amls5SATf19el+xeT6tB+Z9g80zaKSzKdtnrXqpIZdtem/htTFyoxsfVsen2Kq1KdeJTs+
-	vF0VWpYA9RzDUJRqgMPw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=poShlSfKrrHYik66CWpqybpCbaI+XWcdSCPmpoHFE8I=; b=CfIhxrpfBpHU+m
+	7CfCSOCofBsrO4g9tkuMOEFJRy/0BBMG62/bfJbeLvIhQu5iP//zo8sWPi4+8QV3AYfQk3lp1b6ku
+	ZMJqW+h4Kf9/coKzEfuQv+Ggn+Hr6+bQjepjfXlqwq/C1JGZJkUC8pZKBf8sKKVRFpqSvvl0/08TN
+	R/AXpjH/Oax70FqSM+2EXm04f3H3JS3nOn71cUAzgVnJKOdba6cshCa85JYVjQDmvQjKcaH7JcDlh
+	RxfnJRxWGAxXPrVtWvvzuQHwCfQ7pJ6kxF1z02zcjIuLeygQKhm8wBeQInbeofS4z9Y4477gmFeAR
+	PpkPyo82+8+UUnKas8tw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLOdP-00081u-H9; Fri, 18 Oct 2019 09:33:23 +0000
+	id 1iLOdk-0008LF-CI; Fri, 18 Oct 2019 09:33:44 +0000
 Received: from mail-sh.amlogic.com ([58.32.228.43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLOdA-0007zG-Ko; Fri, 18 Oct 2019 09:33:10 +0000
+ id 1iLOdC-0007zG-IS; Fri, 18 Oct 2019 09:33:12 +0000
 Received: from droid13.amlogic.com (116.236.93.172) by mail-sh.amlogic.com
  (10.18.11.5) with Microsoft SMTP Server id 15.1.1591.10; Fri, 18 Oct 2019
  17:33:00 +0800
 From: Jianxin Pan <jianxin.pan@amlogic.com>
 To: Kevin Hilman <khilman@baylibre.com>, <linux-amlogic@lists.infradead.org>
-Subject: [PATCH RESEND v3 0/4] arm64: meson: add support for A1 Power Domains
-Date: Fri, 18 Oct 2019 17:32:43 +0800
-Message-ID: <1571391167-79679-1-git-send-email-jianxin.pan@amlogic.com>
+Subject: [PATCH v3 1/4] dt-bindings: power: add Amlogic secure power domains
+ bindings
+Date: Fri, 18 Oct 2019 17:32:44 +0800
+Message-ID: <1571391167-79679-2-git-send-email-jianxin.pan@amlogic.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1571391167-79679-1-git-send-email-jianxin.pan@amlogic.com>
+References: <1571391167-79679-1-git-send-email-jianxin.pan@amlogic.com>
 MIME-Version: 1.0
 X-Originating-IP: [116.236.93.172]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_023308_684066_918990A1 
-X-CRM114-Status: UNSURE (   7.13  )
+X-CRM114-CacheID: sfid-20191018_023310_611666_F8C7ECAE 
+X-CRM114-Status: UNSURE (   9.27  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -68,45 +71,106 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patchset introduces a "Secure Power Doamin Controller". In A1/C1, power
-controller registers such as PWRCTRL_FOCRSTN, PWRCTRL_PWR_OFF, PWRCTRL_MEM_PD
-and PWRCTRL_ISO_EN, are in the secure domain, and should be accessed from ATF
-by smc.
+Add the bindings for the Amlogic Secure power domains, controlling the
+secure power domains.
 
+The bindings targets the Amlogic A1 and C1 compatible SoCs, in which the
+power domain registers are in secure world.
 
-Changes since v1 at [1]:
-- update domain id
-- include dt-bindings in dts
-
-Changes since v1 at [0]:
-- use APIs from sm driver
-- rename pwrc_secure_get_power as Kevin suggested
-- add comments for always on domains
-- replace arch_initcall_sync with builtin_platform_driver
-- fix coding style
-
-[0]  https://lore.kernel.org/linux-amlogic/1568895064-4116-1-git-send-email-jianxin.pan@amlogic.com
-[1]  https://lore.kernel.org/linux-amlogic/1570695678-42623-1-git-send-email-jianxin.pan@amlogic.com
-
-Jianxin Pan (4):
-  dt-bindings: power: add Amlogic secure power domains bindings
-  firmware: meson_sm: Add secure power domain support
-  soc: amlogic: Add support for Secure power domains controller
-  arm64: dts: meson: a1: add secure power domain controller
-
- .../bindings/power/amlogic,meson-sec-pwrc.yaml     |  42 +++++
- arch/arm64/boot/dts/amlogic/meson-a1.dtsi          |   8 +
- drivers/firmware/meson/meson_sm.c                  |   2 +
- drivers/soc/amlogic/Kconfig                        |  13 ++
- drivers/soc/amlogic/Makefile                       |   1 +
- drivers/soc/amlogic/meson-secure-pwrc.c            | 204 +++++++++++++++++++++
- include/dt-bindings/power/meson-a1-power.h         |  32 ++++
- include/linux/firmware/meson/meson_sm.h            |   2 +
- 8 files changed, 304 insertions(+)
+Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
+---
+ .../bindings/power/amlogic,meson-sec-pwrc.yaml     | 42 ++++++++++++++++++++++
+ include/dt-bindings/power/meson-a1-power.h         | 32 +++++++++++++++++
+ 2 files changed, 74 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
- create mode 100644 drivers/soc/amlogic/meson-secure-pwrc.c
  create mode 100644 include/dt-bindings/power/meson-a1-power.h
 
+diff --git a/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
+new file mode 100644
+index 00000000..88d8261
+--- /dev/null
++++ b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
+@@ -0,0 +1,42 @@
++# SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++# Copyright (c) 2019 Amlogic, Inc
++# Author: Jianxin Pan <jianxin.pan@amlogic.com>
++%YAML 1.2
++---
++$id: "http://devicetree.org/schemas/power/amlogic,meson-sec-pwrc.yaml#"
++$schema: "http://devicetree.org/meta-schemas/core.yaml#"
++
++title: Amlogic Meson Secure Power Domains
++
++maintainers:
++  - Jianxin Pan <jianxin.pan@amlogic.com>
++
++description: |+
++  Meson Secure Power Domains used in A1/C1 SoCs.
++
++properties:
++  compatible:
++    enum:
++      - amlogic,meson-a1-pwrc
++
++  "#power-domain-cells":
++    const: 1
++
++  secure-monitor:
++    description: phandle to the secure-monitor node
++    $ref: /schemas/types.yaml#/definitions/phandle
++
++required:
++  - compatible
++  - "#power-domain-cells"
++  - secure-monitor
++
++examples:
++  - |
++    pwrc: power-controller {
++          compatible = "amlogic,meson-a1-pwrc";
++          #power-domain-cells = <1>;
++          secure-monitor = <&sm>;
++    };
++
++
+diff --git a/include/dt-bindings/power/meson-a1-power.h b/include/dt-bindings/power/meson-a1-power.h
+new file mode 100644
+index 00000000..6cf50bf
+--- /dev/null
++++ b/include/dt-bindings/power/meson-a1-power.h
+@@ -0,0 +1,32 @@
++/* SPDX-License-Identifier: (GPL-2.0+ or MIT) */
++/*
++ * Copyright (c) 2019 Amlogic, Inc.
++ * Author: Jianxin Pan <jianxin.pan@amlogic.com>
++ */
++
++#ifndef _DT_BINDINGS_MESON_A1_POWER_H
++#define _DT_BINDINGS_MESON_A1_POWER_H
++
++#define PWRC_DSPA_ID	8
++#define PWRC_DSPB_ID	9
++#define PWRC_UART_ID	10
++#define PWRC_DMC_ID	11
++#define PWRC_I2C_ID	12
++#define PWRC_PSRAM_ID	13
++#define PWRC_ACODEC_ID	14
++#define PWRC_AUDIO_ID	15
++#define PWRC_OTP_ID	16
++#define PWRC_DMA_ID	17
++#define PWRC_SD_EMMC_ID	18
++#define PWRC_RAMA_ID	19
++#define PWRC_RAMB_ID	20
++#define PWRC_IR_ID	21
++#define PWRC_SPICC_ID	22
++#define PWRC_SPIFC_ID	23
++#define PWRC_USB_ID	24
++#define PWRC_NIC_ID	25
++#define PWRC_PDMIN_ID	26
++#define PWRC_RSA_ID	27
++#define PWRC_MAX_ID	28
++
++#endif
 -- 
 2.7.4
 
