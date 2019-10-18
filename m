@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F10EDDCD55
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 20:07:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 83C06DCD6F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 20:08:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=WreBfsRpL6taQ6jbKedS4wjSR+32wKEel2WeoV3nKuo=; b=CCT
-	v0VomURZxUDZ4C4kKCt91kQKb/lcqGnIw9JbmFo0yfkaroefn2Trk+XgpfowkHhwbc2vlYvDdPDXH
-	nJWSGujAWgPA6zfQGBUHPaNHzooK8hnsDFPKwJjlQDiogLEh8PHE8Og2vQFl7Pyritpd+cG+COHJ7
-	3oCjeSWIxTyBY34BUYhgsVDkLUaH5BNKRDPVrKcL5eS+HwKnbdRSoKo8lUhVRJAf/Q1II4YJaHIes
-	0FaBd6WN15mdpjOzMCSsoNV1/LPP4PtjLnCp+jevtQZAz3e8EbDKlxp6OPaXKMeHcdSdb+8xKEv65
-	qUcANNlXI5rqJi1oNsdSyJtOnJMwE6A==;
+	References:List-Owner; bh=43l+nzSgmypCYyvN4FQcTuiSmtKFTyM7OH/PcuTDd/4=; b=Fjl
+	p3DK6SLubcxe/6Jf5O02cw39K/6unHe4T7Ll8eKzRC7Aicv+hF2ztGuJZUfAJk7IoICO+8ldLm9hX
+	wP/+iSzX22GQoQ261oji6LRW5bELKjKqYTTzFp25+ZdqaqNerZwTtOhVc/TNBPBtiriUaNRg0cjnG
+	N34da+KsMbex6aTdIc5VFfrOQ6ffLqAdfNtm7fv55WrpTpRlBfyvIwwnws5aKG7TDk29menUMv1xz
+	rQqANRGEQkkyw7H7qkWe9bPNwKBys20zLr8scH9QEhxkQGGBbwbfgfoQte8bkXonCWjh0pdRJJJLK
+	KHHCo5J7lRLSUo0sDQ/3ikH/dPMcX3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLWei-0007e0-9Z; Fri, 18 Oct 2019 18:07:16 +0000
+	id 1iLWfR-0008DF-CZ; Fri, 18 Oct 2019 18:08:01 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLWeW-0007dB-Cg
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 18:07:05 +0000
+ id 1iLWed-0007gd-7o
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 18:07:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=kIdn4VulEh9KHSu4X43j6W5Pl8dnzX5CpSEuHNMmqZg=; b=WjwNhdAgMXyf
- f/FpHLUkv9G0+RYaluq+UfZ74TKDku8p3GcVgmeDSuHf+HaJTuXfnFgJHPx9fLV5vwYYdOA0mDbXC
- An0OrN8jGzCDLrpDYYQiHfZgoMOeRPov+MKLyAN4SwFfRe2vbPKQOhxCXCIzXgyv8NSADueQtIhib
- PbwmU=;
+ List-Archive; bh=IjM9rnCciu37JcXYzH1B1qjM5RpdtJn2Wft3KUK1jtg=; b=EFjwdPRvTLSf
+ Py+AirepyhxYi4o3ssxIZZCC/VGIIaIAmq1xuoUV2AkxWt9YKgVnUEg15pd8YnvyBZsuzU5edw7Zu
+ +KOvhJTIuCKV//WvqDGK26GbAjLEUkDAhLLpr8jgJfMa/h1EgAS8+qG5kOry/BjtEWDvVVP/pgl4A
+ fkeIw=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iLWeS-0004FY-Lf; Fri, 18 Oct 2019 18:07:00 +0000
+ id 1iLWea-0004Gw-7M; Fri, 18 Oct 2019 18:07:08 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 1F8F92743259; Fri, 18 Oct 2019 19:07:00 +0100 (BST)
+ id BB5532743259; Fri, 18 Oct 2019 19:07:07 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
-To: Olivier Moysan <olivier.moysan@st.com>
-Subject: Applied "ASoC: stm32: sai: fix sysclk management on shutdown" to the
- asoc tree
-In-Reply-To: <20191018082040.31022-1-olivier.moysan@st.com>
+To: Gregory CLEMENT <gregory.clement@bootlin.com>
+Subject: Applied "spi: atmel: Improve CS0 case support on AT91RM9200" to the
+ spi tree
+In-Reply-To: <20191017141846.7523-8-gregory.clement@bootlin.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20191018180700.1F8F92743259@ypsilon.sirena.org.uk>
-Date: Fri, 18 Oct 2019 19:07:00 +0100 (BST)
+Message-Id: <20191018180707.BB5532743259@ypsilon.sirena.org.uk>
+Date: Fri, 18 Oct 2019 19:07:07 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_110704_450754_3C2D9D65 
-X-CRM114-Status: GOOD (  16.76  )
+X-CRM114-CacheID: sfid-20191018_110711_380853_EC144C66 
+X-CRM114-Status: GOOD (  16.46  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -78,12 +78,12 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, olivier.moysan@st.com, alexandre.torgue@st.com,
- tiwai@suse.com, arnaud.pouliquen@st.com, lgirdwood@gmail.com,
- linux-kernel@vger.kernel.org, Mark Brown <broonie@kernel.org>,
- mcoquelin.stm32@gmail.com, perex@perex.cz,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- benjamin.gaignard@st.com
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Mark Brown <broonie@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -92,11 +92,11 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: stm32: sai: fix sysclk management on shutdown
+   spi: atmel: Improve CS0 case support on AT91RM9200
 
-has been applied to the asoc tree at
+has been applied to the spi tree at
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.4
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.5
 
 All being well this means that it will be integrated into the linux-next
 tree (usually sometime in the next 24 hours) and sent to Linus during
@@ -117,68 +117,63 @@ to this mail.
 Thanks,
 Mark
 
-From 9b7a7f921689d6c254e5acd670be631ebd82d54d Mon Sep 17 00:00:00 2001
-From: Olivier Moysan <olivier.moysan@st.com>
-Date: Fri, 18 Oct 2019 10:20:40 +0200
-Subject: [PATCH] ASoC: stm32: sai: fix sysclk management on shutdown
+From 9c86f12a36479dec06df3e4a4f31cecf8eba0222 Mon Sep 17 00:00:00 2001
+From: Gregory CLEMENT <gregory.clement@bootlin.com>
+Date: Thu, 17 Oct 2019 16:18:46 +0200
+Subject: [PATCH] spi: atmel: Improve CS0 case support on AT91RM9200
 
-The commit below, adds a call to sysclk callback on shutdown.
-This introduces a regression in stm32 SAI driver, as some clock
-services are called twice, leading to unbalanced calls.
-Move processing related to mclk from shutdown to sysclk callback.
-When requested frequency is 0, assume shutdown and release mclk.
+Thanks to the recent change in this driver, it is now possible to
+prevent using the CS0 with GPIO during setup. It then allows to remove
+the special handling of this case in the cs_activate() and
+cs_deactivate() functions.
 
-Fixes: 2458adb8f92a ("SoC: simple-card-utils: set 0Hz to sysclk when shutdown")
-
-Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
-Link: https://lore.kernel.org/r/20191018082040.31022-1-olivier.moysan@st.com
+Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
+Link: https://lore.kernel.org/r/20191017141846.7523-8-gregory.clement@bootlin.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- sound/soc/stm/stm32_sai_sub.c | 21 +++++++++++----------
- 1 file changed, 11 insertions(+), 10 deletions(-)
+ drivers/spi/spi-atmel.c | 15 ++++++++++++---
+ 1 file changed, 12 insertions(+), 3 deletions(-)
 
-diff --git a/sound/soc/stm/stm32_sai_sub.c b/sound/soc/stm/stm32_sai_sub.c
-index d7501f88aaa6..a4060813bc74 100644
---- a/sound/soc/stm/stm32_sai_sub.c
-+++ b/sound/soc/stm/stm32_sai_sub.c
-@@ -505,10 +505,20 @@ static int stm32_sai_set_sysclk(struct snd_soc_dai *cpu_dai,
- 	if (dir == SND_SOC_CLOCK_OUT && sai->sai_mclk) {
- 		ret = regmap_update_bits(sai->regmap, STM_SAI_CR1_REGX,
- 					 SAI_XCR1_NODIV,
--					 (unsigned int)~SAI_XCR1_NODIV);
-+					 freq ? 0 : SAI_XCR1_NODIV);
- 		if (ret < 0)
- 			return ret;
+diff --git a/drivers/spi/spi-atmel.c b/drivers/spi/spi-atmel.c
+index ac5e2ddf9e1b..d88e2aa64839 100644
+--- a/drivers/spi/spi-atmel.c
++++ b/drivers/spi/spi-atmel.c
+@@ -371,7 +371,7 @@ static void cs_activate(struct atmel_spi *as, struct spi_device *spi)
  
-+		/* Assume shutdown if requested frequency is 0Hz */
-+		if (!freq) {
-+			/* Release mclk rate only if rate was actually set */
-+			if (sai->mclk_rate) {
-+				clk_rate_exclusive_put(sai->sai_mclk);
-+				sai->mclk_rate = 0;
-+			}
-+			return 0;
-+		}
+ 		mr = spi_readl(as, MR);
+ 		mr = SPI_BFINS(PCS, ~(1 << chip_select), mr);
+-		if (spi->cs_gpiod && spi->chip_select != 0)
++		if (spi->cs_gpiod)
+ 			gpiod_set_value(spi->cs_gpiod, 1);
+ 		spi_writel(as, MR, mr);
+ 	}
+@@ -402,7 +402,7 @@ static void cs_deactivate(struct atmel_spi *as, struct spi_device *spi)
+ 
+ 	if (!spi->cs_gpiod)
+ 		spi_writel(as, CR, SPI_BIT(LASTXFER));
+-	else if (atmel_spi_is_v2(as) || spi->chip_select != 0)
++	else
+ 		gpiod_set_value(spi->cs_gpiod, 0);
+ }
+ 
+@@ -1193,7 +1193,16 @@ static void initialize_native_cs_for_gpio(struct atmel_spi *as)
+ 	if (!master->cs_gpiods)
+ 		return; /* No CS GPIO */
+ 
+-	for (i = 0; i < 4; i++)
++	/*
++	 * On the first version of the controller (AT91RM9200), CS0
++	 * can't be used associated with GPIO
++	 */
++	if (atmel_spi_is_v2(as))
++		i = 0;
++	else
++		i = 1;
 +
- 		/* If master clock is used, set parent clock now */
- 		ret = stm32_sai_set_parent_clock(sai, freq);
- 		if (ret)
-@@ -1093,15 +1103,6 @@ static void stm32_sai_shutdown(struct snd_pcm_substream *substream,
++	for (; i < 4; i++)
+ 		if (master->cs_gpiods[i])
+ 			as->native_cs_free |= BIT(i);
  
- 	regmap_update_bits(sai->regmap, STM_SAI_IMR_REGX, SAI_XIMR_MASK, 0);
- 
--	regmap_update_bits(sai->regmap, STM_SAI_CR1_REGX, SAI_XCR1_NODIV,
--			   SAI_XCR1_NODIV);
--
--	/* Release mclk rate only if rate was actually set */
--	if (sai->mclk_rate) {
--		clk_rate_exclusive_put(sai->sai_mclk);
--		sai->mclk_rate = 0;
--	}
--
- 	clk_disable_unprepare(sai->sai_ck);
- 
- 	spin_lock_irqsave(&sai->irq_lock, flags);
 -- 
 2.20.1
 
