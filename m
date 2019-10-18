@@ -2,83 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2270DDC357
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 12:59:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8AEDDC371
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 13:01:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=01oIuOkUpXUW2qN0m2sMSZ303Dz6OEjnBokP9uDK70g=; b=aq7nbJ46vePyMk
-	iAwv1wtRkbyuGCRXLa1dlcqCw4AqU083YBzce4ylmSZouhoEXOmLluGKvJyr7Nv47h8YlVXENSdzL
-	/73tLYGvMT1l+SZBFg1Nl1btFKSvJXpx3ipDE+J6IpVrxecL2t3TUIkeMdkquFU67t63D34eLtdWY
-	X1ie5OxCpNw2+FyPF3izNRLQx3+9QciIGElJi9psLXTMmGGlNOT52U7PraBo3Xz8aEFftlYj08tAj
-	cW0Ufb+SRO7V1GZae1Zyg7m6jjHKR0VxzzVqyddIw19WeNjyxhHC8SmF8eCbWp0DX7GypzajDeX7D
-	2Y2Lx32FRd8g8dUESy6A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=cWybNR9UekEhI//0y2SKxXxgQMZEjQ5/15/4e6XSJPc=; b=hyb
+	rYBlOJ8p/6y8JJbAbISBDKyfcLgWNuhMVnPXgGDvf4WBFEIv8kjCwMgxj6Dat9nSwh42Tylf7HUio
+	mRsHboUtwk+REsPn4DAONR6ZhsnzsozHlNCTOf2GNYs00JeIpORBTX2xTMMBbAN6hjR/8WSKSefj/
+	jdlGbg0AxDvWr8YI3GZ4328KRmXRtdd4I0Hl4nEeGDijFOItJWkvL07hu7w+smSBAcgX/k61/mfhZ
+	rSgdOQYkxRdwKEmK8cM/dzexPu9NbLkYq2QX16ZKbxDG/L0hN33k52HH9WjfqNuvUmEope6a9iw+6
+	ZqIvqPqL/w2oS+0jR75CSICBNZmK3Yg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLPys-0008Dp-Bk; Fri, 18 Oct 2019 10:59:38 +0000
-Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
+	id 1iLQ0x-0001hB-OT; Fri, 18 Oct 2019 11:01:47 +0000
+Received: from michel.telenet-ops.be ([2a02:1800:110:4::f00:18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLPyD-0007kx-IM
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 10:58:59 +0000
-Received: by mail-ua1-x944.google.com with SMTP id b14so1594895uap.6
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 03:58:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Tt8K7w3x8HTdPRqv2Fif3/U/rG1clDpwhUCuSLxR4V4=;
- b=ZT9bTUQ6OC5ou55VS9YQx/QBwxnwJMBR+sIN7NFLM0HxkoGrTSe8tT/Qt4JdHA2MMU
- DjId+FAIoU6fIeDoczEOErcFlOkcO+e8JNfl+TwJnF8jmbJIA+R6bZeyFK+oI6B44p93
- E2RKRQ+DqQGymqV+LjeAfkgyr/whnziPddKzcnq8Je0axdhhYXq4F8eMAkP8neG8FZxA
- Wl39/ai8CQcsHWTOzgQd5b6m4y/3Ts3GeWQSCsdZ5NjYQCswurxqeHCvmgNVCB/nNl/8
- v79pFsn/eqHdYlCzLlLczwlxIhh27cCNPny1X6S1N8A4G3XTEPqXUydW08tTHR+s/eFI
- UNng==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Tt8K7w3x8HTdPRqv2Fif3/U/rG1clDpwhUCuSLxR4V4=;
- b=KR5Gyer61m0/sAdxxF30FvtekPn+JgGWEfANe/C0Ua8uuNOvGGFBdIyISlsZD2fMSz
- eDjUNtAEn9fMUk1CsowAN8Ipast6tOkPppEbq+vUall30CgaXnM8mzWCEFYVnSBKceYo
- 2i5NmyppKyOikgag8JsWDTOQExqzyE7UYwLktEr4R29AyacHy9gzdHs2kQKRH0of7RQS
- q6jkTnuyAil6WiMkUzT9N8ko57BDhCl7/cPU0KzNY6tMIyCbQxb+soWYvzjU7HsNdMVQ
- EKq80cU1BWSUWVyk4rkWN82BIMfs3umon+QcOs9+kgYUi6zDKmEAj36MpRAhOr0rmXEd
- WaRw==
-X-Gm-Message-State: APjAAAUo3QKXgAf0bgiCtBiSDsUir6JKzWWo105JYQWMPubXv4IAp3vv
- iPiVoY2WOSvnC7JJTfRBc5I7x7ILpJsQb6Q2DvrvLobP
-X-Google-Smtp-Source: APXvYqzqXgy001fV5A91b+YnpXgC21Z0PLOBh1lckmLIHtwrkfn/IGdZxxUOfwEtNWIE5nn72WMV3aVXXjO/z8yggnw=
-X-Received: by 2002:ab0:708c:: with SMTP id m12mr5080226ual.15.1571396336167; 
- Fri, 18 Oct 2019 03:58:56 -0700 (PDT)
-MIME-Version: 1.0
-References: <20191009115415.15691-1-ben.dooks@codethink.co.uk>
-In-Reply-To: <20191009115415.15691-1-ben.dooks@codethink.co.uk>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Fri, 18 Oct 2019 12:58:20 +0200
-Message-ID: <CAPDyKFqGwB2uo5dVqL3nbBpch1FBO2D-TG+yXo0R0hFiCL0Tfg@mail.gmail.com>
-Subject: Re: [PATCH] mmc: mmci: stm32: make sdmmc_idma_validate_data static
-To: Ben Dooks <ben.dooks@codethink.co.uk>
+ id 1iLQ0P-0001Qj-U1
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 11:01:15 +0000
+Received: from ramsan ([84.194.98.4]) by michel.telenet-ops.be with bizsmtp
+ id Ez142100Y05gfCL06z14Dd; Fri, 18 Oct 2019 13:01:08 +0200
+Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1iLQ0G-0005q3-Pg; Fri, 18 Oct 2019 13:01:04 +0200
+Received: from geert by rox.of.borg with local (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1iLPEt-0006ru-Q1; Fri, 18 Oct 2019 12:12:07 +0200
+From: Geert Uytterhoeven <geert+renesas@glider.be>
+To: arm-soc <arm@kernel.org>,
+	arm-soc <soc@kernel.org>
+Subject: [GIT PULL 0/5] Renesas SoC updates for v5.5
+Date: Fri, 18 Oct 2019 12:11:31 +0200
+Message-Id: <20191018101136.26350-1-geert+renesas@glider.be>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_035857_634547_87819D8C 
-X-CRM114-Status: GOOD (  14.56  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191018_040114_132072_E4086F02 
+X-CRM114-Status: UNSURE (   6.76  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a02:1800:110:4:0:0:f00:18 listed in]
  [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,62 +65,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@lists.codethink.co.uk,
- Alexandre Torgue <alexandre.torgue@st.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-renesas-soc@vger.kernel.org, Magnus Damm <magnus.damm@gmail.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 9 Oct 2019 at 13:54, Ben Dooks <ben.dooks@codethink.co.uk> wrote:
->
-> Make sdmmc_idma_validate_data to avoid the following warning
-> from sparse:
->
-> drivers/mmc/host/mmci_stm32_sdmmc.c:28:5: warning: symbol 'sdmmc_idma_validate_data' was not declared. Should it be static?
->
-> Signed-off-by: Ben Dooks <ben.dooks@codethink.co.uk>
+	Hi arm-soc folks,
 
-Applied for next, thanks!
+This is my first pull request for the inclusion of Renesas SoC updates
+for v5.5.
 
-Kind regards
-Uffe
+It consists of 5 parts:
 
+  [GIT PULL 1/5] Renesas ARM DT updates for v5.5
 
+    - Whitespace cleanups.
 
-> ---
-> Cc: Ulf Hansson <ulf.hansson@linaro.org>
-> Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-> Cc: Alexandre Torgue <alexandre.torgue@st.com>
-> Cc: linux-mmc@vger.kernel.org
-> Cc: linux-stm32@st-md-mailman.stormreply.com
-> Cc: linux-arm-kernel@lists.infradead.org
-> ---
->  drivers/mmc/host/mmci_stm32_sdmmc.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
->
-> diff --git a/drivers/mmc/host/mmci_stm32_sdmmc.c b/drivers/mmc/host/mmci_stm32_sdmmc.c
-> index 8e83ae6920ae..296be8a060a6 100644
-> --- a/drivers/mmc/host/mmci_stm32_sdmmc.c
-> +++ b/drivers/mmc/host/mmci_stm32_sdmmc.c
-> @@ -25,8 +25,8 @@ struct sdmmc_priv {
->         void *sg_cpu;
->  };
->
-> -int sdmmc_idma_validate_data(struct mmci_host *host,
-> -                            struct mmc_data *data)
-> +static int sdmmc_idma_validate_data(struct mmci_host *host,
-> +                                   struct mmc_data *data)
->  {
->         struct scatterlist *sg;
->         int i;
-> --
-> 2.23.0
->
+  [GIT PULL 2/5] Renesas ARM64 defconfig updates for v5.5
+
+    - Enable support for the new RZ/G2N (r8a774b1) SoC.
+
+  [GIT PULL 3/5] Renesas ARM64 DT updates for v5.5
+
+    - Support for the RZ/G2N (r8a774b1) SoC and the HiHope RZ/G2N board,
+    - CPU idle support for R-Car H3 and M3-W,
+    - LVDS and backlight support on the HiHope RZ/G2M and RZ/G2N boards,
+      with Advantech idk-1110wr LVDS panel,
+    - Minor fixes and improvements.
+
+  [GIT PULL 4/5] Renesas driver updates for v5.5
+
+    - Add support for the new RZ/G2N (r8a774b1) SoC,
+    - Fix System Controller power request conflicts on recent R-Car Gen3
+      and RZ/G2N SoC variants and revisions,
+    - Minor cleanups.
+
+  [GIT PULL 5/5] Renesas DT binding updates for v5.5
+
+    - RZ/G2M update for the Renesas Timer Unit bindings,
+    - Support for the new RZ/G2N (r8a774b1) SoC and the HiHope RZ/G2N
+      board.
+
+Note that the new Renesas RZ/G2N DT Binding Definitions are shared by
+driver and DT source files, and thus included in 3 pull requests:
+  - "[GIT PULL 3/5] Renesas ARM64 DT updates for v5.5" (for arm-soc),
+  - "[GIT PULL 4/5] Renesas driver updates for v5.5" (for arm-soc).
+  - "[GIT PULL] clk: renesas: Updates for v5.5] (for clk).
+
+If you prefer to merge this dependency explicitly, please pull tag
+renesas-r8a774b1-dt-binding-defs-tag first.
+
+Thanks for pulling!
+
+Gr{oetje,eeting}s,
+
+						Geert
+
+--
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+							    -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
