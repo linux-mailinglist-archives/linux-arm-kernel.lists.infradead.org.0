@@ -2,70 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE7A7DBD23
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 07:41:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64F15DBD67
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 08:00:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L8AZNKuAxACOPyWHVh/VPYW/mEgTPJ2Odh777OChaqM=; b=LjA2j48eZF3YqL
-	ImvorfGT84mRP65oJLO+Bc1GOt2tYlaN7EsV4zt5+z5MeTc0hqDLyxRE1SnnVM2nZHHm8Sxd7bBQw
-	Il6F9q8SbYX9Ngbqc7+/uqzf3YtqwMlQNxKWna7U7qT46IjupaW2+nX7cp61sZm8k6ssZYFWzVPDC
-	DYBG4QCn1wweAnsul1wCJXBtQ7Jm5Xk5NR0wQe7hWvv21xh2sh/H9c58MHfFFEJVwJNplrmjllu4T
-	pVq+nzlbaZKMv8PsZcUNsUzwVQBILVqSANEdRqjCPoYFBonpswz/FvvX6e92iMfgx8rs8bx5ab2W/
-	lu+3L9pwoj4lj9e4sinw==;
+	List-Owner; bh=82Jo78D6076cB+9CRyRiu1RumqFPQMExM74waQFecgg=; b=KINDy5Ag+bwsn5
+	Xt4n7iTiUCoZqoRow5EgaLkhn2Z4Hc8cBDXyjrPuwaMUwkciPUBQh4r08my8Dmdy12s68uOxOhxws
+	IGMrA+sTGBUDoVomz6L1sf0cS08V1dgHb9DCd48Wli6gDf6deFcskXRRB16sFypzZMHF8FszTROvk
+	Wh7dLtynf9jA55AyKWaLiMoHj+qCRmJgmkszDtOoRmNljW8S1PwQ5C/pC+Hi00xB/4gAeJo7+7ylo
+	ZT48F2x1Yges0srJk8R4gldhzXX3GBq4e7UBDF2t+3PWmXOF/CkMx5/KkghsFYTTH0pfkk1O8YPVc
+	DWYtHFz1IqekpIjiRBrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLL16-0006Wd-CP; Fri, 18 Oct 2019 05:41:36 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1iLLJ9-00040n-TC; Fri, 18 Oct 2019 06:00:15 +0000
+Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLL0w-0006Va-F7; Fri, 18 Oct 2019 05:41:28 +0000
-X-UUID: 575e0134a41b4f4a9809dd5bc1b5e09a-20191017
-X-UUID: 575e0134a41b4f4a9809dd5bc1b5e09a-20191017
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <neal.liu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1050649363; Thu, 17 Oct 2019 21:40:57 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 17 Oct 2019 22:41:14 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 18 Oct 2019 13:41:11 +0800
-Received: from [172.21.77.33] (172.21.77.33) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 18 Oct 2019 13:41:11 +0800
-Message-ID: <1571377272.11955.6.camel@mtkswgap22>
-Subject: Re: [PATCH v4 2/3] dt-bindings: rng: add bindings for MediaTek
- ARMv8 SoCs
-From: Neal Liu <neal.liu@mediatek.com>
-To: Rob Herring <robh@kernel.org>
-Date: Fri, 18 Oct 2019 13:41:12 +0800
-In-Reply-To: <1570024070.4002.1.camel@mtkswgap22>
-References: <1561361052-13072-1-git-send-email-neal.liu@mediatek.com>
- <1561361052-13072-3-git-send-email-neal.liu@mediatek.com>
- <20190722171320.GA9806@bogus> <1563848465.31451.4.camel@mtkswgap22>
- <CAL_Jsq+SRhd=-5O2G_CMfJX9Z188kvA05MQOXaU1J8iExwUixQ@mail.gmail.com>
- <1568771054.21700.7.camel@mtkswgap22> <1570024070.4002.1.camel@mtkswgap22>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1iLLIw-0003Ju-Fc
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 06:00:05 +0000
+Received: by mail-oi1-x243.google.com with SMTP id i185so4224603oif.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 17 Oct 2019 23:00:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=UqfvRiIf/2+i2h/4Ujog5bIvchOk5tCgScNdijxQat0=;
+ b=pYwivSRkBCkHKIKFMDxSUQzYxZubKHj+eCQPph1DAVEMONHUi6BTkSvZFnrCvfLDxH
+ V4OwguAODrasciR5IXTpPZ+z7pwLQDiwResq2ZCCpKPZ9gC9ReqObuK06qxyekoEAnkt
+ Lin0M1x80JQOW86VzKE/a/V400dWUexZDggO72ItnaHM0dmXMfVd6xC6Wgn1BvHuCudQ
+ +GULmOf7tQBP3UOhpQk3PQVJyZkQCwRxOjGivUuHXavq2ko60LD+eB6Rc+0/aL0XABBw
+ ZHBPvTIj+om6O9AfsDy4rIhOHzfkZ4RgLtxOeN9hldC0DmH8GJoJBm56IH7+s1eU4WZH
+ szjg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=UqfvRiIf/2+i2h/4Ujog5bIvchOk5tCgScNdijxQat0=;
+ b=fgEIGTsxRT7lXRXPPz6Q+ruQqqDXxiLMAYQqcenbYKj+3DD//Q4siJFC5iPArrzkKz
+ IuMFG5M7Y/+rBmWXyu0iHhsM1CDr14NJ+2EcL7ble8k3qQeQRozZrlXjLAUyU0St8HTa
+ EKCiFsTYSA9ypTXG8BqeYE8wDl0vt9AwMECQH2y6uQRcNabZQMt46QPoN/R0PA1ecwjL
+ kRMi95u6eqjChvkPpJKBEC3XBe8gaUrYFKh3QEn9haqr9mJbEoMpD0zZxdlD6xOlzMUu
+ vNAGhMJl1/OdeheX+Es6ahpqZVCCo1fSdWHCrKG0qStxsw2RidNTcFOycHxzCzB0/lyF
+ 9IPA==
+X-Gm-Message-State: APjAAAVaZXzQxWpsIIBMDSIptVbcketpHzLb1CtdqMhPf0kB4ZBA42qL
+ AfCVR/IanIUJDpKVkRZaLzbiab7aSip/OE8/IAfAXA==
+X-Google-Smtp-Source: APXvYqyCvDHaJrg7j1BywNpOntr+hSlB0UMU2FiS9ccSeEXT+v+90TwnyKhF9R7q13vsCdz5mVYJmK4+DYouCWn6Cw8=
+X-Received: by 2002:a54:4e83:: with SMTP id c3mr6575837oiy.170.1571378401053; 
+ Thu, 17 Oct 2019 23:00:01 -0700 (PDT)
 MIME-Version: 1.0
-X-MTK: N
+References: <20191017031051.20366-1-chris.packham@alliedtelesis.co.nz>
+ <20191017031051.20366-2-chris.packham@alliedtelesis.co.nz>
+ <20191017192437.GA24080@bogus>
+In-Reply-To: <20191017192437.GA24080@bogus>
+From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+Date: Fri, 18 Oct 2019 07:59:50 +0200
+Message-ID: <CAMpxmJVrFK38BPjoUtGt99sqgFeOA=wHFAu=QNQg_5Rj1gU92A@mail.gmail.com>
+Subject: Re: [PATCH v2 1/2] dt-bindings: gpio: brcm: Add bindings for xgs-iproc
+To: Rob Herring <robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_224126_514241_2930E30F 
-X-CRM114-Status: GOOD (  32.64  )
+X-CRM114-CacheID: sfid-20191017_230002_583491_FC8DD603 
+X-CRM114-Status: GOOD (  22.40  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,151 +91,92 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Herbert Xu <herbert@gondor.apana.org.au>,
- wsd_upstream <wsd_upstream@mediatek.com>, Sean Wang <sean.wang@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Neal Liu <neal.liu@mediatek.com>,
- Crystal Guo =?UTF-8?Q?=28=E9=83=AD=E6=99=B6=29?= <Crystal.Guo@mediatek.com>,
- "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>,
- Matt Mackall <mpm@selenic.com>, Matthias Brugger <matthias.bgg@gmail.com>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ linux-devicetree <devicetree@vger.kernel.org>, sbranden@broadcom.com,
+ rjui@broadcom.com, Linus Walleij <linus.walleij@linaro.org>,
+ LKML <linux-kernel@vger.kernel.org>, linux-gpio <linux-gpio@vger.kernel.org>,
+ Chris Packham <chris.packham@alliedtelesis.co.nz>,
+ bcm-kernel-feedback-list@broadcom.com,
+ arm-soc <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2019-10-02 at 21:47 +0800, Neal Liu wrote:
-> Dear Rob,
-> 
-> Just a gentle ping.
-> 
-> Neal
-> 
-> On Wed, 2019-09-18 at 09:44 +0800, Neal Liu wrote:
-> > On Tue, 2019-07-23 at 22:35 +0800, Rob Herring wrote:
-> > > On Mon, Jul 22, 2019 at 8:21 PM Neal Liu <neal.liu@mediatek.com> wrote:
-> > > >
-> > > 
-> > > Please don't top post to lists.
-> > > 
-> > > > Dear Rob,
-> > > >         You can check my driver for detail:
-> > > >         http://patchwork.kernel.org/patch/11012475/ or patchset 3/3
-> > > 
-> > > I could, or you could just answer my question.
-> > > 
-> > > >
-> > > >         This driver is registered as hardware random number generator, and
-> > > > combines with rng-core.
-> > > >         We want to add one rng hw based on the dts. Is this proper or do you
-> > > > have other suggestion to meet this requirement?
-> > > 
-> > > It depends. There doesn't appear to be any resource configuration, so
-> > > why does it need to be in DT. DT is not the only way instantiate
-> > > drivers.
-> > > 
-> > > Rob
-> > > 
-> > 
-> > We would like to consult more about this patch.
-> > We cannot figure out what method should be used instead of DT.
-> > The interface to access firmware is "smc" and firmware function only
-> > exists on certain platforms.
-> > Some DT has similar way, like:
-> > http://github.com/torvalds/linux/blob/master/arch/arm64/boot/dts/hisilicon/hi6220-hikey.dts#L470
-> > 
-> > 	firmware {
-> > 		optee {
-> > 			compatible = "linaro,optee-tz";
-> > 			method = "smc";
-> > 		};
-> > 	};
-> > 
-> > Is there any way to instantiate driver on certain platforms without DT?
-> > Could you give us some examples?
-> > Thanks
-> > 
-> > > >
-> > > >         Thanks
-> > > >
-> > > >
-> > > > On Tue, 2019-07-23 at 01:13 +0800, Rob Herring wrote:
-> > > > > On Mon, Jun 24, 2019 at 03:24:11PM +0800, Neal Liu wrote:
-> > > > > > Document the binding used by the MediaTek ARMv8 SoCs random
-> > > > > > number generator with TrustZone enabled.
-> > > > > >
-> > > > > > Signed-off-by: Neal Liu <neal.liu@mediatek.com>
-> > > > > > ---
-> > > > > >  .../devicetree/bindings/rng/mtk-sec-rng.txt        |   10 ++++++++++
-> > > > > >  1 file changed, 10 insertions(+)
-> > > > > >  create mode 100644 Documentation/devicetree/bindings/rng/mtk-sec-rng.txt
-> > > > > >
-> > > > > > diff --git a/Documentation/devicetree/bindings/rng/mtk-sec-rng.txt b/Documentation/devicetree/bindings/rng/mtk-sec-rng.txt
-> > > > > > new file mode 100644
-> > > > > > index 0000000..c04ce15
-> > > > > > --- /dev/null
-> > > > > > +++ b/Documentation/devicetree/bindings/rng/mtk-sec-rng.txt
-> > > > > > @@ -0,0 +1,10 @@
-> > > > > > +MediaTek random number generator with TrustZone enabled
-> > > > > > +
-> > > > > > +Required properties:
-> > > > > > +- compatible : Should be "mediatek,mtk-sec-rng"
-> > > > >
-> > > > > What's the interface to access this?
-> > > > >
-> > > > > A node with a 'compatible' and nothing else is a sign of something that
-> > > > > a parent device should instantiate and doesn't need to be in DT. IOW,
-> > > > > what do complete bindings for firmware functions look like?
-> > > > >
-
-We would like to revise our DT node as below:
-
-firmware {
-	hwrng {
-		compatible = "mediatek,mtk-sec-rng";
-		method = "smc";
-	};
-};
-
-And dt-bindings path would be changed because it's base on ARM TrustZone
-Firmware.
-From "Documentation/devicetree/bindings/rng/mtk-sec-rng.txt"
-To
-"Documentation/devicetree/bindings/arm/firmware/mediatek,mtk-sec-rng.txt"
-
-We found some similar examples which also provide an interface to trap
-to Secure State through SMC instruction.
-Example 1: Documentation/devicetree/bindings/arm/firmware/xxx.txt
-Example 2: Documentation/devicetree/bindings/arm/psci.txt
-
-Is that okay for you?
-
-Neal
-
-> > > > > > +
-> > > > > > +Example:
-> > > > > > +
-> > > > > > +hwrng: hwrng {
-> > > > > > +   compatible = "mediatek,mtk-sec-rng";
-> > > > > > +}
-> > > > > > --
-> > > > > > 1.7.9.5
-> > > > > >
-> > > > >
-> > > > > _______________________________________________
-> > > > > Linux-mediatek mailing list
-> > > > > Linux-mediatek@lists.infradead.org
-> > > > > http://lists.infradead.org/mailman/listinfo/linux-mediatek
-> > > >
-> > > >
-> > 
-> 
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Y3p3LiwgMTcgcGHFuiAyMDE5IG8gMjE6MjQgUm9iIEhlcnJpbmcgPHJvYmhAa2VybmVsLm9yZz4g
+bmFwaXNhxYIoYSk6Cj4KPiBPbiBUaHUsIE9jdCAxNywgMjAxOSBhdCAwNDoxMDo1MFBNICsxMzAw
+LCBDaHJpcyBQYWNraGFtIHdyb3RlOgo+ID4gVGhpcyBHUElPIGNvbnRyb2xsZXIgaXMgcHJlc2Vu
+dCBvbiBhIG51bWJlciBvZiBCcm9hZGNvbSBzd2l0Y2ggQVNJQ3MKPiA+IHdpdGggaW50ZWdyYXRl
+ZCBTb0NzLiBJdCBpcyBzaW1pbGFyIHRvIHRoZSBuc3AtZ3BpbyBhbmQgaXByb2MtZ3Bpbwo+ID4g
+YmxvY2tzIGJ1dCBkaWZmZXJlbnQgZW5vdWdoIHRvIHJlcXVpcmUgYSBzZXBhcmF0ZSBkcml2ZXIu
+Cj4gPgo+ID4gU2lnbmVkLW9mZi1ieTogQ2hyaXMgUGFja2hhbSA8Y2hyaXMucGFja2hhbUBhbGxp
+ZWR0ZWxlc2lzLmNvLm56Pgo+ID4gLS0tCj4gPgo+ID4gTm90ZXM6Cj4gPiAgICAgQ2hhbmdlcyBp
+biB2MjoKPiA+ICAgICAtIERvY3VtZW50IGFzIERUIHNjaGVtYQo+ID4gICAgIC0gSW5jbHVkZSBu
+Z3Bpb3MsICNncGlvLWNlbGxzIGFuZCBncGlvLWNvbnRyb2xsZXIgcHJvcGVydGllcwo+ID4KPiA+
+ICAuLi4vYmluZGluZ3MvZ3Bpby9icmNtLHhncy1pcHJvYy55YW1sICAgICAgICAgfCA4MyArKysr
+KysrKysrKysrKysrKysrCj4gPiAgMSBmaWxlIGNoYW5nZWQsIDgzIGluc2VydGlvbnMoKykKPiA+
+ICBjcmVhdGUgbW9kZSAxMDA2NDQgRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2dw
+aW8vYnJjbSx4Z3MtaXByb2MueWFtbAo+ID4KPiA+IGRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9u
+L2RldmljZXRyZWUvYmluZGluZ3MvZ3Bpby9icmNtLHhncy1pcHJvYy55YW1sIGIvRG9jdW1lbnRh
+dGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2dwaW8vYnJjbSx4Z3MtaXByb2MueWFtbAo+ID4gbmV3
+IGZpbGUgbW9kZSAxMDA2NDQKPiA+IGluZGV4IDAwMDAwMDAwMDAwMC4uNzE5OTg1NTEyMDllCj4g
+PiAtLS0gL2Rldi9udWxsCj4gPiArKysgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGlu
+Z3MvZ3Bpby9icmNtLHhncy1pcHJvYy55YW1sCj4gPiBAQCAtMCwwICsxLDgzIEBACj4gPiArIyBT
+UERYLUxpY2Vuc2UtSWRlbnRpZmllcjogKEdQTC0yLjAgT1IgQlNELTItQ2xhdXNlKQo+ID4gKyVZ
+QU1MIDEuMgo+ID4gKy0tLQo+ID4gKyRpZDogaHR0cDovL2RldmljZXRyZWUub3JnL3NjaGVtYXMv
+Z3Bpby9icmNtLHhncy1pcHJvYy55YW1sIwo+ID4gKyRzY2hlbWE6IGh0dHA6Ly9kZXZpY2V0cmVl
+Lm9yZy9tZXRhLXNjaGVtYXMvY29yZS55YW1sIwo+ID4gKwo+ID4gK3RpdGxlOiBCcm9hZGNvbSBY
+R1MgaVByb2MgR1BJTyBjb250cm9sbGVyCj4gPiArCj4gPiArbWFpbnRhaW5lcnM6Cj4gPiArICAt
+IENocmlzIFBhY2toYW0gPGNocmlzLnBhY2toYW1AYWxsaWVkdGVsZXNpcy5jby5uej4KPiA+ICsK
+PiA+ICtkZXNjcmlwdGlvbjogfAo+ID4gKyAgVGhpcyBjb250cm9sbGVyIGlzIHRoZSBDaGlwIENv
+bW1vbiBBIEdQSU8gcHJlc2VudCBvbiBhIG51bWJlciBvZiBCcm9hZGNvbQo+ID4gKyAgc3dpdGNo
+IEFTSUNzIHdpdGggaW50ZWdyYXRlZCBTb0NzLgo+ID4gKwo+ID4gK3Byb3BlcnRpZXM6Cj4gPiAr
+ICBjb21wYXRpYmxlOgo+ID4gKyAgICBlbnVtOgo+ID4gKyAgICAgIC0gYnJjbSxpcHJvYy1ncGlv
+LWNjYQo+Cj4gZW51bSB2cy4gY29uc3QgdXNhZ2UgZGVwZW5kcyBvbiB3aGV0aGVyIHlvdSB0aGlu
+ayB5b3UnbGwgYWRkIG1vcmUKPiBjb21wYXRpYmxlcy4KPgoKV2hhdCBpZiB5b3UgZG9uJ3Qga25v
+dyB5ZXQ/IEZvciBpbnN0YW5jZSB3ZSB1c2UgYSBjb25zdCBjb21wYXRpYmxlIGFuZAp0aGVuIGEg
+bmV3IGNoaXAgaXMgcmVsZWFzZWQgZm9yIHdoaWNoIHdlIGNhbiByZXVzZSB0aGUgZHJpdmVyPyBJ
+cyB0aGlzCnNvbWV0aGluZyB0aGF0IGlzIGV4cGVjdGVkIHRvIHJlbWFpbiBzdGFibGUgaW4gdGhl
+IGJpbmRpbmcgZG9jdW1lbnQ/ClRoZSBxdWVzdGlvbiBpcyB1bnJlbGF0ZWQgdG8gdGhpcyBwYXRj
+aCwgSSdtIGp1c3QgdW5zdXJlIGFib3V0IG15IG93bgphcHByb2FjaCB0byB3cml0aW5nIHlhbWwg
+YmluZGluZ3MuCgpCYXJ0Cgo+ID4gKwo+ID4gKyAgcmVnOgo+ID4gKyAgICBtaW5JdGVtczogMgo+
+ID4gKyAgICBtYXhJdGVtczogMgo+ID4gKyAgICBkZXNjcmlwdGlvbjoKPiA+ICsgICAgICBUaGUg
+Zmlyc3QgcmVnaW9uIGRlZmluZXMgdGhlIGJhc2UgSS9PIGFkZHJlc3MgY29udGFpbmluZwo+ID4g
+KyAgICAgIHRoZSBHUElPIGNvbnRyb2xsZXIgcmVnaXN0ZXJzLiBUaGUgc2Vjb25kIHJlZ2lvbiBk
+ZWZpbmVzCj4gPiArICAgICAgdGhlIEkvTyBhZGRyZXNzIGNvbnRhaW5pbmcgdGhlIENoaXAgQ29t
+bW9uIEEgaW50ZXJydXB0Cj4gPiArICAgICAgcmVnaXN0ZXJzLgo+Cj4gaXRlbXM6Cj4gICAtIGRl
+c2NyaXB0aW9uOiB0aGUgSS9PIGFkZHJlc3MgY29udGFpbmluZyB0aGUgR1BJTyBjb250cm9sbGVy
+Cj4gICAgICAgcmVnaXN0ZXJzCj4gICAtIGRlc2NyaXB0aW9uOiB0aGUgSS9PIGFkZHJlc3MgY29u
+dGFpbmluZyB0aGUgQ2hpcCBDb21tb24gQSBpbnRlcnJ1cHQKPiAgICAgICByZWdpc3RlcnMKPgo+
+IEFuZCBtaW5JdGVtcy9tYXhJdGVtcyBjYW4gYmUgaW1wbGljaXQuCj4KPiA+ICsKPiA+ICsgIGdw
+aW8tY29udHJvbGxlcjogdHJ1ZQo+ID4gKwo+ID4gKyAgJyNncGlvLWNlbGxzJzoKPiA+ICsgICAg
+ICBjb25zdDogMgo+ID4gKwo+ID4gKyAgbmdwaW9zOgo+ID4gKyAgICAkcmVmOiAvc2NoZW1hcy90
+eXBlcy55YW1sIy9kZWZpbml0aW9ucy91aW50MzIKPgo+IENvbW1vbiBwcm9wZXJ0eSwgZG9lc24n
+dCBuZWVkIGEgdHlwZSBkZWZpbml0aW9uLiBBbHNvLCBpdCB3b3VsZCBoYXZlIHRvCj4gYmUgdW5k
+ZXIgYW4gJ2FsbE9mJyB0byBhY3R1YWxseSB3b3JrLgo+Cj4gPiArICAgIG1pbmltdW06IDAKPiA+
+ICsgICAgbWF4aW11bTogMzIKPiA+ICsKPiA+ICsgIGludGVycnVwdC1jb250cm9sbGVyOgo+ID4g
+KyAgICB0eXBlOiBib29sZWFuCj4KPiBKdXN0ICdpbnRlcnJ1cHQtY29udHJvbGxlcjogdHJ1ZScK
+Pgo+ID4gKwo+ID4gKyAgJyNpbnRlcnJ1cHQtY2VsbHMnOgo+ID4gKyAgICBjb25zdDogMgo+ID4g
+Kwo+ID4gKyAgaW50ZXJydXB0czoKPiA+ICsgICAgbWF4SXRlbXM6IDEKPiA+ICsKPiA+ICtyZXF1
+aXJlZDoKPiA+ICsgIC0gY29tcGF0aWJsZQo+ID4gKyAgLSByZWcKPiA+ICsgIC0gIiNncGlvLWNl
+bGxzIgo+ID4gKyAgLSBncGlvLWNvbnRyb2xsZXIKPiA+ICsKPiA+ICthbGxPZjoKPiA+ICsgLSBp
+ZjoKPiA+ICsgICAgIHByb3BlcnRpZXM6Cj4gPiArICAgICAgIGludGVycnVwdC1jb250cm9sbGVy
+Ogo+ID4gKyAgICAgICAgIGNvbnRhaW5zOgo+ID4gKyAgICAgICAgICAgY29uc3Q6IHRydWUKPiA+
+ICsgICB0aGVuOgo+ID4gKyAgICAgcmVxdWlyZWQ6Cj4gPiArICAgICAgIC0gaW50ZXJydXB0cwo+
+ID4gKyAgICAgICAtICcjaW50ZXJydXB0LWNlbGxzJwo+Cj4gVGhpcyBpcyBtb3N0bHkgaGFuZGxl
+ZCBpbiB0aGUgY29yZSBzY2hlbWEgYWxyZWFkeSBhbmQgJ2RlcGVuZGVuY2llcycKPiB3b3JrcyBi
+ZXR0ZXIgZm9yIHRoaXMgYW55d2F5cy4gQWxsIHlvdSBuZWVkIGhlcmUgaXM6Cj4KPiBkZXBlbmRl
+bmNpZXM6Cj4gICBpbnRlcnJ1cHQtY29udHJvbGxlcjogWyBpbnRlcnJ1cHRzIF0KPgo+ID4gKwo+
+ID4gK2V4YW1wbGVzOgo+ID4gKyAgLSB8Cj4gPiArICAgICNpbmNsdWRlIDxkdC1iaW5kaW5ncy9p
+bnRlcnJ1cHQtY29udHJvbGxlci9pcnEuaD4KPiA+ICsgICAgI2luY2x1ZGUgPGR0LWJpbmRpbmdz
+L2ludGVycnVwdC1jb250cm9sbGVyL2FybS1naWMuaD4KPiA+ICsgICAgZ3Bpb0AxODAwMDA2MCB7
+Cj4gPiArICAgICAgICBjb21wYXRpYmxlID0gImJyY20saXByb2MtZ3Bpby1jY2EiOwo+ID4gKyAg
+ICAgICAgI2dwaW8tY2VsbHMgPSA8Mj47Cj4gPiArICAgICAgICByZWcgPSA8MHgxODAwMDA2MCAw
+eDUwPiwKPiA+ICsgICAgICAgICAgICAgIDwweDE4MDAwMDAwIDB4NTA+Owo+ID4gKyAgICAgICAg
+bmdwaW9zID0gPDEyPjsKPiA+ICsgICAgICAgIGdwaW8tY29udHJvbGxlcjsKPiA+ICsgICAgICAg
+IGludGVycnVwdC1jb250cm9sbGVyOwo+ID4gKyAgICAgICAgI2ludGVycnVwdC1jZWxscyA9IDwy
+PjsKPiA+ICsgICAgICAgIGludGVycnVwdHMgPSA8R0lDX1NQSSA5MSBJUlFfVFlQRV9MRVZFTF9I
+SUdIPjsKPiA+ICsgICAgfTsKPiA+ICsKPiA+ICsKPiA+ICsuLi4KPiA+IC0tCj4gPiAyLjIzLjAK
+PiA+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
+eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
+cm0ta2VybmVsCg==
