@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2941DC6CC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 16:03:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55A56DC6CB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 16:03:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=94L+ITM5kaqLzcR8OCAtzrEqxActDESEHGiBlliK+AY=; b=pbJUtH+7lQqL76
-	vLTWjS3MHxf554wAaTyrQqcSXZOAaE7ofLAmu7HLX1HR7xEMOV26CrbfXOxXxMMioxzRL+Ymun6rr
-	Y59cdJNY5rMAh9YbTlMl89+XXMu3RwknOn6UeU6LiU4vJoV+wXugnXDqVrFp/yHq+pi9sLMLkWsBs
-	n9JG0MpN0OMAkFp6kwW+jpXcpmJfgZYohDXdCcJ/pAS3t/cLlRwui0Jxw3Zxaup6/f9XriCgJI2OZ
-	dl2v91QxuAoayZCV7hGfjCvNsSCIpBF9ToBODxCuuiyIc+me5561qwa0tGHrVfvf9r+56/3IpkP9m
-	D1bCzHoidMKZ/d2ExUnw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SdOf0lgVrWPU7HKw5OtBGoYeaUPLXnEysNJtwcgbBos=; b=TeKCahZCrX42il
+	fbT/XsKOITWr6cPc1/fRGDlv36OJYLyP9Z5s3TOBvV7o8SVbVynB+TiFPXH3EFyu0CGH+TIAHYXcJ
+	V1UFfi7EktxhDCQdl36ahMl5vtAxYI685dehx28a63sub7a9Dpo1K4TfRdcEkWQue77oBEETHmuWC
+	a+PINE0uWJRLAPtV58WRY3ZFI5QYV5sEi9G/2ereChMagQv2uKVDvkcuyy+S2SGp2OenGrY4sKXnl
+	UVFYBenJvuaU1s0uwimwGS5y6kzscUuRSmLJ8DQffTZM7wwXufQHL3Z6xi8oDqEJEqIse45xn/rft
+	3IGmXXynJ6cXmhGWB+1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLSr9-0007so-Ba; Fri, 18 Oct 2019 14:03:51 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1iLSqq-0007kZ-8d; Fri, 18 Oct 2019 14:03:32 +0000
+Received: from relay11.mail.gandi.net ([217.70.178.231])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLSqi-0007jC-BN
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 14:03:25 +0000
-X-Originating-IP: 86.207.98.53
+ id 1iLSqg-0007ib-P0
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 14:03:24 +0000
 Received: from localhost
  (aclermont-ferrand-651-1-259-53.w86-207.abo.wanadoo.fr [86.207.98.53])
  (Authenticated sender: kamel.bouhara@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 84EA320004;
- Fri, 18 Oct 2019 14:03:12 +0000 (UTC)
+ by relay11.mail.gandi.net (Postfix) with ESMTPSA id 96EBE100007;
+ Fri, 18 Oct 2019 14:03:13 +0000 (UTC)
 From: Kamel Bouhara <kamel.bouhara@bootlin.com>
 To: Rob Herring <robh+dt@kernel.org>,
  Nicolas Ferre <nicolas.ferre@microchip.com>,
  Alexandre Belloni <alexandre.belloni@bootlin.com>,
  Ludovic Desroches <ludovic.desroches@microchip.com>,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH RESEND 0/2] Add Kizboxmini boards support
-Date: Fri, 18 Oct 2019 16:03:02 +0200
-Message-Id: <20191018140304.31547-1-kamel.bouhara@bootlin.com>
+Subject: [PATCH 1/2] dt-bindings: arm: at91: Document Kizboxmini boards binding
+Date: Fri, 18 Oct 2019 16:03:03 +0200
+Message-Id: <20191018140304.31547-2-kamel.bouhara@bootlin.com>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20191018140304.31547-1-kamel.bouhara@bootlin.com>
+References: <20191018140304.31547-1-kamel.bouhara@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_070324_527486_7455BF2A 
-X-CRM114-Status: UNSURE (   8.28  )
+X-CRM114-CacheID: sfid-20191018_070322_951353_EE5C0AB0 
+X-CRM114-Status: UNSURE (   7.40  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -50,7 +51,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
+ low trust [217.70.178.231 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -72,23 +73,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for the Overkiz's SAM9G25 based boards and document them.
+Document devicetree's bindings for the SAM9G25 Kizbox Mini boards of
+Overkiz SAS.
 
-Kamel Bouhara (2):
-  dt-bindings: arm: at91: Document Kizboxmini boards binding
-  ARM: dts: at91: add a common kizboxmini dtsi file
+Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
+---
+ .../devicetree/bindings/arm/atmel-at91.yaml        | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
 
- .../devicetree/bindings/arm/atmel-at91.yaml   |  14 ++
- arch/arm/boot/dts/Makefile                    |   2 +
- arch/arm/boot/dts/at91-kizboxmini-mb.dts      |  38 ++++
- arch/arm/boot/dts/at91-kizboxmini-rd.dts      |  54 ++++++
- arch/arm/boot/dts/at91-kizboxmini_common.dtsi | 166 ++++++++++++++++++
- 5 files changed, 274 insertions(+)
- create mode 100644 arch/arm/boot/dts/at91-kizboxmini-mb.dts
- create mode 100644 arch/arm/boot/dts/at91-kizboxmini-rd.dts
- create mode 100644 arch/arm/boot/dts/at91-kizboxmini_common.dtsi
-
---
+diff --git a/Documentation/devicetree/bindings/arm/atmel-at91.yaml b/Documentation/devicetree/bindings/arm/atmel-at91.yaml
+index 1e72e3e6e025..666462988179 100644
+--- a/Documentation/devicetree/bindings/arm/atmel-at91.yaml
++++ b/Documentation/devicetree/bindings/arm/atmel-at91.yaml
+@@ -35,6 +35,20 @@ properties:
+               - atmel,at91sam9x60
+           - const: atmel,at91sam9
+ 
++      - description: Overkiz kizbox Mini Mother Board
++        items:
++          - const: overkiz,kizboxmini-mb
++          - const: atmel,at91sam9g25
++          - const: atmel,at91sam9x5
++          - const: atmel,at91sam9
++
++      - description: Overkiz kizbox Mini RailDIN
++        items:
++          - const: overkiz,kizboxmini-rd
++          - const: atmel,at91sam9g25
++          - const: atmel,at91sam9x5
++          - const: atmel,at91sam9
++
+       - items:
+           - enum:
+               - atmel,at91sam9g15
+-- 
 2.23.0
 
 
