@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A260DCD9B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 20:11:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1444BDCD96
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 20:10:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=szQ/vYV7NFeoGLUUDcYygIUD/5a9uiBEJrvZPjaObhA=; b=VkK
-	9xsi8K0JbWyVS26Ge57tgQZfRDQj5yn7VYOhhX8rcHW1qkfe+QupbhAhjK/WuJolHPOMU2WSutJ9v
-	ZL59TusI/sdJJUVnH5u8KdEbapD0As8Pm97ZqAkGjVkUXkoE4clynSsfl/im7ViIj9TZmOjoJuyoK
-	pGk4DOs8G09wFENU0bsewlsYlpDMdHdepgD34fbwGB8l6RefEMsaeCJd8XQqGJsLifCrCi3O3gnay
-	N5qkqN2yruMaNco6BAW+aiFtaChLhfnEmrXwMGqrKoRof+cHqH3/NC/wYmcUVegGrTeorl5ShH9vc
-	UYcQyWwixkGMd6hJ7PdmO2zdEz7uUgA==;
+	References:List-Owner; bh=HdprVrKnb2zc1hj5ofVcCWGymfdGSr/c2dLKjfcZodA=; b=HH0
+	SyD/skwbw4j8vi1rkAWgBRqXCIxgA6Bsn5Omg/h7gk2bkTlBgZ/x+fZ8FSGzU81vuzo7lXfv90RsF
+	NM1ESS7woANzlgcHMbZXAR6pfO2Yv7hhM82ExgMA7FGUM/PHLKVYk4lny9rqunYhjWLHY3DZkk93Q
+	oopE89PmURcQntjZOkh3MaQiaS1x7vU4mFX6oKmeZAKCLAdBZ/U8e/D+XR4OijA5LhUUG+hzOE1wQ
+	mqa2A/UL7U+jDp17jYNUcV/7vLGfoUr4O9PVE7n2a7BUUI2EOf1SkM1v5TXzRiHSDwIEuSr3/MhZ2
+	yW4urmsA1TmEQIySRHtYWOEmd7JLCGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLWiN-0003hu-Ty; Fri, 18 Oct 2019 18:11:03 +0000
+	id 1iLWhs-0003AN-QV; Fri, 18 Oct 2019 18:10:32 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLWeg-0007lS-J0
+ id 1iLWef-0007kN-SH
  for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 18:07:20 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
@@ -29,30 +29,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=t/gffXnLEnapErkIM7XMWv5utc8YEivVkOgKwMKPBdM=; b=hHurjcxQzNRI
- 6WpaH4hMHMHxuU3WbZPyQtbF3fAjI53z84Il8FNt9q0I7+xo5gTNBvTxQgqzxj/LXMOI+o9v093xa
- cNwhP4WaCg79z8VWNwQK0zs/zeXhDHaGMfyjr2jsuC5FCDVpoJq+4QqPwgtg8sL/GPugjQqO+ikyQ
- znL8o=;
+ List-Archive; bh=AGAwWMLdnTUc73N8GjjYlBFIh97VvTrIorQi++WDot4=; b=kyNF0xTukb5y
+ rG6LDOhEQVhcwvY+3/JlEyVL+1tQz0mRh/ggp8a09UlahTU16pHIPdoBDYBNzMg3OinTI8NpdSVsM
+ nJaXkv2qDu+UemIdalaGe7t9D8JXffvOoXZSbLBewUHo9h3hpfQF8FOz5z5wFpwKQIthWyEIclltZ
+ irDpc=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iLWeb-0004HQ-U5; Fri, 18 Oct 2019 18:07:09 +0000
+ id 1iLWec-0004Hc-01; Fri, 18 Oct 2019 18:07:10 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 490C22743276; Fri, 18 Oct 2019 19:07:09 +0100 (BST)
+ id 7A1482741DEA; Fri, 18 Oct 2019 19:07:09 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
 To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Subject: Applied "spi: pxa2xx: Replace of_device.h with mod_devicetable.h and
- of.h" to the spi tree
-In-Reply-To: <20191018105429.82782-5-andriy.shevchenko@linux.intel.com>
+Subject: Applied "spi: pxa2xx: Convert to use device_get_match_data()" to the
+ spi tree
+In-Reply-To: <20191018105429.82782-4-andriy.shevchenko@linux.intel.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20191018180709.490C22743276@ypsilon.sirena.org.uk>
+Message-Id: <20191018180709.7A1482741DEA@ypsilon.sirena.org.uk>
 Date: Fri, 18 Oct 2019 19:07:09 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_110714_740481_F4651859 
-X-CRM114-Status: GOOD (  14.44  )
+X-CRM114-CacheID: sfid-20191018_110713_949116_06453450 
+X-CRM114-Status: GOOD (  15.96  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -89,7 +89,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: pxa2xx: Replace of_device.h with mod_devicetable.h and of.h
+   spi: pxa2xx: Convert to use device_get_match_data()
 
 has been applied to the spi tree at
 
@@ -114,36 +114,83 @@ to this mail.
 Thanks,
 Mark
 
-From ae8fbf1d2403bc187a5d8fe82fbf2205d89cdb60 Mon Sep 17 00:00:00 2001
+From f2faa3ec79ac11db8c26b10f8c978d4d0f7392dd Mon Sep 17 00:00:00 2001
 From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Date: Fri, 18 Oct 2019 13:54:29 +0300
-Subject: [PATCH] spi: pxa2xx: Replace of_device.h with mod_devicetable.h and
- of.h
+Date: Fri, 18 Oct 2019 13:54:28 +0300
+Subject: [PATCH] spi: pxa2xx: Convert to use device_get_match_data()
 
-There is nothing in use from of_device.h. The definitions and macros
-are available thru mod_devicetable.h and of.h.
+Convert to use device_get_match_data() instead of open coded variant.
+
+While here, switch of_property_read_bool() to device_property_read_bool().
 
 Signed-off-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Link: https://lore.kernel.org/r/20191018105429.82782-5-andriy.shevchenko@linux.intel.com
+Link: https://lore.kernel.org/r/20191018105429.82782-4-andriy.shevchenko@linux.intel.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/spi-pxa2xx.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/spi/spi-pxa2xx.c | 26 +++++++-------------------
+ 1 file changed, 7 insertions(+), 19 deletions(-)
 
 diff --git a/drivers/spi/spi-pxa2xx.c b/drivers/spi/spi-pxa2xx.c
-index 684a5585ac7f..443c1f4d2a9a 100644
+index 04ca80770e35..684a5585ac7f 100644
 --- a/drivers/spi/spi-pxa2xx.c
 +++ b/drivers/spi/spi-pxa2xx.c
-@@ -18,7 +18,8 @@
- #include <linux/ioport.h>
- #include <linux/kernel.h>
- #include <linux/module.h>
--#include <linux/of_device.h>
-+#include <linux/mod_devicetable.h>
-+#include <linux/of.h>
+@@ -22,6 +22,7 @@
  #include <linux/pci.h>
  #include <linux/platform_device.h>
  #include <linux/pm_runtime.h>
++#include <linux/property.h>
+ #include <linux/slab.h>
+ #include <linux/spi/pxa2xx_spi.h>
+ #include <linux/spi/spi.h>
+@@ -1512,34 +1513,21 @@ static struct pxa2xx_spi_controller *
+ pxa2xx_spi_init_pdata(struct platform_device *pdev)
+ {
+ 	struct pxa2xx_spi_controller *pdata;
+-	struct acpi_device *adev;
+ 	struct ssp_device *ssp;
+ 	struct resource *res;
+-	const struct acpi_device_id *adev_id = NULL;
+ 	const struct pci_device_id *pcidev_id = NULL;
+-	const struct of_device_id *of_id = NULL;
+ 	enum pxa_ssp_type type;
++	const void *match;
+ 
+-	adev = ACPI_COMPANION(&pdev->dev);
+-
+-	if (pdev->dev.of_node)
+-		of_id = of_match_device(pdev->dev.driver->of_match_table,
+-					&pdev->dev);
+-	else if (dev_is_pci(pdev->dev.parent))
++	if (dev_is_pci(pdev->dev.parent))
+ 		pcidev_id = pci_match_id(pxa2xx_spi_pci_compound_match,
+ 					 to_pci_dev(pdev->dev.parent));
+-	else if (adev)
+-		adev_id = acpi_match_device(pdev->dev.driver->acpi_match_table,
+-					    &pdev->dev);
+-	else
+-		return NULL;
+ 
+-	if (adev_id)
+-		type = (enum pxa_ssp_type)adev_id->driver_data;
++	match = device_get_match_data(&pdev->dev);
++	if (match)
++		type = (enum pxa_ssp_type)match;
+ 	else if (pcidev_id)
+ 		type = (enum pxa_ssp_type)pcidev_id->driver_data;
+-	else if (of_id)
+-		type = (enum pxa_ssp_type)of_id->data;
+ 	else
+ 		return NULL;
+ 
+@@ -1572,7 +1560,7 @@ pxa2xx_spi_init_pdata(struct platform_device *pdev)
+ 	ssp->dev = &pdev->dev;
+ 	ssp->port_id = pxa2xx_spi_get_port_id(&pdev->dev);
+ 
+-	pdata->is_slave = of_property_read_bool(pdev->dev.of_node, "spi-slave");
++	pdata->is_slave = device_property_read_bool(&pdev->dev, "spi-slave");
+ 	pdata->num_chipselect = 1;
+ 	pdata->enable_dma = true;
+ 	pdata->dma_burst_size = 1;
 -- 
 2.20.1
 
