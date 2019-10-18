@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34434DCCA1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 19:27:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23C33DCCA5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 19:28:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=6nNPjNLZUbxLksb0uuRCqhzJdGG10qaMvwEZX6hvAFw=; b=CP4CTDVH5f/WIi441Sd9DiZEM3
-	baqB2l3arQJeKb2aaoD7P49yIQwS/qVcNb/WKnpz+lezdQY6lsrWi9mMzwJ58JijaY3dJj04TIZot
-	O01NHMMS2thgaznf2XBtQLUACHLTThZZi/60G8cKSXTb+qmYxPdV+hTGsLYfO/OlTI181yeRy56NQ
-	gvIGDLSDLxPDxRewIMrrPlVWoF64/BHgsAw0QY66v5jC5V0Vjl7RW1ZeSkBkTQXAnwYxG30ashXJ6
-	ps72mna/FtTicsWF+DgSz1I7wwuUKobzjLOg5jDwpEA1U499C4kQaQW16VONUkHwESUDEmHD7R2CE
-	L881loxQ==;
+	bh=NC7c1jTboBte6cDcq8sPURDd5vksa60jm+DEN/gRqJg=; b=Yb8lletfw3Xuz6DdtNW4qSoUPT
+	KA6tKf91ATkOT5RvnkUrNALjyKx+XpUjR9d0gIhvK/OGI1yhGZiCjLkZXnEPQZKL9qwWLzsbAjweZ
+	g+i7E0FRmUDvDq/AaSEceMRA93DqNHprOpwvKdICNab0rPKgJtqN73h53c/fO3G/wFTIxdaqLvvY1
+	9g5JZuiOJn0PMe24XNdPvx3TDDf1GdMKLMZF+e8FfhYkbLItpXyR/ta3OH3Lq0zJckC3HoZ45IsYC
+	5Jroc200/gg+UrdbD1Xn1t9LicvxvKWBrUjOUBq4FlxjiGtfXBtZMskS7p63STcILmeep46c6KymC
+	aQBoPFqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLW1o-0004gv-R0; Fri, 18 Oct 2019 17:27:04 +0000
+	id 1iLW2h-0005GO-87; Fri, 18 Oct 2019 17:27:59 +0000
 Received: from [217.140.110.172] (helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLW1Y-0004cG-8J
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 17:26:50 +0000
+ id 1iLW1Y-0004eu-87
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 17:26:52 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0025712FC;
- Fri, 18 Oct 2019 10:26:44 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 031681396;
+ Fri, 18 Oct 2019 10:26:47 -0700 (PDT)
 Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 19EA63F718;
- Fri, 18 Oct 2019 10:26:40 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 388403F718;
+ Fri, 18 Oct 2019 10:26:44 -0700 (PDT)
 From: Dave Martin <Dave.Martin@arm.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v3 03/12] mm: Reserve asm-generic prot flag 0x10 for arch use
-Date: Fri, 18 Oct 2019 18:25:36 +0100
-Message-Id: <1571419545-20401-4-git-send-email-Dave.Martin@arm.com>
+Subject: [PATCH v3 04/12] arm64: docs: cpu-feature-registers: Document
+ ID_AA64PFR1_EL1
+Date: Fri, 18 Oct 2019 18:25:37 +0100
+Message-Id: <1571419545-20401-5-git-send-email-Dave.Martin@arm.com>
 X-Mailer: git-send-email 2.1.4
 In-Reply-To: <1571419545-20401-1-git-send-email-Dave.Martin@arm.com>
 References: <1571419545-20401-1-git-send-email-Dave.Martin@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_102649_355404_6AF94879 
-X-CRM114-Status: GOOD (  11.11  )
+X-CRM114-CacheID: sfid-20191018_102649_360595_08A6A3CD 
+X-CRM114-Status: GOOD (  12.14  )
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
@@ -80,31 +81,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The asm-generic mman definitions are used by a few architectures
-that also define an arch-specific PROT flag with value 0x10.  This
-currently applies to sparc and powerpc, and arm64 will soon join
-in.
+Commit d71be2b6c0e1 ("arm64: cpufeature: Detect SSBS and advertise
+to userspace") exposes ID_AA64PFR1_EL1 to userspace, but didn't
+update the documentation to match.
 
-To help future maintainers, document the use of this flag in the
-asm-generic header too.
+Add it.
 
 Signed-off-by: Dave Martin <Dave.Martin@arm.com>
----
- include/uapi/asm-generic/mman-common.h | 1 +
- 1 file changed, 1 insertion(+)
 
-diff --git a/include/uapi/asm-generic/mman-common.h b/include/uapi/asm-generic/mman-common.h
-index c160a53..81442d2 100644
---- a/include/uapi/asm-generic/mman-common.h
-+++ b/include/uapi/asm-generic/mman-common.h
-@@ -11,6 +11,7 @@
- #define PROT_WRITE	0x2		/* page can be written */
- #define PROT_EXEC	0x4		/* page can be executed */
- #define PROT_SEM	0x8		/* page may be used for atomic ops */
-+ /*			0x10		   reserved for arch-specific use */
- #define PROT_NONE	0x0		/* page can not be accessed */
- #define PROT_GROWSDOWN	0x01000000	/* mprotect flag: extend change to start of growsdown vma */
- #define PROT_GROWSUP	0x02000000	/* mprotect flag: extend change to end of growsup vma */
+---
+
+Note to maintainers:
+
+ * This patch has been racing with various other attempts to fix
+   the same documentation in the meantime.
+
+   Since this patch only fixes the documenting for pre-existing
+   features, it can safely be dropped if appropriate.
+
+   The _new_ documentation relating to BTI feature reporting
+   is in a subsequent patch, and needs to be retained.
+---
+ Documentation/arm64/cpu-feature-registers.rst | 15 +++++++++++----
+ 1 file changed, 11 insertions(+), 4 deletions(-)
+
+diff --git a/Documentation/arm64/cpu-feature-registers.rst b/Documentation/arm64/cpu-feature-registers.rst
+index 2955287..b86828f 100644
+--- a/Documentation/arm64/cpu-feature-registers.rst
++++ b/Documentation/arm64/cpu-feature-registers.rst
+@@ -168,8 +168,15 @@ infrastructure:
+      +------------------------------+---------+---------+
+ 
+ 
+-  3) MIDR_EL1 - Main ID Register
++  3) ID_AA64PFR1_EL1 - Processor Feature Register 1
++     +------------------------------+---------+---------+
++     | Name                         |  bits   | visible |
++     +------------------------------+---------+---------+
++     | SSBS                         | [7-4]   |    y    |
++     +------------------------------+---------+---------+
++
+ 
++  4) MIDR_EL1 - Main ID Register
+      +------------------------------+---------+---------+
+      | Name                         |  bits   | visible |
+      +------------------------------+---------+---------+
+@@ -188,7 +195,7 @@ infrastructure:
+    as available on the CPU where it is fetched and is not a system
+    wide safe value.
+ 
+-  4) ID_AA64ISAR1_EL1 - Instruction set attribute register 1
++  5) ID_AA64ISAR1_EL1 - Instruction set attribute register 1
+ 
+      +------------------------------+---------+---------+
+      | Name                         |  bits   | visible |
+@@ -210,7 +217,7 @@ infrastructure:
+      | DPB                          | [3-0]   |    y    |
+      +------------------------------+---------+---------+
+ 
+-  5) ID_AA64MMFR2_EL1 - Memory model feature register 2
++  6) ID_AA64MMFR2_EL1 - Memory model feature register 2
+ 
+      +------------------------------+---------+---------+
+      | Name                         |  bits   | visible |
+@@ -218,7 +225,7 @@ infrastructure:
+      | AT                           | [35-32] |    y    |
+      +------------------------------+---------+---------+
+ 
+-  6) ID_AA64ZFR0_EL1 - SVE feature ID register 0
++  7) ID_AA64ZFR0_EL1 - SVE feature ID register 0
+ 
+      +------------------------------+---------+---------+
+      | Name                         |  bits   | visible |
 -- 
 2.1.4
 
