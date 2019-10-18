@@ -2,73 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72474DC57A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 14:53:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3B3DDC56E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 14:52:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=KZu82d62QKpf/doYiHj7kDuVuXXqQdAVyzuzXNTndjg=; b=PcLcYtN7Bf9KGc
-	DMLT0m44dIVpdV7fyeYYUoUhfoqnspS43Df5HrBHyhl/9kqKe45iEQ9Ip0jBgkkQ8NAXz1W1zv7rv
-	+a0pKdlvZNHnemvAIGraE5KlHPl0Q1Sy2Mmtij8QFD64FJAv3Ca2rd3oaOr65o2MwbXiZOVY+g6h2
-	yZCDLF21WCQZn02akNxP7f9lopfXT9GFjtwWCzf2VTMuLhBXWKj8xAIrPfKd3jpWaVJUJJikHSRDn
-	n1izJCoVjnopQ6zitGvvmFvrSaGRRm7Nnm0k+GgWP307q2PLyZljibELGPLpwklh3pH6Poj76o50q
-	osmWeakIATxDvB1/m1dw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OKCQyC1gD/dJIiyD8ORYBGgA+8waz4o642Xxp2hV8nk=; b=iWuL6uXQzWfhD+
+	3vCCtM54L9CJ9cYldffvuETSMjg1Tha5SKI1srHsgSql1hfaMEsd9rMjRtQz/CD7K2zcKtx7TSOcu
+	7gaZh/7+rjCdTxbtNiLWuMiHZ6xaeCSuPtABlFOJOJm5oZM8VSQIEjDR7gkGUCZILbvGr6PDszLCg
+	rMMRcPfy/kv/MYuwzs1EepoXbnVdM0LpLxdEKl6osL6kRD+qQCj8Ap+s2rl4oIECfexAvHlZUJeW7
+	L9av62XLStDYfgvlfysJU7U7kX1nBGDkuVvgeUrcIzfuLPuU+n2kz0j5reRMmd/FtbWy7OwcmraPg
+	ToLyHoZKGQrtzlKqWZdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLRko-0005DT-Ay; Fri, 18 Oct 2019 12:53:14 +0000
+	id 1iLRkW-00053A-A6; Fri, 18 Oct 2019 12:52:56 +0000
 Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLRkJ-00051d-Qr
+ id 1iLRkJ-00051i-Qs
  for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 12:52:45 +0000
-Received: by mail-lj1-x242.google.com with SMTP id m7so6129038lji.2
+Received: by mail-lj1-x242.google.com with SMTP id f5so6103223ljg.8
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 05:52:41 -0700 (PDT)
+ Fri, 18 Oct 2019 05:52:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=X8tXbinQHwrpjZVR5SZDxD1u91iSiuAMbDTcJXFPWb8=;
- b=ZqtTvUIddQBWXaS8eT4AyKxHQxxb4LutuCYu8Et1I6qRRkCdNpIZDsBMkkiqP5LJJ3
- T++Y9k8fNV6dq4whnCc4qJYUxpkzOBGqaKv9D+WlmA2Nnrs7pPTF+ryD2Ysn6PV0lyhL
- my8Exob7bYpSp/7oQ9MbAyg6EO3GvkCC8XS9U=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=76C3KCBVTIWXOJRoGbkicD5UasUbJ5XDGEEs+OOGNvk=;
+ b=FSHcuBzPR1mmeL4PACLKsTbqTj+24LBzK/6l+O/Lm/1IrQLP3nhdrLnFf6MSg0yH0g
+ HoftTcmnUioa5SuvRouA12dlbveQ/icRsojJyg7o+TA6FzCF4LpHeb/WCkcTlKMjOMFj
+ W12H1zsXT9+1u+Ng90qJFYXAQtc1ter6pD6Nk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=X8tXbinQHwrpjZVR5SZDxD1u91iSiuAMbDTcJXFPWb8=;
- b=WQ/8HRIxTzy90ME0YL8zBxB426txX5eqz0sv9z7k6BA+QHKH9Npf50HAUMtd8yI5Dp
- SF1vxy8C6+f1RYSG2/i4sh3G4VO4GvAxPD7t/P8HBQdgTib2oULXseu3YP1Wn5KGcSdF
- YOQolmlIMVNqazQznleCpKKhJxL2Cf8CKhP9nGhUdvYusckbHvQtETxogE64H91QySTq
- u4r/bm+lb/dwFPYq2tvdCVK0v3Xz2ZhrejBn+opW7T6Y7RAQHZIFWnyfN1NQxoARe/Nc
- jR+5noDHKIpDajel4ZC/hWBvXbRsvEx6+IGY5bxu/mrgk6XbuzXxLuwrZxecWAeowLRL
- HJZg==
-X-Gm-Message-State: APjAAAVXHWXM4e7YLV11TnkIzkFgOaPK7XtNEUvbbvl5FQXh+bOZemKV
- p9Buz14+kfEzAW5LRO1HfPtoQ1tx/eKLZXn1
-X-Google-Smtp-Source: APXvYqyF9yPf+tbU7h7RQICAL7Ec07Pxt3Ja7hV0UEFHDzE2BYMYhcr3tkeM8h/HHzKMwhMhBwF9EQ==
-X-Received: by 2002:a2e:3919:: with SMTP id g25mr6031311lja.162.1571403159942; 
- Fri, 18 Oct 2019 05:52:39 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=76C3KCBVTIWXOJRoGbkicD5UasUbJ5XDGEEs+OOGNvk=;
+ b=o5k0eAO4MmvevRDT2KxtukWF1BN9YIoqOOFRp1MKUdGqSEM2eZF9thzQekOMX3BLjs
+ MSMuaeJkwBbb0xawJRsJ9jLTHJuk2mI37yeXqkDHGRGCWjrHDQ0d2JvFS1BIvivcD1ar
+ FY6ezZ34uH2Ry30KYQ+TRK3u2FG+LdNiRwRR+Kxb4ukx8tacI6oNX0TtVFXvY3VOJkWF
+ 8IQ4Q/7REnN5pUFiYpKxTgKcToeXxClboN4ZD2Hr0BpdwA4wIvq4IFaVFCIcSWkGcA2t
+ Mr4VZLKdfcyZhuad+3wQowRHAIc9/yAvkJotsQvKywiuvp35d/1iI629dM/OTCYRif+u
+ 0A6Q==
+X-Gm-Message-State: APjAAAWx2MlRqsZ/VvDLUPTRpPyRXX4bDUPGkLU1Vf5aAM41SA+MsO+z
+ iKQzU9E2PXTwOMW9QCUJfXzx0w==
+X-Google-Smtp-Source: APXvYqwYe6ilX8TDGuGskrpio0qKSxCNGwmNMC2CS8ROsNPpnWHiv5TjxIYmTv9OVkt1GHfcoMvdMg==
+X-Received: by 2002:a2e:9112:: with SMTP id m18mr6305431ljg.75.1571403161898; 
+ Fri, 18 Oct 2019 05:52:41 -0700 (PDT)
 Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id m17sm7454792lje.0.2019.10.18.05.52.38
+ by smtp.gmail.com with ESMTPSA id m17sm7454792lje.0.2019.10.18.05.52.40
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 18 Oct 2019 05:52:38 -0700 (PDT)
+ Fri, 18 Oct 2019 05:52:40 -0700 (PDT)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
-To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Jiri Slaby <jslaby@suse.com>, Timur Tabi <timur@kernel.org>,
- linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-serial@vger.kernel.org
-Subject: [PATCH 0/7] towards QE support on ARM
-Date: Fri, 18 Oct 2019 14:52:27 +0200
-Message-Id: <20191018125234.21825-1-linux@rasmusvillemoes.dk>
+To: Qiang Zhao <qiang.zhao@nxp.com>,
+	Li Yang <leoyang.li@nxp.com>
+Subject: [PATCH 1/7] soc: fsl: qe: remove space-before-tab
+Date: Fri, 18 Oct 2019 14:52:28 +0200
+Message-Id: <20191018125234.21825-2-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20191018125234.21825-1-linux@rasmusvillemoes.dk>
+References: <20191018125234.21825-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_055244_024849_FB7E05C8 
-X-CRM114-Status: UNSURE (   9.89  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191018_055244_024962_97A30813 
+X-CRM114-Status: GOOD (  10.22  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -97,45 +95,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+Cc: linuxppc-dev@lists.ozlabs.org, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There have been several attempts in the past few years to allow
-building the QUICC engine drivers for platforms other than PPC. This
-is (the beginning of) yet another attempt. I hope I can get someone to
-pick up these relatively trivial patches (I _think_ they shouldn't
-change functionality at all), and then I'll continue slowly working
-towards removing the PPC32 dependency for CONFIG_QUICC_ENGINE.
+Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+---
+ drivers/soc/fsl/qe/qe.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-Tested on an MPC8309-derived board.
-
-Rasmus Villemoes (7):
-  soc: fsl: qe: remove space-before-tab
-  soc: fsl: qe: drop volatile qualifier of struct qe_ic::regs
-  soc: fsl: qe: avoid ppc-specific io accessors
-  soc: fsl: qe: replace spin_event_timeout by readx_poll_timeout_atomic
-  serial: make SERIAL_QE depend on PPC32
-  serial: ucc_uart.c: explicitly include asm/cpm.h
-  soc/fsl/qe/qe.h: remove include of asm/cpm.h
-
- drivers/soc/fsl/qe/gpio.c     | 30 ++++++++--------
- drivers/soc/fsl/qe/qe.c       | 44 +++++++++++------------
- drivers/soc/fsl/qe/qe_ic.c    |  8 ++---
- drivers/soc/fsl/qe/qe_ic.h    |  2 +-
- drivers/soc/fsl/qe/qe_io.c    | 40 ++++++++++-----------
- drivers/soc/fsl/qe/qe_tdm.c   |  8 ++---
- drivers/soc/fsl/qe/ucc.c      | 12 +++----
- drivers/soc/fsl/qe/ucc_fast.c | 66 ++++++++++++++++++-----------------
- drivers/soc/fsl/qe/ucc_slow.c | 38 ++++++++++----------
- drivers/soc/fsl/qe/usb.c      |  2 +-
- drivers/tty/serial/Kconfig    |  1 +
- drivers/tty/serial/ucc_uart.c |  1 +
- include/soc/fsl/qe/qe.h       |  1 -
- 13 files changed, 126 insertions(+), 127 deletions(-)
-
+diff --git a/drivers/soc/fsl/qe/qe.c b/drivers/soc/fsl/qe/qe.c
+index 417df7e19281..6fcbfad408de 100644
+--- a/drivers/soc/fsl/qe/qe.c
++++ b/drivers/soc/fsl/qe/qe.c
+@@ -378,8 +378,8 @@ static int qe_sdma_init(void)
+ 	}
+ 
+ 	out_be32(&sdma->sdebcr, (u32) sdma_buf_offset & QE_SDEBCR_BA_MASK);
+- 	out_be32(&sdma->sdmr, (QE_SDMR_GLB_1_MSK |
+- 					(0x1 << QE_SDMR_CEN_SHIFT)));
++	out_be32(&sdma->sdmr, (QE_SDMR_GLB_1_MSK |
++					(0x1 << QE_SDMR_CEN_SHIFT)));
+ 
+ 	return 0;
+ }
 -- 
 2.20.1
 
