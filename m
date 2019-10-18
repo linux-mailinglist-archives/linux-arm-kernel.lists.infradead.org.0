@@ -2,68 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28B1FDC0A1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 11:11:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB484DC0BA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 11:19:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SFxD4SL+CMKoQKTJca67QD/jazf2rXtnZ4jOfeW37/w=; b=dfq1liKe10bcCR
-	NX8n/SYJ9MFYkv0f+eqHPdRfscstmnJ/HwcztyFLKRaUhaCLYgAfa8QRwFitwmUTEy8uPjMLpQkxA
-	FNjQs/DGiBZMVMPNzxydAZAgc2SWgMpRzTPWT+XVL2ZPt1UXkjEmtdgK3ZQcS7mEPDbLjntrhV0xJ
-	8jzUKOsYbeCJ+SanUzHD/WKZ8oKmp5/xN9t+IQzN8W89L8JpBxdsQQ7OQoKsLM51z9KQzMOpqzhQC
-	HhpRwBuzF8VUvt+YFMNz060D9BFMurUCFAqh0I7OQxAXoP6cPtXIs/P9pJwjXckQQGUJkdViI32lU
-	flTEfkKvfA6alOuZeGEA==;
+	List-Owner; bh=JKzPOAXU59HJocByubso7uq2s7QzPVvAeU+blDiRL2Q=; b=mROJXDB40hdqcx
+	pma8Lomg64jSYXtNfyj5Wg22IbvxCJhxjyQdFMLMax42soLtFiE/WT+v2aEM0Z0NfweaUdfXIrvYn
+	T6ZYTl/z9xko7uYgJ88fLadZ5RMZ7XnHYGdyCmluu1/N7XH3lThRj1Ju4QnSbyxu9tg2DTYO/bIRN
+	dy5Jn4ZpzeF5gDY54fOuTpEwtp7+p3pkjhCi2ECBc7znGf6B6A5p7ATO99zw9OLaLQENA7YK5AIHo
+	cJi8vsdL4pgrBWw56ugXZz5MPLZ2sFQo4D7WX/tFgPz6T0jd3yGmRt7L1t5R4KqKTR+s3LnJ0jx7Y
+	/wU90NBgXhPtS5kKMuKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLOI2-0008Jo-Fa; Fri, 18 Oct 2019 09:11:18 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1iLOPm-0002Bv-Lq; Fri, 18 Oct 2019 09:19:18 +0000
+Received: from mail-yw1-xc43.google.com ([2607:f8b0:4864:20::c43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLOHs-0008I8-0d; Fri, 18 Oct 2019 09:11:09 +0000
-X-UUID: 85dd635cae1d4460bdbb6f0179ef34af-20191018
-X-UUID: 85dd635cae1d4460bdbb6f0179ef34af-20191018
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <min.guo@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1153757082; Fri, 18 Oct 2019 01:10:23 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 18 Oct 2019 02:10:59 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N2.mediatek.inc
- (172.27.4.87) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Fri, 18 Oct 2019 17:10:56 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 18 Oct 2019 17:10:55 +0800
-Message-ID: <1571389858.28949.13.camel@mhfsdcap03>
-Subject: Re: [PATCH v8 6/6] usb: musb: Add support for MediaTek musb controller
-From: Min Guo <min.guo@mediatek.com>
-To: Tony Lindgren <tony@atomide.com>
-Date: Fri, 18 Oct 2019 17:10:58 +0800
-In-Reply-To: <20191017163433.GN5610@atomide.com>
-References: <20191017094126.29045-1-min.guo@mediatek.com>
- <20191017094126.29045-7-min.guo@mediatek.com>
- <20191017163433.GN5610@atomide.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1iLOPb-0002Av-M7
+ for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 09:19:09 +0000
+Received: by mail-yw1-xc43.google.com with SMTP id e205so1926502ywc.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 18 Oct 2019 02:19:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Z+lQ2vvz51oFYeiM6k7BQbwMui72bfHQHjmRy0L+AxA=;
+ b=ACvp92dWges5svxbhRUbOeZgMj4RVHJBCPyqRlUDAbQOWOtKdysk3+ZmIzVP3/p9of
+ 8QEJ0hTE5RHPa3EX4JMa/5betwdH08Nu0KjN60a++w/MREl7B0IP1Ha/Jvz2Ip6bDDpe
+ HiAe2+rRuHb894TeULs91YERSQcOiCXJaQEx/Ni96LitP6ZmM3mlof0Jl7HkdE6VqHvS
+ S2RBXc6NpfJIuvRXju4BmvjCvz8xaf5sNYPtzOhg5OluuDcmZf1HTcoZ3bqWnBbfTCCi
+ wg/0CizUmf2y7YO5n7SceAu14dPfN4d04yO+VrcCkgBOOk4+O8gzD6FYMXl8xwDIp89S
+ S9lw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Z+lQ2vvz51oFYeiM6k7BQbwMui72bfHQHjmRy0L+AxA=;
+ b=tXaA8w0QC2zZwLqAAlOSCghkgvsuWCB3XnCImM23xgmO9fXDTNEjT5oh9HPbr1WVHf
+ kon/gRtgbxnNdWEr1KExtnGKZOfXfFx7jn0MBprDxqhaahwdjcCehubK0LZPTE2pC7jo
+ z9VAfLS2bGnmVk6rKHcO0yHTYicy/MkVWOe96GFTtWxfHfjqBxzAzEbbgSwmR7tb3uSU
+ bwYcUwypHjL2O3Sxi25whyN/DSGIURNMV5GtfrW06pA6f9DrrxCbYaQrZQhWiVLBW/ku
+ qWI916CQFr6OyHdHzrIwAQMPlvFtaSNl/pqqDt4AbgtYobm1PszL27OzbaLN6J1owIQp
+ MciQ==
+X-Gm-Message-State: APjAAAU0pTeT0IFZ6hJfj7o/GJjM9ziQpmOWVx9jUUMhf+9NkoDNT9eK
+ /zg9WmKn6UlyRidEm5CDsldHk2OJWSgZDnmVl/8=
+X-Google-Smtp-Source: APXvYqyxtzf+5bBLVuzlkXmXNftfRV/zdGyqW/ymUVUbvCi5HWZYp9XZivPbaMnTq4UTh6nHp++iGJRqsdcPz6YG/iE=
+X-Received: by 2002:a81:5742:: with SMTP id l63mr5816824ywb.295.1571390346123; 
+ Fri, 18 Oct 2019 02:19:06 -0700 (PDT)
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 13098244CDB25E873947D08018311C68E73616178ECC778BC1294947B6B966362000:8
-X-MTK: N
+References: <1571218608-15933-1-git-send-email-gkulkarni@marvell.com>
+ <1571218608-15933-3-git-send-email-gkulkarni@marvell.com>
+ <b8e1a637-faf4-4567-7d3e-a4f13dfa1cf0@huawei.com>
+ <CAKTKpr4QoTDjbSxO4CvSH2sNvmrTJKjxi+RZH4mYfyDaaN96Sw@mail.gmail.com>
+ <20191017154750.jgn6e3465qrsu53e@willie-the-truck>
+ <CAKTKpr5ntp5X6Lvp=rKT_F1E1ftdqtjSWTgpEOqEwaDMH2kc1w@mail.gmail.com>
+ <f7c91a7d-1f0e-24be-1491-fd0dae7f1daf@huawei.com>
+In-Reply-To: <f7c91a7d-1f0e-24be-1491-fd0dae7f1daf@huawei.com>
+From: Ganapatrao Kulkarni <gklkml16@gmail.com>
+Date: Fri, 18 Oct 2019 14:48:55 +0530
+Message-ID: <CAKTKpr5-m3s_7zE1C=62yjUL8mPURzTBTiR2OD8bgx65LEAj9w@mail.gmail.com>
+Subject: Re: [PATCH v6 2/2] drivers/perf: Add CCPI2 PMU support in ThunderX2
+ UNCORE driver.
+To: John Garry <john.garry@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_021108_055537_C6B80877 
-X-CRM114-Status: GOOD (  19.29  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191018_021907_724434_ECF282E2 
+X-CRM114-Status: GOOD (  20.42  )
+X-Spam-Score: 1.7 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:c43 listed in]
+ [list.dnswl.org]
+ 0.6 HK_RANDOM_ENVFROM      Envelope sender username looks random
+ 1.0 HK_RANDOM_FROM         From username looks random
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (gklkml16[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (gklkml16[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,126 +103,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Yonglong Wu <yonglong.wu@mediatek.com>, hdegoede@redhat.com, Greg
- Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, chunfeng.yun@mediatek.com,
- Rob Herring <robh+dt@kernel.org>, Alan
- Stern <stern@rowland.harvard.edu>, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-mediatek@lists.infradead.org, Bin Liu <b-liu@ti.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ Jan Glauber <jglauber@marvell.com>, "corbet@lwn.net" <corbet@lwn.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Robert Richter <rrichter@marvell.com>,
+ Zhangshaokun <zhangshaokun@hisilicon.com>,
+ Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
+ Will Deacon <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-On Thu, 2019-10-17 at 09:34 -0700, Tony Lindgren wrote:
-> Hi,
-> 
-> Just few comments for future changes that might help below.
-> 
-> * min.guo@mediatek.com <min.guo@mediatek.com> [191017 09:42]:
-> > --- /dev/null
-> > +++ b/drivers/usb/musb/mediatek.c
-> > +static int musb_usb_role_sx_set(struct device *dev, enum usb_role role)
-> > +{
-> > +	struct mtk_glue *glue = dev_get_drvdata(dev);
-> > +	struct musb *musb = glue->musb;
-> > +	u8 devctl = readb(musb->mregs + MUSB_DEVCTL);
-> > +	enum usb_role new_role;
-> > +
-> > +	if (role == glue->role)
-> > +		return 0;
-> > +
-> > +	switch (role) {
-> > +	case USB_ROLE_HOST:
-> > +		musb->xceiv->otg->state = OTG_STATE_A_WAIT_VRISE;
-> > +		glue->phy_mode = PHY_MODE_USB_HOST;
-> > +		new_role = USB_ROLE_HOST;
-> > +		if (glue->role == USB_ROLE_NONE)
-> > +			phy_power_on(glue->phy);
-> > +
-> > +		devctl |= MUSB_DEVCTL_SESSION;
-> > +		musb_writeb(musb->mregs, MUSB_DEVCTL, devctl);
-> > +		MUSB_HST_MODE(musb);
-> > +		break;
-> > +	case USB_ROLE_DEVICE:
-> > +		musb->xceiv->otg->state = OTG_STATE_B_IDLE;
-> > +		glue->phy_mode = PHY_MODE_USB_DEVICE;
-> > +		new_role = USB_ROLE_DEVICE;
-> > +		devctl &= ~MUSB_DEVCTL_SESSION;
-> > +		musb_writeb(musb->mregs, MUSB_DEVCTL, devctl);
-> > +		if (glue->role == USB_ROLE_NONE)
-> > +			phy_power_on(glue->phy);
-> > +
-> > +		MUSB_DEV_MODE(musb);
-> > +		break;
-> > +	case USB_ROLE_NONE:
-> > +		glue->phy_mode = PHY_MODE_USB_OTG;
-> > +		new_role = USB_ROLE_NONE;
-> > +		devctl &= ~MUSB_DEVCTL_SESSION;
-> > +		musb_writeb(musb->mregs, MUSB_DEVCTL, devctl);
-> > +		if (glue->role != USB_ROLE_NONE)
-> > +			phy_power_off(glue->phy);
-> > +
-> > +		break;
-> > +	default:
-> > +		dev_err(glue->dev, "Invalid State\n");
-> > +		return -EINVAL;
-> > +	}
-> > +
-> > +	glue->role = new_role;
-> > +	phy_set_mode(glue->phy, glue->phy_mode);
-> > +
-> > +	return 0;
-> > +}
-> 
-> For the role change, I recently posted a patch "[PATCH 4/7] usb: musb:
-> Add musb_set_host and peripheral and use them for omap2430". That
-> should work for you looking at the code above, so later on you might
-> want to change to use that. Probably best done as a follow-up patch
-> to avoid adding extra dependencies to your series.
-OK, thanks. I will try this patch.
+On Fri, Oct 18, 2019 at 2:08 PM John Garry <john.garry@huawei.com> wrote:
+>
+> On 18/10/2019 05:21, Ganapatrao Kulkarni wrote:
+> > Hi Will,
+> >
+> > On Thu, Oct 17, 2019 at 9:17 PM Will Deacon <will@kernel.org> wrote:
+> >>
+> >> On Thu, Oct 17, 2019 at 12:38:51PM +0530, Ganapatrao Kulkarni wrote:
+> >>> On Wed, Oct 16, 2019 at 7:01 PM John Garry <john.garry@huawei.com> wrote:
+> >>>>> +TX2_EVENT_ATTR(req_pktsent, CCPI2_EVENT_REQ_PKT_SENT);
+> >>>>> +TX2_EVENT_ATTR(snoop_pktsent, CCPI2_EVENT_SNOOP_PKT_SENT);
+> >>>>> +TX2_EVENT_ATTR(data_pktsent, CCPI2_EVENT_DATA_PKT_SENT);
+> >>>>> +TX2_EVENT_ATTR(gic_pktsent, CCPI2_EVENT_GIC_PKT_SENT);
+> >>>>> +
+> >>>>> +static struct attribute *ccpi2_pmu_events_attrs[] = {
+> >>>>> +     &tx2_pmu_event_attr_req_pktsent.attr.attr,
+> >>>>> +     &tx2_pmu_event_attr_snoop_pktsent.attr.attr,
+> >>>>> +     &tx2_pmu_event_attr_data_pktsent.attr.attr,
+> >>>>> +     &tx2_pmu_event_attr_gic_pktsent.attr.attr,
+> >>>>> +     NULL,
+> >>>>> +};
+> >>>>
+> >>>> Hi Ganapatrao,
+> >>>>
+> >>>> Have you considered adding these as uncore pmu-events in the perf tool?
+> >>>>
+> >>> At the moment no, since the number of events exposed/listed are very few.
+> >>
+> >> Then sounds like a perfect time to nip it in the bud before the list grows
+> >> ;)
+> >
+> > I had internal discussion with architecture team, they have confirmed
+> > that, these are the only published events and no plan to add new.
+> > However, If any such request comes from HW team in future, i will add
+> > them to JSON files.
+>
+> Don't you find perf list is swamped with all the uncore events?
+>
+> For Huawei platform, I find this:
+> ./perf list pmu | grep "Kernel PMU event" | grep hisi | wc -l
+> 648
+>
 
-> Please also note that musb core attempts to do things automagically
-> on it's own. So trying to force mode in general does not work reliably.
-> This is because VBUS may not yet have risen for example.
-VBUS control is through a GPIO on MediaTek musb controller. The host/device switching method is to use the driver of gpio-usb-b-connector, it sets the debounce of GPIO, the link of patch is as follows:
-	Usb: roles: add USB Type-B GPIO connector driver
-	Https://patchwork.kernel.org/patch/10966361/
+We don't have such issue at the moment. As i said earlier, the events
+exposed are limited.
+Total 16 events altogether(DMC, L3C and CCPI2) per socket.
 
-> The role change is best done based on the USB PHY as then usually
-> musb has already switched to the right mode automatically :)
-Considering the use of type-c connector later, the foce phy method is used.
+root@SBR-26>~>> perf list | grep uncore | wc -l
+32
 
-> > +static const struct musb_platform_ops mtk_musb_ops = {
-> > +	.quirks = MUSB_DMA_INVENTRA,
-> > +	.init = mtk_musb_init,
-> > +	.get_toggle = mtk_musb_get_toggle,
-> > +	.set_toggle = mtk_musb_set_toggle,
-> > +	.exit = mtk_musb_exit,
-> > +#ifdef CONFIG_USB_INVENTRA_DMA
-> > +	.dma_init = musbhs_dma_controller_create_noirq,
-> > +	.dma_exit = musbhs_dma_controller_destroy,
-> > +#endif
-> > +	.clearb = mtk_musb_clearb,
-> > +	.clearw = mtk_musb_clearw,
-> > +	.busctl_offset = mtk_musb_busctl_offset,
-> > +	.set_mode = mtk_musb_set_mode,
-> > +};
-> 
-> So you may want to consider getting rid of .set_mode completely
-> and rely on USB PHY calls instead.
-> 
-> In some cases you need to use struct phy_companion for set_vbus
-> depending how things are wired.
-> 
-> Regards,
-> 
-> Tony
+> That's because we have so many instances of the same PMUs, not because
+> there are many events per PMU.
+>
+> TBH, I would like to delete all the events from the hisi uncore kernel
+> drivers, now that they're supported in the perf tool, but I think that
+> would constitute an ABI breakage.
+>
+> Maybe there is a way to hide them, but I couldn't find it.
+>
+> John
+>
+> >
+> > I have incorporate all your previous comments, Can you please Ack and
+> > queue it to 5.5?
+> >
+> >>
+> >> If you can manage with these things in userspace, then I agree with John
+> >> that it would be preferential to do it that way. It also offers more
+> >> flexibility if we get the metricgroup stuff working properly (I think it's
+> >> buggered for big/little atm).
+> >>
+> >> Will
+> >
+> > Thanks,
+> > Ganapat
+> >
+> > .
+> >
+>
+>
 
-
+Thanks,
+Ganapat
 
 _______________________________________________
 linux-arm-kernel mailing list
