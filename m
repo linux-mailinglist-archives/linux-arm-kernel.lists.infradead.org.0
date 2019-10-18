@@ -2,55 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E9EC3DC852
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 17:21:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D32E7DC857
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 17:22:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=33NSkEtgNvHyoNMPU5h/Tz0rtzhgbDlq5MCVsNRM0gQ=; b=BqMMQiiWdvoMXb
-	rqeGZrxWMocaZ+HmRa5Jw8Z+FQrKyKO7KnxJKeWHZtyDQ8jn6Mlh0DQiMxy6s+pmaD3v8F6yA5QkR
-	GWIhI9KdCTuugbpme9bAAkM/WQO4NiGkWezO+xYTYpolQLnooRq+DLfyng+ODFqvG/5c3FT6hr1Fg
-	z882xUgn1iaQNvfSr2zOaAO88dk3BKyQP2MidiiJLz3XW7Wy1M+Szlk4CwS/IdU72fEmaGojBLn9R
-	mDVXX7CLPkWPfkE/GSIzxIgEHwDA/A+WgTEgj3vVQ/9R5zvPbEhXlR8mdld5V0IE/aPzI0AjI0Txs
-	tdQ6EO9ojCZvHzyn07Lg==;
+	List-Owner; bh=WrEpAnojq5InTVDufMmw2uESuRuZtfMihps6Bv4wdDE=; b=cnkCGVbhZPH4a7
+	NThJQhIf8Uumr2c4ZFKmY2v3yvrk9unm769M22kjnwwkWx4Gthp4g+zh21zuHujXkHSZg9c29rzsK
+	52OBG9GHUE5UQ6W/72RFovKPN24DbvTaY7OAO3sBVvH3Mqc4mnfX5xJM9am16CoZWumt6ogmsMnVp
+	SnY0dYu3Lx9tGxaiDxtDpUFWqHqwdChvI856XgLIBnDWYPjbgzNQdc+YR+pR3bCQhA/ekK6oPMCeN
+	w+xUZRh2qfOdcAQMM698+4zqKC+O7skB2hIdwmQhKhDBFF/OQ9VNa92uqKsgJPa8nsFjlHk9/YisG
+	3pmGJ2i5TF4OirLoBVMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLU4D-0007eq-Ic; Fri, 18 Oct 2019 15:21:25 +0000
-Received: from [217.140.110.172] (helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLU43-0007cz-HB
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 15:21:17 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CDC3AC8F;
- Fri, 18 Oct 2019 08:20:59 -0700 (PDT)
-Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0B4DA3F718;
- Fri, 18 Oct 2019 08:20:57 -0700 (PDT)
-Date: Fri, 18 Oct 2019 16:20:52 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Yunfeng Ye <yeyunfeng@huawei.com>
-Subject: Re: [PATCH v4] arm64: psci: Reduce the waiting time for
- cpu_psci_cpu_kill()
-Message-ID: <20191018152052.GA10312@bogus>
-References: <04ab51e4-bc08-8250-4e70-4c87c58c8ad0@huawei.com>
+	id 1iLU53-0007vw-Od; Fri, 18 Oct 2019 15:22:17 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iLU4u-0007vD-GN; Fri, 18 Oct 2019 15:22:10 +0000
+Received: by mail-io1-xd43.google.com with SMTP id c25so7847957iot.12;
+ Fri, 18 Oct 2019 08:22:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=6aWYf2EJ6T3lEMsTnZ85l374tBYCs4qR6iBnDivBEd4=;
+ b=TX7Lj4fpNaw+rPLdWCLGA+/mqMT0HXgsnWfnMBYLb8tnQvu8/szGyx5oR1ijczOcvR
+ U4XFvHBasVLmxX7FVJ5xzubfHofrzKvdpQY0sWTOt1VtlRPmi4pOpGp+iVi2RQE4PquB
+ eb+t4LcEDGC503ZWFBi/0chC8eGTK4DF2fdW8s8ip9JgNTwlAe0rjzujRC4TCIV60AT2
+ VMHXqj9QceAAi+70kuzo1+5QIpJ7gw8aUZEGINUlPFtTv/kJiDaFeqKjKDPPWPr3dD94
+ F5TjFwjSOS/l2lNRhCU1Lriyd5I3Iem5mt41D7bSZsEmZZBdXM2JhFExX+dTh5V+Vn1A
+ DB9A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=6aWYf2EJ6T3lEMsTnZ85l374tBYCs4qR6iBnDivBEd4=;
+ b=EWc9OkWwFyushBryjxvlJJlNGU6y3bimONQyO+X9UIsRwdWyoQcSYWUN9yVa+N6BU7
+ Q9ORtBxcZT37J2FE5dlGMlSilAGMWa7T3gzzZNdSKipBPoVbPrLJVXz5ENP/6qvYVqwT
+ WJqxwhLZEEmxyx9rLfifkfF+e5TKNcxeDZs6gqjiMGq8LJ9LVjVeqtpoX2UYFkwc/ORJ
+ mFYAguDA68miUjqpyWhNu4ny0V/J7rtsuY8eMroy78JhMUlX6xhKgMoILjSEvxiazsoY
+ EJcGTR0uHO5Kf6UgQTX3ExYFTiIjLjKynZa/ls6ZrsSy8Gx02zvRZHCenv7+HSlb0TD7
+ eJZw==
+X-Gm-Message-State: APjAAAUOPwMOiUVw0lkayophqZbDJ0yxWnFypSwzjBVZDhQqx084zw+v
+ nuIZpRlwXldGGogzghdK+9w46uwUS8uic/P4KMM=
+X-Google-Smtp-Source: APXvYqzKP3eWnLIodD8BQ96h1uueunpugA3ee1X9sSaev9gUaslu2v+ETYGgUTRIX0Wlj4SxjQBXVE0aOt1x9ISXt2Y=
+X-Received: by 2002:a02:c646:: with SMTP id k6mr6271439jan.141.1571412123645; 
+ Fri, 18 Oct 2019 08:22:03 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <04ab51e4-bc08-8250-4e70-4c87c58c8ad0@huawei.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20191007131649.1768-1-linux.amoon@gmail.com>
+ <20191007131649.1768-6-linux.amoon@gmail.com>
+ <CAFBinCAoJLZj9Kh+SfF4Q+0OCzac2+huon_BU=Q3yE7Fu38U3w@mail.gmail.com>
+ <7hsgo4cgeg.fsf@baylibre.com>
+ <CANAwSgRfcFa6uBNtpqz6y=9Uwsa4gcp_4tDD+Chhg4SynJCq0Q@mail.gmail.com>
+ <CAFBinCA6ZoeR4m4bhj08HF1DqxY1qB5mygpaQCGbo3d8M+Wr9Q@mail.gmail.com>
+ <CANAwSgSeYTnUkLnjw-RORw76Fyj3_WT0cdM9D0vFsY8g=9L94Q@mail.gmail.com>
+ <1jwode9lba.fsf@starbuckisacylon.baylibre.com>
+ <CANAwSgSoK4X3_QbO3YpZRXNTpPJ+zVeid=w93f14Eyk8Dd32EQ@mail.gmail.com>
+ <1496ed3e-e91b-3f09-d359-f36a8944e6b0@baylibre.com>
+In-Reply-To: <1496ed3e-e91b-3f09-d359-f36a8944e6b0@baylibre.com>
+From: Anand Moon <linux.amoon@gmail.com>
+Date: Fri, 18 Oct 2019 20:51:50 +0530
+Message-ID: <CANAwSgRwLp02u1_u6oX_dXAueb2nASL_iiMmAt1Q3t9JfxiDPg@mail.gmail.com>
+Subject: Re: [RFCv1 5/5] arm64/ARM: configs: Change CONFIG_PWM_MESON from m to
+ y
+To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_082115_643908_C4D0D3C2 
-X-CRM114-Status: GOOD (  22.07  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20191018_082208_542936_4B4173DE 
+X-CRM114-Status: GOOD (  22.53  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (linux.amoon[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,96 +100,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kstewart@linuxfoundation.org, mark.rutland@arm.com,
- lorenzo.pieralisi@arm.com, hushiyuan@huawei.com, catalin.marinas@arm.com,
- linux-kernel@vger.kernel.org, linfeilong@huawei.com, David.Laight@ACULAB.COM,
- gregkh@linuxfoundation.org, tglx@linutronix.de, wuyun.wu@huawei.com,
- will@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Linux Kernel <linux-kernel@vger.kernel.org>, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 18, 2019 at 08:46:37PM +0800, Yunfeng Ye wrote:
-> In case like suspend-to-disk and uspend-to-ram, a large number of CPU
+Hi Neil,
 
-s/case/cases/
-s/uspend-to-ram/suspend-to-ram/
+On Fri, 18 Oct 2019 at 19:43, Neil Armstrong <narmstrong@baylibre.com> wrote:
+>
+> On 18/10/2019 16:04, Anand Moon wrote:
+> > Hi Jerome / Neil / Martin,
+> >
+> > On Wed, 9 Oct 2019 at 17:34, Jerome Brunet <jbrunet@baylibre.com> wrote:
+> >>
+> >>
+> >> On Wed 09 Oct 2019 at 10:48, Anand Moon <linux.amoon@gmail.com> wrote:
+> >>>
+> >>> Kernel command line: console=ttyAML0,115200n8
+> >>> root=PARTUUID=45d7d61e-01 rw rootwait
+> >>> earlyprintk=serial,ttyAML0,115200 initcall_debug printk.time=y
+> >>>
+> >>> [0] https://pastebin.com/eBgJrSKe
+> >>>
+> >>>> you can also try the command line parameter "clk_ignore_unused" (it's
+> >>>> just a gut feeling: maybe a "critical" clock is being disabled because
+> >>>> it's not wired up correctly).
+> >>>>
+> >>>
+> >>> It look like some clk issue after I added the *clk_ignore_unused* to
+> >>> kernel command line
+> >>> it booted further to login prompt and cpufreq DVFS seem to be loaded.
+> >>> So I could conclude this is clk issue.below is the boot log
+> >>>
+> >>> Kernel command line: console=ttyAML0,115200n8
+> >>> root=PARTUUID=45d7d61e-01 rw rootwait
+> >>> earlyprintk=serial,ttyAML0,115200 initcall_debug printk.time=y
+> >>> clk_ignore_unused
+> >>>
+> >>> [1] https://pastebin.com/Nsk0wZQJ
+> >>>
+> >>
+> >> Next step it to try narrow down the clock causing the issue.
+> >> Remove clk_ignore_unused from the command line and add CLK_INGORE_UNUSED
+> >> to the flag of some clocks your clock controller (g12a I think) until
+> >>
+> >> The peripheral clock gates already have this flag (something we should
+> >> fix someday) so don't bother looking there.
+> >>
+> >> Most likely the source of the pwm is getting disabled between the
+> >> late_init call and the probe of the PWM module. Since the pwm is already
+> >> active (w/o a driver), gating the clock source shuts dowm the power to
+> >> the cores.
+> >>
+> >> Looking a the possible inputs in pwm driver, I'd bet on fdiv4.
+> >>
+> >
+> > I had give this above steps a try but with little success.
+> > I am still looking into this much close.
+> >
+> > Well I am not the expert in clk or bus configuration.
+> > but after looking into the datasheet of for clk configuration
+> > I found some bus are not configured correctly.
+> >
+> > As per Amlogic's kernel S922X (Hardkernel)
+> > below link share the bus controller.
+> >
+> > [0] https://github.com/hardkernel/linux/blob/odroidn2-4.9.y/arch/arm64/boot/dts/amlogic/mesong12b.dtsi#L295-L315
+> >
+> > looking in to current dts changes it looks bit wrong to me.
+> >
+> > *As per 6.1 Memory Map*
+> > apb_efuse: bus@30000  --> apb_efuse: bus@ff630000
+> > periphs: bus@34400    --> periphs: bus@ff634400
+> > dmc: bus@38000        --> dmc: bus@ff638000
+> > hiu: bus@3c000        --> hiu: bus@ff63c0000
+>
+> If these was wrong, the drivers simply won't work, at all
+>
+> >
+> > Also the order of these is not correct.
+>
+> The order is correct, actually
+>
+> >
+> > Down the line in the datasheet some of the interrupt GIC bit are not
+> > mapped correctly for example.
+> >
+> > *As per 6.9.2 Interrupt Control Source*
+> > 223 SD_EMMC_C
+> > 222 SD_EMMC_B
+> > 221 SD_EMMC_A
+>
+> There is an offset between the doc and the actual GIC_SPI line,
+> they start the datasheet numbers from the GIC_PPI numbers (+32).
+>
+Ok. Thanks.
 
-> cores need to be shut down. At present, the CPU hotplug operation is
-> serialised, and the CPU cores can only be shut down one by one. In this
-> process, if PSCI affinity_info() does not return LEVEL_OFF quickly,
-> cpu_psci_cpu_kill() needs to wait for 10ms. If hundreds of CPU cores
-> need to be shut down, it will take a long time.
-> 
-> Normally, there is no need to wait 10ms in cpu_psci_cpu_kill(). So
-> change the wait interval from 10 ms to max 1 ms and use usleep_range()
-> instead of msleep() for more accurate timer.
-> 
-> In addition, reducing the time interval will increase the messages
-> output, so remove the "Retry ..." message, instead, put the number of
-> waiting times to the sucessful message.
-> 
-> Signed-off-by: Yunfeng Ye <yeyunfeng@huawei.com>
-> ---
-> v3 -> v4:
->  - using time_before(jiffies, timeout) to check
->  - update the comment as review suggest
-> 
-> v2 -> v3:
->  - update the comment
->  - remove the busy-wait logic, modify the loop logic and output message
-> 
-> v1 -> v2:
->  - use usleep_range() instead of udelay() after waiting for a while
->  arch/arm64/kernel/psci.c | 14 ++++++++------
->  1 file changed, 8 insertions(+), 6 deletions(-)
-> 
-> diff --git a/arch/arm64/kernel/psci.c b/arch/arm64/kernel/psci.c
-> index c9f72b2665f1..77965c3ba477 100644
-> --- a/arch/arm64/kernel/psci.c
-> +++ b/arch/arm64/kernel/psci.c
-> @@ -81,7 +81,8 @@ static void cpu_psci_cpu_die(unsigned int cpu)
-> 
->  static int cpu_psci_cpu_kill(unsigned int cpu)
->  {
-> -	int err, i;
-> +	int err, i = 0;
-> +	unsigned long timeout;
-> 
->  	if (!psci_ops.affinity_info)
->  		return 0;
-> @@ -91,16 +92,17 @@ static int cpu_psci_cpu_kill(unsigned int cpu)
->  	 * while it is dying. So, try again a few times.
->  	 */
-> 
-> -	for (i = 0; i < 10; i++) {
-> +	timeout = jiffies + msecs_to_jiffies(100);
-> +	do {
-> +		i++;
->  		err = psci_ops.affinity_info(cpu_logical_map(cpu), 0);
->  		if (err == PSCI_0_2_AFFINITY_LEVEL_OFF) {
-> -			pr_info("CPU%d killed.\n", cpu);
-> +			pr_info("CPU%d killed (polled %d times)\n", cpu, i);
+> Neil
+>
+Thanks for answering my query.
 
-We can even drop loop counter completely, track time and log that
-instead of loop counter that doesn't give any indication without looking
-into the code.
-
-	start = jiffies, end = start + msecs_to_jiffies(100);
-	do {
-			....
-			pr_info("CPU%d killed (polled %u ms)\n", cpu,
-				jiffies_to_msecs(jiffies - start));
-			....
-	} while (time_before(jiffies, end));
-
-Just my preference. Looks good otherwise.
-
---
-Regards,
-Sudeep
-
+Best Regards
+-Anand
 
 _______________________________________________
 linux-arm-kernel mailing list
