@@ -2,85 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E7AEDC9C7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 17:51:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3C11DCA14
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 18 Oct 2019 17:59:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9hihDEqhUjbUXzS/8jlXpTUElQNt0IonUo/tPdwqFU4=; b=uYaE1n8SDXwtd6
-	cgoDrF+ErmzgN4B5mmD6UsYPLB9C85dqBZWjElqJy1Pn5kSfWCRhyL1AdomGyyzTLZwJKHgyEXeSH
-	JWt1/dqy48vLNtsVaOU7gVctHLctNVVZbxzCs06sSmSO9TvTAUP30w56IV5dZ2fJ8osXAZjVIgiWK
-	/Oc5C8/7OWLdOTuVLZM7acHpdFCJRq0enhy2VFqkphQ/GkQPJCAT0iGTlziCGJIQkAjNQ97f9Zrsh
-	sDt+43oBtIhUId5WewcwoX73JUIUQt3bWMDTRBnnIZ9a6rd/h2sh7sl6BlC7X50sN98ceKU7HIQy2
-	zqa7OVVQe1EoCMBD2m5Q==;
+	List-Owner; bh=AXBFW7wlTQ4WRyI2ljfJXbYxUOhzfAgidk/ti3K3xo0=; b=NiJ7rYNygJ/J6F
+	BJIKoyrQ+pRjBCzM5rymoUxFfDhrOy2cB4b4ahgnGrMIbIBsEL8Bs7g93xAtResAK7Lyp8x43SEIj
+	fHvHSy7o9QD6chiuMJ8+NTaamBmxouzCosO3LOQ34/BRo4GJkY9l/A8fID1HaSV5fXv9BezHltohj
+	Y6Ut4eFWevgcFfLO9kSGi2yS5nIcDw41u3ewdbnhPG/NGkQT3zpY1KbEVVAZNyFCcXbSur4PtmPJO
+	j/EGQxNznP1Fe2SPNQx5Pla+hPmMgkXEc2D5NO2c5+yjFu64rQfTPN/2oELgDRvHWJUyemPeFWxRW
+	Yvqd5wq39L9siXNXymYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLUXi-0001hB-C6; Fri, 18 Oct 2019 15:51:54 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLUOq-0008FH-80
- for linux-arm-kernel@bombadil.infradead.org; Fri, 18 Oct 2019 15:42:44 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
- References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
- Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=EQGVIb/RvpQ/c2kf4YkjtFE7dwPd9+4QmxanzMIJwaM=; b=Wlu5FwwKjcEUEyop6jM3IDd11w
- T4yN/tOkNedU0vZhXBZq3jKwGIJk8mUYxIRuw1yphYWONxMXdfVTqvvf2uB/iW8jfgn0GFj6GqjXP
- WZ6CRTF/4mAwXyD53OOn+KF5Uyt/H6fWD/39YqBEyHruL4XIbcuKhwHi7iEy8fff7CtRTx4kzROFF
- fxmwivPtxc6BciF6j+ZAHGt8NyzsALhSR9NAuAu4ry/pAJkjKsdjGq0Tm+FiK16w4kZ1ldcnlXRTE
- 27vEsMYkvxHcz8/zq83QEMk71pJJRYH7yhabteDBDx2b1viw6xBzpJqmXXOHz1h3VoXkhATt4883E
- 2Ur7zEMw==;
-Received: from mout.kundenserver.de ([217.72.192.75])
- by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLUOn-0007Xq-CM
- for linux-arm-kernel@lists.infradead.org; Fri, 18 Oct 2019 15:42:42 +0000
-Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
- (mreue108 [212.227.15.145]) with ESMTPA (Nemesis) id
- 1MkHIV-1hauA82NxJ-00kdl6; Fri, 18 Oct 2019 17:42:37 +0200
-From: Arnd Bergmann <arnd@arndb.de>
-To: Daniel Mack <daniel@zonque.org>, Haojian Zhuang <haojian.zhuang@gmail.com>,
- Robert Jarzmik <robert.jarzmik@free.fr>
-Subject: [PATCH 46/46] ARM: pxa: move plat-pxa to drivers/soc/
-Date: Fri, 18 Oct 2019 17:42:01 +0200
-Message-Id: <20191018154201.1276638-46-arnd@arndb.de>
-X-Mailer: git-send-email 2.20.0
-In-Reply-To: <20191018154052.1276506-1-arnd@arndb.de>
-References: <20191018154052.1276506-1-arnd@arndb.de>
+	id 1iLUfA-00012y-5Z; Fri, 18 Oct 2019 15:59:36 +0000
+Received: from [217.140.110.172] (helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iLUXt-0001uZ-Fx; Fri, 18 Oct 2019 15:52:08 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5ED99C8F;
+ Fri, 18 Oct 2019 08:51:54 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B437C3F718;
+ Fri, 18 Oct 2019 08:51:53 -0700 (PDT)
+Date: Fri, 18 Oct 2019 16:51:52 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH v2 10/25] PCI: rockchip: Use
+ pci_parse_request_of_pci_ranges()
+Message-ID: <20191018155152.GK47056@e119886-lin.cambridge.arm.com>
+References: <20191016200647.32050-1-robh@kernel.org>
+ <20191016200647.32050-11-robh@kernel.org>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:5XjJp8O801ykBXpbjofn9E4JPl6NL5NXrww4uVIvlM6v3Cs6+kK
- Bnuw8vNHe0lhUDgGxZGtv0hg7YNnU/AHVCmtPo1JUflEMdaHwyWa6pIWP95rFyctkjmnXPD
- 4vZmwEVgTX0X1RD4h3o/zQgmZ8CZJEuR7tmtn5uCJJJfccJZpeb+6JBl0iHWR+rOYeQZ0lW
- wo8IP7X+AI/IB0k4JrdlA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:xvo3kzI1RzU=:/3JEdZilOOjFWOPN5qMSPI
- GFfdNGNVGpdBDSUHhWuTLkVRVNB704uSndAGNN3Ipw4VCZ934NHFPQfSSwWSsP9Q/eWG1ocMo
- WVa8R76GRhs75DsO0xhSVNjhs5Prcl8RkVmKGSf2MfD94/ew8tUVP1ZXqS5E2h6jsBG+kUkem
- Jez9/dsPSp+29bYAXRDMbozDrlZi14OkB5VUF3WbOJksI/0dA2RHv+JFS9ZQpcVDmI4vItrSK
- tQVfrj/9DOOHnSJMCJujSROog/b7Y+6/EtQw2T+w2BCqx9Q1G/qkgt/qzCR6ukJ7/ZmQr8WH6
- 3JDVRbrI2su7ac1Y792wLQMJSq08YLF5umyBYH5xpeVU2FrNnZVDz7H/2VdwGjYmoEC/AwaUk
- 7cYAWkHJtMjSNLSEsDpeEeasEwU0A+F9ItjRkTEDn5EO05giEfKw6WY8wG6xnMok5YxunPVYu
- gv7ydkEQqOu1nXEL8N8B1vn4DTSig+bnQmUODj0n4gUOwUWbf94u7NyLUtw7hCv08ECmSzl/o
- dRDpodABHj9c3nhU2vgUrDhJyM10MTzcAKE+ThaAAgJb2E/jq0B3n0H+ZiJT9/l3rpvkbn/By
- bEnNGdWjpCJ08q8VN6eJ9yK7037WIArhuehZskh7vnMtQW4mIxkwX4VrcX+LzPcDYdZCqPYzz
- sEV2z0LRTu0hbfOqKn9jF1j2CIdqy5GWjxFPC+laCfmKY2/c9KvOhEWuotMgqobNkNeGypuUa
- /Z3IWXr88iOEqCMTOJFM+S28dKRghfU9kyE7PAfIo/BJaU+c02BaiEvRjKWB9KTIULAibtHHe
- 5YJsT0Xu4jw8xIncbcY5CbiWtEafKqikZmJ6VZImg/ZdhYtrdjErKmN7VF2ejAZwPA9l2OMnj
- kfOMZbdP7jBNJHHawLng==
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (0.0 points)
+Content-Disposition: inline
+In-Reply-To: <20191016200647.32050-11-robh@kernel.org>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20191018_085205_660910_C084726D 
+X-CRM114-Status: GOOD (  19.82  )
+X-Spam-Score: 1.3 (+)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.75 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,230 +62,172 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lubomir Rintel <lkundrak@v3.sk>, Linus Walleij <linus.walleij@linaro.org>,
- Arnd Bergmann <arnd@arndb.de>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Heiko Stuebner <heiko@sntech.de>,
+ Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>, linux-pci@vger.kernel.org,
+ Shawn Lin <shawn.lin@rock-chips.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Toan Le <toan@os.amperecomputing.com>, Will Deacon <will@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Michal Simek <michal.simek@xilinx.com>, linux-rockchip@lists.infradead.org,
+ bcm-kernel-feedback-list@broadcom.com,
+ Linus Walleij <linus.walleij@linaro.org>, Ray Jui <rjui@broadcom.com>,
+ Hou Zhiqiang <Zhiqiang.Hou@nxp.com>, Ryder Lee <ryder.lee@mediatek.com>,
+ linux-mediatek@lists.infradead.org, Bjorn Helgaas <bhelgaas@google.com>,
+ linux-arm-kernel@lists.infradead.org, Scott Branden <sbranden@broadcom.com>,
+ Jingoo Han <jingoohan1@gmail.com>, rfi@lists.rocketboards.org,
+ linux-renesas-soc@vger.kernel.org, Tom Joseph <tjoseph@cadence.com>,
+ Simon Horman <horms@verge.net.au>,
+ Srinath Mannam <srinath.mannam@broadcom.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Ley Foon Tan <lftan@altera.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There are two drivers in arch/arm/plat-pxa: mfp and ssp. Both
-of them should ideally not be needed at all, as there are
-proper subsystems to replace them.
+On Wed, Oct 16, 2019 at 03:06:32PM -0500, Rob Herring wrote:
+> Convert the Rockchip host bridge to use the common
+> pci_parse_request_of_pci_ranges().
+> 
+> There's no need to assign the resources to a temporary list first. Just
+> use bridge->windows directly and remove all the temporary list handling.
+> 
+> Cc: Shawn Lin <shawn.lin@rock-chips.com>
+> Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> Cc: Andrew Murray <andrew.murray@arm.com>
+> Cc: Bjorn Helgaas <bhelgaas@google.com>
+> Cc: Heiko Stuebner <heiko@sntech.de>
+> Cc: linux-rockchip@lists.infradead.org
+> Signed-off-by: Rob Herring <robh@kernel.org>
+> ---
+> v2:
+> - New patch
+> 
+>  drivers/pci/controller/pcie-rockchip-host.c | 36 ++++-----------------
+>  1 file changed, 7 insertions(+), 29 deletions(-)
+> 
+> diff --git a/drivers/pci/controller/pcie-rockchip-host.c b/drivers/pci/controller/pcie-rockchip-host.c
+> index ef8e677ce9d1..8d2e6f2e141e 100644
+> --- a/drivers/pci/controller/pcie-rockchip-host.c
+> +++ b/drivers/pci/controller/pcie-rockchip-host.c
+> @@ -950,14 +950,10 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
+>  	struct device *dev = &pdev->dev;
+>  	struct pci_bus *bus, *child;
+>  	struct pci_host_bridge *bridge;
+> +	struct resource *bus_res;
+>  	struct resource_entry *win;
+> -	resource_size_t io_base;
+> -	struct resource	*mem;
+> -	struct resource	*io;
+>  	int err;
+> 
+> -	LIST_HEAD(res);
+> -
+>  	if (!dev->of_node)
+>  		return -ENODEV;
+> 
+> @@ -995,29 +991,20 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
+>  	if (err < 0)
+>  		goto err_deinit_port;
+> 
+> -	err = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff,
+> -						    &res, &io_base);
+> +	err = pci_parse_request_of_pci_ranges(dev, &bridge->windows, &bus_res);
+>  	if (err)
+>  		goto err_remove_irq_domain;
+> 
+> -	err = devm_request_pci_bus_resources(dev, &res);
+> -	if (err)
+> -		goto err_free_res;
+> +	rockchip->root_bus_nr = bus_res->start;
+> 
+>  	/* Get the I/O and memory ranges from DT */
+> -	resource_list_for_each_entry(win, &res) {
+> +	resource_list_for_each_entry(win, &bridge->windows) {
+>  		switch (resource_type(win->res)) {
+>  		case IORESOURCE_IO:
+>  			io = win->res;
+>  			io->name = "I/O";
 
-OTOH, they are self-contained and can simply be normal
-SoC drivers, so move them over there to eliminate one more
-of the plat-* directories.
+In some patches of this series we drop the custom naming of memory resources,
+yet in others, like this one, we preserve the custom naming.
 
-Cc: Lubomir Rintel <lkundrak@v3.sk>
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
----
- arch/arm/Kconfig                                            | 3 ---
- arch/arm/Makefile                                           | 1 -
- arch/arm/mach-mmp/mfp.h                                     | 2 +-
- arch/arm/mach-pxa/include/mach/mfp.h                        | 2 +-
- arch/arm/mach-pxa/mfp-pxa2xx.h                              | 2 +-
- arch/arm/mach-pxa/mfp-pxa3xx.h                              | 2 +-
- drivers/soc/Kconfig                                         | 1 +
- drivers/soc/Makefile                                        | 1 +
- {arch/arm/plat-pxa => drivers/soc/pxa}/Kconfig              | 5 ++---
- {arch/arm/plat-pxa => drivers/soc/pxa}/Makefile             | 4 ----
- {arch/arm/plat-pxa => drivers/soc/pxa}/mfp.c                | 2 +-
- {arch/arm/plat-pxa => drivers/soc/pxa}/ssp.c                | 0
- .../plat-pxa/include/plat => include/linux/soc/pxa}/mfp.h   | 6 ++----
- 13 files changed, 11 insertions(+), 20 deletions(-)
- rename {arch/arm/plat-pxa => drivers/soc/pxa}/Kconfig (83%)
- rename {arch/arm/plat-pxa => drivers/soc/pxa}/Makefile (51%)
- rename {arch/arm/plat-pxa => drivers/soc/pxa}/mfp.c (99%)
- rename {arch/arm/plat-pxa => drivers/soc/pxa}/ssp.c (100%)
- rename {arch/arm/plat-pxa/include/plat => include/linux/soc/pxa}/mfp.h (98%)
+Should we be consistent in preserving the existing naming?
 
-diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
-index b01f762abbda..330a1685101a 100644
---- a/arch/arm/Kconfig
-+++ b/arch/arm/Kconfig
-@@ -796,9 +796,6 @@ config PLAT_ORION_LEGACY
- 	bool
- 	select PLAT_ORION
- 
--config PLAT_PXA
--	bool
--
- config PLAT_VERSATILE
- 	bool
- 
-diff --git a/arch/arm/Makefile b/arch/arm/Makefile
-index db857d07114f..09622c26a8a4 100644
---- a/arch/arm/Makefile
-+++ b/arch/arm/Makefile
-@@ -238,7 +238,6 @@ plat-$(CONFIG_ARCH_OMAP)	+= omap
- plat-$(CONFIG_ARCH_S3C64XX)	+= samsung
- plat-$(CONFIG_ARCH_S5PV210)	+= samsung
- plat-$(CONFIG_PLAT_ORION)	+= orion
--plat-$(CONFIG_PLAT_PXA)		+= pxa
- plat-$(CONFIG_PLAT_S3C24XX)	+= samsung
- plat-$(CONFIG_PLAT_VERSATILE)	+= versatile
- 
-diff --git a/arch/arm/mach-mmp/mfp.h b/arch/arm/mach-mmp/mfp.h
-index 75a4acb33b1b..6f3057987756 100644
---- a/arch/arm/mach-mmp/mfp.h
-+++ b/arch/arm/mach-mmp/mfp.h
-@@ -2,7 +2,7 @@
- #ifndef __ASM_MACH_MFP_H
- #define __ASM_MACH_MFP_H
- 
--#include <plat/mfp.h>
-+#include <linux/soc/pxa/mfp.h>
- 
- /*
-  * NOTE: the MFPR register bit definitions on PXA168 processor lines are a
-diff --git a/arch/arm/mach-pxa/include/mach/mfp.h b/arch/arm/mach-pxa/include/mach/mfp.h
-index dbb961fb570e..7e0879bd4102 100644
---- a/arch/arm/mach-pxa/include/mach/mfp.h
-+++ b/arch/arm/mach-pxa/include/mach/mfp.h
-@@ -13,6 +13,6 @@
- #ifndef __ASM_ARCH_MFP_H
- #define __ASM_ARCH_MFP_H
- 
--#include <plat/mfp.h>
-+#include <linux/soc/pxa/mfp.h>
- 
- #endif /* __ASM_ARCH_MFP_H */
-diff --git a/arch/arm/mach-pxa/mfp-pxa2xx.h b/arch/arm/mach-pxa/mfp-pxa2xx.h
-index 980145e7ee99..683a3ea5f154 100644
---- a/arch/arm/mach-pxa/mfp-pxa2xx.h
-+++ b/arch/arm/mach-pxa/mfp-pxa2xx.h
-@@ -2,7 +2,7 @@
- #ifndef __ASM_ARCH_MFP_PXA2XX_H
- #define __ASM_ARCH_MFP_PXA2XX_H
- 
--#include <plat/mfp.h>
-+#include <linux/soc/pxa/mfp.h>
- 
- /*
-  * the following MFP_xxx bit definitions in mfp.h are re-used for pxa2xx:
-diff --git a/arch/arm/mach-pxa/mfp-pxa3xx.h b/arch/arm/mach-pxa/mfp-pxa3xx.h
-index cdd830926d1c..81fec4fa5a0f 100644
---- a/arch/arm/mach-pxa/mfp-pxa3xx.h
-+++ b/arch/arm/mach-pxa/mfp-pxa3xx.h
-@@ -2,7 +2,7 @@
- #ifndef __ASM_ARCH_MFP_PXA3XX_H
- #define __ASM_ARCH_MFP_PXA3XX_H
- 
--#include <plat/mfp.h>
-+#include <linux/soc/pxa/mfp.h>
- 
- #define MFPR_BASE	(0x40e10000)
- 
-diff --git a/drivers/soc/Kconfig b/drivers/soc/Kconfig
-index 833e04a7835c..fc30a33ada9b 100644
---- a/drivers/soc/Kconfig
-+++ b/drivers/soc/Kconfig
-@@ -10,6 +10,7 @@ source "drivers/soc/fsl/Kconfig"
- source "drivers/soc/imx/Kconfig"
- source "drivers/soc/ixp4xx/Kconfig"
- source "drivers/soc/mediatek/Kconfig"
-+source "drivers/soc/pxa/Kconfig"
- source "drivers/soc/qcom/Kconfig"
- source "drivers/soc/renesas/Kconfig"
- source "drivers/soc/rockchip/Kconfig"
-diff --git a/drivers/soc/Makefile b/drivers/soc/Makefile
-index 2ec355003524..2934ad8c5a9f 100644
---- a/drivers/soc/Makefile
-+++ b/drivers/soc/Makefile
-@@ -15,6 +15,7 @@ obj-$(CONFIG_ARCH_MXC)		+= imx/
- obj-$(CONFIG_ARCH_IXP4XX)	+= ixp4xx/
- obj-$(CONFIG_SOC_XWAY)		+= lantiq/
- obj-y				+= mediatek/
-+obj-y				+= pxa/
- obj-y				+= amlogic/
- obj-y				+= qcom/
- obj-y				+= renesas/
-diff --git a/arch/arm/plat-pxa/Kconfig b/drivers/soc/pxa/Kconfig
-similarity index 83%
-rename from arch/arm/plat-pxa/Kconfig
-rename to drivers/soc/pxa/Kconfig
-index 6f7a0a39c2b9..c5c265aa4f07 100644
---- a/arch/arm/plat-pxa/Kconfig
-+++ b/drivers/soc/pxa/Kconfig
-@@ -1,9 +1,8 @@
- # SPDX-License-Identifier: GPL-2.0-only
--if PLAT_PXA
-+config PLAT_PXA
-+	bool
- 
- config PXA_SSP
- 	tristate
- 	help
- 	  Enable support for PXA2xx SSP ports
--
--endif
-diff --git a/arch/arm/plat-pxa/Makefile b/drivers/soc/pxa/Makefile
-similarity index 51%
-rename from arch/arm/plat-pxa/Makefile
-rename to drivers/soc/pxa/Makefile
-index 349ea0af8450..413deceddbdd 100644
---- a/arch/arm/plat-pxa/Makefile
-+++ b/drivers/soc/pxa/Makefile
-@@ -1,8 +1,4 @@
- # SPDX-License-Identifier: GPL-2.0-only
--#
--# Makefile for code common across different PXA processor families
--#
--ccflags-$(CONFIG_ARCH_MMP) := -I$(srctree)/$(src)/include
- 
- obj-$(CONFIG_PXA3xx)		+= mfp.o
- obj-$(CONFIG_ARCH_MMP)		+= mfp.o
-diff --git a/arch/arm/plat-pxa/mfp.c b/drivers/soc/pxa/mfp.c
-similarity index 99%
-rename from arch/arm/plat-pxa/mfp.c
-rename to drivers/soc/pxa/mfp.c
-index 17fc4f33f35b..6220ba321cfc 100644
---- a/arch/arm/plat-pxa/mfp.c
-+++ b/drivers/soc/pxa/mfp.c
-@@ -15,7 +15,7 @@
- #include <linux/init.h>
- #include <linux/io.h>
- 
--#include <plat/mfp.h>
-+#include <linux/soc/pxa/mfp.h>
- 
- #define MFPR_SIZE	(PAGE_SIZE)
- 
-diff --git a/arch/arm/plat-pxa/ssp.c b/drivers/soc/pxa/ssp.c
-similarity index 100%
-rename from arch/arm/plat-pxa/ssp.c
-rename to drivers/soc/pxa/ssp.c
-diff --git a/arch/arm/plat-pxa/include/plat/mfp.h b/include/linux/soc/pxa/mfp.h
-similarity index 98%
-rename from arch/arm/plat-pxa/include/plat/mfp.h
-rename to include/linux/soc/pxa/mfp.h
-index 3accaa9ee781..39779cbed0c0 100644
---- a/arch/arm/plat-pxa/include/plat/mfp.h
-+++ b/include/linux/soc/pxa/mfp.h
-@@ -1,7 +1,5 @@
- /* SPDX-License-Identifier: GPL-2.0-only */
- /*
-- * arch/arm/plat-pxa/include/plat/mfp.h
-- *
-  *   Common Multi-Function Pin Definitions
-  *
-  * Copyright (C) 2007 Marvell International Ltd.
-@@ -453,8 +451,8 @@ struct mfp_addr_map {
- 
- #define MFP_ADDR_END	{ MFP_PIN_INVALID, 0 }
- 
--void __init mfp_init_base(void __iomem *mfpr_base);
--void __init mfp_init_addr(struct mfp_addr_map *map);
-+void mfp_init_base(void __iomem *mfpr_base);
-+void mfp_init_addr(struct mfp_addr_map *map);
- 
- /*
-  * mfp_{read, write}()	- for direct read/write access to the MFPR register
--- 
-2.20.0
+Thanks,
 
+Andrew Murray
+
+>  			rockchip->io_size = resource_size(io);
+>  			rockchip->io_bus_addr = io->start - win->offset;
+> -			err = pci_remap_iospace(io, io_base);
+> -			if (err) {
+> -				dev_warn(dev, "error %d: failed to map resource %pR\n",
+> -					 err, io);
+> -				continue;
+> -			}
+>  			rockchip->io = io;
+>  			break;
+>  		case IORESOURCE_MEM:
+> @@ -1026,9 +1013,6 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
+>  			rockchip->mem_size = resource_size(mem);
+>  			rockchip->mem_bus_addr = mem->start - win->offset;
+>  			break;
+> -		case IORESOURCE_BUS:
+> -			rockchip->root_bus_nr = win->res->start;
+> -			break;
+>  		default:
+>  			continue;
+>  		}
+> @@ -1036,15 +1020,14 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
+> 
+>  	err = rockchip_pcie_cfg_atu(rockchip);
+>  	if (err)
+> -		goto err_unmap_iospace;
+> +		goto err_remove_irq_domain;
+> 
+>  	rockchip->msg_region = devm_ioremap(dev, rockchip->msg_bus_addr, SZ_1M);
+>  	if (!rockchip->msg_region) {
+>  		err = -ENOMEM;
+> -		goto err_unmap_iospace;
+> +		goto err_remove_irq_domain;
+>  	}
+> 
+> -	list_splice_init(&res, &bridge->windows);
+>  	bridge->dev.parent = dev;
+>  	bridge->sysdata = rockchip;
+>  	bridge->busnr = 0;
+> @@ -1054,7 +1037,7 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
+> 
+>  	err = pci_scan_root_bus_bridge(bridge);
+>  	if (err < 0)
+> -		goto err_unmap_iospace;
+> +		goto err_remove_irq_domain;
+> 
+>  	bus = bridge->bus;
+> 
+> @@ -1068,10 +1051,6 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
+>  	pci_bus_add_devices(bus);
+>  	return 0;
+> 
+> -err_unmap_iospace:
+> -	pci_unmap_iospace(rockchip->io);
+> -err_free_res:
+> -	pci_free_resource_list(&res);
+>  err_remove_irq_domain:
+>  	irq_domain_remove(rockchip->irq_domain);
+>  err_deinit_port:
+> @@ -1097,7 +1076,6 @@ static int rockchip_pcie_remove(struct platform_device *pdev)
+> 
+>  	pci_stop_root_bus(rockchip->root_bus);
+>  	pci_remove_root_bus(rockchip->root_bus);
+> -	pci_unmap_iospace(rockchip->io);
+>  	irq_domain_remove(rockchip->irq_domain);
+> 
+>  	rockchip_pcie_deinit_phys(rockchip);
+> --
+> 2.20.1
 
 _______________________________________________
 linux-arm-kernel mailing list
