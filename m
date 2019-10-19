@@ -2,80 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E1D2DD629
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 04:21:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A4DDDD63F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 05:00:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=sftStdxW/GU8AbtLxGiz33zxdQE7sju5FUsgf1FntSY=; b=COc9xguYbWfqP8F87eiSlEk0J1
-	bjmNdMmYl2scTBsqr2Zc+lp1anzrmLBFEMy8wdbrAq6gtdizXWN7SdXrYwjspi76fkTzl7XJc03s6
-	BeleyLUA+w+zzZK38Df6nk63TLPLA1AUbDHIjgh2B/C2XtZmC70xMHkxegR7y8eSwD5sxToA1ZREQ
-	rlHjLXGmvtbudcb8cnPgElOwRDgK8I4fpODx2ZrARvA7iBukK8k5WDmz6czlbdYOz66ZDqtk/kW0X
-	n6UqDIFQxJhtI4Wghu/JxM8dV0He8Di8E5aA+IXF9uU9fpbx1uNxCDGlb+8Y3wBNcd/yB82Wru+yX
-	1Zd4TlpQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=/5zOs8+a6sAhDhQKnnViz2iEpNyvUuiUZ/fe5lkKus8=; b=UXFgo6TSl3ajsFLYbj01Qq6VR
+	qwINhrXojJlH29oF4b542vY6GAStqzVFjjQb1wFzmqRWp2YO8bf5hItKhhteyBEiUDrSkPQ2/xeci
+	aQpa+kza6hW2JC2E/oXRcAJvReddqpJyGAseYybwNDqQrpwkRgt3xtB+dXA7PL1O4cgK9yRl6oqSr
+	/07pAl1qv/BZPdtLwFU4+yS1UCEarsMBoMW5flxwiwLDNTYDGfaiA1MM9I0rJdvbnEFD2a5X1HY/7
+	9WEL9bVfYi8LQm9FrJ8Ap4eJC/CqYXbJXvF24Sl6j2/oDynh790CkWXPr08EwnSSMKL6BBdUz548S
+	81SCoDL7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLeMu-0006pT-98; Sat, 19 Oct 2019 02:21:24 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1iLey8-00014v-9Z; Sat, 19 Oct 2019 02:59:52 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLeMQ-0006bo-Gr
- for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 02:20:56 +0000
-Received: by mail-pf1-x441.google.com with SMTP id b128so4944952pfa.1
+ id 1iLexx-00014G-24
+ for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 02:59:42 +0000
+Received: by mail-pg1-x541.google.com with SMTP id r1so4336304pgj.12
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 18 Oct 2019 19:20:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Uw3LOwSxYR0rUB8GOou/gxOPSuuyfL+uur/3c2lm+bk=;
- b=S8cdn7m3UXuQy6lrcZ51sRS0wcNGcIRyRu7F2ZnZ8fXWDc3RynLld2+zawnx8/795v
- IwissLFOahwcEDTADKzxax6tokwOtuow+T7z3iMcZyYKjQ9UGmQcA+MmzxrgERUkUfFl
- Bzkt/h9tzrt1Ms/6NBGhbD7VXqudG0jx3rRHGiMIToJQ12F+BXInAU9g3oHwYcNJVp9D
- DKC7VYo17fT/5bH4mEElVwDg1VtWRm5HzAjSmOnz+IfQzDVdsCfcM61o1oL0Cf/JaI2A
- qfq6JA7mfOLUPBzq062ZNKQfRiTSPWNSNEy2VNCVcOcsCRVDNK7Nlnx6EhvVRQJcBMvi
- O2AA==
+ Fri, 18 Oct 2019 19:59:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding;
+ bh=2+uRH+ZKfyt86cxDF8FPbZk+BAT5hdpRwMdmmfN7ogM=;
+ b=I1HV2wIYlB/eRmfzqyirQiy5WOxMTDsX6O64/uCAnuoS5yCXBnyTNJe3QDZ7DlNCyT
+ RzG/6iJSDKWZip6da9We9PVBS86OX602nr0C8kjWoKGAAylamEerSrFVg8kHVF7lMXwA
+ 2Duum+VhYbpqCx2DWQeERJBqSFPNtIyU3cM/s2m9Bz+Bzi8QE2kpXQTftSeXOeJdH3Tj
+ YrZ/FzLZCdLeoEkKnF92uJE7SXSQzCukP0CX0meQk5Z7QwhYrU3kKUXCOvNp+aMLYVBj
+ VOz8+nQpKhd2gYCcjghdM1Le5t26IZH7s8yqaVi39yesYZGgBI1Z/TB2wTY7j90tbF7C
+ xorA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=Uw3LOwSxYR0rUB8GOou/gxOPSuuyfL+uur/3c2lm+bk=;
- b=OfY2Pd5uVOOZ1VAdujLybZrf0vj+vP/ocBKKrBq+qQRx27ZoBZQK7G0sDRA9vfqXWI
- VRtUOmmfxDtA0x4p+DE9nJuPEjx4Q9Ew5YWCC5sXKyo7Z+e4QWXX8a4sCpMMfwF1qms8
- tP36MRkMz4K1+Slcommg8p5GiKqF7hrAq8cvKslBLPxm022cn43o44WTUvrK7r9jHVAO
- QpoYmbVdil559HIACNntRdiZh1kmsHf7NLiilh7pqNdws5rQVmBeyBoiNz3vALG6KvW7
- ww32MS2pK1NBo7c1gXYBVBmu5IQaOUPzrSKL/eAwtvkvGqsuoAWjlQVIIoe7JrceZ5qp
- 0qwA==
-X-Gm-Message-State: APjAAAVV1fIKnxrp4izPinTjHujxhIJe13x44kP3FQd/3f0JwjJuvMBm
- IqH2flOaoXeS5vmHiMsdpFyzZ3UdFsE=
-X-Google-Smtp-Source: APXvYqzhDDfASdj6fJU1Ansr+2GoL3Ld1GRF1jwyiVSMZ+nSyo8NywWB0KvBFp9vjlGjOrhOIW/46w==
-X-Received: by 2002:a65:6898:: with SMTP id e24mr11643791pgt.358.1571451652950; 
- Fri, 18 Oct 2019 19:20:52 -0700 (PDT)
-Received: from localhost.localdomain (97-113-7-119.tukw.qwest.net.
- [97.113.7.119])
- by smtp.gmail.com with ESMTPSA id l22sm6635148pgj.4.2019.10.18.19.20.51
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 18 Oct 2019 19:20:52 -0700 (PDT)
-From: Richard Henderson <richard.henderson@linaro.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/1] arm64: Implement archrandom.h for ARMv8.5-RNG
-Date: Fri, 18 Oct 2019 19:20:48 -0700
-Message-Id: <20191019022048.28065-2-richard.henderson@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191019022048.28065-1-richard.henderson@linaro.org>
-References: <20191019022048.28065-1-richard.henderson@linaro.org>
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding;
+ bh=2+uRH+ZKfyt86cxDF8FPbZk+BAT5hdpRwMdmmfN7ogM=;
+ b=adHVSsNxRitBZR8w3dQLeaC1O5dVjyYepNe8qHghR7eiBexTKRcHGG5kEfXfYtija+
+ hS8FA5K2abySRKnjzxyPIdDFuaB69pl3DX4Tqj5fsma//NMewktLKTimUoK5GBcxM1AI
+ vJw2fyBSQzHA2t1p+WL55w49N3gll+lUOtYHlx0DUiOfModcYOY6DUq+ZBQASYcGEN2N
+ Ou2mLiDNeI8CbtD7IZA7Y8FFYKBHYF5/9eO7/kfAYlu0CEDA2kXlpkPr/lOjA+ebCgbj
+ PrnKXWGK/xNXgYdZtWTOu6lL3H6Y/LhxYk90ti5l6/98LMSGyo0pCniw41hObV7VYgEX
+ hr8w==
+X-Gm-Message-State: APjAAAWS902MvRwOMD3qwuyrNu8SE8u11gZO3RcXfMXDOxY2UB/hNu/V
+ 3KnJDVWVxl2mc9QHk+sFumM=
+X-Google-Smtp-Source: APXvYqwUo5qntuziGSJ+94f1npjJFLL0NTPsMKVRIZ9LluEh6rPog3fPSLS/qbUFGW6O9ETfjUCi5w==
+X-Received: by 2002:a17:90a:17c4:: with SMTP id
+ q62mr14310962pja.83.1571453980149; 
+ Fri, 18 Oct 2019 19:59:40 -0700 (PDT)
+Received: from [0.0.0.0] (104.129.187.94.16clouds.com. [104.129.187.94])
+ by smtp.gmail.com with ESMTPSA id q30sm7759691pja.18.2019.10.18.19.59.26
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 18 Oct 2019 19:59:39 -0700 (PDT)
+Subject: Re: [PATCH v10 3/3] mm: fix double page fault on arm64 if PTE_AF is
+ cleared
+To: Palmer Dabbelt <palmer@sifive.com>, will@kernel.org
+References: <mhng-265b415f-c8ff-4727-a8fa-2f3e51937ba6@palmer-si-x1c4>
+From: Jia He <hejianet@gmail.com>
+Message-ID: <c4fa5937-eef2-8932-e8fe-0ee5d9f4de1a@gmail.com>
+Date: Sat, 19 Oct 2019 10:59:22 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+MIME-Version: 1.0
+In-Reply-To: <mhng-265b415f-c8ff-4727-a8fa-2f3e51937ba6@palmer-si-x1c4>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_192054_561929_78EC7055 
-X-CRM114-Status: GOOD (  21.90  )
+X-CRM114-CacheID: sfid-20191018_195941_127332_E092A747 
+X-CRM114-Status: GOOD (  26.95  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (hejianet[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -96,257 +101,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, catalin.marinas@arm.com, will@kernel.org,
- Dave.Martin@arm.com
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark.Rutland@arm.com, Justin.He@arm.com, Kaly.Xin@arm.com,
+ Catalin.Marinas@arm.com, linux-kernel@vger.kernel.org, willy@infradead.org,
+ linux-mm@kvack.org, James.Morse@arm.com, linux-arm-kernel@lists.infradead.org,
+ punitagrawal@gmail.com, maz@kernel.org, tglx@linutronix.de, nd@arm.com,
+ akpm@linux-foundation.org, kirill.shutemov@linux.intel.com
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Expose the ID_AA64ISAR0.RNDR field to userspace, as the
-RNG system registers are always available at EL0.
-
-Signed-off-by: Richard Henderson <richard.henderson@linaro.org>
----
- Documentation/arm64/cpu-feature-registers.rst |  2 +
- arch/arm64/include/asm/archrandom.h           | 76 +++++++++++++++++++
- arch/arm64/include/asm/cpucaps.h              |  3 +-
- arch/arm64/include/asm/sysreg.h               |  1 +
- arch/arm64/kernel/cpufeature.c                | 34 +++++++++
- arch/arm64/Kconfig                            | 12 +++
- drivers/char/Kconfig                          |  4 +-
- 7 files changed, 129 insertions(+), 3 deletions(-)
- create mode 100644 arch/arm64/include/asm/archrandom.h
-
-diff --git a/Documentation/arm64/cpu-feature-registers.rst b/Documentation/arm64/cpu-feature-registers.rst
-index 2955287e9acc..78d6f5c6e824 100644
---- a/Documentation/arm64/cpu-feature-registers.rst
-+++ b/Documentation/arm64/cpu-feature-registers.rst
-@@ -117,6 +117,8 @@ infrastructure:
-      +------------------------------+---------+---------+
-      | Name                         |  bits   | visible |
-      +------------------------------+---------+---------+
-+     | RNDR                         | [63-60] |    y    |
-+     +------------------------------+---------+---------+
-      | TS                           | [55-52] |    y    |
-      +------------------------------+---------+---------+
-      | FHM                          | [51-48] |    y    |
-diff --git a/arch/arm64/include/asm/archrandom.h b/arch/arm64/include/asm/archrandom.h
-new file mode 100644
-index 000000000000..80369898e274
---- /dev/null
-+++ b/arch/arm64/include/asm/archrandom.h
-@@ -0,0 +1,76 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef _ASM_ARCHRANDOM_H
-+#define _ASM_ARCHRANDOM_H
-+
-+#include <asm/cpufeature.h>
-+
-+/* Unconditional execution of RNDR and RNDRRS.  */
-+
-+static inline bool arm_rndr(unsigned long *v)
-+{
-+	int pass;
-+
-+	asm("mrs %0, s3_3_c2_c4_0\n\t"  /* RNDR */
-+	    "cset %w1, ne"
-+	    : "=r"(*v), "=r"(pass));
-+	return pass != 0;
-+}
-+
-+static inline bool arm_rndrrs(unsigned long *v)
-+{
-+	int pass;
-+
-+	asm("mrs %0, s3_3_c2_c4_1\n\t"  /* RNDRRS */
-+	    "cset %w1, ne"
-+	    : "=r"(*v), "=r"(pass));
-+	return pass != 0;
-+}
-+
-+#ifdef CONFIG_ARCH_RANDOM
-+
-+/*
-+ * Note that these two interfaces, random and random_seed, are strongly
-+ * tied to the Intel instructions RDRAND and RDSEED.  RDSEED is the
-+ * "enhanced" version and has stronger guarantees.  The ARMv8.5-RNG
-+ * instruction RNDR corresponds to RDSEED, thus we put our implementation
-+ * into the random_seed set of functions.
-+ *
-+ * Note as well that Intel does not have an instruction that corresponds
-+ * to the RNDRRS instruction, so there's no generic interface for that.
-+ */
-+static inline bool arch_has_random(void)
-+{
-+	return false;
-+}
-+
-+static inline bool arch_get_random_long(unsigned long *v)
-+{
-+	return false;
-+}
-+
-+static inline bool arch_get_random_int(unsigned int *v)
-+{
-+	return false;
-+}
-+
-+static inline bool arch_has_random_seed(void)
-+{
-+	return cpus_have_const_cap(ARM64_HAS_RNG);
-+}
-+
-+static inline bool arch_get_random_seed_long(unsigned long *v)
-+{
-+	/* If RNDR fails, attempt to re-seed with RNDRRS.  */
-+	return arch_has_random_seed() && (arm_rndr(v) || arm_rndrrs(v));
-+}
-+
-+static inline bool arch_get_random_seed_int(unsigned int *v)
-+{
-+	unsigned long vl = 0;
-+	bool ret = arch_get_random_seed_long(&vl);
-+	*v = vl;
-+	return ret;
-+}
-+
-+#endif /* CONFIG_ARCH_RANDOM */
-+#endif /* _ASM_ARCHRANDOM_H */
-diff --git a/arch/arm64/include/asm/cpucaps.h b/arch/arm64/include/asm/cpucaps.h
-index f19fe4b9acc4..2fc15765d25d 100644
---- a/arch/arm64/include/asm/cpucaps.h
-+++ b/arch/arm64/include/asm/cpucaps.h
-@@ -52,7 +52,8 @@
- #define ARM64_HAS_IRQ_PRIO_MASKING		42
- #define ARM64_HAS_DCPODP			43
- #define ARM64_WORKAROUND_1463225		44
-+#define ARM64_HAS_RNG				45
- 
--#define ARM64_NCAPS				45
-+#define ARM64_NCAPS				46
- 
- #endif /* __ASM_CPUCAPS_H */
-diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
-index 972d196c7714..7a0c159661cd 100644
---- a/arch/arm64/include/asm/sysreg.h
-+++ b/arch/arm64/include/asm/sysreg.h
-@@ -539,6 +539,7 @@
- 			 ENDIAN_SET_EL1 | SCTLR_EL1_UCI  | SCTLR_EL1_RES1)
- 
- /* id_aa64isar0 */
-+#define ID_AA64ISAR0_RNDR_SHIFT		60
- #define ID_AA64ISAR0_TS_SHIFT		52
- #define ID_AA64ISAR0_FHM_SHIFT		48
- #define ID_AA64ISAR0_DP_SHIFT		44
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index cabebf1a7976..34b9731e1fab 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -119,6 +119,7 @@ static void cpu_enable_cnp(struct arm64_cpu_capabilities const *cap);
-  * sync with the documentation of the CPU feature register ABI.
-  */
- static const struct arm64_ftr_bits ftr_id_aa64isar0[] = {
-+	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_RNDR_SHIFT, 4, 0),
- 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_TS_SHIFT, 4, 0),
- 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_FHM_SHIFT, 4, 0),
- 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_DP_SHIFT, 4, 0),
-@@ -1261,6 +1262,27 @@ static bool can_use_gic_priorities(const struct arm64_cpu_capabilities *entry,
- }
- #endif
- 
-+#ifdef CONFIG_ARCH_RANDOM
-+static bool can_use_rng(const struct arm64_cpu_capabilities *entry, int scope)
-+{
-+	unsigned long tmp;
-+	int i;
-+
-+	if (!has_cpuid_feature(entry, scope))
-+		return false;
-+
-+	/*
-+	 * Re-seed from the true random number source.
-+	 * If this fails, disable the feature.
-+	 */
-+	for (i = 0; i < 10; ++i) {
-+		if (arm_rndrrs(&tmp))
-+			return true;
-+	}
-+	return false;
-+}
-+#endif
-+
- static const struct arm64_cpu_capabilities arm64_features[] = {
- 	{
- 		.desc = "GIC system register CPU interface",
-@@ -1560,6 +1582,18 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
- 		.sign = FTR_UNSIGNED,
- 		.min_field_value = 1,
- 	},
-+#endif
-+#ifdef CONFIG_ARCH_RANDOM
-+	{
-+		.desc = "Random Number Generator",
-+		.capability = ARM64_HAS_RNG,
-+		.type = ARM64_CPUCAP_STRICT_BOOT_CPU_FEATURE,
-+		.matches = can_use_rng,
-+		.sys_reg = SYS_ID_AA64ISAR0_EL1,
-+		.field_pos = ID_AA64ISAR0_RNDR_SHIFT,
-+		.sign = FTR_UNSIGNED,
-+		.min_field_value = 1,
-+	},
- #endif
- 	{},
- };
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 950a56b71ff0..a035c178102a 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -1421,6 +1421,18 @@ config ARM64_PTR_AUTH
- 
- endmenu
- 
-+menu "ARMv8.5 architectural features"
-+
-+config ARCH_RANDOM
-+	bool "Enable support for random number generation"
-+	default y
-+	help
-+	  Random number generation (part of the ARMv8.5 Extensions)
-+	  provides a high bandwidth, cryptographically secure
-+	  hardware random number generator.
-+
-+endmenu
-+
- config ARM64_SVE
- 	bool "ARM Scalable Vector Extension support"
- 	default y
-diff --git a/drivers/char/Kconfig b/drivers/char/Kconfig
-index df0fc997dc3e..f26a0a8cc0d0 100644
---- a/drivers/char/Kconfig
-+++ b/drivers/char/Kconfig
-@@ -539,7 +539,7 @@ endmenu
- 
- config RANDOM_TRUST_CPU
- 	bool "Trust the CPU manufacturer to initialize Linux's CRNG"
--	depends on X86 || S390 || PPC
-+	depends on X86 || S390 || PPC || ARM64
- 	default n
- 	help
- 	Assume that CPU manufacturer (e.g., Intel or AMD for RDSEED or
-@@ -559,4 +559,4 @@ config RANDOM_TRUST_BOOTLOADER
- 	device randomness. Say Y here to assume the entropy provided by the
- 	booloader is trustworthy so it will be added to the kernel's entropy
- 	pool. Otherwise, say N here so it will be regarded as device input that
--	only mixes the entropy pool.
-\ No newline at end of file
-+	only mixes the entropy pool.
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgUGFsbWVyCgpPbiAyMDE5LzEwLzE5IDQ6MzgsIFBhbG1lciBEYWJiZWx0IHdyb3RlOgo+IE9u
+IFdlZCwgMTYgT2N0IDIwMTkgMTY6NDY6MDggUERUICgtMDcwMCksIHdpbGxAa2VybmVsLm9yZyB3
+cm90ZToKPj4gSGV5IFBhbG1lciwKPj4KPj4gT24gV2VkLCBPY3QgMTYsIDIwMTkgYXQgMDQ6MjE6
+NTlQTSAtMDcwMCwgUGFsbWVyIERhYmJlbHQgd3JvdGU6Cj4+PiBPbiBUdWUsIDA4IE9jdCAyMDE5
+IDA1OjM5OjQ0IFBEVCAoLTA3MDApLCB3aWxsQGtlcm5lbC5vcmcgd3JvdGU6Cj4+PiA+IE9uIFR1
+ZSwgT2N0IDA4LCAyMDE5IGF0IDAyOjE5OjA1QU0gKzAwMDAsIEp1c3RpbiBIZSAoQXJtIFRlY2hu
+b2xvZ3kgCj4+PiBDaGluYSkgd3JvdGU6Cj4+PiA+ID4gPiBPbiBNb24sIFNlcCAzMCwgMjAxOSBh
+dCAwOTo1Nzo0MEFNICswODAwLCBKaWEgSGUgd3JvdGU6Cj4+PiA+ID4gPiA+IGRpZmYgLS1naXQg
+YS9tbS9tZW1vcnkuYyBiL21tL21lbW9yeS5jCj4+PiA+ID4gPiA+IGluZGV4IGIxY2E1MWEwNzlm
+Mi4uMWY1NmIwMTE4ZWY1IDEwMDY0NAo+Pj4gPiA+ID4gPiAtLS0gYS9tbS9tZW1vcnkuYwo+Pj4g
+PiA+ID4gPiArKysgYi9tbS9tZW1vcnkuYwo+Pj4gPiA+ID4gPiBAQCAtMTE4LDYgKzExOCwxMyBA
+QCBpbnQgcmFuZG9taXplX3ZhX3NwYWNlIF9fcmVhZF9tb3N0bHkgPQo+Pj4gPiA+ID4gPsKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAyOwo+Pj4gPiA+ID4gPsKgICNl
+bmRpZgo+Pj4gPiA+ID4gPgo+Pj4gPiA+ID4gPiArI2lmbmRlZiBhcmNoX2ZhdWx0c19vbl9vbGRf
+cHRlCj4+PiA+ID4gPiA+ICtzdGF0aWMgaW5saW5lIGJvb2wgYXJjaF9mYXVsdHNfb25fb2xkX3B0
+ZSh2b2lkKQo+Pj4gPiA+ID4gPiArewo+Pj4gPiA+ID4gPiArwqDCoMKgIHJldHVybiBmYWxzZTsK
+Pj4+ID4gPiA+ID4gK30KPj4+ID4gPiA+ID4gKyNlbmRpZgo+Pj4gPiA+ID4KPj4+ID4gPiA+IEtp
+cmlsbCBoYXMgYWNrZWQgdGhpcywgc28gSSdtIGhhcHB5IHRvIHRha2UgdGhlIHBhdGNoIGFzLWlz
+LCBob3dldmVyIAo+Pj4gaXNuJ3QKPj4+ID4gPiA+IGl0IHRoZSBjYXNlIHRoYXQgL21vc3QvIGFy
+Y2hpdGVjdHVyZXMgd2lsbCB3YW50IHRvIHJldHVybiB0cnVlIGZvcgo+Pj4gPiA+ID4gYXJjaF9m
+YXVsdHNfb25fb2xkX3B0ZSgpPyBJbiB3aGljaCBjYXNlLCB3b3VsZG4ndCBpdCBtYWtlIG1vcmUg
+c2Vuc2UgZm9yCj4+PiA+ID4gPiB0aGF0IHRvIGJlIHRoZSBkZWZhdWx0LCBhbmQgaGF2ZSB4ODYg
+YW5kIGFybTY0IHByb3ZpZGUgYW4gb3ZlcnJpZGU/IEZvcgo+Pj4gPiA+ID4gZXhhbXBsZSwgYXJl
+bid0IG1vc3QgYXJjaGl0ZWN0dXJlcyBzdGlsbCBnb2luZyB0byBoaXQgdGhlIGRvdWJsZSBmYXVs
+dAo+Pj4gPiA+ID4gc2NlbmFyaW8gZXZlbiB3aXRoIHlvdXIgcGF0Y2ggYXBwbGllZD8KPj4+ID4g
+Pgo+Pj4gPiA+IE5vLCBhZnRlciBhcHBseWluZyBteSBwYXRjaCBzZXJpZXMsIG9ubHkgdGhvc2Ug
+YXJjaGl0ZWN0dXJlcyB3aGljaCAKPj4+IGRvbid0IHByb3ZpZGUKPj4+ID4gPiBzZXR0aW5nIGFj
+Y2VzcyBmbGFnIGJ5IGhhcmR3YXJlIEFORCBkb24ndCBpbXBsZW1lbnQgdGhlaXIgCj4+PiBhcmNo
+X2ZhdWx0c19vbl9vbGRfcHRlCj4+PiA+ID4gd2lsbCBoaXQgdGhlIGRvdWJsZSBwYWdlIGZhdWx0
+Lgo+Pj4gPiA+Cj4+PiA+ID4gVGhlIG1lYW5pbmcgb2YgdHJ1ZSBmb3IgYXJjaF9mYXVsdHNfb25f
+b2xkX3B0ZSgpIGlzICJ0aGlzIGFyY2ggZG9lc24ndCAKPj4+IGhhdmUgdGhlIGhhcmR3YXJlCj4+
+PiA+ID4gc2V0dGluZyBhY2Nlc3MgZmxhZyB3YXksIGl0IG1pZ2h0IGNhdXNlIHBhZ2UgZmF1bHQg
+b24gYW4gb2xkIHB0ZSIKPj4+ID4gPiBJIGRvbid0IHdhbnQgdG8gY2hhbmdlIG90aGVyIGFyY2hp
+dGVjdHVyZXMnIGRlZmF1bHQgYmVoYXZpb3IgaGVyZS4gU28gCj4+PiBieSBkZWZhdWx0LAo+Pj4g
+PiA+IGFyY2hfZmF1bHRzX29uX29sZF9wdGUoKSBpcyBmYWxzZS4KPj4+ID4KPj4+ID4gLi4uYW5k
+IG15IGNvbXBsYWludCBpcyB0aGF0IHRoaXMgaXMgdGhlIG1ham9yaXR5IG9mIHN1cHBvcnRlZCBh
+cmNoaXRlY3R1cmVzLAo+Pj4gPiBzbyB5b3UncmUgZml4aW5nIHNvbWV0aGluZyBmb3IgYXJtNjQg
+d2hpY2ggYWxzbyBhZmZlY3RzIGFybSwgcG93ZXJwYywKPj4+ID4gYWxwaGEsIG1pcHMsIHJpc2N2
+LCAuLi4KPj4+ID4KPj4+ID4gQ2hhbmNlcyBhcmUsIHRoZXkgd29uJ3QgZXZlbiByZWFsaXNlIHRo
+ZXkgbmVlZCB0byBpbXBsZW1lbnQKPj4+ID4gYXJjaF9mYXVsdHNfb25fb2xkX3B0ZSgpIHVudGls
+IHNvbWVib2R5IHJ1bnMgaW50byB0aGUgZG91YmxlIGZhdWx0IGFuZAo+Pj4gPiB3YXN0ZXMgbG90
+cyBvZiB0aW1lIGRlYnVnZ2luZyBpdCBiZWZvcmUgdGhleSBzcG90IHlvdXIgcGF0Y2guCj4+Pgo+
+Pj4gSWYgSSB1bmRlcnN0YW5kIHRoZSBzZW1hbnRpY3MgY29ycmVjdGx5LCB3ZSBzaG91bGQgaGF2
+ZSB0aGlzIHNldCB0byB0cnVlLsKgIEkKPj4+IGRvbid0IGhhdmUgYW55IGNvbnRleHQgaGVyZSwg
+YnV0IHdlJ3ZlIGdvdAo+Pj4KPj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgLyoKPj4+
+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAqIFRoZSBrZXJuZWwgYXNzdW1lcyB0aGF0
+IFRMQnMgZG9uJ3QgY2FjaGUgaW52YWxpZAo+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgICogZW50cmllcywgYnV0IGluIFJJU0MtViwgU0ZFTkNFLlZNQSBzcGVjaWZpZXMgYW4KPj4+
+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAqIG9yZGVyaW5nIGNvbnN0cmFpbnQsIG5v
+dCBhIGNhY2hlIGZsdXNoOyBpdCBpcwo+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+ICogbmVjZXNzYXJ5IGV2ZW4gYWZ0ZXIgd3JpdGluZyBpbnZhbGlkIGVudHJpZXMuCj4+PiDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgKi8KPj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqAgbG9jYWxfZmx1c2hfdGxiX3BhZ2UoYWRkcik7Cj4+Pgo+Pj4gaW4gZG9fcGFnZV9mYXVs
+dCgpLgo+Pgo+PiBPaywgYWx0aG91Z2ggSSB0aGluayB0aGlzIGlzIHJlYWxseSBhYm91dCB3aGV0
+aGVyIG9yIG5vdCB5b3VyIGhhcmR3YXJlIGNhbgo+PiBtYWtlIGEgcHRlIHlvdW5nIHdoZW4gYWNj
+ZXNzZWQsIG9yIHdoZXRoZXIgeW91IHRha2UgYSBmYXVsdCBhbmQgZG8gaXQKPj4gYnkgdXBkYXRp
+bmcgdGhlIHB0ZSBleHBsaWNpdGx5Lgo+Pgo+PiB2MTIgb2YgdGhlIHBhdGNoZXMgZGlkIGNoYW5n
+ZSB0aGUgZGVmYXVsdCwgc28geW91IHNob3VsZCBiZSAic2FmZSIgd2l0aAo+PiB0aG9zZSBlaXRo
+ZXIgd2F5Ogo+Pgo+PiBodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9waXBlcm1haWwvbGludXgt
+YXJtLWtlcm5lbC8yMDE5LU9jdG9iZXIvNjg2MDMwLmh0bWwKPgo+IE9LLCB0aGF0IGZlbmNlIGlz
+IGJlY2F1c2Ugd2UgYWxsb3cgaW52YWxpZCB0cmFuc2xhdGlvbnMgdG8gYmUgY2FjaGVkLCB3aGlj
+aCAKPiBpcyBhIGNvbXBsZXRlbHkgZGlmZmVyZW50IGlzc3VlLgo+Cj4gUklTQy1WIGltcGxlbWVu
+dGF0aW9ucyBhcmUgYWxsb3dlZCB0byBoYXZlIHNvZnR3YXJlIG1hbmFnZWQgYWNjZXNzZWQvZGly
+dHkgCj4gYml0cy7CoCBGb3Igc29tZSByZWFzb24gSSB0aG91Z2h0IHdlIHdlcmUgcmVseWluZyBv
+biB0aGUgZmlybXdhcmUgdG8gaGFuZGxlIAo+IHRoaXMsIGJ1dCBJIGNhbid0IGFjdHVhbGx5IGZp
+bmQgdGhlIGNvZGUgc28gSSBtaWdodCBiZSBjcmF6eS7CoCBXaGVyZXZlciBpdCdzIAo+IGRvbmUs
+IHRoZXJlJ3Mgbm8gc3BlYyBlbmZvcmNpbmcgaXQgc28gd2Ugc2hvdWxkIGxlYXZlIHRoaXMgdHJ1
+ZSBvbiBSSVNDLVYuCj4KVGhhbmtzIGZvciB0aGUgY29uZmlybWF0aW9uLiBTbyB3ZSBjYW4ga2Vl
+cCB0aGUgZGVmYXVsdCBhcmNoX2ZhdWx0c19vbl9vbGRfcHRlIAoocmV0dXJuIHRydWUpIG9uIFJJ
+U0MtVi4KCgpUaGFua3MuCgoKLS0tCkNoZWVycywKSnVzdGluIChKaWEgSGUpCgoKX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBt
+YWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
+aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
