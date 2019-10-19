@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E4D7DD7D4
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 11:56:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6795DD7D5
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 11:56:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MkXo4bx1iwa//6XXr0pV91erR+DR8B1WugJG6XeVJrw=; b=iod2JVEsqW1OLb
-	OY9NVmM1q9CFobVewSTLYL08LzNrGBsfz/0BMo/c96zJ3iHuljIoXx6PyvruwqF2whRjp+eWGyEZQ
-	ak7Vw6oN/nZMqM/20HE5WlXyIFVvB4M8kdkaQFinXuweyPu7MA3tMECM4XA3MMuD2tSyOf/ZLzYau
-	c2gsRHHnIn1BOt/7byY8Bv1ESxpyWuqyTZIl3HAbNYWd9jaXGttPwhvBrOcYPeohzzxE5fn8kzdo+
-	GpF/NU3hXtLuOCrTAmheY/oEv4y9IzO2gosvdkvXGjq+C+9UONtUPIHKvOGCTXSdstp1XCvsFwqUm
-	eEIjHaoBI06Wq0rOHIlw==;
+	List-Owner; bh=DuGKno6eEpEPx1nFk2zAYZiVDie1RyT/wIf+xC6zuFk=; b=KBm2b/v/8ck/w4
+	q//6HY8OkUgCiKzToqAgWA8dZ/olAvLPNG+/RzuiDz/G+hOM79460kwtjnDeasLvrsxjlUqUJnQUe
+	+90PrVYWXTae+jQQvEpK01LN0WCyxwfcTMWdnRAB8EKb8eBUvnXfwp0Ehue47H/Qtr32zlSNwFeTj
+	gtbkWMiAG1v4mIBbcis+Iccer2yPkAaFH29lISXxIegM/4QByfBBfswtge3k6Coq3WttGcXlix0+Z
+	HidrzCVYz9lDyKWESjsQEBaY0oJryxKT/KdsUY4I8AZImu3KxpD6FqgyzTc4gTx1I2OA33MP9CBv8
+	LpD9avWztyFzg+yhRjoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLlT7-0002HW-Ru; Sat, 19 Oct 2019 09:56:17 +0000
+	id 1iLlTK-0002UB-Te; Sat, 19 Oct 2019 09:56:30 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLlSP-0001qJ-8m
- for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 09:55:34 +0000
+ id 1iLlSS-0001tr-9d
+ for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 09:55:37 +0000
 Received: from big-swifty.lan (78.163-31-62.static.virginmediabusiness.co.uk
  [62.31.163.78])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A153E222C2;
- Sat, 19 Oct 2019 09:55:30 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 81BBB222CD;
+ Sat, 19 Oct 2019 09:55:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571478932;
- bh=C+wxLu/WnnwZ3cqp2GHFnfaQZgrXjj31+JCX0m8MeoM=;
+ s=default; t=1571478935;
+ bh=cBYrKAV4O8BFISadDqGvhB8cGTVx7az9VNh8naTENqA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=mYqx+7UMtpLMaE/KOY3jsL1gUUeMf3s+YgsbRmwJeHNiJhsZhiQnsl7bbhvmNKWrg
- s3seIIPbTqbICqVFLO61SkWTYsh7XposMSxyYa3dW0GZ6V0kOrF7u+0yAl2g0BqYPA
- nrqcyHiWEkARmUq3m6gv36fmahQT1YvI0NELSY5Y=
+ b=lB6du6o6np7KyZJ0ZdiVBJc9kjZJUsnjLjB4gnszQ5jtgdvg4uPUNibAa435nV8C6
+ KDnpGhbrgtbAEJK+OctIrIqOFV4ZYqWzVEsy/Ajq711lB2n0rwkpZXYhVwP80gz3F+
+ XzLTPv/DtGRO6bZVOEfDeofgYow+VVY8bnoDAHjA=
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH v2 2/5] arm64: KVM: Reorder system register restoration and
- stage-2 activation
-Date: Sat, 19 Oct 2019 10:55:18 +0100
-Message-Id: <20191019095521.31722-3-maz@kernel.org>
+Subject: [PATCH v2 3/5] arm64: KVM: Disable EL1 PTW when invalidating S2 TLBs
+Date: Sat, 19 Oct 2019 10:55:19 +0100
+Message-Id: <20191019095521.31722-4-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191019095521.31722-1-maz@kernel.org>
 References: <20191019095521.31722-1-maz@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191019_025533_390324_5739BA32 
-X-CRM114-Status: GOOD (  11.59  )
+X-CRM114-CacheID: sfid-20191019_025536_417274_9A4FD2C9 
+X-CRM114-Status: GOOD (  14.47  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -87,53 +86,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to prepare for handling erratum 1319367, we need to make
-sure that all system registers (and most importantly the registers
-configuring the virtual memory) are set before we enable stage-2
-translation.
+When erratum 1319367 is being worked around, special care must
+be taken not to allow the page table walker to populate TLBs
+while we have the stage-2 translation enabled (which would otherwise
+result in a bizare mix of the host S1 and the guest S2).
 
-This results in a minor reorganisation of the load sequence, without
-any functional change.
+We enforce this by setting TCR_EL1.EPD{0,1} before restoring the S2
+configuration, and clear the same bits after having disabled S2.
 
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm64/kvm/hyp/switch.c | 17 +++++++++++------
- 1 file changed, 11 insertions(+), 6 deletions(-)
+ arch/arm64/kvm/hyp/tlb.c | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
 
-diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
-index 3d3815020e36..69e10b29cbd0 100644
---- a/arch/arm64/kvm/hyp/switch.c
-+++ b/arch/arm64/kvm/hyp/switch.c
-@@ -605,18 +605,23 @@ int __hyp_text __kvm_vcpu_run_nvhe(struct kvm_vcpu *vcpu)
- 
- 	__sysreg_save_state_nvhe(host_ctxt);
- 
--	__activate_vm(kern_hyp_va(vcpu->kvm));
--	__activate_traps(vcpu);
--
--	__hyp_vgic_restore_state(vcpu);
--	__timer_enable_traps(vcpu);
--
- 	/*
- 	 * We must restore the 32-bit state before the sysregs, thanks
- 	 * to erratum #852523 (Cortex-A57) or #853709 (Cortex-A72).
-+	 *
-+	 * Also, and in order to be able to deal with erratum #1319537 (A57)
-+	 * and #1319367 (A72), we must ensure that all VM-related sysreg are
-+	 * restored before we enable S2 translation.
- 	 */
- 	__sysreg32_restore_state(vcpu);
- 	__sysreg_restore_state_nvhe(guest_ctxt);
+diff --git a/arch/arm64/kvm/hyp/tlb.c b/arch/arm64/kvm/hyp/tlb.c
+index eb0efc5557f3..c2bc17ca6430 100644
+--- a/arch/arm64/kvm/hyp/tlb.c
++++ b/arch/arm64/kvm/hyp/tlb.c
+@@ -63,6 +63,22 @@ static void __hyp_text __tlb_switch_to_guest_vhe(struct kvm *kvm,
+ static void __hyp_text __tlb_switch_to_guest_nvhe(struct kvm *kvm,
+ 						  struct tlb_inv_context *cxt)
+ {
++	if (cpus_have_const_cap(ARM64_WORKAROUND_1319367)) {
++		u64 val;
 +
-+	__activate_vm(kern_hyp_va(vcpu->kvm));
-+	__activate_traps(vcpu);
++		/*
++		 * For CPUs that are affected by ARM 1319367, we need to
++		 * avoid a host Stage-1 walk while we have the guest's
++		 * VMID set in the VTTBR in order to invalidate TLBs.
++		 * We're guaranteed that the S1 MMU is enabled, so we can
++		 * simply set the EPD bits to avoid any further TLB fill.
++		 */
++		val = cxt->tcr = read_sysreg_el1(SYS_TCR);
++		val |= TCR_EPD1_MASK | TCR_EPD0_MASK;
++		write_sysreg_el1(val, SYS_TCR);
++		isb();
++	}
 +
-+	__hyp_vgic_restore_state(vcpu);
-+	__timer_enable_traps(vcpu);
+ 	__load_guest_stage2(kvm);
+ 	isb();
+ }
+@@ -100,6 +116,13 @@ static void __hyp_text __tlb_switch_to_host_nvhe(struct kvm *kvm,
+ 						 struct tlb_inv_context *cxt)
+ {
+ 	write_sysreg(0, vttbr_el2);
 +
- 	__debug_switch_to_guest(vcpu);
++	if (cpus_have_const_cap(ARM64_WORKAROUND_1319367)) {
++		/* Ensure write of the host VMID */
++		isb();
++		/* Restore the host's TCR_EL1 */
++		write_sysreg_el1(cxt->tcr, SYS_TCR);
++	}
+ }
  
- 	__set_guest_arch_workaround_state(vcpu);
+ static void __hyp_text __tlb_switch_to_host(struct kvm *kvm,
 -- 
 2.20.1
 
