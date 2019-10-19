@@ -2,71 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3706ADD7D7
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 11:57:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B5B2DD7DD
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 12:02:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zBTlivm1ANKl2iSOCnt2x0qysBJRL0g/Oj0uG+0quYI=; b=ay/58PDeLueFkC
-	Kc02kA75G+VjpEZ3fWHGBLDOTsF5HhU2owRCCETvBzu+74KgxLgcd+ZpSiI5wNeaTxDJRYMbsEGNW
-	9S2+k5wHUuGCW9PqydEGpmcErK1g97CvS7yVCOnS0o43fGZxsLplW821fr4pJ54eZ6EBj8mk2Xudx
-	LyQ1KjvfVRo8ncMU+QZ2o/6CrgghUhYqoi5MGoXrIVqN1z4mccZ+DB5oBwGz9Z4P9J7iwP9PFap91
-	T2Jf0oXtCDr04mo9k3LzgZqlFlD6dNX0sow6v2eWx2Dm9GAJvr8lVlqSiJgwqOSWFlznjaZTZ3jY1
-	vTQaHm0lHQV9gJukH2Ow==;
+	List-Owner; bh=VnPrUAmZzLBVUwIkG2p/JPmW8Di78EPxVOANWbZwXnQ=; b=JCMOJylyA+Fk4r
+	StJTVZq7ERslBgtUalPzyusK89sZqhEUBP63IfENFr4ocFzNL+jBTjt8kwsZ3LtBiSiprXqFUtjJ3
+	ZQn22mD1hQ/NtMh7r5G3tbwHvudJ/7oew79U+hBK/x0brFjgbU1cc33papsMh601vKEoX+9kqb9L4
+	ywan2duqBfu8t1s97/BQ6iAno316jXgk0BjgyKofRm/6Te9XGgtEEdFR9MUWBBBBIk8CQSot77TKX
+	gQeWGdsasOCpXmfT7KsY6JMDiO80I2VHKUjNJVkhiluYlfKbpl1UsxFPBXvXegi1QyW3OXByCzdc6
+	KUpeBhD7PJaLPCPS8yVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLlTx-00031P-Gc; Sat, 19 Oct 2019 09:57:09 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iLlYe-0004y0-ES; Sat, 19 Oct 2019 10:02:00 +0000
+Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLlSY-000209-Da
- for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 09:55:43 +0000
-Received: from big-swifty.lan (78.163-31-62.static.virginmediabusiness.co.uk
- [62.31.163.78])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4010F222C2;
- Sat, 19 Oct 2019 09:55:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571478941;
- bh=NIhQTmaSfZdOFxlsYacZmWRGnEWsqvAAqOXU5n1fBjc=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=2Ke1oSPhBBMSE/PKuHl0F96K39z/y/L2tu7iwYUo/hIR0eOS9mV/NP7807EKmNR7j
- hcCy70w0ARPX++VLoxQv+SMqs5Gk/oECK0KwHPRMSI3SZ2C+hhJGJZXimwyPPR86tS
- yGoynaIh12/EeSYLwt8Nzb6h2ZD/8fku07bANjmA=
-From: Marc Zyngier <maz@kernel.org>
-To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org
-Subject: [PATCH v2 5/5] arm64: Enable and document ARM errata 1319367 and
- 1319537
-Date: Sat, 19 Oct 2019 10:55:21 +0100
-Message-Id: <20191019095521.31722-6-maz@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191019095521.31722-1-maz@kernel.org>
-References: <20191019095521.31722-1-maz@kernel.org>
+ id 1iLlYU-0004xa-An
+ for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 10:01:51 +0000
+Received: from [5.158.153.52] (helo=nanos.tec.linutronix.de)
+ by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
+ (Exim 4.80) (envelope-from <tglx@linutronix.de>)
+ id 1iLlYH-0004Fy-IZ; Sat, 19 Oct 2019 12:01:37 +0200
+Date: Sat, 19 Oct 2019 12:01:32 +0200 (CEST)
+From: Thomas Gleixner <tglx@linutronix.de>
+To: Huacai Chen <chenhc@lemote.com>
+Subject: Re: [PATCH] lib/vdso: Use __arch_use_vsyscall() to indicate fallback
+In-Reply-To: <CAAhV-H6VkW5-hMOrzAQeyHT4pYGExZR6eTRbPHSPK50GAkigCw@mail.gmail.com>
+Message-ID: <alpine.DEB.2.21.1910191156240.2098@nanos.tec.linutronix.de>
+References: <1571367619-13573-1-git-send-email-chenhc@lemote.com>
+ <CALCETrWXRgkQOJGRqa_sOLAG2zhjsEX6b86T2VTsNYN9ECRrtA@mail.gmail.com>
+ <CAAhV-H6VkW5-hMOrzAQeyHT4pYGExZR6eTRbPHSPK50GAkigCw@mail.gmail.com>
+User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191019_025542_516924_D48EFA6F 
-X-CRM114-Status: GOOD (  11.61  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191019_030150_510678_21F3C6F0 
+X-CRM114-Status: GOOD (  15.93  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a0a:51c0:0:12e:550:0:0:1 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,67 +62,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, James Morse <james.morse@arm.com>,
- Will Deacon <will@kernel.org>, Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: Arnd Bergmann <arnd@arndb.de>, LKML <linux-kernel@vger.kernel.org>,
+ stable <stable@vger.kernel.org>, "open list:MIPS" <linux-mips@vger.kernel.org>,
+ Paul Burton <paul.burton@mips.com>, Andy Lutomirski <luto@kernel.org>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that everything is in place, let's get the ball rolling
-by allowing the corresponding config option to be selected.
-Also add the required information to silicon_errata.rst.
+On Sat, 19 Oct 2019, Huacai Chen wrote:
+> On Fri, Oct 18, 2019 at 11:15 AM Andy Lutomirski <luto@kernel.org> wrote:
+> >
+> > On Thu, Oct 17, 2019 at 7:57 PM Huacai Chen <chenhc@lemote.com> wrote:
+> > >
+> > > In do_hres(), we currently use whether the return value of __arch_get_
+> > > hw_counter() is negtive to indicate fallback, but this is not a good
+> > > idea. Because:
+> > >
+> > > 1, ARM64 returns ULL_MAX but MIPS returns 0 when clock_mode is invalid;
+> > > 2, For a 64bit counter, a "negtive" value of counter is actually valid.
+> >
+> > s/negtive/negative
+> >
+> > What's the actual bug?  Is it that MIPS is returning 0 but the check
+> > is < 0?  Sounds like MIPS should get fixed.
+> My original bug is what Vincenzo said, MIPS has a boot failure if no
+> valid clock_mode, and surely MIPS need to fix. However, when I try to
+> fix it, I found that clock_getres() has another problem, because
+> __cvdso_clock_getres_common() get vd[CS_HRES_COARSE].hrtimer_res, but
+> hrtimer_res is set in update_vdso_data() which relies on
+> __arch_use_vsyscall().
 
-Acked-by: Catalin Marinas <catalin.marinas@arm.com>
-Signed-off-by: Marc Zyngier <maz@kernel.org>
----
- Documentation/arm64/silicon-errata.rst |  4 ++++
- arch/arm64/Kconfig                     | 10 ++++++++++
- 2 files changed, 14 insertions(+)
+__arch_use_vsyscall() is a pointless exercise TBH. The VDSO data should be
+updated unconditionally so all the trivial interfaces like time() and
+getres() just work independently of the functions which depend on the
+underlying clocksource.
 
-diff --git a/Documentation/arm64/silicon-errata.rst b/Documentation/arm64/silicon-errata.rst
-index 17ea3fecddaa..0808be134fce 100644
---- a/Documentation/arm64/silicon-errata.rst
-+++ b/Documentation/arm64/silicon-errata.rst
-@@ -70,8 +70,12 @@ stable kernels.
- +----------------+-----------------+-----------------+-----------------------------+
- | ARM            | Cortex-A57      | #834220         | ARM64_ERRATUM_834220        |
- +----------------+-----------------+-----------------+-----------------------------+
-+| ARM            | Cortex-A57      | #1319537        | ARM64_ERRATUM_1319367       |
-++----------------+-----------------+-----------------+-----------------------------+
- | ARM            | Cortex-A72      | #853709         | N/A                         |
- +----------------+-----------------+-----------------+-----------------------------+
-+| ARM            | Cortex-A72      | #1319367        | ARM64_ERRATUM_1319367       |
-++----------------+-----------------+-----------------+-----------------------------+
- | ARM            | Cortex-A73      | #858921         | ARM64_ERRATUM_858921        |
- +----------------+-----------------+-----------------+-----------------------------+
- | ARM            | Cortex-A55      | #1024718        | ARM64_ERRATUM_1024718       |
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 950a56b71ff0..b2877ed09307 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -538,6 +538,16 @@ config ARM64_ERRATUM_1286807
- 	  invalidated has been observed by other observers. The
- 	  workaround repeats the TLBI+DSB operation.
- 
-+config ARM64_ERRATUM_1319367
-+	bool "Cortex-A57/A72: Speculative AT instruction using out-of-context translation regime could cause subsequent request to generate an incorrect translation"
-+	default y
-+	help
-+	  This option adds work arounds for ARM Cortex-A57 erratum 1319537
-+	  and A72 erratum 1319367
-+
-+	  Cortex-A57 and A72 cores could end-up with corrupted TLBs by
-+	  speculating an AT instruction during a guest context switch.
-+
- 	  If unsure, say Y.
- 
- config ARM64_ERRATUM_1463225
--- 
-2.20.1
+This functions have a fallback operation already:
 
+Let __arch_get_hw_counter() return U64_MAX and the syscall fallback is
+invoked.
+
+__arch_use_vsyscall() should just be removed.
+
+Thanks,
+
+	tglx
 
 _______________________________________________
 linux-arm-kernel mailing list
