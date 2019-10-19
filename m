@@ -2,85 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5E91DD9AE
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 18:42:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0FD28DDA02
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 20:13:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JYXFQWe9Gb4jF2aJtnywIP3GI4JZKbM7z9Jox5T3KSg=; b=JXV2h/r5bjyLv1
-	yjP1gEXB7cV6rJwItv21i6xREF+ZvCPivwGbV5Eyz0VwOJPlGChN1TnzuR42CJvkrkS26H+JVUWxC
-	EMDL9dypmE9hH+a69p+fOxUX3m8Aj+Bo3QG6O3/TWhOH8/c4P/4ttPOLzs9Fi38VFOp4cMf41Ujp3
-	ErRtW+IYAzjqCtrZLzLICfVwjA+ItOOTCPEp/BXiUw4fgtA9iumpPle7gh9ICZrPeZ4S/IF2KBC5C
-	j9DIHW1kHULhgCSm00NXedL/n/6KZ2x3llkWVbET6fQnSexPatdF1lP0/ki2LZwGVKXd3VT/FtCz4
-	D39U0T8HHiD+JsTd8RaQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=pvCH19DWi4zcIkHZUuGhPg2ZDxXs3zsntREJ9w67cQU=; b=u/+rdETuSiuX2A
+	HQ9fkPxR6e8W9JCPtSBxvVqVt0hfHyoiBurvoAFAbWMyLC5Qny4tJrZqei0Zdq1YDIUhaRlTR3qZw
+	avULZEar+lUPyVkGuSUQvRUnCBLzgSX0H69UK62xS1e0EfCBRT73UVI1tECmYoguWYc0B44OB04qn
+	bn6b4R/XHyWCpKu0vEgEUcXUGUDVh1At13T93betPVGhPZcT6Kg78GM0bMm3WuPvbe9qKCUfB8Hdf
+	bfTTxu/WMj4gbc9/jtCu/ENuuKIjR8ubC1LwQtgRDyKDhx5+3OhJ9Xasi5G2P3HmGdYoXP0Z71XCa
+	1/iYBeT10vlFuU4eCYuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLroW-00052g-DB; Sat, 19 Oct 2019 16:42:48 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iLtEB-0007ok-C2; Sat, 19 Oct 2019 18:13:23 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLroM-000529-5K
- for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 16:42:39 +0000
-Received: by mail-wr1-x444.google.com with SMTP id t16so4207754wrr.1
+ id 1iLtE2-0007o2-RS
+ for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 18:13:16 +0000
+Received: by mail-pg1-x542.google.com with SMTP id p1so5173677pgi.4
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 19 Oct 2019 09:42:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=0bulbVbLFGY/pgLXwzKHTMch+8Jp9lMq9IfLMGu0aYU=;
- b=HgIyqCuUO+e+giNE3pXqdKKKNkzDBd/g7tALz2r5hkQthl3/8yUK+5arjmMrt0O7nR
- koMmynGdv1ZbjNfbEVxCr7dngv4FM5oaZ+hgqvVReIcaoMKpfMly6lBltbyE1kQtgYoF
- XY5hDpI0yXdzWh3LM+xXCymu6CMemw+vwM+slnxnoeNW340l94hK9kFbdBo80TS8bQkR
- aBWxDWy7ANe+niAEN/yPp+gxgHyyXxtTeaKcicBuhuz87s/NiSqS9cXV3xptQZ5RgRgd
- BI0B7i9xUUiowVJCJtVphjcGoje5iyciLfiUFPRH8rZaVSgcTX8eoMJwfMYaKBAykGLI
- LpiQ==
+ Sat, 19 Oct 2019 11:13:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=THRrp/Ex+10EZKFSZ17SjdGISreGoqTYFjW18IRfuUo=;
+ b=mMN1/u7x9RFPXYmLVW92jcxFJNIhr4sXnEADaI/y3eaKvRTqNna3yPXsemg9R37y/f
+ xIa3nhuX6wbU93aIXH1Nd1VRmqaxYR310LrIW7p8ieeQ0TLNchb5dePN01iRdzz/8P3k
+ 0Wbsp7pabKG52FeCh/Kip/yOcrKIRl756owv4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=0bulbVbLFGY/pgLXwzKHTMch+8Jp9lMq9IfLMGu0aYU=;
- b=na9Q9Y2iRTBCKwViULOAT9m6+7p3RbCZtOwmvBhnkmg2MoFQmKocrU5U/UZeX21Gxs
- v1aAVrXFUZWjhbihxm+HVV/2ukJZ2fjzGo/inI+nse2v8IHEAIe5CaP8UJpB4sYkrCfu
- qGw5diLnz8weQoiXatV+tXBvei0PGAL5zdS5Ro/OBy57iiEWciBAnqV8x3KsPf5P02kb
- zsG72o2zzBgv/YG+HFV9yVF7OHyED4n47oNRg1e0XEe1OyuiWPwsGdLtiTB0i4W3qkZE
- 1T7D8PF9adg6S8dL4piggrUSRPL9zcX3wz6QTqyaHWudRRJiRfd9z15u6VIqqLCW5Mde
- zsAg==
-X-Gm-Message-State: APjAAAUPLu04MH8F02k+IqcRFMo1q7hquEJB6cFrlmnm8e6D1T3RI7bk
- fyMnHFFPBE6kMeM2AJ+x2wEm6be9
-X-Google-Smtp-Source: APXvYqyM4l9k7cGD3tumxE88d3itrboRb1M11XuIyWc1ueSHSjk92dpIJ8FfpUbXhENTni2Dg7NB2A==
-X-Received: by 2002:adf:8567:: with SMTP id 94mr9317417wrh.65.1571503356410;
- Sat, 19 Oct 2019 09:42:36 -0700 (PDT)
-Received: from giga-mm ([62.68.26.146])
- by smtp.gmail.com with ESMTPSA id 143sm15047896wmb.33.2019.10.19.09.42.34
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=THRrp/Ex+10EZKFSZ17SjdGISreGoqTYFjW18IRfuUo=;
+ b=AiO0+fcI46age4Dzcc4r8M9gm7JP/EMx6isV3xkLMDRAYmk5WUatx4z3NAcfWSnVgm
+ Nkd+pMm4mH4ONXgHLaVg86eHe4/lmb3dPrGge1ItWgrY4xEN4DT7EXi/jVGV6AzkOZ03
+ WOTV3DZV6dTufIiIrh+7EXjwezhLro0wqGTnmhDYODgxb16MIqSGHzfI52SmL4LFyIID
+ FQDp94FUnnVrg8x7CC3YUDnjeVVCwpMMHakYlt0sS1WL5uwKRwiO2e6aS8DBPh1MbeMQ
+ 8YKWwTY1ak4PXuzrAojLgtjc4fx7xUsp3H7ZNQQt2c/A6RXbflTUQXIAtX+reWfaDfIN
+ LmvA==
+X-Gm-Message-State: APjAAAVlfSm9+QeU6fRpBjK9/gJHScaSpb0/8svPEAv0dk+03Uzy9wZj
+ ukgeTDFO9aODvYd5qurNLK3Enw==
+X-Google-Smtp-Source: APXvYqyqjdiEpPjvVxGmB8CeGzQy1F+O/Zu+CxdB3XQj32hzbbujF1/jQA0q3pytSyak+G1ZcJ4iJw==
+X-Received: by 2002:a17:90a:f495:: with SMTP id
+ bx21mr17765653pjb.84.1571508788795; 
+ Sat, 19 Oct 2019 11:13:08 -0700 (PDT)
+Received: from tictac2.mtv.corp.google.com
+ ([2620:15c:202:1:24fa:e766:52c9:e3b2])
+ by smtp.gmail.com with ESMTPSA id m2sm14567461pff.154.2019.10.19.11.13.07
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 19 Oct 2019 09:42:35 -0700 (PDT)
-Date: Sat, 19 Oct 2019 18:42:34 +0200
-From: Alexander Sverdlin <alexander.sverdlin@gmail.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH 2/6] ARM: ep93xx: enable SPARSE_IRQ
-Message-Id: <20191019184234.4cdb37a735fe632528880d76@gmail.com>
-In-Reply-To: <20191018163047.1284736-2-arnd@arndb.de>
-References: <20191018163047.1284736-1-arnd@arndb.de>
- <20191018163047.1284736-2-arnd@arndb.de>
-X-Mailer: Sylpheed 3.7.0 (GTK+ 2.24.32; x86_64-unknown-linux-gnu)
-Mime-Version: 1.0
+ Sat, 19 Oct 2019 11:13:08 -0700 (PDT)
+From: Douglas Anderson <dianders@chromium.org>
+To: Will Deacon <will@kernel.org>,
+	Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH] ARM: hw_breakpoint: Handle inexact watchpoint addresses
+Date: Sat, 19 Oct 2019 11:12:26 -0700
+Message-Id: <20191019111216.1.I82eae759ca6dc28a245b043f485ca490e3015321@changeid>
+X-Mailer: git-send-email 2.23.0.866.gb869b98d4c-goog
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191019_094238_228462_AD1ED41C 
-X-CRM114-Status: GOOD (  14.96  )
+X-CRM114-CacheID: sfid-20191019_111314_891716_9034CB54 
+X-CRM114-Status: GOOD (  19.57  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (alexander.sverdlin[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -88,6 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,122 +95,180 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Hubert Feurstein <hubert.feurstein@contec.at>,
- Hartley Sweeten <hsweeten@visionengravers.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Lukasz Majewski <lukma@denx.de>
+Cc: Pratyush Anand <panand@redhat.com>, Pavel Labath <labath@google.com>,
+ linux-kernel@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
+ Douglas Anderson <dianders@chromium.org>, kinaba@google.com, mka@chromium.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Arnd,
+This is commit fdfeff0f9e3d ("arm64: hw_breakpoint: Handle inexact
+watchpoint addresses") but ported to arm32, which has the same
+problem.
 
-On Fri, 18 Oct 2019 18:29:15 +0200
-Arnd Bergmann <arnd@arndb.de> wrote:
+This problem was found by Android CTS tests, notably the
+"watchpoint_imprecise" test [1].  I tested locally against a copycat
+(simplified) version of the test though.
 
-> Without CONFIG_SPARSE_IRQ, we rely on mach/irqs.h to define NR_IRQS
-> globally. Do the minimal conversion by setting .nr_irqs in each
-> machine descriptor.
-> 
-> Only the vision_ep9307 machine has extra IRQs for GPIOs, so make
-> .nr_irqs the original value there, while using the plain NR_EP93XX_IRQS
-> everywhere else.
+[1] https://android.googlesource.com/platform/bionic/+/master/tests/sys_ptrace_test.cpp
 
-This patch causes multiple problems on EDB9302:
+Signed-off-by: Douglas Anderson <dianders@chromium.org>
+---
 
-1. WARNINGs during gpiochip registration, for instance:
+ arch/arm/kernel/hw_breakpoint.c | 96 ++++++++++++++++++++++++---------
+ 1 file changed, 70 insertions(+), 26 deletions(-)
 
-------------[ cut here ]------------
-WARNING: CPU: 0 PID: 1 at kernel/irq/chip.c:1013 __irq_do_set_handler+0x94/0x188
-CPU: 0 PID: 1 Comm: swapper Tainted: G        W         5.4.0-rc3 #1
-Hardware name: Cirrus Logic EDB9302 Evaluation Board
-[<c000e878>] (unwind_backtrace) from [<c000d574>] (show_stack+0x10/0x18)
-[<c000d574>] (show_stack) from [<c0335e28>] (dump_stack+0x18/0x24)
-[<c0335e28>] (dump_stack) from [<c001cf1c>] (__warn+0xa4/0xc8)
-[<c001cf1c>] (__warn) from [<c001cfe8>] (warn_slowpath_fmt+0xa8/0xb8)
-[<c001cfe8>] (warn_slowpath_fmt) from [<c0055668>] (__irq_do_set_handler+0x94/0x188)
-[<c0055668>] (__irq_do_set_handler) from [<c005647c>] (irq_set_chained_handler_and_data+0x48/0x7c)
-[<c005647c>] (irq_set_chained_handler_and_data) from [<c01ab440>] (gpiochip_add_data_with_key+0x6d4/0xabc)
-[<c01ab440>] (gpiochip_add_data_with_key) from [<c01ab868>] (devm_gpiochip_add_data+0x40/0x88)
-[<c01ab868>] (devm_gpiochip_add_data) from [<c01ae554>] (ep93xx_gpio_probe+0x1ac/0x280)
-[<c01ae554>] (ep93xx_gpio_probe) from [<c01e0f34>] (platform_drv_probe+0x28/0x6c)
-[<c01e0f34>] (platform_drv_probe) from [<c01df588>] (really_probe+0x1c8/0x340)
-[<c01df588>] (really_probe) from [<c01ddfe4>] (bus_for_each_drv+0x58/0xc0)
-[<c01ddfe4>] (bus_for_each_drv) from [<c01df904>] (__device_attach+0xb4/0x104)
-[<c01df904>] (__device_attach) from [<c01de1d4>] (bus_probe_device+0x8c/0x94)
-[<c01de1d4>] (bus_probe_device) from [<c01db5e4>] (device_add+0x3d0/0x59c)
-[<c01db5e4>] (device_add) from [<c01e16d8>] (platform_device_add+0x100/0x20c)
-[<c01e16d8>] (platform_device_add) from [<c03f50b0>] (ep93xx_init_devices+0x16c/0x20c)
-[<c03f50b0>] (ep93xx_init_devices) from [<c03f53a0>] (edb93xx_init_machine+0xc/0x84)
-[<c03f53a0>] (edb93xx_init_machine) from [<c03f1984>] (customize_machine+0x20/0x38)
-[<c03f1984>] (customize_machine) from [<c03f0e54>] (do_one_initcall+0x78/0x1a0)
-[<c03f0e54>] (do_one_initcall) from [<c03f1080>] (kernel_init_freeable+0x104/0x1b8)
-[<c03f1080>] (kernel_init_freeable) from [<c034c358>] (kernel_init+0x8/0xf8)
-[<c034c358>] (kernel_init) from [<c00090d0>] (ret_from_fork+0x14/0x24)
-Exception stack(0xc4433fb0 to 0xc4433ff8)
-3fa0:                                     00000000 00000000 00000000 00000000
-3fc0: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
-3fe0: 00000000 00000000 00000000 00000000 00000013 00000000
----[ end trace 8f9e35e2d6224882 ]---
-
-2. Broken sound (I2S), this looks like below in the log:
-
-ep93xx-i2s ep93xx-i2s: Missing dma channel for stream: 0
- CS4271: ASoC: pcm constructor failed: -22
-edb93xx-audio edb93xx-audio: ASoC: can't create pcm CS4271 HiFi :-22
-
-And /proc/interrupts has two entries less. Without patch:
-
-# cat /proc/interrupts
-           CPU0       
-  7:          0       VIC   7 Edge      i2s-pcm-out
-  8:          0       VIC   8 Edge      i2s-pcm-in
- 39:          2       VIC   7 Edge      eth0
- 51:       7532       VIC  19 Edge      ep93xx timer
- 52:        144       VIC  20 Edge      uart-pl010
- 53:          4       VIC  21 Edge      ep93xx-spi
- 60:          0       VIC  28 Edge      ep93xx-i2s
-Err:          0
-
-With patch:
-
-# cat /proc/interrupts 
-           CPU0       
- 39:        146       VIC   7 Edge      eth0
- 51:     162161       VIC  19 Edge      ep93xx timer
- 52:        139       VIC  20 Edge      uart-pl010
- 53:          4       VIC  21 Edge      ep93xx-spi
- 60:          0       VIC  28 Edge      ep93xx-i2s
-Err:          0
-
-I will try to look into I2S problem...
+diff --git a/arch/arm/kernel/hw_breakpoint.c b/arch/arm/kernel/hw_breakpoint.c
+index b0c195e3a06d..d394878409db 100644
+--- a/arch/arm/kernel/hw_breakpoint.c
++++ b/arch/arm/kernel/hw_breakpoint.c
+@@ -680,26 +680,62 @@ static void disable_single_step(struct perf_event *bp)
+ 	arch_install_hw_breakpoint(bp);
+ }
  
-> ---
-> It's been a while since I did this, no idea what else is needed
-> here or if this is correct at all.
-> 
-> Cc: Hartley Sweeten <hsweeten@visionengravers.com>
-> Cc: Alexander Sverdlin <alexander.sverdlin@gmail.com>
-> Cc: Hubert Feurstein <hubert.feurstein@contec.at>
-> Cc: Lukasz Majewski <lukma@denx.de>
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> ---
->  arch/arm/Kconfig                               | 2 ++
->  arch/arm/mach-ep93xx/adssphere.c               | 1 +
->  arch/arm/mach-ep93xx/edb93xx.c                 | 8 ++++++++
->  arch/arm/mach-ep93xx/gesbc9312.c               | 1 +
->  arch/arm/mach-ep93xx/{include/mach => }/irqs.h | 7 -------
->  arch/arm/mach-ep93xx/micro9.c                  | 4 ++++
->  arch/arm/mach-ep93xx/simone.c                  | 1 +
->  arch/arm/mach-ep93xx/snappercl15.c             | 1 +
->  arch/arm/mach-ep93xx/soc.h                     | 1 +
->  arch/arm/mach-ep93xx/ts72xx.c                  | 3 ++-
->  arch/arm/mach-ep93xx/vision_ep9307.c           | 1 +
->  11 files changed, 22 insertions(+), 8 deletions(-)
->  rename arch/arm/mach-ep93xx/{include/mach => }/irqs.h (94%)
-
++/*
++ * Arm32 hardware does not always report a watchpoint hit address that matches
++ * one of the watchpoints set. It can also report an address "near" the
++ * watchpoint if a single instruction access both watched and unwatched
++ * addresses. There is no straight-forward way, short of disassembling the
++ * offending instruction, to map that address back to the watchpoint. This
++ * function computes the distance of the memory access from the watchpoint as a
++ * heuristic for the likelyhood that a given access triggered the watchpoint.
++ *
++ * See this same function in the arm64 platform code, which has the same
++ * problem.
++ *
++ * The function returns the distance of the address from the bytes watched by
++ * the watchpoint. In case of an exact match, it returns 0.
++ */
++static u32 get_distance_from_watchpoint(unsigned long addr, u32 val,
++					struct arch_hw_breakpoint_ctrl *ctrl)
++{
++	u32 wp_low, wp_high;
++	u32 lens, lene;
++
++	lens = __ffs(ctrl->len);
++	lene = __fls(ctrl->len);
++
++	wp_low = val + lens;
++	wp_high = val + lene;
++	if (addr < wp_low)
++		return wp_low - addr;
++	else if (addr > wp_high)
++		return addr - wp_high;
++	else
++		return 0;
++}
++
+ static void watchpoint_handler(unsigned long addr, unsigned int fsr,
+ 			       struct pt_regs *regs)
+ {
+-	int i, access;
+-	u32 val, ctrl_reg, alignment_mask;
++	int i, access, closest_match = 0;
++	u32 min_dist = -1, dist;
++	u32 val, ctrl_reg;
+ 	struct perf_event *wp, **slots;
+ 	struct arch_hw_breakpoint *info;
+ 	struct arch_hw_breakpoint_ctrl ctrl;
+ 
+ 	slots = this_cpu_ptr(wp_on_reg);
+ 
++	/*
++	 * Find all watchpoints that match the reported address. If no exact
++	 * match is found. Attribute the hit to the closest watchpoint.
++	 */
++	rcu_read_lock();
+ 	for (i = 0; i < core_num_wrps; ++i) {
+-		rcu_read_lock();
+-
+ 		wp = slots[i];
+-
+ 		if (wp == NULL)
+-			goto unlock;
++			continue;
+ 
+-		info = counter_arch_bp(wp);
+ 		/*
+ 		 * The DFAR is an unknown value on debug architectures prior
+ 		 * to 7.1. Since we only allow a single watchpoint on these
+@@ -708,33 +744,31 @@ static void watchpoint_handler(unsigned long addr, unsigned int fsr,
+ 		 */
+ 		if (debug_arch < ARM_DEBUG_ARCH_V7_1) {
+ 			BUG_ON(i > 0);
++			info = counter_arch_bp(wp);
+ 			info->trigger = wp->attr.bp_addr;
+ 		} else {
+-			if (info->ctrl.len == ARM_BREAKPOINT_LEN_8)
+-				alignment_mask = 0x7;
+-			else
+-				alignment_mask = 0x3;
+-
+-			/* Check if the watchpoint value matches. */
+-			val = read_wb_reg(ARM_BASE_WVR + i);
+-			if (val != (addr & ~alignment_mask))
+-				goto unlock;
+-
+-			/* Possible match, check the byte address select. */
+-			ctrl_reg = read_wb_reg(ARM_BASE_WCR + i);
+-			decode_ctrl_reg(ctrl_reg, &ctrl);
+-			if (!((1 << (addr & alignment_mask)) & ctrl.len))
+-				goto unlock;
+-
+ 			/* Check that the access type matches. */
+ 			if (debug_exception_updates_fsr()) {
+ 				access = (fsr & ARM_FSR_ACCESS_MASK) ?
+ 					  HW_BREAKPOINT_W : HW_BREAKPOINT_R;
+ 				if (!(access & hw_breakpoint_type(wp)))
+-					goto unlock;
++					continue;
+ 			}
+ 
++			val = read_wb_reg(ARM_BASE_WVR + i);
++			ctrl_reg = read_wb_reg(ARM_BASE_WCR + i);
++			decode_ctrl_reg(ctrl_reg, &ctrl);
++			dist = get_distance_from_watchpoint(addr, val, &ctrl);
++			if (dist < min_dist) {
++				min_dist = dist;
++				closest_match = i;
++			}
++			/* Is this an exact match? */
++			if (dist != 0)
++				continue;
++
+ 			/* We have a winner. */
++			info = counter_arch_bp(wp);
+ 			info->trigger = addr;
+ 		}
+ 
+@@ -748,10 +782,20 @@ static void watchpoint_handler(unsigned long addr, unsigned int fsr,
+ 		 */
+ 		if (is_default_overflow_handler(wp))
+ 			enable_single_step(wp, instruction_pointer(regs));
++	}
+ 
+-unlock:
+-		rcu_read_unlock();
++	if (min_dist > 0 && min_dist != -1) {
++		/* No exact match found. */
++		wp = slots[closest_match];
++		info = counter_arch_bp(wp);
++		info->trigger = addr;
++		pr_debug("watchpoint fired: address = 0x%x\n", info->trigger);
++		perf_bp_event(wp, regs);
++		if (is_default_overflow_handler(wp))
++			enable_single_step(wp, instruction_pointer(regs));
+ 	}
++
++	rcu_read_unlock();
+ }
+ 
+ static void watchpoint_single_step_handler(unsigned long pc)
 -- 
-Alexander Sverdlin.
+2.23.0.866.gb869b98d4c-goog
+
 
 _______________________________________________
 linux-arm-kernel mailing list
