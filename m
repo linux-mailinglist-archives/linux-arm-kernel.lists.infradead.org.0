@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA5BEDDA3B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 20:42:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 040E8DDA82
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 20:45:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7yvaRRSe4q0fFVV7NLa7mQA92f/6qpUlshDsqYG/+/E=; b=mrXfCqRncK0PLN
-	W1nGo32IxhKxGN1xJoY8JX+yqxR34UH0RcY0l/iMeMbwC206SANd711UfY+7K0H+USx5PnYDEylwz
-	SY2hFaVavvMim4tIcuvUp5hq5eW9RwrN/Gy7rgUdkxMxoH+mqQLDylfpenwauqutD5jZQAFY+7pgL
-	3hZsvSr989LzfiuZ5jYZZyy3UPYTxw3Q2t1xDuo+5Jlwh4HMSlaHuPL2JrrurycpwSp+qHJz/h3Rq
-	yjbRzl9x/+jtMn7+RXhPESScWAmdPhcswWo2/PI9R2clqIzy6RhIULdLA7XpwiDi15PBq8NglI6HG
-	atrVBeOODCXANlrP3h/A==;
+	List-Owner; bh=gOGW3NgDY/6TNZ/rmGbu0I9D61IcdghAa//TzCzhdK8=; b=dSKG3ONtp61061
+	3/n/5hEdAPrH1IH75gFzyxh897UvoZz7cWp16RFHCuJtgeNbmdS30V3MC7bN8ns/rvkMhsz5FaCDC
+	ymZj6K1mGPl+P9PhE0Kf8P6acxeb9oHcYv5HQKqAHTO3MT0tlBtdXSn+1jmb3+aKtHYPQCg+bqZQG
+	PU2WzBqWMjEw4jPX6rQ9vFCIewf7dPnKyw60U5OtWc8sQdv2iAhYX8Mzz29sQRQ4yBLmCBpSIffoG
+	HTSKyGJCahIperAAffzors6otPOd9/UFRN2th4R70s84dCnMxUYezV1lvSpeideU/AdRCEL5zSveO
+	+qdQfLp8Ft6FsJSr8hCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLtgC-0000I6-Ay; Sat, 19 Oct 2019 18:42:20 +0000
-Received: from mo6-p04-ob.smtp.rzone.de ([2a01:238:20a:202:5304::2])
+	id 1iLtik-0002my-6j; Sat, 19 Oct 2019 18:44:58 +0000
+Received: from mo6-p04-ob.smtp.rzone.de ([2a01:238:20a:202:5304::6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLtfc-000060-CT
- for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 18:41:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1571510503;
+ id 1iLtfb-00005g-SL
+ for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 18:41:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1571510497;
  s=strato-dkim-0002; d=goldelico.com;
  h=References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
  X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=AkdUrtyEx7mUP1X18MNNmz4IbzfL7G/mQNoS1MEKiv0=;
- b=FE9BeWKMN/NwsAChCx4BzUd7iFEb9zUxyY6T0XQzoBxwKWJpPcj20qVcoH4nEi8ZAa
- tPiD8yPL76xewwREzoYq4d/zAKJbLksLYmzZhSra3GyFm4/y/a2Plz0huzp9feG9Mpwr
- 5QWF0JAi8N8fy0GfS59FdIeDBK5T+n09QUn8MMNdj3ABk9NrrPFxrIhpUPupVCfkbK7g
- 0tujfQsBwiT69+ppVPtf9V8uTyPPvXAiQRylJgw9OywPlzgnsrHgPWMvLC3XfZw47RIb
- 5ala1ojrgfdcZJd6rkWfFFEfkxLi4296mfPMgcFsD1owKLUenxXtYYu3r+TRowpkapX8
- HUtw==
+ bh=/pObl1FM2M6AHMr9luNDZ5UQLwObvzqffucymVvdQFs=;
+ b=dyeVDXVKaj4/wrDM90SWzgr6MXzLB1P7btn6FaLWFWE8VaDFrw5sN1pT1Q90IZyh/u
+ YSLs9jH70pZ2gD6inCfrpGSNRfFMMd+QT+CR9eFx9c98a8oBVZ/VsqEw9wya1t3cLSVJ
+ zWRz6KmGUUP5eoqn24bFal/+EYkSPXOVsvkJD27evcp9XbWvN+mPddGcXzN86SR4qk0V
+ Ad9gPkzvGjkCaHcysaptBoHlcb34HHb1CY6+bu7Ezll2zPv6dV0b+qlhQ2IPjkZAGSmJ
+ u2/HnFDaNlRCLxDlpoeSGYwG0VeCbEMPbLu6cBgFOQcPQIlHYNvcLii9gHM7XRDiaXau
+ F+YA==
 X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMhflhwDubTJ9o12DNOsPj0pAyXkHTz8="
 X-RZG-CLASS-ID: mo00
 Received: from iMac.fritz.box by smtp.strato.de (RZmta 44.28.1 DYNA|AUTH)
- with ESMTPSA id R0b2a8v9JIfWFMQ
+ with ESMTPSA id R0b2a8v9JIfXFMR
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
  521 ECDH bits, eq. 15360 bits RSA))
  (Client did not present a certificate);
- Sat, 19 Oct 2019 20:41:32 +0200 (CEST)
+ Sat, 19 Oct 2019 20:41:33 +0200 (CEST)
 From: "H. Nikolaus Schaller" <hns@goldelico.com>
 To: =?UTF-8?q?Beno=C3=AEt=20Cousson?= <bcousson@baylibre.com>,
  Tony Lindgren <tony@atomide.com>, Rob Herring <robh+dt@kernel.org>,
@@ -58,22 +58,24 @@ To: =?UTF-8?q?Beno=C3=AEt=20Cousson?= <bcousson@baylibre.com>,
  Thomas Gleixner <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  John Stultz <john.stultz@linaro.org>, Bjorn Helgaas <bhelgaas@google.com>
-Subject: [PATCH v2 05/11] omap: pdata-quirks: revert pandora specific gpiod
- additions
-Date: Sat, 19 Oct 2019 20:41:20 +0200
-Message-Id: <24197fe0ad72cb0822ac4ab7aa2d541e50e6fbe0.1571510481.git.hns@goldelico.com>
+Subject: [PATCH v2 06/11] omap: pdata-quirks: remove openpandora quirks for
+ mmc3 and wl1251
+Date: Sat, 19 Oct 2019 20:41:21 +0200
+Message-Id: <9cb3b9f9bee4aa50a19bf47742cff095b8c2fbfb.1571510481.git.hns@goldelico.com>
 X-Mailer: git-send-email 2.19.1
 In-Reply-To: <cover.1571510481.git.hns@goldelico.com>
 References: <cover.1571510481.git.hns@goldelico.com>
 MIME-Version: 1.0
-X-Spam-Note: CRM114 invocation failed
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20191019_114144_561103_AF8C9BC8 
+X-CRM114-Status: GOOD (  14.62  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5304:0:0:2 listed in]
+ low trust [2a01:238:20a:202:5304:0:0:6 listed in]
  [list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -98,86 +100,141 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: devicetree@vger.kernel.org, letux-kernel@openphoenux.org,
  linux-mmc@vger.kernel.org, kernel@pyra-handheld.com,
  linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
- netdev@vger.kernel.org, linux-omap@vger.kernel.org,
+ stable@vger.kernel.org, netdev@vger.kernel.org, linux-omap@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-introduced by commit
+With a wl1251 child node of mmc3 in the device tree decoded
+in omap_hsmmc.c to handle special wl1251 initialization, we do
+no longer need to instantiate the mmc3 through pdata quirks.
 
-efdfeb079cc3b ("regulator: fixed: Convert to use GPIO descriptor only")
+We also can remove the wlan regulator and reset/interrupt definitions
+and do them through device tree.
 
-We must remove this from mainline first, so that the following patch
-to remove the openpandora quirks for mmc3 and wl1251 cleanly applies
-to stable v4.9, v4.14, v4.19 where the above mentioned patch is not yet
-present.
+Fixes: 81eef6ca9201 ("mmc: omap_hsmmc: Use dma_request_chan() for requesting DMA channel")
 
 Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
+Cc: <stable@vger.kernel.org> # 4.7.0
 ---
- arch/arm/mach-omap2/pdata-quirks.c | 19 ++++---------------
- 1 file changed, 4 insertions(+), 15 deletions(-)
+ arch/arm/mach-omap2/pdata-quirks.c | 93 ------------------------------
+ 1 file changed, 93 deletions(-)
 
 diff --git a/arch/arm/mach-omap2/pdata-quirks.c b/arch/arm/mach-omap2/pdata-quirks.c
-index d942a3357090..89734ef9ab1e 100644
+index 89734ef9ab1e..ecc1ef632951 100644
 --- a/arch/arm/mach-omap2/pdata-quirks.c
 +++ b/arch/arm/mach-omap2/pdata-quirks.c
-@@ -7,7 +7,6 @@
- #include <linux/clk.h>
- #include <linux/davinci_emac.h>
- #include <linux/gpio.h>
--#include <linux/gpio/machine.h>
- #include <linux/init.h>
- #include <linux/kernel.h>
- #include <linux/of_platform.h>
-@@ -327,7 +326,9 @@ static struct regulator_init_data pandora_vmmc3 = {
- static struct fixed_voltage_config pandora_vwlan = {
- 	.supply_name		= "vwlan",
- 	.microvolts		= 1800000, /* 1.8V */
-+	.gpio			= PANDORA_WIFI_NRESET_GPIO,
- 	.startup_delay		= 50000, /* 50ms */
-+	.enable_high		= 1,
- 	.init_data		= &pandora_vmmc3,
+@@ -303,108 +303,15 @@ static void __init omap3_logicpd_torpedo_init(void)
+ }
+ 
+ /* omap3pandora legacy devices */
+-#define PANDORA_WIFI_IRQ_GPIO		21
+-#define PANDORA_WIFI_NRESET_GPIO	23
+ 
+ static struct platform_device pandora_backlight = {
+ 	.name	= "pandora-backlight",
+ 	.id	= -1,
  };
  
-@@ -339,19 +340,6 @@ static struct platform_device pandora_vwlan_device = {
- 	},
- };
- 
--static struct gpiod_lookup_table pandora_vwlan_gpiod_table = {
--	.dev_id = "reg-fixed-voltage.1",
--	.table = {
--		/*
--		 * As this is a low GPIO number it should be at the first
--		 * GPIO bank.
--		 */
--		GPIO_LOOKUP("gpio-0-31", PANDORA_WIFI_NRESET_GPIO,
--			    NULL, GPIO_ACTIVE_HIGH),
--		{ },
+-static struct regulator_consumer_supply pandora_vmmc3_supply[] = {
+-	REGULATOR_SUPPLY("vmmc", "omap_hsmmc.2"),
+-};
+-
+-static struct regulator_init_data pandora_vmmc3 = {
+-	.constraints = {
+-		.valid_ops_mask		= REGULATOR_CHANGE_STATUS,
+-	},
+-	.num_consumer_supplies	= ARRAY_SIZE(pandora_vmmc3_supply),
+-	.consumer_supplies	= pandora_vmmc3_supply,
+-};
+-
+-static struct fixed_voltage_config pandora_vwlan = {
+-	.supply_name		= "vwlan",
+-	.microvolts		= 1800000, /* 1.8V */
+-	.gpio			= PANDORA_WIFI_NRESET_GPIO,
+-	.startup_delay		= 50000, /* 50ms */
+-	.enable_high		= 1,
+-	.init_data		= &pandora_vmmc3,
+-};
+-
+-static struct platform_device pandora_vwlan_device = {
+-	.name		= "reg-fixed-voltage",
+-	.id		= 1,
+-	.dev = {
+-		.platform_data = &pandora_vwlan,
 -	},
 -};
 -
- static void pandora_wl1251_init_card(struct mmc_card *card)
- {
- 	/*
-@@ -373,6 +361,8 @@ static struct omap2_hsmmc_info pandora_mmc3[] = {
- 	{
- 		.mmc		= 3,
- 		.caps		= MMC_CAP_4_BIT_DATA | MMC_CAP_POWER_OFF_CARD,
-+		.gpio_cd	= -EINVAL,
-+		.gpio_wp	= -EINVAL,
- 		.init_card	= pandora_wl1251_init_card,
- 	},
- 	{}	/* Terminator */
-@@ -411,7 +401,6 @@ static void __init pandora_wl1251_init(void)
+-static void pandora_wl1251_init_card(struct mmc_card *card)
+-{
+-	/*
+-	 * We have TI wl1251 attached to MMC3. Pass this information to
+-	 * SDIO core because it can't be probed by normal methods.
+-	 */
+-	if (card->type == MMC_TYPE_SDIO || card->type == MMC_TYPE_SD_COMBO) {
+-		card->quirks |= MMC_QUIRK_NONSTD_SDIO;
+-		card->cccr.wide_bus = 1;
+-		card->cis.vendor = 0x104c;
+-		card->cis.device = 0x9066;
+-		card->cis.blksize = 512;
+-		card->cis.max_dtr = 24000000;
+-		card->ocr = 0x80;
+-	}
+-}
+-
+-static struct omap2_hsmmc_info pandora_mmc3[] = {
+-	{
+-		.mmc		= 3,
+-		.caps		= MMC_CAP_4_BIT_DATA | MMC_CAP_POWER_OFF_CARD,
+-		.gpio_cd	= -EINVAL,
+-		.gpio_wp	= -EINVAL,
+-		.init_card	= pandora_wl1251_init_card,
+-	},
+-	{}	/* Terminator */
+-};
+-
+-static void __init pandora_wl1251_init(void)
+-{
+-	struct wl1251_platform_data pandora_wl1251_pdata;
+-	int ret;
+-
+-	memset(&pandora_wl1251_pdata, 0, sizeof(pandora_wl1251_pdata));
+-
+-	pandora_wl1251_pdata.power_gpio = -1;
+-
+-	ret = gpio_request_one(PANDORA_WIFI_IRQ_GPIO, GPIOF_IN, "wl1251 irq");
+-	if (ret < 0)
+-		goto fail;
+-
+-	pandora_wl1251_pdata.irq = gpio_to_irq(PANDORA_WIFI_IRQ_GPIO);
+-	if (pandora_wl1251_pdata.irq < 0)
+-		goto fail_irq;
+-
+-	pandora_wl1251_pdata.use_eeprom = true;
+-	ret = wl1251_set_platform_data(&pandora_wl1251_pdata);
+-	if (ret < 0)
+-		goto fail_irq;
+-
+-	return;
+-
+-fail_irq:
+-	gpio_free(PANDORA_WIFI_IRQ_GPIO);
+-fail:
+-	pr_err("wl1251 board initialisation failed\n");
+-}
+-
  static void __init omap3_pandora_legacy_init(void)
  {
  	platform_device_register(&pandora_backlight);
--	gpiod_add_lookup_table(&pandora_vwlan_gpiod_table);
- 	platform_device_register(&pandora_vwlan_device);
- 	omap_hsmmc_init(pandora_mmc3);
- 	omap_hsmmc_late_init(pandora_mmc3);
+-	platform_device_register(&pandora_vwlan_device);
+-	omap_hsmmc_init(pandora_mmc3);
+-	omap_hsmmc_late_init(pandora_mmc3);
+-	pandora_wl1251_init();
+ }
+ #endif /* CONFIG_ARCH_OMAP3 */
+ 
 -- 
 2.19.1
 
