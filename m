@@ -2,94 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED463DD721
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 09:32:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04B78DD799
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 11:08:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WmPBUvx9FxL2AGC3IOME7QTwyVITr6CFFo+xr1FbO/E=; b=YXgXKXagzzPBq4
-	6EqtpBMrz6kFLa3z8Ci88JlRcgYbq4waDBeuIb6Y2kBwrF+BKUEOAb4qiCdgPISKuvrhN4Ds/MU/0
-	VShtHsY/sh069ZyD0bemd4vnMA3IzPAw0mzClYx9zr1MmxODvy3AM57iQvlaYB2m4uZeuwljDzSOR
-	Bw5ZGlw0TLH9DrG+z0cSRWqJcGCGqPWdHcAFJ+l4aLuQQ6rjJ/e73DY+3FgIjC9OU2BcyK61qqmza
-	ilApPqhHrBa0boHp+nUEFPmhMbZk4qvupAPyP9/D9fZqa0bt9+uIozChJ06jV7kCCAPQFeDWtM7+P
-	U4wXJ7jnKmApXaAQpZBg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=73aPmCBp5qAvAj4upqAtbTvE/8Nh+Rn1BYyR5wPipa0=; b=pU7pq7I3w08h8NfrCXXg+Qq41
+	1E5Bq7jq9wIx8AOwmX4o/8R32gnokgpS5Udc4jeHJMJf9h+4IPjzOx+d/i+/BW5KojyJwJfhzSxPv
+	xC7BckzMHYBZdHHyubhj5E/eOu/VbWb+xrb3UeJMJfxHbPAFsfsYH9h2sW8Q+iWkgBldT1aui29no
+	94KAjLCGZMEHB2CZFIvZWt2xzlDwAIrZ4EamoyFh5BQX8GLvYwsMuED2uyNnhAL/kX6oA72pW3FWM
+	bIgPI+QqgRHMNG7B+JgMrUsTAJ761Cg419+85z3hQgOzmVzfUBLhWLRNK7Bxs9dBqcGNKFLeZe7Y9
+	aaqcke7jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLjDT-0004Sq-It; Sat, 19 Oct 2019 07:31:59 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1iLkiQ-0000kF-KU; Sat, 19 Oct 2019 09:08:02 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLjDK-0004SU-Nv
- for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 07:31:52 +0000
-Received: by mail-wm1-x344.google.com with SMTP id r19so8275955wmh.2
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 19 Oct 2019 00:31:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=OzPJDxGi1MrI8ZR9UuASyVPLDi4zzBY6pZdlj+5WowY=;
- b=BpdHQ9e/XotjqdUYekfRD7DitgfTp/dQ2Cmzh3Z2QleXn0izgIgKpzA7lA4X5qK3oE
- m6j1Q8ctp32GU6U3TCpenqgGXbOcUH65pg48i2p/o+RKEzsmOUDdquGdmH6hJJjVvrIz
- 3ZidY7ge55WqtGuL2aNK2u1Cn5k/y9OWYDi1qKv+iMaQ4LRidOockcKWFKWXAQ50LGyg
- 67xnpr17wg2APC2k7kcuTPDCZ2IzoLyy5gB9S0Y+JzT7Z3EDVkSDl+/WZyJLUL1u4Ovi
- jGeKJMIV3c5B0TpVp8o67jm3d84PMeIGOle0NBNrKrYw7fh0MnyYVCaZRAjQf8NUz29I
- Q6Ww==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=OzPJDxGi1MrI8ZR9UuASyVPLDi4zzBY6pZdlj+5WowY=;
- b=ebabNNTt5ihNQHUEGc8wuGoxoaCVjnxmbfQAMl6ELyYML1TC61+anv6QU5v83MLJTn
- iYNKJWfELv8cIQy684CBGpecFzs2Q/+wBC2p/JfU9WZkrUEziYti/2bmaAe+ry3+PfRE
- hG/7XOMMlOPGdVy+GjsgeALYwbsrxw0vpVu3cbppA68B/cY0Wm2QBbh5bI96K3jzJqDO
- IouoXDuWFpp/4KNdsj1yalOvAwMIDH0ThlZnB4zGt+s5A87Llv530d3dgfLi6ExdMvTA
- D5kPFE4KR6Nxj5evm2ELxIdotprKJDfZsCSG6G77bn8Lq57oiZZy/UNISg4x27nD87ye
- Kl3Q==
-X-Gm-Message-State: APjAAAX/IZHUpj5Cu8mTa9Nw2kZQsc00sW8bVeM1iI9BprGj3QjvFHIc
- uy7SEC+4GIXSrWLgB0K8uAKI7Q==
-X-Google-Smtp-Source: APXvYqxK/zt38rwIEroHa0npO4eL6VInoZD2zOOunp2BHmbhx4voiu0yBoCmi0QYU+qcMd3WMiO4Mg==
-X-Received: by 2002:a7b:c94f:: with SMTP id i15mr11324006wml.31.1571470309026; 
- Sat, 19 Oct 2019 00:31:49 -0700 (PDT)
-Received: from dell ([95.149.164.96])
- by smtp.gmail.com with ESMTPSA id t10sm10005418wrw.23.2019.10.19.00.31.48
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sat, 19 Oct 2019 00:31:48 -0700 (PDT)
-Date: Sat, 19 Oct 2019 08:31:45 +0100
-From: Lee Jones <lee.jones@linaro.org>
-To: Daniel Thompson <daniel.thompson@linaro.org>
-Subject: Re: [PATCH 1/2] mfd: mfd-core: Allocate reference counting memory
- directly to the platform device
-Message-ID: <20191019073145.GY4365@dell>
-References: <20191018122647.3849-1-lee.jones@linaro.org>
- <20191018122647.3849-2-lee.jones@linaro.org>
- <20191018160419.rm2ogvh3k3jdx3tn@holly.lan>
+ id 1iLkiH-0000jh-EH
+ for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 09:07:54 +0000
+Received: from earth.universe (cust-west-pareq2-46-193-15-226.wb.wifirst.net
+ [46.193.15.226])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 61CA4222BD;
+ Sat, 19 Oct 2019 09:07:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571476071;
+ bh=2NV1TbgKu0bniyswdY2XigFoPiodZ4JCFnDTC2Fo65s=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=JzDjJoNhHYTL8BCTBueDInYQDm60wgqitp03SmHlqyBtzefokIe2is+Cjdhvr/Lcf
+ XIt3oI7ab4mwzPFhPlNZJfVQP27C3h6P4Lg7oqM6/tdD9nbtghRYAJPI0oYJycV16y
+ obMaQ9q3yGLEpXXXCHP8BV4KLP2eLpPtLkbeXm54=
+Received: by earth.universe (Postfix, from userid 1000)
+ id 50EAF3C09B1; Sat, 19 Oct 2019 11:07:49 +0200 (CEST)
+Date: Sat, 19 Oct 2019 11:07:49 +0200
+From: Sebastian Reichel <sre@kernel.org>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH 39/46] power: tosa: simplify probe function
+Message-ID: <20191019090749.ps27yjfebzscw2pk@earth.universe>
+References: <20191018154052.1276506-1-arnd@arndb.de>
+ <20191018154201.1276638-39-arnd@arndb.de>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191018160419.rm2ogvh3k3jdx3tn@holly.lan>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20191018154201.1276638-39-arnd@arndb.de>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191019_003151_085684_CCC85067 
-X-CRM114-Status: GOOD (  24.70  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191019_020753_523987_5A778F99 
+X-CRM114-Status: GOOD (  19.08  )
+X-Spam-Score: -1.6 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-1.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
+ [46.193.15.226 listed in zen.spamhaus.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,73 +81,169 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: baohua@kernel.org, stephan@gerhold.net, arnd@arndb.de,
- linus.walleij@linaro.org, linux-kernel@vger.kernel.org, broonie@kernel.org,
+Cc: linux-pm@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ linux-kernel@vger.kernel.org, Haojian Zhuang <haojian.zhuang@gmail.com>,
+ Daniel Mack <daniel@zonque.org>, Robert Jarzmik <robert.jarzmik@free.fr>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============3626242898177746919=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCAxOCBPY3QgMjAxOSwgRGFuaWVsIFRob21wc29uIHdyb3RlOgoKPiBPbiBGcmksIE9j
-dCAxOCwgMjAxOSBhdCAwMToyNjo0NlBNICswMTAwLCBMZWUgSm9uZXMgd3JvdGU6Cj4gPiBNRkQg
-cHJvdmlkZXMgcmVmZXJlbmNlIGNvdW50aW5nIChmb3IgdGhlIDIgY29uc3VtZXJzIHdobyBhY3R1
-YWxseSB1c2UgaXQhKQo+ID4gdmlhIG1mZF9jZWxsJ3MgJ3VzYWdlX2NvdW50JyBtZW1iZXIuICBI
-b3dldmVyLCBzaW5jZSBNRkQgY2VsbHMgYmVjb21lCj4gPiByZWFkLW9ubHkgKGNvbnN0KSwgTUZE
-IG5lZWRzIHRvIGFsbG9jYXRlIHdyaXRhYmxlIG1lbW9yeSBhbmQgYXNzaWduIGl0IHRvCj4gPiAn
-dXNhZ2VfY291bnQnIGJlZm9yZSBmaXJzdCByZWdpc3RyYXRpb24uICBJdCBjdXJyZW50bHkgZG9l
-cyB0aGlzIGJ5Cj4gPiBhbGxvY2F0aW5nIGVub3VnaCBtZW1vcnkgZm9yIGFsbCByZXF1ZXN0ZWQg
-Y2hpbGQgZGV2aWNlcyAoeWVzLCBldmVuIGRpc2FibGVkCj4gPiBvbmVzIC0gYnV0IHdlJ2xsIGdl
-dCB0byB0aGF0KSBhbmQgYXNzaWduaW5nIHRoZSBiYXNlIHBvaW50ZXIgcGx1cyBzdWItZGV2aWNl
-Cj4gPiBpbmRleCB0byBlYWNoIGRldmljZSBpbiB0aGUgY2VsbC4KPiA+IAo+ID4gVGhlIGRpZmZp
-Y3VsdHkgY29tZXMgd2hlbiB0cnlpbmcgdG8gZnJlZSB0aGF0IG1lbW9yeS4gIER1cmluZyB0aGUg
-cmVtb3ZhbCBvZgo+ID4gdGhlIHBhcmVudCBkZXZpY2UsIE1GRCB1bnJlZ2lzdGVycyBlYWNoIGNo
-aWxkIGRldmljZSwga2VlcGluZyBhIHRhbGx5IG9uIHRoZQo+ID4gbG93ZXN0IG1lbW9yeSBsb2Nh
-dGlvbiBwb2ludGVkIHRvIGJ5IGEgY2hpbGQgZGV2aWNlJ3MgJ3VzYWdlX2NvdW50Jy4gIE9uY2UK
-PiA+IGFsbCBvZiB0aGUgY2hpbGRyZW4gYXJlIHVucmVnaXN0ZXJlZCwgdGhlIGxvd2VzdCBtZW1v
-cnkgbG9jYXRpb24gbXVzdCBiZSB0aGUKPiA+IGJhc2UgYWRkcmVzcyBvZiB0aGUgcHJldmlvdXNs
-eSBhbGxvY2F0ZWQgYXJyYXksIHJpZ2h0Pwo+ID4gCj4gPiBXZWxsIHllcywgdW50aWwgd2UgdHJ5
-IHRvIGhvbm91ciB0aGUgZGlzYWJsaW5nIG9mIGRldmljZXMgdmlhIERldmljZSBUcmVlCj4gPiBm
-b3IgaW5zdGFuY2UuICBJZiB0aGUgZmlyc3QgY2hpbGQgZGV2aWNlIGluIHRoZSBwcm92aWRlZCBi
-YXRjaCBpcyBkaXNhYmxlZCwKPiA+IHNpbXBseSBza2lwcGluZyByZWdpc3RyYXRpb24gKGFuZCBj
-b25zZXF1ZW50aWFsbHkgZGVyZWdpc3RyYXRpb24pIHdpbGwgbWVhbgo+ID4gdGhhdCB0aGUgZmly
-c3QgZGV2aWNlJ3MgJ3VzYWdlX2NvdW50JyBwb2ludGVyIHdpbGwgbm90IGJlIGFjY291bnRlZCBm
-b3Igd2hlbgo+ID4gYXR0ZW1wdGluZyB0byBmaW5kIHRoZSBiYXNlLiAgSW4gd2hpY2ggY2FzZSwg
-TUZEIHdpbGwgYXNzdW1lIHRoZSBmaXJzdCBub24tCj4gPiBkaXNhYmxlZCAndXNhZ2VfY291bnQn
-IHBvaW50ZXIgaXMgdGhlIGJhc2UgYW5kIHN1YnNlcXVlbnRseSBhdHRlbXB0IHRvCj4gPiBlcnJv
-bmVvdXNseSBmcmVlIGl0Lgo+ID4gCj4gPiBXZSBjYW4gYXZvaWQgYWxsIG9mIHRoaXMgaG9vcCBq
-dW1waW5nIGJ5IHNpbXBseSBhbGxvY2F0aW5nIG1lbW9yeSB0byBlYWNoCj4gPiBzaW5nbGUgY2hp
-bGQgZGV2aWNlIGJlZm9yZSBpdCBpcyBjb25zaWRlcmVkIHJlYWQtb25seS4gIFdlIGNhbiB0aGVu
-IGZyZWUKPiA+IGl0IG9uIGEgcGVyLWRldmljZSBiYXNpcyBkdXJpbmcgZGVyZWdpc3RyYXRpb24u
-Cj4gPiAKPiA+IFNpZ25lZC1vZmYtYnk6IExlZSBKb25lcyA8bGVlLmpvbmVzQGxpbmFyby5vcmc+
-Cj4gPiAtLS0KPiA+ICBkcml2ZXJzL21mZC9tZmQtY29yZS5jIHwgNDIgKysrKysrKysrKysrKysr
-KysrLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCj4gPiAgMSBmaWxlIGNoYW5nZWQsIDE4IGluc2Vy
-dGlvbnMoKyksIDI0IGRlbGV0aW9ucygtKQo+ID4gCj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9t
-ZmQvbWZkLWNvcmUuYyBiL2RyaXZlcnMvbWZkL21mZC1jb3JlLmMKPiA+IGluZGV4IDIzMjc2YTgw
-ZTNiNC4uZWFmZGFkZDU4ZThiIDEwMDY0NAo+ID4gLS0tIGEvZHJpdmVycy9tZmQvbWZkLWNvcmUu
-Ywo+ID4gKysrIGIvZHJpdmVycy9tZmQvbWZkLWNvcmUuYwo+ID4gQEAgLTQwNCw3ICszOTgsNyBA
-QCBpbnQgbWZkX2Nsb25lX2NlbGwoY29uc3QgY2hhciAqY2VsbCwgY29uc3QgY2hhciAqKmNsb25l
-cywgc2l6ZV90IG5fY2xvbmVzKQo+ID4gIAkJY2VsbF9lbnRyeS5uYW1lID0gY2xvbmVzW2ldOwo+
-ID4gIAkJLyogZG9uJ3QgZ2l2ZSB1cCBpZiBhIHNpbmdsZSBjYWxsIGZhaWxzOyBqdXN0IHJlcG9y
-dCBlcnJvciAqLwo+ID4gIAkJaWYgKG1mZF9hZGRfZGV2aWNlKHBkZXYtPmRldi5wYXJlbnQsIC0x
-LCAmY2VsbF9lbnRyeSwKPiA+IC0JCQkJICAgY2VsbF9lbnRyeS51c2FnZV9jb3VudCwgTlVMTCwg
-MCwgTlVMTCkpCj4gPiArCQkJCSAgIE5VTEwsIDAsIE5VTEwpKQo+IAo+IEkgdGhpbmsgdGhpcyBj
-aGFuZ2UgaXMgYnJva2VuLgo+IAo+IENsb25lZCBjZWxscyBhcmUgc3VwcG9zZWQgdG8gc2hhcmUg
-dGhlIHNhbWUgcmVmZXJlbmNlIGNvdW50ZXIgYXMgdGhlaXIKPiB0ZW1wbGF0ZSBhbmQgdGhpcyBj
-aGFuZ2UgcmVzdWx0cyBpbiBlYWNoIGNsb25lIGhhdmluZyBpdHMgb3duIGNvdW50ZXIuCj4gVGhh
-dCBtZWFucyB0aGUgInRoZSAyIGNvbnN1bWVycyB3aG8gYWN0dWFsbHkgdXNlIGl0IiB3aWxsIGJv
-dGggZW5kIHVwCj4gY2FsbGluZyBjczU1MzVfbWZkX3Jlc19lbmFibGUoKSAoYW5kIHdoaWNoZXZl
-ciBsb3NlcyB0aGUgcmFjZSB3aWxsIGZhaWwKPiB0byBwcm9iZSkuCj4gCj4gVG8gYmUgaG9uZXN0
-IGl0IG1pZ2h0IGJlIGVhc2llciB0byBtb3ZlIHRoZSByZXF1ZXN0X3JlZ2lvbigpIGludG8KPiBj
-czU1MzVfbWZkX3Byb2JlKCkgYW5kIHJpcCBvdXQgdGhlIGVudGlyZSByZWZlcmVuY2UgY291bnRp
-bmcgbWVjaGFuaXNtCj4gc2luY2UgYXQgdGhhdCBwb2ludCBpdCB3b3VsZCBiZSB1bnVzZWQgKHRo
-ZSBvdGhlciBjYWxsZXJzIG9mCj4gbWZkX2NlbGxfZW5hYmxlKCkgbG9vayBzYWZlIHcvbyBhIGNv
-dW50ZXIpLgoKVGhhbmtzIGZvciB0aGUgcmV2aWV3LiAgR3JlYXQgcG9pbnQocykuCgpJIHdpbGwg
-Zml4IHRoaXMgYW5kIHN1Ym1pdCBhIHYyIHNob3J0bHkuCgo+ID4gIAkJCWRldl9lcnIoZGV2LCAi
-ZmFpbGVkIHRvIGNyZWF0ZSBwbGF0Zm9ybSBkZXZpY2UgJyVzJ1xuIiwKPiA+ICAJCQkJCWNsb25l
-c1tpXSk7Cj4gPiAgCX0KCi0tIApMZWUgSm9uZXMgW+adjueQvOaWr10KTGluYXJvIFNlcnZpY2Vz
-IFRlY2huaWNhbCBMZWFkCkxpbmFyby5vcmcg4pSCIE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBB
-Uk0gU29DcwpGb2xsb3cgTGluYXJvOiBGYWNlYm9vayB8IFR3aXR0ZXIgfCBCbG9nCgpfX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
-IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
-L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+
+--===============3626242898177746919==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="cpv762fyyxe52a6d"
+Content-Disposition: inline
+
+
+--cpv762fyyxe52a6d
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi Arnd,
+
+On Fri, Oct 18, 2019 at 05:41:54PM +0200, Arnd Bergmann wrote:
+> We have three power supplies that need similar initialization.
+> As a preparation for the gpio lookup table conversion, split
+> out the initialization into a separate function.
+>=20
+> Cc: Sebastian Reichel <sre@kernel.org>
+> Cc: linux-pm@vger.kernel.org
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> ---
+
+Assuming, that the whole series goes through ARM:
+
+Reviewed-by: Sebastian Reichel <sre@kernel.org>
+Acked-by: Sebastian Reichel <sre@kernel.org>
+
+If the series doesn't make it into 5.5, I can also apply
+this cleanup patch.
+
+-- Sebastian
+
+>  drivers/power/supply/tosa_battery.c | 50 ++++++++++++++---------------
+>  1 file changed, 24 insertions(+), 26 deletions(-)
+>=20
+> diff --git a/drivers/power/supply/tosa_battery.c b/drivers/power/supply/t=
+osa_battery.c
+> index 32cc31cd4761..b26b0eca33e1 100644
+> --- a/drivers/power/supply/tosa_battery.c
+> +++ b/drivers/power/supply/tosa_battery.c
+> @@ -343,12 +343,24 @@ static int tosa_bat_resume(struct platform_device *=
+dev)
+>  #define tosa_bat_resume NULL
+>  #endif
+> =20
+> +static int tosa_power_supply_register(struct device *dev,
+> +			struct tosa_bat *bat,
+> +			const struct power_supply_desc *desc)
+> +{
+> +	struct power_supply_config cfg =3D {
+> +		.drv_data =3D bat,
+> +	};
+> +
+> +	mutex_init(&bat->work_lock);
+> +	bat->psy =3D power_supply_register(dev, desc, &cfg);
+> +
+> +	return PTR_ERR_OR_ZERO(bat->psy);
+> +}
+> +
+> +
+>  static int tosa_bat_probe(struct platform_device *dev)
+>  {
+>  	int ret;
+> -	struct power_supply_config main_psy_cfg =3D {},
+> -				   jacket_psy_cfg =3D {},
+> -				   bu_psy_cfg =3D {};
+> =20
+>  	if (!machine_is_tosa())
+>  		return -ENODEV;
+> @@ -357,36 +369,22 @@ static int tosa_bat_probe(struct platform_device *d=
+ev)
+>  	if (ret)
+>  		return ret;
+> =20
+> -	mutex_init(&tosa_bat_main.work_lock);
+> -	mutex_init(&tosa_bat_jacket.work_lock);
+> -
+>  	INIT_WORK(&bat_work, tosa_bat_work);
+> =20
+> -	main_psy_cfg.drv_data =3D &tosa_bat_main;
+> -	tosa_bat_main.psy =3D power_supply_register(&dev->dev,
+> -						  &tosa_bat_main_desc,
+> -						  &main_psy_cfg);
+> -	if (IS_ERR(tosa_bat_main.psy)) {
+> -		ret =3D PTR_ERR(tosa_bat_main.psy);
+> +	ret =3D tosa_power_supply_register(&dev->dev, &tosa_bat_main,
+> +					 &tosa_bat_main_desc);
+> +	if (ret)
+>  		goto err_psy_reg_main;
+> -	}
+> =20
+> -	jacket_psy_cfg.drv_data =3D &tosa_bat_jacket;
+> -	tosa_bat_jacket.psy =3D power_supply_register(&dev->dev,
+> -						    &tosa_bat_jacket_desc,
+> -						    &jacket_psy_cfg);
+> -	if (IS_ERR(tosa_bat_jacket.psy)) {
+> -		ret =3D PTR_ERR(tosa_bat_jacket.psy);
+> +	ret =3D tosa_power_supply_register(&dev->dev, &tosa_bat_jacket,
+> +					 &tosa_bat_jacket_desc);
+> +	if (ret)
+>  		goto err_psy_reg_jacket;
+> -	}
+> =20
+> -	bu_psy_cfg.drv_data =3D &tosa_bat_bu;
+> -	tosa_bat_bu.psy =3D power_supply_register(&dev->dev, &tosa_bat_bu_desc,
+> -						&bu_psy_cfg);
+> -	if (IS_ERR(tosa_bat_bu.psy)) {
+> -		ret =3D PTR_ERR(tosa_bat_bu.psy);
+> +	ret =3D tosa_power_supply_register(&dev->dev, &tosa_bat_bu,
+> +					 &tosa_bat_bu_desc);
+> +	if (ret)
+>  		goto err_psy_reg_bu;
+> -	}
+> =20
+>  	ret =3D request_irq(gpio_to_irq(TOSA_GPIO_BAT0_CRG),
+>  				tosa_bat_gpio_isr,
+> --=20
+> 2.20.0
+>=20
+
+--cpv762fyyxe52a6d
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAl2q0l4ACgkQ2O7X88g7
++pqrAA//T4fPon8Kb85iC60YZSLoMlrHDrQophLfczRWBFp8KM4eU/bZV8g4tqnW
+lvYGN7gWFAScpNVrFVEmpDFGNK/9WlfLAnnAYI7Q/hS4HZ38IdJqyETB6h32Q4uX
+UIL3ZREdyKB8NRSeWYk0GlEAaGv+/dNfcOdRyrAM2k6CNPjMQVOBLE0NcqXc3fSi
+qtIJO3LkSB1sMSp2RD1GGAkmbofLKH/u5ej/B4osh5J+B5dtGBME0kvGYux5hhQk
+Tu31XCKayix0IejLiLa/pBc4BDrrOD1EXe6PqYvXHyLfpFDEOdnCwiqElXnf0UN2
+aA39iq/hx2p3tmDSRaAFri6XyanqGafaKofq6U41CrG5CanUKwrtm4p+l0ziFg8a
+iBhs6/W8gR4rBBJg85pxGRPEJ2KTS/BIOvJZuIlZpUA8LKIUcsxwI8fA9iJJ1QPF
+8+GSMW17eOTd36EJDB5C7lGHNT0N4FS4ARErNUNfDwZne9mOVNTFErHmyVrXVNPy
+IX/pF7r34/gnTe3hL07W+4WQg52URr1wrHyds0p6fEv9lnrykP4k7hetFqp5CgBU
+8vEG2Bj7PWkAs9VkZ460ZnEoB3DJJ3xxvheeeoc9ZTnwHLcIQg2f+51WNJ2ilS1O
+QQcJiIcM2GFwTAwpmohtqYoI3oYmOEBpxKxU7PCM+35QFEyCVd4=
+=6w5s
+-----END PGP SIGNATURE-----
+
+--cpv762fyyxe52a6d--
+
+
+--===============3626242898177746919==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3626242898177746919==--
+
