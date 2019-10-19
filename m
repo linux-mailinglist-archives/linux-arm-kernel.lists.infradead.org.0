@@ -2,76 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63C56DD87A
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 13:25:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FA23DD880
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 13:28:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DVU8YkHdIdEF1OUjs3e2+Ipa8bitcdlgNeqAYlg5I2Q=; b=cV+8rR5m6p+eMq
-	ibpN+UxatqdyTJwr6ujuAuFojJWSaVdafXhl3SpWaP4t8wKDRuOQeKikJNTqfxi2HHl9X8hFPgeeJ
-	LQihrr4AW7aECkeeCE+iTHcrjj9CT6vuC0KfQH9IF+95IqfpgXGGhO4GWYeViYfoLzjMvwYCziG8Q
-	32D5dazS1jhvm1Ebn4D5Ea0ZKfa6EPuxRD/LqO7a6395C1Kpux4Flveb7En5ppmP0YD1CJMBLqeel
-	WeCEzap4tLwynK1nrB8TVMLzNQbL/wFGOctBlv+rGcfMdO4otBVv1HG8Wlp1he7jyrMnmGINsG0fr
-	zP/s/tktenGD88PmqYOQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nFtI8B3Vcn1hG2NEuv56J8sAqqvfYQb0+mUj6EDYhP8=; b=k/JYQnv287+0fV
+	lkk1nWI3oIKrYuBmlTgpNLH8uT2boW9dV+X55auq4I4siHfbMTUVCGur5LOLOfaxfHDAPp8AYY1bt
+	Am0++vjJ6mkckVSNMIhc2j0bw9KPkbu+2iytD5VFcG2IQdM+smvS6VrSkXsLpGqFFDbZ7no/gf1Mv
+	4sTiX5VoHGlWYO3dCKwXeoi4C/L+p7ejSjuT3aY150lCWy2f79tyS526WHmV4Sg3G2mURVKMuy2Zo
+	e1Aa+KaoS36RfcULdtHM/k6H18xI1z43y9aIu66W9lY8RDsr6mDjYZmMtZSm+LVEM+0Mgr4XJXUM/
+	gJOc+hnyAhrD5kNiKlkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLmrk-00009D-57; Sat, 19 Oct 2019 11:25:48 +0000
-Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::1])
+	id 1iLmuO-0000bM-BJ; Sat, 19 Oct 2019 11:28:32 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLmra-00008n-90
- for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 11:25:40 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1571484335;
- s=strato-dkim-0002; d=goldelico.com;
- h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=7L/sjFraJ4hVObqz6n+Hjde2x2GWCuAJ3/E9bu48O6s=;
- b=f9glZTcv+9mtbYo7pmo1pt7K0zNKAVUlQNFJvpoumi69X4RuqNEDAAGzx1sju4vz7F
- 6eut20FjHyBRX9/ExQoutbiEr/uJ2WMowPCS5PxxFY4sUkAxcVDs7wpwykNBGZAgm6CI
- 8jQEQNn7K5hi5tWa+WyzGBbv196vrP8Tmcz+SE+K1JACXcv/rtF86ImyyU7Pq8q/qohx
- UJ5BEB9iY7YutgYsB2X23b+1FfyPLT3okEYXdHShn7a4bIbhP977jKxacLNeblCwngso
- iPJeE8EjYPTUmnCpg1Y+f2SOTtDpNP4xTPlYL4xBPrW3eyR0Rzi/tP+6I/IGmL4JRb6K
- sErg==
-X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMgPgp8VKxflSZ1P34KBj4Qpw9iZeHmAkw4voSw=="
-X-RZG-CLASS-ID: mo00
-Received: from imac.fritz.box by smtp.strato.de (RZmta 44.28.1 DYNA|AUTH)
- with ESMTPSA id R0b2a8v9JBPKEpk
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (curve secp521r1 with 521 ECDH
- bits, eq. 15360 bits RSA)) (Client did not present a certificate);
- Sat, 19 Oct 2019 13:25:20 +0200 (CEST)
-Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
-Subject: Re: [PATCH 0/9] OpenPandora: make wl1251 connected to mmc3 sdio port
- of OpenPandora work again
-From: "H. Nikolaus Schaller" <hns@goldelico.com>
-In-Reply-To: <87sgnpvvsu.fsf@kamboji.qca.qualcomm.com>
-Date: Sat, 19 Oct 2019 13:25:20 +0200
-Message-Id: <584D2E2D-7617-4F7D-A567-507C7CCB4A53@goldelico.com>
-References: <cover.1571430329.git.hns@goldelico.com>
- <87sgnpvvsu.fsf@kamboji.qca.qualcomm.com>
-To: Kalle Valo <kvalo@codeaurora.org>
-X-Mailer: Apple Mail (2.3124)
+ id 1iLmuD-0000ar-KB
+ for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 11:28:23 +0000
+Received: from [185.104.136.17] (helo=big-swifty.misterjones.org)
+ by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
+ (Exim 4.80) (envelope-from <maz@kernel.org>)
+ id 1iLmuB-00071Z-9o; Sat, 19 Oct 2019 13:28:19 +0200
+Date: Sat, 19 Oct 2019 12:28:12 +0100
+Message-ID: <86d0etynxv.wl-maz@kernel.org>
+From: Marc Zyngier <maz@kernel.org>
+To: Steven Price <steven.price@arm.com>
+Subject: Re: [PATCH v6 07/10] KVM: arm64: Provide VCPU attributes for stolen
+ time
+In-Reply-To: <20191011125930.40834-8-steven.price@arm.com>
+References: <20191011125930.40834-1-steven.price@arm.com>
+ <20191011125930.40834-8-steven.price@arm.com>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (aarch64-unknown-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+X-SA-Exim-Connect-IP: 185.104.136.17
+X-SA-Exim-Rcpt-To: steven.price@arm.com, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ catalin.marinas@arm.com, pbonzini@redhat.com, rkrcmar@redhat.com,
+ linux@armlinux.org.uk, james.morse@arm.com, julien.thierry.kdev@gmail.com,
+ suzuki.poulose@arm.com, mark.rutland@arm.com, kvm@vger.kernel.org,
+ linux-doc@vger.kernel.org, linux-kernel@vger.kernel.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191019_042538_913321_1D611627 
-X-CRM114-Status: GOOD (  14.44  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191019_042821_812102_1B3F15B4 
+X-CRM114-Status: GOOD (  20.87  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5302:0:0:1 listed in]
- [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,87 +71,170 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- devicetree@vger.kernel.org, Tony Lindgren <tony@atomide.com>,
- linux-wireless@vger.kernel.org, Kefeng Wang <wangkefeng.wang@huawei.com>,
- Bjorn Helgaas <bhelgaas@google.com>, letux-kernel@openphoenux.org,
- "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
- Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
- Yangtao Li <tiny.windzz@gmail.com>, linux-arm-kernel@lists.infradead.org,
- Petr Mladek <pmladek@suse.com>,
- =?utf-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
- kernel@pyra-handheld.com, Alexios Zavras <alexios.zavras@intel.com>,
- Rob Herring <robh+dt@kernel.org>, John Stultz <john.stultz@linaro.org>,
- David Sterba <dsterba@suse.com>, Thomas Gleixner <tglx@linutronix.de>,
- linux-omap@vger.kernel.org, Allison Randal <allison@lohutok.net>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mmc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Sakari Ailus <sakari.ailus@linux.intel.com>,
- netdev@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Radim =?UTF-8?B?S3LEjW3DocWZ?= <rkrcmar@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Suzuki K Pouloze <suzuki.poulose@arm.com>, linux-doc@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Paolo Bonzini <pbonzini@redhat.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-> Am 19.10.2019 um 13:06 schrieb Kalle Valo <kvalo@codeaurora.org>:
+On Fri, 11 Oct 2019 13:59:27 +0100,
+Steven Price <steven.price@arm.com> wrote:
 > 
-> "H. Nikolaus Schaller" <hns@goldelico.com> writes:
+> Allow user space to inform the KVM host where in the physical memory
+> map the paravirtualized time structures should be located.
 > 
->> Here we have a set of scattered patches to make the OpenPandora WiFi work again.
->> 
->> v4.7 did break the pdata-quirks which made the mmc3 interface
->> fail completely, because some code now assumes device tree
->> based instantiation.
->> 
->> Fixes: 81eef6ca9201 ("mmc: omap_hsmmc: Use dma_request_chan() for requesting DMA channel")
->> 
->> v4.11 did break the sdio qirks for wl1251 which made the driver no longer
->> load, although the device was found as an sdio client.
->> 
->> Fixes: 884f38607897 ("mmc: core: move some sdio IDs out of quirks file")
->> 
->> To solve these issues:
->> * we convert mmc3 and wl1251 initialization from pdata-quirks
->>  to device tree
->> * we make the wl1251 driver read properties from device tree
->> * we fix the mmc core vendor ids and quirks
->> * we fix the wl1251 (and wl1271) driver to use only vendor ids
->>  from header file instead of (potentially conflicting) local
->>  definitions
->> 
->> 
->> H. Nikolaus Schaller (9):
->>  Documentation: dt: wireless: update wl1251 for sdio
->>  net: wireless: ti: wl1251 add device tree support
->>  DTS: ARM: pandora-common: define wl1251 as child node of mmc3
->>  mmc: host: omap_hsmmc: add code for special init of wl1251 to get rid
->>    of pandora_wl1251_init_card
->>  omap: pdata-quirks: remove openpandora quirks for mmc3 and wl1251
->>  mmc: sdio: fix wl1251 vendor id
->>  mmc: core: fix wl1251 sdio quirks
->>  net: wireless: ti: wl1251 use new SDIO_VENDOR_ID_TI_WL1251 definition
->>  net: wireless: ti: remove local VENDOR_ID and DEVICE_ID definitions
+> User space can set an attribute on the VCPU providing the IPA base
+> address of the stolen time structure for that VCPU. This must be
+> repeated for every VCPU in the VM.
 > 
-> I didn't get patches 3-7
+> The address is given in terms of the physical address visible to
+> the guest and must be 64 byte aligned. The guest will discover the
+> address via a hypercall.
+> 
+> Signed-off-by: Steven Price <steven.price@arm.com>
+> ---
+>  arch/arm64/include/asm/kvm_host.h |  7 +++++
+>  arch/arm64/include/uapi/asm/kvm.h |  2 ++
+>  arch/arm64/kvm/guest.c            |  9 ++++++
+>  include/uapi/linux/kvm.h          |  2 ++
+>  virt/kvm/arm/pvtime.c             | 47 +++++++++++++++++++++++++++++++
+>  5 files changed, 67 insertions(+)
+> 
+> diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+> index 1697e63f6dd8..6af16b29a41f 100644
+> --- a/arch/arm64/include/asm/kvm_host.h
+> +++ b/arch/arm64/include/asm/kvm_host.h
+> @@ -489,6 +489,13 @@ long kvm_hypercall_pv_features(struct kvm_vcpu *vcpu);
+>  long kvm_hypercall_stolen_time(struct kvm_vcpu *vcpu);
+>  int kvm_update_stolen_time(struct kvm_vcpu *vcpu, bool init);
+>  
+> +int kvm_arm_pvtime_set_attr(struct kvm_vcpu *vcpu,
+> +			    struct kvm_device_attr *attr);
+> +int kvm_arm_pvtime_get_attr(struct kvm_vcpu *vcpu,
+> +			    struct kvm_device_attr *attr);
+> +int kvm_arm_pvtime_has_attr(struct kvm_vcpu *vcpu,
+> +			    struct kvm_device_attr *attr);
+> +
+>  static inline void kvm_arm_pvtime_vcpu_init(struct kvm_vcpu_arch *vcpu_arch)
+>  {
+>  	vcpu_arch->steal.base = GPA_INVALID;
+> diff --git a/arch/arm64/include/uapi/asm/kvm.h b/arch/arm64/include/uapi/asm/kvm.h
+> index 67c21f9bdbad..cff1ba12c768 100644
+> --- a/arch/arm64/include/uapi/asm/kvm.h
+> +++ b/arch/arm64/include/uapi/asm/kvm.h
+> @@ -323,6 +323,8 @@ struct kvm_vcpu_events {
+>  #define KVM_ARM_VCPU_TIMER_CTRL		1
+>  #define   KVM_ARM_VCPU_TIMER_IRQ_VTIMER		0
+>  #define   KVM_ARM_VCPU_TIMER_IRQ_PTIMER		1
+> +#define KVM_ARM_VCPU_PVTIME_CTRL	2
+> +#define   KVM_ARM_VCPU_PVTIME_IPA	0
+>  
+>  /* KVM_IRQ_LINE irq field index values */
+>  #define KVM_ARM_IRQ_VCPU2_SHIFT		28
+> diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
+> index dfd626447482..d3ac9d2fd405 100644
+> --- a/arch/arm64/kvm/guest.c
+> +++ b/arch/arm64/kvm/guest.c
+> @@ -858,6 +858,9 @@ int kvm_arm_vcpu_arch_set_attr(struct kvm_vcpu *vcpu,
+>  	case KVM_ARM_VCPU_TIMER_CTRL:
+>  		ret = kvm_arm_timer_set_attr(vcpu, attr);
+>  		break;
+> +	case KVM_ARM_VCPU_PVTIME_CTRL:
+> +		ret = kvm_arm_pvtime_set_attr(vcpu, attr);
+> +		break;
+>  	default:
+>  		ret = -ENXIO;
+>  		break;
+> @@ -878,6 +881,9 @@ int kvm_arm_vcpu_arch_get_attr(struct kvm_vcpu *vcpu,
+>  	case KVM_ARM_VCPU_TIMER_CTRL:
+>  		ret = kvm_arm_timer_get_attr(vcpu, attr);
+>  		break;
+> +	case KVM_ARM_VCPU_PVTIME_CTRL:
+> +		ret = kvm_arm_pvtime_get_attr(vcpu, attr);
+> +		break;
+>  	default:
+>  		ret = -ENXIO;
+>  		break;
+> @@ -898,6 +904,9 @@ int kvm_arm_vcpu_arch_has_attr(struct kvm_vcpu *vcpu,
+>  	case KVM_ARM_VCPU_TIMER_CTRL:
+>  		ret = kvm_arm_timer_has_attr(vcpu, attr);
+>  		break;
+> +	case KVM_ARM_VCPU_PVTIME_CTRL:
+> +		ret = kvm_arm_pvtime_has_attr(vcpu, attr);
+> +		break;
+>  	default:
+>  		ret = -ENXIO;
+>  		break;
+> diff --git a/include/uapi/linux/kvm.h b/include/uapi/linux/kvm.h
+> index 52641d8ca9e8..a540c8357049 100644
+> --- a/include/uapi/linux/kvm.h
+> +++ b/include/uapi/linux/kvm.h
+> @@ -1227,6 +1227,8 @@ enum kvm_device_type {
+>  #define KVM_DEV_TYPE_ARM_VGIC_ITS	KVM_DEV_TYPE_ARM_VGIC_ITS
+>  	KVM_DEV_TYPE_XIVE,
+>  #define KVM_DEV_TYPE_XIVE		KVM_DEV_TYPE_XIVE
+> +	KVM_DEV_TYPE_ARM_PV_TIME,
+> +#define KVM_DEV_TYPE_ARM_PV_TIME	KVM_DEV_TYPE_ARM_PV_TIME
+>  	KVM_DEV_TYPE_MAX,
+>  };
+>  
+> diff --git a/virt/kvm/arm/pvtime.c b/virt/kvm/arm/pvtime.c
+> index a90f1b4ebd13..9dc466861e1e 100644
+> --- a/virt/kvm/arm/pvtime.c
+> +++ b/virt/kvm/arm/pvtime.c
+> @@ -2,7 +2,9 @@
+>  // Copyright (C) 2019 Arm Ltd.
+>  
+>  #include <linux/arm-smccc.h>
+> +#include <linux/kvm_host.h>
+>  
+> +#include <asm/kvm_mmu.h>
+>  #include <asm/pvclock-abi.h>
+>  
+>  #include <kvm/arm_hypercalls.h>
+> @@ -75,3 +77,48 @@ long kvm_hypercall_stolen_time(struct kvm_vcpu *vcpu)
+>  
+>  	return vcpu->arch.steal.base;
+>  }
+> +
+> +int kvm_arm_pvtime_set_attr(struct kvm_vcpu *vcpu,
+> +			    struct kvm_device_attr *attr)
+> +{
+> +	u64 __user *user = (u64 __user *)attr->addr;
+> +	u64 ipa;
+> +
+> +	if (attr->attr != KVM_ARM_VCPU_PVTIME_IPA)
+> +		return -ENXIO;
+> +
+> +	if (get_user(ipa, user))
+> +		return -EFAULT;
+> +	if (!IS_ALIGNED(ipa, 64))
+> +		return -EINVAL;
+> +	if (vcpu->arch.steal.base != GPA_INVALID)
+> +		return -EEXIST;
+> +	vcpu->arch.steal.base = ipa;
 
-oh sorry. I don't know why.
+And what if this IPA doesn't point to any memslot? I understand that
+everything will still work (kvm_put_user()) will handle the mishap,
+but it makes it hard for userspace to know that something is wrong.
 
-Here they are all: https://patchwork.kernel.org/cover/11199599/
+Is there any problem in mandating that the corresponding memslot
+already has been created, and enforcing this check?
 
-> so I don't know what they have, but what's the
-> plan how these should be applied? Normally wl1251 patches go via
-> wireless-drivers-next but are you planning something else?
+Thanks,
 
-Well, I have no plan for that except that all should end up fixed in mainline
-and stable.
+	M.
 
-The issue is that multiple subsystems are involved (net/wireless, mmc and arm/omap)
-and all patches should be ideally be applied in combination.
-
-BR and thanks,
-Nikolaus
-
+-- 
+Jazz is not dead, it just smells funny.
 
 _______________________________________________
 linux-arm-kernel mailing list
