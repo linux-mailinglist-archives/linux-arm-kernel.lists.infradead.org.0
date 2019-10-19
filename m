@@ -2,91 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B2F0DD852
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 13:07:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8586FDD861
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 13:12:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vvfD0iSVTND8C7TqUC7CLE4fWBotiwqcNeUFrBKt2uE=; b=vBj1Fjvi5Ycakb
-	4mjFjNeOmaR9RXiHKNdkUQEAPAjlPLO2gUQDB+9G3sfVONuflqip3GBzG76FWHMOT+IlVAoyEtDxn
-	n8Ct2KS4WaWNhAZRg86Cx3dfBtWn63BPyKq9O+Dyhj7mpJvK7HUMziz53pErYayEJorLXUCSnklC7
-	Bpj/H4uYvUwLPxEyv5lyS+cGsH3Bo9tI75V1hPTkyZO9BFPlOU/uRoZ5HyjfdlLNUpuY6+q2dctI3
-	OK+8KBANuTWi65nAcUkwv6GCnKHgStue/uQ9OatR+1lWA2pDM0AXL76Y6bFChFXtPyWmd5dCv7SQg
-	6oUomBz1DrSMGdn62aTQ==;
+	List-Owner; bh=xGRo91dSxRSiDXyxo4/2EZPhsWypgZquKS+oKP/uAi4=; b=P7gPy8i+2v+JGe
+	KS1iNyUbYyhIMujt9RKUTKTRp/6Rb/X7ggR3ywYORmLza76zxPmN86NF337GXmJvV3tFvwupCqoWm
+	5NT+FXsAJ9YoPCyfi9LZOS1OKtKzejX11YEv5HqIcQGQkR4LqdysE3/QbYwx+JMY6DiAQqsjhGoSy
+	kAXGlNC3qHKTTopZ7D6lLCeUG1u2KyBsNK9vSW8o6HzrUxwtGwHOh7o4JQSFHgfH4zCKw98U7xS6Q
+	tcAdlrg/yYDzW1VHGTecQW9/N8wGoB1o3khsMHsL09BgN7VWo5ViSyE4PQEEJ1fARIjXNI6IDHSH2
+	xLyLegHE45zOY/y+bN0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLmZZ-00027Q-6e; Sat, 19 Oct 2019 11:07:01 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
+	id 1iLmex-0003uG-Em; Sat, 19 Oct 2019 11:12:35 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLmZQ-00026t-CT
- for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 11:06:53 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id 3267660D59; Sat, 19 Oct 2019 11:06:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1571483211;
- bh=wnOIIW4MR+CLK/071OVBzNZaauLzgBfSEoUioJEm5WY=;
- h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
- b=LJ3WBBtmUl28mQPuUH7cOn3/SNt7WNhkVTxOm2/FoUoWM177EMQBU3fhRDrrDv4LM
- 44TIGZVRjG04P+wPJ8ne5GHUpLtcRtGuj4wRfcoOYICRu/2VCc2vAQsikCvk2yRG+p
- LvBnDW67RmL2pjgKjLlvL65eGTjyESqlHYqR0qjM=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
- version=3.4.0
-Received: from potku.adurom.net (88-114-240-156.elisa-laajakaista.fi
- [88.114.240.156])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- (Authenticated sender: kvalo@smtp.codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 920AB60D39;
- Sat, 19 Oct 2019 11:06:43 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1571483209;
- bh=wnOIIW4MR+CLK/071OVBzNZaauLzgBfSEoUioJEm5WY=;
- h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
- b=go6dHWqpkYFY2dGyszr8OAmuSCwtZIGaTWdcfcoar0dXcL6Qvguo3sDrIpnYI9o/9
- gwK00FxgPmGb2nKbbFTpfYe8GrirVct7y0Swsj86DabGQ/V1l8/OzsDcSaQs+LR6Kw
- mFzFHQt5LGvtJDsyRhPd7elZFcICtGj/iQ+n/GVU=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 920AB60D39
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- spf=none smtp.mailfrom=kvalo@codeaurora.org
-From: Kalle Valo <kvalo@codeaurora.org>
-To: "H. Nikolaus Schaller" <hns@goldelico.com>
-Subject: Re: [PATCH 0/9] OpenPandora: make wl1251 connected to mmc3 sdio port
- of OpenPandora work again
-References: <cover.1571430329.git.hns@goldelico.com>
-Date: Sat, 19 Oct 2019 14:06:41 +0300
-In-Reply-To: <cover.1571430329.git.hns@goldelico.com> (H. Nikolaus Schaller's
- message of "Fri, 18 Oct 2019 22:25:21 +0200")
-Message-ID: <87sgnpvvsu.fsf@kamboji.qca.qualcomm.com>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.5 (gnu/linux)
-MIME-Version: 1.0
+ id 1iLmej-0003ta-US
+ for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 11:12:23 +0000
+Received: from [185.104.136.17] (helo=big-swifty.misterjones.org)
+ by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
+ (Exim 4.80) (envelope-from <maz@kernel.org>)
+ id 1iLmef-0006rT-EH; Sat, 19 Oct 2019 13:12:17 +0200
+Date: Sat, 19 Oct 2019 12:12:15 +0100
+Message-ID: <86eez9yoog.wl-maz@kernel.org>
+From: Marc Zyngier <maz@kernel.org>
+To: Steven Price <steven.price@arm.com>
+Subject: Re: [PATCH v6 05/10] KVM: arm64: Support stolen time reporting via
+ shared structure
+In-Reply-To: <20191011125930.40834-6-steven.price@arm.com>
+References: <20191011125930.40834-1-steven.price@arm.com>
+ <20191011125930.40834-6-steven.price@arm.com>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (aarch64-unknown-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+X-SA-Exim-Connect-IP: 185.104.136.17
+X-SA-Exim-Rcpt-To: steven.price@arm.com, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ catalin.marinas@arm.com, pbonzini@redhat.com, rkrcmar@redhat.com,
+ linux@armlinux.org.uk, james.morse@arm.com, julien.thierry.kdev@gmail.com,
+ suzuki.poulose@arm.com, mark.rutland@arm.com, kvm@vger.kernel.org,
+ linux-doc@vger.kernel.org, linux-kernel@vger.kernel.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191019_040652_464042_C9750F09 
-X-CRM114-Status: GOOD (  18.16  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191019_041222_135528_0AB79629 
+X-CRM114-Status: GOOD (  30.11  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,70 +71,342 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- devicetree@vger.kernel.org, Tony Lindgren <tony@atomide.com>,
- linux-wireless@vger.kernel.org, Kefeng Wang <wangkefeng.wang@huawei.com>,
- Bjorn Helgaas <bhelgaas@google.com>, letux-kernel@openphoenux.org,
- "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
- Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
- Yangtao Li <tiny.windzz@gmail.com>, linux-arm-kernel@lists.infradead.org,
- Petr Mladek <pmladek@suse.com>,
- =?utf-8?Q?Beno=C3=AEt?= Cousson <bcousson@baylibre.com>,
- kernel@pyra-handheld.com, Alexios Zavras <alexios.zavras@intel.com>,
- Rob Herring <robh+dt@kernel.org>, John Stultz <john.stultz@linaro.org>,
- David Sterba <dsterba@suse.com>, Thomas Gleixner <tglx@linutronix.de>,
- linux-omap@vger.kernel.org, Allison Randal <allison@lohutok.net>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mmc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Sakari Ailus <sakari.ailus@linux.intel.com>,
- netdev@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Radim =?UTF-8?B?S3LEjW3DocWZ?= <rkrcmar@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Suzuki K Pouloze <suzuki.poulose@arm.com>, linux-doc@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Paolo Bonzini <pbonzini@redhat.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-"H. Nikolaus Schaller" <hns@goldelico.com> writes:
+On Fri, 11 Oct 2019 13:59:25 +0100,
+Steven Price <steven.price@arm.com> wrote:
+> 
+> Implement the service call for configuring a shared structure between a
+> VCPU and the hypervisor in which the hypervisor can write the time
+> stolen from the VCPU's execution time by other tasks on the host.
+> 
+> User space allocates memory which is placed at an IPA also chosen by user
+> space. The hypervisor then updates the shared structure using
+> kvm_put_guest() to ensure single copy atomicity of the 64-bit value
+> reporting the stolen time in nanoseconds.
+> 
+> Whenever stolen time is enabled by the guest, the stolen time counter is
+> reset.
+> 
+> The stolen time itself is retrieved from the sched_info structure
+> maintained by the Linux scheduler code. We enable SCHEDSTATS when
+> selecting KVM Kconfig to ensure this value is meaningful.
+> 
+> Signed-off-by: Steven Price <steven.price@arm.com>
+> ---
+>  arch/arm/include/asm/kvm_host.h   | 20 +++++++++++
+>  arch/arm64/include/asm/kvm_host.h | 21 +++++++++++-
+>  arch/arm64/kvm/Kconfig            |  1 +
+>  include/linux/kvm_types.h         |  2 ++
+>  virt/kvm/arm/arm.c                | 11 ++++++
+>  virt/kvm/arm/hypercalls.c         |  3 ++
+>  virt/kvm/arm/pvtime.c             | 56 +++++++++++++++++++++++++++++++
+>  7 files changed, 113 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm/include/asm/kvm_host.h b/arch/arm/include/asm/kvm_host.h
+> index 5a0c3569ebde..5c401482d62d 100644
+> --- a/arch/arm/include/asm/kvm_host.h
+> +++ b/arch/arm/include/asm/kvm_host.h
+> @@ -39,6 +39,7 @@
+>  	KVM_ARCH_REQ_FLAGS(0, KVM_REQUEST_WAIT | KVM_REQUEST_NO_WAKEUP)
+>  #define KVM_REQ_IRQ_PENDING	KVM_ARCH_REQ(1)
+>  #define KVM_REQ_VCPU_RESET	KVM_ARCH_REQ(2)
+> +#define KVM_REQ_RECORD_STEAL	KVM_ARCH_REQ(3)
+>  
+>  DECLARE_STATIC_KEY_FALSE(userspace_irqchip_in_use);
+>  
+> @@ -329,6 +330,25 @@ static inline long kvm_hypercall_pv_features(struct kvm_vcpu *vcpu)
+>  	return SMCCC_RET_NOT_SUPPORTED;
+>  }
+>  
+> +static inline long kvm_hypercall_stolen_time(struct kvm_vcpu *vcpu)
+> +{
+> +	return SMCCC_RET_NOT_SUPPORTED;
+> +}
+> +
+> +static inline int kvm_update_stolen_time(struct kvm_vcpu *vcpu, bool init)
+> +{
+> +	return -ENOTSUPP;
+> +}
+> +
+> +static inline void kvm_arm_pvtime_vcpu_init(struct kvm_vcpu_arch *vcpu_arch)
+> +{
+> +}
+> +
+> +static inline bool kvm_arm_is_pvtime_enabled(struct kvm_vcpu_arch *vcpu_arch)
+> +{
+> +	return false;
+> +}
+> +
+>  void kvm_mmu_wp_memory_region(struct kvm *kvm, int slot);
+>  
+>  struct kvm_vcpu *kvm_mpidr_to_vcpu(struct kvm *kvm, unsigned long mpidr);
+> diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+> index 93b46d9526d0..1697e63f6dd8 100644
+> --- a/arch/arm64/include/asm/kvm_host.h
+> +++ b/arch/arm64/include/asm/kvm_host.h
+> @@ -44,6 +44,7 @@
+>  	KVM_ARCH_REQ_FLAGS(0, KVM_REQUEST_WAIT | KVM_REQUEST_NO_WAKEUP)
+>  #define KVM_REQ_IRQ_PENDING	KVM_ARCH_REQ(1)
+>  #define KVM_REQ_VCPU_RESET	KVM_ARCH_REQ(2)
+> +#define KVM_REQ_RECORD_STEAL	KVM_ARCH_REQ(3)
+>  
+>  DECLARE_STATIC_KEY_FALSE(userspace_irqchip_in_use);
+>  
+> @@ -338,8 +339,14 @@ struct kvm_vcpu_arch {
+>  	/* True when deferrable sysregs are loaded on the physical CPU,
+>  	 * see kvm_vcpu_load_sysregs and kvm_vcpu_put_sysregs. */
+>  	bool sysregs_loaded_on_cpu;
+> -};
+>  
+> +	/* Guest PV state */
+> +	struct {
+> +		u64 steal;
+> +		u64 last_steal;
+> +		gpa_t base;
+> +	} steal;
+> +};
 
-> Here we have a set of scattered patches to make the OpenPandora WiFi work again.
->
-> v4.7 did break the pdata-quirks which made the mmc3 interface
-> fail completely, because some code now assumes device tree
-> based instantiation.
->
-> Fixes: 81eef6ca9201 ("mmc: omap_hsmmc: Use dma_request_chan() for requesting DMA channel")
->
-> v4.11 did break the sdio qirks for wl1251 which made the driver no longer
-> load, although the device was found as an sdio client.
->
-> Fixes: 884f38607897 ("mmc: core: move some sdio IDs out of quirks file")
->
-> To solve these issues:
-> * we convert mmc3 and wl1251 initialization from pdata-quirks
->   to device tree
-> * we make the wl1251 driver read properties from device tree
-> * we fix the mmc core vendor ids and quirks
-> * we fix the wl1251 (and wl1271) driver to use only vendor ids
->   from header file instead of (potentially conflicting) local
->   definitions
->
->
-> H. Nikolaus Schaller (9):
->   Documentation: dt: wireless: update wl1251 for sdio
->   net: wireless: ti: wl1251 add device tree support
->   DTS: ARM: pandora-common: define wl1251 as child node of mmc3
->   mmc: host: omap_hsmmc: add code for special init of wl1251 to get rid
->     of pandora_wl1251_init_card
->   omap: pdata-quirks: remove openpandora quirks for mmc3 and wl1251
->   mmc: sdio: fix wl1251 vendor id
->   mmc: core: fix wl1251 sdio quirks
->   net: wireless: ti: wl1251 use new SDIO_VENDOR_ID_TI_WL1251 definition
->   net: wireless: ti: remove local VENDOR_ID and DEVICE_ID definitions
+nit: Please keep an empty line at the end of the structure.
 
-I didn't get patches 3-7 so I don't know what they have, but what's the
-plan how these should be applied? Normally wl1251 patches go via
-wireless-drivers-next but are you planning something else?
+>  /* Pointer to the vcpu's SVE FFR for sve_{save,load}_state() */
+>  #define vcpu_sve_pffr(vcpu) ((void *)((char *)((vcpu)->arch.sve_state) + \
+>  				      sve_ffr_offset((vcpu)->arch.sve_max_vl)))
+> @@ -479,6 +486,18 @@ int kvm_perf_init(void);
+>  int kvm_perf_teardown(void);
+>  
+>  long kvm_hypercall_pv_features(struct kvm_vcpu *vcpu);
+> +long kvm_hypercall_stolen_time(struct kvm_vcpu *vcpu);
+> +int kvm_update_stolen_time(struct kvm_vcpu *vcpu, bool init);
+> +
+> +static inline void kvm_arm_pvtime_vcpu_init(struct kvm_vcpu_arch *vcpu_arch)
+> +{
+> +	vcpu_arch->steal.base = GPA_INVALID;
+> +}
+> +
+> +static inline bool kvm_arm_is_pvtime_enabled(struct kvm_vcpu_arch *vcpu_arch)
+> +{
+> +	return (vcpu_arch->steal.base != GPA_INVALID);
+> +}
+>  
+>  void kvm_set_sei_esr(struct kvm_vcpu *vcpu, u64 syndrome);
+>  
+> diff --git a/arch/arm64/kvm/Kconfig b/arch/arm64/kvm/Kconfig
+> index a67121d419a2..d8b88e40d223 100644
+> --- a/arch/arm64/kvm/Kconfig
+> +++ b/arch/arm64/kvm/Kconfig
+> @@ -39,6 +39,7 @@ config KVM
+>  	select IRQ_BYPASS_MANAGER
+>  	select HAVE_KVM_IRQ_BYPASS
+>  	select HAVE_KVM_VCPU_RUN_PID_CHANGE
+> +	select SCHEDSTATS
+>  	---help---
+>  	  Support hosting virtualized guest machines.
+>  	  We don't support KVM with 16K page tables yet, due to the multiple
+> diff --git a/include/linux/kvm_types.h b/include/linux/kvm_types.h
+> index bde5374ae021..1c88e69db3d9 100644
+> --- a/include/linux/kvm_types.h
+> +++ b/include/linux/kvm_types.h
+> @@ -35,6 +35,8 @@ typedef unsigned long  gva_t;
+>  typedef u64            gpa_t;
+>  typedef u64            gfn_t;
+>  
+> +#define GPA_INVALID	(~(gpa_t)0)
+> +
+>  typedef unsigned long  hva_t;
+>  typedef u64            hpa_t;
+>  typedef u64            hfn_t;
+> diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
+> index 86c6aa1cb58e..5d3059aeadb1 100644
+> --- a/virt/kvm/arm/arm.c
+> +++ b/virt/kvm/arm/arm.c
+> @@ -40,6 +40,10 @@
+>  #include <asm/kvm_coproc.h>
+>  #include <asm/sections.h>
+>  
+> +#include <kvm/arm_hypercalls.h>
+> +#include <kvm/arm_pmu.h>
+> +#include <kvm/arm_psci.h>
+> +
+>  #ifdef REQUIRES_VIRT
+>  __asm__(".arch_extension	virt");
+>  #endif
+> @@ -351,6 +355,8 @@ int kvm_arch_vcpu_init(struct kvm_vcpu *vcpu)
+>  
+>  	kvm_arm_reset_debug_ptr(vcpu);
+>  
+> +	kvm_arm_pvtime_vcpu_init(&vcpu->arch);
+> +
+>  	return kvm_vgic_vcpu_init(vcpu);
+>  }
+>  
+> @@ -380,6 +386,8 @@ void kvm_arch_vcpu_load(struct kvm_vcpu *vcpu, int cpu)
+>  	kvm_vcpu_load_sysregs(vcpu);
+>  	kvm_arch_vcpu_load_fp(vcpu);
+>  	kvm_vcpu_pmu_restore_guest(vcpu);
+> +	if (kvm_arm_is_pvtime_enabled(&vcpu->arch))
+> +		kvm_make_request(KVM_REQ_RECORD_STEAL, vcpu);
+>  
+>  	if (single_task_running())
+>  		vcpu_clear_wfe_traps(vcpu);
+> @@ -645,6 +653,9 @@ static void check_vcpu_requests(struct kvm_vcpu *vcpu)
+>  		 * that a VCPU sees new virtual interrupts.
+>  		 */
+>  		kvm_check_request(KVM_REQ_IRQ_PENDING, vcpu);
+> +
+> +		if (kvm_check_request(KVM_REQ_RECORD_STEAL, vcpu))
+> +			kvm_update_stolen_time(vcpu, false);
+>  	}
+>  }
+>  
+> diff --git a/virt/kvm/arm/hypercalls.c b/virt/kvm/arm/hypercalls.c
+> index 97ea8b133e77..5c333a64390e 100644
+> --- a/virt/kvm/arm/hypercalls.c
+> +++ b/virt/kvm/arm/hypercalls.c
+> @@ -56,6 +56,9 @@ int kvm_hvc_call_handler(struct kvm_vcpu *vcpu)
+>  	case ARM_SMCCC_HV_PV_TIME_FEATURES:
+>  		val = kvm_hypercall_pv_features(vcpu);
+>  		break;
+> +	case ARM_SMCCC_HV_PV_TIME_ST:
+> +		val = kvm_hypercall_stolen_time(vcpu);
+> +		break;
+>  	default:
+>  		return kvm_psci_call(vcpu);
+>  	}
+> diff --git a/virt/kvm/arm/pvtime.c b/virt/kvm/arm/pvtime.c
+> index 8d0fad671dcf..a90f1b4ebd13 100644
+> --- a/virt/kvm/arm/pvtime.c
+> +++ b/virt/kvm/arm/pvtime.c
+> @@ -3,8 +3,45 @@
+>  
+>  #include <linux/arm-smccc.h>
+>  
+> +#include <asm/pvclock-abi.h>
+> +
+>  #include <kvm/arm_hypercalls.h>
+>  
+> +int kvm_update_stolen_time(struct kvm_vcpu *vcpu, bool init)
+> +{
+> +	struct kvm *kvm = vcpu->kvm;
+> +	u64 steal;
+> +	u64 steal_le;
+
+This should be __le64.
+
+> +	u64 offset;
+> +	int idx;
+> +	u64 base = vcpu->arch.steal.base;
+> +
+> +	if (base == GPA_INVALID)
+> +		return -ENOTSUPP;
+> +
+> +	/* Let's do the local bookkeeping */
+> +	steal = vcpu->arch.steal.steal;
+> +	steal += current->sched_info.run_delay - vcpu->arch.steal.last_steal;
+> +	vcpu->arch.steal.last_steal = current->sched_info.run_delay;
+> +	vcpu->arch.steal.steal = steal;
+> +
+> +	steal_le = cpu_to_le64(steal);
+> +	idx = srcu_read_lock(&kvm->srcu);
+> +	if (init) {
+> +		struct pvclock_vcpu_stolen_time init_values = {
+> +			.revision = 0,
+> +			.attributes = 0
+
+nit: 0 is the default initialiser.
+
+> +		};
+> +		kvm_write_guest(kvm, base, &init_values,
+> +				sizeof(init_values));
+> +	}
+
+I'm not convinced by this init phase right in the middle of the normal
+path. It looks ugly, and it'd be better if moved out of line. I'd
+suggest:
+
+static void kvm_init_stolen_time(struct kvm_vcpu *vcpu)
+{
+	struct pvclock_vcpu_stolen_time init_values = { };
+
+	vcpu->arch.steal.steal = 0;
+	vcpu->arch.steal.last_steal = current->sched_info.run_delay;
+
+	idx = srcu_read_lock(&kvm->srcu);
+	kvm_write_guest(kvm, base, &init_values, sizeof(init_values));
+	srcu_read_unlock(&kvm->srcu, idx);
+}
+
+and change the two callers accordingly. Or even better, move this code
+to the hypercall handling function, because that's where it actually
+belongs.
+
+> +	offset = offsetof(struct pvclock_vcpu_stolen_time, stolen_time);
+> +	kvm_put_guest(kvm, base + offset, steal_le, u64);
+> +	srcu_read_unlock(&kvm->srcu, idx);
+> +
+> +	return 0;
+> +}
+> +
+>  long kvm_hypercall_pv_features(struct kvm_vcpu *vcpu)
+>  {
+>  	u32 feature = smccc_get_arg1(vcpu);
+> @@ -12,6 +49,7 @@ long kvm_hypercall_pv_features(struct kvm_vcpu *vcpu)
+>  
+>  	switch (feature) {
+>  	case ARM_SMCCC_HV_PV_TIME_FEATURES:
+> +	case ARM_SMCCC_HV_PV_TIME_ST:
+>  		val = SMCCC_RET_SUCCESS;
+>  		break;
+>  	}
+> @@ -19,3 +57,21 @@ long kvm_hypercall_pv_features(struct kvm_vcpu *vcpu)
+>  	return val;
+>  }
+>  
+> +long kvm_hypercall_stolen_time(struct kvm_vcpu *vcpu)
+
+Why long? If that's a base address, then it is either a phys_addr_t or
+a gpa_t. I'd suggest you move the error check to the caller.
+
+> +{
+> +	int err;
+> +
+> +	/*
+> +	 * Start counting stolen time from the time the guest requests
+> +	 * the feature enabled.
+> +	 */
+> +	vcpu->arch.steal.steal = 0;
+> +	vcpu->arch.steal.last_steal = current->sched_info.run_delay;
+> +
+> +	err = kvm_update_stolen_time(vcpu, true);
+> +
+> +	if (err)
+> +		return SMCCC_RET_NOT_SUPPORTED;
+> +
+> +	return vcpu->arch.steal.base;
+> +}
+> -- 
+> 2.20.1
+> 
+> 
+
+Thanks,
+
+	M.
 
 -- 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+Jazz is not dead, it just smells funny.
 
 _______________________________________________
 linux-arm-kernel mailing list
