@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BFCE5DD7D3
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 11:56:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E4D7DD7D4
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 11:56:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N3UqUnMBf07D78BoEK9C9OVs83khMI6IPJ9omcNvwt0=; b=njPXEFBhCAZYoW
-	ettxBlsvIhm7Qvxs4ClRWEp8BUEc19z7dsGMTNRkhf1CBOAwRXEmjevokW2gOaJfywQZnRHF4IoPk
-	BHbadqGKxwm54YMpMyixFzW0/zh/r8CIwvdMhx+iW/6cR16fhXF13d2KHba02vT6nliN2So0wL9eo
-	EvkAWj40a8WtLgiop0Ugbq5YWy2h5xIhl119Z068eGjrhLWLx3Z9zMYaSruZkz16deYPHKrnmfPvH
-	LdlvGgg5XQU/AtiasDtxJga0du1psipFNWHebv2w8JjRG6AflKONu40j1eDrjt7qvtuw4/Xmyiqrn
-	nDsyUoLapj7F/AJcJY6A==;
+	List-Owner; bh=MkXo4bx1iwa//6XXr0pV91erR+DR8B1WugJG6XeVJrw=; b=iod2JVEsqW1OLb
+	OY9NVmM1q9CFobVewSTLYL08LzNrGBsfz/0BMo/c96zJ3iHuljIoXx6PyvruwqF2whRjp+eWGyEZQ
+	ak7Vw6oN/nZMqM/20HE5WlXyIFVvB4M8kdkaQFinXuweyPu7MA3tMECM4XA3MMuD2tSyOf/ZLzYau
+	c2gsRHHnIn1BOt/7byY8Bv1ESxpyWuqyTZIl3HAbNYWd9jaXGttPwhvBrOcYPeohzzxE5fn8kzdo+
+	GpF/NU3hXtLuOCrTAmheY/oEv4y9IzO2gosvdkvXGjq+C+9UONtUPIHKvOGCTXSdstp1XCvsFwqUm
+	eEIjHaoBI06Wq0rOHIlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLlSv-0001x1-0F; Sat, 19 Oct 2019 09:56:05 +0000
+	id 1iLlT7-0002HW-Ru; Sat, 19 Oct 2019 09:56:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLlSM-0001oA-8q
- for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 09:55:31 +0000
+ id 1iLlSP-0001qJ-8m
+ for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 09:55:34 +0000
 Received: from big-swifty.lan (78.163-31-62.static.virginmediabusiness.co.uk
  [62.31.163.78])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C2EA4222CC;
- Sat, 19 Oct 2019 09:55:27 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A153E222C2;
+ Sat, 19 Oct 2019 09:55:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571478930;
- bh=0ydo3zWocyZ2R1TjMk6U6Pm/YQU4lvknC5Dj+8pFO8I=;
+ s=default; t=1571478932;
+ bh=C+wxLu/WnnwZ3cqp2GHFnfaQZgrXjj31+JCX0m8MeoM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Gywd3mq6ho0RcqzjTr5TjpZFv6g7TQInCq20wYBkqiI+t4T9pwUgtzUGKXpApuqFY
- 4Y59074Z+gaoRT8b2na8QOPVVUmCPkaiRHwgXHTjppUePfaJK6Zjdc2Ny9ft6iaQRb
- q4TLIjgk+46OcepRBR4l7Uh57+53Ad4lQJQMg6ao=
+ b=mYqx+7UMtpLMaE/KOY3jsL1gUUeMf3s+YgsbRmwJeHNiJhsZhiQnsl7bbhvmNKWrg
+ s3seIIPbTqbICqVFLO61SkWTYsh7XposMSxyYa3dW0GZ6V0kOrF7u+0yAl2g0BqYPA
+ nrqcyHiWEkARmUq3m6gv36fmahQT1YvI0NELSY5Y=
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH v2 1/5] arm64: Add ARM64_WORKAROUND_1319367 for all A57 and
- A72 versions
-Date: Sat, 19 Oct 2019 10:55:17 +0100
-Message-Id: <20191019095521.31722-2-maz@kernel.org>
+Subject: [PATCH v2 2/5] arm64: KVM: Reorder system register restoration and
+ stage-2 activation
+Date: Sat, 19 Oct 2019 10:55:18 +0100
+Message-Id: <20191019095521.31722-3-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191019095521.31722-1-maz@kernel.org>
 References: <20191019095521.31722-1-maz@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191019_025530_328548_58EF50A5 
-X-CRM114-Status: GOOD (  11.98  )
+X-CRM114-CacheID: sfid-20191019_025533_390324_5739BA32 
+X-CRM114-Status: GOOD (  11.59  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -87,70 +87,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Rework the EL2 vector hardening that is only selected for A57 and A72
-so that the table can also be used for ARM64_WORKAROUND_1319367.
+In order to prepare for handling erratum 1319367, we need to make
+sure that all system registers (and most importantly the registers
+configuring the virtual memory) are set before we enable stage-2
+translation.
 
-Acked-by: Catalin Marinas <catalin.marinas@arm.com>
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+This results in a minor reorganisation of the load sequence, without
+any functional change.
+
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm64/include/asm/cpucaps.h |  3 ++-
- arch/arm64/kernel/cpu_errata.c   | 13 ++++++++++---
- 2 files changed, 12 insertions(+), 4 deletions(-)
+ arch/arm64/kvm/hyp/switch.c | 17 +++++++++++------
+ 1 file changed, 11 insertions(+), 6 deletions(-)
 
-diff --git a/arch/arm64/include/asm/cpucaps.h b/arch/arm64/include/asm/cpucaps.h
-index f19fe4b9acc4..277e37b2a513 100644
---- a/arch/arm64/include/asm/cpucaps.h
-+++ b/arch/arm64/include/asm/cpucaps.h
-@@ -52,7 +52,8 @@
- #define ARM64_HAS_IRQ_PRIO_MASKING		42
- #define ARM64_HAS_DCPODP			43
- #define ARM64_WORKAROUND_1463225		44
-+#define ARM64_WORKAROUND_1319367		45
+diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
+index 3d3815020e36..69e10b29cbd0 100644
+--- a/arch/arm64/kvm/hyp/switch.c
++++ b/arch/arm64/kvm/hyp/switch.c
+@@ -605,18 +605,23 @@ int __hyp_text __kvm_vcpu_run_nvhe(struct kvm_vcpu *vcpu)
  
--#define ARM64_NCAPS				45
-+#define ARM64_NCAPS				46
+ 	__sysreg_save_state_nvhe(host_ctxt);
  
- #endif /* __ASM_CPUCAPS_H */
-diff --git a/arch/arm64/kernel/cpu_errata.c b/arch/arm64/kernel/cpu_errata.c
-index f593f4cffc0d..a7afa6d4a58f 100644
---- a/arch/arm64/kernel/cpu_errata.c
-+++ b/arch/arm64/kernel/cpu_errata.c
-@@ -623,9 +623,9 @@ check_branch_predictor(const struct arm64_cpu_capabilities *entry, int scope)
- 	return (need_wa > 0);
- }
+-	__activate_vm(kern_hyp_va(vcpu->kvm));
+-	__activate_traps(vcpu);
+-
+-	__hyp_vgic_restore_state(vcpu);
+-	__timer_enable_traps(vcpu);
+-
+ 	/*
+ 	 * We must restore the 32-bit state before the sysregs, thanks
+ 	 * to erratum #852523 (Cortex-A57) or #853709 (Cortex-A72).
++	 *
++	 * Also, and in order to be able to deal with erratum #1319537 (A57)
++	 * and #1319367 (A72), we must ensure that all VM-related sysreg are
++	 * restored before we enable S2 translation.
+ 	 */
+ 	__sysreg32_restore_state(vcpu);
+ 	__sysreg_restore_state_nvhe(guest_ctxt);
++
++	__activate_vm(kern_hyp_va(vcpu->kvm));
++	__activate_traps(vcpu);
++
++	__hyp_vgic_restore_state(vcpu);
++	__timer_enable_traps(vcpu);
++
+ 	__debug_switch_to_guest(vcpu);
  
--#ifdef CONFIG_HARDEN_EL2_VECTORS
-+#if defined(CONFIG_HARDEN_EL2_VECTORS) || defined(CONFIG_ARM64_ERRATUM_1319367)
- 
--static const struct midr_range arm64_harden_el2_vectors[] = {
-+static const struct midr_range ca57_a72[] = {
- 	MIDR_ALL_VERSIONS(MIDR_CORTEX_A57),
- 	MIDR_ALL_VERSIONS(MIDR_CORTEX_A72),
- 	{},
-@@ -819,7 +819,7 @@ const struct arm64_cpu_capabilities arm64_errata[] = {
- 	{
- 		.desc = "EL2 vector hardening",
- 		.capability = ARM64_HARDEN_EL2_VECTORS,
--		ERRATA_MIDR_RANGE_LIST(arm64_harden_el2_vectors),
-+		ERRATA_MIDR_RANGE_LIST(ca57_a72),
- 	},
- #endif
- 	{
-@@ -851,6 +851,13 @@ const struct arm64_cpu_capabilities arm64_errata[] = {
- 		.type = ARM64_CPUCAP_LOCAL_CPU_ERRATUM,
- 		.matches = has_cortex_a76_erratum_1463225,
- 	},
-+#endif
-+#ifdef CONFIG_ARM64_ERRATUM_1319367
-+	{
-+		.desc = "ARM erratum 1319367",
-+		.capability = ARM64_WORKAROUND_1319367,
-+		ERRATA_MIDR_RANGE_LIST(ca57_a72),
-+	},
- #endif
- 	{
- 	}
+ 	__set_guest_arch_workaround_state(vcpu);
 -- 
 2.20.1
 
