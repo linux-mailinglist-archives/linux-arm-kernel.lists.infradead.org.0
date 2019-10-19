@@ -2,81 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A2642DDAB7
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 21:35:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11C0FDDAC7
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 21:58:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K733ZsA0Yp7MU9CmOR3qGrHCCv31Yr7T0LdXCbzhSfw=; b=OY6d287kkpZRSF
-	W3gwfK0K6dkF86QehV+CbcID0nM63LzCCl6POQgQvlte3blCLB3mGGd+eg56MLb7MBbR/zWz26Cca
-	v/T7xyiH373LitKLBNDZIkLTZoa4k7iuQXO1xPdQDURPYpjaS5qG4dHW0ylDyGxRu7gcGWNUbbU06
-	FKst0GuVg0YqTxsRVOMWWS2H/UJEKOElT+TG6fp1wh1/sxDdzzyz3N5VKm3YdjktCq9qZ2ndtsS5X
-	aEcE2z5R5bv9yi7G1td4x+XfvIvOZzaSjDHCQuV7Wqtgt9G5TcbAKtZlda+wE9pnprU1lkZfdIdLp
-	F/rh+t0O79cmfAmXiXOA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=EYqnlfKE9ZQw+gwFIxDKmrV68OhMdxcXZT5hoffO1Ic=; b=nnDf+yLsYfHjWX
+	8k/BhNoX6hzsC3OwjsqRZAFiISYFzcoGZ7H6QWK0wggywaftxmCCwEUrO2kw9XAnouZsXFfE1CFlw
+	3kH/PseBuHhkDNIJmS9eUkQKp1tPE0JHc2L2F7LYB7IQqSJeHqd49RDXn8qnxFu4HfUZvdiIxjQA/
+	0ZkndMU//QEEPPn1eLZ548tRAq2IN23ipev1EGk7ghNNFQg1SaPjSQpgzr2o2v028Ps2B/+CR3pew
+	mEWRxbhd2pISrUBDSRgKjxNbk9YwQ+cbTODVby79+jzpIJt5/dt7Fw9TP6DFQaelZAS0//wfYvsEq
+	+jn2jCF3HE+xUe+d5y5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLuVO-0001ep-L3; Sat, 19 Oct 2019 19:35:14 +0000
-Received: from mout.kundenserver.de ([217.72.192.75])
+	id 1iLurs-0002Pc-80; Sat, 19 Oct 2019 19:58:28 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLuV8-0001eM-Rr
- for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 19:35:00 +0000
-Received: from mail-qt1-f178.google.com ([209.85.160.178]) by
- mrelayeu.kundenserver.de (mreue107 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1Mofst-1hfxye1zFh-00p3XR for <linux-arm-kernel@lists.infradead.org>; Sat,
- 19 Oct 2019 21:34:53 +0200
-Received: by mail-qt1-f178.google.com with SMTP id c17so11314175qtn.8
+ id 1iLurj-0002Es-Lm
+ for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 19:58:20 +0000
+Received: by mail-pf1-x443.google.com with SMTP id y22so5889455pfr.3
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 19 Oct 2019 12:34:53 -0700 (PDT)
-X-Gm-Message-State: APjAAAUaqD3wV7gdnNzsAGh1U2KLajfEhpHOW3qXxXoKXxwZdZKd3VsS
- RH2hz6iMX7uku4m9KqijntQge2hoBMRt1yIX8Ic=
-X-Google-Smtp-Source: APXvYqy22GrAJBe0FkPxmOqPm4Xlz+XL09o/POQr34X5BMu5W279MixtQUydyM5HiIo/UQu7OEriNwiYVGEphslC9R0=
-X-Received: by 2002:ac8:38e3:: with SMTP id g32mr16775838qtc.304.1571513692155; 
- Sat, 19 Oct 2019 12:34:52 -0700 (PDT)
+ Sat, 19 Oct 2019 12:58:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=266Y0hXS9BC8c58tj7q4sT9jtJ0HQTa0yWk7IcR2wTs=;
+ b=uG/U93b2A8I0PII6bxFfdt6TH1kECEIuI+qHTm6K3KY0l7I1StEOvn+GUkCZFZGlKr
+ R0K3mq75ExZFMrumknpnY8XIfzX8oBIdma6UHZyEJugAdc5XYAgbJ7WPC1spzgoS8emV
+ G3iopRckBMDrp3PlUBrjv4fjm4ExFy/LGiWIS9ynO+IJ73IGDDfJppCnZLKCr7RE0qSI
+ QV8Bzds8wI6i2DkYLb1iysEgMiSirDuwBooSKX1WvMkelE1av2pCwKMl4gowVrybBF7y
+ 6bYl0xgazXqgiJ3fMHyi+1BOvcAaJzrdmhccY3RSdG6uSN3+MeeqZLlcxiSX/movlg6k
+ 1s/Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=266Y0hXS9BC8c58tj7q4sT9jtJ0HQTa0yWk7IcR2wTs=;
+ b=mR6YqgngmE09sBgIIYIkxEguXbsk7gLXOX+ndXXKfPC2PI6odPIFOss+cvX2FL4qks
+ kq05Yd/QH4nTIM9pCB1OrQ3Zk8iT7aS6ofRSSoxO13FPfax81mWc/l5vEPzv2T8Nm2p6
+ 5LZVlQRwX69nIGNlMp6Hq45zIPI6KBx9QN8N/mr3UEeA6hj5m4j5GXIzyYExvygCxBjb
+ XTDKLmLRttYGJHdOCAaYNqwA13F6+JLLHxk1uNhSLkP1Mbrr6xy82K7FyPsjAT3Y7Dy6
+ wvsb4nXUxgkWBoDn80Ufq2+sYpG3LdtclrGUcErYiiycx4VQtTrRcC+WUB8kOk/oDOsO
+ ynwA==
+X-Gm-Message-State: APjAAAUwZ5uCAj8Z22KMLYH1q+xfJKX305XKftAWWl+kFj1qZgnKRL47
+ CwVM88p9darNG/rUwxYRoD+hrg==
+X-Google-Smtp-Source: APXvYqxthdjowhAfa+DBog8jfZPwJlkwc/5bBE/nJLagsS8UKZv/Dc/OwAsuZFQAQGcWOh+laGTHFw==
+X-Received: by 2002:a17:90a:bd0b:: with SMTP id
+ y11mr19444285pjr.28.1571515097002; 
+ Sat, 19 Oct 2019 12:58:17 -0700 (PDT)
+Received: from localhost.localdomain
+ (104-188-17-28.lightspeed.sndgca.sbcglobal.net. [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id v1sm10183866pjd.22.2019.10.19.12.58.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 19 Oct 2019 12:58:16 -0700 (PDT)
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Olof Johansson <olof@lixom.net>, Maxime Ripard <mripard@kernel.org>,
+ Arnd Bergmann <arnd@arndb.de>, Anson Huang <Anson.Huang@nxp.com>,
+ Jagan Teki <jagan@amarulasolutions.com>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ Dinh Nguyen <dinguyen@kernel.org>,
+ Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>
+Subject: [PATCH v2] arm64: defconfig: Enable Qualcomm pseudo rng
+Date: Sat, 19 Oct 2019 12:58:12 -0700
+Message-Id: <20191019195812.3834545-1-bjorn.andersson@linaro.org>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-References: <20191018154052.1276506-1-arnd@arndb.de>
- <20191018154201.1276638-44-arnd@arndb.de>
- <4d6920e9fab519ddf69aae9da13a1cd02d13bddd.camel@v3.sk>
-In-Reply-To: <4d6920e9fab519ddf69aae9da13a1cd02d13bddd.camel@v3.sk>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Sat, 19 Oct 2019 21:34:36 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a1buT7K7YWAdztqnZ83Jq6f4q-7x_G3Ed09cKQxtKLJSQ@mail.gmail.com>
-Message-ID: <CAK8P3a1buT7K7YWAdztqnZ83Jq6f4q-7x_G3Ed09cKQxtKLJSQ@mail.gmail.com>
-Subject: Re: [PATCH 44/46] ARM: mmp: remove tavorevb board support
-To: Lubomir Rintel <lkundrak@v3.sk>
-X-Provags-ID: V03:K1:WglhJ1ZcCmgKfktUs9SG0vSlpK+OKTgIfQnrx5eZ48tN9yUNn8m
- CalP7edxblWuSz6jlYWewftsCTL5K2M+PnJN/wkGMwJkiPv90GmMXkr2D4mxgu5EvC4dwuj
- WbUYVMKPju4YRp+WHQXJaeiEHfdsR5Yt1K3IszbyJTrD9QzEMs8Ap/V3C3/cuQ7e8glIuXr
- n24sKSN3P4rpzYp4RdfOQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:CSJHMOLHrrI=:tgbxJo7E6izfAOSMb6gW4w
- F6nrxuE68Dr7h8bknCGGjaFKhCpJss/PuYWasHlls2VyphfMcmfikWyN7dvTj5q5yjjkHNGLw
- T3i044TlmczzlM49qSlBtHgK5PheALzUTXyf6BsBgsTXDl26jYGgsv3uHhEdFW3v/CpAOuw3o
- iJTWvEBzimUPOrkxo35X1ojUTA6RNJsa5vImF4aatNb+uzBI3BuxnSN75M7z1vvtlI64NilkI
- GDyuedvapw6QfNZupED4xcV0ELG/+tbLqwi7m+nqAci284o9c8ciyyOHIDIuf54IEQgTUU6EH
- jzvaJEDW0U3b1WAIbRKVBV3ytTrgd4MwizYjx5+06cg5ubcrz0DrMQREeBDNCFdi7rA5FulP7
- ElwUmt8jxlo2tJ9QM7aXBtuuDDuTtP7zMZBpM4wOzcPSRAjUOk0ZxUXbmRYuaRvwa2VJ90iGr
- VIbEu9Z9ffgkpZLvnq6rql+8d3qav7AHYLUvRWuJCuxZ+jIJnpFbXfizhx6n0Csm0Bl/XQ2Xp
- PKX4QKPTjrLdzTxIiiDUFy6VXiCm/2+sI28dZw5MxVY4LZCuczyneayG1Cc8WNZazJAfR5J2z
- nBJ8EUYctwxn6xgJDFHpZQPzMD3TRmblupLnQmQTP9K+i+MV2Nbhx3d26O6iUk2YqmpYp6Ar8
- iU8P+gc8TUSemZrqQ8AL/4FKuE2yzNxDucZ3E1o+U47vj/TPMYX8bzqg5L7J1yDbpcbwbLQVj
- jYJoFf5vGARP9srFXqtX80X3pc520sOWb+B31oZPwmuV540scBbipDBczYOl4+Jcfcn/7/nAn
- 5VD989wOvTDmF7msfWbX/GkpTmpBA6aa0FLEtdqB375A6IMWKHo4u144m9F/SP8Vr1rpQIQ36
- QyW0baoS/v4XwYRk+o6A==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191019_123459_191635_1AD6CB91 
-X-CRM114-Status: GOOD (  19.77  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191019_125819_745681_1ECAC0FE 
+X-CRM114-Status: UNSURE (   9.83  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.75 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,62 +105,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linus Walleij <linus.walleij@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Haojian Zhuang <haojian.zhuang@gmail.com>, Daniel Mack <daniel@zonque.org>,
- Robert Jarzmik <robert.jarzmik@free.fr>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arm-msm@vger.kernel.org, Vinod Koul <vkoul@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Oct 19, 2019 at 4:20 PM Lubomir Rintel <lkundrak@v3.sk> wrote:
-> On Fri, 2019-10-18 at 17:41 +0200, Arnd Bergmann wrote:
-> >
-> > There is a third board named TavorEVB in the Kconfig description,
-> > but this refers to the "TTC_DKB" machine. The two are clearly
-> > related, so I change the Kconfig description to just list both
-> > names.
-> >
-> > Cc: Lubomir Rintel <lkundrak@v3.sk>
-> > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
->
-> Reviewed-by: Lubomir Rintel <lkundrak@v3.sk>
->
-> In fact, I'd love to see more non-DT boards go from mach-mmp. There are
-> good indications nobody is looking after MMP2-based "Jasper", "Flint"
-> and "Brownstone" and they probably weren't seen outside Marvell either.
-> The latter has a DTS file.
->
-> Would anybody miss them?
+Most Qualcomm platforms contain a pseudo random number generator
+hardware block. Enable the driver for this block and also enable the
+interface for exposing this to userspace.
 
-Probably not, but I had a hard time identifying any boards in mmp
-and some other platforms that are actually worth keeping.
+Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+---
+ arch/arm64/configs/defconfig | 2 ++
+ 1 file changed, 2 insertions(+)
 
-Back in the days, a common way the platforms were maintained
-was to only have the official development board in mainline Linux,
-while many products were left with out of tree board files.
-This means it's impossible to see which SoCs actually got used
-in the field and which ones did not. It also means the other
-machines stopped getting forward-ported and nobody could test
-the mainline changes.
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index 6baf90875263..4591bf1303da 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -860,6 +860,8 @@ CONFIG_NLS_ISO8859_1=y
+ CONFIG_SECURITY=y
+ CONFIG_CRYPTO_ECHAINIV=y
+ CONFIG_CRYPTO_ANSI_CPRNG=y
++CONFIG_CRYPTO_USER_API_RNG=m
++CONFIG_CRYPTO_DEV_QCOM_RNG=m
+ CONFIG_DMA_CMA=y
+ CONFIG_CMA_SIZE_MBYTES=32
+ CONFIG_PRINTK_TIME=y
+-- 
+2.23.0
 
-I wouldn't mind just removing all of the machines that were clearly
-reference hardware rather than actual products unless we know of
-someone still using them.
-
-In case of MMP, that doesn't leave a lot though, the gplugD is the
-only one that clearly meant as an end-user product. I'd also leave
-all the DT based platforms as a rule, mainly because the DT has
-made it possible to support additional boards with a custom dt blob
-and no kernel changes.
-
-If you have any more insight into what particular boards actually
-were used for, and which ones can get removed, that would
-be very welcome.
-
-        Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
