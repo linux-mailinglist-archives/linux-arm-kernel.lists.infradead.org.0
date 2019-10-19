@@ -2,67 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B25C6DD846
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 13:02:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B2F0DD852
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 13:07:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JR5HXIwbW2fUb1D4AzVdN/ELn807TLrT9PSt4VzonJI=; b=H1dJizrvYEGdIb
-	eyDHjdXVcvFAwQvxbefojGDjkoOySqYXwrmQlu7aUFmupR+D+RSKLb1Jo3DwPuGtCf/+j4EyaWmbR
-	vB453XAP48IrTJjAgnm2xIeGuajBoGAouRVASBqjHdjDB9xuU2tFqY/GzwJiKigpiMe4x8l1jUkB2
-	6rSk/scCuhdgANysV1L5/rYhx0zOVcD3zJ2ulWJuL/A2Wv6U8U5UGNitNoQPZrv+UaWmjOMWyd3MF
-	stDUkM/7cb5h1GAEvfXdpJtag/rI4Tp9kzpTfdJ69jMjKuMxtdqezAnPXPbKPpVpyKZnKJjy6zIED
-	5pLk5VuKIFdp5A7G6oRQ==;
+	List-Owner; bh=vvfD0iSVTND8C7TqUC7CLE4fWBotiwqcNeUFrBKt2uE=; b=vBj1Fjvi5Ycakb
+	4mjFjNeOmaR9RXiHKNdkUQEAPAjlPLO2gUQDB+9G3sfVONuflqip3GBzG76FWHMOT+IlVAoyEtDxn
+	n8Ct2KS4WaWNhAZRg86Cx3dfBtWn63BPyKq9O+Dyhj7mpJvK7HUMziz53pErYayEJorLXUCSnklC7
+	Bpj/H4uYvUwLPxEyv5lyS+cGsH3Bo9tI75V1hPTkyZO9BFPlOU/uRoZ5HyjfdlLNUpuY6+q2dctI3
+	OK+8KBANuTWi65nAcUkwv6GCnKHgStue/uQ9OatR+1lWA2pDM0AXL76Y6bFChFXtPyWmd5dCv7SQg
+	6oUomBz1DrSMGdn62aTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLmUv-0000On-Bg; Sat, 19 Oct 2019 11:02:13 +0000
-Received: from verein.lst.de ([213.95.11.211])
+	id 1iLmZZ-00027Q-6e; Sat, 19 Oct 2019 11:07:01 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLmUl-0000Nw-M2
- for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 11:02:05 +0000
-Received: by verein.lst.de (Postfix, from userid 107)
- id 2B59A68C4E; Sat, 19 Oct 2019 13:01:57 +0200 (CEST)
-X-Spam-Checker-Version: SpamAssassin 3.3.1 (2010-03-16) on verein.lst.de
+ id 1iLmZQ-00026t-CT
+ for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 11:06:53 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id 3267660D59; Sat, 19 Oct 2019 11:06:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1571483211;
+ bh=wnOIIW4MR+CLK/071OVBzNZaauLzgBfSEoUioJEm5WY=;
+ h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+ b=LJ3WBBtmUl28mQPuUH7cOn3/SNt7WNhkVTxOm2/FoUoWM177EMQBU3fhRDrrDv4LM
+ 44TIGZVRjG04P+wPJ8ne5GHUpLtcRtGuj4wRfcoOYICRu/2VCc2vAQsikCvk2yRG+p
+ LvBnDW67RmL2pjgKjLlvL65eGTjyESqlHYqR0qjM=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-0.2 required=5.0 tests=ALL_TRUSTED,BAYES_50
- autolearn=disabled version=3.3.1
-Received: from blackhole.lan (p5B0D886C.dip0.t-ipconnect.de [91.13.136.108])
- by verein.lst.de (Postfix) with ESMTPSA id 5448D68B05;
- Sat, 19 Oct 2019 13:01:40 +0200 (CEST)
-Date: Sat, 19 Oct 2019 13:01:35 +0200
-From: Torsten Duwe <duwe@lst.de>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH v8 0/5] arm64: ftrace with regs
-Message-ID: <20191019130135.10de9324@blackhole.lan>
-In-Reply-To: <20191018174100.GC18838@lakrids.cambridge.arm.com>
-References: <20190208150826.44EBC68DD2@newverein.lst.de>
- <0f8d2e77-7e51-fba8-b179-102318d9ff84@arm.com>
- <20190311114945.GA5625@lst.de>
- <20190408153628.GL6139@lakrids.cambridge.arm.com>
- <20190409175238.GE9255@fuggles.cambridge.arm.com>
- <CAB=otbRXuDHSmh9NrGYoep=hxOKkXVsy6R84ACZ9xELwNr=4AA@mail.gmail.com>
- <20190724161500.GG2624@lakrids.cambridge.arm.com>
- <nycvar.YFH.7.76.1910161341520.13160@cbobk.fhfr.pm>
- <20191016175841.GF46264@lakrids.cambridge.arm.com>
- <20191018174100.GC18838@lakrids.cambridge.arm.com>
-Organization: LST e.V.
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-suse-linux-gnu)
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
+ version=3.4.0
+Received: from potku.adurom.net (88-114-240-156.elisa-laajakaista.fi
+ [88.114.240.156])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: kvalo@smtp.codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 920AB60D39;
+ Sat, 19 Oct 2019 11:06:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1571483209;
+ bh=wnOIIW4MR+CLK/071OVBzNZaauLzgBfSEoUioJEm5WY=;
+ h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+ b=go6dHWqpkYFY2dGyszr8OAmuSCwtZIGaTWdcfcoar0dXcL6Qvguo3sDrIpnYI9o/9
+ gwK00FxgPmGb2nKbbFTpfYe8GrirVct7y0Swsj86DabGQ/V1l8/OzsDcSaQs+LR6Kw
+ mFzFHQt5LGvtJDsyRhPd7elZFcICtGj/iQ+n/GVU=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 920AB60D39
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ spf=none smtp.mailfrom=kvalo@codeaurora.org
+From: Kalle Valo <kvalo@codeaurora.org>
+To: "H. Nikolaus Schaller" <hns@goldelico.com>
+Subject: Re: [PATCH 0/9] OpenPandora: make wl1251 connected to mmc3 sdio port
+ of OpenPandora work again
+References: <cover.1571430329.git.hns@goldelico.com>
+Date: Sat, 19 Oct 2019 14:06:41 +0300
+In-Reply-To: <cover.1571430329.git.hns@goldelico.com> (H. Nikolaus Schaller's
+ message of "Fri, 18 Oct 2019 22:25:21 +0200")
+Message-ID: <87sgnpvvsu.fsf@kamboji.qca.qualcomm.com>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.5 (gnu/linux)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191019_040204_018368_AA4B2412 
-X-CRM114-Status: GOOD (  15.02  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191019_040652_464042_C9750F09 
+X-CRM114-Status: GOOD (  18.16  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,81 +98,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Thierry <julien.thierry@arm.com>, Arnd Bergmann <arnd@arndb.de>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Jiri Kosina <jikos@kernel.org>,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- Steven Rostedt <rostedt@goodmis.org>,
- AKASHI Takahiro <takahiro.akashi@linaro.org>, Ingo Molnar <mingo@redhat.com>,
- Ruslan Bilovol <ruslan.bilovol@gmail.com>,
- Josh Poimboeuf <jpoimboe@redhat.com>,
- Amit Daniel Kachhap <amit.kachhap@arm.com>, live-patching@vger.kernel.org,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
+ devicetree@vger.kernel.org, Tony Lindgren <tony@atomide.com>,
+ linux-wireless@vger.kernel.org, Kefeng Wang <wangkefeng.wang@huawei.com>,
+ Bjorn Helgaas <bhelgaas@google.com>, letux-kernel@openphoenux.org,
+ "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
+ Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
+ Yangtao Li <tiny.windzz@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ Petr Mladek <pmladek@suse.com>,
+ =?utf-8?Q?Beno=C3=AEt?= Cousson <bcousson@baylibre.com>,
+ kernel@pyra-handheld.com, Alexios Zavras <alexios.zavras@intel.com>,
+ Rob Herring <robh+dt@kernel.org>, John Stultz <john.stultz@linaro.org>,
+ David Sterba <dsterba@suse.com>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-omap@vger.kernel.org, Allison Randal <allison@lohutok.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mmc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Sakari Ailus <sakari.ailus@linux.intel.com>,
+ netdev@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mark!
+"H. Nikolaus Schaller" <hns@goldelico.com> writes:
 
-On Fri, 18 Oct 2019 18:41:02 +0100 Mark Rutland
-<mark.rutland@arm.com> wrote:
+> Here we have a set of scattered patches to make the OpenPandora WiFi work again.
+>
+> v4.7 did break the pdata-quirks which made the mmc3 interface
+> fail completely, because some code now assumes device tree
+> based instantiation.
+>
+> Fixes: 81eef6ca9201 ("mmc: omap_hsmmc: Use dma_request_chan() for requesting DMA channel")
+>
+> v4.11 did break the sdio qirks for wl1251 which made the driver no longer
+> load, although the device was found as an sdio client.
+>
+> Fixes: 884f38607897 ("mmc: core: move some sdio IDs out of quirks file")
+>
+> To solve these issues:
+> * we convert mmc3 and wl1251 initialization from pdata-quirks
+>   to device tree
+> * we make the wl1251 driver read properties from device tree
+> * we fix the mmc core vendor ids and quirks
+> * we fix the wl1251 (and wl1271) driver to use only vendor ids
+>   from header file instead of (potentially conflicting) local
+>   definitions
+>
+>
+> H. Nikolaus Schaller (9):
+>   Documentation: dt: wireless: update wl1251 for sdio
+>   net: wireless: ti: wl1251 add device tree support
+>   DTS: ARM: pandora-common: define wl1251 as child node of mmc3
+>   mmc: host: omap_hsmmc: add code for special init of wl1251 to get rid
+>     of pandora_wl1251_init_card
+>   omap: pdata-quirks: remove openpandora quirks for mmc3 and wl1251
+>   mmc: sdio: fix wl1251 vendor id
+>   mmc: core: fix wl1251 sdio quirks
+>   net: wireless: ti: wl1251 use new SDIO_VENDOR_ID_TI_WL1251 definition
+>   net: wireless: ti: remove local VENDOR_ID and DEVICE_ID definitions
 
-> In the process of reworking this I spotted some issues that will get
-> in the way of livepatching. Notably:
-> 
-> * When modules can be loaded far away from the kernel, we'll
-> potentially need a PLT for each function within a module, if each can
-> be patched to a unique function. Currently we have a fixed number,
-> which is only sufficient for the two ftrace entry trampolines.
-> 
->   IIUC, the new code being patched in is itself a module, in which
-> case we'd need a PLT for each function in the main kernel image.
+I didn't get patches 3-7 so I don't know what they have, but what's the
+plan how these should be applied? Normally wl1251 patches go via
+wireless-drivers-next but are you planning something else?
 
-When no live patching is involved, obviously all cases need to have
-been handled so far. And when a live patching module comes in, there
-are calls in and out of the new patch code:
-
-Calls going into the live patch are not aware of this. They are caught
-by an active ftrace intercept, and the actual call into the LP module
-is done in klp_arch_set_pc, by manipulating the intercept (call site)
-return address (in case thread lives in the "new world", for
-completeness' sake). This is an unsigned long write in C.
-
-All calls going _out_ from the KLP module are newly generated, as part
-of the KLP module building process, and are thus aware of them being
-"extern" -- a PLT entry should be generated and accounted for in the
-KLP module.
-
->   We have a few options here, e.g. changing which memory size model we
->   use, or reserving space for a PLT before each function using
->   -f patchable-function-entry=N,M.
-
-Nonetheless I'm happy I once added the ,M option here. You never know :)
-
-> * There are windows where backtracing will miss the callsite's caller,
->   as its address is not live in the LR or existing chain of frame
->   records. Thus we cannot claim to have a reliable stacktrace.
-> 
->   I suspect we'll have to teach the stacktrace code to handle this as
-> a special-case.
-
-Yes, that's where I had to step back. The unwinder needs to stop where
-the chain is even questionable. In _all_ cases. Missing only one race
-condition means a lurking inconsistency.
-
-OTOH it's not a problem to report "not reliable" when in doubt; the
-thread in question will then get woken up and unwind itself.
-It is only an optimisation to let all kernel threads which are
-guaranteed to not contain any patched functions sleep on.
-
->   I'll try to write these up, as similar probably applies to other
->   architectures with a link register.
-
-I thought I'd quickly give you my feedback upfront here.
-
-	Torsten
-
+-- 
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
 
 _______________________________________________
 linux-arm-kernel mailing list
