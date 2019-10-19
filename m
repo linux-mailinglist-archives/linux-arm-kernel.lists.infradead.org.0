@@ -2,86 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6346CDD993
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 18:05:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5E91DD9AE
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 19 Oct 2019 18:42:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4TezASqC3Upe5CCiorDaqR31v9vz1MC//VmKgCPHn58=; b=LWNLuZGLyyKQsK
-	ngiHJ0ysuB8BIBQV0JTybkz6EmJK47w2r+Fna0mNR6ZYRz0gYc3k9CyyD5xiUoIbF0W8XM9yugJTw
-	wrX+q7UMSKYl8BDld8YljDecpwSf2JK3tLQ+YJLRNDfc4Ngs6+XgLp4LRGakyPY/G4mCtZIuilMMk
-	HFERlREOSmEzMivjqsvKJv3Q9j0Y0SjwLzGlDqOs6yBn7DhgEk8Vva25tN2Tn8RHr4H7VjXONedcP
-	l0wERzlSVqSTkoZSucqgaUIeKmB4ix1tV0rycYFEebHERXiq7cgwXzH+HP8MTnj0sTtJZKDb1DbAF
-	p4QDCuwOmJwfIrrx4tzQ==;
+	List-Owner; bh=JYXFQWe9Gb4jF2aJtnywIP3GI4JZKbM7z9Jox5T3KSg=; b=JXV2h/r5bjyLv1
+	yjP1gEXB7cV6rJwItv21i6xREF+ZvCPivwGbV5Eyz0VwOJPlGChN1TnzuR42CJvkrkS26H+JVUWxC
+	EMDL9dypmE9hH+a69p+fOxUX3m8Aj+Bo3QG6O3/TWhOH8/c4P/4ttPOLzs9Fi38VFOp4cMf41Ujp3
+	ErRtW+IYAzjqCtrZLzLICfVwjA+ItOOTCPEp/BXiUw4fgtA9iumpPle7gh9ICZrPeZ4S/IF2KBC5C
+	j9DIHW1kHULhgCSm00NXedL/n/6KZ2x3llkWVbET6fQnSexPatdF1lP0/ki2LZwGVKXd3VT/FtCz4
+	D39U0T8HHiD+JsTd8RaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLrES-0002lg-W9; Sat, 19 Oct 2019 16:05:33 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1iLroW-00052g-DB; Sat, 19 Oct 2019 16:42:48 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLrEK-0002kW-B3
- for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 16:05:26 +0000
-Received: by mail-pl1-x644.google.com with SMTP id d22so4374438pls.0
+ id 1iLroM-000529-5K
+ for linux-arm-kernel@lists.infradead.org; Sat, 19 Oct 2019 16:42:39 +0000
+Received: by mail-wr1-x444.google.com with SMTP id t16so4207754wrr.1
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 19 Oct 2019 09:05:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=if4J4OgwfiN0nuHNDveKFrieOk+JvNfoIIbUEv3+cXc=;
- b=xldzWlYehnsHSzax+Grwy/OCfGyxfdF8CbYr7b5ajVBIXZjHn6/qNlENK/bDIMTjOv
- cbURxz6Jm1NBffNfDppnKGHp+ZYngR70NwwOXubKE028F4xXO+Yl76sPnermpnzdFFzc
- VAixnrTLSu+hOsxu26ni+2ZUnna9z1JbPN1jCb/0i6C/kS835njSSP2H92Z7qewxkOre
- mJB2vZ8lzOxEz/5t6fLjK8z98+1taapj+2e+z8+sLIYw+/VxQiu6Za/Z9wOXLbQsLblp
- gWnybt9VK1UdBx3eHz7x0iV0qsEhsFN2pU/pys2rACoNFcT8MluntRujrQjYkDIISG25
- i3yQ==
+ Sat, 19 Oct 2019 09:42:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=0bulbVbLFGY/pgLXwzKHTMch+8Jp9lMq9IfLMGu0aYU=;
+ b=HgIyqCuUO+e+giNE3pXqdKKKNkzDBd/g7tALz2r5hkQthl3/8yUK+5arjmMrt0O7nR
+ koMmynGdv1ZbjNfbEVxCr7dngv4FM5oaZ+hgqvVReIcaoMKpfMly6lBltbyE1kQtgYoF
+ XY5hDpI0yXdzWh3LM+xXCymu6CMemw+vwM+slnxnoeNW340l94hK9kFbdBo80TS8bQkR
+ aBWxDWy7ANe+niAEN/yPp+gxgHyyXxtTeaKcicBuhuz87s/NiSqS9cXV3xptQZ5RgRgd
+ BI0B7i9xUUiowVJCJtVphjcGoje5iyciLfiUFPRH8rZaVSgcTX8eoMJwfMYaKBAykGLI
+ LpiQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=if4J4OgwfiN0nuHNDveKFrieOk+JvNfoIIbUEv3+cXc=;
- b=o8OUTQP8idZt5JaJvq34qKtQNVd9tK0AusBS5zYfcwzZcR9f00NWpsCUZvb7mrgl+T
- 8J6dTk4Kp3oX4PvQsT5WNLVhi926raGkZboGbKWZdllg+JcyY/kzaMcl7ZejwSCw8Gee
- oMFw5MP3t8EFgSbh+w22AXkykLihm/3l0fNmzzhEs3tx/y7xdHye5xydVOxvqMnPmoYh
- DUHblVsUlJmuNiNCQf8HwLr9thRIF14+t66IsLx2E3NkVOaNZ1BHUc89M/qOwgmFqJa/
- Cbq4QwRwjT1ZPr7tc/P/2PGMWYSYFrKm1zBBo9mYk2tHIVcwCKVYQVicHhOo+BwlNaF7
- xgxw==
-X-Gm-Message-State: APjAAAVFk6bbwZhF89bF1HrpCawQVQ9rIVHAfavsb5Uu14CzLNXzIo9t
- Aa+vsX+3dCPV/XK3VmfH+F3V
-X-Google-Smtp-Source: APXvYqzxTyoVM/nCPhOi4590sHGLCt9a7zfWKZa1YFUHhDMOloiiBNQLsoPqoinoRGsW+JQAVUD7gg==
-X-Received: by 2002:a17:902:aa41:: with SMTP id
- c1mr10283530plr.153.1571501119997; 
- Sat, 19 Oct 2019 09:05:19 -0700 (PDT)
-Received: from Mani-XPS-13-9360 ([2409:4072:1f:c4d3:81c6:faf1:b3a2:6750])
- by smtp.gmail.com with ESMTPSA id m19sm8557620pjl.28.2019.10.19.09.05.16
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sat, 19 Oct 2019 09:05:19 -0700 (PDT)
-Date: Sat, 19 Oct 2019 21:35:13 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: [PATCH v2 3/4] gpio: Add RDA Micro GPIO controller support
-Message-ID: <20191019160513.GA17631@Mani-XPS-13-9360>
-References: <20191015173026.9962-1-manivannan.sadhasivam@linaro.org>
- <20191015173026.9962-4-manivannan.sadhasivam@linaro.org>
- <CACRpkdZRY138RAf8N2xGam89r66ik2vW44OZx0bDcCt4P2GBLA@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CACRpkdZRY138RAf8N2xGam89r66ik2vW44OZx0bDcCt4P2GBLA@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=0bulbVbLFGY/pgLXwzKHTMch+8Jp9lMq9IfLMGu0aYU=;
+ b=na9Q9Y2iRTBCKwViULOAT9m6+7p3RbCZtOwmvBhnkmg2MoFQmKocrU5U/UZeX21Gxs
+ v1aAVrXFUZWjhbihxm+HVV/2ukJZ2fjzGo/inI+nse2v8IHEAIe5CaP8UJpB4sYkrCfu
+ qGw5diLnz8weQoiXatV+tXBvei0PGAL5zdS5Ro/OBy57iiEWciBAnqV8x3KsPf5P02kb
+ zsG72o2zzBgv/YG+HFV9yVF7OHyED4n47oNRg1e0XEe1OyuiWPwsGdLtiTB0i4W3qkZE
+ 1T7D8PF9adg6S8dL4piggrUSRPL9zcX3wz6QTqyaHWudRRJiRfd9z15u6VIqqLCW5Mde
+ zsAg==
+X-Gm-Message-State: APjAAAUPLu04MH8F02k+IqcRFMo1q7hquEJB6cFrlmnm8e6D1T3RI7bk
+ fyMnHFFPBE6kMeM2AJ+x2wEm6be9
+X-Google-Smtp-Source: APXvYqyM4l9k7cGD3tumxE88d3itrboRb1M11XuIyWc1ueSHSjk92dpIJ8FfpUbXhENTni2Dg7NB2A==
+X-Received: by 2002:adf:8567:: with SMTP id 94mr9317417wrh.65.1571503356410;
+ Sat, 19 Oct 2019 09:42:36 -0700 (PDT)
+Received: from giga-mm ([62.68.26.146])
+ by smtp.gmail.com with ESMTPSA id 143sm15047896wmb.33.2019.10.19.09.42.34
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 19 Oct 2019 09:42:35 -0700 (PDT)
+Date: Sat, 19 Oct 2019 18:42:34 +0200
+From: Alexander Sverdlin <alexander.sverdlin@gmail.com>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH 2/6] ARM: ep93xx: enable SPARSE_IRQ
+Message-Id: <20191019184234.4cdb37a735fe632528880d76@gmail.com>
+In-Reply-To: <20191018163047.1284736-2-arnd@arndb.de>
+References: <20191018163047.1284736-1-arnd@arndb.de>
+ <20191018163047.1284736-2-arnd@arndb.de>
+X-Mailer: Sylpheed 3.7.0 (GTK+ 2.24.32; x86_64-unknown-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191019_090524_415050_60AC1449 
-X-CRM114-Status: GOOD (  34.40  )
+X-CRM114-CacheID: sfid-20191019_094238_228462_AD1ED41C 
+X-CRM114-Status: GOOD (  14.96  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (alexander.sverdlin[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -100,210 +99,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- linux-unisoc@lists.infradead.org, Orson Zhai <orsonzhai@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Hubert Feurstein <hubert.feurstein@contec.at>,
+ Hartley Sweeten <hsweeten@visionengravers.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Lukasz Majewski <lukma@denx.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Linus,
+Hello Arnd,
 
-Thanks for the review! Please see comments inline.
+On Fri, 18 Oct 2019 18:29:15 +0200
+Arnd Bergmann <arnd@arndb.de> wrote:
 
-On Wed, Oct 16, 2019 at 02:41:32PM +0200, Linus Walleij wrote:
-> Hi Manivannan!
+> Without CONFIG_SPARSE_IRQ, we rely on mach/irqs.h to define NR_IRQS
+> globally. Do the minimal conversion by setting .nr_irqs in each
+> machine descriptor.
 > 
-> Thanks for your patch!
-> 
-> On Tue, Oct 15, 2019 at 7:30 PM Manivannan Sadhasivam
-> <manivannan.sadhasivam@linaro.org> wrote:
-> 
-> > Add support for GPIO controller from RDA Micro.
-> >
-> > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> 
-> Please use a little bit more verbose commit message, who
-> made this hardware and what is it for. If you know!
-> 
+> Only the vision_ep9307 machine has extra IRQs for GPIOs, so make
+> .nr_irqs the original value there, while using the plain NR_EP93XX_IRQS
+> everywhere else.
 
-okay.
+This patch causes multiple problems on EDB9302:
 
-> > +config GPIO_RDA
-> > +       bool "RDA Micro GPIO controller support"
-> > +       depends on ARCH_RDA || COMPILE_TEST
-> > +       depends on OF_GPIO
-> > +       select GPIOLIB_IRQCHIP
-> 
-> select GPIO_GENERIC
-> 
+1. WARNINGs during gpiochip registration, for instance:
 
-hmm.. I don't think this driver can use it. Please see the justification
-below.
+------------[ cut here ]------------
+WARNING: CPU: 0 PID: 1 at kernel/irq/chip.c:1013 __irq_do_set_handler+0x94/0x188
+CPU: 0 PID: 1 Comm: swapper Tainted: G        W         5.4.0-rc3 #1
+Hardware name: Cirrus Logic EDB9302 Evaluation Board
+[<c000e878>] (unwind_backtrace) from [<c000d574>] (show_stack+0x10/0x18)
+[<c000d574>] (show_stack) from [<c0335e28>] (dump_stack+0x18/0x24)
+[<c0335e28>] (dump_stack) from [<c001cf1c>] (__warn+0xa4/0xc8)
+[<c001cf1c>] (__warn) from [<c001cfe8>] (warn_slowpath_fmt+0xa8/0xb8)
+[<c001cfe8>] (warn_slowpath_fmt) from [<c0055668>] (__irq_do_set_handler+0x94/0x188)
+[<c0055668>] (__irq_do_set_handler) from [<c005647c>] (irq_set_chained_handler_and_data+0x48/0x7c)
+[<c005647c>] (irq_set_chained_handler_and_data) from [<c01ab440>] (gpiochip_add_data_with_key+0x6d4/0xabc)
+[<c01ab440>] (gpiochip_add_data_with_key) from [<c01ab868>] (devm_gpiochip_add_data+0x40/0x88)
+[<c01ab868>] (devm_gpiochip_add_data) from [<c01ae554>] (ep93xx_gpio_probe+0x1ac/0x280)
+[<c01ae554>] (ep93xx_gpio_probe) from [<c01e0f34>] (platform_drv_probe+0x28/0x6c)
+[<c01e0f34>] (platform_drv_probe) from [<c01df588>] (really_probe+0x1c8/0x340)
+[<c01df588>] (really_probe) from [<c01ddfe4>] (bus_for_each_drv+0x58/0xc0)
+[<c01ddfe4>] (bus_for_each_drv) from [<c01df904>] (__device_attach+0xb4/0x104)
+[<c01df904>] (__device_attach) from [<c01de1d4>] (bus_probe_device+0x8c/0x94)
+[<c01de1d4>] (bus_probe_device) from [<c01db5e4>] (device_add+0x3d0/0x59c)
+[<c01db5e4>] (device_add) from [<c01e16d8>] (platform_device_add+0x100/0x20c)
+[<c01e16d8>] (platform_device_add) from [<c03f50b0>] (ep93xx_init_devices+0x16c/0x20c)
+[<c03f50b0>] (ep93xx_init_devices) from [<c03f53a0>] (edb93xx_init_machine+0xc/0x84)
+[<c03f53a0>] (edb93xx_init_machine) from [<c03f1984>] (customize_machine+0x20/0x38)
+[<c03f1984>] (customize_machine) from [<c03f0e54>] (do_one_initcall+0x78/0x1a0)
+[<c03f0e54>] (do_one_initcall) from [<c03f1080>] (kernel_init_freeable+0x104/0x1b8)
+[<c03f1080>] (kernel_init_freeable) from [<c034c358>] (kernel_init+0x8/0xf8)
+[<c034c358>] (kernel_init) from [<c00090d0>] (ret_from_fork+0x14/0x24)
+Exception stack(0xc4433fb0 to 0xc4433ff8)
+3fa0:                                     00000000 00000000 00000000 00000000
+3fc0: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+3fe0: 00000000 00000000 00000000 00000000 00000013 00000000
+---[ end trace 8f9e35e2d6224882 ]---
 
-> > +#include <linux/bitops.h>
-> 
-> Do you need this or just <linux/bits.h>?
-> 
+2. Broken sound (I2S), this looks like below in the log:
 
-I need this for for_each_set_bit() macro.
+ep93xx-i2s ep93xx-i2s: Missing dma channel for stream: 0
+ CS4271: ASoC: pcm constructor failed: -22
+edb93xx-audio edb93xx-audio: ASoC: can't create pcm CS4271 HiFi :-22
 
-> > +#define RDA_GPIO_OEN_VAL               0x00
-> > +#define RDA_GPIO_OEN_SET_OUT           0x04
-> > +#define RDA_GPIO_OEN_SET_IN            0x08
-> > +#define RDA_GPIO_VAL                   0x0c
-> > +#define RDA_GPIO_SET                   0x10
-> > +#define RDA_GPIO_CLR                   0x14
-> > +#define RDA_GPIO_INT_CTRL_SET          0x18
-> > +#define RDA_GPIO_INT_CTRL_CLR          0x1c
-> > +#define RDA_GPIO_INT_CLR               0x20
-> > +#define RDA_GPIO_INT_STATUS            0x24
-> 
-> This is a very clear cut MMIO GPIO so use GPIO_GENERIC with this
-> hardware.
-> 
+And /proc/interrupts has two entries less. Without patch:
 
-So, I'd be happy to use gpio-mmio driver if applicable. In fact, I looked into
-that while starting to write this driver since most of the `set*` APIs are
-like dups. But one thing which blocked me was, `gpio_get` API.
+# cat /proc/interrupts
+           CPU0       
+  7:          0       VIC   7 Edge      i2s-pcm-out
+  8:          0       VIC   8 Edge      i2s-pcm-in
+ 39:          2       VIC   7 Edge      eth0
+ 51:       7532       VIC  19 Edge      ep93xx timer
+ 52:        144       VIC  20 Edge      uart-pl010
+ 53:          4       VIC  21 Edge      ep93xx-spi
+ 60:          0       VIC  28 Edge      ep93xx-i2s
+Err:          0
 
-As you can see in this driver, there are 2 separate registers needs to be
-read in order to get the value. RDA_GPIO_VAL needs to be read when the pin
-is in input state and RDA_GPIO_SET needs to be read when the pin is in output
-state.
+With patch:
 
-The MMIO driver relies on a single `dat` register to read the GPIO state and
-this won't fit for this driver and hence my justification for not using it.
+# cat /proc/interrupts 
+           CPU0       
+ 39:        146       VIC   7 Edge      eth0
+ 51:     162161       VIC  19 Edge      ep93xx timer
+ 52:        139       VIC  20 Edge      uart-pl010
+ 53:          4       VIC  21 Edge      ep93xx-spi
+ 60:          0       VIC  28 Edge      ep93xx-i2s
+Err:          0
 
-> > +static void rda_gpio_update(struct gpio_chip *chip, unsigned int offset,
-> > +                           u16 reg, int val)
+I will try to look into I2S problem...
+ 
+> ---
+> It's been a while since I did this, no idea what else is needed
+> here or if this is correct at all.
 > 
-> Maybe keep this if it saves code from the IRQ callbacks,
-> inline it to register writes if it doesn't get called much.
-> 
+> Cc: Hartley Sweeten <hsweeten@visionengravers.com>
+> Cc: Alexander Sverdlin <alexander.sverdlin@gmail.com>
+> Cc: Hubert Feurstein <hubert.feurstein@contec.at>
+> Cc: Lukasz Majewski <lukma@denx.de>
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> ---
+>  arch/arm/Kconfig                               | 2 ++
+>  arch/arm/mach-ep93xx/adssphere.c               | 1 +
+>  arch/arm/mach-ep93xx/edb93xx.c                 | 8 ++++++++
+>  arch/arm/mach-ep93xx/gesbc9312.c               | 1 +
+>  arch/arm/mach-ep93xx/{include/mach => }/irqs.h | 7 -------
+>  arch/arm/mach-ep93xx/micro9.c                  | 4 ++++
+>  arch/arm/mach-ep93xx/simone.c                  | 1 +
+>  arch/arm/mach-ep93xx/snappercl15.c             | 1 +
+>  arch/arm/mach-ep93xx/soc.h                     | 1 +
+>  arch/arm/mach-ep93xx/ts72xx.c                  | 3 ++-
+>  arch/arm/mach-ep93xx/vision_ep9307.c           | 1 +
+>  11 files changed, 22 insertions(+), 8 deletions(-)
+>  rename arch/arm/mach-ep93xx/{include/mach => }/irqs.h (94%)
 
-It is being called from multiple places, so I'd like to keep it as a normal
-function.
-
-> > +static int rda_gpio_direction_input(struct gpio_chip *chip, unsigned int offset)
-> > +static int rda_gpio_direction_output(struct gpio_chip *chip,
-> > +                                    unsigned int offset, int value)
-> > +static int rda_gpio_get(struct gpio_chip *chip, unsigned int offset)
-> > +static void rda_gpio_set(struct gpio_chip *chip, unsigned int offset, int value)
-> 
-> This can all be replaces by select GPIO_GENERIC and passing
-> the right offsets into bgpio_init(). Look at for example
-> gpio-ftgpio010.c and the documentation for bgpio_init()
-> in gpio-mmio.c for help.
-> 
-> This will also implement get/set_multiple for you for
-> free!
-> 
-> > +static void rda_gpio_irq_mask(struct irq_data *data)
-> > +static void rda_gpio_irq_ack(struct irq_data *data)
-> 
-> Looks good
-> 
-> > +static int rda_gpio_set_irq(struct gpio_chip *chip, u32 offset,
-> > +                           unsigned int flow_type)
-> 
-> Maybe _setup_irq()? Not sure, just that the name doesn't
-> obviously imply how it is used as it is called from two
-> places.
-> 
-
-Well, this routine sets the irq_type. But it has multiple usecase.
-Like, it is being used to unmask as irq and also to set irq type.
-So to be in a equillibrium state, I went for rda_gpio_set_irq().
-
-> The rest of the IRQ code looks good!
-> 
-> > +static int rda_gpio_probe(struct platform_device *pdev)
-> > +{
-> > +       struct device_node *np = pdev->dev.of_node;
-> > +       struct gpio_irq_chip *irq_chip;
-> 
-> Since irq_chip is the name of a struct in the kernel I usually
-> just call this "girq" as in "GPIO irq chip".
-> 
-
-Ah, a name change again... will do ;-)
-
-> > +       struct rda_gpio *rda_gpio;
-> > +       u32 ngpios;
-> > +       int ret;
-> 
-> Create a struct device *dev = &pdev->dev; helper variable
-> to make the following code easier to read. (The pointer
-> &pdev->dev is used in many places...)
-> 
-
-okay.
-
-> > +       /*
-> > +        * Not all ports have interrupt capability. For instance, on
-> > +        * RDA8810PL, GPIOC doesn't support interrupt. So we must handle
-> > +        * those also.
-> > +        */
-> > +       rda_gpio->irq = platform_get_irq(pdev, 0);
-> > +
-> > +       rda_gpio->base = devm_platform_ioremap_resource(pdev, 0);
-> > +       if (IS_ERR(rda_gpio->base))
-> > +               return PTR_ERR(rda_gpio->base);
-> > +
-> > +       spin_lock_init(&rda_gpio->lock);
-> > +
-> > +       rda_gpio->chip.label = dev_name(&pdev->dev);
-> > +       rda_gpio->chip.ngpio = ngpios;
-> > +       rda_gpio->chip.base = -1;
-> > +       rda_gpio->chip.parent = &pdev->dev;
-> > +       rda_gpio->chip.of_node = np;
-> > +       rda_gpio->chip.get = rda_gpio_get;
-> > +       rda_gpio->chip.set = rda_gpio_set;
-> > +       rda_gpio->chip.direction_input = rda_gpio_direction_input;
-> > +       rda_gpio->chip.direction_output = rda_gpio_direction_output;
-> > +
-> > +       if (rda_gpio->irq >= 0) {
-> > +               rda_gpio->irq_chip.name = "rda-gpio",
-> > +               rda_gpio->irq_chip.irq_ack = rda_gpio_irq_ack,
-> > +               rda_gpio->irq_chip.irq_mask = rda_gpio_irq_mask,
-> > +               rda_gpio->irq_chip.irq_unmask = rda_gpio_irq_unmask,
-> > +               rda_gpio->irq_chip.irq_set_type = rda_gpio_irq_set_type,
-> > +               rda_gpio->irq_chip.flags = IRQCHIP_SKIP_SET_WAKE,
-> > +
-> > +               irq_chip = &rda_gpio->chip.irq;
-> > +               irq_chip->chip = &rda_gpio->irq_chip;
-> > +               irq_chip->handler = handle_bad_irq;
-> > +               irq_chip->default_type = IRQ_TYPE_NONE;
-> > +               irq_chip->parent_handler = rda_gpio_irq_handler;
-> > +               irq_chip->parent_handler_data = rda_gpio;
-> > +               irq_chip->num_parents = 1;
-> > +               irq_chip->parents = &rda_gpio->irq;
-> 
-> That works but ... please devm_kzalloc() like the other drivers
-> do:
-> 
-> girq->parents = devm_kcalloc(dev, 1, sizeof(*girq->parents),
->                                      GFP_KERNEL);
->         if (!girq->parents) {
->                 ret = -ENOMEM;
-> (...)
-> 
-> Unless you have a real good reason to optimize it. I just
-> want it to follow the pattern since I want to minimize
-> cognitive stress for the maintainers. (Me.)
-> 
-
-no issues for me, will do.
-
-Thanks,
-Mani
-
-> Yours,
-> Linus Walleij
+-- 
+Alexander Sverdlin.
 
 _______________________________________________
 linux-arm-kernel mailing list
