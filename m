@@ -2,83 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92E43DDEE5
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 20 Oct 2019 16:36:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05664DDEEB
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 20 Oct 2019 16:42:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Sp4PXMs7cvLZdUhtNR2Ovuwfvm6htV1qH45J3XURmOs=; b=GmtgCgWNZkYvw5
-	vgCMy09b7SfSzdWYbPqT0tR8nEOzUEFelnQmAkc1H5W8wt4hqVFJwffHyvatxm+SKvCGg04xa79Kl
-	nMugN502uCRT9JxRtiRykNgJt7LwJaFgF+CNQpAtb9tEneMvwiDOiLDXwhdeimjvGwiEKc/C8pFe3
-	Pu2JWsE8+xNq18p9yuJY7kS/UKrLDt7iBJrwR4BNaq0kzyfEoLlNsJ8H2xOQVjEm8BD8gIcCAWZ1G
-	L1GTz5ZeZNYrqo+U5jAI/g+zQ6sZ5J8g1CxnyECMAB93hLxGWF72aR6XghogKIWxpwEMNySfF++Fq
-	UaNwuRvNXwI9Kh0cQmXQ==;
+	List-Owner; bh=GjbQQ9ahIfq/B9VC2Z2wkhuEGdkNqy5t/DRKXuHW7QM=; b=Ye4KTJ58/aQcnc
+	HBxXIujM5M9V4bZ4VKiNhneWm/AIdA7TM/mzIcNmZpifQRxvVwWtHoxUw9o5Er3BmEmq1APIreJBR
+	PzOCztrb9u7XwTryibSt4NBsWzXFROWiTBTGmDhWLrS7oPpO2ibAYXWr7qb1Z8PQOZguXkHaw851d
+	BFxr8f73fwpLiweSkD3rwroOwN0vs6QrkcJLUJYY+HRcOKK56K318GqsQdC3q1mi4Adk8YE4jSm6A
+	2HY18HxjD2APzuvpaD6D/rrFfTga3dU/i0VYB4eE57n3N6lpplkeGM6cU0pFTumM3zNSPh9OLAi1R
+	L99fHiAzenFuxgUgvtcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMCJV-0005Bb-F5; Sun, 20 Oct 2019 14:36:09 +0000
-Received: from mail-eopbgr60072.outbound.protection.outlook.com ([40.107.6.72]
- helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+	id 1iMCP8-0004tO-Gc; Sun, 20 Oct 2019 14:41:58 +0000
+Received: from mail-eopbgr150042.outbound.protection.outlook.com
+ ([40.107.15.42] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMCJD-0004fJ-7r
- for linux-arm-kernel@lists.infradead.org; Sun, 20 Oct 2019 14:35:53 +0000
+ id 1iMCOq-0004QB-TI
+ for linux-arm-kernel@lists.infradead.org; Sun, 20 Oct 2019 14:41:42 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=a/NRTe9QbYqtq+8ebXEIemLMFdeiJtPCKTuuFGQvaF3AO6NTi5T1AOUDpgeoIMsgpBXaWCwO2P0P943WvK6XJpkAGebl5dO0K9mRn4M6Ig4wWrCklnfBIAvE7HhDcjouZcPXww6Pwj5tcwoLnVhh2+phuvd+SIQYh59Q2xbxq18iyb+HHBTVBrAMrq7Fu1r9K+x3m/qcy9CTBowvJA6y4MGx7R1Qg6IvBP5TP9blXGPLxL7nhbetTw4cjPaWQUwaNoUSUqHaTmwE4C2zlnUJzKjICcW6za6oFiLNoz4dORkEakyeUFdsyTDSdUcacWPNKzi6NeYxociFeVM/u2x8xQ==
+ b=MxUuiKzxv4E0SaQ+cyPx8cEYgkHZoPuzphnBGd0ng1wMVP1kLV9QS0N/11KEr1QE37N/A0B5C/BFmqIvZJPxAyj596esfLBL+RyOXEb12tW9QEBmmQoFW5VukfMScBe9qvU0R+BrvyYgHVNmx0gxn5umgnMHrTPL2Tmwmn5yHgV7Kuu2xLvuDJrTAL49wE63Z6JrHyDc00qBU8fMA6lwj2VILOGb4Tq8UdVXLnvkEAqKTLjBgmFNRHsahfpa2ToDouDU8hFFa73yYlOPHi9KllCh+oC0dKoQBV3cGlc0YEscZW5Z/dlXBVzpCNe7//0kMrOFdcWyalwUgmLt6TFEsg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ZunBzdSgqBn83vfFWhTnPpKuEPQF6jQl+q0Vn5Js/uo=;
- b=b/cmwZ1z+Wl6eNgBhv5m+bZ+XpztWFGocXSDD6BKhex0v0lp6IgHg+3wcw1SHvy4T95vdikx2YzLCvP/4McHuZ1Vl4JPcZ+5rSjGuHxoBtHyZUmLXHWCfBua7watEoJzThfdQB+j2T0AJX0eD/6cB3eakONDMrLpamt4hZYq3RH28OZD3rrRiaiFqm52+r1WE1oTlZYQtloUJOUQ3gvHOk5SWfFaUe+ffq26P1hUafD587Igsg6pdpK91VsBx+Qcpygvy//KeTsjdDcxebgYsLILi/gRr+PH020Seo30KSmTvLmpelWtHcE3smPUD8dbOGdLGfekqPsB0l33lT0vOQ==
+ bh=7qhDzeIgKgdCBzWf+SP0Y2TcJVhah/h+4Ks8vmqjX4s=;
+ b=RlgomnBEdEkJ7FFwRdKUf47dom0KFR9Duovp+5D+/WHvIjPh44cKApqOyRkW7Q2GBOlN8/EHjMKfI2H6LS9sLN9Jk5CW4ULRAH8px18B6flQ5DrkM6JQScNmFGRD6DrEB6Bm5+uywOduzziPuSnna0UpZi+rvmtndp7K5+Ma5vglojBq1PRDfwK+2C4d9HNt5BjxD169iKlI6celmp4Fs0oR51h79GmNrIGYlTAFz+AQ6K7vFTocMQF0KRJDRk143Rtaac+L0OnN1qt74c+zyX+tH3MA0APqm7ZbPkLn4SA33HhPWE9BQG6ThpzO4o+wqtX1Ypsw/gQm+aHoXDh/hg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ZunBzdSgqBn83vfFWhTnPpKuEPQF6jQl+q0Vn5Js/uo=;
- b=S5KHl+cRFBuMCen/Hht51k5T7zqT5LbG5DzrqNGmEPjOaqGKkVvPYmWw+FAnuPor5Kot2HoB7Z7IDMzppZitPBTUK6v5D99wWpBsaBchObAilvZpRc8UZBEoysOWZYXmNWW0KJ3PzW5bAPfcdSMmIcNgMnHBAePgQkXxqcMvLkQ=
+ bh=7qhDzeIgKgdCBzWf+SP0Y2TcJVhah/h+4Ks8vmqjX4s=;
+ b=Ea0eO3cn/deP883FNipV71ysezUXTHiMDyTHV3904M6+m/FLYxoLgrgkG79RDgGLQPLKYUuaQE2mgmsXVMkX5qzx2MEb3IIfk8cPKhYOZIBMACVXtOM+gdU+m4Kvgsdt9DW1uQq1zicskotm4UeU6aDyVhZgXFq+RK4B/EyFAMw=
 Received: from AM0PR04MB5779.eurprd04.prod.outlook.com (20.178.202.151) by
  AM0PR04MB4644.eurprd04.prod.outlook.com (52.135.149.138) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2347.16; Sun, 20 Oct 2019 14:35:47 +0000
+ 15.20.2347.16; Sun, 20 Oct 2019 14:41:37 +0000
 Received: from AM0PR04MB5779.eurprd04.prod.outlook.com
  ([fe80::4122:fda5:e903:8c02]) by AM0PR04MB5779.eurprd04.prod.outlook.com
  ([fe80::4122:fda5:e903:8c02%3]) with mapi id 15.20.2347.028; Sun, 20 Oct 2019
- 14:35:47 +0000
+ 14:41:37 +0000
 From: Abel Vesa <abel.vesa@nxp.com>
-To: Anson Huang <anson.huang@nxp.com>
-Subject: Re: [PATCH 1/5] arm64: dts: imx8qxp: Move usdhc clocks assignment to
- board DT
-Thread-Topic: [PATCH 1/5] arm64: dts: imx8qxp: Move usdhc clocks assignment to
- board DT
-Thread-Index: AQHVg8fd9TcILJytHEmYMksBHN4gSadjn8CA
-Date: Sun, 20 Oct 2019 14:35:46 +0000
-Message-ID: <20191020143545.we56f4epnbgjr5lw@fsr-ub1664-175>
-References: <1571192067-19600-1-git-send-email-Anson.Huang@nxp.com>
-In-Reply-To: <1571192067-19600-1-git-send-email-Anson.Huang@nxp.com>
+To: Leonard Crestez <leonard.crestez@nxp.com>
+Subject: Re: [PATCH v3 0/3] clk: imx8m: Define gates for pll1/2 dividers
+Thread-Topic: [PATCH v3 0/3] clk: imx8m: Define gates for pll1/2 dividers
+Thread-Index: AQHVhBjm9h4luDsJQEWJmMzVqbMlUadjoMAA
+Date: Sun, 20 Oct 2019 14:41:37 +0000
+Message-ID: <20191020144136.7gavqzcrldwi2ff3@fsr-ub1664-175>
+References: <cover.1571226979.git.leonard.crestez@nxp.com>
+In-Reply-To: <cover.1571226979.git.leonard.crestez@nxp.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-clientproxiedby: AM6P192CA0073.EURP192.PROD.OUTLOOK.COM
- (2603:10a6:209:8d::14) To AM0PR04MB5779.eurprd04.prod.outlook.com
+x-clientproxiedby: AM7PR02CA0007.eurprd02.prod.outlook.com
+ (2603:10a6:20b:100::17) To AM0PR04MB5779.eurprd04.prod.outlook.com
  (2603:10a6:208:131::23)
 x-originating-ip: [89.37.124.34]
 authentication-results: spf=none (sender IP is )
  smtp.mailfrom=abel.vesa@nxp.com; 
 x-ms-exchange-messagesentrepresentingtype: 1
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 35bc6452-3df7-4ee2-39f1-08d7556acb9d
+x-ms-office365-filtering-correlation-id: caeb289b-6fd7-4f01-483f-08d7556b9c96
 x-ms-office365-filtering-ht: Tenant
-x-ms-traffictypediagnostic: AM0PR04MB4644:|AM0PR04MB4644:|AM0PR04MB4644:
-x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+x-ms-traffictypediagnostic: AM0PR04MB4644:|AM0PR04MB4644:
+x-ms-exchange-purlcount: 2
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB4644B26C226E1890CD2135CDF66E0@AM0PR04MB4644.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4502;
+x-microsoft-antispam-prvs: <AM0PR04MB4644927467EB596DA170D534F66E0@AM0PR04MB4644.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
 x-forefront-prvs: 0196A226D1
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(7916004)(4636009)(366004)(346002)(136003)(396003)(376002)(39860400002)(189003)(199004)(6246003)(25786009)(66946007)(6436002)(71200400001)(5660300002)(52116002)(76176011)(26005)(71190400001)(6862004)(6486002)(66476007)(66556008)(64756008)(66446008)(386003)(6506007)(53546011)(229853002)(6512007)(4326008)(9686003)(186003)(33716001)(66066001)(476003)(486006)(256004)(6636002)(2906002)(44832011)(54906003)(14444005)(14454004)(3846002)(6116002)(86362001)(102836004)(81156014)(81166006)(7736002)(11346002)(8676002)(446003)(305945005)(8936002)(99286004)(7416002)(478600001)(1076003)(316002)(32563001);
+ SFS:(10009020)(4636009)(7916004)(39860400002)(376002)(396003)(136003)(346002)(366004)(189003)(199004)(54906003)(14454004)(5024004)(256004)(486006)(6636002)(44832011)(2906002)(446003)(8676002)(305945005)(966005)(81166006)(81156014)(7736002)(11346002)(316002)(1076003)(478600001)(8936002)(99286004)(6116002)(3846002)(102836004)(86362001)(26005)(71190400001)(66446008)(64756008)(66556008)(66476007)(386003)(53546011)(6506007)(6486002)(6862004)(6436002)(66946007)(6246003)(25786009)(76176011)(5660300002)(71200400001)(52116002)(33716001)(66066001)(476003)(229853002)(6306002)(6512007)(186003)(9686003)(4326008)(32563001);
  DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4644;
  H:AM0PR04MB5779.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
@@ -86,27 +84,29 @@ received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: LN4tolFxqJRH8nh5vr8WB+TS2sD8bkkBeDOL4Cb1t0GiHDhnS+5GcKISAYn3N83hUbyR/MALaoBYshwRyUlVM59seDb+E4jcJR2BRZB4gSoxhBuD8YvhuJWJq9/32gknscFvRl612iB+Qz+4TS6aLvtSsPoyY8Wue+VeSlaRak1ZClJawfi0/VjF2CVGLIzOLrHHXeyxh0KJHN5dqmC9mryiMn6D6RFO6rHdOCyPgY37VtoBBuUAbJl1CSHKOC2CSvqF5mOTJHnCjCmu1PVbc4GhqNhAs0iMDJyVNaRk5zz0ikoQRDxRpI90alwe2yjexpP0TxjI66olTvRTJPXrRLIDsR4cJST1zoC8WRd5uDCtCTjy9ZgegVXfeaxsZxx/MlS99yYVOi+ycbgFhDVpgUBu4oVpyBBkpDvY1Nm7EA4=
-Content-ID: <DEBBB76B9937294C881230836D0D6976@eurprd04.prod.outlook.com>
+x-microsoft-antispam-message-info: Dehk5V2vDgRtfMREtuIdsMbT5Ue1L6HWiG4l55R2xijgCmEiBPKLWGQ9sO9ggoAiEDtGvF5b9PGuJf7+BdNa+yGijf1KjB4iAi5qKvnEX/SXg5B65OLMHx2SGvj0k17BflLAPdvZShpEdQ4nJDTlfJq2YNEp95V3/vdFxSr3Kcd3YQiJSKZuJv+dMMaSFWs+7ydQhWzcvHZFgU2aJFJsdI1UDyEub/i4tx3YMtt17uImJR5hn4rHCkRjnpcwwRsnTlStRTHLLjc8ISODlOK2fQ9LYEwpgQ3rvgnz7clMf1YxLuHFJbPaBWGtxsooS8wq1En3mKK+CSVcPyTz1KBUNX1jC6aHQ48auuOQOJH6+X90x1TMa+Za2fIH4migD75r/oxY27PZQYNgSRP4D4S4byH3sCBrue7y2OBk8N6/JzK8amjxfmCDG54lugYnQRXiPzDIzsiFMmXvHoiVJFz3UQ==
+Content-ID: <41E43CCBFEAFDC4DBB349E3F56F5310E@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 35bc6452-3df7-4ee2-39f1-08d7556acb9d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Oct 2019 14:35:46.9826 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: caeb289b-6fd7-4f01-483f-08d7556b9c96
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Oct 2019 14:41:37.4759 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: n7yG0oOLB3WuPSGrrzplBkEBZ4J03TgkvH3DDwgtxMjpY/9UwgaSQE2bRzPKArHpJU8yCrBvYLeMkJvCslnp1g==
+X-MS-Exchange-CrossTenant-userprincipalname: MvNPlJ9f8KNLXS18bTXq3HtJT/yLvfmJNiZUvhmrLCBAY95ELeKQME9X1uM3qIWElwwe1QA7mZrkRXg89PYo2A==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4644
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191020_073551_303439_AD793F74 
-X-CRM114-Status: GOOD (  13.08  )
+X-CRM114-CacheID: sfid-20191020_074140_966235_28788699 
+X-CRM114-Status: GOOD (  13.07  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.6.72 listed in list.dnswl.org]
+ no trust [40.107.15.42 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.15.42 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -127,131 +127,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "baruch@tkos.co.il" <baruch@tkos.co.il>,
- "dafna.hirschfeld@collabora.com" <dafna.hirschfeld@collabora.com>,
- Jacky Bai <ping.bai@nxp.com>, "ccaione@baylibre.com" <ccaione@baylibre.com>,
- "agx@sigxcpu.org" <agx@sigxcpu.org>, "angus@akkea.ca" <angus@akkea.ca>,
- Peng Fan <peng.fan@nxp.com>, Gary Bisson <gary.bisson@boundarydevices.com>,
- "pavel@ucw.cz" <pavel@ucw.cz>,
- "manivannan.sadhasivam@linaro.org" <manivannan.sadhasivam@linaro.org>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- Richard Hu <richard.hu@technexion.com>,
- "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
- "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
- "jon@solid-run.com" <jon@solid-run.com>, dl-linux-imx <linux-imx@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "andradanciu1997@gmail.com" <andradanciu1997@gmail.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- Troy Kisky <troy.kisky@boundarydevices.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Aisheng Dong <aisheng.dong@nxp.com>, Andy Duan <fugang.duan@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>, Jun Li <jun.li@nxp.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
+ Anson Huang <anson.huang@nxp.com>, Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19-10-16 10:14:23, Anson Huang wrote:
-> usdhc's clock rate is different according to different devices
-> connected, so clock rate assignment should be placed in board
-> DT according to different devices connected on each usdhc port.
+On 19-10-16 11:57:36, Leonard Crestez wrote:
+> The fixed dividers for sys_pll1 and sys_pll2 on imx8m each have a gate
+> attached but they're currently unused so they default to "always on".
 > 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> Add them to the clk tree for the sake of corectness. This could expose
+> bugs where parent clocks were not correctly enabled.
+> 
+> The new gates are added between the PLL and fixed dividers and new gates
+> are enumerated at the end in dt-bindings. This should ensure
+> compatibility, even though none of these fixed dividers are directly
+> referenced by peripherals anyway.
+> 
+> There are small differences on imx8mq because the PLL physical
+> implementation is also different.
+> 
+> Changes since v2:
+> * Rebased on top of next-20191015 which includes recent changes in
+> shawnguo/clk/imx, solving conflict with commit f0b1d7f2e7c2 ("clk:
+> imx8mq: Add VIDEO2_PLL clock")
+> Link to v2: https://patchwork.kernel.org/cover/11177851/
+> 
+> This was send with a different "email workaround", hopefully the patches
+> look correct on your send. If they don't please let me know and I'll
+> resend through another method
+> 
+> Changes since v1:
+> * Renumber 8mq 8mm clocks to avoid introducing gaps
+> * Improve imx8mq commit message
+> Link to v1: https://patchwork.kernel.org/cover/11141027/
+> 
 
-For the entire patchset:
+For the entire series:
 
 Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
 
-> ---
->  arch/arm64/boot/dts/freescale/imx8qxp-ai_ml.dts | 4 ++++
->  arch/arm64/boot/dts/freescale/imx8qxp-mek.dts   | 4 ++++
->  arch/arm64/boot/dts/freescale/imx8qxp.dtsi      | 6 ------
->  3 files changed, 8 insertions(+), 6 deletions(-)
+> Leonard Crestez (3):
+>   clk: imx8mq: Define gates for pll1/2 fixed dividers
+>   clk: imx8mm: Define gates for pll1/2 fixed dividers
+>   clk: imx8mn: Define gates for pll1/2 fixed dividers
 > 
-> diff --git a/arch/arm64/boot/dts/freescale/imx8qxp-ai_ml.dts b/arch/arm64/boot/dts/freescale/imx8qxp-ai_ml.dts
-> index 91eef97..a3f8cf1 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8qxp-ai_ml.dts
-> +++ b/arch/arm64/boot/dts/freescale/imx8qxp-ai_ml.dts
-> @@ -133,6 +133,8 @@
->  &usdhc1 {
->  	#address-cells = <1>;
->  	#size-cells = <0>;
-> +	assigned-clocks = <&clk IMX_CONN_SDHC0_CLK>;
-> +	assigned-clock-rates = <200000000>;
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_usdhc1>;
->  	bus-width = <4>;
-> @@ -149,6 +151,8 @@
->  
->  /* SD */
->  &usdhc2 {
-> +	assigned-clocks = <&clk IMX_CONN_SDHC1_CLK>;
-> +	assigned-clock-rates = <200000000>;
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_usdhc2>;
->  	bus-width = <4>;
-> diff --git a/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts b/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
-> index 88dd9132..d3d26cc 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
-> +++ b/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
-> @@ -137,6 +137,8 @@
->  };
->  
->  &usdhc1 {
-> +	assigned-clocks = <&clk IMX_CONN_SDHC0_CLK>;
-> +	assigned-clock-rates = <200000000>;
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_usdhc1>;
->  	bus-width = <8>;
-> @@ -147,6 +149,8 @@
->  };
->  
->  &usdhc2 {
-> +	assigned-clocks = <&clk IMX_CONN_SDHC1_CLK>;
-> +	assigned-clock-rates = <200000000>;
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_usdhc2>;
->  	bus-width = <4>;
-> diff --git a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-> index 2d69f1a..9646a41 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-> @@ -368,8 +368,6 @@
->  				 <&conn_lpcg IMX_CONN_LPCG_SDHC0_PER_CLK>,
->  				 <&conn_lpcg IMX_CONN_LPCG_SDHC0_HCLK>;
->  			clock-names = "ipg", "per", "ahb";
-> -			assigned-clocks = <&clk IMX_CONN_SDHC0_CLK>;
-> -			assigned-clock-rates = <200000000>;
->  			power-domains = <&pd IMX_SC_R_SDHC_0>;
->  			status = "disabled";
->  		};
-> @@ -383,8 +381,6 @@
->  				 <&conn_lpcg IMX_CONN_LPCG_SDHC1_PER_CLK>,
->  				 <&conn_lpcg IMX_CONN_LPCG_SDHC1_HCLK>;
->  			clock-names = "ipg", "per", "ahb";
-> -			assigned-clocks = <&clk IMX_CONN_SDHC1_CLK>;
-> -			assigned-clock-rates = <200000000>;
->  			power-domains = <&pd IMX_SC_R_SDHC_1>;
->  			fsl,tuning-start-tap = <20>;
->  			fsl,tuning-step= <2>;
-> @@ -400,8 +396,6 @@
->  				 <&conn_lpcg IMX_CONN_LPCG_SDHC2_PER_CLK>,
->  				 <&conn_lpcg IMX_CONN_LPCG_SDHC2_HCLK>;
->  			clock-names = "ipg", "per", "ahb";
-> -			assigned-clocks = <&clk IMX_CONN_SDHC2_CLK>;
-> -			assigned-clock-rates = <200000000>;
->  			power-domains = <&pd IMX_SC_R_SDHC_2>;
->  			status = "disabled";
->  		};
+>  drivers/clk/imx/clk-imx8mm.c             | 57 ++++++++++++++--------
+>  drivers/clk/imx/clk-imx8mn.c             | 57 ++++++++++++++--------
+>  drivers/clk/imx/clk-imx8mq.c             | 61 ++++++++++++++++--------
+>  include/dt-bindings/clock/imx8mm-clock.h | 19 +++++++-
+>  include/dt-bindings/clock/imx8mn-clock.h | 19 +++++++-
+>  include/dt-bindings/clock/imx8mq-clock.h | 22 ++++++++-
+>  6 files changed, 174 insertions(+), 61 deletions(-)
+> 
 > -- 
-> 2.7.4
+> 2.17.1
 > 
 
 _______________________________________________
