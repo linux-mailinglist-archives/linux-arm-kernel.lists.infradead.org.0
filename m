@@ -2,108 +2,109 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4C7CDDEDA
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 20 Oct 2019 16:25:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5456EDDEDD
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 20 Oct 2019 16:27:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uxFx9kEP05X4jZInYBURVITuhWNwZmaiLH4JJOT1y7o=; b=ld8vK6rYv8OxVu
-	Bh/8e9c5QRyeiTLEleVTwSdS6vbgFSzgT5bzJog+zcM/FvHPyIl5S0zcQl7jgtIYfdUN5tlYJnxdp
-	iqav8fH+yei3xvi7d7MI5fK6xN/8PpZ0YVHJX2VR/jiswnx6n6X1+ogMRfSbOGmps7HXMSCKaUfaN
-	Uh+zahg0EeKuWT4IHjvttcLc1a4s3Q++TwOwPi1S6aNQJguGroTxMtF74hXN+MQYqnImDGSy0rbpy
-	7Uf0+thpA4ifaux0DigYbbi/UIFuu7ZBtqFp1lueAfw6VtX0dXdBBh3mFMsNKb/W52RV84t2Y8+R1
-	/HU15oSHyyInpiP04Enw==;
+	List-Owner; bh=vo6ZnkInAQzNFERibc1dkNPfzuMWCNm10OBelnU2CvM=; b=nNzaXcfDFe0w2j
+	Lny8a//rgisweKidRjpD0w9CY2uPgr6ZEzjGy4xoH2le7lhCvtXqEt0fEEX0u2CEzJIZW3A9vQqAs
+	AP6EThJUcWoVHxc4AWyIRlMwW1BGKe47cvRQwsawlBBNOUSSwzTW+3xNiztdpAKXywfSVjcEnzUmW
+	50R6zpefnUR7zpbWaUJstbTkoTztLvIhxSPaSqhOW5x6hmE2qEBtDnHF5vhltzeRvUc7mNYmAHF1y
+	oXTpEPXgMTrnBb5ssOBh6ByvciqfASokUSQcSLw0wfBK/TOvI45K5oI4r3i1uaa4QMsRO40i/sSzJ
+	gd9KqhaW8QWYO9nD0W9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMC8h-0004jz-JM; Sun, 20 Oct 2019 14:24:59 +0000
-Received: from mail-eopbgr10081.outbound.protection.outlook.com ([40.107.1.81]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1iMCB1-0001PP-RR; Sun, 20 Oct 2019 14:27:23 +0000
+Received: from mail-eopbgr130052.outbound.protection.outlook.com
+ ([40.107.13.52] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMC8O-0003fv-7Y
- for linux-arm-kernel@lists.infradead.org; Sun, 20 Oct 2019 14:24:42 +0000
+ id 1iMCAg-0000nn-2z
+ for linux-arm-kernel@lists.infradead.org; Sun, 20 Oct 2019 14:27:03 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=TpVf9BTRjoskvxEc5j58WbltWIC+3s8qilONwx+hSBwzkdzUqsjFIWSqt+huept/5dbs5MKbsoIYgPSIVGUXYGcCT8koCEBCmlSU1AYXD8Q/X4I6jTLF33+oFJdrPZocGcNS9EdnIggrb9AZX3D9seH9DakT7l3uCIOmCpc8h8NQRrB1r/6ojPNQgBJ0jW8MpPq2SObWIefVVQBJsTif9ALitNArXE2N5a47UBdouBCpqOGfqpCqMPhm/YO9GJFEDxsP/OIO1N8MAhbWyeZSfsM6lSlnr94cnvYaD633IBAQSQempdLRJwMpRfStwFpDCu8xjMwzW+KVIqQHzlhJSQ==
+ b=fsd6NsvLD6CGSho2mnNn8iyu3cmIAiRFaTMQ5x/sR2u7utLj8tf6DRXWc0p2WRovc4c6SNP1p/lic3TwgwyWDlOjk6+3NgjXqfFB6CUwz25viu6OQtGiy7tANERLd8NM82hFTqInGowVW7Yy4aP0ZH+AiKKBgGfdAqRdbX1LUkH/SJAq4ZZak2opPnnTR+Tv7KDn9GKMYBy+fq9lp+1+ftRhiPvUlktogNmFyKQaAOxyrjhW2SzLrPgHXlXvoIUxh1ILbOL29zeGAvPfdm0pYrU0OtEqyZp+L2QsVdMXj7JXj/fMoN1fcfxYOF97qaLdqXjoXKDYOUNV0u+MasB6Ow==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=kxHkV/5Hlhgkc2c9pKbRzP3cQaWUTLXCFFifDeFuShA=;
- b=U9v8p1/MnJXh90s0gTg6LdsAu6Udc5bU8qnTmUQr2qXK9sZl6nPoX4i+UIOkW5t3dpIFtVxDvNTh/tsj7bsxnr3JWLzYNN6g/ZZnIX4lQSG080ebXxoawKsJOYmZEyLuRSbIHkgWvIkQPWTNFem9Ese6BRkIuIb37C8Uj7xqB3tkrLTFZVPxjin/Yh/MJYUqWVEkf0fkkG1ByHBKD3Ww/9kN4LVmRqa9EyJCChUzx+FrUQP+gqsM0fzP/4lSdhk5w8/ZxiLloOdKWHauevKK4O0sVuokiURx2sl7JEkAXezvCxX+KR1/8o7YtojxRdVAQrslYNccsNDL3YWMsVxBWQ==
+ bh=zpppsGF5y3vttei7K+RPR0+O0UdNzNFMrOtAji/nQ0k=;
+ b=TtLdPeI8Pz7lLXUqBQLyE6qYNblwyoESC9GELsO7EJ/W6KDRWj0dM/Dow0iNarF2weECQQiAcwyn3CSRm20qQNoDoaoE4dCwxvrCI1PT5UGRwSmxBSgBdGD1UURd3WPMzKDmQ1Daz3qJ4+f9k+DlLT4TBXoSTT2FoX9kOfdJCzM2kHCXJDXEamjaAdD1D6hbd45+yE6QLHk6zjDKZ5WFj1c571wPhAbHB8BFxv5FHS6qRWgC6lalGbdmoIRi68iV9Rr0yQzwjdKyhVBNmnEQ53nO2PXEUnyMrTYhJLO+U54DgpejFELNu6A80HxxWgNSx8azHk3SHRm5ejb3wuvk8w==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=kxHkV/5Hlhgkc2c9pKbRzP3cQaWUTLXCFFifDeFuShA=;
- b=SO7qycVikloy+yLOyGBRq73aGQKQfdZNOBueCIYS8f5riOnbW1QYa4DcmtM6oLwuc+u7wbY+wyOGDCcLdNysTE368x+Es0C5yHAzt6FG3dK+BtMTjDzzRlkv8OktIPCyOtGRXK591JYbfrbToObl547L9OSN7CsXyJvDpDmxvas=
+ bh=zpppsGF5y3vttei7K+RPR0+O0UdNzNFMrOtAji/nQ0k=;
+ b=ebD2POtxxI1Wpwj/nMWCKI1VGY5JlRRJ7nlkWgmGGbekhrEPtHzTEA6y93JwbBfy3pHD584Vs2Ev1cS1QM2o8CnPObH2VZOLRTH54vhJ9I/8JCmYufbkdL8F9WfpjpncV03UGsBoVF6M5H5kAVxdjOcL1gYey2+lkQnwUqGA5dc=
 Received: from AM0PR04MB5779.eurprd04.prod.outlook.com (20.178.202.151) by
- AM0PR04MB4017.eurprd04.prod.outlook.com (52.134.92.159) with Microsoft SMTP
+ AM0PR04MB4450.eurprd04.prod.outlook.com (52.135.147.33) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2347.18; Sun, 20 Oct 2019 14:24:32 +0000
+ 15.20.2347.16; Sun, 20 Oct 2019 14:26:58 +0000
 Received: from AM0PR04MB5779.eurprd04.prod.outlook.com
  ([fe80::4122:fda5:e903:8c02]) by AM0PR04MB5779.eurprd04.prod.outlook.com
  ([fe80::4122:fda5:e903:8c02%3]) with mapi id 15.20.2347.028; Sun, 20 Oct 2019
- 14:24:32 +0000
+ 14:26:58 +0000
 From: Abel Vesa <abel.vesa@nxp.com>
-To: Peng Fan <peng.fan@nxp.com>
-Subject: Re: [PATCH 1/3] clk: imx: imx8mm: mark sys_pll1/2 as fixed clock
-Thread-Topic: [PATCH 1/3] clk: imx: imx8mm: mark sys_pll1/2 as fixed clock
-Thread-Index: AQHVfogREXMSqkErfE+B9jsiOEYyjqdjpxsA
-Date: Sun, 20 Oct 2019 14:24:32 +0000
-Message-ID: <20191020141355.px6o3ifnjy45hli4@fsr-ub1664-175>
-References: <1570614940-17239-1-git-send-email-peng.fan@nxp.com>
-In-Reply-To: <1570614940-17239-1-git-send-email-peng.fan@nxp.com>
+To: Leonard Crestez <leonard.crestez@nxp.com>
+Subject: Re: [PATCH] soc: imx8mq: Read SOC revision from TF-A
+Thread-Topic: [PATCH] soc: imx8mq: Read SOC revision from TF-A
+Thread-Index: AQHVf34QXSNU+xh6v0qOtJN97CQGF6djpd0A
+Date: Sun, 20 Oct 2019 14:26:58 +0000
+Message-ID: <20191020142656.q2qajgknymu7tfjt@fsr-ub1664-175>
+References: <c4f9d238a08b5c8de6c14e86cfbe3fe8b8a55f4f.1570720648.git.leonard.crestez@nxp.com>
+In-Reply-To: <c4f9d238a08b5c8de6c14e86cfbe3fe8b8a55f4f.1570720648.git.leonard.crestez@nxp.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-clientproxiedby: AM5PR0601CA0028.eurprd06.prod.outlook.com
- (2603:10a6:203:68::14) To AM0PR04MB5779.eurprd04.prod.outlook.com
+x-clientproxiedby: AM5P190CA0019.EURP190.PROD.OUTLOOK.COM
+ (2603:10a6:206:14::32) To AM0PR04MB5779.eurprd04.prod.outlook.com
  (2603:10a6:208:131::23)
 x-originating-ip: [89.37.124.34]
 authentication-results: spf=none (sender IP is )
  smtp.mailfrom=abel.vesa@nxp.com; 
 x-ms-exchange-messagesentrepresentingtype: 1
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: ed3f786e-eec7-4cc2-16a9-08d755693974
+x-ms-office365-filtering-correlation-id: 4b2725c0-8882-476b-4fe8-08d755699083
 x-ms-office365-filtering-ht: Tenant
-x-ms-traffictypediagnostic: AM0PR04MB4017:|AM0PR04MB4017:
+x-ms-traffictypediagnostic: AM0PR04MB4450:|AM0PR04MB4450:
+x-ms-exchange-purlcount: 1
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB4017CF00E0B0A69D99814FD1F66E0@AM0PR04MB4017.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2399;
+x-microsoft-antispam-prvs: <AM0PR04MB445099B865908C678570BEDCF66E0@AM0PR04MB4450.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-forefront-prvs: 0196A226D1
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(7916004)(4636009)(366004)(376002)(136003)(346002)(39860400002)(396003)(199004)(189003)(3846002)(446003)(1076003)(316002)(11346002)(102836004)(44832011)(99286004)(66476007)(66556008)(64756008)(66446008)(476003)(53546011)(486006)(66946007)(71190400001)(71200400001)(54906003)(8676002)(76176011)(52116002)(8936002)(186003)(6506007)(26005)(5660300002)(81166006)(81156014)(66066001)(6116002)(25786009)(386003)(9686003)(6512007)(6636002)(86362001)(2906002)(4326008)(305945005)(7736002)(6246003)(6862004)(478600001)(229853002)(256004)(14454004)(33716001)(6486002)(6436002)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4017;
+ SFS:(10009020)(7916004)(4636009)(39860400002)(346002)(376002)(366004)(136003)(396003)(189003)(199004)(7736002)(305945005)(316002)(6636002)(33716001)(1076003)(5660300002)(8676002)(25786009)(11346002)(486006)(44832011)(446003)(476003)(66066001)(54906003)(8936002)(66476007)(66946007)(966005)(52116002)(66556008)(86362001)(2906002)(478600001)(256004)(3846002)(66446008)(64756008)(76176011)(99286004)(186003)(26005)(53546011)(102836004)(6506007)(386003)(6116002)(9686003)(6512007)(6306002)(4326008)(6436002)(229853002)(71200400001)(71190400001)(6486002)(6862004)(6246003)(14454004)(81156014)(45080400002)(81166006)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4450;
  H:AM0PR04MB5779.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
+ PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: kUG079oKzexEOP4s/pAI3GvP/q8LM+qBk8PsoeREX4K6661tRhT+b0ETz/xG0t5rCt/iZo3hFMzHmNDQogQaC/Y+ruUaoiamr//dhPhK2BmZen8Im+CsdH+QQNwv/o1KnDROsH5AYTvAfUiIHSvg7L1hFZf6+Yrv5BjL38h5zaAdBtxh3MzjQcufxZ7KDl+l6CI6uQgkIDEsy1bdz0m/HBbKIDKAHE2gJ2JbarllWVQos3krA6JTDOkNJBeT+J92tT0R3DtbjbKpwiIqZy6+moyWkwC2Zg1JkvGuftC2lmTlEvPYuMeHeKfbTnOE7iy3jvYIrCst/qXm53/WbhtN61V3nW70PLOLMKeXXbQMFc4gGB9iMfaMBUuIhJBRuzGDqTatUgw5ZscK17Wx2N2jYdfx57ESK+M8zgIQo+P0ijg=
-Content-ID: <1D7E3E0C12D6B14B809F90044067B5F6@eurprd04.prod.outlook.com>
+x-microsoft-antispam-message-info: qKkRlXcHTulOA/29nvARHFqf7XHGA6l1GLqtOkA4jTFhXozaWrBU0a5PzECQVHymuUJzPl6SANFAboMH0Vyhzm743ybYn24ZapFCH529WBM6OgeTPPIMlMOoMjE6lRNgIPgvQIMzbbG2q6/K37GNCK+aRFkbjRlntSxOYgsu7WMqnnn8HnopUreJ2jndq1e9VngHE1DvI0t3uLmUUpXdrysHJcuKFDTSIZdcCxEQOopwfD+56KlQhe9/7wSm8ZFUB4uzK3/fe12gDxEu5PtoyjaJY768jFXmQ2xT1zAZReg/v8zfJMydudUQEfwHUOlbqKQ1q9RhCjk5hdN73wBx8WVygZmh3VeFcOnTVF091YEvvp0gxgGaVKNUVA7V1M7Nkv7amHKW+8tQoqOzM0V1WPe3W2ZINO922j6D6vDK8pmbhoDgdpajsbpkGcMoXzBs4jQ2OpuYctY+/kkoa8YHBw==
+Content-ID: <E416603DB285354F882F12D81AA6518A@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ed3f786e-eec7-4cc2-16a9-08d755693974
-X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Oct 2019 14:24:32.1989 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4b2725c0-8882-476b-4fe8-08d755699083
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Oct 2019 14:26:58.2325 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: c0Z9ZqCowJLvO0x0rHUh8+usw5DYfnoktaswke1nF1vGAETP9FpaBB++nbZDAqcSsz9IT2fRzx3I/pSiK3C99w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4017
+X-MS-Exchange-CrossTenant-userprincipalname: j+tN52sPL6xMjcjBln90Ox+IcOquuvM7IS3F2YHFmbICQwu37YyX9fsJFzTvxg+qmMsZ09O1eclGU6BdLSp7rw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4450
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191020_072440_339096_D7F171AC 
-X-CRM114-Status: GOOD (  14.54  )
+X-CRM114-CacheID: sfid-20191020_072702_147403_96CFC747 
+X-CRM114-Status: GOOD (  19.21  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.1.81 listed in list.dnswl.org]
+ no trust [40.107.13.52 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -124,95 +125,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jacky Bai <ping.bai@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- "sboyd@kernel.org" <sboyd@kernel.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "mturquette@baylibre.com" <mturquette@baylibre.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
+ Anson Huang <anson.huang@nxp.com>,
+ =?iso-8859-1?Q?Guido_G=FCnther?= <agx@sigxcpu.org>,
  dl-linux-imx <linux-imx@nxp.com>,
  "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19-10-09 09:58:14, Peng Fan wrote:
-> From: Peng Fan <peng.fan@nxp.com>
+On 19-10-10 18:19:03, Leonard Crestez wrote:
+> SOC revision on older imx8mq is not available in fuses so on anything
+> other than B1 current code just reports "unknown".
 > 
-> According Architecture definition guide, SYS_PLL1 is fixed at
-> 800MHz, SYS_PLL2 is fixed at 1000MHz, so let's use imx_clk_fixed
-> to register the clocks and drop code that could change the rate.
+> TF-A already handles this by parsing the ROM and exposes the value
+> through a SMC call. Call this instead of reimplementing the workaround
+> in the kernel itself.
 > 
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
-
-For the entire series:
+> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 
 Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
 
-> ---
->  drivers/clk/imx/clk-imx8mm.c | 14 ++++----------
->  1 file changed, 4 insertions(+), 10 deletions(-)
 > 
-> diff --git a/drivers/clk/imx/clk-imx8mm.c b/drivers/clk/imx/clk-imx8mm.c
-> index 04876ec66127..ae7321ab7837 100644
-> --- a/drivers/clk/imx/clk-imx8mm.c
-> +++ b/drivers/clk/imx/clk-imx8mm.c
-> @@ -34,8 +34,6 @@ static const char *dram_pll_bypass_sels[] = {"dram_pll", "dram_pll_ref_sel", };
->  static const char *gpu_pll_bypass_sels[] = {"gpu_pll", "gpu_pll_ref_sel", };
->  static const char *vpu_pll_bypass_sels[] = {"vpu_pll", "vpu_pll_ref_sel", };
->  static const char *arm_pll_bypass_sels[] = {"arm_pll", "arm_pll_ref_sel", };
-> -static const char *sys_pll1_bypass_sels[] = {"sys_pll1", "sys_pll1_ref_sel", };
-> -static const char *sys_pll2_bypass_sels[] = {"sys_pll2", "sys_pll2_ref_sel", };
->  static const char *sys_pll3_bypass_sels[] = {"sys_pll3", "sys_pll3_ref_sel", };
+> ---
+> This was discussed previously and but nothing was merged. I'm having
+> trouble finding email archive links but here's one:
+> 
+> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpatchwork.kernel.org%2Fpatch%2F10935599%2F&amp;data=02%7C01%7Cabel.vesa%40nxp.com%7C71f4817b96664652f41d08d74d95327d%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637063175494533275&amp;sdata=QyDT2NyNYVIY0OCxxscL4RkW2iNUVOuRK5OeVOz%2BP%2Bc%3D&amp;reserved=0
+> 
+> NXP vendor tree always used TF-A for this and from previous discussion
+> it is reasonable to rely on firmware for workarounds.
+> 
+> The SMC call has been in TF-A upstream for a while.
+> 
+>  drivers/soc/imx/soc-imx8.c | 28 +++++++++++++++++++++++++---
+>  1 file changed, 25 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/soc/imx/soc-imx8.c b/drivers/soc/imx/soc-imx8.c
+> index b9831576dd25..20af442a247a 100644
+> --- a/drivers/soc/imx/soc-imx8.c
+> +++ b/drivers/soc/imx/soc-imx8.c
+> @@ -7,17 +7,20 @@
+>  #include <linux/io.h>
+>  #include <linux/of_address.h>
+>  #include <linux/slab.h>
+>  #include <linux/sys_soc.h>
+>  #include <linux/platform_device.h>
+> +#include <linux/arm-smccc.h>
+>  #include <linux/of.h>
 >  
->  /* CCM ROOT */
-> @@ -325,8 +323,6 @@ static int imx8mm_clocks_probe(struct platform_device *pdev)
->  	clks[IMX8MM_GPU_PLL_REF_SEL] = imx_clk_mux("gpu_pll_ref_sel", base + 0x64, 0, 2, pll_ref_sels, ARRAY_SIZE(pll_ref_sels));
->  	clks[IMX8MM_VPU_PLL_REF_SEL] = imx_clk_mux("vpu_pll_ref_sel", base + 0x74, 0, 2, pll_ref_sels, ARRAY_SIZE(pll_ref_sels));
->  	clks[IMX8MM_ARM_PLL_REF_SEL] = imx_clk_mux("arm_pll_ref_sel", base + 0x84, 0, 2, pll_ref_sels, ARRAY_SIZE(pll_ref_sels));
-> -	clks[IMX8MM_SYS_PLL1_REF_SEL] = imx_clk_mux("sys_pll1_ref_sel", base + 0x94, 0, 2, pll_ref_sels, ARRAY_SIZE(pll_ref_sels));
-> -	clks[IMX8MM_SYS_PLL2_REF_SEL] = imx_clk_mux("sys_pll2_ref_sel", base + 0x104, 0, 2, pll_ref_sels, ARRAY_SIZE(pll_ref_sels));
->  	clks[IMX8MM_SYS_PLL3_REF_SEL] = imx_clk_mux("sys_pll3_ref_sel", base + 0x114, 0, 2, pll_ref_sels, ARRAY_SIZE(pll_ref_sels));
+>  #define REV_B1				0x21
 >  
->  	clks[IMX8MM_AUDIO_PLL1] = imx_clk_pll14xx("audio_pll1", "audio_pll1_ref_sel", base, &imx_1443x_pll);
-> @@ -336,8 +332,8 @@ static int imx8mm_clocks_probe(struct platform_device *pdev)
->  	clks[IMX8MM_GPU_PLL] = imx_clk_pll14xx("gpu_pll", "gpu_pll_ref_sel", base + 0x64, &imx_1416x_pll);
->  	clks[IMX8MM_VPU_PLL] = imx_clk_pll14xx("vpu_pll", "vpu_pll_ref_sel", base + 0x74, &imx_1416x_pll);
->  	clks[IMX8MM_ARM_PLL] = imx_clk_pll14xx("arm_pll", "arm_pll_ref_sel", base + 0x84, &imx_1416x_pll);
-> -	clks[IMX8MM_SYS_PLL1] = imx_clk_pll14xx("sys_pll1", "sys_pll1_ref_sel", base + 0x94, &imx_1416x_pll);
-> -	clks[IMX8MM_SYS_PLL2] = imx_clk_pll14xx("sys_pll2", "sys_pll2_ref_sel", base + 0x104, &imx_1416x_pll);
-> +	clks[IMX8MM_SYS_PLL1] = imx_clk_fixed("sys_pll1", 800000000);
-> +	clks[IMX8MM_SYS_PLL2] = imx_clk_fixed("sys_pll2", 1000000000);
->  	clks[IMX8MM_SYS_PLL3] = imx_clk_pll14xx("sys_pll3", "sys_pll3_ref_sel", base + 0x114, &imx_1416x_pll);
+>  #define IMX8MQ_SW_INFO_B1		0x40
+>  #define IMX8MQ_SW_MAGIC_B1		0xff0055aa
 >  
->  	/* PLL bypass out */
-> @@ -348,8 +344,6 @@ static int imx8mm_clocks_probe(struct platform_device *pdev)
->  	clks[IMX8MM_GPU_PLL_BYPASS] = imx_clk_mux_flags("gpu_pll_bypass", base + 0x64, 28, 1, gpu_pll_bypass_sels, ARRAY_SIZE(gpu_pll_bypass_sels), CLK_SET_RATE_PARENT);
->  	clks[IMX8MM_VPU_PLL_BYPASS] = imx_clk_mux_flags("vpu_pll_bypass", base + 0x74, 28, 1, vpu_pll_bypass_sels, ARRAY_SIZE(vpu_pll_bypass_sels), CLK_SET_RATE_PARENT);
->  	clks[IMX8MM_ARM_PLL_BYPASS] = imx_clk_mux_flags("arm_pll_bypass", base + 0x84, 28, 1, arm_pll_bypass_sels, ARRAY_SIZE(arm_pll_bypass_sels), CLK_SET_RATE_PARENT);
-> -	clks[IMX8MM_SYS_PLL1_BYPASS] = imx_clk_mux_flags("sys_pll1_bypass", base + 0x94, 28, 1, sys_pll1_bypass_sels, ARRAY_SIZE(sys_pll1_bypass_sels), CLK_SET_RATE_PARENT);
-> -	clks[IMX8MM_SYS_PLL2_BYPASS] = imx_clk_mux_flags("sys_pll2_bypass", base + 0x104, 28, 1, sys_pll2_bypass_sels, ARRAY_SIZE(sys_pll2_bypass_sels), CLK_SET_RATE_PARENT);
->  	clks[IMX8MM_SYS_PLL3_BYPASS] = imx_clk_mux_flags("sys_pll3_bypass", base + 0x114, 28, 1, sys_pll3_bypass_sels, ARRAY_SIZE(sys_pll3_bypass_sels), CLK_SET_RATE_PARENT);
+> +#define IMX_SIP_GET_SOC_INFO		0xc2000006
+> +
+>  #define OCOTP_UID_LOW			0x410
+>  #define OCOTP_UID_HIGH			0x420
 >  
->  	/* PLL out gate */
-> @@ -360,8 +354,8 @@ static int imx8mm_clocks_probe(struct platform_device *pdev)
->  	clks[IMX8MM_GPU_PLL_OUT] = imx_clk_gate("gpu_pll_out", "gpu_pll_bypass", base + 0x64, 11);
->  	clks[IMX8MM_VPU_PLL_OUT] = imx_clk_gate("vpu_pll_out", "vpu_pll_bypass", base + 0x74, 11);
->  	clks[IMX8MM_ARM_PLL_OUT] = imx_clk_gate("arm_pll_out", "arm_pll_bypass", base + 0x84, 11);
-> -	clks[IMX8MM_SYS_PLL1_OUT] = imx_clk_gate("sys_pll1_out", "sys_pll1_bypass", base + 0x94, 11);
-> -	clks[IMX8MM_SYS_PLL2_OUT] = imx_clk_gate("sys_pll2_out", "sys_pll2_bypass", base + 0x104, 11);
-> +	clks[IMX8MM_SYS_PLL1_OUT] = imx_clk_gate("sys_pll1_out", "sys_pll1", base + 0x94, 11);
-> +	clks[IMX8MM_SYS_PLL2_OUT] = imx_clk_gate("sys_pll2_out", "sys_pll2", base + 0x104, 11);
->  	clks[IMX8MM_SYS_PLL3_OUT] = imx_clk_gate("sys_pll3_out", "sys_pll3_bypass", base + 0x114, 11);
+>  /* Same as ANADIG_DIGPROG_IMX7D */
+>  #define ANADIG_DIGPROG_IMX8MM	0x800
+> @@ -35,10 +38,22 @@ static ssize_t soc_uid_show(struct device *dev,
+>  	return sprintf(buf, "%016llX\n", soc_uid);
+>  }
 >  
->  	/* SYS PLL fixed output */
+>  static DEVICE_ATTR_RO(soc_uid);
+>  
+> +static u32 imx8mq_soc_revision_from_atf(void)
+> +{
+> +	struct arm_smccc_res res;
+> +
+> +	arm_smccc_smc(IMX_SIP_GET_SOC_INFO, 0, 0, 0, 0, 0, 0, 0, &res);
+> +
+> +	if (res.a0 == SMCCC_RET_NOT_SUPPORTED)
+> +		return 0;
+> +	else
+> +		return res.a0 & 0xff;
+> +}
+> +
+>  static u32 __init imx8mq_soc_revision(void)
+>  {
+>  	struct device_node *np;
+>  	void __iomem *ocotp_base;
+>  	u32 magic;
+> @@ -49,13 +64,20 @@ static u32 __init imx8mq_soc_revision(void)
+>  		goto out;
+>  
+>  	ocotp_base = of_iomap(np, 0);
+>  	WARN_ON(!ocotp_base);
+>  
+> -	magic = readl_relaxed(ocotp_base + IMX8MQ_SW_INFO_B1);
+> -	if (magic == IMX8MQ_SW_MAGIC_B1)
+> -		rev = REV_B1;
+> +	/*
+> +	 * SOC revision on older imx8mq is not available in fuses so query
+> +	 * the value from ATF instead.
+> +	 */
+> +	rev = imx8mq_soc_revision_from_atf();
+> +	if (!rev) {
+> +		magic = readl_relaxed(ocotp_base + IMX8MQ_SW_INFO_B1);
+> +		if (magic == IMX8MQ_SW_MAGIC_B1)
+> +			rev = REV_B1;
+> +	}
+>  
+>  	soc_uid = readl_relaxed(ocotp_base + OCOTP_UID_HIGH);
+>  	soc_uid <<= 32;
+>  	soc_uid |= readl_relaxed(ocotp_base + OCOTP_UID_LOW);
+>  
 > -- 
-> 2.16.4
+> 2.17.1
 > 
 
 _______________________________________________
