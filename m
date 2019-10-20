@@ -2,61 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1865DE0BA
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 20 Oct 2019 23:37:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1167DE0C0
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 20 Oct 2019 23:40:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ASSyoYfLpFzO1T8C8bswLP4qGheNS5ebAo/FkmM4hkM=; b=qpO/P+r4MPnTgS
-	d8SUTQofkLuON9ByyAN4IH09/rHhYfQS1ojqWsU/Rn207T0el2xiPjhsclVdFAugDbkvFKgHs13o7
-	sIyF0TseO+E0sEEH4kX2Y4/ozTUe8I42lKrIkeoGqCh6zNe7voDS4UfW0sTUxFbFrqWf9iUjfRAoZ
-	avJL3+NUrSLh2yIOq4Lv1yxyAW0wRZ092iewFoKOP7i9VOpdV90aTsScy/6vNU99jybBoYi7tyFAF
-	ddY4O+bzi63d7G/rPWQYifXgwB6GgiIC3+Aidh+A/2lNqYu68ySz8dZ+Nl+AVfuhYfSmSn6fgwFAQ
-	ZkjD1Sfv0qRCieBSBVYA==;
+	List-Owner; bh=/1NbqW1Jvn6EEODA8VVXdD5IKVsHMJi9LDZMpv/vrww=; b=sTnn8jnveKv5yt
+	KK01okAF8TOSG4/WCp7KWfDi7b7Alf/Q133cnHzlmeXF7xcFgz+IU5kZde4n7BkLh0WwghONI+wF7
+	mowRH/cQw7+4JD9X0xDGJtaVxT/wPqpGc/rbz4Pi4ZzNbX+BW+qk12OML1g4cTfJTkXo7LV7+iRxt
+	S5ydGatb0w/9aWwgSySrCB7ExzTGtvznu7OxGC0wazUShl0oSrAu5Iajf+17GVe7Qa0CY3AlgS2Vu
+	JE8snQu644DS+m5+GDeK1soh3MNhprF6LYDIAp4F3bxupfpNAv0exkEsJv4LiZ4ElKsClmPsufMPr
+	FyiMlq+vYyqZ3jCKPqfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMIt9-0000wJ-DF; Sun, 20 Oct 2019 21:37:23 +0000
+	id 1iMIwA-0002pb-By; Sun, 20 Oct 2019 21:40:30 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMIsr-0000Um-Ku; Sun, 20 Oct 2019 21:37:07 +0000
-Received: from mail-qt1-f169.google.com (mail-qt1-f169.google.com
- [209.85.160.169])
+ id 1iMIvr-0002Qn-3b; Sun, 20 Oct 2019 21:40:12 +0000
+Received: from mail-qt1-f182.google.com (mail-qt1-f182.google.com
+ [209.85.160.182])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 229E521929;
- Sun, 20 Oct 2019 21:37:04 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8B99422469;
+ Sun, 20 Oct 2019 21:40:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571607424;
- bh=oJ9t8UtXb7PRYsq3ePfq3A9aFk1ZN+i+OvWB9IzCOps=;
+ s=default; t=1571607610;
+ bh=qgl8etf05zFSFgrmUt3a3ejlLNLZr9gR4jAYnTio8dk=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=sFDrPikJCzwykX55SSurJgFmuuxOUHgZXuZlpY26FTjeHzgoQK+kZBQrEuQvrPZSl
- swj3ol6RnlfGAvGIDnOSky1gkb+pI38z70kPryc5Ath1MqJxokc9LifxS+bE0bORD8
- mRHyLXDF1rK1RrOrQoNT1T2ieNM+f/qGCMkH+144=
-Received: by mail-qt1-f169.google.com with SMTP id o25so4352695qtr.5;
- Sun, 20 Oct 2019 14:37:04 -0700 (PDT)
-X-Gm-Message-State: APjAAAUOTH5pVJtHG9/BegYPKtUTWKkFoN52HUyQU16r3N8MpzpT7nhS
- WEn0vSxXzguIG2dLNHgNA4WZh0wV85+GUu8Eeg==
-X-Google-Smtp-Source: APXvYqxapHq3qkRx86TykFEOegIN1VZm+E1xyc2NVyUchfsKxelq3sgZATdHJ8Qy+cPP9gdZ1ruTPx3i/ITuPkGPW3o=
-X-Received: by 2002:ac8:741a:: with SMTP id p26mr6882617qtq.143.1571607423322; 
- Sun, 20 Oct 2019 14:37:03 -0700 (PDT)
+ b=Q+vGSyU0uunAMGyJHqC4IiX+kVlgyKYyHxP/pjaRaZmfKnRL2VTBpkfdpUAFBxG9q
+ 6c97x2oAjqdPPs4ysequSxUmA3zKFsb50RTtwqCTpO4QsDH+aaRWz04KuWj2yTvPWo
+ Do6FKvjIOO5BaYpnds4KsoqGAuXrTt95tibK6ig0=
+Received: by mail-qt1-f182.google.com with SMTP id 3so17799160qta.1;
+ Sun, 20 Oct 2019 14:40:10 -0700 (PDT)
+X-Gm-Message-State: APjAAAX+Je4kvoie+EFIlLe1WtTALJ2qAKgZ3RUrjUfWhwzI3EVM3wQr
+ N51YjZWZLlTQxain9mOyzoDwckZotApDk4NN/g==
+X-Google-Smtp-Source: APXvYqyPNdeHc97P9vjK6aAr1OKGgzvAPW2UkIiZ4oCT73veRFA/jHuYzT+Hd/cVM4y/SwD9YgTWhEfrCQ8HEGQNi2k=
+X-Received: by 2002:ac8:4508:: with SMTP id q8mr5790443qtn.110.1571607609587; 
+ Sun, 20 Oct 2019 14:40:09 -0700 (PDT)
 MIME-Version: 1.0
 References: <20191016200647.32050-1-robh@kernel.org>
- <20191016200647.32050-11-robh@kernel.org>
- <20191018155152.GK47056@e119886-lin.cambridge.arm.com>
-In-Reply-To: <20191018155152.GK47056@e119886-lin.cambridge.arm.com>
+ <20191016200647.32050-6-robh@kernel.org>
+ <20191018123537.GG47056@e119886-lin.cambridge.arm.com>
+In-Reply-To: <20191018123537.GG47056@e119886-lin.cambridge.arm.com>
 From: Rob Herring <robh@kernel.org>
-Date: Sun, 20 Oct 2019 16:36:50 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqLWuUhv1qb3Soo0xKGJ167SvV3rnr+c07j9x3FFPEc3YA@mail.gmail.com>
-Message-ID: <CAL_JsqLWuUhv1qb3Soo0xKGJ167SvV3rnr+c07j9x3FFPEc3YA@mail.gmail.com>
-Subject: Re: [PATCH v2 10/25] PCI: rockchip: Use
- pci_parse_request_of_pci_ranges()
+Date: Sun, 20 Oct 2019 16:39:58 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqLchmnwV3=Ufrs0sxc+ye5kzyKdenUa+cWxiMEzf0rFCA@mail.gmail.com>
+Message-ID: <CAL_JsqLchmnwV3=Ufrs0sxc+ye5kzyKdenUa+cWxiMEzf0rFCA@mail.gmail.com>
+Subject: Re: [PATCH v2 05/25] PCI: dwc: Use pci_parse_request_of_pci_ranges()
 To: Andrew Murray <andrew.murray@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191020_143705_739156_32E146DF 
-X-CRM114-Status: GOOD (  19.72  )
+X-CRM114-CacheID: sfid-20191020_144011_224471_204D6812 
+X-CRM114-Status: GOOD (  16.56  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -114,82 +113,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 18, 2019 at 10:52 AM Andrew Murray <andrew.murray@arm.com> wrote:
+On Fri, Oct 18, 2019 at 7:35 AM Andrew Murray <andrew.murray@arm.com> wrote:
 >
-> On Wed, Oct 16, 2019 at 03:06:32PM -0500, Rob Herring wrote:
-> > Convert the Rockchip host bridge to use the common
+> On Wed, Oct 16, 2019 at 03:06:27PM -0500, Rob Herring wrote:
+> > Convert the Designware host bridge to use the common
 > > pci_parse_request_of_pci_ranges().
 > >
-> > There's no need to assign the resources to a temporary list first. Just
-> > use bridge->windows directly and remove all the temporary list handling.
-> >
-> > Cc: Shawn Lin <shawn.lin@rock-chips.com>
+> > Cc: Jingoo Han <jingoohan1@gmail.com>
+> > Cc: Gustavo Pimentel <gustavo.pimentel@synopsys.com>
 > > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 > > Cc: Andrew Murray <andrew.murray@arm.com>
 > > Cc: Bjorn Helgaas <bhelgaas@google.com>
-> > Cc: Heiko Stuebner <heiko@sntech.de>
-> > Cc: linux-rockchip@lists.infradead.org
 > > Signed-off-by: Rob Herring <robh@kernel.org>
 > > ---
 > > v2:
 > > - New patch
 > >
-> >  drivers/pci/controller/pcie-rockchip-host.c | 36 ++++-----------------
-> >  1 file changed, 7 insertions(+), 29 deletions(-)
+> >  .../pci/controller/dwc/pcie-designware-host.c | 28 ++++++-------------
+> >  1 file changed, 8 insertions(+), 20 deletions(-)
 > >
-> > diff --git a/drivers/pci/controller/pcie-rockchip-host.c b/drivers/pci/controller/pcie-rockchip-host.c
-> > index ef8e677ce9d1..8d2e6f2e141e 100644
-> > --- a/drivers/pci/controller/pcie-rockchip-host.c
-> > +++ b/drivers/pci/controller/pcie-rockchip-host.c
-> > @@ -950,14 +950,10 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
-> >       struct device *dev = &pdev->dev;
-> >       struct pci_bus *bus, *child;
+> > diff --git a/drivers/pci/controller/dwc/pcie-designware-host.c b/drivers/pci/controller/dwc/pcie-designware-host.c
+> > index 0f36a926059a..aeec8b65eb97 100644
+> > --- a/drivers/pci/controller/dwc/pcie-designware-host.c
+> > +++ b/drivers/pci/controller/dwc/pcie-designware-host.c
+> > @@ -319,7 +319,7 @@ int dw_pcie_host_init(struct pcie_port *pp)
+> >       struct device *dev = pci->dev;
+> >       struct device_node *np = dev->of_node;
+> >       struct platform_device *pdev = to_platform_device(dev);
+> > -     struct resource_entry *win, *tmp;
+> > +     struct resource_entry *win;
+> >       struct pci_bus *child;
 > >       struct pci_host_bridge *bridge;
-> > +     struct resource *bus_res;
-> >       struct resource_entry *win;
-> > -     resource_size_t io_base;
-> > -     struct resource *mem;
-> > -     struct resource *io;
-> >       int err;
+> >       struct resource *cfg_res;
+> > @@ -342,31 +342,19 @@ int dw_pcie_host_init(struct pcie_port *pp)
+> >       if (!bridge)
+> >               return -ENOMEM;
 > >
-> > -     LIST_HEAD(res);
-> > -
-> >       if (!dev->of_node)
-> >               return -ENODEV;
-> >
-> > @@ -995,29 +991,20 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
-> >       if (err < 0)
-> >               goto err_deinit_port;
-> >
-> > -     err = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff,
-> > -                                                 &res, &io_base);
-> > +     err = pci_parse_request_of_pci_ranges(dev, &bridge->windows, &bus_res);
-> >       if (err)
-> >               goto err_remove_irq_domain;
-> >
-> > -     err = devm_request_pci_bus_resources(dev, &res);
-> > -     if (err)
-> > -             goto err_free_res;
-> > +     rockchip->root_bus_nr = bus_res->start;
-> >
-> >       /* Get the I/O and memory ranges from DT */
-> > -     resource_list_for_each_entry(win, &res) {
-> > +     resource_list_for_each_entry(win, &bridge->windows) {
-> >               switch (resource_type(win->res)) {
-> >               case IORESOURCE_IO:
-> >                       io = win->res;
-> >                       io->name = "I/O";
+> > -     ret = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff,
+> > -                                     &bridge->windows, &pp->io_base);
+
+[...]
+
+> > +                     pp->io_bus_addr = pp->io->start - win->offset;
+> > +                     pp->io_base = pci_pio_to_address(pp->io->start);
 >
-> In some patches of this series we drop the custom naming of memory resources,
-> yet in others, like this one, we preserve the custom naming.
+> Where did io_base come from? This wasn't here before, so why are we setting it
+> now?
 
-Actually, patch #11 drops it for rockchip.
-
-> Should we be consistent in preserving the existing naming?
-
-The custom naming seems a bit pointless IMO and something mindlessly
-copied and pasted around, so I'd rather see removing the remaining
-cases. The only ones left AFAICT are designware and V3.
+It was set in the removed devm_of_pci_get_host_bridge_resources().
 
 Rob
 
