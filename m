@@ -2,69 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1167DE0C0
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 20 Oct 2019 23:40:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90084DE0C8
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 20 Oct 2019 23:47:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/1NbqW1Jvn6EEODA8VVXdD5IKVsHMJi9LDZMpv/vrww=; b=sTnn8jnveKv5yt
-	KK01okAF8TOSG4/WCp7KWfDi7b7Alf/Q133cnHzlmeXF7xcFgz+IU5kZde4n7BkLh0WwghONI+wF7
-	mowRH/cQw7+4JD9X0xDGJtaVxT/wPqpGc/rbz4Pi4ZzNbX+BW+qk12OML1g4cTfJTkXo7LV7+iRxt
-	S5ydGatb0w/9aWwgSySrCB7ExzTGtvznu7OxGC0wazUShl0oSrAu5Iajf+17GVe7Qa0CY3AlgS2Vu
-	JE8snQu644DS+m5+GDeK1soh3MNhprF6LYDIAp4F3bxupfpNAv0exkEsJv4LiZ4ElKsClmPsufMPr
-	FyiMlq+vYyqZ3jCKPqfw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cw+6opqqupoBT3OGgxd34WrSdf0LymejT3OgKHDzQhE=; b=BHtzjjshQeh7et
+	+lRwbDsWNeHSv4v7dIMK1Olnff+KCSzRVc2Nec6UXJpRAnu6fRRz0EAMC1Grg5kri20bAK0ZR8+5Y
+	MQIFNyb+6MqMH+8PW+aeTlInEq4LYOskmudI6Cp1eiOWksMPxByaUKxWfNZ4WTxUDU48CAuJ6A47m
+	55WIp+bveYoHU6Qflo1F782ClvlO8o8aYBivq8GAKMwUPUL+aYAEBiNXqyXhRH5s6jh/8UgDv6pLC
+	6bymnBFSYN4cAbRXAZpA8m6y8eUpeEQmS7WxYvWRE7n/oJ0q9mQLeUZiRmNFSDOmlDjDAbw3qhSFS
+	61LPHhcyhhzGNPrL9Suw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMIwA-0002pb-By; Sun, 20 Oct 2019 21:40:30 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iMJ2x-0005UC-Oc; Sun, 20 Oct 2019 21:47:31 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMIvr-0002Qn-3b; Sun, 20 Oct 2019 21:40:12 +0000
-Received: from mail-qt1-f182.google.com (mail-qt1-f182.google.com
- [209.85.160.182])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8B99422469;
- Sun, 20 Oct 2019 21:40:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571607610;
- bh=qgl8etf05zFSFgrmUt3a3ejlLNLZr9gR4jAYnTio8dk=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=Q+vGSyU0uunAMGyJHqC4IiX+kVlgyKYyHxP/pjaRaZmfKnRL2VTBpkfdpUAFBxG9q
- 6c97x2oAjqdPPs4ysequSxUmA3zKFsb50RTtwqCTpO4QsDH+aaRWz04KuWj2yTvPWo
- Do6FKvjIOO5BaYpnds4KsoqGAuXrTt95tibK6ig0=
-Received: by mail-qt1-f182.google.com with SMTP id 3so17799160qta.1;
- Sun, 20 Oct 2019 14:40:10 -0700 (PDT)
-X-Gm-Message-State: APjAAAX+Je4kvoie+EFIlLe1WtTALJ2qAKgZ3RUrjUfWhwzI3EVM3wQr
- N51YjZWZLlTQxain9mOyzoDwckZotApDk4NN/g==
-X-Google-Smtp-Source: APXvYqyPNdeHc97P9vjK6aAr1OKGgzvAPW2UkIiZ4oCT73veRFA/jHuYzT+Hd/cVM4y/SwD9YgTWhEfrCQ8HEGQNi2k=
-X-Received: by 2002:ac8:4508:: with SMTP id q8mr5790443qtn.110.1571607609587; 
- Sun, 20 Oct 2019 14:40:09 -0700 (PDT)
+ id 1iMJ2d-0004uB-52
+ for linux-arm-kernel@lists.infradead.org; Sun, 20 Oct 2019 21:47:12 +0000
+Received: by mail-wr1-x443.google.com with SMTP id l10so11191845wrb.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 20 Oct 2019 14:47:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=nEa2nCLVl/CaMx9prf1lrKZwy7roZPUD/Ml2yn5od4E=;
+ b=PQ20TaMwJw0MJgI3eTBNxZzpIGkEApoS44W9J39kJyfMiQJOqSuECuaTRZYsz5Kngv
+ F1SucEn8ltoeOktI1hFuCi35SsaY+6OBU7PiygDJhvtx+xmGRHci8bz+lm/8akpoAwu1
+ pOmm2tSiDzuKFYEWoc6At9zcsRHJcBj4heeuTh2wyyqfremfg3fgm9/w32cgJo5e4AQ8
+ Ac1tTlSxYL+cqjTESg70KDBTqXpaNcH71ZBHmLPpGggsxtZjT8fos/p3O8/570ZFNTY0
+ 8JqiQbJwrhJ8+bZDTS13w9Apw6SlZPeaUs1H1Kehdq0Gxd3OZb4vp+6sNBndhNL3sjsH
+ Q0PQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=nEa2nCLVl/CaMx9prf1lrKZwy7roZPUD/Ml2yn5od4E=;
+ b=JDqImEhBmL9BwrMGnzuV0gRmKuhWQ/qHDd14mzdxE6Q1mSKH4S2F7Ja64cmT3z34w+
+ EmY9w7TcWU6uapGZO5MeBbDnTD94o03pDNaKJgVnczlV2pzqWVJEgm5SSZS9zyafmzXV
+ CH1MQM6YW027kYEvGE/BBD96Yhg6s46qGsDCa5Pqy7cQ6S8IitoYz4IKfeHD2pq0AqAV
+ 34Yt+axpQhTEgUiGnid+fLRg2MwwJgSj7N9xfif6O9fQ2CgERAU+sfkeItFz3ginlnf3
+ q1kSdrp/EvWrrru+Xz7LJfhLyv2kPaIEpoZELOduBWDCFbvVTugm+4LTe+L4Wfbxj0Bx
+ ab6g==
+X-Gm-Message-State: APjAAAU1YOy+NS6vIOZALJFHEGZaIa9zJ5vURENSGTp2W026eTB11ZLh
+ LeCQtLmkwMF3K1y8i2YlnME=
+X-Google-Smtp-Source: APXvYqyClbvQwzSKous9HNBfGcsRcFKBAklGfnLnPbxdFoLXwJ9Ngy/ZfpoFh7Lp3zlTGFkSxiwWbw==
+X-Received: by 2002:adf:c448:: with SMTP id a8mr5850387wrg.233.1571608028815; 
+ Sun, 20 Oct 2019 14:47:08 -0700 (PDT)
+Received: from [192.168.1.221] ([62.68.24.148])
+ by smtp.gmail.com with ESMTPSA id x7sm12307771wrg.63.2019.10.20.14.47.07
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sun, 20 Oct 2019 14:47:08 -0700 (PDT)
+Subject: Re: [PATCH 2/6] ARM: ep93xx: enable SPARSE_IRQ
+To: Arnd Bergmann <arnd@arndb.de>
+References: <20191018163047.1284736-1-arnd@arndb.de>
+ <20191018163047.1284736-2-arnd@arndb.de>
+ <20191019184234.4cdb37a735fe632528880d76@gmail.com>
+ <CAK8P3a0LWeGJshr=AdeE3QXHYe2jVmc90K_2prc=4=ZFk0hr=g@mail.gmail.com>
+ <20191019222413.52f7b79369d085c4ce29bc23@gmail.com>
+ <CAK8P3a3UztT5aqDTiBNDssHWcdYQNqbhiY_hxJ+AHuM54hgCWQ@mail.gmail.com>
+ <20191019231418.c17b05f73276539536b4732c@gmail.com>
+ <CAK8P3a0FfTjNAvJG1yUi==bLBjeVaJ0oseaqs-ZouZKHrFdBHQ@mail.gmail.com>
+From: Alexander Sverdlin <alexander.sverdlin@gmail.com>
+Message-ID: <31d57d94-9701-1c46-6ce2-c43eaa16f444@gmail.com>
+Date: Sun, 20 Oct 2019 23:45:00 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-References: <20191016200647.32050-1-robh@kernel.org>
- <20191016200647.32050-6-robh@kernel.org>
- <20191018123537.GG47056@e119886-lin.cambridge.arm.com>
-In-Reply-To: <20191018123537.GG47056@e119886-lin.cambridge.arm.com>
-From: Rob Herring <robh@kernel.org>
-Date: Sun, 20 Oct 2019 16:39:58 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqLchmnwV3=Ufrs0sxc+ye5kzyKdenUa+cWxiMEzf0rFCA@mail.gmail.com>
-Message-ID: <CAL_JsqLchmnwV3=Ufrs0sxc+ye5kzyKdenUa+cWxiMEzf0rFCA@mail.gmail.com>
-Subject: Re: [PATCH v2 05/25] PCI: dwc: Use pci_parse_request_of_pci_ranges()
-To: Andrew Murray <andrew.murray@arm.com>
+In-Reply-To: <CAK8P3a0FfTjNAvJG1yUi==bLBjeVaJ0oseaqs-ZouZKHrFdBHQ@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191020_144011_224471_204D6812 
-X-CRM114-Status: GOOD (  16.56  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191020_144711_229795_D1132FB6 
+X-CRM114-Status: GOOD (  12.80  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (alexander.sverdlin[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -72,7 +97,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,85 +108,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>,
- Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>,
- PCI <linux-pci@vger.kernel.org>, Shawn Lin <shawn.lin@rock-chips.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Toan Le <toan@os.amperecomputing.com>, Will Deacon <will@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Michal Simek <michal.simek@xilinx.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <bcm-kernel-feedback-list@broadcom.com>,
- Linus Walleij <linus.walleij@linaro.org>, Ray Jui <rjui@broadcom.com>,
- Hou Zhiqiang <Zhiqiang.Hou@nxp.com>, Ryder Lee <ryder.lee@mediatek.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Bjorn Helgaas <bhelgaas@google.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Scott Branden <sbranden@broadcom.com>,
- Jingoo Han <jingoohan1@gmail.com>, rfi@lists.rocketboards.org,
- "open list:MEDIA DRIVERS FOR RENESAS - FCP"
- <linux-renesas-soc@vger.kernel.org>, Tom Joseph <tjoseph@cadence.com>,
- Simon Horman <horms@verge.net.au>,
- Srinath Mannam <srinath.mannam@broadcom.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Ley Foon Tan <lftan@altera.com>
+Cc: Hubert Feurstein <hubert.feurstein@contec.at>,
+ Hartley Sweeten <hsweeten@visionengravers.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Lukasz Majewski <lukma@denx.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 18, 2019 at 7:35 AM Andrew Murray <andrew.murray@arm.com> wrote:
->
-> On Wed, Oct 16, 2019 at 03:06:27PM -0500, Rob Herring wrote:
-> > Convert the Designware host bridge to use the common
-> > pci_parse_request_of_pci_ranges().
-> >
-> > Cc: Jingoo Han <jingoohan1@gmail.com>
-> > Cc: Gustavo Pimentel <gustavo.pimentel@synopsys.com>
-> > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> > Cc: Andrew Murray <andrew.murray@arm.com>
-> > Cc: Bjorn Helgaas <bhelgaas@google.com>
-> > Signed-off-by: Rob Herring <robh@kernel.org>
-> > ---
-> > v2:
-> > - New patch
-> >
-> >  .../pci/controller/dwc/pcie-designware-host.c | 28 ++++++-------------
-> >  1 file changed, 8 insertions(+), 20 deletions(-)
-> >
-> > diff --git a/drivers/pci/controller/dwc/pcie-designware-host.c b/drivers/pci/controller/dwc/pcie-designware-host.c
-> > index 0f36a926059a..aeec8b65eb97 100644
-> > --- a/drivers/pci/controller/dwc/pcie-designware-host.c
-> > +++ b/drivers/pci/controller/dwc/pcie-designware-host.c
-> > @@ -319,7 +319,7 @@ int dw_pcie_host_init(struct pcie_port *pp)
-> >       struct device *dev = pci->dev;
-> >       struct device_node *np = dev->of_node;
-> >       struct platform_device *pdev = to_platform_device(dev);
-> > -     struct resource_entry *win, *tmp;
-> > +     struct resource_entry *win;
-> >       struct pci_bus *child;
-> >       struct pci_host_bridge *bridge;
-> >       struct resource *cfg_res;
-> > @@ -342,31 +342,19 @@ int dw_pcie_host_init(struct pcie_port *pp)
-> >       if (!bridge)
-> >               return -ENOMEM;
-> >
-> > -     ret = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff,
-> > -                                     &bridge->windows, &pp->io_base);
+Hi!
 
-[...]
+On 20/10/2019 13:49, Arnd Bergmann wrote:
+>>> Ah, that makes sense. so all interrupt numbers need to
+>>> be shifted by a fixed number (e.g. 1) like we did for
+>>> other platforms (see attachment).
+>> Yes, the below patch resolved both GPIO and DMA issues.
+        ^^^^^^^^^^^^^^^
+>> Previous patch (selecting IRQ_DOMAIN_HIERARCHY) is not
+>> required.
+>>
+>> If you re-spin all 3 ep93xx-relevant patches together, you can put my
+>> Tested-by: Alexander Sverdlin <alexander.sverdlin@gmail.com>
+>> on them.
+> Awesome, thanks for testing.
+> 
+> I only remember sending two patches  for ep93xx:
+>  ARM: ep93xx: make mach/ep93xx-regs.h local
+>  ARM: ep93xx: enable SPARSE_IRQ
+> 
+> and have added the Tested-by tag to them now. Is there a third one
+> I missed?
 
-> > +                     pp->io_bus_addr = pp->io->start - win->offset;
-> > +                     pp->io_base = pci_pio_to_address(pp->io->start);
->
-> Where did io_base come from? This wasn't here before, so why are we setting it
-> now?
+The patch shifting the IRQ-numbering by one is a prerequisite for the two
+above patches, right?
 
-It was set in the removed devm_of_pci_get_host_bridge_resources().
-
-Rob
+--
+Alex.
 
 _______________________________________________
 linux-arm-kernel mailing list
