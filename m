@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3614DDDE09
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 20 Oct 2019 12:13:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6D21DDE0A
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 20 Oct 2019 12:13:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZqOUoUMjXlafonlGgLwyki9RKJidYUl66ljGyqpJ7b4=; b=uw3szPhb4JL/uu
-	tr5EsUMUCvaz1ZjtQ8MU0gNrxV1YDX63xCb99DF+ye7AeQ4sTl+Pda+80cSsKJm6Izcs3pwYf1uz9
-	J7yBFezpAPY1wpXnv5ahI+2reuzSyKAJG1JeA+h3fzDbs9wpS0vZaMf4peya3TV/H1VWNi7uJFRz5
-	0pW8m2slp3B5nnJ6Ol9j+weTkmzZ9e6a+f5BJ5Vn7fRdP0paBI2Lc9MhCJvzLXTixekeP2GUGVZ+y
-	jpHcapqe6CptP0QREQTekbxiIB/LOGxRUZ/ZVvHzgf+UPGBn51Ad+euuwENvTppRFeAj7c/s2gItr
-	6rbvVanyhRkw9Z6JG5Hw==;
+	List-Owner; bh=4ow0512avwBeT0S0JLCf79WEoPHOFUNZzJh0osziOBI=; b=Me8h5M+V5DHqvo
+	PT/i0HQk7pfV3JLfT6PqlO9gmCfjvq1VAxR81Bxqm8UVepCBHTCdnMt7nzWt5QiWdAFH1VXOQVLBb
+	txD4pCNwKNbWfxBnDogPxcZZC8mDUj5mXFakThMSpZCG11WlmHNp334g939Ep1cfxg/GzOenZGR6/
+	A0/WPEVMZiTiw9KubMjgJ+rcDtUu7jMo1/JfZPRF0qciMvryCGtgCqC/K8I6EtArW7YwxomNWl8aW
+	Cy4M3Th0yRA5yn1+g94oHnsgnxHW8HglXdz5ugxyd90q6CRWN+LXY8k6XciDCrNTIcw8+Re1bfzwN
+	LsY26orD7RJaxJYfZvkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iM8C1-0004gz-AZ; Sun, 20 Oct 2019 10:12:09 +0000
+	id 1iM8C3-0004jK-MP; Sun, 20 Oct 2019 10:12:11 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iM8Bb-0004Ld-SE
- for linux-arm-kernel@lists.infradead.org; Sun, 20 Oct 2019 10:11:45 +0000
+ id 1iM8Be-0004Os-SC
+ for linux-arm-kernel@lists.infradead.org; Sun, 20 Oct 2019 10:11:48 +0000
 Received: from big-swifty.lan (78.163-31-62.static.virginmediabusiness.co.uk
  [62.31.163.78])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 59CEF222BD;
- Sun, 20 Oct 2019 10:11:40 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3B37D2190F;
+ Sun, 20 Oct 2019 10:11:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571566303;
- bh=Syg7JpTSjO3UDfWlqULqNwmrn1vfNkZUjqNdeFNbT8c=;
+ s=default; t=1571566306;
+ bh=om3Cj3Gh8W38m+op9WkaTNAgw+rHdyTrhOQkkaQCz40=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=t1nAb5ChLYmSWCc2pr0VVskYWZu2pdancAXCgfmvHAw4nfVbhLMAr9pfMBkL/+JGx
- E16M4+CSRQxIwt5DQaAjg137rwxJ9kz1n3foB8ty/1U0BHwkDJ+qbvUHOzdDkPExBV
- q7bB3qIjiwhVHYEdJgaiz4Qr/I3Lo64SZZo/o6ak=
+ b=mRCCWvskMmuSgZrasQVj9s6NTQm49gUlfviEBCz4nKzWyEJ9yPX/sPN13N05vxt12
+ 3QKIlNPSs0zoMYczKpfjNsS43TeVOlvm13dCuIcXCz1URXTcGVQTc3lZYW59N2L4Eo
+ //Y/+847gu1WQSofWjKIGbKX4UnT5AAKXiVhmeC4=
 From: Marc Zyngier <maz@kernel.org>
 To: Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [PATCH 3/4] KVM: arm64: pmu: Set the CHAINED attribute before
- creating the in-kernel event
-Date: Sun, 20 Oct 2019 11:11:28 +0100
-Message-Id: <20191020101129.2612-4-maz@kernel.org>
+Subject: [PATCH 4/4] KVM: arm64: pmu: Reset sample period on overflow handling
+Date: Sun, 20 Oct 2019 11:11:29 +0100
+Message-Id: <20191020101129.2612-5-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191020101129.2612-1-maz@kernel.org>
 References: <20191020101129.2612-1-maz@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191020_031143_934468_75D97B5A 
-X-CRM114-Status: GOOD (  12.60  )
+X-CRM114-CacheID: sfid-20191020_031146_988547_8DE542D8 
+X-CRM114-Status: GOOD (  13.45  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,42 +87,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The current convention for KVM to request a chained event from the
-host PMU is to set bit[0] in attr.config1 (PERF_ATTR_CFG1_KVM_PMU_CHAINED).
+The PMU emulation code uses the perf event sample period to trigger
+the overflow detection. This works fine  for the *first* overflow
+handling, but results in a huge number of interrupts on the host,
+unrelated to the number of interrupts handled in the guest (a x20
+factor is pretty common for the cycle counter). On a slow system
+(such as a SW model), this can result in the guest only making
+forward progress at a glacial pace.
 
-But as it turns out, this bit gets set *after* we create the kernel
-event that backs our virtual counter, meaning that we never get
-a 64bit counter.
+It turns out that the clue is in the name. The sample period is
+exactly that: a period. And once the an overflow has occured,
+the following period should be the full width of the associated
+counter, instead of whatever the guest had initially programed.
 
-Moving the setting to an earlier point solves the problem.
+Reset the sample period to the architected value in the overflow
+handler, which now results in a number of host interrupts that is
+much closer to the number of interrupts in the guest.
 
-Fixes: 80f393a23be6 ("KVM: arm/arm64: Support chained PMU counters")
+Fixes: b02386eb7dac ("arm64: KVM: Add PMU overflow interrupt routing")
 Reviewed-by: Andrew Murray <andrew.murray@arm.com>
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- virt/kvm/arm/pmu.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ virt/kvm/arm/pmu.c | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
 
 diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
-index c30c3a74fc7f..f291d4ac3519 100644
+index f291d4ac3519..8731dfeced8b 100644
 --- a/virt/kvm/arm/pmu.c
 +++ b/virt/kvm/arm/pmu.c
-@@ -569,12 +569,12 @@ static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx)
- 		 * high counter.
- 		 */
- 		attr.sample_period = (-counter) & GENMASK(63, 0);
-+		if (kvm_pmu_counter_is_enabled(vcpu, pmc->idx + 1))
-+			attr.config1 |= PERF_ATTR_CFG1_KVM_PMU_CHAINED;
+@@ -8,6 +8,7 @@
+ #include <linux/kvm.h>
+ #include <linux/kvm_host.h>
+ #include <linux/perf_event.h>
++#include <linux/perf/arm_pmu.h>
+ #include <linux/uaccess.h>
+ #include <asm/kvm_emulate.h>
+ #include <kvm/arm_pmu.h>
+@@ -442,8 +443,25 @@ static void kvm_pmu_perf_overflow(struct perf_event *perf_event,
+ 				  struct pt_regs *regs)
+ {
+ 	struct kvm_pmc *pmc = perf_event->overflow_handler_context;
++	struct arm_pmu *cpu_pmu = to_arm_pmu(perf_event->pmu);
+ 	struct kvm_vcpu *vcpu = kvm_pmc_to_vcpu(pmc);
+ 	int idx = pmc->idx;
++	u64 period;
 +
- 		event = perf_event_create_kernel_counter(&attr, -1, current,
- 							 kvm_pmu_perf_overflow,
- 							 pmc + 1);
--
--		if (kvm_pmu_counter_is_enabled(vcpu, pmc->idx + 1))
--			attr.config1 |= PERF_ATTR_CFG1_KVM_PMU_CHAINED;
- 	} else {
- 		/* The initial sample period (overflow count) of an event. */
- 		if (kvm_pmu_idx_is_64bit(vcpu, pmc->idx))
++	cpu_pmu->pmu.stop(perf_event, PERF_EF_UPDATE);
++
++	/*
++	 * Reset the sample period to the architectural limit,
++	 * i.e. the point where the counter overflows.
++	 */
++	period = -(local64_read(&perf_event->count));
++
++	if (!kvm_pmu_idx_is_64bit(vcpu, pmc->idx))
++		period &= GENMASK(31, 0);
++
++	local64_set(&perf_event->hw.period_left, 0);
++	perf_event->attr.sample_period = period;
++	perf_event->hw.sample_period = period;
+ 
+ 	__vcpu_sys_reg(vcpu, PMOVSSET_EL0) |= BIT(idx);
+ 
+@@ -451,6 +469,8 @@ static void kvm_pmu_perf_overflow(struct perf_event *perf_event,
+ 		kvm_make_request(KVM_REQ_IRQ_PENDING, vcpu);
+ 		kvm_vcpu_kick(vcpu);
+ 	}
++
++	cpu_pmu->pmu.start(perf_event, PERF_EF_RELOAD);
+ }
+ 
+ /**
 -- 
 2.20.1
 
