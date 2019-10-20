@@ -2,48 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A94F6DDEB3
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 20 Oct 2019 15:42:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CF98DDEB5
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 20 Oct 2019 15:43:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9kI5sfVNg4UJ3iDq2dZcGFANT0U998sFzWQ1gWQRA5Y=; b=pUjKsyNrfuDLJt
-	TnlLbnwCgDrL6Vpl8vzrY2WR1l+efb37z6yChafUK1bAIscOJWN/vBWKtj3658dourokOgTbmB31T
-	NwqMsyYQ3zTdEOAl5uetfdp6by45+wOq2HjwXR9elZrv+XkmSzJfe/UvrcSlIZD4KvtasEBDqjveU
-	vPA2rjtRHQosHMMCAY4Un8o/Wgt+SW13F+E0GP4D5iUzzs4rpXqso/wzg0MKpH4OQxyTbMa5LypsT
-	8pjhfQq/C/AyT2s8sIhjSk39AAmdKYB9a8rdKL5kkGW7Y5/QzNMTocCa2tBPKdVQ3puauq0NVvocY
-	2nEP4jE1Of8gxrV12p8A==;
+	List-Owner; bh=dm4OFK8RviuSpwhcXTzRCPxrI2rjbKTLNRsbC4gFqGM=; b=mdNC/SrrMqcUjX
+	MYuEqEZDDqYrnhgK/abZg92E4X5g5t2zB/X8aduNfmmxwMbmMrvlBJyCxiVAjrWzxvxBTA+Gi23xx
+	dWTU7+3C9Y202o/QlWo3RLUw9O+L+TQwf+NR+l3RslEinTlogY/BpC8SCetTJxtMyPhiY73XDJ8XT
+	Hpl7YkJ/NN+kzpeshNK1EBYTDOFrpnPt7x0LJWQIDJ1/oJ9MBbIyDLdpOnxW/FT7KkahiWUBbLoB4
+	V3wl8ROZEiuxgCfYfr0jxdW6TYmfkCr13UFdRBoVJK2pXCKNdYdKXmUjrqfYMzWfOVruga4vQjBfU
+	8dkJYt4jZY9jBSNxodhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMBTv-0004S5-0w; Sun, 20 Oct 2019 13:42:51 +0000
+	id 1iMBUP-0004qi-TJ; Sun, 20 Oct 2019 13:43:21 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMBTh-0004PS-S6
- for linux-arm-kernel@lists.infradead.org; Sun, 20 Oct 2019 13:42:39 +0000
+ id 1iMBTh-0004PT-Sk
+ for linux-arm-kernel@lists.infradead.org; Sun, 20 Oct 2019 13:42:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1571578952; bh=HFSrXSPJyZ/r/g3KvWIYj4ef7s1MoOfxTtkAX4wXq50=;
+ t=1571578952; bh=BtDClttz5M6UQwuN1cXDgO69t2LNMtNj4UeiQxwnXFk=;
  h=From:To:Cc:Subject:Date:References:From;
- b=GEonPDHa6dAj8IQNI362IJTat+lXX4X4xGT0W2YVbPkzUHdnZVue/WOTLUDFmZ69Z
- WWTwVUFThlPCZiwNH0XMpsghZETlWi87QbUsDa/pDWDVf304lGaGQba8yufiED//2I
- /IT0A2cQYtcw/ZwIyXjalxDOXonEOOeG9/5vCZVY=
+ b=UXMk+GZzyWOYR6YsUvZ+9KmlF3y7Dqzs7ZTFyd3aHNTranHgZaLV2488yFGtMmDgq
+ sXsyyejKxXEwM3/TlHspv+ZPesHRQLH4FhvSCqmjjVx6qvxi2NMtaMjJnbOQuAmN2w
+ 3v0xXWr0S2bG/Fg2CWMnMRCu85Gf65Eb21r2b1tU=
 From: megous@megous.com
 To: linux-sunxi@googlegroups.com, Kishon Vijay Abraham I <kishon@ti.com>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  Icenowy Zheng <icenowy@aosc.io>, Thomas Gleixner <tglx@linutronix.de>,
  Arnd Bergmann <arnd@arndb.de>
-Subject: [PATCH 3/4] arm64: dts: allwinner: h6: add USB3 device nodes
-Date: Sun, 20 Oct 2019 15:42:28 +0200
-Message-Id: <20191020134229.1216351-4-megous@megous.com>
+Subject: [PATCH 4/4] arm64: dts: allwinner: orange-pi-3: Enable USB 3.0 host
+ support
+Date: Sun, 20 Oct 2019 15:42:29 +0200
+Message-Id: <20191020134229.1216351-5-megous@megous.com>
 In-Reply-To: <20191020134229.1216351-1-megous@megous.com>
 References: <20191020134229.1216351-1-megous@megous.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191020_064238_072537_E475DCE7 
-X-CRM114-Status: GOOD (  10.38  )
+X-CRM114-CacheID: sfid-20191020_064238_091927_1A7D375E 
+X-CRM114-Status: UNSURE (   9.06  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -78,63 +80,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Icenowy Zheng <icenowy@aosc.io>
+From: Ondrej Jirman <megous@megous.com>
 
-Allwinner H6 SoC features USB3 functionality, with a DWC3 controller and
-a custom PHY.
-
-Add device tree nodes for them.
+Enable Allwinner's USB 3.0 phy and the host controller. Orange Pi 3
+board has GL3510 USB 3.0 4-port hub connected to the SoC's USB 3.0
+port. All four ports are exposed via USB3-A connectors. VBUS is
+always on, since it's powered directly from DCIN (VCC-5V) and
+not switchable.
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>
-Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
-Reviewed-by: Chen-Yu Tsai <wens@csie.org>
 ---
- arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi | 32 ++++++++++++++++++++
- 1 file changed, 32 insertions(+)
+ arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-index 0d5ea19336a1..80233db478e6 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-@@ -537,6 +537,38 @@
- 			status = "disabled";
- 		};
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
+index eb379cd402ac..259af5b0f1a7 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
+@@ -94,6 +94,10 @@
+ 	status = "okay";
+ };
  
-+		dwc3: dwc3@5200000 {
-+			compatible = "snps,dwc3";
-+			reg = <0x05200000 0x10000>;
-+			interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_XHCI>,
-+				 <&ccu CLK_BUS_XHCI>,
-+				 <&rtc 0>;
-+			clock-names = "ref", "bus_early", "suspend";
-+			resets = <&ccu RST_BUS_XHCI>;
-+			/*
-+			 * The datasheet of the chip doesn't declare the
-+			 * peripheral function, and there's no boards known
-+			 * to have a USB Type-B port routed to the port.
-+			 * In addition, no one has tested the peripheral
-+			 * function yet.
-+			 * So set the dr_mode to "host" in the DTSI file.
-+			 */
-+			dr_mode = "host";
-+			phys = <&usb3phy>;
-+			phy-names = "usb3-phy";
-+			status = "disabled";
-+		};
++&dwc3 {
++	status = "okay";
++};
 +
-+		usb3phy: phy@5210000 {
-+			compatible = "allwinner,sun50i-h6-usb3-phy";
-+			reg = <0x5210000 0x10000>;
-+			clocks = <&ccu CLK_USB_PHY1>;
-+			resets = <&ccu RST_USB_PHY1>;
-+			#phy-cells = <0>;
-+			status = "disabled";
-+		};
+ &ehci0 {
+ 	status = "okay";
+ };
+@@ -285,3 +289,7 @@
+ 	usb3_vbus-supply = <&reg_vcc5v>;
+ 	status = "okay";
+ };
 +
- 		ehci3: usb@5311000 {
- 			compatible = "allwinner,sun50i-h6-ehci", "generic-ehci";
- 			reg = <0x05311000 0x100>;
++&usb3phy {
++	status = "okay";
++};
 -- 
 2.23.0
 
