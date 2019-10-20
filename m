@@ -2,93 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B16BDDF3D
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 20 Oct 2019 17:41:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06446DDF99
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 20 Oct 2019 18:57:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3dmz/4sMZg+HodePxC3DzSCGkK0/CNrdH4qLl2IY+4o=; b=Eb0H0/AvVCUInv
-	w81uFWP4c2luHKFHbM5dTSHDejLW/sEJGxvPSrQ6KJwJPEwPHWMtiGJ95wZyb5SZxLZKinpIMkT3F
-	v5W5lLhfFaVP8q83BPMzW4FivjZ1MrG5HpgGHrHIWZ7KCn5k62iTNZq5D1C6A2ukM3xoMu26Ze+i5
-	HfyX5jbEQHgYCHPeZI4r07qX5ChYK/lV1mTMJvvqEgDKKgh2lFoPQLdJUzkqY+ih0fk2JS+ayWPLl
-	qh4mSE6YpWyv92blpQsLvA8Y1q0neOTFvZMSgoDAnTuZmqL18c2fcySBiSG2IPVtzpNKgc8JHV9We
-	DMnKaGGCgr0hCcs2L5aA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Xz1B5GT10GYvJAeP3qTC1pVjc/F7ztyRDTTWeTYUx/U=; b=ephRoXIAF3zR1Uv7UTAXM6+KM
+	003rq9mmw4B1zUSqHwU/PjVuaV5apKD0kGiDzS5y+1lxflD5Z54X1QOfoyGMiOdLylRm63s2nghje
+	O5A8tEBOMbWjSaFZHIcvWkz65G7/s5mUd1b57cFDAUydva1qjSHeFSDKqdMjoP05BhytUz8JLgA20
+	iiQNT3nDFQD0vW7cv0fy5kEhcHPpGhSb+Y0vW1BAi7lD5nvBkGt4Tv2IjALwJKe9ugjsBnIs5kuKS
+	cu/z/RK/LucS6t95B2RG2WHf3Hk+ABxCczUCohvc4O+w9gzmX83bfHnBLUYyudRd/5tPD1I4N/aDe
+	H49sx/UsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMDKR-0001gT-Ft; Sun, 20 Oct 2019 15:41:11 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1iMEVg-0002Qv-Sj; Sun, 20 Oct 2019 16:56:52 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMDK7-0000uC-Cs
- for linux-arm-kernel@lists.infradead.org; Sun, 20 Oct 2019 15:40:55 +0000
-Received: by mail-pf1-x444.google.com with SMTP id y22so6753679pfr.3
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 20 Oct 2019 08:40:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=FuZGu2aoCknAnv24EgRZLq3TpHuQkVfEzbRooIt81lk=;
- b=uPd09LECoZZcL4GG5VAq7JVDR/LbXkpGucbjiwal6Nvcgp+zXGcA8oD6SF8UVjQ4Wz
- lbsXMGx0JWpekvHEQ+66JVqGpr0P1p4nkwSUkkylrcnYcwth1HEJfxh8CcpzEvQbbf/Z
- /0b5jUeWTYFjqQlSj2aDIqCLael92OMy8/XNvNdEJLHGU6tivzoZME4qlZvFCfOXDcC4
- jDGGze5dPMOMvWh8BC+C6NARTCQQVh9WEu9EjETO9gRB62FgGiiRDJGJmzQ7oWi3y4yz
- WgSpoLycJGt2SwbVqWnKyquFV/8xVdNSx5LlSozs9CLmBzfkKZXScySG6OZD0CQeNhS5
- MZvQ==
+ id 1iMEVP-0001kc-Lg; Sun, 20 Oct 2019 16:56:37 +0000
+Received: by mail-pl1-x644.google.com with SMTP id q24so5329299plr.13;
+ Sun, 20 Oct 2019 09:56:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=rcex/JboAInlscqVZCpIW6IqHsfiGxjimiask7H3qlc=;
+ b=GGHLwp7psj07AM6dyMc8By3wlKSsccbFjsjH+YVPyxpVxv6/LLLng9Y/tX9PPR0BwD
+ 2HSG9OYF0QgVQ2953m7mfwLwKm5fdJnprvwsaqaKf1ydyoB2zsZCF9ajga28Q7eLFaM/
+ VRkKrfBpmIr2eWszRHyaRposLw77W6UAl6ppu6+e10uc3vZuLBbOaOXuoBh4MWTMXAoY
+ s0+xAmPi/FIT5BMdwTYE64s5WvjjE+8ScDApFKLhAZPNpdZKt4rQxEeZO61Yn8eh+VR/
+ wQPOYFwAdrll3dQixMPQx+fF5mzwcBV0waHABn+IC61F7arGioWta5iIlZi9emzG1zMS
+ 2vJg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=FuZGu2aoCknAnv24EgRZLq3TpHuQkVfEzbRooIt81lk=;
- b=GhE4jicNVhACvkhWMX3H+PyW3ACmfay2pVnrIoyTwf4gyrUDwDhc8r2lzLKnnYiYNE
- 5EMxRwdwwWC4ar1ebatS07BxbAg5cdkEZhVUbADlP92ajiLM6ySpLX4E35EVIOJq20Qm
- VVh54+Zq6f+3qQEO2vR/lGCsQTyttMqmB9JYKcsorswopX41a/qWTpsfrPQun2PmrnSc
- Xf4yjyPqINp3qmL2CYpkPz1wJqOraDN0YR3GW+0xbvEmIWskPBw3eHgAzTpCQ/DWtyLm
- hnz0F3RfTQI25d+ghz8D0tNfB2OGPtUMU52uVIOSedT7lA7D0er2e3wNWuIOiLdIAWKo
- qR5g==
-X-Gm-Message-State: APjAAAWG+0yPn4H9VBJNa5Od64oXI2kMLYVmcz+57jRYbWPlqCrO34LJ
- 4q1NJ+mnjO53CaRaLC6vTti3
-X-Google-Smtp-Source: APXvYqzHLGqSKCCwjH28TYjZPhjkmDnRxlDMQXG2Cn5CjKEZFuZgAWN28a99BdHESND/cJvzhwrF8A==
-X-Received: by 2002:a17:90a:86c2:: with SMTP id
- y2mr22888108pjv.105.1571586047397; 
- Sun, 20 Oct 2019 08:40:47 -0700 (PDT)
-Received: from Mani-XPS-13-9360 ([2409:4072:619e:9471:81c6:faf1:b3a2:6750])
- by smtp.gmail.com with ESMTPSA id c26sm13324659pfo.173.2019.10.20.08.40.40
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 20 Oct 2019 08:40:46 -0700 (PDT)
-Date: Sun, 20 Oct 2019 21:10:37 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH v5 7/8] clk: Add common clock driver for BM1880 SoC
-Message-ID: <20191020154037.GD12864@Mani-XPS-13-9360>
-References: <20190916161447.32715-1-manivannan.sadhasivam@linaro.org>
- <20190916161447.32715-8-manivannan.sadhasivam@linaro.org>
- <20190918044745.1FD7221848@mail.kernel.org>
+ h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=rcex/JboAInlscqVZCpIW6IqHsfiGxjimiask7H3qlc=;
+ b=XPM94heEvaW0u0wrrmAU2IH4h1ypAYmPMnhCfeWq9If9DSR6nFtljA6pK90UsrOaGE
+ yG4/ygB2THjNS6FG49WjQR7UZQQdveIYQfAC+eiSWxdhuBOuT2zmOJE0UYk+V4mVpWIR
+ wGecttn7LoMImmlueBG8i2dPB2herOkAo0mc49HMcf4DEIOOozoFDMhLmGlhHYHuQp7y
+ ewR982lBIAet3hwNX0VXCu5yb6v13pJogMFG6xXVH9BXWRvRR0TXi1znJAmll+fLxwA6
+ EHixiMfKpyDfqy4NsRl2+tc4gYVLaurgNhmY6JfiJGoNnHy4H0lhOg93kqj8H11tsh8F
+ pDRw==
+X-Gm-Message-State: APjAAAWJFQ5c2byPx6r8W6aJDDZlSYN6mhpVG2vqcXNkBnkXzGyMWnPn
+ oFJJ5DD7JppehswV7ZfBQdw=
+X-Google-Smtp-Source: APXvYqwm4j5VbVui4amTuHxI5J7SoGnORTayh8+YBRgfmzWrCiUYgEgpboL16LAHH14WkS5wqB9ExA==
+X-Received: by 2002:a17:902:8c96:: with SMTP id
+ t22mr19958053plo.290.1571590592734; 
+ Sun, 20 Oct 2019 09:56:32 -0700 (PDT)
+Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id
+ m22sm13271478pgj.29.2019.10.20.09.56.30
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sun, 20 Oct 2019 09:56:31 -0700 (PDT)
+Subject: Re: [PATCH v2 3/4] watchdog: add meson secure watchdog driver
+To: Xingyu Chen <xingyu.chen@amlogic.com>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ Kevin Hilman <khilman@baylibre.com>, Neil Armstrong <narmstrong@baylibre.com>
+References: <1571387622-35132-1-git-send-email-xingyu.chen@amlogic.com>
+ <1571387622-35132-4-git-send-email-xingyu.chen@amlogic.com>
+From: Guenter Roeck <linux@roeck-us.net>
+Message-ID: <7397f6db-1dc8-3abd-41ff-2e47323c7ffa@roeck-us.net>
+Date: Sun, 20 Oct 2019 09:56:29 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190918044745.1FD7221848@mail.kernel.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <1571387622-35132-4-git-send-email-xingyu.chen@amlogic.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191020_084051_470740_4F1E882F 
-X-CRM114-Status: GOOD (  24.90  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191020_095635_731287_799D3433 
+X-CRM114-Status: GOOD (  27.37  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (groeck7[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (groeck7[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,1075 +108,279 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, mturquette@baylibre.com,
- linux-kernel@vger.kernel.org, darren.tsao@bitmain.com, robh+dt@kernel.org,
- haitao.suo@bitmain.com, fisher.cheng@bitmain.com, alec.lin@bitmain.com,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Qianggui Song <qianggui.song@amlogic.com>, linux-watchdog@vger.kernel.org,
+ Jianxin Pan <jianxin.pan@amlogic.com>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Jian Hu <jian.hu@amlogic.com>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Jerome Brunet <jbrunet@baylibre.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Stephen,
-
-On Tue, Sep 17, 2019 at 09:47:44PM -0700, Stephen Boyd wrote:
-> Quoting Manivannan Sadhasivam (2019-09-16 09:14:46)
-> > diff --git a/drivers/clk/Kconfig b/drivers/clk/Kconfig
-> > index 801fa1cd0321..e70c64e43ff9 100644
-> > --- a/drivers/clk/Kconfig
-> > +++ b/drivers/clk/Kconfig
-> > @@ -139,6 +139,13 @@ config COMMON_CLK_SI570
-> >           This driver supports Silicon Labs 570/571/598/599 programmable
-> >           clock generators.
-> >  
-> > +config COMMON_CLK_BM1880
-> > +       bool "Clock driver for Bitmain BM1880 SoC"
+On 10/18/19 1:33 AM, Xingyu Chen wrote:
+> The watchdog controller on the Meson-A/C series SoCs is moved to secure
+> world, watchdog operation needs to be done in secure EL3 mode via ATF,
+> Non-secure world can call SMC instruction to trap to AFT for watchdog
+> operation.
 > 
-> Can it be tristate?
+> Signed-off-by: Xingyu Chen <xingyu.chen@amlogic.com>
+> ---
+>   drivers/watchdog/Kconfig         |  17 ++++
+>   drivers/watchdog/Makefile        |   1 +
+>   drivers/watchdog/meson_sec_wdt.c | 187 +++++++++++++++++++++++++++++++++++++++
+>   3 files changed, 205 insertions(+)
+>   create mode 100644 drivers/watchdog/meson_sec_wdt.c
 > 
+> diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
+> index 58e7c10..e84be42 100644
+> --- a/drivers/watchdog/Kconfig
+> +++ b/drivers/watchdog/Kconfig
+> @@ -826,6 +826,23 @@ config MESON_GXBB_WATCHDOG
+>   	  To compile this driver as a module, choose M here: the
+>   	  module will be called meson_gxbb_wdt.
+>   
+> +config MESON_SEC_WATCHDOG
+> +	tristate "Amlogic Meson Secure watchdog support"
+> +	depends on MESON_SM
+> +	depends on ARCH_MESON || COMPILE_TEST
 
-I would prefer to have the common clock drivers as built-in since they
-are the most fundamental parts of the system.
+This dependency is pointless. MESON_SM already depends on ARCH_MESON,
+thus specifying "COMPILE_TEST" here adds no value but only
+creates confusion.
 
-> > +       depends on ARCH_BITMAIN || COMPILE_TEST
-> > +       default ARCH_BITMAIN
-> > +       help
-> > +         This driver supports the clocks on Bitmain BM1880 SoC.
-> > +
-> >  config COMMON_CLK_CDCE706
-> >         tristate "Clock driver for TI CDCE706 clock synthesizer"
-> >         depends on I2C
-> > diff --git a/drivers/clk/clk-bm1880.c b/drivers/clk/clk-bm1880.c
-> > new file mode 100644
-> > index 000000000000..3b10de929fd4
-> > --- /dev/null
-> > +++ b/drivers/clk/clk-bm1880.c
-> > @@ -0,0 +1,966 @@
-> > +// SPDX-License-Identifier: GPL-2.0+
-> > +/*
-> > + * Bitmain BM1880 SoC clock driver
-> > + *
-> > + * Copyright (c) 2019 Linaro Ltd.
-> > + * Author: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> > + */
-> > +
-> > +#include <linux/clk-provider.h>
-> > +#include <linux/kernel.h>
-> > +#include <linux/module.h>
-> > +#include <linux/of_address.h>
-> > +#include <linux/of_device.h>
-> > +#include <linux/platform_device.h>
-> > +#include <linux/slab.h>
-> > +
-> > +#include <dt-bindings/clock/bm1880-clock.h>
-> > +
-> > +#define BM1880_CLK_MPLL_CTL    0x00
-> > +#define BM1880_CLK_SPLL_CTL    0x04
-> > +#define BM1880_CLK_FPLL_CTL    0x08
-> > +#define BM1880_CLK_DDRPLL_CTL  0x0c
-> > +
-> > +#define BM1880_CLK_ENABLE0     0x00
-> > +#define BM1880_CLK_ENABLE1     0x04
-> > +#define BM1880_CLK_SELECT      0x20
-> > +#define BM1880_CLK_DIV0                0x40
-> > +#define BM1880_CLK_DIV1                0x44
-> > +#define BM1880_CLK_DIV2                0x48
-> > +#define BM1880_CLK_DIV3                0x4c
-> > +#define BM1880_CLK_DIV4                0x50
-> > +#define BM1880_CLK_DIV5                0x54
-> > +#define BM1880_CLK_DIV6                0x58
-> > +#define BM1880_CLK_DIV7                0x5c
-> > +#define BM1880_CLK_DIV8                0x60
-> > +#define BM1880_CLK_DIV9                0x64
-> > +#define BM1880_CLK_DIV10       0x68
-> > +#define BM1880_CLK_DIV11       0x6c
-> > +#define BM1880_CLK_DIV12       0x70
-> > +#define BM1880_CLK_DIV13       0x74
-> > +#define BM1880_CLK_DIV14       0x78
-> > +#define BM1880_CLK_DIV15       0x7c
-> > +#define BM1880_CLK_DIV16       0x80
-> > +#define BM1880_CLK_DIV17       0x84
-> > +#define BM1880_CLK_DIV18       0x88
-> > +#define BM1880_CLK_DIV19       0x8c
-> > +#define BM1880_CLK_DIV20       0x90
-> > +#define BM1880_CLK_DIV21       0x94
-> > +#define BM1880_CLK_DIV22       0x98
-> > +#define BM1880_CLK_DIV23       0x9c
-> > +#define BM1880_CLK_DIV24       0xa0
-> > +#define BM1880_CLK_DIV25       0xa4
-> > +#define BM1880_CLK_DIV26       0xa8
-> > +#define BM1880_CLK_DIV27       0xac
-> > +#define BM1880_CLK_DIV28       0xb0
-> > +
-> > +#define to_bm1880_pll_clk(_hw) container_of(_hw, struct bm1880_pll_hw_clock, hw)
-> > +#define to_bm1880_div_clk(_hw) container_of(_hw, struct bm1880_div_hw_clock, hw)
-> > +
-> > +static DEFINE_SPINLOCK(bm1880_clk_lock);
-> > +
-> > +struct bm1880_clock_data {
-> > +       void __iomem *pll_base;
-> > +       void __iomem *sys_base;
-> > +       struct clk_hw_onecell_data *clk_data;
-> 
-> Please call it hw_data or onecell_data instead so that the code doesn't
-> read as clk_data->clk_data. Also, probably can just make it part of the
-> same struct instead of a pointer inside so that it can all be allocated
-> in one big chunk instead of in two.
-> 
+> +	select WATCHDOG_CORE
+> +	help
+> +	  The watchdog controller on the Meson-A/C series SoCs is moved to
+> +	  secure world, watchdog operation needs to be done in secure EL3
+> +	  mode via ATF, non-secure world can call SMC instruction to trap
+> +	  to ATF for the watchdog operation.
+> +
+> +	  Say Y here if watchdog controller on Meson SoCs is located in
+> +	  secure world.
+> +
+> +	  To compile this driver as a module, choose M here: the
+> +	  module will be called meson_sec_wdt.
+> +
+>   config MESON_WATCHDOG
+>   	tristate "Amlogic Meson SoCs watchdog support"
+>   	depends on ARCH_MESON || COMPILE_TEST
+> diff --git a/drivers/watchdog/Makefile b/drivers/watchdog/Makefile
+> index 2ee352b..5e6b73d 100644
+> --- a/drivers/watchdog/Makefile
+> +++ b/drivers/watchdog/Makefile
+> @@ -78,6 +78,7 @@ obj-$(CONFIG_QCOM_WDT) += qcom-wdt.o
+>   obj-$(CONFIG_BCM_KONA_WDT) += bcm_kona_wdt.o
+>   obj-$(CONFIG_TEGRA_WATCHDOG) += tegra_wdt.o
+>   obj-$(CONFIG_MESON_GXBB_WATCHDOG) += meson_gxbb_wdt.o
+> +obj-$(CONFIG_MESON_SEC_WATCHDOG) += meson_sec_wdt.o
+>   obj-$(CONFIG_MESON_WATCHDOG) += meson_wdt.o
+>   obj-$(CONFIG_MEDIATEK_WATCHDOG) += mtk_wdt.o
+>   obj-$(CONFIG_DIGICOLOR_WATCHDOG) += digicolor_wdt.o
+> diff --git a/drivers/watchdog/meson_sec_wdt.c b/drivers/watchdog/meson_sec_wdt.c
+> new file mode 100644
+> index 00000000..86bd87c
+> --- /dev/null
+> +++ b/drivers/watchdog/meson_sec_wdt.c
+> @@ -0,0 +1,187 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +/*
+> + * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
+> + * Author: Xingyu Chen <xingyu.chen@amlogic.com>
+> + *
+> + */
+> +#include <linux/err.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/types.h>
+> +#include <linux/watchdog.h>
+> +#include <linux/firmware/meson/meson_sm.h>
+> +
+> +#define MESON_SIP_WDT_DISABLE		0x1
+> +#define MESON_SIP_WDT_ENABLE		0x2
+> +#define MESON_SIP_WDT_PING		0x3
+> +#define MESON_SIP_WDT_INIT		0x4
+> +#define MESON_SIP_WDT_RESETNOW		0x5
+> +#define MESON_SIP_WDT_SETTIMEOUT	0x6
+> +#define MESON_SIP_WDT_GETTIMELEFT	0x7
+> +
+> +#define DEFAULT_TIMEOUT			30 /* seconds */
+> +
+> +/*
+> + * Watchdog timer tick is set to 1ms in secfw side, and tick count is
+> + * stored in the bit[16-31] of WATCHDOG_CNT register, so the maximum
+> + * timeout value is 0xffff ms.
+> + */
+> +#define MAX_TIMEOUT_MS			0xFFFF
+> +
+> +struct meson_sec_wdt {
+> +	struct watchdog_device wdt_dev;
+> +	struct meson_sm_firmware *fw;
+> +};
+> +
+> +static int meson_sec_wdt_start(struct watchdog_device *wdt_dev)
+> +{
+> +	struct meson_sec_wdt *data = watchdog_get_drvdata(wdt_dev);
+> +
+> +	return meson_sm_call(data->fw, SM_WATCHDOG_OPS, NULL,
+> +			     MESON_SIP_WDT_ENABLE, 0, 0, 0, 0);
+> +}
+> +
+> +static int meson_sec_wdt_stop(struct watchdog_device *wdt_dev)
+> +{
+> +	struct meson_sec_wdt *data = watchdog_get_drvdata(wdt_dev);
+> +
+> +	return meson_sm_call(data->fw, SM_WATCHDOG_OPS, NULL,
+> +			     MESON_SIP_WDT_DISABLE, 0, 0, 0, 0);
+> +}
+> +
+> +static int meson_sec_wdt_ping(struct watchdog_device *wdt_dev)
+> +{
+> +	struct meson_sec_wdt *data = watchdog_get_drvdata(wdt_dev);
+> +
+> +	return meson_sm_call(data->fw, SM_WATCHDOG_OPS, NULL,
+> +			     MESON_SIP_WDT_PING, 0, 0, 0, 0);
+> +}
+> +
+> +static int meson_sec_wdt_set_timeout(struct watchdog_device *wdt_dev,
+> +				     unsigned int timeout)
+> +{
+> +	struct meson_sec_wdt *data = watchdog_get_drvdata(wdt_dev);
+> +
+> +	wdt_dev->timeout = timeout;
+> +
+> +	return meson_sm_call(data->fw, SM_WATCHDOG_OPS, NULL,
+> +			     MESON_SIP_WDT_SETTIMEOUT,
+> +			     wdt_dev->timeout, 0, 0, 0);
+> +}
+> +
+> +static unsigned int meson_sec_wdt_get_timeleft(struct watchdog_device *wdt_dev)
+> +{
+> +	int ret;
+> +	unsigned int timeleft;
+> +	struct meson_sec_wdt *data = watchdog_get_drvdata(wdt_dev);
+> +
+> +	ret = meson_sm_call(data->fw, SM_WATCHDOG_OPS, &timeleft,
+> +			    MESON_SIP_WDT_GETTIMELEFT, 0, 0, 0, 0);
+> +
+> +	if (ret)
+> +		return ret;
 
-okay.
+Meh, that doesn't work. I just realized that the return type is unsigned,
+so returning a negative error code is pointless. Guess we'll have to
+live with returning 0 in this case after all. I wonder if we should
+fix the API and return an integer (with negative error code), but that
+is a different question.
 
-> > +};
-> > +
-> > +struct bm1880_gate_clock {
-> > +       unsigned int    id;
-> > +       const char      *name;
-> > +       const char      *parent;
-> > +       u32             gate_reg;
-> > +       s8              gate_shift;
-> > +       unsigned long   flags;
-> > +};
-> > +
-> > +struct bm1880_mux_clock {
-> > +       unsigned int    id;
-> > +       const char      *name;
-> > +       const char      * const *parents;
-> > +       s8              num_parents;
-> > +       u32             reg;
-> > +       s8              shift;
-> > +       unsigned long   flags;
-> > +};
-> > +
-> > +struct bm1880_div_clock {
-> > +       unsigned int    id;
-> > +       const char      *name;
-> > +       u32             reg;
-> > +       u8              shift;
-> > +       u8              width;
-> > +       u32             initval;
-> > +       const struct clk_div_table *table;
-> > +       unsigned long flags;
-> > +};
-> > +
-> > +struct bm1880_div_hw_clock {
-> > +       struct bm1880_div_clock div;
-> > +       void __iomem *base;
-> > +       spinlock_t *lock;
-> > +       struct clk_hw hw;
-> > +       struct clk_init_data init;
-> > +};
-> > +
-> > +struct bm1880_composite_clock {
-> > +       unsigned int    id;
-> > +       const char      *name;
-> > +       const char      *parent;
-> > +       const char      * const *parents;
-> > +       unsigned int    num_parents;
-> > +       unsigned long   flags;
-> > +
-> > +       u32             gate_reg;
-> > +       u32             mux_reg;
-> > +       u32             div_reg;
-> > +
-> > +       s8              gate_shift;
-> > +       s8              mux_shift;
-> > +       s8              div_shift;
-> > +       s8              div_width;
-> > +       s16             div_initval;
-> > +       const struct clk_div_table *table;
-> > +};
-> > +
-> > +struct bm1880_pll_clock {
-> > +       unsigned int    id;
-> > +       const char      *name;
-> > +       u32             reg;
-> > +       unsigned long   flags;
-> > +};
-> > +
-> > +struct bm1880_pll_hw_clock {
-> > +       struct bm1880_pll_clock pll;
-> > +       void __iomem *base;
-> > +       struct clk_hw hw;
-> > +       struct clk_init_data init;
-> > +};
-> > +
-> > +static const struct clk_ops bm1880_pll_ops;
-> > +static const struct clk_ops bm1880_clk_div_ops;
-> > +
-> > +#define GATE_DIV(_id, _name, _parent, _gate_reg, _gate_shift, _div_reg,        \
-> > +                       _div_shift, _div_width, _div_initval, _table,   \
-> > +                       _flags) {                                       \
-> > +               .id = _id,                                              \
-> > +               .parent = _parent,                                      \
-> > +               .name = _name,                                          \
-> > +               .gate_reg = _gate_reg,                                  \
-> > +               .gate_shift = _gate_shift,                              \
-> > +               .div_reg = _div_reg,                                    \
-> > +               .div_shift = _div_shift,                                \
-> > +               .div_width = _div_width,                                \
-> > +               .div_initval = _div_initval,                            \
-> > +               .table = _table,                                        \
-> > +               .mux_shift = -1,                                        \
-> > +               .flags = _flags,                                        \
-> > +       }
-> > +
-> > +#define GATE_MUX(_id, _name, _parents, _gate_reg, _gate_shift,         \
-> > +                       _mux_reg, _mux_shift, _flags) {                 \
-> > +               .id = _id,                                              \
-> > +               .parents = _parents,                                    \
-> > +               .num_parents = ARRAY_SIZE(_parents),                    \
-> > +               .name = _name,                                          \
-> > +               .gate_reg = _gate_reg,                                  \
-> > +               .gate_shift = _gate_shift,                              \
-> > +               .div_shift = -1,                                        \
-> > +               .mux_reg = _mux_reg,                                    \
-> > +               .mux_shift = _mux_shift,                                \
-> > +               .flags = _flags,                                        \
-> > +       }
-> > +
-> > +#define CLK_PLL(_id, _name, _parent, _reg, _flags) {                   \
-> > +               .pll.id = _id,                                          \
-> > +               .pll.name = _name,                                      \
-> > +               .pll.reg = _reg,                                        \
-> > +               .hw.init = CLK_HW_INIT_PARENTS_DATA(_name, _parent,     \
-> > +                                                   &bm1880_pll_ops,    \
-> > +                                                   _flags),            \
-> > +       }
-> > +
-> > +#define CLK_DIV(_id, _name, _parent, _reg, _shift, _width, _initval,   \
-> > +                               _table, _flags) {                       \
-> > +               .div.id = _id,                                          \
-> > +               .div.name = _name,                                      \
-> > +               .div.reg = _reg,                                        \
-> > +               .div.shift = _shift,                                    \
-> > +               .div.width = _width,                                    \
-> > +               .div.initval = _initval,                                \
-> > +               .div.table = _table,                                    \
-> > +               .hw.init = CLK_HW_INIT_HW(_name, _parent,               \
-> > +                                         &bm1880_clk_div_ops,          \
-> > +                                         _flags),                      \
-> > +       }
-> > +
-> > +static struct clk_parent_data bm1880_pll_parent[] = {
-> > +       { .fw_name = "osc", .name = "osc" },
-> > +};
-> > +
-> > +/*
-> > + * All PLL clocks are marked as CRITICAL, hence they are very crucial
-> > + * for the functioning of the SoC
-> 
-> Please add more information besides crucial to function of the clk.
-> Basically describe what the PLLs are clocking and why those child clks
-> aren't enabled or marked as critical themselves. The usage of
-> CLK_IS_CRITICAL is too liberal in this driver so this needs to be
-> cleaned up. For example, clk_mpll shouldn't be marked critical, just the
-> a53 CPU clk that can source from it should be marked critical because
-> it's for the CPU running code.
+Sorry for the confusion - I should have noticed that before.
 
-okay. I got into the assumption that we should explicitly mark the parent
-clocks as critical also. But yeah, this doesn't makes much sense...
-
-> It's also odd that we would register gate
-> clks or the a53 clks if we don't expect to ever turn those clks off. Can
-> that be avoided so that we don't need to mark anything critical for this
-> path?
+> +
+> +	return timeleft;
+> +}
+> +
+> +static const struct watchdog_ops meson_sec_wdt_ops = {
+> +	.start = meson_sec_wdt_start,
+> +	.stop = meson_sec_wdt_stop,
+> +	.ping = meson_sec_wdt_ping,
+> +	.set_timeout = meson_sec_wdt_set_timeout,
+> +	.get_timeleft = meson_sec_wdt_get_timeleft,
+> +};
+> +
+> +static const struct watchdog_info meson_sec_wdt_info = {
+> +	.identity = "Meson Secure Watchdog Timer",
+> +	.options = WDIOF_SETTIMEOUT | WDIOF_KEEPALIVEPING | WDIOF_MAGICCLOSE,
+> +};
+> +
+> +static int __maybe_unused meson_sec_wdt_resume(struct device *dev)
+> +{
+> +	struct meson_sec_wdt *data = dev_get_drvdata(dev);
+> +
+> +	if (watchdog_active(&data->wdt_dev))
+> +		return meson_sec_wdt_start(&data->wdt_dev);
+> +
+> +	return 0;
+> +}
+> +
+> +static int __maybe_unused meson_sec_wdt_suspend(struct device *dev)
+> +{
+> +	struct meson_sec_wdt *data = dev_get_drvdata(dev);
+> +
+> +	if (watchdog_active(&data->wdt_dev))
+> +		return meson_sec_wdt_stop(&data->wdt_dev);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct dev_pm_ops meson_sec_wdt_pm_ops = {
+> +	SET_SYSTEM_SLEEP_PM_OPS(meson_sec_wdt_suspend, meson_sec_wdt_resume)
+> +};
+> +
+> +static const struct of_device_id meson_sec_wdt_dt_ids[] = {
+> +	 { .compatible = "amlogic,meson-sec-wdt", },
+> +	 { /* sentinel */ },
+> +};
+> +MODULE_DEVICE_TABLE(of, meson_sec_wdt_dt_ids);
+> +
+> +static int meson_sec_wdt_probe(struct platform_device *pdev)
+> +{
+> +	struct device *dev = &pdev->dev;
+> +	struct meson_sec_wdt *data;
+> +	struct device_node *sm_np;
+> +	int ret;
+> +
+> +	data = devm_kzalloc(dev, sizeof(*data), GFP_KERNEL);
+> +	if (!data)
+> +		return -ENOMEM;
+> +
+> +	sm_np = of_parse_phandle(pdev->dev.of_node, "secure-monitor", 0);
+> +	if (!sm_np) {
+> +		dev_err(&pdev->dev, "no secure-monitor node\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	data->fw = meson_sm_get(sm_np);
+> +	of_node_put(sm_np);
+> +	if (!data->fw)
+> +		return -EPROBE_DEFER;
+> +
+> +	platform_set_drvdata(pdev, data);
+> +
+> +	data->wdt_dev.parent = dev;
+> +	data->wdt_dev.info = &meson_sec_wdt_info;
+> +	data->wdt_dev.ops = &meson_sec_wdt_ops;
+> +	data->wdt_dev.max_hw_heartbeat_ms = MAX_TIMEOUT_MS;
+> +	data->wdt_dev.min_timeout = 1;
+> +	data->wdt_dev.timeout = DEFAULT_TIMEOUT;
+> +	watchdog_set_drvdata(&data->wdt_dev, data);
+> +
+> +	ret = meson_sm_call(data->fw, SM_WATCHDOG_OPS, NULL,
+> +			    MESON_SIP_WDT_INIT,
+> +			    data->wdt_dev.timeout, 0, 0, 0);
+> +	if (ret)
+> +		return ret;
+> +
+> +	watchdog_stop_on_reboot(&data->wdt_dev);
+> +
+> +	return devm_watchdog_register_device(dev, &data->wdt_dev);
+> +}
+> +
+> +static struct platform_driver meson_sec_wdt_driver = {
+> +	.probe	= meson_sec_wdt_probe,
+> +	.driver = {
+> +		.name = "meson-sec-wdt",
+> +		.pm = &meson_sec_wdt_pm_ops,
+> +		.of_match_table	= meson_sec_wdt_dt_ids,
+> +	},
+> +};
+> +
+> +module_platform_driver(meson_sec_wdt_driver);
+> +
+> +MODULE_AUTHOR("Xingyu Chen <xingyu.chen@amlogic.com>");
+> +MODULE_DESCRIPTION("Amlogic Secure Watchdog Timer Driver");
+> +MODULE_LICENSE("Dual MIT/GPL");
 > 
 
-No. I would like to implement the whole logic provided by the IP as it is.
-Eventhough it looks odd, that's how things are designed ;-)
-
-> > + */
-> > +static struct bm1880_pll_hw_clock bm1880_pll_clks[] = {
-> > +       CLK_PLL(BM1880_CLK_MPLL, "clk_mpll", bm1880_pll_parent,
-> > +               BM1880_CLK_MPLL_CTL, CLK_IS_CRITICAL),
-> > +       CLK_PLL(BM1880_CLK_SPLL, "clk_spll", bm1880_pll_parent,
-> > +               BM1880_CLK_SPLL_CTL, CLK_IS_CRITICAL),
-> > +       CLK_PLL(BM1880_CLK_FPLL, "clk_fpll", bm1880_pll_parent,
-> > +               BM1880_CLK_FPLL_CTL, CLK_IS_CRITICAL),
-> > +       CLK_PLL(BM1880_CLK_DDRPLL, "clk_ddrpll", bm1880_pll_parent,
-> > +               BM1880_CLK_DDRPLL_CTL, CLK_IS_CRITICAL),
-> > +};
-> > +
-> > +/*
-> > + * Clocks marked as CRITICAL are needed for the proper functioning
-> > + * of the SoC.
-> > + */
-> > +static const struct bm1880_gate_clock bm1880_gate_clks[] = {
-> > +       { BM1880_CLK_AHB_ROM, "clk_ahb_rom", "clk_mux_axi6",
-> > +         BM1880_CLK_ENABLE0, 2, CLK_IS_CRITICAL },
-> > +       { BM1880_CLK_AXI_SRAM, "clk_axi_sram", "clk_axi1",
-> > +         BM1880_CLK_ENABLE0, 3, CLK_IS_CRITICAL },
-> > +       { BM1880_CLK_DDR_AXI, "clk_ddr_axi", "clk_mux_axi6",
-> > +         BM1880_CLK_ENABLE0, 4, CLK_IS_CRITICAL },
-> > +       { BM1880_CLK_APB_EFUSE, "clk_apb_efuse", "clk_mux_axi6",
-> > +         BM1880_CLK_ENABLE0, 6, CLK_IS_CRITICAL },
-> > +       { BM1880_CLK_AXI5_EMMC, "clk_axi5_emmc", "clk_axi5",
-> > +         BM1880_CLK_ENABLE0, 7, 0 },
-> > +       { BM1880_CLK_AXI5_SD, "clk_axi5_sd", "clk_axi5",
-> > +         BM1880_CLK_ENABLE0, 10, 0 },
-> > +       { BM1880_CLK_AXI4_ETH0, "clk_axi4_eth0", "clk_axi4",
-> > +         BM1880_CLK_ENABLE0, 14, 0 },
-> > +       { BM1880_CLK_AXI4_ETH1, "clk_axi4_eth1", "clk_axi4",
-> > +         BM1880_CLK_ENABLE0, 16, 0 },
-> > +       { BM1880_CLK_AXI1_GDMA, "clk_axi1_gdma", "clk_axi1",
-> > +         BM1880_CLK_ENABLE0, 17, 0 },
-> > +       /* Don't gate GPIO clocks as it is not owned by the GPIO driver */
-> > +       { BM1880_CLK_APB_GPIO, "clk_apb_gpio", "clk_mux_axi6",
-> > +         BM1880_CLK_ENABLE0, 18, CLK_IGNORE_UNUSED },
-> > +       { BM1880_CLK_APB_GPIO_INTR, "clk_apb_gpio_intr", "clk_mux_axi6",
-> > +         BM1880_CLK_ENABLE0, 19, CLK_IGNORE_UNUSED },
-> > +       { BM1880_CLK_AXI1_MINER, "clk_axi1_miner", "clk_axi1",
-> > +         BM1880_CLK_ENABLE0, 21, 0 },
-> > +       { BM1880_CLK_AHB_SF, "clk_ahb_sf", "clk_mux_axi6",
-> > +         BM1880_CLK_ENABLE0, 22, 0 },
-> > +       { BM1880_CLK_SDMA_AXI, "clk_sdma_axi", "clk_axi5",
-> > +         BM1880_CLK_ENABLE0, 23, 0 },
-> > +       { BM1880_CLK_APB_I2C, "clk_apb_i2c", "clk_mux_axi6",
-> > +         BM1880_CLK_ENABLE0, 25, 0 },
-> > +       { BM1880_CLK_APB_WDT, "clk_apb_wdt", "clk_mux_axi6",
-> > +         BM1880_CLK_ENABLE0, 26, 0 },
-> > +       { BM1880_CLK_APB_JPEG, "clk_apb_jpeg", "clk_axi6",
-> > +         BM1880_CLK_ENABLE0, 27, 0 },
-> > +       { BM1880_CLK_AXI5_NF, "clk_axi5_nf", "clk_axi5",
-> > +         BM1880_CLK_ENABLE0, 29, 0 },
-> > +       { BM1880_CLK_APB_NF, "clk_apb_nf", "clk_axi6",
-> > +         BM1880_CLK_ENABLE0, 30, 0 },
-> > +       { BM1880_CLK_APB_PWM, "clk_apb_pwm", "clk_mux_axi6",
-> > +         BM1880_CLK_ENABLE1, 0, 0 },
-> > +       { BM1880_CLK_RV, "clk_rv", "clk_mux_rv",
-> > +         BM1880_CLK_ENABLE1, 1, 0 },
-> > +       { BM1880_CLK_APB_SPI, "clk_apb_spi", "clk_mux_axi6",
-> > +         BM1880_CLK_ENABLE1, 2, 0 },
-> > +       { BM1880_CLK_UART_500M, "clk_uart_500m", "clk_div_uart_500m",
-> > +         BM1880_CLK_ENABLE1, 4, 0 },
-> > +       { BM1880_CLK_APB_UART, "clk_apb_uart", "clk_axi6",
-> > +         BM1880_CLK_ENABLE1, 5, 0 },
-> > +       { BM1880_CLK_APB_I2S, "clk_apb_i2s", "clk_axi6",
-> > +         BM1880_CLK_ENABLE1, 6, 0 },
-> > +       { BM1880_CLK_AXI4_USB, "clk_axi4_usb", "clk_axi4",
-> > +         BM1880_CLK_ENABLE1, 7, 0 },
-> > +       { BM1880_CLK_APB_USB, "clk_apb_usb", "clk_axi6",
-> > +         BM1880_CLK_ENABLE1, 8, 0 },
-> > +       { BM1880_CLK_12M_USB, "clk_12m_usb", "clk_div_12m_usb",
-> > +         BM1880_CLK_ENABLE1, 11, 0 },
-> > +       { BM1880_CLK_APB_VIDEO, "clk_apb_video", "clk_axi6",
-> > +         BM1880_CLK_ENABLE1, 12, 0 },
-> > +       { BM1880_CLK_APB_VPP, "clk_apb_vpp", "clk_axi6",
-> > +         BM1880_CLK_ENABLE1, 15, 0 },
-> > +       { BM1880_CLK_AXI6, "clk_axi6", "clk_mux_axi6",
-> > +         BM1880_CLK_ENABLE1, 21, CLK_IS_CRITICAL },
-> > +};
-> > +
-> > +static const char * const clk_a53_parents[] = { "clk_spll", "clk_mpll" };
-> > +static const char * const clk_rv_parents[] = { "clk_div_1_rv", "clk_div_0_rv" };
-> > +static const char * const clk_axi1_parents[] = { "clk_div_1_axi1", "clk_div_0_axi1" };
-> > +static const char * const clk_axi6_parents[] = { "clk_div_1_axi6", "clk_div_0_axi6" };
-> 
-> I sent some patches to make the basic clk types support the new way of
-> specifying parents. Can you use those patches instead of listing all
-> these strings?
-> 
-
-Yeah, I just noticed after sending out these patches. But I'd like to adapt
-them later due to that fact that it will require some rework to this driver
-and I don't have time to do it currently :(
-
-I'll send incremental patches later once this gets in!
-
-> > +
-> > +static const struct bm1880_mux_clock bm1880_mux_clks[] = {
-> > +       { BM1880_CLK_MUX_RV, "clk_mux_rv", clk_rv_parents, 2,
-> > +         BM1880_CLK_SELECT, 1, 0 },
-> > +       { BM1880_CLK_MUX_AXI6, "clk_mux_axi6", clk_axi6_parents, 2,
-> > +         BM1880_CLK_SELECT, 3, 0 },
-> > +};
-> > +
-> > +static const struct clk_div_table bm1880_div_table_0[] = {
-> > +       { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 },
-> > +       { 4, 5 }, { 5, 6 }, { 6, 7 }, { 7, 8 },
-> > +       { 8, 9 }, { 9, 10 }, { 10, 11 }, { 11, 12 },
-> > +       { 12, 13 }, { 13, 14 }, { 14, 15 }, { 15, 16 },
-> > +       { 16, 17 }, { 17, 18 }, { 18, 19 }, { 19, 20 },
-> > +       { 20, 21 }, { 21, 22 }, { 22, 23 }, { 23, 24 },
-> > +       { 24, 25 }, { 25, 26 }, { 26, 27 }, { 27, 28 },
-> > +       { 28, 29 }, { 29, 30 }, { 30, 31 }, { 31, 32 },
-> > +       { 0, 0 }
-> > +};
-> > +
-> > +static const struct clk_div_table bm1880_div_table_1[] = {
-> > +       { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 },
-> > +       { 4, 5 }, { 5, 6 }, { 6, 7 }, { 7, 8 },
-> > +       { 8, 9 }, { 9, 10 }, { 10, 11 }, { 11, 12 },
-> > +       { 12, 13 }, { 13, 14 }, { 14, 15 }, { 15, 16 },
-> > +       { 16, 17 }, { 17, 18 }, { 18, 19 }, { 19, 20 },
-> > +       { 20, 21 }, { 21, 22 }, { 22, 23 }, { 23, 24 },
-> > +       { 24, 25 }, { 25, 26 }, { 26, 27 }, { 27, 28 },
-> > +       { 28, 29 }, { 29, 30 }, { 30, 31 }, { 31, 32 },
-> > +       { 127, 128 }, { 0, 0 }
-> > +};
-> > +
-> > +static const struct clk_div_table bm1880_div_table_2[] = {
-> > +       { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 },
-> > +       { 4, 5 }, { 5, 6 }, { 6, 7 }, { 7, 8 },
-> > +       { 8, 9 }, { 9, 10 }, { 10, 11 }, { 11, 12 },
-> > +       { 12, 13 }, { 13, 14 }, { 14, 15 }, { 15, 16 },
-> > +       { 16, 17 }, { 17, 18 }, { 18, 19 }, { 19, 20 },
-> > +       { 20, 21 }, { 21, 22 }, { 22, 23 }, { 23, 24 },
-> > +       { 24, 25 }, { 25, 26 }, { 26, 27 }, { 27, 28 },
-> > +       { 28, 29 }, { 29, 30 }, { 30, 31 }, { 31, 32 },
-> > +       { 127, 128 }, { 255, 256 }, { 0, 0 }
-> > +};
-> > +
-> > +static const struct clk_div_table bm1880_div_table_3[] = {
-> > +       { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 },
-> > +       { 4, 5 }, { 5, 6 }, { 6, 7 }, { 7, 8 },
-> > +       { 8, 9 }, { 9, 10 }, { 10, 11 }, { 11, 12 },
-> > +       { 12, 13 }, { 13, 14 }, { 14, 15 }, { 15, 16 },
-> > +       { 16, 17 }, { 17, 18 }, { 18, 19 }, { 19, 20 },
-> > +       { 20, 21 }, { 21, 22 }, { 22, 23 }, { 23, 24 },
-> > +       { 24, 25 }, { 25, 26 }, { 26, 27 }, { 27, 28 },
-> > +       { 28, 29 }, { 29, 30 }, { 30, 31 }, { 31, 32 },
-> > +       { 127, 128 }, { 255, 256 }, { 511, 512 }, { 0, 0 }
-> > +};
-> > +
-> > +static const struct clk_div_table bm1880_div_table_4[] = {
-> > +       { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 },
-> > +       { 4, 5 }, { 5, 6 }, { 6, 7 }, { 7, 8 },
-> > +       { 8, 9 }, { 9, 10 }, { 10, 11 }, { 11, 12 },
-> > +       { 12, 13 }, { 13, 14 }, { 14, 15 }, { 15, 16 },
-> > +       { 16, 17 }, { 17, 18 }, { 18, 19 }, { 19, 20 },
-> > +       { 20, 21 }, { 21, 22 }, { 22, 23 }, { 23, 24 },
-> > +       { 24, 25 }, { 25, 26 }, { 26, 27 }, { 27, 28 },
-> > +       { 28, 29 }, { 29, 30 }, { 30, 31 }, { 31, 32 },
-> > +       { 127, 128 }, { 255, 256 }, { 511, 512 }, { 65535, 65536 },
-> > +       { 0, 0 }
-> > +};
-> > +
-> > +/*
-> > + * Clocks marked as CRITICAL are needed for the proper functioning
-> > + * of the SoC.
-> > + */
-> > +static struct bm1880_div_hw_clock bm1880_div_clks[] = {
-> > +       CLK_DIV(BM1880_CLK_DIV_0_RV, "clk_div_0_rv", &bm1880_pll_clks[1].hw,
-> > +               BM1880_CLK_DIV12, 16, 5, 1, bm1880_div_table_0, 0),
-> > +       CLK_DIV(BM1880_CLK_DIV_1_RV, "clk_div_1_rv", &bm1880_pll_clks[2].hw,
-> > +               BM1880_CLK_DIV13, 16, 5, 1, bm1880_div_table_0, 0),
-> > +       CLK_DIV(BM1880_CLK_DIV_UART_500M, "clk_div_uart_500m", &bm1880_pll_clks[2].hw,
-> > +               BM1880_CLK_DIV15, 16, 7, 3, bm1880_div_table_1, 0),
-> > +       CLK_DIV(BM1880_CLK_DIV_0_AXI1, "clk_div_0_axi1", &bm1880_pll_clks[0].hw,
-> > +               BM1880_CLK_DIV21, 16, 5, 2, bm1880_div_table_0,
-> > +               CLK_IS_CRITICAL),
-> > +       CLK_DIV(BM1880_CLK_DIV_1_AXI1, "clk_div_1_axi1", &bm1880_pll_clks[2].hw,
-> > +               BM1880_CLK_DIV22, 16, 5, 3, bm1880_div_table_0,
-> > +               CLK_IS_CRITICAL),
-> > +       CLK_DIV(BM1880_CLK_DIV_0_AXI6, "clk_div_0_axi6", &bm1880_pll_clks[2].hw,
-> > +               BM1880_CLK_DIV27, 16, 5, 15, bm1880_div_table_0,
-> > +               CLK_IS_CRITICAL),
-> > +       CLK_DIV(BM1880_CLK_DIV_1_AXI6, "clk_div_1_axi6", &bm1880_pll_clks[0].hw,
-> > +               BM1880_CLK_DIV28, 16, 5, 11, bm1880_div_table_0,
-> > +               CLK_IS_CRITICAL),
-> > +       CLK_DIV(BM1880_CLK_DIV_12M_USB, "clk_div_12m_usb", &bm1880_pll_clks[2].hw,
-> > +               BM1880_CLK_DIV18, 16, 7, 125, bm1880_div_table_1, 0),
-> > +};
-> > +
-> > +/*
-> > + * Clocks marked as CRITICAL are all needed for the proper functioning
-> > + * of the SoC.
-> > + */
-> > +static struct bm1880_composite_clock bm1880_composite_clks[] = {
-> > +       GATE_MUX(BM1880_CLK_A53, "clk_a53", clk_a53_parents,
-> > +                BM1880_CLK_ENABLE0, 0, BM1880_CLK_SELECT, 0,
-> > +                CLK_IS_CRITICAL),
-> > +       GATE_DIV(BM1880_CLK_50M_A53, "clk_50m_a53", "clk_fpll",
-> > +                BM1880_CLK_ENABLE0, 1, BM1880_CLK_DIV0, 16, 5, 30,
-> > +                bm1880_div_table_0, CLK_IS_CRITICAL),
-> > +       GATE_DIV(BM1880_CLK_EFUSE, "clk_efuse", "clk_fpll",
-> > +                BM1880_CLK_ENABLE0, 5, BM1880_CLK_DIV1, 16, 7, 60,
-> > +                bm1880_div_table_1, 0),
-> > +       GATE_DIV(BM1880_CLK_EMMC, "clk_emmc", "clk_fpll",
-> > +                BM1880_CLK_ENABLE0, 8, BM1880_CLK_DIV2, 16, 5, 15,
-> > +                bm1880_div_table_0, 0),
-> > +       GATE_DIV(BM1880_CLK_100K_EMMC, "clk_100k_emmc", "clk_div_12m_usb",
-> > +                BM1880_CLK_ENABLE0, 9, BM1880_CLK_DIV3, 16, 8, 120,
-> > +                bm1880_div_table_2, 0),
-> > +       GATE_DIV(BM1880_CLK_SD, "clk_sd", "clk_fpll",
-> > +                BM1880_CLK_ENABLE0, 11, BM1880_CLK_DIV4, 16, 5, 15,
-> > +                bm1880_div_table_0, 0),
-> > +       GATE_DIV(BM1880_CLK_100K_SD, "clk_100k_sd", "clk_div_12m_usb",
-> > +                BM1880_CLK_ENABLE0, 12, BM1880_CLK_DIV5, 16, 8, 120,
-> > +                bm1880_div_table_2, 0),
-> > +       GATE_DIV(BM1880_CLK_500M_ETH0, "clk_500m_eth0", "clk_fpll",
-> > +                BM1880_CLK_ENABLE0, 13, BM1880_CLK_DIV6, 16, 5, 3,
-> > +                bm1880_div_table_0, 0),
-> > +       GATE_DIV(BM1880_CLK_500M_ETH1, "clk_500m_eth1", "clk_fpll",
-> > +                BM1880_CLK_ENABLE0, 15, BM1880_CLK_DIV7, 16, 5, 3,
-> > +                bm1880_div_table_0, 0),
-> > +       /* Don't gate GPIO clocks as it is not owned by the GPIO driver */
-> > +       GATE_DIV(BM1880_CLK_GPIO_DB, "clk_gpio_db", "clk_div_12m_usb",
-> > +                BM1880_CLK_ENABLE0, 20, BM1880_CLK_DIV8, 16, 16, 120,
-> > +                bm1880_div_table_4, CLK_IGNORE_UNUSED),
-> > +       GATE_DIV(BM1880_CLK_SDMA_AUD, "clk_sdma_aud", "clk_fpll",
-> > +                BM1880_CLK_ENABLE0, 24, BM1880_CLK_DIV9, 16, 7, 61,
-> > +                bm1880_div_table_1, 0),
-> > +       GATE_DIV(BM1880_CLK_JPEG_AXI, "clk_jpeg_axi", "clk_fpll",
-> > +                BM1880_CLK_ENABLE0, 28, BM1880_CLK_DIV10, 16, 5, 4,
-> > +                bm1880_div_table_0, 0),
-> > +       GATE_DIV(BM1880_CLK_NF, "clk_nf", "clk_fpll",
-> > +                BM1880_CLK_ENABLE0, 31, BM1880_CLK_DIV11, 16, 5, 30,
-> > +                bm1880_div_table_0, 0),
-> > +       GATE_DIV(BM1880_CLK_TPU_AXI, "clk_tpu_axi", "clk_spll",
-> > +                BM1880_CLK_ENABLE1, 3, BM1880_CLK_DIV14, 16, 5, 1,
-> > +                bm1880_div_table_0, 0),
-> > +       GATE_DIV(BM1880_CLK_125M_USB, "clk_125m_usb", "clk_fpll",
-> > +                BM1880_CLK_ENABLE1, 9, BM1880_CLK_DIV16, 16, 5, 12,
-> > +                bm1880_div_table_0, 0),
-> > +       GATE_DIV(BM1880_CLK_33K_USB, "clk_33k_usb", "clk_div_12m_usb",
-> > +                BM1880_CLK_ENABLE1, 10, BM1880_CLK_DIV17, 16, 9, 363,
-> > +                bm1880_div_table_3, 0),
-> > +       GATE_DIV(BM1880_CLK_VIDEO_AXI, "clk_video_axi", "clk_fpll",
-> > +                BM1880_CLK_ENABLE1, 13, BM1880_CLK_DIV19, 16, 5, 4,
-> > +                bm1880_div_table_0, 0),
-> > +       GATE_DIV(BM1880_CLK_VPP_AXI, "clk_vpp_axi", "clk_fpll",
-> > +                BM1880_CLK_ENABLE1, 14, BM1880_CLK_DIV20, 16, 5, 4,
-> > +                bm1880_div_table_0, 0),
-> > +       GATE_MUX(BM1880_CLK_AXI1, "clk_axi1", clk_axi1_parents,
-> > +                BM1880_CLK_ENABLE1, 15, BM1880_CLK_SELECT, 2,
-> > +                CLK_IS_CRITICAL),
-> > +       GATE_DIV(BM1880_CLK_AXI2, "clk_axi2", "clk_fpll",
-> > +                BM1880_CLK_ENABLE1, 17, BM1880_CLK_DIV23, 16, 5, 3,
-> > +                bm1880_div_table_0, CLK_IS_CRITICAL),
-> > +       GATE_DIV(BM1880_CLK_AXI3, "clk_axi3", "clk_mux_rv",
-> > +                BM1880_CLK_ENABLE1, 18, BM1880_CLK_DIV24, 16, 5, 2,
-> > +                bm1880_div_table_0, CLK_IS_CRITICAL),
-> > +       GATE_DIV(BM1880_CLK_AXI4, "clk_axi4", "clk_fpll",
-> > +                BM1880_CLK_ENABLE1, 19, BM1880_CLK_DIV25, 16, 5, 6,
-> > +                bm1880_div_table_0, CLK_IS_CRITICAL),
-> > +       GATE_DIV(BM1880_CLK_AXI5, "clk_axi5", "clk_fpll",
-> > +                BM1880_CLK_ENABLE1, 20, BM1880_CLK_DIV26, 16, 5, 15,
-> > +                bm1880_div_table_0, CLK_IS_CRITICAL),
-> > +};
-> > +
-> > +static unsigned long bm1880_pll_rate_calc(u32 regval, unsigned long parent_rate)
-> > +{
-> > +       u32 fbdiv, fref, refdiv;
-> > +       u32 postdiv1, postdiv2;
-> > +       unsigned long rate, numerator, denominator;
-> > +
-> > +       fbdiv = (regval >> 16) & 0xfff;
-> > +       fref = parent_rate;
-> > +       refdiv = regval & 0x1f;
-> > +       postdiv1 = (regval >> 8) & 0x7;
-> > +       postdiv2 = (regval >> 12) & 0x7;
-> > +
-> > +       numerator = parent_rate * fbdiv;
-> > +       denominator = refdiv * postdiv1 * postdiv2;
-> > +       do_div(numerator, denominator);
-> > +       rate = numerator;
-> > +
-> > +       return rate;
-> > +}
-> > +
-> > +static unsigned long bm1880_pll_recalc_rate(struct clk_hw *hw,
-> > +                                           unsigned long parent_rate)
-> > +{
-> > +       struct bm1880_pll_hw_clock *pll_hw = to_bm1880_pll_clk(hw);
-> > +       unsigned long rate;
-> > +       u32 regval;
-> > +
-> > +       regval = readl(pll_hw->base + pll_hw->pll.reg);
-> > +       rate = bm1880_pll_rate_calc(regval, parent_rate);
-> > +
-> > +       return rate;
-> > +}
-> > +
-> > +static const struct clk_ops bm1880_pll_ops = {
-> > +       .recalc_rate    = bm1880_pll_recalc_rate,
-> > +};
-> > +
-> > +static struct clk_hw *bm1880_clk_register_pll(struct bm1880_pll_hw_clock *pll_clk,
-> > +                                             void __iomem *sys_base)
-> > +{
-> > +       struct clk_hw *hw;
-> > +       int err;
-> > +
-> > +       pll_clk->base = sys_base;
-> > +       hw = &pll_clk->hw;
-> > +
-> > +       err = clk_hw_register(NULL, hw);
-> > +       if (err)
-> > +               return ERR_PTR(err);
-> > +
-> > +       return hw;
-> > +}
-> > +
-> > +static void bm1880_clk_unregister_pll(struct clk_hw *hw)
-> > +{
-> > +       struct bm1880_pll_hw_clock *pll_hw = to_bm1880_pll_clk(hw);
-> > +
-> > +       clk_hw_unregister(hw);
-> > +       kfree(pll_hw);
-> > +}
-> > +
-> > +static int bm1880_clk_register_plls(struct bm1880_pll_hw_clock *clks,
-> > +                            int num_clks, struct bm1880_clock_data *data)
-> > +{
-> > +       struct clk_hw *hw;
-> > +       void __iomem *pll_base = data->pll_base;
-> > +       int i;
-> > +
-> > +       for (i = 0; i < num_clks; i++) {
-> > +               struct bm1880_pll_hw_clock *bm1880_clk = &clks[i];
-> > +
-> > +               hw = bm1880_clk_register_pll(bm1880_clk, pll_base);
-> > +               if (IS_ERR(hw)) {
-> > +                       pr_err("%s: failed to register clock %s\n",
-> > +                              __func__, bm1880_clk->pll.name);
-> > +                       goto err_clk;
-> > +               }
-> > +
-> > +               data->clk_data->hws[clks[i].pll.id] = hw;
-> > +       }
-> > +
-> > +       return 0;
-> > +
-> > +err_clk:
-> > +       while (i--)
-> > +               bm1880_clk_unregister_pll(data->clk_data->hws[clks[i].pll.id]);
-> > +
-> > +       return PTR_ERR(hw);
-> > +}
-> > +
-> > +static int bm1880_clk_register_mux(const struct bm1880_mux_clock *clks,
-> > +                           int num_clks, struct bm1880_clock_data *data)
-> > +{
-> > +       struct clk_hw *hw;
-> > +       void __iomem *sys_base = data->sys_base;
-> > +       int i;
-> > +
-> > +       for (i = 0; i < num_clks; i++) {
-> > +               hw = clk_hw_register_mux(NULL, clks[i].name,
-> > +                                        clks[i].parents,
-> > +                                        clks[i].num_parents,
-> > +                                        clks[i].flags,
-> > +                                        sys_base + clks[i].reg,
-> > +                                        clks[i].shift, 1, 0,
-> > +                                        &bm1880_clk_lock);
-> > +               if (IS_ERR(hw)) {
-> > +                       pr_err("%s: failed to register clock %s\n",
-> > +                              __func__, clks[i].name);
-> > +                       goto err_clk;
-> > +               }
-> > +
-> > +               data->clk_data->hws[clks[i].id] = hw;
-> > +       }
-> > +
-> > +       return 0;
-> > +
-> > +err_clk:
-> > +       while (i--)
-> > +               clk_hw_unregister_mux(data->clk_data->hws[clks[i].id]);
-> > +
-> > +       return PTR_ERR(hw);
-> > +}
-> > +
-> > +static unsigned long bm1880_clk_div_recalc_rate(struct clk_hw *hw,
-> > +                                               unsigned long parent_rate)
-> > +{
-> > +       struct bm1880_div_hw_clock *div_hw = to_bm1880_div_clk(hw);
-> > +       struct bm1880_div_clock *div = &div_hw->div;
-> > +       void __iomem *reg_addr = div_hw->base + div->reg;
-> > +       unsigned int val;
-> > +       unsigned long rate;
-> > +
-> > +       if (!(readl(reg_addr) & BIT(3))) {
-> > +               val = div->initval;
-> > +       } else {
-> > +               val = readl(reg_addr) >> div->shift;
-> > +               val &= clk_div_mask(div->width);
-> > +       }
-> > +
-> > +       rate = divider_recalc_rate(hw, parent_rate, val, div->table,
-> > +                                  div->flags, div->width);
-> > +
-> > +       return rate;
-> > +}
-> > +
-> > +static long bm1880_clk_div_round_rate(struct clk_hw *hw, unsigned long rate,
-> > +                                     unsigned long *prate)
-> > +{
-> > +       struct bm1880_div_hw_clock *div_hw = to_bm1880_div_clk(hw);
-> > +       struct bm1880_div_clock *div = &div_hw->div;
-> > +       void __iomem *reg_addr = div_hw->base + div->reg;
-> > +
-> > +       if (div->flags & CLK_DIVIDER_READ_ONLY) {
-> > +               u32 val;
-> > +
-> > +               val = readl(reg_addr) >> div->shift;
-> > +               val &= clk_div_mask(div->width);
-> > +
-> > +               return divider_ro_round_rate(hw, rate, prate, div->table,
-> > +                                            div->width, div->flags,
-> > +                                            val);
-> > +       }
-> > +
-> > +       return divider_round_rate(hw, rate, prate, div->table,
-> > +                                 div->width, div->flags);
-> > +}
-> > +
-> > +static int bm1880_clk_div_set_rate(struct clk_hw *hw, unsigned long rate,
-> > +                                  unsigned long parent_rate)
-> > +{
-> > +       struct bm1880_div_hw_clock *div_hw = to_bm1880_div_clk(hw);
-> > +       struct bm1880_div_clock *div = &div_hw->div;
-> > +       void __iomem *reg_addr = div_hw->base + div->reg;
-> > +       unsigned long flags = 0;
-> > +       int value;
-> > +       u32 val;
-> > +
-> > +       value = divider_get_val(rate, parent_rate, div->table,
-> > +                               div->width, div_hw->div.flags);
-> > +       if (value < 0)
-> > +               return value;
-> > +
-> > +       if (div_hw->lock)
-> > +               spin_lock_irqsave(div_hw->lock, flags);
-> > +       else
-> > +               __acquire(div_hw->lock);
-> > +
-> > +       if (div->flags & CLK_DIVIDER_HIWORD_MASK) {
-> 
-> Is this used by your driver? As far as I can recall it was a
-> rockchip/hisilicon specific thing that hasn't happened since.
-> 
-
-Actually, this is used by the underlying IP but not currently used in BM1880.
-So, I can remove it. We can add it once the corresponding SoC is added.
-
-> > +               val = clk_div_mask(div->width) << (div_hw->div.shift + 16);
-> > +       } else {
-> > +               val = readl(reg_addr);
-> > +               val &= ~(clk_div_mask(div->width) << div_hw->div.shift);
-> > +       }
-> > +       val |= (u32)value << div->shift;
-> > +       writel(val, reg_addr);
-> > +
-> > +       if (div_hw->lock)
-> > +               spin_unlock_irqrestore(div_hw->lock, flags);
-> > +       else
-> > +               __release(div_hw->lock);
-> > +
-> > +       return 0;
-> > +}
-> > +
-> > +static const struct clk_ops bm1880_clk_div_ops = {
-> > +       .recalc_rate = bm1880_clk_div_recalc_rate,
-> > +       .round_rate = bm1880_clk_div_round_rate,
-> > +       .set_rate = bm1880_clk_div_set_rate,
-> > +};
-> > +
-> > +static struct clk_hw *bm1880_clk_register_div(struct bm1880_div_hw_clock *div_clk,
-> > +                                   void __iomem *sys_base)
-> > +{
-> > +       struct clk_hw *hw;
-> > +       int err;
-> > +
-> > +       div_clk->div.flags = CLK_DIVIDER_ONE_BASED | CLK_DIVIDER_ALLOW_ZERO;
-> > +       div_clk->base = sys_base;
-> > +       div_clk->lock = &bm1880_clk_lock;
-> > +
-> > +       hw = &div_clk->hw;
-> > +       err = clk_hw_register(NULL, hw);
-> > +       if (err)
-> > +               return ERR_PTR(err);
-> > +
-> > +       return hw;
-> > +}
-> > +
-> > +static void bm1880_clk_unregister_div(struct clk_hw *hw)
-> > +{
-> > +       struct bm1880_div_hw_clock *div_hw = to_bm1880_div_clk(hw);
-> > +
-> > +       clk_hw_unregister(hw);
-> > +       kfree(div_hw);
-> > +}
-> > +
-> > +static int bm1880_clk_register_divs(struct bm1880_div_hw_clock *clks,
-> > +                            int num_clks, struct bm1880_clock_data *data)
-> > +{
-> > +       struct clk_hw *hw;
-> > +       void __iomem *sys_base = data->sys_base;
-> > +       int i;
-> > +
-> > +       for (i = 0; i < num_clks; i++) {
-> > +               struct bm1880_div_hw_clock *bm1880_clk = &clks[i];
-> > +
-> > +               hw = bm1880_clk_register_div(bm1880_clk, sys_base);
-> > +               if (IS_ERR(hw)) {
-> > +                       pr_err("%s: failed to register clock %s\n",
-> > +                              __func__, bm1880_clk->div.name);
-> > +                       goto err_clk;
-> > +               }
-> > +
-> > +               data->clk_data->hws[clks[i].div.id] = hw;
-> 
-> This line is overly complicated. Please use local variables.
->
-
-Ack.
- 
-> > +       }
-> > +
-> > +       return 0;
-> > +
-> > +err_clk:
-> > +       while (i--)
-> > +               bm1880_clk_unregister_div(data->clk_data->hws[clks[i].div.id]);
-> > +
-> > +       return PTR_ERR(hw);
-> > +}
-> > +
-> > +static int bm1880_clk_register_gate(const struct bm1880_gate_clock *clks,
-> > +                            int num_clks, struct bm1880_clock_data *data)
-> > +{
-> > +       struct clk_hw *hw;
-> > +       void __iomem *sys_base = data->sys_base;
-> > +       int i;
-> > +
-> > +       for (i = 0; i < num_clks; i++) {
-> > +               hw = clk_hw_register_gate(NULL, clks[i].name,
-> > +                                         clks[i].parent,
-> > +                                         clks[i].flags,
-> > +                                         sys_base + clks[i].gate_reg,
-> > +                                         clks[i].gate_shift,
-> > +                                       0,
-> > +                                       &bm1880_clk_lock);
-> 
-> Weird tabs here.
->
-
-Ack.
- 
-> > +               if (IS_ERR(hw)) {
-> > +                       pr_err("%s: failed to register clock %s\n",
-> > +                              __func__, clks[i].name);
-> > +                       goto err_clk;
-> > +               }
-> > +
-> > +               data->clk_data->hws[clks[i].id] = hw;
-> > +       }
-> > +
-> > +       return 0;
-> > +
-> > +err_clk:
-> > +       while (i--)
-> > +               clk_hw_unregister_gate(data->clk_data->hws[clks[i].id]);
-> > +
-> > +       return PTR_ERR(hw);
-> > +}
-> > +
-> > +static struct clk_hw *bm1880_clk_register_composite(struct bm1880_composite_clock *clks,
-> > +                                         void __iomem *sys_base)
-> > +{
-> > +       struct clk_hw *hw;
-> > +       struct clk_mux *mux = NULL;
-> > +       struct clk_gate *gate = NULL;
-> > +       struct bm1880_div_hw_clock *div_hws = NULL;
-> > +       struct clk_hw *mux_hw = NULL, *gate_hw = NULL, *div_hw = NULL;
-> > +       const struct clk_ops *mux_ops = NULL, *gate_ops = NULL, *div_ops = NULL;
-> > +       const char * const *parent_names;
-> > +       const char *parent;
-> > +       int num_parents;
-> > +       int ret;
-> > +
-> > +       if (clks->mux_shift >= 0) {
-> > +               mux = kzalloc(sizeof(*mux), GFP_KERNEL);
-> > +               if (!mux)
-> > +                       return ERR_PTR(-ENOMEM);
-> > +
-> > +               mux->reg = sys_base + clks->mux_reg;
-> > +               mux->mask = 1;
-> > +               mux->shift = clks->mux_shift;
-> > +               mux_hw = &mux->hw;
-> > +               mux_ops = &clk_mux_ops;
-> > +               mux->lock = &bm1880_clk_lock;
-> > +
-> > +               parent_names = clks->parents;
-> > +               num_parents = clks->num_parents;
-> > +       } else {
-> > +               parent = clks->parent;
-> > +               parent_names = &parent;
-> > +               num_parents = 1;
-> > +       }
-> > +
-> > +       if (clks->gate_shift >= 0) {
-> > +               gate = kzalloc(sizeof(*gate), GFP_KERNEL);
-> > +               if (!gate) {
-> > +                       ret = -ENOMEM;
-> > +                       goto err_out;
-> > +               }
-> > +
-> > +               gate->reg = sys_base + clks->gate_reg;
-> > +               gate->bit_idx = clks->gate_shift;
-> > +               gate->lock = &bm1880_clk_lock;
-> > +
-> > +               gate_hw = &gate->hw;
-> > +               gate_ops = &clk_gate_ops;
-> > +       }
-> > +
-> > +       if (clks->div_shift >= 0) {
-> > +               div_hws = kzalloc(sizeof(*div_hws), GFP_KERNEL);
-> > +               if (!div_hws) {
-> > +                       ret = -ENOMEM;
-> > +                       goto err_out;
-> > +               }
-> > +
-> > +               div_hws->base = sys_base;
-> > +               div_hws->div.reg = clks->div_reg;
-> > +               div_hws->div.shift = clks->div_shift;
-> > +               div_hws->div.width = clks->div_width;
-> > +               div_hws->div.table = clks->table;
-> > +               div_hws->div.initval = clks->div_initval;
-> > +               div_hws->lock = &bm1880_clk_lock;
-> > +               div_hws->div.flags = CLK_DIVIDER_ONE_BASED |
-> > +                                    CLK_DIVIDER_ALLOW_ZERO;
-> > +
-> > +               div_hw = &div_hws->hw;
-> > +               div_ops = &bm1880_clk_div_ops;
-> > +       }
-> > +
-> > +       hw = clk_hw_register_composite(NULL, clks->name, parent_names,
-> > +                                      num_parents, mux_hw, mux_ops, div_hw,
-> > +                                      div_ops, gate_hw, gate_ops,
-> > +                                      clks->flags);
-> > +
-> 
-> All of these need to be removed on probe failure. Any plans to do so?
->
-
-Removing the composite clocks during failure is handled one level up, in
-bm1880_clk_register_composites().
- 
-> > +       if (IS_ERR(hw)) {
-> > +               ret = PTR_ERR(hw);
-> > +               goto err_out;
-> > +       }
-> > +
-> > +       return hw;
-> > +
-> > +err_out:
-> > +       kfree(div_hws);
-> > +       kfree(gate);
-> > +       kfree(mux);
-> > +
-> > +       return ERR_PTR(ret);
-> > +}
-> > +
-> > +static int bm1880_clk_register_composites(struct bm1880_composite_clock *clks,
-> > +                                  int num_clks, struct bm1880_clock_data *data)
-> > +{
-> > +       struct clk_hw *hw;
-> > +       void __iomem *sys_base = data->sys_base;
-> > +       int i;
-> > +
-> > +       for (i = 0; i < num_clks; i++) {
-> > +               struct bm1880_composite_clock *bm1880_clk = &clks[i];
-> > +
-> > +               hw = bm1880_clk_register_composite(bm1880_clk, sys_base);
-> > +               if (IS_ERR(hw)) {
-> > +                       pr_err("%s: failed to register clock %s\n",
-> > +                              __func__, bm1880_clk->name);
-> > +                       goto err_clk;
-> > +               }
-> > +
-> > +               data->clk_data->hws[clks[i].id] = hw;
-> > +       }
-> > +
-> > +       return 0;
-> > +
-> > +err_clk:
-> > +       while (i--)
-> > +               clk_hw_unregister_composite(data->clk_data->hws[clks[i].id]);
-> > +
-> > +       return PTR_ERR(hw);
-> > +}
-> > +
-> > +static int bm1880_clk_probe(struct platform_device *pdev)
-> > +{
-> > +       struct bm1880_clock_data *clk_data;
-> > +       void __iomem *pll_base, *sys_base;
-> > +       struct device_node *np = pdev->dev.of_node;
-> > +       struct device *dev = &pdev->dev;
-> > +       struct resource *res;
-> > +       struct clk_hw_onecell_data *clk_hw_data;
-> > +       int num_clks, i;
-> > +
-> > +       res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> > +       pll_base = devm_ioremap_resource(&pdev->dev, res);
-> > +       if (IS_ERR(pll_base))
-> > +               return PTR_ERR(pll_base);
-> > +
-> > +       res = platform_get_resource(pdev, IORESOURCE_MEM, 1);
-> > +       sys_base = devm_ioremap_resource(&pdev->dev, res);
-> > +       if (IS_ERR(sys_base))
-> > +               return PTR_ERR(sys_base);
-> > +
-> > +       clk_data = devm_kzalloc(dev, sizeof(*clk_data), GFP_KERNEL);
-> > +       if (!clk_data)
-> > +               return -ENOMEM;
-> > +
-> > +       clk_data->pll_base = pll_base;
-> > +       clk_data->sys_base = sys_base;
-> > +
-> > +       num_clks = ARRAY_SIZE(bm1880_pll_clks) +
-> > +                  ARRAY_SIZE(bm1880_div_clks) +
-> > +                  ARRAY_SIZE(bm1880_mux_clks) +
-> > +                  ARRAY_SIZE(bm1880_composite_clks) +
-> > +                  ARRAY_SIZE(bm1880_gate_clks);
-> > +
-> > +       clk_hw_data = devm_kzalloc(&pdev->dev, struct_size(clk_hw_data, hws,
-> > +                                         num_clks), GFP_KERNEL);
-> > +       if (!clk_hw_data)
-> > +               return -ENOMEM;
-> > +
-> > +       clk_data->clk_data = clk_hw_data;
-> > +
-> > +       for (i = 0; i < num_clks; i++)
-> > +               clk_data->clk_data->hws[i] = ERR_PTR(-ENOENT);
-> > +
-> > +       clk_data->clk_data->num = num_clks;
-> > +
-> > +       bm1880_clk_register_plls(bm1880_pll_clks,
-> > +                                ARRAY_SIZE(bm1880_pll_clks),
-> > +                                clk_data);
-> > +
-> > +       bm1880_clk_register_divs(bm1880_div_clks,
-> > +                                ARRAY_SIZE(bm1880_div_clks),
-> > +                                clk_data);
-> > +
-> > +       bm1880_clk_register_mux(bm1880_mux_clks,
-> > +                               ARRAY_SIZE(bm1880_mux_clks),
-> > +                               clk_data);
-> > +
-> > +       bm1880_clk_register_composites(bm1880_composite_clks,
-> > +                                      ARRAY_SIZE(bm1880_composite_clks),
-> > +                                      clk_data);
-> > +
-> > +       bm1880_clk_register_gate(bm1880_gate_clks,
-> > +                                ARRAY_SIZE(bm1880_gate_clks),
-> > +                                clk_data);
-> > +
-> > +       return of_clk_add_hw_provider(np, of_clk_hw_onecell_get,
-> 
-> Can you use devm_of_clk_add_hw_provider()?
-> 
-
-okay.
-
-Thanks,
-Mani
-
-> > +                                     clk_data->clk_data);
-> > +}
 
 _______________________________________________
 linux-arm-kernel mailing list
