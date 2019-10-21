@@ -2,86 +2,106 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31ACADF1CB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 17:42:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C31E2DF227
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 17:57:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kwmszfMd5lIJnsIB1uOjpBTP5YQ9wzsFdbuk8Z3Ed00=; b=EyFQTRDsSE0UR8
-	WFuMXc/DIhCnatGr6BknVsMjEBTk0C6N2Oqtb/yU508KkxOAKQoI5BkBkhNfz0TuYfcJzw2xSkEsY
-	nNZhKEVIcC+T5xBN1CPyY1MQ3dqufPVP99DxqYp4M3w37wB504O+/WIr/FQtR3NwzcHygvBsmidG5
-	WcdBnrDIBX93RtUa+0lD9xb+ZbxhCiwNtHxZ200dB9pdVNmUErdFFhXITYO3qUoJdPO7yzk4l7bPM
-	IwqQJUcXZqu9IW/BVvF5dsGadKb6kl1e+mvZhAerRPiZy7WciO5xG/ECl9/v4D4iLzABIecRaBBJh
-	+CNdQhT5ArnAFnvgZxkw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=d/GOCy/jwtuNB49jd8UosNGPhlMfj6nMAriLqe4QaJU=; b=qcQzLacbB+vDp3
+	EQqTU3oEYYrdWb03ibwSXSSwN77qtSGTjFWEdKRY1b+g+MuWhqKlwi5I9RDRS9oeIbkEuzfKq1WLO
+	MYg/4Yy1Or/J92iKZTzCJp3Ffh61dcmbqHVHBxUluxCs19gQkrJ6AjX0HqaZFDRj8naUuK4H/RJOM
+	xExprgFujZV+JL1E9vSKmhSweRS90mC35oD1cixEYA3TuZ14Jmz9uJ5gcX5DfTv4c6r8E5HR1QCBJ
+	0kMJbTlEb15B9qtpQEx9votYebnzLszLOXfGWG7w5gYu1AIvvmOdq3o8f7aakOq1aESA3Jx6C4bmL
+	K344GqIEPo9cgUIa7McA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMZos-0004Fw-LW; Mon, 21 Oct 2019 15:42:06 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1iMa3M-0001Ug-7A; Mon, 21 Oct 2019 15:57:04 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMZoj-0004FO-Kg; Mon, 21 Oct 2019 15:41:59 +0000
-Received: by mail-io1-xd44.google.com with SMTP id w12so16427437iol.11;
- Mon, 21 Oct 2019 08:41:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=yrezMpUPTuyBffQXpwXrXBC3vhqskF147L+22Fn98BU=;
- b=EwmNb7cXzst/x89vU6zX83MOOZymhv4R7vncUF7z1tLKjEQC3olmiUnfQla3diTAaY
- CwxGnWNj4NsBN6ZUzZjBq3ozYbikY1usGQPjjJNT2B6tGiIVTS7QPbyrtamOV8SKH2B6
- XvM4vy8QY6L3spvc+y6BPseinBCXbXoxo5IezrWm6zw8bIpeoh87tqkE9cj1BEs2gGVs
- aZGDKqPxfiP4VYqbsGB8dgHSbhD5NDYAIF8tT+X3o3dPr7iF4gr6lCXXFCR5y2eOOMi6
- BlypA8VwHZxFc8HlZYhZEycLpi+Ml42Mz2S9+ief8wwwPHOzEt3YT9lVze8zUoiUqG2P
- PGSA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=yrezMpUPTuyBffQXpwXrXBC3vhqskF147L+22Fn98BU=;
- b=YcPHnTFneujnoHgYa689utRlNczYFsPkdUgu2eMa+4ZZEBj56S4aMTxeDQsXcqcn+U
- /TQc2TxTQuDOapeh/+1T3cnrOhSEDa/B1vfPSf+YYVdZ4jOlTVqdRNtEroTlOETpAjJk
- O22CDtGC1zygPVqxW/LmBY0BHtqkK1ciKxuSViCDppftVoHJE2Ao0i5c5PJWRxLgt2NY
- oQsXECNe/41ds6qUvB+8PmIGi32qse8YXBSA/99K5RjhS+O3p9ANqR3M63iCMfDAIsJF
- 19ti3AxzD7TCruQ6IQURcPCPDrGU6IO3dOlaDR4ZAE0CELkZJRiVsV3JfeYsLvSr8TCJ
- VTbA==
-X-Gm-Message-State: APjAAAXl9/WteqoRcQ5OVHoqp8FgdbCZFFbuF6hHia+BIGKu1glI44IH
- Yu2DbG3wbJwLCMtkM/0gGN2sHLJCMvJ7j8pM6g+dJg==
-X-Google-Smtp-Source: APXvYqzSsz0JCUb9Vzflc4VEP6hwCRnJcMI8hMtnlwZ2QZkCnUzhMTr7V+XY5wal8xMfpEGVzAt4PglUUBLaMwmHu0g=
-X-Received: by 2002:a6b:7417:: with SMTP id s23mr17364283iog.221.1571672516254; 
- Mon, 21 Oct 2019 08:41:56 -0700 (PDT)
+ id 1iMa3D-0001UM-Dt
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 15:56:56 +0000
+Received: from [192.168.1.27] (cpe-70-114-128-244.austin.res.rr.com
+ [70.114.128.244])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3860E2084B;
+ Mon, 21 Oct 2019 15:56:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571673414;
+ bh=st3EM5gHw/dU9J0SSE+mycYpVIQ0UeBn2Him9b6t1pY=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=zGvoi8gXuiI5ghwK7JrbXwECf2JzIFFhirVNnN0gn4F06hvsP4ugcrej7BwOERdk4
+ Rf2trAzSNw7x4DnFMc81lwEufCS1jODYOcWB5DHgSAejfvnaNmu3r6rUoF+uf05tRf
+ bj9kEgO8fi/ouG+M3Lht2bET334kpOGruJuLMTaA=
+Subject: Re: [PATCHv2] arm64: defconfig: add JFFS FS support in defconfig
+To: "Ooi, Joyce" <joyce.ooi@intel.com>,
+ Vladimir Murzin <vladimir.murzin@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
+References: <1571293732-13667-1-git-send-email-joyce.ooi@intel.com>
+From: Dinh Nguyen <dinguyen@kernel.org>
+Openpgp: preference=signencrypt
+Autocrypt: addr=dinguyen@kernel.org; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <99d66573-a66f-947a-6f50-098c745ebab7@kernel.org>
+Date: Mon, 21 Oct 2019 10:56:52 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <20191007131649.1768-1-linux.amoon@gmail.com>
- <20191007131649.1768-6-linux.amoon@gmail.com>
- <CAFBinCAoJLZj9Kh+SfF4Q+0OCzac2+huon_BU=Q3yE7Fu38U3w@mail.gmail.com>
- <7hsgo4cgeg.fsf@baylibre.com>
- <CANAwSgRfcFa6uBNtpqz6y=9Uwsa4gcp_4tDD+Chhg4SynJCq0Q@mail.gmail.com>
- <CAFBinCA6ZoeR4m4bhj08HF1DqxY1qB5mygpaQCGbo3d8M+Wr9Q@mail.gmail.com>
- <CANAwSgSeYTnUkLnjw-RORw76Fyj3_WT0cdM9D0vFsY8g=9L94Q@mail.gmail.com>
- <1jwode9lba.fsf@starbuckisacylon.baylibre.com>
- <CANAwSgSoK4X3_QbO3YpZRXNTpPJ+zVeid=w93f14Eyk8Dd32EQ@mail.gmail.com>
- <CAFBinCBdwqxA2kLMAA9gtOcXevYK-J4x12odHwpQOAWakgWiEg@mail.gmail.com>
- <CANAwSgRs2DUXwvhJD5qpXg04qEdP_Nt-wQqRbD2FpY2SWnHpAA@mail.gmail.com>
- <1a98c5f0-de8a-53bc-cfb7-c9b3255667c6@baylibre.com>
-In-Reply-To: <1a98c5f0-de8a-53bc-cfb7-c9b3255667c6@baylibre.com>
-From: Anand Moon <linux.amoon@gmail.com>
-Date: Mon, 21 Oct 2019 21:11:45 +0530
-Message-ID: <CANAwSgRD-Vd-D1H5cDYMyTLRMfzdkrFuiy4KfXYt6S+0goF-2w@mail.gmail.com>
-Subject: Re: [RFCv1 5/5] arm64/ARM: configs: Change CONFIG_PWM_MESON from m to
- y
-To: Neil Armstrong <narmstrong@baylibre.com>
+In-Reply-To: <1571293732-13667-1-git-send-email-joyce.ooi@intel.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_084157_680352_E6494B6E 
-X-CRM114-Status: GOOD (  27.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191021_085655_507308_79F5830A 
+X-CRM114-Status: GOOD (  16.43  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (linux.amoon[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -91,6 +111,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,130 +123,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>,
- Linux Kernel <linux-kernel@vger.kernel.org>, linux-amlogic@lists.infradead.org,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Jerome Brunet <jbrunet@baylibre.com>
+Cc: Tan Ley Foon <ley.foon.tan@intel.com>, Anson Huang <Anson.Huang@nxp.com>,
+ Arnd Bergmann <arnd@arndb.de>, Ong Hean Loong <hean.loong.ong@intel.com>,
+ See Chin Liang <chin.liang.see@intel.com>, linux-kernel@vger.kernel.org,
+ Maxime Ripard <mripard@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
+ Jagan Teki <jagan@amarulasolutions.com>, Olof Johansson <olof@lixom.net>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Neil,
 
-On Mon, 21 Oct 2019 at 19:55, Neil Armstrong <narmstrong@baylibre.com> wrote:
->
-> Hi Anand,
->
-> On 21/10/2019 16:11, Anand Moon wrote:
-> > Hi Martin,
-> >
-> > On Fri, 18 Oct 2019 at 23:40, Martin Blumenstingl
-> > <martin.blumenstingl@googlemail.com> wrote:
-> >>
-> >> Hi Anand,
-> >>
-> >> On Fri, Oct 18, 2019 at 4:04 PM Anand Moon <linux.amoon@gmail.com> wrote:
-> >> [...]
-> >>>> Next step it to try narrow down the clock causing the issue.
-> >>>> Remove clk_ignore_unused from the command line and add CLK_INGORE_UNUSED
-> >>>> to the flag of some clocks your clock controller (g12a I think) until
-> >>>>
-> >>>> The peripheral clock gates already have this flag (something we should
-> >>>> fix someday) so don't bother looking there.
-> >>>>
-> >>>> Most likely the source of the pwm is getting disabled between the
-> >>>> late_init call and the probe of the PWM module. Since the pwm is already
-> >>>> active (w/o a driver), gating the clock source shuts dowm the power to
-> >>>> the cores.
-> >>>>
-> >>>> Looking a the possible inputs in pwm driver, I'd bet on fdiv4.
-> >>>>
-> >>>
-> >>> I had give this above steps a try but with little success.
-> >>> I am still looking into this much close.
-> >> it's not clear to me if you have only tested with the PWM and/or
-> >> FCLK_DIV4 clocks. can you please describe what you have tested so far?
-> >>
-> > Sorry for delayed response.
-> >
-> > I had just looked into clk related to SD_EMMC_A/B/C,
-> > with adding CLK_IGNORE/CRITICAL.
-> > Also looked into clk_summary for eMMC and microSD card,
-> > to identify the root cause, but I failed to move ahead.
-> >
-> >> for reference - my way of debugging this in the past was:
-> >> 1. add some printks to clk_disable_unused_subtree (right after the
-> >> clk_core_is_enabled check) to see which clocks are being disabled
-> >> 2. add CLK_IGNORE_UNUSED or CLK_IS_CRITICAL to the clocks which are
-> >> being disabled based on the information from step #1
-> >> 3. (at some point I had a working kernel with lots of clocks with
-> >> CLK_IGNORE_UNUSED/CLK_IS_CRITICAL)
-> >> 4. start dropping the CLK_IGNORE_UNUSED/CLK_IS_CRITICAL flags again
-> >> until you have traced it down to the clocks that are the actual issue
-> >> (so far I always had only one clock which caused issues, but it may be
-> >> multiple)
-> >> 5. investigate (and/or ask on the mailing list, Amlogic developers are
-> >> reading the mails here as well) for the few clocks from step #4
-> >>
-> >
-> > Thanks for you valuable suggestion. I have your patch to debug this
-> > [0]  https://patchwork.kernel.org/patch/9725921/mbox/
-> >
-> > So from the fist step I could identify that all the clk were getting closed
-> > after some core cpu clk was failing. Here is the log.
-> >
-> > step1: [1] https://pastebin.com/p13F9HGG
-> >
-> > so I marked these clk as CLK_IGNORE_UNUSED and finally
-> > I made it to boot using microSD card.
-> >
-> > After this just I converted these CLK to CLK_IS_CRITICAL
-> > as mostly these are used the CPU clk for now.
-> > Here is boot log successful for as of now.
-> >
-> > Finally: [2]  https://pastebin.com/qB6pMyGQ
-> >
-> > I know clk maintainer are against marking flags as *CLK_IS_CRITICAL*
-> > But this is just the step to move ahead.
->
-> Thanks for the extensive debug.
->
-> >
-> > Attach is my local clk and dts patch.Just for testing.
-> > [3] clk_critical.patch
->
->
-> Could you test with only the following changes:
-> diff --git a/drivers/clk/meson/g12a.c b/drivers/clk/meson/g12a.c
-> index ea4c791f106d..f49f5463363e 100644
-> --- a/drivers/clk/meson/g12a.c
-> +++ b/drivers/clk/meson/g12a.c
-> @@ -298,6 +298,7 @@ static struct clk_regmap g12a_fclk_div2 = {
->                         &g12a_fclk_div2_div.hw
->                 },
->                 .num_parents = 1,
-> +               .flags = CLK_IS_CRITICAL,
->         },
->  };
->
-> @@ -672,7 +673,7 @@ static struct clk_regmap g12b_cpub_clk = {
->                         &g12a_sys_pll.hw
->                 },
->                 .num_parents = 2,
-> -               .flags = CLK_SET_RATE_PARENT,
-> +               .flags = CLK_SET_RATE_PARENT | CLK_IS_CRITICAL,
->         },
->  };
->
 
-Yes these changes work at my end,
-I want to narrow down my changes, this looks pretty good.
+On 10/17/19 1:28 AM, Ooi, Joyce wrote:
+> This patch adds JFFS2 FS support and remove QSPI Sector 4K size force in
+> the default defconfig
+> 
+> Signed-off-by: Ooi, Joyce <joyce.ooi@intel.com>
+> ---
+> v2: disable CONFIG_MTD_SPI_NOR_USE_4K_SECTORS using the correct syntax
+> ---
+>  arch/arm64/configs/defconfig | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
+> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+> index c9adae4..6080c6e 100644
+> --- a/arch/arm64/configs/defconfig
+> +++ b/arch/arm64/configs/defconfig
+> @@ -860,3 +860,5 @@ CONFIG_DEBUG_KERNEL=y
+>  # CONFIG_DEBUG_PREEMPT is not set
+>  # CONFIG_FTRACE is not set
+>  CONFIG_MEMTEST=y
+> +CONFIG_JFFS2_FS=y
+> +# CONFIG_MTD_SPI_NOR_USE_4K_SECTORS is not set
+> 
 
-Best Regards
--Anand
+Can you explain why you're removing CONFIG_MTD_SPI_NOR_USE_4K_SECTORS?
+
+Dinh
 
 _______________________________________________
 linux-arm-kernel mailing list
