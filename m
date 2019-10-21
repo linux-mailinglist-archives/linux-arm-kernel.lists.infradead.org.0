@@ -2,52 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A37DDEEBD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 16:05:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 643CEDEEC3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 16:06:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
+	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=CP6kz61H26vP/VGEcZjZ+PgtoWiv2T2QyNqNfM9cyKU=; b=e4NkNCkGo1rwzVKu6ouP11fAT
-	HvtHZbXnoUZpaVZJfVHCzHglsTGa5RoUXcdMQW0dv9a30R4Bl5eUeEqPMLSUEKwqFt0vGR8PisUbG
-	UjaWc5YjarJiJbYuU22LviXEKoCi1vXT4ZsnNJ3HXumQ8d+utP4f6MVbgL0qCPt2+AuSjMAjdpfIq
-	r8jpZm5BP6RdSN4s3Fmx5nZgGOlEZQ+jBVo9rb6P4Fm75ALFR5rc5G33gxcPfSsqp8lA8PMjidis1
-	2KCHbOFO7HBYQ69tHLRVokHJKv2ysr218pZsbUrTetpFhlgxirB9ojyTEvm8nLeFXFFiolcjGn6FP
-	+ZxMuufvQ==;
+	 bh=nYpzQLLnEYSjOKldeGwsfrgr7YjEjwl/OXiwvaFpmOU=; b=jGSUo+JlTE7UXzkn2Fqh3lLcN
+	dNvIrR5sCVbN28Wg47LqiGqXZujRnUNDRpU3HGVKIGy6+buN/dKih+K+u2n+Tiyh6d45GQFeT53j6
+	YWRb0KNl/27MMCKZWbSWWbX9P7VaMHl8jDsM19mhR/R2IwctHmz1Yw9Bw3MV/yFAZnYv61jDWYB4l
+	HWNArRi/8SGh7LTTbcwGha9ghUn13kbJAtgrGD6HcyYP4dq0L7hFXxNmX+36nKmKUlVxWOBdSuKKs
+	sjg4+3AZmunG2Cud2CFEGI6JS8dELhBlEL6Qt+TNZ/QRjDnrPr04LgYe8QOV0FXH4UJ76B1m/IiZf
+	kAvlj6wUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMYJP-0004N4-9M; Mon, 21 Oct 2019 14:05:31 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMYJF-0004Mh-ID
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 14:05:23 +0000
-Received: from localhost (p54B33572.dip0.t-ipconnect.de [84.179.53.114])
- by pokefinder.org (Postfix) with ESMTPSA id CAB422C0076;
- Mon, 21 Oct 2019 16:05:20 +0200 (CEST)
-Date: Mon, 21 Oct 2019 16:05:15 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Eugen.Hristev@microchip.com
-Subject: Re: [PATCH v5 0/9] i2c: add support for filters
-Message-ID: <20191021140515.GC26782@ninjato>
-References: <1568189911-31641-1-git-send-email-eugen.hristev@microchip.com>
- <c17182ac-67dd-d11f-5daf-066bf446b969@microchip.com>
+	id 1iMYK3-0004dB-4j; Mon, 21 Oct 2019 14:06:11 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iMYJr-0004cW-Ke
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 14:06:00 +0000
+Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
+ (envelope-from <maz@kernel.org>)
+ id 1iMYJp-0005GP-K0; Mon, 21 Oct 2019 16:05:57 +0200
+To: Steven Price <steven.price@arm.com>
+Subject: Re: [PATCH v6 08/10] arm/arm64: Provide a wrapper for SMCCC 1.1 calls
+X-PHP-Originating-Script: 0:main.inc
 MIME-Version: 1.0
-In-Reply-To: <c17182ac-67dd-d11f-5daf-066bf446b969@microchip.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Date: Mon, 21 Oct 2019 15:05:57 +0100
+From: Marc Zyngier <maz@kernel.org>
+In-Reply-To: <890a7909-1083-2e6d-368a-f1d03788f5a1@arm.com>
+References: <20191011125930.40834-1-steven.price@arm.com>
+ <20191011125930.40834-9-steven.price@arm.com>
+ <099040bb979b7cb878a7f489033aacc7@www.loen.fr>
+ <890a7909-1083-2e6d-368a-f1d03788f5a1@arm.com>
+Message-ID: <760679a0a6fef6041b0e7bec8d04d81f@www.loen.fr>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/0.7.2
+X-SA-Exim-Connect-IP: <locally generated>
+X-SA-Exim-Rcpt-To: steven.price@arm.com, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ catalin.marinas@arm.com, pbonzini@redhat.com, rkrcmar@redhat.com,
+ linux@armlinux.org.uk, james.morse@arm.com, julien.thierry.kdev@gmail.com,
+ suzuki.poulose@arm.com, mark.rutland@arm.com, kvm@vger.kernel.org,
+ linux-doc@vger.kernel.org, linux-kernel@vger.kernel.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_070521_904762_0C5F6C00 
-X-CRM114-Status: GOOD (  20.03  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191021_070559_819927_6DF69DD6 
+X-CRM114-Status: UNSURE (   7.14  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,118 +72,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- alexandre.belloni@bootlin.com, linux-kernel@vger.kernel.org,
- Ludovic.Desroches@microchip.com, robh+dt@kernel.org, linux-i2c@vger.kernel.org,
- peda@axentia.se, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1071243806227244513=="
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ =?UTF-8?Q?Radim_Kr=C4=8Dm=C3=A1?= =?UTF-8?Q?=C5=99?= <rkrcmar@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Suzuki K Pouloze <suzuki.poulose@arm.com>, linux-doc@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Paolo Bonzini <pbonzini@redhat.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 2019-10-21 14:43, Steven Price wrote:
+> On 21/10/2019 12:42, Marc Zyngier wrote:
+>> On 2019-10-11 13:59, Steven Price wrote:
+> [...]
+>> All this should most probably go on top of the SMCCC conduit cleanup 
+>> that
+>> has already been already queued in the arm64 tree (see
+>> arm64/for-next/smccc-conduit-cleanup).
+>
+> Good point, I'll rebase. Are you happy for the entire series to be 
+> based
+> on top of that? i.e. based on commit e6ea46511b1a ("firmware: 
+> arm_sdei:
+> use common SMCCC_CONDUIT_*")
 
---===============1071243806227244513==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="MnLPg7ZWsaic7Fhd"
-Content-Disposition: inline
+Absolutely. I'll sync with Will and Catalin to get a stable branch that
+includes these commits.
 
+Thanks,
 
---MnLPg7ZWsaic7Fhd
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Mon, Oct 07, 2019 at 07:53:21AM +0000, Eugen.Hristev@microchip.com wrote:
->=20
->=20
-> On 11.09.2019 11:24, Eugen Hristev - M18282 wrote:
-> > From: Eugen Hristev <eugen.hristev@microchip.com>
-> >=20
-> > Hello,
-> >=20
-> > This series adds support for analog and digital filters for i2c control=
-lers
-> >=20
-> > This series is based on the series:
-> > [PATCH v2 0/9] i2c: at91: filters support for at91 SoCs
-> > and later
-> > [PATCH v4 0/9] i2c: add support for filters
-> > and enhanced to add the bindings for all controllers plus an extra bind=
-ings
-> > for the width of the spikes in nanoseconds (digital filters) and cut-off
-> > frequency (analog filters)
-> >=20
-> > First, bindings are created for
-> > 'i2c-analog-filter'
-> > 'i2c-digital-filter'
-> > 'i2c-digital-filter-width-ns'
-> > 'i2c-analog-filter-cutoff-frequency'
-> >=20
-> > The support is added in the i2c core to retrieve filter width/cutoff fr=
-equency
-> > and add it to the timings structure.
-> > Next, the at91 driver is enhanced for supporting digital filter, advanc=
-ed
-> > digital filter (with selectable spike width) and the analog filter.
-> >=20
-> > Finally the device tree for two boards are modified to make use of the
-> > new properties.
-> >=20
-> > This series is the result of the comments on the ML in the direction
-> > requested: to make the bindings globally available for i2c drivers.
-> >=20
-> > Changes in v5:
-> > - renamed i2c-filter-width-ns to i2c-digital-filter-width-ns as this
-> > is applicable only to digital filter
-> > - created new binding i2c-digital-filter-width-ns for analog filters.
->=20
-> Hello Wolfram and Peter,
->=20
-> Are you happy with the changes in this version? I haven't heard from you=
-=20
-> since this latest update.
-> I am interested to know if anymore changes are required or maybe we can=
-=20
-> move further with this support.
-
-So, I had a look now and I am happy. I will give Peter one more day to
-comment, otherwise I'll apply it tomorrow.
-
-Thanks for your patience and keeping at it!
-
-
---MnLPg7ZWsaic7Fhd
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl2tuxsACgkQFA3kzBSg
-KbY6GQ//X5UmvTKTkgT+9BdG4luCpqZEKeKetljuT2RVeGL56TJwBRiOYWymfAa+
-U88PvGx1Q9mmI/E4AvzTAsnwjZiqACFw5n4NG+mWfWmd5H2P7ko6PpgVUL7Lk/0S
-zbP658UBLM1LBHjtDI4n1juS6daxP1m2Z43NaaiskaQFBmvWtPRo5mv0jpDdbYi2
-gMQ2Qo1efHoaBm+bdVu6Z8O71QktM5BhqKgAPxV9vWA0etSNqiDMII9qk9SmpSfE
-4JcqmuAOa0fhDzbc+wKaLZoq3Gk3WiOeTImFHEw5wKZJE80guUBWNiJ2Bl96apQT
-E/+M3VuTnS1VWqkS6w0oJ0lA/un8gf+CtYbZblirG05fv7suBSLGuCe2RZvl9pJM
-t/LHClLyZ/yBcYL9eAeMj1tM14II/rWES1go5UxhukZW2c7Eqep4UOPTtYQg4rwO
-EozMsz3sueMFU5l6llkLW1t+tb8DnLlvlzB6wZtNlLQjL8cYMBfZJrdBy9N0wX1n
-nxWhQVIjer4AluEwqpGXJ0bPDrClRr9zgznUzG4ydGRAKSNHLJ01kvvxgQmTPYr6
-PSCbo+4EZWFVMZNCi0DGWQFeRLCsqoN+NsHhyM0z7wAc6TUbuaviB1qpRq7+ALkp
-GktKG3WXzYEsJmEMiU5ZsJRMC/wIRicGcF7GxqJx1VGO6712MXo=
-=4jBB
------END PGP SIGNATURE-----
-
---MnLPg7ZWsaic7Fhd--
-
-
---===============1071243806227244513==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1071243806227244513==--
-
