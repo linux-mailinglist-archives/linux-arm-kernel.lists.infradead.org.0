@@ -2,81 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F130DDF2D8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 18:21:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3025DF330
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 18:35:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nHhtCXSfrgfA9g7AoPRd366YLIeeN84orXRWv8iRmzQ=; b=T+fltjQRT5a9gy
-	psIuwuTJgtXy8XfKzcV9x59BS5xWRF266E6siEzneSGAwR1Y4ZUiP6j0B1BEJgvzt07LqeNPtb7rj
-	Z1sNdOoV/Hb28g24sUi/taHo1iLWT1qXSG8MmRJMv3MjkhumW0bSs5vbRC7MPuBmi7IJWvkJ/qTzv
-	ckskXtobm3vZiXVoFumxcloZZ8NTAErQyQujrwOZhpMyxzh7tsiE9ZvQq4AlnxOmlW/MjGb6k92/r
-	3/u8flTrRdQSV+qezfMshfTSjtTeRoRLYqnCttkyxiIU1MvfO/V0oBHlTRLYV3q5Z/SmqNFxBOGvQ
-	LX31QmCFgNwmrh0r+1Sw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=r+5YzMrnzxYqSkXWiLHwrlXJBIttOHLVA3BVB/SqK8I=; b=bWE
+	nuu/dyp7BZMY3Rs1KosFw7vYfb8pKd2g5vEMUhJU1cFam+GLqjdsMHH5xkVyqJt+MK0AOep6eDRUj
+	I73wRCUu1lCAK+3qGYYMTgvJOuukWFi11XIZsUASYfFqRBpAF1HBCgfD4kluneL1dzS7NtQS5vKYd
+	MgLq391FwG+FMYjaR9/s/IAlhWKHHMXqpJz16vyM4AwOH3EMuknN0V8gPcO/Nus5zeuUJran9xwHd
+	88V7kxNTuJtI+8o0kzhdGg8lILdOar6yybt13yN82kAZZBiJHX1Xjnyfhi43aWm9p9YGvLdc7kW9z
+	wKL2MiHaABjnA9f3rh5+iFr37+Cyt3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMaQz-0006WV-P6; Mon, 21 Oct 2019 16:21:29 +0000
-Received: from mail-ed1-f67.google.com ([209.85.208.67])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMaQp-0006W5-TC
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 16:21:21 +0000
-Received: by mail-ed1-f67.google.com with SMTP id y7so2959746edo.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 21 Oct 2019 09:21:19 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=J7kXhyBYin2hNshrQsLbIqexvEmaaX5JxfmgulPDAhs=;
- b=Pl6B5jVyiHIFBNHIq9w2iUcrx0G6SJiA8/5ie4Xk/iuo4LiGuleccnQi3aS/QdWp88
- vrpzjAZw4G8cbT9w+gaMi2LCSnUUEIobbT9c4OORMS5TF/WKSveGLLkj+TbmkbODjWnc
- ALYmD/5UU7A1ruzE5Kaa30vCjJ817B2qZw/q/HC1KPmspUwggqKs8/BmaBeCBqPXnPQI
- d7+K/L2cv6NfHcZE0VSAm9g4h2gf+RDifUFUNCrlG6fTx3NvO9e36Q/CF53HrWcUha81
- 1Ta5yFOOh5H5g/5yXZ6fp5lw+Q5nZENPu2qODtA0LL3es4a/6phv/sp8oJhA4YbvD9IB
- FGVw==
-X-Gm-Message-State: APjAAAVrMBEC8fb56WjeqvyIGCT5WxzhfGY1Txo3Te9sHJTqvdTX7Im3
- IFAaemibUoK+0XmmQDKw4Tw1+QKX
-X-Google-Smtp-Source: APXvYqzJjaDGk3bh7Rvx5mKz/l/mNrNxKhU6SPIZK78xraCXfMm3Bl9vspYovV2bf8f1O66wvaY1DQ==
-X-Received: by 2002:aa7:d915:: with SMTP id a21mr26132055edr.46.1571674877915; 
- Mon, 21 Oct 2019 09:21:17 -0700 (PDT)
-Received: from kozik-lap ([194.230.155.217])
- by smtp.googlemail.com with ESMTPSA id s4sm363303edt.34.2019.10.21.09.21.16
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 21 Oct 2019 09:21:17 -0700 (PDT)
-Date: Mon, 21 Oct 2019 18:21:15 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Alim Akhtar <alim.akhtar@gmail.com>
-Subject: Re: [PATCH] ARM: dts: exynos: Rename children of SysRAM node to "sram"
-Message-ID: <20191021162115.GA21883@kozik-lap>
-References: <20191021151440.13505-1-krzk@kernel.org>
- <CAGOxZ531SdYcud3nQ-6hbCRZptUYznTRajVyxwEi-mFmm8-zPg@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAGOxZ531SdYcud3nQ-6hbCRZptUYznTRajVyxwEi-mFmm8-zPg@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+	id 1iMaez-0004jY-Mh; Mon, 21 Oct 2019 16:35:57 +0000
+Received: from [217.140.110.172] (helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iMadp-0002el-4A
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 16:34:48 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D6A8E46A;
+ Mon, 21 Oct 2019 09:34:33 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 99E3E3F71F;
+ Mon, 21 Oct 2019 09:34:31 -0700 (PDT)
+From: Mark Rutland <mark.rutland@arm.com>
+To: linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH 0/8] arm64: ftrace cleanup + FTRACE_WITH_REGS
+Date: Mon, 21 Oct 2019 17:34:18 +0100
+Message-Id: <20191021163426.9408-1-mark.rutland@arm.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_092119_946364_8E0889A2 
-X-CRM114-Status: GOOD (  18.08  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191021_093445_215792_AC9B6C85 
+X-CRM114-Status: GOOD (  12.58  )
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.67 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.67 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,172 +59,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Kukjin Kim <kgene@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, jthierry@redhat.com, will@kernel.org,
+ ard.biesheuvel@linaro.org, peterz@infradead.org, catalin.marinas@arm.com,
+ deller@gmx.de, jpoimboe@redhat.com, rostedt@goodmis.org,
+ takahiro.akashi@linaro.org, mingo@redhat.com, james.morse@arm.com,
+ jeyu@kernel.org, amit.kachhap@arm.com, svens@stackframe.org, duwe@suse.de
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 21, 2019 at 09:37:24PM +0530, Alim Akhtar wrote:
-> On Mon, Oct 21, 2019 at 8:45 PM Krzysztof Kozlowski <krzk@kernel.org> wrote:
-> >
-> > The device node name should reflect generic class of a device so rename
-> > the children of SysRAM node to "smp-sysram".  This will be also in sync
-> Typo "smp-sram"
+Hi,
 
-Thanks, indeed.
+This series is a reworked version of Torsten's v8 FTRACE_WITH_REGS
+series [1]. I've tried to rework the existing code in preparatory
+patches so that the patchable-function-entry bits slot in with fewer
+surprises. This version is based on v5.4-rc3, and can be found in my
+arm64/ftrace-with-regs branch [2].
 
-> > with upcoming DT schema.  No functional change.
-> >
-> > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> > ---
-> Looks good to me.
+I've added an (optional) ftrace_init_nop(), which the core code uses to
+initialize callsites. This allows us to avoid a synthetic MCOUNT_ADDR
+symbol, and more cleanly separates the one-time initialization of the
+callsite from dynamic NOP<->CALL modification. Architectures which don't
+implement this get the existing ftrace_make_nop() with MCOUNT_ADDR.
 
-Shall I add your review-tag?
+I've moved the module PLT initialization to module load time, which
+simplifies runtime callsite modification. This also means that we don't
+transitently mark the module text RW, and will allow for the removal of
+module_disable_ro().
 
-Best regards,
-Krzysztof
+Since the last posting, parisc gained ftrace support using
+patchable-function-entry. I've made the handling of module callsite
+locations common in kernel/module.c with a new FTRACE_CALLSITE_SECTION
+definition, and removed the newly redundant bits from arch/parisc.
 
+Thanks,
+Mark.
 
-> 
-> >  arch/arm/boot/dts/exynos3250.dtsi               | 4 ++--
-> >  arch/arm/boot/dts/exynos4210-universal_c210.dts | 6 +++---
-> >  arch/arm/boot/dts/exynos4210.dtsi               | 4 ++--
-> >  arch/arm/boot/dts/exynos4412.dtsi               | 4 ++--
-> >  arch/arm/boot/dts/exynos5250.dtsi               | 4 ++--
-> >  arch/arm/boot/dts/exynos54xx.dtsi               | 4 ++--
-> >  6 files changed, 13 insertions(+), 13 deletions(-)
-> >
-> > diff --git a/arch/arm/boot/dts/exynos3250.dtsi b/arch/arm/boot/dts/exynos3250.dtsi
-> > index b016b0b68306..044e5da64a76 100644
-> > --- a/arch/arm/boot/dts/exynos3250.dtsi
-> > +++ b/arch/arm/boot/dts/exynos3250.dtsi
-> > @@ -145,12 +145,12 @@
-> >                         #size-cells = <1>;
-> >                         ranges = <0 0x02020000 0x40000>;
-> >
-> > -                       smp-sysram@0 {
-> > +                       smp-sram@0 {
-> >                                 compatible = "samsung,exynos4210-sysram";
-> >                                 reg = <0x0 0x1000>;
-> >                         };
-> >
-> > -                       smp-sysram@3f000 {
-> > +                       smp-sram@3f000 {
-> >                                 compatible = "samsung,exynos4210-sysram-ns";
-> >                                 reg = <0x3f000 0x1000>;
-> >                         };
-> > diff --git a/arch/arm/boot/dts/exynos4210-universal_c210.dts b/arch/arm/boot/dts/exynos4210-universal_c210.dts
-> > index 09d3d54d09ff..a1bdf7830a87 100644
-> > --- a/arch/arm/boot/dts/exynos4210-universal_c210.dts
-> > +++ b/arch/arm/boot/dts/exynos4210-universal_c210.dts
-> > @@ -590,16 +590,16 @@
-> >  };
-> >
-> >  &sysram {
-> > -       smp-sysram@0 {
-> > +       smp-sram@0 {
-> >                 status = "disabled";
-> >         };
-> >
-> > -       smp-sysram@5000 {
-> > +       smp-sram@5000 {
-> >                 compatible = "samsung,exynos4210-sysram";
-> >                 reg = <0x5000 0x1000>;
-> >         };
-> >
-> > -       smp-sysram@1f000 {
-> > +       smp-sram@1f000 {
-> >                 status = "disabled";
-> >         };
-> >  };
-> > diff --git a/arch/arm/boot/dts/exynos4210.dtsi b/arch/arm/boot/dts/exynos4210.dtsi
-> > index 554819ae1446..b4466232f0c1 100644
-> > --- a/arch/arm/boot/dts/exynos4210.dtsi
-> > +++ b/arch/arm/boot/dts/exynos4210.dtsi
-> > @@ -79,12 +79,12 @@
-> >                         #size-cells = <1>;
-> >                         ranges = <0 0x02020000 0x20000>;
-> >
-> > -                       smp-sysram@0 {
-> > +                       smp-sram@0 {
-> >                                 compatible = "samsung,exynos4210-sysram";
-> >                                 reg = <0x0 0x1000>;
-> >                         };
-> >
-> > -                       smp-sysram@1f000 {
-> > +                       smp-sram@1f000 {
-> >                                 compatible = "samsung,exynos4210-sysram-ns";
-> >                                 reg = <0x1f000 0x1000>;
-> >                         };
-> > diff --git a/arch/arm/boot/dts/exynos4412.dtsi b/arch/arm/boot/dts/exynos4412.dtsi
-> > index 5022aa574b26..48868947373e 100644
-> > --- a/arch/arm/boot/dts/exynos4412.dtsi
-> > +++ b/arch/arm/boot/dts/exynos4412.dtsi
-> > @@ -195,12 +195,12 @@
-> >                         #size-cells = <1>;
-> >                         ranges = <0 0x02020000 0x40000>;
-> >
-> > -                       smp-sysram@0 {
-> > +                       smp-sram@0 {
-> >                                 compatible = "samsung,exynos4210-sysram";
-> >                                 reg = <0x0 0x1000>;
-> >                         };
-> >
-> > -                       smp-sysram@2f000 {
-> > +                       smp-sram@2f000 {
-> >                                 compatible = "samsung,exynos4210-sysram-ns";
-> >                                 reg = <0x2f000 0x1000>;
-> >                         };
-> > diff --git a/arch/arm/boot/dts/exynos5250.dtsi b/arch/arm/boot/dts/exynos5250.dtsi
-> > index e1f0215e3985..ec983283f573 100644
-> > --- a/arch/arm/boot/dts/exynos5250.dtsi
-> > +++ b/arch/arm/boot/dts/exynos5250.dtsi
-> > @@ -171,12 +171,12 @@
-> >                         #size-cells = <1>;
-> >                         ranges = <0 0x02020000 0x30000>;
-> >
-> > -                       smp-sysram@0 {
-> > +                       smp-sram@0 {
-> >                                 compatible = "samsung,exynos4210-sysram";
-> >                                 reg = <0x0 0x1000>;
-> >                         };
-> >
-> > -                       smp-sysram@2f000 {
-> > +                       smp-sram@2f000 {
-> >                                 compatible = "samsung,exynos4210-sysram-ns";
-> >                                 reg = <0x2f000 0x1000>;
-> >                         };
-> > diff --git a/arch/arm/boot/dts/exynos54xx.dtsi b/arch/arm/boot/dts/exynos54xx.dtsi
-> > index f78dee801cd9..8aa5117e58ce 100644
-> > --- a/arch/arm/boot/dts/exynos54xx.dtsi
-> > +++ b/arch/arm/boot/dts/exynos54xx.dtsi
-> > @@ -62,12 +62,12 @@
-> >                         #size-cells = <1>;
-> >                         ranges = <0 0x02020000 0x54000>;
-> >
-> > -                       smp-sysram@0 {
-> > +                       smp-sram@0 {
-> >                                 compatible = "samsung,exynos4210-sysram";
-> >                                 reg = <0x0 0x1000>;
-> >                         };
-> >
-> > -                       smp-sysram@53000 {
-> > +                       smp-sram@53000 {
-> >                                 compatible = "samsung,exynos4210-sysram-ns";
-> >                                 reg = <0x53000 0x1000>;
-> >                         };
-> > --
-> > 2.17.1
-> >
-> 
-> 
-> -- 
-> Regards,
-> Alim
+[1] https://lore.kernel.org/r/20190208150826.44EBC68DD2@newverein.lst.de
+[2] git://git.kernel.org/pub/scm/linux/kernel/git/mark/linux.git arm64/ftrace-with-regs
+
+Mark Rutland (7):
+  ftrace: add ftrace_init_nop()
+  module/ftrace: handle patchable-function-entry
+  arm64: module: rework special section handling
+  arm64: module/ftrace: intialize PLT at load time
+  arm64: insn: add encoder for MOV (register)
+  arm64: asm-offsets: add S_FP
+  arm64: ftrace: minimize ifdeffery
+
+Torsten Duwe (1):
+  arm64: implement ftrace with regs
+
+ arch/arm64/Kconfig               |   2 +
+ arch/arm64/Makefile              |   5 ++
+ arch/arm64/include/asm/ftrace.h  |  23 +++++++
+ arch/arm64/include/asm/insn.h    |   3 +
+ arch/arm64/include/asm/module.h  |   2 +-
+ arch/arm64/kernel/asm-offsets.c  |   1 +
+ arch/arm64/kernel/entry-ftrace.S | 140 +++++++++++++++++++++++++++++++++++++--
+ arch/arm64/kernel/ftrace.c       | 123 ++++++++++++++++++++--------------
+ arch/arm64/kernel/insn.c         |  13 ++++
+ arch/arm64/kernel/module-plts.c  |   3 +-
+ arch/arm64/kernel/module.c       |  57 +++++++++++++---
+ arch/parisc/Makefile             |   1 -
+ arch/parisc/kernel/module.c      |  10 ++-
+ arch/parisc/kernel/module.lds    |   7 --
+ include/linux/ftrace.h           |   5 ++
+ kernel/module.c                  |   2 +-
+ kernel/trace/ftrace.c            |  13 +++-
+ 17 files changed, 330 insertions(+), 80 deletions(-)
+ delete mode 100644 arch/parisc/kernel/module.lds
+
+-- 
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
