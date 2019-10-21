@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CBD27DEA5E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 13:06:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 591D4DEA6B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 13:08:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Inkq7Yziaa4mewNYOZ0SJjSKmxyLcfy0I+DT+DEmUpY=; b=Xt6sgN3px7tZyPemjMyxfVLOp
-	VWgSdxI5qaL+YaTfsIxFaG6Utq/iRKSgv2za5/lZKjp/Th/0AAUVkrdGIrCBFY1ra8zYezvJCo/gB
-	Uvw9CHemUmzzTHyc6E0Y1X8IDkaEoTo/cEKeEVUaysMV2LMO6+dPQp2dwdzfcXFSKly/D7OjDjAor
-	GhJWYOCIZEgfA3WUw8Pl4IhgOnH4+CZDh0mdwJw7X0BvoieUWDq0kIs4d6MvAq4gmyjNjbRGnUwHQ
-	7LsxP6CWScawlmZFi5CXzSfR/lLyBSZynv6OgtqwExo+4H7OVBXXnCCVLF3aBmunPY2w+7qEwRxCw
-	xr3J/XQiQ==;
+	 bh=HhogCUv2uX7UzHRJ2IS3TzSCabXXR0v2wQc3rBYCR1k=; b=sfZeY19LmZKmOOiUoon+zhhmi
+	gk0VQISn9IE6xwRSyMmDFCd5wuWTq516uQv/w5zkEQWacuGkRN76HxtfHojSQEQR7Sq6aWYSuEShO
+	3VDObVsxtQWvDtVV6UFgnXU4x0dw6pXncuE2+5dI0LTex7cZL2e6kIlN8+stZu4U/RVjyrlymY9jL
+	Tyd7MUJd+WmoFHwpREG73Pe7bqAlXLgvDHe+iavKuQEkXkrxzaLUAZswU9FiSkNPjzDrHwXrkFvIR
+	KWrreOtfoKIgEf28u76x8p64c3tv62fxiKS+POaNr74duc7JRaEwj3xa4TvnxdflWv4EpyoGFINoe
+	E22sOZJpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMVW9-0005oy-6y; Mon, 21 Oct 2019 11:06:29 +0000
+	id 1iMVYK-0006EN-EX; Mon, 21 Oct 2019 11:08:44 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMVVw-0005oG-En
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 11:06:18 +0000
+ id 1iMVY9-0006Dh-Hz
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 11:08:34 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8679C2084C;
- Mon, 21 Oct 2019 11:06:14 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B7BEF206C2;
+ Mon, 21 Oct 2019 11:08:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571655975;
- bh=6aIiiW6Oy2Tp3jMHez2uZxsG1cbGxMZp3/IBu+pOkT4=;
+ s=default; t=1571656113;
+ bh=tBYGme/3FWzm/ih6xspHcVw+dNmojtv6QL8gPcuU85U=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=SmsbcM7ob9APIInCUIWU9pFZGqvQIzlGXwhVv9ndL0rOALynmG1mW1Lk39mqHaJ+Q
- TQBh/zNq2g+4biDbSzud0mQktKJ4SKk26i2jhm9Z/4ZJi/BOWEEtnOTVilP/UQOxXA
- fAORWnAKW7DLCV5+MqTkkoIA0Rta9wHUGhHGt0Sg=
-Date: Mon, 21 Oct 2019 13:06:12 +0200
+ b=noXYuhgt63hGzvfq+0yDhuJIIJuOJGuJCtc1uk6QM3wFsLHmp6Hzb7cuu47Mlkx1S
+ R1Ki2UTzEUlaHXqCO9R+VpFc/ZT0DR1QVqRh1KZLTLguIqySKkkF3PbOvW/OfglIep
+ 1qtIvZNMbkvvBNOZxxdXbzJDWuJtcJshi9w/oXB8=
+Date: Mon, 21 Oct 2019 13:08:30 +0200
 From: Maxime Ripard <mripard@kernel.org>
 To: megous@megous.com
-Subject: Re: [PATCH 1/4] dt-bindings: Add bindings for USB3 phy on Allwinner H6
-Message-ID: <20191021110612.55ym4y3m3xko3kpc@gilmour>
+Subject: Re: [PATCH 2/4] phy: allwinner: add phy driver for USB3 PHY on
+ Allwinner H6 SoC
+Message-ID: <20191021110830.74m4ys7mvztb4nqs@gilmour>
 References: <20191020134229.1216351-1-megous@megous.com>
- <20191020134229.1216351-2-megous@megous.com>
+ <20191020134229.1216351-3-megous@megous.com>
 MIME-Version: 1.0
-In-Reply-To: <20191020134229.1216351-2-megous@megous.com>
+In-Reply-To: <20191020134229.1216351-3-megous@megous.com>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_040616_520732_60E78129 
-X-CRM114-Status: GOOD (  17.25  )
+X-CRM114-CacheID: sfid-20191021_040833_611132_47EF9326 
+X-CRM114-Status: GOOD (  13.22  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -83,73 +84,55 @@ Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  linux-sunxi@googlegroups.com, Rob Herring <robh+dt@kernel.org>,
  linux-arm-kernel@lists.infradead.org, Thomas Gleixner <tglx@linutronix.de>,
  linux-kernel@vger.kernel.org, Icenowy Zheng <icenowy@aosc.io>
-Content-Type: multipart/mixed; boundary="===============6908183767558322636=="
+Content-Type: multipart/mixed; boundary="===============8228728683842093665=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============6908183767558322636==
+--===============8228728683842093665==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ewuc6ubrfgaw6qrn"
+	protocol="application/pgp-signature"; boundary="wkap5bf7ph4ddhpj"
 Content-Disposition: inline
 
 
---ewuc6ubrfgaw6qrn
+--wkap5bf7ph4ddhpj
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Sun, Oct 20, 2019 at 03:42:26PM +0200, megous@megous.com wrote:
-> From: Ondrej Jirman <megous@megous.com>
+On Sun, Oct 20, 2019 at 03:42:27PM +0200, megous@megous.com wrote:
+> From: Icenowy Zheng <icenowy@aosc.io>
 >
-> The new Allwinner H6 SoC contains a USB3 PHY that is wired to the
-> external USB3 pins of the SoC.
+> Allwinner H6 SoC contains a USB3 PHY (with USB2 DP/DM lines also
+> controlled).
 >
-> Add a device tree binding for the PHY.
+> Add a driver for it.
+>
+> The register operations in this driver is mainly extracted from the BSP
+> USB3 driver.
 >
 > Signed-off-by: Ondrej Jirman <megous@megous.com>
-> ---
->  .../phy/allwinner,sun50i-h6-usb3-phy.yaml     | 47 +++++++++++++++++++
->  1 file changed, 47 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/allwinner,sun50i-h6-usb3-phy.yaml
->
-> diff --git a/Documentation/devicetree/bindings/phy/allwinner,sun50i-h6-usb3-phy.yaml b/Documentation/devicetree/bindings/phy/allwinner,sun50i-h6-usb3-phy.yaml
-> new file mode 100644
-> index 000000000000..2fdc890748db
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/allwinner,sun50i-h6-usb3-phy.yaml
-> @@ -0,0 +1,47 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +# Copyright 2019 Ondrej Jirman <megous@megous.com>
-> +%YAML 1.2
-> +---
-> +$id: "http://devicetree.org/schemas/phy/allwinner,sun50i-h6-usb3-phy.yaml#"
-> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
-> +
-> +title: Allwinner sun50i USB3 PHY
+> Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+> Reviewed-by: Chen-Yu Tsai <wens@csie.org>
 
-H6 would be more appropriate here instead of sun50i. There's a bunch
-of sun50i SoCs already, and only one uses it.
-
-With that fixed,
 Acked-by: Maxime Ripard <mripard@kernel.org>
 
 Maxime
 
---ewuc6ubrfgaw6qrn
+--wkap5bf7ph4ddhpj
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXa2RJAAKCRDj7w1vZxhR
-xR48AQDAv8g0iblut9ytzfU6bZMgT1D68v8XPkVM2Tm82RTKoAEAn/tXqAEV2OQF
-ePOXBUp1QBOrzVFUJQx03BYGUacvdwI=
-=O92R
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXa2RrgAKCRDj7w1vZxhR
+xUVEAP0UwD5i2m60iQ3FP1B5X7mKnqw6PlzwMDnX4NC+gEbFrQD9Fbgi5TtiREt4
+HRfbtIC6fTm7SkAMo6JU0iYU/DEpTQw=
+=SIZy
 -----END PGP SIGNATURE-----
 
---ewuc6ubrfgaw6qrn--
+--wkap5bf7ph4ddhpj--
 
 
---===============6908183767558322636==
+--===============8228728683842093665==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -160,5 +143,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============6908183767558322636==--
+--===============8228728683842093665==--
 
