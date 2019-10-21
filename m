@@ -2,55 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75B6DDEAB5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 13:21:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB33CDEAC4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 13:24:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kj76LY8YCTTl2RHb9ZqC1WypMj6QhPC/YNhcCz12KgU=; b=ATkGQbY8CiNnrU
-	oiZZfgvT7haVCRQ6Q2IDmpZ0z1X1IVGshTCTIZay5HTzjkEB12+NkByJ+osn4wL3IhIhrfi89319i
-	CmhQORN00yL5ko9b5Lo/XueNjMG3XZvOi+84O3tjjBR7A7zg4z++MyQsHKHiuwM1YcxttF22Lb0S5
-	deCmRSxvJeudP3uIVhtSWRvWcgWLfNYy+v2xa3KoqWkJMhKr/i7Foodmyq5UIbAgwVt9M6WdwI54e
-	eB1OtesULHRm7NhI47QrgYb75G42Q43qMQN2rO3CVt+GULVGV2JxJstEC8JaFW4FU54uh6/xCRk3E
-	VXgbeR9fvaeptAyZplSQ==;
+	List-Owner; bh=xi/24YC47h/wrLzt+NTEBFLVawpdu/t9/kPFwrbWeA4=; b=fr9345uyPU5Df6
+	JJ8lyJg+xcKnjME5LzUfUHOc7M4Lr6PER4BWgJ6l4769QET+BdbZ4Lm+jtUDP5yMio6Is75SqgjTQ
+	n3BIXPXKs2pfBEbxshEN3PtSk9fULmdFGsWc0lTWyuZXonTRvljGaUfnl77Jnn9YzqKFI5S9ZZ849
+	zvWiBCA0F8KdbcNMh5nSTbWE9a2Tul7VKNsBK44YoWYp8JJrcYhy33CZp/+wjpQpQIzdyMS7NqBlB
+	hlx9RZF10kX31TVgNRP/mD3guzBtAMxsidxB0QLx8dlMnxw9coMjhq1OI4YW3OexL1LVqiL+79BQT
+	PbyQiV2k73lxvVv6D0cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMVkp-0005ak-CA; Mon, 21 Oct 2019 11:21:39 +0000
-Received: from [217.140.110.172] (helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMVkg-0005Zm-SV
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 11:21:32 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 77069EBD;
- Mon, 21 Oct 2019 04:21:18 -0700 (PDT)
-Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8F10E3F718;
- Mon, 21 Oct 2019 04:21:16 -0700 (PDT)
-Date: Mon, 21 Oct 2019 12:21:14 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Yunfeng Ye <yeyunfeng@huawei.com>
-Subject: Re: [PATCH v5] arm64: psci: Reduce the waiting time for
- cpu_psci_cpu_kill()
-Message-ID: <20191021112114.GC21581@bogus>
-References: <710429cc-4d88-b7c3-b068-5459cf8133b5@huawei.com>
+	id 1iMVnH-0005wL-87; Mon, 21 Oct 2019 11:24:11 +0000
+Received: from mail-ed1-f66.google.com ([209.85.208.66])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iMVn5-0005vw-0D
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 11:24:00 +0000
+Received: by mail-ed1-f66.google.com with SMTP id s20so3707463edq.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 21 Oct 2019 04:23:58 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=BVlXhkUOcHB+M6im4W80bsAnmThctBDhzXi/Z0FpqPM=;
+ b=D9p9EVuJZKjor7m27nKq8lsh1skBtDexXHiEopZ3ry2EUOHorCqM/HBqdhp4PoGQly
+ LfWUka6lQlqpvrixxY+mpUKz+JlAW1le1csovRKYEEetectG3SwMMJyfwyzaov7eBvPt
+ iupDbIL47cbAB1wH6OUKkex3OMLoz2D1s7hWB4LcFmU7AQdSW+Eq41aw5a9TkCyQ8Ej1
+ lD/a/8cjtHOGDvAJu272VoT2+KTC1HM9+hhVF+vmsJC1n0aNed6QU79BLVKSM0o8EvWj
+ or4xhT1XupuMTfZ6pRYXJ+s/kGhMVZImLnFIpfmlHwHfK8/ljwn2Y+HCj2p46PsnArJ0
+ PSSw==
+X-Gm-Message-State: APjAAAWGxmwpW8EMjvT9C+r+T5bFrjZ0JOicBbibY6eqpGXABUtNQS9k
+ +a/cTj4dKyZAAyWktE57tRk=
+X-Google-Smtp-Source: APXvYqwff/GiwAwp/7TONncf6a2J4jtHzGlSJbceQ9C74FUOcOXZ54eJ4FoTQ+a8fgD2rHnjfyIlmQ==
+X-Received: by 2002:a17:906:5292:: with SMTP id
+ c18mr21356043ejm.129.1571657037596; 
+ Mon, 21 Oct 2019 04:23:57 -0700 (PDT)
+Received: from pi3 ([194.230.155.217])
+ by smtp.googlemail.com with ESMTPSA id w16sm579189edd.93.2019.10.21.04.23.55
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 21 Oct 2019 04:23:56 -0700 (PDT)
+Date: Mon, 21 Oct 2019 13:23:54 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Viresh Kumar <viresh.kumar@linaro.org>
+Subject: Re: [PATCH v5 1/4] PM / OPP: Support adjusting OPP voltages at runtime
+Message-ID: <20191021112354.GA2262@pi3>
+References: <20191016145756.16004-1-s.nawrocki@samsung.com>
+ <CGME20191016145810eucas1p1b31400c9b2e7f30cdf6deeb4ccee2788@eucas1p1.samsung.com>
+ <20191016145756.16004-2-s.nawrocki@samsung.com>
+ <20191017064258.yfbh7iz3pbzfhdvr@vireshk-i7>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <710429cc-4d88-b7c3-b068-5459cf8133b5@huawei.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20191017064258.yfbh7iz3pbzfhdvr@vireshk-i7>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_042130_966435_1B338F6B 
-X-CRM114-Status: GOOD (  12.64  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20191021_042359_045074_34C2682F 
+X-CRM114-Status: GOOD (  17.78  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.66 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.66 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (k.kozlowski.k[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,39 +91,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kstewart@linuxfoundation.org, mark.rutland@arm.com,
- lorenzo.pieralisi@arm.com, hushiyuan@huawei.com, catalin.marinas@arm.com,
- Sudeep Holla <sudeep.holla@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- linfeilong@huawei.com, David.Laight@ACULAB.COM, gregkh@linuxfoundation.org,
- tglx@linutronix.de, wuyun.wu@huawei.com, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-pm@vger.kernel.org, sboyd@kernel.org, vireshk@kernel.org,
+ b.zolnierkie@samsung.com, roger.lu@mediatek.com, robh+dt@kernel.org,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Stephen Boyd <sboyd@codeaurora.org>, linux-arm-kernel@lists.infradead.org,
+ m.szyprowski@samsung.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 21, 2019 at 06:52:16PM +0800, Yunfeng Ye wrote:
-> In cases like suspend-to-disk and suspend-to-ram, a large number of CPU
-> cores need to be shut down. At present, the CPU hotplug operation is
-> serialised, and the CPU cores can only be shut down one by one. In this
-> process, if PSCI affinity_info() does not return LEVEL_OFF quickly,
-> cpu_psci_cpu_kill() needs to wait for 10ms. If hundreds of CPU cores
-> need to be shut down, it will take a long time.
+On Thu, Oct 17, 2019 at 12:12:58PM +0530, Viresh Kumar wrote:
+> On 16-10-19, 16:57, Sylwester Nawrocki wrote:
+> > From: Stephen Boyd <sboyd@codeaurora.org>
+> > 
+> > On some SoCs the Adaptive Voltage Scaling (AVS) technique is
+> > employed to optimize the operating voltage of a device. At a
+> > given frequency, the hardware monitors dynamic factors and either
+> > makes a suggestion for how much to adjust a voltage for the
+> > current frequency, or it automatically adjusts the voltage
+> > without software intervention. Add an API to the OPP library for
+> > the former case, so that AVS type devices can update the voltages
+> > for an OPP when the hardware determines the voltage should
+> > change. The assumption is that drivers like CPUfreq or devfreq
+> > will register for the OPP notifiers and adjust the voltage
+> > according to suggestions that AVS makes.
+> > 
+> > This patch is derived from [1] submitted by Stephen.
+> > [1] https://lore.kernel.org/patchwork/patch/599279/
+> > 
+> > Signed-off-by: Stephen Boyd <sboyd@codeaurora.org>
+> > Signed-off-by: Roger Lu <roger.lu@mediatek.com>
+> > [s.nawrocki@samsung.com: added handling of OPP min/max voltage]
+> > Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
+> > ---
+> >  drivers/opp/core.c     | 69 ++++++++++++++++++++++++++++++++++++++++++
+> >  include/linux/pm_opp.h | 13 ++++++++
+> >  2 files changed, 82 insertions(+)
 > 
-> Normally, there is no need to wait 10ms in cpu_psci_cpu_kill(). So
-> change the wait interval from 10 ms to max 1 ms and use usleep_range()
-> instead of msleep() for more accurate timer.
-> 
-> In addition, reducing the time interval will increase the messages
-> output, so remove the "Retry ..." message, instead, track time and
-> output to the the successful message.
+> Applied. Thanks.
 
-Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
+Hi Viresh,
 
---
-Regards,
-Sudeep
+Can you provide a stable tag with this patch so I can take soc/samsung
+driver?
+
+Best regards,
+Krzysztof
+
 
 _______________________________________________
 linux-arm-kernel mailing list
