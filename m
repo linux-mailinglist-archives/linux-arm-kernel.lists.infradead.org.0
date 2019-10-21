@@ -2,70 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D055DDF7A8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 23:46:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C63EDF7AA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 23:47:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=167eifJQ7qMmiGl3f4A0+wF5mLtaXGLeYatGk1SxMoc=; b=FK4QYQRtdd6+i9
-	8mVvEQ08M0zWMX4kgadi3FUfcVSDeQJSbkesnQBbL4jdiIMWswvQAkW9Y8ebf2HpsqKy3igdhTt2h
-	RqD30hyuQbE1fnQj93WjJyFf/8WuyYZInbmimThFhOW+HsAiYyCeE9k/SRNICLsSWHToaOwffHyqk
-	KaLviNYvrgpn+BAI9gJHf7LI4SFco3OjGoSh9ZK+mXOAlZP1WOYNfbKh2dAia3+BsUbjyXvrtwUQE
-	gaioyZ1fi46ieRlsowKcMPArFvRUPisXmxGQQiW1ZmwAw/siQnfb4oSxy4MjfYMb9GwPaDdFkbJ6J
-	hFoBtZv+7N6u0hx3IPIQ==;
+	List-Owner; bh=1/t2Z0a9Xanf9s3YO19VuVl2DXhFP4xoe/fkcW+g57o=; b=PW/p3bSk9/1TpW
+	/qPZ8O/rGgS3jspRSg+tdgJ/0rkRvNdOouzX2MFWbFyVGHOdwtbh7RKPGGFYvpKiXxgwK5TODNtU1
+	EGCFIfZYwQOSCWZ516Uyba+Tay7liqlpWByJ4FnQAtZ7zn5l3gNYUMB5KgrARp7G70YXHZ+Rbk3S1
+	oqCdAhxXuLARcAW39uPj0cyvtWabAXMEIzRcQD7jSfHfUi6jp41bsb33eEZEpmBVKfe48ypdLjENF
+	rkIHiDhuMtz98oQc04Hv+5Eo5VjW7kPtRz4v3mHPqfdIwOJ9m+2CfMluJysf6WT0gnMaNP84HiWDw
+	+eBQLmC6MDfYIdnpy6Ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMfVq-0000rM-PG; Mon, 21 Oct 2019 21:46:50 +0000
-Received: from mail-oi1-f195.google.com ([209.85.167.195])
+	id 1iMfW9-000174-Ld; Mon, 21 Oct 2019 21:47:09 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMfV0-0000D0-6m; Mon, 21 Oct 2019 21:46:00 +0000
-Received: by mail-oi1-f195.google.com with SMTP id b25so793033oib.7;
- Mon, 21 Oct 2019 14:45:57 -0700 (PDT)
+ id 1iMfV2-0000FY-H5; Mon, 21 Oct 2019 21:46:02 +0000
+Received: by mail-oi1-f194.google.com with SMTP id w6so12381072oie.11;
+ Mon, 21 Oct 2019 14:46:00 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=TsrtW/3IwxExUlY3NAEem6qIu9cq5ThxwAPMPnLEB1M=;
- b=j6uwDb0aBUOnKVp3/h323Eze5VhQ5ZFno80BjVTxkX0TCLvTVGXb1f9NUjkK0RZPZO
- J2eYPblsRxIWVJXk6kP99Sw0hojiYXdJGxsvo2WtoDK33evkIOWo/WZE0ku6rvzuKNpc
- 1K9ZbAWz+cmxEqSDFWOHgl4mqVHattFq4vqtlvdZZ9yRlGAcCt1PPrdLzjJSTFiVJ5qU
- snMsImW5ipHDOQ13xY6seBNj9KoJMs2EPZZc1xmIyNj0dGb+5+qijXg6lqGu/t6A82q5
- F/vHuc7p2TcEJ6HgxD2CsbZDyCKNhUVheNDtms+Da+vql7D9rO7OV3GLXo6Fg3apSskI
- vUKA==
-X-Gm-Message-State: APjAAAUE+NMtPb7/r7bfrwjJZTw1Xmi5T2IomSjP1Oef19mcb057t1C1
- Pd8mfyVuoqb4WnHXhXE9yw==
-X-Google-Smtp-Source: APXvYqzlUvmVTKM2zNkWI5ewyGDS0Ga/AUXcXwnS+qOaifG3c/ZJADZnnQIk2JtuB+GHcDhGYasXJg==
-X-Received: by 2002:a54:4182:: with SMTP id 2mr188880oiy.148.1571694357143;
- Mon, 21 Oct 2019 14:45:57 -0700 (PDT)
+ bh=dtmBYecTmxMYIL93VEKcTUybHl02f54X+UyJdNEnFs0=;
+ b=grVLfjA6uIqqDXQRxq/oROkkGRhOWylVsccMBvzhXpAo7FvKOnwYzHswKk9yuyBtM3
+ c6VCWBECr6D6nUsUr/RXLgVrAtq9F5HAqbBuCaOxOkNlieHv6g+4u7dZXAFq0citri0b
+ YIoEcqfewbQLGtwuJn7aUu27h1tdW8nElAIUQtzVIaG0LGn3Smg68EmHHkdP8KL0a/Tb
+ 8fKalyvYLm99GFhaoYuStQWvfwGdYEwAK/HQcZrc8091Iqf/pV8yGlfSpKFvpq0ukX8v
+ jAPX8QjBZ0MI8vVikll1KhNfnnb8fjiSkDf9T08iV2sGKqs1rwV6LHGZuxWJyRapSc24
+ ylFQ==
+X-Gm-Message-State: APjAAAWAFPOlZkTU2wn7zFKMCLIVyRQdSBTiJIJxHhqwPMhVziYuCGtq
+ g2kvBSV4vvwaAmD5SB4m5Q==
+X-Google-Smtp-Source: APXvYqyz1m7uoM6wvUfRplSP1iQymDszqO/9xcsWMNqwVBdfqFtz0UeGdkdMsN8oAPMI7ImLHrZS7A==
+X-Received: by 2002:aca:bd08:: with SMTP id n8mr193003oif.107.1571694359449;
+ Mon, 21 Oct 2019 14:45:59 -0700 (PDT)
 Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id u130sm4122676oib.56.2019.10.21.14.45.55
+ by smtp.googlemail.com with ESMTPSA id u130sm4122676oib.56.2019.10.21.14.45.57
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 21 Oct 2019 14:45:56 -0700 (PDT)
+ Mon, 21 Oct 2019 14:45:58 -0700 (PDT)
 From: Rob Herring <robh@kernel.org>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH 2/6] drm: Introduce DRM_MODE_DUMB_KERNEL_MAP flag
-Date: Mon, 21 Oct 2019 16:45:46 -0500
-Message-Id: <20191021214550.1461-3-robh@kernel.org>
+Subject: [PATCH 3/6] drm/cma-helper: Use the dma_*_attr API variant
+Date: Mon, 21 Oct 2019 16:45:47 -0500
+Message-Id: <20191021214550.1461-4-robh@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191021214550.1461-1-robh@kernel.org>
 References: <20191021214550.1461-1-robh@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_144558_271114_4817FE14 
-X-CRM114-Status: GOOD (  14.75  )
+X-CRM114-CacheID: sfid-20191021_144600_608706_CEA57D4C 
+X-CRM114-Status: GOOD (  13.94  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.195 listed in list.dnswl.org]
+ no trust [209.85.167.194 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.195 listed in wl.mailspike.net]
+ [209.85.167.194 listed in wl.mailspike.net]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -114,78 +114,97 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Introduce a new flag, DRM_MODE_DUMB_KERNEL_MAP, for struct
-drm_mode_create_dumb. This flag is for internal kernel use to indicate
-if dumb buffer allocation needs a kernel mapping. This is needed only for
-CMA where creating a kernel mapping or not has to be decided at allocation
-time because creating a mapping on demand (with vmap()) is not guaranteed
-to work. Several drivers are using CMA, but not the CMA helpers because
-they distinguish between kernel and userspace allocations to create a
-kernel mapping or not.
+In preparation to allow DRM CMA users to adjust the DMA_ATTR_* flags,
+convert the CMA helper code to use the dma_*_attr APIs instead of the
+dma_*_wc variants.
 
-Update the callers of drm_mode_dumb_create() to set
-drm_mode_dumb_create.flags to appropriate defaults. Currently, flags can
-be set to anything by userspace, but is unused within the kernel. Let's
-force flags to zero (no kernel mapping) for userspace callers by default.
-For in kernel clients, set DRM_MODE_DUMB_KERNEL_MAP by default. Drivers
-can override this as needed.
+Only the DMA_ATTR_WRITE_COMBINE and DMA_ATTR_NO_WARN attributes are set
+in this commit, so there's no functional change.
 
-Cc: David Airlie <airlied@linux.ie>
-Cc: Daniel Vetter <daniel@ffwll.ch>
 Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
 Cc: Maxime Ripard <mripard@kernel.org>
 Cc: Sean Paul <sean@poorly.run>
+Cc: David Airlie <airlied@linux.ie>
+Cc: Daniel Vetter <daniel@ffwll.ch>
 Signed-off-by: Rob Herring <robh@kernel.org>
 ---
- drivers/gpu/drm/drm_client.c       | 1 +
- drivers/gpu/drm/drm_dumb_buffers.c | 5 ++++-
- include/uapi/drm/drm_mode.h        | 2 ++
- 3 files changed, 7 insertions(+), 1 deletion(-)
+ drivers/gpu/drm/drm_gem_cma_helper.c | 20 ++++++++++++--------
+ include/drm/drm_gem_cma_helper.h     |  1 +
+ 2 files changed, 13 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/gpu/drm/drm_client.c b/drivers/gpu/drm/drm_client.c
-index d9a2e3695525..dbfc8061b392 100644
---- a/drivers/gpu/drm/drm_client.c
-+++ b/drivers/gpu/drm/drm_client.c
-@@ -264,6 +264,7 @@ drm_client_buffer_create(struct drm_client_dev *client, u32 width, u32 height, u
- 	dumb_args.width = width;
- 	dumb_args.height = height;
- 	dumb_args.bpp = info->cpp[0] * 8;
-+	dumb_args.flags = DRM_MODE_DUMB_KERNEL_MAP;
- 	ret = drm_mode_create_dumb(dev, &dumb_args, client->file);
+diff --git a/drivers/gpu/drm/drm_gem_cma_helper.c b/drivers/gpu/drm/drm_gem_cma_helper.c
+index 12e98fb28229..4cebfe01e6ea 100644
+--- a/drivers/gpu/drm/drm_gem_cma_helper.c
++++ b/drivers/gpu/drm/drm_gem_cma_helper.c
+@@ -70,6 +70,7 @@ __drm_gem_cma_create(struct drm_device *drm, size_t size)
+ 		goto error;
+ 	}
+
++	cma_obj->dma_attrs |= DMA_ATTR_NO_WARN | DMA_ATTR_WRITE_COMBINE;
+ 	return cma_obj;
+
+ error:
+@@ -102,8 +103,9 @@ struct drm_gem_cma_object *drm_gem_cma_create(struct drm_device *drm,
+ 	if (IS_ERR(cma_obj))
+ 		return cma_obj;
+
+-	cma_obj->vaddr = dma_alloc_wc(drm->dev, size, &cma_obj->paddr,
+-				      GFP_KERNEL | __GFP_NOWARN);
++	cma_obj->vaddr = dma_alloc_attrs(drm->dev, size, &cma_obj->paddr,
++					 GFP_KERNEL | __GFP_NOWARN,
++					 cma_obj->dma_attrs);
+ 	if (!cma_obj->vaddr) {
+ 		dev_dbg(drm->dev, "failed to allocate buffer with size %zu\n",
+ 			size);
+@@ -184,8 +186,9 @@ void drm_gem_cma_free_object(struct drm_gem_object *gem_obj)
+ 			dma_buf_vunmap(gem_obj->import_attach->dmabuf, cma_obj->vaddr);
+ 		drm_prime_gem_destroy(gem_obj, cma_obj->sgt);
+ 	} else if (cma_obj->vaddr) {
+-		dma_free_wc(gem_obj->dev->dev, cma_obj->base.size,
+-			    cma_obj->vaddr, cma_obj->paddr);
++		dma_free_attrs(gem_obj->dev->dev, cma_obj->base.size,
++			       cma_obj->vaddr, cma_obj->paddr,
++			       cma_obj->dma_attrs);
+ 	}
+
+ 	drm_gem_object_release(gem_obj);
+@@ -279,8 +282,9 @@ static int drm_gem_cma_mmap_obj(struct drm_gem_cma_object *cma_obj,
+ 	vma->vm_flags &= ~VM_PFNMAP;
+ 	vma->vm_pgoff = 0;
+
+-	ret = dma_mmap_wc(cma_obj->base.dev->dev, vma, cma_obj->vaddr,
+-			  cma_obj->paddr, vma->vm_end - vma->vm_start);
++	ret = dma_mmap_attrs(cma_obj->base.dev->dev, vma, cma_obj->vaddr,
++			     cma_obj->paddr, vma->vm_end - vma->vm_start,
++			     cma_obj->dma_attrs);
  	if (ret)
- 		goto err_delete;
-diff --git a/drivers/gpu/drm/drm_dumb_buffers.c b/drivers/gpu/drm/drm_dumb_buffers.c
-index d18a740fe0f1..74a13f14c173 100644
---- a/drivers/gpu/drm/drm_dumb_buffers.c
-+++ b/drivers/gpu/drm/drm_dumb_buffers.c
-@@ -97,7 +97,10 @@ int drm_mode_create_dumb(struct drm_device *dev,
- int drm_mode_create_dumb_ioctl(struct drm_device *dev,
- 			       void *data, struct drm_file *file_priv)
- {
--	return drm_mode_create_dumb(dev, data, file_priv);
-+	struct drm_mode_create_dumb *args = data;
-+
-+	args->flags = 0;
-+	return drm_mode_create_dumb(dev, args, file_priv);
- }
- 
- /**
-diff --git a/include/uapi/drm/drm_mode.h b/include/uapi/drm/drm_mode.h
-index 735c8cfdaaa1..02712f46b94c 100644
---- a/include/uapi/drm/drm_mode.h
-+++ b/include/uapi/drm/drm_mode.h
-@@ -796,6 +796,8 @@ struct drm_mode_crtc_page_flip_target {
- 	__u64 user_data;
- };
- 
-+#define DRM_MODE_DUMB_KERNEL_MAP	(1<<0)	/* For internal kernel use */
-+
- /* create a dumb scanout buffer */
- struct drm_mode_create_dumb {
- 	__u32 height;
--- 
-2.20.1
+ 		drm_gem_vm_close(vma);
 
+@@ -434,8 +438,8 @@ struct sg_table *drm_gem_cma_prime_get_sg_table(struct drm_gem_object *obj)
+ 	if (!sgt)
+ 		return ERR_PTR(-ENOMEM);
+
+-	ret = dma_get_sgtable(obj->dev->dev, sgt, cma_obj->vaddr,
+-			      cma_obj->paddr, obj->size);
++	ret = dma_get_sgtable_attrs(obj->dev->dev, sgt, cma_obj->vaddr,
++			      cma_obj->paddr, obj->size, cma_obj->dma_attrs);
+ 	if (ret < 0)
+ 		goto out;
+
+diff --git a/include/drm/drm_gem_cma_helper.h b/include/drm/drm_gem_cma_helper.h
+index 947ac95eb24a..d042213c3595 100644
+--- a/include/drm/drm_gem_cma_helper.h
++++ b/include/drm/drm_gem_cma_helper.h
+@@ -24,6 +24,7 @@ struct drm_gem_cma_object {
+
+ 	/* For objects with DMA memory allocated by GEM CMA */
+ 	void *vaddr;
++	unsigned long dma_attrs;
+ };
+
+ #define to_drm_gem_cma_obj(gem_obj) \
+--
+2.20.1
 
 _______________________________________________
 linux-arm-kernel mailing list
