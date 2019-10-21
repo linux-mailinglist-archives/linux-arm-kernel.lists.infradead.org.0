@@ -2,70 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7017EDF7AD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 23:47:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07622DF7AE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 23:47:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pZk5eykcT6wzEw9FBqmLDWs1Y5anMnYVAmf72PTpuvg=; b=gzT5QJ0JMiM4gZ
-	233NhOKemaCzJuA9IDcW5tQSKO+7lD4pL+l4PFJpIDZ4acKFFq5b6ibdEfY0SlkrLIXgX/ICqSOmo
-	OCqpQ53e7CXTZH4mgJNW+p5CrXvzvwtV3QE2W9BA/nHTUEyUxSnsS3paWuPfV9rdoZZAYeRfN4jGU
-	DMD3hmskez/gK2HPZnrS5OWElFyOholPmOvducaufB5qFp/V3KIpAQ9KtVuhs5E3T7YwykSdbZWUU
-	GHP0ODvK5cmflzIilZv838GyQLAA0TqHgzIC/o8orDt5feNTwCIF7Ir1b3//aLA9UtC5bKsPSNq9s
-	FEh9KhKd3x4pQ2sPP6pA==;
+	List-Owner; bh=f2DHslpf+iT5YGaJ29N+seaAeIoWOsT8bMbV5IBingQ=; b=GyK5fKwVl2pPIQ
+	fxnG52+w4WgfybuG5b32MIm4ZEGpkYbxgAWQJlKXwPFgN9qK4iMZiacDeybL0LQXHfwGAFw01s6iZ
+	xQyB1E/NYTg3gWIB0gwtavMLzTdbeP+LisawHIhX5sNaifWvRHHuuONJbbnsnnTQHo6HiipuS1ELx
+	MOWzG7AuxhK7oxPH1A9+FObXVoF0tXZae57BycNP9LNr4ggWQZFOPHkFKD9VgjaOwCLQHXdRVnDNn
+	jeH052WukQhTBLpYs/n76Lo5KSI0VXqrEORIt+kOdivUePWglMd9UHVyrjplzvY21L9+bU8NcFWxW
+	eZxAMrb8TeAUVikxQsUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMfWL-0001NP-29; Mon, 21 Oct 2019 21:47:21 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1iMfWe-0001fw-MI; Mon, 21 Oct 2019 21:47:40 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMfV4-0000HV-Fv; Mon, 21 Oct 2019 21:46:05 +0000
-Received: by mail-ot1-f66.google.com with SMTP id c7so1602260otm.3;
- Mon, 21 Oct 2019 14:46:02 -0700 (PDT)
+ id 1iMfV6-0000JL-Di; Mon, 21 Oct 2019 21:46:07 +0000
+Received: by mail-ot1-f67.google.com with SMTP id e11so12373826otl.5;
+ Mon, 21 Oct 2019 14:46:04 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=v85itWVb55sjk1S2/4vfjQdYVBkEeNhYbZwroc8bhoE=;
- b=uIEiTwG4Q7c59PocTtnhRKONA17NdISaISmR4179+Wi9ccqDlA6WdiQ9zMPmqBCpk0
- +OLNgwHPEfHtPAQnySzuZ/Fds7nj0vWGX1OzSSU9hznoGtbnHUVC7t2iDHVFPkBttbB9
- aW8Dgp5ukxmLE7Mm8Q4CYT0VjM87KuoiDocbx1SmqOXBfZMEXKY1tlJIRcSLEDzKGaA9
- Jvyd0VQlr5bX8NY3yKiVLi2JWDC4IGpaR6ZTr61AHjHNfK5A07LKhlPwP9VpCztLatl4
- pImO25MdHYPU7ZSdTGSMRHqte/zEGFyUaCiqoJdt+DX35CgjGAjCiIbFokztYSoWQBwg
- uzhA==
-X-Gm-Message-State: APjAAAUs9xaumcqxBTZWSUDSQViMgOg4TtHn7Wn8r0weIEIQYCDWQ8LT
- w7QEitRNDtI9OCw+CqDRLA==
-X-Google-Smtp-Source: APXvYqzkNxCqlFqsK5HBa4boCVhpMxwfWAj66hdD/5mch5qmynl4RhUugcgkNWf4J602suw2X3Zo7Q==
-X-Received: by 2002:a9d:5c0e:: with SMTP id o14mr57383otk.79.1571694361346;
- Mon, 21 Oct 2019 14:46:01 -0700 (PDT)
+ bh=QQDw9NPftsDM5OhHs6ZNOxGtsrxVPosqKf8720sJxbM=;
+ b=UU/4gXVzkca73PEEl1ZezHLkWFrkddXIlFuYG8iiUUcX7+UC5yS+uFPUltu474kmuZ
+ 85GDhHpoXBuJ+bMLd5rbeCNQBCFAvtrBb2ElqWyDijc+xnmZTEQ1mJ4C15j+gWntFfIz
+ YivMrabcSimRiCSTU/u9So63jbPVo4T8gewRBlyy1lX35U6oX0NtMAKNsKLYPiOa8uzM
+ KJdgq/mxiZKzzs6DTEZlvOkTaLWUu5agnMTogxfmCwPXK6Y8MdKw8c2pxx/ZdKDznc0t
+ cQn1+xU9cYoCFjFcU1weyrPTKTn4O9OWUwkS1Z4WfXeWlsYMUwvoJ3i/iWZ8MfaiuilG
+ jxSQ==
+X-Gm-Message-State: APjAAAV+lGtJEcJI9cdavjOYYv1vmiQR/d8HakZWSO471MN6iSZNM5HC
+ STPW6wyWFUz1DQ3Xub/lIQ==
+X-Google-Smtp-Source: APXvYqw6b8W3vI30N7gM1+NXuyDoi2C4I2ewSclJeKb4IZyrqQe6H9toYKkWgNpHOdph0+3yURR+Rw==
+X-Received: by 2002:a9d:344a:: with SMTP id v68mr55638otb.85.1571694363240;
+ Mon, 21 Oct 2019 14:46:03 -0700 (PDT)
 Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id u130sm4122676oib.56.2019.10.21.14.45.59
+ by smtp.googlemail.com with ESMTPSA id u130sm4122676oib.56.2019.10.21.14.46.01
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 21 Oct 2019 14:46:00 -0700 (PDT)
+ Mon, 21 Oct 2019 14:46:02 -0700 (PDT)
 From: Rob Herring <robh@kernel.org>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH 4/6] drm/cma-helper: Support DRM_MODE_DUMB_KERNEL_MAP flag
-Date: Mon, 21 Oct 2019 16:45:48 -0500
-Message-Id: <20191021214550.1461-5-robh@kernel.org>
+Subject: [PATCH 5/6] drm/mediatek: Convert to use CMA helpers
+Date: Mon, 21 Oct 2019 16:45:49 -0500
+Message-Id: <20191021214550.1461-6-robh@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191021214550.1461-1-robh@kernel.org>
 References: <20191021214550.1461-1-robh@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_144602_850663_3BC32AC6 
-X-CRM114-Status: GOOD (  16.72  )
+X-CRM114-CacheID: sfid-20191021_144604_481693_D1DCF7B1 
+X-CRM114-Status: GOOD (  23.61  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
+ no trust [209.85.210.67 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
+ [209.85.210.67 listed in wl.mailspike.net]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -93,7 +93,6 @@ Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
  Liviu Dudau <liviu.dudau@arm.com>, Sandy Huang <hjc@rock-chips.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- linux-amlogic@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com,
  Yannick Fertre <yannick.fertre@st.com>, Kevin Hilman <khilman@baylibre.com>,
  Xinwei Kong <kong.kongxinwei@hisilicon.com>,
  Xinliang Liu <z.liuxinliang@hisilicon.com>, linux-rockchip@lists.infradead.org,
@@ -104,182 +103,543 @@ Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
  Alexandre Torgue <alexandre.torgue@st.com>,
  Chen Feng <puck.chen@hisilicon.com>,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- linux-renesas-soc@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Daniel Vetter <daniel@ffwll.ch>, Sean Paul <sean@poorly.run>,
- linux-arm-kernel@lists.infradead.org, Philippe Cornu <philippe.cornu@st.com>,
- Vincent Abriou <vincent.abriou@st.com>,
+ Maxime Ripard <mripard@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org,
+ Philippe Cornu <philippe.cornu@st.com>, Vincent Abriou <vincent.abriou@st.com>,
  Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
  Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Rongrong Zou <zourongrong@gmail.com>, Brian Starkey <brian.starkey@arm.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ Rongrong Zou <zourongrong@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QWRkIHN1cHBvcnQgaW4gQ01BIGhlbHBlcnMgdG8gaGFuZGxlIGNhbGxlcnMgc3BlY2lmeWluZwpE
-Uk1fTU9ERV9EVU1CX0tFUk5FTF9NQVAgZmxhZy4gRXhpc3RpbmcgYmVoYXZpb3IgaXMgbWFpbnRh
-aW5lZCB3aXRoIHRoaXMKY2hhbmdlLiBkcm1fZ2VtX2NtYV9kdW1iX2NyZWF0ZSgpIGFsd2F5cyBj
-cmVhdGVzIGEga2VybmVsIG1hcHBpbmcgYXMKYmVmb3JlLiBkcm1fZ2VtX2NtYV9kdW1iX2NyZWF0
-ZV9pbnRlcm5hbCgpIGxldHMgdGhlIGNhbGxlciBzZXQgdGhlIGZsYWdzCmFzIGRlc2lyZWQuIFRo
-ZXJlZm9yZSwgdXBkYXRlIGFsbCB0aGUgZXhpc3RpbmcgY2FsbGVycyBvZgpkcm1fZ2VtX2NtYV9k
-dW1iX2NyZWF0ZV9pbnRlcm5hbCgpIHRvIGFsc28gc2V0IHRoZQpEUk1fTU9ERV9EVU1CX0tFUk5F
-TF9NQVAgZmxhZy4KCkNjOiBNYWFydGVuIExhbmtob3JzdCA8bWFhcnRlbi5sYW5raG9yc3RAbGlu
-dXguaW50ZWwuY29tPgpDYzogTWF4aW1lIFJpcGFyZCA8bXJpcGFyZEBrZXJuZWwub3JnPgpDYzog
-U2VhbiBQYXVsIDxzZWFuQHBvb3JseS5ydW4+CkNjOiBEYXZpZCBBaXJsaWUgPGFpcmxpZWRAbGlu
-dXguaWU+CkNjOiBEYW5pZWwgVmV0dGVyIDxkYW5pZWxAZmZ3bGwuY2g+CkNjOiAiSmFtZXMgKFFp
-YW4pIFdhbmciIDxqYW1lcy5xaWFuLndhbmdAYXJtLmNvbT4KQ2M6IExpdml1IER1ZGF1IDxsaXZp
-dS5kdWRhdUBhcm0uY29tPgpDYzogQnJpYW4gU3RhcmtleSA8YnJpYW4uc3RhcmtleUBhcm0uY29t
-PgpDYzogTmVpbCBBcm1zdHJvbmcgPG5hcm1zdHJvbmdAYmF5bGlicmUuY29tPgpDYzogS2V2aW4g
-SGlsbWFuIDxraGlsbWFuQGJheWxpYnJlLmNvbT4KQ2M6IExhdXJlbnQgUGluY2hhcnQgPGxhdXJl
-bnQucGluY2hhcnRAaWRlYXNvbmJvYXJkLmNvbT4KQ2M6IEtpZXJhbiBCaW5naGFtIDxraWVyYW4u
-YmluZ2hhbStyZW5lc2FzQGlkZWFzb25ib2FyZC5jb20+CkNjOiBTYW5keSBIdWFuZyA8aGpjQHJv
-Y2stY2hpcHMuY29tPgpDYzogIkhlaWtvIFN0w7xibmVyIiA8aGVpa29Ac250ZWNoLmRlPgpDYzog
-WWFubmljayBGZXJ0cmUgPHlhbm5pY2suZmVydHJlQHN0LmNvbT4KQ2M6IFBoaWxpcHBlIENvcm51
-IDxwaGlsaXBwZS5jb3JudUBzdC5jb20+CkNjOiBCZW5qYW1pbiBHYWlnbmFyZCA8YmVuamFtaW4u
-Z2FpZ25hcmRAbGluYXJvLm9yZz4KQ2M6IFZpbmNlbnQgQWJyaW91IDx2aW5jZW50LmFicmlvdUBz
-dC5jb20+CkNjOiBNYXhpbWUgQ29xdWVsaW4gPG1jb3F1ZWxpbi5zdG0zMkBnbWFpbC5jb20+CkNj
-OiBBbGV4YW5kcmUgVG9yZ3VlIDxhbGV4YW5kcmUudG9yZ3VlQHN0LmNvbT4KQ2M6IENoZW4tWXUg
-VHNhaSA8d2Vuc0Bjc2llLm9yZz4KQ2M6IGxpbnV4LWFtbG9naWNAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpDYzogbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCkNjOiBsaW51eC1yZW5l
-c2FzLXNvY0B2Z2VyLmtlcm5lbC5vcmcKQ2M6IGxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVh
-ZC5vcmcKQ2M6IGxpbnV4LXN0bTMyQHN0LW1kLW1haWxtYW4uc3Rvcm1yZXBseS5jb20KU2lnbmVk
-LW9mZi1ieTogUm9iIEhlcnJpbmcgPHJvYmhAa2VybmVsLm9yZz4KLS0tCiAuLi4vZ3B1L2RybS9h
-cm0vZGlzcGxheS9rb21lZGEva29tZWRhX2ttcy5jICAgfCAgMSArCiBkcml2ZXJzL2dwdS9kcm0v
-YXJtL21hbGlkcF9kcnYuYyAgICAgICAgICAgICAgfCAgMSArCiBkcml2ZXJzL2dwdS9kcm0vZHJt
-X2dlbV9jbWFfaGVscGVyLmMgICAgICAgICAgfCA0OCArKysrKysrKysrKy0tLS0tLS0tCiBkcml2
-ZXJzL2dwdS9kcm0vbWVzb24vbWVzb25fZHJ2LmMgICAgICAgICAgICAgfCAgMSArCiBkcml2ZXJz
-L2dwdS9kcm0vcmNhci1kdS9yY2FyX2R1X2ttcy5jICAgICAgICAgfCAgMSArCiBkcml2ZXJzL2dw
-dS9kcm0vcm9ja2NoaXAvcm9ja2NoaXBfZHJtX2dlbS5jICAgfCAgMSArCiBkcml2ZXJzL2dwdS9k
-cm0vc3RtL2Rydi5jICAgICAgICAgICAgICAgICAgICAgfCAgMSArCiBkcml2ZXJzL2dwdS9kcm0v
-c3VuNGkvc3VuNGlfZHJ2LmMgICAgICAgICAgICAgfCAgMSArCiA4IGZpbGVzIGNoYW5nZWQsIDM2
-IGluc2VydGlvbnMoKyksIDE5IGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1
-L2RybS9hcm0vZGlzcGxheS9rb21lZGEva29tZWRhX2ttcy5jIGIvZHJpdmVycy9ncHUvZHJtL2Fy
-bS9kaXNwbGF5L2tvbWVkYS9rb21lZGFfa21zLmMKaW5kZXggZDQ5NzcyZGU5M2UwLi43Y2YwZGM0
-Y2JmYzEgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvZ3B1L2RybS9hcm0vZGlzcGxheS9rb21lZGEva29t
-ZWRhX2ttcy5jCisrKyBiL2RyaXZlcnMvZ3B1L2RybS9hcm0vZGlzcGxheS9rb21lZGEva29tZWRh
-X2ttcy5jCkBAIC0zMSw2ICszMSw3IEBAIHN0YXRpYyBpbnQga29tZWRhX2dlbV9jbWFfZHVtYl9j
-cmVhdGUoc3RydWN0IGRybV9maWxlICpmaWxlLAogCXUzMiBwaXRjaCA9IERJVl9ST1VORF9VUChh
-cmdzLT53aWR0aCAqIGFyZ3MtPmJwcCwgOCk7CiAKIAlhcmdzLT5waXRjaCA9IEFMSUdOKHBpdGNo
-LCBtZGV2LT5jaGlwLmJ1c193aWR0aCk7CisJYXJncy0+ZmxhZ3MgPSBEUk1fTU9ERV9EVU1CX0tF
-Uk5FTF9NQVA7CiAKIAlyZXR1cm4gZHJtX2dlbV9jbWFfZHVtYl9jcmVhdGVfaW50ZXJuYWwoZmls
-ZSwgZGV2LCBhcmdzKTsKIH0KZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9hcm0vbWFsaWRw
-X2Rydi5jIGIvZHJpdmVycy9ncHUvZHJtL2FybS9tYWxpZHBfZHJ2LmMKaW5kZXggOGE3NjMxNWFh
-YTBmLi5hZWIxYTc3OWVjYzEgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvZ3B1L2RybS9hcm0vbWFsaWRw
-X2Rydi5jCisrKyBiL2RyaXZlcnMvZ3B1L2RybS9hcm0vbWFsaWRwX2Rydi5jCkBAIC00NjUsNiAr
-NDY1LDcgQEAgc3RhdGljIGludCBtYWxpZHBfZHVtYl9jcmVhdGUoc3RydWN0IGRybV9maWxlICpm
-aWxlX3ByaXYsCiAJdTggYWxpZ25tZW50ID0gbWFsaWRwX2h3X2dldF9waXRjaF9hbGlnbihtYWxp
-ZHAtPmRldiwgMSk7CiAKIAlhcmdzLT5waXRjaCA9IEFMSUdOKERJVl9ST1VORF9VUChhcmdzLT53
-aWR0aCAqIGFyZ3MtPmJwcCwgOCksIGFsaWdubWVudCk7CisJYXJncy0+ZmxhZ3MgPSBEUk1fTU9E
-RV9EVU1CX0tFUk5FTF9NQVA7CiAKIAlyZXR1cm4gZHJtX2dlbV9jbWFfZHVtYl9jcmVhdGVfaW50
-ZXJuYWwoZmlsZV9wcml2LCBkcm0sIGFyZ3MpOwogfQpkaWZmIC0tZ2l0IGEvZHJpdmVycy9ncHUv
-ZHJtL2RybV9nZW1fY21hX2hlbHBlci5jIGIvZHJpdmVycy9ncHUvZHJtL2RybV9nZW1fY21hX2hl
-bHBlci5jCmluZGV4IDRjZWJmZTAxZTZlYS4uZjkxZTllOGFkZWFmIDEwMDY0NAotLS0gYS9kcml2
-ZXJzL2dwdS9kcm0vZHJtX2dlbV9jbWFfaGVscGVyLmMKKysrIGIvZHJpdmVycy9ncHUvZHJtL2Ry
-bV9nZW1fY21hX2hlbHBlci5jCkBAIC03OCwyMSArNzgsOCBAQCBfX2RybV9nZW1fY21hX2NyZWF0
-ZShzdHJ1Y3QgZHJtX2RldmljZSAqZHJtLCBzaXplX3Qgc2l6ZSkKIAlyZXR1cm4gRVJSX1BUUihy
-ZXQpOwogfQogCi0vKioKLSAqIGRybV9nZW1fY21hX2NyZWF0ZSAtIGFsbG9jYXRlIGFuIG9iamVj
-dCB3aXRoIHRoZSBnaXZlbiBzaXplCi0gKiBAZHJtOiBEUk0gZGV2aWNlCi0gKiBAc2l6ZTogc2l6
-ZSBvZiB0aGUgb2JqZWN0IHRvIGFsbG9jYXRlCi0gKgotICogVGhpcyBmdW5jdGlvbiBjcmVhdGVz
-IGEgQ01BIEdFTSBvYmplY3QgYW5kIGFsbG9jYXRlcyBhIGNvbnRpZ3VvdXMgY2h1bmsgb2YKLSAq
-IG1lbW9yeSBhcyBiYWNraW5nIHN0b3JlLiBUaGUgYmFja2luZyBtZW1vcnkgaGFzIHRoZSB3cml0
-ZWNvbWJpbmUgYXR0cmlidXRlCi0gKiBzZXQuCi0gKgotICogUmV0dXJuczoKLSAqIEEgc3RydWN0
-IGRybV9nZW1fY21hX29iamVjdCAqIG9uIHN1Y2Nlc3Mgb3IgYW4gRVJSX1BUUigpLWVuY29kZWQg
-bmVnYXRpdmUKLSAqIGVycm9yIGNvZGUgb24gZmFpbHVyZS4KLSAqLwotc3RydWN0IGRybV9nZW1f
-Y21hX29iamVjdCAqZHJtX2dlbV9jbWFfY3JlYXRlKHN0cnVjdCBkcm1fZGV2aWNlICpkcm0sCi0J
-CQkJCSAgICAgIHNpemVfdCBzaXplKQorc3RhdGljIHN0cnVjdCBkcm1fZ2VtX2NtYV9vYmplY3Qg
-KgorZHJtX2dlbV9jbWFfY3JlYXRlX2ZsYWdzKHN0cnVjdCBkcm1fZGV2aWNlICpkcm0sIHNpemVf
-dCBzaXplLCB1MzIgZmxhZ3MpCiB7CiAJc3RydWN0IGRybV9nZW1fY21hX29iamVjdCAqY21hX29i
-ajsKIAlpbnQgcmV0OwpAQCAtMTAzLDYgKzkwLDkgQEAgc3RydWN0IGRybV9nZW1fY21hX29iamVj
-dCAqZHJtX2dlbV9jbWFfY3JlYXRlKHN0cnVjdCBkcm1fZGV2aWNlICpkcm0sCiAJaWYgKElTX0VS
-UihjbWFfb2JqKSkKIAkJcmV0dXJuIGNtYV9vYmo7CiAKKwlpZiAoIShmbGFncyAmIERSTV9NT0RF
-X0RVTUJfS0VSTkVMX01BUCkpCisJCWNtYV9vYmotPmRtYV9hdHRycyB8PSBETUFfQVRUUl9OT19L
-RVJORUxfTUFQUElORzsKKwogCWNtYV9vYmotPnZhZGRyID0gZG1hX2FsbG9jX2F0dHJzKGRybS0+
-ZGV2LCBzaXplLCAmY21hX29iai0+cGFkZHIsCiAJCQkJCSBHRlBfS0VSTkVMIHwgX19HRlBfTk9X
-QVJOLAogCQkJCQkgY21hX29iai0+ZG1hX2F0dHJzKTsKQEAgLTExOSw2ICsxMDksMjUgQEAgc3Ry
-dWN0IGRybV9nZW1fY21hX29iamVjdCAqZHJtX2dlbV9jbWFfY3JlYXRlKHN0cnVjdCBkcm1fZGV2
-aWNlICpkcm0sCiAJZHJtX2dlbV9vYmplY3RfcHV0X3VubG9ja2VkKCZjbWFfb2JqLT5iYXNlKTsK
-IAlyZXR1cm4gRVJSX1BUUihyZXQpOwogfQorCisvKioKKyAqIGRybV9nZW1fY21hX2NyZWF0ZSAt
-IGFsbG9jYXRlIGFuIG9iamVjdCB3aXRoIHRoZSBnaXZlbiBzaXplCisgKiBAZHJtOiBEUk0gZGV2
-aWNlCisgKiBAc2l6ZTogc2l6ZSBvZiB0aGUgb2JqZWN0IHRvIGFsbG9jYXRlCisgKgorICogVGhp
-cyBmdW5jdGlvbiBjcmVhdGVzIGEgQ01BIEdFTSBvYmplY3QgYW5kIGFsbG9jYXRlcyBhIGNvbnRp
-Z3VvdXMgY2h1bmsgb2YKKyAqIG1lbW9yeSBhcyBiYWNraW5nIHN0b3JlLiBUaGUgYmFja2luZyBt
-ZW1vcnkgaGFzIHRoZSB3cml0ZWNvbWJpbmUgYXR0cmlidXRlCisgKiBzZXQuCisgKgorICogUmV0
-dXJuczoKKyAqIEEgc3RydWN0IGRybV9nZW1fY21hX29iamVjdCAqIG9uIHN1Y2Nlc3Mgb3IgYW4g
-RVJSX1BUUigpLWVuY29kZWQgbmVnYXRpdmUKKyAqIGVycm9yIGNvZGUgb24gZmFpbHVyZS4KKyAq
-Lworc3RydWN0IGRybV9nZW1fY21hX29iamVjdCAqZHJtX2dlbV9jbWFfY3JlYXRlKHN0cnVjdCBk
-cm1fZGV2aWNlICpkcm0sCisJCQkJCSAgICAgIHNpemVfdCBzaXplKQoreworCXJldHVybiBkcm1f
-Z2VtX2NtYV9jcmVhdGVfZmxhZ3MoZHJtLCBzaXplLCBEUk1fTU9ERV9EVU1CX0tFUk5FTF9NQVAp
-OworfQogRVhQT1JUX1NZTUJPTF9HUEwoZHJtX2dlbV9jbWFfY3JlYXRlKTsKIAogLyoqCkBAIC0x
-MzksMTQgKzE0OCwxNCBAQCBFWFBPUlRfU1lNQk9MX0dQTChkcm1fZ2VtX2NtYV9jcmVhdGUpOwog
-ICovCiBzdGF0aWMgc3RydWN0IGRybV9nZW1fY21hX29iamVjdCAqCiBkcm1fZ2VtX2NtYV9jcmVh
-dGVfd2l0aF9oYW5kbGUoc3RydWN0IGRybV9maWxlICpmaWxlX3ByaXYsCi0JCQkgICAgICAgc3Ry
-dWN0IGRybV9kZXZpY2UgKmRybSwgc2l6ZV90IHNpemUsCisJCQkgICAgICAgc3RydWN0IGRybV9k
-ZXZpY2UgKmRybSwgc2l6ZV90IHNpemUsIHUzMiBmbGFncywKIAkJCSAgICAgICB1aW50MzJfdCAq
-aGFuZGxlKQogewogCXN0cnVjdCBkcm1fZ2VtX2NtYV9vYmplY3QgKmNtYV9vYmo7CiAJc3RydWN0
-IGRybV9nZW1fb2JqZWN0ICpnZW1fb2JqOwogCWludCByZXQ7CiAKLQljbWFfb2JqID0gZHJtX2dl
-bV9jbWFfY3JlYXRlKGRybSwgc2l6ZSk7CisJY21hX29iaiA9IGRybV9nZW1fY21hX2NyZWF0ZV9m
-bGFncyhkcm0sIHNpemUsIGZsYWdzKTsKIAlpZiAoSVNfRVJSKGNtYV9vYmopKQogCQlyZXR1cm4g
-Y21hX29iajsKIApAQCAtMjI1LDcgKzIzNCw3IEBAIGludCBkcm1fZ2VtX2NtYV9kdW1iX2NyZWF0
-ZV9pbnRlcm5hbChzdHJ1Y3QgZHJtX2ZpbGUgKmZpbGVfcHJpdiwKIAkJYXJncy0+c2l6ZSA9IGFy
-Z3MtPnBpdGNoICogYXJncy0+aGVpZ2h0OwogCiAJY21hX29iaiA9IGRybV9nZW1fY21hX2NyZWF0
-ZV93aXRoX2hhbmRsZShmaWxlX3ByaXYsIGRybSwgYXJncy0+c2l6ZSwKLQkJCQkJCSAmYXJncy0+
-aGFuZGxlKTsKKwkJCQkJCSBhcmdzLT5mbGFncywgJmFyZ3MtPmhhbmRsZSk7CiAJcmV0dXJuIFBU
-Ul9FUlJfT1JfWkVSTyhjbWFfb2JqKTsKIH0KIEVYUE9SVF9TWU1CT0xfR1BMKGRybV9nZW1fY21h
-X2R1bWJfY3JlYXRlX2ludGVybmFsKTsKQEAgLTI1Niw5ICsyNjUsMTAgQEAgaW50IGRybV9nZW1f
-Y21hX2R1bWJfY3JlYXRlKHN0cnVjdCBkcm1fZmlsZSAqZmlsZV9wcml2LAogCiAJYXJncy0+cGl0
-Y2ggPSBESVZfUk9VTkRfVVAoYXJncy0+d2lkdGggKiBhcmdzLT5icHAsIDgpOwogCWFyZ3MtPnNp
-emUgPSBhcmdzLT5waXRjaCAqIGFyZ3MtPmhlaWdodDsKKwlhcmdzLT5mbGFncyA9IERSTV9NT0RF
-X0RVTUJfS0VSTkVMX01BUDsKIAogCWNtYV9vYmogPSBkcm1fZ2VtX2NtYV9jcmVhdGVfd2l0aF9o
-YW5kbGUoZmlsZV9wcml2LCBkcm0sIGFyZ3MtPnNpemUsCi0JCQkJCQkgJmFyZ3MtPmhhbmRsZSk7
-CisJCQkJCQkgYXJncy0+ZmxhZ3MsICZhcmdzLT5oYW5kbGUpOwogCXJldHVybiBQVFJfRVJSX09S
-X1pFUk8oY21hX29iaik7CiB9CiBFWFBPUlRfU1lNQk9MX0dQTChkcm1fZ2VtX2NtYV9kdW1iX2Ny
-ZWF0ZSk7CmRpZmYgLS1naXQgYS9kcml2ZXJzL2dwdS9kcm0vbWVzb24vbWVzb25fZHJ2LmMgYi9k
-cml2ZXJzL2dwdS9kcm0vbWVzb24vbWVzb25fZHJ2LmMKaW5kZXggMzk3YzMzMTgyZjRmLi4xNTkz
-NTE4ZGNiZTQgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvZ3B1L2RybS9tZXNvbi9tZXNvbl9kcnYuYwor
-KysgYi9kcml2ZXJzL2dwdS9kcm0vbWVzb24vbWVzb25fZHJ2LmMKQEAgLTgxLDYgKzgxLDcgQEAg
-c3RhdGljIGludCBtZXNvbl9kdW1iX2NyZWF0ZShzdHJ1Y3QgZHJtX2ZpbGUgKmZpbGUsIHN0cnVj
-dCBkcm1fZGV2aWNlICpkZXYsCiAJICovCiAJYXJncy0+cGl0Y2ggPSBBTElHTihESVZfUk9VTkRf
-VVAoYXJncy0+d2lkdGggKiBhcmdzLT5icHAsIDgpLCBTWl82NCk7CiAJYXJncy0+c2l6ZSA9IFBB
-R0VfQUxJR04oYXJncy0+cGl0Y2ggKiBhcmdzLT5oZWlnaHQpOworCWFyZ3MtPmZsYWdzID0gRFJN
-X01PREVfRFVNQl9LRVJORUxfTUFQOwogCiAJcmV0dXJuIGRybV9nZW1fY21hX2R1bWJfY3JlYXRl
-X2ludGVybmFsKGZpbGUsIGRldiwgYXJncyk7CiB9CmRpZmYgLS1naXQgYS9kcml2ZXJzL2dwdS9k
-cm0vcmNhci1kdS9yY2FyX2R1X2ttcy5jIGIvZHJpdmVycy9ncHUvZHJtL3JjYXItZHUvcmNhcl9k
-dV9rbXMuYwppbmRleCAyZGM5Y2FlZTg3NjcuLmM5YjFmMjk4Y2U3ZSAxMDA2NDQKLS0tIGEvZHJp
-dmVycy9ncHUvZHJtL3JjYXItZHUvcmNhcl9kdV9rbXMuYworKysgYi9kcml2ZXJzL2dwdS9kcm0v
-cmNhci1kdS9yY2FyX2R1X2ttcy5jCkBAIC0yOTksNiArMjk5LDcgQEAgaW50IHJjYXJfZHVfZHVt
-Yl9jcmVhdGUoc3RydWN0IGRybV9maWxlICpmaWxlLCBzdHJ1Y3QgZHJtX2RldmljZSAqZGV2LAog
-CQlhbGlnbiA9IDE2ICogYXJncy0+YnBwIC8gODsKIAogCWFyZ3MtPnBpdGNoID0gcm91bmR1cCht
-aW5fcGl0Y2gsIGFsaWduKTsKKwlhcmdzLT5mbGFncyA9IERSTV9NT0RFX0RVTUJfS0VSTkVMX01B
-UDsKIAogCXJldHVybiBkcm1fZ2VtX2NtYV9kdW1iX2NyZWF0ZV9pbnRlcm5hbChmaWxlLCBkZXYs
-IGFyZ3MpOwogfQpkaWZmIC0tZ2l0IGEvZHJpdmVycy9ncHUvZHJtL3JvY2tjaGlwL3JvY2tjaGlw
-X2RybV9nZW0uYyBiL2RyaXZlcnMvZ3B1L2RybS9yb2NrY2hpcC9yb2NrY2hpcF9kcm1fZ2VtLmMK
-aW5kZXggNzU4MmQwZTZhNjBhLi5mMDliOWEwMzUzNzYgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvZ3B1
-L2RybS9yb2NrY2hpcC9yb2NrY2hpcF9kcm1fZ2VtLmMKKysrIGIvZHJpdmVycy9ncHUvZHJtL3Jv
-Y2tjaGlwL3JvY2tjaGlwX2RybV9nZW0uYwpAQCAtNDE5LDYgKzQxOSw3IEBAIGludCByb2NrY2hp
-cF9nZW1fZHVtYl9jcmVhdGUoc3RydWN0IGRybV9maWxlICpmaWxlX3ByaXYsCiAJICogYWxpZ24g
-dG8gNjQgYnl0ZXMgc2luY2UgTWFsaSByZXF1aXJlcyBpdC4KIAkgKi8KIAlhcmdzLT5waXRjaCA9
-IEFMSUdOKG1pbl9waXRjaCwgNjQpOworCWFyZ3MtPmZsYWdzID0gRFJNX01PREVfRFVNQl9LRVJO
-RUxfTUFQOwogCWFyZ3MtPnNpemUgPSBhcmdzLT5waXRjaCAqIGFyZ3MtPmhlaWdodDsKIAogCXJr
-X29iaiA9IHJvY2tjaGlwX2dlbV9jcmVhdGVfd2l0aF9oYW5kbGUoZmlsZV9wcml2LCBkZXYsIGFy
-Z3MtPnNpemUsCmRpZmYgLS1naXQgYS9kcml2ZXJzL2dwdS9kcm0vc3RtL2Rydi5jIGIvZHJpdmVy
-cy9ncHUvZHJtL3N0bS9kcnYuYwppbmRleCA1YTlmOWFjYThiYzIuLjBmNzZhNGFjOTViMyAxMDA2
-NDQKLS0tIGEvZHJpdmVycy9ncHUvZHJtL3N0bS9kcnYuYworKysgYi9kcml2ZXJzL2dwdS9kcm0v
-c3RtL2Rydi5jCkBAIC00Nyw2ICs0Nyw3IEBAIHN0YXRpYyBpbnQgc3RtX2dlbV9jbWFfZHVtYl9j
-cmVhdGUoc3RydWN0IGRybV9maWxlICpmaWxlLAogCSAqLwogCWFyZ3MtPnBpdGNoID0gcm91bmR1
-cChtaW5fcGl0Y2gsIDEyOCk7CiAJYXJncy0+aGVpZ2h0ID0gcm91bmR1cChhcmdzLT5oZWlnaHQs
-IDQpOworCWFyZ3MtPmZsYWdzID0gRFJNX01PREVfRFVNQl9LRVJORUxfTUFQOwogCiAJcmV0dXJu
-IGRybV9nZW1fY21hX2R1bWJfY3JlYXRlX2ludGVybmFsKGZpbGUsIGRldiwgYXJncyk7CiB9CmRp
-ZmYgLS1naXQgYS9kcml2ZXJzL2dwdS9kcm0vc3VuNGkvc3VuNGlfZHJ2LmMgYi9kcml2ZXJzL2dw
-dS9kcm0vc3VuNGkvc3VuNGlfZHJ2LmMKaW5kZXggYTU3NTdiMTFiNzMwLi5mNjUzYTVkMWUyZDYg
-MTAwNjQ0Ci0tLSBhL2RyaXZlcnMvZ3B1L2RybS9zdW40aS9zdW40aV9kcnYuYworKysgYi9kcml2
-ZXJzL2dwdS9kcm0vc3VuNGkvc3VuNGlfZHJ2LmMKQEAgLTM0LDYgKzM0LDcgQEAgc3RhdGljIGlu
-dCBkcm1fc3VuNGlfZ2VtX2R1bWJfY3JlYXRlKHN0cnVjdCBkcm1fZmlsZSAqZmlsZV9wcml2LAog
-ewogCS8qIFRoZSBoYXJkd2FyZSBvbmx5IGFsbG93cyBldmVuIHBpdGNoZXMgZm9yIFlVViBidWZm
-ZXJzLiAqLwogCWFyZ3MtPnBpdGNoID0gQUxJR04oRElWX1JPVU5EX1VQKGFyZ3MtPndpZHRoICog
-YXJncy0+YnBwLCA4KSwgMik7CisJYXJncy0+ZmxhZ3MgPSBEUk1fTU9ERV9EVU1CX0tFUk5FTF9N
-QVA7CiAKIAlyZXR1cm4gZHJtX2dlbV9jbWFfZHVtYl9jcmVhdGVfaW50ZXJuYWwoZmlsZV9wcml2
-LCBkcm0sIGFyZ3MpOwogfQotLSAKMi4yMC4xCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
-YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
-L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+The only reason the Mediatek driver doesn't use the CMA helpers is it
+sets DMA_ATTR_NO_KERNEL_MAPPING and does a vmap() on demand. Using
+vmap() is not even guaranteed to work as DMA buffers may not have a
+struct page. Now that the CMA helpers support setting
+DMA_ATTR_NO_KERNEL_MAPPING as needed or not, convert Mediatek driver to
+use CMA helpers.
+
+Cc: CK Hu <ck.hu@mediatek.com>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>
+Cc: David Airlie <airlied@linux.ie>
+Cc: Daniel Vetter <daniel@ffwll.ch>
+Cc: Matthias Brugger <matthias.bgg@gmail.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-mediatek@lists.infradead.org
+Signed-off-by: Rob Herring <robh@kernel.org>
+---
+ drivers/gpu/drm/mediatek/Makefile        |   1 -
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.c  |   2 +-
+ drivers/gpu/drm/mediatek/mtk_drm_drv.c   |  28 +--
+ drivers/gpu/drm/mediatek/mtk_drm_fb.c    |   1 -
+ drivers/gpu/drm/mediatek/mtk_drm_gem.c   | 289 -----------------------
+ drivers/gpu/drm/mediatek/mtk_drm_gem.h   |  51 ----
+ drivers/gpu/drm/mediatek/mtk_drm_plane.c |   7 +-
+ 7 files changed, 15 insertions(+), 364 deletions(-)
+ delete mode 100644 drivers/gpu/drm/mediatek/mtk_drm_gem.c
+ delete mode 100644 drivers/gpu/drm/mediatek/mtk_drm_gem.h
+
+diff --git a/drivers/gpu/drm/mediatek/Makefile b/drivers/gpu/drm/mediatek/Makefile
+index 82ae49c64221..50a50e86738f 100644
+--- a/drivers/gpu/drm/mediatek/Makefile
++++ b/drivers/gpu/drm/mediatek/Makefile
+@@ -8,7 +8,6 @@ mediatek-drm-y := mtk_disp_color.o \
+ 		  mtk_drm_ddp_comp.o \
+ 		  mtk_drm_drv.o \
+ 		  mtk_drm_fb.o \
+-		  mtk_drm_gem.o \
+ 		  mtk_drm_plane.o \
+ 		  mtk_dsi.o \
+ 		  mtk_mipi_tx.o \
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+index 34a731755791..638d57e8ac12 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+@@ -11,6 +11,7 @@
+ 
+ #include <drm/drm_atomic_helper.h>
+ #include <drm/drm_plane_helper.h>
++#include <drm/drm_print.h>
+ #include <drm/drm_probe_helper.h>
+ #include <drm/drm_vblank.h>
+ 
+@@ -18,7 +19,6 @@
+ #include "mtk_drm_crtc.h"
+ #include "mtk_drm_ddp.h"
+ #include "mtk_drm_ddp_comp.h"
+-#include "mtk_drm_gem.h"
+ #include "mtk_drm_plane.h"
+ 
+ /**
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+index 352b81a7a670..36f32507e5fb 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+@@ -28,7 +28,6 @@
+ #include "mtk_drm_ddp_comp.h"
+ #include "mtk_drm_drv.h"
+ #include "mtk_drm_fb.h"
+-#include "mtk_drm_gem.h"
+ 
+ #define DRIVER_NAME "mediatek"
+ #define DRIVER_DESC "Mediatek SoC DRM"
+@@ -335,16 +334,14 @@ static void mtk_drm_kms_deinit(struct drm_device *drm)
+ 	drm_mode_config_cleanup(drm);
+ }
+ 
+-static const struct file_operations mtk_drm_fops = {
+-	.owner = THIS_MODULE,
+-	.open = drm_open,
+-	.release = drm_release,
+-	.unlocked_ioctl = drm_ioctl,
+-	.mmap = mtk_drm_gem_mmap,
+-	.poll = drm_poll,
+-	.read = drm_read,
+-	.compat_ioctl = drm_compat_ioctl,
+-};
++DEFINE_DRM_GEM_CMA_FOPS(mtk_drm_fops);
++
++static int mtk_drm_gem_dumb_create(struct drm_file *file_priv,
++				   struct drm_device *dev,
++				   struct drm_mode_create_dumb *args)
++{
++	return drm_gem_cma_dumb_create_internal(file_priv, dev, args);
++}
+ 
+ /*
+  * We need to override this because the device used to import the memory is
+@@ -361,18 +358,15 @@ struct drm_gem_object *mtk_drm_gem_prime_import(struct drm_device *dev,
+ static struct drm_driver mtk_drm_driver = {
+ 	.driver_features = DRIVER_MODESET | DRIVER_GEM | DRIVER_ATOMIC,
+ 
+-	.gem_free_object_unlocked = mtk_drm_gem_free_object,
+ 	.gem_vm_ops = &drm_gem_cma_vm_ops,
++	.gem_create_object = drm_cma_gem_create_object_default_funcs,
+ 	.dumb_create = mtk_drm_gem_dumb_create,
+ 
+ 	.prime_handle_to_fd = drm_gem_prime_handle_to_fd,
+ 	.prime_fd_to_handle = drm_gem_prime_fd_to_handle,
+ 	.gem_prime_import = mtk_drm_gem_prime_import,
+-	.gem_prime_get_sg_table = mtk_gem_prime_get_sg_table,
+-	.gem_prime_import_sg_table = mtk_gem_prime_import_sg_table,
+-	.gem_prime_mmap = mtk_drm_gem_mmap_buf,
+-	.gem_prime_vmap = mtk_drm_gem_prime_vmap,
+-	.gem_prime_vunmap = mtk_drm_gem_prime_vunmap,
++	.gem_prime_import_sg_table = drm_gem_cma_prime_import_sg_table_vmap,
++	.gem_prime_mmap = drm_gem_prime_mmap,
+ 	.fops = &mtk_drm_fops,
+ 
+ 	.name = DRIVER_NAME,
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_fb.c b/drivers/gpu/drm/mediatek/mtk_drm_fb.c
+index 3f230a28a2dc..596b4d5ed002 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_fb.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_fb.c
+@@ -14,7 +14,6 @@
+ 
+ #include "mtk_drm_drv.h"
+ #include "mtk_drm_fb.h"
+-#include "mtk_drm_gem.h"
+ 
+ static const struct drm_framebuffer_funcs mtk_drm_fb_funcs = {
+ 	.create_handle = drm_gem_fb_create_handle,
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_gem.c b/drivers/gpu/drm/mediatek/mtk_drm_gem.c
+deleted file mode 100644
+index ca672f1d140d..000000000000
+--- a/drivers/gpu/drm/mediatek/mtk_drm_gem.c
++++ /dev/null
+@@ -1,289 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-only
+-/*
+- * Copyright (c) 2015 MediaTek Inc.
+- */
+-
+-#include <linux/dma-buf.h>
+-
+-#include <drm/drm.h>
+-#include <drm/drm_device.h>
+-#include <drm/drm_gem.h>
+-#include <drm/drm_prime.h>
+-
+-#include "mtk_drm_drv.h"
+-#include "mtk_drm_gem.h"
+-
+-static struct mtk_drm_gem_obj *mtk_drm_gem_init(struct drm_device *dev,
+-						unsigned long size)
+-{
+-	struct mtk_drm_gem_obj *mtk_gem_obj;
+-	int ret;
+-
+-	size = round_up(size, PAGE_SIZE);
+-
+-	mtk_gem_obj = kzalloc(sizeof(*mtk_gem_obj), GFP_KERNEL);
+-	if (!mtk_gem_obj)
+-		return ERR_PTR(-ENOMEM);
+-
+-	ret = drm_gem_object_init(dev, &mtk_gem_obj->base, size);
+-	if (ret < 0) {
+-		DRM_ERROR("failed to initialize gem object\n");
+-		kfree(mtk_gem_obj);
+-		return ERR_PTR(ret);
+-	}
+-
+-	return mtk_gem_obj;
+-}
+-
+-struct mtk_drm_gem_obj *mtk_drm_gem_create(struct drm_device *dev,
+-					   size_t size, bool alloc_kmap)
+-{
+-	struct mtk_drm_private *priv = dev->dev_private;
+-	struct mtk_drm_gem_obj *mtk_gem;
+-	struct drm_gem_object *obj;
+-	int ret;
+-
+-	mtk_gem = mtk_drm_gem_init(dev, size);
+-	if (IS_ERR(mtk_gem))
+-		return ERR_CAST(mtk_gem);
+-
+-	obj = &mtk_gem->base;
+-
+-	mtk_gem->dma_attrs = DMA_ATTR_WRITE_COMBINE;
+-
+-	if (!alloc_kmap)
+-		mtk_gem->dma_attrs |= DMA_ATTR_NO_KERNEL_MAPPING;
+-
+-	mtk_gem->cookie = dma_alloc_attrs(priv->dma_dev, obj->size,
+-					  &mtk_gem->dma_addr, GFP_KERNEL,
+-					  mtk_gem->dma_attrs);
+-	if (!mtk_gem->cookie) {
+-		DRM_ERROR("failed to allocate %zx byte dma buffer", obj->size);
+-		ret = -ENOMEM;
+-		goto err_gem_free;
+-	}
+-
+-	if (alloc_kmap)
+-		mtk_gem->kvaddr = mtk_gem->cookie;
+-
+-	DRM_DEBUG_DRIVER("cookie = %p dma_addr = %pad size = %zu\n",
+-			 mtk_gem->cookie, &mtk_gem->dma_addr,
+-			 size);
+-
+-	return mtk_gem;
+-
+-err_gem_free:
+-	drm_gem_object_release(obj);
+-	kfree(mtk_gem);
+-	return ERR_PTR(ret);
+-}
+-
+-void mtk_drm_gem_free_object(struct drm_gem_object *obj)
+-{
+-	struct mtk_drm_gem_obj *mtk_gem = to_mtk_gem_obj(obj);
+-	struct mtk_drm_private *priv = obj->dev->dev_private;
+-
+-	if (mtk_gem->sg)
+-		drm_prime_gem_destroy(obj, mtk_gem->sg);
+-	else
+-		dma_free_attrs(priv->dma_dev, obj->size, mtk_gem->cookie,
+-			       mtk_gem->dma_addr, mtk_gem->dma_attrs);
+-
+-	/* release file pointer to gem object. */
+-	drm_gem_object_release(obj);
+-
+-	kfree(mtk_gem);
+-}
+-
+-int mtk_drm_gem_dumb_create(struct drm_file *file_priv, struct drm_device *dev,
+-			    struct drm_mode_create_dumb *args)
+-{
+-	struct mtk_drm_gem_obj *mtk_gem;
+-	int ret;
+-
+-	args->pitch = DIV_ROUND_UP(args->width * args->bpp, 8);
+-	args->size = args->pitch * args->height;
+-
+-	mtk_gem = mtk_drm_gem_create(dev, args->size, false);
+-	if (IS_ERR(mtk_gem))
+-		return PTR_ERR(mtk_gem);
+-
+-	/*
+-	 * allocate a id of idr table where the obj is registered
+-	 * and handle has the id what user can see.
+-	 */
+-	ret = drm_gem_handle_create(file_priv, &mtk_gem->base, &args->handle);
+-	if (ret)
+-		goto err_handle_create;
+-
+-	/* drop reference from allocate - handle holds it now. */
+-	drm_gem_object_put_unlocked(&mtk_gem->base);
+-
+-	return 0;
+-
+-err_handle_create:
+-	mtk_drm_gem_free_object(&mtk_gem->base);
+-	return ret;
+-}
+-
+-static int mtk_drm_gem_object_mmap(struct drm_gem_object *obj,
+-				   struct vm_area_struct *vma)
+-
+-{
+-	int ret;
+-	struct mtk_drm_gem_obj *mtk_gem = to_mtk_gem_obj(obj);
+-	struct mtk_drm_private *priv = obj->dev->dev_private;
+-
+-	/*
+-	 * dma_alloc_attrs() allocated a struct page table for mtk_gem, so clear
+-	 * VM_PFNMAP flag that was set by drm_gem_mmap_obj()/drm_gem_mmap().
+-	 */
+-	vma->vm_flags &= ~VM_PFNMAP;
+-
+-	ret = dma_mmap_attrs(priv->dma_dev, vma, mtk_gem->cookie,
+-			     mtk_gem->dma_addr, obj->size, mtk_gem->dma_attrs);
+-	if (ret)
+-		drm_gem_vm_close(vma);
+-
+-	return ret;
+-}
+-
+-int mtk_drm_gem_mmap_buf(struct drm_gem_object *obj, struct vm_area_struct *vma)
+-{
+-	int ret;
+-
+-	ret = drm_gem_mmap_obj(obj, obj->size, vma);
+-	if (ret)
+-		return ret;
+-
+-	return mtk_drm_gem_object_mmap(obj, vma);
+-}
+-
+-int mtk_drm_gem_mmap(struct file *filp, struct vm_area_struct *vma)
+-{
+-	struct drm_gem_object *obj;
+-	int ret;
+-
+-	ret = drm_gem_mmap(filp, vma);
+-	if (ret)
+-		return ret;
+-
+-	obj = vma->vm_private_data;
+-
+-	/*
+-	 * Set vm_pgoff (used as a fake buffer offset by DRM) to 0 and map the
+-	 * whole buffer from the start.
+-	 */
+-	vma->vm_pgoff = 0;
+-
+-	return mtk_drm_gem_object_mmap(obj, vma);
+-}
+-
+-/*
+- * Allocate a sg_table for this GEM object.
+- * Note: Both the table's contents, and the sg_table itself must be freed by
+- *       the caller.
+- * Returns a pointer to the newly allocated sg_table, or an ERR_PTR() error.
+- */
+-struct sg_table *mtk_gem_prime_get_sg_table(struct drm_gem_object *obj)
+-{
+-	struct mtk_drm_gem_obj *mtk_gem = to_mtk_gem_obj(obj);
+-	struct mtk_drm_private *priv = obj->dev->dev_private;
+-	struct sg_table *sgt;
+-	int ret;
+-
+-	sgt = kzalloc(sizeof(*sgt), GFP_KERNEL);
+-	if (!sgt)
+-		return ERR_PTR(-ENOMEM);
+-
+-	ret = dma_get_sgtable_attrs(priv->dma_dev, sgt, mtk_gem->cookie,
+-				    mtk_gem->dma_addr, obj->size,
+-				    mtk_gem->dma_attrs);
+-	if (ret) {
+-		DRM_ERROR("failed to allocate sgt, %d\n", ret);
+-		kfree(sgt);
+-		return ERR_PTR(ret);
+-	}
+-
+-	return sgt;
+-}
+-
+-struct drm_gem_object *mtk_gem_prime_import_sg_table(struct drm_device *dev,
+-			struct dma_buf_attachment *attach, struct sg_table *sg)
+-{
+-	struct mtk_drm_gem_obj *mtk_gem;
+-	int ret;
+-	struct scatterlist *s;
+-	unsigned int i;
+-	dma_addr_t expected;
+-
+-	mtk_gem = mtk_drm_gem_init(dev, attach->dmabuf->size);
+-
+-	if (IS_ERR(mtk_gem))
+-		return ERR_CAST(mtk_gem);
+-
+-	expected = sg_dma_address(sg->sgl);
+-	for_each_sg(sg->sgl, s, sg->nents, i) {
+-		if (sg_dma_address(s) != expected) {
+-			DRM_ERROR("sg_table is not contiguous");
+-			ret = -EINVAL;
+-			goto err_gem_free;
+-		}
+-		expected = sg_dma_address(s) + sg_dma_len(s);
+-	}
+-
+-	mtk_gem->dma_addr = sg_dma_address(sg->sgl);
+-	mtk_gem->sg = sg;
+-
+-	return &mtk_gem->base;
+-
+-err_gem_free:
+-	kfree(mtk_gem);
+-	return ERR_PTR(ret);
+-}
+-
+-void *mtk_drm_gem_prime_vmap(struct drm_gem_object *obj)
+-{
+-	struct mtk_drm_gem_obj *mtk_gem = to_mtk_gem_obj(obj);
+-	struct sg_table *sgt;
+-	struct sg_page_iter iter;
+-	unsigned int npages;
+-	unsigned int i = 0;
+-
+-	if (mtk_gem->kvaddr)
+-		return mtk_gem->kvaddr;
+-
+-	sgt = mtk_gem_prime_get_sg_table(obj);
+-	if (IS_ERR(sgt))
+-		return NULL;
+-
+-	npages = obj->size >> PAGE_SHIFT;
+-	mtk_gem->pages = kcalloc(npages, sizeof(*mtk_gem->pages), GFP_KERNEL);
+-	if (!mtk_gem->pages)
+-		goto out;
+-
+-	for_each_sg_page(sgt->sgl, &iter, sgt->orig_nents, 0) {
+-		mtk_gem->pages[i++] = sg_page_iter_page(&iter);
+-		if (i > npages)
+-			break;
+-	}
+-	mtk_gem->kvaddr = vmap(mtk_gem->pages, npages, VM_MAP,
+-			       pgprot_writecombine(PAGE_KERNEL));
+-
+-out:
+-	kfree((void *)sgt);
+-
+-	return mtk_gem->kvaddr;
+-}
+-
+-void mtk_drm_gem_prime_vunmap(struct drm_gem_object *obj, void *vaddr)
+-{
+-	struct mtk_drm_gem_obj *mtk_gem = to_mtk_gem_obj(obj);
+-
+-	if (!mtk_gem->pages)
+-		return;
+-
+-	vunmap(vaddr);
+-	mtk_gem->kvaddr = 0;
+-	kfree((void *)mtk_gem->pages);
+-}
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_gem.h b/drivers/gpu/drm/mediatek/mtk_drm_gem.h
+deleted file mode 100644
+index ff9f976d9807..000000000000
+--- a/drivers/gpu/drm/mediatek/mtk_drm_gem.h
++++ /dev/null
+@@ -1,51 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-only */
+-/*
+- * Copyright (c) 2015 MediaTek Inc.
+- */
+-
+-#ifndef _MTK_DRM_GEM_H_
+-#define _MTK_DRM_GEM_H_
+-
+-#include <drm/drm_gem.h>
+-
+-/*
+- * mtk drm buffer structure.
+- *
+- * @base: a gem object.
+- *	- a new handle to this gem object would be created
+- *	by drm_gem_handle_create().
+- * @cookie: the return value of dma_alloc_attrs(), keep it for dma_free_attrs()
+- * @kvaddr: kernel virtual address of gem buffer.
+- * @dma_addr: dma address of gem buffer.
+- * @dma_attrs: dma attributes of gem buffer.
+- *
+- * P.S. this object would be transferred to user as kms_bo.handle so
+- *	user can access the buffer through kms_bo.handle.
+- */
+-struct mtk_drm_gem_obj {
+-	struct drm_gem_object	base;
+-	void			*cookie;
+-	void			*kvaddr;
+-	dma_addr_t		dma_addr;
+-	unsigned long		dma_attrs;
+-	struct sg_table		*sg;
+-	struct page		**pages;
+-};
+-
+-#define to_mtk_gem_obj(x)	container_of(x, struct mtk_drm_gem_obj, base)
+-
+-void mtk_drm_gem_free_object(struct drm_gem_object *gem);
+-struct mtk_drm_gem_obj *mtk_drm_gem_create(struct drm_device *dev, size_t size,
+-					   bool alloc_kmap);
+-int mtk_drm_gem_dumb_create(struct drm_file *file_priv, struct drm_device *dev,
+-			    struct drm_mode_create_dumb *args);
+-int mtk_drm_gem_mmap(struct file *filp, struct vm_area_struct *vma);
+-int mtk_drm_gem_mmap_buf(struct drm_gem_object *obj,
+-			 struct vm_area_struct *vma);
+-struct sg_table *mtk_gem_prime_get_sg_table(struct drm_gem_object *obj);
+-struct drm_gem_object *mtk_gem_prime_import_sg_table(struct drm_device *dev,
+-			struct dma_buf_attachment *attach, struct sg_table *sg);
+-void *mtk_drm_gem_prime_vmap(struct drm_gem_object *obj);
+-void mtk_drm_gem_prime_vunmap(struct drm_gem_object *obj, void *vaddr);
+-
+-#endif
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_plane.c b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
+index 584a9ecadce6..8f256602f075 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_plane.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
+@@ -8,13 +8,14 @@
+ #include <drm/drm_atomic_helper.h>
+ #include <drm/drm_fourcc.h>
+ #include <drm/drm_plane_helper.h>
++#include <drm/drm_print.h>
++#include <drm/drm_gem_cma_helper.h>
+ #include <drm/drm_gem_framebuffer_helper.h>
+ 
+ #include "mtk_drm_crtc.h"
+ #include "mtk_drm_ddp_comp.h"
+ #include "mtk_drm_drv.h"
+ #include "mtk_drm_fb.h"
+-#include "mtk_drm_gem.h"
+ #include "mtk_drm_plane.h"
+ 
+ static const u32 formats[] = {
+@@ -108,7 +109,6 @@ static void mtk_plane_atomic_update(struct drm_plane *plane,
+ 	struct drm_crtc *crtc = plane->state->crtc;
+ 	struct drm_framebuffer *fb = plane->state->fb;
+ 	struct drm_gem_object *gem;
+-	struct mtk_drm_gem_obj *mtk_gem;
+ 	unsigned int pitch, format;
+ 	dma_addr_t addr;
+ 
+@@ -116,8 +116,7 @@ static void mtk_plane_atomic_update(struct drm_plane *plane,
+ 		return;
+ 
+ 	gem = fb->obj[0];
+-	mtk_gem = to_mtk_gem_obj(gem);
+-	addr = mtk_gem->dma_addr;
++	addr = to_drm_gem_cma_obj(gem)->paddr;
+ 	pitch = fb->pitches[0];
+ 	format = fb->format->format;
+ 
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
