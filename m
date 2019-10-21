@@ -2,62 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E1D3DE2CB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 05:50:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6AC72DE2D5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 05:56:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=rBGLmEHoJOPPLqDvX1UkSHOjlzEdAV4SqWWPr7jBHsk=; b=UrlOU/KvCe3j+aesLfs77ity7p
-	d2w84oXPCXEX9qsBIA0Bq8jUA4RnFg9hZGNaJX2Q6gUH09qOEw7drfXA+qHY8yahthj0sJ26e/PVt
-	JsBjGB1r6ddbb0K3sc6smqUYzJJMbCPj+TzgBzdpjWxfAV4wAx5ZgOxA2zdwnK51y2yvQTg0vjFyN
-	hGjSgW3S1CX5vpcNQbvyeYz5lPmKbj/I7IDHZnGfvmrWeS9eKw0wGPd+F6aukltYCILfnGGJbD01c
-	1MqUm1a8NHSjnqZxZuGAoXn727pFNrfZaGm3gVW1W4LCrlBdRA+LmK5KUttZUo2z+eoXJfP90rjhN
-	kLxHFndw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=a97sKF5oP09oWdPrjiXmoNRmXrruDEyA87AUt1imTtQ=; b=aB2FPPIYWMchKM
+	xL7LH+2DoRXsUEHAazggYeNqZUErDe3n/R7DNpFbK7G2HDzfM1ihQKLVGSweMZiN5dIc+HS60swHQ
+	xVI8ymYLJH3RXRc2lr8KuZ05mnbU++ZL6umDCfuZIvKwj9HJCBoHkWJAUgGQnbr9eAinvLDTGho0u
+	WbpkmXL6bymhz0hMfjSiUuEwPBJKW9wMFTPSpego31zueZA7smQGDVvgxtaIIylHYPh3BW+1Uoqfy
+	0naZXkSQOHfdoShKrE7YUMmPPMXSVrCyvBXpf7NSQELiyHzZswj+iExcs6eD4ncItzPuOyzIC33qa
+	wF/VQm3hLDB2PYA++uig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMOhv-0000lB-4s; Mon, 21 Oct 2019 03:50:11 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1iMOnr-00047p-Kc; Mon, 21 Oct 2019 03:56:19 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMOh6-0000EN-9p
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 03:49:23 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 373311A04BB;
- Mon, 21 Oct 2019 05:49:17 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id C869A1A02C8;
- Mon, 21 Oct 2019 05:49:10 +0200 (CEST)
-Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 05021402E5;
- Mon, 21 Oct 2019 11:49:02 +0800 (SGT)
-From: Ran Wang <ran.wang_1@nxp.com>
-To: "Rafael J . Wysocki" <rjw@rjwysocki.net>, Rob Herring <robh+dt@kernel.org>,
- Li Yang <leoyang.li@nxp.com>, Mark Rutland <mark.rutland@arm.com>,
- Pavel Machek <pavel@ucw.cz>
-Subject: [PATCH v7 2/3] Documentation: dt: binding: fsl: Add 'little-endian'
- and update Chassis define
-Date: Mon, 21 Oct 2019 11:49:26 +0800
-Message-Id: <20191021034927.19300-2-ran.wang_1@nxp.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191021034927.19300-1-ran.wang_1@nxp.com>
-References: <20191021034927.19300-1-ran.wang_1@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1iMOnh-00047S-6j
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 03:56:10 +0000
+Received: by mail-pf1-x443.google.com with SMTP id q10so7554836pfl.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 20 Oct 2019 20:56:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=DzN6sUwiXsGiG0QstYd2dvfeg6/B1PwWJvQoun4TY3w=;
+ b=x2DVwu8hxWO/tIGOY+mw63ppGx1pqI/eZFZwCc4QdjzK87vadub6fctBWh8VqjgJ/o
+ 5fHfeKOKt1y8Mr9FuqAH/YznIJFYx/ZWwodC+oCkaKcP4cdsupYCE9WxRmzyBJ5QHUFM
+ 2ZtT/m+nVjlvMsaAiVil0s77A7AIZVNBqseSHcVcNHmJHAKz5ncfbRyiNOoLSA6JFiUs
+ HVh2lk9CcQeEXtZ3y7WLJFeV4S39T7NDxg7u8MDELtVwoAL8r59vKZGSZHf+6fa4+UMl
+ gn95cPMDGSwgS+YKpdVbYpwWIuNSsQON+qVRdu7W0WWDJ+/QD0A5b7I1pDpgyQhFui/c
+ NEwQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=DzN6sUwiXsGiG0QstYd2dvfeg6/B1PwWJvQoun4TY3w=;
+ b=KanfADeL3B6zB/ohWiAI0LjunnSO9vHZvr38OXcGsfEa8LcYGhonrERVSvHnuupRHV
+ UypidRb3Gtltlf61TZR2tlshJto+rKjpQMB0X64k+fqD+oLGbiuOTQSkSsPXh3ylkjFi
+ OEuWu0YfuB8Xbz9yND6TJYFOsR/ESQk25B7+MdqWz2g6n3f/rJVMqoKMY3oKdNpZV5E2
+ odAtrVIcBsymo5LAjMTeVeV0kwqIA9SgIjNgBz1CAOvMLWXeym9H1TOZfHwYgFnM4PE8
+ O0gRV0w4GxeNoJ/oJiuUOWRlGdsIii1bg8Nuz3qz886Mzx/W2Jz22aqzMKl86Dt1s57w
+ N7ww==
+X-Gm-Message-State: APjAAAV4RH0KnREQeuxz6HUiu3CbVXe6PlD+c2O0jADzJbjYQA1uST1H
+ tyA0B3trrWNGoZ94qUBysaRJ1w==
+X-Google-Smtp-Source: APXvYqz91vILzKwCwMpXw4c4MDum21nEhzA0IzWpvQxk5Xjbqxh2R6MjJYT42v2BMZwkh3wIlyC3CQ==
+X-Received: by 2002:a17:90a:3702:: with SMTP id
+ u2mr26313063pjb.57.1571630167781; 
+ Sun, 20 Oct 2019 20:56:07 -0700 (PDT)
+Received: from localhost.localdomain
+ (104-188-17-28.lightspeed.sndgca.sbcglobal.net. [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id o185sm18760540pfg.136.2019.10.20.20.56.06
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 20 Oct 2019 20:56:07 -0700 (PDT)
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Olof Johansson <olof@lixom.net>, Maxime Ripard <mripard@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, Anson Huang <Anson.Huang@nxp.com>,
+ Jagan Teki <jagan@amarulasolutions.com>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ Dinh Nguyen <dinguyen@kernel.org>,
+ Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>
+Subject: [PATCH] arm64: defconfig: Enable Qualcomm watchdog driver
+Date: Sun, 20 Oct 2019 20:56:03 -0700
+Message-Id: <20191021035603.4186317-1-bjorn.andersson@linaro.org>
+X-Mailer: git-send-email 2.23.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191020_204920_619052_50AE46FF 
-X-CRM114-Status: GOOD (  11.59  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191020_205609_249907_DD17FEC8 
+X-CRM114-Status: GOOD (  10.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,105 +104,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Li Biwen <biwen.li@nxp.com>, Len Brown <len.brown@intel.com>,
- devicetree@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org,
- Ran Wang <ran.wang_1@nxp.com>, linuxppc-dev@lists.ozlabs.org,
+Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-By default, QorIQ SoC's RCPM register block is Big Endian. But
-there are some exceptions, such as LS1088A and LS2088A, are
-Little Endian. So add this optional property to help identify
-them.
+Enable the driver for the watchdog found in the application processor
+subsystem on most modern Qualcomm platforms.
 
-Actually LS2021A and other Layerscapes won't totally follow Chassis
-2.1, so separate them from powerpc SoC.
-
-Signed-off-by: Ran Wang <ran.wang_1@nxp.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 ---
-Change in v7:
-	- None.
+ arch/arm64/configs/defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-Change in v6:
-	- None.
-
-Change in v5:
-	- Add 'Reviewed-by: Rob Herring <robh@kernel.org>' to commit message.
-	- Rename property 'fsl,#rcpm-wakeup-cells' to '#fsl,rcpm-wakeup-cells'.
-	please see https://lore.kernel.org/patchwork/patch/1101022/
-
-Change in v4:
-	- Adjust indectation of 'ls1021a, ls1012a, ls1043a, ls1046a'.
-
-Change in v3:
-	- None.
-
-Change in v2:
-	- None.
-
- Documentation/devicetree/bindings/soc/fsl/rcpm.txt | 14 ++++++++++----
- 1 file changed, 10 insertions(+), 4 deletions(-)
-
-diff --git a/Documentation/devicetree/bindings/soc/fsl/rcpm.txt b/Documentation/devicetree/bindings/soc/fsl/rcpm.txt
-index e284e4e..5a33619 100644
---- a/Documentation/devicetree/bindings/soc/fsl/rcpm.txt
-+++ b/Documentation/devicetree/bindings/soc/fsl/rcpm.txt
-@@ -5,7 +5,7 @@ and power management.
- 
- Required properites:
-   - reg : Offset and length of the register set of the RCPM block.
--  - fsl,#rcpm-wakeup-cells : The number of IPPDEXPCR register cells in the
-+  - #fsl,rcpm-wakeup-cells : The number of IPPDEXPCR register cells in the
- 	fsl,rcpm-wakeup property.
-   - compatible : Must contain a chip-specific RCPM block compatible string
- 	and (if applicable) may contain a chassis-version RCPM compatible
-@@ -20,6 +20,7 @@ Required properites:
- 	* "fsl,qoriq-rcpm-1.0": for chassis 1.0 rcpm
- 	* "fsl,qoriq-rcpm-2.0": for chassis 2.0 rcpm
- 	* "fsl,qoriq-rcpm-2.1": for chassis 2.1 rcpm
-+	* "fsl,qoriq-rcpm-2.1+": for chassis 2.1+ rcpm
- 
- All references to "1.0" and "2.0" refer to the QorIQ chassis version to
- which the chip complies.
-@@ -27,14 +28,19 @@ Chassis Version		Example Chips
- ---------------		-------------------------------
- 1.0				p4080, p5020, p5040, p2041, p3041
- 2.0				t4240, b4860, b4420
--2.1				t1040, ls1021
-+2.1				t1040,
-+2.1+				ls1021a, ls1012a, ls1043a, ls1046a
-+
-+Optional properties:
-+ - little-endian : RCPM register block is Little Endian. Without it RCPM
-+   will be Big Endian (default case).
- 
- Example:
- The RCPM node for T4240:
- 	rcpm: global-utilities@e2000 {
- 		compatible = "fsl,t4240-rcpm", "fsl,qoriq-rcpm-2.0";
- 		reg = <0xe2000 0x1000>;
--		fsl,#rcpm-wakeup-cells = <2>;
-+		#fsl,rcpm-wakeup-cells = <2>;
- 	};
- 
- * Freescale RCPM Wakeup Source Device Tree Bindings
-@@ -44,7 +50,7 @@ can be used as a wakeup source.
- 
-   - fsl,rcpm-wakeup: Consists of a phandle to the rcpm node and the IPPDEXPCR
- 	register cells. The number of IPPDEXPCR register cells is defined in
--	"fsl,#rcpm-wakeup-cells" in the rcpm node. The first register cell is
-+	"#fsl,rcpm-wakeup-cells" in the rcpm node. The first register cell is
- 	the bit mask that should be set in IPPDEXPCR0, and the second register
- 	cell is for IPPDEXPCR1, and so on.
- 
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index 4591bf1303da..f3d95f77fb0d 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -463,6 +463,7 @@ CONFIG_IMX2_WDT=y
+ CONFIG_IMX_SC_WDT=m
+ CONFIG_MESON_GXBB_WATCHDOG=m
+ CONFIG_MESON_WATCHDOG=m
++CONFIG_QCOM_WDT=m
+ CONFIG_RENESAS_WDT=y
+ CONFIG_UNIPHIER_WATCHDOG=y
+ CONFIG_BCM2835_WDT=y
 -- 
-2.7.4
+2.23.0
 
 
 _______________________________________________
