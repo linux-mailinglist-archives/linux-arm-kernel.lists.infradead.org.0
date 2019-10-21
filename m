@@ -2,66 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01240DE59A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 09:56:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CE56DE5A9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 09:58:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=OYXpJhQGaPD7qu4djS+JBMQDCdL1ptQGfKTzcrssfxE=; b=Qm714gTGrEC5IRjTBNWeytJJT
-	d+mIts3EBWcut5aLB2fLrydBrgJGKtA/tLH0E+d7cW9JKQUtsH87/yeXmILJw3elwwRC5WkDPfoWJ
-	ZE6MvsT9E2AV2Zhevuk27HNaQ8pSzH82nbRHtjOv7d1Sxl2XiNG3xUrVAq9dgKLTPMPSaSlgPkKOh
-	kb93BHclXo3G/l+JpBgx2Lx1Z9/G2Cnfl4JtVr4LUYz93TjGxzQyw3Z1bO3g8Lul8A/NUmeGWyRwJ
-	PIzBqCthyFSQF9DtmrRatPGUGOTZKdSoQnzEWA5dakqjPx4btRyeYqsRkjlbvZ6RIsvAIx62HkmhB
-	kluSO/ooQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=64JJoDPc06Khrk4OkmDEdOiMRW6VJJz1dnNJfdM14Ww=; b=H2SlwRwY7GszcD
+	NHKtiLPgIjdToOXp1/6wqd93BZ7ZQUoxCJTrcoqy6p1nTxBB1y1qAEz/8LhgEImwJHywz15OWoNZz
+	IrDqqMzZS+Kjo/vsBiR+yE8qmT1AP/jzkwLOEV3Iz17CrXjkiDc4t6nd+okZ6Sltd6nsuIdund76V
+	3ysp9ImNnm/iLrzFh1EiM6GKUQMseNx4GD6XlQNfLx31CX0PTEkNClZp4QnW/npFe0/7Njn+SNjLd
+	lIK1v5FTkZX1skd3lm8TuC/6vMzYXmchzLOwU4nU1Gns8kfpLeTsjvoT/EYp1Di1lvFjS0dKBiR1U
+	AImvxMtBtvcqnONtaQkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMSXt-00064Z-8M; Mon, 21 Oct 2019 07:56:05 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1iMSaa-0007GB-Pe; Mon, 21 Oct 2019 07:58:52 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMSXi-000641-Ho
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 07:55:56 +0000
-Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1iMSXe-0007gc-Fy; Mon, 21 Oct 2019 09:55:50 +0200
-To: =?UTF-8?Q?J=C3=BCrgen_Gro=C3=9F?= <jgross@suse.com>
-Subject: Re: [PATCH v6 10/10] arm64: Retrieve stolen time as paravirtualized
- guest
-X-PHP-Originating-Script: 0:main.inc
+ id 1iMSaQ-0007Fd-Kp; Mon, 21 Oct 2019 07:58:44 +0000
+Received: from mail-wr1-f42.google.com (mail-wr1-f42.google.com
+ [209.85.221.42])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5908A21744;
+ Mon, 21 Oct 2019 07:58:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571644721;
+ bh=HaNxatOx3Yl+LjuXNZSg9j6rwSnjKUPc8eLVmd61SU0=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=luHraHozlqKNUHwEUrw+p/CKnNkzg4GhLnRI3IQVw1ZUnmvt4Cwl7ABV+5EzHS34g
+ CqVlZgKrjSy7nsjEnaLPBzt8i8/jWykyodKl+iP31wL1BC0A++0dn8emaiIgMxVUqa
+ 6AeBtKgvcbANkPSenLQVsuD5VltHn5JOl0JQoRvI=
+Received: by mail-wr1-f42.google.com with SMTP id l10so12273172wrb.2;
+ Mon, 21 Oct 2019 00:58:41 -0700 (PDT)
+X-Gm-Message-State: APjAAAUb6cNKIacwZ/EyEY7uTOpoiEsrEO4tytQNQYCl7Dm13h9ZRjjR
+ Mo+49T8b2L+lagkY/k8grnGd++md2PxfUZq1NZY=
+X-Google-Smtp-Source: APXvYqzvF6HJCASpTMUMf7HweDv3Hno9oEAxiqhI3GBGEOPTWQrWQiETxVnKLeVHbQ3ma/xucSMvECIDZp2EBxJkKe8=
+X-Received: by 2002:adf:ebcb:: with SMTP id v11mr17344477wrn.24.1571644719802; 
+ Mon, 21 Oct 2019 00:58:39 -0700 (PDT)
 MIME-Version: 1.0
-Date: Mon, 21 Oct 2019 08:55:50 +0100
-From: Marc Zyngier <maz@kernel.org>
-In-Reply-To: <237a3457-bcb3-c9b7-11ef-241b7ccc370e@suse.com>
-References: <20191011125930.40834-1-steven.price@arm.com>
- <20191011125930.40834-11-steven.price@arm.com>
- <86a79wzdhk.wl-maz@kernel.org>
- <237a3457-bcb3-c9b7-11ef-241b7ccc370e@suse.com>
-Message-ID: <e8fa44e1e6bcb58ea07b5064ed40e088@www.loen.fr>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/0.7.2
-X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: jgross@suse.com, steven.price@arm.com, will@kernel.org,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- catalin.marinas@arm.com, pbonzini@redhat.com, rkrcmar@redhat.com,
- linux@armlinux.org.uk, james.morse@arm.com, julien.thierry.kdev@gmail.com,
- suzuki.poulose@arm.com, mark.rutland@arm.com, kvm@vger.kernel.org,
- linux-doc@vger.kernel.org, linux-kernel@vger.kernel.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+References: <20191017174554.29840-1-hch@lst.de>
+ <20191017174554.29840-21-hch@lst.de>
+In-Reply-To: <20191017174554.29840-21-hch@lst.de>
+From: Guo Ren <guoren@kernel.org>
+Date: Mon, 21 Oct 2019 15:58:28 +0800
+X-Gmail-Original-Message-ID: <CAJF2gTQ_VeBfi1uaafgtp+uA2skq-w2px12ig=5QD1O9J+PgbA@mail.gmail.com>
+Message-ID: <CAJF2gTQ_VeBfi1uaafgtp+uA2skq-w2px12ig=5QD1O9J+PgbA@mail.gmail.com>
+Subject: Re: [PATCH 20/21] csky: remove ioremap_cache
+To: Christoph Hellwig <hch@lst.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_005554_736647_856F17A7 
-X-CRM114-Status: UNSURE (   8.82  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191021_005842_729441_D20DD3DB 
+X-CRM114-Status: GOOD (  14.39  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,36 +83,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-kernel@vger.kernel.org,
- kvm@vger.kernel.org,
- =?UTF-8?Q?Radim_Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Suzuki K Pouloze <suzuki.poulose@arm.com>, linux-doc@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>, Steven Price <steven.price@arm.com>,
- James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Paolo Bonzini <pbonzini@redhat.com>, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-mtd@lists.infradead.org, sparclinux@vger.kernel.org,
+ linux-riscv@lists.infradead.org, Vincent Chen <deanbo422@gmail.com>,
+ linux-arch <linux-arch@vger.kernel.org>, linux-s390@vger.kernel.org,
+ linux-hexagon@vger.kernel.org, x86@kernel.org,
+ linux-snps-arc@lists.infradead.org, linux-xtensa@linux-xtensa.org,
+ Arnd Bergmann <arnd@arndb.de>, linux-m68k@lists.linux-m68k.org,
+ openrisc@lists.librecores.org, Greentime Hu <green.hu@gmail.com>,
+ Guan Xuetao <gxt@pku.edu.cn>, linux-arm-kernel@lists.infradead.org,
+ Michal Simek <monstr@monstr.eu>, linux-parisc@vger.kernel.org,
+ linux-mips@vger.kernel.org, linux-alpha@vger.kernel.org,
+ nios2-dev@lists.rocketboards.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAxOS0xMC0yMSAwNjowMSwgSsO8cmdlbiBHcm/DnyB3cm90ZToKPiBPbiAxOS4xMC4xOSAy
-MjoyOCwgTWFyYyBaeW5naWVyIHdyb3RlOgoKPj4gSG93IGFib3V0IHNvbWV0aGluZyBsaWtlIHB2
-X3RpbWVfaW5pdCgpIGluc3RlYWQ/IEluIHRoZSBndWVzdCwgdGhpcyAKPj4gaXMKPj4gbm8gd2F5
-IEtWTSBzcGVjaWZpYywgYW5kIEkgc3RpbGwgaG9wZSBmb3IgdGhpcyB0byB3b3JrIG9uIHRoaW5n
-cyAKPj4gbGlrZQo+PiBYZW4vSHlwZXJWL1ZNd2FyZSAoeWVhaCwgSSdtIGZvb2xpc2hseSBvcHRp
-bWlzdGljKS4gQWxsIHRoZSAKPj4gcmVmZXJlbmNlcwo+PiB0byBLVk0gc2hvdWxkIGdvLCBhbmQg
-YmUgcmVwbGFjZWQgYnkgc29tZXRoaW5nIG1vcmUgZ2VuZXJpYyAoYWZ0ZXIKPj4gYWxsLCB5b3Un
-cmUgb25seSBpbXBsZW1lbnRpbmcgdGhlIHNwZWMsIHNvIGZlZWwgZnJlZSB0byBjYWxsIGl0Cj4+
-IGRlbjAwNTdfKiBpZiB5b3UgcmVhbGx5IHdhbnQpLgo+Cj4gWGVuIGd1ZXN0cyBhbHJlYWR5IGhh
-dmUgdGhlIG5lZWRlZCBmdW5jdGlvbmFsaXR5LiBPbiBBUk0gdGhpcyBqdXN0IAo+IG5lZWRzCj4g
-dG8gYmUgaG9va2VkIHVwLgoKWWVzLCBYZW4gb2ZmZXJzIGl0cyBvd24gUFYgaW50ZXJmYWNlIGZv
-ciB0aGF0LiBCdXQgdGhpcyBjb2RlIGlzIGFib3V0CmltcGxlbWVudGluZyBzdXBwb3J0IGZvciBh
-IGNyb3NzIGh5cGVydmlzb3IgZnVuY3Rpb25uYWxpdHkgKHdoaWNoIApBRkFJQ1QKaXMgbm90IGlt
-cGxlbWVudGVkIGJ5IFhlbikuCgogICAgICAgICBNLgotLSAKSmF6eiBpcyBub3QgZGVhZC4gSXQg
-anVzdCBzbWVsbHMgZnVubnkuLi4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJu
-ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Acked-by: Guo Ren <guoren@kernel.org>
+
+On Fri, Oct 18, 2019 at 1:47 AM Christoph Hellwig <hch@lst.de> wrote:
+>
+> No driver that can be used on csky uses ioremap_cache, and this
+> interface has been deprecated in favor of memremap.
+>
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
+>  arch/csky/include/asm/io.h | 2 --
+>  arch/csky/mm/ioremap.c     | 7 -------
+>  2 files changed, 9 deletions(-)
+>
+> diff --git a/arch/csky/include/asm/io.h b/arch/csky/include/asm/io.h
+> index a4b9fb616faa..f572605d5ad5 100644
+> --- a/arch/csky/include/asm/io.h
+> +++ b/arch/csky/include/asm/io.h
+> @@ -36,13 +36,11 @@
+>  /*
+>   * I/O memory mapping functions.
+>   */
+> -extern void __iomem *ioremap_cache(phys_addr_t addr, size_t size);
+>  extern void __iomem *__ioremap(phys_addr_t addr, size_t size, pgprot_t prot);
+>  extern void iounmap(void *addr);
+>
+>  #define ioremap(addr, size)            __ioremap((addr), (size), pgprot_noncached(PAGE_KERNEL))
+>  #define ioremap_wc(addr, size)         __ioremap((addr), (size), pgprot_writecombine(PAGE_KERNEL))
+> -#define ioremap_cache                  ioremap_cache
+>
+>  #include <asm-generic/io.h>
+>
+> diff --git a/arch/csky/mm/ioremap.c b/arch/csky/mm/ioremap.c
+> index e13cd3497628..ae78256a56fd 100644
+> --- a/arch/csky/mm/ioremap.c
+> +++ b/arch/csky/mm/ioremap.c
+> @@ -44,13 +44,6 @@ void __iomem *__ioremap(phys_addr_t phys_addr, size_t size, pgprot_t prot)
+>  }
+>  EXPORT_SYMBOL(__ioremap);
+>
+> -void __iomem *ioremap_cache(phys_addr_t phys_addr, size_t size)
+> -{
+> -       return __ioremap_caller(phys_addr, size, PAGE_KERNEL,
+> -                               __builtin_return_address(0));
+> -}
+> -EXPORT_SYMBOL(ioremap_cache);
+> -
+>  void iounmap(void __iomem *addr)
+>  {
+>         vunmap((void *)((unsigned long)addr & PAGE_MASK));
+> --
+> 2.20.1
+>
+
+
+-- 
+Best Regards
+ Guo Ren
+
+ML: https://lore.kernel.org/linux-csky/
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
