@@ -2,67 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84B59DF25B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 18:03:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 067A1DF26D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 18:07:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=mZ78vwTj+WMq1VDvSYTrbCB0SJdmo5QNAdM4rKI09c4=; b=ad6zQe3s8NWEZrhqTe7RX/Rwn/
-	IoUZ6G0udcaXEHjFct86hV/RsSul4hMhs/7qtJUfIQt4xeqSxboinj6FkZH9km2tV4C5dSvb3V/f4
-	koyOqYZ9rld2ZOZZStCJN/RBF8nHCCKKHt+WUguADst6jMSRCajewxl5GjTP16RbJ1Uk8VEisjrbU
-	a4fvZgRBiQt55qIh1dhjll8SMes9X3yEdG7QXB1MYCfg5lC+okyNDf3eKEzg+AsRgJ8jarzvnszIa
-	f39eys8q8H9OTSfftzqqOIchWSZI0LpZCWyDxcpQLC3w2XeGnMGiaAkJl968thnjeXadVf1IwIpE0
-	FINTKgCg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Nc0s56pWqN4LIXQM9/8dqHCg6EnR3JjIIpr67Mhne8g=; b=Nhi2OCtjqRXymS
+	Ts0DfVWmEICpF8KhXvFcsfA9xStnu4J7qoKw+4NaKdZsGnP1uezUK7/CyxQvdLL+kNpZdej+23bJA
+	g4wP72FkKBrUA3r8wv6lmuJ3zO6dUODUpzo6LFLcp2QxJohNOCqjbYQ0vodeYGkEDnA7PTr6VfGE1
+	EkW57HkfOTj+2kEzBYGdMfOBSxShzwqUO4z+zDkajgw2ugaVFLbUcVKDQgqpSZsplv/kKL2IEVFu7
+	tSCDEmRSa3kYDUhQTc0XUgaOleJmyYWt5J1NTa2CXcp5DQMgzQ6+6bDTRNlPFFThiHRP7r+ABm9rN
+	fDGC/f3Cr3YQ/qYMBhtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMa9C-0004Bk-J4; Mon, 21 Oct 2019 16:03:06 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iMaD7-00062f-Jg; Mon, 21 Oct 2019 16:07:09 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMa8V-0003NI-OZ; Mon, 21 Oct 2019 16:02:25 +0000
-Received: from localhost.localdomain (unknown [194.230.155.217])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2C85F20B7C;
- Mon, 21 Oct 2019 16:02:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571673743;
- bh=9vUKs8pCzKFuQ7qoUJr6IKkD/Ix0T+CpovzK7sscdoY=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=YnuG4tgpME3kPNjXMpUARMsvb9tqSSpIBym0ehdPKylfYMgiqTnXeo27b5jdwh9dq
- qlPWNYYo7/4HpfxKy1fzneHlbFxhhI5aYIHBVsgbpVpZ8Yz2PkRaBWPAY7U+tvf0qO
- wKup6EQVUm2LRfxMmfeWS9uEP6d4M11xqW+icQ0U=
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-pwm@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-tegra@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
- linux-mediatek@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-riscv@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com
-Subject: [PATCH v4 2/2] dt-bindings: pwm: Convert Samsung PWM bindings to
- json-schema
-Date: Mon, 21 Oct 2019 18:02:07 +0200
-Message-Id: <20191021160207.18026-2-krzk@kernel.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191021160207.18026-1-krzk@kernel.org>
-References: <20191021160207.18026-1-krzk@kernel.org>
+ id 1iMaCz-00061U-0x
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 16:07:02 +0000
+Received: by mail-pf1-x441.google.com with SMTP id y22so8714637pfr.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 21 Oct 2019 09:07:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=JE8U2Fghv6YjjweCRTqDn5FZUlMFhhM8tZP7QTcsL4M=;
+ b=BXwbjyQHcxJWNiy0iXKopawMWLVVLer31/iixLJkLYJrr0DN6W/g3Yxd8AhYLMw4GY
+ yaOOYp6clpQlM8wBCeAsr7WNscSUW0a/CNbCltgSRmtM67DKbQ4DtyJUrsqntno1wI5y
+ 6L8iL7u4BsmyrJM63Dgery3dZ3UK4EZQgDH+w=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=JE8U2Fghv6YjjweCRTqDn5FZUlMFhhM8tZP7QTcsL4M=;
+ b=tLCarH79VYTWVGHmvXhuWDrw5/0Bio+3gmdviG32h2IY5fwXxI7m427fHT7ckNaFii
+ V3nEDbFo9SlBdPYarPAoSV6shBXheASwcMrDbyHQtOGLVV03v8ONaq5meHDhKHudaKhl
+ utQch1ZWhUw+tqv1H6C5OaoQFSa7WwAqYPJGzBIO2yxXKdhVC7wvcU0iD5Bcm4fM2GCR
+ pSn1bCQRLmLOLjG66J/Ay+AxnnZ1myfzp2kZqA+8TrkD/AzvCK0Gfyy9SDtlo7xlILHo
+ Jkwv7AfM3lb/u+oI12H+fOLgV6uqulYPOjlPKsACvgYn364KTYj8gBeAwsdnLLbWcKsx
+ pG1w==
+X-Gm-Message-State: APjAAAU9ymmG8lR3UYugd1BfzCX1lv4nOFCZDoNMAoeKoeT3Yh6JV/kY
+ 2QpmMspz2+L7gaMK45w1RaeQHg==
+X-Google-Smtp-Source: APXvYqwJTcp7CnYya1sildKDZQhELifTwgg5siNr/xx7tKpVABk+cPNBC7anzYKvXWswmQ1TD7x5Qg==
+X-Received: by 2002:aa7:96a9:: with SMTP id g9mr23757769pfk.147.1571674020135; 
+ Mon, 21 Oct 2019 09:07:00 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id x139sm18509941pgx.92.2019.10.21.09.06.58
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 21 Oct 2019 09:06:59 -0700 (PDT)
+Date: Mon, 21 Oct 2019 09:06:58 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: Re: [PATCH 16/18] arm64: kprobes: fix kprobes without
+ CONFIG_KRETPROBES
+Message-ID: <201910210905.7494C5C@keescook>
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20191018161033.261971-17-samitolvanen@google.com>
+ <CAKv+Gu-88USO+fbjBgj35B4fUQ7A_t9nHO_swyN=T1q1G2wViA@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAKv+Gu-88USO+fbjBgj35B4fUQ7A_t9nHO_swyN=T1q1G2wViA@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_090223_850606_7096C76E 
-X-CRM114-Status: GOOD (  14.85  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191021_090701_089631_41BA035F 
+X-CRM114-Status: GOOD (  10.22  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -84,213 +97,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Kernel Hardening <kernel-hardening@lists.openwall.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Steven Rostedt <rostedt@goodmis.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Sami Tolvanen <samitolvanen@google.com>, Laura Abbott <labbott@redhat.com>,
+ Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert Samsung PWM (S3C, S5P and Exynos SoCs) bindings to DT schema
-format using json-schema.
+On Mon, Oct 21, 2019 at 08:21:48AM +0200, Ard Biesheuvel wrote:
+> On Fri, 18 Oct 2019 at 18:11, Sami Tolvanen <samitolvanen@google.com> wrote:
+> >
+> > This allows CONFIG_KRETPROBES to be disabled without disabling
+> > kprobes entirely.
+> >
+> > Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
+> 
+> Can we make kretprobes work with the shadow call stack instead?
 
-Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-Reviewed-by: Rob Herring <robh@kernel.org>
+I've been viewing that as "next steps". This series is the first step:
+actually gaining the feature and clearly indicating where future
+improvements can live.
 
----
-
-Changes since v3:
-1. Add reviewed-by.
-
-Changes since v2:
-1. Add additionalProperties: false.
-
-Changes since v1:
-1. Indent example with four spaces (more readable),
-2. Fix samsung,pwm-outputs after review,
-3. Remove double-quotes from clock names.
----
- .../devicetree/bindings/pwm/pwm-samsung.txt   |  51 --------
- .../devicetree/bindings/pwm/pwm-samsung.yaml  | 109 ++++++++++++++++++
- 2 files changed, 109 insertions(+), 51 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/pwm/pwm-samsung.txt
- create mode 100644 Documentation/devicetree/bindings/pwm/pwm-samsung.yaml
-
-diff --git a/Documentation/devicetree/bindings/pwm/pwm-samsung.txt b/Documentation/devicetree/bindings/pwm/pwm-samsung.txt
-deleted file mode 100644
-index 5538de9c2007..000000000000
---- a/Documentation/devicetree/bindings/pwm/pwm-samsung.txt
-+++ /dev/null
-@@ -1,51 +0,0 @@
--* Samsung PWM timers
--
--Samsung SoCs contain PWM timer blocks which can be used for system clock source
--and clock event timers, as well as to drive SoC outputs with PWM signal. Each
--PWM timer block provides 5 PWM channels (not all of them can drive physical
--outputs - see SoC and board manual).
--
--Be aware that the clocksource driver supports only uniprocessor systems.
--
--Required properties:
--- compatible : should be one of following:
--    samsung,s3c2410-pwm - for 16-bit timers present on S3C24xx SoCs
--    samsung,s3c6400-pwm - for 32-bit timers present on S3C64xx SoCs
--    samsung,s5p6440-pwm - for 32-bit timers present on S5P64x0 SoCs
--    samsung,s5pc100-pwm - for 32-bit timers present on S5PC100, S5PV210,
--			  Exynos4210 rev0 SoCs
--    samsung,exynos4210-pwm - for 32-bit timers present on Exynos4210,
--                          Exynos4x12, Exynos5250 and Exynos5420 SoCs
--- reg: base address and size of register area
--- interrupts: list of timer interrupts (one interrupt per timer, starting at
--  timer 0)
--- clock-names: should contain all following required clock names:
--    - "timers" - PWM base clock used to generate PWM signals,
--  and any subset of following optional clock names:
--    - "pwm-tclk0" - first external PWM clock source,
--    - "pwm-tclk1" - second external PWM clock source.
--  Note that not all IP variants allow using all external clock sources.
--  Refer to SoC documentation to learn which clock source configurations
--  are available.
--- clocks: should contain clock specifiers of all clocks, which input names
--  have been specified in clock-names property, in same order.
--- #pwm-cells: should be 3. See pwm.txt in this directory for a description of
--  the cells format. The only third cell flag supported by this binding is
--  PWM_POLARITY_INVERTED.
--
--Optional properties:
--- samsung,pwm-outputs: list of PWM channels used as PWM outputs on particular
--    platform - an array of up to 5 elements being indices of PWM channels
--    (from 0 to 4), the order does not matter.
--
--Example:
--	pwm@7f006000 {
--		compatible = "samsung,s3c6400-pwm";
--		reg = <0x7f006000 0x1000>;
--		interrupt-parent = <&vic0>;
--		interrupts = <23>, <24>, <25>, <27>, <28>;
--		clocks = <&clock 67>;
--		clock-names = "timers";
--		samsung,pwm-outputs = <0>, <1>;
--		#pwm-cells = <3>;
--	}
-diff --git a/Documentation/devicetree/bindings/pwm/pwm-samsung.yaml b/Documentation/devicetree/bindings/pwm/pwm-samsung.yaml
-new file mode 100644
-index 000000000000..ea7f32905172
---- /dev/null
-+++ b/Documentation/devicetree/bindings/pwm/pwm-samsung.yaml
-@@ -0,0 +1,109 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/pwm/pwm-samsung.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Samsung SoC PWM timers
-+
-+maintainers:
-+  - Thierry Reding <thierry.reding@gmail.com>
-+  - Krzysztof Kozlowski <krzk@kernel.org>
-+
-+description: |+
-+  Samsung SoCs contain PWM timer blocks which can be used for system clock source
-+  and clock event timers, as well as to drive SoC outputs with PWM signal. Each
-+  PWM timer block provides 5 PWM channels (not all of them can drive physical
-+  outputs - see SoC and board manual).
-+
-+  Be aware that the clocksource driver supports only uniprocessor systems.
-+
-+allOf:
-+  - $ref: pwm.yaml#
-+
-+properties:
-+  compatible:
-+    enum:
-+      - samsung,s3c2410-pwm             # 16-bit, S3C24xx
-+      - samsung,s3c6400-pwm             # 32-bit, S3C64xx
-+      - samsung,s5p6440-pwm             # 32-bit, S5P64x0
-+      - samsung,s5pc100-pwm             # 32-bit, S5PC100, S5PV210, Exynos4210 rev0 SoCs
-+      - samsung,exynos4210-pwm          # 32-bit, Exynos
-+
-+  reg:
-+    maxItems: 1
-+
-+  clocks:
-+    minItems: 1
-+    maxItems: 3
-+
-+  clock-names:
-+    description: |
-+      Should contain all following required clock names:
-+      - "timers" - PWM base clock used to generate PWM signals,
-+      and any subset of following optional clock names:
-+      - "pwm-tclk0" - first external PWM clock source,
-+      - "pwm-tclk1" - second external PWM clock source.
-+      Note that not all IP variants allow using all external clock sources.
-+      Refer to SoC documentation to learn which clock source configurations
-+      are available.
-+    oneOf:
-+      - items:
-+        - const: timers
-+      - items:
-+        - const: timers
-+        - const: pwm-tclk0
-+      - items:
-+        - const: timers
-+        - const: pwm-tclk1
-+      - items:
-+        - const: timers
-+        - const: pwm-tclk0
-+        - const: pwm-tclk1
-+
-+  interrupts:
-+    description:
-+      One interrupt per timer, starting at timer 0.
-+    minItems: 1
-+    maxItems: 5
-+
-+  "#pwm-cells":
-+    description:
-+      The only third cell flag supported by this binding
-+      is PWM_POLARITY_INVERTED.
-+    const: 3
-+
-+  samsung,pwm-outputs:
-+    description:
-+      A list of PWM channels used as PWM outputs on particular platform.
-+      It is an array of up to 5 elements being indices of PWM channels
-+      (from 0 to 4), the order does not matter.
-+    allOf:
-+      - $ref: /schemas/types.yaml#/definitions/uint32-array
-+      - uniqueItems: true
-+      - items:
-+          minimum: 0
-+          maximum: 4
-+
-+required:
-+  - clocks
-+  - clock-names
-+  - compatible
-+  - interrupts
-+  - "#pwm-cells"
-+  - reg
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    pwm@7f006000 {
-+        compatible = "samsung,s3c6400-pwm";
-+        reg = <0x7f006000 0x1000>;
-+        interrupt-parent = <&vic0>;
-+        interrupts = <23>, <24>, <25>, <27>, <28>;
-+        clocks = <&clock 67>;
-+        clock-names = "timers";
-+        samsung,pwm-outputs = <0>, <1>;
-+        #pwm-cells = <3>;
-+    };
 -- 
-2.17.1
-
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
