@@ -2,94 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB891DE702
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 10:48:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 83C3ADE713
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 10:49:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=MfwLMjQXEVQKrnQShihNJfVm8QKrnAG2y+pxt/05+Tg=; b=ZpgkfkAYAnbwHXCjMFJjhBnrR
-	Ga7fdQ5zzFRuvA0sNiwGGwnYa+Grfl3aCwmKzbH1qAF0XwJcMIs6+CtJ3wZ2Gtap5D2/pYo57Gcga
-	j2OhZbkECMPU2naXixUvIPWlWgMIxL832j3D7GWm09VYq+dm3XagKfZhb1J0mC23XBOjQMCxMLFpl
-	QaXVn9qXuNQYrXaXjPHUqggYPaKNvMBPFNdEdO30x92+27xvX4mgoaozy5rThRVp58be3ePS9sAvm
-	wk3N8XTVmGpzzKBgJxqV/s6HvFGPa5ejnV7DlsyyB0p6q41ckmsiUSdUCOEmkUm0+gctTgZUuS85f
-	ZEMYKrEpQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=S9jXPjP+pi2hCqVn+tPwS/51R4yhcC59nVJdYAtqPyE=; b=Y1s7PJ/ifqy5Ew
+	bUWYChTGJYjcGxx2KPN2HrqfFLjtXE23yGvctYIupu+6lg001Pu62o5R/jiokYCR5/qouFP5lj6pb
+	DgBSPHpgcQNMhyeOH2QmHTSF5DhwxmPUfrNy1BpTY+2XeTEUj5NSumvCmjP7OaWon33ScjjLLQ2zG
+	v/WZUXkzHuS5HSx8AWJf7EvmxxucT0upEW4yUxcQQW2xLL/kPOdpIqWvIjFPQ1N8qw50jK0cL1eVp
+	TAWtNnag5fRg0fYT5yJuaD4iXkIyWy39STen7xmoWn7g7cWbUk9TvpEw+KpHSduTd2DWBgfNJ+8SA
+	s41U6MeQ1FhOc4RmGhag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMTMD-0005fk-62; Mon, 21 Oct 2019 08:48:05 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1iMTNp-0006wh-Lj; Mon, 21 Oct 2019 08:49:45 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMTLm-0005QB-KK
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 08:47:41 +0000
-Received: by mail-lf1-x143.google.com with SMTP id t8so9361049lfc.13
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 21 Oct 2019 01:47:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=cogentembedded-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=QXiJynjMNN+K0FoWykKekuEj/OBAnoR2FAHWqATIrfA=;
- b=1m2lTqA9g8pR+gNDKI38Hf1YD7AHOVMKSH+qSD61rfazdteezEy9qc5uu2ptisQ9la
- 2LtDIJrwJ7X1O01IGsFjD9Q/tJKUKXCVjQmfmnHyU1gdA5IsuEbNn8xmSiwXeHIxvmk/
- 6pVLd5kq52suDJKdMlVESukd4NeWOaLnxEtoHQCsXi6XdP7Fg9uthetLEeVehsgGmwkk
- ja7ACVppObMYfmKfim6MGSHkS3TgOluieW1CYSonwzhW9/htLzCwwZtSsHf1htBxQR70
- GPCtExDc04v5gmZKf1XkxxBDsYhoYYnWBWz0PP+O7PTGn50JCdZZF3jn0h256hnPJzT7
- KjZA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=QXiJynjMNN+K0FoWykKekuEj/OBAnoR2FAHWqATIrfA=;
- b=K44H5jpDPnveTTGSyusnnZ+yrRI10od9y/FTHrMpuF8mloz2UrZ8DQ/hF/OVhz+SzR
- IGc6eM3RzIMFNjlZPpIPRgoFRyMkW5oH6cQM2qOnQVzSMfG+xf/ywitUR763Yde8gYI5
- 6p3tFs+a/5A5rF0bT9q7C5ffwFSgZXzT53URDxJK7MtV9P/8uZ8Ro/v2qq8TN7BzOz5E
- lH8SkZEr7FcW/tF5cJ2bMv3JIFUsUOeULsr5OrM4yKduxP5WljoSn+WU88cEizmWI7E1
- DauOKV14MG38HzogmvS5uYb9WGygaZ4PoHY69STQB3RsCT6IZb7VScmx+9MubkVfW3pa
- WRlg==
-X-Gm-Message-State: APjAAAUjF+Pjx/GdcBGQwH/h3dPC1vTzLUwiMkh/TEYCuMBcSFc0zBY3
- bJo6qYZ2206SLtA7ayLknXsvCg==
-X-Google-Smtp-Source: APXvYqylsk8yws60VuLL0ozqdrRuKOuNEAm0brGxK1g45riofpGFYvmXbrn9qDfFdvJfYm2OEK4gUA==
-X-Received: by 2002:ac2:4283:: with SMTP id m3mr14587900lfh.41.1571647656443; 
- Mon, 21 Oct 2019 01:47:36 -0700 (PDT)
-Received: from ?IPv6:2a00:1fa0:2d0:74aa:edd9:b20e:81b0:5b8f?
- ([2a00:1fa0:2d0:74aa:edd9:b20e:81b0:5b8f])
- by smtp.gmail.com with ESMTPSA id x76sm12649907ljb.81.2019.10.21.01.47.34
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 21 Oct 2019 01:47:35 -0700 (PDT)
-Subject: Re: [PATCH 03/21] ia64: rename ioremap_nocache to ioremap_uc
-To: Christoph Hellwig <hch@lst.de>, Arnd Bergmann <arnd@arndb.de>,
- Guo Ren <guoren@kernel.org>, Michal Simek <monstr@monstr.eu>,
- Greentime Hu <green.hu@gmail.com>, Vincent Chen <deanbo422@gmail.com>,
- Guan Xuetao <gxt@pku.edu.cn>, x86@kernel.org
-References: <20191017174554.29840-1-hch@lst.de>
- <20191017174554.29840-4-hch@lst.de>
-From: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>
-Message-ID: <915c9aaa-ea20-7c29-7ee8-5c5f68f7d123@cogentembedded.com>
-Date: Mon, 21 Oct 2019 11:47:17 +0300
-User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <20191017174554.29840-4-hch@lst.de>
-Content-Language: en-US
+ id 1iMTNb-0006w0-7G
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 08:49:32 +0000
+Received: from devnote2 (NE2965lan1.rev.em-net.ne.jp [210.141.244.193])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id F211B2067B;
+ Mon, 21 Oct 2019 08:49:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571647770;
+ bh=NpXG/RiXMN6GZ7FeOc3UodXKrK/4C1mQCqvDI2cyuRw=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=2YwstC6/R6V+ozb8ttKQ5pdLT6a8CCR5fBFZtFjcfitB5J54BBKA5xlw3SrR1Xb8t
+ f9+8MUX5OTUh0gh6ZhOVim64ZQhn69t8klw0/XFT1PdMXhHHjwaQWMM7eGQfHlk/By
+ 0vudsqwDHQDFj0oh8OSXkDgiK+TqJ+w9Y8sXGHcU=
+Date: Mon, 21 Oct 2019 17:49:26 +0900
+From: Masami Hiramatsu <mhiramat@kernel.org>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH] arm64: kprobes: Drop open-coded exception fixup
+Message-Id: <20191021174926.10992282af1c36d721a6747d@kernel.org>
+In-Reply-To: <e70f7b9de7e601b9e4a6fedad8eaf64d304b1637.1571326276.git.robin.murphy@arm.com>
+References: <e70f7b9de7e601b9e4a6fedad8eaf64d304b1637.1571326276.git.robin.murphy@arm.com>
+X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_014738_767945_9F9C4600 
-X-CRM114-Status: GOOD (  15.29  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191021_014931_280584_FFBC857F 
+X-CRM114-Status: GOOD (  21.53  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,52 +75,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- linux-ia64@vger.kernel.org, linux-parisc@vger.kernel.org,
- linux-sh@vger.kernel.org, linux-hexagon@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, linux-mips@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-m68k@lists.linux-m68k.org,
- openrisc@lists.librecores.org, linux-mtd@lists.infradead.org,
- linux-alpha@vger.kernel.org, sparclinux@vger.kernel.org,
- nios2-dev@lists.rocketboards.org, linux-riscv@lists.infradead.org,
- linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org, james.morse@arm.com,
+ mhiramat@kernel.org, will@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello!
+Hi Robin,
 
-On 17.10.2019 20:45, Christoph Hellwig wrote:
+On Thu, 17 Oct 2019 16:31:42 +0100
+Robin Murphy <robin.murphy@arm.com> wrote:
 
-> On ia64 ioremap_nocache fails if attributs don't match.  Not other
+> The short-circuit call to fixup_exception() from kprobe_fault_handler()
+> poses a problem now that the former wants to consume the fault address
+> too, since the common kprobes API offers us no way to pass it through.
+> Fortunately, however, it works out to be unnecessary:
 
-   Attributes?
+Thank you for pointing it out!
 
-> architectures does this, and we plan to get rid of ioremap_nocache.
-> So get rid of the special semantics and define ioremap_nocache in
-> terms of ioremap as no portable driver could rely on the behavior
-> anyway.
 > 
-> However x86 implements ioremap_uc with a in a similar way as the ia64
+> - uaccess instructions themselves are not probeable, so at most we
+>   should only ever expect to take a fixable fault from the pre or post
+>   handlers.
 
-    With a what?
+Right. If it is not fixable, we should handle it as a kernel bug.
+(to avoid it we can use probe_kernel_read() in kprobe handler)
 
-> version of ioremap_nocache, so implement that instead.
+> - the pre and post handler run with preemption disabled, thus for any
+>   fault they may cause, an unhandled return from kprobe_page_fault()
+>   will proceed directly to __do_kernel_fault() thanks to the
+>   faulthandler_disabled() check.
+
+OK, this is reasonable.
+
+> - __do_kernel_fault() will immediately call fixup_exception() unless
+>   we're in an EL1 instruction abort, and if we've somehow taken one of
+>   those on what we think is the middle of a uaccess routine, then the
+>   world is already very on fire.
+
+OK, this looks good to me.
+
+Reviewed-by: Masami Hiramatsu <mhiramat@kernel.org>
+
+Thank you!
+
 > 
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> Thus we can reasonably drop the call from kprobe_fault_handler() and
+> leave uaccess fixups to the regular flow.
+> 
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 > ---
->   arch/ia64/include/asm/io.h | 6 +++---
->   arch/ia64/mm/ioremap.c     | 4 ++--
->   2 files changed, 5 insertions(+), 5 deletions(-)
+>  arch/arm64/kernel/probes/kprobes.c | 7 -------
+>  1 file changed, 7 deletions(-)
 > 
-> diff --git a/arch/ia64/include/asm/io.h b/arch/ia64/include/asm/io.h
-> index 54e70c21352a..fec9df9609ed 100644
-> --- a/arch/ia64/include/asm/io.h
-> +++ b/arch/ia64/include/asm/io.h
-[...]
+> diff --git a/arch/arm64/kernel/probes/kprobes.c b/arch/arm64/kernel/probes/kprobes.c
+> index c4452827419b..422fbd5c6c55 100644
+> --- a/arch/arm64/kernel/probes/kprobes.c
+> +++ b/arch/arm64/kernel/probes/kprobes.c
+> @@ -334,13 +334,6 @@ int __kprobes kprobe_fault_handler(struct pt_regs *regs, unsigned int fsr)
+>  		 */
+>  		if (cur->fault_handler && cur->fault_handler(cur, regs, fsr))
+>  			return 1;
+> -
+> -		/*
+> -		 * In case the user-specified fault handler returned
+> -		 * zero, try to fix up.
+> -		 */
+> -		if (fixup_exception(regs))
+> -			return 1;
+>  	}
+>  	return 0;
+>  }
+> -- 
+> 2.21.0.dirty
+> 
 
-MBR, Sergei
+
+-- 
+Masami Hiramatsu <mhiramat@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
