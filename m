@@ -2,86 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B124DF69C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 22:19:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F07A6DF6A1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 22:21:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=RgnNNAxzeY76QpQ0WlUL6GYV0rllM1kv/8XHPIELWFQ=; b=XmT
-	R19N2buZUsJs8urMjKDA3cr/m5/bOlYfv9dYwZzxLk4JufDqu6N2P/IwFOO0ppXSKjYEqaCEghLhG
-	8tkWWaFsXzHYYNrpSJtkqeUqBe6N6D+hIPWrwgw+l9C9F2F8siVkxqGaLgjajp/FKMq0gAXI13w8z
-	/OzbZo95UAeIj5YomNpfesczWOrHfTUzuwetfUIqhrJbUye0tONMPBBrYHre9u732sfxwOZXFlFDy
-	Q+VNHw27hvyucC6GdyzPXodIbTAnwlB2VJH3tb+mlPHetYBvWwWeVLj33J2rbRuAyxycgPVo48A+J
-	UA5USuXvyX5/RgkwCGM57CAu26W0rqQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=l+kF0+jJtvdVc4XeY0oIau91uCOcP2j1W6kwu+uc78M=; b=puPKorMaUQTN7WtnRb2oPEBRM
+	F4vz2GcmuKbW3+f/OP8z5alb1F4UvyMFrWi+4QNopouGs0M/Te+k4GhuYZQroT5IL2B9m49aTeO46
+	oAkGHYli3vWgxDbCCa7Lk7HRydJoOp73rXQDJVY5rkXzFeSAracKpADiSSBSzuZWH1Ku1s0KQcSXe
+	wT0EH7FEXlVkVsJcroZfEKXy56CSqoA2YeuSQeIwpcOZ7icPkSdodAVaTU5FBn+2YOX5UhI3c0m+K
+	0kXpQJ32YFeYuO0TlCEjSbiQ1BVvmlfJELtTonnlwTvrrrT5dJ2ADLCy6IFyKAOzHWqLMMMj+tHSU
+	2ZF4cZCHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMe8x-0007qL-HP; Mon, 21 Oct 2019 20:19:07 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMe8o-0007pY-Nd
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 20:18:59 +0000
-Received: by mail-io1-xd41.google.com with SMTP id c11so8467942iom.10
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 21 Oct 2019 13:18:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=41sPlzPXwgbu7RVNQLT0Hyb+2XAax4ZfqY6sIsxCZBg=;
- b=f+RcRdC/dfUjDR9i9fcjXRiSoSRTEbKDszo1gkd/miZbOitkyIjk7ZV4IhZrO123Rx
- hs7sFOhOr85Gg78P83gcbPfOdAXHFDlfb5dtp1/tMbgtVpk2YB8Ht3ToJPmGREksWyQq
- RPrLjVv8uqIaTZfzdfZPBXlie0Bx/b3RPKXWZD2+Z604NtIUrGx7IvFsBWMjqVK2UHP4
- 3k4e3rzI+laHqvvDVxxyfltTe7L8W1r6doLaIyjcjXbODkseCWI6e5AMx0qewrcHZUcH
- YdTgFGbDyM/6QWw9RSAFG2gwTg8Oen63WuyMfBJ3H+JzgrNaNm2J0UF/l/CeopuSaNkb
- 1JJQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=41sPlzPXwgbu7RVNQLT0Hyb+2XAax4ZfqY6sIsxCZBg=;
- b=GJKKqDbEVHC3GBDm4nA6vVRJm0eds/JOl6jo8NG5j0434yxX2b9Zt3s+rh5EiLTYmY
- WV9XnK1N7PPNFgzH+ozBbu6h7agYtVi6Cuqwm7ZnehrtVcx783SXMcGM6jvuFr405hq/
- roWzF4AYxyzHHzOckICKmzW53E8gdt5p9JRfWa0AecTHm9E+jTXTJn6wpAc6/4ZdZg6i
- sMNSzJdSPwyyUAodF4Wnfg8gX5PkLWlJ1fRq1BzzEfBYXD6Iql0yGNGSjVoToWeqsA4F
- ox4bAByMidjCJlLx5dFeER9TQTtTNP0ItMvSGdtg+o4pJHoN6kTTk7Fcc5GWfV85AoDF
- cwtQ==
-X-Gm-Message-State: APjAAAV3h6WynvusFJYuyQbujiFraCZC6ykpF66k9lIzXgPMemPl+aaG
- BPHdRmsr9X/1HXqj4FP8nMs=
-X-Google-Smtp-Source: APXvYqzMp1w4t60E66YkFH488jk3/NEx6cWKPuFdmuiQW273dcyKd9XO/qIMhz069BX4xQZIHeFnIQ==
-X-Received: by 2002:a6b:d812:: with SMTP id y18mr12058iob.151.1571689137744;
- Mon, 21 Oct 2019 13:18:57 -0700 (PDT)
-Received: from cs-dulles.cs.umn.edu (cs-dulles.cs.umn.edu. [128.101.35.54])
- by smtp.googlemail.com with ESMTPSA id b7sm4689726iod.42.2019.10.21.13.18.56
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 21 Oct 2019 13:18:57 -0700 (PDT)
-From: Navid Emamdoost <navid.emamdoost@gmail.com>
-To: 
-Subject: [PATCH] clocksource/drivers: Fix memory leak in ttc_setup_clockevent
-Date: Mon, 21 Oct 2019 15:18:47 -0500
-Message-Id: <20191021201848.4231-1-navid.emamdoost@gmail.com>
-X-Mailer: git-send-email 2.17.1
+	id 1iMeAo-0000xr-1p; Mon, 21 Oct 2019 20:21:02 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iMeAY-0000x0-1x
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 20:20:49 +0000
+Received: from localhost (x4dbffd67.dyn.telefonica.de [77.191.253.103])
+ by pokefinder.org (Postfix) with ESMTPSA id A85552C0076;
+ Mon, 21 Oct 2019 22:20:44 +0200 (CEST)
+Date: Mon, 21 Oct 2019 22:20:44 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Kamel Bouhara <kamel.bouhara@bootlin.com>
+Subject: Re: [PATCH 2/4] i2c: at91: implement i2c bus recovery
+Message-ID: <20191021202044.GB3607@kunai>
+References: <20191002144658.7718-1-kamel.bouhara@bootlin.com>
+ <20191002144658.7718-3-kamel.bouhara@bootlin.com>
+MIME-Version: 1.0
+In-Reply-To: <20191002144658.7718-3-kamel.bouhara@bootlin.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_131858_766330_DE266270 
-X-CRM114-Status: GOOD (  10.55  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191021_132046_778823_60C3D2A2 
+X-CRM114-Status: UNSURE (   9.66  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (navid.emamdoost[at]gmail.com)
+ no trust [88.99.104.3 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,43 +60,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel Lezcano <daniel.lezcano@linaro.org>, kjlu@umn.edu,
- Michal Simek <michal.simek@xilinx.com>, linux-kernel@vger.kernel.org,
- emamd001@umn.edu, smccaman@umn.edu, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org,
- Navid Emamdoost <navid.emamdoost@gmail.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ linux-kernel@vger.kernel.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>, linux-i2c@vger.kernel.org,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7881249811669924041=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In the impelementation of ttc_setup_clockevent() the allocated memory
-for ttcce should be released if clk_notifier_register() fails.
 
-Fixes: 70504f311d4b ("clocksource/drivers/cadence_ttc: Convert init function to return error")
-Signed-off-by: Navid Emamdoost <navid.emamdoost@gmail.com>
----
- drivers/clocksource/timer-cadence-ttc.c | 1 +
- 1 file changed, 1 insertion(+)
+--===============7881249811669924041==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="O5XBE6gyVG5Rl6Rj"
+Content-Disposition: inline
 
-diff --git a/drivers/clocksource/timer-cadence-ttc.c b/drivers/clocksource/timer-cadence-ttc.c
-index 88fe2e9ba9a3..b40fc6581389 100644
---- a/drivers/clocksource/timer-cadence-ttc.c
-+++ b/drivers/clocksource/timer-cadence-ttc.c
-@@ -424,6 +424,7 @@ static int __init ttc_setup_clockevent(struct clk *clk,
- 				    &ttcce->ttc.clk_rate_change_nb);
- 	if (err) {
- 		pr_warn("Unable to register clock notifier.\n");
-+		kfree(ttcce);
- 		return err;
- 	}
- 
--- 
-2.17.1
 
+--O5XBE6gyVG5Rl6Rj
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Wed, Oct 02, 2019 at 04:46:56PM +0200, Kamel Bouhara wrote:
+> Implement i2c bus recovery when slaves devices might hold SDA low.
+> In this case re-assign SCL/SDA to gpios and issue 9 dummy clock pulses
+> until the slave release SDA.
+>=20
+> Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
+
+Setting up the bus_recovery looks OK. However, I don't see any call to
+i2c_recover_bus(), so the bus_recovery is never used. Did you test this
+and see an effect?
+
+Also, I think we should merge this patch "[PATCH v3] i2c: at91: Send bus
+clear command if SCL or SDA is down" into this series. The crucial thing
+for both is when to apply the recovery (at the beginning of a
+transfer!). The rest is "just" that some HW needs a bus_recovery_info
+for pinctrl/GPIO handling (from this patch), while other HW needs a
+bus_recovery_info with a custom recover_bus callback.
+
+Opinions?
+
+
+--O5XBE6gyVG5Rl6Rj
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl2uExwACgkQFA3kzBSg
+KbYuXQ//eD/q+8apdlyXS/GXAnuUdAWmgKPeAuIOLg3HVjQ9WJ9MRaCMy2l6Luxy
+c8qEFZH5jKzOlqfppnV8t6ff2psZ9uyd48gQdkSKuIGYJNi0WJacBFwL9/2RJUW5
+4Y2LnEBtZ3Y6GdSlipjUsUbxZ0/HJPsbnof5Fx89Qewirua0oSX6m+T13vHlnQnu
+LFL5Y+0sbXxQLjsGLIM9nMqJcvedb9yrK6tOLHhfUD6p5RPWImi9LThJCo+Zx5vt
+GbrpYaqqF4sOz2a//K4sqqJky3l/qBlALjGKaFQfgG4f6Fv8GTSkJYchIViV8wM3
+v7hurVSrejGx0wQF9tlOKLgYeHlUHaEa1JCT+tCx8/Za6Tznej/dwzRcXNdYuF0M
+utpronoEy2pP1KRfmBImI+kbKmmmiwYbscFL/ZihCHdFrrKNw1cBSGZmlL3GPjPb
+RC4ltTteew9D6mQkBmF8jqLvtSM3UFkblqq5vtfKL8Ol/GE2f175tULtpySZiNYQ
+/yelkPgCalYOAWgGQE3YmR7uO4X37U0kebPz47KUaXQjJib4q7AiX3bLzB8eiyzb
+l/UQoR0ZTIFrnBXh5EjAe6MV6ZqlyIIzUTwR18wlN39tcU7dk+htQ7l7K3brGDqG
+iF4Erc1yMFWUMJUTQmgFoV8oSvYE1BxMJVURE5b/Wlv6vk4/U8g=
+=c7Kn
+-----END PGP SIGNATURE-----
+
+--O5XBE6gyVG5Rl6Rj--
+
+
+--===============7881249811669924041==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7881249811669924041==--
+
