@@ -2,64 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4176DF7A3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 23:46:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9176DF7A5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 23:46:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=fu4pOJADTVmEmYmQkc1Dc4ihpsy+WBHnrA3eBeAX/bg=; b=CrSMHQgKV68y0n
-	mHup6JwrhPTsZ/3fRKEfknriTjR8w/sT/sWFuhpRus13kf0LGCV1dMCva16iDzv9XSahQncVOvIKv
-	FMdcG2duJx0X4+rDqd14aUajLsMskwyRhRUQft+T7ulbdtK0J5DIAoufW/V6FJEuZCeju9LiXtOdN
-	Al/1llR1Va224Igb8Ai6gLkqF5XDIZVb0+VA1MEnyqq7V9EgMOEp/Q2J1BWhCCGZelAeWk+rz7Glo
-	5eRz/Uc0IWgH7jVVZ/Vheu90yrJBXRe0sM6QvFgRukGfOuKxwNzXMOwtTdAAPk6ja3bQNbJ9XsIZc
-	bgvaCIdnGl/7C1x8dKXg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sFxXK3AeOa8r5VisaZ7lkZNlEGAf1T+T/EJTtQJQZUw=; b=nAayek/BCZnINt
+	W0gDIUhoHzsVsP+JabMyyv2J0FNJXq8UNQjAf5W9XdV3kKVlYTcS0XUlZJ0MbKW55XpMRbWEfDWBz
+	4MsuV8wiemOw6Z7CkcAQLQe+PRyjU9mitgWoiQ8WiC9AEY/VQsCoudN0ztcClJ8azf9VR9mbHgno4
+	Qeg4q16FrSo7A2evQAS52V/oexnNvn/MaS/9Xehpv8csQ4RQiuaIan9MGL74O868nYUb6T6s7EAGF
+	5l7Qz6ayqbh7FcmwKdtjdVgzQ0Uxc41hp/Zs67Ba7EJX/JsqnHvYwpYCSMkemmxNEvK65s6g2oB2O
+	JJJPaXJ8YI8VqUimvB+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMfVB-0000Ck-Aq; Mon, 21 Oct 2019 21:46:09 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1iMfVX-0000X9-69; Mon, 21 Oct 2019 21:46:31 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMfUw-0000C7-GQ; Mon, 21 Oct 2019 21:45:56 +0000
-Received: by mail-ot1-f67.google.com with SMTP id 21so12345581otj.11;
- Mon, 21 Oct 2019 14:45:53 -0700 (PDT)
+ id 1iMfUy-0000CL-Bq; Mon, 21 Oct 2019 21:45:57 +0000
+Received: by mail-oi1-f196.google.com with SMTP id k20so12416870oih.3;
+ Mon, 21 Oct 2019 14:45:56 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=nqe5QILtIpNsEaGhkK4nGkXs8zLkefJgCA+oa+2s7ok=;
- b=db9KTeYkpaYOOjZMgE35pgtZ2xKfjPyYyi819zk+e31lUGvdoPYUABDmCcMg9ZCdQv
- oMw3u1ARKoFYi/t13JCiUu++uBUMQ1RZcYoSfcX4HuvWJm3wNk/bUK3n083UNoGzYUY5
- +DcsHUqnQYaMKcZtqIrX6+G40IvrJ5p54a+olZL9ZwOENy5U10VU4pzP+RSYrjnTQFSv
- 4aMdXl2snQ2zcPM3ZoSA/MZEofZOluh19/j//hAfQbrrtuaFZvBazgrAatl9X4y2XwLU
- mAA9C3tIK56HmV6ZlBDcvnpWTXxXrvB7/zXdmWLRfRg38Q+p6Mja1ybJs4jcoFtQHjG7
- XH+Q==
-X-Gm-Message-State: APjAAAWin4AyFyvNmQGDPktfeokkjWclpuZ9GcGJ2lZ7jHZsH1PAnTvW
- liJr8DM5vqnQU0iCjZYt3w==
-X-Google-Smtp-Source: APXvYqxCs8yabMuTaUbUxDWWtS2Wplp/U09Sf75zVuQx5s+Q4uVctXMoxLgtzYEKbav8DT5Bobt0qg==
-X-Received: by 2002:a9d:3df7:: with SMTP id l110mr40031otc.245.1571694353132; 
- Mon, 21 Oct 2019 14:45:53 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=nG1jrqiVrLvARMweYNsyPG+j+EFZbDQxRJlgrVpfL4I=;
+ b=VtycW8IzP8a16ec088v9Wa5wOzPnIqXpPHvZq1QwM6EuCXm10+KxTth0leun8lQPM8
+ KLWjGN3HqMoUJAJh+toSfEx6XwQ0hXN92YJplM4PCJke62yFBUEOkNKAEIdORImon/+/
+ QMcq1AXsIRJrorpQIBWza0/E3mv8RqgP+bV/Pjl2C/PWNcwrNK0TTgd1w0hgTcaFZFD8
+ M4nhXTPGNgbwc0P9iPpldP4+Ipm5TBjOSky2F95PIZ+FbmpqeVWtSOyS5jZXB7A38Chk
+ rxV82myZFOEjVnJgrqn0+Z4uZOytABHE9zZChpIHp9JF8YQuyRWAZQTCsVpGssAyOS5V
+ LHOw==
+X-Gm-Message-State: APjAAAW/rpJR5O7X7moJ4nzpzPrD40lDAObYtZFvS/sX/qndJsKttOO0
+ IGrF3Si9IoemnQyQgpli8A==
+X-Google-Smtp-Source: APXvYqz194LkjFFcxBO2leMnWf7q2qSETO24ZDGsm0zsCS7yjuJ9BThF7g7KveiT7DMyfLh8WcF/xA==
+X-Received: by 2002:aca:40b:: with SMTP id 11mr191900oie.59.1571694355381;
+ Mon, 21 Oct 2019 14:45:55 -0700 (PDT)
 Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id u130sm4122676oib.56.2019.10.21.14.45.51
+ by smtp.googlemail.com with ESMTPSA id u130sm4122676oib.56.2019.10.21.14.45.53
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 21 Oct 2019 14:45:52 -0700 (PDT)
+ Mon, 21 Oct 2019 14:45:54 -0700 (PDT)
 From: Rob Herring <robh@kernel.org>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH 0/6] drm: Support CMA per allocation kernel mappings
-Date: Mon, 21 Oct 2019 16:45:44 -0500
-Message-Id: <20191021214550.1461-1-robh@kernel.org>
+Subject: [PATCH 1/6] drm/kirin: Use DRM_GEM_CMA_VMAP_DRIVER_OPS
+Date: Mon, 21 Oct 2019 16:45:45 -0500
+Message-Id: <20191021214550.1461-2-robh@kernel.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20191021214550.1461-1-robh@kernel.org>
+References: <20191021214550.1461-1-robh@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_144554_544317_B8C090D6 
-X-CRM114-Status: GOOD (  14.65  )
+X-CRM114-CacheID: sfid-20191021_144556_401901_241DAF68 
+X-CRM114-Status: GOOD (  11.45  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.196 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -68,11 +72,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.67 listed in wl.mailspike.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -113,74 +114,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series adds support for CMA/DMA users to skip kernel mappings for
-GEM allocations. The DMA API only guarantees a kernel mapping at
-allocation time. Creating mappings with vmap() after allocation may or
-may not work as not all allocations have a struct page. As virtual
-memory space is limited on 32-bit systems some drivers will skip kernel
-mappings when possible. This prevents those drivers from using CMA
-helpers and the generic fbdev emulation which results in a lot of
-duplicated code.
+drm_gem_cma_dumb_create_internal() is not supposed to be used for
+.dumb_create directly. drm_gem_cma_dumb_create() should be used instead.
+If we do that, we might as well convert over to using
+DRM_GEM_CMA_VMAP_DRIVER_OPS instead.
 
-In order to distinguish between kernel and userspace allocations,
-a new flag, DRM_MODE_DUMB_KERNEL_MAP, for drm_mode_create_dumb() is
-introduced. This allows drivers to override the default behavior for
-CMA helpers of always creating a kernel mapping.
+Cc: Xinliang Liu <z.liuxinliang@hisilicon.com>
+Cc: Rongrong Zou <zourongrong@gmail.com>
+Cc: Xinwei Kong <kong.kongxinwei@hisilicon.com>
+Cc: Chen Feng <puck.chen@hisilicon.com>
+Cc: David Airlie <airlied@linux.ie>
+Cc: Daniel Vetter <daniel@ffwll.ch>
+Signed-off-by: Rob Herring <robh@kernel.org>
+---
+ drivers/gpu/drm/hisilicon/kirin/kirin_drm_ade.c | 11 +----------
+ 1 file changed, 1 insertion(+), 10 deletions(-)
 
-Mediatek is converted to CMA helpers and Rockchip is converted to generic
-fbdev support. I also have patches to convert Rockchip to CMA and shmem
-helpers, but they need a bit more work. Exynos can also probably be
-converted to use CMA helpers.
-
-Compile tested only. I did test fbdev on Rockchip, but the h/w I have
-has an IOMMU, so the CMA code path doesn't get tested.
-
-Rob
-
-Rob Herring (6):
-  drm/kirin: Use DRM_GEM_CMA_VMAP_DRIVER_OPS
-  drm: Introduce DRM_MODE_DUMB_KERNEL_MAP flag
-  drm/cma-helper: Use the dma_*_attr API variant
-  drm/cma-helper: Support DRM_MODE_DUMB_KERNEL_MAP flag
-  drm/mediatek: Convert to use CMA helpers
-  drm/rockchip: Convert to use generic fbdev emulation
-
- .../gpu/drm/arm/display/komeda/komeda_kms.c   |   1 +
- drivers/gpu/drm/arm/malidp_drv.c              |   1 +
- drivers/gpu/drm/drm_client.c                  |   1 +
- drivers/gpu/drm/drm_dumb_buffers.c            |   5 +-
- drivers/gpu/drm/drm_gem_cma_helper.c          |  68 +++--
- .../gpu/drm/hisilicon/kirin/kirin_drm_ade.c   |  11 +-
- drivers/gpu/drm/mediatek/Makefile             |   1 -
- drivers/gpu/drm/mediatek/mtk_drm_crtc.c       |   2 +-
- drivers/gpu/drm/mediatek/mtk_drm_drv.c        |  28 +-
- drivers/gpu/drm/mediatek/mtk_drm_fb.c         |   1 -
- drivers/gpu/drm/mediatek/mtk_drm_gem.c        | 289 ------------------
- drivers/gpu/drm/mediatek/mtk_drm_gem.h        |  51 ----
- drivers/gpu/drm/mediatek/mtk_drm_plane.c      |   7 +-
- drivers/gpu/drm/meson/meson_drv.c             |   1 +
- drivers/gpu/drm/rcar-du/rcar_du_kms.c         |   1 +
- drivers/gpu/drm/rockchip/Makefile             |   1 -
- drivers/gpu/drm/rockchip/rockchip_drm_drv.c   |  10 +-
- drivers/gpu/drm/rockchip/rockchip_drm_drv.h   |   2 -
- drivers/gpu/drm/rockchip/rockchip_drm_fb.c    |  14 -
- drivers/gpu/drm/rockchip/rockchip_drm_fb.h    |   6 -
- drivers/gpu/drm/rockchip/rockchip_drm_fbdev.c | 170 -----------
- drivers/gpu/drm/rockchip/rockchip_drm_fbdev.h |  24 --
- drivers/gpu/drm/rockchip/rockchip_drm_gem.c   |   6 +-
- drivers/gpu/drm/rockchip/rockchip_drm_gem.h   |   4 -
- drivers/gpu/drm/stm/drv.c                     |   1 +
- drivers/gpu/drm/sun4i/sun4i_drv.c             |   1 +
- include/drm/drm_gem_cma_helper.h              |   1 +
- include/uapi/drm/drm_mode.h                   |   2 +
- 28 files changed, 78 insertions(+), 632 deletions(-)
- delete mode 100644 drivers/gpu/drm/mediatek/mtk_drm_gem.c
- delete mode 100644 drivers/gpu/drm/mediatek/mtk_drm_gem.h
- delete mode 100644 drivers/gpu/drm/rockchip/rockchip_drm_fbdev.c
- delete mode 100644 drivers/gpu/drm/rockchip/rockchip_drm_fbdev.h
-
---
+diff --git a/drivers/gpu/drm/hisilicon/kirin/kirin_drm_ade.c b/drivers/gpu/drm/hisilicon/kirin/kirin_drm_ade.c
+index 73cd28a6ea07..490537a1d035 100644
+--- a/drivers/gpu/drm/hisilicon/kirin/kirin_drm_ade.c
++++ b/drivers/gpu/drm/hisilicon/kirin/kirin_drm_ade.c
+@@ -941,16 +941,7 @@ DEFINE_DRM_GEM_CMA_FOPS(ade_fops);
+ static struct drm_driver ade_driver = {
+ 	.driver_features = DRIVER_GEM | DRIVER_MODESET | DRIVER_ATOMIC,
+ 	.fops = &ade_fops,
+-	.gem_free_object_unlocked = drm_gem_cma_free_object,
+-	.gem_vm_ops = &drm_gem_cma_vm_ops,
+-	.dumb_create = drm_gem_cma_dumb_create_internal,
+-	.prime_handle_to_fd	= drm_gem_prime_handle_to_fd,
+-	.prime_fd_to_handle	= drm_gem_prime_fd_to_handle,
+-	.gem_prime_get_sg_table = drm_gem_cma_prime_get_sg_table,
+-	.gem_prime_import_sg_table = drm_gem_cma_prime_import_sg_table,
+-	.gem_prime_vmap = drm_gem_cma_prime_vmap,
+-	.gem_prime_vunmap = drm_gem_cma_prime_vunmap,
+-	.gem_prime_mmap = drm_gem_cma_prime_mmap,
++	DRM_GEM_CMA_VMAP_DRIVER_OPS,
+ 
+ 	.name = "kirin",
+ 	.desc = "Hisilicon Kirin620 SoC DRM Driver",
+-- 
 2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
