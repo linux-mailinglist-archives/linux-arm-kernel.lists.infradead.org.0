@@ -2,83 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BD8BDEC22
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 14:26:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4929DEC36
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 14:29:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JnC5osC7/GpfZV4FTgg0HXi73fs5VErlx8I7OfcmxAw=; b=fxDmTsm5slLtm/
-	kvXtz+oyIRc3Jt8UgeL+Bk1YEct95zVlqdGDjNpkYEvHF6vuEwxmyZp6EF9x6B8AP3a2EzAktW3u0
-	FuPXNJjkgtpf+DpZMyC8pZfRDgw5KWmSp7vEmZRF9emgsmLunwthGFCl3pWAp9AQSBXkibNrQNQaw
-	K5Z1Hnl9tc0zBBtMH4NqR9cp+udfE8DAUD8sbKNahZQp8uzBPOpO/IWFHviVtg/vXy3JNZk7ji57X
-	63Ucu1T+AAmlv1fbC/rzMZ4oJTzFik1WBjJFDf0pU0a6G6QnpndpUuSTTFPPZ2y9jAhhftNBd69at
-	TlSPysNqBE36ceT/HV+w==;
+	List-Owner; bh=W2YQKXmOpB5zDlL+QZAHrGHehpyQmnwOF/p3dUbKLPE=; b=f0e+Vrzme4uKG8
+	GyIAdshBhIpjklZPVSLVF45mOre8C8sqrB5wgCt/21xJY4P5PJSmcCOWW3W9iglpb4D79XBQqnWEV
+	jORRpMpFPzOfecxmbCVfrvyAQ66b0a+WjAGNoxOwb3AJ+UzYDTYtxqkddS4WtqPOh2bWMD9UtHjS9
+	ojjU3qyPoTIpyaUeZddif49Scd3wVr8Ebk4jfxrafeaIeW7mLClLmR2RsUwuUm63tUgBbKSIOW46d
+	IaGS155FlOrbZzTMAgxut6NCJRr2bFGdMG15AzdqKU4c4lzNPnmDn+AOFXxLPMEr0qB96gP89+J43
+	Nhw16J6RvCWYNeJk8jFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMWlP-0002hN-49; Mon, 21 Oct 2019 12:26:19 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iMWod-0003MX-9K; Mon, 21 Oct 2019 12:29:39 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMWlG-0002h4-Nt
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 12:26:12 +0000
-Received: by mail-wr1-x441.google.com with SMTP id v9so2495760wrq.5
+ id 1iMWoS-0003Lv-MD
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 12:29:30 +0000
+Received: by mail-wm1-x343.google.com with SMTP id r19so13138310wmh.2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 21 Oct 2019 05:26:10 -0700 (PDT)
+ Mon, 21 Oct 2019 05:29:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=qHVBYXsOO6hKuBWHsZEA4hqDK5PM7Cy9mG1hG95G+Fo=;
- b=YzSgG/7cGg5JlIO32eJye07LN/sVpd2NLEKr455bPImBsMOgQeP7sD0kkGc330R5hV
- jBwtzVRPQ3GWUGUNAxtaFO1uDNKdwUHhj00jIcbKxdjIQevX4RoKWf8JMqt9v7DtQyMF
- PTnrV8GfhzXM2ivArGXzKOXgctwP+cwNFvDxqvwJO/NLmknme0vvhaL0aFmv8730fsDk
- +Gi0UjX2OvA3cUOWlqTTeK3vADkdRv60eWE+mWp5QIKeIweJebdcmbU28oQRnvPVCIMq
- cid3PRPyq8uIjntF5zNf9alIUKoRszqZpdnVOFR6qjhcHfPyzCH3ndKGZFm/TtAFP+25
- UCeA==
+ bh=0Bp8/Rt3sh+Dp54MmRulppkSlI3E35h5lLEu1NL/66s=;
+ b=fg+EZ8rR6zQ3vBZkhEVTMSJIkRWVW81aPPY4whM0f85iUyAYYOdFB/Zlwa2IAdEeCe
+ ab0iT+Taos9nYLyyrI3j3p3A269hUMedsQAmi/WkWVNLNbF+ovtsmMOFJdM7oPG0kX44
+ HoLGCvc36n6D1UzBl1e4+EVcvtdF82Kic5pDSs7TKv+UWhax298piQMnJAKjdhPSNpNt
+ u1yVwqWGzJxwNRSARVsdpIihgIJd6biiBL0XhfgL0Q6ofRhTIRPEt34P7v1GrImyAAPD
+ IHEx0dd7OIBt7XB3pH05mvDopQ1vK3+bFG1NQr7+IO2/IUFlfHjo7NcDyJ1pkgSz+NDN
+ RZ+A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=qHVBYXsOO6hKuBWHsZEA4hqDK5PM7Cy9mG1hG95G+Fo=;
- b=o99vEDFeipZd9d4NKIx+kW9qlIj1qpLiPgg1pCNpzUnu2LdVhm6Yn6dRLAGZlca/y6
- PbuZ0SywTA0S41jSR4E841eiN2h/nSaR6/caESosrMOqSLgLMm0qsG3RfeWCEcqhOeeP
- wcIY+T9+X5Kxq/3Y4mda4ZLj33ZMdC4oj/ezl4rnKNpItwpzy+nIupfCgSVVM1N+OQQm
- fujochRIRJfulcXI3Nut2mjKq+6Bn6c7gghD2/FpRF/R1XN5V55hvRQBxxbJh9xmq0DI
- J6SqTPQbJ6DU1iMVIyzmfl/r/qk5jy4rdhGZuYyesZfSr+56S70VsUBd4NvX5t2fqgWg
- RvaA==
-X-Gm-Message-State: APjAAAVF/3xl1lePBkx+8T5Jp0gwiwctCueSWRzM7d1g/kYXD1YIXepi
- MZ4xvdHp27rLYyo7J5S1AslcBw==
-X-Google-Smtp-Source: APXvYqznawhtnnwpuBdog7pKe5gZ4rlqUbhqGD143d++D+Qqgj93ohS2ObHSBqr409thEWRRKDYxtw==
-X-Received: by 2002:adf:e64f:: with SMTP id b15mr6699855wrn.372.1571660769331; 
- Mon, 21 Oct 2019 05:26:09 -0700 (PDT)
+ bh=0Bp8/Rt3sh+Dp54MmRulppkSlI3E35h5lLEu1NL/66s=;
+ b=S6a/lz7t0lCB3bgmeyVVwefAkZvA6x3NGMdtAqTCl4z1TVHtVFSrqsBRGhBhqfOquA
+ 8Qoifhk/SADmOtX6l5aFEvo6RRMofA06ELPKXeUBcZGRb0KDvr8hiYD9t8eAWAF7FyLt
+ ThH12Y1KRCrX2Ih76dHvU0FIc32fb57lGAZ7Jxkz96iNO/wWfR8GEEZs0ri7snUB4sov
+ lEduOA0IFlc48o2qduNN3UfZ9dDjCDqVluzbbjyQrmvH+kzRJxaljC65fWsS9grfU+Hw
+ jtRPBrPHV4FslY0embWPZFL63My/k5X7USqVSqZWNRPWxrSZWdZsxHawrrkYBH3sbykd
+ MDAA==
+X-Gm-Message-State: APjAAAXcGp9elpIFc84xyWgM2c03WF2osJR+rAProfNW1XCa7ZLkULcJ
+ JHNW/3xLWf2EaztsCTpBL1Q3ug==
+X-Google-Smtp-Source: APXvYqzINJ2+DBcQWI5LwLEFqSjji3k+FiqUhAU7wr8KOGRZc9tTARTg8q11xDs6VViDPVgwQwaOHA==
+X-Received: by 2002:a1c:9894:: with SMTP id a142mr18467038wme.70.1571660966800; 
+ Mon, 21 Oct 2019 05:29:26 -0700 (PDT)
 Received: from holly.lan (cpc141214-aztw34-2-0-cust773.18-1.cable.virginm.net.
  [86.9.19.6])
- by smtp.gmail.com with ESMTPSA id z1sm14789929wrn.57.2019.10.21.05.26.08
+ by smtp.gmail.com with ESMTPSA id p20sm9987618wmc.23.2019.10.21.05.29.25
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 21 Oct 2019 05:26:08 -0700 (PDT)
-Date: Mon, 21 Oct 2019 13:26:06 +0100
+ Mon, 21 Oct 2019 05:29:26 -0700 (PDT)
+Date: Mon, 21 Oct 2019 13:29:24 +0100
 From: Daniel Thompson <daniel.thompson@linaro.org>
 To: Lee Jones <lee.jones@linaro.org>
-Subject: Re: [PATCH v2 3/9] mfd: cs5535-mfd: Request shared IO regions
- centrally
-Message-ID: <20191021122606.5q22j6wtyslwljco@holly.lan>
+Subject: Re: [PATCH v2 4/9] mfd: cs5535-mfd: Register clients using their own
+ dedicated MFD cell entries
+Message-ID: <20191021122924.qmaio5oe5j66tfdj@holly.lan>
 References: <20191021105822.20271-1-lee.jones@linaro.org>
- <20191021105822.20271-4-lee.jones@linaro.org>
+ <20191021105822.20271-5-lee.jones@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191021105822.20271-4-lee.jones@linaro.org>
+In-Reply-To: <20191021105822.20271-5-lee.jones@linaro.org>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_052610_783402_03ADA141 
-X-CRM114-Status: GOOD (  22.26  )
+X-CRM114-CacheID: sfid-20191021_052928_732494_ACF8330A 
+X-CRM114-Status: GOOD (  18.31  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -108,163 +108,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 21, 2019 at 11:58:16AM +0100, Lee Jones wrote:
-> Prior to this patch, IO regions were requested via an MFD subsytem-level
-> .enable() call-back and similarly released by a .disable() call-back.
-> Double requests/releases were avoided by a centrally handled usage count
-> mechanism.
+On Mon, Oct 21, 2019 at 11:58:17AM +0100, Lee Jones wrote:
+> CS5535 is the only user of mfd_clone_cell().  It makes more sense to
+> register child devices in the traditional way and remove the quite
+> bespoke mfd_clone_cell() call from the MFD API.
 > 
-> This complexity can all be avoided by handling IO regions only once during
-> .probe() and .remove() of the parent device.  Since this is the only
-> legitimate user of the aforementioned usage count mechanism, this patch
-> will allow it to be removed from MFD core in subsequent steps.
-> 
-> Suggested-by: Daniel Thompson <daniel.thompson@linaro.org>
 > Signed-off-by: Lee Jones <lee.jones@linaro.org>
 > ---
->  drivers/mfd/cs5535-mfd.c | 72 +++++++++++++++++-----------------------
->  1 file changed, 30 insertions(+), 42 deletions(-)
+>  drivers/mfd/cs5535-mfd.c | 24 ++++++++++++++++++------
+>  1 file changed, 18 insertions(+), 6 deletions(-)
 > 
 > diff --git a/drivers/mfd/cs5535-mfd.c b/drivers/mfd/cs5535-mfd.c
-> index 9ce6bbcdbda1..053e33447808 100644
+> index 053e33447808..96a99ac13384 100644
 > --- a/drivers/mfd/cs5535-mfd.c
 > +++ b/drivers/mfd/cs5535-mfd.c
-> @@ -27,38 +27,6 @@ enum cs5535_mfd_bars {
->  	NR_BARS,
->  };
->  
-> -static int cs5535_mfd_res_enable(struct platform_device *pdev)
-> -{
-> -	struct resource *res;
-> -
-> -	res = platform_get_resource(pdev, IORESOURCE_IO, 0);
-> -	if (!res) {
-> -		dev_err(&pdev->dev, "can't fetch device resource info\n");
-> -		return -EIO;
-> -	}
-> -
-> -	if (!request_region(res->start, resource_size(res), DRV_NAME)) {
-> -		dev_err(&pdev->dev, "can't request region\n");
-> -		return -EIO;
-> -	}
-> -
-> -	return 0;
-> -}
-> -
-> -static int cs5535_mfd_res_disable(struct platform_device *pdev)
-> -{
-> -	struct resource *res;
-> -
-> -	res = platform_get_resource(pdev, IORESOURCE_IO, 0);
-> -	if (!res) {
-> -		dev_err(&pdev->dev, "can't fetch device resource info\n");
-> -		return -EIO;
-> -	}
-> -
-> -	release_region(res->start, resource_size(res));
-> -	return 0;
-> -}
-> -
->  static struct resource cs5535_mfd_resources[NR_BARS];
->  
->  static struct mfd_cell cs5535_mfd_cells[] = {
-> @@ -81,17 +49,11 @@ static struct mfd_cell cs5535_mfd_cells[] = {
->  		.name = "cs5535-pms",
->  		.num_resources = 1,
->  		.resources = &cs5535_mfd_resources[PMS_BAR],
-> -
-> -		.enable = cs5535_mfd_res_enable,
-> -		.disable = cs5535_mfd_res_disable,
->  	},
->  	[ACPI_BAR] = {
->  		.name = "cs5535-acpi",
->  		.num_resources = 1,
->  		.resources = &cs5535_mfd_resources[ACPI_BAR],
-> -
-> -		.enable = cs5535_mfd_res_enable,
-> -		.disable = cs5535_mfd_res_disable,
+> @@ -57,9 +57,17 @@ static struct mfd_cell cs5535_mfd_cells[] = {
 >  	},
 >  };
 >  
-> @@ -109,7 +71,6 @@ static int cs5535_mfd_probe(struct pci_dev *pdev,
->  	if (err)
->  		return err;
+> -static const char *olpc_acpi_clones[] = {
+> -	"olpc-xo1-pm-acpi",
+> -	"olpc-xo1-sci-acpi"
+> +static struct mfd_cell cs5535_olpc_mfd_cells[] = {
+> +	{
+> +		.name = "olpc-xo1-pm-acpi",
+> +		.num_resources = 1,
+> +		.resources = &cs5535_mfd_resources[ACPI_BAR],
+> +	},
+> +	{
+> +		.name = "olpc-xo1-sci-acpi",
+> +		.num_resources = 1,
+> +		.resources = &cs5535_mfd_resources[ACPI_BAR],
+> +	},
+
+Is the cs5535-acpi cell actually used by anything? I think it was only
+ever used as a template and can be removed; I didn't spot any driver that
+uses it.
+
+PS If the cell were removed then my review comment on the previous patch
+   becomes moot ;-)
+
+
+>  };
 >  
-> -	/* fill in IO range for each cell; subdrivers handle the region */
->  	for (i = 0; i < NR_BARS; i++) {
->  		struct mfd_cell *cell = &cs5535_mfd_cells[i];
->  		struct resource *r = &cs5535_mfd_resources[i];
-> @@ -122,22 +83,47 @@ static int cs5535_mfd_probe(struct pci_dev *pdev,
->  		r->end = pci_resource_end(pdev, i);
->  	}
+>  static int cs5535_mfd_probe(struct pci_dev *pdev,
+> @@ -105,10 +113,14 @@ static int cs5535_mfd_probe(struct pci_dev *pdev,
+>  			goto err_remove_devices;
+>  		}
 >  
-> +	err = pci_request_region(pdev, PMS_BAR, DRV_NAME);
-> +	if (err) {
-> +		dev_err(&pdev->dev, "Failed to request PMS_BAR's IO region\n");
-> +		goto err_disable;
-> +	}
-> +
->  	err = mfd_add_devices(&pdev->dev, PLATFORM_DEVID_NONE, cs5535_mfd_cells,
->  			      ARRAY_SIZE(cs5535_mfd_cells), NULL, 0, NULL);
->  	if (err) {
->  		dev_err(&pdev->dev,
->  			"Failed to add CS5532 sub-devices: %d\n", err);
-> -		goto err_disable;
-> +		goto err_release_pms;
->  	}
->  
-> -	if (machine_is_olpc())
-> -		mfd_clone_cell("cs5535-acpi", olpc_acpi_clones, ARRAY_SIZE(olpc_acpi_clones));
-> +	if (machine_is_olpc()) {
-> +		err = pci_request_region(pdev, ACPI_BAR, DRV_NAME);
-> +		if (err) {
+> -		err = mfd_clone_cell("cs5535-acpi", olpc_acpi_clones,
+> -				     ARRAY_SIZE(olpc_acpi_clones));
+> +		err = mfd_add_devices(&pdev->dev, PLATFORM_DEVID_NONE,
+> +				      cs5535_olpc_mfd_cells,
+> +				      ARRAY_SIZE(cs5535_olpc_mfd_cells),
+> +				      NULL, 0, NULL);
+>  		if (err) {
+> -			dev_err(&pdev->dev, "Failed to clone MFD cell\n");
 > +			dev_err(&pdev->dev,
-> +				"Failed to request ACPI_BAR's IO region\n");
-> +			goto err_remove_devices;
-> +		}
-> +
-> +		err = mfd_clone_cell("cs5535-acpi", olpc_acpi_clones,
-> +				     ARRAY_SIZE(olpc_acpi_clones));
-> +		if (err) {
-> +			dev_err(&pdev->dev, "Failed to clone MFD cell\n");
-> +			goto err_release_acpi;
-> +		}
-> +	}
-
-Making the request_region() conditional on machine_is_olpc() seems to be
-best on the assumption that the cs5535-acpi is not otherwise used.
-
-I suspect the assumption is true but you have to combine knowledge from
-several bits of code to figure that out.
-
-
-Daniel.
-
-
->  
->  	dev_info(&pdev->dev, "%zu devices registered.\n",
->  			ARRAY_SIZE(cs5535_mfd_cells));
->  
->  	return 0;
->  
-> +err_release_acpi:
-> +	pci_release_region(pdev, ACPI_BAR);
-> +err_remove_devices:
-> +	mfd_remove_devices(&pdev->dev);
-> +err_release_pms:
-> +	pci_release_region(pdev, PMS_BAR);
->  err_disable:
->  	pci_disable_device(pdev);
->  	return err;
-> @@ -145,6 +131,8 @@ static int cs5535_mfd_probe(struct pci_dev *pdev,
->  
->  static void cs5535_mfd_remove(struct pci_dev *pdev)
->  {
-> +	pci_release_region(pdev, PMS_BAR);
-> +	pci_release_region(pdev, ACPI_BAR);
->  	mfd_remove_devices(&pdev->dev);
->  	pci_disable_device(pdev);
->  }
+> +				"Failed to add CS5532 OLPC sub-devices: %d\n",
+> +				err);
+>  			goto err_release_acpi;
+>  		}
+>  	}
 > -- 
 > 2.17.1
 > 
