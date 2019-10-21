@@ -2,83 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 137A9DE57E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 09:48:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 371B8DE58B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 09:52:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=z0bshTcymt8U4s7aJKRLGe/SByKFN5Kq7Dn3x5u4Aos=; b=Z9u
-	MYLBdCkp5r4BRHfk0D0Z3JNi9jHZYiTmDJMhMPIRqJ1zenA71DCqDd0Ybr+vJm3kjeP+iypEuKnKw
-	NfMzU1kyaQGNr4Zajbf6rjjCY68hf0tqu/402pqCl2ySsVKCvjH5Vq8lcgsmG0il+ttH+5DE1FMAI
-	u2nIdAiSqOnVOC5LrHKpuMbcECIOzL9fWYJxxlwkp/NnEZxS5tbIPkH3Ljs+pD7IpoNCP4pL9s4Us
-	vY9ADgDyBAjeZro7m/JKSGdk3okNG59kY8pYyQpm4eTkWLQcln8wkkPYSNTa2KjAv9ySxKMFyt72s
-	sAGzM70J0xI9KrwVBf9JWFcESMZqwkg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2GGqS2zn58PmcuXLO59V8iX7BeOaO5lsla7ne0ekxps=; b=jstAS75smItslR
+	q1vgQvHc02hCPD1hBYsrL/YJT+Eb3ZL7e2IlOMVjkS7qkV09rkzOA662xDpyxxRBzBtvCef6lLiyi
+	iBmFUvOpX1rv63hEpMiuqnyzO5JxgWB3bUCedX/pjAQo3v7OkLtQ8W3dmHMN1cNlQoaxXWJtPEIbq
+	Zlp29sZsU09ncmBEgojZlxwoinja+EJDK2c/BxTD2tfwYQ0iJyVPzU01r3egXHAPfGmkpnzUT2PNF
+	TvW1Lf3pn0Y9pceZAWxMKeq7ek4Sbwt3nglzY79LXsY1FNaHMkWzJqYe7Ox8iSSeTsrjBA1YNPM8S
+	ZYi5ETdXcMTARMy+ltcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMSQe-0001by-FF; Mon, 21 Oct 2019 07:48:36 +0000
-Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
+	id 1iMSUY-0003wW-7B; Mon, 21 Oct 2019 07:52:38 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMSQU-0001bJ-1F
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 07:48:27 +0000
-Received: by mail-qk1-x741.google.com with SMTP id w2so11682293qkf.2
+ id 1iMSUM-0003t0-6z
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 07:52:28 +0000
+Received: by mail-ed1-x541.google.com with SMTP id l21so9269291edr.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 21 Oct 2019 00:48:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=JxBBg9Ywns2KSENNzDozRimWLdlAzERjFMqNNveI+HE=;
- b=Whs5Oqw3E1BNGGJx9IwRUe6mYoYJgqIDXMrLa69wGTimwenlmPnyxkdD96ImvDhgnz
- QNv9x87GEYuvI72Ufu+XBTd0z4tanRKZdRfzl7rAJYHLGZWm7umbbi1lICwM0bYbzlFi
- 1V6vJFo/vPS2wYYa/HaEhP0zxvJBmT63OA1/gMqCjtJNRWrCBxXpnTjkEAUqquUln5j0
- +wPnClf9WTCtGcbTgdUSxzPkITq7gSqIX6gRERMY2f73wyc2hMZrBciki2PO3CEfmABL
- Bf1Mgm1iT1HyrJByLiYHMTlzHnDhnDKqvKFaqmjAGzkn8ctfXPELU1TpewmmBXF/b+X1
- P3mA==
+ Mon, 21 Oct 2019 00:52:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=lshseq5695iLMWS2/yTnU4q4phMFdnGbVyLcqMyDgNw=;
+ b=f4plsD5OF7QI01+J/daaDJeoz3LkteQ6BQB7+jftsCG7vHACEuYAS0/ifg1VOZ+2bv
+ DVnIY34EwF6RV/LyAIkxxcICf5gDAB5lJnzvHZwPiIbqUNd0/Lda6KhsIL7Vv666qS53
+ 0dm2LtJmUWVBz3Z6INSe5m7WXyh7OwRPV6IN4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=JxBBg9Ywns2KSENNzDozRimWLdlAzERjFMqNNveI+HE=;
- b=lD3cK+SmidDuvQ2DZQGTZG7FsDm2NR8T4Evj//8/QacsddQXJjZUpbyp8eaXRwKO8d
- 9FphRPVU9OPaLqjT2L5IhU/UycIGCVT8VxWHI0+uDOXLvFR2KBS7w8uaiQRinhec6yPc
- tF8h7qyGairGJ1EzbBLQ7iQ6/f3Gpl0R3EdzIcz5FAHpVpC6beQG7fVQgj/n6c/spzEe
- bLiEjn6tLgWTIMxk1RjP98iRWRuSjFFOfohqH4ZvUSYaUN50FTtPjw0svrgllfA44DRX
- EBunze4KYK54p97/h9MsCgl9RRxqcJnn89re+7brR39Fu/B6GB2G/ppBYfJ4MTJqMGpY
- u/sw==
-X-Gm-Message-State: APjAAAVfdnfF8dKRUWtUORuiOHweJeatIlX80HoQoQrf2gjSfRZsAWUo
- 77tpvs19ITxoTDA2mOdondcp5g==
-X-Google-Smtp-Source: APXvYqxoo8/8ejDNmP7miKhqcnWZEVADqLZQ00ERyOib7o5pAjWqGibbhSiVLUBXWrDkBggvtnjwWg==
-X-Received: by 2002:a37:af46:: with SMTP id y67mr21443431qke.84.1571644104467; 
- Mon, 21 Oct 2019 00:48:24 -0700 (PDT)
-Received: from localhost.localdomain (li937-157.members.linode.com.
- [45.56.119.157])
- by smtp.gmail.com with ESMTPSA id n17sm7980615qke.103.2019.10.21.00.48.19
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 21 Oct 2019 00:48:23 -0700 (PDT)
-From: Leo Yan <leo.yan@linaro.org>
-To: Arnaldo Carvalho de Melo <acme@kernel.org>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Peter Zijlstra <peterz@infradead.org>, Ingo Molnar <mingo@redhat.com>,
- Mark Rutland <mark.rutland@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Jiri Olsa <jolsa@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- Coresight ML <coresight@lists.linaro.org>
-Subject: [PATCH] perf cs-etm: Fix definition of macro TO_CS_QUEUE_NR
-Date: Mon, 21 Oct 2019 15:48:08 +0800
-Message-Id: <20191021074808.25795-1-leo.yan@linaro.org>
-X-Mailer: git-send-email 2.17.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=lshseq5695iLMWS2/yTnU4q4phMFdnGbVyLcqMyDgNw=;
+ b=ZBTlkC8xVpolgOhp9947mMTHx5/Icmqpo1ywC/FBT6/F8rypP3UEK8KvzNHsn2EpsD
+ 2DvRPpoKq3PSEks2MGJGcuUYvzWgE+XcX3iSW7gCPskrAsZWoylKb/Qi8i9xF5a345Ql
+ +RHRO/Upqjo2QZv4MiS1yr/sCba5iuyuj9pvGHPC5YBwc4/AqZjQfgjbNjt4NMX3t0jX
+ IGuWQLd+KOfUDubHzG6DwSRTTAIe8sU/kFxbLImiEQXSKM/aAUF7YocYh6ysaQB21m8s
+ 3Lx0NPZ234laSPoJj4JhIs29aPOPECOyDc88Ourvx/B+ZkQkj7F72gJ2oDK5NuVgWZZ4
+ AWmA==
+X-Gm-Message-State: APjAAAVCndntpAY/aO3Ra8hfU8t/HvM6nJGdTH0i9V3oaHnTHTzNsbyd
+ pc5aLDWy9y3A2z+k9oXXmNV+wcp7TmySe9NX3jZBlA==
+X-Google-Smtp-Source: APXvYqzlkUpYGQn2syS3ZLVsVWF/tTk0yVfY4fQyTuFCwfaWNooQm7u2tuJVHYSsQtBTu3rWlHNporZiD288c1BLvm4=
+X-Received: by 2002:aa7:d8c6:: with SMTP id k6mr23548337eds.87.1571644344157; 
+ Mon, 21 Oct 2019 00:52:24 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190906100514.30803-1-roger.lu@mediatek.com>
+ <20190906100514.30803-4-roger.lu@mediatek.com>
+In-Reply-To: <20190906100514.30803-4-roger.lu@mediatek.com>
+From: Pi-Hsun Shih <pihsun@chromium.org>
+Date: Mon, 21 Oct 2019 15:51:48 +0800
+Message-ID: <CANdKZ0dAWWy7QMMZhNHAha5ZpcBo1GHebPc5_FRu5gvBc569QA@mail.gmail.com>
+Subject: Re: [PATCH v5 3/3] PM / AVS: SVS: Introduce SVS engine
+To: Roger Lu <roger.lu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_004826_204676_00D81ECE 
-X-CRM114-Status: GOOD (  12.72  )
+X-CRM114-CacheID: sfid-20191021_005226_278634_3D9D5D57 
+X-CRM114-Status: GOOD (  10.90  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -89,6 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,58 +89,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Leo Yan <leo.yan@linaro.org>
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, Nicolas Boichat <drinkcat@google.com>,
+ Angus Lin <Angus.Lin@mediatek.com>, Kevin Hilman <khilman@kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>,
+ "open list:THERMAL" <linux-pm@vger.kernel.org>,
+ open list <linux-kernel@vger.kernel.org>,
+ HenryC Chen <HenryC.Chen@mediatek.com>, yt.lee@mediatek.com,
+ Fan Chen <fan.chen@mediatek.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Nishanth Menon <nm@ti.com>,
+ "moderated list:ARM/Mediatek SoC support"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Macro TO_CS_QUEUE_NR definition has a typo, which uses 'trace_id_chan'
-as its parameter, this doesn't match with its definition body which uses
-'trace_chan_id'.  So renames the parameter to 'trace_chan_id'.
+Hi Roger,
 
-It's luck to have a local variable 'trace_chan_id' in the function
-cs_etm__setup_queue(), even we wrongly define the macro TO_CS_QUEUE_NR,
-the local variable 'trace_chan_id' is used rather than the macro's
-parameter 'trace_id_chan'; so the compiler doesn't complain for this
-before.
+On Fri, Sep 6, 2019 at 6:06 PM Roger Lu <roger.lu@mediatek.com> wrote:
+> ...
+> +static int svs_resource_setup(struct mtk_svs *svs)
+> ...
+> +               for (i = 0, freq = (u32)-1; i < svsb->opp_count; i++, freq--) {
+> +                       opp = dev_pm_opp_find_freq_floor(svsb->dev, &freq);
+> +                       if (IS_ERR(opp)) {
+> +                               pr_err("%s: error opp entry!!, err = %ld\n",
+> +                                      svsb->name, PTR_ERR(opp));
+> +                               return PTR_ERR(opp);
+> +                       }
+> +
+> +                       svsb->opp_freqs[i] = freq;
+> +                       svsb->opp_volts[i] = dev_pm_opp_get_voltage(opp);
+> +                       svsb->freqs_pct[i] = percent(svsb->opp_freqs[i],
+> +                                                    svsb->freq_base) & 0xff;
 
-After renaming the parameter, it leads to a compiling error due
-cs_etm__setup_queue() has no variable 'trace_id_chan'.  This patch uses
-the variable 'trace_chan_id' for the macro so that fixes the compiling
-error.
+Should have dev_pm_opp_put(opp); here.
 
-Signed-off-by: Leo Yan <leo.yan@linaro.org>
----
- tools/perf/util/cs-etm.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+> +               }
+> +       }
+> +
+> +       return 0;
+> +}
+> ...
+> +static int svs_status_proc_show(struct seq_file *m, void *v)
+> ...
+> +       for (i = 0, freq = (u32)-1; i < svsb->opp_count; i++, freq--) {
+> +               opp = dev_pm_opp_find_freq_floor(svsb->dev, &freq);
+> +               if (IS_ERR(opp)) {
+> +                       seq_printf(m, "%s: error opp entry!!, err = %ld\n",
+> +                                  svsb->name, PTR_ERR(opp));
+> +                       return PTR_ERR(opp);
+> +               }
+> +
+> +               seq_printf(m, "opp_freqs[%02u]: %lu, volts[%02u]: %lu, ",
+> +                          i, freq, i, dev_pm_opp_get_voltage(opp));
+> +               seq_printf(m, "svsb_volts[%02u]: 0x%x, freqs_pct[%02u]: %u\n",
+> +                          i, svsb->volts[i], i, svsb->freqs_pct[i]);
 
-diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-index 4ba0f871f086..f5f855fff412 100644
---- a/tools/perf/util/cs-etm.c
-+++ b/tools/perf/util/cs-etm.c
-@@ -110,7 +110,7 @@ static int cs_etm__decode_data_block(struct cs_etm_queue *etmq);
-  * encode the etm queue number as the upper 16 bit and the channel as
-  * the lower 16 bit.
-  */
--#define TO_CS_QUEUE_NR(queue_nr, trace_id_chan)	\
-+#define TO_CS_QUEUE_NR(queue_nr, trace_chan_id)	\
- 		      (queue_nr << 16 | trace_chan_id)
- #define TO_QUEUE_NR(cs_queue_nr) (cs_queue_nr >> 16)
- #define TO_TRACE_CHAN_ID(cs_queue_nr) (cs_queue_nr & 0x0000ffff)
-@@ -819,7 +819,7 @@ static int cs_etm__setup_queue(struct cs_etm_auxtrace *etm,
- 	 * Note that packets decoded above are still in the traceID's packet
- 	 * queue and will be processed in cs_etm__process_queues().
- 	 */
--	cs_queue_nr = TO_CS_QUEUE_NR(queue_nr, trace_id_chan);
-+	cs_queue_nr = TO_CS_QUEUE_NR(queue_nr, trace_chan_id);
- 	ret = auxtrace_heap__add(&etm->heap, cs_queue_nr, timestamp);
- out:
- 	return ret;
--- 
-2.17.1
+Same here.
 
+> +       }
+> +
+> +       return 0;
+> +}
+> ...
 
 _______________________________________________
 linux-arm-kernel mailing list
