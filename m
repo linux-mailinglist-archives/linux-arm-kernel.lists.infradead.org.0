@@ -2,82 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE027DF047
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 16:47:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B327DF04B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 16:48:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
-	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=CPzPISRhDIXkTe23FGrnebIM1+XCR+N9Rdo05MZB3F8=; b=hI0DaLJKPSC7GA
-	kiGflskEoz2JzpYVz59yRzk+grXxG9xXi+UGk7i9vGQ36d9k5YHkrvszOgBgkp5DIgQnSPWLLEEdo
-	nlshlVCpsQmjEsQXejPg1A4ksFHT0iCO7uDPQDPmOdITAhpS4rvBt9YdYOG+5p2bJ63/foJgBAqlF
-	E34U061ZyUnLEasbTUJhwVhbcrpym564Xj1ePGDnC5G6bGTkFyAq7aY2AX1xxonLb3xEF0DyYSjpG
-	BFYRKVvvlCdL50tfMOxUQFnIUQKWZMuCKLI4iAfr9msYYOPqCz1/kt1Dq2aP1utWqd9Tm8+M0+VQD
-	I01YiWw6+9yyKZ1VzjJg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Yz6C2nZkzhCDW1VlDv40i4iL4hBA/xgSDMQX43OWicw=; b=UAmfm1b+/+XetJ
+	ywY+hp2CBXlaf2N+7vPDO/ZKq8eWBuw4tdmKCy1HbtqWpHZtlOK84O7o48goHdpKOcpZARdLyXVID
+	ZQQkYOeKWr8L9ITIwioo8VEtwndBtnnCgT02st/lB/T8WurJzcMeSFz0DY9opTK3HL5dDfI75DNVB
+	euZvdf8raRYJVzQ5R6caYrOmTLo7Qz/8905QG0KTRw9zaDVVWGB/BXB2e7FrAUL6tjS1qoj/IsfXZ
+	nkfZhSXkeEP8YI4VA53vPr07vLo78tCCzKYNpLcxyRFuNS2n3dL6rVdTUVyWYauMxv0CZuFlq8bka
+	sVuDlhnIfiY7gqcMnonA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMYy1-0002n0-Ag; Mon, 21 Oct 2019 14:47:29 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1iMYyX-000334-QE; Mon, 21 Oct 2019 14:48:01 +0000
+Received: from mailoutvs60.siol.net ([185.57.226.251] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMYxs-0002mQ-Nh
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 14:47:22 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x9LElCYt046198;
- Mon, 21 Oct 2019 09:47:12 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1571669232;
- bh=208hfWGh/pFfoeG3ry5HtzqgpFp7QIKYsNDNd5f5Bvw=;
- h=To:CC:From:Subject:Date;
- b=AyspszpMiO1FozaCcqmc5kh5cb7HENKkxY3dniRnYe5Q8dHmepHBA60BbKNZ8bI0X
- /TYvqr0EfuZ07fYVtB+XAObeaYjYdKlVKWMSYhqau5xCrqo2/OTvs00QHDU10/swrm
- y5Kq6cTiDyf3sPuu8BUkxomAfj8jtp5duOCU9t6I=
-Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x9LEkvlE047929
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 21 Oct 2019 09:46:57 -0500
-Received: from DLEE115.ent.ti.com (157.170.170.26) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 21
- Oct 2019 09:46:47 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE115.ent.ti.com
- (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Mon, 21 Oct 2019 09:46:56 -0500
-Received: from [172.24.190.212] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x9LEksp9114102;
- Mon, 21 Oct 2019 09:46:55 -0500
-To: ARM-SoC Maintainers <soc@kernel.org>
-From: Sekhar Nori <nsekhar@ti.com>
-Subject: [GIT PULL] DaVinci fixes for v5.4
-Message-ID: <7f3393f9-59be-a2d4-c1e1-ba6e407681d1@ti.com>
-Date: Mon, 21 Oct 2019 20:16:54 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iMYyL-00031d-HF
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 14:47:51 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTP id 9BF3452273D;
+ Mon, 21 Oct 2019 16:47:44 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at psrvmta09.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta09.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id 3LVhTk5es8hh; Mon, 21 Oct 2019 16:47:44 +0200 (CEST)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTPS id 334C352273A;
+ Mon, 21 Oct 2019 16:47:44 +0200 (CEST)
+Received: from jernej-laptop.localnet (cpe-86-58-59-25.static.triera.net
+ [86.58.59.25]) (Authenticated sender: jernej.skrabec@siol.net)
+ by mail.siol.net (Postfix) with ESMTPA id C25E052273D;
+ Mon, 21 Oct 2019 16:47:43 +0200 (CEST)
+From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
+To: Hans Verkuil <hverkuil@xs4all.nl>
+Subject: Re: [PATCH v4 5/6] media: sun4i: Add H3 deinterlace driver
+Date: Mon, 21 Oct 2019 16:47:43 +0200
+Message-ID: <2174547.3yqp6rY4Nl@jernej-laptop>
+In-Reply-To: <8137fbb3-036a-95e4-2642-5dd46fb55eb9@xs4all.nl>
+References: <20191017183738.68069-1-jernej.skrabec@siol.net>
+ <20191017183738.68069-6-jernej.skrabec@siol.net>
+ <8137fbb3-036a-95e4-2642-5dd46fb55eb9@xs4all.nl>
 MIME-Version: 1.0
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_074720_903242_04BEDBF0 
-X-CRM114-Status: GOOD (  13.48  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191021_074749_891484_15433E09 
+X-CRM114-Status: GOOD (  18.57  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.251 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,45 +71,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Ujfalusi <peter.ujfalusi@ti.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Linux ARM Kernel List <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org, mripard@kernel.org,
+ wens@csie.org, robh+dt@kernel.org, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
+Dne ponedeljek, 21. oktober 2019 ob 13:13:20 CEST je Hans Verkuil napisal(a=
+):
+> On 10/17/19 8:37 PM, Jernej Skrabec wrote:
+> > Allwinner H3 SoC contains deinterlace unit, which has several modes of
+> > operation - bypass, weave, bob and mixed (advanced) mode. I don't know
+> > how mixed mode works, but according to Allwinner it gives best results,
+> > so they use it exclusively. Currently this mode is also hardcoded here.
+> > =
 
-  Linux 5.4-rc1 (2019-09-30 10:35:40 -0700)
+> > For each interleaved frame queued, this driver produces 2 deinterlaced
+> > frames. Deinterlaced frames are based on 2 consequtive output buffers,
+> > except for the first 2, where same output buffer is given to peripheral
+> > as current and previous.
+> > =
 
-are available in the Git repository at:
+> > There is no documentation for this core, so register layout and fixed
+> > values were taken from BSP driver.
+> > =
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/nsekhar/linux-davinci.git tags/davinci-fixes-for-v5.4
+> > I'm not sure if maximum size of the image unit is capable to process is
+> > governed by size of "flag" buffers, frequency or it really is some HW
+> > limitation. Currently driver can process full HD image in ~15ms (7.5ms
+> > for each capture buffer), which allows to process 1920x1080@60i video
+> > smoothly in real time.
+> > =
 
-for you to fetch changes up to 7b21483ccbef1b274a238c0653a03d778b21fbd7:
+> > Acked-by: Maxime Ripard <mripard@kernel.org>
+> > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> > ---
+> > =
 
-  ARM: davinci_all_defconfig: enable GPIO backlight (2019-10-17 19:20:22 +0530)
+> >  MAINTAINERS                                   |    7 +
+> >  drivers/media/platform/Kconfig                |   12 +
+> >  drivers/media/platform/sunxi/Makefile         |    1 +
+> >  .../media/platform/sunxi/sun8i-di/Makefile    |    2 +
+> >  .../media/platform/sunxi/sun8i-di/sun8i-di.c  | 1028 +++++++++++++++++
+> >  .../media/platform/sunxi/sun8i-di/sun8i-di.h  |  237 ++++
+> >  6 files changed, 1287 insertions(+)
+> >  create mode 100644 drivers/media/platform/sunxi/sun8i-di/Makefile
+> >  create mode 100644 drivers/media/platform/sunxi/sun8i-di/sun8i-di.c
+> >  create mode 100644 drivers/media/platform/sunxi/sun8i-di/sun8i-di.h
+> > =
 
-----------------------------------------------------------------
-DaVinci fixes for v5.4
-======================
-* fix GPIO backlight support on DA850 by enabling the needed config
-  in davinci_all_defconfig. This is a fix because the driver and board
-  support got converted to use BACKLIGHT_GPIO driver, but defconfig update
-  is still missing in v5.4.
-* fix for McBSP DMA on DM365
+> > diff --git a/MAINTAINERS b/MAINTAINERS
+> > index c7b48525822a..c375455125fb 100644
+> > --- a/MAINTAINERS
+> > +++ b/MAINTAINERS
+> > @@ -4646,6 +4646,13 @@ M:	"Maciej W. Rozycki" <macro@linux-mips.org>
+> > =
 
-----------------------------------------------------------------
-Bartosz Golaszewski (1):
-      ARM: davinci_all_defconfig: enable GPIO backlight
+> >  S:	Maintained
+> >  F:	drivers/net/fddi/defxx.*
+> > =
 
-Peter Ujfalusi (1):
-      ARM: davinci: dm365: Fix McBSP dma_slave_map entry
+> > +DEINTERLACE DRIVERS FOR ALLWINNER H3
+> > +M:	Jernej Skrabec <jernej.skrabec@siol.net>
+> > +L:	linux-media@vger.kernel.org
+> > +T:	git git://linuxtv.org/media_tree.git
+> > +S:	Maintained
+> > +F:	drivers/media/platform/sunxi/sun8i-di/
+> =
 
- arch/arm/configs/davinci_all_defconfig | 1 +
- arch/arm/mach-davinci/dm365.c          | 4 ++--
- 2 files changed, 3 insertions(+), 2 deletions(-)
+> This is missing the bindings file added in the previous patch.
+
+Well, I listed Maxime and Chen-Yu as binding maintainers in patch 4, so tha=
+t's =
+
+why I didn't include it here. If you think I should be maintainer of that =
+
+binding too, I can change that. I took sun6i-csi as example where binding =
+
+maintainers are Maxime and Chen-Yu and driver maintainer is Yong Deng.
+
+Best regards,
+Jernej
+
+> =
+
+> Regards,
+> =
+
+> 	Hans
+> =
+
+> > +
+> > =
+
+> >  DELL SMBIOS DRIVER
+> >  M:	Pali Roh=E1r <pali.rohar@gmail.com>
+> >  M:	Mario Limonciello <mario.limonciello@dell.com>
+
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
