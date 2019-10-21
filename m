@@ -2,51 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B876DE5E6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 10:05:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 595C6DE611
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 10:15:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uFCgAN03OH+Q8X5Puh7glw7da4rZqVfmcPX7inHS80Y=; b=cxgzMsO0sVBdqL
-	vPAMsFhuW6nDZziuo1vxlRjUIiqG+NwrDGYRxVJrbtWkFS0eEqppdm050zfmUt/k5mX5Tzvy/YM7f
-	TMRSvTc0PCSO8V/rZaeiQBwg+tcHiuyZycuE/xjZ0WjEUKpHBntyIaMn2F8PmVlt/bsQGdUwf3aGB
-	1hpEHYqgmCjyQdPB6eUd+Rye8yThHPW8CR4H/9HIounFzHSspyHHhaix/Q/uFfIa9yBtFdIBoMbrC
-	i3cRhkCPtSLgR/SsBLT88B6Xk+YdpdnGdnJllif+iPO2SGq0YsEWo+NTSSke8vNQIH9hnOZ9MrYgP
-	kBCVOUMAQs13ny8GclKQ==;
+	List-Owner; bh=WC/p9NY+4ZAOfBJMk8YmuljYdRG9jT5+DUD/qAq345k=; b=YtBU2/t3YSBCze
+	zTwrmaiQVGLMh7asXWKJg+dZDHu7Vp8UMeWCpkRUunHeZspMoNnzwaQz5sjBZhYTs7RWxvcSKDySJ
+	C0jL8jDinQ/WKcvRxB+VYnZbOe8s2IE6mDAh9wdYOI8CZXtDYyBry/HVq9F8kXq9cAjVH8NxnBj2j
+	g2T6I0ZR1wFK6ol/ixeiHQ9TFuOKDkMdv3yLM/LOcRX1fVet/ItjH51o9pehsGcxcOx8hN+PTcRQH
+	633+huUJTgA9Q/9QeTwJUi9sU63xXDP9rgyaL9IJIupxLDOaEk6zQvL5MjbZDFLxMsqf/CZKhHr6I
+	L9PshGoj01XbAaw6Uyyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMSh8-0003KS-KI; Mon, 21 Oct 2019 08:05:38 +0000
+	id 1iMSqz-0006vr-Rg; Mon, 21 Oct 2019 08:15:49 +0000
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMSgx-0003JX-Fv
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 08:05:29 +0000
+ id 1iMSqo-0006v6-LO
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 08:15:40 +0000
 Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
  by metis.ext.pengutronix.de with esmtps
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <mfe@pengutronix.de>)
- id 1iMSfM-000875-Se; Mon, 21 Oct 2019 10:03:48 +0200
+ id 1iMSqi-0000ki-3p; Mon, 21 Oct 2019 10:15:32 +0200
 Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
  (envelope-from <mfe@pengutronix.de>)
- id 1iMSfC-00081S-2X; Mon, 21 Oct 2019 10:03:38 +0200
-Date: Mon, 21 Oct 2019 10:03:38 +0200
+ id 1iMSqg-0008Os-FJ; Mon, 21 Oct 2019 10:15:30 +0200
+Date: Mon, 21 Oct 2019 10:15:30 +0200
 From: Marco Felsch <m.felsch@pengutronix.de>
-To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Subject: Re: [PATCH 00/22] Stop using input_polled_dev in polling drivers
-Message-ID: <20191021080338.prrraz5h7sykxz6e@pengutronix.de>
-References: <20191017204217.106453-1-dmitry.torokhov@gmail.com>
- <20191018084403.GR32742@smile.fi.intel.com>
+To: Robert Jones <rjones@gateworks.com>
+Subject: Re: [PATCH] ARM: dt: add fxos8700 on gateworks boards
+Message-ID: <20191021081530.frhbez44x6gwosvi@pengutronix.de>
+References: <20191018232049.4045-1-rjones@gateworks.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191018084403.GR32742@smile.fi.intel.com>
+In-Reply-To: <20191018232049.4045-1-rjones@gateworks.com>
 X-Sent-From: Pengutronix Hildesheim
 X-URL: http://www.pengutronix.de/
 X-IRC: #ptxdist @freenode
 X-Accept-Language: de,en
 X-Accept-Content-Type: text/plain
-X-Uptime: 10:02:38 up 156 days, 14:20, 97 users,  load average: 0.14, 0.13,
+X-Uptime: 10:09:31 up 156 days, 14:27, 97 users,  load average: 0.16, 0.12,
  0.10
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
@@ -55,8 +54,8 @@ X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
  SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_010527_540063_8B439492 
-X-CRM114-Status: GOOD (  13.85  )
+X-CRM114-CacheID: sfid-20191021_011538_702810_C277730B 
+X-CRM114-Status: GOOD (  16.69  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -75,102 +74,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sven Van Asbroeck <TheSven73@gmail.com>, Jacky Bai <ping.bai@nxp.com>,
- "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
- Jonathan Bakker <xc-racer2@live.ca>, Stefan Agner <stefan@agner.ch>,
- Eric Anholt <eric@anholt.net>, Jilayne Lovejoy <opensource@jilayne.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Miloslav Trmac <mitr@volny.cz>, Anders Roxell <anders.roxell@linaro.org>,
- Anson Huang <Anson.Huang@nxp.com>, YueHaibing <yuehaibing@huawei.com>,
- Luca Weiss <luca@z3ntu.xyz>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- linux-arm-kernel@lists.infradead.org, linux-input@vger.kernel.org,
- Jeff LaBundy <jeff@labundy.com>, Mukesh Ojha <mojha@codeaurora.org>,
- Brian Masney <masneyb@onstation.org>, Pavel Machek <pavel@ucw.cz>,
- Alexios Zavras <alexios.zavras@intel.com>, Steve Winslow <swinslow@gmail.com>,
- Ronald =?iso-8859-1?Q?Tschal=E4r?= <ronald@innovation.ch>,
- Martin Kepplinger <martink@posteo.de>, Allison Randal <allison@lohutok.net>,
- Dong Aisheng <aisheng.dong@nxp.com>, Alexander Shiyan <shc_work@mail.ru>,
- Richard Fontana <rfontana@redhat.com>,
- Maximilian Luz <luzmaximilian@gmail.com>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>, linux-kernel@vger.kernel.org,
- Luis Chamberlain <mcgrof@kernel.org>, Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- =?utf-8?B?UGF3ZcWC?= Chmiel <pawel.mikolaj.chmiel@gmail.com>,
- Enrico Weigelt <info@metux.net>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19-10-18 11:44, Andy Shevchenko wrote:
-> On Thu, Oct 17, 2019 at 01:41:54PM -0700, Dmitry Torokhov wrote:
-> > Input devices now support polling mode natively (via input_setup_polling
-> > API), and input_polled_dev implementation is going away. This series
-> > switches drivers found in drivers/input to the new scheme.
-> > 
-> 
-> For all I have been Cc'ed
-> Acked-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Hi Robert,
 
-Same for me
-Acked-by: Marco Felsch <m.felsch@pengutronix.de> 
+please don't use 'ARM: dt: ..' instead you should name it 'ARM: dts:
+imx6qdl-gw5x:'.
 
-> > 
-> > Dmitry Torokhov (21):
-> >   Input: raspberrypi-ts - switch to using polled mode of input devices
-> >   Input: sur40 - switch to using polled mode of input devices
-> >   Input: ts4800-ts - switch to using polled mode of input devices
-> >   Input: tsc6507x-ts - switch to using polled mode of input devices
-> >   Input: adc-keys - switch to using polled mode of input devices
-> >   Input: clps711x-keypad - switch to using polled mode of input devices
-> >   Input: jornada680_kbd - switch to using polled mode of input devices
-> >   Input: gpio_keys_polled - switch to using polled mode of input devices
-> >   Input: apanel - switch to using polled mode of input devices
-> >   Input: wistron_btns - switch to using polled mode of input devices
-> >   Input: cobalt_btns - convert to use managed resources
-> >   Input: cobalt_btns - switch to using polled mode of input devices
-> >   Input: sgi_btns - switch to using managed resources
-> >   Input: sgi_btns - switch to using polled mode of input devices
-> >   Input: rb532_button - switch to using managed resources
-> >   Input: rb532_button - switch to using polled mode of input devices
-> >   Input: gpio_decoder - switch to using polled mode of input devices
-> >   Input: mma8450 - switch to using polled mode of input devices
-> >   Input: bma150 - switch to using polled mode of input devices
-> >   Input: kxtj9 - switch to using managed resources
-> >   Input: kxtj9 - switch to using polled mode of input devices
-> > 
-> > Jonathan Bakker (1):
-> >   Input: bma150 - use managed resources helpers
-> > 
-> >  drivers/input/keyboard/Kconfig             |   4 -
-> >  drivers/input/keyboard/adc-keys.c          |  36 ++--
-> >  drivers/input/keyboard/clps711x-keypad.c   |  70 +++----
-> >  drivers/input/keyboard/gpio_keys_polled.c  |  65 +++---
-> >  drivers/input/keyboard/jornada680_kbd.c    |  37 ++--
-> >  drivers/input/misc/Kconfig                 |  15 --
-> >  drivers/input/misc/apanel.c                | 153 ++++++--------
-> >  drivers/input/misc/bma150.c                | 190 +++++------------
-> >  drivers/input/misc/cobalt_btns.c           |  73 +++----
-> >  drivers/input/misc/gpio_decoder.c          |  42 ++--
-> >  drivers/input/misc/kxtj9.c                 | 224 ++++++---------------
-> >  drivers/input/misc/mma8450.c               | 101 +++++-----
-> >  drivers/input/misc/rb532_button.c          |  48 ++---
-> >  drivers/input/misc/sgi_btns.c              |  54 ++---
-> >  drivers/input/misc/wistron_btns.c          |  51 ++---
-> >  drivers/input/touchscreen/Kconfig          |   4 -
-> >  drivers/input/touchscreen/raspberrypi-ts.c |  38 ++--
-> >  drivers/input/touchscreen/sur40.c          |  92 +++++----
-> >  drivers/input/touchscreen/tps6507x-ts.c    |  36 ++--
-> >  drivers/input/touchscreen/ts4800-ts.c      |  68 ++++---
-> >  20 files changed, 557 insertions(+), 844 deletions(-)
-> > 
-> > -- 
-> > 2.23.0.866.gb869b98d4c-goog
-> > 
+On 19-10-18 16:20, Robert Jones wrote:
+> Add fxos8700 iio imu entries for Gateworks SBCs.
 > 
+> Signed-off-by: Robert Jones <rjones@gateworks.com>
+> ---
+>  arch/arm/boot/dts/imx6qdl-gw52xx.dtsi | 5 +++++
+>  arch/arm/boot/dts/imx6qdl-gw53xx.dtsi | 5 +++++
+>  arch/arm/boot/dts/imx6qdl-gw54xx.dtsi | 5 +++++
+>  3 files changed, 15 insertions(+)
+> 
+> diff --git a/arch/arm/boot/dts/imx6qdl-gw52xx.dtsi b/arch/arm/boot/dts/imx6qdl-gw52xx.dtsi
+> index 1a9a9d9..ffc4449 100644
+> --- a/arch/arm/boot/dts/imx6qdl-gw52xx.dtsi
+> +++ b/arch/arm/boot/dts/imx6qdl-gw52xx.dtsi
+> @@ -306,6 +306,11 @@
+>  		VDDIO-supply = <&reg_3p3v>;
+>  	};
+>  
+> +	fxos8700@1e {
+> +		compatible = "nxp,fxos8700";
+
+I grep'd the whole tree and found no such compatible. I don't know the
+rule but IMHO if there isn't a driver we shouldn't add the compatible
+here.
+
+Regards,
+  Marco
+
+> +		reg = <0x1e>;
+> +	};
+> +
+>  	touchscreen: egalax_ts@4 {
+>  		compatible = "eeti,egalax_ts";
+>  		reg = <0x04>;
+> diff --git a/arch/arm/boot/dts/imx6qdl-gw53xx.dtsi b/arch/arm/boot/dts/imx6qdl-gw53xx.dtsi
+> index 54b2bea..ebbd1c8 100644
+> --- a/arch/arm/boot/dts/imx6qdl-gw53xx.dtsi
+> +++ b/arch/arm/boot/dts/imx6qdl-gw53xx.dtsi
+> @@ -297,6 +297,11 @@
+>  		VDDIO-supply = <&reg_3p3v>;
+>  	};
+>  
+> +	fxos8700@1e {
+> +		compatible = "nxp,fxos8700";
+> +		reg = <0x1e>;
+> +	};
+> +
+>  	touchscreen: egalax_ts@4 {
+>  		compatible = "eeti,egalax_ts";
+>  		reg = <0x04>;
+> diff --git a/arch/arm/boot/dts/imx6qdl-gw54xx.dtsi b/arch/arm/boot/dts/imx6qdl-gw54xx.dtsi
+> index 1b6c133..67d4725 100644
+> --- a/arch/arm/boot/dts/imx6qdl-gw54xx.dtsi
+> +++ b/arch/arm/boot/dts/imx6qdl-gw54xx.dtsi
+> @@ -354,6 +354,11 @@
+>  		VDDIO-supply = <&reg_3p3v>;
+>  	};
+>  
+> +	fxos8700@1e {
+> +		compatible = "nxp,fxos8700";
+> +		reg = <0x1e>;
+> +	};
+> +
+>  	touchscreen: egalax_ts@4 {
+>  		compatible = "eeti,egalax_ts";
+>  		reg = <0x04>;
 > -- 
-> With Best Regards,
-> Andy Shevchenko
+> 2.9.2
 > 
 > 
 > 
