@@ -2,98 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56234DE968
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 12:25:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CDA4EDE975
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 12:28:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:Date:Message-ID:To:Subject:From:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=C8QXjTdFc1pL7Gh1NUamfqIyOE+mZEiy+JgsDLyfYYY=; b=EJ5
-	hNIF1NV/e3o07WIuDfjsHgBv/qq0VykIJC4L82+HH9SnnHLe6h3EKB4mODQK2Cp666r/cswis451p
-	UAnlYg0ff8bnQOcSD2l3kwpjCcnYuc8bOAJGtUUCrduvZmyQXyntyPVFJOBg3fOtwPm+N1w8dfNhb
-	WCWmpCkhwMYyBhMVqiYWdIAN5EwHi/VaohP2m8Ot2Enmlf5Y6LY9ttJwOicWd40PIAwXLUMq50W3O
-	JiiobbUYksljnkR/Ahhm5zBahJIOvclNW5Z+kHsW23dqpad7FVCL7TPMkw3ZgE0IgxX8XxsJZlmzn
-	ad1/H6mzZrghD1hZqNpS+gNMqA8NQww==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WXDuWB5QcmxZSk9lVrdNB4hI1Zbd/sI9GSl01ssWhrc=; b=nQlnl+eZi1PHND
+	w9PdRyFJLjxqfSUzzMZJJnKPRZfJW0scL2BrR91CxWcb77OgFY7Mcimb1g/R96nN9DWeylBuFWm5e
+	bNzMrZcQIPnGYAqcmGhZHmca1S6uMqxFono5A1ekqqNkI+gGW5DZv6OCwALCuA6wO8e4bJboqJYX3
+	0jUeTshvUOkwDsX4+0AVH5KfRUtjbSwCCS26KYYR0OHlok+JonSwYwqB6lXEjX0GnjQJGYDjz6I7k
+	VD4opFWjXBbWW6bbDHo+39APDfqX7HX+qR82CQbHanJRHc7IMk2GeUjjKu177fNteXvEJQckOWHUn
+	bgXtyINupjzaOC7itlRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMUsD-0001Nf-KA; Mon, 21 Oct 2019 10:25:13 +0000
-Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
+	id 1iMUvK-0003It-Vy; Mon, 21 Oct 2019 10:28:26 +0000
+Received: from mail-ed1-f66.google.com ([209.85.208.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMUrt-0001Jf-HL; Mon, 21 Oct 2019 10:24:55 +0000
-Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
- (helo=hermes.fivetechno.de); authenticated
- by wp126.webpack.hosteurope.de running ExIM with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- id 1iMUre-00016G-4C; Mon, 21 Oct 2019 12:24:38 +0200
-X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
- linuxbbg.five-lan.de
-Received: from [192.168.34.101] (p5098d998.dip0.t-ipconnect.de
- [80.152.217.152]) (authenticated bits=0)
- by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
- x9LAOa9m003414
- (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
- Mon, 21 Oct 2019 12:24:37 +0200
-From: Markus Reichl <m.reichl@fivetechno.de>
-Subject: [PATCH] arm64: dts: rockchip: Add LED nodes on rk3399-roc-pc
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Heiko Stuebner <heiko@sntech.de>, Jagan Teki <jagan@amarulasolutions.com>,
- Markus Reichl <m.reichl@fivetechno.de>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-Autocrypt: addr=m.reichl@fivetechno.de; prefer-encrypt=mutual; keydata=
- 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
- eD/Xv4SsK2JTO4nkQYw8
-Organization: five technologies GmbH
-Message-ID: <7d8d85c9-5fde-7943-a6b6-639bca38bdc1@fivetechno.de>
-Date: Mon, 21 Oct 2019 12:24:36 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.1
+ id 1iMUvA-0003Hw-1H
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 10:28:17 +0000
+Received: by mail-ed1-f66.google.com with SMTP id v8so9609489eds.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 21 Oct 2019 03:28:13 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=32WruUQbRO6vTu7JHKjRq7oaWF4FWya6VgqSM214C+Y=;
+ b=OAms5yZ2vJvKGA2oolGv97+6FtC3dYj5znVB8eoSOouN1aqBuiEv4BNBpkWacGk4ZM
+ 2mFHMn9ra3Tm84Xv1s/BYej8Dq2pT/pAzl1mGe5c+qseAySyKrEjRx/CkGqyhPDNM29D
+ xu0QrBMuC/2Qu/ORd7gw2Im87Z042CgzEj+ijlDQa6RPIKWrGqP6VHSfLCsJxDaKODNj
+ kbkQtmoLH2CNb2bP4/KfquAzaa/aRG+3KzowpLeJ+WE1Mpq7l9Q6CvLX2jog6z+hCewN
+ aEnzdb/sIHtYlVAToC+CagWsyUsd8wkY57e3AtxkzioYRCIq6+3Tn/YqrImzf3C0m6gA
+ pmQg==
+X-Gm-Message-State: APjAAAVDp4v/+vQ8s0bkRb1ESaULoZREyKSsqOLRkRJOe/JFPwHkAyrf
+ Blhc7KfIUEhDTQx78ohLEUE=
+X-Google-Smtp-Source: APXvYqzhozcd1lqqT8Tpyf3S1ox+0mSMUIdIK4/skr94JIQi3fBFI4Y/wJHBDk8i/MAoWWMpQTVaWA==
+X-Received: by 2002:a50:ec0f:: with SMTP id g15mr24166931edr.59.1571653692310; 
+ Mon, 21 Oct 2019 03:28:12 -0700 (PDT)
+Received: from pi3 ([194.230.155.217])
+ by smtp.googlemail.com with ESMTPSA id w16sm574836edd.93.2019.10.21.03.28.10
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 21 Oct 2019 03:28:11 -0700 (PDT)
+Date: Mon, 21 Oct 2019 12:28:09 +0200
+From: "krzk@kernel.org" <krzk@kernel.org>
+To: Schrempf Frieder <frieder.schrempf@kontron.de>
+Subject: Re: [PATCH 01/10] ARM: dts: imx6ul-kontron-n6310: Move common SoM
+ nodes to a separate file
+Message-ID: <20191021102809.GA1934@pi3>
+References: <20191016150622.21753-1-frieder.schrempf@kontron.de>
+ <20191016150622.21753-2-frieder.schrempf@kontron.de>
 MIME-Version: 1.0
-X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1571653493;
- 995b82d9; 
-X-HE-SMSGID: 1iMUre-00016G-4C
+Content-Disposition: inline
+In-Reply-To: <20191016150622.21753-2-frieder.schrempf@kontron.de>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_032453_719229_9986F363 
-X-CRM114-Status: GOOD (  12.19  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191021_032816_076069_6F947675 
+X-CRM114-Status: GOOD (  17.15  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.66 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (k.kozlowski.k[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.66 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,143 +89,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2363363550564018600=="
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============2363363550564018600==
-Content-Type: multipart/signed; micalg=pgp-sha256;
- protocol="application/pgp-signature";
- boundary="ma6Nskd4tpvP5vsRVUnUWsgiIS2DwbBnW"
+On Wed, Oct 16, 2019 at 03:07:19PM +0000, Schrempf Frieder wrote:
+> From: Frieder Schrempf <frieder.schrempf@kontron.de>
+> 
+> The Kontron N6311 and N6411 SoMs are very similar to N6310. In
+> preparation to add support for them, we move the common nodes to a
+> separate file imx6ul-kontron-n6x1x-som-common.dtsi.
+> 
+> Signed-off-by: Frieder Schrempf <frieder.schrempf@kontron.de>
+> ---
+>  .../boot/dts/imx6ul-kontron-n6310-som.dtsi    |  95 +-------------
+>  .../dts/imx6ul-kontron-n6x1x-som-common.dtsi  | 123 ++++++++++++++++++
+>  2 files changed, 124 insertions(+), 94 deletions(-)
+>  create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6x1x-som-common.dtsi
+> 
+> diff --git a/arch/arm/boot/dts/imx6ul-kontron-n6310-som.dtsi b/arch/arm/boot/dts/imx6ul-kontron-n6310-som.dtsi
+> index a896b2348dd2..47d3ce5d255f 100644
+> --- a/arch/arm/boot/dts/imx6ul-kontron-n6310-som.dtsi
+> +++ b/arch/arm/boot/dts/imx6ul-kontron-n6310-som.dtsi
+> @@ -6,7 +6,7 @@
+>   */
+>  
+>  #include "imx6ul.dtsi"
+> -#include <dt-bindings/gpio/gpio.h>
+> +#include "imx6ul-kontron-n6x1x-som-common.dtsi"
+>  
+>  / {
+>  	model = "Kontron N6310 SOM";
+> @@ -18,49 +18,7 @@
+>  	};
+>  };
+>  
+> -&ecspi2 {
+> -	cs-gpios = <&gpio4 22 GPIO_ACTIVE_HIGH>;
+> -	pinctrl-names = "default";
+> -	pinctrl-0 = <&pinctrl_ecspi2>;
+> -	status = "okay";
+> -
+> -	spi-flash@0 {
+> -		compatible = "mxicy,mx25v8035f", "jedec,spi-nor";
+> -		spi-max-frequency = <50000000>;
+> -		reg = <0>;
+> -	};
+> -};
+> -
+> -&fec1 {
+> -	pinctrl-names = "default";
+> -	pinctrl-0 = <&pinctrl_enet1 &pinctrl_enet1_mdio>;
+> -	phy-mode = "rmii";
+> -	phy-handle = <&ethphy1>;
+> -	status = "okay";
+> -
+> -	mdio {
+> -		#address-cells = <1>;
+> -		#size-cells = <0>;
+> -
+> -		ethphy1: ethernet-phy@1 {
+> -			reg = <1>;
+> -			micrel,led-mode = <0>;
+> -			clocks = <&clks IMX6UL_CLK_ENET_REF>;
+> -			clock-names = "rmii-ref";
+> -		};
+> -	};
+> -};
+> -
+> -&fec2 {
+> -	phy-mode = "rmii";
+> -	status = "disabled";
+> -};
+> -
+>  &qspi {
+> -	pinctrl-names = "default";
+> -	pinctrl-0 = <&pinctrl_qspi>;
+> -	status = "okay";
+> -
+>  	spi-flash@0 {
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---ma6Nskd4tpvP5vsRVUnUWsgiIS2DwbBnW
-Content-Type: multipart/mixed; boundary="yJZwcp1Ymsuklh7aGS9WMHUNJ1nnL5i5j";
- protected-headers="v1"
-From: Markus Reichl <m.reichl@fivetechno.de>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Heiko Stuebner <heiko@sntech.de>, Jagan Teki <jagan@amarulasolutions.com>,
- Markus Reichl <m.reichl@fivetechno.de>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Message-ID: <7d8d85c9-5fde-7943-a6b6-639bca38bdc1@fivetechno.de>
-Subject: [PATCH] arm64: dts: rockchip: Add LED nodes on rk3399-roc-pc
+You left qspi and flash partitions here, while adding it later. It is
+not pure move then and some duplicated stuff remains.
 
---yJZwcp1Ymsuklh7aGS9WMHUNJ1nnL5i5j
-Content-Type: text/plain; charset=utf-8
-Content-Language: de-DE
-Content-Transfer-Encoding: quoted-printable
+Best regards,
+Krzysztof
 
-rk3399-roc-pc has three gpio LEDs, enable them.
-
-Signed-off-by: Markus Reichl <m.reichl@fivetechno.de>
----
- .../arm64/boot/dts/rockchip/rk3399-roc-pc.dts | 41 +++++++++++++++++++
- 1 file changed, 41 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts b/arch/arm64/=
-boot/dts/rockchip/rk3399-roc-pc.dts
-index faf60b2a7673..ba52e1053a2d 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
-@@ -28,6 +28,33 @@
- 		#clock-cells =3D <0>;
- 	};
-=20
-+	leds {
-+		compatible =3D "gpio-leds";
-+		pinctrl-names =3D "default";
-+		pinctrl-0 =3D <&work_led_gpio>, <&diy_led_gpio>, <&yellow_led_gpio>;
-+
-+		work-led {
-+			label =3D "green:work";
-+			gpios =3D <&gpio2 RK_PD3 GPIO_ACTIVE_HIGH>;
-+			default-state =3D "on";
-+			linux,default-trigger =3D "heartbeat";
-+		};
-+
-+		diy-led {
-+			label =3D "red:diy";
-+			gpios =3D <&gpio0 RK_PB5 GPIO_ACTIVE_HIGH>;
-+			default-state =3D "off";
-+			linux,default-trigger =3D "mmc1";
-+		};
-+
-+		yellow-led {
-+			label =3D "yellow:yellow-led";
-+			gpios =3D <&gpio0 RK_PA2 GPIO_ACTIVE_HIGH>;
-+			default-state =3D "off";
-+			linux,default-trigger =3D "mmc0";
-+		};
-+	};
-+
- 	sdio_pwrseq: sdio-pwrseq {
- 		compatible =3D "mmc-pwrseq-simple";
- 		clocks =3D <&rk808 1>;
-@@ -494,6 +521,20 @@
- 		};
- 	};
-=20
-+	leds {
-+		work_led_gpio: work_led-gpio {
-+			rockchip,pins =3D <2 RK_PD3 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+
-+		diy_led_gpio: diy_led-gpio {
-+			rockchip,pins =3D <0 RK_PB5 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+
-+		yellow_led_gpio: yellow_led-gpio {
-+			rockchip,pins =3D <0 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+	};
-+
- 	pmic {
- 		vsel1_gpio: vsel1-gpio {
- 			rockchip,pins =3D <1 RK_PC2 RK_FUNC_GPIO &pcfg_pull_down>;
---=20
-2.20.1
-
-
-
-
-
---yJZwcp1Ymsuklh7aGS9WMHUNJ1nnL5i5j--
-
---ma6Nskd4tpvP5vsRVUnUWsgiIS2DwbBnW
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQGzBAEBCAAdFiEEVKeIeBh0ZWJOldzLOiXeDmsa/bIFAl2th2QACgkQOiXeDmsa
-/bKXBwv7BhRzi03I9j+Me1Zp9yG27lXAQ6FOPpHmt5GJdmFZkpuurRQQ6lBOJmfd
-61KOr6gNYLLVObMeRcZ30gonXE5TK0lLP6mOajtI4YBB0+/4dy3Kwf5qzmtAIaM3
-47NZ9WiTlxR7Oh1ESVFLxGk7exnMq1R0zF2TLafDZxP1vZXcow7aCpgcx8HMgivf
-DN+uAQ8+mMCd3i7heyBrqDUx4oBQamdPF20SpRSfX6oNMmNbO9Vno2ly8JfXBv9O
-1+ThOXF+wVnO5V3Q2OQdHsyZGt3vZDugnbq9RQXjdpJkJfA3rmuGgCgnOcad0+11
-g0kxyU+0il07SuUVfXVZXGraWYZ4WyOpKkOOD5YhWP8cYSK4tOFQlCpeNo/UykHc
-F6bXAwcc8x5naL2J6L4N4hFmGI4I0woqZsTKNX4gHPi30XHf91mJ5n2TatPCquZ0
-Li6fangI5vix3UEMbiFF09g9rKYg2k8v/UiTjYgkj5qMdklM3qgMTToYYq1rm2ay
-yWfVA1OG
-=KTOi
------END PGP SIGNATURE-----
-
---ma6Nskd4tpvP5vsRVUnUWsgiIS2DwbBnW--
-
-
---===============2363363550564018600==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2363363550564018600==--
-
