@@ -2,84 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DDC32DE8CB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 11:59:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C213ADE8FA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 12:05:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9X6quw7cTj+EeEZV4nnVKve/GnYHmgLtCitLftsxRoo=; b=Rzpu1xVzH+BBDA
-	GaDExPE41+2M8xzVSmgRQOrhIngp4eB6ORGWa0IAol11GQklRYhEiwlg+DlocSvtOS5zBmKmApG5q
-	SOn/XkZdyCP3u55L30cqNWryue6lfOMKSY9HpMIatgcp0+k3o2LE2HoBWfDyhcPaZ3Abnu5U9nC8J
-	RnoNsh4dPUK9JB93sZ8Ttm8hlBvOXIPvSRIQ0HnTNt9Q6VRdqBSq2TKKUOXvOKr6HYJ53GSMUf53h
-	K7YlYnnGf8wII03FaNBcEO6srE3fItt9oGC7LQFHECwCs+TJCPiTNtNgHWhceXiRLag+7DRVZkimm
-	tB3LU0iDjSoCbAxENHSQ==;
+	List-Owner; bh=x6FcgPGtY4bSLOG32JwYp325ahAoPH09i1dHd6f28t8=; b=csyJ4y62lwaidG
+	fT4Mlpur4TFngrQhbImgu1lW+PKTdmx/ho2xWhYXx8kl+9GtpQuBpMkoLbiPJY1R+V/VfuDkWU/Jd
+	9WTVL5nLI5gt+8Y+vEDLoOpd2JB9chxbLQl94G8kIEYlccA77GmYZk34Kjy+mu5ZziVFlHUKaftcn
+	qdCRQyHXLG6QFkKy9/uZn/CijPoQxl+yal5BccKmoKK6JQ8+t5pWSdBVZ3OdzpBB1oh+1ymDuDpre
+	SaRiVlToCHJOrtZ9A9eE74kpbsxfv+ldzBRks33R8svQtaqFODhXSz5M0dO9zWPKo24jSJ8++ROGL
+	XXwFk/h0vepdY2f+fDSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMUTE-0007I3-Fc; Mon, 21 Oct 2019 09:59:24 +0000
-Received: from mail-ua1-x942.google.com ([2607:f8b0:4864:20::942])
+	id 1iMUZC-0002gm-Lk; Mon, 21 Oct 2019 10:05:34 +0000
+Received: from mail-ed1-f67.google.com ([209.85.208.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMUT5-0007HQ-8M
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 09:59:16 +0000
-Received: by mail-ua1-x942.google.com with SMTP id k24so3604218uag.10
+ id 1iMUZ2-0002gI-Hh
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 10:05:25 +0000
+Received: by mail-ed1-f67.google.com with SMTP id b72so588379edf.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 21 Oct 2019 02:59:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=pdHS5iTjhH216W3OQmstavgIx2TJJX3EShTQ+j4ScZ4=;
- b=A+lOYOm+Xr9/QoAPbGmRqhJkdtF0Lqe8WUL4ACj5RU0nNNF8swHXxJ1znB4G8Os5Ny
- GFNaGZ/ejdu+ewHfdHOPCmruyouYE59ddCzoE/xVdTrwx+9jDUvHxy7BDp9wIDVdNxfI
- /6ZVUUwI4YOYuKQGiiojp4zvyT6amzLfph0exWZKznf04jiM3DxdRAExfvqYeyeqcqdD
- +jHYiIvYbVFtFjJ+6C1ZbvLjFHV0Oba7w+6LuMl93+fW5xmlBomtFj1iieYNFONPPx+n
- GuW5fPipC9llariB4WKqkEzYSA5LiCXyADKzbRoQItF2MbOokfHyNH6+nW64EQTg2+/Q
- SDPg==
+ Mon, 21 Oct 2019 03:05:21 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=pdHS5iTjhH216W3OQmstavgIx2TJJX3EShTQ+j4ScZ4=;
- b=g9BUHu/Jb/tMGNlk4D13XYRrJvkj++/ptH/CtR4C9j+Ik08mRJR+P6dP52oBoORPP/
- JbiIGyMRx+zo880Aacwl6RQC1hj5BY3YGSpfkCKL73jn3kinzSG/uwchG1Nn1YUacb8M
- Mh6q4nXEXg2ap0rpERs3Gs5joi6JY8sHsTboIPRfuhUedvfDJwyySV+xwAFt4ydhilp5
- K/oGuIDsojFPUpKyqI/H2LMX0cyg88fGKMtZ0Bs02tns8zlom78jF1wi1oIP1WMvOD6e
- YOfifFntG2uOWrKIPYPV1b9InZrwi7ktNeIRq0VpW9L9KfSvta0W531fhEDiat4Xkct1
- of5w==
-X-Gm-Message-State: APjAAAVul51lu4+QiaJN/EThXZA9THiC85E009lozR6rnQ6ZFVfumwRo
- EMqTLlej08B1u/3jXaP4qFdeYjsZ9djLSAhiYr6Iyw==
-X-Google-Smtp-Source: APXvYqyX35z25w9uC+afBeqWkMX+7aKojU6riMDxod1s9TtFAaRTKL1Dky4gIujxC0cprlM32BbtJAeRhAkOs/Lhxl0=
-X-Received: by 2002:ab0:5a97:: with SMTP id w23mr2075364uae.129.1571651953620; 
- Mon, 21 Oct 2019 02:59:13 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=VIly/GOwYf9JLFy1KZhN7RsSTWZDQWPbQNHGbDM5vaQ=;
+ b=WE3NoZbWuE6bwjCn+enqrmH/k/7aEizBvA5s/r5HGgn6PZKOPE9B/xMGE4uK2kww98
+ Y1xlxMWc/Gq18IEAIM5SKdeJAO3pMUBUyKA0ZSllAk+aOqZJUzbu4dT8kcAz6UTUdvxQ
+ 726bi8Z3qPttHXJa2bCulExg97t7eqKik+qDxtRTzw8foV4QzeLJ5qvE8hfWUI4JXzbM
+ 99xv5tePqMuu0mIG1dsQN1VYo1A7TH6quZkRrQoT5POXiSj0DlC+L0SphHOzebndr6rb
+ kcP40IavXIIfNJtOxPb+HuVHa7UMtpSRJWdUfWSyuULqm0gshuv5tfcVKNsPLpeRW1m3
+ iUVA==
+X-Gm-Message-State: APjAAAU20sdFK4xUwR/hNcVLNi69dImyRH6l2WSmnCgetpGhGwsI8XfT
+ ivhqQ/3nmQ0byQ4hzu9crKA=
+X-Google-Smtp-Source: APXvYqxQjjcwyceE7CWb0t81HxVmTXnzUIM+gkThYKYGIul4COny7XO62D/6deIRXBTPxyD2sN9ecg==
+X-Received: by 2002:a05:6402:88c:: with SMTP id
+ e12mr10387252edy.170.1571652320623; 
+ Mon, 21 Oct 2019 03:05:20 -0700 (PDT)
+Received: from pi3 ([194.230.155.217])
+ by smtp.googlemail.com with ESMTPSA id y7sm253102edb.97.2019.10.21.03.05.19
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 21 Oct 2019 03:05:19 -0700 (PDT)
+Date: Mon, 21 Oct 2019 12:05:17 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: Re: [PATCH 07/25] crypto: s5p - switch to skcipher API
+Message-ID: <20191021100517.GA1780@pi3>
+References: <20191014121910.7264-1-ard.biesheuvel@linaro.org>
+ <20191014121910.7264-8-ard.biesheuvel@linaro.org>
 MIME-Version: 1.0
-References: <20191018154052.1276506-1-arnd@arndb.de>
- <20191018154201.1276638-5-arnd@arndb.de>
-In-Reply-To: <20191018154201.1276638-5-arnd@arndb.de>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Mon, 21 Oct 2019 11:58:37 +0200
-Message-ID: <CAPDyKFqHoPOPAA_0WpxQUjBTXJ-5BfMbcNXhFNr7rv3RObsgow@mail.gmail.com>
-Subject: Re: [PATCH 05/46] ARM: pxa: split up mach/hardware.h
-To: Arnd Bergmann <arnd@arndb.de>
+Content-Disposition: inline
+In-Reply-To: <20191014121910.7264-8-ard.biesheuvel@linaro.org>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_025915_328320_0F972993 
-X-CRM114-Status: GOOD (  16.10  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191021_030524_585251_A461451E 
+X-CRM114-Status: GOOD (  16.52  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:942 listed in]
- [list.dnswl.org]
+ no trust [209.85.208.67 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.67 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (k.kozlowski.k[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,84 +89,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Linux USB List <linux-usb@vger.kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Linux Fbdev development list <linux-fbdev@vger.kernel.org>,
- Dominik Brodowski <linux@dominikbrodowski.net>, linux-mtd@lists.infradead.org,
- Pavel Machek <pavel@ucw.cz>, Robert Jarzmik <robert.jarzmik@free.fr>,
- linux-clk <linux-clk@vger.kernel.org>, linux-leds@vger.kernel.org,
- linux-rtc@vger.kernel.org, linux-input@vger.kernel.org,
- Michael Turquette <mturquette@baylibre.com>,
- Guenter Roeck <linux@roeck-us.net>, linux-watchdog@vger.kernel.org,
- alsa-devel@alsa-project.org, Linux PM <linux-pm@vger.kernel.org>,
- Haojian Zhuang <haojian.zhuang@gmail.com>, Mark Brown <broonie@kernel.org>,
- Jacek Anaszewski <jacek.anaszewski@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Stephen Boyd <sboyd@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Daniel Mack <daniel@zonque.org>
+Cc: linux-samsung-soc@vger.kernel.org, Herbert Xu <herbert@gondor.apana.org.au>,
+ Eric Biggers <ebiggers@google.com>, Vladimir Zapolskiy <vz@mleia.com>,
+ linux-crypto@vger.kernel.org,
+ Kamil Konieczny <k.konieczny@partner.samsung.com>,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 18 Oct 2019 at 17:43, Arnd Bergmann <arnd@arndb.de> wrote:
->
-> The mach/hardware.h is included in lots of places, and it provides
-> three different things on pxa:
->
-> - the cpu_is_pxa* macros
-> - an indirect inclusion of mach/addr-map.h
-> - the __REG() and io_pv2() helper macros
->
-> Split it up into separate <linux/soc/pxa/cpu.h> and mach/pxa-regs.h
-> headers, then change all the files that use mach/hardware.h to
-> include the exact set of those three headers that they actually
-> need, allowing for further more targeted cleanup.
->
-> linux/soc/pxa/cpu.h can remain permanently exported and is now in
-> a global location along with similar headers. pxa-regs.h and
-> addr-map.h are only used in a very small number of drivers now
-> and can be moved to arch/arm/mach-pxa/ directly when those drivers
-> are to pass the necessary data as resources.
->
-> Cc: Michael Turquette <mturquette@baylibre.com>
-> Cc: Stephen Boyd <sboyd@kernel.org>
-> Cc: Viresh Kumar <viresh.kumar@linaro.org>
-> Cc: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-> Cc: Jacek Anaszewski <jacek.anaszewski@gmail.com>
-> Cc: Pavel Machek <pavel@ucw.cz>
-> Cc: Ulf Hansson <ulf.hansson@linaro.org>
-> Cc: Dominik Brodowski <linux@dominikbrodowski.net>
-> Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
-> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> Cc: Guenter Roeck <linux@roeck-us.net>
-> Cc: Mark Brown <broonie@kernel.org>
-> Cc: linux-clk@vger.kernel.org
-> Cc: linux-pm@vger.kernel.org
-> Cc: linux-input@vger.kernel.org
-> Cc: linux-leds@vger.kernel.org
-> Cc: linux-mmc@vger.kernel.org
-> Cc: linux-mtd@lists.infradead.org
-> Cc: linux-rtc@vger.kernel.org
-> Cc: linux-usb@vger.kernel.org
-> Cc: dri-devel@lists.freedesktop.org
-> Cc: linux-fbdev@vger.kernel.org
-> Cc: linux-watchdog@vger.kernel.org
-> Cc: alsa-devel@alsa-project.org
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+On Mon, Oct 14, 2019 at 02:18:52PM +0200, Ard Biesheuvel wrote:
+> Commit 7a7ffe65c8c5 ("crypto: skcipher - Add top-level skcipher interface")
+> dated 20 august 2015 introduced the new skcipher API which is supposed to
+> replace both blkcipher and ablkcipher. While all consumers of the API have
+> been converted long ago, some producers of the ablkcipher remain, forcing
+> us to keep the ablkcipher support routines alive, along with the matching
+> code to expose [a]blkciphers via the skcipher API.
+> 
+> So switch this driver to the skcipher API, allowing us to finally drop the
+> blkcipher code in the near future.
+> 
+> Cc: Krzysztof Kozlowski <krzk@kernel.org>
+> Cc: Vladimir Zapolskiy <vz@mleia.com>
+> Cc: Kamil Konieczny <k.konieczny@partner.samsung.com>
+> Cc: linux-samsung-soc@vger.kernel.org
+> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> ---
+>  drivers/crypto/s5p-sss.c | 191 ++++++++++----------
+>  1 file changed, 91 insertions(+), 100 deletions(-)
+> 
+> diff --git a/drivers/crypto/s5p-sss.c b/drivers/crypto/s5p-sss.c
+> index 010f1bb20dad..e6f1d4d5186c 100644
+> --- a/drivers/crypto/s5p-sss.c
+> +++ b/drivers/crypto/s5p-sss.c
+> @@ -303,7 +303,7 @@ struct s5p_aes_dev {
+>  	void __iomem			*aes_ioaddr;
+>  	int				irq_fc;
+>  
+> -	struct ablkcipher_request	*req;
+> +	struct skcipher_request	*req;
 
-[...]
+You mix here indentation.
 
-For the mmc part:
+Beside that:
 
-Acked-by: Ulf Hansson <ulf.hansson@linaro.org>
+Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
+
+Best regards,
+Krzysztof
 
 _______________________________________________
 linux-arm-kernel mailing list
