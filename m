@@ -2,86 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19382DE1A4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 02:58:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 358DDDE1C6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 03:28:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ba8DIC5rJXe6coemo36l/Hh0e9C8abE8N2GgxxYB5aw=; b=fC5F9VNQIHjW4m
-	efepBpaPIfEbGroHEpG7CiZkkJed0VIWrULkifLrsDnJzP1Gf402iE6ryRB1Bd3zz/HynWVnqsUmY
-	J9b0IKrl8KhxEYa4w0V/VU7EcF3JBMpsaLR1lsYQ1P6HMYDqsCSlRrh+l3OOyYdTgqBHSj3aefeDD
-	hVizGJXGSFkbhprtWAblrjiQyNkxTsWVsGLfvjjiTZz9z0ryresT5OJ+6dmRiLliVNzyqwn8g6h3e
-	Wv1G8OvWbZE8M0+UxO/jXEH4Y41JSk5n5RvZtEZ0Nvh8JSVmu1bkA5e0iUwTEmwKQkoyEd+E6JRuw
-	Edr63KlUrhKn5O2fbBWw==;
+	List-Owner; bh=/gLXRzMvvOHI3CBJ31MqHpkBo98eR6CyrjyfwzARzjA=; b=u7A58pJyJ2JDrS
+	2M5hqYT0d/z1PdDnv0x5Fag7LPfHhn9l9/+haYhUAXwZTZ4HP/0mDrhSQ/nmv5HcvrmQjEhCQdQcC
+	/3UCQ1QIOHYizYHzYm6rAj9YWP5NO5mI6AjKEzG/eVf/NfM/y1NNiRetPmHYNiaq1RmznI+cm71VN
+	hAfiDnRA2tCSk1w40Y3bpdDFFA20SCGn7sSsjmRugrmnrSadA3QUDCTH4qIvuCVq9PB8JQa1b+1PL
+	HfPqysxnZhlSALbXaN9lchlI6Oyui0Jx2qc8o+CROALnkhbS2kafK3msF3PH68pcoJ7ytCY2PIEli
+	OQeRBrIkgrDP+de1wJ/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMM1G-0000C0-6O; Mon, 21 Oct 2019 00:57:58 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1iMMUb-0002Vi-BQ; Mon, 21 Oct 2019 01:28:17 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMM14-0000BE-93
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 00:57:47 +0000
-Received: by mail-lj1-x243.google.com with SMTP id b20so11408518ljj.5
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 20 Oct 2019 17:57:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=P0N78KoI75Hj59hJ0I2gcVqsjFplO4gxrv4G5I2+4wY=;
- b=mXQSV+xskxiAYbld+JVVUAM7zaTNgFNlzGaGMyyAvs/xTTJSXGLypKbNNa/ebuF2Co
- SzTAlstFFq8CpLRbU5Si81AeInxVQUiNsXtkQXI47YG/uJmxJmUA8bJrwVaZbooN1G7z
- IdOlfNltzzWIc078dsHchy/8jGJ2OtN4inzNzpBXWd8qgEjfz8mdjDEgeOPqZ+E1Ski4
- xxdg5bBAbuEpljaVamq9daPnDqN8aaa6LQw33F2HB6unuJT3acNoBKCon8jFGGKvvb4x
- ZMjcGmyvXEl4L7297moOas0yGdBd79K6BEgBlVfpfsWW6JOOfjxZkFwDckZpdsxPq25E
- yDFA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=P0N78KoI75Hj59hJ0I2gcVqsjFplO4gxrv4G5I2+4wY=;
- b=fXJ348tgSxN+ODdZwZXA6bP3AJe98s+BqODt7ob6lVXz9NZ/KJIzvBEgY7QCwDgEvN
- B5W4X12/osbg2lAPGBY6JuGm83rXPJ8wD9lev5GP7WmHD9ISLiDRGhwNaNr7I1CjHrcQ
- BBzVnu3CcjvFeFOfm9PGdIPi7Y27kj+c92anzDltJlg3Gb0YTr+fY0pZHQeXA2BtrotO
- 0lbXufyqRmLrbZ41kUtHZEh3cuT/Me8Xyh7XWMBdSi09OgqKPdv+/0IqyjRT/02fK5vH
- 1BH+/ePotq7qi6MmMKIdKi19hu8w7Rxjq/jqUFM0LWKM91pQ4F79U6AkWz8xB6+5ktgE
- A94g==
-X-Gm-Message-State: APjAAAXRsfH6y0lxkTswJABlimq2mf4CZ7jzEeRdbNVZS+jnZ7ovOIpF
- +nEBM16ljRXFL7cdSGxU3CO1aL6z5+Wiuu1Di7Ppsg==
-X-Google-Smtp-Source: APXvYqxPrMm6CyCmtsqcedLUxx1JQ8hJkvFjyPe1danPq+lfioMZVhJm0Lo4howbIW74oUzEEQUOvBdOXuk+Y2BOegs=
-X-Received: by 2002:a2e:a0c9:: with SMTP id f9mr13068040ljm.77.1571619464557; 
- Sun, 20 Oct 2019 17:57:44 -0700 (PDT)
+ id 1iMMUR-0002V5-Fs; Mon, 21 Oct 2019 01:28:09 +0000
+X-UUID: dad3cf6dfc9b4cf48e318730f3cafed0-20191020
+X-UUID: dad3cf6dfc9b4cf48e318730f3cafed0-20191020
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 2102486527; Sun, 20 Oct 2019 17:27:55 -0800
+Received: from MTKMBS33N1.mediatek.inc (172.27.4.75) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 20 Oct 2019 18:27:56 -0700
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS33N1.mediatek.inc
+ (172.27.4.75) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Mon, 21 Oct 2019 09:27:51 +0800
+Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 21 Oct 2019 09:27:51 +0800
+Message-ID: <1571621272.31576.7.camel@mhfsdcap03>
+Subject: Re: [PATCH] usb: mtu3: fix missing include of mtu3_dr.h
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: "Ben Dooks (Codethink)" <ben.dooks@codethink.co.uk>
+Date: Mon, 21 Oct 2019 09:27:52 +0800
+In-Reply-To: <20191017172717.31409-1-ben.dooks@codethink.co.uk>
+References: <20191017172717.31409-1-ben.dooks@codethink.co.uk>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-References: <20191015173026.9962-1-manivannan.sadhasivam@linaro.org>
- <20191015173026.9962-4-manivannan.sadhasivam@linaro.org>
- <CACRpkdZRY138RAf8N2xGam89r66ik2vW44OZx0bDcCt4P2GBLA@mail.gmail.com>
- <20191019160513.GA17631@Mani-XPS-13-9360>
-In-Reply-To: <20191019160513.GA17631@Mani-XPS-13-9360>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 21 Oct 2019 02:57:31 +0200
-Message-ID: <CACRpkdbgFGciZMBF-_h5Wi47Hmco7tA9Pr7XegM8SpWxhqLT1A@mail.gmail.com>
-Subject: Re: [PATCH v2 3/4] gpio: Add RDA Micro GPIO controller support
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+X-TM-SNTS-SMTP: 25F215405ED27AA9B6E03A344BF7268CD05F4EB00D98C9A18751FA822DAE4A042000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191020_175746_325292_176018DD 
-X-CRM114-Status: GOOD (  12.23  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191020_182807_533326_48B5BA9E 
+X-CRM114-Status: GOOD (  13.68  )
+X-Spam-Score: 2.5 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
+ 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,41 +74,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- linux-unisoc@lists.infradead.org, Orson Zhai <orsonzhai@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-kernel@lists.codethink.co.uk,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Oct 19, 2019 at 6:05 PM Manivannan Sadhasivam
-<manivannan.sadhasivam@linaro.org> wrote:
-> On Wed, Oct 16, 2019 at 02:41:32PM +0200, Linus Walleij wrote:
+On Thu, 2019-10-17 at 18:27 +0100, Ben Dooks (Codethink) wrote:
+> The declarations of ssusb_gadget_{init,exit} are
+> in the mtu3_dr.h file but the code does that implements
+> them does not include this. Add the include to fix the
+> following sparse warnigns:
+> 
+> drivers/usb/mtu3/mtu3_core.c:825:5: warning: symbol 'ssusb_gadget_init' was not declared. Should it be static?
+> drivers/usb/mtu3/mtu3_core.c:925:6: warning: symbol 'ssusb_gadget_exit' was not declared. Should it be static?
+> 
+> Signed-off-by: Ben Dooks <ben.dooks@codethink.co.uk>
+> ---
+> Cc: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> Cc: linux-usb@vger.kernel.org
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-mediatek@lists.infradead.org
+> ---
+>  drivers/usb/mtu3/mtu3_core.c | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/drivers/usb/mtu3/mtu3_core.c b/drivers/usb/mtu3/mtu3_core.c
+> index c3d5c1206eec..9dd02160cca9 100644
+> --- a/drivers/usb/mtu3/mtu3_core.c
+> +++ b/drivers/usb/mtu3/mtu3_core.c
+> @@ -16,6 +16,7 @@
+>  #include <linux/platform_device.h>
+>  
+>  #include "mtu3.h"
+> +#include "mtu3_dr.h"
+>  #include "mtu3_debug.h"
+>  #include "mtu3_trace.h"
 
-> > select GPIO_GENERIC
->
-> hmm.. I don't think this driver can use it. Please see the justification
-> below.
-(...)
-> As you can see in this driver, there are 2 separate registers needs to be
-> read in order to get the value. RDA_GPIO_VAL needs to be read when the pin
-> is in input state and RDA_GPIO_SET needs to be read when the pin is in output
-> state.
->
-> The MMIO driver relies on a single `dat` register to read the GPIO state and
-> this won't fit for this driver and hence my justification for not using it.
+Acked-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 
-Use RDA_GPIO_VAL for dat, then set BGPIOF_READ_OUTPUT_REG_SET
-and the mmio core will do what you want I think? That's what the flag is
-for IIUC.
+Thanks a lot
 
-Maybe we should document it better :/
+>  
 
-Yours,
-Linus Walleij
+
 
 _______________________________________________
 linux-arm-kernel mailing list
