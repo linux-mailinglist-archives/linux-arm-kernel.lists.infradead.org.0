@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8582DEA4D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 13:01:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56E4DDEA4C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 13:00:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=8rR++ZHxwTZtkponfrYiwjXHQDJqZw0F5R+4xuFfm2Y=; b=nXqq/IvMNyiuiUgoz2ynRNG1ul
-	FHCbL3JRFYUNPls6yHHjjGjKr8TtCDVQT2rOGiWKF+kHgmsSqTywAJu/GRcPRoqGSBNcJaBr0cimu
-	n0tinnX8oPDhxjH9PsZTTc9JKu9ifRKN6zXqe8BPQ8pxDeVCuAGdTJtzdNNqwlQOUL5bWW5DfPQ5e
-	f8/EOj4zKBnSqHrpQVjnC/J+M7vn5QugSNyXWeNvn9i593b4fHfZmUa5+nhfuJYQVDWGMU6/f9rex
-	RXaSZPTM2+trGBsXNGdRx9uY2T0WbHAVEi6KHbMhRFe1criY/F2rXLvaCkypCWYT9mVO9SnHtRHOu
-	bf+XS3zg==;
+	bh=3ozwEcxAUdo0iHYBtBO0VKk8uh3GVYEn9VrJa/xMvw4=; b=MGuwPnUjT2Rf3lTQx3I11WJDAI
+	sMQrWTLY9Nuq4KgKK8H5CKwx4PqlRczkVhyLqUmFk1bKagJo/eDPAt22eNiVL5TN9CptTiAa0C2yL
+	RhPoo+k7/c9/wcuEqofFNwvwwKsC4BsaNKfGkyp73eDStgnz9+k/VFMTpyELXUmuiL4LwAkDYtTd1
+	m+Ix2pdkMbLaBKoIQInb7YaKwZTiDWetr4Y6Oyhcc93qah9aqML46ps2FbdUE2sk8x04sg3rBVEjX
+	oi3OynghFKQp3bZHwcp3KuXYyWyABncLwAdG9bzd6zhJ8cCyEo4YUTj6l5z+TOLTL/92hS/ijraNI
+	w+8jAlUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMVQt-0003fg-QE; Mon, 21 Oct 2019 11:01:03 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1iMVQd-0003Of-JE; Mon, 21 Oct 2019 11:00:47 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMVOU-0000JU-Tt
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 10:58:37 +0000
-Received: by mail-wr1-x443.google.com with SMTP id t16so8283271wrr.1
+ id 1iMVOW-0000KW-KQ
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 10:58:38 +0000
+Received: by mail-wr1-x444.google.com with SMTP id c2so8177945wrr.10
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 21 Oct 2019 03:58:34 -0700 (PDT)
+ Mon, 21 Oct 2019 03:58:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=IbXKOY/JOfOJZSRWAViTfLDMweZJVT8cxQjaKThEJUs=;
- b=g2YD/r70AWQyO+VHPtEGhGPosKYW86edskEOwPZfS49Q++wZv6N1rnQKxBatV5B7xd
- 0tigIl5sw+dR7G0KTeD1okgY6m2eNO1BfQtAPbZw4m/PLaNZkNEX6VJBCxzrzdufBgrQ
- KC9GA121S5U9QeZlCEDMD1eoEewRJk/MGmRUmVwaFV15KX/KHkJo0g9OAP4d0zqg1pXz
- PFWtICDTNfEC6sKpBZ/k7V5lxnH8DLwG7hV78bsnGqX1+kd2vpdvjil2uYr3vMH6HTpX
- 0L0lD0UFh3vgDiGSKDEfDZlRsIt0r1JaB+w+wLd4bZztkTCSb5RfwHoOCWDneAE4+GK5
- PSCw==
+ bh=aRIsIrxJRG4WGhOzej9X0cMyz5OqcLFYkbUiKyLomGE=;
+ b=cTeiB4QcI/9D1UCeh1hzV+1od3PVVBhQlL72xj03bVUzMnwFnJarkT3Uqedx1NfBAs
+ VYsdVW/U+jL6mmMApxUm7s8EdbLDQ34lDiQMVyO9e5xbSkHQ92Y3/3wKHbOlES7D+Q9a
+ AKRv2JAi+ZPKpEzpS6yO7Nf7cRoCEXJebv27MfESjaxI9K2IO1OZJRf3ShNdo2GSHebK
+ 6VZoPHGPCibQycGVei+Ls5x1pYadk/6OK3pre7jjZbewtrAt0cEbQ59GI1uCS7ri9dRb
+ foXS/X1MFU+gZDuV21M+EN9A04hTB6AvIaaOWnpSGeDfWgQNuXi0Xg3Ned6IUGuMXaRC
+ bjtw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=IbXKOY/JOfOJZSRWAViTfLDMweZJVT8cxQjaKThEJUs=;
- b=DwQXH3+awkRqPSNi7f1jXAXwoWnhlDKJlTXimk3nZkG74/xkgjFYw6MM3fEVBx9rQc
- 101TIEp9IPJRQL0T3TgeJFoXZYWj4x6PsqgnLY/RMMLY2gSMRy7M7HAfPCDCIqhyHoqt
- QAq5LrKfpByHlrq8MsCSW9/5WxMy06XVY73EdgGEJncv+z+mQMrD5HY3RIzHoqD4GX6a
- 4nv6MPtlDcEBpLy06nHNMEK31Xfq+E50mv/UfP8/4LYbRghHo61xXe0jgeoBKhHZMyFC
- WLkFyvqyQuykHLhcoeh76UNsOh+meaL6++F03XncCng/HIUuu/Ickyugcxrg9LYvh+nU
- +rfg==
-X-Gm-Message-State: APjAAAX6c/l4E8208Zqv+1/SRg4gkHrRgBPLqxIk0DKCWvuyD4ibs1Is
- 4JsoaY3EoVh7XcFZ0J8Gv2Vxwg==
-X-Google-Smtp-Source: APXvYqxkydzOmDDGqQFtasKd08sLyNmCwIpqqRL8Lb7I8W1Rs9wntpsGzzeulad4hu48Ctpn1GIJqA==
-X-Received: by 2002:a5d:6a8b:: with SMTP id s11mr12752681wru.394.1571655513309; 
- Mon, 21 Oct 2019 03:58:33 -0700 (PDT)
+ bh=aRIsIrxJRG4WGhOzej9X0cMyz5OqcLFYkbUiKyLomGE=;
+ b=lUlzaiPSk9aTJSEBp/UIkj5M94oVxIk+TEHpgUYZnqPrHc+GWBx3ST8fEsaHR9py0y
+ ZalCxfJY8Dg5NLGDXVi5QvVzxvTBGTvUV52t+YpGv+GXGsizHf6wt3q2vjvfTjfJG9/F
+ yDvudTQ+TlAs21RnLRWjlugo2bz6XEWFrAmqKEFMRb0MlUeCjks0V4GwBzUlWvcDi3GX
+ V03s4IwfooCVWHzMIblLmh1MTQTQ9/HWAdiQv8ZcR31WdgLBV2bLErSB9Z/B4eC7l9jS
+ vc6eDqgsy8y5PH1jt6WYIijePxTGY9aYIVJJZrJbiXeeDXJmSyUtylPVXbJepvFokyCa
+ qO6A==
+X-Gm-Message-State: APjAAAVrwp2nbwN5wjXXUIStKwCdayZdef5bnFfcKysdiZxripkFqU7Z
+ SPndonZeb6hUYh5i/0TrTgC5Uw==
+X-Google-Smtp-Source: APXvYqwoMZ0Xrjo13bXEBEaHCm4InAmzMPniweiB+Wqxda5ESkJaOgUQJn/z4SYHvFyxum1/utelgg==
+X-Received: by 2002:a5d:5401:: with SMTP id g1mr9448965wrv.54.1571655514185;
+ Mon, 21 Oct 2019 03:58:34 -0700 (PDT)
 Received: from localhost.localdomain ([95.149.164.99])
- by smtp.gmail.com with ESMTPSA id q22sm12544289wmj.31.2019.10.21.03.58.32
+ by smtp.gmail.com with ESMTPSA id q22sm12544289wmj.31.2019.10.21.03.58.33
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 21 Oct 2019 03:58:32 -0700 (PDT)
+ Mon, 21 Oct 2019 03:58:33 -0700 (PDT)
 From: Lee Jones <lee.jones@linaro.org>
 To: daniel.thompson@linaro.org, arnd@arndb.de, broonie@kernel.org,
  linus.walleij@linaro.org
-Subject: [PATCH v2 8/9] mfd: mfd-core: Remove usage counting for .{en,
- dis}able() call-backs
-Date: Mon, 21 Oct 2019 11:58:21 +0100
-Message-Id: <20191021105822.20271-9-lee.jones@linaro.org>
+Subject: [PATCH v2 9/9] mfd: mfd-core: Move pdev->mfd_cell creation back into
+ mfd_add_device()
+Date: Mon, 21 Oct 2019 11:58:22 +0100
+Message-Id: <20191021105822.20271-10-lee.jones@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191021105822.20271-1-lee.jones@linaro.org>
 References: <20191021105822.20271-1-lee.jones@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_035835_255701_3C4F1AA4 
-X-CRM114-Status: GOOD (  19.01  )
+X-CRM114-CacheID: sfid-20191021_035836_863907_84C7E678 
+X-CRM114-Status: GOOD (  13.31  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,178 +105,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The MFD implementation for reference counting was complex and unnecessary.
-There was only one bona fide user which has now been converted to handle
-the process in a different way. Any future resource protection, shared
-enablement functions should be handed by the parent device, rather than
-through the MFD subsystem API.
+Most of the complexity of mfd_platform_add_cell() has been removed. The
+only functionality left duplicates cell memory into the child's platform
+device. Since it's only a few lines, moving it to the main thread and
+removing the superfluous function makes sense.
 
 Signed-off-by: Lee Jones <lee.jones@linaro.org>
 ---
- drivers/mfd/mfd-core.c   | 57 +++++++---------------------------------
- include/linux/mfd/core.h |  2 --
- 2 files changed, 9 insertions(+), 50 deletions(-)
+ drivers/mfd/mfd-core.c | 21 ++++-----------------
+ 1 file changed, 4 insertions(+), 17 deletions(-)
 
 diff --git a/drivers/mfd/mfd-core.c b/drivers/mfd/mfd-core.c
-index 90b43b44a15a..5d56015baeeb 100644
+index 5d56015baeeb..849dbe3798b0 100644
 --- a/drivers/mfd/mfd-core.c
 +++ b/drivers/mfd/mfd-core.c
-@@ -26,53 +26,31 @@ static struct device_type mfd_dev_type = {
- int mfd_cell_enable(struct platform_device *pdev)
- {
- 	const struct mfd_cell *cell = mfd_get_cell(pdev);
--	int err = 0;
- 
- 	if (!cell->enable) {
- 		dev_dbg(&pdev->dev, "No .enable() call-back registered\n");
- 		return 0;
- 	}
- 
--	/* only call enable hook if the cell wasn't previously enabled */
--	if (atomic_inc_return(cell->usage_count) == 1)
--		err = cell->enable(pdev);
--
--	/* if the enable hook failed, decrement counter to allow retries */
--	if (err)
--		atomic_dec(cell->usage_count);
--
--	return err;
-+	return cell->enable(pdev);
- }
- EXPORT_SYMBOL(mfd_cell_enable);
- 
- int mfd_cell_disable(struct platform_device *pdev)
- {
- 	const struct mfd_cell *cell = mfd_get_cell(pdev);
--	int err = 0;
- 
- 	if (!cell->enable) {
- 		dev_dbg(&pdev->dev, "No .disable() call-back registered\n");
- 		return 0;
- 	}
- 
--	/* only disable if no other clients are using it */
--	if (atomic_dec_return(cell->usage_count) == 0)
--		err = cell->disable(pdev);
--
--	/* if the disable hook failed, increment to allow retries */
--	if (err)
--		atomic_inc(cell->usage_count);
--
--	/* sanity check; did someone call disable too many times? */
--	WARN_ON(atomic_read(cell->usage_count) < 0);
--
--	return err;
-+	return cell->disable(pdev);
+@@ -49,19 +49,6 @@ int mfd_cell_disable(struct platform_device *pdev)
  }
  EXPORT_SYMBOL(mfd_cell_disable);
  
- static int mfd_platform_add_cell(struct platform_device *pdev,
--				 const struct mfd_cell *cell,
--				 atomic_t *usage_count)
-+				 const struct mfd_cell *cell)
- {
- 	if (!cell)
- 		return 0;
-@@ -81,7 +59,6 @@ static int mfd_platform_add_cell(struct platform_device *pdev,
- 	if (!pdev->mfd_cell)
- 		return -ENOMEM;
+-static int mfd_platform_add_cell(struct platform_device *pdev,
+-				 const struct mfd_cell *cell)
+-{
+-	if (!cell)
+-		return 0;
+-
+-	pdev->mfd_cell = kmemdup(cell, sizeof(*cell), GFP_KERNEL);
+-	if (!pdev->mfd_cell)
+-		return -ENOMEM;
+-
+-	return 0;
+-}
+-
+ #if IS_ENABLED(CONFIG_ACPI)
+ static void mfd_acpi_add_device(const struct mfd_cell *cell,
+ 				struct platform_device *pdev)
+@@ -141,6 +128,10 @@ static int mfd_add_device(struct device *parent, int id,
+ 	if (!pdev)
+ 		goto fail_alloc;
  
--	pdev->mfd_cell->usage_count = usage_count;
- 	return 0;
- }
- 
-@@ -144,7 +121,7 @@ static inline void mfd_acpi_add_device(const struct mfd_cell *cell,
- #endif
- 
- static int mfd_add_device(struct device *parent, int id,
--			  const struct mfd_cell *cell, atomic_t *usage_count,
-+			  const struct mfd_cell *cell,
- 			  struct resource *mem_base,
- 			  int irq_base, struct irq_domain *domain)
- {
-@@ -206,7 +183,7 @@ static int mfd_add_device(struct device *parent, int id,
++	pdev->mfd_cell = kmemdup(cell, sizeof(*cell), GFP_KERNEL);
++	if (!pdev->mfd_cell)
++		goto fail_device;
++
+ 	res = kcalloc(cell->num_resources, sizeof(*res), GFP_KERNEL);
+ 	if (!res)
+ 		goto fail_device;
+@@ -183,10 +174,6 @@ static int mfd_add_device(struct device *parent, int id,
  			goto fail_alias;
  	}
  
--	ret = mfd_platform_add_cell(pdev, cell, usage_count);
-+	ret = mfd_platform_add_cell(pdev, cell);
- 	if (ret)
- 		goto fail_alias;
- 
-@@ -296,16 +273,9 @@ int mfd_add_devices(struct device *parent, int id,
- {
- 	int i;
- 	int ret;
--	atomic_t *cnts;
+-	ret = mfd_platform_add_cell(pdev, cell);
+-	if (ret)
+-		goto fail_alias;
 -
--	/* initialize reference counting for all cells */
--	cnts = kcalloc(n_devs, sizeof(*cnts), GFP_KERNEL);
--	if (!cnts)
--		return -ENOMEM;
- 
- 	for (i = 0; i < n_devs; i++) {
--		atomic_set(&cnts[i], 0);
--		ret = mfd_add_device(parent, id, cells + i, cnts + i, mem_base,
-+		ret = mfd_add_device(parent, id, cells + i, mem_base,
- 				     irq_base, domain);
- 		if (ret)
- 			goto fail;
-@@ -316,17 +286,15 @@ int mfd_add_devices(struct device *parent, int id,
- fail:
- 	if (i)
- 		mfd_remove_devices(parent);
--	else
--		kfree(cnts);
-+
- 	return ret;
- }
- EXPORT_SYMBOL(mfd_add_devices);
- 
--static int mfd_remove_devices_fn(struct device *dev, void *c)
-+static int mfd_remove_devices_fn(struct device *dev, void *data)
- {
- 	struct platform_device *pdev;
- 	const struct mfd_cell *cell;
--	atomic_t **usage_count = c;
- 
- 	if (dev->type != &mfd_dev_type)
- 		return 0;
-@@ -337,20 +305,13 @@ static int mfd_remove_devices_fn(struct device *dev, void *c)
- 	regulator_bulk_unregister_supply_alias(dev, cell->parent_supplies,
- 					       cell->num_parent_supplies);
- 
--	/* find the base address of usage_count pointers (for freeing) */
--	if (!*usage_count || (cell->usage_count < *usage_count))
--		*usage_count = cell->usage_count;
--
- 	platform_device_unregister(pdev);
- 	return 0;
- }
- 
- void mfd_remove_devices(struct device *parent)
- {
--	atomic_t *cnts = NULL;
--
--	device_for_each_child_reverse(parent, &cnts, mfd_remove_devices_fn);
--	kfree(cnts);
-+	device_for_each_child_reverse(parent, NULL, mfd_remove_devices_fn);
- }
- EXPORT_SYMBOL(mfd_remove_devices);
- 
-diff --git a/include/linux/mfd/core.h b/include/linux/mfd/core.h
-index bd8c0e089164..919f09fb07b7 100644
---- a/include/linux/mfd/core.h
-+++ b/include/linux/mfd/core.h
-@@ -30,8 +30,6 @@ struct mfd_cell {
- 	const char		*name;
- 	int			id;
- 
--	/* refcounting for multiple drivers to use a single cell */
--	atomic_t		*usage_count;
- 	int			(*enable)(struct platform_device *dev);
- 	int			(*disable)(struct platform_device *dev);
- 
+ 	for (r = 0; r < cell->num_resources; r++) {
+ 		res[r].name = cell->resources[r].name;
+ 		res[r].flags = cell->resources[r].flags;
 -- 
 2.17.1
 
