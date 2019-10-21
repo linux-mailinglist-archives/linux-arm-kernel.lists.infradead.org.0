@@ -2,59 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36E24DEA89
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 13:13:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09142DEA9E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 13:16:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lJRb5RRM5/PrzoebNi5T35Y+QFeYsqgvWWe2pKAw8iM=; b=I+eDffin3iugOl
-	n9CNrYbv2dg6spTkX/x8h7C8xoagdT9ZbeJQmWIOQZ+68oY/J2uwJdlCs13ue/KVhhpyBMmidVhd0
-	QlRB7rNLIUyGV7F6HLJZCrtIlsSzBl6fKadAYOBSosFog9jFQG4FWxeo5GbD4aWTudi1/W7BAqCky
-	fNF8yozXEOtT+61vQQUEQR4gq1xnc+CPkupGpHJqFd24F3+wkT68kp+jM/7pLJCRA5aE4QFvzTjlt
-	JKVXtYwd19yaoylUraaJN1ryPDzcLHVGr9Bd4y1kCwdhPGJS2bXiox+L1eAo7VSq+BDLSWrjNphB6
-	jE5HzUy8jcDL7wuLmUBA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bi48joRtnydsTCYi+nI1SEfo6tmcGSNX/LdRteBS7/8=; b=AExy+1Fro1hb92
+	Mtn9BgN1+ZnOVIALNcPGZGmvkQDxKDum5y81Y9RaMGNqPFZFiTAL59lRMpne36LZzwjTiQ86I9DqH
+	QDh030y2wcyM4l2KU3fV6zCUo2YSOH5tQT8oafqAtwbaGzjBo2rUaHXqYKVcc0phic0oeIJuC6pYX
+	F6jnxYdF+TLK8MiT/6eOpuKeMC3otEhJ8JdSmf9KYJTiAGMzxtOuwI/lJ8ZsXcGblQfk1m5JBGYxD
+	Pkx7NhJM3rDuhC90HzscQqAvmfzzmvfC+DEJx3s4uUwuz5N3d6IaOZ0GA7T8DtoZwmsg4LbcQ+4xD
+	Qji9/FZfeQOOLZXKZTmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMVdB-0000r4-JE; Mon, 21 Oct 2019 11:13:45 +0000
-Received: from lb2-smtp-cloud7.xs4all.net ([194.109.24.28])
+	id 1iMVfV-0002lF-D7; Mon, 21 Oct 2019 11:16:09 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMVcz-0000pt-It
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 11:13:35 +0000
-Received: from [192.168.2.10] ([46.9.232.237])
- by smtp-cloud7.xs4all.net with ESMTPA
- id MVcniUFpbo1ZhMVcqiLppd; Mon, 21 Oct 2019 13:13:25 +0200
-Subject: Re: [PATCH v4 5/6] media: sun4i: Add H3 deinterlace driver
-To: Jernej Skrabec <jernej.skrabec@siol.net>, mripard@kernel.org, wens@csie.org
-References: <20191017183738.68069-1-jernej.skrabec@siol.net>
- <20191017183738.68069-6-jernej.skrabec@siol.net>
-From: Hans Verkuil <hverkuil@xs4all.nl>
-Message-ID: <8137fbb3-036a-95e4-2642-5dd46fb55eb9@xs4all.nl>
-Date: Mon, 21 Oct 2019 13:13:20 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iMVfK-0002kw-Q9
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 11:16:00 +0000
+Received: by mail-wr1-x444.google.com with SMTP id s1so4723536wro.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 21 Oct 2019 04:15:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=2kG9pHnFeA6PHcYxK5XIBWye1413OVWPwWivEHaEPxA=;
+ b=sHFpCGNpZUr9EgW9RnN3TQG6R2f+xIbwosYwqG+ENfBMv8io6y7yM2d9N6vNuloJF2
+ HxsM8JQVm/hKyxFPDvsUQXGaHY4ROjy6Fj89QD433kPOxXfb/7rEwMCPth7/2gUXQ8Bm
+ YkJv5oF17JlBd3p9iUSwU+GFDhPdypJMfwxdW2dPs+kk1Run6TuZGTlGR9/p7QxX+jdE
+ exlPcYrTvQt2yTfO//swSHyZZxG6MI/vqlJkUa1nLGYxLW/oHJ10IzKJdv3UdoJm8apA
+ +rxORZO4/MH8sNtfmnCnRjhVXHqmIJr0pCJZtqE0HhllafHa9gmWQSqv4DQf+nBmwPfA
+ oowA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=2kG9pHnFeA6PHcYxK5XIBWye1413OVWPwWivEHaEPxA=;
+ b=uCwmG6Umozk4ccRy6Z9CqF79A9z2qmDk3n7lOLNDvTg9ZufHdjWteXURUxl+wdNmk0
+ GDFYybZ00F1bpAI7AYUWNyI4FyJ1Ez9jedivUJ2U+2GyCyTjWTVa8LCkHba+uoz8N4rk
+ uV9XP7YlfpkmGjQIdWaFlV/vilu27ArT2C9foUEcceDp0GHBpzakm9lz4SFBCoazO4C7
+ rCFOrUE2Fxgif9MCUdsd9O0nrLsxsqPKaVgYKz0B+uRQn2nfVCuEQ6kmnrl83Kl8G/qR
+ hoWntt7QQLw6ZjU6IoLwNjVqdyL05Lx3Czeew7TXEG9sP3A2XKXF5PEDlDh6MhICS8ng
+ L4kA==
+X-Gm-Message-State: APjAAAULbqbyM5m4tBwvkk3y9caxSehLGBvGE2QkSul5L/cPZtoA7W4A
+ XjLGNH13NY/WENobViCLS6WchQ==
+X-Google-Smtp-Source: APXvYqxYf6uO9WVXoizzlTpKAqfTaa9EpMyq3rZnnJ4hcxgDGEwowxOByM3u5FsqQHn2e4sOGazs9A==
+X-Received: by 2002:adf:eed2:: with SMTP id a18mr4241896wrp.273.1571656557502; 
+ Mon, 21 Oct 2019 04:15:57 -0700 (PDT)
+Received: from holly.lan (cpc141214-aztw34-2-0-cust773.18-1.cable.virginm.net.
+ [86.9.19.6])
+ by smtp.gmail.com with ESMTPSA id v6sm17556789wru.72.2019.10.21.04.15.56
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 21 Oct 2019 04:15:56 -0700 (PDT)
+Date: Mon, 21 Oct 2019 12:15:55 +0100
+From: Daniel Thompson <daniel.thompson@linaro.org>
+To: Lee Jones <lee.jones@linaro.org>
+Subject: Re: [PATCH v2 1/9] mfd: cs5535-mfd: Use PLATFORM_DEVID_* defines and
+ tidy error message
+Message-ID: <20191021111555.zsvvdfun3gqhrurw@holly.lan>
+References: <20191021105822.20271-1-lee.jones@linaro.org>
+ <20191021105822.20271-2-lee.jones@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <20191017183738.68069-6-jernej.skrabec@siol.net>
-Content-Language: en-US
-X-CMAE-Envelope: MS4wfOrcYAqH7QBWivX1AK7DllWSBUikBvpznnE0MCXdnJosMmjiQHFQoFOuDzkFg++s7AkvCd6Opgc3BsGoZqLEL7ZqPX8v6rDZHCa5ifDgksR9t+4pRPCZ
- fN+EMR3lWs0VBDAA6hWnNAMidQBrH/8raspDN/zVlgGKUP5w4K6d2FHdkGV9VRnzsJrw2LlRdOpqXajwCPfg6YUSFWUGe/1Owt8dKERa3AcaZZzVtEEdK5Ah
- lfbxQXo58S4JsIEy59RsW2utfHc8NzwSE6B9lTzU8SplcjMBxhUIzrYDBUQu/i+kFBrWxB0gWsNaXWn02oJU6vnveEddueSDOdeKmofpfhDsVmpoGi9Lv48H
- GrfiIfaYsPt3ddOy4G7f6voveea3cykjYeqNJRGdY17iZ/Z68XPXYAd/sCuBMCNy3e6e/p4MHS+RbaeokiKlt+39Qsu6d7VHqDuXaQLLorl48YzCINRfzZmO
- j/jE9cM7+akN4pJ0mDB5vGZchJ2iBkmpjZt9EHlIwg3I728Jvf5/Ht+gg5M=
+Content-Disposition: inline
+In-Reply-To: <20191021105822.20271-2-lee.jones@linaro.org>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_041333_778335_4EA03DE8 
-X-CRM114-Status: GOOD (  19.71  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191021_041558_855690_D5B31316 
+X-CRM114-Status: GOOD (  17.01  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.28 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,58 +100,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com, robh+dt@kernel.org,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: baohua@kernel.org, stephan@gerhold.net, arnd@arndb.de,
+ linus.walleij@linaro.org, linux-kernel@vger.kernel.org, broonie@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMTAvMTcvMTkgODozNyBQTSwgSmVybmVqIFNrcmFiZWMgd3JvdGU6Cj4gQWxsd2lubmVyIEgz
-IFNvQyBjb250YWlucyBkZWludGVybGFjZSB1bml0LCB3aGljaCBoYXMgc2V2ZXJhbCBtb2RlcyBv
-Zgo+IG9wZXJhdGlvbiAtIGJ5cGFzcywgd2VhdmUsIGJvYiBhbmQgbWl4ZWQgKGFkdmFuY2VkKSBt
-b2RlLiBJIGRvbid0IGtub3cKPiBob3cgbWl4ZWQgbW9kZSB3b3JrcywgYnV0IGFjY29yZGluZyB0
-byBBbGx3aW5uZXIgaXQgZ2l2ZXMgYmVzdCByZXN1bHRzLAo+IHNvIHRoZXkgdXNlIGl0IGV4Y2x1
-c2l2ZWx5LiBDdXJyZW50bHkgdGhpcyBtb2RlIGlzIGFsc28gaGFyZGNvZGVkIGhlcmUuCj4gCj4g
-Rm9yIGVhY2ggaW50ZXJsZWF2ZWQgZnJhbWUgcXVldWVkLCB0aGlzIGRyaXZlciBwcm9kdWNlcyAy
-IGRlaW50ZXJsYWNlZAo+IGZyYW1lcy4gRGVpbnRlcmxhY2VkIGZyYW1lcyBhcmUgYmFzZWQgb24g
-MiBjb25zZXF1dGl2ZSBvdXRwdXQgYnVmZmVycywKPiBleGNlcHQgZm9yIHRoZSBmaXJzdCAyLCB3
-aGVyZSBzYW1lIG91dHB1dCBidWZmZXIgaXMgZ2l2ZW4gdG8gcGVyaXBoZXJhbAo+IGFzIGN1cnJl
-bnQgYW5kIHByZXZpb3VzLgo+IAo+IFRoZXJlIGlzIG5vIGRvY3VtZW50YXRpb24gZm9yIHRoaXMg
-Y29yZSwgc28gcmVnaXN0ZXIgbGF5b3V0IGFuZCBmaXhlZAo+IHZhbHVlcyB3ZXJlIHRha2VuIGZy
-b20gQlNQIGRyaXZlci4KPiAKPiBJJ20gbm90IHN1cmUgaWYgbWF4aW11bSBzaXplIG9mIHRoZSBp
-bWFnZSB1bml0IGlzIGNhcGFibGUgdG8gcHJvY2VzcyBpcwo+IGdvdmVybmVkIGJ5IHNpemUgb2Yg
-ImZsYWciIGJ1ZmZlcnMsIGZyZXF1ZW5jeSBvciBpdCByZWFsbHkgaXMgc29tZSBIVwo+IGxpbWl0
-YXRpb24uIEN1cnJlbnRseSBkcml2ZXIgY2FuIHByb2Nlc3MgZnVsbCBIRCBpbWFnZSBpbiB+MTVt
-cyAoNy41bXMKPiBmb3IgZWFjaCBjYXB0dXJlIGJ1ZmZlciksIHdoaWNoIGFsbG93cyB0byBwcm9j
-ZXNzIDE5MjB4MTA4MEA2MGkgdmlkZW8KPiBzbW9vdGhseSBpbiByZWFsIHRpbWUuCj4gCj4gQWNr
-ZWQtYnk6IE1heGltZSBSaXBhcmQgPG1yaXBhcmRAa2VybmVsLm9yZz4KPiBTaWduZWQtb2ZmLWJ5
-OiBKZXJuZWogU2tyYWJlYyA8amVybmVqLnNrcmFiZWNAc2lvbC5uZXQ+Cj4gLS0tCj4gIE1BSU5U
-QUlORVJTICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8ICAgIDcgKwo+ICBkcml2
-ZXJzL21lZGlhL3BsYXRmb3JtL0tjb25maWcgICAgICAgICAgICAgICAgfCAgIDEyICsKPiAgZHJp
-dmVycy9tZWRpYS9wbGF0Zm9ybS9zdW54aS9NYWtlZmlsZSAgICAgICAgIHwgICAgMSArCj4gIC4u
-Li9tZWRpYS9wbGF0Zm9ybS9zdW54aS9zdW44aS1kaS9NYWtlZmlsZSAgICB8ICAgIDIgKwo+ICAu
-Li4vbWVkaWEvcGxhdGZvcm0vc3VueGkvc3VuOGktZGkvc3VuOGktZGkuYyAgfCAxMDI4ICsrKysr
-KysrKysrKysrKysrCj4gIC4uLi9tZWRpYS9wbGF0Zm9ybS9zdW54aS9zdW44aS1kaS9zdW44aS1k
-aS5oICB8ICAyMzcgKysrKwo+ICA2IGZpbGVzIGNoYW5nZWQsIDEyODcgaW5zZXJ0aW9ucygrKQo+
-ICBjcmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVycy9tZWRpYS9wbGF0Zm9ybS9zdW54aS9zdW44aS1k
-aS9NYWtlZmlsZQo+ICBjcmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVycy9tZWRpYS9wbGF0Zm9ybS9z
-dW54aS9zdW44aS1kaS9zdW44aS1kaS5jCj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL21l
-ZGlhL3BsYXRmb3JtL3N1bnhpL3N1bjhpLWRpL3N1bjhpLWRpLmgKPiAKPiBkaWZmIC0tZ2l0IGEv
-TUFJTlRBSU5FUlMgYi9NQUlOVEFJTkVSUwo+IGluZGV4IGM3YjQ4NTI1ODIyYS4uYzM3NTQ1NTEy
-NWZiIDEwMDY0NAo+IC0tLSBhL01BSU5UQUlORVJTCj4gKysrIGIvTUFJTlRBSU5FUlMKPiBAQCAt
-NDY0Niw2ICs0NjQ2LDEzIEBAIE06CSJNYWNpZWogVy4gUm96eWNraSIgPG1hY3JvQGxpbnV4LW1p
-cHMub3JnPgo+ICBTOglNYWludGFpbmVkCj4gIEY6CWRyaXZlcnMvbmV0L2ZkZGkvZGVmeHguKgo+
-ICAKPiArREVJTlRFUkxBQ0UgRFJJVkVSUyBGT1IgQUxMV0lOTkVSIEgzCj4gK006CUplcm5laiBT
-a3JhYmVjIDxqZXJuZWouc2tyYWJlY0BzaW9sLm5ldD4KPiArTDoJbGludXgtbWVkaWFAdmdlci5r
-ZXJuZWwub3JnCj4gK1Q6CWdpdCBnaXQ6Ly9saW51eHR2Lm9yZy9tZWRpYV90cmVlLmdpdAo+ICtT
-OglNYWludGFpbmVkCj4gK0Y6CWRyaXZlcnMvbWVkaWEvcGxhdGZvcm0vc3VueGkvc3VuOGktZGkv
-CgpUaGlzIGlzIG1pc3NpbmcgdGhlIGJpbmRpbmdzIGZpbGUgYWRkZWQgaW4gdGhlIHByZXZpb3Vz
-IHBhdGNoLgoKUmVnYXJkcywKCglIYW5zCgo+ICsKPiAgREVMTCBTTUJJT1MgRFJJVkVSCj4gIE06
-CVBhbGkgUm9ow6FyIDxwYWxpLnJvaGFyQGdtYWlsLmNvbT4KPiAgTToJTWFyaW8gTGltb25jaWVs
-bG8gPG1hcmlvLmxpbW9uY2llbGxvQGRlbGwuY29tPgoKCl9fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cmxp
-bnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFk
-Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Mon, Oct 21, 2019 at 11:58:14AM +0100, Lee Jones wrote:
+> In most contexts '-1' doesn't really mean much to the casual observer.
+> In almost all cases, it's better to use a human readable define.  In
+> this case PLATFORM_DEVID_* defines have already been provided for this
+> purpose.
+> 
+> While we're here, let's be specific about the 'MFD devices' which
+> failed.  It will help when trying to distinguish which of the 2 sets
+> of sub-devices we actually failed to register.
+
+No objections... but won't the tag added by dev_err() already
+disambiguate?
+> 
+> Signed-off-by: Lee Jones <lee.jones@linaro.org>
+> ---
+>  drivers/mfd/cs5535-mfd.c | 5 +++--
+>  1 file changed, 3 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/mfd/cs5535-mfd.c b/drivers/mfd/cs5535-mfd.c
+> index f1825c0ccbd0..2c47afc22d24 100644
+> --- a/drivers/mfd/cs5535-mfd.c
+> +++ b/drivers/mfd/cs5535-mfd.c
+> @@ -127,10 +127,11 @@ static int cs5535_mfd_probe(struct pci_dev *pdev,
+>  		cs5535_mfd_cells[i].id = 0;
+>  	}
+>  
+> -	err = mfd_add_devices(&pdev->dev, -1, cs5535_mfd_cells,
+> +	err = mfd_add_devices(&pdev->dev, PLATFORM_DEVID_NONE, cs5535_mfd_cells,
+>  			      ARRAY_SIZE(cs5535_mfd_cells), NULL, 0, NULL);
+>  	if (err) {
+> -		dev_err(&pdev->dev, "MFD add devices failed: %d\n", err);
+> +		dev_err(&pdev->dev,
+> +			"Failed to add CS5532 sub-devices: %d\n", err);
+
+                                           ^^^
+
+Typo (and MODULE_DESCRIPTION() says this is a driver for CS5536 too).
+Once that is fixed:
+Reviewed-by: Daniel Thompson <daniel.thompson@linaro.org>
+
+
+Daniel.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
