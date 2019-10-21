@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC6A0DF343
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 18:36:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04F07DF331
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 18:36:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=8oirWp/Zm/89SrT+6d2GSkn7i6yYG1i0aUkR6oM7x4c=; b=QRaGrBW1u0SBX5Bd3fHfD/n1aU
-	R8PMwoX2FxTb0Dsr87xmunLqm+RtGRWdGY+fAebAM0x5rLvoQIlkG447F8zr/jkAO1aX98DWAhKRA
-	vCV9CEig4QNCLJarVnyyQS4jU1yFjJFn7zZORWH6ZlBvj4Lxs7aOIMju/DYKsP7XHiMhysIvEigHX
-	p0m+oMM/0aCFU83qnyVO7Yw7KlWjEyLHRcT4BGbP9DiYD8+dqiHb7Qr31RihVIalg3jV8HzcPk+mv
-	L8PnHhh2PURQRD9zmUKbq8VENe+3s9cPEmVzFpWqzE0IIWYDiwIoAsB2bd9/CrLlUjJPHBwfxRaLM
-	R0rGB/+g==;
+	bh=qJ20H5D+Q9wbLcOhtmYJLCzJSrZ5HmXTjtB/pcJG30U=; b=ZeisMg6NGfUFxUCDQZJqCmilTO
+	vuO+qARvBE6GIygI9MnM45J99Lz1BIw9InICvkWyzoSRLfbWUdqpyrFR7OHlDYPfWYC1Q7Y1P3Gp3
+	iI8auMtb/AAyw6kGIvITmQ8N99hfHo7dwyGiKy9e1sK5xO4DeGl056VTMVnVaiItisubOBQ/VDrvK
+	UkqvqSRm2MGZmOPtpTG4R5CVToUamMzjFw65rHXi6TzeDI/3sUm125dERyxws0hPEG2KBZ387WvWk
+	25zMGpC34bzZcoinwT5Tmen8IxLP6aS/YM+9q1ks9wdpCd/lNI4yZOD1vLNbMH2nHqKRcVwsUuNTE
+	hl3/dJcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMafY-0005P3-4N; Mon, 21 Oct 2019 16:36:32 +0000
+	id 1iMafA-0004vw-HM; Mon, 21 Oct 2019 16:36:08 +0000
 Received: from [217.140.110.172] (helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMae0-0002g7-Fr
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 16:35:01 +0000
+ id 1iMae0-0002j9-HE
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 16:34:58 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1636211D4;
- Mon, 21 Oct 2019 09:34:46 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 67D8B15A1;
+ Mon, 21 Oct 2019 09:34:50 -0700 (PDT)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id D1B883F71F;
- Mon, 21 Oct 2019 09:34:43 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 2FA363F71F;
+ Mon, 21 Oct 2019 09:34:48 -0700 (PDT)
 From: Mark Rutland <mark.rutland@arm.com>
 To: linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH 4/8] arm64: module/ftrace: intialize PLT at load time
-Date: Mon, 21 Oct 2019 17:34:22 +0100
-Message-Id: <20191021163426.9408-5-mark.rutland@arm.com>
+Subject: [PATCH 5/8] arm64: insn: add encoder for MOV (register)
+Date: Mon, 21 Oct 2019 17:34:23 +0100
+Message-Id: <20191021163426.9408-6-mark.rutland@arm.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20191021163426.9408-1-mark.rutland@arm.com>
 References: <20191021163426.9408-1-mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_093456_656078_518EC7A9 
-X-CRM114-Status: GOOD (  23.97  )
+X-CRM114-CacheID: sfid-20191021_093456_637855_2BB8AE9E 
+X-CRM114-Status: GOOD (  10.10  )
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
@@ -73,175 +73,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently we lazily-initialize a module's ftrace PLT at runtime when we
-install the first ftrace call. To do so we have to apply a number of
-sanity checks, transiently mark the module text as RW, and perform an
-IPI as part of handling Neoverse-N1 erratum #1542419.
+For FTRACE_WITH_REGS, we're going to want to generate a MOV (register)
+instruction as part of the callsite intialization. As MOV (register) is
+an alias for ORR (shifted register), we can generate this with
+aarch64_insn_gen_logical_shifted_reg(), but it's somewhat verbose and
+difficult to read in-context.
 
-We only expect the ftrace trampoline to point at ftrace_caller() (AKA
-FTRACE_ADDR), so let's simplify all of this by intializing the PLT at
-module load time, before the module loader marks the module RO and
-performs the intial I-cache maintenance for the module.
-
-Thus we can rely on the module having been correctly intialized, and can
-simplify the runtime work necessary to install an ftrace call in a
-module. This will also allow for the removal of module_disable_ro().
-
-Tested by forcing ftrace_make_call() to use the module PLT, and then
-loading up a module after setting up ftrace with:
-
-| echo ":mod:<module-name>" > set_ftrace_filter;
-| echo function > current_tracer;
-| modprobe <module-name>
-
-Since FTRACE_ADDR is only defined when CONFIG_DYNAMIC_FTRACE is
-selected, we wrap its use along with most of module_init_ftrace_plt()
-with ifdeffery rather than using IS_ENABLED().
+Add a aarch64_insn_gen_move_reg() wrapper for this case so that we can
+write callers in a more straightforward way.
 
 Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: James Morse <james.morse@arm.com>
-Cc: Peter Zijlstra <peterz@infradead.org>
 Cc: Will Deacon <will@kernel.org>
 ---
- arch/arm64/kernel/ftrace.c | 55 ++++++++++++----------------------------------
- arch/arm64/kernel/module.c | 32 +++++++++++++++++----------
- 2 files changed, 35 insertions(+), 52 deletions(-)
+ arch/arm64/include/asm/insn.h |  3 +++
+ arch/arm64/kernel/insn.c      | 13 +++++++++++++
+ 2 files changed, 16 insertions(+)
 
-diff --git a/arch/arm64/kernel/ftrace.c b/arch/arm64/kernel/ftrace.c
-index 06e56b470315..822718eafdb4 100644
---- a/arch/arm64/kernel/ftrace.c
-+++ b/arch/arm64/kernel/ftrace.c
-@@ -73,10 +73,22 @@ int ftrace_make_call(struct dyn_ftrace *rec, unsigned long addr)
- 
- 	if (offset < -SZ_128M || offset >= SZ_128M) {
- #ifdef CONFIG_ARM64_MODULE_PLTS
--		struct plt_entry trampoline, *dst;
- 		struct module *mod;
- 
- 		/*
-+		 * There is only one ftrace trampoline per module. For now,
-+		 * this is not a problem since on arm64, all dynamic ftrace
-+		 * invocations are routed via ftrace_caller(). This will need
-+		 * to be revisited if support for multiple ftrace entry points
-+		 * is added in the future, but for now, the pr_err() below
-+		 * deals with a theoretical issue only.
-+		 */
-+		if (addr != FTRACE_ADDR) {
-+			pr_err("ftrace: far branches to multiple entry points unsupported inside a single module\n");
-+			return -EINVAL;
-+		}
-+
-+		/*
- 		 * On kernels that support module PLTs, the offset between the
- 		 * branch instruction and its target may legally exceed the
- 		 * range of an ordinary relative 'bl' opcode. In this case, we
-@@ -93,46 +105,7 @@ int ftrace_make_call(struct dyn_ftrace *rec, unsigned long addr)
- 		if (WARN_ON(!mod))
- 			return -EINVAL;
- 
--		/*
--		 * There is only one ftrace trampoline per module. For now,
--		 * this is not a problem since on arm64, all dynamic ftrace
--		 * invocations are routed via ftrace_caller(). This will need
--		 * to be revisited if support for multiple ftrace entry points
--		 * is added in the future, but for now, the pr_err() below
--		 * deals with a theoretical issue only.
--		 *
--		 * Note that PLTs are place relative, and plt_entries_equal()
--		 * checks whether they point to the same target. Here, we need
--		 * to check if the actual opcodes are in fact identical,
--		 * regardless of the offset in memory so use memcmp() instead.
--		 */
--		dst = mod->arch.ftrace_trampoline;
--		trampoline = get_plt_entry(addr, dst);
--		if (memcmp(dst, &trampoline, sizeof(trampoline))) {
--			if (plt_entry_is_initialized(dst)) {
--				pr_err("ftrace: far branches to multiple entry points unsupported inside a single module\n");
--				return -EINVAL;
--			}
--
--			/* point the trampoline to our ftrace entry point */
--			module_disable_ro(mod);
--			*dst = trampoline;
--			module_enable_ro(mod, true);
--
--			/*
--			 * Ensure updated trampoline is visible to instruction
--			 * fetch before we patch in the branch. Although the
--			 * architecture doesn't require an IPI in this case,
--			 * Neoverse-N1 erratum #1542419 does require one
--			 * if the TLB maintenance in module_enable_ro() is
--			 * skipped due to rodata_enabled. It doesn't seem worth
--			 * it to make it conditional given that this is
--			 * certainly not a fast-path.
--			 */
--			flush_icache_range((unsigned long)&dst[0],
--					   (unsigned long)&dst[1]);
--		}
--		addr = (unsigned long)dst;
-+		addr = (unsigned long)mod->arch.ftrace_trampoline;
- #else /* CONFIG_ARM64_MODULE_PLTS */
- 		return -EINVAL;
- #endif /* CONFIG_ARM64_MODULE_PLTS */
-diff --git a/arch/arm64/kernel/module.c b/arch/arm64/kernel/module.c
-index 763a86d52fef..5f5bc3b94da7 100644
---- a/arch/arm64/kernel/module.c
-+++ b/arch/arm64/kernel/module.c
-@@ -9,6 +9,7 @@
- 
- #include <linux/bitops.h>
- #include <linux/elf.h>
-+#include <linux/ftrace.h>
- #include <linux/gfp.h>
- #include <linux/kasan.h>
- #include <linux/kernel.h>
-@@ -485,24 +486,33 @@ static const Elf_Shdr *find_section(const Elf_Ehdr *hdr,
- 	return NULL;
+diff --git a/arch/arm64/include/asm/insn.h b/arch/arm64/include/asm/insn.h
+index 39e7780bedd6..bb313dde58a4 100644
+--- a/arch/arm64/include/asm/insn.h
++++ b/arch/arm64/include/asm/insn.h
+@@ -440,6 +440,9 @@ u32 aarch64_insn_gen_logical_shifted_reg(enum aarch64_insn_register dst,
+ 					 int shift,
+ 					 enum aarch64_insn_variant variant,
+ 					 enum aarch64_insn_logic_type type);
++u32 aarch64_insn_gen_move_reg(enum aarch64_insn_register dst,
++			      enum aarch64_insn_register src,
++			      enum aarch64_insn_variant variant);
+ u32 aarch64_insn_gen_logical_immediate(enum aarch64_insn_logic_type type,
+ 				       enum aarch64_insn_variant variant,
+ 				       enum aarch64_insn_register Rn,
+diff --git a/arch/arm64/kernel/insn.c b/arch/arm64/kernel/insn.c
+index d801a7094076..513b29c3e735 100644
+--- a/arch/arm64/kernel/insn.c
++++ b/arch/arm64/kernel/insn.c
+@@ -1268,6 +1268,19 @@ u32 aarch64_insn_gen_logical_shifted_reg(enum aarch64_insn_register dst,
+ 	return aarch64_insn_encode_immediate(AARCH64_INSN_IMM_6, insn, shift);
  }
  
-+int module_init_ftrace_plt(const Elf_Ehdr *hdr,
-+			   const Elf_Shdr *sechdrs,
-+			   struct module *mod)
++/*
++ * MOV (register) is architecturally an alias of ORR (shifted register) where
++ * MOV <*d>, <*m> is equivalent to ORR <*d>, <*ZR>, <*m>
++ */
++u32 aarch64_insn_gen_move_reg(enum aarch64_insn_register dst,
++			      enum aarch64_insn_register src,
++			      enum aarch64_insn_variant variant)
 +{
-+#if defined(CONFIG_ARM64_MODULE_PLTS) && defined(CONFIG_DYNAMIC_FTRACE)
-+	const Elf_Shdr *s;
-+	struct plt_entry *plt;
-+
-+	s = find_section(hdr, sechdrs, ".text.ftrace_trampoline");
-+	if (!s)
-+		return -ENOEXEC;
-+
-+	plt = (void *)s->sh_addr;
-+	*plt = get_plt_entry(FTRACE_ADDR, plt);
-+	mod->arch.ftrace_trampoline = plt;
-+#endif
-+	return 0;
++	return aarch64_insn_gen_logical_shifted_reg(dst, AARCH64_INSN_REG_ZR,
++						    src, 0, variant,
++						    AARCH64_INSN_LOGIC_ORR);
 +}
 +
- int module_finalize(const Elf_Ehdr *hdr,
- 		    const Elf_Shdr *sechdrs,
- 		    struct module *me)
- {
- 	const Elf_Shdr *s;
--
- 	s = find_section(hdr, sechdrs, ".altinstructions");
- 	if (s)
- 		apply_alternatives_module((void *)s->sh_addr, s->sh_size);
- 
--#ifdef CONFIG_ARM64_MODULE_PLTS
--	if (IS_ENABLED(CONFIG_DYNAMIC_FTRACE)) {
--		s = find_section(hdr, sechdrs, ".text.ftrace_trampoline");
--		if (!s)
--			return -ENOEXEC;
--		me->arch.ftrace_trampoline = (void *)s->sh_addr;
--	}
--#endif
--
--	return 0;
-+	return module_init_ftrace_plt(hdr, sechdrs, me);
- }
+ u32 aarch64_insn_gen_adr(unsigned long pc, unsigned long addr,
+ 			 enum aarch64_insn_register reg,
+ 			 enum aarch64_insn_adr_type type)
 -- 
 2.11.0
 
