@@ -2,68 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DAC1DE17E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 02:38:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0933DE183
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 02:39:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9kuh3jv+9pThi2OeVXI4XNUlNLo/zfzl8M6jkSUYxWQ=; b=uYktawwQned5T/
-	6Ca8xegtBO/C/A/yXicNzwLKoG7VmFrAFN8/dGfoK2HSYOh+D2EhmzviiIZoZ2bc1DBE11c1vd/Sj
-	h+9wuy0lKOvtvfEtLhUfUe5gYC5UoQ6KK42xzqCBknuGC8h8/hnVF9IG4l7s38SQZ3E/yP+O9d3FE
-	/53jV5lm2TZHrR2aD+Ih2jkDUAnkQg6TP84lolHWq4QhEJuJfWqpmasBe9q41eVHqMfXmRJ5m6xu9
-	szqbIpnYoQafxro773VqbxoRH68qOJS0NTP1okkxLAE6attLOo4dseYtkAIhBp9XYNh+VBKPMD0HJ
-	rVdNBpy0igWeouStKPcg==;
+	List-Owner; bh=t4NnAOsUk1aodjogZdwytSrusIA46+3attc14mbBvf4=; b=sTzbQBDV8HormL
+	lupojobsBXYM5G+LWEs6BwJyggNAekT9Mc533SdNjMVkkm5Kh4MRhClieKl9fT/ErOcVvQcbnY7I6
+	B13qTzvgzSFBgjx75JEFiJAmo+U0wr/+tP591End0gGeBX+O8CAyzvjF88PNjVr7gUS2pHrqfLqLk
+	1BN/yRjYHk6mzaNX6wn71zifHCMZHmM3V/tvDorTmCnpE7isD1QsWG2WfG3lC7wWq+wVBV3VLdocJ
+	Jz8z9p3jkCGtISMt3MDGbzkAdlvRh4lcHkehWs08QuM2GmzhJI+P/XidEo1Yse9ytfZFDI825k27B
+	U/UM75ZLONxLFMHjhRgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMLij-0000pS-EY; Mon, 21 Oct 2019 00:38:49 +0000
+	id 1iMLjT-0001BK-2u; Mon, 21 Oct 2019 00:39:35 +0000
 Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMLiY-0000ml-MP
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 00:38:40 +0000
-Received: by mail-lj1-x241.google.com with SMTP id j19so11396683lja.1
+ id 1iMLjG-00017A-Rb
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 00:39:24 +0000
+Received: by mail-lj1-x241.google.com with SMTP id d1so11342067ljl.13
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 20 Oct 2019 17:38:34 -0700 (PDT)
+ Sun, 20 Oct 2019 17:39:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=cUqtT92AZ9lrnd20Di/UpzfjLJC1pbg37G7/c5IKKgY=;
- b=p21Noq3CV55U0A8VkoqX9m278rUiKa/xxLlh7wdB854lwoLBsD/p2++t0xmNEycGIK
- ANYQQ14P9emosdRn1GHlGds1elZqSmc61JQxwsOk+HFpvm/lrsd1yD/4YJTzbmMzt+Q5
- KTMY/zdvQSJLiuV3K6AQ1QGcIBpkc4R37ftWyRLh9IAm8FQQEHlxsp1q6SfVBobY10Xw
- 7AExxFLYrCcP18tEtj8tAyDAm0jUCs4v0IoD/0RrJvvr1mMcc/9hWRivKyNDU07OfqMx
- gzbCsW2jvKPzSCUdmmeSrghFYS3dB0zTeJxQvDHXdK684lBmD+LdrJJQqxko/+eHauF9
- /HVg==
+ :cc; bh=9FExjd8Mw+5S7YMEqY/A4+by9kWereoTqCBatm9VlSY=;
+ b=bKfda/5lV6mWSWAiZpVxxNgMPBVwZY2DPWmhX6/nmnzg2UVxlImBP+/CfiJfb0DiYB
+ w9AfDMSY2xb7TJKWzJ0+yMgQCi8J1xBfKrV90PGs/IEDPvEiqamNKpZqVWxgVnPWKGYm
+ VN/CkYJn3XGCMykhmOivjJ0NuoUfJFVlSmhq7Xl76tAXV8UZroBJtxN4TpJwd1ySaSUC
+ AaUBJg36OCzkyyf51aFEd1O4z9D+UjGo/4Y2R/zIT6yqBY2hyQ2lWAyh03UyWv4Mk6X2
+ lSmCEqBEonc5NP58z1JO+HSpRadEiRVD11I6IW2n1nbWguPbe6WtLVRLwW/8m44zqXMN
+ cG7Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=cUqtT92AZ9lrnd20Di/UpzfjLJC1pbg37G7/c5IKKgY=;
- b=eqgJCReePb9deMJtWudJkpkM7GzkomDI3XR1af4hP5MYH40EEgHNbY2GY1k+SPQskf
- 2Um3gHThognp2CWf17uyT5jvh4nmsjbzR7gpFffbivdoRI7OpkvOyB9CuxykL/pyKAiu
- ukHjRBzTbiIRnrKq/JCn8auD40/72vxVmZ+7fumhHBOoOH3fW1wDmuJcL3zeSfNfJfeD
- tOxLo6RPNtdSuOj75Ph2MNpslful8M96Bf8dga6TPFZgrEyVZ9zVgN5Zb6U8I29q5CD8
- nExSbRgZQcTwCByyXS3zMGWlN/XJv501ixWDXuocrk8IwASO8paz2u7bEw/IB8u7gNFY
- /CQw==
-X-Gm-Message-State: APjAAAX0Wqoe0uoHj0BHbXNAW87VT9cBOMJRPyfLV23iecDtYMNjH8tT
- 4BHjLb0TFDopzszWThInsDGiJBiISxC04HQnrNhMMQ==
-X-Google-Smtp-Source: APXvYqx+Sv2qws2AyWYB+jVZthwdqV3ztSd28/13A632cZQGo2Czb2JB4I8085joST3g83E93e5BoQ6uVRT+sDP11QY=
-X-Received: by 2002:a2e:9f4d:: with SMTP id v13mr12883755ljk.183.1571618313283; 
- Sun, 20 Oct 2019 17:38:33 -0700 (PDT)
+ bh=9FExjd8Mw+5S7YMEqY/A4+by9kWereoTqCBatm9VlSY=;
+ b=GOMUM6oY+X+u+hEbhKkJq4ksTgKHQmyq2S7WV39nneEvZR3buymvHK6PZBHH+PNt5U
+ ag1xTwLStPQg75PRie13Fo8c3ZUJpRG17o6Hxqh3BgnOuTcAec4gFR/wo56FGiEoDMHQ
+ z+QdlHes8R6BktuhA9FQfABLxX/4vOUCRxwI6tpVRR/logIya/krgCP6ANvmuS7tnZDJ
+ iP+kwrYQgIz8Tv2YzNC3MjVVl7fPZNzAJwjnOefp96ea1XXdTFL8/W58nOBpxTePQSBk
+ BzpsRru70Au52VLZBPZfZGQqPeBgTzQQbeL+RacBi5DSUbRFozKvw1zu9ou6tLHDlph9
+ 4/8Q==
+X-Gm-Message-State: APjAAAXbqUpS235zlTlNSisxqlMPKrGv1aApwG2Dcl/YuifBi3t1ATan
+ y754qHLIrDeV9jLRdGYVw/RQ1ILudy7rscs2xadbyw==
+X-Google-Smtp-Source: APXvYqzWOeDq45DqnffOCq2/ChHGoqMhScnvErLh5JbufOO4hYwyRCMdCCsjftBVaXnakQZF8XtaUFolXzMPZX14iKU=
+X-Received: by 2002:a05:651c:1202:: with SMTP id
+ i2mr6489156lja.218.1571618361501; 
+ Sun, 20 Oct 2019 17:39:21 -0700 (PDT)
 MIME-Version: 1.0
 References: <20191016200647.32050-1-robh@kernel.org>
- <20191016200647.32050-13-robh@kernel.org>
-In-Reply-To: <20191016200647.32050-13-robh@kernel.org>
+ <20191016200647.32050-17-robh@kernel.org>
+In-Reply-To: <20191016200647.32050-17-robh@kernel.org>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 21 Oct 2019 02:38:20 +0200
-Message-ID: <CACRpkdaxm-mdULkgm3NwncizELJ14SgLAnGLVy6UE+dUXN2ynQ@mail.gmail.com>
-Subject: Re: [PATCH v2 12/25] PCI: v3-semi: Use
+Date: Mon, 21 Oct 2019 02:39:07 +0200
+Message-ID: <CACRpkdYjY0JZCCfb9r9A2GKmO03hHXNCqGmy6qqBkLfOdZZdEQ@mail.gmail.com>
+Subject: Re: [PATCH v2 16/25] PCI: versatile: Use
  pci_parse_request_of_pci_ranges()
 To: Rob Herring <robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191020_173838_739535_27C0F6F3 
-X-CRM114-Status: GOOD (  10.38  )
+X-CRM114-CacheID: sfid-20191020_173922_892641_2F413F8C 
+X-CRM114-Status: GOOD (  10.85  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -120,17 +121,19 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Wed, Oct 16, 2019 at 10:07 PM Rob Herring <robh@kernel.org> wrote:
 
-> Convert V3 host bridge to use the common
+> Convert ARM Versatile host bridge to use the common
 > pci_parse_request_of_pci_ranges().
 >
-> Cc: Linus Walleij <linus.walleij@linaro.org>
+> There's no need to assign the resources to a temporary list first. Just
+> use bridge->windows directly and remove all the temporary list handling.
+>
 > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> Cc: Andrew Murray <andrew.murray@arm.com>
 > Cc: Bjorn Helgaas <bhelgaas@google.com>
 > Signed-off-by: Rob Herring <robh@kernel.org>
 > ---
 > v2:
-> - New patch
+> - Fix 'mem' initial value to 1
+> - Remove temporary resource list
 
 Acked-by: Linus Walleij <linus.walleij@linaro.org>
 
