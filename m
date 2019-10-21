@@ -2,85 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4986DDEB40
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 13:44:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 79E99DEB44
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 13:45:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MFPRcxp+8N9d+mQEGfgisIiFrL5YbXW4ecRZf5fMFJ4=; b=UTrkrZnEQmhjpC
-	SiXwTIv6+YKlsiEILZVTvxIwd8N5GhiZ1FwngBGuC9CD5rVlniJ9PMywSQzWhb0wzT0MtFx1IYpdu
-	/30/kcLrkzDkRqfV+sBwao54Jm/DJuqJ2Hd+bzvBAABwAdJvaAz16GA9VtqrD41XI+OkAGybUsxks
-	OXK3nCuZHYBPlOZAMx4IQWjoscj23yVn9gza40iUVKexfd1ai1EGFMcRZAWzXof4wb7TyhzfoD/R3
-	wHLmYk6oaCc7sSsK72IyiC7tJqSbX5RgDc6jlDMhaQJc5n44xy70NAcsTTd2k9j+5BZpIJAr2maaI
-	sCkWTa7quZ3B0dB5rUlg==;
+	List-Owner; bh=HAGIYvYeByp3du4mGK5ysizFRcBlfYGBqiLSk6Wb3YQ=; b=ZzBdKVnHxRbGJ+
+	nb44ZW/lNIbLf8UJYHJeHnUspffTqZg/cR2eRk3UIcpdwR0RnuHM/I4+/Hld4w73MM3/kPY9N/drH
+	ml8McGj48ebtaAaplIYGiZtMVIIKUNsmPou+xgnGspXMEOqkUXG5PyxHsMhN54pseNgXCQh8WdmNh
+	r/xzdNvRc0zsZZuI616J2c6wF8PzvkS/ab/GXf/BT7UL+oHhHNMg900aHsV0m57Y6fwRpkfZWvWd9
+	fvFn13sEgxy5SQH7K+Sqg8QCVoSIIl6F3iIxAQbwY3VTaatgP5WrLeNnZB10I6ClUZkFqe4pbfAqh
+	9xF79HJ6wAVPNcnFWiAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMW7I-00083s-KM; Mon, 21 Oct 2019 11:44:52 +0000
-Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
+	id 1iMW7g-0008J4-Cn; Mon, 21 Oct 2019 11:45:16 +0000
+Received: from shell.v3.sk ([90.176.6.54])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMW72-00082z-Oa
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 11:44:38 +0000
-Received: by mail-ua1-x944.google.com with SMTP id q11so3704238uao.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 21 Oct 2019 04:44:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=KSg26SWjQFt8SFFEyx8QZDcv+KIUSNzw/5kl16s+Vj0=;
- b=PsyBUKS7aYmTFIsiINdVGdDnLFZMUIHW7hGfjzj6h8j52Dpdn10FVdqf+LuVW60OKY
- ckvqCloEO+aA8MIejDEZkw29Xs2loC2DtjP6Un4ZOZ5cK4ONnTCdGUhavne9NG6v8sBH
- DzgTIZsHluqz2GJJqiQlSQOJVzA8PGfTWWcM1A9swf78nuHux62KdVruzexhMAAozU71
- XnIMeJz/vEuFImP/kVlrz4bW8GK80X6VeOJWMShrL2KZRwo7prJbEEojxUFzjGLkmmiv
- svP41lv7/wlnMvQ/8YCVxQoXblrHSujTXQOzOPg7hcG/9lpf78piC1R0pKpTQ0P/nEIK
- kVXg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=KSg26SWjQFt8SFFEyx8QZDcv+KIUSNzw/5kl16s+Vj0=;
- b=WUN8Epe9M/3/IXmSTAebBtF5rGF4wutUzjtDf3G7hVgJS8ls+JH4kADs+kqndmrDXP
- jI4k8wuaSej0Xgyn3S3iZIBWHJ/iyFrj2BUORj2/YUGzxvv3Hcx4UxflUfhSzEgZBZYK
- dulHE0hKdgTWjP6XPPtdWFhqW9j7uVha9oLyYxVrGsC83J3HZ/M1j8EyKnaCdwbHyYQr
- ni4KM8ciq+Lnd4c4YchpkhoHbHXJwpBWT6dBEP7w5QpuxdSaL0JFxgg/th/ErHtsYTsa
- hzudnM90vHXvsyBLHC0vHmrRbqtMYA8knFVJ308Gm7E+mGID/rB+ife5EAygrMsB5pBH
- 7XpQ==
-X-Gm-Message-State: APjAAAU/juaSiddxiUu7/Z6pUtRFfPzenTPuFTaJd4LjgWo5V+oYaeA6
- H8WZRoiA2Fz7qvv7NovBT5Njmlcf3iCnQv933BsZpg==
-X-Google-Smtp-Source: APXvYqx+TBsQJDgF01IGB4FH9mUGStVZN4fWPZ1N/cuN6TP1mpjsFqTYHKcfyhRphAaArZxZTabYiicePr18BMtcdBg=
-X-Received: by 2002:ab0:348c:: with SMTP id c12mr8377699uar.100.1571658275446; 
- Mon, 21 Oct 2019 04:44:35 -0700 (PDT)
+ id 1iMW77-000831-87
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 11:44:43 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by zimbra.v3.sk (Postfix) with ESMTP id D288C508B6;
+ Mon, 21 Oct 2019 13:44:34 +0200 (CEST)
+Received: from shell.v3.sk ([127.0.0.1])
+ by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
+ with ESMTP id 0BsA60h9gCPB; Mon, 21 Oct 2019 13:44:27 +0200 (CEST)
+Received: from localhost (localhost [127.0.0.1])
+ by zimbra.v3.sk (Postfix) with ESMTP id D974C508B7;
+ Mon, 21 Oct 2019 13:44:26 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at zimbra.v3.sk
+Received: from shell.v3.sk ([127.0.0.1])
+ by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id LzrHZ0-7O3AT; Mon, 21 Oct 2019 13:44:25 +0200 (CEST)
+Received: from belphegor (nat-pool-brq-t.redhat.com [213.175.37.10])
+ by zimbra.v3.sk (Postfix) with ESMTPSA id 83982508B6;
+ Mon, 21 Oct 2019 13:44:25 +0200 (CEST)
+Message-ID: <e5e7695cc82b4370752f45082be007dbe410c74c.camel@v3.sk>
+Subject: Re: [PATCH v2 0/9] Simplify MFD Core
+From: Lubomir Rintel <lkundrak@v3.sk>
+To: Arnd Bergmann <arnd@arndb.de>, Lee Jones <lee.jones@linaro.org>
+Date: Mon, 21 Oct 2019 13:44:24 +0200
+In-Reply-To: <CAK8P3a10w9Xg6U8EgUqPLbucP3A0wc9xO_WNG06LxHrsZkZc1g@mail.gmail.com>
+References: <20191021105822.20271-1-lee.jones@linaro.org>
+ <CAK8P3a10w9Xg6U8EgUqPLbucP3A0wc9xO_WNG06LxHrsZkZc1g@mail.gmail.com>
+User-Agent: Evolution 3.34.1 (3.34.1-1.fc31) 
 MIME-Version: 1.0
-References: <20190905075318.15554-1-chaotian.jing@mediatek.com>
- <20190905075318.15554-3-chaotian.jing@mediatek.com>
-In-Reply-To: <20190905075318.15554-3-chaotian.jing@mediatek.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Mon, 21 Oct 2019 13:43:59 +0200
-Message-ID: <CAPDyKFp7cmWpD_9TUR2bPArGevo9M82MTff0RQ-Ly-+L7t5pHA@mail.gmail.com>
-Subject: Re: [PATCH v2 2/2] mmc: block: add CMD13 polling for ioctl() cmd with
- R1B response
-To: Chaotian Jing <chaotian.jing@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_044436_809040_FC9D5AEA 
-X-CRM114-Status: GOOD (  23.49  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191021_044441_609857_C6A0B206 
+X-CRM114-Status: GOOD (  17.57  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,229 +70,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jens Axboe <axboe@kernel.dk>, Chris Boot <bootc@bootc.net>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- Avri Altman <avri.altman@wdc.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Zachary Hays <zhays@lexmark.com>, YueHaibing <yuehaibing@huawei.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Ming Lei <ming.lei@redhat.com>,
- Wolfram Sang <wsa+renesas@sang-engineering.com>,
- linux-mediatek@lists.infradead.org, Hannes Reinecke <hare@suse.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
+Cc: Barry Song <baohua@kernel.org>, James Cameron <quozl@laptop.org>,
+ stephan@gerhold.net, Linus Walleij <linus.walleij@linaro.org>,
+ Daniel Thompson <daniel.thompson@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Mark Brown <broonie@kernel.org>, Daniel Drake <drake@endlessm.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 5 Sep 2019 at 09:53, Chaotian Jing <chaotian.jing@mediatek.com> wrote:
->
-> currently there is no CMD13 polling and other code to wait card
-> change to transfer state after R1B command completed. and this
-> polling operation cannot do in user space, because other request
-> may coming before the CMD13 from user space.
->
-> Signed-off-by: Chaotian Jing <chaotian.jing@mediatek.com>
+On Mon, 2019-10-21 at 13:29 +0200, Arnd Bergmann wrote:
+> On Mon, Oct 21, 2019 at 12:58 PM Lee Jones <lee.jones@linaro.org> wrote:
+> > MFD currently has one over-complicated user.  CS5535 uses a mixture of
+> > cell cloning, reference counting and subsystem-level call-backs to
+> > achieve its goal of requesting an IO memory region only once across 3
+> > consumers.  The same can be achieved by handling the region centrally
+> > during the parent device's .probe() sequence.  Releasing can be handed
+> > in a similar way during .remove().
+> > 
+> > While we're here, take the opportunity to provide some clean-ups and
+> > error checking to issues noticed along the way.
+> > 
+> > This also paves the way for clean cell disabling via Device Tree being
+> > discussed at [0]
+> > 
+> > [0] https://lkml.org/lkml/2019/10/18/612.
+> 
+> As the CS5535 is primarily used on the OLPC XO1, it would be
+> good to have someone test the series on such a machine.
+> 
+> I've added a few people to Cc that may be able to help test it, or
+> know someone who can.
+> 
+> For the actual patches, see
+> https://lore.kernel.org/lkml/20191021105822.20271-1-lee.jones@linaro.org/T/#t
 
-Both patch 1 and patch2, looks like material for stable, so unless
-someone objects I am adding a tag for that.
+Thanks for the pointer. I'd by happy to test this.
 
-Moreover, I updated the changelogs, also according to suggestions from
-Avri and then applied both patches for next, thanks!
+Which tree do the patches apply to?
+Or, better, is there a tree with the patches applied that I could use?
 
-Kind regards
-Uffe
+Thanks
+Lubo
 
+> 
+>     Arnd
+> 
+> > Lee Jones (9):
+> >   mfd: cs5535-mfd: Use PLATFORM_DEVID_* defines and tidy error message
+> >   mfd: cs5535-mfd: Remove mfd_cell->id hack
+> >   mfd: cs5535-mfd: Request shared IO regions centrally
+> >   mfd: cs5535-mfd: Register clients using their own dedicated MFD cell
+> >     entries
+> >   mfd: mfd-core: Remove mfd_clone_cell()
+> >   x86: olpc: Remove invocation of MFD's .enable()/.disable() call-backs
+> >   mfd: mfd-core: Protect against NULL call-back function pointer
+> >   mfd: mfd-core: Remove usage counting for .{en,dis}able() call-backs
+> >   mfd: mfd-core: Move pdev->mfd_cell creation back into mfd_add_device()
+> > 
+> >  arch/x86/platform/olpc/olpc-xo1-pm.c |   6 --
+> >  drivers/mfd/cs5535-mfd.c             | 124 +++++++++++++--------------
+> >  drivers/mfd/mfd-core.c               | 113 ++++--------------------
+> >  include/linux/mfd/core.h             |  20 -----
+> >  4 files changed, 79 insertions(+), 184 deletions(-)
+> > 
+> > --
+> > 2.17.1
+> > 
+> > 
+> > _______________________________________________
+> > linux-arm-kernel mailing list
+> > linux-arm-kernel@lists.infradead.org
+> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
-> ---
->  drivers/mmc/core/block.c | 146 +++++++++++++++------------------------
->  1 file changed, 55 insertions(+), 91 deletions(-)
->
-> diff --git a/drivers/mmc/core/block.c b/drivers/mmc/core/block.c
-> index aa7c19f7e298..ee1fd7df4ec8 100644
-> --- a/drivers/mmc/core/block.c
-> +++ b/drivers/mmc/core/block.c
-> @@ -408,38 +408,6 @@ static int mmc_blk_ioctl_copy_to_user(struct mmc_ioc_cmd __user *ic_ptr,
->         return 0;
->  }
->
-> -static int ioctl_rpmb_card_status_poll(struct mmc_card *card, u32 *status,
-> -                                      u32 retries_max)
-> -{
-> -       int err;
-> -       u32 retry_count = 0;
-> -
-> -       if (!status || !retries_max)
-> -               return -EINVAL;
-> -
-> -       do {
-> -               err = __mmc_send_status(card, status, 5);
-> -               if (err)
-> -                       break;
-> -
-> -               if (!R1_STATUS(*status) &&
-> -                               (R1_CURRENT_STATE(*status) != R1_STATE_PRG))
-> -                       break; /* RPMB programming operation complete */
-> -
-> -               /*
-> -                * Rechedule to give the MMC device a chance to continue
-> -                * processing the previous command without being polled too
-> -                * frequently.
-> -                */
-> -               usleep_range(1000, 5000);
-> -       } while (++retry_count < retries_max);
-> -
-> -       if (retry_count == retries_max)
-> -               err = -EPERM;
-> -
-> -       return err;
-> -}
-> -
->  static int ioctl_do_sanitize(struct mmc_card *card)
->  {
->         int err;
-> @@ -468,6 +436,58 @@ static int ioctl_do_sanitize(struct mmc_card *card)
->         return err;
->  }
->
-> +static inline bool mmc_blk_in_tran_state(u32 status)
-> +{
-> +       /*
-> +        * Some cards mishandle the status bits, so make sure to check both the
-> +        * busy indication and the card state.
-> +        */
-> +       return status & R1_READY_FOR_DATA &&
-> +              (R1_CURRENT_STATE(status) == R1_STATE_TRAN);
-> +}
-> +
-> +static int card_busy_detect(struct mmc_card *card, unsigned int timeout_ms,
-> +                           u32 *resp_errs)
-> +{
-> +       unsigned long timeout = jiffies + msecs_to_jiffies(timeout_ms);
-> +       int err = 0;
-> +       u32 status;
-> +
-> +       do {
-> +               bool done = time_after(jiffies, timeout);
-> +
-> +               err = __mmc_send_status(card, &status, 5);
-> +               if (err) {
-> +                       dev_err(mmc_dev(card->host),
-> +                               "error %d requesting status\n", err);
-> +                       return err;
-> +               }
-> +
-> +               /* Accumulate any response error bits seen */
-> +               if (resp_errs)
-> +                       *resp_errs |= status;
-> +
-> +               /*
-> +                * Timeout if the device never becomes ready for data and never
-> +                * leaves the program state.
-> +                */
-> +               if (done) {
-> +                       dev_err(mmc_dev(card->host),
-> +                               "Card stuck in wrong state! %s status: %#x\n",
-> +                                __func__, status);
-> +                       return -ETIMEDOUT;
-> +               }
-> +
-> +               /*
-> +                * Some cards mishandle the status bits,
-> +                * so make sure to check both the busy
-> +                * indication and the card state.
-> +                */
-> +       } while (!mmc_blk_in_tran_state(status));
-> +
-> +       return err;
-> +}
-> +
->  static int __mmc_blk_ioctl_cmd(struct mmc_card *card, struct mmc_blk_data *md,
->                                struct mmc_blk_ioc_data *idata)
->  {
-> @@ -611,16 +631,12 @@ static int __mmc_blk_ioctl_cmd(struct mmc_card *card, struct mmc_blk_data *md,
->
->         memcpy(&(idata->ic.response), cmd.resp, sizeof(cmd.resp));
->
-> -       if (idata->rpmb) {
-> +       if (idata->rpmb || (cmd.flags & MMC_RSP_R1B)) {
->                 /*
-> -                * Ensure RPMB command has completed by polling CMD13
-> +                * Ensure RPMB/R1B command has completed by polling CMD13
->                  * "Send Status".
->                  */
-> -               err = ioctl_rpmb_card_status_poll(card, &status, 5);
-> -               if (err)
-> -                       dev_err(mmc_dev(card->host),
-> -                                       "%s: Card Status=0x%08X, error %d\n",
-> -                                       __func__, status, err);
-> +               err = card_busy_detect(card, MMC_BLK_TIMEOUT_MS, NULL);
->         }
->
->         return err;
-> @@ -970,58 +986,6 @@ static unsigned int mmc_blk_data_timeout_ms(struct mmc_host *host,
->         return ms;
->  }
->
-> -static inline bool mmc_blk_in_tran_state(u32 status)
-> -{
-> -       /*
-> -        * Some cards mishandle the status bits, so make sure to check both the
-> -        * busy indication and the card state.
-> -        */
-> -       return status & R1_READY_FOR_DATA &&
-> -              (R1_CURRENT_STATE(status) == R1_STATE_TRAN);
-> -}
-> -
-> -static int card_busy_detect(struct mmc_card *card, unsigned int timeout_ms,
-> -                           u32 *resp_errs)
-> -{
-> -       unsigned long timeout = jiffies + msecs_to_jiffies(timeout_ms);
-> -       int err = 0;
-> -       u32 status;
-> -
-> -       do {
-> -               bool done = time_after(jiffies, timeout);
-> -
-> -               err = __mmc_send_status(card, &status, 5);
-> -               if (err) {
-> -                       dev_err(mmc_dev(card->host),
-> -                               "error %d requesting status\n", err);
-> -                       return err;
-> -               }
-> -
-> -               /* Accumulate any response error bits seen */
-> -               if (resp_errs)
-> -                       *resp_errs |= status;
-> -
-> -               /*
-> -                * Timeout if the device never becomes ready for data and never
-> -                * leaves the program state.
-> -                */
-> -               if (done) {
-> -                       dev_err(mmc_dev(card->host),
-> -                               "Card stuck in wrong state! %s status: %#x\n",
-> -                                __func__, status);
-> -                       return -ETIMEDOUT;
-> -               }
-> -
-> -               /*
-> -                * Some cards mishandle the status bits,
-> -                * so make sure to check both the busy
-> -                * indication and the card state.
-> -                */
-> -       } while (!mmc_blk_in_tran_state(status));
-> -
-> -       return err;
-> -}
-> -
->  static int mmc_blk_reset(struct mmc_blk_data *md, struct mmc_host *host,
->                          int type)
->  {
-> --
-> 2.18.0
->
 
 _______________________________________________
 linux-arm-kernel mailing list
