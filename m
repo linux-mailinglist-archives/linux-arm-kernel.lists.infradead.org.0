@@ -2,60 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 582EFDE57C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 09:47:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 137A9DE57E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 09:48:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iO3V8YV+8R0nJL7v7oJ4vP6YHkggZBT2AVDVwuSDb3o=; b=Hd7rCBupo1y7c7
-	yL4kOBwbInranpFYW5KGGiTgymGGRr1Y4LjtMeas7BAyIyxV26m9p/+SW0CU5up0QB6cRNVcvXqfb
-	72Hn1F3TM3i4oMI/Ao/LsoUtFHBihr+NBjm3BG1lwg/TrHCtz6isTzIFL8Mh9VrUuhwaWhjsHHG2k
-	g4laELzoRO4zqMeVgveo7LhE63etkeNuaYILq3HgR9ut1HbuzCOCc4Mjy2C8lizanuW1E3TAvp9kK
-	JaAg/rTE/JgOMV9quDDRAsVE0Ri1BQwTJ1rYTrF555eapVlcR2TUbAl61R3GmurDX/veLQtT3JzfD
-	fi+HWhpdsAmVsF8VqsAg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=z0bshTcymt8U4s7aJKRLGe/SByKFN5Kq7Dn3x5u4Aos=; b=Z9u
+	MYLBdCkp5r4BRHfk0D0Z3JNi9jHZYiTmDJMhMPIRqJ1zenA71DCqDd0Ybr+vJm3kjeP+iypEuKnKw
+	NfMzU1kyaQGNr4Zajbf6rjjCY68hf0tqu/402pqCl2ySsVKCvjH5Vq8lcgsmG0il+ttH+5DE1FMAI
+	u2nIdAiSqOnVOC5LrHKpuMbcECIOzL9fWYJxxlwkp/NnEZxS5tbIPkH3Ljs+pD7IpoNCP4pL9s4Us
+	vY9ADgDyBAjeZro7m/JKSGdk3okNG59kY8pYyQpm4eTkWLQcln8wkkPYSNTa2KjAv9ySxKMFyt72s
+	sAGzM70J0xI9KrwVBf9JWFcESMZqwkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMSPt-0001MR-9S; Mon, 21 Oct 2019 07:47:49 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1iMSQe-0001by-FF; Mon, 21 Oct 2019 07:48:36 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMSPj-0001Ky-9b
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 07:47:41 +0000
-Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 855B6BB6E5538F4C3F30;
- Mon, 21 Oct 2019 15:47:26 +0800 (CST)
-Received: from [127.0.0.1] (10.177.251.225) by DGGEMS414-HUB.china.huawei.com
- (10.3.19.214) with Microsoft SMTP Server id 14.3.439.0;
- Mon, 21 Oct 2019 15:47:20 +0800
-Subject: Re: [PATCH v4] arm64: psci: Reduce the waiting time for
- cpu_psci_cpu_kill()
-To: Sudeep Holla <sudeep.holla@arm.com>
-References: <04ab51e4-bc08-8250-4e70-4c87c58c8ad0@huawei.com>
- <20191018152052.GA10312@bogus>
-From: Yunfeng Ye <yeyunfeng@huawei.com>
-Message-ID: <e5304bb1-e031-7c40-37f8-605b0ae2f869@huawei.com>
-Date: Mon, 21 Oct 2019 15:47:17 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <20191018152052.GA10312@bogus>
-Content-Language: en-US
-X-Originating-IP: [10.177.251.225]
-X-CFilter-Loop: Reflected
+ id 1iMSQU-0001bJ-1F
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 07:48:27 +0000
+Received: by mail-qk1-x741.google.com with SMTP id w2so11682293qkf.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 21 Oct 2019 00:48:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=JxBBg9Ywns2KSENNzDozRimWLdlAzERjFMqNNveI+HE=;
+ b=Whs5Oqw3E1BNGGJx9IwRUe6mYoYJgqIDXMrLa69wGTimwenlmPnyxkdD96ImvDhgnz
+ QNv9x87GEYuvI72Ufu+XBTd0z4tanRKZdRfzl7rAJYHLGZWm7umbbi1lICwM0bYbzlFi
+ 1V6vJFo/vPS2wYYa/HaEhP0zxvJBmT63OA1/gMqCjtJNRWrCBxXpnTjkEAUqquUln5j0
+ +wPnClf9WTCtGcbTgdUSxzPkITq7gSqIX6gRERMY2f73wyc2hMZrBciki2PO3CEfmABL
+ Bf1Mgm1iT1HyrJByLiYHMTlzHnDhnDKqvKFaqmjAGzkn8ctfXPELU1TpewmmBXF/b+X1
+ P3mA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=JxBBg9Ywns2KSENNzDozRimWLdlAzERjFMqNNveI+HE=;
+ b=lD3cK+SmidDuvQ2DZQGTZG7FsDm2NR8T4Evj//8/QacsddQXJjZUpbyp8eaXRwKO8d
+ 9FphRPVU9OPaLqjT2L5IhU/UycIGCVT8VxWHI0+uDOXLvFR2KBS7w8uaiQRinhec6yPc
+ tF8h7qyGairGJ1EzbBLQ7iQ6/f3Gpl0R3EdzIcz5FAHpVpC6beQG7fVQgj/n6c/spzEe
+ bLiEjn6tLgWTIMxk1RjP98iRWRuSjFFOfohqH4ZvUSYaUN50FTtPjw0svrgllfA44DRX
+ EBunze4KYK54p97/h9MsCgl9RRxqcJnn89re+7brR39Fu/B6GB2G/ppBYfJ4MTJqMGpY
+ u/sw==
+X-Gm-Message-State: APjAAAVfdnfF8dKRUWtUORuiOHweJeatIlX80HoQoQrf2gjSfRZsAWUo
+ 77tpvs19ITxoTDA2mOdondcp5g==
+X-Google-Smtp-Source: APXvYqxoo8/8ejDNmP7miKhqcnWZEVADqLZQ00ERyOib7o5pAjWqGibbhSiVLUBXWrDkBggvtnjwWg==
+X-Received: by 2002:a37:af46:: with SMTP id y67mr21443431qke.84.1571644104467; 
+ Mon, 21 Oct 2019 00:48:24 -0700 (PDT)
+Received: from localhost.localdomain (li937-157.members.linode.com.
+ [45.56.119.157])
+ by smtp.gmail.com with ESMTPSA id n17sm7980615qke.103.2019.10.21.00.48.19
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 21 Oct 2019 00:48:23 -0700 (PDT)
+From: Leo Yan <leo.yan@linaro.org>
+To: Arnaldo Carvalho de Melo <acme@kernel.org>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Peter Zijlstra <peterz@infradead.org>, Ingo Molnar <mingo@redhat.com>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Jiri Olsa <jolsa@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Coresight ML <coresight@lists.linaro.org>
+Subject: [PATCH] perf cs-etm: Fix definition of macro TO_CS_QUEUE_NR
+Date: Mon, 21 Oct 2019 15:48:08 +0800
+Message-Id: <20191021074808.25795-1-leo.yan@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_004739_505907_5A8C04E2 
-X-CRM114-Status: GOOD (  18.00  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191021_004826_204676_00D81ECE 
+X-CRM114-Status: GOOD (  12.72  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,106 +100,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kstewart@linuxfoundation.org, mark.rutland@arm.com,
- lorenzo.pieralisi@arm.com, hushiyuan@huawei.com, catalin.marinas@arm.com,
- linux-kernel@vger.kernel.org, linfeilong@huawei.com, David.Laight@ACULAB.COM,
- gregkh@linuxfoundation.org, tglx@linutronix.de, wuyun.wu@huawei.com,
- will@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Leo Yan <leo.yan@linaro.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Macro TO_CS_QUEUE_NR definition has a typo, which uses 'trace_id_chan'
+as its parameter, this doesn't match with its definition body which uses
+'trace_chan_id'.  So renames the parameter to 'trace_chan_id'.
 
+It's luck to have a local variable 'trace_chan_id' in the function
+cs_etm__setup_queue(), even we wrongly define the macro TO_CS_QUEUE_NR,
+the local variable 'trace_chan_id' is used rather than the macro's
+parameter 'trace_id_chan'; so the compiler doesn't complain for this
+before.
 
-On 2019/10/18 23:20, Sudeep Holla wrote:
-> On Fri, Oct 18, 2019 at 08:46:37PM +0800, Yunfeng Ye wrote:
->> In case like suspend-to-disk and uspend-to-ram, a large number of CPU
-> 
-> s/case/cases/
-> s/uspend-to-ram/suspend-to-ram/
-> 
-ok, thanks.
+After renaming the parameter, it leads to a compiling error due
+cs_etm__setup_queue() has no variable 'trace_id_chan'.  This patch uses
+the variable 'trace_chan_id' for the macro so that fixes the compiling
+error.
 
->> cores need to be shut down. At present, the CPU hotplug operation is
->> serialised, and the CPU cores can only be shut down one by one. In this
->> process, if PSCI affinity_info() does not return LEVEL_OFF quickly,
->> cpu_psci_cpu_kill() needs to wait for 10ms. If hundreds of CPU cores
->> need to be shut down, it will take a long time.
->>
->> Normally, there is no need to wait 10ms in cpu_psci_cpu_kill(). So
->> change the wait interval from 10 ms to max 1 ms and use usleep_range()
->> instead of msleep() for more accurate timer.
->>
->> In addition, reducing the time interval will increase the messages
->> output, so remove the "Retry ..." message, instead, put the number of
->> waiting times to the sucessful message.
->>
->> Signed-off-by: Yunfeng Ye <yeyunfeng@huawei.com>
->> ---
->> v3 -> v4:
->>  - using time_before(jiffies, timeout) to check
->>  - update the comment as review suggest
->>
->> v2 -> v3:
->>  - update the comment
->>  - remove the busy-wait logic, modify the loop logic and output message
->>
->> v1 -> v2:
->>  - use usleep_range() instead of udelay() after waiting for a while
->>  arch/arm64/kernel/psci.c | 14 ++++++++------
->>  1 file changed, 8 insertions(+), 6 deletions(-)
->>
->> diff --git a/arch/arm64/kernel/psci.c b/arch/arm64/kernel/psci.c
->> index c9f72b2665f1..77965c3ba477 100644
->> --- a/arch/arm64/kernel/psci.c
->> +++ b/arch/arm64/kernel/psci.c
->> @@ -81,7 +81,8 @@ static void cpu_psci_cpu_die(unsigned int cpu)
->>
->>  static int cpu_psci_cpu_kill(unsigned int cpu)
->>  {
->> -	int err, i;
->> +	int err, i = 0;
->> +	unsigned long timeout;
->>
->>  	if (!psci_ops.affinity_info)
->>  		return 0;
->> @@ -91,16 +92,17 @@ static int cpu_psci_cpu_kill(unsigned int cpu)
->>  	 * while it is dying. So, try again a few times.
->>  	 */
->>
->> -	for (i = 0; i < 10; i++) {
->> +	timeout = jiffies + msecs_to_jiffies(100);
->> +	do {
->> +		i++;
->>  		err = psci_ops.affinity_info(cpu_logical_map(cpu), 0);
->>  		if (err == PSCI_0_2_AFFINITY_LEVEL_OFF) {
->> -			pr_info("CPU%d killed.\n", cpu);
->> +			pr_info("CPU%d killed (polled %d times)\n", cpu, i);
-> 
-> We can even drop loop counter completely, track time and log that
-> instead of loop counter that doesn't give any indication without looking
-> into the code.
-> 
-ok, I will modify as your suggest. thanks.
+Signed-off-by: Leo Yan <leo.yan@linaro.org>
+---
+ tools/perf/util/cs-etm.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-> 	start = jiffies, end = start + msecs_to_jiffies(100);
-> 	do {
-> 			....
-> 			pr_info("CPU%d killed (polled %u ms)\n", cpu,
-> 				jiffies_to_msecs(jiffies - start));
-> 			....
-> 	} while (time_before(jiffies, end));
-> 
-> Just my preference. Looks good otherwise.
-> 
-> --
-> Regards,
-> Sudeep
-> 
-> 
-> .
-> 
+diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
+index 4ba0f871f086..f5f855fff412 100644
+--- a/tools/perf/util/cs-etm.c
++++ b/tools/perf/util/cs-etm.c
+@@ -110,7 +110,7 @@ static int cs_etm__decode_data_block(struct cs_etm_queue *etmq);
+  * encode the etm queue number as the upper 16 bit and the channel as
+  * the lower 16 bit.
+  */
+-#define TO_CS_QUEUE_NR(queue_nr, trace_id_chan)	\
++#define TO_CS_QUEUE_NR(queue_nr, trace_chan_id)	\
+ 		      (queue_nr << 16 | trace_chan_id)
+ #define TO_QUEUE_NR(cs_queue_nr) (cs_queue_nr >> 16)
+ #define TO_TRACE_CHAN_ID(cs_queue_nr) (cs_queue_nr & 0x0000ffff)
+@@ -819,7 +819,7 @@ static int cs_etm__setup_queue(struct cs_etm_auxtrace *etm,
+ 	 * Note that packets decoded above are still in the traceID's packet
+ 	 * queue and will be processed in cs_etm__process_queues().
+ 	 */
+-	cs_queue_nr = TO_CS_QUEUE_NR(queue_nr, trace_id_chan);
++	cs_queue_nr = TO_CS_QUEUE_NR(queue_nr, trace_chan_id);
+ 	ret = auxtrace_heap__add(&etm->heap, cs_queue_nr, timestamp);
+ out:
+ 	return ret;
+-- 
+2.17.1
 
 
 _______________________________________________
