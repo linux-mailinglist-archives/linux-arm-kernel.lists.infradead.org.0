@@ -2,98 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7E06DE4D1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 08:47:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4ABD5DE4DA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 08:53:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BdT/TMeHQNy1WcGlyyIZXaCUv30nRf38menSueb8SoM=; b=dfbYrH8EVIygyb
-	/YjAS2+7s4+yvCWW/VPhAYiEyYs/VtCS0Ouwfcyb/CBR3XewVUZKiI5ZBn6gQWs3gAtSy4GwfjkC8
-	8z5JM86mx5ykLPC0C1F2QA+qI6yuo4qegZujIgBCPX59wIzPXv2jAt1uB0JYZi7D9IA2ELS0by9XQ
-	tpNDxPnYrqyqOXN29F8uIGKZd3He1fUgMHglyZRJ5DyD2kjAX7T5k3FJYnZ3y1dT86qHGfAI28Z3L
-	sOT6kBBuI/xBDOFn9FUUOvmewTMfmLzKoz4XdH5uo7twhanWwmLjaM8PfDBRjsN3a7PfdjoM3Qsp6
-	wn+R7kpLr8IvmWm26mfA==;
+	List-Owner; bh=yoa95M3FkN1ORDSXE8l2GxRNSvhEpoDh0HOJIMGevKg=; b=a3xcn6AfqHZkTz
+	xDpwKLAyNCIIYL8WRcnKwZN6xh/niU9GGS6wx69kCR1Dag1sYTBxloWmTpYpibn1dEKubk0Qh/Vot
+	AJyjZN3KLdzTwIBMbWOAbNhMzp5VgUMg+WFdf42q15rYih+Z4LhchC8H8LSXSU9F93UbaoWLjrfLC
+	Vpwv9pO4hYstjFEsh3b+c9jAjqflkctqklYnHXE+V+/0gZTl9wLI0tARJM6Gx7S/7HlqAPrbYyYAj
+	UFAuTHwEF2W07ca28hIz8lyvQX4Jir6j6gUVwOS5RfvFDPiFjvrZq7GnIut2111XpZQV2M0VyGFtl
+	V/Ny8wY/bqkQyoK6wZGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMRTG-0006K2-1y; Mon, 21 Oct 2019 06:47:14 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1iMRZd-0008HD-Th; Mon, 21 Oct 2019 06:53:49 +0000
+Received: from mout.kundenserver.de ([212.227.17.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMRT5-0006Jg-0a
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 06:47:04 +0000
-Received: by mail-wm1-x343.google.com with SMTP id 6so610632wmf.0
+ id 1iMRZU-0008Gl-0j
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 06:53:41 +0000
+Received: from mail-qt1-f169.google.com ([209.85.160.169]) by
+ mrelayeu.kundenserver.de (mreue108 [212.227.15.145]) with ESMTPSA (Nemesis)
+ id 1MORIm-1ifc360XOA-00Pxur for <linux-arm-kernel@lists.infradead.org>; Mon,
+ 21 Oct 2019 08:53:34 +0200
+Received: by mail-qt1-f169.google.com with SMTP id o25so6006670qtr.5
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 20 Oct 2019 23:47:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=tlPpIwBKusc44G2y1sU81Lo8USWJFG7wCEpznib6Of4=;
- b=XvP2c167j/bu1sR1aTy73khqK0+zMbnPKpw+4XQkCMuxs0J1YijwuODFl/A1T3GZyu
- pSHm6k1kOfu1NzqvsKCrDdYIP2rp7FnEiIi3aHVZIcYEl8C2QRvjuF7213XmnyDU4J6T
- 7KEAbumBOwN5Ker4JqeuqmNXnPSlD86UM60oC/nt1LxqwtR2M2ghnCiQs88EgCMrQMoQ
- J8LwTHTaeeJhdWX8cD47HjAokZAWrD49xTOE2DOxekcuqaVv6y8lDefJ1cu2mqPMwNaM
- Mi9xgFpQMxuLQHVMoYcT9JEqe2ejivQbSW78h6+I7iZxagT0D4mQ6B+s9rndXZve9sbV
- KCFw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=tlPpIwBKusc44G2y1sU81Lo8USWJFG7wCEpznib6Of4=;
- b=K3Bx+znAgQkO8AAoJcNHwdgthnHIBbO7NFxTJ50JAfg9Zg3HZQfeQnit5XBYW9vNkY
- WvfKTP94UcNwQHSDg0Q6k9Q89yY2D38/8beJ/3CFpAEpWGdayyBhrjOQWu4jaLXVvt4L
- CJ7ohloGdmNg8DN/aj3rtGegBPW6oj7B1KlkO+zTt9B8UPiRPgSOVVE5339XC0/7RkaD
- YxG1JdaSvX0+/4AKAs+kEfe8jTlM9Lmk2M8eTVmVUGG1lfyunyZcbB3FRalgxUb9wixL
- aqNCJ3TIv+oQG0ChT0Vxc6pgJUSLhKPX7c2J9eH8KhiGFsP4hhnTdWLWSRboMUijaHCH
- tMlg==
-X-Gm-Message-State: APjAAAXYuP4sp5AXlRAmV0EhMR9v9xptchtPOROCZeHwiR6XUtRHy8Ef
- OVbfl+hRW0hRNq6VLwZdPXU=
-X-Google-Smtp-Source: APXvYqwbXfC4Yy97gxWjM38ERhzCRYCmSb222GCRiSXKVlql0F4+vbUyDMowjfvMQ/NyV7/zx0w/BA==
-X-Received: by 2002:a7b:c959:: with SMTP id i25mr4411635wml.26.1571640421191; 
- Sun, 20 Oct 2019 23:47:01 -0700 (PDT)
-Received: from gmail.com (54033286.catv.pool.telekom.hu. [84.3.50.134])
- by smtp.gmail.com with ESMTPSA id d4sm12918196wrq.22.2019.10.20.23.47.00
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 20 Oct 2019 23:47:00 -0700 (PDT)
-Date: Mon, 21 Oct 2019 08:46:58 +0200
-From: Ingo Molnar <mingo@kernel.org>
-To: Linus Torvalds <torvalds@linux-foundation.org>
-Subject: Re: [GIT PULL] arm64: Fixes for -rc4
-Message-ID: <20191021064658.GB22042@gmail.com>
-References: <20191017234348.wcbbo2njexn7ixpk@willie-the-truck>
- <CAHk-=wjPZYxiTs3F0Vbrd3kRizJGq-rQ_jqH1+8XR9Ai_kBoXg@mail.gmail.com>
- <20191018174153.slpmkvsz45hb6cts@willie-the-truck>
- <CAHk-=whmtB98b8=YL2b8HzPKRadk2A9pL0aasmvgebhePrDP9w@mail.gmail.com>
+ Sun, 20 Oct 2019 23:53:33 -0700 (PDT)
+X-Gm-Message-State: APjAAAWJJEysPywUL4fK0fMzC7gmfTSS+fT6R9qS1WfPVUV5Xb0aSIEK
+ yPNILnsi4q0WbjeGN9O+EhhX9+4v6QXRwIBWIwM=
+X-Google-Smtp-Source: APXvYqzYcUAYVHni2nqAfOPQIYdHwgcZEdAAjv1mOE8IjJCV7hvfGNf5JhTchMHWyrOMCNUibIt1I1R+FjIbw4CmeQc=
+X-Received: by 2002:ac8:729a:: with SMTP id v26mr22612098qto.18.1571640812963; 
+ Sun, 20 Oct 2019 23:53:32 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAHk-=whmtB98b8=YL2b8HzPKRadk2A9pL0aasmvgebhePrDP9w@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20191018163047.1284736-1-arnd@arndb.de>
+ <20191018163047.1284736-2-arnd@arndb.de>
+ <20191019184234.4cdb37a735fe632528880d76@gmail.com>
+ <CAK8P3a0LWeGJshr=AdeE3QXHYe2jVmc90K_2prc=4=ZFk0hr=g@mail.gmail.com>
+ <20191019222413.52f7b79369d085c4ce29bc23@gmail.com>
+ <CAK8P3a3UztT5aqDTiBNDssHWcdYQNqbhiY_hxJ+AHuM54hgCWQ@mail.gmail.com>
+ <20191019231418.c17b05f73276539536b4732c@gmail.com>
+ <CAK8P3a0FfTjNAvJG1yUi==bLBjeVaJ0oseaqs-ZouZKHrFdBHQ@mail.gmail.com>
+ <31d57d94-9701-1c46-6ce2-c43eaa16f444@gmail.com>
+In-Reply-To: <31d57d94-9701-1c46-6ce2-c43eaa16f444@gmail.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Mon, 21 Oct 2019 08:53:16 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a2ZUgF0iH+BAw0ny-UwUYxoZ94apgYhD_vi4AiN5USwZw@mail.gmail.com>
+Message-ID: <CAK8P3a2ZUgF0iH+BAw0ny-UwUYxoZ94apgYhD_vi4AiN5USwZw@mail.gmail.com>
+Subject: Re: [PATCH 2/6] ARM: ep93xx: enable SPARSE_IRQ
+To: Alexander Sverdlin <alexander.sverdlin@gmail.com>
+X-Provags-ID: V03:K1:wLQFcx9yCBnL8UZhzG/mWNmZYU9DxsPynS6nlASeV9lnL0vG7yJ
+ wXBmpvvskFqohOPW08sGoJBiBC3TsD6PTsksUZiGUgO+KodnVHTYYY/kQsm0b27hErgUKCg
+ 2OYendI9zlWNo+gOReZQEg8/BScyHN9ZCqjgIrf3lkFhRejDp3p8nt13sVt01NtZ9t0i7tP
+ DbTHQ9sLEs6M6scGT3pQQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:U1jxSPezWec=:J5CVImru8Hl44docrh/r/n
+ wRvbzEf54vVoIP3s6bqmGGf9fJTokp/1w/2VGg5LMx3+7sxYoCfcZza1JYkpIgPCAwNdZyYW3
+ S91CWvJkdP7l4HZur+FmTd1Sv2nrRlSY1qrNFXtu6T3nNhyIAkqcqMdVpu02Bwe+jPml6l8oz
+ ffwBrpbdQGFtQSl2Fc2PfzWR5DHuUUYVOZkDmsLQvxObdtEvzZ80tfzrPazczSJhSIdG/AG9+
+ kG1mJidKfIfm2UT7/Km/EtoktaOsDqfZS1wTfKpd5AEqwL0eQ/l85p/QV/HQV2pfnZmq3NLn+
+ DyncIMqKl7pyk+0tyV3ULky0THf98w70+N1+xYkh94j2amQuxQLNbTyf9m0uvI0WCSB+woWDe
+ eCos2s9zKoQn/ATfQr2L+2mS3BABMYCLe9nTsDzaMwDM7llFTLzuZQSWmWMXWFMRA2RQAB/Mn
+ Fcvf7RqJWXgdp7ifEWWuy/k0ZTtYHlO2CKdAIiZafHdg7kPfKxbsTkgNIsZIasylPFOeQnMEh
+ ORjwbpfdufVblI6T/jpPjBqSwmPexAo+uc4qYbZjrkP1meF3m81uBiJV85/Tu9Qvvd4ac5BSF
+ KWvJwXmR9ORA0JPp8zg0vbtf1NGgzVAklmJlt13P5dBXLOXwQ6Zj7ul79MaGXIUEgF4133kaI
+ w4RWukZb0slOuTmfLiOUelIpjZNu2gpSSKI8jWkjTq4tLsC7Mh/6MHQHTuZcO8NvG4lIPj/mu
+ xasuSFdHbilojI6eaWCCrVWpv6+1wywNswdPkvOG9MrMEMR2Nn6UpTTsL3uSA9AtBs5R3FEaM
+ SmyRrFAdY6o9CdKzcDkCJwRP9QxPZWZmqQ+arfjfsDQ/ziMf17XFuqUjQE9NP/5012HFurl80
+ fuJF/V8DzxrTlnFrEiRg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191020_234703_084527_A3C68710 
-X-CRM114-Status: GOOD (  14.00  )
-X-Spam-Score: 2.0 (++)
+X-CRM114-CacheID: sfid-20191020_235340_360068_1FDB7F7D 
+X-CRM114-Status: GOOD (  15.22  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
- 1.8 FSL_HELO_FAKE          No description available.
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [212.227.17.10 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (mingo.kernel.org[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.10 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,54 +96,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux ARM Kernel Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Hubert Feurstein <hubert.feurstein@contec.at>,
+ Hartley Sweeten <hsweeten@visionengravers.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Lukasz Majewski <lukma@denx.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Sun, Oct 20, 2019 at 11:47 PM Alexander Sverdlin
+<alexander.sverdlin@gmail.com> wrote:
+> On 20/10/2019 13:49, Arnd Bergmann wrote:
+> >>> Ah, that makes sense. so all interrupt numbers need to
+> >>> be shifted by a fixed number (e.g. 1) like we did for
+> >>> other platforms (see attachment).
+> >> Yes, the below patch resolved both GPIO and DMA issues.
+>         ^^^^^^^^^^^^^^^
+> >> Previous patch (selecting IRQ_DOMAIN_HIERARCHY) is not
+> >> required.
+> >>
+> >> If you re-spin all 3 ep93xx-relevant patches together, you can put my
+> >> Tested-by: Alexander Sverdlin <alexander.sverdlin@gmail.com>
+> >> on them.
+> > Awesome, thanks for testing.
+> >
+> > I only remember sending two patches  for ep93xx:
+> >  ARM: ep93xx: make mach/ep93xx-regs.h local
+> >  ARM: ep93xx: enable SPARSE_IRQ
+> >
+> > and have added the Tested-by tag to them now. Is there a third one
+> > I missed?
+>
+> The patch shifting the IRQ-numbering by one is a prerequisite for the two
+> above patches, right?
 
-* Linus Torvalds <torvalds@linux-foundation.org> wrote:
-
-> What you doing the merge does is to turn the multiple merge bases into
-> just one point: the thing you merged against now becomes the common
-> merge point, and now you have a "two endpoints" for the diffstat: the
-> thing you merged against, and your end result are now the two points
-> that you can diff against.
-> 
-> But the shortlog is always correct, because it just doesn't even care
-> about that whole issue.
-
-FWIW I regularly ran into this problem too and resolved it manually by 
-'emulating' your merge. (Once every 20-30 pull requests or so. Finally 
-ended up scripting around request-pull altogether.)
-
-I think at least once I ran into that and sent you a 'slightly wrong' 
-diffstat - and maybe there's also been a few cases where you noticed 
-diffstats that didn't match your merge result, double checked it yourself 
-and didn't complain about it because you knew that this is a "git 
-request-pull" artifact?
-
-Most of the time I notice it like Will did because the diffstat is 
-obviously weird and it's good to check pull requests a second (and a 
-third :-) time as well, but it's possible to have relatively small 
-distances between the merge bases where the diffstat doesn't look 
-'obviously' bogus and mistakes can slip through.
-
-Anyway, a small Git feature request: it would be super useful if "git 
-request-pull" output was a bit more dependable and at least warned about 
-this and didn't include what is, from the viewpoint of the person doing 
-the merge, a bogus diffstat. (Generating the correct diffstat is probably 
-beyond request-pull's abilities: it would require changing the working 
-tree to actually perform the merge - while request-pull is a read-only 
-operation right now. But detecting the condition and warning about it 
-should be possible?)
+Ah, now I see what you mean. I had folded that change into the sparse-irq
+change, but you are right that it makes more sense as a separate
+changeset before the other ones. Changing that now.
 
 Thanks,
 
-	Ingo
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
