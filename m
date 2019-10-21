@@ -2,84 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 02315DF476
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 19:42:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C20A1DF493
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 19:55:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aPW4NzfNSjLlo7VbiTlybqO3nU8Roc3MARdHuna31uo=; b=MoIy7e7iYxfI/I
-	3PPtwu/6WWTdBLpOa4QbOCi1jkp5F0Dqx6vGy6sr35Frf8E8ATIXNmUh4/zCC4PFcfovK1bs0XgKd
-	bJ0qJu6WiJTyjBr21Lbip8lirM5ATDDmCSWNjQ/KoGITXM97OEYpMFbL2UVrGnNdDR52tG9PXBH3B
-	NCr0ZhDQDIY0tileWgt45fbpdwEKPRnUUozzn82WclVFRlXAfalZEN8gbaN8A+gQ2EA5rGAS6xjpV
-	y2FLYXQPoos8fzyvw6xU7cuvEhDq5n6pocVIhNhudZwmQalk6Q7ITy3l5To3ZTcRIgclW4raEe4H9
-	cj2zkGNbCLx1PE3eiBZw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=06bFG43kcHWWsPQk0+97WfRntpDZKCR/F3vLB6dPyhg=; b=Ge4jnR03IwsDd7tDmfZjieYDP
+	cVaD8bnTTBCJzQrdlyfAjq/VMYIhXZmBzV9wGYU7D/CZ8iYbz4qllzZ5TWrMA13uNa/NHo/+G6O4s
+	1KfwROrLkCDYn8xP8Mn+FcJ/J5m3xelSFeGhakZQEfn0ZGdOGcFMKeJI/lT8TReR2/Iyo3WAun0SI
+	VvlF08+2lNnKtiEIqx/kywkbdFif7ErjQLpfKij/Qq+v2F0iSJ5788E7L5FbSW7C9oeiiOR+DoueJ
+	z3CCRpjD0jKbPntQ+onahwmBBbdRb0NXEvYXr7KGZuSzd27nM2/Am9Cuv7ExjNykv1RbtVSg5zRbi
+	EbZ/3t6oA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMbhe-0005JY-Os; Mon, 21 Oct 2019 17:42:46 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1iMbu8-0001fJ-FZ; Mon, 21 Oct 2019 17:55:40 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMbhT-0005Ii-HX
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 17:42:36 +0000
-Received: by mail-io1-xd42.google.com with SMTP id i26so7643748iog.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 21 Oct 2019 10:42:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=kzgvuE8ZrpsBhL/phFPBQTgfRoYdysA2uEVHuY0C2yw=;
- b=xGDuT/cwuXVfrZ+nz3kCY7rJ4/vWXGtj4UhZPRfa1YSHzBQi74gMGk3/6SU0Gtig48
- Xk9/MF0CSKB8e3EGEL8DWYkliLdOwoSxm8ANLKoggtZUnf4HaFcrW+EBQgg8ccs/Uqc+
- DrOQPNGyGpOKS2H1DL93zVaj4ubM13Q6xBRWHZeMTUi0kIDdJZIbQNiHFW0YeVmCCcIV
- a75LJZAK0rp8/y94c7fKSIUrc4CeFq3x1B/fFNaZKcdQyWziXKmEwYexxLwwrzAi9uh/
- qQ5V19+IoHfGF1ZRC4ygCBLkYIi/3jcAmw01ZHMl6ravgAh++EozyicyZh3hlUoU7jXT
- SgSg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=kzgvuE8ZrpsBhL/phFPBQTgfRoYdysA2uEVHuY0C2yw=;
- b=IN8JQU8v6Dq19GFjFGc4uezarjfQzDFUF5ES3+LncrmJiP3J7LQEc5RX4lSaraNyqv
- 2d7LE1dT4C8pCx/SmJd+wmOJiE9J9a8nRsF74OIB4ZrOlaKWHlM3pOj7iQcN70eNfpZ2
- eTaoj0x2Gl012rHSkwmDtu9RsaCbokFK0MZoRNSff6hhohipEKUETHx/DVoxG/13JlxU
- VWw32y3nnNxChAQBMxWmP7w3O3mBW+0FG2hu0jx7ZXvh2lDuMK6+xDttNPU/hiaW9PEn
- 9XTsCkYaztZ2aRZw8nte26QI+R0KWAK5Cv5zwIEhkqDZUm3OqAjN5JqJo14o35mRDh2P
- jbQg==
-X-Gm-Message-State: APjAAAVoQB9v9OMb96GDB+J+LFs5CNOdZuFM+LvaIJi1Zz2REmVm9DO/
- fJyHbjZGQ8c+/N7akaghqmDTrBNb/ow6rI5FROnQzg==
-X-Google-Smtp-Source: APXvYqzesuSl1eIcJuavpZhunNVJw70OVV3BzrNelIbrZm7vXlXp4JjJxP1ijjy9Y9ZJW5V4knNFXtI/ftAGh75ZFso=
-X-Received: by 2002:a05:6638:392:: with SMTP id
- y18mr16267547jap.98.1571679752652; 
- Mon, 21 Oct 2019 10:42:32 -0700 (PDT)
+ id 1iMbtw-0001ZL-S1; Mon, 21 Oct 2019 17:55:30 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 0BA09AC40;
+ Mon, 21 Oct 2019 17:55:27 +0000 (UTC)
+Message-ID: <9208de061fe2b9ee7b74206b3cd52cc116e43ac0.camel@suse.de>
+Subject: Re: [PATCH v6 3/4] arm64: use both ZONE_DMA and ZONE_DMA32
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Qian Cai <cai@lca.pw>
+Date: Mon, 21 Oct 2019 19:55:25 +0200
+In-Reply-To: <A1A8EEF0-2273-4338-B4D8-D9B1328484B4@lca.pw>
+References: <6703f8dab4a21fe4e1049f8f224502e1733bf72c.camel@suse.de>
+ <A1A8EEF0-2273-4338-B4D8-D9B1328484B4@lca.pw>
+User-Agent: Evolution 3.32.4 
 MIME-Version: 1.0
-References: <20191021074808.25795-1-leo.yan@linaro.org>
-In-Reply-To: <20191021074808.25795-1-leo.yan@linaro.org>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Mon, 21 Oct 2019 11:42:21 -0600
-Message-ID: <CANLsYkyvDKw4E7=+fsq7W41iS0P57Rau3fxJffrg8cEScyOOBw@mail.gmail.com>
-Subject: Re: [PATCH] perf cs-etm: Fix definition of macro TO_CS_QUEUE_NR
-To: Leo Yan <leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_104235_581311_FA50ACD3 
-X-CRM114-Status: GOOD (  19.11  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191021_105529_051782_B49EDCFB 
+X-CRM114-Status: GOOD (  11.08  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,75 +59,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Coresight ML <coresight@lists.linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Arnaldo Carvalho de Melo <acme@kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
- Jiri Olsa <jolsa@redhat.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: f.fainelli@gmail.com, will@kernel.org, marc.zyngier@arm.com,
+ catalin.marinas@arm.com, wahrenst@gmx.net, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-mm@kvack.org, mbrugger@suse.com,
+ linux-rpi-kernel@lists.infradead.org, phill@raspberrypi.org,
+ Robin Murphy <Robin.Murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
+ linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
+Content-Type: multipart/mixed; boundary="===============0401666714779585556=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 21 Oct 2019 at 01:48, Leo Yan <leo.yan@linaro.org> wrote:
->
-> Macro TO_CS_QUEUE_NR definition has a typo, which uses 'trace_id_chan'
-> as its parameter, this doesn't match with its definition body which uses
-> 'trace_chan_id'.  So renames the parameter to 'trace_chan_id'.
->
-> It's luck to have a local variable 'trace_chan_id' in the function
-> cs_etm__setup_queue(), even we wrongly define the macro TO_CS_QUEUE_NR,
-> the local variable 'trace_chan_id' is used rather than the macro's
-> parameter 'trace_id_chan'; so the compiler doesn't complain for this
-> before.
->
-> After renaming the parameter, it leads to a compiling error due
-> cs_etm__setup_queue() has no variable 'trace_id_chan'.  This patch uses
-> the variable 'trace_chan_id' for the macro so that fixes the compiling
-> error.
->
-> Signed-off-by: Leo Yan <leo.yan@linaro.org>
-> ---
->  tools/perf/util/cs-etm.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
->
-> diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-> index 4ba0f871f086..f5f855fff412 100644
-> --- a/tools/perf/util/cs-etm.c
-> +++ b/tools/perf/util/cs-etm.c
-> @@ -110,7 +110,7 @@ static int cs_etm__decode_data_block(struct cs_etm_queue *etmq);
->   * encode the etm queue number as the upper 16 bit and the channel as
->   * the lower 16 bit.
->   */
-> -#define TO_CS_QUEUE_NR(queue_nr, trace_id_chan)        \
-> +#define TO_CS_QUEUE_NR(queue_nr, trace_chan_id)        \
->                       (queue_nr << 16 | trace_chan_id)
->  #define TO_QUEUE_NR(cs_queue_nr) (cs_queue_nr >> 16)
->  #define TO_TRACE_CHAN_ID(cs_queue_nr) (cs_queue_nr & 0x0000ffff)
-> @@ -819,7 +819,7 @@ static int cs_etm__setup_queue(struct cs_etm_auxtrace *etm,
->          * Note that packets decoded above are still in the traceID's packet
->          * queue and will be processed in cs_etm__process_queues().
->          */
-> -       cs_queue_nr = TO_CS_QUEUE_NR(queue_nr, trace_id_chan);
-> +       cs_queue_nr = TO_CS_QUEUE_NR(queue_nr, trace_chan_id);
->         ret = auxtrace_heap__add(&etm->heap, cs_queue_nr, timestamp);
->  out:
->         return ret;
 
-Really good catch - Arnaldo please consider.
+--===============0401666714779585556==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-HpXuUqy8wDt6AUMeP1G+"
 
-Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 
-> --
-> 2.17.1
+--=-HpXuUqy8wDt6AUMeP1G+
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+On Mon, 2019-10-21 at 13:25 -0400, Qian Cai wrote:
+> > On Oct 21, 2019, at 1:01 PM, Nicolas Saenz Julienne <nsaenzjulienne@sus=
+e.de>
+> > wrote:
+> >=20
+> > Could you enable CMA debugging to see if anything interesting comes out=
+ of
+> > it.
+>=20
+> I did but nothing interesting came out. Did you use the same config I gav=
+e?
+
+Yes, aside from enabling ZONE_DMA.
+
+> Also, it has those cmdline.
 >
+> page_poison=3Don page_owner=3Don numa_balancing=3Denable \
+> systemd.unified_cgroup_hierarchy=3D1 debug_guardpage_minorder=3D1 \
+> page_alloc.shuffle=3D1
+
+No luck, still works for me even after adding those extra flags. IIRC most =
+of
+them (if not all) are not even parsed by the time CMA is configured.
+
+So, can you confirm the zones setup you're seeing is similar to this one:
+
+[    0.000000][    T0] Zone ranges:
+[    0.000000][    T0]   DMA      [mem 0x00000000802f0000-0x00000000bffffff=
+f]
+[    0.000000][    T0]   DMA32    [mem 0x00000000c0000000-0x00000000fffffff=
+f]
+[    0.000000][    T0]   Normal   [mem 0x0000000100000000-0x00000093fcfffff=
+f]
+
+Maybe your memory starts between 0xe0000000-0xffffffff. That would be
+problematic (although somewhat unwarranted).
+
+Regards,
+Nicolas
+
+
+--=-HpXuUqy8wDt6AUMeP1G+
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl2t8Q0ACgkQlfZmHno8
+x/6stwf9HqWsWOip+MXq4sVWh+Y20OExIRxrBFOULlN6U/sctaP4D865ew+u+Q+w
++W9JEpEC77RF5P5lrvYt+TgLFjggGREe7qZhjsfVNQBXUvrwsO5m842eoP852h6e
+japrXbQa51kSW5bdKgwSpi8+ZWw39O0IGNO/+kbts8eesc3IVbWYXOZ7lz0MIn44
+OxocoMYDmWtCSR459p3O980E8KUzkyJD/4R9cGGfkO66RCPXaDy2pb2e2YD0mYL3
+ArxUeTX2rLCjQcC7qGKFnCs/i50c5oRfdX25MZmn8t+c8ZNy0s8RuSvVR0uYj/HB
+4t43gk/N8RDsPoNRxMFiDbJ3c0mbXA==
+=LNBk
+-----END PGP SIGNATURE-----
+
+--=-HpXuUqy8wDt6AUMeP1G+--
+
+
+
+--===============0401666714779585556==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0401666714779585556==--
+
+
