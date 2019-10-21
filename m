@@ -2,41 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A82CDF69B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 22:18:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B124DF69C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 22:19:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pEE7f3FXn3MgL0R2eNNHSyXioWFDAMJ1tIngimYU6SQ=; b=aFCINrbO2KTz/7
-	XoFEueft/sml2pclVYo05vHb/B4ECNL+5cqvSJsAai+ymLhTE6O47ZL5xUB+GJBbBfI2hYVRkiHPa
-	8yNUg1uvvSNFtN4HjWNF6GEPOVqlmjQ6TctONExg3ufwLtSXHSd2baujhYgAxkTmHze4CbUKLPMG2
-	YfRRTv/D2gsqxvaTZxhopH+Utp3xLGuB/k3F43UTkTOZk73nYWwBgH9j4L6bd34yXt/BR8snlD76n
-	2EEQ0Ca5dCOPLibdJRI+KXnJ7U77qw8Q5+kb5zH63L8k1zWIr+LOb57sLu+No60fjTwhXx4v3mTDp
-	6HHWhbbdw2JnOoVnHCzg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=RgnNNAxzeY76QpQ0WlUL6GYV0rllM1kv/8XHPIELWFQ=; b=XmT
+	R19N2buZUsJs8urMjKDA3cr/m5/bOlYfv9dYwZzxLk4JufDqu6N2P/IwFOO0ppXSKjYEqaCEghLhG
+	8tkWWaFsXzHYYNrpSJtkqeUqBe6N6D+hIPWrwgw+l9C9F2F8siVkxqGaLgjajp/FKMq0gAXI13w8z
+	/OzbZo95UAeIj5YomNpfesczWOrHfTUzuwetfUIqhrJbUye0tONMPBBrYHre9u732sfxwOZXFlFDy
+	Q+VNHw27hvyucC6GdyzPXodIbTAnwlB2VJH3tb+mlPHetYBvWwWeVLj33J2rbRuAyxycgPVo48A+J
+	UA5USuXvyX5/RgkwCGM57CAu26W0rqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMe8Q-0007Vh-9j; Mon, 21 Oct 2019 20:18:34 +0000
-Received: from 187-26-105-39.3g.claro.net.br ([187.26.105.39]
- helo=quaco.ghostprotocols.net)
- by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMe8I-0007Up-9G; Mon, 21 Oct 2019 20:18:26 +0000
-Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
- id AF2704035B; Mon, 21 Oct 2019 17:18:19 -0300 (-03)
-Date: Mon, 21 Oct 2019 17:18:19 -0300
-From: Arnaldo Carvalho de Melo <acme@kernel.org>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: Re: [PATCH] perf cs-etm: Fix definition of macro TO_CS_QUEUE_NR
-Message-ID: <20191021201819.GK1797@kernel.org>
-References: <20191021074808.25795-1-leo.yan@linaro.org>
- <CANLsYkyvDKw4E7=+fsq7W41iS0P57Rau3fxJffrg8cEScyOOBw@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CANLsYkyvDKw4E7=+fsq7W41iS0P57Rau3fxJffrg8cEScyOOBw@mail.gmail.com>
-X-Url: http://acmel.wordpress.com
-User-Agent: Mutt/1.12.1 (2019-06-15)
+	id 1iMe8x-0007qL-HP; Mon, 21 Oct 2019 20:19:07 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iMe8o-0007pY-Nd
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 20:18:59 +0000
+Received: by mail-io1-xd41.google.com with SMTP id c11so8467942iom.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 21 Oct 2019 13:18:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=41sPlzPXwgbu7RVNQLT0Hyb+2XAax4ZfqY6sIsxCZBg=;
+ b=f+RcRdC/dfUjDR9i9fcjXRiSoSRTEbKDszo1gkd/miZbOitkyIjk7ZV4IhZrO123Rx
+ hs7sFOhOr85Gg78P83gcbPfOdAXHFDlfb5dtp1/tMbgtVpk2YB8Ht3ToJPmGREksWyQq
+ RPrLjVv8uqIaTZfzdfZPBXlie0Bx/b3RPKXWZD2+Z604NtIUrGx7IvFsBWMjqVK2UHP4
+ 3k4e3rzI+laHqvvDVxxyfltTe7L8W1r6doLaIyjcjXbODkseCWI6e5AMx0qewrcHZUcH
+ YdTgFGbDyM/6QWw9RSAFG2gwTg8Oen63WuyMfBJ3H+JzgrNaNm2J0UF/l/CeopuSaNkb
+ 1JJQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=41sPlzPXwgbu7RVNQLT0Hyb+2XAax4ZfqY6sIsxCZBg=;
+ b=GJKKqDbEVHC3GBDm4nA6vVRJm0eds/JOl6jo8NG5j0434yxX2b9Zt3s+rh5EiLTYmY
+ WV9XnK1N7PPNFgzH+ozBbu6h7agYtVi6Cuqwm7ZnehrtVcx783SXMcGM6jvuFr405hq/
+ roWzF4AYxyzHHzOckICKmzW53E8gdt5p9JRfWa0AecTHm9E+jTXTJn6wpAc6/4ZdZg6i
+ sMNSzJdSPwyyUAodF4Wnfg8gX5PkLWlJ1fRq1BzzEfBYXD6Iql0yGNGSjVoToWeqsA4F
+ ox4bAByMidjCJlLx5dFeER9TQTtTNP0ItMvSGdtg+o4pJHoN6kTTk7Fcc5GWfV85AoDF
+ cwtQ==
+X-Gm-Message-State: APjAAAV3h6WynvusFJYuyQbujiFraCZC6ykpF66k9lIzXgPMemPl+aaG
+ BPHdRmsr9X/1HXqj4FP8nMs=
+X-Google-Smtp-Source: APXvYqzMp1w4t60E66YkFH488jk3/NEx6cWKPuFdmuiQW273dcyKd9XO/qIMhz069BX4xQZIHeFnIQ==
+X-Received: by 2002:a6b:d812:: with SMTP id y18mr12058iob.151.1571689137744;
+ Mon, 21 Oct 2019 13:18:57 -0700 (PDT)
+Received: from cs-dulles.cs.umn.edu (cs-dulles.cs.umn.edu. [128.101.35.54])
+ by smtp.googlemail.com with ESMTPSA id b7sm4689726iod.42.2019.10.21.13.18.56
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 21 Oct 2019 13:18:57 -0700 (PDT)
+From: Navid Emamdoost <navid.emamdoost@gmail.com>
+To: 
+Subject: [PATCH] clocksource/drivers: Fix memory leak in ttc_setup_clockevent
+Date: Mon, 21 Oct 2019 15:18:47 -0500
+Message-Id: <20191021201848.4231-1-navid.emamdoost@gmail.com>
+X-Mailer: git-send-email 2.17.1
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20191021_131858_766330_DE266270 
+X-CRM114-Status: GOOD (  10.55  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (navid.emamdoost[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -48,73 +93,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Coresight ML <coresight@lists.linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, Leo Yan <leo.yan@linaro.org>,
- Namhyung Kim <namhyung@kernel.org>, Jiri Olsa <jolsa@redhat.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Daniel Lezcano <daniel.lezcano@linaro.org>, kjlu@umn.edu,
+ Michal Simek <michal.simek@xilinx.com>, linux-kernel@vger.kernel.org,
+ emamd001@umn.edu, smccaman@umn.edu, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org,
+ Navid Emamdoost <navid.emamdoost@gmail.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Mon, Oct 21, 2019 at 11:42:21AM -0600, Mathieu Poirier escreveu:
-> On Mon, 21 Oct 2019 at 01:48, Leo Yan <leo.yan@linaro.org> wrote:
-> >
-> > Macro TO_CS_QUEUE_NR definition has a typo, which uses 'trace_id_chan'
-> > as its parameter, this doesn't match with its definition body which uses
-> > 'trace_chan_id'.  So renames the parameter to 'trace_chan_id'.
-> >
-> > It's luck to have a local variable 'trace_chan_id' in the function
-> > cs_etm__setup_queue(), even we wrongly define the macro TO_CS_QUEUE_NR,
-> > the local variable 'trace_chan_id' is used rather than the macro's
-> > parameter 'trace_id_chan'; so the compiler doesn't complain for this
-> > before.
-> >
-> > After renaming the parameter, it leads to a compiling error due
-> > cs_etm__setup_queue() has no variable 'trace_id_chan'.  This patch uses
-> > the variable 'trace_chan_id' for the macro so that fixes the compiling
-> > error.
-> >
-> > Signed-off-by: Leo Yan <leo.yan@linaro.org>
-> > ---
-> >  tools/perf/util/cs-etm.c | 4 ++--
-> >  1 file changed, 2 insertions(+), 2 deletions(-)
-> >
-> > diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-> > index 4ba0f871f086..f5f855fff412 100644
-> > --- a/tools/perf/util/cs-etm.c
-> > +++ b/tools/perf/util/cs-etm.c
-> > @@ -110,7 +110,7 @@ static int cs_etm__decode_data_block(struct cs_etm_queue *etmq);
-> >   * encode the etm queue number as the upper 16 bit and the channel as
-> >   * the lower 16 bit.
-> >   */
-> > -#define TO_CS_QUEUE_NR(queue_nr, trace_id_chan)        \
-> > +#define TO_CS_QUEUE_NR(queue_nr, trace_chan_id)        \
-> >                       (queue_nr << 16 | trace_chan_id)
-> >  #define TO_QUEUE_NR(cs_queue_nr) (cs_queue_nr >> 16)
-> >  #define TO_TRACE_CHAN_ID(cs_queue_nr) (cs_queue_nr & 0x0000ffff)
-> > @@ -819,7 +819,7 @@ static int cs_etm__setup_queue(struct cs_etm_auxtrace *etm,
-> >          * Note that packets decoded above are still in the traceID's packet
-> >          * queue and will be processed in cs_etm__process_queues().
-> >          */
-> > -       cs_queue_nr = TO_CS_QUEUE_NR(queue_nr, trace_id_chan);
-> > +       cs_queue_nr = TO_CS_QUEUE_NR(queue_nr, trace_chan_id);
-> >         ret = auxtrace_heap__add(&etm->heap, cs_queue_nr, timestamp);
-> >  out:
-> >         return ret;
-> 
-> Really good catch - Arnaldo please consider.
-> 
-> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+In the impelementation of ttc_setup_clockevent() the allocated memory
+for ttcce should be released if clk_notifier_register() fails.
 
-Thanks, applied.
+Fixes: 70504f311d4b ("clocksource/drivers/cadence_ttc: Convert init function to return error")
+Signed-off-by: Navid Emamdoost <navid.emamdoost@gmail.com>
+---
+ drivers/clocksource/timer-cadence-ttc.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-- Arnaldo
+diff --git a/drivers/clocksource/timer-cadence-ttc.c b/drivers/clocksource/timer-cadence-ttc.c
+index 88fe2e9ba9a3..b40fc6581389 100644
+--- a/drivers/clocksource/timer-cadence-ttc.c
++++ b/drivers/clocksource/timer-cadence-ttc.c
+@@ -424,6 +424,7 @@ static int __init ttc_setup_clockevent(struct clk *clk,
+ 				    &ttcce->ttc.clk_rate_change_nb);
+ 	if (err) {
+ 		pr_warn("Unable to register clock notifier.\n");
++		kfree(ttcce);
+ 		return err;
+ 	}
+ 
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
