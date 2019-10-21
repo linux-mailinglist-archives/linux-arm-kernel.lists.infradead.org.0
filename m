@@ -2,84 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B55EDF50C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 20:29:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E28CDF510
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 20:30:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Subject:To:From:
-	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=8evzilndjwrEC1FezxftXEybMCbFstMFOqpMRjMwAjs=; b=ntN
-	LZmxIVzgXdy1R28tJKpG6Kd/BAUp4srXS/jPx7cBMwBx64+hCT2bDiaTIiv7aEQF8EXsh3LKxbeyU
-	3mFyUfRF/rdo1YLjPnRRFG/OEcni/cNdXWunQrPW5c6JOYBjneqm2kqfIqieSQYbFVBLfmW87Vl4p
-	PQe0mfmygpNp6Lx9YgaTZ6+b8XB6BmFgOKWw44p4iPzutqdk5oN2FbzgFmwPld0webYu2XbWdmoJ+
-	uFwWkl/f1KIFhzlgL0PS+Uu0eDjLs2nRD6P0Bo0t2J9duyZoQSDJTbKsZBMNOxc1M2i11qIwr3NvP
-	a9JfumpBkH/cUwc9pJ6L56WIM9lmTiQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=u+NFR+QbOcVM8ahI9nYtw7ELHC+2izCFZTBPeyofjFQ=; b=hxSTYzGwbC5Gmk
+	L0DhLvQR6RebTByXvcySdBppHp7fJle3NR1JNUS5jKETkFdiGE9Ow0yEPdKOQNOF6T7csFnZMWwYP
+	AQgVTynE/fxyrToPHd6rFUxKVD0lqnOdiTjwiBoOkuHoCn64G4qtdRtlAYzsyWlJV68zJO0bPiH23
+	6Swbf+D1gBLELxGf0fLb+QYouS4NtvGT40tbaUd2e/Y+d3cMCq9G7WRJMTvF9YArKwvZQ1fgct6NH
+	MIqSymIYrp/oKnASLqbo8xwqxO64ncnKpn163exphe3/INckuqNAv9sj7y5/BK8GQhC42RzGeNrl/
+	qxRTYOukLk1S6XBL2Alw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMcQw-0006WU-Tt; Mon, 21 Oct 2019 18:29:34 +0000
-Received: from us-smtp-1.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1iMcRy-00085l-TE; Mon, 21 Oct 2019 18:30:38 +0000
+Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMcQn-0006Vx-0f
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 18:29:27 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1571682562;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding;
- bh=zn5OQT1Ri/KDYzbeg9e3yIMDt4MTscQGoojWSj367Eg=;
- b=doPVbrw7VJ9MqFwnTpvW1QCAAAF2ELA4QmIAQH1jRemJiUsYb/RjibJzUzaINDdxy3MXR5
- NUlgwSki7OvyUgfXh8SAzpmWHMZZktVsZBEx1aFvI2y7GyknVNrLTgsAudJ7jxYklJ++xp
- 0WgsTJKW9LyGQoLoyx0uYwXvpR6EUPE=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-104-8rshejm0OrWNPkpZuIqfbQ-1; Mon, 21 Oct 2019 14:29:18 -0400
-Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
- [10.5.11.15])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 4A86C80183E;
- Mon, 21 Oct 2019 18:29:17 +0000 (UTC)
-Received: from [172.54.14.49] (cpt-1003.paas.prod.upshift.rdu2.redhat.com
- [10.0.19.17])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 975B45D6B0;
- Mon, 21 Oct 2019 18:29:14 +0000 (UTC)
+ id 1iMcRp-00084s-LR
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 18:30:31 +0000
+Received: by mail-il1-x141.google.com with SMTP id u1so12947018ilq.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 21 Oct 2019 11:30:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=gateworks-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=AR63DmWjyzGt6KRdOolpGSBjajplu7OlrmmkLDJcF1w=;
+ b=r104k429d5kD4MhbpW7CsAzUCeS0MvNA2lwEo7M3+M+ZRmetRuneB8nvFRgLuP5tQ6
+ J9AKWyyIKKMOX00v0Kdg61NH+qsyMxoXqdfAltdCnCFK4pEdyXQhccQsFXnzV3ALGMjF
+ SGS27FyioGLGTnffmypWBvmKw8dC6yfr+isAhHG9DtvWsqLqu6xlyJDWEk4lKH/r40B7
+ Wxerfq7p3FpMUFwQs8jVPnsL1bLo1Ve8L9+s4ZS17nQ0yiIO2u6g3DVw1MFsuFNNM+f7
+ AugqoDYUUN0oVT99Q04VqQJ8YWw8013gmT4592iYFmLJkmSN+9FKG8UnkYOwGWeEvV9P
+ czhw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=AR63DmWjyzGt6KRdOolpGSBjajplu7OlrmmkLDJcF1w=;
+ b=WMIrmrg9m0ddASa2hK+i2aYFqOdOHEM9wivzjxzE38kvj9en1vNKZR3vCiotv10gAJ
+ nSLc/10D44Ud7BxHBN0Kw6eLtX4WE6Tgh6tPH+ct4MBKfjzwELKQpxSSf0L6xflss0cg
+ yWkGDRuaaWEpeLDHUbXIUR2WGITWhacCSOhiIbjnK/vNugOw5Wl7Cin8BXK0BhWhSBmK
+ If8rIwga44wT7eTpPpxaX71CTvtGHIxLwT4v3PdcvPhbAMHmrGcPSTyj4uZ1PVhgqmcf
+ 1/ykQr9IMUjKKEfcmLszZKLs2cQydn0oRozIDg9+K4ibkCYtKyGAy1fvL8eZksaQPk3o
+ Oyqw==
+X-Gm-Message-State: APjAAAXsAdz4dlIvmfdRmNqF34NLd6TLVX0zpxEZebsh6qDRj08oeHTn
+ bGqNiBkm6Rp/EoeSfHn6RHlHiR+BG5ttYOWoK8ATFQ==
+X-Google-Smtp-Source: APXvYqxDB3gB2L7gTQbzzkQP9wEvUweroIM30iMNvPJ5rKY/UAIM6U3j7QAfdmgJ+vmcQ6N1I2k2AlTFXOpvzMZTjxM=
+X-Received: by 2002:a92:d24d:: with SMTP id v13mr28009523ilg.112.1571682627649; 
+ Mon, 21 Oct 2019 11:30:27 -0700 (PDT)
 MIME-Version: 1.0
-From: CKI Project <cki-project@redhat.com>
-To: will@kernel.org, catalin.marinas@arm.com,
- linux-arm-kernel@lists.infradead.org
-Subject: =?utf-8?b?4pyF?= PASS: Test report for kernel 5.4.0-rc4-7b16c1c.cki
- (arm-next)
-Date: Mon, 21 Oct 2019 18:29:14 -0000
-Message-ID: <cki.4169C25302.RS2IC3IBPA@redhat.com>
-X-Gitlab-Pipeline-ID: 238991
-X-Gitlab-Url: https://xci32.lab.eng.rdu2.redhat.com
-X-Gitlab-Path: /cki-project/cki-pipeline/pipelines/238991
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
-X-MC-Unique: 8rshejm0OrWNPkpZuIqfbQ-1
-X-Mimecast-Spam-Score: 0
+References: <20191018232124.4126-1-rjones@gateworks.com>
+ <20191021081945.o7knknxacm6uvd3c@pengutronix.de>
+In-Reply-To: <20191021081945.o7knknxacm6uvd3c@pengutronix.de>
+From: Bobby Jones <rjones@gateworks.com>
+Date: Mon, 21 Oct 2019 11:30:16 -0700
+Message-ID: <CALAE=UBqEShQ6REhqPEChpXX7-soi4w9vdEu8rO8QfqZqCBS8Q@mail.gmail.com>
+Subject: Re: [PATCH] ARM: dt: add lsm9ds1 iio imu/magn support to gw553x
+To: Marco Felsch <m.felsch@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_112925_142403_FA899587 
-X-CRM114-Status: UNSURE (   6.50  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191021_113029_732675_C83A870D 
+X-CRM114-Status: GOOD (  20.57  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [205.139.110.61 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,75 +88,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CkhlbGxvLAoKV2UgcmFuIGF1dG9tYXRlZCB0ZXN0cyBvbiBhIHJlY2VudCBjb21taXQgZnJvbSB0
-aGlzIGtlcm5lbCB0cmVlOgoKICAgICAgIEtlcm5lbCByZXBvOiBnaXQ6Ly9naXQua2VybmVsLm9y
-Zy9wdWIvc2NtL2xpbnV4L2tlcm5lbC9naXQvYXJtNjQvbGludXguZ2l0CiAgICAgICAgICAgIENv
-bW1pdDogN2IxNmMxYzc2MTk3IC0gTWVyZ2UgYnJhbmNoICdyZWZjb3VudC9mdWxsJyBpbnRvIGZv
-ci1rZXJuZWxjaQoKVGhlIHJlc3VsdHMgb2YgdGhlc2UgYXV0b21hdGVkIHRlc3RzIGFyZSBwcm92
-aWRlZCBiZWxvdy4KCiAgICBPdmVyYWxsIHJlc3VsdDogUEFTU0VECiAgICAgICAgICAgICBNZXJn
-ZTogT0sKICAgICAgICAgICBDb21waWxlOiBPSwogICAgICAgICAgICAgVGVzdHM6IE9LCgpBbGwg
-a2VybmVsIGJpbmFyaWVzLCBjb25maWcgZmlsZXMsIGFuZCBsb2dzIGFyZSBhdmFpbGFibGUgZm9y
-IGRvd25sb2FkIGhlcmU6CgogIGh0dHBzOi8vYXJ0aWZhY3RzLmNraS1wcm9qZWN0Lm9yZy9waXBl
-bGluZXMvMjM4OTkxCgpQbGVhc2UgcmVwbHkgdG8gdGhpcyBlbWFpbCBpZiB5b3UgaGF2ZSBhbnkg
-cXVlc3Rpb25zIGFib3V0IHRoZSB0ZXN0cyB0aGF0IHdlCnJhbiBvciBpZiB5b3UgaGF2ZSBhbnkg
-c3VnZ2VzdGlvbnMgb24gaG93IHRvIG1ha2UgZnV0dXJlIHRlc3RzIG1vcmUgZWZmZWN0aXZlLgoK
-ICAgICAgICAsLS4gICAsLS4KICAgICAgICggQyApICggSyApICBDb250aW51b3VzCiAgICAgICAg
-YC0nLC0uYC0nICAgS2VybmVsCiAgICAgICAgICAoIEkgKSAgICAgSW50ZWdyYXRpb24KICAgICAg
-ICAgICBgLScKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCgpDb21waWxlIHRlc3RpbmcKLS0tLS0tLS0t
-LS0tLS0tCgpXZSBjb21waWxlZCB0aGUga2VybmVsIGZvciAxIGFyY2hpdGVjdHVyZToKCiAgICBh
-YXJjaDY0OgogICAgICBtYWtlIG9wdGlvbnM6IC1qMzAgSU5TVEFMTF9NT0RfU1RSSVA9MSB0YXJn
-ei1wa2cKCgpIYXJkd2FyZSB0ZXN0aW5nCi0tLS0tLS0tLS0tLS0tLS0KV2UgYm9vdGVkIGVhY2gg
-a2VybmVsIGFuZCByYW4gdGhlIGZvbGxvd2luZyB0ZXN0czoKCiAgYWFyY2g2NDoKICAgIEhvc3Qg
-MToKICAgICAgIOKchSBCb290IHRlc3QKICAgICAgIOKchSBQb2RtYW4gc3lzdGVtIGludGVncmF0
-aW9uIHRlc3QgKGFzIHJvb3QpCiAgICAgICDinIUgUG9kbWFuIHN5c3RlbSBpbnRlZ3JhdGlvbiB0
-ZXN0IChhcyB1c2VyKQogICAgICAg4pyFIExUUCBsaXRlCiAgICAgICDinIUgTG9vcGRldiBTYW5p
-dHkKICAgICAgIOKchSBqdm0gdGVzdCBzdWl0ZQogICAgICAg4pyFIE1lbW9yeSBmdW5jdGlvbjog
-bWVtZmRfY3JlYXRlCiAgICAgICDinIUgTWVtb3J5IGZ1bmN0aW9uOiBrYXNscgogICAgICAg4pyF
-IEFNVFUgKEFic3RyYWN0IE1hY2hpbmUgVGVzdCBVdGlsaXR5KQogICAgICAg4pyFIExUUDogb3Bl
-bnBvc2l4IHRlc3Qgc3VpdGUKICAgICAgIOKchSBFdGhlcm5ldCBkcml2ZXJzIHNhbml0eQogICAg
-ICAg4pyFIE5ldHdvcmtpbmcgTUFDc2VjOiBzYW5pdHkKICAgICAgIOKchSBOZXR3b3JraW5nIHNv
-Y2tldDogZnV6egogICAgICAg4pyFIE5ldHdvcmtpbmcgc2N0cC1hdXRoOiBzb2Nrb3B0cyB0ZXN0
-CiAgICAgICDinIUgTmV0d29ya2luZzogaWdtcCBjb25mb3JtYW5jZSB0ZXN0CiAgICAgICDinIUg
-TmV0d29ya2luZyBUQ1A6IGtlZXBhbGl2ZSB0ZXN0CiAgICAgICDinIUgTmV0d29ya2luZyBVRFA6
-IHNvY2tldAogICAgICAg4pyFIE5ldHdvcmtpbmcgdHVubmVsOiBncmUgYmFzaWMKICAgICAgIOKc
-hSBMMlRQIGJhc2ljIHRlc3QKICAgICAgIOKchSBOZXR3b3JraW5nIHR1bm5lbDogdnhsYW4gYmFz
-aWMKICAgICAgIOKchSBhdWRpdDogYXVkaXQgdGVzdHN1aXRlIHRlc3QKICAgICAgIOKchSBodHRw
-ZDogbW9kX3NzbCBzbW9rZSBzYW5pdHkKICAgICAgIOKchSBpb3RvcDogc2FuaXR5CiAgICAgICDi
-nIUgdHVuZWQ6IHR1bmUtcHJvY2Vzc2VzLXRocm91Z2gtcGVyZgogICAgICAg4pyFIEFMU0EgUENN
-IGxvb3BiYWNrIHRlc3QKICAgICAgIOKchSBBTFNBIENvbnRyb2wgKG1peGVyKSBVc2Vyc3BhY2Ug
-RWxlbWVudCB0ZXN0CiAgICAgICDinIUgVXNleCAtIHZlcnNpb24gMS45LTI5CiAgICAgICDinIUg
-c3RvcmFnZTogU0NTSSBWUEQKICAgICAgIOKchSBzdHJlc3M6IHN0cmVzcy1uZwogICAgICAg4pyF
-IHRyYWNlOiBmdHJhY2UvdHJhY2VyCiAgICAgICDwn5qnIOKchSBDSUZTIENvbm5lY3RhdGhvbgog
-ICAgICAg8J+apyDinIUgUE9TSVggcGpkLWZzdGVzdCBzdWl0ZXMKICAgICAgIPCfmqcg4pyFIE5l
-dHdvcmtpbmcgYnJpZGdlOiBzYW5pdHkKICAgICAgIPCfmqcg4pyFIE5ldHdvcmtpbmcgcm91dGU6
-IHBtdHUKICAgICAgIPCfmqcg4pyFIE5ldHdvcmtpbmcgdHVubmVsOiBnZW5ldmUgYmFzaWMgdGVz
-dAogICAgICAg8J+apyDinIUgTmV0d29ya2luZyB2bmljOiBpcHZsYW4vYmFzaWMKICAgICAgIPCf
-mqcg4pyFIHN0b3JhZ2U6IGRtL2NvbW1vbgogICAgICAg8J+apyDinIUgTmV0d29ya2luZyByb3V0
-ZV9mdW5jOiBsb2NhbAogICAgICAg8J+apyDinIUgTmV0d29ya2luZyByb3V0ZV9mdW5jOiBmb3J3
-YXJkCiAgICAgICDwn5qnIOKchSBOZXR3b3JraW5nIGlwc2VjOiBiYXNpYyBuZXRucyB0cmFuc3Bv
-cnQKICAgICAgIPCfmqcg4pyFIE5ldHdvcmtpbmcgaXBzZWM6IGJhc2ljIG5ldG5zIHR1bm5lbAoK
-ICAgIEhvc3QgMjoKICAgICAgIOKchSBCb290IHRlc3QKICAgICAgIOKchSB4ZnN0ZXN0czogZXh0
-NAogICAgICAg4pyFIHhmc3Rlc3RzOiB4ZnMKICAgICAgIOKchSBzZWxpbnV4LXBvbGljeTogc2Vy
-Z2UtdGVzdHN1aXRlCiAgICAgICDinIUgbHZtIHRoaW5wIHNhbml0eQogICAgICAg4pyFIHN0b3Jh
-Z2U6IHNvZnR3YXJlIFJBSUQgdGVzdGluZwogICAgICAg8J+apyDinIUgU3RvcmFnZSBibGt0ZXN0
-cwoKICBUZXN0IHNvdXJjZXM6IGh0dHBzOi8vZ2l0aHViLmNvbS9DS0ktcHJvamVjdC90ZXN0cy1i
-ZWFrZXIKICAgIPCfkpogUHVsbCByZXF1ZXN0cyBhcmUgd2VsY29tZSBmb3IgbmV3IHRlc3RzIG9y
-IGltcHJvdmVtZW50cyB0byBleGlzdGluZyB0ZXN0cyEKCldhaXZlZCB0ZXN0cwotLS0tLS0tLS0t
-LS0KSWYgdGhlIHRlc3QgcnVuIGluY2x1ZGVkIHdhaXZlZCB0ZXN0cywgdGhleSBhcmUgbWFya2Vk
-IHdpdGgg8J+apy4gU3VjaCB0ZXN0cyBhcmUKZXhlY3V0ZWQgYnV0IHRoZWlyIHJlc3VsdHMgYXJl
-IG5vdCB0YWtlbiBpbnRvIGFjY291bnQuIFRlc3RzIGFyZSB3YWl2ZWQgd2hlbgp0aGVpciByZXN1
-bHRzIGFyZSBub3QgcmVsaWFibGUgZW5vdWdoLCBlLmcuIHdoZW4gdGhleSdyZSBqdXN0IGludHJv
-ZHVjZWQgb3IgYXJlCmJlaW5nIGZpeGVkLgoKVGVzdGluZyB0aW1lb3V0Ci0tLS0tLS0tLS0tLS0t
-LQpXZSBhaW0gdG8gcHJvdmlkZSBhIHJlcG9ydCB3aXRoaW4gcmVhc29uYWJsZSB0aW1lZnJhbWUu
-IFRlc3RzIHRoYXQgaGF2ZW4ndApmaW5pc2hlZCBydW5uaW5nIGFyZSBtYXJrZWQgd2l0aCDij7Eu
-IFJlcG9ydHMgZm9yIG5vbi11cHN0cmVhbSBrZXJuZWxzIGhhdmUKYSBCZWFrZXIgcmVjaXBlIGxp
-bmtlZCB0byBuZXh0IHRvIGVhY2ggaG9zdC4KCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1h
-cm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Mon, Oct 21, 2019 at 1:19 AM Marco Felsch <m.felsch@pengutronix.de> wrote:
+>
+> Hi Robert,
+>
+> same here, don't name it 'ARM: dt: ...' instead name it 'ARM: dts: imx:
+> ventana: ..' or 'ARM: dts: imx: imx6qdl-gw553x: ..'.
+
+Sorry about that, I'll follow that format from now on.
+>
+> On 19-10-18 16:21, Robert Jones wrote:
+> > Add one node for the accel/gyro i2c device and another for the separate
+> > magnetometer device in the lsm9ds1.
+> >
+> > Signed-off-by: Robert Jones <rjones@gateworks.com>
+> > ---
+> >  arch/arm/boot/dts/imx6qdl-gw553x.dtsi | 31 +++++++++++++++++++++++++++++++
+> >  1 file changed, 31 insertions(+)
+> >
+> > diff --git a/arch/arm/boot/dts/imx6qdl-gw553x.dtsi b/arch/arm/boot/dts/imx6qdl-gw553x.dtsi
+> > index a106689..55e6922 100644
+> > --- a/arch/arm/boot/dts/imx6qdl-gw553x.dtsi
+> > +++ b/arch/arm/boot/dts/imx6qdl-gw553x.dtsi
+> > @@ -173,6 +173,25 @@
+> >       pinctrl-0 = <&pinctrl_i2c2>;
+> >       status = "okay";
+> >
+> > +     lsm9ds1_ag@6a {
+> > +             compatible = "st,lsm9ds1-imu";
+>
+> Didn't found this compatible string.
+So this is a compatible string for a driver that's being mainlined
+now. The devicetree bindings for which has already been reviewed-by
+Rob Herring as seen here:
+https://www.spinics.net/lists/linux-iio/msg47297.html. If possible I'd
+prefer to get this in the same kernel release so let me know if
+there's anything else I can do to make that happen.
+
+>
+> > +             reg = <0x6a>;
+> > +             st,drdy-int-pin = <1>;
+> > +             pinctrl-names = "default";
+> > +             pinctrl-0 = <&pinctrl_acc_gyro>;
+> > +             interrupt-parent = <&gpio7>;
+> > +             interrupts = <13 IRQ_TYPE_LEVEL_HIGH>;
+> > +     };
+> > +
+> > +     lsm9ds1_m@1c {
+> > +             compatible = "st,lsm9ds1-magn";
+> > +             reg = <0x1c>;
+>
+> Nodes are sorted according their i2c-addresses.
+>
+I'll resubmit with that change, thanks!
+- Bobby
+
+> Regards,
+>   Marco
+>
+> > +             pinctrl-names = "default";
+> > +             pinctrl-0 = <&pinctrl_mag>;
+> > +             interrupt-parent = <&gpio1>;
+> > +             interrupts = <2 IRQ_TYPE_EDGE_RISING>;
+> > +     };
+> > +
+> >       ltc3676: pmic@3c {
+> >               compatible = "lltc,ltc3676";
+> >               reg = <0x3c>;
+> > @@ -462,6 +481,18 @@
+> >               >;
+> >       };
+> >
+> > +     pinctrl_acc_gyro: acc_gyrogrp {
+> > +             fsl,pins = <
+> > +                     MX6QDL_PAD_GPIO_18__GPIO7_IO13          0x1b0b0
+> > +             >;
+> > +     };
+> > +
+> > +     pinctrl_mag: maggrp {
+> > +             fsl,pins = <
+> > +                     MX6QDL_PAD_GPIO_2__GPIO1_IO02           0x1b0b0
+> > +             >;
+> > +     };
+> > +
+> >       pinctrl_pps: ppsgrp {
+> >               fsl,pins = <
+> >                       MX6QDL_PAD_ENET_RXD1__GPIO1_IO26        0x1b0b1
+> > --
+> > 2.9.2
+> >
+> >
+> >
+>
+> --
+> Pengutronix e.K.                           |                             |
+> Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+> Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
+> Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
