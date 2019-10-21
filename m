@@ -2,141 +2,120 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2503DF6FB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 22:47:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC28ADF743
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 23:05:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Crw9STFDREe52WdoxrI7fWUiCg/zE/l2aYVGHI2aAHU=; b=rvhnCbRLplQxb/
-	/gCjDyaHm4iJu/R4H5AR0K8Hsa1UkoZFvBgkMJ6qpp4h5C3fjkPmrEqvsxc5MkCOpM4BtCYqSou2x
-	fqCxK2/qFE8J9t7tavTrvebRVRainYmuZafS9/BNIg9vOys2I5s9kjkB3y+Y5Sj2mn/UZaxySDM98
-	kbxqkcnZMhpmlFdXbDD1Fp59qywhI2VmIhhEKn+8QgHQynuKbMH4pmj4lIfexVg1vIIUswGxW3OYc
-	TcyakQJarYN0lAaAauCCTk8Z4BMtOI7VONq0+swdds/qn0WfUWd4LXD8yuFirbOlnoDRWu5o6owr0
-	MHuwUx5GhF9Gmj4ag6HQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xzq0N4Gc+T8tTS1oWj+2O9xHTz8J6jGct1qS6BNhGks=; b=hftpVeppJlDYoJ
+	FDyRPA+1V6o3SlDhw5XAZwq1shxTMXz8cHV8sQ+iA2Tch3Diy1v2tunXmm/jpiOVanfXQl7+4w9FJ
+	8guIkJq0bmGXRgalpPvI3EcL++8VT6N5CWWoOaq6Gt5+HOa+s/qyZAR5ppTNohdzBTMjC1hIlz+DO
+	w50MdGgwWoj6KpGrJnl+E95NUxOyz2Owhfpfsel+qc4sf7GebQb63FHGEHFzv4XkSGFuk6P7R7UlH
+	LAOxrbieTn55aN2QrWL79QOmiJjPXXnZS04FWa/9dSB+txF59/HpvTuO5hs1Qkee3lvfvXp03epKM
+	+t2SVX7GHdT4piT1hv2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMeZw-0003BX-GR; Mon, 21 Oct 2019 20:47:00 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	id 1iMes4-0002FK-DW; Mon, 21 Oct 2019 21:05:44 +0000
+Received: from mail-eopbgr40131.outbound.protection.outlook.com
+ ([40.107.4.131] helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMeZn-0003Ax-Cu; Mon, 21 Oct 2019 20:46:52 +0000
-Received: by mail-ed1-x542.google.com with SMTP id r18so11068225eds.13;
- Mon, 21 Oct 2019 13:46:51 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=NOFaJxXId879GAb6PPiM8zxCuIZunGkHitXzZ+zFC6s=;
- b=ZhGn251kY6TuRY+NaFSlqJhe6HdKrG769YPNF0V19KPQWQRzMcljZWy8gxrIr/SnAD
- i3uSRFmTxdcLMelVqaEpfeEaB9d9MajAYJqw5a3uQETgkxKPvLLnE24xYdfZKDL6ZmsK
- KMYXX58nJ5oadYr71plUYqm3Szv2e12BMkPDfcwZp2e7C9m1rOqY4MkyJqGmJMoRz6Zq
- wpfC1nvTHXh9K0okf59HlmRFds18Mzbr+TnbS5koEcv9v+Zfayq4t0hBwHHB3/LWgL4X
- AG12/vYxuyKIYmi5yibDvPYT1K77TZrujsCqMK+VsMulSr1BufCL1N8StPtoSxoPlXcn
- ss3A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=NOFaJxXId879GAb6PPiM8zxCuIZunGkHitXzZ+zFC6s=;
- b=fAlYat3J5PN8kSV8JE2ixdsg1pQU0x/u5JhcuaZ2/JJGVDI0THprEK3QlnCCJpszj3
- ifvlVgJaMHyoR1LcexsF5tzC5xCgKYZXxAWxcZPTbLF0Rr0fj/TjS357/k8DpfhmilSN
- 2rLBhgI05Br8JnKIg8N11tLrtlV7VdXgLhLILL/BKp6LJIj4FqlgLGP5S4RUdGET2dHl
- WIOk42wez7KffE92MNThIyh2oMEZTg5CtAGlMZZl/O2CeTeTukW/H+pN2128XyRtGG6+
- pCcH4LM/fPQ6KQSiflu0LBFeQtqzwUdvAwesyiLrDqMlm9/RMTawMD1vCVfiYbHru3pY
- vE/Q==
-X-Gm-Message-State: APjAAAWipLYKNsKqCAQW2iIqGheSUlIW1YJwcJWljgYaqFa1WLNuu1/o
- ErI7yv5xaPwEvAS6OHf3ORlFBpSH
-X-Google-Smtp-Source: APXvYqxNLjOvCkexSgqomDCdj5RFnLH3FukUQ1dgb0MZ/bRIlK/amiOicrBaxxvAoJgpqaINf6oE2w==
-X-Received: by 2002:a50:ed01:: with SMTP id j1mr27347278eds.111.1571690809618; 
- Mon, 21 Oct 2019 13:46:49 -0700 (PDT)
-Received: from [10.67.50.53] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id oy2sm88299ejb.2.2019.10.21.13.46.46
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 21 Oct 2019 13:46:48 -0700 (PDT)
-Subject: Re: [PATCH] locking/atomics: Fix memory leak in bcm2835_timer_init
-To: Navid Emamdoost <navid.emamdoost@gmail.com>
-References: <20191021201400.2760-1-navid.emamdoost@gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <ff7f2406-f6c3-62ae-6c54-9ace0b694ffb@gmail.com>
-Date: Mon, 21 Oct 2019 13:46:44 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <20191021201400.2760-1-navid.emamdoost@gmail.com>
+ id 1iMerv-0002EB-MN
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 21:05:37 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=D5VYTA21ulp2UzWB0dTDrfOlTouBelHWE6uFZF7hev1bDCoAu+ydmzmwRAMj5n3BiRvuIsvWD7JD+C/1W+7071NnJ5vHUoS6oq026tbndVARmLWv0gHluK2qh8S+pOAQpRDa9ou/TvEo58AddbZ3r0hklHndA2GXIKOIsYTJ0VlLuzvnMEcRmKl7Nqh8Pu8uMxuaFiTsxzy1JkpOBX7LwRdi9RbeSnQspPYDjLTzbRQU6ZSeiU1GckC8qyfAWiA5ByZiH0m2SYR/4yYCUjYoYeLRTKfem9qw56eFAOcGZOH5vsMkMGl3uNCcgdmNUUVXIxMZmXe88DegURT7Td68zQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Y07oKaaqKSnHSZU7ZErPJ0lOSrDEhxx/ej7WX712aP4=;
+ b=XVz04L97rzkWK5Lr9m6vbvVJiLkypb+h5ZEec4S8SIBDWHYa40v6bpBtjKnh9x5kVwYybqYXsM49NOcc/ose1gtbvI+N9LJdtI9HpvN6Wej9U/riF0iSwq9ibureeTPTiO8bfwmIKItYkpGsCJf5P38fpxkz/eDeeoju4mFb0cEsOYhpbFrBIzRjwN2sJZTKiZwrXfXxq2QMFF/f8ebgZAXaz3cHVebhNpNiNYNosBNkQ4JBtgxenwYiKWWEsD2CtvFLFsZIfbi89hSYZ4t3xZ5MJkbFnmjTCy5+x6QyoQzai6eyOszoESC/VJ/yRVV1R2fS1Yb50kx8P4htGgHmQg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=axentia.se; dmarc=pass action=none header.from=axentia.se;
+ dkim=pass header.d=axentia.se; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axentia.se;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Y07oKaaqKSnHSZU7ZErPJ0lOSrDEhxx/ej7WX712aP4=;
+ b=JijF89Je7rBmLGn2k9hrYcRZkb6BUZu7RBFmv3S/K1JaIbTzLGzf5X6ioijuskJTLmxvKFg9bKQtosEmWKiyaB85tYrEo9z9KMorMQVdjazygY8VzFJcREkqSfzsSDAT73NwXhnrHuM/1QEImLAJR840+tI+xirZybjkP3xmJoI=
+Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com (52.134.66.158) by
+ DB3PR0202MB3513.eurprd02.prod.outlook.com (52.134.68.10) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2347.21; Mon, 21 Oct 2019 21:05:30 +0000
+Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com
+ ([fe80::c5b8:6014:87a4:1afe]) by DB3PR0202MB3434.eurprd02.prod.outlook.com
+ ([fe80::c5b8:6014:87a4:1afe%7]) with mapi id 15.20.2347.029; Mon, 21 Oct 2019
+ 21:05:30 +0000
+From: Peter Rosin <peda@axentia.se>
+To: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>, Brendan Higgins
+ <brendanhiggins@google.com>, Wolfram Sang <wsa@the-dreams.de>, Benjamin
+ Herrenschmidt <benh@kernel.crashing.org>, Joel Stanley <joel@jms.id.au>, Rob
+ Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>, Andrew
+ Jeffery <andrew@aj.id.au>, Tao Ren <taoren@fb.com>, Cedric Le Goater
+ <clg@kaod.org>
+Subject: Re: [PATCH i2c-next 1/2] dt-bindings: i2c: aspeed: add hardware
+ timeout support
+Thread-Topic: [PATCH i2c-next 1/2] dt-bindings: i2c: aspeed: add hardware
+ timeout support
+Thread-Index: AQHViE2KU5aZojIjkUqCdR4ab3gQm6dlleoA
+Date: Mon, 21 Oct 2019 21:05:30 +0000
+Message-ID: <0a629f7b-b829-c332-27d8-dc825205ff72@axentia.se>
+References: <20191021202414.17484-1-jae.hyun.yoo@linux.intel.com>
+ <20191021202414.17484-2-jae.hyun.yoo@linux.intel.com>
+In-Reply-To: <20191021202414.17484-2-jae.hyun.yoo@linux.intel.com>
+Accept-Language: en-US, sv-SE
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+x-originating-ip: [213.112.138.100]
+x-clientproxiedby: HE1PR05CA0367.eurprd05.prod.outlook.com
+ (2603:10a6:7:94::26) To DB3PR0202MB3434.eurprd02.prod.outlook.com
+ (2603:10a6:8:5::30)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peda@axentia.se; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 91d0eb2c-01b2-461a-2091-08d7566a67be
+x-ms-traffictypediagnostic: DB3PR0202MB3513:
+x-microsoft-antispam-prvs: <DB3PR0202MB3513DAFA5FCC7AD4146097BCBC690@DB3PR0202MB3513.eurprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 0197AFBD92
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(376002)(136003)(396003)(366004)(346002)(39830400003)(199004)(52314003)(189003)(7736002)(31686004)(11346002)(8936002)(71200400001)(71190400001)(31696002)(5660300002)(52116002)(2616005)(446003)(476003)(508600001)(305945005)(486006)(14444005)(3846002)(25786009)(7416002)(6116002)(256004)(316002)(76176011)(2906002)(86362001)(6436002)(58126008)(66556008)(66476007)(64756008)(66446008)(66066001)(99286004)(110136005)(4326008)(65956001)(54906003)(65806001)(6486002)(66946007)(229853002)(36756003)(6512007)(14454004)(26005)(81166006)(81156014)(186003)(6506007)(53546011)(102836004)(6246003)(386003)(4001150100001)(8676002)(921003)(1121003);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:DB3PR0202MB3513;
+ H:DB3PR0202MB3434.eurprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: axentia.se does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: mJqj2ZbhUlIhrfXqL98P05v/azoe2H35E7KthchOMKKzRLo01+l0N1w5ELQQueY80Cdy5mZONO6GZdcrM9KhO2shn5gCvX3l6xQFzuwTPjmxFdu/dI7s2CoOL3YGv8GdC5tuW91RQL1tbI7QjN/0kleF8C09RM0cvesWDa6jdVy6/MDf2ZsZfZT2rG8YxAah8le4WACndK/nT6AN5u3NvxiMwQPfEt9QUrc3jyS8/zsQGC2am6OzI8aQz2C4qVTauhm6teBV7OEY2aRtY7aqNRFiUKzV/7y5g9uCKMBZ7E0xm0hkFaTmVVI43O9PtxmYIMmijLrs6zHNHmTD2EPR+Pc41elp3xKpsDtEcprF3FCMQe2KVY61rPIHTmR3BaatwcaBJgXysZkB9oW53QY12LOR03Ulp1BNW3+IpvWVtG9yOHNgZtkSKq2j/Mv/J1Gh
+x-ms-exchange-transport-forked: True
+Content-ID: <08F8C0D291CEAA46A8C814AED28C379A@eurprd02.prod.outlook.com>
+MIME-Version: 1.0
+X-OriginatorOrg: axentia.se
+X-MS-Exchange-CrossTenant-Network-Message-Id: 91d0eb2c-01b2-461a-2091-08d7566a67be
+X-MS-Exchange-CrossTenant-originalarrivaltime: 21 Oct 2019 21:05:30.4539 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 4ee68585-03e1-4785-942a-df9c1871a234
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: qjCxwIOnZ9iL7XFNToBawV2OwLWNd5V7TOhZA8Z9CNeEl2o/DBABErzUMOKG0b0n
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0202MB3513
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_134651_462612_A65504D1 
-X-CRM114-Status: GOOD (  19.56  )
+X-CRM114-CacheID: sfid-20191021_140535_924307_3BA111BF 
+X-CRM114-Status: GOOD (  15.79  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ no trust [40.107.4.131 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -155,50 +134,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, kjlu@umn.edu,
- linux-kernel@vger.kernel.org, Eric Anholt <eric@anholt.net>, emamd001@umn.edu,
- bcm-kernel-feedback-list@broadcom.com, Stefan Wahren <wahrenst@gmx.net>,
- smccaman@umn.edu, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
+ "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "openbmc@lists.ozlabs.org" <openbmc@lists.ozlabs.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/21/19 1:13 PM, Navid Emamdoost wrote:
-> In the impelementation of bcm2835_timer_init() the allocated memory for
-> timer should be released if setup_irq() fails.
-
-s/impelementation/implementation/ and also the subject should probably
-be changed to better reflect the scope of the patch. With that:
-
-Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
-
+On 2019-10-21 22:24, Jae Hyun Yoo wrote:
+> Append a binding to support hardware timeout feature.
 > 
-> Fixes: 84c39b8b7d46 ("clocksource/drivers/bcm2835_timer: Unmap region obtained by of_iomap")
-> Signed-off-by: Navid Emamdoost <navid.emamdoost@gmail.com>
+> Signed-off-by: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
 > ---
->  drivers/clocksource/bcm2835_timer.c | 1 +
->  1 file changed, 1 insertion(+)
+>  Documentation/devicetree/bindings/i2c/i2c-aspeed.txt | 2 ++
+>  1 file changed, 2 insertions(+)
 > 
-> diff --git a/drivers/clocksource/bcm2835_timer.c b/drivers/clocksource/bcm2835_timer.c
-> index 2b196cbfadb6..7b27cc53ce9c 100644
-> --- a/drivers/clocksource/bcm2835_timer.c
-> +++ b/drivers/clocksource/bcm2835_timer.c
-> @@ -121,6 +121,7 @@ static int __init bcm2835_timer_init(struct device_node *node)
->  	ret = setup_irq(irq, &timer->act);
->  	if (ret) {
->  		pr_err("Can't set up timer IRQ\n");
-> +		kfree(timer);
->  		goto err_iounmap;
->  	}
+> diff --git a/Documentation/devicetree/bindings/i2c/i2c-aspeed.txt b/Documentation/devicetree/bindings/i2c/i2c-aspeed.txt
+> index b47f6ccb196a..133bfedf4cdd 100644
+> --- a/Documentation/devicetree/bindings/i2c/i2c-aspeed.txt
+> +++ b/Documentation/devicetree/bindings/i2c/i2c-aspeed.txt
+> @@ -17,6 +17,8 @@ Optional Properties:
+>  - bus-frequency	: frequency of the bus clock in Hz defaults to 100 kHz when not
+>  		  specified
+>  - multi-master	: states that there is another master active on this bus.
+> +- aspeed,hw-timeout-ms	: Hardware timeout in milliseconds. If it's not
+> +			  specified, the H/W timeout feature will be disabled.
+>  
+>  Example:
 >  
 > 
 
+Some SMBus clients support a smbus-timeout-disable binding for disabling
+timeouts like this, for cases where the I2C adapter in question on occasion
+is unable to keep the pace. Adding that property thus avoids undesired
+timeouts when the client is SMBus conformant without it. Your new binding
+is the reverse situation, where you want to add a timeout where one is
+otherwise missing.
 
--- 
-Florian
+Anyway, since I2C does not have a specified lowest possible frequency, this
+feels like something that is more in the SMBus arena. Should the property
+perhaps be a generic property named smbus-timeout-ms, or something like
+that?
+
+If the above is not wanted or appropriate, then I would personally prefer
+aspeed,bus-timeout-ms over aspeed,hw-timeout-ms. To me, hw-timeout-ms sounds
+like a (more serious) timeout between the CPU and the I2C peripheral unit
+or something like that. But I don't care deeply...
+
+Cheers,
+Peter
 
 _______________________________________________
 linux-arm-kernel mailing list
