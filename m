@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 731ABDEF7D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 16:29:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C19FDEF83
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 16:29:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ALxBrs44pYZQXHzcugYErnZ4zPNI+owDXRlX1tQuYpw=; b=RtQE6H1gPJHnYZ
-	/VPBG9O/yKCpSAwy/3VyGfbETx8aFS33H4dCW2A8O+nfc/Pm0I1lf5siuE4dxoJ7Z0X0kAQ5TLw/J
-	W7b4YdIEoWQy6lkHNlz5421lyLZ0g+4dicVEcnHIreTkb7lO4mB4CEMiW489BcfG2V2wi0ndN9ViY
-	Zh3Yclfv3xEytEHV+lCx8DiOqk6+GE2/s1qS5V1xATybGKXsuhQ89kxlKfustA41zq/Ik9mKFXNXz
-	Lp5J38CSfq6qYV6rcTl7frpIKNc0+3PQokbLrtzjEcTbI/0JaLvt+HwdXgt0LPD3wg1oUnZWgdgrs
-	iWIyDGho+7ur6TJA+7Vw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PPmEHpFaWIcCxjN6koCyDKSMFEj6B+FzjaGVU+ZIaRI=; b=pQXseASFaKmcei
+	KQdnb2F0Mp+qWSME4wl6Mq9uoq/LyhzQ1d1RGg/EjwYgehAJDTb6lDsY+jPPpt86shciso2oa2Sd3
+	xH8QiAdZx6W6YXDJl/ELNk3iSuJd8n2mnIH5AbQPD4zRKkzSQRXAoYsEF0JzpOw3lO0TiEwDP+MNV
+	+ZA+k7AtyZ/QYh2rHaNvEQp74TBfnqd7eUg2H1YqO80YnQ8Tgcx1FWXt+HM7n19/kRl3oNzcnlDFD
+	a4gIc3Dx9UZCNN/YJdVlQ/Eet5gXD4RJHJvBpT2RYd4GGKSnOj9tgmevIdG6PWWqg5SsF/29+9m+Q
+	3T5samuY5d5EPuyYj4bA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMYgR-000724-B1; Mon, 21 Oct 2019 14:29:19 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1iMYgn-0007K9-8h; Mon, 21 Oct 2019 14:29:41 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMYgF-0006zu-7G
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 14:29:08 +0000
-Received: by mail-wm1-x343.google.com with SMTP id r141so3452175wme.4
+ id 1iMYgG-000708-IJ
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 14:29:09 +0000
+Received: by mail-wr1-x442.google.com with SMTP id v9so3000008wrq.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 21 Oct 2019 07:29:07 -0700 (PDT)
+ Mon, 21 Oct 2019 07:29:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=++nYVU89w3D5DbGVf7UyY/WEEIeVtVLvhLaDHuQ9xMw=;
- b=DL30plNJoZ8YTRsPpIAOPgjMpjklyJGezkImhXfCfSZos1P4txGs18b3h6ApC7to+W
- BAgzrOE2Ip8/k1EqE1oKz1dp6dEMinAQypFmo6DKIj07DPfZMYwET/zJOQeItodlPbpC
- sRXI+omm3jVR8uL/9vC63hITA5j9cwZwfWtF81jSU1DPe4JRxa+LLquiHLNjDLotatOe
- PjnLksvMZrhcWnWtN3wnhfGRYMDiEZ1nJ7w3UA18WZhDym3PzKO4RmZIo36fy2R+YPxm
- QUjR7T6kE4vUueAXdB7E9pgpcQUf4UoqIHj78X0KZEj7M2WJFD7wyg6Ct+JDLM37Fmfn
- +n0w==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=QxYYIsnCFuLUec3Mt7t5xj1H4ecLSFsGNR/kmuhF8Xw=;
+ b=NDuJdtzqxA3OkM8uec3rQa8bOcNzLPulM0OXh/XyrH9Ymu5xNJsy3h1598MEwd6anI
+ X/6r/euqtrCGbxi/pCDiLwiQB3wkDOwB1Ce/YSVAWgeySHI49KKoGcYIMQP4tMm179YS
+ //N7JGeQhY9hYx8Ho3z+l5B66Hl6rzeuNV5xwkBfB5bv3B+Y3FOhaARhGQPpvwv8C7In
+ 7v0ZN1SfWLG6cyXOcItJ8sMrPMRxopF7WIM1/g+axau+0ZUUfCgN11UR3Re/geaFNUhJ
+ tcDcueyK/Fsy6chlR4r+uAEJutQEmNL8K1Ubm0OIgcmakwZdzABtcnHW6OUMWmnZ5ze7
+ dRWw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=++nYVU89w3D5DbGVf7UyY/WEEIeVtVLvhLaDHuQ9xMw=;
- b=GcuPNsleDEqQ30bfz5ECM4mvvK4jvUHZCpaNHfp0LSWkBDfNEjiALqOsPxR9v+Q525
- 078CtHYSfVXAj+O2aJ/54Wk1Ws+E9rmy/iIaPIfZz6BliEpC/vCtqOjU9OHFukZFb/Di
- AkFwKtNudZKrgQwB5BImPeZGqJXJZHsMsONhQED441PFJLL9F+/4X9yxeTGCLqx10p29
- n/WOJg053QOGgRwpgAlYwNZ8TP7Rg9LrhkllzK32L6UYgA9FZpRie9lAm7MYtCvON3X8
- l6zEyNJ6FZCC32QVuNOzRtRj9y8D7e56x72sMlrMqSYPUsvL/C+Y0FKunX31fLnA5NZS
- Bb8g==
-X-Gm-Message-State: APjAAAUf32TpcVAJYidVNP4FJksUBqvRgY6Ku5M/OZ9g5dgeSmWpZQeA
- 8NPwU6mu5f+oHqnRNjLgIfwxMQ==
-X-Google-Smtp-Source: APXvYqxGkfu1beg6QQFKdXREUIGmgpSBRX5EoWUQK13HNfHKFmR5o2KsWBUYgn1oNa0KJmVl282MJg==
-X-Received: by 2002:a1c:cc18:: with SMTP id h24mr20430362wmb.40.1571668145775; 
- Mon, 21 Oct 2019 07:29:05 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=QxYYIsnCFuLUec3Mt7t5xj1H4ecLSFsGNR/kmuhF8Xw=;
+ b=i3cxRnvn3E9kYsMW8j7VtzHtZFtd4kmMN73XYN5Yzgy+iv6fy5Bo7lyKWjrOvOySJW
+ 9AscpP8jaER2Gm1EmAllhwRWShGOIKxBhQjmimm3kRWcfA6RQCuZfuo+JtmjTAjmQa5M
+ wtvtYOYzQ26KWd2pZypENQRdc8XVC0LNxPno74DNy4Y0dOdA/5MnAPo1AqB/sebtc+4j
+ zdGF9baoIhG0b4DiBIeqZ5k2Or5y6In+Wfvb8xPgR8CAlYR/8DiPTDvVzeQBfJRLreYZ
+ p9CL7NZ3m0RhBOuWlQtAA60Gbbfi4NMVEt5texp1gXDlDSwg+e8ez0jg8U0N6hNT92sk
+ /9ZA==
+X-Gm-Message-State: APjAAAXWTspsNyc1/O+8swPOexiS5QV3ACefXghGj/KJss6axJ8DSXeI
+ O9RJsqHEx6iehB77UPxi4K3qag==
+X-Google-Smtp-Source: APXvYqzoY3Id/cVnMuCKMTHqE3o3klKK3GFRil4uFFZJ/1VmKO1UXMdfsxgAkMy3bby5/p/Or7OubA==
+X-Received: by 2002:adf:c143:: with SMTP id w3mr20338530wre.77.1571668147049; 
+ Mon, 21 Oct 2019 07:29:07 -0700 (PDT)
 Received: from localhost.localdomain
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id d11sm17304463wrf.80.2019.10.21.07.29.05
+ by smtp.gmail.com with ESMTPSA id d11sm17304463wrf.80.2019.10.21.07.29.06
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 21 Oct 2019 07:29:05 -0700 (PDT)
+ Mon, 21 Oct 2019 07:29:06 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: khilman@baylibre.com
-Subject: [PATCH 0/5] arm64: dts: meson: new fixes following YAML bindings
- schemas conversion
-Date: Mon, 21 Oct 2019 16:28:59 +0200
-Message-Id: <20191021142904.12401-1-narmstrong@baylibre.com>
+Subject: [PATCH 1/5] arm64: dts: meson-g12a: fix gpu irq order
+Date: Mon, 21 Oct 2019 16:29:00 +0200
+Message-Id: <20191021142904.12401-2-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20191021142904.12401-1-narmstrong@baylibre.com>
+References: <20191021142904.12401-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_072907_261434_1A3C9946 
-X-CRM114-Status: UNSURE (   8.72  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191021_072908_606424_8176B9E8 
+X-CRM114-Status: GOOD (  11.74  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -101,30 +101,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is the first set of DT fixes following the first YAML bindings conversion
-at [1], [2], [3] and [4] and v5.4-rc1 bindings changes.
+This fixes the following DT schemas check errors:
+meson-g12b-s922x-khadas-vim3.dt.yaml: gpu@ffe40000: interrupt-names:0: 'job' was expected
+meson-g12b-s922x-khadas-vim3.dt.yaml: gpu@ffe40000: interrupt-names:2: 'gpu' was expected
 
-These are only cosmetic changes, and should not break drivers implementation
-following the bindings.
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+---
+ arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-[1] https://patchwork.kernel.org/patch/11202077/
-[2] https://patchwork.kernel.org/patch/11202183/
-[3] https://patchwork.kernel.org/patch/11202207/
-[4] https://patchwork.kernel.org/patch/11202265/
-
-Neil Armstrong (5):
-  arm64: dts: meson-g12a: fix gpu irq order
-  arm64: dts: meson-gxm: fix gpu irq order
-  arm64: dts: meson-g12b-odroid-n2: add missing amlogic,s922x compatible
-  arm64: dts: meson-gx: cec node should be disabled by default
-  arm64: dts: meson-gx: fix i2c compatible
-
- arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi    | 6 +++---
- arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts | 2 +-
- arch/arm64/boot/dts/amlogic/meson-gx.dtsi            | 9 +++++----
- arch/arm64/boot/dts/amlogic/meson-gxm.dtsi           | 6 +++---
- 4 files changed, 12 insertions(+), 11 deletions(-)
-
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
+index 3f39e020f74e..f9c52ada7fda 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
+@@ -2388,10 +2388,10 @@
+ 			compatible = "amlogic,meson-g12a-mali", "arm,mali-bifrost";
+ 			reg = <0x0 0xffe40000 0x0 0x40000>;
+ 			interrupt-parent = <&gic>;
+-			interrupts = <GIC_SPI 160 IRQ_TYPE_LEVEL_HIGH>,
++			interrupts = <GIC_SPI 162 IRQ_TYPE_LEVEL_HIGH>,
+ 				     <GIC_SPI 161 IRQ_TYPE_LEVEL_HIGH>,
+-				     <GIC_SPI 162 IRQ_TYPE_LEVEL_HIGH>;
+-			interrupt-names = "gpu", "mmu", "job";
++				     <GIC_SPI 160 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-names = "job", "mmu", "gpu";
+ 			clocks = <&clkc CLKID_MALI>;
+ 			resets = <&reset RESET_DVALIN_CAPB3>, <&reset RESET_DVALIN>;
+ 
 -- 
 2.22.0
 
