@@ -2,83 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 791A5DE7E3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 11:19:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50D21DE7E5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 11:19:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=voY8DsrljgodPuvqjzOTHHUXBT2VObU9OA6yBpT0zJY=; b=WNlSgDWYIa2ZFF
-	uzALxD7h/6j7nuRAbA4aOr4kucmL2tZdXLP1gafEg29C9D7C/bG4QfYrQxA9V4Xsyvhf5zpOnDYth
-	+SqSmkmsj6bEDvNDzfZLpK/kIyTwjsZkyWRSUX8TEnckwj06PyI0aQHlRUaammHyWShJLOEGbICjn
-	JjuBJSPaL+70uVZQ1U6QYIL4eNbk3n1XyB/Qsn7QqtjzT4X/tcmEEfDUR2mjpVWFUi/hJYT3r1VUA
-	Qrg7iC6ZM8kBPLnY6gD6WXG+lQ/tCAYOkJTXr3x3GCnARb1hCBx4wEqeKKF0Kc/A5OH6RVt3unoKa
-	3ELxBPdhRT568pQSY//A==;
+	List-Owner; bh=+k0jWYg9EoLSQQRCPnB1TTaJ0KWthpo5tieIYXZNJ6I=; b=YzAlLLSJ9KNd24
+	l3MDttY/ETJJTM9lx8d9iEXETU+7EmYPqkI5p52IMfsmh/f3/5CG2vDqHrn59vJPvvjVBHSPAHC0F
+	YR+MKu51cqusYT1wWaJ26/vatGffFmmiMdHARXNdoCOrlH3FOOxw1NWXJsjjMBTm2YyjNmwknNZhY
+	K58LP8JeE9ME2hvWkUfs8qCP3tfWKj3yeibSbsQzAU69RiLbTvrdmLPlopWwSu3y2h41re11Ihp20
+	uOiYA65UcSEHz4dY5aDJB/sxxi79ojl2MzipCSm0a/UeCaJvu+OnBKxv0y6FdpM0PenwOMoxvEiTg
+	pAKN/XxUev6THsgt+WVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMTqA-0005Cx-Sl; Mon, 21 Oct 2019 09:19:02 +0000
-Received: from mail-wr1-f66.google.com ([209.85.221.66])
+	id 1iMTqS-0005PV-0s; Mon, 21 Oct 2019 09:19:20 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMTmZ-0002je-Qd
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 09:15:27 +0000
-Received: by mail-wr1-f66.google.com with SMTP id w18so12446848wrt.3
+ id 1iMTmZ-0002jv-NF
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 09:15:25 +0000
+Received: by mail-wm1-x343.google.com with SMTP id i16so12380980wmd.3
  for <linux-arm-kernel@lists.infradead.org>;
  Mon, 21 Oct 2019 02:15:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=L7PVn0GT+Q53b4/05X2gw4wIJMYhfbWDBhvgtlSOvjw=;
- b=ofDGK82VOw5Ncz2vVTOV1TMjbrUX7M29g/YosoTtWp/VEzgfXZJyPxyQJZaA1jYUDI
- 6VwARmBgnEuTXOmVoZ8f2DWfXMOKKab/Rmyd+tFR1aerGApBOm5Kmmznv+vm1WPeHhYB
- cpID+cSEINtBgzrK0M5lSHQnuYoKG+daWWPgnqeSrV0GSnM62YZ+2ysxqmkiFeE3VVgo
- EBqoceFLRvOA8nW6RJJwjDj0rQoS0oig6aRrQNjfyGjAcWICXWjRwDap4eXeTe6mpyhW
- MaD64Zt9wNEBQUA+U/xNAAtn0ai/zoeDijMgOy3zO++Ugu65aQ6LGsIegXif1PXvfH/y
- LCfQ==
+ bh=9GArC94tXtiJFh0r8bnfgE0ceBz2txRHJ4czY6jCpvc=;
+ b=zLJ1sNW98uTrAiqwDlRmxdBuL/WNQhLcBQSh4C09UdFrgGjdahB/yXyD+SM4jTA8fl
+ ty11JCqJSL4udvI3sCbpzuDfEUeofEQcAHcxtRSIN16R6dovtB6g2zna1NuDklI9YziX
+ xL7mcG4SgF9yS4Z6nw1psLfv65hAC8wjtTdKnwPNnCGR9aLr9Vt4puigr2co/HzFNqe5
+ 8jcysH7m2FHMbk39IplnJYO3oREab9XI1IbB1j36fcoVIbIr6EyvKwz9TGrcLESPxe/4
+ 58g2HIrRMfCZQgIv1zBr9t9t2qWAS+v59aH2ns3x+q6YaDhf2XdX3RyGo9Y/LCIdm5Js
+ djZw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=L7PVn0GT+Q53b4/05X2gw4wIJMYhfbWDBhvgtlSOvjw=;
- b=V+3vVYcnthJgnzd5nRzMidzkN0tsgQ4IyqGRFMLyvRomAATm/vosox+awUL2sqSz7i
- FnjKkbQq19sPiF3jcjBGx030JfS6n6svSO545Q6Ud/VKuP0oS3lMLWNFoOKZjMseIK2s
- jLkympAQTSi9MRHNGaudj4rTJc5lcatGAGb8MMeqWbC49X+iduIUU17Qsv8VfzioFqK0
- 9em29/kcXCq070Bfk4lplBvoS6JfKDCLoI4VeBshaQnJX7Y7gRT9OucVqrxmlTC6kjTo
- nU2Hocwnx++f2gca9BL+MaWBn3qrtuX/rbnDyQqqkZCl/sZ45t0jWlGnNRpi1oRXCiwf
- qEvQ==
-X-Gm-Message-State: APjAAAWnSE5Sa8Y+gEwMSEtyWJHGTMO8vbOhzxN2X/BPlx46zR5LNX1q
- gJDOOvnh3NYYicnHPMnJagigcQ==
-X-Google-Smtp-Source: APXvYqwAqbtjZjSfSNeJmQ4stzCKH53tgotYC+GelIt6j4qQHRvFi9R3qDk8zExKNDBhi/6D0FAODw==
-X-Received: by 2002:adf:fc4c:: with SMTP id e12mr7862537wrs.179.1571649317355; 
- Mon, 21 Oct 2019 02:15:17 -0700 (PDT)
+ bh=9GArC94tXtiJFh0r8bnfgE0ceBz2txRHJ4czY6jCpvc=;
+ b=t7O5+E7mcKCjy4FwqAspmGBhlvVfjlfHjxKYz5v3uts0kAZ5FLr4KZ/acIu7KjF0wO
+ Ch/Fneuy3SqdAVpHfbvj1jGFVo32/Lpnuf6qBfXQrQN9eNwIKOeQvyrAwBTh2lyZA+/Q
+ cruz6IQ5wYer14kGNgDHbPYRXrD61ZcD9y1+Hsy8XwEObLto1wXcYUImofwtC4e12JEE
+ 3gOOOWrx/LHcFLgO9bZzurrgS3d2mwzR6q82Uiicqe6U5WIQSQ32onykeYUUd9ItGkW1
+ QlgAUm7sc6RFTkytAck+XBxzAgvlauJwScexh2+xmx3eK15egjiZtpgy/M1PtAk2hRif
+ 6tAQ==
+X-Gm-Message-State: APjAAAWwWNVHHvCJV4yQbaD4tJLLWU06cFPdL1Z1XYvV3TKjpySk0mN7
+ TTlcdvQcPmh6vf0aa/jeCkFeDA==
+X-Google-Smtp-Source: APXvYqzgonlD2CSV/QcUQqpRcy/V2+0lBkWclazaN9UZd0clclGNPGQqRgOwaLJwLVwhPi1zpxybyg==
+X-Received: by 2002:a1c:38c3:: with SMTP id f186mr2658112wma.58.1571649318118; 
+ Mon, 21 Oct 2019 02:15:18 -0700 (PDT)
 Received: from localhost.localdomain
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id t13sm20281595wra.70.2019.10.21.02.15.16
+ by smtp.gmail.com with ESMTPSA id t13sm20281595wra.70.2019.10.21.02.15.17
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 21 Oct 2019 02:15:16 -0700 (PDT)
+ Mon, 21 Oct 2019 02:15:17 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH v3 7/9] drm/meson: viu: add AFBC modules routing functions
-Date: Mon, 21 Oct 2019 11:15:07 +0200
-Message-Id: <20191021091509.3864-8-narmstrong@baylibre.com>
+Subject: [PATCH v3 8/9] drm/meson: hold 32 lines after vsync to give time for
+ AFBC start
+Date: Mon, 21 Oct 2019 11:15:08 +0200
+Message-Id: <20191021091509.3864-9-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20191021091509.3864-1-narmstrong@baylibre.com>
 References: <20191021091509.3864-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_021519_984461_F28EF9D4 
-X-CRM114-Status: GOOD (  12.78  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191021_021519_950448_6A3E6796 
+X-CRM114-Status: GOOD (  12.50  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.66 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.66 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -103,142 +103,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Amlogic G12A AFBC Decoder pixel input need to be routed diferently
-than the Amlogic GXM AFBC decoder, this adds support for routing the
-VIU OSD1 pixel source to the AFBC "Mali Unpack" module.
+When using an AFBC encoded frame, the AFBC Decoder must be resetted,
+configured and enabled at each vsync IRQ.
 
-This "Mali Unpack" module is also configured with a static RGBA mapping
-for now until we support more pixel formats.
+To leave time for that, use the maximum lines hold time to give time
+for AFBC setup and avoid visual glitches.
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- drivers/gpu/drm/meson/meson_viu.c | 81 +++++++++++++++++++++++++++++++
- drivers/gpu/drm/meson/meson_viu.h |  4 ++
- 2 files changed, 85 insertions(+)
+ drivers/gpu/drm/meson/meson_viu.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/gpu/drm/meson/meson_viu.c b/drivers/gpu/drm/meson/meson_viu.c
-index 68cf2c2eca5f..fc246248226b 100644
+index fc246248226b..304f8ff1339c 100644
 --- a/drivers/gpu/drm/meson/meson_viu.c
 +++ b/drivers/gpu/drm/meson/meson_viu.c
-@@ -7,6 +7,9 @@
-  */
+@@ -438,7 +438,7 @@ void meson_viu_init(struct meson_drm *priv)
  
- #include <linux/export.h>
-+#include <linux/bitfield.h>
-+
-+#include <drm/drm_fourcc.h>
- 
- #include "meson_drv.h"
- #include "meson_viu.h"
-@@ -335,6 +338,79 @@ void meson_viu_osd1_reset(struct meson_drm *priv)
- 	meson_viu_load_matrix(priv);
- }
- 
-+#define OSD1_MALI_ORDER_ABGR				\
-+	(FIELD_PREP(VIU_OSD1_MALI_AFBCD_A_REORDER,	\
-+		    VIU_OSD1_MALI_REORDER_A) |		\
-+	 FIELD_PREP(VIU_OSD1_MALI_AFBCD_B_REORDER,	\
-+		    VIU_OSD1_MALI_REORDER_B) |		\
-+	 FIELD_PREP(VIU_OSD1_MALI_AFBCD_G_REORDER,	\
-+		    VIU_OSD1_MALI_REORDER_G) |		\
-+	 FIELD_PREP(VIU_OSD1_MALI_AFBCD_R_REORDER,	\
-+		    VIU_OSD1_MALI_REORDER_R))
-+
-+#define OSD1_MALI_ORDER_ARGB				\
-+	(FIELD_PREP(VIU_OSD1_MALI_AFBCD_A_REORDER,	\
-+		    VIU_OSD1_MALI_REORDER_A) |		\
-+	 FIELD_PREP(VIU_OSD1_MALI_AFBCD_B_REORDER,	\
-+		    VIU_OSD1_MALI_REORDER_R) |		\
-+	 FIELD_PREP(VIU_OSD1_MALI_AFBCD_G_REORDER,	\
-+		    VIU_OSD1_MALI_REORDER_G) |		\
-+	 FIELD_PREP(VIU_OSD1_MALI_AFBCD_R_REORDER,	\
-+		    VIU_OSD1_MALI_REORDER_B))
-+
-+void meson_viu_g12a_enable_osd1_afbc(struct meson_drm *priv)
-+{
-+	u32 afbc_order = OSD1_MALI_ORDER_ARGB;
-+
-+	/* Enable Mali AFBC Unpack */
-+	writel_bits_relaxed(VIU_OSD1_MALI_UNPACK_EN,
-+			    VIU_OSD1_MALI_UNPACK_EN,
-+			    priv->io_base + _REG(VIU_OSD1_MALI_UNPACK_CTRL));
-+
-+	switch (priv->afbcd.format) {
-+	case DRM_FORMAT_XBGR8888:
-+	case DRM_FORMAT_ABGR8888:
-+		afbc_order = OSD1_MALI_ORDER_ABGR;
-+		break;
-+	}
-+
-+	/* Setup RGBA Reordering */
-+	writel_bits_relaxed(VIU_OSD1_MALI_AFBCD_A_REORDER |
-+			    VIU_OSD1_MALI_AFBCD_B_REORDER |
-+			    VIU_OSD1_MALI_AFBCD_G_REORDER |
-+			    VIU_OSD1_MALI_AFBCD_R_REORDER,
-+			    afbc_order,
-+			    priv->io_base + _REG(VIU_OSD1_MALI_UNPACK_CTRL));
-+
-+	/* Select AFBCD path for OSD1 */
-+	writel_bits_relaxed(OSD_PATH_OSD_AXI_SEL_OSD1_AFBCD,
-+			    OSD_PATH_OSD_AXI_SEL_OSD1_AFBCD,
-+			    priv->io_base + _REG(OSD_PATH_MISC_CTRL));
-+}
-+
-+void meson_viu_g12a_disable_osd1_afbc(struct meson_drm *priv)
-+{
-+	/* Disable AFBCD path for OSD1 */
-+	writel_bits_relaxed(OSD_PATH_OSD_AXI_SEL_OSD1_AFBCD, 0,
-+			    priv->io_base + _REG(OSD_PATH_MISC_CTRL));
-+
-+	/* Disable AFBCD unpack */
-+	writel_bits_relaxed(VIU_OSD1_MALI_UNPACK_EN, 0,
-+			    priv->io_base + _REG(VIU_OSD1_MALI_UNPACK_CTRL));
-+}
-+
-+void meson_viu_gxm_enable_osd1_afbc(struct meson_drm *priv)
-+{
-+	writel_bits_relaxed(MALI_AFBC_MISC, FIELD_PREP(MALI_AFBC_MISC, 0x90),
-+			    priv->io_base + _REG(VIU_MISC_CTRL1));
-+}
-+
-+void meson_viu_gxm_disable_osd1_afbc(struct meson_drm *priv)
-+{
-+	writel_bits_relaxed(MALI_AFBC_MISC, FIELD_PREP(MALI_AFBC_MISC, 0x00),
-+			    priv->io_base + _REG(VIU_MISC_CTRL1));
-+}
-+
- static inline uint32_t meson_viu_osd_burst_length_reg(uint32_t length)
- {
- 	uint32_t val = (((length & 0x80) % 24) / 12);
-@@ -420,8 +496,13 @@ void meson_viu_init(struct meson_drm *priv)
- 
- 		writel_bits_relaxed(DOLBY_BYPASS_EN(0xc), DOLBY_BYPASS_EN(0xc),
- 				    priv->io_base + _REG(DOLBY_PATH_CTRL));
-+
-+		meson_viu_g12a_disable_osd1_afbc(priv);
- 	}
- 
-+	if (meson_vpu_is_compatible(priv, VPU_COMPATIBLE_GXM))
-+		meson_viu_gxm_disable_osd1_afbc(priv);
-+
- 	priv->viu.osd1_enabled = false;
- 	priv->viu.osd1_commit = false;
- 	priv->viu.osd1_interlace = false;
-diff --git a/drivers/gpu/drm/meson/meson_viu.h b/drivers/gpu/drm/meson/meson_viu.h
-index e297772d967f..e4a2f24d7c38 100644
---- a/drivers/gpu/drm/meson/meson_viu.h
-+++ b/drivers/gpu/drm/meson/meson_viu.h
-@@ -63,6 +63,10 @@
- #define OSD_PENDING_STAT_CLEAN	BIT(1)
- 
- void meson_viu_osd1_reset(struct meson_drm *priv);
-+void meson_viu_g12a_enable_osd1_afbc(struct meson_drm *priv);
-+void meson_viu_g12a_disable_osd1_afbc(struct meson_drm *priv);
-+void meson_viu_gxm_enable_osd1_afbc(struct meson_drm *priv);
-+void meson_viu_gxm_disable_osd1_afbc(struct meson_drm *priv);
- void meson_viu_init(struct meson_drm *priv);
- 
- #endif /* __MESON_VIU_H */
+ 	/* Initialize OSD1 fifo control register */
+ 	reg = VIU_OSD_DDR_PRIORITY_URGENT |
+-		VIU_OSD_HOLD_FIFO_LINES(4) |
++		VIU_OSD_HOLD_FIFO_LINES(31) |
+ 		VIU_OSD_FIFO_DEPTH_VAL(32) | /* fifo_depth_val: 32*8=256 */
+ 		VIU_OSD_WORDS_PER_BURST(4) | /* 4 words in 1 burst */
+ 		VIU_OSD_FIFO_LIMITS(2);      /* fifo_lim: 2*16=32 */
 -- 
 2.22.0
 
