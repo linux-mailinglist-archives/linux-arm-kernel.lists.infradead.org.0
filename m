@@ -2,58 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45736DE9D5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 12:38:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCCFDDE9DF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 12:40:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sHjrZcTjTb3q6kEKTYRNi7E4yQPsZFB4FcApGKer2gI=; b=Jnt5KIhHJrVvgU
-	x3i5HhihCLpCdiF/iXQ0aMMgzBfFjzSu3Zo9TYfjPwhKDYlPB6D2Z8csjiuBYRbGjCuqkh2V1tEN0
-	zstpv0JQzp+6NL4i5aRLS4Racy6AdE5b9evTA5SXTizxmz7mD1y620Emt0esFdVPKAfQPWPiSHaCA
-	NrTCae12DULAYr4AzLpz4e+0dqhxjHGfhjkvQdmH83viEQ3RzshgwjAidI1IaO2omBEkNoi6VNTsM
-	kcx3yu85al2kXYvgzWRNeuxxdFKgUG4LEOlwWarhajJ1RKq6NXg2TKpPrM47v7JS4B3/zKpSec+My
-	IMfVbj4vuGKEGf7I2dzw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
+	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=djfXPcrav5DukLjvXyrispsPMGv1uL40Lztnlsq58w0=; b=b+vRJEWn7CCCOR4zZjykyeuw6
+	qLwnf2V+57RT9jwqJo/pgAYdoSvWg9v18X5EcVd9sy0OqNCkEXZNsCbxm9B1pWyENj/jIJ9rJR4L2
+	NrBxBmWngzqp4YxPmSGpdF/igoPDHnEiOILiQ86PcOjQc15/sSW0cPKr/I6vVjAD24aSdVdLgckw2
+	TsgTjLlHKylL3oNL4z40fFNglJZ2AUO228XIjdPd2yLM7W994xTyiB4sFhqytYFu3I09OiF/AK5pg
+	kBVlh9macarbxuun7JCeTBIVacyWYzkZOI/dT2llnYt9gyh74ChCrapd6RfI+8HPbYjZ6lR1n3QJ3
+	U/0TFQ4eA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMV5I-0007if-R0; Mon, 21 Oct 2019 10:38:44 +0000
-Received: from [217.140.110.172] (helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMV51-0007Va-Lb
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 10:38:31 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8C95CEBD;
- Mon, 21 Oct 2019 03:38:15 -0700 (PDT)
-Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
- [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6DE2B3F718;
- Mon, 21 Oct 2019 03:38:14 -0700 (PDT)
-Date: Mon, 21 Oct 2019 11:38:08 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Abhishek Shah <abhishek.shah@broadcom.com>
-Subject: Re: [PATCH 1/1] PCI: iproc: Invalidate PAXB address mapping before
- programming it
-Message-ID: <20191021103808.GA29528@e121166-lin.cambridge.arm.com>
-References: <20190906035813.24046-1-abhishek.shah@broadcom.com>
- <20191015164303.GC25674@e121166-lin.cambridge.arm.com>
- <CAKUFe6bQPMirQ01s-ezaQcUU85J+moFKMO8sLZgvtG2EPowrGA@mail.gmail.com>
+	id 1iMV7A-00013s-M5; Mon, 21 Oct 2019 10:40:40 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iMV6u-00011i-PF
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 10:40:26 +0000
+Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
+ (envelope-from <maz@kernel.org>)
+ id 1iMV6l-00020K-Os; Mon, 21 Oct 2019 12:40:15 +0200
+To: Steven Price <steven.price@arm.com>
+Subject: Re: [PATCH v6 05/10] KVM: arm64: Support stolen time reporting via
+ shared structure
+X-PHP-Originating-Script: 0:main.inc
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAKUFe6bQPMirQ01s-ezaQcUU85J+moFKMO8sLZgvtG2EPowrGA@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+Date: Mon, 21 Oct 2019 11:40:15 +0100
+From: Marc Zyngier <maz@kernel.org>
+In-Reply-To: <1bb10eb5-0fe8-57c9-3b67-9b3661a73d29@arm.com>
+References: <20191011125930.40834-1-steven.price@arm.com>
+ <20191011125930.40834-6-steven.price@arm.com> <86eez9yoog.wl-maz@kernel.org>
+ <1bb10eb5-0fe8-57c9-3b67-9b3661a73d29@arm.com>
+Message-ID: <cc639f743d621198ef02f880089bb54d@www.loen.fr>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/0.7.2
+X-SA-Exim-Connect-IP: <locally generated>
+X-SA-Exim-Rcpt-To: steven.price@arm.com, mark.rutland@arm.com,
+ kvm@vger.kernel.org, rkrcmar@redhat.com, catalin.marinas@arm.com,
+ suzuki.poulose@arm.com, linux-doc@vger.kernel.org, linux@armlinux.org.uk,
+ linux-kernel@vger.kernel.org, james.morse@arm.com,
+ julien.thierry.kdev@gmail.com, pbonzini@redhat.com, will@kernel.org,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_033827_819267_CFE4F5F1 
-X-CRM114-Status: GOOD (  31.08  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20191021_034024_968206_AAFEFC33 
+X-CRM114-Status: GOOD (  17.90  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,145 +71,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
- open list <linux-kernel@vger.kernel.org>,
- BCM Kernel Feedback <bcm-kernel-feedback-list@broadcom.com>,
- linux-pci@vger.kernel.org, Bjorn Helgaas <bhelgaas@google.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ =?UTF-8?Q?Radim_Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>,
+ kvm@vger.kernel.org, Suzuki K Pouloze <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-doc@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Paolo Bonzini <pbonzini@redhat.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 17, 2019 at 07:57:56PM +0530, Abhishek Shah wrote:
-> Hi Lorenzo,
-> 
-> Please see my comments inline:
-> 
-> On Tue, Oct 15, 2019 at 10:13 PM Lorenzo Pieralisi
-> <lorenzo.pieralisi@arm.com> wrote:
-> >
-> > On Fri, Sep 06, 2019 at 09:28:13AM +0530, Abhishek Shah wrote:
-> > > Invalidate PAXB inbound/outbound address mapping each time before
-> > > programming it. This is helpful for the cases where we need to
-> > > reprogram inbound/outbound address mapping without resetting PAXB.
-> > > kexec kernel is one such example.
-> >
-> > This looks like a hack, explain to us please what it actually solves and
-> > why a full reset is not necessary.
-> >
-> The PAXB IP performs address translation(PCI<->AXI address) for both inbound and
-> outbound addresses (amongst other things) based on version of IP being used.
-> It does so using the IMAP/IARR/OMAP/OARR registers.
-> 
-> These registers get programmed as per mappings specified in device tree during
-> PCI driver probe for each RC and do not get reset when kexec/kdump kernel boots.
-> This results in driver assuming valid mappings in place for some mapping windows
-> during kexec/kdump kernel boot, consequently it skips those windows and
-> we run out of available mapping windows, leading to mapping failure.
-> 
-> Normally, we take care of resetting PAXB block in firmware, but in
-> primary kernel to kexec/kdump kernel handover, no firmware is executed
-> in between.  So, we just, by default, invalidate the mapping registers
-> each time before
-> programming them to solve the issue described above..
-> We do not need full reset for handling this.
+On 2019-10-21 11:21, Steven Price wrote:
+> On 19/10/2019 12:12, Marc Zyngier wrote:
+>> On Fri, 11 Oct 2019 13:59:25 +0100,
+>> Steven Price <steven.price@arm.com> wrote:
+>>>
+>>> Implement the service call for configuring a shared structure 
+>>> between a
+>>> VCPU and the hypervisor in which the hypervisor can write the time
+>>> stolen from the VCPU's execution time by other tasks on the host.
+>>>
+>>> User space allocates memory which is placed at an IPA also chosen 
+>>> by user
+>>> space. The hypervisor then updates the shared structure using
+>>> kvm_put_guest() to ensure single copy atomicity of the 64-bit value
+>>> reporting the stolen time in nanoseconds.
+>>>
+>>> Whenever stolen time is enabled by the guest, the stolen time 
+>>> counter is
+>>> reset.
+>>>
+>>> The stolen time itself is retrieved from the sched_info structure
+>>> maintained by the Linux scheduler code. We enable SCHEDSTATS when
+>>> selecting KVM Kconfig to ensure this value is meaningful.
+>>>
+>>> Signed-off-by: Steven Price <steven.price@arm.com>
+>>> ---
+>>>  arch/arm/include/asm/kvm_host.h   | 20 +++++++++++
+>>>  arch/arm64/include/asm/kvm_host.h | 21 +++++++++++-
+>>>  arch/arm64/kvm/Kconfig            |  1 +
+>>>  include/linux/kvm_types.h         |  2 ++
+>>>  virt/kvm/arm/arm.c                | 11 ++++++
+>>>  virt/kvm/arm/hypercalls.c         |  3 ++
+>>>  virt/kvm/arm/pvtime.c             | 56 
+>>> +++++++++++++++++++++++++++++++
+>>>  7 files changed, 113 insertions(+), 1 deletion(-)
 
-I see. A simple bitmap to detect which windows are *actually*
-programmed by the current kernel (that can be used by
+[...]
 
-iproc_pcie_ob_is_valid()
+>>> +long kvm_hypercall_stolen_time(struct kvm_vcpu *vcpu)
+>>
+>> Why long? If that's a base address, then it is either a phys_addr_t 
+>> or
+>> a gpa_t. I'd suggest you move the error check to the caller.
+>
+> This is a bit more tricky. It's a long because that's the declared 
+> type
+> of the SMCCC return in kvm_hvc_call_handler(). I can't (easily) move 
+> the
+> code into kvm_hvc_call_handler() because that is compiled for arm (as
+> well as arm64) and we don't have the definitions for stolen time 
+> there.
+> The best option I could come up with is to have a dummy stub for arm 
+> and
+> use generic types for this function.
+>
+> This means we need a type which can contain both a gpa_t and the
+> SMCCC_RET_NOT_SUPPORTED error code.
+>
+> I'm open to alternative suggestions on how to make this work.
 
-to carry out a valid check) would do as well instead of having to
-invalidate all the OB registers.
+My suggestion would be to always return a gpa_t from this function, and
+change the 32bit stub for kvm_hypercall_stolen_time() to always return
+GPA_INVALID.
 
-It is up to you, let me know and I will merge code accordingly.
+Thanks,
 
-Lorenzo
-
-> > > Signed-off-by: Abhishek Shah <abhishek.shah@broadcom.com>
-> > > Reviewed-by: Ray Jui <ray.jui@broadcom.com>
-> > > Reviewed-by: Vikram Mysore Prakash <vikram.prakash@broadcom.com>
-> >
-> > Patches are reviewed on public mailing lists, remove tags given
-> > on internal reviews - they are not relevant.
-> >
-> Ok, will remove.
-> 
-> > > ---
-> > >  drivers/pci/controller/pcie-iproc.c | 28 ++++++++++++++++++++++++++++
-> > >  1 file changed, 28 insertions(+)
-> > >
-> > > diff --git a/drivers/pci/controller/pcie-iproc.c b/drivers/pci/controller/pcie-iproc.c
-> > > index e3ca46497470..99a9521ba7ab 100644
-> > > --- a/drivers/pci/controller/pcie-iproc.c
-> > > +++ b/drivers/pci/controller/pcie-iproc.c
-> > > @@ -1245,6 +1245,32 @@ static int iproc_pcie_map_dma_ranges(struct iproc_pcie *pcie)
-> > >       return ret;
-> > >  }
-> > >
-> > > +static void iproc_pcie_invalidate_mapping(struct iproc_pcie *pcie)
-> > > +{
-> > > +     struct iproc_pcie_ib *ib = &pcie->ib;
-> > > +     struct iproc_pcie_ob *ob = &pcie->ob;
-> > > +     int idx;
-> > > +
-> > > +     if (pcie->ep_is_internal)
-> >
-> > What's this check for and why leaving mappings in place is safe for
-> > this category of IPs ?
-> For this category of IP(PAXC), no mappings need to be programmed in
-> the first place.
-> 
-> >
-> > > +             return;
-> > > +
-> > > +     if (pcie->need_ob_cfg) {
-> > > +             /* iterate through all OARR mapping regions */
-> > > +             for (idx = ob->nr_windows - 1; idx >= 0; idx--) {
-> > > +                     iproc_pcie_write_reg(pcie,
-> > > +                                          MAP_REG(IPROC_PCIE_OARR0, idx), 0);
-> > > +             }
-> > > +     }
-> > > +
-> > > +     if (pcie->need_ib_cfg) {
-> > > +             /* iterate through all IARR mapping regions */
-> > > +             for (idx = 0; idx < ib->nr_regions; idx++) {
-> > > +                     iproc_pcie_write_reg(pcie,
-> > > +                                          MAP_REG(IPROC_PCIE_IARR0, idx), 0);
-> > > +             }
-> > > +     }
-> > > +}
-> > > +
-> > >  static int iproce_pcie_get_msi(struct iproc_pcie *pcie,
-> > >                              struct device_node *msi_node,
-> > >                              u64 *msi_addr)
-> > > @@ -1517,6 +1543,8 @@ int iproc_pcie_setup(struct iproc_pcie *pcie, struct list_head *res)
-> > >       iproc_pcie_perst_ctrl(pcie, true);
-> > >       iproc_pcie_perst_ctrl(pcie, false);
-> > >
-> > > +     iproc_pcie_invalidate_mapping(pcie);
-> >
-> > It makes more sense to call this in the .shutdown() method if I
-> > understand what it does.
-> >
-> It would work for kexec kernel, but not for kdump kernel as only for
-> kexec'ed kernel,
-> "device_shutdown" callback is present. We are here taking care of both the cases
-> with this patch.
-> 
-> 
-> Regards,
-> Abhishek
-> 
-> > Lorenzo
-> >
-> > >       if (pcie->need_ob_cfg) {
-> > >               ret = iproc_pcie_map_ranges(pcie, res);
-> > >               if (ret) {
-> > > --
-> > > 2.17.1
-> > >
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
