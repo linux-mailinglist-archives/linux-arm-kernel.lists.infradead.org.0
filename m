@@ -2,65 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC152DEA6F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 13:09:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD1A8DEA75
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 13:10:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HoTJSbvhlOW5wN7qIR4k89+GxLQ3EKjkUp2QaNzO3nA=; b=rl+bWN+tWVxLOr
-	lF4OyL0zMZn934oeVQ2TuR+fl2+cCpHFTr0acUrCyWyX4UfyPbvuHfHfRE5/HM19nfsayoMV8HOhM
-	aUrqdi2kRbM15RwjiFYeEq2NUL641q3DJ/kNnKSivWP70lxE4xmPImXwB8KcC73o/Jt9rtUf6i0kZ
-	GmLQ4mR9MLDKVMsoDEXGZueVSLG6Oz4wV0hrcOl9Hwa4X2ZVpHFlx80sVAImLurZND2udBPcG/7Ze
-	jBMUu2GqgshFSHQBmYOLTze+0CxuNNQ1np+960j74lHFi/y268DgEoIjJ4+MI/s0bOh1bsHYAQlWU
-	nNWpm9MDP5BSLtuYnL5w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=V7Hy3giLde9KBxojxEY12GZZ8rsfSc3xtvwZ9OMKzHA=; b=oCCotfmgQmE1F2TfeUVRVqD/O
+	7lziJxog1BHWMs8pWHp9/Bfp8p4B02mPQYMotAXu5zd/hBWXMP5sebyez0ektRb5ObGO0lzpe780Z
+	7Ch/s8pfsK6cjbqgn/J5FN32mlSKSVcA3W6Ybb4i3e18jIir95uPiO8UQGtjb1Qfs/WG9MxrOIKww
+	DNlDzcHfIRye1n/n9cuNBNYpWvhivXzx5nqeJNNCG3i+yb9zzhf3Y1TLRDrbUIv/jze7BG9umjZ4I
+	DVCrntqdBQ88HWUuAzrkE03G7uGRjSOCnLD6JF7toZN5rKw7jTdinpJFcQolzqWxz/NlucVaTgr70
+	RDR1693rg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMVYp-0006US-AQ; Mon, 21 Oct 2019 11:09:15 +0000
-Received: from mga04.intel.com ([192.55.52.120])
+	id 1iMVZW-0006ua-TA; Mon, 21 Oct 2019 11:09:58 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMVYd-0006Tj-D7
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 11:09:04 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga006.fm.intel.com ([10.253.24.20])
- by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 21 Oct 2019 04:09:01 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.67,323,1566889200"; d="scan'208";a="398626868"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by fmsmga006.fm.intel.com with ESMTP; 21 Oct 2019 04:08:58 -0700
-Received: from andy by smile with local (Exim 4.92.2)
- (envelope-from <andriy.shevchenko@intel.com>)
- id 1iMVYX-0003ab-7l; Mon, 21 Oct 2019 14:08:57 +0300
-Date: Mon, 21 Oct 2019 14:08:57 +0300
-From: Andy Shevchenko <andriy.shevchenko@intel.com>
-To: Daniel Vetter <daniel.vetter@ffwll.ch>
-Subject: Re: [PATCH] spi: pxa2xx: Set controller->max_transfer_size in dma mode
-Message-ID: <20191021110857.GR32742@smile.fi.intel.com>
-References: <20191016195721.3714-1-daniel.vetter@ffwll.ch>
- <20191017064426.30814-1-daniel.vetter@ffwll.ch>
- <20191017070638.GB32742@smile.fi.intel.com>
+ id 1iMVZN-0006tu-LI
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 11:09:50 +0000
+Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id CC302206C2;
+ Mon, 21 Oct 2019 11:09:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571656189;
+ bh=3tGyLnRu5V+1lH+Ll8Ur/m9/FJeaK074rwaJRpkHO5E=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=xKoe/9B429mheTKTi5QgSOptvY37IUxuEzhlKdj8OOpRR71TeCPMBzSQVH2wr8tMn
+ 627KrX1KKFNGqVrWevkhBmp+XildRYXcozhMXLj3DkZhVrzfiobl0vH0tnevaYMwVQ
+ pk6FMnIwOZ4pxMtD6AwQZ9FC8rihThFaauVPlIUE=
+Date: Mon, 21 Oct 2019 13:09:46 +0200
+From: Maxime Ripard <mripard@kernel.org>
+To: megous@megous.com
+Subject: Re: [PATCH 4/4] arm64: dts: allwinner: orange-pi-3: Enable USB 3.0
+ host support
+Message-ID: <20191021110946.gxmib3to7n7v2vof@gilmour>
+References: <20191020134229.1216351-1-megous@megous.com>
+ <20191020134229.1216351-5-megous@megous.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191017070638.GB32742@smile.fi.intel.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191020134229.1216351-5-megous@megous.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_040903_453913_971C4A00 
-X-CRM114-Status: GOOD (  11.23  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191021_040949_714736_83487C10 
+X-CRM114-Status: GOOD (  11.92  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.120 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,61 +77,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, Sam Ravnborg <sam@ravnborg.org>,
- Mark Brown <broonie@kernel.org>, Haojian Zhuang <haojian.zhuang@gmail.com>,
- linux-spi@vger.kernel.org,
- Noralf =?iso-8859-1?Q?Tr=F8nnes?= <noralf@tronnes.org>,
- DRI Development <dri-devel@lists.freedesktop.org>,
- Robert Jarzmik <robert.jarzmik@free.fr>, Daniel Mack <daniel@zonque.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Arnd Bergmann <arnd@arndb.de>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Chen-Yu Tsai <wens@csie.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-sunxi@googlegroups.com, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Thomas Gleixner <tglx@linutronix.de>,
+ linux-kernel@vger.kernel.org, Icenowy Zheng <icenowy@aosc.io>
+Content-Type: multipart/mixed; boundary="===============6425655246885716724=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 17, 2019 at 10:06:38AM +0300, Andy Shevchenko wrote:
-> On Thu, Oct 17, 2019 at 08:44:26AM +0200, Daniel Vetter wrote:
-> > In DMA mode we have a maximum transfer size, past that the driver
-> > falls back to PIO (see the check at the top of pxa2xx_spi_transfer_one).
-> > Falling back to PIO for big transfers defeats the point of a dma engine,
-> > hence set the max transfer size to inform spi clients that they need
-> > to do something smarter.
-> > =
 
-> > This was uncovered by the drm_mipi_dbi spi panel code, which does
-> > large spi transfers, but stopped splitting them after:
-> > =
-
-> > commit e143364b4c1774f68e923a5a0bb0fca28ac25888
-> > Author: Noralf Tr=F8nnes <noralf@tronnes.org>
-> > Date:   Fri Jul 19 17:59:10 2019 +0200
-> > =
-
-> >     drm/tinydrm: Remove tinydrm_spi_max_transfer_size()
-> > =
-
-> > After this commit the code relied on the spi core to split transfers
-> > into max dma-able blocks, which also papered over the PIO fallback issu=
-e.
-> > =
-
-> > Fix this by setting the overall max transfer size to the DMA limit,
-> > but only when the controller runs in DMA mode.
-> > =
-
-> =
-
-> Thank you, Daniel!
-
-Mark, can be this applied?
-
--- =
-
-With Best Regards,
-Andy Shevchenko
+--===============6425655246885716724==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="w4fbeowpggjvqztj"
+Content-Disposition: inline
 
 
+--w4fbeowpggjvqztj
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Sun, Oct 20, 2019 at 03:42:29PM +0200, megous@megous.com wrote:
+> From: Ondrej Jirman <megous@megous.com>
+>
+> Enable Allwinner's USB 3.0 phy and the host controller. Orange Pi 3
+> board has GL3510 USB 3.0 4-port hub connected to the SoC's USB 3.0
+> port. All four ports are exposed via USB3-A connectors. VBUS is
+> always on, since it's powered directly from DCIN (VCC-5V) and
+> not switchable.
+>
+> Signed-off-by: Ondrej Jirman <megous@megous.com>
+
+Those last two patches are fine with me, I'll merge them once the phy
+driver will be merged.
+
+Maxime
+
+--w4fbeowpggjvqztj
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXa2R+gAKCRDj7w1vZxhR
+xfNsAQCCC1sgS5gZhICtsezIsL40SwcFqJ7uiTtlTkak8UZExgEAq65tLkT+Xmn6
+J12MqeTnjfEE6VZ7LKlcv3VYjv3TCQA=
+=1SeF
+-----END PGP SIGNATURE-----
+
+--w4fbeowpggjvqztj--
+
+
+--===============6425655246885716724==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6425655246885716724==--
+
