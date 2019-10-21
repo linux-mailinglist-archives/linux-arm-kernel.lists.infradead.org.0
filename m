@@ -2,83 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D702DDED7F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 15:25:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 053B9DEDB7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 15:36:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NFspv+NmxIMatZvgtThChxQJRfybL7RXD42JTqm3UmU=; b=lWSR03v37LCg9m
-	sluG1WvZZkvpwcS0/7FVDKLMa86V+LOnQ6swcmarS2ksXO0K+brHGPpi74hrrAc+hAy3xB/tasxy2
-	IWioTxSysLeVQLvQkcWbLrCn1L5DYgaqVDEaVk1MkVV2Bpr9Ktkq1UbuzmWnO2LtcdRYwnEf3jFSm
-	jzYOE+DTN61J+ZfAlMv7eJBDOX6hYg9HblLraTd7jCzTOwhqKpy80FQFePKZZbwVbpSvSQHeNH1di
-	XDHgxhCAZm8Z56LYvXmuKUKpJGrdJrfJD0pEQaAglE2ZWB6ZPvE+9ehJVAzeDv7tRCKkU+pVN86Dv
-	46ECCpVfk7rIJ1pPG65w==;
+	List-Owner; bh=BCn9cLx6wBpUw5arhjmCGQFXHR8qUVfWlAmsrEQ3hBQ=; b=qyuHve6r94shAH
+	PjYB+QWgGMUwZ2QII52eO5y0CAXv/nKKJMoLyoSZ5k6PdkDRfi85ejfbg4SmdOOtJOfEsiJpQV4aB
+	tu4CFkYt+nmsdO61j6VIs2zAHcy8xl+hQOcSZHQUkm8dBzec2Irhd/G7DeE73z5Y24OAS31O/eMPS
+	5Gl00txFxOQVnIKEB6j8S/xW/YUPNwuMMY0x35G61kne4PG/0IhMmy2wKnobckqa1tihBNGUasLYD
+	CI/U5omdwu/RhAedRi9j6d6dPzFSEvUuK2SomAIL1DBz4ra+XVYhqJPr51ohe/OjP+Oe87tT9TdCr
+	HX7LWpUFLqbv6WJZZsHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMXh1-0000ky-Jp; Mon, 21 Oct 2019 13:25:51 +0000
-Received: from mail-ed1-f68.google.com ([209.85.208.68])
+	id 1iMXrO-0005Lp-Iq; Mon, 21 Oct 2019 13:36:34 +0000
+Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMXgs-0000kS-MY
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 13:25:44 +0000
-Received: by mail-ed1-f68.google.com with SMTP id s20so3996258edq.9
+ id 1iMXrF-0005KT-CR
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 13:36:27 +0000
+Received: by mail-vs1-xe42.google.com with SMTP id w195so8835669vsw.11
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 21 Oct 2019 06:25:41 -0700 (PDT)
+ Mon, 21 Oct 2019 06:36:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=MXjl3Qdj6k4PSsOEssi1NBEDlEeNdvwTH033BcyI0qQ=;
+ b=Hso+9CrinK4xZlbaApuYrGSZonV4azH0FJB494beKtvJpcRl8Veanvo9tKNRl7Hd1x
+ 4tmspmnmA0Cr3+PVnZpVJ/kh//Qy8fgmmXudTnPcLaULLV/AVkzp926bTQRYB+2cdjZ7
+ D2Gr10VIaRo6QwVbtfNc1HqK26D8ym5oe82dJZdBpwN3+AQ/64P8TQrSoBI326eblL6S
+ Le+iuwOkJkXR+ECvd9X6PwZUqbCReqmk68QHVjx9BJUJ3cnEgYloCebC3Csv1czA2QIe
+ Pop03LroOrf/V2y7qf2Nv1poWAHPtBnNJ071pfZtADDmz3RnX0XW8p/bICpvIBU6NQ0O
+ 4uQw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=kbWYhDCDbV5qK8VclXFPP6NqeqAgLz5VFjeSpIHBB+s=;
- b=kYZxSKi1rkFdsd/9DyqehOjpEXG1ky4SB691ItBXRAk7UtTx1vzNYQuugVeG1paeYg
- MQb+TDx1vO8uooT77dzkV2HE8jyKuDIiILCiYljyUnuX7aa71Xds0rWCBy2fB5noQp2a
- lOa2C4AdSKo9cIrqsZj11QkVKEHGsKXcV52S2L5D9wlETgsiRAfQEaKF8VQDA33nw4M/
- RBUNZco2uUyV3qSdKEXQciVnWZWQmaoyQJj9TCcMJZG1JJ3L1tHBlchql4IxQ57TZmqu
- GnlhqoVy6M+SMWMONu253rYaBK4m/rXo/F8YB2dD2DACocrSpoM+GDoXaXCkXGqrUUKf
- r0Lg==
-X-Gm-Message-State: APjAAAXTTuSMojCpTRClDNhF8nyDJdzhPmM5wC/kFrOPBjuZuh2SKKbi
- 8CifcWqIaB7X8lF40WbWfX0=
-X-Google-Smtp-Source: APXvYqyDVwXcr52I2wsb+Z4RGg4WcltwXXlohYeZzvFP+OKWg5ZNU8oHr/O1UXzcE6xe2rgQ+TiKng==
-X-Received: by 2002:a17:906:2584:: with SMTP id
- m4mr22390782ejb.287.1571664340356; 
- Mon, 21 Oct 2019 06:25:40 -0700 (PDT)
-Received: from pi3 ([194.230.155.217])
- by smtp.googlemail.com with ESMTPSA id s4sm344795edt.34.2019.10.21.06.25.38
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 21 Oct 2019 06:25:39 -0700 (PDT)
-Date: Mon, 21 Oct 2019 15:25:36 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v3 01/10] dt-bindings: sram: Convert SRAM bindings to
- json-schema
-Message-ID: <20191021132536.GA2791@pi3>
-References: <20191002164316.14905-1-krzk@kernel.org>
- <20191010191240.GA15006@bogus>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=MXjl3Qdj6k4PSsOEssi1NBEDlEeNdvwTH033BcyI0qQ=;
+ b=d9C5rKJglCBh03Qo5bqyKmn5MeJVC76dnrr4cJ7IFkGPbeLh//Plc+JO1G/Ot4x3Hu
+ wuMkQVFhTHKW4PeJdd7NTMq/ghLlkLLoCQnr7vR/4OkSIOAX47K6TmEVABviDwqCZ3sI
+ HCYrx7+5McBHvKN9c/DcjvCfmjx/vuYZ8d5dUMTGJRp8KCgfuskzINLgVZyKW0HLpoz3
+ rObHoJ5/qPKNF3JRxrzz55KzaqnIFHOkA/FmABj/TBb8CT8S92MdYpLwm0FG2/s3sS3T
+ C+Dn8AYy/3bM+frtexF1LLu04NTuTdLltc/kiugyhachgvtDao2cy2nGTwtAlb67a3sv
+ SmOQ==
+X-Gm-Message-State: APjAAAWTWtQi5ATJuhBPIznxw/hJkuolFxutodo6nyC5x2JN/J4qqznW
+ tynmec+wPIdTGwTECN+nww9kllMcwtd0v6Rf+WmRbg==
+X-Google-Smtp-Source: APXvYqyaD/lVRLAGjdvleYMAYDc5dLlKYIHBFNw9Y8pm/8dJbZCYSSBsihmIjD8/eWFRLVRUnDlcrVW2b1zkXu+Rw1E=
+X-Received: by 2002:a67:ebc2:: with SMTP id y2mr13457816vso.191.1571664981141; 
+ Mon, 21 Oct 2019 06:36:21 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191010191240.GA15006@bogus>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+References: <20191011131502.29579-1-ludovic.Barre@st.com>
+ <20191011131502.29579-2-ludovic.Barre@st.com>
+In-Reply-To: <20191011131502.29579-2-ludovic.Barre@st.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Mon, 21 Oct 2019 15:35:44 +0200
+Message-ID: <CAPDyKFqE09nqdev_qewwNzjjUuhm0UUC03tgvY=ZukYY4az7wg@mail.gmail.com>
+Subject: Re: [PATCH 1/2] mmc: add unstuck function if host is in deadlock state
+To: Ludovic Barre <ludovic.Barre@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_062542_739230_647CA6A7 
-X-CRM114-Status: GOOD (  30.44  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191021_063625_428948_456CAF8A 
+X-CRM114-Status: GOOD (  29.68  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.68 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
+ no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.68 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,232 +91,203 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
- Tony Lindgren <tony@atomide.com>, Thierry Reding <thierry.reding@gmail.com>,
- Fabio Estevam <festevam@gmail.com>, linux-samsung-soc@vger.kernel.org,
- Gregory Clement <gregory.clement@bootlin.com>,
- Jonathan Hunter <jonathanh@nvidia.com>, Kukjin Kim <kgene@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
- devicetree@vger.kernel.org, Jason Cooper <jason@lakedaemon.net>,
- Sascha Hauer <s.hauer@pengutronix.de>, Santosh Shilimkar <ssantosh@kernel.org>,
- linux-tegra@vger.kernel.org,
- =?utf-8?Q?Beno=C3=AEt?= Cousson <bcousson@baylibre.com>,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>
+Cc: DTML <devicetree@vger.kernel.org>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 10, 2019 at 02:12:40PM -0500, Rob Herring wrote:
-> On Wed, Oct 02, 2019 at 06:43:07PM +0200, Krzysztof Kozlowski wrote:
-> > Convert generic mmio-sram bindings to DT schema format using
-> > json-schema.  Require the address/size cells to be 1, not equal to root
-> > node.
-> > 
-> > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> > 
-> > ---
-> > 
-> > Changes since v2:
-> > 1. Add Rob as maintainer,
-> > 2. Use "contains" for compatible,
-> > 3. Fix address and size cells to 1,
-> > 4. Add maxitems to reg under children,
-> > 5. Remove unneeded string type from label.
-> > 
-> > Changes since v1:
-> > 1. Indent example with four spaces (more readable).
-> > ---
-> >  .../devicetree/bindings/sram/sram.txt         |  80 -----------
-> >  .../devicetree/bindings/sram/sram.yaml        | 134 ++++++++++++++++++
-> >  2 files changed, 134 insertions(+), 80 deletions(-)
-> >  delete mode 100644 Documentation/devicetree/bindings/sram/sram.txt
-> >  create mode 100644 Documentation/devicetree/bindings/sram/sram.yaml
-> 
-> 
-> > diff --git a/Documentation/devicetree/bindings/sram/sram.yaml b/Documentation/devicetree/bindings/sram/sram.yaml
-> > new file mode 100644
-> > index 000000000000..a1c1ec2183f2
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/sram/sram.yaml
-> > @@ -0,0 +1,134 @@
-> > +# SPDX-License-Identifier: GPL-2.0
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/sram/sram.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Generic on-chip SRAM
-> > +
-> > +maintainers:
-> > +  - Rob Herring <robh@kernel.org>
-> > +
-> > +description: |+
-> > +  Simple IO memory regions to be managed by the genalloc API.
-> > +
-> > +  Each child of the sram node specifies a region of reserved memory. Each
-> > +  child node should use a 'reg' property to specify a specific range of
-> > +  reserved memory.
-> > +
-> > +  Following the generic-names recommended practice, node names should
-> > +  reflect the purpose of the node. Unit address (@<address>) should be
-> > +  appended to the name.
-> > +
-> > +properties:
-> > +  $nodename:
-> > +    pattern: "^sram(@.*)?"
-> > +
-> > +  compatible:
-> > +    contains:
-> > +      enum:
-> > +        - mmio-sram
-> > +        - atmel,sama5d2-securam
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  "#address-cells":
-> > +    const: 1
-> > +
-> > +  "#size-cells":
-> > +    const: 1
-> > +
-> > +  ranges:
-> > +    description:
-> > +      Should translate from local addresses within the sram to bus addresses.
-> > +
-> > +  no-memory-wc:
-> > +    description:
-> > +      The flag indicating, that SRAM memory region has not to be remapped
-> > +      as write combining. WC is used by default.
-> > +    type: boolean
-> > +
-> > +patternProperties:
-> > +  "^([a-z]*-)?sram@[a-f0-9]$":
-> > +    type: object
-> > +    description:
-> > +      Each child of the sram node specifies a region of reserved memory.
-> > +    properties:
-> > +      reg:
-> > +        description:
-> > +          IO mem address range, relative to the SRAM range.
-> > +        maxItems: 1
-> > +
-> > +      compatible:
-> > +        $ref: /schemas/types.yaml#/definitions/string
-> 
-> No need to define the type again. We can say 'maxItems: 1' if we really 
-> want to force it to 1 entry.
+On Fri, 11 Oct 2019 at 15:15, Ludovic Barre <ludovic.Barre@st.com> wrote:
+>
+> From: Ludovic Barre <ludovic.barre@st.com>
+>
+> After a request a host may be in deadlock state, and wait
+> a specific action to unstuck the hardware block before
+> re-sending a new command.
 
-I'll fix it and integrate Samsung compatibles here.
+Rather than talking about "unstuck" and "deadlock", how about instead
+describing that an MMC controller, may end up in an non-functional
+state hanging on something. Then to allow it to serve new requests it
+needs to be reset.
 
-> 
-> > +        description:
-> > +          Should contain a vendor specific string in the form
-> > +          <vendor>,[<device>-]<usage>
-> > +
-> > +      pool:
-> > +        description:
-> > +          Indicates that the particular reserved SRAM area is addressable
-> > +          and in use by another device or devices.
-> > +        type: boolean
-> > +
-> > +      export:
-> > +        description:
-> > +          Indicates that the reserved SRAM area may be accessed outside
-> > +          of the kernel, e.g. by bootloader or userspace.
-> > +        type: boolean
-> > +
-> > +      protect-exec:
-> > +        description: |
-> > +          Same as 'pool' above but with the additional constraint that code
-> > +          will be run from the region and that the memory is maintained as
-> > +          read-only, executable during code execution. NOTE: This region must
-> > +          be page aligned on start and end in order to properly allow
-> > +          manipulation of the page attributes.
-> > +        type: boolean
-> > +
-> > +      label:
-> > +        description:
-> > +          The name for the reserved partition, if omitted, the label is taken
-> > +          from the node name excluding the unit address.
-> > +
-> > +      clocks:
-> 
-> Shouldn't this be up one level? Looks like this is the only case 
-> (Marvell and i.MX are the only ones I see with clocks).
+>
+> This patch adds an optional callback mmc_hw_unstuck which
+> allows the host to unstuck the controller. In order to avoid
+> a critical context, this callback must be called when the
+> request is completed. Depending the mmc request, the completion
+> function is defined by mrq->done and could be in block.c or core.c.
 
-Yes, that's a mistake in original bindings.
+I think it's important to state exactly what is expected from the core
+perspective, by the mmc host driver when it calls this new host ops.
+We need to clarify that.
 
-> 
-> > +        description:
-> > +          A list of phandle and clock specifier pair that controls the
-> > +          single SRAM clock.
-> 
-> maxItems: 1
+>
+> mmc_hw_unstuck is called if the host returns an cmd/sbc/stop/data
+> DEADLK error.
 
-Yes.
+To me, this approach seems a bit upside-down. Although, I have to
+admit that I haven't thought through this completely yet.
 
-> 
-> > +
-> > +    required:
-> > +      - reg
-> > +
-> > +required:
-> > +  - compatible
-> > +  - reg
-> > +  - "#address-cells"
-> > +  - "#size-cells"
-> > +  - ranges
-> 
-> Does 'additionalProperties' work here and/or in the child node? I guess 
-> not if we keep some node names.
+The thing is, to make this useful for host drivers in general, I
+instead think we need to add timeout to each request that the core
+sends to the host driver. In other words, rather than waiting forever
+in the core for the completion variable to be set, via calling
+wait_for_completion() we could call wait_for_completion_timeout(). The
+tricky part is to figure out what timeout to use for each request.
+Perhaps that is even why you picked the approach as implemented in
+@subject patch instead?
 
-It seems that it works.
+Anyway, the typical scenario I see, is that the host driver is
+hanging, likely waiting for an IRQ that never get raised. So, unless
+it implements it own variant of a "request timeout" mechanism, it
+simple isn't able to call mmc_request_done() to inform the core about
+that the request has failed.
 
-> 
-> > +
-> > +examples:
-> > +  - |
-> > +    sram: sram@5c000000 {
-> > +        compatible = "mmio-sram";
-> > +        reg = <0x5c000000 0x40000>; /* 256 KiB SRAM at address 0x5c000000 */
-> > +
-> > +        #address-cells = <1>;
-> > +        #size-cells = <1>;
-> > +        ranges = <0 0x5c000000 0x40000>;
-> > +
-> > +        smp-sram@100 {
-> > +            compatible = "socvendor,smp-sram";
-> > +            reg = <0x100 0x50>;
-> > +        };
-> > +
-> > +        device-sram@1000 {
-> > +            reg = <0x1000 0x1000>;
-> > +            pool;
-> > +        };
-> > +
-> > +        exported@20000 {
-> 
-> This one doesn't match the pattern. That's fine I guess for dts files, 
-> but examples should be good examples.
+For comments to the code, I defer that to the next step, when we have
+agreed on the way forward.
 
-Sure.
+Kind regards
+Uffe
 
-Best regards,
-Krzysztof
-
-> 
-> > +            reg = <0x20000 0x20000>;
-> > +            export;
-> > +        };
-> > +    };
-> > -- 
-> > 2.17.1
-> > 
+>
+> Signed-off-by: Ludovic Barre <ludovic.barre@st.com>
+> ---
+>  drivers/mmc/core/block.c | 11 +++++++++++
+>  drivers/mmc/core/core.c  | 35 +++++++++++++++++++++++++++++++++--
+>  include/linux/mmc/core.h |  1 +
+>  include/linux/mmc/host.h |  7 +++++++
+>  4 files changed, 52 insertions(+), 2 deletions(-)
+>
+> diff --git a/drivers/mmc/core/block.c b/drivers/mmc/core/block.c
+> index 2c71a434c915..2f723e2f5fde 100644
+> --- a/drivers/mmc/core/block.c
+> +++ b/drivers/mmc/core/block.c
+> @@ -1799,6 +1799,17 @@ static void mmc_blk_mq_rw_recovery(struct mmc_queue *mq, struct request *req)
+>         u32 blocks;
+>         int err;
+>
+> +       /*
+> +        * if the host return a deadlock, it needs to be unstuck
+> +        * before to send a new command.
+> +        */
+> +       if (brq->sbc.error == -EDEADLK || brq->cmd.error == -EDEADLK ||
+> +           brq->stop.error == -EDEADLK || brq->data.error == -EDEADLK) {
+> +               pr_err("%s: host is in bad state, must be unstuck\n",
+> +                      req->rq_disk->disk_name);
+> +               mmc_hw_unstuck(card->host);
+> +       }
+> +
+>         /*
+>          * Some errors the host driver might not have seen. Set the number of
+>          * bytes transferred to zero in that case.
+> diff --git a/drivers/mmc/core/core.c b/drivers/mmc/core/core.c
+> index 221127324709..43fe59a7403b 100644
+> --- a/drivers/mmc/core/core.c
+> +++ b/drivers/mmc/core/core.c
+> @@ -397,6 +397,7 @@ static int __mmc_start_req(struct mmc_host *host, struct mmc_request *mrq)
+>  void mmc_wait_for_req_done(struct mmc_host *host, struct mmc_request *mrq)
+>  {
+>         struct mmc_command *cmd;
+> +       int sbc_err, stop_err, data_err;
+>
+>         while (1) {
+>                 wait_for_completion(&mrq->completion);
+> @@ -420,8 +421,24 @@ void mmc_wait_for_req_done(struct mmc_host *host, struct mmc_request *mrq)
+>                                        mmc_hostname(host), __func__);
+>                         }
+>                 }
+> -               if (!cmd->error || !cmd->retries ||
+> -                   mmc_card_removed(host->card))
+> +
+> +               sbc_err =  mrq->sbc ? mrq->sbc->error : 0;
+> +               stop_err = mrq->stop ? mrq->stop->error : 0;
+> +               data_err =  mrq->data ? mrq->data->error : 0;
+> +
+> +               /*
+> +                * if the host return a deadlock, it needs to be unstuck
+> +                * before to send a new command.
+> +                */
+> +               if (cmd->error == -EDEADLK || sbc_err == -EDEADLK ||
+> +                   stop_err == -EDEADLK || data_err == -EDEADLK) {
+> +                       pr_debug("%s: host is in bad state, must be unstuck\n",
+> +                                mmc_hostname(host));
+> +                       mmc_hw_unstuck(host);
+> +               }
+> +
+> +               if ((!cmd->error && !sbc_err && !stop_err && !data_err) ||
+> +                   !cmd->retries || mmc_card_removed(host->card))
+>                         break;
+>
+>                 mmc_retune_recheck(host);
+> @@ -430,6 +447,12 @@ void mmc_wait_for_req_done(struct mmc_host *host, struct mmc_request *mrq)
+>                          mmc_hostname(host), cmd->opcode, cmd->error);
+>                 cmd->retries--;
+>                 cmd->error = 0;
+> +               if (mrq->sbc)
+> +                       mrq->sbc->error = 0;
+> +               if (mrq->stop)
+> +                       mrq->stop->error = 0;
+> +               if (mrq->data)
+> +                       mrq->data->error = 0;
+>                 __mmc_start_request(host, mrq);
+>         }
+>
+> @@ -2161,6 +2184,14 @@ int mmc_sw_reset(struct mmc_host *host)
+>  }
+>  EXPORT_SYMBOL(mmc_sw_reset);
+>
+> +void mmc_hw_unstuck(struct mmc_host *host)
+> +{
+> +       if (!host->ops->hw_unstuck)
+> +               return;
+> +       host->ops->hw_unstuck(host);
+> +}
+> +EXPORT_SYMBOL(mmc_hw_unstuck);
+> +
+>  static int mmc_rescan_try_freq(struct mmc_host *host, unsigned freq)
+>  {
+>         host->f_init = freq;
+> diff --git a/include/linux/mmc/core.h b/include/linux/mmc/core.h
+> index b7ba8810a3b5..eb10b8194073 100644
+> --- a/include/linux/mmc/core.h
+> +++ b/include/linux/mmc/core.h
+> @@ -173,6 +173,7 @@ void mmc_wait_for_req(struct mmc_host *host, struct mmc_request *mrq);
+>  int mmc_wait_for_cmd(struct mmc_host *host, struct mmc_command *cmd,
+>                 int retries);
+>
+> +void mmc_hw_unstuck(struct mmc_host *host);
+>  int mmc_hw_reset(struct mmc_host *host);
+>  int mmc_sw_reset(struct mmc_host *host);
+>  void mmc_set_data_timeout(struct mmc_data *data, const struct mmc_card *card);
+> diff --git a/include/linux/mmc/host.h b/include/linux/mmc/host.h
+> index ba703384bea0..8b52cafcd1eb 100644
+> --- a/include/linux/mmc/host.h
+> +++ b/include/linux/mmc/host.h
+> @@ -163,6 +163,13 @@ struct mmc_host_ops {
+>         void    (*hw_reset)(struct mmc_host *host);
+>         void    (*card_event)(struct mmc_host *host);
+>
+> +       /*
+> +        * Optional callback, if your host could be in deadlock after a command
+> +        * and need a specific action to unstuck the controller before sending
+> +        * new command.
+> +        */
+> +       void    (*hw_unstuck)(struct mmc_host *host);
+> +
+>         /*
+>          * Optional callback to support controllers with HW issues for multiple
+>          * I/O. Returns the number of supported blocks for the request.
+> --
+> 2.17.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
