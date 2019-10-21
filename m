@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C8249DF64B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 21:50:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1295FDF648
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 21 Oct 2019 21:50:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y+X6XPSSl+NewgrlO5PM7u4xj/Y0DaeUAtFugXPeZvo=; b=h8/yXSY2R63TfK
-	I/XsUcqeOz+25MRgIYWikJtDJJRvqoo5cEcfMP0gWuYWFLZsoMVjxP9LZNHtKwuq0+zVkpF9H44wT
-	jiMvhCGKyVClsHMC6txp57cYh4veLjdxwrPCvsbC3z584OTt6TaItOloJdGPXZ+mZMUFPEf9UNRhs
-	YtHfQOqMWiI/a9OXNP/kZb7Xgxiu+4J3mJgd03bdnqZONNKu/T9qJ471YTgFbVVScZYRmFqKoui/g
-	L7b00ApodVwQSB9CIQyR0SNR+9vZOk9VLH7vCwLx9yz0/nF4D3/G9FYZW/E6MZJoFyGa7Ta1BbgUc
-	taSYn2Mk8gONToq+nvwg==;
+	List-Owner; bh=Ryr+7bprjeGg0NkQ92DTRD0awVR4pAo6KneyiYibCLE=; b=N54fMGFsyJK2rK
+	ZXbjPBKuL04cSeutlNlVFfQwHVUcH8mNDIYw+AxYvxwRiMa+u7A1SectvohPQ1mJ2DDDPIEdKRZ7n
+	Ct6xnkjnB9oUE8tLzFvJsIYFEhqRwKy/HYNnmxkUWwEBnXfg/3B1KQs4Tg9V0Svux5GSC/vV7Pvjo
+	hcEDqqZpQ2Oos4VMYQBkdwYZtia9ZB5kRXXYd2lM98LComD3YtF7Rexctane9J+61m9nIjuBVejtD
+	wtxsaxXKVK++zefu8xHpeYjs7f4pyUnBdwCfdCP39Wti7yiBKZahg+6gOo8fp8Iki/QzG3/5kYK+5
+	ZrFN/CtMpgCGv/inqdxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMdhQ-0006fA-30; Mon, 21 Oct 2019 19:50:40 +0000
+	id 1iMdh9-0006Q8-UK; Mon, 21 Oct 2019 19:50:23 +0000
 Received: from mx0b-00082601.pphosted.com ([67.231.153.30]
  helo=mx0a-00082601.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMdgX-0004s3-Nf
- for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 19:49:48 +0000
+ id 1iMdgO-0004k4-Rp
+ for linux-arm-kernel@lists.infradead.org; Mon, 21 Oct 2019 19:49:38 +0000
 Received: from pps.filterd (m0089730.ppops.net [127.0.0.1])
- by m0089730.ppops.net (8.16.0.42/8.16.0.42) with SMTP id x9LJnMUL020288
- for <linux-arm-kernel@lists.infradead.org>; Mon, 21 Oct 2019 12:49:44 -0700
+ by m0089730.ppops.net (8.16.0.42/8.16.0.42) with SMTP id x9LJnMDw020287
+ for <linux-arm-kernel@lists.infradead.org>; Mon, 21 Oct 2019 12:49:36 -0700
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fb.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
- content-type; s=facebook; bh=Ratwrh803U9NlsleGXlBzy0pKrtxbkdE3srfUyIxsZA=;
- b=lAenIlR8ss2MRtYvtGJ28PV0+5w8AwY6/Im5bZXZ7JDvWFJ00tBYsBsRAzAxR/ToepGj
- WMtyEggTn5Suuak8gIseW5G98SrtG0Y7yAJenUP8Dt4umuqPDybtqlvX7ytbgnKtAHhP
- YdPqldN0mt23o5f4XUQXOWotzQ93LUSm8ZY= 
+ content-type; s=facebook; bh=bZZBgfxZmiuMICrLj5dloSW3YcH6/5xKkjiVrQLsRvw=;
+ b=giqPn43uzjIo2JcLIYm0TXYKEzsBuT6JQRHjm19+GqAcOCwiTrmEnZVvy0a1Sc4eE3Xf
+ ZnV76uyRmz2EFcq0t2aEnPtVNXAoCVL5MUtwAX0068Mp3oyKtd1ukeOO57r9vsqZc4ga
+ CV/WLRyb+cX/GNgAbMTUuMbg9nWTjDTdQzM= 
 Received: from mail.thefacebook.com (mailout.thefacebook.com [199.201.64.23])
- by m0089730.ppops.net with ESMTP id 2vqwyygnhc-20
+ by m0089730.ppops.net with ESMTP id 2vqwyygngb-13
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Mon, 21 Oct 2019 12:49:44 -0700
-Received: from 2401:db00:2120:80d4:face:0:39:0 (2620:10d:c081:10::13) by
- mail.thefacebook.com (2620:10d:c081:35::126) with Microsoft SMTP Server
+ for <linux-arm-kernel@lists.infradead.org>; Mon, 21 Oct 2019 12:49:35 -0700
+Received: from 2401:db00:30:600c:face:0:1f:0 (2620:10d:c081:10::13) by
+ mail.thefacebook.com (2620:10d:c081:35::130) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA) id 15.1.1713.5;
- Mon, 21 Oct 2019 12:49:22 -0700
+ Mon, 21 Oct 2019 12:49:20 -0700
 Received: by devvm1794.vll1.facebook.com (Postfix, from userid 150176)
- id F1F1C64C3CB4; Mon, 21 Oct 2019 12:49:19 -0700 (PDT)
+ id 01AF564C3CB6; Mon, 21 Oct 2019 12:49:20 -0700 (PDT)
 Smtp-Origin-Hostprefix: devvm
 From: Tao Ren <taoren@fb.com>
 Smtp-Origin-Hostname: devvm1794.vll1.facebook.com
@@ -53,10 +53,10 @@ To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  <linux-aspeed@lists.ozlabs.org>, <linux-kernel@vger.kernel.org>,
  <openbmc@lists.ozlabs.org>
 Smtp-Origin-Cluster: vll1c12
-Subject: [PATCH 1/4] ARM: dts: aspeed: add dtsi for Facebook AST2500 Network
- BMCs
-Date: Mon, 21 Oct 2019 12:48:17 -0700
-Message-ID: <20191021194820.293556-2-taoren@fb.com>
+Subject: [PATCH 2/4] ARM: dts: aspeed: cmm: include dtsi for common network
+ BMC devices
+Date: Mon, 21 Oct 2019 12:48:18 -0700
+Message-ID: <20191021194820.293556-3-taoren@fb.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191021194820.293556-1-taoren@fb.com>
 References: <20191021194820.293556-1-taoren@fb.com>
@@ -72,8 +72,8 @@ X-Proofpoint-Spam-Details: rule=fb_default_notspam policy=fb_default score=0
  engine=8.12.0-1908290000 definitions=main-1910210190
 X-FB-Internal: deliver
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_124945_933586_7715F281 
-X-CRM114-Status: GOOD (  16.20  )
+X-CRM114-CacheID: sfid-20191021_124937_040290_A35797B3 
+X-CRM114-Status: GOOD (  17.55  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -108,117 +108,127 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Introduce "facebook-netbmc-ast2500-common.dtsi" which is included by all
-Facebook AST2500 Network BMC platforms. The major purpose is to minimize
-duplicated device entries cross Facebook Network BMC dts files.
+The patch simplifies CMM device tree by including dtsi to define devices
+which are common to Facebook AST2500 Network BMC platforms.
+
+Below is the summary of changes comparing with previous dts version:
+  - enabling the second firmware flash.
+  - enabling the emmc device in slot #0.
 
 Signed-off-by: Tao Ren <taoren@fb.com>
 ---
- .../dts/facebook-netbmc-ast2500-common.dtsi   | 96 +++++++++++++++++++
- 1 file changed, 96 insertions(+)
- create mode 100644 arch/arm/boot/dts/facebook-netbmc-ast2500-common.dtsi
+ arch/arm/boot/dts/aspeed-bmc-facebook-cmm.dts | 66 +++++--------------
+ 1 file changed, 16 insertions(+), 50 deletions(-)
 
-diff --git a/arch/arm/boot/dts/facebook-netbmc-ast2500-common.dtsi b/arch/arm/boot/dts/facebook-netbmc-ast2500-common.dtsi
-new file mode 100644
-index 000000000000..7a395ba56512
---- /dev/null
-+++ b/arch/arm/boot/dts/facebook-netbmc-ast2500-common.dtsi
-@@ -0,0 +1,96 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+// Copyright (c) 2019 Facebook Inc.
+diff --git a/arch/arm/boot/dts/aspeed-bmc-facebook-cmm.dts b/arch/arm/boot/dts/aspeed-bmc-facebook-cmm.dts
+index d519d307aa2a..0a031132594a 100644
+--- a/arch/arm/boot/dts/aspeed-bmc-facebook-cmm.dts
++++ b/arch/arm/boot/dts/aspeed-bmc-facebook-cmm.dts
+@@ -2,7 +2,7 @@
+ // Copyright (c) 2018 Facebook Inc.
+ /dts-v1/;
+ 
+-#include "aspeed-g5.dtsi"
++#include "facebook-netbmc-ast2500-common.dtsi"
+ 
+ / {
+ 	model = "Facebook Backpack CMM BMC";
+@@ -53,10 +53,6 @@
+ 		bootargs = "console=ttyS1,9600n8 root=/dev/ram rw earlyprintk";
+ 	};
+ 
+-	memory@80000000 {
+-		reg = <0x80000000 0x20000000>;
+-	};
+-
+ 	ast-adc-hwmon {
+ 		compatible = "iio-hwmon";
+ 		io-channels = <&adc 0>, <&adc 1>, <&adc 2>, <&adc 3>,
+@@ -64,39 +60,7 @@
+ 	};
+ };
+ 
+-&pinctrl {
+-	aspeed,external-nodes = <&gfx &lhc>;
+-};
+-
+-/*
+- * Update reset type to "system" (full chip) to fix warm reboot hang issue
+- * when reset type is set to default ("soc", gated by reset mask registers).
+- */
+-&wdt1 {
+-	status = "okay";
+-	aspeed,reset-type = "system";
+-};
+-
+-/*
+- * wdt2 is not used by Backpack CMM.
+- */
+-&wdt2 {
+-	status = "disabled";
+-};
+-
+-&fmc {
+-	status = "okay";
+-	flash@0 {
+-		status = "okay";
+-		m25p,fast-read;
+-		label = "bmc";
+-#include "facebook-bmc-flash-layout.dtsi"
+-	};
+-};
+-
+ &uart1 {
+-	status = "okay";
+-	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_txd1_default
+ 		     &pinctrl_rxd1_default
+ 		     &pinctrl_ncts1_default
+@@ -107,8 +71,6 @@
+ };
+ 
+ &uart3 {
+-	status = "okay";
+-	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_txd3_default
+ 		     &pinctrl_rxd3_default
+ 		     &pinctrl_ncts3_default
+@@ -123,17 +85,6 @@
+ 		     &pinctrl_rxd4_default>;
+ };
+ 
+-&uart5 {
+-	status = "okay";
+-};
+-
+-&mac1 {
+-	status = "okay";
+-	no-hw-checksum;
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&pinctrl_rgmii2_default &pinctrl_mdio2_default>;
+-};
+-
+ /*
+  * I2C bus reserved for communication with COM-E.
+  */
+@@ -380,3 +331,18 @@
+ &ehci1 {
+ 	status = "okay";
+ };
 +
-+#include "aspeed-g5.dtsi"
-+
-+/ {
-+	memory@80000000 {
-+		reg = <0x80000000 0x40000000>;
-+	};
-+};
-+
-+/*
-+ * Update reset type to "system" (full chip) to fix warm reboot hang issue
-+ * when reset type is set to default ("soc", gated by reset mask registers).
-+ */
-+&wdt1 {
-+	status = "okay";
-+	aspeed,reset-type = "system";
-+};
-+
-+&wdt2 {
++&vhub {
 +	status = "disabled";
 +};
 +
-+&uart1 {
++&sdhci0 {
 +	status = "okay";
++
 +	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_txd1_default
-+		     &pinctrl_rxd1_default>;
-+};
-+
-+&uart3 {
-+	status = "okay";
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_txd3_default
-+		     &pinctrl_rxd3_default>;
-+};
-+
-+&uart5 {
-+	status = "okay";
-+};
-+
-+&fmc {
-+	status = "okay";
-+
-+	fmc_flash0: flash@0 {
-+		status = "okay";
-+		m25p,fast-read;
-+		label = "spi0.0";
-+
-+#include "facebook-bmc-flash-layout.dtsi"
-+	};
-+
-+	fmc_flash1: flash@1 {
-+		status = "okay";
-+		m25p,fast-read;
-+		label = "spi0.1";
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			flash1@0 {
-+				reg = <0x0 0x2000000>;
-+				label = "flash1";
-+			};
-+		};
-+	};
-+};
-+
-+&mac1 {
-+	status = "okay";
-+	no-hw-checksum;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_rgmii2_default &pinctrl_mdio2_default>;
-+};
-+
-+&rtc {
-+	status = "okay";
-+};
-+
-+&vhub {
-+	status = "okay";
-+};
-+
-+&sdmmc {
-+	status = "okay";
++	pinctrl-0 = <&pinctrl_sd1_default>;
 +};
 +
 +&sdhci1 {
-+	status = "okay";
-+
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_sd2_default>;
++	status = "disabled";
 +};
 -- 
 2.17.1
