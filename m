@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 602FBDF992
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 02:36:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06358DF99D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 02:36:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=CRJKjvLqFGMtH1YkL2TwO27gsR/UBdCECbJRqARSpGw=; b=O41D/9bUGQAzwL
-	l0T0eMA47hmi7RsYx40RfoA8HF/7U1BKv5H1i3echqLL03S2GWVcPC6MhT3SdPQ1FnmaTHtwF7QM7
-	mC1884jrhFuD/0q+nSehn6U1ljVLQCCmMqi2YvRT1PBqc0beMMjRuFwkHA+ToEWw2+IJGAdCLr1hp
-	0Y6OikoUMIu0GgMgPeQ4N7Yp57frTqbWLiZwP8AvNFwDstqLuWEPXxpbWEIcrNzKfHNOFuBcHNee8
-	Q5yFS9K+t6d82PWvgnyRxJAQHVz07i98SoBCvzRlsBLPD106WOH0ndQaMVL1BRASyrFZxGbdK+bYW
-	zO0LZTMVbwExXV1GGuEw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SJwTJddlOXW+d/FyU5zCr9LLL1AldrsdyaKmmxXwkdk=; b=WSmmLjvZW3b2oA
+	xTOsBsEk+TL/rBtT3FRbU6F3AG6cPgvYGO5pPGW0uG/RuWtX4Mfwbo2MHi9aTmcvSUmhs72BOPw5H
+	pv1EaPzMNvkXd7eNbRojIDzbyPoTzgk8AUdce4vX6Pq33nghf/3P5K8P4UEQ7ABcuXn16SvIUl7/W
+	5kJbyxIozcCZ/N3iTkRf5y2bvslPgatRHu4exldeLiWmUlgNL8uL8MfcHPaonx5PAR4NUbg5yZ4mI
+	PsZyxGvwHt27Nf06qb41luNgU192Lgv0Z8gI3hMTJquUlLmk1IGVNvzItpY2P7B7mp9DfSeaSQ/sX
+	wCgrgISh49ter/+nvxnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMi9V-0007Lf-LI; Tue, 22 Oct 2019 00:35:57 +0000
+	id 1iMi9q-0007ZE-DU; Tue, 22 Oct 2019 00:36:18 +0000
 Received: from mga05.intel.com ([192.55.52.43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMi9E-0007Ja-Sl
+ id 1iMi9F-0007Ji-41
  for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 00:35:42 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
@@ -29,7 +29,7 @@ Received: from orsmga004.jf.intel.com ([10.7.209.38])
  by fmsmga105.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
  21 Oct 2019 17:35:39 -0700
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.67,325,1566889200"; d="scan'208";a="348897196"
+X-IronPort-AV: E=Sophos;i="5.67,325,1566889200"; d="scan'208";a="348897198"
 Received: from sjchrist-coffee.jf.intel.com ([10.54.74.41])
  by orsmga004.jf.intel.com with ESMTP; 21 Oct 2019 17:35:38 -0700
 From: Sean Christopherson <sean.j.christopherson@intel.com>
@@ -38,14 +38,16 @@ To: James Hogan <jhogan@kernel.org>, Paul Mackerras <paulus@ozlabs.org>,
  Janosch Frank <frankja@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>,
  Marc Zyngier <maz@kernel.org>
-Subject: [PATCH v2 00/15] KVM: Dynamically size memslot arrays
-Date: Mon, 21 Oct 2019 17:35:22 -0700
-Message-Id: <20191022003537.13013-1-sean.j.christopherson@intel.com>
+Subject: [PATCH v2 01/15] KVM: Reinstall old memslots if arch preparation fails
+Date: Mon, 21 Oct 2019 17:35:23 -0700
+Message-Id: <20191022003537.13013-2-sean.j.christopherson@intel.com>
 X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20191022003537.13013-1-sean.j.christopherson@intel.com>
+References: <20191022003537.13013-1-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_173540_939086_4A74AB43 
-X-CRM114-Status: GOOD (  10.94  )
+X-CRM114-CacheID: sfid-20191021_173541_168955_1C38C9CE 
+X-CRM114-Status: GOOD (  12.94  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -81,70 +83,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The end goal of this series is to dynamically size the memslot array so
-that KVM allocates memory based on the number of memslots in use, as
-opposed to unconditionally allocating memory for the maximum number of
-memslots.  On x86, each memslot consumes 88 bytes, and so with 2 address
-spaces of 512 memslots, each VM consumes ~90k bytes for the memslots.
-E.g. given a VM that uses a total of 30 memslots, dynamic sizing reduces
-the memory footprint from 90k to ~2.6k bytes.
+Reinstall the old memslots if preparing the new memory region fails
+after invalidating a to-be-{re}moved memslot.
 
-The changes required to support dynamic sizing are relatively small,
-e.g. are essentially contained in patches 12/13 and 13/13.  Patches 1-11
-clean up the memslot code, which has gotten quite crusy, especially
-__kvm_set_memory_region().  The clean up is likely not strictly necessary
-to switch to dynamic sizing, but I didn't have a remotely reasonable
-level of confidence in the correctness of the dynamic sizing without first
-doing the clean up.
+Remove the superfluous 'old_memslots' variable so that it's somewhat
+clear that the error handling path needs to free the unused memslots,
+not simply the 'old' memslots.
 
-Testing, especially non-x86 platforms, would be greatly appreciated.  The
-non-x86 changes are for all intents and purposes untested, e.g. I compile
-tested pieces of the code by copying them into x86, but that's it.  In
-theory, the vast majority of the functional changes are arch agnostic, in
-theory...
+Fixes: bc6678a33d9b9 ("KVM: introduce kvm->srcu and convert kvm_set_memory_region to SRCU update")
+Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
+---
+ virt/kvm/kvm_main.c | 23 ++++++++++++-----------
+ 1 file changed, 12 insertions(+), 11 deletions(-)
 
-v2:
-  - Split "Drop kvm_arch_create_memslot()" into three patches to move
-    minor functional changes to standalone patches [Janosch].
-  - Rebase to latest kvm/queue (f0574a1cea5b, "KVM: x86: fix ...")
-  - Collect an Acked-by and a Reviewed-by
-
-Sean Christopherson (15):
-  KVM: Reinstall old memslots if arch preparation fails
-  KVM: Don't free new memslot if allocation of said memslot fails
-  KVM: PPC: Move memslot memory allocation into prepare_memory_region()
-  KVM: x86: Allocate memslot resources during prepare_memory_region()
-  KVM: Drop kvm_arch_create_memslot()
-  KVM: Explicitly free allocated-but-unused dirty bitmap
-  KVM: Refactor error handling for setting memory region
-  KVM: Move setting of memslot into helper routine
-  KVM: Move memslot deletion to helper function
-  KVM: Simplify kvm_free_memslot() and all its descendents
-  KVM: Clean up local variable usage in __kvm_set_memory_region()
-  KVM: Provide common implementation for generic dirty log functions
-  KVM: Ensure validity of memslot with respect to kvm_get_dirty_log()
-  KVM: Terminate memslot walks via used_slots
-  KVM: Dynamically size memslot array based on number of used slots
-
- arch/mips/include/asm/kvm_host.h      |   2 +-
- arch/mips/kvm/mips.c                  |  68 +---
- arch/powerpc/include/asm/kvm_ppc.h    |  14 +-
- arch/powerpc/kvm/book3s.c             |  22 +-
- arch/powerpc/kvm/book3s_hv.c          |  36 +-
- arch/powerpc/kvm/book3s_pr.c          |  20 +-
- arch/powerpc/kvm/booke.c              |  17 +-
- arch/powerpc/kvm/powerpc.c            |  13 +-
- arch/s390/include/asm/kvm_host.h      |   2 +-
- arch/s390/kvm/kvm-s390.c              |  21 +-
- arch/x86/include/asm/kvm_page_track.h |   3 +-
- arch/x86/kvm/page_track.c             |  15 +-
- arch/x86/kvm/x86.c                    | 100 ++---
- include/linux/kvm_host.h              |  48 +--
- virt/kvm/arm/arm.c                    |  47 +--
- virt/kvm/arm/mmu.c                    |  18 +-
- virt/kvm/kvm_main.c                   | 546 ++++++++++++++++----------
- 17 files changed, 467 insertions(+), 525 deletions(-)
-
+diff --git a/virt/kvm/kvm_main.c b/virt/kvm/kvm_main.c
+index 67ef3f2e19e8..9afd706dc038 100644
+--- a/virt/kvm/kvm_main.c
++++ b/virt/kvm/kvm_main.c
+@@ -924,7 +924,7 @@ int __kvm_set_memory_region(struct kvm *kvm,
+ 	unsigned long npages;
+ 	struct kvm_memory_slot *slot;
+ 	struct kvm_memory_slot old, new;
+-	struct kvm_memslots *slots = NULL, *old_memslots;
++	struct kvm_memslots *slots;
+ 	int as_id, id;
+ 	enum kvm_mr_change change;
+ 
+@@ -1032,7 +1032,13 @@ int __kvm_set_memory_region(struct kvm *kvm,
+ 		slot = id_to_memslot(slots, id);
+ 		slot->flags |= KVM_MEMSLOT_INVALID;
+ 
+-		old_memslots = install_new_memslots(kvm, as_id, slots);
++		/*
++		 * We can re-use the old memslots, the only difference from the
++		 * newly installed memslots is the invalid flag, which will get
++		 * dropped by update_memslots anyway.  We'll also revert to the
++		 * old memslots if preparing the new memory region fails.
++		 */
++		slots = install_new_memslots(kvm, as_id, slots);
+ 
+ 		/* From this point no new shadow pages pointing to a deleted,
+ 		 * or moved, memslot will be created.
+@@ -1042,13 +1048,6 @@ int __kvm_set_memory_region(struct kvm *kvm,
+ 		 *	- kvm_is_visible_gfn (mmu_check_roots)
+ 		 */
+ 		kvm_arch_flush_shadow_memslot(kvm, slot);
+-
+-		/*
+-		 * We can re-use the old_memslots from above, the only difference
+-		 * from the currently installed memslots is the invalid flag.  This
+-		 * will get overwritten by update_memslots anyway.
+-		 */
+-		slots = old_memslots;
+ 	}
+ 
+ 	r = kvm_arch_prepare_memory_region(kvm, &new, mem, change);
+@@ -1062,15 +1061,17 @@ int __kvm_set_memory_region(struct kvm *kvm,
+ 	}
+ 
+ 	update_memslots(slots, &new, change);
+-	old_memslots = install_new_memslots(kvm, as_id, slots);
++	slots = install_new_memslots(kvm, as_id, slots);
+ 
+ 	kvm_arch_commit_memory_region(kvm, mem, &old, &new, change);
+ 
+ 	kvm_free_memslot(kvm, &old, &new);
+-	kvfree(old_memslots);
++	kvfree(slots);
+ 	return 0;
+ 
+ out_slots:
++	if (change == KVM_MR_DELETE || change == KVM_MR_MOVE)
++		slots = install_new_memslots(kvm, as_id, slots);
+ 	kvfree(slots);
+ out_free:
+ 	kvm_free_memslot(kvm, &new, &old);
 -- 
 2.22.0
 
