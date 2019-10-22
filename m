@@ -2,85 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB40CE03A2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 14:13:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3D79E03C7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 14:24:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XCAMBG453V0KGFV2x7xTMVxGjrjOOsAREQYQORu93Bc=; b=aNp+pefSIGAFFW
-	a5ybzbp9cRzn/oHXPWaGbLHQGNjNN9mJ04fmdJhvsNt5ZQUQzwZpGvJ1Cp/DxN6UYf48020vKSW1t
-	N9T0XD/i/xB6NJdtkUNZLV7MshG7TrK/aZJP2USjMSOUsYmtdr70xycUOk1244xXpAVUcgQGpJ6D0
-	SMs6ZC5wucihmMRJD7+ukfEVXd5CPmjgBajk0v/bQ6GRQR4Q44WQdK28ygq0OMJr/5E8QF5eO4lH6
-	Kk/nacyWDf2SUo98K3P6/usdX5wkzGdYMsfKnP6JEgTHSSPcli2u2W7tZZzzfh5He9FDb33gb1iNQ
-	UN/P8LnWC/5x/WO/x1Ug==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=6ozwQW0Oniw91+4av4sOipnK1c2gz6Sv+fPDiwapWOQ=; b=B3mDoOsVKbQ197gA7tZaaqwtZ
+	ZBuW6neq9pWzDb9L/z83PmKnIHqmF/o3M97V7X5k2RwZaO2JL2lxqIK38pTF5ssk+NDrzVIqyjRuh
+	FV67za2Fsvug9jVNUNca42bT+8eVvwY/unpPJe13Vj3ZBmkjGpEEFJnHG2daj2cuDbBdSLCbg/qaH
+	579rlcVSeIZ9OmsKOHPBjpLR3elOijDBMrlNl8rRLZPJoSOzbJfOlsYSJLtg7OdAEU8CCvm2S40SQ
+	2rVYgLjShkOlr9rtaU0wdm4jUP1Zy1tcBus2VTqMRTjF+iLxG4Veei2a5PrjbAqFTIBVPbO2tLYVY
+	AnEDKXwEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMt2P-0005eK-N1; Tue, 22 Oct 2019 12:13:21 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1iMtDD-00017B-Jo; Tue, 22 Oct 2019 12:24:31 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMt2H-0005de-1W
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 12:13:14 +0000
-Received: by mail-io1-xd43.google.com with SMTP id c25so20031077iot.12
+ id 1iMtD4-00011h-WB
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 12:24:24 +0000
+Received: by mail-wm1-x342.google.com with SMTP id q70so9850027wme.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 22 Oct 2019 05:13:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=7VUSL4glh9tdmGltrbXAxLhst/cC64H17TVs7Wd2ISI=;
- b=KNj120IAsn18ftYPNYtGAMO522hDC71q+lnhMtWOYXoXlDsQo9QgcVuidnJk/ml7tr
- UbqrQwC1U8wazJ7pHfzxOF7LsixYPLXxRE9/JTcNA33V/m2jTWO+KAELTbrPE8q0D6HW
- S9+0vi0V/9gTXRujRZeQ8kuvFFrKCsEWVB5YHsGdr//QG36RtI8w7Ivuc3u3oSfL7y0U
- 07cTguxrdcpKQNMzG+oFAzr+Ziun2e0ahAEXELyZvsQxszVck3Pxet4kl1tSkrZdOCHp
- z0Jy+6K1Gkapib2IaHiK6EzZNdk0P8i9rV92PT0J1kYTE863bAcw/RHuDUMxThwvDmiy
- imCQ==
+ Tue, 22 Oct 2019 05:24:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=Ut7DiejZhR1eCG20yMrwS8a1hqYS2ddBi/U75ecWkFY=;
+ b=jid6ntUK0esQpG508NqfQT8zlE0uB1es+ezydvxrncS5YL4nlvOrDTIZAThJNt1JBz
+ UrQKQDEA9sdYPOvuhFTDlPdmpkopnU/enaASQsHEBQaqZrYTdNIQqGCDfElQymPwO8Ll
+ s+thwC7xS0XKxFqUyXqcA73LqBGFRnP99zXtj2Vt+p5Zrbnmv+JAR3tbjblJ1nUHlgYu
+ b9YpZJ97WC7Ig6r49FwggaBC2uFCe2oUjfQFjPdo0DFpaOBtfs5rwa92IUbItW9vWfPg
+ z9+rRt5ubyBiRN150rIQRhZOKeDwPfYRcLpQVmo+SWKDJzrsxhT4se8JkiP5gzWwVAkg
+ J93w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=7VUSL4glh9tdmGltrbXAxLhst/cC64H17TVs7Wd2ISI=;
- b=buOPLcUGDgWi+BgeG/wj7Vp4fqIgZ3CSsab7A3r6gFu98W0ZYdg93erENS2v/YDPS/
- iFCMGwlo3aSCkHEWzgDv6DCW/Rl/MdLp2iUBrqHrMndjNUbyirWxXiPBV5V5HpFWvfsi
- bi9wsOoGYrZ5/zbC8UpSZ5iWWeFpA5KSBAM2ldSf2IiEqZ/4N41oPGgVr1lZ54To4HwK
- f072M6O5IDV7Vg09djoTitWNLD+Rh6bgLkv+dTdY+3lkres5opjriNKVrSsBSoZk27Dg
- 1q1sGBJ7S1AidNdP/0fN3cOdyQQPTm7aSPLo3SiAPzUJb87f+l/8jUN/tHShV2C+W3Ni
- 1PBA==
-X-Gm-Message-State: APjAAAXPJ0DA06qjusyiPWDkcbAOt5I1rDwxyx5/KlEJM1/ri6TrXDil
- BP6FIXmpC6kcKUQ3vG0kpwqdCTWrSQ3IBcE3Blk=
-X-Google-Smtp-Source: APXvYqz9BuIKcbppibeFWeJbwe4oRUtRoe+yhYAEZFYke6YfzSl3wycLo6ueyYsgQWQ8Is+1lpwo08JP+zHbKn3n89w=
-X-Received: by 2002:a02:92c9:: with SMTP id c9mr3507699jah.0.1571746391225;
- Tue, 22 Oct 2019 05:13:11 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=Ut7DiejZhR1eCG20yMrwS8a1hqYS2ddBi/U75ecWkFY=;
+ b=ohKMB0l/PvFlKzu3mCPAbab0qsNXOQN1yo/nhTo20JK6PtpZgWLDCslOCosS5UXzTd
+ rFwItrp7Eq24bn5Mq5awmPORRPaoy9gQVnEObuU1D80iMRlflIpSzgs1sX7niGWmKpf/
+ 5qysxN6H8S4wlgt6Oq3LPLDOq2q/SpVhQgWXPLASjPvx9Y2kKjTG9EcO88nXiQcCGCRM
+ Z8wAywYareJPQWhJwBxwU7zCFCe3NhoFKuGfuPkRzRvNn+xeFo2qVGBxRvfrm6Wbl4NE
+ Z/FadyGnzzbmmLsmMLrBbOvR46s9ZtSh77aLKQv9doUrWjsum1pdrGW6PheO2ozL920k
+ 33KQ==
+X-Gm-Message-State: APjAAAVVyhZ7kJSa4ukXSK6x0tknbtD0YRtNln337j71VCgliBGn3Hjl
+ 2cFEWnygMgOyxPWmY97Wm+MHcQ==
+X-Google-Smtp-Source: APXvYqwgjPDPNW7a1xJ2Rc6OO4jAurB2ZpMNxcJUVeFXsu+xl+Or1DkHLx+C8XVRN8u73S9NUcWQwg==
+X-Received: by 2002:a7b:cb54:: with SMTP id v20mr2708736wmj.91.1571747060898; 
+ Tue, 22 Oct 2019 05:24:20 -0700 (PDT)
+Received: from [192.168.86.34]
+ (cpc89974-aztw32-2-0-cust43.18-1.cable.virginm.net. [86.30.250.44])
+ by smtp.googlemail.com with ESMTPSA id u26sm19101660wrd.87.2019.10.22.05.24.19
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 22 Oct 2019 05:24:19 -0700 (PDT)
+Subject: Re: [PATCH 1/2] dt-bindings: nvmem: add binding for Rockchip OTP
+ controller
+To: Heiko Stuebner <heiko@sntech.de>
+References: <20190925184957.14338-1-heiko@sntech.de>
+From: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
+Message-ID: <3b5f4018-82b1-946d-d81d-252eb872d5d1@linaro.org>
+Date: Tue, 22 Oct 2019 13:24:18 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <20190828150037.2640-1-aford173@gmail.com>
- <20190905230443.GA52127@atomide.com>
- <CAHCN7xL0fbr=Sv+b=0AuGB1PPhAAFdAFLEd_iBM+ZMTkUw5sHQ@mail.gmail.com>
- <CAHCN7xL-Gfxe0qF5w7BUsHnyhcNNpmCnchdKErnmiqggXfsLWw@mail.gmail.com>
- <20190909134033.s26eiurpat3iekse@pali> <20190909163543.GQ52127@atomide.com>
-In-Reply-To: <20190909163543.GQ52127@atomide.com>
-From: Adam Ford <aford173@gmail.com>
-Date: Tue, 22 Oct 2019 07:13:00 -0500
-Message-ID: <CAHCN7xJjMNOLT5oPn8CArApM5b2ksPon8eALq=gUi0ZqoLjGHQ@mail.gmail.com>
-Subject: Re: [RFC] ARM: omap3: Enable HWMODS for HW Random Number Generator
-To: Tony Lindgren <tony@atomide.com>
+In-Reply-To: <20190925184957.14338-1-heiko@sntech.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_051313_109667_AAA59613 
-X-CRM114-Status: GOOD (  18.09  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191022_052423_365464_92E51E81 
+X-CRM114-Status: GOOD (  19.82  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (aford173[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (aford173[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -99,46 +101,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Paul Walmsley <paul@pwsan.com>,
- Aaro Koskinen <aaro.koskinen@iki.fi>, Russell King <linux@armlinux.org.uk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Tero Kristo <t-kristo@ti.com>, Rob Herring <robh+dt@kernel.org>,
- =?UTF-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
- =?UTF-8?Q?Pali_Roh=C3=A1r?= <pali.rohar@gmail.com>,
- Linux-OMAP <linux-omap@vger.kernel.org>, Adam Ford <adam.ford@logicpd.com>,
- arm-soc <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org,
+ christoph.muellner@theobroma-systems.com
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gTW9uLCBTZXAgOSwgMjAxOSBhdCAxMTozNSBBTSBUb255IExpbmRncmVuIDx0b255QGF0b21p
-ZGUuY29tPiB3cm90ZToKPgo+ICogUGFsaSBSb2jDoXIgPHBhbGkucm9oYXJAZ21haWwuY29tPiBb
-MTkwOTA5IDEzOjQxXToKPiA+IE9uIE1vbmRheSAwOSBTZXB0ZW1iZXIgMjAxOSAwODozNzowOSBB
-ZGFtIEZvcmQgd3JvdGU6Cj4gPiA+IEkgYXBwbGllZCB0aGlzIG9uIDUuMyBhbmQgaXQgaXMgd29y
-a2luZy4gIEkgYXNzdW1lIHRoZSBzYW1lIGlzIHRydWUgaW4gZm9yLW5leHQuCj4KPiBIbW0gSSBu
-b3RpY2VkIEkgc3RvcHBlZCBnZXR0aW5nIFJORyBkYXRhIGFmdGVyIHNldmVyYWwgcm1tb2QgbW9k
-cHJvYmUKPiBjeWNsZXMsIG9yIHNldmVyYWwgaGQgL2Rldi9yYW5kb20gcmVhZHMuIEFueWJvZHkg
-ZWxzZSBzZWVpbmcgdGhhdD8KPgo+ID4gPiBEbyB5b3Ugd2FudCB0byBzdWJtaXQgYSBmb3JtYWwg
-cGF0Y2g/ICBJICBjYW4gbWFyayBpdCBhcyAndGVzdGVkLWJ5Jwo+ID4gPiBUaGlzIHJlYWxseSBo
-ZWxwcyBzcGVlZCB1cCB0aGUgc3RhcnR1cCBzZXF1ZW5jZSBvbiBib2FyZHMgd2l0aCBzc2hkCj4g
-PiA+IGJlY2F1c2UgaXQgZGVsYXlzIGZvciBuZWFybHkgODAgc2Vjb25kcyB3YWl0aW5nIGZvciBl
-bnRyb3B5IHdpdGhvdXQKPiA+ID4gdGhlIGh3cm5nLgo+ID4KPiA+IEhpISBXaGVuIGFwcGx5aW5n
-IGEgcGF0Y2gsIGNvdWxkIHlvdSBwbGVhc2UgZGlzYWJsZSB0aGlzIHJuZyBmb3IgbjkwMD8KPiA+
-Cj4gPiBJbiBvbWFwMy1uOTAwLmR0cyBmb3Igcm5nIHNob3VsZCBiZSBzdGF0dXMgPSAiZGlzYWJs
-ZWQiIChhcyBUb255IGFscmVhZHkKPiA+IHdyb3RlKSwgc2ltaWxhcmx5IGxpa2UgZm9yIGFlcy4K
-Pgo+IFllYWggSSdsbCBwb3N0IGEgcHJvcGVyIHBhdGNoIGFmdGVyIC1yYzEuCgpUb255LAoKSSBh
-bSBqdXN0IGZvbGxvd2luZyB1cCBvbiB0aGlzLiAgV2l0aG91dCB0aGUgSFdSTkcgdGhlcmUgYXJl
-IHNvbWUKdG9vbHMgYW5kIGRhZW1vbnMgbGlrZSBzc2hkIHdoaWNoIHdhaXQgYSBsb25nIHRpbWUg
-YXQgc3RhcnR1cC4gIFRoZQpwYXRjaCB5b3Ugc2VudCByZWFsbHkgaGVscHMgc3BlZWQgdXAgdGhl
-IHN0YXJ0dXAgdGltZSBpbiB0aGVzZSBjYXNlcy4KQXQgbGVhc3QgaW4gbXkgY2FzZSwgaXQgc2hh
-dmVzIDgwIHNlY29uZHMgb2ZmIGJ5IGVsaW1pbmF0aW5nIHRoZQpkZWxheXMuCgpEbyB5b3UgdGhp
-bmsgeW91J2xsIGhhdmUgdGltZSB0byBwb3N0IGEgbW9yZSBmb3JtYWwgcGF0Y2g/ICBJZiBub3Qs
-IEkKY2FuIGRvIGl0LiAgSSBqdXN0IGRvbid0IGtub3cgd2hpY2ggbWFpbGluZyBsaXN0IGlzIHRo
-ZSBtb3JlCmFwcHJvcHJpYXRlLiAgSSB3YXMgYWJsZSB0byB2ZXJpdHkgeW91ciBwYXRjaCBvbiBh
-IERNMzczMCBhbmQgT01BUDM1MzAKClRoYW5rcywKCmFkYW0KCgo+Cj4gUmVnYXJkcywKPgo+IFRv
-bnkKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
-LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
-bS1rZXJuZWwK
+
+
+On 25/09/2019 19:49, Heiko Stuebner wrote:
+> Newer Rockchip SoCs use a different IP for accessing special one-
+> time-programmable memory, so add a binding for these controllers.
+> 
+> Signed-off-by: Heiko Stuebner <heiko@sntech.de>
+
+Applied both, thanks,
+srini
+
+> ---
+>   .../bindings/nvmem/rockchip-otp.txt           | 25 +++++++++++++++++++
+>   1 file changed, 25 insertions(+)
+>   create mode 100644 Documentation/devicetree/bindings/nvmem/rockchip-otp.txt
+> 
+> diff --git a/Documentation/devicetree/bindings/nvmem/rockchip-otp.txt b/Documentation/devicetree/bindings/nvmem/rockchip-otp.txt
+> new file mode 100644
+> index 000000000000..40f649f7c2e5
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/nvmem/rockchip-otp.txt
+> @@ -0,0 +1,25 @@
+> +Rockchip internal OTP (One Time Programmable) memory device tree bindings
+> +
+> +Required properties:
+> +- compatible: Should be one of the following.
+> +  - "rockchip,px30-otp" - for PX30 SoCs.
+> +  - "rockchip,rk3308-otp" - for RK3308 SoCs.
+> +- reg: Should contain the registers location and size
+> +- clocks: Must contain an entry for each entry in clock-names.
+> +- clock-names: Should be "otp", "apb_pclk" and "phy".
+> +- resets: Must contain an entry for each entry in reset-names.
+> +  See ../../reset/reset.txt for details.
+> +- reset-names: Should be "phy".
+> +
+> +See nvmem.txt for more information.
+> +
+> +Example:
+> +	otp: otp@ff290000 {
+> +		compatible = "rockchip,px30-otp";
+> +		reg = <0x0 0xff290000 0x0 0x4000>;
+> +		#address-cells = <1>;
+> +		#size-cells = <1>;
+> +		clocks = <&cru SCLK_OTP_USR>, <&cru PCLK_OTP_NS>,
+> +			 <&cru PCLK_OTP_PHY>;
+> +		clock-names = "otp", "apb_pclk", "phy";
+> +	};
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
