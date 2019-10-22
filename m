@@ -2,58 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D8BAE0400
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 14:40:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA54AE040C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 14:42:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=MUTOXYaH1Xlxwg5/rAijjcVk+gEGOEn7r2HULJkoEKs=; b=LEa9iKovYsKY2GBcoT4mij46c
-	VwxJmA9OjH9nsjreWh5gSTVGVy2+ak1SkFbJHh44l2uXjxjCW9Eg8LMlJ5fKlhSTCaKoMYkKhFlkF
-	AnmkVB/OcCN0nOt0uOkv4BabaNxkPJlmDmmeWKPPQGNzDq2S4xr33pdSZeHfB9a4zGe2jWRe49FJG
-	h64yiqwABXvCozJPh77Ydt076XOe+8FgD4vTUmnzQA8slEGZ9elCeyCrQ5B3Z5yDDC89lKWBY1gGy
-	VWv6vjRqcY6ePOXxkeezYlgOMeUfLZ/VmD9QaPSJCU5j3+b9dl6eubS46ZtkVHdWvt4AWKvbO9YAB
-	BvwULBxCw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VyLWOv8FdBY0R9R29aSLUNIlVdgws57+M5KW2PboUKg=; b=SDCnXQny5JxgXd
+	gYLZBBqHTSB2dQ6HshMZgHB4WVhxpaKST6KBme18Knh5K+mIr/XsKMEB+xLqWDbXCmTDeCIrnYCbt
+	+p8XJ/JPyN51doPtjtV4ZkLfdY/1u+HXvlEpuRKLDdFz2ZBm1i6aZV+DMID5f6NHqm4tWzylMmtmB
+	jK7mN5E3XKU782GQbinw5L5NsyvPeDR9UZ++A35cWFsM1iwkiXAnGn9HjsBJg3pR3GxZcEJGD4VF3
+	dwr9nDAtm1UK+LNfnjF1mVNpOvR40TgzgktmAWbh5b0/s0UlFWXwZWj+RHdxYRODkCOvzm49BKkqV
+	AHbC+GlySunQIsGjEMdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMtSl-0008Ka-Fo; Tue, 22 Oct 2019 12:40:35 +0000
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
+	id 1iMtUc-0000D3-CA; Tue, 22 Oct 2019 12:42:30 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMtSZ-0008JS-JK
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 12:40:25 +0000
-X-Originating-IP: 86.250.200.211
-Received: from aptenodytes (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211])
- (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 1D666E0005;
- Tue, 22 Oct 2019 12:40:13 +0000 (UTC)
-Date: Tue, 22 Oct 2019 14:40:12 +0200
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: Mauro Carvalho Chehab <mchehab@kernel.org>
-Subject: Re: [PATCH v8 3/3] media: cedrus: Add HEVC/H.265 decoding support
-Message-ID: <20191022124012.GD2651@aptenodytes>
-References: <20190927143411.141526-1-paul.kocialkowski@bootlin.com>
- <20190927143411.141526-4-paul.kocialkowski@bootlin.com>
- <20191017095751.5a229051@coco.lan>
+ id 1iMtUS-0000CJ-4H; Tue, 22 Oct 2019 12:42:21 +0000
+Received: from mail-qt1-f170.google.com (mail-qt1-f170.google.com
+ [209.85.160.170])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 596D7222C2;
+ Tue, 22 Oct 2019 12:42:19 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571748139;
+ bh=EM5Hd+W+Xbp28U+Qeo5Lp8facOPIzhF6X+VJbmFVCFE=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=w/zX1/Tg4kUp8ZsraDAtrm6nTJHzeZRRAQyBnvhIoxWOH+70wbRChvFYoclQzrAyx
+ t3pce/y+Pd+Gz2n8TXgw3ysqSr9+h3cV75SfJ1htirf+jlAvk1lKLvT4TRTokOffrM
+ DrmpGkHFokoIFCfb2flUsdsxd6OuxQnF7je6KEvA=
+Received: by mail-qt1-f170.google.com with SMTP id o49so18655106qta.7;
+ Tue, 22 Oct 2019 05:42:19 -0700 (PDT)
+X-Gm-Message-State: APjAAAXHJacavpAp9SIAG7tv6EmSny2pQNrtzJTiJeG1G1XhMv9UbbCO
+ z8EmvUdyjHELetUkpsPxm/NIYp3t3QaJUGNmWA==
+X-Google-Smtp-Source: APXvYqxf6MiuQdiT7Kz6alYW3lLAiryxko/xUIhWeHE6cCzheQDLOsAyk0cPSV/+Iz0r0zq3dgDPP+/dTRg57i4n7U8=
+X-Received: by 2002:a0c:add6:: with SMTP id x22mr781981qvc.79.1571748138355;
+ Tue, 22 Oct 2019 05:42:18 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20191017095751.5a229051@coco.lan>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+References: <20191021214550.1461-1-robh@kernel.org>
+ <20191021214550.1461-3-robh@kernel.org>
+ <20191022111443.GE4756@pendragon.ideasonboard.com>
+In-Reply-To: <20191022111443.GE4756@pendragon.ideasonboard.com>
+From: Rob Herring <robh@kernel.org>
+Date: Tue, 22 Oct 2019 07:42:06 -0500
+X-Gmail-Original-Message-ID: <CAL_Jsq+kyLZ8LAVN-5UDJUy9nMLiAjN452HWg5WYAfLS7QD=Yw@mail.gmail.com>
+Message-ID: <CAL_Jsq+kyLZ8LAVN-5UDJUy9nMLiAjN452HWg5WYAfLS7QD=Yw@mail.gmail.com>
+Subject: Re: [PATCH 2/6] drm: Introduce DRM_MODE_DUMB_KERNEL_MAP flag
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_054023_912670_44AD2148 
-X-CRM114-Status: GOOD (  17.89  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191022_054220_205288_035841CC 
+X-CRM114-Status: GOOD (  26.83  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.196 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,123 +84,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nicolas Dufresne <nicolas@ndufresne.ca>,
- Jernej Skrabec <jernej.skrabec@siol.net>, Jonas Karlman <jonas@kwiboo.se>,
- Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@bootlin.com>,
- linux-kernel@vger.kernel.org, Hans Verkuil <hverkuil@xs4all.nl>,
- linux-sunxi@googlegroups.com, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Tomasz Figa <tfiga@chromium.org>, Ezequiel Garcia <ezequiel@collabora.com>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============5885614530206408582=="
+Cc: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
+ Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ Liviu Dudau <liviu.dudau@arm.com>, dri-devel <dri-devel@lists.freedesktop.org>,
+ Sandy Huang <hjc@rock-chips.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Yannick Fertre <yannick.fertre@st.com>, Kevin Hilman <khilman@baylibre.com>,
+ Xinwei Kong <kong.kongxinwei@hisilicon.com>,
+ Xinliang Liu <z.liuxinliang@hisilicon.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Chen-Yu Tsai <wens@csie.org>,
+ =?UTF-8?Q?Noralf_Tr=C3=B8nnes?= <noralf@tronnes.org>,
+ "James \(Qian\) Wang" <james.qian.wang@arm.com>, CK Hu <ck.hu@mediatek.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Chen Feng <puck.chen@hisilicon.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Sean Paul <sean@poorly.run>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Philippe Cornu <philippe.cornu@st.com>,
+ Vincent Abriou <vincent.abriou@st.com>,
+ Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Rongrong Zou <zourongrong@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============5885614530206408582==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="B4IIlcmfBL/1gGOG"
-Content-Disposition: inline
-
-
---B4IIlcmfBL/1gGOG
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi Mauro and thanks for the review,
-
-On Thu 17 Oct 19, 09:57, Mauro Carvalho Chehab wrote:
-> Em Fri, 27 Sep 2019 16:34:11 +0200
-> Paul Kocialkowski <paul.kocialkowski@bootlin.com> escreveu:
->=20
-> > This introduces support for HEVC/H.265 to the Cedrus VPU driver, with
-> > both uni-directional and bi-directional prediction modes supported.
-> >=20
-> > Field-coded (interlaced) pictures, custom quantization matrices and
-> > 10-bit output are not supported at this point.
-> >=20
-> > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+On Tue, Oct 22, 2019 at 6:14 AM Laurent Pinchart
+<laurent.pinchart@ideasonboard.com> wrote:
+>
+> Hi Rob,
+>
+> Thank you for the patch.
+>
+> On Mon, Oct 21, 2019 at 04:45:46PM -0500, Rob Herring wrote:
+> > Introduce a new flag, DRM_MODE_DUMB_KERNEL_MAP, for struct
+> > drm_mode_create_dumb. This flag is for internal kernel use to indicate
+> > if dumb buffer allocation needs a kernel mapping. This is needed only for
+> > CMA where creating a kernel mapping or not has to be decided at allocation
+> > time because creating a mapping on demand (with vmap()) is not guaranteed
+> > to work. Several drivers are using CMA, but not the CMA helpers because
+> > they distinguish between kernel and userspace allocations to create a
+> > kernel mapping or not.
+> >
+> > Update the callers of drm_mode_dumb_create() to set
+> > drm_mode_dumb_create.flags to appropriate defaults. Currently, flags can
+> > be set to anything by userspace, but is unused within the kernel. Let's
+> > force flags to zero (no kernel mapping) for userspace callers by default.
+> > For in kernel clients, set DRM_MODE_DUMB_KERNEL_MAP by default. Drivers
+> > can override this as needed.
+> >
+> > Cc: David Airlie <airlied@linux.ie>
+> > Cc: Daniel Vetter <daniel@ffwll.ch>
+> > Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
+> > Cc: Maxime Ripard <mripard@kernel.org>
+> > Cc: Sean Paul <sean@poorly.run>
+> > Signed-off-by: Rob Herring <robh@kernel.org>
 > > ---
->=20
-> ...
->=20
-> > +		unsigned int ctb_size_luma =3D
-> > +			1 << log2_max_luma_coding_block_size;
->=20
-> Shifts like this is a little scary. "1" constant is signed. So, if
-> log2_max_luma_coding_block_size is 31, the above logic has undefined
-> behavior. Different archs and C compilers may handle it on different
-> ways.
+> >  drivers/gpu/drm/drm_client.c       | 1 +
+> >  drivers/gpu/drm/drm_dumb_buffers.c | 5 ++++-
+> >  include/uapi/drm/drm_mode.h        | 2 ++
+> >  3 files changed, 7 insertions(+), 1 deletion(-)
+> >
+> > diff --git a/drivers/gpu/drm/drm_client.c b/drivers/gpu/drm/drm_client.c
+> > index d9a2e3695525..dbfc8061b392 100644
+> > --- a/drivers/gpu/drm/drm_client.c
+> > +++ b/drivers/gpu/drm/drm_client.c
+> > @@ -264,6 +264,7 @@ drm_client_buffer_create(struct drm_client_dev *client, u32 width, u32 height, u
+> >       dumb_args.width = width;
+> >       dumb_args.height = height;
+> >       dumb_args.bpp = info->cpp[0] * 8;
+> > +     dumb_args.flags = DRM_MODE_DUMB_KERNEL_MAP;
+> >       ret = drm_mode_create_dumb(dev, &dumb_args, client->file);
+> >       if (ret)
+> >               goto err_delete;
+> > diff --git a/drivers/gpu/drm/drm_dumb_buffers.c b/drivers/gpu/drm/drm_dumb_buffers.c
+> > index d18a740fe0f1..74a13f14c173 100644
+> > --- a/drivers/gpu/drm/drm_dumb_buffers.c
+> > +++ b/drivers/gpu/drm/drm_dumb_buffers.c
+> > @@ -97,7 +97,10 @@ int drm_mode_create_dumb(struct drm_device *dev,
+> >  int drm_mode_create_dumb_ioctl(struct drm_device *dev,
+> >                              void *data, struct drm_file *file_priv)
+> >  {
+> > -     return drm_mode_create_dumb(dev, data, file_priv);
+> > +     struct drm_mode_create_dumb *args = data;
+> > +
+> > +     args->flags = 0;
+>
+> I would prefer returning an error if flags is set to a non-zero value,
+> to catch userspace errors early, but I'm also worried it would break
+> existing userspace by uncovering existing bugs. Still, if we later add
+> flags that userspace can set, those existing bugs will be triggered, so
+> we'll have to deal with them anyway, and we could already give it a try.
 
-I wasn't aware that it was the case, thanks for bringing this to light!
-I'll make it 1UL then.
+I would like that too, but the comment just above this code tells me
+that's likely to break things:
 
-> > +#define VE_DEC_H265_LOW_ADDR_PRIMARY_CHROMA(a) \
-> > +	(((a) << 24) & GENMASK(31, 24))
->=20
-> Same applies here and on other similar macros. You need to enforce
-> (a) to be unsigned, as otherwise the behavior is undefined.
->=20
-> Btw, this is a recurrent pattern on this file. I would define a
-> macro, e. g. something like:
->=20
-> 	#define MASK_BITS_AND_SHIFT(v, high, low) \
-> 		((UL(v) << low) & GENMASK(high, low))
->=20
-> And use it for all similar patterns here.
+        /*
+         * handle, pitch and size are output parameters. Zero them out to
+         * prevent drivers from accidentally using uninitialized data. Since
+         * not all existing userspace is clearing these fields properly we
+         * cannot reject IOCTL with garbage in them.
+         */
 
-Sounds good! I find that the reverse wording (SHIFT_AND_MASK_BITS) would be
-a bit more explicit since the shift happens prior to the mask.
+Maybe userspace does correctly zero out input params.
 
-Also we probably need to have parenthesis around "low", right?
-
-> The best would be to include such macro at linux/bits.h, although some
-> upstream discussion is required.
->=20
-> So, for now, let's add it at this header file, but work upstream
-> to have it merged there.
-
-Understood, I'll include it in that header for now and send a separate patch
-for inclusion in linux/bits.h (apparently the preprocessor doesn't care abo=
-ut
-redefinitions so we can just remove the cedrus fashion once the common one =
-is
-in).
-
-What do you think?
-
-Cheers,
-
-Paul
-
---B4IIlcmfBL/1gGOG
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAl2u+KwACgkQ3cLmz3+f
-v9Gz+wf/Zm7r1AZpv5lPzfcsaQXWOZk4HXntSACtkvGv3E/mgOtN8S/SrT59MQ6V
-MPfJ2aBH5JhDiv6NIW1vFwhvx8gJ8P8Dshl2I8I/qzAzoqLGjBQe3Hod/tpq0ZFe
-tqiIhujaADacV9qCeOl4aBWfcVDdIznZZ8RilXQT/Bl98912LWpEmy8rMmNEVxGe
-JM+mnw7gDZfuRHDmAR/IXAMYcN1mF9m8t49liAvEWSesEUKTPuTkejZAffiUAY4o
-FAvYoNMOrX9+l1j+tRgdDSO9Kg8XuF6rh0ATqaiOnu2sg+AcDPBXozHa8KuJX9dl
-8tN1aQb0gn+lwL9XRnCNEvjHzYFveA==
-=ev27
------END PGP SIGNATURE-----
-
---B4IIlcmfBL/1gGOG--
-
-
---===============5885614530206408582==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5885614530206408582==--
-
