@@ -2,62 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0AF2E0B97
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 20:41:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C8FCE0BA6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 20:44:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zo9n9bL5zROcf8p7Z/tDDNqh4WLHlfucw8uUl6Kpcp8=; b=RKRZkdynJgCfa3
-	14OFA7Lsx/Y4y1HJ1Yiyuk+GEzWo+amMZcJjErJKM6icAxGvt8Jt8mpBlJhCBCfe+6IbHaVxT8tvA
-	j+dUZM8MthD8J+wvTSboMz7laRrL0gY74eoyhap6oxlezGbzy0SBSghrNRlN+VH0oysbOW1/RuVCn
-	+GzAlyEeOVpTBgQhrUU+32BmPmnIoCENpKx16ERPHifrXnQwuhAuXGTlQ9aD2TJzRxBZnmJMgFIX3
-	h2uyBX5tPR79dsJp8oxkzCSplpuDbR5WnQlSyyZDKLPy+jjQzHmsUJzXU8eyw0BRry/TTNwQ97VvF
-	f6a5rljnvL7KOk4rR+ew==;
+	List-Owner; bh=Q32JqIBnOruWQTBwbbDcFWZh2QfEaWUkrX/a5hzxJ+8=; b=EyielUo+Fbtzix
+	UPTiK2avUw9c9Z1HLn5F015mPEw1P8Z3Jw65c5QW1/28PDt//TYCdFQiEPIJo03CzIZHhlVrj3LAu
+	0RorA3VOJHg2pKJ3CN+/KDED1ep+qgBxbY1v6UjMNj6GAYmH3mCbmJ3oju19E+lE+f+9MXDseyDIO
+	TKSDoe23zPxRuwC5EAp59DbM81/NV7DFc2DKoo9snNNTzGIFv6wXLlR2vDxUl9RL2XBRfhvHFZhS5
+	/ux8q94gFK49Nu72hI/nnNRM1dZU7BIdVx9GxXPvnpVsAOYmMZYFygdp3ODT8eY7fyG68S7J/vhT5
+	Me4GOhBtgg0WCUWVZSyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMz6N-0000iV-7a; Tue, 22 Oct 2019 18:41:51 +0000
-Received: from mga17.intel.com ([192.55.52.151])
+	id 1iMz8K-00018C-Sk; Tue, 22 Oct 2019 18:43:52 +0000
+Received: from mail-ed1-f68.google.com ([209.85.208.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMz6G-0000gT-3Z
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 18:41:45 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga004.fm.intel.com ([10.253.24.48])
- by fmsmga107.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 22 Oct 2019 11:41:39 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.68,217,1569308400"; d="scan'208";a="222915653"
-Received: from sjchrist-coffee.jf.intel.com (HELO linux.intel.com)
- ([10.54.74.41])
- by fmsmga004.fm.intel.com with ESMTP; 22 Oct 2019 11:41:39 -0700
-Date: Tue, 22 Oct 2019 11:41:39 -0700
-From: Sean Christopherson <sean.j.christopherson@intel.com>
-To: Christoffer Dall <christoffer.dall@arm.com>
-Subject: Re: [PATCH 42/45] KVM: arm64: Free sve_state via arm specific hook
-Message-ID: <20191022184139.GK2343@linux.intel.com>
-References: <20191022015925.31916-1-sean.j.christopherson@intel.com>
- <20191022015925.31916-43-sean.j.christopherson@intel.com>
- <20191022114342.GB2652@e113682-lin.lund.arm.com>
+ id 1iMz87-00017O-R4
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 18:43:41 +0000
+Received: by mail-ed1-f68.google.com with SMTP id c4so13721819edl.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 22 Oct 2019 11:43:39 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=MaK9HZRo2yPA34xjdPj8WIVzo4X/HVsTE3eZR+WBcic=;
+ b=YocLrKZwxHsh4XYQheEIEPoeR7tVcbpkgs4O/Tol9XyCYWnQDANB5Rqj3+6YPwjzFU
+ PnotgQVLNWuWsDQxwARKjR1UEABcc5uKZVR9XKyz0+X7QLNwUgtGjKFUyILgYAiV2ZLJ
+ LQVjVFY9FgSHSUVKrkD0ACX32tYzaRF/84+0BQmrWQfwi0856gXVf0gyQvrvQs+kyaVJ
+ jO6tl9UV5HwP3V7O9dCB8jsa9wKK15ynN5S3duFPw7VKRsI0MLQ87P40PbedJcp6yGoz
+ ydBt74cwTLNgdO9fFVGtT+AnMjFIQ+O6rB+Ct+o2XOKZP1ni4tpDEfZTeS0NDA5hfY+B
+ 2Eyg==
+X-Gm-Message-State: APjAAAWPbt5bxyMo+ovoBFB7iv84JOsXSJWvjnHPodUncOpUxPCcxQgS
+ F30irugUxYy5qJfE4+UDVic=
+X-Google-Smtp-Source: APXvYqwaza4IQ48vd2aWTDDcq9RRblSoEI8imxQjQ2w9B33BxUNL8U7MIIpmrU+/Ly8hAxGL9ziPmQ==
+X-Received: by 2002:a17:906:69cc:: with SMTP id
+ g12mr28731760ejs.235.1571769817645; 
+ Tue, 22 Oct 2019 11:43:37 -0700 (PDT)
+Received: from kozik-lap ([194.230.155.217])
+ by smtp.googlemail.com with ESMTPSA id w19sm123844ejo.3.2019.10.22.11.43.36
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 22 Oct 2019 11:43:36 -0700 (PDT)
+Date: Tue, 22 Oct 2019 20:43:34 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Viresh Kumar <viresh.kumar@linaro.org>
+Subject: Re: [PATCH v5 1/4] PM / OPP: Support adjusting OPP voltages at runtime
+Message-ID: <20191022184334.GA8305@kozik-lap>
+References: <20191016145756.16004-1-s.nawrocki@samsung.com>
+ <CGME20191016145810eucas1p1b31400c9b2e7f30cdf6deeb4ccee2788@eucas1p1.samsung.com>
+ <20191016145756.16004-2-s.nawrocki@samsung.com>
+ <20191017064258.yfbh7iz3pbzfhdvr@vireshk-i7>
+ <20191021112354.GA2262@pi3>
+ <20191022022341.yd6ykeszsuprmop2@vireshk-i7>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191022114342.GB2652@e113682-lin.lund.arm.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <20191022022341.yd6ykeszsuprmop2@vireshk-i7>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_114144_158218_940DDE7F 
-X-CRM114-Status: GOOD (  15.43  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191022_114339_878831_7EAE95D5 
+X-CRM114-Status: GOOD (  20.53  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.151 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.68 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.68 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (k.kozlowski.k[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,81 +93,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Cornelia Huck <cohuck@redhat.com>, Wanpeng Li <wanpengli@tencent.com>,
- Janosch Frank <frankja@linux.ibm.com>, kvm@vger.kernel.org,
- Radim =?utf-8?B?S3LEjW3DocWZ?= <rkrcmar@redhat.com>,
- Marc Zyngier <maz@kernel.org>, Joerg Roedel <joro@8bytes.org>,
- David Hildenbrand <david@redhat.com>, linux-mips@vger.kernel.org,
- kvm-ppc@vger.kernel.org, linux-kernel@vger.kernel.org,
- Paul Mackerras <paulus@ozlabs.org>,
- Christian Borntraeger <borntraeger@de.ibm.com>,
- James Hogan <jhogan@kernel.org>, Paolo Bonzini <pbonzini@redhat.com>,
- Vitaly Kuznetsov <vkuznets@redhat.com>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>
+Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-pm@vger.kernel.org, sboyd@kernel.org, vireshk@kernel.org,
+ b.zolnierkie@samsung.com, roger.lu@mediatek.com, robh+dt@kernel.org,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Stephen Boyd <sboyd@codeaurora.org>, linux-arm-kernel@lists.infradead.org,
+ m.szyprowski@samsung.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 22, 2019 at 01:43:42PM +0200, Christoffer Dall wrote:
-> On Mon, Oct 21, 2019 at 06:59:22PM -0700, Sean Christopherson wrote:
-> > Add an arm specific hook to free the arm64-only sve_state.  Doing so
-> > eliminates the last functional code from kvm_arch_vcpu_uninit() across
-> > all architectures and paves the way for removing kvm_arch_vcpu_init()
-> > and kvm_arch_vcpu_uninit() entirely.
+On Tue, Oct 22, 2019 at 07:53:41AM +0530, Viresh Kumar wrote:
+> On 21-10-19, 13:23, Krzysztof Kozlowski wrote:
+> > On Thu, Oct 17, 2019 at 12:12:58PM +0530, Viresh Kumar wrote:
+> > > On 16-10-19, 16:57, Sylwester Nawrocki wrote:
+> > > > From: Stephen Boyd <sboyd@codeaurora.org>
+> > > > 
+> > > > On some SoCs the Adaptive Voltage Scaling (AVS) technique is
+> > > > employed to optimize the operating voltage of a device. At a
+> > > > given frequency, the hardware monitors dynamic factors and either
+> > > > makes a suggestion for how much to adjust a voltage for the
+> > > > current frequency, or it automatically adjusts the voltage
+> > > > without software intervention. Add an API to the OPP library for
+> > > > the former case, so that AVS type devices can update the voltages
+> > > > for an OPP when the hardware determines the voltage should
+> > > > change. The assumption is that drivers like CPUfreq or devfreq
+> > > > will register for the OPP notifiers and adjust the voltage
+> > > > according to suggestions that AVS makes.
+> > > > 
+> > > > This patch is derived from [1] submitted by Stephen.
+> > > > [1] https://lore.kernel.org/patchwork/patch/599279/
+> > > > 
+> > > > Signed-off-by: Stephen Boyd <sboyd@codeaurora.org>
+> > > > Signed-off-by: Roger Lu <roger.lu@mediatek.com>
+> > > > [s.nawrocki@samsung.com: added handling of OPP min/max voltage]
+> > > > Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
+> > > > ---
+> > > >  drivers/opp/core.c     | 69 ++++++++++++++++++++++++++++++++++++++++++
+> > > >  include/linux/pm_opp.h | 13 ++++++++
+> > > >  2 files changed, 82 insertions(+)
+> > > 
+> > > Applied. Thanks.
 > > 
-> > Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
-> > ---
-> >  arch/arm/include/asm/kvm_host.h   | 1 +
-> >  arch/arm64/include/asm/kvm_host.h | 1 +
-> >  arch/arm64/kvm/reset.c            | 5 +++++
-> >  virt/kvm/arm/arm.c                | 2 ++
-> >  4 files changed, 9 insertions(+)
+> > Hi Viresh,
 > > 
-> > diff --git a/arch/arm/include/asm/kvm_host.h b/arch/arm/include/asm/kvm_host.h
-> > index 8a37c8e89777..cc414de5acd3 100644
-> > --- a/arch/arm/include/asm/kvm_host.h
-> > +++ b/arch/arm/include/asm/kvm_host.h
-> > @@ -333,6 +333,7 @@ static inline void kvm_arch_sync_events(struct kvm *kvm) {}
-> >  static inline void kvm_arch_vcpu_uninit(struct kvm_vcpu *vcpu) {}
-> >  static inline void kvm_arch_sched_in(struct kvm_vcpu *vcpu, int cpu) {}
-> >  static inline void kvm_arch_vcpu_block_finish(struct kvm_vcpu *vcpu) {}
-> > +static inline int kvm_arm_vcpu_destroy(struct kvm_vcpu *vcpu) {}
-> >  
-> >  static inline void kvm_arm_init_debug(void) {}
-> >  static inline void kvm_arm_setup_debug(struct kvm_vcpu *vcpu) {}
-> > diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
-> > index f656169db8c3..92d7c384a4ed 100644
-> > --- a/arch/arm64/include/asm/kvm_host.h
-> > +++ b/arch/arm64/include/asm/kvm_host.h
-> > @@ -52,6 +52,7 @@ int kvm_arm_init_sve(void);
-> >  
-> >  int __attribute_const__ kvm_target_cpu(void);
-> >  int kvm_reset_vcpu(struct kvm_vcpu *vcpu);
-> > +int kvm_arm_vcpu_destroy(struct kvm_vcpu *vcpu);
-> >  void kvm_arch_vcpu_uninit(struct kvm_vcpu *vcpu);
-> >  int kvm_arch_vm_ioctl_check_extension(struct kvm *kvm, long ext);
-> >  void __extended_idmap_trampoline(phys_addr_t boot_pgd, phys_addr_t idmap_start);
-> > diff --git a/arch/arm64/kvm/reset.c b/arch/arm64/kvm/reset.c
-> > index f4a8ae918827..98abc4278f42 100644
-> > --- a/arch/arm64/kvm/reset.c
-> > +++ b/arch/arm64/kvm/reset.c
-> > @@ -205,6 +205,11 @@ bool kvm_arm_vcpu_is_finalized(struct kvm_vcpu *vcpu)
-> >  }
-> >  
-> >  void kvm_arch_vcpu_uninit(struct kvm_vcpu *vcpu)
-> > +{
-> > +
-> > +}
-> > +
-> > +int kvm_arm_vcpu_destroy(struct kvm_vcpu *vcpu)
-> >  {
-> >  	kfree(vcpu->arch.sve_state);
-> >  }
+> > Can you provide a stable tag with this patch so I can take soc/samsung
+> > driver?
 > 
-> nit: warning: control reaches end of non-void function
+> opp-5.4-support-adjust-voltages
 
-Doh, fixed.  Thanks for the quick review!
+Thanks, merged.
+
+Best regards,
+Krzysztof
+
 
 _______________________________________________
 linux-arm-kernel mailing list
