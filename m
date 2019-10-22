@@ -2,52 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BCFEEDFC55
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 05:55:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46CEDDFC56
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 05:55:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=quBt6edFkmsHjxx/L4OOCuEb/92G/1aHVan1GfXWNMQ=; b=Z3tnRZffjisgnZ
-	hNvOYUb0o35cKxMwuMko+878FaXfM8qhoSJsctB6MmD8vlVwuzCieCPnmqPBhTBfaajfKwOvMvrYT
-	fXtnJrKKmvhhVOwVa1/p3AD6g9GTLmERir5afDMN7SIOpLx8JENV4Q3NqJQc8xwH6h93m0wr6BB7i
-	4Wn9k69X4DLXMn1vKF2Apg2PPcK5DZ6yH1McCv3YXSu4aFxJ/yOWpYsvshfG1jXbuVdRMqubE+PwS
-	L6qfRtdQgXTBMcn0kBG1rVgsZKHBkBEhxejByynvgJQ8q8TWkHN4Vm5hzeewwTAhhLqCPrh+GTjdm
-	f7Tv9Z/XN6HIda1+EOXg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1kVe3fDy8wfD3/Dr/LoJXXQPpcT26s/0jkyeVfcArzk=; b=ZzHkycDaC5teXV
+	twVOM8Bpu62AAg17Vj/UKugw/IgNV7S276bZnE1Ax9vWhn99rq+SLyndlOBbHTK7RazEstmhey5Rf
+	00xNLb86hf4RgvSXDu2Zk7UL1f2TSi4mCaNIjiz+XBdwk/NMBbgvWblZP7kFzFdurH2K3yuHDL5Fh
+	lLoMAWmFQXLZ6fkKR1WZUMQWacEk9XEKWa76v7cm7bW4LM/EGcxTzbJ/Zn3hu6ztG/h0YAsgPAtW0
+	ylL66LVcvLDcV/s9DQj+VS4OGO7R7ZCHpK1Bb/OMe0wmueqUbRDqar7WK8Zvzn/Jq8tzCGArM6PiZ
+	KLdGFWjqCNL9WMPM0c4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMlGN-0007RK-Ln; Tue, 22 Oct 2019 03:55:15 +0000
+	id 1iMlGZ-0000TA-Dd; Tue, 22 Oct 2019 03:55:27 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMlG1-0007QB-Je; Tue, 22 Oct 2019 03:54:55 +0000
-X-UUID: 0d100ba241454bb082961564c9aa21a5-20191021
-X-UUID: 0d100ba241454bb082961564c9aa21a5-20191021
+ id 1iMlG1-0007QC-H0; Tue, 22 Oct 2019 03:54:55 +0000
+X-UUID: 0d63b214d879452e8290b659214ad073-20191021
+X-UUID: 0d63b214d879452e8290b659214ad073-20191021
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <anthony.huang@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1344912944; Mon, 21 Oct 2019 19:55:00 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ with ESMTP id 365223903; Mon, 21 Oct 2019 19:55:00 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Mon, 21 Oct 2019 20:54:44 -0700
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Tue, 22 Oct 2019 11:54:43 +0800
 Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
  Frontend Transport; Tue, 22 Oct 2019 11:54:43 +0800
 From: Anthony Huang <anthony.huang@mediatek.com>
 To: Rob Herring <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [RFC PATCH 0/2] Add Mediatek MMDVFS driver
-Date: Tue, 22 Oct 2019 11:51:51 +0800
-Message-ID: <1571716313-10215-1-git-send-email-anthony.huang@mediatek.com>
+Subject: [RFC PATCH 1/2] dt-bindings: soc: mediatek: Add document for mmdvfs
+ driver
+Date: Tue, 22 Oct 2019 11:51:52 +0800
+Message-ID: <1571716313-10215-2-git-send-email-anthony.huang@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
+In-Reply-To: <1571716313-10215-1-git-send-email-anthony.huang@mediatek.com>
+References: <1571716313-10215-1-git-send-email-anthony.huang@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_205453_646496_77DECD0A 
-X-CRM114-Status: GOOD (  10.77  )
+X-CRM114-CacheID: sfid-20191021_205453_584170_82E56AB2 
+X-CRM114-Status: GOOD (  14.62  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,48 +71,182 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- wsd_upstream@mediatek.com
+Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ Anthony Huang <anthony.huang@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This RFC patch adds the Mediatek MMDVFS(Multimedia Dynamic Voltage and
-Frequency Scaling) driver. The multimedia HWs, such as display, camera,
-share the same power supplier, and on some platforms, they share the
-same clock MUX. If each HW needs different clock frequency at the same
-time, the clock MUX must be set to the clock source which can meet the
-highest required clock frequency.
+This document describes the properties what mtk mmdvfs
+device node support.
 
-Following implementation is used to achieve the goal. There are OPP tables
-for all the clock MUXs for MM HWs defined in DTS, ant these OPP tables have
-the same number of levels. The MMDVFS registers the regulator callback and
-the MM HWs can get available clock frequencies from OPP tables and set
-corresponding voltage by regulor API. The MMDVFS's callback will be
-triggered if the voltage is changed and this voltage represents the highest
-required OPP level. The MMDVFS has a mapping table: which clock source
-should be set to each clock MUX for every OPP level. So all the clock MUXs
-will be set to the clock sources according to the current OPP level in the
-MMDVFS's regulator callback.
-
-
-
-Anthony Huang (2):
-  dt-bindings: soc: mediatek: Add document for mmdvfs driver
-  soc: mediatek: Add mtk-mmdvfs driver
-
- .../devicetree/bindings/soc/mediatek/mmdvfs.txt    |  149 ++++++++++
- drivers/soc/mediatek/Kconfig                       |    9 +
- drivers/soc/mediatek/Makefile                      |    1 +
- drivers/soc/mediatek/mtk-mmdvfs.c                  |  313 ++++++++++++++++++++
- 4 files changed, 472 insertions(+)
+Signed-off-by: Anthony Huang <anthony.huang@mediatek.com>
+---
+ .../devicetree/bindings/soc/mediatek/mmdvfs.txt    |  149 ++++++++++++++++++++
+ 1 file changed, 149 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/soc/mediatek/mmdvfs.txt
- create mode 100644 drivers/soc/mediatek/mtk-mmdvfs.c
 
+diff --git a/Documentation/devicetree/bindings/soc/mediatek/mmdvfs.txt b/Documentation/devicetree/bindings/soc/mediatek/mmdvfs.txt
+new file mode 100644
+index 0000000..bf33d79
+--- /dev/null
++++ b/Documentation/devicetree/bindings/soc/mediatek/mmdvfs.txt
+@@ -0,0 +1,149 @@
++Mediatek MMDVFS driver binding
++=========================================
++
++The Mediatek MMDVFS(Multimedia Dynamic Voltage and Frequency Scaling) driver
++is used to set clk for Mediatek multimedia hardwares, such as display, camera,
++mdp and video codec. MMDVFS driver reads which clock muxes and clock sources
++are used on this platform from DTS, and sets current clock according to current
++voltage informed by regulator callback.
++
++
++Required properties:
++- compatible : shall contain "mediatek,mmdvfs".
++- operating-points-v2: contains any one of opp tables for multimedia modules.
++                       MMDVFS uses it to get voltage setting on this platform.
++- mediatek,support_mux: contains a list of clock mux names defined
++                        in clock-names.
++- mediatek,mux_*: a series of properties with "mediatek,mux_" prefix.
++		  Each property represents one clock mux, and its value is a
++		  list of all the clock sources for it. The postfix * and every
++		  item in the property must be from the clock-names.
++- clock, clock-names: lists all clock muxes and clock sources for multimedia
++		      hardwares.
++
++Optional properties:
++If the platform needs frequency hopping for some clock sources, these following
++properties should be set.
++
++- mediatek,support_hopping: a list of clock names supporting frequency hopping.
++- mediatek,hopping_*: a cell with the same size as opp numbers of an opp table
++		      for any MM module and each entry represents the clock
++		      rate for each opp. For example, the first entry is the
++		      clock rate set in opp-0, and the second entry is the
++		      clock rate set in opp-1.
++- mediatek,action: a cell with one entry.
++		   It represents the action taken when setting clocks.
++		   0 or this property is not set:
++		   	Do not set frequency hopping and just set clock mux.
++		   1:
++		   	If the voltage is increasing, set frequency hopping
++		   	first. If the voltage is decreasing, set clock mux
++		   	first.
++
++Example:
++	opp_table_mm: opp-table-mm {
++		compatible = "operating-points-v2";
++
++		opp-0 {
++			opp-hz = /bits/ 64 <315000000>;
++			opp-microvolt = <650000>;
++		};
++		opp-1 {
++			opp-hz = /bits/ 64 <450000000>;
++			opp-microvolt = <725000>;
++		};
++		opp-2 {
++			opp-hz = /bits/ 64 <606000000>;
++			opp-microvolt = <825000>;
++		};
++	};
++
++	opp_table_cam: opp-table-cam {
++		compatible = "operating-points-v2";
++
++		opp-0 {
++			opp-hz = /bits/ 64 <315000000>;
++			opp-microvolt = <650000>;
++		};
++		opp-1 {
++			opp-hz = /bits/ 64 <416000000>;
++			opp-microvolt = <725000>;
++		};
++		opp-2 {
++			opp-hz = /bits/ 64 <560000000>;
++			opp-microvolt = <825000>;
++		};
++	};
++	.... /* Other opp tables for multimedia modules */
++
++	mmdvfs {
++		compatible = "mediatek,mmdvfs";
++
++		operating-points-v2 = <&opp_table_mm>;
++
++		mediatek,support_mux = "mm", "cam", "img", "ipe",
++			"venc", "vdec", "dpe", "ccu";
++
++		mediatek,mux_mm = "clk_mmpll_d5_d2",
++			"clk_mmpll_d7", "clk_tvdpll_mainpll_d2_ck";
++		mediatek,mux_cam = "clk_mmpll_d5_d2",
++			"clk_univpll_d3", "clk_adsppll_d5";
++		mediatek,mux_img = "clk_mmpll_d5_d2",
++			"clk_univpll_d3", "clk_tvdpll_mainpll_d2_ck";
++		mediatek,mux_ipe = "clk_mmpll_d5_d2",
++			"clk_univpll_d3", "clk_mainpll_d2";
++		mediatek,mux_venc = "clk_mainpll_d3",
++			"clk_mmpll_d7", "clk_mmpll_d5";
++		mediatek,mux_vdec = "clk_univpll_d2_d2",
++			"clk_univpll_d3", "clk_univpll_d2";
++		mediatek,mux_dpe = "clk_mainpll_d3",
++			"clk_mmpll_d7", "clk_mainpll_d2";
++		mediatek,mux_ccu = "clk_mmpll_d5_d2",
++			"clk_univpll_d3", "clk_adsppll_d5";
++
++		mediatek,support_hopping = "clk_mmpll_ck";
++		mediatek,hopping_clk_mmpll_ck = <630000000 630000000 650000000>;
++		mediatek,action = <1>;
++
++
++		clocks = <&topckgen CLK_TOP_MM>,
++			<&topckgen CLK_TOP_CAM>,
++			<&topckgen CLK_TOP_IMG>,
++			<&topckgen CLK_TOP_IPE>,
++			<&topckgen CLK_TOP_VENC>,
++			<&topckgen CLK_TOP_VDEC>,
++			<&topckgen CLK_TOP_DPE>,
++			<&topckgen CLK_TOP_CCU>,
++			<&topckgen CLK_TOP_MMPLL_D5>,
++			<&topckgen CLK_TOP_UNIVPLL_D2>,
++			<&topckgen CLK_TOP_TVDPLL_MAINPLL_D2_CK>,
++			<&topckgen CLK_TOP_ADSPPLL_D5>,
++			<&topckgen CLK_TOP_MAINPLL_D2>,
++			<&topckgen CLK_TOP_MMPLL_D6>,
++			<&topckgen CLK_TOP_MMPLL_D7>,
++			<&topckgen CLK_TOP_UNIVPLL_D3>,
++			<&topckgen CLK_TOP_MAINPLL_D3>,
++			<&topckgen CLK_TOP_MMPLL_D5_D2>,
++			<&topckgen CLK_TOP_UNIVPLL_D2_D2>,
++			<&topckgen CLK_TOP_MMPLL_CK>;
++		clock-names = "mm",
++			"cam",
++			"img",
++			"ipe",
++			"venc",
++			"vdec",
++			"dpe",
++			"ccu",
++			"clk_mmpll_d5",
++			"clk_univpll_d2",
++			"clk_tvdpll_mainpll_d2_ck",
++			"clk_adsppll_d5",
++			"clk_mainpll_d2",
++			"clk_mmpll_d6",
++			"clk_mmpll_d7",
++			"clk_univpll_d3",
++			"clk_mainpll_d3",
++			"clk_mmpll_d5_d2",
++			"clk_univpll_d2_d2",
++			"clk_mmpll_ck";
++	};
 -- 
 1.7.9.5
+
 
 _______________________________________________
 linux-arm-kernel mailing list
