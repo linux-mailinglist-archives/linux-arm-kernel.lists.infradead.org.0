@@ -2,58 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED760E0922
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 18:37:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74C31E0923
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 18:37:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=WvgzRXRN8hArdUK38+LBKFfoGNdXg52BO3DIIWHPCiI=; b=uyxXt1lbuFqrq3gvd2sNjAVSL
-	hMtRQrqXBI0BYEi+wGD3NOgWcQA0Y9Gom0DjCkmsXv/tSqItN6h/MvJS6c+/zvu0D1foKccxNn+Yp
-	8ItpzifG8Z5dUn8kJ8KpOHrIv74rAal17shKk1IdsR1R65sjHaRBml1WJnfoSJshBa3+i4mJsdjND
-	s/Z5qDPcpYUKjHUr1HihGZw/LlFZWZP4GyTpaaMRDZfCoTpBjJ8t1h9UCM99HuR8tx82xVBHEH4Bv
-	+VELgOV41wzYspdQ3zYjkX6IO34FxdUuiHpYNTYwOD9FCckeT7IVK7IJ/fYmEOKsHBVOxt7zKR29n
-	Q/ms1Wthw==;
+	 bh=eFlYilLHon7GvxfrB7trl2dvSUE9qWuuU2KppifC3LQ=; b=r3sgV6Ct8LD7AQTb32uQbYh4v
+	tr9KSElulaeIr3/GAIuDaikSmJ6OnWmyhUtG7qAiWlCaJZRduwg6hsML7vHmb+ztfw3/h5JQsXtQl
+	L+h7H2KzcQVBRRBTaHys3IkTO8wRuiQ4rF4UBfYkXbkOuoNC9fO1MhlwW5SzDPE0Zkbh/JdwNvgfc
+	Gd6vsfc+O8evwrOCt9mjINx9tSwOjvP6z74sGpNuhiI3VhhTVT1qzx+6R1e7pyUyOjZmbuf6mqnHO
+	esF6J+Y2eZRQJIouz6oH0jM+bRqlHXK+ynz76ZR0Ae/RThCCms1n5PhImfBJUS393tL4abbBvwH4f
+	iAi260bDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMx9w-0005YQ-W8; Tue, 22 Oct 2019 16:37:25 +0000
+	id 1iMxAL-0005pS-M6; Tue, 22 Oct 2019 16:37:49 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMx9Z-0005Of-99
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 16:37:03 +0000
+ id 1iMx9s-0005ig-Ev
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 16:37:22 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
  MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=4ZBKUToM4kIs6IK0jvb//AxftUHAUYBkcNObJNOnlPs=; b=MOGtrGjthGlR3pSbKo+weGsls
- BXeOAuHLQfVk9vCepzkg1OsBEJ7Z4ntOIC+i/GISbKG0FOHh0eKH5L73rHW0dpfQTaV/vry62tU4T
- Hm80vAIAxzNWHehm01jGPvardu0aOwk7J8o+rTauTWKeJRRMR3WKf4LvF67w/MDsqQacY=;
+ bh=KE3k2qtREHq2WSAx2j2NdF3H3/H8sD/ouUddWgPXv28=; b=eOAcQcS9c6+WTa+FPZOPzXMhe
+ SMgi0tuc/9AnHyEr8LTJ0sXnHTPCz5zQxHp1UQvm6z7tgsKUQ0UrZfcnYNszrrsvPI6Oc96pOlZv7
+ KpI0AHhvpC6xodzQa47uWAknJaV+4Y8z6bo+FW33y2TIHSSSsSkGNyr3fMb3HS8j7jOQc=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iMx9V-00072t-8z; Tue, 22 Oct 2019 16:36:57 +0000
+ id 1iMx9p-000736-QP; Tue, 22 Oct 2019 16:37:17 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id B6F652743259; Tue, 22 Oct 2019 17:36:56 +0100 (BST)
-Date: Tue, 22 Oct 2019 17:36:56 +0100
+ id 509272743259; Tue, 22 Oct 2019 17:37:17 +0100 (BST)
+Date: Tue, 22 Oct 2019 17:37:17 +0100
 From: Mark Brown <broonie@kernel.org>
 To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH 16/46] ARM: pxa: tosa: use gpio descriptor for audio
-Message-ID: <20191022163656.GN5554@sirena.co.uk>
+Subject: Re: [PATCH 17/46] ARM: pxa: poodle: use platform data for poodle
+ asoc driver
+Message-ID: <20191022163717.GO5554@sirena.co.uk>
 References: <20191018154052.1276506-1-arnd@arndb.de>
- <20191018154201.1276638-16-arnd@arndb.de>
+ <20191018154201.1276638-17-arnd@arndb.de>
 MIME-Version: 1.0
-In-Reply-To: <20191018154201.1276638-16-arnd@arndb.de>
+In-Reply-To: <20191018154201.1276638-17-arnd@arndb.de>
 X-Cookie: Whip it, whip it good!
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_093701_437904_C1EE5186 
-X-CRM114-Status: UNSURE (   9.79  )
+X-CRM114-CacheID: sfid-20191022_093720_663523_0C6767E5 
+X-CRM114-Status: UNSURE (   9.17  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -84,46 +85,46 @@ Cc: alsa-devel@alsa-project.org, Linus Walleij <linus.walleij@linaro.org>,
  linux-kernel@vger.kernel.org, Haojian Zhuang <haojian.zhuang@gmail.com>,
  Daniel Mack <daniel@zonque.org>, Robert Jarzmik <robert.jarzmik@free.fr>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============0323218758645953678=="
+Content-Type: multipart/mixed; boundary="===============5704583645158091082=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============0323218758645953678==
+--===============5704583645158091082==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="D9sZ58tf58331Q5M"
+	protocol="application/pgp-signature"; boundary="LwbuP8dfxhLLLUfV"
 Content-Disposition: inline
 
 
---D9sZ58tf58331Q5M
+--LwbuP8dfxhLLLUfV
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Fri, Oct 18, 2019 at 05:41:31PM +0200, Arnd Bergmann wrote:
-> The audio driver should not use a hardwired gpio number
-> from the header. Change it to use a lookup table.
+On Fri, Oct 18, 2019 at 05:41:32PM +0200, Arnd Bergmann wrote:
+> The poodle audio driver shows its age by using a custom
+> gpio api for the "locomo" support chip.
 
 Acked-by: Mark Brown <broonie@kernel.org>
 
---D9sZ58tf58331Q5M
+--LwbuP8dfxhLLLUfV
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl2vMCcACgkQJNaLcl1U
-h9AS+Af+KFHD1F8v9aWTr2l9IPxxO3sNqMg20rA6oPY9MS9aXMLdK7qrijFp3fn4
-i4ST1qYowqgeTOqsC1hZdVKaVBU03Y/vRLLwn3GJSOH0YacQ7zB/FRQHmRESlLJu
-MElU0aFph1IXDxzmPQPtxEgpGxilIY+gvHr1xQGlUiQUwluK2bV86cxb2Yq6kAF1
-Fi5OLRPu4hWUN/WqDurqBzh5gWBrNliCsE3LBjS1ZtxjsrvY64cyNsRb8Mq3sTZi
-R2sybjdMAU8xLBSsgFAA4S/N/8+hPZ7/6y9ot1YrIw+ZUnusvbOgPksE5VXuQofR
-EVy8ciepYsBPN6Ub04X5V8aRAkJpog==
-=SULd
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl2vMDwACgkQJNaLcl1U
+h9DXTAf+PkYfGUBycQh1ObnY5bFiUcm4IhRh9mkwhL2PRO3lCRN+TN++wyL3vtDP
+j9AV1y/qAcZDELhOX9eGoVocwR9EZdeJCbrFz5DVr9g5E7L41Ay26w36YQ8aWWzj
+WHe2vbhfLclIUrnIeEKuEWXwpPXZOq1hC7jJ/ihh2wJGHVIRCO0MkZ+ZqUEUk3E2
+86C3Z9OzamRZhOlie6EuqmhSw3gNQQdjjDGTOQvdC7zS2MazZxxNJTpOntv78Bs7
+Vp+DtdJ7vT0vr8c7xCfWcWlgv2Bc4mq0ky/YJtIUAXJckc23KDsJjYbuynBlSTXC
+eNjL3dLyNzIsUdsHUsh7h6YXjp9vAA==
+=dGNL
 -----END PGP SIGNATURE-----
 
---D9sZ58tf58331Q5M--
+--LwbuP8dfxhLLLUfV--
 
 
---===============0323218758645953678==
+--===============5704583645158091082==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -134,5 +135,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============0323218758645953678==--
+--===============5704583645158091082==--
 
