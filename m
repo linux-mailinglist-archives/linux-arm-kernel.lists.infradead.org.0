@@ -2,60 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4FA0ADFD2F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 07:49:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A2BEADFD35
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 07:54:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Aim8qTXgbVMdWwJW4T/G8FjHN4X+KUHeehtOB1dbUm0=; b=bt5ZtmTBuR9pYeo6YcBVbkNo0
-	33N61rKqLmkRlsAc5Vzzddgrzjz/jF28cinDVSwy45hJ4Knba23OfK0sVQ0aApEWuic7/YKJ2j9Nb
-	G87zozsAKD70NQViYqkyiXj0EcF7S26Tx5CHH1u+Tta4AWLx3fq8U4IIbO2bJSyRYwJxJwBvEG68F
-	El6Z4GZf0rv+5yn0DLZwMPWAQmO5uQq1GoeDzuXh1Mr4HuOiumtO9XoqSa8ML8ku8GxCfNbq6k5rq
-	KzzOskQ/oodrSmvmfz2QhQ4GwGTboPWSw9BMHfpzqcpmnW8Pj3KJRIwWK1RBcsl2EZmWUfahERSqQ
-	4uEpGrBXg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yQeGi0x1Hb/VhMEIDFpv8KBkGrDgCivLWjG9ZeEpvlc=; b=pHflEsS6+OB3Yq
+	y8FT4uM6mIVBOasJCpU9sg1Wb4yjqp0qWmSurQGFtRxJ2zB/fKLRN9TgeYkRUeuj7ZUHQT2m/Fc0t
+	7xgVfG2pQYW4AbvpDMhD+JK4D7Nj6H3+GSyl4zOF7kn0PSRJ6dqUf84DrD+MsAkvOKOltrq1Bu/uC
+	/lbKdtT0zU3H3fO+IuRTmz/JBuKr54CWhA0+gOazD+FIbKgX/XYI0cTs050kCJ7HBxcTjAHR17EFd
+	84dZsfT4F5IDjO5I6Szfv624yL9ptRHEBj/Zbi744/2Z5kvjLa6vGsMNCqVS07dbT1CgA8FMo63rm
+	/DVtSv8xrDjFC4tWvT7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMn2l-0007Wa-EK; Tue, 22 Oct 2019 05:49:19 +0000
-Received: from mail-sz.amlogic.com ([211.162.65.117])
+	id 1iMn7g-00017Q-L4; Tue, 22 Oct 2019 05:54:24 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMn2c-0007W3-U8; Tue, 22 Oct 2019 05:49:12 +0000
-Received: from [10.28.19.63] (10.28.19.63) by mail-sz.amlogic.com (10.28.11.5)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Tue, 22 Oct
- 2019 13:49:20 +0800
-Subject: Re: [PATCH v2 3/4] watchdog: add meson secure watchdog driver
-To: Guenter Roeck <linux@roeck-us.net>, Wim Van Sebroeck
- <wim@linux-watchdog.org>, Kevin Hilman <khilman@baylibre.com>, Neil Armstrong
- <narmstrong@baylibre.com>
-References: <1571387622-35132-1-git-send-email-xingyu.chen@amlogic.com>
- <1571387622-35132-4-git-send-email-xingyu.chen@amlogic.com>
- <7397f6db-1dc8-3abd-41ff-2e47323c7ffa@roeck-us.net>
- <bfc892af-1cd3-1437-75b2-5ba2b7913284@amlogic.com>
- <bd5ed275-4ae4-4163-b585-23fbead9833f@roeck-us.net>
-From: Xingyu Chen <xingyu.chen@amlogic.com>
-Message-ID: <1b841195-cf76-7128-9569-5c2b0d39c1c1@amlogic.com>
-Date: Tue, 22 Oct 2019 13:49:20 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iMn7W-000126-QT
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 05:54:16 +0000
+Received: by mail-wr1-x441.google.com with SMTP id q13so11485124wrs.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 21 Oct 2019 22:54:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=70+N4pxkreRk5D8qTuATktL5M/ApNQm1mVe3QKo4Ow8=;
+ b=VeZ/77yCO2vkRreTdZF0BmlF3aBW7GYN63ztZ+W9IxGlyzot3aZzQG7XNVjBY7A7oD
+ 5ErFNuJigjHDoajFcUUKer2ZNuRvqeRRkKDFwX0d2Zr1W2J0Sitj3DU47jafk1WpqrB9
+ RO+JgyMPsgCHPUuHfaLf9mhm0FhMWiroTQMq0AMJS2EyfB2q8y2Uj4BUJeCO2gXI9tCY
+ 6QkWiBS+nVx6fiVGxPNCg3OkhqZK5Cxo3moubEo1LbU3pI9Z3P3SLfQSm8r4r1GEdvXM
+ A3I5Jr0ovB215EmWyJbd+kRIvPhHLcOf8Yw0LDZ75fNBWsAH3Ssp+sYWHP4KD/+V8/GQ
+ /NvQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=70+N4pxkreRk5D8qTuATktL5M/ApNQm1mVe3QKo4Ow8=;
+ b=axtccDvH+H4hRHCj8sAAcTv/lrpxGOlcWrSpERgVq5RLrwJlhvlWNP+sVQtq8fZ3qW
+ 5yE3axxq6yq33xduxuK34FqtDYlW/kra881zP9mP1dEXzJcoqjl5v7fVo10GSzsyQsUZ
+ OmokUIrtoM5KS+1uUuBZ1cVPzi6oIDNOo9nYDZ2ROmtAEq+MbJ8oSB/zSAcdhH2zmo4X
+ vxm6RwgVf70/3GdzKoaP3Wxu1hbj0YBJXDN4rqvwpsUKy8RjDtfdyIFLUYJYoBSlLA3q
+ 7vSIzsSG2R+6l+qUnccuqwX0Vl+dDGQLep3pLXoMcNzKfyTMxU5k20V+WMtlRND/LoPh
+ b5VQ==
+X-Gm-Message-State: APjAAAVUmi+aab16JNDAx67XB8hrTXy+sKQ+RUa1R9BLCiUYVSJFNWnZ
+ T7c1+FniqXeSQD7M2ymZj6kZ3rQ5JNQlNcs9z6rX2w==
+X-Google-Smtp-Source: APXvYqwrYnGYkoL34VBIT6H+JNjJm/uZwOLCkW8JDJj+1Q/w7n/LWtklQn1YWpTuz0AHRX28UXgTzenaMPN3dF2ZvS4=
+X-Received: by 2002:adf:9f08:: with SMTP id l8mr1573796wrf.325.1571723652654; 
+ Mon, 21 Oct 2019 22:54:12 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <bd5ed275-4ae4-4163-b585-23fbead9833f@roeck-us.net>
-Content-Language: en-GB
-X-Originating-IP: [10.28.19.63]
-X-ClientProxiedBy: mail-sz.amlogic.com (10.28.11.5) To mail-sz.amlogic.com
- (10.28.11.5)
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20191018161033.261971-15-samitolvanen@google.com>
+ <CAKv+Gu-kMzsot5KSPSo_iMsuzcv8J1R5RLT9uGjuzJsxCVUPPg@mail.gmail.com>
+ <CABCJKuf-tXu2ZhBMCYTHP3BU8g1i-0GGd7+YvyTDUc1kH2iZvA@mail.gmail.com>
+In-Reply-To: <CABCJKuf-tXu2ZhBMCYTHP3BU8g1i-0GGd7+YvyTDUc1kH2iZvA@mail.gmail.com>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Tue, 22 Oct 2019 07:54:07 +0200
+Message-ID: <CAKv+Gu_b6eCy4BbM0xFBgL2EzW+eP5rH+wTOgNCO=ai-vb-WWw@mail.gmail.com>
+Subject: Re: [PATCH 14/18] arm64: efi: restore x18 if it was corrupted
+To: Sami Tolvanen <samitolvanen@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_224910_972095_FF584F31 
-X-CRM114-Status: GOOD (  18.87  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191021_225414_868090_4EB55257 
+X-CRM114-Status: GOOD (  12.29  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,74 +93,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Qianggui Song <qianggui.song@amlogic.com>, linux-watchdog@vger.kernel.org,
- Jianxin Pan <jianxin.pan@amlogic.com>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Jian Hu <jian.hu@amlogic.com>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Jerome Brunet <jbrunet@baylibre.com>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Kernel Hardening <kernel-hardening@lists.openwall.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Steven Rostedt <rostedt@goodmis.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksIEd1ZW50ZXIKCk9uIDIwMTkvMTAvMjEgMjE6MzgsIEd1ZW50ZXIgUm9lY2sgd3JvdGU6Cj4g
-T24gMTAvMjEvMTkgMTowMyBBTSwgWGluZ3l1IENoZW4gd3JvdGU6Cj4+IEhpLCBHdWVudGVyCj4+
-Cj4+IE9uIDIwMTkvMTAvMjEgMDo1NiwgR3VlbnRlciBSb2VjayB3cm90ZToKPj4+IE9uIDEwLzE4
-LzE5IDE6MzMgQU0sIFhpbmd5dSBDaGVuIHdyb3RlOgo+Pj4+IFRoZSB3YXRjaGRvZyBjb250cm9s
-bGVyIG9uIHRoZSBNZXNvbi1BL0Mgc2VyaWVzIFNvQ3MgaXMgbW92ZWQgdG8gc2VjdXJlCj4+Pj4g
-d29ybGQsIHdhdGNoZG9nIG9wZXJhdGlvbiBuZWVkcyB0byBiZSBkb25lIGluIHNlY3VyZSBFTDMg
-bW9kZSB2aWEgQVRGLAo+Pj4+IE5vbi1zZWN1cmUgd29ybGQgY2FuIGNhbGwgU01DIGluc3RydWN0
-aW9uIHRvIHRyYXAgdG8gQUZUIGZvciB3YXRjaGRvZwo+Pj4+IG9wZXJhdGlvbi4KPj4+Pgo+Pj4+
-IFNpZ25lZC1vZmYtYnk6IFhpbmd5dSBDaGVuIDx4aW5neXUuY2hlbkBhbWxvZ2ljLmNvbT4KPj4+
-PiAtLS0KPj4+PiDCoCBkcml2ZXJzL3dhdGNoZG9nL0tjb25maWfCoMKgwqDCoMKgwqDCoMKgIHzC
-oCAxNyArKysrCj4+Pj4gwqAgZHJpdmVycy93YXRjaGRvZy9NYWtlZmlsZcKgwqDCoMKgwqDCoMKg
-IHzCoMKgIDEgKwo+Pj4+IMKgIGRyaXZlcnMvd2F0Y2hkb2cvbWVzb25fc2VjX3dkdC5jIHwgMTg3
-IAo+Pj4+ICsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKwo+Pj4+IMKgIDMg
-ZmlsZXMgY2hhbmdlZCwgMjA1IGluc2VydGlvbnMoKykKPj4+PiDCoCBjcmVhdGUgbW9kZSAxMDA2
-NDQgZHJpdmVycy93YXRjaGRvZy9tZXNvbl9zZWNfd2R0LmMKPj4+Pgo+Pj4+IGRpZmYgLS1naXQg
-YS9kcml2ZXJzL3dhdGNoZG9nL0tjb25maWcgYi9kcml2ZXJzL3dhdGNoZG9nL0tjb25maWcKPj4+
-PiBpbmRleCA1OGU3YzEwLi5lODRiZTQyIDEwMDY0NAo+Pj4+IC0tLSBhL2RyaXZlcnMvd2F0Y2hk
-b2cvS2NvbmZpZwo+Pj4+ICsrKyBiL2RyaXZlcnMvd2F0Y2hkb2cvS2NvbmZpZwo+Pj4+IEBAIC04
-MjYsNiArODI2LDIzIEBAIGNvbmZpZyBNRVNPTl9HWEJCX1dBVENIRE9HCj4+Pj4gwqDCoMKgwqDC
-oMKgwqAgVG8gY29tcGlsZSB0aGlzIGRyaXZlciBhcyBhIG1vZHVsZSwgY2hvb3NlIE0gaGVyZTog
-dGhlCj4+Pj4gwqDCoMKgwqDCoMKgwqAgbW9kdWxlIHdpbGwgYmUgY2FsbGVkIG1lc29uX2d4YmJf
-d2R0Lgo+Pj4+ICtjb25maWcgTUVTT05fU0VDX1dBVENIRE9HCj4+Pj4gK8KgwqDCoCB0cmlzdGF0
-ZSAiQW1sb2dpYyBNZXNvbiBTZWN1cmUgd2F0Y2hkb2cgc3VwcG9ydCIKPj4+PiArwqDCoMKgIGRl
-cGVuZHMgb24gTUVTT05fU00KPj4+PiArwqDCoMKgIGRlcGVuZHMgb24gQVJDSF9NRVNPTiB8fCBD
-T01QSUxFX1RFU1QKPj4+Cj4+PiBUaGlzIGRlcGVuZGVuY3kgaXMgcG9pbnRsZXNzLiBNRVNPTl9T
-TSBhbHJlYWR5IGRlcGVuZHMgb24gQVJDSF9NRVNPTiwKPj4+IHRodXMgc3BlY2lmeWluZyAiQ09N
-UElMRV9URVNUIiBoZXJlIGFkZHMgbm8gdmFsdWUgYnV0IG9ubHkKPj4+IGNyZWF0ZXMgY29uZnVz
-aW9uLgo+PiBUaGFua3MgZm9yIHlvdXIgYW5hbHlzaXMsIHBlcmhhcHMgaSBzaG91bGQgcmVtb3Zl
-IHRoZSBsaW5lIGJlbG93Lgo+PiAtIGRlcGVuZHMgb24gQVJDSF9NRVNPTiB8fCBDT01QSUxFX1RF
-U1QKPj4KPj4gSXMgaXQgb2sgdG8gbW9kaWZ5IGNvZGUgYWJvdmUgbGlrZSB0aGlzID8KPiAKPiBZ
-ZXMuClRoYW5rcywgZml4IGl0IGluIG5leHQgdmVyc2lvbi4KCj4gWyAuLi4gXQo+IAo+Pj4+ICtz
-dGF0aWMgdW5zaWduZWQgaW50IG1lc29uX3NlY193ZHRfZ2V0X3RpbWVsZWZ0KHN0cnVjdCAKPj4+
-PiB3YXRjaGRvZ19kZXZpY2UgKndkdF9kZXYpCj4+Pj4gK3sKPj4+PiArwqDCoMKgIGludCByZXQ7
-Cj4+Pj4gK8KgwqDCoCB1bnNpZ25lZCBpbnQgdGltZWxlZnQ7Cj4+Pj4gK8KgwqDCoCBzdHJ1Y3Qg
-bWVzb25fc2VjX3dkdCAqZGF0YSA9IHdhdGNoZG9nX2dldF9kcnZkYXRhKHdkdF9kZXYpOwo+Pj4+
-ICsKPj4+PiArwqDCoMKgIHJldCA9IG1lc29uX3NtX2NhbGwoZGF0YS0+ZncsIFNNX1dBVENIRE9H
-X09QUywgVGhhbmtzJnRpbWVsZWZ0LAo+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqAgTUVTT05fU0lQX1dEVF9HRVRUSU1FTEVGVCwgMCwgMCwgMCwgMCk7Cj4+Pj4gKwo+Pj4+ICvC
-oMKgwqAgaWYgKHJldCkKPj4+PiArwqDCoMKgwqDCoMKgwqAgcmV0dXJuIHJldDsKPj4+Cj4+PiBN
-ZWgsIHRoYXQgZG9lc24ndCB3b3JrLiBJIGp1c3QgcmVhbGl6ZWQgdGhhdCB0aGUgcmV0dXJuIHR5
-cGUgaXMgCj4+PiB1bnNpZ25lZCwKPj4+IHNvIHJldHVybmluZyBhIG5lZ2F0aXZlIGVycm9yIGNv
-ZGUgaXMgcG9pbnRsZXNzLiBHdWVzcyB3ZSdsbCBoYXZlIHRvCj4+PiBsaXZlIHdpdGggcmV0dXJu
-aW5nIDAgaW4gdGhpcyBjYXNlIGFmdGVyIGFsbC4gSSB3b25kZXIgaWYgd2Ugc2hvdWxkCj4+PiBm
-aXggdGhlIEFQSSBhbmQgcmV0dXJuIGFuIGludGVnZXIgKHdpdGggbmVnYXRpdmUgZXJyb3IgY29k
-ZSksIGJ1dCB0aGF0Cj4+PiBpcyBhIGRpZmZlcmVudCBxdWVzdGlvbi4KPj4gVGhhbmtzIGZvciB5
-b3VyIHJldmlldy4KPj4KPj4gSU1PLCBpZiByZXR1cm5pbmcgYW4gaW50ZWdlciwgYW5kIHRoZSB2
-YWx1ZSB3aGljaCBjb3B5IHRvIHVzZXIgYnVmIAo+PiBzaG91bGQgYmUgZm9ybWF0dGVkIHdpdGgg
-JWQgaW5zdGVhZCBvZiAldSAoc2VlIHRpbWVsZWZ0X3Nob3cpLCBpdCB3aWxsIAo+PiBjYXVzZSB0
-aGUgbWF4IHZhbHVlIG9mIHRpbWVsZWZ0IGlzIHJlZHVjZWQgZnJvbSA0Mjk0OTY3Mjk1IHRvIAo+
-PiAyMTQ3NDgzNjQ3LiBidXQgaSdhbSBub3Qgc3VyZSB3aGV0aGVyIGl0IHdpbGwgYnJpbmcgcmlz
-ay4KPiAKPiBOb3QgdGhhdCBpdCBtYXR0ZXJzIHJpZ2h0IG5vdywgYnV0IEkgZG9uJ3QgdGhpbmsg
-dGhhdCBsaW1pdGluZyAndGltZWxlZnQnCj4gcmVwb3J0aW5nIHRvIDIxNDc0ODM2NDcgc2Vjb25k
-cywgb3IgfjY4IHllYXJzLCB3b3VsZCBjYXVzZSBhbnkgcmlzay4KPiBJdCB3b3VsZCBqdXN0IGJl
-IGEgbGFyZ2UgcGF0Y2ggY2hhbmdpbmcgc2V2ZXJhbCBkcml2ZXJzIGFsbCBhdCBvbmNlLAo+IHRo
-YXQgaXMgYWxsLgo+IAo+Pgo+PiBTbyBpIGFsc28gdGhpbmsgcmV0dXJuaW5nIDAgbWF5IGJlIGJl
-dHRlciBpbiB0aGlzIGNhc2UuCj4gCj4gWWVzLCBwbGVhc2UgZG8gdGhhdC4KVGhhbmtzLCBmaXgg
-aXQgaW4gbmV4dCB2ZXJzaW9uLgo+IAo+IFRoYW5rcywKPiBHdWVudGVyCj4gCj4gLgo+IAoKX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtl
-cm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
-dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5l
-bAo=
+On Tue, 22 Oct 2019 at 00:40, Sami Tolvanen <samitolvanen@google.com> wrote:
+>
+> On Sun, Oct 20, 2019 at 11:20 PM Ard Biesheuvel
+> <ard.biesheuvel@linaro.org> wrote:
+> > You'll have to elaborate a bit here and explain that this is
+> > sufficient, given that we run EFI runtime services with interrupts
+> > enabled.
+>
+> I can add a note about this in v2. This is called with preemption
+> disabled and we have a separate interrupt shadow stack, so as far as I
+> can tell, this should be sufficient. Did you have concerns about this?
+>
+
+No concerns, but we should put the above clarification in the commit log.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
