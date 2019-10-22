@@ -2,87 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A67BE01E1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 12:18:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16AF6E021E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 12:32:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1oN14Fbrm8Z7NDq0yatlQPm4Sbz6n/xdUqiiwjRcZhc=; b=O9GLag+391PsHr
-	KQkEoKBZHCcuDw86eXQSR12gV07gbM6w9VfYeRALeL4K6XRKXIrWsZ2wcZR+IpRHWGf/U8GCohHrH
-	GTwTkp7jSdBU4adjWgfln4J5UXAdw/K+PgQAkg0jucvwou9rltJJ9fLnad2bNmghOfvA2+FBeuJfX
-	02ZXW56l3zrEu417zl2XT721EzQFnY/FqKrv2RfCoqXs/FQN/nKNR32oZuF1Q6zEGNicW16rTWnFN
-	svs/j4jaSAPsj4L6mmAG1C7aQduffm1JxtYrFxacQaTYOckBYN0aSHjhP4XOV66CLfKxX3kcXRSpD
-	he+PM7naviYYRjUtii6A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hj6YKw8xzhvAiErlbjKK1zmbnOhMg9aN8hDvcUY6LUI=; b=eM99xooEI3nNfL
+	9jfk+7QxisBlAFiNJ0SWpIoEUOx2tTIPHgeAQRR8BCf9BLi8bebCr6xohPip3TJU3q/RVjzWA32d/
+	M4/aBcVkBuDDJp17Q69DNBtsO29KV3uIO/SUcaUiyEIS1GEaRFnxuuDBW8eKzRAx3EebOmioqSq7i
+	k+rqTiBkDA7PpAH66374dEO7ppEFpKQEAfdZBlyyVo4PWn4dksiyz15EfR/yAYwTzA5CugUdyNDpZ
+	Mj9iHdm42RDGFDmM2/B8paKInbpiWsopBHlWD53BdAXwfB6L3GAG6ci8M+BMU75S5geoYT9O+oxVz
+	plbtE/qqV4vGS6JZjqmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMrEj-0003Lf-Vu; Tue, 22 Oct 2019 10:17:58 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1iMrSv-0000F4-7u; Tue, 22 Oct 2019 10:32:37 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMrEa-0003L7-Rj
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 10:17:50 +0000
-Received: by mail-lj1-x243.google.com with SMTP id q78so1415515lje.5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 22 Oct 2019 03:17:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=rasmusvillemoes.dk; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=UPQHJmcEnXeH/iiZIyJlOmriHnC0d9InpVAG+IS31RU=;
- b=h/3Uo75yRFQRRe+mjVmd8cMUmSai80wzLccdR09BlGw6HnocUgAczaz4IgYFRWgG3H
- OJdRbFB9Mz9fLShfMfIQz/v973qofYhFRWlTSouwX+s3dVq2XD/i9xdJL7HBCWbL6ait
- GeYoY67YnMUOYKMguf97VQFeB/gYvg8+cWRaM=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=UPQHJmcEnXeH/iiZIyJlOmriHnC0d9InpVAG+IS31RU=;
- b=Qz/IegDSbBXEFz1gAr/adtMfuXuHUbC+BEyvJF8JG1eRkKo4CT+Odbcz+KLnYgz+Cc
- QH6CgTebJdIYQsYTlTb9wUwn4DCPbF9ZP2zCHFaXtjnEHHFaqw3ixf/GWATLKFTbj6XA
- Ckcmh44gAw+y7DYzzwNywaBEn9zWHSIu6E1nda8KxC6FdmJZNzLd40ZmsWF1Jc/Zkrke
- RWsVA0T4YQbo85oBTTuI3ViqMLKLXibaQALjgRE9NEH866SFqHtu3+EhWjXjsfFpeK86
- 0WbZgJsBoIHwUOBK5enmrYmJyhEejvtjx0ITFTm788hOOpVOhBgBDQIVZ2ePme6vLUhT
- gsOw==
-X-Gm-Message-State: APjAAAUeQwPO5W51ofOcDC+W/B41tRMAIghRtnnyaZyxayx2L3UAP0pT
- DN2xpCYLVbL/dRMQcQu62bdZ2d7/r3egHV6+
-X-Google-Smtp-Source: APXvYqwrLO6yXk3q5+ZZIbKEWNFhquBa+3kRuXdGYBzSGzi6Tc86djtM/ixn33Sd74ROetfVBAw3WQ==
-X-Received: by 2002:a2e:8716:: with SMTP id m22mr10796456lji.102.1571739466229; 
- Tue, 22 Oct 2019 03:17:46 -0700 (PDT)
-Received: from [172.16.11.28] ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id b19sm7866434lji.41.2019.10.22.03.17.45
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 22 Oct 2019 03:17:45 -0700 (PDT)
-Subject: Re: [PATCH 0/7] towards QE support on ARM
-To: Qiang Zhao <qiang.zhao@nxp.com>, Leo Li <leoyang.li@nxp.com>
-References: <20191018125234.21825-1-linux@rasmusvillemoes.dk>
- <VE1PR04MB6687DA0268FAF03D3E77A23B8F6C0@VE1PR04MB6687.eurprd04.prod.outlook.com>
- <e02fa027-9c78-3272-d2d7-7ad2b0ed3ab0@rasmusvillemoes.dk>
- <CADRPPNREUK1SVxO4P5qb2COn+T04dtYgpVEzrveKUt16hBqAtQ@mail.gmail.com>
- <679bf33b-8c05-b77a-0cb2-d79dc5bfbe75@rasmusvillemoes.dk>
- <CADRPPNSiMUy77Dhxjg03sHDxyZzWf_BP8a5+fCncbynyO_cNGg@mail.gmail.com>
- <VE1PR04MB676825D5709839AEF75ED44C91680@VE1PR04MB6768.eurprd04.prod.outlook.com>
-From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
-Message-ID: <43033011-1a2a-dea3-e3c9-75895f997407@rasmusvillemoes.dk>
-Date: Tue, 22 Oct 2019 12:17:44 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iMrSg-0000E7-Mq
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 10:32:24 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4BBB620B7C;
+ Tue, 22 Oct 2019 10:32:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571740341;
+ bh=BBu2NmvdVb1QtTKj1PLuJSKNxaY/KN55w4CVevFLVBo=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=KajojXmq4Opns6SbxaWXEo4/LI9mHBWmmp1W2aXPlozLc7kp6IXqE+gekpYO1rBBh
+ Lo3B4lTD3EkEg/8b2eTtKD0FyYK4bfLHiO9C1j8sNAxnDv/1KbiBJsZSxivB9ZdJ8X
+ RuK1hXqqdI+mNnwERHTL1PW0DZUUgSyTfsDLBJaY=
+Date: Tue, 22 Oct 2019 11:32:13 +0100
+From: Will Deacon <will@kernel.org>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH v2 04/12] arm64: docs: cpu-feature-registers: Document
+ ID_AA64PFR1_EL1
+Message-ID: <20191022103212.GA17035@willie-the-truck>
+References: <1570733080-21015-1-git-send-email-Dave.Martin@arm.com>
+ <1570733080-21015-5-git-send-email-Dave.Martin@arm.com>
+ <87zhi7l8qz.fsf@linaro.org> <20191011145148.GK27757@arm.com>
+ <20191021191818.GH4691@sirena.co.uk>
 MIME-Version: 1.0
-In-Reply-To: <VE1PR04MB676825D5709839AEF75ED44C91680@VE1PR04MB6768.eurprd04.prod.outlook.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191021191818.GH4691@sirena.co.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_031748_895256_990837B2 
-X-CRM114-Status: GOOD (  13.23  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191022_033222_765680_64D44066 
+X-CRM114-Status: GOOD (  18.96  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -92,6 +68,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,36 +80,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Timur Tabi <timur@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
- Jiri Slaby <jslaby@suse.com>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Andrew Jones <drjones@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, linux-arch@vger.kernel.org,
+ Suzuki Poulose <suzuki.poulose@arm.com>,
+ Eugene Syromiatnikov <esyr@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, "H.J. Lu" <hjl.tools@gmail.com>,
+ Yu-cheng Yu <yu-cheng.yu@intel.com>, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Alex =?iso-8859-1?Q?Benn=E9e?= <alex.bennee@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, Florian Weimer <fweimer@redhat.com>,
+ linux-kernel@vger.kernel.org, Sudakshina Das <sudi.das@arm.com>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 22/10/2019 04.24, Qiang Zhao wrote:
-> On Mon, Oct 22, 2019 at 6:11 AM Leo Li wrote
+On Mon, Oct 21, 2019 at 08:18:18PM +0100, Mark Brown wrote:
+> On Fri, Oct 11, 2019 at 03:51:49PM +0100, Dave Martin wrote:
+> > On Fri, Oct 11, 2019 at 02:19:48PM +0100, Alex Benn=E9e wrote:
+> =
 
->> Right.  I'm really interested in getting this applied to my tree and make it
->> upstream.  Zhao Qiang, can you help to review Rasmus's patches and
->> comment?
-> 
-> As you know, I maintained a similar patchset removing PPC, and someone told me qe_ic should moved into drivers/irqchip/.
-> I also thought qe_ic is a interrupt control driver, should be moved into dir irqchip.
+> > > > -  4) ID_AA64ISAR1_EL1 - Instruction set attribute register 1
+> > > > +  5) ID_AA64ISAR1_EL1 - Instruction set attribute register 1
+> =
 
-Yes, and I also plan to do that at some point. However, that's
-orthogonal to making the driver build on ARM, so I don't want to mix the
-two. Making it usable on ARM is my/our priority currently.
+> > > If I'm not mistaken .rst has support for auto-enumeration if the #
+> > > character is used. That might reduce the pain of re-numbering in futu=
+re.
+> =
 
-I'd appreciate your input on my patches.
+> > Ack, though it would be good to go one better and generate this document
+> > from the cpufeature.c tables (or from some common source).  The numbers
+> > are relatively easy to maintain -- remembering to update the document
+> > at all seems the bigger maintenance headache right now.
+> =
 
-Rasmus
+> I agree, it'd be better if the table were autogenerated.  Having tried
+> doing the modification to # it does mean that the document looks a bit
+> weird when viewing it as a text file in the kernel source which TBH is
+> how I suspect a lot of people will view it so given the infrequency with
+> which new registers are added I'm not sure it's worth it.
+> =
 
+> > I think this particular patch is superseded by similar fixes from other
+> > people, just not in torvalds/master yet.
+> =
+
+> Nor in -next for the minute :/
+
+Which patch is missing? The only other one on my radar is "docs/arm64:
+cpu-feature-registers: Documents missing visible fields" which is currently
+in -next as a8613e7070e7. "similar fixes from other people" isn't very
+specific :(
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
