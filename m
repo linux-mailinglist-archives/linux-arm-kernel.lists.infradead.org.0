@@ -2,56 +2,117 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8FD8FDFF84
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 10:36:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0865DFF89
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 10:37:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XHTA8hO3DGNgIn7TiQvjn+un+DhcfvhwMrZB0YnlTdg=; b=og5xkqRHYpLSup
-	lZXSO0TFjJhc5Hp2zn5gbkqFx46nBBDl+3Ffwtr0z1ED6Unk1Y0tWcsguCcdU0YJYWIxRCiKzVVku
-	FXuGPlN0sB49E4ncZrJulQ2tlj5OZfnpqCgBh5+yzuD2NxSQLB/T+gid/r30FJy9MidoSJ7H42Gyy
-	khK3uA9BrDWCEPGXM2l1EGz70vghA/lWMU+NoptRsIJKXCtYNCvqyOWG353Pdo/C2nZLQhBjktpUY
-	PV6VIuyiNMDhK8t5R81A4usywtTOvkSerMKf5VMfOUvJMneVs5E2p52qfxO96Mrlxel7ODH3+ayCn
-	Tpi4/QJki3FgSYmyG/Cw==;
+	List-Owner; bh=/G+z1vAgSwWnczdh7AAiO2vNlGG5wFu0bEp/nRjKn+g=; b=sMo/NcWmhsJOMc
+	RZh0ynqahZl6tFL6hy9x8mo3iiaaLPSA+sBKucHaSprWtfAzCXO0AmxN+9T9rljNrh/kDIoYbDFpn
+	ZgHuAbWvOQo4uAEbA0SlIZ3lQuY+jC48qNxfhJ+AyGQloIh+8I1IageGeZcYX51PCFTGiXZzaccdC
+	YrZ71glhLr3YvceVSvnDGdP7BfYyWZB/UG5ZSl5X1nz5iGaMkXaqaWq34sqyFrmU8IMf4RsqsZHpY
+	XgdWxb5VklhLxE+uuNqygyHKh+w8Ovd2HPSZv4lSMjWCX6Dw3OlOaFvj4wKbzEfwbjegogdazHmIt
+	f5iMDoDRn+SB3NNn1XWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMpeM-0001Yv-VS; Tue, 22 Oct 2019 08:36:18 +0000
-Received: from relay5-d.mail.gandi.net ([217.70.183.197])
+	id 1iMpfB-0002Bq-JF; Tue, 22 Oct 2019 08:37:09 +0000
+Received: from mail-he1eur02on0625.outbound.protection.outlook.com
+ ([2a01:111:f400:fe05::625]
+ helo=EUR02-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMpeB-0001Xv-Lt
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 08:36:10 +0000
-X-Originating-IP: 92.137.17.54
-Received: from localhost (alyon-657-1-975-54.w92-137.abo.wanadoo.fr
- [92.137.17.54]) (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 464B51C0006;
- Tue, 22 Oct 2019 08:35:55 +0000 (UTC)
-Date: Tue, 22 Oct 2019 10:35:54 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Kamel Bouhara <kamel.bouhara@bootlin.com>
-Subject: Re: [PATCH v2 2/2] ARM: dts: at91: add a dts and dtsi file for
- kizbox2 based boards
-Message-ID: <20191022083554.GB3125@piout.net>
-References: <20191021125804.23856-1-kamel.bouhara@bootlin.com>
- <20191021125804.23856-2-kamel.bouhara@bootlin.com>
+ id 1iMpf1-00029u-2y
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 08:37:00 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=MyI3KM6T57C76M8GK2rSV5SDRgJrvbxEvNwJPxJoV1UGILMOoJNo8IG0Y0jUVl/NWuaj72/QsWIdrKQIOazk/tQvRFJFsL5XO2It8Nj3zISbtJ0Coh9ZjtWcdmLtMKGkkEnsr8WtFWRVvNrr1k45GWXkCI+IyGIjHL1SYa6we3AsCv8/0X2nF/oxYAhvXmcnsCBYfDj8d3RMa39Of+3j2OLN9fHxd7Ie0jW1y+z3GQAvPzJt39mmlXYkY83M70xPYNMC0e8l+f990mVAwvv29v9QzaWwpCh6L6MC4sAwMB416IFX0x8xiEk3KyaZTl5psITxCknPpw1n0Iyi3BVC9A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=stwmg0OizPp2+nyPdC+KT02MhX3t+bf4yKUhEqNkjgE=;
+ b=d3U2y3CMLS8LWAm6EjdIknPeKLmpDAh6hhdkILX/KaQ46yedVph201nAFlEktjKNB8lYMV3XJ1qU7egciYWY1wBbMqU1c34ej7mUVg7158+WPllj4vlSZKFquqBt7CdA2l0SdeBWaHPA031/ov/w6o/9B+hjuYDBPbJer1DyCB+lcxsr6u3mdxB7YwS/g8yXePWGmUXOht4lSHM/gvU1mwEMn5VPmMGAB5/jXREKwhb46zyTxCzwr85oLLSJDKyUIgPy3slbElKPwpHjTvkW9ftucrEu/AYjCulaTPnUB73W+mjvx/qqUbxzJmDAREhpPfcTSPE6CFGBtEndXDPolA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=stwmg0OizPp2+nyPdC+KT02MhX3t+bf4yKUhEqNkjgE=;
+ b=K1drMWADM3OgjX497twXlKim3NGToOdVKd9SUijgDseDXIURTUS3KDdvY0dpyN9vByAtVSHq7sv9WD0Sxs/dhhzOFJgvJms2TWJWbYct3QP8G+GhvVMfT9ZjtcfHAIgDEyOUEkKK0CdGIJvM0GmaTTJS+VKjRbvJRSXjA6JkX4s=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3658.eurprd04.prod.outlook.com (52.134.65.28) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2347.22; Tue, 22 Oct 2019 08:36:52 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::d469:ad51:2bec:19f0]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::d469:ad51:2bec:19f0%6]) with mapi id 15.20.2367.022; Tue, 22 Oct 2019
+ 08:36:52 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Viresh Kumar <viresh.kumar@linaro.org>
+Subject: RE: [PATCH] cpufreq: imx-cpufreq-dt: Correct i.MX8MN's default speed
+ grade value
+Thread-Topic: [PATCH] cpufreq: imx-cpufreq-dt: Correct i.MX8MN's default speed
+ grade value
+Thread-Index: AQHViJMjrjphINO/nEKP49CFCN+2HqdmUvUAgAADUQA=
+Date: Tue, 22 Oct 2019 08:36:52 +0000
+Message-ID: <DB3PR0402MB391687A3723E810119A58866F5680@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1571719179-23316-1-git-send-email-Anson.Huang@nxp.com>
+ <20191022082400.7dsoo57mt7wfpqs7@vireshk-i7>
+In-Reply-To: <20191022082400.7dsoo57mt7wfpqs7@vireshk-i7>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: ea30b8a5-e85e-496b-6fee-08d756cafd4d
+x-ms-traffictypediagnostic: DB3PR0402MB3658:|DB3PR0402MB3658:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB3PR0402MB365839A73F4318F9BB88A617F5680@DB3PR0402MB3658.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 01986AE76B
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(346002)(39860400002)(396003)(136003)(376002)(189003)(199004)(6436002)(11346002)(64756008)(446003)(76176011)(6116002)(3846002)(6246003)(99286004)(476003)(44832011)(66946007)(76116006)(486006)(52536014)(66476007)(66066001)(66556008)(9686003)(26005)(102836004)(7696005)(86362001)(186003)(55016002)(6506007)(53546011)(66446008)(5660300002)(256004)(316002)(81156014)(8676002)(8936002)(54906003)(7736002)(305945005)(74316002)(14454004)(229853002)(4326008)(25786009)(81166006)(6916009)(33656002)(71190400001)(71200400001)(478600001)(2906002)(14444005);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3658;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: w7SDN1dgh/gcYXrSf8TK1Hl8XrR6d0/K97Ci3iaxBn85oSvibrdM/IBP8uvm+hzqtkFbtDR0GHjyC4wuErKe/8bWsdT0vGsO0jXkOjD/T04vFeCB3oNCxSRo+H92eHroCgGeChS8sMlC8apMVyM7r36iFa2lR6Eg1Qs4gP1VimX/N2W1KYxLItnZhAE9J//+fW7wWhevxDrZED3rNvC/30Nmh2sFNgUnL9N/ITcoG5/c2MNGe8rZRyV/PdRVQ46eEgRdJDODKv+dEgQN/32k+7N/7KLAkXbBiIfy737gV6MIRbyho3S6pP98SAEkMl8YYwF3fN9egrd53tI8R/z68WrdBS2GaCjKIhi/CywcZ/oaNb63Q1HMjOUul5BGp9Q/KCM9WzrQYiJgDfLq1qlS0GaZXVe6UstOWbXn1JzeQgQFn0CXNAAW4A39aJwZuyIq
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191021125804.23856-2-kamel.bouhara@bootlin.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: ea30b8a5-e85e-496b-6fee-08d756cafd4d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Oct 2019 08:36:52.7778 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: oBy6pLcwIHG5tXBq9V9pWxbhx7vsJB9A/e10S18YWXHBxEQMsebZiWFrB639y06Did7VF0taAi0gbolN4I5S6A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3658
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_013607_992292_BFC83159 
-X-CRM114-Status: GOOD (  19.16  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191022_013659_203401_EE860589 
+X-CRM114-Status: GOOD (  19.76  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.197 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a01:111:f400:fe05:0:0:0:625 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid 1.0 FORGED_SPF_HELO        No description available.
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,820 +124,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Mickael GARDET <m.gardet@overkiz.com>,
- linux-kernel@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Rob Herring <robh+dt@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- =?iso-8859-1?Q?K=E9vin?= RAYMOND <k.raymond@overkiz.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "rafael.j.wysocki@intel.com" <rafael.j.wysocki@intel.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 21/10/2019 14:58:04+0200, Kamel Bouhara wrote:
-> There are several boards available depending on the PCB
-> (3 antennas support and several revison). Add a dtsi file to share
-> common binding between all kizbox2 boards. This patch also add support
-> for the kizbox2-2 variant.
-> =
+Hi, Viresh
 
-> Signed-off-by: K=E9vin RAYMOND <k.raymond@overkiz.com>
-> Signed-off-by: Mickael GARDET <m.gardet@overkiz.com>
-> Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
-> ---
-> Changes in v2:
-> 	- Replaced "_" by "-" in dts/dtsi file names
-> 	- Fixed unusual C++ Style comments
-> =
+> On 22-10-19, 12:39, Anson Huang wrote:
+> > i.MX8MN has different speed grade definition compared to
+> > i.MX8MQ/i.MX8MM, when fuses are NOT written, the default speed_grade
+> > should be set to minimum available OPP defined in DT which is 1.2GHz,
+> > the corresponding speed_grade value should be 0xb.
+> >
+> > Fixes: 5b8010ba70d5 ("cpufreq: imx-cpufreq-dt: Add i.MX8MN support")
+> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > ---
+> >  drivers/cpufreq/imx-cpufreq-dt.c | 20 ++++++++++----------
+> >  1 file changed, 10 insertions(+), 10 deletions(-)
+> >
+> > diff --git a/drivers/cpufreq/imx-cpufreq-dt.c
+> > b/drivers/cpufreq/imx-cpufreq-dt.c
+> > index 35db14c..26531f0 100644
+> > --- a/drivers/cpufreq/imx-cpufreq-dt.c
+> > +++ b/drivers/cpufreq/imx-cpufreq-dt.c
+> > @@ -44,19 +44,19 @@ static int imx_cpufreq_dt_probe(struct
+> platform_device *pdev)
+> >  	mkt_segment = (cell_value & OCOTP_CFG3_MKT_SEGMENT_MASK) >>
+> > OCOTP_CFG3_MKT_SEGMENT_SHIFT;
+> >
+> >  	/*
+> > -	 * Early samples without fuses written report "0 0" which means
+> > -	 * consumer segment and minimum speed grading.
+> > -	 *
+> > -	 * According to datasheet minimum speed grading is not supported
+> for
+> > -	 * consumer parts so clamp to 1 to avoid warning for "no OPPs"
+> > +	 * Early samples without fuses written report "0 0" which may NOT
+> > +	 * match any OPP defined in DT. So clamp to minimum OPP defined
+> in
+> > +	 * DT to avoid warning for "no OPPs".
+> >  	 *
+> >  	 * Applies to i.MX8M series SoCs.
+> >  	 */
+> > -	if (mkt_segment == 0 && speed_grade == 0 && (
+> > -			of_machine_is_compatible("fsl,imx8mm") ||
+> > -			of_machine_is_compatible("fsl,imx8mn") ||
+> > -			of_machine_is_compatible("fsl,imx8mq")))
+> > -		speed_grade = 1;
+> > +	if (mkt_segment == 0 && speed_grade == 0) {
+> > +		if (of_machine_is_compatible("fsl,imx8mm") ||
+> > +			of_machine_is_compatible("fsl,imx8mq"))
+> 
+> of_machine_is_compatible should come right below the above
+> of_machine_is_compatible here, instead of a leading tab.
 
->  arch/arm/boot/dts/Makefile                 |   2 +-
->  arch/arm/boot/dts/at91-kizbox.dts          | 173 +++++++-------
+Ah, yes, fixed in V2.
 
-This change should be separated in a different patch.
-
->  arch/arm/boot/dts/at91-kizbox2-2.dts       |  26 +++
->  arch/arm/boot/dts/at91-kizbox2-common.dtsi | 258 +++++++++++++++++++++
->  arch/arm/boot/dts/at91-kizbox2.dts         | 244 -------------------
->  5 files changed, 370 insertions(+), 333 deletions(-)
->  create mode 100644 arch/arm/boot/dts/at91-kizbox2-2.dts
->  create mode 100644 arch/arm/boot/dts/at91-kizbox2-common.dtsi
->  delete mode 100644 arch/arm/boot/dts/at91-kizbox2.dts
-> =
-
-> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-> index 3bda216c41be..4ac053115a8e 100644
-> --- a/arch/arm/boot/dts/Makefile
-> +++ b/arch/arm/boot/dts/Makefile
-> @@ -45,7 +45,7 @@ dtb-$(CONFIG_SOC_AT91SAM9) +=3D \
->  	at91sam9x25ek.dtb \
->  	at91sam9x35ek.dtb
->  dtb-$(CONFIG_SOC_SAM_V7) +=3D \
-> -	at91-kizbox2.dtb \
-> +	at91-kizbox2-2.dtb \
->  	at91-kizbox3-hs.dtb \
->  	at91-nattis-2-natte-2.dtb \
->  	at91-sama5d27_som1_ek.dtb \
-> diff --git a/arch/arm/boot/dts/at91-kizbox.dts b/arch/arm/boot/dts/at91-k=
-izbox.dts
-> index 90996eaf73b2..9eb1ea750159 100644
-> --- a/arch/arm/boot/dts/at91-kizbox.dts
-> +++ b/arch/arm/boot/dts/at91-kizbox.dts
-> @@ -28,85 +28,6 @@
->  		};
->  	};
-> =
-
-> -	ahb {
-> -		apb {
-> -			tcb0: timer@fffa0000 {
-> -				timer@0 {
-> -					compatible =3D "atmel,tcb-timer";
-> -					reg =3D <0>, <1>;
-> -				};
-> -
-> -				timer@2 {
-> -					compatible =3D "atmel,tcb-timer";
-> -					reg =3D <2>;
-> -				};
-> -			};
-> -
-> -			macb0: ethernet@fffc4000 {
-> -				phy-mode =3D "mii";
-> -				pinctrl-0 =3D <&pinctrl_macb_rmii
-> -				             &pinctrl_macb_rmii_mii_alt>;
-> -				status =3D "okay";
-> -			};
-> -
-> -			usart3: serial@fffd0000 {
-> -				status =3D "okay";
-> -			};
-> -
-> -			dbgu: serial@fffff200 {
-> -				status =3D "okay";
-> -			};
-> -
-> -			watchdog@fffffd40 {
-> -				timeout-sec =3D <15>;
-> -				atmel,max-heartbeat-sec =3D <16>;
-> -				atmel,min-heartbeat-sec =3D <0>;
-> -				status =3D "okay";
-> -			};
-> -		};
-> -
-> -		usb0: ohci@500000 {
-> -			num-ports =3D <1>;
-> -			status =3D "okay";
-> -		};
-> -
-> -		ebi: ebi@10000000 {
-> -			status =3D "okay";
-> -
-> -			nand_controller: nand-controller {
-> -				status =3D "okay";
-> -				pinctrl-0 =3D <&pinctrl_nand_cs &pinctrl_nand_rb>;
-> -				pinctrl-names =3D "default";
-> -
-> -				nand@3 {
-> -					reg =3D <0x3 0x0 0x800000>;
-> -					rb-gpios =3D <&pioC 13 GPIO_ACTIVE_HIGH>;
-> -					cs-gpios =3D <&pioC 14 GPIO_ACTIVE_HIGH>;
-> -					nand-bus-width =3D <8>;
-> -					nand-ecc-mode =3D "soft";
-> -					nand-on-flash-bbt;
-> -					label =3D "atmel_nand";
-> -
-> -					partitions {
-> -						compatible =3D "fixed-partitions";
-> -						#address-cells =3D <1>;
-> -						#size-cells =3D <1>;
-> -
-> -						bootstrap@0 {
-> -							label =3D "bootstrap";
-> -							reg =3D <0x0 0x20000>;
-> -						};
-> -
-> -						ubi@20000 {
-> -							label =3D "ubi";
-> -							reg =3D <0x20000 0x7fe0000>;
-> -						};
-> -					};
-> -				};
-> -			};
-> -		};
-> -	};
-> -
->  	gpio_keys {
->  		compatible =3D "gpio-keys";
->  		#address-cells =3D <1>;
-> @@ -127,15 +48,6 @@
->  		};
->  	};
-> =
-
-> -	i2c-gpio-0 {
-> -		status =3D "okay";
-> -
-> -		rtc: pcf8563@51 {
-> -			compatible =3D "nxp,pcf8563";
-> -			reg =3D <0x51>;
-> -		};
-> -	};
-> -
->  	pwm_leds {
->  		compatible =3D "pwm-leds";
-> =
-
-> @@ -179,3 +91,88 @@
->  			     &pinctrl_tcb1_tiob0>;
->  	};
->  };
-> +
-> +&tcb0 {
-> +	timer@0 {
-> +		compatible =3D "atmel,tcb-timer";
-> +		reg =3D <0>, <1>;
-> +	};
-> +
-> +	timer@2 {
-> +		compatible =3D "atmel,tcb-timer";
-> +		reg =3D <2>;
-> +	};
-> +};
-> +
-> +&ebi {
-> +	status =3D "okay";
-> +};
-> +
-> +&nand_controller {
-> +	status =3D "okay";
-> +	pinctrl-0 =3D <&pinctrl_nand_cs &pinctrl_nand_rb>;
-> +	pinctrl-names =3D "default";
-> +
-> +	nand@3 {
-> +		reg =3D <0x3 0x0 0x800000>;
-> +		rb-gpios =3D <&pioC 13 GPIO_ACTIVE_HIGH>;
-> +		cs-gpios =3D <&pioC 14 GPIO_ACTIVE_HIGH>;
-> +		nand-bus-width =3D <8>;
-> +		nand-ecc-mode =3D "soft";
-> +		nand-on-flash-bbt;
-> +		label =3D "atmel_nand";
-> +
-> +		partitions {
-> +			compatible =3D "fixed-partitions";
-> +			#address-cells =3D <1>;
-> +			#size-cells =3D <1>;
-> +
-> +			bootstrap@0 {
-> +				label =3D "bootstrap";
-> +				reg =3D <0x0 0x20000>;
-> +			};
-> +
-> +			ubi@20000 {
-> +				label =3D "ubi";
-> +				reg =3D <0x20000 0x7fe0000>;
-> +			};
-> +		};
-> +	};
-> +};
-> +
-> +&macb0 {
-> +	phy-mode =3D "mii";
-> +	pinctrl-0 =3D <&pinctrl_macb_rmii
-> +		     &pinctrl_macb_rmii_mii_alt>;
-> +	status =3D "okay";
-> +};
-> +
-> +&usart3 {
-> +	status =3D "okay";
-> +};
-> +
-> +&dbgu {
-> +	status =3D "okay";
-> +};
-> +
-> +&watchdog {
-> +	timeout-sec =3D <15>;
-> +	atmel,max-heartbeat-sec =3D <16>;
-> +	atmel,min-heartbeat-sec =3D <0>;
-> +	status =3D "okay";
-> +};
-> +
-> +&usb0 {
-> +	num-ports =3D <1>;
-> +	status =3D "okay";
-> +};
-> +
-> +&i2c-gpio-0 {
-> +	status =3D "okay";
-> +
-> +	rtc: pcf8563@51 {
-> +		compatible =3D "nxp,pcf8563";
-> +		reg =3D <0x51>;
-> +	};
-> +};
-> +
-> diff --git a/arch/arm/boot/dts/at91-kizbox2-2.dts b/arch/arm/boot/dts/at9=
-1-kizbox2-2.dts
-> new file mode 100644
-> index 000000000000..cab8b3579efa
-> --- /dev/null
-> +++ b/arch/arm/boot/dts/at91-kizbox2-2.dts
-> @@ -0,0 +1,26 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * at91-kizbox2-2.dts - Device Tree file for the Kizbox2 with
-> + * two head board
-> + *
-> + * Copyright (C) 2015 Overkiz SAS
-> + *
-> + * Authors: Antoine Aubert <a.aubert@overkiz.com>
-> + *	    K=E9vin Raymond <k.raymond@overkiz.com>
-> + */
-> +/dts-v1/;
-> +#include "at91-kizbox2-common.dtsi"
-> +
-> +/ {
-> +	model =3D "Overkiz Kizbox 2 with two heads";
-> +	compatible =3D "overkiz,kizbox2-2", "atmel,sama5d31",
-> +		     "atmel,sama5d3", "atmel,sama5";
-> +};
-> +
-> +&usart1 {
-> +	status =3D "okay";
-> +};
-> +
-> +&usart2 {
-> +	status =3D "okay";
-> +};
-> diff --git a/arch/arm/boot/dts/at91-kizbox2-common.dtsi b/arch/arm/boot/d=
-ts/at91-kizbox2-common.dtsi
-> new file mode 100644
-> index 000000000000..af38253a6e7a
-> --- /dev/null
-> +++ b/arch/arm/boot/dts/at91-kizbox2-common.dtsi
-> @@ -0,0 +1,258 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * at91-kizbox2_common.dtsi - Device Tree Include file for
-> + * Overkiz Kizbox 2 family SoC
-> + *
-> + * Copyright (C) 2014-2018 Overkiz SAS
-> + *
-> + * Authors: Antoine Aubert <a.aubert@overkiz.com>
-> + *          Ga=EBl Portay <g.portay@overkiz.com>
-> + *          K=E9vin Raymond <k.raymond@overkiz.com>
-> + */
-> +#include "sama5d31.dtsi"
-> +
-> +/ {
-> +	chosen {
-> +		bootargs =3D "ubi.mtd=3Dubi";
-> +		stdout-path =3D &dbgu;
-> +	};
-> +
-> +	memory {
-> +		reg =3D <0x20000000 0x10000000>;
-> +	};
-> +
-> +	clocks {
-> +		slow_xtal {
-> +			clock-frequency =3D <32768>;
-> +		};
-> +
-> +		main_xtal {
-> +			clock-frequency =3D <12000000>;
-> +		};
-> +	};
-> +
-> +	gpio_keys {
-> +		compatible =3D "gpio-keys";
-> +		#address-cells =3D <1>;
-> +		#size-cells =3D <0>;
-> +
-> +		prog {
-> +			label =3D "PB_PROG";
-> +			gpios =3D <&pioE 27 GPIO_ACTIVE_LOW>;
-> +			linux,code =3D <0x102>;
-> +			wakeup-source;
-> +		};
-> +
-> +		reset {
-> +			label =3D "PB_RST";
-> +			gpios =3D <&pioE 29 GPIO_ACTIVE_LOW>;
-> +			linux,code =3D <0x100>;
-> +			wakeup-source;
-> +		};
-> +
-> +		user {
-> +			label =3D "PB_USER";
-> +			gpios =3D <&pioE 31 GPIO_ACTIVE_HIGH>;
-> +			linux,code =3D <0x101>;
-> +			wakeup-source;
-> +		};
-> +	};
-> +
-> +	pwm_leds {
-> +		compatible =3D "pwm-leds";
-> +
-> +		blue {
-> +			label =3D "pwm:blue:user";
-> +			pwms =3D <&pwm0 2 10000000 0>;
-> +			max-brightness =3D <255>;
-> +			linux,default-trigger =3D "none";
-> +		};
-> +
-> +		green {
-> +			label =3D "pwm:green:user";
-> +			pwms =3D <&pwm0 1 10000000 0>;
-> +			max-brightness =3D <255>;
-> +			linux,default-trigger =3D "default-on";
-> +		};
-> +
-> +		red {
-> +			label =3D "pwm:red:user";
-> +			pwms =3D <&pwm0 0 10000000 0>;
-> +			max-brightness =3D <255>;
-> +			linux,default-trigger =3D "default-on";
-> +		};
-> +	};
-> +};
-> +
-> +&i2c1 {
-> +	status =3D "okay";
-> +
-> +	pmic: act8865@5b {
-> +		compatible =3D "active-semi,act8865";
-> +		reg =3D <0x5b>;
-> +		status =3D "okay";
-> +
-> +		regulators {
-> +			vcc_1v8_reg: DCDC_REG1 {
-> +				regulator-name =3D "VCC_1V8";
-> +				regulator-min-microvolt =3D <1800000>;
-> +				regulator-max-microvolt =3D <1800000>;
-> +				regulator-always-on;
-> +			};
-> +
-> +			vcc_1v2_reg: DCDC_REG2 {
-> +				regulator-name =3D "VCC_1V2";
-> +				regulator-min-microvolt =3D <1200000>;
-> +				regulator-max-microvolt =3D <1200000>;
-> +				regulator-always-on;
-> +			};
-> +
-> +			vcc_3v3_reg: DCDC_REG3 {
-> +				regulator-name =3D "VCC_3V3";
-> +				regulator-min-microvolt =3D <3300000>;
-> +				regulator-max-microvolt =3D <3300000>;
-> +				regulator-always-on;
-> +			};
-> +
-> +			vddfuse_reg: LDO_REG1 {
-> +				regulator-name =3D "FUSE_2V5";
-> +				regulator-min-microvolt =3D <2500000>;
-> +				regulator-max-microvolt =3D <2500000>;
-> +			};
-> +
-> +			vddana_reg: LDO_REG2 {
-> +				regulator-name =3D "VDDANA";
-> +				regulator-min-microvolt =3D <3300000>;
-> +				regulator-max-microvolt =3D <3300000>;
-> +				regulator-always-on;
-> +			};
-> +
-> +			vled_reg: LDO_REG3 {
-> +				regulator-name =3D "VLED";
-> +				regulator-min-microvolt =3D <3300000>;
-> +				regulator-max-microvolt =3D <3300000>;
-> +				regulator-always-on;
-> +			};
-> +
-> +			v3v8_rf_reg: LDO_REG4 {
-> +				regulator-name =3D "V3V8_RF";
-> +				regulator-min-microvolt =3D <3800000>;
-> +				regulator-max-microvolt =3D <3800000>;
-> +				regulator-always-on;
-> +			};
-> +		};
-> +	};
-> +};
-> +
-> +&usart0 {
-> +	atmel,use-dma-rx;
-> +	atmel,use-dma-tx;
-> +	status =3D "disabled";
-> +};
-> +
-> +&usart1 {
-> +	atmel,use-dma-rx;
-> +	atmel,use-dma-tx;
-> +	status =3D "disabled";
-> +};
-> +
-> +&usart2 {
-> +	atmel,use-dma-rx;
-> +	atmel,use-dma-tx;
-> +	status =3D "disabled";
-> +};
-> +
-> +&pwm0 {
-> +	pinctrl-names =3D "default";
-> +	pinctrl-0 =3D <&pinctrl_pwm0_pwmh0_1
-> +		     &pinctrl_pwm0_pwmh1_1
-> +		     &pinctrl_pwm0_pwmh2_0>;
-> +	status =3D "okay";
-> +};
-> +
-> +&adc0 {
-> +	atmel,adc-vref =3D <3333>;
-> +	status =3D "okay";
-> +};
-> +
-> +&macb1 {
-> +	phy-mode =3D "rmii";
-> +	status =3D "okay";
-> +};
-> +
-> +&dbgu {
-> +	status =3D "okay";
-> +};
-> +
-> +&watchdog {
-> +	status =3D "okay";
-> +};
-> +
-> +&ebi {
-> +	pinctrl-0 =3D <&pinctrl_ebi_nand_addr>;
-> +	pinctrl-names =3D "default";
-> +	status =3D "okay";
-> +};
-> +
-> +&nand_controller {
-> +	status =3D "okay";
-> +
-> +	nand@3 {
-> +		reg =3D <0x3 0x0 0x2>;
-> +		atmel,rb =3D <0>;
-> +		nand-bus-width =3D <8>;
-> +		nand-ecc-mode =3D "hw";
-> +		nand-ecc-strength =3D <4>;
-> +		nand-ecc-step-size =3D <512>;
-> +		nand-on-flash-bbt;
-> +		label =3D "atmel_nand";
-> +
-> +		partitions {
-> +			compatible =3D "fixed-partitions";
-> +			#address-cells =3D <1>;
-> +			#size-cells =3D <1>;
-> +
-> +			bootstrap@0 {
-> +				label =3D "bootstrap";
-> +				reg =3D <0x0 0x20000>;
-> +			};
-> +
-> +			ubi@20000 {
-> +				label =3D "ubi";
-> +				reg =3D <0x20000 0x7fe0000>;
-> +			};
-> +		};
-> +	};
-> +};
-> +
-> +&usb1 {
-> +	status =3D "okay";
-> +};
-> +
-> +&usb2 {
-> +	status =3D "okay";
-> +};
-> +
-> +/* WMBUS (inverted with IO in the latest schematic) */
-> +&pinctrl_usart0 {
-> +	atmel,pins =3D
-> +		<AT91_PIOD 17 AT91_PERIPH_A AT91_PINCTRL_NONE
-> +		 AT91_PIOD 18 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
-> +		 AT91_PIOE 2 AT91_PERIPH_GPIO AT91_PINCTRL_MULTI_DRIVE>;
-> +};
-> +
-> +/* RTS */
-> +&pinctrl_usart1 {
-> +	atmel,pins =3D
-> +		<AT91_PIOB 28 AT91_PERIPH_A AT91_PINCTRL_NONE
-> +		 AT91_PIOB 29 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
-> +		 AT91_PIOE 7 AT91_PERIPH_GPIO AT91_PINCTRL_MULTI_DRIVE>;
-> +};
-> +
-> +/* IO (inverted with WMBUS in the latest schematic) */
-> +&pinctrl_usart2 {
-> +	atmel,pins =3D
-> +		<AT91_PIOE 25 AT91_PERIPH_B AT91_PINCTRL_NONE
-> +		 AT91_PIOE 26 AT91_PERIPH_B AT91_PINCTRL_PULL_UP
-> +		 AT91_PIOE 8 AT91_PERIPH_GPIO AT91_PINCTRL_MULTI_DRIVE>;
-> +};
-> diff --git a/arch/arm/boot/dts/at91-kizbox2.dts b/arch/arm/boot/dts/at91-=
-kizbox2.dts
-> deleted file mode 100644
-> index 86d821884bd4..000000000000
-> --- a/arch/arm/boot/dts/at91-kizbox2.dts
-> +++ /dev/null
-> @@ -1,244 +0,0 @@
-> -// SPDX-License-Identifier: GPL-2.0-or-later
-> -/*
-> - * at91-kizbox2.dts - Device Tree file for Overkiz Kizbox 2 board
-> - *
-> - * Copyright (C) 2014 Ga=EBl PORTAY <g.portay@overkiz.com>
-> - */
-> -/dts-v1/;
-> -#include "sama5d31.dtsi"
-> -#include <dt-bindings/pwm/pwm.h>
-> -
-> -/ {
-> -	model =3D "Overkiz Kizbox 2";
-> -	compatible =3D "overkiz,kizbox2", "atmel,sama5d31", "atmel,sama5d3", "a=
-tmel,sama5";
-> -
-> -	chosen {
-> -		bootargs =3D "ubi.mtd=3Dubi";
-> -		stdout-path =3D &dbgu;
-> -	};
-> -
-> -	memory {
-> -		reg =3D <0x20000000 0x10000000>;
-> -	};
-> -
-> -	clocks {
-> -		slow_xtal {
-> -			clock-frequency =3D <32768>;
-> -		};
-> -
-> -		main_xtal {
-> -			clock-frequency =3D <12000000>;
-> -		};
-> -	};
-> -
-> -	ahb {
-> -		apb {
-> -			i2c1: i2c@f0018000 {
-> -				status =3D "okay";
-> -
-> -				pmic: act8865@5b {
-> -					compatible =3D "active-semi,act8865";
-> -					reg =3D <0x5b>;
-> -					status =3D "okay";
-> -
-> -					regulators {
-> -						vcc_1v8_reg: DCDC_REG1 {
-> -							regulator-name =3D "VCC_1V8";
-> -							regulator-min-microvolt =3D <1800000>;
-> -							regulator-max-microvolt =3D <1800000>;
-> -							regulator-always-on;
-> -						};
-> -
-> -						vcc_1v2_reg: DCDC_REG2 {
-> -							regulator-name =3D "VCC_1V2";
-> -							regulator-min-microvolt =3D <1200000>;
-> -							regulator-max-microvolt =3D <1200000>;
-> -							regulator-always-on;
-> -						};
-> -
-> -						vcc_3v3_reg: DCDC_REG3 {
-> -							regulator-name =3D "VCC_3V3";
-> -							regulator-min-microvolt =3D <3300000>;
-> -							regulator-max-microvolt =3D <3300000>;
-> -							regulator-always-on;
-> -						};
-> -
-> -						vddfuse_reg: LDO_REG1 {
-> -							regulator-name =3D "FUSE_2V5";
-> -							regulator-min-microvolt =3D <2500000>;
-> -							regulator-max-microvolt =3D <2500000>;
-> -						};
-> -
-> -						vddana_reg: LDO_REG2 {
-> -							regulator-name =3D "VDDANA";
-> -							regulator-min-microvolt =3D <3300000>;
-> -							regulator-max-microvolt =3D <3300000>;
-> -							regulator-always-on;
-> -						};
-> -
-> -						vled_reg: LDO_REG3 {
-> -							regulator-name =3D "VLED";
-> -							regulator-min-microvolt =3D <3300000>;
-> -							regulator-max-microvolt =3D <3300000>;
-> -							regulator-always-on;
-> -						};
-> -
-> -						v3v8_rf_reg: LDO_REG4 {
-> -							regulator-name =3D "V3V8_RF";
-> -							regulator-min-microvolt =3D <3800000>;
-> -							regulator-max-microvolt =3D <3800000>;
-> -							regulator-always-on;
-> -						};
-> -					};
-> -				};
-> -			};
-> -
-> -			tcb0: timer@f0010000 {
-> -				timer@0 {
-> -					compatible =3D "atmel,tcb-timer";
-> -					reg =3D <0>;
-> -				};
-> -
-> -				timer@1 {
-> -					compatible =3D "atmel,tcb-timer";
-> -					reg =3D <1>;
-> -				};
-> -			};
-> -
-> -			usart0: serial@f001c000 {
-> -				status =3D "okay";
-> -			};
-> -
-> -			usart1: serial@f0020000 {
-> -				status =3D "okay";
-> -			};
-> -
-> -			pwm0: pwm@f002c000 {
-> -				pinctrl-names =3D "default";
-> -				pinctrl-0 =3D <&pinctrl_pwm0_pwmh0_1
-> -					     &pinctrl_pwm0_pwmh1_1
-> -					     &pinctrl_pwm0_pwmh2_0>;
-> -				status =3D "okay";
-> -			};
-> -
-> -			adc0: adc@f8018000 {
-> -				atmel,adc-vref =3D <3333>;
-> -				status =3D "okay";
-> -			};
-> -
-> -			usart2: serial@f8020000 {
-> -				status =3D "okay";
-> -			};
-> -
-> -			macb1: ethernet@f802c000 {
-> -				phy-mode =3D "rmii";
-> -				status =3D "okay";
-> -			};
-> -
-> -			dbgu: serial@ffffee00 {
-> -				status =3D "okay";
-> -			};
-> -
-> -			watchdog@fffffe40 {
-> -				status =3D "okay";
-> -			};
-> -		};
-> -
-> -		usb1: ohci@600000 {
-> -			status =3D "okay";
-> -		};
-> -
-> -		usb2: ehci@700000 {
-> -			status =3D "okay";
-> -		};
-> -
-> -		ebi: ebi@10000000 {
-> -			pinctrl-0 =3D <&pinctrl_ebi_nand_addr>;
-> -			pinctrl-names =3D "default";
-> -			status =3D "okay";
-> -
-> -			nand_controller: nand-controller {
-> -				status =3D "okay";
-> -
-> -				nand@3 {
-> -					reg =3D <0x3 0x0 0x2>;
-> -					atmel,rb =3D <0>;
-> -					nand-bus-width =3D <8>;
-> -					nand-ecc-mode =3D "hw";
-> -					nand-ecc-strength =3D <4>;
-> -					nand-ecc-step-size =3D <512>;
-> -					nand-on-flash-bbt;
-> -					label =3D "atmel_nand";
-> -
-> -					partitions {
-> -						compatible =3D "fixed-partitions";
-> -						#address-cells =3D <1>;
-> -						#size-cells =3D <1>;
-> -
-> -						bootstrap@0 {
-> -							label =3D "bootstrap";
-> -							reg =3D <0x0 0x20000>;
-> -						};
-> -
-> -						ubi@20000 {
-> -							label =3D "ubi";
-> -							reg =3D <0x20000 0x7fe0000>;
-> -						};
-> -					};
-> -				};
-> -			};
-> -		};
-> -	};
-> -
-> -	gpio_keys {
-> -		compatible =3D "gpio-keys";
-> -		#address-cells =3D <1>;
-> -		#size-cells =3D <0>;
-> -
-> -		prog {
-> -			label =3D "PB_PROG";
-> -			gpios =3D <&pioE 27 GPIO_ACTIVE_LOW>;
-> -			linux,code =3D <0x102>;
-> -			wakeup-source;
-> -		};
-> -
-> -		reset {
-> -			label =3D "PB_RST";
-> -			gpios =3D <&pioE 29 GPIO_ACTIVE_LOW>;
-> -			linux,code =3D <0x100>;
-> -			wakeup-source;
-> -		};
-> -
-> -		user {
-> -			label =3D "PB_USER";
-> -			gpios =3D <&pioE 31 GPIO_ACTIVE_HIGH>;
-> -			linux,code =3D <0x101>;
-> -			wakeup-source;
-> -		};
-> -	};
-> -
-> -	pwm_leds {
-> -		compatible =3D "pwm-leds";
-> -
-> -		blue {
-> -			label =3D "pwm:blue:user";
-> -			pwms =3D <&pwm0 2 10000000 0>;
-> -			max-brightness =3D <255>;
-> -			linux,default-trigger =3D "default-on";
-> -		};
-> -
-> -		green {
-> -			label =3D "pwm:green:user";
-> -			pwms =3D <&pwm0 1 10000000 0>;
-> -			max-brightness =3D <255>;
-> -			linux,default-trigger =3D "default-on";
-> -		};
-> -
-> -		red {
-> -			label =3D "pwm:red:user";
-> -			pwms =3D <&pwm0 0 10000000 0>;
-> -			max-brightness =3D <255>;
-> -			linux,default-trigger =3D "default-on";
-> -		};
-> -	};
-> -};
-> --
-> 2.23.0
-> =
-
-
--- =
-
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+Thanks,
+Anson
 
 _______________________________________________
 linux-arm-kernel mailing list
