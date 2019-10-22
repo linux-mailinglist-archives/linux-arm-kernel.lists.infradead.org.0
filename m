@@ -2,60 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 238D3E0781
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 17:34:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B921E079F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 17:40:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YjQyVijHypgryYNRIFo9dgxC2y3GiVScYwJSPyJhm+4=; b=io2ECqsL6atStI
-	g+ePAFBnEr2ayOYMrWurrzWevvkqDqqjvYdeqV2SpLt2G1bc9hhDEZGqYKSBPbteVTCjhAyz4ifzt
-	RQ9diI1NV/F9/zs3hqUJf495CAg1jqfZlxMWrxKNGpEaLihjuChdu7Xqbkccuz23rKKg6C72pHbKA
-	agpJjawRbxJzM4EoV87XYQ+MFqE3kSZ3buRmw21UVtZt2PfPl453Q7fZtCYjKufqiEFeHJVH1X72a
-	YSInLFx6h7xM1+yDYOusl57Zsmc/MM58KZJmDBpULjN3zkONSLl8eWSlro/850cL3N6UKT4zssftI
-	HrdqdZbwwBLzFqUO9LWg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=aOQ5cyS8MSNhLoWhAdRgX+SscQNEpDJh9I5bouoAAoE=; b=FEfd16UU/prX6t
+	ZC+9I3g7vyYchSj8H68+/MMRwX++TyiV7DhrWzfL4LW9+iRibk5UHC6i43IOFImDBobLRkEbtgZFT
+	unl5wo4RZibOFwR3e1jkipxNGMx/Eryxi+0clbuy0ljwWvcv0B2UfJ4xP2gQSjPKJBXj3QIOtEsJG
+	Qk76GbcRVvYYz94O10hjxvitE885kKzMYxRiFlvrGLH24nEtEPjzIu01GqvtKb6YGHHZn4yZbYMRQ
+	miPb6GuFRfTNitVmoPgUr4LoF46zmqOwCiUf/e8LK6EtO+A1jFXSh/O0w3r9QdEHAM/AxuoAF3WWu
+	VQ8KH8tZwveBKWLO2coQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMwAZ-0008Gw-Vq; Tue, 22 Oct 2019 15:33:59 +0000
-Received: from [217.140.110.172] (helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMwAQ-0008GH-QN
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 15:33:52 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 17DEB176C;
- Tue, 22 Oct 2019 08:33:40 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EEA4D3F71A;
- Tue, 22 Oct 2019 08:33:37 -0700 (PDT)
-Date: Tue, 22 Oct 2019 16:33:35 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Steven Rostedt <rostedt@goodmis.org>
-Subject: Re: [PATCH 1/8] ftrace: add ftrace_init_nop()
-Message-ID: <20191022153335.GC52920@lakrids.cambridge.arm.com>
-References: <20191021163426.9408-1-mark.rutland@arm.com>
- <20191021163426.9408-2-mark.rutland@arm.com>
- <20191021140756.613a1bac@gandalf.local.home>
- <20191022112811.GA11583@lakrids.cambridge.arm.com>
- <20191022085428.75cfaad6@gandalf.local.home>
- <20191022153035.GB52920@lakrids.cambridge.arm.com>
+	id 1iMwGv-00032v-Nx; Tue, 22 Oct 2019 15:40:33 +0000
+Received: from imap1.codethink.co.uk ([176.9.8.82])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iMwGm-00032L-Pc
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 15:40:26 +0000
+Received: from [167.98.27.226] (helo=rainbowdash.codethink.co.uk)
+ by imap1.codethink.co.uk with esmtpsa (Exim 4.84_2 #1 (Debian))
+ id 1iMwGf-0006l3-Uw; Tue, 22 Oct 2019 16:40:18 +0100
+Received: from ben by rainbowdash.codethink.co.uk with local (Exim 4.92.3)
+ (envelope-from <ben@rainbowdash.codethink.co.uk>)
+ id 1iMwGf-00006u-8L; Tue, 22 Oct 2019 16:40:17 +0100
+From: "Ben Dooks (Codethink)" <ben.dooks@codethink.co.uk>
+To: linux-kernel@lists.codethink.co.uk
+Subject: [PATCH] firmware: imx: add missing include of
+ <linux/firmware/imx/sci.h>
+Date: Tue, 22 Oct 2019 16:40:09 +0100
+Message-Id: <20191022154009.376-1-ben.dooks@codethink.co.uk>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191022153035.GB52920@lakrids.cambridge.arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_083350_898540_C48A5742 
-X-CRM114-Status: GOOD (  10.51  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20191022_084024_979399_9D8C70E0 
+X-CRM114-Status: UNSURE (   9.64  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [176.9.8.82 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,38 +61,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jthierry@redhat.com, svens@stackframe.org, ard.biesheuvel@linaro.org,
- peterz@infradead.org, catalin.marinas@arm.com, deller@gmx.de, jeyu@kernel.org,
- linux-kernel@vger.kernel.org, takahiro.akashi@linaro.org, mingo@redhat.com,
- james.morse@arm.com, jpoimboe@redhat.com, amit.kachhap@arm.com,
- will@kernel.org, duwe@suse.de, linux-arm-kernel@lists.infradead.org
+Cc: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ "Ben Dooks \(Codethink\)" <ben.dooks@codethink.co.uk>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 22, 2019 at 04:30:35PM +0100, Mark Rutland wrote:
-> On Tue, Oct 22, 2019 at 08:54:28AM -0400, Steven Rostedt wrote:
-> > On Tue, 22 Oct 2019 12:28:11 +0100
-> > Mark Rutland <mark.rutland@arm.com> wrote:
-> > > | /**
-> > > |  * ftrace_init_nop - initialize a nop call site
-> > > |  * @mod: module structure if called by module load initialization
-> > > |  * @rec: the mcount call site record
-> > 
-> > Perhaps say "mcount/fentry"
-> 
-> This is the exact wording that ftrace_make_nop and ftrace_modify_call
-> have. For consistency, I think those should all match.
+Include <linux/firmware/imx/sci.h> for the declarations of the
+functions exported from this driver. This fixes the following
+sparse warnings:
 
-Now that I read this again, I see what you meant.
+drivers/firmware/imx/imx-scu-irq.c:45:5: warning: symbol 'imx_scu_irq_register_notifier' was not declared. Should it be static?
+drivers/firmware/imx/imx-scu-irq.c:52:5: warning: symbol 'imx_scu_irq_unregister_notifier' was not declared. Should it be static?
+drivers/firmware/imx/imx-scu-irq.c:97:5: warning: symbol 'imx_scu_irq_group_enable' was not declared. Should it be static?
+drivers/firmware/imx/imx-scu-irq.c:130:5: warning: symbol 'imx_scu_enable_general_irq_channel' was not declared. Should it be static?
 
-If it's ok, I'll change those to:
+Signed-off-by: Ben Dooks (Codethink) <ben.dooks@codethink.co.uk>
+---
+Cc: Shawn Guo <shawnguo@kernel.org>
+Cc: Sascha Hauer <s.hauer@pengutronix.de>
+Cc: Pengutronix Kernel Team <kernel@pengutronix.de>
+Cc: Fabio Estevam <festevam@gmail.com>
+Cc: NXP Linux Team <linux-imx@nxp.com>
+Cc: linux-arm-kernel@lists.infradead.org
+---
+ drivers/firmware/imx/imx-scu-irq.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-| @rec: the call site record (e.g. mcount/fentry)
+diff --git a/drivers/firmware/imx/imx-scu-irq.c b/drivers/firmware/imx/imx-scu-irq.c
+index 687121f8c4d5..db655e87cdc8 100644
+--- a/drivers/firmware/imx/imx-scu-irq.c
++++ b/drivers/firmware/imx/imx-scu-irq.c
+@@ -8,6 +8,7 @@
+ 
+ #include <dt-bindings/firmware/imx/rsrc.h>
+ #include <linux/firmware/imx/ipc.h>
++#include <linux/firmware/imx/sci.h>
+ #include <linux/mailbox_client.h>
+ 
+ #define IMX_SC_IRQ_FUNC_ENABLE	1
+-- 
+2.23.0
 
-Thanks,
-Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
