@@ -2,91 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B756EE08C9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 18:27:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8855AE08D9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 18:29:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nsxiXF/Xt+eOdNc2uh4cg8R0zrMsK0ktHMs79OabI1U=; b=ZjhfSs0Rzgbtgo
-	qB1q3TnbApiOBJpOH4p/kldjJhTC7M3cEOhHHVVgrShtzTHkMxUicGuWXb1T+6P6oVyX3jfSjhSpD
-	qCVKen+iRAhSVGSAL1zZtctTLugX6SrESKBGG98PsaWNPPH5yxNwpgjPlAAHcJ4DmgUEaHSbDlPti
-	bVj1/57IPbwvABHA4d6UlEZk0dyKnJasbQJW1YptH3r9fajP8UPXzI2t28V2hgRU1iG2Vzj1KLPBh
-	e2CuIxEftPwgJU60VzTZ9Frf4eKxIg3GSB9BB3U/6Qnh3j+/dzLULbWDMZv6u6+TjxDVDWbgga+z5
-	kup6bhOMZmy3O83p4kNg==;
+	List-Owner; bh=2VMfyf1/VdZQFFOo3Ez3ZalEV2G6bOcQ6WJNkNcsuzk=; b=qw395Fc8QCALHr
+	YW/YRFdERy5Oy1aBIhOAN7IrQhQxaGxYrEnS6VR4f1OH9ht2NG55g3XTHRK4mvgYIF0v9tXhUtw0r
+	6SmvgN9DewgtIel+R+6B6eUwp5n7ZbZSr+D5CtFAFgxV4NkDvhsEGBch3+fsWaC4Mxq90gK+z3i4V
+	GXDTNGv6+zAUrk28LJP91siZOdxMdbc5a/ottUuUARIgy6G//v7srrVsLHdkfQ2pAvyHN9pEDo0uW
+	zIQd6E0fn2u0ALQfTJkC1E9VwYVtfEGIGihFIarwAbWZOPogV0Uc/rcd2H+fjuJTXhlalrnDFo0ye
+	cmxeswCC8An+09hXvgwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMx0l-0000q8-8C; Tue, 22 Oct 2019 16:27:55 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMx0a-0000pZ-BB
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 16:27:45 +0000
-Received: by mail-pf1-x443.google.com with SMTP id v4so10967967pff.6
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 22 Oct 2019 09:27:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=yCqef9gQT6nmyTqqGL+wlHZ1CGtJs3cHNc9rYV1fhGQ=;
- b=Akp0RE/L/DluE7lJNU+chwNolLm4k9jsXnFTp9tcKG5xdcIVWiC2r0h9i0cwWyG7m7
- 1M0XchljXyxrcF5F3z8kYQRl4stUEGdCXI7OA+TvymmMfiDz9QjnwWIItRChIyof8pgy
- LqJ1hg3+WyGv6FMYaKq9RKP9Q3ZF+joMQTEmY=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=yCqef9gQT6nmyTqqGL+wlHZ1CGtJs3cHNc9rYV1fhGQ=;
- b=TzuoUbXy5GLOlqRu32/65cAn49+l5SozRy25Z+K335M574LwXqCPJbVcVDESTZ6YFj
- RBeMLqstMLHaZxk00u7+ZFIMHIdeslhKut9tkCFTIdHRRRtmxiYYnyGZa1GtQJXkyiT5
- BhgzOr42XlDAClOBQ8GuTfQ46T2nmc2bOgQa5Q6tpFJUgDbs5QGH0Dt/PxRcxuEE6/fR
- yWN1KhrqLZvhaGaRFt1ojmwDeAoHgD5IEZJl8FCGGG5yfrqA64ax+eCTyP3a5RmjkqUs
- nYHGr0KG8aytnClqtkQ82s1xiMgG2kl66DH30o3fPs+Y0+/kdduj0HB9lf1ALb1vlAFf
- 7JbA==
-X-Gm-Message-State: APjAAAXTD6LNGF0DZ+RM3fagVtulLuUtbRMYPKH/xvgQJrPneqg/aExV
- 8BaNWBzCkRoD41vv49TkSCU3RA==
-X-Google-Smtp-Source: APXvYqy0V08cVd3k9DTb6b5fAVT9pV7tar1OJtZIZQ+pxwtsG2Lik9okZfxhxg4bRHHBWocLCOzgYQ==
-X-Received: by 2002:a63:68c8:: with SMTP id d191mr4555216pgc.197.1571761662807; 
- Tue, 22 Oct 2019 09:27:42 -0700 (PDT)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id r30sm20868424pfl.42.2019.10.22.09.27.41
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 22 Oct 2019 09:27:42 -0700 (PDT)
-Date: Tue, 22 Oct 2019 09:27:40 -0700
-From: Kees Cook <keescook@chromium.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH 12/18] arm64: reserve x18 only with Shadow Call Stack
-Message-ID: <201910220926.B78C4D88@keescook>
+	id 1iMx1l-0001BC-5k; Tue, 22 Oct 2019 16:28:57 +0000
+Received: from [217.140.110.172] (helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iMx1W-00018n-32
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 16:28:43 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F40F34AE;
+ Tue, 22 Oct 2019 09:28:30 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4DC9A3F71A;
+ Tue, 22 Oct 2019 09:28:29 -0700 (PDT)
+Date: Tue, 22 Oct 2019 17:28:27 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Sami Tolvanen <samitolvanen@google.com>
+Subject: Re: [PATCH 06/18] add support for Clang's Shadow Call Stack (SCS)
+Message-ID: <20191022162826.GC699@lakrids.cambridge.arm.com>
 References: <20191018161033.261971-1-samitolvanen@google.com>
- <20191018161033.261971-13-samitolvanen@google.com>
- <CAKwvOd=rU2cC7C3a=8D2WBEmS49YgR7=aCriE31JQx7ExfQZrg@mail.gmail.com>
- <20191022160010.GB699@lakrids.cambridge.arm.com>
+ <20191018161033.261971-7-samitolvanen@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191022160010.GB699@lakrids.cambridge.arm.com>
+In-Reply-To: <20191018161033.261971-7-samitolvanen@google.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_092744_411110_F55B6917 
-X-CRM114-Status: UNSURE (   7.21  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191022_092842_220591_F18F4BEE 
+X-CRM114-Status: GOOD (  20.58  )
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,29 +63,148 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Kernel Hardening <kernel-hardening@lists.openwall.com>,
- Nick Desaulniers <ndesaulniers@google.com>,
- LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Sami Tolvanen <samitolvanen@google.com>, Laura Abbott <labbott@redhat.com>,
- Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, kernel-hardening@lists.openwall.com,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ Steven Rostedt <rostedt@goodmis.org>, clang-built-linux@googlegroups.com,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 22, 2019 at 05:00:10PM +0100, Mark Rutland wrote:
-> If we wanted to, we could periodically grep for x18 to find any illicit
-> usage.
+On Fri, Oct 18, 2019 at 09:10:21AM -0700, Sami Tolvanen wrote:
+> This change adds generic support for Clang's Shadow Call Stack, which
+> uses a shadow stack to protect return addresses from being overwritten
+> by an attacker. Details are available here:
+> 
+>   https://clang.llvm.org/docs/ShadowCallStack.html
+> 
+> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
+> ---
+>  Makefile                       |   6 ++
+>  arch/Kconfig                   |  39 ++++++++
+>  include/linux/compiler-clang.h |   2 +
+>  include/linux/compiler_types.h |   4 +
+>  include/linux/scs.h            |  88 ++++++++++++++++++
+>  init/init_task.c               |   6 ++
+>  init/main.c                    |   3 +
+>  kernel/Makefile                |   1 +
+>  kernel/fork.c                  |   9 ++
+>  kernel/sched/core.c            |   2 +
+>  kernel/sched/sched.h           |   1 +
+>  kernel/scs.c                   | 162 +++++++++++++++++++++++++++++++++
+>  12 files changed, 323 insertions(+)
+>  create mode 100644 include/linux/scs.h
+>  create mode 100644 kernel/scs.c
+> 
+> diff --git a/Makefile b/Makefile
+> index ffd7a912fc46..e401fa500f62 100644
+> --- a/Makefile
+> +++ b/Makefile
+> @@ -846,6 +846,12 @@ ifdef CONFIG_LIVEPATCH
+>  KBUILD_CFLAGS += $(call cc-option, -flive-patching=inline-clone)
+>  endif
+>  
+> +ifdef CONFIG_SHADOW_CALL_STACK
+> +KBUILD_CFLAGS	+= -fsanitize=shadow-call-stack
+> +DISABLE_SCS	:= -fno-sanitize=shadow-call-stack
+> +export DISABLE_SCS
+> +endif
 
-Now we need objtool for arm64! :) (It seems CONFIG_HAVE_STACK_VALIDATION
-is rather a narrow description for what objtool does now...)
+I think it would be preferable to follow the example of CC_FLAGS_FTRACE
+so that this can be filtered out, e.g.
 
--- 
-Kees Cook
+ifdef CONFIG_SHADOW_CALL_STACK
+CFLAGS_SCS := -fsanitize=shadow-call-stack
+KBUILD_CFLAGS += $(CFLAGS_SCS)
+export CC_FLAGS_SCS
+endif
+
+... with removal being:
+
+CFLAGS_REMOVE := $(CC_FLAGS_SCS)
+
+... or:
+
+CFLAGS_REMOVE_obj.o := $(CC_FLAGS_SCS)
+
+That way you only need to define the flags once, so the enable and
+disable falgs remain in sync by construction.
+
+[...]
+
+> +config ARCH_SUPPORTS_SHADOW_CALL_STACK
+> +	bool
+> +	help
+> +	  An architecture should select this if it supports Clang's Shadow
+> +	  Call Stack, has asm/scs.h, and implements runtime support for shadow
+> +	  stack switching.
+> +
+> +config SHADOW_CALL_STACK_VMAP
+> +	def_bool n
+
+A bool is default n, so you can just say bool here.
+
+> +	depends on SHADOW_CALL_STACK
+> +	help
+> +	  Use virtually mapped shadow call stacks. Selecting this option
+> +	  provides better stack exhaustion protection, but increases per-thread
+> +	  memory consumption as a full page is allocated for each shadow stack.
+> +
+> +choice
+> +	prompt "Return-oriented programming (ROP) protection"
+> +	default ROP_PROTECTION_NONE
+> +	help
+> +	  This option controls kernel protections against return-oriented
+> +	  programming (ROP) attacks.
+
+Are we expecting more options here in future?
+
+> +config ROP_PROTECTION_NONE
+> +	bool "None"
+
+IIUC this is for the benefit of the kretprobes Kconfig.
+
+I think it would be better to make that depend on !SHADOW_CALL_STACK, as
+it's plausible that we can add a different ROP protection mechanism that
+is compatible with kretprobes.
+
+> +config SHADOW_CALL_STACK
+> +	bool "Clang Shadow Call Stack"
+> +	depends on ARCH_SUPPORTS_SHADOW_CALL_STACK
+> +	depends on CC_IS_CLANG && CLANG_VERSION >= 70000
+
+Is there a reason for an explicit version check rather than a
+CC_HAS_<feature> check? e.g. was this available but broken in prior
+versions of clang?
+
+[...]
+
+> +#define SCS_GFP			(GFP_KERNEL | __GFP_ZERO)
+
+Normally GFP_ is a prefix. For consistency, GFP_SCS would be preferable.
+
+> +extern unsigned long init_shadow_call_stack[];
+
+Do we need this exposed here? IIUC this is only assigned by assembly in
+arch code.
+
+[...]
+
+> +void scs_set_init_magic(struct task_struct *tsk)
+> +{
+> +	scs_save(tsk);
+> +	scs_set_magic(tsk);
+> +	scs_load(tsk);
+> +}
+
+Can we initialize this at compile time instead?
+
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
