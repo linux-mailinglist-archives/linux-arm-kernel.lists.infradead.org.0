@@ -2,60 +2,129 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0191BDFFEC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 10:45:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A14A1DFFEA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 10:45:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sP/klw3R7yabT6TifFubN3TaXmKJuS3rgcQmpp8TwU0=; b=pyz00l6pDPnEPW
-	lmrGflJEundKPrSpz6yvjA22oJ7gEXncEyAU5rnKJ1oSOhEvhPoVfK2eO5PdWfp3QytgPvDzw7pJi
-	wUb+/KiJBUasRLRNCujjgTzo567h1R0lUgG9sk2MT6TIFaDqMiHxBRfQUrbgjzpGWbeaP5g/iPKVn
-	V0WQw/BoTyUNCvaYHVZLhAtw9bAgzi5fpvPNUnV/QgJbvm+0cd8ggtKuoHR2dh6uD94ghtkzYN8CQ
-	V442A6er9fpAtzOUL5st3r0BDs+YDf5Hw3C/XzYWcf0IwFCzQQEJTKO8YKOmeyl9Rxq10IWJDGrm4
-	FJ0vxiPAP7PE7WtQICVA==;
+	List-Owner; bh=TZxrkzo0IOeA6KRC1svtu44scloep7TrzWA3uTho7rQ=; b=pPQvwNk2MRxFMZ
+	ht6qzq5q9wCKZe3ScKI050Aphwt3yWSioyCL9rseXfFFZheeikwvv3ugr/GC/v2fiSlbiaHb4/cfP
+	Lg0ZLjEULcJOvuyby39B42ZvS0UfAJqhfUXCsjTE8PBAfMLJCbqSFI/47jIesWC3tDTQVp9M9juKJ
+	WW9kLT591AE0BRAYdsJlWhn9Z4tewKRUwGd1OrNCtn8FFjPZARPmdIuJebyTrpNieo39htWj7nIf6
+	4NHjPjWMI1iA2t/rLys3ticXC6jXeHtxdX276PyfB2N82QsLozawe4lJogsFLl6Y/Nu9Ytv0qGuOx
+	43xiMjD9viWjj45IS/Jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMpnY-0006ET-BY; Tue, 22 Oct 2019 08:45:48 +0000
-Received: from honk.sigxcpu.org ([24.134.29.49])
+	id 1iMpnJ-00062a-QO; Tue, 22 Oct 2019 08:45:33 +0000
+Received: from mail-eopbgr150139.outbound.protection.outlook.com
+ ([40.107.15.139] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMpn9-00061C-DF
+ id 1iMpn9-00061L-7X
  for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 08:45:25 +0000
-Received: from localhost (localhost [127.0.0.1])
- by honk.sigxcpu.org (Postfix) with ESMTP id 37CFAFB03;
- Tue, 22 Oct 2019 10:45:17 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
-Received: from honk.sigxcpu.org ([127.0.0.1])
- by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id J_7FrQl3FDaI; Tue, 22 Oct 2019 10:45:15 +0200 (CEST)
-Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
- id 1D2F949BFC; Tue, 22 Oct 2019 10:45:15 +0200 (CEST)
-Date: Tue, 22 Oct 2019 10:45:14 +0200
-From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
-To: kbuild test robot <lkp@intel.com>
-Subject: Re: [PATCH v7 2/2] drm/bridge: Add NWL MIPI DSI host controller
- support
-Message-ID: <20191022084514.GA30274@bogon.m.sigxcpu.org>
-References: <e0304ab9320cbbf3e63d78449e50975c036b2633.1571494140.git.agx@sigxcpu.org>
- <201910211901.yB3b4mYu%lkp@intel.com>
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=NH6ICw/aGJGLXiBO1oiObwDqLU8GftqOiP767cGnR6reQmnHQbqaylRVOjUs3ra76WMR/MFiD9KnzY6YoGyMVHEypYoa5msaAvgSSG7XIG6oJGqsl5lzSF97t/6dvCUL3VKV0OJMqOBzScXdAU6GLzkwd4haGWxp52j8Kc3IhYc4gkgaC6wgaMi3k6cVR5tmjR2g3E7IOrLIJ2xFndjCYvk6I3map847qZe9+HAJc7dxLsIurSjyq8Z5BIjoAY2q42yTVzvHH6QW7UAFh0c3VQ73QYnxTnF0PT7Y4El4OuUM5H/kWEpf1nSanZScQuaYrRtYI3eFZRwc95O3uaiDhA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=9RDd6uHjnaIl18b9/q1LJ/A6qy5517LdOU+CAcC+MiA=;
+ b=TxUdCh5SdODfPQD99jlSdzEnyonsC3uFG8BBHuS6QBU7bZsVMrI5XqbCuWrA9YzpXrJFO4MwkRjt8o4RNERUo4BroFjIkYvbiQ2Y3KG17fG8QFQSvSsDo6R7OUSjY6Q4iNezPhLZ3+n29KL0a3vJMQksRjLZo5S+bqVYkEUyB/JjsY7gJCzch/e6JOC3YFAVpCogEYOhPk0kHuo8xKJ41fkM+kA6jWzcm8NAXmhEYsmpdb9DUyp5PIK8/hKXu0xk8Cs3TP+95WJwjoAZJdWwzEC16uuckWdz6Miqlw47s32jaQX1RGtH/pazmvM7S9YeG6orbU82gLhPOYuG/z5q4g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=axentia.se; dmarc=pass action=none header.from=axentia.se;
+ dkim=pass header.d=axentia.se; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axentia.se;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=9RDd6uHjnaIl18b9/q1LJ/A6qy5517LdOU+CAcC+MiA=;
+ b=JyGeA52ffsz9qpXXEdEFFSALP+9cfSZIWSCbTjEQYDTKNRLN3yCTggqufdCYkiKHlwRInQhR5iL8Pqv+zqs5gZn4m5VQgEhX0KrpdXAzCASaJN7RE5wWnTDQEdGjuG/b8t8R0HJXfgNjgEAXiEVnbDYRABoCiR1kJaUuEXs6xTA=
+Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com (52.134.66.158) by
+ DB3PR0202MB3340.eurprd02.prod.outlook.com (52.134.67.15) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2367.24; Tue, 22 Oct 2019 08:45:18 +0000
+Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com
+ ([fe80::c5b8:6014:87a4:1afe]) by DB3PR0202MB3434.eurprd02.prod.outlook.com
+ ([fe80::c5b8:6014:87a4:1afe%7]) with mapi id 15.20.2347.029; Tue, 22 Oct 2019
+ 08:45:17 +0000
+From: Peter Rosin <peda@axentia.se>
+To: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>, Brendan Higgins
+ <brendanhiggins@google.com>, Wolfram Sang <wsa@the-dreams.de>, Benjamin
+ Herrenschmidt <benh@kernel.crashing.org>, Joel Stanley <joel@jms.id.au>, Rob
+ Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>, Andrew
+ Jeffery <andrew@aj.id.au>, Tao Ren <taoren@fb.com>, Cedric Le Goater
+ <clg@kaod.org>
+Subject: Re: [PATCH i2c-next 1/2] dt-bindings: i2c: aspeed: add hardware
+ timeout support
+Thread-Topic: [PATCH i2c-next 1/2] dt-bindings: i2c: aspeed: add hardware
+ timeout support
+Thread-Index: AQHViE2KU5aZojIjkUqCdR4ab3gQm6dlt3EA///tFICAALTpgA==
+Date: Tue, 22 Oct 2019 08:45:17 +0000
+Message-ID: <b98827fa-462a-060b-efc7-27fe5d7742ff@axentia.se>
+References: <20191021202414.17484-1-jae.hyun.yoo@linux.intel.com>
+ <20191021202414.17484-2-jae.hyun.yoo@linux.intel.com>
+ <0a629f7b-b829-c332-27d8-dc825205ff72@axentia.se>
+ <7abf933b-cb18-10af-9c1b-163ec65ffae5@linux.intel.com>
+In-Reply-To: <7abf933b-cb18-10af-9c1b-163ec65ffae5@linux.intel.com>
+Accept-Language: en-US, sv-SE
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+x-originating-ip: [213.112.138.100]
+x-clientproxiedby: HE1PR0102CA0053.eurprd01.prod.exchangelabs.com
+ (2603:10a6:7:7d::30) To DB3PR0202MB3434.eurprd02.prod.outlook.com
+ (2603:10a6:8:5::30)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peda@axentia.se; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 9c73b2ee-2f98-46ee-46ee-08d756cc29f3
+x-ms-traffictypediagnostic: DB3PR0202MB3340:
+x-microsoft-antispam-prvs: <DB3PR0202MB3340855FD970AFD95B1783C4BC680@DB3PR0202MB3340.eurprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 01986AE76B
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(376002)(136003)(346002)(366004)(396003)(39830400003)(199004)(52314003)(189003)(6512007)(54906003)(6436002)(99286004)(6506007)(386003)(53546011)(6246003)(229853002)(110136005)(58126008)(6486002)(25786009)(66066001)(65806001)(65956001)(102836004)(8936002)(4326008)(26005)(52116002)(76176011)(81156014)(81166006)(8676002)(316002)(5660300002)(186003)(7416002)(71200400001)(256004)(14444005)(66946007)(305945005)(6116002)(3846002)(86362001)(31696002)(66446008)(64756008)(66556008)(66476007)(4001150100001)(2906002)(11346002)(476003)(486006)(36756003)(508600001)(14454004)(31686004)(446003)(71190400001)(7736002)(2616005)(921003)(1121003);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:DB3PR0202MB3340;
+ H:DB3PR0202MB3434.eurprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: axentia.se does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: fn4FipVxJlznXQexa6vcgCYlFcElZLKNZhs5iuxQcsBnm/aFtkVR7sY6nYcq96lVeMoS02TKUIRn0vT7GYzk7fbPwwAHcbs05kU/5e1JYkJQQ+/eRT6cmbCsE99AJOP7CXhpSz2sAf1KRxTdo6G4y/fh18aNXmRGBUmbZc4yDWP5doupqeXgd5vBLhzr0f7WUMq/i1u8lv03V9jpuN6XoNWvwQkSu1klbawffZ+rhWqhwQP/jgdpnK5k9eKiM+cufKCcCQCA0WEe3tLtPLQZmid7jlXzviqmyqkrjLBwMprFQ/DTDUsT7vD10z3NAtiVcYkBD0DjnM0SRAYxhHO0Aoe8ilUQ+6KbaOfj5AqO9Fspfn2Q6jX2HRdX5rr78DIljv3Fq+NLdR+jZ3wOsi33SxOBqe9JqIZu5TSfPwkOMxkkzKYJHOnxnTErmSfhqTWG
+x-ms-exchange-transport-forked: True
+Content-ID: <7084A791E746C8458A822A468C1DDC13@eurprd02.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <201910211901.yB3b4mYu%lkp@intel.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-OriginatorOrg: axentia.se
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9c73b2ee-2f98-46ee-46ee-08d756cc29f3
+X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Oct 2019 08:45:17.8657 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 4ee68585-03e1-4785-942a-df9c1871a234
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: s/uZAiNNWtS+LEk6fQyPy4opUMAHDU6rylu/WPazBum4gEOjYR6VHXTGI8UWBELj
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0202MB3340
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_014523_763054_9AAB5E14 
-X-CRM114-Status: GOOD (  20.51  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191022_014523_479226_251A092B 
+X-CRM114-Status: GOOD (  26.30  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [24.134.29.49 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.15.139 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,120 +136,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Sam Ravnborg <sam@ravnborg.org>,
- Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Fabio Estevam <festevam@gmail.com>, Lee Jones <lee.jones@linaro.org>,
- NXP Linux Team <linux-imx@nxp.com>, Robert Chiras <robert.chiras@nxp.com>,
- devicetree@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
- Arnd Bergmann <arnd@arndb.de>, Jonas Karlman <jonas@kwiboo.se>,
- Sascha Hauer <s.hauer@pengutronix.de>, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
- kbuild-all@lists.01.org, linux-kernel@vger.kernel.org,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>
+Cc: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "openbmc@lists.ozlabs.org" <openbmc@lists.ozlabs.org>,
+ "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
+ "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-On Mon, Oct 21, 2019 at 07:11:12PM +0800, kbuild test robot wrote:
-> Hi "Guido,
+On 2019-10-21 23:57, Jae Hyun Yoo wrote:
+> Hi Peter,
 > 
-> I love your patch! Yet something to improve:
+> On 10/21/2019 2:05 PM, Peter Rosin wrote:
+>> On 2019-10-21 22:24, Jae Hyun Yoo wrote:
+>>> Append a binding to support hardware timeout feature.
+>>>
+>>> Signed-off-by: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
+>>> ---
+>>>   Documentation/devicetree/bindings/i2c/i2c-aspeed.txt | 2 ++
+>>>   1 file changed, 2 insertions(+)
+>>>
+>>> diff --git a/Documentation/devicetree/bindings/i2c/i2c-aspeed.txt b/Documentation/devicetree/bindings/i2c/i2c-aspeed.txt
+>>> index b47f6ccb196a..133bfedf4cdd 100644
+>>> --- a/Documentation/devicetree/bindings/i2c/i2c-aspeed.txt
+>>> +++ b/Documentation/devicetree/bindings/i2c/i2c-aspeed.txt
+>>> @@ -17,6 +17,8 @@ Optional Properties:
+>>>   - bus-frequency	: frequency of the bus clock in Hz defaults to 100 kHz when not
+>>>   		  specified
+>>>   - multi-master	: states that there is another master active on this bus.
+>>> +- aspeed,hw-timeout-ms	: Hardware timeout in milliseconds. If it's not
+>>> +			  specified, the H/W timeout feature will be disabled.
+>>>   
+>>>   Example:
+>>>   
+>>>
+>>
+>> Some SMBus clients support a smbus-timeout-disable binding for disabling
+>> timeouts like this, for cases where the I2C adapter in question on occasion
+>> is unable to keep the pace. Adding that property thus avoids undesired
+>> timeouts when the client is SMBus conformant without it. Your new binding
+>> is the reverse situation, where you want to add a timeout where one is
+>> otherwise missing.
+>>
+>> Anyway, since I2C does not have a specified lowest possible frequency, this
+>> feels like something that is more in the SMBus arena. Should the property
+>> perhaps be a generic property named smbus-timeout-ms, or something like
+>> that?
 > 
-> [auto build test ERROR on linus/master]
-> [cannot apply to v5.4-rc4 next-20191018]
-> [if your patch is applied to the wrong git tree, please drop us a note to help
-> improve the system. BTW, we also suggest to use '--base' option to specify the
-> base tree in git format-patch, please see
-> https://stackoverflow.com/a/37406982]
+> Well, I tried upstreaming of the generic timeout property a year ago but
+> I agreed that the generic bus timeout property can be set by an ioctl
+> command so it didn't need to be added into device tree at that time. Not
+> sure if any need has come recently but I haven't heard that. This driver
+> still uses the generic timeout property which is provided by i2c core
+> for handling command timeouts, and it's out of scope from this patch
+> series.
+> 
+>> If the above is not wanted or appropriate, then I would personally prefer
+>> aspeed,bus-timeout-ms over aspeed,hw-timeout-ms. To me, hw-timeout-ms sounds
+>> like a (more serious) timeout between the CPU and the I2C peripheral unit
+>> or something like that. But I don't care deeply...
+> 
+> Changes I submitted in this patch set is for a different purpose which
+> is very Aspeed H/W specific, and actually it's a more serious timeout
+> setting indeed. If this H/W is used in multi-master environment, it
+> could meet a H/W hang that freezes itself in slave mode and it can't
+> escape from the state. To resolve the specific case, this H/W provides
+> self-recovery feature which monitors abnormal state of SDA, SCL and its
+> H/W state machine using the timeout setting to determine the escape
+> condition.
 
-The base for this series is next-20191018 where drm_panel_bridge_add()
-list it's second argument (89958b7cd9555a5d82556cc9a1f4c62fffda6f96).
+Are you saying that the aspeed HW is buggy and that this abnormal state
+is self inflicted by the aspeed HW even if other masters on the bus
+behave sanely? Because I didn't quite read it that way at all...
+
+To me, it sounded *exactly* like the state I2C clients end up in when an
+I2C master "dies" and stops communicating in the middle of a transaction.
+I.e. the thing that the SMBus timeout is designed to prevent (and the
+state the I2C nine-clk-recovery sequence addresses). The only twist (that
+I saw) was that the aspeed HW is also a master and that the aspeed master
+driver is completely locked out from the bus while some obnoxious master
+fails to complete its transaction (or whatever it was up to).
+
+If this can only be triggered when the HW is acting as a slave, and by
+aborted or otherwise funky master activity on the bus, then I wouldn't
+call it an HW issue. Then it would be a bus issue. I.e. something needing
+a bus-timeout instead of a hw-timeout.
+
+I don't have the specifics, so I can't tell which way it is. I'm just
+reacting to the presented information.
 
 Cheers,
- -- Guido
+Peter
 
+> Generally, this H/W timeout value is smaller than the generic bus
+> timeout value (I'm using 300ms for the H/W timeout while I'm using 1
+> second for the generic bus timeout) so I think it should be
+> distinguished from the generic bus timeout.
 > 
-> url:    https://github.com/0day-ci/linux/commits/Guido-G-nther/dt-bindings-display-bridge-Add-binding-for-NWL-mipi-dsi-host-controller/20191021-180825
-> base:   https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git 7d194c2100ad2a6dded545887d02754948ca5241
-> config: mips-allmodconfig (attached as .config)
-> compiler: mips-linux-gcc (GCC) 7.4.0
-> reproduce:
->         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
->         chmod +x ~/bin/make.cross
->         # save the attached .config to linux build tree
->         GCC_VERSION=7.4.0 make.cross ARCH=mips 
+> Thanks,
 > 
-> If you fix the issue, kindly add following tag
-> Reported-by: kbuild test robot <lkp@intel.com>
+> Jae
 > 
-> All errors (new ones prefixed by >>):
-> 
->    drivers/gpu/drm/bridge/nwl-dsi.c: In function 'nwl_dsi_host_attach':
-> >> drivers/gpu/drm/bridge/nwl-dsi.c:384:12: error: too few arguments to function 'drm_panel_bridge_add'
->       bridge = drm_panel_bridge_add(panel);
->                ^~~~~~~~~~~~~~~~~~~~
->    In file included from include/drm/drm_crtc.h:44:0,
->                     from include/drm/drm_atomic_helper.h:31,
->                     from drivers/gpu/drm/bridge/nwl-dsi.c:24:
->    include/drm/drm_bridge.h:432:20: note: declared here
->     struct drm_bridge *drm_panel_bridge_add(struct drm_panel *panel,
->                        ^~~~~~~~~~~~~~~~~~~~
-> 
-> vim +/drm_panel_bridge_add +384 drivers/gpu/drm/bridge/nwl-dsi.c
-> 
->    358	
->    359	static int nwl_dsi_host_attach(struct mipi_dsi_host *dsi_host,
->    360				       struct mipi_dsi_device *device)
->    361	{
->    362		struct nwl_dsi *dsi = container_of(dsi_host, struct nwl_dsi, dsi_host);
->    363		struct device *dev = dsi->dev;
->    364		struct drm_bridge *bridge;
->    365		struct drm_panel *panel;
->    366		int ret;
->    367	
->    368		DRM_DEV_INFO(dev, "lanes=%u, format=0x%x flags=0x%lx\n", device->lanes,
->    369			     device->format, device->mode_flags);
->    370	
->    371		if (device->lanes < 1 || device->lanes > 4)
->    372			return -EINVAL;
->    373	
->    374		dsi->lanes = device->lanes;
->    375		dsi->format = device->format;
->    376		dsi->dsi_mode_flags = device->mode_flags;
->    377	
->    378		ret = drm_of_find_panel_or_bridge(dsi->dev->of_node, 1, 0, &panel,
->    379						  &bridge);
->    380		if (ret)
->    381			return ret;
->    382	
->    383		if (panel) {
->  > 384			bridge = drm_panel_bridge_add(panel);
->    385			if (IS_ERR(bridge))
->    386				return PTR_ERR(bridge);
->    387		}
->    388	
->    389		dsi->panel_bridge = bridge;
->    390		drm_bridge_add(&dsi->bridge);
->    391	
->    392		return 0;
->    393	}
->    394	
-> 
-> ---
-> 0-DAY kernel test infrastructure                Open Source Technology Center
-> https://lists.01.org/pipermail/kbuild-all                   Intel Corporation
-
-
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
 
 _______________________________________________
 linux-arm-kernel mailing list
