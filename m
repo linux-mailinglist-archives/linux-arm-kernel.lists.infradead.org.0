@@ -2,92 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE5CCDFFB3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 10:39:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0191BDFFEC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 10:45:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cpnh+d5k+1X8NwpWQfDwj0SYIVW4g3yFEyuZFO2k8ZI=; b=OFt1783qyoZZqs
-	uiTNxcaODNkKRhDZxexgyLA26eMc3fcD8MzHrK4taZ5UUcnLi3FUoEH44e9qm3QHdDq6GvBXCgevL
-	2zrtobeVogxnHoDqP6yCxd9CUZqWVGmCERgDf4+Yhws4z5dCSXT48xEPKg/g+oDnhUEY1LNAnRZuq
-	hyDjI9dsY+uGCUh2OQBLqwYQUU4uPOTi0cmWMInl86UNLMpvCKebBAWZhhbMt0BSNu1mbNCgQAFX0
-	K1f+ZtV94gb1kdjDAU22hrnWYdkmMte5pHPTGT9cctHTcaZVcB1iMpLUmP+vpQbLTRx7hMRywrMiz
-	66W9b3c2IcZPg4ccvcQg==;
+	List-Owner; bh=sP/klw3R7yabT6TifFubN3TaXmKJuS3rgcQmpp8TwU0=; b=pyz00l6pDPnEPW
+	lmrGflJEundKPrSpz6yvjA22oJ7gEXncEyAU5rnKJ1oSOhEvhPoVfK2eO5PdWfp3QytgPvDzw7pJi
+	wUb+/KiJBUasRLRNCujjgTzo567h1R0lUgG9sk2MT6TIFaDqMiHxBRfQUrbgjzpGWbeaP5g/iPKVn
+	V0WQw/BoTyUNCvaYHVZLhAtw9bAgzi5fpvPNUnV/QgJbvm+0cd8ggtKuoHR2dh6uD94ghtkzYN8CQ
+	V442A6er9fpAtzOUL5st3r0BDs+YDf5Hw3C/XzYWcf0IwFCzQQEJTKO8YKOmeyl9Rxq10IWJDGrm4
+	FJ0vxiPAP7PE7WtQICVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMpha-0002oY-7I; Tue, 22 Oct 2019 08:39:38 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1iMpnY-0006ET-BY; Tue, 22 Oct 2019 08:45:48 +0000
+Received: from honk.sigxcpu.org ([24.134.29.49])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMphO-0002nA-RT
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 08:39:28 +0000
-Received: by mail-pg1-x542.google.com with SMTP id t3so9505241pga.8
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 22 Oct 2019 01:39:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=eApqYsG4e2cicMJq62zYg3NteuGKFbsXj+rZHKlYrI4=;
- b=cDDUvT7tE6kS1y83Xq++77H6H+Yisw1zBg5XQKZM01Ku2NMUOCvt+fjK9vnwStNlMd
- G1XP7moU287HDuI+90wzDg4KmHiMAREfcyjZgBDWnWhXGjZIXyxGj9Hlq2/rlvv/T7Vr
- QcwefftZNu9druK8hY710/5qE2kykFpQj1gXoPUCbNKf+yt14RoqzUnfUzDVZLmV9oSF
- 0qYRgRJk3HtZycxlHl/UQXcjaZ7nNc1QQ1C708JwIPoSi+cVt7swoXR6fClCxm4HiBS4
- jj3nUyN+pUpT58Uk6c+SbtgRwXF0w2mr7msDr6HQaqaNxVzWxfd+l6C7PoK1zEe3odxK
- TO3g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=eApqYsG4e2cicMJq62zYg3NteuGKFbsXj+rZHKlYrI4=;
- b=l86CY8nor0uMI3HIETzITjA5k4zTv27GKFHemaHYK+slf81t126wbXHdx8trYPVASG
- CXO3Dwf1xiv5XK/gtkCvK3bNLaRFuYrUHhOfrx61paW5ZP8+jjBlFrTQlQPeqrAY78TV
- FP+vek28vFdZm+fRQMyIio2TRmyBtqtnbvd8fE96ZfAUNSNdITE7vN/GydvT6WIOK3u+
- G7Q4p6cU0h8k/WO6QGin8/GaVjdId1aAZsW8OoHCYK/bWNanBqfuH0g8hayH3TxyOdKT
- t6INSUhuB62GHipqztGYigORnW30zlTp+fOPxh7ermeaqyVRT0kEyMGWfWzxkk12FkIK
- sNxw==
-X-Gm-Message-State: APjAAAVxpqwJ0HakyZag6HQ0IlIKKVZ4AhjZ8S7zxQka5NC9AAY1Svg8
- D/L6ME4dPv5VJsM++3dUk7A+tw==
-X-Google-Smtp-Source: APXvYqzoU91PMefRaVNwx7NkTM3WdM9pc2FdfwqZ56vV/RMHqHndA6hwGJsvhbRBkt0v+CwbGGBDLg==
-X-Received: by 2002:a17:90a:c406:: with SMTP id
- i6mr3159050pjt.98.1571733566156; 
- Tue, 22 Oct 2019 01:39:26 -0700 (PDT)
-Received: from localhost ([122.172.151.112])
- by smtp.gmail.com with ESMTPSA id m19sm15343255pjl.28.2019.10.22.01.39.25
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 22 Oct 2019 01:39:25 -0700 (PDT)
-Date: Tue, 22 Oct 2019 14:09:23 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH V2] cpufreq: imx-cpufreq-dt: Correct i.MX8MN's default
- speed grade value
-Message-ID: <20191022083923.pjqfokyoegispumw@vireshk-i7>
-References: <1571733199-17406-1-git-send-email-Anson.Huang@nxp.com>
+ id 1iMpn9-00061C-DF
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 08:45:25 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by honk.sigxcpu.org (Postfix) with ESMTP id 37CFAFB03;
+ Tue, 22 Oct 2019 10:45:17 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
+Received: from honk.sigxcpu.org ([127.0.0.1])
+ by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id J_7FrQl3FDaI; Tue, 22 Oct 2019 10:45:15 +0200 (CEST)
+Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
+ id 1D2F949BFC; Tue, 22 Oct 2019 10:45:15 +0200 (CEST)
+Date: Tue, 22 Oct 2019 10:45:14 +0200
+From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
+To: kbuild test robot <lkp@intel.com>
+Subject: Re: [PATCH v7 2/2] drm/bridge: Add NWL MIPI DSI host controller
+ support
+Message-ID: <20191022084514.GA30274@bogon.m.sigxcpu.org>
+References: <e0304ab9320cbbf3e63d78449e50975c036b2633.1571494140.git.agx@sigxcpu.org>
+ <201910211901.yB3b4mYu%lkp@intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1571733199-17406-1-git-send-email-Anson.Huang@nxp.com>
-User-Agent: NeoMutt/20180716-391-311a52
+In-Reply-To: <201910211901.yB3b4mYu%lkp@intel.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_013926_898242_B8BF9829 
-X-CRM114-Status: GOOD (  11.60  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191022_014523_763054_9AAB5E14 
+X-CRM114-Status: GOOD (  20.51  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
+ no trust [24.134.29.49 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,35 +67,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pm@vger.kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
- rafael.j.wysocki@intel.com, linux-kernel@vger.kernel.org, Linux-imx@nxp.com,
- kernel@pengutronix.de, festevam@gmail.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Sam Ravnborg <sam@ravnborg.org>,
+ Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Fabio Estevam <festevam@gmail.com>, Lee Jones <lee.jones@linaro.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Robert Chiras <robert.chiras@nxp.com>,
+ devicetree@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
+ Arnd Bergmann <arnd@arndb.de>, Jonas Karlman <jonas@kwiboo.se>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
+ kbuild-all@lists.01.org, linux-kernel@vger.kernel.org,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 22-10-19, 16:33, Anson Huang wrote:
-> i.MX8MN has different speed grade definition compared to
-> i.MX8MQ/i.MX8MM, when fuses are NOT written, the default
-> speed_grade should be set to minimum available OPP defined
-> in DT which is 1.2GHz, the corresponding speed_grade value
-> should be 0xb.
+Hi,
+On Mon, Oct 21, 2019 at 07:11:12PM +0800, kbuild test robot wrote:
+> Hi "Guido,
 > 
-> Fixes: 5b8010ba70d5 ("cpufreq: imx-cpufreq-dt: Add i.MX8MN support")
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> ---
-> Changes since V1:
-> 	- Improve the coding style by removing the tab;
-> ---
->  drivers/cpufreq/imx-cpufreq-dt.c | 20 ++++++++++----------
->  1 file changed, 10 insertions(+), 10 deletions(-)
+> I love your patch! Yet something to improve:
+> 
+> [auto build test ERROR on linus/master]
+> [cannot apply to v5.4-rc4 next-20191018]
+> [if your patch is applied to the wrong git tree, please drop us a note to help
+> improve the system. BTW, we also suggest to use '--base' option to specify the
+> base tree in git format-patch, please see
+> https://stackoverflow.com/a/37406982]
 
-Applied. Thanks.
+The base for this series is next-20191018 where drm_panel_bridge_add()
+list it's second argument (89958b7cd9555a5d82556cc9a1f4c62fffda6f96).
 
--- 
-viresh
+Cheers,
+ -- Guido
+
+> 
+> url:    https://github.com/0day-ci/linux/commits/Guido-G-nther/dt-bindings-display-bridge-Add-binding-for-NWL-mipi-dsi-host-controller/20191021-180825
+> base:   https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git 7d194c2100ad2a6dded545887d02754948ca5241
+> config: mips-allmodconfig (attached as .config)
+> compiler: mips-linux-gcc (GCC) 7.4.0
+> reproduce:
+>         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+>         chmod +x ~/bin/make.cross
+>         # save the attached .config to linux build tree
+>         GCC_VERSION=7.4.0 make.cross ARCH=mips 
+> 
+> If you fix the issue, kindly add following tag
+> Reported-by: kbuild test robot <lkp@intel.com>
+> 
+> All errors (new ones prefixed by >>):
+> 
+>    drivers/gpu/drm/bridge/nwl-dsi.c: In function 'nwl_dsi_host_attach':
+> >> drivers/gpu/drm/bridge/nwl-dsi.c:384:12: error: too few arguments to function 'drm_panel_bridge_add'
+>       bridge = drm_panel_bridge_add(panel);
+>                ^~~~~~~~~~~~~~~~~~~~
+>    In file included from include/drm/drm_crtc.h:44:0,
+>                     from include/drm/drm_atomic_helper.h:31,
+>                     from drivers/gpu/drm/bridge/nwl-dsi.c:24:
+>    include/drm/drm_bridge.h:432:20: note: declared here
+>     struct drm_bridge *drm_panel_bridge_add(struct drm_panel *panel,
+>                        ^~~~~~~~~~~~~~~~~~~~
+> 
+> vim +/drm_panel_bridge_add +384 drivers/gpu/drm/bridge/nwl-dsi.c
+> 
+>    358	
+>    359	static int nwl_dsi_host_attach(struct mipi_dsi_host *dsi_host,
+>    360				       struct mipi_dsi_device *device)
+>    361	{
+>    362		struct nwl_dsi *dsi = container_of(dsi_host, struct nwl_dsi, dsi_host);
+>    363		struct device *dev = dsi->dev;
+>    364		struct drm_bridge *bridge;
+>    365		struct drm_panel *panel;
+>    366		int ret;
+>    367	
+>    368		DRM_DEV_INFO(dev, "lanes=%u, format=0x%x flags=0x%lx\n", device->lanes,
+>    369			     device->format, device->mode_flags);
+>    370	
+>    371		if (device->lanes < 1 || device->lanes > 4)
+>    372			return -EINVAL;
+>    373	
+>    374		dsi->lanes = device->lanes;
+>    375		dsi->format = device->format;
+>    376		dsi->dsi_mode_flags = device->mode_flags;
+>    377	
+>    378		ret = drm_of_find_panel_or_bridge(dsi->dev->of_node, 1, 0, &panel,
+>    379						  &bridge);
+>    380		if (ret)
+>    381			return ret;
+>    382	
+>    383		if (panel) {
+>  > 384			bridge = drm_panel_bridge_add(panel);
+>    385			if (IS_ERR(bridge))
+>    386				return PTR_ERR(bridge);
+>    387		}
+>    388	
+>    389		dsi->panel_bridge = bridge;
+>    390		drm_bridge_add(&dsi->bridge);
+>    391	
+>    392		return 0;
+>    393	}
+>    394	
+> 
+> ---
+> 0-DAY kernel test infrastructure                Open Source Technology Center
+> https://lists.01.org/pipermail/kbuild-all                   Intel Corporation
+
+
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
 
 _______________________________________________
 linux-arm-kernel mailing list
