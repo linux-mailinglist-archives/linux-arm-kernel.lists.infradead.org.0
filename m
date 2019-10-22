@@ -2,54 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B921E079F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 17:40:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64DB2E07C2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 17:47:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=aOQ5cyS8MSNhLoWhAdRgX+SscQNEpDJh9I5bouoAAoE=; b=FEfd16UU/prX6t
-	ZC+9I3g7vyYchSj8H68+/MMRwX++TyiV7DhrWzfL4LW9+iRibk5UHC6i43IOFImDBobLRkEbtgZFT
-	unl5wo4RZibOFwR3e1jkipxNGMx/Eryxi+0clbuy0ljwWvcv0B2UfJ4xP2gQSjPKJBXj3QIOtEsJG
-	Qk76GbcRVvYYz94O10hjxvitE885kKzMYxRiFlvrGLH24nEtEPjzIu01GqvtKb6YGHHZn4yZbYMRQ
-	miPb6GuFRfTNitVmoPgUr4LoF46zmqOwCiUf/e8LK6EtO+A1jFXSh/O0w3r9QdEHAM/AxuoAF3WWu
-	VQ8KH8tZwveBKWLO2coQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=S95CfhukQgDjJtgB8QjV9Qr+m0SEn/0GJg4iBtoozRE=; b=lkvsMwBBau4zFL
+	zKjfiQqSupNGWyPK9iRK4jgpIqC3CvPzq7XJc4JA1VX2jVxHy+gdPhao5xcEU3RfTQkMA5AvDEKRv
+	/+8RDZqFCmTtP5krwNLFayFAYMTpWkgHc+xFd1JzJFabE7C6ktfFOY2rAW0iW9Ywe3wb+NwrZamV2
+	T9gV/43w44rJ+5Ux1tqAsJya0d5W+XZ3bHZfcbxa8qbB4U843fz2jl/Fgi+aJxmEHHep6MESxLG9L
+	tkMaO2ZxbdQVtjIUqr18GHRg64n+pb/w4fm3BGtcjK0wq6gP/Lqs3aSFUUl3ht0U6r3lAJJk03UeP
+	wb4FoWsAsc0a3hqZZbKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMwGv-00032v-Nx; Tue, 22 Oct 2019 15:40:33 +0000
-Received: from imap1.codethink.co.uk ([176.9.8.82])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMwGm-00032L-Pc
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 15:40:26 +0000
-Received: from [167.98.27.226] (helo=rainbowdash.codethink.co.uk)
- by imap1.codethink.co.uk with esmtpsa (Exim 4.84_2 #1 (Debian))
- id 1iMwGf-0006l3-Uw; Tue, 22 Oct 2019 16:40:18 +0100
-Received: from ben by rainbowdash.codethink.co.uk with local (Exim 4.92.3)
- (envelope-from <ben@rainbowdash.codethink.co.uk>)
- id 1iMwGf-00006u-8L; Tue, 22 Oct 2019 16:40:17 +0100
-From: "Ben Dooks (Codethink)" <ben.dooks@codethink.co.uk>
-To: linux-kernel@lists.codethink.co.uk
-Subject: [PATCH] firmware: imx: add missing include of
- <linux/firmware/imx/sci.h>
-Date: Tue, 22 Oct 2019 16:40:09 +0100
-Message-Id: <20191022154009.376-1-ben.dooks@codethink.co.uk>
-X-Mailer: git-send-email 2.23.0
+	id 1iMwNo-0005Od-23; Tue, 22 Oct 2019 15:47:40 +0000
+Received: from [217.140.110.172] (helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iMwNd-0005NO-MT
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 15:47:30 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 977AC177F;
+ Tue, 22 Oct 2019 08:47:18 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E54FC3F71A;
+ Tue, 22 Oct 2019 08:47:16 -0700 (PDT)
+Date: Tue, 22 Oct 2019 16:47:08 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Sami Tolvanen <samitolvanen@google.com>
+Subject: Re: [PATCH 13/18] arm64: preserve x18 when CPU is suspended
+Message-ID: <20191022154708.GA699@lakrids.cambridge.arm.com>
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20191018161033.261971-14-samitolvanen@google.com>
+ <20191021165649.GE56589@lakrids.cambridge.arm.com>
+ <CABCJKucm2ETxe2dgJhb4Ruzq72psFMGsx=0D6TVnJ-_DL2FgfA@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CABCJKucm2ETxe2dgJhb4Ruzq72psFMGsx=0D6TVnJ-_DL2FgfA@mail.gmail.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_084024_979399_9D8C70E0 
-X-CRM114-Status: UNSURE (   9.64  )
+X-CRM114-CacheID: sfid-20191022_084729_778965_23AFBB23 
+X-CRM114-Status: UNSURE (   9.32  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [176.9.8.82 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,52 +66,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- "Ben Dooks \(Codethink\)" <ben.dooks@codethink.co.uk>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Kernel Hardening <kernel-hardening@lists.openwall.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Include <linux/firmware/imx/sci.h> for the declarations of the
-functions exported from this driver. This fixes the following
-sparse warnings:
+On Mon, Oct 21, 2019 at 03:43:14PM -0700, Sami Tolvanen wrote:
+> On Mon, Oct 21, 2019 at 9:56 AM Mark Rutland <mark.rutland@arm.com> wrote:
+> > This should have a corresponding change to cpu_suspend_ctx in
+> > <asm/suspend.h>. Otherwise we're corrupting a portion of the stack.
+> 
+> Ugh, correct. I'll fix this in the next version. Thanks.
 
-drivers/firmware/imx/imx-scu-irq.c:45:5: warning: symbol 'imx_scu_irq_register_notifier' was not declared. Should it be static?
-drivers/firmware/imx/imx-scu-irq.c:52:5: warning: symbol 'imx_scu_irq_unregister_notifier' was not declared. Should it be static?
-drivers/firmware/imx/imx-scu-irq.c:97:5: warning: symbol 'imx_scu_irq_group_enable' was not declared. Should it be static?
-drivers/firmware/imx/imx-scu-irq.c:130:5: warning: symbol 'imx_scu_enable_general_irq_channel' was not declared. Should it be static?
+It's probably worth extending the comment above cpu_do_suspend to say:
 
-Signed-off-by: Ben Dooks (Codethink) <ben.dooks@codethink.co.uk>
----
-Cc: Shawn Guo <shawnguo@kernel.org>
-Cc: Sascha Hauer <s.hauer@pengutronix.de>
-Cc: Pengutronix Kernel Team <kernel@pengutronix.de>
-Cc: Fabio Estevam <festevam@gmail.com>
-Cc: NXP Linux Team <linux-imx@nxp.com>
-Cc: linux-arm-kernel@lists.infradead.org
----
- drivers/firmware/imx/imx-scu-irq.c | 1 +
- 1 file changed, 1 insertion(+)
+| This must be kept in sync with struct cpu_suspend_ctx in
+| <asm/suspend.h>
 
-diff --git a/drivers/firmware/imx/imx-scu-irq.c b/drivers/firmware/imx/imx-scu-irq.c
-index 687121f8c4d5..db655e87cdc8 100644
---- a/drivers/firmware/imx/imx-scu-irq.c
-+++ b/drivers/firmware/imx/imx-scu-irq.c
-@@ -8,6 +8,7 @@
- 
- #include <dt-bindings/firmware/imx/rsrc.h>
- #include <linux/firmware/imx/ipc.h>
-+#include <linux/firmware/imx/sci.h>
- #include <linux/mailbox_client.h>
- 
- #define IMX_SC_IRQ_FUNC_ENABLE	1
--- 
-2.23.0
+... to match what we have above struct cpu_suspend_ctx, and make this
+more obvious in future.
 
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
