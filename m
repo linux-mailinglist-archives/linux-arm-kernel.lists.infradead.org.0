@@ -2,61 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC835E0738
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 17:23:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 052F0E0754
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 17:28:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j4V8DSB6KMlXLVxoqp7l5ALhJXVLvNRUf816dgYFOUo=; b=KbAqB4yyEILXuB
-	2aRGaPWMByMxwQEgeaqBg0aMNQoCo/XLdOGpXp5TvbXeXCSqiipQ5N78bE70BGtUUEyDU7QgXVDaj
-	7J2Bq8zA4YYi+Q8xotiJS9J2C5xdpw0dI1y2BsO2ba+1zYGv1Qa7nTW4picBiHydJYJyY/CPHL9zR
-	jP4anCRECb9G9GUpMU8csW3C8tDVFyxtUaxHdZAsWd3N40qVx8PxNXmHVJSzos8S2o6RA2pDNhw64
-	eR7cmzg/Ex9DUM3W2hPIq5jTU4IspWNwz109rAbiGKzXm3mf//W/Y8uoS7x04BARMNTDdXCBO9UZa
-	zysO6YYBpAgOwCmboV6A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=UGJSlEdtQi419QVnGvRiwJW5UyTC6eROBhmf5u2c27A=; b=S3O6SJgU9vXgxC
+	/DXfTd+tOOmfDiEWa4kSmJVAmOejaMkOQSPKxhp3ZBWZRQGRHbGHWDpANXhZhsiFTvnYk80RWtSgt
+	bIRJPmFLPmD0uUa6XzC4dMdZq0hFlk8WaeHkDegMLk2Vuw6yr1K2uCqnkO9RPiJA+rqki9zWyhQzd
+	Nzuz5+8aKnnz/e+vDpZHW6BJ7s+64hxQ6sFYweXTu3xbeuzymfDJ/q42MpR+c1SpgKi1u3z8W8gSk
+	Bmm6B6yLxcyeq6fL9pzDaP6bqkDSpC86yh582sWpLRnlRUVoJ31jWEcSIZu4nhNaEipzdmFtx3CXE
+	LSlXcxaGoQ5PkuLektHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMw0E-0002G9-1z; Tue, 22 Oct 2019 15:23:18 +0000
-Received: from shell.v3.sk ([90.176.6.54])
+	id 1iMw4m-0004aR-Bx; Tue, 22 Oct 2019 15:28:00 +0000
+Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMw04-0002F2-JB
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 15:23:11 +0000
-Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id DED1250B7A;
- Tue, 22 Oct 2019 17:23:01 +0200 (CEST)
-Received: from shell.v3.sk ([127.0.0.1])
- by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id 0d8b85enxeVZ; Tue, 22 Oct 2019 17:22:56 +0200 (CEST)
-Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id AE3B050B7D;
- Tue, 22 Oct 2019 17:22:55 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at zimbra.v3.sk
-Received: from shell.v3.sk ([127.0.0.1])
- by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id AlFqPbyEK5tV; Tue, 22 Oct 2019 17:22:54 +0200 (CEST)
-Received: from belphegor (nat-pool-brq-t.redhat.com [213.175.37.10])
- by zimbra.v3.sk (Postfix) with ESMTPSA id 5388C50B7A;
- Tue, 22 Oct 2019 17:22:54 +0200 (CEST)
-Message-ID: <668e779f727739665f98ce33d07cc54d37cb2770.camel@v3.sk>
-Subject: Re: [GIT PULL] soc/arm/dt: Marvell MMP Device Tree changes for v5.5
-From: Lubomir Rintel <lkundrak@v3.sk>
-To: Olof Johansson <olof@lixom.net>
-Date: Tue, 22 Oct 2019 17:22:52 +0200
-In-Reply-To: <20191021222720.e7gqwyma6zjforiq@localhost>
-References: <d4897c4a92319527c46147244282803cd9f5a1ff.camel@v3.sk>
- <20191021222720.e7gqwyma6zjforiq@localhost>
-User-Agent: Evolution 3.34.1 (3.34.1-1.fc31) 
+ id 1iMw3x-00045b-8n
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 15:27:12 +0000
+Received: from localhost.localdomain (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
+ [86.250.200.211])
+ (Authenticated sender: paul.kocialkowski@bootlin.com)
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id EFBE5240011;
+ Tue, 22 Oct 2019 15:26:59 +0000 (UTC)
+From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+To: linux-media@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@googlegroups.com
+Subject: [PATCH v9 0/5] HEVC/H.265 stateless support for V4L2 and Cedrus
+Date: Tue, 22 Oct 2019 17:26:49 +0200
+Message-Id: <20191022152654.1999355-1-paul.kocialkowski@bootlin.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_082308_941450_57294F57 
-X-CRM114-Status: GOOD (  15.83  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191022_082709_595734_AEF5355A 
+X-CRM114-Status: GOOD (  14.15  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.230 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -70,80 +59,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: soc@kernel.org, Arnd Bergmann <arnd@arndb.de>,
- linux-arm-kernel@lists.infradead.org
+Cc: Hans Verkuil <hverkuil@xs4all.nl>, Jernej Skrabec <jernej.skrabec@siol.net>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Alexandre Courbot <acourbot@chromium.org>, Jonas Karlman <jonas@kwiboo.se>,
+ Maxime Ripard <mripard@kernel.org>, Tomasz Figa <tfiga@chromium.org>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Nicolas Dufresne <nicolas@ndufresne.ca>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Ezequiel Garcia <ezequiel@collabora.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2019-10-21 at 15:27 -0700, Olof Johansson wrote:
-> On Thu, Oct 17, 2019 at 04:35:38PM +0200, Lubomir Rintel wrote:
-> > Hi,
-> > 
-> > Please pull the Device Tree changes for the MMP SoC.
-> > 
-> > The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
-> > 
-> >   Linux 5.4-rc1 (2019-09-30 10:35:40 -0700)
-> > 
-> > are available in the Git repository at:
-> > 
-> >   git://git.kernel.org/pub/scm/linux/kernel/git/lkundrak/linux-mmp.git tags/mmp-dt-for-v5.5
-> > 
-> > for you to fetch changes up to 5c272bee843e12e4a3a2cc38881fdf31874806e0:
-> > 
-> >   ARM: dts: mmp3: Add MMP3 SoC dts file (2019-10-17 16:18:28 +0200)
-> > 
-> > This supersedes the "[GIT PULL] ARM: soc: Marvell MMP changes for v5.5" pull
-> > request.
-> > 
-> > Thanks,
-> > Lubo
-> > 
-> > ----------------------------------------------------------------
-> > ARM: Marvell MMP Device Tree patches for v5.5
-> > 
-> > This tag includes binding documentation for various hardware found on Marvell
-> > MMP3 SoC along a DTS file for said hardware.
-> > 
-> > ----------------------------------------------------------------
-> > Lubomir Rintel (6):
-> >       dt-bindings: arm: cpu: Add Marvell MMP3 SMP enable method
-> >       dt-bindings: arm: Convert Marvell MMP board/soc bindings to json-schema
-> >       dt-bindings: arm: mrvl: Document MMP3 compatible string
-> >       dt-bindings: mrvl,intc: Add a MMP3 interrupt controller
-> >       dt-bindings: phy-mmp3-usb: Add bindings
-> >       ARM: dts: mmp3: Add MMP3 SoC dts file
-> > 
-> >  Documentation/devicetree/bindings/arm/cpus.yaml    |   1 +
-> >  .../devicetree/bindings/arm/mrvl/mrvl.txt          |  14 -
-> >  .../devicetree/bindings/arm/mrvl/mrvl.yaml         |  35 ++
-> >  .../bindings/interrupt-controller/mrvl,intc.txt    |  14 +-
-> >  .../devicetree/bindings/phy/phy-mmp3-usb.txt       |  13 +
-> >  arch/arm/boot/dts/mmp3.dtsi                        | 527 +++++++++++++++++++++
-> 
-> Hi,
-> 
-> I only see a dtsi here. Do you have an early/partial dts for an actual piece of
-> hardware that also can go in, so we get build coverage of the dtsi, etc?
-> 
-> Merging this as-is, but please follow up with one if you can -- even if it's
-> not complete yet.
+This is early support for HEVC/H.265 stateless decoding in V4L2,
+including both definitions and driver support for the Cedrus VPU
+driver, which concerns Allwinner devices.
 
-I'll send out one. It is indeed not complete, but it boots.
+A specific pixel format is introduced for the HEVC slice format and
+controls are provided to pass the bitstream metadata to the decoder.
+Some bitstream extensions are intentionally not supported at this point.
 
-I'm not sure about what name to use for the machine and the compatible
-string and therefore I'm thankful for suggestions. checkpatch.pl is
-currently unhappy about the compatible string, that can be fixed once
-we're sure compatible string is correct.
+Since this is the first proposal for stateless HEVC/H.265 support in
+V4L2, reviews and comments about the controls definitions are
+particularly welcome.
 
-Thank you for the pulls and the build fix.
+On the Cedrus side, the H.265 implementation covers frame pictures
+with both uni-directional and bi-direction prediction modes (P/B
+slices). Field pictures (interleaved), scaling lists and 10-bit output
+are not supported at this point.
 
-> -Olof
+Changes since v8:
+* Rebased on latest media tree;
+* Fixed possibly undefined bit shifts;
+* Added a minor cosmetic change to a macro;
 
-Thank
-Lubo
+Changes since v7:
+* Rebased on latest media tree;
+* Fixed holes in structures for cacheline alignment;
+* Added decode mode and start code controls
+  (only per-slice and no start code is supported at this point).
+
+Changes since v6:
+* Rebased on latest media tree from Hans;
+* Reordered some fields to avoid holes and multi-padding;
+* Updated the documentation.
+
+Changes since v5:
+* Rebased atop latest next media tree;
+* Moved to flags instead of u8 fields;
+* Added padding to ensure 64-bit alignment
+  (tested with GDB on 32 and 64-bit architectures);
+* Reworked cedrus H.265 driver support a bit for flags;
+* Split off codec-specific control validation and init;
+* Added HEVC controls fields cleanup at std_validate to allow reliable
+  control comparison with memcmp;
+* Fixed various misc reported mistakes.
+
+Changes since v4:
+* Rebased atop latest H.254 series.
+
+Changes since v3:
+* Updated commit messages;
+* Updated CID base to avoid conflicts;
+* Used cpu_to_le32 for packed le32 data;
+* Fixed misc minor issues in the drive code;
+* Made it clear in the docs that the API will evolve;
+* Made the pixfmt private and split commits about it.
+
+Changes since v2:
+* Moved headers to non-public API;
+* Added H265 capability for A64 and H5;
+* Moved docs to ext-ctrls-codec.rst;
+* Mentionned sections of the spec in the docs;
+* Added padding to control structures for 32-bit alignment;
+* Made write function use void/size in bytes;
+* Reduced the number of arguments to helpers when possible;
+* Removed PHYS_OFFSET since we already set PFN_OFFSET;
+* Added comments where suggested;
+* Moved to timestamp for references instead of index;
+* Fixed some style issues reported by checkpatch.
+
+Changes since v1:
+* Added a H.265 capability to whitelist relevant platforms;
+* Switched over to tags instead of buffer indices in the DPB
+* Declared variable in their reduced scope as suggested;
+* Added the H.265/HEVC spec to the biblio;
+* Used in-doc references to the spec and the required APIs;
+* Removed debugging leftovers.
+
+Cheers!
+
+Paul Kocialkowski (5):
+  media: cedrus: Fix undefined shift with a SHIFT_AND_MASK_BITS macro
+  media: cedrus: Remove unnecessary parenthesis around DIV_ROUND_UP
+  media: v4l: Add definitions for HEVC stateless decoding
+  media: pixfmt: Document the HEVC slice pixel format
+  media: cedrus: Add HEVC/H.265 decoding support
+
+ Documentation/media/uapi/v4l/biblio.rst       |   9 +
+ .../media/uapi/v4l/ext-ctrls-codec.rst        | 553 +++++++++++++++-
+ .../media/uapi/v4l/pixfmt-compressed.rst      |  23 +
+ .../media/uapi/v4l/vidioc-queryctrl.rst       |  18 +
+ .../media/videodev2.h.rst.exceptions          |   3 +
+ drivers/media/v4l2-core/v4l2-ctrls.c          | 109 +++-
+ drivers/media/v4l2-core/v4l2-ioctl.c          |   1 +
+ drivers/staging/media/sunxi/cedrus/Makefile   |   2 +-
+ drivers/staging/media/sunxi/cedrus/cedrus.c   |  52 +-
+ drivers/staging/media/sunxi/cedrus/cedrus.h   |  18 +
+ .../staging/media/sunxi/cedrus/cedrus_dec.c   |   9 +
+ .../staging/media/sunxi/cedrus/cedrus_h265.c  | 616 ++++++++++++++++++
+ .../staging/media/sunxi/cedrus/cedrus_hw.c    |   4 +
+ .../staging/media/sunxi/cedrus/cedrus_regs.h  | 302 ++++++++-
+ .../staging/media/sunxi/cedrus/cedrus_video.c |  10 +
+ include/media/hevc-ctrls.h                    | 212 ++++++
+ include/media/v4l2-ctrls.h                    |   7 +
+ 17 files changed, 1925 insertions(+), 23 deletions(-)
+ create mode 100644 drivers/staging/media/sunxi/cedrus/cedrus_h265.c
+ create mode 100644 include/media/hevc-ctrls.h
+
+-- 
+2.23.0
 
 
 _______________________________________________
