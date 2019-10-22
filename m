@@ -2,83 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A569E05E9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 16:05:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37302E05EA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 16:05:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6FwVrQVZ6zNaIPWqaR/nzvpWoy/7/BOARc8LTIjcSMA=; b=F5qY7tY3U+Tw2I
-	MbYRwbZ08HUJhWmQtdP4rEFQ3RrAol8WGrvOUfDrhRN6VpDcSQFNwwafH0bVa5mnhkgW0wLBEVOxz
-	gnREA0WeDB+DLiE4pJ7ZClRdaWBoshSSGpiLVwIsPFfUYmP/mWABQCR6f0/fQkZWli1AyYWjULBGm
-	9BHUTqoYvk8WYVWazwVl2I4Z5tEeFILPVsw3uESDKHpZ1aPp3MPxASTj7VvcyNGQECXIOKA2nul/u
-	ADwnPuRFz/wBoVg1QWAxg4kwId20Zee3vEpfwn5YKtLHiEAoI6SUeIMJEJ5fc47o8qQYILWWhdghu
-	zJwMk49iOmq9G91Yd1MQ==;
+	List-Owner; bh=tmnsz7IyH2t/j2W8LtTFjl+Rrp/L3Im6NTNC1G83iZU=; b=L4WJ4dX8nQyrfF
+	6OLgWD6lXHk2QxoPk1zdqes5DQ1HMfzUu5m1/OpOJeR9vCPb3abUIaViJkucPWCQXc7mV7+nKDd+W
+	s8MCbPaSgqIVpOAbPMYxeNFVjr7XpAbfQCdpeXopXXYu3UBfzPInxu+iI5Chlfy5aIEW7ocPXd5qP
+	Y7ZR+2qTJXSt6WwDEALL6uTKHRufop+feaNxkTD0HsVV5aQw4rGWc58SF1CXk/u9dNdavqk/7QzpM
+	B4yRDW2UPFJdjEt8QXKgUOfshGHEvIyInpRJsN2i6Dd7vw1Ixwhsrrchx5m4ybyz1ae6P9IrVhAT/
+	SBeoaCCQiPda7wCZB0PQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMun7-00006K-BK; Tue, 22 Oct 2019 14:05:41 +0000
+	id 1iMunJ-0000Ls-UJ; Tue, 22 Oct 2019 14:05:53 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMulu-0006N9-GI
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 14:04:28 +0000
-Received: from mail-wm1-f69.google.com (mail-wm1-f69.google.com
- [209.85.128.69])
+ id 1iMumQ-0006uN-IN
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 14:05:01 +0000
+Received: from mail-wm1-f71.google.com (mail-wm1-f71.google.com
+ [209.85.128.71])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id AC822C057F31
+ by mx1.redhat.com (Postfix) with ESMTPS id AF470A705
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 22 Oct 2019 14:04:25 +0000 (UTC)
-Received: by mail-wm1-f69.google.com with SMTP id o188so7539122wmo.5
+ Tue, 22 Oct 2019 14:04:57 +0000 (UTC)
+Received: by mail-wm1-f71.google.com with SMTP id 6so3009331wmj.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 22 Oct 2019 07:04:25 -0700 (PDT)
+ Tue, 22 Oct 2019 07:04:57 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:message-id
  :date:user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=3vKquIIhS417Xcv3ef04W52oBIikgSSCS3LfBkCoIDs=;
- b=LRL0wIe0GUbdSqucojA0TDB/nUCEArKf1ba32ht28IO9aLOqIhpE3N2I1jfqQT4lQ3
- TGQmXTf+WzM7mdxTpr1TFfEN61HvfrS2nM9IrT21GB7vpRwdRzlyj4VIqCWcBMcFLbiE
- ZDVwEe69bJTI3BVwk1+v0gEuROzIbhuX0X0fAdgNzFnhpyN7vShXWYLPkdUGmg1UkEn7
- aWu4/EYMtnDKWfJIaa8g6WawxxUaqXRK3xLpsflDZ2js0ORLAc7Hx2CZZJ4TOvqfB/AX
- ekOykfo38/KYXKGKAP5YdEwdWqNx5pt3x9fv2vigk1KQD0f8fw+bdh1XFCirthRTwX/N
- UuVw==
-X-Gm-Message-State: APjAAAVliw1pBhhsvEBB5SdR9M6ufbAE0l/9dv4Lf3qhXeOgK131Ql5l
- RGcryRaBP25D5tjCpQ8vdlaRBxgPbaP4ztP5muSpOJ1xG560k1qT7DTLQejMpm9FAfMfLEuxERX
- LFrxyS9oujA5BOD806L9pq8p/66OMa8BOw/o=
-X-Received: by 2002:a7b:c049:: with SMTP id u9mr3176822wmc.12.1571753064236;
- Tue, 22 Oct 2019 07:04:24 -0700 (PDT)
-X-Google-Smtp-Source: APXvYqxd12WGZ28CK/g1W21d1r/6V7p9tDfXwdcdM4EXY3TusWKTyDA7mRoL7a/JX5NzrrGKErwrww==
-X-Received: by 2002:a7b:c049:: with SMTP id u9mr3176775wmc.12.1571753063926;
- Tue, 22 Oct 2019 07:04:23 -0700 (PDT)
+ bh=GRXx0prZyWf8Ie3WBmFM/bIRv9+8DKKzcw/xRf9RZ/k=;
+ b=RCTtKg3WQCMlpm3pyrs6Xab8eMe7vHnNcBLCElO8vOY6XPSNfcZNw30bHhHg4w0rXe
+ U0Aqo8rseDtF94gHgdvZ6++yi4GvDy1R1DK/FzpYtNPafY+UMcghuC/egLnr0CR7G1Dw
+ Wlnu3W2IsO29iHdGUQ5nk76zZJvMyQYApq1stvY7XShLEO/NrZhmFqZ3vnij6cbeu5EY
+ l1oRu9SueUetGH3K/BSQTRuhnq07cc7kcaPU68geZebxkiJ/2fQ1vap5wB4jddO1GfZO
+ RijzCnkVU+J8YbBX1aadMUcEfoy/HRk8C8Jqu5YMsB+DL1TgnigOki0AZBWSIpjGKF3y
+ cEFg==
+X-Gm-Message-State: APjAAAVHa7Xgx8jysxLJhkmyUXHnD539TPCWb8nmJMGuqTFVK4t4W5qZ
+ tKXnXPA0ltL0RMCUluejs6lv/8yh7CE/kgkDV7mq5iQWv06ipxn0zH/7TaWj9zRoVC1gJ1UTRll
+ q2PQ5M6fIUuuP3jVAv627eNJgxkqfXuLg2Ik=
+X-Received: by 2002:a1c:7e57:: with SMTP id z84mr3319589wmc.84.1571753096262; 
+ Tue, 22 Oct 2019 07:04:56 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqwWqRcFVSe00YfZqVULXyrnOBOt0DAtwntm2KhRrr6N6A/cSYud38QIAc8/I73DEBmlFbuFZw==
+X-Received: by 2002:a1c:7e57:: with SMTP id z84mr3319555wmc.84.1571753095982; 
+ Tue, 22 Oct 2019 07:04:55 -0700 (PDT)
 Received: from ?IPv6:2001:b07:6468:f312:c0e4:dcf4:b543:ce19?
  ([2001:b07:6468:f312:c0e4:dcf4:b543:ce19])
- by smtp.gmail.com with ESMTPSA id n11sm903226wmd.26.2019.10.22.07.04.21
+ by smtp.gmail.com with ESMTPSA id b196sm11755492wmd.24.2019.10.22.07.04.54
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 22 Oct 2019 07:04:23 -0700 (PDT)
-Subject: Re: [PATCH v2 15/15] KVM: Dynamically size memslot array based on
- number of used slots
+ Tue, 22 Oct 2019 07:04:55 -0700 (PDT)
+Subject: Re: [PATCH v2 00/15] KVM: Dynamically size memslot arrays
 To: Sean Christopherson <sean.j.christopherson@intel.com>,
  James Hogan <jhogan@kernel.org>, Paul Mackerras <paulus@ozlabs.org>,
  Christian Borntraeger <borntraeger@de.ibm.com>,
  Janosch Frank <frankja@linux.ibm.com>, =?UTF-8?B?UmFkaW0gS3LEjW3DocWZ?=
  <rkrcmar@redhat.com>, Marc Zyngier <maz@kernel.org>
 References: <20191022003537.13013-1-sean.j.christopherson@intel.com>
- <20191022003537.13013-16-sean.j.christopherson@intel.com>
 From: Paolo Bonzini <pbonzini@redhat.com>
 Openpgp: preference=signencrypt
-Message-ID: <2609aedc-4fc9-ab92-8877-55c64cf19165@redhat.com>
-Date: Tue, 22 Oct 2019 16:04:21 +0200
+Message-ID: <129444cc-5211-5b60-15fc-0f0fe998f023@redhat.com>
+Date: Tue, 22 Oct 2019 16:04:54 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20191022003537.13013-16-sean.j.christopherson@intel.com>
+In-Reply-To: <20191022003537.13013-1-sean.j.christopherson@intel.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_070426_621426_8B12018B 
-X-CRM114-Status: GOOD (  14.62  )
+X-CRM114-CacheID: sfid-20191022_070458_654775_DC5E336F 
+X-CRM114-Status: GOOD (  20.15  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -114,12 +112,36 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 22/10/19 02:35, Sean Christopherson wrote:
-> +	struct kvm_memory_slot memslots[];
-> +	/*
-> +	 * WARNING: 'memslots' is dynamically-sized.  It *MUST* be at the end.
-> +	 */
+> The end goal of this series is to dynamically size the memslot array so
+> that KVM allocates memory based on the number of memslots in use, as
+> opposed to unconditionally allocating memory for the maximum number of
+> memslots.  On x86, each memslot consumes 88 bytes, and so with 2 address
+> spaces of 512 memslots, each VM consumes ~90k bytes for the memslots.
+> E.g. given a VM that uses a total of 30 memslots, dynamic sizing reduces
+> the memory footprint from 90k to ~2.6k bytes.
+> 
+> The changes required to support dynamic sizing are relatively small,
+> e.g. are essentially contained in patches 12/13 and 13/13.  Patches 1-11
+> clean up the memslot code, which has gotten quite crusy, especially
+> __kvm_set_memory_region().  The clean up is likely not strictly necessary
+> to switch to dynamic sizing, but I didn't have a remotely reasonable
+> level of confidence in the correctness of the dynamic sizing without first
+> doing the clean up.
+> 
+> Testing, especially non-x86 platforms, would be greatly appreciated.  The
+> non-x86 changes are for all intents and purposes untested, e.g. I compile
+> tested pieces of the code by copying them into x86, but that's it.  In
+> theory, the vast majority of the functional changes are arch agnostic, in
+> theory...
+> 
+> v2:
+>   - Split "Drop kvm_arch_create_memslot()" into three patches to move
+>     minor functional changes to standalone patches [Janosch].
+>   - Rebase to latest kvm/queue (f0574a1cea5b, "KVM: x86: fix ...")
+>   - Collect an Acked-by and a Reviewed-by
 
-Isn't that obvious from the flexible array member?
+I only have some cosmetic changes on patches 14-15.  Let's wait for
+testing results.
 
 Paolo
 
