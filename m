@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91890DFAD4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 04:01:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DADBEDFAF4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 04:02:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iVQ00fCAxH9tpb29479d+JUny4bSPdeRDiDfLmcwM+I=; b=Ap50QFIkCTVXby
-	LSgMxquFMH0PmabmdVfN3UOrWSvTfbCNjoyou2f3WL4D5+oi3HBZtubWobgSZFPtvMLtm5Suis/bZ
-	x6X7+fszc7gArvkMDe5DAlcesgKM+g1rJ/l0qI/Hn1tTyL+GJobs8s4gJXt6E/CBCQrAoEwxXU5wh
-	SojlyEhBEtm0XwXO7VeTgVO2DjdX63p+6es5nOm2ofzAhi3k4FipausraH09EwYp0ix+Ynf2fkNbe
-	8Jh6vtBR0ei9oV1VsC2y8J+p77Gcrwqs+mecak1/ROLGJ92Fi7J9UoqVBrXcWMSNo9c8P9b2xONdV
-	vwxxBjSHWe+ttvq++ykA==;
+	List-Owner; bh=ChlXF2q2yRFpXtzDuvna3sLpbG7bqyMTzKHmSTA+AV8=; b=i9nyMUUE+0Rkkt
+	k4RU+5FhrCQ4Oi2U26DBQkJJZ6GbU74fVdww7E3MXJDXyImQLSOiOmXN+0jdIG7Q6Rk+nMROZPBZn
+	59YRSGTUDcD9NejG3qdy45S5sDRVnnZIakhkNOgN3+hVEgvdhUMyR/TA68vU13XIpT9J6Aop8qPRo
+	qUnWOknt5zxRM2xeZyGMf7hB7A/VpcJcwEFhEGO87/Pn8uNdLYeC6A1LgrCbKa94PTRKgc9oTP9B5
+	6Oud42T5klF5w4cJuqfOqBbuqx3rbMmJTcK9dv6mjUUOOSJRrTRoqp20gL7tJW363uR/vpGTRdCwy
+	zKH0eJFO0h5u6IfoWpjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMjUL-0006Wm-Ey; Tue, 22 Oct 2019 02:01:33 +0000
+	id 1iMjV1-00077Q-DO; Tue, 22 Oct 2019 02:02:15 +0000
 Received: from mga07.intel.com ([134.134.136.100])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMjSR-0003sj-0H
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 01:59:37 +0000
+ id 1iMjSS-0003sH-8U
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 01:59:38 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
 Received: from fmsmga008.fm.intel.com ([10.253.24.58])
  by orsmga105.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 21 Oct 2019 18:59:34 -0700
+ 21 Oct 2019 18:59:35 -0700
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.67,325,1566889200"; d="scan'208";a="196293754"
+X-IronPort-AV: E=Sophos;i="5.67,325,1566889200"; d="scan'208";a="196293757"
 Received: from sjchrist-coffee.jf.intel.com ([10.54.74.41])
- by fmsmga008.fm.intel.com with ESMTP; 21 Oct 2019 18:59:33 -0700
+ by fmsmga008.fm.intel.com with ESMTP; 21 Oct 2019 18:59:34 -0700
 From: Sean Christopherson <sean.j.christopherson@intel.com>
 To: Marc Zyngier <maz@kernel.org>, James Hogan <jhogan@kernel.org>,
  Paul Mackerras <paulus@ozlabs.org>,
  Christian Borntraeger <borntraeger@de.ibm.com>,
  Janosch Frank <frankja@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [PATCH 04/45] KVM: VMX: Allocate VPID after initializing VCPU
-Date: Mon, 21 Oct 2019 18:58:44 -0700
-Message-Id: <20191022015925.31916-5-sean.j.christopherson@intel.com>
+Subject: [PATCH 05/45] KVM: VMX: Use direct vcpu pointer during vCPU
+ create/free
+Date: Mon, 21 Oct 2019 18:58:45 -0700
+Message-Id: <20191022015925.31916-6-sean.j.christopherson@intel.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20191022015925.31916-1-sean.j.christopherson@intel.com>
 References: <20191022015925.31916-1-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_185935_089079_FBBBA2DC 
-X-CRM114-Status: GOOD (  13.17  )
+X-CRM114-CacheID: sfid-20191021_185936_357308_D090EE12 
+X-CRM114-Status: GOOD (  13.56  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -83,53 +84,126 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Do VPID allocation after calling the common kvm_vcpu_init() as a step
-towards doing vCPU allocation (via kmem_cache_zalloc()) and calling
-kvm_vcpu_init() back-to-back.  Squishing allocation and initialization
-together will eventually allow the sequence to be moved to arch-agnostic
-creation code.
-
-Note, the VPID is not consumed until KVM_RUN, slightly delaying its
-allocation should have no real function impact.  VPID allocation was
-arbitrarily placed in the original patch, commit 2384d2b326408 ("KVM:
-VMX: Enable Virtual Processor Identification (VPID)").
+Capture the vcpu pointer in a local varaible and replace '&vmx->vcpu'
+references with a direct reference to the pointer in anticipation of
+moving bits of the code to common x86 and passing the vcpu pointer into
+vmx_create_vcpu(), i.e. eliminate unnecessary noise from future patches.
 
 Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 ---
- arch/x86/kvm/vmx/vmx.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ arch/x86/kvm/vmx/vmx.c | 42 ++++++++++++++++++++++--------------------
+ 1 file changed, 22 insertions(+), 20 deletions(-)
 
 diff --git a/arch/x86/kvm/vmx/vmx.c b/arch/x86/kvm/vmx/vmx.c
-index e660e28e9ae0..501e88bd6204 100644
+index 501e88bd6204..70b8d15eb2c5 100644
 --- a/arch/x86/kvm/vmx/vmx.c
 +++ b/arch/x86/kvm/vmx/vmx.c
-@@ -6726,14 +6726,14 @@ static struct kvm_vcpu *vmx_create_vcpu(struct kvm *kvm, unsigned int id)
+@@ -6691,17 +6691,17 @@ static void vmx_free_vcpu(struct kvm_vcpu *vcpu)
+ 	free_loaded_vmcs(vmx->loaded_vmcs);
+ 	kfree(vmx->guest_msrs);
+ 	kvm_vcpu_uninit(vcpu);
+-	kmem_cache_free(x86_fpu_cache, vmx->vcpu.arch.user_fpu);
+-	kmem_cache_free(x86_fpu_cache, vmx->vcpu.arch.guest_fpu);
++	kmem_cache_free(x86_fpu_cache, vcpu->arch.user_fpu);
++	kmem_cache_free(x86_fpu_cache, vcpu->arch.guest_fpu);
+ 	kmem_cache_free(kvm_vcpu_cache, vmx);
+ }
+ 
+ static struct kvm_vcpu *vmx_create_vcpu(struct kvm *kvm, unsigned int id)
+ {
+-	int err;
++	struct kvm_vcpu *vcpu;
+ 	struct vcpu_vmx *vmx;
+ 	unsigned long *msr_bitmap;
+-	int cpu;
++	int cpu, err;
+ 
+ 	BUILD_BUG_ON_MSG(offsetof(struct vcpu_vmx, vcpu) != 0,
+ 		"struct kvm_vcpu must be at offset 0 for arch usercopy region");
+@@ -6710,23 +6710,25 @@ static struct kvm_vcpu *vmx_create_vcpu(struct kvm *kvm, unsigned int id)
+ 	if (!vmx)
+ 		return ERR_PTR(-ENOMEM);
+ 
+-	vmx->vcpu.arch.user_fpu = kmem_cache_zalloc(x86_fpu_cache,
+-			GFP_KERNEL_ACCOUNT);
+-	if (!vmx->vcpu.arch.user_fpu) {
++	vcpu = &vmx->vcpu;
++
++	vcpu->arch.user_fpu = kmem_cache_zalloc(x86_fpu_cache,
++						GFP_KERNEL_ACCOUNT);
++	if (!vcpu->arch.user_fpu) {
+ 		printk(KERN_ERR "kvm: failed to allocate kvm userspace's fpu\n");
+ 		err = -ENOMEM;
+ 		goto free_partial_vcpu;
+ 	}
+ 
+-	vmx->vcpu.arch.guest_fpu = kmem_cache_zalloc(x86_fpu_cache,
+-			GFP_KERNEL_ACCOUNT);
+-	if (!vmx->vcpu.arch.guest_fpu) {
++	vcpu->arch.guest_fpu = kmem_cache_zalloc(x86_fpu_cache,
++						 GFP_KERNEL_ACCOUNT);
++	if (!vcpu->arch.guest_fpu) {
+ 		printk(KERN_ERR "kvm: failed to allocate vcpu's fpu\n");
+ 		err = -ENOMEM;
  		goto free_user_fpu;
  	}
  
--	vmx->vpid = allocate_vpid();
--
- 	err = kvm_vcpu_init(&vmx->vcpu, kvm, id);
+-	err = kvm_vcpu_init(&vmx->vcpu, kvm, id);
++	err = kvm_vcpu_init(vcpu, kvm, id);
  	if (err)
  		goto free_vcpu;
  
- 	err = -ENOMEM;
+@@ -6775,12 +6777,12 @@ static struct kvm_vcpu *vmx_create_vcpu(struct kvm *kvm, unsigned int id)
  
-+	vmx->vpid = allocate_vpid();
-+
- 	/*
- 	 * If PML is turned on, failure on enabling PML just results in failure
- 	 * of creating the vcpu, therefore we can simplify PML logic (by
-@@ -6823,8 +6823,8 @@ static struct kvm_vcpu *vmx_create_vcpu(struct kvm *kvm, unsigned int id)
+ 	vmx->loaded_vmcs = &vmx->vmcs01;
+ 	cpu = get_cpu();
+-	vmx_vcpu_load(&vmx->vcpu, cpu);
+-	vmx->vcpu.cpu = cpu;
++	vmx_vcpu_load(vcpu, cpu);
++	vcpu->cpu = cpu;
+ 	vmx_vcpu_setup(vmx);
+-	vmx_vcpu_put(&vmx->vcpu);
++	vmx_vcpu_put(vcpu);
+ 	put_cpu();
+-	if (cpu_need_virtualize_apic_accesses(&vmx->vcpu)) {
++	if (cpu_need_virtualize_apic_accesses(vcpu)) {
+ 		err = alloc_apic_access_page(kvm);
+ 		if (err)
+ 			goto free_vmcs;
+@@ -6795,7 +6797,7 @@ static struct kvm_vcpu *vmx_create_vcpu(struct kvm *kvm, unsigned int id)
+ 	if (nested)
+ 		nested_vmx_setup_ctls_msrs(&vmx->nested.msrs,
+ 					   vmx_capability.ept,
+-					   kvm_vcpu_apicv_active(&vmx->vcpu));
++					   kvm_vcpu_apicv_active(vcpu));
+ 	else
+ 		memset(&vmx->nested.msrs, 0, sizeof(vmx->nested.msrs));
+ 
+@@ -6813,7 +6815,7 @@ static struct kvm_vcpu *vmx_create_vcpu(struct kvm *kvm, unsigned int id)
+ 
+ 	vmx->ept_pointer = INVALID_PAGE;
+ 
+-	return &vmx->vcpu;
++	return vcpu;
+ 
+ free_vmcs:
+ 	free_loaded_vmcs(vmx->loaded_vmcs);
+@@ -6822,12 +6824,12 @@ static struct kvm_vcpu *vmx_create_vcpu(struct kvm *kvm, unsigned int id)
+ free_pml:
  	vmx_destroy_pml_buffer(vmx);
  uninit_vcpu:
- 	kvm_vcpu_uninit(&vmx->vcpu);
-+	free_vpid(vmx->vpid);
+-	kvm_vcpu_uninit(&vmx->vcpu);
++	kvm_vcpu_uninit(vcpu);
+ 	free_vpid(vmx->vpid);
  free_vcpu:
--	free_vpid(vmx->vpid);
- 	kmem_cache_free(x86_fpu_cache, vmx->vcpu.arch.guest_fpu);
+-	kmem_cache_free(x86_fpu_cache, vmx->vcpu.arch.guest_fpu);
++	kmem_cache_free(x86_fpu_cache, vcpu->arch.guest_fpu);
  free_user_fpu:
- 	kmem_cache_free(x86_fpu_cache, vmx->vcpu.arch.user_fpu);
+-	kmem_cache_free(x86_fpu_cache, vmx->vcpu.arch.user_fpu);
++	kmem_cache_free(x86_fpu_cache, vcpu->arch.user_fpu);
+ free_partial_vcpu:
+ 	kmem_cache_free(kvm_vcpu_cache, vmx);
+ 	return ERR_PTR(err);
 -- 
 2.22.0
 
