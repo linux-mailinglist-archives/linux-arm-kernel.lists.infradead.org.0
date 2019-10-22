@@ -2,88 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80D35E0C1E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 21:01:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4506FE0C34
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 21:04:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=akIYNEbdnvuoeGp4JJ2oKWt/cy5Fgi1Q3ZrGKVHlTTI=; b=pUl8AcB5GgRnlp
-	jc84oWUWO+FjXq6H9dKm2dMbGyW1pbLohwnn25lTlba8aarO4KmdMe6fgTgqHLz0DyhU2ENdvA20U
-	dBdqvyeInEbPZwcd/KW0UIdO/1wravaGs/NroxukjavaR4MeTIBbKmxQK9xeTJveg55zfrnt4vq1s
-	G/j9x/CdjyGY4+zMdekm0tD5rViCi3upLf9vsHUVyrJwkXNjHRqU7XnmOuclqcljZfGCABFgLrt0U
-	8zScdwLPI3RN5Rh1XXIDNAXaoknhpzRRZTjKxFIg2IeXHeHadqb/OPPYH5ce1UOAzWFNRdgyHDHhH
-	KRoLtGmQ9RUVJreeRDLw==;
+	List-Owner; bh=3xGnbFaO2fWaGqHe8C9enAL7/7FKThuaKQxdhoEjqzs=; b=hFscODiP1bOWXq
+	+sfYoU2NBbZgmJNmwAEYaXfDRq3jk4Lbm67T0fBkbEzkQRzGBRL1KNjxu2ru7ELrDxvhPs4owGSpQ
+	yOwM+Y6CXDBUyGHw0oEnKQAoS5lTliZs907YDRUwSBiLyUKJACn8Pws/j6VSmbRkSHYrDblF+sr5i
+	SGuh0VHhGX/BGoTORKe84Eb0CRcye5gRfyx7LSAich06YyqUaS5YlBKU+EwRkDZmZOWjA2R6ThE/V
+	ZgBwiygaeamHwDyva3IhbU5d8tHo+5HDRdHamD4zG1wj1rIn3BEck6gWdqDojJ6Jva8U6h80n8qF2
+	U4H5wXR8ecGEmZjjOc8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMzPQ-0008WK-SY; Tue, 22 Oct 2019 19:01:32 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1iMzSV-0000Vd-EA; Tue, 22 Oct 2019 19:04:43 +0000
+Received: from mail-ed1-f68.google.com ([209.85.208.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMzPG-0008VP-2k
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 19:01:23 +0000
-Received: by mail-io1-xd41.google.com with SMTP id t18so17658626iog.2
+ id 1iMzSD-0000Us-RV
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 19:04:29 +0000
+Received: by mail-ed1-f68.google.com with SMTP id h2so13761205edn.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 22 Oct 2019 12:01:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=VfxSHYvmdEv1sm79e3HTi1RwgAIgEe7zqfMJ263x0xg=;
- b=m6gaYXo+SBJ6yxQUD50EHP8m/o2zWCUkcm4zfRYWPqsxcCaBtfI4gR70AjPI0kgvRn
- oCBJaeHHmvWwyrNPxa4K3iZBQtYc/YciryW1xokRbVbPel4OAQ7wD3RdVFT+QbqAs+F5
- PNNim372/STeko7kwHy7AUVu0XinaDph2biqSG7OFr66mu66wVP9slSSX6L8361YyVbX
- OToJI9/0WCGDmYz1T7ylnPlyUNEkU0JcnkGqSYmNelV95xkG9izQyosIY7Lsb5CeSKKA
- +/XTgAK8JkkRzYT4SgeRBxN3/f6/fF8O8r7Gz0ca473uHMql5bZDE40m1U3Nq0GX1mEe
- Pi3w==
+ Tue, 22 Oct 2019 12:04:25 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=VfxSHYvmdEv1sm79e3HTi1RwgAIgEe7zqfMJ263x0xg=;
- b=T7PCiPACS1kHE/m0y8v4Yq9A50NlXkMx5Y/H2ss+jgAV6u7SqjqD/L8EqzMDDDd656
- xuyhzofX5pbPRwNm6Gy9auxv2R8qI4yFq7KR+nTnQJMrNCft+zmZsRp9Z4TbD6qs8bLy
- sIaa4MH8oUfXCd/VljAIJsxXJ9gwvLSJGknI0R8QAStX2Trb/RVRqEnn9jUPhC5gjEOx
- ba4MpHUlOjhw/jHpw64/l3w/m4x3BUQjCvG3T6KYgEb7zicx1qAwe5W+hUuP5YnRCQN0
- U8BfQl74BFhyb5wyIxP95a1j5ti+fEKqcybszUhEPxii6VnU8YVilJG6t3liIrV4WIcI
- oVow==
-X-Gm-Message-State: APjAAAXbiRK15k1BbOzOmNCaLZ5pdWVmCB5E7soynWMcd6r6avmuCEJb
- TugxsRCnYglUF/5MY2q/TjbkeoSrGD4gIBYP4eO86g==
-X-Google-Smtp-Source: APXvYqzQASMPJfj+YZm2OBbuJQoz80q16/O9naj7kf1/88RbHylyV8nyZmARfqkPQXvQ0Q9vaSY+MetI2GXnLHntuLQ=
-X-Received: by 2002:a02:c519:: with SMTP id s25mr5378905jam.3.1571770880220;
- Tue, 22 Oct 2019 12:01:20 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=jLHdWMFFyEGbsItULmPpWHBs81qBY7j9pVXK0CE8SGg=;
+ b=G96TlXiiDqTUGcLEz6OLKufvwJhsdeVA9GQYLv8O3btm5UyrqJy96d3lBSaCJwNGOp
+ DGTx9EyAqszcSfmCovdIwzYkejz3S78M1zVyBm8EZ3RJyT4rFw98U1EDplcKp7yaZW60
+ Ku3uPN8S4akhegJIGM9PwvYeKOqdEnC7755mA7IXTpjIreDFe5OblrLScTNziRQvPFWg
+ kZ8O5iS8CUmOjFrOG3Qf8T1yNMF2s9NIl+z7Lou4rmXMDvLSdmNaWVmNPKF8+oCMEdQ6
+ 2k4FfSSqfADqdzCq3SVcEw9C7fVELXe9Qs3Ot5zmt6GY3zBl62QyBKhhNbe5CkA8V9i7
+ ldFA==
+X-Gm-Message-State: APjAAAWR1PXxW+6f9x8mWAOJSXDkmZ83PBzPGGtF8VwWX7b+DtW6hzv5
+ Kk6KVhgnQ/gUSrDRN7QeG48=
+X-Google-Smtp-Source: APXvYqxyt8cMWLn2Py0nBUq9oUlHzueq45lKh1L+FewvRQdeJeQyxfeuPizsasnrnrtBF1yzQs0t4Q==
+X-Received: by 2002:a17:906:7f94:: with SMTP id
+ f20mr5339146ejr.333.1571771063940; 
+ Tue, 22 Oct 2019 12:04:23 -0700 (PDT)
+Received: from kozik-lap ([194.230.155.217])
+ by smtp.googlemail.com with ESMTPSA id g19sm130834eje.0.2019.10.22.12.04.21
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 22 Oct 2019 12:04:23 -0700 (PDT)
+Date: Tue, 22 Oct 2019 21:04:19 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Sylwester Nawrocki <s.nawrocki@samsung.com>
+Subject: Re: [PATCH v5 3/4] soc: samsung: Add Exynos Adaptive Supply Voltage
+ driver
+Message-ID: <20191022190419.GB8305@kozik-lap>
+References: <20191016145756.16004-1-s.nawrocki@samsung.com>
+ <CGME20191016145813eucas1p1623db169f1ee93f88cb2c75090804747@eucas1p1.samsung.com>
+ <20191016145756.16004-4-s.nawrocki@samsung.com>
 MIME-Version: 1.0
-References: <20191007220540.30690-1-aford173@gmail.com>
- <20191022162223.GU5610@atomide.com>
-In-Reply-To: <20191022162223.GU5610@atomide.com>
-From: Adam Ford <aford173@gmail.com>
-Date: Tue, 22 Oct 2019 14:01:08 -0500
-Message-ID: <CAHCN7xLy975mxX+cm56PMx-TKODEZjYPfMHb=byspKxYXXq7OA@mail.gmail.com>
-Subject: Re: [PATCH 1/2] configs: ARM: omap2plus: Enable OMAP3_THERMAL
-To: Tony Lindgren <tony@atomide.com>
+Content-Disposition: inline
+In-Reply-To: <20191016145756.16004-4-s.nawrocki@samsung.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_120122_159439_5E8B421B 
-X-CRM114-Status: GOOD (  24.71  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191022_120426_166911_73C62BD4 
+X-CRM114-Status: GOOD (  34.12  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
+ no trust [209.85.208.68 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (aford173[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (aford173[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ provider (k.kozlowski.k[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.68 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,75 +91,980 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- "H. Nikolaus Schaller" <hns@goldelico.com>,
- Russell King <linux@armlinux.org.uk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- =?UTF-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
- Linux-OMAP <linux-omap@vger.kernel.org>, Adam Ford <adam.ford@logicpd.com>,
- arm-soc <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-pm@vger.kernel.org, sboyd@kernel.org, vireshk@kernel.org,
+ b.zolnierkie@samsung.com, roger.lu@mediatek.com, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 22, 2019 at 11:22 AM Tony Lindgren <tony@atomide.com> wrote:
->
-> Hi,
->
-> * Adam Ford <aford173@gmail.com> [191007 15:06]:
-> > The some in the OMAP3 family have a bandgap thermal sensor, but
-> > omap2plus has it disabled.
-> >
-> > This patch enables the OMAP3_THERMAL by default like the rest of
-> > the OMAP family.
->
-> Looks like this breaks off mode during idle for omap3, and that's
-> probably why it never got enabled. The difference in power
-> consumption during idle is about 7mW vs 32mW for the SoC as
-> measured from torpedo shunt for main_battery_som.
->
-> I think the right fix might be simply to add handling for
-> CPU_CLUSTER_PM_ENTER to the related thermal driver to disable
-> it during idle like we have for gpio-omap.c for example.
+On Wed, Oct 16, 2019 at 04:57:55PM +0200, Sylwester Nawrocki wrote:
+> The Adaptive Supply Voltage (ASV) driver adjusts CPU cluster operating
+> points depending on exact revision of an SoC retrieved from the CHIPID
+> block or the OTP memory.  This allows for some power saving as for some
+> CPU clock frequencies we can lower CPU cluster's supply voltage comparing
+> to safe values common to all the SoC revisions.
+> 
+> This patch adds support for Exynos5422/5800 SoC, it is partially based
+> on code from https://github.com/hardkernel/linux repository,
+> branch odroidxu4-4.14.y, files: arch/arm/mach-exynos/exynos5422-asv.[ch].
+> 
+> Tested on Odroid XU3, XU4, XU3 Lite.
+> 
+> Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
 
-I am not sure I know where to start on fixing that issue.  Would you
-entertain enabling the driver if we set the device tree to 'disabled'
-by default?  This way if people want to to use it, it can be enabled
-on a per-device option.  Once the power stuff gets resolved, we might
-be able to enable it by default.  For people who are planning on using
-the DM3730 @ 1GHz in high temp environments, I am not sure they'll
-care about low power.
+Hi Sylwester,
 
-I'll try to look into it when I have time, but I was hoping a
-compromise might be a reasonable work-around.
+I wanted to apply this patch but spotted some unusual printk... and then started looking for more...
 
-adam
->
-> Regards,
->
-> Tony
->
-> >
-> > Signed-off-by: Adam Ford <aford173@gmail.com>
-> >
-> > diff --git a/arch/arm/configs/omap2plus_defconfig b/arch/arm/configs/omap2plus_defconfig
-> > index 8f1c2b6f9e56..7e14a8c8bb29 100644
-> > --- a/arch/arm/configs/omap2plus_defconfig
-> > +++ b/arch/arm/configs/omap2plus_defconfig
-> > @@ -292,6 +292,7 @@ CONFIG_THERMAL_GOV_FAIR_SHARE=y
-> >  CONFIG_THERMAL_GOV_USER_SPACE=y
-> >  CONFIG_CPU_THERMAL=y
-> >  CONFIG_TI_THERMAL=y
-> > +CONFIG_OMAP3_THERMAL=y
-> >  CONFIG_OMAP4_THERMAL=y
-> >  CONFIG_OMAP5_THERMAL=y
-> >  CONFIG_DRA752_THERMAL=y
-> > --
-> > 2.17.1
-> >
+Sparse complains:
+../drivers/soc/samsung/exynos5422-asv.c:457:5: warning: symbol 'exynos5422_asv_init' was not declared. Should it be static?
+
+
+> ---
+> Changes since v4:
+>  - Fixed include guard in drivers/soc/samsung/exynos5422-asv.h
+> 
+> Changes since v3:
+>  - instead of removing/adding OPP use dedicated API to adjust OPP's
+>    voltage, only exynos_asv_update_cpu_opps() function has changed,
+>  - added a comment describing ASV tables at beginning of
+>    exynos5422-asv.c file.
+> 
+> Changes since v2:
+>  - use devm_kzalloc() in probe() to avoid memory leak,
+>  - removed leading spaces in exynos-chipid.h,
+>  - removed unneeded <linux/init.h> header inclusion,
+>  - dropped parentheses from exynos542_asv_parse_sg(),
+>  - updated Kconfig entry,
+>  - added const attribute to struct exynos_asv_susbsys::cpu_dt_compat.
+> 
+> Changes since v1 (RFC):
+>  - removed code for parsing the ASV OPP tables from DT, the ASV OPP tables
+>    moved to the driver,
+>  - converted to use the regmap API,
+>  - converted to normal platform driver.
+> 
+>  drivers/soc/samsung/Kconfig          |  10 +
+>  drivers/soc/samsung/Makefile         |   3 +
+>  drivers/soc/samsung/exynos-asv.c     | 179 ++++++++++
+>  drivers/soc/samsung/exynos-asv.h     |  82 +++++
+>  drivers/soc/samsung/exynos5422-asv.c | 509 +++++++++++++++++++++++++++
+>  drivers/soc/samsung/exynos5422-asv.h |  25 ++
+>  6 files changed, 808 insertions(+)
+>  create mode 100644 drivers/soc/samsung/exynos-asv.c
+>  create mode 100644 drivers/soc/samsung/exynos-asv.h
+>  create mode 100644 drivers/soc/samsung/exynos5422-asv.c
+>  create mode 100644 drivers/soc/samsung/exynos5422-asv.h
+> 
+> diff --git a/drivers/soc/samsung/Kconfig b/drivers/soc/samsung/Kconfig
+> index 33ad0de2de3c..27fc59bbb520 100644
+> --- a/drivers/soc/samsung/Kconfig
+> +++ b/drivers/soc/samsung/Kconfig
+> @@ -7,6 +7,16 @@ menuconfig SOC_SAMSUNG
+> 
+>  if SOC_SAMSUNG
+> 
+> +config EXYNOS_ASV
+> +	bool "Exynos Adaptive Supply Voltage support" if COMPILE_TEST
+> +	depends on (ARCH_EXYNOS && EXYNOS_CHIPID) || COMPILE_TEST
+> +	select EXYNOS_ASV_ARM if ARM && ARCH_EXYNOS
+> +
+> +# There is no need to enable these drivers for ARMv8
+> +config EXYNOS_ASV_ARM
+> +	bool "Exynos ASV ARMv7-specific driver extensions" if COMPILE_TEST
+> +	depends on EXYNOS_ASV
+> +
+>  config EXYNOS_CHIPID
+>  	bool "Exynos Chipid controller driver" if COMPILE_TEST
+>  	depends on ARCH_EXYNOS || COMPILE_TEST
+> diff --git a/drivers/soc/samsung/Makefile b/drivers/soc/samsung/Makefile
+> index 3b6a8797416c..edd1d6ea064d 100644
+> --- a/drivers/soc/samsung/Makefile
+> +++ b/drivers/soc/samsung/Makefile
+> @@ -1,5 +1,8 @@
+>  # SPDX-License-Identifier: GPL-2.0
+> 
+> +obj-$(CONFIG_EXYNOS_ASV)	+= exynos-asv.o
+> +obj-$(CONFIG_EXYNOS_ASV_ARM)	+= exynos5422-asv.o
+> +
+>  obj-$(CONFIG_EXYNOS_CHIPID)	+= exynos-chipid.o
+>  obj-$(CONFIG_EXYNOS_PMU)	+= exynos-pmu.o
+> 
+> diff --git a/drivers/soc/samsung/exynos-asv.c b/drivers/soc/samsung/exynos-asv.c
+> new file mode 100644
+> index 000000000000..c6f2e4f0dcc5
+> --- /dev/null
+> +++ b/drivers/soc/samsung/exynos-asv.c
+> @@ -0,0 +1,179 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright (c) 2019 Samsung Electronics Co., Ltd.
+> + *	      http://www.samsung.com/
+> + * Author: Sylwester Nawrocki <s.nawrocki@samsung.com>
+> + *
+> + * Samsung Exynos SoC Adaptive Supply Voltage support
+> + */
+> +
+> +#include <linux/cpu.h>
+> +#include <linux/delay.h>
+
+Do you use this header?
+
+> +#include <linux/device.h>
+> +#include <linux/errno.h>
+> +#include <linux/init.h>
+> +#include <linux/mfd/syscon.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/of_device.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/pm_opp.h>
+> +#include <linux/regmap.h>
+> +#include <linux/soc/samsung/exynos-chipid.h>
+> +
+> +#include "exynos-asv.h"
+> +#include "exynos5422-asv.h"
+> +
+> +#define MHZ 1000000U
+> +
+> +static int exynos_asv_update_cpu_opps(struct exynos_asv *asv,
+> +				      struct device *cpu)
+> +{
+> +	struct exynos_asv_subsys *subsys = NULL;
+> +	struct dev_pm_opp *opp;
+> +	unsigned int opp_freq;
+> +	int i;
+> +
+> +	for (i = 0; i < ARRAY_SIZE(asv->subsys); i++) {
+> +		if (of_device_is_compatible(cpu->of_node,
+> +					    asv->subsys[i].cpu_dt_compat)) {
+> +			subsys = &asv->subsys[i];
+> +			break;
+> +		}
+> +	}
+> +	if (!subsys)
+> +		return -EINVAL;
+> +
+> +	for (i = 0; i < subsys->table.num_rows; i++) {
+> +		unsigned int new_volt, volt;
+> +		int ret;
+> +
+> +		opp_freq = exynos_asv_opp_get_frequency(subsys, i);
+> +
+> +		opp = dev_pm_opp_find_freq_exact(cpu, opp_freq * MHZ, true);
+> +		if (IS_ERR(opp)) {
+> +			dev_info(asv->dev, "cpu%d opp%d, freq: %u missing\n",
+> +				 cpu->id, i, opp_freq);
+> +
+> +			continue;
+> +		}
+> +
+> +		volt = dev_pm_opp_get_voltage(opp);
+> +		new_volt = asv->opp_get_voltage(subsys, i, volt);
+> +		dev_pm_opp_put(opp);
+> +
+> +		if (new_volt == volt)
+> +			continue;
+> +
+> +		ret = dev_pm_opp_adjust_voltage(cpu, opp_freq * MHZ,
+> +						new_volt, new_volt, new_volt);
+> +		if (ret < 0)
+> +			dev_err(asv->dev,
+> +				"Failed to adjust OPP %u Hz/%u uV for cpu%d\n",
+> +				opp_freq, new_volt, cpu->id);
+> +		else
+> +			dev_dbg(asv->dev,
+> +				"Adjusted OPP %u Hz/%u -> %u uV, cpu%d\n",
+> +				opp_freq, volt, new_volt, cpu->id);
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int exynos_asv_update_opps(struct exynos_asv *asv)
+> +{
+> +	struct opp_table *last_opp_table = NULL;
+> +	struct device *cpu;
+> +	int ret, cpuid;
+> +
+> +	for_each_possible_cpu(cpuid) {
+> +		struct opp_table *opp_table;
+> +
+> +		cpu = get_cpu_device(cpuid);
+> +		if (!cpu)
+> +			continue;
+> +
+> +		opp_table = dev_pm_opp_get_opp_table(cpu);
+> +		if (IS_ERR(opp_table))
+> +			continue;
+> +
+> +		if (!last_opp_table || opp_table != last_opp_table) {
+> +			last_opp_table = opp_table;
+> +
+> +			ret = exynos_asv_update_cpu_opps(asv, cpu);
+> +			if (ret < 0)
+> +				dev_err(asv->dev, "Couldn't udate OPPs for cpu%d\n",
+> +					cpuid);
+> +		}
+> +
+> +		dev_pm_opp_put_opp_table(opp_table);
+> +	}
+> +
+> +	return	0;
+> +}
+> +
+> +static int exynos_asv_probe(struct platform_device *pdev)
+> +{
+> +	int (*probe_func)(struct exynos_asv *asv);
+> +	struct exynos_asv *asv;
+> +	struct device *cpu_dev;
+> +	u32 product_id = 0;
+> +	int ret, i;
+> +
+> +	cpu_dev = get_cpu_device(0);
+> +	ret = dev_pm_opp_get_opp_count(cpu_dev);
+> +	if (ret < 0)
+> +		return -EPROBE_DEFER;
+> +
+> +	asv = devm_kzalloc(&pdev->dev, sizeof(*asv), GFP_KERNEL);
+> +	if (!asv)
+> +		return -ENOMEM;
+> +
+> +	asv->chipid_regmap = syscon_node_to_regmap(pdev->dev.of_node);
+
+Since this binds to the same node as chipid, why do you need syscon for
+it? Why regular IO access does not work? Eventually, if this has to be
+regmap because of locking (does it?), then maybe simply
+device_node_to_regmap()?
+
+> +	if (IS_ERR(asv->chipid_regmap)) {
+> +		dev_err(&pdev->dev, "Could not find syscon regmap\n");
+> +		return PTR_ERR(asv->chipid_regmap);
+> +	}
+> +
+> +	regmap_read(asv->chipid_regmap, EXYNOS_CHIPID_REG_PRO_ID, &product_id);
+> +
+> +	switch (product_id & EXYNOS_MASK) {
+> +	case 0xE5422000:
+> +		probe_func = exynos5422_asv_init;
+> +		break;
+> +	default:
+> +		dev_err(&pdev->dev, "Unsupported product ID: %#x", product_id);
+
+Is this going to scream for every Exynos matching the 4210-chipid?
+
+> +		return -ENODEV;
+> +	}
+> +
+> +	ret = of_property_read_u32(pdev->dev.of_node, "samsung,asv-bin",
+> +				   &asv->of_bin);
+> +	if (ret < 0)
+> +		asv->of_bin = -EINVAL;
+> +
+> +	asv->dev = &pdev->dev;
+> +	dev_set_drvdata(&pdev->dev, asv);
+> +
+> +	for (i = 0; i < ARRAY_SIZE(asv->subsys); i++)
+> +		asv->subsys[i].asv = asv;
+> +
+> +	ret = probe_func(asv);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	return exynos_asv_update_opps(asv);
+> +}
+> +
+> +static const struct of_device_id exynos_asv_of_device_ids[] = {
+> +	{ .compatible = "samsung,exynos4210-chipid" },
+> +	{}
+> +};
+> +
+> +static struct platform_driver exynos_asv_driver = {
+> +	.driver = {
+> +		.name = "exynos-asv",
+> +		.of_match_table = exynos_asv_of_device_ids,
+> +	},
+> +	.probe	= exynos_asv_probe,
+> +};
+> +module_platform_driver(exynos_asv_driver);
+> diff --git a/drivers/soc/samsung/exynos-asv.h b/drivers/soc/samsung/exynos-asv.h
+> new file mode 100644
+> index 000000000000..14b4fedf2ddd
+> --- /dev/null
+> +++ b/drivers/soc/samsung/exynos-asv.h
+> @@ -0,0 +1,82 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/*
+> + * Copyright (c) 2019 Samsung Electronics Co., Ltd.
+> + *	      http://www.samsung.com/
+> + * Author: Sylwester Nawrocki <s.nawrocki@samsung.com>
+> + *
+> + * Samsung Exynos SoC Adaptive Supply Voltage support
+> + */
+> +#ifndef __LINUX_SOC_EXYNOS_ASV_H
+> +#define __LINUX_SOC_EXYNOS_ASV_H
+> +
+> +enum {
+> +	EXYNOS_ASV_SUBSYS_ID_ARM,
+> +	EXYNOS_ASV_SUBSYS_ID_EGL = EXYNOS_ASV_SUBSYS_ID_ARM,
+> +	EXYNOS_ASV_SUBSYS_ID_KFC,
+> +	EXYNOS_ASV_SUBSYS_ID_INT,
+> +	EXYNOS_ASV_SUBSYS_ID_MIF,
+> +	EXYNOS_ASV_SUBSYS_ID_G3D,
+> +	EXYNOS_ASV_SUBSYS_ID_CAM,
+> +	EXYNOS_ASV_SUBSYS_ID_MAX
+> +};
+
+I cannot find usage of it in generic part of ASV driver. What's the
+purpose? Isn't it specific to Exynos5422?
+
+> +
+> +struct regmap;
+> +
+> +/* HPM, IDS values to select target group */
+> +struct asv_limit_entry {
+> +	unsigned int hpm;
+> +	unsigned int ids;
+> +};
+> +
+> +struct exynos_asv_table {
+> +	unsigned int num_rows;
+> +	unsigned int num_cols;
+> +	u32 *buf;
+> +};
+> +
+> +struct exynos_asv_subsys {
+> +	struct exynos_asv *asv;
+> +	const char *cpu_dt_compat;
+> +	int id;
+> +	struct exynos_asv_table table;
+> +
+> +	unsigned int base_volt;
+> +	unsigned int offset_volt_h;
+> +	unsigned int offset_volt_l;
+> +};
+> +
+> +struct exynos_asv {
+> +	struct device *dev;
+> +	struct regmap *chipid_regmap;
+> +	struct exynos_asv_subsys subsys[2];
+> +
+> +	int (*opp_get_voltage)(struct exynos_asv_subsys *subs, int level,
+> +			       unsigned int voltage);
+> +	unsigned int group;
+> +	unsigned int table;
+> +
+> +	/* True if SG fields from PKG_ID register should be used */
+> +	bool use_sg;
+> +	/* ASV bin read from DT */
+> +	int of_bin;
+> +};
+> +
+> +static inline u32 __asv_get_table_entry(struct exynos_asv_table *table,
+
+'table' looks here like pointer to const.
+
+> +					unsigned int row, unsigned int col)
+> +{
+> +	return table->buf[row * (table->num_cols) + col];
+> +}
+> +
+> +static inline u32 exynos_asv_opp_get_voltage(struct exynos_asv_subsys *subsys,
+> +					unsigned int level, unsigned int group)
+> +{
+
+The same, for subsys.
+
+> +	return __asv_get_table_entry(&subsys->table, level, group + 1);
+> +}
+> +
+> +static inline u32 exynos_asv_opp_get_frequency(struct exynos_asv_subsys *subsys,
+> +					unsigned int level)
+> +{
+
+The same.
+
+> +	return __asv_get_table_entry(&subsys->table, level, 0);
+> +}
+> +
+> +#endif /* __LINUX_SOC_EXYNOS_ASV_H */
+> diff --git a/drivers/soc/samsung/exynos5422-asv.c b/drivers/soc/samsung/exynos5422-asv.c
+> new file mode 100644
+> index 000000000000..7982f2ca0f11
+> --- /dev/null
+> +++ b/drivers/soc/samsung/exynos5422-asv.c
+> @@ -0,0 +1,509 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright (c) 2019 Samsung Electronics Co., Ltd.
+> + *	      http://www.samsung.com/
+> + *
+> + * Samsung Exynos 5422 SoC Adaptive Supply Voltage support
+> + */
+> +
+> +#include <linux/bitrev.h>
+> +#include <linux/device.h>
+
+Is it used?
+
+> +#include <linux/errno.h>
+> +#include <linux/of.h>
+
+The same?
+
+> +#include <linux/regmap.h>
+> +#include <linux/soc/samsung/exynos-chipid.h>
+> +#include <linux/slab.h>
+> +
+> +#include "exynos-asv.h"
+> +
+> +#define ASV_GROUPS_NUM		14
+> +#define ASV_ARM_DVFS_NUM	20
+> +#define ASV_ARM_BIN2_DVFS_NUM	17
+> +#define ASV_KFC_DVFS_NUM	14
+> +#define ASV_KFC_BIN2_DVFS_NUM	12
+> +
+> +/*
+> + * This array is a set of 4 ASV data tables, first column of each ASV table
+> + * contains frequency value in MHz and subsequent columns contain the CPU
+> + * cluster's supply voltage values in uV.
+> + * In order to create a set of OPPs for specific SoC revision one of the voltage
+> + * columns (1...14) from one of the tables (0...3) is selected during
+> + * initialization. There are separate ASV tables for the big (ARM) and little
+> + * (KFC) CPU cluster. Only OPPs which are already defined in devicetree
+> + * will be updated.
+> + */
+> +
+> +static const u32 asv_arm_table[][ASV_ARM_DVFS_NUM][ASV_GROUPS_NUM + 1] = {
+> +{
+> +	/* ARM 0, 1 */
+> +	{ 2100,    1362500, 1362500, 1350000, 1337500, 1325000, 1312500, 1300000,
+> +	  1275000, 1262500, 1250000, 1237500, 1225000, 1212500, 1200000 },
+> +	{ 2000,    1312500, 1312500, 1300000, 1287500, 1275000, 1262500, 1250000,
+> +	  1237500, 1225000, 1237500, 1225000, 1212500, 1200000, 1187500 },
+> +	{ 1900,    1250000, 1237500, 1225000, 1212500, 1200000, 1187500, 1175000,
+> +	  1162500, 1150000, 1162500, 1150000, 1137500, 1125000, 1112500 },
+> +	{ 1800,    1200000, 1187500, 1175000, 1162500, 1150000, 1137500, 1125000,
+> +	  1112500, 1100000, 1112500, 1100000, 1087500, 1075000, 1062500 },
+> +	{ 1700,    1162500, 1150000, 1137500, 1125000, 1112500, 1100000, 1087500,
+> +	  1075000, 1062500, 1075000, 1062500, 1050000, 1037500, 1025000 },
+> +	{ 1600,    1125000, 1112500, 1100000, 1087500, 1075000, 1062500, 1050000,
+> +	  1037500, 1025000, 1037500, 1025000, 1012500, 1000000, 987500 },
+> +	{ 1500,    1087500, 1075000, 1062500, 1050000, 1037500, 1025000, 1012500,
+> +	  1000000, 987500,  1000000, 987500,  975000,  962500,  950000 },
+> +	{ 1400,    1062500, 1050000, 1037500, 1025000, 1012500, 1000000, 987500,
+> +	  975000,  962500,  975000,  962500,  950000,  937500,  925000 },
+> +	{ 1300,    1050000, 1037500, 1025000, 1012500, 1000000, 987500,  975000,
+> +	  962500,  950000,  962500,  950000,  937500,  925000,  912500 },
+> +	{ 1200,    1025000, 1012500, 1000000, 987500,  975000,  962500,  950000,
+> +	  937500,  925000,  937500,  925000,  912500,  900000,  900000 },
+> +	{ 1100,    1000000, 987500,  975000,  962500,  950000,  937500,  925000,
+> +	  912500,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 1000,    975000,  962500,  950000,  937500,  925000,  912500,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 900,     950000,  937500,  925000,  912500,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 800,     925000,  912500,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 700,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 600,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 500,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 400,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 300,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 200,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +}, {
+> +	/* ARM 2 */
+> +	{ 2100,    1362500, 1362500, 1350000, 1337500, 1325000, 1312500, 1300000,
+> +	  1275000, 1262500, 1250000, 1237500, 1225000, 1212500, 1200000 },
+> +	{ 2000,    1312500, 1312500, 1312500, 1300000, 1275000, 1262500, 1250000,
+> +	  1237500, 1225000, 1237500, 1225000, 1212500, 1200000, 1187500 },
+> +	{ 1900,    1262500, 1250000, 1250000, 1237500, 1212500, 1200000, 1187500,
+> +	  1175000, 1162500, 1175000, 1162500, 1150000, 1137500, 1125000 },
+> +	{ 1800,    1212500, 1200000, 1187500, 1175000, 1162500, 1150000, 1137500,
+> +	  1125000, 1112500, 1125000, 1112500, 1100000, 1087500, 1075000 },
+> +	{ 1700,    1175000, 1162500, 1150000, 1137500, 1125000, 1112500, 1100000,
+> +	  1087500, 1075000, 1087500, 1075000, 1062500, 1050000, 1037500 },
+> +	{ 1600,    1137500, 1125000, 1112500, 1100000, 1087500, 1075000, 1062500,
+> +	  1050000, 1037500, 1050000, 1037500, 1025000, 1012500, 1000000 },
+> +	{ 1500,    1100000, 1087500, 1075000, 1062500, 1050000, 1037500, 1025000,
+> +	  1012500, 1000000, 1012500, 1000000, 987500,  975000,  962500 },
+> +	{ 1400,    1075000, 1062500, 1050000, 1037500, 1025000, 1012500, 1000000,
+> +	  987500,  975000,  987500,  975000,  962500,  950000,  937500 },
+> +	{ 1300,    1050000, 1037500, 1025000, 1012500, 1000000, 987500,  975000,
+> +	  962500,  950000,  962500,  950000,  937500,  925000,  912500 },
+> +	{ 1200,    1025000, 1012500, 1000000, 987500,  975000,  962500,  950000,
+> +	  937500,  925000,  937500,  925000,  912500,  900000,  900000 },
+> +	{ 1100,    1000000, 987500,  975000,  962500,  950000,  937500,  925000,
+> +	  912500,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 1000,    975000,  962500,  950000,  937500,  925000,  912500,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 900,     950000,  937500,  925000,  912500,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 800,     925000,  912500,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 700,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 600,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 500,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 400,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 300,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 200,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +}, {
+> +	/* ARM 3 */
+> +	{ 2100,    1362500, 1362500, 1350000, 1337500, 1325000, 1312500, 1300000,
+> +	  1275000, 1262500, 1250000, 1237500, 1225000, 1212500, 1200000 },
+> +	{ 2000,    1312500, 1312500, 1300000, 1287500, 1275000, 1262500, 1250000,
+> +	  1237500, 1225000, 1237500, 1225000, 1212500, 1200000, 1187500 },
+> +	{ 1900,    1262500, 1250000, 1237500, 1225000, 1212500, 1200000, 1187500,
+> +	  1175000, 1162500, 1175000, 1162500, 1150000, 1137500, 1125000 },
+> +	{ 1800,    1212500, 1200000, 1187500, 1175000, 1162500, 1150000, 1137500,
+> +	  1125000, 1112500, 1125000, 1112500, 1100000, 1087500, 1075000 },
+> +	{ 1700,    1175000, 1162500, 1150000, 1137500, 1125000, 1112500, 1100000,
+> +	  1087500, 1075000, 1087500, 1075000, 1062500, 1050000, 1037500 },
+> +	{ 1600,    1137500, 1125000, 1112500, 1100000, 1087500, 1075000, 1062500,
+> +	  1050000, 1037500, 1050000, 1037500, 1025000, 1012500, 1000000 },
+> +	{ 1500,    1100000, 1087500, 1075000, 1062500, 1050000, 1037500, 1025000,
+> +	  1012500, 1000000, 1012500, 1000000, 987500,  975000,  962500 },
+> +	{ 1400,    1075000, 1062500, 1050000, 1037500, 1025000, 1012500, 1000000,
+> +	  987500,  975000,  987500,  975000,  962500,  950000,  937500 },
+> +	{ 1300,    1050000, 1037500, 1025000, 1012500, 1000000, 987500,  975000,
+> +	  962500,  950000,  962500,  950000,  937500,  925000,  912500 },
+> +	{ 1200,    1025000, 1012500, 1000000, 987500,  975000,  962500,  950000,
+> +	  937500,  925000,  937500,  925000,  912500,  900000,  900000 },
+> +	{ 1100,    1000000, 987500,  975000,  962500,  950000,  937500,  925000,
+> +	  912500,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 1000,    975000,  962500,  950000,  937500,  925000,  912500,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 900,     950000,  937500,  925000,  912500,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 800,     925000,  912500,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 700,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 600,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 500,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 400,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 300,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 200,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +}, {
+> +	/* ARM bin 2 */
+> +	{ 1800,    1237500, 1225000, 1212500, 1200000, 1187500, 1175000, 1162500,
+> +	  1150000, 1137500, 1150000, 1137500, 1125000, 1112500, 1100000 },
+> +	{ 1700,    1200000, 1187500, 1175000, 1162500, 1150000, 1137500, 1125000,
+> +	  1112500, 1100000, 1112500, 1100000, 1087500, 1075000, 1062500 },
+> +	{ 1600,    1162500, 1150000, 1137500, 1125000, 1112500, 1100000, 1087500,
+> +	  1075000, 1062500, 1075000, 1062500, 1050000, 1037500, 1025000 },
+> +	{ 1500,    1125000, 1112500, 1100000, 1087500, 1075000, 1062500, 1050000,
+> +	  1037500, 1025000, 1037500, 1025000, 1012500, 1000000, 987500 },
+> +	{ 1400,    1100000, 1087500, 1075000, 1062500, 1050000, 1037500, 1025000,
+> +	  1012500, 1000000, 1012500, 1000000, 987500,  975000,  962500 },
+> +	{ 1300,    1087500, 1075000, 1062500, 1050000, 1037500, 1025000, 1012500,
+> +	  1000000, 987500,  1000000, 987500,  975000,  962500,  950000 },
+> +	{ 1200,    1062500, 1050000, 1037500, 1025000, 1012500, 1000000, 987500,
+> +	  975000,  962500,  975000,  962500,  950000,  937500,  925000 },
+> +	{ 1100,    1037500, 1025000, 1012500, 1000000, 987500,  975000,  962500,
+> +	  950000,  937500,  950000,  937500,  925000,  912500,  900000 },
+> +	{ 1000,    1012500, 1000000, 987500,  975000,  962500,  950000,  937500,
+> +	  925000,  912500,  925000,  912500,  900000,  900000,  900000 },
+> +	{ 900,     987500,  975000,  962500,  950000,  937500,  925000,  912500,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 800,     962500,  950000,  937500,  925000,  912500,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 700,     937500,  925000,  912500,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 600,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 500,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 400,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 300,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 200,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +}
+> +};
+> +
+> +static const u32 asv_kfc_table[][ASV_KFC_DVFS_NUM][ASV_GROUPS_NUM + 1] = {
+> +{
+> +	/* KFC 0, 1 */
+> +	{ 1500000, 1300000, 1300000, 1300000, 1287500, 1287500, 1287500, 1275000,
+> +	  1262500, 1250000, 1237500, 1225000, 1212500, 1200000, 1187500 },
+> +	{ 1400000, 1275000, 1262500, 1250000, 1237500, 1225000, 1212500, 1200000,
+> +	  1187500, 1175000, 1162500, 1150000, 1137500, 1125000, 1112500 },
+> +	{ 1300000, 1225000, 1212500, 1200000, 1187500, 1175000, 1162500, 1150000,
+> +	  1137500, 1125000, 1112500, 1100000, 1087500, 1075000, 1062500 },
+> +	{ 1200000, 1175000, 1162500, 1150000, 1137500, 1125000, 1112500, 1100000,
+> +	  1087500, 1075000, 1062500, 1050000, 1037500, 1025000, 1012500 },
+> +	{ 1100000, 1137500, 1125000, 1112500, 1100000, 1087500, 1075000, 1062500,
+> +	  1050000, 1037500, 1025000, 1012500, 1000000, 987500,  975000 },
+> +	{ 1000000, 1100000, 1087500, 1075000, 1062500, 1050000, 1037500, 1025000,
+> +	  1012500, 1000000, 987500,  975000,  962500,  950000,  937500 },
+> +	{ 900000,  1062500, 1050000, 1037500, 1025000, 1012500, 1000000, 987500,
+> +	  975000,  962500,  950000,  937500,  925000,  912500,  900000 },
+> +	{ 800000,  1025000, 1012500, 1000000, 987500,  975000,  962500,  950000,
+> +	  937500,  925000,  912500,  900000,  900000,  900000,  900000 },
+> +	{ 700000,  987500,  975000,  962500,  950000,  937500,  925000,  912500,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 600000,  950000,  937500,  925000,  912500,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 500000,  912500,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 400000,  900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 300000,  900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 200000,  900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +}, {
+> +	/* KFC 2 */
+> +	{ 1500,    1300000, 1300000, 1300000, 1287500, 1287500, 1287500, 1275000,
+> +	  1262500, 1250000, 1237500, 1225000, 1212500, 1200000, 1187500 },
+> +	{ 1400,    1275000, 1262500, 1250000, 1237500, 1225000, 1212500, 1200000,
+> +	  1187500, 1175000, 1162500, 1150000, 1137500, 1125000, 1112500 },
+> +	{ 1300,    1225000, 1212500, 1200000, 1187500, 1175000, 1162500, 1150000,
+> +	  1137500, 1125000, 1112500, 1100000, 1087500, 1075000, 1062500 },
+> +	{ 1200,    1175000, 1162500, 1150000, 1137500, 1125000, 1112500, 1100000,
+> +	  1087500, 1075000, 1062500, 1050000, 1037500, 1025000, 1012500 },
+> +	{ 1100,    1137500, 1125000, 1112500, 1100000, 1087500, 1075000, 1062500,
+> +	  1050000, 1037500, 1025000, 1012500, 1000000, 987500,  975000 },
+> +	{ 1000,    1100000, 1087500, 1075000, 1062500, 1050000, 1037500, 1025000,
+> +	  1012500, 1000000, 987500,  975000,  962500,  950000,  937500 },
+> +	{ 900,     1062500, 1050000, 1037500, 1025000, 1012500, 1000000, 987500,
+> +	  975000,  962500,  950000,  937500,  925000,  912500,  900000 },
+> +	{ 800,     1025000, 1012500, 1000000, 987500,  975000,  962500,  950000,
+> +	  937500,  925000,  912500,  900000,  900000,  900000,  900000 },
+> +	{ 700,     987500,  975000,  962500,  950000,  937500,  925000,  912500,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 600,     950000,  937500,  925000,  912500,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 500,     912500,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 400,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 300,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 200,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +}, {
+> +	/* KFC 3 */
+> +	{ 1500,    1300000, 1300000, 1300000, 1287500, 1287500, 1287500, 1275000,
+> +	  1262500, 1250000, 1237500, 1225000, 1212500, 1200000, 1187500 },
+> +	{ 1400,    1275000, 1262500, 1250000, 1237500, 1225000, 1212500, 1200000,
+> +	  1187500, 1175000, 1162500, 1150000, 1137500, 1125000, 1112500 },
+> +	{ 1300,    1225000, 1212500, 1200000, 1187500, 1175000, 1162500, 1150000,
+> +	  1137500, 1125000, 1112500, 1100000, 1087500, 1075000, 1062500 },
+> +	{ 1200,    1175000, 1162500, 1150000, 1137500, 1125000, 1112500, 1100000,
+> +	  1087500, 1075000, 1062500, 1050000, 1037500, 1025000, 1012500 },
+> +	{ 1100,    1137500, 1125000, 1112500, 1100000, 1087500, 1075000, 1062500,
+> +	  1050000, 1037500, 1025000, 1012500, 1000000, 987500,  975000 },
+> +	{ 1000,    1100000, 1087500, 1075000, 1062500, 1050000, 1037500, 1025000,
+> +	  1012500, 1000000, 987500,  975000,  962500,  950000,  937500 },
+> +	{ 900,     1062500, 1050000, 1037500, 1025000, 1012500, 1000000, 987500,
+> +	  975000,  962500,  950000,  937500,  925000,  912500,  900000 },
+> +	{ 800,     1025000, 1012500, 1000000, 987500,  975000,  962500,  950000,
+> +	  937500,  925000,  912500,  900000,  900000,  900000,  900000 },
+> +	{ 700,     987500,  975000,  962500,  950000,  937500,  925000,  912500,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 600,     950000,  937500,  925000,  912500,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 500,     912500,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 400,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 300,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 200,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +}, {
+> +	/* KFC bin 2 */
+> +	{ 1300,    1250000, 1237500, 1225000, 1212500, 1200000, 1187500, 1175000,
+> +	  1162500, 1150000, 1137500, 1125000, 1112500, 1100000, 1087500 },
+> +	{ 1200,    1200000, 1187500, 1175000, 1162500, 1150000, 1137500, 1125000,
+> +	  1112500, 1100000, 1087500, 1075000, 1062500, 1050000, 1037500 },
+> +	{ 1100,    1162500, 1150000, 1137500, 1125000, 1112500, 1100000, 1087500,
+> +	  1075000, 1062500, 1050000, 1037500, 1025000, 1012500, 1000000 },
+> +	{ 1000,    1125000, 1112500, 1100000, 1087500, 1075000, 1062500, 1050000,
+> +	  1037500, 1025000, 1012500, 1000000, 987500,  975000,  962500 },
+> +	{ 900,     1087500, 1075000, 1062500, 1050000, 1037500, 1025000, 1012500,
+> +	  1000000, 987500,  975000,  962500,  950000,  937500,  925000 },
+> +	{ 800,     1050000, 1037500, 1025000, 1012500, 1000000, 987500,  975000,
+> +	  962500,  950000,  937500,  925000,  912500,  900000,  900000 },
+> +	{ 700,     1012500, 1000000, 987500,  975000,  962500,  950000,  937500,
+> +	  925000,  912500,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 600,     975000,  962500,  950000,  937500,  925000,  912500,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 500,     937500,  925000,  912500,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 400,     925000,  912500,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 300,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +	{ 200,     900000,  900000,  900000,  900000,  900000,  900000,  900000,
+> +	  900000,  900000,  900000,  900000,  900000,  900000,  900000 },
+> +}
+> +};
+> +
+> +static const struct asv_limit_entry __asv_limits[ASV_GROUPS_NUM] = {
+> +	{ 13, 55 },
+> +	{ 21, 65 },
+> +	{ 25, 69 },
+> +	{ 30, 72 },
+> +	{ 36, 74 },
+> +	{ 43, 76 },
+> +	{ 51, 78 },
+> +	{ 65, 80 },
+> +	{ 81, 82 },
+> +	{ 98, 84 },
+> +	{ 119, 87 },
+> +	{ 135, 89 },
+> +	{ 150, 92 },
+> +	{ 999, 999 },
+> +};
+> +
+> +static int exynos5422_asv_get_group(struct exynos_asv *asv)
+> +{
+> +	unsigned int pkgid_reg, auxi_reg;
+> +	int hpm, ids, i;
+> +
+> +	regmap_read(asv->chipid_regmap, EXYNOS_CHIPID_REG_PKG_ID, &pkgid_reg);
+> +	regmap_read(asv->chipid_regmap, EXYNOS_CHIPID_REG_AUX_INFO, &auxi_reg);
+> +
+> +	if (asv->use_sg) {
+> +		u32 sga = (pkgid_reg >> EXYNOS5422_SG_A_OFFSET) &
+> +			   EXYNOS5422_SG_A_MASK;
+> +
+> +		u32 sgb = (pkgid_reg >> EXYNOS5422_SG_B_OFFSET) &
+> +			   EXYNOS5422_SG_B_MASK;
+> +
+> +		if ((pkgid_reg >> EXYNOS5422_SG_BSIGN_OFFSET) &
+> +		     EXYNOS5422_SG_BSIGN_MASK)
+> +			return sga + sgb;
+> +		else
+> +			return sga - sgb;
+> +	}
+> +
+> +	hpm = (auxi_reg >> EXYNOS5422_TMCB_OFFSET) & EXYNOS5422_TMCB_MASK;
+> +	ids = (pkgid_reg >> EXYNOS5422_IDS_OFFSET) & EXYNOS5422_IDS_MASK;
+> +
+> +	for (i = 0; i < ASV_GROUPS_NUM; i++) {
+> +		if (ids <= __asv_limits[i].ids)
+> +			break;
+> +		if (hpm <= __asv_limits[i].hpm)
+> +			break;
+> +	}
+> +	if (i < ASV_GROUPS_NUM)
+> +		return i;
+> +
+> +	return 0;
+> +}
+> +
+> +static int __asv_offset_voltage(unsigned int index)
+> +{
+> +	switch (index) {
+> +	case 1:
+> +		return 12500;
+> +	case 2:
+> +		return 50000;
+> +	case 3:
+> +		return 25000;
+> +	default:
+> +		return 0;
+> +	};
+> +}
+> +
+> +static void exynos5422_asv_offset_voltage_setup(struct exynos_asv *asv)
+> +{
+> +	struct exynos_asv_subsys *subsys;
+> +	unsigned int reg, value;
+> +
+> +	regmap_read(asv->chipid_regmap, EXYNOS_CHIPID_REG_AUX_INFO, &reg);
+> +
+> +	/* ARM offset voltage setup */
+> +	subsys = &asv->subsys[EXYNOS_ASV_SUBSYS_ID_ARM];
+> +
+> +	subsys->base_volt = 1000000;
+> +
+> +	value = (reg >> EXYNOS5422_ARM_UP_OFFSET) & EXYNOS5422_ARM_UP_MASK;
+> +	subsys->offset_volt_h = __asv_offset_voltage(value);
+> +
+> +	value = (reg >> EXYNOS5422_ARM_DN_OFFSET) & EXYNOS5422_ARM_DN_MASK;
+> +	subsys->offset_volt_l = __asv_offset_voltage(value);
+> +
+> +	/* KFC offset voltage setup */
+> +	subsys = &asv->subsys[EXYNOS_ASV_SUBSYS_ID_KFC];
+> +
+> +	subsys->base_volt = 1000000;
+> +
+> +	value = (reg >> EXYNOS5422_KFC_UP_OFFSET) & EXYNOS5422_KFC_UP_MASK;
+> +	subsys->offset_volt_h = __asv_offset_voltage(value);
+> +
+> +	value = (reg >> EXYNOS5422_KFC_DN_OFFSET) & EXYNOS5422_KFC_DN_MASK;
+> +	subsys->offset_volt_l = __asv_offset_voltage(value);
+> +}
+> +
+> +static int exynos5422_asv_opp_get_voltage(struct exynos_asv_subsys *subsys,
+> +				int level, unsigned int volt)
+
+subsys is not modified.
+
+> +{
+> +	unsigned int asv_volt;
+> +
+> +	if (level >= subsys->table.num_rows)
+> +		return volt;
+> +
+> +	asv_volt = exynos_asv_opp_get_voltage(subsys, level,
+> +					      subsys->asv->group);
+> +
+> +	if (volt > subsys->base_volt)
+> +		asv_volt += subsys->offset_volt_h;
+> +	else
+> +		asv_volt += subsys->offset_volt_l;
+> +
+> +	return asv_volt;
+> +}
+> +
+> +static unsigned int exynos5422_asv_parse_table(struct exynos_asv *asv,
+> +				      unsigned int pkg_id)
+> +{
+
+The same, for asv. Looks BTW unused...
+
+> +	return (pkg_id >> EXYNOS5422_TABLE_OFFSET) & EXYNOS5422_TABLE_MASK;
+> +}
+> +
+> +static bool exynos5422_asv_parse_bin2(struct exynos_asv *asv,
+> +				     unsigned int pkg_id)
+> +{
+
+The same.
+
+> +	return (pkg_id >> EXYNOS5422_BIN2_OFFSET) & EXYNOS5422_BIN2_MASK;
+> +}
+> +
+> +static bool exynos5422_asv_parse_sg(struct exynos_asv *asv,
+> +					unsigned int pkg_id)
+> +{
+
+The same.
+
+> +	return (pkg_id >> EXYNOS5422_USESG_OFFSET) & EXYNOS5422_USESG_MASK;
+> +}
+> +
+> +int exynos5422_asv_init(struct exynos_asv *asv)
+> +{
+> +	struct exynos_asv_subsys *subsys;
+> +	unsigned int table_index;
+> +	unsigned int pkg_id;
+> +	bool bin2;
+> +
+
+How about checking if asv != null? It's a header exposed function.
+
+Best regards,
+Krzysztof
+
+
+> +	regmap_read(asv->chipid_regmap, EXYNOS_CHIPID_REG_PKG_ID, &pkg_id);
+> +
+> +	if (asv->of_bin == 2) {
+> +		bin2 = true;
+> +		asv->use_sg = false;
+> +	} else {
+> +		asv->use_sg = exynos5422_asv_parse_sg(asv, pkg_id);
+> +		bin2 = exynos5422_asv_parse_bin2(asv, pkg_id);
+> +	}
+> +
+> +	asv->group = exynos5422_asv_get_group(asv);
+> +	asv->table = exynos5422_asv_parse_table(asv, pkg_id);
+> +
+> +	exynos5422_asv_offset_voltage_setup(asv);
+> +
+> +	if (bin2) {
+> +		table_index = 3;
+> +	} else {
+> +		if (asv->table == 2 || asv->table == 3)
+> +			table_index = asv->table - 1;
+> +		else
+> +			table_index = 0;
+> +	}
+> +
+> +	subsys = &asv->subsys[EXYNOS_ASV_SUBSYS_ID_ARM];
+> +	subsys->cpu_dt_compat = "arm,cortex-a15";
+> +	if (bin2)
+> +		subsys->table.num_rows = ASV_ARM_BIN2_DVFS_NUM;
+> +	else
+> +		subsys->table.num_rows = ASV_ARM_DVFS_NUM;
+> +	subsys->table.num_cols = ASV_GROUPS_NUM + 1;
+> +	subsys->table.buf = (u32 *)asv_arm_table[table_index];
+> +
+> +	subsys = &asv->subsys[EXYNOS_ASV_SUBSYS_ID_KFC];
+> +	subsys->cpu_dt_compat = "arm,cortex-a7";
+> +	if (bin2)
+> +		subsys->table.num_rows = ASV_KFC_BIN2_DVFS_NUM;
+> +	else
+> +		subsys->table.num_rows = ASV_KFC_DVFS_NUM;
+> +	subsys->table.num_cols = ASV_GROUPS_NUM + 1;
+> +	subsys->table.buf = (u32 *)asv_kfc_table[table_index];
+> +
+> +	asv->opp_get_voltage = exynos5422_asv_opp_get_voltage;
+> +
+> +	return 0;
+> +}
+> diff --git a/drivers/soc/samsung/exynos5422-asv.h b/drivers/soc/samsung/exynos5422-asv.h
+> new file mode 100644
+> index 000000000000..85218d2800fb
+> --- /dev/null
+> +++ b/drivers/soc/samsung/exynos5422-asv.h
+> @@ -0,0 +1,25 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/*
+> + * Copyright (c) 2019 Samsung Electronics Co., Ltd.
+> + *	      http://www.samsung.com/
+> + *
+> + * Samsung Exynos 5422 SoC Adaptive Supply Voltage support
+> + */
+> +
+> +#ifndef __LINUX_SOC_EXYNOS5422_ASV_H
+> +#define __LINUX_SOC_EXYNOS5422_ASV_H
+> +
+> +#include <linux/errno.h>
+> +
+> +struct exynos_asv;
+> +
+> +#ifdef CONFIG_EXYNOS_ASV_ARM
+> +int exynos5422_asv_init(struct exynos_asv *asv);
+> +#else
+> +static inline int exynos5422_asv_init(struct exynos_asv *asv)
+> +{
+> +	return -ENOTSUPP;
+> +}
+> +#endif
+> +
+> +#endif /* __LINUX_SOC_EXYNOS5422_ASV_H */
+> --
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
