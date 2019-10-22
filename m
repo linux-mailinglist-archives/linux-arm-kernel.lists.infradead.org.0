@@ -2,91 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8313DFC79
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 06:15:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE6D6DFC7E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 06:20:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=zMjaF+LZXEDg+vrxCUwdiLP1mGmSDr8oZlDIAhktQvE=; b=Qj8lltuT4hBsjg
-	wwz5QYkO08frxgSkpE93Ix0W6cmou5W5S9qvLpwtj79vPteDgm/6nMxwXOFsbRKahTpWp0iKxx7UK
-	3k6A/fwZDPivvMs5v4KV9cLzcchl1G8BDh827OqA7YeNaXkP1FgqPCqmxxjnmVdi9HgOfVPChCap5
-	lyhit4OD1Zk1t3YxSzUZpjpfuShdE9ftqE7Lr3bsS0/YR0DM9396A1DTLSxuIaA/vRMeiyMBdNyO8
-	EYp6cuCXyYTS2o8z6eoAA+j93h2hNZ3S1cZnRw0wygZop5B+Vqji+8fuNTkQuIvxo9JCMguYArq/5
-	Nn+Wpe9ktVQ65In9Kw4w==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mqXFpYQhZ3MdSLoHNp41Z92udhTAxEEmEn5AfMIfCLs=; b=N8TfA/CfWd/ReH
+	jg+d9E9OHaamDww9o/+HX0z1juc4pJmTnogu43sm36tryTSGp3qLd/qbJIANmn6DYt+M+rBn0nuUH
+	RXSP745YAH5rodBcNIBpL/8x8Nxd9rRecFfX2am/82czgu/ZMmO6qcS7vMlMUJ7z0E5ylARTGKUZk
+	6tEJIY6FcfZXCOfXX2lP1Iw/eKjfrJv8xJ0UuwnXqzvKODI1ETIw7DbAJ1S6dQANTvZHmRgkN9wi+
+	TtTsm49z/cN6umLZ0N0U3JuShFopgRg/yqeQpOlqcJEB2ct6vP+36LacFdv3guXkEfxjOGaFkVpXv
+	r2QB1IiatS01LcnDD3qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMlZU-0007Ch-Jc; Tue, 22 Oct 2019 04:15:00 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1iMlek-0001hb-SA; Tue, 22 Oct 2019 04:20:26 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMlZL-0007CO-3m
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 04:14:52 +0000
-Received: by mail-pg1-x542.google.com with SMTP id k20so9141065pgi.1
+ id 1iMleb-0001gz-Qw
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 04:20:19 +0000
+Received: by mail-io1-xd43.google.com with SMTP id i26so9411398iog.9
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 21 Oct 2019 21:14:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=rs9LAlJ/Mb8c9Q5mqnJ0h++sIssMn8kGp7hyQlxdI80=;
- b=QZEVW2RSSdkh1WJhJ+2zM6gvI5OM1zukP2RcEMAPrk+gYXdCshBt6eo69Xdgf3piwH
- 2jsrvgUWf8cb/5otO7cLp0OZTGHxclN0W7hqZny+giRNR8fylKD+GerxqjcUfDHD2lG2
- 0KEw2YMYwQxe0KdAWRk8BFnaKDfT6Y4Mi/ezDoYAsR2aM80Bu/w8isG2AaVlXU5mmZZi
- ZsbERCij07rF7+9yS69wVKkOmNcbWkmFlmMwOqEO0p+lgpHQoaJBcTEvA3l4FlUVr5em
- 877NV13qWH29BIhewCk+S4alQLXyTiejyaeVxvRhyP2IOZ4F9mgRTLfTePWYZ1dO2ZV+
- Z9ZQ==
+ Mon, 21 Oct 2019 21:20:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=wp8wy/spwh9Zthw1zbjo3jFQXzwnNkB/MNGLS3X0R2Y=;
+ b=kK0pBRS+ksAkOYZhENcTO83Lm34CJFk4blDQ/o75EKpXDk23HG/vB1ukJhckWse+c+
+ 0NSGjZIkA4EZdxG+MtmprR319Wssf9w2lx9OgXgCRxyBfqrjQhBiJT+hYYCsgVSraZ1t
+ XIqm340XNtgW9zxZOEumHDt/3WC2G0fAH3kmc1k/yjAeVQqNEl/tiP3qz+xiEwg0mQ5U
+ jxxcWFzsMIIGxt+nYT6V9Q3mcL7ItIvjCCsLa1THQtooG4a4wSoK2vC47xWLqm/mrcv2
+ FSI0DUcVLC/TciCL1fMDd2lIeIVKYAdsk+7InK+czHJBLmjBThCTj6q2D8ICJabvvhsm
+ Z5lw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=rs9LAlJ/Mb8c9Q5mqnJ0h++sIssMn8kGp7hyQlxdI80=;
- b=cejUNZWghkDibTqUDH1aa3kmjNLxqLXdSfyEDZXAPv9iTDLncE6/uA7gJROSrUxiBq
- LGWUJ9+Ax8JEqur5SjbOzk5atbaiCemoqKcVrOd+2RvmZKjBS3Xt2/PfBk8JOJ2wxLSd
- wqUAeT+wHSihZXBlzbwbfznp4n+QFKyzO+ES0r7FpZjC8k14XXmsXwPABJs3/1ot3t13
- W2MusjTuzXBIo4n4TQ1/o9s0vKiaZIVy8i+vs5GZQ5o+9DSAFlDmDvQB2hgLufOWjGyp
- sEqPuQBh5hT27aU5J9t2uxS5AQltUqPpenlDpAvhBl7m1HrZVHBvH5KqXl5/aAPJ6p6L
- bxdw==
-X-Gm-Message-State: APjAAAUEK0qSmBFX5PbHAby7WzCrKt6yWhxVa5Zy3c0/+Lw20He0XtsK
- Zpgt3AVJEo7fv0NhL7HuUcs0uhnW
-X-Google-Smtp-Source: APXvYqxuxUG7glI4cNP3QMXePzxvwJJd44e9KiYRq8sAvVisFJ5DBx1aafSGvsKs5wZCfJW9UfCxWA==
-X-Received: by 2002:a62:1c96:: with SMTP id c144mr278831pfc.219.1571717689798; 
- Mon, 21 Oct 2019 21:14:49 -0700 (PDT)
-Received: from localhost.lan (c-67-185-54-80.hsd1.wa.comcast.net.
- [67.185.54.80])
- by smtp.gmail.com with ESMTPSA id b3sm15042191pjp.13.2019.10.21.21.14.48
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 21 Oct 2019 21:14:48 -0700 (PDT)
-From: Andrey Smirnov <andrew.smirnov@gmail.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2] ARM: imx: Drop imx_anatop_usb_chrg_detect_disable()
-Date: Mon, 21 Oct 2019 21:14:45 -0700
-Message-Id: <20191022041445.23897-1-andrew.smirnov@gmail.com>
-X-Mailer: git-send-email 2.21.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=wp8wy/spwh9Zthw1zbjo3jFQXzwnNkB/MNGLS3X0R2Y=;
+ b=riCO2W8qTOcuVlZvRcL+8C7R3pTP9x8pQOCxXdWFPSAgkeC0uT0hCY9YCqV6pRNvZK
+ AiQVp93OWAnmunGV0tSEn4VoWCeFqUaRH10U1b5ATVKXN9sPaByjb7pqQYi9B6JKPSpa
+ Elo1jG2rIjDoR9Mliy6n/aCdP41lKFp2rcMmvphcTLIQtVTDvFctugg1mdfjEWEArbuq
+ A6BaD2c0rTwnjl64NG1chf63B5z2DubKpIFJHnoKzCBVGN4Cjg26bwRkAe4WkeTnuarL
+ t1YJUgLhwWMOTBh/POK7BkwXsPPMDAMvKMAtH1iYEHO++4NSfQgyWnYNeVTue9wMI64F
+ fDOg==
+X-Gm-Message-State: APjAAAXQLgu8sznhss95Zr5nqwgBUYP4xYoVVjUVt3/KsMv5QN4tQYfe
+ NNxtluA0gB2qMcxkV1qNAnTWRx/9XtF0RZwGPOt+dg==
+X-Google-Smtp-Source: APXvYqzYWgB1PtMtq4nnNfPKWor2fWw/zG/ojnrO3w/NOV2GRoDJlHgeD0JuBgKT4rxqNWDEGfYcoevSrS2OWeQcC90=
+X-Received: by 2002:a05:6638:60f:: with SMTP id
+ g15mr1872269jar.21.1571718016274; 
+ Mon, 21 Oct 2019 21:20:16 -0700 (PDT)
 MIME-Version: 1.0
+References: <201910221118.wjEmsUlx%lkp@intel.com>
+In-Reply-To: <201910221118.wjEmsUlx%lkp@intel.com>
+From: Olof Johansson <olof@lixom.net>
+Date: Mon, 21 Oct 2019 21:20:05 -0700
+Message-ID: <CAOesGMgBVNhgWvN=__+rV5+p-Orn_5XByApoSVkp0AGxHeSwQQ@mail.gmail.com>
+Subject: Re: [arm-soc:mmp/drivers 11/12] include/linux/soc/mmp/cputype.h:5:10:
+ fatal error: asm/cputype.h: No such file or directory
+To: kbuild test robot <lkp@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_211451_180446_66850887 
-X-CRM114-Status: GOOD (  13.08  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20191021_212017_933180_48D3D3E1 
+X-CRM114-Status: GOOD (  12.33  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (andrew.smirnov[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 1.0 FREEMAIL_REPLY         From and body contain different freemails
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,100 +89,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Chen <peter.chen@nxp.com>, Andrey Smirnov <andrew.smirnov@gmail.com>,
- Shawn Guo <shawnguo@kernel.org>, linux-kernel@vger.kernel.org,
- linux-imx@nxp.com, Fabio Estevam <festevam@gmail.com>,
- Chris Healy <cphealy@gmail.com>
+Cc: Lubomir Rintel <lkundrak@v3.sk>, ARM-SoC Maintainers <arm@kernel.org>,
+ kbuild-all@lists.01.org,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-With commit b5bbe2235361 ("usb: phy: mxs: Disable external charger
-detect in mxs_phy_hw_init()") in tree all of the necessary charger
-setup is done by the USB PHY driver which covers all of the affected
-i.MX6 SoCs.
+On Mon, Oct 21, 2019 at 8:30 PM kbuild test robot <lkp@intel.com> wrote:
+>
+> tree:   https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git mmp/drivers
+> head:   13bec6d6822ca0349dbba14e2e8e2f80e1aacbd7
+> commit: 08f13e7c3430889621dcefd1b1e52490f654a285 [11/12] phy: Add USB2 PHY driver for Marvell MMP3 SoC
+> config: x86_64-allyesconfig (attached as .config)
+> compiler: gcc-7 (Debian 7.4.0-14) 7.4.0
+> reproduce:
+>         git checkout 08f13e7c3430889621dcefd1b1e52490f654a285
+>         # save the attached .config to linux build tree
+>         make ARCH=x86_64
+>
+> If you fix the issue, kindly add following tag
+> Reported-by: kbuild test robot <lkp@intel.com>
+>
+> All errors (new ones prefixed by >>):
+>
+>    In file included from drivers/phy/marvell/phy-mmp3-usb.c:12:0:
+> >> include/linux/soc/mmp/cputype.h:5:10: fatal error: asm/cputype.h: No such file or directory
+>     #include <asm/cputype.h>
+>              ^~~~~~~~~~~~~~~
+>    compilation terminated.
 
-NOTE: imx_anatop_usb_chrg_detect_disable() was also called for i.MX7D,
-but looking at its datasheet it appears to have a different USB PHY IP
-block, so executing i.MX6 charger disable configuration seems
-unnecessary.
 
-Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
-Cc: Chris Healy <cphealy@gmail.com>
-Cc: Shawn Guo <shawnguo@kernel.org>
-Cc: Fabio Estevam <festevam@gmail.com>
-Cc: Peter Chen <peter.chen@nxp.com>
-Cc: linux-imx@nxp.com
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
----
+Fixed a few hours ago.
 
-Changes since [v1]:
 
-    - Scope of the patch reduced to remove only
-      imx_anatop_usb_chrg_detect_disable() instead of
-      imx_anatop_init()
-
-[v1] lore.kernel.org/lkml/20190731180131.8597-1-andrew.smirnov@gmail.com
-
- arch/arm/mach-imx/anatop.c | 20 +-------------------
- 1 file changed, 1 insertion(+), 19 deletions(-)
-
-diff --git a/arch/arm/mach-imx/anatop.c b/arch/arm/mach-imx/anatop.c
-index 777d8c255501..8fb68c0ec34c 100644
---- a/arch/arm/mach-imx/anatop.c
-+++ b/arch/arm/mach-imx/anatop.c
-@@ -19,8 +19,6 @@
- #define ANADIG_REG_2P5		0x130
- #define ANADIG_REG_CORE		0x140
- #define ANADIG_ANA_MISC0	0x150
--#define ANADIG_USB1_CHRG_DETECT	0x1b0
--#define ANADIG_USB2_CHRG_DETECT	0x210
- #define ANADIG_DIGPROG		0x260
- #define ANADIG_DIGPROG_IMX6SL	0x280
- #define ANADIG_DIGPROG_IMX7D	0x800
-@@ -33,8 +31,6 @@
- #define BM_ANADIG_ANA_MISC0_STOP_MODE_CONFIG	0x1000
- /* Below MISC0_DISCON_HIGH_SNVS is only for i.MX6SL */
- #define BM_ANADIG_ANA_MISC0_DISCON_HIGH_SNVS	0x2000
--#define BM_ANADIG_USB_CHRG_DETECT_CHK_CHRG_B	0x80000
--#define BM_ANADIG_USB_CHRG_DETECT_EN_B		0x100000
- 
- static struct regmap *anatop;
- 
-@@ -96,16 +92,6 @@ void imx_anatop_post_resume(void)
- 
- }
- 
--static void imx_anatop_usb_chrg_detect_disable(void)
--{
--	regmap_write(anatop, ANADIG_USB1_CHRG_DETECT,
--		BM_ANADIG_USB_CHRG_DETECT_EN_B
--		| BM_ANADIG_USB_CHRG_DETECT_CHK_CHRG_B);
--	regmap_write(anatop, ANADIG_USB2_CHRG_DETECT,
--		BM_ANADIG_USB_CHRG_DETECT_EN_B |
--		BM_ANADIG_USB_CHRG_DETECT_CHK_CHRG_B);
--}
--
- void __init imx_init_revision_from_anatop(void)
- {
- 	struct device_node *np;
-@@ -171,10 +157,6 @@ void __init imx_init_revision_from_anatop(void)
- void __init imx_anatop_init(void)
- {
- 	anatop = syscon_regmap_lookup_by_compatible("fsl,imx6q-anatop");
--	if (IS_ERR(anatop)) {
-+	if (IS_ERR(anatop))
- 		pr_err("%s: failed to find imx6q-anatop regmap!\n", __func__);
--		return;
--	}
--
--	imx_anatop_usb_chrg_detect_disable();
- }
--- 
-2.21.0
-
+-Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
