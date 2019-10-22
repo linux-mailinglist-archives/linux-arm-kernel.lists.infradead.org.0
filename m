@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A8FEDFAA2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 04:01:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD36DDFABA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 04:01:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FmgkxJGOz2H69xJTySegh6zGr+AYhHDrgNN0mX+BBgg=; b=C3wainZK7dnPjL
-	tMUDK/Deq+3U+ciPGLwmWI+iyRoYo2G1oXTSr1xVgKbfVIDpRbXWuhXOW2RaTpH9oxCtOyaXTkAON
-	41LSsG6wpX6Fr9gZc3/3RkE+G7G30II1W41HL1aRGzYCWHgIY09oIWHNBAEFuJ7w1W6E5sUoP5ucH
-	81TG/UT+qeErzsSr9pk9mnD+Aec9FwM40cLlldmxxuOQ26Se8M4ol4zQfnwkyChmLMH3LmML8a3tj
-	E+PhJX8wPXTLies0Q3B9qmHsLVl2IM+w4wyLUhQzJr2C1eU9itQgeXQTtGzlGI/op5xkbTUjkn5nC
-	xPORFh3Y47b2bkTq1jvg==;
+	List-Owner; bh=azxRFBgH720v2rU1zuFsa+JvxYSp6ymJO7RKKH5ez4s=; b=eWlFKYWkyy4aL2
+	GA9KcYGbQwT7t1dWlQNhxle6FobLXZewy7tKl55kUWgtLsq/sHBTczUVTOwB3FbGlF9csU64/RPwj
+	F681elP9z+xaoq7l22wiRpNJroCWIR/M2pkFK3OfOJ+xiwGAT0FCtUMTw6eiVS29ieczz6U5NDkvA
+	hIVozCbYAnAqRGXzeEO5nYfxDZYGE9njAmKvPYftxFGhV133b8MSMMe9GHcxI5CZ23bgGHdnKEyrF
+	A+R2ud2jw6jq2fVV7JnhLNERgAxId2h8n2JJcAkwjAjlpbKoE0JoLsdhKuex7yU0MA578k68+Fj5I
+	7HrjV0AU8GIK8kDTeW/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMjTg-0005wb-A3; Tue, 22 Oct 2019 02:00:52 +0000
+	id 1iMjTy-0006Fg-1Y; Tue, 22 Oct 2019 02:01:10 +0000
 Received: from mga07.intel.com ([134.134.136.100])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMjSQ-0003sH-Qt
+ id 1iMjSQ-0003sV-U8
  for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 01:59:36 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
@@ -29,26 +29,25 @@ Received: from fmsmga008.fm.intel.com ([10.253.24.58])
  by orsmga105.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
  21 Oct 2019 18:59:33 -0700
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.67,325,1566889200"; d="scan'208";a="196293747"
+X-IronPort-AV: E=Sophos;i="5.67,325,1566889200"; d="scan'208";a="196293750"
 Received: from sjchrist-coffee.jf.intel.com ([10.54.74.41])
- by fmsmga008.fm.intel.com with ESMTP; 21 Oct 2019 18:59:32 -0700
+ by fmsmga008.fm.intel.com with ESMTP; 21 Oct 2019 18:59:33 -0700
 From: Sean Christopherson <sean.j.christopherson@intel.com>
 To: Marc Zyngier <maz@kernel.org>, James Hogan <jhogan@kernel.org>,
  Paul Mackerras <paulus@ozlabs.org>,
  Christian Borntraeger <borntraeger@de.ibm.com>,
  Janosch Frank <frankja@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [PATCH 02/45] KVM: PPC: Book3S PR: Free shared page if mmu
- initialization fails
-Date: Mon, 21 Oct 2019 18:58:42 -0700
-Message-Id: <20191022015925.31916-3-sean.j.christopherson@intel.com>
+Subject: [PATCH 03/45] KVM: x86: Free wbinvd_dirty_mask if vCPU creation fails
+Date: Mon, 21 Oct 2019 18:58:43 -0700
+Message-Id: <20191022015925.31916-4-sean.j.christopherson@intel.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20191022015925.31916-1-sean.j.christopherson@intel.com>
 References: <20191022015925.31916-1-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_185934_934612_763504D0 
-X-CRM114-Status: GOOD (  11.85  )
+X-CRM114-CacheID: sfid-20191021_185935_016321_12955634 
+X-CRM114-Status: GOOD (  12.13  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -84,35 +83,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Explicitly free the shared page if kvmppc_mmu_init() fails during
-kvmppc_core_vcpu_create(), as the page is freed only in
-kvmppc_core_vcpu_free(), which is not reached via kvm_vcpu_uninit().
+Free the vCPU's wbinvd_dirty_mask if vCPU creation fails after
+kvm_arch_vcpu_init(), e.g. when installing the vCPU's file descriptor.
+Do the freeing by calling kvm_arch_vcpu_free() instead of open coding
+the freeing.  This adds a likely superfluous, but ultimately harmless,
+call to kvmclock_reset(), which only clears vcpu->arch.pv_time_enabled.
+Using kvm_arch_vcpu_free() allows for additional cleanup in the future.
 
-Fixes: 96bc451a15329 ("KVM: PPC: Introduce shared page")
+Fixes: f5f48ee15c2ee ("KVM: VMX: Execute WBINVD to keep data consistency with assigned devices")
 Cc: stable@vger.kernel.org
 Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 ---
- arch/powerpc/kvm/book3s_pr.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ arch/x86/kvm/x86.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/powerpc/kvm/book3s_pr.c b/arch/powerpc/kvm/book3s_pr.c
-index cc65af8fe6f7..3f6ad3f58628 100644
---- a/arch/powerpc/kvm/book3s_pr.c
-+++ b/arch/powerpc/kvm/book3s_pr.c
-@@ -1769,10 +1769,12 @@ static struct kvm_vcpu *kvmppc_core_vcpu_create_pr(struct kvm *kvm,
+diff --git a/arch/x86/kvm/x86.c b/arch/x86/kvm/x86.c
+index f26f8be4e621..c9a291693279 100644
+--- a/arch/x86/kvm/x86.c
++++ b/arch/x86/kvm/x86.c
+@@ -9083,7 +9083,7 @@ void kvm_arch_vcpu_destroy(struct kvm_vcpu *vcpu)
+ 	kvm_mmu_unload(vcpu);
+ 	vcpu_put(vcpu);
  
- 	err = kvmppc_mmu_init(vcpu);
- 	if (err < 0)
--		goto uninit_vcpu;
-+		goto free_shared_page;
+-	kvm_x86_ops->vcpu_free(vcpu);
++	kvm_arch_vcpu_free(vcpu);
+ }
  
- 	return vcpu;
- 
-+free_shared_page:
-+	free_page((unsigned long)vcpu->arch.shared);
- uninit_vcpu:
- 	kvm_vcpu_uninit(vcpu);
- free_shadow_vcpu:
+ void kvm_vcpu_reset(struct kvm_vcpu *vcpu, bool init_event)
 -- 
 2.22.0
 
