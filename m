@@ -2,34 +2,34 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD36DDFABA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 04:01:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91890DFAD4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 04:01:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=azxRFBgH720v2rU1zuFsa+JvxYSp6ymJO7RKKH5ez4s=; b=eWlFKYWkyy4aL2
-	GA9KcYGbQwT7t1dWlQNhxle6FobLXZewy7tKl55kUWgtLsq/sHBTczUVTOwB3FbGlF9csU64/RPwj
-	F681elP9z+xaoq7l22wiRpNJroCWIR/M2pkFK3OfOJ+xiwGAT0FCtUMTw6eiVS29ieczz6U5NDkvA
-	hIVozCbYAnAqRGXzeEO5nYfxDZYGE9njAmKvPYftxFGhV133b8MSMMe9GHcxI5CZ23bgGHdnKEyrF
-	A+R2ud2jw6jq2fVV7JnhLNERgAxId2h8n2JJcAkwjAjlpbKoE0JoLsdhKuex7yU0MA578k68+Fj5I
-	7HrjV0AU8GIK8kDTeW/A==;
+	List-Owner; bh=iVQ00fCAxH9tpb29479d+JUny4bSPdeRDiDfLmcwM+I=; b=Ap50QFIkCTVXby
+	LSgMxquFMH0PmabmdVfN3UOrWSvTfbCNjoyou2f3WL4D5+oi3HBZtubWobgSZFPtvMLtm5Suis/bZ
+	x6X7+fszc7gArvkMDe5DAlcesgKM+g1rJ/l0qI/Hn1tTyL+GJobs8s4gJXt6E/CBCQrAoEwxXU5wh
+	SojlyEhBEtm0XwXO7VeTgVO2DjdX63p+6es5nOm2ofzAhi3k4FipausraH09EwYp0ix+Ynf2fkNbe
+	8Jh6vtBR0ei9oV1VsC2y8J+p77Gcrwqs+mecak1/ROLGJ92Fi7J9UoqVBrXcWMSNo9c8P9b2xONdV
+	vwxxBjSHWe+ttvq++ykA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMjTy-0006Fg-1Y; Tue, 22 Oct 2019 02:01:10 +0000
+	id 1iMjUL-0006Wm-Ey; Tue, 22 Oct 2019 02:01:33 +0000
 Received: from mga07.intel.com ([134.134.136.100])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMjSQ-0003sV-U8
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 01:59:36 +0000
+ id 1iMjSR-0003sj-0H
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 01:59:37 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
 Received: from fmsmga008.fm.intel.com ([10.253.24.58])
  by orsmga105.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 21 Oct 2019 18:59:33 -0700
+ 21 Oct 2019 18:59:34 -0700
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.67,325,1566889200"; d="scan'208";a="196293750"
+X-IronPort-AV: E=Sophos;i="5.67,325,1566889200"; d="scan'208";a="196293754"
 Received: from sjchrist-coffee.jf.intel.com ([10.54.74.41])
  by fmsmga008.fm.intel.com with ESMTP; 21 Oct 2019 18:59:33 -0700
 From: Sean Christopherson <sean.j.christopherson@intel.com>
@@ -38,16 +38,16 @@ To: Marc Zyngier <maz@kernel.org>, James Hogan <jhogan@kernel.org>,
  Christian Borntraeger <borntraeger@de.ibm.com>,
  Janosch Frank <frankja@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [PATCH 03/45] KVM: x86: Free wbinvd_dirty_mask if vCPU creation fails
-Date: Mon, 21 Oct 2019 18:58:43 -0700
-Message-Id: <20191022015925.31916-4-sean.j.christopherson@intel.com>
+Subject: [PATCH 04/45] KVM: VMX: Allocate VPID after initializing VCPU
+Date: Mon, 21 Oct 2019 18:58:44 -0700
+Message-Id: <20191022015925.31916-5-sean.j.christopherson@intel.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20191022015925.31916-1-sean.j.christopherson@intel.com>
 References: <20191022015925.31916-1-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_185935_016321_12955634 
-X-CRM114-Status: GOOD (  12.13  )
+X-CRM114-CacheID: sfid-20191021_185935_089079_FBBBA2DC 
+X-CRM114-Status: GOOD (  13.17  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -83,33 +83,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Free the vCPU's wbinvd_dirty_mask if vCPU creation fails after
-kvm_arch_vcpu_init(), e.g. when installing the vCPU's file descriptor.
-Do the freeing by calling kvm_arch_vcpu_free() instead of open coding
-the freeing.  This adds a likely superfluous, but ultimately harmless,
-call to kvmclock_reset(), which only clears vcpu->arch.pv_time_enabled.
-Using kvm_arch_vcpu_free() allows for additional cleanup in the future.
+Do VPID allocation after calling the common kvm_vcpu_init() as a step
+towards doing vCPU allocation (via kmem_cache_zalloc()) and calling
+kvm_vcpu_init() back-to-back.  Squishing allocation and initialization
+together will eventually allow the sequence to be moved to arch-agnostic
+creation code.
 
-Fixes: f5f48ee15c2ee ("KVM: VMX: Execute WBINVD to keep data consistency with assigned devices")
-Cc: stable@vger.kernel.org
+Note, the VPID is not consumed until KVM_RUN, slightly delaying its
+allocation should have no real function impact.  VPID allocation was
+arbitrarily placed in the original patch, commit 2384d2b326408 ("KVM:
+VMX: Enable Virtual Processor Identification (VPID)").
+
 Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 ---
- arch/x86/kvm/x86.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/x86/kvm/vmx/vmx.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/arch/x86/kvm/x86.c b/arch/x86/kvm/x86.c
-index f26f8be4e621..c9a291693279 100644
---- a/arch/x86/kvm/x86.c
-+++ b/arch/x86/kvm/x86.c
-@@ -9083,7 +9083,7 @@ void kvm_arch_vcpu_destroy(struct kvm_vcpu *vcpu)
- 	kvm_mmu_unload(vcpu);
- 	vcpu_put(vcpu);
+diff --git a/arch/x86/kvm/vmx/vmx.c b/arch/x86/kvm/vmx/vmx.c
+index e660e28e9ae0..501e88bd6204 100644
+--- a/arch/x86/kvm/vmx/vmx.c
++++ b/arch/x86/kvm/vmx/vmx.c
+@@ -6726,14 +6726,14 @@ static struct kvm_vcpu *vmx_create_vcpu(struct kvm *kvm, unsigned int id)
+ 		goto free_user_fpu;
+ 	}
  
--	kvm_x86_ops->vcpu_free(vcpu);
-+	kvm_arch_vcpu_free(vcpu);
- }
+-	vmx->vpid = allocate_vpid();
+-
+ 	err = kvm_vcpu_init(&vmx->vcpu, kvm, id);
+ 	if (err)
+ 		goto free_vcpu;
  
- void kvm_vcpu_reset(struct kvm_vcpu *vcpu, bool init_event)
+ 	err = -ENOMEM;
+ 
++	vmx->vpid = allocate_vpid();
++
+ 	/*
+ 	 * If PML is turned on, failure on enabling PML just results in failure
+ 	 * of creating the vcpu, therefore we can simplify PML logic (by
+@@ -6823,8 +6823,8 @@ static struct kvm_vcpu *vmx_create_vcpu(struct kvm *kvm, unsigned int id)
+ 	vmx_destroy_pml_buffer(vmx);
+ uninit_vcpu:
+ 	kvm_vcpu_uninit(&vmx->vcpu);
++	free_vpid(vmx->vpid);
+ free_vcpu:
+-	free_vpid(vmx->vpid);
+ 	kmem_cache_free(x86_fpu_cache, vmx->vcpu.arch.guest_fpu);
+ free_user_fpu:
+ 	kmem_cache_free(x86_fpu_cache, vmx->vcpu.arch.user_fpu);
 -- 
 2.22.0
 
