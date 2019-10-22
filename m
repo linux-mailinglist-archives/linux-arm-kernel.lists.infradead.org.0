@@ -2,172 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0ECF1DFD9A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 08:13:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 31F47DFDA6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 08:19:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pDDAeJK4yc03BUUyvT9M39D5TJDwxrWUIvY4W5Xrd10=; b=tYGROZCqv8na9W
-	oTsJpx/bQd3S8YdY/sZwAuvAwIFxjLSeUiwwwQ/UiAT6ONO0jdm1xFzMGun9jauUSwiXsEhrKpBcj
-	J6A6t7BJEeXHeqbp+4+a+kLZbmf4hXiBM1QB7MdAii8THVV2aitrH0+QNftnpWNRc2EFgoEDKgG2j
-	7R5PQ+xaGHB7r8bC7+9oWjbUMDF0WVxFwOaKsIidcAaXqFeKQDg7NnBkX6o44BMiUnq+JoGmYu138
-	FT5bNKRDLiqytTn7FH24W10Z08V+FF9YHaZnZUl8AsvIOq5lTImTZFZHBPAUQ3dgJQr9RTMXo8jEU
-	INvcY2Eg//25P/YpudRg==;
+	List-Owner; bh=e4GyYH06sQC08l8dSyzt3NhiXfmqgiLv1fVknbIHSho=; b=D76roYw70SjlPM
+	y8bJu/QG80LipYLJwZteBV6tgNzNdTtQK0Yf4CCa/dUeFnPRPUVJPpAaiZYtQ7sf2cWlNV9dShQaj
+	/4SsJI0y/h6wJJizBjwvclRrakjvJXP1PkkcuJu38IFWyzcVhkWljcvuEgfe1b0LSpW6XLgRUBYTb
+	nqCCYuoG4Isd/VaL24CmXnhux7x7LZSNiphCkkwa4WIMcbBTb+XhWOwDqMmxLkNfcQ6C6WwTdsJn+
+	XJvgyTgYI2VB1vrxuVKh92XISeB20PIt9y5yJhUzG/4ppZeSHRArq7PLUum/Pl6sH9tBgO4RygXX0
+	lcGCKIUYF9Lvuban8YQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMnQM-0000Is-Hc; Tue, 22 Oct 2019 06:13:42 +0000
-Received: from mail-eopbgr10083.outbound.protection.outlook.com ([40.107.1.83]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1iMnWD-0002Ew-Q2; Tue, 22 Oct 2019 06:19:45 +0000
+Received: from regular1.263xmail.com ([211.150.70.204])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMnQ8-0000HM-7V; Tue, 22 Oct 2019 06:13:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5GbJKUkPG3RcJEBjCMB+rANR/HZaXB5b+Cr7X95LjEE=;
- b=48Dk3GduP5rAStkaH/Cpl3hBEo1VmF6KfJq9HHMzqZeECb72lp+VF7M6PHkLkZTQIUK06q1rxEsP1l0w4eV7MBPq3b8C+zCocVs8p6uwht+PS6WqXGo/6Mc+7cnR+mHDzNojhoCBAswUPgBimeV/aBVfvQ0N5+iwC/zoVPQSQpY=
-Received: from VI1PR08CA0233.eurprd08.prod.outlook.com (2603:10a6:802:15::42)
- by VI1PR08MB2639.eurprd08.prod.outlook.com (2603:10a6:802:25::13)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2367.24; Tue, 22 Oct
- 2019 06:13:18 +0000
-Received: from VE1EUR03FT021.eop-EUR03.prod.protection.outlook.com
- (2a01:111:f400:7e09::202) by VI1PR08CA0233.outlook.office365.com
- (2603:10a6:802:15::42) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2367.21 via Frontend
- Transport; Tue, 22 Oct 2019 06:13:18 +0000
-Authentication-Results: spf=temperror (sender IP is 63.35.35.123)
- smtp.mailfrom=arm.com; lists.infradead.org; dkim=pass (signature was
- verified) header.d=armh.onmicrosoft.com;lists.infradead.org; dmarc=none
- action=none header.from=arm.com;
-Received-SPF: TempError (protection.outlook.com: error in processing during
- lookup of arm.com: DNS Timeout)
-Received: from 64aa7808-outbound-1.mta.getcheckrecipient.com (63.35.35.123) by
- VE1EUR03FT021.mail.protection.outlook.com (10.152.18.117) with
- Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2367.23 via Frontend Transport; Tue, 22 Oct 2019 06:13:16 +0000
-Received: ("Tessian outbound 6481c7fa5a3c:v33");
- Tue, 22 Oct 2019 06:13:14 +0000
-X-CheckRecipientChecked: true
-X-CR-MTA-CID: d10b8234bfbb20e1
-X-CR-MTA-TID: 64aa7808
-Received: from 085b599e7582.1 (ip-172-16-0-2.eu-west-1.compute.internal
- [104.47.4.55]) by 64aa7808-outbound-1.mta.getcheckrecipient.com id
- 89BA12D9-596E-4F6A-BB45-80FAB1D18CB5.1; 
- Tue, 22 Oct 2019 06:13:09 +0000
-Received: from EUR02-AM5-obe.outbound.protection.outlook.com
- (mail-am5eur02lp2055.outbound.protection.outlook.com [104.47.4.55])
- by 64aa7808-outbound-1.mta.getcheckrecipient.com with ESMTPS id 085b599e7582.1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384);
- Tue, 22 Oct 2019 06:13:09 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=UTx+VYAtivY24J/22E1o2PHl7uExK1u91IUGKElszT/1PK537hUTYdqu5OusznsTaD3RHbgPoNcIb5yNQGYPelcKTSr3QpIx30p8dQyPdJqrwCca5rhJ79JDnRwDM1rgZ9LIW0c63W+gfObhdwJZs6OxrjbPOe1LvQGk1QhAhb1p8DZjlAbBQeh73hq/rjR0V7+KhnWBBz3vA8k2OM9Dx8qSS0vjZ4l9AWgPDwow9asH3jzP55IaBT8tfdmuGi9k54M88fAjfJxcRQ6Bdi2XkACxqX/loybZUtp3IUwlJ7lO6k8U1fpnxPlqufsZAQL+1XlFGxW89u1i4C53BXEuXw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5GbJKUkPG3RcJEBjCMB+rANR/HZaXB5b+Cr7X95LjEE=;
- b=XMHavPQyETiT2E/l9Xa0gXr+MAjVZGLzGFDcy0kBOJ0WhKNZVr7fluKKOlR5upeu0xryCZZ7gGKwLAH1Tv37vHMheheqOHZfEcWiYV6AklOYfB2puC0CN3j5yRw1YXCKeelveOx+ltR8mWCsfLV94bUDAQ/vRRvBKe6j/DeNuOryIWqtleJTjqBgZsKpzuPRrRiFG7GKnks0PQU0DWcCvyh2uiT8+WDQJ24UeDAi/AlFD0yMIWp9excUMfkslGqzQmAHg/1uRKeVAPA8ttFrKRbzv7VyDe5J4qIifgJ7nN6E6zZiytrQt8nfbP0KhrQAk73MONjqyrfIouFrWPwRzg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=arm.com; dmarc=pass action=none header.from=arm.com; dkim=pass
- header.d=arm.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5GbJKUkPG3RcJEBjCMB+rANR/HZaXB5b+Cr7X95LjEE=;
- b=48Dk3GduP5rAStkaH/Cpl3hBEo1VmF6KfJq9HHMzqZeECb72lp+VF7M6PHkLkZTQIUK06q1rxEsP1l0w4eV7MBPq3b8C+zCocVs8p6uwht+PS6WqXGo/6Mc+7cnR+mHDzNojhoCBAswUPgBimeV/aBVfvQ0N5+iwC/zoVPQSQpY=
-Received: from VE1PR08MB5006.eurprd08.prod.outlook.com (10.255.159.31) by
- VE1PR08MB5215.eurprd08.prod.outlook.com (20.179.30.225) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2367.24; Tue, 22 Oct 2019 06:13:05 +0000
-Received: from VE1PR08MB5006.eurprd08.prod.outlook.com
- ([fe80::40ed:7ed3:90cf:ece5]) by VE1PR08MB5006.eurprd08.prod.outlook.com
- ([fe80::40ed:7ed3:90cf:ece5%3]) with mapi id 15.20.2367.022; Tue, 22 Oct 2019
- 06:13:05 +0000
-From: "james qian wang (Arm Technology China)" <james.qian.wang@arm.com>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH 4/6] drm/cma-helper: Support DRM_MODE_DUMB_KERNEL_MAP flag
-Thread-Topic: [PATCH 4/6] drm/cma-helper: Support DRM_MODE_DUMB_KERNEL_MAP flag
-Thread-Index: AQHViFjvrI6TSZ8K9kmI2e7gEmpbY6dmLsqA
-Date: Tue, 22 Oct 2019 06:13:05 +0000
-Message-ID: <20191022061255.GA7512@jamwan02-TSP300>
-References: <20191021214550.1461-1-robh@kernel.org>
- <20191021214550.1461-5-robh@kernel.org>
-In-Reply-To: <20191021214550.1461-5-robh@kernel.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mutt/1.10.1 (2018-07-13)
-x-originating-ip: [113.29.88.7]
-x-clientproxiedby: HK2PR0401CA0004.apcprd04.prod.outlook.com
- (2603:1096:202:2::14) To VE1PR08MB5006.eurprd08.prod.outlook.com
- (2603:10a6:803:113::31)
-Authentication-Results-Original: spf=none (sender IP is )
- smtp.mailfrom=james.qian.wang@arm.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-publictraffictype: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 20533afa-c2be-4063-1d58-08d756b6edaa
-X-MS-TrafficTypeDiagnostic: VE1PR08MB5215:|VE1PR08MB5215:|VI1PR08MB2639:
-x-ms-exchange-transport-forked: True
-X-Microsoft-Antispam-PRVS: <VI1PR08MB26397F7A8D2292C82F730C0DB3680@VI1PR08MB2639.eurprd08.prod.outlook.com>
-x-checkrecipientrouted: true
-x-ms-oob-tlc-oobclassifiers: OLM:52;OLM:52;
-x-forefront-prvs: 01986AE76B
-X-Forefront-Antispam-Report-Untrusted: SFV:NSPM;
- SFS:(10009020)(4636009)(7916004)(366004)(396003)(136003)(376002)(346002)(39860400002)(199004)(189003)(256004)(14444005)(186003)(26005)(446003)(66066001)(102836004)(55236004)(11346002)(6506007)(76176011)(386003)(486006)(476003)(1076003)(52116002)(66574012)(5660300002)(316002)(58126008)(54906003)(478600001)(14454004)(71190400001)(71200400001)(25786009)(305945005)(7416002)(7406005)(6486002)(81166006)(33716001)(8936002)(8676002)(86362001)(7736002)(81156014)(229853002)(4326008)(6246003)(99286004)(2906002)(9686003)(6512007)(6116002)(66446008)(6916009)(66946007)(66476007)(66556008)(6436002)(64756008)(3846002)(33656002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR08MB5215;
- H:VE1PR08MB5006.eurprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: arm.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Untrusted: BCL:0;
-X-Microsoft-Antispam-Message-Info-Original: 2lTtwbyEp136krTq0bT+VLjZ5ll/UXigxmmO5NbJPHW47JzbTiw5U5doGSu2k2uSCG5klXdwjQXppOzX15qpSIbx2ewfpTlhB0YCy6Byq8fbm2tKUFDdRKCJex6Qlxj+enc9VYZ/S2BQwecA4zjKjl1Iqv8jhonr8aIYsE07iFm5yutsOIoqiN8IY8rN/VLmYG+kN8ocbSqChvGoXDln/Wq7BGZ2qzVuqfMcpX6DEoUctzrY06N3uuVsegLXi2shqTRa51ZMRw5+WDtIo8ma8QI8CWEkMFN8B1+2PVSr+XdtA4b9bDGll7lP+W7T/sImmMa6U02L4AJXnhKA/OnrPGb0yk4q7vYdZUVhTKWib4PTspsjE4JJaMmtItoKkErpvDBN1l2vfz7DPFK49kD6MLR2aIEoyEdFhfA+Ggw2X5rK9m74x/hYGL3hx9SU03w+
-Content-ID: <68B64C555405DD408B961B43E6BC14EA@eurprd08.prod.outlook.com>
+ id 1iMnW2-0002EO-BP; Tue, 22 Oct 2019 06:19:38 +0000
+Received: from localhost (unknown [192.168.167.70])
+ by regular1.263xmail.com (Postfix) with ESMTP id 7BBE62E6;
+ Tue, 22 Oct 2019 14:19:24 +0800 (CST)
+X-MAIL-GRAY: 0
+X-MAIL-DELIVERY: 1
+X-ADDR-CHECKED4: 1
+X-ANTISPAM-LEVEL: 2
+X-SKE-CHECKED: 1
+X-ABS-CHECKED: 1
+Received: from localhost (unknown [183.57.25.242])
+ by smtp.263.net (postfix) whith ESMTP id
+ P18673T140581686720256S1571725161829533_; 
+ Tue, 22 Oct 2019 14:19:22 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <7e1e1f1d547a20d678fefdada55cf472>
+X-RL-SENDER: djw@t-chip.com.cn
+X-SENDER: djw@t-chip.com.cn
+X-LOGIN-NAME: djw@t-chip.com.cn
+X-FST-TO: heiko@sntech.de
+X-SENDER-IP: 183.57.25.242
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+From: djw@t-chip.com.cn
+To: Heiko Stuebner <heiko@sntech.de>
+Subject: Re: [PATCH 1/6] arm64: dts: rockchip: Fix rk3399-roc-pc pwm2 pin
+Organization: Firefly Team
+References: <20190919052822.10403-1-jagan@amarulasolutions.com>
+ <109d708e-d182-fafa-44ad-0e6e0f813e0d@fivetechno.de>
+ <CAMty3ZBu2WRJV9X6_ZAXBfpBs42p04Ph7amFpfO64iOQM-Sw_w@mail.gmail.com>
+ <3560168.eQioKvBMyi@phil>
+Date: Tue, 22 Oct 2019 14:19:21 +0800
+In-Reply-To: <3560168.eQioKvBMyi@phil> (Heiko Stuebner's message of "Fri, 18
+ Oct 2019 01:33:23 +0200")
+Message-ID: <87mudtuwt2.fsf@archiso.i-did-not-set--mail-host-address--so-tickle-me>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.3 (gnu/linux)
 MIME-Version: 1.0
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR08MB5215
-Original-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=james.qian.wang@arm.com; 
-X-EOPAttributedMessage: 0
-X-MS-Exchange-Transport-CrossTenantHeadersStripped: VE1EUR03FT021.eop-EUR03.prod.protection.outlook.com
-X-Forefront-Antispam-Report: CIP:63.35.35.123; IPV:CAL; SCL:-1; CTRY:IE;
- EFV:NLI; SFV:NSPM;
- SFS:(10009020)(7916004)(4636009)(136003)(39860400002)(396003)(376002)(346002)(199004)(189003)(126002)(446003)(476003)(11346002)(486006)(186003)(58126008)(3846002)(6116002)(54906003)(36906005)(63350400001)(316002)(26005)(336012)(1076003)(66574012)(33656002)(2906002)(22756006)(66066001)(33716001)(5660300002)(47776003)(6512007)(9686003)(76130400001)(6486002)(86362001)(6862004)(356004)(50466002)(4326008)(6246003)(81166006)(81156014)(305945005)(8676002)(7736002)(8936002)(8746002)(70206006)(70586007)(229853002)(450100002)(6506007)(386003)(26826003)(23756003)(25786009)(478600001)(102836004)(14454004)(14444005)(99286004)(76176011);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR08MB2639;
- H:64aa7808-outbound-1.mta.getcheckrecipient.com; FPR:; SPF:TempError; LANG:en;
- PTR:ec2-63-35-35-123.eu-west-1.compute.amazonaws.com; A:1; MX:1; 
-X-MS-Office365-Filtering-Correlation-Id-Prvs: a71d29fd-6417-46b7-a849-08d756b6e6b7
-NoDisclaimer: True
-X-Forefront-PRVS: 01986AE76B
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: pDO+lSimonUUmsaCGoO9H7ZyjVU9l/YJ6a8M4jrHSjBZ9Rkn/1LC/gHmYGagNlkmYIusNpNnq1rwtPSGIiNpJ/4XeArVhsmyBqM2gg/OW24xD9+ZeiIDgXXVwxHx/BoVVBADXuzqsxG7zHA+ON6sDSTy42KHr2aV1Fz9MXjDmCzT4V0Jh2en9EiDy+99TbRreZu3WDbHfdz0OI0xbhKgo27jTB3hh+Dp4G/tDpod+YlunDLoQGgQyOgF2JVbbG5wUmoWbypGiVMIOVgi41G56Nbx+cbK7eISz+4YvfLggqb/PpxhHwXY3yX5ouBdT49vEH54lAsLnNzMZvt12I2zQBFFlnQYneeqJOxhgj2ciKZOVis1ugV6WPxSOromfMFSdxKCpk2Og06KotYh0YovXm9MU9/zFN4IiaDw2sxMdIj5+SlnRyrRrNcwNyshsOyo
-X-OriginatorOrg: arm.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Oct 2019 06:13:16.5067 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 20533afa-c2be-4063-1d58-08d756b6edaa
-X-MS-Exchange-CrossTenant-Id: f34e5979-57d9-4aaa-ad4d-b122a662184d
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=f34e5979-57d9-4aaa-ad4d-b122a662184d; Ip=[63.35.35.123];
- Helo=[64aa7808-outbound-1.mta.getcheckrecipient.com]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR08MB2639
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_231328_754794_9826FC5B 
-X-CRM114-Status: GOOD (  15.15  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191021_231934_884154_5D9AB733 
+X-CRM114-Status: GOOD (  11.94  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.1.83 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ no trust [211.150.70.204 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -179,333 +81,718 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?iso-8859-1?Q?Heiko_St=FCbner?= <heiko@sntech.de>,
- Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- Liviu Dudau <Liviu.Dudau@arm.com>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- Sandy Huang <hjc@rock-chips.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- "linux-amlogic@lists.infradead.org" <linux-amlogic@lists.infradead.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- Yannick Fertre <yannick.fertre@st.com>, Kevin Hilman <khilman@baylibre.com>,
- Xinwei Kong <kong.kongxinwei@hisilicon.com>,
- Xinliang Liu <z.liuxinliang@hisilicon.com>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- Chen-Yu Tsai <wens@csie.org>,
- =?iso-8859-1?Q?Noralf_Tr=F8nnes?= <noralf@tronnes.org>,
- CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Chen Feng <puck.chen@hisilicon.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
- Maxime Ripard <mripard@kernel.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
- nd <nd@arm.com>, Sean Paul <sean@poorly.run>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Philippe Cornu <philippe.cornu@st.com>, Vincent Abriou <vincent.abriou@st.com>,
- Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Rongrong Zou <zourongrong@gmail.com>, Brian Starkey <Brian.Starkey@arm.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Markus Reichl <m.reichl@fivetechno.de>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
+ Da Xue <da@lessconfused.com>,
+ linux-amarula <linux-amarula@amarulasolutions.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Akash Gajjar <akash@openedev.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 21, 2019 at 04:45:48PM -0500, Rob Herring wrote:
-> Add support in CMA helpers to handle callers specifying
-> DRM_MODE_DUMB_KERNEL_MAP flag. Existing behavior is maintained with this
-> change. drm_gem_cma_dumb_create() always creates a kernel mapping as
-> before. drm_gem_cma_dumb_create_internal() lets the caller set the flags
-> as desired. Therefore, update all the existing callers of
-> drm_gem_cma_dumb_create_internal() to also set the
-> DRM_MODE_DUMB_KERNEL_MAP flag.
-> =
+Sorry for the late reply, been stung by the mismatch use of ATF and U-Boot. If
+you're using U-Boot version before v2019.10, make sure to use the ATF version
+before this commit:
 
-> Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
-> Cc: Maxime Ripard <mripard@kernel.org>
-> Cc: Sean Paul <sean@poorly.run>
-> Cc: David Airlie <airlied@linux.ie>
-> Cc: Daniel Vetter <daniel@ffwll.ch>
-> Cc: "James (Qian) Wang" <james.qian.wang@arm.com>
-> Cc: Liviu Dudau <liviu.dudau@arm.com>
-> Cc: Brian Starkey <brian.starkey@arm.com>
-> Cc: Neil Armstrong <narmstrong@baylibre.com>
-> Cc: Kevin Hilman <khilman@baylibre.com>
-> Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-> Cc: Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>
-> Cc: Sandy Huang <hjc@rock-chips.com>
-> Cc: "Heiko St=FCbner" <heiko@sntech.de>
-> Cc: Yannick Fertre <yannick.fertre@st.com>
-> Cc: Philippe Cornu <philippe.cornu@st.com>
-> Cc: Benjamin Gaignard <benjamin.gaignard@linaro.org>
-> Cc: Vincent Abriou <vincent.abriou@st.com>
-> Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-> Cc: Alexandre Torgue <alexandre.torgue@st.com>
-> Cc: Chen-Yu Tsai <wens@csie.org>
-> Cc: linux-amlogic@lists.infradead.org
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-renesas-soc@vger.kernel.org
-> Cc: linux-rockchip@lists.infradead.org
-> Cc: linux-stm32@st-md-mailman.stormreply.com
-> Signed-off-by: Rob Herring <robh@kernel.org>
-> ---
->  .../gpu/drm/arm/display/komeda/komeda_kms.c   |  1 +
->  drivers/gpu/drm/arm/malidp_drv.c              |  1 +
->  drivers/gpu/drm/drm_gem_cma_helper.c          | 48 +++++++++++--------
->  drivers/gpu/drm/meson/meson_drv.c             |  1 +
->  drivers/gpu/drm/rcar-du/rcar_du_kms.c         |  1 +
->  drivers/gpu/drm/rockchip/rockchip_drm_gem.c   |  1 +
->  drivers/gpu/drm/stm/drv.c                     |  1 +
->  drivers/gpu/drm/sun4i/sun4i_drv.c             |  1 +
->  8 files changed, 36 insertions(+), 19 deletions(-)
-> =
+    commit 0aad563c74807195cc7fe2208d17e2d889157f1e (HEAD, tag: blacksheep, refs/bisect/bad)
+    Author: Kever Yang <kever.yang@rock-chips.com>
+    Date:   Thu Sep 19 10:37:36 2019 +0800
 
-> diff --git a/drivers/gpu/drm/arm/display/komeda/komeda_kms.c b/drivers/gp=
-u/drm/arm/display/komeda/komeda_kms.c
-> index d49772de93e0..7cf0dc4cbfc1 100644
-> --- a/drivers/gpu/drm/arm/display/komeda/komeda_kms.c
-> +++ b/drivers/gpu/drm/arm/display/komeda/komeda_kms.c
-> @@ -31,6 +31,7 @@ static int komeda_gem_cma_dumb_create(struct drm_file *=
-file,
->  	u32 pitch =3D DIV_ROUND_UP(args->width * args->bpp, 8);
->  =
+        rockchip: Update BL31_BASE to 0x40000
 
->  	args->pitch =3D ALIGN(pitch, mdev->chip.bus_width);
-> +	args->flags =3D DRM_MODE_DUMB_KERNEL_MAP;
+or use the master branch in git://git.denx.de/u-boot-rockchip.git .
+
+This is very important, or you'll be stuck at:
+
+    U-Boot TPL 2019.10-djw (Oct 22 2019 - 03:08:48)
+    Trying to boot from BOOTROM
+    Returning to boot ROM...
+
+    U-Boot SPL 2019.10-djw (Oct 22 2019 - 03:08:48 +0000)
+    Trying to boot from MMC1
+
+I have tried the following combination:
+
+ - U-Boot: v2019.10
+ - ATF: 382ddb3dd46a rockchip: Fix typo for TF content text
+ - Kernel: 5.4.0-rc3-next-20191017
+
+*Without* the pwm patch, all boot fine. Here's the full log:
+
+#+begin_src text
+U-Boot TPL 2019.10-djw (Oct 22 2019 - 03:51:17)
+Trying to boot from BOOTROM
+Returning to boot ROM...
+
+U-Boot SPL 2019.10-djw (Oct 22 2019 - 03:51:17 +0000)
+Trying to boot from MMC1
+
+
+U-Boot 2019.10-djw (Oct 22 2019 - 03:51:20 +0000)
+
+Model: Firefly ROC-RK3399-PC Board
+DRAM:  3.9 GiB
+MMC:   dwmmc@fe320000: 1, sdhci@fe330000: 0
+Loading Environment from EXT4... Card did not respond to voltage select!
+In:    serial@ff1a0000
+Out:   serial@ff1a0000
+Err:   serial@ff1a0000
+Model: Firefly ROC-RK3399-PC Board
+rockchip_dnl_key_pressed: adc_channel_single_shot fail!
+Net:
+Error: ethernet@fe300000 address not set.
+eth-1: ethernet@fe300000
+Hit any key to stop autoboot:  0
+Card did not respond to voltage select!
+switch to partitions #0, OK
+mmc1 is current device
+Scanning mmc 1:1...
+Found U-Boot script /boot/boot.scr
+2995 bytes read in 5 ms (585 KiB/s)
+## Executing script at 00500000
+Boot script loaded from mmc 1
+186 bytes read in 4 ms (44.9 KiB/s)
+6748991 bytes read in 290 ms (22.2 MiB/s)
+26163712 bytes read in 1110 ms (22.5 MiB/s)
+53831 bytes read in 10 ms (5.1 MiB/s)
+2698 bytes read in 8 ms (329.1 KiB/s)
+Applying kernel provided DT fixup script (rockchip-fixup.scr)
+## Executing script at 39000000
+## Loading init Ramdisk from Legacy Image at 04000000 ...
+   Image Name:   uInitrd
+   Image Type:   AArch64 Linux RAMDisk Image (gzip compressed)
+   Data Size:    6748927 Bytes = 6.4 MiB
+   Load Address: 00000000
+   Entry Point:  00000000
+   Verifying Checksum ... OK
+## Flattened Device Tree blob at 01f00000
+   Booting using the fdt blob at 0x1f00000
+   Loading Ramdisk to f58b0000, end f5f1faff ... OK
+   Loading Device Tree to 00000000f583a000, end 00000000f58affff ... OK
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd034]
+[    0.000000] Linux version 5.4.0-rc3-next-20191017-05460-g3ef845da3c3b-dirty (dujw@tchip14) (gcc version 5.4.0 20160609 (Ubuntu/Linaro 5.4.0-6ubuntu1~16.04.9)) #8 SMP PREEMPT Tue Oct 22 12:08:35 CST 2019
+[    0.000000] Machine model: Firefly ROC-RK3399-PC Board
+[    0.000000] earlycon: uart8250 at MMIO32 0x00000000ff1a0000 (options '')
+[    0.000000] printk: bootconsole [uart8250] enabled
+[    0.000000] efi: Getting EFI parameters from FDT:
+[    0.000000] efi: UEFI not found.
+[    0.000000] cma: Reserved 32 MiB at 0x000000003e000000
+[    0.000000] NUMA: No NUMA configuration found
+[    0.000000] NUMA: Faking a node at [mem 0x0000000000200000-0x00000000f7ffffff]
+[    0.000000] NUMA: NODE_DATA [mem 0xf77ef100-0xf77f0fff]
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000000200000-0x000000003fffffff]
+[    0.000000]   DMA32    [mem 0x0000000040000000-0x00000000f7ffffff]
+[    0.000000]   Normal   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000200000-0x00000000f7ffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000200000-0x00000000f7ffffff]
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.1 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: MIGRATE_INFO_TYPE not supported.
+[    0.000000] psci: SMC Calling Convention v1.1
+[    0.000000] percpu: Embedded 22 pages/cpu s52952 r8192 d28968 u90112
+[    0.000000] Detected VIPT I-cache on CPU0
+[    0.000000] CPU features: detected: ARM erratum 845719
+[    0.000000] CPU features: detected: GIC system register CPU interface
+[    0.000000] Speculative Store Bypass Disable mitigation not required
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 999432
+[    0.000000] Policy zone: DMA32
+[    0.000000] Kernel command line: root=UUID=78f156fe-c41f-4fdc-93f1-5d30f67659c8 rootwait rootfstype=ext4 console=ttyS2,1500000 earlycon=uart8250,mmio32,0xff1a0000 swiotlb=1 console=tty1 panic=10 consoleblank=0 loglevel=7 ubootpart=e636e926-01 usb-storage.quirks=0x2537:0x1066:u,0x2537:0x1068:u   cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory swapaccount=1
+[    0.000000] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] software IO TLB: mapped [mem 0x3dfc0000-0x3e000000] (0MB)
+[    0.000000] Memory: 3915000K/4061184K available (12092K kernel code, 1870K rwdata, 6464K rodata, 5056K init, 451K bss, 113416K reserved, 32768K cma-reserved)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=6, Nodes=1
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu:     RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=6.
+[    0.000000]  Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=6
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000] GICv3: GIC: Using split EOI/Deactivate mode
+[    0.000000] GICv3: 256 SPIs implemented
+[    0.000000] GICv3: 0 Extended SPIs implemented
+[    0.000000] GICv3: Distributor has no Range Selector support
+[    0.000000] GICv3: 16 PPIs implemented
+[    0.000000] GICv3: no VLPI support, no direct LPI support
+[    0.000000] GICv3: CPU0: found redistributor 0 region 0:0x00000000fef00000
+[    0.000000] ITS [mem 0xfee20000-0xfee3ffff]
+[    0.000000] ITS@0x00000000fee20000: allocated 65536 Devices @f6880000 (flat, esz 8, psz 64K, shr 0)
+[    0.000000] ITS: using cache flushing for cmd queue
+[    0.000000] GICv3: using LPI property table @0x00000000f6840000
+[    0.000000] GIC: using cache flushing for LPI property table
+[    0.000000] GICv3: CPU0: using allocated LPI pending table @0x00000000f6850000
+[    0.000000] GICv3: GIC: PPI partition interrupt-partition-0[0] { /cpus/cpu@0[0] /cpus/cpu@1[1] /cpus/cpu@2[2] /cpus/cpu@3[3] }
+[    0.000000] GICv3: GIC: PPI partition interrupt-partition-1[1] { /cpus/cpu@100[4] /cpus/cpu@101[5] }
+[    0.000000] random: get_random_bytes called from start_kernel+0x2bc/0x458 with crng_init=0
+[    0.000000] arch_timer: cp15 timer(s) running at 24.00MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
+[    0.000007] sched_clock: 56 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
+[    0.003549] Console: colour dummy device 80x25
+[    0.003991] printk: console [tty1] enabled
+[    0.004387] printk: bootconsole [uart8250] disabled
+[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd034]
+[    0.000000] Linux version 5.4.0-rc3-next-20191017-05460-g3ef845da3c3b-dirty (dujw@tchip14) (gcc version 5.4.0 20160609 (Ubuntu/Linaro 5.4.0-6ubuntu1~16.04.9)) #8 SMP PREEMPT Tue Oct 22 12:08:35 CST 2019
+[    0.000000] Machine model: Firefly ROC-RK3399-PC Board
+[    0.000000] earlycon: uart8250 at MMIO32 0x00000000ff1a0000 (options '')
+[    0.000000] printk: bootconsole [uart8250] enabled
+[    0.000000] efi: Getting EFI parameters from FDT:
+[    0.000000] efi: UEFI not found.
+[    0.000000] cma: Reserved 32 MiB at 0x000000003e000000
+[    0.000000] NUMA: No NUMA configuration found
+[    0.000000] NUMA: Faking a node at [mem 0x0000000000200000-0x00000000f7ffffff]
+[    0.000000] NUMA: NODE_DATA [mem 0xf77ef100-0xf77f0fff]
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000000200000-0x000000003fffffff]
+[    0.000000]   DMA32    [mem 0x0000000040000000-0x00000000f7ffffff]
+[    0.000000]   Normal   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000200000-0x00000000f7ffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000200000-0x00000000f7ffffff]
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.1 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: MIGRATE_INFO_TYPE not supported.
+[    0.000000] psci: SMC Calling Convention v1.1
+[    0.000000] percpu: Embedded 22 pages/cpu s52952 r8192 d28968 u90112
+[    0.000000] Detected VIPT I-cache on CPU0
+[    0.000000] CPU features: detected: ARM erratum 845719
+[    0.000000] CPU features: detected: GIC system register CPU interface
+[    0.000000] Speculative Store Bypass Disable mitigation not required
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 999432
+[    0.000000] Policy zone: DMA32
+[    0.000000] Kernel command line: root=UUID=78f156fe-c41f-4fdc-93f1-5d30f67659c8 rootwait rootfstype=ext4 console=ttyS2,1500000 earlycon=uart8250,mmio32,0xff1a0000 swiotlb=1 console=tty1 panic=10 consoleblank=0 loglevel=7 ubootpart=e636e926-01 usb-storage.quirks=0x2537:0x1066:u,0x2537:0x1068:u   cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory swapaccount=1
+[    0.000000] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] software IO TLB: mapped [mem 0x3dfc0000-0x3e000000] (0MB)
+[    0.000000] Memory: 3915000K/4061184K available (12092K kernel code, 1870K rwdata, 6464K rodata, 5056K init, 451K bss, 113416K reserved, 32768K cma-reserved)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=6, Nodes=1
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu:     RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=6.
+[    0.000000]  Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=6
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000] GICv3: GIC: Using split EOI/Deactivate mode
+[    0.000000] GICv3: 256 SPIs implemented
+[    0.000000] GICv3: 0 Extended SPIs implemented
+[    0.000000] GICv3: Distributor has no Range Selector support
+[    0.000000] GICv3: 16 PPIs implemented
+[    0.000000] GICv3: no VLPI support, no direct LPI support
+[    0.000000] GICv3: CPU0: found redistributor 0 region 0:0x00000000fef00000
+[    0.000000] ITS [mem 0xfee20000-0xfee3ffff]
+[    0.000000] ITS@0x00000000fee20000: allocated 65536 Devices @f6880000 (flat, esz 8, psz 64K, shr 0)
+[    0.000000] ITS: using cache flushing for cmd queue
+[    0.000000] GICv3: using LPI property table @0x00000000f6840000
+[    0.000000] GIC: using cache flushing for LPI property table
+[    0.000000] GICv3: CPU0: using allocated LPI pending table @0x00000000f6850000
+[    0.000000] GICv3: GIC: PPI partition interrupt-partition-0[0] { /cpus/cpu@0[0] /cpus/cpu@1[1] /cpus/cpu@2[2] /cpus/cpu@3[3] }
+[    0.000000] GICv3: GIC: PPI partition interrupt-partition-1[1] { /cpus/cpu@100[4] /cpus/cpu@101[5] }
+[    0.000000] random: get_random_bytes called from start_kernel+0x2bc/0x458 with crng_init=0
+[    0.000000] arch_timer: cp15 timer(s) running at 24.00MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
+[    0.000007] sched_clock: 56 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
+[    0.003549] Console: colour dummy device 80x25
+[    0.003991] printk: console [tty1] enabled
+[    0.004387] printk: bootconsole [uart8250] disabled
+[    0.004976] Calibrating delay loop (skipped), value calculated using timer frequency.. 48.00 BogoMIPS (lpj=96000)
+[    0.005011] pid_max: default: 32768 minimum: 301
+[    0.005161] LSM: Security Framework initializing
+[    0.005273] Mount-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.005319] Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.027598] ASID allocator initialised with 32768 entries
+[    0.035594] rcu: Hierarchical SRCU implementation.
+[    0.043750] Platform MSI: interrupt-controller@fee20000 domain created
+[    0.044174] PCI/MSI: /interrupt-controller@fee00000/interrupt-controller@fee20000 domain created
+[    0.049783] EFI services will not be available.
+[    0.055773] smp: Bringing up secondary CPUs ...
+[    0.088001] Detected VIPT I-cache on CPU1
+[    0.088041] GICv3: CPU1: found redistributor 1 region 0:0x00000000fef20000
+[    0.088059] GICv3: CPU1: using allocated LPI pending table @0x00000000f6860000
+[    0.088110] CPU1: Booted secondary processor 0x0000000001 [0x410fd034]
+[    0.120075] Detected VIPT I-cache on CPU2
+[    0.120107] GICv3: CPU2: found redistributor 2 region 0:0x00000000fef40000
+[    0.120122] GICv3: CPU2: using allocated LPI pending table @0x00000000f6870000
+[    0.120154] CPU2: Booted secondary processor 0x0000000002 [0x410fd034]
+[    0.152178] Detected VIPT I-cache on CPU3
+[    0.152206] GICv3: CPU3: found redistributor 3 region 0:0x00000000fef60000
+[    0.152220] GICv3: CPU3: using allocated LPI pending table @0x00000000f6900000
+[    0.152252] CPU3: Booted secondary processor 0x0000000003 [0x410fd034]
+[    0.184290] CPU features: detected: EL2 vector hardening
+[    0.184315] Detected PIPT I-cache on CPU4
+[    0.184347] GICv3: CPU4: found redistributor 100 region 0:0x00000000fef80000
+[    0.184361] GICv3: CPU4: using allocated LPI pending table @0x00000000f6910000
+[    0.184397] CPU4: Booted secondary processor 0x0000000100 [0x410fd082]
+[    0.216396] Detected PIPT I-cache on CPU5
+[    0.216422] GICv3: CPU5: found redistributor 101 region 0:0x00000000fefa0000
+[    0.216435] GICv3: CPU5: using allocated LPI pending table @0x00000000f6920000
+[    0.216464] CPU5: Booted secondary processor 0x0000000101 [0x410fd082]
+[    0.216579] smp: Brought up 1 node, 6 CPUs
+[    0.216911] SMP: Total of 6 processors activated.
+[    0.216932] CPU features: detected: 32-bit EL0 Support
+[    0.216953] CPU features: detected: CRC32 instructions
+[    0.231355] CPU: All CPU(s) started at EL2
+[    0.231417] alternatives: patching kernel code
+[    0.234632] devtmpfs: initialized
+[    0.251858] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.251915] futex hash table entries: 2048 (order: 5, 131072 bytes, linear)
+[    0.253910] pinctrl core: initialized pinctrl subsystem
+[    0.256273] DMI not present or invalid.
+[    0.256848] NET: Registered protocol family 16
+[    0.259401] DMA: preallocated 256 KiB pool for atomic allocations
+[    0.259440] audit: initializing netlink subsys (disabled)
+[    0.259661] audit: type=2000 audit(0.256:1): state=initialized audit_enabled=0 res=1
+[    0.261941] cpuidle: using governor menu
+[    0.262782] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+[    0.265709] Serial: AMBA PL011 UART driver
+[    0.316763] HugeTLB registered 1.00 GiB page size, pre-allocated 0 pages
+[    0.316790] HugeTLB registered 32.0 MiB page size, pre-allocated 0 pages
+[    0.316807] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.316823] HugeTLB registered 64.0 KiB page size, pre-allocated 0 pages
+[    0.320105] cryptd: max_cpu_qlen set to 1000
+[    0.325843] ACPI: Interpreter disabled.
+[    0.327922] dc_12v: supplied by vcc_vbus_typec0
+[    0.329430] vcc_sys: supplied by dc_12v
+[    0.330330] iommu: Default domain type: Translated
+[    0.332313] vgaarb: loaded
+[    0.332696] SCSI subsystem initialized
+[    0.333164] usbcore: registered new interface driver usbfs
+[    0.333222] usbcore: registered new interface driver hub
+[    0.333309] usbcore: registered new device driver usb
+[    0.334563] pps_core: LinuxPPS API ver. 1 registered
+[    0.334578] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.334606] PTP clock support registered
+[    0.334824] EDAC MC: Ver: 3.0.0
+[    0.336545] FPGA manager framework
+[    0.336636] Advanced Linux Sound Architecture Driver Initialized.
+[    0.337584] clocksource: Switched to clocksource arch_sys_counter
+[    0.337772] VFS: Disk quotas dquot_6.6.0
+[    0.337842] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.338047] pnp: PnP ACPI: disabled
+[    0.345726] thermal_sys: Registered thermal governor 'step_wise'
+[    0.345730] thermal_sys: Registered thermal governor 'power_allocator'
+[    0.346251] NET: Registered protocol family 2
+[    0.346695] tcp_listen_portaddr_hash hash table entries: 2048 (order: 3, 32768 bytes, linear)
+[    0.346790] TCP established hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    0.347148] TCP bind hash table entries: 32768 (order: 7, 524288 bytes, linear)
+[    0.347824] TCP: Hash tables configured (established 32768 bind 32768)
+[    0.347954] UDP hash table entries: 2048 (order: 4, 65536 bytes, linear)
+[    0.348100] UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes, linear)
+[    0.348491] NET: Registered protocol family 1
+[    0.352990] RPC: Registered named UNIX socket transport module.
+[    0.353008] RPC: Registered udp transport module.
+[    0.353021] RPC: Registered tcp transport module.
+[    0.353033] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.353053] PCI: CLS 0 bytes, default 64
+[    0.353218] Unpacking initramfs...
+[    0.791121] Freeing initrd memory: 6588K
+[    0.792233] hw perfevents: enabled with armv8_cortex_a53 PMU driver, 7 counters available
+[    0.792578] hw perfevents: enabled with armv8_cortex_a72 PMU driver, 7 counters available
+[    0.792994] kvm [1]: IPA Size Limit: 40bits
+[    0.793782] kvm [1]: vgic-v2@fff20000
+[    0.793818] kvm [1]: GIC system register CPU interface enabled
+[    0.794016] kvm [1]: vgic interrupt IRQ10
+[    0.794241] kvm [1]: Hyp mode initialized successfully
+[    0.884124] Initialise system trusted keyrings
+[    0.884329] workingset: timestamp_bits=44 max_order=20 bucket_order=0
+[    0.891824] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.892624] NFS: Registering the id_resolver key type
+[    0.892658] Key type id_resolver registered
+[    0.892671] Key type id_legacy registered
+[    0.892692] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+[    0.892878] 9p: Installing v9fs 9p2000 file system support
+[    0.920345] Key type asymmetric registered
+[    0.920367] Asymmetric key parser 'x509' registered
+[    0.920423] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 245)
+[    0.920442] io scheduler mq-deadline registered
+[    0.920456] io scheduler kyber registered
+[    0.926994] vcc5v0_host: supplied by vcc_sys
+[    0.928594] vcc_vbus_typec1: supplied by vcc_sys
+[    0.943953] EINJ: ACPI disabled.
+[    0.953391] dma-pl330 ff6d0000.dma-controller: Loaded driver for PL330 DMAC-241330
+[    0.953419] dma-pl330 ff6d0000.dma-controller:       DBUFF-32x8bytes Num_Chans-6 Num_Peri-12 Num_Events-12
+[    0.954648] dma-pl330 ff6e0000.dma-controller: Loaded driver for PL330 DMAC-241330
+[    0.954674] dma-pl330 ff6e0000.dma-controller:       DBUFF-128x8bytes Num_Chans-8 Num_Peri-20 Num_Events-16
+[    0.961527] pwm-regulator: supplied by regulator-dummy
+[    0.961783] vcc3v3_sys: supplied by vcc_sys
+[    0.967643] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    0.969899] ff180000.serial: ttyS0 at MMIO 0xff180000 (irq = 35, base_baud = 1500000) is a 16550A
+[    0.970665] ff1a0000.serial: ttyS2 at MMIO 0xff1a0000 (irq = 36, base_baud = 1500000) is a 16550A
+[    1.070498] printk: console [ttyS2] enabled
+[    1.072690] SuperH (H)SCI(F) driver initialized
+[    1.074098] msm_serial: driver initialized
+[    1.076752] cacheinfo: Unable to detect cache hierarchy for CPU 0
+[    1.085950] loop: module loaded
+[    1.093551] libphy: Fixed MDIO Bus: probed
+[    1.094237] tun: Universal TUN/TAP device driver, 1.6
+[    1.095944] thunder_xcv, ver 1.0
+[    1.096279] thunder_bgx, ver 1.0
+[    1.096609] nicpf, ver 1.0
+[    1.097937] hclge is initializing
+[    1.098241] hns3: Hisilicon Ethernet Network Driver for Hip08 Family - version
+[    1.098884] hns3: Copyright (c) 2017 Huawei Corporation.
+[    1.099409] e1000e: Intel(R) PRO/1000 Network Driver - 3.2.6-k
+[    1.099928] e1000e: Copyright(c) 1999 - 2015 Intel Corporation.
+[    1.100494] igb: Intel(R) Gigabit Ethernet Network Driver - version 5.6.0-k
+[    1.101112] igb: Copyright (c) 2007-2014 Intel Corporation.
+[    1.101664] igbvf: Intel(R) Gigabit Virtual Function Network Driver - version 2.4.0-k
+[    1.102360] igbvf: Copyright (c) 2009 - 2012 Intel Corporation.
+[    1.103463] sky2: driver version 1.30
+[    1.104946] VFIO - User Level meta-driver version: 0.3
+[    1.112306] OF: graph: no port node found in /syscon@ff770000/usb2-phy@e450/otg-port
+[    1.122046] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    1.122637] ehci-pci: EHCI PCI platform driver
+[    1.123070] ehci-platform: EHCI generic platform driver
+[    1.125777] ehci-platform fe380000.usb: EHCI Host Controller
+[    1.126303] ehci-platform fe380000.usb: new USB bus registered, assigned bus number 1
+[    1.127102] ehci-platform fe380000.usb: irq 27, io mem 0xfe380000
+[    1.141619] ehci-platform fe380000.usb: USB 2.0 started, EHCI 1.00
+[    1.142803] hub 1-0:1.0: USB hub found
+[    1.143180] hub 1-0:1.0: 1 port detected
+[    1.146012] ehci-platform fe3c0000.usb: EHCI Host Controller
+[    1.146535] ehci-platform fe3c0000.usb: new USB bus registered, assigned bus number 2
+[    1.147342] ehci-platform fe3c0000.usb: irq 29, io mem 0xfe3c0000
+[    1.161610] ehci-platform fe3c0000.usb: USB 2.0 started, EHCI 1.00
+[    1.162711] hub 2-0:1.0: USB hub found
+[    1.163078] hub 2-0:1.0: 1 port detected
+[    1.163962] ehci-orion: EHCI orion driver
+[    1.164545] ehci-exynos: EHCI EXYNOS driver
+[    1.165087] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    1.165682] ohci-pci: OHCI PCI platform driver
+[    1.166131] ohci-platform: OHCI generic platform driver
+[    1.166788] ohci-platform fe3a0000.usb: Generic Platform OHCI controller
+[    1.167402] ohci-platform fe3a0000.usb: new USB bus registered, assigned bus number 3
+[    1.168187] ohci-platform fe3a0000.usb: irq 28, io mem 0xfe3a0000
+[    1.230303] hub 3-0:1.0: USB hub found
+[    1.230677] hub 3-0:1.0: 1 port detected
+[    1.231464] ohci-platform fe3e0000.usb: Generic Platform OHCI controller
+[    1.232077] ohci-platform fe3e0000.usb: new USB bus registered, assigned bus number 4
+[    1.232859] ohci-platform fe3e0000.usb: irq 30, io mem 0xfe3e0000
+[    1.294303] hub 4-0:1.0: USB hub found
+[    1.294681] hub 4-0:1.0: 1 port detected
+[    1.295532] ohci-exynos: OHCI EXYNOS driver
+[    1.296673] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    1.297184] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 5
+[    1.298024] xhci-hcd xhci-hcd.0.auto: hcc params 0x0220fe64 hci version 0x110 quirks 0x0000000002010010
+[    1.298874] xhci-hcd xhci-hcd.0.auto: irq 221, io mem 0xfe800000
+[    1.300138] hub 5-0:1.0: USB hub found
+[    1.300508] hub 5-0:1.0: 1 port detected
+[    1.301147] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    1.301672] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 6
+[    1.302368] xhci-hcd xhci-hcd.0.auto: Host supports USB 3.0 SuperSpeed
+[    1.303008] usb usb6: We don't know the algorithms for LPM for this host, disabling LPM.
+[    1.304247] hub 6-0:1.0: USB hub found
+[    1.304615] hub 6-0:1.0: 1 port detected
+[    1.305401] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+[    1.305931] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 7
+[    1.306740] xhci-hcd xhci-hcd.1.auto: hcc params 0x0220fe64 hci version 0x110 quirks 0x0000000002010010
+[    1.307613] xhci-hcd xhci-hcd.1.auto: irq 222, io mem 0xfe900000
+[    1.308849] hub 7-0:1.0: USB hub found
+[    1.309217] hub 7-0:1.0: 1 port detected
+[    1.309891] xhci-hcd xhci-hcd.1.auto: xHCI Host Controller
+[    1.310392] xhci-hcd xhci-hcd.1.auto: new USB bus registered, assigned bus number 8
+[    1.311082] xhci-hcd xhci-hcd.1.auto: Host supports USB 3.0 SuperSpeed
+[    1.311718] usb usb8: We don't know the algorithms for LPM for this host, disabling LPM.
+[    1.312952] hub 8-0:1.0: USB hub found
+[    1.313323] hub 8-0:1.0: 1 port detected
+[    1.314480] usbcore: registered new interface driver usb-storage
+[    1.320093] i2c /dev entries driver
+[    1.324485] rk808 0-001b: chip id: 0x0
+[    1.328883] rk808-regulator rk808-regulator: there is no dvs0 gpio
+[    1.329459] rk808-regulator rk808-regulator: there is no dvs1 gpio
+[    1.330110] DCDC_REG1: supplied by vcc_sys
+[    1.331413] DCDC_REG2: supplied by vcc_sys
+[    1.332396] DCDC_REG3: supplied by vcc_sys
+[    1.332977] DCDC_REG4: supplied by vcc_sys
+[    1.333911] LDO_REG1: supplied by vcc_sys
+[    1.335603] LDO_REG2: supplied by vcc_sys
+[    1.336986] LDO_REG3: supplied by vcc_sys
+[    1.338510] LDO_REG4: supplied by vcc_sys
+[    1.340068] LDO_REG5: supplied by vcc_sys
+[    1.341447] LDO_REG6: supplied by vcc_sys
+[    1.343009] LDO_REG7: supplied by vcc_sys
+[    1.344422] LDO_REG8: supplied by vcc_sys
+[    1.345946] SWITCH_REG1: supplied by vcc3v3_sys
+[    1.346700] SWITCH_REG2: supplied by vcc3v3_sys
+[    1.348527] fan53555-regulator 0-0040: FAN53555 Option[8] Rev[1] Detected!
+[    1.349169] fan53555-reg: supplied by vcc_sys
+[    1.350855] vcc1v8_s3: supplied by vcc_1v8
+[    1.351881] fan53555-regulator 0-0041: FAN53555 Option[8] Rev[1] Detected!
+[    1.352511] fan53555-reg: supplied by vcc_sys
+[    1.368314] sdhci: Secure Digital Host Controller Interface driver
+[    1.368862] sdhci: Copyright(c) Pierre Ossman
+[    1.369505] Synopsys Designware Multimedia Card Interface Driver
+[    1.370641] dwmmc_rockchip fe320000.dwmmc: IDMAC supports 32-bit address mode.
+[    1.371285] dwmmc_rockchip fe320000.dwmmc: Using internal DMA controller.
+[    1.371886] dwmmc_rockchip fe320000.dwmmc: Version ID is 270a
+[    1.372413] dwmmc_rockchip fe320000.dwmmc: DW MMC controller at irq 25,32 bit host data width,256 deep fifo
+[    1.373324] dwmmc_rockchip fe320000.dwmmc: Got CD GPIO
+[    1.385648] mmc_host mmc0: Bus speed (slot 0) = 400000Hz (slot req 400000Hz, actual 400000HZ div = 0)
+[    1.399877] sdhci-pltfm: SDHCI platform and OF driver helper
+[    1.401041] mmc1: CQHCI version 5.10
+[    1.401266] random: fast init done
+[    1.426404] mmc1: SDHCI controller on fe330000.sdhci [fe330000.sdhci] using ADMA
+[    1.428236] ledtrig-cpu: registered to indicate activity on CPUs
+[    1.429501] usbcore: registered new interface driver usbhid
+[    1.430031] usbhid: USB HID core driver
+[    1.433350] NET: Registered protocol family 17
+[    1.433842] 9pnet: Installing 9P2000 support
+[    1.434243] Key type dns_resolver registered
+[    1.435281] registered taskstats version 1
+[    1.435649] Loading compiled-in X.509 certificates
+[    1.451542] hctosys: unable to open rtc device (rtc0)
+[    1.452769] ALSA device list:
+[    1.453036]   No soundcards found.
+[    1.455546] Freeing unused kernel memory: 5056K
+[    1.457774] Run /init as init process
+[    1.463868] mmc_host mmc0: Bus speed (slot 0) = 50000000Hz (slot req 50000000Hz, actual 50000000HZ div = 0)
+[    1.464836] mmc0: new high speed SDHC card at address aaaa
+[    1.465825] mmcblk0: mmc0:aaaa SC16G 14.8 GiB
+[    1.473051]  mmcblk0: p1
+[    1.917928] EXT4-fs (mmcblk0p1): mounted filesystem with writeback data mode. Opts: (null)
+[    2.460565] systemd[1]: System time before build time, advancing clock.
+[    2.486504] systemd[1]: systemd 237 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD -IDN2 +IDN -PCRE2 default-hierarchy=hybrid)
+[    2.488625] systemd[1]: Detected architecture arm64.
+[    2.529981] systemd[1]: Set hostname to <roc>.
+[    2.560455] ttyS2 - failed to request DMA
+[    2.674962] systemd[1]: File /lib/systemd/system/systemd-journald.service:36 configures an IP firewall (IPAddressDeny=any), but the local system does not support BPF/cgroup based firewalling.
+[    2.676456] systemd[1]: Proceeding WITHOUT firewalling in effect! (This warning is only shown for the first loaded unit using IP firewalling.)
+[    2.748456] systemd[1]: /lib/systemd/system/rk3399-bluetooth.service:11: Support for option SysVStartPriority= has been removed and it is ignored
+[    2.794574] random: systemd: uninitialized urandom read (16 bytes read)
+[    2.795190] systemd[1]: Reached target System Time Synchronized.
+[    2.795997] random: systemd: uninitialized urandom read (16 bytes read)
+[    2.796650] systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+[    2.797433] random: systemd: uninitialized urandom read (16 bytes read)
+[    2.798109] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[    2.798858] systemd[1]: Reached target Local Encrypted Volumes.
+[    2.902750] EXT4-fs (mmcblk0p1): re-mounted. Opts: commit=600,errors=remount-ro
+
+Ubuntu Bionic with Armbian Linux ttyS2
+
+roc login:
+#+end_src
+
+
+Heiko Stuebner <heiko@sntech.de> writes:
+
+> Am Donnerstag, 17. Oktober 2019, 15:49:04 CEST schrieb Jagan Teki:
+>> Hi Markus,
+>>
+>> On Thu, Oct 17, 2019 at 6:56 PM Markus Reichl <m.reichl@fivetechno.de> wrote:
 >
+>> >
+>> > Hi Jagan,
+>> >
+>> > your patch fixes booting my rk3399-roc-pc with 5.4.0-rc3-next-20191017.
+>> > Without your patch roc-pc hangs here:
+>> > [    9.703526] pwm-regulator: supplied by regulator-dummy
+>>
+>> Thanks for testing this.
+>>
+>> Indeed the same change available in BSP
+>> https://github.com/FireflyTeam/kernel/blob/stable-4.4-rk3399-linux/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi#L1184
+>
+> Still there is no "active" pinctrl for the mainline pwm driver at all.
+> So while that may cause a different handling in the vendor kernel in
+> mainline you just cause the driver to not set any pinctrl setting at all.
+> Aka the pin settings stay at what they are when coming from the bootloader.
+>
+> So maybe you just need to compare the state the pin is on in comparison
+> to what the new (failing?) pinctrl setting is doing.
+>
+> Heiko
+>
+>> I'm waiting for Levin response on this issue, need to update commit
+>> information accordingly.
+>>
+>> >
+>> > Am 16.10.19 um 19:09 schrieb Jagan Teki:
+>> > > Hi Levin,
+>> > >
+>> > > On Tue, Oct 8, 2019 at 8:42 AM <djw@t-chip.com.cn> wrote:
+>> > >>
+>> > >> Jagan Teki <jagan@amarulasolutions.com> writes:
+>> > >>
+>> > >> > Hi Heiko,
+>> > >> >
+>> > >> > On Mon, Sep 30, 2019 at 2:51 AM Heiko Stuebner <heiko@sntech.de> wrote:
+>> > >> >>
+>> > >> >> Hi Jagan,
+>> > >> >>
+>> > >> >> Am Donnerstag, 19. September 2019, 07:28:17 CEST schrieb Jagan Teki:
+>> > >> >> > ROC-PC is not able to boot linux console if PWM2_d is
+>> > >> >> > unattached to any pinctrl logic.
+>> > >> >> >
+>> > >> >> > To be precise the linux boot hang with last logs as,
+>> > >> >> > ...
+>> > >> >> > .....
+>> > >> >> > [    0.003367] Console: colour dummy device 80x25
+>> > >> >> > [    0.003788] printk: console [tty0] enabled
+>> > >> >> > [    0.004178] printk: bootconsole [uart8250] disabled
+>> > >> >> >
+>> > >> >> > In ROC-PC the PWM2_d pin is connected to LOG_DVS_PWM of
+>> > >> >> > VDD_LOG. So, for normal working operations this needs to
+>> > >> >> > active and pull-down.
+>> > >> >> >
+>> > >> >> > This patch fix, by attaching pinctrl active and pull-down
+>> > >> >> > the pwm2.
+>> > >> >>
+>> > >> >> This looks highly dubious on first glance. The pwm subsystem nor
+>> > >> >> the Rockchip pwm driver do not do any pinctrl handling.
+>> > >> >>
+>> > >> >> So I don't really see where that "active" pinctrl state is supposed
+>> > >> >> to come from.
+>> > >> >>
+>> > >> >> Comparing with the pwm driver in the vendor tree I see that there
+>> > >> >> is such a state defined there. But that code there also looks strange
+>> > >> >> as that driver never again leaves this active state after entering it.
+>> > >> >>
+>> > >> >> Also for example all the Gru devices run with quite a number of pwm-
+>> > >> >> regulators without needing additional fiddling with the pwm itself, so
+>> > >> >> I don't really see why that should be different here.
+>> > >> >
+>> > >> > I deed, I was supposed to think the same. but the vendor kernel dts
+>> > >> > from firefly do follow the pwm2 pinctrl [1]. I wouldn't find any
+>> > >> > information other than this vensor information, ie one of the reason I
+>> > >> > have marked "Levin Du" who initially supported this board.
+>> > >> >
+>> > >> > One, think I have seen was this pinctrl active fixed the boot hang.
+>> > >> > any inputs from would be very helpful.
+>> > >> >
+>> > >> > Levin Du, any inputs?
+>> > >> >
+>> > >> > [1] https://github.com/FireflyTeam/kernel/blob/stable-4.4-rk3399-linux/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi#L1184> > >> >
+>> > >>
+>> > >> A grep of the `pwm2` shows that there's such block in rk3399-nanopi4.dtsi:
+>> > >>
+>> > >>     &pwm2 {
+>> > >>             pinctrl-names = "active";
+>> > >>             pinctrl-0 = <&pwm2_pin_pull_down>;
+>> > >>             status = "okay";
+>> > >>     };
+>> > >>
+>> > >> But last time I checked, using the mainline U-Boot (the roc-rk3399-pc is
+>> > >> in mainline now) with mainline linux v5.2-rc7, no such setting is
+>> > >> necessary, and the board boots happily.
+>> > >>
+>> > >> I cannot find the use of "active" pinctrl state in the
+>> > >> `drivers/pwm/pwm-rockchip.c`. If the pinctrl state needs to be setup as
+>> > >> default, the `pinctrl-names` needs to be "default" or "init" (see
+>> > >> `drivers/base/pinctrl.c`) .
+>> > >>
+>> > >> Jagan, what version of board do you use? I checked with
+>> > >> "ROC-RK3399-PC-V1.0-A 2018-07-12".
+>> > >
+>> > > I have ROC-RK3399-PC-V1.A 2018.09.25 and powering with TYPE-C0 port.
+>> > >
+>> > > And here the boot log
+>> > >
+>> > > [    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd034]
+>> > > [    0.000000] Linux version 5.4.0-rc3-next-20191016
+>> > > (jagan@jagan-XPS-13-9350) (gcc version 6.3.1 20170109 (Linaro GCC
+>> > > 6.3-2017.02)) #1 SMP PREEMPT Wed Oct 16 21:17:23 IST 2019
+>> > > [    0.000000] Machine model: Firefly ROC-RK3399-PC Board
+>> > > [    0.000000] earlycon: uart8250 at MMIO32 0x00000000ff1a0000 (options '')
+>> > > [    0.000000] printk: bootconsole [uart8250] enabled
+>> > > [    0.000000] efi: Getting EFI parameters from FDT:
+>> > > [    0.000000] efi: UEFI not found.
+>> > > [    0.000000] cma: Reserved 32 MiB at 0x000000003e000000
+>> > > [    0.000000] NUMA: No NUMA configuration found
+>> > > [    0.000000] NUMA: Faking a node at [mem
+>> > > 0x0000000000200000-0x00000000f7ffffff]
+>> > > [    0.000000] NUMA: NODE_DATA [mem 0xf77ef100-0xf77f0fff]
+>> > > [    0.000000] Zone ranges:
+>> > > [    0.000000]   DMA      [mem 0x0000000000200000-0x000000003fffffff]
+>> > > [    0.000000]   DMA32    [mem 0x0000000040000000-0x00000000f7ffffff]
+>> > > [    0.000000]   Normal   empty
+>> > > [    0.000000] Movable zone start for each node
+>> > > [    0.000000] Early memory node ranges
+>> > > [    0.000000]   node   0: [mem 0x0000000000200000-0x00000000f7ffffff]
+>> > > [    0.000000] Initmem setup node 0 [mem 0x0000000000200000-0x00000000f7ffffff]
+>> > > [    0.000000] psci: probing for conduit method from DT.
+>> > > [    0.000000] psci: PSCIv1.1 detected in firmware.
+>> > > [    0.000000] psci: Using standard PSCI v0.2 function IDs
+>> > > [    0.000000] psci: MIGRATE_INFO_TYPE not supported.
+>> > > [    0.000000] psci: SMC Calling Convention v1.1
+>> > > [    0.000000] percpu: Embedded 22 pages/cpu s52952 r8192 d28968 u90112
+>> > > [    0.000000] Detected VIPT I-cache on CPU0
+>> > > [    0.000000] CPU features: detected: ARM erratum 845719
+>> > > [    0.000000] CPU features: detected: GIC system register CPU interface
+>> > > [    0.000000] Speculative Store Bypass Disable mitigation not required
+>> > > [    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 999432
+>> > > [    0.000000] Policy zone: DMA32
+>> > > [    0.000000] Kernel command line:
+>> > > earlycon=uart8250,mmio32,0xff1a0000 root=/dev/mmcblk1p1 rootwait
+>> > > [    0.000000] Dentry cache hash table entries: 524288 (order: 10,
+>> > > 4194304 bytes, linear)
+>> > > [    0.000000] Inode-cache hash table entries: 262144 (order: 9,
+>> > > 2097152 bytes, linear)
+>> > > [    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+>> > > [    0.000000] software IO TLB: mapped [mem 0x3a000000-0x3e000000] (64MB)
+>> > > [    0.000000] Memory: 3856004K/4061184K available (12028K kernel
+>> > > code, 1870K rwdata, 6440K rodata, 5056K init, 451K bss, 172412K
+>> > > reserved, 32768K cma-reserved)
+>> > > [    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=6, Nodes=1
+>> > > [    0.000000] rcu: Preemptible hierarchical RCU implementation.
+>> > > [    0.000000] rcu:     RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=6.
+>> > > [    0.000000]  Tasks RCU enabled.
+>> > > [    0.000000] rcu: RCU calculated value of scheduler-enlistment delay
+>> > > is 25 jiffies.
+>> > > [    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=6
+>> > > [    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+>> > > [    0.000000] GICv3: GIC: Using split EOI/Deactivate mode
+>> > > [    0.000000] GICv3: 256 SPIs implemented
+>> > > [    0.000000] GICv3: 0 Extended SPIs implemented
+>> > > [    0.000000] GICv3: Distributor has no Range Selector support
+>> > > [    0.000000] GICv3: 16 PPIs implemented
+>> > > [    0.000000] GICv3: no VLPI support, no direct LPI support
+>> > > [    0.000000] GICv3: CPU0: found redistributor 0 region 0:0x00000000fef00000
+>> > > [    0.000000] ITS [mem 0xfee20000-0xfee3ffff]
+>> > > [    0.000000] ITS@0x00000000fee20000: allocated 65536 Devices
+>> > > @f6880000 (flat, esz 8, psz 64K, shr 0)
+>> > > [    0.000000] ITS: using cache flushing for cmd queue
+>> > > [    0.000000] GICv3: using LPI property table @0x00000000f6840000
+>> > > [    0.000000] GIC: using cache flushing for LPI property table
+>> > > [    0.000000] GICv3: CPU0: using allocated LPI pending table
+>> > > @0x00000000f6850000
+>> > > [    0.000000] GICv3: GIC: PPI partition interrupt-partition-0[0] {
+>> > > /cpus/cpu@0[0] /cpus/cpu@1[1] /cpus/cpu@2[2] /cpus/cpu@3[3] }
+>> > > [    0.000000] GICv3: GIC: PPI partition interrupt-partition-1[1] {
+>> > > /cpus/cpu@100[4] /cpus/cpu@101[5] }
+>> > > [    0.000000] random: get_random_bytes called from
+>> > > start_kernel+0x2b8/0x454 with crng_init=0
+>> > > [    0.000000] arch_timer: cp15 timer(s) running at 24.00MHz (phys).
+>> > > [    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff
+>> > > max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
+>> > > [    0.000006] sched_clock: 56 bits at 24MHz, resolution 41ns, wraps
+>> > > every 4398046511097ns
+>> > > [    0.003201] Console: colour dummy device 80x25
+>> > > [    0.003624] printk: console [tty0] enabled
+>> > > [    0.004020] printk: bootconsole [uart8250] disabled
+>> >
+>> > I had to put "console=ttyS2,1500000" in kernel command line to get further logging beyond this point.
+>>
+>> Noted, thanks.
+>>
+--
+Levin Du
 
-Hi Rob:
 
-komeda doesn't need the kernel map either, so you can del this line for kom=
-eda.
-and with this.
-
-Reviewed-by: James Qian Wang (Arm Technology China) <james.qian.wang@arm.co=
-m>
-
-
->  	return drm_gem_cma_dumb_create_internal(file, dev, args);
->  }
-> diff --git a/drivers/gpu/drm/arm/malidp_drv.c b/drivers/gpu/drm/arm/malid=
-p_drv.c
-> index 8a76315aaa0f..aeb1a779ecc1 100644
-> --- a/drivers/gpu/drm/arm/malidp_drv.c
-> +++ b/drivers/gpu/drm/arm/malidp_drv.c
-> @@ -465,6 +465,7 @@ static int malidp_dumb_create(struct drm_file *file_p=
-riv,
->  	u8 alignment =3D malidp_hw_get_pitch_align(malidp->dev, 1);
->  =
-
->  	args->pitch =3D ALIGN(DIV_ROUND_UP(args->width * args->bpp, 8), alignme=
-nt);
-> +	args->flags =3D DRM_MODE_DUMB_KERNEL_MAP;
->  =
-
->  	return drm_gem_cma_dumb_create_internal(file_priv, drm, args);
->  }
-> diff --git a/drivers/gpu/drm/drm_gem_cma_helper.c b/drivers/gpu/drm/drm_g=
-em_cma_helper.c
-> index 4cebfe01e6ea..f91e9e8adeaf 100644
-> --- a/drivers/gpu/drm/drm_gem_cma_helper.c
-> +++ b/drivers/gpu/drm/drm_gem_cma_helper.c
-> @@ -78,21 +78,8 @@ __drm_gem_cma_create(struct drm_device *drm, size_t si=
-ze)
->  	return ERR_PTR(ret);
->  }
->  =
-
-> -/**
-> - * drm_gem_cma_create - allocate an object with the given size
-> - * @drm: DRM device
-> - * @size: size of the object to allocate
-> - *
-> - * This function creates a CMA GEM object and allocates a contiguous chu=
-nk of
-> - * memory as backing store. The backing memory has the writecombine attr=
-ibute
-> - * set.
-> - *
-> - * Returns:
-> - * A struct drm_gem_cma_object * on success or an ERR_PTR()-encoded nega=
-tive
-> - * error code on failure.
-> - */
-> -struct drm_gem_cma_object *drm_gem_cma_create(struct drm_device *drm,
-> -					      size_t size)
-> +static struct drm_gem_cma_object *
-> +drm_gem_cma_create_flags(struct drm_device *drm, size_t size, u32 flags)
->  {
->  	struct drm_gem_cma_object *cma_obj;
->  	int ret;
-> @@ -103,6 +90,9 @@ struct drm_gem_cma_object *drm_gem_cma_create(struct d=
-rm_device *drm,
->  	if (IS_ERR(cma_obj))
->  		return cma_obj;
->  =
-
-> +	if (!(flags & DRM_MODE_DUMB_KERNEL_MAP))
-> +		cma_obj->dma_attrs |=3D DMA_ATTR_NO_KERNEL_MAPPING;
-> +
->  	cma_obj->vaddr =3D dma_alloc_attrs(drm->dev, size, &cma_obj->paddr,
->  					 GFP_KERNEL | __GFP_NOWARN,
->  					 cma_obj->dma_attrs);
-> @@ -119,6 +109,25 @@ struct drm_gem_cma_object *drm_gem_cma_create(struct=
- drm_device *drm,
->  	drm_gem_object_put_unlocked(&cma_obj->base);
->  	return ERR_PTR(ret);
->  }
-> +
-> +/**
-> + * drm_gem_cma_create - allocate an object with the given size
-> + * @drm: DRM device
-> + * @size: size of the object to allocate
-> + *
-> + * This function creates a CMA GEM object and allocates a contiguous chu=
-nk of
-> + * memory as backing store. The backing memory has the writecombine attr=
-ibute
-> + * set.
-> + *
-> + * Returns:
-> + * A struct drm_gem_cma_object * on success or an ERR_PTR()-encoded nega=
-tive
-> + * error code on failure.
-> + */
-> +struct drm_gem_cma_object *drm_gem_cma_create(struct drm_device *drm,
-> +					      size_t size)
-> +{
-> +	return drm_gem_cma_create_flags(drm, size, DRM_MODE_DUMB_KERNEL_MAP);
-> +}
->  EXPORT_SYMBOL_GPL(drm_gem_cma_create);
->  =
-
->  /**
-> @@ -139,14 +148,14 @@ EXPORT_SYMBOL_GPL(drm_gem_cma_create);
->   */
->  static struct drm_gem_cma_object *
->  drm_gem_cma_create_with_handle(struct drm_file *file_priv,
-> -			       struct drm_device *drm, size_t size,
-> +			       struct drm_device *drm, size_t size, u32 flags,
->  			       uint32_t *handle)
->  {
->  	struct drm_gem_cma_object *cma_obj;
->  	struct drm_gem_object *gem_obj;
->  	int ret;
->  =
-
-> -	cma_obj =3D drm_gem_cma_create(drm, size);
-> +	cma_obj =3D drm_gem_cma_create_flags(drm, size, flags);
->  	if (IS_ERR(cma_obj))
->  		return cma_obj;
->  =
-
-> @@ -225,7 +234,7 @@ int drm_gem_cma_dumb_create_internal(struct drm_file =
-*file_priv,
->  		args->size =3D args->pitch * args->height;
->  =
-
->  	cma_obj =3D drm_gem_cma_create_with_handle(file_priv, drm, args->size,
-> -						 &args->handle);
-> +						 args->flags, &args->handle);
->  	return PTR_ERR_OR_ZERO(cma_obj);
->  }
->  EXPORT_SYMBOL_GPL(drm_gem_cma_dumb_create_internal);
-> @@ -256,9 +265,10 @@ int drm_gem_cma_dumb_create(struct drm_file *file_pr=
-iv,
->  =
-
->  	args->pitch =3D DIV_ROUND_UP(args->width * args->bpp, 8);
->  	args->size =3D args->pitch * args->height;
-> +	args->flags =3D DRM_MODE_DUMB_KERNEL_MAP;
->  =
-
->  	cma_obj =3D drm_gem_cma_create_with_handle(file_priv, drm, args->size,
-> -						 &args->handle);
-> +						 args->flags, &args->handle);
->  	return PTR_ERR_OR_ZERO(cma_obj);
->  }
->  EXPORT_SYMBOL_GPL(drm_gem_cma_dumb_create);
-> diff --git a/drivers/gpu/drm/meson/meson_drv.c b/drivers/gpu/drm/meson/me=
-son_drv.c
-> index 397c33182f4f..1593518dcbe4 100644
-> --- a/drivers/gpu/drm/meson/meson_drv.c
-> +++ b/drivers/gpu/drm/meson/meson_drv.c
-> @@ -81,6 +81,7 @@ static int meson_dumb_create(struct drm_file *file, str=
-uct drm_device *dev,
->  	 */
->  	args->pitch =3D ALIGN(DIV_ROUND_UP(args->width * args->bpp, 8), SZ_64);
->  	args->size =3D PAGE_ALIGN(args->pitch * args->height);
-> +	args->flags =3D DRM_MODE_DUMB_KERNEL_MAP;
->  =
-
->  	return drm_gem_cma_dumb_create_internal(file, dev, args);
->  }
-> diff --git a/drivers/gpu/drm/rcar-du/rcar_du_kms.c b/drivers/gpu/drm/rcar=
--du/rcar_du_kms.c
-> index 2dc9caee8767..c9b1f298ce7e 100644
-> --- a/drivers/gpu/drm/rcar-du/rcar_du_kms.c
-> +++ b/drivers/gpu/drm/rcar-du/rcar_du_kms.c
-> @@ -299,6 +299,7 @@ int rcar_du_dumb_create(struct drm_file *file, struct=
- drm_device *dev,
->  		align =3D 16 * args->bpp / 8;
->  =
-
->  	args->pitch =3D roundup(min_pitch, align);
-> +	args->flags =3D DRM_MODE_DUMB_KERNEL_MAP;
->  =
-
->  	return drm_gem_cma_dumb_create_internal(file, dev, args);
->  }
-> diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_gem.c b/drivers/gpu/dr=
-m/rockchip/rockchip_drm_gem.c
-> index 7582d0e6a60a..f09b9a035376 100644
-> --- a/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
-> +++ b/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
-> @@ -419,6 +419,7 @@ int rockchip_gem_dumb_create(struct drm_file *file_pr=
-iv,
->  	 * align to 64 bytes since Mali requires it.
->  	 */
->  	args->pitch =3D ALIGN(min_pitch, 64);
-> +	args->flags =3D DRM_MODE_DUMB_KERNEL_MAP;
->  	args->size =3D args->pitch * args->height;
->  =
-
->  	rk_obj =3D rockchip_gem_create_with_handle(file_priv, dev, args->size,
-> diff --git a/drivers/gpu/drm/stm/drv.c b/drivers/gpu/drm/stm/drv.c
-> index 5a9f9aca8bc2..0f76a4ac95b3 100644
-> --- a/drivers/gpu/drm/stm/drv.c
-> +++ b/drivers/gpu/drm/stm/drv.c
-> @@ -47,6 +47,7 @@ static int stm_gem_cma_dumb_create(struct drm_file *fil=
-e,
->  	 */
->  	args->pitch =3D roundup(min_pitch, 128);
->  	args->height =3D roundup(args->height, 4);
-> +	args->flags =3D DRM_MODE_DUMB_KERNEL_MAP;
->  =
-
->  	return drm_gem_cma_dumb_create_internal(file, dev, args);
->  }
-> diff --git a/drivers/gpu/drm/sun4i/sun4i_drv.c b/drivers/gpu/drm/sun4i/su=
-n4i_drv.c
-> index a5757b11b730..f653a5d1e2d6 100644
-> --- a/drivers/gpu/drm/sun4i/sun4i_drv.c
-> +++ b/drivers/gpu/drm/sun4i/sun4i_drv.c
-> @@ -34,6 +34,7 @@ static int drm_sun4i_gem_dumb_create(struct drm_file *f=
-ile_priv,
->  {
->  	/* The hardware only allows even pitches for YUV buffers. */
->  	args->pitch =3D ALIGN(DIV_ROUND_UP(args->width * args->bpp, 8), 2);
-> +	args->flags =3D DRM_MODE_DUMB_KERNEL_MAP;
->  =
-
->  	return drm_gem_cma_dumb_create_internal(file_priv, drm, args);
->  }
-> -- =
-
-> 2.20.1
 
 _______________________________________________
 linux-arm-kernel mailing list
