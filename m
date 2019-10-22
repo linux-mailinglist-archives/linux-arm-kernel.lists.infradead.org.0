@@ -2,82 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE6D6DFC7E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 06:20:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68380DFCCD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 06:42:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mqXFpYQhZ3MdSLoHNp41Z92udhTAxEEmEn5AfMIfCLs=; b=N8TfA/CfWd/ReH
-	jg+d9E9OHaamDww9o/+HX0z1juc4pJmTnogu43sm36tryTSGp3qLd/qbJIANmn6DYt+M+rBn0nuUH
-	RXSP745YAH5rodBcNIBpL/8x8Nxd9rRecFfX2am/82czgu/ZMmO6qcS7vMlMUJ7z0E5ylARTGKUZk
-	6tEJIY6FcfZXCOfXX2lP1Iw/eKjfrJv8xJ0UuwnXqzvKODI1ETIw7DbAJ1S6dQANTvZHmRgkN9wi+
-	TtTsm49z/cN6umLZ0N0U3JuShFopgRg/yqeQpOlqcJEB2ct6vP+36LacFdv3guXkEfxjOGaFkVpXv
-	r2QB1IiatS01LcnDD3qg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=rsOPuys0+L6aK2+c6zKycUcxnx0tSKnhB1pFm+t0RBs=; b=Xwd
+	KsSiEzo8FMoaL9lkVE0IQ9gG9cJN5hwbnTjC3midRtqjkO+ox4MSSYdKl8UGf5NZFcqc2vYpR7HOY
+	z4KEqECYgsvHCrflQPgZkD1kFeSr+Lvzz92I0BhJIVBsW5pZgvcQqow5llOt536FUOLFj/Dlomhck
+	EwDhRAjqXRgmQbkMInW0lNJi25OR141B17sL4OLIOi4IPk6xvYQ1wdKahivoR2+5aSG6dEHKQX/DR
+	vwdEknY3nXYBIVGNF+BgGhKSiEoG1jb8Dgt/gofLOwgPh3LuwA5+0RV78/9XU3jlU03ntgfHhJBbk
+	m+9KiOxVtP0/MRlUm8hDX8/l3ooil6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMlek-0001hb-SA; Tue, 22 Oct 2019 04:20:26 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1iMm0R-0000YE-Ko; Tue, 22 Oct 2019 04:42:51 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMleb-0001gz-Qw
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 04:20:19 +0000
-Received: by mail-io1-xd43.google.com with SMTP id i26so9411398iog.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 21 Oct 2019 21:20:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=wp8wy/spwh9Zthw1zbjo3jFQXzwnNkB/MNGLS3X0R2Y=;
- b=kK0pBRS+ksAkOYZhENcTO83Lm34CJFk4blDQ/o75EKpXDk23HG/vB1ukJhckWse+c+
- 0NSGjZIkA4EZdxG+MtmprR319Wssf9w2lx9OgXgCRxyBfqrjQhBiJT+hYYCsgVSraZ1t
- XIqm340XNtgW9zxZOEumHDt/3WC2G0fAH3kmc1k/yjAeVQqNEl/tiP3qz+xiEwg0mQ5U
- jxxcWFzsMIIGxt+nYT6V9Q3mcL7ItIvjCCsLa1THQtooG4a4wSoK2vC47xWLqm/mrcv2
- FSI0DUcVLC/TciCL1fMDd2lIeIVKYAdsk+7InK+czHJBLmjBThCTj6q2D8ICJabvvhsm
- Z5lw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=wp8wy/spwh9Zthw1zbjo3jFQXzwnNkB/MNGLS3X0R2Y=;
- b=riCO2W8qTOcuVlZvRcL+8C7R3pTP9x8pQOCxXdWFPSAgkeC0uT0hCY9YCqV6pRNvZK
- AiQVp93OWAnmunGV0tSEn4VoWCeFqUaRH10U1b5ATVKXN9sPaByjb7pqQYi9B6JKPSpa
- Elo1jG2rIjDoR9Mliy6n/aCdP41lKFp2rcMmvphcTLIQtVTDvFctugg1mdfjEWEArbuq
- A6BaD2c0rTwnjl64NG1chf63B5z2DubKpIFJHnoKzCBVGN4Cjg26bwRkAe4WkeTnuarL
- t1YJUgLhwWMOTBh/POK7BkwXsPPMDAMvKMAtH1iYEHO++4NSfQgyWnYNeVTue9wMI64F
- fDOg==
-X-Gm-Message-State: APjAAAXQLgu8sznhss95Zr5nqwgBUYP4xYoVVjUVt3/KsMv5QN4tQYfe
- NNxtluA0gB2qMcxkV1qNAnTWRx/9XtF0RZwGPOt+dg==
-X-Google-Smtp-Source: APXvYqzYWgB1PtMtq4nnNfPKWor2fWw/zG/ojnrO3w/NOV2GRoDJlHgeD0JuBgKT4rxqNWDEGfYcoevSrS2OWeQcC90=
-X-Received: by 2002:a05:6638:60f:: with SMTP id
- g15mr1872269jar.21.1571718016274; 
- Mon, 21 Oct 2019 21:20:16 -0700 (PDT)
-MIME-Version: 1.0
-References: <201910221118.wjEmsUlx%lkp@intel.com>
-In-Reply-To: <201910221118.wjEmsUlx%lkp@intel.com>
-From: Olof Johansson <olof@lixom.net>
-Date: Mon, 21 Oct 2019 21:20:05 -0700
-Message-ID: <CAOesGMgBVNhgWvN=__+rV5+p-Orn_5XByApoSVkp0AGxHeSwQQ@mail.gmail.com>
-Subject: Re: [arm-soc:mmp/drivers 11/12] include/linux/soc/mmp/cputype.h:5:10:
- fatal error: asm/cputype.h: No such file or directory
-To: kbuild test robot <lkp@intel.com>
+ id 1iMm0I-0000Wj-Mh
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 04:42:44 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 984DD1A030A;
+ Tue, 22 Oct 2019 06:42:38 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 1A2D81A0009;
+ Tue, 22 Oct 2019 06:42:34 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 46DBA40245;
+ Tue, 22 Oct 2019 12:42:28 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: rafael.j.wysocki@intel.com, viresh.kumar@linaro.org, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ linux-pm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] cpufreq: imx-cpufreq-dt: Correct i.MX8MN's default speed
+ grade value
+Date: Tue, 22 Oct 2019 12:39:39 +0800
+Message-Id: <1571719179-23316-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_212017_933180_48D3D3E1 
-X-CRM114-Status: GOOD (  12.33  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191021_214242_886982_2CECF83A 
+X-CRM114-Status: UNSURE (   9.40  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,42 +69,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lubomir Rintel <lkundrak@v3.sk>, ARM-SoC Maintainers <arm@kernel.org>,
- kbuild-all@lists.01.org,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 21, 2019 at 8:30 PM kbuild test robot <lkp@intel.com> wrote:
->
-> tree:   https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git mmp/drivers
-> head:   13bec6d6822ca0349dbba14e2e8e2f80e1aacbd7
-> commit: 08f13e7c3430889621dcefd1b1e52490f654a285 [11/12] phy: Add USB2 PHY driver for Marvell MMP3 SoC
-> config: x86_64-allyesconfig (attached as .config)
-> compiler: gcc-7 (Debian 7.4.0-14) 7.4.0
-> reproduce:
->         git checkout 08f13e7c3430889621dcefd1b1e52490f654a285
->         # save the attached .config to linux build tree
->         make ARCH=x86_64
->
-> If you fix the issue, kindly add following tag
-> Reported-by: kbuild test robot <lkp@intel.com>
->
-> All errors (new ones prefixed by >>):
->
->    In file included from drivers/phy/marvell/phy-mmp3-usb.c:12:0:
-> >> include/linux/soc/mmp/cputype.h:5:10: fatal error: asm/cputype.h: No such file or directory
->     #include <asm/cputype.h>
->              ^~~~~~~~~~~~~~~
->    compilation terminated.
+i.MX8MN has different speed grade definition compared to
+i.MX8MQ/i.MX8MM, when fuses are NOT written, the default
+speed_grade should be set to minimum available OPP defined
+in DT which is 1.2GHz, the corresponding speed_grade value
+should be 0xb.
 
+Fixes: 5b8010ba70d5 ("cpufreq: imx-cpufreq-dt: Add i.MX8MN support")
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+ drivers/cpufreq/imx-cpufreq-dt.c | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
 
-Fixed a few hours ago.
+diff --git a/drivers/cpufreq/imx-cpufreq-dt.c b/drivers/cpufreq/imx-cpufreq-dt.c
+index 35db14c..26531f0 100644
+--- a/drivers/cpufreq/imx-cpufreq-dt.c
++++ b/drivers/cpufreq/imx-cpufreq-dt.c
+@@ -44,19 +44,19 @@ static int imx_cpufreq_dt_probe(struct platform_device *pdev)
+ 	mkt_segment = (cell_value & OCOTP_CFG3_MKT_SEGMENT_MASK) >> OCOTP_CFG3_MKT_SEGMENT_SHIFT;
+ 
+ 	/*
+-	 * Early samples without fuses written report "0 0" which means
+-	 * consumer segment and minimum speed grading.
+-	 *
+-	 * According to datasheet minimum speed grading is not supported for
+-	 * consumer parts so clamp to 1 to avoid warning for "no OPPs"
++	 * Early samples without fuses written report "0 0" which may NOT
++	 * match any OPP defined in DT. So clamp to minimum OPP defined in
++	 * DT to avoid warning for "no OPPs".
+ 	 *
+ 	 * Applies to i.MX8M series SoCs.
+ 	 */
+-	if (mkt_segment == 0 && speed_grade == 0 && (
+-			of_machine_is_compatible("fsl,imx8mm") ||
+-			of_machine_is_compatible("fsl,imx8mn") ||
+-			of_machine_is_compatible("fsl,imx8mq")))
+-		speed_grade = 1;
++	if (mkt_segment == 0 && speed_grade == 0) {
++		if (of_machine_is_compatible("fsl,imx8mm") ||
++			of_machine_is_compatible("fsl,imx8mq"))
++			speed_grade = 1;
++		if (of_machine_is_compatible("fsl,imx8mn"))
++			speed_grade = 0xb;
++	}
+ 
+ 	supported_hw[0] = BIT(speed_grade);
+ 	supported_hw[1] = BIT(mkt_segment);
+-- 
+2.7.4
 
-
--Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
