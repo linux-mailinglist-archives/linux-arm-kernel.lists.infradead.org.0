@@ -2,50 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D145ADFEB8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 09:52:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6AFCADFEBB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 09:52:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=evSMtEiZln13ByNnkLQz8qKD+owuLcsFTpPlM6w2dUE=; b=mMN
-	wesdWlCv7Xy1XguFB2MJ0nOBMrB0JkrFYe19mrnLFT+LCHSzkPDkDb4+Ts1ibs18fHSt8CuzL9hSt
-	g1ALoNT9ARU8SFvRzXQtV+RX6rt4QuD837ajbxSPk60OpihefScSusGT+MIB6gurU3gGDUCZPtkaK
-	6EnFu01H2wJRedVv/RfPztHnosbZttJIXBR4srPkY8DsV3v/poXRIy/OtVkL+MXFuQSNUIllm3rqq
-	JpaToADBDLwZImYUn41kvSKFNNg7uAsPXYiTxaFO8C89hXFR90a1insPMHEXIGK6u7TYiVPkrmYjU
-	keBrGbwIxJhTbJ26R2KmbkQqk+bW2pw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=rdM3KnnyFEuCnFrc6Biduo5/hn3uSsm8WlXAggQykBc=; b=El+OVjVcZB5ORgg2XfqFNKeOOT
+	AlhLiVwztMCAQUdEhTe/Oo7I5IvsLy9s3vgnZAXeIJePEx+7bg0Wtt66UGDBBho4Kr79rhapKydE3
+	gAnmg64EQrK6eZi49BEYwrv7Cq76xLhgbyxAH3kt37IhvsDZhdtyn4r46Ay4N2j73cbU1Y85fRHKZ
+	Q6XFNoXbvgNGmngwnRjY1uGRPIh+VY2RtHMDembDn9y/Rbo0A/7mvs/4u8INXhADb9uJ2P7zzuXDG
+	vNiGs4PPggJvrF+eQNJC0wUFtcS4JpLTntM/k7+LEs5LLvFUWt5bUyEHy15NK+hDAMl9f3Qu37ERO
+	eeTWqk+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMoxa-0006re-LV; Tue, 22 Oct 2019 07:52:06 +0000
+	id 1iMoy1-0007LG-74; Tue, 22 Oct 2019 07:52:33 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMoxG-0006oz-Sp
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 07:51:48 +0000
+ id 1iMoxI-0006pa-AY
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 07:51:50 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id AE2E91A0C08;
- Tue, 22 Oct 2019 09:51:43 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 26A5B1A0932;
+ Tue, 22 Oct 2019 09:51:45 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 04A3A1A0E2F;
- Tue, 22 Oct 2019 09:51:37 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 6D37C1A0D3D;
+ Tue, 22 Oct 2019 09:51:38 +0200 (CEST)
 Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id D4A7D40249;
- Tue, 22 Oct 2019 15:51:28 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 46BBE402F0;
+ Tue, 22 Oct 2019 15:51:30 +0800 (SGT)
 From: Ran Wang <ran.wang_1@nxp.com>
 To: "Rafael J . Wysocki" <rjw@rjwysocki.net>, Rob Herring <robh+dt@kernel.org>,
  Li Yang <leoyang.li@nxp.com>, Mark Rutland <mark.rutland@arm.com>,
  Pavel Machek <pavel@ucw.cz>, Huang Anson <anson.huang@nxp.com>
-Subject: [PATCH 1/3] PM: wakeup: Add routine to help fetch wakeup source
- object.
-Date: Tue, 22 Oct 2019 15:51:21 +0800
-Message-Id: <20191022075123.17057-1-ran.wang_1@nxp.com>
+Subject: [PATCH 2/3] Documentation: dt: binding: fsl: Add 'little-endian' and
+ update Chassis define
+Date: Tue, 22 Oct 2019 15:51:22 +0800
+Message-Id: <20191022075123.17057-2-ran.wang_1@nxp.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191022075123.17057-1-ran.wang_1@nxp.com>
+References: <20191022075123.17057-1-ran.wang_1@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_005147_210867_7504DFFB 
-X-CRM114-Status: GOOD (  11.38  )
+X-CRM114-CacheID: sfid-20191022_005148_652886_7A37B6AE 
+X-CRM114-Status: GOOD (  11.30  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -77,133 +80,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some user might want to go through all registered wakeup sources
-and doing things accordingly. For example, SoC PM driver might need to
-do HW programming to prevent powering down specific IP which wakeup
-source depending on. So add this API to help walk through all registered
-wakeup source objects on that list and return them one by one.
+By default, QorIQ SoC's RCPM register block is Big Endian. But
+there are some exceptions, such as LS1088A and LS2088A, are
+Little Endian. So add this optional property to help identify
+them.
+
+Actually LS2021A and other Layerscapes won't totally follow Chassis
+2.1, so separate them from powerpc SoC.
 
 Signed-off-by: Ran Wang <ran.wang_1@nxp.com>
-Tested-by: Leonard Crestez <leonard.crestez@nxp.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
 ---
-Change in v8
-	- Rename wakeup_source_get_next() to wakeup_sources_walk_next().
-	- Add wakeup_sources_read_lock() to take over locking job of
-	  wakeup_source_get_star().
-	- Rename wakeup_source_get_start() to wakeup_sources_walk_start().
-	- Replace wakeup_source_get_stop() with wakeup_sources_read_unlock().
-	- Define macro for_each_wakeup_source(ws).
-
-Change in v7:
-	- Remove define of member *dev in wake_irq to fix conflict with commit 
-	c8377adfa781 ("PM / wakeup: Show wakeup sources stats in sysfs"), user 
-	will use ws->dev->parent instead.
-	- Remove '#include <linux/of_device.h>' because it is not used.
-
-Change in v6:
-	- Add wakeup_source_get_star() and wakeup_source_get_stop() to aligned 
-	with wakeup_sources_stats_seq_start/nex/stop.
-
-Change in v5:
-	- Update commit message, add decription of walk through all wakeup
-	source objects.
-	- Add SCU protection in function wakeup_source_get_next().
-	- Rename wakeup_source member 'attached_dev' to 'dev' and move it up
-	(before wakeirq).
-
-Change in v4:
+Change in v8:
 	- None.
 
+Change in v7:
+	- None.
+
+Change in v6:
+	- None.
+
+Change in v5:
+	- Add 'Reviewed-by: Rob Herring <robh@kernel.org>' to commit message.
+	- Rename property 'fsl,#rcpm-wakeup-cells' to '#fsl,rcpm-wakeup-cells'.
+	please see https://lore.kernel.org/patchwork/patch/1101022/
+
+Change in v4:
+	- Adjust indectation of 'ls1021a, ls1012a, ls1043a, ls1046a'.
+
 Change in v3:
-	- Adjust indentation of *attached_dev;.
+	- None.
 
 Change in v2:
 	- None.
 
- drivers/base/power/wakeup.c | 42 ++++++++++++++++++++++++++++++++++++++++++
- include/linux/pm_wakeup.h   |  9 +++++++++
- 2 files changed, 51 insertions(+)
+ Documentation/devicetree/bindings/soc/fsl/rcpm.txt | 14 ++++++++++----
+ 1 file changed, 10 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/base/power/wakeup.c b/drivers/base/power/wakeup.c
-index 5817b51..8c7a5f9 100644
---- a/drivers/base/power/wakeup.c
-+++ b/drivers/base/power/wakeup.c
-@@ -248,6 +248,48 @@ void wakeup_source_unregister(struct wakeup_source *ws)
- EXPORT_SYMBOL_GPL(wakeup_source_unregister);
+diff --git a/Documentation/devicetree/bindings/soc/fsl/rcpm.txt b/Documentation/devicetree/bindings/soc/fsl/rcpm.txt
+index e284e4e..5a33619 100644
+--- a/Documentation/devicetree/bindings/soc/fsl/rcpm.txt
++++ b/Documentation/devicetree/bindings/soc/fsl/rcpm.txt
+@@ -5,7 +5,7 @@ and power management.
  
- /**
-+ * wakeup_sources_read_lock - Lock wakeup source list for read.
-+ */
-+int wakeup_sources_read_lock(void)
-+{
-+	return srcu_read_lock(&wakeup_srcu);
-+}
-+EXPORT_SYMBOL_GPL(wakeup_sources_read_lock);
-+
-+/**
-+ * wakeup_sources_read_unlock - Unlock wakeup source list.
-+ */
-+void wakeup_sources_read_unlock(int idx)
-+{
-+	srcu_read_unlock(&wakeup_srcu, idx);
-+}
-+EXPORT_SYMBOL_GPL(wakeup_sources_read_unlock);
-+
-+/**
-+ * wakeup_sources_walk_start - Begin a walk on wakeup source list
-+ */
-+struct wakeup_source *wakeup_sources_walk_start(void)
-+{
-+	struct list_head *ws_head = &wakeup_sources;
-+
-+	return list_entry_rcu(ws_head->next, struct wakeup_source, entry);
-+}
-+EXPORT_SYMBOL_GPL(wakeup_sources_walk_start);
-+
-+/**
-+ * wakeup_sources_walk_next - Get next wakeup source from the list
-+ * @ws: Previous wakeup source object
-+ */
-+struct wakeup_source *wakeup_sources_walk_next(struct wakeup_source *ws)
-+{
-+	struct list_head *ws_head = &wakeup_sources;
-+
-+	return list_next_or_null_rcu(ws_head, &ws->entry,
-+				struct wakeup_source, entry);
-+}
-+EXPORT_SYMBOL_GPL(wakeup_sources_walk_next);
-+
-+/**
-  * device_wakeup_attach - Attach a wakeup source object to a device object.
-  * @dev: Device to handle.
-  * @ws: Wakeup source object to attach to @dev.
-diff --git a/include/linux/pm_wakeup.h b/include/linux/pm_wakeup.h
-index 661efa0..aa3da66 100644
---- a/include/linux/pm_wakeup.h
-+++ b/include/linux/pm_wakeup.h
-@@ -63,6 +63,11 @@ struct wakeup_source {
- 	bool			autosleep_enabled:1;
- };
+ Required properites:
+   - reg : Offset and length of the register set of the RCPM block.
+-  - fsl,#rcpm-wakeup-cells : The number of IPPDEXPCR register cells in the
++  - #fsl,rcpm-wakeup-cells : The number of IPPDEXPCR register cells in the
+ 	fsl,rcpm-wakeup property.
+   - compatible : Must contain a chip-specific RCPM block compatible string
+ 	and (if applicable) may contain a chassis-version RCPM compatible
+@@ -20,6 +20,7 @@ Required properites:
+ 	* "fsl,qoriq-rcpm-1.0": for chassis 1.0 rcpm
+ 	* "fsl,qoriq-rcpm-2.0": for chassis 2.0 rcpm
+ 	* "fsl,qoriq-rcpm-2.1": for chassis 2.1 rcpm
++	* "fsl,qoriq-rcpm-2.1+": for chassis 2.1+ rcpm
  
-+#define for_each_wakeup_source(ws) \
-+	for ((ws) = wakeup_sources_walk_start();	\
-+	     (ws);					\
-+	     (ws) = wakeup_sources_walk_next((ws)))
+ All references to "1.0" and "2.0" refer to the QorIQ chassis version to
+ which the chip complies.
+@@ -27,14 +28,19 @@ Chassis Version		Example Chips
+ ---------------		-------------------------------
+ 1.0				p4080, p5020, p5040, p2041, p3041
+ 2.0				t4240, b4860, b4420
+-2.1				t1040, ls1021
++2.1				t1040,
++2.1+				ls1021a, ls1012a, ls1043a, ls1046a
 +
- #ifdef CONFIG_PM_SLEEP
++Optional properties:
++ - little-endian : RCPM register block is Little Endian. Without it RCPM
++   will be Big Endian (default case).
  
- /*
-@@ -92,6 +97,10 @@ extern void wakeup_source_remove(struct wakeup_source *ws);
- extern struct wakeup_source *wakeup_source_register(struct device *dev,
- 						    const char *name);
- extern void wakeup_source_unregister(struct wakeup_source *ws);
-+extern int wakeup_sources_read_lock(void);
-+extern void wakeup_sources_read_unlock(int idx);
-+extern struct wakeup_source *wakeup_sources_walk_start(void);
-+extern struct wakeup_source *wakeup_sources_walk_next(struct wakeup_source *ws);
- extern int device_wakeup_enable(struct device *dev);
- extern int device_wakeup_disable(struct device *dev);
- extern void device_set_wakeup_capable(struct device *dev, bool capable);
+ Example:
+ The RCPM node for T4240:
+ 	rcpm: global-utilities@e2000 {
+ 		compatible = "fsl,t4240-rcpm", "fsl,qoriq-rcpm-2.0";
+ 		reg = <0xe2000 0x1000>;
+-		fsl,#rcpm-wakeup-cells = <2>;
++		#fsl,rcpm-wakeup-cells = <2>;
+ 	};
+ 
+ * Freescale RCPM Wakeup Source Device Tree Bindings
+@@ -44,7 +50,7 @@ can be used as a wakeup source.
+ 
+   - fsl,rcpm-wakeup: Consists of a phandle to the rcpm node and the IPPDEXPCR
+ 	register cells. The number of IPPDEXPCR register cells is defined in
+-	"fsl,#rcpm-wakeup-cells" in the rcpm node. The first register cell is
++	"#fsl,rcpm-wakeup-cells" in the rcpm node. The first register cell is
+ 	the bit mask that should be set in IPPDEXPCR0, and the second register
+ 	cell is for IPPDEXPCR1, and so on.
+ 
 -- 
 2.7.4
 
