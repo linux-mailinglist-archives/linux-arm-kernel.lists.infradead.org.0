@@ -2,59 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D698DFEBA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 09:52:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9FECDFEBD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 09:53:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=ODl7Zikf8niI3qODyI9Einb/XJ8l8NoJNqXrOY5BdAQ=; b=H9/uEjT97hlcDvGPcCj7Wm3lkU
-	F8+OsaBpuoKho7RNZoUomZWZRFgzQqC6dRDFlqHAInzS2HrgourHa+tqHLuUO6jguDJpTov2bKuee
-	YTPqNO2YW79yB/DZT6eW9Oh/GRMs+Y4RrCjR8mwOR3+L1EzE2PlZTp6GANZ3b7y4kzqBJuLwnPnEI
-	yqIebcfaaKieRvcAi8LDRDHRdxU9J52XTr50oj84gDu/HSRZjI4dXcB50ozV39ArYe3RC/V+gz9WK
-	0VPLxtsaOFU0spDfNlNAwno3hp43Hmw+4L1RVEy8Zn00HsSsKIejIoex9NTFt1EmcQNKUQwuKep/O
-	1PEXO/ow==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cdP71PEqUVFHIPL25Jfw2PoO1zeAB6HrfWUdtuPXzPk=; b=pZcokUrDMCqJbO
+	78M4cG0IkCIH30KQLARWM5lPhGRT1bCokhrSNnPJOE1ocJfh1pWj3WnX3/E1AtFe3NUfvHGgbXiW4
+	kKHv4h/v0Olv/2aQyANE4+j3AHVEQePZ4pmCS1TqVd+FvSRmBVE4Y0Dy9MG4UfMcwIt4Rz/yQzAkt
+	oPcRnfkpDaskS5pTEwDSmw6QVKNfCSHxViDnqcjZCcPDRj+ZgaqrFYYMSo4uuUXuHxkGOpf4dsbzl
+	BzEC7MPtF78X5BaKwwsb4PdC9nH/5paN/GOnjgOEUNT6hWrec54V71SQbj66MGMeXqACYVXOkSGz9
+	GdFCOX1IWoIma4QZaChw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMoxs-00076d-Sr; Tue, 22 Oct 2019 07:52:24 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1iMoyO-0007e5-I5; Tue, 22 Oct 2019 07:52:56 +0000
+Received: from relay12.mail.gandi.net ([217.70.178.232])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMoxI-0006pu-3z
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 07:51:51 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 7EE3F2005E9;
- Tue, 22 Oct 2019 09:51:46 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id D2B7A2000D9;
- Tue, 22 Oct 2019 09:51:39 +0200 (CEST)
-Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id AD412402F3;
- Tue, 22 Oct 2019 15:51:31 +0800 (SGT)
-From: Ran Wang <ran.wang_1@nxp.com>
-To: "Rafael J . Wysocki" <rjw@rjwysocki.net>, Rob Herring <robh+dt@kernel.org>,
- Li Yang <leoyang.li@nxp.com>, Mark Rutland <mark.rutland@arm.com>,
- Pavel Machek <pavel@ucw.cz>, Huang Anson <anson.huang@nxp.com>
-Subject: [PATCH 3/3] soc: fsl: add RCPM driver
-Date: Tue, 22 Oct 2019 15:51:23 +0800
-Message-Id: <20191022075123.17057-3-ran.wang_1@nxp.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191022075123.17057-1-ran.wang_1@nxp.com>
-References: <20191022075123.17057-1-ran.wang_1@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1iMoxa-000732-5V; Tue, 22 Oct 2019 07:52:09 +0000
+Received: from windsurf (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
+ [86.250.200.211])
+ (Authenticated sender: thomas.petazzoni@bootlin.com)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id 18CB020000F;
+ Tue, 22 Oct 2019 07:52:00 +0000 (UTC)
+Date: Tue, 22 Oct 2019 09:52:00 +0200
+From: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+Subject: Re: [PATCH] mtd: spear_smi: Fix nonalignment not handled in
+ memcpy_toio
+Message-ID: <20191022095200.54585032@windsurf>
+In-Reply-To: <20191022094451.14d39206@xps13>
+References: <20191018143643.29676-1-miquel.raynal@bootlin.com>
+ <20191021100105.0f06b212@collabora.com>
+ <20191022094451.14d39206@xps13>
+Organization: Bootlin
+X-Mailer: Claws Mail 3.17.4git49 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_005148_441498_CEB261D6 
-X-CRM114-Status: GOOD (  19.54  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191022_005206_496831_9646B4EC 
+X-CRM114-Status: GOOD (  16.40  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.232 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,235 +63,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Li Biwen <biwen.li@nxp.com>, Len Brown <len.brown@intel.com>,
- devicetree@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org,
- Ran Wang <ran.wang_1@nxp.com>, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Vignesh Raghavendra <vigneshr@ti.com>,
+ Tudor Ambarus <Tudor.Ambarus@microchip.com>,
+ Richard Weinberger <richard@nod.at>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>, stable@vger.kernel.org,
+ Marek Vasut <marek.vasut@gmail.com>,
+ Boris Brezillon <boris.brezillon@collabora.com>, linux-mtd@lists.infradead.org,
+ Brian Norris <computersforpeace@gmail.com>,
+ David Woodhouse <dwmw2@infradead.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The NXP's QorIQ Processors based on ARM Core have RCPM module
-(Run Control and Power Management), which performs system level
-tasks associated with power management such as wakeup source control.
+Hello,
 
-This driver depends on PM wakeup source framework which help to
-collect wake information.
++Russell in Cc.
 
-Signed-off-by: Ran Wang <ran.wang_1@nxp.com>
----
-Change in v8:
-	- Adjust related API usage to meet wakeup.c's update in patch 1/3.
-	- Add sanity checking for the case of ws->dev or ws->dev->parent
-	  is null.
+On Tue, 22 Oct 2019 09:44:51 +0200
+Miquel Raynal <miquel.raynal@bootlin.com> wrote:
 
-Change in v7:
-	- Replace 'ws->dev' with 'ws->dev->parent' to get aligned with
-	c8377adfa781 ("PM / wakeup: Show wakeup sources stats in sysfs")
-	- Remove '+obj-y += ftm_alarm.o' since it is wrong.
-	- Cosmetic work.
+> Boris Brezillon <boris.brezillon@collabora.com> wrote on Mon, 21 Oct
+> 2019 10:01:05 +0200:
+> 
+> > On Fri, 18 Oct 2019 16:36:43 +0200
+> > Miquel Raynal <miquel.raynal@bootlin.com> wrote:
+> >   
+> > > Any write with either dd or flashcp to a device driven by the
+> > > spear_smi.c driver will pass through the spear_smi_cpy_toio()
+> > > function. This function will get called for chunks of up to 256 bytes.
+> > > If the amount of data is smaller, we may have a problem if the data
+> > > length is not 4-byte aligned. In this situation, the kernel panics
+> > > during the memcpy:
+> > > 
+> > >     # dd if=/dev/urandom bs=1001 count=1 of=/dev/mtd6
+> > >     spear_smi_cpy_toio [620] dest c9070000, src c7be8800, len 256
+> > >     spear_smi_cpy_toio [620] dest c9070100, src c7be8900, len 256
+> > >     spear_smi_cpy_toio [620] dest c9070200, src c7be8a00, len 256
+> > >     spear_smi_cpy_toio [620] dest c9070300, src c7be8b00, len 233
+> > >     Unhandled fault: external abort on non-linefetch (0x808) at 0xc90703e8
+> > >     [...]
+> > >     PC is at memcpy+0xcc/0x330    
+> > 
+> > Can you find out which instruction is at memcpy+0xcc/0x330? For the
+> > record, the assembly is here [1].  
+> 
+> The full disassembled file is attached, here is the failing part:
+> 
+> 7:			ldmfd	sp!, {r5 - r8}
+>   b8:	e8bd01e0 	pop	{r5, r6, r7, r8}
+> 	UNWIND(		.fnend				) @ end of second stmfd block
+> 
+> 	UNWIND(		.fnstart			)
+> 			usave	r4, lr			  @ still in first stmdb block
+> 8:			movs	r2, r2, lsl #31
+>   bc:	e1b02f82 	lsls	r2, r2, #31
+> 			ldr1b	r1, r3, ne, abort=21f
+>   c0:	14d13001 	ldrbne	r3, [r1], #1
+> 			ldr1b	r1, r4, cs, abort=21f
+>   c4:	24d14001 	ldrbcs	r4, [r1], #1
+> 			ldr1b	r1, ip, cs, abort=21f
+>   c8:	24d1c001 	ldrbcs	ip, [r1], #1
+> 			str1b	r0, r3, ne, abort=21f
+>   cc:	14c03001 	strbne	r3, [r0], #1
+> 			str1b	r0, r4, cs, abort=21f
+>   d0:	24c04001 	strbcs	r4, [r0], #1
+> 			str1b	r0, ip, cs, abort=21f
+>   d4:	24c0c001 	strbcs	ip, [r0], #1
+> 
+> 			exit	r4, pc
+>   d8:	e8bd8011 	pop	{r0, r4, pc}
+> 
+> 
+> So the fault is triggered on a strbne instruction.
 
-Change in v6:
-	- Adjust related API usage to meet wakeup.c's update in patch 1/3.
+What I find odd is:
 
-Change in v5:
-	- Fix v4 regression of the return value of wakeup_source_get_next()
-	didn't pass to ws in while loop.
-	- Rename wakeup_source member 'attached_dev' to 'dev'.
-	- Rename property 'fsl,#rcpm-wakeup-cells' to '#fsl,rcpm-wakeup-cells'.
-	please see https://lore.kernel.org/patchwork/patch/1101022/
+ (1) Failing on a 1-byte store instruction, which means it should have
+     no alignment constraints.
 
-Change in v4:
-	- Remove extra ',' in author line of rcpm.c
-	- Update usage of wakeup_source_get_next() to be less confusing to the
-reader, code logic remain the same.
+ (2) Failing on a 1-byte store instruction, while switching to
+     _memcpy_toio(), which does *only* 1-byte stores, works around the
+     problem.
 
-Change in v3:
-	- Some whitespace ajdustment.
+_memcpy_toio() looks like this:
 
-Change in v2:
-	- Rebase Kconfig and Makefile update to latest mainline.
+void _memcpy_toio(volatile void __iomem *to, const void *from, size_t count)
+{
+	const unsigned char *f = from;
+	while (count) {
+  6c:	e3520000 	cmp	r2, #0
+  70:	012fff1e 	bxeq	lr
+  74:	e0802002 	add	r2, r0, r2
+		count--;
+		writeb(*f, to);
+  78:	e4d13001 	ldrb	r3, [r1], #1
+	asm volatile("strb %1, %0"
+  7c:	e5c03000 	strb	r3, [r0]
+		f++;
+		to++;
+  80:	e2800001 	add	r0, r0, #1
+	while (count) {
+  84:	e1500002 	cmp	r0, r2
+  88:	1afffffa 	bne	78 <_memcpy_toio+0xc>
+  8c:	e12fff1e 	bx	lr
 
- drivers/soc/fsl/Kconfig  |   8 +++
- drivers/soc/fsl/Makefile |   1 +
- drivers/soc/fsl/rcpm.c   | 133 +++++++++++++++++++++++++++++++++++++++++++++++
- 3 files changed, 142 insertions(+)
- create mode 100644 drivers/soc/fsl/rcpm.c
+So it's also doing a strb, nothing different.
 
-diff --git a/drivers/soc/fsl/Kconfig b/drivers/soc/fsl/Kconfig
-index f9ad8ad..4918856 100644
---- a/drivers/soc/fsl/Kconfig
-+++ b/drivers/soc/fsl/Kconfig
-@@ -40,4 +40,12 @@ config DPAA2_CONSOLE
- 	  /dev/dpaa2_mc_console and /dev/dpaa2_aiop_console,
- 	  which can be used to dump the Management Complex and AIOP
- 	  firmware logs.
-+
-+config FSL_RCPM
-+	bool "Freescale RCPM support"
-+	depends on PM_SLEEP
-+	help
-+	  The NXP QorIQ Processors based on ARM Core have RCPM module
-+	  (Run Control and Power Management), which performs all device-level
-+	  tasks associated with power management, such as wakeup source control.
- endmenu
-diff --git a/drivers/soc/fsl/Makefile b/drivers/soc/fsl/Makefile
-index 71dee8d..906f1cd 100644
---- a/drivers/soc/fsl/Makefile
-+++ b/drivers/soc/fsl/Makefile
-@@ -6,6 +6,7 @@
- obj-$(CONFIG_FSL_DPAA)                 += qbman/
- obj-$(CONFIG_QUICC_ENGINE)		+= qe/
- obj-$(CONFIG_CPM)			+= qe/
-+obj-$(CONFIG_FSL_RCPM)			+= rcpm.o
- obj-$(CONFIG_FSL_GUTS)			+= guts.o
- obj-$(CONFIG_FSL_MC_DPIO) 		+= dpio/
- obj-$(CONFIG_DPAA2_CONSOLE)		+= dpaa2-console.o
-diff --git a/drivers/soc/fsl/rcpm.c b/drivers/soc/fsl/rcpm.c
-new file mode 100644
-index 0000000..3ed135e
---- /dev/null
-+++ b/drivers/soc/fsl/rcpm.c
-@@ -0,0 +1,133 @@
-+// SPDX-License-Identifier: GPL-2.0
-+//
-+// rcpm.c - Freescale QorIQ RCPM driver
-+//
-+// Copyright 2019 NXP
-+//
-+// Author: Ran Wang <ran.wang_1@nxp.com>
-+
-+#include <linux/init.h>
-+#include <linux/module.h>
-+#include <linux/platform_device.h>
-+#include <linux/of_address.h>
-+#include <linux/slab.h>
-+#include <linux/suspend.h>
-+#include <linux/kernel.h>
-+
-+#define RCPM_WAKEUP_CELL_MAX_SIZE	7
-+
-+struct rcpm {
-+	unsigned int	wakeup_cells;
-+	void __iomem	*ippdexpcr_base;
-+	bool		little_endian;
-+};
-+
-+static int rcpm_pm_prepare(struct device *dev)
-+{
-+	int i, ret, idx;
-+	void __iomem *base;
-+	struct wakeup_source	*ws;
-+	struct rcpm		*rcpm;
-+	struct device_node	*np = dev->of_node;
-+	u32 value[RCPM_WAKEUP_CELL_MAX_SIZE + 1], tmp;
-+
-+	rcpm = dev_get_drvdata(dev);
-+	if (!rcpm)
-+		return -EINVAL;
-+
-+	base = rcpm->ippdexpcr_base;
-+	idx = wakeup_sources_read_lock();
-+
-+	/* Begin with first registered wakeup source */
-+	for_each_wakeup_source(ws) {
-+
-+		/* skip object which is not attached to device */
-+		if (!ws->dev || !ws->dev->parent)
-+			continue;
-+
-+		ret = device_property_read_u32_array(ws->dev->parent,
-+				"fsl,rcpm-wakeup", value,
-+				rcpm->wakeup_cells + 1);
-+
-+		/*  Wakeup source should refer to current rcpm device */
-+		if (ret || (np->phandle != value[0])) {
-+			dev_info(dev, "%s doesn't refer to this rcpm\n",
-+					ws->name);
-+			continue;
-+		}
-+
-+		for (i = 0; i < rcpm->wakeup_cells; i++) {
-+			/* We can only OR related bits */
-+			if (value[i + 1]) {
-+				if (rcpm->little_endian) {
-+					tmp = ioread32(base + i * 4);
-+					tmp |= value[i + 1];
-+					iowrite32(tmp, base + i * 4);
-+				} else {
-+					tmp = ioread32be(base + i * 4);
-+					tmp |= value[i + 1];
-+					iowrite32be(tmp, base + i * 4);
-+				}
-+			}
-+		}
-+	}
-+
-+	wakeup_sources_read_unlock(idx);
-+
-+	return 0;
-+}
-+
-+static const struct dev_pm_ops rcpm_pm_ops = {
-+	.prepare =  rcpm_pm_prepare,
-+};
-+
-+static int rcpm_probe(struct platform_device *pdev)
-+{
-+	struct device	*dev = &pdev->dev;
-+	struct resource *r;
-+	struct rcpm	*rcpm;
-+	int ret;
-+
-+	rcpm = devm_kzalloc(dev, sizeof(*rcpm), GFP_KERNEL);
-+	if (!rcpm)
-+		return -ENOMEM;
-+
-+	r = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+	if (!r)
-+		return -ENODEV;
-+
-+	rcpm->ippdexpcr_base = devm_ioremap_resource(&pdev->dev, r);
-+	if (IS_ERR(rcpm->ippdexpcr_base)) {
-+		ret =  PTR_ERR(rcpm->ippdexpcr_base);
-+		return ret;
-+	}
-+
-+	rcpm->little_endian = device_property_read_bool(
-+			&pdev->dev, "little-endian");
-+
-+	ret = device_property_read_u32(&pdev->dev,
-+			"#fsl,rcpm-wakeup-cells", &rcpm->wakeup_cells);
-+	if (ret)
-+		return ret;
-+
-+	dev_set_drvdata(&pdev->dev, rcpm);
-+
-+	return 0;
-+}
-+
-+static const struct of_device_id rcpm_of_match[] = {
-+	{ .compatible = "fsl,qoriq-rcpm-2.1+", },
-+	{}
-+};
-+MODULE_DEVICE_TABLE(of, rcpm_of_match);
-+
-+static struct platform_driver rcpm_driver = {
-+	.driver = {
-+		.name = "rcpm",
-+		.of_match_table = rcpm_of_match,
-+		.pm	= &rcpm_pm_ops,
-+	},
-+	.probe = rcpm_probe,
-+};
-+
-+module_platform_driver(rcpm_driver);
+Best regards,
+
+Thomas
 -- 
-2.7.4
-
+Thomas Petazzoni, CTO, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
