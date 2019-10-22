@@ -2,64 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07C3CE0A89
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 19:23:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A620DE0A9B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 19:30:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=17at3eukRJWyzitjglBmRb0tM0nhu+Kn5NJqbpEcJmg=; b=FTeeBuG1Qj5Yfb
-	veCZuOSuoqovmd/xdC9baqu6RheT1TJ+uyDbscVsZjvS5fZSG7+EZpqR+JShZmM5KwxtWJ2AWizRC
-	+SuqnucMyQY1ZP9FfTMc08y2lyRSyz8aP0aw5c2uqRCxpKz1RKGZzr4hk+rY/BMoBVeGpE6Sz4TKG
-	iIdgE4mxkPKFMXAVVQJoIBAgb7h6/G0GcOZhYE0lE0q9zkhrcapEcsTD885NZciGhQyCskmVCPn7A
-	eprjDxZ/yiw7m6usQYfVV0AtfQFxHc+Zl3etiF7eg4fak4GDA1DUBwIF0QsNZuwN4V9aSpaMQU3EV
-	PeNWPH0w2IU/BG2iFQQQ==;
+	List-Owner; bh=NbvEcnw1GxtFtyfR7h9XwiWzfpcErIiynCTXtYFUMHc=; b=lLkN5mDPjW4IBF
+	3LcUfw0eBVBocC7Xx8tzjXl2CWOstFkdP7Mj0Wtukqp4ShDqiIOwkbRxoBOt6jcc+XqGt1MwYwi4T
+	NLkYkYxw9zcsEWqXsv/2eyc2nfxA+sREfsNpIn1W/8H/rRep6IOXnsX1eVW+4TEIcACjBMlbM7c02
+	d6lPOrmC8XDbTbBhShDXxSqNTYMF9RGjTPGdhRzlsQxWiPf5m1wN6aKrv7ULU6CgdNRgA4HNCkCsH
+	0/P9zRTksbcwO+fTGRP3XkFFaED2Vx7KB3b3bXVmyWO//3WCTGcbT/4HjhE5EvuAm/sJ0Gwn1/zcx
+	ZOkVYEREr6oEl1KeHPMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMxsH-00019i-JN; Tue, 22 Oct 2019 17:23:13 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1iMxz8-0003qZ-AC; Tue, 22 Oct 2019 17:30:18 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMxrj-0000wk-Ml
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 17:22:41 +0000
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why)
- by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
- (Exim 4.80) (envelope-from <maz@kernel.org>)
- id 1iMxrD-0002o8-Lr; Tue, 22 Oct 2019 19:22:07 +0200
-Date: Tue, 22 Oct 2019 18:22:06 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: Sami Tolvanen <samitolvanen@google.com>
-Subject: Re: [PATCH 03/18] arm64: kvm: stop treating register x18 as caller
- save
-Message-ID: <20191022182206.0d8b2301@why>
-In-Reply-To: <20191018161033.261971-4-samitolvanen@google.com>
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20191018161033.261971-4-samitolvanen@google.com>
-Organization: Approximate
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1iMxyt-0003FG-Jf
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 17:30:05 +0000
+Received: by mail-lj1-x244.google.com with SMTP id a22so18082783ljd.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 22 Oct 2019 10:30:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=netronome-com.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:in-reply-to:references
+ :organization:mime-version:content-transfer-encoding;
+ bh=HmmPBl6eQCJQQpK05KW2nNJH7nyGoslANOpWRy61vOw=;
+ b=zYh25urd8gs/0FeIw9pUR75l7cU4AlLmzOJvB6ZLBSpfGISKg9PuCs9ZV2wD0jAI7V
+ cKcsmwjQWpX/u/wIY3StphOwuuFtS/TuWDnRTA42d6kACzgwf0gyqwpERegSyMe2dIMn
+ LIUDxpLB9H8xTqkLR+RhcjAyMsrw+rc/EaSQldj/orTbyI734aVIWjj7GZd6MtmU5Znh
+ i2b9LYEIiZtRB73o1wmzfB2xBuzW+gKyJfEqcev98AZ5SVm2QXuz2VhM07AqGahfr4Iu
+ VaDKlG7ehiyVq5urU0fsWwcwl2WX0avYGr7HBnb3BjEoJGegVQ5LdaqXKmskejbCYh3e
+ ItfQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:in-reply-to
+ :references:organization:mime-version:content-transfer-encoding;
+ bh=HmmPBl6eQCJQQpK05KW2nNJH7nyGoslANOpWRy61vOw=;
+ b=JD7BTiI1bzjGEwDbmkK9crFvqj9XutrSBERcM2qo1VVNJjN53BVRvD9uKQ+8vsUvDG
+ lkQfygYLtbnsL86dQ4FB5WbWWTRtYyp7F2w0zCYVU8d+9muPg383BaKTEkOugFUFKVqW
+ GcxA1+1zkn41IUFAASle/4e+RoWi3eDNLWalO9pEq8DDH6/vHFDNOTARdb9jjPy25RqZ
+ 1GsQsNC7Rzgb2WchVbmJdepn9OR5dOUmgbZAcknCUD5LBlCfKkcAW5Sey1mFuT5JNi66
+ HzLzCgVfKNQF1o1o1tbHM83Vz+JSYW5h5yPy3+xpAZg99WSS2aMuHJYu2nHscu9W5DFe
+ lYgw==
+X-Gm-Message-State: APjAAAWSkmdXRvqrZOMCX8a/0qub28OXula5kEiRDV/x6s3AawK7UeXp
+ OLDMp2oIO4U2dMFe45Ip2G2pWw==
+X-Google-Smtp-Source: APXvYqxpzJg00yRe3OjBd6BnC1zysssaNWZcfUFrdIXzW/KSn/Vdod1X21VKHzDtvBdgHy9erg6Qcw==
+X-Received: by 2002:a2e:416:: with SMTP id 22mr3073575lje.55.1571765400271;
+ Tue, 22 Oct 2019 10:30:00 -0700 (PDT)
+Received: from cakuba.netronome.com ([66.60.152.14])
+ by smtp.gmail.com with ESMTPSA id h21sm1288560ljl.20.2019.10.22.10.29.57
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 22 Oct 2019 10:30:00 -0700 (PDT)
+Date: Tue, 22 Oct 2019 10:29:52 -0700
+From: Jakub Kicinski <jakub.kicinski@netronome.com>
+To: Michal Simek <michal.simek@xilinx.com>
+Subject: Re: [PATCH v2 net-next] net: axienet: In kconfig add ARM64 as
+ supported platform
+Message-ID: <20191022102952.09211971@cakuba.netronome.com>
+In-Reply-To: <cbdd6608-804a-086c-1892-1903ec4a7d80@xilinx.com>
+References: <1571653110-20505-1-git-send-email-radhey.shyam.pandey@xilinx.com>
+ <cbdd6608-804a-086c-1892-1903ec4a7d80@xilinx.com>
+Organization: Netronome Systems, Ltd.
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: samitolvanen@google.com, will@kernel.org,
- catalin.marinas@arm.com, rostedt@goodmis.org, ard.biesheuvel@linaro.org,
- mark.rutland@arm.com, keescook@chromium.org,
- kernel-hardening@lists.openwall.com, ndesaulniers@google.com,
- linux-kernel@vger.kernel.org, clang-built-linux@googlegroups.com,
- labbott@redhat.com, Dave.Martin@arm.com, linux-arm-kernel@lists.infradead.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_102239_908804_B481FE4D 
-X-CRM114-Status: GOOD (  17.17  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191022_103003_670148_4A6C4B14 
+X-CRM114-Status: GOOD (  17.82  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,105 +95,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, kernel-hardening@lists.openwall.com,
- Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
- Steven Rostedt <rostedt@goodmis.org>, clang-built-linux@googlegroups.com,
- Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org, gregkh@linuxfoundation.org,
+ netdev@vger.kernel.org, Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
+ davem@davemloft.net, anirudha.sarangi@xilinx.com, mchehab+samsung@kernel.org,
+ john.linn@xilinx.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 18 Oct 2019 09:10:18 -0700
-Sami Tolvanen <samitolvanen@google.com> wrote:
-
-> From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+On Mon, 21 Oct 2019 16:15:45 +0200, Michal Simek wrote:
+> On 21. 10. 19 12:18, Radhey Shyam Pandey wrote:
+> > xilinx axi_emac driver is supported on ZynqMP UltraScale platform.
+> > So enable ARCH64 in kconfig. It also removes redundant ARCH_ZYNQ
+> > dependency. Basic sanity testing is done on zu+ mpsoc zcu102
+> > evaluation board.
+> > 
+> > Signed-off-by: Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
+> > ---
+> > Changes for v2:
+> > Remove redundant ARCH_ZYNQ dependency.
+> > Modified commit description.
+> > ---
+> >  drivers/net/ethernet/xilinx/Kconfig | 6 +++---
+> >  1 file changed, 3 insertions(+), 3 deletions(-)
+> > 
+> > diff --git a/drivers/net/ethernet/xilinx/Kconfig b/drivers/net/ethernet/xilinx/Kconfig
+> > index 8d994ce..da11876 100644
+> > --- a/drivers/net/ethernet/xilinx/Kconfig
+> > +++ b/drivers/net/ethernet/xilinx/Kconfig
+> > @@ -6,7 +6,7 @@
+> >  config NET_VENDOR_XILINX
+> >  	bool "Xilinx devices"
+> >  	default y
+> > -	depends on PPC || PPC32 || MICROBLAZE || ARCH_ZYNQ || MIPS || X86 || ARM || COMPILE_TEST
+> > +	depends on PPC || PPC32 || MICROBLAZE || MIPS || X86 || ARM || ARM64 || COMPILE_TEST
+> >  	---help---
+> >  	  If you have a network (Ethernet) card belonging to this class, say Y.
+> >  
+> > @@ -26,11 +26,11 @@ config XILINX_EMACLITE
+> >  
+> >  config XILINX_AXI_EMAC
+> >  	tristate "Xilinx 10/100/1000 AXI Ethernet support"
+> > -	depends on MICROBLAZE || X86 || ARM || COMPILE_TEST
+> > +	depends on MICROBLAZE || X86 || ARM || ARM64 || COMPILE_TEST
+> >  	select PHYLINK
+> >  	---help---
+> >  	  This driver supports the 10/100/1000 Ethernet from Xilinx for the
+> > -	  AXI bus interface used in Xilinx Virtex FPGAs.
+> > +	  AXI bus interface used in Xilinx Virtex FPGAs and Soc's.
+> >  
+> >  config XILINX_LL_TEMAC
+> >  	tristate "Xilinx LL TEMAC (LocalLink Tri-mode Ethernet MAC) driver"
+> >   
 > 
-> In preparation of using x18 as a task struct pointer register when
-> running in the kernel, stop treating it as caller save in the KVM
-> guest entry/exit code. Currently, the code assumes there is no need
-> to preserve it for the host, given that it would have been assumed
-> clobbered anyway by the function call to __guest_enter(). Instead,
-> preserve its value and restore it upon return.
+> Acked-by: Michal Simek <michal.simek@xilinx.com>
 > 
-> Link: https://patchwork.kernel.org/patch/9836891/
-> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-> ---
->  arch/arm64/kvm/hyp/entry.S | 12 +++++-------
->  1 file changed, 5 insertions(+), 7 deletions(-)
-> 
-> diff --git a/arch/arm64/kvm/hyp/entry.S b/arch/arm64/kvm/hyp/entry.S
-> index e5cc8d66bf53..20bd9a20ea27 100644
-> --- a/arch/arm64/kvm/hyp/entry.S
-> +++ b/arch/arm64/kvm/hyp/entry.S
-> @@ -23,6 +23,7 @@
->  	.pushsection	.hyp.text, "ax"
->  
->  .macro save_callee_saved_regs ctxt
-> +	str	x18,      [\ctxt, #CPU_XREG_OFFSET(18)]
->  	stp	x19, x20, [\ctxt, #CPU_XREG_OFFSET(19)]
->  	stp	x21, x22, [\ctxt, #CPU_XREG_OFFSET(21)]
->  	stp	x23, x24, [\ctxt, #CPU_XREG_OFFSET(23)]
-> @@ -38,6 +39,7 @@
->  	ldp	x25, x26, [\ctxt, #CPU_XREG_OFFSET(25)]
->  	ldp	x27, x28, [\ctxt, #CPU_XREG_OFFSET(27)]
->  	ldp	x29, lr,  [\ctxt, #CPU_XREG_OFFSET(29)]
-> +	ldr	x18,      [\ctxt, #CPU_XREG_OFFSET(18)]
+> But I can image that others could prefer to remove all dependencies.
 
-There is now an assumption that ctxt is x18 (otherwise why would it be
-out of order?). Please add a comment to that effect.
+Yes, we'd much rather see this litany of architectures removed.
+Is there any reason it's there in the first place?
 
->  .endm
->  
->  /*
-> @@ -87,12 +89,9 @@ alternative_else_nop_endif
->  	ldp	x14, x15, [x18, #CPU_XREG_OFFSET(14)]
->  	ldp	x16, x17, [x18, #CPU_XREG_OFFSET(16)]
->  
-> -	// Restore guest regs x19-x29, lr
-> +	// Restore guest regs x18-x29, lr
->  	restore_callee_saved_regs x18
-
-Or you could elect another register such as x29 as the base, and keep
-the above in a reasonable order.
-
->  
-> -	// Restore guest reg x18
-> -	ldr	x18,      [x18, #CPU_XREG_OFFSET(18)]
-> -
->  	// Do not touch any register after this!
->  	eret
->  	sb
-> @@ -114,7 +113,7 @@ ENTRY(__guest_exit)
->  	// Retrieve the guest regs x0-x1 from the stack
->  	ldp	x2, x3, [sp], #16	// x0, x1
->  
-> -	// Store the guest regs x0-x1 and x4-x18
-> +	// Store the guest regs x0-x1 and x4-x17
->  	stp	x2, x3,   [x1, #CPU_XREG_OFFSET(0)]
->  	stp	x4, x5,   [x1, #CPU_XREG_OFFSET(4)]
->  	stp	x6, x7,   [x1, #CPU_XREG_OFFSET(6)]
-> @@ -123,9 +122,8 @@ ENTRY(__guest_exit)
->  	stp	x12, x13, [x1, #CPU_XREG_OFFSET(12)]
->  	stp	x14, x15, [x1, #CPU_XREG_OFFSET(14)]
->  	stp	x16, x17, [x1, #CPU_XREG_OFFSET(16)]
-> -	str	x18,      [x1, #CPU_XREG_OFFSET(18)]
->  
-> -	// Store the guest regs x19-x29, lr
-> +	// Store the guest regs x18-x29, lr
->  	save_callee_saved_regs x1
->  
->  	get_host_ctxt	x2, x3
-
-Thanks,
-
-	M.
--- 
-Jazz is not dead. It just smells funny...
+Most drivers are tested on just a few architectures, but as long
+as correct APIs are used they are assumed to work across the board.
+Otherwise 75% of our drivers would be x86 only. Don't be shy.
 
 _______________________________________________
 linux-arm-kernel mailing list
