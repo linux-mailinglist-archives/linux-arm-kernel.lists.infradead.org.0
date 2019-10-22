@@ -2,127 +2,132 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A14A1DFFEA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 10:45:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C0D8E0003
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 10:51:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TZxrkzo0IOeA6KRC1svtu44scloep7TrzWA3uTho7rQ=; b=pPQvwNk2MRxFMZ
-	ht6qzq5q9wCKZe3ScKI050Aphwt3yWSioyCL9rseXfFFZheeikwvv3ugr/GC/v2fiSlbiaHb4/cfP
-	Lg0ZLjEULcJOvuyby39B42ZvS0UfAJqhfUXCsjTE8PBAfMLJCbqSFI/47jIesWC3tDTQVp9M9juKJ
-	WW9kLT591AE0BRAYdsJlWhn9Z4tewKRUwGd1OrNCtn8FFjPZARPmdIuJebyTrpNieo39htWj7nIf6
-	4NHjPjWMI1iA2t/rLys3ticXC6jXeHtxdX276PyfB2N82QsLozawe4lJogsFLl6Y/Nu9Ytv0qGuOx
-	43xiMjD9viWjj45IS/Jg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=x0Dvu1/z0lhhU8xrAD6othE8HYAViaIPVNZCn7MCII8=; b=OJifBgAADgny2q
+	tKcXJWTHYX+5gYITl/6hJPRJPTwONTazbhsPwBfqspWS5lk04/u24j0jJqgaqrxbBou4NdtYezmaG
+	x/1OVvhQMK95tqxurUGvwExzqxf89NBUHULOwB9sRt/HFEhlQAL51HMQimqxvO0fY/0bMhWc9ZcGO
+	KUBk40X0b68rHGBrXy+6RIwHAMMLaXOwU5d11cw1I0DKmOVpdUez+G/RBFJnEobkEa0J3IQONmG2e
+	zDJVHzwDwJ039ZYoWKysoa9eJrMEMiUGQESGuSqjfSPXCz0+4N3NUGWWRqjPL8Dd/JkFwWbf0mL3C
+	ZBYXqYPA5PSDi9T7FnOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMpnJ-00062a-QO; Tue, 22 Oct 2019 08:45:33 +0000
-Received: from mail-eopbgr150139.outbound.protection.outlook.com
- ([40.107.15.139] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
+	id 1iMptB-0008DZ-SI; Tue, 22 Oct 2019 08:51:37 +0000
+Received: from mail-eopbgr800042.outbound.protection.outlook.com
+ ([40.107.80.42] helo=NAM03-DM3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMpn9-00061L-7X
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 08:45:25 +0000
+ id 1iMpt2-0008D1-0e
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 08:51:29 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=NH6ICw/aGJGLXiBO1oiObwDqLU8GftqOiP767cGnR6reQmnHQbqaylRVOjUs3ra76WMR/MFiD9KnzY6YoGyMVHEypYoa5msaAvgSSG7XIG6oJGqsl5lzSF97t/6dvCUL3VKV0OJMqOBzScXdAU6GLzkwd4haGWxp52j8Kc3IhYc4gkgaC6wgaMi3k6cVR5tmjR2g3E7IOrLIJ2xFndjCYvk6I3map847qZe9+HAJc7dxLsIurSjyq8Z5BIjoAY2q42yTVzvHH6QW7UAFh0c3VQ73QYnxTnF0PT7Y4El4OuUM5H/kWEpf1nSanZScQuaYrRtYI3eFZRwc95O3uaiDhA==
+ b=YEZnKuWNKG73R/8hQE4UoSS83Zf21pIt75Pgv9zoXJpzSd/VXE7ymf9IYV5bYh0kZF5953uoeU2bahoqtf+fAh3a8OUMhVKdhjPfgvNzs9MPtSeFIDvTXeJf9VM02O+NOR1uzdO59DBGsXFwJRVwlcuEfeNRK0OHXx8KzcPJibjMEU4keocJgmDwr/R4jkTFMEBMxKakZfYRVcD/07wCff4yrjxkDRK88Xjxc9TjghfnJQGjJGT20mmcW4xQqK6UUQPYUDHQytotd+axaIzSKPc+YMvMSq60fhwdNMGvXDHiNrtrZAa+q99I0IQwwbefp2K2IqVghAeEgnZ5QCgrUg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=9RDd6uHjnaIl18b9/q1LJ/A6qy5517LdOU+CAcC+MiA=;
- b=TxUdCh5SdODfPQD99jlSdzEnyonsC3uFG8BBHuS6QBU7bZsVMrI5XqbCuWrA9YzpXrJFO4MwkRjt8o4RNERUo4BroFjIkYvbiQ2Y3KG17fG8QFQSvSsDo6R7OUSjY6Q4iNezPhLZ3+n29KL0a3vJMQksRjLZo5S+bqVYkEUyB/JjsY7gJCzch/e6JOC3YFAVpCogEYOhPk0kHuo8xKJ41fkM+kA6jWzcm8NAXmhEYsmpdb9DUyp5PIK8/hKXu0xk8Cs3TP+95WJwjoAZJdWwzEC16uuckWdz6Miqlw47s32jaQX1RGtH/pazmvM7S9YeG6orbU82gLhPOYuG/z5q4g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=axentia.se; dmarc=pass action=none header.from=axentia.se;
- dkim=pass header.d=axentia.se; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axentia.se;
- s=selector2;
+ bh=56W45nPGUSRM1VFi2Z8YDVEVdGdyBXNSIhTK92cktVw=;
+ b=NlegAizUS3apKtMMlHC52WYctT/Ah3n5rXIqJ1z/Iz6puAmQRcjc2Ia+rfw9Wu0FkW6dtsUpy+G+ePsPa8OsoeZsT4rt1cw3T7+NgpUxXr7g+bRxnaPlQK1icoOiz2vw190UI8yKTpg7/qawNVbaTGrY3BTexVYdQCpsR0AfxcLXuI5jTtuq2lfBhF8pbWMUAtJ+m2YaVCD9u4Yq40E/g0qpgB8fmeA8iSXWYZQIi1V6i9tbuZ/2C7mnbtIURzQAVKrThJ02/2wak5AudSz1cLCSWyKQrma8lbb6ezH23c2TOVGJ7g/uaBb9uE5OyKaxmaqXtLRgXt7fN5b8dgU6qg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 149.199.60.83) smtp.rcpttodomain=linutronix.de smtp.mailfrom=xilinx.com;
+ dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
+ not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=9RDd6uHjnaIl18b9/q1LJ/A6qy5517LdOU+CAcC+MiA=;
- b=JyGeA52ffsz9qpXXEdEFFSALP+9cfSZIWSCbTjEQYDTKNRLN3yCTggqufdCYkiKHlwRInQhR5iL8Pqv+zqs5gZn4m5VQgEhX0KrpdXAzCASaJN7RE5wWnTDQEdGjuG/b8t8R0HJXfgNjgEAXiEVnbDYRABoCiR1kJaUuEXs6xTA=
-Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com (52.134.66.158) by
- DB3PR0202MB3340.eurprd02.prod.outlook.com (52.134.67.15) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2367.24; Tue, 22 Oct 2019 08:45:18 +0000
-Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com
- ([fe80::c5b8:6014:87a4:1afe]) by DB3PR0202MB3434.eurprd02.prod.outlook.com
- ([fe80::c5b8:6014:87a4:1afe%7]) with mapi id 15.20.2347.029; Tue, 22 Oct 2019
- 08:45:17 +0000
-From: Peter Rosin <peda@axentia.se>
-To: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>, Brendan Higgins
- <brendanhiggins@google.com>, Wolfram Sang <wsa@the-dreams.de>, Benjamin
- Herrenschmidt <benh@kernel.crashing.org>, Joel Stanley <joel@jms.id.au>, Rob
- Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>, Andrew
- Jeffery <andrew@aj.id.au>, Tao Ren <taoren@fb.com>, Cedric Le Goater
- <clg@kaod.org>
-Subject: Re: [PATCH i2c-next 1/2] dt-bindings: i2c: aspeed: add hardware
- timeout support
-Thread-Topic: [PATCH i2c-next 1/2] dt-bindings: i2c: aspeed: add hardware
- timeout support
-Thread-Index: AQHViE2KU5aZojIjkUqCdR4ab3gQm6dlt3EA///tFICAALTpgA==
-Date: Tue, 22 Oct 2019 08:45:17 +0000
-Message-ID: <b98827fa-462a-060b-efc7-27fe5d7742ff@axentia.se>
-References: <20191021202414.17484-1-jae.hyun.yoo@linux.intel.com>
- <20191021202414.17484-2-jae.hyun.yoo@linux.intel.com>
- <0a629f7b-b829-c332-27d8-dc825205ff72@axentia.se>
- <7abf933b-cb18-10af-9c1b-163ec65ffae5@linux.intel.com>
-In-Reply-To: <7abf933b-cb18-10af-9c1b-163ec65ffae5@linux.intel.com>
-Accept-Language: en-US, sv-SE
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ bh=56W45nPGUSRM1VFi2Z8YDVEVdGdyBXNSIhTK92cktVw=;
+ b=ECHMqoIawE0FkeOAHbkticeGGhmbF1DWx6+vcTUSq8mWUTiqheZYUxTt3ExYI923gislAh/9et4sKizrT5Xp42TFdAy7wikq5epHOG373fGzx2klm4ZDadUqmLFsIVcX417j/cnIboNUVspER35E+vVjxE/lop/PLtXnoKO2zcM=
+Received: from BN7PR02CA0004.namprd02.prod.outlook.com (2603:10b6:408:20::17)
+ by BN8PR02MB5955.namprd02.prod.outlook.com (2603:10b6:408:b1::12)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2347.17; Tue, 22 Oct
+ 2019 08:51:23 +0000
+Received: from SN1NAM02FT028.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e44::200) by BN7PR02CA0004.outlook.office365.com
+ (2603:10b6:408:20::17) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2347.23 via Frontend
+ Transport; Tue, 22 Oct 2019 08:51:23 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.83)
+ smtp.mailfrom=xilinx.com; linutronix.de; dkim=none (message not signed)
+ header.d=none;linutronix.de; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ SN1NAM02FT028.mail.protection.outlook.com (10.152.72.105) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2367.14
+ via Frontend Transport; Tue, 22 Oct 2019 08:51:23 +0000
+Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1iMpsw-0002uh-Tp; Tue, 22 Oct 2019 01:51:22 -0700
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1iMpsr-0002P5-RN; Tue, 22 Oct 2019 01:51:17 -0700
+Received: from [172.30.17.123] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <michals@xilinx.com>)
+ id 1iMpso-0002DK-JO; Tue, 22 Oct 2019 01:51:14 -0700
+Subject: Re: [PATCH] clocksource/drivers: Fix memory leak in
+ ttc_setup_clockevent
+To: Markus Elfring <Markus.Elfring@web.de>,
+ Navid Emamdoost <navid.emamdoost@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <20191021201848.4231-1-navid.emamdoost@gmail.com>
+ <fb5d5331-9a89-8370-1e61-396dd05f291a@web.de>
+From: Michal Simek <michal.simek@xilinx.com>
+Message-ID: <2a6cdb63-397b-280a-7379-740e8f43ddf6@xilinx.com>
+Date: Tue, 22 Oct 2019 10:51:11 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
-x-originating-ip: [213.112.138.100]
-x-clientproxiedby: HE1PR0102CA0053.eurprd01.prod.exchangelabs.com
- (2603:10a6:7:7d::30) To DB3PR0202MB3434.eurprd02.prod.outlook.com
- (2603:10a6:8:5::30)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peda@axentia.se; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 9c73b2ee-2f98-46ee-46ee-08d756cc29f3
-x-ms-traffictypediagnostic: DB3PR0202MB3340:
-x-microsoft-antispam-prvs: <DB3PR0202MB3340855FD970AFD95B1783C4BC680@DB3PR0202MB3340.eurprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 01986AE76B
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(376002)(136003)(346002)(366004)(396003)(39830400003)(199004)(52314003)(189003)(6512007)(54906003)(6436002)(99286004)(6506007)(386003)(53546011)(6246003)(229853002)(110136005)(58126008)(6486002)(25786009)(66066001)(65806001)(65956001)(102836004)(8936002)(4326008)(26005)(52116002)(76176011)(81156014)(81166006)(8676002)(316002)(5660300002)(186003)(7416002)(71200400001)(256004)(14444005)(66946007)(305945005)(6116002)(3846002)(86362001)(31696002)(66446008)(64756008)(66556008)(66476007)(4001150100001)(2906002)(11346002)(476003)(486006)(36756003)(508600001)(14454004)(31686004)(446003)(71190400001)(7736002)(2616005)(921003)(1121003);
- DIR:OUT; SFP:1102; SCL:1; SRVR:DB3PR0202MB3340;
- H:DB3PR0202MB3434.eurprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: axentia.se does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: fn4FipVxJlznXQexa6vcgCYlFcElZLKNZhs5iuxQcsBnm/aFtkVR7sY6nYcq96lVeMoS02TKUIRn0vT7GYzk7fbPwwAHcbs05kU/5e1JYkJQQ+/eRT6cmbCsE99AJOP7CXhpSz2sAf1KRxTdo6G4y/fh18aNXmRGBUmbZc4yDWP5doupqeXgd5vBLhzr0f7WUMq/i1u8lv03V9jpuN6XoNWvwQkSu1klbawffZ+rhWqhwQP/jgdpnK5k9eKiM+cufKCcCQCA0WEe3tLtPLQZmid7jlXzviqmyqkrjLBwMprFQ/DTDUsT7vD10z3NAtiVcYkBD0DjnM0SRAYxhHO0Aoe8ilUQ+6KbaOfj5AqO9Fspfn2Q6jX2HRdX5rr78DIljv3Fq+NLdR+jZ3wOsi33SxOBqe9JqIZu5TSfPwkOMxkkzKYJHOnxnTErmSfhqTWG
-x-ms-exchange-transport-forked: True
-Content-ID: <7084A791E746C8458A822A468C1DDC13@eurprd02.prod.outlook.com>
 MIME-Version: 1.0
-X-OriginatorOrg: axentia.se
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9c73b2ee-2f98-46ee-46ee-08d756cc29f3
-X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Oct 2019 08:45:17.8657 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 4ee68585-03e1-4785-942a-df9c1871a234
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: s/uZAiNNWtS+LEk6fQyPy4opUMAHDU6rylu/WPazBum4gEOjYR6VHXTGI8UWBELj
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0202MB3340
+In-Reply-To: <fb5d5331-9a89-8370-1e61-396dd05f291a@web.de>
+Content-Language: en-US
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:NLI; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(4636009)(346002)(39860400002)(376002)(396003)(136003)(189003)(199004)(36756003)(126002)(23676004)(446003)(44832011)(47776003)(316002)(50466002)(486006)(356004)(426003)(476003)(6666004)(76176011)(2616005)(11346002)(336012)(36386004)(65806001)(54906003)(26005)(229853002)(2486003)(65956001)(8676002)(81156014)(81166006)(31696002)(186003)(7416002)(8936002)(966005)(2870700001)(478600001)(5660300002)(6306002)(106002)(9786002)(6246003)(2906002)(4326008)(110136005)(58126008)(31686004)(305945005)(70586007)(70206006);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BN8PR02MB5955; H:xsj-pvapsmtpgw01; FPR:;
+ SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; MX:1; A:1; 
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 2cf784a9-5f70-4fb5-1ecc-08d756cd0445
+X-MS-TrafficTypeDiagnostic: BN8PR02MB5955:
+X-MS-Exchange-PUrlCount: 2
+X-Microsoft-Antispam-PRVS: <BN8PR02MB5955F28EA42CB7AFD3AEDFB5C6680@BN8PR02MB5955.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:9508;
+X-Forefront-PRVS: 01986AE76B
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: MzYUZESoncFwqnQ7wPDWbdjjMVjAKIQX27d7J3FltOwQKLfjIgXZdrCMD3t+8vbdh6nkCma5IiSZ3uht2N7OdauivDdXrnGqfWAstujZeGhl8kaE3rLQARl7ZjF9kIlOL6mxbA5xh8oqGsiMF0h+oo/rN8wbqUYJQ+AJs61W7Q8OLAmFuw/8Y2KM047CzvLzU6ao8iJjFKtbEwbV4ffrn/pP/lcoZqo/VYar3KOB9DXEer/CLXuc3NGPhvK4ZAymeBcnCe2kt+9i4bLwDeOZlDyJUtkiqO9uOUWtnLjTtMBhyXucbtzQnTz4aM26MsJ8T1ePuYusf1qSUH4oLcO7A8gl7KVc7Hl7X1vVi7qs06Hd28wpIPsrQtIcHUAXT9/FIErVPW3vXQIJuhQB+93+cGxz/6yzbO3YcJbOQ846pxmejftf9kY2NMBh0eH0ywmOTfGJwbIynhhb9zm6BZINJQ==
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Oct 2019 08:51:23.5006 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2cf784a9-5f70-4fb5-1ecc-08d756cd0445
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN8PR02MB5955
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_014523_479226_251A092B 
-X-CRM114-Status: GOOD (  26.30  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191022_015128_059515_D6C8CBCE 
+X-CRM114-Status: GOOD (  15.09  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.15.139 listed in list.dnswl.org]
+ no trust [40.107.80.42 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -136,112 +141,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "openbmc@lists.ozlabs.org" <openbmc@lists.ozlabs.org>,
- "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
- "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: kernel-janitors@vger.kernel.org, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Kangjie Lu <kjlu@umn.edu>, linux-kernel@vger.kernel.org,
+ Michal Simek <michal.simek@xilinx.com>, Navid Emamdoost <emamd001@umn.edu>,
+ Stephen McCamant <smccaman@umn.edu>, Thomas Gleixner <tglx@linutronix.de>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-10-21 23:57, Jae Hyun Yoo wrote:
-> Hi Peter,
-> 
-> On 10/21/2019 2:05 PM, Peter Rosin wrote:
->> On 2019-10-21 22:24, Jae Hyun Yoo wrote:
->>> Append a binding to support hardware timeout feature.
->>>
->>> Signed-off-by: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
->>> ---
->>>   Documentation/devicetree/bindings/i2c/i2c-aspeed.txt | 2 ++
->>>   1 file changed, 2 insertions(+)
->>>
->>> diff --git a/Documentation/devicetree/bindings/i2c/i2c-aspeed.txt b/Documentation/devicetree/bindings/i2c/i2c-aspeed.txt
->>> index b47f6ccb196a..133bfedf4cdd 100644
->>> --- a/Documentation/devicetree/bindings/i2c/i2c-aspeed.txt
->>> +++ b/Documentation/devicetree/bindings/i2c/i2c-aspeed.txt
->>> @@ -17,6 +17,8 @@ Optional Properties:
->>>   - bus-frequency	: frequency of the bus clock in Hz defaults to 100 kHz when not
->>>   		  specified
->>>   - multi-master	: states that there is another master active on this bus.
->>> +- aspeed,hw-timeout-ms	: Hardware timeout in milliseconds. If it's not
->>> +			  specified, the H/W timeout feature will be disabled.
->>>   
->>>   Example:
->>>   
->>>
->>
->> Some SMBus clients support a smbus-timeout-disable binding for disabling
->> timeouts like this, for cases where the I2C adapter in question on occasion
->> is unable to keep the pace. Adding that property thus avoids undesired
->> timeouts when the client is SMBus conformant without it. Your new binding
->> is the reverse situation, where you want to add a timeout where one is
->> otherwise missing.
->>
->> Anyway, since I2C does not have a specified lowest possible frequency, this
->> feels like something that is more in the SMBus arena. Should the property
->> perhaps be a generic property named smbus-timeout-ms, or something like
->> that?
-> 
-> Well, I tried upstreaming of the generic timeout property a year ago but
-> I agreed that the generic bus timeout property can be set by an ioctl
-> command so it didn't need to be added into device tree at that time. Not
-> sure if any need has come recently but I haven't heard that. This driver
-> still uses the generic timeout property which is provided by i2c core
-> for handling command timeouts, and it's out of scope from this patch
-> series.
-> 
->> If the above is not wanted or appropriate, then I would personally prefer
->> aspeed,bus-timeout-ms over aspeed,hw-timeout-ms. To me, hw-timeout-ms sounds
->> like a (more serious) timeout between the CPU and the I2C peripheral unit
->> or something like that. But I don't care deeply...
-> 
-> Changes I submitted in this patch set is for a different purpose which
-> is very Aspeed H/W specific, and actually it's a more serious timeout
-> setting indeed. If this H/W is used in multi-master environment, it
-> could meet a H/W hang that freezes itself in slave mode and it can't
-> escape from the state. To resolve the specific case, this H/W provides
-> self-recovery feature which monitors abnormal state of SDA, SCL and its
-> H/W state machine using the timeout setting to determine the escape
-> condition.
-
-Are you saying that the aspeed HW is buggy and that this abnormal state
-is self inflicted by the aspeed HW even if other masters on the bus
-behave sanely? Because I didn't quite read it that way at all...
-
-To me, it sounded *exactly* like the state I2C clients end up in when an
-I2C master "dies" and stops communicating in the middle of a transaction.
-I.e. the thing that the SMBus timeout is designed to prevent (and the
-state the I2C nine-clk-recovery sequence addresses). The only twist (that
-I saw) was that the aspeed HW is also a master and that the aspeed master
-driver is completely locked out from the bus while some obnoxious master
-fails to complete its transaction (or whatever it was up to).
-
-If this can only be triggered when the HW is acting as a slave, and by
-aborted or otherwise funky master activity on the bus, then I wouldn't
-call it an HW issue. Then it would be a bus issue. I.e. something needing
-a bus-timeout instead of a hw-timeout.
-
-I don't have the specifics, so I can't tell which way it is. I'm just
-reacting to the presented information.
-
-Cheers,
-Peter
-
-> Generally, this H/W timeout value is smaller than the generic bus
-> timeout value (I'm using 300ms for the H/W timeout while I'm using 1
-> second for the generic bus timeout) so I think it should be
-> distinguished from the generic bus timeout.
-> 
-> Thanks,
-> 
-> Jae
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjIuIDEwLiAxOSAxMDoyNiwgTWFya3VzIEVsZnJpbmcgd3JvdGU6Cj4+IEluIHRoZSBpbXBl
+bGVtZW50YXRpb24gb2YgdHRjX3NldHVwX2Nsb2NrZXZlbnQoKSB0aGUgYWxsb2NhdGVkIG1lbW9y
+eQo+PiBmb3IgdHRjY2Ugc2hvdWxkIGJlIHJlbGVhc2VkIGlmIGNsa19ub3RpZmllcl9yZWdpc3Rl
+cigpIGZhaWxzLgo+IAo+ICogUGxlYXNlIGF2b2lkIHRoZSBjb3B5aW5nIG9mIHR5cG9zIGZyb20g
+cHJldmlvdXMgY2hhbmdlIGRlc2NyaXB0aW9ucy4KPiAKPiAqIFVuZGVyIHdoaWNoIGNpcmN1bXN0
+YW5jZXMgd2lsbCBhbiDigJxpbXBlcmF0aXZlIG1vb2TigJ0gbWF0dGVyIGZvciB5b3UgaGVyZT8K
+PiAgIGh0dHBzOi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L3RvcnZh
+bGRzL2xpbnV4LmdpdC90cmVlL0RvY3VtZW50YXRpb24vcHJvY2Vzcy9zdWJtaXR0aW5nLXBhdGNo
+ZXMucnN0P2lkPTdkMTk0YzIxMDBhZDJhNmRkZWQ1NDU4ODdkMDI3NTQ5NDhjYTUyNDEjbjE1MQo+
+IAo+IAo+PiArKysgYi9kcml2ZXJzL2Nsb2Nrc291cmNlL3RpbWVyLWNhZGVuY2UtdHRjLmMKPj4g
+QEAgLTQyNCw2ICs0MjQsNyBAQCBzdGF0aWMgaW50IF9faW5pdCB0dGNfc2V0dXBfY2xvY2tldmVu
+dChzdHJ1Y3QgY2xrICpjbGssCj4+ICAJCQkJICAgICZ0dGNjZS0+dHRjLmNsa19yYXRlX2NoYW5n
+ZV9uYik7Cj4+ICAJaWYgKGVycikgewo+PiAgCQlwcl93YXJuKCJVbmFibGUgdG8gcmVnaXN0ZXIg
+Y2xvY2sgbm90aWZpZXIuXG4iKTsKPj4gKwkJa2ZyZWUodHRjY2UpOwo+PiAgCQlyZXR1cm4gZXJy
+Owo+PiAgCX0KPiAKPiBUaGlzIGFkZGl0aW9uIGxvb2tzIGNvcnJlY3QuCj4gQnV0IEkgd291bGQg
+cHJlZmVyIHRvIG1vdmUgc3VjaCBleGNlcHRpb24gaGFuZGxpbmcgY29kZSB0byB0aGUgZW5kIG9m
+Cj4gdGhpcyBmdW5jdGlvbiBpbXBsZW1lbnRhdGlvbiBzbyB0aGF0IGR1cGxpY2F0ZSBzb3VyY2Ug
+Y29kZSB3aWxsIGJlIHJlZHVjZWQuCj4gaHR0cHM6Ly9naXQua2VybmVsLm9yZy9wdWIvc2NtL2xp
+bnV4L2tlcm5lbC9naXQvdG9ydmFsZHMvbGludXguZ2l0L3RyZWUvRG9jdW1lbnRhdGlvbi9wcm9j
+ZXNzL2NvZGluZy1zdHlsZS5yc3Q/aWQ9N2QxOTRjMjEwMGFkMmE2ZGRlZDU0NTg4N2QwMjc1NDk0
+OGNhNTI0MSNuNDUwCgpKdXN0IGEgbm90ZS4gTWF5YmUgeW91IHNob3VsZCBhbHNvIGNvbnNpZGVy
+IHRvIGZpeCB0aGlzIGVycm9yIHBhdGggaW4KdHRjX3NldHVwX2Nsb2Nrc291cmNlKCkgd2hlbiBu
+b3RpZmllciBhbHNvIGNhbiBmYWlsIHRoYXQgdGhlcmUgaXMgbm8KbmVlZCB0byBjb250aW51ZSB3
+aXRoIGNvZGUgZXhlY3V0aW9uLgoKVGhhbmtzLApNaWNoYWwKCl9fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
+CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
+ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
