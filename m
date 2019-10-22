@@ -2,86 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 558C3E04D5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 15:22:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16D7EE04F9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 15:28:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0muqqXhEJgAeubJTLPOJ4K6wiwy2sQxoiQ7QqqtUIFQ=; b=Vfw8JDxTWUlxOT
-	isUX/44Qa5FgrVCwLpbvJTrWTYj46G0gMIOOReqKm9ZfHUgnV+dHWXRtP3uNoJoWSVmDRZjGwJeG6
-	ivrhJA/xu6iF0JR+F3Rv2uC8s7GnhDJVI+2NmW4X/PZuirvNxsU6y5NqE2kFEEYnyi7I4ONZtlYMW
-	xY3ZPx7J+2E8L3CO2N/2DvOztCWt7f053Eqb0yR5Imyi6GWa+sVW1tkKTHQTAO9O7ZytrZnXyU8S/
-	kRtR4mYiV5/q+kKpJarYINRo73E8FVJXOQzC9M1XzY6AVzBWuM1whRqdnvAQVNf4+Wp3re0TDTZry
-	urhZvfkVZ21dPE8Np9ZA==;
+	List-Owner; bh=0B2z9w57eeJNEJzmFVbWpi2cUSAbl3jW4sUa5chgE9E=; b=n1b64u6EPMxI/5
+	uPXTdZbxqhd89ciTRMDz5wHpoEHnS4p2H0Og3+x0p2ArgDOxVwisxLzwQMmHqUWLywzirRb+lmT2s
+	vAzttEO7RW4yWenVmAutA2l7rampxcUvCoaZu7040O4ilVd/ksE6AFlR9hNBhRc5WeZbWEfI0eA8K
+	mEX+LWS0JK89kdnMW7ROl6uULDHTQ1ye/6s8BdxSStpfqW+Ln9Gj91Oyzk1NvhLYfeWIPmrMkMJ0B
+	dsr3HA/O/Lt/oGXYx9YuDtumKhbSupbae883yeaFh4GEALvR9WU4gNbrYKkmub4lFIzexyftiOCQa
+	QVAbKQ2wb0uawRWGBjTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMu7M-0003v4-7h; Tue, 22 Oct 2019 13:22:32 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1iMuDA-0006Wq-Ic; Tue, 22 Oct 2019 13:28:32 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMu77-0003uT-CT
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 13:22:19 +0000
-Received: by mail-wr1-x443.google.com with SMTP id z9so18031963wrl.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 22 Oct 2019 06:22:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=2fkOFNYm57+Sdwo0Ah8rCzDENCbmy1bQKtTOdjuKRbo=;
- b=KjeQJN5+15TjqUNjpLnGaTFqiE44NRgay2oSkXkt/cNofXfkuD33jYsk1EmeV4RRD6
- ET5KtpIwMagN+onrbT+TGylsbGwzhpY/jtsq+GxzN9mYDeaJO4IpSCqwv3pZdNZaWnzf
- ylG1BOUYOcvDhAyWJb8AQnbGJGGnrnB79CKqmHGo0D9H1IlJaBs9v6avY3gGznVBVrZP
- cI8YR+xt0Rmg8EEeEX7kUMOOGAtT+GRofZ98GHIkTlQgi3TCuRdkqFhSDhrIOAR0euzY
- XvDqSEASCICzYYxg4+rKne09K6u7Ji/ONmW6MJfNt5PmG7akTG3FqQH4rnl2BC/JRiyT
- 9dhA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=2fkOFNYm57+Sdwo0Ah8rCzDENCbmy1bQKtTOdjuKRbo=;
- b=F2dmZ97MOLcj2ywz/z+8yA7cEEIWz703wAwRt+xVRIb8EiQNVinyW24VgRyLBYF9zT
- 14zHgmCvSbOKG735IR5ZWoE7DxS+i0Ur9OKaf6ByL4A5GGpxDb9LKimQp10MNwea+HQW
- xfQDR21oZKTedAsUTi8FEljSjJTMtFk/Xd0+6UQhHZAAW9rp7SrxvbUdpYq5yAnBway+
- fu5+nayy5yPai1XS49m525vvBFmDE6LkHhSv6fraoFxDguHOK8X+94ZZ7Bv2CYa+9z/Z
- Ry4p7URQGpURDX7/P2ImvR4ORFWZMIXOfyTqMNv7r6fPBV3/wKuhsNk65fHdgtr1Eq4A
- xFVA==
-X-Gm-Message-State: APjAAAV1PcLAJ7LGf9EwAAgey7AVLmbIgVli9wzjecv9SXROSFru9MuO
- G/Vajdi2VVNkTh2c15wEoh8=
-X-Google-Smtp-Source: APXvYqw+Y61pf79cn2uA3pPa8HaYl+Fo6rfUnWH7IL7oi83j9v2VMO5HRwd8uenDTPCRfIrkqKNykg==
-X-Received: by 2002:a5d:6785:: with SMTP id v5mr3490121wru.174.1571750535358; 
- Tue, 22 Oct 2019 06:22:15 -0700 (PDT)
-Received: from Red (lfbn-1-7036-79.w90-116.abo.wanadoo.fr. [90.116.209.79])
- by smtp.googlemail.com with ESMTPSA id p17sm14813947wrn.4.2019.10.22.06.22.13
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 22 Oct 2019 06:22:14 -0700 (PDT)
-Date: Tue, 22 Oct 2019 15:22:12 +0200
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: Dan Carpenter <dan.carpenter@oracle.com>
-Subject: Re: [PATCH v4 02/11] crypto: Add Allwinner sun8i-ce Crypto Engine
-Message-ID: <20191022132212.GA28813@Red>
-References: <20191012184852.28329-3-clabbe.montjoie@gmail.com>
- <20191022092312.GC10833@kadam>
+ id 1iMuCo-0006Kx-Fn; Tue, 22 Oct 2019 13:28:12 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=BfwiuuPKHEAB6UXs1psPKJrzASEoQWQlyqAomDErXHw=; b=tmVMGgmQrw7/IZtl0Kep0rxiw
+ P+KoF2qV5mTw52BBoiv9h9jYJmMgnu0LlOlrAb58vTgS6giWJsVi9ma4cPPoLdCTLb1wBFDRfqjvb
+ uyymMd1eqQCusoHwdzBKEqVdq4/VKzfv7D8T5JuK+bV2Sa+jSMOisBEjb2bCFiBjAIHPMAhWZ9wDS
+ wSfdQqSUqMMo9aAzLSpINCJNtQy18qsym1bMR7VMljzOXpyDQuTISW7m0QOS+8k4WtMm3nhxHA93G
+ fgtoiEBuyQ4tglzOmZUjJ3AzOjxQ9ogmktV6qYpJXCaRHSXEVAd1WJUqqGd3Ort2r89uWIBrDsmLY
+ IaG/3puUw==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:45990)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1iMuCX-0007SK-80; Tue, 22 Oct 2019 14:27:53 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1iMuCQ-0004b0-2T; Tue, 22 Oct 2019 14:27:46 +0100
+Date: Tue, 22 Oct 2019 14:27:46 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+Subject: Re: [PATCH v2] mtd: spear_smi: Fix Write Burst mode
+Message-ID: <20191022132745.GT25745@shell.armlinux.org.uk>
+References: <20191022131918.17668-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191022092312.GC10833@kadam>
+In-Reply-To: <20191022131918.17668-1-miquel.raynal@bootlin.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_062217_425597_8353A30E 
-X-CRM114-Status: GOOD (  12.90  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191022_062810_693822_AB443185 
+X-CRM114-Status: GOOD (  33.21  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
  [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (clabbe.montjoie[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -100,86 +85,136 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, kbuild-all@lists.01.org,
- herbert@gondor.apana.org.au, catalin.marinas@arm.com, kbuild@lists.01.org,
- linux-sunxi@googlegroups.com, linux@armlinux.org.uk, mripard@kernel.org,
- linux-kernel@vger.kernel.org, wens@csie.org, robh+dt@kernel.org,
- linux-crypto@vger.kernel.org, will@kernel.org, davem@davemloft.net,
- linux-arm-kernel@lists.infradead.org
+Cc: Vignesh Raghavendra <vigneshr@ti.com>,
+ Tudor Ambarus <Tudor.Ambarus@microchip.com>,
+ Richard Weinberger <richard@nod.at>, stable@vger.kernel.org,
+ Marek Vasut <marek.vasut@gmail.com>,
+ Boris Brezillon <boris.brezillon@collabora.com>, linux-mtd@lists.infradead.org,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Brian Norris <computersforpeace@gmail.com>,
+ David Woodhouse <dwmw2@infradead.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 22, 2019 at 12:23:12PM +0300, Dan Carpenter wrote:
-> Hi Corentin,
+On Tue, Oct 22, 2019 at 03:19:18PM +0200, Miquel Raynal wrote:
+> Any write with either dd or flashcp to a device driven by the
+> spear_smi.c driver will pass through the spear_smi_cpy_toio()
+> function. This function will get called for chunks of up to 256 bytes.
+> If the amount of data is smaller, we may have a problem if the data
+> length is not 4-byte aligned. In this situation, the kernel panics
+> during the memcpy:
 > 
-> url:    https://github.com/0day-ci/linux/commits/Corentin-Labbe/crypto-add-sun8i-ce-driver-for-Allwinner-crypto-engine/20191014-104401
-> base:   https://git.kernel.org/pub/scm/linux/kernel/git/herbert/cryptodev-2.6.git master
+>     # dd if=/dev/urandom bs=1001 count=1 of=/dev/mtd6
+>     spear_smi_cpy_toio [620] dest c9070000, src c7be8800, len 256
+>     spear_smi_cpy_toio [620] dest c9070100, src c7be8900, len 256
+>     spear_smi_cpy_toio [620] dest c9070200, src c7be8a00, len 256
+>     spear_smi_cpy_toio [620] dest c9070300, src c7be8b00, len 233
+>     Unhandled fault: external abort on non-linefetch (0x808) at 0xc90703e8
+>     [...]
+>     PC is at memcpy+0xcc/0x330
 > 
-> If you fix the issue, kindly add following tag
-> Reported-by: kbuild test robot <lkp@intel.com>
-> Reported-by: Dan Carpenter <dan.carpenter@oracle.com>
+> The above error occurs because the implementation of memcpy_toio()
+> tries to optimize the number of I/O by writing 4 bytes at a time as
+> much as possible, until there are less than 4 bytes left and then
+> switches to word or byte writes.
 > 
-> smatch warnings:
-> drivers/crypto/allwinner/sun8i-ce/sun8i-ce-core.c:371 sun8i_ce_allocate_chanlist() error: uninitialized symbol 'err'.
+> Unfortunately, the specification states about the Write Burst mode:
 > 
-> # https://github.com/0day-ci/linux/commit/f113059e7b4f94c545994aeafdc809a3e4907ae4
-> git remote add linux-review https://github.com/0day-ci/linux
-> git remote update linux-review
-> git checkout f113059e7b4f94c545994aeafdc809a3e4907ae4
-> vim +/err +371 drivers/crypto/allwinner/sun8i-ce/sun8i-ce-core.c
+>         "the next AHB Write request should point to the next
+> 	incremented address and should have the same size (byte,
+> 	half-word or word)"
 > 
-> f113059e7b4f94 Corentin Labbe 2019-10-12  334  static int sun8i_ce_allocate_chanlist(struct sun8i_ce_dev *ce)
-> f113059e7b4f94 Corentin Labbe 2019-10-12  335  {
-> f113059e7b4f94 Corentin Labbe 2019-10-12  336  	int i, err;
-> f113059e7b4f94 Corentin Labbe 2019-10-12  337  
-> f113059e7b4f94 Corentin Labbe 2019-10-12  338  	ce->chanlist = devm_kcalloc(ce->dev, MAXFLOW,
-> f113059e7b4f94 Corentin Labbe 2019-10-12  339  				    sizeof(struct sun8i_ce_flow), GFP_KERNEL);
-> f113059e7b4f94 Corentin Labbe 2019-10-12  340  	if (!ce->chanlist)
-> f113059e7b4f94 Corentin Labbe 2019-10-12  341  		return -ENOMEM;
-> f113059e7b4f94 Corentin Labbe 2019-10-12  342  
-> f113059e7b4f94 Corentin Labbe 2019-10-12  343  	for (i = 0; i < MAXFLOW; i++) {
-> f113059e7b4f94 Corentin Labbe 2019-10-12  344  		init_completion(&ce->chanlist[i].complete);
-> f113059e7b4f94 Corentin Labbe 2019-10-12  345  
-> f113059e7b4f94 Corentin Labbe 2019-10-12  346  		ce->chanlist[i].engine = crypto_engine_alloc_init(ce->dev, true);
-> f113059e7b4f94 Corentin Labbe 2019-10-12  347  		if (!ce->chanlist[i].engine) {
-> f113059e7b4f94 Corentin Labbe 2019-10-12  348  			dev_err(ce->dev, "Cannot allocate engine\n");
-> f113059e7b4f94 Corentin Labbe 2019-10-12  349  			i--;
-> f113059e7b4f94 Corentin Labbe 2019-10-12  350  			goto error_engine;
+> This means ARM architecture implementation of memcpy_toio() cannot
+> reliably be used blindly here. Workaround this situation by update the
+> write path to stick to byte access when the burst length is not
+> multiple of 4.
 > 
-> err = -ENOMEM;
-> 
-> f113059e7b4f94 Corentin Labbe 2019-10-12  351  		}
-> f113059e7b4f94 Corentin Labbe 2019-10-12  352  		err = crypto_engine_start(ce->chanlist[i].engine);
-> f113059e7b4f94 Corentin Labbe 2019-10-12  353  		if (err) {
-> f113059e7b4f94 Corentin Labbe 2019-10-12  354  			dev_err(ce->dev, "Cannot start engine\n");
-> f113059e7b4f94 Corentin Labbe 2019-10-12  355  			goto error_engine;
-> f113059e7b4f94 Corentin Labbe 2019-10-12  356  		}
-> f113059e7b4f94 Corentin Labbe 2019-10-12  357  		ce->chanlist[i].tl = dma_alloc_coherent(ce->dev,
-> f113059e7b4f94 Corentin Labbe 2019-10-12  358  							sizeof(struct ce_task),
-> f113059e7b4f94 Corentin Labbe 2019-10-12  359  							&ce->chanlist[i].t_phy,
-> f113059e7b4f94 Corentin Labbe 2019-10-12  360  							GFP_KERNEL);
-> f113059e7b4f94 Corentin Labbe 2019-10-12  361  		if (!ce->chanlist[i].tl) {
-> f113059e7b4f94 Corentin Labbe 2019-10-12  362  			dev_err(ce->dev, "Cannot get DMA memory for task %d\n",
-> f113059e7b4f94 Corentin Labbe 2019-10-12  363  				i);
-> f113059e7b4f94 Corentin Labbe 2019-10-12  364  			err = -ENOMEM;
-> f113059e7b4f94 Corentin Labbe 2019-10-12  365  			goto error_engine;
-> f113059e7b4f94 Corentin Labbe 2019-10-12  366  		}
-> f113059e7b4f94 Corentin Labbe 2019-10-12  367  	}
-> f113059e7b4f94 Corentin Labbe 2019-10-12  368  	return 0;
-> f113059e7b4f94 Corentin Labbe 2019-10-12  369  error_engine:
-> f113059e7b4f94 Corentin Labbe 2019-10-12  370  	sun8i_ce_free_chanlist(ce, i);
-> f113059e7b4f94 Corentin Labbe 2019-10-12 @371  	return err;
-> f113059e7b4f94 Corentin Labbe 2019-10-12  372  }
-> 
+> Fixes: f18dbbb1bfe0 ("mtd: ST SPEAr: Add SMI driver for serial NOR flash")
+> Cc: Russell King <linux@armlinux.org.uk>
+> Cc: Boris Brezillon <boris.brezillon@collabora.com>
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 > ---
-> 0-DAY kernel test infrastructure                Open Source Technology Center
-> https://lists.01.org/pipermail/kbuild-all                   Intel Corporation
+> 
+> Changes in v2:
+> ==============
+> * This time I think the patch really fixes the problem: we use a
+>   memcpy_toio_b() function to force byte access only when needed. We
+>   don't use the _memcpy_toio() helper anymore as the fact that it is
+>   doing byte access is purely an implementation detail and is not part
+>   of the API, while the function is also flagged as "should be
+>   optimized".
+> * One could argue that potentially memcpy_toio() does not ensure by
+>   design 4-bytes access only but I think it is good enough to use it
+>   in this case as the ARM implementation of this function is already
+>   extensively optimized. I also find clearer to use it than 
+>   adding my own spear_smi_mempy_toio_l(). Please tell me if you disagree
+>   with this.
+> * The volatile keyword has been taken voluntarily from the _memcpy_toio()
+>   implementation I was about to use previously.
+> 
+>  drivers/mtd/devices/spear_smi.c | 25 ++++++++++++++++++++++++-
+>  1 file changed, 24 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/mtd/devices/spear_smi.c b/drivers/mtd/devices/spear_smi.c
+> index 986f81d2f93e..84b7487d781d 100644
+> --- a/drivers/mtd/devices/spear_smi.c
+> +++ b/drivers/mtd/devices/spear_smi.c
+> @@ -592,6 +592,19 @@ static int spear_mtd_read(struct mtd_info *mtd, loff_t from, size_t len,
+>  	return 0;
+>  }
+>  
+> +static void spear_smi_memcpy_toio_b(volatile void __iomem *dest,
+> +				    const void *src, size_t len)
+> +{
+> +	const unsigned char *from = src;
+> +
+> +	while (len) {
+> +		len--;
+> +		writeb(*from, dest);
+> +		from++;
+> +		dest++;
+> +	}
+> +}
+> +
+>  static inline int spear_smi_cpy_toio(struct spear_smi *dev, u32 bank,
+>  		void __iomem *dest, const void *src, size_t len)
+>  {
+> @@ -614,7 +627,17 @@ static inline int spear_smi_cpy_toio(struct spear_smi *dev, u32 bank,
+>  	ctrlreg1 = readl(dev->io_base + SMI_CR1);
+>  	writel((ctrlreg1 | WB_MODE) & ~SW_MODE, dev->io_base + SMI_CR1);
+>  
+> -	memcpy_toio(dest, src, len);
+> +	/*
+> +	 * In Write Burst mode (WB_MODE), the specs states that writes must be
+> +	 * incremental and of the same size, so we cannot use memcpy_toio() if
+> +	 * the length is not 4-byte aligned because in order to increase the
+> +	 * performances, it would proceed as much as possible with 4-byte access
+> +	 * and potentially finish with smaller access sizes.
+> +	 */
+> +	if (len % sizeof(u32))
+> +		spear_smi_memcpy_toio_b(dest, src, len);
+> +	else
+> +		memcpy_toio(dest, src, len);
 
-fixed.
+It's worse than that - you need to also check whether dest is properly
+aligned as we may use byte accesses initially to align the destination.
+So, you also need to check the alignment of the destination address.
 
-Thanks
+>  
+>  	writel(ctrlreg1, dev->io_base + SMI_CR1);
+>  
+> -- 
+> 2.20.1
+> 
+> 
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
