@@ -2,58 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6AC4E093A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 18:39:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 742FAE093D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 18:39:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=yMws4Z6JyQXXqr3gcfreW01gVKLMKmrF4W6nxRQVqDY=; b=cGWsBEUs6MaHcmXIiNmU+QqhV
-	FH/qAbFgzGnXuSggUuZs5u3+vMXGKdKTTJzOba2pMzneIWITYentXwbus/ikGYq8+Tps2PBrRhBOT
-	QpthgBGFSNyiM0dgySc1Q4cDbi2XVzIOQZpjnyUi9pKOvW24YI9toJhN3ZcvxgUfd9p6m1Yw/zmIx
-	5YlVD0BbWBMw/1RtJM68X74Owe1vaxTBVilHr6+pzPNHat34oxdIgsDmg8LUIQGHs2ySWjRXfDxJE
-	vlrKniQjBcy6FTq+tpByFf9qb0YJ1GBN/+tMP+xu5SbNIKyoJqQtiriYLrE8VXqMOeNy4FbYAPl4d
-	iDInFyIHA==;
+	 bh=NCHrjcNsGMIz4Bb1XJYQasKqv1KpirvDuCYXsvC3n9I=; b=pRdqxwcSNGr1NaLKjJ8MgNkzd
+	ch/Rx32huuRLE9c+xSmytpWjt2R61Bwv/vM7oGQB6L3Ga58XSWOfTUcRSsmWA3ZmHmFb5+1KlrEtV
+	Nw1FfBUyHCRwd8gHhZGfDnJg9odVUUQyzvyrIDfqDgqbfyo1bLxzeuFNU1ExEF7f28cNL6YWJMwNi
+	kKJUNho6B4hJnCWIJl+TJ1a6OicnmpNiqeZ7ZHfLVpOvgS5BqL+qcvesyEedPiJzqE17FJRbcrlWm
+	/6PweIuLwrO9qraRhaRjf+n2C6KcNZIr6BJPzjQ1siieuYNpo+kF435wSyihkZWasklVkszFnr1Tt
+	Q+YlS2iOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMxBS-00078Z-FQ; Tue, 22 Oct 2019 16:38:58 +0000
+	id 1iMxBj-0007MJ-Qf; Tue, 22 Oct 2019 16:39:15 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMxAq-0006fr-Sc
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 16:38:22 +0000
+ id 1iMxB5-0006xJ-0E
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 16:38:36 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
  MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=BKcFfApj5RoNNrr6PNcShwRSzBMTqZADkQJDoDqR6ik=; b=VbxtWlr69+jYe4fpFwJUR3x/m
- xF6y8rnYjq2y5yrl4JYSz5aM6gV+LlOxK+Q3HxgUfSVwii3kSkxa8TwPE4z1I0qRCunkheuPrJ2DG
- cI7nUdmZb+r0XO+54Tpeb5HNaPkkmhd+2KLbw7tAX7+uoGjLUB6JCrPUg7m3PXpOJDDKA=;
+ bh=Bsylmx/HNBO7oRMVXVNwiEyRC4cckwd84bjAM8mOb0k=; b=tvMimewQkFDL1nlGaO6PkBOA9
+ Uz7PsgZsauauop8auYsA+ghDMICgo2GT8QSnMV8A8V9+ieTunlHA+7J23r62K6HvzUsmO3lkD7Fzq
+ b8iU+yUyOvY2SUgQlWyNhKtR45P6HZSX0S9MMuW/jKwjP/Ct7+R6gr8L85x3g5wwLrv7A=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iMxAo-00073r-5r; Tue, 22 Oct 2019 16:38:18 +0000
+ id 1iMxB2-000742-Ce; Tue, 22 Oct 2019 16:38:32 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id AA38F2743259; Tue, 22 Oct 2019 17:38:17 +0100 (BST)
-Date: Tue, 22 Oct 2019 17:38:17 +0100
+ id DC3042743259; Tue, 22 Oct 2019 17:38:31 +0100 (BST)
+Date: Tue, 22 Oct 2019 17:38:31 +0100
 From: Mark Brown <broonie@kernel.org>
 To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH 22/46] ARM: pxa: eseries: use gpio lookup for audio
-Message-ID: <20191022163817.GS5554@sirena.co.uk>
+Subject: Re: [PATCH 23/46] ARM: pxa: z2: use gpio lookup for audio device
+Message-ID: <20191022163831.GT5554@sirena.co.uk>
 References: <20191018154052.1276506-1-arnd@arndb.de>
- <20191018154201.1276638-22-arnd@arndb.de>
+ <20191018154201.1276638-23-arnd@arndb.de>
 MIME-Version: 1.0
-In-Reply-To: <20191018154201.1276638-22-arnd@arndb.de>
+In-Reply-To: <20191018154201.1276638-23-arnd@arndb.de>
 X-Cookie: Whip it, whip it good!
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_093820_952057_7724E8B6 
-X-CRM114-Status: UNSURE (   9.29  )
+X-CRM114-CacheID: sfid-20191022_093835_064388_A0102286 
+X-CRM114-Status: UNSURE (   9.89  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -84,46 +84,46 @@ Cc: alsa-devel@alsa-project.org, Linus Walleij <linus.walleij@linaro.org>,
  linux-kernel@vger.kernel.org, Haojian Zhuang <haojian.zhuang@gmail.com>,
  Daniel Mack <daniel@zonque.org>, Robert Jarzmik <robert.jarzmik@free.fr>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3801711137950583103=="
+Content-Type: multipart/mixed; boundary="===============5651769440348889017=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============3801711137950583103==
+--===============5651769440348889017==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="rG09A39trvEtf3rB"
+	protocol="application/pgp-signature"; boundary="EmW68jKGQIhj8inv"
 Content-Disposition: inline
 
 
---rG09A39trvEtf3rB
+--EmW68jKGQIhj8inv
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Fri, Oct 18, 2019 at 05:41:37PM +0200, Arnd Bergmann wrote:
-> The three eseries machines have very similar drivers for audio, all
-> using the mach/eseries-gpio.h header for finding the gpio numbers.
+On Fri, Oct 18, 2019 at 05:41:38PM +0200, Arnd Bergmann wrote:
+> The audio device is allocated by the audio driver, and it uses a gpio
+> number from the mach/z2.h header file.
 
 Acked-by: Mark Brown <broonie@kernel.org>
 
---rG09A39trvEtf3rB
+--EmW68jKGQIhj8inv
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl2vMHgACgkQJNaLcl1U
-h9BajAf/VaPUPbuOM5XFe50jUB4C0hAjngOdu3qVFRYIfGYfbBgT1GqUsq1wJUmn
-RkRh//A+Sht8MoKnOh4QESjoY9maJv0XU1BQ73dULQRHOVYwuJtlJOd4oKbvkvwb
-jdVs5ZvDGbsf6PXnHBC5rqC1P+zBX/CZ8IN3xrJNlS4Z5vNzWj0ALFTiAN528Cxo
-qOVAiwLdGdkC56ACLm5xrHDEPaoGMTgWGx9GYV/c71IbeOGjykBWbepnKnK8kH6d
-lvggiHydyKe8fb7bTsv6dJEVul14x1DMBg2rWM226ujhoAbY8gt/DHOCT4Jbzc04
-X6wwL7joES06ET3LwI91pNukZe8J+Q==
-=ldMH
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl2vMIcACgkQJNaLcl1U
+h9AZ6wf+NeOxr9MNvwixJZADUIwYW+QadpN3eAfqqY58BvEqVnkDjruFpIZbmXSC
+VEjT32396OacS57CequHpHFX0DpuykmnBIetGlt/lPUczLOUOwtyyHXwM9wOhGr1
+cBB14AbepdJGFcFpyZtM340gSCawyWqZUbp6p0TH63HoYzcO3CL4kIB8dJWOhC+j
+2bYM8XBRhlBqqVv052oG7xP6IwZS99me4hkg3nnCcAFc5lR3nfg7QUaKN1O+Nh8g
+UdVkFvIhdkOS3r31q6AmAnDKPYAhN432virDNtx7ySFB0T3meatGmMRT+c1aHTRN
+9t3W9zkNbk+Ec0xQcDT8f9dJkriSSg==
+=AnlZ
 -----END PGP SIGNATURE-----
 
---rG09A39trvEtf3rB--
+--EmW68jKGQIhj8inv--
 
 
---===============3801711137950583103==
+--===============5651769440348889017==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -134,5 +134,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============3801711137950583103==--
+--===============5651769440348889017==--
 
