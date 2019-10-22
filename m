@@ -2,103 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 147D9E0549
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 15:39:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 354EDE0555
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 15:41:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=GjGCNKWyTqOpQwKdCMP9dFgssIjkE8fKHdFT6v/xg6U=; b=dH70gUs2aWjv46bbR9tb5LjIr
-	lQYwFOiRFx4p3TxbKnb05Socaq+JKomwHGm/a1szbdX459NpZGRfGXyN8S43rg4Jw5onqRnvgJ9kq
-	BdxdiLuTi94CMdmjazebouVZUXgfy496zOMhJ0oDQkSKvVMlhJjksO9txIdLLRPhO6Y9CzZrCMrx0
-	ai37D0Bjpv61VeAwM94Qcbh6e+6xnOl95jR8hWTJX7UGCLE5ZGXqq/BzbrzvfBoj8FLOgGgWg1VZV
-	YZYi2GOZqU1mro4a4klxYdnf7D7GH3CXVFPJ0cCH73ZXJrd5WFBbmGUqQbrlm7+aUGFxGx30A7fCR
-	9PpmwqLng==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=b3tzmARE+wJGTSEC5OKcUhVFTDdegfm3VUA3/s/Qge8=; b=uBTaD2y6/Wmocn
+	YJRGLoAU8Rs9G3wwUsBa3d5orpFU/LEUO0Th4u4h0J+d4whLfHlvYnuGWsRkCgLVR7XVBenwYBrV2
+	WCtac1V9IiMky82Ju+RScnQpyo3rpXBmZPxkGsOp6WvANgfm0BYiWjeyXg282l/xsPNd/NzJWBx+I
+	/70+vuaW0gCGyL+ql6jv/WWOifi70h36X0aSXsWPxIeoRxA53RNNpkMlwtFcgSx0ZuR4m6CRObMec
+	K6oAXZWwD79WRUgegnLNcHEJ3Rt2M+cMNCGU5p82cUofMT9Tbs1tIZwLNUvuolVTFSegFYGo9FUce
+	A6lj92xur2gM3b+6s4FQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMuNY-0003if-Bn; Tue, 22 Oct 2019 13:39:16 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1iMuPr-0005gH-6y; Tue, 22 Oct 2019 13:41:39 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMuNI-0003i6-V1
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 13:39:02 +0000
-Received: by mail-pl1-x644.google.com with SMTP id d22so8388694pls.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 22 Oct 2019 06:39:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=gpoW/8Yw0CDfvnTYDUEt7wnlvPB+LdjenekF+dbtjls=;
- b=r3lN2fcNiqbiD+lTtxMThvS7h5kEpehwJT2wWH9MYxpdx0zW6ZvPe5+oJTGHBdo3UJ
- +1snUlb5BmZKfZgCMc5oHa9QCVpM51bJtLcoi0n8l6jvNxfYgPFgQ3xMC4wejMQvvNYf
- FLjLePAA2nsc9FCaZLwszr/yv2z8Vo+c37bA8ZqlWGieYmxcCBCFDjIlAayEvRnKlNTe
- rqo/FUiZITczTRPc6fHUG/C01orY7LXqFnZKXsZ7XIBhPyrITrbCxMUTxVQfktXKt10E
- YtnLrgW/UV4XeUX78ycvlYJllBR+2c+GHpwybsbZFCsZd91dCUD8z8jlNuKghFtR7G86
- EPSQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=gpoW/8Yw0CDfvnTYDUEt7wnlvPB+LdjenekF+dbtjls=;
- b=nPEa9vmQfZ4/6zSkp7YAebbS4JD3ycPnA5YsCRh8lUdvhqLzaBVg99Vbx67Rj9Byw2
- CqbMpvEiGOT1soAE/Ns9pVQmjYz5IKYY4vUDwP81dy+RdMOdaHvSa0ZWxS2hvD+lvSVr
- XxFODnCFE4gWcyYaKb3DyiFgNjaLndR1ooSGxMkeUSfJ4cCscBy6yVAeQJJ2LDtIatRV
- Ef87LP68fZFKrbwfOW3hphMMRrQEPe5m4g6bFzszz7fCr9HaZmZ9+jCSHT3DR2xgoE0P
- FTZfqa0wxx8O9MAk6Jn7AHFVBkgvmDXmtujk9FRlHmqyMdLdR/AnrDgIxkjFRZW8Gg7v
- a4Og==
-X-Gm-Message-State: APjAAAXLlZ71YpRmohCfm2o26nO/vr+Am+/ypv5Q7Qnz/Opte22Gym6Z
- sOa95Pfsl15RWH0wnrM5yBrae3i9
-X-Google-Smtp-Source: APXvYqxnblBiUF+4VE72i3RD2Q7pDJaYooI6GNAv8EneUhqFZsEv0k6WdGtSCJU5/e/gq6M4YVlHIA==
-X-Received: by 2002:a17:902:d90f:: with SMTP id
- c15mr3753482plz.157.1571751540152; 
- Tue, 22 Oct 2019 06:39:00 -0700 (PDT)
-Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id
- f188sm22206087pfa.170.2019.10.22.06.38.58
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 22 Oct 2019 06:38:59 -0700 (PDT)
-Subject: Re: [PATCH 09/46] watchdog: sa1100: use platform device registration
-To: Arnd Bergmann <arnd@arndb.de>
-References: <20191018154052.1276506-1-arnd@arndb.de>
- <20191018154201.1276638-9-arnd@arndb.de>
- <bb4713a0-60bd-8d27-874f-e7e3a5adaec8@roeck-us.net>
- <CAK8P3a0GPVs+PqUwsL2H8VJqLh=MJnMTwPu9nhX+Nq-xiMS1yQ@mail.gmail.com>
-From: Guenter Roeck <linux@roeck-us.net>
-Message-ID: <21d72661-a4f1-d51f-ddf0-f8cebb984029@roeck-us.net>
-Date: Tue, 22 Oct 2019 06:38:57 -0700
+ id 1iMuPg-0005fC-59
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 13:41:30 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x9MDf9EN023993; Tue, 22 Oct 2019 15:41:15 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=PHnNpeOdbXGQynUc5JNgL2qz+nampoSlHPLGeS01Zp0=;
+ b=FJaqOA+9PRB8vd17zEuNNPHGpg7DCIwXrjIseHdwXWVRkZ4oTEJdBmQihL/jKh+2kcTn
+ 3djoMkk+ReNeJVL2BmdsoMrSBBergpI0ZH7QSsZRPmXQfSPlMtrCKS/BfzuIEJUQ3qv+
+ 7QIRpje2lq024m7G7aSH1cf7c9Af0bRdEGYd9qqX5MfAlPcQ/wD88u3VwJJUpvk+F2W3
+ 9LIch0n/JuZh9VbJJoLBWttHZpA6NHE0EhQsHWep3mHDZHu74xs7CVcc88i/CGlTtBB2
+ zHaWiywNvbid2PwJ0Yn6YKCqUGz/BeJJMx5WWWRAnIiUNLJuz5+JRRzSs/cVCt86pEIV Yw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2vqr8w7sra-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 22 Oct 2019 15:41:15 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id C2421100034;
+ Tue, 22 Oct 2019 15:41:12 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag5node2.st.com [10.75.127.14])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 91EEE2AE209;
+ Tue, 22 Oct 2019 15:41:12 +0200 (CEST)
+Received: from [10.48.1.171] (10.75.127.48) by SFHDAG5NODE2.st.com
+ (10.75.127.14) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 22 Oct
+ 2019 15:41:11 +0200
+Subject: Re: [PATCH v2] i2c: i2c-stm32f7: remove warning when compiling with
+ W=1
+To: Alain Volmat <alain.volmat@st.com>, <wsa@the-dreams.de>,
+ <robh+dt@kernel.org>
+References: <1571145118-3522-1-git-send-email-alain.volmat@st.com>
+From: Pierre Yves MORDRET <pierre-yves.mordret@st.com>
+Message-ID: <c10c0652-3f9e-ea5c-98f2-206af86b0fe4@st.com>
+Date: Tue, 22 Oct 2019 15:41:10 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <CAK8P3a0GPVs+PqUwsL2H8VJqLh=MJnMTwPu9nhX+Nq-xiMS1yQ@mail.gmail.com>
+In-Reply-To: <1571145118-3522-1-git-send-email-alain.volmat@st.com>
 Content-Language: en-US
+X-Originating-IP: [10.75.127.48]
+X-ClientProxiedBy: SFHDAG8NODE1.st.com (10.75.127.22) To SFHDAG5NODE2.st.com
+ (10.75.127.14)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
+ definitions=2019-10-22_03:2019-10-22,2019-10-22 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_063901_030275_B09D7E62 
-X-CRM114-Status: GOOD (  18.55  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20191022_064128_671524_82C79838 
+X-CRM114-Status: GOOD (  18.69  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,52 +97,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: LINUXWATCHDOG <linux-watchdog@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Haojian Zhuang <haojian.zhuang@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- Robert Jarzmik <robert.jarzmik@free.fr>, Daniel Mack <daniel@zonque.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
+ linux-kernel@vger.kernel.org, linux-i2c@vger.kernel.org,
+ mcoquelin.stm32@gmail.com, fabrice.gasnier@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/22/19 2:44 AM, Arnd Bergmann wrote:
-> On Sat, Oct 19, 2019 at 4:07 PM Guenter Roeck <linux@roeck-us.net> wrote:
-> 
->>> @@ -319,10 +316,13 @@ static struct platform_device *sa11x0_devices[] __initdata = {
->>>
->>>    static int __init sa1100_init(void)
->>>    {
->>> +     struct resource wdt_res = DEFINE_RES_MEM(0x90000000, 0x20);
->>>        pm_power_off = sa1100_power_off;
->>>
->>>        regulator_has_full_constraints();
->>>
->>> +     platform_device_register_simple("sa1100_wdt", -1, &wdt_res, 1);
->>> +
->>>        return platform_add_devices(sa11x0_devices, ARRAY_SIZE(sa11x0_devices));
->>
->> Wouldn't it be better to add the watchdog device to sa11x0_devices ?
-> 
-> Generally speaking, platform_device_register_simple() is better than
-> platform_add_devices(), it does the same thing with fewer source lines
-> and smaller object code, and it doesn't have the problem of lifetime rules
-> for statically allocated reference-counted devices.
-> 
-> One day we may want to replace all static platform_device instances with
-> platform_device_info instead, but right now there are too many of those.
-> 
-> I can change this one to a platform_device for consistency though if you
-> think it's worth it.
-> 
+Hello
 
-No, I was just wondering. Thanks for the explanation.
+Looks good
 
-Guenter
+Reviewed-by: Pierre-Yves MORDRET <pierre-yves.mordret@st.com>
 
+Thx
+Regards
+
+On 10/15/19 3:11 PM, Alain Volmat wrote:
+> Remove the following warning:
+> 
+> drivers/i2c/busses/i2c-stm32f7.c:315:
+> warning: cannot understand function prototype:
+> 'struct stm32f7_i2c_spec i2c_specs[] =
+> 
+> Replace a comment starting with /** by simply /* to avoid having
+> it interpreted as a kernel-doc comment.
+> 
+> Fixes: aeb068c57214 ("i2c: i2c-stm32f7: add driver")
+> Signed-off-by: Alain Volmat <alain.volmat@st.com>
+> ---
+> Changes in v2: update commit description
+> ---
+>  drivers/i2c/busses/i2c-stm32f7.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/i2c/busses/i2c-stm32f7.c b/drivers/i2c/busses/i2c-stm32f7.c
+> index d36cf08461f7..7aa4a47792a7 100644
+> --- a/drivers/i2c/busses/i2c-stm32f7.c
+> +++ b/drivers/i2c/busses/i2c-stm32f7.c
+> @@ -305,7 +305,7 @@ struct stm32f7_i2c_dev {
+>  	struct regmap *regmap;
+>  };
+>  
+> -/**
+> +/*
+>   * All these values are coming from I2C Specification, Version 6.0, 4th of
+>   * April 2014.
+>   *
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
