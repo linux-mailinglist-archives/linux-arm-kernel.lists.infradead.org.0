@@ -2,62 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A43AE0381
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 13:56:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB40CE03A2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 14:13:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s1CQhbY7IvkMW34rNOjlawfZaPElyUX+PUvbWsXwDto=; b=JiqykzY7MD4bvR
-	trvNvc2ZapJXNgEJNB0+8cDK3CnsA51u32F0+l/F/mKKzFCUqgjOEgxwTHMWVeywCU1GCKMDQlOxP
-	4f+kJXHpu++BBx2ZWzr89iFDHCFiBUQnUbowP1RXQTAnojpoAEVuaaifEspiZBRfdXxoTofJBnU/o
-	8ndbAj+OiXDf6hi1fFo1+HfwHdEdFtpWgDP4aHouiiv1DNUpLdF34yDGcpu9b1gewHm/DSZrL3u1Q
-	D1UtUV5HpKNMDEjW2gncJJHrc3oLhwcTDJV3EBE3mxNB+9fq0SnOR6BIr9JIHWDD2sZ2iAR8dl6cm
-	TfmC4nQGqvD9e5qRnIYw==;
+	List-Owner; bh=XCAMBG453V0KGFV2x7xTMVxGjrjOOsAREQYQORu93Bc=; b=aNp+pefSIGAFFW
+	a5ybzbp9cRzn/oHXPWaGbLHQGNjNN9mJ04fmdJhvsNt5ZQUQzwZpGvJ1Cp/DxN6UYf48020vKSW1t
+	N9T0XD/i/xB6NJdtkUNZLV7MshG7TrK/aZJP2USjMSOUsYmtdr70xycUOk1244xXpAVUcgQGpJ6D0
+	SMs6ZC5wucihmMRJD7+ukfEVXd5CPmjgBajk0v/bQ6GRQR4Q44WQdK28ygq0OMJr/5E8QF5eO4lH6
+	Kk/nacyWDf2SUo98K3P6/usdX5wkzGdYMsfKnP6JEgTHSSPcli2u2W7tZZzzfh5He9FDb33gb1iNQ
+	UN/P8LnWC/5x/WO/x1Ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMslt-0008TI-F1; Tue, 22 Oct 2019 11:56:17 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iMt2P-0005eK-N1; Tue, 22 Oct 2019 12:13:21 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMslj-0008Si-0h
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 11:56:08 +0000
-Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
- [82.4.196.95])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A0B7F205ED;
- Tue, 22 Oct 2019 11:56:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571745366;
- bh=ETAanlSY0IZUrOZD+HrgkzaGk/d9J7zxDqf6hOqnApE=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=RJICUMtnyRROc1L5lb3axiAWhhLx4jeffo37m1KPtt8shGC3YcortKk5q9KMJJKIE
- FUiaZb1e8YJuHg10Vqy3xZKFNvLoq/cA9wOxuTDc6b4zSywSMYtoRniJwdVJ3SUw4p
- gHC5f2c99b9l6M4XfmWdFbFY6/cgFOyEtqlwDUsQ=
-Date: Tue, 22 Oct 2019 12:56:01 +0100
-From: Jonathan Cameron <jic23@kernel.org>
-To: Fabrice Gasnier <fabrice.gasnier@st.com>
-Subject: Re: [PATCH] iio: adc: stm32-adc: fix kernel-doc warnings
-Message-ID: <20191022125601.24653506@archlinux>
-In-Reply-To: <20190921190357.7dc08c2d@archlinux>
-References: <1568980206-5428-1-git-send-email-fabrice.gasnier@st.com>
- <20190921190357.7dc08c2d@archlinux>
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1iMt2H-0005de-1W
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 12:13:14 +0000
+Received: by mail-io1-xd43.google.com with SMTP id c25so20031077iot.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 22 Oct 2019 05:13:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=7VUSL4glh9tdmGltrbXAxLhst/cC64H17TVs7Wd2ISI=;
+ b=KNj120IAsn18ftYPNYtGAMO522hDC71q+lnhMtWOYXoXlDsQo9QgcVuidnJk/ml7tr
+ UbqrQwC1U8wazJ7pHfzxOF7LsixYPLXxRE9/JTcNA33V/m2jTWO+KAELTbrPE8q0D6HW
+ S9+0vi0V/9gTXRujRZeQ8kuvFFrKCsEWVB5YHsGdr//QG36RtI8w7Ivuc3u3oSfL7y0U
+ 07cTguxrdcpKQNMzG+oFAzr+Ziun2e0ahAEXELyZvsQxszVck3Pxet4kl1tSkrZdOCHp
+ z0Jy+6K1Gkapib2IaHiK6EzZNdk0P8i9rV92PT0J1kYTE863bAcw/RHuDUMxThwvDmiy
+ imCQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=7VUSL4glh9tdmGltrbXAxLhst/cC64H17TVs7Wd2ISI=;
+ b=buOPLcUGDgWi+BgeG/wj7Vp4fqIgZ3CSsab7A3r6gFu98W0ZYdg93erENS2v/YDPS/
+ iFCMGwlo3aSCkHEWzgDv6DCW/Rl/MdLp2iUBrqHrMndjNUbyirWxXiPBV5V5HpFWvfsi
+ bi9wsOoGYrZ5/zbC8UpSZ5iWWeFpA5KSBAM2ldSf2IiEqZ/4N41oPGgVr1lZ54To4HwK
+ f072M6O5IDV7Vg09djoTitWNLD+Rh6bgLkv+dTdY+3lkres5opjriNKVrSsBSoZk27Dg
+ 1q1sGBJ7S1AidNdP/0fN3cOdyQQPTm7aSPLo3SiAPzUJb87f+l/8jUN/tHShV2C+W3Ni
+ 1PBA==
+X-Gm-Message-State: APjAAAXPJ0DA06qjusyiPWDkcbAOt5I1rDwxyx5/KlEJM1/ri6TrXDil
+ BP6FIXmpC6kcKUQ3vG0kpwqdCTWrSQ3IBcE3Blk=
+X-Google-Smtp-Source: APXvYqz9BuIKcbppibeFWeJbwe4oRUtRoe+yhYAEZFYke6YfzSl3wycLo6ueyYsgQWQ8Is+1lpwo08JP+zHbKn3n89w=
+X-Received: by 2002:a02:92c9:: with SMTP id c9mr3507699jah.0.1571746391225;
+ Tue, 22 Oct 2019 05:13:11 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190828150037.2640-1-aford173@gmail.com>
+ <20190905230443.GA52127@atomide.com>
+ <CAHCN7xL0fbr=Sv+b=0AuGB1PPhAAFdAFLEd_iBM+ZMTkUw5sHQ@mail.gmail.com>
+ <CAHCN7xL-Gfxe0qF5w7BUsHnyhcNNpmCnchdKErnmiqggXfsLWw@mail.gmail.com>
+ <20190909134033.s26eiurpat3iekse@pali> <20190909163543.GQ52127@atomide.com>
+In-Reply-To: <20190909163543.GQ52127@atomide.com>
+From: Adam Ford <aford173@gmail.com>
+Date: Tue, 22 Oct 2019 07:13:00 -0500
+Message-ID: <CAHCN7xJjMNOLT5oPn8CArApM5b2ksPon8eALq=gUi0ZqoLjGHQ@mail.gmail.com>
+Subject: Re: [RFC] ARM: omap3: Enable HWMODS for HW Random Number Generator
+To: Tony Lindgren <tony@atomide.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_045607_103776_5AFCC3AE 
-X-CRM114-Status: GOOD (  23.21  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191022_051313_109667_AAA59613 
+X-CRM114-Status: GOOD (  18.09  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (aford173[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (aford173[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -65,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,212 +99,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: lars@metafoo.de, alexandre.torgue@st.com, linux-iio@vger.kernel.org,
- pmeerw@pmeerw.net, linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
- knaack.h@gmx.de, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Paul Walmsley <paul@pwsan.com>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>, Russell King <linux@armlinux.org.uk>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Tero Kristo <t-kristo@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ =?UTF-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
+ =?UTF-8?Q?Pali_Roh=C3=A1r?= <pali.rohar@gmail.com>,
+ Linux-OMAP <linux-omap@vger.kernel.org>, Adam Ford <adam.ford@logicpd.com>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 21 Sep 2019 19:03:57 +0100
-Jonathan Cameron <jic23@kernel.org> wrote:
-
-> On Fri, 20 Sep 2019 13:50:06 +0200
-> Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
-> 
-> > Fix the following warnings when documentation is built:
-> > drivers/iio/adc/stm32-adc-core.c:62: warning: cannot understand function
-> >  prototype: 'struct stm32_adc_common_regs '
-> > drivers/iio/adc/stm32-adc-core.c:78: warning: cannot understand function
-> >  prototype: 'struct stm32_adc_priv_cfg '
-> > drivers/iio/adc/stm32-adc-core.c:123: warning: Function parameter or
-> >  member 'pdev' not described in 'stm32f4_adc_clk_sel'
-> > drivers/iio/adc/stm32-adc.c:219: warning: cannot understand function
-> >  prototype: 'struct stm32_adc_regs '
-> > drivers/iio/adc/stm32-adc.c:237: warning: cannot understand function
-> >  prototype: 'struct stm32_adc_regspec '
-> > drivers/iio/adc/stm32-adc.c:264: warning: cannot understand function
-> >  prototype: 'struct stm32_adc_cfg '
-> > drivers/iio/adc/stm32-adc.c:323: warning: Function parameter or member
-> >  'difsel' not described in 'N'
-> > drivers/iio/adc/stm32-adc.c:323: warning: Function parameter or member
-> >  'pcsel' not described in 'stm32_adc'
-> > drivers/iio/adc/stm32-adc.c:371: warning: cannot understand function
-> >  prototype: 'const struct stm32_adc_regs stm32f4_sq[STM32_ADC_MAX_SQ + 1]
-> > drivers/iio/adc/stm32-adc.c:417: warning: cannot understand function
-> >  prototype: 'const struct stm32_adc_regs stm32f4_smp_bits[] = '
-> > drivers/iio/adc/stm32-adc.c:508: warning: cannot understand function
-> >  prototype: 'const struct stm32_adc_regs stm32h7_smp_bits[] = '
-> > drivers/iio/adc/stm32-adc.c:1112: warning: Function parameter or member
-> >  'indio_dev' not described in 'stm32_adc_get_trig_extsel'
-> > drivers/iio/adc/stm32-adc.c:1420: warning: Function parameter or member
-> >  'indio_dev' not described in 'stm32_adc_debugfs_reg_access'
-> > drivers/iio/adc/stm32-adc.c:1420: warning: Function parameter or member
-> >  'reg' not described in 'stm32_adc_debugfs_reg_access'
-> > drivers/iio/adc/stm32-adc.c:1420: warning: Function parameter or member
-> >  'writeval' not described in 'stm32_adc_debugfs_reg_access'
-> > drivers/iio/adc/stm32-adc.c:1420: warning: Function parameter or member
-> >  'readval' not described in 'stm32_adc_debugfs_reg_access'
-> > 
-> > Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>  
-> 
-> As I don't think we build these particular docs by default, I'm not going
-> to take this as a fix.  Hence it'll have to wait for the below to be
-> upstream of my togreg branch.
-> 
-> Give me a poke if that's true and I seem to have missed it.
-Applied to the togreg branch of iio.git and pushed out as testing
-for the autobuilders to play with it.
-
-Thanks,
-
-Jonathan
-
-> 
-> Thanks,
-> 
-> Jonathan
-> 
-> > ---
-> > Note: this applies on top of "iio: adc: stm32-adc: fix a race when using
-> > several adcs with dma and irq"
-> > ---
-> >  drivers/iio/adc/stm32-adc-core.c | 11 ++++++-----
-> >  drivers/iio/adc/stm32-adc.c      | 21 +++++++++++++--------
-> >  2 files changed, 19 insertions(+), 13 deletions(-)
-> > 
-> > diff --git a/drivers/iio/adc/stm32-adc-core.c b/drivers/iio/adc/stm32-adc-core.c
-> > index 93a096a..20c626c 100644
-> > --- a/drivers/iio/adc/stm32-adc-core.c
-> > +++ b/drivers/iio/adc/stm32-adc-core.c
-> > @@ -38,12 +38,12 @@
-> >  #define HAS_ANASWVDD		BIT(1)
-> >  
-> >  /**
-> > - * stm32_adc_common_regs - stm32 common registers, compatible dependent data
-> > + * struct stm32_adc_common_regs - stm32 common registers
-> >   * @csr:	common status register offset
-> >   * @ccr:	common control register offset
-> > - * @eoc1:	adc1 end of conversion flag in @csr
-> > - * @eoc2:	adc2 end of conversion flag in @csr
-> > - * @eoc3:	adc3 end of conversion flag in @csr
-> > + * @eoc1_msk:	adc1 end of conversion flag in @csr
-> > + * @eoc2_msk:	adc2 end of conversion flag in @csr
-> > + * @eoc3_msk:	adc3 end of conversion flag in @csr
-> >   * @ier:	interrupt enable register offset for each adc
-> >   * @eocie_msk:	end of conversion interrupt enable mask in @ier
-> >   */
-> > @@ -60,7 +60,7 @@ struct stm32_adc_common_regs {
-> >  struct stm32_adc_priv;
-> >  
-> >  /**
-> > - * stm32_adc_priv_cfg - stm32 core compatible configuration data
-> > + * struct stm32_adc_priv_cfg - stm32 core compatible configuration data
-> >   * @regs:	common registers for all instances
-> >   * @clk_sel:	clock selection routine
-> >   * @max_clk_rate_hz: maximum analog clock rate (Hz, from datasheet)
-> > @@ -117,6 +117,7 @@ static int stm32f4_pclk_div[] = {2, 4, 6, 8};
-> >  
-> >  /**
-> >   * stm32f4_adc_clk_sel() - Select stm32f4 ADC common clock prescaler
-> > + * @pdev: platform device
-> >   * @priv: stm32 ADC core private data
-> >   * Select clock prescaler used for analog conversions, before using ADC.
-> >   */
-> > diff --git a/drivers/iio/adc/stm32-adc.c b/drivers/iio/adc/stm32-adc.c
-> > index 663f8a5..76a247b 100644
-> > --- a/drivers/iio/adc/stm32-adc.c
-> > +++ b/drivers/iio/adc/stm32-adc.c
-> > @@ -102,7 +102,7 @@ struct stm32_adc_calib {
-> >  };
-> >  
-> >  /**
-> > - * stm32_adc_regs - stm32 ADC misc registers & bitfield desc
-> > + * struct stm32_adc_regs - stm32 ADC misc registers & bitfield desc
-> >   * @reg:		register offset
-> >   * @mask:		bitfield mask
-> >   * @shift:		left shift
-> > @@ -114,7 +114,7 @@ struct stm32_adc_regs {
-> >  };
-> >  
-> >  /**
-> > - * stm32_adc_regspec - stm32 registers definition, compatible dependent data
-> > + * struct stm32_adc_regspec - stm32 registers definition
-> >   * @dr:			data register offset
-> >   * @ier_eoc:		interrupt enable register & eocie bitfield
-> >   * @isr_eoc:		interrupt status register & eoc bitfield
-> > @@ -140,7 +140,7 @@ struct stm32_adc_regspec {
-> >  struct stm32_adc;
-> >  
-> >  /**
-> > - * stm32_adc_cfg - stm32 compatible configuration data
-> > + * struct stm32_adc_cfg - stm32 compatible configuration data
-> >   * @regs:		registers descriptions
-> >   * @adc_info:		per instance input channels definitions
-> >   * @trigs:		external trigger sources
-> > @@ -183,8 +183,8 @@ struct stm32_adc_cfg {
-> >   * @rx_buf:		dma rx buffer cpu address
-> >   * @rx_dma_buf:		dma rx buffer bus address
-> >   * @rx_buf_sz:		dma rx buffer size
-> > - * @difsel		bitmask to set single-ended/differential channel
-> > - * @pcsel		bitmask to preselect channels on some devices
-> > + * @difsel:		bitmask to set single-ended/differential channel
-> > + * @pcsel:		bitmask to preselect channels on some devices
-> >   * @smpr_val:		sampling time settings (e.g. smpr1 / smpr2)
-> >   * @cal:		optional calibration data on some devices
-> >   * @chan_name:		channel name array
-> > @@ -254,7 +254,7 @@ static const struct stm32_adc_info stm32h7_adc_info = {
-> >  	.num_res = ARRAY_SIZE(stm32h7_adc_resolutions),
-> >  };
-> >  
-> > -/**
-> > +/*
-> >   * stm32f4_sq - describe regular sequence registers
-> >   * - L: sequence len (register & bit field)
-> >   * - SQ1..SQ16: sequence entries (register & bit field)
-> > @@ -301,7 +301,7 @@ static struct stm32_adc_trig_info stm32f4_adc_trigs[] = {
-> >  	{}, /* sentinel */
-> >  };
-> >  
-> > -/**
-> > +/*
-> >   * stm32f4_smp_bits[] - describe sampling time register index & bit fields
-> >   * Sorted so it can be indexed by channel number.
-> >   */
-> > @@ -392,7 +392,7 @@ static struct stm32_adc_trig_info stm32h7_adc_trigs[] = {
-> >  	{},
-> >  };
-> >  
-> > -/**
-> > +/*
-> >   * stm32h7_smp_bits - describe sampling time register index & bit fields
-> >   * Sorted so it can be indexed by channel number.
-> >   */
-> > @@ -994,6 +994,7 @@ static int stm32_adc_conf_scan_seq(struct iio_dev *indio_dev,
-> >  
-> >  /**
-> >   * stm32_adc_get_trig_extsel() - Get external trigger selection
-> > + * @indio_dev: IIO device structure
-> >   * @trig: trigger
-> >   *
-> >   * Returns trigger extsel value, if trig matches, -EINVAL otherwise.
-> > @@ -1297,6 +1298,10 @@ static int stm32_adc_of_xlate(struct iio_dev *indio_dev,
-> >  
-> >  /**
-> >   * stm32_adc_debugfs_reg_access - read or write register value
-> > + * @indio_dev: IIO device structure
-> > + * @reg: register offset
-> > + * @writeval: value to write
-> > + * @readval: value to read
-> >   *
-> >   * To read a value from an ADC register:
-> >   *   echo [ADC reg offset] > direct_reg_access  
-> 
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gTW9uLCBTZXAgOSwgMjAxOSBhdCAxMTozNSBBTSBUb255IExpbmRncmVuIDx0b255QGF0b21p
+ZGUuY29tPiB3cm90ZToKPgo+ICogUGFsaSBSb2jDoXIgPHBhbGkucm9oYXJAZ21haWwuY29tPiBb
+MTkwOTA5IDEzOjQxXToKPiA+IE9uIE1vbmRheSAwOSBTZXB0ZW1iZXIgMjAxOSAwODozNzowOSBB
+ZGFtIEZvcmQgd3JvdGU6Cj4gPiA+IEkgYXBwbGllZCB0aGlzIG9uIDUuMyBhbmQgaXQgaXMgd29y
+a2luZy4gIEkgYXNzdW1lIHRoZSBzYW1lIGlzIHRydWUgaW4gZm9yLW5leHQuCj4KPiBIbW0gSSBu
+b3RpY2VkIEkgc3RvcHBlZCBnZXR0aW5nIFJORyBkYXRhIGFmdGVyIHNldmVyYWwgcm1tb2QgbW9k
+cHJvYmUKPiBjeWNsZXMsIG9yIHNldmVyYWwgaGQgL2Rldi9yYW5kb20gcmVhZHMuIEFueWJvZHkg
+ZWxzZSBzZWVpbmcgdGhhdD8KPgo+ID4gPiBEbyB5b3Ugd2FudCB0byBzdWJtaXQgYSBmb3JtYWwg
+cGF0Y2g/ICBJICBjYW4gbWFyayBpdCBhcyAndGVzdGVkLWJ5Jwo+ID4gPiBUaGlzIHJlYWxseSBo
+ZWxwcyBzcGVlZCB1cCB0aGUgc3RhcnR1cCBzZXF1ZW5jZSBvbiBib2FyZHMgd2l0aCBzc2hkCj4g
+PiA+IGJlY2F1c2UgaXQgZGVsYXlzIGZvciBuZWFybHkgODAgc2Vjb25kcyB3YWl0aW5nIGZvciBl
+bnRyb3B5IHdpdGhvdXQKPiA+ID4gdGhlIGh3cm5nLgo+ID4KPiA+IEhpISBXaGVuIGFwcGx5aW5n
+IGEgcGF0Y2gsIGNvdWxkIHlvdSBwbGVhc2UgZGlzYWJsZSB0aGlzIHJuZyBmb3IgbjkwMD8KPiA+
+Cj4gPiBJbiBvbWFwMy1uOTAwLmR0cyBmb3Igcm5nIHNob3VsZCBiZSBzdGF0dXMgPSAiZGlzYWJs
+ZWQiIChhcyBUb255IGFscmVhZHkKPiA+IHdyb3RlKSwgc2ltaWxhcmx5IGxpa2UgZm9yIGFlcy4K
+Pgo+IFllYWggSSdsbCBwb3N0IGEgcHJvcGVyIHBhdGNoIGFmdGVyIC1yYzEuCgpUb255LAoKSSBh
+bSBqdXN0IGZvbGxvd2luZyB1cCBvbiB0aGlzLiAgV2l0aG91dCB0aGUgSFdSTkcgdGhlcmUgYXJl
+IHNvbWUKdG9vbHMgYW5kIGRhZW1vbnMgbGlrZSBzc2hkIHdoaWNoIHdhaXQgYSBsb25nIHRpbWUg
+YXQgc3RhcnR1cC4gIFRoZQpwYXRjaCB5b3Ugc2VudCByZWFsbHkgaGVscHMgc3BlZWQgdXAgdGhl
+IHN0YXJ0dXAgdGltZSBpbiB0aGVzZSBjYXNlcy4KQXQgbGVhc3QgaW4gbXkgY2FzZSwgaXQgc2hh
+dmVzIDgwIHNlY29uZHMgb2ZmIGJ5IGVsaW1pbmF0aW5nIHRoZQpkZWxheXMuCgpEbyB5b3UgdGhp
+bmsgeW91J2xsIGhhdmUgdGltZSB0byBwb3N0IGEgbW9yZSBmb3JtYWwgcGF0Y2g/ICBJZiBub3Qs
+IEkKY2FuIGRvIGl0LiAgSSBqdXN0IGRvbid0IGtub3cgd2hpY2ggbWFpbGluZyBsaXN0IGlzIHRo
+ZSBtb3JlCmFwcHJvcHJpYXRlLiAgSSB3YXMgYWJsZSB0byB2ZXJpdHkgeW91ciBwYXRjaCBvbiBh
+IERNMzczMCBhbmQgT01BUDM1MzAKClRoYW5rcywKCmFkYW0KCgo+Cj4gUmVnYXJkcywKPgo+IFRv
+bnkKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
+LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
+Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
+bS1rZXJuZWwK
