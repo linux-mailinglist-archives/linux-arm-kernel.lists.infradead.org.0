@@ -2,55 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD0E6E0375
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 13:53:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A43AE0381
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 22 Oct 2019 13:56:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9pALahhV46a/5W9UcbiKs+bdiQLAHA+YKrHkKWXMP2o=; b=XSUGOc2TyVWB4U
-	zFCugbcHu/yjj9eI693F5iYFUl2ANpVpTrKaTUnATpg7hMMjQUIkTQ8biZc4IpwslYINJQkLKT+dv
-	dpzvfG7R+43GDgwYQgrlaXUQKGEQ14mwtx4Tj8v3ETPMYr34CQCyq8Rwffvu0Zj9MTNlK8c2ogvsV
-	RJbkz6uyhZG1pxOLhBtRyIG1Dhk5ngq+/W5dAi168BITXzHAzqnuyUt5D9YSI+Jsw5h/uTMjeesAa
-	3+3pLyw8izBoqtRdlDtL/Wc3No418L89S4Cnc4P+HpZDL2rrA1R6/BWj/akaVZIy1eoatsXnmspgQ
-	THWgJIardh+yo/YsxsAA==;
+	List-Owner; bh=s1CQhbY7IvkMW34rNOjlawfZaPElyUX+PUvbWsXwDto=; b=JiqykzY7MD4bvR
+	trvNvc2ZapJXNgEJNB0+8cDK3CnsA51u32F0+l/F/mKKzFCUqgjOEgxwTHMWVeywCU1GCKMDQlOxP
+	4f+kJXHpu++BBx2ZWzr89iFDHCFiBUQnUbowP1RXQTAnojpoAEVuaaifEspiZBRfdXxoTofJBnU/o
+	8ndbAj+OiXDf6hi1fFo1+HfwHdEdFtpWgDP4aHouiiv1DNUpLdF34yDGcpu9b1gewHm/DSZrL3u1Q
+	D1UtUV5HpKNMDEjW2gncJJHrc3oLhwcTDJV3EBE3mxNB+9fq0SnOR6BIr9JIHWDD2sZ2iAR8dl6cm
+	TfmC4nQGqvD9e5qRnIYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMsjG-0006Ni-RZ; Tue, 22 Oct 2019 11:53:34 +0000
+	id 1iMslt-0008TI-F1; Tue, 22 Oct 2019 11:56:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMsj0-0006NG-US
- for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 11:53:20 +0000
+ id 1iMslj-0008Si-0h
+ for linux-arm-kernel@lists.infradead.org; Tue, 22 Oct 2019 11:56:08 +0000
 Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
  [82.4.196.95])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B980A21783;
- Tue, 22 Oct 2019 11:53:15 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A0B7F205ED;
+ Tue, 22 Oct 2019 11:56:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571745197;
- bh=mFRL1cOPVqH8M3jRF0HmpTCPqEWt43++I19E5TTgXoI=;
+ s=default; t=1571745366;
+ bh=ETAanlSY0IZUrOZD+HrgkzaGk/d9J7zxDqf6hOqnApE=;
  h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=mAWvrBfIzsX978Bzhdz58X/RJTv4gaboqshUmS6jwmj6zeg755OZ1YhtbD+8hQbVZ
- ZNIUd5psvHtZ5ukNKWPaAZTL+5E8oPMJnkx5FjKs/sDTT77PGDgqrvtMFvIihct+Xb
- 5t9LLmHOLRS/r5RFu8rrVNphbzdHeXAvJouX2KNM=
-Date: Tue, 22 Oct 2019 12:53:12 +0100
+ b=RJICUMtnyRROc1L5lb3axiAWhhLx4jeffo37m1KPtt8shGC3YcortKk5q9KMJJKIE
+ FUiaZb1e8YJuHg10Vqy3xZKFNvLoq/cA9wOxuTDc6b4zSywSMYtoRniJwdVJ3SUw4p
+ gHC5f2c99b9l6M4XfmWdFbFY6/cgFOyEtqlwDUsQ=
+Date: Tue, 22 Oct 2019 12:56:01 +0100
 From: Jonathan Cameron <jic23@kernel.org>
-To: Lars-Peter Clausen <lars@metafoo.de>
-Subject: Re: [PATCH][RFC] iio: core: add a class hierarchy on iio device lock
-Message-ID: <20191022125312.68aa514a@archlinux>
-In-Reply-To: <9ddc41c4-3d84-cc94-5494-a5ef06697ce8@metafoo.de>
-References: <20191011151314.5365-1-olivier.moysan@st.com>
- <20191012095747.3acd95e6@archlinux>
- <db362ddf-390e-0847-1269-f3cd0c757d2a@st.com>
- <9ddc41c4-3d84-cc94-5494-a5ef06697ce8@metafoo.de>
+To: Fabrice Gasnier <fabrice.gasnier@st.com>
+Subject: Re: [PATCH] iio: adc: stm32-adc: fix kernel-doc warnings
+Message-ID: <20191022125601.24653506@archlinux>
+In-Reply-To: <20190921190357.7dc08c2d@archlinux>
+References: <1568980206-5428-1-git-send-email-fabrice.gasnier@st.com>
+ <20190921190357.7dc08c2d@archlinux>
 X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_045319_025710_9390A314 
-X-CRM114-Status: GOOD (  31.56  )
+X-CRM114-CacheID: sfid-20191022_045607_103776_5AFCC3AE 
+X-CRM114-Status: GOOD (  23.21  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,118 +77,209 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Olivier MOYSAN <olivier.moysan@st.com>,
- Alexandre TORGUE <alexandre.torgue@st.com>,
- "linux-iio@vger.kernel.org" <linux-iio@vger.kernel.org>,
- "pmeerw@pmeerw.net" <pmeerw@pmeerw.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- "knaack.h@gmx.de" <knaack.h@gmx.de>, Fabrice GASNIER <fabrice.gasnier@st.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Benjamin GAIGNARD <benjamin.gaignard@st.com>
+Cc: lars@metafoo.de, alexandre.torgue@st.com, linux-iio@vger.kernel.org,
+ pmeerw@pmeerw.net, linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ knaack.h@gmx.de, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 15 Oct 2019 23:11:43 +0200
-Lars-Peter Clausen <lars@metafoo.de> wrote:
+On Sat, 21 Sep 2019 19:03:57 +0100
+Jonathan Cameron <jic23@kernel.org> wrote:
 
-> On 10/14/19 5:59 PM, Olivier MOYSAN wrote:
-> > Hello Jonathan,
-> > 
-> > Thanks for your comment.
-> > 
-> > On 10/12/19 10:57 AM, Jonathan Cameron wrote:  
-> >> On Fri, 11 Oct 2019 17:13:14 +0200
-> >> Olivier Moysan <olivier.moysan@st.com> wrote:
-> >>  
-> >>> The aim of this patch is to correct a recursive locking warning,
-> >>> detected when setting CONFIG_PROVE_LOCKING flag (as shown in message below).
-> >>> This message was initially triggered by the following call sequence
-> >>> in stm32-dfsdm-adc.c driver, when using IIO hardware consumer interface.
-> >>>
-> >>> in stm32_dfsdm_read_raw()
-> >>> 	iio_device_claim_direct_mode
-> >>> 		mutex_lock(&indio_dev->mlock);			-> lock on dfsdm device
-> >>> 	iio_hw_consumer_enable
-> >>> 		iio_update_buffers
-> >>> 			mutex_lock(&indio_dev->mlock);		-> lock on hw consumer device  
-> >> Hmm.  I'm not sure I follow the logic.  That lock is
-> >> for one thing and one thing only, preventing access
-> >> to the iio device that are unsafe when it is running
-> >> in a buffered mode.  We shouldn't be in a position where
-> >> we both say don't do this if we are in buffered mode, + enter
-> >> buffered mode whilst doing this, or we need special functions
-> >> for entering buffering mode if in this state.  We are in
-> >> some sense combining internal driver logic with overall
-> >> IIO states.  IIO shouldn't care that the device is using
-> >> the same methods under the hood for buffered and non
-> >> buffered operations.
-> >>
-> >> I can't really recall how this driver works.   Is it actually
-> >> possible to have multiple hw_consumers at the same time?
-> >>
-> >> So do we end up with multiple buffers registered and have
-> >> to demux out to the read_raw + the actual buffered path?
-> >> Given we have a bit of code saying grab one sample, I'm
-> >> going to guess we don't...
-> >>
-> >> If so, the vast majority of the buffer setup code in IIO
-> >> is irrelevant here and we just need to call a few of
-> >> the callbacks from this driver directly... (I think
-> >> though I haven't chased through every corner.
-> >>
-> >> I'd rather avoid introducing this nesting for a corner
-> >> case that makes no 'semantic' sense in IIO as it leaves us
-> >> in two separate states at the same time that the driver
-> >> is trying to make mutually exclusive.  We can't both
-> >> not be in buffered mode, and in buffered mode.
-> >>
-> >> Thanks and good luck with this nasty corner!
-> >>
-> >> Jonathan
-> >>  
-> > Here I consider the following use case:
-> > A single conversion is performed. The dfsdm (filter) is chained with a 
-> > front-end, which can be an ADC or a sensor. So we have two IIO devices, 
-> > the dfsdm and its front-end handled through the hw consumer interface.
-> > 
-> > You are right. There is something wrong here, in buffered/non-buffered 
-> > mode mixing.
-> > iio_hw_consumer_enable() call is used to enable the front-end device. 
-> > But this interface is intended for buffered mode.
-> > So this is not coherent with the expected single conversion mode, 
-> > indeed. Another interface is required to manage the front-end device. I 
-> > have a poor knowledge of iio framework, but it seems to me that there is 
-> > no interface to manage this.
-> > 
-> > My understanding regarding mlock, is that it is used to protect the 
-> > state of the iio device.
-> > I we want to do a conversion from the chained devices, I think we need 
-> > to activate the first device
-> > and keep it performing conversion, as long as the second device has done 
-> > its conversion.
-> > We need to protect both devices, and we should have to do it in a nested 
-> > way.
-> > So, I guess that anyway, nested mutexes would be required in this case.
-> >  
+> On Fri, 20 Sep 2019 13:50:06 +0200
+> Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
 > 
-> Others like regmap have solved this by having a lockclass per instance.
-> Although that is not ideal either since it will slow down lockdep.
+> > Fix the following warnings when documentation is built:
+> > drivers/iio/adc/stm32-adc-core.c:62: warning: cannot understand function
+> >  prototype: 'struct stm32_adc_common_regs '
+> > drivers/iio/adc/stm32-adc-core.c:78: warning: cannot understand function
+> >  prototype: 'struct stm32_adc_priv_cfg '
+> > drivers/iio/adc/stm32-adc-core.c:123: warning: Function parameter or
+> >  member 'pdev' not described in 'stm32f4_adc_clk_sel'
+> > drivers/iio/adc/stm32-adc.c:219: warning: cannot understand function
+> >  prototype: 'struct stm32_adc_regs '
+> > drivers/iio/adc/stm32-adc.c:237: warning: cannot understand function
+> >  prototype: 'struct stm32_adc_regspec '
+> > drivers/iio/adc/stm32-adc.c:264: warning: cannot understand function
+> >  prototype: 'struct stm32_adc_cfg '
+> > drivers/iio/adc/stm32-adc.c:323: warning: Function parameter or member
+> >  'difsel' not described in 'N'
+> > drivers/iio/adc/stm32-adc.c:323: warning: Function parameter or member
+> >  'pcsel' not described in 'stm32_adc'
+> > drivers/iio/adc/stm32-adc.c:371: warning: cannot understand function
+> >  prototype: 'const struct stm32_adc_regs stm32f4_sq[STM32_ADC_MAX_SQ + 1]
+> > drivers/iio/adc/stm32-adc.c:417: warning: cannot understand function
+> >  prototype: 'const struct stm32_adc_regs stm32f4_smp_bits[] = '
+> > drivers/iio/adc/stm32-adc.c:508: warning: cannot understand function
+> >  prototype: 'const struct stm32_adc_regs stm32h7_smp_bits[] = '
+> > drivers/iio/adc/stm32-adc.c:1112: warning: Function parameter or member
+> >  'indio_dev' not described in 'stm32_adc_get_trig_extsel'
+> > drivers/iio/adc/stm32-adc.c:1420: warning: Function parameter or member
+> >  'indio_dev' not described in 'stm32_adc_debugfs_reg_access'
+> > drivers/iio/adc/stm32-adc.c:1420: warning: Function parameter or member
+> >  'reg' not described in 'stm32_adc_debugfs_reg_access'
+> > drivers/iio/adc/stm32-adc.c:1420: warning: Function parameter or member
+> >  'writeval' not described in 'stm32_adc_debugfs_reg_access'
+> > drivers/iio/adc/stm32-adc.c:1420: warning: Function parameter or member
+> >  'readval' not described in 'stm32_adc_debugfs_reg_access'
+> > 
+> > Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>  
 > 
-> See
-> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/include/linux/regmap.h#n629
-
-It'll take me a while to get back to this as my understanding is
-currently very limited.  Poke me if I've not replied in a few weeks.
+> As I don't think we build these particular docs by default, I'm not going
+> to take this as a fix.  Hence it'll have to wait for the below to be
+> upstream of my togreg branch.
+> 
+> Give me a poke if that's true and I seem to have missed it.
+Applied to the togreg branch of iio.git and pushed out as testing
+for the autobuilders to play with it.
 
 Thanks,
 
 Jonathan
 
+> 
+> Thanks,
+> 
+> Jonathan
+> 
+> > ---
+> > Note: this applies on top of "iio: adc: stm32-adc: fix a race when using
+> > several adcs with dma and irq"
+> > ---
+> >  drivers/iio/adc/stm32-adc-core.c | 11 ++++++-----
+> >  drivers/iio/adc/stm32-adc.c      | 21 +++++++++++++--------
+> >  2 files changed, 19 insertions(+), 13 deletions(-)
+> > 
+> > diff --git a/drivers/iio/adc/stm32-adc-core.c b/drivers/iio/adc/stm32-adc-core.c
+> > index 93a096a..20c626c 100644
+> > --- a/drivers/iio/adc/stm32-adc-core.c
+> > +++ b/drivers/iio/adc/stm32-adc-core.c
+> > @@ -38,12 +38,12 @@
+> >  #define HAS_ANASWVDD		BIT(1)
+> >  
+> >  /**
+> > - * stm32_adc_common_regs - stm32 common registers, compatible dependent data
+> > + * struct stm32_adc_common_regs - stm32 common registers
+> >   * @csr:	common status register offset
+> >   * @ccr:	common control register offset
+> > - * @eoc1:	adc1 end of conversion flag in @csr
+> > - * @eoc2:	adc2 end of conversion flag in @csr
+> > - * @eoc3:	adc3 end of conversion flag in @csr
+> > + * @eoc1_msk:	adc1 end of conversion flag in @csr
+> > + * @eoc2_msk:	adc2 end of conversion flag in @csr
+> > + * @eoc3_msk:	adc3 end of conversion flag in @csr
+> >   * @ier:	interrupt enable register offset for each adc
+> >   * @eocie_msk:	end of conversion interrupt enable mask in @ier
+> >   */
+> > @@ -60,7 +60,7 @@ struct stm32_adc_common_regs {
+> >  struct stm32_adc_priv;
+> >  
+> >  /**
+> > - * stm32_adc_priv_cfg - stm32 core compatible configuration data
+> > + * struct stm32_adc_priv_cfg - stm32 core compatible configuration data
+> >   * @regs:	common registers for all instances
+> >   * @clk_sel:	clock selection routine
+> >   * @max_clk_rate_hz: maximum analog clock rate (Hz, from datasheet)
+> > @@ -117,6 +117,7 @@ static int stm32f4_pclk_div[] = {2, 4, 6, 8};
+> >  
+> >  /**
+> >   * stm32f4_adc_clk_sel() - Select stm32f4 ADC common clock prescaler
+> > + * @pdev: platform device
+> >   * @priv: stm32 ADC core private data
+> >   * Select clock prescaler used for analog conversions, before using ADC.
+> >   */
+> > diff --git a/drivers/iio/adc/stm32-adc.c b/drivers/iio/adc/stm32-adc.c
+> > index 663f8a5..76a247b 100644
+> > --- a/drivers/iio/adc/stm32-adc.c
+> > +++ b/drivers/iio/adc/stm32-adc.c
+> > @@ -102,7 +102,7 @@ struct stm32_adc_calib {
+> >  };
+> >  
+> >  /**
+> > - * stm32_adc_regs - stm32 ADC misc registers & bitfield desc
+> > + * struct stm32_adc_regs - stm32 ADC misc registers & bitfield desc
+> >   * @reg:		register offset
+> >   * @mask:		bitfield mask
+> >   * @shift:		left shift
+> > @@ -114,7 +114,7 @@ struct stm32_adc_regs {
+> >  };
+> >  
+> >  /**
+> > - * stm32_adc_regspec - stm32 registers definition, compatible dependent data
+> > + * struct stm32_adc_regspec - stm32 registers definition
+> >   * @dr:			data register offset
+> >   * @ier_eoc:		interrupt enable register & eocie bitfield
+> >   * @isr_eoc:		interrupt status register & eoc bitfield
+> > @@ -140,7 +140,7 @@ struct stm32_adc_regspec {
+> >  struct stm32_adc;
+> >  
+> >  /**
+> > - * stm32_adc_cfg - stm32 compatible configuration data
+> > + * struct stm32_adc_cfg - stm32 compatible configuration data
+> >   * @regs:		registers descriptions
+> >   * @adc_info:		per instance input channels definitions
+> >   * @trigs:		external trigger sources
+> > @@ -183,8 +183,8 @@ struct stm32_adc_cfg {
+> >   * @rx_buf:		dma rx buffer cpu address
+> >   * @rx_dma_buf:		dma rx buffer bus address
+> >   * @rx_buf_sz:		dma rx buffer size
+> > - * @difsel		bitmask to set single-ended/differential channel
+> > - * @pcsel		bitmask to preselect channels on some devices
+> > + * @difsel:		bitmask to set single-ended/differential channel
+> > + * @pcsel:		bitmask to preselect channels on some devices
+> >   * @smpr_val:		sampling time settings (e.g. smpr1 / smpr2)
+> >   * @cal:		optional calibration data on some devices
+> >   * @chan_name:		channel name array
+> > @@ -254,7 +254,7 @@ static const struct stm32_adc_info stm32h7_adc_info = {
+> >  	.num_res = ARRAY_SIZE(stm32h7_adc_resolutions),
+> >  };
+> >  
+> > -/**
+> > +/*
+> >   * stm32f4_sq - describe regular sequence registers
+> >   * - L: sequence len (register & bit field)
+> >   * - SQ1..SQ16: sequence entries (register & bit field)
+> > @@ -301,7 +301,7 @@ static struct stm32_adc_trig_info stm32f4_adc_trigs[] = {
+> >  	{}, /* sentinel */
+> >  };
+> >  
+> > -/**
+> > +/*
+> >   * stm32f4_smp_bits[] - describe sampling time register index & bit fields
+> >   * Sorted so it can be indexed by channel number.
+> >   */
+> > @@ -392,7 +392,7 @@ static struct stm32_adc_trig_info stm32h7_adc_trigs[] = {
+> >  	{},
+> >  };
+> >  
+> > -/**
+> > +/*
+> >   * stm32h7_smp_bits - describe sampling time register index & bit fields
+> >   * Sorted so it can be indexed by channel number.
+> >   */
+> > @@ -994,6 +994,7 @@ static int stm32_adc_conf_scan_seq(struct iio_dev *indio_dev,
+> >  
+> >  /**
+> >   * stm32_adc_get_trig_extsel() - Get external trigger selection
+> > + * @indio_dev: IIO device structure
+> >   * @trig: trigger
+> >   *
+> >   * Returns trigger extsel value, if trig matches, -EINVAL otherwise.
+> > @@ -1297,6 +1298,10 @@ static int stm32_adc_of_xlate(struct iio_dev *indio_dev,
+> >  
+> >  /**
+> >   * stm32_adc_debugfs_reg_access - read or write register value
+> > + * @indio_dev: IIO device structure
+> > + * @reg: register offset
+> > + * @writeval: value to write
+> > + * @readval: value to read
+> >   *
+> >   * To read a value from an ADC register:
+> >   *   echo [ADC reg offset] > direct_reg_access  
+> 
 
 
 _______________________________________________
