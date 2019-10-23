@@ -2,82 +2,113 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6891DE1DAD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 16:06:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 13D32E1DB1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 16:07:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IfibQ59Guo84VUNaGMmrPwKFdIsyuO8bG7RjX8u/IHo=; b=e+3BpRYIxc9T16
-	t4OPRlc8b+/tMvJhG5GcZowSeUZYNHCpB83/g7xMTM/1XYZScnFN8GXh+NyuUJplrjggghKMied+4
-	Kv5eqiGdejmZ5anuum7LM0ft5mSWUSE/Ad5pUFJmTCzSw+cNrsUK6MWMQLtBOuvAroPJ+7Tbvfga3
-	uZJG52WF3ZrI2Q2aVQdlyIZH40POPLHHc7lLn0AQNHsZco1d3fV3y7cYmAkqukdKKfOmGYg8a2D1w
-	GeOJwBODL7u8gt4uQPUFiAbSjibtj3TpWll/w1qpogXkAqC5iXRxCljsdj8v8PKrjJNVhYuBXxpcn
-	ia73Dc1znvpZ7DB4yxtw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=tfLZLwSvdpZRtMrmLRcMCeGLD6BPE05PM3DdF1W2nTo=; b=rlcxr3WThWjLtH
+	hq0/ExlMwd4EN8A032AnQVi0meWFb0dS1oT4eJu0xlkidXzmyEqmxq9JxmSst3/pMYW6BEsQx2Nf8
+	natQhfKZ7ntqFOnUyqJiqRoDWm0m5p1liwUCJpqPIWndWJzPkCmdn6af9myoQ6Ext4nV2lGV3T7XS
+	Q04weaTMGwmZul9qAVqPTARRUbjxZTepPI74d0dAbd0nZ3two9JC5H/8e0wa0NJemgNfW+H7cyxUZ
+	YBHkZ1HetNZ/dDal6ogMHmLOyJhFOfjuDKdRoqjLos/c6lXoAninY0jGjY1xZf5463E3kBlvhJiI0
+	iOjpjPzI6DQafT3zVaMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNHH2-00058C-Da; Wed, 23 Oct 2019 14:06:04 +0000
-Received: from mail-ed1-f68.google.com ([209.85.208.68])
+	id 1iNHHv-0005Pt-Uy; Wed, 23 Oct 2019 14:07:00 +0000
+Received: from mail-eopbgr30079.outbound.protection.outlook.com ([40.107.3.79]
+ helo=EUR03-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNHGo-00057Z-1M
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 14:05:52 +0000
-Received: by mail-ed1-f68.google.com with SMTP id l25so4610713edt.6
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 23 Oct 2019 07:05:49 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=VQH/EvjbXwm/VAIhmVob4G0/HIkap/+J+l+jq3KpBXg=;
- b=YmdAexvKhOvlLHLycecB7F+n6/RAteQcOEbf7mmi8INRoYBsM4kYsPgmc5oIL3m6BT
- t1D7TIrXwN3mnz91G5USdyLacD+pxJDglm/53TbP6BNy1mw54lH/aMG+XiIL0gDIE098
- BC/CzflyCgO+foM/V8QkA9NFs19e3DBfIKPKFO6dNHvsf9FL2kLtx+2lrT0t9TVPFMyv
- x6GdE5hq5FstMdBtSX/+XNPRa/QLU+1EPX5d9clbsOcY86LIifXfAtnlCwrfu0mBGJLb
- yvis+gWquuWru77S0JAEZcyywyaCMugVnG4qgHm/F0fMa0LqNMQX2e7KgkecDSfEXU97
- dzZw==
-X-Gm-Message-State: APjAAAUvvAWee0GU8ICe0IQyzLpXsv7T0ZfckcwZsoJRoWRqU0kvBqWs
- ikgzFC2oYd7foaTmEj6BRYxRiBHA2/8=
-X-Google-Smtp-Source: APXvYqxhJij2FwGWOQDrBZhSUctJohVK3d5ZMbbMV/VKkp43/DubjOIb97D2epny1RKlPSnh6m37tg==
-X-Received: by 2002:a17:906:55d1:: with SMTP id
- z17mr32933587ejp.300.1571839547705; 
- Wed, 23 Oct 2019 07:05:47 -0700 (PDT)
-Received: from pi3 ([194.230.155.217])
- by smtp.googlemail.com with ESMTPSA id k24sm169807edx.46.2019.10.23.07.05.45
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 23 Oct 2019 07:05:46 -0700 (PDT)
-Date: Wed, 23 Oct 2019 16:05:44 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH 35/36] ARM: s3c: move into a common directory
-Message-ID: <20191023140544.GL11048@pi3>
-References: <20191010202802.1132272-1-arnd@arndb.de>
- <20191010210704.2453990-1-arnd@arndb.de>
+ id 1iNHHg-0005PD-Ce
+ for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 14:06:47 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=b3GXOFmGqfM0tBDZ7wZ5EPLqlh6l5E8Jn6JjKj4LLwUkDE8agqbo7M1P1Gt/7vexcyYxqb+AXHZe8CFQBGuSJMJVt6Ezo8xTVU3P5V+aatgrAoD5kQcYwOYaaY+4JXJEHERzLtpm28nK6h+nIufnEFtY+E6QMqFizO3zUjdlPc4P9GsvCfgcn+PukQZCjXkyhEgquixvIKoZF2SKeBALiDwoulqEvJTUDFY6g3BEsnOC8Bh60TAuhbdhBDjyZ4Bwf4MUpFfp1nqtAk4QKl7qj4Axbhmhdj/oMEpWVwWM1NYFlrfmjt1Y5LNDiQ6ZLW0jTCCugpjh/nn4BkCAflJb1Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=rBej+x1VBKMGu0cXYJJanBXdOoMNnawUUbmBpvDmc0w=;
+ b=Mpmuo8y5XWOS6q7OyCCgNNUKjEQJs9aFXqdf3jF9dcyldN9JSS77ug7TIs+tK4jyvLnu23x6T/YT8TM2Mt3EcagyMGCMd0US0nHue71EmT5BvWfX4gwE585E4CQQ67q/Np3dg5NkyQE1SN/GzciexOLcDnxi4njA6RgWpyC6R8E9yPK5vl2JRkYgpaI0kbvgaPg9TDeDd4ViKReJ4rYkNFqLSX2kSQgbGUggfEHoErO8iD3Supeb0Pps7x3fWfsWFu3fg2Q1H34iPUvOkLPQQsgCxkAgSrMwcFxPiSExwP/seBWnmKaoKuNuz8UgpSfkbBKueXUzZlF97p6teX/1kw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=rBej+x1VBKMGu0cXYJJanBXdOoMNnawUUbmBpvDmc0w=;
+ b=CGaTjMWesygoYFlSquzn0apY08J5/5zyOKnTh6zLmSx5A2OJcp7XvJbdTuwGt7efpexn9GoNfbNw+8O0eBOss2MQVuatuANezZ1FcqPx3eGNrX5J/ES+y6GslUF1JrZAa+rQezCaoQynEkGCJUdziULHaRd2H6jKVbsXnkCQ6gQ=
+Received: from AM7PR04MB7015.eurprd04.prod.outlook.com (52.135.57.19) by
+ AM7PR04MB6855.eurprd04.prod.outlook.com (10.141.173.10) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2387.20; Wed, 23 Oct 2019 14:06:41 +0000
+Received: from AM7PR04MB7015.eurprd04.prod.outlook.com
+ ([fe80::3924:7adb:47f2:2ece]) by AM7PR04MB7015.eurprd04.prod.outlook.com
+ ([fe80::3924:7adb:47f2:2ece%7]) with mapi id 15.20.2367.022; Wed, 23 Oct 2019
+ 14:06:40 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Matthias Kaehlcke <mka@chromium.org>, MyungJoo Ham
+ <myungjoo.ham@samsung.com>, "Rafael J. Wysocki" <rafael@kernel.org>
+Subject: Re: [PATCH v9 0/8] PM / devfreq: Add dev_pm_qos support
+Thread-Topic: [PATCH v9 0/8] PM / devfreq: Add dev_pm_qos support
+Thread-Index: AQHVeVcfE84n3PyghE+MA+tYDqGMmw==
+Date: Wed, 23 Oct 2019 14:06:40 +0000
+Message-ID: <AM7PR04MB70154D3BA0D6402A9C9BE6A0EE6B0@AM7PR04MB7015.eurprd04.prod.outlook.com>
+References: <cover.1570044052.git.leonard.crestez@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [92.121.36.197]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 3ca47231-75ff-4b6e-b226-08d757c23a52
+x-ms-traffictypediagnostic: AM7PR04MB6855:|AM7PR04MB6855:
+x-ms-exchange-purlcount: 11
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM7PR04MB685517937604CFE06B7AE1F2EE6B0@AM7PR04MB6855.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 019919A9E4
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(396003)(39860400002)(376002)(346002)(136003)(199004)(189003)(33656002)(256004)(14444005)(6506007)(316002)(102836004)(53546011)(99286004)(446003)(7736002)(26005)(7696005)(76176011)(6116002)(186003)(66066001)(476003)(3846002)(486006)(305945005)(44832011)(71190400001)(2906002)(71200400001)(110136005)(54906003)(966005)(14454004)(6436002)(64756008)(25786009)(76116006)(55016002)(9686003)(229853002)(6306002)(66476007)(91956017)(66446008)(86362001)(66946007)(66556008)(7416002)(74316002)(5660300002)(8936002)(81166006)(478600001)(8676002)(81156014)(52536014)(45080400002)(6246003)(4326008);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM7PR04MB6855;
+ H:AM7PR04MB7015.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: wSDPiSgVbtJLLlQT/f7yaFvb+rCqHqBY62482lv7PHvHg0fCHWHTcFhhdiyMLeS70woeRVKm/GEvvwIRT+n7MOLTa55paMagoYdjQ4+Cw2dJ3RojqIHUFyqvlpoBt6Zl6DZ53Sow7rANNrPWbxPa0AoZQz6QkvP/vyKzlvgsVS13lb0Z3xVRHMzWcNe1CCxAGEwtRoxU5i0fz8Yc2Da7SUEBSGBBHWl+2UQr4I89147Wvmpj1ASvy330KGZ+ryj0qXHetyOL67luyIO69IwLj+U6p/G1uykTNNf1VHwZqwPcavfPvgIQUb/SdGysEBictmIpYz1zZtx3qNwkTZnUE8xXoQ26X6rfzC7r9UC3Paitj58mvf5I6QCVcenT6Gojck/vj9kDx+rrTefOqfPPIrSfC2vZvKa5b/kyHNI53X1LclAdiCUJ64FRpiXQq+2aZLO/0urreXMtPLMDi06IeNfF8RR37gAbWr9SILaQC3w=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191010210704.2453990-1-arnd@arndb.de>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3ca47231-75ff-4b6e-b226-08d757c23a52
+X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Oct 2019 14:06:40.8859 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: yqtio9gMsBFSneTByYGClpmX0vZevIK7Nu/yIyp4c/1zyaH2a+5zMLV9wgtvq7wKDkLsxwk/ispXM3Sc6ZpHgQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM7PR04MB6855
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_070550_085762_50F7D55E 
-X-CRM114-Status: GOOD (  12.64  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191023_070644_583580_A6266F64 
+X-CRM114-Status: GOOD (  18.24  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.68 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.68 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
+ no trust [40.107.3.79 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,286 +120,155 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, linus.walleij@linaro.org,
- Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: =?iso-8859-2?Q?Artur_=A6wigo=F1?= <a.swigon@partner.samsung.com>,
+ Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ Viresh Kumar <viresh.kumar@linaro.org>, dl-linux-imx <linux-imx@nxp.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ Lukasz Luba <l.luba@partner.samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ Alexandre Bailon <abailon@baylibre.com>,
+ Georgi Djakov <georgi.djakov@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Jacky Bai <ping.bai@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 10, 2019 at 11:07:04PM +0200, Arnd Bergmann wrote:
-> s3c24xx and s3c64xx have a lot in common, but are split across three
-> separate directories, which makes the interaction of the header files
-> more complicated than necessary.
+On 2019-10-02 10:25 PM, Leonard Crestez wrote:
+> Add dev_pm_qos notifiers to devfreq core in order to support frequency
+> limits via dev_pm_qos_add_request.
 > 
-> Move all three directories into a new mach-s3c, with a minimal
-> set of changes to each file.
+> Unlike the rest of devfreq the dev_pm_qos frequency is measured in Khz,
+> this is consistent with current dev_pm_qos usage for cpufreq and
+> allows frequencies above 2Ghz (pm_qos expresses limits as s32).
 > 
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> Like with cpufreq the handling of min_freq/max_freq is moved to the
+> dev_pm_qos mechanism. Constraints from userspace are no longer clamped on
+> store, instead all values can be written and we only check against OPPs in a
+> new devfreq_get_freq_range function. This is consistent with the design of
+> dev_pm_qos.
+> 
+> Notifiers from pm_qos are executed under a single global dev_pm_qos_mtx and
+> need to take devfreq->lock. Notifier registration takes the same dev_pm_qos_mtx
+> so in order to prevent lockdep warnings it must be done outside devfreq->lock.
+> Current devfreq_add_device does all initialization under devfreq->lock and that
+> needs to be relaxed.
+> 
+> Some of first patches in the series are bugfixes and cleanups, they could be
+> applied separately.
 
-(...)
+Hello,
 
->  rename arch/arm/{plat-samsung => mach-s3c}/Kconfig (98%)
->  rename arch/arm/{mach-s3c24xx/Kconfig => mach-s3c/Kconfig.s3c24xx} (100%)
->  rename arch/arm/{mach-s3c64xx/Kconfig => mach-s3c/Kconfig.s3c64xx} (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/Makefile (83%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/Makefile.boot (100%)
->  rename arch/arm/{mach-s3c24xx/Makefile => mach-s3c/Makefile.s3c24xx} (92%)
->  rename arch/arm/{mach-s3c64xx/Makefile => mach-s3c/Makefile.s3c64xx} (83%)
->  rename arch/arm/{plat-samsung => mach-s3c}/adc.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/anubis.h (100%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/ata-core.h (100%)
+This series was posted a few ago and all patches have been 
+reviewed/tested-by multiple people. Possible minor hangups:
 
-Looks like generic file now (shared between S3C24xx and S3C64xx) so I
-would prefer to add a -s3c64xx suffix to make it clear.
+1) Matthias found it confusing that min/max_freq in sysfs changes 
+on-the-fly. This is not a behavior change and I believe a decent 
+workaround would be to implement separate user_min/max_freq files from 
+which userspace will always read back the contraints it has written.
 
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/backlight.h (100%)
+2) There was an objection to removing devm from two allocs in PATCH 4. I 
+believe current solution is acceptable but a possible alternative would 
+be to split device_register into device_initialize and device_add: this 
+should allow devm sooner.
+Link: https://patchwork.kernel.org/patch/11158385/#22902151
 
-The same.
+Let me know if you think I should implement the options above and resend.
 
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/bast-ide.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/bast-irq.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/bast.h (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/common-smdk.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/common-smdk.h (100%)
+The bigger problem is that DEV_PM_QOS_MIN/MAX_FREQUENCY was removed from 
+pm core because only user (cpufreq) was refactored to use a new 
+interface on top of cpufreq_policy. Links to discussion:
+     https://patchwork.kernel.org/cover/11193021/
+ 
+https://lore.kernel.org/linux-pm/VI1PR04MB7023DF47D046AEADB4E051EBEE680@VI1PR04MB7023.eurprd04.prod.outlook.com/T/#u
 
-The same as SMDK is a common name (Samsung Developers Kit, or something
-like this).
+I believe there is still significant value in supporting min/max 
+frequency requests on a per-target-device basis. This makes much more 
+sense for devfreq that for cpufreq because the whole point of devfreq is 
+scaling arbitrary independent devices.
 
->  rename arch/arm/{plat-samsung => mach-s3c}/cpu.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/cpufreq-utils.c (100%)
-
-Suffix.
-
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/cpuidle.c (100%)
-
-Suffix.
-
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/crag6410.h (100%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/dev-audio.c (100%)
-
-Suffix.
-
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/dev-backlight.c (100%)
-
-Suffix.
-
->  rename arch/arm/{mach-s3c64xx/dev-uart.c => mach-s3c/dev-uart-s3c64xx.c} (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/dev-uart.c (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/devs.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/fb-core.h (100%)
-
-Suffix.
-
->  rename arch/arm/{plat-samsung => mach-s3c}/gpio-samsung.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/gta02.h (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/h1940-bluetooth.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/h1940.h (100%)
->  rename arch/arm/{mach-s3c24xx/include/mach/dma.h => mach-s3c/include/mach/dma-s3c24xx.h} (100%)
->  rename arch/arm/{mach-s3c64xx/include/mach/dma.h => mach-s3c/include/mach/dma-s3c64xx.h} (100%)
->  create mode 100644 arch/arm/mach-s3c/include/mach/dma.h
->  rename arch/arm/{mach-s3c24xx/include/mach/gpio-samsung.h => mach-s3c/include/mach/gpio-samsung-s3c24xx.h} (100%)
->  rename arch/arm/{mach-s3c64xx/include/mach/gpio-samsung.h => mach-s3c/include/mach/gpio-samsung-s3c64xx.h} (100%)
->  create mode 100644 arch/arm/mach-s3c/include/mach/gpio-samsung.h
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/include/mach/hardware.h (100%)
-
-Suffix.
-
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/include/mach/io.h (100%)
-
-Suffix.
-
->  rename arch/arm/{mach-s3c24xx/include/mach/irqs.h => mach-s3c/include/mach/irqs-s3c24xx.h} (100%)
->  rename arch/arm/{mach-s3c64xx/include/mach/irqs.h => mach-s3c/include/mach/irqs-s3c64xx.h} (100%)
->  create mode 100644 arch/arm/mach-s3c/include/mach/irqs.h
->  rename arch/arm/{mach-s3c24xx/include/mach/map.h => mach-s3c/include/mach/map-s3c24xx.h} (100%)
->  rename arch/arm/{mach-s3c64xx/include/mach/map.h => mach-s3c/include/mach/map-s3c64xx.h} (100%)
->  create mode 100644 arch/arm/mach-s3c/include/mach/map.h
->  rename arch/arm/{mach-s3c24xx/include/mach/pm-core.h => mach-s3c/include/mach/pm-core-s3c24xx.h} (100%)
->  rename arch/arm/{mach-s3c64xx/include/mach/pm-core.h => mach-s3c/include/mach/pm-core-s3c64xx.h} (100%)
->  create mode 100644 arch/arm/mach-s3c/include/mach/pm-core.h
->  rename arch/arm/{mach-s3c24xx/include/mach/regs-clock.h => mach-s3c/include/mach/regs-clock-s3c24xx.h} (100%)
->  rename arch/arm/{mach-s3c64xx/include/mach/regs-clock.h => mach-s3c/include/mach/regs-clock-s3c64xx.h} (100%)
->  create mode 100644 arch/arm/mach-s3c/include/mach/regs-clock.h
->  rename arch/arm/{mach-s3c24xx/include/mach/regs-gpio.h => mach-s3c/include/mach/regs-gpio-s3c24xx.h} (100%)
->  rename arch/arm/{mach-s3c64xx/include/mach/regs-gpio.h => mach-s3c/include/mach/regs-gpio-s3c64xx.h} (100%)
->  create mode 100644 arch/arm/mach-s3c/include/mach/regs-gpio.h
->  rename arch/arm/{mach-s3c24xx/include/mach/regs-irq.h => mach-s3c/include/mach/regs-irq-s3c24xx.h} (100%)
->  rename arch/arm/{mach-s3c64xx/include/mach/regs-irq.h => mach-s3c/include/mach/regs-irq-s3c64xx.h} (100%)
->  create mode 100644 arch/arm/mach-s3c/include/mach/regs-irq.h
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/include/mach/regs-s3c2443-clock.h (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/include/mach/rtc-core.h (100%)
-
-Suffix.
-
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/include/mach/s3c2412.h (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/include/plat/adc-core.h (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/include/plat/cpu.h (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/include/plat/devs.h (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/include/plat/fb.h (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/include/plat/gpio-cfg-helpers.h (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/include/plat/gpio-cfg.h (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/include/plat/gpio-core.h (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/include/plat/iic-core.h (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/include/plat/keypad.h (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/include/plat/map-base.h (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/include/plat/map-s3c.h (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/include/plat/map-s5p.h (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/include/plat/pm-common.h (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/include/plat/pm.h (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/include/plat/pwm-core.h (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/include/plat/regs-adc.h (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/include/plat/regs-irqtype.h (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/include/plat/samsung-time.h (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/include/plat/sdhci.h (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/include/plat/usb-phy.h (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/include/plat/wakeup-mask.h (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/init.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/iotiming-s3c2410.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/iotiming-s3c2412.c (100%)
->  rename arch/arm/{mach-s3c24xx/irq-pm.c => mach-s3c/irq-pm-s3c24xx.c} (100%)
->  rename arch/arm/{mach-s3c64xx/irq-pm.c => mach-s3c/irq-pm-s3c64xx.c} (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/irq-s3c24xx-fiq-exports.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/irq-s3c24xx-fiq.S (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/irq-s3c24xx.c (100%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/irq-uart.h (100%)
-
-Suffix.
-
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-amlm5900.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-anubis.c (99%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/mach-anw6410.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-at2440evb.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-bast.c (99%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/mach-crag6410-module.c (100%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/mach-crag6410.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-gta02.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-h1940.c (99%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/mach-hmt.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-jive.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-mini2440.c (99%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/mach-mini6410.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-n30.c (99%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/mach-ncp.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-nexcoder.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-osiris-dvs.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-osiris.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-otom.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-qt2410.c (99%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/mach-real6410.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-rx1950.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-rx3715.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-s3c2416-dt.c (98%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/mach-s3c64xx-dt.c (98%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/mach-smartq.c (99%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/mach-smartq.h (100%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/mach-smartq5.c (99%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/mach-smartq7.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-smdk2410.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-smdk2413.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-smdk2416.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-smdk2440.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-smdk2443.c (99%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/mach-smdk6400.c (99%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/mach-smdk6410.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-tct_hammer.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-vr1000.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/mach-vstms.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/nand-core.h (100%)
-
-Suffix.
-
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/onenand-core.h (100%)
-
-Suffix.
-
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/osiris.h (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/otom.h (100%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/pl080.c (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/platformdata.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/pll-s3c2410.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/pll-s3c2440-12000000.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/pll-s3c2440-16934400.c (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/pm-common.c (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/pm-gpio.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/pm-h1940.S (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/pm-s3c2410.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/pm-s3c2412.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/pm-s3c2416.c (100%)
->  rename arch/arm/{mach-s3c24xx/pm.c => mach-s3c/pm-s3c24xx.c} (100%)
->  rename arch/arm/{mach-s3c64xx/pm.c => mach-s3c/pm-s3c64xx.c} (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/pm.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/regs-dsc.h (100%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/regs-gpio-memport.h (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/regs-mem.h (100%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/regs-modem.h (100%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/regs-srom.h (100%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/regs-sys.h (100%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/regs-syscon-power.h (100%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/regs-usb-hsotg-phy.h (100%)
-
-Suffix to all regs above.
-
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/s3c2410.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/s3c2412-power.h (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/s3c2412.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/s3c2416.c (99%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/s3c2440.c (98%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/s3c2442.c (98%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/s3c2443.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/s3c244x.c (99%)
->  rename arch/arm/{mach-s3c24xx/common.c => mach-s3c/s3c24xx.c} (99%)
->  rename arch/arm/{mach-s3c24xx/common.h => mach-s3c/s3c24xx.h} (100%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/s3c6400.c (98%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/s3c6410.c (99%)
->  rename arch/arm/{mach-s3c64xx/common.c => mach-s3c/s3c64xx.c} (99%)
->  rename arch/arm/{mach-s3c64xx/common.h => mach-s3c/s3c64xx.h} (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/setup-camif.c (100%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/setup-fb-24bpp.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/setup-i2c.c (100%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/setup-i2c0.c (100%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/setup-i2c1.c (100%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/setup-ide.c (100%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/setup-keypad.c (100%)
-
-Suffix to all setup above.
-
->  rename arch/arm/{mach-s3c24xx/setup-sdhci-gpio.c => mach-s3c/setup-sdhci-gpio-s3c24xx.c} (100%)
->  rename arch/arm/{mach-s3c64xx/setup-sdhci-gpio.c => mach-s3c/setup-sdhci-gpio-s3c64xx.c} (100%)
->  rename arch/arm/{mach-s3c24xx/setup-spi.c => mach-s3c/setup-spi-s3c24xx.c} (100%)
->  rename arch/arm/{mach-s3c64xx/setup-spi.c => mach-s3c/setup-spi-s3c64xx.c} (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/setup-ts.c (100%)
-
-Suffix.
-
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/setup-usb-phy.c (100%)
-
-Suffix.
-
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/simtec-audio.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/simtec-nor.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/simtec-pm.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/simtec-usb.c (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/simtec.h (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/sleep-s3c2410.S (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/sleep-s3c2412.S (100%)
->  rename arch/arm/{mach-s3c24xx/sleep.S => mach-s3c/sleep-s3c24xx.S} (100%)
->  rename arch/arm/{mach-s3c64xx/sleep.S => mach-s3c/sleep-s3c64xx.S} (100%)
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/spi-core.h (100%)
-
-Suffix.
-
->  rename arch/arm/{mach-s3c24xx => mach-s3c}/vr1000.h (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/wakeup-mask.c (100%)
->  rename arch/arm/{plat-samsung => mach-s3c}/watchdog-reset.c (100%)
->  rename arch/arm/{mach-s3c64xx => mach-s3c}/watchdog-reset.h (100%)
-
-Suffix.
-
-Rest looks reasonable.
-
-Best regards,
-Krzysztof
+> ---
+> Changes since v8:
+> * Fix incorrectly reading qos max twice in get_freq_range.
+> * Make devfreq_notifier_call set scaling_max_freq to ULONG_MAX instead of 0 on
+> error. This avoids special-casing this in get_freq_range.
+> * Add a fix for devfreq_notifier_call returning -errno.
+> * Replace S32_MAX with PM_QOS_MAX_FREQUENCY_DEFAULT_VALUE. This seems cleaner
+> and avoids overflow when multiplying S32_MAX with 1000 on 32bit platforms. It
+> overflowed to 0xfffffc18 hz so it was mostly safe anyway.
+> * Warn when encountering errors on cleanup (but continue).
+> * Incorporate other smaller comment and printk adjustments from review.
+> Link to v8:
+> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpatchwork.kernel.org%2Fcover%2F11158383%2F&amp;data=02%7C01%7Cleonard.crestez%40nxp.com%7Ca6b53046361642d0fd5708d7476e40e4%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637056411174276846&amp;sdata=YKKW1RJl1YArhtjlA859DeRxys4d4iiB%2FQIz3Nl8OtU%3D&amp;reserved=0
+> 
+> Changes since v7:
+> * Only #define HZ_PER_KHZ in patch where it's used.
+> * Drop devfreq_ prefix for some internal functions.
+> * Improve qos update error message.
+> * Remove some unnecessary comments.
+> * Collect reviews
+> Link to v7: https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpatchwork.kernel.org%2Fcover%2F11157649%2F&amp;data=02%7C01%7Cleonard.crestez%40nxp.com%7Ca6b53046361642d0fd5708d7476e40e4%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637056411174276846&amp;sdata=0s6mH192c3dvDlfrFEVdqdMqoFRM4QJiLZiRg4c89nQ%3D&amp;reserved=0
+> 
+> Changes since v6:
+> * Don't return errno from devfreq_qos_notifier_call, return NOTIFY_DONE
+> and print the error.
+> * More spelling and punctuation nits
+> Link to v6: https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpatchwork.kernel.org%2Fcover%2F11157201%2F&amp;data=02%7C01%7Cleonard.crestez%40nxp.com%7Ca6b53046361642d0fd5708d7476e40e4%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637056411174276846&amp;sdata=6hcaCgESymHhCk5UbFC182FrgFVdJdDoorAJhZXKuTg%3D&amp;reserved=0
+> 
+> Changes since v5:
+> * Drop patches which are not strictly related to PM QoS.
+> * Add a comment explaining why devfreq_add_device needs two cleanup paths.
+> * Remove {} for single line.
+> * Rename {min,max}_freq_req to user_{min,max}_freq_req
+> * Collect reviews
+> Link to v5: https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpatchwork.kernel.org%2Fcover%2F11149497%2F&amp;data=02%7C01%7Cleonard.crestez%40nxp.com%7Ca6b53046361642d0fd5708d7476e40e4%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637056411174276846&amp;sdata=oDuaTI7bpOlCEs9mFRgY5eUvGX%2FtpP6m0U5t4SYNKaw%3D&amp;reserved=0
+> 
+> Changes since v4:
+> * Move more devfreq_add_device init ahead of device_register.
+> * Make devfreq_dev_release cleanup devices not yet in devfreq_list. This is
+> simpler than previous attempt to add to devfreq_list sonner.
+> * Take devfreq->lock in trans_stat_show
+> * Register dev_pm_opp notifier on devfreq parent dev (which has OPPs)
+> Link to v4: https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpatchwork.kernel.org%2Fcover%2F11114657%2F&amp;data=02%7C01%7Cleonard.crestez%40nxp.com%7Ca6b53046361642d0fd5708d7476e40e4%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637056411174276846&amp;sdata=ItIVLxJZVOpO2XL2MBqONWLQ1lHFu2gA7GC1yb%2BQgEE%3D&amp;reserved=0
+> 
+> Changes since v3:
+> * Cleanup locking and error-handling in devfreq_add_device
+> * Register notifiers after device registration but before governor start
+> * Keep the initialization of min_req/max_req ahead of device_register
+> because it's used for sysfs handling
+> * Use HZ_PER_KHZ instead of 1000
+> * Add kernel-doc comments
+> * Move OPP notifier to core
+> Link to v3: https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpatchwork.kernel.org%2Fcover%2F11104061%2F&amp;data=02%7C01%7Cleonard.crestez%40nxp.com%7Ca6b53046361642d0fd5708d7476e40e4%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637056411174276846&amp;sdata=unedjnBbjVtifB8koQ0B8eOjqwCnnAeqHGI8QYuH%2Fv4%3D&amp;reserved=0
+> 
+> Changes since v2:
+> * Handle sysfs via dev_pm_qos (in separate patch)
+> * Add locking to {min,max}_freq_show
+> * Fix checkpatch issues (long lines etc)
+> Link to v2: https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpatchwork.kernel.org%2Fpatch%2F11084279%2F&amp;data=02%7C01%7Cleonard.crestez%40nxp.com%7Ca6b53046361642d0fd5708d7476e40e4%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637056411174276846&amp;sdata=boHOmdwyUhKlmk7F3X8oYbLq1MvR4dQWlF14I0AXXes%3D&amp;reserved=0
+> 
+> Changes since v1:
+> * Add doxygen comments for min_nb/max_nb
+> * Remove notifiers on error/cleanup paths. Keep gotos simple by relying on
+> dev_pm_qos_remove_notifier ignoring notifiers which were not added.
+> Link to v1: https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpatchwork.kernel.org%2Fpatch%2F11078475%2F&amp;data=02%7C01%7Cleonard.crestez%40nxp.com%7Ca6b53046361642d0fd5708d7476e40e4%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637056411174276846&amp;sdata=DZlQAKLqQc4Q46a7v%2FtEBexsp1jDSLB8yuZcLXPEHl4%3D&amp;reserved=0
+> 
+> Leonard Crestez (8):
+>    PM / devfreq: Don't fail devfreq_dev_release if not in list
+>    PM / devfreq: Fix devfreq_notifier_call returning errno
+>    PM / devfreq: Set scaling_max_freq to max on OPP notifier error
+>    PM / devfreq: Move more initialization before registration
+>    PM / devfreq: Don't take lock in devfreq_add_device
+>    PM / devfreq: Introduce get_freq_range helper
+>    PM / devfreq: Add PM QoS support
+>    PM / devfreq: Use PM QoS for sysfs min/max_freq
+> 
+>   drivers/devfreq/devfreq.c | 310 ++++++++++++++++++++++++++------------
+>   include/linux/devfreq.h   |  14 +-
+>   2 files changed, 224 insertions(+), 100 deletions(-)
+> 
 
 
 _______________________________________________
