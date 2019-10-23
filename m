@@ -2,83 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98E01E1B23
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 14:45:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A56A9E1B29
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 14:47:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jrcfFhg1g4LeTaVwIjdlAEoLaMhId0TAzM8hXIPT7y4=; b=X0G86vYcfeqnrE
-	O6W+BzE02FatM+dYbMkmDmoAdNt3/k+F8I1JfUw/zTUVVLUvB0gMFtk12IUWUY7i6l2SVnb+wyQQI
-	tLDKd9LVOORKIc3evPZ2nWScwWgIGuMp3CtraKzqvzVduqZwbXWHh++4s7mluLIWVoiNzClcovH7i
-	D7knDWU/4WqOnCDi8NywE6MMDg51Iyp/fOu8mWRsvq6WtnftHh17M9wW55+pTTwVr6b6dScbcWwoO
-	NiSQf6NIJI5MIpFX4ouYfrjZnz+Wqhu1mYWVAKlp5/P5KbyHEVrXWvhJJj9DFGd6t2wbpe15naNkY
-	6XvYtptS2p23qrDni7+Q==;
+	List-Owner; bh=1LIvwB/bJLboZT8J3jPBG6qALWgOALh0q8fHkdap3XM=; b=BFMcKWoG2BWSWz
+	k9kL/Dy87zVWme9wJEQL+hz0Rp3fV4qoTPxPA+ez2GwNM+51PVoDURGs6T09AUxSMbaiEwCo47h/T
+	Euh05ycsGFTd5iq+fCw1RWG2lMX0Ng1akWxpEf7SL0XIZpdd4s/rjECoNNJ4EYJHxq8lbDnAeol59
+	nqq0QKzf5k5f7hoiMgsLv/92usRamO/Oa2kRg32RqEVlrZJ2ErydWFyb64qg/sRw6p7cqR6d01Lul
+	GGAObFNzg8Yspb8H7jWbEzoqsyfRPKFirIgkW4/QnQ2ZQAiG4qTYWh58h3BxKB5Bq7KVzihLi0Ptv
+	D7VyV0hpbH71t+6D6pSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNG1R-0001I4-Gw; Wed, 23 Oct 2019 12:45:53 +0000
-Received: from mout.kundenserver.de ([212.227.17.10])
+	id 1iNG2f-0001aO-Ma; Wed, 23 Oct 2019 12:47:09 +0000
+Received: from mail-ed1-f68.google.com ([209.85.208.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNG1C-0001HY-Or
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 12:45:40 +0000
-Received: from mail-qt1-f169.google.com ([209.85.160.169]) by
- mrelayeu.kundenserver.de (mreue109 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1MqatK-1hb39U3cbw-00menN for <linux-arm-kernel@lists.infradead.org>; Wed,
- 23 Oct 2019 14:45:37 +0200
-Received: by mail-qt1-f169.google.com with SMTP id c21so31987178qtj.12
+ id 1iNG2O-0001Zz-Fv
+ for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 12:46:53 +0000
+Received: by mail-ed1-f68.google.com with SMTP id l25so4398772edt.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 23 Oct 2019 05:45:36 -0700 (PDT)
-X-Gm-Message-State: APjAAAWfF8wHz+pr1w8Nk+a8LGGmZveo5h5u4B2BVH7yd85FSWPMjrGO
- V82UJKTevISZE9AQcE4TNyg+kYQwpGd9IQwPZG8=
-X-Google-Smtp-Source: APXvYqyy9eLPSjSegvDzhnQvcTJZRNXOvgxtascK9z6lCnK+he0UZpFg1zpN14r2VDhc4zyiPUa1Ko1f6GMezspKs4c=
-X-Received: by 2002:ac8:6956:: with SMTP id n22mr8794799qtr.7.1571834735758;
- Wed, 23 Oct 2019 05:45:35 -0700 (PDT)
-MIME-Version: 1.0
+ Wed, 23 Oct 2019 05:46:51 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=A4xxnHET7dHUr6+FUOOYWQtG2S2xuT97YaAB9hJ4Qfs=;
+ b=uOrmL1E1bXl/j16pIqmrkXj6GRYTBJ5XE3fmtWmglFpmyWx2rLRyqbs88XkPdJuzCL
+ 8zzaB72nj7WWxlLhjaZYG+4QR807DjjdtOfbQT5TVtc9QW8wgnqxUeB5QNEc4PKJv1op
+ vJu4FpCzyBkcGf5FoGJ7F3/IBYjE5G+QwVpAmJnkQz3J8kjEzj4sz4I468ITC66IZ/0p
+ 7WLWvEF/Gge1n+x7Ph6ngHIAwCBVj8Nu7Kl6cswSMf53Dqjbn/0aKd4fDR9yqGSeEDky
+ fM54K9hHr8TcZx9CJdqh524yZ6tekKtRLIyVxq2j+FoLKgjJzSdE0kO2t0kYea70S74V
+ f61w==
+X-Gm-Message-State: APjAAAVJKoYeQFFAn6qzIG9hS03N0NhFcm6unvirawrgdVk/V6nbXnRN
+ 8BkQjSDW+q4GjYpbWDIMtF0=
+X-Google-Smtp-Source: APXvYqyIj+x4DPnQ8/wfFlKsi+/SJbuj1ZkWeMFOp0eV28T9/zZeeEOdXwSG8Og+Eu/s2dSay0QajQ==
+X-Received: by 2002:a50:f683:: with SMTP id d3mr15725304edn.70.1571834810704; 
+ Wed, 23 Oct 2019 05:46:50 -0700 (PDT)
+Received: from pi3 ([194.230.155.217])
+ by smtp.googlemail.com with ESMTPSA id d8sm279944edb.18.2019.10.23.05.46.49
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 23 Oct 2019 05:46:50 -0700 (PDT)
+Date: Wed, 23 Oct 2019 14:46:48 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH 03/36] usb: gadget: s3c: use platform resources
+Message-ID: <20191023124648.GE11048@pi3>
 References: <20191010202802.1132272-1-arnd@arndb.de>
  <20191010203043.1241612-1-arnd@arndb.de>
- <20191010203043.1241612-9-arnd@arndb.de> <20191023113252.GG10630@pi3>
-In-Reply-To: <20191023113252.GG10630@pi3>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Wed, 23 Oct 2019 14:45:19 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a2f8USPJP5OL2J=wi=GqvBrTJpwVOtYg=WcWQM2PZ30cQ@mail.gmail.com>
-Message-ID: <CAK8P3a2f8USPJP5OL2J=wi=GqvBrTJpwVOtYg=WcWQM2PZ30cQ@mail.gmail.com>
-Subject: Re: [PATCH 09/36] ARM: samsung: move pm check code to drivers/soc
-To: Krzysztof Kozlowski <krzk@kernel.org>
-X-Provags-ID: V03:K1:6uC3OLiSLpubh6WE0q40YrojjcSVjjhw12L/4pp9f4BcFdBmOJH
- ThP5M9ExIOq2qQMElujjufhPFin9rXemx+4HidfhU7nr2mAXrk+QDQ37VQRS2dX4RyJ2FZG
- 1fF9u7rekGElaZ+WtOpBsztC2N5HUrJpwHUuaikTKexEZE4fVbWi9wyzEIB8dPG5Io9P3D+
- F0UQY5yda8lgoOl+ZQk+Q==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:9dTA8GT5WSg=:n1azVDWqB4044LLUDzt5Gm
- YqWLCfdvrU7cG5iF6YK27p1ApOMJwd8KhsS6kBdPlLZ9m4yttfohGggpj9iMj4DkrjjikESTm
- fKMIFR6Mhfj8Njq3bHjCuzzmonAAmra+zaxd1XO0SXCyAbEeX2rgqCDzB3T8NCTsdNGepnAXs
- IcfsAvcGSsbqvLECmY97bh2mmF3SPJcrlaKGO5Ap/cy6MQY+hRgFWtSEiR4PEG2oz3e6sEvDm
- 5PkagaPQcVynNXjQNb2lB7Z/nPRF94Pvg+8TXSgiJ8RWeNhuLn8NcM+AT+OlBJ/cD+cSzNNb1
- 2/aYY/EcgBKfT2b7nenqgMMMKVMNmtn9WEY8wvloI5VdG6w1BjiaalzqEKeSTX1pPZXG8r4pq
- E2SckfYPXAPTJWml1nj9WWgtDfi8BQRBqoI5hnc0yN3GxRYwDbZGWSavqmkrLA6yDEAodzPwb
- zT8U/gkudaC3YE4DA1TLNgxAcPXcWiM5IV7rNRrouUCSLqJ5NbfXtPfd7s+CHqCvxq56COb/5
- ESXk3owNVRUoLFlQ0A0dQtNFPKNkTkDT6yi8uXtLlYhcntmeSjGzg9lTDeEY9OA+78CW63OP9
- 6Vtu/XA1FgWtDZcOuZkg6DIeZLVLmGI6SQj9R94+V+bhNQ7CcgG47bOn1h+WZ9oyzyQEmQtEl
- RPpPhIVFOsG9bS9q/I09EuHqvYnMGiLoSrcU6HhE7S5wfSWj3Yy5n9O19uXBM4r6AKizFXdSh
- gHZnCmKECN53YZ8yo6XfDlLZOPz701WGDttfxwnkcGj+d0fBkP7Kmk7rX3SDDtPGeyLPoNZ96
- GJTrzEg0K5S6WOnkmI5S+jvj+bZZIfV/3kKgvdnNzsPiA0IDC/Xhc1If1Frhbo1hE5iSz327Q
- 2UgaNUYYmLGYVEaClbIw==
+ <20191010203043.1241612-3-arnd@arndb.de>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191010203043.1241612-3-arnd@arndb.de>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_054539_104611_5DD44D8F 
-X-CRM114-Status: GOOD (  12.06  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191023_054652_533343_B23B9F03 
+X-CRM114-Status: UNSURE (   8.72  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.10 listed in list.dnswl.org]
+ no trust [209.85.208.68 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (k.kozlowski.k[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.10 listed in wl.mailspike.net]
+ [209.85.208.68 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,46 +90,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:ARM/SAMSUNG EXYNOS ARM ARCHITECTURES"
- <linux-samsung-soc@vger.kernel.org>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Pankaj Dubey <pankaj.dubey@samsung.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: Felipe Balbi <balbi@kernel.org>, linux-samsung-soc@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linus.walleij@linaro.org,
+ linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 23, 2019 at 1:33 PM Krzysztof Kozlowski <krzk@kernel.org> wrote:
->
-> On Thu, Oct 10, 2019 at 10:29:53PM +0200, Arnd Bergmann wrote:
-> > This is the only part of plat-samsung that is really
-> > shared between the s3c and s5p ports. Moving it to
-> > drivers/soc/ lets us make them completely independent.
-> >
-> > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> > ---
-> > + *   Tomasz Figa <t.figa@samsung.com>
-> > + * Copyright (c) 2004 Simtec Electronics
-> > + *   http://armlinux.simtec.co.uk/
-> > + *   Written by Ben Dooks, <ben@simtec.co.uk>
-> > + */
-> > +
-> > +#ifndef __SAMSUNG_SOC_S3C_PM_H
-> > +#define __SAMSUNG_SOC_S3C_PM_H __FILE__
->
-> Use guard name prefix consistent with other files, so:
-> __LINUX_SOC_SAMSUNG_S3C_PM_H
+On Thu, Oct 10, 2019 at 10:29:47PM +0200, Arnd Bergmann wrote:
+> The resources are correctly initialized, so just use them
+> instead of relying on hardcoded data from platform headers.
 
-Ok, done.
+Generic comment to all patches - you seem to break commit msg lines
+slightly too early. In certain cases it makes them unnecessarily longer.
+Maybe your editor has to be fixed to wrap at 75 column.
 
-        Arnd
+Best regards,
+Krzysztof
+
 
 _______________________________________________
 linux-arm-kernel mailing list
