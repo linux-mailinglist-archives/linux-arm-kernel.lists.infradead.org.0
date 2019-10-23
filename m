@@ -2,50 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C344E20D6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 18:40:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30D71E2101
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 18:51:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=p4x6A88loUgatzGI+4oKRPqfNGucQhrs9/KpKhTa+xE=; b=jmF3qpS3t7nsRI
-	ROkk/3GAX1EPDD/4SB+T5qXsqrH7Q/c3df1BFUIUniuG3vMuA9qpC30QnzkJUzgS+YmcSkJsyjZMH
-	lTEAOrD8NfWJaijpz7EnpeZ6HLjprGir9RQJeejmKobBneqBrS8IoDAbKaYkLFmTupluxeP6HgMEs
-	4mnkl0dlWFeURCi/z2uiBT+21ZZGmC0K+KUsFxE8WCNksQu2HQ2YVOS7l3mLMVo0j7GdCNrb+uRxS
-	mlbbfzq8HUGnus6yuN+uGUEOmgiQmCvxbm0DVLomWDs4WD/j/2gkJf8TTltW13PIu7yPH8lTSYXtM
-	loN1XkCogI/hIYpnlaeQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
+	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=5Qixd8ZfE2fhZBuEkVMfGZPTVpg1kw9MN7aq+BPghik=; b=i929lJPgYPTGOmN4vYMbQfZPq
+	xOtL9ANaRwcaKrRcS9sArnclg+pLGqEEPJUBJWdIzSoZrMGV8ayazPS9W9uO/HralhKQQAtwtWL/r
+	anM3N3961hQBOyI7d0g6/pKePdXobx/Rjdaf3AiB5YOhE1tC91ZV/iJ9ilCl0qV/Za26IdGlGrIpJ
+	aqBK1ZSmUynPNZeckEhPVmh+9jrIU2DNWchKZaZihL74Q1eQDATPMpCdGFFtyO5obSYljnCrs8clR
+	B26Zav9HhUK7wdvQtIsJzcB4ye4r26Ph0ODmmzqhJrUaWTurbufzNbU8Djb2a/PVJS9El9O7FZiYH
+	lNz+WrAOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNJgM-00028o-9u; Wed, 23 Oct 2019 16:40:22 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNJg4-0001Uq-IY
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 16:40:06 +0000
-Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id BF2FC816C;
- Wed, 23 Oct 2019 16:40:36 +0000 (UTC)
-From: Tony Lindgren <tony@atomide.com>
-To: soc@kernel.org
-Subject: [GIT PULL] three fixes for omaps for v5.4
-Date: Wed, 23 Oct 2019 09:39:57 -0700
-Message-Id: <pull-1571848757-282222@atomide.com>
-X-Mailer: git-send-email 2.23.0
+	id 1iNJrB-0007Bk-RC; Wed, 23 Oct 2019 16:51:33 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iNJr0-0007BR-7d
+ for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 16:51:24 +0000
+Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
+ (envelope-from <maz@kernel.org>)
+ id 1iNJqs-0006Um-Q5; Wed, 23 Oct 2019 18:51:14 +0200
+To: Mao Wenan <maowenan@huawei.com>, <steven.price@arm.com>
+Subject: Re: [PATCH] KVM: arm64: Select =?UTF-8?Q?SCHED=5FINFO=20before=20?=
+ =?UTF-8?Q?SCHEDSTATS?=
+X-PHP-Originating-Script: 0:main.inc
 MIME-Version: 1.0
+Date: Wed, 23 Oct 2019 17:51:14 +0100
+From: Marc Zyngier <maz@kernel.org>
+In-Reply-To: <20191023032254.159510-1-maowenan@huawei.com>
+References: <20191023032254.159510-1-maowenan@huawei.com>
+Message-ID: <26ee413334937b9530bc8f033fe378ec@www.loen.fr>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/0.7.2
+X-SA-Exim-Connect-IP: <locally generated>
+X-SA-Exim-Rcpt-To: maowenan@huawei.com, steven.price@arm.com,
+ james.morse@arm.com, julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com,
+ catalin.marinas@arm.com, will@kernel.org, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, linux-kernel@vger.kernel.org,
+ kernel-janitors@vger.kernel.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_094004_678037_7B987C51 
-X-CRM114-Status: UNSURE (   7.87  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191023_095122_419278_801668D9 
+X-CRM114-Status: GOOD (  12.52  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,50 +68,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tony Lindgren <tony@atomide.com>, linux-omap@vger.kernel.org,
- arm@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: suzuki.poulose@arm.com, catalin.marinas@arm.com,
+ kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
+ james.morse@arm.com, julien.thierry.kdev@gmail.com, will@kernel.org,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: "Tony Lindgren" <tony@atomide.com>
+On 2019-10-23 04:22, Mao Wenan wrote:
+> If KVM=y, it will select SCHEDSTATS, below erros can
+> be seen:
+> kernel/sched/stats.h: In function rq_sched_info_arrive:
+> kernel/sched/stats.h:12:20: error: struct sched_info
+> has no member named run_delay
+>    rq->rq_sched_info.run_delay += delta;
+>                     ^
+> kernel/sched/stats.h:13:20: error: struct sched_info
+> has no member named pcount
+>    rq->rq_sched_info.pcount++;
+>                     ^
+> kernel/sched/stats.h: In function rq_sched_info_dequeued:
+> kernel/sched/stats.h:31:20: error: struct sched_info has
+> no member named run_delay
+>    rq->rq_sched_info.run_delay += delta;
+>
+> These are because CONFIG_SCHED_INFO is not set, This patch
+> is to select SCHED_INFO before SCHEDSTATS.
+>
+> Fixes: 8564d6372a7d ("KVM: arm64: Support stolen time reporting via
+> shared structure")
+> Signed-off-by: Mao Wenan <maowenan@huawei.com>
+> ---
+>  arch/arm64/kvm/Kconfig | 1 +
+>  1 file changed, 1 insertion(+)
+>
+> diff --git a/arch/arm64/kvm/Kconfig b/arch/arm64/kvm/Kconfig
+> index d8b88e4..3c46eac 100644
+> --- a/arch/arm64/kvm/Kconfig
+> +++ b/arch/arm64/kvm/Kconfig
+> @@ -39,6 +39,7 @@ config KVM
+>  	select IRQ_BYPASS_MANAGER
+>  	select HAVE_KVM_IRQ_BYPASS
+>  	select HAVE_KVM_VCPU_RUN_PID_CHANGE
+> +	select SCHED_INFO
+>  	select SCHEDSTATS
+>  	---help---
+>  	  Support hosting virtualized guest machines.
 
-The following changes since commit 17a9e5bbbfe5a5a6356e47cdc1c1656e1e5e1f62:
+SCHEDSTATS is really an odd choice. Here's what I get after disabling
+DEBUG_KERNEL (from defconfig):
 
-  Merge tag 'wlcore-fix' into fixes (2019-10-11 09:15:35 -0700)
+WARNING: unmet direct dependencies detected for SCHEDSTATS
+   Depends on [n]: DEBUG_KERNEL [=n] && PROC_FS [=y]
+   Selected by [y]:
+   - KVM [=y] && VIRTUALIZATION [=y] && OF [=y]
 
-are available in the Git repository at:
+WARNING: unmet direct dependencies detected for SCHEDSTATS
+   Depends on [n]: DEBUG_KERNEL [=n] && PROC_FS [=y]
+   Selected by [y]:
+   - KVM [=y] && VIRTUALIZATION [=y] && OF [=y]
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.4/fixes-rc4-signed
+WARNING: unmet direct dependencies detected for SCHEDSTATS
+   Depends on [n]: DEBUG_KERNEL [=n] && PROC_FS [=y]
+   Selected by [y]:
+   - KVM [=y] && VIRTUALIZATION [=y] && OF [=y]
 
-for you to fetch changes up to 6aed5a0e0f56213cc5e4bff674fb42e997f30df7:
+So clearly SCHEDSTATS isn't meant to be selected on its own.
 
-  Merge branch 'watchdog-fix' into fixes (2019-10-18 08:47:39 -0700)
+We can either just select SCHED_INFO (which *nobody else does*), or go
+the full x86 way which selects TASK_DELAY_ACCT (and thus depends on
+NET && MULTIUSER). My gut feeling is that we shouldn't deviate too much
+from x86...
 
-----------------------------------------------------------------
-Three fixes for omaps for v5.4-rc cycle
+Thoughts?
 
-Two regression fixes for omap3 iommu. I missed applying two omap3
-related iommu pdata quirks patches earlier because the kbuild test
-robot produced errors on them for missing dependencies.
-
-Fix ti-sysc interconnect target module driver handling for watchdog
-quirk. I must have tested this earlier only with watchdog service
-running, but clearly it does not do what it needs to do.
-
-----------------------------------------------------------------
-Suman Anna (2):
-      ARM: OMAP2+: Plug in device_enable/idle ops for IOMMUs
-      ARM: OMAP2+: Add pdata for OMAP3 ISP IOMMU
-
-Tony Lindgren (2):
-      bus: ti-sysc: Fix watchdog quirk handling
-      Merge branch 'watchdog-fix' into fixes
-
- arch/arm/mach-omap2/pdata-quirks.c | 11 +++++++++++
- drivers/bus/ti-sysc.c              | 18 ++++++++++++++----
- 2 files changed, 25 insertions(+), 4 deletions(-)
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
