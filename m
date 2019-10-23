@@ -2,56 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D679E21C8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 19:32:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 532BDE21D3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 19:32:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=av58b54VxUodMw+CdoQ+4y9DoaqtUu0o1Pn8MFNI3hs=; b=mc5F/Y35W3KmfE
-	3OLRu/lxeMcEXBCBlfQGiyazbR56kciRCkP+Ka1Eqbuu6J7hm91fBhu59hsu3SMhRZCyp9zF0wIve
-	MidSohOd+EsbEwrU+j4YLNhhno68xYSW68JgDSwG82J1PxXCDqidvJDQ24eSVYv9jcCa8v3FnXEfz
-	RJI7VVPs3iBipF0mS6XdxGWixdFKpPJD5nfnjnFMPPt05/RQWqJ9Pa6m89umKxkVggbhlr8Hk8VOF
-	gXa3MahmfMMINnMo+O2/23vtMhizNcvSWf0jPyUafpecISP5jdgZFsMirFl3d0pEMLEjjoifGsV7F
-	U6NRdnpRgRaKEQCOFP5w==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ydbHGHn1dBWI38wIPxda3RdD6pVBEI1ZOrHZdXTWRA4=; b=P+iwP+4do9kPfg
+	FdUDRKd72gz0VuiU7pzlWHo2e0esCSgT5YrhzOiHpxOLmuomW0tCnuFxRy20Sniepv8opaBfqEkdN
+	/utAnc2ZZMsmgKQ7+JsyNmmZQgQAQi0daoEv2GsdaZ87S7vPIOqCddWIiIXrmOr7Gnab3EeYRNdZU
+	emyxNTj2b+GQlSdvY8EH82jq41M4dIuAp/NZiC1AZQqQDWaskr3aeIGs7zuIze1fNoQNYo4ulRQLE
+	nmx5YdptWrOAdXUgAdvLtVuO4Fq+K/QUyjeGibFk294pZ+TfwMzvlGC4mPJSAYM+A8cUCthfk/gKi
+	oTsi/1WeE1avDeImjuLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNKUS-0001lX-9e; Wed, 23 Oct 2019 17:32:08 +0000
-Received: from [217.140.110.172] (helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNKUK-0001kf-3W
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 17:32:01 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5895F3BB;
- Wed, 23 Oct 2019 10:31:45 -0700 (PDT)
-Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 13F7A3F718;
- Wed, 23 Oct 2019 10:31:40 -0700 (PDT)
-Subject: Re: [PATCH 00/11] arm64: return address signing
-To: Amit Daniel Kachhap <amit.kachhap@arm.com>,
- linux-arm-kernel@lists.infradead.org
-References: <1571300065-10236-1-git-send-email-amit.kachhap@arm.com>
-From: James Morse <james.morse@arm.com>
-Message-ID: <5081f7ee-9e11-66e1-bcba-9b284469458f@arm.com>
-Date: Wed, 23 Oct 2019 18:31:39 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1iNKV6-00028b-Ow; Wed, 23 Oct 2019 17:32:48 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iNKUr-00027g-MZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 17:32:35 +0000
+Received: by mail-io1-xd42.google.com with SMTP id r144so14088473iod.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 23 Oct 2019 10:32:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=FHddi31URb1ZVMU1f/OlQcKL3JwlroIUzHSEfU1rm9E=;
+ b=iIjn6zOkon2+vy3u6ieqyT3hIL8hquUtW4WVxARJ6GHQwHgVlZingSEfEw9ylY7oSA
+ 1F16bAeKpgTLYL8UJtX2Etu3picTNixpMhzj/ekoOwp/cmGSBH7kGopfJcid2JgAy8Zk
+ 1ekeWPNa7uy0YtmbrdEsazn/sa0lGt/eFUJMFsJwBgjiSuI4qlqblHgEO7XKfG3qksLr
+ IDlP36H3VVyB02zXq77wDIDehyaKyQ3jmqrMyVY2/qASiIgVPru4z632XnyVSIxYBQHb
+ w03wb0KJl4xmm3rZ2KTkP2qYtu2ybDHY5MESrnzdRpr3BOw+46Vdgg7SldIhK+UA0OV0
+ GUcg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=FHddi31URb1ZVMU1f/OlQcKL3JwlroIUzHSEfU1rm9E=;
+ b=O8GDTvXgu9KphafoNmDfurbbQYvQNhaVP1ulsUUuErZo9flkOOVFkwhFlnxuYl5DKW
+ fsD+Rz0bpqmzQaGI6YBdXyuXmtfP9OuXPynUnUcfQeWesOQeY1XTzctAcaWKssheDq4d
+ ouEDmJwkRrNbBGddAXOXCbDpKZswA5Cn9rAvF35MwSy46eKtfx9ZHFrxcQ/OgYdS6ZJH
+ UkAQ5ciHbfBm3088K9TILF6azvf6pO+ZAFOPb4ckqLSIqydF5dXnS3TjR0ENagVCDvzf
+ 7jOAioeiePTs2VIEJvxFod935K/jNCoVWt9nk2ivKm3/z/h5yKLKaj34xbAEXY+MpL1d
+ Zx+A==
+X-Gm-Message-State: APjAAAUpcuxcxIlhVdfgcBuAtPu8Vno/sEkArlo+3cFIpIYXdNTdm3vO
+ avm1YAVJaKZBqZWqKbMEw/rBoDs12LMIdFFiH2NAfKsk
+X-Google-Smtp-Source: APXvYqxyBYMtAL3D/OX0ZAdgMK8IVMiPoByH/BDSVN52PLwP4Oc1eswZzBzK266InVy9jGWBwrafm+J4exhXkFSElJs=
+X-Received: by 2002:a6b:d104:: with SMTP id l4mr4641180iob.50.1571851952354;
+ Wed, 23 Oct 2019 10:32:32 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <1571300065-10236-1-git-send-email-amit.kachhap@arm.com>
-Content-Language: en-GB
+References: <a38ab93d870a3b1b341a5c0da14fc7f3d4056684.1570630040.git.michal.simek@xilinx.com>
+In-Reply-To: <a38ab93d870a3b1b341a5c0da14fc7f3d4056684.1570630040.git.michal.simek@xilinx.com>
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+Date: Wed, 23 Oct 2019 11:32:21 -0600
+Message-ID: <CANLsYkzkk9yPezSyU50TmWjDAZ-5D2Hmo0YztQzm+mnyZf1Www@mail.gmail.com>
+Subject: Re: [PATCH] ARM: dts: zynq: enablement of coresight topology
+To: Michal Simek <michal.simek@xilinx.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_103200_190251_94EBAB7A 
-X-CRM114-Status: GOOD (  19.89  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20191023_103233_735513_854C3BF9 
+X-CRM114-Status: GOOD (  19.84  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,74 +90,232 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, Will Deacon <will.deacon@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- Dave Martin <Dave.Martin@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
+ Michal Simek <monstr@monstr.eu>,
+ Peter Crosthwaite <peter.crosthwaite@xilinx.com>, devicetree@vger.kernel.org,
+ Zumeng Chen <zumeng.chen@windriver.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, u-boot@lists.denx.de,
+ Rob Herring <robh+dt@kernel.org>, Rob Herring <robherring2@gmail.com>,
+ git@xilinx.com, Steffen Trumtrar <s.trumtrar@pengutronix.de>,
+ Quanyang Wang <quanyang.wang@windriver.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Amit,
+Hi Michal,
 
-On 17/10/2019 09:14, Amit Daniel Kachhap wrote:
-> This series improves function return address protection for the arm64 kernel, by
-> compiling the kernel with ARMv8.3 Pointer Authentication instructions (ptrauth
-> referred hereafter). This should help protect the kernel against attacks using
-> return-oriented programming.
-> 
-> Patch 9 and 10 are newly added and hence sent as RFC.
+I was not CC'ed on the original post so I just noticed this today,
+hence the late reply.  I don't know if you were looking for feedback
+or already picked up the patch but here it is anyway.
 
-Please don't mix 'RFC' in a series. If one patch is RFC, the whole series should be marked
-like that, including the cover letter. git format-patch's '--rfc' option will do this for
-you.
+On Wed, 9 Oct 2019 at 08:07, Michal Simek <michal.simek@xilinx.com> wrote:
+>
+> From: Zumeng Chen <zumeng.chen@windriver.com>
+>
+> This patch is to build the coresight topology structure of zynq-7000
+> series according to the docs of coresight and userguide of zynq-7000.
+>
+> Signed-off-by: Zumeng Chen <zumeng.chen@windriver.com>
+> Signed-off-by: Quanyang Wang <quanyang.wang@windriver.com>
+> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
+> ---
+>
+>  arch/arm/boot/dts/zynq-7000.dtsi | 158 +++++++++++++++++++++++++++++++
+>  1 file changed, 158 insertions(+)
+>
+> diff --git a/arch/arm/boot/dts/zynq-7000.dtsi b/arch/arm/boot/dts/zynq-7000.dtsi
+> index ca6425ad794c..86430ad76fee 100644
+> --- a/arch/arm/boot/dts/zynq-7000.dtsi
+> +++ b/arch/arm/boot/dts/zynq-7000.dtsi
+> @@ -59,6 +59,40 @@
+>                 regulator-always-on;
+>         };
+>
+> +       replicator {
+> +               compatible = "arm,coresight-static-replicator";
+> +               clocks = <&clkc 27>, <&clkc 46>, <&clkc 47>;
+> +               clock-names = "apb_pclk", "dbg_trc", "dbg_apb";
+> +
+> +               out-ports {
+> +                       #address-cells = <1>;
+> +                       #size-cells = <0>;
+> +
+> +                       /* replicator output ports */
+> +                       port@0 {
+> +                               reg = <0>;
+> +                               replicator_out_port0: endpoint {
+> +                                       remote-endpoint = <&tpiu_in_port>;
+> +                               };
+> +                       };
+> +                       port@1 {
+> +                               reg = <1>;
+> +                               replicator_out_port1: endpoint {
+> +                                       remote-endpoint = <&etb_in_port>;
+> +                               };
+> +                       };
+> +               };
+> +               in-ports {
+> +                       /* replicator input port */
+> +                       port {
+> +                               replicator_in_port0: endpoint {
+> +                                       slave-mode;
 
-If this is 'v3', please mark all the patches 'v3' too. Adding '-v 3' to git format-patch
-will do this for you.
+The slave-mode property is no longer required and probably an
+oversight since it doesn't appear elsewhere in this patch.
 
+> +                                       remote-endpoint = <&funnel_out_port>;
+> +                               };
+> +                       };
+> +               };
+> +       };
+> +
+>         amba: amba {
+>                 compatible = "simple-bus";
+>                 #address-cells = <1>;
+> @@ -365,5 +399,129 @@
+>                         reg = <0xf8005000 0x1000>;
+>                         timeout-sec = <10>;
+>                 };
+> +
+> +               etb@f8801000 {
+> +                       compatible = "arm,coresight-etb10", "arm,primecell";
+> +                       reg = <0xf8801000 0x1000>;
+> +                       clocks = <&clkc 27>, <&clkc 46>, <&clkc 47>;
+> +                       clock-names = "apb_pclk", "dbg_trc", "dbg_apb";
+> +                       in-ports {
+> +                               port {
+> +                                       etb_in_port: endpoint {
+> +                                               remote-endpoint = <&replicator_out_port1>;
+> +                                       };
+> +                               };
+> +                       };
+> +               };
+> +
+> +               tpiu@f8803000 {
+> +                       compatible = "arm,coresight-tpiu", "arm,primecell";
+> +                       reg = <0xf8803000 0x1000>;
+> +                       clocks = <&clkc 27>, <&clkc 46>, <&clkc 47>;
+> +                       clock-names = "apb_pclk", "dbg_trc", "dbg_apb";
+> +                       in-ports {
+> +                               port {
+> +                                       tpiu_in_port: endpoint {
+> +                                               remote-endpoint = <&replicator_out_port0>;
+> +                                       };
+> +                               };
+> +                       };
+> +               };
+> +
+> +               funnel@f8804000 {
+> +                       compatible = "arm,coresight-static-funnel", "arm,primecell";
+> +                       reg = <0xf8804000 0x1000>;
+> +                       clocks = <&clkc 27>, <&clkc 46>, <&clkc 47>;
+> +                       clock-names = "apb_pclk", "dbg_trc", "dbg_apb";
+> +
+> +                       /* funnel output ports */
+> +                       out-ports {
+> +                               port {
+> +                                       funnel_out_port: endpoint {
+> +                                               remote-endpoint =
+> +                                                       <&replicator_in_port0>;
+> +                                       };
+> +                               };
+> +                       };
+> +
+> +                       in-ports {
+> +                               #address-cells = <1>;
+> +                               #size-cells = <0>;
+> +
+> +                               /* funnel input ports */
+> +                               port@0 {
+> +                                       reg = <0>;
+> +                                       funnel0_in_port0: endpoint {
+> +                                               remote-endpoint = <&ptm0_out_port>;
+> +                                       };
+> +                               };
+> +
+> +                               port@1 {
+> +                                       reg = <1>;
+> +                                       funnel0_in_port1: endpoint {
+> +                                               remote-endpoint = <&ptm1_out_port>;
+> +                                       };
+> +                               };
+> +
+> +                               port@2 {
+> +                                       reg = <2>;
+> +                                       funnel0_in_port2: endpoint {
+> +                                       };
+> +                               };
+> +
+> +                               port@3 {
+> +                                       reg = <3>;
+> +                                       funnel0_in_port3: endpoint {
+> +                                               remote-endpoint = <&itm_out_port>;
+> +                                       };
+> +                               };
+> +                               /* The other input ports are not connect to anything */
+> +                       };
+> +               };
+> +
+> +               /* ITM is not supported by kernel, only leave device node here */
+> +               itm@f8805000 {
+> +                       compatible = "arm,coresight-etm3x", "arm,primecell";
 
-> High-level changes since RFC v2 [1] (detailed changes are listed in patches):
->  - Moved enabling, key setup and context switch to assembly, to avoid using
->    the pointer auth compiler attribute which Clang does not support (thanks
->    Suzuki for the initial code!).
->  - Added code to restore keys after cpu resume.
->  - __builtin_return_address will now mask pac bits.
->  - Changed gcc compiler options to add ptrauth instructions in all functions
->    and not just non-leaf functions. This may be revisited later due to 
->    performance concerns.
->  - Rebased onto v5.4-rc2.
->  - Added Reviewed-by's.
+If I remember correctly ITM and ETMv3 are quite different - please
+remove entirely.
 
-> This series do not implement few things or have known limitations:
->  - ftrace function tracer does not work with this series. But after using
->    the posted series [2] based on -fpatchable-function-entry, it works fine.
->  - kprobes/uprobes and other tracing may need some rework with ptrauth.
->  - kdump, other debug may need some rework with ptrauth.
->  - Generate some randomness for ptrauth keys during kernel early booting.
+> +                       reg = <0xf8805000 0x1000>;
+> +                       clocks = <&clkc 27>, <&clkc 46>, <&clkc 47>;
+> +                       clock-names = "apb_pclk", "dbg_trc", "dbg_apb";
+> +                       out-ports {
+> +                               port {
+> +                                       itm_out_port: endpoint {
+> +                                               remote-endpoint = <&funnel0_in_port3>;
+> +                                       };
+> +                               };
+> +                       };
+> +               };
+> +
+> +               ptm@f889c000 {
+> +                       compatible = "arm,coresight-etm3x", "arm,primecell";
+> +                       reg = <0xf889c000 0x1000>;
+> +                       clocks = <&clkc 27>, <&clkc 46>, <&clkc 47>;
+> +                       clock-names = "apb_pclk", "dbg_trc", "dbg_apb";
+> +                       cpu = <&cpu0>;
+> +                       out-ports {
+> +                               port {
+> +                                       ptm0_out_port: endpoint {
+> +                                               remote-endpoint = <&funnel0_in_port0>;
+> +                                       };
+> +                               };
+> +                       };
+> +               };
+> +
+> +               ptm@f889d000 {
+> +                       compatible = "arm,coresight-etm3x", "arm,primecell";
+> +                       reg = <0xf889d000 0x1000>;
+> +                       clocks = <&clkc 27>, <&clkc 46>, <&clkc 47>;
+> +                       clock-names = "apb_pclk", "dbg_trc", "dbg_apb";
+> +                       cpu = <&cpu1>;
+> +                       out-ports {
+> +                               port {
+> +                                       ptm1_out_port: endpoint {
+> +                                               remote-endpoint = <&funnel0_in_port1>;
+> +                                       };
+> +                               };
+> +                       };
+> +               };
 
-Its good to have this list in the cover letter. (thanks!)
+With the above:
 
-Could you expand on the kprobes point? Is it emulating/stepping the ptrauth instructions,
-or stuff like kretprobes, that overwrite the lr? (arch_prepare_kretprobe()).
-(or both!)
+Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 
-SDEI (firmware assisted NMI) may be called with the user-keys, kernel-keys, or
-half-way-through switching keys. I don't think this is a problem, it just means the key in
-use is unknown.
-
-
-Thanks,
-
-James
-
-
-> [1] https://lore.kernel.org/linux-arm-kernel/20190529190332.29753-1-kristina.martsenko@arm.com/
-> [2] https://patchwork.kernel.org/patch/10803279/
+>         };
+>  };
+> --
+> 2.17.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
