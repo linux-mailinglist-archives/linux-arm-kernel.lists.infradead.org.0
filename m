@@ -2,64 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4668E1AFD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 14:42:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 83D05E1AEF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 14:41:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8mnIfxFPRf79t05ERFn9y4LYaxxmGTWYkjLn80993PQ=; b=HnIFKn2Zik+RPJ
-	t+0/id/4eirZWL2dZGp0i7QcXX9uTShLkLQc8YQ9T5UysCOV+lXU+jerUeB/jiGcVZBVXrsiihLAl
-	ar2KInxPDGua87392Jmo6OyhOVgS/XFxHOa4CCxzPLmPWFwk7fsH8/WoE7tfb8/lg8B4j+v1WWIpw
-	xxGGXtbVP7l/alojegFIRwDdNwtglwVkS5Mh0k6z3ToCWH2eUL1R0hvuq4aBK/QLivZvi4mCV+gCD
-	J02LcGiYnM46Qbpmm/4gkrnDzoJEel4j/4RG5p8p3uVqY70gYyYywABCyud6ytyIY5b+wX0NqMoAe
-	X1SRMxAH+nrg3uycfyOA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
+	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=7Vw1nlfuXL5YOUmB3AZDBlGK3LGfCHgLGjChRxxLago=; b=U7vJwcMfpPL0EiT4yd1rayOZi
+	TCStZxx/UCtXx8M+AExCDPgSoz6GyFHrH6QBuJqNyY3J4Apn301Nn5jFhQC4eXkORcuEtQQT5Ms1N
+	qEjoJbIOeTEe4PDGUQKYZMyW50av9vkX1udiVt3ueBpfgFPTVjo/ghpAQMrQVsq7So+q+OZ4vBoo3
+	g9FdvN9NY+YqvJU1LvxmJToJbgFHoz3HnJx8xPeTT3ou49OmjGvNwDS8IbyJhZGzpwztPUlFg2lka
+	WHNhS8ToxmST43Bf8OioFQwHkA9EogcuSrE/HNNMnQu1TO2Wlei7PNA7YwWBp18opfrnu6DanVlVa
+	XlYz443Gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNFyK-0007dW-1R; Wed, 23 Oct 2019 12:42:40 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1iNFxG-0006eb-PW; Wed, 23 Oct 2019 12:41:34 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNFy2-0007ar-9j; Wed, 23 Oct 2019 12:42:23 +0000
-X-UUID: cfea1dc5a79d4532966154082742f831-20191023
-X-UUID: cfea1dc5a79d4532966154082742f831-20191023
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <luhua.xu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1619795605; Wed, 23 Oct 2019 04:41:48 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 23 Oct 2019 05:42:13 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 23 Oct 2019 20:42:11 +0800
-Received: from localhost.localdomain (10.15.20.246) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 23 Oct 2019 20:42:11 +0800
-From: Luhua Xu <luhua.xu@mediatek.com>
-To: Mark Brown <broonie@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH 1/1] spi: mediatek: add power control when set_cs
-Date: Wed, 23 Oct 2019 08:38:42 -0400
-Message-ID: <1571834322-1121-2-git-send-email-luhua.xu@mediatek.com>
-X-Mailer: git-send-email 2.6.4
-In-Reply-To: <1571834322-1121-1-git-send-email-luhua.xu@mediatek.com>
-References: <1571834322-1121-1-git-send-email-luhua.xu@mediatek.com>
+ id 1iNFvD-0003rP-Gf
+ for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 12:39:30 +0000
+Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
+ (envelope-from <maz@kernel.org>)
+ id 1iNFv9-0001yJ-KM; Wed, 23 Oct 2019 14:39:23 +0200
+To: Steven Price <steven.price@arm.com>
+Subject: Re: [PATCH v7 00/10] arm64: Stolen time support
+X-PHP-Originating-Script: 0:main.inc
 MIME-Version: 1.0
-X-MTK: N
+Date: Wed, 23 Oct 2019 13:39:23 +0100
+From: Marc Zyngier <maz@kernel.org>
+In-Reply-To: <20191021152823.14882-1-steven.price@arm.com>
+References: <20191021152823.14882-1-steven.price@arm.com>
+Message-ID: <f0d79362ab994e269680fba75f913044@www.loen.fr>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/0.7.2
+X-SA-Exim-Connect-IP: <locally generated>
+X-SA-Exim-Rcpt-To: steven.price@arm.com, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ catalin.marinas@arm.com, pbonzini@redhat.com, rkrcmar@redhat.com,
+ linux@armlinux.org.uk, james.morse@arm.com, julien.thierry.kdev@gmail.com,
+ suzuki.poulose@arm.com, mark.rutland@arm.com, kvm@vger.kernel.org,
+ linux-doc@vger.kernel.org, linux-kernel@vger.kernel.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_054222_338296_2DD6C3E7 
-X-CRM114-Status: UNSURE (   9.41  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191023_053927_786719_6FF9E15F 
+X-CRM114-Status: GOOD (  10.68  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,67 +68,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsd_upstream@mediatek.com, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org, luhua.xu@mediatek.com,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ =?UTF-8?Q?Radim_Kr=C4=8Dm=C3=A1?= =?UTF-8?Q?=C5=99?= <rkrcmar@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Suzuki K Pouloze <suzuki.poulose@arm.com>, linux-doc@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Paolo Bonzini <pbonzini@redhat.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: "luhua.xu" <luhua.xu@mediatek.com>
+Hi Steven,
 
-Use runtime PM to power spi when set_cs
-As set_cs may be called from interrupt context,
-set runtime PM IRQ safe for spi.
+On 2019-10-21 16:28, Steven Price wrote:
+> This series add support for paravirtualized time for arm64 guests and
+> KVM hosts following the specification in Arm's document DEN 0057A:
+>
+> https://developer.arm.com/docs/den0057/a
+>
+> It implements support for stolen time, allowing the guest to
+> identify time when it is forcibly not executing.
+>
+> Note that Live Physical Time (LPT) which was previously part of the
+> above specification has now been removed.
+>
+> Also available as a git tree:
+> git://linux-arm.org/linux-sp.git stolen_time/v7
 
-Signed-off-by: luhua.xu <luhua.xu@mediatek.com>
----
- drivers/spi/spi-mt65xx.c | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
+Can you please point me to userspace patches that I could apply to
+kvmtool? I'd like to give this series a go as part of my normal 
+testing.
 
-diff --git a/drivers/spi/spi-mt65xx.c b/drivers/spi/spi-mt65xx.c
-index 6888a4d..039b67d 100644
---- a/drivers/spi/spi-mt65xx.c
-+++ b/drivers/spi/spi-mt65xx.c
-@@ -262,8 +262,16 @@ static int mtk_spi_prepare_message(struct spi_master *master,
- static void mtk_spi_set_cs(struct spi_device *spi, bool enable)
- {
- 	u32 reg_val;
-+	int ret;
- 	struct mtk_spi *mdata = spi_master_get_devdata(spi->master);
- 
-+	ret = pm_runtime_get_sync(spi->master->dev.parent);
-+	if (ret < 0) {
-+		pm_runtime_put_noidle(spi->master->dev.parent);
-+		dev_err(&spi->dev, "failed to power device(%d)\n", ret);
-+		return;
-+	}
-+
- 	reg_val = readl(mdata->base + SPI_CMD_REG);
- 	if (!enable) {
- 		reg_val |= SPI_CMD_PAUSE_EN;
-@@ -274,6 +282,9 @@ static void mtk_spi_set_cs(struct spi_device *spi, bool enable)
- 		mdata->state = MTK_SPI_IDLE;
- 		mtk_spi_reset(mdata);
- 	}
-+
-+	pm_runtime_mark_last_busy(spi->master->dev.parent);
-+	pm_runtime_put_autosuspend(spi->master->dev.parent);
- }
- 
- static void mtk_spi_prepare_transfer(struct spi_master *master,
-@@ -749,6 +760,7 @@ static int mtk_spi_probe(struct platform_device *pdev)
- 	clk_disable_unprepare(mdata->spi_clk);
- 
- 	pm_runtime_enable(&pdev->dev);
-+	pm_runtime_irq_safe(&pdev->dev);
- 
- 	ret = devm_spi_register_master(&pdev->dev, master);
- 	if (ret) {
+Thanks,
+
+         M.
 -- 
-2.6.4
-
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
