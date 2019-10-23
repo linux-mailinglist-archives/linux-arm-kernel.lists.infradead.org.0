@@ -2,89 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BBC33E2696
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 00:48:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B60A8E26BC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 00:56:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZY6HGGqL6CYJiUrcZP8ETX6Z6d2UGFAFsaUPCZPOh5Y=; b=p9ORbGyRqrZ43o
-	/AnZ0zSOIPbMWlC30TZD7Gf5anYd21xayF3p1qYTkpL9X/olO2y7v/zQ2GXo1cB1ivML9JIrHISYG
-	6cUPKsOQaKboT8DsQ8ZClfL3iV7rosgmqHTte1HNFvbrysqAkHNlpdLaWlUU9xEkkjtKysUxeBUSX
-	z39oCqs5n4Ef8iexiuiUd70uICYXPTUeKIsh4dnFPEzgL/BNZ8zdMR9NMwUqt7VBfTIE/Dm3e6fiy
-	+KpAno/nEwouOU3+dXI2Q+nbuxpalOyvdaTvZph9VWY7aESmukfWLrAJRVCsmwRH+c0xZvKFqa9f1
-	W4LGDKuQcfbwDXewkkHg==;
+	List-Owner; bh=9x70Ueo0ThNzCiEGB4Ar0vJFAhecFzd6zoE1zMal+c4=; b=FfyugueX3THO0W
+	ojxqTC5+1VJ6eXdC1Pw4JtoSvSnfQ3KVxa2w4qpnWsjmkH9e8tWX6zCqVNqjFGzH3Gx6pSRCO1o3b
+	ICkWi3WEDk90j5lHNn+gtcWGF7h7gAg3V4L5ixQo0FM3pWOom8aaEY1PSsPgj4fFWdjBUJKPDwEet
+	au3gS6AnZ9ONzCJBveeAKEB+PZCa1ELF7QVC82YJQyS2F8Ap7qVNxibYXfZY4YOdGNp0klJ1CS6Xw
+	wgwRrs0KfHB2LEBMQVoqWBlQ/5swnr1EC+MJ2Rv/zjf9U62JJgQjMH8vtjjyiO8xHeyjXdTZ98CRa
+	3Zj/yPtKB48ryr8flmcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNPQX-0002tC-0m; Wed, 23 Oct 2019 22:48:25 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1iNPYN-0006E4-7Q; Wed, 23 Oct 2019 22:56:31 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNPQL-0002sl-Kk
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 22:48:15 +0000
-Received: by mail-ot1-f67.google.com with SMTP id d8so7727001otc.7
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 23 Oct 2019 15:48:12 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=5rO+uc1ILY9OMG2v2SNvpBcmRQmpBzHDB/LO32aNzZk=;
- b=LLO0aurh5bup464qGuad/b1eQ4gTeeK7UhL+EQ8LrIA18MCp8zb05E5cZBl9sA8ofB
- Yhtt1H54Nybs9JUjk7h8sD76r0/rZ96kLwoqKncBHXYOsTRGqRvKvJV0YYpNouPe8PDb
- +H1XnbMlHCvdFeXU6J2sQTnRstpYnB2uRX2oz5SXMBDjEAP3jPzoTtA5i//dbZlVFupZ
- 7Z6CQbhvD3Tcgw+N3kl4C6YM/VBIEVQEyIpgS486bvYNc63YkgOTjUksIgjQvFclnW5C
- LlbAXOkXlIIgMRhNn3y2Y/r33kuWzgviuOfMqgYixCAAhN4LJ1C/e6Jktf1Bv0pSfuoN
- Gg2Q==
-X-Gm-Message-State: APjAAAV2ewKpNKFOfJLT9PQkQDSJZgXTgy2k+tNpZVUXZtt1u78E+Zsc
- lVGT52LjlnFB6cRYNroLA+xC6OuJX/s=
-X-Google-Smtp-Source: APXvYqw9LYWMbmtL1X6UK/RLB4ew4AWJzQIoMzuPCebdl2B+f0YkKOqEMxLgBsN22tyZc9VW67/X4A==
-X-Received: by 2002:a9d:5605:: with SMTP id e5mr8590720oti.150.1571870891493; 
- Wed, 23 Oct 2019 15:48:11 -0700 (PDT)
-Received: from mail-ot1-f49.google.com (mail-ot1-f49.google.com.
- [209.85.210.49])
- by smtp.gmail.com with ESMTPSA id l4sm6097738oia.51.2019.10.23.15.48.10
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 23 Oct 2019 15:48:10 -0700 (PDT)
-Received: by mail-ot1-f49.google.com with SMTP id u13so157702ote.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 23 Oct 2019 15:48:10 -0700 (PDT)
-X-Received: by 2002:a05:6830:22d6:: with SMTP id
- q22mr5171244otc.74.1571870889734; 
- Wed, 23 Oct 2019 15:48:09 -0700 (PDT)
+ id 1iNPYA-0006Db-Ie; Wed, 23 Oct 2019 22:56:21 +0000
+Received: from mail-yw1-f42.google.com (mail-yw1-f42.google.com
+ [209.85.161.42])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8AE282084C;
+ Wed, 23 Oct 2019 22:56:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571871377;
+ bh=LhcrwyC5PZJloPX3jFhnfrduPAW8ErL0lMICTFLMMe0=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=FEKPr5N2JCYWNSiyISiceh+xZCp4T71Q3Po7Ky4T6gFGRtpvdViVF7xmqTSYCBLl5
+ /0l+w5j5gT8omSw9W1gzO/nYbezt7OcLBs2y9vN+EYjeIUF4tLusPrm98OYivPxEDl
+ Dr3liqNTOym28LQ2P+7mXcKiewau21GT3XuEDaiY=
+Received: by mail-yw1-f42.google.com with SMTP id s6so7995841ywe.5;
+ Wed, 23 Oct 2019 15:56:17 -0700 (PDT)
+X-Gm-Message-State: APjAAAUQoQ5BEV+qfX8h5/OJOBWYNeaPd/FWi0oRwFPg3DTKvQj3lO/x
+ +66XaGjCzn/afWwKTYpzKO+P8GtkdmbLXGItug==
+X-Google-Smtp-Source: APXvYqz8tk6cy33E2kjPb39rGitBh+OZdCbHVzL15q8iWarg/LpfsD8EOA+hxKTc+k0xKkmN+I8Mi6KKtv6gFF41Jc4=
+X-Received: by 2002:a0d:d307:: with SMTP id v7mr4908901ywd.507.1571871376689; 
+ Wed, 23 Oct 2019 15:56:16 -0700 (PDT)
 MIME-Version: 1.0
-References: <20191023082423.12569-1-ran.wang_1@nxp.com>
- <20191023082423.12569-3-ran.wang_1@nxp.com>
-In-Reply-To: <20191023082423.12569-3-ran.wang_1@nxp.com>
-From: Li Yang <leoyang.li@nxp.com>
-Date: Wed, 23 Oct 2019 17:47:58 -0500
-X-Gmail-Original-Message-ID: <CADRPPNTwzz8M-Gi-371ROmYLrzXUAyxc+2_u6uUp0Fwd1dggLA@mail.gmail.com>
-Message-ID: <CADRPPNTwzz8M-Gi-371ROmYLrzXUAyxc+2_u6uUp0Fwd1dggLA@mail.gmail.com>
-Subject: Re: [PATCH v9 3/3] soc: fsl: add RCPM driver
-To: Ran Wang <ran.wang_1@nxp.com>
+References: <20191021214550.1461-1-robh@kernel.org>
+ <20191021214550.1461-6-robh@kernel.org>
+ <1cbca96c-19dd-1d15-949c-7fbcc15369b4@gmail.com>
+ <CAL_JsqL6G=F45G+-QXF6T1269f9YquXfYtjoUkCpAoNartxM=Q@mail.gmail.com>
+ <1571864784.19128.8.camel@mtksdaap41>
+In-Reply-To: <1571864784.19128.8.camel@mtksdaap41>
+From: Rob Herring <robh@kernel.org>
+Date: Wed, 23 Oct 2019 17:56:02 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqJJ2ET2oCCkE=fqk7PWTWp3xiMRiMM_AmxRDws-NaKoOg@mail.gmail.com>
+Message-ID: <CAL_JsqJJ2ET2oCCkE=fqk7PWTWp3xiMRiMM_AmxRDws-NaKoOg@mail.gmail.com>
+Subject: Re: [PATCH 5/6] drm/mediatek: Convert to use CMA helpers
+To: CK Hu <ck.hu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_154813_685158_4E2D3866 
-X-CRM114-Status: GOOD (  35.61  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191023_155618_661172_A05E6F27 
+X-CRM114-Status: GOOD (  25.22  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.67 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pku.leo[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,280 +86,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Li Biwen <biwen.li@nxp.com>,
- Huang Anson <anson.huang@nxp.com>, Len Brown <len.brown@intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-pm@vger.kernel.org,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, lkml <linux-kernel@vger.kernel.org>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Pavel Machek <pavel@ucw.cz>, linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
+Cc: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
+ Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ Liviu Dudau <liviu.dudau@arm.com>, Daniel Kurtz <djkurtz@chromium.org>,
+ Sandy Huang <hjc@rock-chips.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Yannick Fertre <yannick.fertre@st.com>,
+ Nicolas Boichat <drinkcat@chromium.org>, Kevin Hilman <khilman@baylibre.com>,
+ Xinwei Kong <kong.kongxinwei@hisilicon.com>,
+ Xinliang Liu <z.liuxinliang@hisilicon.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Chen-Yu Tsai <wens@csie.org>,
+ =?UTF-8?Q?Noralf_Tr=C3=B8nnes?= <noralf@tronnes.org>,
+ "James \(Qian\) Wang" <james.qian.wang@arm.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Ulrich Hecht <uli@fpond.eu>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Chen Feng <puck.chen@hisilicon.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Sean Paul <sean@poorly.run>,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+ <linux-arm-kernel@lists.infradead.org>, Philippe Cornu <philippe.cornu@st.com>,
+ Vincent Abriou <vincent.abriou@st.com>,
+ Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Rongrong Zou <zourongrong@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 23, 2019 at 3:24 AM Ran Wang <ran.wang_1@nxp.com> wrote:
+On Wed, Oct 23, 2019 at 4:06 PM CK Hu <ck.hu@mediatek.com> wrote:
 >
-> The NXP's QorIQ Processors based on ARM Core have RCPM module
+> Hi, Rob:
+>
+> On Wed, 2019-10-23 at 12:42 -0500, Rob Herring wrote:
+> > On Tue, Oct 22, 2019 at 12:07 PM Matthias Brugger
+> > <matthias.bgg@gmail.com> wrote:
+> > >
+> > > Hi Rob,
+> > >
+> > > On 21/10/2019 23:45, Rob Herring wrote:
+> > > > The only reason the Mediatek driver doesn't use the CMA helpers is it
+> > > > sets DMA_ATTR_NO_KERNEL_MAPPING and does a vmap() on demand. Using
+> > > > vmap() is not even guaranteed to work as DMA buffers may not have a
+> > > > struct page. Now that the CMA helpers support setting
+> > > > DMA_ATTR_NO_KERNEL_MAPPING as needed or not, convert Mediatek driver to
+> > > > use CMA helpers.
+> > > >
+> > > > Cc: CK Hu <ck.hu@mediatek.com>
+> > > > Cc: Philipp Zabel <p.zabel@pengutronix.de>
+> > > > Cc: David Airlie <airlied@linux.ie>
+> > > > Cc: Daniel Vetter <daniel@ffwll.ch>
+> > > > Cc: Matthias Brugger <matthias.bgg@gmail.com>
+> > > > Cc: linux-arm-kernel@lists.infradead.org
+> > > > Cc: linux-mediatek@lists.infradead.org
+> > > > Signed-off-by: Rob Herring <robh@kernel.org>
+> > > > ---
+> > >
+> > > I tested this on my Chromebook with some patches on top of v5.4-rc1 [1], which
+> > > work. If I add your patches on top of that, the system does not boot up.
+> > > Unfortunately I don't have a serial console, so I wasn't able to see if there is
+> > > any error message.
+> >
+> > Thanks for testing. I'm based on drm-misc-next, but don't see anything
+> > obvious there that would matter. There are some mmap changes, but I
+> > think they shouldn't matter.
+> >
+> > Did you have fbcon enabled? That may give more clues about where the problem is.
+>
+> There are priv->dma_dev for dma device, but it is not drm device. In
+> mt8173.dtsi [1], there are mmsys device and ovl device, mmsys device is
+> drm device and ovl device is mmsys's sub device which provide dma
+> function, so ovl is the priv->dma_dev. I think your patch directly use
+> drm device for dma operation and this would cause dma function fail.
+> Please use priv->dma_dev for dma operation.
 
-Actually not just ARM based QorIQ processors are having RCPM, PowerPC
-based QorIQ SoCs also have RCPM.  Does this driver also work with the
-PowerPC SoCs?  Please clarify in the commit message and Kconfig
-description.
+Right, thanks for catching that. Either we'll need to make CMA GEM
+object have a struct device ptr or adjust the drm_device.dev to have
+the necessary DMA setup.
 
-> (Run Control and Power Management), which performs system level
-> tasks associated with power management such as wakeup source control.
->
-> This driver depends on PM wakeup source framework which help to
-> collect wake information.
->
-> Signed-off-by: Ran Wang <ran.wang_1@nxp.com>
-> ---
-> Change in v9:
->         - Add kerneldoc for rcpm_pm_prepare().
->         - Use pr_debug() to replace dev_info(), to print message when decide
->           skip current wakeup object, this is mainly for debugging (in order
->           to detect potential improper implementation on device tree which
->           might cause this skip).
->         - Refactor looping implementation in rcpm_pm_prepare(), add more
->           comments to help clarify.
->
-> Change in v8:
->         - Adjust related API usage to meet wakeup.c's update in patch 1/3.
->         - Add sanity checking for the case of ws->dev or ws->dev->parent
->           is null.
->
-> Change in v7:
->         - Replace 'ws->dev' with 'ws->dev->parent' to get aligned with
->         c8377adfa781 ("PM / wakeup: Show wakeup sources stats in sysfs")
->         - Remove '+obj-y += ftm_alarm.o' since it is wrong.
->         - Cosmetic work.
->
-> Change in v6:
->         - Adjust related API usage to meet wakeup.c's update in patch 1/3.
->
-> Change in v5:
->         - Fix v4 regression of the return value of wakeup_source_get_next()
->         didn't pass to ws in while loop.
->         - Rename wakeup_source member 'attached_dev' to 'dev'.
->         - Rename property 'fsl,#rcpm-wakeup-cells' to '#fsl,rcpm-wakeup-cells'.
->         please see https://lore.kernel.org/patchwork/patch/1101022/
->
-> Change in v4:
->         - Remove extra ',' in author line of rcpm.c
->         - Update usage of wakeup_source_get_next() to be less confusing to the
-> reader, code logic remain the same.
->
-> Change in v3:
->         - Some whitespace ajdustment.
->
-> Change in v2:
->         - Rebase Kconfig and Makefile update to latest mainline.
->
->  drivers/soc/fsl/Kconfig  |   8 +++
->  drivers/soc/fsl/Makefile |   1 +
->  drivers/soc/fsl/rcpm.c   | 148 +++++++++++++++++++++++++++++++++++++++++++++++
->  3 files changed, 157 insertions(+)
->  create mode 100644 drivers/soc/fsl/rcpm.c
->
-> diff --git a/drivers/soc/fsl/Kconfig b/drivers/soc/fsl/Kconfig
-> index f9ad8ad..4918856 100644
-> --- a/drivers/soc/fsl/Kconfig
-> +++ b/drivers/soc/fsl/Kconfig
-> @@ -40,4 +40,12 @@ config DPAA2_CONSOLE
->           /dev/dpaa2_mc_console and /dev/dpaa2_aiop_console,
->           which can be used to dump the Management Complex and AIOP
->           firmware logs.
-> +
-> +config FSL_RCPM
-> +       bool "Freescale RCPM support"
-> +       depends on PM_SLEEP
+One question though, why do you use CMA when you have an IOMMU? That's
+not optimal as CMA size may be limited. Or you don't always have an
+IOMMU?
 
-If this is only for ARM, probably add more dependency here?
-
-> +       help
-> +         The NXP QorIQ Processors based on ARM Core have RCPM module
-> +         (Run Control and Power Management), which performs all device-level
-> +         tasks associated with power management, such as wakeup source control.
->  endmenu
-> diff --git a/drivers/soc/fsl/Makefile b/drivers/soc/fsl/Makefile
-> index 71dee8d..906f1cd 100644
-> --- a/drivers/soc/fsl/Makefile
-> +++ b/drivers/soc/fsl/Makefile
-> @@ -6,6 +6,7 @@
->  obj-$(CONFIG_FSL_DPAA)                 += qbman/
->  obj-$(CONFIG_QUICC_ENGINE)             += qe/
->  obj-$(CONFIG_CPM)                      += qe/
-> +obj-$(CONFIG_FSL_RCPM)                 += rcpm.o
->  obj-$(CONFIG_FSL_GUTS)                 += guts.o
->  obj-$(CONFIG_FSL_MC_DPIO)              += dpio/
->  obj-$(CONFIG_DPAA2_CONSOLE)            += dpaa2-console.o
-> diff --git a/drivers/soc/fsl/rcpm.c b/drivers/soc/fsl/rcpm.c
-> new file mode 100644
-> index 0000000..9378073
-> --- /dev/null
-> +++ b/drivers/soc/fsl/rcpm.c
-> @@ -0,0 +1,148 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +//
-> +// rcpm.c - Freescale QorIQ RCPM driver
-> +//
-> +// Copyright 2019 NXP
-> +//
-> +// Author: Ran Wang <ran.wang_1@nxp.com>
-> +
-> +#include <linux/init.h>
-> +#include <linux/module.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/of_address.h>
-> +#include <linux/slab.h>
-> +#include <linux/suspend.h>
-> +#include <linux/kernel.h>
-> +
-> +#define RCPM_WAKEUP_CELL_MAX_SIZE      7
-> +
-> +struct rcpm {
-> +       unsigned int    wakeup_cells;
-> +       void __iomem    *ippdexpcr_base;
-> +       bool            little_endian;
-> +};
-> +
-> +/**
-> + * rcpm_pm_prepare - performs device-level tasks associated with power
-> + * management, such as programming related to the wakeup source control.
-> + * @dev: Device to handle.
-> + *
-> + */
-> +static int rcpm_pm_prepare(struct device *dev)
-> +{
-> +       int i, ret, idx;
-> +       void __iomem *base;
-> +       struct wakeup_source    *ws;
-> +       struct rcpm             *rcpm;
-> +       struct device_node      *np = dev->of_node;
-> +       u32 value[RCPM_WAKEUP_CELL_MAX_SIZE + 1];
-> +
-> +       rcpm = dev_get_drvdata(dev);
-> +       if (!rcpm)
-> +               return -EINVAL;
-> +
-> +       base = rcpm->ippdexpcr_base;
-> +       idx = wakeup_sources_read_lock();
-> +
-> +       /* Begin with first registered wakeup source */
-> +       for_each_wakeup_source(ws) {
-> +
-> +               /* skip object which is not attached to device */
-> +               if (!ws->dev || !ws->dev->parent)
-> +                       continue;
-> +
-> +               ret = device_property_read_u32_array(ws->dev->parent,
-> +                               "fsl,rcpm-wakeup", value,
-> +                               rcpm->wakeup_cells + 1);
-> +
-> +               /*  Wakeup source should refer to current rcpm device */
-> +               if (ret || (np->phandle != value[0])) {
-> +                       pr_debug("%s doesn't refer to this rcpm\n", ws->name);
-
-I agree with Rafael that this looks a little bit weird.
-
-> +                       continue;
-> +               }
-> +
-> +               /* Property "#fsl,rcpm-wakeup-cells" of rcpm node defines the
-> +                * number of IPPDEXPCR register cells, and "fsl,rcpm-wakeup"
-> +                * of wakeup source IP contains an integer array: <phandle to
-> +                * RCPM node, IPPDEXPCR0 setting, IPPDEXPCR1 setting,
-> +                * IPPDEXPCR2 setting, etc>.
-> +                *
-> +                * So we will go thought them and do programming accordngly.
-> +                */
-> +               for (i = 0; i < rcpm->wakeup_cells; i++) {
-> +                       u32 tmp = value[i + 1];
-> +                       void __iomem *address = base + i * 4;
-> +
-> +                       if (!tmp)
-> +                               continue;
-> +
-> +                       /* We can only OR related bits */
-> +                       if (rcpm->little_endian) {
-> +                               tmp |= ioread32(address);
-> +                               iowrite32(tmp, address);
-> +                       } else {
-> +                               tmp |= ioread32be(address);
-> +                               iowrite32be(tmp, address);
-> +                       }
-
-Can we do read once at the beginning and write once at the end,
-instead of doing IO read/write for every wakeup source?
-
-> +               }
-> +       }
-> +
-> +       wakeup_sources_read_unlock(idx);
-> +
-> +       return 0;
-> +}
-> +
-> +static const struct dev_pm_ops rcpm_pm_ops = {
-> +       .prepare =  rcpm_pm_prepare,
-> +};
-> +
-> +static int rcpm_probe(struct platform_device *pdev)
-> +{
-> +       struct device   *dev = &pdev->dev;
-> +       struct resource *r;
-> +       struct rcpm     *rcpm;
-> +       int ret;
-> +
-> +       rcpm = devm_kzalloc(dev, sizeof(*rcpm), GFP_KERNEL);
-> +       if (!rcpm)
-> +               return -ENOMEM;
-> +
-> +       r = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> +       if (!r)
-> +               return -ENODEV;
-> +
-> +       rcpm->ippdexpcr_base = devm_ioremap_resource(&pdev->dev, r);
-> +       if (IS_ERR(rcpm->ippdexpcr_base)) {
-> +               ret =  PTR_ERR(rcpm->ippdexpcr_base);
-> +               return ret;
-> +       }
-> +
-> +       rcpm->little_endian = device_property_read_bool(
-> +                       &pdev->dev, "little-endian");
-> +
-> +       ret = device_property_read_u32(&pdev->dev,
-> +                       "#fsl,rcpm-wakeup-cells", &rcpm->wakeup_cells);
-> +       if (ret)
-> +               return ret;
-> +
-> +       dev_set_drvdata(&pdev->dev, rcpm);
-> +
-> +       return 0;
-> +}
-> +
-> +static const struct of_device_id rcpm_of_match[] = {
-> +       { .compatible = "fsl,qoriq-rcpm-2.1+", },
-> +       {}
-> +};
-> +MODULE_DEVICE_TABLE(of, rcpm_of_match);
-> +
-> +static struct platform_driver rcpm_driver = {
-> +       .driver = {
-> +               .name = "rcpm",
-> +               .of_match_table = rcpm_of_match,
-> +               .pm     = &rcpm_pm_ops,
-> +       },
-> +       .probe = rcpm_probe,
-> +};
-> +
-> +module_platform_driver(rcpm_driver);
-> --
-> 2.7.4
->
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
