@@ -2,84 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFFD1E2399
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 22:02:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2AB90E23CE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 22:05:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mVRbb5bOeaTidofpsvVRLFbO4zOyGZern3VGXNp7020=; b=XXzh2qf1Yaw2gN
-	WuDjqtXsVM6rk/T5m6x52Fe+PUwCYn07DaTmKJRCPaNiLgTksSaV8FsMc+/cT9GsMq2Yw+d0PytwC
-	Ehegghdm0+LshEJHAI6RiqwmrUpmFGhrdM4td7fZCpW89AehVJAHpzm9/b033fcNNTX5t/YEHqB6w
-	Sk9Y8gTbkABn7iXa1h+76rxDJTUp56Sg3JY6w11dSnE1yxvqDNmDIgtrj7E/myXjRqbp8pKOb2rY9
-	trtkLre9LdtdK4H04uBDryF9zGBT2L+7kG3af9VGG+OZVdXkAyH99PHOt7YX/2DwEgzNfF3srUvrN
-	Y9Ho905hfiu/v9Ei2R8A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3MArRsJ8qDejmn4QCVsi47mXBIFD/SbkWeCtl2CC8tk=; b=t2FOzK//KruZI3
+	BW5ePvNh4aW9GYOpQe2VCo+DzBO7TivgQljc4uu6bo4aH/gkEtv8xSHKVbmH6NytmXt5ouQfRKSqE
+	234tqdQY8DB0Gde1aMWBLUgrxW7oYwmcygJaIGyfyjbLKQ/Q5YV4g7pfxexKqQC0UjrNG4CC+IV3S
+	kLrLRiB5D/Gfzji+XFymo4zP3DU95BjPk1sbQlENVR+Z2H+mHK7zIIWMglCx6oxjSukClVbDYGlqO
+	CMwj+DxrDTbxukAELhsqcLZ95rbkLQhIg/ipGS8eJjNUyaPZVpoqC4N5qJtEpTV/+iHN9KQtInEpx
+	AP5DJWAf1N5ur9fl0yiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNMq8-0007Um-Lz; Wed, 23 Oct 2019 20:02:40 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
+	id 1iNMt0-00012f-Dj; Wed, 23 Oct 2019 20:05:38 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNMpz-0007UT-Px
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 20:02:33 +0000
-Received: by mail-oi1-f196.google.com with SMTP id w144so18532356oia.6
+ id 1iNMsi-00011s-8X
+ for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 20:05:21 +0000
+Received: by mail-wm1-x341.google.com with SMTP id c22so236729wmd.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 23 Oct 2019 13:02:30 -0700 (PDT)
+ Wed, 23 Oct 2019 13:05:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Hsfe3o9u2LRY+0nocL08VDzRyf/zs8Qk4HLwEzdn4Dk=;
+ b=HYubk8XvcGGvQYdserWcLKzcweNYV7O56pRPn71Qjf0wSFj+KijzfLknYRkt3CjBaM
+ OTFerJPUekyKHYKjZm7pYw9EaouZK/rv/qAJccVs+FppdmBQ7+SE86z4td2vTiOFbf1q
+ g/r70kz3dNhO4kZnmATWY9L2cgY3D+ATrlgfbHGmdhfvZsqCHmhnoqRolBYlvPz/NVRO
+ AheiQzOSbwxXwWvljdXe8ruhOqcUxnZQaBtgw6q3miQSeHpppWjg3X3mvsGR0YQUlgYd
+ jhTGwD2YKTm+j8somZm5Xbwl/PUkQBfBikFaJtbfmqAnVpyRg0ssXDfWQLNNv80KR+5Q
+ wkpw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=oozQkcJW95p1Dv4QaVuryfJ5LQcESPRxHdu7Ak0V1Z4=;
- b=BxJ1BMMxGETCedtIvxwC73lTpxk8NVzSnbxtji2nAvhDeO2nGpBfxbvTMZkEAZXQ8B
- K7/YTC9x+O0Gu7T6QVPc5xolpthfFIeLEhPeqNDKt6GbDusWGpbAnimXW/gLzRfJn6I5
- 9zFiZ5nqLbSzpR0XwavEDjhcT5RiUDGkIII7UFdDQK8koZ4jw2a9ufNL4fCey/um6VLG
- EEbcARblSFZcSTyyHvuNGUpPamhHT835oSocnDYn6jKsTfjRARYhhhTgkOrPTMvBEhJQ
- vFUl4787V4Ma4XUH/B8cBZ+NyEWeuGMpAspM4boN/BkbLmXu+jOv/JsXgXdD1gch8koo
- ifWA==
-X-Gm-Message-State: APjAAAWgbOw11cYRDPTEr9tsZ8yAPnuKLWnpFYOem6VUf2Gxx7RnebuX
- Wwhf3MzfE/kyliprXfYCnw==
-X-Google-Smtp-Source: APXvYqxFAjzGZNtqdc+1PYTID1AcXDBTvo2ape+7GxX6izU5pTGV6D/uDL/INQ1Bx2cz/ihfg3IHEw==
-X-Received: by 2002:aca:c40f:: with SMTP id u15mr1506436oif.67.1571860949970; 
- Wed, 23 Oct 2019 13:02:29 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id y18sm6342903oto.2.2019.10.23.13.02.29
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Hsfe3o9u2LRY+0nocL08VDzRyf/zs8Qk4HLwEzdn4Dk=;
+ b=BGW6E6yf8Gaqhz8hzqAnPWmBqVK1ZaFAHcw44ZhSi6gXiP6YR7DmDx3fp25n+pTlYl
+ yy6Y7XJMIBj9SVpzkciv5O75S3adt9ar94EitBZ7Aqi2MTtfuLkEM3FDfVZuD31JaC12
+ tkxHZ7I4yIcePNGjkVC6ydIIogKbYg+B6c6RYA0MdNh67QaTJbhihsx39WKtXmmtJ0+9
+ YYbKJ/5DI8Gy4cwdatKrK+AWJBgBupkk02O4s8CJ8ZN3pj8oUJd1105VQaaRjzSW9X8Y
+ okd27If+d4mdZyh9lqtBuhufXLsHbEJZ/CbSHfIRNzGeTQGfx/5BSQJD7TA2GtkxFrR0
+ Y9rw==
+X-Gm-Message-State: APjAAAW85QbCXjbrTOyB0ypb7uhRDLicS4/yq/7yzBu257ek45aMnm0g
+ zaLNnia6UPLiQ+K8nfIAXKk=
+X-Google-Smtp-Source: APXvYqxSa2MeRkZVb6t+RtDHLWlQ4c6ajTmBvfRtiRqVfHtaIt4cPqmkepgTyG/iRGVmYvEDFcmFQg==
+X-Received: by 2002:a1c:9d07:: with SMTP id g7mr1495189wme.53.1571861118310;
+ Wed, 23 Oct 2019 13:05:18 -0700 (PDT)
+Received: from Red.localdomain (lfbn-1-7036-79.w90-116.abo.wanadoo.fr.
+ [90.116.209.79])
+ by smtp.googlemail.com with ESMTPSA id b5sm177555wmj.18.2019.10.23.13.05.16
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 23 Oct 2019 13:02:29 -0700 (PDT)
-Date: Wed, 23 Oct 2019 15:02:28 -0500
-From: Rob Herring <robh@kernel.org>
-To: Daniel Palmer <daniel@0x0f.com>
-Subject: Re: [PATCH 1/4] dt-bindings: arm: Initial MStar vendor prefixes and
- compatible strings
-Message-ID: <20191023200228.GA29675@bogus>
-References: <20191014061617.10296-1-daniel@0x0f.com>
+ Wed, 23 Oct 2019 13:05:17 -0700 (PDT)
+From: Corentin Labbe <clabbe.montjoie@gmail.com>
+To: catalin.marinas@arm.com, davem@davemloft.net, herbert@gondor.apana.org.au,
+ linux@armlinux.org.uk, mark.rutland@arm.com, mripard@kernel.org,
+ robh+dt@kernel.org, wens@csie.org, will@kernel.org
+Subject: [PATCH v6 00/11] crypto: add sun8i-ce driver for Allwinner crypto
+ engine
+Date: Wed, 23 Oct 2019 22:05:02 +0200
+Message-Id: <20191023200513.22630-1-clabbe.montjoie@gmail.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191014061617.10296-1-daniel@0x0f.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_130231_837633_FE5C04AD 
-X-CRM114-Status: GOOD (  20.01  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20191023_130520_306297_89E9A0C1 
+X-CRM114-Status: GOOD (  13.34  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
+ provider (clabbe.montjoie[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,127 +100,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- Linus Walleij <linus.walleij@linaro.org>, Stefan Agner <stefan@agner.ch>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Daniel Palmer <daniel@thingy.jp>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- "Paul E. McKenney" <paulmck@linux.ibm.com>,
- Russell King <linux@armlinux.org.uk>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Nathan Huckleberry <nhuck15@gmail.com>, Icenowy Zheng <icenowy@aosc.io>,
- devicetree@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- Maxime Ripard <mripard@kernel.org>,
- Jonathan Cameron <Jonathan.Cameron@huawei.com>,
- Doug Anderson <armlinux@m.disordat.com>,
- Nathan Chancellor <natechancellor@gmail.com>,
- linux-arm-kernel@lists.infradead.org,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Sugaya Taichi <sugaya.taichi@socionext.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Nicolas Pitre <nico@fluxnic.net>, Nick Desaulniers <ndesaulniers@google.com>,
- linux-kernel@vger.kernel.org, Paul Burton <paul.burton@mips.com>,
- Andrew Morton <akpm@linux-foundation.org>, Shawn Guo <shawnguo@kernel.org>,
- "David S. Miller" <davem@davemloft.net>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-sunxi@googlegroups.com, Corentin Labbe <clabbe.montjoie@gmail.com>,
+ linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 14, 2019 at 03:15:56PM +0900, Daniel Palmer wrote:
-> This adds a prefix for MStar and thingy.jp and then defines compatible
-> strings for the first MStar based board.
-> 
-> Signed-off-by: Daniel Palmer <daniel@0x0f.com>
-> ---
->  .../devicetree/bindings/arm/mstar.yaml        | 22 +++++++++++++++++++
->  .../devicetree/bindings/vendor-prefixes.yaml  |  4 ++++
->  MAINTAINERS                                   |  6 +++++
->  3 files changed, 32 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/arm/mstar.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/arm/mstar.yaml b/Documentation/devicetree/bindings/arm/mstar.yaml
-> new file mode 100644
-> index 000000000000..0ea5b2b9387f
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/arm/mstar.yaml
-> @@ -0,0 +1,22 @@
-> +# SPDX-License-Identifier: (GPL-2.0+ OR X11)
+Hello
 
-(GPL-2.0-only OR BSD-2-Clause) is preferred. Any reason to differ?
+This patch serie adds support for the Allwinner crypto engine.
+The Crypto Engine is the third generation of Allwinner cryptogaphic offloader.
+The first generation is the Security System already handled by the
+sun4i-ss driver.
+The second is named also Security System and is present on A80 and A83T
+SoCs, originaly this driver supported it also, but supporting both IP bringing
+too much complexity and another driver (sun8i-ss) will came for it.
 
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/arm/mstar.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: MStar platforms device tree bindings
-> +
-> +maintainers:
-> +  - Daniel Palmer <daniel@thingy.jp>
-> +
-> +properties:
-> +  $nodename:
-> +    const: '/'
-> +  compatible:
-> +    oneOf:
-> +
+For the moment, the driver support only DES3/AES in ECB/CBC mode.
+Patchs for CTR/CTS/XTS, RSA and RNGs will came later.
 
-Drop the blank line.
+This serie is tested with CRYPTO_MANAGER_EXTRA_TESTS
+and tested on:
+sun50i-a64-bananapi-m64
+sun50i-a64-pine64-plus
+sun50i-h5-libretech-all-h3-cc
+sun50i-h6-pine-h64
+sun8i-h2-plus-libretech-all-h3-cc
+sun8i-h2-plus-orangepi-r1
+sun8i-h2-plus-orangepi-zero
+sun8i-h3-libretech-all-h3-cc
+sun8i-h3-orangepi-pc
+sun8i-r40-bananapi-m2-ultra
 
-> +      - description: thingy.jp BreadBee
-> +        items:
-> +          - const: thingyjp,breadbee
-> +          - const: mstar,infinity
-> +          - const: mstar,infinity3
+DT and defconfig will go thru the mripard tree
 
-infinity vs. infinity3? What's the difference? It's generally sufficient 
-to just list a board compatible and a SoC compatible.
+Regards
 
-> diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-> index 967e78c5ec0a..1425468188da 100644
-> --- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
-> +++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-> @@ -617,6 +617,8 @@ patternProperties:
->      description: Microsemi Corporation
->    "^msi,.*":
->      description: Micro-Star International Co. Ltd.
-> +  "^mstar,.*":
-> +    description: MStar Semiconductor, Inc.
->    "^mti,.*":
->      description: Imagination Technologies Ltd. (formerly MIPS Technologies Inc.)
->    "^multi-inno,.*":
-> @@ -943,6 +945,8 @@ patternProperties:
->      description: Three Five Corp
->    "^thine,.*":
->      description: THine Electronics, Inc.
-> +  "^thingyjp,.*":
-> +    description: thingy.jp
->    "^ti,.*":
->      description: Texas Instruments
->    "^tianma,.*":
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index a69e6db80c79..8b7913c13f9a 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -1981,6 +1981,12 @@ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
->  F:	arch/arm/mach-pxa/mioa701.c
->  S:	Maintained
->  
-> +ARM/MStar SoC support
-> +M:	Daniel Palmer <daniel@thingy.jp>
-> +L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
-> +F:	Documentation/devicetree/bindings/arm/mstar.yaml
-> +S:	Maintained
-> +
->  ARM/NEC MOBILEPRO 900/c MACHINE SUPPORT
->  M:	Michael Petchkovsky <mkpetch@internode.on.net>
->  S:	Maintained
-> -- 
-> 2.23.0
-> 
+Changes since v5:
+- fixed uninitialized err in sun8i_ce_allocate_chanlist (reported by lkp@intel.com/dan.carpenter@oracle.com)
+
+Changes since v4:
+- fixed some typos in kconfig
+- made sun8i_ce_pm_ops static
+- Use devm_platform_ioremap_resource
+
+Changes since v3:
+- removed need of reset-names
+- made reset mandatory
+
+Changes since v2:
+- changed additionalproperties
+- splited fallbacks functions out of sun8i_ce_cipher()
+- changed variant "model" to "has_t_dlen_in_bytes"
+- splited sun8i_ce_register_algs/sun8i_ce_get_clks out of sun8i_ce_probe()
+
+Changes since v1:
+- Add sun4i-ss to allwinner directory
+- Cleaned variant structure
+- Renamed clock name from ahb to bus (and mbus to ram)
+- Fixed DT bindings problem reported by mripard
+- Cleaned unneeded status = ""  in R40 DT
+- Removed old unnecessary interrupt_names in A64 DT
+- Added arm64 defconfig
+- Added support for PM functions
+- Splitted probe functions
+- Reworked clock settings
+- made reset mandatory
+
+Corentin Labbe (11):
+  crypto: Add allwinner subdirectory
+  crypto: Add Allwinner sun8i-ce Crypto Engine
+  dt-bindings: crypto: Add DT bindings documentation for sun8i-ce Crypto
+    Engine
+  ARM: dts: sun8i: R40: add crypto engine node
+  ARM: dts: sun8i: H3: Add Crypto Engine node
+  ARM64: dts: allwinner: sun50i: Add Crypto Engine node on A64
+  ARM64: dts: allwinner: sun50i: Add crypto engine node on H5
+  ARM64: dts: allwinner: sun50i: Add Crypto Engine node on H6
+  sunxi_defconfig: add new Allwinner crypto options
+  arm64: defconfig: add new Allwinner crypto options
+  crypto: sun4i-ss: Move to Allwinner directory
+
+ .../bindings/crypto/allwinner,sun8i-ce.yaml   |  88 +++
+ MAINTAINERS                                   |   4 +-
+ arch/arm/boot/dts/sun8i-h3.dtsi               |   9 +
+ arch/arm/boot/dts/sun8i-r40.dtsi              |   9 +
+ arch/arm/configs/sunxi_defconfig              |   2 +
+ arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi |   9 +
+ arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi  |   9 +
+ arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi  |   9 +
+ arch/arm64/configs/defconfig                  |   2 +
+ drivers/crypto/Kconfig                        |  28 +-
+ drivers/crypto/Makefile                       |   2 +-
+ drivers/crypto/allwinner/Kconfig              |  60 ++
+ drivers/crypto/allwinner/Makefile             |   2 +
+ .../{sunxi-ss => allwinner/sun4i-ss}/Makefile |   0
+ .../sun4i-ss}/sun4i-ss-cipher.c               |   0
+ .../sun4i-ss}/sun4i-ss-core.c                 |   0
+ .../sun4i-ss}/sun4i-ss-hash.c                 |   0
+ .../sun4i-ss}/sun4i-ss-prng.c                 |   0
+ .../sun4i-ss}/sun4i-ss.h                      |   0
+ drivers/crypto/allwinner/sun8i-ce/Makefile    |   2 +
+ .../allwinner/sun8i-ce/sun8i-ce-cipher.c      | 434 +++++++++++
+ .../crypto/allwinner/sun8i-ce/sun8i-ce-core.c | 676 ++++++++++++++++++
+ drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h  | 254 +++++++
+ 23 files changed, 1570 insertions(+), 29 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/crypto/allwinner,sun8i-ce.yaml
+ create mode 100644 drivers/crypto/allwinner/Kconfig
+ create mode 100644 drivers/crypto/allwinner/Makefile
+ rename drivers/crypto/{sunxi-ss => allwinner/sun4i-ss}/Makefile (100%)
+ rename drivers/crypto/{sunxi-ss => allwinner/sun4i-ss}/sun4i-ss-cipher.c (100%)
+ rename drivers/crypto/{sunxi-ss => allwinner/sun4i-ss}/sun4i-ss-core.c (100%)
+ rename drivers/crypto/{sunxi-ss => allwinner/sun4i-ss}/sun4i-ss-hash.c (100%)
+ rename drivers/crypto/{sunxi-ss => allwinner/sun4i-ss}/sun4i-ss-prng.c (100%)
+ rename drivers/crypto/{sunxi-ss => allwinner/sun4i-ss}/sun4i-ss.h (100%)
+ create mode 100644 drivers/crypto/allwinner/sun8i-ce/Makefile
+ create mode 100644 drivers/crypto/allwinner/sun8i-ce/sun8i-ce-cipher.c
+ create mode 100644 drivers/crypto/allwinner/sun8i-ce/sun8i-ce-core.c
+ create mode 100644 drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h
+
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
