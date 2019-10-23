@@ -2,88 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D611E2492
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 22:28:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 807C3E24E3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 23:06:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8GoP09AB5lrD2G9CpjJhU641FBQJOq53fpErZl4qGtg=; b=W4KU5abussY479
-	eHhyME8RG3Dp/9G3wPrVK/d5SxvZc1C5CNBpT1ec1X0y+RfYWRCZU7a7jvD2jJDDWj2apQqHR17Rc
-	wnncDjF8q7Cil5Yr3GcYzngtxR/4VGKfk/pRciwjQMvHRisOsZID+N2jXcazSIb0M76HyTLSU8lfd
-	8BSdOvHeR1rqsV5YMKhQKsxZQB8vyi1nx9efOlvMyDcUP47lJ+cZLzpV4KxDA8jlgS8KaXN86xOC8
-	UpdRR0xOsbABmyfQSU5W9nmEFND2NOGre0yVlicQLqYpNOCGT7ztVOsBDl+00oIfrncsk1u1EjmJT
-	2TKO/fZVjL1hVQ4hJaRQ==;
+	List-Owner; bh=opqh7YHAOuPlnOX12P3eRy/ib9wt1dMHhamk2goBqn8=; b=VMale+MZ6tYqNY
+	Q88y5efyTZSLK3R92+wGqrU3dpyVQxoA6C/+vhzexlW+8KO/RO5/M538nPI+hfrmoQQBdNGI77nG0
+	ci4eYDhiFu1FKZ7pAb+ACvI1yZtbdPPt8j0HMC7mG9WfNHDp1lIxXYH6s2piI11Qt7CzCgtElDFsv
+	aSc634rNjT8XZfv/YtvqTQ58EPtniwWPt/TD4OyqtvA+cC5b7aUXif1TljE1p7hxodVbL9myAyqb6
+	kuKalG6+AL8LXczDM+LKl8oqvTv3+bFhyvojbMvYAYnzP+PtDqHcHf+6+EdbTybk5lgFInsjGs1ns
+	1+W17vHVUWcxWw9+NeHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNNEz-0004f0-DH; Wed, 23 Oct 2019 20:28:21 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1iNNqI-0001ms-AQ; Wed, 23 Oct 2019 21:06:54 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNNEp-0004eQ-Tr
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 20:28:13 +0000
-Received: by mail-lj1-x242.google.com with SMTP id q64so22505369ljb.12
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 23 Oct 2019 13:28:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=T9KQBL6LAJYjkuQGrzhfEUZi7F2d+gu+rzQyfboqTg4=;
- b=f6LOoxDVs4/DvAnaS9H/V3nQ5s19fegLbWq/bDRM0YTRdfAQvVFoGc00O8mT7pPEJV
- 5oNprja63HwY/VsxPJqN5QG7bb15/FrYjGoyzSWqlexBDdxghJlpeIPVYDWr8jA9Z01r
- rV577Zj/rzMt9bpw8JSXIpqGLiVsT4XxiySR4VpwUKQEwxYlCEoYJSTIUFGzK+58qUF9
- toVFtJDLNiz9GbpbvTPeIY1V4ZOcWwGZ25gNFYmNMLN/ImsD9wTWsRS60TLj4IxnSHZH
- yqwzRm2TBfOEPy0/Ro51jH0Lif9oNDYFynY/F4CEzcCPqbvwHkau+7c8dqiR8pRXQ6tI
- ZTIQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=T9KQBL6LAJYjkuQGrzhfEUZi7F2d+gu+rzQyfboqTg4=;
- b=diHPYt7EiYHWLBG2cU5rJKJj1Hhe4Br+0/dI4WgmCnuyiirLUYVFt2ELvDXQgGOcHM
- /qiAL16QtfYMczw7QUS9vEVyZiTx2HD8nOsx5HDUZMgCPIq//1jU31bOWeox03GscKdc
- 79GA+Pm2IMiSO0ecS2jfatNeudl34q3wUrsI9ZjPYjM6F0LGPQfpSSMmVOr+0O1ytg/j
- FIZM84fEKWTQcmX1HMGqZjCfFBcszhIjB91IRBWaez/CoQ7FEyijuO2SV+5FQ/ZE/bUL
- q7cJ0fs4yjp+NjpADIkC9dPw7m5FyP+azh2pCzuzipc1dQM7NPm6YsSyul0nN9YBES4s
- STkg==
-X-Gm-Message-State: APjAAAX98QC00OaZ9ZbdXkpLxld/F3HnQVeVDyLaEDaa6v25nBF4wEiL
- zx02p2b1T+UNbgPZWUsBgi3oRv3tfxeymg==
-X-Google-Smtp-Source: APXvYqxSodDem2VxJeSULsc2yK6A+yLio7NbpdwoWeMo0EQlIIPFpuUhQtRJJpl2pfHB2OL5yzoJcg==
-X-Received: by 2002:a05:651c:106b:: with SMTP id
- y11mr7541430ljm.123.1571862489642; 
- Wed, 23 Oct 2019 13:28:09 -0700 (PDT)
-Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id r12sm9386450lfp.63.2019.10.23.13.28.08
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 23 Oct 2019 13:28:08 -0700 (PDT)
-Date: Wed, 23 Oct 2019 13:22:47 -0700
-From: Olof Johansson <olof@lixom.net>
-To: Tony Lindgren <tony@atomide.com>
-Subject: Re: [GIT PULL 1/2] omap2plus_defconfig changes for v5.5
-Message-ID: <20191023202247.wb2jzwvek7u5korx@localhost>
-References: <pull-1571853258-16998@atomide.com>
+ id 1iNNq4-0001ke-0Z; Wed, 23 Oct 2019 21:06:41 +0000
+X-UUID: ae29dd25e3374e02892ee7938699e740-20191023
+X-UUID: ae29dd25e3374e02892ee7938699e740-20191023
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1647297005; Wed, 23 Oct 2019 13:06:31 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 23 Oct 2019 14:06:31 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 24 Oct 2019 05:06:29 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 24 Oct 2019 05:06:21 +0800
+Message-ID: <1571864784.19128.8.camel@mtksdaap41>
+Subject: Re: [PATCH 5/6] drm/mediatek: Convert to use CMA helpers
+From: CK Hu <ck.hu@mediatek.com>
+To: Rob Herring <robh@kernel.org>
+Date: Thu, 24 Oct 2019 05:06:24 +0800
+In-Reply-To: <CAL_JsqL6G=F45G+-QXF6T1269f9YquXfYtjoUkCpAoNartxM=Q@mail.gmail.com>
+References: <20191021214550.1461-1-robh@kernel.org>
+ <20191021214550.1461-6-robh@kernel.org>
+ <1cbca96c-19dd-1d15-949c-7fbcc15369b4@gmail.com>
+ <CAL_JsqL6G=F45G+-QXF6T1269f9YquXfYtjoUkCpAoNartxM=Q@mail.gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <pull-1571853258-16998@atomide.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_132812_108662_2F564E44 
-X-CRM114-Status: GOOD (  13.85  )
+X-CRM114-CacheID: sfid-20191023_140640_059012_7D797A62 
+X-CRM114-Status: GOOD (  20.98  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,50 +75,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: soc@kernel.org, arm@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-omap@vger.kernel.org
+Cc: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>,
+ Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ Liviu Dudau <liviu.dudau@arm.com>, Daniel
+ Kurtz <djkurtz@chromium.org>, Sandy Huang <hjc@rock-chips.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Yannick Fertre <yannick.fertre@st.com>,
+ Nicolas Boichat <drinkcat@chromium.org>, Kevin Hilman <khilman@baylibre.com>,
+ Xinwei Kong <kong.kongxinwei@hisilicon.com>,
+ Xinliang Liu <z.liuxinliang@hisilicon.com>, "open list:ARM/Rockchip
+ SoC..." <linux-rockchip@lists.infradead.org>, Chen-Yu Tsai <wens@csie.org>,
+ Noralf =?ISO-8859-1?Q?Tr=F8nnes?= <noralf@tronnes.org>,
+ "James \(Qian\) Wang" <james.qian.wang@arm.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Ulrich Hecht <uli@fpond.eu>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Chen Feng <puck.chen@hisilicon.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, "moderated list:ARM/Mediatek SoC
+ support" <linux-mediatek@lists.infradead.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Daniel
+ Vetter <daniel@ffwll.ch>, Sean Paul <sean@poorly.run>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Philippe Cornu <philippe.cornu@st.com>,
+ Vincent Abriou <vincent.abriou@st.com>, Kieran
+ Bingham <kieran.bingham+renesas@ideasonboard.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Rongrong Zou <zourongrong@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 23, 2019 at 10:54:48AM -0700, Tony Lindgren wrote:
-> From: "Tony Lindgren" <tony@atomide.com>
-> 
-> The following changes since commit 96d49bbfe6c1a6bb43ccd00fb87aca100e32e5e2:
-> 
->   ARM: omap2plus_defconfig: Fix selected panels after generic panel changes (2019-10-03 09:44:40 -0700)
-> 
-> are available in the Git repository at:
-> 
->   git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.5/defconfig-signed
-> 
-> for you to fetch changes up to ec2b31267263cd7d5a7567d315f839796c2a8c87:
-> 
->   configs: omap2plus: Enable VIDEO_MT9P031 module (2019-10-22 09:11:03 -0700)
-> 
-> ----------------------------------------------------------------
-> Defconfig changes for omap2plus_defconfig for v5.5
-> 
-> A series of changes from Adam Ford to update for removed and moved items,
-> and then enable crypto devices and MT9P031 video as loadable modules.
-> 
-> Looks like I missed unifying the subject line for one commit, but I did
-> not want to mess with the commit after pushing it out.
-> 
-> ----------------------------------------------------------------
-> Adam Ford (4):
->       ARM: omap2plus_defconfig: Update for removed items
->       ARM: omap2plus_defconfig: Update for moved item
->       ARM: omap2plus_defconfig: Enable HW Crypto engine modules
->       configs: omap2plus: Enable VIDEO_MT9P031 module
+Hi, Rob:
 
-Looks like this branch had a minor conflict with one of your fixes branches.
-Easy to patch up, but feel free to use your fixes as a base for the topics if
-needed.
+On Wed, 2019-10-23 at 12:42 -0500, Rob Herring wrote:
+> On Tue, Oct 22, 2019 at 12:07 PM Matthias Brugger
+> <matthias.bgg@gmail.com> wrote:
+> >
+> > Hi Rob,
+> >
+> > On 21/10/2019 23:45, Rob Herring wrote:
+> > > The only reason the Mediatek driver doesn't use the CMA helpers is it
+> > > sets DMA_ATTR_NO_KERNEL_MAPPING and does a vmap() on demand. Using
+> > > vmap() is not even guaranteed to work as DMA buffers may not have a
+> > > struct page. Now that the CMA helpers support setting
+> > > DMA_ATTR_NO_KERNEL_MAPPING as needed or not, convert Mediatek driver to
+> > > use CMA helpers.
+> > >
+> > > Cc: CK Hu <ck.hu@mediatek.com>
+> > > Cc: Philipp Zabel <p.zabel@pengutronix.de>
+> > > Cc: David Airlie <airlied@linux.ie>
+> > > Cc: Daniel Vetter <daniel@ffwll.ch>
+> > > Cc: Matthias Brugger <matthias.bgg@gmail.com>
+> > > Cc: linux-arm-kernel@lists.infradead.org
+> > > Cc: linux-mediatek@lists.infradead.org
+> > > Signed-off-by: Rob Herring <robh@kernel.org>
+> > > ---
+> >
+> > I tested this on my Chromebook with some patches on top of v5.4-rc1 [1], which
+> > work. If I add your patches on top of that, the system does not boot up.
+> > Unfortunately I don't have a serial console, so I wasn't able to see if there is
+> > any error message.
+> 
+> Thanks for testing. I'm based on drm-misc-next, but don't see anything
+> obvious there that would matter. There are some mmap changes, but I
+> think they shouldn't matter.
+> 
+> Did you have fbcon enabled? That may give more clues about where the problem is.
+
+There are priv->dma_dev for dma device, but it is not drm device. In
+mt8173.dtsi [1], there are mmsys device and ovl device, mmsys device is
+drm device and ovl device is mmsys's sub device which provide dma
+function, so ovl is the priv->dma_dev. I think your patch directly use
+drm device for dma operation and this would cause dma function fail.
+Please use priv->dma_dev for dma operation.
+
+Regards,
+CK
+
+[1]
+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/arm64/boot/dts/mediatek/mt8173.dtsi?h=v5.4-rc4
+> 
+> Rob
 
 
--Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
