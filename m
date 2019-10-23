@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F081E0EDF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 02:06:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D6D4E0EE2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 02:06:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,74 +11,74 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=d4SmMIzbMQt1HgxQwzmcBuM/cVSNc9ejB27IaBxq7tA=; b=H1H1nlUhSCPUqDA3gRcSkCEkzm
-	ZCUPRCNPvHPbIjmcJeQA2vYcrl/XV8E8rNLbPQwGnJ21VDkdDrVqXZ87VPqa+wuNmCy5IfjhqG6dm
-	c5sTEAB7oU9X2Nb/iNg9uWIrjsacxECixElk9roawqwGNy2svdYUZI5K7zRPA8gJkNtL5bWe+Fcml
-	CzgSoXghgzxMUI7FByDEElgXB6WpEKbvGwBXGfWVNqII7i37LBoVMyrv8yanon9UUb4agYkwkChYv
-	8cqLEATN/DijXGKvZ9e7QOPONNthCJeKlt0Vwvd4k/uO/xZI72l+sA6IE2Q4QwGYpGz/fWHe8aJsm
-	7J3UvqnA==;
+	bh=KCmshpGssXBfOVWg3zOU3EyraUE4+D5qY+pzgTKQVkg=; b=T5oyEIRKJLa5RCBdQKdGYuaSUu
+	MrQgZqpwkT/jLZmb03Jp/HJK3BCzYnWA7Pb4UKtL562EUC/T+p8fk8MII0R+Ok1uy0G/ruEb6MOOR
+	5peKWKkPQbQCXu8wwZ44K0582BHrhpcshQ3kSbHyorNA7+qhToBkMBMt+TAggtrDh1Rx95eOZJqs2
+	fOrcTYMj1ob+nRYxAfcnDrR7ZrcmUjm6JXUNH9lto87YlPlPA1An5C3IZtRmI623jKHGC35kdXbbk
+	IIMUgOKno9CaRBaG0qFMC3LZ8CUqcX8cmtsjHqoo6jv/wFbXSzij+7RHixsZxEsxFCBYC/I1+JIh/
+	ZdBJTMlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iN4AS-00076L-Cc; Wed, 23 Oct 2019 00:06:24 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1iN4Ah-0007Nx-8q; Wed, 23 Oct 2019 00:06:39 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iN4A3-0006ws-IV
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 00:06:00 +0000
-Received: by mail-wm1-x344.google.com with SMTP id i13so3903030wmd.3
+ id 1iN4A7-0006yl-C9
+ for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 00:06:05 +0000
+Received: by mail-wm1-x343.google.com with SMTP id g24so9999312wmh.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 22 Oct 2019 17:05:59 -0700 (PDT)
+ Tue, 22 Oct 2019 17:06:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=gokM4n7dedwvMz3nVQdhJWZwmalfuzEvK8MTROAEiLo=;
- b=nmL2XLde2WB2uLAdxke8rA0HqWKBFJYeHsDDwcWrVgidimSdkjonniTpyTYGI5B6Ao
- finU+ZW9URhPGp5hmx0j+y4i7hYUTDE0eFMI5+F9gmi7J+KwWGfXLhDD/yu0i7LkWi4y
- xZrkLts/zyLMBDvsiwI6i5NXc/p4LVDXrJy1PUm9yB+shjeppAOsamV5PILKZNgb3KuS
- XLF0h1ajOIYYpe+9OKilKd+r1yvVsK/OAEOmDJ8kfpI0MeQya29a//NxYzfHOheqFts4
- nGHsKFpxMYULLljAiWBa5RMtNOjWCBeHjwuef4nK9nF3Mw7S+EX+XxeKfcglZ/0kMiWj
- Uj2w==
+ bh=UHr4crB3Dlo9CDtDYw06eX2hUAeMInOCDregffY1R94=;
+ b=ZhTu4zFIDCC2d1bvNTmeamTKakpEcalGy9udhPKNt1cQUWiJ+rCzQz82XXyMQHDqJv
+ UJCZz6zd/i8PE6urMg1yTNfDt7SOlIR+WYCdOSj5dMkAuw1Cq8q44MXqVdDyAMsM7vnW
+ Y/ZT6Z8/37dK/26p0vThbdaC3LW+M66H2xH+613Thh6apkUETaEyRll8JGmwjWp/NJ4q
+ 7Qh741sIjHHV2WKEeo5q9V1IFlANaqYvuxusUFEm2WHg5qVvYwBSD5CvNNkGzIttvA75
+ 1iGlIOw6dchx6RvOwcVvUu1fmbgiaSPI78cR6N7yzjryreDTeGnZqDd4tFZH3Y9E3fEC
+ 64Gg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=gokM4n7dedwvMz3nVQdhJWZwmalfuzEvK8MTROAEiLo=;
- b=ViiZCkR+63cbe6YKNGH5QDTDPqW9F06UgMR7uAM7FZUHT5UHENqKx66zb2hLLs/agw
- DigmpHhToPThZzy+Y18wb6kRRBlQMbHpUbHfJT2sN+QHY7zpl8cL9I2/goMHPEi3S4zC
- xQYrDQiQXDz6HsD41Btx7UObcPLFVKBh4I8hY9aaW1NDb/UP0fabJp3LjNyqpcE1sOn0
- AyjwM40onFrxgLxNRW6FiqtXQzGVFhkjpgsPCTHg8Bur50E9ERfjosAJPYItvjgpUfzu
- cLAoE+mMAPjbdNEn9hSaWk4iPaIxB7bVlNlIRDoZcfr2MYS+9HDUlUQcVSHvcr0OFvyk
- n2Tg==
-X-Gm-Message-State: APjAAAX1T/jVlmyVppIgihGjonLP9qK4V0Bsxbq0a6hvdJUaTtNcyod9
- P/vkBok/9jZDKNvx2AOdT00=
-X-Google-Smtp-Source: APXvYqzQiHMeCDDNoaK/Il7oXDsbZlPDZKvFYnqWF6/bPf9fzRds46WyFEcSpn4NOt4+HVP2eMqs/g==
-X-Received: by 2002:a7b:cd83:: with SMTP id y3mr5550699wmj.150.1571789157938; 
- Tue, 22 Oct 2019 17:05:57 -0700 (PDT)
+ bh=UHr4crB3Dlo9CDtDYw06eX2hUAeMInOCDregffY1R94=;
+ b=kq9xhBJlr/EVOIvSE07Zb2vgljUQW6tVL1CZcugeqMfjjmSEfe18FJ5ktje9qAt3Yh
+ 4oYRewxcsApezO55aPcyzXONxLyti8EhiqO+AZtGJ+QiK7pHIP6hVARLG1f/rSp0M3oV
+ uxfpNWt5HVMXUjvK/nJwPjsldvZnQtG72rrSqOaoYBJd/f0VXvjpvgcQlV49OaA/VfDw
+ M9cnF4Z5eiPgs6xHtWXayV/QZt76CydvtAWprdfIW5n2sO4QZovmlG/sdtT/nJ6cIP0I
+ MQ1eRmKjjdjs83j7gCPKn5+Ynb+IlmpNVCfBWnpaakTp4uKFbkGnWTjrFIz+RAmLN84s
+ eXug==
+X-Gm-Message-State: APjAAAVVVkoWX5gWRzLBZNntqDrsWGDp7JkF5c7hjL0KbSfQSuPMKnln
+ qXmpFa2BqEvJqisvsfFGgOc=
+X-Google-Smtp-Source: APXvYqx6vZAry8wKP1UL4roFWw7F2MAgBNgEr3xVlLLYA/CUqWDSAVYx61bir8gN0n5++tH8pFd/rQ==
+X-Received: by 2002:a7b:c313:: with SMTP id k19mr5396848wmj.6.1571789161462;
+ Tue, 22 Oct 2019 17:06:01 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id v10sm18500272wmg.48.2019.10.22.17.05.54
+ by smtp.gmail.com with ESMTPSA id v10sm18500272wmg.48.2019.10.22.17.05.58
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 22 Oct 2019 17:05:57 -0700 (PDT)
+ Tue, 22 Oct 2019 17:06:00 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH RFC 1/2] dt-bindings: Define interrupt type for SGI interrupts
-Date: Tue, 22 Oct 2019 17:05:46 -0700
-Message-Id: <20191023000547.7831-2-f.fainelli@gmail.com>
+Subject: [PATCH RFC 2/2] irqchip/gic: Allow the use of SGI interrupts
+Date: Tue, 22 Oct 2019 17:05:47 -0700
+Message-Id: <20191023000547.7831-3-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191023000547.7831-1-f.fainelli@gmail.com>
 References: <20191023000547.7831-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_170559_610554_635AD1E5 
-X-CRM114-Status: GOOD (  13.89  )
+X-CRM114-CacheID: sfid-20191022_170603_436375_42AD0A34 
+X-CRM114-Status: GOOD (  16.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (f.fainelli[at]gmail.com)
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -116,41 +116,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In preparation for allowing drivers to use SGIs, define a new value for
-the first ARM GIC interrupt controller cell to take a new value to
-specifically designate a SGI interrupt.
+SGI interrupts are a convenient way for trusted firmware to target a
+specific set of CPUs. Update the ARM GIC code to allow the translation
+and mapping of SGI interrupts.
+
+Since the kernel already uses SGIs for various inter-processor interrupt
+activities, we specifically make sure that we do not let users of the
+IRQ API to even try to map those.
+
+Internal IPIs remain dispatched through handle_IPI() while public SGIs
+get promoted to a normal interrupt flow management.
 
 Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- .../devicetree/bindings/interrupt-controller/arm,gic.yaml       | 2 +-
- include/dt-bindings/interrupt-controller/arm-gic.h              | 1 +
- 2 files changed, 2 insertions(+), 1 deletion(-)
+ drivers/irqchip/irq-gic.c | 41 +++++++++++++++++++++++++++------------
+ 1 file changed, 29 insertions(+), 12 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/interrupt-controller/arm,gic.yaml b/Documentation/devicetree/bindings/interrupt-controller/arm,gic.yaml
-index 9a47820ef346..2d0bfcbe4933 100644
---- a/Documentation/devicetree/bindings/interrupt-controller/arm,gic.yaml
-+++ b/Documentation/devicetree/bindings/interrupt-controller/arm,gic.yaml
-@@ -58,7 +58,7 @@ properties:
-     const: 3
-     description: |
-       The 1st cell is the interrupt type; 0 for SPI interrupts, 1 for PPI
--      interrupts.
-+      interrupts and 2 for SGI interrupts.
+diff --git a/drivers/irqchip/irq-gic.c b/drivers/irqchip/irq-gic.c
+index 30ab623343d3..dcfdbaacdd64 100644
+--- a/drivers/irqchip/irq-gic.c
++++ b/drivers/irqchip/irq-gic.c
+@@ -385,7 +385,10 @@ static void __exception_irq_entry gic_handle_irq(struct pt_regs *regs)
+ 			 * Pairs with the write barrier in gic_raise_softirq
+ 			 */
+ 			smp_rmb();
+-			handle_IPI(irqnr, regs);
++			if (irqnr < NR_IPI)
++				handle_IPI(irqnr, regs);
++			else
++				handle_domain_irq(gic->domain, irqnr, regs);
+ #endif
+ 			continue;
+ 		}
+@@ -1005,20 +1008,34 @@ static int gic_irq_domain_translate(struct irq_domain *d,
+ 		if (fwspec->param_count < 3)
+ 			return -EINVAL;
  
-       The 2nd cell contains the interrupt number for the interrupt type.
-       SPI interrupts are in the range [0-987].  PPI interrupts are in the
-diff --git a/include/dt-bindings/interrupt-controller/arm-gic.h b/include/dt-bindings/interrupt-controller/arm-gic.h
-index 35b6f69b7db6..2dcc394b7b6b 100644
---- a/include/dt-bindings/interrupt-controller/arm-gic.h
-+++ b/include/dt-bindings/interrupt-controller/arm-gic.h
-@@ -12,6 +12,7 @@
+-		/* Get the interrupt number and add 16 to skip over SGIs */
+-		*hwirq = fwspec->param[1] + 16;
+-
+-		/*
+-		 * For SPIs, we need to add 16 more to get the GIC irq
+-		 * ID number
+-		 */
+-		if (!fwspec->param[0])
++		*hwirq = fwspec->param[1];
++		switch (fwspec->param[0]) {
++		case 0:
++			/*
++			 * For SPIs, we need to add 16 more to get the GIC irq
++			 * ID number
++			 */
++			*hwirq += 16;
++			/* fall through */
++		case 1:
++			/* Add 16 to skip over SGIs */
+ 			*hwirq += 16;
++			*type = fwspec->param[2] & IRQ_TYPE_SENSE_MASK;
  
- #define GIC_SPI 0
- #define GIC_PPI 1
-+#define GIC_SGI 2
+-		*type = fwspec->param[2] & IRQ_TYPE_SENSE_MASK;
++			/* Make it clear that broken DTs are... broken */
++			WARN_ON(*type == IRQ_TYPE_NONE);
++			break;
++		case 2:
++			/* Refuse to map internal IPIs */
++			if (*hwirq < NR_IPI)
++				return -EPERM;
++
++			*type = IRQ_TYPE_NONE;
++			break;
++		default:
++			break;
++		}
  
- /*
-  * Interrupt specifier cell 2.
+-		/* Make it clear that broken DTs are... broken */
+-		WARN_ON(*type == IRQ_TYPE_NONE);
+ 		return 0;
+ 	}
+ 
 -- 
 2.17.1
 
