@@ -2,82 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8EA8AE1D69
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 15:55:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80E71E1D7F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 15:58:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JALT+i4en2kv/Gch75Zcw5nU1yt1UUMZ/b/E4dlzsxw=; b=GINS57kdjZW3SQ
-	J/2V4smIY8rwqSA2dY5PsKkthT9MNvF12L4nHF0b0kEeibVR/9HeCQhMdIxPa4rM3yAArwEfE8AqZ
-	/rDwCY3kM6TkwDJy3AFz0wci+PmBbV5owPyFiNlmDAwMIKG4W1ZhsU3GgQL/iItwSxqh5fQPsHubn
-	UutZixRt9EjXFmcvqqrwKE9ArQ6Xc/ndT8zIh4i5IIO4Mzvt0ND1DIQajRmLSTGbSOXxkAPc8QMCH
-	oNOi3JNiZU45zlcxRiJY7ICdWTg121NxU+3miGhsJwU8R69IGzXTI9Xc0xFrJ8OR4f01pJpG7Fu2y
-	vVc1/cb5mLkHvTMN4Kag==;
+	List-Owner; bh=4IDuejfCnj4K8Ch/pgT5B4lG6oYvea+yXZ5w3yVUNz4=; b=Eo6Ab8Iun2Qekq
+	ZPGKRApA89W/kH4QcF8AlW9GWT2q0ZK8yCdykKEQwUEeQVv+ZsKAJSmhgL0o+abo/3yVYSGCzlRqo
+	VN0F4yAd/7TrmURWwnSvd5rZx8duGeTElSfQJeoq0XjiNQ2qSJ9Gv9uU2wH+TbFp9WP5k8lU31xVG
+	LK8yYTJ0nIJ65mLauMh1yI/FduOPw/davxIjDBi9WLDU2tgY+0t+JGCAFKfyCEPM24N/e8qLzmlPt
+	6Da2VRDUfvCaVEe7TkVO2Y30s8vKTL7urLz1G6esdCJXrQ+0TGGvDoCjFPT3qJYjtUbiRiORZ8Cgt
+	u4NrrkJSCRsfJviWDgAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNH6L-0008Hd-CO; Wed, 23 Oct 2019 13:55:01 +0000
-Received: from mout.kundenserver.de ([212.227.17.24])
+	id 1iNH9Y-0001m1-RX; Wed, 23 Oct 2019 13:58:20 +0000
+Received: from mout.kundenserver.de ([212.227.126.134])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNH68-0008Gp-E5
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 13:54:49 +0000
-Received: from mail-qk1-f172.google.com ([209.85.222.172]) by
- mrelayeu.kundenserver.de (mreue107 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1M6m5o-1iMhXU0rcM-008G7C for <linux-arm-kernel@lists.infradead.org>; Wed,
- 23 Oct 2019 15:54:46 +0200
-Received: by mail-qk1-f172.google.com with SMTP id f18so19209440qkm.1
+ id 1iNH9O-0001lA-Qy
+ for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 13:58:12 +0000
+Received: from mail-qt1-f174.google.com ([209.85.160.174]) by
+ mrelayeu.kundenserver.de (mreue012 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1MP2zs-1idfwK1HTQ-00PLdq for <linux-arm-kernel@lists.infradead.org>; Wed,
+ 23 Oct 2019 15:58:08 +0200
+Received: by mail-qt1-f174.google.com with SMTP id o49so24563552qta.7
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 23 Oct 2019 06:54:45 -0700 (PDT)
-X-Gm-Message-State: APjAAAXjLUQe6PBZl7XihVHQ5VeppBQwSvhgU63STWOpugJ8wesFFbSA
- GyWmYv2td+xTYoe9Rwu+iIMMORqO37ZJrI3dH8I=
-X-Google-Smtp-Source: APXvYqwg1GMH8QdNiqBQrXGE6tBmtG4ranjbu2NqBzx98xXXHvxcSSud6NSUY0ZDvcAUkWXJquc0IymGFTx7V0wKlHc=
-X-Received: by 2002:a05:620a:4f:: with SMTP id
- t15mr8358153qkt.286.1571838884945; 
- Wed, 23 Oct 2019 06:54:44 -0700 (PDT)
+ Wed, 23 Oct 2019 06:58:08 -0700 (PDT)
+X-Gm-Message-State: APjAAAVvHET0g0VJV+c/x/nhG0iZehskODh8nDEXPgFy4Mt25q51oByS
+ WP2tJfOR2jXU1oar4udVyk8H3EXZk/tfPlym02o=
+X-Google-Smtp-Source: APXvYqxJH+IQGSDqFR3s406c31Lil6nKN+3+UehR3Vy6jXtDo7t9tSTK3nMWgp2PtcXo9B5NCXhOUradIyavMq47Rwo=
+X-Received: by 2002:ac8:729a:: with SMTP id v26mr9069953qto.18.1571839087129; 
+ Wed, 23 Oct 2019 06:58:07 -0700 (PDT)
 MIME-Version: 1.0
 References: <20191010202802.1132272-1-arnd@arndb.de>
  <20191010203043.1241612-1-arnd@arndb.de>
- <20191010203043.1241612-33-arnd@arndb.de> <20191023134956.GK11048@pi3>
-In-Reply-To: <20191023134956.GK11048@pi3>
+ <20191010203043.1241612-31-arnd@arndb.de> <20191023134420.GJ11048@pi3>
+In-Reply-To: <20191023134420.GJ11048@pi3>
 From: Arnd Bergmann <arnd@arndb.de>
-Date: Wed, 23 Oct 2019 15:54:28 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a1LVo0vfngK_7z-a0nC_t_v85OE8epke2XAFYH9EW821g@mail.gmail.com>
-Message-ID: <CAK8P3a1LVo0vfngK_7z-a0nC_t_v85OE8epke2XAFYH9EW821g@mail.gmail.com>
-Subject: Re: [PATCH 33/36] ARM: s3c: move low-level clk reg access into
- platform code
+Date: Wed, 23 Oct 2019 15:57:51 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a3qTgBkWnuVRa-90b1d6grGhm7R2ef92YdkVmUr0Fw23g@mail.gmail.com>
+Message-ID: <CAK8P3a3qTgBkWnuVRa-90b1d6grGhm7R2ef92YdkVmUr0Fw23g@mail.gmail.com>
+Subject: Re: [PATCH 31/36] ARM: s3c: cpufreq: use global
+ s3c2412_cpufreq_setrefresh
 To: Krzysztof Kozlowski <krzk@kernel.org>
-X-Provags-ID: V03:K1:jnMV1WfIKgiiYsRDmAz1jSbSTs6Pzem00DV4PVonvO+Gzzl9swd
- YPIWMI1T4fCUhXtZDnFgNSGh6VlFo5+lq0cP3qXwjlBLoEJJA5JDJ7xQD06LL5cWfk0U5/w
- 0Y86TmXn9/8AVEopLghtIxVbeL+9dX0GT9MQCpcHOQ3j5OJDRsWecPlYg5Nk5IHt7qWQ9Ke
- 1Rvzp2zHu0ncFyb2qXt4w==
+X-Provags-ID: V03:K1:GLe8QobF9yCpS8WmSs9o5ZsbiyyJtQpa56TR7BVrXRcSNv51kDy
+ I5a8ZmczeAH+HhTdpT1xWBAgbOXdoeomp5Yw5fdyaOB7xBYNzBCWiVLWXUTIF59ZEjcijCa
+ B7deAOmJ9alIDJLhOzRsLSYy8xBPZ2pz7vI+sHsn3sfAUIUQB2R88oW+hijyXTVP9BJvdlW
+ 03Q63PjiapNH7M4XrW5jw==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:ayi6LZVvU9U=:rtCGjvagEQOvAsk2ynxlPI
- 6vZkE1+58YnK6QIY5/cUgW8WfSB0ngGtHIZrNgDgW0z9ssYMRgZjGNDR+i0No4M9FUWsD7NjZ
- a4+2lm240XEf6EOaPlirwJp/GIr9Y/0Y1gMx6Q5T84Qzy+TbJSGDu2o1HbowWBqEUbCsdphLt
- 0Kq7yPj7BeMCzmmpcLCGmYaea5iyIitOHRdZF0QVuJAFxvd6HHo/0aTPvH8Zhb4ZPHwfRUBRc
- IUm1IaxTAYJ9uL/Ir/MehYOfH6eC9omhpYMlmS6gZUzFXCmT9GUbv9aKEWZF3x8JrCnevdJI7
- sIe7VcJ/nU65VaZgjxT5I/aOCqKScjQXsQfL5B8QII0t4bLQZr5EcIcIEnxr7Vw9cndoRqywt
- 5tsZ9OWmR93/uBkU5+F3Qp1VEBdSMZffJBJKo6SeujKcag3AcCAODknGSTqu4mmHvsV42D54p
- fN5qLshWmk9NQzQ5vNaq2rt4KyUxyfPXzpgt9aYLsa2Yr5LE6LLvfOtEkifFa+W3W6+slE9ns
- uCbOYQP52n2vBZkSJYCCPTmFb6d3qQr7OweLrW2IO5J8G0r/U1jHhRkLwyQ38sNN2fOr5Sp3m
- CRdYZF5TWSe1w3mtFeuh2/mNs1+7/85WbBGoUzoEUJ6vc06M45dJBsgzRG9WYqTQ9atQu701T
- phFkV5gtxvQEfkHXsdYL7f/8l1sxpY19aB2SMAhHeVdO5iXIFjlheujY5a9BTD6TpbI70nUqq
- FNRvFMYM8gne7nEKoUQ93OKJP6nppSOHDvSp3ZTHqhElTKOaqhIc3yfR6KnJc7jnpuvQlyHNn
- qZ2ED8flWuCqN6gdJTS6wfvDNlQHp4hYNnxygkleqgz9TQwqL40eRkyPZosGglH1XwjWBwImp
- NlWU3ZGbjgoH5MNz56DQ==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:P9qpwMirU+o=:K2tR3oKIo6riUzsOPsg33l
+ sETXptRlfACByOj2PK2McMX8HYJZLADCuFa0Tv9s0GNjCeALax0jD/UIklyXsn/lNTVtY2ZEl
+ q415EHVr9uncVAcBlf3Wf23wls0win1F0SaDX6IPtU6ZyKP+tKXv450txx+grHrp+oFySr12G
+ EtDrHxdFsGbcM/vDNUsIbIvPZcl8ZdCYSeFDueMDXyuvRcqsfU/gR+8dPQqHWgM9B/bAx+B3Q
+ VzxsH3DhP9B8Q/jw+C7DlM1hdObWn37O+/vixV50HLOPCLT7BSSefSlHfgyGNc5qE2BmJ6DEP
+ AKDlpYWNV2rJ4iAWnlkBTIXjrhmLddmswIOF3yws33ZXwwuEQAU66Gol+ou3p2dhLFCh+xVxD
+ T6OCxHMWzRvpOoGR/KFk8s9W0ZN5UtNH+JTXJE87+CZFs3/H3xFlwiTTlhXA9E7I4groRBDzi
+ QaAMI17zcWMzD0MGPUCObeiqBDgIdNXcgtJqcqDVmMlW09BF1Y1OtkYbL9ldONdMQ0hveZh+x
+ 8Qs2efQHDi2pEzjTR/7TGzEmIr5CvhgWbyiFO2+n6N+gokFPtWPXb13kyPez1Qw2+yx7W92IG
+ l/QDmRkphNEVqwLUoKrNWzoruWvMT2X3lgD1AxQrOXGz1bvLzmlkMD+E/IDFTOQECPp6HDj7o
+ Pudf7Lq0/x52n4yLbhC+Zkh9kh4aB4RWcSABBVbbPBYnEIRiyu56RWlqnI4yf4dCc8673mU2G
+ wpgF+pGJkP8MrH9que+Tbn9X1g/yF28J7jDGHNrWnufMhjlix/hTivwmwkwvZTPHf0gUAu1YJ
+ KfvpTLxCbiFBvlfha7URq6o3EIuRyiyTAAyjHTnV2uRLJ8blDvnoKwHwlTgdU6dpUPUT6tCj0
+ D4c7FTj5/G7fF0YnZ7DQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_065448_773645_ABE8B5A7 
-X-CRM114-Status: UNSURE (   9.53  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191023_065811_162833_183F22CE 
+X-CRM114-Status: GOOD (  12.56  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.24 listed in list.dnswl.org]
+ no trust [212.227.126.134 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -104,19 +102,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 23, 2019 at 3:50 PM Krzysztof Kozlowski <krzk@kernel.org> wrote:
+On Wed, Oct 23, 2019 at 3:44 PM Krzysztof Kozlowski <krzk@kernel.org> wrote:
+> On Thu, Oct 10, 2019 at 10:30:15PM +0200, Arnd Bergmann wrote:
 
-> >  # common code
+> > @@ -246,6 +246,7 @@ extern int s3c2412_iotiming_calc(struct s3c_cpufreq_config *cfg,
 > >
-> > -obj-$(CONFIG_S3C2410_CPUFREQ_UTILS) += cpufreq-utils.o
-> > +obj-$(CONFIG_ARM_S3C24XX_CPUFREQ) += cpufreq-utils.o
+> >  extern void s3c2412_iotiming_set(struct s3c_cpufreq_config *cfg,
+> >                                struct s3c_iotimings *iot);
+> > +extern void s3c2412_cpufreq_setrefresh(struct s3c_cpufreq_config *cfg);
 >
-> Drop also here S3C2410_CPUFREQ_UTILS entirely.
->
+> I think that it does not cover the !CONFIG_S3C2412_IOTIMING case.
+> Either you need to provide also the empty stub or add default=y to
+> S3C2412_IOTIMING. Otherwise cpufreq driver might end up without this.
 
-Ok, done.
+S3C2412_IOTIMING is not currently optional, it always gets selected
+by ARM_S3C2412_CPUFREQ, unlike S3C2410_IOTIMING which is
+only selected by specific boards for reasons I don't understand.
 
-      Arnd
+        Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
