@@ -2,51 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E54FE1269
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 08:47:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F988E126F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 08:48:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d9IjtvpGucDdbYDGByEtipiddf4NM1Ljzg2gXudrWfk=; b=eaS+w8uisOfvG9
-	2Z3xWXfqg59jDm8UltgzfOAJhuQn1EoXvwWhDj9g1rLwDX8mlPHBRih3lsis8qKNeXsFZUvgeBXZ4
-	1+goUfZhWaHDK0Acbn1LjvpxZrHZwwHmHj7waZR7V4DeB58P3uAPZU1IOt/4rg5qbotWvuTvlM46m
-	ft7jRkCzAfjlPhuWvuYAXsuLLYcLu6LgyJiGkTus05IgjnwqN6kdRPUe5pV/Z13/YlFFlgHhrp6Y3
-	cujU/yhxAFvoQD3pOQLM0elLOzDRO/jWfmqrpDlovF5Gut8GXzYIOCZKeXHY1DcRE6UlR+yPxfHTZ
-	zwml9UqFZ+tsvMwY8G+A==;
+	List-Owner; bh=lI4kWvIDvrbhv0IzkQ1OmDajObz9ei0cDNtc8qLbGAQ=; b=cHCZjfZQdrwc/d
+	I/FmAsjd6zOnwpgphDEjQwI49FAebAM51J6Ay3R1HzSE+lB9E6l1DspJgdr2ZiYujtARAv1p3T1q8
+	niN+6J3mvVE4V+f7rm6NHlJx9am748tw1CoofjdK9J41dsI+4PfiYih3/upMNHW71Doc74KIy6Q2J
+	gLjeIkKCxxH7Lmpzo8oRWEt91UtVOiayroCv+ty/LURbLui0Bp5wZUkFVgxJD4BwZYniWaoq34fNq
+	zuAkjdb6tov5HVQw4cRqCslzgWO2OnTW9L5Ze6wl73FQCneoFqbEEY56cB3A1dAehmzLRyY39WC3m
+	CfsFME+mqJRYK60KqvJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNAQf-0007FJ-LI; Wed, 23 Oct 2019 06:47:33 +0000
-Received: from mail-ve1eur02on0614.outbound.protection.outlook.com
- ([2a01:111:f400:fe06::614]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
+	id 1iNARk-0007XY-Ni; Wed, 23 Oct 2019 06:48:40 +0000
+Received: from mail-eopbgr70042.outbound.protection.outlook.com ([40.107.7.42]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNAQW-0007CT-8N
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 06:47:25 +0000
+ id 1iNARY-0007X0-Ho
+ for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 06:48:29 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=HN9K3MnQ63qqaP4HpChs76bNFqQMO6gi4uIWSQS0q5XLeMMWldztXiMiUXpKQZNvTcofR2pcrpUgc9Y5wikXJ3w4ZkiMhbp8a+gV7HO5besjd/IS1hXXVYm4ITDrTaUuAS4k9MMwCkn14MbMxWX/GgTX6t4gProCCpGQpWPUj/h4RT2PthahOK5gyt6Bj4KZk3ChNKSDUIXHp10NVs8pQF4/kKjG2/DTzWwCGdRby4sgHhNYfLDpWIjAFVhHpaA9vevjVOienpGtVR6Jsdl4Z4jZ1YdRarkX1NL2XqRes9GuL/0W83LgqIoTwBhIOtG3v9WUGUvdxUFVE9PiYIEiBw==
+ b=JjgKGwFUDC0vxykAnrqLRQJBCV2c5BOUtfPpCxeTAPPhw+9rMGjZGFKFcf65IdxJamfl9yw5qZFVynUcqfj4owsrLqUa85AQneSVTSxcbaELPnZKd2JqDzMJbMISIOywVPnJLEJ41+7oxglzpoKoVDnu87iPleOqqVqnzjIDOR6jX4te6d+EC6j59ts3PhEhkE9/JupC36/MlAulvO0I3v4lw6ocdcXwDqfd8rpJ5lxefJkvyV3fQ1HkuPPWvT04pxSLPUeNcL3FCF40SDWa8Zt20YCFl976q+Kb6x2VWn/fURqTxkqshetZ3s1JHySUSTth3NXMd+53NX2fGWNK0g==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=V3D3w+S36N9OlDu0Hq2S2Xj/LiUgg2sXTDH6hem3Cn0=;
- b=EWMKq3D8ne3mbolVjisb6M1hq+S2cY+5i06OScj0FAkmdilCdOfNqXlEy0ivcDavAUaUov6avnqEAZ+1H/9LHiOlvsT9+hoIVUkwVw82W5QY3KGEPy1WPvkkpgsvFtqZ7SA2/h+4pgM1PsKIe8lKRmqVSmL4tv7BdorUfSApvJj8tQ4nP212xug4M+zNJ//aDPQDb+LaPVFDmF57vmslQCbFTHRQwt3rE/AObF9H3cO5cI/EqDqpo0f5MAeu5U6hn8ltkZJ9+2+XmMyAmMHisLthK9kwdCw/yZKFFfVNx65BsczcCf/APAaKDE6Aunm/1cXNWA6749Hl1vibjU9xVg==
+ bh=hidAdPdzkEpK/e/fJQSeFOby+oop34J6oEDhBtSY+qM=;
+ b=cOtGS8ecB2qHjb/maer31BrfZ9GcnSxalIL4/4Lh21t6OHxM5h+XtMlYnjfmXvBvEMVPee+LuapmHUrQMrQejZS2cy6pYVvm/yrMlGnc+BRz0eGy/Q6CCHoFNRIA4l3KjVOKyBXJlLvk4tf19tGG82V9Ot685GYDCT2GkIdpdDHE69vjeDP/zXETyGd4b4AhtfBmEV6c4cxe25XAqNrBblyTtyRSDhlKs4rbgmlqglRpuus6BBo54eXUyge8y/4OZi9StBtWkypZe8HVJSQEMp+MXQHII9sLy7KsdP8XhJbyc2x9hWnueqrG8cXE9aKqdwJo+nbpQjvTmYXRoLLwpg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=V3D3w+S36N9OlDu0Hq2S2Xj/LiUgg2sXTDH6hem3Cn0=;
- b=K79/iDQs/edDeVkLYG/8xTEmDhTVPKaQmHezqgwPADFtnS+qJyojtqQuUF43k7IPCKTQv71yZmr/8c6HKpAphgv6yiJQEAGlrT0uCRlk2kyAI4TgRyYC40DbC0hD3jIJUfi2iYBngI51FA501ubQXm+2ZmM2vI/9QiSS7hcetuk=
+ bh=hidAdPdzkEpK/e/fJQSeFOby+oop34J6oEDhBtSY+qM=;
+ b=saF7jt8b7Rcj6V5XK2jzc5Et9K9OChzUxHAunHVyWcC8SXAGFSlVeuUC7FsRiPWnk1aXn/Yqz0gURw5r6HZU9oM4oFnFsXY2/RgcHSWrJ/TOQgv26JNad6cj908Ssb+PFPP+O8mM2pv1QGOXoyM/AD3jrajmeeV9EaP1SLQVPJg=
 Received: from VI1PR04MB4094.eurprd04.prod.outlook.com (52.133.13.160) by
- VI1PR04MB5903.eurprd04.prod.outlook.com (20.178.205.77) with Microsoft SMTP
+ VI1PR04MB5710.eurprd04.prod.outlook.com (20.178.125.210) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2367.21; Wed, 23 Oct 2019 06:47:19 +0000
+ 15.20.2347.28; Wed, 23 Oct 2019 06:48:24 +0000
 Received: from VI1PR04MB4094.eurprd04.prod.outlook.com
  ([fe80::b835:b58c:26b2:ca8f]) by VI1PR04MB4094.eurprd04.prod.outlook.com
  ([fe80::b835:b58c:26b2:ca8f%7]) with mapi id 15.20.2347.030; Wed, 23 Oct 2019
- 06:47:19 +0000
+ 06:48:24 +0000
 From: Daniel Baluta <daniel.baluta@nxp.com>
 To: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  "robh+dt@kernel.org" <robh+dt@kernel.org>, "devicetree@vger.kernel.org"
@@ -58,16 +57,15 @@ To: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  <linux-arm-kernel@lists.infradead.org>, Anson Huang <anson.huang@nxp.com>,
  Leonard Crestez <leonard.crestez@nxp.com>, "kernel@pengutronix.de"
  <kernel@pengutronix.de>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>
-Subject: Re: [PATCH 2/2] arm64: dts: imx8mn: Remove duplicated machine
+Subject: Re: [PATCH 1/2] arm64: dts: imx8mm: Remove duplicated machine
  compatible
-Thread-Topic: [PATCH 2/2] arm64: dts: imx8mn: Remove duplicated machine
+Thread-Topic: [PATCH 1/2] arm64: dts: imx8mm: Remove duplicated machine
  compatible
-Thread-Index: AQHViWxkvmnb0NFVUUmALMBBLKBKQqdnyJSA
-Date: Wed, 23 Oct 2019 06:47:19 +0000
-Message-ID: <350019d21e2e4f2d6e815b1d08a270eb69811441.camel@nxp.com>
+Thread-Index: AQHViWxjRVElS5Fll02b6XXQulFHGKdnyOGA
+Date: Wed, 23 Oct 2019 06:48:24 +0000
+Message-ID: <1b7a2290851c051236eb66263a10ca96cc54b3a1.camel@nxp.com>
 References: <1571812481-28308-1-git-send-email-Anson.Huang@nxp.com>
- <1571812481-28308-2-git-send-email-Anson.Huang@nxp.com>
-In-Reply-To: <1571812481-28308-2-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1571812481-28308-1-git-send-email-Anson.Huang@nxp.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -78,52 +76,51 @@ authentication-results: spf=none (sender IP is )
 x-originating-ip: [89.37.124.34]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: deef5a8b-3ea9-4c29-b7a9-08d75784d9bf
-x-ms-traffictypediagnostic: VI1PR04MB5903:|VI1PR04MB5903:
+x-ms-office365-filtering-correlation-id: fabd60c7-f2c5-479a-5ae0-08d757850051
+x-ms-traffictypediagnostic: VI1PR04MB5710:|VI1PR04MB5710:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR04MB5903A1040B2090D5C6FD0CC1F96B0@VI1PR04MB5903.eurprd04.prod.outlook.com>
+x-microsoft-antispam-prvs: <VI1PR04MB5710A8314EC291A7F38B4E10F96B0@VI1PR04MB5710.eurprd04.prod.outlook.com>
 x-ms-oob-tlc-oobclassifiers: OLM:4303;
 x-forefront-prvs: 019919A9E4
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(346002)(39860400002)(366004)(376002)(396003)(199004)(189003)(186003)(316002)(8676002)(110136005)(81166006)(50226002)(2501003)(305945005)(76176011)(102836004)(81156014)(26005)(99286004)(118296001)(8936002)(7736002)(6506007)(5660300002)(71200400001)(71190400001)(6512007)(2201001)(36756003)(86362001)(6436002)(6246003)(4326008)(256004)(14444005)(91956017)(229853002)(6486002)(6116002)(4001150100001)(3846002)(4744005)(2906002)(25786009)(66066001)(14454004)(478600001)(44832011)(66946007)(2616005)(64756008)(66476007)(446003)(66446008)(76116006)(476003)(486006)(7416002)(66556008)(11346002)(99106002)(32563001)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5903;
+ SFS:(10009020)(4636009)(376002)(39860400002)(366004)(396003)(346002)(136003)(199004)(189003)(11346002)(2201001)(2906002)(36756003)(446003)(316002)(486006)(86362001)(110136005)(3846002)(6116002)(5660300002)(229853002)(25786009)(2616005)(476003)(7416002)(44832011)(2501003)(4744005)(6246003)(6506007)(71200400001)(71190400001)(305945005)(91956017)(4001150100001)(118296001)(99286004)(7736002)(76176011)(4326008)(14454004)(76116006)(66446008)(66556008)(64756008)(6436002)(66946007)(66476007)(186003)(6486002)(256004)(14444005)(50226002)(102836004)(81156014)(478600001)(66066001)(8676002)(6512007)(26005)(81166006)(8936002)(99106002)(32563001)(921003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5710;
  H:VI1PR04MB4094.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: q01YBo0ZoqCPaqjfjjObqcD4OIVMO68EqzuztUm186HZn+InJyGVkO1FjMQKRmlqAqwAn5LpwkuckYylCD73PGlLxfgNXkEgpA9FaWfR1ovbQu7cGak6x9WPfp8f7wB6L+Dq7J14CZZgQaIIRgrn5VEuAauS0euIh5BXQnR4SxLyGUrLxcVtshNXHK0gz8wBMADgVX0OoAMYJ0t0e+AtJY7X5uMYZ853PImZHgqS8gWlacpdDOy50lI1lceEGXNJEvy+sAaiQVkveBuqRkpp9WH87Xt8SUxqBZDU3STc88SjV0syHWe1cvOD3jEHxJUtRorFqQJ/eHFX5WipHNhvVfopZT11406OvvJo+YFWUEsg0OoaqpzmnEQ9akptpk8NuxqIXj93BwuRsrGJlNpTmqmk2ImLwPYg2K5g7tnNRMQJUqZXghM81fBh2u5azBgY
-Content-ID: <C600F8888CCD2747AED605AFA5A3A1D2@eurprd04.prod.outlook.com>
+x-microsoft-antispam-message-info: /b762f7flnO1RjHqlryzgjThk33hnQz8yR1fLNZFlWADufEFqFE/emuh0YyuDV+LhL0wIYBGGfDyJAFUv6jA/8Y3xod3GlJ+Sv5AFevB3vTve7QMP4IhEPNd+zP4lGM0j1oSUTa69kZlblDSpds1bPP3comC0kNkpFHRG0MeHXL1Agy2qc9B5m/Nq3CyVUPqjaZo9gw9aeJY1dsts+RvJmNabM5fH9U4E/T1EDFKAuCftol/84Vs0/gu6HRmrLKp813pK/YphIL0OVL//wRrceDEtgXbUqRPouH8OdXWFFyJeXiKSW/Vh1uTJMD8feNDcky3tPnrbBwZMMO2QS1IoAldZ1dmHEpFzcQp9sn7e39ULzNGzgj992W4ucxm+r4YjhY8OUYamRoktzamMXWd/XyKM9rE7XQGYccuvYwqqqKnsG1OjNtobsmU8L7F+xXx
+Content-ID: <006D86FE64EB55448FAD648DE0068501@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: deef5a8b-3ea9-4c29-b7a9-08d75784d9bf
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Oct 2019 06:47:19.5714 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: fabd60c7-f2c5-479a-5ae0-08d757850051
+X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Oct 2019 06:48:24.2513 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: /Flv2SD9tjirToarQyADJqR1Oc/mFy+JjxgYowt+ZRU3Lb+2hRjj1UJS28kDg0UhsLeroiTl63tLXgJpYsdoYA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5903
+X-MS-Exchange-CrossTenant-userprincipalname: tU7Vy1h8fKMu6Z+pAh9VER/906YcYVyV86GXfcD6bWYyskikk3I4j0JZGeVCQOCgi4h5R/g2sv6GXSZ8WpDY/Q==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5710
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_234724_300831_CDE610AD 
-X-CRM114-Status: GOOD (  12.77  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20191022_234828_591552_B561C447 
+X-CRM114-Status: GOOD (  12.96  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe06:0:0:0:614 listed in]
- [list.dnswl.org]
+ no trust [40.107.7.42 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 1.0 FORGED_SPF_HELO        No description available.
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -150,19 +147,19 @@ On Wed, 2019-10-23 at 14:34 +0800, Anson Huang wrote:
 Reviewed-by: Daniel Baluta <daniel.baluta@nxp.com>
 
 > ---
->  arch/arm64/boot/dts/freescale/imx8mn.dtsi | 1 -
+>  arch/arm64/boot/dts/freescale/imx8mm.dtsi | 1 -
 >  1 file changed, 1 deletion(-)
 > 
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-> b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-> index 46c218e..7341549 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-> @@ -11,7 +11,6 @@
->  #include "imx8mn-pinfunc.h"
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> index 9258150..5ff9b6b 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> @@ -12,7 +12,6 @@
+>  #include "imx8mm-pinfunc.h"
 >  
 >  / {
-> -	compatible = "fsl,imx8mn";
+> -	compatible = "fsl,imx8mm";
 >  	interrupt-parent = <&gic>;
 >  	#address-cells = <2>;
 >  	#size-cells = <2>;
