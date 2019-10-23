@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 363B5E1BD5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 15:11:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CEE48E1BF7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 15:13:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wF9Cp28emMj88uQE1AfcKCMiTuwkULS0HraItP8tAww=; b=AvNQS6l5dEtv2f
-	59RP7jv/S+S7UVRIP+l0P3e/VP9mrCeTDheN99TDjmmJczWEb7htJpUVvTz+WGTjr4MVA+m8+xe6C
-	ZTEsmZfhkvXywVCtgFOS6zHglNcWa1r9yQRTn8UpYCd4ce/y4oDD3jDTheeqt8KqKtd7BPp/glrts
-	Ci7yo0Nd12zus3f5ZB8b2ABBhOdwIX6Eu8fIvDwW4t0ZuQGH4v9JkQSjR7L0yHWg/Yt5/CcJIMoU4
-	qNQw3TwOS7KssQc4pwhbZGdl7KaODR1Sn63eRr+NVnXQp6YtGgcKbuZppLdoeNWbucaJCvphg4k4e
-	GnmjMJ8q3I8YtT8N7bsQ==;
+	List-Owner; bh=zUUtWPeYMkAQtF+ksnWgcnmspcbeGWX+AtnU7TWrCT4=; b=TvpyLhelfhlxPy
+	Llu66SUJ0gk3daw1Zv7okyLSAcpMlH9NprHFsV9/TK5ELxehEADhn4yJAIJJDcWEWwWVSPgbJJIei
+	c3EfvXR1282mvUSQcU1g5tEW/ejVhtCwHqcs+Pg0dMbXjj/5CmdxYfhWRCdNW9A/xhUwkC4JjZ3+m
+	4lLpaqjVzOZlMbFvv4YNY/yJRaxuB/yDzEdNFj46tlndSmMLHKI5HAgO/KcGL/gVWRuvyBcRjGeop
+	LgVJdL7njdfbFGBzA6Oh5lI1c44BOXYcT50G3aizNTBNfNHUQFamTa7txJY/muL0kkpvp7E4P71Fi
+	HaBtXTt/izzDReJ3wQZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNGPo-0003eE-5h; Wed, 23 Oct 2019 13:11:04 +0000
-Received: from mail-ed1-f67.google.com ([209.85.208.67])
+	id 1iNGSB-0004eP-Cz; Wed, 23 Oct 2019 13:13:31 +0000
+Received: from mout.kundenserver.de ([217.72.192.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNGPe-0003dt-DH
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 13:10:56 +0000
-Received: by mail-ed1-f67.google.com with SMTP id r4so15715848edy.4
+ id 1iNGS0-0004dU-4T
+ for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 13:13:21 +0000
+Received: from mail-qt1-f180.google.com ([209.85.160.180]) by
+ mrelayeu.kundenserver.de (mreue108 [212.227.15.145]) with ESMTPSA (Nemesis)
+ id 1N7Qt9-1hw8bx2KmT-017n7n for <linux-arm-kernel@lists.infradead.org>; Wed,
+ 23 Oct 2019 15:13:16 +0200
+Received: by mail-qt1-f180.google.com with SMTP id u22so32112976qtq.13
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 23 Oct 2019 06:10:54 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=lzwXfyhUE7yc9zrzbjqMe71sKuHvjq9U3aqm0Bd1AoI=;
- b=dtGKoUN3FeMiFW3n96I3uKuT/YoJhIFX4KPMUdAimwyAx51tiso6nuYee0x6SdhPh2
- GV0rykjEftkxAvnLGVYp6WOf3EGbgII1Kf0NAf4QLjPqrcehKCmMhP20xOYz+SxBQiQV
- zw+HerFNOuVP3xAEqRQSDLaDVKUiSdo5iFrBtAxnJNF+j1nMrVpfIWrEl3pCriYlY9gK
- k25CQ4kzCd5RQkO3Hl3c+3GPqqokm2VuZnYFWT1PAuGghNyLwO2pGxZs7nKoCuXAX063
- rI7wzrL8eEAjZ5tIGhPjoK7yMIDZIhGmaf5hlm3N7DAWPksrjMGzrib9xJXaqQWfbPp7
- mpGQ==
-X-Gm-Message-State: APjAAAVcP3M5UzqH3mkIqd3DrLMY5pZRSy8nELId7aCAv1i9FlqMsenb
- GH2NgcNS+UzyihP3NPb9/qk=
-X-Google-Smtp-Source: APXvYqyft44OcCGb0xN0+fC1gmfK8usNRgvA/I5KY4vuTv2zLifQ5kptU9qNo1AQahi2rM4m7Aa/dg==
-X-Received: by 2002:aa7:c595:: with SMTP id g21mr36717915edq.79.1571836252860; 
- Wed, 23 Oct 2019 06:10:52 -0700 (PDT)
-Received: from pi3 ([194.230.155.217])
- by smtp.googlemail.com with ESMTPSA id b12sm785479edq.75.2019.10.23.06.10.50
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 23 Oct 2019 06:10:52 -0700 (PDT)
-Date: Wed, 23 Oct 2019 15:10:49 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH 00/36] ARM: samsung platform cleanup
-Message-ID: <20191023131049.GG11048@pi3>
-References: <20191010202802.1132272-1-arnd@arndb.de>
+ Wed, 23 Oct 2019 06:13:16 -0700 (PDT)
+X-Gm-Message-State: APjAAAV/ZCNuf/QXjYmodfDK7U5j8abWnBbPMRai/BgV5Qe5BTthWLdn
+ vRxIg8hnFYLG8zY2B5/ryA69G9L7TNPMM0V9dtQ=
+X-Google-Smtp-Source: APXvYqwyklGa+hU94PEjBetixWY4koQXLl44bdA7QqFGHctKg3vHkVWCQgnQFCjrA3OSGO0d2Jdn/TI29o9nax1bT50=
+X-Received: by 2002:ac8:33d4:: with SMTP id d20mr8948137qtb.204.1571836395377; 
+ Wed, 23 Oct 2019 06:13:15 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191010202802.1132272-1-arnd@arndb.de>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+References: <20191010202802.1132272-1-arnd@arndb.de>
+ <20191010203043.1241612-1-arnd@arndb.de>
+ <20191010203043.1241612-10-arnd@arndb.de> <20191023115544.GA11048@pi3>
+In-Reply-To: <20191023115544.GA11048@pi3>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 23 Oct 2019 15:12:59 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a0s6VCujZRbFN3NkoX=LDw0jwYJg01xOnSdn=DM3TKm1Q@mail.gmail.com>
+Message-ID: <CAK8P3a0s6VCujZRbFN3NkoX=LDw0jwYJg01xOnSdn=DM3TKm1Q@mail.gmail.com>
+Subject: Re: [PATCH 10/36] ARM: s5pv210: use private pm save/restore
+To: Krzysztof Kozlowski <krzk@kernel.org>
+X-Provags-ID: V03:K1:7jpCH4wbZ3mom998TeRfucGftc65nlPkeOxmGc5FmysffDs+zcj
+ 1e2z16YLWskrUyBT5ZJlAClIFiJr/RZQgJLKOGOasoP7rrXY2vvWtNgUrwEJK80Rt3rr6Tj
+ OR5C3QKYTKyvageEtF6kDAlW0gRzZ9K9AiTv2ak09fglRY62PEdfJL2UAzi0kTcn6tkakUN
+ iF1eIquMN5oCTPANOkt/w==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:8FB4l+smsy4=:q4Ccs+/cJ6mxY/afYvwf0D
+ oC3UeGTOhe4TPM/aWe4bS33llZlovEI3iiTGBebvOl+sDJ4CMrkqbd8CSlgP3k4hXgjrAXzbG
+ bypJtuz7jq2yIlIBGuxt8liMwb2amZEAALbXPVPBqYwwAMLQmvac3dNX1AlzAANwHizWIWPWQ
+ 9rMqu51O/2rHLe18w9NtSR5NFN4FtDU16Chj1WA8qVkHTqKzl0KHwU3OnaWDL3qbSLF7OtVPZ
+ XzWkze/0AJHd+xpO7vtcal9LPvYf/pmeFywTS7kMZnXIuQig9Gcin7uHpD+IPwT5gdRaTqfFv
+ 4TEcMMFwT7XBoUgfnPDtdNQ87WDORzjEeajxVnAnzb6Z55775HdPUrSfyHlKzGHhqM2jWMNyS
+ XUvr1o0JNLbPgdwJZV4fBTNaBI2dL0nHF/hFxo45/eD+g3vRe/QVJibOBEEKlV8T8E3OVylW9
+ PpTrhD1CXhrvB6Ngky6p7J/vPblnf08ew4JvaKc7wVGuI38azFb3q9Rwmb2u6DLekwjFrCzsU
+ OUjXKN4bh+YzoXk+HVAgdJTB6NRu5lzC+Up4BU0wlDMgVHfAslBf6HgPFDIgCPr9BgGxFfEVm
+ j2zbieY+IqjhALHeX3XZHz8FBygMt78/djzfDhjvDdRqxQwUL870xj5PApwp0HlGl0fq4i+Gv
+ sHrajlEZnCFQ7SpX0kb2zGDkndY3Gztd1BooyPVfNvSTaQks+Maxr1Tp/s9SA0Ig+XJ3huUOd
+ KK0kTBINHPiBF/DXsKT/Xo1NMjBPikyvIisepAFiPGsT7K+F4PJgZKMSYtuMPNNDXFaLXhTY/
+ RMmsJkX94GwT5sdFBekrS2r8obbc08xjMGHQG3mP3kDfYG+8IuXOU0nwD6J6ey88TZlbmsWwI
+ P8kI+vJsbOipZd7fLOaw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_061054_449234_42945C9D 
-X-CRM114-Status: GOOD (  13.02  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191023_061320_477919_AEC3BED8 
+X-CRM114-Status: GOOD (  13.81  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.67 listed in list.dnswl.org]
+ no trust [217.72.192.74 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.67 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,49 +88,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-fbdev@vger.kernel.org, alsa-devel@alsa-project.org,
- dri-devel@lists.freedesktop.org, Sylwester Nawrocki <s.nawrocki@samsung.com>,
- linux-clk@vger.kernel.org, linux-leds@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- Lihua Yao <ylhuajnu@outlook.com>, Kukjin Kim <kgene@kernel.org>,
- linux-serial@vger.kernel.org, linux-input@vger.kernel.org,
- =?utf-8?B?UGF3ZcWC?= Chmiel <pawel.mikolaj.chmiel@gmail.com>,
- linux-pwm@vger.kernel.org, Sergio Prado <sergio.prado@e-labworks.com>,
- linux-pm@vger.kernel.org, Lihua Yao <ylhuajnu@163.com>,
- linux-arm-kernel@lists.infradead.org, linux-hwmon@vger.kernel.org,
- patches@opensource.cirrus.com, linux-usb@vger.kernel.org,
- linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "moderated list:ARM/SAMSUNG EXYNOS ARM ARCHITECTURES"
+ <linux-samsung-soc@vger.kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
+ Tomasz Figa <tomasz.figa@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVGh1LCBPY3QgMTAsIDIwMTkgYXQgMTA6Mjg6MDJQTSArMDIwMCwgQXJuZCBCZXJnbWFubiB3
-cm90ZToKPiBJJ3ZlIHNwZW50IHNvbWUgdGltZSBsb29raW5nIGF0IHRoZSByZW1haW5pbmcgQVJN
-djQvQVJNdjUgcGxhdGZvcm1zCj4gdGhhdCBhcmUgbm90IHBhcnQgb2YgQVJDSF9NVUxUSVBMQVRG
-T1JNLCBhbmQgdHJpZWQgdG8gZ2V0IHRoZW0gY2xvc2VyCj4gdG8gdGhhdC4gSGVyZSBpcyB3aGF0
-IGNhbWUgb3V0IG9mIHRoYXQgZm9yIHRoZSBzYW1zdW5nIHBsYXRmb3JtczoKPiAKPiAqIEV4eW5v
-cyBhbmQgczVwdjIxMCBhcmUgbWFkZSBpbmRlcGVuZGVudCBvZiBwbGF0LXNhbXN1bmcKPiAqIGRl
-dmljZSBkcml2ZXJzIHN0b3AgdXNpbmcgbWFjaC8qLmggaGVhZGVycyBmb3IgczNjMjR4eAo+ICAg
-KGFuZCBvdGhlciBwbGF0Zm9ybXMgbm90IGluIHRoaXMgc2VyaWVzKQo+ICogczNjMjR4eCBhbmQg
-czNjNjR4eCBnZXQgbWVyZ2VkIGludG8gbWFjaC1zM2MsIHJlbW92aW5nCj4gICB0aGUgbmVlZCBm
-b3IgcGxhdC1zYW1zdW5nIChJIGhhdmUgb3RoZXIgcGF0Y2hlcyBmb3IgdGhlCj4gICByZW1haW5p
-bmcgcGxhdC0qIGRpcmVjdG9yaWVzKQo+ICogbWFjaC9pby5oIGdldHMgY2xlYW5lZCB1cCB0byBv
-bmx5IGJlIG5lZWRlZCBmb3IgQkFTVAo+ICAgUEMxMDQgbW9kZSAobG9va2luZyBmb3IgaWRlYXMg
-dG8gcHJvY2VlZCkKPiAqIG1hY2gvaXJxcy5oIHJlbWFpbnMgZm9yIG5vdywgdGhpcyBzdGlsbCBu
-ZWVkcyB0byBiZSBjb252ZXJ0ZWQKPiAgIHRvIHNwYXJzZSBJUlFzLgo+IAo+IFNvbWUgYml0cyBh
-cmUgYSBsaXR0bGUgdWdseSwgYnV0IG92ZXJhbGwgSSB0aGluayB0aGlzIGEgYmlnCj4gaW1wcm92
-ZW1lbnQuCj4gCj4gVGhlIGNvbnRlbnRzIGFyZSBhdmFpbGFibGUgZm9yIHRlc3RpbmcgaW4KPiAK
-PiBnaXQ6Ly9rZXJuZWwub3JnOi9wdWIvc2NtL2xpbnV4L2tlcm5lbC9naXQvYXJuZC9wbGF5Z3Jv
-dW5kLmdpdCBzM2MtbXVsdGlwbGF0Zm9ybQoKV2hlbiBzZW5kaW5nIHYyLCBjYW4geW91IENjOgoK
-UGF3ZcWCIENobWllbCA8cGF3ZWwubWlrb2xhai5jaG1pZWxAZ21haWwuY29tPgpMaWh1YSBZYW8g
-PHlsaHVham51QG91dGxvb2suY29tPgoob3IgTGlodWEgWWFvIDx5bGh1YWpudUAxNjMuY29tPiBp
-ZiBvdXRsb29rLmNvbSBib3VuY2VzKQpTZXJnaW8gUHJhZG8gPHNlcmdpby5wcmFkb0BlLWxhYndv
-cmtzLmNvbT4KU3lsd2VzdGVyIE5hd3JvY2tpIDxzLm5hd3JvY2tpQHNhbXN1bmcuY29tPgoKVGhl
-c2UgYXJlIGZvbGtzIHdoaWNoIHRvIG15IGtub3dsZWRnZSBoYWQgd29ya2luZyBTM0MgYW5kIFM1
-UCBib2FyZHMKc28gbWF5YmUgdGhleSBjb3VsZCBwcm92aWRlIHRlc3RpbmcuCgpCZXN0IHJlZ2Fy
-ZHMsCktyenlzenRvZgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL2xpbnV4LWFybS1rZXJuZWwK
+> > diff --git a/arch/arm/mach-s5pv210/regs-clock.h b/arch/arm/mach-s5pv210/regs-clock.h
+> > index 2a35c831a9b0..8c7530614e37 100644
+> > --- a/arch/arm/mach-s5pv210/regs-clock.h
+> > +++ b/arch/arm/mach-s5pv210/regs-clock.h
+> > @@ -9,7 +9,7 @@
+> >  #ifndef __ASM_ARCH_REGS_CLOCK_H
+> >  #define __ASM_ARCH_REGS_CLOCK_H __FILE__
+> >
+> > -#include <plat/map-base.h>
+> > +#define S3C_VA_SYS           ((void __iomem __force *)0xF6100000)
+>
+> The same as for one of earlier patches - I prefer to keep the S3C_ADDR()
+> macro for consistency.
+
+Ok, done.
+
+As the constant is only used in arch/arm/mach-s5pv210/pm.c and the
+s5pv210_dt_restart() function, I think it would be best to use ioremap()
+here and remove the constant as well as s5pv210_fdt_map_sys() and
+s5pv210_dt_map_io().
+
+That can clearly be a follow-up patch.
+
+> > diff --git a/arch/arm/plat-samsung/Makefile b/arch/arm/plat-samsung/Makefile
+> > index d88b9b84f3a9..025ce22876c1 100644
+> > --- a/arch/arm/plat-samsung/Makefile
+> > +++ b/arch/arm/plat-samsung/Makefile
+> > @@ -24,9 +24,7 @@ obj-$(CONFIG_GPIO_SAMSUNG)     += gpio-samsung.o
+> >
+> >  # PM support
+> >
+> > -obj-$(CONFIG_PM_SLEEP)               += pm-common.o
+> > -obj-$(CONFIG_EXYNOS_CPU_SUSPEND) += pm-common.o
+>
+> CONFIG_EXYNOS_CPU_SUSPEND looks unrelated and seems to be not needed at
+> all. Can you remove it in separate patch?
+
+Done.
+
+        Arnd
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
