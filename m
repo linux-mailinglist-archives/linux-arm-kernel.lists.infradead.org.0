@@ -2,118 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 091E5E2403
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 22:09:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04BF2E2411
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 22:10:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cAblCrmurkp8d2YjBOO37DqYS1MXolPjTxUjS5IOQv4=; b=kfkiK0ObNDtV7q
-	2L6tpGpm6ZEmoQM6FogMLZW4MCIha/IDXHLIQCkQBfZxqbsh7UDjWBen6iQUkISvumTilcFPrgOjO
-	BTla+ibkTHjN7Tj9WGF7GbMlY1N+33vqdqwiws6X2HYBn8kdmUJwD9wuh/ITfY1PqfQuXwitVVOWL
-	7EPEjGhCVWPMJ8raSEc+GfOmdIdkpZLe9Tfj8mw3ywemPcw3IuEleDeABVxJdcLO254669GV+EX6F
-	rJSwUDSYXUeALGQse9Y8CZhizvBVIY0yJDhVdYpelPXWlCajsHWrpVOUwR3rodXy5++5qXvvqBEZU
-	6Z+EWBwVecbbl7D704OQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YTejHh+KBzxwCky1ie9z4ps0ICH1EgeZt0FmKHJHwuQ=; b=a4h6k4faky2lhN
+	Nwftd4ycuRolP67vqXehEKaYBncksvCGQt7HXbhZu36cJw9HLKBbX2PZiXYSr76nLMRxMZZ6UdV9E
+	qZjerDituOSHX1znFfabI+NLSSFIJyShVe1WKvPXKA9SP7I7BhmjeK+Modgn0FKXaOdxe6QEiQqXA
+	TwmxebmzOTRNnBR536gTmGaBS/Fc4DlYvJ11kjuBRO3r4e9lkyIfrFveNhWDjHuRe5T+s8pq7jD0Q
+	aLz24TKjjk1NToVpBnNAw0dKjmoxVgsTsS5rhc0j3hDq1rx7jAwL2YlXdT+eH3dy4nu0V5n+O7jx/
+	ebde9B5k9Up56IuV5omg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNMw9-0004TR-7N; Wed, 23 Oct 2019 20:08:53 +0000
-Received: from mail-ve1eur02on0603.outbound.protection.outlook.com
- ([2a01:111:f400:fe06::603]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
+	id 1iNMxo-000696-9D; Wed, 23 Oct 2019 20:10:36 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNMuU-0002qx-MA
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 20:07:16 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=HavgujDjrOJaUDO/kjV29ZFyxa48586+e+olwiBRD0KGfzR52XIMixIaBAx+YrmyLaHjkjM0bbp6tWEK1PXWmRtVCYbQfrlLcXlqleUj9q0vk10+8LOMUiZtsx8I2jX7QgZgBuNYtuN/iVfxU8CaT4HuRUOOXHLChfFiKb6bSXpQZM8EBjwAL5BOLfbUgSa3tAXiwOoNKP3JpeznSpaZXBBzu5Wbdzzc/1OOtalb8ZDoibvWM/Lu0wYxnruqeVtzCyCP9xkmsbudtAesrBgQjVuacVUmGTPWj2mut6EDST8Nk2N9Y6GSwFY9FnWQ+CgrbxvDMjq4m6wkkeBOUX7asg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=btlRay3yp9k/vMTHvGvVM5ycBW7OvOsN5xwkzn1H+v8=;
- b=G4Him6BKajnKsZ9kKZC6grfF7AT+jV8G6J1L708Fuu2NHzmeLVULJp49mah3n9rfNgF3TMc02CUXAlNuI+Wsf728Z2/tp1ZhMPfmZkVC/uZXaKbbDgA1uUmr91M61uZefRPXwQXLkxZAI13tb/9asiIHHbyfG5134qmvu0v4Kn37Wu+dC3ytLP/QP1eLsIfwZsQkEToYGznSyynFA6tSwqcTOd933YICG6QXipjtV5DClbh1FsFKPRFgPEYSN31Z5itLj8++2d33owM4jeFIq+nYmExD7rsrEsRnb1kZ5t03KG5yNS7/1o6a727hvulA5r3agCDzKrFPL+vWUm2LXg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=btlRay3yp9k/vMTHvGvVM5ycBW7OvOsN5xwkzn1H+v8=;
- b=SlGscV6umKHhArMOVP73SRAVDdMC9z+oS0OeerUe4vfOXyPgdR+FVQBKbbISxsSFjjRXBTFCmEfsX4OJQSYMbEi4kqtg3WVAAPFx2Mewa8ySfxuCYJ8EiDFZ8jsT+yARKFTGl2vSvJ5ATlBJiEpPkucNJpz4jyR4wHgk61YduOg=
-Received: from VE1PR04MB6687.eurprd04.prod.outlook.com (20.179.234.30) by
- VE1PR04MB6687.eurprd04.prod.outlook.com (20.179.234.30) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2387.20; Wed, 23 Oct 2019 20:07:05 +0000
-Received: from VE1PR04MB6687.eurprd04.prod.outlook.com
- ([fe80::c93:c279:545b:b6b6]) by VE1PR04MB6687.eurprd04.prod.outlook.com
- ([fe80::c93:c279:545b:b6b6%3]) with mapi id 15.20.2387.019; Wed, 23 Oct 2019
- 20:07:05 +0000
-From: Leo Li <leoyang.li@nxp.com>
-To: Ran Wang <ran.wang_1@nxp.com>, "Rafael J. Wysocki" <rafael@kernel.org>
-Subject: RE: [PATCH v9 1/3] PM: wakeup: Add routine to help fetch wakeup
- source object.
-Thread-Topic: [PATCH v9 1/3] PM: wakeup: Add routine to help fetch wakeup
- source object.
-Thread-Index: AQHViXs7pjvy0YmnJESZ+DezIHv14qdn72mAgAAM0YCAAKtBgA==
-Date: Wed, 23 Oct 2019 20:07:05 +0000
-Message-ID: <VE1PR04MB6687A70243B9764F1356442C8F6B0@VE1PR04MB6687.eurprd04.prod.outlook.com>
-References: <20191023082423.12569-1-ran.wang_1@nxp.com>
- <CAJZ5v0jvQaREhg94f-COdYTt58gMP7YvqdEH0oYiS9Z56tg-XQ@mail.gmail.com>
- <DB8PR04MB68261D8B18D39DF170ECC7C8F16B0@DB8PR04MB6826.eurprd04.prod.outlook.com>
-In-Reply-To: <DB8PR04MB68261D8B18D39DF170ECC7C8F16B0@DB8PR04MB6826.eurprd04.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leoyang.li@nxp.com; 
-x-originating-ip: [64.157.242.222]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 9e96d190-6828-418a-7fbe-08d757f493cf
-x-ms-traffictypediagnostic: VE1PR04MB6687:|VE1PR04MB6687:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VE1PR04MB6687EA5F673D647B8B2839D98F6B0@VE1PR04MB6687.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
-x-forefront-prvs: 019919A9E4
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(39860400002)(376002)(346002)(136003)(366004)(51914003)(199004)(13464003)(189003)(55016002)(476003)(186003)(71190400001)(71200400001)(256004)(14454004)(6436002)(446003)(26005)(7696005)(5660300002)(52536014)(478600001)(66946007)(14444005)(53546011)(11346002)(54906003)(76116006)(102836004)(25786009)(99286004)(66476007)(64756008)(8676002)(8936002)(81156014)(66556008)(66446008)(110136005)(81166006)(9686003)(305945005)(6246003)(86362001)(7736002)(229853002)(4326008)(316002)(33656002)(3846002)(6116002)(6506007)(76176011)(486006)(2906002)(7416002)(74316002)(66066001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR04MB6687;
- H:VE1PR04MB6687.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: OO6dGbREqJKG2+d0hxBuOb4FGQa2VqQOCXMD1cYaEZxkpcDhYQlNdHsK0RvR7EGt7WAlXbOY3iqHOBY47Zohy2wTwA018vu3g0jhgwMse1zUsQ+26QhV04mp9x1EHrTSUyFK/fadosrqo90PbDAWcZRmM7wBzAvsMUqFRn9jHOL5X9cSDzSlMcROteYXwyOlWbpKMA47ggBog4axZgTfIxP2uwuCexRr6fRsrEbf0OiIRyczp8dCY35/BzBc5C7Fs70IP8HzKfkrcVKLBnm2PaQFgf5Ya7Lz2yMIde1uiPBQr2iz56eh8mCAZymri8y/6FIwZZOP+UJbn9uZ7bB1vYXSldfaTzT0Unj2HwMSg2LQ4qK0xD2aZJcjZ7P1TKchRig01jOTfL7gdhxYPuCbeu15YWOmj4rbaQBCsOz43oFMU0S4g8KbU0EmKSifHePa
+ id 1iNMxZ-00068f-As
+ for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 20:10:22 +0000
+Received: by mail-wr1-x442.google.com with SMTP id w18so22924649wrt.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 23 Oct 2019 13:10:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=bpwS+F/PeAnITy9k+IFP+J0FMYCUcRVSLDnqP4k8tK4=;
+ b=hBvZU4+rsFkkIkAEUe2UK9p+3+5+JWXtPl1AZcdpLaBuLUxk+tc9T4L0jRNaLQMGVw
+ L+y3LVknu1uoc9CULFzf8dej8BNFwUTSnBIZzaZ6iMqnEGcQ10BglL/pjhbRsbFxA0nG
+ TUqdThzwoDwZu8AijYEmyE0CjhaPz4jnW2qwRoJzTgGNO4lhQchAbhoHa8LC0QfcPbOv
+ g1q9PZPUfgx5oe/ytQHpOxqMmbMNySxPiEVN4Udp/G5hmQpBdyBv4D+tK0ktG3Ky/40m
+ h+3TAhalZNBLSbza7mE3tyVo0jG0X1Kgu7C9aFGpwlAh61iL9Qo30+bbPsMNkVnN2H8m
+ 4Cnw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=bpwS+F/PeAnITy9k+IFP+J0FMYCUcRVSLDnqP4k8tK4=;
+ b=VfN9BaL/GsFyq1tZA966Q+tlz3BNCM3OZT9x3Kp2y68kXMo1vgTnmsadxeHVTXWfq9
+ yjjepas51I42x6AvYW7ugPnGqeZ29pDfmf3qETT2AjMvfUCu1gFbXWGOjbcmS1VkDd4e
+ 7KRb6jkgq5wLXg+/oIUBBpWZhbJrrFxCPOa3a1lakErfMMRRN/G6zv3FP7MdJDWmKXo5
+ 5hxfM/fscwIwEcaFF125aDdJzqxV+UA3nqnH20A1aeyjsFk4/eNwW3Sn4Mi/8sfaCcu0
+ 3L/AHEle6tIY3twP01rF3FaUwWQuLsmz4gLExxa+w8sJda3rSOewWcdxtfVj70mvi7Hx
+ RYZg==
+X-Gm-Message-State: APjAAAWtnwcNZPDxsY0HTgwLBUyDqWSUvnBcEwbuQNYE3mgB2EBKWvTV
+ vQLeElBWQExNOlAds8VL30s=
+X-Google-Smtp-Source: APXvYqwp9Wm0ez8TH/4MwrhNc/lRRV96afQBfhg751QLdG3fu7ojJDzZdlM9I3dHNw1gPuQ8UjiZig==
+X-Received: by 2002:a5d:568b:: with SMTP id f11mr449675wrv.301.1571861419759; 
+ Wed, 23 Oct 2019 13:10:19 -0700 (PDT)
+Received: from Red.localdomain (lfbn-1-7036-79.w90-116.abo.wanadoo.fr.
+ [90.116.209.79])
+ by smtp.googlemail.com with ESMTPSA id h17sm277261wmb.33.2019.10.23.13.10.18
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 23 Oct 2019 13:10:18 -0700 (PDT)
+From: Corentin Labbe <clabbe.montjoie@gmail.com>
+To: davem@davemloft.net, herbert@gondor.apana.org.au, mark.rutland@arm.com,
+ mripard@kernel.org, robh+dt@kernel.org, wens@csie.org
+Subject: [PATCH v2 0/4] crypto: add sun8i-ss driver for Allwinner Security
+ System
+Date: Wed, 23 Oct 2019 22:10:12 +0200
+Message-Id: <20191023201016.26195-1-clabbe.montjoie@gmail.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9e96d190-6828-418a-7fbe-08d757f493cf
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Oct 2019 20:07:05.8581 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: uTzE0P3KOt4dSHYh0h8rQSpS+5NMzbTXut0jK51yIPTM1gZAEvvgellZmsYOW/QSdVfREHtTQ799fqkHqB6YXA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6687
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_130710_824488_997A91F7 
-X-CRM114-Status: GOOD (  16.86  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20191023_131021_376566_EC57C722 
+X-CRM114-Status: GOOD (  11.80  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe06:0:0:0:603 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (clabbe.montjoie[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 1.0 FORGED_SPF_HELO        No description available.
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -125,82 +99,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Biwen Li <biwen.li@nxp.com>,
- Anson Huang <anson.huang@nxp.com>, Len Brown <len.brown@intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux PM <linux-pm@vger.kernel.org>, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Pavel Machek <pavel@ucw.cz>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-sunxi@googlegroups.com, Corentin Labbe <clabbe.montjoie@gmail.com>,
+ linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hello
+
+This patch serie adds support for the second version of Allwinner Security System.
+The first generation of the Security System is already handled by the sun4i-ss driver.
+Due to major change, the first driver cannot handle the second one.
+This new Security System is present on A80 and A83T SoCs.
+
+For the moment, the driver support only DES3/AES in ECB/CBC mode.
+Patchs for CTR/CTS, RSA and RNGs will came later.
+
+This serie is tested with CRYPTO_MANAGER_EXTRA_TESTS
+and tested on:
+sun8i-a83t-bananapi-m3
+sun9i-a80-cubieboard4
+
+This serie is based on top of the "crypto: add sun8i-ce driver for
+Allwinner crypto engine" serie.
+
+Regards
+
+Changes since v1:
+- fixed uninitialized err in sun8i_ss_allocate_chanlist
+- Added missing commit description on DT Documentation patch
+
+Corentin Labbe (4):
+  crypto: Add Allwinner sun8i-ss cryptographic offloader
+  dt-bindings: crypto: Add DT bindings documentation for sun8i-ss
+    Security System
+  ARM: dts: sun8i: a83t: Add Security System node
+  ARM: dts: sun9i: a80: Add Security System node
+
+ .../bindings/crypto/allwinner,sun8i-ss.yaml   |  64 ++
+ arch/arm/boot/dts/sun8i-a83t.dtsi             |  10 +
+ arch/arm/boot/dts/sun9i-a80.dtsi              |  10 +
+ drivers/crypto/allwinner/Kconfig              |  28 +
+ drivers/crypto/allwinner/Makefile             |   1 +
+ drivers/crypto/allwinner/sun8i-ss/Makefile    |   2 +
+ .../allwinner/sun8i-ss/sun8i-ss-cipher.c      | 438 ++++++++++++
+ .../crypto/allwinner/sun8i-ss/sun8i-ss-core.c | 642 ++++++++++++++++++
+ drivers/crypto/allwinner/sun8i-ss/sun8i-ss.h  | 218 ++++++
+ 9 files changed, 1413 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/crypto/allwinner,sun8i-ss.yaml
+ create mode 100644 drivers/crypto/allwinner/sun8i-ss/Makefile
+ create mode 100644 drivers/crypto/allwinner/sun8i-ss/sun8i-ss-cipher.c
+ create mode 100644 drivers/crypto/allwinner/sun8i-ss/sun8i-ss-core.c
+ create mode 100644 drivers/crypto/allwinner/sun8i-ss/sun8i-ss.h
+
+-- 
+2.21.0
 
 
-> -----Original Message-----
-> From: Ran Wang <ran.wang_1@nxp.com>
-> Sent: Wednesday, October 23, 2019 4:53 AM
-> To: Rafael J. Wysocki <rafael@kernel.org>
-> Cc: Rafael J . Wysocki <rjw@rjwysocki.net>; Rob Herring
-> <robh+dt@kernel.org>; Leo Li <leoyang.li@nxp.com>; Mark Rutland
-> <mark.rutland@arm.com>; Pavel Machek <pavel@ucw.cz>; Anson Huang
-> <anson.huang@nxp.com>; Biwen Li <biwen.li@nxp.com>; Len Brown
-> <len.brown@intel.com>; Greg Kroah-Hartman
-> <gregkh@linuxfoundation.org>; linuxppc-dev <linuxppc-
-> dev@lists.ozlabs.org>; Linux ARM <linux-arm-kernel@lists.infradead.org>;
-> devicetree@vger.kernel.org; Linux Kernel Mailing List <linux-
-> kernel@vger.kernel.org>; Linux PM <linux-pm@vger.kernel.org>
-> Subject: RE: [PATCH v9 1/3] PM: wakeup: Add routine to help fetch wakeup
-> source object.
-> 
-> Hi Rafael,
-> 
-> On Wednesday, October 23, 2019 17:07, Rafael J. Wysocki wrote:
-> >
-> > On Wed, Oct 23, 2019 at 10:24 AM Ran Wang <ran.wang_1@nxp.com>
-> wrote:
-> > >
-> > > Some user might want to go through all registered wakeup sources and
-> > > doing things accordingly. For example, SoC PM driver might need to
-> > > do HW programming to prevent powering down specific IP which wakeup
-> > > source depending on. So add this API to help walk through all
-> > > registered wakeup source objects on that list and return them one by
-> one.
-> > >
-> > > Signed-off-by: Ran Wang <ran.wang_1@nxp.com>
-> > > Tested-by: Leonard Crestez <leonard.crestez@nxp.com>
-> >
-> > OK, thanks for making all of the requested changes:
-> 
-> Thanks for your patient direction :)
-> Actually Leo and me planed to have a f2f discussion with you about this patch
-> on LPC 2019 but unfortunately missed the opportunity finally (v6 review was
-> pending at time).
-> 
-> > Reviewed-by: Rafael J. Wysocki <rafael.j.wysocki@intel.com>
-
-Thanks for the review.
-
-> >
-> > and please feel free to push this through the appropriate arch/platform
-> tree.
-> 
-> Yes, we will do this later.
-> 
-> > Alternatively, please let me know if you want me to take this series,
-> > but then I need an ACK from the appropriate
-> > maintainer(s) on patch 3.
-> 
-> Thanks again, I will wait Leo's comment on patch 3.
-
-I will do another review on patch 3 and apply the series through my soc/fsl tree.
-
-Regards,
-Leo
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
