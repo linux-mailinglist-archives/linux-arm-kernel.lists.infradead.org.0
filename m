@@ -2,83 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F1F5E1137
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 06:51:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 297EAE11C6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 07:42:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0iKCxaKYOo15+OUNq2wxwdd+CrwIoIvdDGs93HVhUqw=; b=d6/NNgMuZqaG41
-	/Mrp66bzFxmqMgqcSk8Kq8iiWeZp3P4nJKAF+oCiei5wrPNwFHu9E86+FwLyuBWVZl7xlxcSSFqmF
-	GmeXBgqoRYvuv01qSjBRkFypa6exES+CylAIr4LBk4/qHlMzVPxTO4XjHJbPJS4FjakOYCNfzO2pz
-	2eQlM85x6c/T9rDRpqlFLmRBV2F/aQwOa59WsZWfzxXGsvFVTz2sgX/1MXSm2xjUduBOPHzTu27RD
-	14MeYjBfuv5V9vkbjVjWRQyGZv2vGAgUsDVefEJxzfAqC+T7JsxnriknYrAnSzOOPeDthYZeSuZe1
-	ElJjIuqmqTNGKiysoaMg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ISLLCDzq++tja8v8WMFvOMkw4qVbMJjFyUffH3EzIbE=; b=kSmv92LtsfY8YC
+	T3s61ygwP0jGpGRoYQ6mujT+fbG7CNKvS6LhA2Ni9ySMe5yQ0LDgNbPs5sUFt1LXqNfjUyt3scuok
+	jlYa1HEqLzG0ATZuJkGTJ8lko9dS4nXo4OJn4SWHOGQ34IZ1tXXSFuO3QpX9BBtFQHT+hqousOKeK
+	NjKcIm86Kn+bYtIfRPMmp1zeHuYLlIPW/iilMm0r2FFv0MI5TeYCtG0PXyVECtxABtOey9hkpSBtM
+	L4x2MkNWfvRgqa2ZdnTsenLH4cNCh40A9oqyCsRDo+FCSOoXfagnEQO+oG/8fTzTjPuTzyqnlkVJl
+	yIeNHtMbDoERQVy7B55Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iN8c8-0007Cr-MP; Wed, 23 Oct 2019 04:51:16 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1iN9Pk-0007Gx-Ao; Wed, 23 Oct 2019 05:42:32 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iN8bz-0007C9-81
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 04:51:08 +0000
-Received: by mail-io1-xd44.google.com with SMTP id i26so14002590iog.9
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 22 Oct 2019 21:51:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=OKxxrxrRmQ9OEs+TDHwbhEPuOlHTRldEW91bPkMwe+Q=;
- b=IRpEwZZlH/NAmDOc3Du/eDq/g+6Akr2uQN+kUqqLGi0wZTRTzWoKAPqu9spG3AFt5C
- 5juvxtVr6WBPWT4HaSsFXNSytOWs1BOd59LjkzyUNpWOBrwfcifGhbnB+sfIYJuXCIq1
- 1l/3l5qvC3626rlS1xRPCcTwJ9+ksmo3D3b4kcW9+Kf8x8HL60Ojp/8024pg0XDqINi+
- VXXoKRVxuItscwoVyM8fjc8FlpWMmw+ydN4eD83AxEKSaQumjs/101MqmW9BgSMvVFbW
- fbTb0EQHTQpxT12fe4hi3g18dPuawSTN8ZIclIeRxsy3xxiW9vNf8gTGSlVbbcb9sGCm
- rqnQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=OKxxrxrRmQ9OEs+TDHwbhEPuOlHTRldEW91bPkMwe+Q=;
- b=pAXcgSBgCww+gG6+epA6Tmb/bWcaYQN3DrYk50og9TVQBzhOGP4dTIWQfmjPCbfpgj
- BG7m7sEJEw1vCtF4NsjgjELz94v+cpPrSkyE87e4M/qrq/MuweMezh0lm8gpYGOcWbv8
- soKZr0B3fNutq5xw67Oles+iOb94VK9drmNByV67Hq2Ke6DOcmDtIc3kdiUDt451lT+b
- etG+VCaIVXT7PHDvvttfbDA/c4+aC00Ycs92barzNUwqsZTVRoAnwNOtXlL6/ENXj5/Y
- h2ocweOks9uw3b2L/0Qw6vPCOomf0iqTQ+6UTcowpbBjueKZWjeA+Ho/2ELj2k4GpCHD
- yvTA==
-X-Gm-Message-State: APjAAAWjX8iCEI0VnJkpigvUYUO15u/pXFaCxt8Aa8LmYPgcsaDQsv+N
- R6YZxp2Jqh2EF2NYgi9bfAYCvyIbKoCcF3TLKQw=
-X-Google-Smtp-Source: APXvYqzE3Bfo7kvQ7+hwzW34J5gf2Zonf08iEAJCaNyVdJIDx3jMMth3umOadUschVo/Fh/wlZsrQzPbyY+oaHCxDHs=
-X-Received: by 2002:a05:6638:632:: with SMTP id
- h18mr7358032jar.107.1571806266511; 
- Tue, 22 Oct 2019 21:51:06 -0700 (PDT)
+ id 1iN9PY-0007Fq-7W; Wed, 23 Oct 2019 05:42:22 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x9N5gC3H022595;
+ Wed, 23 Oct 2019 00:42:12 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1571809332;
+ bh=loVH+PYRxm3OpLF9LdBwXFuK6Y4m05IaOaKEfYsJyAw=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=p58WL8S1GmDISYuKnhXNvZOeoUrdYkV463yym9NPfhRAo+iXa+g8Yy3fcFkrbFq25
+ yYJ1bfHdTyIVAT+qswO8C0xpw5FLvVQpuJgSjvVlzOopFBeuQic9qIgtN37tpmlq4o
+ 7DZ7fqtNrh9Cic2tWE6XjqRuRNO/gF7vMzJfcSK0=
+Received: from DLEE113.ent.ti.com (dlee113.ent.ti.com [157.170.170.24])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x9N5gBAG020654
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 23 Oct 2019 00:42:12 -0500
+Received: from DLEE111.ent.ti.com (157.170.170.22) by DLEE113.ent.ti.com
+ (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Wed, 23
+ Oct 2019 00:42:01 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE111.ent.ti.com
+ (157.170.170.22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Wed, 23 Oct 2019 00:42:01 -0500
+Received: from [172.24.190.233] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x9N5ecZS004724;
+ Wed, 23 Oct 2019 00:40:39 -0500
+Subject: Re: [PATCH v2 04/11] dt-bindings: phy-mtk-tphy: add a new reference
+ clock
+To: Rob Herring <robh@kernel.org>, Chunfeng Yun <chunfeng.yun@mediatek.com>
+References: <1567149298-29366-1-git-send-email-chunfeng.yun@mediatek.com>
+ <1567149298-29366-4-git-send-email-chunfeng.yun@mediatek.com>
+ <20190917202805.GA13405@bogus>
+From: Kishon Vijay Abraham I <kishon@ti.com>
+Message-ID: <32bc288e-dbbb-8930-4750-826e9e17d58c@ti.com>
+Date: Wed, 23 Oct 2019 11:10:09 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <20191021201848.4231-1-navid.emamdoost@gmail.com>
- <fb5d5331-9a89-8370-1e61-396dd05f291a@web.de>
- <2a6cdb63-397b-280a-7379-740e8f43ddf6@xilinx.com>
-In-Reply-To: <2a6cdb63-397b-280a-7379-740e8f43ddf6@xilinx.com>
-From: Navid Emamdoost <navid.emamdoost@gmail.com>
-Date: Tue, 22 Oct 2019 23:50:55 -0500
-Message-ID: <CAEkB2ES=S64T9FH8bSj=muXD3hSXc3-MWEVt_0sggoTdZFQswg@mail.gmail.com>
-Subject: Re: [PATCH] clocksource/drivers: Fix memory leak in
- ttc_setup_clockevent
-To: Michal Simek <michal.simek@xilinx.com>
+In-Reply-To: <20190917202805.GA13405@bogus>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_215107_312377_F95DAFE4 
-X-CRM114-Status: GOOD (  18.20  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191022_224220_312958_01661AE7 
+X-CRM114-Status: GOOD (  16.76  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (navid.emamdoost[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -86,6 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,48 +93,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, Daniel Lezcano <daniel.lezcano@linaro.org>,
- Kangjie Lu <kjlu@umn.edu>, LKML <linux-kernel@vger.kernel.org>,
- Navid Emamdoost <emamd001@umn.edu>, Markus Elfring <Markus.Elfring@web.de>,
- Stephen McCamant <smccaman@umn.edu>, Thomas Gleixner <tglx@linutronix.de>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VGhhbmtzIGZvciB0aGUgZmVlZGJhY2ssIEkgdXBkYXRlZCB0aGlzIHBhdGNoIGFuZCBzZW50IHYy
-LgpBbHNvLCBJIHN1Ym1pdHRlZCBhIHBhdGNoIHRvIGZpeCB0aGUgZXJyb3IgaGFuZGxpbmcgcGF0
-aCBpbgp0dGNfc2V0dXBfY2xvY2tzb3VyY2UoKS4gSGVyZSBpcyB0aGUgbGluayB0byBpdDoKaHR0
-cHM6Ly9sb3JlLmtlcm5lbC5vcmcvcGF0Y2h3b3JrL3BhdGNoLzExNDMyNDIvCgpPbiBUdWUsIE9j
-dCAyMiwgMjAxOSBhdCAzOjUxIEFNIE1pY2hhbCBTaW1layA8bWljaGFsLnNpbWVrQHhpbGlueC5j
-b20+IHdyb3RlOgo+Cj4gT24gMjIuIDEwLiAxOSAxMDoyNiwgTWFya3VzIEVsZnJpbmcgd3JvdGU6
-Cj4gPj4gSW4gdGhlIGltcGVsZW1lbnRhdGlvbiBvZiB0dGNfc2V0dXBfY2xvY2tldmVudCgpIHRo
-ZSBhbGxvY2F0ZWQgbWVtb3J5Cj4gPj4gZm9yIHR0Y2NlIHNob3VsZCBiZSByZWxlYXNlZCBpZiBj
-bGtfbm90aWZpZXJfcmVnaXN0ZXIoKSBmYWlscy4KPiA+Cj4gPiAqIFBsZWFzZSBhdm9pZCB0aGUg
-Y29weWluZyBvZiB0eXBvcyBmcm9tIHByZXZpb3VzIGNoYW5nZSBkZXNjcmlwdGlvbnMuCj4gPgo+
-ID4gKiBVbmRlciB3aGljaCBjaXJjdW1zdGFuY2VzIHdpbGwgYW4g4oCcaW1wZXJhdGl2ZSBtb29k
-4oCdIG1hdHRlciBmb3IgeW91IGhlcmU/Cj4gPiAgIGh0dHBzOi8vZ2l0Lmtlcm5lbC5vcmcvcHVi
-L3NjbS9saW51eC9rZXJuZWwvZ2l0L3RvcnZhbGRzL2xpbnV4LmdpdC90cmVlL0RvY3VtZW50YXRp
-b24vcHJvY2Vzcy9zdWJtaXR0aW5nLXBhdGNoZXMucnN0P2lkPTdkMTk0YzIxMDBhZDJhNmRkZWQ1
-NDU4ODdkMDI3NTQ5NDhjYTUyNDEjbjE1MQo+ID4KPiA+Cj4gPj4gKysrIGIvZHJpdmVycy9jbG9j
-a3NvdXJjZS90aW1lci1jYWRlbmNlLXR0Yy5jCj4gPj4gQEAgLTQyNCw2ICs0MjQsNyBAQCBzdGF0
-aWMgaW50IF9faW5pdCB0dGNfc2V0dXBfY2xvY2tldmVudChzdHJ1Y3QgY2xrICpjbGssCj4gPj4g
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgJnR0Y2NlLT50dGMuY2xrX3JhdGVfY2hh
-bmdlX25iKTsKPiA+PiAgICAgIGlmIChlcnIpIHsKPiA+PiAgICAgICAgICAgICAgcHJfd2Fybigi
-VW5hYmxlIHRvIHJlZ2lzdGVyIGNsb2NrIG5vdGlmaWVyLlxuIik7Cj4gPj4gKyAgICAgICAgICAg
-IGtmcmVlKHR0Y2NlKTsKPiA+PiAgICAgICAgICAgICAgcmV0dXJuIGVycjsKPiA+PiAgICAgIH0K
-PiA+Cj4gPiBUaGlzIGFkZGl0aW9uIGxvb2tzIGNvcnJlY3QuCj4gPiBCdXQgSSB3b3VsZCBwcmVm
-ZXIgdG8gbW92ZSBzdWNoIGV4Y2VwdGlvbiBoYW5kbGluZyBjb2RlIHRvIHRoZSBlbmQgb2YKPiA+
-IHRoaXMgZnVuY3Rpb24gaW1wbGVtZW50YXRpb24gc28gdGhhdCBkdXBsaWNhdGUgc291cmNlIGNv
-ZGUgd2lsbCBiZSByZWR1Y2VkLgo+ID4gaHR0cHM6Ly9naXQua2VybmVsLm9yZy9wdWIvc2NtL2xp
-bnV4L2tlcm5lbC9naXQvdG9ydmFsZHMvbGludXguZ2l0L3RyZWUvRG9jdW1lbnRhdGlvbi9wcm9j
-ZXNzL2NvZGluZy1zdHlsZS5yc3Q/aWQ9N2QxOTRjMjEwMGFkMmE2ZGRlZDU0NTg4N2QwMjc1NDk0
-OGNhNTI0MSNuNDUwCj4KPiBKdXN0IGEgbm90ZS4gTWF5YmUgeW91IHNob3VsZCBhbHNvIGNvbnNp
-ZGVyIHRvIGZpeCB0aGlzIGVycm9yIHBhdGggaW4KPiB0dGNfc2V0dXBfY2xvY2tzb3VyY2UoKSB3
-aGVuIG5vdGlmaWVyIGFsc28gY2FuIGZhaWwgdGhhdCB0aGVyZSBpcyBubwo+IG5lZWQgdG8gY29u
-dGludWUgd2l0aCBjb2RlIGV4ZWN1dGlvbi4KPgo+IFRoYW5rcywKPiBNaWNoYWwKCgoKLS0gCk5h
-dmlkLgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGlu
-dXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRl
-YWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
-YXJtLWtlcm5lbAo=
+Hi Rob,
+
+On 18/09/19 1:58 AM, Rob Herring wrote:
+> On Fri, 30 Aug 2019 15:14:51 +0800, Chunfeng Yun wrote:
+>> Usually the digital and analog phys use the same reference clock,
+>> but on some platforms, they are separated, so add another optional
+>> clock to support it.
+>> In order to keep the clock names consistent with PHY IP's, use
+>> the da_ref for analog phy and ref clock for digital phy.
+>>
+>> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+>> ---
+>> v2: fix typo of analog and needed
+>> ---
+>>  Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt | 7 +++++--
+>>  1 file changed, 5 insertions(+), 2 deletions(-)
+>>
+> 
+> Acked-by: Rob Herring <robh@kernel.org>
+
+I see you've acked a couple of patches in the series. However the other
+dt-binding patch neither has an Ack or NAK. Is there a specific reason or can I
+merge the series?
+
+Thanks
+Kishon
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
