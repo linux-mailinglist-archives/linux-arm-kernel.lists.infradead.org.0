@@ -2,53 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DC51E1F87
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 17:39:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2FA0E2012
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 18:00:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=JgNFobIB/Rc4FmqG+YcgShhy4VmUjobdRBZL6r1Jfu4=; b=M5IrGJYSLvB9EGAWOXAfBQb+FF
-	doEmZdUUsYlOqLea/7RSRjaMC+oMoJEgD8YWV/ROQiMD/kAAPDV03+dYYNIXxLWNxXed/3hxJcfzU
-	k0wsEnJl0AlBIqtxfZbNX6JSHjH1xEtE6vgCYgK2jw6wpIDQ3pqFiolW6PyxxS8VxAZCuLaueBGhH
-	GFytPg9/RCdw5L5KQ6GHwDp8qERe18rP61HOnLJJy9aab5/cW/w2aIyrHVWJuLXKQvpVK3/FoLJdU
-	7DFGosVRjirenJIilWpLuAaEIneFDGKzOt8CPQu/BzoJfGWJgbqs5fqDTsJQu2s1f0LgFjjPMUEEJ
-	14Pn1B0w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qjVlaNiFVLGUr357+/6Fi6aBLo6PPZi5Xu5XtGVhAJk=; b=CQDxcMPsKALO7E
+	36uYAPa72r+wXFoVddenJwqaH/aiGKfvZV0mN5oMAIdji8dxvvl7okK3JtO1D3nzlVKMCaGerclmm
+	KMZIcBoSeDGMGOn2DUGbGORxjVnLf9Ylfe8XEBoB5nQH6p2FbTG5nAsaP8K0xFr9DCM8WHqhXUAjP
+	JHbwdvTK2I792WCLvXn7a+byi4hJ4MD1ITSXYetebq0CUOaboQCP7gcKvfT66s+QSyKNBGuzosKyZ
+	wmBK9TdFNW8PSZQrW+196+sF3sF2raunTnXnD/UBj5iUnG1j6ZN3b5bvWYWzIVjO5GZ2PCBH+K7WO
+	nUvnkNpn5W+/x5ifmdnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNIj9-00017l-1j; Wed, 23 Oct 2019 15:39:11 +0000
+	id 1iNJ3p-0001Ij-15; Wed, 23 Oct 2019 16:00:33 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNIic-0000sp-5f
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 15:38:39 +0000
+ id 1iNJ3g-0001Hp-M7
+ for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 16:00:25 +0000
 Received: from localhost.localdomain (unknown [194.230.155.217])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 98BAC21A4C;
- Wed, 23 Oct 2019 15:38:35 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5C54020640;
+ Wed, 23 Oct 2019 16:00:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571845117;
- bh=bM/mEFcrlLuEZp0P1EMlHoIbnorgdXnXqaEVenoUobo=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=LFIe6aUM5wa79Oq3zx51FbUaTsKJLxlsXTmgfOYoBNi3ZXfGUQYka3xC8T0jZwAxb
- vR3WlTWia7oj09i6auE3vk7sqbYzwjIv526kXHicgl0jR7zV4cqj3AM0YNYpAc0bsq
- n9CEB1VIcKbzOy1iRM/Z/ni1Mv/rUbHLiZED8eW0=
+ s=default; t=1571846424;
+ bh=9unFG5jOth/SLmbsma9VXKmXB1glCuVYpFM25V1tJhc=;
+ h=From:To:Cc:Subject:Date:From;
+ b=bPqudU3bKvdvVC6f9Fca0bV2hsZ6QP68bieoJIzFLkljzYGj9nSOZrWDk/O/7kwZN
+ KyC/Wl1UcDsjSVfBbMAekLhPO1QPblE6CB/x/9wbusmIWsKbK7p4AAQnkJkrArIJFY
+ MZdFPKWP4zcmSp8OZE2h/Hr3PQsHzXCmvjYk/dwM=
 From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+To: Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Tomasz Figa <tomasz.figa@gmail.com>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>, Kukjin Kim <kgene@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, linux-samsung-soc@vger.kernel.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 2/2] ARM: s3c: Rename s5p_usb_phy functions
-Date: Wed, 23 Oct 2019 17:38:24 +0200
-Message-Id: <20191023153824.6085-2-krzk@kernel.org>
+Subject: [PATCH] clk: samsung: exynos5433: Add missing slab.h header for
+ kfree()
+Date: Wed, 23 Oct 2019 18:00:00 +0200
+Message-Id: <20191023160000.409-1-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191023153824.6085-1-krzk@kernel.org>
-References: <20191023153824.6085-1-krzk@kernel.org>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_083838_230128_3A0C093B 
-X-CRM114-Status: GOOD (  13.19  )
+X-CRM114-CacheID: sfid-20191023_090024_743474_21A1F1B1 
+X-CRM114-Status: GOOD (  11.21  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,81 +80,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: kbuild test robot <lkp@intel.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The name s5p_usb_phy_init() suggests it is shared with S5Pv210 platform,
-but it is not.  It is specific to S3C64xx, so make it clear in the
-name.
-
-Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
----
- arch/arm/mach-s3c64xx/setup-usb-phy.c        | 4 ++--
- arch/arm/plat-samsung/devs.c                 | 4 ++--
- arch/arm/plat-samsung/include/plat/usb-phy.h | 4 ++--
- 3 files changed, 6 insertions(+), 6 deletions(-)
-
-diff --git a/arch/arm/mach-s3c64xx/setup-usb-phy.c b/arch/arm/mach-s3c64xx/setup-usb-phy.c
-index 6aaaa1d8e8b9..d6b0e3b268af 100644
---- a/arch/arm/mach-s3c64xx/setup-usb-phy.c
-+++ b/arch/arm/mach-s3c64xx/setup-usb-phy.c
-@@ -73,7 +73,7 @@ static int s3c_usb_otgphy_exit(struct platform_device *pdev)
- 	return 0;
- }
- 
--int s5p_usb_phy_init(struct platform_device *pdev, int type)
-+int s3c_usb_phy_init(struct platform_device *pdev, int type)
- {
- 	if (type == USB_PHY_TYPE_DEVICE)
- 		return s3c_usb_otgphy_init(pdev);
-@@ -81,7 +81,7 @@ int s5p_usb_phy_init(struct platform_device *pdev, int type)
- 	return -EINVAL;
- }
- 
--int s5p_usb_phy_exit(struct platform_device *pdev, int type)
-+int s3c_usb_phy_exit(struct platform_device *pdev, int type)
- {
- 	if (type == USB_PHY_TYPE_DEVICE)
- 		return s3c_usb_otgphy_exit(pdev);
-diff --git a/arch/arm/plat-samsung/devs.c b/arch/arm/plat-samsung/devs.c
-index 1d1fa068d228..1602f6dc900b 100644
---- a/arch/arm/plat-samsung/devs.c
-+++ b/arch/arm/plat-samsung/devs.c
-@@ -1010,9 +1010,9 @@ void __init dwc2_hsotg_set_platdata(struct dwc2_hsotg_plat *pd)
- 	npd = s3c_set_platdata(pd, sizeof(*npd), &s3c_device_usb_hsotg);
- 
- 	if (!npd->phy_init)
--		npd->phy_init = s5p_usb_phy_init;
-+		npd->phy_init = s3c_usb_phy_init;
- 	if (!npd->phy_exit)
--		npd->phy_exit = s5p_usb_phy_exit;
-+		npd->phy_exit = s3c_usb_phy_exit;
- }
- #endif /* CONFIG_S3C_DEV_USB_HSOTG */
- 
-diff --git a/arch/arm/plat-samsung/include/plat/usb-phy.h b/arch/arm/plat-samsung/include/plat/usb-phy.h
-index 94da89ecbd3b..759d66a0773a 100644
---- a/arch/arm/plat-samsung/include/plat/usb-phy.h
-+++ b/arch/arm/plat-samsung/include/plat/usb-phy.h
-@@ -7,7 +7,7 @@
- #ifndef __PLAT_SAMSUNG_USB_PHY_H
- #define __PLAT_SAMSUNG_USB_PHY_H __FILE__
- 
--extern int s5p_usb_phy_init(struct platform_device *pdev, int type);
--extern int s5p_usb_phy_exit(struct platform_device *pdev, int type);
-+extern int s3c_usb_phy_init(struct platform_device *pdev, int type);
-+extern int s3c_usb_phy_exit(struct platform_device *pdev, int type);
- 
- #endif /* __PLAT_SAMSUNG_USB_PHY_H */
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VXNhZ2Ugb2Yga2ZyZWUoKSByZXF1aXJlcyBzbGFiLmggaGVhZGVyLiAgT3RoZXJ3aXNlIGJ1aWxk
+aW5nIG9uIHg4Nl82NAp3aXRoIENPTVBJTEVfVEVTVCBmYWlscyB3aXRoOgoKICAgIGRyaXZlcnMv
+Y2xrL3NhbXN1bmcvY2xrLWV4eW5vczU0MzMuYzogSW4gZnVuY3Rpb24g4oCYZXh5bm9zNTQzM19j
+bXVfcHJvYmXigJk6CiAgICBkcml2ZXJzL2Nsay9zYW1zdW5nL2Nsay1leHlub3M1NDMzLmM6NTU5
+ODo0OiBlcnJvcjogaW1wbGljaXQgZGVjbGFyYXRpb24gb2YgZnVuY3Rpb24g4oCYa2ZyZWXigJk7
+IGRpZCB5b3UgbWVhbiDigJh2ZnJlZeKAmT8gWy1XZXJyb3I9aW1wbGljaXQtZnVuY3Rpb24tZGVj
+bGFyYXRpb25dCgpSZXBvcnRlZC1ieToga2J1aWxkIHRlc3Qgcm9ib3QgPGxrcEBpbnRlbC5jb20+
+ClNpZ25lZC1vZmYtYnk6IEtyenlzenRvZiBLb3psb3dza2kgPGtyemtAa2VybmVsLm9yZz4KLS0t
+CiBkcml2ZXJzL2Nsay9zYW1zdW5nL2Nsay1leHlub3M1NDMzLmMgfCAxICsKIDEgZmlsZSBjaGFu
+Z2VkLCAxIGluc2VydGlvbigrKQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvY2xrL3NhbXN1bmcvY2xr
+LWV4eW5vczU0MzMuYyBiL2RyaXZlcnMvY2xrL3NhbXN1bmcvY2xrLWV4eW5vczU0MzMuYwppbmRl
+eCAwYjYwMzE2MzMxYTAuLjRiMWFhOTM4MmFkMiAxMDA2NDQKLS0tIGEvZHJpdmVycy9jbGsvc2Ft
+c3VuZy9jbGstZXh5bm9zNTQzMy5jCisrKyBiL2RyaXZlcnMvY2xrL3NhbXN1bmcvY2xrLWV4eW5v
+czU0MzMuYwpAQCAtMTMsNiArMTMsNyBAQAogI2luY2x1ZGUgPGxpbnV4L29mX2RldmljZS5oPgog
+I2luY2x1ZGUgPGxpbnV4L3BsYXRmb3JtX2RldmljZS5oPgogI2luY2x1ZGUgPGxpbnV4L3BtX3J1
+bnRpbWUuaD4KKyNpbmNsdWRlIDxsaW51eC9zbGFiLmg+CiAKICNpbmNsdWRlIDxkdC1iaW5kaW5n
+cy9jbG9jay9leHlub3M1NDMzLmg+CiAKLS0gCjIuMTcuMQoKCl9fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
+CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
+ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
