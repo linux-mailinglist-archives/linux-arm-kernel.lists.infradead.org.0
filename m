@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0DF0E1AC4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 14:37:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B0E5E1ACC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 14:37:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Tl2WcpkF3AyrG4ACC3iYXtzaFe6+xoSNQSEtcebk29o=; b=PLWab0nAgT4b8aM/FOYNyFhYoe
-	SvNELaxVRR3CFyKhjvLdDmEqc31TiOnZ45r7yEGx9f+EjMKJdUs2Er6yphQzW0iozV+NL5hGXRmeI
-	Vv7T1KYyIzx0Dq4pfIzdd+5gKehPTt49EVPCC/99FsXDe+5Z2jj+mVQVq1J4E8mMetHFtXGIRIAoj
-	WLbyMAU0QgN7t4ZorG4uEBBNweBUgCu4ztpBHcmjdFUKSnlkB2dXCl0KdDG6ljN1djfzfD0YLYqjY
-	8CtA7v8KKtSFS7Hdn84EHh4u6S6Ir3MbWsWlapM9PihfWC++eE9Ce2eaZNlsV7Eozswxbe8EQn4wL
-	E7FrwyFA==;
+	bh=v0KVH/U8uP0boHXnE1lIcQTe4kk3A060Q7bjrqAWe9c=; b=CrejJkt53epAJBLh7RRjDdX4iE
+	sEgDlqYQDo1W+qHtwuh2JW86s6V3ICQhGB4QMWVMF1r+A80OmTLiaKBEoJnKkF+p6G7TeYpax3ThP
+	8sUrWCsNbQXRqljEl0XvOgWf6WJYUSXUaNe7h0SybUQtaJ8B0LYSJthk5Wz14ygKHVABtPaHx4pCd
+	3er/6m7BFY8uQI5aVZwm/Hh1T5Sw35H2zjZpVRkM+yF7UZlFm9kfANwIqXpniYi2byF2G6pBnNOGV
+	a+ED7jf78vNfKannvkz724gG2JsjJhOvJwKPzydkNW2iw03LzAVTbl6jxzo0b3qvoMW8iXusU1lRM
+	GnQlxCeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNFtI-0002AM-Q2; Wed, 23 Oct 2019 12:37:28 +0000
-Received: from baptiste.telenet-ops.be ([2a02:1800:120:4::f00:13])
+	id 1iNFtb-0002PS-TL; Wed, 23 Oct 2019 12:37:47 +0000
+Received: from laurent.telenet-ops.be ([2a02:1800:110:4::f00:19])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNFpi-0006mR-10
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 12:33:49 +0000
-Received: from ramsan ([84.194.98.4]) by baptiste.telenet-ops.be with bizsmtp
- id H0Zj2100t05gfCL010Zkg5; Wed, 23 Oct 2019 14:33:44 +0200
+ id 1iNFpi-0006mS-2m
+ for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 12:33:50 +0000
+Received: from ramsan ([84.194.98.4]) by laurent.telenet-ops.be with bizsmtp
+ id H0Zk2100805gfCL010ZkaL; Wed, 23 Oct 2019 14:33:44 +0200
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1iNFpf-0003tg-Tf; Wed, 23 Oct 2019 14:33:43 +0200
+ id 1iNFpf-0003tl-VI; Wed, 23 Oct 2019 14:33:43 +0200
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1iNFpf-0003QG-Rr; Wed, 23 Oct 2019 14:33:43 +0200
+ id 1iNFpf-0003QK-TQ; Wed, 23 Oct 2019 14:33:43 +0200
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: Magnus Damm <magnus.damm@gmail.com>
-Subject: [PATCH v2 02/11] soc: renesas: Add ARCH_R8A77960 for existing R-Car
- M3-W
-Date: Wed, 23 Oct 2019 14:33:33 +0200
-Message-Id: <20191023123342.13100-3-geert+renesas@glider.be>
+Subject: [PATCH v2 03/11] soc: renesas: Add ARCH_R8A77961 for new R-Car M3-W+
+Date: Wed, 23 Oct 2019 14:33:34 +0200
+Message-Id: <20191023123342.13100-4-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191023123342.13100-1-geert+renesas@glider.be>
 References: <20191023123342.13100-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_053346_249754_3A0CBD8B 
-X-CRM114-Status: UNSURE (   9.42  )
+X-CRM114-CacheID: sfid-20191023_053346_337117_F889B774 
+X-CRM114-Status: UNSURE (   7.95  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -51,7 +50,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:1800:120:4:0:0:f00:13 listed in]
+ low trust [2a02:1800:110:4:0:0:f00:19 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -78,58 +77,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add CONFIG_ARCH_R8A77960 as a new config symbol for R-Car M3-W
-(R8A77960), to replace CONFIG_ARCH_R8A7796, and avoid confusion with
-R-Car M3-W+ (R8A77961), which will use CONFIG_ARCH_R8A77961.
-
-Note that for now, CONFIG_ARCH_R8A7796 is retained, and just selects
-CONFIG_ARCH_R8A77960.  This relaxes dependencies of other subsystems on
-the SoC configuration symbol, and provides a smooth transition path for
-config files through "make oldconfig".
+Add CONFIG_ARCH_R8A77961 as a configuration symbol for the new Renesas
+R-Car M3-W+ (R8A77961) SoC.
 
 Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+Reviewed-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+Tested-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
 ---
 v2:
-  - New.
+  - Add Reviewed-by, Tested-by,
+  - Reword.
 ---
- drivers/soc/renesas/Kconfig       | 8 ++++++--
- drivers/soc/renesas/renesas-soc.c | 2 +-
- 2 files changed, 7 insertions(+), 3 deletions(-)
+ drivers/soc/renesas/Kconfig | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
 diff --git a/drivers/soc/renesas/Kconfig b/drivers/soc/renesas/Kconfig
-index 328d7c409202e6a5..ce8e86a037d1d704 100644
+index ce8e86a037d1d704..7b00daa290924445 100644
 --- a/drivers/soc/renesas/Kconfig
 +++ b/drivers/soc/renesas/Kconfig
-@@ -199,10 +199,14 @@ config ARCH_R8A7795
- 	help
- 	  This enables support for the Renesas R-Car H3 SoC.
- 
--config ARCH_R8A7796
--	bool "Renesas R-Car M3-W SoC Platform"
-+config ARCH_R8A77960
-+	bool
- 	select ARCH_RCAR_GEN3
- 	select SYSC_R8A77960
-+
-+config ARCH_R8A7796
-+	bool "Renesas R-Car M3-W SoC Platform"
-+	select ARCH_R8A77960
+@@ -210,6 +210,12 @@ config ARCH_R8A7796
  	help
  	  This enables support for the Renesas R-Car M3-W SoC.
  
-diff --git a/drivers/soc/renesas/renesas-soc.c b/drivers/soc/renesas/renesas-soc.c
-index 45135bc88e277d34..319e47bb1d99cfcf 100644
---- a/drivers/soc/renesas/renesas-soc.c
-+++ b/drivers/soc/renesas/renesas-soc.c
-@@ -262,7 +262,7 @@ static const struct of_device_id renesas_socs[] __initconst = {
- #ifdef CONFIG_ARCH_R8A7795
- 	{ .compatible = "renesas,r8a7795",	.data = &soc_rcar_h3 },
- #endif
--#ifdef CONFIG_ARCH_R8A7796
-+#ifdef CONFIG_ARCH_R8A77960
- 	{ .compatible = "renesas,r8a7796",	.data = &soc_rcar_m3_w },
- #endif
- #ifdef CONFIG_ARCH_R8A77965
++config ARCH_R8A77961
++	bool "Renesas R-Car M3-W+ SoC Platform"
++	select ARCH_RCAR_GEN3
++	help
++	  This enables support for the Renesas R-Car M3-W+ SoC.
++
+ config ARCH_R8A77965
+ 	bool "Renesas R-Car M3-N SoC Platform"
+ 	select ARCH_RCAR_GEN3
 -- 
 2.17.1
 
