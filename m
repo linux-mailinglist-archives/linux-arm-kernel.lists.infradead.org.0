@@ -2,83 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80CECE1D48
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 15:50:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55108E1D4E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 15:50:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p96kUibAXjfYrH2+XCHQKhPtFN2+Ljco6b6yo8nN/V0=; b=l3VgYE8Wq99x6o
-	CcfZ7bLo52k4KehnTSojOtSe1aKdMvywOBkF8BvxBRMbmB6a2hEyg0Mm9NvUnz2j9xCDrYnvE/g9f
-	mpYn7eV5Bn3jEUUCUK149dQnedTsinowiYdnnNZUxTa80Kmr+5FfhA8Ulj34MHHA8cPJMfmZITw42
-	/2SmPy6WX4W54xEfTv+Ue8Y+Wu5+drmjbFQJZBD2PF83DX6hQSAkxjoaNkpBic06B341KoVzrYDs8
-	iJGmq4VOK4aHhpzAr8RdsSgdPDmFVbZTNX1Mcn98xiC78rpp8DAZFIN5nMbXPO/FPWnYg1iugDyRa
-	XFqde73pDB5rWf2IM/MQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LeSIxElb8a37aH1BoeNjRjRM7txnmcvPd42RFqPO4mc=; b=C3DPLX9hQhopKx
+	7gYJsdy+tCpQMyETuZjL/ehuv7IEduhXvRUV/u/Fp8Rdlk1nhGa00xdqRB4M5esE2G3mKi8Wiy2ri
+	sI0djVrxXbM1a3+Lva1gqDGDlGS/P5ZZ4mc7aiykxSlns3B40gXtvSODgmRAJgn+ztWIdGuWKTgPx
+	/dp8vT1HGA5leG1tWiHtp+RTlTx+EbaQ33nNsE7OW3+YsYJI94BXgOLjxzl9IwOgcR5u4uRxUgCV1
+	abAP8wry9inBr3LBABIacFyjOFNdBEnaFImPQmFy04pD6SukgrHf73Mnf8Wge+XrKAVd2TfKMPbk/
+	tAEwii/oGN5sHbF+ezIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNH1n-0004YW-9y; Wed, 23 Oct 2019 13:50:19 +0000
-Received: from mail-ed1-f65.google.com ([209.85.208.65])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNH1V-0004EB-Cg
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 13:50:03 +0000
-Received: by mail-ed1-f65.google.com with SMTP id l25so4565989edt.6
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 23 Oct 2019 06:50:00 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=8qBb291IPE2og/l7u8OiTDfQtbzmiVhAHgv1m3GbkfM=;
- b=Uc/uow9NZSap4n8FOnOAbQKPaqoqgZYQMc2Dn1wdEEIr3UmiioowIiS2SYdwKek67F
- 4WOjiDZFB30dnRpGa/qhjP+NIc5Wa8CY1iBTWTlUEkbXfXE9MM3AN9VqSKP0Qj0iKj0l
- Huqi0olS8booM2r9ffaYb7wMNR+0VeIGX08PqwjlYfdxFYuHIZzz1k1BosK6ISZLyJK7
- qQNYDsbJlhBFdfZAnaCMdVxjKtEtg2COPgPCltp0mGcDzAoExpPX+9m7jxbIuiaSasek
- U6F588Ws03BtBcM5kwvucICsU4BNMPbWpaedhezEqfVfbMXZjlLDjldFmYafIE7LoqhO
- C94g==
-X-Gm-Message-State: APjAAAU3KWYw0wm0QksDDYGiyCmqdwqShTHUYHbDo372jMF9plvJCfMD
- bXWHNe4bFHUCZOvyG15iPYM=
-X-Google-Smtp-Source: APXvYqwjWvPU2P28o+R/0H7qCyJXE4W8hZoo+hrDHIsqBv9q1Xi6Hyp0zb62g4wWhOXMSl17h7J2Hw==
-X-Received: by 2002:a50:ff19:: with SMTP id a25mr9916560edu.181.1571838599737; 
- Wed, 23 Oct 2019 06:49:59 -0700 (PDT)
-Received: from pi3 ([194.230.155.217])
- by smtp.googlemail.com with ESMTPSA id j43sm734313eda.19.2019.10.23.06.49.58
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 23 Oct 2019 06:49:58 -0700 (PDT)
-Date: Wed, 23 Oct 2019 15:49:56 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH 33/36] ARM: s3c: move low-level clk reg access into
- platform code
-Message-ID: <20191023134956.GK11048@pi3>
-References: <20191010202802.1132272-1-arnd@arndb.de>
- <20191010203043.1241612-1-arnd@arndb.de>
- <20191010203043.1241612-33-arnd@arndb.de>
+	id 1iNH29-0005iN-1D; Wed, 23 Oct 2019 13:50:41 +0000
+Received: from [217.140.110.172] (helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iNH1x-0005aa-3k
+ for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 13:50:31 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9FA494A7;
+ Wed, 23 Oct 2019 06:50:17 -0700 (PDT)
+Received: from [10.1.194.43] (e112269-lin.cambridge.arm.com [10.1.194.43])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C3E743F71F;
+ Wed, 23 Oct 2019 06:50:15 -0700 (PDT)
+From: Steven Price <steven.price@arm.com>
+Subject: Re: [PATCH v7 00/10] arm64: Stolen time support
+To: Marc Zyngier <maz@kernel.org>
+References: <20191021152823.14882-1-steven.price@arm.com>
+ <f0d79362ab994e269680fba75f913044@www.loen.fr>
+Message-ID: <5b3968d8-9a5a-ee9d-70b3-436dc052dd0a@arm.com>
+Date: Wed, 23 Oct 2019 14:50:14 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191010203043.1241612-33-arnd@arndb.de>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <f0d79362ab994e269680fba75f913044@www.loen.fr>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_065001_427932_A2422430 
-X-CRM114-Status: GOOD (  14.54  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191023_065029_238100_D1779BE2 
+X-CRM114-Status: GOOD (  25.25  )
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.65 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.65 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,48 +63,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, linux-pm@vger.kernel.org,
- Viresh Kumar <viresh.kumar@linaro.org>, linus.walleij@linaro.org,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
- Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ =?UTF-8?B?UmFkaW0gS3LEjW3DocWZ?= <rkrcmar@redhat.com>, kvm@vger.kernel.org,
+ Suzuki K Pouloze <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-doc@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Paolo Bonzini <pbonzini@redhat.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 10, 2019 at 10:30:17PM +0200, Arnd Bergmann wrote:
-> Rather than have the cpufreq drivers touch include the
-> common headers to get the constants, add a small indirection.
-> This is still not the proper way that would do this through
-> the common clk API, but it lets us kill off the header file
-> usage.
+On 23/10/2019 13:39, Marc Zyngier wrote:
+> Hi Steven,
 > 
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> ---
->  arch/arm/mach-s3c24xx/Makefile               |  2 +-
->  arch/arm/mach-s3c24xx/cpufreq-utils.c        | 32 ++++++++++++++++++++
->  drivers/cpufreq/s3c2410-cpufreq.c            |  8 +----
->  drivers/cpufreq/s3c2412-cpufreq.c            | 10 ++----
->  drivers/cpufreq/s3c2440-cpufreq.c            | 16 +++-------
->  drivers/cpufreq/s3c24xx-cpufreq.c            | 11 ++-----
->  include/linux/soc/samsung/s3c-cpufreq-core.h |  7 +++++
->  7 files changed, 51 insertions(+), 35 deletions(-)
+> On 2019-10-21 16:28, Steven Price wrote:
+>> This series add support for paravirtualized time for arm64 guests and
+>> KVM hosts following the specification in Arm's document DEN 0057A:
+>>
+>> https://developer.arm.com/docs/den0057/a
+>>
+>> It implements support for stolen time, allowing the guest to
+>> identify time when it is forcibly not executing.
+>>
+>> Note that Live Physical Time (LPT) which was previously part of the
+>> above specification has now been removed.
+>>
+>> Also available as a git tree:
+>> git://linux-arm.org/linux-sp.git stolen_time/v7
 > 
-> diff --git a/arch/arm/mach-s3c24xx/Makefile b/arch/arm/mach-s3c24xx/Makefile
-> index 695573df00b1..195a4cb23ecb 100644
-> --- a/arch/arm/mach-s3c24xx/Makefile
-> +++ b/arch/arm/mach-s3c24xx/Makefile
-> @@ -38,7 +38,7 @@ obj-$(CONFIG_PM_SLEEP)		+= irq-pm.o sleep.o
->  
->  # common code
->  
-> -obj-$(CONFIG_S3C2410_CPUFREQ_UTILS) += cpufreq-utils.o
-> +obj-$(CONFIG_ARM_S3C24XX_CPUFREQ) += cpufreq-utils.o
+> Can you please point me to userspace patches that I could apply to
+> kvmtool? I'd like to give this series a go as part of my normal testing.
 
-Drop also here S3C2410_CPUFREQ_UTILS entirely.
+I don't have a proper patch yet, but the below is what I've been testing
+with (this breaks with kernels without PV-time).
 
-Best regards,
-Krzysztof
+Steve
+
+----8<----
+From 8f6540cfbe2842f3ee422c07fbd1f590534cc90a Mon Sep 17 00:00:00 2001
+From: Steven Price <steven.price@arm.com>
+Date: Thu, 8 Nov 2018 13:43:56 +0000
+Subject: [PATCH kvmtool] ARM PV time support
+
+Signed-off-by: Steven Price <steven.price@arm.com>
+---
+ Makefile                 |  2 +-
+ arm/kvm-cpu.c            |  4 ++++
+ arm/pvtime.c             | 47 ++++++++++++++++++++++++++++++++++++++++
+ include/kvm/arm-pvtime.h |  6 +++++
+ 4 files changed, 58 insertions(+), 1 deletion(-)
+ create mode 100644 arm/pvtime.c
+ create mode 100644 include/kvm/arm-pvtime.h
+
+diff --git a/Makefile b/Makefile
+index 3862112..a79956b 100644
+--- a/Makefile
++++ b/Makefile
+@@ -158,7 +158,7 @@ endif
+ # ARM
+ OBJS_ARM_COMMON		:= arm/fdt.o arm/gic.o arm/gicv2m.o arm/ioport.o \
+ 			   arm/kvm.o arm/kvm-cpu.o arm/pci.o arm/timer.o \
+-			   arm/pmu.o
++			   arm/pmu.o arm/pvtime.o
+ HDRS_ARM_COMMON		:= arm/include
+ ifeq ($(ARCH), arm)
+ 	DEFINES		+= -DCONFIG_ARM
+diff --git a/arm/kvm-cpu.c b/arm/kvm-cpu.c
+index 7780251..c903b05 100644
+--- a/arm/kvm-cpu.c
++++ b/arm/kvm-cpu.c
+@@ -1,5 +1,6 @@
+ #include "kvm/kvm.h"
+ #include "kvm/kvm-cpu.h"
++#include "kvm/arm-pvtime.h"
+ 
+ static int debug_fd;
+ 
+@@ -122,6 +123,9 @@ struct kvm_cpu *kvm_cpu__arch_init(struct kvm *kvm, unsigned long cpu_id)
+ 	vcpu->cpu_compatible	= target->compatible;
+ 	vcpu->is_running	= true;
+ 
++	if (pvtime_vcpu_init(vcpu))
++		die("Unable to initialise pvtime");
++
+ 	return vcpu;
+ }
+ 
+diff --git a/arm/pvtime.c b/arm/pvtime.c
+new file mode 100644
+index 0000000..fc152d3
+--- /dev/null
++++ b/arm/pvtime.c
+@@ -0,0 +1,47 @@
++#include "kvm/kvm.h"
++#include "kvm/kvm-cpu.h"
++#include "kvm/arm-pvtime.h"
++
++#define PVTIME_BASE 0x10000000
++
++#define KVM_ARM_VCPU_PVTIME_CTRL	2
++#define   KVM_ARM_VCPU_PVTIME_IPA	0
++
++static int pvtime_init(struct kvm *kvm)
++{
++	char *mem;
++	int size = ALIGN(64 * kvm->cfg.nrcpus, PAGE_SIZE);
++
++	mem = mmap(NULL, size, PROT_RW, MAP_ANON_NORESERVE, -1, 0);
++	if (mem == MAP_FAILED)
++		return -ENOMEM;
++
++	if (kvm__register_dev_mem(kvm, PVTIME_BASE, size, mem))
++		return -EINVAL;
++
++	return 0;
++}
++
++base_init(pvtime_init);
++
++int pvtime_vcpu_init(struct kvm_cpu *vcpu)
++{
++	int err;
++	u64 st_paddr = PVTIME_BASE;
++
++	st_paddr += vcpu->cpu_id * 64;
++
++	struct kvm_device_attr st_base = {
++		.group = KVM_ARM_VCPU_PVTIME_CTRL,
++		.attr = KVM_ARM_VCPU_PVTIME_IPA,
++		.addr = (u64)&st_paddr
++	};
++
++	err = ioctl(vcpu->vcpu_fd, KVM_SET_DEVICE_ATTR, &st_base);
++	if (err) {
++		perror("ioctl st_base failed");
++		return err;
++	}
++
++	return 0;
++}
+diff --git a/include/kvm/arm-pvtime.h b/include/kvm/arm-pvtime.h
+new file mode 100644
+index 0000000..f5db286
+--- /dev/null
++++ b/include/kvm/arm-pvtime.h
+@@ -0,0 +1,6 @@
++#ifndef ARM_PVTIME_H
++#define ARM_PVTIME_H
++
++int pvtime_vcpu_init(struct kvm_cpu *vcpu);
++
++#endif
+-- 
+2.20.1
 
 
 _______________________________________________
