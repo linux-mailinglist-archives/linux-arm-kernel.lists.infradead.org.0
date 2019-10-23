@@ -2,77 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F03EFE2137
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 18:59:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7D18E213F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 19:00:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=mN62W1uV4j39Hg0XpM7x7CvaAuFrwl9NW4Y+80l6rPo=; b=GAdal/AiiPwNrTnyUSGEfvn1J
-	P1dyP54c/F0ybL7Jtu8aLnf6fukhPUPMkoa7UkNhl8+LzzPmxzr8/FIcKtqc0cL4Jcl5icYyToQR1
-	s6P6pjWIKf8zvXAz+0PEYfnk7S3nyPRdDgFp3OdvEzQEXX+jV75e3QJ4ZlEY+ydnB8G3oBBqUuwfv
-	/fCVunaJwbl8KMsoYnVCsVIuak/XAYL5ZbftUB0v3FBJDzP2ZA84w5F9cqKOttGNgbX0CtPk9HIfD
-	3SodAIKpVSWdxFLIEkSkVHVyhBbP4I4kq4pVPj4r2GoyjcznkMKXwSwP9tWIM1Pttd+6hYMZwiKGB
-	dvajfOhdQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/qy5ZpUB6WQBtfVdHCbsLGBYAfbEw7UexgES2Db18BM=; b=Sq+s60pHCnHB0m
+	WFtFtKqHBkvZBdZNXMo/790p4QaDq7YEgrjhfoSA4NY5z3M4fwEPXt/SUM4g9XaKNdE51OTJUpr2w
+	7NWu0boaXA74bekg5LiAwQm4b5jQtP9wPHYuV+VA33Xy5O4cGGR/WsG71V7zUnxrRIRnXfuGTnh7n
+	sCpmx6eIzVnWtmef+r7v/lTHiMVTXenucY2lMTEYJlRi6KCSun1k67EGRAxMYrwtpCILmyGEeya1F
+	VGBIlqsH525CwfucksFXBCqYsZ4047mLst0Wa90HOd+DyDn+XKuyXUosjx+guO18hN64L0ZHINJuS
+	UILcI/ZtAo7Fff/dZisw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNJzG-0003h8-6H; Wed, 23 Oct 2019 16:59:54 +0000
-Received: from heliosphere.sirena.org.uk ([172.104.155.198])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNJyp-0003WC-TO
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 16:59:29 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=XrIyTUIIcwGweoXzbiGvqpSOVSltHgzWrBHeN+yMKhA=; b=luoGGER/eGCXKNWHKBECwxZ9x
- sLCfmNfX4bnSYny15P6DcWr3vzki1ED12Zzs26AainIOjMYSGefPYltHf2uBBfJJzVcOV+gTYjaVQ
- 4ybUzVgt6iWL9sNjMtyTB93lLR3o6t9ffzuOhla/Yu9gsa8LwoPh2pfc7v6I/psgmtLN8=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=ypsilon.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.co.uk>)
- id 1iNJym-0000zH-4P; Wed, 23 Oct 2019 16:59:24 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 50EF62743021; Wed, 23 Oct 2019 17:59:23 +0100 (BST)
-Date: Wed, 23 Oct 2019 17:59:23 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Nathan Chancellor <natechancellor@gmail.com>
-Subject: Re: [PATCH] cpufreq: s3c64xx: Remove pointless NULL check in
- s3c64xx_cpufreq_driver_init
-Message-ID: <20191023165923.GL5723@sirena.co.uk>
-References: <20191023000906.14374-1-natechancellor@gmail.com>
- <20191023032302.tu5nkvulo2yoctgr@vireshk-i7>
- <20191023104304.GA5723@sirena.co.uk>
- <20191023162628.GA10997@ubuntu-m2-xlarge-x86>
- <20191023163656.GH5723@sirena.co.uk>
- <20191023165417.GA15082@ubuntu-m2-xlarge-x86>
+	id 1iNJza-0003vQ-CS; Wed, 23 Oct 2019 17:00:14 +0000
+Received: from muru.com ([72.249.23.125])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iNJyz-0003gH-Q7
+ for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 16:59:39 +0000
+Received: from atomide.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTPS id 33CBF80CF;
+ Wed, 23 Oct 2019 17:00:12 +0000 (UTC)
+Date: Wed, 23 Oct 2019 09:59:34 -0700
+From: Tony Lindgren <tony@atomide.com>
+To: YueHaibing <yuehaibing@huawei.com>
+Subject: Re: [PATCH -next] ARM: OMAP2+: Remove duplicated include from
+ pmic-cpcap.c
+Message-ID: <20191023165934.GN5610@atomide.com>
+References: <20191023062900.43576-1-yuehaibing@huawei.com>
 MIME-Version: 1.0
-In-Reply-To: <20191023165417.GA15082@ubuntu-m2-xlarge-x86>
-X-Cookie: MMM-MM!!  So THIS is BIO-NEBULATION!
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <20191023062900.43576-1-yuehaibing@huawei.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_095927_960469_EEB9DDCE 
-X-CRM114-Status: GOOD (  11.00  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191023_095937_885899_B6BF617A 
+X-CRM114-Status: UNSURE (   4.99  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [172.104.155.198 listed in list.dnswl.org]
+ no trust [72.249.23.125 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,71 +61,22 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, linux-pm@vger.kernel.org,
- Viresh Kumar <viresh.kumar@linaro.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>, clang-built-linux@googlegroups.com,
- Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3760892163427318221=="
+Cc: linux-omap@vger.kernel.org, kernel-janitors@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, linux-arm-kernel@lists.infradead.org,
+ Kevin Hilman <khilman@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+* YueHaibing <yuehaibing@huawei.com> [191022 23:29]:
+> Remove duplicated include.
 
---===============3760892163427318221==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="AQNmCumFClRcGgHG"
-Content-Disposition: inline
+Thanks applying into omap-for-v5.5/pm.
 
-
---AQNmCumFClRcGgHG
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Wed, Oct 23, 2019 at 09:54:17AM -0700, Nathan Chancellor wrote:
-> On Wed, Oct 23, 2019 at 05:36:56PM +0100, Mark Brown wrote:
-> > On Wed, Oct 23, 2019 at 09:26:28AM -0700, Nathan Chancellor wrote:
-> > > On Wed, Oct 23, 2019 at 11:43:04AM +0100, Mark Brown wrote:
-
-> > > > The driver should also have supported s3c6400 as well.
-
-> > > Kconfig says otherwise, unless I am missing something.
-
-> > Note the XX in the config option.
-
-> But what about the depends and the help text?
-
-Viresh asked why the driver was written with s3c6410 support optional.
-I explained that the reason that it was written this way was to
-accomodate s3c6400 support.
-
---AQNmCumFClRcGgHG
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl2whuoACgkQJNaLcl1U
-h9D5XQf8DtCAVE+KWRLKQff+e0eoyrmuOH64fFlBCM0iJFytXmKaO6yq/o7FQjcx
-9CLRRHMdyzXLnTiVGkmkhsVGuAOJPCM+tTjYr/fHoq83Y3cKVSpWnOre95Z52OBa
-qkawCaJ6i1XrXY0hznOXDb48gQuKG7kecSLaKxGvskoYpI6csEoqeTU/jUKTSMqr
-GGa5Kdcp4LNd77ZbOWg4TRzUVj9BdcU59SFkOSPB+eA9O/Lers0oGENcu59MrxXF
-wgJnuQnwnJIv7liRZDk0/z6lSLWqIq32C/nm+AKUrQrD3obXhzvyZnigHpn/hwfV
-tEmawktj1/+nJxfhTt1gh0vRlbhiyw==
-=wsTD
------END PGP SIGNATURE-----
-
---AQNmCumFClRcGgHG--
-
-
---===============3760892163427318221==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Tony
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3760892163427318221==--
-
