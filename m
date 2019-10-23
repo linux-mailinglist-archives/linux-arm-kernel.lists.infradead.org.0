@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EAF25E2417
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 22:10:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B82AE2418
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 22:11:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KLvBHc3gVeGIY0YXQKOcYU3Q7cYtK0TDv3xr+UQR+zk=; b=m/Exr33sMaYkci
-	2JZMBO6O1QIl+W+1/3LPLfxyr08Rq4LBKZsLoqP4QcVDCHcMG1j9WN7GHkgdXGP6ZtpYUzGkscjv4
-	GJC0eKV+IhljKur1Dvn71E/oSbezKYA/LQvTmtyCcxkvkoQ8/7qaTITzJxKuckFF3U37108gUlAbG
-	2uMok4qTifGuN9I3q9dyCBO8JSRS4IWvOnSnMN4mYuohSvfUYNY5PHWczgPkBDC0ClRdGn1UoHCdV
-	GuGYvXPHQcgdSjwl8LD1sIytsOniHRSkNfihWwB/UZcyvYRXNWSX5GIuSLELfWXPNh7Qp+bZe32Rj
-	329t5kAjBh9PhLnRO7og==;
+	List-Owner; bh=FzXq+rUiRx8cRYtDrOPKY2D6nKi7e0ddqCoslkHwHGU=; b=QYCpNbQc38vzS/
+	i1IlmRq6O12l5DV3EoaP7cZcuRXGYgeYjTFuh7Ca8SpOY9eA7l2cS+1Jt1bzkZAn/6dCE6bvgtT6C
+	DaEbJsMsjHbo85Mv+KYHy0sB+62vcYTCR+3VVkKPVDBOiiu8De2C/59w0lU3DC6V3D3VbysBxI+lu
+	IMqTzPlMBGPUgVe7EB62lt2Af0sJa5aBdzKkPp74rfBByVYHSs+G9WZsEscVHQLlwSPsDks1op7/W
+	YxfEXeZJhi+6P5sZmUaOqDsHRoklXRofN9L8w62V6BfYMPx0TJMKXnH+5G1H50P5rTX6k1R4MXsQp
+	42wvti6yizCg7kSIQ05Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNMy9-0006MG-Tl; Wed, 23 Oct 2019 20:10:57 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1iNMyL-0006bv-6O; Wed, 23 Oct 2019 20:11:09 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNMxc-000693-41
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 20:10:25 +0000
-Received: by mail-wm1-x341.google.com with SMTP id q13so297718wmj.0
+ id 1iNMxd-0006AQ-N1
+ for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 20:10:27 +0000
+Received: by mail-wr1-x441.google.com with SMTP id s1so14706883wro.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 23 Oct 2019 13:10:24 -0700 (PDT)
+ Wed, 23 Oct 2019 13:10:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=YeVIHo25aNxqgkPFtqlcHgTXA3cBcyk3epMZWtBEgr4=;
- b=CSlRQWrU1abnaj7duzwPLvaB3wvFZktGMyzXA4ZNgSqVbF1EE8voO5A1ZxKAxEIQ7E
- 31NY8Yrr5V2EDd23obZF/8PsD+hbx+jv5AJUEsJl5jL8XN8qyKKh5TKTgo+0lEhprka5
- t6YeZBB6zUythbHjHTwW5Nhtr1uXBqa/RY75Qyiui6eEJ02b56N6Aaurpkl1FWB1lbfk
- r6PwNKZ7RQwglYL/kn98ieJf2rKPFn1gNjpQ9304vyqZKNwuAlWQD9rETQ3TTafOt/Dl
- PsBjoLvVjU1QrnLcmvI6I82ATgiGgQYsU4XWnT1JaPMJNfbwXnvPS+w26l5e0Od6XnyT
- GVMg==
+ bh=EVcGe0jhVemfS4F9ZaDSPVCJM3kLwDEzlwrCz/1Vhro=;
+ b=EB5jMS0HCXV/O9fqfDaEVsb4bq3hdr5B049ewpRUOWDfnPe1UTPTnZUwyhiswHn7GT
+ cfQLb/7CnZMg/o2EVAyVlgxw1O5G84mHnkVpnQ4juU9KsIYHtcLDb1HrYx3VyqYd6Br6
+ DC7DDFFTD2cISFn4jEX4w7Pf1QjLJBSFE5nL2KKBPxptObUusMmf/b5z4/1n6nG7wQRZ
+ D7EmtQJ8fzzvQxKdyFF98sJHcnxE2L3FK6swZaTrI4CoGh8B1LFnmnX//Kdq0SHie+rR
+ JAUeruRD9POjKOJVv2tuk5xiTbK+kGZevL3LVzw8VLVNrGs+N7jalEtxe8t7HPI6j+3f
+ DT+A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=YeVIHo25aNxqgkPFtqlcHgTXA3cBcyk3epMZWtBEgr4=;
- b=t5xWR74Qvt19ArQM8vjEHWLMLzvEfjBb7g6fU5Mta/RCt0p3+OaOhY0WMSLbL4lFlR
- jV4GipDV2M1ATZZ8FxHVFF3W3PQZx8LwWiLU8haCCRa8bq5dhUzjI0ULslham6aa+Qx/
- /TPSOwFAG/fnJli/vPozF4h80l5UliyNkt5TUqvCerit8pPgLaw2JZ9KmOwQ/kXwnjOh
- FbnfpHYAkTr2krUkXvXa1QDUQFRl2F2s50/Tp4+gAUsTMN6ClVM1tK2FihxP1iuJEedY
- TyWrxvCLmJX6UJ0O1yhs/mSh9v6c7XLUTvzYLFmQ0E6doZ4F4jp/4zJ6xTwm3Z8xy/Ik
- TOFg==
-X-Gm-Message-State: APjAAAX8RIsrk/Q4+PxjbTr8ozMji7Cv6MupCG/ldH0AZuHRIWEXijnY
- h3xLUb4OPbsoObUeSTtTcqI=
-X-Google-Smtp-Source: APXvYqy3VTLbFkblzNKQITLeEDXFOdssTr3+YocP/wu2kW9aOOPYQhEfer3K5vXbAsxW7BrlSM4Caw==
-X-Received: by 2002:a1c:d8:: with SMTP id 207mr1464356wma.65.1571861422914;
- Wed, 23 Oct 2019 13:10:22 -0700 (PDT)
+ bh=EVcGe0jhVemfS4F9ZaDSPVCJM3kLwDEzlwrCz/1Vhro=;
+ b=sOhXIN6Hq0ZJ8kdZE71zh/P7XDTSzXbB60w1K8xtB6X3yEZhtI+iklZpBDkB/7dYqB
+ XASVWwnkFlUUfd51IkvYd7q3xzjuyWeL0yY3+c5xbSv2zU/a6xtCFRe42KlnowVAULo8
+ OxXAdoSN25GhkFD2jssuOsnGFvcSSmmyEbTXUYRn2HTRQ+19SAkZ4gP4o74/VArooGA1
+ s+iAu38z8QwEguDAtEjJ1au5oskPJd481pdUzgQFnFm7Iy+FcrBgH/MT5jV25PIAUvRT
+ 6cEQJxRhJbJJCUbj0HIA9VbqmUVbsnqz5IQRtTutwbBiGFkhUBoioKZFpxj4SqGmpk77
+ GKsQ==
+X-Gm-Message-State: APjAAAWufpiHcuqpdq43EMzgBQieOfz7a35S4Xkz0rmLIZKtZz669Kj6
+ 4+CJqsbp50ukUAoo9hXWNrY=
+X-Google-Smtp-Source: APXvYqxXRr01gLUky9ikT60t1Fi0fbsD4kiaOTYDWZyPb3tFWAxn+F8I6U2dAgQddtCWq57qxr0MjQ==
+X-Received: by 2002:a5d:4285:: with SMTP id k5mr434899wrq.344.1571861424257;
+ Wed, 23 Oct 2019 13:10:24 -0700 (PDT)
 Received: from Red.localdomain (lfbn-1-7036-79.w90-116.abo.wanadoo.fr.
  [90.116.209.79])
- by smtp.googlemail.com with ESMTPSA id h17sm277261wmb.33.2019.10.23.13.10.21
+ by smtp.googlemail.com with ESMTPSA id h17sm277261wmb.33.2019.10.23.13.10.22
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 23 Oct 2019 13:10:22 -0700 (PDT)
+ Wed, 23 Oct 2019 13:10:23 -0700 (PDT)
 From: Corentin Labbe <clabbe.montjoie@gmail.com>
 To: davem@davemloft.net, herbert@gondor.apana.org.au, mark.rutland@arm.com,
  mripard@kernel.org, robh+dt@kernel.org, wens@csie.org
-Subject: [PATCH v2 2/4] dt-bindings: crypto: Add DT bindings documentation for
- sun8i-ss Security System
-Date: Wed, 23 Oct 2019 22:10:14 +0200
-Message-Id: <20191023201016.26195-3-clabbe.montjoie@gmail.com>
+Subject: [PATCH v2 3/4] ARM: dts: sun8i: a83t: Add Security System node
+Date: Wed, 23 Oct 2019 22:10:15 +0200
+Message-Id: <20191023201016.26195-4-clabbe.montjoie@gmail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20191023201016.26195-1-clabbe.montjoie@gmail.com>
 References: <20191023201016.26195-1-clabbe.montjoie@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_131024_184199_982C8CD3 
-X-CRM114-Status: GOOD (  11.79  )
+X-CRM114-CacheID: sfid-20191023_131025_803064_B385F4A9 
+X-CRM114-Status: GOOD (  12.98  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -109,85 +108,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds documentation for Device-Tree bindings of the
-Security System cryptographic offloader driver.
+The Security System is a hardware cryptographic accelerator that support
+AES/MD5/SHA1/DES/3DES/PRNG/RSA algorithms.
+It could be found on Allwinner SoC A80 and A83T
+
+This patch add it on the Allwinner A83T SoC Device-tree.
 
 Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
 ---
- .../bindings/crypto/allwinner,sun8i-ss.yaml   | 64 +++++++++++++++++++
- 1 file changed, 64 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/crypto/allwinner,sun8i-ss.yaml
+ arch/arm/boot/dts/sun8i-a83t.dtsi | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ss.yaml b/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ss.yaml
-new file mode 100644
-index 000000000000..99b7736975bc
---- /dev/null
-+++ b/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ss.yaml
-@@ -0,0 +1,64 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/crypto/allwinner,sun8i-ss.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+diff --git a/arch/arm/boot/dts/sun8i-a83t.dtsi b/arch/arm/boot/dts/sun8i-a83t.dtsi
+index 74bb053cf23c..0a6e9d92277c 100644
+--- a/arch/arm/boot/dts/sun8i-a83t.dtsi
++++ b/arch/arm/boot/dts/sun8i-a83t.dtsi
+@@ -583,6 +583,16 @@
+ 			reg = <0x1c14000 0x400>;
+ 		};
+ 
++		crypto: crypto@1c15000 {
++			compatible = "allwinner,sun8i-a83t-crypto";
++			reg = <0x01c15000 0x1000>;
++			interrupts = <GIC_SPI 80 IRQ_TYPE_LEVEL_HIGH>;
++			resets = <&ccu RST_BUS_SS>;
++			reset-names = "bus";
++			clocks = <&ccu CLK_BUS_SS>, <&ccu CLK_SS>;
++			clock-names = "bus", "mod";
++		};
 +
-+title: Allwinner Security System v2 driver
-+
-+maintainers:
-+  - Corentin Labbe <corentin.labbe@gmail.com>
-+
-+properties:
-+  compatible:
-+    enum:
-+      - allwinner,sun8i-a83t-crypto
-+      - allwinner,sun9i-a80-crypto
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    items:
-+      - description: Bus clock
-+      - description: Module clock
-+
-+  clock-names:
-+    items:
-+      - const: bus
-+      - const: mod
-+
-+  resets:
-+    maxItems: 1
-+
-+  reset-names:
-+    const: bus
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/clock/sun8i-a83t-ccu.h>
-+    #include <dt-bindings/reset/sun8i-a83t-ccu.h>
-+
-+    crypto: crypto@1c15000 {
-+      compatible = "allwinner,sun8i-a83t-crypto";
-+      reg = <0x01c15000 0x1000>;
-+      interrupts = <GIC_SPI 94 IRQ_TYPE_LEVEL_HIGH>;
-+      clocks = <&ccu CLK_BUS_SS>, <&ccu CLK_SS>;
-+      clock-names = "bus", "mod";
-+      resets = <&ccu RST_BUS_SS>;
-+      reset-names = "bus";
-+    };
-+
+ 		usb_otg: usb@1c19000 {
+ 			compatible = "allwinner,sun8i-a83t-musb",
+ 				     "allwinner,sun8i-a33-musb";
 -- 
 2.21.0
 
