@@ -2,40 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6FF5FE222B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 19:55:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4D51E2222
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 19:55:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=toofu6/HULS4i4GZSlqm+Apw0YLurvRPwq6OFsEu9sc=; b=JSs84bgFeX4Q8w
-	7iD1N6DWgKKJ9qlm8bN/gZ0lIrjavg2s4T02iRxIbqkreK+ciwQz7fblntwOXJy4eNqjgai05rTfS
-	R9e56M5FLtlXyWee7yvc9OlkJuDQbqQq7/UmG6wN9cRWPEjasIKsPIOTSK3r984K7IZ8fCairyH31
-	lQLpDrqvX+FPA0bSUJkeooDMxQWTj2uDvuPM4YiV0vnijB2akt2cp4A6/auRTjbmnmMi9n+lfhvVQ
-	s0DIou4edmywnMNuVcN79uN+mDr7K57LkG1lpiXl8B0W43K9KRaAvOD+ttZu3GKzQOKgLDdUp+QaM
-	hqvAnv5JumX9azk6mccg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pHB7d7VXSm5QED1z4CUVs0N2N6IIcUgpZsopfXn1yk4=; b=roLSmGz2LyqU4+
+	+4pm/peJNV1QFpEq8HHe5DDKoFbHBijRNeBGfqFz5QTfGodnhVGaJGWkMWpQ3pxSurq+2FlGbCDEM
+	LAbryE3Rw+xGc5ByEH44rmA0vbBYTWRtt3AoR4t/5TZhn5WElm8ObUCc74Hu2cTGdkTmYfKlVeouA
+	35IsflytsF0mpwVswJANtd0KUy+0AwPU76OBsj3nTWWu3IC4vBAdLPCT6e45gWKRb3T7u9+jHwnMM
+	+L8xgDOzoaV4bfTtL3+SbMg59jOMbd6Q/dtk5F0Ht/ryfWfZH5FmKN26KACTtAU6aEeRRGKXrj+ON
+	RaaJak3+Vg5Im9pcTV7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNKr7-0004tW-Rt; Wed, 23 Oct 2019 17:55:33 +0000
+	id 1iNKqr-0003wo-9y; Wed, 23 Oct 2019 17:55:17 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNKqa-0003Uf-AX
+ id 1iNKqa-0003Uh-AX
  for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 17:55:03 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 8B12080CF;
- Wed, 23 Oct 2019 17:55:32 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id A2804816C;
+ Wed, 23 Oct 2019 17:55:33 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: soc@kernel.org
-Subject: [GIT PULL 1/2] omap2plus_defconfig changes for v5.5
-Date: Wed, 23 Oct 2019 10:54:48 -0700
-Message-Id: <pull-1571853258-16998@atomide.com>
+Subject: [GIT PULL 2/2] ti-sysc driver changes for v5.5
+Date: Wed, 23 Oct 2019 10:54:49 -0700
+Message-Id: <pull-1571853258-16998@atomide.com-2>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <pull-1571853258-16998@atomide.com>
+References: <pull-1571853258-16998@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_105500_406035_D740195E 
-X-CRM114-Status: UNSURE (   7.18  )
+X-CRM114-CacheID: sfid-20191023_105500_407142_CF545DBE 
+X-CRM114-Status: UNSURE (   7.16  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -66,36 +68,39 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: "Tony Lindgren" <tony@atomide.com>
 
-The following changes since commit 96d49bbfe6c1a6bb43ccd00fb87aca100e32e5e2:
+The following changes since commit c7d8669f46ba97f6a8e14d6e9b8d6c39e2c07727:
 
-  ARM: omap2plus_defconfig: Fix selected panels after generic panel changes (2019-10-03 09:44:40 -0700)
+  bus: ti-sysc: Fix watchdog quirk handling (2019-10-18 08:45:32 -0700)
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.5/defconfig-signed
+  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.5/ti-sysc-signed
 
-for you to fetch changes up to ec2b31267263cd7d5a7567d315f839796c2a8c87:
+for you to fetch changes up to 1819ef2e2d12d5b1a6ee54ac1c2afe35cffc677c:
 
-  configs: omap2plus: Enable VIDEO_MT9P031 module (2019-10-22 09:11:03 -0700)
-
-----------------------------------------------------------------
-Defconfig changes for omap2plus_defconfig for v5.5
-
-A series of changes from Adam Ford to update for removed and moved items,
-and then enable crypto devices and MT9P031 video as loadable modules.
-
-Looks like I missed unifying the subject line for one commit, but I did
-not want to mess with the commit after pushing it out.
+  bus: ti-sysc: Use swsup quirks also for am335x musb (2019-10-21 14:15:55 -0700)
 
 ----------------------------------------------------------------
-Adam Ford (4):
-      ARM: omap2plus_defconfig: Update for removed items
-      ARM: omap2plus_defconfig: Update for moved item
-      ARM: omap2plus_defconfig: Enable HW Crypto engine modules
-      configs: omap2plus: Enable VIDEO_MT9P031 module
+Changes for ti-sysc interconnect target module driver for v5.5
 
- arch/arm/configs/omap2plus_defconfig | 10 ++++++----
- 1 file changed, 6 insertions(+), 4 deletions(-)
+A series of changes from Tero Kristo for rpm reset control
+driver to deal with the ordering requirements between clocks
+and resets, and two changes to deal with quirks for musb otg
+device.
+
+----------------------------------------------------------------
+Tero Kristo (3):
+      bus: ti-sysc: re-order reset and main clock controls
+      bus: ti-sysc: drop the extra hardreset during init
+      bus: ti-sysc: avoid toggling power state of module during probe
+
+Tony Lindgren (3):
+      Merge branch 'watchdog-fix' into omap-for-v5.5/ti-sysc
+      bus: ti-sysc: Handle mstandby quirk and use it for musb
+      bus: ti-sysc: Use swsup quirks also for am335x musb
+
+ drivers/bus/ti-sysc.c | 87 +++++++++++++++++++--------------------------------
+ 1 file changed, 33 insertions(+), 54 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
