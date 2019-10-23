@@ -2,93 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4EC98E17D9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 12:26:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 185DDE17E6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 12:28:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A06iJiDQNEGc1+Jfm0CS3G4aiExvnrHNlD8tGGNOd74=; b=jvBiR99f3Cfmg+
-	dmeTq0LSsXReEEMYsW4gTbabzWPPZlrMdg2JXcdf1lX5jXn9UstM1kwt30Sjf0udEV6vmFtGtmtnG
-	jkjqjNKCdbBrnvTwk8svmnMCxYE6tgflkH2/4+itJTDhi8zRGfH+LLxhWdK9zNSK06Ge1Z/dFXF5X
-	P33jLcVswYm4XA5x147IAa/MbjcYJ34VQ4mV1sqooHlXFNFr5DH8BM5RYNAnzwvZ+llymEMsRKX2o
-	/bOhVp87cC3SlqsoNw9RtXJp7ZYbuLtwcngmn0I9K29sO1aDm/NWp0EAmi0lZ4RqXpdJsLaBBj2Ss
-	1mBR6LbU4JDpBHBvI6fQ==;
+	List-Owner; bh=gU8ms/SXhucopeiI5ph05q8bWCt7sabRavWbfFlrVTk=; b=UjX0UALlJGxDGK
+	yh9zWE5aGN/msjudWX/fu5RFPsKmkMuhsL2t2so2ZCjrNjFFWEBUrw6k0dmbG8HEY0qKQxlhOg4Mq
+	NXXFILSEFA9yMHzu6V8eW0wLK5zWtFWeXqN+YEW/vS0aqBikX4u12BxU9cGIDP6iL9xX8cinLJzy+
+	F+WMZ8+xxUuCU9lVizQc4JSyiE4KQPyjfnOjyFmVHGHI3TuTW794UuqAobNMdeE5Rqi4OpjC25bnt
+	fiScMf51l9Z994ztnqBpGOLaPru9nlOWHvxtXKhMPIp6LvYEOpJ9OCfmdV8TSa7qC15zL+5sRRXu3
+	sTsYIpPafA8yKLzj9oYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNDqh-0005R4-HK; Wed, 23 Oct 2019 10:26:39 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1iNDsU-0006J7-BE; Wed, 23 Oct 2019 10:28:30 +0000
+Received: from mail-ed1-f67.google.com ([209.85.208.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNDqO-0005JM-Rc
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 10:26:22 +0000
-Received: by mail-lf1-x144.google.com with SMTP id v8so15028094lfa.12
+ id 1iNDrv-0006BM-7X
+ for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 10:27:57 +0000
+Received: by mail-ed1-f67.google.com with SMTP id h2so15349263edn.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 23 Oct 2019 03:26:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=linux-foundation.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=aRWUNj4J7qgXSXD2PSfXvGDEs07MKcTmNuTdcaVnUGw=;
- b=Slb+IaA7gxUyVr09pbGzJOB54Jv239tGUr7XIcQxfolpIG44u/NoAMOhLnza+Em4WR
- TEPsZuhBtQdRHRD82otLdcY2uJ9E7K4xMc5ZFii1pfI6kkUC5qwEGbYYfYuTwlvtQiDO
- wMOTH/ObIO23qcZyZJ2PI3HvK563JGx6aHaAU=
+ Wed, 23 Oct 2019 03:27:55 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=aRWUNj4J7qgXSXD2PSfXvGDEs07MKcTmNuTdcaVnUGw=;
- b=EeaPAo8SnXF+UOwby93INjgg8nDI7ing20e8xIf286rrFewOuHW1aHKGNSidEea78m
- miny+DHvGCe8FcQER/SazPyKhaogeqkcHymkK2w+1gp9WsdHgtkZl6UEWP16rKeDTnsT
- anMOdfq92OOY9PMGLCJoJZpxldNX/2pkk4y+iX1SN7sBr4p1PkiscsKQq0XzeMSKyqoa
- O0HE0BWDk6Nq4hbND9O7HLyoB9ktYadit+Uc2Bfr6oV4bci+xpLlVIBIjqiS+VCtsjtf
- cVZbM8774rizJtysKgLIXyb5Yzfi8jcxBM09MW1vSghQrd/uxilcABqVG/BXA8eOWjrE
- +MDA==
-X-Gm-Message-State: APjAAAUqXASYmVQwxNplA7fcayhz6AZzD45OBNEJSk7RLSsidGs8GGOB
- 4auhYuYe3d6YP83adsaPn7JV8zBPJIfbIQ==
-X-Google-Smtp-Source: APXvYqztFI92wOG3iTD1Y4Y+aFn7XGm85E4Yn8A531xVbw34rieboLKPg+5f5n4swfUF4ztJ4emFUw==
-X-Received: by 2002:a19:6759:: with SMTP id e25mr21059814lfj.80.1571826373694; 
- Wed, 23 Oct 2019 03:26:13 -0700 (PDT)
-Received: from mail-lj1-f172.google.com (mail-lj1-f172.google.com.
- [209.85.208.172])
- by smtp.gmail.com with ESMTPSA id 132sm2970725ljj.83.2019.10.23.03.26.05
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 23 Oct 2019 03:26:11 -0700 (PDT)
-Received: by mail-lj1-f172.google.com with SMTP id y3so20496958ljj.6
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 23 Oct 2019 03:26:05 -0700 (PDT)
-X-Received: by 2002:a2e:29dd:: with SMTP id p90mr21979653ljp.26.1571826364626; 
- Wed, 23 Oct 2019 03:26:04 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=sN1khWqhEdLQ73NvMDu4PylBTsZjnLiQFTCzkxlO2MQ=;
+ b=HxU123CwSlsXWy4NukZb5rhMt0g7pxsipf/V6WtiMjYTeKfHklLHtwelFk9DWcZPtV
+ DN30XBybcfNr1ptTYagmluX0o06PwlRkUfBodnFY6y3I1yR5g2ZahsghmuD52WIsmFPa
+ epGLUotb7jvdT5lFtmGs0LVLXDe16NbATsI55hYkItbptEGvZTqyZkPR44VbiQrOz3Oo
+ SphQf/rWpNTgLa8Kyq3lfSw5YH0B+izde/awkhE0lGOTf3B+RH4SeCD9mnOW3AmaF8EL
+ N0Z2PKSal0cZyYe4AGcDYub6ZgWguUWrCEixrg4VmghQ8Bt0xqlS7Wvdo51tN/2HnQYo
+ 3T+A==
+X-Gm-Message-State: APjAAAUEaxQaFzyjBPpQHgZxXgElkhCt4XTWwSSE6y7JT8mMeBqzYmC4
+ pD6wxfEMF99bH907E2pZP90=
+X-Google-Smtp-Source: APXvYqweO7L9OX5pU8/x+P5juNGpeFrV4kxRZI/Y+xaj7+Ve9ixjue5f2pYzFGNYsQIqVVZTlnBVtQ==
+X-Received: by 2002:a17:906:a2d1:: with SMTP id
+ by17mr32249056ejb.206.1571826473749; 
+ Wed, 23 Oct 2019 03:27:53 -0700 (PDT)
+Received: from pi3 ([194.230.155.217])
+ by smtp.googlemail.com with ESMTPSA id q2sm681528edh.41.2019.10.23.03.27.51
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 23 Oct 2019 03:27:52 -0700 (PDT)
+Date: Wed, 23 Oct 2019 12:27:50 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH 05/36] ARM: samsung: make pm-debug platform independent
+Message-ID: <20191023102750.GD10630@pi3>
+References: <20191010202802.1132272-1-arnd@arndb.de>
+ <20191010203043.1241612-1-arnd@arndb.de>
+ <20191010203043.1241612-5-arnd@arndb.de>
 MIME-Version: 1.0
-References: <1571822941-29776-1-git-send-email-rppt@kernel.org>
-In-Reply-To: <1571822941-29776-1-git-send-email-rppt@kernel.org>
-From: Linus Torvalds <torvalds@linux-foundation.org>
-Date: Wed, 23 Oct 2019 06:25:48 -0400
-X-Gmail-Original-Message-ID: <CAHk-=whd6wNfx2bq7BmN4ouZgt=NQ5pw+3uqPOTbvz_Qb3itFg@mail.gmail.com>
-Message-ID: <CAHk-=whd6wNfx2bq7BmN4ouZgt=NQ5pw+3uqPOTbvz_Qb3itFg@mail.gmail.com>
-Subject: Re: [PATCH 00/12] mm: remove __ARCH_HAS_4LEVEL_HACK
-To: Mike Rapoport <rppt@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20191010203043.1241612-5-arnd@arndb.de>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_032620_964517_BB504E3C 
-X-CRM114-Status: GOOD (  10.12  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191023_032755_325837_E94392BB 
+X-CRM114-Status: GOOD (  25.86  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
+ no trust [209.85.208.67 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.67 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (k.kozlowski.k[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,41 +90,212 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
- Linux-MM <linux-mm@kvack.org>, sparclinux@vger.kernel.org,
- Vincent Chen <deanbo422@gmail.com>, Greg Ungerer <gerg@linux-m68k.org>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>,
- linux-arch <linux-arch@vger.kernel.org>, linux-c6x-dev@linux-c6x.org,
- Richard Weinberger <richard@nod.at>, Helge Deller <deller@gmx.de>,
- Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>, Mark Salter <msalter@redhat.com>,
- Matt Turner <mattst88@gmail.com>, Jeff Dike <jdike@addtoit.com>,
- Sam Creasey <sammy@sammy.net>, Arnd Bergmann <arnd@arndb.de>,
- Vineet Gupta <Vineet.Gupta1@synopsys.com>, linux-um@lists.infradead.org,
- linux-m68k <linux-m68k@lists.linux-m68k.org>,
- Greentime Hu <green.hu@gmail.com>, "Kirill A. Shutemov" <kirill@shutemov.name>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Michal Simek <monstr@monstr.eu>, linux-parisc@vger.kernel.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- alpha <linux-alpha@vger.kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
- "David S. Miller" <davem@davemloft.net>
+Cc: linux-samsung-soc@vger.kernel.org, linus.walleij@linaro.org,
+ Tomasz Figa <tomasz.figa@gmail.com>, linux-kernel@vger.kernel.org,
+ Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 23, 2019 at 5:29 AM Mike Rapoport <rppt@kernel.org> wrote:
->
-> These patches convert several architectures to use page table folding and
-> remove __ARCH_HAS_4LEVEL_HACK along with include/asm-generic/4level-fixup.h.
+On Thu, Oct 10, 2019 at 10:29:49PM +0200, Arnd Bergmann wrote:
+> The pm-debug code is one of the few things shared between s3c24xx/s3c64xx
+> and the newer s5pv210. In order to make s5pv210 independent of plat-samsung,
+> change the common bits of this code to no longer reference the s3c specific
+> bits.
+> 
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> ---
+>  arch/arm/mach-s3c24xx/include/mach/pm-core.h  |  7 +--
+>  arch/arm/mach-s3c64xx/include/mach/pm-core.h  | 44 +---------------
+>  arch/arm/mach-s3c64xx/pm.c                    | 50 +++++++++++++++++++
+>  arch/arm/mach-s5pv210/pm.c                    |  6 +--
+>  .../arm/plat-samsung/include/plat/pm-common.h | 29 +++++------
+>  arch/arm/plat-samsung/pm-debug.c              | 23 ++-------
+>  arch/arm/plat-samsung/pm.c                    | 10 ++--
+>  7 files changed, 80 insertions(+), 89 deletions(-)
+> 
+> diff --git a/arch/arm/mach-s3c24xx/include/mach/pm-core.h b/arch/arm/mach-s3c24xx/include/mach/pm-core.h
+> index 5e4ce89d0158..8f87606c4cdc 100644
+> --- a/arch/arm/mach-s3c24xx/include/mach/pm-core.h
+> +++ b/arch/arm/mach-s3c24xx/include/mach/pm-core.h
+> @@ -15,6 +15,7 @@
+>  
+>  static inline void s3c_pm_debug_init_uart(void)
+>  {
+> +#ifdef CONFIG_SAMSUNG_PM_DEBUG
+>  	unsigned long tmp = __raw_readl(S3C2410_CLKCON);
+>  
+>  	/* re-start uart clocks */
+> @@ -24,6 +25,7 @@ static inline void s3c_pm_debug_init_uart(void)
+>  
+>  	__raw_writel(tmp, S3C2410_CLKCON);
+>  	udelay(10);
+> +#endif
+>  }
+>  
+>  static inline void s3c_pm_arch_prepare_irqs(void)
+> @@ -75,11 +77,6 @@ static inline void s3c_pm_arch_show_resume_irqs(void)
+>  				s3c_irqwake_eintmask);
+>  }
+>  
+> -static inline void s3c_pm_arch_update_uart(void __iomem *regs,
+> -					   struct pm_uart_save *save)
+> -{
+> -}
+> -
+>  static inline void s3c_pm_restored_gpios(void) { }
+>  static inline void samsung_pm_saved_gpios(void) { }
+>  
+> diff --git a/arch/arm/mach-s3c64xx/include/mach/pm-core.h b/arch/arm/mach-s3c64xx/include/mach/pm-core.h
+> index bbf79ed28583..33cf242734a0 100644
+> --- a/arch/arm/mach-s3c64xx/include/mach/pm-core.h
+> +++ b/arch/arm/mach-s3c64xx/include/mach/pm-core.h
+> @@ -20,6 +20,7 @@
+>  
+>  static inline void s3c_pm_debug_init_uart(void)
+>  {
+> +#ifdef CONFIG_SAMSUNG_PM_DEBUG
+>  	u32 tmp = __raw_readl(S3C_PCLK_GATE);
+>  
+>  	/* As a note, since the S3C64XX UARTs generally have multiple
+> @@ -35,6 +36,7 @@ static inline void s3c_pm_debug_init_uart(void)
+>  
+>  	__raw_writel(tmp, S3C_PCLK_GATE);
+>  	udelay(10);
+> +#endif
+>  }
+>  
+>  static inline void s3c_pm_arch_prepare_irqs(void)
+> @@ -63,48 +65,6 @@ static inline void s3c_pm_arch_show_resume_irqs(void)
+>  #define s3c_irqwake_intallow  0
+>  #endif
+>  
+> -static inline void s3c_pm_arch_update_uart(void __iomem *regs,
+> -					   struct pm_uart_save *save)
+> -{
+> -	u32 ucon = __raw_readl(regs + S3C2410_UCON);
+> -	u32 ucon_clk = ucon & S3C6400_UCON_CLKMASK;
+> -	u32 save_clk = save->ucon & S3C6400_UCON_CLKMASK;
+> -	u32 new_ucon;
+> -	u32 delta;
+> -
+> -	/* S3C64XX UART blocks only support level interrupts, so ensure that
+> -	 * when we restore unused UART blocks we force the level interrupt
+> -	 * settigs. */
+> -	save->ucon |= S3C2410_UCON_TXILEVEL | S3C2410_UCON_RXILEVEL;
+> -
+> -	/* We have a constraint on changing the clock type of the UART
+> -	 * between UCLKx and PCLK, so ensure that when we restore UCON
+> -	 * that the CLK field is correctly modified if the bootloader
+> -	 * has changed anything.
+> -	 */
+> -	if (ucon_clk != save_clk) {
+> -		new_ucon = save->ucon;
+> -		delta = ucon_clk ^ save_clk;
+> -
+> -		/* change from UCLKx => wrong PCLK,
+> -		 * either UCLK can be tested for by a bit-test
+> -		 * with UCLK0 */
+> -		if (ucon_clk & S3C6400_UCON_UCLK0 &&
+> -		    !(save_clk & S3C6400_UCON_UCLK0) &&
+> -		    delta & S3C6400_UCON_PCLK2) {
+> -			new_ucon &= ~S3C6400_UCON_UCLK0;
+> -		} else if (delta == S3C6400_UCON_PCLK2) {
+> -			/* as an precaution, don't change from
+> -			 * PCLK2 => PCLK or vice-versa */
+> -			new_ucon ^= S3C6400_UCON_PCLK2;
+> -		}
+> -
+> -		S3C_PMDBG("ucon change %04x => %04x (save=%04x)\n",
+> -			  ucon, new_ucon, save->ucon);
+> -		save->ucon = new_ucon;
+> -	}
+> -}
+> -
+>  static inline void s3c_pm_restored_gpios(void)
+>  {
+>  	/* ensure sleep mode has been cleared from the system */
+> diff --git a/arch/arm/mach-s3c64xx/pm.c b/arch/arm/mach-s3c64xx/pm.c
+> index fd6dbb263ed5..a612e9779057 100644
+> --- a/arch/arm/mach-s3c64xx/pm.c
+> +++ b/arch/arm/mach-s3c64xx/pm.c
+> @@ -305,6 +305,56 @@ static void s3c64xx_pm_prepare(void)
+>  	__raw_writel(__raw_readl(S3C64XX_WAKEUP_STAT), S3C64XX_WAKEUP_STAT);
+>  }
+>  
+> +#ifdef CONFIG_SAMSUNG_PM_DEBUG
+> +void s3c_pm_arch_update_uart(void __iomem *regs, struct pm_uart_save *save)
+> +{
+> +	u32 ucon;
+> +	u32 ucon_clk
+> +	u32 save_clk;
+> +	u32 new_ucon;
+> +	u32 delta;
+> +
+> +	if (!soc_is_s3c64xx())
+> +		return;
+> +
+> +	ucon = __raw_readl(regs + S3C2410_UCON);
+> +	ucon_clk = ucon & S3C6400_UCON_CLKMASK;
+> +	sav_clk = save->ucon & S3C6400_UCON_CLKMASK;
+> +
+> +	/* S3C64XX UART blocks only support level interrupts, so ensure that
+> +	 * when we restore unused UART blocks we force the level interrupt
+> +	 * settigs. */
+> +	save->ucon |= S3C2410_UCON_TXILEVEL | S3C2410_UCON_RXILEVEL;
+> +
+> +	/* We have a constraint on changing the clock type of the UART
+> +	 * between UCLKx and PCLK, so ensure that when we restore UCON
+> +	 * that the CLK field is correctly modified if the bootloader
+> +	 * has changed anything.
+> +	 */
+> +	if (ucon_clk != save_clk) {
+> +		new_ucon = save->ucon;
+> +		delta = ucon_clk ^ save_clk;
+> +
+> +		/* change from UCLKx => wrong PCLK,
+> +		 * either UCLK can be tested for by a bit-test
+> +		 * with UCLK0 */
+> +		if (ucon_clk & S3C6400_UCON_UCLK0 &&
+> +		    !(save_clk & S3C6400_UCON_UCLK0) &&
+> +		    delta & S3C6400_UCON_PCLK2) {
+> +			new_ucon &= ~S3C6400_UCON_UCLK0;
+> +		} else if (delta == S3C6400_UCON_PCLK2) {
+> +			/* as an precaution, don't change from
+> +			 * PCLK2 => PCLK or vice-versa */
+> +			new_ucon ^= S3C6400_UCON_PCLK2;
+> +		}
+> +
+> +		S3C_PMDBG("ucon change %04x => %04x (save=%04x)\n",
+> +			  ucon, new_ucon, save->ucon);
+> +		save->ucon = new_ucon;
+> +	}
+> +}
+> +#endif
+> +
+>  int __init s3c64xx_pm_init(void)
+>  {
+>  	int i;
+> diff --git a/arch/arm/mach-s5pv210/pm.c b/arch/arm/mach-s5pv210/pm.c
+> index b336df0c57f3..efdb5a27c060 100644
+> --- a/arch/arm/mach-s5pv210/pm.c
+> +++ b/arch/arm/mach-s5pv210/pm.c
+> @@ -99,8 +99,6 @@ static int s5pv210_suspend_enter(suspend_state_t state)
+>  	u32 eint_wakeup_mask = s5pv210_read_eint_wakeup_mask();
+>  	int ret;
+>  
+> -	s3c_pm_debug_init();
 
-Thanks for doing this.
+Your patch is not equivalent here. If there is a reason behind removal
+of UART init (e.g. not needed), I prefer to make it in separate patch.
 
-The patches look sane from a quick scan, and it's definitely the right
-thing to do. So ack on my part, but obviously testing the different
-architectures would be a really good thing...
+Rest looks good.
 
-                Linus
+Best regards,
+Krzysztof
+
 
 _______________________________________________
 linux-arm-kernel mailing list
