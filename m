@@ -2,83 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C9F07E1AB8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 14:36:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99A56E1ABA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 14:36:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dhnUIPL+sDs4sBsZvKuyR1vwEv67o0JgOkDR1gGWidY=; b=ZscLG7BlZeTjFs
-	h3OjVQwEUgF8vPqpXuaOmbtbEx5wpg5D2wky5i94nXMp8lthhq/IPUKOAO2Uiam8uEHwrP91nrPJ7
-	BxxK88oi2iZatksxCpl0bsC3dm14iVDM48Za0gBomB3hguNtW3doUyNf+wXQgIOnPuE6zQSJdiaf7
-	5tORCHw8NC9N8daU711bfmcxX69ITgCqAS1Q2o1C9CSS+pqpXpFnA7Ood2TFaMTPWOGMCqUGGhTcE
-	ccwyioNwJx2ouH5K7WsulfRb4Cq3X4UvBMd1GapdtbnoaVTN4G6agtRgCn5zmUAwHLPwHWqXeCdI/
-	8VVpe6y+ddD8RiiIBD3w==;
+	List-Owner; bh=Uqz375Zlvuq+v1QqgJsVEteYEMV1g+dFCPwL67kbOCo=; b=rajq6XAw0nStNj
+	zzaMj08iZPnft+k8ui8wQLNgSiImbHfW4ngOynzPlbXLE/++gGMO01CVXFMO/fK+wSU9uesbRP+6v
+	V9YlyBTnPddTOrl2oh7PpNgA3B17jJjQDP8lGpQyqKSYdIw0NpbJUcKQyNiyhh/y5S2CJ3jABsO1X
+	Q83vN8z5m3Kz6OTSQ2rWYSF3eiNtO/5RGNFxryPd/d6znhWvvGctjFz6tPk8DVQThAZeXxfTOaTKE
+	t2PxiqdLkQC+x5ZOXGI5eFWx1b8l+Kgcan7s0WpaqPIH83MZlDLskzU1AMM7p2g+WpbCgWsaqxtpb
+	GJ11MHBGQ1vTsTQ+P9pA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNFs0-0000sQ-R1; Wed, 23 Oct 2019 12:36:08 +0000
-Received: from mail-ed1-f66.google.com ([209.85.208.66])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNFo5-0005Dl-9g
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 12:32:06 +0000
-Received: by mail-ed1-f66.google.com with SMTP id h2so15616908edn.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 23 Oct 2019 05:32:04 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=KQN2p3CqQqqGqvDm8RQZXLnReFZTauNKSF3Je5lv8Vs=;
- b=HT4cCWKR2rnRrNl8wtyqn2/7V38P7dfdDglV4BQ4WpHM3J9/XFnUVUSY9Z9iJhthbA
- RcnnBkgdnfmZynbGFkIcfqVsBIGjr/Acpzv7du756cyUrbsA8J2/tJLOHF9TFk87XpjC
- 6HtS5tj2JgRnZS5VcjdvJ8w+X5sXGbpUXmRtXoCVTpXU+8j+ll2pJ3yIvzbhazaIkhkE
- ietIt/DIltEtpSTKKU2qFr6m/9H0ZzO1VTHcLjDxLig6MkxKTah6aIXSRWu0z21Mmdt8
- jrPiaksSAMf9DiaqPQEXKXcRdnzJTXBsGfeN4Z1TxcZI6IFcEV9UxlINTt7WMdFBspLI
- 1Acg==
-X-Gm-Message-State: APjAAAXyCXoXATkS0zL3CmiJzz13OIkyLgL9hwkPBMA3CCjv4/d2NeuI
- kRgS75Ps579bTJAiaB9fGv/rDOahQTk=
-X-Google-Smtp-Source: APXvYqzAyy2/9uMMaEi+++Uil+JEuPxjvNWuDWfQdsPMkZduyAwEgeg60Y2iekGhRXEaJq6rYisoxg==
-X-Received: by 2002:a17:906:d214:: with SMTP id
- w20mr32128690ejz.68.1571833923476; 
- Wed, 23 Oct 2019 05:32:03 -0700 (PDT)
-Received: from pi3 ([194.230.155.217])
- by smtp.googlemail.com with ESMTPSA id k24sm163420edx.46.2019.10.23.05.32.02
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 23 Oct 2019 05:32:02 -0700 (PDT)
-Date: Wed, 23 Oct 2019 14:32:00 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH 13/36] ARM: s3c: move regs-spi.h into spi driver
-Message-ID: <20191023123200.GC11048@pi3>
-References: <20191010202802.1132272-1-arnd@arndb.de>
- <20191010203043.1241612-1-arnd@arndb.de>
- <20191010203043.1241612-13-arnd@arndb.de>
+	id 1iNFsI-000163-Qb; Wed, 23 Oct 2019 12:36:26 +0000
+Received: from [217.140.110.172] (helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iNFoU-0005R6-8Y
+ for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 12:32:31 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AC3BC497;
+ Wed, 23 Oct 2019 05:32:17 -0700 (PDT)
+Received: from arm.com (e112269-lin.cambridge.arm.com [10.1.194.43])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3CC263F6C4;
+ Wed, 23 Oct 2019 05:32:16 -0700 (PDT)
+Date: Wed, 23 Oct 2019 13:32:10 +0100
+From: Steven Price <steven.price@arm.com>
+To: Mao Wenan <maowenan@huawei.com>
+Subject: Re: [PATCH] KVM: arm64: Select SCHED_INFO before SCHEDSTATS
+Message-ID: <20191023123210.GA40238@arm.com>
+References: <20191023032254.159510-1-maowenan@huawei.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191010203043.1241612-13-arnd@arndb.de>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <20191023032254.159510-1-maowenan@huawei.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_053205_345394_469DC3D2 
-X-CRM114-Status: GOOD (  16.80  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191023_053230_361235_EE3EA132 
+X-CRM114-Status: GOOD (  16.12  )
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.66 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.66 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,127 +61,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, linus.walleij@linaro.org,
- linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, Kukjin Kim <kgene@kernel.org>,
- Andi Shyti <andi@etezian.org>, linux-arm-kernel@lists.infradead.org
+Cc: Suzuki Poulose <Suzuki.Poulose@arm.com>, "maz@kernel.org" <maz@kernel.org>,
+ "kernel-janitors@vger.kernel.org" <kernel-janitors@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ James Morse <James.Morse@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Catalin Marinas <Catalin.Marinas@arm.com>, "will@kernel.org" <will@kernel.org>,
+ "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
+ "julien.thierry.kdev@gmail.com" <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 10, 2019 at 10:29:57PM +0200, Arnd Bergmann wrote:
-> The file is mostly specific to the driver, the few bits that
-> are actually used by the platform code get moved to mach/map.h
-> instead.
+On Wed, Oct 23, 2019 at 04:22:54AM +0100, Mao Wenan wrote:
+> If KVM=y, it will select SCHEDSTATS, below erros can
+> be seen:
+> kernel/sched/stats.h: In function rq_sched_info_arrive:
+> kernel/sched/stats.h:12:20: error: struct sched_info
+> has no member named run_delay
+>    rq->rq_sched_info.run_delay += delta;
+>                     ^
+> kernel/sched/stats.h:13:20: error: struct sched_info
+> has no member named pcount
+>    rq->rq_sched_info.pcount++;
+>                     ^
+> kernel/sched/stats.h: In function rq_sched_info_dequeued:
+> kernel/sched/stats.h:31:20: error: struct sched_info has
+> no member named run_delay
+>    rq->rq_sched_info.run_delay += delta;
 > 
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> These are because CONFIG_SCHED_INFO is not set, This patch 
+> is to select SCHED_INFO before SCHEDSTATS.
+
+It looks like I didn't spot this because when DEBUG_KERNEL is enabled
+then KVM selects SCHEDSTATS, which selects SCHED_INFO. Thanks for
+spotting this.
+
+> 
+> Fixes: 8564d6372a7d ("KVM: arm64: Support stolen time reporting via shared structure")
+> Signed-off-by: Mao Wenan <maowenan@huawei.com>
+
+Reviewed-by: Steven Price <steven.price@arm.com>
+
 > ---
->  arch/arm/mach-s3c24xx/include/mach/map.h                      | 2 ++
->  arch/arm/mach-s3c24xx/s3c2412.c                               | 1 -
->  arch/arm/plat-samsung/devs.c                                  | 1 -
->  drivers/spi/spi-s3c24xx-fiq.S                                 | 4 +++-
->  .../include/plat/regs-spi.h => drivers/spi/spi-s3c24xx-regs.h | 3 ---
->  drivers/spi/spi-s3c24xx.c                                     | 3 +--
->  6 files changed, 6 insertions(+), 8 deletions(-)
->  rename arch/arm/plat-samsung/include/plat/regs-spi.h => drivers/spi/spi-s3c24xx-regs.h (95%)
+>  arch/arm64/kvm/Kconfig | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> diff --git a/arch/arm/mach-s3c24xx/include/mach/map.h b/arch/arm/mach-s3c24xx/include/mach/map.h
-> index bca93112f57d..a20c9fd0d855 100644
-> --- a/arch/arm/mach-s3c24xx/include/mach/map.h
-> +++ b/arch/arm/mach-s3c24xx/include/mach/map.h
-> @@ -86,6 +86,8 @@
->  #define S3C2410_PA_SPI	   (0x59000000)
->  #define S3C2443_PA_SPI0		(0x52000000)
->  #define S3C2443_PA_SPI1		S3C2410_PA_SPI
-> +#define S3C2410_SPI1		(0x20)
-> +#define S3C2412_SPI1		(0x100)
->  
->  /* SDI */
->  #define S3C2410_PA_SDI	   (0x5A000000)
-> diff --git a/arch/arm/mach-s3c24xx/s3c2412.c b/arch/arm/mach-s3c24xx/s3c2412.c
-> index 8fe4d4670dcb..c3fb3e6c0dd8 100644
-> --- a/arch/arm/mach-s3c24xx/s3c2412.c
-> +++ b/arch/arm/mach-s3c24xx/s3c2412.c
-> @@ -37,7 +37,6 @@
->  #include <plat/cpu-freq.h>
->  #include <plat/devs.h>
->  #include <plat/pm.h>
-> -#include <plat/regs-spi.h>
->  
->  #include "common.h"
->  #include "nand-core.h"
-> diff --git a/arch/arm/plat-samsung/devs.c b/arch/arm/plat-samsung/devs.c
-> index 6e4c1cb07104..fd94a35e22f8 100644
-> --- a/arch/arm/plat-samsung/devs.c
-> +++ b/arch/arm/plat-samsung/devs.c
-> @@ -59,7 +59,6 @@
->  #include <linux/platform_data/usb-s3c2410_udc.h>
->  #include <linux/platform_data/usb-ohci-s3c2410.h>
->  #include <plat/usb-phy.h>
-> -#include <plat/regs-spi.h>
->  #include <linux/platform_data/asoc-s3c.h>
->  #include <linux/platform_data/spi-s3c64xx.h>
->  
-> diff --git a/drivers/spi/spi-s3c24xx-fiq.S b/drivers/spi/spi-s3c24xx-fiq.S
-> index e95d6282109e..9d5f8f1e5e81 100644
-> --- a/drivers/spi/spi-s3c24xx-fiq.S
-> +++ b/drivers/spi/spi-s3c24xx-fiq.S
-> @@ -12,10 +12,12 @@
->  
->  #include <mach/map.h>
->  #include <mach/regs-irq.h>
-> -#include <plat/regs-spi.h>
->  
->  #include "spi-s3c24xx-fiq.h"
->  
-> +#define S3C2410_SPTDAT           (0x10)
-> +#define S3C2410_SPRDAT           (0x14)
-> +
->  	.text
->  
->  	@ entry to these routines is as follows, with the register names
-> diff --git a/arch/arm/plat-samsung/include/plat/regs-spi.h b/drivers/spi/spi-s3c24xx-regs.h
-> similarity index 95%
-> rename from arch/arm/plat-samsung/include/plat/regs-spi.h
-> rename to drivers/spi/spi-s3c24xx-regs.h
-> index 607844311566..37b93ff7c7fe 100644
-> --- a/arch/arm/plat-samsung/include/plat/regs-spi.h
-> +++ b/drivers/spi/spi-s3c24xx-regs.h
-> @@ -8,9 +8,6 @@
->  #ifndef __ASM_ARCH_REGS_SPI_H
->  #define __ASM_ARCH_REGS_SPI_H
-
-Can you also update the guard name?
-
-Best regards,
-Krzysztof
-
->  
-> -#define S3C2410_SPI1		(0x20)
-> -#define S3C2412_SPI1		(0x100)
-> -
->  #define S3C2410_SPCON		(0x00)
->  
->  #define S3C2410_SPCON_SMOD_DMA	(2 << 5)	/* DMA mode */
-> diff --git a/drivers/spi/spi-s3c24xx.c b/drivers/spi/spi-s3c24xx.c
-> index 2d6e37f25e2d..2f395e4861f6 100644
-> --- a/drivers/spi/spi-s3c24xx.c
-> +++ b/drivers/spi/spi-s3c24xx.c
-> @@ -21,10 +21,9 @@
->  #include <linux/spi/s3c24xx.h>
->  #include <linux/module.h>
->  
-> -#include <plat/regs-spi.h>
-> -
->  #include <asm/fiq.h>
->  
-> +#include "spi-s3c24xx-regs.h"
->  #include "spi-s3c24xx-fiq.h"
->  
->  /**
+> diff --git a/arch/arm64/kvm/Kconfig b/arch/arm64/kvm/Kconfig
+> index d8b88e4..3c46eac 100644
+> --- a/arch/arm64/kvm/Kconfig
+> +++ b/arch/arm64/kvm/Kconfig
+> @@ -39,6 +39,7 @@ config KVM
+>  	select IRQ_BYPASS_MANAGER
+>  	select HAVE_KVM_IRQ_BYPASS
+>  	select HAVE_KVM_VCPU_RUN_PID_CHANGE
+> +	select SCHED_INFO
+>  	select SCHEDSTATS
+>  	---help---
+>  	  Support hosting virtualized guest machines.
 > -- 
-> 2.20.0
+> 2.7.4
 > 
 
 _______________________________________________
