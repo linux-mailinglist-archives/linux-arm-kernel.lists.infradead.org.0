@@ -2,79 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DD37E0EDE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 02:06:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F081E0EDF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 02:06:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=TWNlQ7ucFcpKzPad+HqLTZsjsWTp4yw2foTSLIflMwM=; b=sHC
-	fbRSiEQ2nXgYckCjCFozXIqKs/6BqoACwIWvnSVwb6iEzmDuZ86c8R9fO/iODPzYjVePupYzoaxAF
-	o4c1MPgD9p+5fn2eTspja8DaemZJjI/nvEtTadsKquH+3KAfNJ1rgbxw0rTVc3/AF4bWfbKTesNtL
-	KqSpAs1WKxN3e1JULNyuynnX5f1zOTFfI/7BnPswqJtFjquEu2RBaBHPZFW2OYcoxIE30bOJKQK25
-	S1VZjte5xTmo7pWZ4eTrRdqtXGyK3OqvjVNtaZXbTfFUm/mYKG8uy1xRMWfACtmtH8QI4o/gJzDYi
-	0/7QQga8mtQm9zU6xj4emPpGgXeigZA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=d4SmMIzbMQt1HgxQwzmcBuM/cVSNc9ejB27IaBxq7tA=; b=H1H1nlUhSCPUqDA3gRcSkCEkzm
+	ZCUPRCNPvHPbIjmcJeQA2vYcrl/XV8E8rNLbPQwGnJ21VDkdDrVqXZ87VPqa+wuNmCy5IfjhqG6dm
+	c5sTEAB7oU9X2Nb/iNg9uWIrjsacxECixElk9roawqwGNy2svdYUZI5K7zRPA8gJkNtL5bWe+Fcml
+	CzgSoXghgzxMUI7FByDEElgXB6WpEKbvGwBXGfWVNqII7i37LBoVMyrv8yanon9UUb4agYkwkChYv
+	8cqLEATN/DijXGKvZ9e7QOPONNthCJeKlt0Vwvd4k/uO/xZI72l+sA6IE2Q4QwGYpGz/fWHe8aJsm
+	7J3UvqnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iN4AC-0006xW-Sz; Wed, 23 Oct 2019 00:06:08 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iN4AS-00076L-Cc; Wed, 23 Oct 2019 00:06:24 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iN4A0-0006wO-Pn
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 00:05:58 +0000
-Received: by mail-wr1-x444.google.com with SMTP id q13so14984439wrs.12
+ id 1iN4A3-0006ws-IV
+ for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 00:06:00 +0000
+Received: by mail-wm1-x344.google.com with SMTP id i13so3903030wmd.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 22 Oct 2019 17:05:55 -0700 (PDT)
+ Tue, 22 Oct 2019 17:05:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=RVKbhGUPx9Rp4t5lnvvSGAoEpsAteMrVsae47CNGU14=;
- b=rV4dprwNkqYCdBGstHoA61ZbChSAvfasMEjznbxr7K8YlZ6b/uCc65hPy+xGsoLfgk
- lIXI860w/KucgAduq4zMJLowbW5NklpuLCq1VTl4xtE5l6jH8XOQE8f9F+l3Jso0P3B+
- iU9V/ExzTp617nC7rcnqjAHqSsAHBSSdwmwBGDFX7Si9Cp+5EfrbaleMqfk9U/wJWdjO
- XWJ7Dha21OzRYq/nP9iK0O/g3AAZl1i7Vn/P9cveEur3J1uXHI/b1e1kpd+S1pDBEGXB
- X8w/CU9k5k0PZXFFgu6qsQEHckF1ficun2aF/ndxVbBXnKcoWwbg37IoqaBa5sEozBX6
- goqg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=gokM4n7dedwvMz3nVQdhJWZwmalfuzEvK8MTROAEiLo=;
+ b=nmL2XLde2WB2uLAdxke8rA0HqWKBFJYeHsDDwcWrVgidimSdkjonniTpyTYGI5B6Ao
+ finU+ZW9URhPGp5hmx0j+y4i7hYUTDE0eFMI5+F9gmi7J+KwWGfXLhDD/yu0i7LkWi4y
+ xZrkLts/zyLMBDvsiwI6i5NXc/p4LVDXrJy1PUm9yB+shjeppAOsamV5PILKZNgb3KuS
+ XLF0h1ajOIYYpe+9OKilKd+r1yvVsK/OAEOmDJ8kfpI0MeQya29a//NxYzfHOheqFts4
+ nGHsKFpxMYULLljAiWBa5RMtNOjWCBeHjwuef4nK9nF3Mw7S+EX+XxeKfcglZ/0kMiWj
+ Uj2w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=RVKbhGUPx9Rp4t5lnvvSGAoEpsAteMrVsae47CNGU14=;
- b=GvGBprhKwRz57Lr+M+5qcZaFJMatv9V3RQHfHuRlHZIXdlAQZZK3DsPTOFELRqsRtn
- vhRcpByJfpSrHZiU5paz1AfSzmfAm402A5sFdebL/vzx0acEGJKSyzY2q5U512eWB9AG
- o7ptMYsYkBHSxduFragSuHrv1mCIg6DVjc3RYtz0/7qyR+Nb6PZFoum9k2Tu5mbJmaQa
- nRTkrY+tN36xibgU8QxwL21bOG1+v/cULSvqNcWDdeOkfyYC1KVWGe6HU8L73VmnzEyx
- uK1FsMXEgNCElc+y4DRgx1PLCgdCK42AdzYbGNFgAr3rmk4iuNOk17/CqTuI0rbTqCTh
- 3l8A==
-X-Gm-Message-State: APjAAAWAnVCkqsb8+8D4nqJld5ZhpLVvdGv0HdPGj9oLrgzpI1qcutU9
- zjpoNyEfQzhgsgjgTKw4N3M=
-X-Google-Smtp-Source: APXvYqyyX1wB2kOZ08WrMc2jMATBMd5XgQO6AIaHwnrUyVWtMDn1LyZ/X+WuzzvPv9A62KSXHBtCzw==
-X-Received: by 2002:adf:e2cc:: with SMTP id d12mr5775327wrj.345.1571789154654; 
- Tue, 22 Oct 2019 17:05:54 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=gokM4n7dedwvMz3nVQdhJWZwmalfuzEvK8MTROAEiLo=;
+ b=ViiZCkR+63cbe6YKNGH5QDTDPqW9F06UgMR7uAM7FZUHT5UHENqKx66zb2hLLs/agw
+ DigmpHhToPThZzy+Y18wb6kRRBlQMbHpUbHfJT2sN+QHY7zpl8cL9I2/goMHPEi3S4zC
+ xQYrDQiQXDz6HsD41Btx7UObcPLFVKBh4I8hY9aaW1NDb/UP0fabJp3LjNyqpcE1sOn0
+ AyjwM40onFrxgLxNRW6FiqtXQzGVFhkjpgsPCTHg8Bur50E9ERfjosAJPYItvjgpUfzu
+ cLAoE+mMAPjbdNEn9hSaWk4iPaIxB7bVlNlIRDoZcfr2MYS+9HDUlUQcVSHvcr0OFvyk
+ n2Tg==
+X-Gm-Message-State: APjAAAX1T/jVlmyVppIgihGjonLP9qK4V0Bsxbq0a6hvdJUaTtNcyod9
+ P/vkBok/9jZDKNvx2AOdT00=
+X-Google-Smtp-Source: APXvYqzQiHMeCDDNoaK/Il7oXDsbZlPDZKvFYnqWF6/bPf9fzRds46WyFEcSpn4NOt4+HVP2eMqs/g==
+X-Received: by 2002:a7b:cd83:: with SMTP id y3mr5550699wmj.150.1571789157938; 
+ Tue, 22 Oct 2019 17:05:57 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id v10sm18500272wmg.48.2019.10.22.17.05.50
+ by smtp.gmail.com with ESMTPSA id v10sm18500272wmg.48.2019.10.22.17.05.54
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 22 Oct 2019 17:05:53 -0700 (PDT)
+ Tue, 22 Oct 2019 17:05:57 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH RFC 0/2] irqchip/gic: Allow the use of SGI interrupts
-Date: Tue, 22 Oct 2019 17:05:45 -0700
-Message-Id: <20191023000547.7831-1-f.fainelli@gmail.com>
+Subject: [PATCH RFC 1/2] dt-bindings: Define interrupt type for SGI interrupts
+Date: Tue, 22 Oct 2019 17:05:46 -0700
+Message-Id: <20191023000547.7831-2-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191023000547.7831-1-f.fainelli@gmail.com>
+References: <20191023000547.7831-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_170556_863903_2F32C0D8 
-X-CRM114-Status: GOOD (  12.60  )
+X-CRM114-CacheID: sfid-20191022_170559_610554_635AD1E5 
+X-CRM114-Status: GOOD (  13.89  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (f.fainelli[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -112,42 +116,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+In preparation for allowing drivers to use SGIs, define a new value for
+the first ARM GIC interrupt controller cell to take a new value to
+specifically designate a SGI interrupt.
 
-Sending this as RFC so as to gather comments on the approach chosen
-here. The Broadcom STB mailbox driver and its firmware in EL3 use a
-combination of "smc" for inbound (Linux to monitor) and SGI for outbound
-(monitor to Linux) signaling. This mailbox driver can be seen here:
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+---
+ .../devicetree/bindings/interrupt-controller/arm,gic.yaml       | 2 +-
+ include/dt-bindings/interrupt-controller/arm-gic.h              | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
 
-https://github.com/ffainelli/linux/commit/17cc97919f4cd2583d67e624273da8b54b44a4a7
-
-(we may switch to the recently proposed standard arm-smc mailbox driver
-proposed by Peng Fang, but we would need interrupt notification anyway).
-
-In our downstream kernel, we have hacked the arch/*/kernel/smp.c code to
-permit the installation of custom "IPI" handlers, this is obviously
-wrong and absolutely not suitable for usptream.
-
-Here, we allow the GIC to recognize SGI interrupt specified in Device
-Tree with a new specifier in the first cell (2) and then we let the
-mapping and translation occur provided that we are above the NR_IPI
-range.
-
-Immediate problems that I am aware of:
-
-- on ARM (32-bit) NR_IPI does not include IPI_CPU_BACKTRACE, so we could
-  (are) be off by one in our check against NR_IPI
-
-Florian Fainelli (3):
-  dt-bindings: Define interrupt type for SGI interrupts
-  irqchip/gic: Allow the use of SGI interrupts
-
- .../interrupt-controller/arm,gic.yaml         |   2 +-
- drivers/irqchip/irq-gic.c                     |  41 ++-
- .../interrupt-controller/arm-gic.h            |   1 +
- 7 files changed, 313 insertions(+), 16 deletions(-)
- create mode 100644 drivers/mailbox/brcmstb-mailbox.c
-
+diff --git a/Documentation/devicetree/bindings/interrupt-controller/arm,gic.yaml b/Documentation/devicetree/bindings/interrupt-controller/arm,gic.yaml
+index 9a47820ef346..2d0bfcbe4933 100644
+--- a/Documentation/devicetree/bindings/interrupt-controller/arm,gic.yaml
++++ b/Documentation/devicetree/bindings/interrupt-controller/arm,gic.yaml
+@@ -58,7 +58,7 @@ properties:
+     const: 3
+     description: |
+       The 1st cell is the interrupt type; 0 for SPI interrupts, 1 for PPI
+-      interrupts.
++      interrupts and 2 for SGI interrupts.
+ 
+       The 2nd cell contains the interrupt number for the interrupt type.
+       SPI interrupts are in the range [0-987].  PPI interrupts are in the
+diff --git a/include/dt-bindings/interrupt-controller/arm-gic.h b/include/dt-bindings/interrupt-controller/arm-gic.h
+index 35b6f69b7db6..2dcc394b7b6b 100644
+--- a/include/dt-bindings/interrupt-controller/arm-gic.h
++++ b/include/dt-bindings/interrupt-controller/arm-gic.h
+@@ -12,6 +12,7 @@
+ 
+ #define GIC_SPI 0
+ #define GIC_PPI 1
++#define GIC_SGI 2
+ 
+ /*
+  * Interrupt specifier cell 2.
 -- 
 2.17.1
 
