@@ -2,50 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86649E1F85
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 17:38:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1DC51E1F87
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 17:39:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=KEg2f7tISPkzS84H/lCAd3LWyiljg5bqVS6fzLXKV3c=; b=rhP
-	jwR57KRs5WC3xKlL+7T0FOBGzMgbGPn/qkMEbz2/jmkBqrZMF8Uugp8Em5j81mXhZ+giUn3pUjgeM
-	ric4yOyTFXb1pfPVARaaOWHYG3ypQL7et8xNnHsTumvVTigRAwi0DVBZ3/rx1lfIbJ4dyKDnHuQrz
-	h9RNPkSDnut2jCPzzjy9YcO/c8O7mp2qBBUzD2HHtUOhBn6HWO4J22GrbDKMqFoKUVe04QHC11mbN
-	J82O9sLl7lnmAxZ2NPBUoLY4se4BAmo098m4CqJGpROODebfHcty+wS8JAfxQ//iKNGX/Fc0agARb
-	LW85ouIEHXJmct7Q4BjZHuVnGBDYh3A==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=JgNFobIB/Rc4FmqG+YcgShhy4VmUjobdRBZL6r1Jfu4=; b=M5IrGJYSLvB9EGAWOXAfBQb+FF
+	doEmZdUUsYlOqLea/7RSRjaMC+oMoJEgD8YWV/ROQiMD/kAAPDV03+dYYNIXxLWNxXed/3hxJcfzU
+	k0wsEnJl0AlBIqtxfZbNX6JSHjH1xEtE6vgCYgK2jw6wpIDQ3pqFiolW6PyxxS8VxAZCuLaueBGhH
+	GFytPg9/RCdw5L5KQ6GHwDp8qERe18rP61HOnLJJy9aab5/cW/w2aIyrHVWJuLXKQvpVK3/FoLJdU
+	7DFGosVRjirenJIilWpLuAaEIneFDGKzOt8CPQu/BzoJfGWJgbqs5fqDTsJQu2s1f0LgFjjPMUEEJ
+	14Pn1B0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNIis-0000t4-GJ; Wed, 23 Oct 2019 15:38:54 +0000
+	id 1iNIj9-00017l-1j; Wed, 23 Oct 2019 15:39:11 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNIiZ-0000s3-Tx
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 15:38:37 +0000
+ id 1iNIic-0000sp-5f
+ for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 15:38:39 +0000
 Received: from localhost.localdomain (unknown [194.230.155.217])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 58C302064A;
- Wed, 23 Oct 2019 15:38:33 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 98BAC21A4C;
+ Wed, 23 Oct 2019 15:38:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571845115;
- bh=eE8y1vH8jBO0acryf9BCwImwIuhGJ07TIWhlosnHoNA=;
- h=From:To:Cc:Subject:Date:From;
- b=gu6Ab9QAgNfM7NGUJR3zkec5u+/CuBA16gfkL/0IFK2M8wzH4uDyT/qkxGVnmgoSO
- QFQW79CTNSghX8IzQpE927M+HA3Ir9B1LwqlFj18bzKf6MouKcw0GZ8VWmBjkz/agk
- 2Xk2jUDyZRjUxTGfmT7NQTGHvpiBetl6kAXZnSVE=
+ s=default; t=1571845117;
+ bh=bM/mEFcrlLuEZp0P1EMlHoIbnorgdXnXqaEVenoUobo=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=LFIe6aUM5wa79Oq3zx51FbUaTsKJLxlsXTmgfOYoBNi3ZXfGUQYka3xC8T0jZwAxb
+ vR3WlTWia7oj09i6auE3vk7sqbYzwjIv526kXHicgl0jR7zV4cqj3AM0YNYpAc0bsq
+ n9CEB1VIcKbzOy1iRM/Z/ni1Mv/rUbHLiZED8eW0=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 1/2] ARM: s3c: Rename s3c64xx_spi_setname() function
-Date: Wed, 23 Oct 2019 17:38:23 +0200
-Message-Id: <20191023153824.6085-1-krzk@kernel.org>
+Subject: [PATCH 2/2] ARM: s3c: Rename s5p_usb_phy functions
+Date: Wed, 23 Oct 2019 17:38:24 +0200
+Message-Id: <20191023153824.6085-2-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191023153824.6085-1-krzk@kernel.org>
+References: <20191023153824.6085-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_083835_989703_50B49F09 
-X-CRM114-Status: GOOD (  13.07  )
+X-CRM114-CacheID: sfid-20191023_083838_230128_3A0C093B 
+X-CRM114-Status: GOOD (  13.19  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,56 +84,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The name s3c64xx_spi_setname() suggests it is shared with S3C64xx
-platform, but except of contents it is not.  It is called only by
-S3C24xx code, so make it clear in the name.
+The name s5p_usb_phy_init() suggests it is shared with S5Pv210 platform,
+but it is not.  It is specific to S3C64xx, so make it clear in the
+name.
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 ---
- arch/arm/mach-s3c24xx/s3c2416.c  | 2 +-
- arch/arm/mach-s3c24xx/s3c2443.c  | 2 +-
- arch/arm/mach-s3c24xx/spi-core.h | 2 +-
- 3 files changed, 3 insertions(+), 3 deletions(-)
+ arch/arm/mach-s3c64xx/setup-usb-phy.c        | 4 ++--
+ arch/arm/plat-samsung/devs.c                 | 4 ++--
+ arch/arm/plat-samsung/include/plat/usb-phy.h | 4 ++--
+ 3 files changed, 6 insertions(+), 6 deletions(-)
 
-diff --git a/arch/arm/mach-s3c24xx/s3c2416.c b/arch/arm/mach-s3c24xx/s3c2416.c
-index 1cdb7bd3e713..9514196cad8c 100644
---- a/arch/arm/mach-s3c24xx/s3c2416.c
-+++ b/arch/arm/mach-s3c24xx/s3c2416.c
-@@ -113,7 +113,7 @@ void __init s3c2416_map_io(void)
- 	/* initialize device information early */
- 	s3c2416_default_sdhci0();
- 	s3c2416_default_sdhci1();
--	s3c64xx_spi_setname("s3c2443-spi");
-+	s3c24xx_spi_setname("s3c2443-spi");
- 
- 	iotable_init(s3c2416_iodesc, ARRAY_SIZE(s3c2416_iodesc));
+diff --git a/arch/arm/mach-s3c64xx/setup-usb-phy.c b/arch/arm/mach-s3c64xx/setup-usb-phy.c
+index 6aaaa1d8e8b9..d6b0e3b268af 100644
+--- a/arch/arm/mach-s3c64xx/setup-usb-phy.c
++++ b/arch/arm/mach-s3c64xx/setup-usb-phy.c
+@@ -73,7 +73,7 @@ static int s3c_usb_otgphy_exit(struct platform_device *pdev)
+ 	return 0;
  }
-diff --git a/arch/arm/mach-s3c24xx/s3c2443.c b/arch/arm/mach-s3c24xx/s3c2443.c
-index 313e369c3ddd..4cbeb74cf3d6 100644
---- a/arch/arm/mach-s3c24xx/s3c2443.c
-+++ b/arch/arm/mach-s3c24xx/s3c2443.c
-@@ -91,7 +91,7 @@ void __init s3c2443_map_io(void)
- 	s3c24xx_gpiocfg_default.get_pull = s3c2443_gpio_getpull;
  
- 	/* initialize device information early */
--	s3c64xx_spi_setname("s3c2443-spi");
-+	s3c24xx_spi_setname("s3c2443-spi");
- 
- 	iotable_init(s3c2443_iodesc, ARRAY_SIZE(s3c2443_iodesc));
- }
-diff --git a/arch/arm/mach-s3c24xx/spi-core.h b/arch/arm/mach-s3c24xx/spi-core.h
-index bb555ccbe057..1048fac629a2 100644
---- a/arch/arm/mach-s3c24xx/spi-core.h
-+++ b/arch/arm/mach-s3c24xx/spi-core.h
-@@ -11,7 +11,7 @@
-  */
- 
- /* re-define device name depending on support. */
--static inline void s3c64xx_spi_setname(char *name)
-+static inline void s3c24xx_spi_setname(char *name)
+-int s5p_usb_phy_init(struct platform_device *pdev, int type)
++int s3c_usb_phy_init(struct platform_device *pdev, int type)
  {
- #ifdef CONFIG_S3C64XX_DEV_SPI0
- 	s3c64xx_device_spi0.name = name;
+ 	if (type == USB_PHY_TYPE_DEVICE)
+ 		return s3c_usb_otgphy_init(pdev);
+@@ -81,7 +81,7 @@ int s5p_usb_phy_init(struct platform_device *pdev, int type)
+ 	return -EINVAL;
+ }
+ 
+-int s5p_usb_phy_exit(struct platform_device *pdev, int type)
++int s3c_usb_phy_exit(struct platform_device *pdev, int type)
+ {
+ 	if (type == USB_PHY_TYPE_DEVICE)
+ 		return s3c_usb_otgphy_exit(pdev);
+diff --git a/arch/arm/plat-samsung/devs.c b/arch/arm/plat-samsung/devs.c
+index 1d1fa068d228..1602f6dc900b 100644
+--- a/arch/arm/plat-samsung/devs.c
++++ b/arch/arm/plat-samsung/devs.c
+@@ -1010,9 +1010,9 @@ void __init dwc2_hsotg_set_platdata(struct dwc2_hsotg_plat *pd)
+ 	npd = s3c_set_platdata(pd, sizeof(*npd), &s3c_device_usb_hsotg);
+ 
+ 	if (!npd->phy_init)
+-		npd->phy_init = s5p_usb_phy_init;
++		npd->phy_init = s3c_usb_phy_init;
+ 	if (!npd->phy_exit)
+-		npd->phy_exit = s5p_usb_phy_exit;
++		npd->phy_exit = s3c_usb_phy_exit;
+ }
+ #endif /* CONFIG_S3C_DEV_USB_HSOTG */
+ 
+diff --git a/arch/arm/plat-samsung/include/plat/usb-phy.h b/arch/arm/plat-samsung/include/plat/usb-phy.h
+index 94da89ecbd3b..759d66a0773a 100644
+--- a/arch/arm/plat-samsung/include/plat/usb-phy.h
++++ b/arch/arm/plat-samsung/include/plat/usb-phy.h
+@@ -7,7 +7,7 @@
+ #ifndef __PLAT_SAMSUNG_USB_PHY_H
+ #define __PLAT_SAMSUNG_USB_PHY_H __FILE__
+ 
+-extern int s5p_usb_phy_init(struct platform_device *pdev, int type);
+-extern int s5p_usb_phy_exit(struct platform_device *pdev, int type);
++extern int s3c_usb_phy_init(struct platform_device *pdev, int type);
++extern int s3c_usb_phy_exit(struct platform_device *pdev, int type);
+ 
+ #endif /* __PLAT_SAMSUNG_USB_PHY_H */
 -- 
 2.17.1
 
