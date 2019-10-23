@@ -2,57 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3985CE1A20
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 14:29:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 990F2E1A31
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 14:30:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=8THq5oGkenXBIFYfojsgDjh33jSUfYutiDOd8UN9eR8=; b=jc0BnKOYwY8tYC7eS4xSTlp9kt
-	4Dnuzq1PJUpjH7zn/fYKZyJRov95nQHz1iZcgq25GwAeXKllWNNEmb2W1C37c//pYHCRoyVJGgw2F
-	yeyZNRuPQQGeUwLhOSwPu5W0x4kBENWrcty746+HR8QU9WP38Dd/MpDKZTbrKlY1LMqTb8DpL72up
-	o3IgJ6ZB5Gz/JCI6PA8ShNmAquJY93s+jA7NHGpvZzVQ8PBWU2BqMPDXp/egtCIk4CeSCQ9AIDS16
-	y6f3exNdRc4AYBLQMZKRpOW2xFart7ADIogQ8vQ0EOVavWogPxBPHji465/JHfwwPVN0nKykgx/sM
-	J6Yy9afA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=K7rUm7NyfsruzrAKg11eGWjitQP8sseTqJWUOgLKj+k=; b=qFApfK0YWGCdMA
+	J7+31IGVgWH9smhndmLf/KqPPWyOWg/IsKHOOORRRmx4V1+lVNqJc8MP56c0yyTtg/V/o5kbixe5J
+	5o9q+mktSDANqxehDzEE//ZxpUlvDE538Br49mOAH99YiAqoRQWCElZRjW7KRrit2lYTsnCt4GvSE
+	NTuUc7NkEtEP6PXdnEz0Y3AFtEBRqJmzFsb8xbMC5SQsNUDnjm/WhXX+rs1tueQxiXhjfaxvvXhNJ
+	/1Z4fGFyf8kaQemh1L7rnVlzCDlThv4WXA5p0RcP+fF0TN/ibZCrpVfcRIWQuIUm6Ps5LhdrFCOKF
+	22nGQ1+wQ5qnO+3uTFXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNFlm-000236-UD; Wed, 23 Oct 2019 12:29:43 +0000
-Received: from andre.telenet-ops.be ([2a02:1800:120:4::f00:15])
+	id 1iNFmL-0002F6-Ci; Wed, 23 Oct 2019 12:30:17 +0000
+Received: from michel.telenet-ops.be ([2a02:1800:110:4::f00:18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNFlX-00021g-Ka
+ id 1iNFlW-00021O-RB
  for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 12:29:29 +0000
-Received: from ramsan ([84.194.98.4]) by andre.telenet-ops.be with bizsmtp
- id H0VK2100D05gfCL010VKWt; Wed, 23 Oct 2019 14:29:20 +0200
+Received: from ramsan ([84.194.98.4]) by michel.telenet-ops.be with bizsmtp
+ id H0VK2100505gfCL060VKmx; Wed, 23 Oct 2019 14:29:20 +0200
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1iNFlP-0000Fk-77; Wed, 23 Oct 2019 14:29:19 +0200
+ id 1iNFlP-0000FR-3e; Wed, 23 Oct 2019 14:29:19 +0200
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1iNFlP-0003BI-5W; Wed, 23 Oct 2019 14:29:19 +0200
+ id 1iNFlP-0003B7-1d; Wed, 23 Oct 2019 14:29:19 +0200
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: Magnus Damm <magnus.damm@gmail.com>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v2 4/5] dt-bindings: power: rcar-sysc: Document r8a77961
- support
-Date: Wed, 23 Oct 2019 14:29:10 +0200
-Message-Id: <20191023122911.12166-5-geert+renesas@glider.be>
+Subject: [PATCH v2 0/5] dt-bindings: arm: renesas: Add core r8a77961 support
+Date: Wed, 23 Oct 2019 14:29:06 +0200
+Message-Id: <20191023122911.12166-1-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191023122911.12166-1-geert+renesas@glider.be>
-References: <20191023122911.12166-1-geert+renesas@glider.be>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_052927_833832_7F1BF492 
-X-CRM114-Status: UNSURE (   8.52  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191023_052927_036509_F93A7450 
+X-CRM114-Status: GOOD (  10.93  )
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:1800:120:4:0:0:f00:15 listed in]
+ low trust [2a02:1800:110:4:0:0:f00:18 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -72,39 +68,57 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: devicetree@vger.kernel.org, Geert Uytterhoeven <geert+renesas@glider.be>,
  linux-renesas-soc@vger.kernel.org, Philipp Zabel <p.zabel@pengutronix.de>,
  Eugeniu Rosca <erosca@de.adit-jv.com>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add DT binding documentation for the System Controller in the Renesas
-R-Car M3-W+ (R8A77961) SoC.
+	Hi all,
 
-Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-Reviewed-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
----
-v2:
-  - Add Reviewed-by.
----
- Documentation/devicetree/bindings/power/renesas,rcar-sysc.txt | 1 +
- 1 file changed, 1 insertion(+)
+This patch series updates the Renesas DT binding documentation for core
+components on the new R-Car M3-W+ (R8A77961) SoC, and for the
+Salvator-XS development board equipped with this SoC.
 
-diff --git a/Documentation/devicetree/bindings/power/renesas,rcar-sysc.txt b/Documentation/devicetree/bindings/power/renesas,rcar-sysc.txt
-index 712caa5726f7cb91..acb41fade926e2de 100644
---- a/Documentation/devicetree/bindings/power/renesas,rcar-sysc.txt
-+++ b/Documentation/devicetree/bindings/power/renesas,rcar-sysc.txt
-@@ -22,6 +22,7 @@ Required properties:
-       - "renesas,r8a7794-sysc" (R-Car E2)
-       - "renesas,r8a7795-sysc" (R-Car H3)
-       - "renesas,r8a7796-sysc" (R-Car M3-W)
-+      - "renesas,r8a77961-sysc" (R-Car M3-W+)
-       - "renesas,r8a77965-sysc" (R-Car M3-N)
-       - "renesas,r8a77970-sysc" (R-Car V3M)
-       - "renesas,r8a77980-sysc" (R-Car V3H)
+Changes compared to v1[1]:
+  - Split in per-subsystem series,
+  - Add Reviewed-by,
+  - Add board part number.
+
+I intend to queue this series in renesas-devel for v5.5.
+The last patch will be put on a branch shared between driver and DTS.
+
+Thanks for your comments!
+
+[1] "[PATCH/RFC 00/19] arm64: dts: renesas: Initial support for R-Car M3-W+"
+    https://lore.kernel.org/linux-renesas-soc/20191007102332.12196-1-geert+renesas@glider.be/
+
+Geert Uytterhoeven (5):
+  dt-bindings: arm: renesas: Document R-Car M3-W+ SoC DT bindings
+  dt-bindings: arm: renesas: Add Salvator-XS board with R-Car M3-W+
+  dt-bindings: reset: rcar-rst: Document r8a77961 support
+  dt-bindings: power: rcar-sysc: Document r8a77961 support
+  dt-bindings: power: Add r8a77961 SYSC power domain definitions
+
+ .../devicetree/bindings/arm/renesas.yaml      |  6 ++++
+ .../bindings/power/renesas,rcar-sysc.txt      |  1 +
+ .../devicetree/bindings/reset/renesas,rst.txt |  1 +
+ include/dt-bindings/power/r8a77961-sysc.h     | 32 +++++++++++++++++++
+ 4 files changed, 40 insertions(+)
+ create mode 100644 include/dt-bindings/power/r8a77961-sysc.h
+
 -- 
 2.17.1
 
+Gr{oetje,eeting}s,
+
+						Geert
+
+--
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+							    -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
