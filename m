@@ -2,84 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61119E1D0B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 15:44:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 70886E1D38
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 15:47:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xfI2Qc6duetDJ9teXT74gwfQRbYc/fmUg4KSyB2nCeQ=; b=AQNDTMVHAfy+4l
-	UOYJ5RbvfZNlO6mRbV1y/MU0sbx8la7N85CMkeY30sJ6+DdzN0uY7Gi6HqgEQPEaBGi5whVU69FzO
-	6QZ//nl6xsHrzSIAO7BysKP58hf87X6wtEVQVKLXmXF9Fdk4Z1OwoGEwgwCkJJoREWENqdeXMwSe5
-	TxwFkAqLTcG9JyN2J+r92hWvTjn24Df1YX9MfJvVGXDJTLhzIPjZix3XYl7wrVfVnuSWjLqSGkInc
-	gziC7om+3RexiZwF94ZuxlFBQ96EeYUjH2cydowNsyhQB17A4X6b0nVQVyGfluCY9zwvebw0ioatb
-	vItmARXAc5eVDyRwT+mQ==;
+	List-Owner; bh=qpZdQf4A/Pn8W8uaNjU/q8yh3CrBKnBXrNTTKrPgUuc=; b=aOUuisSak5Exim
+	5Ld+7jBEvUrwWqdQwM9xcXXHVLv111+/tE5RFOU/DTd6pXWvaerBArItyTI4xMsZ4sHAT1m8F8F+1
+	liaCK7DEs03JMOfqC+05TBdVQRjoJkPfRQfpQ+rQKM4OHCbIhdeDpI+ojIs5mVYTofon6n9YDqEZY
+	ugMhonEByFVsJdUoIBayFCQuRYYHnaSwXUmNpn84fyQY0fEQpbix2gkP2fZlvHaF66kJAuzsysDd2
+	GTABrqUb5bmtz7gU8f2JuVpCzwpUevGqHSIW/DqLTObD+OOon/HgVJ7qY93zmpR+8n2xgNPxbfkwT
+	wGpEQ93dedB/ORirObRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNGwG-0001yT-JQ; Wed, 23 Oct 2019 13:44:36 +0000
-Received: from mail-ed1-f66.google.com ([209.85.208.66])
+	id 1iNGyv-0003kB-4a; Wed, 23 Oct 2019 13:47:21 +0000
+Received: from mout.kundenserver.de ([212.227.126.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNGw7-0001xJ-8O
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 13:44:28 +0000
-Received: by mail-ed1-f66.google.com with SMTP id f20so15795692edv.8
+ id 1iNGyl-0003jI-C9
+ for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 13:47:12 +0000
+Received: from mail-qt1-f179.google.com ([209.85.160.179]) by
+ mrelayeu.kundenserver.de (mreue010 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1MLiPA-1ienpU41YW-00He1C for <linux-arm-kernel@lists.infradead.org>; Wed,
+ 23 Oct 2019 15:47:09 +0200
+Received: by mail-qt1-f179.google.com with SMTP id o49so24507566qta.7
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 23 Oct 2019 06:44:24 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=hBKYE+zy7+DFfvyH7A7knU3GB9ufsS1mx+vP5bbzBP0=;
- b=awLNY+mLbDNoq4+PCP4sXcTAJJFlMDkYV9O5N1cdhPcJ+jACu40bqLGmeH6pgxa8tZ
- 0KWx3kW5DuoleALUULP8Qj2s2/5aBEcZErvO/iXE7uvxO4riqZensIRXdYQhZT06MHh/
- hbBT4hlyWk6SMMePxcI3qdAWGJHoOX1FLg69VLwCxEponKs+a37soNQT525Zs9EsmRfT
- ryVbgeQi3Oo9bSui9ZjCg5WQ92M2MvDd24fss/gJOpr/CSEON5+XxnE8sm6ypCj61Yp5
- hgDkZqMT/agA9oNj2UU9FFpYm2OLu6XJldz6XdCikc+3KL2C49gaUsrO3q3BpWbDV8Wp
- EE2A==
-X-Gm-Message-State: APjAAAVioS45Xb8fjKZTKl0UQTVCbK7DV+beASFq98TFuTn2znvP8/X1
- 5gT6rXkGHu7yEc0E3/hNGGU=
-X-Google-Smtp-Source: APXvYqw1ctMopj1G34EABDvNktzYOL72/P1RYQagEEVZr6sIwqcab9NGrf4osslw7kr0sYn6k43JVw==
-X-Received: by 2002:a17:906:c801:: with SMTP id
- cx1mr33598956ejb.266.1571838263609; 
- Wed, 23 Oct 2019 06:44:23 -0700 (PDT)
-Received: from pi3 ([194.230.155.217])
- by smtp.googlemail.com with ESMTPSA id z65sm848736ede.86.2019.10.23.06.44.22
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 23 Oct 2019 06:44:22 -0700 (PDT)
-Date: Wed, 23 Oct 2019 15:44:20 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH 31/36] ARM: s3c: cpufreq: use global
- s3c2412_cpufreq_setrefresh
-Message-ID: <20191023134420.GJ11048@pi3>
+ Wed, 23 Oct 2019 06:47:08 -0700 (PDT)
+X-Gm-Message-State: APjAAAU8lJO0C28duPDFVI+0Bzof3afOeMUkkJaKecraCXbEg7zf5zaB
+ LnIFUM3+RcQYx6GXc+w1POtqGNqi2sVOglNke9g=
+X-Google-Smtp-Source: APXvYqz7PbcGsXeFYyvGyowaDFHTfI5KDbWhAt9grIvHRgmEgVC0Li/OGC7C/Oouqywkf4gr90cygIgYwHI1sOkpne0=
+X-Received: by 2002:ac8:33d4:: with SMTP id d20mr9129615qtb.204.1571838427927; 
+ Wed, 23 Oct 2019 06:47:07 -0700 (PDT)
+MIME-Version: 1.0
 References: <20191010202802.1132272-1-arnd@arndb.de>
  <20191010203043.1241612-1-arnd@arndb.de>
- <20191010203043.1241612-31-arnd@arndb.de>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191010203043.1241612-31-arnd@arndb.de>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+ <20191010203043.1241612-30-arnd@arndb.de> <20191023133800.GI11048@pi3>
+In-Reply-To: <20191023133800.GI11048@pi3>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 23 Oct 2019 15:46:51 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a10MkTdStasKjGF9OBOoW3ZJ8RVD4-SxML2qhKXXciH+Q@mail.gmail.com>
+Message-ID: <CAK8P3a10MkTdStasKjGF9OBOoW3ZJ8RVD4-SxML2qhKXXciH+Q@mail.gmail.com>
+Subject: Re: [PATCH 30/36] ARM: s3c: remove cpufreq header dependencies
+To: Krzysztof Kozlowski <krzk@kernel.org>
+X-Provags-ID: V03:K1:WO4Oja41sk/o3N+CRffKBZqvWoxXiKVtd4HPbtWpJ7ndFTowdxA
+ EkRy2bxF+w0SLoIraFPqp/X4crctBKZ+wxAEOIxIQ82hMvtQTWvidi/SHKaKnfjbxO9XI1Y
+ q0cbZEDx3AvD6k+TCQkYZM3zzHhbR524kL8GwUjsxCETgTOp+BV3o72rFWeUdEU3EpvJkmh
+ IZUsCZJjEFNAsPMVmj1pg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:IYftbkgTZX4=:2OnK9hY6+akKsgG4WDYeA3
+ a9/d2CKmrE/XIGP1M93Isnp9QyVavAMaOP7vhW9ru5M0g+IB4PuFtn0w3ap5NNdLz4I9c+h9i
+ 7CJWcvjs/yYaMVB/CaC5725pvFs5O9Fqf7Q+VjIXMnaj3yu6Lg3qwtQwmRbw+OFqpOr92wcuI
+ goYH+n+BOM0R4E16Kwb5X305RbsrNiYp6NpLfu05S7GKRc3AcWiXkI+xt06GauwHchmaGGU06
+ d+8KHG5wIZVjPsip+FG2zI9plWwj00YJUKCqcAiOjnUfBWbLzEBsCtpIcV21WkgbETE8TN0a6
+ pG3A0v0L/7fBPMIkM4K87TezkTZFbeFfbW2jAPNtTBvrg7jguIAXSyYETFzWGApMV19B6+gSR
+ BFqtUfToMmhjoVytMkyc5rRKdzY3p1o61W2DprIgmJoHpyPforC60bGjzHiXol/GRzrb5RSTs
+ fOGeYo50cXqwI2Tgn/CLGbqLZyGkE+ip8oU+crkzEikXlOSwPa+j3RGzVeT9BgtuwpoEAMRSo
+ a/8AOYa9gt2kDLETSvaLsULjVQeb8hkjBEzDX2iBis4A7NsDtWH66vEOwOAaxLahFv0bB8+4P
+ nAHvvGuF7f79rA5XfMuatmG5HgjxlZgGZMwTr9jIg4t/YMtqDLMqPfgC96asOqo/y8j5CCRvK
+ fLXAfTWgcBJI8txJp/ivAmvuzMRy7x/lAUho8Jn962EtRrzwfnP7xMjSUDJysqpMU6jfzZAdI
+ l8iG/86it6F+tol6TeSfUUT2xQSp9J0irRCL7dAAoEhIpy5TB3hszgMOwMQDJJnzn883Ug2Pi
+ FWiF38oAeA3fns0ZtNoi10O1ZHskw5y05NE+nEZnwCp0DKFzdSFQPx9hmXbgidktXqz/Or9Yc
+ RY2pm/WWkj+H7bJ1RaUg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_064427_303561_30E8CE86 
-X-CRM114-Status: GOOD (  20.73  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191023_064711_706968_85BC6B42 
+X-CRM114-Status: GOOD (  12.18  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.66 listed in list.dnswl.org]
+ no trust [212.227.126.133 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.66 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,88 +88,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, linux-pm@vger.kernel.org,
- Viresh Kumar <viresh.kumar@linaro.org>, linus.walleij@linaro.org,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
- Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: "moderated list:ARM/SAMSUNG EXYNOS ARM ARCHITECTURES"
+ <linux-samsung-soc@vger.kernel.org>, Linux PM list <linux-pm@vger.kernel.org>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Kukjin Kim <kgene@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 10, 2019 at 10:30:15PM +0200, Arnd Bergmann wrote:
-> There are two identical copies of the s3c2412_cpufreq_setrefresh
-> function: a static one in the cpufreq driver and a global
-> version in iotiming-s3c2412.c.
-> 
-> As the function requires the use of a hardcoded register address
-> from a header that we want to not be visible to drivers, just
-> move the existing global function and add a declaration in
-> one of the cpufreq header files.
-> 
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> ---
->  drivers/cpufreq/s3c2412-cpufreq.c            | 23 --------------------
->  include/linux/soc/samsung/s3c-cpufreq-core.h |  1 +
->  2 files changed, 1 insertion(+), 23 deletions(-)
-> 
-> diff --git a/drivers/cpufreq/s3c2412-cpufreq.c b/drivers/cpufreq/s3c2412-cpufreq.c
-> index 38dc9e6db633..a77c63e92e1a 100644
-> --- a/drivers/cpufreq/s3c2412-cpufreq.c
-> +++ b/drivers/cpufreq/s3c2412-cpufreq.c
-> @@ -25,8 +25,6 @@
->  #include <asm/mach/arch.h>
->  #include <asm/mach/map.h>
->  
-> -#include <mach/s3c2412.h>
-> -
->  #include <mach/map.h>
->  
->  #define S3C2410_CLKREG(x) ((x) + S3C24XX_VA_CLKPWR)
-> @@ -156,27 +154,6 @@ static void s3c2412_cpufreq_setdivs(struct s3c_cpufreq_config *cfg)
->  	clk_set_parent(armclk, cfg->divs.dvs ? hclk : fclk);
->  }
->  
-> -static void s3c2412_cpufreq_setrefresh(struct s3c_cpufreq_config *cfg)
-> -{
-> -	struct s3c_cpufreq_board *board = cfg->board;
-> -	unsigned long refresh;
-> -
-> -	s3c_freq_dbg("%s: refresh %u ns, hclk %lu\n", __func__,
-> -		     board->refresh, cfg->freq.hclk);
-> -
-> -	/* Reduce both the refresh time (in ns) and the frequency (in MHz)
-> -	 * by 10 each to ensure that we do not overflow 32 bit numbers. This
-> -	 * should work for HCLK up to 133MHz and refresh period up to 30usec.
-> -	 */
-> -
-> -	refresh = (board->refresh / 10);
-> -	refresh *= (cfg->freq.hclk / 100);
-> -	refresh /= (1 * 1000 * 1000);	/* 10^6 */
-> -
-> -	s3c_freq_dbg("%s: setting refresh 0x%08lx\n", __func__, refresh);
-> -	__raw_writel(refresh, S3C2412_REFRESH);
-> -}
-> -
->  /* set the default cpu frequency information, based on an 200MHz part
->   * as we have no other way of detecting the speed rating in software.
->   */
-> diff --git a/include/linux/soc/samsung/s3c-cpufreq-core.h b/include/linux/soc/samsung/s3c-cpufreq-core.h
-> index 4d22be1031b9..eca942559014 100644
-> --- a/include/linux/soc/samsung/s3c-cpufreq-core.h
-> +++ b/include/linux/soc/samsung/s3c-cpufreq-core.h
-> @@ -246,6 +246,7 @@ extern int s3c2412_iotiming_calc(struct s3c_cpufreq_config *cfg,
->  
->  extern void s3c2412_iotiming_set(struct s3c_cpufreq_config *cfg,
->  				 struct s3c_iotimings *iot);
-> +extern void s3c2412_cpufreq_setrefresh(struct s3c_cpufreq_config *cfg);
+On Wed, Oct 23, 2019 at 3:38 PM Krzysztof Kozlowski <krzk@kernel.org> wrote:
+> On Thu, Oct 10, 2019 at 10:30:14PM +0200, Arnd Bergmann wrote:
+> > diff --git a/arch/arm/plat-samsung/include/plat/cpu-freq.h b/include/linux/soc/samsung/s3c-cpu-freq.h
+> > similarity index 100%
+> > rename from arch/arm/plat-samsung/include/plat/cpu-freq.h
+> > rename to include/linux/soc/samsung/s3c-cpu-freq.h
+> > diff --git a/arch/arm/plat-samsung/include/plat/cpu-freq-core.h b/include/linux/soc/samsung/s3c-cpufreq-core.h
+> > similarity index 99%
+> > rename from arch/arm/plat-samsung/include/plat/cpu-freq-core.h
+> > rename to include/linux/soc/samsung/s3c-cpufreq-core.h
+> > index 2c7cf2665634..4d22be1031b9 100644
+>
+> Can you also update the header guard names to match new location?
 
-I think that it does not cover the !CONFIG_S3C2412_IOTIMING case.
-Either you need to provide also the empty stub or add default=y to
-S3C2412_IOTIMING. Otherwise cpufreq driver might end up without this.
+Neither of those files had header guards, added them now.
 
-Best regards,
-Krzysztof
+        Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
