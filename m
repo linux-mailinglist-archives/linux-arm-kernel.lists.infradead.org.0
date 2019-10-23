@@ -2,86 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62013E2426
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 22:15:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D611E2492
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 22:28:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eevHszKUidzde1uWyXXhiaVokF492cSu01lHFS5yp3A=; b=R5x8mdsXYLbVin
-	cLXcg3T8+8Ekio2MUnjX10LPY48/LbhLwva93kPn72LnrN1s5AOhOVU3JXbmrx4BEZUYNyPh/k3zO
-	Q0kqEPd+OnweVI6XZc4byPleVtnFLFc8EVV/z6p9Sutw19URq8gyoKYkzv5auDF/Qrf+VKR6FusaH
-	ZqpXCd+OZ5xtPr1x1d9yCEKT/3GX7OOjRbnTtBftdUcs5VpU9tcEzsnIElE6cc1bK1E9lqjKrmPxs
-	UCAp8mQjHQtEc/EDnfsKI7viZBiiHJXq4L6pLxmuZAhrBUaKiJIWf0PK3lf8ms2sW+hjsptc3jm/I
-	nCcvwifO2l+1iLTGchtw==;
+	List-Owner; bh=8GoP09AB5lrD2G9CpjJhU641FBQJOq53fpErZl4qGtg=; b=W4KU5abussY479
+	eHhyME8RG3Dp/9G3wPrVK/d5SxvZc1C5CNBpT1ec1X0y+RfYWRCZU7a7jvD2jJDDWj2apQqHR17Rc
+	wnncDjF8q7Cil5Yr3GcYzngtxR/4VGKfk/pRciwjQMvHRisOsZID+N2jXcazSIb0M76HyTLSU8lfd
+	8BSdOvHeR1rqsV5YMKhQKsxZQB8vyi1nx9efOlvMyDcUP47lJ+cZLzpV4KxDA8jlgS8KaXN86xOC8
+	UpdRR0xOsbABmyfQSU5W9nmEFND2NOGre0yVlicQLqYpNOCGT7ztVOsBDl+00oIfrncsk1u1EjmJT
+	2TKO/fZVjL1hVQ4hJaRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNN1w-00087X-Py; Wed, 23 Oct 2019 20:14:52 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1iNNEz-0004f0-DH; Wed, 23 Oct 2019 20:28:21 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNN1n-00087C-Pv
- for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 20:14:45 +0000
-Received: by mail-ot1-f66.google.com with SMTP id 41so18559964oti.12
+ id 1iNNEp-0004eQ-Tr
+ for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 20:28:13 +0000
+Received: by mail-lj1-x242.google.com with SMTP id q64so22505369ljb.12
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 23 Oct 2019 13:14:43 -0700 (PDT)
+ Wed, 23 Oct 2019 13:28:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=T9KQBL6LAJYjkuQGrzhfEUZi7F2d+gu+rzQyfboqTg4=;
+ b=f6LOoxDVs4/DvAnaS9H/V3nQ5s19fegLbWq/bDRM0YTRdfAQvVFoGc00O8mT7pPEJV
+ 5oNprja63HwY/VsxPJqN5QG7bb15/FrYjGoyzSWqlexBDdxghJlpeIPVYDWr8jA9Z01r
+ rV577Zj/rzMt9bpw8JSXIpqGLiVsT4XxiySR4VpwUKQEwxYlCEoYJSTIUFGzK+58qUF9
+ toVFtJDLNiz9GbpbvTPeIY1V4ZOcWwGZ25gNFYmNMLN/ImsD9wTWsRS60TLj4IxnSHZH
+ yqwzRm2TBfOEPy0/Ro51jH0Lif9oNDYFynY/F4CEzcCPqbvwHkau+7c8dqiR8pRXQ6tI
+ ZTIQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=yHCtWGntZMmI9Nauyb+KPzomFg4uDRjl1jF3iEvwjaM=;
- b=RPrdRxvbNn6vn0xI/0D/fNzr5c5vCrL28mqRb8EnOi3FVnto0dkDtzakRvboZe4X/q
- rTTkdYft3ZkQQNZxecA/GEvdTJ5a9w8wTEXkc+Ql44zm4t7im68WUTL+90Hd2Kw1yZX6
- 3uVsTHPxoAFKY9agiC0Od1Y3paj2ijsQkeBuD7o3fJl8RP8YHFlm0ZRxBSzawDkDj/Pd
- UbdNDWKqixh9AaJw6XoKCIOZXLvkBGsRaiE//Qpxo5I9JxhUxbW1pTUVbcM2vfzYN3pR
- BOfZyLO7Dcbx4DZLaS1geP6eAUVt+gjU7+Ohhht0QwD+V3otnD+rafN3zeMBOO49kALx
- 10Zw==
-X-Gm-Message-State: APjAAAUABlq0MPmDCdv72rxBZmnbPHC8PYGxOaGj9q4vdqszsOE1EA05
- YdHHfKgKxT0B+V16CAaUMg==
-X-Google-Smtp-Source: APXvYqw1NRgPEgXyubbpFlPakz4U6gDoQjfqDh0u6EixhMw4HkgZOmWsMBDfY/9q/FOxoBgbY7o+sA==
-X-Received: by 2002:a05:6830:1f09:: with SMTP id
- u9mr9254960otg.310.1571861682686; 
- Wed, 23 Oct 2019 13:14:42 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id t10sm5992688oib.49.2019.10.23.13.14.41
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 23 Oct 2019 13:14:41 -0700 (PDT)
-Date: Wed, 23 Oct 2019 15:14:40 -0500
-From: Rob Herring <robh@kernel.org>
-To: Chris Goldsworthy <cgoldswo@codeaurora.org>
-Subject: Re: [PATCH] of: reserved_mem: add missing of_node_put() for proper
- ref-counting
-Message-ID: <20191023201440.GA29860@bogus>
-References: <1571536644-13840-1-git-send-email-cgoldswo@codeaurora.org>
+ bh=T9KQBL6LAJYjkuQGrzhfEUZi7F2d+gu+rzQyfboqTg4=;
+ b=diHPYt7EiYHWLBG2cU5rJKJj1Hhe4Br+0/dI4WgmCnuyiirLUYVFt2ELvDXQgGOcHM
+ /qiAL16QtfYMczw7QUS9vEVyZiTx2HD8nOsx5HDUZMgCPIq//1jU31bOWeox03GscKdc
+ 79GA+Pm2IMiSO0ecS2jfatNeudl34q3wUrsI9ZjPYjM6F0LGPQfpSSMmVOr+0O1ytg/j
+ FIZM84fEKWTQcmX1HMGqZjCfFBcszhIjB91IRBWaez/CoQ7FEyijuO2SV+5FQ/ZE/bUL
+ q7cJ0fs4yjp+NjpADIkC9dPw7m5FyP+azh2pCzuzipc1dQM7NPm6YsSyul0nN9YBES4s
+ STkg==
+X-Gm-Message-State: APjAAAX98QC00OaZ9ZbdXkpLxld/F3HnQVeVDyLaEDaa6v25nBF4wEiL
+ zx02p2b1T+UNbgPZWUsBgi3oRv3tfxeymg==
+X-Google-Smtp-Source: APXvYqxSodDem2VxJeSULsc2yK6A+yLio7NbpdwoWeMo0EQlIIPFpuUhQtRJJpl2pfHB2OL5yzoJcg==
+X-Received: by 2002:a05:651c:106b:: with SMTP id
+ y11mr7541430ljm.123.1571862489642; 
+ Wed, 23 Oct 2019 13:28:09 -0700 (PDT)
+Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
+ by smtp.gmail.com with ESMTPSA id r12sm9386450lfp.63.2019.10.23.13.28.08
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 23 Oct 2019 13:28:08 -0700 (PDT)
+Date: Wed, 23 Oct 2019 13:22:47 -0700
+From: Olof Johansson <olof@lixom.net>
+To: Tony Lindgren <tony@atomide.com>
+Subject: Re: [GIT PULL 1/2] omap2plus_defconfig changes for v5.5
+Message-ID: <20191023202247.wb2jzwvek7u5korx@localhost>
+References: <pull-1571853258-16998@atomide.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1571536644-13840-1-git-send-email-cgoldswo@codeaurora.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <pull-1571853258-16998@atomide.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_131443_838473_7C0D0ECA 
-X-CRM114-Status: GOOD (  11.22  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20191023_132812_108662_2F564E44 
+X-CRM114-Status: GOOD (  13.85  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,37 +95,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- linux-kernel@vger.kernel.org, stable@vger.kernel.org, robh+dt@kernel.org,
- Chris Goldsworthy <cgoldswo@codeaurora.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: soc@kernel.org, arm@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-omap@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 19 Oct 2019 18:57:24 -0700, Chris Goldsworthy wrote:
-> Commit d698a388146c ("of: reserved-memory: ignore disabled memory-region
-> nodes") added an early return in of_reserved_mem_device_init_by_idx(), but
-> didn't call of_node_put() on a device_node whose ref-count was incremented
-> in the call to of_parse_phandle() preceding the early exit.
+On Wed, Oct 23, 2019 at 10:54:48AM -0700, Tony Lindgren wrote:
+> From: "Tony Lindgren" <tony@atomide.com>
 > 
-> Fixes: d698a388146c ("of: reserved-memory: ignore disabled memory-region nodes")
-> Signed-off-by: Chris Goldsworthy <cgoldswo@codeaurora.org>
-> To: Rob Herring <robh+dt@kernel.org>
-> Cc: devicetree@vger.kernel.org
-> Cc: stable@vger.kernel.org
-> Cc: linux-kernel@vger.kernel.org
-> Cc: linux-arm-msm@vger.kernel.org
-> Cc: linux-arm-kernel@lists.infradead.org
-> ---
->  drivers/of/of_reserved_mem.c | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
+> The following changes since commit 96d49bbfe6c1a6bb43ccd00fb87aca100e32e5e2:
 > 
+>   ARM: omap2plus_defconfig: Fix selected panels after generic panel changes (2019-10-03 09:44:40 -0700)
+> 
+> are available in the Git repository at:
+> 
+>   git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.5/defconfig-signed
+> 
+> for you to fetch changes up to ec2b31267263cd7d5a7567d315f839796c2a8c87:
+> 
+>   configs: omap2plus: Enable VIDEO_MT9P031 module (2019-10-22 09:11:03 -0700)
+> 
+> ----------------------------------------------------------------
+> Defconfig changes for omap2plus_defconfig for v5.5
+> 
+> A series of changes from Adam Ford to update for removed and moved items,
+> and then enable crypto devices and MT9P031 video as loadable modules.
+> 
+> Looks like I missed unifying the subject line for one commit, but I did
+> not want to mess with the commit after pushing it out.
+> 
+> ----------------------------------------------------------------
+> Adam Ford (4):
+>       ARM: omap2plus_defconfig: Update for removed items
+>       ARM: omap2plus_defconfig: Update for moved item
+>       ARM: omap2plus_defconfig: Enable HW Crypto engine modules
+>       configs: omap2plus: Enable VIDEO_MT9P031 module
 
-Applied, thanks.
+Looks like this branch had a minor conflict with one of your fixes branches.
+Easy to patch up, but feel free to use your fixes as a base for the topics if
+needed.
 
-Rob
+
+-Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
