@@ -2,56 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7FA94E22DB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 20:56:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E73DE22DE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 23 Oct 2019 20:56:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=Cf53J/nqVCH69ftWMSLzCbZulDyyEjnKs+oukzFY1A0=; b=EpM
-	mKzMMA+1feqZNJu1vO06IctKaYwrqIvyo8opCyXMO/MSelza2sWBlFBsN9r09ZEJaFplBJdBzjajK
-	FRbAL8bfjHnaW78kXVVGpivpxEuyVeDLqOvoDiblGlwNkfSsH5qGhUufTwSoFDnQgL5sSicrLgZOE
-	UlMrqPXy5RWUXWQ4OAwsOrZxMc5HPSi9+lfZCMWYHmBGwWE74+mESPLwM9QPLf0EgyL/atVEkGME+
-	8yNShXyqiu3WlfctMQjzn+nLfnXN/M+9Wsf4jTVM+aQAkzD8+Trq99E7IzjTr7GDbSHQVDvieeoO0
-	HN4xHjMBrMB30RIMN+iEssmhEYOpDJg==;
+	References:List-Owner; bh=BDLL0PQlIMI2txwBkIERG9kP3CZGWOY+BD5IuQX13TU=; b=WXq
+	LuNq04gqCr5bOJlgojeVL4gbmOsgZmKFClXIXdJ3LwtI/SohedahqACOcbfOmxtQ6C0f6xdKz/GWI
+	ZxMM8cRLWVgLRbIUHUdDpjB8P21ct88UdvfACCKuqYC20pplxW2oov3sFOj1GwAgAZV2LyLr4vR0E
+	E6koj3BpRZpZpSagU9dEQgU2hP5lX8hwA2gQxiF3N0fpTvQN5CQPLTylxTMSw7YnbsRVo0ZmjsdHe
+	8ikBwmdetGSAgeBKFNMPRvXxs3CsQvPjzsdHXzWlOF0apvs+F3xpE43CDx5A1P0k3asMdgV2w1IbJ
+	PyeLBNxV1gqiONlmbjE2Rl46KE6IhAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNLo1-0008Qs-IF; Wed, 23 Oct 2019 18:56:25 +0000
+	id 1iNLoJ-000099-RS; Wed, 23 Oct 2019 18:56:43 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNLns-0008Po-Ht; Wed, 23 Oct 2019 18:56:18 +0000
+ id 1iNLnx-0008SG-Hs
+ for linux-arm-kernel@lists.infradead.org; Wed, 23 Oct 2019 18:56:23 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=k/lGzSE95qaQc9LVPN5qXwbt/UcIqtdwXTpshhYt58w=; b=rmUuRnN1eEog
- /IbKf5Uzgyosjs0QBqetAmV5uIX+mWYy6Y238FHhDe2cIEeBASvQXVB/9cXbEBvmVx484sVjOufpb
- wGOuttvp2WFb3qqQpQZGBM/yw8VH0WGJynKmdREz5nRIqjJmYN98KjQWdKJAwe/3R4TPAXcAKared
- 9UijM=;
+ List-Archive; bh=Jk714AkzzaO8F+/J4eKn0uyP10QaLAvge3ULNRNlzZc=; b=xmcJZ4/4V1UZ
+ T1/5eI8s/uBbldJjFeTW4NayLeew7RBmCCyR67sLf52VKunJ/6Atuv8LEe08v2G+GkJUiR6QEFd2k
+ IusIvWE/N0xITZgp9eF4mQuqdTUuSJItvMQZAxLZcSfd6FBBuO49Dk69ywX7Ingx6lQlXozNLw+ve
+ 3009M=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iNLni-0001Ax-PV; Wed, 23 Oct 2019 18:56:06 +0000
+ id 1iNLnt-0001Ci-WB; Wed, 23 Oct 2019 18:56:18 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 3A39E2743293; Wed, 23 Oct 2019 19:56:06 +0100 (BST)
+ id 770E32743021; Wed, 23 Oct 2019 19:56:17 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
-To: Mao Wenan <maowenan@huawei.com>
-Subject: Applied "ASoC: mediatek: Check SND_SOC_CROS_EC_CODEC dependency" to
- the asoc tree
-In-Reply-To: <20191023063103.44941-1-maowenan@huawei.com>
+To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Subject: Applied "spi: pxa2xx: Drop extra check of platform_get_resource()
+ returned value" to the spi tree
+In-Reply-To: <20191021103625.4250-2-andriy.shevchenko@linux.intel.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20191023185606.3A39E2743293@ypsilon.sirena.org.uk>
-Date: Wed, 23 Oct 2019 19:56:06 +0100 (BST)
+Message-Id: <20191023185617.770E32743021@ypsilon.sirena.org.uk>
+Date: Wed, 23 Oct 2019 19:56:17 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_115616_594970_2F2F619F 
-X-CRM114-Status: GOOD (  13.15  )
+X-CRM114-CacheID: sfid-20191023_115621_622885_83C652A0 
+X-CRM114-Status: GOOD (  14.34  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -77,13 +78,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, yuehaibing@huawei.com,
- gregkh@linuxfoundation.org, tiwai@suse.com, kernel-janitors@vger.kernel.org,
- lgirdwood@gmail.com, linux-kernel@vger.kernel.org, tzungbi@google.com,
- Mark Brown <broonie@kernel.org>, linux-mediatek@lists.infradead.org,
- shunli.wang@mediatek.com, matthias.bgg@gmail.com, tglx@linutronix.de,
- perex@perex.cz, linux-arm-kernel@lists.infradead.org,
- kaichieh.chuang@mediatek.com
+Cc: Haojian Zhuang <haojian.zhuang@gmail.com>, linux-spi@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, Daniel Mack <daniel@zonque.org>,
+ Robert Jarzmik <robert.jarzmik@free.fr>, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -92,11 +89,11 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: mediatek: Check SND_SOC_CROS_EC_CODEC dependency
+   spi: pxa2xx: Drop extra check of platform_get_resource() returned value
 
-has been applied to the asoc tree at
+has been applied to the spi tree at
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.5
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.4
 
 All being well this means that it will be integrated into the linux-next
 tree (usually sometime in the next 24 hours) and sent to Linus during
@@ -117,42 +114,49 @@ to this mail.
 Thanks,
 Mark
 
-From ef5dee551e3e6568fb203ea57fa24f55cb64d451 Mon Sep 17 00:00:00 2001
-From: Mao Wenan <maowenan@huawei.com>
-Date: Wed, 23 Oct 2019 14:31:03 +0800
-Subject: [PATCH] ASoC: mediatek: Check SND_SOC_CROS_EC_CODEC dependency
+From 77c544d243f3b0d1ae3487ebb170c07c79734fe7 Mon Sep 17 00:00:00 2001
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Date: Mon, 21 Oct 2019 13:36:25 +0300
+Subject: [PATCH] spi: pxa2xx: Drop extra check of platform_get_resource()
+ returned value
 
-If SND_SOC_MT8183_MT6358_TS3A227E_MAX98357A=y,
-below errors can be seen:
-sound/soc/codecs/cros_ec_codec.o: In function `send_ec_host_command':
-cros_ec_codec.c:(.text+0x534): undefined reference to `cros_ec_cmd_xfer_status'
-cros_ec_codec.c:(.text+0x101c): undefined reference to `cros_ec_get_host_event'
+The devm_ioremap_resource() has already a check for resource pointer
+being NULL. No need to double check this.
 
-This is because it will select SND_SOC_CROS_EC_CODEC
-after commit 2cc3cd5fdc8b ("ASoC: mediatek: mt8183: support WoV"),
-but SND_SOC_CROS_EC_CODEC depends on CROS_EC.
+Drop extra check of platform_get_resource() returned value.
 
-Fixes: 2cc3cd5fdc8b ("ASoC: mediatek: mt8183: support WoV")
-Signed-off-by: Mao Wenan <maowenan@huawei.com>
-Link: https://lore.kernel.org/r/20191023063103.44941-1-maowenan@huawei.com
+Signed-off-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Link: https://lore.kernel.org/r/20191021103625.4250-2-andriy.shevchenko@linux.intel.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- sound/soc/mediatek/Kconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/spi/spi-pxa2xx.c | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
 
-diff --git a/sound/soc/mediatek/Kconfig b/sound/soc/mediatek/Kconfig
-index 8b29f3979899..a656d2014127 100644
---- a/sound/soc/mediatek/Kconfig
-+++ b/sound/soc/mediatek/Kconfig
-@@ -125,7 +125,7 @@ config SND_SOC_MT8183_MT6358_TS3A227E_MAX98357A
- 	select SND_SOC_MAX98357A
- 	select SND_SOC_BT_SCO
- 	select SND_SOC_TS3A227E
--	select SND_SOC_CROS_EC_CODEC
-+	select SND_SOC_CROS_EC_CODEC if CROS_EC
- 	help
- 	  This adds ASoC driver for Mediatek MT8183 boards
- 	  with the MT6358 TS3A227E MAX98357A audio codec.
+diff --git a/drivers/spi/spi-pxa2xx.c b/drivers/spi/spi-pxa2xx.c
+index 068c21037679..4249bcaf77bd 100644
+--- a/drivers/spi/spi-pxa2xx.c
++++ b/drivers/spi/spi-pxa2xx.c
+@@ -1545,17 +1545,15 @@ pxa2xx_spi_init_pdata(struct platform_device *pdev)
+ 	if (!pdata)
+ 		return NULL;
+ 
+-	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	if (!res)
+-		return NULL;
+-
+ 	ssp = &pdata->ssp;
+ 
+-	ssp->phys_base = res->start;
++	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+ 	ssp->mmio_base = devm_ioremap_resource(&pdev->dev, res);
+ 	if (IS_ERR(ssp->mmio_base))
+ 		return NULL;
+ 
++	ssp->phys_base = res->start;
++
+ #ifdef CONFIG_PCI
+ 	if (pcidev_id) {
+ 		pdata->tx_param = pdev->dev.parent;
 -- 
 2.20.1
 
