@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3FBD3E3852
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 18:40:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 232B3E384F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 18:40:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=EN9ZGoE/c8eHJqIvmJAsDcPBVRkEvHoYYyVpbu3SzVA=; b=N24ZGanKkn7GC1VYlCdYHLG8GT
-	oj6Hhggd8uADlR5hrXAuTvpUgPqU9frtoyH3mIwUIfyVllc6tQWP9M8Ij1iSWfMWve0JmThaitn0B
-	54owK7nyELWc/7HFk67Vt7Ny31YRQKJ6OhhTjrkAGvYy9xywcrknL80IdDnpaLS6e6dQLdsPMSPN5
-	ZgW99uICS/HkZLQbifp8XwHzi7I/stP9L85YADfCA+fL6kLq5Zt65Lj/wVqnUGVBhow8VZRd7W6Ti
-	RUAw7NwhgfcaIfJiBYmr8r+DT2SLncAJOzbBbWfl5yN6EbfkJJWwWIO0smrXhpwWGiWZ8vITLJ3us
-	zy+SLE7Q==;
+	bh=sqZLfnvQabTAqZIEuEun6BzOyaLkdbxT77gcWzlGZls=; b=nrMtmpzPd50R7VM76vIqeQ0qPG
+	dv8UOc9Pb65YqQHifMwzXFygH3mENM4LzS8Gz5aSrxJH7AQW5jGszAXHnvvR+wMCwbhIRP1Kccg9g
+	aS/96dCYpjoLFpsSDIi+/GM2s4DLkEsKG1/Pw7eJaT4fbUO9jw4DkbhPYaBNRO+D8Ed1cvuKGBtlB
+	rjoJdPbYxppT4WLWXikS0/ki8CMlvZjL7jhGVnPkI3mAlkVGVQkSL2HOjkt4/qp/IwIsTUor0tBKP
+	4m3cTGlUq2jukF2X9mZqPZWRXIo7l8WMTBDerwVM7oSl96GehWbpqBtHUGaZlBMjTbXWQzx83kZGK
+	uGzt68mQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNgAJ-00089l-7w; Thu, 24 Oct 2019 16:40:47 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iNg9q-0006Jp-Vq; Thu, 24 Oct 2019 16:40:18 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNg8I-0005MN-Of
+ id 1iNg8I-0005Mw-QY
  for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 16:38:44 +0000
-Received: by mail-wr1-x442.google.com with SMTP id q13so21864964wrs.12
+Received: by mail-wm1-x343.google.com with SMTP id q130so3080666wme.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 24 Oct 2019 09:38:41 -0700 (PDT)
+ Thu, 24 Oct 2019 09:38:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=hp9auP1eDPhHh11Inl/NtM2csOEQVC7OB8vmkOBN3Yo=;
- b=dEYKAgP8b62ELK3aQy8Sm5kXfcxSfxaAtjT6k+tEy2Fr1SkdaT8Z6Pmgbfx5CXzc14
- jTsX9Jkng/DOgrAv0GelNisE3nHQ7yTupEmSIAw/5n4kSTtlYrgx/YLnF8DGyvAslB8P
- p0BbLyzg/LECSvrUWBrp0j7oW4JkIqArUMeHE28aaAMfMMnvRLn1MfFJ+8lVl8XlSmxk
- n/TCMCnjjEQPP1XiIBwM5a61rQX3N5AwYfykWqp0MbROF9g2ZoZQBdCr5CjtYKC5eVzL
- +Es6ogdDihTa1NzCLCbLUQ9BywpWX9XItmuPED0qWoroBUJsMwNdyk6pt70Y5qJYO4hx
- 31OA==
+ bh=e4HNR/0VM5m4e7dMrNKrSD8efxMPd+5rZb481ikFf74=;
+ b=M7WkmfL0zrA5DnctlcBxlGdxMtMvI7tb2Et+EcJD17XeKNEcanCAnSlnnFtfrQBuM3
+ sDhf5LBd626wET1CuSWyl/rNSMkVh7OT3aDCOds4shDrMV1BOqn/YQFAjcw5wHDP541P
+ 1/KOQc4D2Q7cPOFKXNBlEJmLOHeUPfL218/n4FP/xi+GZncaONIbCHbY3wj8Ui4KD2w1
+ efGgPXWk+q/VIFUq9zoDrdj/MKBbzRWvdbAMOHU8q6g3mk2yO4zDLW0HKVtQslGanI6m
+ yJaTeQurgB38QyJxOF/EQuEb5uHiE/GtD2I2MEEBn+DHfT1q9WyC8IMLjupNUcM8DF8w
+ 2oAg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=hp9auP1eDPhHh11Inl/NtM2csOEQVC7OB8vmkOBN3Yo=;
- b=P8mes/DuEuEEJrXHYSRtj2vWgRyxz7GkksZIo5C9riGNJdyj+cCsEML3lR/kCdaULW
- IR1jgeqOe8gXBJB2uPDndJokBwuSgS9zQKJE9GPdSObvwHCdR13SF7y/F+KeOr4dcu7T
- 9HLHtXfSwsK3sVq6JtlESeiC33zW5rJ801gyzeYBwQICdmrmxGL1gJfyh03XO36WHBWB
- OuLZ+Rxhz/INcHxfcXTcQ+6in0oYZyRroORsY7lLnvXRg3ftxYrODtxhKuk5gMeQY4Ty
- IjdQ8w5GVAzg2DkKmVl2QyTQP0Gg/j9Y4ujsZlaRFPFDBFv74/hPpv6S+HHJqQRFYdZJ
- SJDg==
-X-Gm-Message-State: APjAAAVAbt+XQEISjarhUOTY5sn/PPhZvnS61dkLJnzqBa1YsZM65q0v
- XaalBSsf1VA3HgUITjcy+64Hbg==
-X-Google-Smtp-Source: APXvYqwGElQJItgpvXG2KweIz1nT4zNaMi0EfD6C7LIDSjrHnlkygJRqfB/W9QG2S4JqeD5Mmp8A+Q==
-X-Received: by 2002:adf:f686:: with SMTP id v6mr5010878wrp.141.1571935120637; 
- Thu, 24 Oct 2019 09:38:40 -0700 (PDT)
+ bh=e4HNR/0VM5m4e7dMrNKrSD8efxMPd+5rZb481ikFf74=;
+ b=N8u5AHLTRu0zMaiMCXWtgamxn4wxm/enlPt0MfhyS3zKZwGRowE2Lc1Zw2I3KQML/1
+ yZE2fyAPBeXMa0g8hW0yfvBVRB3d9z2gKByFzCn86kweH6WqiV5Kxe/yU5SLCDU2vvI5
+ kmHHZjnQq5k7XeFJ3TtqK6GQDOp2MFKRVWsBc6TT+nblgW+j966LlY2NyR/GSrx/BuKU
+ kTaSGgihBln5Y1iRtxY8LcWlMY+3lggb3cLrxzkB4vjy6/u2h2r2goBz80E8L1q+bELQ
+ dD9dRevKVXCxQD8MdlipCrXWi1fwIIMwG19oQM+PneWQu2FhXgGN3lMOlIUy3VbN4x/g
+ WpNg==
+X-Gm-Message-State: APjAAAX4LLOle1UyZIhr+dHprgm904WZghtrVUHxhK5FNoH6FlOZHYMq
+ pmhbOtv2bnzYc/g1P+cHviaV1g==
+X-Google-Smtp-Source: APXvYqxEHli1uD77KL/ELWWxWiIIpMJMsjHrKFyV9fTmvffZSzc7lJEAUYH66gJFBm49CiohcZ1L0Q==
+X-Received: by 2002:a1c:2884:: with SMTP id o126mr6171815wmo.153.1571935121495; 
+ Thu, 24 Oct 2019 09:38:41 -0700 (PDT)
 Received: from localhost.localdomain ([95.149.164.99])
- by smtp.gmail.com with ESMTPSA id 6sm3446175wmd.36.2019.10.24.09.38.39
+ by smtp.gmail.com with ESMTPSA id 6sm3446175wmd.36.2019.10.24.09.38.40
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
  Thu, 24 Oct 2019 09:38:40 -0700 (PDT)
 From: Lee Jones <lee.jones@linaro.org>
 To: daniel.thompson@linaro.org, arnd@arndb.de, broonie@kernel.org,
  linus.walleij@linaro.org
-Subject: [PATCH v3 04/10] mfd: cs5535-mfd: Register clients using their own
- dedicated MFD cell entries
-Date: Thu, 24 Oct 2019 17:38:26 +0100
-Message-Id: <20191024163832.31326-5-lee.jones@linaro.org>
+Subject: [PATCH v3 05/10] mfd: mfd-core: Remove mfd_clone_cell()
+Date: Thu, 24 Oct 2019 17:38:27 +0100
+Message-Id: <20191024163832.31326-6-lee.jones@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191024163832.31326-1-lee.jones@linaro.org>
 References: <20191024163832.31326-1-lee.jones@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_093842_796216_BE63821E 
-X-CRM114-Status: GOOD (  13.99  )
+X-CRM114-CacheID: sfid-20191024_093842_855623_C60D23D4 
+X-CRM114-Status: GOOD (  13.74  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,63 +104,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CS5535 is the only user of mfd_clone_cell().  It makes more sense to
-register child devices in the traditional way and remove the quite
-bespoke mfd_clone_cell() call from the MFD API.
+Providing a subsystem-level API helper seems over-kill just to save a
+few lines of C-code.  Previous commits saw us convert mfd_clone_cell()'s
+only user over to use a more traditional style of MFD child-device
+registration.  Now we can remove the superfluous helper from the MFD API.
 
 Signed-off-by: Lee Jones <lee.jones@linaro.org>
+Reviewed-by: Daniel Thompson <daniel.thompson@linaro.org>
 ---
- drivers/mfd/cs5535-mfd.c | 25 ++++++++++++++++---------
- 1 file changed, 16 insertions(+), 9 deletions(-)
+ drivers/mfd/mfd-core.c   | 33 ---------------------------------
+ include/linux/mfd/core.h | 18 ------------------
+ 2 files changed, 51 deletions(-)
 
-diff --git a/drivers/mfd/cs5535-mfd.c b/drivers/mfd/cs5535-mfd.c
-index 27fa8fa1ec9b..4c034c9f2303 100644
---- a/drivers/mfd/cs5535-mfd.c
-+++ b/drivers/mfd/cs5535-mfd.c
-@@ -50,16 +50,19 @@ static struct mfd_cell cs5535_mfd_cells[] = {
- 		.num_resources = 1,
- 		.resources = &cs5535_mfd_resources[PMS_BAR],
- 	},
-+};
-+
-+static struct mfd_cell cs5535_olpc_mfd_cells[] = {
- 	{
--		.name = "cs5535-acpi",
-+		.name = "olpc-xo1-pm-acpi",
-+		.num_resources = 1,
-+		.resources = &cs5535_mfd_resources[ACPI_BAR],
-+	},
-+	{
-+		.name = "olpc-xo1-sci-acpi",
- 		.num_resources = 1,
- 		.resources = &cs5535_mfd_resources[ACPI_BAR],
- 	},
--};
+diff --git a/drivers/mfd/mfd-core.c b/drivers/mfd/mfd-core.c
+index 23276a80e3b4..8126665bb2d8 100644
+--- a/drivers/mfd/mfd-core.c
++++ b/drivers/mfd/mfd-core.c
+@@ -382,38 +382,5 @@ int devm_mfd_add_devices(struct device *dev, int id,
+ }
+ EXPORT_SYMBOL(devm_mfd_add_devices);
+ 
+-int mfd_clone_cell(const char *cell, const char **clones, size_t n_clones)
+-{
+-	struct mfd_cell cell_entry;
+-	struct device *dev;
+-	struct platform_device *pdev;
+-	int i;
 -
--static const char *olpc_acpi_clones[] = {
--	"olpc-xo1-pm-acpi",
--	"olpc-xo1-sci-acpi"
- };
+-	/* fetch the parent cell's device (should already be registered!) */
+-	dev = bus_find_device_by_name(&platform_bus_type, NULL, cell);
+-	if (!dev) {
+-		printk(KERN_ERR "failed to find device for cell %s\n", cell);
+-		return -ENODEV;
+-	}
+-	pdev = to_platform_device(dev);
+-	memcpy(&cell_entry, mfd_get_cell(pdev), sizeof(cell_entry));
+-
+-	WARN_ON(!cell_entry.enable);
+-
+-	for (i = 0; i < n_clones; i++) {
+-		cell_entry.name = clones[i];
+-		/* don't give up if a single call fails; just report error */
+-		if (mfd_add_device(pdev->dev.parent, -1, &cell_entry,
+-				   cell_entry.usage_count, NULL, 0, NULL))
+-			dev_err(dev, "failed to create platform device '%s'\n",
+-					clones[i]);
+-	}
+-
+-	put_device(dev);
+-
+-	return 0;
+-}
+-EXPORT_SYMBOL(mfd_clone_cell);
+-
+ MODULE_LICENSE("GPL");
+ MODULE_AUTHOR("Ian Molton, Dmitry Baryshkov");
+diff --git a/include/linux/mfd/core.h b/include/linux/mfd/core.h
+index b43fc5773ad7..bd8c0e089164 100644
+--- a/include/linux/mfd/core.h
++++ b/include/linux/mfd/core.h
+@@ -86,24 +86,6 @@ struct mfd_cell {
+ extern int mfd_cell_enable(struct platform_device *pdev);
+ extern int mfd_cell_disable(struct platform_device *pdev);
  
- static int cs5535_mfd_probe(struct pci_dev *pdev,
-@@ -101,10 +104,14 @@ static int cs5535_mfd_probe(struct pci_dev *pdev,
- 			goto err_remove_devices;
- 		}
- 
--		err = mfd_clone_cell("cs5535-acpi", olpc_acpi_clones,
--				     ARRAY_SIZE(olpc_acpi_clones));
-+		err = mfd_add_devices(&pdev->dev, PLATFORM_DEVID_NONE,
-+				      cs5535_olpc_mfd_cells,
-+				      ARRAY_SIZE(cs5535_olpc_mfd_cells),
-+				      NULL, 0, NULL);
- 		if (err) {
--			dev_err(&pdev->dev, "Failed to clone MFD cell\n");
-+			dev_err(&pdev->dev,
-+				"Failed to add CS5535 OLPC sub-devices: %d\n",
-+				err);
- 			goto err_release_acpi;
- 		}
- 	}
+-/*
+- * "Clone" multiple platform devices for a single cell. This is to be used
+- * for devices that have multiple users of a cell.  For example, if an mfd
+- * driver wants the cell "foo" to be used by a GPIO driver, an MTD driver,
+- * and a platform driver, the following bit of code would be use after first
+- * calling mfd_add_devices():
+- *
+- * const char *fclones[] = { "foo-gpio", "foo-mtd" };
+- * err = mfd_clone_cells("foo", fclones, ARRAY_SIZE(fclones));
+- *
+- * Each driver (MTD, GPIO, and platform driver) would then register
+- * platform_drivers for "foo-mtd", "foo-gpio", and "foo", respectively.
+- * The cell's .enable/.disable hooks should be used to deal with hardware
+- * resource contention.
+- */
+-extern int mfd_clone_cell(const char *cell, const char **clones,
+-		size_t n_clones);
+-
+ /*
+  * Given a platform device that's been created by mfd_add_devices(), fetch
+  * the mfd_cell that created it.
 -- 
 2.17.1
 
