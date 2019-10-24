@@ -2,84 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA9B5E2B91
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 09:57:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06E04E2B99
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 09:59:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4X6k4z9AwWb/KJ7qC+O0VceAwqzx3WezTKffcoM28S0=; b=KIOX9LJTl/0NS6
-	eOyxvBSafnSzUMtWMRvS2ocNGPe87c0JaD97i9k+k1/9Kp/RY6TgAnVH7wRYPaRx9HwEhvy8QOm6W
-	9cZAE25jp5V7UHwFcEL3SyNb81mDo1Wrr3ukKdIeBzL8JF3812KS2ysYo9FQeN/2EK/j4lG5RMEDz
-	yjN3VikcCafVmJtq3hU+Fn9fb3/RZRZdI5J3XaIfVxJZmXvjgkPIWQWu4sPZieHqz7NxuqkvfZrTJ
-	TBp7B1WyXpa2ugkqMGJqjJeniC1jzqjgJXMlQrdbRIA2UzxqzwsT4bYeINwCoohhmu2+3OYRxWyIF
-	sWrYZTNAXdXOcjvd/iXg==;
+	List-Owner; bh=6LkJTHl7dLkoL3RJMOxW8x/1Zp4ROCeL1YmaL4pEfSM=; b=qoMkZ8dKnkN3WS
+	77xsZ1rQFKiVi7SzAoew0H4pOiO0wwdYqY3Ga3on+qqh7dMi74PKtgfR4xwjBLdy75V6qyxItwj+d
+	HS2qmZIRePiZEc2fxEp+QGHCo5vhujn/Ii4KswEZb95J4GJfc07urqv2bGKdU2pHlnWAqZWQQffrE
+	SzrTc6XsYGYvcObXNxHzpK4F97HFhMD8NPeqVzkt3p7vCQ0lSVM+wEgeoEpC7M+fRxNDKZLyugeOy
+	uHAn3JwVPoHDrc5T3foqmVDOVEv4M7vJWEyiDpm4HQX0PzPYHZKYdjkF7bdcIHIWWatOlSbjPerHK
+	3xD0OpLYOiMuO0lo+o0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNY00-0001Oh-6K; Thu, 24 Oct 2019 07:57:36 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1iNY1L-0001mL-Dh; Thu, 24 Oct 2019 07:58:59 +0000
+Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNXzo-0001Ml-TB
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 07:57:26 +0000
-Received: by mail-wm1-x344.google.com with SMTP id q70so1648975wme.1
+ id 1iNY14-0001lp-8I
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 07:58:44 +0000
+Received: by mail-il1-x143.google.com with SMTP id z10so21499954ilo.8
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 24 Oct 2019 00:57:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=2R2CzbjvEDjQmx61JPs0RIA5BRAZFdy1ELg14vUw0UQ=;
- b=KarVPLaBPctaaN5I1bubIar3T/z7eSO6kv6QHJHU97Yb654aPehI+thVq0mZ3Jm8nx
- n2c9tW1zImFk0i7AZS5BjlzwY9kxtexGvnoqflA6oaj3k1JJ0SOol5VCjorf9/t7/g+R
- zkdk5KQf7KCombZznlxFlE+f0Hre2crdS44Cd1lSoeRAoGYWiqRjNyVer9cKHhTF4UR5
- wzSWUb2gRLA7/KFvI++Xfpe0MFXxtl2mSbyfnVu7uFK1+eeSS5d2929gLYcg27fFo9vV
- 6wG10gP2E5B7FNLyrKcPOyKtL1kFOHm43pq0c/OPj/qmwyfPc9vqIjTig758Wzk3opYF
- r+nw==
+ Thu, 24 Oct 2019 00:58:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=/iwX4UjOQjn2lNb7lRka6gT7CCeFZoS1/ylA6WSmhrA=;
+ b=HWbN10vyE4qOXGOmTtdtAb1M6RjfxZ/QZpix5Ndgxwxa8hADczts4OYkxPzWo5HulL
+ 1+8AvnBsivuTtDCQO9POwAdEU7Ku2B41ssTUuRiobwGOFCZRniblrUwfFTUpiTf5ESQg
+ pykuGl3iM0Z15cmp/J/fsbu6gwfPv1waz1d4s=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=2R2CzbjvEDjQmx61JPs0RIA5BRAZFdy1ELg14vUw0UQ=;
- b=gve+E8ukaQ8XVS+/8PKrofLpK03Y8FsxQPbudTCeAdGUaVmryvsXJMo6YfEa+eyWgM
- UjjsdnGFEpcdpjJcM4XGpzTlJB3N4Lm78rYzgnkDQHR0iawAuOE8871/4Td/jT3ydrQ0
- Otl+fIP73u+pyysVTA1ZgQy3lJ2dF8O2DQCuR++MacZv+nOm6VOBJM9ZfjD7NEEhI6jL
- eiUN8UXcziD/xt3x+PZgT3lt0t4GuT9RC8TajPpcvqwEUaFVJoZwAIIOlJLoG//Ne9T1
- dxAl7vhGNcG9MUSkPFZRKwg83oL/K+b8XwFshhOG4hbHTdAieFQrQ5k0fCVnnt7wyiwA
- gJaQ==
-X-Gm-Message-State: APjAAAVymv0XmFW2ee3P5HuvR9DM4XVQBzQ8rgQpahsAfdB3ue9IPKYa
- Xdp1FxzCisCluq7A4l/dmvZ11w==
-X-Google-Smtp-Source: APXvYqzfzbyOD0kMrrQiasuUlY/4XG7ebzJuOpr4xPK79DUE6o1jWvTCFJ/oMBpjTCu4tX/LxTh1vw==
-X-Received: by 2002:a1c:6885:: with SMTP id d127mr3484113wmc.64.1571903842614; 
- Thu, 24 Oct 2019 00:57:22 -0700 (PDT)
-Received: from dell ([95.149.164.99])
- by smtp.gmail.com with ESMTPSA id d4sm31839931wrc.54.2019.10.24.00.57.21
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 24 Oct 2019 00:57:22 -0700 (PDT)
-Date: Thu, 24 Oct 2019 08:57:20 +0100
-From: Lee Jones <lee.jones@linaro.org>
-To: Frank Wunderlich <frank-w@public-files.de>
-Subject: Re: [PATCH] mfd: mt6397: fix probe after changing mt6397-core
-Message-ID: <20191024075720.GI15843@dell>
-References: <20191003185323.24646-1-frank-w@public-files.de>
- <20191016095338.GD4365@dell>
- <24600EAE-5379-475F-B83D-880E767F2CDA@public-files.de>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=/iwX4UjOQjn2lNb7lRka6gT7CCeFZoS1/ylA6WSmhrA=;
+ b=tlq/qrORUrdxfLuULL/78Zcj4bAUIyCcLSDvS67gOzuWkQjPyqSAhXzsyN4v4WiiHX
+ cKFcE3kjoq65NQyTvo8IVxNqv7SrLiRRs3udj1DLG/sKMkPNcjakXX2lfzHyCVrhco4f
+ t2DLhskv1wluGEPtfK5pPflymEX2LDC1mN310ux2OJOjFUbhumm6PLLtVqstOvSEdoWY
+ dARWkhNIK9YDBg3hmcc1KIoHHdWOAvzWiMNTgNmU5h2cBWTgEdWmIuoqvxtL+c6vwAWD
+ Jxh6gXp1nypefbcdNNKtduM1Cgr1POvVhK9N7pykHUsULyqaLTlNcqSB5Jm1e7KatShG
+ Uwrw==
+X-Gm-Message-State: APjAAAVMnIykLQ4BktyFmlbAXyofLRjhtImb1T2PaOnMar+rk+vs45VL
+ SFpCD54Di2whaoFiviZMkgsHlkpneKBeNOjS0YPm6A==
+X-Google-Smtp-Source: APXvYqwOnD4ookxu9fpEx7h0rJ1trgaJEt/X4F/4abU6xodrQ4R1ekY6BSv7j2O++aWyan6hxZmdqNNdkkAvzgJdwjE=
+X-Received: by 2002:a92:5d8f:: with SMTP id e15mr10504428ilg.173.1571903919957; 
+ Thu, 24 Oct 2019 00:58:39 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <24600EAE-5379-475F-B83D-880E767F2CDA@public-files.de>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20191005141913.22020-1-jagan@amarulasolutions.com>
+ <20191005141913.22020-6-jagan@amarulasolutions.com>
+ <20191007105708.raxavxk4n7bvxh7x@gilmour>
+ <CAMty3ZCiwOGgwbsjTHvEZhwHGhsgb6_FeBs9hHgLai9=rV2_HQ@mail.gmail.com>
+ <20191016080306.44pmo3rfmtnkgosq@gilmour>
+ <CAMty3ZCTE=W+TNRvdowec-eYB625j97uG8F3fzVMtRFsKsqFFQ@mail.gmail.com>
+ <20191017095225.ntx647ivegaldlyf@gilmour>
+In-Reply-To: <20191017095225.ntx647ivegaldlyf@gilmour>
+From: Jagan Teki <jagan@amarulasolutions.com>
+Date: Thu, 24 Oct 2019 13:28:28 +0530
+Message-ID: <CAMty3ZAvqRLh16vFd-63h4+SzQkNydGfNKX_pByqFD-hZfncpQ@mail.gmail.com>
+Subject: Re: [PATCH v10 5/6] arm64: dts: allwinner: a64: Add MIPI DSI pipeline
+To: Maxime Ripard <mripard@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_005724_948794_990C8C58 
-X-CRM114-Status: UNSURE (   8.59  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191024_005842_437705_0F80E324 
+X-CRM114-Status: GOOD (  30.84  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -101,22 +94,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Matthias Brugger <matthias.bgg@gmail.com>,
- linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org,
- Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, David Airlie <airlied@linux.ie>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Michael Trimarchi <michael@amarulasolutions.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Icenowy Zheng <icenowy@aosc.io>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCAyMiBPY3QgMjAxOSwgRnJhbmsgV3VuZGVybGljaCB3cm90ZToKCj4gV2lsbCBpdCBi
-ZSBtZXJnZWQgb24gcmMtY3ljbGU/Cj4gCj4gSSBhc2sgYmVjYXVzZSBpIHNlZSBpdCBvbmx5IGlu
-IG1mZC1uZXh0IGJ1dCBub3QgaW4gZml4ZXMvdG9ydmFsZHMtbWFzdGVyCgpJdCdzIGJlZW4gc2Vu
-dCB0byBMaW51cyBmb3IgdGhlIC1yY3MuCgotLSAKTGVlIEpvbmVzIFvmnY7nkLzmlq9dCkxpbmFy
-byBTZXJ2aWNlcyBUZWNobmljYWwgTGVhZApMaW5hcm8ub3JnIOKUgiBPcGVuIHNvdXJjZSBzb2Z0
-d2FyZSBmb3IgQVJNIFNvQ3MKRm9sbG93IExpbmFybzogRmFjZWJvb2sgfCBUd2l0dGVyIHwgQmxv
-ZwoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
-YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
-LWtlcm5lbAo=
+On Thu, Oct 17, 2019 at 3:22 PM Maxime Ripard <mripard@kernel.org> wrote:
+>
+> On Wed, Oct 16, 2019 at 02:19:44PM +0530, Jagan Teki wrote:
+> > On Wed, Oct 16, 2019 at 1:33 PM Maxime Ripard <mripard@kernel.org> wrote:
+> > >
+> > > On Mon, Oct 14, 2019 at 05:37:50PM +0530, Jagan Teki wrote:
+> > > > On Mon, Oct 7, 2019 at 4:27 PM Maxime Ripard <mripard@kernel.org> wrote:
+> > > > >
+> > > > > On Sat, Oct 05, 2019 at 07:49:12PM +0530, Jagan Teki wrote:
+> > > > > > Add MIPI DSI pipeline for Allwinner A64.
+> > > > > >
+> > > > > > - dsi node, with A64 compatible since it doesn't support
+> > > > > >   DSI_SCLK gating unlike A33
+> > > > > > - dphy node, with A64 compatible with A33 fallback since
+> > > > > >   DPHY on A64 and A33 is similar
+> > > > > > - finally, attach the dsi_in to tcon0 for complete MIPI DSI
+> > > > > >
+> > > > > > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+> > > > > > Tested-by: Merlijn Wajer <merlijn@wizzup.org>
+> > > > > > ---
+> > > > > >  arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 38 +++++++++++++++++++
+> > > > > >  1 file changed, 38 insertions(+)
+> > > > > >
+> > > > > > diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+> > > > > > index 69128a6dfc46..ad4170b8aee0 100644
+> > > > > > --- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+> > > > > > +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+> > > > > > @@ -382,6 +382,12 @@
+> > > > > >                                       #address-cells = <1>;
+> > > > > >                                       #size-cells = <0>;
+> > > > > >                                       reg = <1>;
+> > > > > > +
+> > > > > > +                                     tcon0_out_dsi: endpoint@1 {
+> > > > > > +                                             reg = <1>;
+> > > > > > +                                             remote-endpoint = <&dsi_in_tcon0>;
+> > > > > > +                                             allwinner,tcon-channel = <1>;
+> > > > > > +                                     };
+> > > > > >                               };
+> > > > > >                       };
+> > > > > >               };
+> > > > > > @@ -1003,6 +1009,38 @@
+> > > > > >                       status = "disabled";
+> > > > > >               };
+> > > > > >
+> > > > > > +             dsi: dsi@1ca0000 {
+> > > > > > +                     compatible = "allwinner,sun50i-a64-mipi-dsi";
+> > > > > > +                     reg = <0x01ca0000 0x1000>;
+> > > > > > +                     interrupts = <GIC_SPI 89 IRQ_TYPE_LEVEL_HIGH>;
+> > > > > > +                     clocks = <&ccu CLK_BUS_MIPI_DSI>;
+> > > > > > +                     clock-names = "bus";
+> > > > >
+> > > > > This won't validate with the bindings you have either here, since it
+> > > > > still expects bus and mod.
+> > > > >
+> > > > > I guess in that cas, we can just drop clock-names, which will require
+> > > > > a bit of work on the driver side as well.
+> > > >
+> > > > Okay.
+> > > > mod clock is not required for a64, ie reason we have has_mod_clk quirk
+> > > > patch. Adjust the clock-names: on dt-bindings would make sense here,
+> > > > what do you think?
+> > >
+> > > I'm confused, what are you suggesting?
+> >
+> > Sorry for the confusion.
+> >
+> > The mod clock is not required for A64 and we have a patch for handling
+> > mod clock using has_mod_clk quirk(on the series), indeed the mod clock
+> > is available in A31 and not needed for A64. So, to satisfy this
+> > requirement the clock-names on dt-bindings can update to make mod
+> > clock-name is optional and bus clock is required.
+>
+> No, the bus clock name is not needed if there's only one clock.
+
+Okay, is it because the same clock handle it on PHY side?
+
+>
+> > I'm not exactly sure, this is correct but trying to understand if it
+> > is possible or not? something like
+> >
+> >    clocks:
+> >       minItems: 1
+> >       maxItems: 2
+> >      items:
+> >        - description: Bus Clock
+> >        - description: Module Clock
+>
+> That's correct.
+>
+> >    clock-names:
+> >       minItems: 1
+> >       maxItems: 2
+> >      items:
+> >        - const: bus
+> >        - const: mod
+>
+> Here, just keep the current clock-names definition, and make it
+> required only for SoCs that are not the A64
+
+Okay, please have a look here I have pasted the diff for comments.
+
+   clocks:
++    minItems: 2
+     items:
+       - description: Bus Clock
+       - description: Module Clock
+@@ -64,14 +65,26 @@ required:
+   - compatible
+   - reg
+   - interrupts
+-  - clocks
+-  - clock-names
+   - phys
+   - phy-names
+   - resets
+   - vcc-dsi-supply
+   - port
+
++allOf:
++  - if:
++      properties:
++         compatible:
++           contains:
++             const: allwinner,sun6i-a31-mipi-dsi
++      then:
++        properties:
++          clocks:
++            minItems: 2
++        required:
++          - clocks
++          - clock-names
++
+ additionalProperties: false
+
+I have marked minItems: 2 on clocks since we need to use minimum of 2
+clocks like both bus and mod not mod clock alone.
+
+Please let me know your comments.
+
+Jagan.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
