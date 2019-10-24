@@ -2,62 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE173E36B7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 17:31:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7AEE4E36CC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 17:36:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=EYJj/LyVWWETR2J55LDDwpnI8kXakUbHIhpxoduc+m8=; b=LNO
-	tGHyw7nnmD7mjjYgR6Y6g9XmICA1qCrFFiUUxAH40NzCQjYGNh6h96BKQe6C2fgyNoFva2iH89dhQ
-	/bviuqekpHPHevXU/xL+OcJsC6HyHkC69Tl0RUSeWLZWefdibAZHtcIveA6fzHn21OIQMImVbwB8z
-	KS/OXFDo1Vay/btlG9ARpd38zS/SB4+r4BZBIhOwQokIBLfItMT46s2g+/5zKmzC+bZ0kS9ZVpP9z
-	LJBelDfqIOFCpaNp3wSaPHgW958y3ZGHwFxEI/06D+b39WkBhHJJ6hjiRi0w+CSzBXeCk+Ba7fSdk
-	6cYFIjxwttRNdk0+Vcg4ECrdeWEsvpQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xMy+U1O/z/mt0uKfhV2Ti4Oz3pim9sGkWYqwD4jAAPw=; b=nVXBxFVOM06EwI
+	sxtr++0gbNUHUcLKgwy3TkCe1QTzeGFQMd52Hy7Q1BqgJEFGJOd5Iyb6gp2QfaRvLXrAMLOQGX9Vy
+	70r8cpqvpaWIPnSQY1gar5NTa5XAV3hmE0nLvux7wEEj0SR0PLB/xIlC1i12c4rr2QfXuZS/daYZV
+	gnwTKrWNrqZqDDtJVM/1s1Cn70a5FnF42tsgRCo1xuF6x8jjjnR3urqCRIUToKAFCl6neMdJI6CSX
+	unsiymgn6Wc1VzLTWvyekEO7e+BXqhnOhbYT3+rIHW/6OmeS0Nk1oxDzDO6aV2j4v2jchaC2rFEIU
+	OH/ndTJlHHCrnFM0rtaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNf5W-00039I-BD; Thu, 24 Oct 2019 15:31:46 +0000
-Received: from andre.telenet-ops.be ([2a02:1800:120:4::f00:15])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNf5L-00038g-4I
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 15:31:36 +0000
-Received: from ramsan ([84.195.182.253]) by andre.telenet-ops.be with bizsmtp
- id HTXX210015USYZQ01TXXHk; Thu, 24 Oct 2019 17:31:33 +0200
-Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
- (envelope-from <geert@linux-m68k.org>)
- id 1iNf5G-00078z-UO; Thu, 24 Oct 2019 17:31:30 +0200
-Received: from geert by rox.of.borg with local (Exim 4.90_1)
- (envelope-from <geert@linux-m68k.org>)
- id 1iNf5G-000863-Ss; Thu, 24 Oct 2019 17:31:30 +0200
-From: Geert Uytterhoeven <geert+renesas@glider.be>
-To: Daniel Mack <daniel@zonque.org>, Haojian Zhuang <haojian.zhuang@gmail.com>,
- Robert Jarzmik <robert.jarzmik@free.fr>,
- Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
- Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>,
- Jiri Kosina <trivial@kernel.org>
-Subject: [PATCH trivial] ASoC: pxa: poodle: Spelling s/enpoints/endpoints/,
- s/connetion/connection/
-Date: Thu, 24 Oct 2019 17:31:30 +0200
-Message-Id: <20191024153130.31082-1-geert+renesas@glider.be>
-X-Mailer: git-send-email 2.17.1
+	id 1iNfAO-00055K-E5; Thu, 24 Oct 2019 15:36:48 +0000
+Received: from [217.140.110.172] (helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iNfAB-00053z-Qy
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 15:36:37 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1A6EB31F;
+ Thu, 24 Oct 2019 08:36:25 -0700 (PDT)
+Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2B1A03F71F;
+ Thu, 24 Oct 2019 08:36:23 -0700 (PDT)
+Date: Thu, 24 Oct 2019 16:36:21 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>
+Subject: Re: [PATCH 06/13] cpuidle: psci: Simplify OF parsing of CPU idle
+ state nodes
+Message-ID: <20191024153621.GE11467@bogus>
+References: <20191010113937.15962-1-ulf.hansson@linaro.org>
+ <20191010113937.15962-7-ulf.hansson@linaro.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191010113937.15962-7-ulf.hansson@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_083135_329450_D79561FB 
-X-CRM114-Status: UNSURE (   9.62  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.4 (/)
+X-CRM114-CacheID: sfid-20191024_083635_964951_DD8E7352 
+X-CRM114-Status: GOOD (  21.13  )
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.4 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:1800:120:4:0:0:f00:15 listed in]
- [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,37 +63,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, Geert Uytterhoeven <geert+renesas@glider.be>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>, linux-pm@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, linux-arm-msm@vger.kernel.org,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Kevin Hilman <khilman@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix misspelling of "endpoints" and "connection".
+On Thu, Oct 10, 2019 at 01:39:30PM +0200, Ulf Hansson wrote:
+> Iterating through the idle state nodes in DT, to find out the number of
+> states that needs to be allocated is unnecessary, as it has already been
+> done from dt_init_idle_driver(). Therefore, drop the iteration and use the
+> number we already have at hand.
+>
+> Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+> ---
+>  drivers/cpuidle/cpuidle-psci.c | 33 ++++++++++++++++-----------------
+>  1 file changed, 16 insertions(+), 17 deletions(-)
+>
+> diff --git a/drivers/cpuidle/cpuidle-psci.c b/drivers/cpuidle/cpuidle-psci.c
+> index 2e91c8d6c211..1195a1056139 100644
+> --- a/drivers/cpuidle/cpuidle-psci.c
+> +++ b/drivers/cpuidle/cpuidle-psci.c
+> @@ -73,28 +73,22 @@ static int __init psci_dt_parse_state_node(struct device_node *np, u32 *state)
+>  	return 0;
+>  }
+>
+> -static int __init psci_dt_cpu_init_idle(struct device_node *cpu_node, int cpu)
+> +static int __init psci_dt_cpu_init_idle(struct device_node *cpu_node,
+> +				unsigned int state_nodes, int cpu)
 
-Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
----
- sound/soc/pxa/poodle.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+[super nit] Too much in the beginning of the patch to not notice this ;)
+May need some '(' alignment here and other places in general.
 
-diff --git a/sound/soc/pxa/poodle.c b/sound/soc/pxa/poodle.c
-index 48d5c2252b10081d..59ef04d0467a622d 100644
---- a/sound/soc/pxa/poodle.c
-+++ b/sound/soc/pxa/poodle.c
-@@ -56,7 +56,7 @@ static void poodle_ext_control(struct snd_soc_dapm_context *dapm)
- 		snd_soc_dapm_disable_pin(dapm, "Headphone Jack");
- 	}
- 
--	/* set the enpoints to their new connetion states */
-+	/* set the endpoints to their new connection states */
- 	if (poodle_spk_func == POODLE_SPK_ON)
- 		snd_soc_dapm_enable_pin(dapm, "Ext Spk");
- 	else
--- 
-2.17.1
+>  {
+> -	int i, ret = 0, count = 0;
+> +	int i, ret = 0;
+>  	u32 *psci_states;
+>  	struct device_node *state_node;
+>
+> -	/* Count idle states */
+> -	while ((state_node = of_parse_phandle(cpu_node, "cpu-idle-states",
+> -					      count))) {
+> -		count++;
+> -		of_node_put(state_node);
+> -	}
+> -
+> -	if (!count)
+> -		return -ENODEV;
+> -
+> -	psci_states = kcalloc(count, sizeof(*psci_states), GFP_KERNEL);
+> +	psci_states = kcalloc(state_nodes, sizeof(*psci_states), GFP_KERNEL);
+>  	if (!psci_states)
+>  		return -ENOMEM;
+>
+> -	for (i = 0; i < count; i++) {
+> +	for (i = 0; i < state_nodes; i++) {
+>  		state_node = of_parse_phandle(cpu_node, "cpu-idle-states", i);
 
+Can we move above to use of_get_cpu_state_node ? Since it also handles
+domain-idle-states.
+
+> +		if (!state_node)
+> +			break;
+> +
+>  		ret = psci_dt_parse_state_node(state_node, &psci_states[i]);
+>  		of_node_put(state_node);
+>
+> @@ -104,6 +98,11 @@ static int __init psci_dt_cpu_init_idle(struct device_node *cpu_node, int cpu)
+>  		pr_debug("psci-power-state %#x index %d\n", psci_states[i], i);
+>  	}
+>
+> +	if (i != state_nodes) {
+> +		ret = -ENODEV;
+> +		goto free_mem;
+> +	}
+> +
+>  	/* Idle states parsed correctly, initialize per-cpu pointer */
+>  	per_cpu(psci_power_state, cpu) = psci_states;
+>  	return 0;
+> @@ -113,7 +112,7 @@ static int __init psci_dt_cpu_init_idle(struct device_node *cpu_node, int cpu)
+>  	return ret;
+>  }
+>
+> -static __init int psci_cpu_init_idle(unsigned int cpu)
+> +static __init int psci_cpu_init_idle(unsigned int cpu, unsigned int state_nodes)
+
+Does it make sense to rename it as state_count or something similar ?
+And it may need + 1 once we add wfi also as entry as suggested by
+Lorenzo.
+
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
