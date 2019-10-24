@@ -2,92 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87F9AE2E83
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 12:14:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1959E2EB6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 12:23:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=+1c7vArUXeGf5hFcZxNd2ec6J+iZYb9L4MO+WjsyMvg=; b=SwD5p5wHnuJ2pGSuKvV4iqU3JL
-	kISkhgKXi6KNXoX9I+o873iDDDEp5F4l7UZKeVGWXuVHyR7wfQcIpTUf1ONdE4UM0mvPKbTni0ZKt
-	QeNevgMwgLm0hR5/j6c6aZX9sCYwVc6mWgQPQzEq3VFaOVBgf2JG/8XfHwyLJB6Em+ZMFjAyVP09x
-	MzpANlDABJXVvoW5a1n4yfP6X1AtsMS32bSh5wHryobA6CVqGjtbmwAypok4706YyFQm1hpt7CVA2
-	hCTlGn/R24AYuBV0g+VgUuY6TrKIeC4TcYhyxvuEzNuiSt7PslrOnlTNiz9faBHp5vyqGzZ4d4wEN
-	ZScgnuoQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MUhrjvIR1t6FYT1JQF2tgz6suKG7XKpa34awIUBS69k=; b=PiAC3IUCrf+ojT
+	dHzruY53s8ntfGLXJYzV2V1KmBdafmUzlmk3J3E8BDN/WvDEoG0CQEY5dV2fwOLrNZjjeGTt1UbGV
+	I3tjZYEs3n9OqkEgMbdgCAELLztgcSHVAcXDWugfS/d/SFl3Lk9HI4avZXEgmCzIHNZreyug9/Zk9
+	CL/YNIVyqMvBXfWVsiy/e9eKTIIN0hRVErriew2bRCtWxV/s4g6m2FKb2lxgYfaMG7s24iFaqS7Nh
+	TXBbYIF0NXlXN4VfhJaXySRl19U9kM8G0Vv9SwxXPRZIH/nkRzjuqTPpHU6qlqZEHeOPPjFj4s8Am
+	NXUujZZrAKVySddgm6lg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNa7t-0004eB-5d; Thu, 24 Oct 2019 10:13:53 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iNaHY-0001z6-6I; Thu, 24 Oct 2019 10:23:52 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNa7P-0004Nr-Nt
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 10:13:25 +0000
-Received: by mail-wr1-x444.google.com with SMTP id w18so24861410wrt.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 24 Oct 2019 03:13:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=monstr-eu.20150623.gappssmtp.com; s=20150623;
- h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
- :in-reply-to:references;
- bh=E0Qq1lNGBY9K/n1HNDcbzQvafIKVtTjxua78199y0Ag=;
- b=OtTWbUvVOM2iwHQpoOwwI1UnAhJtD/y62mQMVMkoYZ3ww+sDiC0C3IVG9ZscaJrkgn
- NiBnR4njWxQei6rPGKV8+iiYVsHt2ZkE68QaPZeRekFJJQspWgxtS6/IwwKIn6NsCN8J
- dUAjvOWvpMN1FNiWpaIKhxe/aCKbqfL7L5fzqvitsDciXZIG0QmnNnfhZyca12TzIUwo
- S6yOHYEz+joDlgRS8h3Z15r3Gm3TikUIL52QNvB4841Y3Wzp9yWt6P821bKvL3wfbr42
- jxs0VqvaNcXG3yGTN28xAxP+cFltZXNyUMq9olcO2XQ03AfofbVSElP2koxuww1GtWEQ
- cesw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
- :in-reply-to:references:in-reply-to:references;
- bh=E0Qq1lNGBY9K/n1HNDcbzQvafIKVtTjxua78199y0Ag=;
- b=jqvBc9iviD7CDSz8nClRqwEEls4jrP/BRs1c03CXjvTGlx8qBpxaFclryQQIjyi3Zk
- dNhSlYePpImajanyr0CJlqXjMXUhGan5YVZBnTPSaFIMCvfl6jQuIyBX3ws4bTwIANu3
- 4IhvKME1gtqUfOYEMT0W6xlvgIZv0sF0Gr5kqTcY76u5bt4qF5Dvdq9ZhehRxlS18xZ2
- 4rvQIb8jLvLxGm3mNB1WNWI+qjFuOnfG/fyQAzb9APjBfRcQUqddHNf/YPLe45q/4Ee3
- lJGGju3L88JyDIY5T0ri0o812pejS/8arRND39aWm68mulJQSTeO5/QT1Vz+Zk/TNIG3
- JwqA==
-X-Gm-Message-State: APjAAAUCfyim/Y7PxFvvIhMI6z47K0w1men5CqnxfcVJQwbnqo8cPuAG
- I54BxZ9beehplPOGzddeLXiRpQ==
-X-Google-Smtp-Source: APXvYqwsbNByeVpgsdT7AP1vJKjq5FS1kvH+EeS+2LruajwpjBeA7AqFH480WTXQmfmey1xz1ZMgAw==
-X-Received: by 2002:adf:fd8a:: with SMTP id d10mr2894178wrr.368.1571912000848; 
- Thu, 24 Oct 2019 03:13:20 -0700 (PDT)
-Received: from localhost (nat-35.starnet.cz. [178.255.168.35])
- by smtp.gmail.com with ESMTPSA id f204sm1273607wmf.32.2019.10.24.03.13.19
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 24 Oct 2019 03:13:20 -0700 (PDT)
-From: Michal Simek <michal.simek@xilinx.com>
-To: linux-kernel@vger.kernel.org, monstr@monstr.eu, michal.simek@xilinx.com,
- git@xilinx.com, palmer@sifive.com, hch@infradead.org, longman@redhat.com,
- helgaas@kernel.org
-Subject: [PATCH 1/2] asm-generic: Make msi.h a mandatory include/asm header
-Date: Thu, 24 Oct 2019 12:13:11 +0200
-Message-Id: <a021f232968cfffe3f2d838da47214c6bbdeeedb.1571911976.git.michal.simek@xilinx.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <cover.1571911976.git.michal.simek@xilinx.com>
-References: <cover.1571911976.git.michal.simek@xilinx.com>
-In-Reply-To: <cover.1571911976.git.michal.simek@xilinx.com>
-References: <cover.1571911976.git.michal.simek@xilinx.com>
+ id 1iNaHF-0001qW-0p
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 10:23:35 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x9OANSrk128490;
+ Thu, 24 Oct 2019 05:23:28 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1571912608;
+ bh=C/pR9m9szK+xXwteKMHZOUPtMsmeAv/Z67Af7YkJgHM=;
+ h=Subject:From:To:CC:References:Date:In-Reply-To;
+ b=Z1lb7u1HtFGkF7h3XIg7Cnv9yZkBHdJXZvT+MSDwfNj3+ab3+KnY/vjC+e78pvMRw
+ M/g5W60SOCYApjxHKifRixwsqZcv8jqsw3FOlypUNnoQWRLoK3vp5Kqpe5IGe5n6OO
+ RPrbZsfGSfDmYXO/Ypo9XDDcO5gLtYRTZBpHb8us=
+Received: from DFLE101.ent.ti.com (dfle101.ent.ti.com [10.64.6.22])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x9OANS5f013892
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 24 Oct 2019 05:23:28 -0500
+Received: from DFLE100.ent.ti.com (10.64.6.21) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 24
+ Oct 2019 05:23:17 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE100.ent.ti.com
+ (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Thu, 24 Oct 2019 05:23:18 -0500
+Received: from [172.24.190.117] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x9OANOva066554;
+ Thu, 24 Oct 2019 05:23:27 -0500
+Subject: Re: [RFC PATCH 1/2] dt-bindings: irqchip: Update bindings to drop the
+ usage of gic as parent
+From: Lokesh Vutla <lokeshvutla@ti.com>
+To: Marc Zyngier <maz@kernel.org>
+References: <20190923042405.26064-1-lokeshvutla@ti.com>
+ <20190923042405.26064-2-lokeshvutla@ti.com> <20191002135757.28901015@why>
+ <72a061dc-3573-9e78-42cd-39809f1b9685@ti.com>
+ <e11f6407-261d-8d7e-7ecd-df638a850f04@ti.com>
+Message-ID: <ec871172-02c0-3699-88b5-c213854c9b41@ti.com>
+Date: Thu, 24 Oct 2019 15:52:23 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
+MIME-Version: 1.0
+In-Reply-To: <e11f6407-261d-8d7e-7ecd-df638a850f04@ti.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_031323_778941_1AFE1900 
-X-CRM114-Status: GOOD (  13.41  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20191024_032333_157282_7C3B4382 
+X-CRM114-Status: GOOD (  24.99  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,148 +95,151 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Eric Biggers <ebiggers@google.com>,
- "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
- linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
- Ingo Molnar <mingo@kernel.org>, linux-arch@vger.kernel.org,
- Herbert Xu <herbert@gondor.apana.org.au>,
- Michael Ellerman <mpe@ellerman.id.au>, Jackie Liu <liuyun01@kylinos.cn>,
- Russell King <linux@armlinux.org.uk>, Firoz Khan <firoz.khan@linaro.org>,
- Wesley Terpstra <wesley@sifive.com>, James Hogan <jhogan@kernel.org>,
- linux-snps-arc@lists.infradead.org, Albert Ou <aou@eecs.berkeley.edu>,
- Arnd Bergmann <arnd@arndb.de>, Paul Walmsley <paul.walmsley@sifive.com>,
- linux-arm-kernel@lists.infradead.org,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Cornelia Huck <cohuck@redhat.com>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, Paul Burton <paul.burton@mips.com>,
- Vineet Gupta <vgupta@synopsys.com>, Paolo Bonzini <pbonzini@redhat.com>,
- linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>
-MIME-Version: 1.0
+Cc: Nishanth Menon <nm@ti.com>,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-msi.h is generic for all architectures expect of x86 which has own version.
-Enabling MSI by including msi.h to architecture Kbuild is just additional
-step which doesn't need to be done.
-The patch was created based on request to enable MSI for Microblaze.
+Hi Marc,
 
-Suggested-by: Christoph Hellwig <hch@infradead.org>
-Signed-off-by: Michal Simek <michal.simek@xilinx.com>
----
+On 09/10/19 10:30 AM, Lokesh Vutla wrote:
+> Hi Marc,
+> 
+> On 03/10/19 6:45 PM, Lokesh Vutla wrote:
+>> Hi Marc,
+>>
+>> On 02/10/19 6:27 PM, Marc Zyngier wrote:
+>>> On Mon, 23 Sep 2019 09:54:04 +0530
+>>> Lokesh Vutla <lokeshvutla@ti.com> wrote:
+>>>
+>>>> Drop the firmware related dt-bindings and use the hardware specified
+>>>> interrupt numbers within Interrupt Router. This ensures interrupt router
+>>>> DT node need not assume any interrupt parent type.
+>>>>
+>>>> Signed-off-by: Lokesh Vutla <lokeshvutla@ti.com>
+>>>> ---
+>>>>  .../interrupt-controller/ti,sci-intr.txt      | 28 +++++++++----------
+>>>>  1 file changed, 13 insertions(+), 15 deletions(-)
+>>>>
+>>>> diff --git a/Documentation/devicetree/bindings/interrupt-controller/ti,sci-intr.txt b/Documentation/devicetree/bindings/interrupt-controller/ti,sci-intr.txt
+>>>> index 1a8718f8855d..de5de2a4b467 100644
+>>>> --- a/Documentation/devicetree/bindings/interrupt-controller/ti,sci-intr.txt
+>>>> +++ b/Documentation/devicetree/bindings/interrupt-controller/ti,sci-intr.txt
+>>>> @@ -44,15 +44,14 @@ Required Properties:
+>>>>  			4: If intr supports level triggered interrupts.
+>>>>  - interrupt-controller:	Identifies the node as an interrupt controller
+>>>>  - #interrupt-cells:	Specifies the number of cells needed to encode an
+>>>> -			interrupt source. The value should be 2.
+>>>> -			First cell should contain the TISCI device ID of source
+>>>> -			Second cell should contain the interrupt source offset
+>>>> -			within the device.
+>>>> +			interrupt source. The value should be 1.
+>>>> +			First cell should contain interrupt router input number
+>>>> +			as specified by hardware.
+>>>
+>>> This is breaking compatibility with existing kernels. Why isn't that a
+>>> problem?
+>>
+>> Yes, I am not denying that backward compatibility is broken. But I feel this is
+>> a good cleanup for representing INTR interrupts. With this child nodes will pass
+>> the INTR specific number rather the device specific offset. Actually I tried
+>> following as what GIC is representing.
+>>
+>> As there are only two users upstreamed, I though it is better to clean it up
+>> asap. Do you prefer maintaining the existing usage with a different compatible?
+> 
+> Just looking for your opinion here. If I try to maintain DT backward compatible,
+> are you okay with the overall approach. Will clean and repost patches once
+> firmware is ready.
 
-https://lore.kernel.org/linux-riscv/20191008154604.GA7903@infradead.org/
----
- arch/arc/include/asm/Kbuild     | 1 -
- arch/arm/include/asm/Kbuild     | 1 -
- arch/arm64/include/asm/Kbuild   | 1 -
- arch/mips/include/asm/Kbuild    | 1 -
- arch/powerpc/include/asm/Kbuild | 1 -
- arch/riscv/include/asm/Kbuild   | 1 -
- arch/sparc/include/asm/Kbuild   | 1 -
- include/asm-generic/Kbuild      | 1 +
- 8 files changed, 1 insertion(+), 7 deletions(-)
+Gentle ping, can you provide your thoughts here?
 
-diff --git a/arch/arc/include/asm/Kbuild b/arch/arc/include/asm/Kbuild
-index 393d4f5e1450..1b505694691e 100644
---- a/arch/arc/include/asm/Kbuild
-+++ b/arch/arc/include/asm/Kbuild
-@@ -17,7 +17,6 @@ generic-y += local64.h
- generic-y += mcs_spinlock.h
- generic-y += mm-arch-hooks.h
- generic-y += mmiowb.h
--generic-y += msi.h
- generic-y += parport.h
- generic-y += percpu.h
- generic-y += preempt.h
-diff --git a/arch/arm/include/asm/Kbuild b/arch/arm/include/asm/Kbuild
-index 68ca86f85eb7..fa579b23b4df 100644
---- a/arch/arm/include/asm/Kbuild
-+++ b/arch/arm/include/asm/Kbuild
-@@ -12,7 +12,6 @@ generic-y += local.h
- generic-y += local64.h
- generic-y += mm-arch-hooks.h
- generic-y += mmiowb.h
--generic-y += msi.h
- generic-y += parport.h
- generic-y += preempt.h
- generic-y += seccomp.h
-diff --git a/arch/arm64/include/asm/Kbuild b/arch/arm64/include/asm/Kbuild
-index 98a5405c8558..bd23f87d6c55 100644
---- a/arch/arm64/include/asm/Kbuild
-+++ b/arch/arm64/include/asm/Kbuild
-@@ -16,7 +16,6 @@ generic-y += local64.h
- generic-y += mcs_spinlock.h
- generic-y += mm-arch-hooks.h
- generic-y += mmiowb.h
--generic-y += msi.h
- generic-y += qrwlock.h
- generic-y += qspinlock.h
- generic-y += serial.h
-diff --git a/arch/mips/include/asm/Kbuild b/arch/mips/include/asm/Kbuild
-index c8b595c60910..61b0fc2026e6 100644
---- a/arch/mips/include/asm/Kbuild
-+++ b/arch/mips/include/asm/Kbuild
-@@ -13,7 +13,6 @@ generic-y += irq_work.h
- generic-y += local64.h
- generic-y += mcs_spinlock.h
- generic-y += mm-arch-hooks.h
--generic-y += msi.h
- generic-y += parport.h
- generic-y += percpu.h
- generic-y += preempt.h
-diff --git a/arch/powerpc/include/asm/Kbuild b/arch/powerpc/include/asm/Kbuild
-index 64870c7be4a3..17726f2e46de 100644
---- a/arch/powerpc/include/asm/Kbuild
-+++ b/arch/powerpc/include/asm/Kbuild
-@@ -10,4 +10,3 @@ generic-y += local64.h
- generic-y += mcs_spinlock.h
- generic-y += preempt.h
- generic-y += vtime.h
--generic-y += msi.h
-diff --git a/arch/riscv/include/asm/Kbuild b/arch/riscv/include/asm/Kbuild
-index 16970f246860..1efaeddf1e4b 100644
---- a/arch/riscv/include/asm/Kbuild
-+++ b/arch/riscv/include/asm/Kbuild
-@@ -22,7 +22,6 @@ generic-y += kvm_para.h
- generic-y += local.h
- generic-y += local64.h
- generic-y += mm-arch-hooks.h
--generic-y += msi.h
- generic-y += percpu.h
- generic-y += preempt.h
- generic-y += sections.h
-diff --git a/arch/sparc/include/asm/Kbuild b/arch/sparc/include/asm/Kbuild
-index b6212164847b..62de2eb2773d 100644
---- a/arch/sparc/include/asm/Kbuild
-+++ b/arch/sparc/include/asm/Kbuild
-@@ -18,7 +18,6 @@ generic-y += mcs_spinlock.h
- generic-y += mm-arch-hooks.h
- generic-y += mmiowb.h
- generic-y += module.h
--generic-y += msi.h
- generic-y += preempt.h
- generic-y += serial.h
- generic-y += trace_clock.h
-diff --git a/include/asm-generic/Kbuild b/include/asm-generic/Kbuild
-index adff14fcb8e4..ddfee1bd9dc1 100644
---- a/include/asm-generic/Kbuild
-+++ b/include/asm-generic/Kbuild
-@@ -4,4 +4,5 @@
- # (This file is not included when SRCARCH=um since UML borrows several
- # asm headers from the host architecutre.)
- 
-+mandatory-y += msi.h
- mandatory-y += simd.h
--- 
-2.17.1
+Thanks and regards,
+Lokesh
 
+> 
+> Thank and regards,
+> Lokesh
+> 
+>>
+>>
+>>>
+>>>> +- power-domains:	phandle pointing to the corresponding PM domain node
+>>>> +			and an ID representing the device.
+>>>
+>>> Why is this power-domain thing part of this patch? Is it related?
+>>>
+>>>>  - ti,sci:		Phandle to TI-SCI compatible System controller node.
+>>>> -- ti,sci-dst-id:	TISCI device ID of the destination IRQ controller.
+>>>> -- ti,sci-rm-range-girq:	Array of TISCI subtype ids representing the host irqs
+>>>> -			assigned to this interrupt router. Each subtype id
+>>>> -			corresponds to a range of host irqs.
+>>>> +- interrupt-ranges:	Ranges that convert the INTR output interrupt numbers to
+>>>> +			parent's interrupt number.
+>>>
+>>> This isn't a standard property, is it? If it isn't, it should be
+>>> documented a bit more than just that.
+>>
+>> Nope. Ill update it. So, the reason this is added is that this ranges converts
+>> the output of INTR to parent interrupt number. This is to have consistent dt
+>> convention in the following 2 scenarios:
+>> - INTR -> GIC (GIC is parent of INTR)
+>> - INTR -> INTR (INTR is parent of INTR)
+>>
+>> Thanks and regards,
+>> Lokesh
+>>
+>>>
+>>>>  
+>>>>  For more details on TISCI IRQ resource management refer:
+>>>>  http://downloads.ti.com/tisci/esd/latest/2_tisci_msgs/rm/rm_irq.html
+>>>> @@ -62,21 +61,20 @@ Example:
+>>>>  The following example demonstrates both interrupt router node and the consumer
+>>>>  node(main gpio) on the AM654 SoC:
+>>>>  
+>>>> -main_intr: interrupt-controller0 {
+>>>> +main_gpio_intr: interrupt-controller0 {
+>>>>  	compatible = "ti,sci-intr";
+>>>>  	ti,intr-trigger-type = <1>;
+>>>>  	interrupt-controller;
+>>>>  	interrupt-parent = <&gic500>;
+>>>> -	#interrupt-cells = <2>;
+>>>> +	power-domains = <&k3_pds 131 TI_SCI_PD_SHARED>;
+>>>> +	#interrupt-cells = <1>;
+>>>>  	ti,sci = <&dmsc>;
+>>>> -	ti,sci-dst-id = <56>;
+>>>> -	ti,sci-rm-range-girq = <0x1>;
+>>>> +	interrupt-ranges = <0 360 32>;
+>>>>  };
+>>>>  
+>>>>  main_gpio0: gpio@600000 {
+>>>>  	...
+>>>> -	interrupt-parent = <&main_intr>;
+>>>> -	interrupts = <57 256>, <57 257>, <57 258>,
+>>>> -		     <57 259>, <57 260>, <57 261>;
+>>>> +	interrupt-parent = <&main_gpio_intr>;
+>>>> +	interrupts = <192>, <193>, <194>, <195>, <196>, <197>;
+>>>>  	...
+>>>>  };
+>>>
+>>> Thanks,
+>>>
+>>> 	M.
+>>>
+>>
+>> _______________________________________________
+>> linux-arm-kernel mailing list
+>> linux-arm-kernel@lists.infradead.org
+>> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+>>
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
