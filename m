@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3B7BE340A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 15:24:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A1A3E340D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 15:25:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=itD4O9wy2NyOIrLJMFnxh8jFzQmkibLxZyZHwiKXauE=; b=e/7L/36jW/F1i+
-	2AZKdBmSk3N2+2PYTuwhr0tlIxclAbOWJLt+ppa9fsO4dVfYe3XvA8j395cfKCwmy0BtDY20VlsfS
-	vgN23NBLLQTQ4fjCSDIeap+CBExCVR3OC/N0Y9WOgIhgHyBvh6+qth+gg30Spmgf/OhIq3TG7Q4iJ
-	OdpajEyBHPLMqLRMr5kxWTeEzN6J0d6MT559FmSbsz8icjlG9Xd+mwlmgZSBQvihCbqI1J5k5mmTs
-	ubaqeLSiMAUCM3me2T3kuWR3F2MMNXPkuN6pFPUm+Mq0rSJGD3nexTSyIKmqDiCzzWgB7WmVBDpJ4
-	naOGt11m47hL2VKJ8qcA==;
+	List-Owner; bh=GuItMDaDEPiRVSsVZO1R/BFB8qdB3LA/2QgrLjLEUls=; b=rxinQ3tC+ge5VH
+	VosoalaWf/1DosxDKNnzll/DuyUPJNUuNwizZbLo+7FNxTo9Qu00EdhfaQlyV4qOC01A1qvIQI+Ma
+	LVPe8tBLi+oRBuuloEwJl7Gndcm/R20b4+K9WERtN0UkrFctFN/49C1Tql/h0gqVZMyMAfQcE53R9
+	5vF6LHwmhGxwT4idxO1NuMVhlw/N9NTxyUNNqG8gMp4ZJmBsdgBlzayH4qxkJmhirS0b+vWLX6Opb
+	5RF7hjac1tNrNuVazh66LFWCMBNoTv3T/EdwoIv8SmrBY7NVLES6vQ/G2FzhArciPNvk4FKEzz9+y
+	uJ9sysfzASV9HIBbh7zg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNd6n-0000sP-FA; Thu, 24 Oct 2019 13:24:57 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iNd7B-00019h-6a; Thu, 24 Oct 2019 13:25:21 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNd5p-0000PV-1w
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 13:23:59 +0000
-Received: by mail-wr1-x442.google.com with SMTP id c2so20841803wrr.10
+ id 1iNd5q-0000QD-Po
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 13:24:00 +0000
+Received: by mail-wm1-x342.google.com with SMTP id p21so1390584wmg.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 24 Oct 2019 06:23:56 -0700 (PDT)
+ Thu, 24 Oct 2019 06:23:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=TNWJxh1AFEyP6kvtb+pRqQQilO6T6qX/8rJmhhrHLY0=;
- b=S2eThVk83dKO5Bwg3yDm/gzVGNto7qsth4WMLLOmiYJINz7Qibs5lDhZH4pMHelfff
- UI55mx/5I/os0vKVwqaNYzvodYmhm3q7elBYzBwxmPBD/GiwrKVqX7DFhWZBhSZqTfDb
- KjuRWogf+5wecIavxAAFgv75+yn7OshRyOO5VWsaZJg6YRdu/S6wV2oaeWIGvn7xkyT2
- GYlxYl4QmaiC54ujOPw1nrH935qPBMI4BffDjb+GHywDtacfw4evwSNKQ7ue/25jsr1U
- TWuU7+hKvJpl0M+XfxDx5PBJ128PVg0jtARNCF0ugFpEeUzQLDYVTl90UMFXe0QRcLoa
- i6Tg==
+ bh=n1CZfuSwOBWiTJLsXGGXKsTYggjtyZaieumQoTW6nsw=;
+ b=a9bSL+5/vXArpFGMdZBpm2T2ibvGHxT0RE4psOfP7d5NBAT+S87j+/oqiBatWysEkL
+ kn7q3XuaODmBXB+3LwnsntgHwm56Y1ztfBFP0yqKTcmfHlqkuDe8ovw1sA1hc5kd57JO
+ u8Ak//10fgCr6Mm3FaEZuBQdKM3COSEvlFdzm8IC1x/y3m9Ihrv/yxQgxutnY/g5jcOt
+ WHfH/KT8reM6VDTrsoDEvUnMxcTL43KH8aoYux8cYXKb0qOogFPlsZb/grPu9I3I2dRx
+ R+15WXBQxw9Y9PECCW+oCJlXTjFa3ScZneGVhbiSeQ3h1CYsluF43MWS6chfD96dWXBc
+ QQUQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=TNWJxh1AFEyP6kvtb+pRqQQilO6T6qX/8rJmhhrHLY0=;
- b=S6u/Yz/BYmjO3j5pxjyvpw+Gig7obMhLFwXjOIP37iGgvQU3Tzq+yU4g1FdZbHeD81
- tuKbvF4SiBl9IRbx8dmCwcveQ54oiwmBERnlhkkdq0muIvrahlNS5qe5YXtfI8Yptruh
- ZPbQk/gEFO+a/H5UT1Ok8iaHNSa3hxd1McIw1HSb5ygk5P+mSP4lOUN8W6cOf1gvoxF/
- n1CnPUphnR51EKDNw12f/0f4bBaZe2OyJx4EfLYngy95CWE6NjD8V52o8rSU9Hogd03L
- zCf+q6xyi5yosqxjOfMNMo0rkKGPoQBrvmx7pLoWfKa09tP0TNntWvY2SK1FyfMTSzKR
- OSwA==
-X-Gm-Message-State: APjAAAWhGFrAY0/wmsOBZUAR/cSNZTQEHfxFR0Gjjh+jNT5VorctyWtG
- 89AP3xCjfkTYu8zWN2K0fuzHBQ==
-X-Google-Smtp-Source: APXvYqyc+CLRulk3KGzezXZq5tnbXiDOqAyJFEZa5vrUyaKiixpSFHdiZydqrTrm/pESPS4zfHYTfQ==
-X-Received: by 2002:adf:e886:: with SMTP id d6mr4021372wrm.188.1571923435313; 
- Thu, 24 Oct 2019 06:23:55 -0700 (PDT)
+ bh=n1CZfuSwOBWiTJLsXGGXKsTYggjtyZaieumQoTW6nsw=;
+ b=C32J+6+eY2GQ/dtXaNe2Smklj8Y45Z/8bdhOBBzsKdm3E7BnhqGDWJP1c5Nq3sNTcl
+ faYXdfUC1LDdgO1FBq5+UnrloKzSAETzDFgf9SCzJvHx5iOc091qgwsDhEgT/+DY+S0v
+ VTW1loOXDEGMaqghevZbw9ai52+VQ8JDZam/v+sgkQtyDyGXIbxY2UBLaLBTFa+rOrhZ
+ rp5InytnjLaEbwZQQR5aPUnAzNcngROUjCLlbGpcx3cOkBZ/05lsko4hzZlju23qgvHS
+ qeKc1VUJj/djir5/WwX7yckNqj3WBZVjCv7JDQupk2Vf0XLs3+gwSc/yFweciv0S4Epz
+ rTNA==
+X-Gm-Message-State: APjAAAWQSHgsQJW/9OEI7dOR28vr0TL+6tFnoub0IiCBLDZlGo7Xckrq
+ 5n93SZcBKp7VHeFlR2sAGpHx/w==
+X-Google-Smtp-Source: APXvYqwHtc6EgZfQ0QDGwcZ2Q95eSng9l7ZYxmVHvCtz9rcd14RvSZ98geGqKgL1Tay0isfdqki/1A==
+X-Received: by 2002:a1c:4489:: with SMTP id r131mr4687908wma.132.1571923436836; 
+ Thu, 24 Oct 2019 06:23:56 -0700 (PDT)
 Received: from localhost.localdomain
  (laubervilliers-657-1-83-120.w92-154.abo.wanadoo.fr. [92.154.90.120])
- by smtp.gmail.com with ESMTPSA id e3sm2346310wme.36.2019.10.24.06.23.54
+ by smtp.gmail.com with ESMTPSA id e3sm2346310wme.36.2019.10.24.06.23.55
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 24 Oct 2019 06:23:54 -0700 (PDT)
+ Thu, 24 Oct 2019 06:23:55 -0700 (PDT)
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 To: linux-crypto@vger.kernel.org
-Subject: [PATCH v2 01/27] crypto: virtio - implement missing support for
- output IVs
-Date: Thu, 24 Oct 2019 15:23:19 +0200
-Message-Id: <20191024132345.5236-2-ard.biesheuvel@linaro.org>
+Subject: [PATCH v2 02/27] crypto: virtio - deal with unsupported input sizes
+Date: Thu, 24 Oct 2019 15:23:20 +0200
+Message-Id: <20191024132345.5236-3-ard.biesheuvel@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191024132345.5236-1-ard.biesheuvel@linaro.org>
 References: <20191024132345.5236-1-ard.biesheuvel@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_062357_093515_3D980D3E 
-X-CRM114-Status: GOOD (  10.52  )
+X-CRM114-CacheID: sfid-20191024_062358_832828_3FC4EA56 
+X-CRM114-Status: GOOD (  12.96  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -109,10 +108,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to allow for CBC to be chained, which is something that the
-CTS template relies upon, implementations of CBC need to pass the
-IV to be used for subsequent invocations via the IV buffer. This was
-not implemented yet for virtio-crypto so implement it now.
+Return -EINVAL for input sizes that are not a multiple of the AES
+block size, since they are not supported by our CBC chaining mode.
+
+While at it, remove the pr_err() that reports unsupported key sizes
+being used: we shouldn't spam the kernel log with that.
 
 Fixes: dbaf0624ffa5 ("crypto: add virtio-crypto driver")
 Cc: "Michael S. Tsirkin" <mst@redhat.com>
@@ -121,36 +121,46 @@ Cc: Gonglei <arei.gonglei@huawei.com>
 Cc: virtualization@lists.linux-foundation.org
 Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 ---
- drivers/crypto/virtio/virtio_crypto_algs.c | 9 +++++++++
- 1 file changed, 9 insertions(+)
+ drivers/crypto/virtio/virtio_crypto_algs.c | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/crypto/virtio/virtio_crypto_algs.c b/drivers/crypto/virtio/virtio_crypto_algs.c
-index 42d19205166b..65ec10800137 100644
+index 65ec10800137..82b316b2f537 100644
 --- a/drivers/crypto/virtio/virtio_crypto_algs.c
 +++ b/drivers/crypto/virtio/virtio_crypto_algs.c
-@@ -437,6 +437,11 @@ __virtio_crypto_ablkcipher_do_req(struct virtio_crypto_sym_request *vc_sym_req,
- 		goto free;
+@@ -105,8 +105,6 @@ virtio_crypto_alg_validate_key(int key_len, uint32_t *alg)
+ 		*alg = VIRTIO_CRYPTO_CIPHER_AES_CBC;
+ 		break;
+ 	default:
+-		pr_err("virtio_crypto: Unsupported key length: %d\n",
+-			key_len);
+ 		return -EINVAL;
  	}
- 	memcpy(iv, req->info, ivsize);
-+	if (!vc_sym_req->encrypt)
-+		scatterwalk_map_and_copy(req->info, req->src,
-+					 req->nbytes - AES_BLOCK_SIZE,
-+					 AES_BLOCK_SIZE, 0);
+ 	return 0;
+@@ -489,6 +487,11 @@ static int virtio_crypto_ablkcipher_encrypt(struct ablkcipher_request *req)
+ 	/* Use the first data virtqueue as default */
+ 	struct data_queue *data_vq = &vcrypto->data_vq[0];
+ 
++	if (!req->nbytes)
++		return 0;
++	if (req->nbytes % AES_BLOCK_SIZE)
++		return -EINVAL;
 +
- 	sg_init_one(&iv_sg, iv, ivsize);
- 	sgs[num_out++] = &iv_sg;
- 	vc_sym_req->iv = iv;
-@@ -563,6 +568,10 @@ static void virtio_crypto_ablkcipher_finalize_req(
- 	struct ablkcipher_request *req,
- 	int err)
- {
-+	if (vc_sym_req->encrypt)
-+		scatterwalk_map_and_copy(req->info, req->dst,
-+					 req->nbytes - AES_BLOCK_SIZE,
-+					 AES_BLOCK_SIZE, 0);
- 	crypto_finalize_ablkcipher_request(vc_sym_req->base.dataq->engine,
- 					   req, err);
- 	kzfree(vc_sym_req->iv);
+ 	vc_req->dataq = data_vq;
+ 	vc_req->alg_cb = virtio_crypto_dataq_sym_callback;
+ 	vc_sym_req->ablkcipher_ctx = ctx;
+@@ -509,6 +512,11 @@ static int virtio_crypto_ablkcipher_decrypt(struct ablkcipher_request *req)
+ 	/* Use the first data virtqueue as default */
+ 	struct data_queue *data_vq = &vcrypto->data_vq[0];
+ 
++	if (!req->nbytes)
++		return 0;
++	if (req->nbytes % AES_BLOCK_SIZE)
++		return -EINVAL;
++
+ 	vc_req->dataq = data_vq;
+ 	vc_req->alg_cb = virtio_crypto_dataq_sym_callback;
+ 	vc_sym_req->ablkcipher_ctx = ctx;
 -- 
 2.20.1
 
