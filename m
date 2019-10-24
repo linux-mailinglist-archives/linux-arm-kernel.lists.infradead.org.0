@@ -2,78 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 402E7E3FBB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 00:53:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E2E0E3FBC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 00:54:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jvUOk+woPICVRUBHmlEY3m4NB1th8MT0IhNz0Gj2Gqk=; b=N5BvkZslQDgNzx
-	SpmnaMIIJoZvHsn3TlyO72btXT5QpQj3M2FuaTy6CyagRUI9K3GNx7g999ZdH3ORUUkJDTeHa3cSd
-	xtNDzSAm5s8bZi4Jm6durSjCSs+r7EW5WvdF1w7tM455n0KQtxx3D4G1eDqLlOzVw2FsFXO832UJX
-	18nkcoaw5Wl5Ut+zntHPGT7nhSHRTkcSs4T9imHrhoqlbkS8k1n+LWOIN/LAFD3MVl79d1qFHw2nJ
-	DK8zr7/G+n6n5mEbN+k6cyuR0LCCe2ZO4cKvxmkyF6khLx54yn+OgCuXM/iTqTRLK9PG8Hco54FIs
-	4Rp4SHjuZiDhSgFQGAbQ==;
+	List-Owner; bh=Ege3k4QB7nCGNS1Bzyj1/OpbvJHevT6lTTAZm9orang=; b=h1ZQilro7iVMJS
+	d+dWTzkOyyeIP6Kfa3unE1F+pJK1nMxenfPGaO1PmGej7Y0K6IEvrS2G9mtqv0h7RK94dcJflw8YX
+	8/PYdriNL6uNeshFbGEkaBSiJA7Q8PWZbeu0RNWV7uAktFS4K1i/BN8zJrfHBWGo5fW+ssG4B4FGj
+	3uRKfxfFFwRn6CrXfqSMncTTqk1aTXqQhG53mNg2c7CSdy+0HvgncJg4uUrny34FhARFKj3LoJOGG
+	Eb1TGnkwt/4/Lb/rjDy8oY8E7VCCfBaTzt9naax7nC5JhVu5tIZ/Zog/4vpasu2gOuDGf0XC033O0
+	Eq1BPNnfMPiHmKEWKS5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNlzL-0003ol-5Q; Thu, 24 Oct 2019 22:53:51 +0000
-Received: from mail-qk1-x749.google.com ([2607:f8b0:4864:20::749])
+	id 1iNlzd-00042l-58; Thu, 24 Oct 2019 22:54:09 +0000
+Received: from mail-pl1-x649.google.com ([2607:f8b0:4864:20::649])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNlxd-0002Vm-GN
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 22:52:08 +0000
-Received: by mail-qk1-x749.google.com with SMTP id n17so356696qkg.14
+ id 1iNlxf-0002ZP-Q3
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 22:52:09 +0000
+Received: by mail-pl1-x649.google.com with SMTP id j9so169843plk.21
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 24 Oct 2019 15:52:04 -0700 (PDT)
+ Thu, 24 Oct 2019 15:52:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=+pC1wUGnAfIzdtPt9JYqx48tH0ZogjxIc75X2woCblw=;
- b=Ghul3xFEQaQM5xzVBFQoG8U8HNwG42e7GeQtV27MTWSZRuGptIXTiXUGIjDHp/YIpT
- hClIyJ8yLd1+EE9qsR9Oss13EFC0aEBed0i7vXbPLw7n7Cz1HrHzSiWsA4EcykXlitoW
- K5h6f2Q+00V9aJmmUnI7P9/MLwLZ35DTumdhIT4mQ4ce7/IwgipCUWdP7+q+I8zT5OhO
- a+NHytq0v/YolBdJAa7n+PY0/a9IGtPsdaAIdeA5LZmh6S0ZyAYyOYEOeyhxqrKOFMvM
- QncsL/qfcrw8l2wQdAQW3JMAY3o7KpY74274D2H4sRGOglWCZipnGdOSYkKm6qs+y5EC
- TkYQ==
+ :cc; bh=Ut7YUpLvWAiZLonPATqZ5OL9tOEZJcNF7+tDsNdHEWU=;
+ b=Yue9uHjmOjCVuztIQPd86DzimLWI+fR6hTvdgEK/61gESlizanN/A26bP9cX7dKHQZ
+ oLJaaihwQeZ8TJTaC/aUcwdebnAqYL1UA2240obxSIMDp+j8AnFncQVqEMSmDWOZyolB
+ ZdO6BTWxOJWZJrdCoEIXzyAMbQCBE/lBQOUYz7LfURQr9FE/nOgK5wI5aA/YpCOOoAKs
+ ulfAhIsP7AvmLnNWY84oHIXlg/HfyhUjn7orwuaGMA3KCGHEhcJBj/YnjJpM4c+XXuZ0
+ YSvScvKza86L+Kajd8Kd/l8lRkcS8nw1BRebOUAsJOMUPyf3RTIJKK6kMU656U4CuO/+
+ 09vg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=+pC1wUGnAfIzdtPt9JYqx48tH0ZogjxIc75X2woCblw=;
- b=TnEQ68lFsCkCZsaUOLyUSPtNfygbvPHdNx0WDW+p+8ATr8XJUo+o23G5pNrjKBRMj/
- GLUeeoUt0C80Ryu88a6K0m4uNwa2kA00Acw+8bLumn48KsPitXS7dOKnvdDheXMxqirV
- 5NMzkbVPAmlHeLspuOa5M9d2rdz4l+s3FIazah2QuVKsBOUgUuVgPa1S3gA+js3ozCKZ
- VWspcdUWL/yxMQx12SKm53yCCFLGzIaDzfmqMjQPgJYyZarz4uORjDIb/ZoogKATlT12
- xHEzDAaq9kVmlHgFs3rfQP8IYq0ZP6Dmm//xWanstdLT7d5lDiIyR3XCgDdC2Ldy7xCS
- jMIw==
-X-Gm-Message-State: APjAAAWlz5G1COWVZI/tDUj9fAVnFOh+khqqQU1O6oB5lsFQHJBcVGvO
- WLIol/hdnyKlANzKKkByLWiyRl4ZMnymtnfn5ns=
-X-Google-Smtp-Source: APXvYqzM3I26bKb3wrnFe0tgT6a7QNS7VGM2eEEUUuU2H4VKLgtcE0Bg1aj8IG0janwPGy/Kg+c3iOCkFYjR2Y2rhpw=
-X-Received: by 2002:a0c:e6e5:: with SMTP id m5mr375068qvn.170.1571957522490;
- Thu, 24 Oct 2019 15:52:02 -0700 (PDT)
-Date: Thu, 24 Oct 2019 15:51:22 -0700
+ bh=Ut7YUpLvWAiZLonPATqZ5OL9tOEZJcNF7+tDsNdHEWU=;
+ b=XYRjzPlErETFly7c+DKifM6utBEjGDhYQ0iLf2W0qdwKYm0T9hLwkzsP4JRGQGcVse
+ JwTSA2uullQ3C97qDosx2hGl5/Sikq91RJCWjY3wLbD107ALO3tkDtr3Q1EvSrgOIz9x
+ SIco7MgE+Zd25RMoB+SaQtobCi13ekHSAxyQcpCvUqA8JqE+JvsoOBFIRYEdcMV1pIv6
+ YIBC0GUKc8/2XpHz3MMzp4ny8sNSvDGfIeixfT0bPVuM9AW1JcRAv+gz0ikKXIpcRob0
+ EaEoZQAK0nd9ti5hnSl7Zc6ZfdTMbvwOgHfqJDNcmZ3ewNknwgDMdCmNRf9TcuHJY5OT
+ e9NQ==
+X-Gm-Message-State: APjAAAVxrwyHiJnxC6uEpUh687FIwpJjPta65gFrGA//iiD69cKrLX5n
+ +i+M9uX1sqiXyeRBKFVyGIuWOXMzkjg3foDidIQ=
+X-Google-Smtp-Source: APXvYqyIrzZDUZW/ai1FBaSFozXCzV2dy/HKURTLyrbV1w3X+deCMyV91eFC953B77j0GjtVKG+bkdsaiwl8eZ9vJk4=
+X-Received: by 2002:a63:495b:: with SMTP id y27mr505887pgk.438.1571957526087; 
+ Thu, 24 Oct 2019 15:52:06 -0700 (PDT)
+Date: Thu, 24 Oct 2019 15:51:23 -0700
 In-Reply-To: <20191024225132.13410-1-samitolvanen@google.com>
-Message-Id: <20191024225132.13410-8-samitolvanen@google.com>
+Message-Id: <20191024225132.13410-9-samitolvanen@google.com>
 Mime-Version: 1.0
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20191024225132.13410-1-samitolvanen@google.com>
 X-Mailer: git-send-email 2.24.0.rc0.303.g954a862665-goog
-Subject: [PATCH v2 07/17] scs: add support for stack usage debugging
+Subject: [PATCH v2 08/17] kprobes: fix compilation without CONFIG_KRETPROBES
 From: samitolvanen@google.com
 To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
  Steven Rostedt <rostedt@goodmis.org>,
  Masami Hiramatsu <mhiramat@kernel.org>, 
  Ard Biesheuvel <ard.biesheuvel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_155205_600717_FD44DF63 
-X-CRM114-Status: GOOD (  10.80  )
+X-CRM114-CacheID: sfid-20191024_155207_881900_CF7E9E0B 
+X-CRM114-Status: GOOD (  11.28  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:749 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:649 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
@@ -111,70 +111,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Implements CONFIG_DEBUG_STACK_USAGE for shadow stacks.
+kprobe_on_func_entry and arch_kprobe_on_func_entry need to be available
+even if CONFIG_KRETPROBES is not selected.
 
 Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
+Acked-by: Masami Hiramatsu <mhiramat@kernel.org>
 ---
- kernel/scs.c | 39 +++++++++++++++++++++++++++++++++++++++
- 1 file changed, 39 insertions(+)
+ kernel/kprobes.c | 38 +++++++++++++++++++-------------------
+ 1 file changed, 19 insertions(+), 19 deletions(-)
 
-diff --git a/kernel/scs.c b/kernel/scs.c
-index b9e6e225254f..a5bf7d12dc13 100644
---- a/kernel/scs.c
-+++ b/kernel/scs.c
-@@ -154,6 +154,44 @@ int scs_prepare(struct task_struct *tsk, int node)
- 	return 0;
+diff --git a/kernel/kprobes.c b/kernel/kprobes.c
+index 53534aa258a6..b5e20a4669b8 100644
+--- a/kernel/kprobes.c
++++ b/kernel/kprobes.c
+@@ -1829,6 +1829,25 @@ unsigned long __weak arch_deref_entry_point(void *entry)
+ 	return (unsigned long)entry;
  }
  
-+#ifdef CONFIG_DEBUG_STACK_USAGE
-+static inline unsigned long scs_used(struct task_struct *tsk)
++bool __weak arch_kprobe_on_func_entry(unsigned long offset)
 +{
-+	unsigned long *p = __scs_base(tsk);
-+	unsigned long *end = scs_magic(tsk);
-+	uintptr_t s = (uintptr_t)p;
-+
-+	while (p < end && *p)
-+		p++;
-+
-+	return (uintptr_t)p - s;
++	return !offset;
 +}
 +
-+static void scs_check_usage(struct task_struct *tsk)
++bool kprobe_on_func_entry(kprobe_opcode_t *addr, const char *sym, unsigned long offset)
 +{
-+	static DEFINE_SPINLOCK(lock);
-+	static unsigned long highest;
-+	unsigned long used = scs_used(tsk);
++	kprobe_opcode_t *kp_addr = _kprobe_addr(addr, sym, offset);
 +
-+	if (used <= highest)
-+		return;
++	if (IS_ERR(kp_addr))
++		return false;
 +
-+	spin_lock(&lock);
++	if (!kallsyms_lookup_size_offset((unsigned long)kp_addr, NULL, &offset) ||
++						!arch_kprobe_on_func_entry(offset))
++		return false;
 +
-+	if (used > highest) {
-+		pr_info("%s: highest shadow stack usage %lu bytes\n",
-+			__func__, used);
-+		highest = used;
-+	}
-+
-+	spin_unlock(&lock);
++	return true;
 +}
-+#else
-+static inline void scs_check_usage(struct task_struct *tsk)
-+{
-+}
-+#endif
 +
- bool scs_corrupted(struct task_struct *tsk)
+ #ifdef CONFIG_KRETPROBES
+ /*
+  * This kprobe pre_handler is registered with every kretprobe. When probe
+@@ -1885,25 +1904,6 @@ static int pre_handler_kretprobe(struct kprobe *p, struct pt_regs *regs)
+ }
+ NOKPROBE_SYMBOL(pre_handler_kretprobe);
+ 
+-bool __weak arch_kprobe_on_func_entry(unsigned long offset)
+-{
+-	return !offset;
+-}
+-
+-bool kprobe_on_func_entry(kprobe_opcode_t *addr, const char *sym, unsigned long offset)
+-{
+-	kprobe_opcode_t *kp_addr = _kprobe_addr(addr, sym, offset);
+-
+-	if (IS_ERR(kp_addr))
+-		return false;
+-
+-	if (!kallsyms_lookup_size_offset((unsigned long)kp_addr, NULL, &offset) ||
+-						!arch_kprobe_on_func_entry(offset))
+-		return false;
+-
+-	return true;
+-}
+-
+ int register_kretprobe(struct kretprobe *rp)
  {
- 	return *scs_magic(tsk) != SCS_END_MAGIC;
-@@ -168,6 +206,7 @@ void scs_release(struct task_struct *tsk)
- 		return;
- 
- 	WARN_ON(scs_corrupted(tsk));
-+	scs_check_usage(tsk);
- 
- 	scs_account(tsk, -1);
- 	scs_task_init(tsk);
+ 	int ret = 0;
 -- 
 2.24.0.rc0.303.g954a862665-goog
 
