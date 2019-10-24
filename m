@@ -2,88 +2,110 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4ABE1E2D5F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 11:31:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C7DDE2D7A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 11:35:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gsLTOcXneSkDgNllPJk+4EOCi9SazGDA6MoIZecpWb8=; b=K2xBwF1Vf5pRYo
-	GcAfaeU9bM/Z2DRVVvZNFDnNZ8ukQWEXnifvu7tsvkZGgwTKR2HHZYtHyyZ3JUYldiADjFaZAzxWt
-	Uj87hdfkxDVj2pQ2cwJnn/UZpFss6Ky6A9vPbvY2lYfoxX2Y+jai8n23K6NLNUn8tuVq+DltKOl8r
-	Vev99G8gMaGgDAReiS+4NKcz6DyMp1eIK9crxCmy+DE22yi8jYgP2oB3Me7/O3jSRdvcGW1smkLSp
-	lcKfZ1nQJSzJohwG4O1DJ3xAlKA4OSs8h+V4paGDQV2tlJWyUwWBbr0OZ4taslQBv2SfM0dYF2wMO
-	72EBmAGyvGt9puc82x7Q==;
+	List-Owner; bh=UdpIqfUp5VCTQeP4uk6uuDIFIuDtj84+mkrhiY8qOOQ=; b=h1FXvwp2VBiAiC
+	cXruGAL4OlC/iQuX2vigHDR/mf0xlnjlxZfC7Ma0iPi16U/+PVCm7aTTtSJxi4H8YNUYqRLz1YMjx
+	odpKqLV9DdHhxGCk5E9hSTV6xRDLTUGzoySn9KMk5fqrg7SyfyqiNqzSTMsCSIZoU0DoadvK1PBwH
+	UqBP8bhKnAMPrtOr98rZq2Tmgbs7y3ngrFC3lLSyebgJ6RTJJMzXr2cwvuC9PRdEt4dns0bK8tvWi
+	apnZTOOjZ0AKX7GAJIa8AjqhM2KhR28TtUdcsENy3OBY4F1NYRhajN2kvkGTVqkDqHQNgtVHaRV+y
+	aW3VtCkJ3FLQ1xTFw7MQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNZSy-00076J-JJ; Thu, 24 Oct 2019 09:31:36 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iNZWi-0000L1-KN; Thu, 24 Oct 2019 09:35:28 +0000
+Received: from mail-eopbgr70112.outbound.protection.outlook.com
+ ([40.107.7.112] helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNZSo-00075c-9Q
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 09:31:27 +0000
-Received: by mail-wr1-x441.google.com with SMTP id n15so14450823wrw.13
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 24 Oct 2019 02:31:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=6XIbW73y9ctw9e/3P96K5zJqGLVfoAK/VYWpXjJw2cg=;
- b=XMP5pmUHvn9M98uKH+J5MZT8v5M4PCWkjafEhZUbn3F2eeF1DOLIflDiDHyJWqq+/i
- F/KS6/w6gkyxjYy4l1Dv7ZDbB/wOtgXlNitmSlg6K4TDT4loDeB9xqdD1ZQJKyukOv8T
- bgaMQT0ZFy2X2EZl6fsDIhAbKc09Du3rC8ATq7cJQGkgC77uh+FmMiK50UuF9KBx/uBy
- LriRMp2Bdw7ekGE8Iccm2v1B4fthtqUgf9euw+nS9CmK5p0qQSDfD6EiLr1Mu3QJ5gw4
- V7G+qw9j6JUCU/RvlKTO6UPQezqdO8LRbeZ5ZMvG4w7bJ/iWsuczWeBRSd8k0DIh5XTo
- vrmg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=6XIbW73y9ctw9e/3P96K5zJqGLVfoAK/VYWpXjJw2cg=;
- b=bk1wnsI5ZnjbK2hkp5gRPWp7WLMksPIHtubfftjnXIAl4NDdnXyZndMiRdqBZYnat8
- /E1EwGtpKGvauWxpbJoB4HfJemfA8Fe6rgLdZCY8kWXZVgyuGQfu1CvVolAR8uYAhCOl
- QMWt7DXUOEQ+E8IIVQRRJldyRvway3MvOnF4bt2kMKleqEjNYyYH/IdrojnxwyolHGLW
- g2c4q2PJ7bVu3H6qEbITsCj4QUXQXBl4fAGX9YnQcCxk/sHMZfCQDMuLC3fOPpxZqVBb
- 7/Jm92aRf7X7Ew7SK2SFqzLxtDL3fbcPlbzy2TdwECwHN2qhZ0o3iB7sVQra3qCiZrny
- XxWA==
-X-Gm-Message-State: APjAAAVTFuPVbMbM49DpmgmF9yCWoAvn1CW+ocVTJIoRn8bnxVLRr4cv
- jsUONvStXgDYapQnOBD4kEY=
-X-Google-Smtp-Source: APXvYqwZ8rjiLOJ/UB5QcbVNrlN7zQLDzi8Rcsr89hkCErMnGSUnJEExfdTvM7cc4w4Yj9zFIeYJLQ==
-X-Received: by 2002:a5d:404d:: with SMTP id w13mr3037712wrp.185.1571909482912; 
- Thu, 24 Oct 2019 02:31:22 -0700 (PDT)
-Received: from Red (lfbn-1-7036-79.w90-116.abo.wanadoo.fr. [90.116.209.79])
- by smtp.googlemail.com with ESMTPSA id o6sm14733871wrx.89.2019.10.24.02.31.20
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 24 Oct 2019 02:31:22 -0700 (PDT)
-Date: Thu, 24 Oct 2019 11:31:18 +0200
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: Maxime Ripard <mripard@kernel.org>
-Subject: Re: [PATCH v2 2/4] dt-bindings: crypto: Add DT bindings
- documentation for sun8i-ss Security System
-Message-ID: <20191024093118.GA15113@Red>
-References: <20191023201016.26195-1-clabbe.montjoie@gmail.com>
- <20191023201016.26195-3-clabbe.montjoie@gmail.com>
- <20191024065005.hdypdl2dgqsrry5i@gilmour>
+ id 1iNZWY-0000KY-F9; Thu, 24 Oct 2019 09:35:20 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=cmGiBsQxz3T86HnbxSahtPCZQiOWo7K6bAsIeym0n5GpvZzeBpAcVwPs2v1+jHPgkoZpf8wUxIqs4YKZyHUCb6LSOH3pn8rkgbx5ZAA2vZXzw8hV21FScyu3GH5I0r4sFLpBptfoU4tumfDYDdaHhOAoqIAg7KKfBTzHwEKjypdmB9kqKpNNp22c2deK8HocEfd3TK6nt6fRz1XaHO6fEV7azWsAp0XqdnZZ7gCWUP7w8Sx3WzKa33mbMYQ6esS8paBXPYjEqYOpJeldDHbcGbh64EtbL4RDNvcYRf8SWnQqoCy9ZMg0PmzzRiDXWKRie1gumqVD2k6f3X3+mUmthg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=DIt9WUl36EPMd6/sTow+jAoauCcP0HziIST+STpNbbY=;
+ b=gEJ6Fr4/2XPwmUqdJEkHtAcqkzJLv1qKL92rKRfQh6AfQePvhiZ67pZFNwV/VuoKe65CRS8NdKty6ok7y/eR3u0Vd6dpfEVoyb9FU/Dyk0pzzLdbB+NmRlRmROjW4AejpDFddoYDfiIgRL8RFh/UXZVvXfiSyCTjMw9+QKj+l2vZjV1pDSH3pT9rtkOSqh9nVcSAOrqdyKJWxmlC/kITIf74nrliU4n7uCYMLCvZQOkDnX5sHnQLfVyTnUvACFZe8PxNI8uyTqi0I2bRFcH8iI1aGIPoXlNoNlRKLRqFDeuL3XLEz4uOEGTsMI1RYv/923GMEGV1vVoztnQTdxwmww==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=axentia.se; dmarc=pass action=none header.from=axentia.se;
+ dkim=pass header.d=axentia.se; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axentia.se;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=DIt9WUl36EPMd6/sTow+jAoauCcP0HziIST+STpNbbY=;
+ b=fEAnr2/i3O1AFS3nbpfEP8nNqk2J98i29Ta1hHaixE6dDgnhOQxfsfxuZdfA1FoKmOIky8RikVrhIENBJQZaDuSscfbgTUCYfJwUvhLLXD96t0J3rrr38rgQM1Hq/pS9wFlWvV0Gz7tHQUrFL7AK1wapZGeBnZx/qiLMDB7cTGA=
+Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com (52.134.66.158) by
+ DB3PR0202MB3546.eurprd02.prod.outlook.com (52.134.69.30) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2387.22; Thu, 24 Oct 2019 09:35:12 +0000
+Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com
+ ([fe80::c5b8:6014:87a4:1afe]) by DB3PR0202MB3434.eurprd02.prod.outlook.com
+ ([fe80::c5b8:6014:87a4:1afe%7]) with mapi id 15.20.2347.030; Thu, 24 Oct 2019
+ 09:35:12 +0000
+From: Peter Rosin <peda@axentia.se>
+To: "rppt@kernel.org" <rppt@kernel.org>
+Subject: Re: [PATCH 08/12] parisc: use pgtable-nopXd instead of 4level-fixup
+Thread-Topic: [PATCH 08/12] parisc: use pgtable-nopXd instead of 4level-fixup
+Thread-Index: AQHVik5IAuql7dy41k6PeTHw6KB4tA==
+Date: Thu, 24 Oct 2019 09:35:12 +0000
+Message-ID: <20191024093451.15161-1-peda@axentia.se>
+References: <1571822941-29776-9-git-send-email-rppt@kernel.org>
+In-Reply-To: <1571822941-29776-9-git-send-email-rppt@kernel.org>
+Accept-Language: en-US, sv-SE
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.11.0
+x-originating-ip: [213.112.138.100]
+x-clientproxiedby: HE1PR0501CA0011.eurprd05.prod.outlook.com
+ (2603:10a6:3:1a::21) To DB3PR0202MB3434.eurprd02.prod.outlook.com
+ (2603:10a6:8:5::30)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peda@axentia.se; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 8c3bd73e-ee81-4715-6d9a-08d7586577ad
+x-ms-traffictypediagnostic: DB3PR0202MB3546:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB3PR0202MB35468A3E1F5AE0EF9B52833BBC6A0@DB3PR0202MB3546.eurprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3826;
+x-forefront-prvs: 0200DDA8BE
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(39830400003)(396003)(366004)(376002)(136003)(346002)(199004)(189003)(64756008)(1076003)(66946007)(66476007)(66446008)(66556008)(4744005)(50226002)(8936002)(8676002)(1730700003)(4001150100001)(86362001)(305945005)(7406005)(7736002)(66066001)(7416002)(2501003)(54906003)(99286004)(81156014)(81166006)(186003)(14454004)(5660300002)(76176011)(316002)(52116002)(2616005)(53546011)(6506007)(256004)(102836004)(386003)(26005)(6436002)(6512007)(71190400001)(71200400001)(446003)(11346002)(229853002)(486006)(5640700003)(508600001)(6486002)(25786009)(4326008)(476003)(2906002)(6246003)(107886003)(6916009)(6116002)(3846002)(2351001)(36756003);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:DB3PR0202MB3546;
+ H:DB3PR0202MB3434.eurprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: axentia.se does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 6Z+ITuVOvCqKitQmaADNxgLO2KW0fDtwzxFLSRNNn7r/d6V85rreanKo2s+2tZaj57S+YSqLI8dMNxycmFP8TlbakDoiFDVeKSRPOuJMnSnLz1FzJ7iBy5FiQjktww9Zw3RWbkbaN4l8LIFun9RYGE1a+THN5jNpOMYuioTqkSimDg+3oKV0TYwESyYh1EUIGoUOwF4rz96lC1DTez136wnhWjR8bRzbsSQlFYS9NScyPinY2fuJ4aYSJh+2DAxCiSAFCobU6RUtFi4veZnHL30ia6pfX28Yt3ehNs5GYmVtFyV9xNES/PlYYRfl6QOXFPAbB1XEzjvbSKf4E0nKvP5X+69BruKyQA070TgGVgdtHQJdNqcM3TihTxK47muVoD9QxJUr985Mz1Js63GkmAokSqaiYs0iRgoJbAAJ+NZnMA++qwWJCmuskvsG/Dto
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191024065005.hdypdl2dgqsrry5i@gilmour>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-OriginatorOrg: axentia.se
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8c3bd73e-ee81-4715-6d9a-08d7586577ad
+X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Oct 2019 09:35:12.1588 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 4ee68585-03e1-4785-942a-df9c1871a234
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: OVrjWJqkAg7QlUmFAou+rEr+R3o62OggdRIdKwgVr0fz9Ctp3nIcWVOZEyuS4mrB
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0202MB3546
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_023126_327070_194A1430 
-X-CRM114-Status: GOOD (  19.83  )
+X-CRM114-CacheID: sfid-20191024_023518_732683_F91880CD 
+X-CRM114-Status: UNSURE (   6.71  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ no trust [40.107.7.112 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (clabbe.montjoie[at]gmail.com)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -102,93 +124,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- herbert@gondor.apana.org.au, linux-sunxi@googlegroups.com,
- linux-kernel@vger.kernel.org, wens@csie.org, robh+dt@kernel.org,
- linux-crypto@vger.kernel.org, davem@davemloft.net,
- linux-arm-kernel@lists.infradead.org
+Cc: "James.Bottomley@HansenPartnership.com"
+ <James.Bottomley@HansenPartnership.com>,
+ "linux-mm@kvack.org" <linux-mm@kvack.org>,
+ "sparclinux@vger.kernel.org" <sparclinux@vger.kernel.org>,
+ "deanbo422@gmail.com" <deanbo422@gmail.com>,
+ "gerg@linux-m68k.org" <gerg@linux-m68k.org>,
+ "anton.ivanov@cambridgegreys.com" <anton.ivanov@cambridgegreys.com>,
+ "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
+ "linux-c6x-dev@linux-c6x.org" <linux-c6x-dev@linux-c6x.org>,
+ "richard@nod.at" <richard@nod.at>, "deller@gmx.de" <deller@gmx.de>,
+ "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
+ "rppt@linux.ibm.com" <rppt@linux.ibm.com>,
+ "geert@linux-m68k.org" <geert@linux-m68k.org>,
+ "msalter@redhat.com" <msalter@redhat.com>,
+ "mattst88@gmail.com" <mattst88@gmail.com>,
+ "jdike@addtoit.com" <jdike@addtoit.com>, "sammy@sammy.net" <sammy@sammy.net>,
+ "arnd@arndb.de" <arnd@arndb.de>,
+ "Vineet.Gupta1@synopsys.com" <Vineet.Gupta1@synopsys.com>,
+ "linux-um@lists.infradead.org" <linux-um@lists.infradead.org>,
+ "linux-m68k@lists.linux-m68k.org" <linux-m68k@lists.linux-m68k.org>,
+ "green.hu@gmail.com" <green.hu@gmail.com>,
+ "kirill@shutemov.name" <kirill@shutemov.name>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "monstr@monstr.eu" <monstr@monstr.eu>,
+ "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Peter Rosin <peda@axentia.se>,
+ "linux-alpha@vger.kernel.org" <linux-alpha@vger.kernel.org>,
+ "akpm@linux-foundation.org" <akpm@linux-foundation.org>,
+ "torvalds@linux-foundation.org" <torvalds@linux-foundation.org>,
+ "davem@davemloft.net" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 24, 2019 at 08:50:05AM +0200, Maxime Ripard wrote:
-> Hi,
-> 
-> On Wed, Oct 23, 2019 at 10:10:14PM +0200, Corentin Labbe wrote:
-> > This patch adds documentation for Device-Tree bindings of the
-> > Security System cryptographic offloader driver.
-> >
-> > Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
-> > ---
-> >  .../bindings/crypto/allwinner,sun8i-ss.yaml   | 64 +++++++++++++++++++
-> >  1 file changed, 64 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/crypto/allwinner,sun8i-ss.yaml
-> >
-> > diff --git a/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ss.yaml b/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ss.yaml
-> > new file mode 100644
-> > index 000000000000..99b7736975bc
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ss.yaml
-> > @@ -0,0 +1,64 @@
-> > +# SPDX-License-Identifier: GPL-2.0
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/crypto/allwinner,sun8i-ss.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Allwinner Security System v2 driver
-> > +
-> > +maintainers:
-> > +  - Corentin Labbe <corentin.labbe@gmail.com>
-> > +
-> > +properties:
-> > +  compatible:
-> > +    enum:
-> > +      - allwinner,sun8i-a83t-crypto
-> > +      - allwinner,sun9i-a80-crypto
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  interrupts:
-> > +    maxItems: 1
-> > +
-> > +  clocks:
-> > +    items:
-> > +      - description: Bus clock
-> > +      - description: Module clock
-> > +
-> > +  clock-names:
-> > +    items:
-> > +      - const: bus
-> > +      - const: mod
-> > +
-> > +  resets:
-> > +    maxItems: 1
-> 
-> The A83t at least has a reset line, so please make a condition to have
-> it required.
-> 
+On 2019-10-23 12:28, Mike Rapoport <rppt@kernel.org> wrote:
+> parisc has two or three levels of page tables and can use appropriate
+> pgtable-nopXd and folding of the upper layers.
+>
+> Replace usage of include/asm-generic/4level-fixup.h and explicit
+> definitions of __PAGETABLE_PxD_FOLDED in parisc with
+> include/asm-generic/pgtable-nopmd.h for two-level configurations and with
+> include/asm-generic/pgtable-nopmd.h for three-lelve configurations and
 
-Hello
+I think you mean .../pgtable-nopud.h in the latter case.
 
-The A80 have one also, so I need to set minItems: 1
-But setting both minItems: 1 and maxItems:1 lead to a check failure:
-properties:resets: {'minItems': 1, 'maxItems': 1} is not valid under any of the given schemas
-
-How to do that ?
-
-Furthermore, I try to do that for interrupts and reg, since they are also mandatory and same failure.
-
-> > +  reset-names:
-> > +    const: bus
-> 
-> You don't need reset-names at all in that binding.
-
-Fixed
-
-Thanks
+Cheers,
+Peter
 
 _______________________________________________
 linux-arm-kernel mailing list
