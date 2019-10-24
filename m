@@ -2,58 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BB0EE304A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 13:24:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D990BE306E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 13:33:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=qgIGr8in/9FMSvkUHunj/wk5rue52dLBUQJberJcDck=; b=qZtRuEsIatRjmDmm1Dc77EMst
-	6u2BNMrqVb5N80t+27pAi834Mtwh7+2I/4Hf1ZkI38oNy9vyJO8Pcw4iffByRIDiDSxUqdAlBf3LA
-	rony4ZiuSrDwZGmr3sszGVezkaFf4GwN0Dvs0bvOUP3fzifa6UJth97lz7+M5IqAWaSNr4MPFkzHN
-	8pa8wJWAr1HZK3w2WTwzZVF28LB6hEnbPU38hst2eHDdKof4aTC9qYxYyZWa1ADMOI13X/FZgUlWW
-	cJJh19EOeR5AeMD7HGGx6EurnvS/3QhFHVekO5H5op6baWB+loUVKSOck1g5bsTeeiFm+PrwZBr+I
-	YORz9bXxg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/9272a7GEGa9v/oHK62jXSoroaMGwt6Jet59VDEXC84=; b=O8R2LFrXfLiptF
+	P69oH6AqNY3HY7P0X/DaOA+kp9fb8oOSdp0WKNHOunwr15SD/kJHH9HB6LbPVp4RAOahpN/8ObhQK
+	AOJmgF9v39jRAKIZqoqIWSQPrC2wl/zDz7SH9QUMlC94lJD/x6Xiznfb9opvW/OpWBbcd7GjS+aec
+	jMkJuefZ3H37oxyka+iUDUda5vdGJlJxr2wzXhQjwue8wzFM9zkq340rYiZ8d/WsFoI1srIUcgnTL
+	XbuMewTaR7CPf0HoReqX6L2OpplFiwHHByFHriqL+D3jFM1Js9jei9YvAFqtPLxBJpL2O2QkHO25W
+	WvwtjHwWId1e85d5AEdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNbE7-0008Es-4s; Thu, 24 Oct 2019 11:24:23 +0000
+	id 1iNbMY-0003S6-9i; Thu, 24 Oct 2019 11:33:06 +0000
 Received: from [217.140.110.172] (helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNbDl-0008DF-9f
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 11:24:02 +0000
+ id 1iNbMN-0003RL-Oh
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 11:32:57 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B154DB57;
- Thu, 24 Oct 2019 04:23:50 -0700 (PDT)
-Received: from [192.168.1.123] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 42A993F71A;
- Thu, 24 Oct 2019 04:23:49 -0700 (PDT)
-Subject: Re: [PATCH 3/4] iommu/io-pgtable-arm: Rationalise TCR handling
-To: Will Deacon <will@kernel.org>, joro@8bytes.org,
- iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org,
- robdclark@gmail.com
-References: <cover.1566238530.git.robin.murphy@arm.com>
- <78df4f8e2510e88f3ded59eb385f79b4442ed4f2.1566238530.git.robin.murphy@arm.com>
- <20190820103115.o7neehdethf7sbqi@willie-the-truck>
- <48ca6945-de73-116a-3230-84862ca9e60b@arm.com>
- <20190820160700.6ircxomwuo5bksqz@willie-the-truck>
- <8cc47f43-ad74-b4e2-e977-6c78780abc91@arm.com>
- <20190821121120.34wqo7vj56pqk57c@willie-the-truck>
- <cdceec32-8dae-2c9e-8f66-0cd86288529f@arm.com>
- <20191003173352.GA13386@jcrouse1-lnx.qualcomm.com>
- <20191024105111.GB1242@willie-the-truck>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <63fa5848-372d-fe09-7502-1b9ecbcc6cf0@arm.com>
-Date: Thu, 24 Oct 2019 12:23:46 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5FE84B57;
+ Thu, 24 Oct 2019 04:32:43 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5B2753F71A;
+ Thu, 24 Oct 2019 04:32:42 -0700 (PDT)
+Date: Thu, 24 Oct 2019 12:32:40 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Richard Henderson <richard.henderson@linaro.org>
+Subject: Re: [PATCH 1/1] arm64: Implement archrandom.h for ARMv8.5-RNG
+Message-ID: <20191024113239.GC4300@lakrids.cambridge.arm.com>
+References: <20191019022048.28065-1-richard.henderson@linaro.org>
+ <20191019022048.28065-2-richard.henderson@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <20191024105111.GB1242@willie-the-truck>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20191019022048.28065-2-richard.henderson@linaro.org>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_042401_423247_079FCD47 
-X-CRM114-Status: GOOD (  22.37  )
+X-CRM114-CacheID: sfid-20191024_043255_895463_9BBC54F8 
+X-CRM114-Status: GOOD (  33.65  )
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
@@ -73,97 +63,351 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: linux-arch@vger.kernel.org, ard.biesheuvel@linaro.org,
+ catalin.marinas@arm.com, will@kernel.org, Dave.Martin@arm.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-10-24 11:51 am, Will Deacon wrote:
-> On Thu, Oct 03, 2019 at 11:33:52AM -0600, Jordan Crouse wrote:
->> On Wed, Aug 21, 2019 at 01:56:20PM +0100, Robin Murphy wrote:
->>> On 21/08/2019 13:11, Will Deacon wrote:
->>>> On Tue, Aug 20, 2019 at 07:41:52PM +0100, Robin Murphy wrote:
->>>>> On 20/08/2019 17:07, Will Deacon wrote:
->>>>>> On Tue, Aug 20, 2019 at 04:25:56PM +0100, Robin Murphy wrote:
->>>>>>> On 20/08/2019 11:31, Will Deacon wrote:
->>>>>>>> On Mon, Aug 19, 2019 at 07:19:30PM +0100, Robin Murphy wrote:
->>>>>>>>> Although it's conceptually nice for the io_pgtable_cfg to provide a
->>>>>>>>> standard VMSA TCR value, the reality is that no VMSA-compliant IOMMU
->>>>>>>>> looks exactly like an Arm CPU, and they all have various other TCR
->>>>>>>>> controls which io-pgtable can't be expected to understand. Thus since
->>>>>>>>> there is an expectation that drivers will have to add to the given TCR
->>>>>>>>> value anyway, let's strip it down to just the essentials that are
->>>>>>>>> directly relevant to io-pgatble's inner workings - namely the address
->>>>>>>>> sizes, walk attributes, and where appropriate, format selection.
->>>>>>>>>
->>>>>>>>> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
->>>>>>>>> ---
->>>>>>>>>     drivers/iommu/arm-smmu-v3.c        | 7 +------
->>>>>>>>>     drivers/iommu/arm-smmu.c           | 1 +
->>>>>>>>>     drivers/iommu/arm-smmu.h           | 2 ++
->>>>>>>>>     drivers/iommu/io-pgtable-arm-v7s.c | 6 ++----
->>>>>>>>>     drivers/iommu/io-pgtable-arm.c     | 4 ----
->>>>>>>>>     drivers/iommu/qcom_iommu.c         | 2 +-
->>>>>>>>>     6 files changed, 7 insertions(+), 15 deletions(-)
->>>>>>>>
->>>>>>>> Hmm, so I'm a bit nervous about this one since I think we really should
->>>>>>>> be providing a TCR with EPD1 set if we're only giving you TTBR0. Relying
->>>>>>>> on the driver to do this worries me. See my comments on the next patch.
->>>>>>>
->>>>>>> The whole idea is that we already know we can't provide a *complete* TCR
->>>>>>> value (not least because anything above bit 31 is the wild west), thus
->>>>>>> there's really no point in io-pgtable trying to provide anything other than
->>>>>>> the parts it definitely controls. It makes sense to provide this partial TCR
->>>>>>> value "as if" for TTBR0, since that's the most common case, but ultimately
->>>>>>> io-pgatble doesn't know (or need to) which TTBR the caller intends to
->>>>>>> actually use for this table. Even if the caller *is* allocating it for
->>>>>>> TTBR0, io-pgtable doesn't know that they haven't got something live in TTBR1
->>>>>>> already, so it still wouldn't be in a position to make the EPD1 call either
->>>>>>> way.
->>>>>>
->>>>>> Ok, but the driver can happily rewrite/ignore what it gets back. I suppose
->>>>>> an alternative would be scrapped the 'u64 tcr' and instead having a bunch
->>>>>> of named bitfields for the stuff we're actually providing, although I'd
->>>>>> still like EPDx to be in there.
->>>>>
->>>>> I like the bitfield idea; it would certainly emphasise the "you have to do
->>>>> something more with this" angle that I'm pushing towards here, but still
->>>>> leave things framed in TCR terms without having to go to some more general
->>>>> abstraction. It really doesn't play into your EPD argument though - such a
->>>>> config would be providing TxSZ/TGx/IRGNx/ORGNx/SHx, but EPDy, for y = !x.
->>>>> For a driver to understand that and do the right thing with it is even more
->>>>> involved than for the driver to just set EPD1 by itself anyway.
->>>>
->>>> Having considered the bitfield idea some more, I'm less attached to EPDx
->>>> because we simply wouldn't be making a statement about them, rather than a
->>>> (dangerous) zero value and expecting it to be ignored. So I think we're in
->>>> agreement on that.
->>>
->>> Cool, I'll give bitfields a go for v2.
->>>
->>>> The only part I'm still stuck to is that I think io-pgtable should know
->>>> whether it's targetting TTBR0 or TTBR1 so that it can sanitise input
->>>> addresses correctly. Doing this in the driver code is possible, but I'd
->>>> rather not start from that position, particularly as it would require things
->>>> like sign-extension in the TLBI callbacks.
->>
->> Bumping this as is our tradition in the -rc1 time frame before we get all
->> distracted with other stuff. It sounds like the last agreement was for a
->> TTBR1 hint for the EDP and the sign extension in the functions.
+Hi Richard,
+
+On Fri, Oct 18, 2019 at 07:20:48PM -0700, Richard Henderson wrote:
+> Expose the ID_AA64ISAR0.RNDR field to userspace, as the
+> RNG system registers are always available at EL0.
 > 
-> If somebody respins this using bitfields and an explicit TTBR1 quirk then
-> I'll merge it.
+> Signed-off-by: Richard Henderson <richard.henderson@linaro.org>
+> ---
+>  Documentation/arm64/cpu-feature-registers.rst |  2 +
+>  arch/arm64/include/asm/archrandom.h           | 76 +++++++++++++++++++
+>  arch/arm64/include/asm/cpucaps.h              |  3 +-
+>  arch/arm64/include/asm/sysreg.h               |  1 +
+>  arch/arm64/kernel/cpufeature.c                | 34 +++++++++
+>  arch/arm64/Kconfig                            | 12 +++
+>  drivers/char/Kconfig                          |  4 +-
 
-Oops, the ping did register, I just didn't react outwardly ;)
+I suspect that we may need KVM changes -- e.g. the ability to hide this
+from guests.
 
-I have been working on v2, and plan to have something ready next week - 
-the holdup was that I started refactoring all the argument passing since 
-the number of things we have to carry through from one end of map/unmap 
-to the other is getting a bit silly, but I think I can still finish the 
-TTBR1 quirk without that, so if I don't get it cracked imminently then 
-I'll put it aside to revisit later.
+>  7 files changed, 129 insertions(+), 3 deletions(-)
+>  create mode 100644 arch/arm64/include/asm/archrandom.h
+> 
+> diff --git a/Documentation/arm64/cpu-feature-registers.rst b/Documentation/arm64/cpu-feature-registers.rst
+> index 2955287e9acc..78d6f5c6e824 100644
+> --- a/Documentation/arm64/cpu-feature-registers.rst
+> +++ b/Documentation/arm64/cpu-feature-registers.rst
+> @@ -117,6 +117,8 @@ infrastructure:
+>       +------------------------------+---------+---------+
+>       | Name                         |  bits   | visible |
+>       +------------------------------+---------+---------+
+> +     | RNDR                         | [63-60] |    y    |
+> +     +------------------------------+---------+---------+
+>       | TS                           | [55-52] |    y    |
+>       +------------------------------+---------+---------+
+>       | FHM                          | [51-48] |    y    |
+> diff --git a/arch/arm64/include/asm/archrandom.h b/arch/arm64/include/asm/archrandom.h
+> new file mode 100644
+> index 000000000000..80369898e274
+> --- /dev/null
+> +++ b/arch/arm64/include/asm/archrandom.h
+> @@ -0,0 +1,76 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +#ifndef _ASM_ARCHRANDOM_H
+> +#define _ASM_ARCHRANDOM_H
+> +
+> +#include <asm/cpufeature.h>
+> +
+> +/* Unconditional execution of RNDR and RNDRRS.  */
+> +
+> +static inline bool arm_rndr(unsigned long *v)
+> +{
+> +	int pass;
+> +
+> +	asm("mrs %0, s3_3_c2_c4_0\n\t"  /* RNDR */
+> +	    "cset %w1, ne"
+> +	    : "=r"(*v), "=r"(pass));
+> +	return pass != 0;
+> +}
 
-Robin.
+Please give this a menmoic in <asm/sysreg.h>, i.e.
+
+#define SYS_RNDR	sys_reg(3, 3, 2, 4, 0)
+
+... and make this function:
+
+static inline bool read_rndr(unsigned long *v)
+{
+	unsigned long pass;
+
+	/*
+	 * Reads of RNDR set PSTATE.NZCV to 0b0000 upon success, and set
+	 * PSTATE.NZCV to 0b0100 otherwise.
+	 */
+	asm volatile(
+		__mrs_s("%0", SYS_RNDR) "\n"
+	"	cset %1, ne\n"
+	: "=r" (*v), "=r" (pass);
+	:
+	: "cc");
+
+	return pass;
+}
+
+Note that the cc clobber is important in case this gets inlined!
+
+> +
+> +static inline bool arm_rndrrs(unsigned long *v)
+> +{
+> +	int pass;
+> +
+> +	asm("mrs %0, s3_3_c2_c4_1\n\t"  /* RNDRRS */
+> +	    "cset %w1, ne"
+> +	    : "=r"(*v), "=r"(pass));
+> +	return pass != 0;
+> +}
+
+Likewise, in <asm/sysreg.h>, add:
+
+#define SYS_RNDRRS	sys_reg(3, 3, 2, 4, 1)
+
+...and here have:
+
+static inline bool read_rndrrs(unsigned long *v)
+{
+	unsigned long pass;
+
+	/*
+	 * Reads of RNDRRS set PSTATE.NZCV to 0b0000 upon success, and
+	 * set PSTATE.NZCV to 0b0100 otherwise.
+	 */
+	asm volatile (
+		__mrs_s("%0", SYS_RNDRRS) "\n"
+	"	cset %w1, ne\n"
+	: "=r" (*v), "=r" (pass)
+	:
+	: "cc");
+
+	return pass;
+}
+
+> +
+> +#ifdef CONFIG_ARCH_RANDOM
+> +
+> +/*
+> + * Note that these two interfaces, random and random_seed, are strongly
+> + * tied to the Intel instructions RDRAND and RDSEED.  RDSEED is the
+> + * "enhanced" version and has stronger guarantees.  The ARMv8.5-RNG
+> + * instruction RNDR corresponds to RDSEED, thus we put our implementation
+> + * into the random_seed set of functions.
+> + *
+> + * Note as well that Intel does not have an instruction that corresponds
+> + * to the RNDRRS instruction, so there's no generic interface for that.
+> + */
+> +static inline bool arch_has_random(void)
+> +{
+> +	return false;
+> +}
+> +
+> +static inline bool arch_get_random_long(unsigned long *v)
+> +{
+> +	return false;
+> +}
+> +
+> +static inline bool arch_get_random_int(unsigned int *v)
+> +{
+> +	return false;
+> +}
+> +
+> +static inline bool arch_has_random_seed(void)
+> +{
+> +	return cpus_have_const_cap(ARM64_HAS_RNG);
+> +}
+> +
+> +static inline bool arch_get_random_seed_long(unsigned long *v)
+> +{
+> +	/* If RNDR fails, attempt to re-seed with RNDRRS.  */
+> +	return arch_has_random_seed() && (arm_rndr(v) || arm_rndrrs(v));
+> +}
+
+Here we clobber the value at v even if the reads of RNDR and RNDRRS
+failed. Is that ok?
+
+Maybe we want the accessors to only assign to v upon success.
+
+> +
+> +static inline bool arch_get_random_seed_int(unsigned int *v)
+> +{
+> +	unsigned long vl = 0;
+> +	bool ret = arch_get_random_seed_long(&vl);
+> +	*v = vl;
+> +	return ret;
+> +}
+> +
+> +#endif /* CONFIG_ARCH_RANDOM */
+> +#endif /* _ASM_ARCHRANDOM_H */
+> diff --git a/arch/arm64/include/asm/cpucaps.h b/arch/arm64/include/asm/cpucaps.h
+> index f19fe4b9acc4..2fc15765d25d 100644
+> --- a/arch/arm64/include/asm/cpucaps.h
+> +++ b/arch/arm64/include/asm/cpucaps.h
+> @@ -52,7 +52,8 @@
+>  #define ARM64_HAS_IRQ_PRIO_MASKING		42
+>  #define ARM64_HAS_DCPODP			43
+>  #define ARM64_WORKAROUND_1463225		44
+> +#define ARM64_HAS_RNG				45
+>  
+> -#define ARM64_NCAPS				45
+> +#define ARM64_NCAPS				46
+>  
+>  #endif /* __ASM_CPUCAPS_H */
+> diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
+> index 972d196c7714..7a0c159661cd 100644
+> --- a/arch/arm64/include/asm/sysreg.h
+> +++ b/arch/arm64/include/asm/sysreg.h
+> @@ -539,6 +539,7 @@
+>  			 ENDIAN_SET_EL1 | SCTLR_EL1_UCI  | SCTLR_EL1_RES1)
+>  
+>  /* id_aa64isar0 */
+> +#define ID_AA64ISAR0_RNDR_SHIFT		60
+>  #define ID_AA64ISAR0_TS_SHIFT		52
+>  #define ID_AA64ISAR0_FHM_SHIFT		48
+>  #define ID_AA64ISAR0_DP_SHIFT		44
+> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+> index cabebf1a7976..34b9731e1fab 100644
+> --- a/arch/arm64/kernel/cpufeature.c
+> +++ b/arch/arm64/kernel/cpufeature.c
+> @@ -119,6 +119,7 @@ static void cpu_enable_cnp(struct arm64_cpu_capabilities const *cap);
+>   * sync with the documentation of the CPU feature register ABI.
+>   */
+>  static const struct arm64_ftr_bits ftr_id_aa64isar0[] = {
+> +	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_RNDR_SHIFT, 4, 0),
+>  	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_TS_SHIFT, 4, 0),
+>  	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_FHM_SHIFT, 4, 0),
+>  	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_DP_SHIFT, 4, 0),
+> @@ -1261,6 +1262,27 @@ static bool can_use_gic_priorities(const struct arm64_cpu_capabilities *entry,
+>  }
+>  #endif
+>  
+> +#ifdef CONFIG_ARCH_RANDOM
+> +static bool can_use_rng(const struct arm64_cpu_capabilities *entry, int scope)
+> +{
+> +	unsigned long tmp;
+> +	int i;
+> +
+> +	if (!has_cpuid_feature(entry, scope))
+> +		return false;
+> +
+> +	/*
+> +	 * Re-seed from the true random number source.
+> +	 * If this fails, disable the feature.
+> +	 */
+> +	for (i = 0; i < 10; ++i) {
+> +		if (arm_rndrrs(&tmp))
+> +			return true;
+> +	}
+
+The ARM ARM (ARM DDI 0487E.a) says:
+
+| Reseeded Random Number. Returns a 64-bit random number which is
+| reseeded from the True Random Number source at an IMPLEMENTATION
+| DEFINED rate.
+
+... and:
+
+| If the instruction cannot return a genuine random number in a
+| reasonable period of time, PSTATE.NZCV is set to 0b0100 and the data
+| value returned in UNKNOWN.
+
+... so it's not clear to me if the retry logic makes sense. Naively I'd
+expect "reasonable period of time" to include 10 attempts.
+
+Given we'll have to handle failure elsewhere, I suspect that it might be
+best to assume that this works until we encounter evidence to the
+contrary.
+
+> +	return false;
+> +}
+> +#endif
+> +
+>  static const struct arm64_cpu_capabilities arm64_features[] = {
+>  	{
+>  		.desc = "GIC system register CPU interface",
+> @@ -1560,6 +1582,18 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
+>  		.sign = FTR_UNSIGNED,
+>  		.min_field_value = 1,
+>  	},
+> +#endif
+> +#ifdef CONFIG_ARCH_RANDOM
+> +	{
+> +		.desc = "Random Number Generator",
+> +		.capability = ARM64_HAS_RNG,
+> +		.type = ARM64_CPUCAP_STRICT_BOOT_CPU_FEATURE,
+
+I strongly suspect we're going to encounter systems where this feature
+is mismatched, such that this can't be a boto CPU feature.
+
+If we need entropy early in boot, we could detect if the boot CPU had
+the feature, and seed the pool using it, then later make use of a
+system-wide capability.
+
+Thanks,
+Mark.
+
+> +		.matches = can_use_rng,
+> +		.sys_reg = SYS_ID_AA64ISAR0_EL1,
+> +		.field_pos = ID_AA64ISAR0_RNDR_SHIFT,
+> +		.sign = FTR_UNSIGNED,
+> +		.min_field_value = 1,
+> +	},
+>  #endif
+>  	{},
+>  };
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index 950a56b71ff0..a035c178102a 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -1421,6 +1421,18 @@ config ARM64_PTR_AUTH
+>  
+>  endmenu
+>  
+> +menu "ARMv8.5 architectural features"
+> +
+> +config ARCH_RANDOM
+> +	bool "Enable support for random number generation"
+> +	default y
+> +	help
+> +	  Random number generation (part of the ARMv8.5 Extensions)
+> +	  provides a high bandwidth, cryptographically secure
+> +	  hardware random number generator.
+> +
+> +endmenu
+> +
+>  config ARM64_SVE
+>  	bool "ARM Scalable Vector Extension support"
+>  	default y
+> diff --git a/drivers/char/Kconfig b/drivers/char/Kconfig
+> index df0fc997dc3e..f26a0a8cc0d0 100644
+> --- a/drivers/char/Kconfig
+> +++ b/drivers/char/Kconfig
+> @@ -539,7 +539,7 @@ endmenu
+>  
+>  config RANDOM_TRUST_CPU
+>  	bool "Trust the CPU manufacturer to initialize Linux's CRNG"
+> -	depends on X86 || S390 || PPC
+> +	depends on X86 || S390 || PPC || ARM64
+>  	default n
+>  	help
+>  	Assume that CPU manufacturer (e.g., Intel or AMD for RDSEED or
+> @@ -559,4 +559,4 @@ config RANDOM_TRUST_BOOTLOADER
+>  	device randomness. Say Y here to assume the entropy provided by the
+>  	booloader is trustworthy so it will be added to the kernel's entropy
+>  	pool. Otherwise, say N here so it will be regarded as device input that
+> -	only mixes the entropy pool.
+> \ No newline at end of file
+> +	only mixes the entropy pool.
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
