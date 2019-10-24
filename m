@@ -2,38 +2,38 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78DD0E29E7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 07:29:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00E23E29E5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 07:29:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=hhbahCtrq9QkBcJEc4oiTYICr2jQzsj3TzsWteVwH/g=; b=XRxzywoSOXZGhv
-	2nMgB7+P3GEfvcpO/5YfXb21GMFLNaz6HMrN4XX4lAtQY0Adt++yYoZSpYsoAM/sEaj6QvNwRakRI
-	vUrbSUlc5EuAe539lNGkx8nZE3Lv37nogPTHhxXQOdQS/M9mOzDBbiCMflytrPWb2R+c/CafR/zAl
-	dIluYggTUmyY6/kOG8f6zddyPEzmyrbTTNiumIFj6Oy65NQu7VmO34En69JkHIdWFds5R3/zNXz7j
-	Ln8Jd/9G4FWoaBeM4MfQXXI0riI1nRReGGtraxhGt1u4oBkzdC08iytDiUySzTzWGts+neg0ViJvR
-	WYoVxtx9d2HGDdIkVCIw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=d/qVtgqtv5oEOkA7CS+wC5ZjSDlFvN2H5Id5sqKjXgU=; b=mmnr+R4ox/RYCg
+	wPnC6d1Hmn/Rc9zv+FtYdq3S44otfu0KQzP5D6BMxwAivuR8GSCdPgPRo5fbge1nHQkdbSZrzgVex
+	EZejch12hJJLcZtn4MVlL9aQ2KWX9wHazI7SiTfgFPvEjgPhQ50rgHu42jtO71+wvNpO3pmVwdWZe
+	g5mZxg9XPdY4IGReErixaJBfe2BdtlcNPHzCY9638f/6ryP8rJ8aNrbCagWEHWUBNJQ8FbPJ2QlA8
+	csjA9q44jgIFMrVYWitWrnXGUV9bCLBz61U2ofQW8wC2sobdwU1Uivs/BtW6C/Un/tAnKSX4AZ4Er
+	5M4WgEiss+I50GVfzoVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNVgY-0001iC-K7; Thu, 24 Oct 2019 05:29:22 +0000
+	id 1iNVg7-0001F3-IF; Thu, 24 Oct 2019 05:28:55 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNVfI-0000es-VC; Thu, 24 Oct 2019 05:28:06 +0000
-X-UUID: 2b6094a2c91d4a05861599a6159e27e5-20191023
-X-UUID: 2b6094a2c91d4a05861599a6159e27e5-20191023
+ id 1iNVfH-0000es-7v; Thu, 24 Oct 2019 05:28:04 +0000
+X-UUID: a09119f468264323b24f2d11eb8a49c4-20191023
+X-UUID: a09119f468264323b24f2d11eb8a49c4-20191023
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <bibby.hsieh@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 662657021; Wed, 23 Oct 2019 21:27:52 -0800
-Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
+ with ESMTP id 1204759718; Wed, 23 Oct 2019 21:27:52 -0800
+Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 23 Oct 2019 22:27:40 -0700
+ 15.0.1395.4; Wed, 23 Oct 2019 22:27:33 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 24 Oct 2019 13:27:31 +0800
+ mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 24 Oct 2019 13:27:32 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
  Frontend Transport; Thu, 24 Oct 2019 13:27:33 +0800
@@ -41,17 +41,18 @@ From: Bibby Hsieh <bibby.hsieh@mediatek.com>
 To: Jassi Brar <jassisinghbrar@gmail.com>, Matthias Brugger
  <matthias.bgg@gmail.com>, Rob Herring <robh+dt@kernel.org>, CK HU
  <ck.hu@mediatek.com>
-Subject: [PATCH v16 0/5] support gce on mt8183 platform
-Date: Thu, 24 Oct 2019 13:27:27 +0800
-Message-ID: <20191024052732.7767-1-bibby.hsieh@mediatek.com>
+Subject: [PATCH v16 1/5] soc: mediatek: cmdq: remove OR opertaion from err
+ return
+Date: Thu, 24 Oct 2019 13:27:28 +0800
+Message-ID: <20191024052732.7767-2-bibby.hsieh@mediatek.com>
 X-Mailer: git-send-email 2.18.0
+In-Reply-To: <20191024052732.7767-1-bibby.hsieh@mediatek.com>
+References: <20191024052732.7767-1-bibby.hsieh@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: B039364EEA4D0CD98FA660FC5F352C786E5CD3E32FC419F5E3E4B8E5AE8D9CE92000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_222805_064047_6F9A19E0 
-X-CRM114-Status: UNSURE (   6.73  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191023_222803_320641_E2FB0FDD 
+X-CRM114-Status: GOOD (  10.51  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -83,36 +84,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Changes since v15:
- - rebase onto 5.4-rc1
- - rollback the v14 change
- - add a patch to fixup the combination of return value
+That make debugging confuseidly when we OR two error return number.
 
-Changes since v14:
- - change input argument as pointer in append_commend()
+Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+---
+ drivers/soc/mediatek/mtk-cmdq-helper.c | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
 
-Changes since v13:
- - separate poll function as poll w/ & w/o mask function
- - directly pass inst into append_command function instead
-   of returns a pointer
- - fixup coding style
- - rebase onto 5.3-rc1
-
-[... snip ...]
-
-Bibby Hsieh (5):
-  soc: mediatek: cmdq: remove OR opertaion from err return
-  soc: mediatek: cmdq: define the instruction struct
-  soc: mediatek: cmdq: add polling function
-  soc: mediatek: cmdq: add cmdq_dev_get_client_reg function
-  arm64: dts: add gce node for mt8183
-
- arch/arm64/boot/dts/mediatek/mt8183.dtsi |  10 ++
- drivers/soc/mediatek/mtk-cmdq-helper.c   | 146 +++++++++++++++++++----
- include/linux/mailbox/mtk-cmdq-mailbox.h |  11 ++
- include/linux/soc/mediatek/mtk-cmdq.h    |  53 ++++++++
- 4 files changed, 194 insertions(+), 26 deletions(-)
-
+diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
+index 7aa0517ff2f3..5ea509e86488 100644
+--- a/drivers/soc/mediatek/mtk-cmdq-helper.c
++++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
+@@ -149,13 +149,16 @@ int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u8 subsys,
+ 			u16 offset, u32 value, u32 mask)
+ {
+ 	u32 offset_mask = offset;
+-	int err = 0;
++	int err;
+ 
+ 	if (mask != 0xffffffff) {
+ 		err = cmdq_pkt_append_command(pkt, CMDQ_CODE_MASK, 0, ~mask);
++		if (err < 0)
++			return err;
++
+ 		offset_mask |= CMDQ_WRITE_ENABLE_MASK;
+ 	}
+-	err |= cmdq_pkt_write(pkt, value, subsys, offset_mask);
++	err = cmdq_pkt_write(pkt, value, subsys, offset_mask);
+ 
+ 	return err;
+ }
+@@ -197,9 +200,11 @@ static int cmdq_pkt_finalize(struct cmdq_pkt *pkt)
+ 
+ 	/* insert EOC and generate IRQ for each command iteration */
+ 	err = cmdq_pkt_append_command(pkt, CMDQ_CODE_EOC, 0, CMDQ_EOC_IRQ_EN);
++	if (err < 0)
++		return err;
+ 
+ 	/* JUMP to end */
+-	err |= cmdq_pkt_append_command(pkt, CMDQ_CODE_JUMP, 0, CMDQ_JUMP_PASS);
++	err = cmdq_pkt_append_command(pkt, CMDQ_CODE_JUMP, 0, CMDQ_JUMP_PASS);
+ 
+ 	return err;
+ }
 -- 
 2.18.0
 
