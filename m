@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E07F0E3440
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 15:32:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3D4EE343F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 15:31:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VVr+4vb+X/g6/AFopNOJMf33eCMNJe2/q5ul3Vcs2yA=; b=NHiSOy67EgTDsY
-	dcKYZlsW/RUkrYGJpMh78/YZ7mSdyVJP1NBS8BC1Z1bptrQHaM3as6rx+WRxFp3qS+7E7xuEYDRsp
-	fVDSeS6wZ6qf8pQBo6FQcK4WD8UNWmCh9CcGVvrnwUItdP+My2XS1lrHRWb98f6ppdan8e6Ng/BHi
-	1pcuM0EgxoVcvMc6gPhFdeXlxvtNbfifsY0szfv6FcWR/ww8UI/tZneObYewTaJGVKg+rBTNB9zUd
-	EXgSQQjGrnhTld5tO9X0/bLrCOTsGYuf2N/mrjoFVjMU9PYy1dcK1E/j6U3ZFMGC1O93ZBe0SSws5
-	Z/c9AITd6IPmkGZ98KLA==;
+	List-Owner; bh=9icWHljYnNoniP0lEymaflzGf4NW6iG1pDy5NI6zP8o=; b=Oc56PgHn2wBmpj
+	9OOnMGQXAerkKLfC4Zy3TAa3PKwnEVvOR683UsQkUg4flT9SiySy0YIhgVh4NMhMulDPJ+sYiSTiw
+	zqCz4JxRy+95+oPgXtohBauaB5Ua/veVn85lrIbqJTBEBqWpmNI4Z29r1g2CjaVyw7EQq0pbAquip
+	twK7tV3tLYq0RitojGmv/OksRUqdabCsUSRW+mmSJPZklaF68gcluDMp6TMWyT8oP9sOvhNxA6xOy
+	wxU9z7m0uvQ0Df4AbUhe8msjoqhHy2aUX1s5Xa/D6/dW63cQ852gplIRSus39LthnHO04ZQSKgoRI
+	sCo1cv2V/XeIT2B5xLQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNdDj-0000QW-N8; Thu, 24 Oct 2019 13:32:07 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1iNdDN-0000Bk-9S; Thu, 24 Oct 2019 13:31:45 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNd6F-0000ki-Lc
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 13:24:34 +0000
-Received: by mail-wm1-x344.google.com with SMTP id g24so2827750wmh.5
+ id 1iNd6H-0000lE-1X
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 13:24:33 +0000
+Received: by mail-wm1-x343.google.com with SMTP id q70so2854198wme.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 24 Oct 2019 06:24:23 -0700 (PDT)
+ Thu, 24 Oct 2019 06:24:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=dIBlYIM7JpanSQ8gUz4gqfgKYH0bGpfP4NHGwTwYVtE=;
- b=xAAuv74DGFbtuiS42g2b3ShMd+MW1t6cixbUTJR/hv1OSmwBV0220c9cbhq7VbH3Dv
- wRQQjhERHLexZTH3H6S3wyLnq+Pu0HwtdgRZYrL4K1A/2J8qTQm1s3U1qZRpCv2WwKgf
- 1NjKTDT+yNYFf7xKYeMC+TS0y03QDTqyBgcC9NwHj4WDdIiH3QB21y6p2qsdPxl6WfvO
- rgu3Zj0ZjX4O0QoEcQwakNO9g7XM9tr/Xc8iHzCx21M7NCuvF8EMqOy6o+9b79Z6/xJd
- Ko40c0gRqeaZLXA9XIuePLPXV8byum7gs/PA23C1H84LnNqUgm/g+uOR/1clklywoc9S
- kJAQ==
+ bh=2zqT7OVVd7qCJ3vg1grCGYRmo9cdTUamZFK4JKrRmk0=;
+ b=KHMl2DH15HbmBoJrw3Uh/3Qh9WLw7uKboIUSfzTpWCi3bsXlyrbyAdRcY6VH/sW6mW
+ t90EQpPB3a+rqjGQ6BlwtHCx9rzDA5EF9mHCeDFtdVPTXaQ+IfqZEr17K1zDgvkUKHot
+ d8gp2oi+yHJMaMqO8N/j4w7UUj9REhz8noC24Sqr5uA0PUOKcQSOGzT+EE0nfoFLtAxt
+ fmffNxeyYrHMFYYlSwwhrGZUJqdMIOtHv6FBDWvBO+0cKyFzDk/HpbYSMrLVZZtOnJQv
+ 2K3T+SawAbSS9HFjvXjjPKpgejpGvhGra2nWE9CjOXUBSrLQSX2cHVEhq9eV3B4r+BBK
+ RTkg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=dIBlYIM7JpanSQ8gUz4gqfgKYH0bGpfP4NHGwTwYVtE=;
- b=IGvheDxhOB1ID7+A//QzM06jiFMz2c/XiLCkbx6MbOphFOPWjFgVjGgp+428pDftv4
- nHY9/k5CsdjSkJSjfbWRe5DIe7YLRnPS9E+I/MRcHY/NlDC8QjWikUQWtwua+QdYlamz
- c7uYm6QCyyFs3gOsW6w5F7SEhlhKkGf8ZK++srT0t1FDkea71cnlxpE3pAH3NlPdLfiv
- 5eJrwjbaxuPTOXBBqAIrgL+QC1flZX40IgQhSwrVQlOfryyrQcSabEKYfQXNR4+VPs8f
- BYjnAch9KDxLAq3ygBa+2GMkQXvPej4eSYtPDWWEXuVHbwYnmCgZMMmnS+M+ksn5np9z
- qpmQ==
-X-Gm-Message-State: APjAAAWL7pW6a4ZgIYEiJ0TyF28/PNeb+ITuPN8zOg1MI1Ahn/08OHK+
- Tcgdskvg0cMZ/Pv8zEvLUBwrBg==
-X-Google-Smtp-Source: APXvYqyNjcrZ/x+Sbl16sipQ+/QJfg2XZ2SZAi8f02FaaS1hGEtzd+akqQfvZPajIwrMjxbuEldHwg==
-X-Received: by 2002:a1c:49c2:: with SMTP id w185mr4782203wma.16.1571923460842; 
- Thu, 24 Oct 2019 06:24:20 -0700 (PDT)
+ bh=2zqT7OVVd7qCJ3vg1grCGYRmo9cdTUamZFK4JKrRmk0=;
+ b=SJqM+xWqj3Tzfldhl8zzv7s7ytBOyKlECaLX5YTA5pqb1a0wWKe4owcUvpjcJ5F6IV
+ nJ168HZiWO6E/5B3GgLmxq56+iH9hxIN2J87U6OmOv+BhBmVMF79MutoRqGQDxae4YCM
+ z2Me4j2uv02a6l4m4hK6Lwb2INUef0ea1j6sefWsHqZrR/DbSfxFTKs5/TW7yhSUu9Cw
+ i2+/4KpG/ZreUWILghuqRk9md7WTWwJEddbDb067S3ulWYYzhqYS6qUjF30rNuDpv/Di
+ amhuk1tYBHOAF8RwdJCn19Mm5Z2x0JI1JYmXV/gmbawKai/a/SBG1jgdssNsH1Jwb0OM
+ MAsQ==
+X-Gm-Message-State: APjAAAVF/avo4jCExdZ3XTo8Ud/2EkVVaiJQjFneYffHTTjoZmqNVyR3
+ eXzU748NGDdK58RhSUR/KowMnw==
+X-Google-Smtp-Source: APXvYqweHwjbzSFyH7cu4TKFUXp44PkF6f4etNOZDxwf9f5A+Tu/WsuBvDEvXYy/qcTwLVf/Ntsqrw==
+X-Received: by 2002:a1c:38c3:: with SMTP id f186mr5036221wma.58.1571923462491; 
+ Thu, 24 Oct 2019 06:24:22 -0700 (PDT)
 Received: from localhost.localdomain
  (laubervilliers-657-1-83-120.w92-154.abo.wanadoo.fr. [92.154.90.120])
- by smtp.gmail.com with ESMTPSA id e3sm2346310wme.36.2019.10.24.06.24.19
+ by smtp.gmail.com with ESMTPSA id e3sm2346310wme.36.2019.10.24.06.24.21
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 24 Oct 2019 06:24:19 -0700 (PDT)
+ Thu, 24 Oct 2019 06:24:21 -0700 (PDT)
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 To: linux-crypto@vger.kernel.org
-Subject: [PATCH v2 19/27] crypto: picoxcell - switch to skcipher API
-Date: Thu, 24 Oct 2019 15:23:37 +0200
-Message-Id: <20191024132345.5236-20-ard.biesheuvel@linaro.org>
+Subject: [PATCH v2 20/27] crypto: qce - switch to skcipher API
+Date: Thu, 24 Oct 2019 15:23:38 +0200
+Message-Id: <20191024132345.5236-21-ard.biesheuvel@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191024132345.5236-1-ard.biesheuvel@linaro.org>
 References: <20191024132345.5236-1-ard.biesheuvel@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_062424_030797_0A130715 
-X-CRM114-Status: GOOD (  16.96  )
+X-CRM114-CacheID: sfid-20191024_062425_134328_89EF89FF 
+X-CRM114-Status: GOOD (  18.51  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -99,8 +99,8 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Herbert Xu <herbert@gondor.apana.org.au>,
  Eric Biggers <ebiggers@google.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Jamie Iles <jamie@jamieiles.com>, "David S. Miller" <davem@davemloft.net>,
- linux-arm-kernel@lists.infradead.org
+ Stanimir Varbanov <stanimir.varbanov@linaro.org>,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -116,659 +116,478 @@ code to expose [a]blkciphers via the skcipher API.
 So switch this driver to the skcipher API, allowing us to finally drop the
 blkcipher code in the near future.
 
-Cc: Jamie Iles <jamie@jamieiles.com>
+Cc: Stanimir Varbanov <stanimir.varbanov@linaro.org>
 Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 ---
- drivers/crypto/picoxcell_crypto.c | 386 ++++++++++----------
- 1 file changed, 184 insertions(+), 202 deletions(-)
+ drivers/crypto/qce/Makefile                     |   2 +-
+ drivers/crypto/qce/cipher.h                     |   8 +-
+ drivers/crypto/qce/common.c                     |  12 +-
+ drivers/crypto/qce/common.h                     |   3 +-
+ drivers/crypto/qce/core.c                       |   2 +-
+ drivers/crypto/qce/{ablkcipher.c => skcipher.c} | 172 ++++++++++----------
+ 6 files changed, 100 insertions(+), 99 deletions(-)
 
-diff --git a/drivers/crypto/picoxcell_crypto.c b/drivers/crypto/picoxcell_crypto.c
-index 3cbefb41b099..29da449b3e9e 100644
---- a/drivers/crypto/picoxcell_crypto.c
-+++ b/drivers/crypto/picoxcell_crypto.c
-@@ -134,7 +134,7 @@ struct spacc_engine {
- struct spacc_alg {
- 	unsigned long			ctrl_default;
- 	unsigned long			type;
--	struct crypto_alg		alg;
-+	struct skcipher_alg		alg;
- 	struct spacc_engine		*engine;
- 	struct list_head		entry;
- 	int				key_offs;
-@@ -173,7 +173,7 @@ struct spacc_aead_ctx {
+diff --git a/drivers/crypto/qce/Makefile b/drivers/crypto/qce/Makefile
+index 19a7f899acff..8caa04e1ec43 100644
+--- a/drivers/crypto/qce/Makefile
++++ b/drivers/crypto/qce/Makefile
+@@ -4,4 +4,4 @@ qcrypto-objs := core.o \
+ 		common.o \
+ 		dma.o \
+ 		sha.o \
+-		ablkcipher.o
++		skcipher.o
+diff --git a/drivers/crypto/qce/cipher.h b/drivers/crypto/qce/cipher.h
+index 5cab8f0706a8..7770660bc853 100644
+--- a/drivers/crypto/qce/cipher.h
++++ b/drivers/crypto/qce/cipher.h
+@@ -45,12 +45,12 @@ struct qce_cipher_reqctx {
+ 	unsigned int cryptlen;
+ };
  
- static int spacc_ablk_submit(struct spacc_req *req);
- 
--static inline struct spacc_alg *to_spacc_alg(struct crypto_alg *alg)
-+static inline struct spacc_alg *to_spacc_skcipher(struct skcipher_alg *alg)
+-static inline struct qce_alg_template *to_cipher_tmpl(struct crypto_tfm *tfm)
++static inline struct qce_alg_template *to_cipher_tmpl(struct crypto_skcipher *tfm)
  {
- 	return alg ? container_of(alg, struct spacc_alg, alg) : NULL;
- }
-@@ -733,13 +733,13 @@ static void spacc_aead_cra_exit(struct crypto_aead *tfm)
-  * Set the DES key for a block cipher transform. This also performs weak key
-  * checking if the transform has requested it.
-  */
--static int spacc_des_setkey(struct crypto_ablkcipher *cipher, const u8 *key,
-+static int spacc_des_setkey(struct crypto_skcipher *cipher, const u8 *key,
- 			    unsigned int len)
- {
--	struct spacc_ablk_ctx *ctx = crypto_ablkcipher_ctx(cipher);
-+	struct spacc_ablk_ctx *ctx = crypto_skcipher_ctx(cipher);
- 	int err;
- 
--	err = verify_ablkcipher_des_key(cipher, key);
-+	err = verify_skcipher_des_key(cipher, key);
- 	if (err)
- 		return err;
- 
-@@ -753,13 +753,13 @@ static int spacc_des_setkey(struct crypto_ablkcipher *cipher, const u8 *key,
-  * Set the 3DES key for a block cipher transform. This also performs weak key
-  * checking if the transform has requested it.
-  */
--static int spacc_des3_setkey(struct crypto_ablkcipher *cipher, const u8 *key,
-+static int spacc_des3_setkey(struct crypto_skcipher *cipher, const u8 *key,
- 			     unsigned int len)
- {
--	struct spacc_ablk_ctx *ctx = crypto_ablkcipher_ctx(cipher);
-+	struct spacc_ablk_ctx *ctx = crypto_skcipher_ctx(cipher);
- 	int err;
- 
--	err = verify_ablkcipher_des3_key(cipher, key);
-+	err = verify_skcipher_des3_key(cipher, key);
- 	if (err)
- 		return err;
- 
-@@ -773,15 +773,15 @@ static int spacc_des3_setkey(struct crypto_ablkcipher *cipher, const u8 *key,
-  * Set the key for an AES block cipher. Some key lengths are not supported in
-  * hardware so this must also check whether a fallback is needed.
-  */
--static int spacc_aes_setkey(struct crypto_ablkcipher *cipher, const u8 *key,
-+static int spacc_aes_setkey(struct crypto_skcipher *cipher, const u8 *key,
- 			    unsigned int len)
- {
--	struct crypto_tfm *tfm = crypto_ablkcipher_tfm(cipher);
-+	struct crypto_tfm *tfm = crypto_skcipher_tfm(cipher);
- 	struct spacc_ablk_ctx *ctx = crypto_tfm_ctx(tfm);
- 	int err = 0;
- 
- 	if (len > AES_MAX_KEY_SIZE) {
--		crypto_ablkcipher_set_flags(cipher, CRYPTO_TFM_RES_BAD_KEY_LEN);
-+		crypto_skcipher_set_flags(cipher, CRYPTO_TFM_RES_BAD_KEY_LEN);
- 		return -EINVAL;
- 	}
- 
-@@ -822,15 +822,15 @@ static int spacc_aes_setkey(struct crypto_ablkcipher *cipher, const u8 *key,
- 	return err;
- }
- 
--static int spacc_kasumi_f8_setkey(struct crypto_ablkcipher *cipher,
-+static int spacc_kasumi_f8_setkey(struct crypto_skcipher *cipher,
- 				  const u8 *key, unsigned int len)
- {
--	struct crypto_tfm *tfm = crypto_ablkcipher_tfm(cipher);
-+	struct crypto_tfm *tfm = crypto_skcipher_tfm(cipher);
- 	struct spacc_ablk_ctx *ctx = crypto_tfm_ctx(tfm);
- 	int err = 0;
- 
- 	if (len > AES_MAX_KEY_SIZE) {
--		crypto_ablkcipher_set_flags(cipher, CRYPTO_TFM_RES_BAD_KEY_LEN);
-+		crypto_skcipher_set_flags(cipher, CRYPTO_TFM_RES_BAD_KEY_LEN);
- 		err = -EINVAL;
- 		goto out;
- 	}
-@@ -844,12 +844,12 @@ static int spacc_kasumi_f8_setkey(struct crypto_ablkcipher *cipher,
- 
- static int spacc_ablk_need_fallback(struct spacc_req *req)
- {
-+	struct skcipher_request *ablk_req = skcipher_request_cast(req->req);
-+	struct crypto_skcipher *tfm = crypto_skcipher_reqtfm(ablk_req);
-+	struct spacc_alg *spacc_alg = to_spacc_skcipher(crypto_skcipher_alg(tfm));
- 	struct spacc_ablk_ctx *ctx;
--	struct crypto_tfm *tfm = req->req->tfm;
--	struct crypto_alg *alg = req->req->tfm->__crt_alg;
--	struct spacc_alg *spacc_alg = to_spacc_alg(alg);
- 
--	ctx = crypto_tfm_ctx(tfm);
-+	ctx = crypto_skcipher_ctx(tfm);
- 
- 	return (spacc_alg->ctrl_default & SPACC_CRYPTO_ALG_MASK) ==
- 			SPA_CTRL_CIPH_ALG_AES &&
-@@ -859,39 +859,39 @@ static int spacc_ablk_need_fallback(struct spacc_req *req)
- 
- static void spacc_ablk_complete(struct spacc_req *req)
- {
--	struct ablkcipher_request *ablk_req = ablkcipher_request_cast(req->req);
-+	struct skcipher_request *ablk_req = skcipher_request_cast(req->req);
- 
- 	if (ablk_req->src != ablk_req->dst) {
- 		spacc_free_ddt(req, req->src_ddt, req->src_addr, ablk_req->src,
--			       ablk_req->nbytes, DMA_TO_DEVICE);
-+			       ablk_req->cryptlen, DMA_TO_DEVICE);
- 		spacc_free_ddt(req, req->dst_ddt, req->dst_addr, ablk_req->dst,
--			       ablk_req->nbytes, DMA_FROM_DEVICE);
-+			       ablk_req->cryptlen, DMA_FROM_DEVICE);
- 	} else
- 		spacc_free_ddt(req, req->dst_ddt, req->dst_addr, ablk_req->dst,
--			       ablk_req->nbytes, DMA_BIDIRECTIONAL);
-+			       ablk_req->cryptlen, DMA_BIDIRECTIONAL);
- 
- 	req->req->complete(req->req, req->result);
- }
- 
- static int spacc_ablk_submit(struct spacc_req *req)
- {
--	struct crypto_tfm *tfm = req->req->tfm;
--	struct spacc_ablk_ctx *ctx = crypto_tfm_ctx(tfm);
--	struct ablkcipher_request *ablk_req = ablkcipher_request_cast(req->req);
--	struct crypto_alg *alg = req->req->tfm->__crt_alg;
--	struct spacc_alg *spacc_alg = to_spacc_alg(alg);
-+	struct skcipher_request *ablk_req = skcipher_request_cast(req->req);
-+	struct crypto_skcipher *tfm = crypto_skcipher_reqtfm(ablk_req);
-+	struct skcipher_alg *alg = crypto_skcipher_alg(tfm);
-+	struct spacc_alg *spacc_alg = to_spacc_skcipher(alg);
-+	struct spacc_ablk_ctx *ctx = crypto_skcipher_ctx(tfm);
- 	struct spacc_engine *engine = ctx->generic.engine;
- 	u32 ctrl;
- 
- 	req->ctx_id = spacc_load_ctx(&ctx->generic, ctx->key,
--		ctx->key_len, ablk_req->info, alg->cra_ablkcipher.ivsize,
-+		ctx->key_len, ablk_req->iv, alg->ivsize,
- 		NULL, 0);
- 
- 	writel(req->src_addr, engine->regs + SPA_SRC_PTR_REG_OFFSET);
- 	writel(req->dst_addr, engine->regs + SPA_DST_PTR_REG_OFFSET);
- 	writel(0, engine->regs + SPA_OFFSET_REG_OFFSET);
- 
--	writel(ablk_req->nbytes, engine->regs + SPA_PROC_LEN_REG_OFFSET);
-+	writel(ablk_req->cryptlen, engine->regs + SPA_PROC_LEN_REG_OFFSET);
- 	writel(0, engine->regs + SPA_ICV_OFFSET_REG_OFFSET);
- 	writel(0, engine->regs + SPA_AUX_INFO_REG_OFFSET);
- 	writel(0, engine->regs + SPA_AAD_LEN_REG_OFFSET);
-@@ -907,11 +907,11 @@ static int spacc_ablk_submit(struct spacc_req *req)
- 	return -EINPROGRESS;
- }
- 
--static int spacc_ablk_do_fallback(struct ablkcipher_request *req,
-+static int spacc_ablk_do_fallback(struct skcipher_request *req,
- 				  unsigned alg_type, bool is_encrypt)
- {
- 	struct crypto_tfm *old_tfm =
--	    crypto_ablkcipher_tfm(crypto_ablkcipher_reqtfm(req));
-+	    crypto_skcipher_tfm(crypto_skcipher_reqtfm(req));
- 	struct spacc_ablk_ctx *ctx = crypto_tfm_ctx(old_tfm);
- 	SYNC_SKCIPHER_REQUEST_ON_STACK(subreq, ctx->sw_cipher);
- 	int err;
-@@ -924,7 +924,7 @@ static int spacc_ablk_do_fallback(struct ablkcipher_request *req,
- 	skcipher_request_set_sync_tfm(subreq, ctx->sw_cipher);
- 	skcipher_request_set_callback(subreq, req->base.flags, NULL, NULL);
- 	skcipher_request_set_crypt(subreq, req->src, req->dst,
--				   req->nbytes, req->info);
-+				   req->cryptlen, req->iv);
- 	err = is_encrypt ? crypto_skcipher_encrypt(subreq) :
- 			   crypto_skcipher_decrypt(subreq);
- 	skcipher_request_zero(subreq);
-@@ -932,12 +932,13 @@ static int spacc_ablk_do_fallback(struct ablkcipher_request *req,
- 	return err;
- }
- 
--static int spacc_ablk_setup(struct ablkcipher_request *req, unsigned alg_type,
-+static int spacc_ablk_setup(struct skcipher_request *req, unsigned alg_type,
- 			    bool is_encrypt)
- {
--	struct crypto_alg *alg = req->base.tfm->__crt_alg;
--	struct spacc_engine *engine = to_spacc_alg(alg)->engine;
--	struct spacc_req *dev_req = ablkcipher_request_ctx(req);
-+	struct crypto_skcipher *tfm = crypto_skcipher_reqtfm(req);
-+	struct skcipher_alg *alg = crypto_skcipher_alg(tfm);
-+	struct spacc_engine *engine = to_spacc_skcipher(alg)->engine;
-+	struct spacc_req *dev_req = skcipher_request_ctx(req);
- 	unsigned long flags;
- 	int err = -ENOMEM;
- 
-@@ -956,17 +957,17 @@ static int spacc_ablk_setup(struct ablkcipher_request *req, unsigned alg_type,
- 	 */
- 	if (req->src != req->dst) {
- 		dev_req->src_ddt = spacc_sg_to_ddt(engine, req->src,
--			req->nbytes, DMA_TO_DEVICE, &dev_req->src_addr);
-+			req->cryptlen, DMA_TO_DEVICE, &dev_req->src_addr);
- 		if (!dev_req->src_ddt)
- 			goto out;
- 
- 		dev_req->dst_ddt = spacc_sg_to_ddt(engine, req->dst,
--			req->nbytes, DMA_FROM_DEVICE, &dev_req->dst_addr);
-+			req->cryptlen, DMA_FROM_DEVICE, &dev_req->dst_addr);
- 		if (!dev_req->dst_ddt)
- 			goto out_free_src;
- 	} else {
- 		dev_req->dst_ddt = spacc_sg_to_ddt(engine, req->dst,
--			req->nbytes, DMA_BIDIRECTIONAL, &dev_req->dst_addr);
-+			req->cryptlen, DMA_BIDIRECTIONAL, &dev_req->dst_addr);
- 		if (!dev_req->dst_ddt)
- 			goto out;
- 
-@@ -999,65 +1000,65 @@ static int spacc_ablk_setup(struct ablkcipher_request *req, unsigned alg_type,
- 
- out_free_ddts:
- 	spacc_free_ddt(dev_req, dev_req->dst_ddt, dev_req->dst_addr, req->dst,
--		       req->nbytes, req->src == req->dst ?
-+		       req->cryptlen, req->src == req->dst ?
- 		       DMA_BIDIRECTIONAL : DMA_FROM_DEVICE);
- out_free_src:
- 	if (req->src != req->dst)
- 		spacc_free_ddt(dev_req, dev_req->src_ddt, dev_req->src_addr,
--			       req->src, req->nbytes, DMA_TO_DEVICE);
-+			       req->src, req->cryptlen, DMA_TO_DEVICE);
- out:
- 	return err;
- }
- 
--static int spacc_ablk_cra_init(struct crypto_tfm *tfm)
-+static int spacc_ablk_init_tfm(struct crypto_skcipher *tfm)
- {
--	struct spacc_ablk_ctx *ctx = crypto_tfm_ctx(tfm);
 -	struct crypto_alg *alg = tfm->__crt_alg;
--	struct spacc_alg *spacc_alg = to_spacc_alg(alg);
-+	struct spacc_ablk_ctx *ctx = crypto_skcipher_ctx(tfm);
+-	return container_of(alg, struct qce_alg_template, alg.crypto);
 +	struct skcipher_alg *alg = crypto_skcipher_alg(tfm);
-+	struct spacc_alg *spacc_alg = to_spacc_skcipher(alg);
- 	struct spacc_engine *engine = spacc_alg->engine;
++	return container_of(alg, struct qce_alg_template, alg.skcipher);
+ }
  
- 	ctx->generic.flags = spacc_alg->type;
- 	ctx->generic.engine = engine;
--	if (alg->cra_flags & CRYPTO_ALG_NEED_FALLBACK) {
-+	if (alg->base.cra_flags & CRYPTO_ALG_NEED_FALLBACK) {
- 		ctx->sw_cipher = crypto_alloc_sync_skcipher(
--			alg->cra_name, 0, CRYPTO_ALG_NEED_FALLBACK);
-+			alg->base.cra_name, 0, CRYPTO_ALG_NEED_FALLBACK);
- 		if (IS_ERR(ctx->sw_cipher)) {
- 			dev_warn(engine->dev, "failed to allocate fallback for %s\n",
--				 alg->cra_name);
-+				 alg->base.cra_name);
- 			return PTR_ERR(ctx->sw_cipher);
- 		}
- 	}
- 	ctx->generic.key_offs = spacc_alg->key_offs;
- 	ctx->generic.iv_offs = spacc_alg->iv_offs;
+-extern const struct qce_algo_ops ablkcipher_ops;
++extern const struct qce_algo_ops skcipher_ops;
  
--	tfm->crt_ablkcipher.reqsize = sizeof(struct spacc_req);
-+	crypto_skcipher_set_reqsize(tfm, sizeof(struct spacc_req));
- 
+ #endif /* _CIPHER_H_ */
+diff --git a/drivers/crypto/qce/common.c b/drivers/crypto/qce/common.c
+index 3fb510164326..da1188abc9ba 100644
+--- a/drivers/crypto/qce/common.c
++++ b/drivers/crypto/qce/common.c
+@@ -304,13 +304,13 @@ static int qce_setup_regs_ahash(struct crypto_async_request *async_req,
  	return 0;
  }
  
--static void spacc_ablk_cra_exit(struct crypto_tfm *tfm)
-+static void spacc_ablk_exit_tfm(struct crypto_skcipher *tfm)
+-static int qce_setup_regs_ablkcipher(struct crypto_async_request *async_req,
++static int qce_setup_regs_skcipher(struct crypto_async_request *async_req,
+ 				     u32 totallen, u32 offset)
  {
--	struct spacc_ablk_ctx *ctx = crypto_tfm_ctx(tfm);
-+	struct spacc_ablk_ctx *ctx = crypto_skcipher_ctx(tfm);
+-	struct ablkcipher_request *req = ablkcipher_request_cast(async_req);
+-	struct qce_cipher_reqctx *rctx = ablkcipher_request_ctx(req);
++	struct skcipher_request *req = skcipher_request_cast(async_req);
++	struct qce_cipher_reqctx *rctx = skcipher_request_ctx(req);
+ 	struct qce_cipher_ctx *ctx = crypto_tfm_ctx(async_req->tfm);
+-	struct qce_alg_template *tmpl = to_cipher_tmpl(async_req->tfm);
++	struct qce_alg_template *tmpl = to_cipher_tmpl(crypto_skcipher_reqtfm(req));
+ 	struct qce_device *qce = tmpl->qce;
+ 	__be32 enckey[QCE_MAX_CIPHER_KEY_SIZE / sizeof(__be32)] = {0};
+ 	__be32 enciv[QCE_MAX_IV_SIZE / sizeof(__be32)] = {0};
+@@ -389,8 +389,8 @@ int qce_start(struct crypto_async_request *async_req, u32 type, u32 totallen,
+ 	      u32 offset)
+ {
+ 	switch (type) {
+-	case CRYPTO_ALG_TYPE_ABLKCIPHER:
+-		return qce_setup_regs_ablkcipher(async_req, totallen, offset);
++	case CRYPTO_ALG_TYPE_SKCIPHER:
++		return qce_setup_regs_skcipher(async_req, totallen, offset);
+ 	case CRYPTO_ALG_TYPE_AHASH:
+ 		return qce_setup_regs_ahash(async_req, totallen, offset);
+ 	default:
+diff --git a/drivers/crypto/qce/common.h b/drivers/crypto/qce/common.h
+index 47fb523357ac..282d4317470d 100644
+--- a/drivers/crypto/qce/common.h
++++ b/drivers/crypto/qce/common.h
+@@ -10,6 +10,7 @@
+ #include <linux/types.h>
+ #include <crypto/aes.h>
+ #include <crypto/hash.h>
++#include <crypto/internal/skcipher.h>
  
- 	crypto_free_sync_skcipher(ctx->sw_cipher);
+ /* key size in bytes */
+ #define QCE_SHA_HMAC_KEY_SIZE		64
+@@ -79,7 +80,7 @@ struct qce_alg_template {
+ 	unsigned long alg_flags;
+ 	const u32 *std_iv;
+ 	union {
+-		struct crypto_alg crypto;
++		struct skcipher_alg skcipher;
+ 		struct ahash_alg ahash;
+ 	} alg;
+ 	struct qce_device *qce;
+diff --git a/drivers/crypto/qce/core.c b/drivers/crypto/qce/core.c
+index 08d4ce3bfddf..0a44a6eeacf5 100644
+--- a/drivers/crypto/qce/core.c
++++ b/drivers/crypto/qce/core.c
+@@ -22,7 +22,7 @@
+ #define QCE_QUEUE_LENGTH	1
+ 
+ static const struct qce_algo_ops *qce_ops[] = {
+-	&ablkcipher_ops,
++	&skcipher_ops,
+ 	&ahash_ops,
+ };
+ 
+diff --git a/drivers/crypto/qce/ablkcipher.c b/drivers/crypto/qce/skcipher.c
+similarity index 61%
+rename from drivers/crypto/qce/ablkcipher.c
+rename to drivers/crypto/qce/skcipher.c
+index f0b59a8bbed0..fee07323f8f9 100644
+--- a/drivers/crypto/qce/ablkcipher.c
++++ b/drivers/crypto/qce/skcipher.c
+@@ -12,14 +12,14 @@
+ 
+ #include "cipher.h"
+ 
+-static LIST_HEAD(ablkcipher_algs);
++static LIST_HEAD(skcipher_algs);
+ 
+-static void qce_ablkcipher_done(void *data)
++static void qce_skcipher_done(void *data)
+ {
+ 	struct crypto_async_request *async_req = data;
+-	struct ablkcipher_request *req = ablkcipher_request_cast(async_req);
+-	struct qce_cipher_reqctx *rctx = ablkcipher_request_ctx(req);
+-	struct qce_alg_template *tmpl = to_cipher_tmpl(async_req->tfm);
++	struct skcipher_request *req = skcipher_request_cast(async_req);
++	struct qce_cipher_reqctx *rctx = skcipher_request_ctx(req);
++	struct qce_alg_template *tmpl = to_cipher_tmpl(crypto_skcipher_reqtfm(req));
+ 	struct qce_device *qce = tmpl->qce;
+ 	enum dma_data_direction dir_src, dir_dst;
+ 	u32 status;
+@@ -32,7 +32,7 @@ static void qce_ablkcipher_done(void *data)
+ 
+ 	error = qce_dma_terminate_all(&qce->dma);
+ 	if (error)
+-		dev_dbg(qce->dev, "ablkcipher dma termination error (%d)\n",
++		dev_dbg(qce->dev, "skcipher dma termination error (%d)\n",
+ 			error);
+ 
+ 	if (diff_dst)
+@@ -43,18 +43,18 @@ static void qce_ablkcipher_done(void *data)
+ 
+ 	error = qce_check_status(qce, &status);
+ 	if (error < 0)
+-		dev_dbg(qce->dev, "ablkcipher operation error (%x)\n", status);
++		dev_dbg(qce->dev, "skcipher operation error (%x)\n", status);
+ 
+ 	qce->async_req_done(tmpl->qce, error);
  }
  
--static int spacc_ablk_encrypt(struct ablkcipher_request *req)
-+static int spacc_ablk_encrypt(struct skcipher_request *req)
+ static int
+-qce_ablkcipher_async_req_handle(struct crypto_async_request *async_req)
++qce_skcipher_async_req_handle(struct crypto_async_request *async_req)
  {
--	struct crypto_ablkcipher *cipher = crypto_ablkcipher_reqtfm(req);
--	struct crypto_tfm *tfm = crypto_ablkcipher_tfm(cipher);
--	struct spacc_alg *alg = to_spacc_alg(tfm->__crt_alg);
-+	struct crypto_skcipher *cipher = crypto_skcipher_reqtfm(req);
-+	struct skcipher_alg *alg = crypto_skcipher_alg(cipher);
-+	struct spacc_alg *spacc_alg = to_spacc_skcipher(alg);
+-	struct ablkcipher_request *req = ablkcipher_request_cast(async_req);
+-	struct qce_cipher_reqctx *rctx = ablkcipher_request_ctx(req);
+-	struct crypto_ablkcipher *ablkcipher = crypto_ablkcipher_reqtfm(req);
+-	struct qce_alg_template *tmpl = to_cipher_tmpl(async_req->tfm);
++	struct skcipher_request *req = skcipher_request_cast(async_req);
++	struct qce_cipher_reqctx *rctx = skcipher_request_ctx(req);
++	struct crypto_skcipher *skcipher = crypto_skcipher_reqtfm(req);
++	struct qce_alg_template *tmpl = to_cipher_tmpl(crypto_skcipher_reqtfm(req));
+ 	struct qce_device *qce = tmpl->qce;
+ 	enum dma_data_direction dir_src, dir_dst;
+ 	struct scatterlist *sg;
+@@ -62,17 +62,17 @@ qce_ablkcipher_async_req_handle(struct crypto_async_request *async_req)
+ 	gfp_t gfp;
+ 	int ret;
  
--	return spacc_ablk_setup(req, alg->type, 1);
-+	return spacc_ablk_setup(req, spacc_alg->type, 1);
+-	rctx->iv = req->info;
+-	rctx->ivsize = crypto_ablkcipher_ivsize(ablkcipher);
+-	rctx->cryptlen = req->nbytes;
++	rctx->iv = req->iv;
++	rctx->ivsize = crypto_skcipher_ivsize(skcipher);
++	rctx->cryptlen = req->cryptlen;
+ 
+ 	diff_dst = (req->src != req->dst) ? true : false;
+ 	dir_src = diff_dst ? DMA_TO_DEVICE : DMA_BIDIRECTIONAL;
+ 	dir_dst = diff_dst ? DMA_FROM_DEVICE : DMA_BIDIRECTIONAL;
+ 
+-	rctx->src_nents = sg_nents_for_len(req->src, req->nbytes);
++	rctx->src_nents = sg_nents_for_len(req->src, req->cryptlen);
+ 	if (diff_dst)
+-		rctx->dst_nents = sg_nents_for_len(req->dst, req->nbytes);
++		rctx->dst_nents = sg_nents_for_len(req->dst, req->cryptlen);
+ 	else
+ 		rctx->dst_nents = rctx->src_nents;
+ 	if (rctx->src_nents < 0) {
+@@ -125,13 +125,13 @@ qce_ablkcipher_async_req_handle(struct crypto_async_request *async_req)
+ 
+ 	ret = qce_dma_prep_sgs(&qce->dma, rctx->src_sg, rctx->src_nents,
+ 			       rctx->dst_sg, rctx->dst_nents,
+-			       qce_ablkcipher_done, async_req);
++			       qce_skcipher_done, async_req);
+ 	if (ret)
+ 		goto error_unmap_src;
+ 
+ 	qce_dma_issue_pending(&qce->dma);
+ 
+-	ret = qce_start(async_req, tmpl->crypto_alg_type, req->nbytes, 0);
++	ret = qce_start(async_req, tmpl->crypto_alg_type, req->cryptlen, 0);
+ 	if (ret)
+ 		goto error_terminate;
+ 
+@@ -149,10 +149,10 @@ qce_ablkcipher_async_req_handle(struct crypto_async_request *async_req)
+ 	return ret;
  }
  
--static int spacc_ablk_decrypt(struct ablkcipher_request *req)
-+static int spacc_ablk_decrypt(struct skcipher_request *req)
+-static int qce_ablkcipher_setkey(struct crypto_ablkcipher *ablk, const u8 *key,
++static int qce_skcipher_setkey(struct crypto_skcipher *ablk, const u8 *key,
+ 				 unsigned int keylen)
  {
--	struct crypto_ablkcipher *cipher = crypto_ablkcipher_reqtfm(req);
--	struct crypto_tfm *tfm = crypto_ablkcipher_tfm(cipher);
--	struct spacc_alg *alg = to_spacc_alg(tfm->__crt_alg);
-+	struct crypto_skcipher *cipher = crypto_skcipher_reqtfm(req);
-+	struct skcipher_alg *alg = crypto_skcipher_alg(cipher);
-+	struct spacc_alg *spacc_alg = to_spacc_skcipher(alg);
+-	struct crypto_tfm *tfm = crypto_ablkcipher_tfm(ablk);
++	struct crypto_tfm *tfm = crypto_skcipher_tfm(ablk);
+ 	struct qce_cipher_ctx *ctx = crypto_tfm_ctx(tfm);
+ 	int ret;
  
--	return spacc_ablk_setup(req, alg->type, 0);
-+	return spacc_ablk_setup(req, spacc_alg->type, 0);
+@@ -177,13 +177,13 @@ static int qce_ablkcipher_setkey(struct crypto_ablkcipher *ablk, const u8 *key,
+ 	return ret;
  }
  
- static inline int spacc_fifo_stat_empty(struct spacc_engine *engine)
-@@ -1233,27 +1234,24 @@ static struct spacc_alg ipsec_engine_algs[] = {
- 		.key_offs = 0,
- 		.iv_offs = AES_MAX_KEY_SIZE,
- 		.alg = {
--			.cra_name = "cbc(aes)",
--			.cra_driver_name = "cbc-aes-picoxcell",
--			.cra_priority = SPACC_CRYPTO_ALG_PRIORITY,
--			.cra_flags = CRYPTO_ALG_TYPE_ABLKCIPHER |
--				     CRYPTO_ALG_KERN_DRIVER_ONLY |
--				     CRYPTO_ALG_ASYNC |
--				     CRYPTO_ALG_NEED_FALLBACK,
--			.cra_blocksize = AES_BLOCK_SIZE,
--			.cra_ctxsize = sizeof(struct spacc_ablk_ctx),
--			.cra_type = &crypto_ablkcipher_type,
--			.cra_module = THIS_MODULE,
--			.cra_ablkcipher = {
--				.setkey = spacc_aes_setkey,
--				.encrypt = spacc_ablk_encrypt,
--				.decrypt = spacc_ablk_decrypt,
--				.min_keysize = AES_MIN_KEY_SIZE,
--				.max_keysize = AES_MAX_KEY_SIZE,
--				.ivsize = AES_BLOCK_SIZE,
--			},
--			.cra_init = spacc_ablk_cra_init,
--			.cra_exit = spacc_ablk_cra_exit,
-+			.base.cra_name		= "cbc(aes)",
-+			.base.cra_driver_name	= "cbc-aes-picoxcell",
-+			.base.cra_priority	= SPACC_CRYPTO_ALG_PRIORITY,
-+			.base.cra_flags		= CRYPTO_ALG_KERN_DRIVER_ONLY |
-+						  CRYPTO_ALG_ASYNC |
-+						  CRYPTO_ALG_NEED_FALLBACK,
-+			.base.cra_blocksize	= AES_BLOCK_SIZE,
-+			.base.cra_ctxsize	= sizeof(struct spacc_ablk_ctx),
-+			.base.cra_module	= THIS_MODULE,
-+
-+			.setkey			= spacc_aes_setkey,
-+			.encrypt 		= spacc_ablk_encrypt,
-+			.decrypt 		= spacc_ablk_decrypt,
-+			.min_keysize 		= AES_MIN_KEY_SIZE,
-+			.max_keysize 		= AES_MAX_KEY_SIZE,
-+			.ivsize			= AES_BLOCK_SIZE,
-+			.init			= spacc_ablk_init_tfm,
-+			.exit			= spacc_ablk_exit_tfm,
- 		},
- 	},
+-static int qce_des_setkey(struct crypto_ablkcipher *ablk, const u8 *key,
++static int qce_des_setkey(struct crypto_skcipher *ablk, const u8 *key,
+ 			  unsigned int keylen)
+ {
+-	struct qce_cipher_ctx *ctx = crypto_ablkcipher_ctx(ablk);
++	struct qce_cipher_ctx *ctx = crypto_skcipher_ctx(ablk);
+ 	int err;
+ 
+-	err = verify_ablkcipher_des_key(ablk, key);
++	err = verify_skcipher_des_key(ablk, key);
+ 	if (err)
+ 		return err;
+ 
+@@ -192,13 +192,13 @@ static int qce_des_setkey(struct crypto_ablkcipher *ablk, const u8 *key,
+ 	return 0;
+ }
+ 
+-static int qce_des3_setkey(struct crypto_ablkcipher *ablk, const u8 *key,
++static int qce_des3_setkey(struct crypto_skcipher *ablk, const u8 *key,
+ 			   unsigned int keylen)
+ {
+-	struct qce_cipher_ctx *ctx = crypto_ablkcipher_ctx(ablk);
++	struct qce_cipher_ctx *ctx = crypto_skcipher_ctx(ablk);
+ 	int err;
+ 
+-	err = verify_ablkcipher_des3_key(ablk, key);
++	err = verify_skcipher_des3_key(ablk, key);
+ 	if (err)
+ 		return err;
+ 
+@@ -207,12 +207,11 @@ static int qce_des3_setkey(struct crypto_ablkcipher *ablk, const u8 *key,
+ 	return 0;
+ }
+ 
+-static int qce_ablkcipher_crypt(struct ablkcipher_request *req, int encrypt)
++static int qce_skcipher_crypt(struct skcipher_request *req, int encrypt)
+ {
+-	struct crypto_tfm *tfm =
+-			crypto_ablkcipher_tfm(crypto_ablkcipher_reqtfm(req));
+-	struct qce_cipher_ctx *ctx = crypto_tfm_ctx(tfm);
+-	struct qce_cipher_reqctx *rctx = ablkcipher_request_ctx(req);
++	struct crypto_skcipher *tfm = crypto_skcipher_reqtfm(req);
++	struct qce_cipher_ctx *ctx = crypto_skcipher_ctx(tfm);
++	struct qce_cipher_reqctx *rctx = skcipher_request_ctx(req);
+ 	struct qce_alg_template *tmpl = to_cipher_tmpl(tfm);
+ 	int ret;
+ 
+@@ -227,7 +226,7 @@ static int qce_ablkcipher_crypt(struct ablkcipher_request *req, int encrypt)
+ 		skcipher_request_set_callback(subreq, req->base.flags,
+ 					      NULL, NULL);
+ 		skcipher_request_set_crypt(subreq, req->src, req->dst,
+-					   req->nbytes, req->info);
++					   req->cryptlen, req->iv);
+ 		ret = encrypt ? crypto_skcipher_encrypt(subreq) :
+ 				crypto_skcipher_decrypt(subreq);
+ 		skcipher_request_zero(subreq);
+@@ -237,36 +236,36 @@ static int qce_ablkcipher_crypt(struct ablkcipher_request *req, int encrypt)
+ 	return tmpl->qce->async_req_enqueue(tmpl->qce, &req->base);
+ }
+ 
+-static int qce_ablkcipher_encrypt(struct ablkcipher_request *req)
++static int qce_skcipher_encrypt(struct skcipher_request *req)
+ {
+-	return qce_ablkcipher_crypt(req, 1);
++	return qce_skcipher_crypt(req, 1);
+ }
+ 
+-static int qce_ablkcipher_decrypt(struct ablkcipher_request *req)
++static int qce_skcipher_decrypt(struct skcipher_request *req)
+ {
+-	return qce_ablkcipher_crypt(req, 0);
++	return qce_skcipher_crypt(req, 0);
+ }
+ 
+-static int qce_ablkcipher_init(struct crypto_tfm *tfm)
++static int qce_skcipher_init(struct crypto_skcipher *tfm)
+ {
+-	struct qce_cipher_ctx *ctx = crypto_tfm_ctx(tfm);
++	struct qce_cipher_ctx *ctx = crypto_skcipher_ctx(tfm);
+ 
+ 	memset(ctx, 0, sizeof(*ctx));
+-	tfm->crt_ablkcipher.reqsize = sizeof(struct qce_cipher_reqctx);
++	crypto_skcipher_set_reqsize(tfm, sizeof(struct qce_cipher_reqctx));
+ 
+-	ctx->fallback = crypto_alloc_sync_skcipher(crypto_tfm_alg_name(tfm),
++	ctx->fallback = crypto_alloc_sync_skcipher(crypto_tfm_alg_name(&tfm->base),
+ 						   0, CRYPTO_ALG_NEED_FALLBACK);
+ 	return PTR_ERR_OR_ZERO(ctx->fallback);
+ }
+ 
+-static void qce_ablkcipher_exit(struct crypto_tfm *tfm)
++static void qce_skcipher_exit(struct crypto_skcipher *tfm)
+ {
+-	struct qce_cipher_ctx *ctx = crypto_tfm_ctx(tfm);
++	struct qce_cipher_ctx *ctx = crypto_skcipher_ctx(tfm);
+ 
+ 	crypto_free_sync_skcipher(ctx->fallback);
+ }
+ 
+-struct qce_ablkcipher_def {
++struct qce_skcipher_def {
+ 	unsigned long flags;
+ 	const char *name;
+ 	const char *drv_name;
+@@ -276,7 +275,7 @@ struct qce_ablkcipher_def {
+ 	unsigned int max_keysize;
+ };
+ 
+-static const struct qce_ablkcipher_def ablkcipher_def[] = {
++static const struct qce_skcipher_def skcipher_def[] = {
  	{
-@@ -1261,25 +1259,23 @@ static struct spacc_alg ipsec_engine_algs[] = {
- 		.iv_offs = AES_MAX_KEY_SIZE,
- 		.ctrl_default = SPA_CTRL_CIPH_ALG_AES | SPA_CTRL_CIPH_MODE_ECB,
- 		.alg = {
--			.cra_name = "ecb(aes)",
--			.cra_driver_name = "ecb-aes-picoxcell",
--			.cra_priority = SPACC_CRYPTO_ALG_PRIORITY,
--			.cra_flags = CRYPTO_ALG_TYPE_ABLKCIPHER |
--				CRYPTO_ALG_KERN_DRIVER_ONLY |
--				CRYPTO_ALG_ASYNC | CRYPTO_ALG_NEED_FALLBACK,
--			.cra_blocksize = AES_BLOCK_SIZE,
--			.cra_ctxsize = sizeof(struct spacc_ablk_ctx),
--			.cra_type = &crypto_ablkcipher_type,
--			.cra_module = THIS_MODULE,
--			.cra_ablkcipher = {
--				.setkey = spacc_aes_setkey,
--				.encrypt = spacc_ablk_encrypt,
--				.decrypt = spacc_ablk_decrypt,
--				.min_keysize = AES_MIN_KEY_SIZE,
--				.max_keysize = AES_MAX_KEY_SIZE,
--			},
--			.cra_init = spacc_ablk_cra_init,
--			.cra_exit = spacc_ablk_cra_exit,
-+			.base.cra_name		= "ecb(aes)",
-+			.base.cra_driver_name	= "ecb-aes-picoxcell",
-+			.base.cra_priority	= SPACC_CRYPTO_ALG_PRIORITY,
-+			.base.cra_flags		= CRYPTO_ALG_KERN_DRIVER_ONLY |
-+						  CRYPTO_ALG_ASYNC |
-+						  CRYPTO_ALG_NEED_FALLBACK,
-+			.base.cra_blocksize	= AES_BLOCK_SIZE,
-+			.base.cra_ctxsize	= sizeof(struct spacc_ablk_ctx),
-+			.base.cra_module	= THIS_MODULE,
-+
-+			.setkey			= spacc_aes_setkey,
-+			.encrypt 		= spacc_ablk_encrypt,
-+			.decrypt 		= spacc_ablk_decrypt,
-+			.min_keysize 		= AES_MIN_KEY_SIZE,
-+			.max_keysize 		= AES_MAX_KEY_SIZE,
-+			.init			= spacc_ablk_init_tfm,
-+			.exit			= spacc_ablk_exit_tfm,
- 		},
- 	},
- 	{
-@@ -1287,26 +1283,23 @@ static struct spacc_alg ipsec_engine_algs[] = {
- 		.iv_offs = 0,
- 		.ctrl_default = SPA_CTRL_CIPH_ALG_DES | SPA_CTRL_CIPH_MODE_CBC,
- 		.alg = {
--			.cra_name = "cbc(des)",
--			.cra_driver_name = "cbc-des-picoxcell",
--			.cra_priority = SPACC_CRYPTO_ALG_PRIORITY,
--			.cra_flags = CRYPTO_ALG_TYPE_ABLKCIPHER |
--					CRYPTO_ALG_ASYNC |
--					CRYPTO_ALG_KERN_DRIVER_ONLY,
--			.cra_blocksize = DES_BLOCK_SIZE,
--			.cra_ctxsize = sizeof(struct spacc_ablk_ctx),
--			.cra_type = &crypto_ablkcipher_type,
--			.cra_module = THIS_MODULE,
--			.cra_ablkcipher = {
--				.setkey = spacc_des_setkey,
--				.encrypt = spacc_ablk_encrypt,
--				.decrypt = spacc_ablk_decrypt,
--				.min_keysize = DES_KEY_SIZE,
--				.max_keysize = DES_KEY_SIZE,
--				.ivsize = DES_BLOCK_SIZE,
--			},
--			.cra_init = spacc_ablk_cra_init,
--			.cra_exit = spacc_ablk_cra_exit,
-+			.base.cra_name		= "cbc(des)",
-+			.base.cra_driver_name	= "cbc-des-picoxcell",
-+			.base.cra_priority	= SPACC_CRYPTO_ALG_PRIORITY,
-+			.base.cra_flags		= CRYPTO_ALG_KERN_DRIVER_ONLY |
-+						  CRYPTO_ALG_ASYNC,
-+			.base.cra_blocksize	= DES_BLOCK_SIZE,
-+			.base.cra_ctxsize	= sizeof(struct spacc_ablk_ctx),
-+			.base.cra_module	= THIS_MODULE,
-+
-+			.setkey			= spacc_des_setkey,
-+			.encrypt		= spacc_ablk_encrypt,
-+			.decrypt		= spacc_ablk_decrypt,
-+			.min_keysize		= DES_KEY_SIZE,
-+			.max_keysize		= DES_KEY_SIZE,
-+			.ivsize			= DES_BLOCK_SIZE,
-+			.init			= spacc_ablk_init_tfm,
-+			.exit			= spacc_ablk_exit_tfm,
- 		},
- 	},
- 	{
-@@ -1314,25 +1307,22 @@ static struct spacc_alg ipsec_engine_algs[] = {
- 		.iv_offs = 0,
- 		.ctrl_default = SPA_CTRL_CIPH_ALG_DES | SPA_CTRL_CIPH_MODE_ECB,
- 		.alg = {
--			.cra_name = "ecb(des)",
--			.cra_driver_name = "ecb-des-picoxcell",
--			.cra_priority = SPACC_CRYPTO_ALG_PRIORITY,
--			.cra_flags = CRYPTO_ALG_TYPE_ABLKCIPHER |
--					CRYPTO_ALG_ASYNC |
--					CRYPTO_ALG_KERN_DRIVER_ONLY,
--			.cra_blocksize = DES_BLOCK_SIZE,
--			.cra_ctxsize = sizeof(struct spacc_ablk_ctx),
--			.cra_type = &crypto_ablkcipher_type,
--			.cra_module = THIS_MODULE,
--			.cra_ablkcipher = {
--				.setkey = spacc_des_setkey,
--				.encrypt = spacc_ablk_encrypt,
--				.decrypt = spacc_ablk_decrypt,
--				.min_keysize = DES_KEY_SIZE,
--				.max_keysize = DES_KEY_SIZE,
--			},
--			.cra_init = spacc_ablk_cra_init,
--			.cra_exit = spacc_ablk_cra_exit,
-+			.base.cra_name		= "ecb(des)",
-+			.base.cra_driver_name	= "ecb-des-picoxcell",
-+			.base.cra_priority	= SPACC_CRYPTO_ALG_PRIORITY,
-+			.base.cra_flags		= CRYPTO_ALG_KERN_DRIVER_ONLY |
-+						  CRYPTO_ALG_ASYNC,
-+			.base.cra_blocksize	= DES_BLOCK_SIZE,
-+			.base.cra_ctxsize	= sizeof(struct spacc_ablk_ctx),
-+			.base.cra_module	= THIS_MODULE,
-+
-+			.setkey			= spacc_des_setkey,
-+			.encrypt		= spacc_ablk_encrypt,
-+			.decrypt		= spacc_ablk_decrypt,
-+			.min_keysize		= DES_KEY_SIZE,
-+			.max_keysize		= DES_KEY_SIZE,
-+			.init			= spacc_ablk_init_tfm,
-+			.exit			= spacc_ablk_exit_tfm,
- 		},
- 	},
- 	{
-@@ -1340,26 +1330,23 @@ static struct spacc_alg ipsec_engine_algs[] = {
- 		.iv_offs = 0,
- 		.ctrl_default = SPA_CTRL_CIPH_ALG_DES | SPA_CTRL_CIPH_MODE_CBC,
- 		.alg = {
--			.cra_name = "cbc(des3_ede)",
--			.cra_driver_name = "cbc-des3-ede-picoxcell",
--			.cra_priority = SPACC_CRYPTO_ALG_PRIORITY,
--			.cra_flags = CRYPTO_ALG_TYPE_ABLKCIPHER |
--					CRYPTO_ALG_ASYNC |
--					CRYPTO_ALG_KERN_DRIVER_ONLY,
--			.cra_blocksize = DES3_EDE_BLOCK_SIZE,
--			.cra_ctxsize = sizeof(struct spacc_ablk_ctx),
--			.cra_type = &crypto_ablkcipher_type,
--			.cra_module = THIS_MODULE,
--			.cra_ablkcipher = {
--				.setkey = spacc_des3_setkey,
--				.encrypt = spacc_ablk_encrypt,
--				.decrypt = spacc_ablk_decrypt,
--				.min_keysize = DES3_EDE_KEY_SIZE,
--				.max_keysize = DES3_EDE_KEY_SIZE,
--				.ivsize = DES3_EDE_BLOCK_SIZE,
--			},
--			.cra_init = spacc_ablk_cra_init,
--			.cra_exit = spacc_ablk_cra_exit,
-+			.base.cra_name		= "cbc(des3_ede)",
-+			.base.cra_driver_name	= "cbc-des3-ede-picoxcell",
-+			.base.cra_priority	= SPACC_CRYPTO_ALG_PRIORITY,
-+			.base.cra_flags		= CRYPTO_ALG_ASYNC |
-+						  CRYPTO_ALG_KERN_DRIVER_ONLY,
-+			.base.cra_blocksize	= DES3_EDE_BLOCK_SIZE,
-+			.base.cra_ctxsize	= sizeof(struct spacc_ablk_ctx),
-+			.base.cra_module	= THIS_MODULE,
-+
-+			.setkey			= spacc_des3_setkey,
-+			.encrypt		= spacc_ablk_encrypt,
-+			.decrypt		= spacc_ablk_decrypt,
-+			.min_keysize		= DES3_EDE_KEY_SIZE,
-+			.max_keysize		= DES3_EDE_KEY_SIZE,
-+			.ivsize			= DES3_EDE_BLOCK_SIZE,
-+			.init			= spacc_ablk_init_tfm,
-+			.exit			= spacc_ablk_exit_tfm,
- 		},
- 	},
- 	{
-@@ -1367,25 +1354,22 @@ static struct spacc_alg ipsec_engine_algs[] = {
- 		.iv_offs = 0,
- 		.ctrl_default = SPA_CTRL_CIPH_ALG_DES | SPA_CTRL_CIPH_MODE_ECB,
- 		.alg = {
--			.cra_name = "ecb(des3_ede)",
--			.cra_driver_name = "ecb-des3-ede-picoxcell",
--			.cra_priority = SPACC_CRYPTO_ALG_PRIORITY,
--			.cra_flags = CRYPTO_ALG_TYPE_ABLKCIPHER |
--					CRYPTO_ALG_ASYNC |
--					CRYPTO_ALG_KERN_DRIVER_ONLY,
--			.cra_blocksize = DES3_EDE_BLOCK_SIZE,
--			.cra_ctxsize = sizeof(struct spacc_ablk_ctx),
--			.cra_type = &crypto_ablkcipher_type,
--			.cra_module = THIS_MODULE,
--			.cra_ablkcipher = {
--				.setkey = spacc_des3_setkey,
--				.encrypt = spacc_ablk_encrypt,
--				.decrypt = spacc_ablk_decrypt,
--				.min_keysize = DES3_EDE_KEY_SIZE,
--				.max_keysize = DES3_EDE_KEY_SIZE,
--			},
--			.cra_init = spacc_ablk_cra_init,
--			.cra_exit = spacc_ablk_cra_exit,
-+			.base.cra_name		= "ecb(des3_ede)",
-+			.base.cra_driver_name	= "ecb-des3-ede-picoxcell",
-+			.base.cra_priority	= SPACC_CRYPTO_ALG_PRIORITY,
-+			.base.cra_flags		= CRYPTO_ALG_ASYNC |
-+						  CRYPTO_ALG_KERN_DRIVER_ONLY,
-+			.base.cra_blocksize	= DES3_EDE_BLOCK_SIZE,
-+			.base.cra_ctxsize	= sizeof(struct spacc_ablk_ctx),
-+			.base.cra_module	= THIS_MODULE,
-+
-+			.setkey			= spacc_des3_setkey,
-+			.encrypt		= spacc_ablk_encrypt,
-+			.decrypt		= spacc_ablk_decrypt,
-+			.min_keysize		= DES3_EDE_KEY_SIZE,
-+			.max_keysize		= DES3_EDE_KEY_SIZE,
-+			.init			= spacc_ablk_init_tfm,
-+			.exit			= spacc_ablk_exit_tfm,
- 		},
+ 		.flags		= QCE_ALG_AES | QCE_MODE_ECB,
+ 		.name		= "ecb(aes)",
+@@ -351,90 +350,91 @@ static const struct qce_ablkcipher_def ablkcipher_def[] = {
  	},
  };
-@@ -1581,25 +1565,23 @@ static struct spacc_alg l2_engine_algs[] = {
- 		.ctrl_default = SPA_CTRL_CIPH_ALG_KASUMI |
- 				SPA_CTRL_CIPH_MODE_F8,
- 		.alg = {
--			.cra_name = "f8(kasumi)",
--			.cra_driver_name = "f8-kasumi-picoxcell",
--			.cra_priority = SPACC_CRYPTO_ALG_PRIORITY,
--			.cra_flags = CRYPTO_ALG_ASYNC |
--					CRYPTO_ALG_KERN_DRIVER_ONLY,
--			.cra_blocksize = 8,
--			.cra_ctxsize = sizeof(struct spacc_ablk_ctx),
--			.cra_type = &crypto_ablkcipher_type,
--			.cra_module = THIS_MODULE,
--			.cra_ablkcipher = {
--				.setkey = spacc_kasumi_f8_setkey,
--				.encrypt = spacc_ablk_encrypt,
--				.decrypt = spacc_ablk_decrypt,
--				.min_keysize = 16,
--				.max_keysize = 16,
--				.ivsize = 8,
--			},
--			.cra_init = spacc_ablk_cra_init,
--			.cra_exit = spacc_ablk_cra_exit,
-+			.base.cra_name		= "f8(kasumi)",
-+			.base.cra_driver_name	= "f8-kasumi-picoxcell",
-+			.base.cra_priority	= SPACC_CRYPTO_ALG_PRIORITY,
-+			.base.cra_flags		= CRYPTO_ALG_ASYNC |
-+						  CRYPTO_ALG_KERN_DRIVER_ONLY,
-+			.base.cra_blocksize	= 8,
-+			.base.cra_ctxsize	= sizeof(struct spacc_ablk_ctx),
-+			.base.cra_module	= THIS_MODULE,
+ 
+-static int qce_ablkcipher_register_one(const struct qce_ablkcipher_def *def,
++static int qce_skcipher_register_one(const struct qce_skcipher_def *def,
+ 				       struct qce_device *qce)
+ {
+ 	struct qce_alg_template *tmpl;
+-	struct crypto_alg *alg;
++	struct skcipher_alg *alg;
+ 	int ret;
+ 
+ 	tmpl = kzalloc(sizeof(*tmpl), GFP_KERNEL);
+ 	if (!tmpl)
+ 		return -ENOMEM;
+ 
+-	alg = &tmpl->alg.crypto;
++	alg = &tmpl->alg.skcipher;
+ 
+-	snprintf(alg->cra_name, CRYPTO_MAX_ALG_NAME, "%s", def->name);
+-	snprintf(alg->cra_driver_name, CRYPTO_MAX_ALG_NAME, "%s",
++	snprintf(alg->base.cra_name, CRYPTO_MAX_ALG_NAME, "%s", def->name);
++	snprintf(alg->base.cra_driver_name, CRYPTO_MAX_ALG_NAME, "%s",
+ 		 def->drv_name);
+ 
+-	alg->cra_blocksize = def->blocksize;
+-	alg->cra_ablkcipher.ivsize = def->ivsize;
+-	alg->cra_ablkcipher.min_keysize = def->min_keysize;
+-	alg->cra_ablkcipher.max_keysize = def->max_keysize;
+-	alg->cra_ablkcipher.setkey = IS_3DES(def->flags) ? qce_des3_setkey :
+-				     IS_DES(def->flags) ? qce_des_setkey :
+-				     qce_ablkcipher_setkey;
+-	alg->cra_ablkcipher.encrypt = qce_ablkcipher_encrypt;
+-	alg->cra_ablkcipher.decrypt = qce_ablkcipher_decrypt;
+-
+-	alg->cra_priority = 300;
+-	alg->cra_flags = CRYPTO_ALG_TYPE_ABLKCIPHER | CRYPTO_ALG_ASYNC |
+-			 CRYPTO_ALG_NEED_FALLBACK | CRYPTO_ALG_KERN_DRIVER_ONLY;
+-	alg->cra_ctxsize = sizeof(struct qce_cipher_ctx);
+-	alg->cra_alignmask = 0;
+-	alg->cra_type = &crypto_ablkcipher_type;
+-	alg->cra_module = THIS_MODULE;
+-	alg->cra_init = qce_ablkcipher_init;
+-	alg->cra_exit = qce_ablkcipher_exit;
++	alg->base.cra_blocksize		= def->blocksize;
++	alg->ivsize			= def->ivsize;
++	alg->min_keysize		= def->min_keysize;
++	alg->max_keysize		= def->max_keysize;
++	alg->setkey			= IS_3DES(def->flags) ? qce_des3_setkey :
++					  IS_DES(def->flags) ? qce_des_setkey :
++					  qce_skcipher_setkey;
++	alg->encrypt			= qce_skcipher_encrypt;
++	alg->decrypt			= qce_skcipher_decrypt;
 +
-+			.setkey			= spacc_kasumi_f8_setkey,
-+			.encrypt		= spacc_ablk_encrypt,
-+			.decrypt		= spacc_ablk_decrypt,
-+			.min_keysize		= 16,
-+			.max_keysize		= 16,
-+			.ivsize			= 8,
-+			.init			= spacc_ablk_init_tfm,
-+			.exit			= spacc_ablk_exit_tfm,
- 		},
- 	},
++	alg->base.cra_priority		= 300;
++	alg->base.cra_flags		= CRYPTO_ALG_ASYNC |
++					  CRYPTO_ALG_NEED_FALLBACK |
++					  CRYPTO_ALG_KERN_DRIVER_ONLY;
++	alg->base.cra_ctxsize		= sizeof(struct qce_cipher_ctx);
++	alg->base.cra_alignmask		= 0;
++	alg->base.cra_module		= THIS_MODULE;
++
++	alg->init			= qce_skcipher_init;
++	alg->exit			= qce_skcipher_exit;
+ 
+ 	INIT_LIST_HEAD(&tmpl->entry);
+-	tmpl->crypto_alg_type = CRYPTO_ALG_TYPE_ABLKCIPHER;
++	tmpl->crypto_alg_type = CRYPTO_ALG_TYPE_SKCIPHER;
+ 	tmpl->alg_flags = def->flags;
+ 	tmpl->qce = qce;
+ 
+-	ret = crypto_register_alg(alg);
++	ret = crypto_register_skcipher(alg);
+ 	if (ret) {
+ 		kfree(tmpl);
+-		dev_err(qce->dev, "%s registration failed\n", alg->cra_name);
++		dev_err(qce->dev, "%s registration failed\n", alg->base.cra_name);
+ 		return ret;
+ 	}
+ 
+-	list_add_tail(&tmpl->entry, &ablkcipher_algs);
+-	dev_dbg(qce->dev, "%s is registered\n", alg->cra_name);
++	list_add_tail(&tmpl->entry, &skcipher_algs);
++	dev_dbg(qce->dev, "%s is registered\n", alg->base.cra_name);
+ 	return 0;
+ }
+ 
+-static void qce_ablkcipher_unregister(struct qce_device *qce)
++static void qce_skcipher_unregister(struct qce_device *qce)
+ {
+ 	struct qce_alg_template *tmpl, *n;
+ 
+-	list_for_each_entry_safe(tmpl, n, &ablkcipher_algs, entry) {
+-		crypto_unregister_alg(&tmpl->alg.crypto);
++	list_for_each_entry_safe(tmpl, n, &skcipher_algs, entry) {
++		crypto_unregister_skcipher(&tmpl->alg.skcipher);
+ 		list_del(&tmpl->entry);
+ 		kfree(tmpl);
+ 	}
+ }
+ 
+-static int qce_ablkcipher_register(struct qce_device *qce)
++static int qce_skcipher_register(struct qce_device *qce)
+ {
+ 	int ret, i;
+ 
+-	for (i = 0; i < ARRAY_SIZE(ablkcipher_def); i++) {
+-		ret = qce_ablkcipher_register_one(&ablkcipher_def[i], qce);
++	for (i = 0; i < ARRAY_SIZE(skcipher_def); i++) {
++		ret = qce_skcipher_register_one(&skcipher_def[i], qce);
+ 		if (ret)
+ 			goto err;
+ 	}
+ 
+ 	return 0;
+ err:
+-	qce_ablkcipher_unregister(qce);
++	qce_skcipher_unregister(qce);
+ 	return ret;
+ }
+ 
+-const struct qce_algo_ops ablkcipher_ops = {
+-	.type = CRYPTO_ALG_TYPE_ABLKCIPHER,
+-	.register_algs = qce_ablkcipher_register,
+-	.unregister_algs = qce_ablkcipher_unregister,
+-	.async_req_handle = qce_ablkcipher_async_req_handle,
++const struct qce_algo_ops skcipher_ops = {
++	.type = CRYPTO_ALG_TYPE_SKCIPHER,
++	.register_algs = qce_skcipher_register,
++	.unregister_algs = qce_skcipher_unregister,
++	.async_req_handle = qce_skcipher_async_req_handle,
  };
-@@ -1721,7 +1703,7 @@ static int spacc_probe(struct platform_device *pdev)
- 	INIT_LIST_HEAD(&engine->registered_algs);
- 	for (i = 0; i < engine->num_algs; ++i) {
- 		engine->algs[i].engine = engine;
--		err = crypto_register_alg(&engine->algs[i].alg);
-+		err = crypto_register_skcipher(&engine->algs[i].alg);
- 		if (!err) {
- 			list_add_tail(&engine->algs[i].entry,
- 				      &engine->registered_algs);
-@@ -1729,10 +1711,10 @@ static int spacc_probe(struct platform_device *pdev)
- 		}
- 		if (err)
- 			dev_err(engine->dev, "failed to register alg \"%s\"\n",
--				engine->algs[i].alg.cra_name);
-+				engine->algs[i].alg.base.cra_name);
- 		else
- 			dev_dbg(engine->dev, "registered alg \"%s\"\n",
--				engine->algs[i].alg.cra_name);
-+				engine->algs[i].alg.base.cra_name);
- 	}
- 
- 	INIT_LIST_HEAD(&engine->registered_aeads);
-@@ -1781,7 +1763,7 @@ static int spacc_remove(struct platform_device *pdev)
- 
- 	list_for_each_entry_safe(alg, next, &engine->registered_algs, entry) {
- 		list_del(&alg->entry);
--		crypto_unregister_alg(&alg->alg);
-+		crypto_unregister_skcipher(&alg->alg);
- 	}
- 
- 	clk_disable_unprepare(engine->clk);
 -- 
 2.20.1
 
