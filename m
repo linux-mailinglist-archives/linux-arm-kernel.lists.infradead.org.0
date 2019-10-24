@@ -2,62 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3275EE33D2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 15:19:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 796A7E33FD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 15:24:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=626WpLi0oaIMVWZ9tH54NadB/cOnoqRF7s99TJ8W/gE=; b=D+PNOU2bbVhtTNG2GPBUeTVpK
-	fAq6tYmwHzgWDC3ACEVXTrAeEeJCu8IL/wCtbKzwIkIALJjw+3b1DLEULqI5/KPTNh8QuNx+t8C62
-	R4aj/tYqQEB1BtMB3F71euWRjj0x4SAbExOPJa9Kux2lQE3b90alu3VR4F3XGytibxKB5Uv61OjI0
-	ErFikrdME+Rw7GMOHtiSpl3cEroyU9ymdCxf973c1zDs3rdgqXWmD5N1uiZ3OxV1kPc1OlzCAQp6L
-	dCTCwDl9uOVlePLdMHwXAVg9ck0JcJGrM0zgT+FUpPP9aj6eczDRYPJY53bQDv1506mabsd8lnYnE
-	QQJBhvI4Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=IddpqQXwR30p7JVN4hxckHSTabqTgCb6KqXcFd4evvo=; b=PoM8XdpuYB45nZ
+	azwZDLyFVi8DfBO59MTI74oI4fb1vMg29zaujudxJzDbZj5ouBx4aV+V0Y3sO7UsyHJk7AKc5OGlh
+	Iv69O/lp2FKE6O7bAt0X/WcTnLZgSZmxbk7cIy+Cl4LSfWrAvw/fRJV48Ijcjs2NNCawYt20IHpHk
+	gcYMlpZbxwhap9gmllLIR1k8Y5yqzWFh9XbiQkw6rkbvgeqiJhKDxt6mMHwV/w4meZpAFc/Yr0CH7
+	GJGGXIZQI+Mq0jX3pfg/7V+HqBeR9Azek1UwJz0HtJRhUhOInMk9tQiocjmGlBP0W1NDWWB1qDaDG
+	zpq4KD0/bhA8ujjbxovQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNd1U-0006zC-V5; Thu, 24 Oct 2019 13:19:28 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1iNd6C-0000Qe-6K; Thu, 24 Oct 2019 13:24:20 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNd1K-0006yJ-E0
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 13:19:19 +0000
-Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1iNd1A-0000Sw-Ge; Thu, 24 Oct 2019 15:19:08 +0200
-To: Steven Price <steven.price@arm.com>
-Subject: Re: [PATCH] KVM: arm64: Select =?UTF-8?Q?SCHED=5FINFO=20before=20?=
- =?UTF-8?Q?SCHEDSTATS?=
-X-PHP-Originating-Script: 0:main.inc
+ id 1iNd5o-0000PS-7g
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 13:23:57 +0000
+Received: by mail-wm1-x343.google.com with SMTP id q130so2428602wme.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 24 Oct 2019 06:23:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=DoNY5nhcqsMX/VQdm/2dcVh9uYGHVkxgyi2II9TO5gA=;
+ b=Nwg9+/NhdSEA6IEeKNiYDBZDjsX3VE5Ct0kBDiFDIVw6kdN2IX29d3JRNVeH4liTbB
+ 9Fp375ux6S8PS0l5OxAt4qY6kS9+p9PAuzeGdPN/1y3V+Uv/7MWVoR+lbLVX+u8BOl6x
+ Xv8QJrYzwGmb2ZjNuCPDWEiAA7IWrOAL1d0K0nsb9XYn/eVULEMWn+oPM91HlG0Dqvho
+ q+HG5yraQqN+hrPmdyzs1XknB4rM6z2Jfe7kcqJ4OR9rH76nMSzvznwcd/QVQW2QOxEZ
+ d4Y+OIRyNnsv3AIhhfRqUiWWtS0SalqsmpJC92Hb7a7k/byQMF23jNXFV3x7VleDOImm
+ Ay/g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=DoNY5nhcqsMX/VQdm/2dcVh9uYGHVkxgyi2II9TO5gA=;
+ b=dT6rpoSxQo3cqJGEDWlijMsL1cVsdU3ZEK2CzeaUN/JmsuU5cVx7Q6afr4ztjlTsUG
+ FRqzTntjN6407ltOwGclt75JbYD4fnOQYITYcXBJB9RRM4qWuqys0+17j3kMkBCrKKuO
+ h6mgbmRSD1JQG7OslAxYgub2LNU3BC3f2vt5zvtPji1ksKgIfGmw6whYc92sFbU8ZllH
+ gp0UUR0v9hyWeEGymOEDZ1S8AcjWmoN+m0PHrL0evE8Gi2W48BZKyRsHInTZNbU2WqCt
+ hU1bKisP6c1U4pal6segT0sd8T65YEezCx30DbCEKDlbCOSXmkhITMdIP8JWfFaQQnFy
+ 02Qw==
+X-Gm-Message-State: APjAAAUwSpmsgxjiIcrnJ4wWlIXXmAdV61oAEo6CCoKU3b6eU4tXoIgB
+ taYaNlVMTXWKKs+Ox+WT1ubW3w==
+X-Google-Smtp-Source: APXvYqz6lRExPxrZzq/HzNoGfVZ8/pwXegBhHlmrc4aa8vUCi3bYeW4zFsBDvQowv77K8bpN8RpCGQ==
+X-Received: by 2002:a7b:c049:: with SMTP id u9mr4873589wmc.12.1571923434148;
+ Thu, 24 Oct 2019 06:23:54 -0700 (PDT)
+Received: from localhost.localdomain
+ (laubervilliers-657-1-83-120.w92-154.abo.wanadoo.fr. [92.154.90.120])
+ by smtp.gmail.com with ESMTPSA id e3sm2346310wme.36.2019.10.24.06.23.52
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 24 Oct 2019 06:23:53 -0700 (PDT)
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+To: linux-crypto@vger.kernel.org
+Subject: [PATCH v2 00/27] crypto: convert h/w accelerator drivers to skcipher
+ API
+Date: Thu, 24 Oct 2019 15:23:18 +0200
+Message-Id: <20191024132345.5236-1-ard.biesheuvel@linaro.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Date: Thu, 24 Oct 2019 14:19:08 +0100
-From: Marc Zyngier <maz@kernel.org>
-In-Reply-To: <6d037fa1-5e8b-38cd-e947-7547c1e8dd15@arm.com>
-References: <20191023032254.159510-1-maowenan@huawei.com>
- <26ee413334937b9530bc8f033fe378ec@www.loen.fr>
- <6d037fa1-5e8b-38cd-e947-7547c1e8dd15@arm.com>
-Message-ID: <3abfc893613caf529b0f6a933e74068d@www.loen.fr>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/0.7.2
-X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: steven.price@arm.com, maowenan@huawei.com,
- catalin.marinas@arm.com, kernel-janitors@vger.kernel.org,
- linux-kernel@vger.kernel.org, will@kernel.org, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_061918_623454_F57A282E 
-X-CRM114-Status: GOOD (  13.07  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191024_062356_288530_E358C4BD 
+X-CRM114-Status: GOOD (  13.56  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,76 +96,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, kernel-janitors@vger.kernel.org,
- Mao Wenan <maowenan@huawei.com>, linux-kernel@vger.kernel.org, will@kernel.org,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: "David S. Miller" <davem@davemloft.net>, Eric Biggers <ebiggers@google.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>, linux-arm-kernel@lists.infradead.org,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-10-24 12:22, Steven Price wrote:
+This series converts all drivers for h/w accelerators that produce the
+ablkcipher API to the skcipher API, so that we can finally retire the
+long deprecated [a]blkcipher code.
 
-[...]
+Changes since v1:
+- remove some more [cosmetic] references to [a]blkcipher (#26-#27)
+- add back missing IV for cbc(aes) in the omap driver, fixing a crash
+- add Gary's ack to #4
+- add Linus's ack to #6 and #15
+- add Kamil's and Krzysztof's acks to #7
+- fixed a bug in the Atmel patch (#8)
+- add Horia's tested-by to #16
+- add Dave's ack to #22
 
-> From 915893f5c57241cc29d90769b3f720a6135277d7 Mon Sep 17 00:00:00 
-> 2001
-> From: Steven Price <steven.price@arm.com>
-> Date: Thu, 24 Oct 2019 12:14:36 +0100
-> Subject: [PATCH] KVM: arm64: Select TASK_DELAY_ACCT rather than 
-> SCHEDSTATS
->
-> SCHEDSTATS requires DEBUG_KERNEL (and PROC_FS) and therefore isn't a
-> good choice for enabling the scheduling statistics required for 
-> stolen
-> time.
->
-> Instead match the x86 configuration and select TASK_DELAY_ACCT. This
-> adds the dependencies of NET && MULTIUSER for arm64 KVM.
->
-> Suggested-by: Marc Zyngier <maz@kernel.org>
-> Fixes: 8564d6372a7d ("KVM: arm64: Support stolen time reporting via
-> shared structure")
-> Signed-off-by: Steven Price <steven.price@arm.com>
-> ---
->  arch/arm64/kvm/Kconfig | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
->
-> diff --git a/arch/arm64/kvm/Kconfig b/arch/arm64/kvm/Kconfig
-> index d8b88e40d223..1ffb300e2d92 100644
-> --- a/arch/arm64/kvm/Kconfig
-> +++ b/arch/arm64/kvm/Kconfig
-> @@ -21,6 +21,8 @@ if VIRTUALIZATION
->  config KVM
->  	bool "Kernel-based Virtual Machine (KVM) support"
->  	depends on OF
-> +	# for TASKSTATS/TASK_DELAY_ACCT:
-> +	depends on NET && MULTIUSER
->  	select MMU_NOTIFIER
->  	select PREEMPT_NOTIFIERS
->  	select HAVE_KVM_CPU_RELAX_INTERCEPT
-> @@ -39,7 +41,7 @@ config KVM
->  	select IRQ_BYPASS_MANAGER
->  	select HAVE_KVM_IRQ_BYPASS
->  	select HAVE_KVM_VCPU_RUN_PID_CHANGE
-> -	select SCHEDSTATS
-> +	select TASK_DELAY_ACCT
->  	---help---
->  	  Support hosting virtualized guest machines.
->  	  We don't support KVM with 16K page tables yet, due to the 
-> multiple
+Patches #1, #2 are fixes for the virtio driver, which need to be applied
+first so that they can be backported
 
-Same issue as before: you have an implicit config symbol selection.
-TASK_DELAY_ACCT depends on TASKSTATS (which is why you have this NET &&
-MULTIUSER constraint).
+Patches #3 and #4 have been tested on actual 'hardware' (given the virtual
+nature of the virtio driver). Patch #7 was tested successfully in kernelci.
+Patch #16 was tested by Horia.
 
-You need to select both TASK_DELAY_ACCT and TASKSTATS, as the comment 
-you
-add suggests.
+All other patches have been build tested *only*, and should be tested on
+actual hardware before being merged. Note that patches can be merged
+piecemeal (with the exception of #1 .. #3) since there are no dependencies
+between them.
 
-         M.
+Cc: Herbert Xu <herbert@gondor.apana.org.au>
+Cc: "David S. Miller" <davem@davemloft.net>
+Cc: Eric Biggers <ebiggers@google.com>
+Cc: linux-arm-kernel@lists.infradead.org
+
+Ard Biesheuvel (27):
+  crypto: virtio - implement missing support for output IVs
+  crypto: virtio - deal with unsupported input sizes
+  crypto: virtio - switch to skcipher API
+  crypto: ccp - switch from ablkcipher to skcipher
+  crypto: omap - switch to skcipher API
+  crypto: ux500 - switch to skcipher API
+  crypto: s5p - switch to skcipher API
+  crypto: atmel-aes - switch to skcipher API
+  crypto: atmel-tdes - switch to skcipher API
+  crypto: bcm-spu - switch to skcipher API
+  crypto: nitrox - remove cra_type reference to ablkcipher
+  crypto: cavium/cpt - switch to skcipher API
+  crypto: chelsio - switch to skcipher API
+  crypto: hifn - switch to skcipher API
+  crypto: ixp4xx - switch to skcipher API
+  crypto: mxs - switch to skcipher API
+  crypto: mediatek - switch to skcipher API
+  crypto: sahara - switch to skcipher API
+  crypto: picoxcell - switch to skcipher API
+  crypto: qce - switch to skcipher API
+  crypto: stm32 - switch to skcipher API
+  crypto: niagara2 - switch to skcipher API
+  crypto: rockchip - switch to skcipher API
+  crypto: talitos - switch to skcipher API
+  crypto: qat - switch to skcipher API
+  crypto: marvell/cesa - rename blkcipher to skcipher
+  crypto: nx - remove stale comment referring to the blkcipher walk API
+
+ drivers/crypto/Kconfig                             |   2 +-
+ drivers/crypto/atmel-aes.c                         | 509 +++++++++---------
+ drivers/crypto/atmel-tdes.c                        | 433 ++++++++-------
+ drivers/crypto/bcm/cipher.c                        | 373 +++++++------
+ drivers/crypto/bcm/cipher.h                        |  10 +-
+ drivers/crypto/bcm/spu2.c                          |   6 +-
+ drivers/crypto/cavium/cpt/cptvf_algs.c             | 292 +++++-----
+ drivers/crypto/cavium/nitrox/nitrox_skcipher.c     |   1 -
+ drivers/crypto/ccp/ccp-crypto-aes-galois.c         |   7 +-
+ drivers/crypto/ccp/ccp-crypto-aes-xts.c            |  94 ++--
+ drivers/crypto/ccp/ccp-crypto-aes.c                | 169 +++---
+ drivers/crypto/ccp/ccp-crypto-des3.c               | 100 ++--
+ drivers/crypto/ccp/ccp-crypto-main.c               |  14 +-
+ drivers/crypto/ccp/ccp-crypto.h                    |  13 +-
+ drivers/crypto/chelsio/chcr_algo.c                 | 334 ++++++------
+ drivers/crypto/chelsio/chcr_algo.h                 |   2 +-
+ drivers/crypto/chelsio/chcr_crypto.h               |  16 +-
+ drivers/crypto/hifn_795x.c                         | 183 +++----
+ drivers/crypto/ixp4xx_crypto.c                     | 228 ++++----
+ drivers/crypto/marvell/cesa.h                      |   6 +-
+ drivers/crypto/marvell/cipher.c                    |  14 +-
+ drivers/crypto/mediatek/mtk-aes.c                  | 248 ++++-----
+ drivers/crypto/mxs-dcp.c                           | 140 +++--
+ drivers/crypto/n2_core.c                           | 194 ++++---
+ drivers/crypto/nx/nx-aes-ccm.c                     |   5 -
+ drivers/crypto/nx/nx-aes-gcm.c                     |   5 -
+ drivers/crypto/omap-aes.c                          | 209 ++++----
+ drivers/crypto/omap-aes.h                          |   4 +-
+ drivers/crypto/omap-des.c                          | 232 ++++----
+ drivers/crypto/picoxcell_crypto.c                  | 386 +++++++-------
+ drivers/crypto/qat/qat_common/qat_algs.c           | 255 +++++----
+ drivers/crypto/qat/qat_common/qat_crypto.h         |   4 +-
+ drivers/crypto/qce/Makefile                        |   2 +-
+ drivers/crypto/qce/cipher.h                        |   8 +-
+ drivers/crypto/qce/common.c                        |  12 +-
+ drivers/crypto/qce/common.h                        |   3 +-
+ drivers/crypto/qce/core.c                          |   2 +-
+ drivers/crypto/qce/{ablkcipher.c => skcipher.c}    | 172 +++---
+ drivers/crypto/rockchip/Makefile                   |   2 +-
+ drivers/crypto/rockchip/rk3288_crypto.c            |   8 +-
+ drivers/crypto/rockchip/rk3288_crypto.h            |   3 +-
+ drivers/crypto/rockchip/rk3288_crypto_ablkcipher.c | 556 --------------------
+ drivers/crypto/rockchip/rk3288_crypto_skcipher.c   | 538 +++++++++++++++++++
+ drivers/crypto/s5p-sss.c                           | 187 ++++---
+ drivers/crypto/sahara.c                            | 156 +++---
+ drivers/crypto/stm32/stm32-cryp.c                  | 338 ++++++------
+ drivers/crypto/talitos.c                           | 306 +++++------
+ drivers/crypto/ux500/cryp/cryp_core.c              | 371 ++++++-------
+ drivers/crypto/virtio/virtio_crypto_algs.c         | 192 +++----
+ drivers/crypto/virtio/virtio_crypto_common.h       |   2 +-
+ 50 files changed, 3499 insertions(+), 3847 deletions(-)
+ rename drivers/crypto/qce/{ablkcipher.c => skcipher.c} (61%)
+ delete mode 100644 drivers/crypto/rockchip/rk3288_crypto_ablkcipher.c
+ create mode 100644 drivers/crypto/rockchip/rk3288_crypto_skcipher.c
+
 -- 
-Jazz is not dead. It just smells funny...
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
