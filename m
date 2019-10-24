@@ -2,42 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73847E3B15
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 20:35:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7E99E3B3C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 20:44:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=M/mh4J7UAME/XaSXWHoZXoJ8ue7d5Nv6TaAdl/qj4I0=; b=UXnRjixxmIjkQ6ciHHt7lgSwc
-	D7KH4/vR1EVPPDM8lLvTGkhXJR13+aqwRLKBCBLE7twnhY+3QSO+9NZsFbedTBDuBePEyZiboM6QQ
-	ptHa/chK+8rUvMbtnpmETV1dHnp+ndhUcEE+YsxgKuB41fnTeuEiBydvjVzDkg1Px4eabL+gNKbG1
-	j8KB2ZU13HMxr5n8OpJ9+IZYG8CReapjJGYA/64zra1lLdl+l4V9n+p0q9NLcGta7TBd5Es3mtl0B
-	OK40O3aMqdr/6Apw53mP9Nt9s0W+gn2LG5r2t4QoBfKzDE63cq89ZvG5lNpo2sVIH/l5bgZHTYJEe
-	OfMO1yYsA==;
+	 bh=2A7NNf/V/CtG9KHmhEA1c9yJJGB5NPNo00iHrE1ZTSU=; b=ocmufKMIG30t4AOXDWI3ip79w
+	hT/NPuHP969jx7HUR6+MrJvw4XAINMwZ5ehCw3nRc0CzHsy1XJSJMVuop4H8GRFLRYRl/wB34Lrfh
+	nzADgCOmRjLPtB0wsga2N4975bj0ZM78+h/r/K6Cv/oHnLgK3nlrhUDYhE0xkykXuEQoeRnrO1xnJ
+	Q86vy9Ni9u2XKU6YoHHRhiH4acS6fRRi+RUwxRjlre1ywAUCI9+Y7lvS4V4F+rQNre+G5/66yZlU0
+	djTM1Zvm+lEoldcJXq5RH0FV64xKAvooW6P926EMElZrXh/mM8T5FTKtjzmLk26cIDdXWrupJS2mD
+	7bIBwWrIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNhxQ-0005hx-7f; Thu, 24 Oct 2019 18:35:36 +0000
+	id 1iNi6O-000863-3P; Thu, 24 Oct 2019 18:44:52 +0000
 Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNhxH-0005hW-3l
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 18:35:28 +0000
+ id 1iNi6B-00085e-6R
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 18:44:40 +0000
 Received: from localhost (x4d0bc9de.dyn.telefonica.de [77.11.201.222])
- by pokefinder.org (Postfix) with ESMTPSA id 5BDF02C04AE;
- Thu, 24 Oct 2019 20:35:26 +0200 (CEST)
-Date: Thu, 24 Oct 2019 20:35:26 +0200
+ by pokefinder.org (Postfix) with ESMTPSA id 5D9E82C011D;
+ Thu, 24 Oct 2019 20:44:38 +0200 (CEST)
+Date: Thu, 24 Oct 2019 20:44:37 +0200
 From: Wolfram Sang <wsa@the-dreams.de>
 To: Alain Volmat <alain.volmat@st.com>
-Subject: Re: [PATCH] i2c: i2c-stm32f7: rework slave_id allocation
-Message-ID: <20191024183525.GD1870@kunai>
-References: <1571144589-3066-1-git-send-email-alain.volmat@st.com>
+Subject: Re: [PATCH v2] i2c: i2c-stm32f7: remove warning when compiling with
+ W=1
+Message-ID: <20191024184437.GE1870@kunai>
+References: <1571145118-3522-1-git-send-email-alain.volmat@st.com>
 MIME-Version: 1.0
-In-Reply-To: <1571144589-3066-1-git-send-email-alain.volmat@st.com>
+In-Reply-To: <1571145118-3522-1-git-send-email-alain.volmat@st.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_113527_303029_40F210C4 
-X-CRM114-Status: UNSURE (   8.74  )
+X-CRM114-CacheID: sfid-20191024_114439_387002_7BC6D711 
+X-CRM114-Status: UNSURE (   7.55  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -63,61 +64,62 @@ Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
  linux-kernel@vger.kernel.org, pierre-yves.mordret@st.com, robh+dt@kernel.org,
  linux-i2c@vger.kernel.org, mcoquelin.stm32@gmail.com, fabrice.gasnier@st.com,
  linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============0745415404078656807=="
+Content-Type: multipart/mixed; boundary="===============5268134671932930752=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============0745415404078656807==
+--===============5268134671932930752==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="rz+pwK2yUstbofK6"
+	protocol="application/pgp-signature"; boundary="a+b56+3nqLzpiR9O"
 Content-Disposition: inline
 
 
---rz+pwK2yUstbofK6
+--a+b56+3nqLzpiR9O
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Tue, Oct 15, 2019 at 03:03:09PM +0200, Alain Volmat wrote:
-> The IP can handle two slave addresses. One address can either be
-> 7 bits or 10 bits while the other can only be 7 bits.
-> In order to ensure that a 10 bits address can always be allocated
-> (assuming there is only one 7 bits address already allocated),
-> pick up the 7-bits only address slot in priority when performing a 7-bits
-> address allocation.
+On Tue, Oct 15, 2019 at 03:11:58PM +0200, Alain Volmat wrote:
+> Remove the following warning:
 >=20
-> Fixes: 60d609f3 ("i2c: i2c-stm32f7: Add slave support")
+> drivers/i2c/busses/i2c-stm32f7.c:315:
+> warning: cannot understand function prototype:
+> 'struct stm32f7_i2c_spec i2c_specs[] =3D
 >=20
+> Replace a comment starting with /** by simply /* to avoid having
+> it interpreted as a kernel-doc comment.
+>=20
+> Fixes: aeb068c57214 ("i2c: i2c-stm32f7: add driver")
 > Signed-off-by: Alain Volmat <alain.volmat@st.com>
 
-Applied to for-next, thanks!
+Applied to for-current, thanks!
 
 
---rz+pwK2yUstbofK6
+--a+b56+3nqLzpiR9O
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl2x7u0ACgkQFA3kzBSg
-KbYt7RAAlOWKsmZkKq0ugHqSQYr08yUKywJd6XHETx5vGcJPNGSQMR/vdJlGlyWj
-hEYV6ArZssUiQtgdzNOiFQqKj9D536DaomVrdluuQkY4JrJgffLl3aIBKw+cMubF
-GAdg24aaCCgEWLk+Y1ZWN8MvKdzLNL0Fy4w78yZL5sTxUW2jRIvTnG+LzAnbkDWA
-eJUP/xIjSNgbzjWsZ0ZxXx7gcFfokMgZdZCgln+az/3KAWHyTVSvfI18bXVuG3wi
-yoM98jJIl12fqxkNI82c2vS/UvCUJVN7CMDO6rkg70IOQt2bsoteGsK1/URIREQM
-ZXpjUSuxw6hAwuDQsXu2FmdDFjnpXBBgw71y+A3CLZoxV0g2FbITkGc+8t8Cn7zY
-cfqPbqG0v/B7fXscy+tleE9NTcH9E/wNt36RnWP0/kyILBzHbsCu2U/vj782Ynr1
-QfufwfRydQWuZaY1VxtZ6hC0ez4CDRD9kgDLjQrc9atpOilDDCU+Jxo3TboCRaQ9
-RiS4POvlaawN+i9CjtDOFxBcoz9hafvrUYW6oAQvBVSrQP4/Tv4oPFf9f1yP69A6
-jhdJrLjF7sF06ejko8Q4psTN2WxNkW4jtxlV4DlMwgC2cnCuEnfjXsAviUHOSDWa
-7bE2j9nE4aYjieUAx6Jod2BXpToAjhV4uEOWYz2v9nFCnfHpuUA=
-=EBnH
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl2x8RUACgkQFA3kzBSg
+Kbbyqw/8D1GESh2wz7RCGgify6hbIO/FgUOUJigLMBvN7ElqmAgJbf23OvTg1zQx
+67AJ5QhuUzw3oXySC2ntHIbBvM5pfiJjCp3knOLIrjWCUVZ2KvBPEprieW5tpBj6
+sXy+6ZzojJj8vpA6LqmIu/jX0vMo9NBGLUGkWcnkklz0J0k3U+0VzdAUHGvVpJGd
+xWUxHGG8q5vJ5Y4t1RDktRj+vraHaV7SZwp5QL5+tD0LDZ1e00pqupVpHL+vEzIj
+GPljclhyWiF/fQzBpY4MZWZ2Gpk4ZCJ5aL2oQtY9HTzy3UmPQJAu2ZjfDzAwM2cy
+UfX9vpo9Uzg5k3sphhQz8lL35KYeRNj/HHGn4ricMT05G6AnLZ3PvPN3N6XL7dbk
+BFnN1xaDmiF0izsXGQQbkpHvywAL/glYaImGZ2B4cKUN58JXavsmFsW6qM1mlrNl
+hAFPFwJWffGJRW91lxC++v4LwjkpuypnRghWwy6sllU28/MgBESKnQwDqW4X3hmA
+SsUijLNTRUgUWjgbUJ7s0YQ0zOEP/3U0k/Jv8XY8aLRu38fJ5jCxREQinZF6+Ner
+G1DvSW9mfisN2HQqV9lWdADiiM5qfDyqJMT+SkSkXuaYqWqn9FNSFNn9bWjVRqut
+aTEeMGUPOljpMtVflUPoV6nPF8LhFNXGhKaZqx5RkGQD9blcWaQ=
+=yMm2
 -----END PGP SIGNATURE-----
 
---rz+pwK2yUstbofK6--
+--a+b56+3nqLzpiR9O--
 
 
---===============0745415404078656807==
+--===============5268134671932930752==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -128,5 +130,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============0745415404078656807==--
+--===============5268134671932930752==--
 
