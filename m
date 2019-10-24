@@ -2,79 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 796A7E33FD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 15:24:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3B7BE340A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 15:24:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=IddpqQXwR30p7JVN4hxckHSTabqTgCb6KqXcFd4evvo=; b=PoM8XdpuYB45nZ
-	azwZDLyFVi8DfBO59MTI74oI4fb1vMg29zaujudxJzDbZj5ouBx4aV+V0Y3sO7UsyHJk7AKc5OGlh
-	Iv69O/lp2FKE6O7bAt0X/WcTnLZgSZmxbk7cIy+Cl4LSfWrAvw/fRJV48Ijcjs2NNCawYt20IHpHk
-	gcYMlpZbxwhap9gmllLIR1k8Y5yqzWFh9XbiQkw6rkbvgeqiJhKDxt6mMHwV/w4meZpAFc/Yr0CH7
-	GJGGXIZQI+Mq0jX3pfg/7V+HqBeR9Azek1UwJz0HtJRhUhOInMk9tQiocjmGlBP0W1NDWWB1qDaDG
-	zpq4KD0/bhA8ujjbxovQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=itD4O9wy2NyOIrLJMFnxh8jFzQmkibLxZyZHwiKXauE=; b=e/7L/36jW/F1i+
+	2AZKdBmSk3N2+2PYTuwhr0tlIxclAbOWJLt+ppa9fsO4dVfYe3XvA8j395cfKCwmy0BtDY20VlsfS
+	vgN23NBLLQTQ4fjCSDIeap+CBExCVR3OC/N0Y9WOgIhgHyBvh6+qth+gg30Spmgf/OhIq3TG7Q4iJ
+	OdpajEyBHPLMqLRMr5kxWTeEzN6J0d6MT559FmSbsz8icjlG9Xd+mwlmgZSBQvihCbqI1J5k5mmTs
+	ubaqeLSiMAUCM3me2T3kuWR3F2MMNXPkuN6pFPUm+Mq0rSJGD3nexTSyIKmqDiCzzWgB7WmVBDpJ4
+	naOGt11m47hL2VKJ8qcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNd6C-0000Qe-6K; Thu, 24 Oct 2019 13:24:20 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1iNd6n-0000sP-FA; Thu, 24 Oct 2019 13:24:57 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNd5o-0000PS-7g
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 13:23:57 +0000
-Received: by mail-wm1-x343.google.com with SMTP id q130so2428602wme.2
+ id 1iNd5p-0000PV-1w
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 13:23:59 +0000
+Received: by mail-wr1-x442.google.com with SMTP id c2so20841803wrr.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 24 Oct 2019 06:23:55 -0700 (PDT)
+ Thu, 24 Oct 2019 06:23:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=DoNY5nhcqsMX/VQdm/2dcVh9uYGHVkxgyi2II9TO5gA=;
- b=Nwg9+/NhdSEA6IEeKNiYDBZDjsX3VE5Ct0kBDiFDIVw6kdN2IX29d3JRNVeH4liTbB
- 9Fp375ux6S8PS0l5OxAt4qY6kS9+p9PAuzeGdPN/1y3V+Uv/7MWVoR+lbLVX+u8BOl6x
- Xv8QJrYzwGmb2ZjNuCPDWEiAA7IWrOAL1d0K0nsb9XYn/eVULEMWn+oPM91HlG0Dqvho
- q+HG5yraQqN+hrPmdyzs1XknB4rM6z2Jfe7kcqJ4OR9rH76nMSzvznwcd/QVQW2QOxEZ
- d4Y+OIRyNnsv3AIhhfRqUiWWtS0SalqsmpJC92Hb7a7k/byQMF23jNXFV3x7VleDOImm
- Ay/g==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=TNWJxh1AFEyP6kvtb+pRqQQilO6T6qX/8rJmhhrHLY0=;
+ b=S2eThVk83dKO5Bwg3yDm/gzVGNto7qsth4WMLLOmiYJINz7Qibs5lDhZH4pMHelfff
+ UI55mx/5I/os0vKVwqaNYzvodYmhm3q7elBYzBwxmPBD/GiwrKVqX7DFhWZBhSZqTfDb
+ KjuRWogf+5wecIavxAAFgv75+yn7OshRyOO5VWsaZJg6YRdu/S6wV2oaeWIGvn7xkyT2
+ GYlxYl4QmaiC54ujOPw1nrH935qPBMI4BffDjb+GHywDtacfw4evwSNKQ7ue/25jsr1U
+ TWuU7+hKvJpl0M+XfxDx5PBJ128PVg0jtARNCF0ugFpEeUzQLDYVTl90UMFXe0QRcLoa
+ i6Tg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=DoNY5nhcqsMX/VQdm/2dcVh9uYGHVkxgyi2II9TO5gA=;
- b=dT6rpoSxQo3cqJGEDWlijMsL1cVsdU3ZEK2CzeaUN/JmsuU5cVx7Q6afr4ztjlTsUG
- FRqzTntjN6407ltOwGclt75JbYD4fnOQYITYcXBJB9RRM4qWuqys0+17j3kMkBCrKKuO
- h6mgbmRSD1JQG7OslAxYgub2LNU3BC3f2vt5zvtPji1ksKgIfGmw6whYc92sFbU8ZllH
- gp0UUR0v9hyWeEGymOEDZ1S8AcjWmoN+m0PHrL0evE8Gi2W48BZKyRsHInTZNbU2WqCt
- hU1bKisP6c1U4pal6segT0sd8T65YEezCx30DbCEKDlbCOSXmkhITMdIP8JWfFaQQnFy
- 02Qw==
-X-Gm-Message-State: APjAAAUwSpmsgxjiIcrnJ4wWlIXXmAdV61oAEo6CCoKU3b6eU4tXoIgB
- taYaNlVMTXWKKs+Ox+WT1ubW3w==
-X-Google-Smtp-Source: APXvYqz6lRExPxrZzq/HzNoGfVZ8/pwXegBhHlmrc4aa8vUCi3bYeW4zFsBDvQowv77K8bpN8RpCGQ==
-X-Received: by 2002:a7b:c049:: with SMTP id u9mr4873589wmc.12.1571923434148;
- Thu, 24 Oct 2019 06:23:54 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=TNWJxh1AFEyP6kvtb+pRqQQilO6T6qX/8rJmhhrHLY0=;
+ b=S6u/Yz/BYmjO3j5pxjyvpw+Gig7obMhLFwXjOIP37iGgvQU3Tzq+yU4g1FdZbHeD81
+ tuKbvF4SiBl9IRbx8dmCwcveQ54oiwmBERnlhkkdq0muIvrahlNS5qe5YXtfI8Yptruh
+ ZPbQk/gEFO+a/H5UT1Ok8iaHNSa3hxd1McIw1HSb5ygk5P+mSP4lOUN8W6cOf1gvoxF/
+ n1CnPUphnR51EKDNw12f/0f4bBaZe2OyJx4EfLYngy95CWE6NjD8V52o8rSU9Hogd03L
+ zCf+q6xyi5yosqxjOfMNMo0rkKGPoQBrvmx7pLoWfKa09tP0TNntWvY2SK1FyfMTSzKR
+ OSwA==
+X-Gm-Message-State: APjAAAWhGFrAY0/wmsOBZUAR/cSNZTQEHfxFR0Gjjh+jNT5VorctyWtG
+ 89AP3xCjfkTYu8zWN2K0fuzHBQ==
+X-Google-Smtp-Source: APXvYqyc+CLRulk3KGzezXZq5tnbXiDOqAyJFEZa5vrUyaKiixpSFHdiZydqrTrm/pESPS4zfHYTfQ==
+X-Received: by 2002:adf:e886:: with SMTP id d6mr4021372wrm.188.1571923435313; 
+ Thu, 24 Oct 2019 06:23:55 -0700 (PDT)
 Received: from localhost.localdomain
  (laubervilliers-657-1-83-120.w92-154.abo.wanadoo.fr. [92.154.90.120])
- by smtp.gmail.com with ESMTPSA id e3sm2346310wme.36.2019.10.24.06.23.52
+ by smtp.gmail.com with ESMTPSA id e3sm2346310wme.36.2019.10.24.06.23.54
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 24 Oct 2019 06:23:53 -0700 (PDT)
+ Thu, 24 Oct 2019 06:23:54 -0700 (PDT)
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 To: linux-crypto@vger.kernel.org
-Subject: [PATCH v2 00/27] crypto: convert h/w accelerator drivers to skcipher
- API
-Date: Thu, 24 Oct 2019 15:23:18 +0200
-Message-Id: <20191024132345.5236-1-ard.biesheuvel@linaro.org>
+Subject: [PATCH v2 01/27] crypto: virtio - implement missing support for
+ output IVs
+Date: Thu, 24 Oct 2019 15:23:19 +0200
+Message-Id: <20191024132345.5236-2-ard.biesheuvel@linaro.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20191024132345.5236-1-ard.biesheuvel@linaro.org>
+References: <20191024132345.5236-1-ard.biesheuvel@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_062356_288530_E358C4BD 
-X-CRM114-Status: GOOD (  13.56  )
+X-CRM114-CacheID: sfid-20191024_062357_093515_3D980D3E 
+X-CRM114-Status: GOOD (  10.52  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -96,129 +98,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "David S. Miller" <davem@davemloft.net>, Eric Biggers <ebiggers@google.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, linux-arm-kernel@lists.infradead.org,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ "Michael S. Tsirkin" <mst@redhat.com>, Jason Wang <jasowang@redhat.com>,
+ Eric Biggers <ebiggers@google.com>, virtualization@lists.linux-foundation.org,
+ Gonglei <arei.gonglei@huawei.com>, "David S. Miller" <davem@davemloft.net>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series converts all drivers for h/w accelerators that produce the
-ablkcipher API to the skcipher API, so that we can finally retire the
-long deprecated [a]blkcipher code.
+In order to allow for CBC to be chained, which is something that the
+CTS template relies upon, implementations of CBC need to pass the
+IV to be used for subsequent invocations via the IV buffer. This was
+not implemented yet for virtio-crypto so implement it now.
 
-Changes since v1:
-- remove some more [cosmetic] references to [a]blkcipher (#26-#27)
-- add back missing IV for cbc(aes) in the omap driver, fixing a crash
-- add Gary's ack to #4
-- add Linus's ack to #6 and #15
-- add Kamil's and Krzysztof's acks to #7
-- fixed a bug in the Atmel patch (#8)
-- add Horia's tested-by to #16
-- add Dave's ack to #22
+Fixes: dbaf0624ffa5 ("crypto: add virtio-crypto driver")
+Cc: "Michael S. Tsirkin" <mst@redhat.com>
+Cc: Jason Wang <jasowang@redhat.com>
+Cc: Gonglei <arei.gonglei@huawei.com>
+Cc: virtualization@lists.linux-foundation.org
+Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+---
+ drivers/crypto/virtio/virtio_crypto_algs.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
-Patches #1, #2 are fixes for the virtio driver, which need to be applied
-first so that they can be backported
-
-Patches #3 and #4 have been tested on actual 'hardware' (given the virtual
-nature of the virtio driver). Patch #7 was tested successfully in kernelci.
-Patch #16 was tested by Horia.
-
-All other patches have been build tested *only*, and should be tested on
-actual hardware before being merged. Note that patches can be merged
-piecemeal (with the exception of #1 .. #3) since there are no dependencies
-between them.
-
-Cc: Herbert Xu <herbert@gondor.apana.org.au>
-Cc: "David S. Miller" <davem@davemloft.net>
-Cc: Eric Biggers <ebiggers@google.com>
-Cc: linux-arm-kernel@lists.infradead.org
-
-Ard Biesheuvel (27):
-  crypto: virtio - implement missing support for output IVs
-  crypto: virtio - deal with unsupported input sizes
-  crypto: virtio - switch to skcipher API
-  crypto: ccp - switch from ablkcipher to skcipher
-  crypto: omap - switch to skcipher API
-  crypto: ux500 - switch to skcipher API
-  crypto: s5p - switch to skcipher API
-  crypto: atmel-aes - switch to skcipher API
-  crypto: atmel-tdes - switch to skcipher API
-  crypto: bcm-spu - switch to skcipher API
-  crypto: nitrox - remove cra_type reference to ablkcipher
-  crypto: cavium/cpt - switch to skcipher API
-  crypto: chelsio - switch to skcipher API
-  crypto: hifn - switch to skcipher API
-  crypto: ixp4xx - switch to skcipher API
-  crypto: mxs - switch to skcipher API
-  crypto: mediatek - switch to skcipher API
-  crypto: sahara - switch to skcipher API
-  crypto: picoxcell - switch to skcipher API
-  crypto: qce - switch to skcipher API
-  crypto: stm32 - switch to skcipher API
-  crypto: niagara2 - switch to skcipher API
-  crypto: rockchip - switch to skcipher API
-  crypto: talitos - switch to skcipher API
-  crypto: qat - switch to skcipher API
-  crypto: marvell/cesa - rename blkcipher to skcipher
-  crypto: nx - remove stale comment referring to the blkcipher walk API
-
- drivers/crypto/Kconfig                             |   2 +-
- drivers/crypto/atmel-aes.c                         | 509 +++++++++---------
- drivers/crypto/atmel-tdes.c                        | 433 ++++++++-------
- drivers/crypto/bcm/cipher.c                        | 373 +++++++------
- drivers/crypto/bcm/cipher.h                        |  10 +-
- drivers/crypto/bcm/spu2.c                          |   6 +-
- drivers/crypto/cavium/cpt/cptvf_algs.c             | 292 +++++-----
- drivers/crypto/cavium/nitrox/nitrox_skcipher.c     |   1 -
- drivers/crypto/ccp/ccp-crypto-aes-galois.c         |   7 +-
- drivers/crypto/ccp/ccp-crypto-aes-xts.c            |  94 ++--
- drivers/crypto/ccp/ccp-crypto-aes.c                | 169 +++---
- drivers/crypto/ccp/ccp-crypto-des3.c               | 100 ++--
- drivers/crypto/ccp/ccp-crypto-main.c               |  14 +-
- drivers/crypto/ccp/ccp-crypto.h                    |  13 +-
- drivers/crypto/chelsio/chcr_algo.c                 | 334 ++++++------
- drivers/crypto/chelsio/chcr_algo.h                 |   2 +-
- drivers/crypto/chelsio/chcr_crypto.h               |  16 +-
- drivers/crypto/hifn_795x.c                         | 183 +++----
- drivers/crypto/ixp4xx_crypto.c                     | 228 ++++----
- drivers/crypto/marvell/cesa.h                      |   6 +-
- drivers/crypto/marvell/cipher.c                    |  14 +-
- drivers/crypto/mediatek/mtk-aes.c                  | 248 ++++-----
- drivers/crypto/mxs-dcp.c                           | 140 +++--
- drivers/crypto/n2_core.c                           | 194 ++++---
- drivers/crypto/nx/nx-aes-ccm.c                     |   5 -
- drivers/crypto/nx/nx-aes-gcm.c                     |   5 -
- drivers/crypto/omap-aes.c                          | 209 ++++----
- drivers/crypto/omap-aes.h                          |   4 +-
- drivers/crypto/omap-des.c                          | 232 ++++----
- drivers/crypto/picoxcell_crypto.c                  | 386 +++++++-------
- drivers/crypto/qat/qat_common/qat_algs.c           | 255 +++++----
- drivers/crypto/qat/qat_common/qat_crypto.h         |   4 +-
- drivers/crypto/qce/Makefile                        |   2 +-
- drivers/crypto/qce/cipher.h                        |   8 +-
- drivers/crypto/qce/common.c                        |  12 +-
- drivers/crypto/qce/common.h                        |   3 +-
- drivers/crypto/qce/core.c                          |   2 +-
- drivers/crypto/qce/{ablkcipher.c => skcipher.c}    | 172 +++---
- drivers/crypto/rockchip/Makefile                   |   2 +-
- drivers/crypto/rockchip/rk3288_crypto.c            |   8 +-
- drivers/crypto/rockchip/rk3288_crypto.h            |   3 +-
- drivers/crypto/rockchip/rk3288_crypto_ablkcipher.c | 556 --------------------
- drivers/crypto/rockchip/rk3288_crypto_skcipher.c   | 538 +++++++++++++++++++
- drivers/crypto/s5p-sss.c                           | 187 ++++---
- drivers/crypto/sahara.c                            | 156 +++---
- drivers/crypto/stm32/stm32-cryp.c                  | 338 ++++++------
- drivers/crypto/talitos.c                           | 306 +++++------
- drivers/crypto/ux500/cryp/cryp_core.c              | 371 ++++++-------
- drivers/crypto/virtio/virtio_crypto_algs.c         | 192 +++----
- drivers/crypto/virtio/virtio_crypto_common.h       |   2 +-
- 50 files changed, 3499 insertions(+), 3847 deletions(-)
- rename drivers/crypto/qce/{ablkcipher.c => skcipher.c} (61%)
- delete mode 100644 drivers/crypto/rockchip/rk3288_crypto_ablkcipher.c
- create mode 100644 drivers/crypto/rockchip/rk3288_crypto_skcipher.c
-
+diff --git a/drivers/crypto/virtio/virtio_crypto_algs.c b/drivers/crypto/virtio/virtio_crypto_algs.c
+index 42d19205166b..65ec10800137 100644
+--- a/drivers/crypto/virtio/virtio_crypto_algs.c
++++ b/drivers/crypto/virtio/virtio_crypto_algs.c
+@@ -437,6 +437,11 @@ __virtio_crypto_ablkcipher_do_req(struct virtio_crypto_sym_request *vc_sym_req,
+ 		goto free;
+ 	}
+ 	memcpy(iv, req->info, ivsize);
++	if (!vc_sym_req->encrypt)
++		scatterwalk_map_and_copy(req->info, req->src,
++					 req->nbytes - AES_BLOCK_SIZE,
++					 AES_BLOCK_SIZE, 0);
++
+ 	sg_init_one(&iv_sg, iv, ivsize);
+ 	sgs[num_out++] = &iv_sg;
+ 	vc_sym_req->iv = iv;
+@@ -563,6 +568,10 @@ static void virtio_crypto_ablkcipher_finalize_req(
+ 	struct ablkcipher_request *req,
+ 	int err)
+ {
++	if (vc_sym_req->encrypt)
++		scatterwalk_map_and_copy(req->info, req->dst,
++					 req->nbytes - AES_BLOCK_SIZE,
++					 AES_BLOCK_SIZE, 0);
+ 	crypto_finalize_ablkcipher_request(vc_sym_req->base.dataq->engine,
+ 					   req, err);
+ 	kzfree(vc_sym_req->iv);
 -- 
 2.20.1
 
