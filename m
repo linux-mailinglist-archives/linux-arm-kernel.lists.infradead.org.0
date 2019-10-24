@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF2F1E294A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 06:09:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43682E2950
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 06:12:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=mWx2qBQeTxwO+8peKn0ODrT0gT148eyWrr9G8m7nDEw=; b=NYPaZFGmDLknV7lLlruf5PQeU
-	whSys5dtJA2M7IX3R5ZnRVrTwWcHhPUoFsbrJwDeF/Qi8+nTqkqD+09ErFXHdqBJ3LyPRPPXhG2eR
-	Yz1YE4LmTZqaPxIhcN5e+LYOsoiupz3SYFcRHsYb1yw0XtvyQLV6mBdkAungNB7sB6j2Jd8GtQPDE
-	+6zr3jgLHSqtigqxpC68jF3z/N3oPiU+eIbyEhMJG4pTFwyTBIjrIpWDgsd04HApNrF950+Czt8ej
-	lbotv1wOM80z9lntPho/z+NqiqZa71xEGiquTJFoYI4x7nLIBqRXXQzPSc+fGbD0bqscgN52G+4Fb
-	AKpuE6+PQ==;
+	 bh=9xjquuxmEm1lHGd6FhgrEGfi+IAk+LMmcifiKOJjxFM=; b=FVsIAu6w7qcXM04uxwsIZ/ujR
+	60Qriov6gpz16SfqG1MZUBeswKQIDgpHGzlaanJ7LCCC2u68W0//rXHVy8zft0sqR8s1b6KIIaTX+
+	qt4vPZswW+b/WEKT2ccrFyQLkODynW6Ii1QooE01y/Vm8rp/tQ/aosE4u7b0zUgAMSCrrdwIxQ2Xe
+	y7uRn8/jnPAfKIGrHiLPs1bh9UkpFcrA2NTa6Uzl0AmdD27FON1mO9RSdZbWaQNfbIi6riqzxkgti
+	2UC31Y0iB4YoM/ECrQSfCOXDEnjtvufCQg4FubDb+yLH7VFZgqYPRcy3AWkVi+QzG/tSCR8FfKAIo
+	9ThG7cz8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNUR5-0000B7-MK; Thu, 24 Oct 2019 04:09:19 +0000
+	id 1iNUU7-0001rv-9a; Thu, 24 Oct 2019 04:12:27 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNUQx-0000Ag-V6; Thu, 24 Oct 2019 04:09:13 +0000
+ id 1iNUTu-0001rR-QV; Thu, 24 Oct 2019 04:12:17 +0000
 Received: from [10.44.0.22] (unknown [103.48.210.53])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 914102075C;
- Thu, 24 Oct 2019 04:09:04 +0000 (UTC)
-Subject: Re: [PATCH 04/12] m68k: nommu: use pgtable-nopud instead of
- 4level-fixup
+ by mail.kernel.org (Postfix) with ESMTPSA id D4E172075C;
+ Thu, 24 Oct 2019 04:12:07 +0000 (UTC)
+Subject: Re: [PATCH 05/12] m68k: mm: use pgtable-nopXd instead of 4level-fixup
 To: Mike Rapoport <rppt@kernel.org>, linux-mm@kvack.org
 References: <1571822941-29776-1-git-send-email-rppt@kernel.org>
- <1571822941-29776-5-git-send-email-rppt@kernel.org>
+ <1571822941-29776-6-git-send-email-rppt@kernel.org>
 From: Greg Ungerer <gerg@linux-m68k.org>
-Message-ID: <de03a882-fb1a-455c-7c60-84ab0c4f9674@linux-m68k.org>
-Date: Thu, 24 Oct 2019 14:09:01 +1000
+Message-ID: <7ae6ea77-635f-1d9e-8145-9da7c6027380@linux-m68k.org>
+Date: Thu, 24 Oct 2019 14:12:05 +1000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <1571822941-29776-5-git-send-email-rppt@kernel.org>
+In-Reply-To: <1571822941-29776-6-git-send-email-rppt@kernel.org>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_210912_041830_E96BE226 
-X-CRM114-Status: GOOD (  16.34  )
+X-CRM114-CacheID: sfid-20191023_211214_906406_922168E7 
+X-CRM114-Status: GOOD (  24.87  )
 X-Spam-Score: -4.8 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-4.8 points)
@@ -81,172 +80,665 @@ Cc: "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
  linux-alpha@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
  Linus Torvalds <torvalds@linux-foundation.org>,
  "David S. Miller" <davem@davemloft.net>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgTWlrZSwKCk9uIDIzLzEwLzE5IDc6MjggcG0sIE1pa2UgUmFwb3BvcnQgd3JvdGU6Cj4gRnJv
-bTogTWlrZSBSYXBvcG9ydCA8cnBwdEBsaW51eC5pYm0uY29tPgo+IAo+IFRoZSBnZW5lcmljIG5v
-bW11IGltcGxlbWVudGF0aW9uIG9mIHBhZ2UgdGFibGUgbWFuaXB1bGF0aW9uIHRha2VzIGNhcmUg
-b2YKPiBmb2xkaW5nIG9mIHRoZSB1cHBlciBsZXZlbHMgYW5kIGRvZXMgbm90IHJlcXVpcmUgZml4
-dXBzLgo+IAo+IFNpbXBseSByZXBsYWNlIG9mIGluY2x1ZGUvYXNtLWdlbmVyaWMvNGxldmVsLWZp
-eHVwLmggd2l0aAo+IGluY2x1ZGUvYXNtLWdlbmVyaWMvcGd0YWJsZS1ub3B1ZC5oLgo+IAo+IFNp
-Z25lZC1vZmYtYnk6IE1pa2UgUmFwb3BvcnQgPHJwcHRAbGludXguaWJtLmNvbT4KPiAtLS0KPiAg
-IGFyY2gvbTY4ay9pbmNsdWRlL2FzbS9wZ3RhYmxlX25vLmggfCAyICstCj4gICAxIGZpbGUgY2hh
-bmdlZCwgMSBpbnNlcnRpb24oKyksIDEgZGVsZXRpb24oLSkKPiAKPiBkaWZmIC0tZ2l0IGEvYXJj
-aC9tNjhrL2luY2x1ZGUvYXNtL3BndGFibGVfbm8uaCBiL2FyY2gvbTY4ay9pbmNsdWRlL2FzbS9w
-Z3RhYmxlX25vLmgKPiBpbmRleCBjMTgxNjViLi5jY2M0NTY4IDEwMDY0NAo+IC0tLSBhL2FyY2gv
-bTY4ay9pbmNsdWRlL2FzbS9wZ3RhYmxlX25vLmgKPiArKysgYi9hcmNoL202OGsvaW5jbHVkZS9h
-c20vcGd0YWJsZV9uby5oCj4gQEAgLTIsNyArMiw3IEBACj4gICAjaWZuZGVmIF9NNjhLTk9NTVVf
-UEdUQUJMRV9ICj4gICAjZGVmaW5lIF9NNjhLTk9NTVVfUEdUQUJMRV9ICj4gICAKPiAtI2luY2x1
-ZGUgPGFzbS1nZW5lcmljLzRsZXZlbC1maXh1cC5oPgo+ICsjaW5jbHVkZSA8YXNtLWdlbmVyaWMv
-cGd0YWJsZS1ub3B1ZC5oPgo+ICAgCj4gICAvKgo+ICAgICogKEMpIENvcHlyaWdodCAyMDAwLTIw
-MDIsIEdyZWcgVW5nZXJlciA8Z2VyZ0BzbmFwZ2Vhci5jb20+CgpUaGlzIGZhaWxzIHRvIGNvbXBp
-bGUgZm9yIG1lICh0YXJnZXRpbmcgbTUyMDhldmJfZGVmY29uZmlnKToKCiAgIENDICAgICAgaW5p
-dC9tYWluLm8KSW4gZmlsZSBpbmNsdWRlZCBmcm9tIC4vYXJjaC9tNjhrL2luY2x1ZGUvYXNtL3Bn
-dGFibGVfbm8uaDo1NjowLAogICAgICAgICAgICAgICAgICBmcm9tIC4vYXJjaC9tNjhrL2luY2x1
-ZGUvYXNtL3BndGFibGUuaDozLAogICAgICAgICAgICAgICAgICBmcm9tIC4vaW5jbHVkZS9saW51
-eC9tbS5oOjk5LAogICAgICAgICAgICAgICAgICBmcm9tIC4vaW5jbHVkZS9saW51eC9yaW5nX2J1
-ZmZlci5oOjUsCiAgICAgICAgICAgICAgICAgIGZyb20gLi9pbmNsdWRlL2xpbnV4L3RyYWNlX2V2
-ZW50cy5oOjYsCiAgICAgICAgICAgICAgICAgIGZyb20gLi9pbmNsdWRlL3RyYWNlL3N5c2NhbGwu
-aDo3LAogICAgICAgICAgICAgICAgICBmcm9tIC4vaW5jbHVkZS9saW51eC9zeXNjYWxscy5oOjg1
-LAogICAgICAgICAgICAgICAgICBmcm9tIGluaXQvbWFpbi5jOjIxOgouL2luY2x1ZGUvYXNtLWdl
-bmVyaWMvcGd0YWJsZS5oOjczODozNDogZXJyb3I6IHVua25vd24gdHlwZSBuYW1lIOKAmHBtZF90
-4oCZCiAgc3RhdGljIGlubGluZSBpbnQgcG1kX3NvZnRfZGlydHkocG1kX3QgcG1kKQogICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgIF4KLi9pbmNsdWRlL2FzbS1nZW5lcmljL3BndGFi
-bGUuaDo3NDg6MTU6IGVycm9yOiB1bmtub3duIHR5cGUgbmFtZSDigJhwbWRfdOKAmQogIHN0YXRp
-YyBpbmxpbmUgcG1kX3QgcG1kX21rc29mdF9kaXJ0eShwbWRfdCBwbWQpCiAgICAgICAgICAgICAg
-ICBeCi4vaW5jbHVkZS9hc20tZ2VuZXJpYy9wZ3RhYmxlLmg6NzQ4OjM4OiBlcnJvcjogdW5rbm93
-biB0eXBlIG5hbWUg4oCYcG1kX3TigJkKICBzdGF0aWMgaW5saW5lIHBtZF90IHBtZF9ta3NvZnRf
-ZGlydHkocG1kX3QgcG1kKQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBe
-Ci4vaW5jbHVkZS9hc20tZ2VuZXJpYy9wZ3RhYmxlLmg6NzU4OjE1OiBlcnJvcjogdW5rbm93biB0
-eXBlIG5hbWUg4oCYcG1kX3TigJkKICBzdGF0aWMgaW5saW5lIHBtZF90IHBtZF9jbGVhcl9zb2Z0
-X2RpcnR5KHBtZF90IHBtZCkKICAgICAgICAgICAgICAgIF4KLi9pbmNsdWRlL2FzbS1nZW5lcmlj
-L3BndGFibGUuaDo3NTg6NDI6IGVycm9yOiB1bmtub3duIHR5cGUgbmFtZSDigJhwbWRfdOKAmQog
-IHN0YXRpYyBpbmxpbmUgcG1kX3QgcG1kX2NsZWFyX3NvZnRfZGlydHkocG1kX3QgcG1kKQogICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXgouL2luY2x1ZGUvYXNtLWdl
-bmVyaWMvcGd0YWJsZS5oOjc3ODoxNTogZXJyb3I6IHVua25vd24gdHlwZSBuYW1lIOKAmHBtZF90
-4oCZCiAgc3RhdGljIGlubGluZSBwbWRfdCBwbWRfc3dwX21rc29mdF9kaXJ0eShwbWRfdCBwbWQp
-CiAgICAgICAgICAgICAgICBeCi4vaW5jbHVkZS9hc20tZ2VuZXJpYy9wZ3RhYmxlLmg6Nzc4OjQy
-OiBlcnJvcjogdW5rbm93biB0eXBlIG5hbWUg4oCYcG1kX3TigJkKICBzdGF0aWMgaW5saW5lIHBt
-ZF90IHBtZF9zd3BfbWtzb2Z0X2RpcnR5KHBtZF90IHBtZCkKICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgIF4KLi9pbmNsdWRlL2FzbS1nZW5lcmljL3BndGFibGUuaDo3
-ODM6Mzg6IGVycm9yOiB1bmtub3duIHR5cGUgbmFtZSDigJhwbWRfdOKAmQogIHN0YXRpYyBpbmxp
-bmUgaW50IHBtZF9zd3Bfc29mdF9kaXJ0eShwbWRfdCBwbWQpCiAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgIF4KLi9pbmNsdWRlL2FzbS1nZW5lcmljL3BndGFibGUuaDo3ODg6
-MTU6IGVycm9yOiB1bmtub3duIHR5cGUgbmFtZSDigJhwbWRfdOKAmQogIHN0YXRpYyBpbmxpbmUg
-cG1kX3QgcG1kX3N3cF9jbGVhcl9zb2Z0X2RpcnR5KHBtZF90IHBtZCkKICAgICAgICAgICAgICAg
-IF4KLi9pbmNsdWRlL2FzbS1nZW5lcmljL3BndGFibGUuaDo3ODg6NDY6IGVycm9yOiB1bmtub3du
-IHR5cGUgbmFtZSDigJhwbWRfdOKAmQogIHN0YXRpYyBpbmxpbmUgcG1kX3QgcG1kX3N3cF9jbGVh
-cl9zb2Z0X2RpcnR5KHBtZF90IHBtZCkKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICBeCi4vaW5jbHVkZS9hc20tZ2VuZXJpYy9wZ3RhYmxlLmg6MTA3MTozMjog
-ZXJyb3I6IHVua25vd24gdHlwZSBuYW1lIOKAmHBtZF904oCZCiAgc3RhdGljIGlubGluZSBpbnQg
-cG1kX3NldF9odWdlKHBtZF90ICpwbWQsIHBoeXNfYWRkcl90IGFkZHIsIHBncHJvdF90IHByb3Qp
-CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIF4KLi9pbmNsdWRlL2FzbS1nZW5lcmlj
-L3BndGFibGUuaDoxMDgzOjM0OiBlcnJvcjogdW5rbm93biB0eXBlIG5hbWUg4oCYcG1kX3TigJkK
-ICBzdGF0aWMgaW5saW5lIGludCBwbWRfY2xlYXJfaHVnZShwbWRfdCAqcG1kKQogICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgIF4KLi9pbmNsdWRlL2FzbS1nZW5lcmljL3BndGFibGUu
-aDoxMDk1OjM3OiBlcnJvcjogdW5rbm93biB0eXBlIG5hbWUg4oCYcG1kX3TigJkKICBzdGF0aWMg
-aW5saW5lIGludCBwbWRfZnJlZV9wdGVfcGFnZShwbWRfdCAqcG1kLCB1bnNpZ25lZCBsb25nIGFk
-ZHIpCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXgpJbiBmaWxlIGluY2x1
-ZGVkIGZyb20gLi9pbmNsdWRlL2xpbnV4L3JpbmdfYnVmZmVyLmg6NTowLAogICAgICAgICAgICAg
-ICAgICBmcm9tIC4vaW5jbHVkZS9saW51eC90cmFjZV9ldmVudHMuaDo2LAogICAgICAgICAgICAg
-ICAgICBmcm9tIC4vaW5jbHVkZS90cmFjZS9zeXNjYWxsLmg6NywKICAgICAgICAgICAgICAgICAg
-ZnJvbSAuL2luY2x1ZGUvbGludXgvc3lzY2FsbHMuaDo4NSwKICAgICAgICAgICAgICAgICAgZnJv
-bSBpbml0L21haW4uYzoyMToKLi9pbmNsdWRlL2xpbnV4L21tLmg6NDIzOjI6IGVycm9yOiB1bmtu
-b3duIHR5cGUgbmFtZSDigJhwbWRfdOKAmQogICBwbWRfdCAqcG1kOyAgIC8qIFBvaW50ZXIgdG8g
-cG1kIGVudHJ5IG1hdGNoaW5nCiAgIF4KLi9pbmNsdWRlL2xpbnV4L21tLmg6NTY4OjMwOiBlcnJv
-cjogdW5rbm93biB0eXBlIG5hbWUg4oCYcG1kX3TigJkKICBzdGF0aWMgaW5saW5lIGludCBwbWRf
-ZGV2bWFwKHBtZF90IHBtZCkKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIF4KSW4gZmls
-ZSBpbmNsdWRlZCBmcm9tIC4vaW5jbHVkZS9saW51eC9tbS5oOjU4NzowLAogICAgICAgICAgICAg
-ICAgICBmcm9tIC4vaW5jbHVkZS9saW51eC9yaW5nX2J1ZmZlci5oOjUsCiAgICAgICAgICAgICAg
-ICAgIGZyb20gLi9pbmNsdWRlL2xpbnV4L3RyYWNlX2V2ZW50cy5oOjYsCiAgICAgICAgICAgICAg
-ICAgIGZyb20gLi9pbmNsdWRlL3RyYWNlL3N5c2NhbGwuaDo3LAogICAgICAgICAgICAgICAgICBm
-cm9tIC4vaW5jbHVkZS9saW51eC9zeXNjYWxscy5oOjg1LAogICAgICAgICAgICAgICAgICBmcm9t
-IGluaXQvbWFpbi5jOjIxOgouL2luY2x1ZGUvbGludXgvaHVnZV9tbS5oOjEyOjU6IGVycm9yOiB1
-bmtub3duIHR5cGUgbmFtZSDigJhwbWRfdOKAmQogICAgICBwbWRfdCAqZHN0X3BtZCwgcG1kX3Qg
-KnNyY19wbWQsIHVuc2lnbmVkIGxvbmcgYWRkciwKICAgICAgXgouL2luY2x1ZGUvbGludXgvaHVn
-ZV9tbS5oOjEyOjIxOiBlcnJvcjogdW5rbm93biB0eXBlIG5hbWUg4oCYcG1kX3TigJkKICAgICAg
-cG1kX3QgKmRzdF9wbWQsIHBtZF90ICpzcmNfcG1kLCB1bnNpZ25lZCBsb25nIGFkZHIsCiAgICAg
-ICAgICAgICAgICAgICAgICBeCi4vaW5jbHVkZS9saW51eC9odWdlX21tLmg6MTQ6NTc6IGVycm9y
-OiB1bmtub3duIHR5cGUgbmFtZSDigJhwbWRfdOKAmQogIGV4dGVybiB2b2lkIGh1Z2VfcG1kX3Nl
-dF9hY2Nlc3NlZChzdHJ1Y3Qgdm1fZmF1bHQgKnZtZiwgcG1kX3Qgb3JpZ19wbWQpOwogICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXgouL2lu
-Y2x1ZGUvbGludXgvaHVnZV9tbS5oOjI3OjYxOiBlcnJvcjogdW5rbm93biB0eXBlIG5hbWUg4oCY
-cG1kX3TigJkKICBleHRlcm4gdm1fZmF1bHRfdCBkb19odWdlX3BtZF93cF9wYWdlKHN0cnVjdCB2
-bV9mYXVsdCAqdm1mLCBwbWRfdCBvcmlnX3BtZCk7CiAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXgouL2luY2x1ZGUvbGludXgvaHVn
-ZV9tbS5oOjMwOjg6IGVycm9yOiB1bmtub3duIHR5cGUgbmFtZSDigJhwbWRfdOKAmQogICAgICAg
-ICBwbWRfdCAqcG1kLAogICAgICAgICBeCi4vaW5jbHVkZS9saW51eC9odWdlX21tLmg6MzQ6NDog
-ZXJyb3I6IHVua25vd24gdHlwZSBuYW1lIOKAmHBtZF904oCZCiAgICAgcG1kX3QgKnBtZCwgdW5z
-aWduZWQgbG9uZyBhZGRyLCB1bnNpZ25lZCBsb25nIG5leHQpOwogICAgIF4KLi9pbmNsdWRlL2xp
-bnV4L2h1Z2VfbW0uaDozNzo0OiBlcnJvcjogdW5rbm93biB0eXBlIG5hbWUg4oCYcG1kX3TigJkK
-ICAgICBwbWRfdCAqcG1kLCB1bnNpZ25lZCBsb25nIGFkZHIpOwogICAgIF4KLi9pbmNsdWRlL2xp
-bnV4L2h1Z2VfbW0uaDo0MTo1NzogZXJyb3I6IHVua25vd24gdHlwZSBuYW1lIOKAmHBtZF904oCZ
-CiAgZXh0ZXJuIGludCBtaW5jb3JlX2h1Z2VfcG1kKHN0cnVjdCB2bV9hcmVhX3N0cnVjdCAqdm1h
-LCBwbWRfdCAqcG1kLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgXgouL2luY2x1ZGUvbGludXgvaHVnZV9tbS5oOjQ2OjU6IGVycm9yOiB1
-bmtub3duIHR5cGUgbmFtZSDigJhwbWRfdOKAmQogICAgICBwbWRfdCAqb2xkX3BtZCwgcG1kX3Qg
-Km5ld19wbWQpOwogICAgICBeCi4vaW5jbHVkZS9saW51eC9odWdlX21tLmg6NDY6MjE6IGVycm9y
-OiB1bmtub3duIHR5cGUgbmFtZSDigJhwbWRfdOKAmQogICAgICBwbWRfdCAqb2xkX3BtZCwgcG1k
-X3QgKm5ld19wbWQpOwogICAgICAgICAgICAgICAgICAgICAgXgouL2luY2x1ZGUvbGludXgvaHVn
-ZV9tbS5oOjQ3OjU2OiBlcnJvcjogdW5rbm93biB0eXBlIG5hbWUg4oCYcG1kX3TigJkKICBleHRl
-cm4gaW50IGNoYW5nZV9odWdlX3BtZChzdHJ1Y3Qgdm1fYXJlYV9zdHJ1Y3QgKnZtYSwgcG1kX3Qg
-KnBtZCwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgXgouL2luY2x1ZGUvbGludXgvaHVnZV9tbS5oOjMzNjo2NTogZXJyb3I6IHVua25vd24g
-dHlwZSBuYW1lIOKAmHBtZF904oCZCiAgc3RhdGljIGlubGluZSB2b2lkIF9fc3BsaXRfaHVnZV9w
-bWQoc3RydWN0IHZtX2FyZWFfc3RydWN0ICp2bWEsIHBtZF90ICpwbWQsCiAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIF4KLi9p
-bmNsdWRlL2xpbnV4L2h1Z2VfbW0uaDozNTY6MzE6IGVycm9yOiB1bmtub3duIHR5cGUgbmFtZSDi
-gJhwbWRfdOKAmQogIHN0YXRpYyBpbmxpbmUgaW50IGlzX3N3YXBfcG1kKHBtZF90IHBtZCkKICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICBeCi4vaW5jbHVkZS9saW51eC9odWdlX21tLmg6
-MzYwOjQ3OiBlcnJvcjogdW5rbm93biB0eXBlIG5hbWUg4oCYcG1kX3TigJkKICBzdGF0aWMgaW5s
-aW5lIHNwaW5sb2NrX3QgKnBtZF90cmFuc19odWdlX2xvY2socG1kX3QgKnBtZCwKICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXgouL2luY2x1ZGUvbGludXgv
-aHVnZV9tbS5oOjM3MjozOiBlcnJvcjogdW5rbm93biB0eXBlIG5hbWUg4oCYcG1kX3TigJkKICAg
-IHBtZF90IG9yaWdfcG1kKQogICAgXgouL2luY2x1ZGUvbGludXgvaHVnZV9tbS5oOjM5MzoyMjog
-ZXJyb3I6IHVua25vd24gdHlwZSBuYW1lIOKAmHBtZF904oCZCiAgIHVuc2lnbmVkIGxvbmcgYWRk
-ciwgcG1kX3QgKnBtZCwgaW50IGZsYWdzLCBzdHJ1Y3QgZGV2X3BhZ2VtYXAgKipwZ21hcCkKICAg
-ICAgICAgICAgICAgICAgICAgICBeCkluIGZpbGUgaW5jbHVkZWQgZnJvbSAuL2luY2x1ZGUvbGlu
-dXgvcmluZ19idWZmZXIuaDo1OjAsCiAgICAgICAgICAgICAgICAgIGZyb20gLi9pbmNsdWRlL2xp
-bnV4L3RyYWNlX2V2ZW50cy5oOjYsCiAgICAgICAgICAgICAgICAgIGZyb20gLi9pbmNsdWRlL3Ry
-YWNlL3N5c2NhbGwuaDo3LAogICAgICAgICAgICAgICAgICBmcm9tIC4vaW5jbHVkZS9saW51eC9z
-eXNjYWxscy5oOjg1LAogICAgICAgICAgICAgICAgICBmcm9tIGluaXQvbWFpbi5jOjIxOgouL2lu
-Y2x1ZGUvbGludXgvbW0uaDoxNDQ3OjU6IGVycm9yOiB1bmtub3duIHR5cGUgbmFtZSDigJhwbWRf
-dOKAmQogICAgICBwbWRfdCBwbWQpOwogICAgICBeCi4vaW5jbHVkZS9saW51eC9tbS5oOjE0NjQ6
-MjE6IGVycm9yOiB1bmtub3duIHR5cGUgbmFtZSDigJhwbWRfdOKAmQogICAgICAgcHRlX3QgKipw
-dGVwcCwgcG1kX3QgKipwbWRwcCwgc3BpbmxvY2tfdCAqKnB0bHApOwogICAgICAgICAgICAgICAg
-ICAgICAgXgouL2luY2x1ZGUvbGludXgvbW0uaDoxODUwOjM5OiBlcnJvcjogdW5rbm93biB0eXBl
-IG5hbWUg4oCYcG1kX3TigJkKICBpbnQgX19wdGVfYWxsb2Moc3RydWN0IG1tX3N0cnVjdCAqbW0s
-IHBtZF90ICpwbWQpOwogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXgou
-L2luY2x1ZGUvbGludXgvbW0uaDoxODUxOjI0OiBlcnJvcjogdW5rbm93biB0eXBlIG5hbWUg4oCY
-cG1kX3TigJkKICBpbnQgX19wdGVfYWxsb2Nfa2VybmVsKHBtZF90ICpwbWQpOwogICAgICAgICAg
-ICAgICAgICAgICAgICAgXgouL2luY2x1ZGUvbGludXgvbW0uaDoxOTM3OjYxOiBlcnJvcjogdW5r
-bm93biB0eXBlIG5hbWUg4oCYcG1kX3TigJkKICBzdGF0aWMgaW5saW5lIHNwaW5sb2NrX3QgKnB0
-ZV9sb2NrcHRyKHN0cnVjdCBtbV9zdHJ1Y3QgKm1tLCBwbWRfdCAqcG1kKQogICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIF4KLi9pbmNs
-dWRlL2xpbnV4L21tLmg6MjAyODo2MTogZXJyb3I6IHVua25vd24gdHlwZSBuYW1lIOKAmHBtZF90
-4oCZCiAgc3RhdGljIGlubGluZSBzcGlubG9ja190ICpwbWRfbG9ja3B0cihzdHJ1Y3QgbW1fc3Ry
-dWN0ICptbSwgcG1kX3QgKnBtZCkKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICBeCi4vaW5jbHVkZS9saW51eC9tbS5oOjIwNDA6NTg6
-IGVycm9yOiB1bmtub3duIHR5cGUgbmFtZSDigJhwbWRfdOKAmQogIHN0YXRpYyBpbmxpbmUgc3Bp
-bmxvY2tfdCAqcG1kX2xvY2soc3RydWN0IG1tX3N0cnVjdCAqbW0sIHBtZF90ICpwbWQpCiAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXgpJ
-biBmaWxlIGluY2x1ZGVkIGZyb20gLi9pbmNsdWRlL2xpbnV4L3JpbmdfYnVmZmVyLmg6NTowLAog
-ICAgICAgICAgICAgICAgICBmcm9tIC4vaW5jbHVkZS9saW51eC90cmFjZV9ldmVudHMuaDo2LAog
-ICAgICAgICAgICAgICAgICBmcm9tIC4vaW5jbHVkZS90cmFjZS9zeXNjYWxsLmg6NywKICAgICAg
-ICAgICAgICAgICAgZnJvbSAuL2luY2x1ZGUvbGludXgvc3lzY2FsbHMuaDo4NSwKICAgICAgICAg
-ICAgICAgICAgZnJvbSBpbml0L21haW4uYzoyMToKLi9pbmNsdWRlL2xpbnV4L21tLmg6Mjc1NTox
-OiBlcnJvcjogdW5rbm93biB0eXBlIG5hbWUg4oCYcG1kX3TigJkKICBwbWRfdCAqdm1lbW1hcF9w
-bWRfcG9wdWxhdGUocHVkX3QgKnB1ZCwgdW5zaWduZWQgbG9uZyBhZGRyLCBpbnQgbm9kZSk7CiAg
-XgouL2luY2x1ZGUvbGludXgvbW0uaDoyNzU2OjI5OiBlcnJvcjogdW5rbm93biB0eXBlIG5hbWUg
-4oCYcG1kX3TigJkKICBwdGVfdCAqdm1lbW1hcF9wdGVfcG9wdWxhdGUocG1kX3QgKnBtZCwgdW5z
-aWduZWQgbG9uZyBhZGRyLCBpbnQgbm9kZSk7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-IF4Kc2NyaXB0cy9NYWtlZmlsZS5idWlsZDoyNjU6IHJlY2lwZSBmb3IgdGFyZ2V0ICdpbml0L21h
-aW4ubycgZmFpbGVkCm1ha2VbMV06ICoqKiBbaW5pdC9tYWluLm9dIEVycm9yIDEKTWFrZWZpbGU6
-MTY0OTogcmVjaXBlIGZvciB0YXJnZXQgJ2luaXQnIGZhaWxlZAptYWtlOiAqKiogW2luaXRdIEVy
-cm9yIDIKClJlZ2FyZHMKR3JlZwoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJu
-ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi Mike,
+
+On 23/10/19 7:28 pm, Mike Rapoport wrote:
+> From: Mike Rapoport <rppt@linux.ibm.com>
+> 
+> m68k has two or three levels of page tables and can use appropriate
+> pgtable-nopXd and folding of the upper layers.
+> 
+> Replace usage of include/asm-generic/4level-fixup.h and explicit
+> definitions of __PAGETABLE_PxD_FOLDED in m68k with
+> include/asm-generic/pgtable-nopmd.h for two-level configurations and with
+> include/asm-generic/pgtable-nopmd.h for three-lelve configurations and
+> adjust page table manipulation macros and functions accordingly.
+> 
+> Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
+
+Tested (on real hardware) for the ColdFire MMU m68k variants and working
+
+Acked-by: Greg Ungerer <gerg@linux-m68k.org>
+
+Regards
+Greg
+
+
+> ---
+>   arch/m68k/include/asm/mcf_pgalloc.h      |  7 -------
+>   arch/m68k/include/asm/mcf_pgtable.h      | 28 +++++++++----------------
+>   arch/m68k/include/asm/mmu_context.h      | 12 ++++++++++-
+>   arch/m68k/include/asm/motorola_pgalloc.h |  4 ++--
+>   arch/m68k/include/asm/motorola_pgtable.h | 32 +++++++++++++++++-----------
+>   arch/m68k/include/asm/page.h             |  9 +++++---
+>   arch/m68k/include/asm/pgtable_mm.h       | 11 ++++++----
+>   arch/m68k/include/asm/sun3_pgalloc.h     |  5 -----
+>   arch/m68k/include/asm/sun3_pgtable.h     | 18 ----------------
+>   arch/m68k/kernel/sys_m68k.c              | 10 ++++++++-
+>   arch/m68k/mm/init.c                      |  6 ++++--
+>   arch/m68k/mm/kmap.c                      | 36 ++++++++++++++++++++++++--------
+>   arch/m68k/mm/mcfmmu.c                    | 16 +++++++++++++-
+>   arch/m68k/mm/motorola.c                  | 17 +++++++++------
+>   14 files changed, 122 insertions(+), 89 deletions(-)
+> 
+> diff --git a/arch/m68k/include/asm/mcf_pgalloc.h b/arch/m68k/include/asm/mcf_pgalloc.h
+> index b34d44d..82ec54c 100644
+> --- a/arch/m68k/include/asm/mcf_pgalloc.h
+> +++ b/arch/m68k/include/asm/mcf_pgalloc.h
+> @@ -28,9 +28,6 @@ extern inline pmd_t *pmd_alloc_kernel(pgd_t *pgd, unsigned long address)
+>   	return (pmd_t *) pgd;
+>   }
+>   
+> -#define pmd_alloc_one_fast(mm, address) ({ BUG(); ((pmd_t *)1); })
+> -#define pmd_alloc_one(mm, address)      ({ BUG(); ((pmd_t *)2); })
+> -
+>   #define pmd_populate(mm, pmd, page) (pmd_val(*pmd) = \
+>   	(unsigned long)(page_address(page)))
+>   
+> @@ -45,8 +42,6 @@ static inline void __pte_free_tlb(struct mmu_gather *tlb, pgtable_t page,
+>   	__free_page(page);
+>   }
+>   
+> -#define __pmd_free_tlb(tlb, pmd, address) do { } while (0)
+> -
+>   static inline struct page *pte_alloc_one(struct mm_struct *mm)
+>   {
+>   	struct page *page = alloc_pages(GFP_DMA, 0);
+> @@ -100,6 +95,4 @@ static inline pgd_t *pgd_alloc(struct mm_struct *mm)
+>   	return new_pgd;
+>   }
+>   
+> -#define pgd_populate(mm, pmd, pte) BUG()
+> -
+>   #endif /* M68K_MCF_PGALLOC_H */
+> diff --git a/arch/m68k/include/asm/mcf_pgtable.h b/arch/m68k/include/asm/mcf_pgtable.h
+> index 5d5502c..b9f45ae 100644
+> --- a/arch/m68k/include/asm/mcf_pgtable.h
+> +++ b/arch/m68k/include/asm/mcf_pgtable.h
+> @@ -198,17 +198,9 @@ static inline int pmd_bad2(pmd_t *pmd) { return 0; }
+>   #define pmd_present(pmd) (!pmd_none2(&(pmd)))
+>   static inline void pmd_clear(pmd_t *pmdp) { pmd_val(*pmdp) = 0; }
+>   
+> -static inline int pgd_none(pgd_t pgd) { return 0; }
+> -static inline int pgd_bad(pgd_t pgd) { return 0; }
+> -static inline int pgd_present(pgd_t pgd) { return 1; }
+> -static inline void pgd_clear(pgd_t *pgdp) {}
+> -
+>   #define pte_ERROR(e) \
+>   	printk(KERN_ERR "%s:%d: bad pte %08lx.\n",	\
+>   	__FILE__, __LINE__, pte_val(e))
+> -#define pmd_ERROR(e) \
+> -	printk(KERN_ERR "%s:%d: bad pmd %08lx.\n",	\
+> -	__FILE__, __LINE__, pmd_val(e))
+>   #define pgd_ERROR(e) \
+>   	printk(KERN_ERR "%s:%d: bad pgd %08lx.\n",	\
+>   	__FILE__, __LINE__, pgd_val(e))
+> @@ -340,14 +332,6 @@ extern pgd_t kernel_pg_dir[PTRS_PER_PGD];
+>   #define pgd_offset_k(address)	pgd_offset(&init_mm, address)
+>   
+>   /*
+> - * Find an entry in the second-level pagetable.
+> - */
+> -static inline pmd_t *pmd_offset(pgd_t *pgd, unsigned long address)
+> -{
+> -	return (pmd_t *) pgd;
+> -}
+> -
+> -/*
+>    * Find an entry in the third-level pagetable.
+>    */
+>   #define __pte_offset(address)	((address >> PAGE_SHIFT) & (PTRS_PER_PTE - 1))
+> @@ -360,12 +344,16 @@ static inline pmd_t *pmd_offset(pgd_t *pgd, unsigned long address)
+>   static inline void nocache_page(void *vaddr)
+>   {
+>   	pgd_t *dir;
+> +	p4d_t *p4dp;
+> +	pud_t *pudp;
+>   	pmd_t *pmdp;
+>   	pte_t *ptep;
+>   	unsigned long addr = (unsigned long) vaddr;
+>   
+>   	dir = pgd_offset_k(addr);
+> -	pmdp = pmd_offset(dir, addr);
+> +	p4dp = p4d_offset(dir, addr);
+> +	pudp = pud_offset(p4dp, addr);
+> +	pmdp = pmd_offset(pudp, addr);
+>   	ptep = pte_offset_kernel(pmdp, addr);
+>   	*ptep = pte_mknocache(*ptep);
+>   }
+> @@ -376,12 +364,16 @@ static inline void nocache_page(void *vaddr)
+>   static inline void cache_page(void *vaddr)
+>   {
+>   	pgd_t *dir;
+> +	p4d_t *p4dp;
+> +	pud_t *pudp;
+>   	pmd_t *pmdp;
+>   	pte_t *ptep;
+>   	unsigned long addr = (unsigned long) vaddr;
+>   
+>   	dir = pgd_offset_k(addr);
+> -	pmdp = pmd_offset(dir, addr);
+> +	p4dp = p4d_offset(dir, addr);
+> +	pudp = pud_offset(p4dp, addr);
+> +	pmdp = pmd_offset(pudp, addr);
+>   	ptep = pte_offset_kernel(pmdp, addr);
+>   	*ptep = pte_mkcache(*ptep);
+>   }
+> diff --git a/arch/m68k/include/asm/mmu_context.h b/arch/m68k/include/asm/mmu_context.h
+> index f5b1852..cac9f28 100644
+> --- a/arch/m68k/include/asm/mmu_context.h
+> +++ b/arch/m68k/include/asm/mmu_context.h
+> @@ -100,6 +100,8 @@ static inline void load_ksp_mmu(struct task_struct *task)
+>   	struct mm_struct *mm;
+>   	int asid;
+>   	pgd_t *pgd;
+> +	p4d_t *p4d;
+> +	pud_t *pud;
+>   	pmd_t *pmd;
+>   	pte_t *pte;
+>   	unsigned long mmuar;
+> @@ -127,7 +129,15 @@ static inline void load_ksp_mmu(struct task_struct *task)
+>   	if (pgd_none(*pgd))
+>   		goto bug;
+>   
+> -	pmd = pmd_offset(pgd, mmuar);
+> +	p4d = p4d_offset(pgd, mmuar);
+> +	if (p4d_none(*p4d))
+> +		goto bug;
+> +
+> +	pud = pud_offset(p4d, mmuar);
+> +	if (pud_none(*pud))
+> +		goto bug;
+> +
+> +	pmd = pmd_offset(pud, mmuar);
+>   	if (pmd_none(*pmd))
+>   		goto bug;
+>   
+> diff --git a/arch/m68k/include/asm/motorola_pgalloc.h b/arch/m68k/include/asm/motorola_pgalloc.h
+> index acab315..ff9cc40 100644
+> --- a/arch/m68k/include/asm/motorola_pgalloc.h
+> +++ b/arch/m68k/include/asm/motorola_pgalloc.h
+> @@ -106,9 +106,9 @@ static inline void pmd_populate(struct mm_struct *mm, pmd_t *pmd, pgtable_t page
+>   }
+>   #define pmd_pgtable(pmd) pmd_page(pmd)
+>   
+> -static inline void pgd_populate(struct mm_struct *mm, pgd_t *pgd, pmd_t *pmd)
+> +static inline void pud_populate(struct mm_struct *mm, pud_t *pud, pmd_t *pmd)
+>   {
+> -	pgd_set(pgd, pmd);
+> +	pud_set(pud, pmd);
+>   }
+>   
+>   #endif /* _MOTOROLA_PGALLOC_H */
+> diff --git a/arch/m68k/include/asm/motorola_pgtable.h b/arch/m68k/include/asm/motorola_pgtable.h
+> index 7f66a7b..62bedc6 100644
+> --- a/arch/m68k/include/asm/motorola_pgtable.h
+> +++ b/arch/m68k/include/asm/motorola_pgtable.h
+> @@ -117,14 +117,14 @@ static inline void pmd_set(pmd_t *pmdp, pte_t *ptep)
+>   	}
+>   }
+>   
+> -static inline void pgd_set(pgd_t *pgdp, pmd_t *pmdp)
+> +static inline void pud_set(pud_t *pudp, pmd_t *pmdp)
+>   {
+> -	pgd_val(*pgdp) = _PAGE_TABLE | _PAGE_ACCESSED | __pa(pmdp);
+> +	pud_val(*pudp) = _PAGE_TABLE | _PAGE_ACCESSED | __pa(pmdp);
+>   }
+>   
+>   #define __pte_page(pte) ((unsigned long)__va(pte_val(pte) & PAGE_MASK))
+>   #define __pmd_page(pmd) ((unsigned long)__va(pmd_val(pmd) & _TABLE_MASK))
+> -#define __pgd_page(pgd) ((unsigned long)__va(pgd_val(pgd) & _TABLE_MASK))
+> +#define pud_page_vaddr(pud) ((unsigned long)__va(pud_val(pud) & _TABLE_MASK))
+>   
+>   
+>   #define pte_none(pte)		(!pte_val(pte))
+> @@ -147,11 +147,11 @@ static inline void pgd_set(pgd_t *pgdp, pmd_t *pmdp)
+>   #define pmd_page(pmd)		virt_to_page(__va(pmd_val(pmd)))
+>   
+>   
+> -#define pgd_none(pgd)		(!pgd_val(pgd))
+> -#define pgd_bad(pgd)		((pgd_val(pgd) & _DESCTYPE_MASK) != _PAGE_TABLE)
+> -#define pgd_present(pgd)	(pgd_val(pgd) & _PAGE_TABLE)
+> -#define pgd_clear(pgdp)		({ pgd_val(*pgdp) = 0; })
+> -#define pgd_page(pgd)		(mem_map + ((unsigned long)(__va(pgd_val(pgd)) - PAGE_OFFSET) >> PAGE_SHIFT))
+> +#define pud_none(pud)		(!pud_val(pud))
+> +#define pud_bad(pud)		((pud_val(pud) & _DESCTYPE_MASK) != _PAGE_TABLE)
+> +#define pud_present(pud)	(pud_val(pud) & _PAGE_TABLE)
+> +#define pud_clear(pudp)		({ pud_val(*pudp) = 0; })
+> +#define pud_page(pud)		(mem_map + ((unsigned long)(__va(pud_val(pud)) - PAGE_OFFSET) >> PAGE_SHIFT))
+>   
+>   #define pte_ERROR(e) \
+>   	printk("%s:%d: bad pte %08lx.\n", __FILE__, __LINE__, pte_val(e))
+> @@ -209,9 +209,9 @@ static inline pgd_t *pgd_offset_k(unsigned long address)
+>   
+>   
+>   /* Find an entry in the second-level page table.. */
+> -static inline pmd_t *pmd_offset(pgd_t *dir, unsigned long address)
+> +static inline pmd_t *pmd_offset(pud_t *dir, unsigned long address)
+>   {
+> -	return (pmd_t *)__pgd_page(*dir) + ((address >> PMD_SHIFT) & (PTRS_PER_PMD-1));
+> +	return (pmd_t *)pud_page_vaddr(*dir) + ((address >> PMD_SHIFT) & (PTRS_PER_PMD-1));
+>   }
+>   
+>   /* Find an entry in the third-level page table.. */
+> @@ -239,11 +239,15 @@ static inline void nocache_page(void *vaddr)
+>   
+>   	if (CPU_IS_040_OR_060) {
+>   		pgd_t *dir;
+> +		p4d_t *p4dp;
+> +		pud_t *pudp;
+>   		pmd_t *pmdp;
+>   		pte_t *ptep;
+>   
+>   		dir = pgd_offset_k(addr);
+> -		pmdp = pmd_offset(dir, addr);
+> +		p4dp = p4d_offset(dir, addr);
+> +		pudp = pud_offset(p4dp, addr);
+> +		pmdp = pmd_offset(pudp, addr);
+>   		ptep = pte_offset_kernel(pmdp, addr);
+>   		*ptep = pte_mknocache(*ptep);
+>   	}
+> @@ -255,11 +259,15 @@ static inline void cache_page(void *vaddr)
+>   
+>   	if (CPU_IS_040_OR_060) {
+>   		pgd_t *dir;
+> +		p4d_t *p4dp;
+> +		pud_t *pudp;
+>   		pmd_t *pmdp;
+>   		pte_t *ptep;
+>   
+>   		dir = pgd_offset_k(addr);
+> -		pmdp = pmd_offset(dir, addr);
+> +		p4dp = p4d_offset(dir, addr);
+> +		pudp = pud_offset(p4dp, addr);
+> +		pmdp = pmd_offset(pudp, addr);
+>   		ptep = pte_offset_kernel(pmdp, addr);
+>   		*ptep = pte_mkcache(*ptep);
+>   	}
+> diff --git a/arch/m68k/include/asm/page.h b/arch/m68k/include/asm/page.h
+> index 700d819..c00b67a 100644
+> --- a/arch/m68k/include/asm/page.h
+> +++ b/arch/m68k/include/asm/page.h
+> @@ -21,19 +21,22 @@
+>   /*
+>    * These are used to make use of C type-checking..
+>    */
+> -typedef struct { unsigned long pte; } pte_t;
+> +#if CONFIG_PGTABLE_LEVELS == 3
+>   typedef struct { unsigned long pmd[16]; } pmd_t;
+> +#define pmd_val(x)	((&x)->pmd[0])
+> +#define __pmd(x)	((pmd_t) { { (x) }, })
+> +#endif
+> +
+> +typedef struct { unsigned long pte; } pte_t;
+>   typedef struct { unsigned long pgd; } pgd_t;
+>   typedef struct { unsigned long pgprot; } pgprot_t;
+>   typedef struct page *pgtable_t;
+>   
+>   #define pte_val(x)	((x).pte)
+> -#define pmd_val(x)	((&x)->pmd[0])
+>   #define pgd_val(x)	((x).pgd)
+>   #define pgprot_val(x)	((x).pgprot)
+>   
+>   #define __pte(x)	((pte_t) { (x) } )
+> -#define __pmd(x)	((pmd_t) { { (x) }, })
+>   #define __pgd(x)	((pgd_t) { (x) } )
+>   #define __pgprot(x)	((pgprot_t) { (x) } )
+>   
+> diff --git a/arch/m68k/include/asm/pgtable_mm.h b/arch/m68k/include/asm/pgtable_mm.h
+> index 646c174f..2bf5c35 100644
+> --- a/arch/m68k/include/asm/pgtable_mm.h
+> +++ b/arch/m68k/include/asm/pgtable_mm.h
+> @@ -2,7 +2,12 @@
+>   #ifndef _M68K_PGTABLE_H
+>   #define _M68K_PGTABLE_H
+>   
+> -#include <asm-generic/4level-fixup.h>
+> +
+> +#if defined(CONFIG_SUN3) || defined(CONFIG_COLDFIRE)
+> +#include <asm-generic/pgtable-nopmd.h>
+> +#else
+> +#include <asm-generic/pgtable-nopud.h>
+> +#endif
+>   
+>   #include <asm/setup.h>
+>   
+> @@ -30,9 +35,7 @@
+>   
+>   
+>   /* PMD_SHIFT determines the size of the area a second-level page table can map */
+> -#ifdef CONFIG_SUN3
+> -#define PMD_SHIFT       17
+> -#else
+> +#if CONFIG_PGTABLE_LEVELS == 3
+>   #define PMD_SHIFT	22
+>   #endif
+>   #define PMD_SIZE	(1UL << PMD_SHIFT)
+> diff --git a/arch/m68k/include/asm/sun3_pgalloc.h b/arch/m68k/include/asm/sun3_pgalloc.h
+> index 8561211..11b95da 100644
+> --- a/arch/m68k/include/asm/sun3_pgalloc.h
+> +++ b/arch/m68k/include/asm/sun3_pgalloc.h
+> @@ -17,8 +17,6 @@
+>   
+>   extern const char bad_pmd_string[];
+>   
+> -#define pmd_alloc_one(mm,address)       ({ BUG(); ((pmd_t *)2); })
+> -
+>   #define __pte_free_tlb(tlb,pte,addr)			\
+>   do {							\
+>   	pgtable_pte_page_dtor(pte);			\
+> @@ -41,7 +39,6 @@ static inline void pmd_populate(struct mm_struct *mm, pmd_t *pmd, pgtable_t page
+>    * inside the pgd, so has no extra memory associated with it.
+>    */
+>   #define pmd_free(mm, x)			do { } while (0)
+> -#define __pmd_free_tlb(tlb, x, addr)	do { } while (0)
+>   
+>   static inline void pgd_free(struct mm_struct *mm, pgd_t *pgd)
+>   {
+> @@ -58,6 +55,4 @@ static inline pgd_t * pgd_alloc(struct mm_struct *mm)
+>        return new_pgd;
+>   }
+>   
+> -#define pgd_populate(mm, pmd, pte) BUG()
+> -
+>   #endif /* SUN3_PGALLOC_H */
+> diff --git a/arch/m68k/include/asm/sun3_pgtable.h b/arch/m68k/include/asm/sun3_pgtable.h
+> index c987d50..bc41552 100644
+> --- a/arch/m68k/include/asm/sun3_pgtable.h
+> +++ b/arch/m68k/include/asm/sun3_pgtable.h
+> @@ -110,11 +110,6 @@ static inline pte_t pte_modify(pte_t pte, pgprot_t newprot)
+>   
+>   #define pmd_set(pmdp,ptep) do {} while (0)
+>   
+> -static inline void pgd_set(pgd_t *pgdp, pmd_t *pmdp)
+> -{
+> -	pgd_val(*pgdp) = virt_to_phys(pmdp);
+> -}
+> -
+>   #define __pte_page(pte) \
+>   ((unsigned long) __va ((pte_val (pte) & SUN3_PAGE_PGNUM_MASK) << PAGE_SHIFT))
+>   #define __pmd_page(pmd) \
+> @@ -145,16 +140,9 @@ static inline int pmd_present2 (pmd_t *pmd) { return pmd_val (*pmd) & SUN3_PMD_V
+>   #define pmd_present(pmd) (!pmd_none2(&(pmd)))
+>   static inline void pmd_clear (pmd_t *pmdp) { pmd_val (*pmdp) = 0; }
+>   
+> -static inline int pgd_none (pgd_t pgd) { return 0; }
+> -static inline int pgd_bad (pgd_t pgd) { return 0; }
+> -static inline int pgd_present (pgd_t pgd) { return 1; }
+> -static inline void pgd_clear (pgd_t *pgdp) {}
+> -
+>   
+>   #define pte_ERROR(e) \
+>   	pr_err("%s:%d: bad pte %08lx.\n", __FILE__, __LINE__, pte_val(e))
+> -#define pmd_ERROR(e) \
+> -	pr_err("%s:%d: bad pmd %08lx.\n", __FILE__, __LINE__, pmd_val(e))
+>   #define pgd_ERROR(e) \
+>   	pr_err("%s:%d: bad pgd %08lx.\n", __FILE__, __LINE__, pgd_val(e))
+>   
+> @@ -194,12 +182,6 @@ extern pgd_t kernel_pg_dir[PTRS_PER_PGD];
+>   /* Find an entry in a kernel pagetable directory. */
+>   #define pgd_offset_k(address) pgd_offset(&init_mm, address)
+>   
+> -/* Find an entry in the second-level pagetable. */
+> -static inline pmd_t *pmd_offset (pgd_t *pgd, unsigned long address)
+> -{
+> -	return (pmd_t *) pgd;
+> -}
+> -
+>   /* Find an entry in the third-level pagetable. */
+>   #define pte_index(address) ((address >> PAGE_SHIFT) & (PTRS_PER_PTE-1))
+>   #define pte_offset_kernel(pmd, address) ((pte_t *) __pmd_page(*pmd) + pte_index(address))
+> diff --git a/arch/m68k/kernel/sys_m68k.c b/arch/m68k/kernel/sys_m68k.c
+> index 6363ec8..18a4de7 100644
+> --- a/arch/m68k/kernel/sys_m68k.c
+> +++ b/arch/m68k/kernel/sys_m68k.c
+> @@ -465,6 +465,8 @@ sys_atomic_cmpxchg_32(unsigned long newval, int oldval, int d3, int d4, int d5,
+>   	for (;;) {
+>   		struct mm_struct *mm = current->mm;
+>   		pgd_t *pgd;
+> +		p4d_t *p4d;
+> +		pud_t *pud;
+>   		pmd_t *pmd;
+>   		pte_t *pte;
+>   		spinlock_t *ptl;
+> @@ -474,7 +476,13 @@ sys_atomic_cmpxchg_32(unsigned long newval, int oldval, int d3, int d4, int d5,
+>   		pgd = pgd_offset(mm, (unsigned long)mem);
+>   		if (!pgd_present(*pgd))
+>   			goto bad_access;
+> -		pmd = pmd_offset(pgd, (unsigned long)mem);
+> +		p4d = p4d_offset(pgd, (unsigned long)mem);
+> +		if (!p4d_present(*p4d))
+> +			goto bad_access;
+> +		pud = pud_offset(p4d, (unsigned long)mem);
+> +		if (!pud_present(*pud))
+> +			goto bad_access;
+> +		pmd = pmd_offset(pud, (unsigned long)mem);
+>   		if (!pmd_present(*pmd))
+>   			goto bad_access;
+>   		pte = pte_offset_map_lock(mm, pmd, (unsigned long)mem, &ptl);
+> diff --git a/arch/m68k/mm/init.c b/arch/m68k/mm/init.c
+> index 778cacb..27c453f 100644
+> --- a/arch/m68k/mm/init.c
+> +++ b/arch/m68k/mm/init.c
+> @@ -130,8 +130,10 @@ static inline void init_pointer_tables(void)
+>   	/* insert pointer tables allocated so far into the tablelist */
+>   	init_pointer_table((unsigned long)kernel_pg_dir);
+>   	for (i = 0; i < PTRS_PER_PGD; i++) {
+> -		if (pgd_present(kernel_pg_dir[i]))
+> -			init_pointer_table(__pgd_page(kernel_pg_dir[i]));
+> +		pud_t *pud = (pud_t *)(&kernel_pg_dir[i]);
+> +
+> +		if (pud_present(*pud))
+> +			init_pointer_table(pgd_page_vaddr(kernel_pg_dir[i]));
+>   	}
+>   
+>   	/* insert also pointer table that we used to unmap the zero page */
+> diff --git a/arch/m68k/mm/kmap.c b/arch/m68k/mm/kmap.c
+> index 40a3b32..9f687da 100644
+> --- a/arch/m68k/mm/kmap.c
+> +++ b/arch/m68k/mm/kmap.c
+> @@ -110,6 +110,8 @@ void __iomem *__ioremap(unsigned long physaddr, unsigned long size, int cachefla
+>   	unsigned long virtaddr, retaddr;
+>   	long offset;
+>   	pgd_t *pgd_dir;
+> +	p4d_t *p4d_dir;
+> +	pud_t *pud_dir;
+>   	pmd_t *pmd_dir;
+>   	pte_t *pte_dir;
+>   
+> @@ -196,17 +198,21 @@ void __iomem *__ioremap(unsigned long physaddr, unsigned long size, int cachefla
+>   			printk ("\npa=%#lx va=%#lx ", physaddr, virtaddr);
+>   #endif
+>   		pgd_dir = pgd_offset_k(virtaddr);
+> -		pmd_dir = pmd_alloc(&init_mm, pgd_dir, virtaddr);
+> +		p4d_dir = p4d_offset(pgd_dir, virtaddr);
+> +		pud_dir = pud_offset(p4d_dir, virtaddr);
+> +		pmd_dir = pmd_alloc(&init_mm, pud_dir, virtaddr);
+>   		if (!pmd_dir) {
+>   			printk("ioremap: no mem for pmd_dir\n");
+>   			return NULL;
+>   		}
+>   
+>   		if (CPU_IS_020_OR_030) {
+> +#if CONFIG_PGTABLE_LEVELS == 3
+>   			pmd_dir->pmd[(virtaddr/PTRTREESIZE) & 15] = physaddr;
+>   			physaddr += PTRTREESIZE;
+>   			virtaddr += PTRTREESIZE;
+>   			size -= PTRTREESIZE;
+> +#endif
+>   		} else {
+>   			pte_dir = pte_alloc_kernel(pmd_dir, virtaddr);
+>   			if (!pte_dir) {
+> @@ -258,19 +264,24 @@ void __iounmap(void *addr, unsigned long size)
+>   {
+>   	unsigned long virtaddr = (unsigned long)addr;
+>   	pgd_t *pgd_dir;
+> +	p4d_t *p4d_dir;
+> +	pud_t *pud_dir;
+>   	pmd_t *pmd_dir;
+>   	pte_t *pte_dir;
+>   
+>   	while ((long)size > 0) {
+>   		pgd_dir = pgd_offset_k(virtaddr);
+> -		if (pgd_bad(*pgd_dir)) {
+> -			printk("iounmap: bad pgd(%08lx)\n", pgd_val(*pgd_dir));
+> -			pgd_clear(pgd_dir);
+> +		p4d_dir = p4d_offset(pgd_dir, virtaddr);
+> +		pud_dir = pud_offset(p4d_dir, virtaddr);
+> +		if (pud_bad(*pud_dir)) {
+> +			printk("iounmap: bad pgd(%08lx)\n", pud_val(*pud_dir));
+> +			pud_clear(pud_dir);
+>   			return;
+>   		}
+> -		pmd_dir = pmd_offset(pgd_dir, virtaddr);
+> +		pmd_dir = pmd_offset(pud_dir, virtaddr);
+>   
+>   		if (CPU_IS_020_OR_030) {
+> +#if CONFIG_PGTABLE_LEVELS == 3
+>   			int pmd_off = (virtaddr/PTRTREESIZE) & 15;
+>   			int pmd_type = pmd_dir->pmd[pmd_off] & _DESCTYPE_MASK;
+>   
+> @@ -281,6 +292,7 @@ void __iounmap(void *addr, unsigned long size)
+>   				continue;
+>   			} else if (pmd_type == 0)
+>   				continue;
+> +#endif
+>   		}
+>   
+>   		if (pmd_bad(*pmd_dir)) {
+> @@ -307,6 +319,8 @@ void kernel_set_cachemode(void *addr, unsigned long size, int cmode)
+>   {
+>   	unsigned long virtaddr = (unsigned long)addr;
+>   	pgd_t *pgd_dir;
+> +	p4d_t *p4d_dir;
+> +	pud_t *pud_dir;
+>   	pmd_t *pmd_dir;
+>   	pte_t *pte_dir;
+>   
+> @@ -341,14 +355,17 @@ void kernel_set_cachemode(void *addr, unsigned long size, int cmode)
+>   
+>   	while ((long)size > 0) {
+>   		pgd_dir = pgd_offset_k(virtaddr);
+> -		if (pgd_bad(*pgd_dir)) {
+> -			printk("iocachemode: bad pgd(%08lx)\n", pgd_val(*pgd_dir));
+> -			pgd_clear(pgd_dir);
+> +		p4d_dir = p4d_offset(pgd_dir, virtaddr);
+> +		pud_dir = pud_offset(p4d_dir, virtaddr);
+> +		if (pud_bad(*pud_dir)) {
+> +			printk("iocachemode: bad pud(%08lx)\n", pud_val(*pud_dir));
+> +			pud_clear(pud_dir);
+>   			return;
+>   		}
+> -		pmd_dir = pmd_offset(pgd_dir, virtaddr);
+> +		pmd_dir = pmd_offset(pud_dir, virtaddr);
+>   
+>   		if (CPU_IS_020_OR_030) {
+> +#if CONFIG_PGTABLE_LEVELS == 3
+>   			int pmd_off = (virtaddr/PTRTREESIZE) & 15;
+>   
+>   			if ((pmd_dir->pmd[pmd_off] & _DESCTYPE_MASK) == _PAGE_PRESENT) {
+> @@ -358,6 +375,7 @@ void kernel_set_cachemode(void *addr, unsigned long size, int cmode)
+>   				size -= PTRTREESIZE;
+>   				continue;
+>   			}
+> +#endif
+>   		}
+>   
+>   		if (pmd_bad(*pmd_dir)) {
+> diff --git a/arch/m68k/mm/mcfmmu.c b/arch/m68k/mm/mcfmmu.c
+> index 6cb1e41..0ea3756 100644
+> --- a/arch/m68k/mm/mcfmmu.c
+> +++ b/arch/m68k/mm/mcfmmu.c
+> @@ -92,6 +92,8 @@ int cf_tlb_miss(struct pt_regs *regs, int write, int dtlb, int extension_word)
+>   	unsigned long flags, mmuar, mmutr;
+>   	struct mm_struct *mm;
+>   	pgd_t *pgd;
+> +	p4d_t *p4d;
+> +	pud_t *pud;
+>   	pmd_t *pmd;
+>   	pte_t *pte;
+>   	int asid;
+> @@ -113,7 +115,19 @@ int cf_tlb_miss(struct pt_regs *regs, int write, int dtlb, int extension_word)
+>   		return -1;
+>   	}
+>   
+> -	pmd = pmd_offset(pgd, mmuar);
+> +	p4d = p4d_offset(pgd, mmuar);
+> +	if (p4d_none(*p4d)) {
+> +		local_irq_restore(flags);
+> +		return -1;
+> +	}
+> +
+> +	pud = pud_offset(p4d, mmuar);
+> +	if (pud_none(*pud)) {
+> +		local_irq_restore(flags);
+> +		return -1;
+> +	}
+> +
+> +	pmd = pmd_offset(pud, mmuar);
+>   	if (pmd_none(*pmd)) {
+>   		local_irq_restore(flags);
+>   		return -1;
+> diff --git a/arch/m68k/mm/motorola.c b/arch/m68k/mm/motorola.c
+> index 356601b..4857985 100644
+> --- a/arch/m68k/mm/motorola.c
+> +++ b/arch/m68k/mm/motorola.c
+> @@ -82,9 +82,11 @@ static pmd_t * __init kernel_ptr_table(void)
+>   		 */
+>   		last = (unsigned long)kernel_pg_dir;
+>   		for (i = 0; i < PTRS_PER_PGD; i++) {
+> -			if (!pgd_present(kernel_pg_dir[i]))
+> +			pud_t *pud = (pud_t *)(&kernel_pg_dir[i]);
+> +
+> +			if (!pud_present(*pud))
+>   				continue;
+> -			pmd = __pgd_page(kernel_pg_dir[i]);
+> +			pmd = pgd_page_vaddr(kernel_pg_dir[i]);
+>   			if (pmd > last)
+>   				last = pmd;
+>   		}
+> @@ -118,6 +120,8 @@ static void __init map_node(int node)
+>   #define ROOTTREESIZE (32*1024*1024)
+>   	unsigned long physaddr, virtaddr, size;
+>   	pgd_t *pgd_dir;
+> +	p4d_t *p4d_dir;
+> +	pud_t *pud_dir;
+>   	pmd_t *pmd_dir;
+>   	pte_t *pte_dir;
+>   
+> @@ -149,14 +153,16 @@ static void __init map_node(int node)
+>   				continue;
+>   			}
+>   		}
+> -		if (!pgd_present(*pgd_dir)) {
+> +		p4d_dir = p4d_offset(pgd_dir, virtaddr);
+> +		pud_dir = pud_offset(p4d_dir, virtaddr);
+> +		if (!pud_present(*pud_dir)) {
+>   			pmd_dir = kernel_ptr_table();
+>   #ifdef DEBUG
+>   			printk ("[new pointer %p]", pmd_dir);
+>   #endif
+> -			pgd_set(pgd_dir, pmd_dir);
+> +			pud_set(pud_dir, pmd_dir);
+>   		} else
+> -			pmd_dir = pmd_offset(pgd_dir, virtaddr);
+> +			pmd_dir = pmd_offset(pud_dir, virtaddr);
+>   
+>   		if (CPU_IS_020_OR_030) {
+>   			if (virtaddr) {
+> @@ -304,4 +310,3 @@ void __init paging_init(void)
+>   			node_set_state(i, N_NORMAL_MEMORY);
+>   	}
+>   }
+> -
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
