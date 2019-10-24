@@ -2,51 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8F7AE3B68
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 20:55:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40B8DE3B83
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 21:00:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Ch8OWYgfSLSywFoCaPJM2TcO3TV79/6ZxUKqn3iQirc=; b=E6S7frNJ3CXDsGE9qhuempgGC
-	l0cXMSv53eRbdOdzaHF0J1ZEorjmmodX5tSnAJaRHHCfGjUbEoFlGvxVLxNiU/2NQ21CqIf8RIeWp
-	RMaW9/qg3UuJ03RcAR+CBmDyaiIGBjBJ6/uy4RX4lih6HY5y3/CZb1xHG1e7MeCxRI2WSHwWXa7cx
-	XPPhJqa0R2WIWsF7dYCyIS5ecqEM8X7KD2IOLEFDwmc4LXiPHBlL1Sq5cSMwShCaaNM6mCO4jTI+2
-	pyhB0t+EiyJ0IoXqLWaglT+j7pOZQawHcmcLTlP26cMe6JGsmvJDYDiV76gU2mbNBvCnZ5+Yu64hD
-	jNzvQyAbQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SFab6QkRwrLhVaQfkTEPrIuAhxXfYhbQIq/bvOVbSmo=; b=IwJSTI1tWCYrzL
+	SHI+LosIp6gTgKSSWZekTw9CcN+tdqGgeWFm3THXYMs8nhylhw0LoPnXcoqc5xnQ6ML23ZRTC74R2
+	wrVo1DvJUUFTlW8U/hXyttQk/geZbAvpw13AMtXz81exiTcDlJY4gLi+ZKfA3bAIby8HPljp779Wj
+	0dMf+JjaL0VUsOcL5M58/tYeatfxmIpV+O7ckgREGKIYWDiM1oCZ0ocTy6mV+CiEWtP+XZdYFt4Lc
+	4ELoFAMR0b1ItRIXthv/1IqX3i3ZAnacLCT9H9ahK+TzcBp0JLDonnHFX/Ka3FVH3JOwjI/ENayNw
+	KKRJAt7wR3TA7fg7KmaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNiH5-0004P1-JU; Thu, 24 Oct 2019 18:55:55 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNiGs-0004OO-QX
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 18:55:44 +0000
-Received: from localhost (x4d0bc9de.dyn.telefonica.de [77.11.201.222])
- by pokefinder.org (Postfix) with ESMTPSA id 223FF2C011D;
- Thu, 24 Oct 2019 20:55:41 +0200 (CEST)
-Date: Thu, 24 Oct 2019 20:55:40 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
-Subject: Re: [PATCH v2 1/1] i2c: iproc: Add i2c repeated start capability
-Message-ID: <20191024185540.GF1870@kunai>
-References: <1569825869-30640-1-git-send-email-rayagonda.kokatanur@broadcom.com>
+	id 1iNiLE-0004zy-FV; Thu, 24 Oct 2019 19:00:12 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iNiKv-0004yK-4s
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 18:59:54 +0000
+Received: from localhost (unknown [109.190.253.11])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2E6C42166E;
+ Thu, 24 Oct 2019 18:59:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571943587;
+ bh=a+uIvZuoQVHuTrFvBOzthw/TKu6zM/j2cbpgzHnS7NU=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=WcOVK2MoQPmQQSsCISXcIBuI7zyFW7PCPi3sEWyZrvsujyJU9KqXd8Lz9FuUcEycP
+ LovoXS6q0NzSjx0T9bwgKdiO0D2IdOC+9eCmPibS/8rcntyqRQWHweq3RvmcIYOhW0
+ RouTokS1q8E5knnKBp9KdlV/2jWAkeeZMIoYyjos=
+Date: Thu, 24 Oct 2019 20:24:05 +0200
+From: Maxime Ripard <mripard@kernel.org>
+To: Corentin Labbe <clabbe.montjoie@gmail.com>
+Subject: Re: [PATCH v2 2/4] dt-bindings: crypto: Add DT bindings
+ documentation for sun8i-ss Security System
+Message-ID: <20191024182405.a4x5vc4hxwsev2hp@hendrix>
+References: <20191023201016.26195-1-clabbe.montjoie@gmail.com>
+ <20191023201016.26195-3-clabbe.montjoie@gmail.com>
+ <20191024065005.hdypdl2dgqsrry5i@gilmour>
+ <20191024093118.GA15113@Red>
 MIME-Version: 1.0
-In-Reply-To: <1569825869-30640-1-git-send-email-rayagonda.kokatanur@broadcom.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <20191024093118.GA15113@Red>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_115543_015326_8F03C55D 
-X-CRM114-Status: GOOD (  10.10  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191024_115953_227070_FFE565A8 
+X-CRM114-Status: GOOD (  22.77  )
+X-Spam-Score: -1.6 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-1.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
+ 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
+ [109.190.253.11 listed in zen.spamhaus.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,85 +82,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lori Hikichi <lori.hikichi@broadcom.com>,
- Shivaraj Shetty <sshetty1@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
- Ray Jui <rjui@broadcom.com>, linux-kernel@vger.kernel.org,
- Shreesha Rajashekar <shreesha.rajashekar@broadcom.com>,
- Icarus Chau <icarus.chau@broadcom.com>, bcm-kernel-feedback-list@broadcom.com,
- linux-i2c@vger.kernel.org, Michael Cheng <ccheng@broadcom.com>,
- Ray Jui <ray.jui@broadcom.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7152735402345194131=="
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ herbert@gondor.apana.org.au, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, wens@csie.org, robh+dt@kernel.org,
+ linux-crypto@vger.kernel.org, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, Oct 24, 2019 at 11:31:18AM +0200, Corentin Labbe wrote:
+> On Thu, Oct 24, 2019 at 08:50:05AM +0200, Maxime Ripard wrote:
+> > Hi,
+> >
+> > On Wed, Oct 23, 2019 at 10:10:14PM +0200, Corentin Labbe wrote:
+> > > This patch adds documentation for Device-Tree bindings of the
+> > > Security System cryptographic offloader driver.
+> > >
+> > > Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
+> > > ---
+> > >  .../bindings/crypto/allwinner,sun8i-ss.yaml   | 64 +++++++++++++++++++
+> > >  1 file changed, 64 insertions(+)
+> > >  create mode 100644 Documentation/devicetree/bindings/crypto/allwinner,sun8i-ss.yaml
+> > >
+> > > diff --git a/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ss.yaml b/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ss.yaml
+> > > new file mode 100644
+> > > index 000000000000..99b7736975bc
+> > > --- /dev/null
+> > > +++ b/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ss.yaml
+> > > @@ -0,0 +1,64 @@
+> > > +# SPDX-License-Identifier: GPL-2.0
+> > > +%YAML 1.2
+> > > +---
+> > > +$id: http://devicetree.org/schemas/crypto/allwinner,sun8i-ss.yaml#
+> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > > +
+> > > +title: Allwinner Security System v2 driver
+> > > +
+> > > +maintainers:
+> > > +  - Corentin Labbe <corentin.labbe@gmail.com>
+> > > +
+> > > +properties:
+> > > +  compatible:
+> > > +    enum:
+> > > +      - allwinner,sun8i-a83t-crypto
+> > > +      - allwinner,sun9i-a80-crypto
+> > > +
+> > > +  reg:
+> > > +    maxItems: 1
+> > > +
+> > > +  interrupts:
+> > > +    maxItems: 1
+> > > +
+> > > +  clocks:
+> > > +    items:
+> > > +      - description: Bus clock
+> > > +      - description: Module clock
+> > > +
+> > > +  clock-names:
+> > > +    items:
+> > > +      - const: bus
+> > > +      - const: mod
+> > > +
+> > > +  resets:
+> > > +    maxItems: 1
+> >
+> > The A83t at least has a reset line, so please make a condition to have
+> > it required.
+> >
+>
+> Hello
+>
+> The A80 have one also, so I need to set minItems: 1
+> But setting both minItems: 1 and maxItems:1 lead to a check failure:
+>
+> properties:resets: {'minItems': 1, 'maxItems': 1} is not valid under
+> any of the given schemas
+>
+> How to do that ?
 
---===============7152735402345194131==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="dWYAkE0V1FpFQHQ3"
-Content-Disposition: inline
+IIRC the meta-schema prevent having both because the tooling will
+insert it for you.
 
+It doesn't really matter at this level though. maxItems alone will
+make sure that there's a single element, and the schemas in the tools
+will make sure that the type for resets is correct.
 
---dWYAkE0V1FpFQHQ3
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Mon, Sep 30, 2019 at 12:14:29PM +0530, Rayagonda Kokatanur wrote:
-> From: Lori Hikichi <lori.hikichi@broadcom.com>
->=20
-> Enable handling of i2c repeated start. The current code
-> handles a multi msg i2c transfer as separate i2c bus
-> transactions. This change will now handle this case
-> using the i2c repeated start protocol. The number of msgs
-> in a transfer is limited to two, and must be a write
-> followed by a read.
->=20
-> Signed-off-by: Lori Hikichi <lori.hikichi@broadcom.com>
-> Signed-off-by: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
-> Signed-off-by: Icarus Chau <icarus.chau@broadcom.com>
-> Signed-off-by: Ray Jui <ray.jui@broadcom.com>
-> Signed-off-by: Shivaraj Shetty <sshetty1@broadcom.com>
-
-Patch looks good but doesn't apply for me on top of v5.4-rc4? What was
-your base?
-
-Also, I will apply it to for-next (v5.5). If you want it for v5.4, then
-please add a Fixes tag.
-
-
---dWYAkE0V1FpFQHQ3
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl2x86sACgkQFA3kzBSg
-KbbPMA/8CufaNQxLVkDpAOG3fBebE+n7XkatUJvoVOe+joL7ZdVIR+d1CqXEDZf3
-zXuUk/02btaiw9vRkmpUwHOjOT08mF9OWWO6XRxvEdvEStfOsejFmcvUtdnuMMXA
-9nX2xp2/KjB83qdFcne9KePbHvOCNLMLCl6GQbc3Ko/jQMTHQqRijkwxTBUhsILn
-Njq6taaiiedlHX6/o4vEl1gOPtmxqhXghU2TyOzmIG9fyjssatn+41ri1K0QseG+
-1VkMixa074wbtqDp44AypbpuenSYxR4AKfGgQPnPx7b3RpJxhH8bXwEVLxGdSJJh
-Sfw+MrGfVouOKQZIGd6IKraa+Zh8AleMvT/l/qf2vwQKfKqMEQ8ehmtVPJwPf/XM
-7XMPQeYFu9Leo/3a/KsLUTC31isIeosP/hB+ZOZSKGTWnyw3XD6DYNtJwFSbpQh5
-shjRb0GHCwaBRsKJnuX9lsY2tfHdbN4qzGMh2Imctfk3Shy37eeovhsY6QhhiiNl
-TR4TnOHx2DwRwgzm921MjLGomJ9w/t4KlczdyJAV+GMC9k4dcShxzdu1/4s8TpHM
-fx9/MIqdbc5ZN/xroaO8xyJeHPhNJy80UJ4gXriji8/IsV1dhtwwHvIrRS6QqSTj
-DxcC4PpAU+JAu4Z+ny9Q6TVdcY46NyHdgW7hyl+Q+llMHx25gO0=
-=rr6Y
------END PGP SIGNATURE-----
-
---dWYAkE0V1FpFQHQ3--
-
-
---===============7152735402345194131==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+What you'd need here though would be to add resets to the list of
+required properties, otherwise it will only be checked against if the
+property is there.
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7152735402345194131==--
-
