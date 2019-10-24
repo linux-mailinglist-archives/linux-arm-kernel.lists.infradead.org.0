@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04E76E36AB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 17:29:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C715E36B5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 17:31:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vkKX44KXYSyEChMVYW9K3HA/3cFHEPNB6m9OxqHI9Zc=; b=NoclxGZwTkfO2v
-	mmc4jSRHD+gHSBxR8WsMlMCup4BUHbUzvFzjuz8TOMk3/wYuT5qQfWhTmhlZTiMGnzCeaOgL/Ydqf
-	NesaX48ESDtTmzBHd6vsgJphagAQZCxojZN3Pu5ggUcyIBoLI1cFt18KGM7Ob+Jo+oYSMedgaPUvX
-	GPlig4d2EnSAO1YBWNeqISDlsBVLWitiwbWLIAi1kxjl5CCfH7flN3iiRyjyVv0WN+yCGq37CMDFA
-	P/ahF5ALyUnM7qFdObniR3Re+2ByVHlwBRCHPGPgacm7Frfl0r6inOBTD6MRjtRgysVfnszoOZNfi
-	wp6HWAzu0ZnwZX+N3rOg==;
+	List-Owner; bh=PJvpFWR22o+XZlNpZA0gnB7t2s//UTVfqimNl8Pbjv0=; b=AcFK5en9HCkZX0
+	4JX1CQ96UzgdgP6RzxdxJ385kRosJUpDUGhTh4doc8eUsWu+5xDbUmnw9HjQ3apqj9ibX4RsN+Ox3
+	h5w6iOtQmc4YD1VLMBuvJ5e0fddZEvzzl/vd27akD1PVFhTClMplig19/8Cy4DLHyUJICaZDlNph7
+	PTjoVuwv9JbTz4W29wLj+XyafZwk8x3gGbjeh7lSJXGhQxkcgj5sw76/f8qtskqrDuVL2qNvIGIJi
+	5outsVaq9kTPZcKv0uy87h+9BlcQuEb3AyvkiKwiV8FOz79DVuQLHaJK73L5ZuVJbzMWnpIuGW6AI
+	y5yIyNzgzbRJhWVaNqkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNf34-00016Q-0r; Thu, 24 Oct 2019 15:29:14 +0000
+	id 1iNf4u-0002sD-QG; Thu, 24 Oct 2019 15:31:08 +0000
 Received: from [217.140.110.172] (helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNf2r-00015O-Si
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 15:29:04 +0000
+ id 1iNf4l-0002qr-0C
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 15:31:00 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2ADD231F;
- Thu, 24 Oct 2019 08:28:51 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5E61631F;
+ Thu, 24 Oct 2019 08:30:48 -0700 (PDT)
 Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 23A5C3F71F;
- Thu, 24 Oct 2019 08:28:49 -0700 (PDT)
-Date: Thu, 24 Oct 2019 16:28:47 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5C68E3F71F;
+ Thu, 24 Oct 2019 08:30:46 -0700 (PDT)
+Date: Thu, 24 Oct 2019 16:30:44 +0100
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: Re: [PATCH 04/13] of: base: Add of_get_cpu_state_node() to get idle
- states for a CPU node
-Message-ID: <20191024152847.GC11467@bogus>
+Subject: Re: [PATCH 05/13] cpuidle: dt: Support hierarchical CPU idle states
+Message-ID: <20191024153044.GD11467@bogus>
 References: <20191010113937.15962-1-ulf.hansson@linaro.org>
- <20191010113937.15962-5-ulf.hansson@linaro.org>
+ <20191010113937.15962-6-ulf.hansson@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191010113937.15962-5-ulf.hansson@linaro.org>
+In-Reply-To: <20191010113937.15962-6-ulf.hansson@linaro.org>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_082903_276691_251E8C0D 
-X-CRM114-Status: GOOD (  11.99  )
+X-CRM114-CacheID: sfid-20191024_083059_088257_71C8027F 
+X-CRM114-Status: UNSURE (   8.89  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
@@ -77,24 +77,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 10, 2019 at 01:39:28PM +0200, Ulf Hansson wrote:
-> The CPU's idle state nodes are currently parsed at the common cpuidle DT
-> library, but also when initializing data for specific CPU idle operations,
-> as in the PSCI cpuidle driver case and qcom-spm cpuidle case.
+On Thu, Oct 10, 2019 at 01:39:29PM +0200, Ulf Hansson wrote:
+> From: Lina Iyer <lina.iyer@linaro.org>
 > 
-> To avoid open-coding, let's introduce of_get_cpu_state_node(), which takes
-> the device node for the CPU and the index to the requested idle state node,
-> as in-parameters. In case a corresponding idle state node is found, it
-> returns the node with the refcount incremented for it, else it returns
-> NULL.
-> 
-> Moreover, for PSCI there are two options to describe the CPU's idle states
-> [1], either via a flattened description or a hierarchical layout. Hence,
-> let's take both options into account.
-> 
-> [1] Documentation/devicetree/bindings/arm/psci.yaml
+> Currently CPU's idle states are represented using the flattened model.
+> Let's add support for the hierarchical layout, via converting to use
+> of_get_cpu_state_node().
 > 
 > Suggested-by: Sudeep Holla <sudeep.holla@arm.com>
+
+Looks simpler now, thanks.
 
 Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
 
