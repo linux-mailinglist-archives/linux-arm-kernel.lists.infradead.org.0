@@ -2,51 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A7C5E381F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 18:37:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4137BE3835
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 18:39:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MAf+3NfZh5wBSX0YpyYcKUYgcjGCGa+bJKu59IagGtY=; b=IHfw5z1dx8RHiu
-	9cL7YKi91BaZFiYuieUKRBEKsMbnML6iaM+bP3y5bSeHDM138l5o3lQ+hdIZsEc75iAvzpMlP0HP7
-	1+obkzov75t/8m1llxLWJ6gycUyznCxydndow+Wo3ofbR4+3320HlCGVfhtbJCLzoAQMIKMWD9JlX
-	yEFlVBU6wB17uWC/lwr4nWy7zddDBa3nJ+GWcS2vyO0h3MC3W4S3JIS5YgPuLKM3SR1MrIFUE1IWD
-	5rAihqY73pVfD0Vj2HYIaZEtFu7W1weUziOQFRoXTL4go5Ym4tdhfvR9IPI8iSUBD/A6m7bSxLpD9
-	xTVhnM1MI5Y9K/0q3M2w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=SzFwI2Vi7cgAv/lWe5anvYCpsul8RC9zt7BF9gVxyzs=; b=IPf
+	Cw7HI9VysjbdweZka5I115j5E1kB4yzpzaSsBLkwX08lOq/J9Hnmvi7yKP1/259+I4QgdHp0QuKdA
+	NHLeYNLPbc11Id9Te3OsLF2hyvBvlO8Jd0ZnoVMgKCn2p2rYx0H8EfLlVjQnDHXuaQVgBSyQLmQEN
+	u7lfEvuP0qXaf/QNlLCxs+IMsy3v/FmxwmFNhNJUIcXAobRrdAq+jCep8iXc3xdUnQhYEJm4R0oyK
+	rCQF5bdOD7PYenumQ88DzK79083knpauUM9avKvmhaU6fh1qd/bRcDWr0ZzAFSUnGDC8gn+ZTlG2x
+	QM2FCx9aMm4c8/C0DcXR6YtK7+rNCkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNg7W-0004zo-0t; Thu, 24 Oct 2019 16:37:54 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNg6i-0004aT-1U
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 16:37:05 +0000
-Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 2900981BF;
- Thu, 24 Oct 2019 16:37:38 +0000 (UTC)
-From: Tony Lindgren <tony@atomide.com>
-To: soc@kernel.org
-Subject: [GIT PULL 3/3] drop legacy platform data for omaps for v5.5
-Date: Thu, 24 Oct 2019 09:36:55 -0700
-Message-Id: <pull-1571934890-285615@atomide.com-3>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <pull-1571934890-285615@atomide.com>
-References: <pull-1571934890-285615@atomide.com>
-MIME-Version: 1.0
+	id 1iNg8t-0005eK-3A; Thu, 24 Oct 2019 16:39:19 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iNg8F-0005Ls-1F
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 16:38:43 +0000
+Received: by mail-wm1-x344.google.com with SMTP id q130so3080419wme.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 24 Oct 2019 09:38:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=dYt5aHbdAcoo6iOaj0orMUSAvQMPaS0z8lFzdR/A7V4=;
+ b=Ns1ZYl/2Z7R9SELtWm3ZXQehrrSdTOXVC8OUXM2hM0HYtFG2jHyYkGzlMM2tGrTBJ1
+ PadyzrB/+/j1eT5StN3toKeTz/PAXMrdKQyTCN9tYT3/SrXTiz9OS8EQg9ceVBDcPJ7L
+ YSa27E3euj3OEjinq0HDg27dX+MgxGueXHGRrPQH4u9yXzWJnkWkbzvnb4fsmU0ZWYub
+ kcuwX4TIz5K5q8WW7B/Ef+2cKaUd9IS+JwxARfmgBNUVClV4wHRRliuFbGBmnc0YKw4X
+ 8mAK159WfLfu+f4lRLQkqNbihdts9A4/BXWsd0Ngz+C0SmzIAb52ebd0PPe3zgJzwog4
+ ToKw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=dYt5aHbdAcoo6iOaj0orMUSAvQMPaS0z8lFzdR/A7V4=;
+ b=bFW9d05qKpgelw9qLl0Pd3uk+iHczkDiSc8eVO3/+F66gwkAhlwE2UL5xrW1dQn+76
+ FBXj60z0uj5ZSPAhHEfmbiOBPmX716n9v4olWbY3rbcXp5oZqD0AuBgfEqu/WuuJJhYS
+ LMe4+xU7dAyp+FCIBTmf4i5p0lkGR91Bp0VkBQl2aADmzqb4FrBlVCgIkwnBil3Dz5aE
+ n8wfV07UESW968bKaFRmO3dMYvXINO5i/KrzI+8EYyIKMXFqxDK2eoPDNDRZp8mPfF3O
+ GbpMdkEohaQ/kFDutZrLp1xTmd5Uk+M7TZynPmY9Ob7aQyLqDCj2KY4+9LgOSvxphW6A
+ K3Wg==
+X-Gm-Message-State: APjAAAWa+Knrn1dkFyYBOobrtgV4F403ro+2IFwNS600T6ko5n9idqR4
+ ret+a0cCmFbYCbLnHfR90JcLJg==
+X-Google-Smtp-Source: APXvYqxajiI3u0bx2uwGq4iPJh90TzC5CDZXmjeWLns9qC3nWHb0jFRD4YDKVNeGdlHzDhTCWW5zoA==
+X-Received: by 2002:a1c:67d7:: with SMTP id b206mr5566577wmc.68.1571935116224; 
+ Thu, 24 Oct 2019 09:38:36 -0700 (PDT)
+Received: from localhost.localdomain ([95.149.164.99])
+ by smtp.gmail.com with ESMTPSA id 6sm3446175wmd.36.2019.10.24.09.38.35
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 24 Oct 2019 09:38:35 -0700 (PDT)
+From: Lee Jones <lee.jones@linaro.org>
+To: daniel.thompson@linaro.org, arnd@arndb.de, broonie@kernel.org,
+ linus.walleij@linaro.org
+Subject: [PATCH v3 00/10] Simplify MFD Core
+Date: Thu, 24 Oct 2019 17:38:22 +0100
+Message-Id: <20191024163832.31326-1-lee.jones@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_093704_127782_9F2AD488 
-X-CRM114-Status: GOOD (  11.98  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191024_093840_701638_0878047D 
+X-CRM114-Status: UNSURE (   8.73  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,122 +93,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tony Lindgren <tony@atomide.com>, linux-omap@vger.kernel.org,
- arm@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Lee Jones <lee.jones@linaro.org>, baohua@kernel.org, stephan@gerhold.net,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: "Tony Lindgren" <tony@atomide.com>
+MFD currently has one over-complicated user.  CS5535 uses a mixture of
+cell cloning, reference counting and subsystem-level call-backs to
+achieve its goal of requesting an IO memory region only once across 3
+consumers.  The same can be achieved by handling the region centrally
+during the parent device's .probe() sequence.  Releasing can be handed
+in a similar way during .remove().
+ 
+While we're here, take the opportunity to provide some clean-ups and
+error checking to issues noticed along the way.
+ 
+This also paves the way for clean cell disabling via Device Tree being
+discussed at [0]
+ 
+[0] https://lkml.org/lkml/2019/10/18/612.
 
-The following changes since commit 1819ef2e2d12d5b1a6ee54ac1c2afe35cffc677c:
+Lee Jones (10):
+  mfd: cs5535-mfd: Use PLATFORM_DEVID_* defines and tidy error message
+  mfd: cs5535-mfd: Remove mfd_cell->id hack
+  mfd: cs5535-mfd: Request shared IO regions centrally
+  mfd: cs5535-mfd: Register clients using their own dedicated MFD cell
+    entries
+  mfd: mfd-core: Remove mfd_clone_cell()
+  x86: olpc-xo1-pm: Remove invocation of MFD's .enable()/.disable()
+    call-backs
+  x86: olpc-xo1-sci: Remove invocation of MFD's .enable()/.disable()
+    call-backs
+  mfd: mfd-core: Protect against NULL call-back function pointer
+  mfd: mfd-core: Remove usage counting for .{en,dis}able() call-backs
+  mfd: mfd-core: Move pdev->mfd_cell creation back into mfd_add_device()
 
-  bus: ti-sysc: Use swsup quirks also for am335x musb (2019-10-21 14:15:55 -0700)
+ arch/x86/platform/olpc/olpc-xo1-pm.c  |   8 --
+ arch/x86/platform/olpc/olpc-xo1-sci.c |   6 --
+ drivers/mfd/cs5535-mfd.c              | 105 +++++++++++-------------
+ drivers/mfd/mfd-core.c                | 113 +++++---------------------
+ include/linux/mfd/core.h              |  20 -----
+ 5 files changed, 65 insertions(+), 187 deletions(-)
 
-are available in the Git repository at:
+-- 
+2.17.1
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.5/ti-sysc-drop-pdata-v2-signed-take2
-
-for you to fetch changes up to b08a0c577518a02ea08673f68881223a3ed35cc6:
-
-  ARM: OMAP2+: Drop legacy platform data for am335x musb (2019-10-23 07:46:32 -0700)
-
-----------------------------------------------------------------
-Drop legacy platform data for omaps for v5.5
-
-This series of changes continues dropping legacy platform data for
-omaps. With the proper device tree configuration in place in the dts
-files for ti-sysc interconnect target module driver, we can drop the
-related platform data and legacy ti,hwmods custom property.
-
-Most of the patches in this series drop platform data and custom dts
-property one device class and one SoC at time. This way we can easily
-revert one patch at a time in case of unexpected issues if the fix is
-not trivial.
-
-For am335x musb, we need to first update the device tree to probe with
-ti-sysc interconnect target module driver. And then the following
-patches drop the legacy platform data.
-
-Note that this series depends on earlier ti-sysc related driver changes
-
-----------------------------------------------------------------
-Tony Lindgren (34):
-      ARM: OMAP2+: Drop legacy platform data for am3 and am4 gpio
-      ARM: dts: Drop custom hwmod property for omap4 gpio
-      ARM: dts: Drop custom hwmod property for omap5 gpio
-      ARM: OMAP2+: Drop legacy platform data for dra7 mailbox
-      ARM: OMAP2+: Drop legacy platform data for am3 and am4 mailbox
-      ARM: OMAP2+: Drop legacy platform data for omap4 mailbox
-      ARM: OMAP2+: Drop legacy platform data for omap5 mailbox
-      ARM: dts: Drop custom hwmod property for omap5 mcspi
-      ARM: OMAP2+: Drop legacy platform data for omap5 mcspi
-      ARM: dts: Drop custom hwmod property for am33xx uart
-      ARM: dts: Drop custom hwmod property for am4 uart
-      ARM: dts: Drop custom hwmod property for omap5 uart
-      ARM: dts: Drop custom hwmod property for am3 i2c
-      ARM: dts: Drop custom hwmod property for am4 i2c
-      ARM: dts: Drop custom hwmod property for omap5 i2c
-      ARM: dts: Drop custom hwmod property for am3 mmc
-      ARM: dts: Drop custom hwmod property for am4 mmc
-      ARM: dts: Drop custom hwmod property for omap5 mmc
-      ARM: OMAP2+: Drop legacy platform data for am3 and am4 wdt
-      ARM: OMAP2+: Drop legacy platform data for dra7 wdt
-      ARM: OMAP2+: Drop legacy platform data for omap5 wdt
-      ARM: OMAP2+: Drop legacy platform data for omap4 mcbsp
-      ARM: OMAP2+: Drop legacy platform data for omap5 mcbsp
-      ARM: OMAP2+: Drop legacy platform data for am4 hdq1w
-      ARM: OMAP2+: Drop legacy platform data for dra7 hdq1w
-      ARM: OMAP2+: Drop legacy platform data for omap4 hdq1w
-      ARM: OMAP2+: Drop legacy platform data for am3 and am4 rng
-      ARM: OMAP2+: Drop legacy platform data for dra7 rng
-      ARM: OMAP2+: Drop legacy platform data for am3 and am4 mcasp
-      ARM: OMAP2+: Drop legacy platform data for omap4 mcasp
-      ARM: OMAP2+: Drop legacy platform data for musb on omap4
-      ARM: dts: Probe am335x musb with ti-sysc
-      ARM: dts: Drop pointless status changing for am3 musb
-      ARM: OMAP2+: Drop legacy platform data for am335x musb
-
- arch/arm/boot/dts/am335x-baltos.dtsi               |  12 -
- arch/arm/boot/dts/am335x-bone-common.dtsi          |  22 --
- arch/arm/boot/dts/am335x-boneblue.dts              |  22 --
- arch/arm/boot/dts/am335x-chiliboard.dts            |  18 -
- arch/arm/boot/dts/am335x-cm-t335.dts               |  20 -
- arch/arm/boot/dts/am335x-evm.dts                   |  25 --
- arch/arm/boot/dts/am335x-evmsk.dts                 |  25 --
- arch/arm/boot/dts/am335x-guardian.dts              |  22 --
- arch/arm/boot/dts/am335x-igep0033.dtsi             |  25 --
- arch/arm/boot/dts/am335x-lxm.dts                   |  22 --
- arch/arm/boot/dts/am335x-moxa-uc-2100-common.dtsi  |  17 -
- arch/arm/boot/dts/am335x-moxa-uc-8100-me-t.dts     |  22 --
- arch/arm/boot/dts/am335x-osd3358-sm-red.dts        |  22 --
- arch/arm/boot/dts/am335x-pcm-953.dtsi              |  25 --
- arch/arm/boot/dts/am335x-pdu001.dts                |  28 --
- arch/arm/boot/dts/am335x-pepper.dts                |  20 -
- arch/arm/boot/dts/am335x-pocketbeagle.dts          |  22 --
- arch/arm/boot/dts/am335x-regor.dtsi                |  21 -
- arch/arm/boot/dts/am335x-shc.dts                   |  17 -
- arch/arm/boot/dts/am335x-sl50.dts                  |  22 --
- arch/arm/boot/dts/am335x-wega.dtsi                 |  26 --
- arch/arm/boot/dts/am33xx-l4.dtsi                   |  27 +-
- arch/arm/boot/dts/am33xx.dtsi                      |  67 ++--
- arch/arm/boot/dts/am4372.dtsi                      |   1 -
- arch/arm/boot/dts/am437x-l4.dtsi                   |  23 --
- arch/arm/boot/dts/dra7-l4.dtsi                     |  16 -
- arch/arm/boot/dts/omap4-l4-abe.dtsi                |   4 -
- arch/arm/boot/dts/omap4-l4.dtsi                    |  14 -
- arch/arm/boot/dts/omap5-l4-abe.dtsi                |   3 -
- arch/arm/boot/dts/omap5-l4.dtsi                    |  30 --
- .../mach-omap2/omap_hwmod_33xx_43xx_common_data.h  |   9 -
- .../omap_hwmod_33xx_43xx_interconnect_data.c       |  32 --
- .../mach-omap2/omap_hwmod_33xx_43xx_ipblock_data.c | 231 -----------
- arch/arm/mach-omap2/omap_hwmod_33xx_data.c         |  58 ---
- arch/arm/mach-omap2/omap_hwmod_43xx_data.c         |  48 ---
- arch/arm/mach-omap2/omap_hwmod_44xx_data.c         | 343 ----------------
- arch/arm/mach-omap2/omap_hwmod_54xx_data.c         | 317 ---------------
- arch/arm/mach-omap2/omap_hwmod_7xx_data.c          | 431 ---------------------
- 38 files changed, 39 insertions(+), 2070 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
