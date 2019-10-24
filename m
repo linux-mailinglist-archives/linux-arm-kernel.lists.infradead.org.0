@@ -2,154 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8B84E2FBB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 13:02:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A82FAE2FD3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 13:03:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0koiA2NhIMyYag0HNlxmZ15UcIGzIctFlvpNP8qSNvc=; b=cX7RwxPNgZjqgs
-	hVCi0AKL79IUgM75JsYHNQHqmtibn/DxLXoVCjJezNudr03STL9ss8T6kBkhtglrSj6rh1E562ETY
-	Ag60ZG0fK5ZXIWlaBKtxzAofhxuyJaRHcqlR61YS2zlasg8ZOiwgSt+uFVLrpo7zU5psSPhzmJbnG
-	m9MqT+1XpjM4lyrZnrKKjAkE5xNDYu9FyAtILSbuOlFcs02fJWmmkfkQrqkAZngmTVSKsxLjEgg66
-	DCyAhp+f+rZpIhVjn9pdknBYxQ+CsSoFfgx3C3y7UZxdDGR3+F7T7HVTHenOcfkWix23CR3w/xhz+
-	dOGaT6vUZd4dD7ggafVw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=xBFmIGMhBNrMlIGIXh2/4p315LXXSfKJWeLIHret8JQ=; b=O0G
+	Q1MCESdZpT1D8yVozqbbPYLLL3pRLRoy7BMCryYdrYNhiWp6EczCeP38U6S+nJ2uYAnHh5STE4Abo
+	7bw1ZFuyMbZWN6yU5z1pMNHaoZL3efUvP7mLqVe4POAAevpMd7t50I+kryYkMS58F9e4uOrQ6Nb5p
+	qVn6wUJYhRPdmSFXWX18m2ByFU0baFj9ameYHHzFms/0JLCcva3fJPwJekEjpZVlk9Sp/pUsS6mwV
+	16TAKf8le/RWtqQCV7IRPQwX1JtEqgYlx5oWiEerkH1/lNWnuZaQbDSTxSPC/VrTR3J5qal2ZEuyo
+	59Vq8PQ2tw0bg5D2gKEbxT0d2UDLB+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNasn-0006Ah-CG; Thu, 24 Oct 2019 11:02:21 +0000
-Received: from esa5.microchip.iphmx.com ([216.71.150.166])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNasF-0005uq-En; Thu, 24 Oct 2019 11:01:51 +0000
-Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
- Tudor.Ambarus@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
- envelope-from="Tudor.Ambarus@microchip.com";
- x-sender="Tudor.Ambarus@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa5.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
- envelope-from="Tudor.Ambarus@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa5.microchip.iphmx.com;
- spf=Pass smtp.mailfrom=Tudor.Ambarus@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: sjSMwU5rLXXe7c6hoZtqn44KVmRqZWEDosgFlZCg4pqufQSAh6SlFcerohbDyWadszAAbiPPhL
- PyDjes3vcYYy81F+oK/GI75jlF4mdluFdVmx9tPv0IenSEQsvM3mxQ81oVD5l359hmJmmDwKgB
- 7SzMHivCwBa//l9a0xdjP/SojjvtsEavpiWRbAO/CSluC6ouOZGpLu/jxUMPna+nlH08VyfFLF
- 18fjWNniNNIddwXU1LUPoOG9KZgT8uR0al/OBlvlFpSMi+iU97aS+APMaPAKvhDBt9aen0WS+P
- jck=
-X-IronPort-AV: E=Sophos;i="5.68,224,1569308400"; d="scan'208";a="52745880"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 24 Oct 2019 04:01:45 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Thu, 24 Oct 2019 04:01:43 -0700
-Received: from NAM03-DM3-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.72) with Microsoft SMTP Server
- (version=TLS1_2, 
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5 via Frontend
- Transport; Thu, 24 Oct 2019 04:01:44 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=WC5HKudfzV77CaNRhLOvxmcjZk4RS5kfbs2sLCx890SeLACKhvLzGGC15F6svMZqd6Div/W41XWN4tvzPgFJReYWudsGzfwwnWli1/Eu9pjM/dZ/vFSYuwHFvnSmFpxGyN/VKujm1iHbVhUQhzAAB9j8JpYIHTXRZ/OpNS/Y0Y/ThOaiYCar5h+JvB4bx1kh7NETGWrEccDq/8ZkHMgHpydC2G9HHf9iJw8K3zWR9FS7PJqnmgEqP+x+zmc0WSk9oPoX42yxdn39IOYz4f6Tt7mR0ko86uqjPQrWVIuFMJXZW+3cCwTEP6PwkbiqSrNWWO2VtU2GJEreC/g/3YxROQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=tDu91HlPGHYfW+KnCVpz8LQdGOPu3IbIo2ZvQSvh5zc=;
- b=Mnd4q/3Zh+yTqhpWhjf5Xblu+d5Rnw7ntVQBwiAEO4FxSZ0mU0nNBJArHOjxEjwIWnpBDL58rjVgTE+ibRZ0xAfg9SglP1ZmwaNCg+V94cRCuk+qwP7Nd74AYdUj1VFR6ZsJLI+MVy0hvCzKRy5OsHvYK1byWkHWiwL2sU/iLm7sM8dPEXEr7EcjgmmrzHLN2tjZ9Xo0+TZeouCJwJKtOF9i1sCdhAKWCJFGbSJ7uqWHOKt+oE/iVHjf/XKLSPGiwocw5YxVVfTUTMfkWxBFxsSx3fjtK8cMx6bqBqtoW7Q05CCXbBkldmP3KWAxCIigmPbK7fX++dkz4BlWO8DT9w==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microchip.com; dmarc=pass action=none
- header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=microchiptechnology.onmicrosoft.com;
- s=selector2-microchiptechnology-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=tDu91HlPGHYfW+KnCVpz8LQdGOPu3IbIo2ZvQSvh5zc=;
- b=FyDP7u6jTuPNqBYa2gS/P7tc+mpCq0iyh5Gxa1EdK2/daJ0V4/C4uRQ/PRpCjFogcLMAqND+VoIdY9LqQOqR/Y7k/cz4ZBrjFCWXYuZT1JX05vsize8crW3k1/ct24fl1YF56Zx/EBzlD91TMUfeeq/Q5A9WXqvHOw3Q/lX3Z/s=
-Received: from MN2PR11MB4448.namprd11.prod.outlook.com (52.135.39.157) by
- MN2PR11MB4303.namprd11.prod.outlook.com (52.135.37.158) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2367.24; Thu, 24 Oct 2019 11:01:43 +0000
-Received: from MN2PR11MB4448.namprd11.prod.outlook.com
- ([fe80::c09c:36c8:3301:4457]) by MN2PR11MB4448.namprd11.prod.outlook.com
- ([fe80::c09c:36c8:3301:4457%5]) with mapi id 15.20.2347.030; Thu, 24 Oct 2019
- 11:01:42 +0000
-From: <Tudor.Ambarus@microchip.com>
-To: <boris.brezillon@collabora.com>
-Subject: Re: [PATCH v2 08/22] mtd: spi-nor: Rework write_enable/disable()
-Thread-Topic: [PATCH v2 08/22] mtd: spi-nor: Rework write_enable/disable()
-Thread-Index: AQHVcqwmGxayarzEFkyHj/sWgnNJNqdTkUSAgBV/k4CAAGu3AIAAUuMA
-Date: Thu, 24 Oct 2019 11:01:42 +0000
-Message-ID: <3e11ac30-98fa-98c5-3f2e-3fb1f373ffe1@microchip.com>
-References: <20190924074533.6618-1-tudor.ambarus@microchip.com>
- <20190924074533.6618-9-tudor.ambarus@microchip.com>
- <20191010092117.4c5018a8@dhcp-172-31-174-146.wireless.concordia.ca>
- <34fbb0d7-ee8f-a6d7-4a3e-d64f2f8555ff@microchip.com>
- <20191024080452.522b6447@collabora.com>
-In-Reply-To: <20191024080452.522b6447@collabora.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: PR0P264CA0075.FRAP264.PROD.OUTLOOK.COM
- (2603:10a6:100:18::15) To MN2PR11MB4448.namprd11.prod.outlook.com
- (2603:10b6:208:193::29)
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [86.120.239.29]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 5a234a4b-16b6-4243-79d1-08d758718d8e
-x-ms-traffictypediagnostic: MN2PR11MB4303:
-x-microsoft-antispam-prvs: <MN2PR11MB430340495273680B28D95F7CF06A0@MN2PR11MB4303.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:5516;
-x-forefront-prvs: 0200DDA8BE
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(39860400002)(366004)(136003)(346002)(376002)(396003)(199004)(189003)(478600001)(386003)(229853002)(7416002)(66066001)(99286004)(6506007)(66446008)(7736002)(64756008)(305945005)(66476007)(66556008)(4326008)(3846002)(14454004)(8676002)(316002)(81156014)(54906003)(81166006)(6116002)(8936002)(486006)(6486002)(6246003)(52116002)(11346002)(31686004)(476003)(6916009)(71200400001)(76176011)(14444005)(71190400001)(66946007)(2616005)(5660300002)(36756003)(26005)(25786009)(6512007)(53546011)(102836004)(31696002)(256004)(186003)(2906002)(6436002)(86362001)(446003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR11MB4303;
- H:MN2PR11MB4448.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: microchip.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: SxkkELEaNrkNMzbAX/Bym2hKq7u+K0pFCVxd7ChQI98cfz2h0hN9iSXGAkWBb9AZB91mArVB2yTL6uSLTDljYHVIFtKQF9k3urirdu6LcICRztcXuNgxxg6gKsbfNZvT6+Fn5rJc96gzb5uS1diOClZAhoce0V/gJo/N0jYylH0PSeirj0nTW1RZNZ9v1VmYRSE96bSKnCQkEVRRraVh2ZHX3lIaPW1kWfvHFwTqKMeD1ddhl3YVQ/iglLQ6c0OUpzxGPEJpTugPlReGDHE+Em7Kv3AX2Lx2HwuqYJPqm2PTB7TpgT3F1vFASEu2SYECZivFDkodkaeJWVL0s5vbMLU5iCp6jIJJNxVJFOIHheAvpAQU4Uwa4EaKG1xM7l524XvsDLTNG2GOyNNtVDefI6vOnnPdbtxoz0sjbdVFzL1lrXFW/byDix9S/bseVFZr
-x-ms-exchange-transport-forked: True
-Content-ID: <40D5304F00A23D439C5EBC86E4E15200@namprd11.prod.outlook.com>
-MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5a234a4b-16b6-4243-79d1-08d758718d8e
-X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Oct 2019 11:01:42.7027 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: x+LnAxtKIg7YFg8LJajqZ5Z376lMdvE2gsc5nt7l6dMLHJGyaDgE8vktY/NzvsmFef9ddCfFEDt5NecLmb1De9gsO6zR+SMtVjyf7La1ZLI=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR11MB4303
+	id 1iNatW-0006oR-MR; Thu, 24 Oct 2019 11:03:06 +0000
+Received: from [217.140.110.172] (helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iNat1-0006Pg-QF
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 11:02:39 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5AE73497;
+ Thu, 24 Oct 2019 04:02:23 -0700 (PDT)
+Received: from entos-d05.shanghai.arm.com (entos-d05.shanghai.arm.com
+ [10.169.40.35])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 757673F71A;
+ Thu, 24 Oct 2019 04:02:18 -0700 (PDT)
+From: Jianyong Wu <jianyong.wu@arm.com>
+To: netdev@vger.kernel.org, yangbo.lu@nxp.com, john.stultz@linaro.org,
+ tglx@linutronix.de, pbonzini@redhat.com, sean.j.christopherson@intel.com,
+ maz@kernel.org, richardcochran@gmail.com, Mark.Rutland@arm.com,
+ will@kernel.org, suzuki.poulose@arm.com
+Subject: [RFC PATCH v6 0/7] Enable ptp_kvm for arm64
+Date: Thu, 24 Oct 2019 19:02:02 +0800
+Message-Id: <20191024110209.21328-1-jianyong.wu@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_040147_607087_F2921DC2 
-X-CRM114-Status: GOOD (  11.58  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191024_040235_948300_810B8638 
+X-CRM114-Status: GOOD (  10.60  )
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.150.166 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -161,53 +61,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: vigneshr@ti.com, geert+renesas@glider.be, andrew@aj.id.au, richard@nod.at,
- linux-kernel@vger.kernel.org, vz@mleia.com, marek.vasut@gmail.com,
- jonas@norrbonn.se, linux-mtd@lists.infradead.org, joel@jms.id.au,
- miquel.raynal@bootlin.com, matthias.bgg@gmail.com,
- linux-mediatek@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
- computersforpeace@gmail.com, dwmw2@infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: justin.he@arm.com, kvm@vger.kernel.org, Steve.Capper@arm.com,
+ jianyong.wu@arm.com, linux-kernel@vger.kernel.org, Kaly.Xin@arm.com,
+ nd@arm.com, kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+kvm ptp targets to provide high precision time sync between guest
+and host in virtualization environment. This patch enable kvm ptp
+for arm64.
+This patch set base on [1][2][3]
+
+change log:
+from v5 to v6:
+        (1) apply Mark's patch[4] to get SMCCC conduit.
+        (2) add mechanism to recognize current clocksource by add
+clocksouce_id value into struct clocksource instead of method in patch-v5.
+        (3) rename kvm_arch_ptp_get_clock_fn into
+kvm_arch_ptp_get_crosststamp.
+
+from v4 to v5:
+        (1) remove hvc delay compensasion as it should leave to userspace.
+        (2) check current clocksource in hvc call service.
+        (3) expose current clocksource by adding it to
+system_time_snapshot.
+        (4) add helper to check if clocksource is arm_arch_counter.
+        (5) rename kvm_ptp.c to ptp_kvm_common.c
+
+from v3 to v4:
+        (1) fix clocksource of ptp_kvm to arch_sys_counter.
+        (2) move kvm_arch_ptp_get_clock_fn into arm_arch_timer.c
+        (3) subtract cntvoff before return cycles from host.
+        (4) use ktime_get_snapshot instead of getnstimeofday and
+get_current_counterval to return time and counter value.
+        (5) split ktime and counter into two 32-bit block respectively
+to avoid Y2038-safe issue.
+        (6) set time compensation to device time as half of the delay of
+hvc call.
+        (7) add ARM_ARCH_TIMER as dependency of ptp_kvm for
+arm64.
+
+from v2 to v3:
+        (1) fix some issues in commit log.
+        (2) add some receivers in send list.
+
+from v1 to v2:
+        (1) move arch-specific code from arch/ to driver/ptp/
+        (2) offer mechanism to inform userspace if ptp_kvm service is
+available.
+        (3) separate ptp_kvm code for arm64 into hypervisor part and
+guest part.
+        (4) add API to expose monotonic clock and counter value.
+        (5) refine code: remove no necessary part and reconsitution.
+
+[1]https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/
+commit/?h=kvm/hvc&id=125ea89e4a21e2fc5235410f966a996a1a7148bf
+[2]https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/
+commit/?h=kvm/hvc&id=464f5a1741e5959c3e4d2be1966ae0093b4dce06
+[3]https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/
+commit/?h=kvm/hvc&id=6597490e005d0eeca8ed8c1c1d7b4318ee014681
+[4]https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/
+commit/?h=for-next/smccc-conduit-cleanup&id=6b7fe77c334ae59fed9500140e08f4f896b36871
+
+Jianyong Wu (6):
+  psci: let arm_smccc_1_1_invoke available by modules
+  ptp: Reorganize ptp_kvm modules to make it arch-independent.
+  time: Add mechanism to recognize clocksource in time_get_snapshot
+  psci: Add hvc call service for ptp_kvm.
+  ptp: arm64: Enable ptp_kvm for arm64
+  kvm: arm64: Add capability check extension for ptp_kvm
+
+Mark Rutland (1):
+  arm/arm64: smccc/psci: add arm_smccc_1_1_get_conduit()
+
+ drivers/clocksource/arm_arch_timer.c        | 24 ++++++
+ drivers/firmware/psci/psci.c                | 16 ++++
+ drivers/ptp/Kconfig                         |  2 +-
+ drivers/ptp/Makefile                        |  1 +
+ drivers/ptp/ptp_kvm_arm64.c                 | 53 +++++++++++++
+ drivers/ptp/{ptp_kvm.c => ptp_kvm_common.c} | 77 +++++-------------
+ drivers/ptp/ptp_kvm_x86.c                   | 87 +++++++++++++++++++++
+ include/asm-generic/ptp_kvm.h               | 12 +++
+ include/clocksource/arm_arch_timer.h        |  4 +
+ include/linux/arm-smccc.h                   | 30 ++++++-
+ include/linux/clocksource.h                 |  6 ++
+ include/linux/timekeeping.h                 | 12 +--
+ include/uapi/linux/kvm.h                    |  1 +
+ kernel/time/clocksource.c                   |  3 +
+ kernel/time/timekeeping.c                   |  1 +
+ virt/kvm/arm/arm.c                          |  1 +
+ virt/kvm/arm/psci.c                         | 22 ++++++
+ 17 files changed, 286 insertions(+), 66 deletions(-)
+ create mode 100644 drivers/ptp/ptp_kvm_arm64.c
+ rename drivers/ptp/{ptp_kvm.c => ptp_kvm_common.c} (63%)
+ create mode 100644 drivers/ptp/ptp_kvm_x86.c
+ create mode 100644 include/asm-generic/ptp_kvm.h
+
+-- 
+2.17.1
 
 
-On 10/24/2019 09:04 AM, Boris Brezillon wrote:
-> On Wed, 23 Oct 2019 23:39:31 +0000
-> <Tudor.Ambarus@microchip.com> wrote:
-> 
->> On 10/10/2019 10:21 AM, Boris Brezillon wrote:
->>> External E-Mail
->>>
->>>
->>> On Tue, 24 Sep 2019 07:46:18 +0000
->>> <Tudor.Ambarus@microchip.com> wrote:
->>>   
->>>> From: Tudor Ambarus <tudor.ambarus@microchip.com>
->>>>
->>>> static int write_enable(struct spi_nor *nor)
->>>> static int write_disable(struct spi_nor *nor)
->>>> become
->>>> static int spi_nor_write_enable(struct spi_nor *nor)
->>>> static int spi_nor_write_disable(struct spi_nor *nor)
->>>>
->>>> Check for errors after each call to them. Move them up in the
->>>> file as the first SPI NOR Register Operations, to avoid further
->>>> forward declarations.  
->>>
->>> Same here, split that in 3 patches please.  
-> 
-> In order to keep the number of patch in this series small, I'd
-> recommend doing all spi_nor_ prefixing in a patch, all function
-> moves in another one and all error checking in a third patch, instead of
-> splitting it per-function.
-> 
-
-If I do all the functions movement in one patch, the git diff output becomes
-unreadable. I'll split patches where needed, for readability purposes.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
