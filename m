@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12325E3BBA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 21:03:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A42FE3BC9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 21:04:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4Q6bxoJ+giqlhh72pUB5y4JxNmSFUK/SwNV5Mz5lpQ4=; b=A8TGgLPLUuMsQD
-	XyIJBju3EHLxIV7gKIM9X11++r9gieQQpkqR7B3V/hEtC1E4UhBQX536hh4Cv2pki9pZAxgpoQN41
-	bo15ONOznVl7O2/KDxj+Dc8o1cHTexG4a6R8quaY0qgQfAd28u91GAXEkI95FDtbpOVcDNBb0vPL0
-	FUQkTXx1q1zhOM44cf/nVLISkzcNawXj9oEzh/2CwhjBV00zfKhuTjXiN1ggDo9M83z2GfqJ26HLR
-	e6CiCsXx2gjDMPWumLllNYSHQCrD3wuOO0C1DSMZZx4aTzERsGKWpvwNfeVRjbuUrcDKSpD7bdIZZ
-	MOlgyeGjgfKJ9AuYhVGg==;
+	List-Owner; bh=dW11JHSra6QU4301vfrTmBM9MvbbPqEuuuIc+HSlhY0=; b=aZHwdr0FNvlz1V
+	3vx29aHSW8VLYYT3gNQnfNz/UYvMMTQRiG0np0759TqsHjvhVk5A3DDvOSNTX2eAGUaojdqs3e6+V
+	I9ahTMycoCB8Ypjb8d1R5ZVNUu2NkrjCQWWIvRjOwENw13f9BpxvT+2V9j4szEoPB3ZzMezIXvl5J
+	LlhLE4DMsqaklD6zbZDowC+dqBr3YFyvSOmVwiUSjqXltdTxpc7GJS1Dx2p9n2aHe9fFTyEgrxgGo
+	150jki1wd+b7+q1r7mBOUmg1IUkTec0T8ucnneFG9z32MTpOodGfXP03LuMVtyuUmf/VaHlu94vRq
+	whCS4pBgjILq/y7kfH+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNiOR-0007Dt-KZ; Thu, 24 Oct 2019 19:03:31 +0000
+	id 1iNiPc-0007lT-LL; Thu, 24 Oct 2019 19:04:44 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNiOE-0007DS-15
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 19:03:19 +0000
+ id 1iNiP6-0007XQ-0z
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 19:04:13 +0000
 Received: from localhost (unknown [109.190.253.11])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EBE492070B;
- Thu, 24 Oct 2019 19:03:16 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3B01A21A4A;
+ Thu, 24 Oct 2019 19:04:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571943797;
- bh=ePbGhKrM0X2X47Ig0cCqNbkm6vptO7VyM2yJnt4HOIA=;
+ s=default; t=1571943851;
+ bh=BLF6bNI1LMtwSe4KBH8lI9gpwa1CAzLQZtAXBhg/Zeg=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=RtSj9ZsU+Qi/+k4LBe1ymBcSWx41hn33zdDT0kZRVK/BKRx2NjzZaugw+m+Ax7OgR
- 1of8SxMH/iJeyGtG2GxLaBGjUnkI9tRXqPBq3sj8s9batNIfLycusnajxA8I1HUfEF
- l9r+xiRzlYUv7fKlZKX/QOAKdLIBdxgGFsrUltjA=
-Date: Thu, 24 Oct 2019 20:27:49 +0200
+ b=MkTv/uGKp2Ko24fnOFRYlxw3fOz+rJ/zpy+ay3PCdOr6dljJzXalGBW/IY3+Sh4hL
+ ZHOWCerCbnV2Qh5nnsg5KeRQFfDkLn9qByozVmo20BVKP/rDjDFq0c/zH514KPQ7NO
+ Cfb6oa5WQR+YTrQMDIs/O1AAzoZU+1E2jnQNot1E=
+Date: Thu, 24 Oct 2019 20:28:49 +0200
 From: Maxime Ripard <mripard@kernel.org>
 To: Jagan Teki <jagan@amarulasolutions.com>
 Subject: Re: [PATCH v10 5/6] arm64: dts: allwinner: a64: Add MIPI DSI pipeline
-Message-ID: <20191024182749.czihj3gnvj5yz2eo@hendrix>
+Message-ID: <20191024182849.3oifqjl553twxwq4@hendrix>
 References: <20191005141913.22020-1-jagan@amarulasolutions.com>
  <20191005141913.22020-6-jagan@amarulasolutions.com>
  <20191007105708.raxavxk4n7bvxh7x@gilmour>
@@ -47,14 +47,14 @@ References: <20191005141913.22020-1-jagan@amarulasolutions.com>
  <20191016080306.44pmo3rfmtnkgosq@gilmour>
  <CAMty3ZCTE=W+TNRvdowec-eYB625j97uG8F3fzVMtRFsKsqFFQ@mail.gmail.com>
  <20191017095225.ntx647ivegaldlyf@gilmour>
- <CAMty3ZAvqRLh16vFd-63h4+SzQkNydGfNKX_pByqFD-hZfncpQ@mail.gmail.com>
+ <CAMty3ZDYcwJ4XMm45BLjXnvPXeu-rMAiN5v=CDhvuLsAm5tf=Q@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAMty3ZAvqRLh16vFd-63h4+SzQkNydGfNKX_pByqFD-hZfncpQ@mail.gmail.com>
+In-Reply-To: <CAMty3ZDYcwJ4XMm45BLjXnvPXeu-rMAiN5v=CDhvuLsAm5tf=Q@mail.gmail.com>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_120318_114467_CA62B0DD 
-X-CRM114-Status: GOOD (  30.88  )
+X-CRM114-CacheID: sfid-20191024_120412_113768_D9F8B422 
+X-CRM114-Status: GOOD (  26.74  )
 X-Spam-Score: -1.6 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-1.6 points)
@@ -99,7 +99,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 24, 2019 at 01:28:28PM +0530, Jagan Teki wrote:
+On Thu, Oct 24, 2019 at 06:26:36PM +0530, Jagan Teki wrote:
 > On Thu, Oct 17, 2019 at 3:22 PM Maxime Ripard <mripard@kernel.org> wrote:
 > >
 > > On Wed, Oct 16, 2019 at 02:19:44PM +0530, Jagan Teki wrote:
@@ -174,45 +174,13 @@ On Thu, Oct 24, 2019 at 01:28:28PM +0530, Jagan Teki wrote:
 > >
 > > No, the bus clock name is not needed if there's only one clock.
 >
-> Okay, is it because the same clock handle it on PHY side?
+> Looks like we need "bus" clock required since the
+> devm_regmap_init_mmio_clk is created only if bus clock-names added in
+> dt.
 
-No, because there's only one clock and thus you don't need to
-differentiate them.
+Yeah, hence why I said you'd need "a bit of work on the driver side"
 
-> >
-> > > I'm not exactly sure, this is correct but trying to understand if it
-> > > is possible or not? something like
-> > >
-> > >    clocks:
-> > >       minItems: 1
-> > >       maxItems: 2
-> > >      items:
-> > >        - description: Bus Clock
-> > >        - description: Module Clock
-> >
-> > That's correct.
-> >
-> > >    clock-names:
-> > >       minItems: 1
-> > >       maxItems: 2
-> > >      items:
-> > >        - const: bus
-> > >        - const: mod
-> >
-> > Here, just keep the current clock-names definition, and make it
-> > required only for SoCs that are not the A64
->
-> Okay, please have a look here I have pasted the diff for comments.
->
->    clocks:
-> +    minItems: 2
->      items:
->        - description: Bus Clock
->        - description: Module Clock
-
-Didn't you tell me that you didn't need the module clock?
-
-How do you handle the case were you just have the bus clock then?
+Replacing the clock name by NULL should work.
 
 Maxime
 
