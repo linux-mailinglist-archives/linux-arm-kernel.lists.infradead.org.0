@@ -2,85 +2,111 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2CD1EE2AA2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 08:53:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9AA85E2AA7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 08:57:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EHaIZLAHWNiAS8JZY18qiGGAwAfupmKqD9sm79jr7xY=; b=Hg1f9HgeFNiXu6
-	Yis5IdI5Dg86PNByB2VsGpwHEWWCPcmse4A7TkHamiyN1eLrcvTAm5JM0tMjaycN7bNAJ5MA9gTMw
-	bfaJCEQjpfRWY3qBQtEpqagTh+8gTGpZnGkWlmfoxlqhDDWU5NZsPdqP5ao7JtLNOayOhwJHV01b7
-	ccqes7Ep4r4V66+fN5K1KNffmCzzyvnMKj03iKXLO1XBTpV9Bx0Bg7ogMeujTXFFw6b7vJZxpsgiR
-	bIyXA0HSN5/LVxPojEuvL9uSQ+IGg5m4sdNLekziuLXR1eaqHNT5NSfQVlqC6M22tYsBnUbyISkbY
-	B2g0TFzNVcTXyMokPRNQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fCwBmXVkonOOS1lkVixuvN5ZCoZeGTF3cC9RINqYvDk=; b=UwSoeZoqPJo7CE
+	IuPLwAJLx2xQqIFKc0o52fiEwTXjikrKZ8luoXB8Ih0n9eJTNi9Uvk5YAGiq2PV8GdPhJduhCglNM
+	lm+PiU3uQf0l3rLxFkuThICUDfvh5bz48m1amaQzrEIJLvgDmv60iR49EQKumxEraeoaSdOyGaZiQ
+	lFpHX7rc0l8lARjBsqtI4p4K90fRYpJsyOBqo/bgtGFoVC7BNh2+Xdb2jP1XoccQDghEjdE7suFQn
+	QLoC/j5Qxo4gZ+CtJwbMKCNIYW0MDxIuRZ8R0fzHiklBjXGSAbuiiCE8pRFadPMUl0K3OMc0GYqCG
+	NRaDFyZRe2no6PxDC10g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNX06-00080k-Eh; Thu, 24 Oct 2019 06:53:38 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iNX3v-0001ir-F2; Thu, 24 Oct 2019 06:57:35 +0000
+Received: from mail-eopbgr50059.outbound.protection.outlook.com ([40.107.5.59]
+ helo=EUR03-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNWzw-0007zX-Lx
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 06:53:30 +0000
-Received: by mail-wr1-x444.google.com with SMTP id c2so19442938wrr.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 23 Oct 2019 23:53:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=8khYaTOw9WAVn5r1hqt1nVZGPqpu5gb6+8NwKqGMFe8=;
- b=BUNli2l6Fa25AdE0ZSWmeiiCbkMITuhVBf0luWAEV5g4Dm4/cIj62LYP/VKo2c+v9R
- K/oB+nqJfpCqgkRLmdoEv8r4E1gJom+I3ZY2D1t0IQUZL9+UlNk+FYY4RSXQ1P+sTBUP
- EmUoKzUQalCiS3o8nu3dUHm8oxHaASXdcESR/hIeM7djjAvOGU7uHI4DkWu7W/b7Y8yu
- oYwhsy+1ECYgLY27ogRRs6YzGpOcwwcnEyHjJy0ELTqDxn1YUkR/xEWK4ToCfoyEH4Fy
- j431j/y9T/3acv/UwKu/ZnQveJw8qBnxxEjPLnfwcSKN3CxKHbvwEK3OhxwKBqkcr/6f
- HfeA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=8khYaTOw9WAVn5r1hqt1nVZGPqpu5gb6+8NwKqGMFe8=;
- b=eERsq9pO8e336QEc7WPlfWTOVvFnpfntnjrYAirH+eB1XCZ/dkoN6RzVyBhh8xa37o
- dHEfOaNueaA/osMmiL6whz8pOZKAHck/MzNXnRscGtvFcA7lo0twz3Bf8r6KS1hsmtxm
- bXJvpmawrY8Qn11Ufo59Bbkj7WbX2xyngSpGV00TwGWP3xfGX0al5UPv5lwyN6KN+g6P
- 5m8kPsssRdkh1EFA9NWhPlUiBLbKIkQlJHkuqEbYqXA0ex1Vkyv2B6LHnbo0U80+w0Um
- YC7CJQKDkmXD8KqSAqwNtXJDlNqSASyOqqZpM5Mg5mWVw5rIXKeuAk98/HcPIDlOXxuh
- 60UQ==
-X-Gm-Message-State: APjAAAWBDkml6ZXk83dM4FGzqsY2dYzfz7uXE2BhUJjFjO5gwFsK1vmV
- R8dTeOdui0mOfgFx4AXCzokVaA==
-X-Google-Smtp-Source: APXvYqzgRjFnh49B9qjfb0Oi6euoaQE0DPniUq07LuFqd+7EURts2SUbVXZSdndQQkgO1PMosZc66g==
-X-Received: by 2002:a5d:638c:: with SMTP id p12mr2117890wru.136.1571900005726; 
- Wed, 23 Oct 2019 23:53:25 -0700 (PDT)
-Received: from dell ([95.149.164.99])
- by smtp.gmail.com with ESMTPSA id d199sm1783744wmd.35.2019.10.23.23.53.24
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 23 Oct 2019 23:53:25 -0700 (PDT)
-Date: Thu, 24 Oct 2019 07:53:23 +0100
-From: Lee Jones <lee.jones@linaro.org>
-To: Fabien Parent <fparent@baylibre.com>
-Subject: Re: [PATCH RESEND] mfd: mt6397: Use PLATFORM_DEVID_NONE macro
- instead of -1
-Message-ID: <20191024065323.GD15843@dell>
-References: <20191020150720.2752-1-fparent@baylibre.com>
+ id 1iNX3m-0001ht-3J
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 06:57:28 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=dbTzIpJPgCPzwWaj5d6QfbRm5ybBZj4cGqvhmBkvFBL2kIw3XIN2qiVLszWAHagnR/6gVCCb11S98fDdYsNNvorB19Ft5H2M2IFZIaZkDQo0KwpF+xuo2NUcMi4zA5kKlzj5OP39nGbd7hpEYDvon368MyfGbdc8w0pDMh5KAY8w41eINuG5b2uQcV1mtF/PSuW8wYKcwITHOBUBfAkGCdptvtuyx5Z4OSNzxmdZIrE8voSPoPmTPDkr8VuZcQlbrKxDKey1xT5w0a7qr8jNRAnGLste3EDgGNTyqZo6ua/p52wBOkBsE8spp8G27thnA2qcKIk0E+kK5yw9AhuTgQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=xBNbdBmQd80Nq0sFIlcM9kti+3TltWFC2IUOP6UrCsk=;
+ b=IR3Mp07twlxzuofgXiOq3/aOte3KvZY6UNELYC8DuiQmmAZLQsJ0+dJSHcc/Fd9Ou6gvSpJpo6Xoz+eiyZ2n70Uc0BFJt/O+Ea/QvTgtEOOaFLOqHxhSQvFUXgaVqi5ulVZUeZSyaCI0y0jPsTXMIM22mJhSiKeck0djOB7/6KJQBboFMHDR42DKAcASovORTVh8cL6oPjjmSHbDzLdAfCe5RkPjimzl7Gerg4Idp4vyTC55ULmeyniOlpuMjQcT1rqRy7ZQqo99RUiPrIrh+lehUXiaji//gBcst93Q7OkO7I0GE0uboEwPBvBOLTkQxYDO3/0rgDxJN1ftLQy7TQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=xBNbdBmQd80Nq0sFIlcM9kti+3TltWFC2IUOP6UrCsk=;
+ b=f+PAdXAA1FStvkD1DovyNUYzjN6pqT89+C0M9uOuZUHD8iKMoxD8ka9z4MIcRkkN6fNkUDfPDBbQ1IYtHDnGI59rKU8ZHPdR5nFZzWh0+80UmSs70HT+FyDcy7rmGQYZkFpJ05FSp4Fv97d9beIS0FsaiqUaWrFACcpPoRJsQ/g=
+Received: from DB7PR04MB4490.eurprd04.prod.outlook.com (52.135.138.150) by
+ DB7PR04MB4683.eurprd04.prod.outlook.com (52.135.139.17) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2387.20; Thu, 24 Oct 2019 06:57:22 +0000
+Received: from DB7PR04MB4490.eurprd04.prod.outlook.com
+ ([fe80::7804:558a:eef9:cc11]) by DB7PR04MB4490.eurprd04.prod.outlook.com
+ ([fe80::7804:558a:eef9:cc11%7]) with mapi id 15.20.2387.023; Thu, 24 Oct 2019
+ 06:57:22 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: "mturquette@baylibre.com" <mturquette@baylibre.com>, "sboyd@kernel.org"
+ <sboyd@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "festevam@gmail.com"
+ <festevam@gmail.com>, Abel Vesa <abel.vesa@nxp.com>
+Subject: [PATCH] clk: imx: imx8mq: fix sys2/3_pll_out_sels
+Thread-Topic: [PATCH] clk: imx: imx8mq: fix sys2/3_pll_out_sels
+Thread-Index: AQHVijhIlRv5T5+Fgk+U/4a62CwQtw==
+Date: Thu, 24 Oct 2019 06:57:21 +0000
+Message-ID: <1571900044-22079-1-git-send-email-peng.fan@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.7.4
+x-clientproxiedby: HK0PR01CA0046.apcprd01.prod.exchangelabs.com
+ (2603:1096:203:3e::34) To DB7PR04MB4490.eurprd04.prod.outlook.com
+ (2603:10a6:5:36::22)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 74b9ff3e-2dd2-4bba-cb6a-08d7584f6af6
+x-ms-traffictypediagnostic: DB7PR04MB4683:|DB7PR04MB4683:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB7PR04MB468387F4E144DA8682EFC7C3886A0@DB7PR04MB4683.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1227;
+x-forefront-prvs: 0200DDA8BE
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(376002)(39860400002)(396003)(366004)(136003)(346002)(199004)(189003)(81156014)(6486002)(256004)(54906003)(52116002)(476003)(2616005)(102836004)(66066001)(186003)(6512007)(6506007)(110136005)(6436002)(5660300002)(316002)(99286004)(7736002)(71190400001)(71200400001)(2201001)(14444005)(66556008)(2906002)(66476007)(305945005)(26005)(386003)(86362001)(66446008)(50226002)(3846002)(2501003)(64756008)(6636002)(44832011)(4326008)(478600001)(8676002)(25786009)(14454004)(81166006)(486006)(66946007)(8936002)(36756003)(6116002)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR04MB4683;
+ H:DB7PR04MB4490.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: o59luhHqYaavQTq53VNA7uOIeVVzprn4gnTwA++qWGvJ4rCBMH1l6cC7tDg6G3AWA7GfjCk93bt/iKY6l+Bl8NkyTzv17hBYnFsv6DkERoiStMwWfegMHXtj7SBEc6nhmVSkWagtv5X3YXoGWVq4ij0IGJELE83HUkrJjPlAt8YO7CtgJ6frlG52T8a6p1ImBgzFsbu+tgSvGUMDZs1BPu/Y6FdcNc3hGcf0AI34iIztu+1YQA3rBZF76+ek2oYPNh3OQzKEIrJXmAOZtHg2ZIOdey8bkPidrb21W+xx4bFWK34vMsqayUiQwljAkWfmRJfxNozeX/52XUEXNcc0j1rS7oh2PjQ55WSTFss/ugW/O17jNv0I2iX7axRCnBlro3TYNwvN2sJ40h43w57ahHHvxM391AZacnK1Dp+7gMKJ3Dp0FJfECQ6e5cUmdEL4
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191020150720.2752-1-fparent@baylibre.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 74b9ff3e-2dd2-4bba-cb6a-08d7584f6af6
+X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Oct 2019 06:57:21.8372 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: dPbdvGXamzeFsaUfZbYWWOAkpXDjfeL3aODRpAmyb2vA50v8M/hzqYrAI+Hoat1zYs6lKwaMcHHP9IRrxwsj2g==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB4683
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_235328_729624_17615D5D 
-X-CRM114-Status: GOOD (  15.07  )
+X-CRM114-CacheID: sfid-20191023_235726_142658_0383592E 
+X-CRM114-Status: GOOD (  10.95  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.5.59 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -99,59 +125,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: matthias.bgg@gmail.com, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Peng Fan <peng.fan@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
+ Anson Huang <anson.huang@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gU3VuLCAyMCBPY3QgMjAxOSwgRmFiaWVuIFBhcmVudCB3cm90ZToKCj4gVXNlIHRoZSBjb3Jy
-ZWN0IG1hY3JvIHdoZW4gYWRkaW5nIHRoZSBNRkQgZGV2aWNlcyBpbnN0ZWFkIG9mIHVzaW5nCj4g
-ZGlyZWN0bHkgJy0xJyB2YWx1ZS4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBGYWJpZW4gUGFyZW50IDxm
-cGFyZW50QGJheWxpYnJlLmNvbT4KPiBSZXZpZXdlZC1ieTogTWF0dGhpYXMgQnJ1Z2dlciA8bWF0
-dGhpYXMuYmdnQGdtYWlsLmNvbT4KPiAtLS0KPiAgZHJpdmVycy9tZmQvbXQ2Mzk3LWNvcmUuYyB8
-IDEyICsrKysrKy0tLS0tLQo+ICAxIGZpbGUgY2hhbmdlZCwgNiBpbnNlcnRpb25zKCspLCA2IGRl
-bGV0aW9ucygtKQoKUGF0Y2ggZGlkbid0IGFwcGx5LCBidXQgSSBmaXhlZCBpdCB1cCBhbmQgYXBw
-bGllZCBpdC4KCkxldCBtZSBrbm93IGlmIGFueXRoaW5nIGxvb2sgd3JvbmcgdG8geW91LgoKZGlm
-ZiAtLWdpdCBhL2RyaXZlcnMvbWZkL210NjM5Ny1jb3JlLmMgYi9kcml2ZXJzL21mZC9tdDYzOTct
-Y29yZS5jCmluZGV4IGIyYzMyNWVhZDFjOC4uMDQzN2M4NThkMTE1IDEwMDY0NAotLS0gYS9kcml2
-ZXJzL21mZC9tdDYzOTctY29yZS5jCisrKyBiL2RyaXZlcnMvbWZkL210NjM5Ny1jb3JlLmMKQEAg
-LTE4OSwxNiArMTg5LDE2IEBAIHN0YXRpYyBpbnQgbXQ2Mzk3X3Byb2JlKHN0cnVjdCBwbGF0Zm9y
-bV9kZXZpY2UgKnBkZXYpCiAKIAlzd2l0Y2ggKHBtaWMtPmNoaXBfaWQpIHsKIAljYXNlIE1UNjMy
-M19DSElQX0lEOgotCQlyZXQgPSBkZXZtX21mZF9hZGRfZGV2aWNlcygmcGRldi0+ZGV2LCAtMSwg
-bXQ2MzIzX2RldnMsCi0JCQkJCSAgIEFSUkFZX1NJWkUobXQ2MzIzX2RldnMpLCBOVUxMLAotCQkJ
-CQkgICAwLCBwbWljLT5pcnFfZG9tYWluKTsKKwkJcmV0ID0gZGV2bV9tZmRfYWRkX2RldmljZXMo
-JnBkZXYtPmRldiwgUExBVEZPUk1fREVWSURfTk9ORSwKKwkJCQkJICAgbXQ2MzIzX2RldnMsIEFS
-UkFZX1NJWkUobXQ2MzIzX2RldnMpLAorCQkJCQkgICBOVUxMLCAwLCBwbWljLT5pcnFfZG9tYWlu
-KTsKIAkJYnJlYWs7CiAKIAljYXNlIE1UNjM5MV9DSElQX0lEOgogCWNhc2UgTVQ2Mzk3X0NISVBf
-SUQ6Ci0JCXJldCA9IGRldm1fbWZkX2FkZF9kZXZpY2VzKCZwZGV2LT5kZXYsIC0xLCBtdDYzOTdf
-ZGV2cywKLQkJCQkJICAgQVJSQVlfU0laRShtdDYzOTdfZGV2cyksIE5VTEwsCi0JCQkJCSAgIDAs
-IHBtaWMtPmlycV9kb21haW4pOworCQlyZXQgPSBkZXZtX21mZF9hZGRfZGV2aWNlcygmcGRldi0+
-ZGV2LCBQTEFURk9STV9ERVZJRF9OT05FLAorCQkJCQkgICBtdDYzOTdfZGV2cywgQVJSQVlfU0la
-RShtdDYzOTdfZGV2cyksCisJCQkJCSAgIE5VTEwsIDAsIHBtaWMtPmlycV9kb21haW4pOwogCQli
-cmVhazsKIAogCWRlZmF1bHQ6Cgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL21mZC9tdDYzOTctY29y
-ZS5jIGIvZHJpdmVycy9tZmQvbXQ2Mzk3LWNvcmUuYwo+IGluZGV4IDMxMGRhZTI2ZGRmZi4uOWIx
-OWRmZWViNzk3IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvbWZkL210NjM5Ny1jb3JlLmMKPiArKysg
-Yi9kcml2ZXJzL21mZC9tdDYzOTctY29yZS5jCj4gQEAgLTE3MSw5ICsxNzEsOSBAQCBzdGF0aWMg
-aW50IG10NjM5N19wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ICAJCWlmIChy
-ZXQpCj4gIAkJCXJldHVybiByZXQ7Cj4gIAo+IC0JCXJldCA9IGRldm1fbWZkX2FkZF9kZXZpY2Vz
-KCZwZGV2LT5kZXYsIC0xLCBtdDYzMjNfZGV2cywKPiAtCQkJCQkgICBBUlJBWV9TSVpFKG10NjMy
-M19kZXZzKSwgTlVMTCwKPiAtCQkJCQkgICAwLCBwbWljLT5pcnFfZG9tYWluKTsKPiArCQlyZXQg
-PSBkZXZtX21mZF9hZGRfZGV2aWNlcygmcGRldi0+ZGV2LCBQTEFURk9STV9ERVZJRF9OT05FLAo+
-ICsJCQkJCSAgIG10NjMyM19kZXZzLCBBUlJBWV9TSVpFKG10NjMyM19kZXZzKSwKPiArCQkJCQkg
-ICBOVUxMLCAwLCBwbWljLT5pcnFfZG9tYWluKTsKPiAgCQlicmVhazsKPiAgCj4gIAljYXNlIE1U
-NjM5MV9DSElQX0lEOgo+IEBAIC0xODYsOSArMTg2LDkgQEAgc3RhdGljIGludCBtdDYzOTdfcHJv
-YmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiAgCQlpZiAocmV0KQo+ICAJCQlyZXR1
-cm4gcmV0Owo+ICAKPiAtCQlyZXQgPSBkZXZtX21mZF9hZGRfZGV2aWNlcygmcGRldi0+ZGV2LCAt
-MSwgbXQ2Mzk3X2RldnMsCj4gLQkJCQkJICAgQVJSQVlfU0laRShtdDYzOTdfZGV2cyksIE5VTEws
-Cj4gLQkJCQkJICAgMCwgcG1pYy0+aXJxX2RvbWFpbik7Cj4gKwkJcmV0ID0gZGV2bV9tZmRfYWRk
-X2RldmljZXMoJnBkZXYtPmRldiwgUExBVEZPUk1fREVWSURfTk9ORSwKPiArCQkJCQkgICBtdDYz
-OTdfZGV2cywgQVJSQVlfU0laRShtdDYzOTdfZGV2cyksCj4gKwkJCQkJICAgTlVMTCwgMCwgcG1p
-Yy0+aXJxX2RvbWFpbik7Cj4gIAkJYnJlYWs7Cj4gIAo+ICAJZGVmYXVsdDoKCi0tIApMZWUgSm9u
-ZXMgW+adjueQvOaWr10KTGluYXJvIFNlcnZpY2VzIFRlY2huaWNhbCBMZWFkCkxpbmFyby5vcmcg
-4pSCIE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBBUk0gU29DcwpGb2xsb3cgTGluYXJvOiBGYWNl
-Ym9vayB8IFR3aXR0ZXIgfCBCbG9nCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
-bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+From: Peng Fan <peng.fan@nxp.com>
+
+The current clk tree shows:
+ osc_25m                              9       11        0    25000000          0     0  50000
+    sys2_pll1_ref_sel                 1        1        0    25000000          0     0  50000
+       sys3_pll_out                   1        1        0    25000000          0     0  50000
+    sys1_pll1_ref_sel                 2        2        0    25000000          0     0  50000
+       sys2_pll_out                   6        6        0  1000000000          0     0  50000
+
+It is not correct that sys3_pll_out use sys2_pll1_ref_sel as parent,
+sys2_pll_out use sys1_pll1_ref_sel as parent.
+
+According to the current imx_clk_sccg_pll design, it uses both
+bypass1/2, however set bypass2 as 1 is not correct, because it will
+make sys[x]_pll_out use wrong parent and might access wrong registers.
+
+So correct bypass2 to 0 and fix sys2/3_pll_out_sels.
+
+After fix, the tree shows:
+ osc_25m                             10       12        0    25000000          0     0  50000
+    sys3_pll1_ref_sel                 1        1        0    25000000          0     0  50000
+       sys3_pll_out                   1        1        0    25000000          0     0  50000
+    sys2_pll1_ref_sel                 1        1        0    25000000          0     0  50000
+       sys2_pll_out                   6        6        0  1000000000          0     0  50000
+    sys1_pll1_ref_sel                 1        1        0    25000000          0     0  50000
+       sys1_pll_out                   5        5        0   800000000          0     0  50000
+
+Fixes: e9dda4af685f ("clk: imx: Refactor entire sccg pll clk")
+Signed-off-by: Peng Fan <peng.fan@nxp.com>
+---
+ drivers/clk/imx/clk-imx8mq.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/clk/imx/clk-imx8mq.c b/drivers/clk/imx/clk-imx8mq.c
+index 05ece7b5da54..e17f0ebfacb0 100644
+--- a/drivers/clk/imx/clk-imx8mq.c
++++ b/drivers/clk/imx/clk-imx8mq.c
+@@ -35,8 +35,8 @@ static const char * const audio_pll2_bypass_sels[] = {"audio_pll2", "audio_pll2_
+ static const char * const video_pll1_bypass_sels[] = {"video_pll1", "video_pll1_ref_sel", };
+ 
+ static const char * const sys1_pll_out_sels[] = {"sys1_pll1_ref_sel", };
+-static const char * const sys2_pll_out_sels[] = {"sys1_pll1_ref_sel", "sys2_pll1_ref_sel", };
+-static const char * const sys3_pll_out_sels[] = {"sys3_pll1_ref_sel", "sys2_pll1_ref_sel", };
++static const char * const sys2_pll_out_sels[] = {"sys2_pll1_ref_sel", };
++static const char * const sys3_pll_out_sels[] = {"sys3_pll1_ref_sel", };
+ static const char * const dram_pll_out_sels[] = {"dram_pll1_ref_sel", };
+ static const char * const video2_pll_out_sels[] = {"video2_pll1_ref_sel", };
+ 
+@@ -345,8 +345,8 @@ static int imx8mq_clocks_probe(struct platform_device *pdev)
+ 	clks[IMX8MQ_VIDEO_PLL1_OUT] = imx_clk_gate("video_pll1_out", "video_pll1_bypass", base + 0x10, 21);
+ 
+ 	clks[IMX8MQ_SYS1_PLL_OUT] = imx_clk_sccg_pll("sys1_pll_out", sys1_pll_out_sels, ARRAY_SIZE(sys1_pll_out_sels), 0, 0, 0, base + 0x30, CLK_IS_CRITICAL);
+-	clks[IMX8MQ_SYS2_PLL_OUT] = imx_clk_sccg_pll("sys2_pll_out", sys2_pll_out_sels, ARRAY_SIZE(sys2_pll_out_sels), 0, 0, 1, base + 0x3c, CLK_IS_CRITICAL);
+-	clks[IMX8MQ_SYS3_PLL_OUT] = imx_clk_sccg_pll("sys3_pll_out", sys3_pll_out_sels, ARRAY_SIZE(sys3_pll_out_sels), 0, 0, 1, base + 0x48, CLK_IS_CRITICAL);
++	clks[IMX8MQ_SYS2_PLL_OUT] = imx_clk_sccg_pll("sys2_pll_out", sys2_pll_out_sels, ARRAY_SIZE(sys2_pll_out_sels), 0, 0, 0, base + 0x3c, CLK_IS_CRITICAL);
++	clks[IMX8MQ_SYS3_PLL_OUT] = imx_clk_sccg_pll("sys3_pll_out", sys3_pll_out_sels, ARRAY_SIZE(sys3_pll_out_sels), 0, 0, 0, base + 0x48, CLK_IS_CRITICAL);
+ 	clks[IMX8MQ_DRAM_PLL_OUT] = imx_clk_sccg_pll("dram_pll_out", dram_pll_out_sels, ARRAY_SIZE(dram_pll_out_sels), 0, 0, 0, base + 0x60, CLK_IS_CRITICAL);
+ 	clks[IMX8MQ_VIDEO2_PLL_OUT] = imx_clk_sccg_pll("video2_pll_out", video2_pll_out_sels, ARRAY_SIZE(video2_pll_out_sels), 0, 0, 0, base + 0x54, 0);
+ 
+-- 
+2.16.4
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
