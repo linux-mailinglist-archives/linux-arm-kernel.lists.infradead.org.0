@@ -2,97 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06804E2D2B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 11:24:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A682E2D3F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 11:26:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rLaSiO93epfd8z5Ranp58aANOpRfIQ0pKr+9sT8W69k=; b=KOxiZx8hzdf+oV
-	G51twTI30Huc7V3UOrxppomRM1vkYamwDQcKQoQZVLUG9JJMM84vWdrPqiSirGhXd62C5Fo1luEGE
-	0EMJCassk1C9+mf4NbHz4hWXjsLMsKQD2J2XtCKsgVLUG79Mf7SfdQI4XY3+2NunyzDX4FWk76hOl
-	3PCqx4HyIaV4wKUQMdRI0dWwc3zkAkJG6MhWktKSQIMc56hAQMoGJAHTFIBtoxOUs/SKs27uftNqi
-	9E/MQNwF9Bg9NMcWl25xMVkQ0DHrJLuflm13+SGeUAfv397SkVxliKDc4k7QjvdF7/bC4RSS6Wui7
-	uJk7EXJQPJekhoRTn0/g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=eR3OgnBkp/Xjy8hG5ajPowocShFvV+iFXa0AWYIpaC8=; b=CmB
+	WPa5cDwok9R9GOMxkPwc1PdUqVOXLbqrhLxT3GN4IfuPWpGjcndgzS4ANV7NRUTykdcjoxNGigsEA
+	9QwBNmuvLVr5p07+IWjSLJLlF9x8q0Sqz+BRUCTpF2sd34++rLaVWI1kccttMCti3kChpmwzUh6WU
+	XzwcSqp6PW6AjXUVwAkV300FUpsJU/sPmVMrEozJZ6KLUIiGocfb2pV8PCKvWLd47WC7jVTAqKuEr
+	aY1Sh9uijWNEIhrb2WiD2RxxMj1MxzVepoMO18dd+n31JFmzy6/ZzTIf+wGXgBofqS3lCGawF7soN
+	ecm40GaO/T4XVDlHA7bGRNTDmgr4mAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNZLo-0002sz-0J; Thu, 24 Oct 2019 09:24:12 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1iNZOR-0004eQ-QD; Thu, 24 Oct 2019 09:26:55 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNZLZ-0002s6-Hd
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 09:24:00 +0000
-Received: by mail-ed1-x544.google.com with SMTP id p59so9673752edp.7
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 24 Oct 2019 02:23:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=2Fg4OORdS56GYlEdlxxKyHlR08HjtyPW5mXDJkHAU3c=;
- b=LErg4eJHixvsMHo3T4UdsdOcjyo5lbO9XudSeZq6rpgNnkVpGr/b0G90t4XOSP66/E
- yPiEP9VtvxDCkUlH7d1janZhA4XnWhbkjvm/cOE2ToCJXuDoxd+uba3V89MU7eceWGgo
- 3dPD97YPgwTyy5neIrYaAT8SNNB8krsO2ClP8=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=2Fg4OORdS56GYlEdlxxKyHlR08HjtyPW5mXDJkHAU3c=;
- b=AgUKcTiJOQ/SldkJyTgX+3f73kcp66AJ3dKHRK2/uMwGSdK1/ylf4iv0UeFGtwZNuk
- AydqzHaUjt3+7Wscwvj2Ysp+HjNh3IEmN5G/mzc0DRRRI0x0swLqH6juBRbUV+ypJU24
- Ap/ncX21LCAl8BEXVmwg4p+NwBJhMyVgsmD2klcGLAKiM8TnFGrWqIEtNQwuQ/APUUSo
- lkUb4uCXd6z+svAaPUFMYsmwsOYAHiAIxr5OHoY2ZNmKoES2HSmJrdb0ephuc0+lZpgC
- WyBK5o3AW4I6EjjkUCAdBnjG7KtKAD6WA07Ddsm0V9anKWkfKbzLtELDdxJe1JpsCIqB
- JyLg==
-X-Gm-Message-State: APjAAAWCEQgpmruhPWIxfIkiCRitAdsyYZfUuhiBeev0xoESEUEuPvv8
- 5rgBH1ghVm6Jf5ARvIj0iMtoCaXUcuUDxA==
-X-Google-Smtp-Source: APXvYqybVUBZuz2vaRL7z16joOl8G2DKyfufOcN4weImF25SXD2gk/ZACWPNolFOxXr8uZa+OE/vKw==
-X-Received: by 2002:aa7:cb5a:: with SMTP id w26mr42481712edt.188.1571909035986; 
- Thu, 24 Oct 2019 02:23:55 -0700 (PDT)
-Received: from mail-wr1-f41.google.com (mail-wr1-f41.google.com.
- [209.85.221.41])
- by smtp.gmail.com with ESMTPSA id g43sm473644edb.14.2019.10.24.02.23.55
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 24 Oct 2019 02:23:55 -0700 (PDT)
-Received: by mail-wr1-f41.google.com with SMTP id s1so16456469wro.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 24 Oct 2019 02:23:55 -0700 (PDT)
-X-Received: by 2002:a5d:6a42:: with SMTP id t2mr2809593wrw.155.1571909035112; 
- Thu, 24 Oct 2019 02:23:55 -0700 (PDT)
-MIME-Version: 1.0
-References: <20191017084033.28299-1-xia.jiang@mediatek.com>
- <20191017084033.28299-6-xia.jiang@mediatek.com>
- <20191023103945.GA41089@chromium.org>
- <1571906317.6254.64.camel@mhfsdcap03>
-In-Reply-To: <1571906317.6254.64.camel@mhfsdcap03>
-From: Tomasz Figa <tfiga@chromium.org>
-Date: Thu, 24 Oct 2019 18:23:43 +0900
-X-Gmail-Original-Message-ID: <CAAFQd5DUF90daBAe96Vu46z9HD43AYG+9rK-_r_aWYey8GxpmQ@mail.gmail.com>
-Message-ID: <CAAFQd5DUF90daBAe96Vu46z9HD43AYG+9rK-_r_aWYey8GxpmQ@mail.gmail.com>
-Subject: Re: [PATCH v4 5/5] media: platform: Add jpeg dec/enc feature
-To: Xia Jiang <xia.jiang@mediatek.com>
+ id 1iNZOH-0004cd-L7
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 09:26:47 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 1B8E61A019B;
+ Thu, 24 Oct 2019 11:26:42 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 70F8D1A0755;
+ Thu, 24 Oct 2019 11:26:35 +0200 (CEST)
+Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 38581402BC;
+ Thu, 24 Oct 2019 17:26:27 +0800 (SGT)
+From: Ran Wang <ran.wang_1@nxp.com>
+To: "Rafael J . Wysocki" <rjw@rjwysocki.net>, Rob Herring <robh+dt@kernel.org>,
+ Li Yang <leoyang.li@nxp.com>, Mark Rutland <mark.rutland@arm.com>,
+ Pavel Machek <pavel@ucw.cz>, Huang Anson <anson.huang@nxp.com>
+Subject: [PATCH v10 1/3] PM: wakeup: Add routine to help fetch wakeup source
+ object.
+Date: Thu, 24 Oct 2019 17:26:42 +0800
+Message-Id: <20191024092644.26583-1-ran.wang_1@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_022357_607838_30DE8422 
-X-CRM114-Status: GOOD (  30.46  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191024_022645_971010_B182196D 
+X-CRM114-Status: GOOD (  12.43  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,122 +66,169 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-devicetree <devicetree@vger.kernel.org>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- Rick Chang <rick.chang@mediatek.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
- Joerg Roedel <joro@8bytes.org>, " <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: Li Biwen <biwen.li@nxp.com>, Len Brown <len.brown@intel.com>,
+ devicetree@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Ran Wang <ran.wang_1@nxp.com>, linuxppc-dev@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 24, 2019 at 5:38 PM Xia Jiang <xia.jiang@mediatek.com> wrote:
->
-> On Wed, 2019-10-23 at 19:39 +0900, Tomasz Figa wrote:
-> > Hi Xia,
-> >
-> > On Thu, Oct 17, 2019 at 04:40:38PM +0800, Xia Jiang wrote:
-> > > Add mtk jpeg encode v4l2 driver based on jpeg decode, because that jpeg
-> > > decode and encode have great similarities with function operation.
-> > >
-> > > Signed-off-by: Xia Jiang <xia.jiang@mediatek.com>
-> > > ---
-> > > v4: split mtk_jpeg_try_fmt_mplane() to two functions, one for encoder,
-> > >     one for decoder.
-> > >     split mtk_jpeg_set_default_params() to two functions, one for
-> > >     encoder, one for decoder.
-> > >     add cropping support for encoder in g/s_selection ioctls.
-> > >     change exif mode support by using V4L2_JPEG_ACTIVE_MARKER_APP1.
-> > >     change MTK_JPEG_MAX_WIDTH/MTK_JPEG_MAX_HEIGH from 8192 to 65535 by
-> > >     specification.
-> > >     move width shifting operation behind aligning operation in
-> > >     mtk_jpeg_try_enc_fmt_mplane() for bug fix.
-> > >     fix user abuseing data_offset issue for DMABUF in
-> > >     mtk_jpeg_set_enc_src().
-> > >     fix kbuild warings: change MTK_JPEG_MIN_HEIGHT/MTK_JPEG_MAX_HEIGHT
-> > >                         and MTK_JPEG_MIN_WIDTH/MTK_JPEG_MAX_WIDTH from
-> > >                         'int' type to 'unsigned int' type.
-> > >                         fix msleadingly indented of 'else'.
-> > >
-> > > v3: delete Change-Id.
-> > >     only test once handler->error after the last v4l2_ctrl_new_std().
-> > >     seperate changes of v4l2-ctrls.c and v4l2-controls.h to new patch.
-> > >
-> > > v2: fix compliance test fail, check created buffer size in driver.
-> > > ---
-> > >  drivers/media/platform/mtk-jpeg/Makefile      |   5 +-
-> > >  .../media/platform/mtk-jpeg/mtk_jpeg_core.c   | 731 +++++++++++++++---
-> > >  .../media/platform/mtk-jpeg/mtk_jpeg_core.h   | 123 ++-
-> > >  .../media/platform/mtk-jpeg/mtk_jpeg_dec_hw.h |   7 +-
-> > >  .../media/platform/mtk-jpeg/mtk_jpeg_enc_hw.c | 175 +++++
-> > >  .../media/platform/mtk-jpeg/mtk_jpeg_enc_hw.h |  60 ++
-> > >  .../platform/mtk-jpeg/mtk_jpeg_enc_reg.h      |  49 ++
-> > >  7 files changed, 1004 insertions(+), 146 deletions(-)
-> > >  create mode 100644 drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.c
-> > >  create mode 100644 drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.h
-> > >  create mode 100644 drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_reg.h
-> > >
-> >
-> > First of all, thanks for the patch!
-> >
-> > Please check my comments below.
-> >
-> > My general feeling about this code is that the encoder hardware block is
-> > completely orthogonal from the decoder block and there is very little code
-> > reuse from the original decoder driver.
-> >
-> > Moreover, a lot of existing code now needs if (decoder) { ... } else {... }
-> > segments, which complicates the code.
-> >
-> > Would it perhaps make sense to instead create a separate mtk-jpeg-enc
-> > driver?
-> >
-> Dear Tomasz,
->
-> Thanks for your comments.
->
-> My reasons about the architecture of jpeg enc driver are as follows:
->
-> The first internal design and realization of jpeg enc driver was a
-> separate driver, but found that mtk_jpeg_core.c and mtk_jpeg_enc_core.c
-> have lots of reuse.Because that  the core.c mainly contains realization
-> of v4L2 ioctl functions and some logic which are high similarity between
-> encoder and decoder.
->
-> The jpeg encoder and decoder are two independent hardwares exactly, so
-> the code about hardware specification(register setting) are
-> separated(mtk_jpeg_enc_hw.c and mtk_jpeg_dec_hw.c).
->
-> As for 17 existing code segments contain if(decoder){} else {}, they are
-> not complicated IMHO.The complicated(multilayer nested) functions are
-> separated in V4 version as Hans recommendation.
->
-> By the way,the upstreamed module s5p-jpeg
-> (https://elixir.bootlin.com/linux/latest/source/drivers/media/platform/s5p-jpeg/jpeg-core.c#L1998) also use encoder and decoder mode in the common core.c, but their encoder and decoder are the same hardware.Maybe our jpeg enc and dec are designed into one hardware in the future.In that case the current architecture is more compatible.
->
-> So I prefer the current design.
->
+Some user might want to go through all registered wakeup sources
+and doing things accordingly. For example, SoC PM driver might need to
+do HW programming to prevent powering down specific IP which wakeup
+source depending on. So add this API to help walk through all registered
+wakeup source objects on that list and return them one by one.
 
-Would you be able to give some numbers to show the code reuse to
-justify using the same driver? From my observation, a new driver would
-result in a significantly cleaner code. If there is a further hardware
-architecture change, that would likely require another driver, because
-it wouldn't be compatible with existing programming model anyway.
+Signed-off-by: Ran Wang <ran.wang_1@nxp.com>
+Tested-by: Leonard Crestez <leonard.crestez@nxp.com>
+Reviewed-by: Rafael J. Wysocki <rafael.j.wysocki@intel.com>
+---
+Change in v10:
+	- Add 'Reviewed-by: Rafael J. Wysocki <rafael.j.wysocki@intel.com>'
+	  to commit message.
 
-Regardless of that, if we end up with reusing the same driver, I'd
-like you to fix the issues existing in the current base before adding
-the encoder functionality.
+Change in v9:
+	- Supplement comments for wakeup_sources_read_lock(),
+	  wakeup_sources_read_unlock, wakeup_sources_walk_start and
+	  wakeup_sources_walk_next().
 
-Best regards,
-Tomasz
+Change in v8:
+	- Rename wakeup_source_get_next() to wakeup_sources_walk_next().
+	- Add wakeup_sources_read_lock() to take over locking job of
+	  wakeup_source_get_star().
+	- Rename wakeup_source_get_start() to wakeup_sources_walk_start().
+	- Replace wakeup_source_get_stop() with wakeup_sources_read_unlock().
+	- Define macro for_each_wakeup_source(ws).
+
+Change in v7:
+	- Remove define of member *dev in wake_irq to fix conflict with commit 
+	c8377adfa781 ("PM / wakeup: Show wakeup sources stats in sysfs"), user 
+	will use ws->dev->parent instead.
+	- Remove '#include <linux/of_device.h>' because it is not used.
+
+Change in v6:
+	- Add wakeup_source_get_star() and wakeup_source_get_stop() to aligned 
+	with wakeup_sources_stats_seq_start/nex/stop.
+
+Change in v5:
+	- Update commit message, add decription of walk through all wakeup
+	source objects.
+	- Add SCU protection in function wakeup_source_get_next().
+	- Rename wakeup_source member 'attached_dev' to 'dev' and move it up
+	(before wakeirq).
+
+Change in v4:
+	- None.
+
+Change in v3:
+	- Adjust indentation of *attached_dev;.
+
+Change in v2:
+	- None.
+
+ drivers/base/power/wakeup.c | 54 +++++++++++++++++++++++++++++++++++++++++++++
+ include/linux/pm_wakeup.h   |  9 ++++++++
+ 2 files changed, 63 insertions(+)
+
+diff --git a/drivers/base/power/wakeup.c b/drivers/base/power/wakeup.c
+index 5817b51..70a9edb 100644
+--- a/drivers/base/power/wakeup.c
++++ b/drivers/base/power/wakeup.c
+@@ -248,6 +248,60 @@ void wakeup_source_unregister(struct wakeup_source *ws)
+ EXPORT_SYMBOL_GPL(wakeup_source_unregister);
+ 
+ /**
++ * wakeup_sources_read_lock - Lock wakeup source list for read.
++ *
++ * Returns an index of srcu lock for struct wakeup_srcu.
++ * This index must be passed to the matching wakeup_sources_read_unlock().
++ */
++int wakeup_sources_read_lock(void)
++{
++	return srcu_read_lock(&wakeup_srcu);
++}
++EXPORT_SYMBOL_GPL(wakeup_sources_read_lock);
++
++/**
++ * wakeup_sources_read_unlock - Unlock wakeup source list.
++ * @idx: return value from corresponding wakeup_sources_read_lock()
++ */
++void wakeup_sources_read_unlock(int idx)
++{
++	srcu_read_unlock(&wakeup_srcu, idx);
++}
++EXPORT_SYMBOL_GPL(wakeup_sources_read_unlock);
++
++/**
++ * wakeup_sources_walk_start - Begin a walk on wakeup source list
++ *
++ * Returns first object of the list of wakeup sources.
++ *
++ * Note that to be safe, wakeup sources list needs to be locked by calling
++ * wakeup_source_read_lock() for this.
++ */
++struct wakeup_source *wakeup_sources_walk_start(void)
++{
++	struct list_head *ws_head = &wakeup_sources;
++
++	return list_entry_rcu(ws_head->next, struct wakeup_source, entry);
++}
++EXPORT_SYMBOL_GPL(wakeup_sources_walk_start);
++
++/**
++ * wakeup_sources_walk_next - Get next wakeup source from the list
++ * @ws: Previous wakeup source object
++ *
++ * Note that to be safe, wakeup sources list needs to be locked by calling
++ * wakeup_source_read_lock() for this.
++ */
++struct wakeup_source *wakeup_sources_walk_next(struct wakeup_source *ws)
++{
++	struct list_head *ws_head = &wakeup_sources;
++
++	return list_next_or_null_rcu(ws_head, &ws->entry,
++				struct wakeup_source, entry);
++}
++EXPORT_SYMBOL_GPL(wakeup_sources_walk_next);
++
++/**
+  * device_wakeup_attach - Attach a wakeup source object to a device object.
+  * @dev: Device to handle.
+  * @ws: Wakeup source object to attach to @dev.
+diff --git a/include/linux/pm_wakeup.h b/include/linux/pm_wakeup.h
+index 661efa0..aa3da66 100644
+--- a/include/linux/pm_wakeup.h
++++ b/include/linux/pm_wakeup.h
+@@ -63,6 +63,11 @@ struct wakeup_source {
+ 	bool			autosleep_enabled:1;
+ };
+ 
++#define for_each_wakeup_source(ws) \
++	for ((ws) = wakeup_sources_walk_start();	\
++	     (ws);					\
++	     (ws) = wakeup_sources_walk_next((ws)))
++
+ #ifdef CONFIG_PM_SLEEP
+ 
+ /*
+@@ -92,6 +97,10 @@ extern void wakeup_source_remove(struct wakeup_source *ws);
+ extern struct wakeup_source *wakeup_source_register(struct device *dev,
+ 						    const char *name);
+ extern void wakeup_source_unregister(struct wakeup_source *ws);
++extern int wakeup_sources_read_lock(void);
++extern void wakeup_sources_read_unlock(int idx);
++extern struct wakeup_source *wakeup_sources_walk_start(void);
++extern struct wakeup_source *wakeup_sources_walk_next(struct wakeup_source *ws);
+ extern int device_wakeup_enable(struct device *dev);
+ extern int device_wakeup_disable(struct device *dev);
+ extern void device_set_wakeup_capable(struct device *dev, bool capable);
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
