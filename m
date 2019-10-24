@@ -2,83 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9713EE3D0C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 22:17:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6E5EE3D14
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 22:20:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=QmJ/z7UlF6DuMG30Dc7SAgtXyAFXQdG6MxMy4vmrDqM=; b=RcAWNYgQaJNIb3Wn9gI4Vd0R1e
-	2jggZ7mWzBslRQjw0bhTSM3JY+pJ4sW3DsSSfxSJBqYpRvfqR67qTudUFW/GkbSIKqVu6jrHCeAis
-	DqBMzjlTc98eKI/zqvm9FAk3q2Wm8B+vi6rFS9MWZwDwJwDyGYcfs5dpMn4beN6tWL4JjVeqYHrp5
-	kjfAeNeqawLQYtoBTRyQCvIzm5xyZACaH+jOVFOnDknmlKRv961f35cWziQQQ3I+8087Ek0NSfG02
-	cUBnYjcaG2p3zQJAw2LkgYKOaWkxwwpYbazau5bEj3jcjFmuhaLB33GcSzYrENP3zNiDAMtu+Yb7k
-	5dSK/hiA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ylXTQ7nmZOclH3oCW6E3UPZbLpLf4s/IdG1hYe3FVE8=; b=BuuMKGb0UiE+lC
+	L1xXYUjDlnqNEiuyyvFhT0dNj1Dxxh/9qHcAfUzUp+SK0f9XOEOD5qaPoud1tss+kIam9vOM/u1+Z
+	KB6SZcEWCUo0k+sgEIPydMQ8zoJiktQ/9LI6XkcFxuoG28nmwbF8fe7GwcpTKtuglN6jHUQJjpf1w
+	CBCGxazooe9Cdk7631EPHcA+S+NekZunsqsl0POdcls16hRLcbv8yS+rg0viYZzZVqu2YkWCUvCY3
+	NOK4EfEXYYk3IZ5v+ACPPGQASQNVlN03SWDoDercQUvUzRaERTBlqbb3WcqcyiIGSWvTur2Ld8r92
+	yiUf7SEZ7pPbrcj1IbGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNjXb-0002x2-6M; Thu, 24 Oct 2019 20:17:03 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iNjb6-0005fs-Vm; Thu, 24 Oct 2019 20:20:41 +0000
+Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNjVH-0008FI-Eq
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 20:14:42 +0000
-Received: by mail-wr1-x442.google.com with SMTP id v9so16180159wrq.5
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 24 Oct 2019 13:14:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=5CCYXEJ3KS4BOi54EgFM7QurD64PvAhJciYb1sSHmbI=;
- b=Ou4e8uZhb0MKkl+6TqSr10ochGdvvF9mOd+5R6wpXD/J+IuzS6KzgPFZkI8E8iSISi
- k4HaktQ0/4aAaUurM8dTovI2qUiOvHnRd+zqyp4TgrXysptd5Pif4Vq9YfNt9ldpm1qq
- dh5pBaKy/+jhExczjKSKL4A2PWQ5U748SQ8zBD/uIpa2sTALxfEYe5C80HCY+d5be39k
- Wq0/CHglZb8EnUHlTGcCwT+32ThQyF1054Hqt8Q+d4oqUUz5Irvs2kDCazgzC0OEwaKf
- hfTF90sR+OrFV/VFQacFdYYSU383mZcG02loD9yB28x8XQzeJDSCd2jHHdqfp3enKi/T
- GQ6w==
+ id 1iNjav-0005fH-Co; Thu, 24 Oct 2019 20:20:31 +0000
+Received: by mail-oi1-x242.google.com with SMTP id x3so21821162oig.2;
+ Thu, 24 Oct 2019 13:20:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=It61OojkGpwBR4FS4phB+Jtpjryl2QDg9lEM2L8kypw=;
+ b=grUjTgESz2e8e+WknNShVkcsmVLbC3RLlzkivGUMvjpG41LEEyOmD0w4k5lmin/HkO
+ ZBsNiwcd5tEhzWkgVb1yNPt9467e12h/vrq5zSQEI9iH0NJhR5U7f36EGFHIzgHuKSWS
+ hMCBQGnDWDcCdXbPO67pe6wb8HkwXDVZf8Euf/NbT3fNlzr0oiK1dsCKQcO8LVO7qCu4
+ SGyEIXoE3ToaOcSiibun/aktTFQRQ8eqbul0EUXEEEPllMsr5DbUJv2cas3Yf6cnnDQC
+ sxIIt4QLZ3sgAFkLuApxQWyIyMHHtMkZAQLCvJf8VGItzEeU2IJLgXVRSZcHQayu1Leu
+ R1AQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=5CCYXEJ3KS4BOi54EgFM7QurD64PvAhJciYb1sSHmbI=;
- b=p9sZFT9ZJhfeEd5PZ1INLiu6A1cv6lzDFU90PH1ptZXrdIemg6h6HEIJU7n6o96m+z
- uB2zDyTZta62t32KUtxMXD5PGTDqZRL7tJhn7qbpQJvsUt/wyWYjhOfv2YpIKmVZidag
- 3chmo4TtgnaqyYYC5Dit/Lojkj5oZAcNFmD9NrrpRluf8/hR4QzpCcqmGKhJBtwqdB0M
- 3NJh4UV1Way7gqPbPyWE+BbOVM5N0Cqedb39IlN5ELIREre0oODLlsMENf5059pm8ae3
- /2N2/faAr4uG4qIKaL6K9AtfAyuCdiyjakOrrfTvHmixvr+8hhtLXJGviXmXDy736rqC
- 1xrw==
-X-Gm-Message-State: APjAAAW4o8ewQITBiduA9LbHwwDvQfoFiHxjsO8nNFHTQ9fOFJQZ/bvZ
- oMm8fZD/dNcvJdwQLkW9z3Q=
-X-Google-Smtp-Source: APXvYqx80JcncS9iN6IxEENWG5/0ZghTIF3B3mdMMNXvddSGhOqxHC4OV5T7e9Mqfe87OMivYBzU1A==
-X-Received: by 2002:adf:9185:: with SMTP id 5mr5725955wri.389.1571948077944;
- Thu, 24 Oct 2019 13:14:37 -0700 (PDT)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id u21sm4788536wmu.27.2019.10.24.13.14.35
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 24 Oct 2019 13:14:37 -0700 (PDT)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH v3 5/5] irqchip/irq-bcm7038-l1: Support brcm,int-fwd-mask
-Date: Thu, 24 Oct 2019 13:14:15 -0700
-Message-Id: <20191024201415.23454-6-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191024201415.23454-1-f.fainelli@gmail.com>
-References: <20191024201415.23454-1-f.fainelli@gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=It61OojkGpwBR4FS4phB+Jtpjryl2QDg9lEM2L8kypw=;
+ b=GGyu/eKwUHDj929cyQpgaN3whkdM4opN7hT/9EwHJPt2sHBX5n9FAGB7/ZcLJT+MEz
+ qCi6ToVtR++H6nNlk+68xZ8IYjjoNugOQxmhrNqXl7Sa4jUWPh7dL5Uvm9dJeUU5w0eN
+ onE0dcniez9uPMi2OYl+IXS4l/9UgQLYFsSKgSnfS/nB1RogG0BDnoqo3vc1k/kDTNpL
+ s9lXW5XOBSGfD/lDG9ZGYlV/4TheEu+4bM6v+zk0zfpHpPgqRUEu6J6fDjk5F2tTn721
+ 1dCr/N+nD8lIwcXkG28/Px2Q0QL4kIyk5bRVKs2fgEGyXEmKCmAxjkRPj/Squa7ncaAB
+ DzSw==
+X-Gm-Message-State: APjAAAWkJwZwr/EcAXb+g4qNptUObg/7c4+bm9BXUYOGqDY63foo283V
+ GNvYTaBA4RZe4szFZNhh6/qo7yhfberDLEJbQ/k=
+X-Google-Smtp-Source: APXvYqznT7UPPax1j4qYHvpODpisoa2Aa5cEUeURF/FQ5fRuIS363xnHD1+tvBYMI2x4sTClndxZYxfHTgFFv6YSnik=
+X-Received: by 2002:aca:1b18:: with SMTP id b24mr6291732oib.15.1571948428082; 
+ Thu, 24 Oct 2019 13:20:28 -0700 (PDT)
+MIME-Version: 1.0
+References: <20191007131649.1768-1-linux.amoon@gmail.com>
+ <20191007131649.1768-6-linux.amoon@gmail.com>
+ <CAFBinCAoJLZj9Kh+SfF4Q+0OCzac2+huon_BU=Q3yE7Fu38U3w@mail.gmail.com>
+ <7hsgo4cgeg.fsf@baylibre.com>
+ <CANAwSgRfcFa6uBNtpqz6y=9Uwsa4gcp_4tDD+Chhg4SynJCq0Q@mail.gmail.com>
+ <CAFBinCA6ZoeR4m4bhj08HF1DqxY1qB5mygpaQCGbo3d8M+Wr9Q@mail.gmail.com>
+ <CANAwSgSeYTnUkLnjw-RORw76Fyj3_WT0cdM9D0vFsY8g=9L94Q@mail.gmail.com>
+ <1jwode9lba.fsf@starbuckisacylon.baylibre.com>
+ <CANAwSgSoK4X3_QbO3YpZRXNTpPJ+zVeid=w93f14Eyk8Dd32EQ@mail.gmail.com>
+ <CAFBinCBdwqxA2kLMAA9gtOcXevYK-J4x12odHwpQOAWakgWiEg@mail.gmail.com>
+ <CANAwSgRs2DUXwvhJD5qpXg04qEdP_Nt-wQqRbD2FpY2SWnHpAA@mail.gmail.com>
+In-Reply-To: <CANAwSgRs2DUXwvhJD5qpXg04qEdP_Nt-wQqRbD2FpY2SWnHpAA@mail.gmail.com>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Thu, 24 Oct 2019 22:20:16 +0200
+Message-ID: <CAFBinCB4Gb5wZnZ-R8suS1Knx0_ijBGKAQw8TS1PsDwZ7H3VqQ@mail.gmail.com>
+Subject: Re: [RFCv1 5/5] arm64/ARM: configs: Change CONFIG_PWM_MESON from m to
+ y
+To: Anand Moon <linux.amoon@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_131439_570642_5EECBFE7 
-X-CRM114-Status: GOOD (  18.18  )
+X-CRM114-CacheID: sfid-20191024_132029_464158_D2336FA4 
+X-CRM114-Status: GOOD (  32.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ provider (martin.blumenstingl[at]googlemail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -97,119 +102,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- Jason Cooper <jason@lakedaemon.net>, Marc Zyngier <maz@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
- <bcm-kernel-feedback-list@broadcom.com>, Thomas Gleixner <tglx@linutronix.de>,
- "moderated list:BROADCOM BCM2835 ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-MIME-Version: 1.0
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman <khilman@baylibre.com>,
+ Linux Kernel <linux-kernel@vger.kernel.org>, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On some specific chips like 7211 we need to leave some interrupts
-untouched/forwarded to the VPU which is another agent in the system
-making use of that interrupt controller hardware (goes to both ARM GIC
-and VPU L1 interrupt controller). Make that possible by using the
-existing brcm,int-fwd-mask property and take necessary actions to avoid
-masking that interrupt as well as not allowing Linux to map them.
+Hi Anand,
 
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
----
- drivers/irqchip/irq-bcm7038-l1.c | 30 ++++++++++++++++++++++++++----
- 1 file changed, 26 insertions(+), 4 deletions(-)
+On Mon, Oct 21, 2019 at 4:11 PM Anand Moon <linux.amoon@gmail.com> wrote:
+>
+> Hi Martin,
+>
+> On Fri, 18 Oct 2019 at 23:40, Martin Blumenstingl
+> <martin.blumenstingl@googlemail.com> wrote:
+> >
+> > Hi Anand,
+> >
+> > On Fri, Oct 18, 2019 at 4:04 PM Anand Moon <linux.amoon@gmail.com> wrote:
+> > [...]
+> > > > Next step it to try narrow down the clock causing the issue.
+> > > > Remove clk_ignore_unused from the command line and add CLK_INGORE_UNUSED
+> > > > to the flag of some clocks your clock controller (g12a I think) until
+> > > >
+> > > > The peripheral clock gates already have this flag (something we should
+> > > > fix someday) so don't bother looking there.
+> > > >
+> > > > Most likely the source of the pwm is getting disabled between the
+> > > > late_init call and the probe of the PWM module. Since the pwm is already
+> > > > active (w/o a driver), gating the clock source shuts dowm the power to
+> > > > the cores.
+> > > >
+> > > > Looking a the possible inputs in pwm driver, I'd bet on fdiv4.
+> > > >
+> > >
+> > > I had give this above steps a try but with little success.
+> > > I am still looking into this much close.
+> > it's not clear to me if you have only tested with the PWM and/or
+> > FCLK_DIV4 clocks. can you please describe what you have tested so far?
+> >
+> Sorry for delayed response.
+>
+> I had just looked into clk related to SD_EMMC_A/B/C,
+> with adding CLK_IGNORE/CRITICAL.
+> Also looked into clk_summary for eMMC and microSD card,
+> to identify the root cause, but I failed to move ahead.
+I learned to be aware of the decisions that I make when finding a bug somewhere
+instead of following the initial problem that I see I ask myself "is
+there any proof that this initial problem is the actual root cause".
+I can then make the decision to do some experiments to rule out a
+problem - until I come to a point where I ask myself again "am I still
+going in the right direction - how does this bring me to the root
+cause of the problem"
+unfortunately that's harder than it seems - but it keeps me from
+spending time going in the wrong direction
 
-diff --git a/drivers/irqchip/irq-bcm7038-l1.c b/drivers/irqchip/irq-bcm7038-l1.c
-index 45879e59e58b..cbf01afcd2a6 100644
---- a/drivers/irqchip/irq-bcm7038-l1.c
-+++ b/drivers/irqchip/irq-bcm7038-l1.c
-@@ -44,6 +44,7 @@ struct bcm7038_l1_chip {
- 	struct list_head	list;
- 	u32			wake_mask[MAX_WORDS];
- #endif
-+	u32			irq_fwd_mask[MAX_WORDS];
- 	u8			affinity[MAX_WORDS * IRQS_PER_WORD];
- };
- 
-@@ -254,6 +255,7 @@ static int __init bcm7038_l1_init_one(struct device_node *dn,
- 	resource_size_t sz;
- 	struct bcm7038_l1_cpu *cpu;
- 	unsigned int i, n_words, parent_irq;
-+	int ret;
- 
- 	if (of_address_to_resource(dn, idx, &res))
- 		return -EINVAL;
-@@ -267,6 +269,14 @@ static int __init bcm7038_l1_init_one(struct device_node *dn,
- 	else if (intc->n_words != n_words)
- 		return -EINVAL;
- 
-+	ret = of_property_read_u32_array(dn , "brcm,int-fwd-mask",
-+					 intc->irq_fwd_mask, n_words);
-+	if (ret != 0 && ret != -EINVAL) {
-+		/* property exists but has the wrong number of words */
-+		pr_err("invalid brcm,int-fwd-mask property\n");
-+		return -EINVAL;
-+	}
-+
- 	cpu = intc->cpus[idx] = kzalloc(sizeof(*cpu) + n_words * sizeof(u32),
- 					GFP_KERNEL);
- 	if (!cpu)
-@@ -277,8 +287,11 @@ static int __init bcm7038_l1_init_one(struct device_node *dn,
- 		return -ENOMEM;
- 
- 	for (i = 0; i < n_words; i++) {
--		l1_writel(0xffffffff, cpu->map_base + reg_mask_set(intc, i));
--		cpu->mask_cache[i] = 0xffffffff;
-+		l1_writel(~intc->irq_fwd_mask[i],
-+			  cpu->map_base + reg_mask_set(intc, i));
-+		l1_writel(intc->irq_fwd_mask[i],
-+			  cpu->map_base + reg_mask_clr(intc, i));
-+		cpu->mask_cache[i] = ~intc->irq_fwd_mask[i];
- 	}
- 
- 	parent_irq = irq_of_parse_and_map(dn, idx);
-@@ -311,15 +324,17 @@ static int bcm7038_l1_suspend(void)
- {
- 	struct bcm7038_l1_chip *intc;
- 	int boot_cpu, word;
-+	u32 val;
- 
- 	/* Wakeup interrupt should only come from the boot cpu */
- 	boot_cpu = cpu_logical_map(0);
- 
- 	list_for_each_entry(intc, &bcm7038_l1_intcs_list, list) {
- 		for (word = 0; word < intc->n_words; word++) {
--			l1_writel(~intc->wake_mask[word],
-+			val = intc->wake_mask[word] | intc->irq_fwd_mask[word];
-+			l1_writel(~val,
- 				intc->cpus[boot_cpu]->map_base + reg_mask_set(intc, word));
--			l1_writel(intc->wake_mask[word],
-+			l1_writel(val,
- 				intc->cpus[boot_cpu]->map_base + reg_mask_clr(intc, word));
- 		}
- 	}
-@@ -383,6 +398,13 @@ static struct irq_chip bcm7038_l1_irq_chip = {
- static int bcm7038_l1_map(struct irq_domain *d, unsigned int virq,
- 			  irq_hw_number_t hw_irq)
- {
-+	struct bcm7038_l1_chip *intc = d->host_data;
-+	u32 mask = BIT(hw_irq % IRQS_PER_WORD);
-+	u32 word = hw_irq / IRQS_PER_WORD;
-+
-+	if (intc->irq_fwd_mask[word] & mask)
-+		return -EPERM;
-+
- 	irq_set_chip_and_handler(virq, &bcm7038_l1_irq_chip, handle_level_irq);
- 	irq_set_chip_data(virq, d->host_data);
- 	irqd_set_single_target(irq_desc_get_irq_data(irq_to_desc(virq)));
--- 
-2.17.1
+> > for reference - my way of debugging this in the past was:
+> > 1. add some printks to clk_disable_unused_subtree (right after the
+> > clk_core_is_enabled check) to see which clocks are being disabled
+> > 2. add CLK_IGNORE_UNUSED or CLK_IS_CRITICAL to the clocks which are
+> > being disabled based on the information from step #1
+> > 3. (at some point I had a working kernel with lots of clocks with
+> > CLK_IGNORE_UNUSED/CLK_IS_CRITICAL)
+> > 4. start dropping the CLK_IGNORE_UNUSED/CLK_IS_CRITICAL flags again
+> > until you have traced it down to the clocks that are the actual issue
+> > (so far I always had only one clock which caused issues, but it may be
+> > multiple)
+> > 5. investigate (and/or ask on the mailing list, Amlogic developers are
+> > reading the mails here as well) for the few clocks from step #4
+> >
+>
+> Thanks for you valuable suggestion. I have your patch to debug this
+> [0]  https://patchwork.kernel.org/patch/9725921/mbox/
+>
+> So from the fist step I could identify that all the clk were getting closed
+> after some core cpu clk was failing. Here is the log.
+>
+> step1: [1] https://pastebin.com/p13F9HGG
+>
+> so I marked these clk as CLK_IGNORE_UNUSED and finally
+> I made it to boot using microSD card.
+nice, congrats for finding this!
 
+> After this just I converted these CLK to CLK_IS_CRITICAL
+> as mostly these are used the CPU clk for now.
+> Here is boot log successful for as of now.
+>
+> Finally: [2]  https://pastebin.com/qB6pMyGQ
+>
+> I know clk maintainer are against marking flags as *CLK_IS_CRITICAL*
+> But this is just the step to move ahead.
+>
+> Attach is my local clk and dts patch.Just for testing.
+> [3] clk_critical.patch
+>
+> Plz share your thought on this.
+interesting, the clock driver for the 32-bit SoCs
+(driver/clk/meson/meson8b.c) sets CLK_IS_CRITICAL for meson8b_cpu_clk.
+you have something similar in your patch for the G12A/B CPU clocks
+I guess that also explains why changing CONFIG_PWM_MESON from =m to =y
+"fixes" it:
+- as long as the PWM driver is not loaded the VDDCPU regulator does
+not probe either
+- this goes on for the initial boot process
+- now the PWM driver is still not loaded and the common clock
+framework tries to disable the unused clocks
+- it disables the CPU clock and the system now stops working
+- (only later it would load the PWM driver and allow the cpufreq
+subsystem to come up)
+
+with CONFIG_PWM_MESON=y you get:
+- PWM driver is built-in so the VDDCPU regulator shows up
+- the cpufreq subsystem comes up and enables the clock (in reality it
+only increments the refcount because the clock is already enabled)
+- the common clock framework tries to disable the unused clocks - it
+doesn't disable the CPU clock this time because it's used (according
+to the ref count/enable count)
+- ...
+
+
+Martin
 
 _______________________________________________
 linux-arm-kernel mailing list
