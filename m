@@ -2,79 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5157EE35CA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 16:43:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41FA3E35D1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 16:43:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=dQM540vqg6FC4o7k5jcvyKSoFnbiJ5DjGqbFoOOH+dk=; b=TdP
-	jvES/Nvdgkyen4zs3cjEdSE7KrWV4cw4zJMFZaWnTjwK3Nh0vAOD7WpDbkfMwacsw/xBCadqaCHox
-	51gJ6XQtCtt0C6TR402iAaWmqPoGiSeDuSR8FHfT8JqMOtJ7FNakZICTn6v5f8LL8kO+bXlGiApdV
-	6LFHMS3GXM2abSvC9WDwdeMlBIfDdn8nUnkAMsJoWbKny27pFbPDGKTmzquMKAgHbKdpt6Q1+rUOo
-	5KjX0WmHBb1+En8fSMTJqXoxcitPKChU0YuBvHKIcqNnR74Bj1VVzwlkc9M6LHPQCgm54KoQ7yfRV
-	Rb7/ZNYtTmfSdR7eXqZ59lsnvfj2HLQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=b9b3vbrWIwFD4xeS/d0tpTydYg+4+eLJnEpqua5K40o=; b=MLqLvBEwU9pSZqT/Ki/DLJQyvX
+	hTdUjaxxyC8Hw+h0unnHoupZ9HMqUcnRUWs8QBezakR3UR6PEZL85HCP/iFkXaHt94zt5NHApz9FR
+	Q8yaBibti4dBWoHfxAhYsu5b4IF+mX/He/LxWfjT01xsfjUVcaQPJVrX6OWGOy5D7KeixtiaZxVRS
+	/Pv22zADu63vzSui9Tf67VEdeOa+LfP/DSACsOmp9a6BBPaoSbwfVsMt8RotY+dXtLA4e5CayxcdT
+	0W2xbR5c7VR49N2shPDRnrCzBhOmMfETRji8tZoZAoR9X6oUgf3Y8eBUpkvdWdqPCmCUq2hl8/RlW
+	4AT2gXsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNeKQ-0004nj-Jd; Thu, 24 Oct 2019 14:43:06 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1iNeKk-0004x9-NC; Thu, 24 Oct 2019 14:43:26 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNeKH-0004mf-2Q
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 14:42:58 +0000
-Received: by mail-pf1-x442.google.com with SMTP id a2so15289205pfo.10
+ id 1iNeKN-0004qf-5G
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 14:43:04 +0000
+Received: by mail-pg1-x543.google.com with SMTP id p1so14388955pgi.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 24 Oct 2019 07:42:56 -0700 (PDT)
+ Thu, 24 Oct 2019 07:43:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=NOOJOsxqHyn9AIr6ypTkEVIyD6HHzZy3a7yfdgUD6yA=;
- b=h6komROc6h8RGeYYNYnFEouCCElzVFdunOny/OFPlTSBbE5B9R5V8n3vP3rMEXKNLh
- HcgLDIcHgnpiHBDdMc49NZVTwIrypxTd91Vbx2VC3XfN5emIFzMByQfhxcXi1CjlHxKI
- gp9XINyTt2x2EhOqnng6aYHiOy1L6GIIUySNMpQzQpujU+WCaZbBz2tEAcblutRs3jfR
- R/YEQWcd6ifqfLES2J7fhvU1g+ShU07BNi6dOyUe0u4wdzNg+p2T2eQQbdAbOi0fwobS
- 10oIsmYkgKrqi4mnE33LkzRtAqfOhvSQLmj/aAqHwvoz7yGXbTFTZWyJred3CsaGL5if
- gFsA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=2UoSxu4ISRxofxwFZ2v9JG7zQdt9X9lHqu74cjbmWOc=;
+ b=NL9naB86Ee+CKVQ+AxELEdANKhDOXHfV2IVHHFBKwkBqZ7aSoH4ytqXml813h/VULl
+ BiKGsJVwXEbKNHk8oSNT7RIFwz1vjBuMSTr264xnrqHbtNR0543nDpPoucKnDI7X3+TF
+ 1iFvC4xwiIffkW60ZxVm51NiUwY6mKJfqEQ6ztvbBSzdxrYgeYRUjRML3KUpCaT8AR4y
+ p8VTGVVbNmeo7KXnYytrJSh/mgS0eaEcEWNMSWLsXfj0dgR8KysPMccpuprVOgBIFur2
+ aAr1OEWxW/cfIuUM9axxN/Lc3LahT1VIObaRh1YZQntZN7IX2TME5WL2TEX8UxZFMJe4
+ Sk3A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=NOOJOsxqHyn9AIr6ypTkEVIyD6HHzZy3a7yfdgUD6yA=;
- b=oZ1Mk27j7BOnFEoialyoI11WL5C6wTDAjn9QtDSdEe+UsKXGLoRX2H/8P4LvNBSP0p
- 2/55QrghGpPBxree4r/sPoMAR7E2vN5YV2/fhjMB3PKjcjCb6UYnXWKJruwk76wlvDQe
- 6audFH4J8Uw5xT+QkR2RVnO2OofynjQXAxqtyquS8FmI41SN8Ar4SQyF+rJkjqBieqXI
- 9gg3ZTZEGa2S4VHdP8/p+AC4hXEsrAzHGG2yU+8wBAQDWDDnADWNuPjAC1oBczYrMxn5
- KxnjFstL+cB09I7BfS142XQUsxvPQJFJbUMl7xvKN8T19mXTCDQXwhFlX+moMLMwSM/i
- 4RSg==
-X-Gm-Message-State: APjAAAXOYkOkYRJ9EcCpqYGxEbeNohKeIAplGlAL393EUNKKBxtBzPIp
- MVbYcZFWWYk/eOh4XN2q4eVH
-X-Google-Smtp-Source: APXvYqz/X3rMwuLvNMllP5jTvRzrOorlDB389gW90QS3BAVNtJFKjwn6dyAElAfQ6shN3bCZKMLEAA==
-X-Received: by 2002:a17:90a:c306:: with SMTP id
- g6mr7494628pjt.38.1571928175650; 
- Thu, 24 Oct 2019 07:42:55 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=2UoSxu4ISRxofxwFZ2v9JG7zQdt9X9lHqu74cjbmWOc=;
+ b=Ee3LReTwV+Gj06mJz+NTxZFFCZVcK53ZzoERujoH6alHIgnXQaTryHz4carFB9enCs
+ 1pnylpxIkaU99oDkN5EsBWLJNWbg6cAdM9dHtOOd4Gz59YIPefXj3Q03c1CYHlxws9L+
+ NW6qHnAh1TPmvnCKm2qCVpNpG5Pv3SvHG0owpK0bVpIB6Wi5zxoF1GGVD06lLDlg91Qy
+ AfwVi8EKWbL3euX/aIC9qcJa3r2QobHcmex4uX7MlIGApmKQqkjJ3DQNI4uilef+F/Cv
+ SvtChLzz3VJai+pjIcVKoXzA4+IamRGPPE6bJxhw96H6rZpAxf1ERW6XF/pYkpr5Umbu
+ G83w==
+X-Gm-Message-State: APjAAAUovkDgyuiSb6pG9zehTWpSee0dfyVmsl0wHC8sVSKOtVHMF/EU
+ NqbX/YnV50qdSedkvgPTrzkdvMwGnQ==
+X-Google-Smtp-Source: APXvYqwKvgKgE4c3s0sCd/U7krExMDS/JsSah401n4Z/IyqsYW8gYj1usJWSIza+wIgKmHUVQZ0QEg==
+X-Received: by 2002:a63:4d61:: with SMTP id n33mr16708322pgl.158.1571928181935; 
+ Thu, 24 Oct 2019 07:43:01 -0700 (PDT)
 Received: from localhost.localdomain ([2409:4072:997:a0de:81a:ea25:468a:5918])
  by smtp.gmail.com with ESMTPSA id
- 193sm29059810pfc.59.2019.10.24.07.42.48
+ 193sm29059810pfc.59.2019.10.24.07.42.56
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 24 Oct 2019 07:42:55 -0700 (PDT)
+ Thu, 24 Oct 2019 07:43:01 -0700 (PDT)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: shawnguo@kernel.org,
 	s.hauer@pengutronix.de,
 	robh+dt@kernel.org
-Subject: [PATCH 0/3] Add support for Thor96 board
-Date: Thu, 24 Oct 2019 20:12:32 +0530
-Message-Id: <20191024144235.3182-1-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH 1/3] dt-bindings: arm: Add devicetree binding for Thor96 Board
+Date: Thu, 24 Oct 2019 20:12:33 +0530
+Message-Id: <20191024144235.3182-2-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191024144235.3182-1-manivannan.sadhasivam@linaro.org>
+References: <20191024144235.3182-1-manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_074257_120197_B05CC5EE 
-X-CRM114-Status: UNSURE (   9.70  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191024_074303_256391_C63AE584 
+X-CRM114-Status: GOOD (  10.88  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -106,44 +108,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+Add devicetree binding for Thor96 Board from Einfochips. This board is
+one of the 96Boards Consumer Edition platform powered by NXP i.MX8MQ SoC.
 
-This patchset adds support for Thor96 board from Einfochips. This board is
-one of the 96Boards Consumer Edition platform powered by the NXP i.MX8MQ
-SoC.
+Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+---
+ Documentation/devicetree/bindings/arm/fsl.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-Following are the features supported currently:
-
-1. uSD
-2. WiFi/BT
-3. Ethernet
-4. EEPROM (M24256)
-5. NOR Flash (W25Q256JW)
-6. 2xUSB3.0 ports and 1xUSB2.0 port at HS expansion
-
-More information about this board can be found in Arrow website:
-https://www.arrow.com/en/products/i.imx8-thor96/arrow-development-tools
-
-Link to 96Boards CE Specification: https://linaro.co/ce-specification
-
-Expecting patch 3 to go through MTD tree and 1,2 to go through freescale
-tree.
-
-Thanks,
-Mani
-
-Manivannan Sadhasivam (3):
-  dt-bindings: arm: Add devicetree binding for Thor96 Board
-  arm64: dts: freescale: Add devicetree support for Thor96 board
-  mtd: spi-nor: Add support for w25q256jw
-
- .../devicetree/bindings/arm/fsl.yaml          |   1 +
- arch/arm64/boot/dts/freescale/Makefile        |   1 +
- .../boot/dts/freescale/imx8mq-thor96.dts      | 581 ++++++++++++++++++
- drivers/mtd/spi-nor/spi-nor.c                 |   2 +
- 4 files changed, 585 insertions(+)
- create mode 100644 arch/arm64/boot/dts/freescale/imx8mq-thor96.dts
-
+diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
+index 1b4b4e6573b5..8016174d5e49 100644
+--- a/Documentation/devicetree/bindings/arm/fsl.yaml
++++ b/Documentation/devicetree/bindings/arm/fsl.yaml
+@@ -239,6 +239,7 @@ properties:
+         items:
+           - enum:
+               - boundary,imx8mq-nitrogen8m # i.MX8MQ NITROGEN Board
++              - einfochips,imx8mq-thor96  # i.MX8MQ Thor96 Board
+               - fsl,imx8mq-evk            # i.MX8MQ EVK Board
+               - purism,librem5-devkit     # Purism Librem5 devkit
+               - solidrun,hummingboard-pulse # SolidRun Hummingboard Pulse
 -- 
 2.17.1
 
