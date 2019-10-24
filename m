@@ -2,51 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B013E2CA1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 10:52:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9CE3E2C97
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 10:52:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=MDhnsOpoCggh4fRiK0/2sqaA5H9Tw/bA48yFhorU0m0=; b=q+U
-	Luexf7eJGx6xKaG8aAeJLtOT61x0/okk5CaK+YFcILzpYDuhvFI9l7mt5iV+w/avzHoxBoZKCTcyQ
-	mGnR9O77kwrerFpzOK+q69XP76f94YI9fZRNfjVn7t+bNWDLr4ZylkoQ2kxXb3+ZAThcQXJ4244BF
-	Rno6zCEh5YjWAyH9FHYSUGPdKHsIbvjmMPTEugRbHwOeKeGksPe5eIHl1yJv8aoEtnQPU2D0p4RIY
-	0qJeQsu0Muwrt/gu48SLqf60yyXZ+mR7ziR8QZX7SOQdyITkXBUOPooDvLP8xpWqx7+2vaoUwb1xD
-	9B1+8WDozMHHsvd41FfhMsWnqxa6JwQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=BXQ7p27fW2k8U4zV5R32+j/BEzMwhNlzvP5TgemOL00=; b=QhLJZFRVDfNVOFcPKPonVot+d0
+	ARIajJfRrLgQypVqymBj8zanL6Q3LzpSrlz7jwWoWihe77zCtzQKbhiavoE8cMOCugoNF7byVex8t
+	SWi5zwUIrWFi9OYJ/Wla6t7uHBVJNGY5qvHa+dB/kNf4SgL+da7yW8N0HHk1ah8FbBc6teEO5aHDe
+	Oz2Zsc48ZRpROLq/XOKJeBTA0wqc9xTBnqbhMzZP9bcBLfME9acheyIhsdUqcCsLigw9Wwq1W81gX
+	FuJ+0zzI+BHcRmoIahvjUi6di9VXt7JSs3uA17D6gsVfAi/rT9ABSMbKO86GiYY5SV6nTNYrqDdx1
+	smzw5VNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNYrC-00006p-Dt; Thu, 24 Oct 2019 08:52:34 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1iNYqk-00083j-EJ; Thu, 24 Oct 2019 08:52:06 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNYqW-0007ta-Oo
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 08:51:55 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 8FAA71A037E;
- Thu, 24 Oct 2019 10:51:46 +0200 (CEST)
+ id 1iNYqW-0007ur-3N
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 08:51:53 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 9E16C200869;
+ Thu, 24 Oct 2019 10:51:47 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 0FCB31A0B59;
- Thu, 24 Oct 2019 10:51:42 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 1FD8C20085D;
+ Thu, 24 Oct 2019 10:51:43 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 2F1B7402D3;
- Thu, 24 Oct 2019 16:51:36 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 3FE2B402C4;
+ Thu, 24 Oct 2019 16:51:37 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 1/3] ARM: dts: imx6ul-14x14-evk: Add sensors' GPIO regulator
-Date: Thu, 24 Oct 2019 16:48:38 +0800
-Message-Id: <1571906920-29966-1-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH 2/3] ARM: dts: imx6ul-14x14-evk: Fix the magnetometer node name
+Date: Thu, 24 Oct 2019 16:48:39 +0800
+Message-Id: <1571906920-29966-2-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1571906920-29966-1-git-send-email-Anson.Huang@nxp.com>
+References: <1571906920-29966-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_015153_635028_6A833F03 
-X-CRM114-Status: UNSURE (   6.80  )
+X-CRM114-CacheID: sfid-20191024_015152_302184_49515E48 
+X-CRM114-Status: UNSURE (   9.34  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -54,7 +57,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -75,49 +78,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On i.MX6UL 14x14 EVK board, sensors' power are controlled
-by GPIO5_IO02, add GPIO regulator for sensors to manage
-their power.
+Node name is supposed to be generic, use "magnetometer" instead
+of "mag3110" for magnetometer node.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- arch/arm/boot/dts/imx6ul-14x14-evk.dtsi | 16 ++++++++++++++++
- 1 file changed, 16 insertions(+)
+ arch/arm/boot/dts/imx6ul-14x14-evk.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/arm/boot/dts/imx6ul-14x14-evk.dtsi b/arch/arm/boot/dts/imx6ul-14x14-evk.dtsi
-index c2a9dd5..4074570 100644
+index 4074570..c74ba60 100644
 --- a/arch/arm/boot/dts/imx6ul-14x14-evk.dtsi
 +++ b/arch/arm/boot/dts/imx6ul-14x14-evk.dtsi
-@@ -30,6 +30,16 @@
- 		enable-active-high;
- 	};
+@@ -190,7 +190,7 @@
+ 	pinctrl-0 = <&pinctrl_i2c1>;
+ 	status = "okay";
  
-+	reg_sensors: regulator-sensors {
-+		compatible = "regulator-fixed";
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pinctrl_sensors_reg>;
-+		regulator-name = "sensors-supply";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		gpio = <&gpio5 2 GPIO_ACTIVE_LOW>;
-+	};
-+
- 	reg_can_3v3: regulator-can-3v3 {
- 		compatible = "regulator-fixed";
- 		regulator-name = "can-3v3";
-@@ -448,6 +458,12 @@
- 		>;
+-	mag3110@e {
++	magnetometer@e {
+ 		compatible = "fsl,mag3110";
+ 		reg = <0x0e>;
  	};
- 
-+	pinctrl_sensors_reg: sensorsreggrp {
-+		fsl,pins = <
-+			MX6UL_PAD_SNVS_TAMPER2__GPIO5_IO02	0x1b0b0
-+		>;
-+	};
-+
- 	pinctrl_pwm1: pwm1grp {
- 		fsl,pins = <
- 			MX6UL_PAD_GPIO1_IO08__PWM1_OUT   0x110b0
 -- 
 2.7.4
 
