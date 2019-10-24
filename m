@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7FDA7E3814
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 18:37:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A7C5E381F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 18:37:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3qs6uABJBBxNwTWncK1Ku9C32qDQS2mBEE4vTONeMJA=; b=B9nluG44wscBaP
-	p19LGhRz057cXUwJVr5ppW2g/wUqJ4SZEqH6SIu26k0ySp1xpNITEoabHTPFuqdU5WUGU8BiUiSor
-	E0qiLDmCviTiiNh58v0qjMe98aVAVXujTrFOYqHvr3dYmATRydBxiyr131jyLqC89w/WdKJHvdhAB
-	M5lhvwS8L9u0uTYD76F2dwcGlNq6/EcCO6qH/sYlUT2oL1pZESb2ZE+ZW5wwetlrfr+fwOAJJ8rgg
-	H/mPVS3kEhfuuCBs4sDh+hyVWDCW7t2FYLVMgpOan79208PL/u0TaMdm+UI+16ag8JZaHU8lYeXSO
-	Ilade5K6tVWk/yyrsZ0w==;
+	List-Owner; bh=MAf+3NfZh5wBSX0YpyYcKUYgcjGCGa+bJKu59IagGtY=; b=IHfw5z1dx8RHiu
+	9cL7YKi91BaZFiYuieUKRBEKsMbnML6iaM+bP3y5bSeHDM138l5o3lQ+hdIZsEc75iAvzpMlP0HP7
+	1+obkzov75t/8m1llxLWJ6gycUyznCxydndow+Wo3ofbR4+3320HlCGVfhtbJCLzoAQMIKMWD9JlX
+	yEFlVBU6wB17uWC/lwr4nWy7zddDBa3nJ+GWcS2vyO0h3MC3W4S3JIS5YgPuLKM3SR1MrIFUE1IWD
+	5rAihqY73pVfD0Vj2HYIaZEtFu7W1weUziOQFRoXTL4go5Ym4tdhfvR9IPI8iSUBD/A6m7bSxLpD9
+	xTVhnM1MI5Y9K/0q3M2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNg6z-0004bF-P1; Thu, 24 Oct 2019 16:37:21 +0000
+	id 1iNg7W-0004zo-0t; Thu, 24 Oct 2019 16:37:54 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNg6g-0004Zv-Sq
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 16:37:04 +0000
+ id 1iNg6i-0004aT-1U
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 16:37:05 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 8DDBD819C;
- Thu, 24 Oct 2019 16:37:36 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id 2900981BF;
+ Thu, 24 Oct 2019 16:37:38 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: soc@kernel.org
-Subject: [GIT PULL 2/3] device tree changes for omaps for v5.5
-Date: Thu, 24 Oct 2019 09:36:54 -0700
-Message-Id: <pull-1571934890-285615@atomide.com-2>
+Subject: [GIT PULL 3/3] drop legacy platform data for omaps for v5.5
+Date: Thu, 24 Oct 2019 09:36:55 -0700
+Message-Id: <pull-1571934890-285615@atomide.com-3>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <pull-1571934890-285615@atomide.com>
 References: <pull-1571934890-285615@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_093702_973529_8705AB26 
-X-CRM114-Status: GOOD (  12.90  )
+X-CRM114-CacheID: sfid-20191024_093704_127782_9F2AD488 
+X-CRM114-Status: GOOD (  11.98  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -67,84 +67,113 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: "Tony Lindgren" <tony@atomide.com>
 
-The following changes since commit 087a2b7ec973f6f30f6e7b72cb50b6f7734ffdd2:
+The following changes since commit 1819ef2e2d12d5b1a6ee54ac1c2afe35cffc677c:
 
-  ARM: dts: Use level interrupt for omap4 & 5 wlcore (2019-10-09 15:11:27 -0700)
+  bus: ti-sysc: Use swsup quirks also for am335x musb (2019-10-21 14:15:55 -0700)
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.5/dt-signed
+  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.5/ti-sysc-drop-pdata-v2-signed-take2
 
-for you to fetch changes up to fedc8844d5004ffa69d3e320081bfd59979e1937:
+for you to fetch changes up to b08a0c577518a02ea08673f68881223a3ed35cc6:
 
-  Merge branch 'omap-for-v5.5/droid4' into omap-for-v5.5/dt (2019-10-23 10:34:28 -0700)
-
-----------------------------------------------------------------
-Device tree changes for omaps for v5.5
-
-This series of changes adds support for few new boards, moves
-remaining ti wilink bluetooth users to use the serdev driver,
-and improves support for existing devices:
-
-- Add support for NetCAN Plus devices
-
-- Configure wilink bluetooth for logicpd-torpedo and omap3-igep
-
-- Switch to using generic LCD panel for logicpd-torpedo and
-  increase camera pixel clock
-
-- Configure droid4 for 300mA USB host mode and move to a common file
-  to start adding support for droid bionic
-
-- Rename ocmcram node to sram
+  ARM: OMAP2+: Drop legacy platform data for am335x musb (2019-10-23 07:46:32 -0700)
 
 ----------------------------------------------------------------
-Adam Ford (4):
-      ARM: dts: logicpd-torpedo-baseboard: Reduce video regulator chatter
-      ARM: dts: logicpd-torpedo-37xx-devkit-28: Reference new DRM panel
-      ARM: dts: logicpd-torpedo: Disable Bluetooth Serial DMA
-      ARM: dts: logicpd-torpedo-37xx-devkit: Increase camera pixel clock
+Drop legacy platform data for omaps for v5.5
 
-Krzysztof Kozlowski (2):
-      ARM: dts: am: Rename "ocmcram" node to "sram"
-      ARM: dts: omap: Rename "ocmcram" node to "sram"
+This series of changes continues dropping legacy platform data for
+omaps. With the proper device tree configuration in place in the dts
+files for ti-sysc interconnect target module driver, we can drop the
+related platform data and legacy ti,hwmods custom property.
 
-Sebastian Reichel (2):
-      ARM: dts: LogicPD Torpedo: Add WiLink UART node
-      ARM: dts: IGEP: Add WiLink UART node
+Most of the patches in this series drop platform data and custom dts
+property one device class and one SoC at time. This way we can easily
+revert one patch at a time in case of unexpected issues if the fix is
+not trivial.
 
-Tony Lindgren (3):
-      ARM: dts: omap4-droid4: Allow 300mA current for USB peripherals
-      ARM: dts: Add minimal support for Droid Bionic xt875
-      Merge branch 'omap-for-v5.5/droid4' into omap-for-v5.5/dt
+For am335x musb, we need to first update the device tree to probe with
+ti-sysc interconnect target module driver. And then the following
+patches drop the legacy platform data.
 
-Yegor Yefremov (3):
-      ARM: dts: add DTS for NetCAN Plus devices
-      ARM: dts: add DTS for NetCom Plus 1xx and 2xx device series
-      ARM: dts: add DTS for NetCom Plus 4xx and 8xx device series
+Note that this series depends on earlier ti-sysc related driver changes
 
- arch/arm/boot/dts/Makefile                         |   4 +
- arch/arm/boot/dts/am335x-netcan-plus-1xx.dts       |  87 +++
- arch/arm/boot/dts/am335x-netcom-plus-2xx.dts       |  95 +++
- arch/arm/boot/dts/am335x-netcom-plus-8xx.dts       | 115 +++
- arch/arm/boot/dts/am33xx.dtsi                      |   6 +-
- arch/arm/boot/dts/am4372.dtsi                      |   6 +-
- .../boot/dts/logicpd-torpedo-37xx-devkit-28.dts    |  20 +-
- arch/arm/boot/dts/logicpd-torpedo-37xx-devkit.dts  |  14 +
- arch/arm/boot/dts/logicpd-torpedo-baseboard.dtsi   |   1 +
- arch/arm/boot/dts/motorola-mapphone-common.dtsi    | 786 +++++++++++++++++++++
- arch/arm/boot/dts/omap3-igep0020-rev-f.dts         |   8 +
- arch/arm/boot/dts/omap3-igep0030-rev-g.dts         |   8 +
- arch/arm/boot/dts/omap4-droid-bionic-xt875.dts     |   9 +
- arch/arm/boot/dts/omap4-droid4-xt894.dts           | 777 +-------------------
- arch/arm/boot/dts/omap4.dtsi                       |   2 +-
- arch/arm/boot/dts/omap5.dtsi                       |   2 +-
- 16 files changed, 1138 insertions(+), 802 deletions(-)
- create mode 100644 arch/arm/boot/dts/am335x-netcan-plus-1xx.dts
- create mode 100644 arch/arm/boot/dts/am335x-netcom-plus-2xx.dts
- create mode 100644 arch/arm/boot/dts/am335x-netcom-plus-8xx.dts
- create mode 100644 arch/arm/boot/dts/motorola-mapphone-common.dtsi
- create mode 100644 arch/arm/boot/dts/omap4-droid-bionic-xt875.dts
+----------------------------------------------------------------
+Tony Lindgren (34):
+      ARM: OMAP2+: Drop legacy platform data for am3 and am4 gpio
+      ARM: dts: Drop custom hwmod property for omap4 gpio
+      ARM: dts: Drop custom hwmod property for omap5 gpio
+      ARM: OMAP2+: Drop legacy platform data for dra7 mailbox
+      ARM: OMAP2+: Drop legacy platform data for am3 and am4 mailbox
+      ARM: OMAP2+: Drop legacy platform data for omap4 mailbox
+      ARM: OMAP2+: Drop legacy platform data for omap5 mailbox
+      ARM: dts: Drop custom hwmod property for omap5 mcspi
+      ARM: OMAP2+: Drop legacy platform data for omap5 mcspi
+      ARM: dts: Drop custom hwmod property for am33xx uart
+      ARM: dts: Drop custom hwmod property for am4 uart
+      ARM: dts: Drop custom hwmod property for omap5 uart
+      ARM: dts: Drop custom hwmod property for am3 i2c
+      ARM: dts: Drop custom hwmod property for am4 i2c
+      ARM: dts: Drop custom hwmod property for omap5 i2c
+      ARM: dts: Drop custom hwmod property for am3 mmc
+      ARM: dts: Drop custom hwmod property for am4 mmc
+      ARM: dts: Drop custom hwmod property for omap5 mmc
+      ARM: OMAP2+: Drop legacy platform data for am3 and am4 wdt
+      ARM: OMAP2+: Drop legacy platform data for dra7 wdt
+      ARM: OMAP2+: Drop legacy platform data for omap5 wdt
+      ARM: OMAP2+: Drop legacy platform data for omap4 mcbsp
+      ARM: OMAP2+: Drop legacy platform data for omap5 mcbsp
+      ARM: OMAP2+: Drop legacy platform data for am4 hdq1w
+      ARM: OMAP2+: Drop legacy platform data for dra7 hdq1w
+      ARM: OMAP2+: Drop legacy platform data for omap4 hdq1w
+      ARM: OMAP2+: Drop legacy platform data for am3 and am4 rng
+      ARM: OMAP2+: Drop legacy platform data for dra7 rng
+      ARM: OMAP2+: Drop legacy platform data for am3 and am4 mcasp
+      ARM: OMAP2+: Drop legacy platform data for omap4 mcasp
+      ARM: OMAP2+: Drop legacy platform data for musb on omap4
+      ARM: dts: Probe am335x musb with ti-sysc
+      ARM: dts: Drop pointless status changing for am3 musb
+      ARM: OMAP2+: Drop legacy platform data for am335x musb
+
+ arch/arm/boot/dts/am335x-baltos.dtsi               |  12 -
+ arch/arm/boot/dts/am335x-bone-common.dtsi          |  22 --
+ arch/arm/boot/dts/am335x-boneblue.dts              |  22 --
+ arch/arm/boot/dts/am335x-chiliboard.dts            |  18 -
+ arch/arm/boot/dts/am335x-cm-t335.dts               |  20 -
+ arch/arm/boot/dts/am335x-evm.dts                   |  25 --
+ arch/arm/boot/dts/am335x-evmsk.dts                 |  25 --
+ arch/arm/boot/dts/am335x-guardian.dts              |  22 --
+ arch/arm/boot/dts/am335x-igep0033.dtsi             |  25 --
+ arch/arm/boot/dts/am335x-lxm.dts                   |  22 --
+ arch/arm/boot/dts/am335x-moxa-uc-2100-common.dtsi  |  17 -
+ arch/arm/boot/dts/am335x-moxa-uc-8100-me-t.dts     |  22 --
+ arch/arm/boot/dts/am335x-osd3358-sm-red.dts        |  22 --
+ arch/arm/boot/dts/am335x-pcm-953.dtsi              |  25 --
+ arch/arm/boot/dts/am335x-pdu001.dts                |  28 --
+ arch/arm/boot/dts/am335x-pepper.dts                |  20 -
+ arch/arm/boot/dts/am335x-pocketbeagle.dts          |  22 --
+ arch/arm/boot/dts/am335x-regor.dtsi                |  21 -
+ arch/arm/boot/dts/am335x-shc.dts                   |  17 -
+ arch/arm/boot/dts/am335x-sl50.dts                  |  22 --
+ arch/arm/boot/dts/am335x-wega.dtsi                 |  26 --
+ arch/arm/boot/dts/am33xx-l4.dtsi                   |  27 +-
+ arch/arm/boot/dts/am33xx.dtsi                      |  67 ++--
+ arch/arm/boot/dts/am4372.dtsi                      |   1 -
+ arch/arm/boot/dts/am437x-l4.dtsi                   |  23 --
+ arch/arm/boot/dts/dra7-l4.dtsi                     |  16 -
+ arch/arm/boot/dts/omap4-l4-abe.dtsi                |   4 -
+ arch/arm/boot/dts/omap4-l4.dtsi                    |  14 -
+ arch/arm/boot/dts/omap5-l4-abe.dtsi                |   3 -
+ arch/arm/boot/dts/omap5-l4.dtsi                    |  30 --
+ .../mach-omap2/omap_hwmod_33xx_43xx_common_data.h  |   9 -
+ .../omap_hwmod_33xx_43xx_interconnect_data.c       |  32 --
+ .../mach-omap2/omap_hwmod_33xx_43xx_ipblock_data.c | 231 -----------
+ arch/arm/mach-omap2/omap_hwmod_33xx_data.c         |  58 ---
+ arch/arm/mach-omap2/omap_hwmod_43xx_data.c         |  48 ---
+ arch/arm/mach-omap2/omap_hwmod_44xx_data.c         | 343 ----------------
+ arch/arm/mach-omap2/omap_hwmod_54xx_data.c         | 317 ---------------
+ arch/arm/mach-omap2/omap_hwmod_7xx_data.c          | 431 ---------------------
+ 38 files changed, 39 insertions(+), 2070 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
