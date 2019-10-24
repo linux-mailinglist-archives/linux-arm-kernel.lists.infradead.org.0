@@ -2,85 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73CE9E3384
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 15:09:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3275EE33D2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 15:19:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AAL9JsHFIRVnWDPCkD2sID5l91RnITlwHwe6Q8dwnnE=; b=S9Ul5XJqFYKUl7
-	h2P+0/joetWqtrIMzHIHLddIZwgOb/2FLzEzr7ekcj0l4PuqNZGavAP/s9bSRO0m4plWMHGeIwNzG
-	z78XXDavkfa0X742SZucrgvvZSs7VRwKGtD9r2syz0SE7wYU4gB04i4jkd0z66lMyD4/MRfm3th48
-	b1X/vfnMv+t5UTeyreEajFhjXBM8seTs9Q1nplayCFdtFNqR6aqLdkKnSHJvlNTPcXwQHK6qAegBb
-	VxqfiQTvZi3ZLJXWH/EYkF/TBiUAU7RAoLjJWPy4F9BmSCzhUVeI99UBgNj/nKzYO52Q1i4p9yPbB
-	nnhkQ9ozQJ+olR6KIzaw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
+	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=626WpLi0oaIMVWZ9tH54NadB/cOnoqRF7s99TJ8W/gE=; b=D+PNOU2bbVhtTNG2GPBUeTVpK
+	fAq6tYmwHzgWDC3ACEVXTrAeEeJCu8IL/wCtbKzwIkIALJjw+3b1DLEULqI5/KPTNh8QuNx+t8C62
+	R4aj/tYqQEB1BtMB3F71euWRjj0x4SAbExOPJa9Kux2lQE3b90alu3VR4F3XGytibxKB5Uv61OjI0
+	ErFikrdME+Rw7GMOHtiSpl3cEroyU9ymdCxf973c1zDs3rdgqXWmD5N1uiZ3OxV1kPc1OlzCAQp6L
+	dCTCwDl9uOVlePLdMHwXAVg9ck0JcJGrM0zgT+FUpPP9aj6eczDRYPJY53bQDv1506mabsd8lnYnE
+	QQJBhvI4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNcro-0002pw-4V; Thu, 24 Oct 2019 13:09:28 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1iNd1U-0006zC-V5; Thu, 24 Oct 2019 13:19:28 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNcrc-0002oB-3C; Thu, 24 Oct 2019 13:09:17 +0000
-Received: by mail-lf1-x141.google.com with SMTP id y127so19135629lfc.0;
- Thu, 24 Oct 2019 06:09:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=UcBPcAPMYq3ql7XZolJWjM40KQcfZi7nEuSg4RQDIuc=;
- b=Ouz4PbLg3SeM/SRzKwbpYWtMvLrdJ6nOXnWQL0oUQhHWeGv2Mw58FeTuy/DJXAzYZ3
- +CGlc91Gh/uDfemb2YnBDYRG4mREUzJ26nWAuYs1id0BVvBF4PKggM4GaRcnWpVoGpVT
- 41TqNQx9bbMIK7CxLzbB9PwKXWq4IIEx/oy8U3BBUTeO0s+Tw+7S7QsaJfQfcpzbSC8N
- PSSgzAXE5chQDW2RsAPMrmAsBSXpM/9+FyW7vIYG9iQXXiUTn+9EzpNJ0f3jbj/dZk51
- h+c6HNv46YaTCOw1eXDjFT1HqVBIGHAtTqYVqJTmv/Gk2l2Ao9PUPU7+S4jvenhE/Tzg
- 8xUQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=UcBPcAPMYq3ql7XZolJWjM40KQcfZi7nEuSg4RQDIuc=;
- b=SNAdL1HP0Fp+3Y88FU3reqAmbIAkJrV3U/+9vis3TjAWnUMzNCs8pdokSedLW3OCyD
- iewHmIhgCxOAp9afELQGCdqo2FSKK0e8iViIa0qaqtuqzT7nabackhd255M1kPZlbmx3
- Bu7Gtifs01DMGD+QaFuZo2u4NmoFZkP/eJYVWd5fX4nL8D4lsMwe4yhFVvIGuXfbGl6i
- AWWSFw2UuG+hafdnGSFAKwsFyzj4VSJeuYJHJH/GJ5r0BKXMb0IFXGZJg+Wu8u/eEkeL
- eZEU7fi3/fmBt/1jiKo8Ordj5JCV0uMMN6W5HcoV1qfaA5A17XU9Uy/Sj20Zu6gb2ETc
- KSRw==
-X-Gm-Message-State: APjAAAWi+RneYHYvTG1O5qj7V3UkhjVMi8ikVKZYTwGxSpX5+rZcHWt7
- 1USCKc42ivkjH7f311wno7qDaR/ZKvbRkmKWxyQ=
-X-Google-Smtp-Source: APXvYqw7AnXk46JAKtrvbMSXREq+EburX1Xswn3NrPh+gx0SKQjxDmlCifTtUoCo+f45tE5PxMdIHbGV2ouTvaD2BAI=
-X-Received: by 2002:ac2:4345:: with SMTP id o5mr11786215lfl.60.1571922554635; 
- Thu, 24 Oct 2019 06:09:14 -0700 (PDT)
-MIME-Version: 1.0
-References: <20191024093716.49420-1-steven.price@arm.com>
- <20191024093716.49420-8-steven.price@arm.com>
-In-Reply-To: <20191024093716.49420-8-steven.price@arm.com>
-From: Zong Li <zongbox@gmail.com>
-Date: Thu, 24 Oct 2019 21:09:03 +0800
-Message-ID: <CA+ZOyajoTagPdMA=WaQVLZ+aPzKmdX=j+apRVUsvpbVF_HtnQw@mail.gmail.com>
-Subject: Re: [PATCH v13 07/22] riscv: mm: Add p?d_leaf() definitions
+ id 1iNd1K-0006yJ-E0
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 13:19:19 +0000
+Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
+ (envelope-from <maz@kernel.org>)
+ id 1iNd1A-0000Sw-Ge; Thu, 24 Oct 2019 15:19:08 +0200
 To: Steven Price <steven.price@arm.com>
+Subject: Re: [PATCH] KVM: arm64: Select =?UTF-8?Q?SCHED=5FINFO=20before=20?=
+ =?UTF-8?Q?SCHEDSTATS?=
+X-PHP-Originating-Script: 0:main.inc
+MIME-Version: 1.0
+Date: Thu, 24 Oct 2019 14:19:08 +0100
+From: Marc Zyngier <maz@kernel.org>
+In-Reply-To: <6d037fa1-5e8b-38cd-e947-7547c1e8dd15@arm.com>
+References: <20191023032254.159510-1-maowenan@huawei.com>
+ <26ee413334937b9530bc8f033fe378ec@www.loen.fr>
+ <6d037fa1-5e8b-38cd-e947-7547c1e8dd15@arm.com>
+Message-ID: <3abfc893613caf529b0f6a933e74068d@www.loen.fr>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/0.7.2
+X-SA-Exim-Connect-IP: <locally generated>
+X-SA-Exim-Rcpt-To: steven.price@arm.com, maowenan@huawei.com,
+ catalin.marinas@arm.com, kernel-janitors@vger.kernel.org,
+ linux-kernel@vger.kernel.org, will@kernel.org, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_060916_143945_BEC5BB1B 
-X-CRM114-Status: GOOD (  16.55  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191024_061918_623454_F57A282E 
+X-CRM114-Status: GOOD (  13.07  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (zongbox[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,67 +69,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, linux-mm@kvack.org,
- Albert Ou <aou@eecs.berkeley.edu>, "H. Peter Anvin" <hpa@zytor.com>,
- linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>, "Liang,
- Kan" <kan.liang@linux.intel.com>, Alexandre Ghiti <alex@ghiti.fr>,
- x86@kernel.org, Ingo Molnar <mingo@redhat.com>,
- Palmer Dabbelt <palmer@sifive.com>, Arnd Bergmann <arnd@arndb.de>,
- =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
- Paul Walmsley <paul.walmsley@sifive.com>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- James Morse <james.morse@arm.com>, Andrew Morton <akpm@linux-foundation.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: catalin.marinas@arm.com, kernel-janitors@vger.kernel.org,
+ Mao Wenan <maowenan@huawei.com>, linux-kernel@vger.kernel.org, will@kernel.org,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-U3RldmVuIFByaWNlIDxzdGV2ZW4ucHJpY2VAYXJtLmNvbT4g5pa8IDIwMTnlubQxMOaciDI05pel
-IOmAseWbmyDkuIvljYg1OjQw5a+r6YGT77yaCj4KPiB3YWxrX3BhZ2VfcmFuZ2UoKSBpcyBnb2lu
-ZyB0byBiZSBhbGxvd2VkIHRvIHdhbGsgcGFnZSB0YWJsZXMgb3RoZXIgdGhhbgo+IHRob3NlIG9m
-IHVzZXIgc3BhY2UuIEZvciB0aGlzIGl0IG5lZWRzIHRvIGtub3cgd2hlbiBpdCBoYXMgcmVhY2hl
-ZCBhCj4gJ2xlYWYnIGVudHJ5IGluIHRoZSBwYWdlIHRhYmxlcy4gVGhpcyBpbmZvcm1hdGlvbiBp
-cyBwcm92aWRlZCBieSB0aGUKPiBwP2RfbGVhZigpIGZ1bmN0aW9ucy9tYWNyb3MuCj4KPiBGb3Ig
-cmlzY3YgYSBwYWdlIGlzIGEgbGVhZiBwYWdlIHdoZW4gaXQgaGFzIGEgcmVhZCwgd3JpdGUgb3Ig
-ZXhlY3V0ZSBiaXQKPiBzZXQgb24gaXQuCj4KPiBDQzogUGFsbWVyIERhYmJlbHQgPHBhbG1lckBz
-aWZpdmUuY29tPgo+IENDOiBBbGJlcnQgT3UgPGFvdUBlZWNzLmJlcmtlbGV5LmVkdT4KPiBDQzog
-bGludXgtcmlzY3ZAbGlzdHMuaW5mcmFkZWFkLm9yZwo+IFJldmlld2VkLWJ5OiBBbGV4YW5kcmUg
-R2hpdGkgPGFsZXhAZ2hpdGkuZnI+Cj4gQWNrZWQtYnk6IFBhdWwgV2FsbXNsZXkgPHBhdWwud2Fs
-bXNsZXlAc2lmaXZlLmNvbT4gIyBmb3IgYXJjaC9yaXNjdgo+IFNpZ25lZC1vZmYtYnk6IFN0ZXZl
-biBQcmljZSA8c3RldmVuLnByaWNlQGFybS5jb20+Cj4gLS0tCj4gIGFyY2gvcmlzY3YvaW5jbHVk
-ZS9hc20vcGd0YWJsZS02NC5oIHwgNyArKysrKysrCj4gIGFyY2gvcmlzY3YvaW5jbHVkZS9hc20v
-cGd0YWJsZS5oICAgIHwgNyArKysrKysrCj4gIDIgZmlsZXMgY2hhbmdlZCwgMTQgaW5zZXJ0aW9u
-cygrKQo+Cj4gZGlmZiAtLWdpdCBhL2FyY2gvcmlzY3YvaW5jbHVkZS9hc20vcGd0YWJsZS02NC5o
-IGIvYXJjaC9yaXNjdi9pbmNsdWRlL2FzbS9wZ3RhYmxlLTY0LmgKPiBpbmRleCA3NDYzMDk4OTAw
-NmQuLjRjNGQyYzY1YmE2YyAxMDA2NDQKPiAtLS0gYS9hcmNoL3Jpc2N2L2luY2x1ZGUvYXNtL3Bn
-dGFibGUtNjQuaAo+ICsrKyBiL2FyY2gvcmlzY3YvaW5jbHVkZS9hc20vcGd0YWJsZS02NC5oCj4g
-QEAgLTQzLDYgKzQzLDEzIEBAIHN0YXRpYyBpbmxpbmUgaW50IHB1ZF9iYWQocHVkX3QgcHVkKQo+
-ICAgICAgICAgcmV0dXJuICFwdWRfcHJlc2VudChwdWQpOwo+ICB9Cj4KPiArI2RlZmluZSBwdWRf
-bGVhZiAgICAgICBwdWRfbGVhZgo+ICtzdGF0aWMgaW5saW5lIGludCBwdWRfbGVhZihwdWRfdCBw
-dWQpCj4gK3sKPiArICAgICAgIHJldHVybiBwdWRfcHJlc2VudChwdWQpICYmCj4gKyAgICAgICAg
-ICAgICAgKHB1ZF92YWwocHVkKSAmIChfUEFHRV9SRUFEIHwgX1BBR0VfV1JJVEUgfCBfUEFHRV9F
-WEVDKSk7Cj4gK30KPiArCj4gIHN0YXRpYyBpbmxpbmUgdm9pZCBzZXRfcHVkKHB1ZF90ICpwdWRw
-LCBwdWRfdCBwdWQpCj4gIHsKPiAgICAgICAgICpwdWRwID0gcHVkOwo+IGRpZmYgLS1naXQgYS9h
-cmNoL3Jpc2N2L2luY2x1ZGUvYXNtL3BndGFibGUuaCBiL2FyY2gvcmlzY3YvaW5jbHVkZS9hc20v
-cGd0YWJsZS5oCj4gaW5kZXggNzI1NWYyZDgzOTViLi4zYWE5NzJkZGE3NWEgMTAwNjQ0Cj4gLS0t
-IGEvYXJjaC9yaXNjdi9pbmNsdWRlL2FzbS9wZ3RhYmxlLmgKPiArKysgYi9hcmNoL3Jpc2N2L2lu
-Y2x1ZGUvYXNtL3BndGFibGUuaAo+IEBAIC0xMzAsNiArMTMwLDEzIEBAIHN0YXRpYyBpbmxpbmUg
-aW50IHBtZF9iYWQocG1kX3QgcG1kKQo+ICAgICAgICAgcmV0dXJuICFwbWRfcHJlc2VudChwbWQp
-Owo+ICB9Cj4KPiArI2RlZmluZSBwbWRfbGVhZiAgICAgICBwbWRfbGVhZgo+ICtzdGF0aWMgaW5s
-aW5lIGludCBwbWRfbGVhZihwbWRfdCBwbWQpCj4gK3sKPiArICAgICAgIHJldHVybiBwbWRfcHJl
-c2VudChwbWQpICYmCj4gKyAgICAgICAgICAgICAgKHBtZF92YWwocG1kKSAmIChfUEFHRV9SRUFE
-IHwgX1BBR0VfV1JJVEUgfCBfUEFHRV9FWEVDKSk7Cj4gK30KPiArCj4gIHN0YXRpYyBpbmxpbmUg
-dm9pZCBzZXRfcG1kKHBtZF90ICpwbWRwLCBwbWRfdCBwbWQpCj4gIHsKPiAgICAgICAgICpwbWRw
-ID0gcG1kOwo+IC0tCj4gMi4yMC4xCj4KPgo+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fCj4gbGludXgtcmlzY3YgbWFpbGluZyBsaXN0Cj4gbGludXgtcmlz
-Y3ZAbGlzdHMuaW5mcmFkZWFkLm9yZwo+IGh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtcmlzY3YKCkl0J3MgZ29vZCB0byBtZS4KClJldmlld2VkLWJ5OiBa
-b25nIExpIDx6b25nLmxpQHNpZml2ZS5jb20+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1h
-cm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On 2019-10-24 12:22, Steven Price wrote:
+
+[...]
+
+> From 915893f5c57241cc29d90769b3f720a6135277d7 Mon Sep 17 00:00:00 
+> 2001
+> From: Steven Price <steven.price@arm.com>
+> Date: Thu, 24 Oct 2019 12:14:36 +0100
+> Subject: [PATCH] KVM: arm64: Select TASK_DELAY_ACCT rather than 
+> SCHEDSTATS
+>
+> SCHEDSTATS requires DEBUG_KERNEL (and PROC_FS) and therefore isn't a
+> good choice for enabling the scheduling statistics required for 
+> stolen
+> time.
+>
+> Instead match the x86 configuration and select TASK_DELAY_ACCT. This
+> adds the dependencies of NET && MULTIUSER for arm64 KVM.
+>
+> Suggested-by: Marc Zyngier <maz@kernel.org>
+> Fixes: 8564d6372a7d ("KVM: arm64: Support stolen time reporting via
+> shared structure")
+> Signed-off-by: Steven Price <steven.price@arm.com>
+> ---
+>  arch/arm64/kvm/Kconfig | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
+>
+> diff --git a/arch/arm64/kvm/Kconfig b/arch/arm64/kvm/Kconfig
+> index d8b88e40d223..1ffb300e2d92 100644
+> --- a/arch/arm64/kvm/Kconfig
+> +++ b/arch/arm64/kvm/Kconfig
+> @@ -21,6 +21,8 @@ if VIRTUALIZATION
+>  config KVM
+>  	bool "Kernel-based Virtual Machine (KVM) support"
+>  	depends on OF
+> +	# for TASKSTATS/TASK_DELAY_ACCT:
+> +	depends on NET && MULTIUSER
+>  	select MMU_NOTIFIER
+>  	select PREEMPT_NOTIFIERS
+>  	select HAVE_KVM_CPU_RELAX_INTERCEPT
+> @@ -39,7 +41,7 @@ config KVM
+>  	select IRQ_BYPASS_MANAGER
+>  	select HAVE_KVM_IRQ_BYPASS
+>  	select HAVE_KVM_VCPU_RUN_PID_CHANGE
+> -	select SCHEDSTATS
+> +	select TASK_DELAY_ACCT
+>  	---help---
+>  	  Support hosting virtualized guest machines.
+>  	  We don't support KVM with 16K page tables yet, due to the 
+> multiple
+
+Same issue as before: you have an implicit config symbol selection.
+TASK_DELAY_ACCT depends on TASKSTATS (which is why you have this NET &&
+MULTIUSER constraint).
+
+You need to select both TASK_DELAY_ACCT and TASKSTATS, as the comment 
+you
+add suggests.
+
+         M.
+-- 
+Jazz is not dead. It just smells funny...
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
