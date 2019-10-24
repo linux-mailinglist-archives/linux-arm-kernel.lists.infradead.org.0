@@ -2,56 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68C73E37F9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 18:35:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50871E3816
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 18:37:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7pforWXfhGdPO2y6Z7Y8otPyK3JMSSXvMDxWl9XtrSA=; b=jb5suj0M0ynSD2
-	aJLwxUQvoJcdAxBd/4zeT1EC/W2pxyOu8guo6QL0vfVxLTWV1jxyS6N7BxEa0wYFB38ZufhFf3DTY
-	g+XHLa4a7BpZQ/6FKKmv4woTywFsgj4OmAB4Wpsdms/xQ1JYS4PlgcXQ0Qkhs6fYawkdG6pDfVGV1
-	ANF02AbeuCUpVPseur4KQypnqOcYUNDIzHtS0BGvS4PW9TQFmPhjid5CtXarhfRbskikFsPTHx6it
-	FA5gLh/SWeKsxRbwm5ye/2w/z79/HP3IwSF6unAy3g0FZPbGfEbtY0/Yo4RqeExK+vK88DTjbgSTq
-	hDxvTe6hj8jiT/Ealw5A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=SR5bItPWm08LEBiVFDuQMU2/JYBS3Fjq6HBk4F2L2DE=; b=SvoAEjKtiqs+dF
+	vAyokXINcuo2ygeYurYo8bCV5d67l5F12KohOolOQThIBXxsKHBCYakx4GndmENoQX5QdVwLOWFUx
+	Ztp+A5Wdhp5voL/Tyq3zuDboZmKvJWUGZgN+J2MocWTAABXMAohDFCPvBDZJlS8aTg6bjb749MYmg
+	j27765Yon7LxQH3r+qG4xCNM0e2JDf6zM8FeZ+88fnGO8Ncl8u3AEhtrRFMEkCQgCdcHTGe11r7lh
+	pyVlMB4PTQp/Cc8GRGb8wElZ+UOGiGZgStaapaxtroXtp9p502Vclcvl2BN2+RMgP5SqxPXqyEhV7
+	jUZLE3cdky2LHnl1mL8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNg5Q-0004G0-Vv; Thu, 24 Oct 2019 16:35:45 +0000
-Received: from [217.140.110.172] (helo=foss.arm.com)
+	id 1iNg7E-0004mO-FF; Thu, 24 Oct 2019 16:37:36 +0000
+Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNg5C-0004Ed-Jd
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 16:35:32 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CF60232B;
- Thu, 24 Oct 2019 09:35:19 -0700 (PDT)
-Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E738E3F71F;
- Thu, 24 Oct 2019 09:35:17 -0700 (PDT)
-Date: Thu, 24 Oct 2019 17:35:15 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: Re: [PATCH 11/13] cpuidle: psci: Attach CPU devices to their PM
- domains
-Message-ID: <20191024163515.GD22036@bogus>
-References: <20191010113937.15962-1-ulf.hansson@linaro.org>
- <20191010113937.15962-12-ulf.hansson@linaro.org>
+ id 1iNg6g-0004Zt-Sq
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 16:37:04 +0000
+Received: from hillo.muru.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTP id 2DB0C80C5;
+ Thu, 24 Oct 2019 16:37:35 +0000 (UTC)
+From: Tony Lindgren <tony@atomide.com>
+To: soc@kernel.org
+Subject: [GIT PULL 1/3] soc changes for omaps for v5.5
+Date: Thu, 24 Oct 2019 09:36:53 -0700
+Message-Id: <pull-1571934890-285615@atomide.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191010113937.15962-12-ulf.hansson@linaro.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_093530_692715_8A69AC78 
-X-CRM114-Status: GOOD (  15.97  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20191024_093702_973775_DA4ADBC5 
+X-CRM114-Status: GOOD (  12.38  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [72.249.23.125 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,61 +56,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>, linux-pm@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, linux-arm-msm@vger.kernel.org,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Kevin Hilman <khilman@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Tony Lindgren <tony@atomide.com>, linux-omap@vger.kernel.org,
+ arm@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 10, 2019 at 01:39:35PM +0200, Ulf Hansson wrote:
-> In order to enable a CPU to be power managed through its PM domain, let's
-> try to attach it by calling psci_dt_attach_cpu() during the cpuidle
-> initialization.
->
-> psci_dt_attach_cpu() returns a pointer to the attached struct device, which
-> later should be used for runtime PM, hence we need to store it somewhere.
-> Rather than adding yet another per CPU variable, let's create a per CPU
-> struct to collect the relevant per CPU variables.
->
-> Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
-> ---
->  drivers/cpuidle/cpuidle-psci.c | 23 +++++++++++++++++++----
->  1 file changed, 19 insertions(+), 4 deletions(-)
->
-> diff --git a/drivers/cpuidle/cpuidle-psci.c b/drivers/cpuidle/cpuidle-psci.c
-> index a16467daf99d..1510422c7a53 100644
-> --- a/drivers/cpuidle/cpuidle-psci.c
-> +++ b/drivers/cpuidle/cpuidle-psci.c
-> @@ -23,7 +23,12 @@
->  #include "cpuidle-psci.h"
->  #include "dt_idle_states.h"
->
-> -static DEFINE_PER_CPU_READ_MOSTLY(u32 *, psci_power_state);
-> +struct psci_cpuidle_data {
-> +	u32 *psci_states;
-> +	struct device *dev;
-> +};
-> +
-> +static DEFINE_PER_CPU_READ_MOSTLY(struct psci_cpuidle_data, psci_cpuidle_data);
->  static DEFINE_PER_CPU(u32, domain_state);
->
+From: "Tony Lindgren" <tony@atomide.com>
 
-/me just thinking still: If it make sense to keep psci_states separate
-and domain_state and only other things needed for RPM/OSI in the
-structure. I do understand that we modify domain_state and hence
-we can't use READ_MOSTLY then. Let's see, for now keep it as is, thought
-I will think out aloud.
+The following changes since commit 17a9e5bbbfe5a5a6356e47cdc1c1656e1e5e1f62:
 
---
-Regards,
-Sudeep
+  Merge tag 'wlcore-fix' into fixes (2019-10-11 09:15:35 -0700)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.5/soc-signed
+
+for you to fetch changes up to bc794744cdc56f53b495debbe054946d1b620441:
+
+  Merge branch 'omap-for-v5.5/pm' into omap-for-v5.5/soc (2019-10-23 10:42:39 -0700)
+
+----------------------------------------------------------------
+SoC changes for omaps for v5.5
+
+This series of changes contains SoC related clean-up, and some PM
+improvments:
+
+- SoC clean-up to drop unused enable_wakeup and disable_wakeup,
+  simplify clkdm_clock_enable and disable, and few sparse fixes
+
+- Drop pdata-quirks for TI bluetooth, this is now handled by a serdev
+  driver
+
+- A series of PM changes to re-enable core oswr (open switch retention)
+  for omap4 that got disabled earlier because of various gpio-omap issues
+  that have been fixed earlier this year. We want to do this in small
+  steps for the pwrdm_set_logic_retst() changes so we can identify the
+  domain in case of unexpected issues
+
+- A series of PM changes to configure voltage controller for droid4.
+  Eventually the voltage controller configuration should use device tree,
+  but we want to get things working first. These changes bring down
+  down the idle power consumption for droid4 with LCD blanked, WLAN
+  connected, USB disabled, and modem disabled to about 32 to 35mW from
+  about 39 to 45 mW
+
+----------------------------------------------------------------
+Ben Dooks (4):
+      ARM: OMAP2+: do not export am43xx_control functions
+      ARM: OMAP2+: make dra7xx_sha0_hwmod static
+      ARM: OMAP2+: prm44xx: make prm_{save,restore}_context static
+      ARM: OMAP2+: make omap44xx_sha0_hwmod and omap44xx_l3_main_2__des static
+
+Sebastian Reichel (1):
+      ARM: OMAP2+: pdata-quirks: drop TI_ST/KIM support
+
+Tony Lindgren (13):
+      ARM: OMAP2+: Remove unused wakeup_cpu
+      ARM: OMAP2+: Drop bogus wkup domain oswr setting
+      ARM: OMAP2+: Remove bogus warnings for machines without twl PMIC
+      ARM: OMAP2+: Update 4430 voltage controller operating points
+      ARM: OMAP2+: Configure voltage controller for cpcap
+      ARM: OMAP2+: Allow per oswr for omap4
+      ARM: OMAP2+: Allow core oswr for omap4
+      ARM: OMAP2+: Initialize voltage controller for omap4
+      ARM: OMAP2+: Drop unused enable_wakeup and disable_wakeup
+      ARM: OMAP2+: Simplify code for clkdm_clock_enable and disable
+      ARM: OMAP2+: Configure voltage controller for retention
+      ARM: OMAP2+: Configure voltage controller for cpcap to low-speed
+      Merge branch 'omap-for-v5.5/pm' into omap-for-v5.5/soc
+
+YueHaibing (2):
+      ARM: OMAP2+: Make some functions static
+      ARM: OMAP2+: Remove duplicated include from pmic-cpcap.c
+
+ arch/arm/mach-omap2/Makefile               |   5 +
+ arch/arm/mach-omap2/clockdomain.c          |  78 +++------
+ arch/arm/mach-omap2/control.c              |   4 +-
+ arch/arm/mach-omap2/control.h              |   1 +
+ arch/arm/mach-omap2/omap-mpuss-lowpower.c  |   2 -
+ arch/arm/mach-omap2/omap_hwmod.c           |  97 -----------
+ arch/arm/mach-omap2/omap_hwmod.h           |   3 -
+ arch/arm/mach-omap2/omap_hwmod_44xx_data.c |   4 +-
+ arch/arm/mach-omap2/omap_hwmod_7xx_data.c  |   2 +-
+ arch/arm/mach-omap2/omap_twl.c             |   8 +-
+ arch/arm/mach-omap2/opp4xxx_data.c         |  16 +-
+ arch/arm/mach-omap2/pdata-quirks.c         |  52 ------
+ arch/arm/mach-omap2/pm.c                   |   1 +
+ arch/arm/mach-omap2/pm.h                   |  14 ++
+ arch/arm/mach-omap2/pm44xx.c               |  13 +-
+ arch/arm/mach-omap2/pmic-cpcap.c           | 271 +++++++++++++++++++++++++++++
+ arch/arm/mach-omap2/prm44xx.c              |   4 +-
+ arch/arm/mach-omap2/vc.c                   |  57 +++++-
+ arch/arm/mach-omap2/vc.h                   |   2 +-
+ 19 files changed, 389 insertions(+), 245 deletions(-)
+ create mode 100644 arch/arm/mach-omap2/pmic-cpcap.c
 
 _______________________________________________
 linux-arm-kernel mailing list
