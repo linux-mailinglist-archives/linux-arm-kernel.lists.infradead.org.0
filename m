@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C89DDE384D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 18:40:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FBD3E3852
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 18:40:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=TWnkFxzJe6vazQMSvYNfcBlCtioqlR+HF/QrEd7PjQw=; b=WNDVVMLwsR4vfHvTyEFYD1/JjW
-	pAr9KgX2dx1TplL+YzorKkZjYIH8fV8IVTDmQQXTgn7Foz6SwwEGAcjEknrU9AINZrGpMWush55bh
-	KjYvxADr++VmLMuDusDnMGIEYD9fXhmfd7ldo57MHAToR4Lgc2qKcstHS+sLTUp1afaWshMo7aW/p
-	Q7CSzQsVzahCoeXvYZey+Dfca7UqWuudt2VFOnM3K6/ffg0MuwqR4lSChPxZUwsLKMqvYEsrzKMP8
-	TApwnAv83K59ZlHa3SfCjs9xRLs3FUBgBaHNLWr/OIXaoqPGoTAx1I4CUZZ0NVLsyzhcQbFi1GNSc
-	4UjuaoMQ==;
+	bh=EN9ZGoE/c8eHJqIvmJAsDcPBVRkEvHoYYyVpbu3SzVA=; b=N24ZGanKkn7GC1VYlCdYHLG8GT
+	oj6Hhggd8uADlR5hrXAuTvpUgPqU9frtoyH3mIwUIfyVllc6tQWP9M8Ij1iSWfMWve0JmThaitn0B
+	54owK7nyELWc/7HFk67Vt7Ny31YRQKJ6OhhTjrkAGvYy9xywcrknL80IdDnpaLS6e6dQLdsPMSPN5
+	ZgW99uICS/HkZLQbifp8XwHzi7I/stP9L85YADfCA+fL6kLq5Zt65Lj/wVqnUGVBhow8VZRd7W6Ti
+	RUAw7NwhgfcaIfJiBYmr8r+DT2SLncAJOzbBbWfl5yN6EbfkJJWwWIO0smrXhpwWGiWZ8vITLJ3us
+	zy+SLE7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNg9M-0005xV-OW; Thu, 24 Oct 2019 16:39:48 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iNgAJ-00089l-7w; Thu, 24 Oct 2019 16:40:47 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNg8I-0005Lx-7n
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 16:38:45 +0000
-Received: by mail-wr1-x441.google.com with SMTP id a11so10751335wra.6
+ id 1iNg8I-0005MN-Of
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 16:38:44 +0000
+Received: by mail-wr1-x442.google.com with SMTP id q13so21864964wrs.12
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 24 Oct 2019 09:38:40 -0700 (PDT)
+ Thu, 24 Oct 2019 09:38:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=QdHIheq0u1kbfETofjh9zy8pkEBm58YeSTndJs2NHac=;
- b=gPwrn6NPz7e9qabl6w9R3rqJrhVP14D5VEoM/nG38JSXosj+EzFKlTPlVNYElFho00
- +o+M2rHC0YjYffk6XVRDD8OSdWVwqxIOndJ67G98SIzgVGfeyu2GtRUJFmD/WG6dTihy
- 1TN9flRSC9i7K1ODhHNV5mHaS7EfS9ZS7dluqdJNoUNzUatqHVKaSg2272m4QJQv9ZET
- Yat6gdQYo4VoX02nxBEIbJBiFvNigZs/epeRYtuOw5uqzGc5QFRr639xcuDCcKg7YKDZ
- tEBy/uFvDYMKF2GfDzfZ17TxIKWKBh1DcbZBNXHAlzAEar7zo8EHVVFXUKDoS5K4oPzC
- ygHg==
+ bh=hp9auP1eDPhHh11Inl/NtM2csOEQVC7OB8vmkOBN3Yo=;
+ b=dEYKAgP8b62ELK3aQy8Sm5kXfcxSfxaAtjT6k+tEy2Fr1SkdaT8Z6Pmgbfx5CXzc14
+ jTsX9Jkng/DOgrAv0GelNisE3nHQ7yTupEmSIAw/5n4kSTtlYrgx/YLnF8DGyvAslB8P
+ p0BbLyzg/LECSvrUWBrp0j7oW4JkIqArUMeHE28aaAMfMMnvRLn1MfFJ+8lVl8XlSmxk
+ n/TCMCnjjEQPP1XiIBwM5a61rQX3N5AwYfykWqp0MbROF9g2ZoZQBdCr5CjtYKC5eVzL
+ +Es6ogdDihTa1NzCLCbLUQ9BywpWX9XItmuPED0qWoroBUJsMwNdyk6pt70Y5qJYO4hx
+ 31OA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=QdHIheq0u1kbfETofjh9zy8pkEBm58YeSTndJs2NHac=;
- b=K3MQx9cZ3TKV+xG/4tkBYYuu/iRuPpiIJdvvjN9IhXFA17i38K+mf9EDrJm8yovgGV
- RbrCGEEU5pREz/GwHqEuxAg/G0o7cMrYBR6s3EG3pbcSBPyzy4/9HI18eQ1tqTgKqEUj
- HVMsjDmAen1dOTxQb3QX9qNRE+5zB860USHFf7/AKklweYRrzjG3y3qKuzkZrLyMuOrR
- ytSL7ynZYm/7plvIP84LUhlgN73vtQGwHLA4FKqUIbCM1I6RMtCSnfwOCLTeDc0+bniX
- 9gf85rCco919gMCteV3Za7O5ULh7V5aqsbF8dFPPBZnnkHMFb94YE3N8O8UDET9SkB4N
- VG5Q==
-X-Gm-Message-State: APjAAAWi0k6QkPdSR69uF7mrhbBerS/g6I3upCoK28mNIm4V6IlCr8RU
- Ypv5f6GzLE/FPkdzVPH/czEQYA==
-X-Google-Smtp-Source: APXvYqybGriaBIIX8G9nnstV8F9MgTGty7bBvcB5f3SnrbhVCru8DjpTB8Hxjodr97qZgRKtmB4Igg==
-X-Received: by 2002:adf:f04e:: with SMTP id t14mr4491900wro.106.1571935119378; 
- Thu, 24 Oct 2019 09:38:39 -0700 (PDT)
+ bh=hp9auP1eDPhHh11Inl/NtM2csOEQVC7OB8vmkOBN3Yo=;
+ b=P8mes/DuEuEEJrXHYSRtj2vWgRyxz7GkksZIo5C9riGNJdyj+cCsEML3lR/kCdaULW
+ IR1jgeqOe8gXBJB2uPDndJokBwuSgS9zQKJE9GPdSObvwHCdR13SF7y/F+KeOr4dcu7T
+ 9HLHtXfSwsK3sVq6JtlESeiC33zW5rJ801gyzeYBwQICdmrmxGL1gJfyh03XO36WHBWB
+ OuLZ+Rxhz/INcHxfcXTcQ+6in0oYZyRroORsY7lLnvXRg3ftxYrODtxhKuk5gMeQY4Ty
+ IjdQ8w5GVAzg2DkKmVl2QyTQP0Gg/j9Y4ujsZlaRFPFDBFv74/hPpv6S+HHJqQRFYdZJ
+ SJDg==
+X-Gm-Message-State: APjAAAVAbt+XQEISjarhUOTY5sn/PPhZvnS61dkLJnzqBa1YsZM65q0v
+ XaalBSsf1VA3HgUITjcy+64Hbg==
+X-Google-Smtp-Source: APXvYqwGElQJItgpvXG2KweIz1nT4zNaMi0EfD6C7LIDSjrHnlkygJRqfB/W9QG2S4JqeD5Mmp8A+Q==
+X-Received: by 2002:adf:f686:: with SMTP id v6mr5010878wrp.141.1571935120637; 
+ Thu, 24 Oct 2019 09:38:40 -0700 (PDT)
 Received: from localhost.localdomain ([95.149.164.99])
- by smtp.gmail.com with ESMTPSA id 6sm3446175wmd.36.2019.10.24.09.38.38
+ by smtp.gmail.com with ESMTPSA id 6sm3446175wmd.36.2019.10.24.09.38.39
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 24 Oct 2019 09:38:38 -0700 (PDT)
+ Thu, 24 Oct 2019 09:38:40 -0700 (PDT)
 From: Lee Jones <lee.jones@linaro.org>
 To: daniel.thompson@linaro.org, arnd@arndb.de, broonie@kernel.org,
  linus.walleij@linaro.org
-Subject: [PATCH v3 03/10] mfd: cs5535-mfd: Request shared IO regions centrally
-Date: Thu, 24 Oct 2019 17:38:25 +0100
-Message-Id: <20191024163832.31326-4-lee.jones@linaro.org>
+Subject: [PATCH v3 04/10] mfd: cs5535-mfd: Register clients using their own
+ dedicated MFD cell entries
+Date: Thu, 24 Oct 2019 17:38:26 +0100
+Message-Id: <20191024163832.31326-5-lee.jones@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191024163832.31326-1-lee.jones@linaro.org>
 References: <20191024163832.31326-1-lee.jones@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_093842_276546_58446593 
-X-CRM114-Status: GOOD (  16.04  )
+X-CRM114-CacheID: sfid-20191024_093842_796216_BE63821E 
+X-CRM114-Status: GOOD (  13.99  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -104,143 +105,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Prior to this patch, IO regions were requested via an MFD subsytem-level
-.enable() call-back and similarly released by a .disable() call-back.
-Double requests/releases were avoided by a centrally handled usage count
-mechanism.
+CS5535 is the only user of mfd_clone_cell().  It makes more sense to
+register child devices in the traditional way and remove the quite
+bespoke mfd_clone_cell() call from the MFD API.
 
-This complexity can all be avoided by handling IO regions only once during
-.probe() and .remove() of the parent device.  Since this is the only
-legitimate user of the aforementioned usage count mechanism, this patch
-will allow it to be removed from MFD core in subsequent steps.
-
-Suggested-by: Daniel Thompson <daniel.thompson@linaro.org>
 Signed-off-by: Lee Jones <lee.jones@linaro.org>
 ---
- drivers/mfd/cs5535-mfd.c | 71 +++++++++++++++++-----------------------
- 1 file changed, 30 insertions(+), 41 deletions(-)
+ drivers/mfd/cs5535-mfd.c | 25 ++++++++++++++++---------
+ 1 file changed, 16 insertions(+), 9 deletions(-)
 
 diff --git a/drivers/mfd/cs5535-mfd.c b/drivers/mfd/cs5535-mfd.c
-index b35f1efa01f6..27fa8fa1ec9b 100644
+index 27fa8fa1ec9b..4c034c9f2303 100644
 --- a/drivers/mfd/cs5535-mfd.c
 +++ b/drivers/mfd/cs5535-mfd.c
-@@ -27,38 +27,6 @@ enum cs5535_mfd_bars {
- 	NR_BARS,
- };
- 
--static int cs5535_mfd_res_enable(struct platform_device *pdev)
--{
--	struct resource *res;
--
--	res = platform_get_resource(pdev, IORESOURCE_IO, 0);
--	if (!res) {
--		dev_err(&pdev->dev, "can't fetch device resource info\n");
--		return -EIO;
--	}
--
--	if (!request_region(res->start, resource_size(res), DRV_NAME)) {
--		dev_err(&pdev->dev, "can't request region\n");
--		return -EIO;
--	}
--
--	return 0;
--}
--
--static int cs5535_mfd_res_disable(struct platform_device *pdev)
--{
--	struct resource *res;
--
--	res = platform_get_resource(pdev, IORESOURCE_IO, 0);
--	if (!res) {
--		dev_err(&pdev->dev, "can't fetch device resource info\n");
--		return -EIO;
--	}
--
--	release_region(res->start, resource_size(res));
--	return 0;
--}
--
- static struct resource cs5535_mfd_resources[NR_BARS];
- 
- static struct mfd_cell cs5535_mfd_cells[] = {
-@@ -81,17 +49,11 @@ static struct mfd_cell cs5535_mfd_cells[] = {
- 		.name = "cs5535-pms",
+@@ -50,16 +50,19 @@ static struct mfd_cell cs5535_mfd_cells[] = {
  		.num_resources = 1,
  		.resources = &cs5535_mfd_resources[PMS_BAR],
--
--		.enable = cs5535_mfd_res_enable,
--		.disable = cs5535_mfd_res_disable,
  	},
++};
++
++static struct mfd_cell cs5535_olpc_mfd_cells[] = {
  	{
- 		.name = "cs5535-acpi",
+-		.name = "cs5535-acpi",
++		.name = "olpc-xo1-pm-acpi",
++		.num_resources = 1,
++		.resources = &cs5535_mfd_resources[ACPI_BAR],
++	},
++	{
++		.name = "olpc-xo1-sci-acpi",
  		.num_resources = 1,
  		.resources = &cs5535_mfd_resources[ACPI_BAR],
--
--		.enable = cs5535_mfd_res_enable,
--		.disable = cs5535_mfd_res_disable,
  	},
+-};
+-
+-static const char *olpc_acpi_clones[] = {
+-	"olpc-xo1-pm-acpi",
+-	"olpc-xo1-sci-acpi"
  };
  
-@@ -117,22 +79,47 @@ static int cs5535_mfd_probe(struct pci_dev *pdev,
- 		r->end = pci_resource_end(pdev, bar);
- 	}
+ static int cs5535_mfd_probe(struct pci_dev *pdev,
+@@ -101,10 +104,14 @@ static int cs5535_mfd_probe(struct pci_dev *pdev,
+ 			goto err_remove_devices;
+ 		}
  
-+	err = pci_request_region(pdev, PMS_BAR, DRV_NAME);
-+	if (err) {
-+		dev_err(&pdev->dev, "Failed to request PMS_BAR's IO region\n");
-+		goto err_disable;
-+	}
-+
- 	err = mfd_add_devices(&pdev->dev, PLATFORM_DEVID_NONE, cs5535_mfd_cells,
- 			      ARRAY_SIZE(cs5535_mfd_cells), NULL, 0, NULL);
- 	if (err) {
- 		dev_err(&pdev->dev,
- 			"Failed to add CS5535 sub-devices: %d\n", err);
--		goto err_disable;
-+		goto err_release_pms;
- 	}
- 
--	if (machine_is_olpc())
--		mfd_clone_cell("cs5535-acpi", olpc_acpi_clones, ARRAY_SIZE(olpc_acpi_clones));
-+	if (machine_is_olpc()) {
-+		err = pci_request_region(pdev, ACPI_BAR, DRV_NAME);
-+		if (err) {
+-		err = mfd_clone_cell("cs5535-acpi", olpc_acpi_clones,
+-				     ARRAY_SIZE(olpc_acpi_clones));
++		err = mfd_add_devices(&pdev->dev, PLATFORM_DEVID_NONE,
++				      cs5535_olpc_mfd_cells,
++				      ARRAY_SIZE(cs5535_olpc_mfd_cells),
++				      NULL, 0, NULL);
+ 		if (err) {
+-			dev_err(&pdev->dev, "Failed to clone MFD cell\n");
 +			dev_err(&pdev->dev,
-+				"Failed to request ACPI_BAR's IO region\n");
-+			goto err_remove_devices;
-+		}
-+
-+		err = mfd_clone_cell("cs5535-acpi", olpc_acpi_clones,
-+				     ARRAY_SIZE(olpc_acpi_clones));
-+		if (err) {
-+			dev_err(&pdev->dev, "Failed to clone MFD cell\n");
-+			goto err_release_acpi;
-+		}
-+	}
- 
- 	dev_info(&pdev->dev, "%zu devices registered.\n",
- 			ARRAY_SIZE(cs5535_mfd_cells));
- 
- 	return 0;
- 
-+err_release_acpi:
-+	pci_release_region(pdev, ACPI_BAR);
-+err_remove_devices:
-+	mfd_remove_devices(&pdev->dev);
-+err_release_pms:
-+	pci_release_region(pdev, PMS_BAR);
- err_disable:
- 	pci_disable_device(pdev);
- 	return err;
-@@ -141,6 +128,8 @@ static int cs5535_mfd_probe(struct pci_dev *pdev,
- static void cs5535_mfd_remove(struct pci_dev *pdev)
- {
- 	mfd_remove_devices(&pdev->dev);
-+	pci_release_region(pdev, ACPI_BAR);
-+	pci_release_region(pdev, PMS_BAR);
- 	pci_disable_device(pdev);
- }
- 
++				"Failed to add CS5535 OLPC sub-devices: %d\n",
++				err);
+ 			goto err_release_acpi;
+ 		}
+ 	}
 -- 
 2.17.1
 
