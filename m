@@ -2,85 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65B0FE37CC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 18:24:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59E98E37EC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 18:31:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FwquWNvqagudy+zcInzkNuaGodtICU+jg9+Oe7Qnnjw=; b=KnXTFXtttir/eN
-	mwuXlhuAuimAPQuZi9kRFkUvD6w+Bnj+wiT3F7PgHTrtCx7Z/2uzUMJOrDPOu1loi72wHQegWOIxC
-	iePpXtTM//6lOymwN6s6UPe86D2gW7pE8+/WEHkU2ZtKwbQ+QiLSMu9r0rvGLlgh2oKvH2qKnazEr
-	t54pw71Sr39AdgLP82SQc1tat5FdR1v6Ahs42MxOzQs7flvHazyU9pBidbAQNASHrgUE8YcwWAAnR
-	NXYqg9NlLzEQOLxDhIVKEqeEHPBd5qsR4dn2AJ1aA1ppiMj2g8knoBbjsQZXscvAur0VFid1XkoPq
-	8clCRrji08Uaz1QWiEWQ==;
+	List-Owner; bh=lxmZ4O5OOhnE8SdLJ65h4jLvIBymd3739uT1tphTrIs=; b=Jhbc9z+nbo30wf
+	VSM9ZKQpte1DinwCV0gNGw7QPqExazXTQFlbz3ZsV+wVXGuPDN2I9ngd+jWfpXZBx8RWlxEVjhDZV
+	TQer/3E1ayfwUla87WQCh8/bs8u3P1V7EtLzNLEYZphTkJSiS4fuznLpbrDsk78KyGwAlGQ4hJOu1
+	S21ykb3WYpmtWvc4TFYRxO1fY1oZYuAgFvS6tXWOBuJxH77itst6ULf1+jVwSqj1lm2STeRTbi+9Z
+	G8fugMcr+e+juSJJ9rmyA4iL4uhnYk2N/NSUJ9bOup1vKrVsDdAlojp6WuEaYeT4QimtRwL5SQW15
+	tDk+ewAZ6MHxSokNRpuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNfuK-0006HT-CE; Thu, 24 Oct 2019 16:24:16 +0000
-Received: from mail-ua1-x943.google.com ([2607:f8b0:4864:20::943])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNfu9-0006Ga-0H
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 16:24:06 +0000
-Received: by mail-ua1-x943.google.com with SMTP id n2so7328171ual.11
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 24 Oct 2019 09:24:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=a1anzqH1b5gzyZ3/d3q3kK38QkzN8HcncYb5zfSj0BQ=;
- b=E/q0K3696VpElrs2lpW8Q2s+GBHRhjRLGtFdCkxyHnAGVL1bRWQFwNrRb4kgVH/cyx
- afI3Ee1718yQo/k85rEzWO95aChy00LdxwV9EC3rtTs/dzkI11Jo8ovoossW+rZYfiSP
- Obe+KnX2k2n2nTwkOP///OvJCHTHFMKGzu/wK4e9jgHMyEO5bO0SFZZSAiO6QdsxqIDL
- yp5LglQMiOqOw0Yg0r+4GCeNbCWwZDsL0k9+c1IicVRBSHu1hkfECSu6q53VV0pK3p9a
- IbO8nQv7m8JnK+m3MvoR4OAOFrowCWKARS9/Oyz8P07H/p+uJrm4ScwzG3X8hzL3gHPZ
- qRUg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=a1anzqH1b5gzyZ3/d3q3kK38QkzN8HcncYb5zfSj0BQ=;
- b=DtKjBLHsrhl64tdo5ztji84Fpvkmf7j2k+AqT+phgLWPAmgT0vu1zvcBzCT9san9nL
- /e2vQcVXJYDLOqopZvhz7d+sI+kTO14LPspynd6jzg50LTrb2wPKUdotFl7aRun3Rd8Y
- y+ktlzWTVen/HADPAKx/3D3XzVmLTlAsa4y2P2WvPS6CkyQIrV5hryZAbhtdNjzU7EeV
- WP6GYmnnfaMb0O2ApbzWbXEuHXg/nRfJ0WeY+O7wYEs+VRf18xneGdEW3qqt8cIDv9S4
- hYoBBtd8+Iy1QnbSKYqzTYKyzU2yfYYC9YK/lAaaedmphgJeTZcuD0JStgMfvaqtIbJw
- mCow==
-X-Gm-Message-State: APjAAAX5mmFOKFcCQABj4LfuHu0XvedqMNw6JQOp+LTjaJUJbREeUg4j
- EKAZ27FU94AZgw3TCcl6QLnQBHeX4Q/moDAjqk7NUA==
-X-Google-Smtp-Source: APXvYqyySL3xB/zgWf4uqU7Y5C8r4SvbrDVRO0QvG+k7GvkFZfc7dHw3X1con5tjqeOm2Zd1Ri21l6bd+BN2rpEbFmk=
-X-Received: by 2002:ab0:348c:: with SMTP id c12mr9355249uar.100.1571934241763; 
- Thu, 24 Oct 2019 09:24:01 -0700 (PDT)
-MIME-Version: 1.0
+	id 1iNg1U-0001he-9d; Thu, 24 Oct 2019 16:31:40 +0000
+Received: from [217.140.110.172] (helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iNg1L-0001gc-Mb
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 16:31:33 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1545C32B;
+ Thu, 24 Oct 2019 09:31:21 -0700 (PDT)
+Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2B0643F71F;
+ Thu, 24 Oct 2019 09:31:19 -0700 (PDT)
+Date: Thu, 24 Oct 2019 17:31:17 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>
+Subject: Re: [PATCH 10/13] cpuidle: psci: Add a helper to attach a CPU to its
+ PM domain
+Message-ID: <20191024163117.GB22036@bogus>
 References: <20191010113937.15962-1-ulf.hansson@linaro.org>
- <20191010113937.15962-3-ulf.hansson@linaro.org> <20191024152504.GA11467@bogus>
-In-Reply-To: <20191024152504.GA11467@bogus>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Thu, 24 Oct 2019 18:23:25 +0200
-Message-ID: <CAPDyKFroHhRGN6k+eDCMooZ+Wv0AC6R4JzLKcVWHzs6M64o4+w@mail.gmail.com>
-Subject: Re: [PATCH 02/13] dt: psci: Update DT bindings to support
- hierarchical PSCI states
-To: Sudeep Holla <sudeep.holla@arm.com>
+ <20191010113937.15962-11-ulf.hansson@linaro.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191010113937.15962-11-ulf.hansson@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_092405_048424_FD51601D 
-X-CRM114-Status: GOOD (  17.22  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191024_093131_781548_6E5445D4 
+X-CRM114-Status: GOOD (  17.09  )
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:943 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,95 +64,73 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
- Linux PM <linux-pm@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>, linux-pm@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, linux-arm-msm@vger.kernel.org,
  Daniel Lezcano <daniel.lezcano@linaro.org>,
  "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
  Bjorn Andersson <bjorn.andersson@linaro.org>,
  Kevin Hilman <khilman@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Lina Iyer <lina.iyer@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 24 Oct 2019 at 17:26, Sudeep Holla <sudeep.holla@arm.com> wrote:
->
-> On Thu, Oct 10, 2019 at 01:39:26PM +0200, Ulf Hansson wrote:
-> > Update PSCI DT bindings to allow to represent idle states for CPUs and the
-> > CPU topology, by using a hierarchical layout. Primarily this is done by
-> > re-using the existing power domain description [1] and the domain idle
-> > state description [2].
-> >
-> > Let's also take the opportunity to update the examples to clarify the
-> > difference between the currently supported flattened layout vs the new
-> > hierarchical layout.
-> >
->
-> This looks fine to me. FWIW:
->
-> Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
->
-> But before this gets merged, I would like to add another but "the golden"
-> example Qcom *always* referred during ACPI LPI discussions. Ofcourse, it
-> can be addition patch and if I get time, I can write this but no promise
-> ATM.
+On Thu, Oct 10, 2019 at 01:39:34PM +0200, Ulf Hansson wrote:
+> Introduce a PSCI DT helper function, psci_dt_attach_cpu(), which takes a
+> CPU number as an in-parameter and tries to attach the CPU's struct device
+> to its corresponding PM domain.
+> 
+> Let's makes use of dev_pm_domain_attach_by_name(), as it allows us to
+> specify "psci" as the "name" of the PM domain to attach to. Additionally,
+> let's also prepare the attached device to be power managed via runtime PM.
+> 
+> Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+> ---
+>  drivers/cpuidle/cpuidle-psci-domain.c | 21 +++++++++++++++++++++
+>  drivers/cpuidle/cpuidle-psci.h        |  6 ++++++
+>  2 files changed, 27 insertions(+)
+> 
+> diff --git a/drivers/cpuidle/cpuidle-psci-domain.c b/drivers/cpuidle/cpuidle-psci-domain.c
+> index 3f5143ccc3e0..7429fd7626a1 100644
+> --- a/drivers/cpuidle/cpuidle-psci-domain.c
+> +++ b/drivers/cpuidle/cpuidle-psci-domain.c
+> @@ -9,9 +9,11 @@
+>  
+>  #define pr_fmt(fmt) "CPUidle PSCI: " fmt
+>  
+> +#include <linux/cpu.h>
+>  #include <linux/device.h>
+>  #include <linux/kernel.h>
+>  #include <linux/pm_domain.h>
+> +#include <linux/pm_runtime.h>
+>  #include <linux/psci.h>
+>  #include <linux/slab.h>
+>  #include <linux/string.h>
+> @@ -279,3 +281,22 @@ static int __init psci_idle_init_domains(void)
+>  	return ret;
+>  }
+>  subsys_initcall(psci_idle_init_domains);
+> +
+> +struct device *psci_dt_attach_cpu(int cpu)
+> +{
+> +	struct device *dev;
+> +
+> +	/* Currently limit the hierarchical topology to be used in OSI mode. */
+> +	if (!psci_has_osi_support())
+> +		return NULL;
+> +
+> +	dev = dev_pm_domain_attach_by_name(get_cpu_device(cpu), "psci");
 
-I like the description below, thanks for clarifying that.
+This clarifies the need for the fixed name. But why not just go by index 0
+as the consumer of these psci power-domains will have only one power domain
+entry. Why do we need this name compulsory ? Further, it's specified as
+optional in the generic binding, do we make it "required" for this psci
+idle states binding anywhere that I missed ?
 
-Although, as you say, we can for sure add it on top. As a matter of
-fact, I think that is even the best way forward, as currently we can't
-support it (because of limitations in genpd, that I have started
-working on a bit).
-
->
-> Hierarchical Representation:
-> System
-> 1. SYSTEM_RET
-> 2. SYSTEM_PG
->
->         Cluster#0
->         1. CLUSTER_RET
->         2. CLUSTER_PG
->
->                 Core#0
->                 1. CORE_CG
->                 2. CORE_RET
->                 3. CORE_PG
->
->                 Core#1
->                 1. CORE_CG
->                 2. CORE_RET
->                 3. CORE_PG
->         Cluster#1 (ditto)
->
-> Flattened Representation:
->
-> Core#0
->         1 CORE_CG
->         2 CORE_RET
->         3 CORE_RET + CLUSTER_RET
->         4 CORE_RET + CLUSTER_RET + SYSTEM_RET
->         5 CORE_PG
->         6 CORE_PG  + CLUSTER_RET
->         7 CORE_PG  + CLUSTER_RET + SYSTEM_RET
->         8 CORE_PG  + CLUSTER_PG
->         9 CORE_PG  + CLUSTER_PG  + SYSTEM_RET
->        10 CORE_PG  + CLUSTER_PG  + SYSTEM_PG
->
-> Though we may not implement everything needed to support this, but
-> we must ensure we don't have to end up in a situation breaking backward
-> compatibility trying to support the same.
-
-Yep, right. I don't see any issue in regards to backward compatibility
-to support this above.
-
-Thanks for reviewing!
-
-Kind regards
-Uffe
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
