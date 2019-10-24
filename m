@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D1A7E3D03
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 22:16:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B31D8E3D08
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 22:16:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,69 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=1q28LtMyNdXvsL4BxkC/b8ngB9SgvTDTSxHYxNc4OLg=; b=YsA2NY3WRGeU6MF2mhb1olxrrd
-	Bgu5FqrBMv1dzbYJpSOjE1Gv/Dqh6E2FFYEkQmXsRIMjtuuE92Kjvhi4/7VF6O9623C9v/Rdr9J1r
-	dOqt6uI66n3vUN40lsk2/TZVEIKYLnk0lEKIpV8X3/HCgnp9ry/YhRetCcOyX8JQtc2t0OEmy5pd1
-	cDJziRSNuc/sSG0MZxNe+tC/wNCV+him57jESC86IN740H3yZx2tptDD00FelzL/YsU0I8rOVqLod
-	PxthxXy1kwEoDiZRfiUV7Xsh6lJkDIiG2Lt7sZpHlhzK2bwJZfj0cJRQyM/IrGcuprE4cQUlc/Aij
-	fk9ODVeA==;
+	bh=i9IQ7iYKnGFj89jh/vQ/vyqUeMVMvuwT4NgU/RGgFMQ=; b=jlTM3tVY9Rem6rfK7AG8palWbv
+	1Nb28Luyp1AZTtLdkvF7CgVrm3BjPAIE77cyvlETVucHJO1iH9DuoY5BgWOAtSe5ZlJzevd4N2nTQ
+	1AuTVweX9Hz6tDxnFTOlN09SPjSZBGcLc8IzWh/EnrW5LvbVDk5FFZ61XSEfaUHyXGD6aLgleN4T1
+	pxpc1QcFiHGTpS71D2+5MnlXqDgzH4wdvNXYIwaHM2qI9jkb/vNRnNnmmtB2pD48w2Lv/2jeQwG1V
+	y3QiMZOUvC4dROMwAW8CbE7gXWAVdIpAx615qDzS51VLqMCl2XWNAS0qfdDitenspBHS6eMLZwZg9
+	fDykPAXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNjWw-0002DN-CJ; Thu, 24 Oct 2019 20:16:22 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1iNjX6-0002S3-AH; Thu, 24 Oct 2019 20:16:32 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNjV9-00088Q-PV
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 20:14:33 +0000
-Received: by mail-wm1-x343.google.com with SMTP id 11so721460wmk.0
+ id 1iNjVC-0008BB-JV
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 20:14:37 +0000
+Received: by mail-wm1-x341.google.com with SMTP id v3so2736422wmh.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 24 Oct 2019 13:14:31 -0700 (PDT)
+ Thu, 24 Oct 2019 13:14:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=MxFvyutT3TeFv9tuYgjWUXMmMJVTn8dALM+g0eVelPM=;
- b=QdI9CBo+X3LUGiOOarfRIMRoq2d0UEbzIKkPRidHPHuATjOrDAp1Cc9P59zxqPyVk1
- +uHrHz5C2konAMC6RmntdYQbCDGcmhyFNO9uNYMqb7BEIKujCGrH1wQ8JnzXHISjPa82
- EBwczDq6hUEypGCchTG7LNMJcRJ1GCYqc8A3A2W5RqtY2nz4PU1tdwIKxZWP5JMQtm/K
- HpqR31IFn1yEozVoKLek4XlZ9MDUYqW+ji+VKDw7zK9uyChTHYixNMlag88At4Mr3GAE
- VRPiMPy5UBz4Vehksda8NyfBxIc+H4bANFvsoDVDSppATcfOOQPi19wvxgKHDzhx8ugr
- XEEA==
+ bh=71EpT05RPGfdV2MRDW2h3g+re/Vo/U/4wOhVseH1/1o=;
+ b=t/1pSz37TaDlYsdlTF+jQPUSyX9Hu+JvBp9tLXFbPZWlXf6IO3fwDWBqPOLS/SgrJC
+ HnJ6JmIXE82CJmwzA1cQ+4JfTzNCebkwbcJMz6UgNqQr0nhLd7gb0+enDztDGjd4Op20
+ cc6j9VR8besuhXe/xghQ3CGvA2wZT9Bw7Nj+6G0geLLSdDrIdXp8jyWlwjfZDgmMeGwn
+ h7gYmba3AL8JtCz89AJxEv2qaapQ17kOuInpMh6rn0kK2y+UR10GKkCdja5KaL4HbiBY
+ fZ637k+f3sPbI29SwJ7dtFzyja2jiCkvOEbA+qXCaVJiF/jU7+qOgpm22xhmXCorpFBG
+ vFkg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=MxFvyutT3TeFv9tuYgjWUXMmMJVTn8dALM+g0eVelPM=;
- b=W77n6QFsT8gAf4WRdeb3xmoYRdMmKCX05ChTfYRt2XXNddOEtZ2IuNt75FazLXE1Iw
- SVqHsa/z3QBnBJj+OjhF0dqIbjLN/Jn3hvD3Bgrj3x8isNvDxbFnIPYpfEmNEJMiuu2D
- v9+8O3jOPbUisa6G9IB4rHO3Kk0RigBWBOC3pTg5MjspciMmxbv9L1kuZ3FVTcJmZXkm
- qvSOCUzNjmjAFXyKS1lgtwVIHUty130speFbhyVzBjBmTVQenTD0/WLv+Nk5rRQ8jouU
- NF1n/4TdXfy92ksa9OIuYUqrfJV4yLIrYSxVUtulEuQEOk8ssKo9OKvV5ndCygsd3BBR
- zsRQ==
-X-Gm-Message-State: APjAAAXq4nhdrp+39Wb1tkZVwuFK3Y2Wr8rNfbS0wxSJZMCYqHvY2wrt
- 5a9Gv5wsxKlzF2YvF+16kX0=
-X-Google-Smtp-Source: APXvYqyhSCLxWJYmS/l2UlSbZ8O72LLkwjqVf7Bxc6RIqRSE5mZrgfoLL9O4u9579TOgwUabK+FJ+A==
-X-Received: by 2002:a7b:c186:: with SMTP id y6mr137363wmi.67.1571948069688;
- Thu, 24 Oct 2019 13:14:29 -0700 (PDT)
+ bh=71EpT05RPGfdV2MRDW2h3g+re/Vo/U/4wOhVseH1/1o=;
+ b=pBpZWgsr5oQ7tolYh/pAhLrdg9J/pYp8zKXVfyVaDCSkslVjF79tZkEFPuV3nBcnFq
+ 3eZk/Pubkeu/HMxuAMkw8MluPFIUxEN0chFbteCN9PJ4LvScbyG4U07/pwATPc+YF5O7
+ ppbL5urMtuBbQFS0K+UO+fDckltO9rOT5x3K8EEUrJgkB6RZof74i8w8aoz7QrZHZyIJ
+ 3pGHMS8N3Pn/39OnfcVVIGHYpmZVX3f++HkC97CuTaV9edyzdVFj8M6ufUQQslJS/7sZ
+ BCMwkB2RwE0pbvQJ4kUcZxYa0jfmVAHxmz/5YDDASX8KnjH03tLijpHxUh2ea0abJKir
+ PQ+w==
+X-Gm-Message-State: APjAAAUssp0KdpZRuR5g+3XuK9LB3WPx4Ud3WxBWBdaOB3duBF7XNUIU
+ vYABq75E6EGqJRVnI48iAMc=
+X-Google-Smtp-Source: APXvYqxIGWOBea0c+/zjuLO8hKzNVktbp9/3uDIdKy+vVTY7pD8lVAM4eP/sywlQ4ma8JdPxyiqtUw==
+X-Received: by 2002:a1c:2d49:: with SMTP id t70mr119405wmt.131.1571948072447; 
+ Thu, 24 Oct 2019 13:14:32 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id u21sm4788536wmu.27.2019.10.24.13.14.27
+ by smtp.gmail.com with ESMTPSA id u21sm4788536wmu.27.2019.10.24.13.14.29
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 24 Oct 2019 13:14:29 -0700 (PDT)
+ Thu, 24 Oct 2019 13:14:31 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v3 2/5] dt-bindings: Document brcm, irq-can-wake for brcm,
- bcm7038-l1-intc.txt
-Date: Thu, 24 Oct 2019 13:14:12 -0700
-Message-Id: <20191024201415.23454-3-f.fainelli@gmail.com>
+Subject: [PATCH v3 3/5] irqchip/irq-bcm7038-l1: Enable parent IRQ if necessary
+Date: Thu, 24 Oct 2019 13:14:13 -0700
+Message-Id: <20191024201415.23454-4-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191024201415.23454-1-f.fainelli@gmail.com>
 References: <20191024201415.23454-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_131431_865016_DAA96522 
-X-CRM114-Status: GOOD (  11.18  )
+X-CRM114-CacheID: sfid-20191024_131434_669286_3A365BCB 
+X-CRM114-Status: GOOD (  10.89  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -113,32 +112,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The BCM7038 L1 interrupt controller can be used as a wake-up interrupt
-controller on MIPS and ARM-based systems, document the brcm,irq-can-wake
-which has been "standardized" across Broadcom interrupt controllers.
+If the 'brcm,irq-can-wake' property is specified, make sure we also
+enable the corresponding parent interrupt we are attached to.
 
-Acked-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- .../bindings/interrupt-controller/brcm,bcm7038-l1-intc.txt   | 5 +++++
- 1 file changed, 5 insertions(+)
+ drivers/irqchip/irq-bcm7038-l1.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/interrupt-controller/brcm,bcm7038-l1-intc.txt b/Documentation/devicetree/bindings/interrupt-controller/brcm,bcm7038-l1-intc.txt
-index 2117d4ac1ae5..4eb043270f5b 100644
---- a/Documentation/devicetree/bindings/interrupt-controller/brcm,bcm7038-l1-intc.txt
-+++ b/Documentation/devicetree/bindings/interrupt-controller/brcm,bcm7038-l1-intc.txt
-@@ -31,6 +31,11 @@ Required properties:
- - interrupts: specifies the interrupt line(s) in the interrupt-parent controller
-   node; valid values depend on the type of parent interrupt controller
+diff --git a/drivers/irqchip/irq-bcm7038-l1.c b/drivers/irqchip/irq-bcm7038-l1.c
+index 689e487be80c..45879e59e58b 100644
+--- a/drivers/irqchip/irq-bcm7038-l1.c
++++ b/drivers/irqchip/irq-bcm7038-l1.c
+@@ -286,6 +286,10 @@ static int __init bcm7038_l1_init_one(struct device_node *dn,
+ 		pr_err("failed to map parent interrupt %d\n", parent_irq);
+ 		return -EINVAL;
+ 	}
++
++	if (of_property_read_bool(dn, "brcm,irq-can-wake"))
++		enable_irq_wake(parent_irq);
++
+ 	irq_set_chained_handler_and_data(parent_irq, bcm7038_l1_irq_handle,
+ 					 intc);
  
-+Optional properties:
-+
-+- brcm,irq-can-wake: If present, this means the L1 controller can be used as a
-+  wakeup source for system suspend/resume.
-+
- If multiple reg ranges and interrupt-parent entries are present on an SMP
- system, the driver will allow IRQ SMP affinity to be set up through the
- /proc/irq/ interface.  In the simplest possible configuration, only one
 -- 
 2.17.1
 
