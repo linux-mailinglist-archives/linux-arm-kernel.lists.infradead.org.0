@@ -2,63 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 595CAE2A09
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 07:42:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CAE52E2A3F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 08:05:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=O9G5Jf20aX/lq/+6XJ6Do5jEqnYn2VTJ5qewry0V1gc=; b=CoxRLVoNQzsjma
-	uHqvqdNyhb1Eg0K47q8Wokp5+LY3KW5xlSQPxWdiBnO78Sc0xvvlIjB5fEaw4VDboyrlcNBqAq3Pt
-	qLcykqpU+eF1YuBa7TTT6wpBjPlYmUeo6hMYtxp+Pxj3dkK2ux9N0VzSXpVApC4sc5xiOAqSmIbkQ
-	eWUAl5DeVd5mHqfHNRC+2W0s1AA7nKt1s71Jvz8vjVbgkQycy5ODX5wJGKtrHJ8YRsf5PNjl5vpr0
-	1EZAZS22g9M9Lrg7x/levGCuvT5JCmzc52CIk1X1GjNRpE/HWcg+gNzUwcQKZ/w29GrDU6MbeS86k
-	lnBi3Su9up7PdyDuogoA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mnou3wJHsKAfnuCC6JpMb86nNsAnPgy/h7vRmfqp160=; b=G4eAprpVoS1Uti
+	wT7O1S6n9jTkOkTOdYr41uqc0IVitGa02II1sjbj1DlYhTQn9uSBGZpJcR/tASFEpkIAjd/ew5Gwk
+	eAHU0wDe1jYNxi0vnJDKKxtBsAeWFNRFHzwZSlkegkJI+GHoSfcbFGkb6EpGjyn5+lvdoKeHVFF3e
+	iAnkOUpBeua3q9LCWtK6v4l+ge/pXaI920BZ1ZqT8r/aKVC8MTw5BnBwYUe6NQmQkivNbADaFIk54
+	PNwtgwhHieoVZ4rdJjH2/fEJgpAAw44N0uaQ7+SZqbY2xQn/KR1lYGFJsT1rSeCZD7UFWDWqG7kzy
+	Ewr/CkLmBAK7eHgk6Sqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNVsj-0007Cj-OB; Thu, 24 Oct 2019 05:41:57 +0000
-Received: from mailoutvs63.siol.net ([185.57.226.254] helo=mail.siol.net)
+	id 1iNWFK-0005Q6-Iy; Thu, 24 Oct 2019 06:05:18 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNVsZ-0007Bq-H6
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 05:41:49 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id 88EFC522F95;
- Thu, 24 Oct 2019 07:41:42 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at psrvmta10.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta10.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id k3lB39qpMVLr; Thu, 24 Oct 2019 07:41:42 +0200 (CEST)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id 3B77C522FB0;
- Thu, 24 Oct 2019 07:41:42 +0200 (CEST)
-Received: from localhost.localdomain (cpe-86-58-59-25.static.triera.net
- [86.58.59.25]) (Authenticated sender: 031275009)
- by mail.siol.net (Postfix) with ESMTPSA id BABB2522F95;
- Thu, 24 Oct 2019 07:41:41 +0200 (CEST)
-From: Jernej Skrabec <jernej.skrabec@siol.net>
-To: mripard@kernel.org,
-	wens@csie.org
-Subject: [PATCH] arm64: dts: allwinner: h6: tanix-tx6: Add IR remote mapping
-Date: Thu, 24 Oct 2019 07:41:35 +0200
-Message-Id: <20191024054135.3819223-1-jernej.skrabec@siol.net>
-X-Mailer: git-send-email 2.23.0
+ id 1iNWF2-0005C4-95; Thu, 24 Oct 2019 06:05:01 +0000
+Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:b93f:9fae:b276:a89a])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ (Authenticated sender: bbrezillon)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id C115128F789;
+ Thu, 24 Oct 2019 07:04:56 +0100 (BST)
+Date: Thu, 24 Oct 2019 08:04:52 +0200
+From: Boris Brezillon <boris.brezillon@collabora.com>
+To: <Tudor.Ambarus@microchip.com>
+Subject: Re: [PATCH v2 08/22] mtd: spi-nor: Rework write_enable/disable()
+Message-ID: <20191024080452.522b6447@collabora.com>
+In-Reply-To: <34fbb0d7-ee8f-a6d7-4a3e-d64f2f8555ff@microchip.com>
+References: <20190924074533.6618-1-tudor.ambarus@microchip.com>
+ <20190924074533.6618-9-tudor.ambarus@microchip.com>
+ <20191010092117.4c5018a8@dhcp-172-31-174-146.wireless.concordia.ca>
+ <34fbb0d7-ee8f-a6d7-4a3e-d64f2f8555ff@microchip.com>
+Organization: Collabora
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_224147_725553_44DCF6F3 
-X-CRM114-Status: UNSURE (   8.14  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191023_230500_450884_7EECA309 
+X-CRM114-Status: GOOD (  11.88  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.254 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,37 +62,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org, Michael Lange <linuxstuff@milaw.biz>
+Cc: vigneshr@ti.com, geert+renesas@glider.be, andrew@aj.id.au, richard@nod.at,
+ linux-kernel@vger.kernel.org, vz@mleia.com, marek.vasut@gmail.com,
+ jonas@norrbonn.se, linux-mtd@lists.infradead.org, joel@jms.id.au,
+ miquel.raynal@bootlin.com, matthias.bgg@gmail.com,
+ linux-mediatek@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
+ computersforpeace@gmail.com, dwmw2@infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Tanix TX6 box comes with a remote. Add a mapping for it.
+On Wed, 23 Oct 2019 23:39:31 +0000
+<Tudor.Ambarus@microchip.com> wrote:
 
-Suggested-by: Michael Lange <linuxstuff@milaw.biz>
-Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
----
- arch/arm64/boot/dts/allwinner/sun50i-h6-tanix-tx6.dts | 1 +
- 1 file changed, 1 insertion(+)
+> On 10/10/2019 10:21 AM, Boris Brezillon wrote:
+> > External E-Mail
+> > 
+> > 
+> > On Tue, 24 Sep 2019 07:46:18 +0000
+> > <Tudor.Ambarus@microchip.com> wrote:
+> >   
+> >> From: Tudor Ambarus <tudor.ambarus@microchip.com>
+> >>
+> >> static int write_enable(struct spi_nor *nor)
+> >> static int write_disable(struct spi_nor *nor)
+> >> become
+> >> static int spi_nor_write_enable(struct spi_nor *nor)
+> >> static int spi_nor_write_disable(struct spi_nor *nor)
+> >>
+> >> Check for errors after each call to them. Move them up in the
+> >> file as the first SPI NOR Register Operations, to avoid further
+> >> forward declarations.  
+> > 
+> > Same here, split that in 3 patches please.  
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-tanix-tx6.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-tanix-tx6.dts
-index 7e7cb10e3d96..e9428ad4266e 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h6-tanix-tx6.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-tanix-tx6.dts
-@@ -81,6 +81,7 @@
- };
- 
- &r_ir {
-+	linux,rc-map-name = "rc-tanix-tx5max";
- 	status = "okay";
- };
- 
--- 
-2.23.0
-
+In order to keep the number of patch in this series small, I'd
+recommend doing all spi_nor_ prefixing in a patch, all function
+moves in another one and all error checking in a third patch, instead of
+splitting it per-function.
 
 _______________________________________________
 linux-arm-kernel mailing list
