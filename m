@@ -2,59 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A04C5E32AB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 14:46:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E53B8E32A8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 14:45:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=udbkNu0wjp4MKfZ0cal95RxZAPxjl+qDi6/Req2GV1A=; b=mRt
-	ZLwwJaFAIy6gdiexEhfoO7xxONd5onevy/hgnd53VBWwbfd4R6KCLm1E2K3CNVtju1TeIVXbv7s6p
-	CoY2evrnL3IBGB2Sr2zPwqmueHaqgvSnF4i/3zUIJ3cSE2VISvRBhDpiPwLosXbpqNvzWj7UmaaDt
-	/yb1q4OWm++6z9gYjUyuWvyT2nzKjO/shm0/tvsFNL7t9VytwjlWKeHhE4FARrKeBycr1L8+je3lI
-	HoMUGROdo9wpN+yNHvUcsSxDGVCOQp6+3KZHRNVdDwyujB4zV9nOnh6+Oc6i62LxaTYWwtYro26tC
-	/UxSyWRBEqrQWa28I0lEfvBLtJy+kQg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=2AynyKYOPQygodrAGvwNJ2OdScg1B3gl7G/7ZuTQ3aM=; b=nBcWW8+wStXrFvxAlg1yY28D55
+	MwZmToEVA0Gs27oiYp40nngM8CN/fnAXEKrfWzDBhQ0uq8ekaqQQzberCbDz985qNwErusekUKv82
+	ncqOmGAaDtl/nbyzBU7VoQrRhZhrkFxZOceG7bYxNcTWRsLFF4LYh8B4gteVwoA0iiGyKgeukuML0
+	OClbHjtlD6gjS48783ZYEb4cdJJliMqq+33rLXbSHEfl05L2Ax4OOA5IjyE7WKi3JRdrRgPZFHn7y
+	aXRgWX1vdmTYnCY376eWbMxfV0LGBlVUN4vQzcOTzUOH83+YMWnnjR7Fc2qiopwf9EGMSPUYUZL36
+	CAypcivA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNcVK-0001TK-8k; Thu, 24 Oct 2019 12:46:14 +0000
-Received: from laurent.telenet-ops.be ([2a02:1800:110:4::f00:19])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNcV9-0001S0-F5
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 12:46:04 +0000
-Received: from ramsan ([84.195.182.253]) by laurent.telenet-ops.be with bizsmtp
- id HQlt2100f5USYZQ01Qltey; Thu, 24 Oct 2019 14:45:55 +0200
-Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
- (envelope-from <geert@linux-m68k.org>)
- id 1iNcUz-0005z6-Ni; Thu, 24 Oct 2019 14:45:53 +0200
-Received: from geert by rox.of.borg with local (Exim 4.90_1)
- (envelope-from <geert@linux-m68k.org>)
- id 1iNcUz-0003fN-KL; Thu, 24 Oct 2019 14:45:53 +0200
-From: Geert Uytterhoeven <geert+renesas@glider.be>
-To: Arnd Bergmann <arnd@arndb.de>, Kevin Hilman <khilman@kernel.org>,
- Olof Johansson <olof@lixom.net>
-Subject: [PATCH v6] arm64: dts: lg1312: DT fix
- s/#interrupts-cells/#interrupt-cells/
-Date: Thu, 24 Oct 2019 14:45:52 +0200
-Message-Id: <20191024124552.14052-1-geert+renesas@glider.be>
-X-Mailer: git-send-email 2.17.1
+	id 1iNcUo-0001Dj-W1; Thu, 24 Oct 2019 12:45:42 +0000
+Received: from [217.140.110.172] (helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iNcUg-0001D1-D9
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 12:45:35 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 31D4BD75;
+ Thu, 24 Oct 2019 05:45:21 -0700 (PDT)
+Received: from [10.37.9.200] (unknown [10.37.9.200])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 583133F71A;
+ Thu, 24 Oct 2019 05:45:20 -0700 (PDT)
+Subject: Re: arm version of generic VDSO?
+To: Arnd Bergmann <arnd@arndb.de>, y2038 Mailman List
+ <y2038@lists.linaro.org>, Linux ARM <linux-arm-kernel@lists.infradead.org>
+References: <CAK8P3a2RDBTnKZ-yOJkqY5+2LBeeqvGJ3AMnf+cnqbDVPeUf6g@mail.gmail.com>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Message-ID: <df19494e-589b-fbf5-bf19-8e8752b5e5be@arm.com>
+Date: Thu, 24 Oct 2019 13:47:24 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+MIME-Version: 1.0
+In-Reply-To: <CAK8P3a2RDBTnKZ-yOJkqY5+2LBeeqvGJ3AMnf+cnqbDVPeUf6g@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_054603_656490_875DD7B2 
-X-CRM114-Status: UNSURE (   9.32  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.4 (/)
+X-CRM114-CacheID: sfid-20191024_054534_488883_698BE9D9 
+X-CRM114-Status: GOOD (  11.75  )
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.4 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:1800:110:4:0:0:f00:19 listed in]
- [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,50 +64,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Chanho Min <chanho.min@lge.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The standard DT property is called "#interrupt-cells".
+Hi Arnd,
 
-Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-Acked-by: Rob Herring <robh@kernel.org>
-Acked-by: Chanho Min <chanho.min@lge.com>
----
-Any chance this can be fixed after the 6th submission in 3.5 years?
-Thanks!
+On 10/24/19 1:34 PM, Arnd Bergmann wrote:
+> Hi Vinvenzo,
+> 
+> I'm looking through some of the remaining y2038 work, and noticed
+> that arch/arm64 has the new generic vdso implementation, but arch/arm
+> does.
+> 
 
-v3:
-  - Add Acked-by,
+This is correct, arch/arm does not have support for the generic vDSO library.
 
-v2:
-  - Add Acked-by,
-  - Rebased.
----
- arch/arm64/boot/dts/lg/lg1312.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+> Do you patches for using the same code on arch/arm?
+> 
 
-diff --git a/arch/arm64/boot/dts/lg/lg1312.dtsi b/arch/arm64/boot/dts/lg/lg1312.dtsi
-index c8dc9c20fba3d550..64f3b135068dca15 100644
---- a/arch/arm64/boot/dts/lg/lg1312.dtsi
-+++ b/arch/arm64/boot/dts/lg/lg1312.dtsi
-@@ -124,7 +124,7 @@
- 	amba {
- 		#address-cells = <2>;
- 		#size-cells = <1>;
--		#interrupts-cells = <3>;
-+		#interrupt-cells = <3>;
- 
- 		compatible = "simple-bus";
- 		interrupt-parent = <&gic>;
+The patches were send for review together with the arm64 ones and the rest of
+the architectures supported but they did not get merged yet and I do not know why.
+
+>        Arnd
+> 
+
 -- 
-2.17.1
-
+Regards,
+Vincenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
