@@ -2,89 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75F07E3E3F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 23:34:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8C92E3E63
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 23:42:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:Message-Id:
-	Mime-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=x3nYSzpkj0ywwvOolnpV3y/kM9SXngO9tjmWQFOExx0=; b=Fs5
-	FeKeRBtjpC4moKWBg7oRjixH/voXCXYeSra46saYObn4+JqF8ZmCMN/X4sHO8JjfrjJH31adPVWkY
-	GHyARBJneyeb7rPaebcS1iOxnR1lC5Fdl4qyrKL6IzNVM56AuBhCABg/0qUhIzH+CYhFsOzu+RnTE
-	JgxrLd077PNvyb/QHglkcxHVoie0V5wJtPcMtXwxTT/HgLRYhiFRKyM5JnMQM7CF4LeDBWZ3k3cht
-	4fmBVLc9WrGCDjQToQuRMp1zEGb+kTdd0lTrSa1ezrlt6upJKFfYqI5GBLsBttjNXhXrGlr8L9dtE
-	KBssU+MDDwk0ts1o/91yg9W3c8jHqYw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QtF1AJWHxOM2n3vXKojlPzK2OCjY5Ug454+xyIDe5D4=; b=V+HmE2GeOolW4o
+	wCYmwexwIqRtcPhKG0sHteYB8hikGtrHWLwF5auDjTyRu+7S1P78ZBVBWbT5wIyLGhBKrsr9t+/Pj
+	1W41PodwjI6kvCOsQ3ELQIuQzgzBGvVfbMDqXEnuEU5wXXg5Hs87K9RWaVvEx+5k4ZBE8CvfQ/MGV
+	/6k3IkD3jVVD583x0o+9Qr0n3Q3IYZV6sULTy+jHbu0dgGsMzjN9WRykMvf3NRlPzRyFX7V58G/99
+	agimdsxqh5cBT7Ld4a8upp52JTs1EGnKNEUywc3QDT/miKLelCA8U51uCGDsoCvyGnJ02Vg6LYP8n
+	M08jobElwkPqVhyVKQQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNkkm-0007ny-Vh; Thu, 24 Oct 2019 21:34:44 +0000
-Received: from out2-smtp.messagingengine.com ([66.111.4.26])
+	id 1iNksK-0002i7-Hw; Thu, 24 Oct 2019 21:42:32 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNkkb-0007nF-TQ; Thu, 24 Oct 2019 21:34:35 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailout.nyi.internal (Postfix) with ESMTP id 1B614200E3;
- Thu, 24 Oct 2019 17:34:29 -0400 (EDT)
-Received: from imap2 ([10.202.2.52])
- by compute3.internal (MEProxy); Thu, 24 Oct 2019 17:34:29 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jany.st; h=
- mime-version:message-id:date:from:to:subject:content-type; s=
- mesmtp; bh=3/LPx7xKSE7aQL6d8hYxygWw+WEn0fkBBBqOy943J3U=; b=lrsQG
- f5RfJnf7V9B8m8IBK8uMiwQnl7/nWYfrvlfW5DNdLENvG3Yov4Bl8zyWD0HmVNAX
- 2up2ssf18B/ca1uQStTzN4hr4SRy8EhTztjJauFVoHS3MAOzcBVVRxt1TkjOaHsy
- WphkDutWRytdbMfDUNSYi+qZ+5vWnMHQli6+KE=
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=content-type:date:from:message-id
- :mime-version:subject:to:x-me-proxy:x-me-proxy:x-me-sender
- :x-me-sender:x-sasl-enc; s=fm1; bh=3/LPx7xKSE7aQL6d8hYxygWw+WEn0
- fkBBBqOy943J3U=; b=nbku0FwZHe1JOnSMCyNnmukAi4DJ/PcoyAse5KIfQzNSe
- Gk1pssHOHLoAfrEXpmzZek9oVPounQWbclJkX0dFvKGCSRiKRXLFEwIEvo1tQQOD
- AE7was6Zr8culYjYO5unR8dvyfiGcLh/A+sRpsVLJErY+fhpiI/4uBc6eo24Hc2O
- FB0sH3DJctM63VJXngkFUVi7esBJhfGhxMFUVPPKrqG9tIPCIMK2AF1DthkK72rm
- XrjROUWQhAk98N2II8AHOkcHlpFt65AFOFWMYtAcb3TsYKKsioVLicbhdLmmRmyi
- 8lvLjlPiuH4bMoFjDAhWfgp0HJP4+ONAr1vCnvzLg==
-X-ME-Sender: <xms:4xiyXYn6-BG9NxxxJjkwZES8jJ_-QLfEb8g7MivY0vMs7rS0QpH5eQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrledugdduieefucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucenucfjughrpefofgggkfffhffvufgtsehttdertd
- erredtnecuhfhrohhmpedfnfhukhgrshiiucflrghnhihsthdfuceolhhukhgrshiisehj
- rghnhidrshhtqeenucffohhmrghinhepkhgvrhhnvghlrdhorhhgnecurfgrrhgrmhepmh
- grihhlfhhrohhmpehluhhkrghsiiesjhgrnhihrdhsthenucevlhhushhtvghrufhiiigv
- pedt
-X-ME-Proxy: <xmx:4xiyXVO55XKKfZgqrABAe5Q5vY2qGzsGI8NqWxLCG51me76ri9nXrQ>
- <xmx:4xiyXSpvtvd12BlBtgdG_lW7PmMZ2lfJfRhkfH-AGEEbaEKyB4jF5g>
- <xmx:4xiyXYSTD-kE0t6nw53nH0GKJp-2WpsHzZfPIjzy7PtSZhn6-erPCQ>
- <xmx:5RiyXQyv7tm2iXbTKan-AiawEpFU9Cz0KSVfDtGleRTdYtiht85PUg>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id 8F30AE00A3; Thu, 24 Oct 2019 17:34:27 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.7-470-gedfae93-fmstable-20191021v4
-Mime-Version: 1.0
-Message-Id: <7a98e121-21e8-4b83-91e1-7b7002643ce1@www.fastmail.com>
-Date: Thu, 24 Oct 2019 23:34:07 +0200
-From: "Lukasz Janyst" <lukasz@jany.st>
-To: linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Subject: Memory issues with NanoPi M4 (rk3399)
+ id 1iNks8-0002gd-Np
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 21:42:22 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=Content-Transfer-Encoding:
+ MIME-Version:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=QtuCjfhAyjq/ROxxIsN7UjuEaASW34MzbiZNctws3NE=; b=SlOB2X/lg9Y68Tn0KuAuZyzGf
+ f7B26DSWKsj6gAYUZ8GfgAhS83YB+9l0tjbc8vmgfmy695dgqX0HIyuXm6+qbzGv7QEBqjYxZSNxo
+ K5kip2SbbwzbJwO/5QrznhA51K+QG5MY06sFICYUR0htx78yyOVVIhbiuh1mV2svJou0Q=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1iNks5-0004L6-T9; Thu, 24 Oct 2019 21:42:17 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id 1EA55274293C; Thu, 24 Oct 2019 22:42:17 +0100 (BST)
+From: Mark Brown <broonie@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>,
+	Will Deacon <will@kernel.org>
+Subject: [PATCH v4 0/4] E0PD support
+Date: Thu, 24 Oct 2019 22:42:03 +0100
+Message-Id: <20191024214207.20588-1-broonie@kernel.org>
+X-Mailer: git-send-email 2.20.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_143434_161766_85DC3A04 
-X-CRM114-Status: UNSURE (   6.01  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191024_144220_799003_9C6C1806 
+X-CRM114-Status: GOOD (  10.42  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.26 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [172.104.155.198 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,23 +76,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Dear mailing lists,
+This series adds support for E0PD. We enable E0PD unconditionally where
+present on systems where all the CPUs in the system support E0PD and
+change to not enabling KPTI by default on systems where we have enabled
+E0PD. It also converts the runtime checks for use of non-global mappings
+into a variable.
 
-I have been trying to install vanilla Debian on my NanoPi M4 with 4GB of RAM (rk3399) and I have been experiencing kernel panics in random places happening always under significant IO pressure. The panics occur mostly in different DMA handlers and the system can work fine for days if it's not under IO pressure.
+v4: Use a variable to store our decision about using non-global mappings
+    rather than rechecking constantly at runtime. I've added this as a
+    separate patch mainly for bisection.
+v3: Make E0PD a system wide feature.
 
-My setup uses the master branch of uboot as of a couple of day ago. I also use the master branch of arm-trusted-firmware as BL31 with the 0aad563c commit reverted. I reverted this commit because the system fails to boot with it in even though all the addresses processed by arch/arm/mach-rockchip/make_fit_atf.py seem right. The kernel I try to boot is a couple days old version of linux-next with defconfig, but I see the same problems with any mainline kernel I tried.
+Mark Brown (4):
+  arm64: Add initial support for E0PD
+  arm64: Factor out checks for KASLR in KPTI code into separate function
+  arm64: Don't use KPTI where we have E0PD
+  arm64: Use a variable to store non-global mappings decision
 
-Robin Murphy pointed me to this conversation: https://lore.kernel.org/linux-arm-kernel/006d3ee0-2711-1b4e-d8cf-6a226fcad0e4@arm.com/ Which led me to believe that the kernel indeed trips over some memory reserved by TF-A at EL3. Therefore, I started playing with memtest to identify the exact address of the problematic region and it turned out to be random. It's always about 300-500 MB in the 0x0000000040000000:0x00000000f5828000 region though.
+ arch/arm64/Kconfig                     | 15 ++++++
+ arch/arm64/include/asm/cpucaps.h       |  3 +-
+ arch/arm64/include/asm/mmu.h           | 48 ++---------------
+ arch/arm64/include/asm/pgtable-hwdef.h |  2 +
+ arch/arm64/include/asm/pgtable-prot.h  |  4 +-
+ arch/arm64/include/asm/sysreg.h        |  1 +
+ arch/arm64/kernel/cpufeature.c         | 71 ++++++++++++++++++++++++--
+ 7 files changed, 94 insertions(+), 50 deletions(-)
 
-My knowledge of the internal workings of DRAM is very limited, so I would very much appreciate any hints that may point me in the right direction.
+-- 
+2.20.1
 
-Kind Regards,
-Lukasz
 
 _______________________________________________
 linux-arm-kernel mailing list
