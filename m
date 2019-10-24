@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C626CE3857
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 18:41:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C468E385B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 18:41:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,72 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=C0aL/KvX5Ky1EzNGpnv57aoWUbg+wt5znFFCGBg0MK8=; b=IgpLSM6q8A+HqL1yMoSiIhIFZo
-	BuWh5wcVzo8BTk/hYw0qZQg8jKa6UkRLwXz40cLBc8R7hDCyLFM1qpnxwFU2spuswFl65IZ7kh92P
-	xK1wmSmqhMpHXZuH3YxXRD7nJMdh4iFD1AwZU0QZECLLp6o0sF1bWUW8s07HigX9u2y/jbrUFvjWD
-	SvdHPYvchchg23QYeVZqmu4gDIgnqyh32BB6eJ3NsK4qBRsYpFmZCEbNMOY/OhVvcxIu0qoEEhCQR
-	iyhUX57/dCOX2eqAv55L12wj7A+URnkZOrKKeMzqcBQPb2aB6Ckh+Jilspksqxoz1TySRZ4I6Ti2q
-	C9irlgSg==;
+	bh=p1Y3grck6brgIuxqCvaSnCD7Yws+FQaJCCLUNqBIfv4=; b=tyHDCLvswzLP2WIeudm+9oeoI0
+	pBXHBNH6frsC1V9k/+6NGdExFsD3g61aBwgLn/3ZG8o2jdRhYeEJbxI7K/eG9twrr1CqW74Sw625x
+	YMg4BTwWM3+bseRP21cJvxCgCoZPHqIWTcHWNpuyFcG4Pz0HQldH0D0Ugl/koHhOCZOB5hhD7yDSv
+	6+OpOVPQAwAF/28PlxBlxaFnHt3xOlFjp2hKrKVHEtXDJj3vJaWD+PFXB+ditjsizyg7Q+9QIrzvF
+	9sEXTeiFRkdnuDoheLx25My4vMkC8NeUJP9zeEvmudTxq1kWyyzv5hMDSenprx9NCa1o6jpBgFR6J
+	0EkgHWPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNgAn-0000CT-0a; Thu, 24 Oct 2019 16:41:17 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1iNgB3-0000TQ-Nv; Thu, 24 Oct 2019 16:41:33 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNg8L-0005ON-02
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 16:38:46 +0000
-Received: by mail-wm1-x344.google.com with SMTP id p21so2134377wmg.2
+ id 1iNg8N-0005Pg-1z
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 16:38:48 +0000
+Received: by mail-wm1-x342.google.com with SMTP id c22so3259700wmd.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 24 Oct 2019 09:38:44 -0700 (PDT)
+ Thu, 24 Oct 2019 09:38:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Y4M/TuR9ElWDWsgab2CwXLXvo0XVpR3zUX6nx046dNY=;
- b=iFgTncfo27OyY3xOrjVf8k+LrQj/b3xCRYWuPYLMMo5ZBf6rQyO+w4OQN+tMw+qOb8
- PU/JI8owfgoVR8WZdCHfhQykvjBV7dSBMopw/8M8qWvolQzu0JP/iCuPwpVmK4ZXMMNx
- 6rpHxMtmQGBEKg6By4WPJsLUgEwX95klixjUL2NWyK3JS17vlPYsCntul6yu4PvaKzVK
- 1Ea79lATIqchM99hH4HVvRPqSwRUVxm9CkiO+n2uYIGICjFuOxhL1T0nQ5WKqpgSlSDN
- 2i830iOga6S8ecjkM/isy9KN4zRSak1bEDGy/KVXxdytiyMJxx4SCpfrQyeXNDBDXg4j
- 5I8Q==
+ bh=+Uje5yZA2ldJsbsoiBPp+JyZjTmn5fr8PAwcjGY2GnI=;
+ b=DQl9V900fqGUpTL6GCaKfkeZ3gpfIHFqAKSX3ufvAjrIcUCC99G8QrABRgrFAHr84f
+ zXLGkBQbvxYo558DCuJqQRDDXaj2qphtEatUBS+Lk2L/kgUEZOlNLKkQr/2VGOUirh4E
+ 6jKdZxmOXPYIkjq+XUBdV+4Kw/ot1PyjPtVGHPHjzWvr5e5pNz9JmDdPSIPFVB09IPWO
+ J99BmaTltlCpMUovCATgjqDRfUheM9tsvnCGce4Ysz+isq5zOjxTekh7k4kElKxW1h0I
+ wSMBV1bRCLq9eaApiDlolzZZeA1p6It53pyezLs2vAm0LSkxnBL7yVJGV/ov+1Xf6Njw
+ Chtw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=Y4M/TuR9ElWDWsgab2CwXLXvo0XVpR3zUX6nx046dNY=;
- b=lD7/sCem0I6YL9oBovdy5ZJ4G5NsjplMyrhMphkzQ9KNcNX9eH1d1gi1bC3tYjHzPq
- GCtBa0Xr/m3fScyACwfLO2OyhfhLw82N6xbthS/slCsGdv38tMMA3X1rU5GJM/J4Qvwt
- ewoUYihNdk6kPo03XjuBYXB9qLIVg7UeuHk1C2af35EEH4aETCNpt0XwdFZHjCzWdLeE
- I+ZZjwVX+OCaG+Z0kt8i4Jb0HSB8lw0D+EyjPFTMc4Nh2dwAD27McmF5TOG5MmynaXwz
- meUXNa1GtHI8hCexk1YXmf9PoyYgz8UtlgGlTO+nWgrjVKHlnr/TzraZJSVXVqQ6nzaK
- JmfA==
-X-Gm-Message-State: APjAAAVAHwoVmf3PYv5uaCqB1Ff+r/mB1w+QoJf/jStp71uU1sGlIXXn
- E8cb+uyxRCvkdOsuq1KlRCvxdw==
-X-Google-Smtp-Source: APXvYqwyF86LO61G6Q/GTjGzQT35oPobFvCsp4KPMM+/nA54QMVhrVGQaJNdT23BlB1qxuMfJ7LVCQ==
-X-Received: by 2002:a7b:cc6a:: with SMTP id n10mr5998222wmj.94.1571935123733; 
- Thu, 24 Oct 2019 09:38:43 -0700 (PDT)
+ bh=+Uje5yZA2ldJsbsoiBPp+JyZjTmn5fr8PAwcjGY2GnI=;
+ b=Zi38Y8Jq9AQAHR5uRYnJL3O882CIr93UX+FlXlaLFDsqCxnWnf3JatgtuuNT3aX6Yz
+ mUK8cd1EQgsqO5u4MaFfgB7x7TnkNyb4dfzrlmBkBynfxcC/k85Esezzi+YOj3SjKurN
+ trObCr2o7lhHwp5MBOmaKNx2jwzaDCFRAhCuVEsZgfgYsw+RGpI/5sJa093trjadX+Gc
+ +KDQQdJfDGnt54z9zFKudAQzWSjm/57JA77TME8zchXFqVGMPTptgTbIC43u/cofC+3E
+ tFIeUZ6mPeU8XUVve3L8elxQtmuu7IDoXtc9Zw+PeWJoIsD29GQbKsQG3VmmMeHbWZE5
+ 4TZQ==
+X-Gm-Message-State: APjAAAUd+cP2vQN4FkDT5Q+1GaKm7vFpyi2aPvRyN/uahNj8r8QuTR+e
+ dd6ROJYcvqR0eRUICIGLAVEKsA==
+X-Google-Smtp-Source: APXvYqxlMNsjCTwkEt0d7L6AsHU/jq7MCFgUCZONkNBta21bcHrPhdZtg5MDI/XxzWmIHo3m+xvqdw==
+X-Received: by 2002:a05:600c:143:: with SMTP id
+ w3mr786098wmm.132.1571935124805; 
+ Thu, 24 Oct 2019 09:38:44 -0700 (PDT)
 Received: from localhost.localdomain ([95.149.164.99])
- by smtp.gmail.com with ESMTPSA id 6sm3446175wmd.36.2019.10.24.09.38.42
+ by smtp.gmail.com with ESMTPSA id 6sm3446175wmd.36.2019.10.24.09.38.43
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 24 Oct 2019 09:38:43 -0700 (PDT)
+ Thu, 24 Oct 2019 09:38:44 -0700 (PDT)
 From: Lee Jones <lee.jones@linaro.org>
 To: daniel.thompson@linaro.org, arnd@arndb.de, broonie@kernel.org,
  linus.walleij@linaro.org
-Subject: [PATCH v3 07/10] x86: olpc-xo1-sci: Remove invocation of MFD's
- .enable()/.disable() call-backs
-Date: Thu, 24 Oct 2019 17:38:29 +0100
-Message-Id: <20191024163832.31326-8-lee.jones@linaro.org>
+Subject: [PATCH v3 08/10] mfd: mfd-core: Protect against NULL call-back
+ function pointer
+Date: Thu, 24 Oct 2019 17:38:30 +0100
+Message-Id: <20191024163832.31326-9-lee.jones@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191024163832.31326-1-lee.jones@linaro.org>
 References: <20191024163832.31326-1-lee.jones@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_093845_071076_5A2A0C85 
-X-CRM114-Status: GOOD (  11.23  )
+X-CRM114-CacheID: sfid-20191024_093847_156343_0DF98573 
+X-CRM114-Status: GOOD (  13.99  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,44 +106,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-IO regions are now requested and released by this device's parent.
+If a child device calls mfd_cell_{en,dis}able() without an appropriate
+call-back being set, we are likely to encounter a panic.  Avoid this
+by adding suitable checking.
 
 Signed-off-by: Lee Jones <lee.jones@linaro.org>
+Reviewed-by: Daniel Thompson <daniel.thompson@linaro.org>
 ---
- arch/x86/platform/olpc/olpc-xo1-sci.c | 6 ------
- 1 file changed, 6 deletions(-)
+ drivers/mfd/mfd-core.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-diff --git a/arch/x86/platform/olpc/olpc-xo1-sci.c b/arch/x86/platform/olpc/olpc-xo1-sci.c
-index 99a28ce2244c..933dd4fe3a97 100644
---- a/arch/x86/platform/olpc/olpc-xo1-sci.c
-+++ b/arch/x86/platform/olpc/olpc-xo1-sci.c
-@@ -15,7 +15,6 @@
- #include <linux/platform_device.h>
- #include <linux/pm.h>
- #include <linux/pm_wakeup.h>
--#include <linux/mfd/core.h>
- #include <linux/power_supply.h>
- #include <linux/suspend.h>
- #include <linux/workqueue.h>
-@@ -537,10 +536,6 @@ static int xo1_sci_probe(struct platform_device *pdev)
- 	if (!machine_is_olpc())
- 		return -ENODEV;
+diff --git a/drivers/mfd/mfd-core.c b/drivers/mfd/mfd-core.c
+index 8126665bb2d8..e38e411ca775 100644
+--- a/drivers/mfd/mfd-core.c
++++ b/drivers/mfd/mfd-core.c
+@@ -28,6 +28,11 @@ int mfd_cell_enable(struct platform_device *pdev)
+ 	const struct mfd_cell *cell = mfd_get_cell(pdev);
+ 	int err = 0;
  
--	r = mfd_cell_enable(pdev);
--	if (r)
--		return r;
--
- 	res = platform_get_resource(pdev, IORESOURCE_IO, 0);
- 	if (!res) {
- 		dev_err(&pdev->dev, "can't fetch device resource info\n");
-@@ -605,7 +600,6 @@ static int xo1_sci_probe(struct platform_device *pdev)
++	if (!cell->enable) {
++		dev_dbg(&pdev->dev, "No .enable() call-back registered\n");
++		return 0;
++	}
++
+ 	/* only call enable hook if the cell wasn't previously enabled */
+ 	if (atomic_inc_return(cell->usage_count) == 1)
+ 		err = cell->enable(pdev);
+@@ -45,6 +50,11 @@ int mfd_cell_disable(struct platform_device *pdev)
+ 	const struct mfd_cell *cell = mfd_get_cell(pdev);
+ 	int err = 0;
  
- static int xo1_sci_remove(struct platform_device *pdev)
- {
--	mfd_cell_disable(pdev);
- 	free_irq(sci_irq, pdev);
- 	cancel_work_sync(&sci_work);
- 	free_ec_sci();
++	if (!cell->disable) {
++		dev_dbg(&pdev->dev, "No .disable() call-back registered\n");
++		return 0;
++	}
++
+ 	/* only disable if no other clients are using it */
+ 	if (atomic_dec_return(cell->usage_count) == 0)
+ 		err = cell->disable(pdev);
 -- 
 2.17.1
 
