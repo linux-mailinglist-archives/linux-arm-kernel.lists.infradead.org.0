@@ -2,65 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B034E2CBA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 10:57:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA3ACE2CEE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 11:13:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=YJr1F/lGPHkXFn1NfyCkgo7ma19h1vPmkUlkF6vRvCw=; b=eACkD5RdMV+uT7
-	E1OVA+Cs8o8C8ms9o3b5lfQHiijeHKDS8FfZRS4huiJ40y4h3kulS+nOWdQFwZRrsKTB5CrqbAi4p
-	TxmgGLH3n7WntIYmIBGXLgqgwCi0GwbNNftZy629Zk40qX9/ThkdKKEUmG90hXyn4i3wZl3bHUL6U
-	fZHdirCkAQlAnp+O+33XXhnsVKj6sI8ZPoBdcupHlN8MejpEur+IZaFNG80q6S0uGfi76gfCQ9nkE
-	JCJvewymmAsHEJ25hB981uKw1MORynZvH9Y+tON3e139OXXh25GE78dKaTj9t/d6Nv240NMmzYcY0
-	Eb7ma3JNAssOlwhPPOvw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=nlliyw3wlB5QloGFZOuu41kd0wdshAxudf74QY19ku8=; b=TYEAwCDWgJeneSM5LYk2sVCFA
+	/TdRH7ZQmbijI7Rx3xGO27c6Tq2iW3hJqauwL5Ca11Pke21OShouzdAXlWAjQ8RTnnxPTtXMDsLU1
+	dMiFYK9qgqiEHH+IDkl4tg34vMFZhLvb48OAPOVS0mg093v0Es5rg3weFSv7L7YxXo/An1a0//KM2
+	2wv9Llewvgqeny8RUXiv6fVArnP6mHAmAFfi9R+a+AG2Kw63G3LqwwmMbo5PGiW2WCB+9L4SbPehu
+	i6+Ulp5NAe0USLxZ8gyseSu4E8zkQtFlMV/xKOw9vCOk25o5j9aUi5k5SibkQ1v08i5CDYPipcjjv
+	naCEj0X3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNYwE-0002We-KD; Thu, 24 Oct 2019 08:57:46 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1iNZBG-0007Zg-CU; Thu, 24 Oct 2019 09:13:18 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNYw4-0002W1-FT
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 08:57:38 +0000
-X-UUID: 9e3b7e09138a4ca4a19f6fb2387a236d-20191024
-X-UUID: 9e3b7e09138a4ca4a19f6fb2387a236d-20191024
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <walter-zh.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1601518023; Thu, 24 Oct 2019 00:58:07 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 24 Oct 2019 01:57:07 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 24 Oct 2019 16:57:05 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Thu, 24 Oct 2019 16:57:05 +0800
-From: Walter Wu <walter-zh.wu@mediatek.com>
-To: Andrey Ryabinin <aryabinin@virtuozzo.com>, Alexander Potapenko
- <glider@google.com>, Dmitry Vyukov <dvyukov@google.com>, Matthias Brugger
- <matthias.bgg@gmail.com>
-Subject: [PATCH v3 1/2] kasan: detect negative size in memory operation
- function
-Date: Thu, 24 Oct 2019 16:57:06 +0800
-Message-ID: <20191024085706.12844-1-walter-zh.wu@mediatek.com>
-X-Mailer: git-send-email 2.18.0
+ id 1iNZB6-0007Yy-2B
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 09:13:09 +0000
+Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1F91A2166E;
+ Thu, 24 Oct 2019 09:13:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571908387;
+ bh=94SGITL+w13cs21+YWm/2mrBkeLrhfSnXixPWxASHZI=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=e7eBgKB/LnonMT8DJUrTUn7M2Re+QL7lE04vQh3IVdmZgI515HPhtzdWbfAT77KMO
+ l2C9GMpZ6riIM/3taO6yPSL4Kmzao9gbNPNwx4BxuboVrLGUhnnGJyKc3KckYB/nwE
+ u0AXlOCkNvAR4pAEtOfX6eVx3ePI74WKvVbGBJkU=
+Date: Thu, 24 Oct 2019 11:13:04 +0200
+From: Maxime Ripard <mripard@kernel.org>
+To: Jernej Skrabec <jernej.skrabec@siol.net>
+Subject: Re: [PATCH] arm64: dts: allwinner: h6: tanix-tx6: Add IR remote
+ mapping
+Message-ID: <20191024091304.kx27imohmuzufvtr@gilmour>
+References: <20191024054135.3819223-1-jernej.skrabec@siol.net>
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20191024054135.3819223-1-jernej.skrabec@siol.net>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_015736_525045_BF8C2041 
-X-CRM114-Status: GOOD (  14.91  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191024_021308_128433_EFA24268 
+X-CRM114-Status: GOOD (  16.53  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,230 +76,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Walter Wu <walter-zh.wu@mediatek.com>,
- wsd_upstream <wsd_upstream@mediatek.com>, linux-kernel@vger.kernel.org,
- kasan-dev@googlegroups.com, linux-mm@kvack.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, wens@csie.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org, Michael Lange <linuxstuff@milaw.biz>
+Content-Type: multipart/mixed; boundary="===============3525069934129227498=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-KASAN missed detecting size is negative numbers in memset(), memcpy(),
-and memmove(), it will cause out-of-bounds bug, so needs to be detected
-by KASAN.
 
-If size is negative numbers, then it has three reasons to be
-defined as heap-out-of-bounds bug type.
-1) Casting negative numbers to size_t would indeed turn up as
-   a large size_t and its value will be larger than ULONG_MAX/2,
-   so that this can qualify as out-of-bounds.
-2) If KASAN has new bug type and user-space passes negative size,
-   then there are duplicate reports. So don't produce new bug type
-   in order to prevent duplicate reports by some systems (e.g. syzbot)
-   to report the same bug twice.
-3) When size is negative numbers, it may be passed from user-space.
-   So we always print heap-out-of-bounds in order to prevent that
-   kernel-space and user-space have the same bug but have duplicate
-   reports.
+--===============3525069934129227498==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="yoemxlzmfbbaspsf"
+Content-Disposition: inline
 
-KASAN report:
 
- BUG: KASAN: heap-out-of-bounds in kmalloc_memmove_invalid_size+0x70/0xa0
- Read of size 18446744073709551608 at addr ffffff8069660904 by task cat/72
+--yoemxlzmfbbaspsf
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
- CPU: 2 PID: 72 Comm: cat Not tainted 5.4.0-rc1-next-20191004ajb-00001-gdb8af2f372b2-dirty #1
- Hardware name: linux,dummy-virt (DT)
- Call trace:
-  dump_backtrace+0x0/0x288
-  show_stack+0x14/0x20
-  dump_stack+0x10c/0x164
-  print_address_description.isra.9+0x68/0x378
-  __kasan_report+0x164/0x1a0
-  kasan_report+0xc/0x18
-  check_memory_region+0x174/0x1d0
-  memmove+0x34/0x88
-  kmalloc_memmove_invalid_size+0x70/0xa0
+Hi,
 
-[1] https://bugzilla.kernel.org/show_bug.cgi?id=199341
+On Thu, Oct 24, 2019 at 07:41:35AM +0200, Jernej Skrabec wrote:
+> Tanix TX6 box comes with a remote. Add a mapping for it.
+>
+> Suggested-by: Michael Lange <linuxstuff@milaw.biz>
+> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> ---
+>  arch/arm64/boot/dts/allwinner/sun50i-h6-tanix-tx6.dts | 1 +
+>  1 file changed, 1 insertion(+)
+>
+> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-tanix-tx6.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-tanix-tx6.dts
+> index 7e7cb10e3d96..e9428ad4266e 100644
+> --- a/arch/arm64/boot/dts/allwinner/sun50i-h6-tanix-tx6.dts
+> +++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-tanix-tx6.dts
+> @@ -81,6 +81,7 @@
+>  };
+>
+>  &r_ir {
+> +	linux,rc-map-name = "rc-tanix-tx5max";
+>  	status = "okay";
+>  };
 
-Changes in v2:
-Fix the indentation bug, thanks for the reminder Matthew.
+It doesn't look like it's documented in the binding. Please add it
+there as well.
 
-Changes in v3:
-Add a confition for memory operation function, need to
-avoid the false alarm when KASAN un-initialized.
+Maxime
 
-Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
-Reported-by: Dmitry Vyukov <dvyukov@google.com>
-Suggested-by: Dmitry Vyukov <dvyukov@google.com>
-Reviewed-by: Dmitry Vyukov <dvyukov@google.com>
-Cc: Andrey Ryabinin <aryabinin@virtuozzo.com>
-Cc: Alexander Potapenko <glider@google.com>
-Reported-by: kernel test robot <lkp@intel.com>
----
- mm/kasan/common.c         | 18 +++++++++++++-----
- mm/kasan/generic.c        |  5 +++++
- mm/kasan/generic_report.c | 18 ++++++++++++++++++
- mm/kasan/report.c         |  2 +-
- mm/kasan/tags.c           |  5 +++++
- mm/kasan/tags_report.c    | 18 ++++++++++++++++++
- 6 files changed, 60 insertions(+), 6 deletions(-)
+--yoemxlzmfbbaspsf
+Content-Type: application/pgp-signature; name="signature.asc"
 
-diff --git a/mm/kasan/common.c b/mm/kasan/common.c
-index 6814d6d6a023..4ff67e2fd2db 100644
---- a/mm/kasan/common.c
-+++ b/mm/kasan/common.c
-@@ -99,10 +99,14 @@ bool __kasan_check_write(const volatile void *p, unsigned int size)
- }
- EXPORT_SYMBOL(__kasan_check_write);
- 
-+extern bool report_enabled(void);
-+
- #undef memset
- void *memset(void *addr, int c, size_t len)
- {
--	check_memory_region((unsigned long)addr, len, true, _RET_IP_);
-+	if (report_enabled() &&
-+	    !check_memory_region((unsigned long)addr, len, true, _RET_IP_))
-+		return NULL;
- 
- 	return __memset(addr, c, len);
- }
-@@ -110,8 +114,10 @@ void *memset(void *addr, int c, size_t len)
- #undef memmove
- void *memmove(void *dest, const void *src, size_t len)
- {
--	check_memory_region((unsigned long)src, len, false, _RET_IP_);
--	check_memory_region((unsigned long)dest, len, true, _RET_IP_);
-+	if (report_enabled() &&
-+	   (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
-+	    !check_memory_region((unsigned long)dest, len, true, _RET_IP_)))
-+		return NULL;
- 
- 	return __memmove(dest, src, len);
- }
-@@ -119,8 +125,10 @@ void *memmove(void *dest, const void *src, size_t len)
- #undef memcpy
- void *memcpy(void *dest, const void *src, size_t len)
- {
--	check_memory_region((unsigned long)src, len, false, _RET_IP_);
--	check_memory_region((unsigned long)dest, len, true, _RET_IP_);
-+	if (report_enabled() &&
-+	   (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
-+	    !check_memory_region((unsigned long)dest, len, true, _RET_IP_)))
-+		return NULL;
- 
- 	return __memcpy(dest, src, len);
- }
-diff --git a/mm/kasan/generic.c b/mm/kasan/generic.c
-index 616f9dd82d12..02148a317d27 100644
---- a/mm/kasan/generic.c
-+++ b/mm/kasan/generic.c
-@@ -173,6 +173,11 @@ static __always_inline bool check_memory_region_inline(unsigned long addr,
- 	if (unlikely(size == 0))
- 		return true;
- 
-+	if (unlikely((long)size < 0)) {
-+		kasan_report(addr, size, write, ret_ip);
-+		return false;
-+	}
-+
- 	if (unlikely((void *)addr <
- 		kasan_shadow_to_mem((void *)KASAN_SHADOW_START))) {
- 		kasan_report(addr, size, write, ret_ip);
-diff --git a/mm/kasan/generic_report.c b/mm/kasan/generic_report.c
-index 36c645939bc9..52a92c7db697 100644
---- a/mm/kasan/generic_report.c
-+++ b/mm/kasan/generic_report.c
-@@ -107,6 +107,24 @@ static const char *get_wild_bug_type(struct kasan_access_info *info)
- 
- const char *get_bug_type(struct kasan_access_info *info)
- {
-+	/*
-+	 * If access_size is negative numbers, then it has three reasons
-+	 * to be defined as heap-out-of-bounds bug type.
-+	 * 1) Casting negative numbers to size_t would indeed turn up as
-+	 *    a large size_t and its value will be larger than ULONG_MAX/2,
-+	 *    so that this can qualify as out-of-bounds.
-+	 * 2) If KASAN has new bug type and user-space passes negative size,
-+	 *    then there are duplicate reports. So don't produce new bug type
-+	 *    in order to prevent duplicate reports by some systems
-+	 *    (e.g. syzbot) to report the same bug twice.
-+	 * 3) When size is negative numbers, it may be passed from user-space.
-+	 *    So we always print heap-out-of-bounds in order to prevent that
-+	 *    kernel-space and user-space have the same bug but have duplicate
-+	 *    reports.
-+	 */
-+	if ((long)info->access_size < 0)
-+		return "heap-out-of-bounds";
-+
- 	if (addr_has_shadow(info->access_addr))
- 		return get_shadow_bug_type(info);
- 	return get_wild_bug_type(info);
-diff --git a/mm/kasan/report.c b/mm/kasan/report.c
-index 621782100eaa..c79e28814e8f 100644
---- a/mm/kasan/report.c
-+++ b/mm/kasan/report.c
-@@ -446,7 +446,7 @@ static void print_shadow_for_address(const void *addr)
- 	}
- }
- 
--static bool report_enabled(void)
-+bool report_enabled(void)
- {
- 	if (current->kasan_depth)
- 		return false;
-diff --git a/mm/kasan/tags.c b/mm/kasan/tags.c
-index 0e987c9ca052..b829535a3ad7 100644
---- a/mm/kasan/tags.c
-+++ b/mm/kasan/tags.c
-@@ -86,6 +86,11 @@ bool check_memory_region(unsigned long addr, size_t size, bool write,
- 	if (unlikely(size == 0))
- 		return true;
- 
-+	if (unlikely((long)size < 0)) {
-+		kasan_report(addr, size, write, ret_ip);
-+		return false;
-+	}
-+
- 	tag = get_tag((const void *)addr);
- 
- 	/*
-diff --git a/mm/kasan/tags_report.c b/mm/kasan/tags_report.c
-index 969ae08f59d7..f7ae474aef3a 100644
---- a/mm/kasan/tags_report.c
-+++ b/mm/kasan/tags_report.c
-@@ -36,6 +36,24 @@
- 
- const char *get_bug_type(struct kasan_access_info *info)
- {
-+	/*
-+	 * If access_size is negative numbers, then it has three reasons
-+	 * to be defined as heap-out-of-bounds bug type.
-+	 * 1) Casting negative numbers to size_t would indeed turn up as
-+	 *    a large size_t and its value will be larger than ULONG_MAX/2,
-+	 *    so that this can qualify as out-of-bounds.
-+	 * 2) If KASAN has new bug type and user-space passes negative size,
-+	 *    then there are duplicate reports. So don't produce new bug type
-+	 *    in order to prevent duplicate reports by some systems
-+	 *    (e.g. syzbot) to report the same bug twice.
-+	 * 3) When size is negative numbers, it may be passed from user-space.
-+	 *    So we always print heap-out-of-bounds in order to prevent that
-+	 *    kernel-space and user-space have the same bug but have duplicate
-+	 *    reports.
-+	 */
-+	if ((long)info->access_size < 0)
-+		return "heap-out-of-bounds";
-+
- #ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
- 	struct kasan_alloc_meta *alloc_meta;
- 	struct kmem_cache *cache;
--- 
-2.18.0
+-----BEGIN PGP SIGNATURE-----
 
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXbFrIAAKCRDj7w1vZxhR
+xSLmAQCrGSV7h6ubrgNIb93gmoTRSxqGtJeh8hrmzYdc3uFNbwD+MBU0i/CRyUNp
+RH2WGZE4M2I578Xre1fIqzZ5VlEiaQk=
+=Wl18
+-----END PGP SIGNATURE-----
+
+--yoemxlzmfbbaspsf--
+
+
+--===============3525069934129227498==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3525069934129227498==--
+
