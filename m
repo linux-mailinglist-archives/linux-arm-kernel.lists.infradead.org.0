@@ -2,84 +2,113 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC368E27D2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 03:47:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89031E27E5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 03:58:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qdJh5EsyBm8tu8tEjsfZSyS3VC1yJVZs7X9BsRQbxzs=; b=iAxofyBj/PxEhm
-	Lkoe1LqFq5wew5NHYOKYwULPJitWsdfS2YhV3hu4ls04DWudITxKvBnOnt7QTlt+aAQ7uyOLCroZh
-	zp6nT+iKRSHFud//ppMDIsDy12GScdtxeCIuAV9PUX2Hzk42KjGPqNah/rKpQc8Kzfs09aJIYExAo
-	hr3GBJNTDbiZwn5NIQuobvKBnCzlVA/UfEgz8IbOQfRS+NCiv2j9Lw7Zc5k8Z1gAgMBIUPTcT77Zr
-	Qe27MavQN8iM9Dlz7Ua7R9UqWJI9kwoTdB55mMofmU7yBfpA1ytCTlOzm6rHcUapeDcHyVKDjx2Bg
-	rwFfFi0vPY4m8Zi/nf4A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0PfIWESjqf+xFETXZuzCZlYE7bck4pnj2jpMYHDqpRc=; b=mDPJsUzTvvLKkj
+	D6YyTN2kz6IfP1IF/Wa3zvRqWg22T7AKIavwW8/LceAVtGNqHtxnTBCmgv7fIpVI5WVdpL68oA8La
+	qfilPPy+FnrAIiaZsoWAVIJrTn+JCeQdZidbHapuPdZHikSe2U4Ebi+Sm+/8jGaj4WNEfp3KTjW45
+	/0rYYgfTZ0L3dXsD+IoNeOevE/wJzH89jOVfyyiHDkKl9OfzOd2b3WbWWSAJkWZ7J0eOuOKb5eLKC
+	YUWWVSXwxWuFvAQAEQ20v/JJMv9RHtPtDH9lUF+f7gboPvMDHXoNZgo46KtBR6Xe5pbY7xH4k5BDi
+	UESQn/zzsTZtnjXa/pXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNSEG-0007e9-GS; Thu, 24 Oct 2019 01:47:56 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1iNSOp-00035J-Qd; Thu, 24 Oct 2019 01:58:51 +0000
+Received: from mail-eopbgr20049.outbound.protection.outlook.com ([40.107.2.49]
+ helo=EUR02-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNSE0-0007cY-8E
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 01:47:41 +0000
-Received: by mail-pf1-x441.google.com with SMTP id b128so14081643pfa.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 23 Oct 2019 18:47:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=0x0f.com; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=r+v++LJz2UtADy1cS2OkPl2XbtGtt1rFLT7PbQVU178=;
- b=FfyvblohnumehZApPiCnRaZxuyFEHdqk5OyDTBEOP+BfOTBvUjkFq6SSx4hsS/iPs1
- omQJinbl9mu6pQnGVTsqhimfp9y+eLEp1dgFM5P58PG5vQz9PKTPuIqnjJtYLtWLFVTZ
- 8tAL70O/gmliWAM0nMpyEBRzzKwHsjQKI+Mso=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=r+v++LJz2UtADy1cS2OkPl2XbtGtt1rFLT7PbQVU178=;
- b=EVDdrQJHZFvGB3KynlzPAFyIqBy563ecY0vJk1fXE6+yEFyTzjtxs+g5AHQsJVyj49
- edgtmxQxCvZTzaFHlbox0RCMjqDMTWwyi6+eLsefebLHMe/w+HOfAvF0wjMi31fTHiCX
- UBOeYhZc+jc4lH6iYPvUftBqh+gH74kAeSRGDSYdJIJCgN/C7JggGqhrMGFf0ZI7T5b5
- hcZ09OF1W2mk4l+Gjf/ZgIh+IOmHPQ8jUNRgZ5YsjseKxbYVrw8n3+qSaHZdjZZPMhUT
- gXjVgAuIrtPYiiBHRuO4yewg1D+zu56DTaKjM11wl4njAeXI7wBrf90Egl5RSbMixM7P
- ghHQ==
-X-Gm-Message-State: APjAAAVt7I3tE8OEnS8hFqTyBN3GnSCSCJhJpPgiytA8rQL5zco55tVj
- qkgh5SS0+qhoroEUTomUlGszLA==
-X-Google-Smtp-Source: APXvYqzjuQPwTlwiGWQJArevnuNtf/BUZhD73XiE/Bfu4lxll4NKeL0JCsdquj30nMOYWLPGj/0JHw==
-X-Received: by 2002:aa7:9105:: with SMTP id 5mr11748563pfh.245.1571881658843; 
- Wed, 23 Oct 2019 18:47:38 -0700 (PDT)
-Received: from goma (p1092222-ipngn200709sizuokaden.shizuoka.ocn.ne.jp.
- [220.106.235.222])
- by smtp.gmail.com with ESMTPSA id y138sm25464902pfb.174.2019.10.23.18.47.36
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 23 Oct 2019 18:47:37 -0700 (PDT)
-Date: Thu, 24 Oct 2019 10:47:33 +0900
-From: Daniel Palmer <daniel@0x0f.com>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH 1/4] dt-bindings: arm: Initial MStar vendor prefixes and
- compatible strings
-Message-ID: <20191024014731.GA3731@goma>
-References: <20191014061617.10296-1-daniel@0x0f.com>
- <20191023200228.GA29675@bogus> <20191023224357.GA26445@goma>
- <CAL_JsqKTiieO_7gM4YNGV-BAT67Mi+PX4Gqyyd7nowZsjhnFqQ@mail.gmail.com>
+ id 1iNSOb-00033d-4U
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 01:58:38 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=m+XDLkOg5hHA/jFmIWk2s5DXfdeqO+Kcb1H63Rb8OGx8f6OH54TKUNDqeSAB8SDa0mfaKSCcN+L/7g9HstzVXJzq1OSQ91lKsB+NXINI3kzRqAs/yn76UYeBLuzrZRAD6RLIVdl6gDfAhtuctaR03EefWO01dShTNiBAyXbfBPF8uuHl9VBLYCZhJz0VtnsabntKOmNlAamqX8+ING+noAdugRLMU2SlPcj8BM6giMYJdgu+iMWP04tDZvzv3mUhYLWBBkcMGy2DLUFtB0Wr0XizdoRQ0l9hG+RiEA4hK6M58v/tbJ41AJr1PHVVnVhsiwcmNZr/zCm9tJq2iajZUQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=GNNW6IdRPNd7T+iUN7P/aWeqGc7Ps1wlIbgD87hNXDY=;
+ b=DyghYwIYHhY2KFZuNJudm8QsXNRr4e4lrwS74n8UHK5awCvia1jaUcGI0qU1JHVyKsc3d8ovJOz1GxGVT3vrU2R94FyfTJl3311Oq9/Fa+URmzsCMQHGwvBqiZ3J2dMY4h/etgfZ0d6x5RcJAkzOX4P05i2ERSeMU0wN7kGqMvP2GdbY+MvA9Yh2BDfV6knntxslVI60Z7V3CbMVXO4I1cX5XDHJ4kwleOKnuwqqS60YzN/9wHxrGXvu74tUc606dC5NKtneh3meXg5BcmLRAyr1SDNlk85tFiLPqJ72CBcRuYdgYoZ+ijGtasz9n4RgyRPycA4V39y42qWVbOT8dg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=GNNW6IdRPNd7T+iUN7P/aWeqGc7Ps1wlIbgD87hNXDY=;
+ b=rAAyQXv7pUNHshsjm3/KdlQwEjP5NjDKiPVAEo45jUQWvSc8/qHPxkCvJqT8YnLXZrc3eUpnKN0f1fjC5Lc0WkR6rw9Xf/ApfDWyHklZaAsI0MwkHy+pE+VlwHIah7Z4t9vRkZD02p+UH5K8Obo4YG3cypiv/wRDY8jx3iNcw7w=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB5988.eurprd04.prod.outlook.com (20.178.115.19) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2387.20; Thu, 24 Oct 2019 01:58:32 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::843c:e722:27cb:74e1]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::843c:e722:27cb:74e1%5]) with mapi id 15.20.2347.030; Thu, 24 Oct 2019
+ 01:58:32 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: "mturquette@baylibre.com" <mturquette@baylibre.com>, "sboyd@kernel.org"
+ <sboyd@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "festevam@gmail.com"
+ <festevam@gmail.com>
+Subject: [PATCH V2 0/3] clk: imx: imx8m: mark sys pll1/2 as fixed clock
+Thread-Topic: [PATCH V2 0/3] clk: imx: imx8m: mark sys pll1/2 as fixed clock
+Thread-Index: AQHVig6J8Dr/NaCM/U+VtYt23Ahosg==
+Date: Thu, 24 Oct 2019 01:58:32 +0000
+Message-ID: <1571882110-10191-1-git-send-email-peng.fan@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.7.4
+x-clientproxiedby: HK2PR04CA0082.apcprd04.prod.outlook.com
+ (2603:1096:202:15::26) To AM0PR04MB4481.eurprd04.prod.outlook.com
+ (2603:10a6:208:70::15)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 44679f6a-fb09-4521-c824-08d75825abe6
+x-ms-traffictypediagnostic: AM0PR04MB5988:|AM0PR04MB5988:
+x-ms-exchange-purlcount: 1
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM0PR04MB5988252EA9EA2934E1E70F82886A0@AM0PR04MB5988.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 0200DDA8BE
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(39860400002)(366004)(396003)(376002)(346002)(199004)(189003)(186003)(26005)(316002)(4326008)(64756008)(6116002)(71190400001)(6512007)(6306002)(6436002)(2201001)(305945005)(25786009)(36756003)(14454004)(54906003)(71200400001)(478600001)(110136005)(2501003)(5660300002)(7736002)(52116002)(66556008)(2616005)(99286004)(6486002)(476003)(8936002)(256004)(44832011)(386003)(86362001)(50226002)(6506007)(486006)(102836004)(2906002)(66946007)(966005)(81156014)(81166006)(66066001)(66476007)(8676002)(4744005)(66446008)(3846002)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5988;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: RaQnjIkgf/82IgaklKbXP85i1JEWy0f2OYWY+CTHVUf6MhrT75JyVUv1iIk48UGCaCeKvYwAp/RDOQ+LT2mIEhxrwse8bVeqw/99rA0AqBm9AqQuqlmWG2A+gM2h8Gs8c3jMWH/mcknh9NjtMtMdQKc8tUBHoH/Nx9LSU2gpmneRQ0P5g6U3g5Qfvol+xG2pnbJi1HZOYRENt97DGcv6j/0uFLFiUGzthe1NBe4lRZeYo5o+QU7XiGOLeO7rj6u/7kawN22DxPLp/7Ihxmy0Op37HQw0Zap0eDNTuElh+P56tghll2fhCODgU337YuuYJW3UuFY4Gi0saRkwEOEeNvaZ9bqgXQpnHQhDaxpLDv0Cg5ZOy+iSWcUWU79RLz7TPtVa1p0m1JaStiy8hL6Ap+ZNW76DXRUknvoH32AqqFlldQLAegqDrEzP086UoTQD0VnOq7o29abpbBOJanw+SCjh5YLV75rfcBMqUYXz3ZE=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAL_JsqKTiieO_7gM4YNGV-BAT67Mi+PX4Gqyyd7nowZsjhnFqQ@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 44679f6a-fb09-4521-c824-08d75825abe6
+X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Oct 2019 01:58:32.1045 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: pwmqDdcjd2pC2odLJGfpCrklJ52dqIyfqWSS081jjFk5lzF+Qz1FSbqtnvvX47kQK/X0Hy4YeoYpj5DiqSvv/Q==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5988
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_184740_408603_B893A6BA 
-X-CRM114-Status: GOOD (  15.99  )
+X-CRM114-CacheID: sfid-20191023_185837_274985_40AE8E24 
+X-CRM114-Status: UNSURE (   8.64  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.2.49 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -98,62 +127,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
+Cc: Peng Fan <peng.fan@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
+ Anson Huang <anson.huang@nxp.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Jacky Bai <ping.bai@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 23, 2019 at 06:45:29PM -0500, Rob Herring wrote:
-> > I used the sunxi file as a template and thought they had some
-> > reason to do that. I'll change it to just GPL-2.0.
-> 
-> That wasn't a choice, but dual license it please.
+From: Peng Fan <peng.fan@nxp.com>
 
-Will do.
+V2:
+ Add R-b tag from Abel
+ v2 patches are made with Leonard's v3 patchset[1] applied to Shawn's
+ for-next branch to avoid conflicts.
+ [1] https://patchwork.kernel.org/cover/11193191/
 
-> Sounds like you want:
-> 
-> items:
->  - const: thingyjp,breadbee
->  - enum:
->      - mstar,infinity
->      - mstar,infinity3
-> 
-> If one board can do both chips. Though if the same PCB is populated
-> differently beyond the SoC, then maybe 2 board compatibles makes
-> sense.
+According Architecture definition guide of i.MX8MM/N/Q,
+SYS_PLL1 is fixed at 800MHz, SYS_PLL2 is fixed at 1000MHz,
+so let's use imx_clk_fixed to register the clocks and drop code
+that could change the rate.
 
-You can take one chip off and swap it with the other without any PCB/component
-changes but as I've been working on both chips there are a few differences
-coming up that means you can't use the same DT for both configurations.
-For example the ethernet phy needs to be configured differently, the i1
-SoC has less instances of the DMA controller blocks and so on.
+Peng Fan (3):
+  clk: imx: imx8mm: mark sys_pll1/2 as fixed clock
+  clk: imx: imx8mn: mark sys_pll1/2 as fixed clock
+  clk: imx: imx8mq: mark sys1/2_pll as fixed clock
 
-The version of the chip can be detected from a register and I had considered
-patching over the differences based on that but I couldn't find an example
-of doing it within the kernel. So I'm detecting the chip version in u-boot and
-loading the right DT there.
- 
-> Why not use the part numbers (msc313...)?
+ drivers/clk/imx/clk-imx8mm.c | 46 +++++++++++++++++++-------------------------
+ drivers/clk/imx/clk-imx8mn.c | 46 +++++++++++++++++++-------------------------
+ drivers/clk/imx/clk-imx8mq.c |  8 ++------
+ 3 files changed, 42 insertions(+), 58 deletions(-)
 
-I had initially done that when I thought i1 was the msc31e and i3 was the
-msc313e. For the i1 the only part I have found so far is the msc313 but
-the i3 is a series of around 4 or 5 different configurations of the same SoC 
-with differing amounts of DDR and pins. This is like the AllWinner V3S and 
-S3/S3L where the same V3 SoC is packaged differently. As there is no source
-of this information that appears on a google search I've started documenting
-it at http://linux-chenxing.org/
+-- 
+2.16.4
 
-I think the only place the actual chip model will need to be used will be a
-compatible string for the pinctrl driver to setup the right pin numbers.
-
-Thanks,
-
-Daniel
 
 _______________________________________________
 linux-arm-kernel mailing list
