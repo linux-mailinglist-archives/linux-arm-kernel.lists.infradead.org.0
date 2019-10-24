@@ -2,88 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77818E3FD6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 00:59:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC36EE4013
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 01:08:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=PJ1/7L+OlPUn0wWCjX6ianJBlAfLDXJVA2noPczv8CI=; b=CYO
-	pL+GFogPuewiddBafj4jfT8/wii5cDsQ+g0U27l1Hj0siKh/HdzRUklfqIdO1wdIOsvRFLaua/Jtv
-	VLidYUQ8jIkydT8sq+UZc3EwXnIBOYhX7h4NpKBghS3USA3RZ8rPYnyjPpEv+ytM4CVT4KFNcO3Ug
-	mM6HZGz72tAf4MSuqayviIXQMZIV19KlGfz6zHM8sbbWc/0iYNFdd39dvx8Sucnv8pao4ORAFfDZ5
-	chgNm5+X3C0z0GplQu7bZVYx2tVrHn4EUlWYTcQdG3mTExQV5DWd0dfDzPlgjSGS8uw7WD+2spAqw
-	IDQMGkqcDAURq6BtogQ3LLlOohxqqxA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=refsO0Ki+WSE6f9cSylm1vAmgP/XH4ALHTwyZ5USQnk=; b=guQWFYBcbXXaL/
+	1ryvBBt6j9RcIxXz5DDf3YYfOuZCZQAwP2aY2l2IBTXmbQi5Y0aii1GMoWSTZTzJxiZv+rNPihXAZ
+	0Yas32LjTbadaPY/M5Nvpkvo8mOi40jMoHBnvxt6mEi9A8DH/CdnZlUjO9r4XET8fD6n7qRWVIFG0
+	RFOAUL3xcXy/Q4fmmTNER8Y/a7ARD2Q5J+7P71ctDh27i2hT2wbznzZdH/Um0Q9pajuP9mWcZjRxT
+	VXk4/13bVY4QI/fdMrNFVhDdBRqmDhfrnAShuwAIeg90b6A0AuK4RTGg25BXs4tTH04VTV3eqixqI
+	WVsw36B7yBWk9D666sJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNm4g-0000Rh-4V; Thu, 24 Oct 2019 22:59:22 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1iNmDS-0003zo-AO; Thu, 24 Oct 2019 23:08:26 +0000
+Received: from mga02.intel.com ([134.134.136.20])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNm4T-0000Lw-Kx
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 22:59:10 +0000
-Received: by mail-qt1-x843.google.com with SMTP id w14so393280qto.9
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 24 Oct 2019 15:59:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=Umpb6oSNdYnjO3XOvkinVQve2RoGetZPOo2c/F2xi80=;
- b=Hw9TDBLrAp/v/cVCJTZ/bTDmQj5RMWWEAmJiNkRscFOZtwYbjlT1PcoJdWyXKQIiQ2
- eBprfFzxpHCajS5VuxC8GcSMfUIpLVU0hXcHgzykEC6oaN46Q5iluDIQWq0ejypKLiOr
- mfehCDSvU8iqhBs4GE/hZbxRtoSQXldYoXbNFTojAvPqFCVdcVO5CFL7YiuzFypIPn+P
- mwLXE1+HsKSs6NatPShOYBw4mZ/k08i8Rm+E6Eq2KAvyGh//VPDAOCwRTLieEJnTPYil
- /aqhLZHnvi4JS7rYLZjE8hFXYC8WfgWJ+WZY1LoA2+ncBk3z64mu2HZlBcagflkQGFyY
- ZpKg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=Umpb6oSNdYnjO3XOvkinVQve2RoGetZPOo2c/F2xi80=;
- b=Up3AeWl/NFAKULFrvUo3/ekqraQGpsdKPwzSQ8I8kRUq0nDVgzwbtGhbQXep7NxPjB
- xeqOHYcHN5NLp86h70JQbQ8W8hHqO6Aul641SI+jtUmo3/3dP0C0sFnD6BmhljDQLmVh
- epMOwwcE3s7OUIQE98rLsFQlljQAZniOKKH/I+hR9UFle6uDoUZJMkkobmFi/GlwTvCE
- MFS9PATdFboOO7OEzzsQeMkYzDg7MNxw2xLkYuXWq0TH0z7SJMuvNKSrrmtz+hRXoc0X
- tyfxWvpBk3UocM/2s02xGLKQsZYTveq56gNAifnO+syTqPVNsislG4cMTeORSGzR6x0h
- 8NSw==
-X-Gm-Message-State: APjAAAWfrxUF7g+V7NGRSdlQr4LsudOvXnsTBD39Em5CSoDAcgBBQ09T
- yqhoV7i+q/40IwwiMmNvEJKQ1r0XYeM=
-X-Google-Smtp-Source: APXvYqyE03F7rJtpAytE/Agt7Up+HCI4UZlYF9RllOZC6ge634nWH32X83A2sJWWdGVY5IFoxvz/QA==
-X-Received: by 2002:ac8:2c86:: with SMTP id 6mr109730qtw.317.1571957948114;
- Thu, 24 Oct 2019 15:59:08 -0700 (PDT)
-Received: from fabio-Latitude-E5450.nxp.com
- ([2804:14c:482:99:1a50:482f:3e7:284a])
- by smtp.gmail.com with ESMTPSA id s21sm338939qtc.12.2019.10.24.15.59.05
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 24 Oct 2019 15:59:07 -0700 (PDT)
-From: Fabio Estevam <festevam@gmail.com>
-To: shawnguo@kernel.org
-Subject: [PATCH] ARM: imx_v6_v7_defconfig: Enable CONFIG_TOUCHSCREEN_DA9052
-Date: Thu, 24 Oct 2019 19:59:11 -0300
-Message-Id: <20191024225911.14032-1-festevam@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ id 1iNmCs-0003hs-M6
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 23:07:52 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga006.jf.intel.com ([10.7.209.51])
+ by orsmga101.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 24 Oct 2019 16:07:45 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.68,226,1569308400"; d="scan'208";a="202445828"
+Received: from sjchrist-coffee.jf.intel.com ([10.54.74.41])
+ by orsmga006.jf.intel.com with ESMTP; 24 Oct 2019 16:07:45 -0700
+From: Sean Christopherson <sean.j.christopherson@intel.com>
+To: James Hogan <jhogan@kernel.org>, Paul Mackerras <paulus@ozlabs.org>,
+ Christian Borntraeger <borntraeger@de.ibm.com>,
+ Janosch Frank <frankja@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>,
+ =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>,
+ Marc Zyngier <maz@kernel.org>
+Subject: [PATCH v3 00/15] KVM: Dynamically size memslot arrays
+Date: Thu, 24 Oct 2019 16:07:29 -0700
+Message-Id: <20191024230744.14543-1-sean.j.christopherson@intel.com>
+X-Mailer: git-send-email 2.22.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_155909_708374_12AC5DF7 
-X-CRM114-Status: UNSURE (   8.76  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191024_160750_766645_88658A21 
+X-CRM114-Status: GOOD (  11.89  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.20 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,36 +66,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, Fabio Estevam <festevam@gmail.com>,
- linux-imx@nxp.com, kernel@pengutronix.de
-MIME-Version: 1.0
+Cc: linux-arm-kernel@lists.infradead.org,
+ Christoffer Dall <christoffer.dall@arm.com>,
+ Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
+ David Hildenbrand <david@redhat.com>, Joerg Roedel <joro@8bytes.org>,
+ Cornelia Huck <cohuck@redhat.com>, linux-mips@vger.kernel.org,
+ Sean Christopherson <sean.j.christopherson@intel.com>,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ kvm-ppc@vger.kernel.org, Vitaly Kuznetsov <vkuznets@redhat.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, kvmarm@lists.cs.columbia.edu,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Jim Mattson <jmattson@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable the CONFIG_TOUCHSCREEN_DA9052 option, so that touchscreen
-can be functional by default on imx53-qsb.
+The end goal of this series is to dynamically size the memslot array so
+that KVM allocates memory based on the number of memslots in use, as
+opposed to unconditionally allocating memory for the maximum number of
+memslots.  On x86, each memslot consumes 88 bytes, and so with 2 address
+spaces of 512 memslots, each VM consumes ~90k bytes for the memslots.
+E.g. given a VM that uses a total of 30 memslots, dynamic sizing reduces
+the memory footprint from 90k to ~2.6k bytes.
 
-Signed-off-by: Fabio Estevam <festevam@gmail.com>
----
- arch/arm/configs/imx_v6_v7_defconfig | 1 +
- 1 file changed, 1 insertion(+)
+The changes required to support dynamic sizing are relatively small,
+e.g. are essentially contained in patches 14/15 and 15/15.  Patches 1-13
+clean up the memslot code, which has gotten quite crusty, especially
+__kvm_set_memory_region().  The clean up is likely not strictly necessary
+to switch to dynamic sizing, but I didn't have a remotely reasonable
+level of confidence in the correctness of the dynamic sizing without first
+doing the clean up.
 
-diff --git a/arch/arm/configs/imx_v6_v7_defconfig b/arch/arm/configs/imx_v6_v7_defconfig
-index 945a0b02d3ac..26d6dee67aa6 100644
---- a/arch/arm/configs/imx_v6_v7_defconfig
-+++ b/arch/arm/configs/imx_v6_v7_defconfig
-@@ -179,6 +179,7 @@ CONFIG_MOUSE_PS2=m
- CONFIG_MOUSE_PS2_ELANTECH=y
- CONFIG_INPUT_TOUCHSCREEN=y
- CONFIG_TOUCHSCREEN_ADS7846=y
-+CONFIG_TOUCHSCREEN_DA9052=y
- CONFIG_TOUCHSCREEN_EGALAX=y
- CONFIG_TOUCHSCREEN_GOODIX=y
- CONFIG_TOUCHSCREEN_MAX11801=y
+Christoffer, I added your Tested-by to the patches that I was confident
+would be fully tested based on the desription of what you tested.  Let me
+know if you disagree with any of 'em.
+
+v3:
+  - Fix build errors on PPC and MIPS due to missed params during
+    refactoring [kbuild test robot].
+  - Rename the helpers for update_memslots() and add comments describing
+    the new algorithm and how it interacts with searching [Paolo].
+  - Remove the unnecessary and obnoxious warning regarding memslots being
+    a flexible array [Paolo].
+  - Fix typos in the changelog of patch 09/15 [Christoffer].
+  - Collect tags [Christoffer].
+
+v2:
+  - Split "Drop kvm_arch_create_memslot()" into three patches to move
+    minor functional changes to standalone patches [Janosch].
+  - Rebase to latest kvm/queue (f0574a1cea5b, "KVM: x86: fix ...")
+  - Collect an Acked-by and a Reviewed-by
+
+
+Sean Christopherson (15):
+  KVM: Reinstall old memslots if arch preparation fails
+  KVM: Don't free new memslot if allocation of said memslot fails
+  KVM: PPC: Move memslot memory allocation into prepare_memory_region()
+  KVM: x86: Allocate memslot resources during prepare_memory_region()
+  KVM: Drop kvm_arch_create_memslot()
+  KVM: Explicitly free allocated-but-unused dirty bitmap
+  KVM: Refactor error handling for setting memory region
+  KVM: Move setting of memslot into helper routine
+  KVM: Move memslot deletion to helper function
+  KVM: Simplify kvm_free_memslot() and all its descendents
+  KVM: Clean up local variable usage in __kvm_set_memory_region()
+  KVM: Provide common implementation for generic dirty log functions
+  KVM: Ensure validity of memslot with respect to kvm_get_dirty_log()
+  KVM: Terminate memslot walks via used_slots
+  KVM: Dynamically size memslot array based on number of used slots
+
+ arch/mips/include/asm/kvm_host.h      |   2 +-
+ arch/mips/kvm/mips.c                  |  69 +--
+ arch/powerpc/include/asm/kvm_ppc.h    |  17 +-
+ arch/powerpc/kvm/book3s.c             |  22 +-
+ arch/powerpc/kvm/book3s_hv.c          |  36 +-
+ arch/powerpc/kvm/book3s_pr.c          |  20 +-
+ arch/powerpc/kvm/booke.c              |  17 +-
+ arch/powerpc/kvm/powerpc.c            |  13 +-
+ arch/s390/include/asm/kvm_host.h      |   2 +-
+ arch/s390/kvm/kvm-s390.c              |  21 +-
+ arch/x86/include/asm/kvm_page_track.h |   3 +-
+ arch/x86/kvm/page_track.c             |  15 +-
+ arch/x86/kvm/x86.c                    | 101 +----
+ include/linux/kvm_host.h              |  46 +-
+ virt/kvm/arm/arm.c                    |  48 +-
+ virt/kvm/arm/mmu.c                    |  18 +-
+ virt/kvm/kvm_main.c                   | 621 +++++++++++++++++---------
+ 17 files changed, 542 insertions(+), 529 deletions(-)
+
 -- 
-2.17.1
+2.22.0
 
 
 _______________________________________________
