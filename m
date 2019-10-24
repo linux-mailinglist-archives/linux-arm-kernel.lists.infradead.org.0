@@ -2,88 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5AD28E394B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 19:05:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EEEC9E3995
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 19:13:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1+VmqBzMCR/y2OJnEANQz+Eg2t81DnGgKiGXkaQIyVs=; b=IdflgiDcVsO/ck
-	dudZqpL+8Wc7LciX5gfIBiQ3oPWZoSxAjNRYQBbArLtDBlKDmJ6lkedWrFn88oYdi6HjFZPAO+F8t
-	c9aNnGpoNC7OnVtNqw2vBYfwQ8NDzBn/pq2L8/w5QbuSWDK6gYFMIJbNldzozcIqekZvs2uqQSWnb
-	YMRqHfXLQgYfdTuRThgMF8HGyjmUiAaZAE/hhREHmL8CPwexfW15Gipcf7DVrYNis0LcqhLX7iMYB
-	yfpj5v6hVSNXbUV7pox5HeO0Aff2nareMlK0mLD86U02Y9CXhfX3qRstc3xmQap3K91ep8jeV9hCN
-	jxOK6ZO35BoZ5lYWg+yg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=seLMSFDhwpWyW0m4iMVAxRZX6JZeQXGF8VAwIN2LRpY=; b=Yga2aNmRAta7wL
+	ZmmK6SZpigZFqLP8Hu3fFmxLB3C+mqSTDE43tCHIDccCzHyFOUWl5qJCQ2lT7OtfN3IRy1I0/U3lT
+	7fImFYpY1j+cUWACJtZyaA8r8teJH3H+nIfJMtdM3hxmcvXQF81JdX38rJ5eRzux4qP1PloNu/gzO
+	urDR2uh8Q2N5wH/HrVsLSQp3JMhys3gakrPdGUb68i8lkq1HyH+2vQoXWmFlXMoWBnRYsxnjq0g+z
+	M7fynif2zk+4b13nJR9lHaHPNnWWm3cy5Fcn1nmdTDn20aDk1W2IBfeQFkSj9EaM9PJHvIW1zHHmj
+	q2VNYYtgAqMeY7/r3amg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNgYc-00056T-Ez; Thu, 24 Oct 2019 17:05:54 +0000
-Received: from esa5.microchip.iphmx.com ([216.71.150.166])
+	id 1iNgg2-0000Kx-2A; Thu, 24 Oct 2019 17:13:34 +0000
+Received: from hqemgate15.nvidia.com ([216.228.121.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNgYB-0004sH-0c
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 17:05:28 +0000
-Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
- Codrin.Ciubotariu@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
- envelope-from="Codrin.Ciubotariu@microchip.com";
- x-sender="Codrin.Ciubotariu@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa5.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
- envelope-from="Codrin.Ciubotariu@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa5.microchip.iphmx.com;
- dkim=none (message not signed) header.i=none;
- spf=Pass smtp.mailfrom=Codrin.Ciubotariu@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: dTzbzup2PDTL1ft7e2VxNAcemzw2cAxVjj32wRrm9+7FzrcmgC6IggiOGjXpht6kLf8o8r+uBh
- wb2H0ecdo1UisR+/q2pMKgKS86ZbuMT1zvNtej1xLG5f0Vp43hnrIZjtoescD/bIqhlI+wcCWv
- YCNejmVQr6JaeO9DNCoqFWnV9AippM1dkIk0QbXIoG6aNkH1tqaxUXgo+3/UZcoQsmjT25bk2J
- 2tC13Gc6O8etHnASx70oUdhx2Qoyo95kKvK6537HVy1GSHHvkQ/p1JYckbR5a3fTvmuIDJah6s
- T3M=
-X-IronPort-AV: E=Sophos;i="5.68,225,1569308400"; d="scan'208";a="52806866"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 24 Oct 2019 10:05:24 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
- chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Thu, 24 Oct 2019 10:05:23 -0700
-Received: from rob-ult-m19940.microchip.com (10.10.85.251) by
- chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Thu, 24 Oct 2019 10:05:20 -0700
-From: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
-To: <linux-crypto@vger.kernel.org>, <devicetree@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH 2/2] hwrng: atmel: add new platform support for sam9x60
-Date: Thu, 24 Oct 2019 20:04:52 +0300
-Message-ID: <20191024170452.2145-2-codrin.ciubotariu@microchip.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191024170452.2145-1-codrin.ciubotariu@microchip.com>
-References: <20191024170452.2145-1-codrin.ciubotariu@microchip.com>
+ id 1iNgfp-0000KK-Ri
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 17:13:23 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate15.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5db1dbba0002>; Thu, 24 Oct 2019 10:13:30 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Thu, 24 Oct 2019 10:13:21 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Thu, 24 Oct 2019 10:13:21 -0700
+Received: from DRHQMAIL107.nvidia.com (10.27.9.16) by HQMAIL105.nvidia.com
+ (172.20.187.12) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Thu, 24 Oct
+ 2019 17:13:20 +0000
+Received: from [10.21.133.51] (172.20.13.39) by DRHQMAIL107.nvidia.com
+ (10.27.9.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Thu, 24 Oct
+ 2019 17:13:18 +0000
+Subject: Re: [PATCH] spi: Fix SPI_CS_HIGH setting when using native and GPIO CS
+To: Gregory CLEMENT <gregory.clement@bootlin.com>, Mark Brown
+ <broonie@kernel.org>, <linux-spi@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>
+References: <20191018152929.3287-1-gregory.clement@bootlin.com>
+ <dfabf9eb-4f81-91e5-55dc-caea0cdabd2d@nvidia.com> <87zhhqp4wf.fsf@FE-laptop>
+From: Jon Hunter <jonathanh@nvidia.com>
+Message-ID: <4be58f82-eeb1-83a5-4c83-1e86f3b82769@nvidia.com>
+Date: Thu, 24 Oct 2019 18:13:16 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
+In-Reply-To: <87zhhqp4wf.fsf@FE-laptop>
+X-Originating-IP: [172.20.13.39]
+X-ClientProxiedBy: HQMAIL107.nvidia.com (172.20.187.13) To
+ DRHQMAIL107.nvidia.com (10.27.9.16)
+Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1571937210; bh=IGHxywHeWHbvWN/dGZiODRU1Pgz0qNdz6PS2iL/zybc=;
+ h=X-PGP-Universal:Subject:To:CC:References:From:Message-ID:Date:
+ User-Agent:MIME-Version:In-Reply-To:X-Originating-IP:
+ X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=MM/18hyCWxGXMxY6YT9ReV/7/ZgXYKVgBZMHvbH4pc2hpiV43cLaFtS00fWFPWRDL
+ erOSBvWRwITrxAmnu2xrjxMScAx1CyoARtjFmjxmuecIcturc7XchVXhRhRHkK1EhZ
+ RUa/+fsDshDTE0sfaPU98V/ztsOr5bWkKCNLPzlDx2xEQGuwFGCB4vYCaWyOgFVAze
+ b2qg3RWIFVcZwaqmRVm02T8T6xHLsg6CP2Bvz7tZfhgr3LQRfn9Mq1vr652b1mczLM
+ t3YFFCZdh8Yaz054QJzum2+fA47872r3mtNIn1caKFtR/05p0aoV4hRfHuuav11qYR
+ 4tTyid1yiKBpQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_100527_071663_A7ECAAFF 
-X-CRM114-Status: GOOD (  11.97  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191024_101321_916782_44A34F95 
+X-CRM114-Status: GOOD (  18.39  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.150.166 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.64 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,108 +97,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, alexandre.belloni@bootlin.com,
- herbert@gondor.apana.org.au, arnd@arndb.de, Tudor.Ambarus@microchip.com,
- ludovic.desroches@microchip.com, robh+dt@kernel.org, mpm@selenic.com,
- Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>, stable@vger.kernel.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ linux-tegra <linux-tegra@vger.kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add platform support for the new IP found on sam9x60 SoC. For this
-version, if the peripheral clk is above 100MHz, the HALFR bit must be
-set. This bit is available only if the IP can generate a random number
-every 168 cycles (instead of 84).
 
-Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
----
- drivers/char/hw_random/atmel-rng.c | 39 ++++++++++++++++++++++++++++--
- 1 file changed, 37 insertions(+), 2 deletions(-)
+On 24/10/2019 15:57, Gregory CLEMENT wrote:
+> Hello Jon,
+> 
+>> On 18/10/2019 16:29, Gregory CLEMENT wrote:
+>>> When improving the CS GPIO support at core level, the SPI_CS_HIGH
+>>> has been enabled for all the CS lines used for a given SPI controller.
+>>>
+>>> However, the SPI framework allows to have on the same controller native
+>>> CS and GPIO CS. The native CS may not support the SPI_CS_HIGH, so they
+>>> should not be setup automatically.
+>>>
+>>> With this patch the setting is done only for the CS that will use a
+>>> GPIO as CS
+>>>
+>>> Fixes: f3186dd87669 ("spi: Optionally use GPIO descriptors for CS GPIOs")
+>>> Cc: <stable@vger.kernel.org>
+>>> Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
+>>> ---
+>>>  drivers/spi/spi.c | 18 +++++++++---------
+>>>  1 file changed, 9 insertions(+), 9 deletions(-)
+>>>
+>>> diff --git a/drivers/spi/spi.c b/drivers/spi/spi.c
+>>> index 5414a10afd65..1b68acc28c8f 100644
+>>> --- a/drivers/spi/spi.c
+>>> +++ b/drivers/spi/spi.c
+>>> @@ -1880,15 +1880,7 @@ static int of_spi_parse_dt(struct spi_controller *ctlr, struct spi_device *spi,
+>>>  		spi->mode |= SPI_3WIRE;
+>>>  	if (of_property_read_bool(nc, "spi-lsb-first"))
+>>>  		spi->mode |= SPI_LSB_FIRST;
+>>> -
+>>> -	/*
+>>> -	 * For descriptors associated with the device, polarity inversion is
+>>> -	 * handled in the gpiolib, so all chip selects are "active high" in
+>>> -	 * the logical sense, the gpiolib will invert the line if need be.
+>>> -	 */
+>>> -	if (ctlr->use_gpio_descriptors)
+>>> -		spi->mode |= SPI_CS_HIGH;
+>>> -	else if (of_property_read_bool(nc, "spi-cs-high"))
+>>> +	if (of_property_read_bool(nc, "spi-cs-high"))
+>>>  		spi->mode |= SPI_CS_HIGH;
+>>>  
+>>>  	/* Device DUAL/QUAD mode */
+>>> @@ -1952,6 +1944,14 @@ static int of_spi_parse_dt(struct spi_controller *ctlr, struct spi_device *spi,
+>>>  	}
+>>>  	spi->chip_select = value;
+>>>  
+>>> +	/*
+>>> +	 * For descriptors associated with the device, polarity inversion is
+>>> +	 * handled in the gpiolib, so all gpio chip selects are "active high"
+>>> +	 * in the logical sense, the gpiolib will invert the line if need be.
+>>> +	 */
+>>> +	if ((ctlr->use_gpio_descriptors) && ctlr->cs_gpiods[spi->chip_select])
+>>> +		spi->mode |= SPI_CS_HIGH;
+>>> +
+>>
+>> This patch is causing a boot regression on one of our Tegra boards. 
+>> Bisect is pointing to this commit and reverting on top of today's -next
+>> fixes the problem. 
+>>
+>> This patch is causing the following NULL pointer crash which I assume is
+>> because we have not checked if 'ctlr->cs_gpiods' is valid before
+>> dereferencing ...
+> 
+> I've just submitted a fixe for it
+> 
+> https://patchwork.kernel.org/patch/11209839/
 
-diff --git a/drivers/char/hw_random/atmel-rng.c b/drivers/char/hw_random/atmel-rng.c
-index e55705745d5e..0aa9425e6c3e 100644
---- a/drivers/char/hw_random/atmel-rng.c
-+++ b/drivers/char/hw_random/atmel-rng.c
-@@ -14,14 +14,22 @@
- #include <linux/clk.h>
- #include <linux/io.h>
- #include <linux/hw_random.h>
-+#include <linux/of_device.h>
- #include <linux/platform_device.h>
- 
- #define TRNG_CR		0x00
-+#define TRNG_MR		0x04
- #define TRNG_ISR	0x1c
- #define TRNG_ODATA	0x50
- 
- #define TRNG_KEY	0x524e4700 /* RNG */
- 
-+#define TRNG_HALFR	BIT(0) /* generate RN every 168 cycles */
-+
-+struct atmel_trng_pdata {
-+	bool has_half_rate;
-+};
-+
- struct atmel_trng {
- 	struct clk *clk;
- 	void __iomem *base;
-@@ -63,6 +71,7 @@ static int atmel_trng_probe(struct platform_device *pdev)
- {
- 	struct atmel_trng *trng;
- 	struct resource *res;
-+	const struct atmel_trng_pdata *pdata;
- 	int ret;
- 
- 	trng = devm_kzalloc(&pdev->dev, sizeof(*trng), GFP_KERNEL);
-@@ -77,6 +86,17 @@ static int atmel_trng_probe(struct platform_device *pdev)
- 	trng->clk = devm_clk_get(&pdev->dev, NULL);
- 	if (IS_ERR(trng->clk))
- 		return PTR_ERR(trng->clk);
-+	pdata = of_device_get_match_data(&pdev->dev);
-+	if (!pdata)
-+		return -ENODEV;
-+
-+	if (pdata->has_half_rate) {
-+		unsigned long rate = clk_get_rate(trng->clk);
-+
-+		/* if peripheral clk is above 100MHz, set HALFR */
-+		if (rate > 100000000)
-+			writel(TRNG_HALFR, trng->base + TRNG_MR);
-+	}
- 
- 	ret = clk_prepare_enable(trng->clk);
- 	if (ret)
-@@ -141,9 +161,24 @@ static const struct dev_pm_ops atmel_trng_pm_ops = {
- };
- #endif /* CONFIG_PM */
- 
-+static struct atmel_trng_pdata at91sam9g45_config = {
-+	.has_half_rate = false,
-+};
-+
-+static struct atmel_trng_pdata sam9x60_config = {
-+	.has_half_rate = true,
-+};
-+
- static const struct of_device_id atmel_trng_dt_ids[] = {
--	{ .compatible = "atmel,at91sam9g45-trng" },
--	{ /* sentinel */ }
-+	{
-+		.compatible = "atmel,at91sam9g45-trng",
-+		.data = &at91sam9g45_config,
-+	}, {
-+		.compatible = "microchip,sam9x60-trng",
-+		.data = &sam9x60_config,
-+	}, {
-+		/* sentinel */
-+	}
- };
- MODULE_DEVICE_TABLE(of, atmel_trng_dt_ids);
- 
+Great! Thanks, Jon
+
 -- 
-2.20.1
-
+nvpublic
 
 _______________________________________________
 linux-arm-kernel mailing list
