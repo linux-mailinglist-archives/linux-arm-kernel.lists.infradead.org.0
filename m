@@ -2,81 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46FADE28B1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 05:13:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD54EE28C1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 24 Oct 2019 05:23:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zYS+oKNtpdZhw5XmlmN54PKnXI18oSK9tHi7xUz62q8=; b=V0Di4p4v8HFJmS
-	rRtZLLPJufzyHKxE3uc14lDIIFX5eschGiV052RS8Tkt5R20bcj/nxbkdqcUsp/eyzULn59TRtecB
-	fj1bnwEo5apoKhHI4fLoj2XiObcLHJLeOxnhva3jwhw3LGiEnN7LQuIGhcMVoiAJ1oESnHjnl7zBQ
-	Hfq49iGhHzwXoGH/9isHomhqHeTv+mJ931K3UYRljrMFWIV7k2HJrv0Csv8j3qGQA+mSHudePnPf3
-	LEPxdLifBheTnYLaaBt7I7SmOcjkZzjci0HVpdRB5G70y4BFQhyB4HzXzV/vb7v+0deQyjqdbhwFz
-	KxVx41aWFxXjGblf4D+g==;
+	List-Owner; bh=9ZdJ2mZKuRgJVYGGNI8U615+A3UJSuPYk2MOmqeVoVw=; b=XgGCRFuEU7CKe6
+	AB5DhWxCPMWQwrlh9NM+73VBKljv/Qc7Rlc/+IQDQdduXFe/auN3RbHt1yCwFi70dkABGyilwX6yI
+	ZEk+0wLA4diAT09NOh5b4s8L3h1cJZ7Alo4Rt/jGB1m7nRfOcQWkAg8FAnK3e0+a9OPMkmpViv+yP
+	oNhZK2gZCGbpXK88bL7coiZypefMnkMZaWOd2fsADqJOiQFVt6Lhjo0HUpbLD5mn2V+y6dSWxpgMd
+	8WJxVI5Dm4qP0LFZ4eNunHAKY4oc0Kch1wQ1B64N+fr/jyZ9gmIIkyYDvSYFJ5H/0XoX1qSE3Y6tD
+	JiXlY/CCy1sgjnLpdnRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNTZT-000823-Tj; Thu, 24 Oct 2019 03:13:55 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1iNTiO-0002iV-F6; Thu, 24 Oct 2019 03:23:08 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNTZJ-00081a-6z
- for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 03:13:46 +0000
-Received: by mail-pf1-x444.google.com with SMTP id x127so14175735pfb.7
+ id 1iNTiA-0002i9-Th
+ for linux-arm-kernel@lists.infradead.org; Thu, 24 Oct 2019 03:22:57 +0000
+Received: by mail-wr1-x444.google.com with SMTP id e11so15544025wrv.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 23 Oct 2019 20:13:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=/FvSWUTwb3VLZA0Xf0z7RcCEXwmqXYbk21bOLI6Ind8=;
- b=sKQkrmUmxlXGiYByd2i7MTXHlCBZpoduhmNKTn2b+4WTlEd9sqJxIlyZ+kwj6qCQt6
- 4BIQumt//PtptZYr9DJp8O83ejzzIWb9zwkVqmB0Bf2/fPyoyBokiTWczNosOTRJQ5OY
- TLsGSWJWUIqamq4uD2ohoSqBavspu6j21L7o1rk5kyPzqVK/v/sq46u+fuxiWDYmaZ4u
- AU0XcEHw1+rfCDqi9jXvViNv+pLj3EIXq/XhytlYWlx5bJCiOL1x2+v0vl7i5PZFoOwt
- 92BmIjiD3QDTfjY55Bk/GHBfFrBfes9X4OtcC3occLA7hH0pVPFddwHx3uWXMfnirMB3
- pcLQ==
+ Wed, 23 Oct 2019 20:22:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=LxgWmQM7qtnhNLoqpfev4EbCbpYsYSC4gKmtA8VlS7s=;
+ b=f3+EkB1SkTxtFa2qO8z9TpGkjdUu2bpOoeZixAvg5AvMLs1euNJB2LCIjuIU+VuWSY
+ /eQ6HtO6E5bSED1EJovtj6M35hInbZqufaXyst1OMfjXE30u7L8vENRqCXPVt3M8l3jY
+ lizvm2R12l/SJ2GFoXx5LeXNv4+9XrfxW7qoU=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=/FvSWUTwb3VLZA0Xf0z7RcCEXwmqXYbk21bOLI6Ind8=;
- b=S6ZbSStwD1kLq3FZkhwV06+hwwO8cWrmVMfzQhxOqGdfYLRaa7g/7qaaE6XB9aBzQU
- meRr1s5htnV9KeDeTD3pbHKFw+5fjE5uaU2atXuPt1XMCKhVLodaMn26uZtCQBbHh2OM
- V6z9h1TLoWYxGmMPdv0Z4w3hst5lPjrVmHwn6Tkq4e9SDcVVXCFdAPbcTwLDON70rp4W
- p4E2sozQMsneFCOCPdSsQwQmabjXM5I9W7Qlgd50lu26/SqDCN8FHyuTxhwUznSq8mkn
- EyPjkMZFbOUrMISVs0Zv5qjOqILuVgDwxzOTRA3kh2xGaTc6eCvAetzDa8wvHRuQz2oP
- xOBQ==
-X-Gm-Message-State: APjAAAUElyQ7WMB3i3rl7F3FgDS3Y6mCNLyq2zyJeGIg8IsMCyV2ghY6
- 3ez9p3ae6YqaTW3l5595voF9Ix72LNU=
-X-Google-Smtp-Source: APXvYqydSOmNxbN/vYtkU1iPjd1cVFUew/aXCub1UINvWE/D7AIfNj9Kf6waQGQolR3SBvI3HEafpw==
-X-Received: by 2002:a63:1b59:: with SMTP id b25mr13990872pgm.267.1571886823938; 
- Wed, 23 Oct 2019 20:13:43 -0700 (PDT)
-Received: from localhost ([122.172.151.112])
- by smtp.gmail.com with ESMTPSA id x12sm23593463pfm.130.2019.10.23.20.13.42
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 23 Oct 2019 20:13:43 -0700 (PDT)
-Date: Thu, 24 Oct 2019 08:43:39 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Nathan Chancellor <natechancellor@gmail.com>
-Subject: Re: [PATCH] cpufreq: s3c64xx: Remove pointless NULL check in
- s3c64xx_cpufreq_driver_init
-Message-ID: <20191024031339.qaoh3p5efmaawslq@vireshk-i7>
-References: <20191023000906.14374-1-natechancellor@gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=LxgWmQM7qtnhNLoqpfev4EbCbpYsYSC4gKmtA8VlS7s=;
+ b=EVHM+GPmJAUZq78+it2RiRKUvFcUv79bAhi5yimnYUcposj9Jq+CaXrFoL1Odsy2K6
+ fFx7HbND5AKTJOV/zqwzC/df8b/Ab9hMV/vbX52tCfjIwzmm4QB0jSso8+/6cs//8z5C
+ oej83IWqlWb4Amyzcq3UljSNiTQv6+h67auZL+Zv1wfY+vbpg5BjFLo6l6dv7bVmMjD3
+ 4el4Tf6zNVUNHAljX9cW9qDjKL2imbeFvpQI8aIwGsEKYnWf+IElEwCIrWH3X4UPAI/W
+ 650EXpU0H59+P4esDgJGtfutFdGdsWdTbQNZTKT6wj7xF/1rJuY3Mbl+n2FtIR7iTQbD
+ poKA==
+X-Gm-Message-State: APjAAAVb59QjH2nqt+UoGx13CfFnWcfeeryx/f5oZRifR4vsygit52kT
+ sYs+lp9bDNg8U+W3+HQsTkSLQT3FjBFX/0zCEpL2lA==
+X-Google-Smtp-Source: APXvYqyG9MzlQubrRgYExs+l/UMdE69TF938LH25z81UsvSyDHsfm4yK4JD+INrJnrkrCy1n5uL+O2aESo4czMbI4u4=
+X-Received: by 2002:adf:e9c7:: with SMTP id l7mr1603850wrn.57.1571887372518;
+ Wed, 23 Oct 2019 20:22:52 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191023000906.14374-1-natechancellor@gmail.com>
-User-Agent: NeoMutt/20180716-391-311a52
+References: <20190906035813.24046-1-abhishek.shah@broadcom.com>
+ <20191015164303.GC25674@e121166-lin.cambridge.arm.com>
+ <CAKUFe6bQPMirQ01s-ezaQcUU85J+moFKMO8sLZgvtG2EPowrGA@mail.gmail.com>
+ <20191021103808.GA29528@e121166-lin.cambridge.arm.com>
+In-Reply-To: <20191021103808.GA29528@e121166-lin.cambridge.arm.com>
+From: Abhishek Shah <abhishek.shah@broadcom.com>
+Date: Thu, 24 Oct 2019 08:52:41 +0530
+Message-ID: <CAKUFe6Yg4ZiDfTZyAcerHa7q9TGqsUikGNOqv4eDOhkPjh5rJQ@mail.gmail.com>
+Subject: Re: [PATCH 1/1] PCI: iproc: Invalidate PAXB address mapping before
+ programming it
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_201345_393274_7F5E1190 
-X-CRM114-Status: GOOD (  14.89  )
+X-CRM114-CacheID: sfid-20191023_202254_963574_779F2A0C 
+X-CRM114-Status: GOOD (  34.85  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -87,6 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,46 +92,164 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, linux-pm@vger.kernel.org,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>, clang-built-linux@googlegroups.com,
- Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
+ open list <linux-kernel@vger.kernel.org>,
+ BCM Kernel Feedback <bcm-kernel-feedback-list@broadcom.com>,
+ linux-pci@vger.kernel.org, Bjorn Helgaas <bhelgaas@google.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 22-10-19, 17:09, Nathan Chancellor wrote:
-> When building with Clang + -Wtautological-pointer-compare:
-> 
-> drivers/cpufreq/s3c64xx-cpufreq.c:152:6: warning: comparison of array
-> 's3c64xx_freq_table' equal to a null pointer is always false
-> [-Wtautological-pointer-compare]
->         if (s3c64xx_freq_table == NULL) {
->             ^~~~~~~~~~~~~~~~~~    ~~~~
-> 1 warning generated.
-> 
-> The definition of s3c64xx_freq_table is surrounded by an ifdef
-> directive for CONFIG_CPU_S3C6410, which is always true for this driver
-> because it depends on it in drivers/cpufreq/Kconfig.arm (and if it
-> weren't, there would be a build error because s3c64xx_freq_table would
-> not be a defined symbol).
-> 
-> Resolve this warning by removing the unnecessary NULL check because it
-> is always false as Clang notes. While we are at it, remove the
-> unnecessary ifdef conditional because it is always true.
-> 
-> Fixes: b3748ddd8056 ("[ARM] S3C64XX: Initial support for DVFS")
-> Link: https://github.com/ClangBuiltLinux/linux/issues/748
-> Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
-> ---
->  drivers/cpufreq/s3c64xx-cpufreq.c | 7 -------
->  1 file changed, 7 deletions(-)
+On Mon, Oct 21, 2019 at 4:08 PM Lorenzo Pieralisi
+<lorenzo.pieralisi@arm.com> wrote:
+>
+> On Thu, Oct 17, 2019 at 07:57:56PM +0530, Abhishek Shah wrote:
+> > Hi Lorenzo,
+> >
+> > Please see my comments inline:
+> >
+> > On Tue, Oct 15, 2019 at 10:13 PM Lorenzo Pieralisi
+> > <lorenzo.pieralisi@arm.com> wrote:
+> > >
+> > > On Fri, Sep 06, 2019 at 09:28:13AM +0530, Abhishek Shah wrote:
+> > > > Invalidate PAXB inbound/outbound address mapping each time before
+> > > > programming it. This is helpful for the cases where we need to
+> > > > reprogram inbound/outbound address mapping without resetting PAXB.
+> > > > kexec kernel is one such example.
+> > >
+> > > This looks like a hack, explain to us please what it actually solves and
+> > > why a full reset is not necessary.
+> > >
+> > The PAXB IP performs address translation(PCI<->AXI address) for both inbound and
+> > outbound addresses (amongst other things) based on version of IP being used.
+> > It does so using the IMAP/IARR/OMAP/OARR registers.
+> >
+> > These registers get programmed as per mappings specified in device tree during
+> > PCI driver probe for each RC and do not get reset when kexec/kdump kernel boots.
+> > This results in driver assuming valid mappings in place for some mapping windows
+> > during kexec/kdump kernel boot, consequently it skips those windows and
+> > we run out of available mapping windows, leading to mapping failure.
+> >
+> > Normally, we take care of resetting PAXB block in firmware, but in
+> > primary kernel to kexec/kdump kernel handover, no firmware is executed
+> > in between.  So, we just, by default, invalidate the mapping registers
+> > each time before
+> > programming them to solve the issue described above..
+> > We do not need full reset for handling this.
+>
+> I see. A simple bitmap to detect which windows are *actually*
+> programmed by the current kernel (that can be used by
+>
+> iproc_pcie_ob_is_valid()
+>
+> to carry out a valid check) would do as well instead of having to
+> invalidate all the OB registers.
+>
+Okay, so you are suggesting to use variable/bitmap to hold status of
+ib/ob windows (mapped/unmapped)
+instead of using registers to check it. Please note that we would
+still be programming corresponding
+window register to mark it valid (HW requirement).
 
-Applied. Thanks.
+@Ray, could you please provide feedback on this? I think existing way
+is proper for given driver design.
 
--- 
-viresh
+Also, as internal review tags are irrelevant as suggested by Lorenzo earlier,
+could you please put sign again once reviewed?
+
+
+Regards,
+Abhishek
+
+> It is up to you, let me know and I will merge code accordingly.
+>
+> Lorenzo
+>
+> > > > Signed-off-by: Abhishek Shah <abhishek.shah@broadcom.com>
+> > > > Reviewed-by: Ray Jui <ray.jui@broadcom.com>
+> > > > Reviewed-by: Vikram Mysore Prakash <vikram.prakash@broadcom.com>
+> > >
+> > > Patches are reviewed on public mailing lists, remove tags given
+> > > on internal reviews - they are not relevant.
+> > >
+> > Ok, will remove.
+> >
+> > > > ---
+> > > >  drivers/pci/controller/pcie-iproc.c | 28 ++++++++++++++++++++++++++++
+> > > >  1 file changed, 28 insertions(+)
+> > > >
+> > > > diff --git a/drivers/pci/controller/pcie-iproc.c b/drivers/pci/controller/pcie-iproc.c
+> > > > index e3ca46497470..99a9521ba7ab 100644
+> > > > --- a/drivers/pci/controller/pcie-iproc.c
+> > > > +++ b/drivers/pci/controller/pcie-iproc.c
+> > > > @@ -1245,6 +1245,32 @@ static int iproc_pcie_map_dma_ranges(struct iproc_pcie *pcie)
+> > > >       return ret;
+> > > >  }
+> > > >
+> > > > +static void iproc_pcie_invalidate_mapping(struct iproc_pcie *pcie)
+> > > > +{
+> > > > +     struct iproc_pcie_ib *ib = &pcie->ib;
+> > > > +     struct iproc_pcie_ob *ob = &pcie->ob;
+> > > > +     int idx;
+> > > > +
+> > > > +     if (pcie->ep_is_internal)
+> > >
+> > > What's this check for and why leaving mappings in place is safe for
+> > > this category of IPs ?
+> > For this category of IP(PAXC), no mappings need to be programmed in
+> > the first place.
+> >
+> > >
+> > > > +             return;
+> > > > +
+> > > > +     if (pcie->need_ob_cfg) {
+> > > > +             /* iterate through all OARR mapping regions */
+> > > > +             for (idx = ob->nr_windows - 1; idx >= 0; idx--) {
+> > > > +                     iproc_pcie_write_reg(pcie,
+> > > > +                                          MAP_REG(IPROC_PCIE_OARR0, idx), 0);
+> > > > +             }
+> > > > +     }
+> > > > +
+> > > > +     if (pcie->need_ib_cfg) {
+> > > > +             /* iterate through all IARR mapping regions */
+> > > > +             for (idx = 0; idx < ib->nr_regions; idx++) {
+> > > > +                     iproc_pcie_write_reg(pcie,
+> > > > +                                          MAP_REG(IPROC_PCIE_IARR0, idx), 0);
+> > > > +             }
+> > > > +     }
+> > > > +}
+> > > > +
+> > > >  static int iproce_pcie_get_msi(struct iproc_pcie *pcie,
+> > > >                              struct device_node *msi_node,
+> > > >                              u64 *msi_addr)
+> > > > @@ -1517,6 +1543,8 @@ int iproc_pcie_setup(struct iproc_pcie *pcie, struct list_head *res)
+> > > >       iproc_pcie_perst_ctrl(pcie, true);
+> > > >       iproc_pcie_perst_ctrl(pcie, false);
+> > > >
+> > > > +     iproc_pcie_invalidate_mapping(pcie);
+> > >
+> > > It makes more sense to call this in the .shutdown() method if I
+> > > understand what it does.
+> > >
+> > It would work for kexec kernel, but not for kdump kernel as only for
+> > kexec'ed kernel,
+> > "device_shutdown" callback is present. We are here taking care of both the cases
+> > with this patch.
+> >
+> >
+> > Regards,
+> > Abhishek
+> >
+> > > Lorenzo
+> > >
+> > > >       if (pcie->need_ob_cfg) {
+> > > >               ret = iproc_pcie_map_ranges(pcie, res);
+> > > >               if (ret) {
+> > > > --
+> > > > 2.17.1
+> > > >
 
 _______________________________________________
 linux-arm-kernel mailing list
