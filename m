@@ -2,99 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59A89E46F0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 11:18:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EBC8BE4706
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 11:23:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vzqEagKNWbEW0eHqNNXDth3MMspkqu0pr6SnEfOvahU=; b=Iuygf46AeLLeYa
-	9wzofDdKonaoAa/n+roh1hwdF30PzJlinU6Docb9vD6lRZDsBjPYAUvkZkcSKqUaBbffiLmw+iwVS
-	Z5ID76vMoH02oxiugQqDC3UJM2UFnqStwZ0OebH8HF1ivpNiXSWksPiy41gUYR5pQmoSWs9XO8ICw
-	Xx0eVIYP+1xOhp1taBrmTFbJQ20Ugqy2uIBBFDVhxUMTUfO0B+apAidzj7O23QOZWPmC9uioeN46O
-	g9U+DOr6GezNQkZpGUQTHx1XxTPTDHx+D7ADf4EfPTFhnJhwV2o3YufAYcx7mdJbA9AF1z219dmrc
-	Pm8bHSN2Rw+STX+XqTpg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/SbFoTXq1XPThpaHEFstxjq3WAXDZ7iGrEYKNtDoE6k=; b=cdyQLBis7ghoXt
+	3lMa5mO+ubT14E7/EJmTDCElYaTuc3CKp1To7PvJ45khLoC4DgeX89+OXDfYZ5KEycBXDmPCsJPPg
+	cHe7rAMvPJiV5FnydlYc0Q5xTlhUySQvqIVutadxJ/6mfdLufcXeOw9Z/zKmqmyUiJgLE8JtAFy8b
+	Bg4KNrkZll9uLzsHyhHRqdBK6saRBYgiCOd8nhZIfI92pibZwKp527Kvbt68E7NNySuN6FMMJcPyD
+	HkDjWaCRbaDjozAcSxIqsLBK9fI8u1btUAyC6aF/VsRxfRmLuvr+cdUIwCGS2iJWVtxFmuYM0WVZA
+	K2TOiTmzau7bx0m4QY/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNvjo-0005VE-JJ; Fri, 25 Oct 2019 09:18:28 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1iNvoe-0007L5-J6; Fri, 25 Oct 2019 09:23:28 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNvjU-0005UT-S1
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 09:18:10 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x9P96A3g017758; Fri, 25 Oct 2019 11:17:55 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=ogtXbD8YCbZhHddxE/GGtQWxu+Zf+FrFAhHcJX4a6z8=;
- b=bcliYt9Y1Z8yuL67LQhR1TgH4QQuJmb34pX1v/qi2WMthk5GZMwTdLdbSEY+RVTltzGj
- Z419O6nfaAR1pUDBm/feTmXo33peLMfb6fXxAffP8Jyfd1x74HBD0eJvTVcdoiIiu2DV
- XsSg4HcybnZMS8oHQCpp4/UZRmHl4tm38+BVBIS1KfAOJa6r6pBQFyNT1FSyRVyFEHJI
- B6wSWP1sj1n4zYiI0HDzkBSne1nZGwFfjNQKX9brH3aw7uM3X6OtsJyBROpMU2qiBz8V
- bdvXrzPpj4PzM6iuSeDLlPUJyTQM0SqncLbHW4IAoRupiGw4f+EB2fqLme8WmPl9T2tc ng== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2vt9s1xsw9-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 25 Oct 2019 11:17:55 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id C513310002A;
- Fri, 25 Oct 2019 11:17:52 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag4node3.st.com [10.75.127.12])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id A67972BE24C;
- Fri, 25 Oct 2019 11:17:52 +0200 (CEST)
-Received: from SFHDAG5NODE3.st.com (10.75.127.15) by SFHDAG4NODE3.st.com
- (10.75.127.12) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 25 Oct
- 2019 11:17:52 +0200
-Received: from SFHDAG5NODE3.st.com ([fe80::7c09:5d6b:d2c7:5f47]) by
- SFHDAG5NODE3.st.com ([fe80::7c09:5d6b:d2c7:5f47%20]) with mapi id
- 15.00.1473.003; Fri, 25 Oct 2019 11:17:52 +0200
-From: Christophe ROULLIER <christophe.roullier@st.com>
-To: Jakub Kicinski <jakub.kicinski@netronome.com>
-Subject: Re: [PATCH 0/5] net: ethernet: stmmac: some fixes and optimization
-Thread-Topic: [PATCH 0/5] net: ethernet: stmmac: some fixes and optimization
-Thread-Index: AQHVceL3e0a57DJk3UajMeBpRhFzv6drJNMA
-Date: Fri, 25 Oct 2019 09:17:52 +0000
-Message-ID: <085bdbc4-4845-a3ae-d8f3-bf4f2d753226@st.com>
-References: <20190920053817.13754-1-christophe.roullier@st.com>
- <20190922151257.51173d89@cakuba.netronome.com>
- <1d5dfc73-73e1-fe47-d1f6-9c24f9e5e532@st.com>
-In-Reply-To: <1d5dfc73-73e1-fe47-d1f6-9c24f9e5e532@st.com>
-Accept-Language: fr-FR, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.50]
-Content-ID: <A62F2998CAC83B42B39FF92B83102F7D@st.com>
+ id 1iNvoU-0007Jj-CX
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 09:23:20 +0000
+Received: from DGGEMS404-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 68A0481B295D4CF832AE;
+ Fri, 25 Oct 2019 17:23:16 +0800 (CST)
+Received: from localhost (10.133.213.239) by DGGEMS404-HUB.china.huawei.com
+ (10.3.19.204) with Microsoft SMTP Server id 14.3.439.0; Fri, 25 Oct 2019
+ 17:23:09 +0800
+From: YueHaibing <yuehaibing@huawei.com>
+To: <jason@lakedaemon.net>, <andrew@lunn.ch>, <gregory.clement@bootlin.com>,
+ <sebastian.hesselbarth@gmail.com>, <linus.walleij@linaro.org>
+Subject: [PATCH -next] pinctrl: armada-37xx: remove unneeded semicolon
+Date: Fri, 25 Oct 2019 17:22:33 +0800
+Message-ID: <20191025092233.25108-1-yuehaibing@huawei.com>
+X-Mailer: git-send-email 2.10.2.windows.1
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
- definitions=2019-10-25_05:2019-10-23,2019-10-25 signatures=0
+X-Originating-IP: [10.133.213.239]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_021809_272007_11F840D5 
-X-CRM114-Status: GOOD (  17.08  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191025_022318_602919_54B3428A 
+X-CRM114-Status: UNSURE (   8.59  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,64 +63,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "robh@kernel.org" <robh@kernel.org>,
- Alexandre TORGUE <alexandre.torgue@st.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "joabreu@synopsys.com" <joabreu@synopsys.com>,
- "andrew@lunn.ch" <andrew@lunn.ch>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- Peppe CAVALLARO <peppe.cavallaro@st.com>,
- "davem@davemloft.net" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-gpio@vger.kernel.org, YueHaibing <yuehaibing@huawei.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+Remove unneeded semicolon.
+This is detected by coccinelle.
 
-Just a "gentleman ping" about this series
+Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+---
+ drivers/pinctrl/mvebu/pinctrl-armada-37xx.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-Regards,
+diff --git a/drivers/pinctrl/mvebu/pinctrl-armada-37xx.c b/drivers/pinctrl/mvebu/pinctrl-armada-37xx.c
+index 9df4277..fd32989 100644
+--- a/drivers/pinctrl/mvebu/pinctrl-armada-37xx.c
++++ b/drivers/pinctrl/mvebu/pinctrl-armada-37xx.c
+@@ -733,7 +733,7 @@ static int armada_37xx_irqchip_register(struct platform_device *pdev,
+ 			ret = 0;
+ 			break;
+ 		}
+-	};
++	}
+ 	if (ret) {
+ 		dev_err(dev, "no gpio-controller child node\n");
+ 		return ret;
+@@ -800,7 +800,7 @@ static int armada_37xx_gpiochip_register(struct platform_device *pdev,
+ 			ret = 0;
+ 			break;
+ 		}
+-	};
++	}
+ 	if (ret)
+ 		return ret;
+ 
+-- 
+2.7.4
 
-Christophe.
 
-On 9/23/19 9:46 AM, Christophe ROULLIER wrote:
-> Hi Jakub, all,
->
-> It is not urgent, no problem to wait next merge window (release 5.5)
->
-> For patch 1 and 3, it is improvement/cleanup because now syscfg clock 
-> is not mandatory (I put code backward compatible).
->
-> Regards,
->
-> Christophe
->
-> On 9/23/19 12:12 AM, Jakub Kicinski wrote:
->> On Fri, 20 Sep 2019 07:38:12 +0200, Christophe Roullier wrote:
->>> Some improvements (manage syscfg as optional clock, update slew rate of
->>> ETH_MDIO pin, Enable gating of the MAC TX clock during TX low-power 
->>> mode)
->>> Fix warning build message when W=1
->> There seems to be some new features/cleanups (or improvements as
->> you say) here. Could you explain the negative impact not applying
->> these changes will have? Patches 1 and 3 in particular.
->>
->> net-next is now closed [1], and will reopen some time after the merge
->> window is over. For now we are only expecting fixes for the net tree.
->>
->> Could you (a) provide stronger motivation these changes are fixes; or
->> (b) separate the fixes from improvements?
->>
->> Thank you!
->>
->> [1] https://www.kernel.org/doc/html/latest/networking/netdev-FAQ.html
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
