@@ -2,97 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E0F6E48C0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 12:43:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA95DE48C6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 12:43:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:References:In-Reply-To:Message-ID:MIME-Version:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
+	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=3nnFpIsUXhmoEw+OLGIgvnHaLPU/kCRPW2e7YzRrER0=; b=GQzV18FbdsLcSgUdRILGoQ+Db
-	CFS7zqj58FuMMD73GMtd2InX3IR9OzK455rA3w3fi/7JFdxbDkQs9qfh0zsUzvZAv92WjCPBeybk8
-	mWE0L4U5nUb2SX/Se4zg1elY1r2ML8S+B4SiU0AYQiI3zgOm9pc07V8oNM7drDnJLw2vyQsk3qMf2
-	Mflcy8dVrT+/1tL6AvXYa6eKS5/M1Cx4rdIlaz0mRP3pSL05epUWaaMR2d8gmfOMuG0/bxAw+5M7k
-	3ykSFyVhgSuKDb3N2d9rBkFUDbZoh0E4zD1TSNq4iqzesuyO48zLB8dRNEcprxUaBy1MtgjxGO+p6
-	e1DLahtQA==;
+	 bh=A8wgtma9OvTcZjSC2hcsf21WyulaF9q4drtEUk1BH5o=; b=lynDZ9r7Xh7UJyyKOXGLbwQFi
+	WMaxH+UPMdf3JWU+Db8kCxyUnaUcqYTsfM7c+5wkjHQxFen54Csl6Fd+q8Vx2Qi3ROlwKz8v/aBC6
+	O4VadIFmV9dbWUaHadgsNW1ZCrukggAl3nCW7Xr/iY7PgBlsuY4P96SoqLbQDRwTawsMQKXoAVxxC
+	WOoKwNKLpEaWzsV3umlOO7r/x/b8X2eu4eitAi+yEzjefrC5snGNZtBs58ni5calIhvR0fKxtaU3B
+	c10d1QjWLH+4p83+h00RlId/TlIHZRmf7rf7Ctx0XU/HaQN6IapdvFisqZXziNSwP5P/ZM5gNmivf
+	dRUhocOdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNx3c-00017C-Kj; Fri, 25 Oct 2019 10:43:00 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iNx4A-0001Oq-6K; Fri, 25 Oct 2019 10:43:34 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNx3V-00016e-Kp; Fri, 25 Oct 2019 10:42:54 +0000
-Received: by mail-wr1-x441.google.com with SMTP id o28so1753785wro.7;
- Fri, 25 Oct 2019 03:42:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:mime-version:message-id:in-reply-to
- :references:user-agent:content-transfer-encoding;
- bh=BW9HOrChNvPqeSlqhew0nSz/3RdIb+BlRHw9yj12kQs=;
- b=rZNsrGJkEz6baJxIGhnfLAIuLIy66mHV8Om4QjTQAXUq9KiwT9xBWX/UDDhA6C3LHP
- X6UP4Yb9XpzrjaWBR6IxROkzQy9UGksGrn2s55vJleTpmE7OyvhjnYTtrYDZFQhHKSry
- Roo5T63x5M3YILo7Rf686yMxQdPAaQKtTpbMRr/QyLsIxijEPW12zgBcO7UGcsPQXzbq
- 5XAamls/oo2NUlXRVaHiImKhFKpw8ihQ+PBr0ul0E0neYF1lCepnQUnbPSt4WqJDR8Q/
- Hlp/WxXsVA3p43e4GgJm5uhgNlbM6Jn7Xquvc4AkR7sml8etz38+45uQoNKFczDnFmvo
- p6pw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:mime-version:message-id
- :in-reply-to:references:user-agent:content-transfer-encoding;
- bh=BW9HOrChNvPqeSlqhew0nSz/3RdIb+BlRHw9yj12kQs=;
- b=MIdrNen/KYjNfWf/jo9A8QRlVykajwAKT/++mAaCprTyQ631ap8Mp53TM/ABqBt91j
- Wq3+f12Ea61bPAwcewYHYlYsno892APgv/FRFLtiHY2aJsg29NMpDGsGcT5xSnWbzefA
- nT1XHG9Gt+IvAb0+hESevFjUWeqg3BjgOK1fJVgrpyGzWz0Bt5R8fvgc0OwMf7jVWPk7
- CfacVCDUnkFYNTU6/yQ533XyL3PyRCmH1j7xdSU+T/gCg1P3t6Nki7HJZh3lxEKaO7OF
- XivcyjYLpHNwO9acdtypDgbWWFORy3RnT9CVeAw18uCfMeJ777SklO5Q/y5EIkkNWAX0
- qMjA==
-X-Gm-Message-State: APjAAAVT5BQ94TDwCbZrCiZ3fxy7eEaycxr/5tHqPc+V01ZrmPRXtq2P
- MhBCUeACPWezolTRYVw058I=
-X-Google-Smtp-Source: APXvYqyMvkWhYPa0FkQRBs5Mnkx3Hc2IfRfgowjw35dT0W4NL90v2jXRI3Y8BcAsWOMBWnA1kitYiQ==
-X-Received: by 2002:a05:6000:18d:: with SMTP id
- p13mr2325133wrx.396.1572000171736; 
- Fri, 25 Oct 2019 03:42:51 -0700 (PDT)
-Received: from localhost ([94.73.41.211])
- by smtp.gmail.com with ESMTPSA id j14sm2189614wrj.35.2019.10.25.03.42.49
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 25 Oct 2019 03:42:50 -0700 (PDT)
-From: Vicente Bergas <vicencb@gmail.com>
-To: Felipe Balbi <balbi@kernel.org>
-Subject: Re: [PATCH] usb: dwc3: Add shutdown to
- =?iso-8859-1?Q?platform=5Fdriver?=
-Date: Fri, 25 Oct 2019 12:42:49 +0200
+ id 1iNx3v-0001Nt-Nc
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 10:43:21 +0000
+Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
+ (envelope-from <maz@kernel.org>)
+ id 1iNx3o-00039M-NY; Fri, 25 Oct 2019 12:43:12 +0200
+To: Shannon Zhao <shannon.zhao@linux.alibaba.com>
+Subject: Re: [PATCH RFC 0/7] Support KVM being compiled as a kernel module on
+ arm64
+X-PHP-Originating-Script: 0:main.inc
 MIME-Version: 1.0
-Message-ID: <7e062766-6d2c-44b3-a513-f976bda40704@gmail.com>
-In-Reply-To: <87pnil2kc2.fsf@gmail.com>
-References: <4d18d4f7-a00e-bd60-6361-51054eba3bca@arm.com>
- <20190817174140.6394-1-vicencb@gmail.com>
- <8d48017a-64c5-4b25-8d85-113ffcf502c9@gmail.com> <87v9uix1sv.fsf@gmail.com>
- <645526b8-bfed-4cc6-9500-1843c5fe0da9@gmail.com>
- <0edb55d4-3bad-47ac-9d29-8d994d182e67@gmail.com> <877e4wj7ly.fsf@gmail.com>
- <fcddc3d9-f36a-4b7b-be3f-ee720fbacb05@gmail.com> <87pnil2kc2.fsf@gmail.com>
-User-Agent: Trojita
+Date: Fri, 25 Oct 2019 11:43:12 +0100
+From: Marc Zyngier <maz@kernel.org>
+In-Reply-To: <18653462-38dc-cce1-d0a1-2a7e891163da@linux.alibaba.com>
+References: <1571912870-18471-1-git-send-email-shannon.zhao@linux.alibaba.com>
+ <8cbd81d6-4ab8-9d2a-5162-8782201cd13d@arm.com>
+ <c17e8b0f32902a0811cc6a4ed71e607e@www.loen.fr>
+ <18653462-38dc-cce1-d0a1-2a7e891163da@linux.alibaba.com>
+Message-ID: <66e983b383d9f99df0007a717e084fe6@www.loen.fr>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/0.7.2
+X-SA-Exim-Connect-IP: <locally generated>
+X-SA-Exim-Rcpt-To: shannon.zhao@linux.alibaba.com, james.morse@arm.com,
+ kvmarm@lists.cs.columbia.edu, suzuki.poulose@arm.com, christoffer.dall@arm.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_034253_710353_52D94506 
-X-CRM114-Status: UNSURE (   6.89  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191025_034319_936018_A3AB8CBE 
+X-CRM114-Status: GOOD (  16.94  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (vicencb[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,31 +69,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Matthias Brugger <mbrugger@suse.com>, Heiko Stuebner <heiko@sntech.de>,
- MarcZyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- linux-usb@vger.kernel.org, Will Deacon <will.deacon@arm.com>,
- linux-rockchip@lists.infradead.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: suzuki.poulose@arm.com, linux-kernel@vger.kernel.org,
+ christoffer.dall@arm.com, James Morse <james.morse@arm.com>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Friday, October 25, 2019 12:25:17 PM CEST, Felipe Balbi wrote:
-> hi,
+On 2019-10-25 03:48, Shannon Zhao wrote:
+> On 2019/10/24 21:41, Marc Zyngier wrote:
+>> On 2019-10-24 11:58, James Morse wrote:
+>>> Hi Shannon,
+>>>
+>>> On 24/10/2019 11:27, Shannon Zhao wrote:
+>>>> Curently KVM ARM64 doesn't support to compile as a kernel module. 
+>>>> It's
+>>>> useful to compile KVM as a module.
+>>>
+>>>> For example, it could reload kvm without rebooting host machine.
+>>>
+>>> What problem does this solve?
+>>>
+>>> KVM has some funny requirements that aren't normal for a module. On
+>>> v8.0 hardware it must
+>>> have an idmap. Modules don't usually expect their code to be
+>>> physically contiguous, but
+>>> KVM does. KVM influences they way some of the irqchip stuff is set 
+>>> up
+>>> during early boot
+>>> (EOI mode ... not that I understand it).
+>> We change the EOImode solely based on how we were booted (EL2 or 
+>> not).
+>> KVM doesn't directly influences that (it comes in the picture much
+>> later).
+>>
+>>> (I think KVM-as-a-module on x86 is an artifact of how it was 
+>>> developed)
+>>>
+>>>
+>>>> This patchset support this feature while there are some 
+>>>> limitations
+>>>> to be solved. But I just send it out as RFC to get more suggestion 
+>>>> and
+>>>> comments.
+>>>
+>>>> Curently it only supports for VHE system due to the hyp code 
+>>>> section
+>>>> address variables like __hyp_text_start.
+>>>
+>>> We still need to support !VHE systems, and we need to do it with a
+>>> single image.
+>>>
+>>>
+>>>> Also it can't call
+>>>> kvm_update_va_mask when loading kvm module and kernel panic with 
+>>>> below
+>>>> errors. So I make kern_hyp_va into a nop funtion.
+>>>
+>>> Making this work for the single-Image on v8.0 is going to be a
+>>> tremendous amount of work.
+>>> What is the payoff?
+>> I can only agree. !VHE is something we're going to support for the 
+>> foreseeable
+>> future (which is roughly equivalent to "forever"), and modules have 
+>> properties
+>> that are fundamentally incompatible with the way KVM works with 
+>> !VHE.
 >
-> Vicente Bergas <vicencb@gmail.com> writes:
+> Yes, with this patchset we still support !VHE system with built-in 
+> KVM. While for VHE system we could support kernel module and check at 
+> module init to avoid wrong usage of kvm module on !VHE systems.
+
+How do you reconcile this with the need to have a single kernel image 
+that
+is full-featured on all architecture revisions? In your view of the 
+world,
+it is OK to have a VHE-specific kernel that won't have KVM on a v8.0 
+system.
+ From my point of view, this simply isn't acceptable.
+
+>> If the only purpose of this work is to be able to swap KVM 
+>> implementations
+>> in a development environment, then it really isn't worth the effort.
 >
->> On Wednesday, October 23, 2019 8:31:21 AM CEST, Felipe Balbi wrote: ...
->
-> Do you want to send it as a formal patch or shall I do it?
+> Making KVM as a kernel module has many advantages both for 
+> development and real use environment. For example, we can backport and 
+> update KVM codes independently and don't need to recompile kernel. Also 
+> making KVM as a kernel module is a basic for kvm hot upgrade feature 
+> without shutdown VMs and hosts. This is very important for Cloud 
+> Service Provider to provides non-stop services for its customers.
 
-All yours. Thank you for reviewing and proposing this solution.
+The goal is certainly commendable.
 
-Regards,
-  Vicente.
+But pretending that KVM is fully independent from the rest of the 
+kernel is
+an intellectual fallacy. Most of the issues that affect KVM at any 
+given time
+are actually core kernel issues that cannot be solved by just updating 
+the
+KVM module. You need to update the whole thing, not just the tiny bit 
+that
+switches between host and guests.
 
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
