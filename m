@@ -2,71 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5451E46BD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 11:09:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28887E46D2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 11:14:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/6b2i7kLgauS7CeMy/TcYJCmMj6YcpspR6N5sanfMwo=; b=p3E3sZ46jDH4dB
-	v4Qk/mznjzfw6zNHl7TWq/wgbvlMD5A1D5Dnw+Sku1Zzbi+Ymk0KBlsKU2CGuY90EI4Bt6HafeBT8
-	1fztcbjHwgDkiPjnBDb1Jko7Rkis9CEG1huWcUBkWEBJNaetBEJb0j7P1Twx+znee9OWvKQHV0qCx
-	fee8NQWIeqomQVOWwtp2Hy9Z0ZWxdzO7HdDnLFKVIR7m7dExwZhCSRuiDst1ZJ4LBon5BgCnfUvcg
-	yWKjs2ZjpsDosgyfJUgOF4zmkA4tergEu5SlT+bCsora2Fi8IOokaVy1sycQuDsGqYBrLnc3DrUvf
-	ze91LXIkDYb8GUtI1oLg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Qf/6Zsl0z9kgHTFF08wzP9AG9ms2vHlEjQ8KBGwCkgA=; b=q5m7eOAHn0+zCo
+	q3ivGPZ0XGT9PBGPV6LVd+2EBgm7mzFcUvqU7Vf7gOQJCZshquBCP3IpftySPQdGDEKtBbyjx55QJ
+	0yeaTcvOUfpZWfoQyg25TDk9kQxoh5vAHm/LJGuYResLdRAgYv+rdYpize2eLrS8kEz/01y2HiiOS
+	dkKw51O1jEaPwHHIpbMckmgLFVTi6dKpTzTqh5vvATtmFvJ7rPKS4eI+tc1jNCJbXlTyFQohOzVeP
+	ddh4QSk1+mYdrJYaQacVB6c+TeeAyKHkccX3xc1Oqp5vQQ1J5vrXGRcvwpTsMJbnNAp6mA9IZ+b7a
+	0MkLYZ15O1V3ISDIpu0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNvb3-0000uN-W0; Fri, 25 Oct 2019 09:09:26 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iNvg0-0002r5-5g; Fri, 25 Oct 2019 09:14:32 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNvan-0000tI-8f
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 09:09:10 +0000
-Received: from dragon (li937-157.members.linode.com [45.56.119.157])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 68E1E21929;
- Fri, 25 Oct 2019 09:09:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571994549;
- bh=uFG1cMRD5Tz8/465n9rsEA7W+2TvFw3woGFuCUmq66c=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=sS4E7jSY86V/QEQRf2wcBiJnK740L0brYSrWpZYZfwXbiStuc+EE/veFVPSj5vqWW
- hI5yIV06HrfwU9JKBs4BhFpwG/76VnGpAt2wycyZiUWOUxfjk1fUc+NSJ9HqWN1RNL
- 8nrpiNxTSa47S8GZoUDtcQzD3mYQj0Q+98sHgfGU=
-Date: Fri, 25 Oct 2019 17:08:52 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Peng Fan <peng.fan@nxp.com>
-Subject: Re: [PATCH 1/3] clk: imx: imx8mm: mark sys_pll1/2 as fixed clock
-Message-ID: <20191025090850.GK3208@dragon>
-References: <1570614940-17239-1-git-send-email-peng.fan@nxp.com>
- <20191025060847.GD3208@dragon>
- <AM0PR04MB4481FA56EFA3C34193241D3D88650@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ id 1iNvfn-0002pb-Vq; Fri, 25 Oct 2019 09:14:21 +0000
+Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 06230931C2549D4EF496;
+ Fri, 25 Oct 2019 17:14:15 +0800 (CST)
+Received: from localhost (10.133.213.239) by DGGEMS407-HUB.china.huawei.com
+ (10.3.19.207) with Microsoft SMTP Server id 14.3.439.0; Fri, 25 Oct 2019
+ 17:14:06 +0800
+From: YueHaibing <yuehaibing@huawei.com>
+To: <nbd@openwrt.org>, <john@phrozen.org>, <sean.wang@mediatek.com>,
+ <Mark-MC.Lee@mediatek.com>, <davem@davemloft.net>, <matthias.bgg@gmail.com>
+Subject: [PATCH net-next] net: mediatek: remove unneeded semicolon
+Date: Fri, 25 Oct 2019 17:13:08 +0800
+Message-ID: <20191025091308.20128-1-yuehaibing@huawei.com>
+X-Mailer: git-send-email 2.10.2.windows.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <AM0PR04MB4481FA56EFA3C34193241D3D88650@AM0PR04MB4481.eurprd04.prod.outlook.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+X-Originating-IP: [10.133.213.239]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_020909_327558_D065B520 
-X-CRM114-Status: GOOD (  13.55  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191025_021420_205160_ACA5953F 
+X-CRM114-Status: UNSURE (   7.74  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,47 +62,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jacky Bai <ping.bai@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- "sboyd@kernel.org" <sboyd@kernel.org>,
- "mturquette@baylibre.com" <mturquette@baylibre.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Abel Vesa <abel.vesa@nxp.com>
+Cc: netdev@vger.kernel.org, YueHaibing <yuehaibing@huawei.com>,
+ linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 25, 2019 at 06:14:21AM +0000, Peng Fan wrote:
-> Hi Shawn,
-> 
-> > Subject: Re: [PATCH 1/3] clk: imx: imx8mm: mark sys_pll1/2 as fixed clock
-> > 
-> > On Wed, Oct 09, 2019 at 09:58:14AM +0000, Peng Fan wrote:
-> > > From: Peng Fan <peng.fan@nxp.com>
-> > >
-> > > According Architecture definition guide, SYS_PLL1 is fixed at 800MHz,
-> > > SYS_PLL2 is fixed at 1000MHz, so let's use imx_clk_fixed to register
-> > > the clocks and drop code that could change the rate.
-> > >
-> > > Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> > 
-> > Applied all, thanks.
-> 
-> I have a v2 https://patchwork.kernel.org/cover/11208131/ patch 
-> based on Lenoard's v3 
-> https://patchwork.kernel.org/patch/11193189/ to avoid conflicts
-> when you apply Lenoard's v3 patch.
+remove unneeded semicolon.
 
-Okay, I replaced it with your v2 series.  Thanks!
+Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+---
+ drivers/net/ethernet/mediatek/mtk_eth_path.c | 6 +++---
+ drivers/net/ethernet/mediatek/mtk_sgmii.c    | 2 +-
+ 2 files changed, 4 insertions(+), 4 deletions(-)
 
-Shawn
+diff --git a/drivers/net/ethernet/mediatek/mtk_eth_path.c b/drivers/net/ethernet/mediatek/mtk_eth_path.c
+index ef11cf3..0fe9715 100644
+--- a/drivers/net/ethernet/mediatek/mtk_eth_path.c
++++ b/drivers/net/ethernet/mediatek/mtk_eth_path.c
+@@ -57,7 +57,7 @@ static int set_mux_gdm1_to_gmac1_esw(struct mtk_eth *eth, int path)
+ 	default:
+ 		updated = false;
+ 		break;
+-	};
++	}
+ 
+ 	if (updated) {
+ 		val = mtk_r32(eth, MTK_MAC_MISC);
+@@ -143,7 +143,7 @@ static int set_mux_gmac1_gmac2_to_sgmii_rgmii(struct mtk_eth *eth, int path)
+ 	default:
+ 		updated = false;
+ 		break;
+-	};
++	}
+ 
+ 	if (updated)
+ 		regmap_update_bits(eth->ethsys, ETHSYS_SYSCFG0,
+@@ -174,7 +174,7 @@ static int set_mux_gmac12_to_gephy_sgmii(struct mtk_eth *eth, int path)
+ 		break;
+ 	default:
+ 		updated = false;
+-	};
++	}
+ 
+ 	if (updated)
+ 		regmap_update_bits(eth->ethsys, ETHSYS_SYSCFG0,
+diff --git a/drivers/net/ethernet/mediatek/mtk_sgmii.c b/drivers/net/ethernet/mediatek/mtk_sgmii.c
+index 4db27df..32d8342 100644
+--- a/drivers/net/ethernet/mediatek/mtk_sgmii.c
++++ b/drivers/net/ethernet/mediatek/mtk_sgmii.c
+@@ -93,7 +93,7 @@ int mtk_sgmii_setup_mode_force(struct mtk_sgmii *ss, int id,
+ 	case SPEED_1000:
+ 		val |= SGMII_SPEED_1000;
+ 		break;
+-	};
++	}
+ 
+ 	if (state->duplex == DUPLEX_FULL)
+ 		val |= SGMII_DUPLEX_FULL;
+-- 
+2.7.4
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
