@@ -2,54 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24B6AE553A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 22:33:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81506E555E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 22:45:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WeqakoNXpEApY8lUZK/XpivmsmmPLEinnnG1GRkhP8w=; b=tIdG/GBUUaSpyp
-	Px1MCfsv9+jwIYDIbEJzq/zwYR1ZqkZ8e+G6Yab7KKgNpje10RL9otvW3y8cZLrYOwiKNA7fnQY8B
-	7OP2kcqjgQ90uSgPftG97qx6MQzQrBB/vwS9wKP/us3smj4Jm6nIsQOS01p9tq4G+6Ps6vqC06asQ
-	ppx6a9YObofoRG0bn7YHXNtnsbSmLQ8cn22RwFJCD3qXrDidMuYiV0UbnPmnP9QBlg11o2RfVQv6a
-	+Ev3kmlDqeHFJc4Rww6DfrB/vuSNuvqN8aowIMyYdCU05hIt0umhUb9cZsAowcgm9lxyVOx2WUXI6
-	nN8H1DsbH9OpJLizZu0w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=Lq642n8pzssh41AiPhQllOrDLcltOBrt4AUAG+K4/9I=; b=IAOvrfoyb0euPf
+	eX3aO9wM28xTyWVxmfXYCFcMllROcTm+b6USTBOmiJFr+cw1xz6Udrw0icpdej9QrFkxwOYNIi17O
+	JxGlFOVNhwQsbZ3oqBbWsZDPiI04AFJA1HTsW8MojryeeKBPXJS1jdnUj/hgxI/dIaBp2sOOjfsjf
+	o4gXDnwBrdpd/Nd/TGq0sxXeHDH8TgVR2W7PgFv+HSdg/uZIqEx2UHeZNApwOXRSNraeRzBStdr5F
+	xYFSAkX/8Z9Wcqy+anhzqoGChCv97nfUDi6ZmiagwERO7v7kZthcr0NjK8ERLRjnDUTpzBvSqslCG
+	iYGUHOTbOkfJJ8emwa7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iO6HH-0002Mt-Sg; Fri, 25 Oct 2019 20:33:43 +0000
+	id 1iO6SV-0007Jj-3o; Fri, 25 Oct 2019 20:45:19 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iO6H6-0002M8-3D; Fri, 25 Oct 2019 20:33:34 +0000
-Received: from rapoport-lnx (unknown [87.70.40.7])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1iO6SH-0006oG-9v; Fri, 25 Oct 2019 20:45:06 +0000
+Received: from localhost (unknown [69.71.4.100])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9F0C9205F4;
- Fri, 25 Oct 2019 20:33:23 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id EDF862084C;
+ Fri, 25 Oct 2019 20:45:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572035611;
- bh=+V3MYXgziPOZllvPaeN2wWalwWrmuc8yiZofvYCWoNY=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=1ISSeESRZG09GzO0p+0h+u/Da++xXbkOcsQ5mlswN8E+JmDJy8i2vG7sk1XtBAlth
- O+JkATp4aZZ6UwRybaJhjTl0dq8o88pCslQd7+isc/kOjQ3j0a42WMTbSUrvr9icVT
- /jJxJNBEQReX2euA+K+z//obJVLa7yxkT+K4iwqU=
-Date: Fri, 25 Oct 2019 23:33:19 +0300
-From: Mike Rapoport <rppt@kernel.org>
-To: Michal Simek <monstr@monstr.eu>
-Subject: Re: [PATCH 06/12] microblaze: use pgtable-nopmd instead of
- 4level-fixup
-Message-ID: <20191025203318.GA8413@rapoport-lnx>
-References: <1571822941-29776-1-git-send-email-rppt@kernel.org>
- <1571822941-29776-7-git-send-email-rppt@kernel.org>
- <aa7df5a1-5022-bc82-8816-74c956e2fd90@monstr.eu>
+ s=default; t=1572036304;
+ bh=NJ+WKmfKRhR8+SGv+N61qy5UYgwj40QkXtak7NdAe0E=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:From;
+ b=hAO/+ldMyc2wFvU1rB2jr0qbCqMxryeZV9hwR22nNQXYS8Yoc7HbfACHC2As3i6Vc
+ mkFJYj1DrtmY9EnT1zuXju84hh/PR6Qga5KZ/9gScxEENzgefDYJE/RDM8zXrzUvMC
+ M/ey0st6s4jumET4Gmw9cUl3goRr2Rat24VbPRnk=
+Date: Fri, 25 Oct 2019 15:45:02 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Michal Simek <michal.simek@xilinx.com>
+Subject: Re: [PATCH v2 0/2] Enabling MSI for Microblaze
+Message-ID: <20191025204502.GA170580@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <aa7df5a1-5022-bc82-8816-74c956e2fd90@monstr.eu>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <cover.1571983829.git.michal.simek@xilinx.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_133332_189593_E49FFD2B 
-X-CRM114-Status: GOOD (  17.88  )
+X-CRM114-CacheID: sfid-20191025_134505_369218_A8C2E638 
+X-CRM114-Status: GOOD (  12.75  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -66,6 +62,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 FAKE_REPLY_C           No description available.
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -78,83 +75,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- linux-mm@kvack.org, sparclinux@vger.kernel.org,
- Vincent Chen <deanbo422@gmail.com>, Greg Ungerer <gerg@linux-m68k.org>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>, linux-arch@vger.kernel.org,
- linux-c6x-dev@linux-c6x.org, Richard Weinberger <richard@nod.at>,
- Helge Deller <deller@gmx.de>, Russell King <linux@armlinux.org.uk>,
- Mike Rapoport <rppt@linux.ibm.com>, Geert Uytterhoeven <geert@linux-m68k.org>,
- Mark Salter <msalter@redhat.com>, Matt Turner <mattst88@gmail.com>,
- Jeff Dike <jdike@addtoit.com>, Sam Creasey <sammy@sammy.net>,
- Arnd Bergmann <arnd@arndb.de>, Vineet Gupta <Vineet.Gupta1@synopsys.com>,
- linux-um@lists.infradead.org, linux-m68k@lists.linux-m68k.org,
- Greentime Hu <green.hu@gmail.com>, "Kirill A. Shutemov" <kirill@shutemov.name>,
- linux-arm-kernel@lists.infradead.org, linux-parisc@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-alpha@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>,
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Eric Biggers <ebiggers@google.com>,
+ "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
+ Wesley Terpstra <wesley@sifive.com>, palmer@sifive.com,
+ linux-mips@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
+ Ingo Molnar <mingo@kernel.org>, linux-arch@vger.kernel.org,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ Michael Ellerman <mpe@ellerman.id.au>, Jackie Liu <liuyun01@kylinos.cn>,
+ Russell King <linux@armlinux.org.uk>, Greg Ungerer <gerg@linux-m68k.org>,
+ hch@infradead.org, Firoz Khan <firoz.khan@linaro.org>,
+ linux-pci@vger.kernel.org, James Hogan <jhogan@kernel.org>, longman@redhat.com,
+ linux-snps-arc@lists.infradead.org, Albert Ou <aou@eecs.berkeley.edu>,
+ Arnd Bergmann <arnd@arndb.de>, git@xilinx.com,
+ Paul Walmsley <paul.walmsley@sifive.com>, linux-arm-kernel@lists.infradead.org,
+ monstr@monstr.eu, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, Paul Burton <paul.burton@mips.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Vineet Gupta <vgupta@synopsys.com>, linuxppc-dev@lists.ozlabs.org,
  "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 25, 2019 at 10:24:30AM +0200, Michal Simek wrote:
-> Hi Mike,
+On Fri, Oct 25, 2019 at 08:10:36AM +0200, Michal Simek wrote:
+> Hi,
 > 
-> On 23. 10. 19 11:28, Mike Rapoport wrote:
-> > From: Mike Rapoport <rppt@linux.ibm.com>
-> > 
-> > microblaze has only two-level page tables and can use pgtable-nopmd and
-> > folding of the upper layers.
-> > 
-> > Replace usage of include/asm-generic/4level-fixup.h and explicit definition
-> > of __PAGETABLE_PMD_FOLDED in microblaze with
-> > include/asm-generic/pgtable-nopmd.h and adjust page table manipulation
-> > macros and functions accordingly.
-> > 
-> > Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
-> > ---
-> >  arch/microblaze/include/asm/page.h    |  3 ---
-> >  arch/microblaze/include/asm/pgalloc.h | 16 ----------------
-> >  arch/microblaze/include/asm/pgtable.h | 32 ++------------------------------
-> >  arch/microblaze/kernel/signal.c       | 10 +++++++---
-> >  arch/microblaze/mm/init.c             |  7 +++++--
-> >  arch/microblaze/mm/pgtable.c          | 13 +++++++++++--
-> >  6 files changed, 25 insertions(+), 56 deletions(-)
+> these two patches come from discussion with Christoph, Bjorn, Palmer and
+> Waiman. The first patch was suggestion by Christoph here
+> https://lore.kernel.org/linux-riscv/20191008154604.GA7903@infradead.org/
+> The second part was discussed
+> https://lore.kernel.org/linux-pci/mhng-5d9bcb53-225e-441f-86cc-b335624b3e7c@palmer-si-x1e/
+> and
+> https://lore.kernel.org/linux-pci/20191017181937.7004-1-palmer@sifive.com/
 > 
-> I have take a look at this and when this is applied on the top of
-> 5.4-rc2 there is not a problem.
-> But as was reported by 0-day there is compilation issue on the top of
-> mmotm/master tree and I am able to replicate it.
-> It means there are other changes in Andrew's tree which are causing it.
-
-0day is still using an old tree for mmotm:
-
-> url:    https://github.com/0day-ci/linux/commits/Mike-Rapoport/mm-remove-__ARCH_HAS_4LEVEL_HACK/20191025-063009
-> base:   git://git.cmpxchg.org/linux-mmotm.git master
-> config: microblaze-mmu_defconfig (attached as .config)
-
-A while ago Johannes moved the mmotm to github and the last commit in
-git.cmpxchg.org/linux-mmotm.git was in the end of August.
-
-[1] https://lore.kernel.org/linux-mm/20190916134327.GC29985@cmpxchg.org
- 
 > Thanks,
 > Michal
 > 
-> -- 
-> Michal Simek, Ing. (M.Eng), OpenPGP -> KeyID: FE3D1F91
-> w: www.monstr.eu p: +42-0-721842854
-> Maintainer of Linux kernel - Xilinx Microblaze
-> Maintainer of Linux kernel - Xilinx Zynq ARM and ZynqMP ARM64 SoCs
-> U-Boot custodian - Xilinx Microblaze/Zynq/ZynqMP/Versal SoCs
+> Changes in v2:
+> - Fix typo in commit message s/expect/except/ - Reported-by: Masahiro
 > 
+> Michal Simek (1):
+>   asm-generic: Make msi.h a mandatory include/asm header
+> 
+> Palmer Dabbelt (1):
+>   pci: Default to PCI_MSI_IRQ_DOMAIN
+> 
+>  arch/arc/include/asm/Kbuild     | 1 -
+>  arch/arm/include/asm/Kbuild     | 1 -
+>  arch/arm64/include/asm/Kbuild   | 1 -
+>  arch/mips/include/asm/Kbuild    | 1 -
+>  arch/powerpc/include/asm/Kbuild | 1 -
+>  arch/riscv/include/asm/Kbuild   | 1 -
+>  arch/sparc/include/asm/Kbuild   | 1 -
+>  drivers/pci/Kconfig             | 2 +-
+>  include/asm-generic/Kbuild      | 1 +
+>  9 files changed, 2 insertions(+), 8 deletions(-)
 
--- 
-Sincerely yours,
-Mike.
+I applied these to pci/msi for v5.5, thanks!
 
 _______________________________________________
 linux-arm-kernel mailing list
