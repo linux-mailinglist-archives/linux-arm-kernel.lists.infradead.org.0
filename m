@@ -2,72 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50F5DE4B7F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 14:48:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48B3EE4B80
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 14:48:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wrL4amJRBUEPb5Ev/M4FzCsBzvaYGs7GvzVyqMq9PgQ=; b=Wb4hPhfm1UxjYP
-	P5lOk9z5Slk4Pm2ErFIhZHE3qZidCQcxZiB7hRFEHLudTEdwZ+cbtfBhNvbYhgWmb+rsJVLDBDdq3
-	ZNJ4yiUJtKNXIUQyJ41WoLEGauplO45/A114c0EJv5GDNdY1YCLYXYphcONfs/ofO26nbtnrWUto6
-	Pwz8yR1YcXgPFaHm+cDwkdK+wxpCsFS6rnjEiMR8agklVaGXTpCqoNhpgIqbUOj/1eZ5mb3CaycQQ
-	T3g3aD8QROPtmIe5u3UVcGUCOIbsUExXRauTtadnsTh28g9foWKddk2eJ4H9iMZq1qZtl2VN9o58o
-	oI8+KM4z61lcbYU17r/w==;
+	List-Owner; bh=cLjX01zBhuoaXuBuhgy7L9RClV1o6FObcZ1UvOHpuwo=; b=a35juVwlMFgmLe
+	0NF3kfwc7ueuy0KEU86E8eVAb5UMNpnX1644s2oHWGS9QQCZUmhY/XfzY8bHHyTG9+EFa/dD+TvjP
+	cCzCSxlOo3WeLjjMJHp+FdwGlZvjIl5i/yI6MFjvlZMar/2zXU9WCQgWWB1gPZ+h++fToFjAl5A+8
+	CtcKD6wRTI+TIRJQj4KpZ1kugqTEFVrjlIekAv39kqeaER5J1ETVUB1H12bAh8x2CCg/H3He1ndcx
+	gDUlgwI6Vv7MMOkBmuH1Ae0Ily69QsnIxVNbSfq+x3JYMsT0s20I6Bxod5dZjmo9bm7L3xsMTsjIy
+	B8d08qQ5MnL7BJZTIesw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNz0t-0004CZ-8Z; Fri, 25 Oct 2019 12:48:19 +0000
+	id 1iNz18-0004Rf-Rh; Fri, 25 Oct 2019 12:48:34 +0000
 Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNyuI-0006WO-M9
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 12:41:32 +0000
-Received: by mail-lf1-x142.google.com with SMTP id y127so1643733lfc.0
+ id 1iNyuJ-0006YK-Ou
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 12:41:33 +0000
+Received: by mail-lf1-x142.google.com with SMTP id i15so1618374lfo.7
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 25 Oct 2019 05:41:30 -0700 (PDT)
+ Fri, 25 Oct 2019 05:41:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=vlC6c2mLi3OFOrUlQdhK/IVokJUA43/TPqoeSB5eKTw=;
- b=jKc8arHSmx2y4WG6E6pxme2fpIipCQg3lj3xfo/NE13M78vwKaac8r87bS926CIlOe
- G8HjFyTR6NrrVEFfD2f145q33utez8HIUqLF7wEvHmOg4BYXyAYRqgdqUUut5SdZTL4F
- 2f2wUM68LsShYG8dX6rYt18eoJRknZHtyrkIQ=
+ bh=iGJonh7VqgV4Y1nWqTZdSXnTXxbR6q5lO30wl6/it2Q=;
+ b=E1hiJE/N8uyirc34yldY8uoOKyp6Aafi6pTD1KNMz37l7ZxFuQTs1ly4mphyCyeoLm
+ BIfJpTGn7JnPGMw2F/xN60qCJErNEMevmCpDy0g8zwOdSCaqJCYYVHT4CQPIamvwj2L3
+ MdqAsCo4b5XqddEjICpt0BEm/DeSmy611x/Z8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=vlC6c2mLi3OFOrUlQdhK/IVokJUA43/TPqoeSB5eKTw=;
- b=M4CoWer2VDwTuEZ/HmjcpOkCa9OpWzUXrZaUzKKEi3xiHP0V+218f4H0FdFjWpvXzG
- bmziIo18PU/2Yyga9thX7T1dyBoZtA/s/N9vajJQQkTAYCIbi2g1YQsXynMDXoKiLBFc
- MW8Wq/KbYNgxrTqWRh8aeYSdIF4K7vD3Dxk2I5VLkknDZidp8jHAfDEagoHQxAFDBUik
- NM9UKBDko1eNNXPmSpSpVtCz7+DjI00S40TfBk4Z31af4LbR3jlh9c7Vfjj2HyqjSTDe
- mQR9ZJrp2zmgpaOAiIHfIt4C4zvtCclQIft0oVGvfYL2XX0SrQrlaz7gznuMYDFBbDz5
- 1RKQ==
-X-Gm-Message-State: APjAAAXy5HstjDUZDw1nkF9rxrNEaAYKdNL6k1qTLcj7b839N0LJ3s9D
- /maMkKhF/4wBHVX8n6tVzG1zuw==
-X-Google-Smtp-Source: APXvYqyOmmWKDKIwnL+Dz+ZoHsEg95l0xY0B31Vt0IMF9adkil2MZ7+eec85cG8dv6k9ac6S6ZK0SA==
-X-Received: by 2002:a19:f018:: with SMTP id p24mr2542630lfc.93.1572007288855; 
- Fri, 25 Oct 2019 05:41:28 -0700 (PDT)
+ bh=iGJonh7VqgV4Y1nWqTZdSXnTXxbR6q5lO30wl6/it2Q=;
+ b=KGwOnCgfzhlW17PtIKklq/tclUQ+mjiWFIwwH9eZqisrKNNQCuJ3CPO1gvhXhj9l6y
+ cIHCQGA5NRGWOuCHTzFo3wuTo5Bt0aT4j2mhFDj7ULSYRcon5Sy/oERaiuVsVSarf5GL
+ tZED8lCb6dmDwV9oVGLqtemieAWJ0TJP6z01CIzX6nkKsy1JmStI9p2BOTl4SkL1oQ+U
+ ++gt2+IgwuWYXHu4f+vACg2/0t7wAMA33p3dErBiAiwUuUggsmDhXGTSrk4zgYhVMdTJ
+ wmL/evr8nkpK4IxsfEi0B/lVA1Kg1lEqRaIOjbKmn+76+aoowT8zcIbmtd+iJ/fVWFao
+ brXQ==
+X-Gm-Message-State: APjAAAWYYOdTrfy7SD4PxYCAP6JXuboMKD6lSn2Ye7h3P94WYUnM/DBe
+ iZg06GR0ZwKob0f3drQ0+O3dRw==
+X-Google-Smtp-Source: APXvYqzWdgjzit8ixR4YnUZ9xLOIPsZHRAlHxEezNI3JzgRLGEBgrKtCg1284a/7LWYjFvAyXUS6gA==
+X-Received: by 2002:ac2:4c15:: with SMTP id t21mr2581867lfq.7.1572007290172;
+ Fri, 25 Oct 2019 05:41:30 -0700 (PDT)
 Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id 10sm821028lfy.57.2019.10.25.05.41.27
+ by smtp.gmail.com with ESMTPSA id 10sm821028lfy.57.2019.10.25.05.41.29
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 25 Oct 2019 05:41:28 -0700 (PDT)
+ Fri, 25 Oct 2019 05:41:29 -0700 (PDT)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
  Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v2 20/23] serial: make SERIAL_QE depend on PPC32
-Date: Fri, 25 Oct 2019 14:40:55 +0200
-Message-Id: <20191025124058.22580-21-linux@rasmusvillemoes.dk>
+Subject: [PATCH v2 21/23] serial: ucc_uart.c: explicitly include asm/cpm.h
+Date: Fri, 25 Oct 2019 14:40:56 +0200
+Message-Id: <20191025124058.22580-22-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191025124058.22580-1-linux@rasmusvillemoes.dk>
 References: <20191018125234.21825-1-linux@rasmusvillemoes.dk>
  <20191025124058.22580-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_054130_735395_678011E0 
-X-CRM114-Status: GOOD (  10.93  )
+X-CRM114-CacheID: sfid-20191025_054131_825935_02B322AF 
+X-CRM114-Status: GOOD (  10.01  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -105,31 +105,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently SERIAL_QE depends on QUICC_ENGINE, which in turn depends on
-PPC32, so this doesn't add any extra dependency. However, the QUICC
-Engine IP block also exists on some arm boards, so this serves as
-preparation for removing the PPC32 dependency from QUICC_ENGINE and
-build the QE support in drivers/soc/fsl/qe, while preventing
-allmodconfig/randconfig failures due to SERIAL_QE not being supported
-yet.
+This driver uses #defines from asm/cpm.h, so instead of relying on
+some other header pulling that in, do that explicitly.
 
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- drivers/tty/serial/Kconfig | 1 +
+ drivers/tty/serial/ucc_uart.c | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/drivers/tty/serial/Kconfig b/drivers/tty/serial/Kconfig
-index 67a9eb3f94ce..78246f535809 100644
---- a/drivers/tty/serial/Kconfig
-+++ b/drivers/tty/serial/Kconfig
-@@ -1056,6 +1056,7 @@ config SERIAL_LANTIQ
- config SERIAL_QE
- 	tristate "Freescale QUICC Engine serial port support"
- 	depends on QUICC_ENGINE
-+	depends on PPC32
- 	select SERIAL_CORE
- 	select FW_LOADER
- 	help
+diff --git a/drivers/tty/serial/ucc_uart.c b/drivers/tty/serial/ucc_uart.c
+index a0555ae2b1ef..e2c998badf81 100644
+--- a/drivers/tty/serial/ucc_uart.c
++++ b/drivers/tty/serial/ucc_uart.c
+@@ -33,6 +33,7 @@
+ 
+ #include <linux/firmware.h>
+ #include <asm/reg.h>
++#include <asm/cpm.h>
+ 
+ /*
+  * The GUMR flag for Soft UART.  This would normally be defined in qe.h,
 -- 
 2.23.0
 
