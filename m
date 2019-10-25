@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2ADBBE4B62
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 14:42:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E9CFE4B55
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 14:42:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/PKXKtvxveFUr6kzAN1mMy+ksBT2UYecARw6Up1ae+4=; b=gnSbxP+u3Pf5zD
-	PeTNZufzbsvbf0brDR9wGU/Hx5ZVfwSkFPq1qXGDGjJTpg+vOrDve9gX3tayG+PTNDB7vY6sKCO96
-	o4P8T8YvmkKNd7qq/Udl4obq54lvoct5qkkBKmNPcn1vhuX8C61Vh0OH/N9Sqy0f525GaFmj/+ShH
-	+6vI3sbN9Dz0TENfjx35yFrnrDRFUyzKggtrA+FD4Cnfcf3OElpp+7DHgwKmSDLElfZDsvlxTGvbn
-	743BrIEKa5ykv+ituXf2bHqSKH1afzyGP8t/1SkkZEAtCMkMIJRE4STw8VvmIvyxKCw/Wou82z88d
-	TBqM9RBcZnNyJxi59RHA==;
+	List-Owner; bh=d5Vr762c158rBEBwYGrFbfTOAVCa4NfyGTI+zWb8+PU=; b=golBhqmigpolFc
+	uPjUxnuQa6T66YQsfUSBxHML11UAe87NS6kSLHBQkmpsTA8qAQs1aFXSdYAsfgl+at9jEoQKEqAnH
+	irnCOlEHh9J10IRdtRh8MwyhvZ2DwQTstsK3jKxH3A0OuyWeuYSQTe0QE3capBt/CY1zxO/VJZ3lP
+	LjoNcR/XWmDK6+31pn0bl+2yqLWBFrm4+hzMpespU3siEJnOnz7y0NYNoOn8mfM3Jab9f7sSXushE
+	Y6blM4xwolMS2fWlMEdK0KSaoymSTIJqeJUOXeItjbG3uDf64vBz2/dIcm7PlLvtBemveFrNfwnpN
+	M419kDZy4ofpJrfX3Igw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNyvU-0007U7-OV; Fri, 25 Oct 2019 12:42:44 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1iNyut-0006up-43; Fri, 25 Oct 2019 12:42:07 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNytx-0006Dr-Fu
+ id 1iNyty-0006F2-SG
  for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 12:41:12 +0000
-Received: by mail-lf1-x141.google.com with SMTP id q28so1628669lfa.5
+Received: by mail-lf1-x142.google.com with SMTP id i15so1617505lfo.7
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 25 Oct 2019 05:41:09 -0700 (PDT)
+ Fri, 25 Oct 2019 05:41:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=KpsQXq8uXz3AjuC8zFugbFdIMVLEeL/wAcaNezuzQIg=;
- b=Lujjlyr+AfXRRl+wGvn8Qvihn/KN8LWCqi4kolwlKQZ7qjqldAl04AGkDa5+2tsD/r
- yj6GGSKX09NBG8L94vYyMd0K4TnZcW1MStdU1wA1BSIa87qLvQlGrwuQZ4FYy9GlPjE4
- 1nHwzz11Ni13Hg5j85JaC31Bke/wlaf4zEK5s=
+ bh=fgKnxJ1wOt4EIZwRcA9XPxDbDGGhVcBvHA7yIdz2HCY=;
+ b=i58fVaUPnJK7wm55cSIpzM94MYvaZzY+Sn1vefsKSTwyL6EPMdUr7hZeg8dREi+Hkr
+ Ab6iCLKcMZsjQXTlNye4xQSNgvGRtroKi8gtUrwuSep0SzBezpStEJCBtnaSuh6YKwJU
+ G2R+j1/b4sM4dOTtAUkxpe5bHoyj2eRQlcXHg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=KpsQXq8uXz3AjuC8zFugbFdIMVLEeL/wAcaNezuzQIg=;
- b=UdBkH3DiNDzbrTM7OWEpkLeKoyrb1yWgzyqwy/5fmsw09DBtg7D1dYTKjA16ApsVGv
- hQlg9X0qsM7F/lXrA78sxU7tMHheLzGtFFdjd618zO/o/SDR/QCGV+DlafXLI+5UOa+3
- 837SKwxRVpsW+y3c/YLG7n2MAjNFG6xxO9CYiuoXDaKcRWRATmmwKI2CYYFagDCqsMUn
- 25NG8r9/rVLDhPbYFoscKbS9HWtPYiSuE3Zz40oZXsoLgtGCG4ZCWHuxHFWUez5+KHhT
- F21eaC9Z58Wh6r0qaqnQJqGbOR/XdZxOHobemncfeG3M+eWFJLVB4RC7ZUxk6/Ig3Xqq
- S2gw==
-X-Gm-Message-State: APjAAAWb8v9mblrjOEKV5hqmtmD+J5FMfHl/7hrXCQsSPdPeSKRIAc5d
- 3X5vCGuTTSMUPdSVupFO6X+YMJN5qHye2w==
-X-Google-Smtp-Source: APXvYqzQ4jZPtompIQ6wN1YvHfqQ3rKdaVk4lJJ+494PK+/61L3WRbLUt2K3EJ0JdAgAc1tvXnRrhg==
-X-Received: by 2002:a19:5e53:: with SMTP id z19mr2490404lfi.111.1572007267800; 
- Fri, 25 Oct 2019 05:41:07 -0700 (PDT)
+ bh=fgKnxJ1wOt4EIZwRcA9XPxDbDGGhVcBvHA7yIdz2HCY=;
+ b=R8kbG4UxJ7KJjH2zXM1/5WccfryBLgssq9O9o/Y5SydMqjmlI7jhAKk3tKqguXuuJs
+ y4U2SSCpPDqNBdc2mymN3fC+Wzr95JzG2be6b1xm7SlvgXpXrIPxvP6u61HTt68K04dV
+ LLDf04fRS3tKya0W+BeBJQGD2U2C3Ozs8B5w6xA+wQ3LgMuMOsm61/l7J9SlXEfnLkRB
+ xwRgQUGSaiuoHSZR+6Krm4ftPTCd6I4xJDhdkBHZCu8bCaWdyUzyQE/XG4rohygL99Q+
+ vaXtnJtYa9KvW8Nat9H3SwbvxozrUs9RvyX3U3ZnJ5UMfZAFHlh7bhzPFynMIHeMNipG
+ L/kw==
+X-Gm-Message-State: APjAAAVcp5IdVtzuFwN2gYcJ0pRMysLuuoGEzpj8nioTiEDNf/PuXAeG
+ bNaiHvhm/ZForKLdh6btKuvqmQ==
+X-Google-Smtp-Source: APXvYqyIT2xLWVoaJP+X3MZLfQiywdsydM/+DaqNZhO2Hd1pHXm0z/JSsmbXZuo+4b142OCkiN3qWA==
+X-Received: by 2002:ac2:4436:: with SMTP id w22mr2568863lfl.161.1572007268911; 
+ Fri, 25 Oct 2019 05:41:08 -0700 (PDT)
 Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id 10sm821028lfy.57.2019.10.25.05.41.06
+ by smtp.gmail.com with ESMTPSA id 10sm821028lfy.57.2019.10.25.05.41.07
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 25 Oct 2019 05:41:06 -0700 (PDT)
+ Fri, 25 Oct 2019 05:41:08 -0700 (PDT)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
  Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v2 04/23] soc: fsl: qe: replace spin_event_timeout by
- readx_poll_timeout_atomic
-Date: Fri, 25 Oct 2019 14:40:39 +0200
-Message-Id: <20191025124058.22580-5-linux@rasmusvillemoes.dk>
+Subject: [PATCH v2 05/23] soc: fsl: qe: qe.c: guard use of pvr_version_is()
+ with CONFIG_PPC32
+Date: Fri, 25 Oct 2019 14:40:40 +0200
+Message-Id: <20191025124058.22580-6-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191025124058.22580-1-linux@rasmusvillemoes.dk>
 References: <20191018125234.21825-1-linux@rasmusvillemoes.dk>
  <20191025124058.22580-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_054109_533596_B77EFCF9 
-X-CRM114-Status: GOOD (  11.34  )
+X-CRM114-CacheID: sfid-20191025_054110_918324_6CC43BDE 
+X-CRM114-Status: GOOD (  12.01  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -106,54 +106,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In preparation for allowing QE to be built for architectures other
-than ppc, use the generic readx_poll_timeout_atomic() helper from
-iopoll.h rather than the ppc-only spin_event_timeout().
+Commit e5c5c8d23fef (soc/fsl/qe: only apply QE_General4 workaround on
+affected SoCs) introduced use of pvr_version_is(), saying
+
+    The QE_General4 workaround is only valid for the MPC832x and MPC836x
+    SoCs. The other SoCs that embed a QUICC engine are not affected by this
+    hardware bug and thus can use the computed divisors (this was
+    successfully tested on the T1040).
+
+I'm reading the above as saying that the errata does not apply to the
+ARM-based SOCs with QUICC engine. In any case, use of pvr_version_is()
+must be guarded by CONFIG_PPC32 before we can remove the PPC32
+dependency from CONFIG_QUICC_ENGINE, so introduce qe_general4_errata()
+to keep the necessary #ifdeffery localized to a trivial helper.
 
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- drivers/soc/fsl/qe/qe.c | 13 +++++++------
- 1 file changed, 7 insertions(+), 6 deletions(-)
+ drivers/soc/fsl/qe/qe.c | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/soc/fsl/qe/qe.c b/drivers/soc/fsl/qe/qe.c
-index 60bf047001be..bcdec37b25ca 100644
+index bcdec37b25ca..0ddf83d8e3ce 100644
 --- a/drivers/soc/fsl/qe/qe.c
 +++ b/drivers/soc/fsl/qe/qe.c
-@@ -22,6 +22,7 @@
- #include <linux/module.h>
- #include <linux/delay.h>
- #include <linux/ioport.h>
-+#include <linux/iopoll.h>
- #include <linux/crc32.h>
- #include <linux/mod_devicetable.h>
- #include <linux/of_platform.h>
-@@ -108,7 +109,8 @@ int qe_issue_cmd(u32 cmd, u32 device, u8 mcn_protocol, u32 cmd_input)
- {
- 	unsigned long flags;
- 	u8 mcn_shift = 0, dev_shift = 0;
--	u32 ret;
-+	u32 val;
-+	int ret;
+@@ -197,6 +197,14 @@ EXPORT_SYMBOL(qe_get_brg_clk);
+ #define PVR_VER_836x	0x8083
+ #define PVR_VER_832x	0x8084
  
- 	spin_lock_irqsave(&qe_lock, flags);
- 	if (cmd == QE_RESET) {
-@@ -135,13 +137,12 @@ int qe_issue_cmd(u32 cmd, u32 device, u8 mcn_protocol, u32 cmd_input)
- 	}
- 
- 	/* wait for the QE_CR_FLG to clear */
--	ret = spin_event_timeout((ioread32be(&qe_immr->cp.cecr) & QE_CR_FLG) == 0,
--				 100, 0);
--	/* On timeout (e.g. failure), the expression will be false (ret == 0),
--	   otherwise it will be true (ret == 1). */
-+	ret = readx_poll_timeout_atomic(ioread32be, &qe_immr->cp.cecr, val,
-+					(val & QE_CR_FLG) == 0, 0, 100);
-+	/* On timeout, ret is -ETIMEDOUT, otherwise it will be 0. */
- 	spin_unlock_irqrestore(&qe_lock, flags);
- 
--	return ret == 1;
-+	return ret == 0;
- }
- EXPORT_SYMBOL(qe_issue_cmd);
++static bool qe_general4_errata(void)
++{
++#ifdef CONFIG_PPC32
++	return pvr_version_is(PVR_VER_836x) || pvr_version_is(PVR_VER_832x);
++#endif
++	return false;
++}
++
+ /* Program the BRG to the given sampling rate and multiplier
+  *
+  * @brg: the BRG, QE_BRG1 - QE_BRG16
+@@ -223,7 +231,7 @@ int qe_setbrg(enum qe_clock brg, unsigned int rate, unsigned int multiplier)
+ 	/* Errata QE_General4, which affects some MPC832x and MPC836x SOCs, says
+ 	   that the BRG divisor must be even if you're not using divide-by-16
+ 	   mode. */
+-	if (pvr_version_is(PVR_VER_836x) || pvr_version_is(PVR_VER_832x))
++	if (qe_general4_errata())
+ 		if (!div16 && (divisor & 1) && (divisor > 3))
+ 			divisor++;
  
 -- 
 2.23.0
