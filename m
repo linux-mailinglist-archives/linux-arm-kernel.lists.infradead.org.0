@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1CB0E517C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 18:43:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 45940E517D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 18:44:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=seN1TDikIwtl8VcM4fQNRCpTCa2gm9emx6UPPorD/Vo=; b=QUXy1Ghae9uFzU
-	uG2cL28eo7sMAne6Q5zKPIQgGqv7nIji1uq8thDAlrjIt7ziCBwPblMWimS8uWi0htxZ/39RsIv9D
-	tpOPEN37d0TNKnJSIY5IovuJnfAMFFZbSHxUEDBummkr+nzlMv0DiTohwdVPlXM6kmXjL4FRMNijI
-	IFBhYRm0zz2teQ+jXVhz451xiT/YuxZ0uv3eqS3Wi1T58cZmrFGolAFyL/TpWhmycdYKffBayH+sP
-	LQZpiltU8gilhp0eSMe1IzVbPtSC+sxE6rqqHBLk7koV0RbN2pKFMduWkL4C2UGkRUCrt2EnBQXcG
-	ovAsmIuvv07Bv1ufTbkw==;
+	List-Owner; bh=PTF5/Qfo8A/8zuxujXzIknqCI08XaQ1bKR8Z6gtDv7o=; b=dL4D/AweEmb6RS
+	JpiJEYKf2h9mPWVXXjvVh1zhey/JRY9wzp25wsyFEcNKyy8RffIPcPzY9bMAxaLmoYTkzefan6jgG
+	6c+u7QCySiD8VnnJTKC6+46RPMGndx6NJ8rhpEYgTk9KSjuAx/hhAkql5jXiVWyknNwHeTQH2q6qb
+	XkULbsooLFDWBBVOP8etFVD74Gw6igABDzTqnaT2psUdWrfnW7V2n7oux5GOddv4Fa0mBca0mg7yf
+	SjxyTeWKXBU+EZwEo/Lsd4leEL5d8nIyNta9lTU2IDGHdZx3+Ag6CuR/BT0KhrbLYnvB4jB4/eTGb
+	CKX17VdYiPlHCTPjBL/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iO2gr-000735-Lf; Fri, 25 Oct 2019 16:43:53 +0000
+	id 1iO2h5-0007Kx-5x; Fri, 25 Oct 2019 16:44:07 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iO2ft-0006ID-Lh
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 16:42:56 +0000
+ id 1iO2fv-0006H7-NV
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 16:43:00 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 26C91337;
- Fri, 25 Oct 2019 09:42:53 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5777F328;
+ Fri, 25 Oct 2019 09:42:55 -0700 (PDT)
 Received: from eglon.cambridge.arm.com (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2407C3F71A;
- Fri, 25 Oct 2019 09:42:52 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 379203F71A;
+ Fri, 25 Oct 2019 09:42:54 -0700 (PDT)
 From: James Morse <james.morse@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 4/7] arm64: entry: convert el1_sync to C
-Date: Fri, 25 Oct 2019 17:42:13 +0100
-Message-Id: <20191025164216.53626-5-james.morse@arm.com>
+Subject: [PATCH v2 5/7] arm64: entry: convert el0_sync to C
+Date: Fri, 25 Oct 2019 17:42:14 +0100
+Message-Id: <20191025164216.53626-6-james.morse@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191025164216.53626-1-james.morse@arm.com>
 References: <20191025164216.53626-1-james.morse@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_094253_817748_D2AC611C 
-X-CRM114-Status: GOOD (  17.49  )
+X-CRM114-CacheID: sfid-20191025_094255_953769_B66BB192 
+X-CRM114-Status: GOOD (  13.87  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -70,240 +70,521 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Mark Rutland <mark.rutland@arm.com>
 
-This patch converts the EL1 sync entry assembly logic to C code.
+This is largely a 1-1 conversion of asm to C, with a couple of caveats.
 
-Doing this will allow us to make changes in a slightly more
-readable way. A case in point is supporting kernel-first RAS.
-do_sea() should be called on the CPU that took the fault.
+The el0_sync{_compat} switches explicitly handle all the EL0 debug
+cases, so el0_dbg doesn't have to try to bail out for unexpected EL1
+debug ESR values. This also means that an unexpected vector catch from
+AArch32 is routed to el0_inv.
 
-Largely the assembly code is converted to C in a relatively
-straightforward manner.
-
-Since all sync sites share a common asm entry point, the ASM_BUG()
-instances are no longer required for effective backtraces back to
-assembly, and we don't need similar BUG() entries.
-
-The ESR_ELx.EC codes for all (supported) debug exceptions are now
-checked in the el1_sync_handler's switch statement, which renders the
-check in el1_dbg redundant. This both simplifies the el1_dbg handler,
-and makes the EL1 exception handling more robust to
-currently-unallocated ESR_ELx.EC encodings.
+We *could* merge the native and compat switches, which would make the
+diffstat negative, but I've tried to stay as close to the existing
+assembly as possible for the moment.
 
 Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-[split out of a bigger series, added nokprobes, moved prototypes]
+[split out of a bigger series, added nokprobes. removed irq trace
+ calls as the C helpers do this. renamed el0_dbg's use of FAR]
 Signed-off-by: James Morse <james.morse@arm.com>
 Reviewed-by: Mark Rutland <mark.rutland@arm.com>
 Cc: Julien Thierry <julien.thierry.kdev@gmail.com>
----
- arch/arm64/kernel/Makefile       |  6 +-
- arch/arm64/kernel/entry-common.c | 98 ++++++++++++++++++++++++++++++++
- arch/arm64/kernel/entry.S        | 69 +---------------------
- 3 files changed, 102 insertions(+), 71 deletions(-)
- create mode 100644 arch/arm64/kernel/entry-common.c
 
-diff --git a/arch/arm64/kernel/Makefile b/arch/arm64/kernel/Makefile
-index 478491f07b4f..fc6488660f64 100644
---- a/arch/arm64/kernel/Makefile
-+++ b/arch/arm64/kernel/Makefile
-@@ -13,9 +13,9 @@ CFLAGS_REMOVE_return_address.o = $(CC_FLAGS_FTRACE)
- 
- # Object file lists.
- obj-y			:= debug-monitors.o entry.o irq.o fpsimd.o		\
--			   entry-fpsimd.o process.o ptrace.o setup.o signal.o	\
--			   sys.o stacktrace.o time.o traps.o io.o vdso.o	\
--			   hyp-stub.o psci.o cpu_ops.o insn.o	\
-+			   entry-common.o entry-fpsimd.o process.o ptrace.o	\
-+			   setup.o signal.o sys.o stacktrace.o time.o traps.o	\
-+			   io.o vdso.o hyp-stub.o psci.o cpu_ops.o insn.o	\
- 			   return_address.o cpuinfo.o cpu_errata.o		\
- 			   cpufeature.o alternative.o cacheinfo.o		\
- 			   smp.o smp_spin_table.o topology.o smccc-call.o	\
+---
+Changes since v1:
+ * Renamed addr_if_watchpoint far, and left a comment.
+---
+ arch/arm64/include/asm/asm-uaccess.h |  10 --
+ arch/arm64/kernel/entry-common.c     | 222 +++++++++++++++++++++++++++
+ arch/arm64/kernel/entry.S            | 206 +------------------------
+ 3 files changed, 227 insertions(+), 211 deletions(-)
+
+diff --git a/arch/arm64/include/asm/asm-uaccess.h b/arch/arm64/include/asm/asm-uaccess.h
+index f74909ba29bd..a70575edae8e 100644
+--- a/arch/arm64/include/asm/asm-uaccess.h
++++ b/arch/arm64/include/asm/asm-uaccess.h
+@@ -74,14 +74,4 @@ alternative_if ARM64_ALT_PAN_NOT_UAO
+ 	SET_PSTATE_PAN(0)
+ alternative_else_nop_endif
+ 	.endm
+-
+-/*
+- * Remove the address tag from a virtual address, if present.
+- */
+-	.macro	clear_address_tag, dst, addr
+-	tst	\addr, #(1 << 55)
+-	bic	\dst, \addr, #(0xff << 56)
+-	csel	\dst, \dst, \addr, eq
+-	.endm
+-
+ #endif
 diff --git a/arch/arm64/kernel/entry-common.c b/arch/arm64/kernel/entry-common.c
-new file mode 100644
-index 000000000000..e726d1f4b9e9
---- /dev/null
+index e726d1f4b9e9..2c318e41d84b 100644
+--- a/arch/arm64/kernel/entry-common.c
 +++ b/arch/arm64/kernel/entry-common.c
-@@ -0,0 +1,98 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Exception handling code
-+ *
-+ * Copyright (C) 2019 ARM Ltd.
-+ */
+@@ -96,3 +96,225 @@ asmlinkage void notrace el1_sync_handler(struct pt_regs *regs)
+ 	};
+ }
+ NOKPROBE_SYMBOL(el1_sync_handler);
 +
-+#include <linux/context_tracking.h>
-+#include <linux/ptrace.h>
-+#include <linux/thread_info.h>
-+
-+#include <asm/cpufeature.h>
-+#include <asm/daifflags.h>
-+#include <asm/esr.h>
-+#include <asm/exception.h>
-+#include <asm/kprobes.h>
-+#include <asm/sysreg.h>
-+
-+static void notrace el1_abort(struct pt_regs *regs, unsigned long esr)
++static void notrace el0_da(struct pt_regs *regs, unsigned long esr)
 +{
 +	unsigned long far = read_sysreg(far_el1);
 +
-+	local_daif_inherit(regs);
++	user_exit_irqoff();
++	local_daif_restore(DAIF_PROCCTX);
 +	far = untagged_addr(far);
 +	do_mem_abort(far, esr, regs);
 +}
-+NOKPROBE_SYMBOL(el1_abort);
++NOKPROBE_SYMBOL(el0_da);
 +
-+static void notrace el1_pc(struct pt_regs *regs, unsigned long esr)
++static void notrace el0_ia(struct pt_regs *regs, unsigned long esr)
 +{
 +	unsigned long far = read_sysreg(far_el1);
 +
-+	local_daif_inherit(regs);
++	user_exit_irqoff();
++	local_daif_restore(DAIF_PROCCTX_NOIRQ);
++	do_el0_ia_bp_hardening(far, esr, regs);
++}
++NOKPROBE_SYMBOL(el0_ia);
++
++static void notrace el0_fpsimd_acc(struct pt_regs *regs, unsigned long esr)
++{
++	user_exit_irqoff();
++	local_daif_restore(DAIF_PROCCTX);
++	do_fpsimd_acc(esr, regs);
++}
++NOKPROBE_SYMBOL(el0_fpsimd_acc);
++
++static void notrace el0_sve_acc(struct pt_regs *regs, unsigned long esr)
++{
++	user_exit_irqoff();
++	local_daif_restore(DAIF_PROCCTX);
++	do_sve_acc(esr, regs);
++}
++NOKPROBE_SYMBOL(el0_sve_acc);
++
++static void notrace el0_fpsimd_exc(struct pt_regs *regs, unsigned long esr)
++{
++	user_exit_irqoff();
++	local_daif_restore(DAIF_PROCCTX);
++	do_fpsimd_exc(esr, regs);
++}
++NOKPROBE_SYMBOL(el0_fpsimd_exc);
++
++static void notrace el0_sys(struct pt_regs *regs, unsigned long esr)
++{
++	user_exit_irqoff();
++	local_daif_restore(DAIF_PROCCTX);
++	do_sysinstr(esr, regs);
++}
++NOKPROBE_SYMBOL(el0_sys);
++
++static void notrace el0_pc(struct pt_regs *regs, unsigned long esr)
++{
++	unsigned long far = read_sysreg(far_el1);
++
++	user_exit_irqoff();
++	local_daif_restore(DAIF_PROCCTX_NOIRQ);
 +	do_sp_pc_abort(far, esr, regs);
 +}
-+NOKPROBE_SYMBOL(el1_pc);
++NOKPROBE_SYMBOL(el0_pc);
 +
-+static void el1_undef(struct pt_regs *regs)
++static void notrace el0_sp(struct pt_regs *regs, unsigned long esr)
 +{
-+	local_daif_inherit(regs);
++	user_exit_irqoff();
++	local_daif_restore(DAIF_PROCCTX_NOIRQ);
++	do_sp_pc_abort(regs->sp, esr, regs);
++}
++NOKPROBE_SYMBOL(el0_sp);
++
++static void notrace el0_undef(struct pt_regs *regs)
++{
++	user_exit_irqoff();
++	local_daif_restore(DAIF_PROCCTX);
 +	do_undefinstr(regs);
 +}
-+NOKPROBE_SYMBOL(el1_undef);
++NOKPROBE_SYMBOL(el0_undef);
 +
-+static void el1_inv(struct pt_regs *regs, unsigned long esr)
++static void notrace el0_inv(struct pt_regs *regs, unsigned long esr)
 +{
-+	local_daif_inherit(regs);
-+	bad_mode(regs, 0, esr);
++	user_exit_irqoff();
++	local_daif_restore(DAIF_PROCCTX);
++	bad_el0_sync(regs, 0, esr);
 +}
-+NOKPROBE_SYMBOL(el1_inv);
++NOKPROBE_SYMBOL(el0_inv);
 +
-+static void notrace el1_dbg(struct pt_regs *regs, unsigned long esr)
++static void notrace el0_dbg(struct pt_regs *regs, unsigned long esr)
 +{
++	/* Only watchpoints write FAR_EL1, otherwise its UNKNOWN */
 +	unsigned long far = read_sysreg(far_el1);
 +
-+	/*
-+	 * The CPU masked interrupts, and we are leaving them masked during
-+	 * do_debug_exception(). Update PMR as if we had called
-+	 * local_mask_daif().
-+	 */
 +	if (system_uses_irq_prio_masking())
 +		gic_write_pmr(GIC_PRIO_IRQON | GIC_PRIO_PSR_I_SET);
 +
++	user_exit_irqoff();
 +	do_debug_exception(far, esr, regs);
++	local_daif_restore(DAIF_PROCCTX_NOIRQ);
 +}
-+NOKPROBE_SYMBOL(el1_dbg);
++NOKPROBE_SYMBOL(el0_dbg);
 +
-+asmlinkage void notrace el1_sync_handler(struct pt_regs *regs)
++static void notrace el0_svc(struct pt_regs *regs)
++{
++	if (system_uses_irq_prio_masking())
++		gic_write_pmr(GIC_PRIO_IRQON | GIC_PRIO_PSR_I_SET);
++
++	el0_svc_handler(regs);
++}
++NOKPROBE_SYMBOL(el0_svc);
++
++asmlinkage void notrace el0_sync_handler(struct pt_regs *regs)
 +{
 +	unsigned long esr = read_sysreg(esr_el1);
 +
 +	switch (ESR_ELx_EC(esr)) {
-+	case ESR_ELx_EC_DABT_CUR:
-+	case ESR_ELx_EC_IABT_CUR:
-+		el1_abort(regs, esr);
++	case ESR_ELx_EC_SVC64:
++		el0_svc(regs);
 +		break;
-+	/*
-+	 * We don't handle ESR_ELx_EC_SP_ALIGN, since we will have hit a
-+	 * recursive exception when trying to push the initial pt_regs.
-+	 */
-+	case ESR_ELx_EC_PC_ALIGN:
-+		el1_pc(regs, esr);
++	case ESR_ELx_EC_DABT_LOW:
++		el0_da(regs, esr);
++		break;
++	case ESR_ELx_EC_IABT_LOW:
++		el0_ia(regs, esr);
++		break;
++	case ESR_ELx_EC_FP_ASIMD:
++		el0_fpsimd_acc(regs, esr);
++		break;
++	case ESR_ELx_EC_SVE:
++		el0_sve_acc(regs, esr);
++		break;
++	case ESR_ELx_EC_FP_EXC64:
++		el0_fpsimd_exc(regs, esr);
 +		break;
 +	case ESR_ELx_EC_SYS64:
-+	case ESR_ELx_EC_UNKNOWN:
-+		el1_undef(regs);
++	case ESR_ELx_EC_WFx:
++		el0_sys(regs, esr);
 +		break;
-+	case ESR_ELx_EC_BREAKPT_CUR:
-+	case ESR_ELx_EC_SOFTSTP_CUR:
-+	case ESR_ELx_EC_WATCHPT_CUR:
++	case ESR_ELx_EC_SP_ALIGN:
++		el0_sp(regs, esr);
++		break;
++	case ESR_ELx_EC_PC_ALIGN:
++		el0_pc(regs, esr);
++		break;
++	case ESR_ELx_EC_UNKNOWN:
++		el0_undef(regs);
++		break;
++	case ESR_ELx_EC_BREAKPT_LOW:
++	case ESR_ELx_EC_SOFTSTP_LOW:
++	case ESR_ELx_EC_WATCHPT_LOW:
 +	case ESR_ELx_EC_BRK64:
-+		el1_dbg(regs, esr);
++		el0_dbg(regs, esr);
 +		break;
 +	default:
-+		el1_inv(regs, esr);
-+	};
++		el0_inv(regs, esr);
++	}
 +}
-+NOKPROBE_SYMBOL(el1_sync_handler);
++NOKPROBE_SYMBOL(el0_sync_handler);
++
++#ifdef CONFIG_COMPAT
++static void notrace el0_cp15(struct pt_regs *regs, unsigned long esr)
++{
++	user_exit_irqoff();
++	local_daif_restore(DAIF_PROCCTX);
++	do_cp15instr(esr, regs);
++}
++NOKPROBE_SYMBOL(el0_cp15);
++
++static void notrace el0_svc_compat(struct pt_regs *regs)
++{
++	if (system_uses_irq_prio_masking())
++		gic_write_pmr(GIC_PRIO_IRQON | GIC_PRIO_PSR_I_SET);
++
++	el0_svc_compat_handler(regs);
++}
++NOKPROBE_SYMBOL(el0_svc_compat);
++
++asmlinkage void notrace el0_sync_compat_handler(struct pt_regs *regs)
++{
++	unsigned long esr = read_sysreg(esr_el1);
++
++	switch (ESR_ELx_EC(esr)) {
++	case ESR_ELx_EC_SVC32:
++		el0_svc_compat(regs);
++		break;
++	case ESR_ELx_EC_DABT_LOW:
++		el0_da(regs, esr);
++		break;
++	case ESR_ELx_EC_IABT_LOW:
++		el0_ia(regs, esr);
++		break;
++	case ESR_ELx_EC_FP_ASIMD:
++		el0_fpsimd_acc(regs, esr);
++		break;
++	case ESR_ELx_EC_FP_EXC32:
++		el0_fpsimd_exc(regs, esr);
++		break;
++	case ESR_ELx_EC_PC_ALIGN:
++		el0_pc(regs, esr);
++		break;
++	case ESR_ELx_EC_UNKNOWN:
++	case ESR_ELx_EC_CP14_MR:
++	case ESR_ELx_EC_CP14_LS:
++	case ESR_ELx_EC_CP14_64:
++		el0_undef(regs);
++		break;
++	case ESR_ELx_EC_CP15_32:
++	case ESR_ELx_EC_CP15_64:
++		el0_cp15(regs, esr);
++		break;
++	case ESR_ELx_EC_BREAKPT_LOW:
++	case ESR_ELx_EC_SOFTSTP_LOW:
++	case ESR_ELx_EC_WATCHPT_LOW:
++	case ESR_ELx_EC_BKPT32:
++		el0_dbg(regs, esr);
++		break;
++	default:
++		el0_inv(regs, esr);
++	}
++}
++NOKPROBE_SYMBOL(el0_sync_compat_handler);
++#endif /* CONFIG_COMPAT */
 diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-index e304fe04b098..5d7f42eb0e89 100644
+index 5d7f42eb0e89..15822a0fe37f 100644
 --- a/arch/arm64/kernel/entry.S
 +++ b/arch/arm64/kernel/entry.S
-@@ -578,76 +578,9 @@ ENDPROC(el1_error_invalid)
+@@ -647,71 +647,18 @@ ENDPROC(el1_irq)
  	.align	6
- el1_sync:
- 	kernel_entry 1
--	mrs	x1, esr_el1			// read the syndrome register
--	lsr	x24, x1, #ESR_ELx_EC_SHIFT	// exception class
--	cmp	x24, #ESR_ELx_EC_DABT_CUR	// data abort in EL1
--	b.eq	el1_da
--	cmp	x24, #ESR_ELx_EC_IABT_CUR	// instruction abort in EL1
--	b.eq	el1_ia
+ el0_sync:
+ 	kernel_entry 0
+-	mrs	x25, esr_el1			// read the syndrome register
+-	lsr	x24, x25, #ESR_ELx_EC_SHIFT	// exception class
+-	cmp	x24, #ESR_ELx_EC_SVC64		// SVC in 64-bit state
+-	b.eq	el0_svc
+-	cmp	x24, #ESR_ELx_EC_DABT_LOW	// data abort in EL0
+-	b.eq	el0_da
+-	cmp	x24, #ESR_ELx_EC_IABT_LOW	// instruction abort in EL0
+-	b.eq	el0_ia
+-	cmp	x24, #ESR_ELx_EC_FP_ASIMD	// FP/ASIMD access
+-	b.eq	el0_fpsimd_acc
+-	cmp	x24, #ESR_ELx_EC_SVE		// SVE access
+-	b.eq	el0_sve_acc
+-	cmp	x24, #ESR_ELx_EC_FP_EXC64	// FP/ASIMD exception
+-	b.eq	el0_fpsimd_exc
 -	cmp	x24, #ESR_ELx_EC_SYS64		// configurable trap
--	b.eq	el1_undef
+-	ccmp	x24, #ESR_ELx_EC_WFx, #4, ne
+-	b.eq	el0_sys
+-	cmp	x24, #ESR_ELx_EC_SP_ALIGN	// stack alignment exception
+-	b.eq	el0_sp
 -	cmp	x24, #ESR_ELx_EC_PC_ALIGN	// pc alignment exception
--	b.eq	el1_pc
--	cmp	x24, #ESR_ELx_EC_UNKNOWN	// unknown exception in EL1
--	b.eq	el1_undef
--	cmp	x24, #ESR_ELx_EC_BREAKPT_CUR	// debug exception in EL1
--	b.ge	el1_dbg
--	b	el1_inv
+-	b.eq	el0_pc
+-	cmp	x24, #ESR_ELx_EC_UNKNOWN	// unknown exception in EL0
+-	b.eq	el0_undef
+-	cmp	x24, #ESR_ELx_EC_BREAKPT_LOW	// debug exception in EL0
+-	b.ge	el0_dbg
+-	b	el0_inv
++	mov	x0, sp
++	bl	el0_sync_handler
++	b	ret_to_user
+ 
+ #ifdef CONFIG_COMPAT
+ 	.align	6
+ el0_sync_compat:
+ 	kernel_entry 0, 32
+-	mrs	x25, esr_el1			// read the syndrome register
+-	lsr	x24, x25, #ESR_ELx_EC_SHIFT	// exception class
+-	cmp	x24, #ESR_ELx_EC_SVC32		// SVC in 32-bit state
+-	b.eq	el0_svc_compat
+-	cmp	x24, #ESR_ELx_EC_DABT_LOW	// data abort in EL0
+-	b.eq	el0_da
+-	cmp	x24, #ESR_ELx_EC_IABT_LOW	// instruction abort in EL0
+-	b.eq	el0_ia
+-	cmp	x24, #ESR_ELx_EC_FP_ASIMD	// FP/ASIMD access
+-	b.eq	el0_fpsimd_acc
+-	cmp	x24, #ESR_ELx_EC_FP_EXC32	// FP/ASIMD exception
+-	b.eq	el0_fpsimd_exc
+-	cmp	x24, #ESR_ELx_EC_PC_ALIGN	// pc alignment exception
+-	b.eq	el0_pc
+-	cmp	x24, #ESR_ELx_EC_UNKNOWN	// unknown exception in EL0
+-	b.eq	el0_undef
+-	cmp	x24, #ESR_ELx_EC_CP15_32	// CP15 MRC/MCR trap
+-	b.eq	el0_cp15
+-	cmp	x24, #ESR_ELx_EC_CP15_64	// CP15 MRRC/MCRR trap
+-	b.eq	el0_cp15
+-	cmp	x24, #ESR_ELx_EC_CP14_MR	// CP14 MRC/MCR trap
+-	b.eq	el0_undef
+-	cmp	x24, #ESR_ELx_EC_CP14_LS	// CP14 LDC/STC trap
+-	b.eq	el0_undef
+-	cmp	x24, #ESR_ELx_EC_CP14_64	// CP14 MRRC/MCRR trap
+-	b.eq	el0_undef
+-	cmp	x24, #ESR_ELx_EC_BREAKPT_LOW	// debug exception in EL0
+-	b.ge	el0_dbg
+-	b	el0_inv
+-el0_svc_compat:
+-	gic_prio_kentry_setup tmp=x1
+ 	mov	x0, sp
+-	bl	el0_svc_compat_handler
++	bl	el0_sync_compat_handler
+ 	b	ret_to_user
++ENDPROC(el0_sync)
+ 
+ 	.align	6
+ el0_irq_compat:
+@@ -721,139 +668,7 @@ el0_irq_compat:
+ el0_error_compat:
+ 	kernel_entry 0, 32
+ 	b	el0_error_naked
 -
--el1_ia:
+-el0_cp15:
 -	/*
--	 * Fall through to the Data abort case
+-	 * Trapped CP15 (MRC, MCR, MRRC, MCRR) instructions
 -	 */
--el1_da:
+-	ct_user_exit_irqoff
+-	enable_daif
+-	mov	x0, x25
+-	mov	x1, sp
+-	bl	do_cp15instr
+-	b	ret_to_user
+-#endif
+-
+-el0_da:
 -	/*
 -	 * Data abort handling
 -	 */
--	mrs	x3, far_el1
--	inherit_daif	pstate=x23, tmp=x2
--	clear_address_tag x0, x3
--	mov	x2, sp				// struct pt_regs
+-	mrs	x26, far_el1
+-	ct_user_exit_irqoff
+-	enable_daif
+-	clear_address_tag x0, x26
+-	mov	x1, x25
+-	mov	x2, sp
 -	bl	do_mem_abort
--
--	kernel_exit 1
--el1_pc:
+-	b	ret_to_user
+-el0_ia:
 -	/*
--	 * PC alignment exception handling. We don't handle SP alignment faults,
--	 * since we will have hit a recursive exception when trying to push the
--	 * initial pt_regs.
+-	 * Instruction abort handling
 -	 */
--	mrs	x0, far_el1
--	inherit_daif	pstate=x23, tmp=x2
+-	mrs	x26, far_el1
+-	gic_prio_kentry_setup tmp=x0
+-	ct_user_exit_irqoff
+-	enable_da_f
+-#ifdef CONFIG_TRACE_IRQFLAGS
+-	bl	trace_hardirqs_off
+-#endif
+-	mov	x0, x26
+-	mov	x1, x25
+-	mov	x2, sp
+-	bl	do_el0_ia_bp_hardening
+-	b	ret_to_user
+-el0_fpsimd_acc:
+-	/*
+-	 * Floating Point or Advanced SIMD access
+-	 */
+-	ct_user_exit_irqoff
+-	enable_daif
+-	mov	x0, x25
+-	mov	x1, sp
+-	bl	do_fpsimd_acc
+-	b	ret_to_user
+-el0_sve_acc:
+-	/*
+-	 * Scalable Vector Extension access
+-	 */
+-	ct_user_exit_irqoff
+-	enable_daif
+-	mov	x0, x25
+-	mov	x1, sp
+-	bl	do_sve_acc
+-	b	ret_to_user
+-el0_fpsimd_exc:
+-	/*
+-	 * Floating Point, Advanced SIMD or SVE exception
+-	 */
+-	ct_user_exit_irqoff
+-	enable_daif
+-	mov	x0, x25
+-	mov	x1, sp
+-	bl	do_fpsimd_exc
+-	b	ret_to_user
+-el0_sp:
+-	ldr	x26, [sp, #S_SP]
+-	b	el0_sp_pc
+-el0_pc:
+-	mrs	x26, far_el1
+-el0_sp_pc:
+-	/*
+-	 * Stack or PC alignment exception handling
+-	 */
+-	gic_prio_kentry_setup tmp=x0
+-	ct_user_exit_irqoff
+-	enable_da_f
+-#ifdef CONFIG_TRACE_IRQFLAGS
+-	bl	trace_hardirqs_off
+ #endif
+-	mov	x0, x26
+-	mov	x1, x25
 -	mov	x2, sp
 -	bl	do_sp_pc_abort
--	ASM_BUG()
--el1_undef:
+-	b	ret_to_user
+-el0_undef:
 -	/*
 -	 * Undefined instruction
 -	 */
--	inherit_daif	pstate=x23, tmp=x2
- 	mov	x0, sp
+-	ct_user_exit_irqoff
+-	enable_daif
+-	mov	x0, sp
 -	bl	do_undefinstr
--	kernel_exit 1
--el1_dbg:
+-	b	ret_to_user
+-el0_sys:
+-	/*
+-	 * System instructions, for trapped cache maintenance instructions
+-	 */
+-	ct_user_exit_irqoff
+-	enable_daif
+-	mov	x0, x25
+-	mov	x1, sp
+-	bl	do_sysinstr
+-	b	ret_to_user
+-el0_dbg:
 -	/*
 -	 * Debug exception handling
 -	 */
--	cmp	x24, #ESR_ELx_EC_BRK64		// if BRK64
--	cinc	x24, x24, eq			// set bit '0'
--	tbz	x24, #0, el1_inv		// EL1 only
+-	tbnz	x24, #0, el0_inv		// EL0 only
+-	mrs	x24, far_el1
 -	gic_prio_kentry_setup tmp=x3
--	mrs	x0, far_el1
--	mov	x2, sp				// struct pt_regs
+-	ct_user_exit_irqoff
+-	mov	x0, x24
+-	mov	x1, x25
+-	mov	x2, sp
 -	bl	do_debug_exception
-+	bl	el1_sync_handler
- 	kernel_exit 1
--el1_inv:
--	// TODO: add support for undefined instructions in kernel mode
--	inherit_daif	pstate=x23, tmp=x2
+-	enable_da_f
+-	b	ret_to_user
+-el0_inv:
+-	ct_user_exit_irqoff
+-	enable_daif
 -	mov	x0, sp
--	mov	x2, x1
 -	mov	x1, #BAD_SYNC
--	bl	bad_mode
--	ASM_BUG()
- ENDPROC(el1_sync)
+-	mov	x2, x25
+-	bl	bad_el0_sync
+-	b	ret_to_user
+-ENDPROC(el0_sync)
  
  	.align	6
+ el0_irq:
+@@ -932,17 +747,6 @@ finish_ret_to_user:
+ 	kernel_exit 0
+ ENDPROC(ret_to_user)
+ 
+-/*
+- * SVC handler.
+- */
+-	.align	6
+-el0_svc:
+-	gic_prio_kentry_setup tmp=x1
+-	mov	x0, sp
+-	bl	el0_svc_handler
+-	b	ret_to_user
+-ENDPROC(el0_svc)
+-
+ 	.popsection				// .entry.text
+ 
+ #ifdef CONFIG_UNMAP_KERNEL_AT_EL0
 -- 
 2.20.1
 
