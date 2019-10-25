@@ -2,55 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E65CE43C1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 08:47:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD852E43E9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 08:59:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=SpVWgnZCCXIE2s2ZUC/bjqGnv07/zwcDgOBZnsThdNw=; b=kgrwsJzBkiuKie4ezGh2Ya0wX
-	6uB9kPW8M4fjpyvigitWlmRqoUOoUYx6TDTTCGOIAIaP2jrC5sDEPO4Wm2NDWs3B+0yiWLp+cU854
-	CyLZPR2FTZOSaChPxAu+VFJFEMuRhprJzKjHx6LcOIHdtfG0nqyIbwDHaA/+/tZW4tqCE7INmO78s
-	l2jishhq5g823bYqQQu49pW5Fk4DQjdPr3FiGunrbCwWfJgK3GS5pwqm6/XUvbZkiYwScJWYu+If/
-	dSwnleuaOMn7oW4n2b5hPIo9Km2h4d519OGOt78ITyjIDDZu8JkvDS/W7bs+jeeyOSC0ntbgXuYn7
-	EEWAJR15Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=1Gpc5cX+LgKWbcEL1eMu8WFHJwsD/tJbNnRkUBRllXg=; b=Zn6
+	jFy174V5hXEvKbnHaKGUCdKc07mlPKzDCHzqZKcqoBUxSE1CN97rSfgFGapwRUNYaG4W217gpTEN+
+	SD8V8Eaps+uRkQa3nQ1Qhry37D0IzU2CLt4F8IyoFNYqgj1ZgAnnBMd5OhES/57S4uhFUCCjV7Tuq
+	Jb/j6VV377COXjqlwYUnyZoGDCfAYYRNZQ64OufR5mDaxVUbTpe2beB+99yKz3Cg6xrT7TDhc7oHC
+	014IVi9svweiJi7G9v8DuLnW3AMhZduqUU/3hAwyfnxuJiPPJI+D+sGk2aPd4tYnwABii0k8dxGs6
+	1CuWEZDLgb1cUTYNHBi5Dyr4y3SQ8yA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNtNs-0005Bh-CA; Fri, 25 Oct 2019 06:47:40 +0000
-Received: from mail-sz.amlogic.com ([211.162.65.117])
+	id 1iNtZa-0001Uu-R3; Fri, 25 Oct 2019 06:59:46 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNtNe-0005BA-P7; Fri, 25 Oct 2019 06:47:28 +0000
-Received: from [10.28.19.114] (10.28.19.114) by mail-sz.amlogic.com
- (10.28.11.5) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Fri, 25 Oct
- 2019 14:47:37 +0800
-Subject: Re: [PATCH v2 2/3] clk: meson: add support for A1 PLL clock ops
-To: Jerome Brunet <jbrunet@baylibre.com>, Neil Armstrong
- <narmstrong@baylibre.com>
-References: <1571382865-41978-1-git-send-email-jian.hu@amlogic.com>
- <1571382865-41978-3-git-send-email-jian.hu@amlogic.com>
- <1jtv82bai3.fsf@starbuckisacylon.baylibre.com>
-From: Jian Hu <jian.hu@amlogic.com>
-Message-ID: <77eb8a68-f5b5-357b-f71c-e22337d88a39@amlogic.com>
-Date: Fri, 25 Oct 2019 14:47:36 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <1jtv82bai3.fsf@starbuckisacylon.baylibre.com>
-Content-Language: en-US
-X-Originating-IP: [10.28.19.114]
-X-ClientProxiedBy: mail-sz.amlogic.com (10.28.11.5) To mail-sz.amlogic.com
- (10.28.11.5)
+ id 1iNtZQ-0001U0-6q
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 06:59:37 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 51A0E2008F3;
+ Fri, 25 Oct 2019 08:59:33 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 0A94B200438;
+ Fri, 25 Oct 2019 08:59:28 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 432B2402BC;
+ Fri, 25 Oct 2019 14:59:21 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
+ festevam@gmail.com, daniel.baluta@nxp.com, aisheng.dong@nxp.com,
+ abel.vesa@nxp.com, leonard.crestez@nxp.com, viresh.kumar@linaro.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH 1/2] soc: imx8: Using existing serial_number instead of UID
+Date: Fri, 25 Oct 2019 14:56:22 +0800
+Message-Id: <1571986583-21138-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_234726_819216_8C5064B5 
-X-CRM114-Status: GOOD (  23.62  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191024_235936_414197_1CD0B318 
+X-CRM114-Status: GOOD (  10.70  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,167 +67,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Victor Wan <victor.wan@amlogic.com>,
- Jianxin Pan <jianxin.pan@amlogic.com>, devicetree@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Qiufang Dai <qiufang.dai@amlogic.com>,
- Chandle Zou <chandle.zou@amlogic.com>, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Jerome
+The soc_device_attribute structure already contains a serial_number
+attribute to show SoC's unique ID, just use it to show SoC's unique
+ID instead of creating a new file called soc_uid.
 
-On 2019/10/21 19:31, Jerome Brunet wrote:
-> 
-> On Fri 18 Oct 2019 at 09:14, Jian Hu <jian.hu@amlogic.com> wrote:
-> 
->> The A1 PLL design is different with previous SoCs. The PLL
->> internal analog modules Power-on sequence is different
->> with previous, and thus requires a strict register sequence to
->> enable the PLL. Unlike the previous series, the maximum frequency
->> is 6G in G12A, for A1 the maximum is 1536M.
->>
->> Signed-off-by: Jian Hu <jian.hu@amlogic.com>
->> ---
->>   drivers/clk/meson/clk-pll.c | 66 ++++++++++++++++++++++++++++++++++++++++-----
->>   drivers/clk/meson/clk-pll.h |  1 +
->>   2 files changed, 61 insertions(+), 6 deletions(-)
->>
->> diff --git a/drivers/clk/meson/clk-pll.c b/drivers/clk/meson/clk-pll.c
->> index ddb1e56..b440e62 100644
->> --- a/drivers/clk/meson/clk-pll.c
->> +++ b/drivers/clk/meson/clk-pll.c
->> @@ -349,6 +349,56 @@ static void meson_clk_pll_disable(struct clk_hw *hw)
->>   	meson_parm_write(clk->map, &pll->en, 0);
->>   }
->>   
->> +/*
->> + * The A1 design is different with previous SoCs.The PLL
->> + * internal analog modules Power-on sequence is different with
->> + * previous, different PLL has the different sequence, and
->> + * thus requires a strict register sequence to enable the PLL.
->> + * When set a new target frequency, the sequence should keep
->> + * the same with the initial sequence. Unlike the previous series,
->> + * the maximum frequency is 6G in G12A, for A1 the maximum
->> + * is 1536M.
-> 
-> The comment about the max frequency belongs in your a1 driver, not in
-> the PLL driver
-> 
-OK, I will remove the max frequency comments
->> + */
->> +static void meson_params_update_with_init_seq(struct clk_regmap *clk,
->> +				       struct meson_clk_pll_data *pll,
->> +				       unsigned int m, unsigned int n,
->> +				       unsigned int frac)
->> +{
->> +	struct parm *pm = &pll->m;
->> +	struct parm *pn = &pll->n;
->> +	struct parm *pfrac = &pll->frac;
->> +	const struct reg_sequence *init_regs = pll->init_regs;
->> +	unsigned int i, val;
->> +
->> +	for (i = 0; i < pll->init_count; i++) {
->> +		if (pn->reg_off == init_regs[i].reg) {
->> +			/* Clear M N bits and Update M N value */
->> +			val = init_regs[i].def;
->> +			val &= CLRPMASK(pn->width, pn->shift);
->> +			val &= CLRPMASK(pm->width, pm->shift);
->> +			val |= n << pn->shift;
->> +			val |= m << pm->shift;
->> +			regmap_write(clk->map, pn->reg_off, val);
->> +		} else if (MESON_PARM_APPLICABLE(&pll->frac) &&
->> +			   (pfrac->reg_off == init_regs[i].reg)) {
->> +			/* Clear Frac bits and Update Frac value */
->> +			val = init_regs[i].def;
->> +			val &= CLRPMASK(pfrac->width, pfrac->shift);
->> +			val |= frac << pfrac->shift;
->> +			regmap_write(clk->map, pfrac->reg_off, val);
->> +		} else {
->> +			/*
->> +			 * According to the PLL hardware constraint,
->> +			 * the left registers should be setted again.
->> +			 */
->> +			val = init_regs[i].def;
->> +			regmap_write(clk->map, init_regs[i].reg, val);
->> +		}
->> +		if (init_regs[i].delay_us)
->> +			udelay(init_regs[i].delay_us);
->> +	}
-> 
-> So:
-> 
-> 1) All the code above this there make the PLL lock, IOW enable the
-> PLL. It does not belong in the set_rate() callback but in enable() or
-> prepare() maybe.
-> 
-> 2) All the above is works but it is a bit over complicated for what it
-> does. From the a1_hifi_init_regs I see, all you really need to do is
->    * toggle BIT(6) in CTRL2
->    * toggle BIT(28) in CTRL0 (enable PARM)
->    * toggle BIT(26) in CTRL0
-> 
-> You could use PARM 'rst' for one them and introduce another parm for the
-> other one. You would not need to repoke the whole sequence this way.
-> 
-OK, I have realized as you suggested. I will send it in the V3 patch.
->> +}
->> +
->>   static int meson_clk_pll_set_rate(struct clk_hw *hw, unsigned long rate,
->>   				  unsigned long parent_rate)
->>   {
->> @@ -366,16 +416,20 @@ static int meson_clk_pll_set_rate(struct clk_hw *hw, unsigned long rate,
->>   	if (ret)
->>   		return ret;
->>   
->> +	if (MESON_PARM_APPLICABLE(&pll->frac))
->> +		frac = __pll_params_with_frac(rate, parent_rate, m, n, pll);
->> +
->>   	enabled = meson_parm_read(clk->map, &pll->en);
->>   	if (enabled)
->>   		meson_clk_pll_disable(hw);
->>   
->> -	meson_parm_write(clk->map, &pll->n, n);
->> -	meson_parm_write(clk->map, &pll->m, m);
->> -
->> -	if (MESON_PARM_APPLICABLE(&pll->frac)) {
->> -		frac = __pll_params_with_frac(rate, parent_rate, m, n, pll);
->> -		meson_parm_write(clk->map, &pll->frac, frac);
->> +	if (pll->strict_sequence)
->> +		meson_params_update_with_init_seq(clk, pll, m, n, frac);
->> +	else {
->> +		meson_parm_write(clk->map, &pll->n, n);
->> +		meson_parm_write(clk->map, &pll->m, m);
->> +		if (MESON_PARM_APPLICABLE(&pll->frac))
->> +			meson_parm_write(clk->map, &pll->frac, frac);
->>   	}
->>   
->>   	/* If the pll is stopped, bail out now */
->> diff --git a/drivers/clk/meson/clk-pll.h b/drivers/clk/meson/clk-pll.h
->> index 367efd0..d5789cef 100644
->> --- a/drivers/clk/meson/clk-pll.h
->> +++ b/drivers/clk/meson/clk-pll.h
->> @@ -41,6 +41,7 @@ struct meson_clk_pll_data {
->>   	const struct pll_params_table *table;
->>   	const struct pll_mult_range *range;
->>   	u8 flags;
->> +	bool strict_sequence;
-> 
-> Don't introduce parameter for this We have ops to tune the behavior of
-> the clock driver. Properly refactor the code if some of it is common.
-> 
-remove the strict_sequence.
->>   };
->>   
->>   extern const struct clk_ops meson_clk_pll_ro_ops;
-> 
-> .
-> 
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+ drivers/soc/imx/soc-imx8.c | 23 +++++++++--------------
+ 1 file changed, 9 insertions(+), 14 deletions(-)
+
+diff --git a/drivers/soc/imx/soc-imx8.c b/drivers/soc/imx/soc-imx8.c
+index b9831576..fcbf745 100644
+--- a/drivers/soc/imx/soc-imx8.c
++++ b/drivers/soc/imx/soc-imx8.c
+@@ -29,14 +29,6 @@ struct imx8_soc_data {
+ 
+ static u64 soc_uid;
+ 
+-static ssize_t soc_uid_show(struct device *dev,
+-			    struct device_attribute *attr, char *buf)
+-{
+-	return sprintf(buf, "%016llX\n", soc_uid);
+-}
+-
+-static DEVICE_ATTR_RO(soc_uid);
+-
+ static u32 __init imx8mq_soc_revision(void)
+ {
+ 	struct device_node *np;
+@@ -174,22 +166,25 @@ static int __init imx8_soc_init(void)
+ 		goto free_soc;
+ 	}
+ 
++	soc_dev_attr->serial_number = kasprintf(GFP_KERNEL, "%016llX", soc_uid);
++	if (!soc_dev_attr->serial_number) {
++		ret = -ENOMEM;
++		goto free_rev;
++	}
++
+ 	soc_dev = soc_device_register(soc_dev_attr);
+ 	if (IS_ERR(soc_dev)) {
+ 		ret = PTR_ERR(soc_dev);
+-		goto free_rev;
++		goto free_serial_number;
+ 	}
+ 
+-	ret = device_create_file(soc_device_to_device(soc_dev),
+-				 &dev_attr_soc_uid);
+-	if (ret)
+-		goto free_rev;
+-
+ 	if (IS_ENABLED(CONFIG_ARM_IMX_CPUFREQ_DT))
+ 		platform_device_register_simple("imx-cpufreq-dt", -1, NULL, 0);
+ 
+ 	return 0;
+ 
++free_serial_number:
++	kfree(soc_dev_attr->serial_number);
+ free_rev:
+ 	if (strcmp(soc_dev_attr->revision, "unknown"))
+ 		kfree(soc_dev_attr->revision);
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
