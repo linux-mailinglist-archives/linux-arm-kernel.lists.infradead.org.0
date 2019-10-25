@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73488E484F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 12:13:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78D2CE484E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 12:12:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=JRlB9UE2NszESPkOvrGBcFqdlSjEdZmUA3PlqOat49U=; b=faQ
-	YHm9vVuOWLFc0IBwTKswSqgWp9nPTOHbVFI4byZTj9/67AkGB8h5pBej+eGTb5GqVzWHXJlyxarXJ
-	KX/CNWP7Wa0oY+KxCpBdBcD7LfvZapRA/roCF1p8WAAWdQ3LofZWeGwlI+Q0+u17GmEgIPuwTt2gR
-	cdiQC33PSnGjdKfPVpAiL6uGQn52F4rUvThyRFraQ1XMoDcRgm9H8g8Rl4EBpLwUHEhberFHCja/q
-	0pe040v6CJiQ4o0XrDyZpNIQE7RnmGL5k1xsk2fqm5zm/oJp3AgQ2nrRDUc2datukneLquNdyYaxc
-	DZNj/f9SDtb4gx89FLOIf6oXgVcdTeA==;
+	References:List-Owner; bh=iHiVCb6zwQu6GXHuGVoNpEoh/2iWHAzvcOg790Iemzg=; b=NuC
+	eDW8KHIcxG0UpEuOkpJQkCBYFJbZuFKRdhBVrO6tKiNlZZxFFfNxg1Vv7HAaCu4i/FR9MwTaYVN4a
+	KCtf19ErzJZv1LmK3Kk/1UvS9qT73hqK3uZ+ZPI7rUP6x8svQH+7UFx8EjpxQc55SOaQthKoVUz4A
+	usH3Mnq75yA39RZ/s1fSDX87Sl+OF6pfmKp7fcZb2XrfIJL+RTm4YwpuIkQhXqA4ChUL81LZz4dMn
+	OlmUp/C+QtlDDJnf+1He5T8JKChgGthHWn7H13RALEGt0UondAkQ9HqkxWvFNpR/MCWDcmRmlSJxl
+	0ADdCie5AM+at5TelrntmwaBWRnmP5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNwaj-0005ox-Hm; Fri, 25 Oct 2019 10:13:09 +0000
+	id 1iNwaW-0005a2-OQ; Fri, 25 Oct 2019 10:12:56 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNwZy-00059e-0O
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 10:12:23 +0000
+ id 1iNwZy-0005BS-RE
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 10:12:24 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=Yy1N99wP67dEUw7vaVycqULwr8xkNWW2mZ04PDc3zpQ=; b=gkXX+Sr/Wpc7
- w8gZO9hvIQI4ZU+6ZVx9DpyUm+/4YVOcxgvlzR5UGTk6mS9Ne+KCiTJX1peajDn17q4JyuHh4kv0T
- ohZqZacTxTC314Ihm0rC9HKQNg0LD9LV3AHF+o2Kbr5UwAIJb6Z7GV46G7sqQy8YeA4SKidQc/c/H
- wG5Ek=;
+ List-Archive; bh=FCyaW1h6YmYfLVUrS2i2UstE8axQ1ggqDbIlUuO3a8w=; b=UDCFhcfEyPZw
+ AnRsfjDN2F0VIkH41SmS/d2YpiXasbdDvygscSgjHvB6uJeKtUZWnOLDj0vEnEPdJzSwocZgAMwMo
+ VWcX8xsmmjwUvkEmPd+Wwob8EpWgF7oJtEWTh1hPn942TO+D6pufilT04iDrYHLxK3zJocu8E35Yr
+ Hlve0=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iNwZv-0006fF-6m; Fri, 25 Oct 2019 10:12:19 +0000
+ id 1iNwZv-0006fG-CT; Fri, 25 Oct 2019 10:12:19 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id A913F2743267; Fri, 25 Oct 2019 11:12:18 +0100 (BST)
+ id D8076274326E; Fri, 25 Oct 2019 11:12:18 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
-To: Gregory CLEMENT <gregory.clement@bootlin.com>
-Subject: Applied "spi: Fix NULL pointer when setting SPI_CS_HIGH for GPIO CS"
- to the spi tree
-In-Reply-To: <20191024141309.22434-1-gregory.clement@bootlin.com>
+To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Subject: Applied "spi: pxa2xx: Introduce temporary variables to increase
+ readability" to the spi tree
+In-Reply-To: <20191021103625.4250-1-andriy.shevchenko@linux.intel.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20191025101218.A913F2743267@ypsilon.sirena.org.uk>
+Message-Id: <20191025101218.D8076274326E@ypsilon.sirena.org.uk>
 Date: Fri, 25 Oct 2019 11:12:18 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_031222_092457_7A554E97 
-X-CRM114-Status: GOOD (  15.28  )
+X-CRM114-CacheID: sfid-20191025_031222_881799_4A38436A 
+X-CRM114-Status: GOOD (  15.11  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -78,13 +78,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- "kernelci.org bot" <bot@kernelci.org>, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org, linux-spi@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Mark Brown <broonie@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Haojian Zhuang <haojian.zhuang@gmail.com>, linux-spi@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, Daniel Mack <daniel@zonque.org>,
+ Robert Jarzmik <robert.jarzmik@free.fr>, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -93,11 +89,11 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: Fix NULL pointer when setting SPI_CS_HIGH for GPIO CS
+   spi: pxa2xx: Introduce temporary variables to increase readability
 
 has been applied to the spi tree at
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.4
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.5
 
 All being well this means that it will be integrated into the linux-next
 tree (usually sometime in the next 24 hours) and sent to Linus during
@@ -118,38 +114,56 @@ to this mail.
 Thanks,
 Mark
 
-From 15f794bd977a0135328fbdd8a83cc64c1d267b39 Mon Sep 17 00:00:00 2001
-From: Gregory CLEMENT <gregory.clement@bootlin.com>
-Date: Thu, 24 Oct 2019 16:13:09 +0200
-Subject: [PATCH] spi: Fix NULL pointer when setting SPI_CS_HIGH for GPIO CS
+From 6fb7427d84f6ed064776434436485cfb0f6711e9 Mon Sep 17 00:00:00 2001
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Date: Mon, 21 Oct 2019 13:36:24 +0300
+Subject: [PATCH] spi: pxa2xx: Introduce temporary variables to increase
+ readability
 
-Even if the flag use_gpio_descriptors is set, it is possible that
-cs_gpiods was not allocated, which leads to a kernel crash.
+The current conditional for PCI ID matching is hard to read.
+Introduce couple of temporary variables to increase readability
+of the code.
 
-Reported-by: "kernelci.org bot" <bot@kernelci.org>
-Fixes: 3e5ec1db8bfe ("spi: Fix SPI_CS_HIGH setting when using native and GPIO CS")
-Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
-Link: https://lore.kernel.org/r/20191024141309.22434-1-gregory.clement@bootlin.com
+Signed-off-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Link: https://lore.kernel.org/r/20191021103625.4250-1-andriy.shevchenko@linux.intel.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
-Cc: <stable@vger.kernel.org>
 ---
- drivers/spi/spi.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/spi/spi-pxa2xx.c | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/spi/spi.c b/drivers/spi/spi.c
-index 38699eaebcea..26b91ee0855d 100644
---- a/drivers/spi/spi.c
-+++ b/drivers/spi/spi.c
-@@ -1780,7 +1780,8 @@ static int of_spi_parse_dt(struct spi_controller *ctlr, struct spi_device *spi,
- 	 * handled in the gpiolib, so all gpio chip selects are "active high"
- 	 * in the logical sense, the gpiolib will invert the line if need be.
- 	 */
--	if ((ctlr->use_gpio_descriptors) && ctlr->cs_gpiods[spi->chip_select])
-+	if ((ctlr->use_gpio_descriptors) && ctlr->cs_gpiods &&
-+	    ctlr->cs_gpiods[spi->chip_select])
- 		spi->mode |= SPI_CS_HIGH;
+diff --git a/drivers/spi/spi-pxa2xx.c b/drivers/spi/spi-pxa2xx.c
+index 443c1f4d2a9a..6eb6805ee51d 100644
+--- a/drivers/spi/spi-pxa2xx.c
++++ b/drivers/spi/spi-pxa2xx.c
+@@ -1516,13 +1516,14 @@ pxa2xx_spi_init_pdata(struct platform_device *pdev)
+ 	struct pxa2xx_spi_controller *pdata;
+ 	struct ssp_device *ssp;
+ 	struct resource *res;
++	struct device *parent = pdev->dev.parent;
++	struct pci_dev *pcidev = dev_is_pci(parent) ? to_pci_dev(parent) : NULL;
+ 	const struct pci_device_id *pcidev_id = NULL;
+ 	enum pxa_ssp_type type;
+ 	const void *match;
  
- 	/* Device speed */
+-	if (dev_is_pci(pdev->dev.parent))
+-		pcidev_id = pci_match_id(pxa2xx_spi_pci_compound_match,
+-					 to_pci_dev(pdev->dev.parent));
++	if (pcidev)
++		pcidev_id = pci_match_id(pxa2xx_spi_pci_compound_match, pcidev);
+ 
+ 	match = device_get_match_data(&pdev->dev);
+ 	if (match)
+@@ -1549,8 +1550,8 @@ pxa2xx_spi_init_pdata(struct platform_device *pdev)
+ 
+ #ifdef CONFIG_PCI
+ 	if (pcidev_id) {
+-		pdata->tx_param = pdev->dev.parent;
+-		pdata->rx_param = pdev->dev.parent;
++		pdata->tx_param = parent;
++		pdata->rx_param = parent;
+ 		pdata->dma_filter = pxa2xx_spi_idma_filter;
+ 	}
+ #endif
 -- 
 2.20.1
 
