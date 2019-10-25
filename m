@@ -2,56 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B86D1E44E3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 09:51:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6AE56E4520
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 10:02:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SJCip8UKWe8DdKXdNGkDHJlOzQihg4BnllSC3dPdNbQ=; b=YLJCXIc5poSI06
-	5JYx1BfQQD68siwMrhbUPCdgiFO1aaTA7rrIKXWKlasNlnKO+Qs/j/1CX84vm++zx3S81Uzo/GjmB
-	mRuvFEoD639wu7ApyfSYqVHdhOhhDGQ8d+K6Ju8xjz9EgTeENm7M0l3qI6m5lURDp9teXQkGXW/uj
-	AF1QGOyJ9mf8nA8inodB9YEBFuYxMr+9lfCI9b5D7LWGh4nBQCBvnXxatGZ7JFqB4v/Nqpg+Cp8g3
-	Nr050zBasJ37ONRMUtgRtuj564JUL9iWiTD0tISmQAldXBbABbItfgU5WGYEl4wrr0/VMcyEqdQBy
-	asnU8kpGWKo08dBNuFmQ==;
+	List-Owner; bh=xOLn/Z6Fpq+lwwmc0nGJojG5umP4Qwrev1DDTUN5vr0=; b=hLgnJS68AKDVae
+	SlfwI/y00WnQIBzisbu9uAyzrwAY4ccQaW17DZnvpEAbohY1KlXwKxDzRDknBzoMigerUf5QGOIfG
+	nQVDuifpbjWv/hLeYQ+Hk/MWCf9GesvpIS+wCxgejXdCaygfwnn7EfxTfZzOG3V+DKtwhYLrYOn3l
+	CzFU92iVa8LJ0GAAsgrk1QNFiaqEVijaWCmeCVnoKso9UIrcQuV4OkN7AxvFfRiiUsC06t4Cb3CYf
+	UX5NxATHu5NXcQURWbeVK70OIN6BNT/86oKfH2sJbp/Ct9r8u8aX7oFI9OF5/vpZt6l9JzX4X67mW
+	rysxs4TjJ1EC35Xes3ww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNuNI-0008Tu-62; Fri, 25 Oct 2019 07:51:08 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1iNuYX-00046p-LE; Fri, 25 Oct 2019 08:02:45 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNuN8-0008Sy-AC
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 07:51:00 +0000
-X-Originating-IP: 92.137.17.54
-Received: from localhost (alyon-657-1-975-54.w92-137.abo.wanadoo.fr
- [92.137.17.54]) (Authenticated sender: gregory.clement@bootlin.com)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id F10A6240013;
- Fri, 25 Oct 2019 07:50:50 +0000 (UTC)
-From: Gregory CLEMENT <gregory.clement@bootlin.com>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH] spi: Fix NULL pointer when setting SPI_CS_HIGH for GPIO CS
-In-Reply-To: <20191024193225.GM46373@sirena.co.uk>
-References: <20191024141309.22434-1-gregory.clement@bootlin.com>
- <20191024193225.GM46373@sirena.co.uk>
-Date: Fri, 25 Oct 2019 09:50:50 +0200
-Message-ID: <87woctp8kl.fsf@FE-laptop>
+ id 1iNuYQ-00046h-EB
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 25 Oct 2019 08:02:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=6GrHKqmDmq68bOT9LJvPK/3mLeHxtZCjEbOB9cAti4c=; b=NIsI73QB/zTfZgky1H84wVJ/F
+ aeQ9LyvmNxDYLjamSL13dF4WxwgUoWmQjbWSwen86+MXls8EgsyNp+a32KuT6Pcx2FVqmvHwqjPdF
+ 1XQctxJwMwTlTNJ0kCzzKXsT+ttLUo3IFyo5z2i/3nLWNOpwNjIF9TDiC0LsrWPvAtoDDEjsapEgD
+ klKmwPIn7dD5XYckRmIsUAIcI+/1++AMGwT5N3IyqK5DVtShLoMdKRqcukBZyXh4AddwNDC4vWUb5
+ sMfaPsXwQqsbZ7QZc1qFoml1SDrJz1oGL4M2Wbo0vkD/abWORRHHBWBtWuB1N814paKJr6XOpjDcH
+ w5kWR2TTw==;
+Received: from relay9-d.mail.gandi.net ([217.70.183.199])
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iNuYN-0001Mv-3o
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 08:02:36 +0000
+X-Originating-IP: 86.202.229.42
+Received: from localhost (lfbn-lyo-1-146-42.w86-202.abo.wanadoo.fr
+ [86.202.229.42])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 28521FF811;
+ Fri, 25 Oct 2019 08:01:41 +0000 (UTC)
+Date: Fri, 25 Oct 2019 10:01:36 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
+Subject: Re: [PATCH 2/2] hwrng: atmel: add new platform support for sam9x60
+Message-ID: <20191025080136.GA3125@piout.net>
+References: <20191024170452.2145-1-codrin.ciubotariu@microchip.com>
+ <20191024170452.2145-2-codrin.ciubotariu@microchip.com>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_005058_489570_319A475D 
-X-CRM114-Status: GOOD (  10.52  )
+Content-Disposition: inline
+In-Reply-To: <20191024170452.2145-2-codrin.ciubotariu@microchip.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
+X-Spam-Note: CRM114 invocation failed
 X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.193 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [217.70.183.193 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ low trust [217.70.183.199 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,52 +77,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- "kernelci.org bot" <bot@kernelci.org>, stable@vger.kernel.org,
- linux-kernel@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>, linux-spi@vger.kernel.org,
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ herbert@gondor.apana.org.au, arnd@arndb.de, Tudor.Ambarus@microchip.com,
+ linux-kernel@vger.kernel.org, ludovic.desroches@microchip.com,
+ robh+dt@kernel.org, linux-crypto@vger.kernel.org, mpm@selenic.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mark,
+On 24/10/2019 20:04:52+0300, Codrin Ciubotariu wrote:
+> Add platform support for the new IP found on sam9x60 SoC. For this
+> version, if the peripheral clk is above 100MHz, the HALFR bit must be
+> set. This bit is available only if the IP can generate a random number
+> every 168 cycles (instead of 84).
+> 
+> Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
+> ---
+>  drivers/char/hw_random/atmel-rng.c | 39 ++++++++++++++++++++++++++++--
+>  1 file changed, 37 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/char/hw_random/atmel-rng.c b/drivers/char/hw_random/atmel-rng.c
+> index e55705745d5e..0aa9425e6c3e 100644
+> --- a/drivers/char/hw_random/atmel-rng.c
+> +++ b/drivers/char/hw_random/atmel-rng.c
+> @@ -14,14 +14,22 @@
+>  #include <linux/clk.h>
+>  #include <linux/io.h>
+>  #include <linux/hw_random.h>
+> +#include <linux/of_device.h>
+>  #include <linux/platform_device.h>
+>  
+>  #define TRNG_CR		0x00
+> +#define TRNG_MR		0x04
+>  #define TRNG_ISR	0x1c
+>  #define TRNG_ODATA	0x50
+>  
+>  #define TRNG_KEY	0x524e4700 /* RNG */
+>  
+> +#define TRNG_HALFR	BIT(0) /* generate RN every 168 cycles */
+> +
+> +struct atmel_trng_pdata {
 
-> On Thu, Oct 24, 2019 at 04:13:09PM +0200, Gregory CLEMENT wrote:
->> Even if the flag use_gpio_descriptors is set, it is possible that
->> cs_gpiods was not allocated, which leads to a kernel crash:
->> 
->> Unable to handle kernel NULL pointer dereference at virtual address 00000000
->> pgd = (ptrval)
->> [00000000] *pgd=00000000
->> Internal error: Oops: 5 [#1] ARM
->> Modules linked in:
->> CPU: 0 PID: 1 Comm: swapper Tainted: G        W         5.4.0-rc3 #1
->> Hardware name: NVIDIA Tegra SoC (Flattened Device Tree)
->> PC is at of_register_spi_device+0x20c/0x38c
->> LR is at __of_find_property+0x3c/0x60
->> pc : [<c09b45dc>]    lr : [<c0c47a98>]    psr: 20000013
->
-> Please think hard before including complete backtraces in upstream
-> reports, they are very large and contain almost no useful information
-> relative to their size so often obscure the relevant content in your
-> message. If part of the backtrace is usefully illustrative then it's
-> usually better to pull out the relevant sections.
+Could that be just atmel_trng_data?
 
-You can remove it while applying it, or I can send a v2.
+There is no platform data in this driver and it is DT only.
 
-Actually I thought you would squash it with the initial patch to avoid
-the bisectability break.
-
-Gregory
-
+> +	bool has_half_rate;
+> +};
+> +
+>  struct atmel_trng {
+>  	struct clk *clk;
+>  	void __iomem *base;
+> @@ -63,6 +71,7 @@ static int atmel_trng_probe(struct platform_device *pdev)
+>  {
+>  	struct atmel_trng *trng;
+>  	struct resource *res;
+> +	const struct atmel_trng_pdata *pdata;
+>  	int ret;
+>  
+>  	trng = devm_kzalloc(&pdev->dev, sizeof(*trng), GFP_KERNEL);
+> @@ -77,6 +86,17 @@ static int atmel_trng_probe(struct platform_device *pdev)
+>  	trng->clk = devm_clk_get(&pdev->dev, NULL);
+>  	if (IS_ERR(trng->clk))
+>  		return PTR_ERR(trng->clk);
+> +	pdata = of_device_get_match_data(&pdev->dev);
+> +	if (!pdata)
+> +		return -ENODEV;
+> +
+> +	if (pdata->has_half_rate) {
+> +		unsigned long rate = clk_get_rate(trng->clk);
+> +
+> +		/* if peripheral clk is above 100MHz, set HALFR */
+> +		if (rate > 100000000)
+> +			writel(TRNG_HALFR, trng->base + TRNG_MR);
+> +	}
+>  
+>  	ret = clk_prepare_enable(trng->clk);
+>  	if (ret)
+> @@ -141,9 +161,24 @@ static const struct dev_pm_ops atmel_trng_pm_ops = {
+>  };
+>  #endif /* CONFIG_PM */
+>  
+> +static struct atmel_trng_pdata at91sam9g45_config = {
+> +	.has_half_rate = false,
+> +};
+> +
+> +static struct atmel_trng_pdata sam9x60_config = {
+> +	.has_half_rate = true,
+> +};
+> +
+>  static const struct of_device_id atmel_trng_dt_ids[] = {
+> -	{ .compatible = "atmel,at91sam9g45-trng" },
+> -	{ /* sentinel */ }
+> +	{
+> +		.compatible = "atmel,at91sam9g45-trng",
+> +		.data = &at91sam9g45_config,
+> +	}, {
+> +		.compatible = "microchip,sam9x60-trng",
+> +		.data = &sam9x60_config,
+> +	}, {
+> +		/* sentinel */
+> +	}
+>  };
+>  MODULE_DEVICE_TABLE(of, atmel_trng_dt_ids);
+>  
+> -- 
+> 2.20.1
+> 
 
 -- 
-Gregory Clement, Bootlin
+Alexandre Belloni, Bootlin
 Embedded Linux and Kernel engineering
-http://bootlin.com
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
