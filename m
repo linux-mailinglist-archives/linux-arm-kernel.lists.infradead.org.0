@@ -2,69 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BDC91E55F7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 23:35:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43817E5608
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 23:38:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:
-	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ox2LPhNqcGAjcbVbWDXa3oP3NzCDaJWJk2y5h3HzgDw=; b=DLIfnGCWmzFL8D
-	TCUS0Xo0xmloH9qApFKk3JsqDt8DOUKzQ7BIxJbPJ7odBSGR8vgPrK8U6smk4eJdq/HEpvfiN2Fn6
-	to7mgELLSomqhRd9rqt3Vkwyslk4LDdO3OvggO0+v89mtADoWD7h44ICMbDA4jFQKbFRGOAaj2F7p
-	hAPGWw/e9VdRD0XfKjkYbcw3BuaPCJgbS4rumFEf88kphP+upLRGcE+a8nJCwOuaMzkn/WmdmQrZ+
-	esva0LEwa6ZTq9DqC4es85xq44XXeyiY8hTZK6xSb2VuNOHNN4U8Bsb6RfAAt2BP37WX8M8cvOme+
-	7KGHvhJfyLE3K4d+45Ew==;
+	List-Owner; bh=ZhfXXDX0EXOqL3NgDRpIQL/vdrJE7AQTaccZNDhlnIw=; b=QcO/yH/v+XKMUS
+	ptWxPZkbtSTzrq5qwQ40+zn/DI9ZsNtefws2umYpWDHxbvv0NAlXrj32C37Jze+dREROr4cs3ARVv
+	32sjaj+mEy9PGIhzfbWJXnsepWAsXu/qvc4IvMfkQQKOLDSmXIfFmnj4afH7yLXQ8GW3yt7zzms2J
+	PCNWoP1w99ZQ9IBpLFTUTAYkrWnBKcefLO13+/R+LxRSLC0l2sDrKayk8epkyCUkwMsSCOvNHDTBA
+	u2P28VW+0TSdQEuVW0r65+HjfsWWnZqUvYvhDYQyWMQlPT48EvkpXA1w9f4hlotDH6JyioL85XKmp
+	bMb3kiX+rUVDsK0jAZAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iO7Ew-0004Ip-4h; Fri, 25 Oct 2019 21:35:22 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iO7IA-0004o4-0g; Fri, 25 Oct 2019 21:38:42 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iO7Eg-0003h8-Lh
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 21:35:08 +0000
-Subject: Re: [GIT PULL] ARM: SoC fixes
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572039305;
- bh=kIBRFC+WzLvHnyuivCbAm9UXp/nf0r1cY6JZlUeqvfs=;
- h=From:In-Reply-To:References:Date:To:Cc:From;
- b=myXHvwEQusb9e1pq+lpzNES512g/Njno0IKgiCxzkGFSkpeqVjs4FB1Y0JUog3EPb
- gZG3F996Iys2X5z9+CjUcYVAQyA1vlqXMtxOEWTU/wUr9GM5AYMAdPrIJBDOnSaWkN
- fVymj1cGS1BfAjZtYvT7u+rEkL4NEmQnJbt5luow=
-From: pr-tracker-bot@kernel.org
-In-Reply-To: <20191025153817.rtj6hh6jmr5asfto@localhost>
-References: <20191025153817.rtj6hh6jmr5asfto@localhost>
-X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
-X-PR-Tracked-Message-Id: <20191025153817.rtj6hh6jmr5asfto@localhost>
-X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git tags/armsoc-fixes
-X-PR-Tracked-Commit-Id: 86ec2e1739aa1d6565888b4b2059fa47354e1a89
-X-PR-Merge-Tree: torvalds/linux.git
-X-PR-Merge-Refname: refs/heads/master
-X-PR-Merge-Commit-Id: 63cbb3b364c0c2500e59d24a6cde92c8f2ff1c18
-Message-Id: <157203930573.23557.14092448668609979344.pr-tracker-bot@kernel.org>
-Date: Fri, 25 Oct 2019 21:35:05 +0000
-To: Olof Johansson <olof@lixom.net>
+ id 1iO7Hy-0004nc-KH
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 21:38:31 +0000
+Received: by mail-oi1-f195.google.com with SMTP id o205so2535524oib.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 25 Oct 2019 14:38:30 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=AJg4z4K6dKxVgKfiKrGLtK6h9eZ9S7nIhf+xHWhd+KI=;
+ b=pssB5na7VHEwS0oh3PJkub9me+Glny7nT0G9LgH0CLs7kzVdgFQ/KqJKzaPTG6Uxu/
+ 31xgNBGBBGlJuMReZge6r4/bT1BTuMTicQzsynVSWL3FzmftuQwxULgBs5BOHC3wkg2u
+ 91/e5U6C79Q044sZyd+IU7H2etEzV+zJkZ7F2axWwa8PUTbwY+txfEhkCKVwc4zQzzz7
+ +lbqyRbpuVd2cKHMz5YQZMaJU4LhqAOtxOha5n5Ij7YYtg+EYRbQ1XkWwCr+GvvdEnFX
+ vhgm+XfYxsFZlqOKl46LgxqGUNuRzxWxMPwbd3/5n1erWPm8TAPdEv46JO1TC1iu4WVb
+ u3BA==
+X-Gm-Message-State: APjAAAVnkr72ti0BNBqEKdUwsJNrFnKyH6L+RfXYQRI6XkZoH4dvSi0f
+ zaJJBypaHICqLLw8QGM3Mg==
+X-Google-Smtp-Source: APXvYqyKKYeDsz6d6MNdmrfb3ZN68gpOWy77zXJ2XZq2BotysCtHUYhMQnG5QT0oNOeKsX0d+R1ZrQ==
+X-Received: by 2002:aca:5691:: with SMTP id k139mr4909601oib.54.1572039509694; 
+ Fri, 25 Oct 2019 14:38:29 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id k24sm894477oic.29.2019.10.25.14.38.29
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 25 Oct 2019 14:38:29 -0700 (PDT)
+Date: Fri, 25 Oct 2019 16:38:28 -0500
+From: Rob Herring <robh@kernel.org>
+To: Maxime Ripard <mripard@kernel.org>
+Subject: Re: [PATCH v2] dt-bindings: pinctrl: Convert Allwinner Pin
+ Controller to a schema
+Message-ID: <20191025213828.GA30637@bogus>
+References: <20191022160806.42971-1-mripard@kernel.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191022160806.42971-1-mripard@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_143506_774227_3FC42D1B 
-X-CRM114-Status: UNSURE (   2.09  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191025_143830_666547_6BEF6F94 
+X-CRM114-Status: GOOD (  13.79  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.195 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,27 +91,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, soc@kernel.org, arm@kernel.org,
- olof@lixom.net, torvalds@linux-foundation.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-gpio@vger.kernel.org,
+ linus.walleij@linaro.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The pull request you sent on Fri, 25 Oct 2019 08:38:17 -0700:
+On Tue, 22 Oct 2019 18:08:06 +0200, Maxime Ripard wrote:
+> The Allwinner SoCs have a pin controller supported in Linux, with a
+> matching Device Tree binding.
+> 
+> Now that we have the DT validation in place, let's convert the device tree
+> bindings for that controller over to a YAML schemas.
+> 
+> Signed-off-by: Maxime Ripard <mripard@kernel.org>
+> 
+> ---
+> 
+> Changes from v1:
+>   - Add a description for the interrupts
+>   - Put limits on the number of input-debounce items
+>   - Remove the vcc-p.-supply type
+>   - Fix the supplies description
+> ---
+>  .../pinctrl/allwinner,sun4i-a10-pinctrl.yaml  | 243 ++++++++++++++++++
+>  .../pinctrl/allwinner,sunxi-pinctrl.txt       | 164 ------------
+>  2 files changed, 243 insertions(+), 164 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/pinctrl/allwinner,sun4i-a10-pinctrl.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/pinctrl/allwinner,sunxi-pinctrl.txt
+> 
 
-> git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git tags/armsoc-fixes
-
-has been merged into torvalds/linux.git:
-https://git.kernel.org/torvalds/c/63cbb3b364c0c2500e59d24a6cde92c8f2ff1c18
-
-Thank you!
-
--- 
-Deet-doot-dot, I am a bot.
-https://korg.wiki.kernel.org/userdoc/prtracker
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
