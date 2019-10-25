@@ -2,56 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB0D8E422D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 05:46:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 671C6E4233
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 05:52:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dLctzYZIhqLrIrqwqu5aOTYoHncpyi33P15yrYp+rNc=; b=Mk7vvg4C94eONe
-	5BN1q44KVoRK2AsVklsniHk6mxAHMPWENXey96Kf38pZmdQv44mGDZ+pFME0HWTeZ1kSpgcCkZp4d
-	V3I+aeiE4Em05rJQhGVQ8PTjv3afk653g7QcS4WTGDWRfjW6MWmWrOEClz4h7W4QK34Fep1e9cIUt
-	wbSMhT+d5bQWR7Fpj5R/9sP0MWxQUewMOh3DOMyHzJWQDIwfQ/8U0onONP7tRU3upqTyCX4F9Y7e/
-	2Zy4qBX98NtP8MYzuki4f1Cx0OWmrBxm2mAGeZdOt+XExKrJO2z5BXy5DkSLAVxSnpjgdjWssb+Xp
-	T7MyqelKj5inrv9ttzww==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YDcv4/GSp+8kPj3BOqfJtMGelk688U8ASdfIr6xD4G4=; b=qT8wq8ImjcJDqm
+	e4rAjuRoyyA9fE1caXVBw5+88aQG7GF5MYJ4GMF2B22uk8ZR22fA2SKtULc2sjQJQgf0bstXcshO5
+	drl6nvcz1MoHvXsQkNk4zPmLXGFMh0gX2Lq8HgmwWnioghQcah5O0IZXuWO/vmTry2+a6SjV8K0jT
+	5XgMxJ10yyQwuOSqHhBpSkgYJZ17PVFUHm3ygb3FaWKOHw3sJ7jDTxS7TxbZfA1p0TIpttm7B4PRH
+	YWUOBGoOP+1L/9Gk92vPy3yRsjlDWFCpKUefjVJALGjoJsiycUYt3Lc3dbyMYE+Em1XkhridbaQlG
+	jAEkafaPc9VpFrcuGdKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNqYB-0003hB-Ku; Fri, 25 Oct 2019 03:46:07 +0000
-Received: from [217.140.110.172] (helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNqY2-0003fs-Lp; Fri, 25 Oct 2019 03:45:59 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B5D211FB;
- Thu, 24 Oct 2019 20:45:47 -0700 (PDT)
-Received: from [10.162.41.137] (p8cg001049571a15.blr.arm.com [10.162.41.137])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- A4C213F718; Thu, 24 Oct 2019 20:45:36 -0700 (PDT)
-Subject: Re: [PATCH V7] mm/debug: Add tests validating architecture page table
- helpers
-To: Qian Cai <cai@lca.pw>
-References: <1571625739-29943-1-git-send-email-anshuman.khandual@arm.com>
- <FCAFFD72-3781-4474-8393-A4E40264473A@lca.pw>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <ccdd4f7a-c7dc-ca10-d30c-0bc05c7136c7@arm.com>
-Date: Fri, 25 Oct 2019 09:16:07 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1iNqeW-0005Re-Qu; Fri, 25 Oct 2019 03:52:40 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iNqeI-0005QT-Ea
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 03:52:28 +0000
+Received: by mail-pg1-x544.google.com with SMTP id e10so605994pgd.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 24 Oct 2019 20:52:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=VuqGlHCmiP7nazFalCZDat6IlaETXhzlf7ym/08sQW8=;
+ b=Ce+0HrNDmFSivub2oBEJVlA0HHWdPOu5+6DmZIJe7npEriRRFg631g4lekMZY0vAiE
+ X3w8JaBKz/xk8MUr8g0dIKO02+oQdsng0Yd15tGlAmwd6MIRY+eKa82ZieljWuM1/TXA
+ lWrkonKegWaVKApjLAbjNz8voQ4f1oncASGEE=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=VuqGlHCmiP7nazFalCZDat6IlaETXhzlf7ym/08sQW8=;
+ b=qTQZQUx0ABN4/UUQQ85VnGn3NwnBlbAIXlkDyWXhMl9xik6vENEkDUeBW6Z/IuKhe2
+ hj6BmtERGWMrcaenDJgvy1xQrpZ7nGrDx/9N9+Fc1c9YCxwsNPcoCOIAJOdHUN1/0SHk
+ ZWi9U0vnkNbifHbYEU8tXOdr29JCjwK94NschRK5U96O8yfO85mRFjFd8hjNRB40082G
+ tgkBSUMVIkzTz1T9bVWfPDan809tLRbnke3+43dbOWh9onilGNlVayQvjtMvWFkyQBOv
+ Qk+hIpp3zDP0dTNFEEAR9nvMQRq1jzGB8R0kHzlj+PW88IjBU9BI0AxcrvFBK8k3k1dN
+ rVhQ==
+X-Gm-Message-State: APjAAAXgMxXRORd5zHMI1f59s5Zpsjk8HZmb7P1ioIPYeJU8NHYdl5m0
+ 3HvfolzbD87AlAKwbGuVsGjQog==
+X-Google-Smtp-Source: APXvYqwkwetVcs47sPZxLr5ISxVfMjs558/KCCIrpnAsnIMnYSTi2p/HmtYweJj67U8UZ7Y8mq9qFw==
+X-Received: by 2002:a63:4c1c:: with SMTP id z28mr1507674pga.167.1571975545045; 
+ Thu, 24 Oct 2019 20:52:25 -0700 (PDT)
+Received: from chromium.org ([2401:fa00:8f:203:f5fe:2a5e:f953:c0ed])
+ by smtp.gmail.com with ESMTPSA id c16sm571818pja.2.2019.10.24.20.52.12
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 24 Oct 2019 20:52:17 -0700 (PDT)
+Date: Fri, 25 Oct 2019 12:52:11 +0900
+From: Tomasz Figa <tfiga@chromium.org>
+To: Jerry-ch Chen <Jerry-ch.Chen@mediatek.com>
+Subject: Re: [RFC PATCH V3 3/3] platform: mtk-isp: Add Mediatek FD driver
+Message-ID: <20191025035211.GA67000@chromium.org>
+References: <20190906101125.3784-1-Jerry-Ch.chen@mediatek.com>
+ <20190906101125.3784-4-Jerry-Ch.chen@mediatek.com>
+ <1571109375.3706.40.camel@mtksdccf07>
 MIME-Version: 1.0
-In-Reply-To: <FCAFFD72-3781-4474-8393-A4E40264473A@lca.pw>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <1571109375.3706.40.camel@mtksdccf07>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_204558_758301_10D098F3 
-X-CRM114-Status: GOOD (  16.22  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20191024_205226_514263_2D281942 
+X-CRM114-Status: GOOD (  32.91  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,62 +97,237 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
- James Hogan <jhogan@kernel.org>,
- Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
- linux-mm@kvack.org, Dave Hansen <dave.hansen@intel.com>,
- Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- Russell King - ARM Linux <linux@armlinux.org.uk>,
- Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
- Jason Gunthorpe <jgg@ziepe.ca>, Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Ingo Molnar <mingo@kernel.org>, Kees Cook <keescook@chromium.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
- Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
- Christophe Leroy <christophe.leroy@c-s.fr>,
- Sri Krishna chowdary <schowdary@nvidia.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
- Vineet Gupta <vgupta@synopsys.com>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>,
- Mike Kravetz <mike.kravetz@oracle.com>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Sean Cheng =?utf-8?B?KOmEreaYh+W8mCk=?= <Sean.Cheng@mediatek.com>,
+ "laurent.pinchart+renesas@ideasonboard.com"
+ <laurent.pinchart+renesas@ideasonboard.com>,
+ Rynn Wu =?utf-8?B?KOWQs+iCsuaBqSk=?= <Rynn.Wu@mediatek.com>,
+ Christie Yu =?utf-8?B?KOa4uOmbheaDoCk=?= <christie.yu@mediatek.com>,
+ srv_heupstream <srv_heupstream@mediatek.com>,
+ Jungo Lin =?utf-8?B?KOael+aYjuS/iik=?= <jungo.lin@mediatek.com>,
+ Po-Yang Huang =?utf-8?B?KOm7g+afj+mZvSk=?= <po-yang.huang@mediatek.com>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ CK Hu =?utf-8?B?KOiDoeS/iuWFiSk=?= <ck.hu@mediatek.com>,
+ Sj Huang =?utf-8?B?KOm7g+S/oeeSiyk=?= <sj.huang@mediatek.com>,
+ "yuzhao@chromium.org" <yuzhao@chromium.org>, "lkml@metux.net" <lkml@metux.net>,
+ "zwisler@chromium.org" <zwisler@chromium.org>,
+ Frederic Chen =?utf-8?B?KOmZs+S/iuWFgyk=?= <Frederic.Chen@mediatek.com>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>, hans.verkuil@cisco.com,
+ "mchehab@kernel.org" <mchehab@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, Oct 15, 2019 at 11:16:15AM +0800, Jerry-ch Chen wrote:
+> Hi Tomasz,
+> 
+> On Fri, 2019-09-06 at 18:11 +0800, Jerry-ch Chen wrote:
+> > From: Jerry-ch Chen <jerry-ch.chen@mediatek.com>
+> > 
+> > This patch adds the driver of Face Detection (FD) unit in
+> > Mediatek camera system, providing face detection function.
+> > 
+> > The mtk-isp directory will contain drivers for multiple IP
+> > blocks found in Mediatek ISP system. It will include ISP Pass 1
+> > driver (CAM), sensor interface driver, DIP driver and face
+> > detection driver.
+> > 
+> > Signed-off-by: Jerry-ch Chen <jerry-ch.chen@mediatek.com>
+> > ---
+> >  drivers/media/platform/Kconfig                |    2 +
+> >  drivers/media/platform/Makefile               |    2 +
+> >  drivers/media/platform/mtk-isp/fd/Kconfig     |   19 +
+> >  drivers/media/platform/mtk-isp/fd/Makefile    |    5 +
+> >  drivers/media/platform/mtk-isp/fd/mtk_fd.h    |  148 ++
+> >  drivers/media/platform/mtk-isp/fd/mtk_fd_40.c | 1219 +++++++++++++++++
+> >  include/uapi/linux/mtk-fd-v4l2-controls.h     |   69 +
+> >  include/uapi/linux/v4l2-controls.h            |    4 +
+> >  8 files changed, 1468 insertions(+)
+> >  create mode 100644 drivers/media/platform/mtk-isp/fd/Kconfig
+> >  create mode 100644 drivers/media/platform/mtk-isp/fd/Makefile
+> >  create mode 100644 drivers/media/platform/mtk-isp/fd/mtk_fd.h
+> >  create mode 100644 drivers/media/platform/mtk-isp/fd/mtk_fd_40.c
+> >  create mode 100644 include/uapi/linux/mtk-fd-v4l2-controls.h
+> > 
 
+[snip]
 
-On 10/24/2019 10:21 PM, Qian Cai wrote:
+> > +static int mtk_fd_job_abort(struct mtk_fd_dev *fd)
+> > +{
+> > +	u32 ret;
+> > +
+> > +	ret = wait_for_completion_timeout(&fd->fd_irq_done,
+> > +					  msecs_to_jiffies(MTK_FD_HW_TIMEOUT));
+> > +	/* Reset FD HW */
+> > +	if (!ret) {
+> > +		struct ipi_message fd_ipi_msg;
+> > +
+> > +		fd_ipi_msg.cmd_id = MTK_FD_IPI_CMD_RESET;
+> > +		if (scp_ipi_send(fd->scp_pdev, SCP_IPI_FD_CMD, &fd_ipi_msg,
+> > +				 sizeof(fd_ipi_msg), MTK_FD_IPI_SEND_TIMEOUT))
+> > +			dev_err(fd->dev, "FD Reset HW error\n");
+> > +		return -ETIMEDOUT;
+> > +	}
+> > +	return 0;
+> > +}
+> > +
 > 
+> Continue the discussion about job abort in RFC v2,
 > 
->> On Oct 24, 2019, at 10:50 AM, Anshuman Khandual <Anshuman.Khandual@arm.com> wrote:
->>
->> Changes in V7:
->>
->> - Memory allocation and free routines for mapped pages have been droped
->> - Mapped pfns are derived from standard kernel text symbol per Matthew
->> - Moved debug_vm_pgtaable() after page_alloc_init_late() per Michal and Qian 
->> - Updated the commit message per Michal
->> - Updated W=1 GCC warning problem on x86 per Qian Cai
+> I think the job_abort callback in v4l2_m2m_ops() might be useful.
 > 
-> It would be interesting to know if you actually tested  out to see if the warning went away. As far I can tell, the GCC is quite stubborn there, so I am not going to insist.
+> ref:
+> https://elixir.bootlin.com/linux/v5.4-rc2/source/drivers/media/v4l2-core/v4l2-mem2mem.c#L398
+> https://elixir.bootlin.com/linux/v5.4-rc2/source/include/media/v4l2-mem2mem.h#L43
+> 
+> in drivers/media/v4l2-core/v4l2-mem2mem.c #398 v4l2_m2m_cancel_job()
+> ...
+> if (m2m_ctx->job_flags & TRANS_RUNNING) {
+> 	spin_unlock_irqrestore(&m2m_dev->job_spinlock, flags);
+> 	if (m2m_dev->m2m_ops->job_abort)
+> 		m2m_dev->m2m_ops->job_abort(m2m_ctx->priv);
+> 	dprintk("m2m_ctx %p running, will wait to complete\n", m2m_ctx);
+> 	wait_event(m2m_ctx->finished,
+> 			!(m2m_ctx->job_flags & TRANS_RUNNING));
+> } ...
+> 
+> If this operation is set, we might use the v4l2_m2m_cancel_job() when
+> suspend, and it will do mtk_fd_job_abort() here.
+>
+
+The expectation for .job_abort() is that signals the hardware to
+instantly abandon the current job. Do we have a way to tell the
+firmware/hardware to do so?
+
+Also, suspend must not abort the current job. Anything that was already
+running is expected to complete successfuly and further jobs should
+continue executing once the system resumes.
+
+[snip]
+
+> > +
+> > +static int mtk_fd_suspend(struct device *dev)
+> > +{
+> > +	struct mtk_fd_dev *fd = dev_get_drvdata(dev);
+> > +
+> > +	if (pm_runtime_suspended(dev))
+> > +		return 0;
+> > +
+> > +	if (fd->fd_stream_count)
+> > +		if (mtk_fd_job_abort(fd))
+> > +			mtk_fd_hw_job_finish(fd, VB2_BUF_STATE_ERROR);
+> > +
+> 
+> To avoid mtk_fd_hw_job_finish() trigger the next job,
+> I suppose that we could use v4l2_m2m_cancel_job instead of job_abort and
+> job_finish here.
+> 
+> /**
+>  * v4l2_m2m_cancel_job() - cancel pending jobs for the context
+>  * @m2m_ctx: m2m context with jobs to be canceled
+>  *
+>  * In case of streamoff or release called on any context,
+>  * 1] If the context is currently running, then abort job will be called
+>  * 2] If the context is queued, then the context will be removed from
+>  *    the job_queue
+>  */
+> 
+> or another way,
+> we may add a flag and implement mtk_fd_job_ready() that reads the flag
+> if we suspend, we set the flag and do job_abort and job_finish, even if
+> it try enqueue, it will still not really queue the job, until we reset
+> the flag in mtk_fd_resume().
+> 
+> how do you think?
+>
+
+As per my comment above, suspend must just pause the execution of the
+jobs. It must not cause any jobs to be skipped.
+
+After analyzing the m2m framework and existing m2m drivers I realized
+that they currently provide no way to correctly handle suspend/resume.
+Pi-Hsun has been looking into fixing this in crrev.com/c/1878112 and
+we'll send it upstream as soon as we get something that should handle
+all the cases correctly.
+
+> > +	/* suspend FD HW */
+> > +	writel(0x0, fd->fd_base + MTK_FD_REG_OFFSET_INT_EN);
+> > +	writel(0x0, fd->fd_base + MTK_FD_REG_OFFSET_HW_ENABLE);
+> > +	clk_disable_unprepare(fd->fd_clk);
+> > +	dev_dbg(dev, "%s:disable clock\n", __func__);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int mtk_fd_resume(struct device *dev)
+> > +{
+> > +	struct mtk_fd_dev *fd = dev_get_drvdata(dev);
+> > +	int ret;
+> > +
+> > +	if (pm_runtime_suspended(dev))
+> > +		return 0;
+> > +
+> > +	ret = clk_prepare_enable(fd->fd_clk);
+> > +	if (ret < 0) {
+> > +		dev_dbg(dev, "Failed to open fd clk:%d\n", ret);
+> > +		return ret;
+> > +	}
+> > +
+> > +	/* resume FD HW */
+> > +	writel(MTK_FD_SET_HW_ENABLE, fd->fd_base + MTK_FD_REG_OFFSET_HW_ENABLE);
+> > +	writel(0x1, fd->fd_base + MTK_FD_REG_OFFSET_INT_EN);
+> > +	dev_dbg(dev, "%s:enable clock\n", __func__);
+
+By the way, we need to kick the m2m framework here to schedule further
+jobs. Pi-Hsun's patch will also take care of this.
+
+[snip]
+
+> > +/* Set the face angle and directions to be detected */
+> > +#define V4L2_CID_MTK_FD_DETECT_POSE		(V4L2_CID_USER_MTK_FD_BASE + 1)
+> > +
+> > +/* Set image widths for an input image to be scaled down for face detection */
+> > +#define V4L2_CID_MTK_FD_SCALE_DOWN_IMG_WIDTH	(V4L2_CID_USER_MTK_FD_BASE + 2)
+> > +
+> > +/* Set image heights for an input image to be scaled down for face detection */
+> > +#define V4L2_CID_MTK_FD_SCALE_DOWN_IMG_HEIGHT	(V4L2_CID_USER_MTK_FD_BASE + 3)
+> > +
+> > +/* Set the length of scale down size array */
+> > +#define V4L2_CID_MTK_FD_SCALE_IMG_NUM		(V4L2_CID_USER_MTK_FD_BASE + 4)
+> > +
+> > +/* Set the detection speed, usually reducing accuracy. */
+> > +#define V4L2_CID_MTK_FD_DETECT_SPEED		(V4L2_CID_USER_MTK_FD_BASE + 5)
+> > +
+> > +/* Select the detection model or algorithm to be used. */
+> > +#define V4L2_CID_MTK_FD_DETECTION_MODEL		(V4L2_CID_USER_MTK_FD_BASE + 6)
+> > +
+> > +/* We reserve 16 controls for this driver. */
+> > +#define V4L2_CID_MTK_FD_MAX			16
+> > +
+> 
+> For these control IDs, I think the following should be remained as chip
+> specific controls.
+> V4L2_CID_MTK_FD_SCALE_DOWN_IMG_WIDTH,
+> V4L2_CID_MTK_FD_SCALE_DOWN_IMG_HEIGHT and V4L2_CID_MTK_FD_SCALE_IMG_NUM 
+> 
+> Hope there would be standardizing face detection api that cover the rest
+> controls: V4L2_CID_MTK_FD_DETECT_POSE, V4L2_CID_MTK_FD_DETECT_SPEED and
+> V4L2_CID_MTK_FD_DETECTION_MODEL
+> 
+> Would you have any suggestions on how to propose the standard face
+> detection apis?
 > 
 
-Nothing specific. But just tested this with x86 defconfig with relevant configs
-which are required for this test. Not sure if it involved W=1. The problem is,
-there is no other or better way to have both the conditional checks in place
-while also reducing the chances this warning. IMHO both the conditional checks
-are required.
+Given no follow up feedback from the community, I think we can keep them
+as driver-specific, but should make sure that they have some reasonable
+default values in case an application doesn't recognize them.
+
+Best regards,
+Tomasz
+
 
 _______________________________________________
 linux-arm-kernel mailing list
