@@ -2,84 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A435E4653
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 10:55:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2AF5FE4658
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 10:55:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oE/KrLrZ06m3gDy0B71Zr3aNejt0AmmgndIDhQHoPuY=; b=MMeDbu53v2+WxO
-	2sp9ZaIpChNQRKGa0c3h3+oDexW4jDvYcCoGPCWlXZbzqqVr6T8EYwRdGkSkI+VdKbiVPWDMSefIL
-	HP8DC0S4szMZ5Kq3RYzPNZv1ZVwaihUt6Kiy3B1Q9J9/TBMn5l4LIXtVP9/nYEw1E7dBFs+EFRGrS
-	IgvK1mOvWv96+od1mHYabD8M8cDHtyji6U+ViAAWYPtry/2GUXpO4ADjfrUgSIx9PO3qTUtgik+7E
-	+lk/WA1TsIwzOgoM3XQYOIpqQYhZDjlUIjmjrjSpoWt7dMfgFaDaBpUW/pgqZ5acP2hg1iOQVQew9
-	u7ezwwwMV5L0g4eeIYaQ==;
+	List-Owner; bh=FN+ZzyKDYVS6c1VOR3oZdEdUBBmePP4jaRg53UwhUJg=; b=iC6rlaF2HpIWnt
+	gmLNT3CCr//1mlD2GuTBrdodAhQVNucChw4wjffbqFfQoUCOb74QnC6B43C7VCldeEBdllJp1tUv+
+	lUt7NneDMtj1BU4RRjFK/0UiZEX6GKoTOFKsvWPWiph1ddvhsjXF5g9xPfjScCEI81P3q1e8QvFBg
+	b9EGVnrv0QkRoHA8Me9xvMfg+ZrKPK5s2tIF2Iao1qlZnFyhmxYAiA0HnAa+audlKFOi3Zkr/Rkox
+	thzIsEcPvQEZfc0bil3WepKi08TZOd93uefDKLInwE8UAf3E3NOq0i801uQhrYsEVd8zwSxzdR5LV
+	+tWNK/kQZjbEazI24kCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNvNN-00029P-Ef; Fri, 25 Oct 2019 08:55:17 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iNvNu-00039q-0k; Fri, 25 Oct 2019 08:55:50 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNvN9-0001bd-3N
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 08:55:04 +0000
-Received: by mail-wm1-x342.google.com with SMTP id q70so1192441wme.1
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 25 Oct 2019 01:55:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=e0o1evno6haV1PZk5CsennP2f66XiGB9AxCdg0rnVFQ=;
- b=FG4lhRPIpLv1bI2+5PQqXPccLi1M2LaG9ZFLA3JTw9apptcOjsF4yUBGQ1p2o/MVPP
- aw/pTe89CmukvK92D40EQeECYpkHiTjrvVWy5M5Y4T323TNQ2ZIG97XnDQkuGBUITFG5
- 6bm001yu7zKieO1XyPmOa0noaAhkf71cDWchXEbw0rWk/i70Zt27f76GLPuVifDxLPgm
- wRnSP+8ztowGnMPeWBSnDnrfcaoriRwcpl+9Kjv5OjIpiPbpUhEecKJu7U6BBZ8Qo66V
- sRZmFoL+5r33yQDEQnwb1vBOA0QphlCzcBeFWrxEC8nf/im/I8lsYMgmfo/jsROilf0Q
- W5yQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=e0o1evno6haV1PZk5CsennP2f66XiGB9AxCdg0rnVFQ=;
- b=ihEgiez/RGsTAmHrDJlPmTQWoE+5ZHgMpppMxGlg0jBWgGe0LBP1BIpEoTSTMbSpOD
- HYktWE2F5AhRbRc4hXx1sJst2DfetIqJp8K54MW1YtbI+EGgjqFMg39xOHoQYkwXWAcU
- g5NGlh3aKBSQYEn3E0dZzyGpRoOByuP1UBXO/kCYnE5vd8cdlhqyQVRc0zpFeNlCiCCZ
- kb/eHBgVVbgmWEkpUvKa+Rg/FDXXv+Be6vlg1YNISmAz4K6jnLu/TaYXQTNykhDTVmzf
- p7KhqPuHCpMGBUEmwCRgm/3wik9FNGo/53GygQ9viUesrGQCcPMzOqEKituVVBuv0ip9
- CK+Q==
-X-Gm-Message-State: APjAAAWCSnfqnW8QTmq24BVdfQhFNTBWD8uHhifvKEc6Is7zeKm5uRhc
- mp0WD+kNevxSCblkCbpCG0GECg==
-X-Google-Smtp-Source: APXvYqwxebVwU3JPLWu+FN21Yw5b1DUrU9iBzksnwjCY+rWOd7gEbbU27OgkACABTCrk/ERH3DzeHA==
-X-Received: by 2002:a1c:2e94:: with SMTP id u142mr2497100wmu.69.1571993701786; 
- Fri, 25 Oct 2019 01:55:01 -0700 (PDT)
-Received: from holly.lan (cpc141214-aztw34-2-0-cust773.18-1.cable.virginm.net.
- [86.9.19.6])
- by smtp.gmail.com with ESMTPSA id o18sm2031749wrm.11.2019.10.25.01.55.00
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 25 Oct 2019 01:55:01 -0700 (PDT)
-Date: Fri, 25 Oct 2019 09:54:59 +0100
-From: Daniel Thompson <daniel.thompson@linaro.org>
-To: Lee Jones <lee.jones@linaro.org>
-Subject: Re: [PATCH v3 07/10] x86: olpc-xo1-sci: Remove invocation of MFD's
- .enable()/.disable() call-backs
-Message-ID: <20191025085459.roxig2nyxfjlf6dz@holly.lan>
-References: <20191024163832.31326-1-lee.jones@linaro.org>
- <20191024163832.31326-8-lee.jones@linaro.org>
+ id 1iNvNe-000397-Gn
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 08:55:35 +0000
+Received: from dragon (li937-157.members.linode.com [45.56.119.157])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 45D2521D7B;
+ Fri, 25 Oct 2019 08:55:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571993734;
+ bh=5i3d+HY/V9+fI+uU7h1tX+fWD57IhBHMQfmMyo6jW0g=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=FIQ/dERdy5OkfSnkwC/QgV1xafO+vBptMDHo96N++fPAbjhSmlkAGTYvw3jNb1VFi
+ S7bP4XDAcKBi1T5YIgLuBu8vztAbKdPBY4ZeZ2/wEoYtZJxRlqFZ3bdlB1F17+zKeE
+ pfirmEbL1hEYAsGqA5dT8DKdV+kpfLy+KRJlkJdo=
+Date: Fri, 25 Oct 2019 16:55:17 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Lukasz Majewski <lukma@denx.de>
+Subject: Re: [PATCH v2] dts: Disable DMA support on the BK4 vf610 device's
+ fsl_lpuart driver
+Message-ID: <20191025085515.GH3208@dragon>
+References: <20191010090802.16383-1-lukma@denx.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191024163832.31326-8-lee.jones@linaro.org>
-User-Agent: NeoMutt/20180716
+In-Reply-To: <20191010090802.16383-1-lukma@denx.de>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_015503_172395_AC207C79 
-X-CRM114-Status: GOOD (  14.01  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191025_015534_583545_DDF6B14D 
+X-CRM114-Status: GOOD (  11.66  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -89,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,59 +77,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: baohua@kernel.org, stephan@gerhold.net, arnd@arndb.de,
- linus.walleij@linaro.org, linux-kernel@vger.kernel.org, broonie@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
+ Stefan Agner <stefan@agner.ch>, Rob Herring <robh+dt@kernel.org>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 24, 2019 at 05:38:29PM +0100, Lee Jones wrote:
-> IO regions are now requested and released by this device's parent.
+On Thu, Oct 10, 2019 at 11:08:02AM +0200, Lukasz Majewski wrote:
+> This change disables the DMA support (RX/TX) on the NXP's fsl_lpuart
+> driver - the PIO mode is used instead. This change is necessary for better
+> robustness of BK4's device use cases with many potentially interrupted
+> short serial transfers.
 > 
-> Signed-off-by: Lee Jones <lee.jones@linaro.org>
+> Without it the driver hangs when some distortion happens on UART lines.
+> 
+> Signed-off-by: Lukasz Majewski <lukma@denx.de>
+> Suggested-by: Robin Murphy <robin.murphy@arm.com>
 
-Reviewed-by: Daniel Thompson <daniel.thompson@linaro.org>
+Subject prefix should be 'ARM: dts: ...'.  I fixed it up and applied the
+patch.
 
-> ---
->  arch/x86/platform/olpc/olpc-xo1-sci.c | 6 ------
->  1 file changed, 6 deletions(-)
-> 
-> diff --git a/arch/x86/platform/olpc/olpc-xo1-sci.c b/arch/x86/platform/olpc/olpc-xo1-sci.c
-> index 99a28ce2244c..933dd4fe3a97 100644
-> --- a/arch/x86/platform/olpc/olpc-xo1-sci.c
-> +++ b/arch/x86/platform/olpc/olpc-xo1-sci.c
-> @@ -15,7 +15,6 @@
->  #include <linux/platform_device.h>
->  #include <linux/pm.h>
->  #include <linux/pm_wakeup.h>
-> -#include <linux/mfd/core.h>
->  #include <linux/power_supply.h>
->  #include <linux/suspend.h>
->  #include <linux/workqueue.h>
-> @@ -537,10 +536,6 @@ static int xo1_sci_probe(struct platform_device *pdev)
->  	if (!machine_is_olpc())
->  		return -ENODEV;
->  
-> -	r = mfd_cell_enable(pdev);
-> -	if (r)
-> -		return r;
-> -
->  	res = platform_get_resource(pdev, IORESOURCE_IO, 0);
->  	if (!res) {
->  		dev_err(&pdev->dev, "can't fetch device resource info\n");
-> @@ -605,7 +600,6 @@ static int xo1_sci_probe(struct platform_device *pdev)
->  
->  static int xo1_sci_remove(struct platform_device *pdev)
->  {
-> -	mfd_cell_disable(pdev);
->  	free_irq(sci_irq, pdev);
->  	cancel_work_sync(&sci_work);
->  	free_ec_sci();
-> -- 
-> 2.17.1
-> 
+Shawn
 
 _______________________________________________
 linux-arm-kernel mailing list
