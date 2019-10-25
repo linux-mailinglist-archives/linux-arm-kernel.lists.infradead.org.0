@@ -2,64 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EAFACE4176
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 04:24:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94180E4186
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 04:31:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/rG3NcRSWwlgn6XmEFxIgXWBhJIMQ48rkN6AjmLjTuo=; b=N5PQ0MO8sixdJKSCsADO/qrF3
-	YNqqZlP5JFvfDW6J+PmarxBDCZqk1SxR4BoZ19kPUCEPYDV6lVzZCHgFvvbVyPX3/hmEuIHiYT/ye
-	2w6DD/KkASpcKjBqUAjuVpj8oVSedKcrSCp3HEgpHEzDIiQwRlRaQENLpu/TLD84b7GHG71IbOzIL
-	MCgswX4sbnkTssQKGvW1CFbNoQxV2QjMDej7n2iaLmGyq0JXy0gZ1jjIgsRZI1siwYTMMg6phhmrn
-	PDicl2HZKMEHJzbxtH8QCdt59wzYApNMD+DaFiyFQhcBYjnEOGkFgKMEF2r4RQAlhZGOnhBTPdnze
-	wD3cpmQ4g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=q/fvZmkv1pYxmQPnwkjXweR8zCMF82dfTDJm+/9Hifg=; b=fU594iAkr/oiwf
+	GgXHDEMVYc49/HTL/q11LiYgmtwuf8Y3PEEtVUef+lw2Qp5erzxnaRTZOEWKmX1gGr+zxyCcfapxJ
+	gwhCgcl5y71GoYnrGLO0w9a+8yKO82h6DrqInA+Z0u/hUh/nT6Flz6AUL1/vg5mJauFuJrwoLGS8F
+	C+2jxxK9grzYUflimuqZopxB0hu475ANALANSoJIZ/7NCdXzGvylhxWmqtfRj9kgSuaZZql2rMoOI
+	QXiD8fvq1k9B6sHXHHDRHSyv0kIVEHT2rR4+qWHH9UrUoaFfoJUCGf++Xj8pw1hKeBIrh4xZnrIwr
+	a/0nOaGSCpcWdPFcysmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNpHR-00079j-1y; Fri, 25 Oct 2019 02:24:45 +0000
-Received: from out30-130.freemail.mail.aliyun.com ([115.124.30.130])
+	id 1iNpO7-0001ls-RJ; Fri, 25 Oct 2019 02:31:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNpHH-00079E-CI
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 02:24:36 +0000
-X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R211e4; CH=green; DM=||false|;
- FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01e07417; MF=shannon.zhao@linux.alibaba.com;
- NM=1; PH=DS; RN=8; SR=0; TI=SMTPD_---0Tg7Ey22_1571970253; 
-Received: from 30.43.121.138(mailfrom:shannon.zhao@linux.alibaba.com
- fp:SMTPD_---0Tg7Ey22_1571970253) by smtp.aliyun-inc.com(127.0.0.1);
- Fri, 25 Oct 2019 10:24:32 +0800
-Subject: Re: [PATCH RFC 0/7] Support KVM being compiled as a kernel module on
- arm64
-To: James Morse <james.morse@arm.com>
-References: <1571912870-18471-1-git-send-email-shannon.zhao@linux.alibaba.com>
- <8cbd81d6-4ab8-9d2a-5162-8782201cd13d@arm.com>
-From: Shannon Zhao <shannon.zhao@linux.alibaba.com>
-Message-ID: <975a0c6f-fdff-556f-b447-06edf24141df@linux.alibaba.com>
-Date: Fri, 25 Oct 2019 10:24:14 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iNpNz-0001l5-JG
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 02:31:32 +0000
+Received: from dragon (li937-157.members.linode.com [45.56.119.157])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id EEC7B206DD;
+ Fri, 25 Oct 2019 02:31:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571970690;
+ bh=wS+ZqOi0AxyDhn3tjgIiQc5vD2xB4fXHjduh81AOn60=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=x/kHHoHqs74Cg37pKPiTkfnrPUKgh6AM+ieR+A4dSF5PHEy8UzPbyiASNrXJ5IleJ
+ QvfPq/e2LqArQ++vhO5SPkcoXil9olRQQ8TkzbKa9vpyo8XXja+HceR/878vs1z0+M
+ bhyMKZD8vHeQzhfxTtLX57QuGtooEj8U1VBgu7l0=
+Date: Fri, 25 Oct 2019 10:31:12 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
+Subject: Re: [PATCH v4] arm64: dts: imx8mq: Init rates and parents configs
+ for clocks
+Message-ID: <20191025023110.GA30015@dragon>
+References: <20190728152040.15323-1-daniel.baluta@nxp.com>
+ <20191022161919.GA3727@bogon.m.sigxcpu.org>
 MIME-Version: 1.0
-In-Reply-To: <8cbd81d6-4ab8-9d2a-5162-8782201cd13d@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191022161919.GA3727@bogon.m.sigxcpu.org>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_192435_581241_FDE45AD1 
-X-CRM114-Status: GOOD (  17.14  )
-X-Spam-Score: -8.0 (--------)
+X-CRM114-CacheID: sfid-20191024_193131_654643_F2AFB5FF 
+X-CRM114-Status: GOOD (  11.24  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-8.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [115.124.30.130 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,68 +78,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: suzuki.poulose@arm.com, maz@kernel.org, christoffer.dall@arm.com,
- linux-kernel@vger.kernel.org, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: devicetree@vger.kernel.org, baruch@tkos.co.il, abel.vesa@nxp.com,
+ Anson.Huang@nxp.com, ccaione@baylibre.com, andrew.smirnov@gmail.com,
+ festevam@gmail.com, s.hauer@pengutronix.de, angus@akkea.ca,
+ linux-kernel@vger.kernel.org, linux-imx@nxp.com,
+ Daniel Baluta <daniel.baluta@nxp.com>, shengjiu.wang@nxp.com,
+ linux-arm-kernel@lists.infradead.org, l.stach@pengutronix.de
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi James,
+On Tue, Oct 22, 2019 at 06:19:19PM +0200, Guido G=FCnther wrote:
+> Hi,
+> On Sun, Jul 28, 2019 at 06:20:40PM +0300, Daniel Baluta wrote:
+> > From: Abel Vesa <abel.vesa@nxp.com>
+> > =
 
-On 2019/10/24 18:58, James Morse wrote:
-> Hi Shannon,
-> 
-> On 24/10/2019 11:27, Shannon Zhao wrote:
->> Curently KVM ARM64 doesn't support to compile as a kernel module. It's
->> useful to compile KVM as a module.
-> 
->> For example, it could reload kvm without rebooting host machine.
-> 
-> What problem does this solve?
-> 
-> KVM has some funny requirements that aren't normal for a module. On v8.0 hardware it must
-> have an idmap. Modules don't usually expect their code to be physically contiguous, but
-> KVM does. KVM influences they way some of the irqchip stuff is set up during early boot
-> (EOI mode ... not that I understand it).
-> 
-> (I think KVM-as-a-module on x86 is an artifact of how it was developed)
-> 
-> 
->> This patchset support this feature while there are some limitations
->> to be solved. But I just send it out as RFC to get more suggestion and
->> comments.
-> 
->> Curently it only supports for VHE system due to the hyp code section
->> address variables like __hyp_text_start.
-> 
-> We still need to support !VHE systems, and we need to do it with a single image.
-> 
-I didn't make it clear. With this patchset we still support !VHE systems 
-by choose CONFIG_KVM_ARM_HOST as y and by default CONFIG_KVM_ARM_HOST is 
-y. And during module init, I add a check to avoid wrong usage for kvm 
-module.
+> > Add the initial configuration for clocks that need default parent and r=
+ate
+> > setting. This is based on the vendor tree clock provider parents and ra=
+tes
+> > configuration except this is doing the setup in dts rather then using c=
+lock
+> > consumer API in a clock provider driver.
+> > =
 
-if (IS_MODULE(CONFIG_KVM_ARM_HOST) && !is_kernel_in_hyp_mode()) {
-         kvm_err("kvm arm kernel module only supports for VHE system\n");
-         return -ENODEV;
-}
+> > Note that by adding the initial rate setting for audio_pll1/audio_pll
+> > setting we need to remove it from imx8mq-librem5-devkit.dts
+> =
 
+> It seems this never made it into any tree, any particular reason for
+> that?
 
-> 
->> Also it can't call
->> kvm_update_va_mask when loading kvm module and kernel panic with below
->> errors. So I make kern_hyp_va into a nop funtion.
-> 
-> Making this work for the single-Image on v8.0 is going to be a tremendous amount of work.
-> What is the payoff?
-> 
-Actually we can limit this feature only working for VHE systems and 
-don't influence !VHE systems.
+There is some discussion going on and I haven't seen it reaches an
+explicit agreement.
 
-Thanks,
-Shannon
+Shawn
 
 _______________________________________________
 linux-arm-kernel mailing list
