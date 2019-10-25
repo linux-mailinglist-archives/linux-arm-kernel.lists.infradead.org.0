@@ -2,77 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D7EEE557C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 22:52:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2863EE55B3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 23:13:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uQaOVSPnOVUl92PtWgV6ZDBKJw3jvcxkopETozBtwIk=; b=c4//Ln/8+ckIP0
-	E+S1yxwh1zFDUw41Hrg+8R0wZP2MiIdAKeRoaINS6UM9NaCQ6HE3A6pPTJGdU1gqZsB1UOsVYvQuL
-	y8uhkY+W9bOgaCq5f5bv7fnD7W19UhdUf7fFl1gJlc7sCkEnU1mUudcqD7OHKQFtknlUuV0lQs1XQ
-	CQ9YAblcrNf0d3yWJHBdtK7dAki2SaCcgxoyYEK91ryPDr8kN31m5G2zD/getzBA5vwB725pFFBV9
-	QhD7ueWuPD3Kl6XoA1gWnmJ0vShMJBGozIarPKfPQaOujSHKoHXKwZzFWrsA3BjRj7ULHFc3Bp1HX
-	A2wZTNUjUhpZl6UEEfdw==;
+	List-Owner; bh=N6sD8T0ElELRea/K8hcFMZnx0/G6d6MA2P7hYR2BTVU=; b=oyHjIeMshOeia2
+	i565OjQuGqz799YX1fosmRFZr1OwX6J9O/J94RnY8b9JVjg5fkUd9FbkSx2NA8D4bjjsiZ9yNWzu4
+	fj/Vh24h6dm54liNesTA8VEQBRB4Ne1z+uPi38KdSB2rIoENPwmXUY/9ffvzF6IUUiUe9W6MmIApB
+	kfy8eBsaxNR4YMbMqZBkbKVQAAKMyMkzPOxc3X9rRCtojaUAfPqpdLUFhy7q5wkJzVU0pEYToeWMX
+	RXsbEc1MCAJsPkY05k6vgS6dpFRpDGJmwnaGZkWVsuIUKfV7Qh3grSC6+1Zk9lG2oIogC687sIzN1
+	QKVORXCvOxF+lVPcNtjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iO6Zf-0001fO-2s; Fri, 25 Oct 2019 20:52:43 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iO6u8-0001K9-6R; Fri, 25 Oct 2019 21:13:52 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iO6ZT-0001ey-O3; Fri, 25 Oct 2019 20:52:32 +0000
-Received: from mail-qt1-f176.google.com (mail-qt1-f176.google.com
- [209.85.160.176])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 449B721E6F;
- Fri, 25 Oct 2019 20:52:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572036751;
- bh=ORFhXAsCQweMyIE5fdnoRCbGtyZgtGzZu0oJWpRtLEA=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=zKhAr6iNnKxRR/OmHBwiVBHmMVqC2w3IDMpMyuLTzBntt41I4IEmwx7XdBVyCmlbC
- sivlIhCM88ecHVAD6G5rMcOVtNc7FNH/2TJnfGsp8C3xX5semVb8HDNqCKBN4ZPjdO
- lS+G9ZhgAkXpyHUoAmWJw+8Kb1Uu02GfX64m/JGU=
-Received: by mail-qt1-f176.google.com with SMTP id o3so5278821qtj.8;
- Fri, 25 Oct 2019 13:52:31 -0700 (PDT)
-X-Gm-Message-State: APjAAAUVbX+eM5K8H0Qu70zcyH0AWUDdjv6AJ7eGINo0y2pJGnishHO2
- 3KM/l/9P1Gjqji4Xtx/6Z3E923/j04QvDGFtbQ==
-X-Google-Smtp-Source: APXvYqxsld9ImE31xEIRyd/SNyuF7ml49eI3ypfs2k0j66vMlw4KSS63PN5eOAFHsHZIQ0enGsLdpRKYXUAsMTLF2Do=
-X-Received: by 2002:ac8:741a:: with SMTP id p26mr5205325qtq.143.1572036750395; 
- Fri, 25 Oct 2019 13:52:30 -0700 (PDT)
-MIME-Version: 1.0
-References: <20191020040817.16882-1-afaerber@suse.de>
- <20191020040817.16882-6-afaerber@suse.de>
-In-Reply-To: <20191020040817.16882-6-afaerber@suse.de>
+ id 1iO6tw-0001JG-Qu
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 21:13:42 +0000
+Received: by mail-oi1-f195.google.com with SMTP id s5so2502956oie.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 25 Oct 2019 14:13:40 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=YsHXnqwoM7wQXF0uPaovfdPHuECAxo/T6mEqOx5c+dY=;
+ b=OOyRyU3QmxJvg7x1ZaDME4WF8HbozxZmF7CGHIFiDxxHK53lDOz72EAiRb0Jvh1xT4
+ VzkfCWMyDvXHedzQzOiu7BFJsZ0Zz0i6tgDycdjeH1dBEUotiuN1dAXKFokkB1LS7vTE
+ /9dd1cZSdiJk50QwO0P0ebDFoyksZOoYmPAKnxc+eSVkjWuZwG3zzTaiWKRLw54OGfmY
+ sVDFC+DfFrazGy1971dXXWSB8+w7evIP2bjxO+Lrbvb3g63Uv6bO8L4i4vgQ/YLlMn5u
+ cULKEgB1JVLA6rwdbPOpBGXsOy1Xs8L7ppbX2RJwngPAdNoCY5hoFzq4DeCRCON48QCG
+ BlfA==
+X-Gm-Message-State: APjAAAWDp/MqH3/5USAeuIhA3Hlxby9P06ECLQG30ZtZnJZ2fGy0yWb1
+ v2Un6GgjOtKeSlYYXM9c8w==
+X-Google-Smtp-Source: APXvYqwE4WNyEIPHUmWISUbe3EXRa308MBi5x/EUd8BbYKV1jvLUEmP2vAxDgTjVnSwi+WqgYLFnXA==
+X-Received: by 2002:aca:1e0e:: with SMTP id m14mr4801375oic.72.1572038019693; 
+ Fri, 25 Oct 2019 14:13:39 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id n4sm875917oic.2.2019.10.25.14.13.38
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 25 Oct 2019 14:13:38 -0700 (PDT)
+Date: Fri, 25 Oct 2019 16:13:38 -0500
 From: Rob Herring <robh@kernel.org>
-Date: Fri, 25 Oct 2019 15:52:19 -0500
-X-Gmail-Original-Message-ID: <CAL_Jsq+OhiZZ4Ei3wg4s-1z+WsqQSvvRMNrK37Yq+1XR3-3_uA@mail.gmail.com>
-Message-ID: <CAL_Jsq+OhiZZ4Ei3wg4s-1z+WsqQSvvRMNrK37Yq+1XR3-3_uA@mail.gmail.com>
-Subject: Re: [PATCH v2 5/8] arm64: dts: realtek: Change dual-license from MIT
- to BSD
-To: =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>
+To: "H. Nikolaus Schaller" <hns@goldelico.com>
+Subject: Re: [PATCH v2 01/11] Documentation: dt: wireless: update wl1251 for
+ sdio
+Message-ID: <20191025211338.GA20249@bogus>
+References: <cover.1571510481.git.hns@goldelico.com>
+ <741828f69eca2a9c9a0a7e80973c91f50cc71f9b.1571510481.git.hns@goldelico.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <741828f69eca2a9c9a0a7e80973c91f50cc71f9b.1571510481.git.hns@goldelico.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_135231_806678_994D2A5B 
-X-CRM114-Status: GOOD (  10.18  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191025_141340_871493_BCBE5529 
+X-CRM114-Status: GOOD (  17.44  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.195 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,30 +92,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, linux-realtek-soc@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
+ devicetree@vger.kernel.org, Tony Lindgren <tony@atomide.com>,
+ linux-wireless@vger.kernel.org, Kefeng Wang <wangkefeng.wang@huawei.com>,
+ Bjorn Helgaas <bhelgaas@google.com>, netdev@vger.kernel.org,
+ linux-omap@vger.kernel.org, "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
+ Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
+ Yangtao Li <tiny.windzz@gmail.com>, Kalle Valo <kvalo@codeaurora.org>,
+ Petr Mladek <pmladek@suse.com>,
+ =?iso-8859-1?Q?Beno=EEt?= Cousson <bcousson@baylibre.com>,
+ Alexios Zavras <alexios.zavras@intel.com>,
+ John Stultz <john.stultz@linaro.org>, David Sterba <dsterba@suse.com>,
+ Thomas Gleixner <tglx@linutronix.de>, letux-kernel@openphoenux.org,
+ Allison Randal <allison@lohutok.net>, linux-arm-kernel@lists.infradead.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mmc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Sakari Ailus <sakari.ailus@linux.intel.com>,
+ kernel@pyra-handheld.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gU2F0LCBPY3QgMTksIDIwMTkgYXQgMTE6MDggUE0gQW5kcmVhcyBGw6RyYmVyIDxhZmFlcmJl
-ckBzdXNlLmRlPiB3cm90ZToKPgo+IE1vdmUgdGhlIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyIHRv
-IHRoZSB0b3AgbGluZSBhbmQgdXBkYXRlIHRvIFNQRFggMi4wLgo+IFdoaWxlIGF0IGl0LCBzd2l0
-Y2ggZnJvbSBHUEx2MisvTUlUIHRvIEdQTHYyKy9CU0QyYyBiZWZvcmUgYWRkaW5nIG1vcmUuCj4K
-PiBTdWdnZXN0ZWQtYnk6IFJvYiBIZXJyaW5nIDxyb2JoQGtlcm5lbC5vcmc+Cj4gQ2M6IFJvYiBI
-ZXJyaW5nIDxyb2JoQGtlcm5lbC5vcmc+Cj4gU2lnbmVkLW9mZi1ieTogQW5kcmVhcyBGw6RyYmVy
-IDxhZmFlcmJlckBzdXNlLmRlPgo+IC0tLQo+ICB2MjogTmV3Cj4KPiAgYXJjaC9hcm02NC9ib290
-L2R0cy9yZWFsdGVrL3J0ZDEyOTUtemlkb28teDlzLmR0cyB8IDMgKy0tCj4gIGFyY2gvYXJtNjQv
-Ym9vdC9kdHMvcmVhbHRlay9ydGQxMjk1LmR0c2kgICAgICAgICAgfCAzICstLQo+ICBhcmNoL2Fy
-bTY0L2Jvb3QvZHRzL3JlYWx0ZWsvcnRkMTI5eC5kdHNpICAgICAgICAgIHwgMyArLS0KPiAgMyBm
-aWxlcyBjaGFuZ2VkLCAzIGluc2VydGlvbnMoKyksIDYgZGVsZXRpb25zKC0pCgpBY2tlZC1ieTog
-Um9iIEhlcnJpbmcgPHJvYmhAa2VybmVsLm9yZz4KCkl0J3MgcmVhbGx5IG9ubHkgc2NoZW1hIGZp
-bGVzIHRoYXQgSSdtIHB1c2hpbmcgdG93YXJkcyBCU0QyQy4gTWF5YmUgaW4KaGluZHNpZ2h0IHdl
-IHNob3VsZCBoYXZlIGRvbmUgTUlUIGFzIHRoYXQncyBtb3JlIGNvbW1vbiBpbiB0aGUgZHRzCmZp
-bGVzLgoKUm9iCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
-ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
-aW51eC1hcm0ta2VybmVsCg==
+On Sat, Oct 19, 2019 at 08:41:16PM +0200, H. Nikolaus Schaller wrote:
+> The standard method for sdio devices connected to
+> an sdio interface is to define them as a child node
+> like we can see with wlcore.
+> 
+> Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
+> Acked-by: Kalle Valo <kvalo@codeaurora.org>
+> ---
+>  .../bindings/net/wireless/ti,wl1251.txt       | 26 +++++++++++++++++++
+>  1 file changed, 26 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/net/wireless/ti,wl1251.txt b/Documentation/devicetree/bindings/net/wireless/ti,wl1251.txt
+> index bb2fcde6f7ff..88612ff29f2d 100644
+> --- a/Documentation/devicetree/bindings/net/wireless/ti,wl1251.txt
+> +++ b/Documentation/devicetree/bindings/net/wireless/ti,wl1251.txt
+> @@ -35,3 +35,29 @@ Examples:
+>  		ti,power-gpio = <&gpio3 23 GPIO_ACTIVE_HIGH>; /* 87 */
+>  	};
+>  };
+> +
+> +&mmc3 {
+> +	vmmc-supply = <&wlan_en>;
+> +
+> +	bus-width = <4>;
+> +	non-removable;
+> +	ti,non-removable;
+> +	cap-power-off-card;
+> +
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&mmc3_pins>;
+
+None of the above are really relevant to this binding.
+
+> +
+> +	#address-cells = <1>;
+> +	#size-cells = <0>;
+> +
+> +	wlan: wl1251@1 {
+
+wifi@1
+
+> +		compatible = "ti,wl1251";
+> +
+> +		reg = <1>;
+> +
+> +		interrupt-parent = <&gpio1>;
+> +		interrupts = <21 IRQ_TYPE_LEVEL_HIGH>;	/* GPIO_21 */
+> +
+> +		ti,wl1251-has-eeprom;
+> +	};
+> +};
+> -- 
+> 2.19.1
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
