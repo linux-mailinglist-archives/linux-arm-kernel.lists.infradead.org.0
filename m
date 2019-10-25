@@ -2,82 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01C5BE5578
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 22:51:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D7EEE557C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 22:52:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lR5mLwt7NtffLY0OlHJ7MTNvWgmUQcafF2uDqDrc3GU=; b=jlqQEGEXHmZvIb
-	r3cEc0U7T4dF6sMPnzYIgzSaDM2dxXXuYSIBNJ+5YY73gYwgV85Tklh5FqQ4xmsJm9rBsgeD/TTFv
-	m0LQop94Vo34+4h9v2g+YeeV8HJWybFSDcWgjylzZ/9kUOhSXFeobGoPwk1B0doKMLYkBNdoqEfAe
-	pcj8nNjhPqKunKKOGyyGd18E7XyyBNHJ8E2LvtKhTw2XHHRWD9CMrRSLSG4Y2nUVii915IDb+BrqQ
-	U4k432C0O4j5WZCjB6+/l6ZC50v3Y2GdEXGs9POeeJRsziUhgDnlQT0MBGLfsJxArQZbzJ3EaUqdj
-	ZU9sPpuaK4aFc3vGATug==;
+	List-Owner; bh=uQaOVSPnOVUl92PtWgV6ZDBKJw3jvcxkopETozBtwIk=; b=c4//Ln/8+ckIP0
+	E+S1yxwh1zFDUw41Hrg+8R0wZP2MiIdAKeRoaINS6UM9NaCQ6HE3A6pPTJGdU1gqZsB1UOsVYvQuL
+	y8uhkY+W9bOgaCq5f5bv7fnD7W19UhdUf7fFl1gJlc7sCkEnU1mUudcqD7OHKQFtknlUuV0lQs1XQ
+	CQ9YAblcrNf0d3yWJHBdtK7dAki2SaCcgxoyYEK91ryPDr8kN31m5G2zD/getzBA5vwB725pFFBV9
+	QhD7ueWuPD3Kl6XoA1gWnmJ0vShMJBGozIarPKfPQaOujSHKoHXKwZzFWrsA3BjRj7ULHFc3Bp1HX
+	A2wZTNUjUhpZl6UEEfdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iO6Yq-0001O3-CA; Fri, 25 Oct 2019 20:51:52 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1iO6Zf-0001fO-2s; Fri, 25 Oct 2019 20:52:43 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iO6Yd-0001NE-4Y
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 20:51:40 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id a143so1548918vsd.9
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 25 Oct 2019 13:51:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=SOwCMPM2O4ZOlwd3DBrA7iEvzDojcSJWVcNWTrD2V3A=;
- b=OMpIHy666PHw9erjn8xDTPpke8xQntbqoetTb755EO9PeDOpXuqP6XhDAI7uUr5fO2
- xmVL8gs1k0UTMM90x7YH/5ifo3akIvmtUP3P99Y8UkXss+I/VMnYl83cvTyhYTBE+xXo
- cZnJNJr5EGcHbCKDOw5qzZmWgscClEDk8K70pc2sU5/7TsNOz3qMBup0ghahhpvfFUWg
- vkZUy83KnTruoWWThCWKQaNjwulexQFfxNHsd7rgNtxCf3BUJ3Swu+Hls5xYOIdyzbqN
- pTUp3jauqQWIFYhE31Un5fjVTn41lvbrOA703W64zMOhKqcxNHtTJHVm5pwg8QOK9PnF
- Ba7w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=SOwCMPM2O4ZOlwd3DBrA7iEvzDojcSJWVcNWTrD2V3A=;
- b=qqfsbbw5wVbxlxpoOQZy6dF/hmp2bpx1nn1pUH6i+hfxsyKX5EbN++nY2gCsHxEG1b
- vXNHNjAJ9CXCkX2mn57QpYVSr7TCU41PnNKvJsttfZcG2HCg9CZFFkIdrA7WN7oCZeUG
- cBfWA5r5jrGh0zqUaOskHNOqk/e61JNyVXh4HdFCNt9txVryY6Zi+V75/By5KwEsr8jA
- wZbUwP3q/TKsBr2Xblf1wi2TmWvo9ix96HkfiPNLtAssw9juCcUPEiOrCVV9m5p134ZA
- y6tOiLyFLNXTSekjr6WQbrGnBpLw+GsGB9uBoTQVNQHMXgva0EXznUHYuDjWINL/4jha
- yWqw==
-X-Gm-Message-State: APjAAAUejueY7dYARBFoqVxqQ6RUmKQ5eoMcREF/suGo1KjF4fJe7j4J
- 17PlK/LHt/+k+ZggSnViFRIF48qANoTKyiSg54cuvA==
-X-Google-Smtp-Source: APXvYqwitHy/uW9BgFO85xlL31gu4CkfssJm5Y58pk3pu/OFECEhzo8ZcmTg1xeRhUyxbxF5+qEX2qRHXCg/5F+6CB8=
-X-Received: by 2002:a67:ed8b:: with SMTP id d11mr3107850vsp.104.1572036693631; 
- Fri, 25 Oct 2019 13:51:33 -0700 (PDT)
+ id 1iO6ZT-0001ey-O3; Fri, 25 Oct 2019 20:52:32 +0000
+Received: from mail-qt1-f176.google.com (mail-qt1-f176.google.com
+ [209.85.160.176])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 449B721E6F;
+ Fri, 25 Oct 2019 20:52:31 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572036751;
+ bh=ORFhXAsCQweMyIE5fdnoRCbGtyZgtGzZu0oJWpRtLEA=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=zKhAr6iNnKxRR/OmHBwiVBHmMVqC2w3IDMpMyuLTzBntt41I4IEmwx7XdBVyCmlbC
+ sivlIhCM88ecHVAD6G5rMcOVtNc7FNH/2TJnfGsp8C3xX5semVb8HDNqCKBN4ZPjdO
+ lS+G9ZhgAkXpyHUoAmWJw+8Kb1Uu02GfX64m/JGU=
+Received: by mail-qt1-f176.google.com with SMTP id o3so5278821qtj.8;
+ Fri, 25 Oct 2019 13:52:31 -0700 (PDT)
+X-Gm-Message-State: APjAAAUVbX+eM5K8H0Qu70zcyH0AWUDdjv6AJ7eGINo0y2pJGnishHO2
+ 3KM/l/9P1Gjqji4Xtx/6Z3E923/j04QvDGFtbQ==
+X-Google-Smtp-Source: APXvYqxsld9ImE31xEIRyd/SNyuF7ml49eI3ypfs2k0j66vMlw4KSS63PN5eOAFHsHZIQ0enGsLdpRKYXUAsMTLF2Do=
+X-Received: by 2002:ac8:741a:: with SMTP id p26mr5205325qtq.143.1572036750395; 
+ Fri, 25 Oct 2019 13:52:30 -0700 (PDT)
 MIME-Version: 1.0
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20191024225132.13410-1-samitolvanen@google.com>
- <20191024225132.13410-6-samitolvanen@google.com>
- <CAKwvOdmfXbnWf0dPN4EGCBVvppVRhuc=eq-pbfmotCCBaRN-Cw@mail.gmail.com>
-In-Reply-To: <CAKwvOdmfXbnWf0dPN4EGCBVvppVRhuc=eq-pbfmotCCBaRN-Cw@mail.gmail.com>
-From: Sami Tolvanen <samitolvanen@google.com>
-Date: Fri, 25 Oct 2019 13:51:22 -0700
-Message-ID: <CABCJKufR04dmzj3-7Uw0QkcHXvNd6h8XMPVV-hZ-AyOX-CJcjA@mail.gmail.com>
-Subject: Re: [PATCH v2 05/17] add support for Clang's Shadow Call Stack (SCS)
-To: Nick Desaulniers <ndesaulniers@google.com>
+References: <20191020040817.16882-1-afaerber@suse.de>
+ <20191020040817.16882-6-afaerber@suse.de>
+In-Reply-To: <20191020040817.16882-6-afaerber@suse.de>
+From: Rob Herring <robh@kernel.org>
+Date: Fri, 25 Oct 2019 15:52:19 -0500
+X-Gmail-Original-Message-ID: <CAL_Jsq+OhiZZ4Ei3wg4s-1z+WsqQSvvRMNrK37Yq+1XR3-3_uA@mail.gmail.com>
+Message-ID: <CAL_Jsq+OhiZZ4Ei3wg4s-1z+WsqQSvvRMNrK37Yq+1XR3-3_uA@mail.gmail.com>
+Subject: Re: [PATCH v2 5/8] arm64: dts: realtek: Change dual-license from MIT
+ to BSD
+To: =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_135139_182683_62A5D845 
-X-CRM114-Status: GOOD (  11.15  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20191025_135231_806678_994D2A5B 
+X-CRM114-Status: GOOD (  10.18  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -86,8 +72,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,56 +84,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
- LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- Masami Hiramatsu <mhiramat@kernel.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Kernel Hardening <kernel-hardening@lists.openwall.com>,
- Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, linux-realtek-soc@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 25, 2019 at 9:22 AM Nick Desaulniers
-<ndesaulniers@google.com> wrote:
-> > +static void scs_free(void *s)
-> > +{
-> > +       int i;
-> > +
-> > +       for (i = 0; i < SCS_CACHE_SIZE; i++) {
-> > +               if (this_cpu_cmpxchg(scs_cache[i], 0, s) != 0)
-> > +                       continue;
-> > +
-> > +               return;
-> > +       }
->
-> prefer:
->
-> for ...:
->   if foo() == 0:
->     return
->
-> to:
->
-> for ...:
->   if foo() != 0:
->     continue
->   return
-
-This was essentially copied from free_thread_stack in kernel/fork.c,
-but I agree, your way is cleaner. I'll change this in the next
-version. Thanks!
-
-Sami
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gU2F0LCBPY3QgMTksIDIwMTkgYXQgMTE6MDggUE0gQW5kcmVhcyBGw6RyYmVyIDxhZmFlcmJl
+ckBzdXNlLmRlPiB3cm90ZToKPgo+IE1vdmUgdGhlIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyIHRv
+IHRoZSB0b3AgbGluZSBhbmQgdXBkYXRlIHRvIFNQRFggMi4wLgo+IFdoaWxlIGF0IGl0LCBzd2l0
+Y2ggZnJvbSBHUEx2MisvTUlUIHRvIEdQTHYyKy9CU0QyYyBiZWZvcmUgYWRkaW5nIG1vcmUuCj4K
+PiBTdWdnZXN0ZWQtYnk6IFJvYiBIZXJyaW5nIDxyb2JoQGtlcm5lbC5vcmc+Cj4gQ2M6IFJvYiBI
+ZXJyaW5nIDxyb2JoQGtlcm5lbC5vcmc+Cj4gU2lnbmVkLW9mZi1ieTogQW5kcmVhcyBGw6RyYmVy
+IDxhZmFlcmJlckBzdXNlLmRlPgo+IC0tLQo+ICB2MjogTmV3Cj4KPiAgYXJjaC9hcm02NC9ib290
+L2R0cy9yZWFsdGVrL3J0ZDEyOTUtemlkb28teDlzLmR0cyB8IDMgKy0tCj4gIGFyY2gvYXJtNjQv
+Ym9vdC9kdHMvcmVhbHRlay9ydGQxMjk1LmR0c2kgICAgICAgICAgfCAzICstLQo+ICBhcmNoL2Fy
+bTY0L2Jvb3QvZHRzL3JlYWx0ZWsvcnRkMTI5eC5kdHNpICAgICAgICAgIHwgMyArLS0KPiAgMyBm
+aWxlcyBjaGFuZ2VkLCAzIGluc2VydGlvbnMoKyksIDYgZGVsZXRpb25zKC0pCgpBY2tlZC1ieTog
+Um9iIEhlcnJpbmcgPHJvYmhAa2VybmVsLm9yZz4KCkl0J3MgcmVhbGx5IG9ubHkgc2NoZW1hIGZp
+bGVzIHRoYXQgSSdtIHB1c2hpbmcgdG93YXJkcyBCU0QyQy4gTWF5YmUgaW4KaGluZHNpZ2h0IHdl
+IHNob3VsZCBoYXZlIGRvbmUgTUlUIGFzIHRoYXQncyBtb3JlIGNvbW1vbiBpbiB0aGUgZHRzCmZp
+bGVzLgoKUm9iCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
+ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
+aW51eC1hcm0ta2VybmVsCg==
