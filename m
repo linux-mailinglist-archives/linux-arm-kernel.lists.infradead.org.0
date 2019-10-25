@@ -2,86 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ABFA5E45EC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 10:41:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B332DE4615
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 10:46:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=S4IsNZkcjXBU6IgG0knHAJTzixxHuJoaXpLD7H3h6+8=; b=kp5nG5tqy05oON
-	ClKlBy5BKlEONzSuDZnYjQHKzWszquKpeAN4fmNh75MM9Opo4qlmkVsjUUe2B4C1cj4vzi04cn08g
-	6XS21eM1WCMhZtsVhsCOvumYbODBczqT6eAsoTC/yWSat7MxxMe/e1DG9ylO2Uih3J2pAi1+bdY4s
-	dy30pk/YIXxr/it+rY3L9jo6EEjC99GCQGVHonKtgllUDkW6v0sCh1i8NFI8WjhZQYyp9aHE0XTCZ
-	IenlWfYuUFLREGLIGxu6buLU4dtz4C00XNe3Y7D91+oPnXIXJjhoFiDL3/95wOAIAdS/olNw8/nxJ
-	B2AlUxASJVjbwYcf5H6g==;
+	List-Owner; bh=UAhbfjyfk8AI1bmxgMexVYtlGaOb1jIfB1uE05mKywc=; b=UGEK/Jd2UGR/Bd
+	XFwk8fdBhyoDb+f8H8wZLDSR1GHUT7XL2X3dmV7bmGbMmT9nBnnhBsQNZf513u2K8bJ1J2WZY0OFA
+	qoEID2Lz7zZF+0BdUdasIWLZPOXIGZwLbCk1EYff9l9MXEbPem5rsSCCmFnF4f870z1xYCCLBdZ6t
+	ifKz7Cj46ymWX0ruQ6etajX7IOOcxNkV2eWtq6CwS9tQwVuXj08AX7p/zkIGTMfpjxgTOiuWKD90e
+	ixieZPao+GDH/Dp72lEjGE0SW+Jup5yrsBZpdECFbgk72JdkH0yLqreBsmZKkSH14eM8XXG6VxkuG
+	MvaEciLbqg/s/DxTHgDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNvA7-0003xG-Db; Fri, 25 Oct 2019 08:41:35 +0000
-Received: from esa5.microchip.iphmx.com ([216.71.150.166])
+	id 1iNvEr-0006Q3-0w; Fri, 25 Oct 2019 08:46:29 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNv9u-0003wf-Ur
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 08:41:24 +0000
-Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
- Ludovic.Desroches@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="Ludovic.Desroches@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa5.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa5.microchip.iphmx.com;
- dkim=none (message not signed) header.i=none;
- spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: SRZRZ0DKDT47obkNCrvEEvEWA9lxJz/n+4y8g1CvS6lC6iKUhdYJyCIxMDppQvIyWY9fWQLNGd
- oD63BNCCZr4cM8HSqEuN/OloqWFETGhtnFklHEzNsZPk00D9OmFxm+hZ9G77f6ghUlfsLjYOLy
- MH6dkXXsHFZzAqUuHB/xmEQgP7bzOZI9gmpny4lOekLsMt02UFWVu6+7vkSB9al1cT84W1Rkdb
- MWCzTInjefQprVsAkDVEhizo+laZBHe3JXOQieEUQlBT1z2I0nhq7p5Qy9Ej8Xq6ukYM2vbX0m
- RG0=
-X-IronPort-AV: E=Sophos;i="5.68,228,1569308400"; d="scan'208";a="52901142"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 25 Oct 2019 01:41:17 -0700
-Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Fri, 25 Oct 2019 01:41:15 -0700
-Received: from M43218.corp.atmel.com (10.10.85.251) by
- chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Fri, 25 Oct 2019 01:41:14 -0700
-From: Ludovic Desroches <ludovic.desroches@microchip.com>
-To: <linux-arm-kernel@lists.infradead.org>, <devicetree@vger.kernel.org>
-Subject: [PATCH] ARM: dts: at91: sama5d4: fix pinctrl muxing
-Date: Fri, 25 Oct 2019 10:42:10 +0200
-Message-ID: <20191025084210.14726-1-ludovic.desroches@microchip.com>
-X-Mailer: git-send-email 2.24.0.rc0
+ id 1iNvEi-0006PQ-81
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 08:46:21 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x9P8kE7d045217;
+ Fri, 25 Oct 2019 03:46:14 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1571993174;
+ bh=dbZbXXGm8jxdvBrYuzqBWnW2NMiJ85DT5sG+ajCyaSk=;
+ h=From:To:CC:Subject:Date;
+ b=R2TjSGsFL5tydwDobGjr4hLgjoDxVnT9M376/eIlJcDaMDnu2WpecWNPwmzj1JO82
+ iX0Q5WEEJgk5Z24UPqp7dk9TyfTd5bmzp1XLaA5yuHb4mK+Fn+gFgx6Pq3rNRTGw5Q
+ 0vHTsNXBnZeP6akRGAgR6VvmqawCkzijxNrTBHrk=
+Received: from DFLE113.ent.ti.com (dfle113.ent.ti.com [10.64.6.34])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id x9P8kENG057942;
+ Fri, 25 Oct 2019 03:46:14 -0500
+Received: from DFLE106.ent.ti.com (10.64.6.27) by DFLE113.ent.ti.com
+ (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Fri, 25
+ Oct 2019 03:46:03 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE106.ent.ti.com
+ (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Fri, 25 Oct 2019 03:46:03 -0500
+Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x9P8kBYu105244;
+ Fri, 25 Oct 2019 03:46:12 -0500
+From: Peter Ujfalusi <peter.ujfalusi@ti.com>
+To: <nm@ti.com>, <t-kristo@ti.com>, <ssantosh@kernel.org>
+Subject: [PATCH] firmware: ti_sci: rm: Add support for tx_tdtype parameter for
+ tx channel
+Date: Fri, 25 Oct 2019 11:47:15 +0300
+Message-ID: <20191025084715.25098-1-peter.ujfalusi@ti.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_014122_997375_C556346A 
-X-CRM114-Status: UNSURE (   8.63  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191025_014620_393974_F8F59A37 
+X-CRM114-Status: GOOD (  13.24  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.150.166 listed in list.dnswl.org]
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,39 +87,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com,
- Ludovic Desroches <ludovic.desroches@microchip.com>, stable@vger.kernel.org,
- linux-kernel@vger.kernel.org
+Cc: grygorii.strashko@ti.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix pinctrl muxing, PD28, PD29 and PD31 can be muxed to peripheral A. It
-allows to use SCK0, SCK1 and SPI0_NPCS2 signals.
+The system controller's resource manager have support for configuring the
+TDTYPE of TCHAN_CFG register on j721e.
+With this parameter the teardown completion can be controlled:
+TDTYPE == 0: Return without waiting for peer to complete the teardown
+TDTYPE == 1: Wait for peer to complete the teardown
 
-Signed-off-by: Ludovic Desroches <ludovic.desroches@microchip.com>
-Fixes: 679f8d92bb01 ("ARM: at91/dt: sama5d4: add pioD pin mux mask and enable pioD")
-Cc: stable@vger.kernel.org
+Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 ---
- arch/arm/boot/dts/sama5d4.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Hi,
 
-diff --git a/arch/arm/boot/dts/sama5d4.dtsi b/arch/arm/boot/dts/sama5d4.dtsi
-index 6ab27a7b388d..a4cef07c38cb 100644
---- a/arch/arm/boot/dts/sama5d4.dtsi
-+++ b/arch/arm/boot/dts/sama5d4.dtsi
-@@ -914,7 +914,7 @@ /*   A          B          C  */
- 					0xffffffff 0x3ffcfe7c 0x1c010101	/* pioA */
- 					0x7fffffff 0xfffccc3a 0x3f00cc3a	/* pioB */
- 					0xffffffff 0x3ff83fff 0xff00ffff	/* pioC */
--					0x0003ff00 0x8002a800 0x00000000	/* pioD */
-+					0xb003ff00 0x8002a800 0x00000000	/* pioD */
- 					0xffffffff 0x7fffffff 0x76fff1bf	/* pioE */
- 					>;
+I know it is kind of getting late for 5.5, but can you consider this small
+addition so I can add the support for it in the initial DMA driver?
+
+Thanks and regards,
+Peter
+
+ drivers/firmware/ti_sci.c              | 1 +
+ drivers/firmware/ti_sci.h              | 7 +++++++
+ include/linux/soc/ti/ti_sci_protocol.h | 2 ++
+ 3 files changed, 10 insertions(+)
+
+diff --git a/drivers/firmware/ti_sci.c b/drivers/firmware/ti_sci.c
+index 4126be9e3216..f13e4a96f3b7 100644
+--- a/drivers/firmware/ti_sci.c
++++ b/drivers/firmware/ti_sci.c
+@@ -2412,6 +2412,7 @@ static int ti_sci_cmd_rm_udmap_tx_ch_cfg(const struct ti_sci_handle *handle,
+ 	req->fdepth = params->fdepth;
+ 	req->tx_sched_priority = params->tx_sched_priority;
+ 	req->tx_burst_size = params->tx_burst_size;
++	req->tx_tdtype = params->tx_tdtype;
  
+ 	ret = ti_sci_do_xfer(info, xfer);
+ 	if (ret) {
+diff --git a/drivers/firmware/ti_sci.h b/drivers/firmware/ti_sci.h
+index f0d068c03944..255327171dae 100644
+--- a/drivers/firmware/ti_sci.h
++++ b/drivers/firmware/ti_sci.h
+@@ -910,6 +910,7 @@ struct rm_ti_sci_msg_udmap_rx_flow_opt_cfg {
+  *   12 - Valid bit for @ref ti_sci_msg_rm_udmap_tx_ch_cfg::tx_credit_count
+  *   13 - Valid bit for @ref ti_sci_msg_rm_udmap_tx_ch_cfg::fdepth
+  *   14 - Valid bit for @ref ti_sci_msg_rm_udmap_tx_ch_cfg::tx_burst_size
++ *   15 - Valid bit for @ref ti_sci_msg_rm_udmap_tx_ch_cfg::tx_tdtype
+  *
+  * @nav_id: SoC device ID of Navigator Subsystem where tx channel is located
+  *
+@@ -973,6 +974,11 @@ struct rm_ti_sci_msg_udmap_rx_flow_opt_cfg {
+  *
+  * @tx_burst_size: UDMAP transmit channel burst size configuration to be
+  * programmed into the tx_burst_size field of the TCHAN_TCFG register.
++ *
++ * @tx_tdtype: UDMAP transmit channel teardown type configuration to be
++ * programmed into the tdtype field of the TCHAN_TCFG register:
++ * 0 - Return immediately
++ * 1 - Wait for completion message from remote peer
+  */
+ struct ti_sci_msg_rm_udmap_tx_ch_cfg_req {
+ 	struct ti_sci_msg_hdr hdr;
+@@ -994,6 +1000,7 @@ struct ti_sci_msg_rm_udmap_tx_ch_cfg_req {
+ 	u16 fdepth;
+ 	u8 tx_sched_priority;
+ 	u8 tx_burst_size;
++	u8 tx_tdtype;
+ } __packed;
+ 
+ /**
+diff --git a/include/linux/soc/ti/ti_sci_protocol.h b/include/linux/soc/ti/ti_sci_protocol.h
+index 9531ec823298..f3aed0b91564 100644
+--- a/include/linux/soc/ti/ti_sci_protocol.h
++++ b/include/linux/soc/ti/ti_sci_protocol.h
+@@ -342,6 +342,7 @@ struct ti_sci_msg_rm_udmap_tx_ch_cfg {
+ #define TI_SCI_MSG_VALUE_RM_UDMAP_CH_TX_SUPR_TDPKT_VALID        BIT(11)
+ #define TI_SCI_MSG_VALUE_RM_UDMAP_CH_TX_CREDIT_COUNT_VALID      BIT(12)
+ #define TI_SCI_MSG_VALUE_RM_UDMAP_CH_TX_FDEPTH_VALID            BIT(13)
++#define TI_SCI_MSG_VALUE_RM_UDMAP_CH_TX_TDTYPE_VALID            BIT(15)
+ 	u16 nav_id;
+ 	u16 index;
+ 	u8 tx_pause_on_err;
+@@ -359,6 +360,7 @@ struct ti_sci_msg_rm_udmap_tx_ch_cfg {
+ 	u16 fdepth;
+ 	u8 tx_sched_priority;
+ 	u8 tx_burst_size;
++	u8 tx_tdtype;
+ };
+ 
+ /**
 -- 
-2.24.0.rc0
+Peter
+
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
+Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 
 _______________________________________________
