@@ -2,83 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B3B2E4650
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 10:54:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A435E4653
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 10:55:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zq9NF2EmhqQJ185n+PGXWr2APFYB4u4pzs5D+Fs6Zig=; b=CzaFSTjM7soZ4G
-	d7C3ToK8QsZLxXYu5WYfOfrN2qm4CnMWSO7/PNPmR+aCZDaf0wczwbDi6LKzizqmjUcwFeNtDUKsk
-	QJlRhmDDqm3PgflFCbzSSGKQ8tvxmsUv6L5ZdXhu/PevwvVROXg4nnV+3oaSZXrWmFaXBE+wSkLsj
-	gF2ovoxlJS1now7c8G55PXCa7doeocoqQ14+UOSKYXRWKyKz8unWdSNFfEQNddcsn1QT4I+1uhYpQ
-	x/YqdOVV2fg/SZvXSDrJrps2lU8RF3tTLaWxxRusj8TU9YWms/FxK+Qc5hpadkyDnd4C11t8p+dsU
-	augbRWV5KTtQx8Gy+1Yw==;
+	List-Owner; bh=oE/KrLrZ06m3gDy0B71Zr3aNejt0AmmgndIDhQHoPuY=; b=MMeDbu53v2+WxO
+	2sp9ZaIpChNQRKGa0c3h3+oDexW4jDvYcCoGPCWlXZbzqqVr6T8EYwRdGkSkI+VdKbiVPWDMSefIL
+	HP8DC0S4szMZ5Kq3RYzPNZv1ZVwaihUt6Kiy3B1Q9J9/TBMn5l4LIXtVP9/nYEw1E7dBFs+EFRGrS
+	IgvK1mOvWv96+od1mHYabD8M8cDHtyji6U+ViAAWYPtry/2GUXpO4ADjfrUgSIx9PO3qTUtgik+7E
+	+lk/WA1TsIwzOgoM3XQYOIpqQYhZDjlUIjmjrjSpoWt7dMfgFaDaBpUW/pgqZ5acP2hg1iOQVQew9
+	u7ezwwwMV5L0g4eeIYaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNvMG-0001Ch-Qj; Fri, 25 Oct 2019 08:54:08 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iNvNN-00029P-Ef; Fri, 25 Oct 2019 08:55:17 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNvM4-0001Bs-R2
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 08:53:58 +0000
-Received: by mail-wr1-x442.google.com with SMTP id p4so1344926wrm.8
+ id 1iNvN9-0001bd-3N
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 08:55:04 +0000
+Received: by mail-wm1-x342.google.com with SMTP id q70so1192441wme.1
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 25 Oct 2019 01:53:56 -0700 (PDT)
+ Fri, 25 Oct 2019 01:55:03 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=xvMV2lTjYYndNFlZSogoRJwtCYarX8hEWrKlnNonIDs=;
- b=LlMstyT7/QZxxzLumyNdWSE4VwJmLeiAJrHURYPRQYk+cOdjDqJfKsnoCmT+v8xm6T
- evnmfoUIP39tkx3GIlIGiVAlfuz3340MObs713msmAEsr83J966V0DegE6U8pjmP1GKi
- BSqW5ujuWiU4bEWreWy9sQoDI6ZDinL/RepAVENyIAFBXN+vbdmNNVQxYODcTjbwOsQ+
- 91jghmO/SpJqnVe7KUhKNb7olJLtZM1RbZ0V27EQaz+qtHAkc2MDXdRlEs1DOfYZds5Q
- 2SKx/FA6608fZbgAqAJkhR/hzhlLAPR7z4CiqLp12GPCQeZoDePfrU3q4reKdzCT9ybB
- pM9g==
+ bh=e0o1evno6haV1PZk5CsennP2f66XiGB9AxCdg0rnVFQ=;
+ b=FG4lhRPIpLv1bI2+5PQqXPccLi1M2LaG9ZFLA3JTw9apptcOjsF4yUBGQ1p2o/MVPP
+ aw/pTe89CmukvK92D40EQeECYpkHiTjrvVWy5M5Y4T323TNQ2ZIG97XnDQkuGBUITFG5
+ 6bm001yu7zKieO1XyPmOa0noaAhkf71cDWchXEbw0rWk/i70Zt27f76GLPuVifDxLPgm
+ wRnSP+8ztowGnMPeWBSnDnrfcaoriRwcpl+9Kjv5OjIpiPbpUhEecKJu7U6BBZ8Qo66V
+ sRZmFoL+5r33yQDEQnwb1vBOA0QphlCzcBeFWrxEC8nf/im/I8lsYMgmfo/jsROilf0Q
+ W5yQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=xvMV2lTjYYndNFlZSogoRJwtCYarX8hEWrKlnNonIDs=;
- b=bUVVyeeEP6IsMQwo58ZSr0HLzom/Rj0cj2QzYRhd95bC590fLMFHHIli9nXfcn60vd
- mENmwMY7vSgaqAG+g48sgOSIg5umC/6vY6bNtYPVCgdMZBllJge4jNcMW5c2MVmB33AQ
- Zq805I/u0XbpbRoJXzC0UeRNJep9B1pKG4afoQ94q04FzZhqOfuPZP0jSW/MMjRh7WVJ
- 1LMWNKG/M7NIY5OHv4pYeQLVgdUwpPRSP5lKV8XTDRWwhNlRHELH4THGX4kCSaGgVuq5
- mCWa6/ignzOvJqepezhNPP8Gal+wESKfKdUx3toNa8qVijXghuIisfVUOkYHXexeKoQ+
- N+Kw==
-X-Gm-Message-State: APjAAAVIkHy2MBtan9ZuLfqFPJYkyI8hri6xD7CqhHSzQGwG3073uMl7
- GaEt7VbNMbdaMx7u6O/2wZyB2A==
-X-Google-Smtp-Source: APXvYqxaNRRvLimHjbrPbQpnVDMDxSMM55r4+JN+AELtmLfi6nxsELz7rEeeHJgXt4GJvzTzzKbsmg==
-X-Received: by 2002:adf:bad3:: with SMTP id w19mr2041099wrg.17.1571993635508; 
- Fri, 25 Oct 2019 01:53:55 -0700 (PDT)
+ bh=e0o1evno6haV1PZk5CsennP2f66XiGB9AxCdg0rnVFQ=;
+ b=ihEgiez/RGsTAmHrDJlPmTQWoE+5ZHgMpppMxGlg0jBWgGe0LBP1BIpEoTSTMbSpOD
+ HYktWE2F5AhRbRc4hXx1sJst2DfetIqJp8K54MW1YtbI+EGgjqFMg39xOHoQYkwXWAcU
+ g5NGlh3aKBSQYEn3E0dZzyGpRoOByuP1UBXO/kCYnE5vd8cdlhqyQVRc0zpFeNlCiCCZ
+ kb/eHBgVVbgmWEkpUvKa+Rg/FDXXv+Be6vlg1YNISmAz4K6jnLu/TaYXQTNykhDTVmzf
+ p7KhqPuHCpMGBUEmwCRgm/3wik9FNGo/53GygQ9viUesrGQCcPMzOqEKituVVBuv0ip9
+ CK+Q==
+X-Gm-Message-State: APjAAAWCSnfqnW8QTmq24BVdfQhFNTBWD8uHhifvKEc6Is7zeKm5uRhc
+ mp0WD+kNevxSCblkCbpCG0GECg==
+X-Google-Smtp-Source: APXvYqwxebVwU3JPLWu+FN21Yw5b1DUrU9iBzksnwjCY+rWOd7gEbbU27OgkACABTCrk/ERH3DzeHA==
+X-Received: by 2002:a1c:2e94:: with SMTP id u142mr2497100wmu.69.1571993701786; 
+ Fri, 25 Oct 2019 01:55:01 -0700 (PDT)
 Received: from holly.lan (cpc141214-aztw34-2-0-cust773.18-1.cable.virginm.net.
  [86.9.19.6])
- by smtp.gmail.com with ESMTPSA id c189sm1479227wme.24.2019.10.25.01.53.54
+ by smtp.gmail.com with ESMTPSA id o18sm2031749wrm.11.2019.10.25.01.55.00
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 25 Oct 2019 01:53:54 -0700 (PDT)
-Date: Fri, 25 Oct 2019 09:53:53 +0100
+ Fri, 25 Oct 2019 01:55:01 -0700 (PDT)
+Date: Fri, 25 Oct 2019 09:54:59 +0100
 From: Daniel Thompson <daniel.thompson@linaro.org>
 To: Lee Jones <lee.jones@linaro.org>
-Subject: Re: [PATCH v3 06/10] x86: olpc-xo1-pm: Remove invocation of MFD's
+Subject: Re: [PATCH v3 07/10] x86: olpc-xo1-sci: Remove invocation of MFD's
  .enable()/.disable() call-backs
-Message-ID: <20191025085353.c6o63ed54vspjxzh@holly.lan>
+Message-ID: <20191025085459.roxig2nyxfjlf6dz@holly.lan>
 References: <20191024163832.31326-1-lee.jones@linaro.org>
- <20191024163832.31326-7-lee.jones@linaro.org>
+ <20191024163832.31326-8-lee.jones@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191024163832.31326-7-lee.jones@linaro.org>
+In-Reply-To: <20191024163832.31326-8-lee.jones@linaro.org>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_015356_903229_34BE1491 
-X-CRM114-Status: GOOD (  15.03  )
+X-CRM114-CacheID: sfid-20191025_015503_172395_AC207C79 
+X-CRM114-Status: GOOD (  14.01  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -108,7 +108,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 24, 2019 at 05:38:28PM +0100, Lee Jones wrote:
+On Thu, Oct 24, 2019 at 05:38:29PM +0100, Lee Jones wrote:
 > IO regions are now requested and released by this device's parent.
 > 
 > Signed-off-by: Lee Jones <lee.jones@linaro.org>
@@ -116,47 +116,40 @@ On Thu, Oct 24, 2019 at 05:38:28PM +0100, Lee Jones wrote:
 Reviewed-by: Daniel Thompson <daniel.thompson@linaro.org>
 
 > ---
->  arch/x86/platform/olpc/olpc-xo1-pm.c | 8 --------
->  1 file changed, 8 deletions(-)
+>  arch/x86/platform/olpc/olpc-xo1-sci.c | 6 ------
+>  1 file changed, 6 deletions(-)
 > 
-> diff --git a/arch/x86/platform/olpc/olpc-xo1-pm.c b/arch/x86/platform/olpc/olpc-xo1-pm.c
-> index e1a32062a375..f067ac780ba7 100644
-> --- a/arch/x86/platform/olpc/olpc-xo1-pm.c
-> +++ b/arch/x86/platform/olpc/olpc-xo1-pm.c
-> @@ -12,7 +12,6 @@
+> diff --git a/arch/x86/platform/olpc/olpc-xo1-sci.c b/arch/x86/platform/olpc/olpc-xo1-sci.c
+> index 99a28ce2244c..933dd4fe3a97 100644
+> --- a/arch/x86/platform/olpc/olpc-xo1-sci.c
+> +++ b/arch/x86/platform/olpc/olpc-xo1-sci.c
+> @@ -15,7 +15,6 @@
 >  #include <linux/platform_device.h>
->  #include <linux/export.h>
 >  #include <linux/pm.h>
+>  #include <linux/pm_wakeup.h>
 > -#include <linux/mfd/core.h>
+>  #include <linux/power_supply.h>
 >  #include <linux/suspend.h>
->  #include <linux/olpc-ec.h>
->  
-> @@ -120,16 +119,11 @@ static const struct platform_suspend_ops xo1_suspend_ops = {
->  static int xo1_pm_probe(struct platform_device *pdev)
->  {
->  	struct resource *res;
-> -	int err;
->  
->  	/* don't run on non-XOs */
+>  #include <linux/workqueue.h>
+> @@ -537,10 +536,6 @@ static int xo1_sci_probe(struct platform_device *pdev)
 >  	if (!machine_is_olpc())
 >  		return -ENODEV;
 >  
-> -	err = mfd_cell_enable(pdev);
-> -	if (err)
-> -		return err;
+> -	r = mfd_cell_enable(pdev);
+> -	if (r)
+> -		return r;
 > -
 >  	res = platform_get_resource(pdev, IORESOURCE_IO, 0);
 >  	if (!res) {
 >  		dev_err(&pdev->dev, "can't fetch device resource info\n");
-> @@ -152,8 +146,6 @@ static int xo1_pm_probe(struct platform_device *pdev)
+> @@ -605,7 +600,6 @@ static int xo1_sci_probe(struct platform_device *pdev)
 >  
->  static int xo1_pm_remove(struct platform_device *pdev)
+>  static int xo1_sci_remove(struct platform_device *pdev)
 >  {
 > -	mfd_cell_disable(pdev);
-> -
->  	if (strcmp(pdev->name, "cs5535-pms") == 0)
->  		pms_base = 0;
->  	else if (strcmp(pdev->name, "olpc-xo1-pm-acpi") == 0)
+>  	free_irq(sci_irq, pdev);
+>  	cancel_work_sync(&sci_work);
+>  	free_ec_sci();
 > -- 
 > 2.17.1
 > 
