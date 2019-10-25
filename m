@@ -2,76 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5215E55C2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 23:20:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68DA5E55C8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 23:21:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Gzih2+WBi9PCpS1SkvJNPfTIQABo+3T99vmjh3ECu3A=; b=atC5nA4knK/3kD
-	i92EzTn5G1HLi0y0HmLYsHiAKCPprY8wnNcVp4TNEEMFGc5WEutLTOJ9deVZ8FgEBH78EI/sexnz9
-	C9xvDT6E61X468aybsPBR+2biCZOmHMswgExXYdSj3HJXG0tYpttVBTDYkmoMcssB7ABCiZ9EyPnB
-	1TN+GyNK8cp8Odf72PrzBzTSd/GcKr6zF6ifDcjhXO6CcPFahn31/QJvv07EiJiCfHrCXssqxNFXq
-	i/xnsGuXY0UseUj7omQnsnOI9D+1Fkk4mW2miS7p1momf7jOXPkFNwPabakN7CYUcI9tZ998avKW8
-	i9SJWgO7BFERsoYaRonA==;
+	List-Owner; bh=PH4f6gPSwAhkf/8+yMi4n52j/yjuu3u6xGPe4QoAaI4=; b=lFoduWGjuXSw49
+	qtZGBIAlM+hIfJhc2HUuRpur/QBV/TWWmlZaADN+08lWp02f1l9keoVycBgQTXatmB31kDWfTOhty
+	jkmM5bgz2kDoRNDoMS0rZ8CGD/k+5khmWKouzoHVFQv5nbSuv7m98u4qtI/aRUE/I80u6OnCgkLMm
+	0pNmavFooeFA54bFxMgglLEpn57kTKQwq1u5CPKY+AQaq2xgz/ouv3o9VewMECZg33oV3TEYAs41i
+	qehARe2ojmslmmRK32+7vN7+yVj75IWHpzhgnsWQ+RU2PyI+Da0mtZKOjcKxNxgKQ0tKffjVT7ws6
+	3mf8mq/co+WjPGNa0Qyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iO70V-00054e-4D; Fri, 25 Oct 2019 21:20:27 +0000
-Received: from mail-oi1-f195.google.com ([209.85.167.195])
+	id 1iO71j-0005O4-Sx; Fri, 25 Oct 2019 21:21:43 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iO70L-000548-UZ; Fri, 25 Oct 2019 21:20:19 +0000
-Received: by mail-oi1-f195.google.com with SMTP id c2so2502222oic.13;
- Fri, 25 Oct 2019 14:20:17 -0700 (PDT)
+ id 1iO71V-0005NR-Qq; Fri, 25 Oct 2019 21:21:31 +0000
+Received: by mail-ot1-f67.google.com with SMTP id n48so2984732ota.11;
+ Fri, 25 Oct 2019 14:21:29 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:content-transfer-encoding
  :in-reply-to:user-agent;
- bh=JUXQFIqn/d86Rnbor0L71lToepY+28ApeXSzEW1WrrY=;
- b=ZBVHstZitqOFDC8VVbWbLA/QLAYJfGCwar3HJPXuPObthkVbrtMvnoH1npBTklPffI
- qi209JX28fbhi8TxpaQhf5mUqkOV+CZuEJ7hxpqpwS/ooGxDV1i9HjecObaQYuKJSxJM
- lN++j+k54kqhQpgE4otPAICvrrY5wzr8CvkAz2wFplSjQcqlwP2daQnAZMgTdbVqJFDP
- ZyvvMx9fmV7AtXourbxTz68Yv3BkIfOSvKeREH9gI9PCoiaZgu12ohU5dkdK/oz+B4hG
- p88YZPfN5Mes4f8eTaJl6bEQeLkZlD9xK/KuFm2xasIMqDumJPULBifgWNTv4k03nLYl
- m+YA==
-X-Gm-Message-State: APjAAAVCWGbXEj2wwMfYECsEOrRevMZzKdGxt0lE4jA9D1yk3JU/fDve
- Qn3OKMM5QZU6xOjBi1xdiw==
-X-Google-Smtp-Source: APXvYqz+woZytbel6lM3PcEJFze0yi42BfFRIteIU1+6GGt93bF3v+SwJ+tZUfL0epSsIXoR2YEYnA==
-X-Received: by 2002:a05:6808:10:: with SMTP id
- u16mr4879719oic.16.1572038416910; 
- Fri, 25 Oct 2019 14:20:16 -0700 (PDT)
+ bh=t2kppBEOgy6RnOJeg3mWNTbWNUIFFBZPEWBzlZe65iU=;
+ b=dDHGtVGTAk9BV4F5EXsL9X74RSl6dIyBBfCPgyPHwo3Dl7dUEWvLpCq8VYl+GzjBxr
+ dRfAra3MfTa0CIIJaqnCQe+6MoG198UY9m3sRrr6YzQUVGDSzeBXb8zIAYz4XFgc+Trd
+ 2BMwJuHeF8AWgFXBvKV0gJmq4BqELgDme3KsJFKzpZWrV89bCFpC1pkY1Z0nTtU8FWuK
+ BjUk3I3lmJubMR7iAb1hIHDr97gxVVJm8RENwjsFnECGYq6SeEoQzP2CYKxl52r02HVP
+ AmM9trOnOIL/ZikZwUrMKDyD4QD9/dmJ9wmyx4JVBNLlPnvlnXN+Qmjl4LTKhVEsIEfe
+ HMHQ==
+X-Gm-Message-State: APjAAAXwVqWB9yEsgbMbvAhXooSL1+OssFZ1DjFkz1atZ1sWu4ZKdB+k
+ Iy7p4L+NVX+mIF7uDY/0cQi5JX4=
+X-Google-Smtp-Source: APXvYqzfALz/bSOT92RSeok6HEe+wg7/IAkKBr5Ut9pLPU5O+zQ3UDEKAg0PqDzo3TuhVW8gFCuqsw==
+X-Received: by 2002:a9d:82e:: with SMTP id 43mr4568743oty.23.1572038488683;
+ Fri, 25 Oct 2019 14:21:28 -0700 (PDT)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id x80sm908528oia.37.2019.10.25.14.20.15
+ by smtp.gmail.com with ESMTPSA id b31sm1129632otc.70.2019.10.25.14.21.28
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 25 Oct 2019 14:20:15 -0700 (PDT)
-Date: Fri, 25 Oct 2019 16:20:15 -0500
+ Fri, 25 Oct 2019 14:21:28 -0700 (PDT)
+Date: Fri, 25 Oct 2019 16:21:27 -0500
 From: Rob Herring <robh@kernel.org>
 To: Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>
-Subject: Re: [PATCH v2 2/8] dt-bindings: rtc: realtek: Convert RTD119x to
- schema
-Message-ID: <20191025212015.GA29978@bogus>
+Subject: Re: [PATCH v2 3/8] dt-bindings: arm: realtek: Tidy up conversion to
+ json-schema
+Message-ID: <20191025212127.GA4819@bogus>
 References: <20191020040817.16882-1-afaerber@suse.de>
- <20191020040817.16882-3-afaerber@suse.de>
+ <20191020040817.16882-4-afaerber@suse.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191020040817.16882-3-afaerber@suse.de>
+In-Reply-To: <20191020040817.16882-4-afaerber@suse.de>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_142017_983739_19FD98BE 
-X-CRM114-Status: GOOD (  14.28  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20191025_142129_869045_1C0AAE05 
+X-CRM114-Status: UNSURE (   7.50  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.195 listed in list.dnswl.org]
+ no trust [209.85.210.67 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.195 listed in wl.mailspike.net]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -79,6 +77,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  provider (robherring2[at]gmail.com)
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -92,96 +93,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  linux-realtek-soc@lists.infradead.org, linux-kernel@vger.kernel.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rtc@vger.kernel.org
+ Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="iso-8859-1"
 Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Oct 20, 2019 at 06:08:11AM +0200, Andreas F=E4rber wrote:
-> Convert the RTD119x binding to a YAML schema.
+On Sun, 20 Oct 2019 06:08:12 +0200, =3D?UTF-8?q?Andreas=3D20F=3DC3=3DA4rber=
+?=3D wrote:
+> Restore the device names for compatible strings as comments.
+> Prepare for adding more SoCs by inserting oneOf.
 > =
 
+> Fixes: 693af5f3eeaa ("dt-bindings: arm: Convert Realtek board/soc binding=
+s to json-schema")
 > Signed-off-by: Andreas F=E4rber <afaerber@suse.de>
 > ---
 >  v2: New
 >  =
 
->  .../devicetree/bindings/rtc/realtek,rtd119x.txt    | 16 ---------
->  .../devicetree/bindings/rtc/realtek,rtd119x.yaml   | 38 ++++++++++++++++=
-++++++
->  2 files changed, 38 insertions(+), 16 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/rtc/realtek,rtd119x=
-.txt
->  create mode 100644 Documentation/devicetree/bindings/rtc/realtek,rtd119x=
-.yaml
-
-
-> diff --git a/Documentation/devicetree/bindings/rtc/realtek,rtd119x.yaml b=
-/Documentation/devicetree/bindings/rtc/realtek,rtd119x.yaml
-> new file mode 100644
-> index 000000000000..71b7396bd469
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/rtc/realtek,rtd119x.yaml
-> @@ -0,0 +1,38 @@
-> +# SPDX-License-Identifier: GPL-2.0-or-later OR BSD-2-Clause
-
-Missing ()
-
-Though I'm not sure it matters other than consistency.
-
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/rtc/realtek,rtd119x.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Realtek RTD129x Real-Time Clock
-> +
-> +allOf:
-> +  - $ref: "rtc.yaml#"
-> +
-> +maintainers:
-> +  - Andreas F=E4rber <afaerber@suse.de>
-> +
-> +properties:
-> +  compatible:
-> +    const: realtek,rtd1295-rtc
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 1
-> +    description: Specifies the clock gate
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +
-> +examples:
-> +  - |
-> +	rtc@9801b600 {
-> +		compatible =3D "realtek,rtd1295-clk";
-> +		reg =3D <0x9801b600 0x100>;
-> +		clocks =3D <&clkc RTD1295_CLK_EN_MISC_RTC>;
-
-You need the include file here or the example won't build (run 'make =
-
-dt_binding_check').
-
-> +	};
-> +...
-> -- =
-
-> 2.16.4
+>  Documentation/devicetree/bindings/arm/realtek.yaml | 15 ++++++++-------
+>  1 file changed, 8 insertions(+), 7 deletions(-)
 > =
 
+
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
