@@ -2,78 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F01AE4B4D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 14:41:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C51E8E4B5E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 14:42:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SEALCtN8ZVAgpfFMK2PustCRWgAhnHoObO2O4UGcVJk=; b=Mib2h2mLmDq9PB
-	etk6/nvK9e0XxVGKv3odFebVgO9lwrat0jrvSdA5re72qu4Ucu6+1KOJaLLtgDOfO7Q1fpe0x5dRX
-	0akXpa/j1R88VtAJeNeRPNVzbfMPx78Gz8ZEzdOvCquXew+uSzaZzleTDc8i77sAEPaVaELZ0RG4m
-	wtEIFQu6Z6ZIFNVEWLNLTW4Eq5ibGtyFNopv/4PjINfOsv6eC6tg8nbYmu5A5l+/wP2b7QwG3pNyF
-	jhTnzSGSoHarKBYGbO0zIDKGArOlQHhxLUQqAwHv+11vcW9rnd4x1xpMZD4Mem+iWzum3P3exk4qF
-	tSiSutgXyNhJF2URIJog==;
+	List-Owner; bh=R/Io1TDculi07pDWANG8XU8ejupy4YkvFX+vjUyFZBE=; b=alxTfwpaxHXQxd
+	6KeRVyaB1taRvmpQlhtVucrNjWkAuoB61X+gJ7d0SljAIk9Ah/HZvL26DcgW6azGHCfnsvylpsRPG
+	iRnKk5O7B5p0qGSAiuQZMAv8FH4FB1OPoF+AjjQlaQdTHExSpw211wBeifVqcyYULDh2ZlmegiKca
+	NpnSbjgR78vdo8/a6Ys393FAFjP33FuBqh6WxwgK4Ks+WLGcROxd4qlitpJYe+KV0FIpEBLvFUS5n
+	1eWAUBg3jnZWcqj1RcnnxVZJdKb5wyXZwFUR/srpamnVT2VGVtyME/ooXRPkCwvoPo6sAkx0ZwcAo
+	R0Ti9u3iHhjyjtIJ0CeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNyuT-0006XO-LI; Fri, 25 Oct 2019 12:41:41 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1iNyvC-0007C3-3S; Fri, 25 Oct 2019 12:42:26 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNytx-0006Df-67
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 12:41:10 +0000
-Received: by mail-lf1-x143.google.com with SMTP id u16so1632573lfq.3
+ id 1iNytx-0006Di-FF
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 12:41:12 +0000
+Received: by mail-lf1-x144.google.com with SMTP id v8so1609816lfa.12
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 25 Oct 2019 05:41:03 -0700 (PDT)
+ Fri, 25 Oct 2019 05:41:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=nNhTW3U2Xf+f8X6ztyGJ0vdPsrVEzgnkoLb09kGESGY=;
- b=gr43qyfKeoGH65CYsJHoPG+YL9Tx4hVUZVoQzYzb9XsMqHySY57WJtUCKdPh98abFb
- 978lBekDEIJw3ctIHrCrHNrnVte3xIHmGJW9xZwa+BVM8YrwNCtva1EUvT8mgMQ0+NIk
- RMH0xuXFjObqrkldH+wRmh6xxURbjD8yMaUAw=
+ bh=7uK8xEnPEigQ7dFIza6M7Wg35/gDKz/RHXvPNwcggqY=;
+ b=GU8kE9rmw7CxmGB90Y5Izc7LWqXMzqEnx4cZC7e5Ef+6pwtiG9RcGqXUnIzFpZ3t3U
+ CU97Xc1WhzK+r82cnyFDuq5P1B/vMhbnBN/N6tdvSoWnVlIh44HGIJ8cZesgveR3SkSo
+ M0pyyG+OPVFfGCQHHHNBUGHUCNNPbe9T16/FI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=nNhTW3U2Xf+f8X6ztyGJ0vdPsrVEzgnkoLb09kGESGY=;
- b=OmhP9wVK8lh6sjSnpiUwSDX+FnggMsqayGcjbrf6rHJ2nEVZ7sSZvn+cxz4Xl4CfxB
- Wwqin0rhqIJlfcIblvsi2dzdV67HQkw4S5/gxEn2NKSO2cRNMBfmyAvxafzW6X3vFeQh
- YOW0qLOmXT29MY+M1Rr21CKyYIrjunAqmsW0+TJRaZ422K4+/ZhKDJ68/hvObhkmN4Ot
- MA7jJMhDnMDelFikt2cMTM9frxUktcs6R1h/uwrROJ4QJla0QhY3HfsbylM9a6AXF9F/
- hLOpo/HJ0ByYdKnJAevQeZsHhU+ywMMAdQiSvCd43GDFCdzxW/Ib22SWDH1+GvkkJAMZ
- s5rA==
-X-Gm-Message-State: APjAAAUQaQlV199B8kLPukr23v9dSlEePXv6xOeITnY0SOYfrgDAw+tn
- rMa/5NmOVB3I77fSvgEtRCao3g==
-X-Google-Smtp-Source: APXvYqzI54y0qXty0REj/t8bh97dPNgFy2YQ0TG2aFgxJMZvmcPNDi0C+wUJpvWYRj3db7mvv6qlJw==
-X-Received: by 2002:ac2:4d04:: with SMTP id r4mr2706461lfi.136.1572007262270; 
- Fri, 25 Oct 2019 05:41:02 -0700 (PDT)
+ bh=7uK8xEnPEigQ7dFIza6M7Wg35/gDKz/RHXvPNwcggqY=;
+ b=o4ElSCp8bygnD65UNSV54ZtxYIuYeo8xtrDD7I9t6WRmgKTZRMKJrQrb86axh1gE4k
+ Ex1J0CezTMw1VUz+ntw4o47Bbhe+4NH9oaw8+xc2vf5cYPrRJgJjISfMjhHqNzXP9KRe
+ NbLv0iuX9MifYF5EBNRVFFfHIMlxJRAbbibMZ67Fm7t9wbqKYHoH8rO3RlwlUbUu6ZIk
+ kTGAe08fazDRIrrxG878gto0AkB//m2fxNvJIrVimtcDm4xCgQXasqvuTezk78ldnaa/
+ 9j7BK/4pCEtpFbLcuWT3MYf0rvJNl2YeZPcrLqC7U3PC941t/IRkO22J5T3jpwdxEUe/
+ ShXA==
+X-Gm-Message-State: APjAAAVKjCM9Ig29pD9uMmqnvW/OVmJPEvRJW8b4pZt5ABSLiRew9hi1
+ TqRgOwpY9wvL6OYAPjcrG4RgDw==
+X-Google-Smtp-Source: APXvYqxqw6qAfANRoZ0GsCSZE1jfgTS6RZBtUbzWdgUXaR/01NaSFiZAQl3jp8GRzrDs35V36nIV4Q==
+X-Received: by 2002:a19:8c1c:: with SMTP id o28mr2606108lfd.105.1572007263499; 
+ Fri, 25 Oct 2019 05:41:03 -0700 (PDT)
 Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id 10sm821028lfy.57.2019.10.25.05.41.00
+ by smtp.gmail.com with ESMTPSA id 10sm821028lfy.57.2019.10.25.05.41.02
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 25 Oct 2019 05:41:01 -0700 (PDT)
+ Fri, 25 Oct 2019 05:41:02 -0700 (PDT)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
  Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v2 00/23] QUICC Engine support on ARM
-Date: Fri, 25 Oct 2019 14:40:35 +0200
-Message-Id: <20191025124058.22580-1-linux@rasmusvillemoes.dk>
+Subject: [PATCH v2 01/23] soc: fsl: qe: remove space-before-tab
+Date: Fri, 25 Oct 2019 14:40:36 +0200
+Message-Id: <20191025124058.22580-2-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191018125234.21825-1-linux@rasmusvillemoes.dk>
+In-Reply-To: <20191025124058.22580-1-linux@rasmusvillemoes.dk>
 References: <20191018125234.21825-1-linux@rasmusvillemoes.dk>
+ <20191025124058.22580-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_054109_256084_9E7D53C3 
-X-CRM114-Status: GOOD (  14.54  )
+X-CRM114-CacheID: sfid-20191025_054109_543658_2284B702 
+X-CRM114-Status: GOOD (  10.38  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -104,78 +105,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There have been several attempts in the past few years to allow
-building the QUICC engine drivers for platforms other than PPC. This
-is yet another attempt.
+Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+---
+ drivers/soc/fsl/qe/qe.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-In v2, I've fixed a few style issues. But more importantly, it now
-contains enough to actually remove the PPC32 dependency from
-CONFIG_QUICC_ENGINE, so that's what the last patch does.
-
-I haven't found a way to address Christophe's concern over the
-performance impact of using the (on powerpc) out-of-line iowrite32be
-instead of out_be32. I could of course introduce some qe_ prefixed
-helpers (similar to the already added qe_clrsetbits ones) and make
-their definition dependent on PPC32 or not, but that seems to be a bit
-ugly.
-
-Rasmus Villemoes (23):
-  soc: fsl: qe: remove space-before-tab
-  soc: fsl: qe: drop volatile qualifier of struct qe_ic::regs
-  soc: fsl: qe: avoid ppc-specific io accessors
-  soc: fsl: qe: replace spin_event_timeout by readx_poll_timeout_atomic
-  soc: fsl: qe: qe.c: guard use of pvr_version_is() with CONFIG_PPC32
-  soc: fsl: qe: avoid tail comments in qe_ic.h
-  soc: fsl: qe: merge qe_ic.h into qe_ic.c
-  soc: fsl: qe: drop unneeded #includes
-  soc: fsl: qe: move qe_ic_cascade_* functions to qe_ic.c
-  soc: fsl: qe: use qe_ic_cascade_{low,high}_mpic also on 83xx
-  soc: fsl: qe: rename qe_ic_cascade_low_mpic -> qe_ic_cascade_low
-  soc: fsl: qe: drop assign-only high_active in qe_ic_init
-  soc: fsl: qe: remove pointless sysfs registration in qe_ic.c
-  soc: fsl: qe: move calls of qe_ic_init out of arch/powerpc/
-  powerpc/83xx: remove mpc83xx_ipic_and_qe_init_IRQ
-  powerpc/85xx: remove mostly pointless mpc85xx_qe_init()
-  soc: fsl: qe: make qe_ic_cascade_* static
-  soc: fsl: qe: remove unused qe_ic_set_* functions
-  net: ethernet: freescale: make UCC_GETH explicitly depend on PPC32
-  serial: make SERIAL_QE depend on PPC32
-  serial: ucc_uart.c: explicitly include asm/cpm.h
-  soc/fsl/qe/qe.h: remove include of asm/cpm.h
-  soc: fsl: qe: remove PPC32 dependency from CONFIG_QUICC_ENGINE
-
- arch/powerpc/platforms/83xx/km83xx.c          |   3 +-
- arch/powerpc/platforms/83xx/misc.c            |  23 --
- arch/powerpc/platforms/83xx/mpc832x_mds.c     |   3 +-
- arch/powerpc/platforms/83xx/mpc832x_rdb.c     |   3 +-
- arch/powerpc/platforms/83xx/mpc836x_mds.c     |   3 +-
- arch/powerpc/platforms/83xx/mpc836x_rdk.c     |   3 +-
- arch/powerpc/platforms/83xx/mpc83xx.h         |   7 -
- arch/powerpc/platforms/85xx/common.c          |  23 --
- arch/powerpc/platforms/85xx/corenet_generic.c |  12 -
- arch/powerpc/platforms/85xx/mpc85xx.h         |   2 -
- arch/powerpc/platforms/85xx/mpc85xx_mds.c     |  28 --
- arch/powerpc/platforms/85xx/mpc85xx_rdb.c     |  18 --
- arch/powerpc/platforms/85xx/twr_p102x.c       |  16 -
- drivers/net/ethernet/freescale/Kconfig        |   1 +
- drivers/soc/fsl/qe/Kconfig                    |   2 +-
- drivers/soc/fsl/qe/gpio.c                     |  30 +-
- drivers/soc/fsl/qe/qe.c                       |  59 ++--
- drivers/soc/fsl/qe/qe_ic.c                    | 289 ++++++++++--------
- drivers/soc/fsl/qe/qe_ic.h                    |  99 ------
- drivers/soc/fsl/qe/qe_io.c                    |  42 ++-
- drivers/soc/fsl/qe/qe_tdm.c                   |   8 +-
- drivers/soc/fsl/qe/ucc.c                      |  16 +-
- drivers/soc/fsl/qe/ucc_fast.c                 |  70 ++---
- drivers/soc/fsl/qe/ucc_slow.c                 |  38 +--
- drivers/soc/fsl/qe/usb.c                      |   2 +-
- drivers/tty/serial/Kconfig                    |   1 +
- drivers/tty/serial/ucc_uart.c                 |   1 +
- include/soc/fsl/qe/qe.h                       |   1 -
- include/soc/fsl/qe/qe_ic.h                    |  69 -----
- 29 files changed, 299 insertions(+), 573 deletions(-)
- delete mode 100644 drivers/soc/fsl/qe/qe_ic.h
-
+diff --git a/drivers/soc/fsl/qe/qe.c b/drivers/soc/fsl/qe/qe.c
+index 417df7e19281..2a0e6e642776 100644
+--- a/drivers/soc/fsl/qe/qe.c
++++ b/drivers/soc/fsl/qe/qe.c
+@@ -378,8 +378,8 @@ static int qe_sdma_init(void)
+ 	}
+ 
+ 	out_be32(&sdma->sdebcr, (u32) sdma_buf_offset & QE_SDEBCR_BA_MASK);
+- 	out_be32(&sdma->sdmr, (QE_SDMR_GLB_1_MSK |
+- 					(0x1 << QE_SDMR_CEN_SHIFT)));
++	out_be32(&sdma->sdmr, (QE_SDMR_GLB_1_MSK |
++		 (0x1 << QE_SDMR_CEN_SHIFT)));
+ 
+ 	return 0;
+ }
 -- 
 2.23.0
 
