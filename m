@@ -2,54 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1CEDFE52EF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 20:02:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DB7BE52F4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 20:03:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=XhBZp7Lg9GLk4kIzYJqSm+d+reHDcrOhB9Z/cybnu0Y=; b=bORlH1XLTdoJIPD+L9WX2UyZrh
-	xtK6X/FjHK8EONLV+rLJbitRqAGNJMMRDiZlu+TcAVSbHtJHzaWFJ8/DxnGHNr9V3bg5eydq3IFLl
-	29WUtiXcH7yWUyIzhOIVsTa/Qz2QI4Iu7REg1U43uJ5+KGJS4Z4CUQvDbOZFBAPg9WaFCdg8v621W
-	UNsBZHmaX6dOGD9CmBSt+b74vVlNUSUIJOM/MGReUi1+QogF6gB7z+eAfExVn0he/+fg+iClSkKfo
-	W2bTzN4nqggozKXaSLKDrIaY93T/LG4KR5bLI/kLTbMgebUda2KFhFHgtiT+Yb6UtOSYr3ZFJSmN/
-	iSVewNxQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=dDGJ6iasEitn2AjEq4vUK07M+XlhqMB6mRIhVLvW2c4=; b=NrQ
+	J0cDz6RfGGk86RgkTDvb3kptKpMtdM4zmW9m8/HTFzklLe8MSOgXrr26T6NvVJPPCpkZoDe0rQ6x3
+	hK0yZEPwLbzFLNuZZ70Vx8Yc7OyYlKFKjEZOD2R58HX6/5zaJb+BZ0Q+McUzeNBPChU4mSq0yxwQK
+	KQMTK2SPvX4RGiiRSIMTFtN/LwMxr3w4BpG5zJqCyRBxBWTztjnvMaXLvKn0qk2w4iCbRc2lGoeCF
+	iF2aDEcP31gnjLO28XM6IgelBjxLNBjCQ4KKpp/ae1WAwK2ghHxC8np1hFen82cW9DNl9AMyVv+bU
+	CkOmHSo7YVzPt7dXzd6yjsN6hDvTqwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iO3vD-0000ck-Ei; Fri, 25 Oct 2019 18:02:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iO3qz-000491-4q
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 17:58:31 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 03744493;
- Fri, 25 Oct 2019 10:58:25 -0700 (PDT)
-Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
- [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 014423F6C4;
- Fri, 25 Oct 2019 10:58:23 -0700 (PDT)
-From: Cristian Marussi <cristian.marussi@arm.com>
-To: linux-kselftest@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- shuah@kernel.org
-Subject: [PATCH v10 12/12] kselftest: arm64: fake_sigreturn_misaligned_sp
-Date: Fri, 25 Oct 2019 18:57:17 +0100
-Message-Id: <20191025175717.15154-13-cristian.marussi@arm.com>
+	id 1iO3vd-00011F-3a; Fri, 25 Oct 2019 18:03:13 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iO3ru-0004vJ-Rs
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 17:59:24 +0000
+Received: by mail-pf1-x443.google.com with SMTP id v19so2076061pfm.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 25 Oct 2019 10:59:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=unR/WpfWQtLnGQnVJ3by74evvy2oa+5Uab8WgXeyAOE=;
+ b=UJvxtYwH9CGFkhirLQqu+rJtutpY1tWkr0flVmuS0Babg4DFzpDp05K3KnQ8twaZiN
+ +BBYOmr2jN1sMSIL9K0URLOOLTXtEJXXAx0biRbmUzyhYd3CyxSUYDiR/PbetdFM8KbG
+ mJlwQavQlCGDYNmm5n+WNQH6sO0aZl/kw20fL+xByx0qsQ4zJRb7SuQSmLLWDGMqH8mN
+ J4v5YTQ3TLHFTfmECzZ+VlH+pIZ7dKUz6nPePhGYW23nReE4ncBLxC/Ry0cxRr5VRuv2
+ a8i+EbPkU2FT2pWcT3Sjy6n0fPdS8JIJ7sibUjGKyYafF9SE1KXbPrBu04RSfjW6RFD4
+ A/uw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=unR/WpfWQtLnGQnVJ3by74evvy2oa+5Uab8WgXeyAOE=;
+ b=kcCEgyyk2GNnh/KuofpklPgjRqjmlj/VnPcgT6LFY9Hctkhb0RDTJUpvPefcGlZn24
+ 2oWi5ltQDy69/gMqfWhfe6ebFgtQjylKThMiBE99g2Dc0kn6jgpB5pUd3IzQaSUzhUzL
+ iYeeHofMAdMjolYpBI1c+J2B2bOlk2KCxDCJSKG0sdvjOAfg7OLG+apsZbcNpNmVhfuU
+ t32u6rwAS/XevtmAQI+2ckeRFT9zsMYM15nNFSr5WI9MMc5eXF6ivDKiJbfTFeMdbOLr
+ NFo9+bZCgEBi+b/86pZnNQwhm1nVXqyOiVy8O1eMQBal0gACK4Q4auh40Gaga6pdMJCo
+ pyOg==
+X-Gm-Message-State: APjAAAXPUPkbSVPQw8VLMmotR39iBR3yRs6D0BTs7DR0wtxUy54Y6vqJ
+ aB3yeXhloF8Q6hBdz5kSAflU
+X-Google-Smtp-Source: APXvYqwqGQ38V7Ub8lavu+bHjXLvP5YFKQZgt51D74jM8Myzon3TzVpmB6KO12QNI/CECFGWcyO9+g==
+X-Received: by 2002:a65:464b:: with SMTP id k11mr6073160pgr.263.1572026361779; 
+ Fri, 25 Oct 2019 10:59:21 -0700 (PDT)
+Received: from localhost.localdomain ([2405:204:7108:7f86:4131:5b00:9fc5:5eaa])
+ by smtp.gmail.com with ESMTPSA id r13sm3430303pfg.3.2019.10.25.10.59.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 25 Oct 2019 10:59:21 -0700 (PDT)
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: mchehab@kernel.org,
+	robh+dt@kernel.org,
+	sakari.ailus@iki.fi
+Subject: [PATCH v3 0/2] Add IMX296 CMOS image sensor support
+Date: Fri, 25 Oct 2019 23:29:06 +0530
+Message-Id: <20191025175908.14260-1-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191025175717.15154-1-cristian.marussi@arm.com>
-References: <20191025175717.15154-1-cristian.marussi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_105825_315085_228BD3C1 
-X-CRM114-Status: GOOD (  11.06  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191025_105923_093360_BA50137F 
+X-CRM114-Status: GOOD (  10.23  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,73 +93,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: amit.kachhap@arm.com, andreyknvl@google.com, dave.martin@arm.com,
- suzuki.poulose@arm.com
+Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
+ linux-kernel@vger.kernel.org, a.brela@framos.com, peter.griffin@linaro.org,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a simple fake_sigreturn testcase which places a valid sigframe on a
-non-16 bytes aligned SP. Expects a SIGSEGV on test PASS.
+Hello,
 
-Reviewed-by: Dave Martin <Dave.Martin@arm.com>
-Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
----
-v3 --> v4
-- fix commit
-- use new fake_sigreturn misalig_bytes params
-- removed TODO
-- added test description
----
- .../testcases/fake_sigreturn_misaligned_sp.c  | 37 +++++++++++++++++++
- 1 file changed, 37 insertions(+)
- create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_misaligned_sp.c
+This patchset adds support for IMX296 CMOS image sensor from Sony.
+Sensor can be programmed through I2C and 4-wire interface but the
+current driver only supports I2C interface. The sensor is
+capable of outputting frames in CSI2 format (1 Lane). In the case
+of sensor resolution, driver only supports 1440x1088 at 30 FPS.
 
-diff --git a/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_misaligned_sp.c b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_misaligned_sp.c
-new file mode 100644
-index 000000000000..1e089e66f9f3
---- /dev/null
-+++ b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_misaligned_sp.c
-@@ -0,0 +1,37 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2019 ARM Limited
-+ *
-+ * Place a fake sigframe on the stack at a misaligned SP: on sigreturn
-+ * Kernel must spot this attempt and the test case is expected to be
-+ * terminated via SEGV.
-+ */
-+
-+#include <signal.h>
-+#include <ucontext.h>
-+
-+#include "test_signals_utils.h"
-+#include "testcases.h"
-+
-+struct fake_sigframe sf;
-+
-+static int fake_sigreturn_misaligned_run(struct tdescr *td,
-+					 siginfo_t *si, ucontext_t *uc)
-+{
-+	/* just to fill the ucontext_t with something real */
-+	if (!get_current_context(td, &sf.uc))
-+		return 1;
-+
-+	/* Forcing sigframe on misaligned SP (16 + 3) */
-+	fake_sigreturn(&sf, sizeof(sf), 3);
-+
-+	return 1;
-+}
-+
-+struct tdescr tde = {
-+		.name = "FAKE_SIGRETURN_MISALIGNED_SP",
-+		.descr = "Triggers a sigreturn with a misaligned sigframe",
-+		.sig_ok = SIGSEGV,
-+		.timeout = 3,
-+		.run = fake_sigreturn_misaligned_run,
-+};
+The driver has been validated using Framos IMX296 module interfaced to
+96Boards Dragonboard410c.
+
+Thanks,
+Mani
+
+Changes in v3:
+
+* Fixed the reference to video-interfaces.txt in binding.
+
+Changes in v2:
+
+* Switched to YAML binding
+
+Manivannan Sadhasivam (2):
+  dt-bindings: media: i2c: Add IMX296 CMOS sensor binding
+  media: i2c: Add IMX296 CMOS image sensor driver
+
+ .../devicetree/bindings/media/i2c/imx296.yaml |  98 +++
+ MAINTAINERS                                   |   8 +
+ drivers/media/i2c/Kconfig                     |  11 +
+ drivers/media/i2c/Makefile                    |   1 +
+ drivers/media/i2c/imx296.c                    | 733 ++++++++++++++++++
+ 5 files changed, 851 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/media/i2c/imx296.yaml
+ create mode 100644 drivers/media/i2c/imx296.c
+
 -- 
 2.17.1
 
