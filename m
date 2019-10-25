@@ -2,54 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2192FE5186
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 18:46:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78AFEE51E7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 19:05:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KCKoPBTMN4SVmVokRwyFrn26T/hR9bDkbEgxVRHtzIQ=; b=ndN4n/9HvALmXF
-	6IZ1Rb/FiRChxmStqqEaAwUYxgK5xZNMSpKnKFN9VRGSml6xsDGt0n1lEVViLu5RUlMkfyXUJxgEc
-	UluamfOTRGXd4mBD6uoB5awWSi+Tmn1+zImV1U8/sYJ1xx/+GQ6xJyevEN1TPidb8QPTKeHPdn39s
-	cWTMyG+DrYWJMgTUldJZh3Wzq79+NLEFr9mNZLBPci9NFEDJeqtv8tD1FBJJbwEWgVc83aW8w/Y+f
-	k2tDnfy7JTx95It/AHuSfSx/88jlBaJPPgc1VGS7GBof/ZVbIQmfG2xA1pXVO+UbgJO4k/zCdmAXf
-	LZdazbRwp+VMA0LvSaNA==;
+	List-Owner; bh=p34aeOk6F1UGI/39Zfb2r4uv1lHUZ+Fdbc2IAJJqOqs=; b=Y5OD+JrPVmgw88
+	LGomSYY8j5cWX8deDiHUt1ewnCZyCfI3Xvn2Uvi7adlChe3uSHDo6f8x3TjjF1xovrJ6xgV9agB9m
+	ss4t7XSx5ZNfywjchhDkJkan6o4NbBM1YRopJ4a6td20siW0u6oSNBWVj8e3SUpSwBnPrOfkZ38iN
+	19ujqcFqnTdhaOEOLnqU1+43pzEBc+o6RHU1vUePGxiAhnUhdzlP45vF9ml8r2POVzrR8tRSC1El1
+	UAT9UJJuobfw2OiyzMpixpn08MCeAbP5bVYSYmZ3zkAomy+rDJ4kgdisMRO6gg1L2i4IAX/cdtIro
+	nDK1l0I5iqcncXJILofQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iO2jC-0001AN-Og; Fri, 25 Oct 2019 16:46:18 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iO2iy-00019d-Jp
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 16:46:05 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 17ED5328;
- Fri, 25 Oct 2019 09:46:04 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 65B313F71A; Fri, 25 Oct 2019 09:46:03 -0700 (PDT)
-Date: Fri, 25 Oct 2019 17:46:01 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: James Morse <james.morse@arm.com>
-Subject: Re: [PATCH v2 0/3] arm64: errata: Workaround Neoverse-N1 #1542419
-Message-ID: <20191025164601.GO3328@arrakis.emea.arm.com>
-References: <20191017174300.29770-1-james.morse@arm.com>
+	id 1iO31y-0000d9-3F; Fri, 25 Oct 2019 17:05:42 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iO31n-0000cT-5t; Fri, 25 Oct 2019 17:05:32 +0000
+Received: by mail-ot1-f65.google.com with SMTP id 41so2502812oti.12;
+ Fri, 25 Oct 2019 10:05:30 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=1AgdABbWJsmP+A2yUEZpKyjJoywiJ/30OEkpvdzMQXE=;
+ b=h5jYSbC9TVLIxJpYSuJKKTpJ91NPTIXo5tnhWfjFeWlhlpC/mpYT62RUjrFIpoeGgy
+ ZuvfI3xacHaAKi5xignsKWkqp743Tq8ej0qy0HVhRPUmPEVh4gL4IuenzZYqLsW4uLoq
+ Bs2dYC9UlodMnG6nc3WOeYy/UILsQnK+B+2/6M/jxT4HisnX4BxvvsULv06+teNnCwxz
+ K5vmfObHaIG3P84Nm7R9SAeftjU1m6VVczzKaOi8+V8k2AyhcAajX/ODs0q0E+LKQdrS
+ MydMJla0sccpgiiLRfWXmgnZRiNCm74pXpATWOVAbVXayKL1f+0c7SfT9WIJ72wLvioE
+ 7+GA==
+X-Gm-Message-State: APjAAAU3zSviUHDlLoo6vWv6YPzaL0/gZ+jbgjmrjcPDmWoonQP/8Jrj
+ B9nJ3IR1ajlkrNeQ+DiT0A==
+X-Google-Smtp-Source: APXvYqzAIN39CFwejymy8N75FlRSEB+gx7AUGQuhXy4lYkgVhNH9amWjIoeuN/NJ45wpnUM65WYw2g==
+X-Received: by 2002:a9d:6f17:: with SMTP id n23mr3512605otq.54.1572023129944; 
+ Fri, 25 Oct 2019 10:05:29 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id a21sm702920oia.27.2019.10.25.10.05.28
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 25 Oct 2019 10:05:29 -0700 (PDT)
+Date: Fri, 25 Oct 2019 12:05:28 -0500
+From: Rob Herring <robh@kernel.org>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH v4 1/7] dt-bindings: sram: Convert SRAM bindings to
+ json-schema
+Message-ID: <20191025170527.GA12121@bogus>
+References: <20191021161351.20789-1-krzk@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191017174300.29770-1-james.morse@arm.com>
+In-Reply-To: <20191021161351.20789-1-krzk@kernel.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_094604_697582_64716FFB 
-X-CRM114-Status: UNSURE (   7.41  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191025_100531_217731_1D0D7E99 
+X-CRM114-Status: GOOD (  11.64  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,26 +90,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Will Deacon <will@kernel.org>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- Suzuki Poulose <Suzuki.Poulose@arm.com>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 17, 2019 at 06:42:57PM +0100, James Morse wrote:
-> James Morse (3):
->   arm64: errata: Hide CTR_EL0.DIC on systems affected by Neoverse-N1
->     #1542419
->   arm64: Fake the IminLine size on systems affected by Neoverse-N1
->     #1542419
->   arm64: compat: Workaround Neoverse-N1 #1542419 for compat user-space
+On Mon, 21 Oct 2019 18:13:45 +0200, Krzysztof Kozlowski wrote:
+> Convert generic mmio-sram bindings to DT schema format using
+> json-schema.  Require the address/size cells to be 1, not equal to root
+> node.  This also fixes the check for clocks property to be in main root
+> node instead of children.
+> 
+> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+> 
+> ---
+> 
+> Changes since v3:
+> 1. Integrate Samsung SRAM bindings here,
+> 2. Move 'clocks' one level up (error in previous bindings),
+> 3. Add 'additionalProperties: false',
+> 4. Fix names of children in examples,
+> 5. Fix children nodes address pattern,
+> 6. Address other review comments
+> 
+> Changes since v2:
+> 1. Add Rob as maintainer,
+> 2. Use "contains" for compatible,
+> 3. Fix address and size cells to 1,
+> 4. Add maxitems to reg under children,
+> 5. Remove unneeded string type from label.
+> 
+> Changes since v1:
+> 1. Indent example with four spaces (more readable).
+> ---
+>  .../devicetree/bindings/sram/sram.txt         |  80 ----------
+>  .../devicetree/bindings/sram/sram.yaml        | 137 ++++++++++++++++++
+>  2 files changed, 137 insertions(+), 80 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/sram/sram.txt
+>  create mode 100644 Documentation/devicetree/bindings/sram/sram.yaml
+> 
 
-Queued for 5.5 (with the fix suggested by Suzuki). Thanks.
+Applied the series, thanks.
 
--- 
-Catalin
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
