@@ -2,157 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B66B0E43FB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 09:04:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98CF5E4425
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 09:11:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0GU95gB59CRojjBUsdJwiaKOwPejWHt5aJh0c8Bo0TQ=; b=VKnGwQTNgCUOrf
-	ApEJqKwBsOlhCe4SJSah+s9rJh6lkWCqNjKaQYbkvLYjLc3iRxHzTezgwKc/Jk6QyXr/M8dhknh7F
-	6/gNtLDi/QGfP9+UoZ8vGR/C45c1G/LMUIaZ4HXiTGHHkUJ6nHTykQJp9M6LOZDFEluCeuCZK08KS
-	2XEoNv4v4ElNpYHdatTP66sXo2+r15nm75iG78AWEQoGinrTQoQspUMGdBIm3JLoHKrAQyu2T32A/
-	Kbs+mg8T92yhyOxiPZLmkfoATFVaTf94QSL7/hFC7bGd4rPDgDKhUYcrW0v9zlZE9jHInRlwWF2fB
-	Oo/bgef3Q6sZkPqeomlw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=g5g30scwH39mHSC3tJL9dGsd/p6d9BH1Up/FqIqO1Ww=; b=iKpXfJrHs730qlpZWkq0nRnfH
+	YlZ1H1Gme2LEYwWSQrftaoUpTU4AcJp/vr0BjSufPQ59TWz5pv5LNLdBjJtjqK6E3QJzhrnmXRZgp
+	ri6fiOHKC0o8DvdAZBGY+nkT4DnGUWzNhhURhFmBUSTfTvoTzsJ0zxAUSIROCZuqot6IMhNsc+ZDJ
+	91M2y+IFxuxXEhQibexcTgIpocRIIcIumocvJmUb5+0ngVObZAMtiQLf5GE9ZOY36XUlBf317pmSs
+	s3tdgUdwfqZuCn48vFGT1wbzUesHtR0b2CkDxZXJnl3kNbJwBqT2cz1Gpt6HNQ2N1XhJMivAtcSLL
+	9pY8KFzXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNteQ-0003ot-Rz; Fri, 25 Oct 2019 07:04:46 +0000
-Received: from esa5.microchip.iphmx.com ([216.71.150.166])
+	id 1iNtl7-0007is-Dq; Fri, 25 Oct 2019 07:11:41 +0000
+Received: from pegase1.c-s.fr ([93.17.236.30])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNteF-0003nu-0T
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 07:04:36 +0000
-Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
- Ludovic.Desroches@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="Ludovic.Desroches@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa5.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa5.microchip.iphmx.com;
- spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: qN3SeQQkSzT6HfAgxAsl6u/VWFW6w1M6JFRg2vRX9wvs5gkuKgfP7bcOplpz0CLHkPMJvFqDpr
- qTMaVg/jwkJcQLzfG0b4BQFuBLEXK2mStMyD9JT/qUSnnZ0Nz+8XYNQIjmVh7Vi9aF1PEcZzUh
- DdTkhI53h33tqGB63OJ716TzZvTbGyt5Hhp5Y30vJz4wPRB6UBGNxI5MsV4IcFyXxhgrjwrPcs
- J+VUjsomZVr39oxejHpxsTdlH1B9QCHZxZyttit8EGOkF39tBev8LkM7aRLyMCzfLfQBBSrVnx
- AbQ=
-X-IronPort-AV: E=Sophos;i="5.68,227,1569308400"; d="scan'208";a="52889219"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 25 Oct 2019 00:04:11 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
- chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Fri, 25 Oct 2019 00:04:10 -0700
-Received: from NAM05-DM3-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.72) with Microsoft SMTP Server
- (version=TLS1_2, 
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5 via Frontend
- Transport; Fri, 25 Oct 2019 00:04:10 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=VGYXTqHKg+/gV1eRNEeu6D/3KUxkcl88oD5N9L+i3bNQTl0ojr8ahDY0j0r3/QVskC9hoZIEWtWmAoCurO5XnCzC8mA1qM/HYTnbfSapViEf+MHSDcu+4EgEL8JknEOgtU73u21kc0tuo91h19TekdKkZCj5ze70GFSpInE7oR0CGfIo/EDWQxZgVKDOH7y8nP4t7vTSd0uVAGJRgDZL/KdUtqJV8xt1ti5MHBstISgmJdsOiufrgYbnpSVgaguOriAam7NDuZby4vDPWbujQq1Rk2Z28Xfk5DRqAIJlJB3TSzdMpN9ui7y27cAsDmOj1zFDirJZPiLtZmy9LC1nQg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=e6gQ63XNMKCd63hhGgtfR+F1UzoZUXF71kFg7hapAL8=;
- b=dTJtgvyqliId5By+KbfzA16ZZCqxYfbUu/O8E8k+NLRaZfU/RrPfqNIKASct3DHjg1i8gVMkR+67hJnCaIWlFF8+/Q4RLye8SxCNZCG5BatOmf2v8QRqzPeTeB9J3uhA3kHQNiGCjAqdHJXkRRk2PEfMkyLV5Ro9mZsuCW0k5oe3mxhP7lJlEThaBPykwjvtVdg3vnjP2Ugci1DNzlwIcZokF1emiP7R9w6lgz4hygvhWwByYGFkEtLiOhEUkUA1N4x3tvtOCEYLPmCFXIX1/wONEJUi9zAsUc+cqaMseq7/5fwMsx7jnx7VLLWvrWHgZCNOGhqmnRA9tvIFSzk4sw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microchip.com; dmarc=pass action=none
- header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=microchiptechnology.onmicrosoft.com;
- s=selector2-microchiptechnology-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=e6gQ63XNMKCd63hhGgtfR+F1UzoZUXF71kFg7hapAL8=;
- b=Ax1ItBz5UKFFHe3EhZ83tCcqrKs15zCKycPNOKNSmehoxtuGwOriidQ6+rZ/7mOwYA5ePsR55hTR6336Z2xBbKm4vPmVANqDwQO22CPiB2OB21Ag6V4FVMif3JdO2HCSlS5f0hiN+/z1rnzkJ+kXQDf8eyoQWG67D/zRSgQsVZU=
-Received: from BY5PR11MB3895.namprd11.prod.outlook.com (10.255.162.149) by
- BY5PR11MB3928.namprd11.prod.outlook.com (10.255.161.30) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2387.23; Fri, 25 Oct 2019 07:04:01 +0000
-Received: from BY5PR11MB3895.namprd11.prod.outlook.com
- ([fe80::7421:5f52:f95a:2ae7]) by BY5PR11MB3895.namprd11.prod.outlook.com
- ([fe80::7421:5f52:f95a:2ae7%7]) with mapi id 15.20.2387.023; Fri, 25 Oct 2019
- 07:04:01 +0000
-From: <Ludovic.Desroches@microchip.com>
-To: <kamel.bouhara@bootlin.com>
-Subject: Re: [PATCH 2/4] i2c: at91: implement i2c bus recovery
-Thread-Topic: [PATCH 2/4] i2c: at91: implement i2c bus recovery
-Thread-Index: AQHVeTBIEJxi3gNtJki/Kn8MG0A7z6dSX+cAgAAB44CAARrdgIAWXkGAgAE3vwA=
-Date: Fri, 25 Oct 2019 07:04:00 +0000
-Message-ID: <20191025070500.pjibguvfhq3ue2m3@M43218.corp.atmel.com>
-References: <20191002144658.7718-1-kamel.bouhara@bootlin.com>
- <20191002144658.7718-3-kamel.bouhara@bootlin.com>
- <20191009135500.ufkxcemccwfcfys7@M43218.corp.atmel.com>
- <20191009140145.GE4254@piout.net>
- <20191010065408.y7i7aywdztgixv47@M43218.corp.atmel.com>
- <ead1bd39-5834-b970-06b7-fdc9c50bb780@bootlin.com>
-In-Reply-To: <ead1bd39-5834-b970-06b7-fdc9c50bb780@bootlin.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: PR0P264CA0129.FRAP264.PROD.OUTLOOK.COM
- (2603:10a6:100:1a::21) To BY5PR11MB3895.namprd11.prod.outlook.com
- (2603:10b6:a03:18e::21)
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [213.41.198.74]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 0f75acaf-1c1d-478e-3c57-08d75919830d
-x-ms-traffictypediagnostic: BY5PR11MB3928:
-x-ms-exchange-purlcount: 2
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <BY5PR11MB39284BE76B4B408BC4F80492EF650@BY5PR11MB3928.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 02015246A9
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(136003)(376002)(366004)(39860400002)(396003)(346002)(199004)(189003)(446003)(71190400001)(486006)(256004)(14444005)(5660300002)(25786009)(71200400001)(478600001)(2906002)(86362001)(476003)(3846002)(6116002)(11346002)(81166006)(81156014)(66446008)(316002)(186003)(14454004)(966005)(4326008)(8676002)(6436002)(52116002)(6486002)(229853002)(76176011)(6506007)(386003)(53546011)(66476007)(6916009)(64756008)(66556008)(26005)(6306002)(99286004)(102836004)(7736002)(305945005)(9686003)(66066001)(6512007)(66946007)(6246003)(1076003)(8936002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BY5PR11MB3928;
- H:BY5PR11MB3895.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: microchip.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: EAU5rYkrk6swCeNcpKUXeKoscU5ZGkm/yJkZ14i665ovpSNEgA0VFWzMh8eYaT5Do9wW8+5bppe7mdXByZw9+1JoNGbg/L82aqDl7Ut2GBd/A2i3QVJe6QKath4huzRS6y4fIcoK2bNNNv0fUF3eN9wqTEhla2ZxLg/4Orf8H45nqDGfEArW521Y+KY+iI2zUNWWrX+xPGIZIjxIPhI3k1JRSoghQjiUNGpNdvtmB+qznMgNfaL+eYEAoiUiMj6qRNmbcKcNg9I2GsUAKg5bFd5QN7ZzkHsFAMG08+U6pQeNoz3zhflPo9B6dcHPw4Y7gtrRs8/32KwDL4wrjbupXxkfdWQmvkXLgbwky6pAV7huiBmGNl22xjTvlSr+hX69xej55vFOPyfLFFvlojA3vjzNg/y3iMzm3i5WCSeRoWqOEoPtTrNfFXE/U71PW7UMu2BRgEzybvGdCnozYaSpaUIKBDC8d8MtkW14furY/zk=
-Content-ID: <A81B873081D6CF4FA51E65E95ED274B2@namprd11.prod.outlook.com>
+ id 1iNtkw-0007hY-G2; Fri, 25 Oct 2019 07:11:32 +0000
+Received: from localhost (mailhub1-int [192.168.12.234])
+ by localhost (Postfix) with ESMTP id 46zwJL1km6z9txyl;
+ Fri, 25 Oct 2019 09:11:14 +0200 (CEST)
+Authentication-Results: localhost; dkim=pass
+ reason="1024-bit key; insecure key"
+ header.d=c-s.fr header.i=@c-s.fr header.b=JS6Rw9Wo; dkim-adsp=pass;
+ dkim-atps=neutral
+X-Virus-Scanned: Debian amavisd-new at c-s.fr
+Received: from pegase1.c-s.fr ([192.168.12.234])
+ by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
+ with ESMTP id IEyuu55Vu2Vj; Fri, 25 Oct 2019 09:11:14 +0200 (CEST)
+Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
+ by pegase1.c-s.fr (Postfix) with ESMTP id 46zwJL044Jz9txyd;
+ Fri, 25 Oct 2019 09:11:14 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
+ t=1571987474; bh=sSY9vZFiyvVRvxrTbg3cBY9vh4bHCPcOU8OggoNJn50=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=JS6Rw9Woz5UGQqHdTS6uzWgmc4CU/P/yOx+M2iQQgUsIUyeQU6CEy1rN1WbGM/gMX
+ jg5kH3n063w2jEkgx41+z8O5phWdZyM3jwWcRyaHHpi22TkWJphSF18ZBHt9X26ALg
+ 0sa7mSxQ44NMG02wKJaVu3L7vo7n7mt0UVXaQK8I=
+Received: from localhost (localhost [127.0.0.1])
+ by messagerie.si.c-s.fr (Postfix) with ESMTP id DF5238B7C7;
+ Fri, 25 Oct 2019 09:11:14 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at c-s.fr
+Received: from messagerie.si.c-s.fr ([127.0.0.1])
+ by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
+ with ESMTP id NUWV8rK7Wu_n; Fri, 25 Oct 2019 09:11:14 +0200 (CEST)
+Received: from [192.168.4.90] (unknown [192.168.4.90])
+ by messagerie.si.c-s.fr (Postfix) with ESMTP id D5FF28B7BE;
+ Fri, 25 Oct 2019 09:11:12 +0200 (CEST)
+Subject: Re: [PATCH V7] mm/debug: Add tests validating architecture page table
+ helpers
+To: Qian Cai <cai@lca.pw>, Anshuman Khandual <Anshuman.Khandual@arm.com>
+References: <ccdd4f7a-c7dc-ca10-d30c-0bc05c7136c7@arm.com>
+ <69256008-2235-4AF1-A3BA-0146C82CCB93@lca.pw>
+From: Christophe Leroy <christophe.leroy@c-s.fr>
+Message-ID: <3cfec421-4006-4159-ca32-313ff5196ff9@c-s.fr>
+Date: Fri, 25 Oct 2019 09:11:12 +0200
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0f75acaf-1c1d-478e-3c57-08d75919830d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Oct 2019 07:04:00.9158 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Kblw8RiIKAykfZilUfGSh7xlHwgNOolTgdxvAPnUKovZYnXQnBNe3VBad3+cWiC5b7iSG2mQqVZf8Ph4Jq1R3A/Yw91Z90CpgiQ6R7R+aNM=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY5PR11MB3928
+In-Reply-To: <69256008-2235-4AF1-A3BA-0146C82CCB93@lca.pw>
+Content-Language: fr
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_000435_062959_233C71FA 
-X-CRM114-Status: GOOD (  22.63  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191025_001130_831964_7EC5994F 
+X-CRM114-Status: GOOD (  12.64  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.150.166 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [93.17.236.30 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -164,128 +95,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <Mark.Rutland@arm.com>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
+ James Hogan <jhogan@kernel.org>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
+ linux-mm@kvack.org, Dave Hansen <dave.hansen@intel.com>,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
+ Jason Gunthorpe <jgg@ziepe.ca>, Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ linux-snps-arc@lists.infradead.org, Ingo Molnar <mingo@kernel.org>,
+ Kees Cook <keescook@chromium.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
+ linux-arm-kernel@lists.infradead.org,
+ Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
+ Vineet Gupta <vgupta@synopsys.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>,
+ Mike Kravetz <mike.kravetz@oracle.com>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 24, 2019 at 02:29:13PM +0200, Kamel Bouhara wrote:
-> 
-> On 10/10/2019 08:54, Ludovic Desroches wrote:
-> > On Wed, Oct 09, 2019 at 04:01:47PM +0200, Alexandre Belloni wrote:
-> > > 
-> > > On 09/10/2019 15:55:00+0200, Ludovic Desroches wrote:
-> > > > On Wed, Oct 02, 2019 at 04:46:56PM +0200, Kamel Bouhara wrote:
-> > > > > External E-Mail
-> > > > > 
-> > > > > 
-> > > > > Implement i2c bus recovery when slaves devices might hold SDA low.
-> > > > > In this case re-assign SCL/SDA to gpios and issue 9 dummy clock pulses
-> > > > > until the slave release SDA.
-> > > > > 
-> > > > 
-> > > > Hi Kamel,
-> > > > 
-> Hi Ludovic,
-> 
-> > > > Thanks for adding this new feature. As I see patches only for sama5d3 and
-> > > > sama5d4, I assume it has not been tested with a sama5d2, isn't it?
-> > > > 
-> > > 
-> > > I there a point having it on sama5d2 as the controller already supports
-> > > this feature?
-> > > 
-> > 
-> > Right, I was focused on pinctrl and forget we have this feature
-> > supported by the IP.
-> > 
-> > > > I doubt it works with a sama5d2 because of the pinctrl. I also wonder if it can
-> > > > work if we add .strict = true to pinmux_ops which is something plan for the
-> > > > future...
-> > > > 
-> > > 
-> > > I don't see why it wouldn't work with strict as this is switching muxing
-> > > properly instead of using the pins for two functions at the same time.
-> > > 
-> > 
-> > Not sure devm_gpiod_get won't fail with strict.
-> > 
-> Actually the strict flag is checked in the pinmux core to allow the pin
-> request.
-> 
-> What is the purpose to enable it ? It seems to break a lot things, eg. on
-> sama5d3 :
-
-Hi Kamel,
-
-First, to be clear, I am not against this patch, I'll ack the new
-version. My goal is only to be aware if the use of strict can have side
-effects.
-
-I am more used to the pio4 but I assume it's the same with the older
-one. As you notice enabling it should break many things. It involves DT
-changes for pins used as gpio. They have to be removed from the
-pinmuxing or to find a way to allow a gpio request on a pin muxed as a
-gpio.
-
-I would like to enable it, because, at the moment, if you request a gpio,
-for example using the sysfs, you can change the muxing of the pin and
-breaks a device using it. If strict is enabled, this change will be
-rejected and it's probably safer.
-
-> 
-> # dmesg |grep pin
-> pinctrl-at91 ahb:apb:pinctrl@fffff200: pin pioA18 already requested by
-> f801c000.i2c; cannot claim for fffff200.gpio:18
-> pinctrl-at91 ahb:apb:pinctrl@fffff200: pin-18 (fffff200.gpio:18) status -22
-> pinctrl-at91 ahb:apb:pinctrl@fffff200: pin pioA19 already requested by
-> f801c000.i2c; cannot claim for fffff200.gpio:19
-> pinctrl-at91 ahb:apb:pinctrl@fffff200: pin-19 (fffff200.gpio:19) status -22
-
-Thanks for testing it, it confirms what I had in mind.
-
-Regards
-
-Ludovic
-
-> pinctrl-at91 ahb:apb:pinctrl@fffff200: pin pioE9 already requested by
-> 500000.gadget; cannot claim for fffffa00.gpio:137
-> pinctrl-at91 ahb:apb:pinctrl@fffff200: pin-137 (fffffa00.gpio:137) status
-> -22
-> pinctrl-at91 ahb:apb:pinctrl@fffff200: pin pioE0 already requested by
-> f0000000.mmc; cannot claim for fffffa00.gpio:128
-> pinctrl-at91 ahb:apb:pinctrl@fffff200: pin-128 (fffffa00.gpio:128) status
-> -22
-> pinctrl-at91 ahb:apb:pinctrl@fffff200: pin pioE1 already requested by
-> f8000000.mmc; cannot claim for fffffa00.gpio:129
-> pinctrl-at91 ahb:apb:pinctrl@fffff200: pin-129 (fffffa00.gpio:129) status
-> -22
-> pinctrl-at91 ahb:apb:pinctrl@fffff200: pin pioE29 already requested by
-> gpio_keys; cannot claim for fffffa00.gpio:157
-> pinctrl-at91 ahb:apb:pinctrl@fffff200: pin-157 (fffffa00.gpio:157) status
-> -22
-> 
-> > Ludovic
-> > 
-> > _______________________________________________
-> > linux-arm-kernel mailing list
-> > linux-arm-kernel@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> > 
-> 
-> -- 
-> Kamel Bouhara, Bootlin
-> Embedded Linux and kernel engineering
-> https://bootlin.com
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpMZSAyNS8xMC8yMDE5IMOgIDA3OjUyLCBRaWFuIENhaSBhIMOpY3JpdMKgOgo+IAo+IAo+PiBP
+biBPY3QgMjQsIDIwMTksIGF0IDExOjQ1IFBNLCBBbnNodW1hbiBLaGFuZHVhbCA8QW5zaHVtYW4u
+S2hhbmR1YWxAYXJtLmNvbT4gd3JvdGU6Cj4+Cj4+IE5vdGhpbmcgc3BlY2lmaWMuIEJ1dCBqdXN0
+IHRlc3RlZCB0aGlzIHdpdGggeDg2IGRlZmNvbmZpZyB3aXRoIHJlbGV2YW50IGNvbmZpZ3MKPj4g
+d2hpY2ggYXJlIHJlcXVpcmVkIGZvciB0aGlzIHRlc3QuIE5vdCBzdXJlIGlmIGl0IGludm9sdmVk
+IFc9MS4KPiAKPiBObywgaXQgd2lsbCBub3QuIEl0IG5lZWRzIHRvIHJ1biBsaWtlLAo+IAo+IG1h
+a2UgVz0xIC1qIDY0IDI+L3RtcC93YXJucwo+IAoKQXJlIHdlIHRhbGtpbmcgYWJvdXQgdGhpcyBw
+ZWFjZSBvZiBjb2RlID8KCitzdGF0aWMgdW5zaWduZWQgbG9uZyBfX2luaXQgZ2V0X3JhbmRvbV92
+YWRkcih2b2lkKQoreworCXVuc2lnbmVkIGxvbmcgcmFuZG9tX3ZhZGRyLCByYW5kb21fcGFnZXMs
+IHRvdGFsX3VzZXJfcGFnZXM7CisKKwl0b3RhbF91c2VyX3BhZ2VzID0gKFRBU0tfU0laRSAtIEZJ
+UlNUX1VTRVJfQUREUkVTUykgLyBQQUdFX1NJWkU7CisKKwlyYW5kb21fcGFnZXMgPSBnZXRfcmFu
+ZG9tX2xvbmcoKSAlIHRvdGFsX3VzZXJfcGFnZXM7CisJcmFuZG9tX3ZhZGRyID0gRklSU1RfVVNF
+Ul9BRERSRVNTICsgcmFuZG9tX3BhZ2VzICogUEFHRV9TSVpFOworCisJV0FSTl9PTigocmFuZG9t
+X3ZhZGRyID4gVEFTS19TSVpFKSB8fAorCQkocmFuZG9tX3ZhZGRyIDwgRklSU1RfVVNFUl9BRERS
+RVNTKSk7CisJcmV0dXJuIHJhbmRvbV92YWRkcjsKK30KKwoKcmFtZG9tX3ZhZGRyIGlzIHVuc2ln
+bmVkLApyYW5kb21fcGFnZXMgaXMgdW5zaWduZWQgYW5kIGxvd2VyIHRoYW4gdG90YWxfdXNlcl9w
+YWdlcwoKU28gdGhlIG1heCB2YWx1ZSByYW5kb21fdmFkZHIgY2FuIGdldCBpcyBGSVJTVF9VU0VS
+X0FERFJFU1MgKyAKKChUQVNLX1NJWkUgLSBGSVJTVF9VU0VSX0FERFJFU1MgLSAxKSAvIFBBR0Vf
+U0laRSkgKiBQQUdFX1NJWkUgPSAKVEFTS19TSVpFIC0gMQpBbmQgdGhlIG1pbiB2YWx1ZSByYW5k
+b21fdmFkZHIgY2FuIGdldCBpcyBGSVJTVF9VU0VSX0FERFJFU1MgKHRoYXQncyAKd2hlbiByYW5k
+b21fcGFnZXMgPSAwKQoKU28gdGhlIFdBUk5fT04oKSBpcyBqdXN0IHVubmVlZGVkLCBpc24ndCBp
+dCA/CgpDaHJpc3RvcGhlCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1hcm0ta2VybmVsCg==
