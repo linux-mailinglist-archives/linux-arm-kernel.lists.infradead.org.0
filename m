@@ -2,88 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 045C5E4AE8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 14:18:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03AC5E4B2C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 14:33:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=YiFftY7Fz1VCej9nBlxOVRtrItdbhZVMEAR6ghRY9MI=; b=WKU5Ow5ROp5sjLWdUFxTUy8Ue
-	jI/GURssgzKq5rlS6gbcOh3JoRKpLBNaMwst5WJWIrk3u11qQPqHgq/YlBYN5NT95XizPLRtQCcMA
-	7vjXhn+YGRZiEykLjnO8tR4jrRmTidgLJExSRMBp8s6j4OCmsaw/sh/PD8Xe9LjLgedIMd6NoOmUH
-	siii8gCTrOHF2zC7Qd6ioPRbPZuo5aAu0Keq/fgcI4vu5Avy4vNSOn0oBlU/K2Xu0URtJ6OzlDbN8
-	BLS1kGltjL7Ix6//5+W6kCmZwRjbgN1c592+v4S0CVXbjSxWCI1g3Q8oDg4FVm1vADz6xBhaKcAB8
-	lBV1ngZhQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/2NCtZcmJc32t8FaZAWH+r86fiMMcYt4Vo1f0+kDwb4=; b=OlpRqQ08vnqoFt
+	0KrEGHFgp4U6r1gCS0KRshiGDhD/MFovfSFqesAqu5HfjBEdGmPxDhzFIXjMmTouAFn1idcy0bjzw
+	ZRQIjJ+z67IQK94Z8m9ODqpa0eUoBdGCg4yiO3gMNVHSbXuERoYZEGvkpEopWG+f3+r0G0YF+M59N
+	xh4Q27nZEzLQgOnGvvO0Ks6OpyimXrqSdVrEDnXmx6iw0/g5g4n007PCb3O+9RrYOLAc2DKhR87Cf
+	5T6uxj3FJq8LCk1eNiwLmRB6tjJFQtKUJz+y/wBcIZ5zIbmI3S83KvzZz4DMq9FTEOjWpI+f5gbmR
+	Ybi7HrSQfsp2OLvXarFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNyY6-0004NQ-4E; Fri, 25 Oct 2019 12:18:34 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1iNymk-0002Vp-L6; Fri, 25 Oct 2019 12:33:42 +0000
+Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNyXu-00046V-4N
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 12:18:23 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x9PCIAAB097511;
- Fri, 25 Oct 2019 07:18:10 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1572005890;
- bh=+AzN6QW8Y9V9KQdYzGUqYfgRbdiMJlLbgEwmAB6P/78=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=GVNJe/qymU047YRv+aTEq5SjDKaOQ3kDyFLM0M8vuM6Ggf1mh1raMGzlb1Gsn2D2c
- E/AW1kbD/9rorjIUQKuLnCtpeD+y4rVsXdIAxnHPTXyvYw7bcQKkmt1ATIsALgSTsf
- RDOMq6OPv/YTENR50VIvS/sjAtYztCJUzDNPjS2E=
-Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x9PCIAEZ024029
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 25 Oct 2019 07:18:10 -0500
-Received: from DFLE110.ent.ti.com (10.64.6.31) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Fri, 25
- Oct 2019 07:17:59 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE110.ent.ti.com
- (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Fri, 25 Oct 2019 07:17:59 -0500
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x9PCI7A8025611;
- Fri, 25 Oct 2019 07:18:08 -0500
-Subject: Re: [PATCH 00/10] crypto: omap fixes towards 5.5
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-References: <20191017122549.4634-1-t-kristo@ti.com>
- <CAKv+Gu_HNOTSvWRTzLMeECaM8qCi5w806ht_e68e5vgcU9aQvQ@mail.gmail.com>
- <8f97d690-a88a-55cb-eb67-206e01873d94@ti.com>
- <bf22f7dd-5446-d736-611b-6465df45b74d@ti.com>
- <CAKv+Gu_ABcosRm30nrtCY429Xki8_b9GAzQ=hQ=Kiuo2o6Y2ng@mail.gmail.com>
-From: Tero Kristo <t-kristo@ti.com>
-Message-ID: <359434e9-3289-2982-edc1-b93e76c28700@ti.com>
-Date: Fri, 25 Oct 2019 15:18:06 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iNymY-0002V8-I6
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 12:33:33 +0000
+Received: from [185.240.52.243] (helo=localhost.localdomain)
+ by youngberry.canonical.com with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
+ (envelope-from <christian.brauner@ubuntu.com>)
+ id 1iNym9-0007oa-U4; Fri, 25 Oct 2019 12:33:05 +0000
+From: Christian Brauner <christian.brauner@ubuntu.com>
+To: viro@zeniv.linux.org.uk, linux-kernel@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, torvalds@linux-foundation.org,
+ fweimer@redhat.com
+Subject: [REVIEW PATCH v5 2/3] arch: wire-up close_range()
+Date: Fri, 25 Oct 2019 14:28:50 +0200
+Message-Id: <20191025122851.30182-3-christian.brauner@ubuntu.com>
+X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20191025122851.30182-1-christian.brauner@ubuntu.com>
+References: <20191025122851.30182-1-christian.brauner@ubuntu.com>
 MIME-Version: 1.0
-In-Reply-To: <CAKv+Gu_ABcosRm30nrtCY429Xki8_b9GAzQ=hQ=Kiuo2o6Y2ng@mail.gmail.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_051822_261553_00FCA5A5 
-X-CRM114-Status: GOOD (  19.79  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191025_053330_740251_EB54A9B4 
+X-CRM114-Status: GOOD (  11.31  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [91.189.89.112 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,114 +62,280 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:HARDWARE RANDOM NUMBER GENERATOR CORE"
- <linux-crypto@vger.kernel.org>, linux-omap@vger.kernel.org,
- Herbert Xu <herbert@gondor.apana.org.au>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "David S. Miller" <davem@davemloft.net>
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org, ldv@altlinux.org,
+ dhowells@redhat.com, sparclinux@vger.kernel.org,
+ Christian Brauner <christian.brauner@ubuntu.com>, shuah@kernel.org,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org, miklos@szeredi.hu,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ linux-mips@vger.kernel.org, linux-xtensa@linux-xtensa.org, tkjos@android.com,
+ arnd@arndb.de, jannh@google.com, linux-m68k@lists.linux-m68k.org,
+ tglx@linutronix.de, linux-arm-kernel@lists.infradead.org,
+ linux-parisc@vger.kernel.org, linux-api@vger.kernel.org, oleg@redhat.com,
+ linux-alpha@vger.kernel.org, linuxppc-dev@lists.ozlabs.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 25/10/2019 15:05, Ard Biesheuvel wrote:
-> On Fri, 25 Oct 2019 at 13:56, Tero Kristo <t-kristo@ti.com> wrote:
->>
->> On 25/10/2019 14:55, Tero Kristo wrote:
->>> On 25/10/2019 14:33, Ard Biesheuvel wrote:
->>>> On Thu, 17 Oct 2019 at 14:26, Tero Kristo <t-kristo@ti.com> wrote:
->>>>>
->>>>> Hi,
->>>>>
->>>>> This series fixes a number of bugs with omap crypto implementation.
->>>>> These have become evident with the changes to the cryptomanager, where
->>>>> it adds some new test cases and modifies some existing, namely the split
->>>>> update tests. Also, while fixing the cryptomanager induced bugs, some
->>>>> other surfaced with tcrypt/IPSec tests, so fixed them aswell.
->>>>>
->>>>> Patch #9 is against crypto core modifying the crypto_wait_req
->>>>> common API to have a timeout for it also, currently it waits forever
->>>>> and it is kind of difficult to see what test fails with crypto manager.
->>>>> This is not really needed for anything, but it is kind of nice to have
->>>>> (makes debugging easier.)
->>>>>
->>>>> This series has been tested on top of 5.4-rc2, with following setups,
->>>>> on AM57xx-beagle-x15 board:
->>>>>
->>>>> - crypto manager self tests
->>>>> - tcrypt performance test
->>>>> - ipsec test with strongswan
->>>>>
->>>>> This series depends on the skcipher API switch patch from Ard Biesheuvel
->>>>> [1].
->>>>>
->>>>
->>>> Hi Tero,
->>>>
->>>> On my BeagleBone White, I am hitting the following issues after
->>>> applying these patches:
->>>>
->>>> [    7.493903] alg: skcipher: ecb-aes-omap encryption unexpectedly
->>>> succeeded on test vector "random: len=531 klen=32";
->>>> expected_error=-22, cfg="random: inplace may_sleep use_finup
->>>> src_divs=[44.72%@+4028, <flush>14.70%@alignmask+3, 19.45%@+4070,
->>>> 21.13%@+2728]"
->>>> [    7.651103] alg: skcipher: cbc-aes-omap encryption unexpectedly
->>>> succeeded on test vector "random: len=1118 klen=32";
->>>> expected_error=-22, cfg="random: may_sleep use_final
->>>> src_divs=[<reimport>41.87%@+31, <flush>58.13%@+2510]"
->>>>
->>>> These are simply a result of the ECB and CBC implementations not
->>>> returning -EINVAL when the input is not a multiple of the block size.
->>>>
->>>> [    7.845527] alg: skcipher: blocksize for ctr-aes-omap (16) doesn't
->>>> match generic impl (1)
->>>>
->>>> This means cra_blocksize is not set to 1 as it should. If your driver
->>>> uses the skcipher walk API, it should set the walksize to
->>>> AES_BLOCK_SIZE to ensure that the input is handled correctly. If you
->>>> don't, then you can disregard that part.
->>>>
->>>> [    8.306491] alg: aead: gcm-aes-omap setauthsize unexpectedly
->>>> succeeded on test vector "random: alen=3 plen=31 authsize=6 klen=9";
->>>> expected_error=-22
->>>>
->>>> Another missing sanity check. GCM only permits certain authsizes.
->>>>
->>>> [    9.074703] omap_crypto_copy_sgs: Couldn't allocate pages for
->>>> unaligned cases.
->>>>
->>>> This is not a bug, but I'm not sure if the below is related or not.
->>>>
->>>> I'll preserve the binaries, in case you need me to objdump anything.
->>>
->>> What are these tests you are executing? For me, the testmgr self test
->>> suite is passing just fine. Any extra tests you have enabled somehow?
->>>
-> 
-> I enabled CONFIG_CRYPTO_MANAGER_EXTRA_TESTS, which enables a bunch of
-> fuzz tests of the offloaded algorithms against the generic
-> implementations.
+This wires up the close_range() syscall into all arches at once.
 
-Ahha I see, let me give that a shot locally. I have so far only been 
-testing with the standard suite.
+Suggested-by: Arnd Bergmann <arnd@arndb.de>
+Signed-off-by: Christian Brauner <christian.brauner@ubuntu.com>
+Reviewed-by: Oleg Nesterov <oleg@redhat.com>
+Acked-by: Arnd Bergmann <arnd@arndb.de>
+Acked-by: Michael Ellerman <mpe@ellerman.id.au> (powerpc)
+Cc: Jann Horn <jannh@google.com>
+Cc: David Howells <dhowells@redhat.com>
+Cc: Dmitry V. Levin <ldv@altlinux.org>
+Cc: Linus Torvalds <torvalds@linux-foundation.org>
+Cc: Al Viro <viro@zeniv.linux.org.uk>
+Cc: Florian Weimer <fweimer@redhat.com>
+Cc: linux-api@vger.kernel.org
+Cc: linux-alpha@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-ia64@vger.kernel.org
+Cc: linux-m68k@lists.linux-m68k.org
+Cc: linux-mips@vger.kernel.org
+Cc: linux-parisc@vger.kernel.org
+Cc: linuxppc-dev@lists.ozlabs.org
+Cc: linux-s390@vger.kernel.org
+Cc: linux-sh@vger.kernel.org
+Cc: sparclinux@vger.kernel.org
+Cc: linux-xtensa@linux-xtensa.org
+Cc: linux-arch@vger.kernel.org
+Cc: x86@kernel.org
+---
+/* v2 */
+not present
 
-> 
->>> I am also running full test on different board though (am57xx), I
->>> haven't been explicitly running anything on am335x.
->>
->> Oh, and btw, did you try without my series? I think the selftests are
->> failing rather miserably without them...
->>
-> 
-> No, I just tried a branch with mine and your patches applied.
+/* v3 */
+not present
 
-Could you give it a shot without the CRYPTO_MANAGER_EXTRA_TESTS, that 
-should pass with my series, and fail without?
+/* v4 */
+introduced
+- Arnd Bergmann <arnd@arndb.de>:
+  - split into two patches:
+    1. add close_range()
+    2. add syscall to all arches at once
+  - bump __NR_compat_syscalls in arch/arm64/include/asm/unistd.h
 
--Tero
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+/* v5 */
+- Christian Brauner <christian.brauner@ubuntu.com>:
+---
+ arch/alpha/kernel/syscalls/syscall.tbl      | 1 +
+ arch/arm/tools/syscall.tbl                  | 1 +
+ arch/arm64/include/asm/unistd.h             | 2 +-
+ arch/arm64/include/asm/unistd32.h           | 2 ++
+ arch/ia64/kernel/syscalls/syscall.tbl       | 1 +
+ arch/m68k/kernel/syscalls/syscall.tbl       | 1 +
+ arch/microblaze/kernel/syscalls/syscall.tbl | 1 +
+ arch/mips/kernel/syscalls/syscall_n32.tbl   | 1 +
+ arch/mips/kernel/syscalls/syscall_n64.tbl   | 1 +
+ arch/mips/kernel/syscalls/syscall_o32.tbl   | 1 +
+ arch/parisc/kernel/syscalls/syscall.tbl     | 1 +
+ arch/powerpc/kernel/syscalls/syscall.tbl    | 1 +
+ arch/s390/kernel/syscalls/syscall.tbl       | 1 +
+ arch/sh/kernel/syscalls/syscall.tbl         | 1 +
+ arch/sparc/kernel/syscalls/syscall.tbl      | 1 +
+ arch/x86/entry/syscalls/syscall_32.tbl      | 1 +
+ arch/x86/entry/syscalls/syscall_64.tbl      | 1 +
+ arch/xtensa/kernel/syscalls/syscall.tbl     | 1 +
+ include/uapi/asm-generic/unistd.h           | 4 +++-
+ 19 files changed, 22 insertions(+), 2 deletions(-)
+
+diff --git a/arch/alpha/kernel/syscalls/syscall.tbl b/arch/alpha/kernel/syscalls/syscall.tbl
+index 728fe028c02c..f08906efa5ff 100644
+--- a/arch/alpha/kernel/syscalls/syscall.tbl
++++ b/arch/alpha/kernel/syscalls/syscall.tbl
+@@ -475,3 +475,4 @@
+ 543	common	fspick				sys_fspick
+ 544	common	pidfd_open			sys_pidfd_open
+ # 545 reserved for clone3
++546	common	close_range			sys_close_range
+diff --git a/arch/arm/tools/syscall.tbl b/arch/arm/tools/syscall.tbl
+index 6da7dc4d79cc..f25716576d13 100644
+--- a/arch/arm/tools/syscall.tbl
++++ b/arch/arm/tools/syscall.tbl
+@@ -449,3 +449,4 @@
+ 433	common	fspick				sys_fspick
+ 434	common	pidfd_open			sys_pidfd_open
+ 435	common	clone3				sys_clone3
++436	common	close_range			sys_close_range
+diff --git a/arch/arm64/include/asm/unistd.h b/arch/arm64/include/asm/unistd.h
+index 2629a68b8724..368761302768 100644
+--- a/arch/arm64/include/asm/unistd.h
++++ b/arch/arm64/include/asm/unistd.h
+@@ -38,7 +38,7 @@
+ #define __ARM_NR_compat_set_tls		(__ARM_NR_COMPAT_BASE + 5)
+ #define __ARM_NR_COMPAT_END		(__ARM_NR_COMPAT_BASE + 0x800)
+ 
+-#define __NR_compat_syscalls		436
++#define __NR_compat_syscalls		437
+ #endif
+ 
+ #define __ARCH_WANT_SYS_CLONE
+diff --git a/arch/arm64/include/asm/unistd32.h b/arch/arm64/include/asm/unistd32.h
+index 94ab29cf4f00..c1309f52c8ac 100644
+--- a/arch/arm64/include/asm/unistd32.h
++++ b/arch/arm64/include/asm/unistd32.h
+@@ -879,6 +879,8 @@ __SYSCALL(__NR_fspick, sys_fspick)
+ __SYSCALL(__NR_pidfd_open, sys_pidfd_open)
+ #define __NR_clone3 435
+ __SYSCALL(__NR_clone3, sys_clone3)
++#define __NR_close_range 436
++__SYSCALL(__NR_close_range, sys_close_range)
+ 
+ /*
+  * Please add new compat syscalls above this comment and update
+diff --git a/arch/ia64/kernel/syscalls/syscall.tbl b/arch/ia64/kernel/syscalls/syscall.tbl
+index 36d5faf4c86c..151f4fd234be 100644
+--- a/arch/ia64/kernel/syscalls/syscall.tbl
++++ b/arch/ia64/kernel/syscalls/syscall.tbl
+@@ -356,3 +356,4 @@
+ 433	common	fspick				sys_fspick
+ 434	common	pidfd_open			sys_pidfd_open
+ # 435 reserved for clone3
++436	common	close_range			sys_close_range
+diff --git a/arch/m68k/kernel/syscalls/syscall.tbl b/arch/m68k/kernel/syscalls/syscall.tbl
+index a88a285a0e5f..adff06c08d2f 100644
+--- a/arch/m68k/kernel/syscalls/syscall.tbl
++++ b/arch/m68k/kernel/syscalls/syscall.tbl
+@@ -435,3 +435,4 @@
+ 433	common	fspick				sys_fspick
+ 434	common	pidfd_open			sys_pidfd_open
+ # 435 reserved for clone3
++436	common	close_range			sys_close_range
+diff --git a/arch/microblaze/kernel/syscalls/syscall.tbl b/arch/microblaze/kernel/syscalls/syscall.tbl
+index 09b0cd7dab0a..84aa70453704 100644
+--- a/arch/microblaze/kernel/syscalls/syscall.tbl
++++ b/arch/microblaze/kernel/syscalls/syscall.tbl
+@@ -441,3 +441,4 @@
+ 433	common	fspick				sys_fspick
+ 434	common	pidfd_open			sys_pidfd_open
+ 435	common	clone3				sys_clone3
++436	common	close_range			sys_close_range
+diff --git a/arch/mips/kernel/syscalls/syscall_n32.tbl b/arch/mips/kernel/syscalls/syscall_n32.tbl
+index e7c5ab38e403..0c1fdfc01ebb 100644
+--- a/arch/mips/kernel/syscalls/syscall_n32.tbl
++++ b/arch/mips/kernel/syscalls/syscall_n32.tbl
+@@ -374,3 +374,4 @@
+ 433	n32	fspick				sys_fspick
+ 434	n32	pidfd_open			sys_pidfd_open
+ 435	n32	clone3				__sys_clone3
++436	n32	close_range			sys_close_range
+diff --git a/arch/mips/kernel/syscalls/syscall_n64.tbl b/arch/mips/kernel/syscalls/syscall_n64.tbl
+index 13cd66581f3b..d1284f1ce329 100644
+--- a/arch/mips/kernel/syscalls/syscall_n64.tbl
++++ b/arch/mips/kernel/syscalls/syscall_n64.tbl
+@@ -350,3 +350,4 @@
+ 433	n64	fspick				sys_fspick
+ 434	n64	pidfd_open			sys_pidfd_open
+ 435	n64	clone3				__sys_clone3
++436	n64	close_range			sys_close_range
+diff --git a/arch/mips/kernel/syscalls/syscall_o32.tbl b/arch/mips/kernel/syscalls/syscall_o32.tbl
+index 353539ea4140..7e4118d8d2ca 100644
+--- a/arch/mips/kernel/syscalls/syscall_o32.tbl
++++ b/arch/mips/kernel/syscalls/syscall_o32.tbl
+@@ -423,3 +423,4 @@
+ 433	o32	fspick				sys_fspick
+ 434	o32	pidfd_open			sys_pidfd_open
+ 435	o32	clone3				__sys_clone3
++436	o32	close_range			sys_close_range
+diff --git a/arch/parisc/kernel/syscalls/syscall.tbl b/arch/parisc/kernel/syscalls/syscall.tbl
+index 285ff516150c..d07f75996382 100644
+--- a/arch/parisc/kernel/syscalls/syscall.tbl
++++ b/arch/parisc/kernel/syscalls/syscall.tbl
+@@ -433,3 +433,4 @@
+ 433	common	fspick				sys_fspick
+ 434	common	pidfd_open			sys_pidfd_open
+ 435	common	clone3				sys_clone3_wrapper
++436	common	close_range			sys_close_range
+diff --git a/arch/powerpc/kernel/syscalls/syscall.tbl b/arch/powerpc/kernel/syscalls/syscall.tbl
+index 43f736ed47f2..093d91114ea8 100644
+--- a/arch/powerpc/kernel/syscalls/syscall.tbl
++++ b/arch/powerpc/kernel/syscalls/syscall.tbl
+@@ -517,3 +517,4 @@
+ 433	common	fspick				sys_fspick
+ 434	common	pidfd_open			sys_pidfd_open
+ 435	nospu	clone3				ppc_clone3
++436	common	close_range			sys_close_range
+diff --git a/arch/s390/kernel/syscalls/syscall.tbl b/arch/s390/kernel/syscalls/syscall.tbl
+index 3054e9c035a3..74565cf327ce 100644
+--- a/arch/s390/kernel/syscalls/syscall.tbl
++++ b/arch/s390/kernel/syscalls/syscall.tbl
+@@ -438,3 +438,4 @@
+ 433  common	fspick			sys_fspick			sys_fspick
+ 434  common	pidfd_open		sys_pidfd_open			sys_pidfd_open
+ 435  common	clone3			sys_clone3			sys_clone3
++436  common	close_range		sys_close_range			sys_close_range
+diff --git a/arch/sh/kernel/syscalls/syscall.tbl b/arch/sh/kernel/syscalls/syscall.tbl
+index b5ed26c4c005..11c9e5626fdd 100644
+--- a/arch/sh/kernel/syscalls/syscall.tbl
++++ b/arch/sh/kernel/syscalls/syscall.tbl
+@@ -438,3 +438,4 @@
+ 433	common	fspick				sys_fspick
+ 434	common	pidfd_open			sys_pidfd_open
+ # 435 reserved for clone3
++436	common	close_range			sys_close_range
+diff --git a/arch/sparc/kernel/syscalls/syscall.tbl b/arch/sparc/kernel/syscalls/syscall.tbl
+index 8c8cc7537fb2..7928240b3966 100644
+--- a/arch/sparc/kernel/syscalls/syscall.tbl
++++ b/arch/sparc/kernel/syscalls/syscall.tbl
+@@ -481,3 +481,4 @@
+ 433	common	fspick				sys_fspick
+ 434	common	pidfd_open			sys_pidfd_open
+ # 435 reserved for clone3
++436	common	close_range			sys_close_range
+diff --git a/arch/x86/entry/syscalls/syscall_32.tbl b/arch/x86/entry/syscalls/syscall_32.tbl
+index 3fe02546aed3..cb56003ccf2d 100644
+--- a/arch/x86/entry/syscalls/syscall_32.tbl
++++ b/arch/x86/entry/syscalls/syscall_32.tbl
+@@ -440,3 +440,4 @@
+ 433	i386	fspick			sys_fspick			__ia32_sys_fspick
+ 434	i386	pidfd_open		sys_pidfd_open			__ia32_sys_pidfd_open
+ 435	i386	clone3			sys_clone3			__ia32_sys_clone3
++436	i386	close_range		sys_close_range			__ia32_sys_close_range
+diff --git a/arch/x86/entry/syscalls/syscall_64.tbl b/arch/x86/entry/syscalls/syscall_64.tbl
+index c29976eca4a8..0c8be7197ca2 100644
+--- a/arch/x86/entry/syscalls/syscall_64.tbl
++++ b/arch/x86/entry/syscalls/syscall_64.tbl
+@@ -357,6 +357,7 @@
+ 433	common	fspick			__x64_sys_fspick
+ 434	common	pidfd_open		__x64_sys_pidfd_open
+ 435	common	clone3			__x64_sys_clone3/ptregs
++436	common	close_range		__x64_sys_close_range
+ 
+ #
+ # x32-specific system call numbers start at 512 to avoid cache impact
+diff --git a/arch/xtensa/kernel/syscalls/syscall.tbl b/arch/xtensa/kernel/syscalls/syscall.tbl
+index 25f4de729a6d..2526f37a6cac 100644
+--- a/arch/xtensa/kernel/syscalls/syscall.tbl
++++ b/arch/xtensa/kernel/syscalls/syscall.tbl
+@@ -406,3 +406,4 @@
+ 433	common	fspick				sys_fspick
+ 434	common	pidfd_open			sys_pidfd_open
+ 435	common	clone3				sys_clone3
++436	common	close_range			sys_close_range
+diff --git a/include/uapi/asm-generic/unistd.h b/include/uapi/asm-generic/unistd.h
+index 1fc8faa6e973..53c57ffb3bd6 100644
+--- a/include/uapi/asm-generic/unistd.h
++++ b/include/uapi/asm-generic/unistd.h
+@@ -850,9 +850,11 @@ __SYSCALL(__NR_pidfd_open, sys_pidfd_open)
+ #define __NR_clone3 435
+ __SYSCALL(__NR_clone3, sys_clone3)
+ #endif
++#define __NR_close_range 436
++__SYSCALL(__NR_close_range, sys_close_range)
+ 
+ #undef __NR_syscalls
+-#define __NR_syscalls 436
++#define __NR_syscalls 437
+ 
+ /*
+  * 32 bit systems traditionally used different
+-- 
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
