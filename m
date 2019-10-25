@@ -2,70 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36B29E55E4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 23:33:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEC2CE55E7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 23:33:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VzhUxTczYYxvJF3jXBraRsGl0M6nCGWSq+0LImYYWY8=; b=fqvt3zd/mKSvoE
-	DVmdWaZbpX4shEwPFl4IyUML1NZ60h1u0jX3K52mwSYwN4DfpfSBsfgvNDPRye6CW/n7eLfGnude+
-	CDwam/jd4fzbsrTT2LbBSfdvW7KLZVv5k5c7ChsXK7/a+k/Lf4ENcoRlsQcEIMYou+AJLiYPUHJu3
-	ibe7ZXs7IUZheeo6Gm+0gnBRQJw5JoLlXeFVMNZba4w1t4KMnfnIN8syr214UqpNq0D8rvpVKZRB6
-	OM+5Lx98A2c1aqjOQMbL8F3Y78KzSnZIeGYnqz7iUHa1fs3xaJknzrySJuq2kFXPifeOgJUm/OexU
-	J8HI2HeQpPgakX28HfkA==;
+	List-Owner; bh=VERlH1tIuX3o/EzBEPL57Kh22kkmlHtnkziAiQSP1bk=; b=uV5o51wryilIET
+	PxF4bgJt1R3fEwh2xM7Gxb4gFZPIKyJjmCouhZa7umTMX1Rh607OlYplRSaO1XMtwFhbjMQvzjk0d
+	XJ/a49jRbz5qZWvRY680bprW9eAtWp1+X/PZ0LIkoFDpAQBkRujKr4YbyFUMbbaSiUxqeJUGxoP+1
+	zb1eTBD0IzeWAT78/i5zvfJxMu1qV7+STT/kd6hda0nh80m8OLyPhZQ/OaoaLPJdY8YK3X3GyH4lx
+	weWAsRcBC1kWxavneSaqlAdkS3gQTE06Su87sc51jmgkRektu1kjgMJnZSrzKYWxxJAWtOTSyq0q7
+	rbxDaGI1pHpWqpva2dYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iO7Cn-0001oB-B9; Fri, 25 Oct 2019 21:33:09 +0000
+	id 1iO7DB-00027x-AN; Fri, 25 Oct 2019 21:33:33 +0000
 Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iO7Cb-0001ne-Hm; Fri, 25 Oct 2019 21:32:58 +0000
-Received: by mail-ot1-f68.google.com with SMTP id b16so3015771otk.9;
- Fri, 25 Oct 2019 14:32:57 -0700 (PDT)
+ id 1iO7Cx-00027D-L4; Fri, 25 Oct 2019 21:33:20 +0000
+Received: by mail-ot1-f68.google.com with SMTP id m19so3064632otp.1;
+ Fri, 25 Oct 2019 14:33:19 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=z0Dfu2WmLrW82obqVEzdgL4RLEpx99A6YNjCZkr1AdY=;
- b=QSPu8zUbtF7ql2T2p/jUNbtf9DEjioJ/7ZjD8PPLa8Ob/yXl/2R7emwJUxs+T9mO2r
- WY+T5CKHBr9OiTu25hF5BugKnaU9rCSXCleMY6YUb2xSWun/Jvo5WLbunKfbgxVquEOS
- pdTgimr4REjSuj0Ve3ctVbzchJKj7slqO9b/3CQJ7ZFHg8PmKmnaTioEQPYn+nLvw4sq
- 52SJIH8jVm3bl9P49WdizDavHuArTq+3t/2SnZkkwSEHXm8urIDKNg2MnA1fAJDKrdzY
- WNisj0iXDw2dbRd8tJC9NU/xdXitRGf0NW6xD6YzEu84BjDap66QK25TePmjKNCFG/6t
- ASmw==
-X-Gm-Message-State: APjAAAVAoViRrboVRbfdNStyen8YDGV8WEKdrydRyUPSwZYL753UK+fI
- 1onKhEw8XBcAEv4SdVumzA==
-X-Google-Smtp-Source: APXvYqz5bA/sDLT9LYdiIgseo6TuDUbb3NL+cEtzFm8N8YSHB9VLO4PAlGBNFEbX6YVVd8nSUc1Qdw==
-X-Received: by 2002:a9d:65cb:: with SMTP id z11mr737532oth.195.1572039176538; 
- Fri, 25 Oct 2019 14:32:56 -0700 (PDT)
+ bh=u02r+RvqhjVwFLtRSwVlPnNfcLAkCZS1vUmCFAkSORk=;
+ b=pIn59ArUaCQSp1dh6YcgzXONHvZJ6cFXjq+eqoF5I5M8z/SurDhOTwq22ghqqRdvql
+ /HQZeiCZiZDAiz2dUQzIPgKgmNeamcGDpWb/h3kHstPaePDP/uiXgc/L68nm/9yyDcgF
+ ImSEZXZl4GkZTGJsh2sKnFRUPHCb7C/Ngxx7KPIVC3kpJ+dvnSREmjYmnQNgJsUMHJjF
+ xzC/bfUPL+WExHSqaEiXlIU+slMFCRypv/5PDxEUQc4VKR5DTa6+ssxWeykBH23kVMjp
+ keMsepE6IwKCWm+/pB5U0joITXxQclPfaxLjQI0+jL17yk3bvgsil1lWv/sBMf/ZWeJd
+ mYBA==
+X-Gm-Message-State: APjAAAUq1VuAirDDMXsF/tn8mCWWztyFBTt3cET8z+ucK5CDBzMWnoOY
+ kRJmyZH8rOM7sQJfZAs/Cg==
+X-Google-Smtp-Source: APXvYqxJZE75SyD3KWy2FDsc6KlG/GM5vZiuhH0phipAvGuV7QL6R6q4uMTygxmkwaJPAgNQIZslnw==
+X-Received: by 2002:a9d:3675:: with SMTP id w108mr4556144otb.81.1572039199057; 
+ Fri, 25 Oct 2019 14:33:19 -0700 (PDT)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id e102sm1132401ote.78.2019.10.25.14.32.55
+ by smtp.gmail.com with ESMTPSA id c19sm1112928otl.6.2019.10.25.14.33.18
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 25 Oct 2019 14:32:55 -0700 (PDT)
-Date: Fri, 25 Oct 2019 16:32:55 -0500
+ Fri, 25 Oct 2019 14:33:18 -0700 (PDT)
+Date: Fri, 25 Oct 2019 16:33:17 -0500
 From: Rob Herring <robh@kernel.org>
 To: Andy Yan <andy.yan@rock-chips.com>
-Subject: Re: [PATCH v2 1/4] dt-bindings: Add doc about rk3308 General
- Register Files
-Message-ID: <20191025213255.GA21912@bogus>
+Subject: Re: [PATCH v2 3/4] dt-bindings: Add doc for rk3308-evb
+Message-ID: <20191025213317.GA22718@bogus>
 References: <20191021084437.28279-1-andy.yan@rock-chips.com>
- <20191021084555.28356-1-andy.yan@rock-chips.com>
+ <20191021084642.28562-1-andy.yan@rock-chips.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191021084555.28356-1-andy.yan@rock-chips.com>
+In-Reply-To: <20191021084642.28562-1-andy.yan@rock-chips.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_143257_590692_08E74987 
-X-CRM114-Status: UNSURE (   8.81  )
+X-CRM114-CacheID: sfid-20191025_143319_685302_1E27226A 
+X-CRM114-Status: UNSURE (   9.26  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [209.85.210.68 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -76,8 +77,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  provider (robherring2[at]gmail.com)
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
@@ -101,19 +100,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 21 Oct 2019 16:45:55 +0800, Andy Yan wrote:
-> RK3308 GRF is divided into four sections: GRF, SGRF,
-> DETECTGRF, COREGRF. This patch add documentation for
-> it.
+On Mon, 21 Oct 2019 16:46:42 +0800, Andy Yan wrote:
+> Add compatible for RK3308 Evaluation board
 > 
 > Signed-off-by: Andy Yan <andy.yan@rock-chips.com>
 > 
 > ---
 > 
-> Changes in v2: None
+> Changes in v2:
+> - Split with the dts file
 > 
->  .../devicetree/bindings/soc/rockchip/grf.txt          | 11 +++++++++++
->  1 file changed, 11 insertions(+)
+>  Documentation/devicetree/bindings/arm/rockchip.yaml | 5 +++++
+>  1 file changed, 5 insertions(+)
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
