@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B5C9E432E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 08:03:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 45EC5E4330
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 08:05:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KQDMlZh1onWH3c94f8uAOOU/utTsdJf45oCkAbVswJQ=; b=d1zTvCtjr/FDsq
-	FoprFaXHpPqSP+i05JOVNnQeLF7JDibfHmKCoI/WSAkc49OnMmGwxHE3SdKtk+iz9i+hiMqSpD3DQ
-	+aeq3MlkykmLK9Opw0hT4L85fovrvB2lESrktlwaUA70iDGrjQqbFbStBeL3uzif0HqlUpmcLYpUf
-	+6fQZzrG5S90bGzVlSfPWT3s3Hojv3X8oMrad67wrqLHdHvgITdWUQtI+6pcks8qDaj03AolroCU5
-	9KsKCEU3XYA29EWtbvtc12sVNmy1tUrg7texzopLwCwooVRJWKnoF6nZxmjd4lG4qVbI9alGwNSZ4
-	krNbmKhOv0dtbdGQfUlQ==;
+	List-Owner; bh=q61diHmjm49qKW2ZJQoGlw13aDIT7r1wxI6lAUYkJxY=; b=qpu8E2doli+TQD
+	ejbtWit8LRsjAwc5q890NLHjiF/XM6/iwvAaWlKqdSXZjRgCIvo93npXECO6V1uURwPbRGAt/o/f7
+	810Qw7vD7czfQ6YS8NFysdbOsjpznqSvnz9zFgITRSNqyeDPOpfH4JB5Ie/+tp0CW2+O6HUTSwiAB
+	U9Lb29lAqHa+AGRaCL3ZUAV7S149mBYOJiarBmReZW4XsdA7vYTY7VNB1niaYN4L9Z7sQYKJP0ePs
+	NOpY+XXqGbuzxyhTZ8uf80M8NKFOfq6NCW4mXUBkdU1T12jn2MmX6tMKT9A0bwJD1ew9ZakuolEuR
+	aMMLYfzrUWDoMHodckPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNsh2-0001Sj-Uu; Fri, 25 Oct 2019 06:03:24 +0000
+	id 1iNsiu-00033o-00; Fri, 25 Oct 2019 06:05:20 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNsgk-0001S8-RE
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 06:03:08 +0000
+ id 1iNsih-0002k1-RT
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 06:05:09 +0000
 Received: from dragon (li937-157.members.linode.com [45.56.119.157])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3C5C920867;
- Fri, 25 Oct 2019 06:03:02 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id AEFE621929;
+ Fri, 25 Oct 2019 06:04:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571983384;
- bh=c7ti4GFrsA/oZs298kHAMXgQFVfjX7ZmHcLTMl0QR3M=;
+ s=default; t=1571983507;
+ bh=fBJRRwheXU1MJ98d8dPNJRL9K8CPlTP6wigRKmHU5H8=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=oaIhGzc9JKCukybgOrrWj2QeJSTSiNvDM/LxGvxL1c3HU9/hpRItpkw70ruGmQ2f6
- +NusTR+UpmVIvEi63OhyFO+Em2BX2qITuUYKxu2Cc2O4ijxJ988mtARRj4J6BIohI1
- 3i1qgUcsJdLmlyu+OiwrYFVTNA4ubHHB19vroI6M=
-Date: Fri, 25 Oct 2019 14:02:52 +0800
+ b=CItcbHo19ZH8Tsjrxq66F0Ak0UPU72fpIEjLBf71IiAhSTnjilyrxdbhpXaEkrbx/
+ EEVqNgzKCjJN4DHwBsSbSDkB4IHkyI2ze7TTjScrr+5gfiRzj+XaasvDNI2Cpt+G2m
+ Zjt5zct0NmzVQMqoR5FNSXyJlyFoVicy02V/9Ajo=
+Date: Fri, 25 Oct 2019 14:04:46 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Fabio Estevam <festevam@gmail.com>
-Subject: Re: [PATCH] ARM: dts: imx6q-gw54xx: Do not use
- 'simple-audio-card,dai-link'
-Message-ID: <20191025060250.GB3208@dragon>
-References: <20191008163024.17703-1-festevam@gmail.com>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH] arm64: dts: imx8mq-evk: VDD_ARM power rail is always ON
+Message-ID: <20191025060444.GC3208@dragon>
+References: <1570604659-28314-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191008163024.17703-1-festevam@gmail.com>
+In-Reply-To: <1570604659-28314-1-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_230306_910116_8671E950 
-X-CRM114-Status: GOOD (  10.61  )
+X-CRM114-CacheID: sfid-20191024_230507_924487_26DB904E 
+X-CRM114-Status: UNSURE (   9.46  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,24 +77,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tim Harvey <tharvey@gateworks.com>, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, abel.vesa@nxp.com,
+ ccaione@baylibre.com, andrew.smirnov@gmail.com, daniel.baluta@nxp.com,
+ s.hauer@pengutronix.de, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ Linux-imx@nxp.com, kernel@pengutronix.de, festevam@gmail.com,
+ linux-arm-kernel@lists.infradead.org, l.stach@pengutronix.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 08, 2019 at 01:30:24PM -0300, Fabio Estevam wrote:
-> According to Documentation/devicetree/bindings/sound/simple-card.txt
-> the 'simple-audio-card,dai-link' may be omitted when the card has
-> only one DAI link, which is the case here.
->     
-> Get rid of 'simple-audio-card,dai-link' in order to fix the following
-> build warning with W=1:
+On Wed, Oct 09, 2019 at 03:04:19PM +0800, Anson Huang wrote:
+> On i.MX8MQ EVK board, VDD_ARM is from a DC-DC converter which
+> is always ON, the GPIO1_IO13 is ONLY to switch VDD_ARM's voltage
+> between 0.9V and 1V for CPU DVFS, so VDD_ARM's GPIO regulator
+> should be always ON to avoid below confusion after kernel boot
+> up:
 > 
-> arch/arm/boot/dts/imx6q-gw54xx.dts:19.32-31.5: Warning (unit_address_vs_reg): /sound-digital/simple-audio-card,dai-link@0: node has a unit name, but no reg property
+> imx8mqevk login:
+> [   31.776619] vdd_arm: disabling
 > 
-> Cc: Tim Harvey <tharvey@gateworks.com>
-> Signed-off-by: Fabio Estevam <festevam@gmail.com>
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
 Applied, thanks.
 
