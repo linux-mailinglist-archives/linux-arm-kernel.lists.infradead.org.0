@@ -2,93 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C493E482E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 12:10:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D6CBE4839
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 12:10:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=m5W+r87CdzPz0ZzgFAUdwPkiRJLEL7/pm66FFDw5fNg=; b=bPkdc1HvG0pc0MM8ynVX3ZjB9
-	l1NiMQDkQ8sPq7m0MJTtoXs+PMJoW9wW3VTYafz168A81GsznxfHZQPL1pkh/q2z+3GoWVTWaORLu
-	VXsdr0PH7JKjnAl4vAD18m90Efv/v6944OWnTcYeuAP2M6U/t6J5ghvFxPLsqKa72Wl0m9r8BH0D0
-	vKHmIEecWCSaHMMEHdosB/0Q2+GHo8lvQlFMxFvkxymZxvgNxfqvYBUp7QDfHt6Z4rBRk8y/EBmhm
-	BBT/69tQk3/3IbTUqs4fK9sMK8sKkVj2o7DtG4ew4he555/HUU2YdmrvG9RYUHh8uoCl1KXRAx0Gp
-	WYc9vZaqA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8SR7Q4GRxK0dsDeLFS5wqUgd5Ced7/e200t8xFVjHHg=; b=LwpyNV6mkXEbF7
+	WgtX1R3tkCdDA3xwBlyrxtr+5ljF7mX/fhLRqYTtBSyZB/3gARZQev/rWV0GmcQ1e1qzPaxlGjHem
+	p90iasM1bPQ2sNIveseEbaNECHFGgPCcl9T3kPJlnsBF8S1dTCRnE1Ql6z9Y2MkUXUegXngjdTszU
+	eeZ46oogHfqE1AA/1z6siy9EUuCACfcrcYQm6WVxFx1D5C7U6zTzQ9knWA+lKLwZU9dsD9BKMM1t3
+	jcRfPL9ZdUMhVNdQyvaS+D3TxspBDcOboyqKTvtKGsWNVl2HDR6/qTSJaRcCVtzHG+DemWD7VLEIn
+	gcQJH/HUaPT3Qn8t4kKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNwXV-0002nn-B0; Fri, 25 Oct 2019 10:09:49 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNwXK-0002nL-P1
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 10:09:40 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x9P9kJ7s013500; Fri, 25 Oct 2019 12:09:33 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : references
- : from : message-id : date : mime-version : in-reply-to : content-type :
- content-transfer-encoding; s=STMicroelectronics;
- bh=3CmaVffBxE3uJFrNAgwHUb+zxRINz2K1o3h0Psd77+A=;
- b=ME0YWFZWHlV0X3KTUfj053wzdl9tyR1xZ6jkn11lXi//vssFQMNHcByMdjkDZ7RwKm/g
- CAcSY6FL6pxYxqjueeZojXh6EThZ5vsj8rrqZ3LoAHwe7iD6GHVITT1NOQOR/lpKXh13
- 12kc0me3h+wV8Ye2CS+q4+uM3bks2tKRQC6sjHk/K1S9ugz0TlyToFh26rY54sF/MoxO
- cSqqEFLTHO023gDA+Dnnk9mWj4YXrWC78Ioi5EOCESR1SQ9z9OKw+mvu7+LDglpr++Z6
- NolohpTVRaF5jJOpR1pQ1kcCYp9t0noNDy1ZR/Df4nAH2y5jpaKPwaxKRKEPMZQlKajW LA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2vt9s7f0yr-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 25 Oct 2019 12:09:33 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id A37B210002A;
- Fri, 25 Oct 2019 12:09:31 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 951842C38A0;
- Fri, 25 Oct 2019 12:09:31 +0200 (CEST)
-Received: from lmecxl0912.lme.st.com (10.75.127.47) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 25 Oct
- 2019 12:09:31 +0200
-Subject: Re: [PATCH 0/4] update regulator configuration for stm32mp157 boards
-To: Pascal Paillet <p.paillet@st.com>, <mcoquelin.stm32@gmail.com>,
- <robh+dt@kernel.org>, <mark.rutland@arm.com>,
- <linux-stm32@st-md-mailman.stormreply.com>,
- <linux-arm-kernel@lists.infradead.org>, <devicetree@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>
-References: <20191011140533.32619-1-p.paillet@st.com>
-From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <cd4f7f4c-1919-acbe-489e-5021fb8499d8@st.com>
-Date: Fri, 25 Oct 2019 12:09:30 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1iNwYK-0004Xv-UD; Fri, 25 Oct 2019 10:10:40 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iNwXy-0004RF-2K; Fri, 25 Oct 2019 10:10:19 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4365B28;
+ Fri, 25 Oct 2019 03:10:17 -0700 (PDT)
+Received: from [10.162.41.137] (p8cg001049571a15.blr.arm.com [10.162.41.137])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 7FC723F6C4; Fri, 25 Oct 2019 03:10:05 -0700 (PDT)
+Subject: Re: [PATCH V7] mm/debug: Add tests validating architecture page table
+ helpers
+To: Christophe Leroy <christophe.leroy@c-s.fr>, Qian Cai <cai@lca.pw>
+References: <ccdd4f7a-c7dc-ca10-d30c-0bc05c7136c7@arm.com>
+ <69256008-2235-4AF1-A3BA-0146C82CCB93@lca.pw>
+ <3cfec421-4006-4159-ca32-313ff5196ff9@c-s.fr>
+ <763d58b4-f532-0bba-bf2b-71433ac514fb@arm.com>
+ <d811622e-0d35-3bc6-9568-36abc1bee355@c-s.fr>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <78d13292-0cfe-31b6-7a9c-daf7fb7f3d23@arm.com>
+Date: Fri, 25 Oct 2019 15:40:36 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-In-Reply-To: <20191011140533.32619-1-p.paillet@st.com>
+In-Reply-To: <d811622e-0d35-3bc6-9568-36abc1bee355@c-s.fr>
 Content-Language: en-US
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG2NODE2.st.com (10.75.127.5) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
- definitions=2019-10-25_05:2019-10-23,2019-10-25 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_030939_098376_EF69F2F9 
-X-CRM114-Status: GOOD (  14.86  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191025_031018_246301_BC81782C 
+X-CRM114-Status: GOOD (  19.15  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,39 +65,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Mark Rutland <Mark.Rutland@arm.com>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
+ James Hogan <jhogan@kernel.org>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
+ linux-mm@kvack.org, Dave Hansen <dave.hansen@intel.com>,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
+ Jason Gunthorpe <jgg@ziepe.ca>, Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ linux-snps-arc@lists.infradead.org, Ingo Molnar <mingo@kernel.org>,
+ Kees Cook <keescook@chromium.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
+ linux-arm-kernel@lists.infradead.org,
+ Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
+ Vineet Gupta <vgupta@synopsys.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>,
+ Mike Kravetz <mike.kravetz@oracle.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Pascal
-
-On 10/11/19 4:05 PM, Pascal Paillet wrote:
-> The goal of this patch-set is to
-> - add support of PWR blok regulators on the stm32mp157 boards
-> - undapte various regulator configurations
-> 
-> Pascal Paillet (4):
->    ARM: dts: stm32: add PWR regulators support on stm32mp157
->    ARM: dts: stm32: change default minimal buck1 value on stm32mp157
->    ARM: dts: stm32: Fix active discharge usage on stm32mp157
->    ARM: dts: stm32: disable active-discharge for vbus_otg on
->      stm32mp157a-avenger96
-> 
->   arch/arm/boot/dts/stm32mp157a-avenger96.dts |  8 +++++--
->   arch/arm/boot/dts/stm32mp157a-dk1.dts       |  9 ++++++--
->   arch/arm/boot/dts/stm32mp157c-dk2.dts       |  8 -------
->   arch/arm/boot/dts/stm32mp157c-ed1.dts       | 25 ++++++---------------
->   arch/arm/boot/dts/stm32mp157c.dtsi          | 23 +++++++++++++++++++
->   5 files changed, 43 insertions(+), 30 deletions(-)
-> 
-
-Series applied on stm32-next.
-
-Regards
-Alex
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAxMC8yNS8yMDE5IDAyOjIyIFBNLCBDaHJpc3RvcGhlIExlcm95IHdyb3RlOgo+IAo+IAo+
+IExlIDI1LzEwLzIwMTkgw6AgMTA6MjQsIEFuc2h1bWFuIEtoYW5kdWFsIGEgw6ljcml0wqA6Cj4+
+Cj4+Cj4+IE9uIDEwLzI1LzIwMTkgMTI6NDEgUE0sIENocmlzdG9waGUgTGVyb3kgd3JvdGU6Cj4+
+Pgo+Pj4KPj4+IExlIDI1LzEwLzIwMTkgw6AgMDc6NTIsIFFpYW4gQ2FpIGEgw6ljcml0wqA6Cj4+
+Pj4KPj4+Pgo+Pj4+PiBPbiBPY3QgMjQsIDIwMTksIGF0IDExOjQ1IFBNLCBBbnNodW1hbiBLaGFu
+ZHVhbCA8QW5zaHVtYW4uS2hhbmR1YWxAYXJtLmNvbT4gd3JvdGU6Cj4+Pj4+Cj4+Pj4+IE5vdGhp
+bmcgc3BlY2lmaWMuIEJ1dCBqdXN0IHRlc3RlZCB0aGlzIHdpdGggeDg2IGRlZmNvbmZpZyB3aXRo
+IHJlbGV2YW50IGNvbmZpZ3MKPj4+Pj4gd2hpY2ggYXJlIHJlcXVpcmVkIGZvciB0aGlzIHRlc3Qu
+IE5vdCBzdXJlIGlmIGl0IGludm9sdmVkIFc9MS4KPj4+Pgo+Pj4+IE5vLCBpdCB3aWxsIG5vdC4g
+SXQgbmVlZHMgdG8gcnVuIGxpa2UsCj4+Pj4KPj4+PiBtYWtlIFc9MSAtaiA2NCAyPi90bXAvd2Fy
+bnMKPj4+Pgo+Pj4KPj4+IEFyZSB3ZSB0YWxraW5nIGFib3V0IHRoaXMgcGVhY2Ugb2YgY29kZSA/
+Cj4+Pgo+Pj4gK3N0YXRpYyB1bnNpZ25lZCBsb25nIF9faW5pdCBnZXRfcmFuZG9tX3ZhZGRyKHZv
+aWQpCj4+PiArewo+Pj4gK8KgwqDCoCB1bnNpZ25lZCBsb25nIHJhbmRvbV92YWRkciwgcmFuZG9t
+X3BhZ2VzLCB0b3RhbF91c2VyX3BhZ2VzOwo+Pj4gKwo+Pj4gK8KgwqDCoCB0b3RhbF91c2VyX3Bh
+Z2VzID0gKFRBU0tfU0laRSAtIEZJUlNUX1VTRVJfQUREUkVTUykgLyBQQUdFX1NJWkU7Cj4+PiAr
+Cj4+PiArwqDCoMKgIHJhbmRvbV9wYWdlcyA9IGdldF9yYW5kb21fbG9uZygpICUgdG90YWxfdXNl
+cl9wYWdlczsKPj4+ICvCoMKgwqAgcmFuZG9tX3ZhZGRyID0gRklSU1RfVVNFUl9BRERSRVNTICsg
+cmFuZG9tX3BhZ2VzICogUEFHRV9TSVpFOwo+Pj4gKwo+Pj4gK8KgwqDCoCBXQVJOX09OKChyYW5k
+b21fdmFkZHIgPiBUQVNLX1NJWkUpIHx8Cj4+PiArwqDCoMKgwqDCoMKgwqAgKHJhbmRvbV92YWRk
+ciA8IEZJUlNUX1VTRVJfQUREUkVTUykpOwo+Pj4gK8KgwqDCoCByZXR1cm4gcmFuZG9tX3ZhZGRy
+Owo+Pj4gK30KPj4+ICsKPj4+Cj4+PiByYW1kb21fdmFkZHIgaXMgdW5zaWduZWQsCj4+PiByYW5k
+b21fcGFnZXMgaXMgdW5zaWduZWQgYW5kIGxvd2VyIHRoYW4gdG90YWxfdXNlcl9wYWdlcwo+Pj4K
+Pj4+IFNvIHRoZSBtYXggdmFsdWUgcmFuZG9tX3ZhZGRyIGNhbiBnZXQgaXMgRklSU1RfVVNFUl9B
+RERSRVNTICsgKChUQVNLX1NJWkUgLSBGSVJTVF9VU0VSX0FERFJFU1MgLSAxKSAvIFBBR0VfU0la
+RSkgKiBQQUdFX1NJWkUgPSBUQVNLX1NJWkUgLSAxCj4+PiBBbmQgdGhlIG1pbiB2YWx1ZSByYW5k
+b21fdmFkZHIgY2FuIGdldCBpcyBGSVJTVF9VU0VSX0FERFJFU1MgKHRoYXQncyB3aGVuIHJhbmRv
+bV9wYWdlcyA9IDApCj4+Cj4+IFRoYXQncyByaWdodC4KPj4KPj4+Cj4+PiBTbyB0aGUgV0FSTl9P
+TigpIGlzIGp1c3QgdW5uZWVkZWQsIGlzbid0IGl0ID8KPj4KPj4gSXQgaXMganVzdCBhIHNhbml0
+eSBjaGVjayBvbiBwb3NzaWJsZSB2YWRkciB2YWx1ZXMgYmVmb3JlIGl0J3MgY29ycmVzcG9uZGlu
+Zwo+PiBwYWdlIHRhYmxlIG1hcHBpbmdzIGNvdWxkIGJlIGNyZWF0ZWQuIElmIGl0J3Mgd29ydGgg
+dG8gZHJvcCB0aGlzIGluIGZhdm9yIG9mCj4+IGF2b2lkaW5nIHRoZXNlIHVud2FudGVkIHdhcm5p
+bmcgbWVzc2FnZXMgb24geDg2LCB3aWxsIGdvIGFoZWFkIHdpdGggaXQgYXMgaXQKPj4gaXMgbm90
+IHN1cGVyIGltcG9ydGFudC4KPj4KPiAKPiBCdXQgeW91IGFyZSBjaGVja2luZyB3aGF0ID8gVGhh
+dCB0aGUgY29tcGlsZXIgZG9lcyBjYWxjdWxhdGlvbiBjb3JyZWN0bHkgb3Igd2hhdCA/CgpJSVJD
+LCBwcm9iYWJseSB0aGlzIHdhcyBmb3IgbGF0ZXIgaWYgYW5kIHdoZW4gdGhlIHZhZGRyIGNhbGN1
+bGF0aW9uIGJlY29tZXMKZGVwZW5kZW50IG9uIG90aGVyIGZhY3RvcnMgcmF0aGVyIHRoYW4gdGhp
+cyBzaW1wbGUgYXJpdGhtZXRpYyBpbnZvbHZpbmcgc3RhcnQKYW5kIGVuZCBvZiBwcm9jZXNzIGFk
+ZHJlc3Mgc3BhY2Ugb24gYSBwbGF0Zm9ybS4KCj4gQXMgbWVudGlvbm5lZCBqdXN0IGFib3ZlLCBi
+YXNlZCBvbiB0aGUgY2FsY3VsYXRpb24gZG9uZSwgd2hhdCB5b3UgYXJlIHRlc3RpbmcgY2Fubm90
+IGhhcHBlbiwgc28gSSdtIGhhdmluZyBhIGhhcmQgdGltZSB1bmRlcnN0YW5kaW5nIHdoYXQga2lu
+ZCBvZiBzYW5pdHkgY2hlY2sgaXQgY2FuIGJlLgoKWW91IGFyZSByaWdodC4KCj4gCj4gQ2FuIHlv
+dSBnaXZlIGFuIGV4ZW1wbGUgb2YgYSBzaXR1YXRpb24gd2hpY2ggY291bGQgdHJpZ2dlciB0aGUg
+d2FybmluZyA/CgpJIHdhcyBtaXN0YWtlbi4gV2UgZG9udCBuZWVkIHRob3NlIGNoZWNrcyBmb3Ig
+bm93LCBoZW5jZSB3aWxsIGRyb3AgdGhlbSBuZXh0IHRpbWUuCgo+IAo+IENocmlzdG9waGUKPiAK
+Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFy
+bS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9y
+ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1r
+ZXJuZWwK
