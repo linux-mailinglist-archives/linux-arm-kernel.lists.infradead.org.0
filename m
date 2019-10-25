@@ -2,87 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0547E53EF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 20:52:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D06CCE542E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 21:18:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+OoWBFtoAXm6IEjfxcecEHo9F/i7GbEx69eFctz1oA8=; b=EPwT7hTSngTxYQ
-	Y2SI0ikHmCkueeT8hSC9qJvV3mZzmZjiInUXAH2pirFTo5K+pIXHiqP3KK2BZbJWQNPlh+TOcR+Hy
-	mVLWcH3T1XyLMdIsOsz25TFfUH7uI8X46vQe4q6naY7a/CMYkBLwAaPxDNufnZmcF7wghkdk7zPNr
-	4kp0DE+VGGgzoCJpRzMqf5lHNslxEWZP76lv9BPvAHT8OIvZAvjBEzfL/rHzsqcAYFSMqxQeaKoo9
-	Dq/HRhon0WMAmnCv/RFuNxaK9bEO9qviueXb/c/gorb5gyVG4n5LAfSwBbCkGyU6DgSY4lUF2Kr/o
-	yzfMtAm647ReiEMYdJyg==;
+	List-Owner; bh=dCZZgFH9LZim8qklyTN3D7pLlnRsl0zgihnd04tYUGs=; b=ig61MyXYt3Bb6i
+	c3//j7jvPpahO+jp4dsCkvXdTm/MLVDdW6hjxg+AIKTILaw+6q0HJdPK3PzFIXHLhs/7Mn4DhbfvA
+	XzA0zvCZ188+B67CYwyEkwDUZiftolol7AEcAHqGvvyJhyknQAUBBqsFlJ4HwzDua2nOMqfoK0tI1
+	75ZYEshRXBy6du+6xkUXrOWOAJTXQUFMefyUWBNrl1sGYX2q0S4oEtyFiChtA6EDaUIhIIR+POM+8
+	CimiqphzH5IOLKCBLdDTpP/npA+xyi+1Gcdg4fB6zbGXCKO2A7pSrBHqFmHXnFOUyk155b/g/cJby
+	mjJQXWT8MTdFJpbLb8Ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iO4hD-0005eL-Oc; Fri, 25 Oct 2019 18:52:23 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1iO564-0007Vi-8n; Fri, 25 Oct 2019 19:18:04 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iO4gV-0005CJ-7y
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 18:51:41 +0000
-Received: by mail-wr1-x443.google.com with SMTP id w18so3511398wrt.3
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 25 Oct 2019 11:51:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=Q+iACLBvw6hCCkNMWVDo9dYY6POCxwyjg5JBiN7Fojg=;
- b=hH3PiQ5/C4qYxSEafpBHVzLMCHo2J8w8CaFH8dzSqQ5dZQ1MdF+nCFkUgvxrVhHu8N
- 6Pr0NJNWZh9Js2JvQrcAuP69DLEmY4RJL4gWcoK+FSrWyjs/h2iJc1laowwR21SEV9c+
- h+6quHN/6rLXtZjjds2vwt8sBLwdegz5sY3/GxPIltxQx5GkF9/BKHswcwmBOBwQeWpn
- e/D00AkZX6JGayCqws4pD6jJNusH42MeN+iFdJd3fV3tDxS25lziBRXb0x693TkEkijj
- LcCvy1j9ZnkYDKjrN/8Bt3rx6ZsgAclMOtJpyNI15d4GWcPH7L8YYqrFNLuuKARVPgpl
- GQ2Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=Q+iACLBvw6hCCkNMWVDo9dYY6POCxwyjg5JBiN7Fojg=;
- b=rtT6+yWwi68GiAQ7cCBFqn51KzxgwgQjYt7/OkVp6ZlC87vQj7D4wO3kzid2jkKf7x
- ftDdpcGPW1CRUb3bm9lgfo854NhUtW1JYOs1Oe5kX9crYLOXU3b75IdmntLXM6dccn2H
- zUcdy5ZbC6C0OnRu4duRks5ISmmr1SrK2KEOBCHX95Xl/qVPGsbXGzLuGNKOOiPNpdxW
- vwySuy6eBh4n5st0mfiBiawH34ky6d6sfEdvcf6ify0R79YlEhBowi1L30FIKLJgrqVD
- AhLcH2iPRXshuyyA8MlCyGXj+QwIqUcjSzIGnHdvf2SCgpc6+KlJVnu5MHsTsKCnrKoR
- q4KQ==
-X-Gm-Message-State: APjAAAXuOJX/hd0kaKee/p/ttDHcxJcjnVWMf92ABNJw4bdK3nx9Qz1i
- 9ztY25eQIn7Hs9UuAyMISYk=
-X-Google-Smtp-Source: APXvYqw6fwwDvCcymz+NQ1L4FhDY53LrjehhsmqG/5kU0ansV1t3WcjQGsP4tlyreAjV4OdTXN0m8Q==
-X-Received: by 2002:a5d:4283:: with SMTP id k3mr4346397wrq.236.1572029497894; 
- Fri, 25 Oct 2019 11:51:37 -0700 (PDT)
-Received: from Red.localdomain (lfbn-1-7036-79.w90-116.abo.wanadoo.fr.
- [90.116.209.79])
- by smtp.googlemail.com with ESMTPSA id l22sm4821683wrb.45.2019.10.25.11.51.36
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 25 Oct 2019 11:51:37 -0700 (PDT)
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: davem@davemloft.net, herbert@gondor.apana.org.au, mark.rutland@arm.com,
- mripard@kernel.org, p.zabel@pengutronix.de, robh+dt@kernel.org,
- wens@csie.org
-Subject: [PATCH v3 4/4] ARM: dts: sun9i: a80: Add Security System node
-Date: Fri, 25 Oct 2019 20:51:28 +0200
-Message-Id: <20191025185128.24068-5-clabbe.montjoie@gmail.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20191025185128.24068-1-clabbe.montjoie@gmail.com>
-References: <20191025185128.24068-1-clabbe.montjoie@gmail.com>
+ id 1iO55s-0007V6-PV
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 19:17:54 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=7IaAfChe4RlxjEJPLTRT+ghfkKPE5d79lzTxOal9/Mo=; b=vf7HxV+MWhSZJRuXT/2pGmtvo
+ TPUF5/heEceDKbZgne+5QZvOKbaipENH1e9gM9w8Zv8sEUm//LMm6llW1TKXIYJnE7Hl0fa3JhtnG
+ BDNvgIJe9JYUaIq6fe5XbaHpe9e9f8Zv74zc4Bipoxb2KDhobvtNRziqDMPrAKgiaHKpolx5oyWyP
+ 9CCdssCYNaQQT0ZdoHpQ3lL3XyADb/LQMaSEl+qQa3UCAYemeMlwbfL0GpNssjFsXyZRYrnTKVR/x
+ I0xmazN2MrDg/EOJhvOyQYuoopfKutL5zO7FRxoK8+AWkKMMRvLJMtt9eBgYW4PtVn6cNRIUZd9nQ
+ seUO0HiTg==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:47372)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1iO55f-0004eJ-H2; Fri, 25 Oct 2019 20:17:39 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1iO55c-0007gv-5G; Fri, 25 Oct 2019 20:17:36 +0100
+Date: Fri, 25 Oct 2019 20:17:36 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: arm version of generic VDSO?
+Message-ID: <20191025191735.GE25745@shell.armlinux.org.uk>
+References: <CAK8P3a2RDBTnKZ-yOJkqY5+2LBeeqvGJ3AMnf+cnqbDVPeUf6g@mail.gmail.com>
+ <df19494e-589b-fbf5-bf19-8e8752b5e5be@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <df19494e-589b-fbf5-bf19-8e8752b5e5be@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_115139_370381_3DF6C6FF 
-X-CRM114-Status: GOOD (  11.32  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191025_121752_980021_130A0471 
+X-CRM114-Status: GOOD (  13.65  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (clabbe.montjoie[at]gmail.com)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -101,48 +87,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-sunxi@googlegroups.com, Corentin Labbe <clabbe.montjoie@gmail.com>,
- linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: y2038 Mailman List <y2038@lists.linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Arnd Bergmann <arnd@arndb.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Security System is a hardware cryptographic accelerator that support
-AES/MD5/SHA1/DES/3DES/PRNG/RSA algorithms.
-It could be found on Allwinner SoC A80 and A83T
+On Thu, Oct 24, 2019 at 01:47:24PM +0100, Vincenzo Frascino wrote:
+> Hi Arnd,
+> 
+> On 10/24/19 1:34 PM, Arnd Bergmann wrote:
+> > Hi Vinvenzo,
+> > 
+> > I'm looking through some of the remaining y2038 work, and noticed
+> > that arch/arm64 has the new generic vdso implementation, but arch/arm
+> > does.
+> > 
+> 
+> This is correct, arch/arm does not have support for the generic vDSO library.
+> 
+> > Do you patches for using the same code on arch/arm?
+> > 
+> 
+> The patches were send for review together with the arm64 ones and the rest of
+> the architectures supported but they did not get merged yet and I do not know why.
 
-This patch adds it on the Allwinner A80 SoC Device-tree.
+I think you've forgotten, you didn't read the email from the patch
+system, or the "Regression in 5.3-rc1 and later" email thread on the
+mailing lists.
 
-Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
----
- arch/arm/boot/dts/sun9i-a80.dtsi | 9 +++++++++
- 1 file changed, 9 insertions(+)
+  https://www.armlinux.org.uk/developer/patches/viewpatch.php?id=8868/1
+  https://lore.kernel.org/lkml/faaa3843-09a6-1a21-3448-072eeed1ea00@googlemail.com/
 
-diff --git a/arch/arm/boot/dts/sun9i-a80.dtsi b/arch/arm/boot/dts/sun9i-a80.dtsi
-index b5c46934b5b1..1d900f591d5f 100644
---- a/arch/arm/boot/dts/sun9i-a80.dtsi
-+++ b/arch/arm/boot/dts/sun9i-a80.dtsi
-@@ -457,6 +457,15 @@
- 			reg = <0x01700000 0x100>;
- 		};
- 
-+		crypto: crypto@1c02000 {
-+			compatible = "allwinner,sun9i-a80-crypto";
-+			reg = <0x01c02000 0x1000>;
-+			interrupts = <GIC_SPI 80 IRQ_TYPE_LEVEL_HIGH>;
-+			resets = <&ccu RST_BUS_SS>;
-+			clocks = <&ccu CLK_BUS_SS>, <&ccu CLK_SS>;
-+			clock-names = "bus", "mod";
-+		};
-+
- 		mmc0: mmc@1c0f000 {
- 			compatible = "allwinner,sun9i-a80-mmc";
- 			reg = <0x01c0f000 0x1000>;
+Basically, I couldn't merge for the last merge window without causing
+a regression, so it's delayed until the next merge window.
+
+Thanks.
+
 -- 
-2.21.0
-
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
