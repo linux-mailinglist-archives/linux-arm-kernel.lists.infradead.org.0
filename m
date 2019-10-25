@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94180E4186
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 04:31:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2336E41A9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 04:40:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q/fvZmkv1pYxmQPnwkjXweR8zCMF82dfTDJm+/9Hifg=; b=fU594iAkr/oiwf
-	GgXHDEMVYc49/HTL/q11LiYgmtwuf8Y3PEEtVUef+lw2Qp5erzxnaRTZOEWKmX1gGr+zxyCcfapxJ
-	gwhCgcl5y71GoYnrGLO0w9a+8yKO82h6DrqInA+Z0u/hUh/nT6Flz6AUL1/vg5mJauFuJrwoLGS8F
-	C+2jxxK9grzYUflimuqZopxB0hu475ANALANSoJIZ/7NCdXzGvylhxWmqtfRj9kgSuaZZql2rMoOI
-	QXiD8fvq1k9B6sHXHHDRHSyv0kIVEHT2rR4+qWHH9UrUoaFfoJUCGf++Xj8pw1hKeBIrh4xZnrIwr
-	a/0nOaGSCpcWdPFcysmg==;
+	List-Owner; bh=NYM2bnyklHm82Ym+hRcmRSgdMynpbLOWfWI+YI+Qn1k=; b=kSkRiVbKMjJkoT
+	GqKBPvbRYrwpbP4y1kKV8jR4R2/rrSbOmLmWh53UKj3TLbUdBm+eFAWQqKNDY5euqKxE7CCxa1TZx
+	EBrjl47xtjTO4kRt1dWam5l7eHqzDtpTnpfiR6Z4GnfP6wnLc2ZxJPHo3rdDv/UxKDhJfmjCr1Z45
+	FyqSn4rgDwNnkYUBYMYr9tYmVq+nvmu9MYn5FdDcsHEw4xtklURKzSMkxvlAi9RGBZKhWX4B6TluR
+	mIlafyNMbSGakIcVrxTjEGLAaw+ZT8cXMfYHk2HhOYqxOQ8HlF80WvI9YLBw7ftt++TKHUx2iUpuj
+	nUEA6sxIJHcQyQ4ypr9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNpO7-0001ls-RJ; Fri, 25 Oct 2019 02:31:39 +0000
+	id 1iNpWa-0005BG-8w; Fri, 25 Oct 2019 02:40:24 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNpNz-0001l5-JG
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 02:31:32 +0000
+ id 1iNpWQ-0005AG-03
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 02:40:15 +0000
 Received: from dragon (li937-157.members.linode.com [45.56.119.157])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EEC7B206DD;
- Fri, 25 Oct 2019 02:31:22 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 588EA2166E;
+ Fri, 25 Oct 2019 02:40:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571970690;
- bh=wS+ZqOi0AxyDhn3tjgIiQc5vD2xB4fXHjduh81AOn60=;
+ s=default; t=1571971213;
+ bh=VuIkAO3ugvVIrk34pCVzm5VFvJRsMK+QkxTA75X9r+0=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=x/kHHoHqs74Cg37pKPiTkfnrPUKgh6AM+ieR+A4dSF5PHEy8UzPbyiASNrXJ5IleJ
- QvfPq/e2LqArQ++vhO5SPkcoXil9olRQQ8TkzbKa9vpyo8XXja+HceR/878vs1z0+M
- bhyMKZD8vHeQzhfxTtLX57QuGtooEj8U1VBgu7l0=
-Date: Fri, 25 Oct 2019 10:31:12 +0800
+ b=ly9foHepoYGj/bMScIwLR5+FQLcHMIn88pQaij8yEXfm4+MVhQKaK9tMUjKufAEQB
+ qKGc5v3xKBChLV1GxJcePyu+4YnqN0OsQMQ3MRxBUSvYUNqmO/MsDjr9SH5GOXrllj
+ Q9/YERVB/J0pjX6qcEBkoOdn1XCcju4fnXo1cJEM=
+Date: Fri, 25 Oct 2019 10:39:53 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
-Subject: Re: [PATCH v4] arm64: dts: imx8mq: Init rates and parents configs
- for clocks
-Message-ID: <20191025023110.GA30015@dragon>
-References: <20190728152040.15323-1-daniel.baluta@nxp.com>
- <20191022161919.GA3727@bogon.m.sigxcpu.org>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH v3 06/10] ARM: dts: imx: Rename "iram" node to "sram"
+Message-ID: <20191025023951.GB30015@dragon>
+References: <20191002164316.14905-1-krzk@kernel.org>
+ <20191002164316.14905-6-krzk@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191022161919.GA3727@bogon.m.sigxcpu.org>
+In-Reply-To: <20191002164316.14905-6-krzk@kernel.org>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_193131_654643_F2AFB5FF 
-X-CRM114-Status: GOOD (  11.24  )
+X-CRM114-CacheID: sfid-20191024_194014_064751_9A7E8009 
+X-CRM114-Status: GOOD (  10.02  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,43 +77,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, baruch@tkos.co.il, abel.vesa@nxp.com,
- Anson.Huang@nxp.com, ccaione@baylibre.com, andrew.smirnov@gmail.com,
- festevam@gmail.com, s.hauer@pengutronix.de, angus@akkea.ca,
- linux-kernel@vger.kernel.org, linux-imx@nxp.com,
- Daniel Baluta <daniel.baluta@nxp.com>, shengjiu.wang@nxp.com,
- linux-arm-kernel@lists.infradead.org, l.stach@pengutronix.de
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
+ Tony Lindgren <tony@atomide.com>, Thierry Reding <thierry.reding@gmail.com>,
+ Fabio Estevam <festevam@gmail.com>, linux-samsung-soc@vger.kernel.org,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ Jonathan Hunter <jonathanh@nvidia.com>, Kukjin Kim <kgene@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+ devicetree@vger.kernel.org, Jason Cooper <jason@lakedaemon.net>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Rob Herring <robh+dt@kernel.org>,
+ Santosh Shilimkar <ssantosh@kernel.org>, linux-tegra@vger.kernel.org,
+ =?iso-8859-1?Q?Beno=EEt?= Cousson <bcousson@baylibre.com>,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Pengutronix Kernel Team <kernel@pengutronix.de>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 22, 2019 at 06:19:19PM +0200, Guido G=FCnther wrote:
-> Hi,
-> On Sun, Jul 28, 2019 at 06:20:40PM +0300, Daniel Baluta wrote:
-> > From: Abel Vesa <abel.vesa@nxp.com>
-> > =
+On Wed, Oct 02, 2019 at 06:43:12PM +0200, Krzysztof Kozlowski wrote:
+> The device node name should reflect generic class of a device so rename
+> the "iram" node to "sram".  This will be also in sync with upcoming DT
+> schema.  No functional change.
+> 
+> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 
-> > Add the initial configuration for clocks that need default parent and r=
-ate
-> > setting. This is based on the vendor tree clock provider parents and ra=
-tes
-> > configuration except this is doing the setup in dts rather then using c=
-lock
-> > consumer API in a clock provider driver.
-> > =
-
-> > Note that by adding the initial rate setting for audio_pll1/audio_pll
-> > setting we need to remove it from imx8mq-librem5-devkit.dts
-> =
-
-> It seems this never made it into any tree, any particular reason for
-> that?
-
-There is some discussion going on and I haven't seen it reaches an
-explicit agreement.
-
-Shawn
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
