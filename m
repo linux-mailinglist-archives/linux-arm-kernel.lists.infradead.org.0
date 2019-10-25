@@ -2,56 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71B27E43A3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 08:35:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E65CE43C1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 08:47:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EzrWuKXblXWcWR+2CfZn2NSheb8IhHJ0iQOEpr1bAI4=; b=jl1nRm+0ILbjBx
-	cfmEOq1dgI6JDe1jXPCwBSefj5f93RzWU4Cxg16EYPVw9wduFYK6SDy8NSAPm1o8o+11CIBhofckh
-	7GSilKYR2crVeOBX8Xg+/ZjKm6mp86XSktgsvsA7LJQ3C9QncaE2ZvKt1aMWdR4lLt+lHNU5tH+KO
-	hfCDf4MN0lK/eY1xTWjmoCN5ns0PQD7RJgQG3+RhlLpCVw1PwZjC5joEVh4Ywqa3Psrd7f1qr6naW
-	EYCWmoxjZ6lJqNSr5fYoQYt2sEVjjaqsIVc+tF7/3c/C/ETErdbsyQtj7euy/1dxWyI7xEDX5UQU6
-	UrnjE9uNrZBQYf/JBHDg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=SpVWgnZCCXIE2s2ZUC/bjqGnv07/zwcDgOBZnsThdNw=; b=kgrwsJzBkiuKie4ezGh2Ya0wX
+	6uB9kPW8M4fjpyvigitWlmRqoUOoUYx6TDTTCGOIAIaP2jrC5sDEPO4Wm2NDWs3B+0yiWLp+cU854
+	CyLZPR2FTZOSaChPxAu+VFJFEMuRhprJzKjHx6LcOIHdtfG0nqyIbwDHaA/+/tZW4tqCE7INmO78s
+	l2jishhq5g823bYqQQu49pW5Fk4DQjdPr3FiGunrbCwWfJgK3GS5pwqm6/XUvbZkiYwScJWYu+If/
+	dSwnleuaOMn7oW4n2b5hPIo9Km2h4d519OGOt78ITyjIDDZu8JkvDS/W7bs+jeeyOSC0ntbgXuYn7
+	EEWAJR15Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNtC0-0001Xe-Si; Fri, 25 Oct 2019 06:35:24 +0000
-Received: from [217.140.110.172] (helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNtBn-0000HI-L1; Fri, 25 Oct 2019 06:35:13 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BB71328;
- Thu, 24 Oct 2019 23:34:58 -0700 (PDT)
-Received: from [10.162.41.137] (p8cg001049571a15.blr.arm.com [10.162.41.137])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 2DD333F718; Thu, 24 Oct 2019 23:37:36 -0700 (PDT)
-Subject: Re: [PATCH V7] mm/debug: Add tests validating architecture page table
- helpers
-To: Qian Cai <cai@lca.pw>
-References: <ccdd4f7a-c7dc-ca10-d30c-0bc05c7136c7@arm.com>
- <69256008-2235-4AF1-A3BA-0146C82CCB93@lca.pw>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <5ce5a76c-ea89-c2a1-6665-7d75bce5fb87@arm.com>
-Date: Fri, 25 Oct 2019 12:05:18 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1iNtNs-0005Bh-CA; Fri, 25 Oct 2019 06:47:40 +0000
+Received: from mail-sz.amlogic.com ([211.162.65.117])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iNtNe-0005BA-P7; Fri, 25 Oct 2019 06:47:28 +0000
+Received: from [10.28.19.114] (10.28.19.114) by mail-sz.amlogic.com
+ (10.28.11.5) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Fri, 25 Oct
+ 2019 14:47:37 +0800
+Subject: Re: [PATCH v2 2/3] clk: meson: add support for A1 PLL clock ops
+To: Jerome Brunet <jbrunet@baylibre.com>, Neil Armstrong
+ <narmstrong@baylibre.com>
+References: <1571382865-41978-1-git-send-email-jian.hu@amlogic.com>
+ <1571382865-41978-3-git-send-email-jian.hu@amlogic.com>
+ <1jtv82bai3.fsf@starbuckisacylon.baylibre.com>
+From: Jian Hu <jian.hu@amlogic.com>
+Message-ID: <77eb8a68-f5b5-357b-f71c-e22337d88a39@amlogic.com>
+Date: Fri, 25 Oct 2019 14:47:36 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <69256008-2235-4AF1-A3BA-0146C82CCB93@lca.pw>
+In-Reply-To: <1jtv82bai3.fsf@starbuckisacylon.baylibre.com>
 Content-Language: en-US
+X-Originating-IP: [10.28.19.114]
+X-ClientProxiedBy: mail-sz.amlogic.com (10.28.11.5) To mail-sz.amlogic.com
+ (10.28.11.5)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_233511_782235_359DB586 
-X-CRM114-Status: GOOD (  14.68  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20191024_234726_819216_8C5064B5 
+X-CRM114-Status: GOOD (  23.62  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,67 +64,169 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
- James Hogan <jhogan@kernel.org>,
- Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
- linux-mm@kvack.org, Dave Hansen <dave.hansen@intel.com>,
- Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- Russell King - ARM Linux <linux@armlinux.org.uk>,
- Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
- Jason Gunthorpe <jgg@ziepe.ca>, Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Ingo Molnar <mingo@kernel.org>, Kees Cook <keescook@chromium.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
- Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
- Christophe Leroy <christophe.leroy@c-s.fr>,
- Sri Krishna chowdary <schowdary@nvidia.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
- Vineet Gupta <vgupta@synopsys.com>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>,
- Mike Kravetz <mike.kravetz@oracle.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Rob Herring <robh@kernel.org>, Victor Wan <victor.wan@amlogic.com>,
+ Jianxin Pan <jianxin.pan@amlogic.com>, devicetree@vger.kernel.org,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, Qiufang Dai <qiufang.dai@amlogic.com>,
+ Chandle Zou <chandle.zou@amlogic.com>, linux-amlogic@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiAxMC8yNS8yMDE5IDExOjIyIEFNLCBRaWFuIENhaSB3cm90ZToKPiAKPiAKPj4gT24gT2N0
-IDI0LCAyMDE5LCBhdCAxMTo0NSBQTSwgQW5zaHVtYW4gS2hhbmR1YWwgPEFuc2h1bWFuLktoYW5k
-dWFsQGFybS5jb20+IHdyb3RlOgo+Pgo+PiBOb3RoaW5nIHNwZWNpZmljLiBCdXQganVzdCB0ZXN0
-ZWQgdGhpcyB3aXRoIHg4NiBkZWZjb25maWcgd2l0aCByZWxldmFudCBjb25maWdzCj4+IHdoaWNo
-IGFyZSByZXF1aXJlZCBmb3IgdGhpcyB0ZXN0LiBOb3Qgc3VyZSBpZiBpdCBpbnZvbHZlZCBXPTEu
-Cj4gCj4gTm8sIGl0IHdpbGwgbm90LiBJdCBuZWVkcyB0byBydW4gbGlrZSwKPiAKPiBtYWtlIFc9
-MSAtaiA2NCAyPi90bXAvd2FybnMKCkFoaCwgc28gd2UgZXhwbGljaXRseSBhc2sgZm9yIGl0LgoK
-VW5mb3J0dW5hdGVseSBjb21waWxlciBzdGlsbCBmbGFncyBpdCBhcyBhbiB3YXJuaW5nLiBKdXN0
-IHdvbmRlcmluZyB3aHkgdGhpcwppcyBzdGlsbCBhIHByb2JsZW0gaWYgdGhlIHNlY29uZCBjb25k
-aXRpb24gZm9yIGFuIE9SIGV4cHJlc3Npb24gaXMgYWx3YXlzIGZhbHNlLgpCZWNhdXNlIGV2YWx1
-YXRpb24gc3RpbGwgbmVlZHMgdG8gYmUgcGVyZm9ybWVkIGZvciB0aGUgZmlyc3QgY29uZGl0aW9u
-IGFueXdheXMsCmJlZm9yZSBhcnJpdmluZyBhdCB0aGUgcmVzdWx0LgoKICBERVNDRU5EICBvYmp0
-b29sCiAgQ0FMTCAgICBzY3JpcHRzL2F0b21pYy9jaGVjay1hdG9taWNzLnNoCiAgQ0FMTCAgICBz
-Y3JpcHRzL2NoZWNrc3lzY2FsbHMuc2gKICBDSEsgICAgIGluY2x1ZGUvZ2VuZXJhdGVkL2NvbXBp
-bGUuaAogIENDICAgICAgbW0vZGVidWdfdm1fcGd0YWJsZS5vCkluIGZpbGUgaW5jbHVkZWQgZnJv
-bSAuL2FyY2gveDg2L2luY2x1ZGUvYXNtL2J1Zy5oOjgzOjAsCiAgICAgICAgICAgICAgICAgZnJv
-bSAuL2luY2x1ZGUvbGludXgvYnVnLmg6NSwKICAgICAgICAgICAgICAgICBmcm9tIC4vaW5jbHVk
-ZS9saW51eC9tbWRlYnVnLmg6NSwKICAgICAgICAgICAgICAgICBmcm9tIC4vaW5jbHVkZS9saW51
-eC9nZnAuaDo1LAogICAgICAgICAgICAgICAgIGZyb20gbW0vZGVidWdfdm1fcGd0YWJsZS5jOjEz
-OgptbS9kZWJ1Z192bV9wZ3RhYmxlLmM6IEluIGZ1bmN0aW9uIOKAmGdldF9yYW5kb21fdmFkZHLi
-gJk6Cm1tL2RlYnVnX3ZtX3BndGFibGUuYzozMTQ6MTc6IHdhcm5pbmc6IGNvbXBhcmlzb24gb2Yg
-dW5zaWduZWQgZXhwcmVzc2lvbiA8IDAgaXMgYWx3YXlzIGZhbHNlIFstV3R5cGUtbGltaXRzXQog
-ICAocmFuZG9tX3ZhZGRyIDwgRklSU1RfVVNFUl9BRERSRVNTKSk7CiAgICAgICAgICAgICAgICAg
-XgouL2luY2x1ZGUvYXNtLWdlbmVyaWMvYnVnLmg6MTEzOjI1OiBub3RlOiBpbiBkZWZpbml0aW9u
-IG9mIG1hY3JvIOKAmFdBUk5fT07igJkKICBpbnQgX19yZXRfd2Fybl9vbiA9ICEhKGNvbmRpdGlv
-bik7ICAgIFwKICAgICAgICAgICAgICAgICAgICAgICAgIF5+fn5+fn5+fgoKQXMgeW91IG1lbnRp
-b25lZCBHQ0MgaXMgcXVpdGUgc3R1YmJvcm4gaGVyZS4gQW55d2F5cywgbGV0cyBrZWVwIGl0IHVu
-Y2hhbmdlZC4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-CmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LWFybS1rZXJuZWwK
+Hi, Jerome
+
+On 2019/10/21 19:31, Jerome Brunet wrote:
+> 
+> On Fri 18 Oct 2019 at 09:14, Jian Hu <jian.hu@amlogic.com> wrote:
+> 
+>> The A1 PLL design is different with previous SoCs. The PLL
+>> internal analog modules Power-on sequence is different
+>> with previous, and thus requires a strict register sequence to
+>> enable the PLL. Unlike the previous series, the maximum frequency
+>> is 6G in G12A, for A1 the maximum is 1536M.
+>>
+>> Signed-off-by: Jian Hu <jian.hu@amlogic.com>
+>> ---
+>>   drivers/clk/meson/clk-pll.c | 66 ++++++++++++++++++++++++++++++++++++++++-----
+>>   drivers/clk/meson/clk-pll.h |  1 +
+>>   2 files changed, 61 insertions(+), 6 deletions(-)
+>>
+>> diff --git a/drivers/clk/meson/clk-pll.c b/drivers/clk/meson/clk-pll.c
+>> index ddb1e56..b440e62 100644
+>> --- a/drivers/clk/meson/clk-pll.c
+>> +++ b/drivers/clk/meson/clk-pll.c
+>> @@ -349,6 +349,56 @@ static void meson_clk_pll_disable(struct clk_hw *hw)
+>>   	meson_parm_write(clk->map, &pll->en, 0);
+>>   }
+>>   
+>> +/*
+>> + * The A1 design is different with previous SoCs.The PLL
+>> + * internal analog modules Power-on sequence is different with
+>> + * previous, different PLL has the different sequence, and
+>> + * thus requires a strict register sequence to enable the PLL.
+>> + * When set a new target frequency, the sequence should keep
+>> + * the same with the initial sequence. Unlike the previous series,
+>> + * the maximum frequency is 6G in G12A, for A1 the maximum
+>> + * is 1536M.
+> 
+> The comment about the max frequency belongs in your a1 driver, not in
+> the PLL driver
+> 
+OK, I will remove the max frequency comments
+>> + */
+>> +static void meson_params_update_with_init_seq(struct clk_regmap *clk,
+>> +				       struct meson_clk_pll_data *pll,
+>> +				       unsigned int m, unsigned int n,
+>> +				       unsigned int frac)
+>> +{
+>> +	struct parm *pm = &pll->m;
+>> +	struct parm *pn = &pll->n;
+>> +	struct parm *pfrac = &pll->frac;
+>> +	const struct reg_sequence *init_regs = pll->init_regs;
+>> +	unsigned int i, val;
+>> +
+>> +	for (i = 0; i < pll->init_count; i++) {
+>> +		if (pn->reg_off == init_regs[i].reg) {
+>> +			/* Clear M N bits and Update M N value */
+>> +			val = init_regs[i].def;
+>> +			val &= CLRPMASK(pn->width, pn->shift);
+>> +			val &= CLRPMASK(pm->width, pm->shift);
+>> +			val |= n << pn->shift;
+>> +			val |= m << pm->shift;
+>> +			regmap_write(clk->map, pn->reg_off, val);
+>> +		} else if (MESON_PARM_APPLICABLE(&pll->frac) &&
+>> +			   (pfrac->reg_off == init_regs[i].reg)) {
+>> +			/* Clear Frac bits and Update Frac value */
+>> +			val = init_regs[i].def;
+>> +			val &= CLRPMASK(pfrac->width, pfrac->shift);
+>> +			val |= frac << pfrac->shift;
+>> +			regmap_write(clk->map, pfrac->reg_off, val);
+>> +		} else {
+>> +			/*
+>> +			 * According to the PLL hardware constraint,
+>> +			 * the left registers should be setted again.
+>> +			 */
+>> +			val = init_regs[i].def;
+>> +			regmap_write(clk->map, init_regs[i].reg, val);
+>> +		}
+>> +		if (init_regs[i].delay_us)
+>> +			udelay(init_regs[i].delay_us);
+>> +	}
+> 
+> So:
+> 
+> 1) All the code above this there make the PLL lock, IOW enable the
+> PLL. It does not belong in the set_rate() callback but in enable() or
+> prepare() maybe.
+> 
+> 2) All the above is works but it is a bit over complicated for what it
+> does. From the a1_hifi_init_regs I see, all you really need to do is
+>    * toggle BIT(6) in CTRL2
+>    * toggle BIT(28) in CTRL0 (enable PARM)
+>    * toggle BIT(26) in CTRL0
+> 
+> You could use PARM 'rst' for one them and introduce another parm for the
+> other one. You would not need to repoke the whole sequence this way.
+> 
+OK, I have realized as you suggested. I will send it in the V3 patch.
+>> +}
+>> +
+>>   static int meson_clk_pll_set_rate(struct clk_hw *hw, unsigned long rate,
+>>   				  unsigned long parent_rate)
+>>   {
+>> @@ -366,16 +416,20 @@ static int meson_clk_pll_set_rate(struct clk_hw *hw, unsigned long rate,
+>>   	if (ret)
+>>   		return ret;
+>>   
+>> +	if (MESON_PARM_APPLICABLE(&pll->frac))
+>> +		frac = __pll_params_with_frac(rate, parent_rate, m, n, pll);
+>> +
+>>   	enabled = meson_parm_read(clk->map, &pll->en);
+>>   	if (enabled)
+>>   		meson_clk_pll_disable(hw);
+>>   
+>> -	meson_parm_write(clk->map, &pll->n, n);
+>> -	meson_parm_write(clk->map, &pll->m, m);
+>> -
+>> -	if (MESON_PARM_APPLICABLE(&pll->frac)) {
+>> -		frac = __pll_params_with_frac(rate, parent_rate, m, n, pll);
+>> -		meson_parm_write(clk->map, &pll->frac, frac);
+>> +	if (pll->strict_sequence)
+>> +		meson_params_update_with_init_seq(clk, pll, m, n, frac);
+>> +	else {
+>> +		meson_parm_write(clk->map, &pll->n, n);
+>> +		meson_parm_write(clk->map, &pll->m, m);
+>> +		if (MESON_PARM_APPLICABLE(&pll->frac))
+>> +			meson_parm_write(clk->map, &pll->frac, frac);
+>>   	}
+>>   
+>>   	/* If the pll is stopped, bail out now */
+>> diff --git a/drivers/clk/meson/clk-pll.h b/drivers/clk/meson/clk-pll.h
+>> index 367efd0..d5789cef 100644
+>> --- a/drivers/clk/meson/clk-pll.h
+>> +++ b/drivers/clk/meson/clk-pll.h
+>> @@ -41,6 +41,7 @@ struct meson_clk_pll_data {
+>>   	const struct pll_params_table *table;
+>>   	const struct pll_mult_range *range;
+>>   	u8 flags;
+>> +	bool strict_sequence;
+> 
+> Don't introduce parameter for this We have ops to tune the behavior of
+> the clock driver. Properly refactor the code if some of it is common.
+> 
+remove the strict_sequence.
+>>   };
+>>   
+>>   extern const struct clk_ops meson_clk_pll_ro_ops;
+> 
+> .
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
