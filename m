@@ -2,45 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 124D9E5010
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 17:25:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 201FFE5020
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 17:28:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g+H759c5ZceZnlzGS/GsDeaK0N5lNrxCkB+qsrut2lc=; b=IEsWmqvGmRnYc6
-	Mh/rLKkeKV3ycgcLTO9ax2VbyanTIIG66v7ulmTnJb20f4aNi7dxXdh3ONkjDrUbxACK1QkcTVpOv
-	XRghr6//MF9hzOJjuVuMOCA41T+U8+5i3DhQRAgp3RUdjOPnLhHdTDoqO+TpS7chLYhBM8Z2vPdWx
-	/TOodNgB2uSqnYC+Uz2zmdUM/9lL7FYUBf6qPKhSA2Ecn5GvlzE1s4UEt12eNazhs5Vp/axoZJ3SW
-	JCCrELjqALXwyRnuP+kdSyQxd5XiL9f1Un/G57z4k1/nCuu5/sLGovxc380gfcOE3CxWG9ndQ0e/e
-	VOLMnrM5ST73xYv8gGuA==;
+	List-Owner; bh=vYdEDeID+ziV3OwOL0Tfz47htCCY1247UPTAZMP3pNo=; b=JRlw3WQxl0KhrM
+	r1ZRDBlejR6AWHkaoypKBsubNr4XWUkQkjhLFEoex3I9+pfCa+FDBc5fdaHJAj1iLHgGxx5AHZobs
+	6RivuUIxi/9tq8AJn4c4ob/XZVY+ZTvcmVCwEpjVTpvZCJuBqoNDxNEQCjGzIUZk0evIDuxcfFL8z
+	zY6m4RSLI3D6V83PAAFXxsRI5sVoHBjS6+KmdWo0SaoSxRWbxBw7JYx2W3GidEzL+27wcGcc6dOFP
+	e2e+8K5CApOxKcYXLmL5tcVLUJHvUl4GBs1pMmoElDROlKHf/tWN38h8wxJQbplPyPMtE8b7EEUGf
+	PqjpQqiswKBy54oAnLhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iO1Sq-0000VJ-Iq; Fri, 25 Oct 2019 15:25:20 +0000
-Received: from helcar.hmeau.com ([216.24.177.18] helo=deadmen.hmeau.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iO1SX-0008Eq-Lb; Fri, 25 Oct 2019 15:25:03 +0000
-Received: from gondobar.mordor.me.apana.org.au ([192.168.128.4] helo=gondobar)
- by deadmen.hmeau.com with esmtps (Exim 4.89 #2 (Debian))
- id 1iO1SQ-0001q4-Ix; Fri, 25 Oct 2019 23:24:54 +0800
-Received: from herbert by gondobar with local (Exim 4.89)
- (envelope-from <herbert@gondor.apana.org.au>)
- id 1iO1SK-0007sB-Ir; Fri, 25 Oct 2019 23:24:48 +0800
-Date: Fri, 25 Oct 2019 23:24:48 +0800
-From: Herbert Xu <herbert@gondor.apana.org.au>
-To: Corentin Labbe <clabbe@baylibre.com>
-Subject: Re: [PATCH v3 0/4] crypto: add amlogic crypto offloader driver
-Message-ID: <20191025152448.y3d45bt22gaavede@gondor.apana.org.au>
-References: <1571288786-34601-1-git-send-email-clabbe@baylibre.com>
+	id 1iO1VM-0001WN-L8; Fri, 25 Oct 2019 15:27:56 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iO1V8-0001Vy-8M
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 15:27:43 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2665C328;
+ Fri, 25 Oct 2019 08:27:41 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 596103F71A; Fri, 25 Oct 2019 08:27:39 -0700 (PDT)
+Date: Fri, 25 Oct 2019 16:27:37 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Yunfeng Ye <yeyunfeng@huawei.com>
+Subject: Re: [PATCH v6] arm64: psci: Reduce the waiting time for
+ cpu_psci_cpu_kill()
+Message-ID: <20191025152737.GN3328@arrakis.emea.arm.com>
+References: <0842431c-fa15-2ba1-ae6d-c1fea157941f@huawei.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1571288786-34601-1-git-send-email-clabbe@baylibre.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <0842431c-fa15-2ba1-ae6d-c1fea157941f@huawei.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_082501_949640_5534E155 
-X-CRM114-Status: GOOD (  10.85  )
+X-CRM114-CacheID: sfid-20191025_082742_340370_382FB4F4 
+X-CRM114-Status: GOOD (  13.26  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -59,65 +61,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, khilman@baylibre.com,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, linux-crypto@vger.kernel.org,
- linux-amlogic@lists.infradead.org, davem@davemloft.net,
+Cc: kstewart@linuxfoundation.org, mark.rutland@arm.com,
+ lorenzo.pieralisi@arm.com, hushiyuan@huawei.com, gregkh@linuxfoundation.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ linfeilong@huawei.com, David.Laight@ACULAB.COM, sudeep.holla@arm.com,
+ tglx@linutronix.de, wuyun.wu@huawei.com, will@kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 17, 2019 at 05:06:22AM +0000, Corentin Labbe wrote:
-> Hello
+On Mon, Oct 21, 2019 at 07:31:21PM +0800, Yunfeng Ye wrote:
+> In cases like suspend-to-disk and suspend-to-ram, a large number of CPU
+> cores need to be shut down. At present, the CPU hotplug operation is
+> serialised, and the CPU cores can only be shut down one by one. In this
+> process, if PSCI affinity_info() does not return LEVEL_OFF quickly,
+> cpu_psci_cpu_kill() needs to wait for 10ms. If hundreds of CPU cores
+> need to be shut down, it will take a long time.
 > 
-> This serie adds support for the crypto offloader present on amlogic GXL
-> SoCs.
+> Normally, there is no need to wait 10ms in cpu_psci_cpu_kill(). So
+> change the wait interval from 10 ms to max 1 ms and use usleep_range()
+> instead of msleep() for more accurate timer.
 > 
-> Tested on meson-gxl-s905x-khadas-vim and meson-gxl-s905x-libretech-cc
+> In addition, reducing the time interval will increase the messages
+> output, so remove the "Retry ..." message, instead, track time and
+> output to the the sucessful message.
 > 
-> Regards
-> 
-> Changes since v2:
-> - fixed some spelling in kconfig
-> - Use devm_platform_ioremap_resource
-> 
-> Changes since v1:
-> - renamed files and algo with gxl
-> - removed unused reset handlings
-> - splited the probe functions
-> - splited meson_cipher fallback in need_fallback() and do_fallback()
-> 
-> 
-> Corentin Labbe (4):
->   dt-bindings: crypto: Add DT bindings documentation for amlogic-crypto
->   MAINTAINERS: Add myself as maintainer of amlogic crypto
->   crypto: amlogic: Add crypto accelerator for amlogic GXL
->   ARM64: dts: amlogic: adds crypto hardware node
-> 
->  .../bindings/crypto/amlogic,gxl-crypto.yaml   |  52 +++
->  MAINTAINERS                                   |   7 +
->  arch/arm64/boot/dts/amlogic/meson-gxl.dtsi    |  10 +
->  drivers/crypto/Kconfig                        |   2 +
->  drivers/crypto/Makefile                       |   1 +
->  drivers/crypto/amlogic/Kconfig                |  24 ++
->  drivers/crypto/amlogic/Makefile               |   2 +
->  drivers/crypto/amlogic/amlogic-gxl-cipher.c   | 381 ++++++++++++++++++
->  drivers/crypto/amlogic/amlogic-gxl-core.c     | 331 +++++++++++++++
->  drivers/crypto/amlogic/amlogic-gxl.h          | 170 ++++++++
->  10 files changed, 980 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/crypto/amlogic,gxl-crypto.yaml
->  create mode 100644 drivers/crypto/amlogic/Kconfig
->  create mode 100644 drivers/crypto/amlogic/Makefile
->  create mode 100644 drivers/crypto/amlogic/amlogic-gxl-cipher.c
->  create mode 100644 drivers/crypto/amlogic/amlogic-gxl-core.c
->  create mode 100644 drivers/crypto/amlogic/amlogic-gxl.h
+> Signed-off-by: Yunfeng Ye <yeyunfeng@huawei.com>
+> Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
 
-Patches 1-3 applied.  Thanks.
+Queued for 5.5. Thanks.
+
 -- 
-Email: Herbert Xu <herbert@gondor.apana.org.au>
-Home Page: http://gondor.apana.org.au/~herbert/
-PGP Key: http://gondor.apana.org.au/~herbert/pubkey.txt
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
