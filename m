@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36722E496D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 13:10:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91EE1E4974
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 13:11:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,27 +11,28 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=+om/IUfcge+dFJd9U3/5GtOFoXP1DsYTwjwBf0tMRjY=; b=DOvzQGrpqCgcdHpd5adpKxjAKp
-	+/+ah1j+zfbuD/yk1rD3/MQxcxVdFs9WHjY52wFqgZOqHYO1vcs3+HcBm2hcmLS0KY+0f/SYfWy70
-	qqBJ3WLskj0DsYd84NwrA9+7Tl8xP8ENx7EXaJRqjTdAyHh7HkjmupJF+52eptxjICQ3MIeKn39p6
-	eArISvr5+FYow17S0uRL9xIKoFWqDsHgFJsIUYKH2xnrTp68qCd7E2ag02UdoAE5IhMTF1pqsYsoI
-	FdUcngKmKRH1EorzmBYN7bpG8Uc0Bj/II6G43YKtNDq3MqsJTY/QFVDf8UtQt5oDOinoR0iyaghEM
-	+1lXEeCw==;
+	bh=0nffAMLvAjNHLFteKt8JxWTAIfvTEAllrFKr+Id1Ub4=; b=IiEm41vK8dpRgi3Z30q9GXDz1l
+	em/YhEzREn83XUaUPN1PSNvpQCa/9PwoIkh1t19sbLw3TfTrZ3zNMfY91xF1lie9dWb9KJYafHgHg
+	l5qiQ5s9d+og4cCmjweIH6aCNRt1UhUOf47AuDCBLvdWvniQOBvsYYAnaqTiFZWxRi0PbN9aOyr5j
+	oC4eNnkcrBmikOJjC23tE/C0/ZzYTKJsy4hIn+tNzEE4UfiagrlWB6/xEqvz7/zPwyb88Jf2zM1a7
+	taxzaqXSkHEZdXGJ4jvJPeqGiC6hWPC6yeQgC+KVCK2K9WGZv1sFwMXPiVINO/Pve4v7UVWMMVQzr
+	HdfJ7fAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNxU8-0006ga-S7; Fri, 25 Oct 2019 11:10:24 +0000
-Received: from andre.telenet-ops.be ([2a02:1800:120:4::f00:15])
+	id 1iNxUo-0007RR-VC; Fri, 25 Oct 2019 11:11:07 +0000
+Received: from baptiste.telenet-ops.be ([2a02:1800:120:4::f00:13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNxSZ-000480-T1
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 11:08:51 +0000
-Received: from ramsan ([84.195.182.253]) by andre.telenet-ops.be with bizsmtp
- id Hn8b2100L5USYZQ01n8bdM; Fri, 25 Oct 2019 13:08:43 +0200
+ id 1iNxSa-00048B-Rq
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 11:08:53 +0000
+Received: from ramsan ([84.195.182.253])
+ by baptiste.telenet-ops.be with bizsmtp
+ id Hn8b2100H5USYZQ01n8b1k; Fri, 25 Oct 2019 13:08:46 +0200
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1iNxSN-0003rD-GA; Fri, 25 Oct 2019 13:08:35 +0200
+ id 1iNxSN-0003rD-Co; Fri, 25 Oct 2019 13:08:35 +0200
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1iNw6A-0006ms-Jl; Fri, 25 Oct 2019 11:41:34 +0200
+ id 1iNw6A-0006mu-Kc; Fri, 25 Oct 2019 11:41:34 +0200
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: Jonathan Corbet <corbet@lwn.net>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
@@ -43,23 +44,23 @@ To: Jonathan Corbet <corbet@lwn.net>,
  "David S . Miller" <davem@davemloft.net>,
  "Rafael J . Wysocki" <rafael@kernel.org>,
  Johannes Berg <johannes@sipsolutions.net>
-Subject: [PATCH v2 1/7] debugfs: Add debugfs_create_xul() for hexadecimal
- unsigned long
-Date: Fri, 25 Oct 2019 11:41:24 +0200
-Message-Id: <20191025094130.26033-2-geert+renesas@glider.be>
+Subject: [PATCH v2 2/7] mac80211: Use debugfs_create_xul() helper
+Date: Fri, 25 Oct 2019 11:41:25 +0200
+Message-Id: <20191025094130.26033-3-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191025094130.26033-1-geert+renesas@glider.be>
 References: <20191025094130.26033-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_040848_118325_7F449D7F 
-X-CRM114-Status: GOOD (  13.16  )
+X-CRM114-CacheID: sfid-20191025_040849_058253_10EBAC2D 
+X-CRM114-Status: UNSURE (   8.86  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:1800:120:4:0:0:f00:15 listed in]
+ low trust [2a02:1800:120:4:0:0:f00:13 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -86,77 +87,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The existing debugfs_create_ulong() function supports objects of
-type "unsigned long", which are 32-bit or 64-bit depending on the
-platform, in decimal form.  To format objects in hexadecimal, various
-debugfs_create_x*() functions exist, but all of them take fixed-size
-types.
-
-Add a debugfs helper for "unsigned long" objects in hexadecimal format.
-This avoids the need for users to open-code the same, or introduce
-bugs when casting the value pointer to "u32 *" or "u64 *" to call
-debugfs_create_x{32,64}().
+Use the new debugfs_create_xul() helper instead of open-coding the same
+operation.
 
 Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
 ---
 v2:
-  - Add kerneldoc,
-  - Update Documentation/filesystems/debugfs.txt.
+  - No changes.
 ---
- Documentation/filesystems/debugfs.txt |  5 ++++-
- include/linux/debugfs.h               | 21 +++++++++++++++++++++
- 2 files changed, 25 insertions(+), 1 deletion(-)
+ net/mac80211/debugfs_sta.c | 17 +++--------------
+ 1 file changed, 3 insertions(+), 14 deletions(-)
 
-diff --git a/Documentation/filesystems/debugfs.txt b/Documentation/filesystems/debugfs.txt
-index 50e8f91f2421ec04..8c8e60fe8c7deb86 100644
---- a/Documentation/filesystems/debugfs.txt
-+++ b/Documentation/filesystems/debugfs.txt
-@@ -102,11 +102,14 @@ functions meant to help out in such special cases:
- As might be expected, this function will create a debugfs file to represent
- a variable of type size_t.
+diff --git a/net/mac80211/debugfs_sta.c b/net/mac80211/debugfs_sta.c
+index c8ad20c28c438dab..ca34dcdac8c0bd4d 100644
+--- a/net/mac80211/debugfs_sta.c
++++ b/net/mac80211/debugfs_sta.c
+@@ -928,12 +928,7 @@ STA_OPS(he_capa);
+ 		sta->debugfs_dir, sta, &sta_ ##name## _ops);
  
--Similarly, there is a helper for variables of type unsigned long:
-+Similarly, there are helpers for variables of type unsigned long, in decimal
-+and hexadecimal:
+ #define DEBUGFS_ADD_COUNTER(name, field)				\
+-	if (sizeof(sta->field) == sizeof(u32))				\
+-		debugfs_create_u32(#name, 0400, sta->debugfs_dir,	\
+-			(u32 *) &sta->field);				\
+-	else								\
+-		debugfs_create_u64(#name, 0400, sta->debugfs_dir,	\
+-			(u64 *) &sta->field);
++	debugfs_create_ulong(#name, 0400, sta->debugfs_dir, &sta->field);
  
-     struct dentry *debugfs_create_ulong(const char *name, umode_t mode,
- 					struct dentry *parent,
- 					unsigned long *value);
-+    void debugfs_create_xul(const char *name, umode_t mode,
-+			    struct dentry *parent, unsigned long *value);
+ void ieee80211_sta_debugfs_add(struct sta_info *sta)
+ {
+@@ -978,14 +973,8 @@ void ieee80211_sta_debugfs_add(struct sta_info *sta)
+ 				    NL80211_EXT_FEATURE_AIRTIME_FAIRNESS))
+ 		DEBUGFS_ADD(airtime);
  
- Boolean values can be placed in debugfs with:
+-	if (sizeof(sta->driver_buffered_tids) == sizeof(u32))
+-		debugfs_create_x32("driver_buffered_tids", 0400,
+-				   sta->debugfs_dir,
+-				   (u32 *)&sta->driver_buffered_tids);
+-	else
+-		debugfs_create_x64("driver_buffered_tids", 0400,
+-				   sta->debugfs_dir,
+-				   (u64 *)&sta->driver_buffered_tids);
++	debugfs_create_xul("driver_buffered_tids", 0400, sta->debugfs_dir,
++			   &sta->driver_buffered_tids);
  
-diff --git a/include/linux/debugfs.h b/include/linux/debugfs.h
-index 33690949b45d6904..af6c2e5b7d3c7afa 100644
---- a/include/linux/debugfs.h
-+++ b/include/linux/debugfs.h
-@@ -356,4 +356,25 @@ static inline ssize_t debugfs_write_file_bool(struct file *file,
- 
- #endif
- 
-+/**
-+ * debugfs_create_xul - create a debugfs file that is used to read and write an
-+ * unsigned long value, formatted in hexadecimal
-+ * @name: a pointer to a string containing the name of the file to create.
-+ * @mode: the permission that the file should have
-+ * @parent: a pointer to the parent dentry for this file.  This should be a
-+ *          directory dentry if set.  If this parameter is %NULL, then the
-+ *          file will be created in the root of the debugfs filesystem.
-+ * @value: a pointer to the variable that the file should read to and write
-+ *         from.
-+ */
-+static inline void debugfs_create_xul(const char *name, umode_t mode,
-+				      struct dentry *parent,
-+				      unsigned long *value)
-+{
-+	if (sizeof(*value) == sizeof(u32))
-+		debugfs_create_x32(name, mode, parent, (u32 *)value);
-+	else
-+		debugfs_create_x64(name, mode, parent, (u64 *)value);
-+}
-+
- #endif
+ 	drv_sta_add_debugfs(local, sdata, &sta->sta, sta->debugfs_dir);
+ }
 -- 
 2.17.1
 
