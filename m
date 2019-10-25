@@ -2,54 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E45DE5007
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 17:23:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E53E4E5009
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 17:24:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xk16OieIXymthUAEbsgHRLo5p5uClLlo/JZ7WV4WpKQ=; b=BaSREyxWhlFmV7
-	XaQHdT+k9DP67miAqYlUhcqS+01LWllkxbQqnUAJVQbYaw0bJawASsrBcmFn+zPJm2xitfuhg4xvM
-	Qb67rbZQGFe2bvxyuUeOz8WlDp9TSC72euLNVKRmQ1a44T5UyJkV5C3+bnM4d5pw9DFAJ1iH8KNbj
-	4xbtVJRv4kOPb9GkmnG8Tvli9aj4obcw09/8FNK0pgBZYSI4sqT02axOTfVxVFCDAzQUc8XKHUfex
-	XOBfYISUYMUOX2ddQSWA1LxiZQUQ81uyNk4LwWaWWvkgu/ZWqt+AyEnHmrs0tG9ur/gsJRZN2xx90
-	ZHtTQEXKyQNQrqiUb3VA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=uhyzCGvDxuzzLN+RFpxlnzu26VxLKxrANrdlakxn25A=; b=NkatMMm3Tw9jQq
+	L6asLoJD/vF+8Ca7uqVDWnPS4Uu7jyjuCYFYWU2mLlhW0LIytHumSRRrYh/dKUCAL0O4jtV0d70ay
+	HHfeTJjb+o+Eo5awnc8T4Duhyq54uRj36piBw7GOx+nET/1QZotP9GWRifO87VGanlEr55kNS+K9L
+	aYR0UJ7FIYPdHsYiE6kI2XDhpRXZh+j1jJEaW0bfF5rcUA01aTnKHyD+OD81X7TXppWA4xbsCFJxu
+	s7RIeJsCAq2Q2VfkBFG/JymuqHETjX79F77ctq9dj/ylegHaiwf2L6Zyesnx+it3gbhmezOdtJkPL
+	UmLro5To43Qg0XYhpsSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iO1Qc-0007Xl-6n; Fri, 25 Oct 2019 15:23:02 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iO1QS-0007Wn-2Q
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 15:22:53 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9361E328;
- Fri, 25 Oct 2019 08:22:51 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 2425A3F71A; Fri, 25 Oct 2019 08:22:51 -0700 (PDT)
-Date: Fri, 25 Oct 2019 16:22:49 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH] arm64: pgtable: Correct typo in comment
-Message-ID: <20191025152248.GM3328@arrakis.emea.arm.com>
-References: <20191024120143.48584-1-broonie@kernel.org>
+	id 1iO1RZ-0007ph-R2; Fri, 25 Oct 2019 15:24:01 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iO1RP-0007ot-JC
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 15:23:52 +0000
+Received: from localhost.localdomain (cpe-70-114-128-244.austin.res.rr.com
+ [70.114.128.244])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4AC7D21D7B;
+ Fri, 25 Oct 2019 15:23:50 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572017030;
+ bh=UPAkfZWnlnUJTRoGRZ9/oQs2e5seDxjKr5kGzXtH2VQ=;
+ h=From:To:Cc:Subject:Date:From;
+ b=0jmD2s/SHLX333uFvXARY0i4SSNnay5o0KC1lvz0+hsFqqoUVSXkSdxaGT6Wkc/gS
+ hkg9UXHhGawe/ZUfGs3ELqJ19n5XIOY8/oGEt5yY1l7hLcxkPMYmmkDY/eIlEwqMCv
+ qRDc+wJzoYMIggbb8YW+9AbZTLYJLJ3xhzzfJwho=
+From: Dinh Nguyen <dinguyen@kernel.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: defconfig: enable Altera GPIO controller
+Date: Fri, 25 Oct 2019 10:23:45 -0500
+Message-Id: <20191025152345.17892-1-dinguyen@kernel.org>
+X-Mailer: git-send-email 2.20.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191024120143.48584-1-broonie@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_082252_151693_5483DE06 
-X-CRM114-Status: UNSURE (   7.87  )
+X-CRM114-CacheID: sfid-20191025_082351_654259_CD81B7BC 
+X-CRM114-Status: UNSURE (   8.88  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,21 +75,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: dinguyen@kernel.org, will@kernel.org, catalin.marinas@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 24, 2019 at 01:01:43PM +0100, Mark Brown wrote:
-> vmmemmap -> vmemmap
-> 
-> Signed-off-by: Mark Brown <broonie@kernel.org>
+Enable GPIO_ALTERA driver.
 
-Queued for 5.5. Thanks.
+Signed-off-by: Dinh Nguyen <dinguyen@kernel.org>
+---
+ arch/arm64/configs/defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index c93befd8ebdf..21967cf14f2a 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -413,6 +413,7 @@ CONFIG_PINCTRL_QDF2XXX=y
+ CONFIG_PINCTRL_QCOM_SPMI_PMIC=y
+ CONFIG_PINCTRL_SDM845=y
+ CONFIG_PINCTRL_SM8150=y
++CONFIG_GPIO_ALTERA=m
+ CONFIG_GPIO_DWAPB=y
+ CONFIG_GPIO_MB86S7X=y
+ CONFIG_GPIO_PL061=y
 -- 
-Catalin
+2.20.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
