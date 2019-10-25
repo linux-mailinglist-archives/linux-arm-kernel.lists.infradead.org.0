@@ -2,70 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B72EE4C9F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 15:47:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D228AE4CAE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 15:52:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WGsKEP9T1bRGENrOrQu6lrkS/QmRuzf+XkdvedunHpc=; b=MmEkG07a8Q0k0/
-	OlA+BYgaENLxSQrY9/sbqbta67eIEWr///eG1zTUbGbv5JQIqEkvOJOzExdPFBtnaD76V/NT3FO4M
-	snHHNvpsM1OsOENgF9OVV9oeM9HWEXgxlgpXKpXXntCoKQbGZSeVRMx/kLcxo4Zl6Oc7CTEJocph3
-	11OV7Ji7LaDATPkCpHak39y6+xvEqyBRDZ/dom8u4nypuvmgZs8bA5mHTyhQheoE2PWnAURjl5U0k
-	q2AsgYULaGEpRElYOn+2Hv0kHXzJC4UCgsyxkYzMAcSbkxHmT4m3navL1I1jN+fdrcPADQnVRNdYH
-	KtxloF98kmpy2BIiEhCw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=O0Nmn77vq0hhaqXTICy4Zi9FKsxC8Pc3MtsfCd2GVNQ=; b=Slw
+	+a49Md2KDwPydb/eaOVikuQ/v8YXvODfQj+Rn2xtABCZ4Wgmc6omstEDkD0XBF8SCOlPVAt6+zx3Z
+	2/Q9iCAVrbMv6akZyl3KyWmjowfGLpm9O2YUyR4rgTwfmzAQjFKmJhGhc5Thwa42jxJdC26tSCJVl
+	HhcfHd59yGP4HFhL1eGT6oIK0oiOJUPC1vKODKbR8bolH0c89k2BRF+JYiWoDe0uM9O+DiNN330RG
+	eQDbkTpnmE9J4pfYOl3HBJM+aZ9u6bRSDdt6RDzVQKuCxMWtQ5QxjkyMKiqfHXhYy3pO8OHKJJwmo
+	yqmf6nKBhd0z1CsGCyPAY6b3kQqAVdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNzvr-0006fR-8s; Fri, 25 Oct 2019 13:47:11 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNzvf-0006em-Ai
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 13:47:01 +0000
-Received: from dragon (li937-157.members.linode.com [45.56.119.157])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1E7B620679;
- Fri, 25 Oct 2019 13:46:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572011218;
- bh=1vfCZVf8R7wizvLESCzNOlNuV+dFi7d1UMuZ48enj4I=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=mMqo8hYbhXJIdbpc6FDTPulc4ZxjA+LzS8QAEftueDgISuzUydaQ4+9GVT76bcivP
- 688n/HlQSz4D8NfDM4ZuggylmPTuZqmYGLSr6qYDodbzO+R8QyL+7ftdFSyBlc1lbE
- R7xAVpkCZUyBMDFK6+M7BLNrP8WDuEfArYYYMQzI=
-Date: Fri, 25 Oct 2019 21:46:24 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Andreas Kemnade <andreas@kemnade.info>
-Subject: Re: [PATCH v3 3/3] ARM: dts: imx: add devicetree for Kobo Clara HD
-Message-ID: <20191025134621.GN3208@dragon>
-References: <20191010192357.27884-1-andreas@kemnade.info>
- <20191010192357.27884-4-andreas@kemnade.info>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191010192357.27884-4-andreas@kemnade.info>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+	id 1iO00V-000073-VB; Fri, 25 Oct 2019 13:51:59 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iO00L-00006b-12
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 13:51:50 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AD06228;
+ Fri, 25 Oct 2019 06:51:47 -0700 (PDT)
+Received: from localhost (e113682-lin.copenhagen.arm.com [10.32.145.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3E7023F71A;
+ Fri, 25 Oct 2019 06:51:47 -0700 (PDT)
+From: Christoffer Dall <christoffer.dall@arm.com>
+To: kvmarm@lists.cs.columbia.edu
+Subject: [PATCH] KVM: arm64: Don't set HCR_EL2.TVM when S2FWB is supported
+Date: Fri, 25 Oct 2019 15:51:44 +0200
+Message-Id: <20191025135144.8805-1-christoffer.dall@arm.com>
+X-Mailer: git-send-email 2.18.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_064659_414934_440B2801 
-X-CRM114-Status: GOOD (  19.53  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191025_065149_116176_D3434A9C 
+X-CRM114-Status: GOOD (  14.46  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,348 +56,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, marex@denx.de, Marco Felsch <m.felsch@pengutronix.de>,
- devicetree@vger.kernel.org, andrew.smirnov@gmail.com, s.hauer@pengutronix.de,
- angus@akkea.ca, linux-kernel@vger.kernel.org, j.neuschaefer@gmx.net,
- robh+dt@kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
- manivannan.sadhasivam@linaro.org,
- Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
- festevam@gmail.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, suzuki.poulose@arm.com,
+ Marc Zyngier <marc.zyngier@arm.com>,
+ Christoffer Dall <christoffer.dall@arm.com>, james.morse@arm.com,
+ julien.thierry.kdev@gmail.com, Alexandru Elisei <alexandru.elisei@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 10, 2019 at 09:23:57PM +0200, Andreas Kemnade wrote:
-> This adds a devicetree for the Kobo Clara HD Ebook reader. It
-> is on based on boards called "e60k02". It is equipped with an
-> imx6sll SoC.
-> 
-> Signed-off-by: Andreas Kemnade <andreas@kemnade.info>
-> ---
->  arch/arm/boot/dts/Makefile                 |   3 +-
->  arch/arm/boot/dts/imx6sll-kobo-clarahd.dts | 279 +++++++++++++++++++++
->  2 files changed, 281 insertions(+), 1 deletion(-)
->  create mode 100644 arch/arm/boot/dts/imx6sll-kobo-clarahd.dts
-> 
-> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-> index 9159fa2cea90c..a8a235c74c37f 100644
-> --- a/arch/arm/boot/dts/Makefile
-> +++ b/arch/arm/boot/dts/Makefile
-> @@ -551,7 +551,8 @@ dtb-$(CONFIG_SOC_IMX6SL) += \
->  	imx6sl-evk.dtb \
->  	imx6sl-warp.dtb
->  dtb-$(CONFIG_SOC_IMX6SLL) += \
-> -	imx6sll-evk.dtb
-> +	imx6sll-evk.dtb \
-> +	imx6sll-kobo-clarahd.dtb
->  dtb-$(CONFIG_SOC_IMX6SX) += \
->  	imx6sx-nitrogen6sx.dtb \
->  	imx6sx-sabreauto.dtb \
-> diff --git a/arch/arm/boot/dts/imx6sll-kobo-clarahd.dts b/arch/arm/boot/dts/imx6sll-kobo-clarahd.dts
-> new file mode 100644
-> index 0000000000000..c2df2a567585f
-> --- /dev/null
-> +++ b/arch/arm/boot/dts/imx6sll-kobo-clarahd.dts
-> @@ -0,0 +1,279 @@
-> +// SPDX-License-Identifier: (GPL-2.0)
-> +/*
-> + * Device tree for the Kobo Clara HD ebook reader
-> + *
-> + * Name on mainboard is: 37NB-E60K00+4A4
-> + * Serials start with: E60K02 (a number also seen in
-> + * vendor kernel sources)
-> + *
-> + * This mainboard seems to be equipped with different SoCs.
-> + * In the Kobo Clara HD ebook reader it is an i.MX6SLL
-> + *
-> + * Copyright 2019 Andreas Kemnade
-> + * based on works
-> + * Copyright 2016 Freescale Semiconductor, Inc.
-> + */
-> +
-> +/dts-v1/;
-> +
-> +#include <dt-bindings/input/input.h>
-> +#include <dt-bindings/gpio/gpio.h>
-> +#include "imx6sll.dtsi"
-> +#include "e60k02.dtsi"
-> +
-> +/ {
-> +	model = "Kobo Clara HD";
-> +	compatible = "kobo,clarahd", "fsl,imx6sll";
-> +};
-> +
-> +&clks {
-> +	assigned-clocks = <&clks IMX6SLL_CLK_PLL4_AUDIO_DIV>;
-> +	assigned-clock-rates = <393216000>;
-> +};
-> +
-> +&cpu0 {
-> +	arm-supply = <&dcdc3_reg>;
-> +	soc-supply = <&dcdc1_reg>;
-> +};
-> +
-> +&iomuxc {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_hog>;
-> +
-> +	imx6sll-lpddr3-arm2 {
+On CPUs that support S2FWB (Armv8.4+), KVM configures the stage 2 page
+tables to override the memory attributes of memory accesses, regardless
+of the stage 1 page table configurations, and also when the stage 1 MMU
+is turned off.  This results in all memory accesses to RAM being
+cacheable, including during early boot of the guest.
 
-This container node is not needed.
+On CPUs without this feature, memory accesses were non-cacheable during
+boot until the guest turned on the stage 1 MMU, and we had to detect
+when the guest turned on the MMU, such that we could invalidate all cache
+entries and ensure a consistent view of memory with the MMU turned on.
+When the guest turned on the caches, we would call stage2_flush_vm()
+from kvm_toggle_cache().
 
-> +		pinctrl_hog: hoggrp {
-> +			fsl,pins = <
-> +				MX6SLL_PAD_LCD_DATA00__GPIO2_IO20	0x79
-> +				MX6SLL_PAD_LCD_DATA01__GPIO2_IO21	0x79
-> +				MX6SLL_PAD_LCD_DATA02__GPIO2_IO22	0x79
-> +				MX6SLL_PAD_LCD_DATA03__GPIO2_IO23	0x79
-> +				MX6SLL_PAD_LCD_DATA04__GPIO2_IO24	0x79
-> +				MX6SLL_PAD_LCD_DATA05__GPIO2_IO25	0x79
-> +				MX6SLL_PAD_LCD_DATA06__GPIO2_IO26	0x79
-> +				MX6SLL_PAD_LCD_DATA07__GPIO2_IO27	0x79
-> +				MX6SLL_PAD_LCD_DATA08__GPIO2_IO28	0x79
-> +				MX6SLL_PAD_LCD_DATA09__GPIO2_IO29	0x79
-> +				MX6SLL_PAD_LCD_DATA10__GPIO2_IO30	0x79
-> +				MX6SLL_PAD_LCD_DATA11__GPIO2_IO31	0x79
-> +				MX6SLL_PAD_LCD_DATA12__GPIO3_IO00	0x79
-> +				MX6SLL_PAD_LCD_DATA13__GPIO3_IO01	0x79
-> +				MX6SLL_PAD_LCD_DATA14__GPIO3_IO02	0x79
-> +				MX6SLL_PAD_LCD_DATA15__GPIO3_IO03	0x79
-> +				MX6SLL_PAD_LCD_DATA16__GPIO3_IO04	0x79
-> +				MX6SLL_PAD_LCD_DATA17__GPIO3_IO05	0x79
-> +				MX6SLL_PAD_LCD_DATA18__GPIO3_IO06	0x79
-> +				MX6SLL_PAD_LCD_DATA19__GPIO3_IO07	0x79
-> +				MX6SLL_PAD_LCD_DATA20__GPIO3_IO08	0x79
-> +				MX6SLL_PAD_LCD_DATA21__GPIO3_IO09	0x79
-> +				MX6SLL_PAD_LCD_DATA22__GPIO3_IO10	0x79
-> +				MX6SLL_PAD_LCD_DATA23__GPIO3_IO11	0x79
-> +				MX6SLL_PAD_LCD_CLK__GPIO2_IO15		0x79
-> +				MX6SLL_PAD_LCD_ENABLE__GPIO2_IO16	0x79
-> +				MX6SLL_PAD_LCD_HSYNC__GPIO2_IO17	0x79
-> +				MX6SLL_PAD_LCD_VSYNC__GPIO2_IO18	0x79
-> +				MX6SLL_PAD_LCD_RESET__GPIO2_IO19	0x79
-> +				MX6SLL_PAD_KEY_COL3__GPIO3_IO30		0x79
-> +				MX6SLL_PAD_KEY_ROW7__GPIO4_IO07		0x79
-> +				MX6SLL_PAD_ECSPI2_MOSI__GPIO4_IO13	0x79
-> +				MX6SLL_PAD_KEY_COL5__GPIO4_IO02		0x79
-> +				MX6SLL_PAD_KEY_ROW6__GPIO4_IO05		0x79
-> +			>;
-> +		};
-> +
-> +		pinctrl_wifi_reset: wifi_reset_grp {
-> +			fsl,pins = <
-> +				MX6SLL_PAD_SD2_DATA7__GPIO5_IO00	0x10059		/* WIFI_RST */
-> +			>;
-> +		};
-> +
-> +		pinctrl_wifi_power: wifi_power_grp {
+However, stage2_flush_vm() walks all the stage 2 tables, and calls
+__kvm_flush-dcache_pte, which on a system with S2FWD does ... absolutely
+nothing.
 
-I guess you can have one pinctrl node to include both reset and power
-pins?  Also, to be consistent with other pinctrl nodes on naming, the
-node name should probably be wifigrp.
+We can avoid that whole song and dance, and simply not set TVM when
+creating a VM on a systme that has S2FWB.
 
-> +			fsl,pins = <
-> +				MX6SLL_PAD_SD2_DATA6__GPIO4_IO29	0x10059		/* WIFI_3V3_ON */
-> +			>;
-> +		};
-> +
-> +		pinctrl_audmux3: audmux3grp {
+Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Alexandru Elisei <alexandru.elisei@arm.com>
+---
+I was only able to test this on the model with cache modeling enabled,
+but even removing TVM from HCR_EL2 without having FWB also worked with
+that setup, so the testing of this has been light.  It seems like it
+should obviously work, but it would be good if someone with access to
+appropriate hardware could give this a spin.
 
-Please keep pinctrl nodes sort alphabetically.
+ arch/arm64/include/asm/kvm_emulate.h | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-> +			fsl,pins = <
-> +				MX6SLL_PAD_AUD_TXC__AUD3_TXC		0x4130b0
-> +				MX6SLL_PAD_AUD_TXFS__AUD3_TXFS		0x4130b0
-> +				MX6SLL_PAD_AUD_TXD__AUD3_TXD		0x4110b0
-> +				MX6SLL_PAD_AUD_RXD__AUD3_RXD		0x4130b0
-> +				MX6SLL_PAD_AUD_MCLK__AUDIO_CLK_OUT	0x4130b0
-> +			>;
-> +		};
-> +
-> +		pinctrl_led: ledgrp {
-> +			fsl,pins = <
-> +				MX6SLL_PAD_SD1_DATA6__GPIO5_IO07 0x17059
-> +			>;
-> +		};
-> +
-> +		pinctrl_uart1: uart1grp {
-> +			fsl,pins = <
-> +				MX6SLL_PAD_UART1_TXD__UART1_DCE_TX 0x1b0b1
-> +				MX6SLL_PAD_UART1_RXD__UART1_DCE_RX 0x1b0b1
-> +			>;
-> +		};
-> +
-> +		pinctrl_usdhc2: usdhc2grp {
-> +			fsl,pins = <
-> +				MX6SLL_PAD_SD2_CMD__SD2_CMD		0x17059
-> +				MX6SLL_PAD_SD2_CLK__SD2_CLK		0x13059
-> +				MX6SLL_PAD_SD2_DATA0__SD2_DATA0		0x17059
-> +				MX6SLL_PAD_SD2_DATA1__SD2_DATA1		0x17059
-> +				MX6SLL_PAD_SD2_DATA2__SD2_DATA2		0x17059
-> +				MX6SLL_PAD_SD2_DATA3__SD2_DATA3		0x17059
-> +			>;
-> +		};
-> +
-> +		pinctrl_usdhc2_100mhz: usdhc2grp_100mhz {
+diff --git a/arch/arm64/include/asm/kvm_emulate.h b/arch/arm64/include/asm/kvm_emulate.h
+index d69c1efc63e7..41820c3e70b8 100644
+--- a/arch/arm64/include/asm/kvm_emulate.h
++++ b/arch/arm64/include/asm/kvm_emulate.h
+@@ -53,8 +53,10 @@ static inline void vcpu_reset_hcr(struct kvm_vcpu *vcpu)
+ 		/* trap error record accesses */
+ 		vcpu->arch.hcr_el2 |= HCR_TERR;
+ 	}
+-	if (cpus_have_const_cap(ARM64_HAS_STAGE2_FWB))
++	if (cpus_have_const_cap(ARM64_HAS_STAGE2_FWB)) {
++		vcpu->arch.hcr_el2 &= ~HCR_TVM;
+ 		vcpu->arch.hcr_el2 |= HCR_FWB;
++	}
+ 
+ 	if (test_bit(KVM_ARM_VCPU_EL1_32BIT, vcpu->arch.features))
+ 		vcpu->arch.hcr_el2 &= ~HCR_RW;
+-- 
+2.18.0
 
-We generally use hyphen than underscore in node name.
-
-Shawn
-
-> +			fsl,pins = <
-> +				MX6SLL_PAD_SD2_CMD__SD2_CMD		0x170b9
-> +				MX6SLL_PAD_SD2_CLK__SD2_CLK		0x130b9
-> +				MX6SLL_PAD_SD2_DATA0__SD2_DATA0		0x170b9
-> +				MX6SLL_PAD_SD2_DATA1__SD2_DATA1		0x170b9
-> +				MX6SLL_PAD_SD2_DATA2__SD2_DATA2		0x170b9
-> +				MX6SLL_PAD_SD2_DATA3__SD2_DATA3		0x170b9
-> +			>;
-> +		};
-> +
-> +		pinctrl_usdhc2_200mhz: usdhc2grp_200mhz {
-> +			fsl,pins = <
-> +				MX6SLL_PAD_SD2_CMD__SD2_CMD		0x170f9
-> +				MX6SLL_PAD_SD2_CLK__SD2_CLK		0x130f9
-> +				MX6SLL_PAD_SD2_DATA0__SD2_DATA0		0x170f9
-> +				MX6SLL_PAD_SD2_DATA1__SD2_DATA1		0x170f9
-> +				MX6SLL_PAD_SD2_DATA2__SD2_DATA2		0x170f9
-> +				MX6SLL_PAD_SD2_DATA3__SD2_DATA3		0x170f9
-> +			>;
-> +		};
-> +
-> +		pinctrl_usdhc2_sleep: usdhc2grp_sleep {
-> +			fsl,pins = <
-> +				MX6SLL_PAD_SD2_CMD__GPIO5_IO04		0x100f9
-> +				MX6SLL_PAD_SD2_CLK__GPIO5_IO05		0x100f9
-> +				MX6SLL_PAD_SD2_DATA0__GPIO5_IO01	0x100f9
-> +				MX6SLL_PAD_SD2_DATA1__GPIO4_IO30	0x100f9
-> +				MX6SLL_PAD_SD2_DATA2__GPIO5_IO03	0x100f9
-> +				MX6SLL_PAD_SD2_DATA3__GPIO4_IO28	0x100f9
-> +			>;
-> +		};
-> +
-> +		pinctrl_usdhc3: usdhc3grp {
-> +			fsl,pins = <
-> +				MX6SLL_PAD_SD3_CMD__SD3_CMD	0x11059
-> +				MX6SLL_PAD_SD3_CLK__SD3_CLK	0x11059
-> +				MX6SLL_PAD_SD3_DATA0__SD3_DATA0	0x11059
-> +				MX6SLL_PAD_SD3_DATA1__SD3_DATA1	0x11059
-> +				MX6SLL_PAD_SD3_DATA2__SD3_DATA2	0x11059
-> +				MX6SLL_PAD_SD3_DATA3__SD3_DATA3	0x11059
-> +			>;
-> +		};
-> +
-> +		pinctrl_usdhc3_100mhz: usdhc3grp_100mhz {
-> +			fsl,pins = <
-> +				MX6SLL_PAD_SD3_CMD__SD3_CMD	0x170b9
-> +				MX6SLL_PAD_SD3_CLK__SD3_CLK	0x170b9
-> +				MX6SLL_PAD_SD3_DATA0__SD3_DATA0	0x170b9
-> +				MX6SLL_PAD_SD3_DATA1__SD3_DATA1	0x170b9
-> +				MX6SLL_PAD_SD3_DATA2__SD3_DATA2	0x170b9
-> +				MX6SLL_PAD_SD3_DATA3__SD3_DATA3	0x170b9
-> +			>;
-> +		};
-> +
-> +		pinctrl_usdhc3_200mhz: usdhc3grp_200mhz {
-> +			fsl,pins = <
-> +				MX6SLL_PAD_SD3_CMD__SD3_CMD	0x170f9
-> +				MX6SLL_PAD_SD3_CLK__SD3_CLK	0x170f9
-> +				MX6SLL_PAD_SD3_DATA0__SD3_DATA0	0x170f9
-> +				MX6SLL_PAD_SD3_DATA1__SD3_DATA1	0x170f9
-> +				MX6SLL_PAD_SD3_DATA2__SD3_DATA2	0x170f9
-> +				MX6SLL_PAD_SD3_DATA3__SD3_DATA3	0x170f9
-> +			>;
-> +		};
-> +
-> +		pinctrl_usdhc3_sleep: usdhc3grp_sleep {
-> +			fsl,pins = <
-> +				MX6SLL_PAD_SD3_CMD__GPIO5_IO21	0x100c1
-> +				MX6SLL_PAD_SD3_CLK__GPIO5_IO18	0x100c1
-> +				MX6SLL_PAD_SD3_DATA0__GPIO5_IO19	0x100c1
-> +				MX6SLL_PAD_SD3_DATA1__GPIO5_IO20	0x100c1
-> +				MX6SLL_PAD_SD3_DATA2__GPIO5_IO16	0x100c1
-> +				MX6SLL_PAD_SD3_DATA3__GPIO5_IO17	0x100c1
-> +			>;
-> +		};
-> +
-> +		pinctrl_usbotg1: usbotg1grp {
-> +			fsl,pins = <
-> +				MX6SLL_PAD_EPDC_PWR_COM__USB_OTG1_ID 0x17059
-> +			>;
-> +		};
-> +
-> +		pinctrl_i2c1: i2c1grp {
-> +			fsl,pins = <
-> +				MX6SLL_PAD_I2C1_SCL__I2C1_SCL	 0x4001f8b1
-> +				MX6SLL_PAD_I2C1_SDA__I2C1_SDA	 0x4001f8b1
-> +			>;
-> +		};
-> +
-> +		pinctrl_i2c1_sleep: i2c1grp_sleep {
-> +			fsl,pins = <
-> +				MX6SLL_PAD_I2C1_SCL__I2C1_SCL	 0x400108b1
-> +				MX6SLL_PAD_I2C1_SDA__I2C1_SDA	 0x400108b1
-> +			>;
-> +		};
-> +
-> +		pinctrl_i2c2: i2c2grp {
-> +			fsl,pins = <
-> +				MX6SLL_PAD_I2C2_SCL__I2C2_SCL	 0x4001f8b1
-> +				MX6SLL_PAD_I2C2_SDA__I2C2_SDA	 0x4001f8b1
-> +			>;
-> +		};
-> +
-> +		pinctrl_i2c2_sleep: i2c2grp_sleep {
-> +			fsl,pins = <
-> +				MX6SLL_PAD_I2C2_SCL__I2C2_SCL	 0x400108b1
-> +				MX6SLL_PAD_I2C2_SDA__I2C2_SDA	 0x400108b1
-> +			>;
-> +		};
-> +
-> +		pinctrl_i2c3: i2c3grp {
-> +			fsl,pins = <
-> +				MX6SLL_PAD_REF_CLK_24M__I2C3_SCL  0x4001f8b1
-> +				MX6SLL_PAD_REF_CLK_32K__I2C3_SDA  0x4001f8b1
-> +			>;
-> +		};
-> +
-> +		pinctrl_ecspi1: ecspi1grp {
-> +			fsl,pins = <
-> +				MX6SLL_PAD_ECSPI1_MISO__ECSPI1_MISO	 0x100b1
-> +				MX6SLL_PAD_ECSPI1_MOSI__ECSPI1_MOSI	 0x100b1
-> +				MX6SLL_PAD_ECSPI1_SCLK__ECSPI1_SCLK	 0x100b1
-> +				MX6SLL_PAD_ECSPI1_SS0__GPIO4_IO11	 0x100b1
-> +			>;
-> +		};
-> +
-> +		pinctrl_lm3630a_bl_gpio: lm3630a_bl_gpio_grp {
-> +			fsl,pins = <
-> +				MX6SLL_PAD_EPDC_PWR_CTRL3__GPIO2_IO10	0x10059 /* HWEN */
-> +			>;
-> +		};
-> +
-> +		pinctrl_ricoh_gpio: ricoh_gpio_grp {
-> +			fsl,pins = <
-> +				MX6SLL_PAD_SD1_CLK__GPIO5_IO15	0x1b8b1 /* ricoh619 chg */
-> +				MX6SLL_PAD_SD1_DATA0__GPIO5_IO11 0x1b8b1 /* ricoh619 irq */
-> +				MX6SLL_PAD_KEY_COL2__GPIO3_IO28	0x1b8b1 /* ricoh619 bat_low_int */
-> +			>;
-> +		};
-> +
-> +		pinctrl_gpio_keys: gpio_keys_grp {
-> +			fsl,pins = <
-> +				MX6SLL_PAD_SD1_DATA1__GPIO5_IO08	0x17059	/* PWR_SW */
-> +				MX6SLL_PAD_SD1_DATA4__GPIO5_IO12	0x17059	/* HALL_EN */
-> +			>;
-> +		};
-> +
-> +	};
-> +};
-> +
-> -- 
-> 2.20.1
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
