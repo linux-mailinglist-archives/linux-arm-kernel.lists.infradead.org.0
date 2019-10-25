@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF751E52BC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 19:58:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 133A2E52CC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 19:58:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m6mCwcrnzKuZPRS0dagIWIz17l901pnoLPYwQUs1UE8=; b=c0qmNnQsKrtuDa
-	F1mtVp2eHRy8ovDg68Bm4ppi1Jhjd2ljGt7+2z2twpxm9+Oaxpk8Ut/w2Bch4VPin/Cb9nPIs5anI
-	OcGSBpizBT2JeuTdZ2Q4nGKkgLJc/MuerMEhkx/C7r6GKtoljA2eLC58dqSn9ULSMzvsmgf7584Zu
-	+RR9T4Ws5FVCt9WOWMkD3JJuE6dy8bWuHTiDJ39ivZ4FUZorsw6h6WbGUWjs+A/O51iiWbz17SFV0
-	cM2rYYIo9GcFBZULQWQ4F7GOV49YsjFsGolLVc5g8o/Ih76f5bpBRd6SXeOC2nPrgDx3xfkXg0KEG
-	SV8TICLnQspFO5YOnv6A==;
+	List-Owner; bh=jfwnvybsGqMXmiqK3q7ZE5kT6vEeB4i9TFocQ63aAPo=; b=cWhLf0g6dBHB0+
+	HPyvLqbFglMiI6ugCWWswjNoV2MrhMq/cXe+08ljYNDIZxFEcCLAGrFeaLdfEciaS6xjv7TLM2s88
+	iDV6gPCI5DBIXlKW/Zog4O1cde8ZjodY2u3EoXd9kjxbqVHz5rcNxkan+Ra9Sin8mMZ7AEHFugA36
+	k11A8ajOI5slWhWP6ikd8agmxFXHuMynkyxT6I+iICm5oW7rZt0A2ytUzKeyQBAZUvFB5kszdGOG+
+	MW2ADuTJt7iooAHn2sI6dqtpNpIqypA7QdKqhl4FmsDZBjBRoKXvjDjdpwa/JxeJ5k467EAiRKf9X
+	ZEC47S2mNtFDSFMSkgbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iO3qc-0003if-Vy; Fri, 25 Oct 2019 17:58:02 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iO3qz-0003vl-0l; Fri, 25 Oct 2019 17:58:25 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iO3pk-00033i-JC
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 17:57:11 +0000
-Received: by mail-pg1-x543.google.com with SMTP id u23so2030311pgo.0
+ id 1iO3pq-00038c-Cm
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 17:57:15 +0000
+Received: by mail-pl1-x641.google.com with SMTP id q21so1610766plr.13
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 25 Oct 2019 10:57:08 -0700 (PDT)
+ Fri, 25 Oct 2019 10:57:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=P3Mki6uub+NAK80E3ntfBcsFK0xNEI4Pl6xkUsSgIeM=;
- b=i3MIHeuYlYEVmU4821ovZp6xUdW9w+0CO4+t4aQLQryHnwktMguR3UUD+Yd9ZkzbTJ
- 4iQrMyZXSu1Za0QtBnk0m4NeXcBDnmIdW7LtsfXsM4RHfFgOEWbXEXuvHz130kkxKtiF
- fH4VjdQ2kJHmdErld9s1DPCCJz7NeHLkpyWIA=
+ bh=P+ShWs2FSM+vAO8pDJrhjeu0D2BHwDqE1SNacXjaIBI=;
+ b=GCFIrxMGvDu4anO9yWv5FSLPtn8GCu9UGwWlSFs+9Savi7Bbo5hViLED9RYTD7MP6H
+ 54jW5B3P3KfDJv9wUhchHXM4A2Thg4kojn3iT/MQ8+92+dzX/eXAyN+wqpiDReGizoaR
+ Bc2Per+UzIOICEBJHScoH1tu4uvnM1QLWBU7A=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=P3Mki6uub+NAK80E3ntfBcsFK0xNEI4Pl6xkUsSgIeM=;
- b=ZcahtQ8LnNT6jNWVQeVq3ZWYGJ+mEZB8gFCwnHn3yzFM04nkuK64h5qNq+UvM8bwuo
- 6Ddv0bufU4DDQtFmmVh5DTfvwHIccVd0UDedD0A7dJsvkv7xJEFZyiv0JFZ5eYE5dXsQ
- gdQtKk1mzj/ClxgNS+Pw71pKkPONK6MqUVo6pSr2wcDhKbPVuAp4ufFtlIcNIZjd/9yB
- KcmNxqNQpmAUwGs2RaQ6pZsqjgQoya3UyNrF5JwajHyE3kj2/zfSOaVU5D1dapHwWp6Q
- 29wdGIKNI00a6xvrcwb8BAi685tVVmaVGdtmuSzxJVslwIIU1kL1IJuJ9RyhgeO5uDNI
- 4XaA==
-X-Gm-Message-State: APjAAAVL4M96p17LowFh1HwYw0lGj/FqhQjslUoveITlkUx3UD/l2+Gj
- DI5d1fIzQ1DE7EYT++pXQu0yEA==
-X-Google-Smtp-Source: APXvYqwQDEhpc37JYujaBlS0c+W1Le7LhGIIS5sXpnrhe8K1umdFkvWh0OaUWV5zfFMK68Yte1XnMQ==
-X-Received: by 2002:a62:58c2:: with SMTP id m185mr6044311pfb.10.1572026227045; 
- Fri, 25 Oct 2019 10:57:07 -0700 (PDT)
+ bh=P+ShWs2FSM+vAO8pDJrhjeu0D2BHwDqE1SNacXjaIBI=;
+ b=OFgvubw79ISNTvBsON3qOsmV8AT/lWa8ouHpVjfALipR5aYgC+YW3hoIZl5jKNhOMj
+ VgXbyw6frnX/ZbTrc10WUS+4atQyOcpgQ0rEZ92NPqOYjxYAOZVo61q6L4JYuNEaKuBU
+ egmPryb7wDyxVfCnTZXMO3NnfF2i/KrfYdMz6cTzG2RqrrbcnQzQPz714loYLBX1Yqmd
+ hk8Fagl32qPzto4/Wj6PTCTtVORReXP7iNpvXqsQqdruTaOQtJoWbCDoh3hDYroNPu8/
+ zeLbi0USu23Ouv/KQJ/Ie6xZvHfquAvoolwXEPg8sAaXmwU2VSv69QPD4bi8qRRBKvCA
+ 9E+g==
+X-Gm-Message-State: APjAAAUP6WI2qbDbz9ubopqyZEhlEHIRVqhT6rb+dGYxFOjXiw79VIiK
+ 6TE3oiMvG2lzPgISsKTqq5QX6Qgev2w=
+X-Google-Smtp-Source: APXvYqy2y4it2bBHhmVAciL+iQ/Bchja3gPtyMwHbnVNaDVG+gfU16WxFFqSrCI2gyiaQnXpjxrzxQ==
+X-Received: by 2002:a17:902:6b45:: with SMTP id
+ g5mr5151240plt.336.1572026233355; 
+ Fri, 25 Oct 2019 10:57:13 -0700 (PDT)
 Received: from localhost.localdomain ([115.97.180.31])
- by smtp.gmail.com with ESMTPSA id n15sm2926580pfq.146.2019.10.25.10.57.01
+ by smtp.gmail.com with ESMTPSA id n15sm2926580pfq.146.2019.10.25.10.57.07
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 25 Oct 2019 10:57:06 -0700 (PDT)
+ Fri, 25 Oct 2019 10:57:12 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v11 4/7] =?UTF-8?q?drm/sun4i:=20dsi:=20Handle=20bus=20cloc?=
- =?UTF-8?q?k=20explicitly=C2=A0?=
-Date: Fri, 25 Oct 2019 23:26:22 +0530
-Message-Id: <20191025175625.8011-5-jagan@amarulasolutions.com>
+Subject: [PATCH v11 5/7] drm/sun4i: dsi: Add Allwinner A64 MIPI DSI support
+Date: Fri, 25 Oct 2019 23:26:23 +0530
+Message-Id: <20191025175625.8011-6-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20191025175625.8011-1-jagan@amarulasolutions.com>
 References: <20191025175625.8011-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_105708_978980_4A9F47AE 
-X-CRM114-Status: GOOD (  14.13  )
+X-CRM114-CacheID: sfid-20191025_105714_480570_13D1181E 
+X-CRM114-Status: GOOD (  10.68  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -107,67 +107,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Usage of clocks are varies between different Allwinner
-DSI controllers. Clocking in A33 would need bus and
-mod clocks where as A64 would need only bus clock.
+The MIPI DSI controller in Allwinner A64 is similar to A33.
 
-To support this kind of clocking structure variants
-in the same dsi driver, explicit handling of common
-clock would require since the A64 doesn't need to
-mention the clock-names explicitly in dts since it
-support only one bus clock.
-
-Also pass clk_id NULL instead "bus" to regmap clock
-init function since the single clock variants no need
-to mention clock-names explicitly.
+But unlike A33, A64 doesn't have DSI_SCLK gating so add compatible
+for Allwinner A64 with uninitialized has_mod_clk driver.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+Tested-by: Merlijn Wajer <merlijn@wizzup.org>
 ---
- drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c | 10 +++++++++-
- 1 file changed, 9 insertions(+), 1 deletion(-)
+ drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
 diff --git a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
-index 8c4c541224dd..eacdfcff64ad 100644
+index eacdfcff64ad..4dda96e0febd 100644
 --- a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
 +++ b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
-@@ -1109,7 +1109,7 @@ static int sun6i_dsi_probe(struct platform_device *pdev)
- 		return PTR_ERR(dsi->regulator);
- 	}
+@@ -1251,11 +1251,18 @@ static const struct sun6i_dsi_variant sun6i_a31_mipi_dsi = {
+ 	.has_mod_clk = true,
+ };
  
--	dsi->regs = devm_regmap_init_mmio_clk(dev, "bus", base,
-+	dsi->regs = devm_regmap_init_mmio_clk(dev, NULL, base,
- 					      &sun6i_dsi_regmap_config);
- 	if (IS_ERR(dsi->regs)) {
- 		dev_err(dev, "Couldn't create the DSI encoder regmap\n");
-@@ -1122,6 +1122,12 @@ static int sun6i_dsi_probe(struct platform_device *pdev)
- 		return PTR_ERR(dsi->reset);
- 	}
- 
-+	dsi->bus_clk = devm_clk_get(dev, NULL);
-+	if (IS_ERR(dsi->bus_clk)) {
-+		dev_err(dev, "Couldn't get the DSI bus clock\n");
-+		return PTR_ERR(dsi->bus_clk);
-+	}
++static const struct sun6i_dsi_variant sun50i_a64_mipi_dsi = {
++};
 +
- 	if (dsi->variant->has_mod_clk) {
- 		dsi->mod_clk = devm_clk_get(dev, "mod");
- 		if (IS_ERR(dsi->mod_clk)) {
-@@ -1196,6 +1202,7 @@ static int __maybe_unused sun6i_dsi_runtime_resume(struct device *dev)
- 	}
- 
- 	reset_control_deassert(dsi->reset);
-+	clk_prepare_enable(dsi->bus_clk);
- 	if (dsi->variant->has_mod_clk)
- 		clk_prepare_enable(dsi->mod_clk);
- 
-@@ -1227,6 +1234,7 @@ static int __maybe_unused sun6i_dsi_runtime_suspend(struct device *dev)
- 
- 	if (dsi->variant->has_mod_clk)
- 		clk_disable_unprepare(dsi->mod_clk);
-+	clk_disable_unprepare(dsi->bus_clk);
- 	reset_control_assert(dsi->reset);
- 	regulator_disable(dsi->regulator);
- 
+ static const struct of_device_id sun6i_dsi_of_table[] = {
+ 	{
+ 		.compatible = "allwinner,sun6i-a31-mipi-dsi",
+ 		.data = &sun6i_a31_mipi_dsi,
+ 	},
++	{
++		.compatible = "allwinner,sun50i-a64-mipi-dsi",
++		.data = &sun50i_a64_mipi_dsi,
++	},
+ 	{ /* sentinel */ }
+ };
+ MODULE_DEVICE_TABLE(of, sun6i_dsi_of_table);
 -- 
 2.18.0.321.gffc6fa0e3
 
