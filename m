@@ -2,81 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1CF46E4B7E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 14:48:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50F5DE4B7F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 14:48:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=21y7TT32yQHpITYH+okx73ecqb6fCyewEdOLShOksZs=; b=IrP/fkFOwRaP+6
-	gT3SJS8Px2riKwWBsn+iL5Qj6wy9GTHCkzrYhBJeXfyjTGDzZZLCWXCAQvq6Jk3c1mPTCnfVBeZ1o
-	AHO739qkgT8v5Xl7RireQ42kAil/eA6RHqLM89Ly+MP7NyPsXB7a7PjeX62AxumykNIx5KpvmQbdW
-	CmjuduiIu7eq+nQWgcCfcyfIH2yweUxqzzTmfPNdETHrEa/KaQugr1ybmWHFdlfcgFTsttsbdxI73
-	hrJtCiuHAuzAZSYJfc45EWW3DH8NGspxUFJJVyEWamsH725b9bl95leDEk6YsV8wFgNIsQopmM6Do
-	HGh8rmVivPjlLnXSDTeA==;
+	List-Owner; bh=wrL4amJRBUEPb5Ev/M4FzCsBzvaYGs7GvzVyqMq9PgQ=; b=Wb4hPhfm1UxjYP
+	P5lOk9z5Slk4Pm2ErFIhZHE3qZidCQcxZiB7hRFEHLudTEdwZ+cbtfBhNvbYhgWmb+rsJVLDBDdq3
+	ZNJ4yiUJtKNXIUQyJ41WoLEGauplO45/A114c0EJv5GDNdY1YCLYXYphcONfs/ofO26nbtnrWUto6
+	Pwz8yR1YcXgPFaHm+cDwkdK+wxpCsFS6rnjEiMR8agklVaGXTpCqoNhpgIqbUOj/1eZ5mb3CaycQQ
+	T3g3aD8QROPtmIe5u3UVcGUCOIbsUExXRauTtadnsTh28g9foWKddk2eJ4H9iMZq1qZtl2VN9o58o
+	oI8+KM4z61lcbYU17r/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNz0d-0003x8-FR; Fri, 25 Oct 2019 12:48:03 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1iNz0t-0004CZ-8Z; Fri, 25 Oct 2019 12:48:19 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNyuH-0006VI-1Z
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 12:41:30 +0000
-Received: by mail-lj1-x243.google.com with SMTP id c4so2516445lja.11
+ id 1iNyuI-0006WO-M9
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 12:41:32 +0000
+Received: by mail-lf1-x142.google.com with SMTP id y127so1643733lfc.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 25 Oct 2019 05:41:28 -0700 (PDT)
+ Fri, 25 Oct 2019 05:41:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=hZ80kzn0Gvq+HATqtue47iWJ3txb4sckDQxEWou7YbE=;
- b=e1DVB6RZEIL83T6n/wBWlDoSAGhgc43PWtNmqC+8x8knw1OPJuHYkFi6EckaV0yl50
- 3NosFnZQLJRuhrGVXGt9YAJsZfBzRMZwHn8bQXhFdHCQpU+CKevYxKU3bP6j/l2J0a5v
- 7J4JQLigfgV2yB+YvMuOIhkA821Cd+cf8A0IM=
+ bh=vlC6c2mLi3OFOrUlQdhK/IVokJUA43/TPqoeSB5eKTw=;
+ b=jKc8arHSmx2y4WG6E6pxme2fpIipCQg3lj3xfo/NE13M78vwKaac8r87bS926CIlOe
+ G8HjFyTR6NrrVEFfD2f145q33utez8HIUqLF7wEvHmOg4BYXyAYRqgdqUUut5SdZTL4F
+ 2f2wUM68LsShYG8dX6rYt18eoJRknZHtyrkIQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=hZ80kzn0Gvq+HATqtue47iWJ3txb4sckDQxEWou7YbE=;
- b=FL0dA27WxXPF/CO/xz6lAD/lVK3YorZQD5JURYvK03CflfDn4kd3kIU7GjIBrtVbnI
- ZmX+zvaQ1/7Kh6V5++NZppnxENIwqlLWsawMHfATktJe9ET8p43N3kPF/ORnsF/v7tf8
- LVVgB5xeVRJYyj2HDUZ0D3Hp2hkrJ8av//JcJP4+Asd0riR10vAFlIXbNEzAjiGtre4V
- v9rCWE0TV6mGjXloQ8CtOEOb+gcDpUHfJ42Yrq7eg97jGPnxNHJlnxdTOCAbbAc25Z/s
- OWEPyK+jNxZZbamUK3oO2FKzoWX9DB7DDH+xS15A5Z2sb92QzfHLFbPJpNc9UD4roogA
- QLIg==
-X-Gm-Message-State: APjAAAVy76J0UaJNlyVGZFjzifxd4+12aY19/2/o2u99oBb8GXIGVJWE
- jN6tjUgjkMDxZTltH8lp82B6GQ==
-X-Google-Smtp-Source: APXvYqzWrsLr+TldTrlwBZiQV+Lk357fJEtEmfSVzLgRlqUQdBGnYmw9pDFh/e+z/41+RxJtA1JaXQ==
-X-Received: by 2002:a05:651c:120f:: with SMTP id
- i15mr2442422lja.144.1572007287647; 
- Fri, 25 Oct 2019 05:41:27 -0700 (PDT)
+ bh=vlC6c2mLi3OFOrUlQdhK/IVokJUA43/TPqoeSB5eKTw=;
+ b=M4CoWer2VDwTuEZ/HmjcpOkCa9OpWzUXrZaUzKKEi3xiHP0V+218f4H0FdFjWpvXzG
+ bmziIo18PU/2Yyga9thX7T1dyBoZtA/s/N9vajJQQkTAYCIbi2g1YQsXynMDXoKiLBFc
+ MW8Wq/KbYNgxrTqWRh8aeYSdIF4K7vD3Dxk2I5VLkknDZidp8jHAfDEagoHQxAFDBUik
+ NM9UKBDko1eNNXPmSpSpVtCz7+DjI00S40TfBk4Z31af4LbR3jlh9c7Vfjj2HyqjSTDe
+ mQR9ZJrp2zmgpaOAiIHfIt4C4zvtCclQIft0oVGvfYL2XX0SrQrlaz7gznuMYDFBbDz5
+ 1RKQ==
+X-Gm-Message-State: APjAAAXy5HstjDUZDw1nkF9rxrNEaAYKdNL6k1qTLcj7b839N0LJ3s9D
+ /maMkKhF/4wBHVX8n6tVzG1zuw==
+X-Google-Smtp-Source: APXvYqyOmmWKDKIwnL+Dz+ZoHsEg95l0xY0B31Vt0IMF9adkil2MZ7+eec85cG8dv6k9ac6S6ZK0SA==
+X-Received: by 2002:a19:f018:: with SMTP id p24mr2542630lfc.93.1572007288855; 
+ Fri, 25 Oct 2019 05:41:28 -0700 (PDT)
 Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id 10sm821028lfy.57.2019.10.25.05.41.26
+ by smtp.gmail.com with ESMTPSA id 10sm821028lfy.57.2019.10.25.05.41.27
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 25 Oct 2019 05:41:27 -0700 (PDT)
+ Fri, 25 Oct 2019 05:41:28 -0700 (PDT)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
  Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v2 19/23] net: ethernet: freescale: make UCC_GETH explicitly
- depend on PPC32
-Date: Fri, 25 Oct 2019 14:40:54 +0200
-Message-Id: <20191025124058.22580-20-linux@rasmusvillemoes.dk>
+Subject: [PATCH v2 20/23] serial: make SERIAL_QE depend on PPC32
+Date: Fri, 25 Oct 2019 14:40:55 +0200
+Message-Id: <20191025124058.22580-21-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191025124058.22580-1-linux@rasmusvillemoes.dk>
 References: <20191018125234.21825-1-linux@rasmusvillemoes.dk>
  <20191025124058.22580-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_054129_352043_845A0393 
-X-CRM114-Status: GOOD (  10.68  )
+X-CRM114-CacheID: sfid-20191025_054130_735395_678011E0 
+X-CRM114-Status: GOOD (  10.93  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -98,37 +96,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Valentin Longchamp <valentin.longchamp@keymile.com>, netdev@vger.kernel.org,
+Cc: Valentin Longchamp <valentin.longchamp@keymile.com>,
  Rasmus Villemoes <linux@rasmusvillemoes.dk>, linux-kernel@vger.kernel.org,
- Scott Wood <oss@buserror.net>, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org
+ Scott Wood <oss@buserror.net>, linux-serial@vger.kernel.org,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently, QUICC_ENGINE depends on PPC32, so this in itself does not
-change anything. In order to allow removing the PPC32 dependency from
-QUICC_ENGINE and avoid allmodconfig build failures, add this explicit
-dependency.
+Currently SERIAL_QE depends on QUICC_ENGINE, which in turn depends on
+PPC32, so this doesn't add any extra dependency. However, the QUICC
+Engine IP block also exists on some arm boards, so this serves as
+preparation for removing the PPC32 dependency from QUICC_ENGINE and
+build the QE support in drivers/soc/fsl/qe, while preventing
+allmodconfig/randconfig failures due to SERIAL_QE not being supported
+yet.
 
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- drivers/net/ethernet/freescale/Kconfig | 1 +
+ drivers/tty/serial/Kconfig | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/drivers/net/ethernet/freescale/Kconfig b/drivers/net/ethernet/freescale/Kconfig
-index 6a7e8993119f..97d27c7740d4 100644
---- a/drivers/net/ethernet/freescale/Kconfig
-+++ b/drivers/net/ethernet/freescale/Kconfig
-@@ -75,6 +75,7 @@ config FSL_XGMAC_MDIO
- config UCC_GETH
- 	tristate "Freescale QE Gigabit Ethernet"
+diff --git a/drivers/tty/serial/Kconfig b/drivers/tty/serial/Kconfig
+index 67a9eb3f94ce..78246f535809 100644
+--- a/drivers/tty/serial/Kconfig
++++ b/drivers/tty/serial/Kconfig
+@@ -1056,6 +1056,7 @@ config SERIAL_LANTIQ
+ config SERIAL_QE
+ 	tristate "Freescale QUICC Engine serial port support"
  	depends on QUICC_ENGINE
 +	depends on PPC32
- 	select FSL_PQ_MDIO
- 	select PHYLIB
- 	---help---
+ 	select SERIAL_CORE
+ 	select FW_LOADER
+ 	help
 -- 
 2.23.0
 
