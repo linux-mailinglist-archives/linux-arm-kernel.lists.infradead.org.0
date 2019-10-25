@@ -2,83 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7650E4635
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 10:51:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78A7FE463E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 10:52:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7TzOZdV+aywOSwo0pmiFATJyfWl6uwepSs3zhWM4CLA=; b=jAMT8qzTOvmyoG
-	zjKuNMk8DXqVCHGlaUshO4xDRnxeqzlF8lD2gSFkwySU0uanRuV6GS5RBDVbMLouPtM/Q+MIsVhDo
-	x5DJnVrMBpW9WdjOKAvOMtzwGPXfbqXgSLPuZAU8zbHmSIsvtpASCsLZVgkN2tSubW4I+NAOaTpil
-	gWaGRQ81kbi8GU0VOwdzl0jsfZK4+2NGhrEjf94AKTItpCsjKPuViDEwGmJeH54LgD4OBRei8bggm
-	7It2yqbxaP+Jdwh3uK1lOrZ2qi3ty8wz5RpPyQK8YuPk4uyy4FEpdLeEpe6qQLB26dFYrrjGgUhBM
-	2XZZRFRv4bZi27sy0ALg==;
+	List-Owner; bh=gE/BZeykgkH7Yn3MhF/ZZpxE4W0X7fCU+415MMRX8ZI=; b=SE1qfqBzC75067
+	n63s28Qz/lgys3euVMpNpw1KVYkskT/XbmWMDtldrcLC8Ck/sScLak8sIX22HveH+znMYIrmib2OI
+	SnzQwZZ+VTr1Q4g4dQ6mVBWDbeMiSVYM3r7t5qeA2EnPdN1SegGgaPvTnqSWLty7da10dMNSHmJeD
+	A1WXfKVzXRFpBV7r2bZvprHI/wvsbU7cpl8eXHYlklBWALEKv5u1w3zA1U4TQPOXi9fW1+AWCJMre
+	GaTk1Ws4T8L14yidSeU7SRAZOVPF13Slyj/MVfdKF9FH+/bqw1YId2UiEZzeNH1wn23TkG1iXtpTN
+	F3AU3BWd0CXIxsQoiH+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNvJL-0000Cy-2B; Fri, 25 Oct 2019 08:51:07 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iNvKj-0000Zh-H0; Fri, 25 Oct 2019 08:52:33 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNvJ8-0000CQ-Lg
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 08:50:56 +0000
-Received: by mail-wr1-x442.google.com with SMTP id o28so1338020wro.7
+ id 1iNvKZ-0000ZD-Nq
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 08:52:24 +0000
+Received: by mail-wr1-x443.google.com with SMTP id w18so1366295wrt.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 25 Oct 2019 01:50:54 -0700 (PDT)
+ Fri, 25 Oct 2019 01:52:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=mU3F3IzQsPzzpNMBmUrZ0k4gyWNr/xsuP+XBZgHlZiI=;
- b=p9ySKPlS9CNE3I642lywwJwYWHSeWJ9DGHcyQdi7nLgOCastK730EcWtbWLXygr+fm
- 9eQHwbWqdxVvm2DOqrL7oMHN51DUgMFxM+cRVifrC01I0s7k58M3dGxNkJ0+lGYD56zj
- frJ0Dgtwniy4hA1wY07UrYK2VcTBbRpzatr1t/3VvRbb0MqBCZ/YqqtJg1H7boP7oagn
- Bj199e/JrmyTrpSL0oYa29LqOM+Csdk+KjptXRXjCORcNGHFDvTWZ5RUHpmSy/TAqkaj
- F/1oHtQdEYq6ZhmDArWWdh5yGn8khR/6P/HBErqDYUfCYFSN7IL7XX0eBoVlbMVo+X/T
- gnEw==
+ bh=exH7wNrvvCyD2xlKncd5d7scqAdy8JMCpKT6Dj5gCMc=;
+ b=P/LiJppexSpoU0kjzgG1KyPIzofv+N8qtq8srko9s77pZexKqCysdXk5Mg0W5PZmog
+ eY08xRKGXJ/XNm90rgAupe0G1IgrKwfOHe3Fp5y7rMnVP6ZJLMG0hjKbIuVcHilTRPkZ
+ yldxUjE23S3SxDeuZqBuJIMoDCTPV7ZDbFCmgC3vIEGJqdAge1GBJ8+xVZrWVaBPvJid
+ ATvZxAcMDt47mFAG/n4ULaAwH3+6akM17+SbZed6kjdRK72F04RT1v/Ir+fr8x5BL+0N
+ QaV/JpbzGc+QE40AgPvA4oS0xTJBMLU1tysNciz0ROYnCqRGdr2z+EjCp2+ZpwyyllIi
+ w7aA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=mU3F3IzQsPzzpNMBmUrZ0k4gyWNr/xsuP+XBZgHlZiI=;
- b=HnLydzVVq6nio5QeBPVc/squ3ohKEyhIllnuP9fwHRZg7F7mfGOoNHYNv6/fZNHTg0
- TLvUiLpSi+7yZg69LyRtZdNI1d5TeLio2SqzaU+Kz7REWe0ntXfg7arqLmYxvwmvrn/m
- mhDFe+l9eC24fPR9q7EBxYZRsFBvPSufa9LMkaQfFcf/P4BV/fibWm5Xs/hWMEl2BpbV
- OWCfkvru4hcrx43P39JBTfssyMBRUAvZDKLeeW9gMAosBbq5O2IOmBQ2NeOyvlYnWMJ6
- RS8oRnozmMZOInVEK+piHdcHihgknmFx+VXwE7Tick3qi+/eHLbKdjfO1N1L/aMwZnEh
- fKxg==
-X-Gm-Message-State: APjAAAWePDUDVpt6sunb81Cd35f6rO4Br5YTo1jpwdbs8MzrXcYq/fI3
- u2dKyxCmj28/zSwn1rb0GTQSjA==
-X-Google-Smtp-Source: APXvYqwQWWDw+ev8qSt1hiQb9lllvs7w8XNgT6hvwO+lq09EWS1MIQJ+LfOcBj9V8FxR0ij3fVCxOQ==
-X-Received: by 2002:a5d:4341:: with SMTP id u1mr1880473wrr.306.1571993453132; 
- Fri, 25 Oct 2019 01:50:53 -0700 (PDT)
+ bh=exH7wNrvvCyD2xlKncd5d7scqAdy8JMCpKT6Dj5gCMc=;
+ b=Ed0MC5hbCP6Eyp+xZLUDTaAT4vsbiU3hXpLiEPFk9flLLoIJPhBk/YN+wmg08n9vJ3
+ 7s3Plxouwd8Fo96EPb8QVHp/SQDY/cxKrW93DOPn2voS7gN3riMXqeBwnRD49jj9954Y
+ Jx5OOPh/lb8etZhBUoW/eGyyCdKF1jLKru9yJUK7yQ1R7kcj9vg0XmxfptSmPXiwm5Vn
+ LaiEwSQJc4E/4h6UNJ1FGKdGfPR8nbYnrKDnMmpgRSOfU+BEDmv2CONmMKWdkMe75JDC
+ /CO82oPlmi+dW5iONB6slZ28T5IBQFall4nsUQ/HyaHcoI+qotdQuPcLAOes2OYDgsQC
+ G6iA==
+X-Gm-Message-State: APjAAAX3/14tmrfxG1kKwdmZbVSWcLaqDrBWZbpTF41gja8fCIGIRkB+
+ lpbygVO01kfihwxhABlx3m6wxg==
+X-Google-Smtp-Source: APXvYqwqeNQ4Rm3LfZvag0FuCF1LHCrER4wDzEhFJR9VIg+vCiqIqlZebROwNpKRP1vRvTHk57W2nQ==
+X-Received: by 2002:a5d:4a81:: with SMTP id o1mr1836767wrq.225.1571993541978; 
+ Fri, 25 Oct 2019 01:52:21 -0700 (PDT)
 Received: from holly.lan (cpc141214-aztw34-2-0-cust773.18-1.cable.virginm.net.
  [86.9.19.6])
- by smtp.gmail.com with ESMTPSA id p5sm1924303wmi.4.2019.10.25.01.50.52
+ by smtp.gmail.com with ESMTPSA id o4sm1673291wre.91.2019.10.25.01.52.21
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 25 Oct 2019 01:50:52 -0700 (PDT)
-Date: Fri, 25 Oct 2019 09:50:50 +0100
+ Fri, 25 Oct 2019 01:52:21 -0700 (PDT)
+Date: Fri, 25 Oct 2019 09:52:19 +0100
 From: Daniel Thompson <daniel.thompson@linaro.org>
 To: Lee Jones <lee.jones@linaro.org>
-Subject: Re: [PATCH v3 04/10] mfd: cs5535-mfd: Register clients using their
- own dedicated MFD cell entries
-Message-ID: <20191025085050.lwrhdwccof5vleie@holly.lan>
+Subject: Re: [PATCH v3 08/10] mfd: mfd-core: Protect against NULL call-back
+ function pointer
+Message-ID: <20191025085219.ki5gvqlycncbeztf@holly.lan>
 References: <20191024163832.31326-1-lee.jones@linaro.org>
- <20191024163832.31326-5-lee.jones@linaro.org>
+ <20191024163832.31326-9-lee.jones@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191024163832.31326-5-lee.jones@linaro.org>
+In-Reply-To: <20191024163832.31326-9-lee.jones@linaro.org>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_015054_712055_43F4CE8F 
-X-CRM114-Status: GOOD (  16.77  )
+X-CRM114-CacheID: sfid-20191025_015223_779208_733AD2F3 
+X-CRM114-Status: UNSURE (   8.41  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -108,71 +109,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 24, 2019 at 05:38:26PM +0100, Lee Jones wrote:
-> CS5535 is the only user of mfd_clone_cell().  It makes more sense to
-> register child devices in the traditional way and remove the quite
-> bespoke mfd_clone_cell() call from the MFD API.
+On Thu, Oct 24, 2019 at 05:38:30PM +0100, Lee Jones wrote:
+> If a child device calls mfd_cell_{en,dis}able() without an appropriate
+> call-back being set, we are likely to encounter a panic.  Avoid this
+> by adding suitable checking.
 > 
 > Signed-off-by: Lee Jones <lee.jones@linaro.org>
+> Reviewed-by: Daniel Thompson <daniel.thompson@linaro.org>
 
-Reviewed-by: Daniel Thompson <daniel.thompson@linaro.org>
+Shouldn't this be earlier in the patch set (to avoid transient
+regressions)?
 
 
-> ---
->  drivers/mfd/cs5535-mfd.c | 25 ++++++++++++++++---------
->  1 file changed, 16 insertions(+), 9 deletions(-)
-> 
-> diff --git a/drivers/mfd/cs5535-mfd.c b/drivers/mfd/cs5535-mfd.c
-> index 27fa8fa1ec9b..4c034c9f2303 100644
-> --- a/drivers/mfd/cs5535-mfd.c
-> +++ b/drivers/mfd/cs5535-mfd.c
-> @@ -50,16 +50,19 @@ static struct mfd_cell cs5535_mfd_cells[] = {
->  		.num_resources = 1,
->  		.resources = &cs5535_mfd_resources[PMS_BAR],
->  	},
-> +};
-> +
-> +static struct mfd_cell cs5535_olpc_mfd_cells[] = {
->  	{
-> -		.name = "cs5535-acpi",
-> +		.name = "olpc-xo1-pm-acpi",
-> +		.num_resources = 1,
-> +		.resources = &cs5535_mfd_resources[ACPI_BAR],
-> +	},
-> +	{
-> +		.name = "olpc-xo1-sci-acpi",
->  		.num_resources = 1,
->  		.resources = &cs5535_mfd_resources[ACPI_BAR],
->  	},
-> -};
-> -
-> -static const char *olpc_acpi_clones[] = {
-> -	"olpc-xo1-pm-acpi",
-> -	"olpc-xo1-sci-acpi"
->  };
->  
->  static int cs5535_mfd_probe(struct pci_dev *pdev,
-> @@ -101,10 +104,14 @@ static int cs5535_mfd_probe(struct pci_dev *pdev,
->  			goto err_remove_devices;
->  		}
->  
-> -		err = mfd_clone_cell("cs5535-acpi", olpc_acpi_clones,
-> -				     ARRAY_SIZE(olpc_acpi_clones));
-> +		err = mfd_add_devices(&pdev->dev, PLATFORM_DEVID_NONE,
-> +				      cs5535_olpc_mfd_cells,
-> +				      ARRAY_SIZE(cs5535_olpc_mfd_cells),
-> +				      NULL, 0, NULL);
->  		if (err) {
-> -			dev_err(&pdev->dev, "Failed to clone MFD cell\n");
-> +			dev_err(&pdev->dev,
-> +				"Failed to add CS5535 OLPC sub-devices: %d\n",
-> +				err);
->  			goto err_release_acpi;
->  		}
->  	}
-> -- 
-> 2.17.1
-> 
+Daniel.
 
 _______________________________________________
 linux-arm-kernel mailing list
