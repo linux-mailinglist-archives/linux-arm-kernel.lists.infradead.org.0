@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEEF9E5378
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 20:10:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4087E5384
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 25 Oct 2019 20:11:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KT4Qbu5eSH9pyehTnAGIY8qXiRe0IbkN4BpVGErn3gM=; b=OuJfWgjXlemFOu
-	8J8uvh1ShOJ/acLAPV4yXmXUAifYqWHpTGalMLBPkb3o5RY+I7dOrwH03antH61vbhW9YMlV8Yha5
-	c1ZobOTNxpUNVUIYVH2UmL7ltfsGAbCdnKPlgRLFaJCkMz1pHTz3ZwYwsuCdnWesjsWd+z2nHMkEK
-	o3ZzT7rsFt3HuADrIe1x9O7y/ff7/lSVO12ZBr1GzzvOnXoMyQTrAG0vp2wDxMAto116vZMEVOzr8
-	Hv30OidvuY+fpAiOT4Fk7P/vOC31QvJ6SWfkM9B1D/spixujqDd8n+ErRRxNmxS9v3/wRwcqN9kT9
-	0/SrOEAhgVQx6/jppJSw==;
+	List-Owner; bh=JzHqwFGD7ozDQ8PQOlHDXHYG9MRIh3WRIDxe5ivbrao=; b=hLBM7ye7cqF85H
+	XZbKrGpyMGmT4sPb7hGQtx1/hXM8oIMysLE6aBHCC5Fl8OUdnygQ2N75QvPEBaAK0DaGBc8ecOvvA
+	sdRPJ2g7uML5GqfNBQTLvUKtQpSJT3MR1LnG8CuNAjVrYLh7yyxXzETSOTJGYnISRWGekJP5IXQJ3
+	/R4LfTgpvFZRuW7PEUH71ClXWLMOJx4s2TvxzJmwitp6ZkbnNk8Ms3TrS0vtVvQn4kJ6CBK2gRSmC
+	Qid/oGhK2vzuojWsmCk/CLD61lAihWV+Nuv4ArVCyuoDlt3auOvUGqam1Xq/SY8bLAmZ0wnAd5AY4
+	VJVappRRicpD1MEDduCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iO42U-00051F-7l; Fri, 25 Oct 2019 18:10:18 +0000
+	id 1iO43D-00079N-Tb; Fri, 25 Oct 2019 18:11:03 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iO412-0003vO-94
- for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 18:08:49 +0000
+ id 1iO412-0003vk-TF
+ for linux-arm-kernel@lists.infradead.org; Fri, 25 Oct 2019 18:08:51 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C320428;
- Fri, 25 Oct 2019 11:08:47 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A89B4337;
+ Fri, 25 Oct 2019 11:08:48 -0700 (PDT)
 Received: from e110467-lin.cambridge.arm.com (e110467-lin.cambridge.arm.com
  [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 1DB1D3F6C4;
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 0333F3F6C4;
  Fri, 25 Oct 2019 11:08:47 -0700 (PDT)
 From: Robin Murphy <robin.murphy@arm.com>
 To: will@kernel.org
-Subject: [PATCH v2 05/10] iommu/io-pgtable-arm: Simplify PGD size handling
-Date: Fri, 25 Oct 2019 19:08:34 +0100
-Message-Id: <2e752b21e1947633827ffa780bdb20803fe9db91.1572024120.git.robin.murphy@arm.com>
+Subject: [PATCH v2 06/10] iommu/io-pgtable-arm: Simplify level indexing
+Date: Fri, 25 Oct 2019 19:08:35 +0100
+Message-Id: <698173b487383735e470a28e5cca4f9db22703de.1572024120.git.robin.murphy@arm.com>
 X-Mailer: git-send-email 2.21.0.dirty
 In-Reply-To: <cover.1572024119.git.robin.murphy@arm.com>
 References: <cover.1572024119.git.robin.murphy@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_110848_404931_3B6E2BB2 
-X-CRM114-Status: GOOD (  17.43  )
+X-CRM114-CacheID: sfid-20191025_110849_045610_1FA4F42A 
+X-CRM114-Status: GOOD (  16.99  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -67,140 +67,103 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We use data->pgd_size directly for the one-off allocation and freeing of
-the top-level table, but otherwise it serves for ARM_LPAE_PGD_IDX() to
-repeatedly re-calculate the effective number of top-level address bits
-it represents. Flip this around so we store the form we most commonly
-need, and derive the lesser-used one instead. This cuts a whole bunch of
-code out of the map/unmap/iova_to_phys fast-paths.
+The nature of the LPAE format means that data->pg_shift is always
+redundant with data->bits_per_level, since they represent the size of a
+page and the number of PTEs per page respectively, and the size of a PTE
+is constant. Thus it works out more efficient to only store the latter,
+and derive the former via a trivial addition where necessary.
 
 Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 ---
- drivers/iommu/io-pgtable-arm.c | 33 +++++++++++++++++----------------
- 1 file changed, 17 insertions(+), 16 deletions(-)
+ drivers/iommu/io-pgtable-arm.c | 29 +++++++++++++----------------
+ 1 file changed, 13 insertions(+), 16 deletions(-)
 
 diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
-index fb5d30e04001..4b1483eb0ccf 100644
+index 4b1483eb0ccf..15b4927ce36b 100644
 --- a/drivers/iommu/io-pgtable-arm.c
 +++ b/drivers/iommu/io-pgtable-arm.c
-@@ -40,16 +40,15 @@
- 	(d)->pg_shift)
- 
- #define ARM_LPAE_GRANULE(d)		(1UL << (d)->pg_shift)
--
--#define ARM_LPAE_PAGES_PER_PGD(d)					\
--	DIV_ROUND_UP((d)->pgd_size, ARM_LPAE_GRANULE(d))
-+#define ARM_LPAE_PGD_SIZE(d)						\
-+	(sizeof(arm_lpae_iopte) << (d)->pgd_bits)
- 
- /*
-  * Calculate the index at level l used to map virtual address a using the
-  * pagetable in d.
+@@ -36,10 +36,11 @@
+  * in a virtual address mapped by the pagetable in d.
   */
- #define ARM_LPAE_PGD_IDX(l,d)						\
--	((l) == (d)->start_level ? ilog2(ARM_LPAE_PAGES_PER_PGD(d)) : 0)
-+	((l) == (d)->start_level ? (d)->pgd_bits - (d)->bits_per_level : 0)
+ #define ARM_LPAE_LVL_SHIFT(l,d)						\
+-	(((ARM_LPAE_MAX_LEVELS - 1 - (l)) * (d)->bits_per_level) +	\
+-	(d)->pg_shift)
++	(((ARM_LPAE_MAX_LEVELS - (l)) * (d)->bits_per_level) +		\
++	ilog2(sizeof(arm_lpae_iopte)))
  
- #define ARM_LPAE_LVL_IDX(a,l,d)						\
- 	(((u64)(a) >> ARM_LPAE_LVL_SHIFT(l,d)) &			\
-@@ -174,8 +173,8 @@
- struct arm_lpae_io_pgtable {
- 	struct io_pgtable	iop;
+-#define ARM_LPAE_GRANULE(d)		(1UL << (d)->pg_shift)
++#define ARM_LPAE_GRANULE(d)						\
++	(sizeof(arm_lpae_iopte) << (d)->bits_per_level)
+ #define ARM_LPAE_PGD_SIZE(d)						\
+ 	(sizeof(arm_lpae_iopte) << (d)->pgd_bits)
  
-+	int			pgd_bits;
+@@ -55,9 +56,7 @@
+ 	 ((1 << ((d)->bits_per_level + ARM_LPAE_PGD_IDX(l,d))) - 1))
+ 
+ /* Calculate the block/page mapping size at level l for pagetable in d. */
+-#define ARM_LPAE_BLOCK_SIZE(l,d)					\
+-	(1ULL << (ilog2(sizeof(arm_lpae_iopte)) +			\
+-		((ARM_LPAE_MAX_LEVELS - (l)) * (d)->bits_per_level)))
++#define ARM_LPAE_BLOCK_SIZE(l,d)	(1ULL << ARM_LPAE_LVL_SHIFT(l,d))
+ 
+ /* Page table bits */
+ #define ARM_LPAE_PTE_TYPE_SHIFT		0
+@@ -175,8 +174,7 @@ struct arm_lpae_io_pgtable {
+ 
+ 	int			pgd_bits;
  	int			start_level;
--	size_t			pgd_size;
- 	unsigned long		pg_shift;
- 	unsigned long		bits_per_level;
+-	unsigned long		pg_shift;
+-	unsigned long		bits_per_level;
++	int			bits_per_level;
  
-@@ -506,7 +505,7 @@ static void __arm_lpae_free_pgtable(struct arm_lpae_io_pgtable *data, int lvl,
- 	unsigned long table_size;
+ 	void			*pgd;
+ };
+@@ -206,7 +204,7 @@ static phys_addr_t iopte_to_paddr(arm_lpae_iopte pte,
+ {
+ 	u64 paddr = pte & ARM_LPAE_PTE_ADDR_MASK;
  
- 	if (lvl == data->start_level)
--		table_size = data->pgd_size;
-+		table_size = ARM_LPAE_PGD_SIZE(data);
- 	else
- 		table_size = ARM_LPAE_GRANULE(data);
+-	if (data->pg_shift < 16)
++	if (data->bits_per_level < 13) /* i.e. 64K granule */
+ 		return paddr;
  
-@@ -743,7 +742,7 @@ static void arm_lpae_restrict_pgsizes(struct io_pgtable_cfg *cfg)
+ 	/* Rotate the packed high-order bits back to the top */
+@@ -742,9 +740,8 @@ static void arm_lpae_restrict_pgsizes(struct io_pgtable_cfg *cfg)
  static struct arm_lpae_io_pgtable *
  arm_lpae_alloc_pgtable(struct io_pgtable_cfg *cfg)
  {
--	unsigned long va_bits, pgd_bits;
-+	unsigned long va_bits;
+-	unsigned long va_bits;
  	struct arm_lpae_io_pgtable *data;
- 	int levels;
+-	int levels;
++	int levels, va_bits, pg_shift;
  
-@@ -775,8 +774,7 @@ arm_lpae_alloc_pgtable(struct io_pgtable_cfg *cfg)
+ 	arm_lpae_restrict_pgsizes(cfg);
+ 
+@@ -766,10 +763,10 @@ arm_lpae_alloc_pgtable(struct io_pgtable_cfg *cfg)
+ 	if (!data)
+ 		return NULL;
+ 
+-	data->pg_shift = __ffs(cfg->pgsize_bitmap);
+-	data->bits_per_level = data->pg_shift - ilog2(sizeof(arm_lpae_iopte));
++	pg_shift = __ffs(cfg->pgsize_bitmap);
++	data->bits_per_level = pg_shift - ilog2(sizeof(arm_lpae_iopte));
+ 
+-	va_bits = cfg->ias - data->pg_shift;
++	va_bits = cfg->ias - pg_shift;
+ 	levels = DIV_ROUND_UP(va_bits, data->bits_per_level);
  	data->start_level = ARM_LPAE_MAX_LEVELS - levels;
  
- 	/* Calculate the actual size of our pgd (without concatenation) */
--	pgd_bits = va_bits - (data->bits_per_level * (levels - 1));
--	data->pgd_size = 1UL << (pgd_bits + ilog2(sizeof(arm_lpae_iopte)));
-+	data->pgd_bits = va_bits - (data->bits_per_level * (levels - 1));
+@@ -1138,9 +1135,9 @@ static void __init arm_lpae_dump_ops(struct io_pgtable_ops *ops)
  
- 	data->iop.ops = (struct io_pgtable_ops) {
- 		.map		= arm_lpae_map,
-@@ -870,7 +868,8 @@ arm_64_lpae_alloc_pgtable_s1(struct io_pgtable_cfg *cfg, void *cookie)
- 	cfg->arm_lpae_s1_cfg.mair[1] = 0;
- 
- 	/* Looking good; allocate a pgd */
--	data->pgd = __arm_lpae_alloc_pages(data->pgd_size, GFP_KERNEL, cfg);
-+	data->pgd = __arm_lpae_alloc_pages(ARM_LPAE_PGD_SIZE(data),
-+					   GFP_KERNEL, cfg);
- 	if (!data->pgd)
- 		goto out_free_data;
- 
-@@ -908,9 +907,9 @@ arm_64_lpae_alloc_pgtable_s2(struct io_pgtable_cfg *cfg, void *cookie)
- 	if (data->start_level == 0) {
- 		unsigned long pgd_pages;
- 
--		pgd_pages = data->pgd_size >> ilog2(sizeof(arm_lpae_iopte));
-+		pgd_pages = ARM_LPAE_PGD_SIZE(data) / sizeof(arm_lpae_iopte);
- 		if (pgd_pages <= ARM_LPAE_S2_MAX_CONCAT_PAGES) {
--			data->pgd_size = pgd_pages << data->pg_shift;
-+			data->pgd_bits += data->bits_per_level;
- 			data->start_level++;
- 		}
- 	}
-@@ -967,7 +966,8 @@ arm_64_lpae_alloc_pgtable_s2(struct io_pgtable_cfg *cfg, void *cookie)
- 	cfg->arm_lpae_s2_cfg.vtcr = reg;
- 
- 	/* Allocate pgd pages */
--	data->pgd = __arm_lpae_alloc_pages(data->pgd_size, GFP_KERNEL, cfg);
-+	data->pgd = __arm_lpae_alloc_pages(ARM_LPAE_PGD_SIZE(data),
-+					   GFP_KERNEL, cfg);
- 	if (!data->pgd)
- 		goto out_free_data;
- 
-@@ -1038,7 +1038,7 @@ arm_mali_lpae_alloc_pgtable(struct io_pgtable_cfg *cfg, void *cookie)
- 	/* Mali seems to need a full 4-level table regardless of IAS */
- 	if (data->start_level > 0) {
- 		data->start_level = 0;
--		data->pgd_size = sizeof(arm_lpae_iopte);
-+		data->pgd_bits = 0;
- 	}
- 	/*
- 	 * MEMATTR: Mali has no actual notion of a non-cacheable type, so the
-@@ -1055,7 +1055,8 @@ arm_mali_lpae_alloc_pgtable(struct io_pgtable_cfg *cfg, void *cookie)
- 		(ARM_MALI_LPAE_MEMATTR_IMP_DEF
- 		 << ARM_LPAE_MAIR_ATTR_SHIFT(ARM_LPAE_MAIR_ATTR_IDX_DEV));
- 
--	data->pgd = __arm_lpae_alloc_pages(data->pgd_size, GFP_KERNEL, cfg);
-+	data->pgd = __arm_lpae_alloc_pages(ARM_LPAE_PGD_SIZE(data), GFP_KERNEL,
-+					   cfg);
- 	if (!data->pgd)
- 		goto out_free_data;
- 
-@@ -1138,7 +1139,7 @@ static void __init arm_lpae_dump_ops(struct io_pgtable_ops *ops)
  	pr_err("cfg: pgsize_bitmap 0x%lx, ias %u-bit\n",
  		cfg->pgsize_bitmap, cfg->ias);
- 	pr_err("data: %d levels, 0x%zx pgd_size, %lu pg_shift, %lu bits_per_level, pgd @ %p\n",
--		ARM_LPAE_MAX_LEVELS - data->start_level, data->pgd_size,
-+		ARM_LPAE_MAX_LEVELS - data->start_level, ARM_LPAE_PGD_SIZE(data),
- 		data->pg_shift, data->bits_per_level, data->pgd);
+-	pr_err("data: %d levels, 0x%zx pgd_size, %lu pg_shift, %lu bits_per_level, pgd @ %p\n",
++	pr_err("data: %d levels, 0x%zx pgd_size, %u pg_shift, %u bits_per_level, pgd @ %p\n",
+ 		ARM_LPAE_MAX_LEVELS - data->start_level, ARM_LPAE_PGD_SIZE(data),
+-		data->pg_shift, data->bits_per_level, data->pgd);
++		ilog2(ARM_LPAE_GRANULE(data)), data->bits_per_level, data->pgd);
  }
  
+ #define __FAIL(ops, i)	({						\
 -- 
 2.21.0.dirty
 
