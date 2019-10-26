@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5723FE59D5
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 26 Oct 2019 13:04:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 67113E59D6
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 26 Oct 2019 13:04:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,73 +11,73 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=a8YD2T9AJBx7ZRSkSCHBSxP6Qmx0+x5wnisuLG+2OgU=; b=V/rzgEawc3H6NkljVV5/XPapwa
-	7PHa94jWQhuk5s0FSnoVMdi/SfM7QzKNXqchqHCeGfWhFYvLJtbRf0AbYPvj9CQJqB52p80FKKE/S
-	QsdHRGLzD30PCBsxJa0ZQ7ViVAUiGByTy0GbQsVFJ+Qss5pSxXCFPYHwHli6qilyap2d2TOCoY4if
-	FZEQCnskCqYlJWE3RoHqPpKUkXH+D1oqnJBKL3OeWRgRfD43pEzAcYxemTainicX2KfrOD3u5EmD/
-	yZ/ix5OE+wur24sSh/ZwsQiahjV8Qw5kax2IRcYq1fi2HMOMcjbOj1Ej1jqQJ2+98FIMPWxviiktD
-	sJ+0ZfCg==;
+	bh=lWU4/03pH6j54l98Sa9mnBs+WTNkdvHkkYL1S78EUao=; b=cM2vPhOFuXE1e3V8cCGHksMZJ5
+	VaNMWjlhXMfPcyV2yJvrjTycEPygQT+aXCXQrFkGnr9MAvdz0tzJme6sNR5Xo0l9mAr1O3I2GGdjj
+	qcxZzrz9CrtccyFlQ+u5SL3W2AnNY230azG8h2q2/gP2CtWaIr7QYsL00fgt4wx90A3Dsf6KNaHMo
+	9QO9gLE8XZ+J9Z5phCTl5MenqbZd5SrazYq2+7r6YGCw7UPbSV/AhJwf1Rk6cyvkfKWC520DPRDW4
+	KU/6tS+RXcaAbPaCNvyUEMVGXga7qdSKTZBgBj3iRf9K5UAcwcD+tmAM5JJAEKOVYwndNKBN/yJ0R
+	wP6sqhTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOJs7-0001rO-7a; Sat, 26 Oct 2019 11:04:39 +0000
-Received: from mail-pf1-x433.google.com ([2607:f8b0:4864:20::433])
+	id 1iOJsI-00025V-1o; Sat, 26 Oct 2019 11:04:50 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOJr4-00014j-0S
- for linux-arm-kernel@lists.infradead.org; Sat, 26 Oct 2019 11:03:35 +0000
-Received: by mail-pf1-x433.google.com with SMTP id y5so3451421pfo.4
+ id 1iOJrC-0001B3-5U
+ for linux-arm-kernel@lists.infradead.org; Sat, 26 Oct 2019 11:03:43 +0000
+Received: by mail-pf1-x443.google.com with SMTP id b128so3461608pfa.1
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 26 Oct 2019 04:03:33 -0700 (PDT)
+ Sat, 26 Oct 2019 04:03:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Y6Dgg0LHIAz3laO+y1ntUkl0I7eVRTHEz+QlpqCcJzM=;
- b=PcCgI+5Uk4+2QOtva7LrdqGw/ak4nk7qSeEMr723khYMa6gWpChw9Y1C3ZnkguEkqM
- c30XftThaNU0RSa1jFu71B1uf6OaYSYBcB1+3aDnHBRABZtmHFGr68aYpUFS3ksTD4yu
- ToYrqU935IGFVtWTsMtW3qnaOo5aYDgFcXgyuDIqA26QagZ/4qh3TR5nl9KDeCqjB79u
- 2bZX41wlop6pBV3KM3JWxgPBzwmXbEOPrqIAo1GYRO8WMe/Q5SzURqTHazHRiF8o/m8X
- 01ZsUl2qF4PCODOGd+L8C1enhAuY+jK1mYfmxzlSXzE7VpgOEss89Y7jkI+Sl7AEiEZc
- miag==
+ bh=kgB5pCuOS2QWyyNQUlCeMbbF7mRF+VE6sHHJ2GG7b1c=;
+ b=SbzODjEX5F2nsIQtMtE/7zuAlvFC33+amDdkHp/rJOQk+V4QHMFoQEYKjTxrC7+0EH
+ wfNC62GWoHZmzKCTfwGoze1lAZBCWhEiWmwnCiJKrHFsSu0yrrd69ax3bTQ/tbegcPRD
+ KEJNpF7IrbjXa68LgYojYW7Erv19baPm5EDA8nKxzMCT37CIQ4opheXBMf+LFFBG7D1p
+ IkB/vAWuQNfOmAL/CdFzRXdrBSoVj5/mhLTqM+rgZIXk0Qo/yOrM7ULQak2F+9xcHCoL
+ ilxiNnBL2BPrkGTB1+J37JkxCKv3HdYEU5Oxda/Nq7a1YtihiaNGrocqpwvRckfZImlR
+ 3chQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=Y6Dgg0LHIAz3laO+y1ntUkl0I7eVRTHEz+QlpqCcJzM=;
- b=WyedyE3oevqgBR1VoDXZuPIb5DhGXbQAEOIZatY6aSGyoPMri3RJZ3ktSIWs1xfazy
- h8AmhULAfViyaF2faCGip95lQAoNmbEdKw+6A3VmoU7a8edQ7zz/hz4EDwjtxQeu8GXY
- Bhdd7U5g6R8LRc9P6dxTbtveny9q6FoWiWqjfXQyidyVm9syOLoAIsh/VjIACgAZY9SR
- 19JKiKYlhacjA1S4a03AprkX7g/o1WC0Rt9Z8edgYYY11sKci7H6aTpAzuc8MW+yjLKk
- 5jT8MSW7nLgW38nb08PzJtGA/uyPgpGcjxt1isgZjiLjpOQvv247aOgPInlNoQhM6rn/
- xYwA==
-X-Gm-Message-State: APjAAAVUG0mY5ohg1udRZLRGW0JdlpGZLLf5/0x0zrw/8ecBsPGz8avZ
- Hjj3U3J1XOx5B8HSMl4xHdKQ
-X-Google-Smtp-Source: APXvYqzowpzR04MTwmL3N8OyfcVyg17NzEjCzBIUt7ybdLxmxuCT8V1POkDgpr/m0PBBlzk8wfKDgQ==
-X-Received: by 2002:a17:90a:a384:: with SMTP id
- x4mr1395313pjp.116.1572087812466; 
- Sat, 26 Oct 2019 04:03:32 -0700 (PDT)
+ bh=kgB5pCuOS2QWyyNQUlCeMbbF7mRF+VE6sHHJ2GG7b1c=;
+ b=Y//wn/ceclSwG3Oq4n5ErCage0mIIQhj0IakONToV/IBat+rKJ21ebgGUNX6oGR7pw
+ dRcpaF6i40Ylv5LqN97J6ow5mRAofVrvgwbErdcZHLBtjKrfi+22dvKeqPxoXdDG3YRE
+ FRwbScs9eRfe0bAnZGPUxPIZoy39Dmqj+eweoZO0bWKiJuGuQH1QgxtB7Ep+lmBPdAJw
+ ZG9nRPt5hpztpKe8g6QdPy8AMfMufJBwx9WbdQ9qkDsZCZosTPmlg+ZLoqIaKmcFqS5c
+ s+CqBj6oIancThHQIt9kMRQJgHtowesVQ08nHMusFvYbrWqymQQhy1cZiFccALcJwc4r
+ +6LQ==
+X-Gm-Message-State: APjAAAXkBgPVrgttsbZdWVOy8mTUfvQ7IbVsaeYrn9YtE5pSUSCJDxnp
+ LZ/H08WXKSqcwnDxUZ4o4x5qLGQdQA==
+X-Google-Smtp-Source: APXvYqwbH7mjVVUHhMYS154eXjE/fFoPl0MGad/FpwQLPO3npUi6yjuvIMCeLcnwpi73LOcno2tHWA==
+X-Received: by 2002:a62:37c7:: with SMTP id
+ e190mr10304501pfa.130.1572087819846; 
+ Sat, 26 Oct 2019 04:03:39 -0700 (PDT)
 Received: from localhost.localdomain ([2409:4072:6214:69c4:49ad:ba3c:6f9:2d8a])
- by smtp.gmail.com with ESMTPSA id x129sm5543379pfx.14.2019.10.26.04.03.25
+ by smtp.gmail.com with ESMTPSA id x129sm5543379pfx.14.2019.10.26.04.03.32
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 26 Oct 2019 04:03:31 -0700 (PDT)
+ Sat, 26 Oct 2019 04:03:39 -0700 (PDT)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: sboyd@kernel.org,
 	mturquette@baylibre.com,
 	robh+dt@kernel.org
-Subject: [PATCH v6 4/7] arm64: dts: bitmain: Add clock controller support for
- BM1880 SoC
-Date: Sat, 26 Oct 2019 16:32:50 +0530
-Message-Id: <20191026110253.18426-5-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v6 5/7] arm64: dts: bitmain: Source common clock for UART
+ controllers
+Date: Sat, 26 Oct 2019 16:32:51 +0530
+Message-Id: <20191026110253.18426-6-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191026110253.18426-1-manivannan.sadhasivam@linaro.org>
 References: <20191026110253.18426-1-manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191026_040334_097490_23CC1DD7 
-X-CRM114-Status: GOOD (  10.35  )
+X-CRM114-CacheID: sfid-20191026_040342_240544_D6448808 
+X-CRM114-Status: GOOD (  13.12  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:433 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -110,54 +110,97 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add clock controller support for Bitmain BM1880 SoC.
+Remove fixed clock and source common clock for UART controllers.
 
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- arch/arm64/boot/dts/bitmain/bm1880.dtsi | 16 ++++++++++++++++
- 1 file changed, 16 insertions(+)
+ arch/arm64/boot/dts/bitmain/bm1880-sophon-edge.dts |  9 ---------
+ arch/arm64/boot/dts/bitmain/bm1880.dtsi            | 12 ++++++++++++
+ 2 files changed, 12 insertions(+), 9 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/bitmain/bm1880.dtsi b/arch/arm64/boot/dts/bitmain/bm1880.dtsi
-index d65453f99a99..8471662413da 100644
---- a/arch/arm64/boot/dts/bitmain/bm1880.dtsi
-+++ b/arch/arm64/boot/dts/bitmain/bm1880.dtsi
-@@ -4,6 +4,7 @@
-  * Author: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-  */
- 
-+#include <dt-bindings/clock/bm1880-clock.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- #include <dt-bindings/reset/bitmain,bm1880-reset.h>
- 
-@@ -66,6 +67,12 @@
- 			     <GIC_PPI 10 IRQ_TYPE_LEVEL_LOW>;
+diff --git a/arch/arm64/boot/dts/bitmain/bm1880-sophon-edge.dts b/arch/arm64/boot/dts/bitmain/bm1880-sophon-edge.dts
+index 3e8c70778e24..7a2c7f9c2660 100644
+--- a/arch/arm64/boot/dts/bitmain/bm1880-sophon-edge.dts
++++ b/arch/arm64/boot/dts/bitmain/bm1880-sophon-edge.dts
+@@ -49,12 +49,6 @@
+ 		reg = <0x1 0x00000000 0x0 0x40000000>; // 1GB
  	};
  
-+	osc: osc {
-+		compatible = "fixed-clock";
-+		clock-frequency = <25000000>;
-+		#clock-cells = <0>;
-+	};
-+
+-	uart_clk: uart-clk {
+-		compatible = "fixed-clock";
+-		clock-frequency = <500000000>;
+-		#clock-cells = <0>;
+-	};
+-
  	soc {
- 		compatible = "simple-bus";
- 		#address-cells = <2>;
-@@ -94,6 +101,15 @@
- 				reg = <0x400 0x120>;
- 			};
+ 		gpio0: gpio@50027000 {
+ 			porta: gpio-controller@0 {
+@@ -173,21 +167,18 @@
  
-+			clk: clock-controller@e8 {
-+				compatible = "bitmain,bm1880-clk";
-+				reg = <0xe8 0x0c>, <0x800 0xb0>;
-+				reg-names = "pll", "sys";
-+				clocks = <&osc>;
-+				clock-names = "osc";
-+				#clock-cells = <1>;
-+			};
-+
- 			rst: reset-controller@c00 {
- 				compatible = "bitmain,bm1880-reset";
- 				reg = <0xc00 0x8>;
+ &uart0 {
+ 	status = "okay";
+-	clocks = <&uart_clk>;
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_uart0_default>;
+ };
+ 
+ &uart1 {
+ 	status = "okay";
+-	clocks = <&uart_clk>;
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_uart1_default>;
+ };
+ 
+ &uart2 {
+ 	status = "okay";
+-	clocks = <&uart_clk>;
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_uart2_default>;
+ };
+diff --git a/arch/arm64/boot/dts/bitmain/bm1880.dtsi b/arch/arm64/boot/dts/bitmain/bm1880.dtsi
+index 8471662413da..fa6e6905f588 100644
+--- a/arch/arm64/boot/dts/bitmain/bm1880.dtsi
++++ b/arch/arm64/boot/dts/bitmain/bm1880.dtsi
+@@ -174,6 +174,9 @@
+ 		uart0: serial@58018000 {
+ 			compatible = "snps,dw-apb-uart";
+ 			reg = <0x0 0x58018000 0x0 0x2000>;
++			clocks = <&clk BM1880_CLK_UART_500M>,
++				 <&clk BM1880_CLK_APB_UART>;
++			clock-names = "baudclk", "apb_pclk";
+ 			interrupts = <GIC_SPI 9 IRQ_TYPE_LEVEL_HIGH>;
+ 			reg-shift = <2>;
+ 			reg-io-width = <4>;
+@@ -184,6 +187,9 @@
+ 		uart1: serial@5801A000 {
+ 			compatible = "snps,dw-apb-uart";
+ 			reg = <0x0 0x5801a000 0x0 0x2000>;
++			clocks = <&clk BM1880_CLK_UART_500M>,
++				 <&clk BM1880_CLK_APB_UART>;
++			clock-names = "baudclk", "apb_pclk";
+ 			interrupts = <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>;
+ 			reg-shift = <2>;
+ 			reg-io-width = <4>;
+@@ -194,6 +200,9 @@
+ 		uart2: serial@5801C000 {
+ 			compatible = "snps,dw-apb-uart";
+ 			reg = <0x0 0x5801c000 0x0 0x2000>;
++			clocks = <&clk BM1880_CLK_UART_500M>,
++				 <&clk BM1880_CLK_APB_UART>;
++			clock-names = "baudclk", "apb_pclk";
+ 			interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>;
+ 			reg-shift = <2>;
+ 			reg-io-width = <4>;
+@@ -204,6 +213,9 @@
+ 		uart3: serial@5801E000 {
+ 			compatible = "snps,dw-apb-uart";
+ 			reg = <0x0 0x5801e000 0x0 0x2000>;
++			clocks = <&clk BM1880_CLK_UART_500M>,
++				 <&clk BM1880_CLK_APB_UART>;
++			clock-names = "baudclk", "apb_pclk";
+ 			interrupts = <GIC_SPI 18 IRQ_TYPE_LEVEL_HIGH>;
+ 			reg-shift = <2>;
+ 			reg-io-width = <4>;
 -- 
 2.17.1
 
