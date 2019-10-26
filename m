@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5E2AE5935
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 26 Oct 2019 10:16:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08D54E5939
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 26 Oct 2019 10:17:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yHpdf4V7645z6ExK2aqTScH/O3AhR+UzLol8TSz7NUQ=; b=Eb+XdvdboJRf1w
-	mx4l5QSBO1OOyicNNziYgEmZmZzbNedSN1KhrZ7e9lOW8QrGZFDXGs1FMxHgGEd85Lhy8UJNHOpfc
-	kzJX/lMX7DEkVNbo26u4/Oywa7xFGIAOlrIbNcoALMJkppvCihQoyie189FjsNz7tfAvo48MCsPQY
-	3kw3yFi/5vjcsq/FSITAGM9ecTbds375/KHaZfLWgqrmDPHcvCcB/Fkw5QvXVKnVLCVgFSOMFyRT9
-	6iZ/qbHjQ9wISTw8OoT63Rt6ZLoNYszCSnhWZE0jHte2Dm81fQPY6wx3/2ZVBwz3VfOL+IuOT0VcO
-	KsCQ8+tTEKqxOLb8epZQ==;
+	List-Owner; bh=DCofB+Tfieu6tnatjUy0/7sqRECXRt8OFVLpovfTJX4=; b=qrnLkxcG3B75l2
+	bYPaYSwSPh8b9+7gd9oKmLPL5QbaS4HrNWJ+L1RtMKgsFVVC1EtTPDOjaPacs+gpDtUnQWl93CLct
+	t4zpIFSWp2Z18mFiWxL3AMjWanqEz35PleAEwKpsZ9MGW3baX7NHsWB++dqa3ys0ytSA4rLzp29tx
+	SK+4WPea1v1DPEutegdbqmJCCouwBxnaB/3rEzdsRANPYTs6UDF647OzWk6W/p+Yzsigqa+EeMjiA
+	JXrT+bXukgyqjjfObyzVJsyANF6EkyzO4SNYFhvyoE93jfsnJ2nLqOiyFMfq8YK/mnxIlK9LI4joF
+	9+oy+hkjgoyt+azDb1rw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOHFo-0005HE-Tr; Sat, 26 Oct 2019 08:16:56 +0000
+	id 1iOHGJ-0005WL-Br; Sat, 26 Oct 2019 08:17:27 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOHFa-0005Gu-KF
- for linux-arm-kernel@lists.infradead.org; Sat, 26 Oct 2019 08:16:43 +0000
+ id 1iOHG9-0005W1-OG
+ for linux-arm-kernel@lists.infradead.org; Sat, 26 Oct 2019 08:17:18 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 87EE121D7F;
- Sat, 26 Oct 2019 08:16:38 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D054C205F4;
+ Sat, 26 Oct 2019 08:17:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572077802;
- bh=GAJf0+ZsT9zLGFJe4VA1UIx4iLZZPPhj7MOQvVx/7gw=;
+ s=default; t=1572077837;
+ bh=z3MpLB+xELO0dgBsp/trPGrwsDL2LK34945azngzhgc=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=cGHdFdVpjZ6TFyXj2mLLzZnSb1d/zbaYiGMhJO9BxsomW3x+jE30Xxku2F1x+ZbsR
- EBhVxNs/BYHM6s7D72V5dapQruo2Gdb79/GTnSeJIC7bbcdqPNNz5LKe692y9TxvTL
- 0J+tx83UdQ/w/QTFpJZVsCEYdN1f1H1j9MzaVtRo=
-Date: Sat, 26 Oct 2019 16:16:26 +0800
+ b=rA20J243awBpAOyf+i9/SIbrZAqIvm3X/jw4VdNHLnf+jVhsx2r8rXDfExzGecFN3
+ HYvDNsvOIy9CF1Y80e3AR8L4hmBS0qwvy7iFPx2nmFqvCCxj9jOmGrlTrmY1sb2K+R
+ mRFaLo5Vq3F9hC8IgPQU3YFpo6OZLg35rG21czbw=
+Date: Sat, 26 Oct 2019 16:17:00 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH V2] clk: imx7ulp: Correct system clock source option #7
-Message-ID: <20191026081625.GC14401@dragon>
-References: <1571014565-4807-1-git-send-email-Anson.Huang@nxp.com>
+Subject: Re: [PATCH] clk: imx7ulp: Correct DDR clock mux options
+Message-ID: <20191026081658.GD14401@dragon>
+References: <1570784940-5965-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1571014565-4807-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1570784940-5965-1-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191026_011642_689902_10C23139 
-X-CRM114-Status: UNSURE (   7.61  )
+X-CRM114-CacheID: sfid-20191026_011717_805231_97828DB2 
+X-CRM114-Status: UNSURE (   7.09  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -87,13 +87,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 14, 2019 at 08:56:05AM +0800, Anson Huang wrote:
-> In the latest reference manual Rev.0,06/2019, the SCS's option #7
-> is no longer from upll, it is reserved, update clock driver accordingly.
+On Fri, Oct 11, 2019 at 05:09:00PM +0800, Anson Huang wrote:
+> In the latest reference manual Rev.0,06/2019, the DDR clock mux
+> is extended to 2 bits, and the clock options are also changed,
+> correct them accordingly.
 > 
 > Fixes: b1260067ac3d ("clk: imx: add imx7ulp clk driver")
 > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> Reviewed-by: Fabio Estevam <festevam@gmail.com>
 
 Applied, thanks.
 
