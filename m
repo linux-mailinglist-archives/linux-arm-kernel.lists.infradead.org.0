@@ -2,67 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06AE8E5FA7
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 26 Oct 2019 22:49:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9184CE5FC8
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 26 Oct 2019 23:57:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V3a9523Zx53O38Og7yDJJJFGqFbjLFk10OOMULgtcFg=; b=fqvd78VgN43m5i
-	+CcyBwApzkGpj2HnQxaNI6oTy0ZUvxT7bTIkK+EF6Zmr8PbiQDkYUr8AoIIbC9NkYV87dIRK3gKiA
-	KewXa64ZctPgeddP/XOqMBvelt23YOJnXmAv5XdIH4pZHBkifra3YZV19Zxujbo7X3qku3mMnjPqH
-	IqL1cP4xt/AFVKEaGTmf35wEkJtaVGcMymgroBD6gYwp5V/yAp9BdcJ/BunydjzQje5lNPWiZutCa
-	N39xpcQCEfHRsx3ayKuytsehviqKRNg+Im/PPZqz9Vcg2Q+Xf5oiROu++jmEC0drAvIQrlDI8nsuU
-	xYwgGSdJedwoLIiTfVEA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
+	In-Reply-To:Message-Id:Mime-Version:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=j/TonKJch6RloL64M266LKh+hksFFr5bccEytAY+wCI=; b=UUP7xuUXIcwBLeMj6qi1YDwucg
+	8rRaJN9mr6Ql1PvKAazac8R5916uRjQhYhMeVwAAff9Xgg02OtOTwxshFDPsqV5JwHRsfjyuBPinH
+	+ZE6uAD53pIcF+U+4so3BBEUth3+eEfRD1IfUbh6WEGsRXn5OZzINvGgd8/ApsWaCMjVVHFaNdNpD
+	k38si9pjUlVKN27useWubh9BzwAHqM6RQph3dCXxoWECaepQPySMvvbzh15GYO1utyge8pZOb3V3u
+	E1Lkhuy0kWNsIHnGtOHZ0TBmJRLX84fRoONLdUnQhTsUqhFDd1fah7SdWJAiQe9chE4QxjG0/WSFK
+	n+0iAz/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOT02-0001js-LC; Sat, 26 Oct 2019 20:49:26 +0000
-Received: from vault.bonstra.fr.eu.org ([51.158.68.104])
+	id 1iOU3c-0007MM-BT; Sat, 26 Oct 2019 21:57:12 +0000
+Received: from out3-smtp.messagingengine.com ([66.111.4.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOSzT-0001WJ-El
- for linux-arm-kernel@lists.infradead.org; Sat, 26 Oct 2019 20:48:52 +0000
-Received: from val.bonstra.fr.eu.org (unknown [192.168.128.2])
- by vault.bonstra.fr.eu.org (Postfix) with ESMTP id 1A923BFE83;
- Sat, 26 Oct 2019 20:41:48 +0000 (UTC)
-Received: from bonstra.fr.eu.org (vlad.gr1 [IPv6:fd7b:45cc:aa3d::3])
- by val.bonstra.fr.eu.org (Postfix) with ESMTPSA id 2A6AA60873;
- Sat, 26 Oct 2019 22:41:47 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=bonstra.fr.eu.org;
- s=dkim1; t=1572122507; x=1573332107;
- bh=VhKkxkWcTbCjrWeKegoiffMLEInoYHE0UkHYo8HkL10=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References;
- b=XWt470oIb0+H5KUndkc4KgevXnc31VGP7RacGTgi4Me6h0cxIdsebstCCEU4tbPRs
- uirV6/kgxCUItw3V4e2RrOXO3s368QAIlDw+T1TNjM75Fy6h4G82DaByyVunSShyhc
- w7ljbeEQznjqGZJveqSZiHdfHBv1faGDYFCqLb8vslSUD1i3V7jJDkUtauCc+z4Xcr
- nwJjiSr7PB9E7T8sn4lgN1ymyfGckhk5gvuzRhK3JIxD9oXZTkdLg47FbexB2xWT2e
- o0Y6vwNdarMY0jNrcnHVt7Gg90+ZKHqDLPKCVw2i79TzDt4GfktEuHU/Vq829cQp0k
- FWs67w3PYGdfg==
-From: Hugo Grostabussiat <bonstra@bonstra.fr.eu.org>
-To: Marcel Holtmann <marcel@holtmann.org>,
- Johan Hedberg <johan.hedberg@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>, Maxime Ripard <mripard@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>
-Subject: [PATCH 3/3] arm64: dts: allwinner: a64: Enable Bluetooth on Teres-I
-Date: Sat, 26 Oct 2019 22:41:16 +0200
-Message-Id: <20191026204116.95119-4-bonstra@bonstra.fr.eu.org>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191026204116.95119-1-bonstra@bonstra.fr.eu.org>
-References: <20191026204116.95119-1-bonstra@bonstra.fr.eu.org>
-MIME-Version: 1.0
+ id 1iOU3R-0007Lv-TJ; Sat, 26 Oct 2019 21:57:03 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailout.nyi.internal (Postfix) with ESMTP id 654F222201;
+ Sat, 26 Oct 2019 17:56:57 -0400 (EDT)
+Received: from imap2 ([10.202.2.52])
+ by compute3.internal (MEProxy); Sat, 26 Oct 2019 17:56:57 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jany.st; h=
+ mime-version:message-id:in-reply-to:references:date:from:to
+ :subject:content-type; s=mesmtp; bh=+fT7w3bXf2JliW1sYE8KJVCY9C5l
+ pQI6AyHGIJ8Huso=; b=tJbLcFoOX8kxYES4VARh+ZaSY+qZonFerzQNN08L2wxx
+ 1V6dCHeRojCBCzwAGoJSpl1hddynTlu4HX99b2G4Xyw4pjnhgMJUghnC0OdCCTVX
+ T6w+B2uUZVh4b0NZyowROFuEIcoEthUy9aVJvIytoSf/UNLK94Clk3eaUt7Yj8k=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=+fT7w3
+ bXf2JliW1sYE8KJVCY9C5lpQI6AyHGIJ8Huso=; b=vdg0zsMj2h11DWWvOkKP13
+ anX4Rtt5g64kAiemEuAyHz8rb+TSHOFzhD7IJKbSVks4XcDNAazBPDDCtV+xf8AM
+ G1bhgy72KclvbVH0kthefogSqvZkDdgjbwE8Nt8E8O14x647NDAU6Dtmspqkas+I
+ UIZkRzLz+Cf0oaNEa/94gRpyv8JT5UqCl1Io0rMTRKqQjDSxARkbC1ixI+NYB7f2
+ 9sotGzykc95+RQFk7DSqCqC07/2G1utN09JjNgK9kyrTeIFAHwJMPzaAttW7kY0Z
+ ao7yWizd7IjZt6K6ntFko+own7HMDnl44cLSM+sg/Ee0C7nR7EeWeNcALlB48j+g
+ ==
+X-ME-Sender: <xms:KMG0XQkcbNHUWkhHXJm_BLvBCY3NbsxODa10EKcf6MaabWTkD6nS1A>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrleeigddthecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecunecujfgurhepofgfggfkjghffffhvffutgesthdtre
+ dtreertdenucfhrhhomhepfdfnuhhkrghsiiculfgrnhihshhtfdcuoehluhhkrghsiies
+ jhgrnhihrdhstheqnecurfgrrhgrmhepmhgrihhlfhhrohhmpehluhhkrghsiiesjhgrnh
+ ihrdhsthenucevlhhushhtvghrufhiiigvpedt
+X-ME-Proxy: <xmx:KMG0XWvssA26y7dpymLVBRXNxK1YYt_dqstc3vkRITEHaMZx5n5vKg>
+ <xmx:KMG0XW9ecyg0l_EHNAUHDABBVV_hNtE2ChVNzistfiK40IuJPzPYSg>
+ <xmx:KMG0XYMZ7LVcW6AsqtyZ1CuUC47QzxtoX3StL3QhTzcN10Obp_0-Lg>
+ <xmx:KcG0XfLpLTl7oW-1Pr8IHkQZTSmjJveIZsY1OaStdf1xwlOiafJZEQ>
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+ id AD796E00A3; Sat, 26 Oct 2019 17:56:56 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.1.7-470-gedfae93-fmstable-20191021v4
+Mime-Version: 1.0
+Message-Id: <3e0a4532-9ddf-4773-92aa-dedeac557707@www.fastmail.com>
+In-Reply-To: <7a98e121-21e8-4b83-91e1-7b7002643ce1@www.fastmail.com>
+References: <7a98e121-21e8-4b83-91e1-7b7002643ce1@www.fastmail.com>
+Date: Sat, 26 Oct 2019 23:56:00 +0200
+From: "Lukasz Janyst" <lukasz@jany.st>
+To: linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Subject: Re: Memory issues with NanoPi M4 (rk3399)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191026_134851_635262_5E93882A 
-X-CRM114-Status: UNSURE (   9.91  )
+X-CRM114-CacheID: sfid-20191026_145702_124625_7D29CD51 
+X-CRM114-Status: UNSURE (   9.28  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.1 (/)
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.27 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -78,52 +99,23 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Hugo Grostabussiat <bonstra@bonstra.fr.eu.org>,
- linux-arm-kernel@lists.infradead.org, linux-bluetooth@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The UART1 on the Teres-A64-I is connected to a rtl8723bs combo
-WLAN/Bluetooth controller, with three GPIOs used for device reset,
-host wake up and device wake up.
+On Thu, Oct 24, 2019, at 23:34, Lukasz Janyst wrote:
+> My setup uses the master branch of uboot as of a couple of day ago. I 
+> also use the master branch of arm-trusted-firmware as BL31 with the 
+> 0aad563c commit reverted. I reverted this commit because the system 
+> fails to boot with it in even though all the addresses processed by 
+> arch/arm/mach-rockchip/make_fit_atf.py seem right. The kernel I try to 
+> boot is a couple days old version of linux-next with defconfig, but I 
+> see the same problems with any mainline kernel I tried.
 
-Currently, the host wake up feature is not supported by the HCI H5
-driver.
+The code in uboot's drivers/ram/rockchip/sdram_rk3399.c seems to be broken even when looking from a standpoint of a layperson. Some error checks are incorrect, parameters are overridden in multiple places for no good reason, the way some loops and function calls are structured does not make much sense. Furthermore, it appears that the code in plat/rockchip/rk3399/drivers/dram of arm-trusted-firmware is undoing what the bootloader is doing. Has that ever worked for anyone? 
 
-Signed-off-by: Hugo Grostabussiat <bonstra@bonstra.fr.eu.org>
----
- .../arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
-index 1069e7012c9c..c7db2f1650d4 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
-@@ -325,6 +325,19 @@
- 	status = "okay";
- };
- 
-+&uart1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&uart1_pins>, <&uart1_rts_cts_pins>;
-+	status = "okay";
-+
-+	bluetooth {
-+		compatible = "realtek,rtl8723bs-bt";
-+		enable-gpio = <&r_pio 0 4 GPIO_ACTIVE_HIGH>; /* PL4 */
-+		device-wake-gpio = <&r_pio 0 6 GPIO_ACTIVE_HIGH>; /* PL6 */
-+		realtek,config-name = "teres_a64_i";
-+	};
-+};
-+
- &usbphy {
- 	usb1_vbus-supply = <&reg_usb1_vbus>;
- 	status = "okay";
--- 
-2.23.0
-
+Lukasz
 
 _______________________________________________
 linux-arm-kernel mailing list
