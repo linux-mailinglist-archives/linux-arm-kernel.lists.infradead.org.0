@@ -2,63 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B295E591F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 26 Oct 2019 09:50:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 623E8E5920
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 26 Oct 2019 09:51:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q9sQ6BaRJPjopaIWXY5FOEaafx2gZNg+rXODaazLszI=; b=dBF81/KAAkVRPj
-	b7sHaiODqgXUCpgfffgDGOw+ZvhYuG64jhTp2uMTYuuLcMQSJiB+9UO0Usr5NZIyLBrwGSQHTd3mr
-	VnOwBDIRwh6UpZf1LLSGDIM6Ek5pRCxUWFf63982V8XxeDQoInSdkjFjjbXl4gO+ZIItXKpaIf4Yn
-	bqGLFTMHj9UR3Dk7ReDUt2RvGNAIFC6yFisynuPMvJlBkQ1Q8sqNu62cSTBOxwESM6XX1y5iTbWV1
-	H0QwS0KjVFkMjEb0fzV80wHS1dohk9rL8SWJj8xmUdazG9mwM8dzbGvXUQxAxXqzRXrpq0wGlt9OD
-	qi+JRv0607crqsN5cslA==;
+	List-Owner; bh=2Z03uud9uPGj8PDt//qb1k5tZEl2fKF+q+4naLdK814=; b=T+/bthjggJNf6n
+	cnO5U9aWL8tW7Vru7qP4CDAZSJOMse61YELV1URIKahtW1qD09sv7zTihgfKZQwi7MH/D0AJ4LKd+
+	3a0W8+JNsZEzuiydBbR37jkGSNaFH+rCZibe9f5NMHAnncY2kDtxob+sjiKcMi6f7BkBTDPt22lUp
+	scuhsPqw0MOrNTy+RZDnEvSFsXp1ThIjYJFNLPPffc/fu2VKx0jXqz//F3GzK/Ft+FLfpGPVV4h7L
+	lqn+m1hQMMDHnsEzOwMfUhoQ4OFUwCXytYtteaX2iXa8J7ZOe/8d0Tw+ppUBXJbxAMwngvMeXHdpF
+	5Sa8yLhPLQEJEBXhXHGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOGqZ-0004Yh-5c; Sat, 26 Oct 2019 07:50:51 +0000
-Received: from mailoutvs50.siol.net ([185.57.226.241] helo=mail.siol.net)
+	id 1iOGqo-0004qI-AA; Sat, 26 Oct 2019 07:51:06 +0000
+Received: from mailoutvs51.siol.net ([185.57.226.242] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOGq5-0004NF-Pu
- for linux-arm-kernel@lists.infradead.org; Sat, 26 Oct 2019 07:50:23 +0000
+ id 1iOGq7-0004Ns-Gu
+ for linux-arm-kernel@lists.infradead.org; Sat, 26 Oct 2019 07:50:25 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id A32E6521CE2;
- Sat, 26 Oct 2019 09:50:19 +0200 (CEST)
+ by mail.siol.net (Postfix) with ESMTP id 2AB2B521E31;
+ Sat, 26 Oct 2019 09:50:22 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at psrvmta09.zcs-production.pri
 Received: from mail.siol.net ([127.0.0.1])
  by localhost (psrvmta09.zcs-production.pri [127.0.0.1]) (amavisd-new,
  port 10032)
- with ESMTP id Ifw5_Als-dSp; Sat, 26 Oct 2019 09:50:19 +0200 (CEST)
+ with ESMTP id Q-HjqDkWfWyo; Sat, 26 Oct 2019 09:50:21 +0200 (CEST)
 Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id 30F70521C52;
- Sat, 26 Oct 2019 09:50:19 +0200 (CEST)
+ by mail.siol.net (Postfix) with ESMTPS id 970F8521C52;
+ Sat, 26 Oct 2019 09:50:21 +0200 (CEST)
 Received: from localhost.localdomain (cpe-86-58-59-25.static.triera.net
  [86.58.59.25]) (Authenticated sender: 031275009)
- by mail.siol.net (Postfix) with ESMTPSA id D959C521CE2;
- Sat, 26 Oct 2019 09:50:16 +0200 (CEST)
+ by mail.siol.net (Postfix) with ESMTPSA id 34EFE521CAF;
+ Sat, 26 Oct 2019 09:50:19 +0200 (CEST)
 From: Jernej Skrabec <jernej.skrabec@siol.net>
 To: mripard@kernel.org,
 	paul.kocialkowski@bootlin.com
-Subject: [PATCH 1/3] media: cedrus: Properly signal size in mode register
-Date: Sat, 26 Oct 2019 09:49:57 +0200
-Message-Id: <20191026074959.1073512-2-jernej.skrabec@siol.net>
+Subject: [PATCH 2/3] media: cedrus: Fix H264 4k support
+Date: Sat, 26 Oct 2019 09:49:58 +0200
+Message-Id: <20191026074959.1073512-3-jernej.skrabec@siol.net>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191026074959.1073512-1-jernej.skrabec@siol.net>
 References: <20191026074959.1073512-1-jernej.skrabec@siol.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191026_005022_166591_57951278 
-X-CRM114-Status: UNSURE (   9.62  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191026_005023_878379_19FB3D4B 
+X-CRM114-Status: GOOD (  14.49  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.241 listed in list.dnswl.org]
+ low trust [185.57.226.242 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -81,113 +80,197 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Mode register also holds information if video width is bigger than 2048
-and if it is equal to 4096.
-
-Rework cedrus_engine_enable() to properly signal this properties.
+H264 decoder needs additional or bigger buffers in order to decode 4k
+videos.
 
 Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
 ---
- drivers/staging/media/sunxi/cedrus/cedrus_h264.c  | 2 +-
- drivers/staging/media/sunxi/cedrus/cedrus_h265.c  | 2 +-
- drivers/staging/media/sunxi/cedrus/cedrus_hw.c    | 9 +++++++--
- drivers/staging/media/sunxi/cedrus/cedrus_hw.h    | 2 +-
- drivers/staging/media/sunxi/cedrus/cedrus_mpeg2.c | 2 +-
- drivers/staging/media/sunxi/cedrus/cedrus_regs.h  | 2 ++
- 6 files changed, 13 insertions(+), 6 deletions(-)
+ drivers/staging/media/sunxi/cedrus/cedrus.h   |  7 ++
+ .../staging/media/sunxi/cedrus/cedrus_h264.c  | 83 +++++++++++++++++--
+ .../staging/media/sunxi/cedrus/cedrus_regs.h  | 11 +++
+ 3 files changed, 93 insertions(+), 8 deletions(-)
 
+diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.h b/drivers/staging/media/sunxi/cedrus/cedrus.h
+index c45fb9a7ad07..96765555ab8a 100644
+--- a/drivers/staging/media/sunxi/cedrus/cedrus.h
++++ b/drivers/staging/media/sunxi/cedrus/cedrus.h
+@@ -116,8 +116,15 @@ struct cedrus_ctx {
+ 			ssize_t		mv_col_buf_size;
+ 			void		*pic_info_buf;
+ 			dma_addr_t	pic_info_buf_dma;
++			ssize_t		pic_info_buf_size;
+ 			void		*neighbor_info_buf;
+ 			dma_addr_t	neighbor_info_buf_dma;
++			void		*deblk_buf;
++			dma_addr_t	deblk_buf_dma;
++			ssize_t		deblk_buf_size;
++			void		*intra_pred_buf;
++			dma_addr_t	intra_pred_buf_dma;
++			ssize_t		intra_pred_buf_size;
+ 		} h264;
+ 		struct {
+ 			void		*mv_col_buf;
 diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c b/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
-index 7487f6ab7576..d2c854ecdf15 100644
+index d2c854ecdf15..19962f4213d4 100644
 --- a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
 +++ b/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
-@@ -485,7 +485,7 @@ static void cedrus_h264_setup(struct cedrus_ctx *ctx,
+@@ -39,7 +39,6 @@ struct cedrus_h264_sram_ref_pic {
+ #define CEDRUS_H264_FRAME_NUM		18
+ 
+ #define CEDRUS_NEIGHBOR_INFO_BUF_SIZE	(16 * SZ_1K)
+-#define CEDRUS_PIC_INFO_BUF_SIZE	(128 * SZ_1K)
+ 
+ static void cedrus_h264_write_sram(struct cedrus_dev *dev,
+ 				   enum cedrus_h264_sram_off off,
+@@ -342,6 +341,20 @@ static void cedrus_set_params(struct cedrus_ctx *ctx,
+ 		     VE_H264_VLD_ADDR_FIRST | VE_H264_VLD_ADDR_VALID |
+ 		     VE_H264_VLD_ADDR_LAST);
+ 
++	if (ctx->src_fmt.width > 2048) {
++		cedrus_write(dev, VE_BUF_CTRL,
++			     VE_BUF_CTRL_INTRAPRED_MIXED_RAM |
++			     VE_BUF_CTRL_DBLK_MIXED_RAM);
++		cedrus_write(dev, VE_DBLK_DRAM_BUF_ADDR,
++			     ctx->codec.h264.deblk_buf_dma);
++		cedrus_write(dev, VE_INTRAPRED_DRAM_BUF_ADDR,
++			     ctx->codec.h264.intra_pred_buf_dma);
++	} else {
++		cedrus_write(dev, VE_BUF_CTRL,
++			     VE_BUF_CTRL_INTRAPRED_INT_SRAM |
++			     VE_BUF_CTRL_DBLK_INT_SRAM);
++	}
++
+ 	/*
+ 	 * FIXME: Since the bitstream parsing is done in software, and
+ 	 * in userspace, this shouldn't be needed anymore. But it
+@@ -502,18 +515,28 @@ static void cedrus_h264_setup(struct cedrus_ctx *ctx,
+ static int cedrus_h264_start(struct cedrus_ctx *ctx)
  {
  	struct cedrus_dev *dev = ctx->dev;
++	unsigned int pic_info_size;
+ 	unsigned int field_size;
+ 	unsigned int mv_col_size;
+ 	int ret;
  
--	cedrus_engine_enable(dev, CEDRUS_CODEC_H264);
-+	cedrus_engine_enable(ctx, CEDRUS_CODEC_H264);
- 
- 	cedrus_write(dev, VE_H264_SDROT_CTRL, 0);
- 	cedrus_write(dev, VE_H264_EXTRA_BUFFER1,
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_h265.c b/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
-index 9bc921866f70..6945dc74e1d7 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
-@@ -276,7 +276,7 @@ static void cedrus_h265_setup(struct cedrus_ctx *ctx,
- 	}
- 
- 	/* Activate H265 engine. */
--	cedrus_engine_enable(dev, CEDRUS_CODEC_H265);
-+	cedrus_engine_enable(ctx, CEDRUS_CODEC_H265);
- 
- 	/* Source offset and length in bits. */
- 
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_hw.c b/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
-index 570a9165dd5d..3acfa21bc124 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
-@@ -30,7 +30,7 @@
- #include "cedrus_hw.h"
- #include "cedrus_regs.h"
- 
--int cedrus_engine_enable(struct cedrus_dev *dev, enum cedrus_codec codec)
-+int cedrus_engine_enable(struct cedrus_ctx *ctx, enum cedrus_codec codec)
- {
- 	u32 reg = 0;
- 
-@@ -58,7 +58,12 @@ int cedrus_engine_enable(struct cedrus_dev *dev, enum cedrus_codec codec)
- 		return -EINVAL;
- 	}
- 
--	cedrus_write(dev, VE_MODE, reg);
-+	if (ctx->src_fmt.width == 4096)
-+		reg |= VE_MODE_PIC_WIDTH_IS_4096;
 +	if (ctx->src_fmt.width > 2048)
-+		reg |= VE_MODE_PIC_WIDTH_MORE_2048;
++		pic_info_size = CEDRUS_H264_FRAME_NUM * 0x4000;
++	else
++		pic_info_size = CEDRUS_H264_FRAME_NUM * 0x1000;
 +
-+	cedrus_write(ctx->dev, VE_MODE, reg);
+ 	/*
+-	 * FIXME: It seems that the H6 cedarX code is using a formula
+-	 * here based on the size of the frame, while all the older
+-	 * code is using a fixed size, so that might need to be
+-	 * changed at some point.
++	 * FIXME: If V4L2_H264_SPS_FLAG_FRAME_MBS_ONLY is set,
++	 * there is no need to multiply by 2.
+ 	 */
++	pic_info_size += ctx->src_fmt.height * 2 * 64;
++
++	if (pic_info_size < 130 * SZ_1K)
++		pic_info_size = 130 * SZ_1K;
++
++	ctx->codec.h264.pic_info_buf_size = pic_info_size;
+ 	ctx->codec.h264.pic_info_buf =
+-		dma_alloc_coherent(dev->dev, CEDRUS_PIC_INFO_BUF_SIZE,
++		dma_alloc_coherent(dev->dev, ctx->codec.h264.pic_info_buf_size,
+ 				   &ctx->codec.h264.pic_info_buf_dma,
+ 				   GFP_KERNEL);
+ 	if (!ctx->codec.h264.pic_info_buf)
+@@ -566,15 +589,51 @@ static int cedrus_h264_start(struct cedrus_ctx *ctx)
+ 		goto err_neighbor_buf;
+ 	}
  
++	if (ctx->src_fmt.width > 2048) {
++		ctx->codec.h264.deblk_buf_size =
++			ALIGN(ctx->src_fmt.width, 32) * 12;
++		ctx->codec.h264.deblk_buf =
++			dma_alloc_coherent(dev->dev,
++					   ctx->codec.h264.deblk_buf_size,
++					   &ctx->codec.h264.deblk_buf_dma,
++					   GFP_KERNEL);
++		if (!ctx->codec.h264.deblk_buf) {
++			ret = -ENOMEM;
++			goto err_mv_col_buf;
++		}
++
++		ctx->codec.h264.intra_pred_buf_size =
++			ALIGN(ctx->src_fmt.width, 64) * 5;
++		ctx->codec.h264.intra_pred_buf =
++			dma_alloc_coherent(dev->dev,
++					   ctx->codec.h264.intra_pred_buf_size,
++					   &ctx->codec.h264.intra_pred_buf_dma,
++					   GFP_KERNEL);
++		if (!ctx->codec.h264.intra_pred_buf) {
++			ret = -ENOMEM;
++			goto err_deblk_buf;
++		}
++	}
++
  	return 0;
+ 
++err_deblk_buf:
++	dma_free_coherent(dev->dev, ctx->codec.h264.deblk_buf_size,
++			  ctx->codec.h264.deblk_buf,
++			  ctx->codec.h264.deblk_buf_dma);
++
++err_mv_col_buf:
++	dma_free_coherent(dev->dev, ctx->codec.h264.mv_col_buf_size,
++			  ctx->codec.h264.mv_col_buf,
++			  ctx->codec.h264.mv_col_buf_dma);
++
+ err_neighbor_buf:
+ 	dma_free_coherent(dev->dev, CEDRUS_NEIGHBOR_INFO_BUF_SIZE,
+ 			  ctx->codec.h264.neighbor_info_buf,
+ 			  ctx->codec.h264.neighbor_info_buf_dma);
+ 
+ err_pic_buf:
+-	dma_free_coherent(dev->dev, CEDRUS_PIC_INFO_BUF_SIZE,
++	dma_free_coherent(dev->dev, ctx->codec.h264.pic_info_buf_size,
+ 			  ctx->codec.h264.pic_info_buf,
+ 			  ctx->codec.h264.pic_info_buf_dma);
+ 	return ret;
+@@ -590,9 +649,17 @@ static void cedrus_h264_stop(struct cedrus_ctx *ctx)
+ 	dma_free_coherent(dev->dev, CEDRUS_NEIGHBOR_INFO_BUF_SIZE,
+ 			  ctx->codec.h264.neighbor_info_buf,
+ 			  ctx->codec.h264.neighbor_info_buf_dma);
+-	dma_free_coherent(dev->dev, CEDRUS_PIC_INFO_BUF_SIZE,
++	dma_free_coherent(dev->dev, ctx->codec.h264.pic_info_buf_size,
+ 			  ctx->codec.h264.pic_info_buf,
+ 			  ctx->codec.h264.pic_info_buf_dma);
++	if (ctx->codec.h264.deblk_buf_size)
++		dma_free_coherent(dev->dev, ctx->codec.h264.deblk_buf_size,
++				  ctx->codec.h264.deblk_buf,
++				  ctx->codec.h264.deblk_buf_dma);
++	if (ctx->codec.h264.intra_pred_buf_size)
++		dma_free_coherent(dev->dev, ctx->codec.h264.intra_pred_buf_size,
++				  ctx->codec.h264.intra_pred_buf,
++				  ctx->codec.h264.intra_pred_buf_dma);
  }
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_hw.h b/drivers/staging/media/sunxi/cedrus/cedrus_hw.h
-index 27d0882397aa..604ff932fbf5 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus_hw.h
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus_hw.h
-@@ -16,7 +16,7 @@
- #ifndef _CEDRUS_HW_H_
- #define _CEDRUS_HW_H_
  
--int cedrus_engine_enable(struct cedrus_dev *dev, enum cedrus_codec codec);
-+int cedrus_engine_enable(struct cedrus_ctx *ctx, enum cedrus_codec codec);
- void cedrus_engine_disable(struct cedrus_dev *dev);
- 
- void cedrus_dst_format_set(struct cedrus_dev *dev,
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_mpeg2.c b/drivers/staging/media/sunxi/cedrus/cedrus_mpeg2.c
-index 13c34927bad5..8bcd6b8f9e2d 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus_mpeg2.c
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus_mpeg2.c
-@@ -96,7 +96,7 @@ static void cedrus_mpeg2_setup(struct cedrus_ctx *ctx, struct cedrus_run *run)
- 	quantization = run->mpeg2.quantization;
- 
- 	/* Activate MPEG engine. */
--	cedrus_engine_enable(dev, CEDRUS_CODEC_MPEG2);
-+	cedrus_engine_enable(ctx, CEDRUS_CODEC_MPEG2);
- 
- 	/* Set intra quantization matrix. */
- 
+ static void cedrus_h264_trigger(struct cedrus_ctx *ctx)
 diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_regs.h b/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
-index 4275a307d282..ace3d49fcd82 100644
+index ace3d49fcd82..7beb03d3bb39 100644
 --- a/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
 +++ b/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
-@@ -35,6 +35,8 @@
+@@ -46,6 +46,17 @@
+ #define VE_MODE_DEC_H264			(0x01 << 0)
+ #define VE_MODE_DEC_MPEG			(0x00 << 0)
  
- #define VE_MODE					0x00
++#define VE_BUF_CTRL				0x50
++
++#define VE_BUF_CTRL_INTRAPRED_EXT_RAM		(0x02 << 2)
++#define VE_BUF_CTRL_INTRAPRED_MIXED_RAM		(0x01 << 2)
++#define VE_BUF_CTRL_INTRAPRED_INT_SRAM		(0x00 << 2)
++#define VE_BUF_CTRL_DBLK_EXT_RAM		(0x02 << 0)
++#define VE_BUF_CTRL_DBLK_MIXED_RAM		(0x01 << 0)
++#define VE_BUF_CTRL_DBLK_INT_SRAM		(0x00 << 0)
++
++#define VE_DBLK_DRAM_BUF_ADDR			0x54
++#define VE_INTRAPRED_DRAM_BUF_ADDR		0x58
+ #define VE_PRIMARY_CHROMA_BUF_LEN		0xc4
+ #define VE_PRIMARY_FB_LINE_STRIDE		0xc8
  
-+#define VE_MODE_PIC_WIDTH_IS_4096		BIT(22)
-+#define VE_MODE_PIC_WIDTH_MORE_2048		BIT(21)
- #define VE_MODE_REC_WR_MODE_2MB			(0x01 << 20)
- #define VE_MODE_REC_WR_MODE_1MB			(0x00 << 20)
- #define VE_MODE_DDR_MODE_BW_128			(0x03 << 16)
 -- 
 2.23.0
 
