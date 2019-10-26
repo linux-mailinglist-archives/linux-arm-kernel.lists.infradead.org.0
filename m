@@ -2,78 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E960E593D
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 26 Oct 2019 10:24:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E855E595A
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 26 Oct 2019 11:04:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jApTXFAgNCcLlxTKTrD/tNWiUc14HlqA+B9BnPFthJI=; b=sjKNHHCqcFJDH6
-	tSvgGc+oun5j/yIuoPbr9Z8h5ibf6tpFo8UMrMwBzEcRO8PBqXgp99nP7/eAOoQgANs8alq/JBt1g
-	uLUQuEiTT3cPQILpSIMJ+FoIAGOudI0pa65xk0dKDNb926fD7CtRsw6rY7Bu7mBSJ3FAhX53bQPgX
-	/4iGmMVXDbc4Q4nyVkkazk+4g9E/uEUOoHHvU3F8KLSUa8RWc+Mwzx5SpLpfHOAj+YbsC0mwZcLw7
-	ifz6ZUitVX3/pSicJ9NpKnt7ganaBQawofbhQXvxZXI2eH49DHYMSWmEo792suajkfqSogwtizVrO
-	F6X1grZyJWxERCYMX8wQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Q61Gm4psWzcu7fOLtnpJ6ipOikRoc3h6gvEo/sVnNGE=; b=Tr0MWjNIny+TVo
+	5/fUsPkB40+Z+YExmUmZwkAvYPiD6ewOl9mButr+sXRacmlC8q05LGUL7+PC1PMzFOVBK8vnzGtVI
+	BdL1A3be6MQxE0TjYRv6whd3EHtnwjMI3fVfQpBGSWRv52Evw2kyQ4V82P91mgXVtEXt+D+0cDK/2
+	/p7D+3JZOj9UeQHwlW9bvej2LId0Qi0p0r6adzFZNPH16Vrg6EO1RkA7H2wA6sl1DHbOqZrSsl33/
+	W83V7TiM4agzD3cPowsjsNkrcP/rFdNTT4iF4W/JQU8t+DvYFkMdhhdy3RteX5lTZ/cS0lIEEfoup
+	2nDFWKlYsAgu8MwkDzvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOHNB-0007jn-1P; Sat, 26 Oct 2019 08:24:33 +0000
-Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::10])
+	id 1iOI0A-0003zN-II; Sat, 26 Oct 2019 09:04:50 +0000
+Received: from mout.perfora.net ([74.208.4.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOHMw-0007ir-Rq
- for linux-arm-kernel@lists.infradead.org; Sat, 26 Oct 2019 08:24:21 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1572078246;
- s=strato-dkim-0002; d=goldelico.com;
- h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=i+MQHbSzYrAECD2i9GTqSSZFbktvxXHglJFMdbybaRE=;
- b=AgA5lXfOTrXaK238DqY9gmzIUWqLRwq3W3kQjZX4F/IHDDzv8hkyObCjNBTVu7agBL
- 5IFkz4WpR8E0ThAdxgN0qlZn3vku1stov24IcP9ZL2aTaNnQYhttcAXunrBlFsBE0qAu
- W5WUzpXSoyHb9Ml04NujbDGgW89pK98sDDwXw+rocO3NApip+qrNvOYCBY7BWk4wF24s
- ibjCFuNjN0CCSiuDhWL37D1LB5KcfZHhkFae7b8LlhtCM9US0KbqZfxm/S9pm3/wu4k+
- 7+bwBxax4s863r1t+7Q82GEFAr4rgHAR+UPwmPR4R5uSYhCqBBpPoPNCU88lTiqd9tZJ
- GVJA==
-X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMgPgp8VKxflSZ1P34KBp5hRw/qOxWRk4dCysP/lx4uw33QyGXuNISy7Vq++g6sYlqLxXuQw="
-X-RZG-CLASS-ID: mo00
-Received: from [IPv6:2001:16b8:2694:9c00:1e1:24c4:3f0e:1772]
- by smtp.strato.de (RZmta 44.28.1 AUTH)
- with ESMTPSA id R0b2a8v9Q8Nvkz4
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (curve secp521r1 with 521 ECDH
- bits, eq. 15360 bits RSA)) (Client did not present a certificate);
- Sat, 26 Oct 2019 10:23:57 +0200 (CEST)
-Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
-Subject: Re: [PATCH v2 01/11] Documentation: dt: wireless: update wl1251 for
- sdio
-From: "H. Nikolaus Schaller" <hns@goldelico.com>
-In-Reply-To: <20191025211338.GA20249@bogus>
-Date: Sat, 26 Oct 2019 10:24:05 +0200
-Message-Id: <3A15C879-3A17-4FFC-B41E-0B98B63E8F7C@goldelico.com>
-References: <cover.1571510481.git.hns@goldelico.com>
- <741828f69eca2a9c9a0a7e80973c91f50cc71f9b.1571510481.git.hns@goldelico.com>
- <20191025211338.GA20249@bogus>
-To: Rob Herring <robh@kernel.org>
-X-Mailer: Apple Mail (2.3124)
+ id 1iOHzu-0003yd-6i
+ for linux-arm-kernel@lists.infradead.org; Sat, 26 Oct 2019 09:04:35 +0000
+Received: from marcel-nb-toradex-int.cardiotech.int ([81.221.67.182]) by
+ mrelay.perfora.net (mreueus004 [74.208.5.2]) with ESMTPSA (Nemesis) id
+ 1MQdh4-1ib1S01G0U-00Nkh2; Sat, 26 Oct 2019 11:04:18 +0200
+From: Marcel Ziswiler <marcel@ziswiler.com>
+To: devicetree@vger.kernel.org
+Subject: [PATCH v2 1/5] arm: dts: vf-colibri: fix typo in top-level module
+ compatible
+Date: Sat, 26 Oct 2019 11:03:59 +0200
+Message-Id: <20191026090403.3057-1-marcel@ziswiler.com>
+X-Mailer: git-send-email 2.21.0
+MIME-Version: 1.0
+X-Provags-ID: V03:K1:uCkCQ5TKbiZEPOXRjuUU6qXHkYQrJJn9ygRw5CFh8WqiHqiMNIH
+ 6XJvGd+TbDVJksX+AEQotEHsuk7/gDK7WZjqhVGmXRByJJjpu+ZUZB5+yxbkuyOoioiKtxD
+ 2GKSezcg0OEusEbDk+okfru1hIlQtefsZVgtIxEzrKT14s/bJRgNnVRPWx4jXaZ09R0ZAO8
+ G5mRaDsp4xgCjj4e1g2dQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:eXKVbwpdkws=:ul6xmUDv/h87RAGo8xH6dn
+ vjL2OR+mKU3FR5fXVUIdWWH7nYHRRoKtCsIgHl/bXzCOtd9jKrgj+r4uiilas0q4kJQ8pHqOi
+ Pcs2RiHsSdtMrDcdUf7YaXfRm+QaZkTxn/7texn96L7oCVCJnyqnWGDRNj1FNd/3KJ9FRMul8
+ chz8UewIiV+lR4cKS9aXC7MzcWjjtkLxyrCGAR2FUKJ7hf81NworcE1minxkRXCE62rM7DC2x
+ ZmhgaDyiQb6TDrSOZFLARt9HEEiqVJBi2bbCrfrs3H69zUTCD6/Ryh812rJSGNlEuhXIrotvt
+ 8PAbPg1d4KKiC/6//I/CH5VNmbOdAF6CZgRlrflAY13Apro0sfEmxZ5YAPkSsQlhslong8ega
+ N1z0bQVppPYnz5pM6Guq27lMlpmfzCkQdIDv7/CMHbW1TcI8DRRneysnM5Vtjb74qTaeo07eN
+ 8T4F5KiTlBMf36xXAghWrLGaYelunsRtFN/CJFGNnezvZEdKmiE82J+of9h+WTVNoBLdwXE8F
+ 4e8Jpvo7hb1O+yfBsnGjDh9jE8yvFjhxGLuZarMeWD+4CIZvraF9C2+1Netia+6hHTcJqv9VG
+ ybNQVqtTRWieS+3t5SsyZn4yZJMWqgco2+/XbL99U2PN3noVETC/rv+/5VYCgnNARy2AGB1Ms
+ DThyusxTBEFusTD4B1q3APVUT2VJV+MRZpqW7v6GYbVEW1wFE5OR7XWqwevQXLa9rIiiIj7oS
+ jWkokw5cc+Bfuyi6xUamq7ICPPn+bxuqXgi/fWoGobdAGH+vft91mlDWfmWBKGJw9r7nR/koH
+ MJLY7XPwn+Sbxoyn2IySDHPDquYJF9xNZ7MKkPnwiNptMQav1mSF8NGKwHJGYVHK0GxZ4xS7O
+ ZybazX6O0zJoqz4P1owAvMWsffCthsjje2UEZkE7Q=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191026_012419_490715_456CA880 
-X-CRM114-Status: GOOD (  10.90  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191026_020434_324629_5CDC3B3B 
+X-CRM114-Status: UNSURE (   8.64  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5302:0:0:10 listed in]
- [list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [74.208.4.196 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,93 +77,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- devicetree@vger.kernel.org, Tony Lindgren <tony@atomide.com>,
- linux-wireless@vger.kernel.org, Kefeng Wang <wangkefeng.wang@huawei.com>,
- Bjorn Helgaas <bhelgaas@google.com>, netdev@vger.kernel.org,
- linux-omap@vger.kernel.org, "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
- Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
- Yangtao Li <tiny.windzz@gmail.com>, Kalle Valo <kvalo@codeaurora.org>,
- Petr Mladek <pmladek@suse.com>,
- =?utf-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
- Alexios Zavras <alexios.zavras@intel.com>,
- John Stultz <john.stultz@linaro.org>, David Sterba <dsterba@suse.com>,
- Thomas Gleixner <tglx@linutronix.de>, letux-kernel@openphoenux.org,
- Allison Randal <allison@lohutok.net>, linux-arm-kernel@lists.infradead.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mmc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Sakari Ailus <sakari.ailus@linux.intel.com>,
- kernel@pyra-handheld.com
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Marcel Ziswiler <marcel.ziswiler@toradex.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
+ Stefan Agner <stefan@agner.ch>,
+ Philippe Schenker <philippe.schenker@toradex.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-imx@nxp.com,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
 
-> Am 25.10.2019 um 23:13 schrieb Rob Herring <robh@kernel.org>:
-> 
-> On Sat, Oct 19, 2019 at 08:41:16PM +0200, H. Nikolaus Schaller wrote:
->> The standard method for sdio devices connected to
->> an sdio interface is to define them as a child node
->> like we can see with wlcore.
->> 
->> Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
->> Acked-by: Kalle Valo <kvalo@codeaurora.org>
->> ---
->> .../bindings/net/wireless/ti,wl1251.txt       | 26 +++++++++++++++++++
->> 1 file changed, 26 insertions(+)
->> 
->> diff --git a/Documentation/devicetree/bindings/net/wireless/ti,wl1251.txt b/Documentation/devicetree/bindings/net/wireless/ti,wl1251.txt
->> index bb2fcde6f7ff..88612ff29f2d 100644
->> --- a/Documentation/devicetree/bindings/net/wireless/ti,wl1251.txt
->> +++ b/Documentation/devicetree/bindings/net/wireless/ti,wl1251.txt
->> @@ -35,3 +35,29 @@ Examples:
->> 		ti,power-gpio = <&gpio3 23 GPIO_ACTIVE_HIGH>; /* 87 */
->> 	};
->> };
->> +
->> +&mmc3 {
->> +	vmmc-supply = <&wlan_en>;
->> +
->> +	bus-width = <4>;
->> +	non-removable;
->> +	ti,non-removable;
->> +	cap-power-off-card;
->> +
->> +	pinctrl-names = "default";
->> +	pinctrl-0 = <&mmc3_pins>;
-> 
-> None of the above are really relevant to this binding.
+Fix typo in top-level module compatible.
 
-Ok, but how and where do we document that they are needed to make both ends of the interface work together?
+Signed-off-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
 
-> 
->> +
->> +	#address-cells = <1>;
->> +	#size-cells = <0>;
->> +
->> +	wlan: wl1251@1 {
-> 
-> wifi@1
+---
 
-Ok.
+Changes in v2: New patch.
 
-> 
->> +		compatible = "ti,wl1251";
->> +
->> +		reg = <1>;
->> +
->> +		interrupt-parent = <&gpio1>;
->> +		interrupts = <21 IRQ_TYPE_LEVEL_HIGH>;	/* GPIO_21 */
->> +
->> +		ti,wl1251-has-eeprom;
->> +	};
->> +};
->> -- 
->> 2.19.1
->> 
+ arch/arm/boot/dts/vf500-colibri.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-BR and thanks,
-Nikolaus
+diff --git a/arch/arm/boot/dts/vf500-colibri.dtsi b/arch/arm/boot/dts/vf500-colibri.dtsi
+index 237b0246fa84..92255f8893ce 100644
+--- a/arch/arm/boot/dts/vf500-colibri.dtsi
++++ b/arch/arm/boot/dts/vf500-colibri.dtsi
+@@ -44,7 +44,7 @@
+ 
+ / {
+ 	model = "Toradex Colibri VF50 COM";
+-	compatible = "toradex,vf610-colibri_vf50", "fsl,vf500";
++	compatible = "toradex,vf500-colibri_vf50", "fsl,vf500";
+ 
+ 	memory@80000000 {
+ 		device_type = "memory";
+-- 
+2.21.0
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
