@@ -2,81 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9998E5F86
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 26 Oct 2019 22:31:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1909FE5FA8
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 26 Oct 2019 22:49:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vu6Ag+i1p5mulwZrH8lIu1FpBTAT/ZSUsQGCgpj0x1o=; b=F9TAZ5kyT4QYdF
-	yrXV4IcEyfrbPXpAxMcaVT4xpz+q9E3cJ6eGOYEQLyx/Jpu76qRJ4ifrb+mhwhympBYjp6DFnyX/H
-	xZ2jg+aVb357H0v6aEzFT8/F5V0u+Ms5DbXh3YlLx7MtFAPifWYnQAQIWEZSWTwDpPkvL+EeNoOhl
-	Oi45RqWGXXXMSgEBK9OkEswnkqqAHQXCdD8CkF6mA5AhRPNEO6dpuQrGbZjt9qUZravNEOzwI1I/S
-	8NPuVh7Z40RBVXQi0yYZd4+OACzADyqXRPf9LIKm5tiLlrmlVHGUP/An1DXTWBXC9+Y/URADVak0d
-	+jPPYXQFNOUTjUBEhn2g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Qzsyv/Y3lBwKVpsaoDgf2A9+KFmW9qhI5wHuluzDDMc=; b=IYjmItCsUkcBPx
+	Q9TmsriHS4Ahug+NybJv/QMYhxcmhmUBNFsUYMPHlvYopEYAr/nfkj32k25r2h++qiu9K+z+LXtQd
+	DkbmuB0aiFucH36qwP7mcW5hr+UByjWVj03jGdpIXtzs4n3JNYGKSwCtrQ0DTPEg2WdFnOqYJwmas
+	gBk+tRqXQ1tk+e01B0RvnoaXkXEPCXkcYogUheXnOOkZPdJ4e7CjewiwwWFnJK4KUBsTiz07uGIoy
+	Vuqi+c1KVq6pxfGuTnU84kw3ueOK+c0q7wD4C23VBNcnvF7CbwrWZ2Wozn1rakOS0j4YuKtGYndqS
+	/s/83SfDadfXAqFVtPcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOSiY-0004pq-ND; Sat, 26 Oct 2019 20:31:22 +0000
-Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
+	id 1iOT0K-00025u-Iz; Sat, 26 Oct 2019 20:49:44 +0000
+Received: from vault.bonstra.fr.eu.org ([51.158.68.104])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOSiF-0004oY-Tj; Sat, 26 Oct 2019 20:31:05 +0000
-Received: by mail-lf1-x131.google.com with SMTP id 195so4807173lfj.6;
- Sat, 26 Oct 2019 13:31:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=C3Bnj79/MdmyOPceI8w6ogw+VOwoEwR2LfbvEH8/Jt8=;
- b=ocEA2/UpEZub4FfzrES/35kLEEgf+iuM14yuJDnzueb3oicjVf5VjH8yPNzykDM3CI
- 0ySJFqTK5wy/ITLl5r/AeF199mbKYCUlQe1acfJZ5OhvbURawEi5O+XvdN9rqYmKETtf
- IC4fsanTSIIn0AuZ928OzFys+/+zrqPd7vALXtU348vu0tp9fVZM93c8V5ZMRvOv6k3O
- zF08+RBUuiBLGBuqG0409jY8ynGQnCTTBp7hGXvgGTKWkIWQmOEDqYk2MMIl0mIF7Pld
- TI0erEKwKnwVhZpDN3Se0CJNro3iFgZ84BgBVQI0u1n2a2vvUQ2YIqlEi/FFJJE1r/uF
- 9BBQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=C3Bnj79/MdmyOPceI8w6ogw+VOwoEwR2LfbvEH8/Jt8=;
- b=EDiGyhQUB+7lYJMbTxcI+NhK0r4x8L8kh2WVw7ZAG/n6Xq3WjUUZj+Yf06+TEGmLOn
- 2UE5Mg5Pd5Cb+H5BXMoFSc+PB93K04U7oAG9WOCUSUj8LmBETscmOe3PckBbRcnWkGVp
- +4T1QM2TYfdSIy7QzX9l2DdmR5gWN7qq6zkaNjrLoEA2E19UbhWZ1VqoVqkuwYJrFZId
- C0lyTFIAZ0L2U7ldmGIwKx4eenv9Q24ZMZzfff1wqyXZauHo5CuUrEKnGuuceRvKGhRP
- tQSnca1O6n13qXYHSzoFsg9QFBiP/8eL0dCogTaJ91k+ng0nbJjvNwia6jVn1YgmU2lm
- q84Q==
-X-Gm-Message-State: APjAAAUbKEGWelNYNfKSoZt73HjzMzeO2vReyRBuQClznY21P6InvTjO
- rx3jXm3RLJN86X1qSUw/RG4TPJEaKSxZfbSQISWcpU7K4uk=
-X-Google-Smtp-Source: APXvYqxEG+sO1ju1+zh7t26iFYHaqIQbdb0pBFNYp8W2WOu8r2gmg1A+zmEJq4oiggzRPaPkW5vjk856OE6jCWTnw7E=
-X-Received: by 2002:ac2:4c29:: with SMTP id u9mr6709818lfq.90.1572121861966;
- Sat, 26 Oct 2019 13:31:01 -0700 (PDT)
+ id 1iOSzT-0001WK-LG
+ for linux-arm-kernel@lists.infradead.org; Sat, 26 Oct 2019 20:48:53 +0000
+Received: from val.bonstra.fr.eu.org (unknown [192.168.128.2])
+ by vault.bonstra.fr.eu.org (Postfix) with ESMTP id 191D7BFB41;
+ Sat, 26 Oct 2019 20:41:47 +0000 (UTC)
+Received: from bonstra.fr.eu.org (vlad.gr1 [IPv6:fd7b:45cc:aa3d::3])
+ by val.bonstra.fr.eu.org (Postfix) with ESMTPSA id 3716D6086E;
+ Sat, 26 Oct 2019 22:41:46 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=bonstra.fr.eu.org;
+ s=dkim1; t=1572122506; x=1573332106;
+ bh=gvjqgmyM6VpYYfnUpsZRKeggNshVkGNMAOiusppf46w=;
+ h=From:To:Cc:Subject:Date;
+ b=uEs56XPhlioXD792dC59KX4V1Y0ydsgmshAbLCVJCDWDn4mEoMy+GSVRj9AJivYjl
+ lultWVqd3JyWtVOXsRrw2r5GZUPUgKL2dvGOwT0rIW+r3cYQOPf+jDqDjuBRBxJgpf
+ fIePuQj/E3AKqbPaf5kDoUG6vhj6Mm/xfDYwG5A5m7uzTjgPJYuE1o+e/fEjZYbLLD
+ IuMYHARTwI9P6rSV2K5e1Y9N0BWsycgZ4h8iui99u1kJZvcC2D67yoPSU9ny7WYKHq
+ LhSqF8s74YJ3qxJXbc9dpWYnfpJv4VBW7Zzi9pDc66yQKXgm+stFiTCeb6Vv7BW0A8
+ gViiuwO2mKlFA==
+From: Hugo Grostabussiat <bonstra@bonstra.fr.eu.org>
+To: Marcel Holtmann <marcel@holtmann.org>,
+ Johan Hedberg <johan.hedberg@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, Maxime Ripard <mripard@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>
+Subject: [PATCH 0/3] Add Bluetooth support to Teres A64 I
+Date: Sat, 26 Oct 2019 22:41:13 +0200
+Message-Id: <20191026204116.95119-1-bonstra@bonstra.fr.eu.org>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-References: <20191026194522.28293-1-frank-w@public-files.de>
-In-Reply-To: <20191026194522.28293-1-frank-w@public-files.de>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Sat, 26 Oct 2019 17:31:03 -0300
-Message-ID: <CAOMZO5Bb=1CUpw__xxS2N0w+ZP0+LnBBW9+JLVr03x6TC2Z7=g@mail.gmail.com>
-Subject: Re: [PATCH, RESEND] serial: 8250-mtk: Ask for IRQ-count before
- request one
-To: Frank Wunderlich <frank-w@public-files.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191026_133103_960212_5CAB97FA 
-X-CRM114-Status: UNSURE (   7.64  )
+X-CRM114-CacheID: sfid-20191026_134851_829359_68257CD6 
+X-CRM114-Status: UNSURE (   9.73  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:131 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -92,36 +76,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- linux-mediatek@lists.infradead.org, linux-serial@vger.kernel.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Hugo Grostabussiat <bonstra@bonstra.fr.eu.org>,
+ linux-arm-kernel@lists.infradead.org, linux-bluetooth@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Oct 26, 2019 at 4:46 PM Frank Wunderlich
-<frank-w@public-files.de> wrote:
->
-> at least on bananapi-r2 we have only 1 IRQ and need to
-> check for IRQ-count to fix following Errors during probe:
->
-> [    4.935780] mt6577-uart 11004000.serial: IRQ index 1 not found
-> [    4.962589] 11002000.serial: ttyS1 at MMIO 0x11002000 (irq = 202, base_baud = 1625000) is a ST16650V2
-> [    4.972127] mt6577-uart 11002000.serial: IRQ index 1 not found
-> [    4.998927] 11003000.serial: ttyS2 at MMIO 0x11003000 (irq = 203, base_baud = 1625000) is a ST16650V2
-> [    5.008474] mt6577-uart 11003000.serial: IRQ index 1 not found
->
-> based on Patch from Anson Huang
-> https://patchwork.ozlabs.org/patch/1164500/
+The Teres A64 I laptop comes equipped with a serial-attached Realtek
+rtl8723bs Bluetooth controller. This series creates the DT binding for
+the the Realtek vendor extension of the HCI H5 driver, for which ACPI
+bindings already exist, and enable support for the Teres A64 I board.
 
-The solution that was accepted for this case was to use
-platform_get_irq_optional() instead.
+The first patch adds the DT binding documentation.
+The second one implements such binding in the HCI H5 driver.
+The last patch adds the appropriate device node to the Teres A64 I dts
+file to enable Bluetooth.
 
-You could try using platform_get_irq_optional() here as well.
+Hugo Grostabussiat (3):
+  dt-bindings: net: bluetooth: add DT binding for rtl8723bs
+  Bluetooth: hci_h5: Add DT support for rtl8723bs
+  arm64: dts: allwinner: a64: Enable Bluetooth on Teres-I
+
+ .../bindings/net/realtek,rtl8723bs-bt.txt     | 25 ++++++++++++
+ .../boot/dts/allwinner/sun50i-a64-teres-i.dts | 13 ++++++
+ drivers/bluetooth/hci_h5.c                    | 40 ++++++++++++++++---
+ 3 files changed, 73 insertions(+), 5 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/net/realtek,rtl8723bs-bt.txt
+
+-- 
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
