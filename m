@@ -2,80 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16911E5DDF
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 26 Oct 2019 17:06:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8B79E5DE6
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 26 Oct 2019 17:12:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MjVHt5VMoOgrI356G3YwDN7FU+6r2MJ43jaUAhLowTU=; b=nVUSbmVaDXAR2s
-	jS7UR1aub76RKxv7or8GXHiDHALcbHl4RRaPGX5HhJ+hYcViAjIELC1DOUPT0+mm+29+7Yj0q00MD
-	1XHZe4H24IydAB2/bAF8mICXieLQg9iUe3dIrB7x29PdZBstjnh4Fb9Qy/BpZptFhgRQcM4t2Q5Pc
-	37g+ZKri7G2FhYa/4XAfez7FVJHz/hrjrPhCwhw2oiiH45TVvTtBcX/3Qm67s41NDrOyFt1mifjSy
-	M9cMTPEm1NouU3LVFAv/cgzp0kTxKI1+9XDbbLnSKws7DKSJznFPefqjAJzs6owH2+UXS73oLmyyE
-	kZqNDWeEqYJ+H+JBUeFg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=W5rMiCbM9MaXrbWJlgSAtMDMd/Rlu1n8ld2L0Q9JZxo=; b=qNwNXNA/uPGxXn
+	snCHWcq4Gyj/o6ClIEcsMDeAoCDGjRIecNEzwSDEakGgl3yjfyu+cnxUsxne61FyyU/VEu5f9mNXy
+	y39HjLpfPjqfiKo/5SLEgnVRJXSY8jy+HE7akbmK3Laq8aL61U6KYt4P/hko01IqLukn+YkIMzlZ6
+	K0M/bzoaSMmtW7JWJa40rVV0uEZ7SOy3w/x7RI1qju2sRuSDNmWkOnxmeT7n1opJnfUEFLDQ57ck/
+	lWa+IC1DnZhhP9/KPrcIAsFyif3gaGnzZAFXWIdMlu1LyVPI8NnW6G+xFvhPzMm1rKeGrdYEAc7/j
+	qcMAO/wORO8wHnqkA34g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iONeJ-0005O8-ES; Sat, 26 Oct 2019 15:06:39 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iONjp-0007QU-5i; Sat, 26 Oct 2019 15:12:21 +0000
+Received: from mail-eopbgr10086.outbound.protection.outlook.com ([40.107.1.86]
+ helo=EUR02-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iONe8-0005Nk-FF
- for linux-arm-kernel@lists.infradead.org; Sat, 26 Oct 2019 15:06:30 +0000
-Received: by mail-wr1-x444.google.com with SMTP id n15so5411982wrw.13
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 26 Oct 2019 08:06:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=QLAGBMMJrZggygVygRsryefuvxd8XaBmeOF2j1/ecNE=;
- b=rVmRABxhe02YgSdyMdnuJuo7BC1VPq00UtE12fKace9MDodEtRUmLGayaFndOTO/Xc
- LxQVjfNk1DO8VugPd8m2OvFXlRs7rdts936KkHd4Zy7EX7qPmd66ifrqRZQ7gIG5PyR+
- kEY/RCCfuvyboqO51pyaBgbBJE90y2auSV+EMoNq8cKeZOApIl/DZwFrqikw0d8oQ+r5
- m6QLFsiQYH/8TAwTprrT8+JYzG992Uw3N47xL+IEV4PH0Eexe464o36bxn1yJzo1Cqz6
- La5BmtFmD//TuanHacSeWuFfcShr4bPsIzDf3A08t+Me4ZG84OJZkDR0aMuKTbBSeTxe
- OcIA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=QLAGBMMJrZggygVygRsryefuvxd8XaBmeOF2j1/ecNE=;
- b=K/J8uUzxHzm3eXSzQ9H+M2qDLtoeJfUHozm32QBtvlqJjs1vpy8BaRQkWw/KEkW9Qm
- I52clXuc9rixGgavFPicfBvXifKad14T9r7X7LopdDGcwhJPkyAFPpKrahAXPD5eatFW
- IWwqEgwGb9oXkfS2u4I2Ci8YlfnXYMNm+qT4AOOFP/VPEkSG/QWNqiUrYUJ3tHvgoLxO
- udSBbIWygiR0bfqyKkSTJF6ZUIubOEQqnrlsgmQNw8Etgt99b5swIdUnxVIjDztuYfH9
- gxCnWeETOPOmJPJmTLRHiQUMv/GVg3ElgXk9v2s2KvVeq2BAyVd3VzCQr5K6RNOqvAOr
- 5ZOg==
-X-Gm-Message-State: APjAAAWQEdB2gLvzivrZ1L80pH7vka5SyZ8G+4nPeCr7hH7fU/s7wVnQ
- FGw6ET9B1hriG8abkZe1H8RiGPrYWAm3o7g0r7Feog==
-X-Google-Smtp-Source: APXvYqxqv6iTS3d9ZL9lpYTs9m1CK0s8bMw9rNdx+7ex9vS7Pv7YSdyRAY1LkY2mf8u+utyAedZXk1aVjBATxptM6xM=
-X-Received: by 2002:adf:fd88:: with SMTP id d8mr1736438wrr.200.1572102386529; 
- Sat, 26 Oct 2019 08:06:26 -0700 (PDT)
+ id 1iONje-0007PZ-V9
+ for linux-arm-kernel@lists.infradead.org; Sat, 26 Oct 2019 15:12:13 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Z7lLn+kUtushUtWUpZZWx8EhIKyWQo+En2hef6x0p2X7i7QUfE1Sggi6YAENhYOt3LrtWne44QpQtN+AzGrYlGQF10JKDRLNar8TzKFxkdQU2gs9MLsy/UY8HAUcMJFVdJ/eVRdDokxdgcxf64npxtM4IEfC85bUKXVjLFXR9Z29LCtNC+Z4EvklxnxZTqwZiZPiNO/Y8r2GOwewjKApoTo2npkdvmimwzdI3nJGrlwv0Z+mnDoOWjOeQFda9x99Iw+rU4LqlaSh2VFbxQvUnwyJxW7N5Pyeqgo7fUuVJJOyniVPdc2sm+LcQJ0fPKdLnYkEmBTGO9e0kSXSKrqh/A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=aCGbLO7M6fnOvT13Ot9PQtWTiv8UzSSO1FBMKLX37h8=;
+ b=Z+MFUA+xtWfBW1VTQ8rdU2jwXfCaMGKqTX/Pu7piqzrqn3mHjUXVDOlrFWNghpTmix/w+WO5KoECdeYypj/mARRuo9QYUQeZHCREToeWm70M5HgRgMtOJUsIKqeRtcnK/zWydG5LiooJl98kf/BXPePSuZrQMyCLXpSfOC6PZo/QWuoH2MiHOcoCOdeDav2YTsKHsCPf/wV853nQN9cM0oOPCUhe2L61cfrVloAn4S9u4gzRkRQPZxitNG0aWEa3ZYcNzW652JE/OxdL6OQspYqyA0eMHE6tLpKX2PwaqF5XNzcbEHDS9B/oYZzOvYzhEvcI/mJDiHufATBp3nFLrQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=aCGbLO7M6fnOvT13Ot9PQtWTiv8UzSSO1FBMKLX37h8=;
+ b=XJ8vQZt9CRDOuKhSXGT7vn7pUk4tmggLgjN20myXmMzNLwn9FuSDbnHGpvZOqM076PT5JFV2OjwpQBeiGCJEbWSrKJWQyUZVZpxU8xOzn96jxf42QLxGRHqTed94w+mZ7t8MR1KMQfo2CRHRIhNkHWx38lBzeSTGOlsxmLPiZmo=
+Received: from VI1PR0402MB2863.eurprd04.prod.outlook.com (10.175.20.18) by
+ VI1PR0402MB3518.eurprd04.prod.outlook.com (52.134.2.15) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2387.22; Sat, 26 Oct 2019 15:12:05 +0000
+Received: from VI1PR0402MB2863.eurprd04.prod.outlook.com
+ ([fe80::d0fc:54d4:86f4:b1d2]) by VI1PR0402MB2863.eurprd04.prod.outlook.com
+ ([fe80::d0fc:54d4:86f4:b1d2%7]) with mapi id 15.20.2367.031; Sat, 26 Oct 2019
+ 15:12:05 +0000
+From: Stefan-gabriel Mirea <stefan-gabriel.mirea@nxp.com>
+To: Shawn Guo <shawnguo@kernel.org>
+Subject: Re: [PATCH v7 0/5] Add initial support for S32V234-EVB
+Thread-Topic: [PATCH v7 0/5] Add initial support for S32V234-EVB
+Thread-Index: AQHVjA+6DRrQT5jBKkWqimjcJbupCg==
+Date: Sat, 26 Oct 2019 15:12:05 +0000
+Message-ID: <VI1PR0402MB2863F1A4B2C0A389429BB50ADF640@VI1PR0402MB2863.eurprd04.prod.outlook.com>
+References: <1571230107-8493-1-git-send-email-stefan-gabriel.mirea@nxp.com>
+ <20191016131728.GA56859@kroah.com>
+ <VI1PR0402MB28630943CC0820644D26919CDF920@VI1PR0402MB2863.eurprd04.prod.outlook.com>
+ <20191026132657.GO14401@dragon>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=stefan-gabriel.mirea@nxp.com; 
+x-originating-ip: [188.25.212.111]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: debecda2-60ef-4446-bb89-08d75a26dcef
+x-ms-traffictypediagnostic: VI1PR0402MB3518:|VI1PR0402MB3518:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VI1PR0402MB35184F26A9A0598324CC79FCDF640@VI1PR0402MB3518.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6108;
+x-forefront-prvs: 0202D21D2F
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(366004)(376002)(396003)(39860400002)(346002)(199004)(189003)(86362001)(76176011)(102836004)(7696005)(186003)(76116006)(66066001)(66476007)(6506007)(53546011)(25786009)(3846002)(6116002)(81166006)(81156014)(446003)(486006)(476003)(66946007)(256004)(14454004)(8936002)(8676002)(26005)(64756008)(66446008)(478600001)(305945005)(7736002)(74316002)(6246003)(7416002)(55016002)(54906003)(99286004)(6436002)(33656002)(229853002)(66556008)(316002)(6916009)(52536014)(5660300002)(2906002)(71190400001)(71200400001)(9686003)(14444005)(4326008)(4744005);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0402MB3518;
+ H:VI1PR0402MB2863.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: wamUzJ5DhxLcyprgtoCemlklTFvMU0yzIEDwDfVzXUcOcOGCRsIlGG0+Ua4a5hIgGsQpcbQoQfOVKIZm6uP8JgxLub5i/vtwbw3rYxgrHE4+IoWtiGTch3ujc25Qs72ikOe1KMZB/CegoLcvLzOhG8vxhhr5UY12kHkxYlwgxbmoEGG3aKfLY726uRjvhnFAXl4QQ7gAmI2hROiIgPqovoxxhEBULnu1xFtkHtCbiCHjuz+Nd9g2/+EI3mXsf+v97JUHjlWoLQA8yOVyOpW45AOBy8MRCfJAjR/3bmAAH0JMBSc1k2GCWlvv94774xDwpmcGLGCfHb/ldqnydNdRKDkotbJCzQTtcOusPbgnUxVKmH2RSeqwxc/r3Wmb0cvDV1qXOs0VDXBS6W0cf6p8zmg/uEayzs9mk0Jn3UQC1UTOcXs7q9LNbqCPQXFawcDK
 MIME-Version: 1.0
-References: <20191017122549.4634-1-t-kristo@ti.com>
- <CAKv+Gu_HNOTSvWRTzLMeECaM8qCi5w806ht_e68e5vgcU9aQvQ@mail.gmail.com>
- <8f97d690-a88a-55cb-eb67-206e01873d94@ti.com>
- <bf22f7dd-5446-d736-611b-6465df45b74d@ti.com>
- <CAKv+Gu_ABcosRm30nrtCY429Xki8_b9GAzQ=hQ=Kiuo2o6Y2ng@mail.gmail.com>
- <359434e9-3289-2982-edc1-b93e76c28700@ti.com>
-In-Reply-To: <359434e9-3289-2982-edc1-b93e76c28700@ti.com>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Sat, 26 Oct 2019 17:06:25 +0200
-Message-ID: <CAKv+Gu_TgqGzhzhojgBzuJ5r9pRusW3yC+Opqpr5ehdUaXX=UQ@mail.gmail.com>
-Subject: Re: [PATCH 00/10] crypto: omap fixes towards 5.5
-To: Tero Kristo <t-kristo@ti.com>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: debecda2-60ef-4446-bb89-08d75a26dcef
+X-MS-Exchange-CrossTenant-originalarrivaltime: 26 Oct 2019 15:12:05.6900 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: /51MeCl4L0wAAFwRwqAjBKAlg/qBsA4OGnk42yRKpqSnGSzHF4W2we9DOUMOOZ/wQo/GiCYI0bfRHrh38EOpNl9MlLClaTe5YjkUo0rMEog=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0402MB3518
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191026_080628_516060_252E06D4 
-X-CRM114-Status: GOOD (  26.13  )
+X-CRM114-CacheID: sfid-20191026_081211_255107_91ABDEDD 
+X-CRM114-Status: UNSURE (   8.60  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.1.86 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -95,121 +122,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:HARDWARE RANDOM NUMBER GENERATOR CORE"
- <linux-crypto@vger.kernel.org>, linux-omap@vger.kernel.org,
- Herbert Xu <herbert@gondor.apana.org.au>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "David S. Miller" <davem@davemloft.net>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "corbet@lwn.net" <corbet@lwn.net>, Greg KH <gregkh@linuxfoundation.org>,
+ "jslaby@suse.com" <jslaby@suse.com>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "will@kernel.org" <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 25 Oct 2019 at 14:18, Tero Kristo <t-kristo@ti.com> wrote:
->
-> On 25/10/2019 15:05, Ard Biesheuvel wrote:
-> > On Fri, 25 Oct 2019 at 13:56, Tero Kristo <t-kristo@ti.com> wrote:
-> >>
-> >> On 25/10/2019 14:55, Tero Kristo wrote:
-> >>> On 25/10/2019 14:33, Ard Biesheuvel wrote:
-> >>>> On Thu, 17 Oct 2019 at 14:26, Tero Kristo <t-kristo@ti.com> wrote:
-> >>>>>
-> >>>>> Hi,
-> >>>>>
-> >>>>> This series fixes a number of bugs with omap crypto implementation.
-> >>>>> These have become evident with the changes to the cryptomanager, where
-> >>>>> it adds some new test cases and modifies some existing, namely the split
-> >>>>> update tests. Also, while fixing the cryptomanager induced bugs, some
-> >>>>> other surfaced with tcrypt/IPSec tests, so fixed them aswell.
-> >>>>>
-> >>>>> Patch #9 is against crypto core modifying the crypto_wait_req
-> >>>>> common API to have a timeout for it also, currently it waits forever
-> >>>>> and it is kind of difficult to see what test fails with crypto manager.
-> >>>>> This is not really needed for anything, but it is kind of nice to have
-> >>>>> (makes debugging easier.)
-> >>>>>
-> >>>>> This series has been tested on top of 5.4-rc2, with following setups,
-> >>>>> on AM57xx-beagle-x15 board:
-> >>>>>
-> >>>>> - crypto manager self tests
-> >>>>> - tcrypt performance test
-> >>>>> - ipsec test with strongswan
-> >>>>>
-> >>>>> This series depends on the skcipher API switch patch from Ard Biesheuvel
-> >>>>> [1].
-> >>>>>
-> >>>>
-> >>>> Hi Tero,
-> >>>>
-> >>>> On my BeagleBone White, I am hitting the following issues after
-> >>>> applying these patches:
-> >>>>
-> >>>> [    7.493903] alg: skcipher: ecb-aes-omap encryption unexpectedly
-> >>>> succeeded on test vector "random: len=531 klen=32";
-> >>>> expected_error=-22, cfg="random: inplace may_sleep use_finup
-> >>>> src_divs=[44.72%@+4028, <flush>14.70%@alignmask+3, 19.45%@+4070,
-> >>>> 21.13%@+2728]"
-> >>>> [    7.651103] alg: skcipher: cbc-aes-omap encryption unexpectedly
-> >>>> succeeded on test vector "random: len=1118 klen=32";
-> >>>> expected_error=-22, cfg="random: may_sleep use_final
-> >>>> src_divs=[<reimport>41.87%@+31, <flush>58.13%@+2510]"
-> >>>>
-> >>>> These are simply a result of the ECB and CBC implementations not
-> >>>> returning -EINVAL when the input is not a multiple of the block size.
-> >>>>
-> >>>> [    7.845527] alg: skcipher: blocksize for ctr-aes-omap (16) doesn't
-> >>>> match generic impl (1)
-> >>>>
-> >>>> This means cra_blocksize is not set to 1 as it should. If your driver
-> >>>> uses the skcipher walk API, it should set the walksize to
-> >>>> AES_BLOCK_SIZE to ensure that the input is handled correctly. If you
-> >>>> don't, then you can disregard that part.
-> >>>>
-> >>>> [    8.306491] alg: aead: gcm-aes-omap setauthsize unexpectedly
-> >>>> succeeded on test vector "random: alen=3 plen=31 authsize=6 klen=9";
-> >>>> expected_error=-22
-> >>>>
-> >>>> Another missing sanity check. GCM only permits certain authsizes.
-> >>>>
-> >>>> [    9.074703] omap_crypto_copy_sgs: Couldn't allocate pages for
-> >>>> unaligned cases.
-> >>>>
-> >>>> This is not a bug, but I'm not sure if the below is related or not.
-> >>>>
-> >>>> I'll preserve the binaries, in case you need me to objdump anything.
-> >>>
-> >>> What are these tests you are executing? For me, the testmgr self test
-> >>> suite is passing just fine. Any extra tests you have enabled somehow?
-> >>>
-> >
-> > I enabled CONFIG_CRYPTO_MANAGER_EXTRA_TESTS, which enables a bunch of
-> > fuzz tests of the offloaded algorithms against the generic
-> > implementations.
->
-> Ahha I see, let me give that a shot locally. I have so far only been
-> testing with the standard suite.
->
-> >
-> >>> I am also running full test on different board though (am57xx), I
-> >>> haven't been explicitly running anything on am335x.
-> >>
-> >> Oh, and btw, did you try without my series? I think the selftests are
-> >> failing rather miserably without them...
-> >>
-> >
-> > No, I just tried a branch with mine and your patches applied.
->
-> Could you give it a shot without the CRYPTO_MANAGER_EXTRA_TESTS, that
-> should pass with my series, and fail without?
->
+Hello Shawn,
 
-The missing output IVs are fixed by this series, but it seems we need
-some more work to get all the wrinkles ironed out. I sent some patches
-on top that address a couple of them, but we still need a proper fix
-for the situation where only assocdata is presented, and cryptlen == 0
+On 10/26/2019 4:27 PM, Shawn Guo wrote:
+> 
+> Sorry, no.  It happens occasionally that non-fixing patches are merged
+> during -rc time, mostly because they are supposed to land mainline
+> during merge window, but missed the window for some reason, like
+> subsystem maintainers did not send pull request to Linus in time.
+> Also the patches are only taken in early -rc like rc2.
+> 
 
-Feel free to merge my patches into your series, or take bits and
-pieces into your own patches where needed.
+Okay, thank you for your clarification!
+
+Regards,
+Stefan
 
 _______________________________________________
 linux-arm-kernel mailing list
