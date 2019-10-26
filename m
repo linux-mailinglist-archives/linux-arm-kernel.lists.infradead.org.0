@@ -2,85 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA92CE5F79
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 26 Oct 2019 22:27:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A46AE5F82
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 26 Oct 2019 22:30:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kmniuNAXZxQAihXshPPPdvGJhZA/T3eD0gY1NTz5RY8=; b=pZQ5nmmmAS77Dw
-	7H8xm97wE37xhQRn2jkUCriY1T7MGlAt0CRdie4deOEMQDOSxwjRga0mSntaXy1sJ2X/INZcT0PPL
-	ZfU1LaBO3v7Uosq8QU60DcH6JWbP0qi3DFI2RvG+TdMstPkfgCrtyyv7AJdNJMKM027fSujle3tUx
-	q9dTYJoF91NceFlMPuK2tgVIkkz5CkHG9P3FM7HaNkuiyq6TwcnJYNBhezbvrYyunBBpciOzr2f+2
-	NsBc33pJOiw/QjIaRFiqmQOoVoF5i0D9rmG7/qWnPK6DKoZuGxnsv/pNijODPpSN9h30F1vhK1m0J
-	snAhIpl8mjkZVHmqxz3w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=cYAUix9+SSuHSqVxyYVE3r4gV2GSdGAGtRIUY+wh5qw=; b=jUJgKs7CGszQESrca7S+71VZA
+	RjgNNvolDjd0FcD9TEJFppkA8h3DwoaGzEl7p7XlB1aBkfzSBcf5WUYP14KNVcBPft7W9bobII12N
+	xgaqJuzLvLNWEzWrZkRswqluRc2ZjkpcIoD0ECaSn1y3JI4oeoNuam8VngPIeOF2M2VQjiYNDjwOg
+	CkxOPS6z+pVrvi43fOxs0cGgOfAaa6KSfUu7xjYmSRGCWRHsOwTvueDSNVq1V0vfyxZ4FTIPjWRsD
+	GR1m+EW5T4Jwd4r4Noe8zg+mHj5iYoKmOG11dU5HIA1L9+vAYjxAqNU95S8Y6i7A4AV7ciEGLMWNn
+	teOrGETHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOSeK-0002rY-Ce; Sat, 26 Oct 2019 20:27:00 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1iOShE-0003F5-St; Sat, 26 Oct 2019 20:30:00 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOSe9-0002rA-8f
- for linux-arm-kernel@lists.infradead.org; Sat, 26 Oct 2019 20:26:50 +0000
-Received: by mail-lf1-x142.google.com with SMTP id 195so4800757lfj.6
+ id 1iOSh3-0003EA-5Z
+ for linux-arm-kernel@lists.infradead.org; Sat, 26 Oct 2019 20:29:50 +0000
+Received: by mail-wr1-x441.google.com with SMTP id l10so5937934wrb.2
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 26 Oct 2019 13:26:48 -0700 (PDT)
+ Sat, 26 Oct 2019 13:29:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=CqibNRa8NCQJCIfLIcBtLYRS0eXP+x++0ovWjgGaG+8=;
- b=vDGYxLzsoRGqDQ0r1aCbvVS1Y1PCWQTNTChLokd4dvNzm5aurPiNgKjDVQ6mTv5H/q
- WMhhgRVScd3iK49iH+Ibj0R/XN8Z+18ZjZqK6tP27EeWCU1jWdEM3f5c6j/iwZ7kWbbq
- DmRsgjThcLGXso9z3J4NNyHuZbkIHe8KkfpRZ/1xznRwrZLTV8rP077nQ1kqvc/rqK5y
- Z6o7/SKWkGkppLm9S5501xYx7ChqnCt5FzDZIxoHJoQ36cvVpyxy+8AKVj+JJsDC69Ml
- gFUeEBg2y7VQQFmdCoE/sSHCkhUoZFSqeBSjzJeuTAu7Z0Y7Kw4Db9jN9KSeeFoxUTEf
- tPSg==
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding:content-language;
+ bh=4wh2U9sFqBwfDf0nZQjTsklg9xDf789GQammhgh2Mgk=;
+ b=Ng6Wb1aF1JapsK21o9YGhhN0Gq/K5h8CZdHpp03cEYgiP9phvjBE8cMdi4kymm1P8e
+ gu/IHjGcSm0cg07Y4OIR5tGgiZKYeZcTzwBxCXPR/jJk32d+7sMP0EQbFEf2NSVWVEa9
+ WoxCfz9nQ7o+DP1RwLbPQEeujjo80bL5xeMlXtGXiANxF+E60spWqbvcDj2Prrygl6OX
+ Ejinwfdu9/Uhh7j4iPQv+8EqObyvFDJecwt9Mb8RpJCVpGPwGZJBd2f75uXuVrxar97p
+ oll++7fKauBP5UI4WatmoNValG4goyRGDgjarRETIAUAQW//iTCDV8luH/lLFBVrXzKZ
+ CSRw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=CqibNRa8NCQJCIfLIcBtLYRS0eXP+x++0ovWjgGaG+8=;
- b=i1j/B1y4E7bVWEBwdrTWOJS5vCBqkE3L3HP6jB79Dzf5SaTzJefHz4Ibvr/jwXHncV
- NWe4Lc6es4rDfRefxa9yLAQXEsRozH2lrRQ/Tduso5fpU98g0/bNg54CsBmHjbsFKo1S
- RQDX6VfPBSS7reo8Bi6hMt6QZB3OhneZnebMApPGwj0FmfeCpkHsCiIecwyVaTQf7BST
- +gJlpDwxe5MH5VY6prowZVVcudKHHHu/bXx9hS6qyJ2/uTCvgiCsB96f7/gODD0iySn4
- 9cxqAvU49cecd7PcNOK+5PPat6HMdoAjPOnDAUiFEQ5T1Txc8xv17wDQpWSy+k+lM3f8
- CeAQ==
-X-Gm-Message-State: APjAAAVG3odqpoBpR31T3E+lIcgarfSmOcck+vJto49JuTyZpQFyaozF
- Qgrbz8/+N8jh9pDApOfxQgs=
-X-Google-Smtp-Source: APXvYqzicRBbGQCjfXCf+Ju4S2YgCq5lZM7QCriuqaYImw08oK6ax5oEo+g5bBNxpM47V9yWgIG4jw==
-X-Received: by 2002:a19:c204:: with SMTP id l4mr5781952lfc.163.1572121606803; 
- Sat, 26 Oct 2019 13:26:46 -0700 (PDT)
-Received: from localhost.localdomain (h-98-128-228-153.NA.cust.bahnhof.se.
- [98.128.228.153])
- by smtp.gmail.com with ESMTPSA id d27sm3477053lfb.3.2019.10.26.13.26.45
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 26 Oct 2019 13:26:46 -0700 (PDT)
-From: Rikard Falkeborn <rikard.falkeborn@gmail.com>
-To: mike.leach@linaro.org
-Subject: [PATCH] coresight: etm4x: Fix BMVAL misuse
-Date: Sat, 26 Oct 2019 22:26:33 +0200
-Message-Id: <20191026202633.835854-1-rikard.falkeborn@gmail.com>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20190829213321.4092-4-mike.leach@linaro.org>
-References: <20190829213321.4092-4-mike.leach@linaro.org>
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=4wh2U9sFqBwfDf0nZQjTsklg9xDf789GQammhgh2Mgk=;
+ b=ksKE7SvTYy8I/OlHq3/KAozSzRPZVF5DtYy4pmSVywZp+5xkflkExjZB54DPEfdwtp
+ SI6eJw3IVQzwsELyLxpeuyXPSF5ha6Y3SZn+hWv6vmT8e9auiDHe7hZdv0/MdbRaPcj5
+ d2JQytg1Lrnimz64uMLmWb9rtOdZ9ivpo6Kh69I1ggbgzC0F28LqrL7JBSger7dzuiel
+ pxQcIyLjWKDrMYNimjL1VCT4U/UCcKez3B39KLcDzLLxeJFCF+ZTMsOTLMYYRZfC3TP7
+ auhdwYs2/U1fdXQcida56ciy23ARSmqxm355j0E8NipvRMJp4jqbHmgzBer/CqMcs34q
+ l49g==
+X-Gm-Message-State: APjAAAVZuIOMRMO7ZatEhR6nJcLv1ZidNJIfo748v7uwbrgAcZH8hat+
+ LtSwbxm0QEJWy/FWvgIW0b8=
+X-Google-Smtp-Source: APXvYqwsbzOzEv8luTR5JkVcDrsSwIx1FRcxy8PcdF6PXF/pUnvtJ3sO8D6jECnzWTal9dI5ljapLg==
+X-Received: by 2002:a5d:49c9:: with SMTP id t9mr8907763wrs.146.1572121785248; 
+ Sat, 26 Oct 2019 13:29:45 -0700 (PDT)
+Received: from ?IPv6:2a01:cb19:16b:9900:c490:d472:7a6:b387?
+ ([2a01:cb19:16b:9900:c490:d472:7a6:b387])
+ by smtp.gmail.com with ESMTPSA id u7sm6776609wre.59.2019.10.26.13.29.44
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sat, 26 Oct 2019 13:29:44 -0700 (PDT)
+Subject: Re: [PATCH] ARM: dts: imx7d-pico: Add LCD support
+To: Fabio Estevam <festevam@gmail.com>
+References: <20191025082247.3371-1-offougajoris@gmail.com>
+ <20191025184544.7gwwbsrketjtwrwi@pengutronix.de>
+ <5a73d00e-397a-f4ed-2bfa-bb26324685ba@gmail.com>
+ <CAOMZO5CPg=mJSKNuNVFF=zGUaZqMpr9Ocv89msS-120Shc0=RA@mail.gmail.com>
+From: Joris Offouga <offougajoris@gmail.com>
+Message-ID: <3a75c40b-c1bc-1461-08e1-f5ac89d73c80@gmail.com>
+Date: Sat, 26 Oct 2019 22:29:43 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
+In-Reply-To: <CAOMZO5CPg=mJSKNuNVFF=zGUaZqMpr9Ocv89msS-120Shc0=RA@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191026_132649_331048_87987009 
-X-CRM114-Status: GOOD (  12.51  )
+X-CRM114-CacheID: sfid-20191026_132949_213158_16A5C9DE 
+X-CRM114-Status: GOOD (  14.57  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rikard.falkeborn[at]gmail.com)
+ provider (offougajoris[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -99,47 +105,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mathieu.poirier@linaro.org, linux-doc@vger.kernel.org,
- gregkh@linuxfoundation.org, coresight@lists.linaro.org, corbet@lwn.net,
- Rikard Falkeborn <rikard.falkeborn@gmail.com>, suzuki.poulose@arm.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Otavio Salvador <otavio@ossystems.com.br>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Marco Felsch <m.felsch@pengutronix.de>,
+ open list <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The second argument should be the lsb and the third argument should be
-the msb.
-
-Fixes: 62ab9bce3bc7 ("coresight: etm4x: Add missing API to set EL match on address filters")
-Signed-off-by: Rikard Falkeborn <rikard.falkeborn@gmail.com>
----
-Spotted while trying to get compile time checking that the order of the
-arguments to GENMASK macro is correct (BMVAL uses GENMASK).
-
-I have only compile tested the patch.
-
- drivers/hwtracing/coresight/coresight-etm4x-sysfs.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-index 3fc12ac44270..ce41482431f9 100644
---- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-+++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-@@ -1246,7 +1246,7 @@ static ssize_t addr_exlevel_s_ns_show(struct device *dev,
- 
- 	spin_lock(&drvdata->spinlock);
- 	idx = config->addr_idx;
--	val = BMVAL(config->addr_acc[idx], 14, 8);
-+	val = BMVAL(config->addr_acc[idx], 8, 14);
- 	spin_unlock(&drvdata->spinlock);
- 	return scnprintf(buf, PAGE_SIZE, "%#lx\n", val);
- }
--- 
-2.23.0
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgRmFiaW8sCgpMZSAyNi8xMC8yMDE5IMOgIDIxOjIwLCBGYWJpbyBFc3RldmFtIGEgw6ljcml0
+wqA6Cj4gSGkgSm9yaXMsCj4KPiBPbiBGcmksIE9jdCAyNSwgMjAxOSBhdCA2OjE2IFBNIEpvcmlz
+IE9mZm91Z2EgPG9mZm91Z2Fqb3Jpc0BnbWFpbC5jb20+IHdyb3RlOgo+Cj4+IG90aGVyd2lzZSBG
+YWJpbyBtYWRlIG1lIG5vdGljZSB0aGF0IEkgc2hvdWxkIGxlYXZlIGhpcyBGcm9tIGhvd2V2ZXIg
+d2l0aAo+PiB0aGUgY2hhbmdlcyBtYWRlIEkgc2hvdWxkIHB1dCBtaW5lPwo+IEl0IGlzIG5vcm1h
+bCB3aGVuIHdlIHN1Ym1pdCBzb21lb25lIGVsc2UncyBwYXRjaCBhbmQgd2UgbmVlZCB0byBjaGFu
+Z2UKPiBhIGZldyB0aGluZ3MgYmFzZWQgb24gcmV2aWV3IGZlZWRiYWNrLgo+Cj4gRXZlbiBzbywg
+dGhlIG9yaWdpbmFsIEZyb20gc2hvdWxkIGJlIGtlcHQuCgpUaGFua3MgZm9yIHlvdXIgcmVwbHks
+IGkgc2VuZCB2MyB3aXRoIE1hcmNvJ3MgZmVlZGJhY2sKCkJlc3QgcmVnYXJkcywKCkpvcmlzCgoK
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
+LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
+Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
+cm5lbAo=
