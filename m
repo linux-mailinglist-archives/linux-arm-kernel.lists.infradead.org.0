@@ -2,74 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A46AFE5785
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 26 Oct 2019 02:19:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56552E5789
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 26 Oct 2019 02:20:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A5dXi0oBBbz1WPg3alKS1dz1DCODJWa+NA3HYxG/PEg=; b=n5dk4lNmaVtUXL
-	+1pX29Sr2bGqD3/g/MoGQSVuqLdMo5HpeQuyCipmx/wJokoa9j2UL9hQxCszNu2FtGYhCnjH610WX
-	SF8oNBmmJj8w/TYNciREednPJMMSyDwlTvOII8z1WRTgm3q+MoijeNx6X5y/DHFp+m6N2bhNSwatW
-	otm1AM3EI2TUvS+jCIRs9p8iYgPCBbKuakfkX8ey1ItlGlwtx+X4H6tyXVBGaZrWzJ4drTIwtVK+7
-	Man1p9rTAZsG8/LSBzAKd6UJM93OR5Jr18XvLTECP74EqXe2KrJGhPsmcvyXsXEZelB5JRRe4j6MV
-	9Z2TBhT1AMlzQlXlo9Xg==;
+	List-Owner; bh=ua+G8oXuRcAbaLLE53gj+7lNvMGsSp13YgodHh4DDmk=; b=O9pjvSkX1e9ipq
+	VJ/KXsLY3pJ922kgiy2QR/bWgttswJs8Dopy7khuioqHQKdMhkLm9cc7TiGMzYrxiPrPr/4eu8+JJ
+	rt4rfAYow2Xsl0NtZxSVzIbp4iL2zOqZi80IbMAEZBOVTHyW29x112rZ2P+WuRP3FprvvtFrBSBtL
+	U3ubfBmURVho8I/Nov4miw7c28ZZqnovyIT/gBQ48MQPSzLjnG2Jmuf8KYh7NWy8+3ujmridLiPlp
+	FcADqnlKF3SVm/PYH0jJ99wtkfqpBhLCYglUJ8kFemfHzJ6ZwcpnUrvQ8mCrciViOu588zsUEcAz3
+	pAVM2Y5Gd1YNIx6S5JUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iO9nw-0004yA-Dk; Sat, 26 Oct 2019 00:19:40 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1iO9oi-0006Tv-2p; Sat, 26 Oct 2019 00:20:28 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iO9ni-0004xl-IA
- for linux-arm-kernel@lists.infradead.org; Sat, 26 Oct 2019 00:19:29 +0000
-Received: by mail-ot1-f66.google.com with SMTP id m19so3272256otp.1
+ id 1iO9oW-0006TQ-6w
+ for linux-arm-kernel@lists.infradead.org; Sat, 26 Oct 2019 00:20:17 +0000
+Received: by mail-oi1-f194.google.com with SMTP id n16so487469oig.2
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 25 Oct 2019 17:19:26 -0700 (PDT)
+ Fri, 25 Oct 2019 17:20:16 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=rP2TVgM7TJak8rqWj56HIs9Gk8TmKpgszEpCk0Rsvd8=;
- b=Qz9thuI8wnjY9n1t1EcCoA+Y6/GfPHHzMW6ZJzNFrP74YuuJHucE7wiVm29hDbaSI5
- zG3j4BpY0V13Tv3Gl3h0jFDya1mnhilKuC1m8iCORdMwuAMCxLet4/Hdi/9f9+/iMf9H
- RHXnpDyBneKSbycv2NGqIfRUwqYVbUeSh8eNkIm2D+6oylRvox8wT/DlKgWZavxQ6hrj
- 6QlYbwKrtW1gq74SPwpMl3xL6cqnz8O9CjhEPQ0jM+MG5YFstVOF6x9D13sJv0510HWv
- FWt0YlZcgX2fByBDaa3xzHk41aaD6SuIyfPVOX/fL+BBuNYpJ+GutovVlY3aQwBb0uL9
- iZqg==
-X-Gm-Message-State: APjAAAWNcjX3BRdU6jnQhRKl6T9w+baWKIfbzeaPn7i7CicbWGia3tns
- VcmGEQUL1YZLUKdC8KQt0rlvd20=
-X-Google-Smtp-Source: APXvYqwqfU7/GBmiPwwQ/BnOKaxy9p8TG5uzY6dUbAc7nUscEJgAgUBAvMUN35q8Al2UNWi3aqk0LA==
-X-Received: by 2002:a05:6830:1b67:: with SMTP id
- d7mr4770218ote.181.1572049165901; 
- Fri, 25 Oct 2019 17:19:25 -0700 (PDT)
+ bh=h/J2B0yYUN6lQ3+j00TFPx6nzTJjHyfDdiEZjRSCAiU=;
+ b=SFDlKW3wvvqP2Vk7JtSa9oAcgP7ifOn0hfawOtZRyhlpNqQuSVhf0KIe60dSfpnmRE
+ enlZtSQvBkASoNF1CkpVOg9kPPl3IEINda/aRS2t5cscU0A1Gqb8R4GoYTxWMptpcDeH
+ +R3XP95gaZo/fnZForAPR7ZseLwAqhKkiOHT1ikPtrsNt24+Mkxc0yq2ZvSD3BamTta6
+ VM9tXIaIk3BDI/dvo+XbFrv1UtE61ypxgfzWeuK7ZidR0o1g+89k3d5MO3+xfBUC/BGh
+ ptsmscqZF0zHBKXfzUCSJjBefyHx5mY1lPaA/3oOXYPaXCfHFOMCb28RkXmjKv5uZOu7
+ LlcQ==
+X-Gm-Message-State: APjAAAWAPhq3DVwOyWFvYC6tm819mY/8J84NrJBpihLOxxHhhhqcCS3w
+ /IpdK9x+wY9ESc2PnNDwkg==
+X-Google-Smtp-Source: APXvYqykZgHOYWE2/IgupIMeUG1s5/ApoBdLr8/q2JSP4zWGsxaK/+y42vogYbYJSsUjExGJWvAz+g==
+X-Received: by 2002:aca:3846:: with SMTP id f67mr5267965oia.71.1572049215495; 
+ Fri, 25 Oct 2019 17:20:15 -0700 (PDT)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id x16sm1032217oic.40.2019.10.25.17.19.25
+ by smtp.gmail.com with ESMTPSA id t30sm1285564otj.40.2019.10.25.17.20.14
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 25 Oct 2019 17:19:25 -0700 (PDT)
-Date: Fri, 25 Oct 2019 19:19:24 -0500
+ Fri, 25 Oct 2019 17:20:14 -0700 (PDT)
+Date: Fri, 25 Oct 2019 19:20:14 -0500
 From: Rob Herring <robh@kernel.org>
 To: Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: Re: [PATCH v2 1/4] dt-bindings: clock: renesas: cpg-mssr: Document
- r8a77961 support
-Message-ID: <20191026001924.GA10102@bogus>
+Subject: Re: [PATCH v2 2/4] dt-bindings: clock: Add r8a77961 CPG Core Clock
+ Definitions
+Message-ID: <20191026002014.GA11459@bogus>
 References: <20191023122941.12342-1-geert+renesas@glider.be>
- <20191023122941.12342-2-geert+renesas@glider.be>
+ <20191023122941.12342-3-geert+renesas@glider.be>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191023122941.12342-2-geert+renesas@glider.be>
+In-Reply-To: <20191023122941.12342-3-geert+renesas@glider.be>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_171928_679080_3CB4706E 
-X-CRM114-Status: GOOD (  11.48  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20191025_172016_252165_93F92A6F 
+X-CRM114-Status: GOOD (  11.84  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
+ no trust [209.85.167.194 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
@@ -78,9 +77,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  provider (robherring2[at]gmail.com)
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.194 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -104,23 +102,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 23 Oct 2019 14:29:38 +0200, Geert Uytterhoeven wrote:
-> Add DT binding documentation for the Clock Pulse Generator / Module
-> Standby and Software Reset block in the Renesas R-Car M3-W+ (R8A77961)
-> SoC.
+On Wed, 23 Oct 2019 14:29:39 +0200, Geert Uytterhoeven wrote:
+> Add all Clock Pulse Generator Core Clock Outputs for the Renesas R-Car
+> M3-W+ (R8A77961) SoC, as listed in Table 8.2b ("List of Clocks [R-Car
+> M3-W/R-Car M3-W+]") of the R-Car Series, 3rd Generation Hardware User's
+> Manual (Rev. 2.00, Jul. 31, 2019).  A gap is added for CSIREF, to
+> preserve compatibility with the definitions for R-Car M3-W (R8A77960).
 > 
-> Update all references to R-Car M3-W from "r8a7796" to "r8a77960", to
-> avoid confusion between R-Car M3-W (R8A77960) and M3-W+.
+> Note that internal CPG clocks (S0, S1, S2, S3, SDSRC, SSPSRC, and POST2)
+> are not included, as they are used as internal clock sources only, and
+> never referenced from DT.
 > 
 > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
 > Reviewed-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
 > ---
 > v2:
->   - Add Reviewed-by,
->   - Update R-Car M3-W references.
+>   - Add Reviewed-by.
 > ---
->  .../devicetree/bindings/clock/renesas,cpg-mssr.txt    | 11 ++++++-----
->  1 file changed, 6 insertions(+), 5 deletions(-)
+>  include/dt-bindings/clock/r8a77961-cpg-mssr.h | 65 +++++++++++++++++++
+>  1 file changed, 65 insertions(+)
+>  create mode 100644 include/dt-bindings/clock/r8a77961-cpg-mssr.h
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
