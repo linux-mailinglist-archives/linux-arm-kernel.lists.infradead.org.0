@@ -2,64 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D10EE5E50
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 26 Oct 2019 19:48:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54E67E5EBE
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 26 Oct 2019 20:54:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r17nyaMMmUnzwjElsGq6khjChSp/2fAQfqzFnlluyV8=; b=JMeiXScYsAmC/X
-	0gEcodLxGhxDHXUCVfDFR+z6LncOSXLO28wAMbtV5QbqbBB35A1rfXj8tfV1oDdej0vb+Y3q17DIu
-	26M60tx6njLDhZ3F4eZR0qNyIu3/9B0U+em5JyfDRHF9Hpn6eE+24NRPOXLil2YEloMMHDDSIQiDh
-	I3LzcMGW0ZuJt4omyHzZQEbnchSxyq9OZ+WGI0s78Jeh5lsQTXZhu3fWb3tg0iEdsQwddm2MSeKcM
-	DwGXMzctNSIHRkvaKRSiWCv/zBmcCWKj3jajyco6LdJlRIT4nOJJjEzJdQDYYJka9Il6YBBFFPdvc
-	T/wa7i35/CDH/ULJOSWg==;
+	List-Owner; bh=V6sLn8VIf5/dbkK+r1xS0lTvEY2XevCMxJ/bdlj6Z4s=; b=g6KfITvfviFLE/
+	oDD2cayVMkVjtQywUwAdqYRczntFRVozYqoWclGxYJSpG/bdCQWH2AlP7qDnDxW2hw9NbvPuIdeDe
+	eDgHu34v2Mmns2ejW8wLdEaSJWfAU+BHoh7ZYiZOUIIgL4viw77/rimIRZ/veKEoQ/RMzvNzStSWs
+	FCZfSGIAgFq0K8bA6mQFaFdLMx0EHbDDzNfenZd6UYaqPi/NTU+gfEqGD8s/AAWX4cn4oegFtQ1m9
+	ONCaEo/Huu/shNgHkWmAl8Cl3EJkZA86j6/FHGrMh88s7seF8xYiMrCIM/o/dqTxxlx5R3EOqzBhe
+	xN9G+TVChiIkI8np0nzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOQB9-0006lu-Lq; Sat, 26 Oct 2019 17:48:43 +0000
-Received: from mailoutvs53.siol.net ([185.57.226.244] helo=mail.siol.net)
+	id 1iORCv-0001tc-6v; Sat, 26 Oct 2019 18:54:37 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOQ9u-0005lX-8W
- for linux-arm-kernel@lists.infradead.org; Sat, 26 Oct 2019 17:47:28 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id 2D7AE523991;
- Sat, 26 Oct 2019 19:47:24 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at psrvmta10.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta10.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id 78Q2iftWDMu5; Sat, 26 Oct 2019 19:47:23 +0200 (CEST)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id CC977520606;
- Sat, 26 Oct 2019 19:47:23 +0200 (CEST)
-Received: from localhost.localdomain (cpe-86-58-59-25.static.triera.net
- [86.58.59.25]) (Authenticated sender: 031275009)
- by mail.siol.net (Postfix) with ESMTPSA id 76B70523991;
- Sat, 26 Oct 2019 19:47:21 +0200 (CEST)
-From: Jernej Skrabec <jernej.skrabec@siol.net>
-To: mripard@kernel.org,
-	paul.kocialkowski@bootlin.com
-Subject: [PATCH 4/4] media: cedrus: hevc: Add support for multiple slices
-Date: Sat, 26 Oct 2019 19:47:03 +0200
-Message-Id: <20191026174703.1120023-5-jernej.skrabec@siol.net>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191026174703.1120023-1-jernej.skrabec@siol.net>
-References: <20191026174703.1120023-1-jernej.skrabec@siol.net>
+ id 1iORCm-0001t5-CD
+ for linux-arm-kernel@lists.infradead.org; Sat, 26 Oct 2019 18:54:30 +0000
+Received: by mail-wr1-x443.google.com with SMTP id l10so5807307wrb.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 26 Oct 2019 11:54:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=WOCOgOVP9/3KdLQah7ogN6soj9MgJBMp5zydxBeS4k4=;
+ b=R8evbIc/iJ/MP2CwCJW8LJbpCKX6L5gP4U+EiT1Rsqa38pVgY81dZZ9UUnHnNFNol9
+ C2rd5dS4G9oJVzHdBXpIwGPjv++7CFWhsyi/NBVB1V4qy0d0OEcziYb9eg1040LkuS7D
+ /Rafr+VFCc4d8NDklQv1JCPEIf/lLlegPm5P2uYZrKg9IYF3NlKCWVWhKsaPukZdpHIg
+ XM11dOkZnNZNhdxtjJmRGLZp7pEj9C8JrRD2di014GA+XI5w3qeOuIKk1ImhTA5dX/3u
+ pqlQwZLfFnIzpXXiyXzyerPfGbFiSIlg2kyF0duukW6sKIRnOae5tSx+KnR3Vie1XX3a
+ oZnw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=WOCOgOVP9/3KdLQah7ogN6soj9MgJBMp5zydxBeS4k4=;
+ b=P1IYwtnVqqYAjeyM2PePEaH6E2DPCYjE21ZrlLs+i359g675+WPaMF33jvWA29cpB/
+ +EPMXjArAiFfXyP6xP4m30gRAeh4sVkmLi5wuQCDrAH0XTPyCqSH5mj3HHKtoGSbqVer
+ sd5QpbP9VIdLQ6ydpC8B7AvQfH4HlXZlQVQQKbdRwI5psur20I20D2cdj+w/dyDu+do3
+ Efj/6SvXmB00o4aBlE0kLA0LsoYZYZfBqf1RgWRBVVxGqihFG/NPsJkSTj42iPtNv3mu
+ NeyNLdP0gsjOC3ZTm0RoxDQilXnlM7uBJJkb07ZNjSIPAM5j2JmjVEZeB0pQk8zEvY9I
+ 5CEA==
+X-Gm-Message-State: APjAAAXHuUwM7bdiiHVX+8PjqK/x9ghE5dr8ngaSPN5EWpLDYI6/j/Ko
+ 9YCGvBpUBAo2sMthGsXuMoA944KRA+xiu1xmivQ=
+X-Google-Smtp-Source: APXvYqzyqxrAU1QqvoHlbftGy/crKZJM8TEtfIUPzJvpEntZhvyxhB4BHutPyxU4cFj5bPO0Ooop1VWRv0QnQdq2+X8=
+X-Received: by 2002:adf:e286:: with SMTP id v6mr8558351wri.241.1572116065463; 
+ Sat, 26 Oct 2019 11:54:25 -0700 (PDT)
 MIME-Version: 1.0
+References: <20191015152654.26726-1-andrew.smirnov@gmail.com>
+ <20191015152654.26726-3-andrew.smirnov@gmail.com>
+ <20191026115524.GJ14401@dragon>
+In-Reply-To: <20191026115524.GJ14401@dragon>
+From: Andrey Smirnov <andrew.smirnov@gmail.com>
+Date: Sat, 26 Oct 2019 11:54:13 -0700
+Message-ID: <CAHQ1cqHQar8ZoVa3p+LfuPyJixcwfeWv7spkmwyJc60cekEywQ@mail.gmail.com>
+Subject: Re: [PATCH 3/4] arm64: dts: zii-ultra: Add node for accelerometer
+To: Shawn Guo <shawnguo@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191026_104726_474424_6EB22416 
-X-CRM114-Status: GOOD (  11.59  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191026_115428_443724_DBEE5DF1 
+X-CRM114-Status: GOOD (  15.36  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.244 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (andrew.smirnov[at]gmail.com)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,86 +94,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
- linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org, wens@csie.org,
- boris.brezillon@collabora.com, p.zabel@pengutronix.de,
- hverkuil-cisco@xs4all.nl, mchehab@kernel.org, ezequiel@collabora.com,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: linux-kernel <linux-kernel@vger.kernel.org>,
+ Fabio Estevam <festevam@gmail.com>, Chris Healy <cphealy@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that segment address is available, support for multi-slice frames
-can be easily added.
+On Sat, Oct 26, 2019 at 4:55 AM Shawn Guo <shawnguo@kernel.org> wrote:
+>
+> On Tue, Oct 15, 2019 at 08:26:53AM -0700, Andrey Smirnov wrote:
+> > Add I2C node for accelerometer present on both Zest and RMB3 boards.
+> >
+> > Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
+> > Cc: Fabio Estevam <festevam@gmail.com>
+> > Cc: Chris Healy <cphealy@gmail.com>
+> > Cc: Lucas Stach <l.stach@pengutronix.de>
+> > Cc: Shawn Guo <shawnguo@kernel.org>
+> > Cc: linux-arm-kernel@lists.infradead.org,
+> > Cc: linux-kernel@vger.kernel.org
+> > ---
+> >  .../boot/dts/freescale/imx8mq-zii-ultra.dtsi   | 18 ++++++++++++++++++
+> >  1 file changed, 18 insertions(+)
+> >
+> > diff --git a/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi b/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi
+> > index 21eb52341ba8..8395c5a73ba6 100644
+> > --- a/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi
+> > +++ b/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi
+> > @@ -262,6 +262,18 @@
+> >       pinctrl-0 = <&pinctrl_i2c1>;
+> >       status = "okay";
+> >
+> > +     accel@1c {
+>
+> s/accel/accelerometer
+>
+> I fixed it up and applied the series.
+>
 
-Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
----
- .../staging/media/sunxi/cedrus/cedrus_h265.c  | 21 +++++++++++++++----
- .../staging/media/sunxi/cedrus/cedrus_video.c |  1 +
- 2 files changed, 18 insertions(+), 4 deletions(-)
+I'm fine with that change, but FYI, I originally had it as
+"accelerometer', but changed to "accel" to match the name in DT for
+RDU2.
 
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_h265.c b/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
-index 888bfd5ca224..e909adf6f30f 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
-@@ -366,15 +366,28 @@ static void cedrus_h265_setup(struct cedrus_ctx *ctx,
- 	reg = VE_DEC_H265_BITS_END_ADDR_BASE(src_buf_end_addr);
- 	cedrus_write(dev, VE_DEC_H265_BITS_END_ADDR, reg);
- 
--	/* Coding tree block address: start at the beginning. */
-+	/* Coding tree block address */
- 	reg = VE_DEC_H265_DEC_CTB_ADDR_X(0) | VE_DEC_H265_DEC_CTB_ADDR_Y(0);
-+	if (!ctx->fh.m2m_ctx->new_frame) {
-+		unsigned int log2_max_luma_coding_block_size =
-+			sps->log2_min_luma_coding_block_size_minus3 + 3 +
-+			sps->log2_diff_max_min_luma_coding_block_size;
-+		unsigned int ctb_size_luma =
-+			1UL << log2_max_luma_coding_block_size;
-+		unsigned int width_in_ctb_luma =
-+			DIV_ROUND_UP(sps->pic_width_in_luma_samples, ctb_size_luma);
-+
-+		reg = VE_DEC_H265_DEC_CTB_ADDR_X(slice_params->slice_segment_addr % width_in_ctb_luma);
-+		reg |= VE_DEC_H265_DEC_CTB_ADDR_Y(slice_params->slice_segment_addr / width_in_ctb_luma);
-+	}
- 	cedrus_write(dev, VE_DEC_H265_DEC_CTB_ADDR, reg);
- 
- 	cedrus_write(dev, VE_DEC_H265_TILE_START_CTB, 0);
- 	cedrus_write(dev, VE_DEC_H265_TILE_END_CTB, 0);
- 
- 	/* Clear the number of correctly-decoded coding tree blocks. */
--	cedrus_write(dev, VE_DEC_H265_DEC_CTB_NUM, 0);
-+	if (ctx->fh.m2m_ctx->new_frame)
-+		cedrus_write(dev, VE_DEC_H265_DEC_CTB_NUM, 0);
- 
- 	/* Initialize bitstream access. */
- 	cedrus_write(dev, VE_DEC_H265_TRIGGER, VE_DEC_H265_TRIGGER_INIT_SWDEC);
-@@ -523,8 +536,8 @@ static void cedrus_h265_setup(struct cedrus_ctx *ctx,
- 				V4L2_HEVC_PPS_FLAG_DEPENDENT_SLICE_SEGMENT,
- 				pps->flags);
- 
--	/* FIXME: For multi-slice support. */
--	reg |= VE_DEC_H265_DEC_SLICE_HDR_INFO0_FLAG_FIRST_SLICE_SEGMENT_IN_PIC;
-+	if (ctx->fh.m2m_ctx->new_frame)
-+		reg |= VE_DEC_H265_DEC_SLICE_HDR_INFO0_FLAG_FIRST_SLICE_SEGMENT_IN_PIC;
- 
- 	cedrus_write(dev, VE_DEC_H265_DEC_SLICE_HDR_INFO0, reg);
- 
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_video.c b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
-index 15cf1f10221b..497b1199d3fe 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus_video.c
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
-@@ -311,6 +311,7 @@ static int cedrus_s_fmt_vid_out(struct file *file, void *priv,
- 
- 	switch (ctx->src_fmt.pixelformat) {
- 	case V4L2_PIX_FMT_H264_SLICE:
-+	case V4L2_PIX_FMT_HEVC_SLICE:
- 		vq->subsystem_flags |=
- 			VB2_V4L2_FL_SUPPORTS_M2M_HOLD_CAPTURE_BUF;
- 		break;
--- 
-2.23.0
-
+Thanks,
+Andrey Smirnov
 
 _______________________________________________
 linux-arm-kernel mailing list
