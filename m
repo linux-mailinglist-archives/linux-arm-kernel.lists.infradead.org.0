@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEA65E5759
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 26 Oct 2019 02:02:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C3E0E5758
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 26 Oct 2019 02:02:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=1bOUgciKdHIB2sjYFMidj+McnlPvypwwWgwpeT2Ed3U=; b=vCi9I21WhL6+xT7Pa/4ZKYBw26
-	FGf480mq2AZuQTQKyf7xlW5ldkOkFpxq7AF8xksY60s9bnPDyVQOwo1WZIwtdvWf7V207oR6XH1Qr
-	wOJhMrBnJBQtqgKSHuHAbbyxWbAlNbxehNlG1xKifnyS/XLTP52vgQUY9CWRKZGTOGddRa0FBwR8m
-	qvkQK6k2PLYImGZeTrl9JpTQBbWoySRYAlFcsbY17pYX+b/NRi6dJYXGGVz1eAo32GhGlV4EjMcYX
-	V0IRdUmrg4LvYMfMKLNXalssFk2QuVlViUVMujbmFWcLNVuoUc8iZBOgp7ALX743lL/dkZ6cqSxbE
-	/joLe9cQ==;
+	bh=3AlQ9Ypq1kF3e+lEovK0c3TFbEHNUA3DdWlhYn2z+/k=; b=FdSNXGepRbAYxgfe1abK7hdZKh
+	TU029nh2+nIiFbgZhTcMyotjX0win1XJSoTWaRfn2P+98ANWQ6uscNdwMIiOnVheyqBJICSLySw6H
+	TxThLyxAk9UqxDfxiNxtN7004DroC/kY09W4sBB7wCSreeYX2CBhmyC6Z1Ya0hWDRQ8c5P9hwjeWv
+	5EVDVAqQfO4woJLCEqjnzJjH5hG2dsELgJckQez4gSyLTL2T6/5ITr4acH2I2U37+GdVGRLOCeAq0
+	noPlcWTWoyuseGItJnz0ftECq4FukDj+3OU7Qvabk9ftDBb4yxXpudeATs2qILzwOsumqUhXM77Gg
+	zTSpNQwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iO9XB-0005TW-Av; Sat, 26 Oct 2019 00:02:21 +0000
-Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
+	id 1iO9X0-0005Dt-Ju; Sat, 26 Oct 2019 00:02:10 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iO9Wd-00052k-HZ
- for linux-arm-kernel@lists.infradead.org; Sat, 26 Oct 2019 00:01:49 +0000
-Received: by mail-qt1-x842.google.com with SMTP id y39so524497qty.0
+ id 1iO9Wd-000545-1R
+ for linux-arm-kernel@lists.infradead.org; Sat, 26 Oct 2019 00:01:48 +0000
+Received: by mail-qt1-x841.google.com with SMTP id t20so5838930qtr.10
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 25 Oct 2019 17:01:42 -0700 (PDT)
+ Fri, 25 Oct 2019 17:01:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=w2Qe4Y1E5QpVDPsqMFOE8/bVIH+/dJJ0HI2l6GB+kWU=;
- b=jxSf/kl6ubzeD6imZ4TU0l0dtA5dpa+Vh+r2h23loH1OIgV0GEq6HUiVzyborJfJhn
- V4d/nmQUxCcZ8tCTQXYT4ucnKO3eAik81K3A5N41wJDrftgsZp5Ft+NtWqn7UcgMUFta
- EmzOwhtAOD3/wMmTpezfR6iQ4TGE8ZlKRf+slLDgL0sWtpINeUhbrWiGshiFthuKLDMS
- Xcbdb7BTjjZvEkn3IQ4yegIJ/zBLqiudvfBEV3V4N1odQW3whcPEofHHSnl5z3U2nkLa
- hiCO3s7mmhaZfjvdwQk/1+OcnK3fZ0TAsnt7ER5FkUqf5E1aReX/MLVsVdZQwyRZEhIe
- ZNTg==
+ bh=N7n+RQ/8oNhqVjKWIr5o8NBxEKbNqCAB5IwgTXdYhCA=;
+ b=k+xvXB0b9ZooqTl5yJQqYjCXXdudHreexzs5MFmO9Lnfqy2lt1wb6wvmvMEz8tqhXR
+ /w4rtC3NAzq8ogHiSNl0pYihSrctSqNlRoPmjuzSwPnGh1d+yXgh7McywaU/Ra+wwk+w
+ 4VSbhImQzpfX7slJv6Jj0dv/EwMDta0+WNZSousjJIT5O7F6idoGPJ6aSrDb10xXDLyU
+ CAWMTt1cokVkSpR09pWpFdrKAB/U6sMKQLTR7SzAjIUwykBc0WUeFWA/zbVHCqlqM4wj
+ 10Oam9v43ROtdYzC6hD/mAOwlEm1hZNy81g2by7OUzSlLkGKjzV1ppi4PcgNXfSjOD+A
+ My8w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=w2Qe4Y1E5QpVDPsqMFOE8/bVIH+/dJJ0HI2l6GB+kWU=;
- b=lBv3zZAwIj0oEGjPegYQBvoYKO3ZozPXuYgMtliSIkXsSjUgVzATpUiWVLxs3ESGVm
- yPQVzCn+kM6OzlRWkdRSOOxiaSwJtHSlHpG+B2ogwqLclbTWGojnD6gDu5/ejeoebSeM
- LD7r9HCXbAlE1pRpHzHziZwjtJXeqVOy6viX9OFhkKW0pVcNLJaS7KIO86AxNeaOi0Ti
- YZrFHP6zO0bDw64Ypd3Opml+hFzoeXscTdqvRBi9oaxtrgZPy5rSpwQcPUk9Q/Wj1NYV
- iProSU1u1hH2ts+FtgjOnXL1UCGd4cdbDbkUXt9PNmqX0eelLmgeanB4yoiM91joNoMp
- B7Tg==
-X-Gm-Message-State: APjAAAX0HvQqo7197OEpImWDJvzEU0pnSQ8zI1IbpouT+v8cTl5k98h1
- LkBVmyWuQqnmufVi0L9Ksd0=
-X-Google-Smtp-Source: APXvYqwbttIZRrfdudc7IwOa1FE7bE8iO7oD0rjQMhpAoR153Z9VGc9I11XxeXT/1WTqgxuQr4lSOg==
-X-Received: by 2002:ad4:58a9:: with SMTP id ea9mr639923qvb.179.1572048101935; 
- Fri, 25 Oct 2019 17:01:41 -0700 (PDT)
+ bh=N7n+RQ/8oNhqVjKWIr5o8NBxEKbNqCAB5IwgTXdYhCA=;
+ b=uPzOGMSAaZ4lQMmoJo6vX3BV68ZAARwGXgAP+6JbL1bHpxKnLipSc92sj9srnui9Iv
+ MwPo4VxoN6+AVW4y/ZZIt0ZY2r7j/JqdkhP9CBSpaoxFtG8mQCKgbtAgM3z3mopSmLeb
+ pzpTPlsCCjHXEW0mMQYcexjaZYv0WokEGxpnbwGxN/cLFMsqIwT+qyF8QVBsuJKsTBvU
+ GXVZ3gUBeFVa5fCtvKTKZ6GH6zZRtwMeoE1zp6ReCUUr3Lj50TVvIsQDAF8Tj7vLqVCd
+ UbI8dfTaPmtwLzluzFAjN3OnTUDCWVAOPCrbolwgNSF/1tNkPa0xNPcv9woba5jlwFiA
+ UOSQ==
+X-Gm-Message-State: APjAAAX/aZlGfjxIqPfjS7QUS9HDOKvpbjvwNilohHJU90rwDmWudgrd
+ vYl0MlzYmVa/DKZ/krTLxlSiKia+AGs=
+X-Google-Smtp-Source: APXvYqzzEzdbrlauZNiftXyGq8YMjq81v7LUByUzlEK2CQtAbkvouVmxCQPxRkPeNwTAFUuUT9DsZQ==
+X-Received: by 2002:ac8:8a1:: with SMTP id v30mr6143591qth.44.1572048104767;
+ Fri, 25 Oct 2019 17:01:44 -0700 (PDT)
 Received: from fabio-Latitude-E5450.nxp.com
  ([2804:14c:482:99:1a50:482f:3e7:284a])
- by smtp.gmail.com with ESMTPSA id l3sm2547840qtc.33.2019.10.25.17.01.39
+ by smtp.gmail.com with ESMTPSA id l3sm2547840qtc.33.2019.10.25.17.01.42
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 25 Oct 2019 17:01:41 -0700 (PDT)
+ Fri, 25 Oct 2019 17:01:44 -0700 (PDT)
 From: Fabio Estevam <festevam@gmail.com>
 To: shawnguo@kernel.org
-Subject: [PATCH 2/3] arm64: dts: ls1028a: Move thermal-zone out of SoC
-Date: Fri, 25 Oct 2019 21:01:18 -0300
-Message-Id: <20191026000119.27178-2-festevam@gmail.com>
+Subject: [PATCH 3/3] arm64: dts: ls1028a: Fix tmu unit address
+Date: Fri, 25 Oct 2019 21:01:19 -0300
+Message-Id: <20191026000119.27178-3-festevam@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191026000119.27178-1-festevam@gmail.com>
 References: <20191026000119.27178-1-festevam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_170147_615296_BD3D449C 
-X-CRM114-Status: GOOD (  11.10  )
+X-CRM114-CacheID: sfid-20191025_170147_117259_4E3F202E 
+X-CRM114-Status: GOOD (  11.79  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -106,100 +106,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Move thermal-zone node from the soc node to the root node.
+The following build warning is seen with W=1:
 
-thermal-zone node does not have any register properties and thus
-shouldn't be placed on the bus.
+arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi:531.20-581.5: Warning (simple_bus_reg): /soc/tmu@1f00000: simple-bus unit address format error, expected "1f80000"
 
-This fixes the following build warnings with W=1:
-
-arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi:583.17-612.5: Warning (simple_bus_reg): /soc/thermal-zones: missing or empty reg/ranges property
+Fix it by adjusting the tmu unit address to match its reg entry.
 
 Signed-off-by: Fabio Estevam <festevam@gmail.com>
 ---
- .../arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 62 +++++++++----------
- 1 file changed, 31 insertions(+), 31 deletions(-)
+ arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-index 51fa8f57fdac..370e9aa07efd 100644
+index 370e9aa07efd..b32830f83da2 100644
 --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
 +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-@@ -128,6 +128,37 @@
- 		};
- 	};
- 
-+	thermal-zones {
-+		core-cluster {
-+			polling-delay-passive = <1000>;
-+			polling-delay = <5000>;
-+			thermal-sensors = <&tmu 0>;
-+
-+			trips {
-+				core_cluster_alert: core-cluster-alert {
-+					temperature = <85000>;
-+					hysteresis = <2000>;
-+					type = "passive";
-+				};
-+
-+				core_cluster_crit: core-cluster-crit {
-+					temperature = <95000>;
-+					hysteresis = <2000>;
-+					type = "critical";
-+				};
-+			};
-+
-+			cooling-maps {
-+				map0 {
-+					trip = <&core_cluster_alert>;
-+					cooling-device =
-+						<&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+						<&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
-+				};
-+			};
-+		};
-+	};
-+
- 	soc: soc {
- 		compatible = "simple-bus";
- 		#address-cells = <2>;
-@@ -580,37 +611,6 @@
- 			#thermal-sensor-cells = <1>;
+@@ -559,7 +559,7 @@
+ 			status = "disabled";
  		};
  
--		thermal-zones {
--			core-cluster {
--				polling-delay-passive = <1000>;
--				polling-delay = <5000>;
--				thermal-sensors = <&tmu 0>;
--
--				trips {
--					core_cluster_alert: core-cluster-alert {
--						temperature = <85000>;
--						hysteresis = <2000>;
--						type = "passive";
--					};
--
--					core_cluster_crit: core-cluster-crit {
--						temperature = <95000>;
--						hysteresis = <2000>;
--						type = "critical";
--					};
--				};
--
--				cooling-maps {
--					map0 {
--						trip = <&core_cluster_alert>;
--						cooling-device =
--							<&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
--							<&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
--					};
--				};
--			};
--		};
--
- 		pcie@1f0000000 { /* Integrated Endpoint Root Complex */
- 			compatible = "pci-host-ecam-generic";
- 			reg = <0x01 0xf0000000 0x0 0x100000>;
+-		tmu: tmu@1f00000 {
++		tmu: tmu@1f80000 {
+ 			compatible = "fsl,qoriq-tmu";
+ 			reg = <0x0 0x1f80000 0x0 0x10000>;
+ 			interrupts = <0 23 0x4>;
 -- 
 2.17.1
 
