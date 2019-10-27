@@ -2,90 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D7C2E6266
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 27 Oct 2019 13:12:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ACF15E626B
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 27 Oct 2019 13:14:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0K+RXWuk9CGqViy03bYIrqXEWnmT8Gv6/E4pz39m8KA=; b=dTTxaFLjt10Ccl
-	V1pb766q8DYfQ/5H4r0wgauiQZJfhrMFjp7nuw0un4HWWCKIA3m+NTo/pydD7gX1jIQ47sIf+d6yJ
-	PhI90BpSvxqc1Lljv/eRe141G638U4YJU5re6YGKT+wFB7Z5EkKYmFESrK3sdSAI1JH2iK0DMcQXk
-	VPWghNHmgC59SoacHtHfKnyP8E/dJAen4gLGk4fl22cY+yr3L7jZLyMhGHG5IIkTm/7wMRgy9+7ss
-	U8JAicX4M5pgP38qevAws8bjKMNLBqMR/fJII36jkv4Bw9sVcMbEHxiDAWZQFXOP9Fe9KXbxdZspx
-	dBi/e/4Pfa+a4248V+Zg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FYjlKi1ImfFvT5OqRw4Wptt/epA8n+/P1nLapctRm2c=; b=UKOnb9m2iWRSu+
+	UkosLEfm38vxuxOouox2ZEOgCp6wYjtMR1kFhZa/0ZP2eMzZeOxjYpOTzs5rDkYxHGMCG9Z/bDrId
+	k4pf22tm/UnDE7FvRQuccL/ePWxeGKpCPI21b9GLMfB1f5QOzslaf1pFrj6SsOCVeAYPPadP4SFCp
+	tzvXWKMiN2oeo8jYTpSw3kF+EbjLqQrjrktqhovT40ap3x/61CMLBp6to1MqYlN6Mxmi2NYEVTXl1
+	DoxpkGg4Ze08boUt6N0m2YxnNWZayF1GEK4Lwh0uOJGovW+dVQIqFHUeWchnQ9B6l7rtAmTES6UbQ
+	8AzSGDQxZtpfGqW3jmYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOhOr-0006hV-EK; Sun, 27 Oct 2019 12:12:01 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1iOhRT-00040H-6z; Sun, 27 Oct 2019 12:14:43 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOhOZ-00064d-R9
- for linux-arm-kernel@lists.infradead.org; Sun, 27 Oct 2019 12:11:45 +0000
-Received: by mail-lj1-x243.google.com with SMTP id a21so8393963ljh.9
+ id 1iOhR8-0003aE-0h
+ for linux-arm-kernel@lists.infradead.org; Sun, 27 Oct 2019 12:14:23 +0000
+Received: by mail-wm1-x341.google.com with SMTP id 22so6237255wms.3
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 27 Oct 2019 05:11:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=linux-foundation.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=3Zr1M0nCXlilSobwLkNmgKE2widPtGkZk30ZqC0Jsp4=;
- b=d3QTzyBq1ltmtg4yGSZr5XtauvY/fALYcdqhiDEtFOl1dE9JCqjexjO52exODJRIVQ
- Eh2Een6o4qvZdUFz/jDS+JnTxGr7PmGqPX7rFmA4YZFRZjrNKL/JZDN1nI+V4NXXs/c+
- Hp/xfBUyMptBO5mKJ7+YknkxBRlijCGcU26uA=
+ Sun, 27 Oct 2019 05:14:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:openpgp:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=qBQMo15u4akqQ8NWGQMhJU3k9VWFJohiyePtcxAYFI0=;
+ b=m+Ns1PWK3MtMBikb5UwssCdVywszYbdnMhaTRgL8sKmYeGT6RE9fiyhf3J/MDr5RfA
+ BaArednT0VMLOUBKv7PfKn1qhFaWiRvXClzeLEkFq+zajN4GJWHqIrwFcZbubjD49cP3
+ FAhqGdvROVaC1HyFsFzY+x+gmcRVk6tSPTrTKiK5upsEjpxOvLKQwbj5d3+Z5Dd6Vk/T
+ 1XXVvuk7boKDC3IjZ6tValvymLwPX6zsUoKrCY6qHlq8g8wD8uC/y4IfvdVzUZrxN4hW
+ sBVxYzmfTtJu0D9FkyXtCv40hw28GPned5lzWmSM8mfPSlER0Fc3VMHfNqDEiTmO5OXw
+ /Lpg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=3Zr1M0nCXlilSobwLkNmgKE2widPtGkZk30ZqC0Jsp4=;
- b=Hm1TP53vW9pwX/Xa2X+iUali2Ic/+4iS+W1DDCcFq9/m81PYLpz/lbZYU6m4OLQGzm
- COSTcT8azsKN8BEOchp07qPFtBs1fW76G27Mw87xNawv8scj9llB1S2eQ+qJ3/V88TVV
- 9uuyJtGe3t/D9crmY+ewsvGRD3+GVCY1BR02ihI73bIGlRtjU26m4VtDG8wchyszQRTH
- Jo5gI52k2svBOOoGIbup2izHfDdft3qjbd1mYsSXuCgU847T0XdJi/cmnYoc1ar8k11P
- og3vRXvtoLmezzxaUYmNRSGler2syIKFWuvOp6gUrIyn9pW+MBKXlWalmx7mC0cRRG0C
- hLEQ==
-X-Gm-Message-State: APjAAAVUHO6HmK+eMykzdDyknVIoTRKGLG7P5mhKWH1GQFduKe6py3PU
- bxLY9V+nu+Zk09yJWJwbtNi75gmpBuOMRg==
-X-Google-Smtp-Source: APXvYqynfmYFKCkLklsvhfA3GCwvZyW10+//DhULLlXzF/y+YYdfBgMnJDAJWvSR1DqRnH5G8NHP4g==
-X-Received: by 2002:a2e:42d6:: with SMTP id h83mr8433094ljf.21.1572178299397; 
- Sun, 27 Oct 2019 05:11:39 -0700 (PDT)
-Received: from mail-lf1-f50.google.com (mail-lf1-f50.google.com.
- [209.85.167.50])
- by smtp.gmail.com with ESMTPSA id x16sm3888495ljd.69.2019.10.27.05.11.39
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 27 Oct 2019 05:11:39 -0700 (PDT)
-Received: by mail-lf1-f50.google.com with SMTP id v8so5659347lfa.12
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 27 Oct 2019 05:11:39 -0700 (PDT)
-X-Received: by 2002:a19:5504:: with SMTP id n4mr8268196lfe.106.1572177927159; 
- Sun, 27 Oct 2019 05:05:27 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=qBQMo15u4akqQ8NWGQMhJU3k9VWFJohiyePtcxAYFI0=;
+ b=fvuQTB/GgbCoX8a6pVi8Xd198RsmN7PBgPNiCv22jpIi1PkTc9X9xY4manDqqbb8nE
+ +QtnWvKsbvQNmuK2UrBptSUklp9pG72w9LdaenDeXp6VRSDRFb45mHT9D1K01Aur6zMq
+ xZ6o7aQbBwlj1nurUruQsBVkYxWdhZMZczBBpIqq+NcTsADAi4pRSxIWNfeDh0apgsOT
+ dG6pvtjBkAmC8g60Qj1UW/bVdTNjNggi3xN6y8HybjmGG6IZ3vfGNkPF03vIEtsskBCP
+ d7hPPIg9ubKBNxH0I8OChcsLzNLOj4osXT5kRhISROD2QD/RAr4D0QCYdnurGuJLxKDz
+ oHEA==
+X-Gm-Message-State: APjAAAWkiXCLdGP4okULz1wmY33jtt2ezWV/i1/6lD+jXzjyJecGRcXC
+ ZDMuoCToYgp5VGGfgcU9QaMoYg==
+X-Google-Smtp-Source: APXvYqzLaPnNvQm7J7MkxUO5AQPa6wp4y6EGKcMQmUZZ/UL7FmT2DLzKfGvffaK5m6eXeVZY4xvogw==
+X-Received: by 2002:a05:600c:2212:: with SMTP id
+ z18mr12347054wml.154.1572178459930; 
+ Sun, 27 Oct 2019 05:14:19 -0700 (PDT)
+Received: from [10.81.2.50] ([109.190.253.14])
+ by smtp.gmail.com with ESMTPSA id 74sm9397558wrm.92.2019.10.27.05.14.18
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sun, 27 Oct 2019 05:14:19 -0700 (PDT)
+Subject: Re: [PATCH 1/1] arm64: Implement archrandom.h for ARMv8.5-RNG
+To: Mark Rutland <mark.rutland@arm.com>
+References: <20191019022048.28065-1-richard.henderson@linaro.org>
+ <20191019022048.28065-2-richard.henderson@linaro.org>
+ <20191024113239.GC4300@lakrids.cambridge.arm.com>
+From: Richard Henderson <richard.henderson@linaro.org>
+Openpgp: preference=signencrypt
+Message-ID: <bdadd4bf-1848-bef1-89c3-2d594cf3be16@linaro.org>
+Date: Sun, 27 Oct 2019 13:14:15 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <20191026185700.10708-1-cyphar@cyphar.com>
- <20191026185700.10708-3-cyphar@cyphar.com>
-In-Reply-To: <20191026185700.10708-3-cyphar@cyphar.com>
-From: Linus Torvalds <torvalds@linux-foundation.org>
-Date: Sun, 27 Oct 2019 08:05:11 -0400
-X-Gmail-Original-Message-ID: <CAHk-=wjPPWvm5_eR4uaHJaU1isTUk-4iXQV3Z2Px9A+w6j2nHg@mail.gmail.com>
-Message-ID: <CAHk-=wjPPWvm5_eR4uaHJaU1isTUk-4iXQV3Z2Px9A+w6j2nHg@mail.gmail.com>
-Subject: Re: [PATCH RESEND v14 2/6] namei: LOOKUP_IN_ROOT: chroot-like path
- resolution
-To: Aleksa Sarai <cyphar@cyphar.com>
+In-Reply-To: <20191024113239.GC4300@lakrids.cambridge.arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191027_051143_891375_8B4A0A21 
-X-CRM114-Status: GOOD (  13.15  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191027_051422_111540_C70AC783 
+X-CRM114-Status: GOOD (  24.63  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -102,73 +103,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, Linux-sh list <linux-sh@vger.kernel.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Alexei Starovoitov <ast@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- David Howells <dhowells@redhat.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- sparclinux@vger.kernel.org, Jiri Olsa <jolsa@redhat.com>,
- linux-arch <linux-arch@vger.kernel.org>,
- linux-s390 <linux-s390@vger.kernel.org>, Tycho Andersen <tycho@tycho.ws>,
- Aleksa Sarai <asarai@suse.de>, Shuah Khan <shuah@kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-mips@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
- linux-m68k <linux-m68k@lists.linux-m68k.org>,
- Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
- Shuah Khan <skhan@linuxfoundation.org>, Namhyung Kim <namhyung@kernel.org>,
- David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
- "J. Bruce Fields" <bfields@fieldses.org>,
- GNU C Library <libc-alpha@sourceware.org>, linux-parisc@vger.kernel.org,
- Linux API <linux-api@vger.kernel.org>, Chanho Min <chanho.min@lge.com>,
- Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
- Eric Biederman <ebiederm@xmission.com>, alpha <linux-alpha@vger.kernel.org>,
- linux-fsdevel <linux-fsdevel@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- Linux Containers <containers@lists.linux-foundation.org>
+Cc: linux-arch@vger.kernel.org, ard.biesheuvel@linaro.org,
+ catalin.marinas@arm.com, will@kernel.org, Dave.Martin@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Oct 26, 2019 at 2:58 PM Aleksa Sarai <cyphar@cyphar.com> wrote:
->
-> +       /* LOOKUP_IN_ROOT treats absolute paths as being relative-to-dirfd. */
-> +       if (flags & LOOKUP_IN_ROOT)
-> +               while (*s == '/')
-> +                       s++;
-> +
->         /* Figure out the starting path and root (if needed). */
->         if (*s == '/') {
->                 error = nd_jump_root(nd);
+On 10/24/19 1:32 PM, Mark Rutland wrote:
+> Please give this a menmoic in <asm/sysreg.h>, i.e.
+> 
+> #define SYS_RNDR	sys_reg(3, 3, 2, 4, 0)
+> 
+> ... and make this function:
+> 
+> static inline bool read_rndr(unsigned long *v)
+> {
+> 	unsigned long pass;
+> 
+> 	/*
+> 	 * Reads of RNDR set PSTATE.NZCV to 0b0000 upon success, and set
+> 	 * PSTATE.NZCV to 0b0100 otherwise.
+> 	 */
+> 	asm volatile(
+> 		__mrs_s("%0", SYS_RNDR) "\n"
+> 	"	cset %1, ne\n"
+> 	: "=r" (*v), "=r" (pass);
+> 	:
+> 	: "cc");
+> 
+> 	return pass;
+> }
 
-So I'm still hung up on this.
+Done.
 
-I guess I can't help it, but I look at the above, and it makes me go
-"whoever wrote those tests wasn't thinking".
+> #define SYS_RNDRRS	sys_reg(3, 3, 2, 4, 1)
+> 
+> ...and here have:
+> 
+> static inline bool read_rndrrs(unsigned long *v)
+> {
+> 	unsigned long pass;
+> 
+> 	/*
+> 	 * Reads of RNDRRS set PSTATE.NZCV to 0b0000 upon success, and
+> 	 * set PSTATE.NZCV to 0b0100 otherwise.
+> 	 */
+> 	asm volatile (
+> 		__mrs_s("%0", SYS_RNDRRS) "\n"
+> 	"	cset %w1, ne\n"
+> 	: "=r" (*v), "=r" (pass)
+> 	:
+> 	: "cc");
+> 
+> 	return pass;
+> }
 
-It just annoys me how it tests for '/' completely unnecessarily.
+Done.
 
-If LOOKUP_IN_ROOT is true, we know the subsequent test for '/' is not
-going to match, because we just removed it. So I look at that code and
-go "that code is doing stupid things".
+>> +static inline bool arch_get_random_seed_long(unsigned long *v)
+>> +{
+>> +	/* If RNDR fails, attempt to re-seed with RNDRRS.  */
+>> +	return arch_has_random_seed() && (arm_rndr(v) || arm_rndrrs(v));
+>> +}
+> 
+> Here we clobber the value at v even if the reads of RNDR and RNDRRS
+> failed. Is that ok?
 
-That's why I suggested moving the LOOKUP_IN_ROOT check inside the '/' test.
+The x86 inline asm does, so I should think it is ok.
 
-Alternatively, just make the logic be
+>> +#ifdef CONFIG_ARCH_RANDOM
+>> +static bool can_use_rng(const struct arm64_cpu_capabilities *entry, int scope)
+>> +{
+>> +	unsigned long tmp;
+>> +	int i;
+>> +
+>> +	if (!has_cpuid_feature(entry, scope))
+>> +		return false;
+>> +
+>> +	/*
+>> +	 * Re-seed from the true random number source.
+>> +	 * If this fails, disable the feature.
+>> +	 */
+>> +	for (i = 0; i < 10; ++i) {
+>> +		if (arm_rndrrs(&tmp))
+>> +			return true;
+>> +	}
+> 
+> The ARM ARM (ARM DDI 0487E.a) says:
+> 
+> | Reseeded Random Number. Returns a 64-bit random number which is
+> | reseeded from the True Random Number source at an IMPLEMENTATION
+> | DEFINED rate.
+> 
+> ... and:
+> 
+> | If the instruction cannot return a genuine random number in a
+> | reasonable period of time, PSTATE.NZCV is set to 0b0100 and the data
+> | value returned in UNKNOWN.
+> 
+> ... so it's not clear to me if the retry logic makes sense. Naively I'd
+> expect "reasonable period of time" to include 10 attempts.
+> 
+> Given we'll have to handle failure elsewhere, I suspect that it might be
+> best to assume that this works until we encounter evidence to the
+> contrary.
 
-        if (flags & LOOKUP_IN_ROOT) {
-               .. remove '/'s ...
-        } else if (*s == '/') {
-                .. handl;e root ..
+Compare arch/x86/kernel/cpu/rdrand.c (x86_init_rdrand) and
+arch/powerpc/platforms/powernv/rng.c (initialize_darn).
 
-and remove the next "else" clause
+Both existing implementations have a small loop testing to see of the hardware
+passes its own self-check at startup.  Perhaps it's simply paranoia, but it
+didn't seem untoward to check.
 
-    Linus
+
+>> +#ifdef CONFIG_ARCH_RANDOM
+>> +	{
+>> +		.desc = "Random Number Generator",
+>> +		.capability = ARM64_HAS_RNG,
+>> +		.type = ARM64_CPUCAP_STRICT_BOOT_CPU_FEATURE,
+> 
+> I strongly suspect we're going to encounter systems where this feature
+> is mismatched, such that this can't be a boto CPU feature.
+> 
+> If we need entropy early in boot, we could detect if the boot CPU had
+> the feature, and seed the pool using it, then later make use of a
+> system-wide capability.
+
+In the meantime, what do you suggest I place here and in
+arch_has_random_seed(), so that it's at least detected early enough for the
+boot cpu, but does not require support from all cpus?
+
+
+r~
 
 _______________________________________________
 linux-arm-kernel mailing list
