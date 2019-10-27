@@ -2,50 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF3B8E6043
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 27 Oct 2019 03:30:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91F74E6046
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 27 Oct 2019 03:32:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+M82c4fQ2tm6j/uxEsw7Qq9FczHeJgU8pukVDLUK2GE=; b=e/320TYlwiG1b/
-	IUHiYaXCPR2SqHvrNg36u6d49zjqzHPNUbCjLaFvAwnIxACaMhFwIdniZktYPJwqYassHQpLSMvF7
-	2jEZY/SyI7ljYnCa+Qoby9Y65xrf3AS1bxXua5SCNar6pkqQBrZOzmbShtY0sQHuK2s8FOdmk53kE
-	g4pSkkmGr2XRyqYck7N7tEPsHatvGhSpdACuTksCrUN4cFwWdJM7mLML4ynEycDnZ7V73XSvc8BZJ
-	NWLWwZFTY90CH8W9MI11KyZ+Kre/Dhfs5mZpLu2wopK62WmO+kyEsGRL7XEuyncr5wbQQ6mrSHIT9
-	lIy96DnkOdw+mndtIOMA==;
+	List-Owner; bh=LRHSOmtz46a6WMJ9FF7aBK2T/ui6VIQld2TqQbhcPx0=; b=baiXMDKmWjI2NK
+	N9/JcVo2rIuJLdY8zqYizwf0I0G7id7XF9i5BLSnIGaJq0xA7yYiTHAlObQs9gVNYWh1z4AvqgBNs
+	fBR1h39BcJWiB0EpxmlVPhhYQ11UbHli3kfClM+UsVZve6eahCF+uVzwp7YmAnbjvhJ5sZkAhZrdW
+	uesBtfsWaVlon3yXDwb7dQ9ipRZTM3V/Vv29dnhuLaCRscAWIhlHfq3F8v9dk6Oo6UumxqPsfl3NF
+	hAUS8JqKfver0HB6atUFcWNE5XE4a1fDMirbrUnXnIbDGIX8EMZhSzG3Xznnk4zj4/BWYFTSskfKk
+	fdC66oIYWxDU7fj6OJjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOYKN-0006wr-3W; Sun, 27 Oct 2019 02:30:47 +0000
+	id 1iOYMF-0007aV-MA; Sun, 27 Oct 2019 02:32:43 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOYKD-0006pb-9Q
- for linux-arm-kernel@lists.infradead.org; Sun, 27 Oct 2019 02:30:38 +0000
+ id 1iOYLy-0007TJ-Fz
+ for linux-arm-kernel@lists.infradead.org; Sun, 27 Oct 2019 02:32:27 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0A9291FB;
- Sat, 26 Oct 2019 19:30:36 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4864E1FB;
+ Sat, 26 Oct 2019 19:32:25 -0700 (PDT)
 Received: from e107533-lin.cambridge.arm.com (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 84FF53F6C4;
- Sat, 26 Oct 2019 19:30:28 -0700 (PDT)
-Date: Sun, 27 Oct 2019 02:30:23 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3417A3F6C4;
+ Sat, 26 Oct 2019 19:32:17 -0700 (PDT)
+Date: Sun, 27 Oct 2019 02:32:13 +0000
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: Re: [PATCH 10/13] cpuidle: psci: Add a helper to attach a CPU to its
- PM domain
-Message-ID: <20191027023023.GC18111@e107533-lin.cambridge.arm.com>
+Subject: Re: [PATCH 11/13] cpuidle: psci: Attach CPU devices to their PM
+ domains
+Message-ID: <20191027023213.GD18111@e107533-lin.cambridge.arm.com>
 References: <20191010113937.15962-1-ulf.hansson@linaro.org>
- <20191010113937.15962-11-ulf.hansson@linaro.org>
- <20191024163117.GB22036@bogus>
- <CAPDyKFo2Fma1_JMSd39bmQ3X1PV4SmQ0AfEuKyX5KLLe83ycmA@mail.gmail.com>
+ <20191010113937.15962-12-ulf.hansson@linaro.org>
+ <20191024163515.GD22036@bogus>
+ <CAPDyKFq43XrGLDOVZmOeBTLKG0BBvTji6c0Z+cT8uc6PPyp8YA@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAPDyKFo2Fma1_JMSd39bmQ3X1PV4SmQ0AfEuKyX5KLLe83ycmA@mail.gmail.com>
+In-Reply-To: <CAPDyKFq43XrGLDOVZmOeBTLKG0BBvTji6c0Z+cT8uc6PPyp8YA@mail.gmail.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191026_193037_420721_6846040F 
-X-CRM114-Status: GOOD (  23.21  )
+X-CRM114-CacheID: sfid-20191026_193226_578617_4B6BF404 
+X-CRM114-Status: GOOD (  20.47  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -78,84 +78,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 24, 2019 at 06:47:43PM +0200, Ulf Hansson wrote:
-> On Thu, 24 Oct 2019 at 18:31, Sudeep Holla <sudeep.holla@arm.com> wrote:
+On Thu, Oct 24, 2019 at 06:55:50PM +0200, Ulf Hansson wrote:
+> On Thu, 24 Oct 2019 at 18:35, Sudeep Holla <sudeep.holla@arm.com> wrote:
 > >
-> > On Thu, Oct 10, 2019 at 01:39:34PM +0200, Ulf Hansson wrote:
-> > > Introduce a PSCI DT helper function, psci_dt_attach_cpu(), which takes a
-> > > CPU number as an in-parameter and tries to attach the CPU's struct device
-> > > to its corresponding PM domain.
+> > On Thu, Oct 10, 2019 at 01:39:35PM +0200, Ulf Hansson wrote:
+> > > In order to enable a CPU to be power managed through its PM domain, let's
+> > > try to attach it by calling psci_dt_attach_cpu() during the cpuidle
+> > > initialization.
 > > >
-> > > Let's makes use of dev_pm_domain_attach_by_name(), as it allows us to
-> > > specify "psci" as the "name" of the PM domain to attach to. Additionally,
-> > > let's also prepare the attached device to be power managed via runtime PM.
+> > > psci_dt_attach_cpu() returns a pointer to the attached struct device, which
+> > > later should be used for runtime PM, hence we need to store it somewhere.
+> > > Rather than adding yet another per CPU variable, let's create a per CPU
+> > > struct to collect the relevant per CPU variables.
 > > >
 > > > Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
 > > > ---
-> > >  drivers/cpuidle/cpuidle-psci-domain.c | 21 +++++++++++++++++++++
-> > >  drivers/cpuidle/cpuidle-psci.h        |  6 ++++++
-> > >  2 files changed, 27 insertions(+)
+> > >  drivers/cpuidle/cpuidle-psci.c | 23 +++++++++++++++++++----
+> > >  1 file changed, 19 insertions(+), 4 deletions(-)
 > > >
-> > > diff --git a/drivers/cpuidle/cpuidle-psci-domain.c b/drivers/cpuidle/cpuidle-psci-domain.c
-> > > index 3f5143ccc3e0..7429fd7626a1 100644
-> > > --- a/drivers/cpuidle/cpuidle-psci-domain.c
-> > > +++ b/drivers/cpuidle/cpuidle-psci-domain.c
-> > > @@ -9,9 +9,11 @@
+> > > diff --git a/drivers/cpuidle/cpuidle-psci.c b/drivers/cpuidle/cpuidle-psci.c
+> > > index a16467daf99d..1510422c7a53 100644
+> > > --- a/drivers/cpuidle/cpuidle-psci.c
+> > > +++ b/drivers/cpuidle/cpuidle-psci.c
+> > > @@ -23,7 +23,12 @@
+> > >  #include "cpuidle-psci.h"
+> > >  #include "dt_idle_states.h"
 > > >
-> > >  #define pr_fmt(fmt) "CPUidle PSCI: " fmt
-> > >
-> > > +#include <linux/cpu.h>
-> > >  #include <linux/device.h>
-> > >  #include <linux/kernel.h>
-> > >  #include <linux/pm_domain.h>
-> > > +#include <linux/pm_runtime.h>
-> > >  #include <linux/psci.h>
-> > >  #include <linux/slab.h>
-> > >  #include <linux/string.h>
-> > > @@ -279,3 +281,22 @@ static int __init psci_idle_init_domains(void)
-> > >       return ret;
-> > >  }
-> > >  subsys_initcall(psci_idle_init_domains);
-> > > +
-> > > +struct device *psci_dt_attach_cpu(int cpu)
-> > > +{
+> > > -static DEFINE_PER_CPU_READ_MOSTLY(u32 *, psci_power_state);
+> > > +struct psci_cpuidle_data {
+> > > +     u32 *psci_states;
 > > > +     struct device *dev;
+> > > +};
 > > > +
-> > > +     /* Currently limit the hierarchical topology to be used in OSI mode. */
-> > > +     if (!psci_has_osi_support())
-> > > +             return NULL;
-> > > +
-> > > +     dev = dev_pm_domain_attach_by_name(get_cpu_device(cpu), "psci");
+> > > +static DEFINE_PER_CPU_READ_MOSTLY(struct psci_cpuidle_data, psci_cpuidle_data);
+> > >  static DEFINE_PER_CPU(u32, domain_state);
+> > >
 > >
-> > This clarifies the need for the fixed name. But why not just go by index 0
-> > as the consumer of these psci power-domains will have only one power domain
-> > entry. Why do we need this name compulsory ?
->
-> The idea is to be future proof. If I recall correctly, the CPU node on
-> some QCOM SoCs may also have "CPR" PM domain specified, thus
-> "multiple" power-domains could be specified.
->
-
-I am sure we don't want to mx-n-match any power domain provider with
-psci. And also I expect in these above mentioned cases, there won't be any
-psci power domains.
-
-> In any case, using "psci" doesn't really hurt, right?
+> > /me just thinking still: If it make sense to keep psci_states separate
+> > and domain_state and only other things needed for RPM/OSI in the
+> > structure. I do understand that we modify domain_state and hence
+> > we can't use READ_MOSTLY then. Let's see, for now keep it as is, thought
+> > I will think out aloud.
+> 
+> I believe we are striving towards the same goal, which likely means to
+> separate the non-OSI path vs OSI path, as much as possible. Simply to
+> avoid any unnecessary operation being done in the non-OSI path. Right?
 >
 
-Doesn't but I don't see need for one as only one should exist, as mentioned
-above we don't want mix-n-match with psci ever.
+Yes
 
-> > Further, it's specified as
-> > optional in the generic binding, do we make it "required" for this psci
-> > idle states binding anywhere that I missed ?
->
-> Good point! Unless you tell me differently, I will update the DT doc
-> to clarify this is "required".
+> However, while I was trying to address that, I realized that it would
+> probably introduce even more changes to the series. Therefore, it
+> thought it may be better to address these kind of changes on top, as
+> improvements.
 >
 
-No but why is my question ? We don't have to. If firmware/DT wants to
-specify the name, sure. But it must remain optional IMO.
+If possible better to amend this unless it's too complicated.
 
 --
 Regards,
