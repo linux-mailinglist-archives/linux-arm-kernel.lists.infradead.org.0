@@ -2,93 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2AC63E643B
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 27 Oct 2019 17:25:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26DE5E649B
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 27 Oct 2019 18:45:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mXDIqgr3rcWWC6JjfZITCHpfp6ZS5i0+JVG6OrOv+JQ=; b=gpS2re6AVNhQaA
-	2/k2ooQ1HsHcMJtBm9ONiO+fMnBu9j24gYhHJe9RGYIhtwLElRjyGYpZnJ+wdxNeG1msqDkTACL65
-	aFRId8vot/rsc0A0AKy9+qJ5nELQTk9JQU9NzJ37DCmlCnO0F8pdMqQFW4JZarbKx8HcrfUWPsOw7
-	+IFvh1oeWVR6poDi5fTP3p/ZlS+60fh+dY/eXEhV0p/Db45bxse+4jJUHvchdBJ671EYiCmAj0Cxn
-	EdGVM5ZrjZrvvUk8AXiaTjbfeKx7j/0Zx3IwExe2hBPsKxMGcQ1tT6DLmY/HrGKD30y2IbrivQYNe
-	E1BGOHygKoGglF+yJ6iw==;
+	List-Owner; bh=da75QUHhhO4x7umKHEFZvikh3NFfy7e7Srd/FdYc4Qk=; b=WXMC5gqAojMs+T
+	uS2S7wUhHrH22PvfWmKN8Z9dfjyIUQSpj9fh2S5Iy+cQPE59GL6mUb/2Mplk+38JLKWyfJqIldX79
+	nORTIlw6MmNWx62gTTk3MsgnScsfR3Ie6mgOG7P3ECLzeXkBpY3UNV4rfoiUIruDgELfz8lZ5J/mQ
+	K90gwWoXFmvLGkU0iu+LamRYa15Omr3+iO/FaGtgLWEbCzuec82HYLacbyzS04kAbKEBao3X9GCnn
+	2W+q5n0JlYcsEJqwBSVRqVYvJYZnuIAQoza40T6kdgqeiM+otQNGgkGnN4agPWQVB49+rYM3h+AB9
+	6dzt160rE/l+TCC22KOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOlM8-0003oc-0n; Sun, 27 Oct 2019 16:25:28 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iOmbN-0003zI-IC; Sun, 27 Oct 2019 17:45:17 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOlKV-0001GW-MF; Sun, 27 Oct 2019 16:23:49 +0000
-Received: by mail-wr1-x444.google.com with SMTP id p4so7373596wrm.8;
- Sun, 27 Oct 2019 09:23:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=ryY1C6V/Fnndw45BEkZbgWqU1CO6K4z5Y17d3HMNBz4=;
- b=jcOMNoQZGE9P0d7ffCbmKdcF2AySd4aXs7mnjS66WOxzthrRtgWPSkR4yREp3Dhjus
- b2F3R9ITtpURe2IPC5wwadQlQyvuKJrFrk3yBzUZ1+/l6WiYQ2uV76nVGWuFrBkvPtXU
- ur8ioS5ptyCrLH6LXPMyoI6NmrqHQvEWML9l5VQcjGN/r9vBImUZVVq01cN5dsvE5BeT
- 2A+wXJje9nr3TzcAhZjfbBwmlClZ7Qe4krqF06Ux+refnB98YpCI95RGgdkm2nog97M7
- K881kAGJNyLP9Ataz2iPfbnCepVvnGOEMDtyMNOe3PxBcE+q4iMFVzjSQe4wkxrQ/y7o
- 0lKw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=ryY1C6V/Fnndw45BEkZbgWqU1CO6K4z5Y17d3HMNBz4=;
- b=UrD/56/6jSLDIc8R14zmjjbLV5RpT+k2Y/b5zsS4mCSr0hOaS9w9BGRoE3TdkRH80h
- hv89fPEcouhrHIy7AqiZ7Mh0nfFf5hIE1iX/+8cgjSE8CA4j1tl+0VkcGAuYvSt8XoWq
- B9oH266lth4qXGqsGbAM/YCw5Pv8m0Y6boh0uERmRjeCcemybNnUAbrdohCVMdRn+lPE
- /Zrva35yKrGYd3xN4Qx+hoAfDAWdjvM/NMl41DYnsbU09mGYXGdplWsnzKuhyyao6UG1
- VHzShb6o0MQhBl/2iWAS+NB/1ISbkBXfOw4X+fDZ2SrbiWcJek7+FcpvetqvgJR3ojdN
- x4jg==
-X-Gm-Message-State: APjAAAUNY+lkohQCGXxwFXjJiVGSXnvI19fPn7KczXxllezXm+1SJHQM
- dofT8sTJy+9aNKVHxpEOVBCSbkG1+fDAow==
-X-Google-Smtp-Source: APXvYqzJzVDuGRmFzkWeOr3NTHwTi62Xi6QJDu+uSXbftVSyV4pNzDeuETaGgy0zSi4H/2tKNFxJFg==
-X-Received: by 2002:a5d:5609:: with SMTP id l9mr11506053wrv.113.1572193426246; 
- Sun, 27 Oct 2019 09:23:46 -0700 (PDT)
-Received: from localhost.localdomain
- (p200300F133D01300428D5CFFFEB99DB8.dip0.t-ipconnect.de.
- [2003:f1:33d0:1300:428d:5cff:feb9:9db8])
- by smtp.googlemail.com with ESMTPSA id 1sm8243299wrr.16.2019.10.27.09.23.45
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 27 Oct 2019 09:23:45 -0700 (PDT)
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-To: narmstrong@baylibre.com, jbrunet@baylibre.com,
- linux-amlogic@lists.infradead.org, khilman@baylibre.com
-Subject: [PATCH v2 5/5] ARM: dts: meson8b: add the DDR clock controller
-Date: Sun, 27 Oct 2019 17:23:28 +0100
-Message-Id: <20191027162328.1177402-6-martin.blumenstingl@googlemail.com>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191027162328.1177402-1-martin.blumenstingl@googlemail.com>
-References: <20191027162328.1177402-1-martin.blumenstingl@googlemail.com>
+ id 1iOmbC-0002oy-I3; Sun, 27 Oct 2019 17:45:07 +0000
+Received: from [46.218.74.72] (helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1iOmb3-00088Z-Ja; Sun, 27 Oct 2019 18:44:57 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: Andy Yan <andy.yan@rock-chips.com>
+Subject: Re: [PATCH v2 3/4] dt-bindings: Add doc for rk3308-evb
+Date: Sun, 27 Oct 2019 18:44:56 +0100
+Message-ID: <1753385.AINB0Y2Fk3@phil>
+In-Reply-To: <20191021084642.28562-1-andy.yan@rock-chips.com>
+References: <20191021084437.28279-1-andy.yan@rock-chips.com>
+ <20191021084642.28562-1-andy.yan@rock-chips.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191027_092347_796243_C62CC5B5 
-X-CRM114-Status: GOOD (  11.42  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191027_104506_761980_1ABE942B 
+X-CRM114-Status: UNSURE (   8.00  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,64 +57,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, kever.yang@rock-chips.com,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the DDR clock controller and pass it's DDR_CLKID_DDR_PLL to the main
-(HHI) clock controller as "ddr_clk". The "ddr_clk" is used as one of the
-inputs for the audio clock muxes.
+Am Montag, 21. Oktober 2019, 10:46:42 CET schrieb Andy Yan:
+> Add compatible for RK3308 Evaluation board
+> 
+> Signed-off-by: Andy Yan <andy.yan@rock-chips.com>
 
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
----
- arch/arm/boot/dts/meson8b.dtsi | 13 +++++++++++--
- 1 file changed, 11 insertions(+), 2 deletions(-)
+applied for 5.5 with Rob's Review, but did reorder to sort
+the new entry alphabetically
 
-diff --git a/arch/arm/boot/dts/meson8b.dtsi b/arch/arm/boot/dts/meson8b.dtsi
-index 1934666ff60f..8ac8bdfaf58f 100644
---- a/arch/arm/boot/dts/meson8b.dtsi
-+++ b/arch/arm/boot/dts/meson8b.dtsi
-@@ -4,6 +4,7 @@
-  * Author: Carlo Caione <carlo@endlessm.com>
-  */
- 
-+#include <dt-bindings/clock/meson8-ddr-clkc.h>
- #include <dt-bindings/clock/meson8b-clkc.h>
- #include <dt-bindings/gpio/meson8b-gpio.h>
- #include <dt-bindings/reset/amlogic,meson8b-reset.h>
-@@ -172,6 +173,14 @@
- 		#size-cells = <1>;
- 		ranges = <0x0 0xc8000000 0x8000>;
- 
-+		ddr_clkc: clock-controller@400 {
-+			compatible = "amlogic,meson8b-ddr-clkc";
-+			reg = <0x400 0x20>;
-+			clocks = <&xtal>;
-+			clock-names = "xtal";
-+			#clock-cells = <1>;
-+		};
-+
- 		dmcbus: bus@6000 {
- 			compatible = "simple-bus";
- 			reg = <0x6000 0x400>;
-@@ -434,8 +443,8 @@
- &hhi {
- 	clkc: clock-controller {
- 		compatible = "amlogic,meson8-clkc";
--		clocks = <&xtal>;
--		clock-names = "xtal";
-+		clocks = <&xtal>, <&ddr_clkc DDR_CLKID_DDR_PLL>;
-+		clock-names = "xtal", "ddr_pll";
- 		#clock-cells = <1>;
- 		#reset-cells = <1>;
- 	};
--- 
-2.23.0
+Thanks
+Heiko
+
 
 
 _______________________________________________
