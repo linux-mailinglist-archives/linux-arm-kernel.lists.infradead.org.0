@@ -2,59 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 246B3E63CE
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 27 Oct 2019 16:42:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 863E8E63E2
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 27 Oct 2019 16:58:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=IMUhvg9uK80bqfoRVOzlCiXTbyEWKYP9PeT0PwMMj8Y=; b=VGdqTOSlOjowWCKXYIZSLgfiu
-	VoJI+S70WtJHSO4DXQQpjf5HQo48Ao7VqkneyVCJ9KL4ajY+fVT6OS1hcFkgTjn5Ic4S9j8ACs9R9
-	ZqWZDjd6DivRPLf3pvdXzSNYRhnRMJp2BR+vZU0Nx3RZPT+5TKIVysNFKpRF7CeRbUCs52v42Neq2
-	4cfu8hsodVW/dUSFmo6GUehWYSQWIeZgT1SKaSoifkWFJBdNzj5dOIfx9Zd34okj4qxUuxlhQMsxp
-	ydb8Du+fBxgTgVuB7sdo4kTDJJ1cAE1sTCem7DrjiEtIS6oVDvwBiXtj12JofPXiaqob1gUVJRZnx
-	iW/gdFltw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mbibofWRaTENLd4USGQy5Vtjfg9HUZE9/OxKULFW+zs=; b=ERrt6zUbQPm1Nw
+	6poUNnaSyjYfJtPVtqfHwF05IRlUpshJW3EiAE2ODJvJhUctsYNyKgVjCUc/geJ0+At1T7xiSVuTR
+	i+vaVyHNjxxXljzO3bMxMCzXnp59Vxzmf+b9sL0l49Jf6al9NHlgk2xlaSEWdumwt+1ZcJnkWDL00
+	F8JDoq9HA2tkrHbKhS0x6pLqzDlToFsKIGwDUY67clTKIlMu56X73DzPUzHim+LJMaSRUbkodm0EF
+	bHX8KiD8G/5mqAdgJ3iOJ6wnAg0x1wK9eF/ngiLcjC6zu2TUVZUTLjncwhPjdg8L+qXPd7ZmmbNED
+	Ee02nt/DvlMkrqPO5+oA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOkgE-0003Pk-6r; Sun, 27 Oct 2019 15:42:10 +0000
-Received: from mout-p-201.mailbox.org ([80.241.56.171])
+	id 1iOkwQ-0008Io-1G; Sun, 27 Oct 2019 15:58:54 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOkg0-0003OI-NT
- for linux-arm-kernel@lists.infradead.org; Sun, 27 Oct 2019 15:41:58 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:2:0])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ id 1iOkwF-0008IR-23
+ for linux-arm-kernel@lists.infradead.org; Sun, 27 Oct 2019 15:58:44 +0000
+Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
+ [82.4.196.95])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mout-p-201.mailbox.org (Postfix) with ESMTPS id 471MXZ3cz5zQl8s;
- Sun, 27 Oct 2019 16:41:50 +0100 (CET)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp2.mailbox.org ([80.241.60.241])
- by spamfilter01.heinlein-hosting.de (spamfilter01.heinlein-hosting.de
- [80.241.56.115]) (amavisd-new, port 10030)
- with ESMTP id HKUBceS7i6hF; Sun, 27 Oct 2019 16:41:40 +0100 (CET)
-Date: Mon, 28 Oct 2019 02:41:15 +1100
-From: Aleksa Sarai <cyphar@cyphar.com>
-To: Linus Torvalds <torvalds@linux-foundation.org>
-Subject: Re: [PATCH RESEND v14 2/6] namei: LOOKUP_IN_ROOT: chroot-like path
- resolution
-Message-ID: <20191027154115.ex55njkysey4m6pu@yavin.dot.cyphar.com>
-References: <20191026185700.10708-1-cyphar@cyphar.com>
- <20191026185700.10708-3-cyphar@cyphar.com>
- <CAHk-=wjPPWvm5_eR4uaHJaU1isTUk-4iXQV3Z2Px9A+w6j2nHg@mail.gmail.com>
+ by mail.kernel.org (Postfix) with ESMTPSA id 3FDA620873;
+ Sun, 27 Oct 2019 15:58:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572191921;
+ bh=66tHgdFuZFgwvfMgb7+hbPciCMsrO5SrqRnt9hjmZ1k=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=wf+tMYqVxXsb/cfDFmgvgPoKwpWL1D6/od446FGICrGRm0LTENlOwSfb+bZP39CaC
+ L+YBLArt/NSlK1PMzP08+dVPdbKM/wQGsNZDiPtLZdzh9ekovGl9V7uOS2AHNiLiTw
+ ngMYY9lTMV0XSL+UNnmJgDb9uQH75z1845RCRLyA=
+Date: Sun, 27 Oct 2019 15:58:36 +0000
+From: Jonathan Cameron <jic23@kernel.org>
+To: Fabrice Gasnier <fabrice.gasnier@st.com>
+Subject: Re: [PATCH] iio: adc: stm32-adc: fix stopping dma
+Message-ID: <20191027155836.2e3d8ebf@archlinux>
+In-Reply-To: <1572015860-8931-1-git-send-email-fabrice.gasnier@st.com>
+References: <1572015860-8931-1-git-send-email-fabrice.gasnier@st.com>
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <CAHk-=wjPPWvm5_eR4uaHJaU1isTUk-4iXQV3Z2Px9A+w6j2nHg@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191027_084157_077034_3341E81D 
-X-CRM114-Status: GOOD (  19.93  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191027_085843_124255_41BBF2C2 
+X-CRM114-Status: GOOD (  15.47  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,120 +76,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, Linux-sh list <linux-sh@vger.kernel.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Alexei Starovoitov <ast@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- David Howells <dhowells@redhat.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- sparclinux@vger.kernel.org, Jiri Olsa <jolsa@redhat.com>,
- linux-arch <linux-arch@vger.kernel.org>,
- linux-s390 <linux-s390@vger.kernel.org>, Tycho Andersen <tycho@tycho.ws>,
- Aleksa Sarai <asarai@suse.de>, Shuah Khan <shuah@kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-mips@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
- linux-m68k <linux-m68k@lists.linux-m68k.org>,
- Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
- Shuah Khan <skhan@linuxfoundation.org>, Namhyung Kim <namhyung@kernel.org>,
- David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
- "J. Bruce Fields" <bfields@fieldses.org>,
- GNU C Library <libc-alpha@sourceware.org>, linux-parisc@vger.kernel.org,
- Linux API <linux-api@vger.kernel.org>, Chanho Min <chanho.min@lge.com>,
- Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
- Eric Biederman <ebiederm@xmission.com>, alpha <linux-alpha@vger.kernel.org>,
- linux-fsdevel <linux-fsdevel@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- Linux Containers <containers@lists.linux-foundation.org>
-Content-Type: multipart/mixed; boundary="===============4405266392795284741=="
+Cc: lars@metafoo.de, alexandre.torgue@st.com, linux-iio@vger.kernel.org,
+ pmeerw@pmeerw.net, linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ knaack.h@gmx.de, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Fri, 25 Oct 2019 17:04:20 +0200
+Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
 
---===============4405266392795284741==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="x254sstnuxqz6cbi"
-Content-Disposition: inline
+> There maybe a race when using dmaengine_terminate_all(). The predisable
+> routine may call iio_triggered_buffer_predisable() prior to a pending DMA
+> callback.
+> Adopt dmaengine_terminate_sync() to ensure there's no pending DMA request
+> before calling iio_triggered_buffer_predisable().
+> 
+> Fixes: 2763ea0585c9 ("iio: adc: stm32: add optional dma support")
+> 
+> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+Applied to the fixes-togreg branch of iio.git and marked for stable.
+I'm guessing this is not something that has been observed in practice, but
+seems like a safe fix anyway to backport.
 
+Thanks,
 
---x254sstnuxqz6cbi
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Jonathan
 
-On 2019-10-27, Linus Torvalds <torvalds@linux-foundation.org> wrote:
-> On Sat, Oct 26, 2019 at 2:58 PM Aleksa Sarai <cyphar@cyphar.com> wrote:
-> >
-> > +       /* LOOKUP_IN_ROOT treats absolute paths as being relative-to-di=
-rfd. */
-> > +       if (flags & LOOKUP_IN_ROOT)
-> > +               while (*s =3D=3D '/')
-> > +                       s++;
-> > +
-> >         /* Figure out the starting path and root (if needed). */
-> >         if (*s =3D=3D '/') {
-> >                 error =3D nd_jump_root(nd);
->=20
-> So I'm still hung up on this.
->=20
-> I guess I can't help it, but I look at the above, and it makes me go
-> "whoever wrote those tests wasn't thinking".
->=20
-> It just annoys me how it tests for '/' completely unnecessarily.
->=20
-> If LOOKUP_IN_ROOT is true, we know the subsequent test for '/' is not
-> going to match, because we just removed it. So I look at that code and
-> go "that code is doing stupid things".
+> ---
+>  drivers/iio/adc/stm32-adc.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/iio/adc/stm32-adc.c b/drivers/iio/adc/stm32-adc.c
+> index 663f8a5..73aee59 100644
+> --- a/drivers/iio/adc/stm32-adc.c
+> +++ b/drivers/iio/adc/stm32-adc.c
+> @@ -1399,7 +1399,7 @@ static int stm32_adc_dma_start(struct iio_dev *indio_dev)
+>  	cookie = dmaengine_submit(desc);
+>  	ret = dma_submit_error(cookie);
+>  	if (ret) {
+> -		dmaengine_terminate_all(adc->dma_chan);
+> +		dmaengine_terminate_sync(adc->dma_chan);
+>  		return ret;
+>  	}
+>  
+> @@ -1477,7 +1477,7 @@ static void __stm32_adc_buffer_predisable(struct iio_dev *indio_dev)
+>  		stm32_adc_conv_irq_disable(adc);
+>  
+>  	if (adc->dma_chan)
+> -		dmaengine_terminate_all(adc->dma_chan);
+> +		dmaengine_terminate_sync(adc->dma_chan);
+>  
+>  	if (stm32_adc_set_trig(indio_dev, NULL))
+>  		dev_err(&indio_dev->dev, "Can't clear trigger\n");
 
-Okay, fair enough.
-
-> That's why I suggested moving the LOOKUP_IN_ROOT check inside the '/' tes=
-t.
->=20
-> Alternatively, just make the logic be
->=20
->         if (flags & LOOKUP_IN_ROOT) {
->                .. remove '/'s ...
->         } else if (*s =3D=3D '/') {
->                 .. handl;e root ..
->=20
-> and remove the next "else" clause
-
-I've gone with the latter since I think it reads better.
-
---=20
-Aleksa Sarai
-Senior Software Engineer (Containers)
-SUSE Linux GmbH
-<https://www.cyphar.com/>
-
---x254sstnuxqz6cbi
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXbW6lwAKCRCdlLljIbnQ
-EoPNAP0TH7raCw5NCLFnqJEAJ2bl+pDz8oGtxQKGtoXC7HohOQEAqFv71cuFJjle
-mvHPyKwhvNv8coIv55o8qUxny+XxIAg=
-=0iVb
------END PGP SIGNATURE-----
-
---x254sstnuxqz6cbi--
-
-
---===============4405266392795284741==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4405266392795284741==--
-
