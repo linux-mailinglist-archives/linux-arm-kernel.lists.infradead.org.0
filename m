@@ -2,82 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 939C1E6416
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 27 Oct 2019 17:19:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 550EAE6428
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 27 Oct 2019 17:24:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hhNKZl7FcY6+5HKHczD8HQBThhQEoCukshvm/EX3H44=; b=M/0hmIcql7DuQ2
-	QgfCx+hWIHq78EMXKx9HhCG9mFwLm3huHKalXnZt65ve2dpzu5ft4GzlC4fi38oMkho3SPcKbUeKt
-	xU/Lg31UUBpx2QUcGuwQXeLW5WyyEyoF7VKc3phDRreoxGI7D6IernWGn5Md7ZznnmwYuEE/8B+jp
-	yZVOieBQsMhCIYqn40bV7vhH4f+9vZneZL0QOI2J27lO72rt9i6NEQZms7Ruv8w6xo88lOSNYlyng
-	Ng8jjWDrhAg/b72wlt6hWNjKPFAidR+BL+tPMnl/GipGahFTcuo786eXiO+nWBH7Ppt/FQM9gMUHd
-	HO96WOx0mNGxvGH9Hr3A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Wo+j/bjdPWf1QCY69biKgHMpXjKsFYjzqjztAwCUWM8=; b=iHd+7O1O91a72t
+	8+g8DTX1U28hsYoI13sIGGQGPu1X2mOtSxiSKGbOGNtTdwBc3xmfRPPp8Fak7vYhbUO+KcVQZGNIg
+	C4qBMXZdsShNx7kRQAaQju0uwoB57c6p9erIcBfnmyloTecXZwCfRmyFrwq3lLS4qtZVyfDSYQybu
+	oMgyqYYf4a16CLdg0sZjeAJbE6K2qlfeglVHGBp6j67k/8zD6h2n1wZ2gVaalPgtzp6pCQIejIJv7
+	wf8Rhl/5DYDw3ZbhzwoB35gYE5j+VUrhVv2WCYhirmJGC6tSWeSRNxVKhy48/sbvWuoAmSyPH/pjo
+	ixmnpI7r6hx+0Dr4v7Xg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOlGE-0006wC-8J; Sun, 27 Oct 2019 16:19:22 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1iOlKj-0001EU-Tp; Sun, 27 Oct 2019 16:24:01 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOlFD-0006Dk-HD; Sun, 27 Oct 2019 16:18:21 +0000
-Received: by mail-wm1-x343.google.com with SMTP id g24so6950302wmh.5;
- Sun, 27 Oct 2019 09:18:19 -0700 (PDT)
+ id 1iOlKP-0001CP-9n; Sun, 27 Oct 2019 16:23:42 +0000
+Received: by mail-wr1-x444.google.com with SMTP id z11so7347865wro.11;
+ Sun, 27 Oct 2019 09:23:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=FLfO/KxjQrMiblT1/Pl6tSGizwnToQmABBG15vNjp4k=;
- b=efsrM2L5u58xFefwyRkML00CgeJKs665otWTyjbA2/ddI+1FTIC5bCoiYJ3dLqCbk5
- 9Jj+1rgdcQjZvwk0HpeVxT97hjQ7QTUoH43jqmlSQt/YSq5nuymzxS3XWU8bWpvUvsU3
- bUlNzLbT9ZGAjvdUr8mLjT7/59ebbwMRaEzIZmd+22YNY8dyhQ8OYdzvSTadFdlipOz1
- I+jMzks8pkqYHLa28CwBBowmr68LB1OUP3W8fWAqjU636SO0ryrIdpJhwpeAYTFdCFRS
- VQuPoAKs3/7846wSlaBTTpUcDnJGnGRqMwWKvUFqOO/I6INNbYFGwEjzMLHTG+2Mpvvn
- /rZQ==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=VHh2wTvDV7QQYeDnQO2gSOBLNsofT3XUbH0CNdaqVwQ=;
+ b=KUlQvi090P07yc00xZbpnA38RqozC6gRBuSVoaFEKscMs68UnSExgUqVsSQHQc2uYJ
+ IpZUIUqNdvpapTouYOP74UN7kLw7dO+gsAi6bYSKXS+5kqC2zcaBnJvhwbxoZYOHt2ZA
+ 8eXPaUzfYQ04gsezKrtuPaIQUXlbdtaVdLpytujuklJliVD+dP5lMqkSXQOf9jPOBVVt
+ fgUSME/UKfvLRTzgwKghLba7fF1q42UIGYZkiwYapnTwcjyP0TbBC79Ia9thpIjHOmQ8
+ qWEbEjOn6yrEmW7vaz0FsjRfQ99Z2ki3dCOllrn029X21iSTG1Vxp+8lmsBagasc8MAT
+ I7vw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=FLfO/KxjQrMiblT1/Pl6tSGizwnToQmABBG15vNjp4k=;
- b=UC48wT36Na8LPmmZf7SXL8N1T/pQFgQd1rc9oPCsM49DyYxjjrxHuc2reX920dln2d
- yPALHHuNenO2mc3ujO84KPCF1MpZB2fECzzxKUxst5kvu7gI53XUr+ulcmGD911uK5SM
- 8x/hpXZbhV0NEDd+/lchRmQMjpSu8TCCwCMlr8ebaVtYsrHjMfRgYydngcrbEppTquPE
- SR0z1pzVLfuG+C9hudXzX3Nssfq5EZoVG4dD1ozuoJjaKUL3CAJLBnuUabE7g3uHrf/X
- oNoozG/sAj4zRczc415siI3R4ZmGzs2eNqzlWg/Ab+nIu18LHDSZk7vVzSYpLw7j4etP
- JmJQ==
-X-Gm-Message-State: APjAAAW8SThorkn4ZqpxhTKvdVkvYM3tZfuQcUqudTomkayBEv+sD5bL
- akzHntRGDUnBt4J7VzvljYU=
-X-Google-Smtp-Source: APXvYqxcOwu2+Gf57BhS5TKGfe523w4Dkovl72D5JIuM/RKVfzS8lFfJXOVG73aoyklxUxyiYLJVyg==
-X-Received: by 2002:a1c:4907:: with SMTP id w7mr11688747wma.62.1572193098092; 
- Sun, 27 Oct 2019 09:18:18 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=VHh2wTvDV7QQYeDnQO2gSOBLNsofT3XUbH0CNdaqVwQ=;
+ b=no6m3K4vpZ3y2IrlcJDfX9TdplJqp2xOIp6ed87Rf1Af+XwKJCGiBWx8/BVFJi0tLn
+ vBSWYyGNx2I9+/ZO7c0wnSaVHLR7GBe1cyX86RzJyO/gnt0DHR5R7KIImQyFZKZ2uDnZ
+ +AUgPY9mcte5KNKXHAKepl4B785sg+A+Bu30TUgSnwQka8xKIEo8I15FwFMS5zoe1vqT
+ Mzdk/gCvIK0coF1DRdsccxB+7UyW6xU2J9V3X4PHzkvYaoiUng9DLYaj0y/LPcXOaprc
+ fQ5mD4ZjBc33rnRcHv+6Ycbr/uSSOr5veuzKZjiAal8TmAuNncE/PYfd1TFPpcF8lDOk
+ Ut6Q==
+X-Gm-Message-State: APjAAAWUyITteveAh7X4eFjwa/DJdzIZ+rbVA7Sy6u3iOQ9Rc67rPDYL
+ wVlsOccisQdgi3kL1FWT0o0=
+X-Google-Smtp-Source: APXvYqyCYGYmCvPNcNbH87Xqtct4wBPQgN4aJcAyg1RyMkX/chRC6UMEk/wYRQMsMbtgwGug5mVA0w==
+X-Received: by 2002:adf:ce87:: with SMTP id r7mr11522180wrn.307.1572193419899; 
+ Sun, 27 Oct 2019 09:23:39 -0700 (PDT)
 Received: from localhost.localdomain
  (p200300F133D01300428D5CFFFEB99DB8.dip0.t-ipconnect.de.
  [2003:f1:33d0:1300:428d:5cff:feb9:9db8])
- by smtp.googlemail.com with ESMTPSA id j14sm9585014wrj.35.2019.10.27.09.18.17
+ by smtp.googlemail.com with ESMTPSA id 1sm8243299wrr.16.2019.10.27.09.23.38
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 27 Oct 2019 09:18:17 -0700 (PDT)
+ Sun, 27 Oct 2019 09:23:39 -0700 (PDT)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 To: narmstrong@baylibre.com, jbrunet@baylibre.com,
  linux-amlogic@lists.infradead.org, khilman@baylibre.com
-Subject: [PATCH v2 5/5] ARM: dts: meson: provide the XTAL clock using a
- fixed-clock
-Date: Sun, 27 Oct 2019 17:18:05 +0100
-Message-Id: <20191027161805.1176321-6-martin.blumenstingl@googlemail.com>
+Subject: [PATCH v2 0/5] add the DDR clock controller on Meson8 and Meson8b
+Date: Sun, 27 Oct 2019 17:23:23 +0100
+Message-Id: <20191027162328.1177402-1-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191027161805.1176321-1-martin.blumenstingl@googlemail.com>
-References: <20191027161805.1176321-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191027_091819_620121_97839F7C 
-X-CRM114-Status: GOOD (  13.42  )
+X-CRM114-CacheID: sfid-20191027_092341_365744_C10A7015 
+X-CRM114-Status: GOOD (  11.90  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -110,217 +107,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The clock controller driver has provided the XTAL clock so far. This
-does not match how the hardware actually works because the XTAL clock is
-an actual crystal which is mounted on the PCB.
+Meson8 and Meson8b SoCs embed a DDR clock controller in their MMCBUS
+registers. This series:
+- adds support for this DDR clock controller (patches 0 and 1)
+- wires up the DDR PLL as input for two audio clocks (patches 2 and 3)
+- adds the DDR clock controller to meson8.dtsi and meson8b.dtsi
 
-Add the "xtal" clock to meson.dtsi and replace all references to the
-clock controller's CLKID_XTAL with the new xtal clock node.
+Special thanks go out to Alexandre Mergnat for switching the Amlogic
+clock drivers over to parent_hws and parent_data. That made this series
+a lot easier for me!
 
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
----
- arch/arm/boot/dts/meson.dtsi           |  7 +++++++
- arch/arm/boot/dts/meson6.dtsi          |  7 -------
- arch/arm/boot/dts/meson8.dtsi          | 15 ++++++++-------
- arch/arm/boot/dts/meson8b-ec100.dts    |  2 +-
- arch/arm/boot/dts/meson8b-mxq.dts      |  2 +-
- arch/arm/boot/dts/meson8b-odroidc1.dts |  2 +-
- arch/arm/boot/dts/meson8b.dtsi         | 15 ++++++++-------
- 7 files changed, 26 insertions(+), 24 deletions(-)
+This series depends on v2 my other series from [0]:
+"provide the XTAL clock via OF on Meson8/8b/8m2"
 
-diff --git a/arch/arm/boot/dts/meson.dtsi b/arch/arm/boot/dts/meson.dtsi
-index c4447f6c8b2c..5d198309058a 100644
---- a/arch/arm/boot/dts/meson.dtsi
-+++ b/arch/arm/boot/dts/meson.dtsi
-@@ -282,4 +282,11 @@
- 			};
- 		};
- 	};
-+
-+	xtal: xtal-clk {
-+		compatible = "fixed-clock";
-+		clock-frequency = <24000000>;
-+		clock-output-names = "xtal";
-+		#clock-cells = <0>;
-+	};
- }; /* end of / */
-diff --git a/arch/arm/boot/dts/meson6.dtsi b/arch/arm/boot/dts/meson6.dtsi
-index 2d31b7ce3f8c..4716030a48d0 100644
---- a/arch/arm/boot/dts/meson6.dtsi
-+++ b/arch/arm/boot/dts/meson6.dtsi
-@@ -36,13 +36,6 @@
- 		ranges = <0x0 0xd0000000 0x40000>;
- 	};
- 
--	xtal: xtal-clk {
--		compatible = "fixed-clock";
--		clock-frequency = <24000000>;
--		clock-output-names = "xtal";
--		#clock-cells = <0>;
--	};
--
- 	clk81: clk@0 {
- 		#clock-cells = <0>;
- 		compatible = "fixed-clock";
-diff --git a/arch/arm/boot/dts/meson8.dtsi b/arch/arm/boot/dts/meson8.dtsi
-index 5a7e3e5caebe..4f59a4c8f036 100644
---- a/arch/arm/boot/dts/meson8.dtsi
-+++ b/arch/arm/boot/dts/meson8.dtsi
-@@ -455,6 +455,8 @@
- &hhi {
- 	clkc: clock-controller {
- 		compatible = "amlogic,meson8-clkc";
-+		clocks = <&xtal>;
-+		clock-names = "xtal";
- 		#clock-cells = <1>;
- 		#reset-cells = <1>;
- 	};
-@@ -529,8 +531,7 @@
- 
- &saradc {
- 	compatible = "amlogic,meson8-saradc", "amlogic,meson-saradc";
--	clocks = <&clkc CLKID_XTAL>,
--		<&clkc CLKID_SAR_ADC>;
-+	clocks = <&xtal>, <&clkc CLKID_SAR_ADC>;
- 	clock-names = "clkin", "core";
- 	amlogic,hhi-sysctrl = <&hhi>;
- 	nvmem-cells = <&temperature_calib>;
-@@ -548,31 +549,31 @@
- };
- 
- &timer_abcde {
--	clocks = <&clkc CLKID_XTAL>, <&clkc CLKID_CLK81>;
-+	clocks = <&xtal>, <&clkc CLKID_CLK81>;
- 	clock-names = "xtal", "pclk";
- };
- 
- &uart_AO {
- 	compatible = "amlogic,meson8-uart", "amlogic,meson-uart";
--	clocks = <&clkc CLKID_CLK81>, <&clkc CLKID_XTAL>, <&clkc CLKID_CLK81>;
-+	clocks = <&clkc CLKID_CLK81>, <&xtal>, <&clkc CLKID_CLK81>;
- 	clock-names = "baud", "xtal", "pclk";
- };
- 
- &uart_A {
- 	compatible = "amlogic,meson8-uart", "amlogic,meson-uart";
--	clocks = <&clkc CLKID_CLK81>, <&clkc CLKID_XTAL>, <&clkc CLKID_UART0>;
-+	clocks = <&clkc CLKID_CLK81>, <&xtal>, <&clkc CLKID_UART0>;
- 	clock-names = "baud", "xtal", "pclk";
- };
- 
- &uart_B {
- 	compatible = "amlogic,meson8-uart", "amlogic,meson-uart";
--	clocks = <&clkc CLKID_CLK81>, <&clkc CLKID_XTAL>, <&clkc CLKID_UART1>;
-+	clocks = <&clkc CLKID_CLK81>, <&xtal>, <&clkc CLKID_UART1>;
- 	clock-names = "baud", "xtal", "pclk";
- };
- 
- &uart_C {
- 	compatible = "amlogic,meson8-uart", "amlogic,meson-uart";
--	clocks = <&clkc CLKID_CLK81>, <&clkc CLKID_XTAL>, <&clkc CLKID_UART2>;
-+	clocks = <&clkc CLKID_CLK81>, <&xtal>, <&clkc CLKID_UART2>;
- 	clock-names = "baud", "xtal", "pclk";
- };
- 
-diff --git a/arch/arm/boot/dts/meson8b-ec100.dts b/arch/arm/boot/dts/meson8b-ec100.dts
-index bed1dfef1985..163a200d5a7b 100644
---- a/arch/arm/boot/dts/meson8b-ec100.dts
-+++ b/arch/arm/boot/dts/meson8b-ec100.dts
-@@ -377,7 +377,7 @@
- 	status = "okay";
- 	pinctrl-0 = <&pwm_c1_pins>, <&pwm_d_pins>;
- 	pinctrl-names = "default";
--	clocks = <&clkc CLKID_XTAL>, <&clkc CLKID_XTAL>;
-+	clocks = <&xtal>, <&xtal>;
- 	clock-names = "clkin0", "clkin1";
- };
- 
-diff --git a/arch/arm/boot/dts/meson8b-mxq.dts b/arch/arm/boot/dts/meson8b-mxq.dts
-index 6e39ad52e42d..33037ef62d0a 100644
---- a/arch/arm/boot/dts/meson8b-mxq.dts
-+++ b/arch/arm/boot/dts/meson8b-mxq.dts
-@@ -165,7 +165,7 @@
- 	status = "okay";
- 	pinctrl-0 = <&pwm_c1_pins>, <&pwm_d_pins>;
- 	pinctrl-names = "default";
--	clocks = <&clkc CLKID_XTAL>, <&clkc CLKID_XTAL>;
-+	clocks = <&xtal>, <&xtal>;
- 	clock-names = "clkin0", "clkin1";
- };
- 
-diff --git a/arch/arm/boot/dts/meson8b-odroidc1.dts b/arch/arm/boot/dts/meson8b-odroidc1.dts
-index a24eccc354b9..a2a47804fc4a 100644
---- a/arch/arm/boot/dts/meson8b-odroidc1.dts
-+++ b/arch/arm/boot/dts/meson8b-odroidc1.dts
-@@ -340,7 +340,7 @@
- 	status = "okay";
- 	pinctrl-0 = <&pwm_c1_pins>, <&pwm_d_pins>;
- 	pinctrl-names = "default";
--	clocks = <&clkc CLKID_XTAL>, <&clkc CLKID_XTAL>;
-+	clocks = <&xtal>, <&xtal>;
- 	clock-names = "clkin0", "clkin1";
- };
- 
-diff --git a/arch/arm/boot/dts/meson8b.dtsi b/arch/arm/boot/dts/meson8b.dtsi
-index 099bf8e711c9..1934666ff60f 100644
---- a/arch/arm/boot/dts/meson8b.dtsi
-+++ b/arch/arm/boot/dts/meson8b.dtsi
-@@ -434,6 +434,8 @@
- &hhi {
- 	clkc: clock-controller {
- 		compatible = "amlogic,meson8-clkc";
-+		clocks = <&xtal>;
-+		clock-names = "xtal";
- 		#clock-cells = <1>;
- 		#reset-cells = <1>;
- 	};
-@@ -508,8 +510,7 @@
- 
- &saradc {
- 	compatible = "amlogic,meson8b-saradc", "amlogic,meson-saradc";
--	clocks = <&clkc CLKID_XTAL>,
--		<&clkc CLKID_SAR_ADC>;
-+	clocks = <&xtal>, <&clkc CLKID_SAR_ADC>;
- 	clock-names = "clkin", "core";
- 	amlogic,hhi-sysctrl = <&hhi>;
- 	nvmem-cells = <&temperature_calib>;
-@@ -523,31 +524,31 @@
- };
- 
- &timer_abcde {
--	clocks = <&clkc CLKID_XTAL>, <&clkc CLKID_CLK81>;
-+	clocks = <&xtal>, <&clkc CLKID_CLK81>;
- 	clock-names = "xtal", "pclk";
- };
- 
- &uart_AO {
- 	compatible = "amlogic,meson8b-uart", "amlogic,meson-uart";
--	clocks = <&clkc CLKID_CLK81>, <&clkc CLKID_XTAL>, <&clkc CLKID_CLK81>;
-+	clocks = <&clkc CLKID_CLK81>, <&xtal>, <&clkc CLKID_CLK81>;
- 	clock-names = "baud", "xtal", "pclk";
- };
- 
- &uart_A {
- 	compatible = "amlogic,meson8b-uart", "amlogic,meson-uart";
--	clocks = <&clkc CLKID_CLK81>, <&clkc CLKID_XTAL>, <&clkc CLKID_UART0>;
-+	clocks = <&clkc CLKID_CLK81>, <&xtal>, <&clkc CLKID_UART0>;
- 	clock-names = "baud", "xtal", "pclk";
- };
- 
- &uart_B {
- 	compatible = "amlogic,meson8b-uart", "amlogic,meson-uart";
--	clocks = <&clkc CLKID_CLK81>, <&clkc CLKID_XTAL>, <&clkc CLKID_UART1>;
-+	clocks = <&clkc CLKID_CLK81>, <&xtal>, <&clkc CLKID_UART1>;
- 	clock-names = "baud", "xtal", "pclk";
- };
- 
- &uart_C {
- 	compatible = "amlogic,meson8b-uart", "amlogic,meson-uart";
--	clocks = <&clkc CLKID_CLK81>, <&clkc CLKID_XTAL>, <&clkc CLKID_UART2>;
-+	clocks = <&clkc CLKID_CLK81>, <&xtal>, <&clkc CLKID_UART2>;
- 	clock-names = "baud", "xtal", "pclk";
- };
- 
+Changes since v1 at [1]:
+- fixed the license of the .yaml binding and added Rob's Reviewed-by
+- drop unused syscon.h include (spotted by Jerome - thanks)
+- drop fast_io from regmap_config and add max_register as suggested
+  by Jerome
+- dropped original patch #4 "clk: meson: meson8b: add the ddr_pll
+  input for the audio clocks" because I could not test that yet (that
+  patch was a forward-port from Amlogic's 3.10 BSP kernel)
+
+
+[0] https://patchwork.kernel.org/cover/11214189/
+[1] https://patchwork.kernel.org/cover/11155553/
+
+
+Martin Blumenstingl (5):
+  dt-bindings: clock: add the Amlogic Meson8 DDR clock controller
+    binding
+  clk: meson: add a driver for the Meson8/8b/8m2 DDR clock controller
+  clk: meson: meson8b: use of_clk_hw_register to register the clocks
+  ARM: dts: meson8: add the DDR clock controller
+  ARM: dts: meson8b: add the DDR clock controller
+
+ .../clock/amlogic,meson8-ddr-clkc.yaml        |  50 ++++++
+ arch/arm/boot/dts/meson8.dtsi                 |  13 +-
+ arch/arm/boot/dts/meson8b.dtsi                |  13 +-
+ drivers/clk/meson/Makefile                    |   2 +-
+ drivers/clk/meson/meson8-ddr.c                | 152 ++++++++++++++++++
+ drivers/clk/meson/meson8b.c                   |   2 +-
+ include/dt-bindings/clock/meson8-ddr-clkc.h   |   4 +
+ 7 files changed, 230 insertions(+), 6 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/clock/amlogic,meson8-ddr-clkc.yaml
+ create mode 100644 drivers/clk/meson/meson8-ddr.c
+ create mode 100644 include/dt-bindings/clock/meson8-ddr-clkc.h
+
 -- 
 2.23.0
 
