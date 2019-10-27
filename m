@@ -2,60 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 863E8E63E2
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 27 Oct 2019 16:58:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C146E63FF
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 27 Oct 2019 17:18:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mbibofWRaTENLd4USGQy5Vtjfg9HUZE9/OxKULFW+zs=; b=ERrt6zUbQPm1Nw
-	6poUNnaSyjYfJtPVtqfHwF05IRlUpshJW3EiAE2ODJvJhUctsYNyKgVjCUc/geJ0+At1T7xiSVuTR
-	i+vaVyHNjxxXljzO3bMxMCzXnp59Vxzmf+b9sL0l49Jf6al9NHlgk2xlaSEWdumwt+1ZcJnkWDL00
-	F8JDoq9HA2tkrHbKhS0x6pLqzDlToFsKIGwDUY67clTKIlMu56X73DzPUzHim+LJMaSRUbkodm0EF
-	bHX8KiD8G/5mqAdgJ3iOJ6wnAg0x1wK9eF/ngiLcjC6zu2TUVZUTLjncwhPjdg8L+qXPd7ZmmbNED
-	Ee02nt/DvlMkrqPO5+oA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=g9MawjwSBAIYnPadne4scocks9INjQKNRhz92YuFcNM=; b=gkMD2tms5mXO4+
+	bBp3+iSWNJcKn967R0fGtER3I6EhHXJmxCAp5wUHF09KsjZ7mejPQAqy1SQsx/cX71sYNP+yzJrVs
+	O+pxWHMV/4KZt6Srd6O3z2v6g2SqRBVgtVOi3eij+htYzX8WZEd9JZ6Uf+jZ5IYAUlly1LLSRFUs/
+	MMZfK2Wl1sa1d5pMO9sjjE9+hISsXuQwtzLPzQ7X1vcFQa6OLfCjBPjV10TFvAcZervmiPj7Z1KrO
+	jzIoW+GhXNHZblO9mtcPHS55Zy/RGgfPU/tIEknljhmMgcPhjHWne0OwuKyQvhfxcEMY8Q2V7q/aO
+	P90jGm5DeLRygKegmaiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOkwQ-0008Io-1G; Sun, 27 Oct 2019 15:58:54 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iOlFS-0006D7-Qe; Sun, 27 Oct 2019 16:18:34 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOkwF-0008IR-23
- for linux-arm-kernel@lists.infradead.org; Sun, 27 Oct 2019 15:58:44 +0000
-Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
- [82.4.196.95])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3FDA620873;
- Sun, 27 Oct 2019 15:58:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572191921;
- bh=66tHgdFuZFgwvfMgb7+hbPciCMsrO5SrqRnt9hjmZ1k=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=wf+tMYqVxXsb/cfDFmgvgPoKwpWL1D6/od446FGICrGRm0LTENlOwSfb+bZP39CaC
- L+YBLArt/NSlK1PMzP08+dVPdbKM/wQGsNZDiPtLZdzh9ekovGl9V7uOS2AHNiLiTw
- ngMYY9lTMV0XSL+UNnmJgDb9uQH75z1845RCRLyA=
-Date: Sun, 27 Oct 2019 15:58:36 +0000
-From: Jonathan Cameron <jic23@kernel.org>
-To: Fabrice Gasnier <fabrice.gasnier@st.com>
-Subject: Re: [PATCH] iio: adc: stm32-adc: fix stopping dma
-Message-ID: <20191027155836.2e3d8ebf@archlinux>
-In-Reply-To: <1572015860-8931-1-git-send-email-fabrice.gasnier@st.com>
-References: <1572015860-8931-1-git-send-email-fabrice.gasnier@st.com>
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1iOlF8-0006Bk-Sz; Sun, 27 Oct 2019 16:18:16 +0000
+Received: by mail-wm1-x343.google.com with SMTP id r141so6674196wme.4;
+ Sun, 27 Oct 2019 09:18:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=fzxJHdWe3FCszZKpIfTnAoSqGWjqpiAHUUSq7m5VVx4=;
+ b=J1puDYWlQm8AmK/pphEqz3Tmiwv+jP4W/murkGnYs+HHoegmq7/3IEgAn2E5ZO93Sx
+ BQuNtFthdu93/m09qB/qiUX+2Nk71lhUnadCGqIuTzBjKUppvjxBxIQtnzAWPdaGC+jL
+ swavw60rQxN5LvewsVpVK+aRqeGIVOdOpwCieY3foNi2HbxPbzzbIcbozdYTiPx3zwwI
+ guqi2UEL5D31jdF4In8QohisZQaYjgXrUbW81Vb0hHf8JK1eNbVo/zeON0TlviWjIo+y
+ 54IzN9HCFevVnM1CPiuXgvvAkobz7LSCiuPFAqibsLfubC1XegW0Vd+ziy/XfXp8DT8z
+ qGNA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=fzxJHdWe3FCszZKpIfTnAoSqGWjqpiAHUUSq7m5VVx4=;
+ b=NTwWsYNuGjy50EkRpUiHHGKN2/WKMOr+hsmwkfA/pNVNc2x8XwznuO+0sKxgzTUYK3
+ yOqw+IvBJEdEbNPQZ0qKuUlpBVcHSsHT+dEoUveQvC131KZMY8i5LgtH6R5cIO7fssQs
+ 8xXunYOepB52pNc8sACA9335K5y7v8V0uJUWAQBo5s/ePw3ZhwuCVLG0KnfjEGEHcMWS
+ H0LOsIctiFQKWA+GHtPg7lPStfjS+X7+pkP1J2+GB5j14MHWFV3nT91BnzPsDRBc/Mu/
+ 3wqlu1xLOgEvsBAlCuhZcEPw4k+hnMZ2nG3KraTMkgFOQ7yGojaFxyuf1hKsypYcyzzw
+ 6N1Q==
+X-Gm-Message-State: APjAAAXPFHy1fMHPYGa9Phpu2EMLYgffCC5Qowv+xIBAmFJ+UiRQ+dmv
+ +NSMaMEPksQmL+y7M1Xv6H0=
+X-Google-Smtp-Source: APXvYqxArGQ2A5p0zyY9Lwm4fMAnRlV3pFBQpHzOz3hdCU27iLZp3shZOqLi87k185MCm7c/ed5U3w==
+X-Received: by 2002:a7b:c011:: with SMTP id c17mr12464869wmb.95.1572193092324; 
+ Sun, 27 Oct 2019 09:18:12 -0700 (PDT)
+Received: from localhost.localdomain
+ (p200300F133D01300428D5CFFFEB99DB8.dip0.t-ipconnect.de.
+ [2003:f1:33d0:1300:428d:5cff:feb9:9db8])
+ by smtp.googlemail.com with ESMTPSA id j14sm9585014wrj.35.2019.10.27.09.18.10
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 27 Oct 2019 09:18:10 -0700 (PDT)
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+To: narmstrong@baylibre.com, jbrunet@baylibre.com,
+ linux-amlogic@lists.infradead.org, khilman@baylibre.com
+Subject: [PATCH v2 0/5] provide the XTAL clock via OF on Meson8/8b/8m2
+Date: Sun, 27 Oct 2019 17:18:00 +0100
+Message-Id: <20191027161805.1176321-1-martin.blumenstingl@googlemail.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191027_085843_124255_41BBF2C2 
-X-CRM114-Status: GOOD (  15.47  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191027_091814_966487_71B9A165 
+X-CRM114-Status: GOOD (  13.90  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (martin.blumenstingl[at]googlemail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -64,7 +87,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,61 +98,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: lars@metafoo.de, alexandre.torgue@st.com, linux-iio@vger.kernel.org,
- pmeerw@pmeerw.net, linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
- knaack.h@gmx.de, linux-stm32@st-md-mailman.stormreply.com,
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, linux-clk@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 25 Oct 2019 17:04:20 +0200
-Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
+So far the HHI clock controller has been providing the XTAL clock on
+Amlogic Meson8/Meson8b/Meson8m2 SoCs.
+This is not correct because the XTAL is actually a crystal on the
+boards and the SoC has a dedicated input for it.
 
-> There maybe a race when using dmaengine_terminate_all(). The predisable
-> routine may call iio_triggered_buffer_predisable() prior to a pending DMA
-> callback.
-> Adopt dmaengine_terminate_sync() to ensure there's no pending DMA request
-> before calling iio_triggered_buffer_predisable().
-> 
-> Fixes: 2763ea0585c9 ("iio: adc: stm32: add optional dma support")
-> 
-> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
-Applied to the fixes-togreg branch of iio.git and marked for stable.
-I'm guessing this is not something that has been observed in practice, but
-seems like a safe fix anyway to backport.
+This updates the dt-bindings of the HHI clock controller and defines
+a fixed-clock in meson.dtsi (along with switching everything over to
+use this clock).
+The clock driver needs three updates to use this:
+- patch #2 uses clk_hw_set_parent in the CPU clock notifier. This drops
+  the explicit reference to CLKID_XTAL while at the same time making
+  the code much easier (thanks to Neil for providing this new method
+  as part of the G12A CPU clock bringup!)
+- patch #3 ensures that the clock driver doesn't rely on it's internal
+  XTAL clock while not losing support for older .dtbs that don't have
+  the XTAL clock input yet
+- with patch #4 the clock controller's own XTAL clock is not registered
+  anymore when a clock input is provided via OF
 
-Thanks,
+This series is a functional no-op. It's main goal is to better represent
+how the actual hardware looks like.
 
-Jonathan
 
-> ---
->  drivers/iio/adc/stm32-adc.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/iio/adc/stm32-adc.c b/drivers/iio/adc/stm32-adc.c
-> index 663f8a5..73aee59 100644
-> --- a/drivers/iio/adc/stm32-adc.c
-> +++ b/drivers/iio/adc/stm32-adc.c
-> @@ -1399,7 +1399,7 @@ static int stm32_adc_dma_start(struct iio_dev *indio_dev)
->  	cookie = dmaengine_submit(desc);
->  	ret = dma_submit_error(cookie);
->  	if (ret) {
-> -		dmaengine_terminate_all(adc->dma_chan);
-> +		dmaengine_terminate_sync(adc->dma_chan);
->  		return ret;
->  	}
->  
-> @@ -1477,7 +1477,7 @@ static void __stm32_adc_buffer_predisable(struct iio_dev *indio_dev)
->  		stm32_adc_conv_irq_disable(adc);
->  
->  	if (adc->dma_chan)
-> -		dmaengine_terminate_all(adc->dma_chan);
-> +		dmaengine_terminate_sync(adc->dma_chan);
->  
->  	if (stm32_adc_set_trig(indio_dev, NULL))
->  		dev_err(&indio_dev->dev, "Can't clear trigger\n");
+Changes since v1 at [0]:
+- add Rob's Reviewed-by to the dt-bindings patch
+- check that "xtal" clock is actually passed via OF instead of checking
+  that there's any parent at all (which in the worst case may not be the
+  xtal clock) as suggested by Jerome
+  
+
+[0] https://patchwork.kernel.org/cover/11155515/
+
+
+Martin Blumenstingl (5):
+  dt-bindings: clock: meson8b: add the clock inputs
+  clk: meson: meson8b: use clk_hw_set_parent in the CPU clock notifier
+  clk: meson: meson8b: change references to the XTAL clock to use the
+    name
+  clk: meson: meson8b: don't register the XTAL clock when provided via
+    OF
+  ARM: dts: meson: provide the XTAL clock using a fixed-clock
+
+ .../bindings/clock/amlogic,meson8b-clkc.txt   |   5 +
+ arch/arm/boot/dts/meson.dtsi                  |   7 ++
+ arch/arm/boot/dts/meson6.dtsi                 |   7 --
+ arch/arm/boot/dts/meson8.dtsi                 |  15 +--
+ arch/arm/boot/dts/meson8b-ec100.dts           |   2 +-
+ arch/arm/boot/dts/meson8b-mxq.dts             |   2 +-
+ arch/arm/boot/dts/meson8b-odroidc1.dts        |   2 +-
+ arch/arm/boot/dts/meson8b.dtsi                |  15 +--
+ drivers/clk/meson/meson8b.c                   | 106 +++++++++---------
+ 9 files changed, 87 insertions(+), 74 deletions(-)
+
+-- 
+2.23.0
 
 
 _______________________________________________
