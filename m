@@ -2,79 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACF15E626B
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 27 Oct 2019 13:14:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51860E6277
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 27 Oct 2019 13:39:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FYjlKi1ImfFvT5OqRw4Wptt/epA8n+/P1nLapctRm2c=; b=UKOnb9m2iWRSu+
-	UkosLEfm38vxuxOouox2ZEOgCp6wYjtMR1kFhZa/0ZP2eMzZeOxjYpOTzs5rDkYxHGMCG9Z/bDrId
-	k4pf22tm/UnDE7FvRQuccL/ePWxeGKpCPI21b9GLMfB1f5QOzslaf1pFrj6SsOCVeAYPPadP4SFCp
-	tzvXWKMiN2oeo8jYTpSw3kF+EbjLqQrjrktqhovT40ap3x/61CMLBp6to1MqYlN6Mxmi2NYEVTXl1
-	DoxpkGg4Ze08boUt6N0m2YxnNWZayF1GEK4Lwh0uOJGovW+dVQIqFHUeWchnQ9B6l7rtAmTES6UbQ
-	8AzSGDQxZtpfGqW3jmYA==;
+	List-Owner; bh=E1KMhVXlCW8IJjZCCvDqZ4/dZJqe00Si0hLS367rye8=; b=Bj87qzJoGRtUfy
+	B9DHV6XQeRAbuIr+aXH1Q5ILi9zGd3L5QixPhyMih64nQY4/rlEPq1gQ9e5RMIVHEWkXIC8did6+Y
+	pYzVsrd0MCIHiQq8iR43jBdy7O5usv+DtsBmxNYeCcRWhdEFrI2AlnhbBcc39KmjzuPE8SgHDY5Fy
+	M8DxvaI8yomGLDQLh6tRmiA5hk3ahoyBfPc9G5tGFpxAx5xf3S8POrW5EAz+fVTBafZw3/44pDy8j
+	ZOUQoilQk20h2eFxhhKhtN5YN8ArwQY3XDh6u4vgFW6NQ0RVPQHrwVKodaXgMNZTGmcRY0PusVlT4
+	pVIxb5j/6Ui+IaU4oF0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOhRT-00040H-6z; Sun, 27 Oct 2019 12:14:43 +0000
+	id 1iOhow-00086W-78; Sun, 27 Oct 2019 12:38:58 +0000
 Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOhR8-0003aE-0h
- for linux-arm-kernel@lists.infradead.org; Sun, 27 Oct 2019 12:14:23 +0000
-Received: by mail-wm1-x341.google.com with SMTP id 22so6237255wms.3
+ id 1iOhom-000860-7w
+ for linux-arm-kernel@lists.infradead.org; Sun, 27 Oct 2019 12:38:49 +0000
+Received: by mail-wm1-x341.google.com with SMTP id v6so6412379wmj.0
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 27 Oct 2019 05:14:21 -0700 (PDT)
+ Sun, 27 Oct 2019 05:38:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=subject:to:cc:references:from:openpgp:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=qBQMo15u4akqQ8NWGQMhJU3k9VWFJohiyePtcxAYFI0=;
- b=m+Ns1PWK3MtMBikb5UwssCdVywszYbdnMhaTRgL8sKmYeGT6RE9fiyhf3J/MDr5RfA
- BaArednT0VMLOUBKv7PfKn1qhFaWiRvXClzeLEkFq+zajN4GJWHqIrwFcZbubjD49cP3
- FAhqGdvROVaC1HyFsFzY+x+gmcRVk6tSPTrTKiK5upsEjpxOvLKQwbj5d3+Z5Dd6Vk/T
- 1XXVvuk7boKDC3IjZ6tValvymLwPX6zsUoKrCY6qHlq8g8wD8uC/y4IfvdVzUZrxN4hW
- sBVxYzmfTtJu0D9FkyXtCv40hw28GPned5lzWmSM8mfPSlER0Fc3VMHfNqDEiTmO5OXw
- /Lpg==
+ bh=O6LyMWE9tYXcmgrHLx3vYatFXBiSM7DX5IdEH59tDxA=;
+ b=t/2gDG+72/qqqOL6gfsoY2A+Q8EUhTEdyf0lGyEEZeo1xafuJdvZ0gLIlNuwFv4wed
+ eQFaFoY5yoGmGrE5dYFEeBQBlr5IWZ6sE5ZOOhgHUSKfTDzhayUpDewJyfHB8YAAct5U
+ Agao4OCYYFp6PNwVYWHQCh3KmbwxjtYIry/bQov+XmV3TVVt6Kx6VrJTvUxGlOMRxmQN
+ K7QN2kOdXvjP6HrwpP19nAk8OaRzLCa55tJ/9hLkG378q11may2tKLuIbsUrsnVxJ+Ne
+ fabYVAlDHWzrKRmEwoXMwvbvtOX5yiQNFEQazfQnf3Znz9L/cQPeMAuFM3Kt+5/fFYqm
+ nSlA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:message-id
  :date:user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=qBQMo15u4akqQ8NWGQMhJU3k9VWFJohiyePtcxAYFI0=;
- b=fvuQTB/GgbCoX8a6pVi8Xd198RsmN7PBgPNiCv22jpIi1PkTc9X9xY4manDqqbb8nE
- +QtnWvKsbvQNmuK2UrBptSUklp9pG72w9LdaenDeXp6VRSDRFb45mHT9D1K01Aur6zMq
- xZ6o7aQbBwlj1nurUruQsBVkYxWdhZMZczBBpIqq+NcTsADAi4pRSxIWNfeDh0apgsOT
- dG6pvtjBkAmC8g60Qj1UW/bVdTNjNggi3xN6y8HybjmGG6IZ3vfGNkPF03vIEtsskBCP
- d7hPPIg9ubKBNxH0I8OChcsLzNLOj4osXT5kRhISROD2QD/RAr4D0QCYdnurGuJLxKDz
- oHEA==
-X-Gm-Message-State: APjAAAWkiXCLdGP4okULz1wmY33jtt2ezWV/i1/6lD+jXzjyJecGRcXC
- ZDMuoCToYgp5VGGfgcU9QaMoYg==
-X-Google-Smtp-Source: APXvYqzLaPnNvQm7J7MkxUO5AQPa6wp4y6EGKcMQmUZZ/UL7FmT2DLzKfGvffaK5m6eXeVZY4xvogw==
-X-Received: by 2002:a05:600c:2212:: with SMTP id
- z18mr12347054wml.154.1572178459930; 
- Sun, 27 Oct 2019 05:14:19 -0700 (PDT)
+ bh=O6LyMWE9tYXcmgrHLx3vYatFXBiSM7DX5IdEH59tDxA=;
+ b=cXk3fEnQ7GCQ/gJDW+T0iVIqoKruRqzc5C91vNG2OM6pFC5rnazPD5Zkk5ssu4kYeW
+ Vx95oMuYj4ZURc0AzrhQ9kbfzL2d+3fEMftP3IM7y7YL/cqEg8YznB2Vp5kJYR3eAaAW
+ CBT06kDMplmsZzGGSB3qUt0V8dxDr/4uvrQx09OGAIgDNqLEClCCBroDdkTOXCNjDH10
+ AtbLgR/nVYeFZnqpV9b+FxIxtzvl00udcdHCwIW40ogQj4JpC277mSP10F/a3ogGu5o5
+ tBmDZjUuGGFzmlyeiM0sZ7L54W+9cHB3GxVPiJual3PdjRpTWHYczWDjne9T9itzAPY8
+ 9xzQ==
+X-Gm-Message-State: APjAAAWbf5rw6WwQlBu8eoio1U571Mp9hWCpra6/RkfAqDfUA1tn4GZU
+ h+Y5RV9L/qqcNybl2aSs5fnY5w==
+X-Google-Smtp-Source: APXvYqyP+sKETBp5X/iTgiZ8j7XMiRu+sg1SlPNLrS5tKXCnTv9XGOxLcmQdnnFVTrBJzEL8m+6opw==
+X-Received: by 2002:a1c:e08a:: with SMTP id
+ x132mr11790218wmg.146.1572179925159; 
+ Sun, 27 Oct 2019 05:38:45 -0700 (PDT)
 Received: from [10.81.2.50] ([109.190.253.14])
- by smtp.gmail.com with ESMTPSA id 74sm9397558wrm.92.2019.10.27.05.14.18
+ by smtp.gmail.com with ESMTPSA id o6sm8082976wrx.89.2019.10.27.05.38.41
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 27 Oct 2019 05:14:19 -0700 (PDT)
+ Sun, 27 Oct 2019 05:38:44 -0700 (PDT)
 Subject: Re: [PATCH 1/1] arm64: Implement archrandom.h for ARMv8.5-RNG
-To: Mark Rutland <mark.rutland@arm.com>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Mark Rutland <mark.rutland@arm.com>
 References: <20191019022048.28065-1-richard.henderson@linaro.org>
  <20191019022048.28065-2-richard.henderson@linaro.org>
  <20191024113239.GC4300@lakrids.cambridge.arm.com>
+ <CAKv+Gu9uoJk8iqGASP3KvZK+4GMo=5ckD5DSzdOAmCJuOQNiUA@mail.gmail.com>
 From: Richard Henderson <richard.henderson@linaro.org>
 Openpgp: preference=signencrypt
-Message-ID: <bdadd4bf-1848-bef1-89c3-2d594cf3be16@linaro.org>
-Date: Sun, 27 Oct 2019 13:14:15 +0100
+Message-ID: <6e75d7b9-1c30-adab-bb74-1aaaa4e98ad4@linaro.org>
+Date: Sun, 27 Oct 2019 13:38:38 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20191024113239.GC4300@lakrids.cambridge.arm.com>
+In-Reply-To: <CAKv+Gu9uoJk8iqGASP3KvZK+4GMo=5ckD5DSzdOAmCJuOQNiUA@mail.gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191027_051422_111540_C70AC783 
-X-CRM114-Status: GOOD (  24.63  )
+X-CRM114-CacheID: sfid-20191027_053848_289654_03C3A8EC 
+X-CRM114-Status: GOOD (  25.67  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -103,137 +105,158 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, ard.biesheuvel@linaro.org,
- catalin.marinas@arm.com, will@kernel.org, Dave.Martin@arm.com,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-arch <linux-arch@vger.kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/24/19 1:32 PM, Mark Rutland wrote:
-> Please give this a menmoic in <asm/sysreg.h>, i.e.
+On 10/24/19 1:57 PM, Ard Biesheuvel wrote:
+>>> +
+>>> +#ifdef CONFIG_ARCH_RANDOM
+>>> +
+>>> +/*
+>>> + * Note that these two interfaces, random and random_seed, are strongly
+>>> + * tied to the Intel instructions RDRAND and RDSEED.  RDSEED is the
+>>> + * "enhanced" version and has stronger guarantees.  The ARMv8.5-RNG
+>>> + * instruction RNDR corresponds to RDSEED, thus we put our implementation
+>>> + * into the random_seed set of functions.
+>>> + *
 > 
-> #define SYS_RNDR	sys_reg(3, 3, 2, 4, 0)
+> Is that accurate? The ARM ARM says that RNDR is backed by a DRBG which
 > 
-> ... and make this function:
+> ""
+> ...is reseeded after an IMPLEMENTATION DEFINED number of random
+> numbers has been generated and read
+> using the RNDR register.
+> """
 > 
-> static inline bool read_rndr(unsigned long *v)
-> {
-> 	unsigned long pass;
+> which means that you cannot rely on this reseeding to take place at all.
 > 
-> 	/*
-> 	 * Reads of RNDR set PSTATE.NZCV to 0b0000 upon success, and set
-> 	 * PSTATE.NZCV to 0b0100 otherwise.
-> 	 */
-> 	asm volatile(
-> 		__mrs_s("%0", SYS_RNDR) "\n"
-> 	"	cset %1, ne\n"
-> 	: "=r" (*v), "=r" (pass);
-> 	:
-> 	: "cc");
-> 
-> 	return pass;
-> }
+> So the way I read this, RNDR ~= RDRAND and RNDRRS ~= RDSEED, and we
+> should wire up the functions below accordingly.
 
-Done.
+No, that reading is not correct, and is exactly what I was trying to explain in
+that paragraph.
 
-> #define SYS_RNDRRS	sys_reg(3, 3, 2, 4, 1)
-> 
-> ...and here have:
-> 
-> static inline bool read_rndrrs(unsigned long *v)
-> {
-> 	unsigned long pass;
-> 
-> 	/*
-> 	 * Reads of RNDRRS set PSTATE.NZCV to 0b0000 upon success, and
-> 	 * set PSTATE.NZCV to 0b0100 otherwise.
-> 	 */
-> 	asm volatile (
-> 		__mrs_s("%0", SYS_RNDRRS) "\n"
-> 	"	cset %w1, ne\n"
-> 	: "=r" (*v), "=r" (pass)
-> 	:
-> 	: "cc");
-> 
-> 	return pass;
-> }
+RNDR ~= RDSEED.
 
-Done.
+It's a matter of standards conformance:
 
->> +static inline bool arch_get_random_seed_long(unsigned long *v)
->> +{
->> +	/* If RNDR fails, attempt to re-seed with RNDRRS.  */
->> +	return arch_has_random_seed() && (arm_rndr(v) || arm_rndrrs(v));
->> +}
-> 
-> Here we clobber the value at v even if the reads of RNDR and RNDRRS
-> failed. Is that ok?
+RDRAND: NIST SP800-90A.
 
-The x86 inline asm does, so I should think it is ok.
+RDSEED: NIST SP800-90B,
+        NIST SP800-90C.
 
->> +#ifdef CONFIG_ARCH_RANDOM
->> +static bool can_use_rng(const struct arm64_cpu_capabilities *entry, int scope)
->> +{
->> +	unsigned long tmp;
->> +	int i;
->> +
->> +	if (!has_cpuid_feature(entry, scope))
->> +		return false;
->> +
->> +	/*
->> +	 * Re-seed from the true random number source.
->> +	 * If this fails, disable the feature.
->> +	 */
->> +	for (i = 0; i < 10; ++i) {
->> +		if (arm_rndrrs(&tmp))
->> +			return true;
->> +	}
-> 
-> The ARM ARM (ARM DDI 0487E.a) says:
-> 
-> | Reseeded Random Number. Returns a 64-bit random number which is
-> | reseeded from the True Random Number source at an IMPLEMENTATION
-> | DEFINED rate.
-> 
-> ... and:
-> 
-> | If the instruction cannot return a genuine random number in a
-> | reasonable period of time, PSTATE.NZCV is set to 0b0100 and the data
-> | value returned in UNKNOWN.
-> 
-> ... so it's not clear to me if the retry logic makes sense. Naively I'd
-> expect "reasonable period of time" to include 10 attempts.
-> 
-> Given we'll have to handle failure elsewhere, I suspect that it might be
-> best to assume that this works until we encounter evidence to the
-> contrary.
-
-Compare arch/x86/kernel/cpu/rdrand.c (x86_init_rdrand) and
-arch/powerpc/platforms/powernv/rng.c (initialize_darn).
-
-Both existing implementations have a small loop testing to see of the hardware
-passes its own self-check at startup.  Perhaps it's simply paranoia, but it
-didn't seem untoward to check.
+RNDR:   NIST SP800-90A Rev 1,
+        NIST SP800-90B,
+        NIST SP800-22,
+        FIPS 140-2,
+        BSI AIS-31,
+        NIST SP800-90C.
 
 
->> +#ifdef CONFIG_ARCH_RANDOM
->> +	{
->> +		.desc = "Random Number Generator",
->> +		.capability = ARM64_HAS_RNG,
->> +		.type = ARM64_CPUCAP_STRICT_BOOT_CPU_FEATURE,
-> 
-> I strongly suspect we're going to encounter systems where this feature
-> is mismatched, such that this can't be a boto CPU feature.
-> 
-> If we need entropy early in boot, we could detect if the boot CPU had
-> the feature, and seed the pool using it, then later make use of a
-> system-wide capability.
+>>> + * Note as well that Intel does not have an instruction that corresponds
+>>> + * to the RNDRRS instruction, so there's no generic interface for that.
+>>> + */
 
-In the meantime, what do you suggest I place here and in
-arch_has_random_seed(), so that it's at least detected early enough for the
-boot cpu, but does not require support from all cpus?
+...
+
+>>> +static inline bool arch_has_random(void)
+>>> +{
+>>> +     return false;
+>>> +}
+>>> +
+>>> +static inline bool arch_get_random_long(unsigned long *v)
+>>> +{
+>>> +     return false;
+>>> +}
+>>> +
+>>> +static inline bool arch_get_random_int(unsigned int *v)
+>>> +{
+>>> +     return false;
+>>> +}
+>>> +
+>>> +static inline bool arch_has_random_seed(void)
+>>> +{
+>>> +     return cpus_have_const_cap(ARM64_HAS_RNG);
+>>> +}
+>>> +
+>>> +static inline bool arch_get_random_seed_long(unsigned long *v)
+>>> +{
+>>> +     /* If RNDR fails, attempt to re-seed with RNDRRS.  */
+>>> +     return arch_has_random_seed() && (arm_rndr(v) || arm_rndrrs(v));
+>>> +}
+>>
+>> Here we clobber the value at v even if the reads of RNDR and RNDRRS
+>> failed. Is that ok?
+>>
+>> Maybe we want the accessors to only assign to v upon success.
+>>
+> 
+> I'd be more comfortable with this if arch_get_random_*() were
+> annotated as __must_check, and the assignment only done conditionally.
+
+We should probably make that change generically rather than make it arm64 specific.
+
+>>> +static bool can_use_rng(const struct arm64_cpu_capabilities *entry, int scope)
+>>> +{
+>>> +     unsigned long tmp;
+>>> +     int i;
+>>> +
+>>> +     if (!has_cpuid_feature(entry, scope))
+>>> +             return false;
+>>> +
+>>> +     /*
+>>> +      * Re-seed from the true random number source.
+>>> +      * If this fails, disable the feature.
+>>> +      */
+>>> +     for (i = 0; i < 10; ++i) {
+>>> +             if (arm_rndrrs(&tmp))
+>>> +                     return true;
+>>> +     }
+>>
+>> The ARM ARM (ARM DDI 0487E.a) says:
+>>
+>> | Reseeded Random Number. Returns a 64-bit random number which is
+>> | reseeded from the True Random Number source at an IMPLEMENTATION
+>> | DEFINED rate.
+>>
+>> ... and:
+>>
+>> | If the instruction cannot return a genuine random number in a
+>> | reasonable period of time, PSTATE.NZCV is set to 0b0100 and the data
+>> | value returned in UNKNOWN.
+>>
+>> ... so it's not clear to me if the retry logic makes sense. Naively I'd
+>> expect "reasonable period of time" to include 10 attempts.
+>>
+>> Given we'll have to handle failure elsewhere, I suspect that it might be
+>> best to assume that this works until we encounter evidence to the
+>> contrary.
+>>
+> 
+> The architecture isn't very clear about what a reasonable period of
+> time is, but the fact that it can fail transiently suggests that
+> trying it only once doesn't make a lot of sense. However, I'm not sure
+> whether having a go at probe time is helpful in deciding whether we
+> can use it at all, and I'd be inclined to drop this test altogether.
+> This is especially true since we cannot stop EL0 or VMs at EL1 using
+> the instruction.
+
+As mentioned in reply to Mark specifically, the other two architectures do the
+same thing.  From the comment for x86, I read this as "if something goes wrong,
+it's likely completely broken and won't work the first time we check".
+
+Yes, we can't prevent EL0 or VMs from using the insn, but we can avoid having
+the kernel itself attempt to use it if the hardware self-check fails.
+
+OTOH, given that every user of arch_get_random() checks the result, and has a
+fallback for failure, I suppose we don't need to do anything special.  Just use
+the insn and let Z=1 use the fallback failure path.
 
 
 r~
