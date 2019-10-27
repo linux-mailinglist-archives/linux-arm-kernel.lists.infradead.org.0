@@ -2,94 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 11671E6547
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 27 Oct 2019 21:08:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B7AEE6716
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 27 Oct 2019 22:17:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uwo09yjvSp+BdoMxx0qGqMJIV51OQEZm7mjZ6eJ4tYQ=; b=fL0ZfofX3Q2Seh
-	WOT9Gotkt+B3V5LDH5bP06zwM0EphzS65ddRpLzclAwWH0w6QcFikLI0BnpR29KJrHttzPaciHIhm
-	n59Epok+F5NORWZKybi5ITA3fKckltTHriWp6gJD8NJP2AElNebjZTnnofqGeDNkXPNiaT8LbXRI4
-	EebTSs0cQFpCiLpbEwV2svoBS/Fp5uLtZ8c9wFp++PYUViXii5rt658LoK26+LDthPlGY5/A1Buv2
-	JQDKp7hFm5bKaZfZgzo4p/R7Pcd5FCxVnAXBJOL0AhnwaXBqUoxuKExG7oz/Dhwo6ypf5WMqWl/+N
-	ME9B6nDeEbn/xvSez8nQ==;
+	List-Owner; bh=iKSd7t6M3lNIvaADhMkTydVq9hvmRi0UmYfxFjlgzZ4=; b=O6IQdJ/q7FxhYX
+	Gz3z/w3Yv/Ftw5MAeZFvcReHjVQTf/tKo0+UMEHmb9acQ5CEEblvf0yBEFNchUe83Y4fPgfSqwHoC
+	NSpIjDs/89SuFS8uu2GxbLUHqkOukWQzsJvjs/aGd8nl9VcXzfjG7rUCYPPs+pNNU9tUtyJC50OHG
+	aPEgEiWbZHOAgZylrSrGJe3PIAcI0D/qbfpMGbh3jpVfTlkHovkw5StbVraQRgr03beECBUkCz6Dt
+	QBbWla4aSKGrJ//r8YMTLytPAfuhcQuEiuzExakc/e67naS8kHYiNBSV1CvXCpeQLiaT9quetm6BA
+	PIS/ZSbFDl80QzQev6Bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOopt-00027E-2U; Sun, 27 Oct 2019 20:08:25 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1iOpv5-0000Nl-Kr; Sun, 27 Oct 2019 21:17:51 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOopl-00026H-UL
- for linux-arm-kernel@lists.infradead.org; Sun, 27 Oct 2019 20:08:19 +0000
-Received: by mail-wm1-x343.google.com with SMTP id v6so7035439wmj.0
+ id 1iOpuw-0000Mz-4e
+ for linux-arm-kernel@lists.infradead.org; Sun, 27 Oct 2019 21:17:43 +0000
+Received: by mail-oi1-f194.google.com with SMTP id j7so4769955oib.3
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 27 Oct 2019 13:08:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=uILHnq2ITfdDUPR3qFBlC6hvnz1kzbF3v1izfuQrKFw=;
- b=KosvU5MG6bLLKxIv6Q1GTSUvZR2Y0/dnt1uUCaeKm23meFQ6ZyXdc5rIx0y4b6mlvr
- W4G48Tg4nYLf1XzXNokP+Zk16znbBAyuc1shsbomZUzwA95PkYYE3N8qhz41TJOfaQyu
- Ar5YJOxzgr0RH16u4xoAeNBYiNoEjUouGcqttTEBZD4mc76yvCMGpbKsF+lSwaqS6XL7
- FF6XFS5X47EjY0XuTf7PgzpnMJnDVM2ZyLBuk8sG3MYf1CGs/TXz1r9A9snvYeow7JV7
- eZ6M6JHbe/awtIKk1Vyb+PK2N5GeAH98rdpsdh+lyrrgLNU3/K9tw1NR01IpnHHLvs6V
- 1PbA==
+ Sun, 27 Oct 2019 14:17:39 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=uILHnq2ITfdDUPR3qFBlC6hvnz1kzbF3v1izfuQrKFw=;
- b=Jes07HhVl3FNUWLmnrcm5weSS7F/b2fxTKpIkY+2vpOWRlCsUVGIWSbB8XT9ObBQzJ
- QfCoyNOpPB/qGGsBBv/9XI6GUWFQovEvUSDGMmRqfHDwBqqJOjpf62ytfa/gO7AaWai8
- +B/S/LuwTLW2x+ay7QOd8ddgtnMmIhbQfA/03VCdL/zWK/XxokvLBMhJkmLwQGlYdJ3i
- 83+oXlt24HA+9415wN/qB3MJDTQec0o9Fc8B6cQvUZq5J+n8nq7Q28NORaVksHybhnsp
- Y4IBJLBHClle7RsNvqHgF147S42A2tJLEHvYTWqoqTWrwRZLVw8Nlx43jjOF7XzNwOjJ
- jSGA==
-X-Gm-Message-State: APjAAAUDVwLuoRUNE+8Oec84Ns8L38meryesasYBqSVDW59l0j6yS8iu
- p14PT8+eSSwzgnZnXWqS2f8=
-X-Google-Smtp-Source: APXvYqwyOASmJjLwg6ZT+C/jtzSWM3AVB0aUtxw+W5AEL7GrQyB/V5+FJN06i2VjrR7nVF3WoGClxg==
-X-Received: by 2002:a1c:2b45:: with SMTP id r66mr11035621wmr.163.1572206894390; 
- Sun, 27 Oct 2019 13:08:14 -0700 (PDT)
-Received: from localhost.localdomain ([2a01:e0a:1f1:d0f0::4e2b:d7ca])
- by smtp.gmail.com with ESMTPSA id o11sm8539538wmh.28.2019.10.27.13.08.13
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=/iAJCHmYnu3MN/tSfMGe/nzIlm9sUPVCioEd8t0MfbY=;
+ b=nBNiaFF6Sk7VjLs6Z+opQqmQbnA+DlJv0hd7auwnQ2awKGUCs1CR7ZMFOhTqeYD3VA
+ TzFddhVFcW4HWGJWs0Pjbgvf1X6e/POyww5iSLBeMq+qxGKXlzxx/s24UGGwxCM/lTqo
+ 0phGAuj/u0izBWM0j/EIFnN/QCUgw9qrmDn1Nfui2O9DcVcC5tw9D5hIz+j4CPd8Vhpd
+ Hg+EJL7wGAT6/4XGnaKzQzyW6JZeW0eaKKDsRdZbT/ymd5A19XdUiOL43YJLURmT573X
+ /LV9fBEwcwpOGRcAzcEAhwrw129kGMdn9gUuKkAxGnbCOgXWrKdG9U44lWZ9RUCbB1Tf
+ q+JQ==
+X-Gm-Message-State: APjAAAXCzajAlap7swTl8b3+8IpHlYu+hV3/DCyZRSgvCSEwrxt7A/Cs
+ o9zQknklcA6Q31C8h4VRvg==
+X-Google-Smtp-Source: APXvYqycENxBcO37SRF80CuuH2sAsSU8zEeqdg41f6o3Mskd1ZymMfnokYbEy29NcBFqqvPqzaY4dQ==
+X-Received: by 2002:a54:4484:: with SMTP id v4mr7404163oiv.49.1572211058758;
+ Sun, 27 Oct 2019 14:17:38 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id g3sm2960776otg.56.2019.10.27.14.17.37
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 27 Oct 2019 13:08:14 -0700 (PDT)
-From: =?UTF-8?q?Cl=C3=A9ment=20P=C3=A9ron?= <peron.clem@gmail.com>
-To: Mauro Carvalho Chehab <mchehab@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>,
- Sean Young <sean@mess.org>, Christian Hewitt <christianshewitt@gmail.com>
-Subject: [PATCH 2/2] arm64: dts: allwinner: beelink-gs1: Add rc-beelink-gs1
- keymap
-Date: Sun, 27 Oct 2019 21:07:38 +0100
-Message-Id: <20191027200738.24802-2-peron.clem@gmail.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191027200738.24802-1-peron.clem@gmail.com>
-References: <20191027200738.24802-1-peron.clem@gmail.com>
+ Sun, 27 Oct 2019 14:17:37 -0700 (PDT)
+Date: Sun, 27 Oct 2019 16:17:37 -0500
+From: Rob Herring <robh@kernel.org>
+To: Jagan Teki <jagan@amarulasolutions.com>
+Subject: Re: [PATCH v11 2/7] dt-bindings: sun6i-dsi: Add A64 DPHY compatible
+ (w/ A31 fallback)
+Message-ID: <20191027211737.GA30896@bogus>
+References: <20191025175625.8011-1-jagan@amarulasolutions.com>
+ <20191025175625.8011-3-jagan@amarulasolutions.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191025175625.8011-3-jagan@amarulasolutions.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191027_130818_003133_7C523B30 
-X-CRM114-Status: GOOD (  11.76  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191027_141742_182469_B46F752A 
+X-CRM114-Status: GOOD (  11.78  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ no trust [209.85.167.194 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (peron.clem[at]gmail.com)
+ provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.194 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,27 +92,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- =?UTF-8?q?Cl=C3=A9ment=20P=C3=A9ron?= <peron.clem@gmail.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ David Airlie <airlied@linux.ie>, linux-sunxi <linux-sunxi@googlegroups.com>,
+ Maxime Ripard <mripard@kernel.org>, linux-kernel@vger.kernel.org,
+ Jagan Teki <jagan@amarulasolutions.com>, Chen-Yu Tsai <wens@csie.org>,
+ dri-devel@lists.freedesktop.org, Daniel Vetter <daniel@ffwll.ch>,
+ michael@amarulasolutions.com, linux-amarula@amarulasolutions.com,
+ linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QmVlbGluayBHUzEgc2hpcHMgd2l0aCBhIE5FQyByZW1vdGUgY29udHJvbC4KCkFkZCB0aGUgcmMg
-a2V5bWFwIHRvIHRoZSBkZXZpY2UtdHJlZS4KClNpZ25lZC1vZmYtYnk6IENsw6ltZW50IFDDqXJv
-biA8cGVyb24uY2xlbUBnbWFpbC5jb20+Ci0tLQogYXJjaC9hcm02NC9ib290L2R0cy9hbGx3aW5u
-ZXIvc3VuNTBpLWg2LWJlZWxpbmstZ3MxLmR0cyB8IDEgKwogMSBmaWxlIGNoYW5nZWQsIDEgaW5z
-ZXJ0aW9uKCspCgpkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9ib290L2R0cy9hbGx3aW5uZXIvc3Vu
-NTBpLWg2LWJlZWxpbmstZ3MxLmR0cyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvYWxsd2lubmVyL3N1
-bjUwaS1oNi1iZWVsaW5rLWdzMS5kdHMKaW5kZXggMWQwNWQ1NzAxNDJmLi5jZTRiMDY3OTgzOWQg
-MTAwNjQ0Ci0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvYWxsd2lubmVyL3N1bjUwaS1oNi1iZWVs
-aW5rLWdzMS5kdHMKKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9hbGx3aW5uZXIvc3VuNTBpLWg2
-LWJlZWxpbmstZ3MxLmR0cwpAQCAtMjUyLDYgKzI1Miw3IEBACiB9OwogCiAmcl9pciB7CisJbGlu
-dXgscmMtbWFwLW5hbWUgPSAicmMtYmVlbGluay1nczEiOwogCXN0YXR1cyA9ICJva2F5IjsKIH07
-CiAKLS0gCjIuMjAuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Fri, 25 Oct 2019 23:26:20 +0530, Jagan Teki wrote:
+> The MIPI DSI PHY controller on Allwinner A64 is similar
+> on the one on A31.
+> 
+> Add A64 compatible and append A31 compatible as fallback.
+> 
+> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+> ---
+>  .../bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml         | 6 +++++-
+>  1 file changed, 5 insertions(+), 1 deletion(-)
+> 
+
+Please add Acked-by/Reviewed-by tags when posting new versions. However,
+there's no need to repost patches *only* to add the tags. The upstream
+maintainer will do that for acks received on the version they apply.
+
+If a tag was not added on purpose, please state why and what changed.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
