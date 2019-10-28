@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D444EE70E9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 13:04:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1E84E7131
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 13:18:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=apJyIa9Ek4t6dQ7ycWZ9Ey2Sc3tMGhq0I+UAj1wWKQc=; b=Sc+cUkHs4MdTu+
-	MknpKulMJRyr8OPcZftfo+dfqRFxUHSCVJXKyaJzihsEAHeP3p15ZciDZP0QbB+HJwb7QtBoWKzsN
-	EDEB+NcunKbrSVxbezLmf+/fh3k27xKuo8QQJQHGAg9+IdknuUxoXKLGyWpuw85Fv7EWM334YNRVo
-	7cY99sFfQwTwUvQFnRAxOeV6dmyGE5dR09e2kIbOmG7GE3o6kdmCfuRlERYQTxyzKJYMVCOVx09oC
-	rCAeUbyImaKVwHaIrt/oS3ge4tYdxnGr3Co1gnI25PUZ5Bdsf7hQ2881Hb9Se4ezJlQqcenUodg8D
-	Em1qTdI5LCFyo1FfSvWg==;
+	List-Owner; bh=FNtQSzA9gCqq3dj9qh/K3EAlU+KFEVCRHADAFs8Usrg=; b=L9YV7Z1O5Kmlh4
+	1ntbCDq4aZxVjLnQ4itWKYqJy7mPvESEi53q5x7ZzAGdkwJI0nimtHcJNyEXmton3z7fzHLeYQ8FT
+	ZEOvBggpOqnBH4lco/nhPIQWSMfrcGXBcMlU77QsopLB7a8/W//8CEfghtTXBkb2QZaabUt9WU6IA
+	pakzvDkcRRDjSs6nmOozChWoif1ygS2GApK+HsaJVIdS3IoxsH0slz6eRRQ/6BnrSVLGn+s4nZF6d
+	abo6XTcIKHF0lB29Mc1M4ruCkVzjOyu6QOZKBRdtLim2xcd3waEGB9fxx9x5M/VhH5RKnaz1aGwI3
+	O14U+hl5CHl/7Zlyqqzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP3lT-0003Qd-Fz; Mon, 28 Oct 2019 12:04:51 +0000
+	id 1iP3yD-0001HF-MC; Mon, 28 Oct 2019 12:18:01 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP3lE-0003QH-So
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 12:04:38 +0000
+ id 1iP3y3-0001GI-P4
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 12:17:53 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AB0E32086D;
- Mon, 28 Oct 2019 12:04:31 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9ED0B2086D;
+ Mon, 28 Oct 2019 12:17:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572264276;
- bh=zyG5Y+J760QevxoHDxz7mE1bnyRmrOKKPhZ5PA7C9rA=;
+ s=default; t=1572265071;
+ bh=4kjKjQAdwQg+xIOM1RGhfB1fhC3MB3bGym1xpZl9M4A=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=fvrCWX5eXTpSwK7e8QkRd6CBhvJLmx0M6tlFpxLkdQgcAGypUr9zCSZhlK8QncFFo
- hTmQPJflORixz9sWSMg6F+lETVDM1LavajrkTe0GsObFqddORwrEwYIJLgK3/bbldk
- T9rmdaclD8KTYVCtZFTg83lASTsYeh3WAuiZyr4E=
-Date: Mon, 28 Oct 2019 20:04:13 +0800
+ b=FYgnslUuZnLlj9KdLcmMiyHNbPvW79emQLvYDof+rYLD9FbSUFOeZOUyJfQvVpzb4
+ M71yGtlHpkJJJ7G8XUbBeqh1KNBHfiaRS3T3H6S05hoaETGTkjrdfHAHW6e8oFB3Se
+ xrtmTNL7KSHzVqf50nKwWXbQl0q6PNJ1ba5z2Au4=
+Date: Mon, 28 Oct 2019 20:17:26 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH 1/2] soc: imx8: Using existing serial_number instead of UID
-Message-ID: <20191028120411.GI16985@dragon>
-References: <1571986583-21138-1-git-send-email-Anson.Huang@nxp.com>
+To: Shengjiu Wang <shengjiu.wang@nxp.com>
+Subject: Re: [PATCH] ARM64: imx8mm: Change compatible string for sdma
+Message-ID: <20191028121725.GJ16985@dragon>
+References: <1571992763-31339-1-git-send-email-shengjiu.wang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1571986583-21138-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1571992763-31339-1-git-send-email-shengjiu.wang@nxp.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_050436_951323_78476434 
-X-CRM114-Status: UNSURE (   7.93  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191028_051751_833701_EA78C6DE 
+X-CRM114-Status: GOOD (  14.07  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,23 +76,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: aisheng.dong@nxp.com, abel.vesa@nxp.com, festevam@gmail.com,
- s.hauer@pengutronix.de, linux-kernel@vger.kernel.org, Linux-imx@nxp.com,
- kernel@pengutronix.de, viresh.kumar@linaro.org, leonard.crestez@nxp.com,
- daniel.baluta@nxp.com, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, ping.bai@nxp.com,
+ Anson.Huang@nxp.com, daniel.baluta@nxp.com, s.hauer@pengutronix.de,
+ daniel.lezcano@linaro.org, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ linux-imx@nxp.com, kernel@pengutronix.de, leonard.crestez@nxp.com,
+ festevam@gmail.com, linux-arm-kernel@lists.infradead.org, jun.li@nxp.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 25, 2019 at 02:56:22PM +0800, Anson Huang wrote:
-> The soc_device_attribute structure already contains a serial_number
-> attribute to show SoC's unique ID, just use it to show SoC's unique
-> ID instead of creating a new file called soc_uid.
+On Fri, Oct 25, 2019 at 04:39:23PM +0800, Shengjiu Wang wrote:
+> SDMA in i.MX8MM should use same configuration as i.MX8MQ
+> So need to change compatible string to be "fsl,imx8mq-sdma".
 > 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> Fixes: a05ea40eb384 ("arm64: dts: imx: Add i.mx8mm dtsi support")
+> Signed-off-by: Shengjiu Wang <shengjiu.wang@nxp.com>
 
-Applied both, thanks.
+Updated the subject as below and applied the patch.
+
+  arm64: dts: imx8mm: fix compatible string for sdma
+
+Shawn
+
+> ---
+>  arch/arm64/boot/dts/freescale/imx8mm.dtsi | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> index 2139c0a9c495..6a54d2a3b19b 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> @@ -394,7 +394,7 @@
+>  			};
+>  
+>  			sdma2: dma-controller@302c0000 {
+> -				compatible = "fsl,imx8mm-sdma", "fsl,imx7d-sdma";
+> +				compatible = "fsl,imx8mm-sdma", "fsl,imx8mq-sdma";
+>  				reg = <0x302c0000 0x10000>;
+>  				interrupts = <GIC_SPI 103 IRQ_TYPE_LEVEL_HIGH>;
+>  				clocks = <&clk IMX8MM_CLK_SDMA2_ROOT>,
+> @@ -405,7 +405,7 @@
+>  			};
+>  
+>  			sdma3: dma-controller@302b0000 {
+> -				compatible = "fsl,imx8mm-sdma", "fsl,imx7d-sdma";
+> +				compatible = "fsl,imx8mm-sdma", "fsl,imx8mq-sdma";
+>  				reg = <0x302b0000 0x10000>;
+>  				interrupts = <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>;
+>  				clocks = <&clk IMX8MM_CLK_SDMA3_ROOT>,
+> @@ -741,7 +741,7 @@
+>  			};
+>  
+>  			sdma1: dma-controller@30bd0000 {
+> -				compatible = "fsl,imx8mm-sdma", "fsl,imx7d-sdma";
+> +				compatible = "fsl,imx8mm-sdma", "fsl,imx8mq-sdma";
+>  				reg = <0x30bd0000 0x10000>;
+>  				interrupts = <GIC_SPI 2 IRQ_TYPE_LEVEL_HIGH>;
+>  				clocks = <&clk IMX8MM_CLK_SDMA1_ROOT>,
+> -- 
+> 2.21.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
