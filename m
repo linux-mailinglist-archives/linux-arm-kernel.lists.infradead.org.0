@@ -2,90 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 188B5E7B16
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 22:08:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B016E7B1E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 22:08:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=aF1DFB5aY2DU8ZEFCrK8eDCoG8enirTqVlaeQmZWGm0=; b=ZSugrXFpJiYQdA/zMATljQe3up
-	YYvBAaA/eNsdBrUTlpLnsva3NTO2zJxFwOhPJouX6NkokLsm0mzImqkPMNCMz2DVnbm9y7e+aYnBW
-	wvlc3q8YExPAipqH/TLkrN6U1ZoRiuZHSSnFNN5mndoSBH95Jc4CVM5jNgvsLLT0Kps16IeFTcXLO
-	BWtHir7dt4qTrJypQsEBakdM1RIzApnmRoKa/HhGLn4y0WmKUVvdJM3SxXWbE04md28qhPwnD6byj
-	KTteHCBbJyduNqZcm/JG4HlOFU0EFrmykV1IklYcUtMWP6RAF8BcSf/uXJcL0+MDUHDUnyf/0105F
-	nXpkMDwg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fHikwptWucagL5dbu0BuV2L4CpJ194QNVDCoAgZ0qYM=; b=gjaqbpUiu099GB
+	YYsNL7tF1Vg+qz5to3oeQ4cXEs9pKOZPSktiv02DGhOwS7tNR+pHiVY4wDxKrcVieMRO4Ie6AeS2r
+	i7ayXINvXhpihamQT1fJMFv5oe3vxT52+31pQoz+4feJuPFn19iqxR+1SWBiTlscFdO6Qn/VhiubR
+	iN1jTYuaWUMaYepZyXHGIJ5HsHdasOfHxmp8G5kiqhwBxL3wwIiKg748dNAnOoDLENrFrFE+bohW0
+	oLB8QQqMpwIBQCd46/TsX9Db/ngoKnmtBEUnEvqY09ClAiIArjTrRr65Uk85u2OB1xHZV4k+Gza0m
+	etrCWq+5zccqx0n0t5PA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPCFO-0000fK-2O; Mon, 28 Oct 2019 21:08:18 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iPCFu-00013K-Ui; Mon, 28 Oct 2019 21:08:50 +0000
+Received: from smtp09.smtpout.orange.fr ([80.12.242.131]
+ helo=smtp.smtpout.orange.fr)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPCDK-0007WQ-Hz
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 21:06:12 +0000
-Received: by mail-wr1-x444.google.com with SMTP id p4so11380522wrm.8
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 28 Oct 2019 14:06:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=mU+g+sfz1bIovsmfwMpnLnRDz98DNUSgbeHXg3LWxbU=;
- b=ribUHw8KQSMwF+HWzboOgcGnyDaK3YUsaQY5qHoPDIig1OlIIT+RSRtjqhXe7Dbg9E
- bSBQUcVMSR2hYT8aXJgTZ6f8OGIkctk+xHOQSOwJ6Q5CwvdDqm8e88AiepxRc7ZP1ybt
- fZNDCcdVU5u+XgHEnSecAhSA4O/3UGIAmBBvg8DDG4bGvgXFaAQ8BKz/3WIkMHUfBlmS
- oKK67aICFbH6k1HpTOZAE4EfYQIf0NUv0kei21drYEvGV16iP17AW1GGbOUwYExGH1Sj
- lsicZeW7Xu2uJgnaBUUTw18H4HUdfa/VFa8ufg7ZyBeH4hFKJ43/53r6cTSoTGfZETjQ
- vB1A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=mU+g+sfz1bIovsmfwMpnLnRDz98DNUSgbeHXg3LWxbU=;
- b=WJ6w9CBNe3C66AXb77/U2rZ8KA1eB7Bvv7PsEbIhKKeRPdmX+2rmdUxjqoNqs96b/c
- Z4tSDtP4thWpLv/hy3PPHrp03T67zWn1cKRFPPM8Nso3b2cHmLNaWlVLghZfIp+ONXws
- UG8NcUATmj0R1DAzStd52dK0mjpyRpottpEqHUofy1cFO4lhZ5WqUEk9jXgedvqgZLsD
- 9NcA8bHCQObj/4sM4KFZMm31b4H2KTVkrdj0PO1AQ3LYUxe+pHqnTk/O3V6UlfyApt1H
- 4DHb9Cog+YKoiqaNBxg4sx6R5xj+fMbSqrMm0FA14DML0oo7G05NCoXbhN1auJxIzeOW
- jUtw==
-X-Gm-Message-State: APjAAAWvW/3Tw5wr89C1cLmPyIIAYx35L+tN6SV04w/eeNrcmGn9LEOD
- h/M+X3lAT8lWRBcu0hb6R5WINQ==
-X-Google-Smtp-Source: APXvYqwLLcOvu9N5SeRwebeTNTR9kL0tb9M7ihMiJM5pCGfJvj4BNTg8/+5IGhg+G1oQqTj4kcEk6g==
-X-Received: by 2002:adf:f192:: with SMTP id h18mr17665670wro.148.1572296769066; 
- Mon, 28 Oct 2019 14:06:09 -0700 (PDT)
-Received: from localhost.localdomain (230.106.138.88.rev.sfr.net.
- [88.138.106.230])
- by smtp.gmail.com with ESMTPSA id b196sm927822wmd.24.2019.10.28.14.06.07
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 28 Oct 2019 14:06:08 -0700 (PDT)
-From: Richard Henderson <richard.henderson@linaro.org>
-X-Google-Original-From: Richard Henderson <rth@twiddle.net>
-To: linux-arch@vger.kernel.org
-Subject: [PATCH 6/6] s390x: Mark archrandom.h functions __must_check
-Date: Mon, 28 Oct 2019 22:05:59 +0100
-Message-Id: <20191028210559.8289-7-rth@twiddle.net>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191028210559.8289-1-rth@twiddle.net>
-References: <20191028210559.8289-1-rth@twiddle.net>
+ id 1iPCFd-00012i-J2
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 21:08:35 +0000
+Received: from belgarion ([90.55.204.252]) by mwinf5d17 with ME
+ id K98W2100G5TFNlm0398XDJ; Mon, 28 Oct 2019 22:08:31 +0100
+X-ME-Helo: belgarion
+X-ME-Auth: amFyem1pay5yb2JlcnRAb3JhbmdlLmZy
+X-ME-Date: Mon, 28 Oct 2019 22:08:31 +0100
+X-ME-IP: 90.55.204.252
+From: Robert Jarzmik <robert.jarzmik@free.fr>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH 21/46] ARM: pxa: spitz: use gpio descriptors for audio
+References: <20191018154052.1276506-1-arnd@arndb.de>
+ <20191018154201.1276638-21-arnd@arndb.de>
+X-URL: http://belgarath.falguerolles.org/
+Date: Mon, 28 Oct 2019 22:08:30 +0100
+In-Reply-To: <20191018154201.1276638-21-arnd@arndb.de> (Arnd Bergmann's
+ message of "Fri, 18 Oct 2019 17:41:36 +0200")
+Message-ID: <87o8y0lgs1.fsf@belgarion.home>
+User-Agent: Gnus/5.130008 (Ma Gnus v0.8) Emacs/26 (gnu/linux)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_140610_632973_BEB0F92F 
-X-CRM114-Status: GOOD (  10.83  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191028_140833_907427_6887F483 
+X-CRM114-Status: GOOD (  21.96  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ no trust [80.12.242.131 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [80.12.242.131 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robert.jarzmik[at]free.fr)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,65 +69,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, Vasily Gorbik <gor@linux.ibm.com>,
- x86@kernel.org, Heiko Carstens <heiko.carstens@de.ibm.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>, linuxppc-dev@lists.ozlabs.org,
+Cc: alsa-devel@alsa-project.org, Linus Walleij <linus.walleij@linaro.org>,
+ linux-kernel@vger.kernel.org, Haojian Zhuang <haojian.zhuang@gmail.com>,
+ Mark Brown <broonie@kernel.org>, Daniel Mack <daniel@zonque.org>,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We cannot use the pointer output without validating the
-success of the random read.
+Arnd Bergmann <arnd@arndb.de> writes:
 
-Signed-off-by: Richard Henderson <rth@twiddle.net>
----
-Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
-Cc: Vasily Gorbik <gor@linux.ibm.com>
-Cc: Christian Borntraeger <borntraeger@de.ibm.com>
----
- arch/s390/include/asm/archrandom.h | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+> The audio driver should not use a hardwired gpio number
+> from the header. Change it to use a lookup table.
+>
+> Cc: Mark Brown <broonie@kernel.org>
+> Cc: alsa-devel@alsa-project.org
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> ---
+>  arch/arm/mach-pxa/spitz.c                    | 33 ++++++++++-
+>  arch/arm/mach-pxa/{include/mach => }/spitz.h |  2 +-
+>  arch/arm/mach-pxa/spitz_pm.c                 |  2 +-
+>  sound/soc/pxa/spitz.c                        | 58 ++++++++------------
+>  4 files changed, 57 insertions(+), 38 deletions(-)
+>  rename arch/arm/mach-pxa/{include/mach => }/spitz.h (99%)
+>
+> diff --git a/arch/arm/mach-pxa/spitz.c b/arch/arm/mach-pxa/spitz.c
+> index a4fdc399d152..6028fd83c44d 100644
+> --- a/arch/arm/mach-pxa/spitz.c
+> +++ b/arch/arm/mach-pxa/spitz.c
+> @@ -44,7 +44,7 @@
+>  #include <linux/platform_data/mmc-pxamci.h>
+>  #include <linux/platform_data/usb-ohci-pxa27x.h>
+>  #include <linux/platform_data/video-pxafb.h>
+> -#include <mach/spitz.h>
+> +#include "spitz.h"
+>  #include "sharpsl_pm.h"
+>  #include <mach/smemc.h>
+>  
+> @@ -948,11 +948,42 @@ static void __init spitz_i2c_init(void)
+>  static inline void spitz_i2c_init(void) {}
+>  #endif
+>  
+> +static struct gpiod_lookup_table spitz_audio_gpio_table = {
+> +	.dev_id = "spitz-audio",
+> +	.table = {
+> +		GPIO_LOOKUP("sharp-scoop.0", SPITZ_GPIO_MUTE_L - SPITZ_SCP_GPIO_BASE,
+> +			    "mute-l", GPIO_ACTIVE_HIGH),
+> +		GPIO_LOOKUP("sharp-scoop.0", SPITZ_GPIO_MUTE_R - SPITZ_SCP_GPIO_BASE,
+> +			    "mute-r", GPIO_ACTIVE_HIGH),
+> +		GPIO_LOOKUP("sharp-scoop.1", SPITZ_GPIO_MIC_BIAS - SPITZ_SCP2_GPIO_BASE,
+> +			    "mic", GPIO_ACTIVE_HIGH),
+> +		{ },
+> +	},
+> +};
+> +
+> +static struct gpiod_lookup_table akita_audio_gpio_table = {
+> +	.dev_id = "spitz-audio",
+> +	.table = {
+> +		GPIO_LOOKUP("sharp-scoop.0", SPITZ_GPIO_MUTE_L - SPITZ_SCP_GPIO_BASE,
+> +			    "mute-l", GPIO_ACTIVE_HIGH),
+> +		GPIO_LOOKUP("sharp-scoop.0", SPITZ_GPIO_MUTE_R - SPITZ_SCP_GPIO_BASE,
+> +			    "mute-r", GPIO_ACTIVE_HIGH),
+> +		GPIO_LOOKUP("gpio-pxa", AKITA_GPIO_MIC_BIAS - AKITA_IOEXP_GPIO_BASE,
+> +			    "mic", GPIO_ACTIVE_HIGH),
+This last one looks a bit dubious, as it looks like a gpio on a gpio expander,
+could you cross-check that "gpio-pxa" shouldn't be an I2C expander gpio please ?
 
-diff --git a/arch/s390/include/asm/archrandom.h b/arch/s390/include/asm/archrandom.h
-index c67b82dfa558..f3f1ee0a8c38 100644
---- a/arch/s390/include/asm/archrandom.h
-+++ b/arch/s390/include/asm/archrandom.h
-@@ -33,17 +33,17 @@ static inline bool arch_has_random_seed(void)
- 	return false;
- }
- 
--static inline bool arch_get_random_long(unsigned long *v)
-+static inline bool __must_check arch_get_random_long(unsigned long *v)
- {
- 	return false;
- }
- 
--static inline bool arch_get_random_int(unsigned int *v)
-+static inline bool __must_check arch_get_random_int(unsigned int *v)
- {
- 	return false;
- }
- 
--static inline bool arch_get_random_seed_long(unsigned long *v)
-+static inline bool __must_check arch_get_random_seed_long(unsigned long *v)
- {
- 	if (static_branch_likely(&s390_arch_random_available)) {
- 		return s390_arch_random_generate((u8 *)v, sizeof(*v));
-@@ -51,7 +51,7 @@ static inline bool arch_get_random_seed_long(unsigned long *v)
- 	return false;
- }
- 
--static inline bool arch_get_random_seed_int(unsigned int *v)
-+static inline bool __must_check arch_get_random_seed_int(unsigned int *v)
- {
- 	if (static_branch_likely(&s390_arch_random_available)) {
- 		return s390_arch_random_generate((u8 *)v, sizeof(*v));
--- 
-2.17.1
+Cheers.
 
+--
+Robert
 
 _______________________________________________
 linux-arm-kernel mailing list
