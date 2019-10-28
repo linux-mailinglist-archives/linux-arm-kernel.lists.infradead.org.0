@@ -2,52 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8186E6C5A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 07:16:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2EA5FE6C60
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 07:21:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AAQh22DmVnRmJsHWOL9/MkbO6uORL9eTb/FtfyakidE=; b=QKIKIzKoEaVvcA
-	oGsYAcifsXO4hSXz8mx3KnGBV30+XxsU54iRU8RIknuquThqpUlVPK4GTqG23GdawQ54ksBbdxkBR
-	e5kf1Re8VDh9/450fpTCasOjCB0eCvGumAM9fONrlvHSvLeTt8ixwsUFzWzC8zt31lgOifzi7kd+E
-	Lnr3aGbGq3KX/dn1SM0C/7PD3LHuglbw6tVxX+Kzyp/XaIrLsrd0miB16GBPdLe/AFUezJp3LJnbn
-	7sZAX5nJRr3sAuMaM7rfEBsF6KuyjALE6mQ4xyCHE2vqiQXUwqoTtSnnEWJB1zpm7g151t8IrNkwu
-	slweKTnJolcWMcsxtoDQ==;
+	List-Owner; bh=ZHjKiZiYoCWTHwwID93yBgKXvUFIy+NWqP1qHvZ8dw0=; b=SpkFoDSf876U6J
+	0xz/Pv5eYRUJZ54V6Lji6Lcm60MAKEb+OYr5TmtBo3QNiUpZS8jl+fq4ok4o9BuKjiKXB4l2+BRE5
+	6Qhlrpeylj+HQYXolgtg6Aunb1mDkMXRinVQYJEssImD37PDHDBTxCgKnaPsXlVYaobeW3n30gDhd
+	ZrZuHOwpDgERKKgMmPB/BzZ2Zs2OH4f+4Q27aUzQR1W6LxNCmDBgWpzLKcdXbsX70oFLyMr/UFMh+
+	SsGwZ8YHf1tvNqTjhb8PjUvxhOrasjv7Hnv8uMHwlQ5uOcP5ScU7txYGzVZydmUzMUVui4MTBGjuj
+	G0NnxKP4501UNOEdj75A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOyK5-0001Mz-LL; Mon, 28 Oct 2019 06:16:13 +0000
+	id 1iOyP2-00038S-NF; Mon, 28 Oct 2019 06:21:20 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOyJs-0001ML-No
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 06:16:01 +0000
+ id 1iOyOe-00030N-7p
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 06:20:57 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F336B2086D;
- Mon, 28 Oct 2019 06:15:58 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5550F20659;
+ Mon, 28 Oct 2019 06:20:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572243360;
- bh=s86/4rKeSKBp+v+UDesMXr/1qh5YcXpzBFFcSzVdra8=;
+ s=default; t=1572243654;
+ bh=1oraWkvGzB9i9YIhUnpN2CmrzqBkmrHglcy6dngSph0=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=OIq3TNKQhjMq+0XusrDYJ0lgidnBNQhqUCcOjjBf98A0njafypYbZHnHs7y4ql8j8
- v+bN6zRu2bfDgrcSK5LrJS6tEF8Y45gUCOTznVZCHsNCqcOf1KEF1aRVKIyJVYcF6C
- zzqfWixl+Q3WJrWPk/4M1qUKom0FunXINiyO8dMg=
-Date: Mon, 28 Oct 2019 14:15:41 +0800
+ b=BicByxo3CtsNd7n/zsZKv1iyV6JhcfcHGWYQ6toEw4HYp1HWwf7zGtiZ6WLZxEYpb
+ P1bALq/KSNVc02swIBd3gab1fH1XhxspQ6klaRekMPG5hBpghjKgeuuuGVXKw70daW
+ vKQl7R8Fur/w07XWZylLF1GAFOxm6fa853rKSfgI=
+Date: Mon, 28 Oct 2019 14:20:34 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Lucas Stach <l.stach@pengutronix.de>
-Subject: Re: [PATCH] arm64: dts: zii-ultra: add i210 ethernet node
-Message-ID: <20191028061540.GM16985@dragon>
-References: <20191021164200.31051-1-l.stach@pengutronix.de>
+To: Andrey Smirnov <andrew.smirnov@gmail.com>
+Subject: Re: [PATCH 2/3] ARM: dts: imx6qdl-zii-rdu2: Fix accelerometer
+ interrupt-names
+Message-ID: <20191028062033.GN16985@dragon>
+References: <20191022040500.18548-1-andrew.smirnov@gmail.com>
+ <20191022040500.18548-2-andrew.smirnov@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191021164200.31051-1-l.stach@pengutronix.de>
+In-Reply-To: <20191022040500.18548-2-andrew.smirnov@gmail.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191027_231600_799738_732B655A 
-X-CRM114-Status: GOOD (  14.35  )
+X-CRM114-CacheID: sfid-20191027_232056_312892_7F1D1BF8 
+X-CRM114-Status: GOOD (  10.00  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,55 +78,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabio Estevam <festevam@gmail.com>, kernel@pengutronix.de,
- linux-arm-kernel@lists.infradead.org, patchwork-lst@pengutronix.de
+Cc: linux-kernel@vger.kernel.org, Fabio Estevam <festevam@gmail.com>,
+ Chris Healy <cphealy@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 21, 2019 at 06:42:00PM +0200, Lucas Stach wrote:
-> Used by the bootloader to patch in the correct MAC address for
-> the ethernet adapter.
+On Mon, Oct 21, 2019 at 09:04:59PM -0700, Andrey Smirnov wrote:
+> According to Documentation/devicetree/bindings/iio/accel/mma8452.txt,
+> the correct interrupt-names are "INT1" and "INT2", so fix them
+> accordingly.
 > 
-> Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
-> ---
->  arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi | 11 +++++++++++
->  1 file changed, 11 insertions(+)
+> While at it, modify the node to only specify "INT2" since providing
+> two interrupts is not necessary or useful (the driver will only use
+> one).
 > 
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi b/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi
-> index 087b5b6ebe89..7933c685fe6a 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi
-> @@ -475,6 +475,17 @@
->  	         <&pcie1_refclk>;
->  	clock-names = "pcie", "pcie_aux", "pcie_phy", "pcie_bus";
->  	status = "okay";
-> +
-> +	host@0 {
+> Signed-off-by: Fabio Estevam <festevam@gmail.com>
+> [andrew.smirnov@gmail.com modified the patch to drop INT1]
+> Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
+> Cc: Fabio Estevam <festevam@gmail.com>
+> Cc: Chris Healy <cphealy@gmail.com>
+> Cc: Lucas Stach <l.stach@pengutronix.de>
+> Cc: Shawn Guo <shawnguo@kernel.org>
+> Cc: linux-arm-kernel@lists.infradead.org,
+> Cc: linux-kernel@vger.kernel.org
 
-Where is the bindings documenting this child node of pcie device?
-
-> +		reg = <0 0 0 0 0>;
-> +
-> +		#address-cells = <3>;
-> +		#size-cells = <2>;
-> +
-> +		i210: i210@0 {
-
-Can we have generic node name for it?
-
-Shawn
-
-> +			reg = <0 0 0 0 0>;
-> +		};
-> +	};
->  };
->  
->  &pgc_gpu {
-> -- 
-> 2.20.1
-> 
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
