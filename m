@@ -2,86 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF9ADE6A8A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 02:38:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33AAEE6A9A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 02:59:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+tNjCeBxBWWv6OBERqKhFkGhk0Ate6b9goAn0fvSCZA=; b=Dfpu4EIVdxaC+W
-	njmZDklCwjlF3ZC9VEVVlIP4vkihfP/KlSwIC4sEmOWDOg8NCo4howsRYOsb+6WZIOphy3Vn6ZAJg
-	LQ3YF0Uo8sm1asslK+wWgxIa+VhhIIPEjFuYXFHeR5Q5RmE1NvgVUn2mP4O3C36DPZAYmZXG7dvwO
-	ZiU0ro21hmDEarG7eGo95Rk2PHoWBMYZQVDtJ/CeNs03bfFnxpUnZvG8v1RpAhW7Kfm02l5QtYGpa
-	vGBwFdGdzG8E7Oj2f00Qw8pTgvnfqWjI/9Hghok9EwmMRsEPnvegj3fOP9bqdwqKxnuJ3YGDsIBXP
-	MsW8BxqDWgKQkwegNmkw==;
+	List-Owner; bh=Ja3QkZHEYCVxN4TGRy3wOYxbWVHdQxSr5IYLDnWI+dc=; b=LRhHfFyM0naOhm
+	jsrMHGGjl+x4JiEaHKqt7rs3tmai9oKkz2T9jKxgkxTbiOD139R9qzElnykzM/Ev/LI4wgThvarXv
+	SQ7vyL2Yr23goWPpvWpms1kq3b4Ujk9mTjfdDJTQFIQ2Ov8GopyTVFuSFAzDIvFVAr1BR1bwazwAW
+	BRbtAqoyFckWW+4Jkq/C1reN6N7Q9RT/8S0RBHIGEz6Z62aO05+j0AfoZ+9SqEi/ODPQ1lTEL2AXM
+	F+JmzxcdGUjYlp5gisZeQgZnsN9m5VITcCiyQnWuFDSBS5hzPfMcSRtGtfKvmmvQ+aNgz0EN5jEJH
+	QPUqI9h3sbErPBOZ1fEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOtzD-0002Tz-MI; Mon, 28 Oct 2019 01:38:23 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1iOuJl-0000iB-Ni; Mon, 28 Oct 2019 01:59:37 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOtz3-0002TV-Hz
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 01:38:14 +0000
-Received: by mail-ed1-x543.google.com with SMTP id a21so6615359edj.8
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 27 Oct 2019 18:38:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=zncCQd975Gz2HvK2SjXCCS9OAbsNjkyZCeZT6yaW7zQ=;
- b=MJFVIuDrAyz9pDLgpUUl9PU1eZbzKuPQNiEAzcQW1qYjBZjuoWDjrqGy9uWwBC66Cd
- dI3yEdlYrJi9nlHlHzafl7i8WvKj/XLHxPbDWEtsBpUBMumEUFvInIYQnVTLK+ti+7tO
- BA7mgqjIeTWS1O1WIN27xKabnFwlPMrDCiIPvQUPLPAq7HMw8gsza012bODYpDuy2/vD
- taxlG8IqDmUdHTSnMyFv5PMGM92EtSdVF5rDTJo3CJh1YqlOtU4Zj+9HaR42o5jK8e3s
- jenl27VKb6t9BWfqRxFCO0FEO8G9hJFf5yNF0aRrMh28ErjfYLPp42bc4NbualuBRcp/
- eA5Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=zncCQd975Gz2HvK2SjXCCS9OAbsNjkyZCeZT6yaW7zQ=;
- b=KRJCadBJEpt/69RXBVSAhg/GI2lHy+VBjLuloQkQ4Lre3rHjOujYikRdF1x3tVPUV+
- ItnkBVq4ZIRNBBfKqegYh1nAFTimcUb/Fy9SfGpeTIR8QJgamclE+8pPLb+Sn/Xgh4Lx
- YZvXyrGKWInnZUnc1AKF0Xw0qg3RbIHRRKMZ/Vi1xtNNvEeqOC6mAJP/Jd64qWmwzhCd
- iaJOyPFNIYS5Pe3ItbJfOx7/fzggraOP5OcNn5HdLKi1wFvfE+BHgyb92/JBrankoABD
- rLvX9dblwohyBSmxeI8Qnzp8ehVM4hQS27bsjIXGrYqpveQn443SW9SN3VU7Mj5f4QKn
- p2VA==
-X-Gm-Message-State: APjAAAX/pYpeYn9wyHb646Gei5pj94s3sfNW9NTs7KvfeyyvAdFLxtLD
- hnsuZkjhy6w6spauZEeqD2kyAHjgKNKX86x7XHI=
-X-Google-Smtp-Source: APXvYqzgnaDiUcH3IYDfQVBOpeExgcPu32wDgAZkOKAPutypEopBXKs6avGlVlBxf+yhnsEi3FfGHSOF7QMkbQk2/Ug=
-X-Received: by 2002:a17:906:1d4d:: with SMTP id
- o13mr10006173ejh.196.1572226690648; 
- Sun, 27 Oct 2019 18:38:10 -0700 (PDT)
+ id 1iOuJd-0000hd-Fs
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 01:59:30 +0000
+Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 478B120659;
+ Mon, 28 Oct 2019 01:59:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572227967;
+ bh=jqVh23h+CD77uK0OJQVCZmC8k+bmeYBTtr33TMiIZHo=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=OdoKlFz0S/FMSzY+z6ntg5+Jg25HpQsKdFJGUY+U/GSmkbEdjAWXPdfUC5eRx1Xi4
+ haSkbLvbD5FagtLWO8gccV/k3rWlSxBod3xAyf5ooqwmLFVGQjaJgbmJpNA8QABgrO
+ vargvpLJVxmN5FAeihkLik0gDENqrNLVU1niTyUc=
+Date: Mon, 28 Oct 2019 09:59:10 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: kbuild test robot <lkp@intel.com>
+Subject: Re: [shawnguo:imx/drivers 3/4] soc-imx8.c:undefined reference to
+ `__arm_smccc_smc'
+Message-ID: <20191028015909.GB16985@dragon>
+References: <201910270058.bvI213X9%lkp@intel.com>
 MIME-Version: 1.0
-References: <20191017025058.31528-1-hslester96@gmail.com>
- <CAHp75Vd2SMERjtvNumxAF1HSp8GSThmcyx96zkFzUXKwnD5d2Q@mail.gmail.com>
- <CANhBUQ2yxGbjk_DgXbip=TPT=evzA5naoJSY9t1_Ep47e9oupw@mail.gmail.com>
- <CAHp75VeLyTi=gqfNr-=Tg36yQs_fYG__iQAxAEKdks0mqsTbug@mail.gmail.com>
- <CANhBUQ1CnCHiY8tkCMcXZ3DAPcfnQZgfA_Fj4qf3yYBKGg10Wg@mail.gmail.com>
- <CAHp75Vdb19w02zKHo1tqAtF8TmT=z6Ye2YFfxVw_TGtO3VxfLA@mail.gmail.com>
-In-Reply-To: <CAHp75Vdb19w02zKHo1tqAtF8TmT=z6Ye2YFfxVw_TGtO3VxfLA@mail.gmail.com>
-From: Chuhong Yuan <hslester96@gmail.com>
-Date: Mon, 28 Oct 2019 09:38:00 +0800
-Message-ID: <CANhBUQ2WJaFrk5JBDbTjaTM5mv0ebwdcHBoR8ODm28X_mOukLA@mail.gmail.com>
-Subject: Re: [PATCH] spi: pxa2xx: Add missed security checks
-To: Andy Shevchenko <andy.shevchenko@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <201910270058.bvI213X9%lkp@intel.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191027_183813_619766_04BABC69 
-X-CRM114-Status: GOOD (  19.21  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191027_185929_555379_D77047CA 
+X-CRM114-Status: GOOD (  10.59  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (hslester96[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (hslester96[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -89,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,63 +77,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Haojian Zhuang <haojian.zhuang@gmail.com>,
- linux-spi <linux-spi@vger.kernel.org>, Mark Brown <broonie@kernel.org>,
- Daniel Mack <daniel@zonque.org>, Robert Jarzmik <robert.jarzmik@free.fr>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Leonard Crestez <leonard.crestez@nxp.com>, kbuild-all@lists.01.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 18, 2019 at 10:04 PM Andy Shevchenko
-<andy.shevchenko@gmail.com> wrote:
->
-> On Fri, Oct 18, 2019 at 2:37 PM Chuhong Yuan <hslester96@gmail.com> wrote:
-> > On Fri, Oct 18, 2019 at 7:14 PM Andy Shevchenko
-> > <andy.shevchenko@gmail.com> wrote:
-> > > On Fri, Oct 18, 2019 at 1:39 PM Chuhong Yuan <hslester96@gmail.com> wrote:
-> > > > On Fri, Oct 18, 2019 at 5:35 PM Andy Shevchenko
-> > > > <andy.shevchenko@gmail.com> wrote:
-> > > > > On Fri, Oct 18, 2019 at 8:59 AM Chuhong Yuan <hslester96@gmail.com> wrote:
->
-> > > > > I'm not sure they are mandatory for all platforms.
-> > > > > To be on the safe side, you simple need to add _optional() to the both
-> > > > > call along with above change.
-> > > > >
-> > > >
-> > > > As I know, this is the only one in spi which does not have a check for
-> > > > devm_clk_get.
-> > >
-> > > For some it still may be optional. That's why better to check it and
-> > > mention in the commit message.
-> > >
-> > > > Even if add _optional(), they still may return errors and need security checks.
-> > >
-> > > Of course, see "along with" in my previous comment.
-> > >
-> >
-> > Got it. I will send version 2 in which both _optional() and security
-> > checks will be added.
->
-> Let me be clear. I didn't check if _optional() needed or not. You need
-> to investigate this before sending new verison.
-> And in either case this should be explained in commit message.
->
+On Sun, Oct 27, 2019 at 12:15:02AM +0800, kbuild test robot wrote:
+> tree:   https://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git imx/drivers
+> head:   426553bb2e352332919ae762e25f9e76c1f5c851
+> commit: d544f9fbd28c3b5993dd193c0b4816f80788f9c3 [3/4] soc: imx8mq: Read SOC revision from TF-A
+> config: arm-multi_v5_defconfig (attached as .config)
+> compiler: arm-linux-gnueabi-gcc (GCC) 7.4.0
+> reproduce:
+>         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+>         chmod +x ~/bin/make.cross
+>         git checkout d544f9fbd28c3b5993dd193c0b4816f80788f9c3
+>         # save the attached .config to linux build tree
+>         GCC_VERSION=7.4.0 make.cross ARCH=arm 
+> 
+> If you fix the issue, kindly add following tag
+> Reported-by: kbuild test robot <lkp@intel.com>
+> 
+> All errors (new ones prefixed by >>):
+> 
+>    drivers/soc/imx/soc-imx8.o: In function `imx8mq_soc_revision':
+> >> soc-imx8.c:(.init.text+0x14c): undefined reference to `__arm_smccc_smc'
 
-I have checked this file again and found ssp->clk is used by clk_get_rate in
-pxa2xx_spi_probe.
-Therefore, it should not be NULL and _optional cannot be used here.
-Besides, ssp->irq is also used in pxa2xx_spi_probe.
-Hence, I think this patch is fine.
+I just took the commit out from imx/drivers branch.
 
-Regards,
-Chuhong
-
-> --
-> With Best Regards,
-> Andy Shevchenko
+Shawn
 
 _______________________________________________
 linux-arm-kernel mailing list
