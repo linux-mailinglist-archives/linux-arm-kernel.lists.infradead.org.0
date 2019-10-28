@@ -2,53 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC4F9E6B15
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 03:50:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1717E6B1D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 03:51:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XgoHKk5KkSCYGf/c0D76fKM6mobEIBDP5OoSfl+vubk=; b=KRlUMXujUZC+QM
-	t+fyWduWl91fOoDHJmgcaNt9rLH3DD0B6w7Bcty7KGclOwFAW6W5LgGH85x7/4xoY42snuREEq38v
-	7li6jcsmcGEu2DTJ/4RCOA97HlBM4dilTgqSHKafQEJ5eIrl0f+FbMCF+f3+Eb1t8lIqPpu1NgNo0
-	ZujwD866QAas+yWdRk3ciR64+1V+yecsg30pIUGZgOm6nUFZ3aDdBovfDeNu4FODzLC9n8UAhHl8X
-	fT0Uf68lL/NRQWQTwE0GNgZBJNDR+docqmlSTzv/MwggY32a5JRwXVHJTdq3m8MfvfJu70pVRb6uc
-	UYAN0a0bMHriJz85GBWg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qtjeAWwAJY/00dI98zeRFIuvaQ4iXfzMb/0zgYr98Sw=; b=hdnTgGgfYebfBp
+	bcYduCIyOr38lbV+9g094mOvDN3ivuYBzCJtREf/W0++9qSHIyRZraDBj4YX6h7W2ScX3bb/1GbnL
+	SZPTZ+wToaGUAWc1rvgt6LzDBZfKtKnqtNUe3KqND5UhdK++LsfqRmy+4LO4AvIEI9kcpdi9a0W0q
+	V5fyUfaJx1ESqW1nCI9jWoYDDrGmiRcbxnJ7QCbzE2xlxEYjZx7TkblSfNDBxVAHVzc5Qsiy8UIzZ
+	RNAVYP2RMYrF2hbS690XSM6COil9AXQ5YgfrvquGGdRFRz02KopuszrIkxaCkPFBzxLl3r9b1xo2B
+	7lzo7K5DUresUXHMr0iQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOv71-0002LH-PY; Mon, 28 Oct 2019 02:50:31 +0000
+	id 1iOv8D-0004Cz-A8; Mon, 28 Oct 2019 02:51:45 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOv58-0000g8-8c; Mon, 28 Oct 2019 02:48:36 +0000
-X-UUID: 1c8ac7e87e4b44019c6b182045cce5e5-20191027
-X-UUID: 1c8ac7e87e4b44019c6b182045cce5e5-20191027
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ id 1iOv5P-0000yI-Tc; Mon, 28 Oct 2019 02:48:53 +0000
+X-UUID: 6098ce8db3e342d8bae3d00bb0ef11dd-20191027
+X-UUID: 6098ce8db3e342d8bae3d00bb0ef11dd-20191027
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <weiyi.lu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1657886559; Sun, 27 Oct 2019 18:48:40 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ with ESMTP id 2010929191; Sun, 27 Oct 2019 18:49:01 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Sun, 27 Oct 2019 19:48:25 -0700
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 28 Oct 2019 10:48:24 +0800
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 28 Oct 2019 10:48:25 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
  Frontend Transport; Mon, 28 Oct 2019 10:48:25 +0800
 From: Weiyi Lu <weiyi.lu@mediatek.com>
 To: Nicolas Boichat <drinkcat@chromium.org>, Matthias Brugger
  <matthias.bgg@gmail.com>, Rob Herring <robh@kernel.org>
-Subject: [PATCH v8 00/14] Mediatek MT8183 scpsys support  
-Date: Mon, 28 Oct 2019 10:48:04 +0800
-Message-ID: <1572230898-7860-1-git-send-email-weiyi.lu@mediatek.com>
+Subject: [PATCH v8 01/14] dt-bindings: mediatek: Add property to mt8183
+ smi-common
+Date: Mon, 28 Oct 2019 10:48:05 +0800
+Message-ID: <1572230898-7860-2-git-send-email-weiyi.lu@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
+In-Reply-To: <1572230898-7860-1-git-send-email-weiyi.lu@mediatek.com>
+References: <1572230898-7860-1-git-send-email-weiyi.lu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191027_194834_346392_C34D2DFD 
-X-CRM114-Status: GOOD (  10.72  )
+X-CRM114-CacheID: sfid-20191027_194852_254346_C8CD7D15 
+X-CRM114-Status: UNSURE (   9.42  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -78,57 +82,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series is based on v5.4-rc1
+For scpsys driver using regmap based syscon driver API.
 
-changes since v7:
-- reword in binding document [PATCH 02/14]
-- fix error return checking bug in subsys clock control [PATCH 10/14]
-- add power domains properity to mfgcfg patch [PATCH 14/14] from
-  https://patchwork.kernel.org/patch/11126199/
+Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
+---
+ .../devicetree/bindings/memory-controllers/mediatek,smi-common.txt      | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-changes since v6:
-- remove the patch of SPDX license identifier because it's already fixed
-
-changes since v5:
-- fix documentation in [PATCH 04/14]
-- remove useless variable checking and reuse API of clock control in [PATCH 06/14]
-- coding style fix of bus protection control in [PATCH 08/14]
-- fix naming of new added data in [PATCH 09/14]
-- small refactor of multiple step bus protection control in [PATCH 10/14]
-
-changes since v4:
-- add property to mt8183 smi-common
-- seperate refactor patches and new add function
-- add power controller device node
-
-Weiyi Lu (14):
-  dt-bindings: mediatek: Add property to mt8183 smi-common
-  dt-bindings: soc: Add MT8183 power dt-bindings
-  soc: mediatek: Refactor polling timeout and documentation
-  soc: mediatek: Refactor regulator control
-  soc: mediatek: Refactor clock control
-  soc: mediatek: Refactor sram control
-  soc: mediatek: Refactor bus protection control
-  soc: mediatek: Add basic_clk_id to scp_power_data
-  soc: mediatek: Add multiple step bus protection control
-  soc: mediatek: Add subsys clock control for bus protection
-  soc: mediatek: Add extra sram control
-  soc: mediatek: Add MT8183 scpsys support
-  arm64: dts: Add power controller device node of MT8183
-  arm64: dts: Add power-domains properity to mfgcfg
-
- .../memory-controllers/mediatek,smi-common.txt     |   2 +-
- .../devicetree/bindings/soc/mediatek/scpsys.txt    |  20 +-
- arch/arm64/boot/dts/mediatek/mt8183.dtsi           |  63 +++
- drivers/soc/mediatek/Makefile                      |   2 +-
- drivers/soc/mediatek/mtk-scpsys-ext.c              |  99 ++++
- drivers/soc/mediatek/mtk-scpsys.c                  | 575 ++++++++++++++++++---
- include/dt-bindings/power/mt8183-power.h           |  26 +
- include/linux/soc/mediatek/scpsys-ext.h            |  39 ++
- 8 files changed, 745 insertions(+), 81 deletions(-)
- create mode 100644 drivers/soc/mediatek/mtk-scpsys-ext.c
- create mode 100644 include/dt-bindings/power/mt8183-power.h
- create mode 100644 include/linux/soc/mediatek/scpsys-ext.h
+diff --git a/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-common.txt b/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-common.txt
+index b478ade..01744ec 100644
+--- a/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-common.txt
++++ b/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-common.txt
+@@ -20,7 +20,7 @@ Required properties:
+ 	"mediatek,mt2712-smi-common"
+ 	"mediatek,mt7623-smi-common", "mediatek,mt2701-smi-common"
+ 	"mediatek,mt8173-smi-common"
+-	"mediatek,mt8183-smi-common"
++	"mediatek,mt8183-smi-common", "syscon"
+ - reg : the register and size of the SMI block.
+ - power-domains : a phandle to the power domain of this local arbiter.
+ - clocks : Must contain an entry for each entry in clock-names.
+-- 
+1.8.1.1.dirty
 
 
 _______________________________________________
