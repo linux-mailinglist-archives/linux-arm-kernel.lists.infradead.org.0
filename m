@@ -2,77 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E79AE7C76
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 23:41:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB40BE7C7B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 23:44:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8wvjm797EK4WdCHC+rNHpZO4Vm0PakSpg2QqheQs5xw=; b=nMVZBxFyEKH02W
-	xiRaQns24o6nrjkjc5VDQFDDui7CNlFo/NX0pF6UFeCAOYTY3mEd55C+shdpLU/vrA5C3hbyFcjDN
-	7fk9mJM39hEHQ2c4bwZ/Tf/XFP7rW14SZuG+MtkmxPDRya6363JBUEFEp5rOgz0KYojCXJ2uSBaCm
-	GC+by7NhR2ruGM4Yn5hTt1yCtEkNtM6U/tPoW5eXlC7N/OClVBUfxuImS6FWyBbaPOW9z3viPT462
-	icwAzFOpNrGa7BGRFn8ipAHSBtN2KYYQcQb0kDJqyjeNN6EyOVYn/nGURzXQrdJ2YqA0xa9YaoSgR
-	wXr6jjQwsHVxujV+77rQ==;
+	List-Owner; bh=+ZyPsS+ny1scHIL18LXZBuR7/+Kor8RrHaE7kTFRo2I=; b=gbdOhJgf5GQPuN
+	o5GrW6MQZaHqsgzArFevszGU18BJnecIhxRH/b3if+kyO75mFI+uYW2qJlUHv8fIy00tl7+wJOcjX
+	U5JNBmQ7pEpvNV6j5hkUp9j6fqEZd0w2TZnjm0rrlltS2WzkZLGzuIBXmv0dQbL+uPjI4UatNGkGD
+	XytzNs6k+owRv5VjXm7qJZ1nU3W+6gyBNkdF3VL89Ot/1LUgOq4PoOB99lhbhYzGhBe5Ch5MFgSv3
+	lBY6psUAjxslPq9zxYGmAaJGIO9t4t281SAbzlxDWfrK633F3PlG1bDY77L5N8jyBRVH6dz097Ypw
+	/eMh6BLBpG3IfcJDW69A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPDhE-0003YR-Ce; Mon, 28 Oct 2019 22:41:08 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1iPDkN-0003wt-Ew; Mon, 28 Oct 2019 22:44:23 +0000
+Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPDgz-0003Xv-Hk
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 22:40:55 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id f8so1326520vsg.1
+ id 1iPDk9-0003w7-V9
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 22:44:12 +0000
+Received: by mail-il1-x141.google.com with SMTP id m16so9615696iln.13
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 28 Oct 2019 15:40:52 -0700 (PDT)
+ Mon, 28 Oct 2019 15:44:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=LbHWlc0+nebJGqRHkft0So8Qf87tbPWPZEk2OCB5L7k=;
- b=uoJWfdHBg4e2UJvDhf80dB6X0XM296yPXsBBn8t1aMMhnV0Pg6grSjQP1tA43WMskh
- XQL+YEgY9PWdYNA1/44uXNmZpLiQr74EbBMO0kd4dmU5U+IMpLd1+M+CgII+vKGdSZIH
- EDAKM20nlfrWO8zLEv5ssqfvicW1SKpoIuDbY7b2aCpX5r7Gz5u0Kl1CCXQKITvU3wRY
- LnXwkWgTpdCHvBd5UHWQAv9i0MUNv5KXskdLGafGW4I8h6IZ7tRji4sYIqBgdXXAhzlO
- NoHAqlkiHMqh86odCWrKAgptg42lB75m5wUj+Ri3GHzOgBlnKT6RxbEoY9O/Z0/Hyt0U
- P8FA==
+ :cc; bh=7oyJtVgOCGvHRM1kKW81IfnFRuKk0Wt8gUJq9lHt3b4=;
+ b=tN6sRznXRLbhX3REMNJELP+zf+OcM7vU768K/48hHxEPfdb9gott1G1wkMRx1cRVDs
+ 9ArmBrOxmh4kQnPF6szwEWfxAU9YK1t26gYX6fZzUMXXKC0gDcWmMC+rWHiGAQedQNYl
+ 8AoysUgiFKOgexGfYA6/Zzf2NU38kAnPf/deP+KRw4zC4AlAlBCfuMEwWDiTdRZxRyXs
+ 1NDBRVe4Wsku6izPZ+f0bSoMwHhmXj+6D5NxVb/I5YIbQF7qK2vCwKbAVC6ypk3vq4Kx
+ eAHUBQ6B9bcYEkt+P24Bi2uLgBT5dI3pRX6xGsWBiKjG9qWRDgIArrzKqbKaGzHCAXLB
+ XxLA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=LbHWlc0+nebJGqRHkft0So8Qf87tbPWPZEk2OCB5L7k=;
- b=Ynj9DiGgeSGpqvysPhy7c/AkjuqoH9h2TqB5fAI4fAp+2O+5JNlJ8lYqCmTeGYkK5U
- CIRJI/lNeYYs5XaEh1LTfTTvdVl0Pu1nZYiwevXX4u+jaF2fvUOYZLdSRWq18nAzemAj
- oJbZea6GamS0C8kTkk9acb/ERa3/IpvyIn92r4gZe1Lb5JAUeEs29m0eIWrU9MAdOYXu
- oR51pwX/N3Qb29CpjAcYu8UtFjQUmd6aywetCBZq4Bzdprh2xjVwIsri5utlTi49YZI6
- aj3psWuW/oiLmAQsmU15sOAdHjfcmDEtjBnYX+i/oFFu8B3HGLkE32ZH9GpNIsfWgiPd
- I/nw==
-X-Gm-Message-State: APjAAAVu0J7Is/4p9466TlEbvFKzTLjImk687mNwILe2/baipIG7gwxG
- OX9Yxh/lx2XoNNpvV08dxfhEWCdWBDB8l6WXp9ITDA==
-X-Google-Smtp-Source: APXvYqwvgrSKNvgD0SzVjUsiTobckOY2eSt0wr5gmUCcZBLHvL1zQq+ew7oqw1cZhVYfkSqkHRRumj6qS7VkI+zjNOo=
-X-Received: by 2002:a67:fb5a:: with SMTP id e26mr6327260vsr.200.1572302452026; 
- Mon, 28 Oct 2019 15:40:52 -0700 (PDT)
+ bh=7oyJtVgOCGvHRM1kKW81IfnFRuKk0Wt8gUJq9lHt3b4=;
+ b=VxwWbtl+9qWN2KLDYsvBNjmm4L38xT0YPDunVcCQBJDaOlbAqegmOem7IComqRv0xv
+ ofTteR+aIcyuURuZTmPdFBFGaaOsX/UsS3pnOo26TGJFXLOqM9OcNqh5C0VY661RVyCB
+ TN+O4ZcPDJISSlGhYylQgrKs3f7dlIYpknCHTOzV1p/nGDwQmrNu2/HqqIUZMUg+os9b
+ h+NEa5n6UPOE8QSreqSdPluRDtCmI28ZLyBm57ZaUS6hjzkhPrWx+XJ2e3GRAerxIaX5
+ 6x/CK/G1Jnl5TV/ukC8h+ja6fv2ycJP6tblrxLGidveVkXflebyw/rHvTJFvri/xLPOp
+ vxTg==
+X-Gm-Message-State: APjAAAVMEeb0+vnc7ga9TP6FU9FHNfLjWLe9rBC+i0Rtq52t4qc51LfZ
+ o97JTOwsWtj25z8guKmcEI39YBtQ1hEvWbbObq4nCg==
+X-Google-Smtp-Source: APXvYqxxqFSLW+YQvW3W23/F3AzTIeFNS+xtL17gJ51JW7PYCH8Mt+fklr3ia4Aa36RBcrAlCDvv3YOJ9LZ4GPNFxGs=
+X-Received: by 2002:a92:350a:: with SMTP id c10mr5629595ila.140.1572302648463; 
+ Mon, 28 Oct 2019 15:44:08 -0700 (PDT)
 MIME-Version: 1.0
-References: <20191010113937.15962-1-ulf.hansson@linaro.org>
- <20191010113937.15962-13-ulf.hansson@linaro.org>
- <20191024163257.GC22036@bogus>
- <CAPDyKFpwrfHj-az5x5dW92VAxi887FgWW6GKhfPv_kuj14TDjQ@mail.gmail.com>
- <20191027023414.GE18111@e107533-lin.cambridge.arm.com>
-In-Reply-To: <20191027023414.GE18111@e107533-lin.cambridge.arm.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Mon, 28 Oct 2019 23:40:16 +0100
-Message-ID: <CAPDyKFoyEY+bwYnekXV=DuL5rqbRVDPiYUUL0cTeVAa8xE7n4A@mail.gmail.com>
-Subject: Re: [PATCH 12/13] cpuidle: psci: Manage runtime PM in the idle path
-To: Sudeep Holla <sudeep.holla@arm.com>
+References: <20191005091614.11635-1-leo.yan@linaro.org>
+ <20191005091614.11635-4-leo.yan@linaro.org>
+ <20191011175353.GA13688@xps15> <20191022050304.GB32731@leoy-ThinkPad-X240s>
+In-Reply-To: <20191022050304.GB32731@leoy-ThinkPad-X240s>
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+Date: Mon, 28 Oct 2019 16:43:57 -0600
+Message-ID: <CANLsYkwx1Z2eFz4JqKe9UB8tFqpSdx-kakMHnL1rkUttLZeX1w@mail.gmail.com>
+Subject: Re: [PATCH v3 3/6] perf cs-etm: Support thread stack
+To: Leo Yan <leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_154053_615583_8992614B 
-X-CRM114-Status: GOOD (  28.49  )
+X-CRM114-CacheID: sfid-20191028_154410_583153_FF592F9E 
+X-CRM114-Status: GOOD (  33.20  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -95,108 +93,181 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
- Linux PM <linux-pm@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Kevin Hilman <khilman@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Coresight ML <coresight@lists.linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ Peter Zijlstra <peterz@infradead.org>, Ingo Molnar <mingo@redhat.com>,
+ Namhyung Kim <namhyung@kernel.org>, Jiri Olsa <jolsa@redhat.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, 27 Oct 2019 at 03:34, Sudeep Holla <sudeep.holla@arm.com> wrote:
+On Mon, 21 Oct 2019 at 23:03, Leo Yan <leo.yan@linaro.org> wrote:
 >
-> On Thu, Oct 24, 2019 at 07:00:38PM +0200, Ulf Hansson wrote:
-> > On Thu, 24 Oct 2019 at 18:33, Sudeep Holla <sudeep.holla@arm.com> wrote:
-> > >
-> > > On Thu, Oct 10, 2019 at 01:39:36PM +0200, Ulf Hansson wrote:
-> > > > In case we have succeeded to attach a CPU to its PM domain, let's deploy
-> > > > runtime PM support for the corresponding attached device, to allow the CPU
-> > > > to be powered-managed accordingly.
-> > > >
-> > > > To set the triggering point for when runtime PM reference counting should
-> > > > be done, let's store the index of deepest idle state for the CPU in the per
-> > > > CPU struct. Then use this index to compare the selected idle state index
-> > > > when entering idle, as to understand whether runtime PM reference counting
-> > > > is needed or not.
-> > > >
-> > > > Note that, from the hierarchical point view, there may be good reasons to
-> > > > do runtime PM reference counting even on shallower idle states, but at this
-> > > > point this isn't supported, mainly due to limitations set by the generic PM
-> > > > domain.
-> > > >
-> > > > Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
-> > > > ---
-> > > >  drivers/cpuidle/cpuidle-psci.c | 21 +++++++++++++++++++--
-> > > >  1 file changed, 19 insertions(+), 2 deletions(-)
-> > > >
-> > > > diff --git a/drivers/cpuidle/cpuidle-psci.c b/drivers/cpuidle/cpuidle-psci.c
-> > > > index 1510422c7a53..0919b40c1a85 100644
-> > > > --- a/drivers/cpuidle/cpuidle-psci.c
-> > > > +++ b/drivers/cpuidle/cpuidle-psci.c
-> > > > @@ -16,6 +16,7 @@
-> > > >  #include <linux/of.h>
-> > > >  #include <linux/of_device.h>
-> > > >  #include <linux/psci.h>
-> > > > +#include <linux/pm_runtime.h>
-> > > >  #include <linux/slab.h>
-> > > >
-> > > >  #include <asm/cpuidle.h>
-> > > > @@ -25,6 +26,7 @@
-> > > >
-> > > >  struct psci_cpuidle_data {
-> > > >       u32 *psci_states;
-> > > > +     u32 rpm_state_id;
-> > > >       struct device *dev;
-> > > >  };
-> > > >
-> > > > @@ -50,14 +52,28 @@ static int psci_enter_idle_state(struct cpuidle_device *dev,
-> > > >                               struct cpuidle_driver *drv, int idx)
-> > > >  {
-> > > >       int ret;
-> > > > -     u32 *states = __this_cpu_read(psci_cpuidle_data.psci_states);
-> > > > -     u32 state = psci_get_domain_state();
-> > > > +     struct psci_cpuidle_data *data = this_cpu_ptr(&psci_cpuidle_data);
-> > > > +     u32 *states = data->psci_states;
-> > > > +     struct device *pd_dev = data->dev;
-> > > > +     bool runtime_pm = (pd_dev && data->rpm_state_id == idx);
-> > > > +     u32 state;
-> > >
-> > > Wonder if we can have separate psci_enter_idle_state for OSI mode so
-> > > that all these runtime extra check can be reduced ? It will also make
-> > > sure there's no additional latency for PC mode because of OSI.
-> >
-> > Good idea, that's the plan. See previous answer.
-> >
-> > Perhaps if I add a patch on top, implementing your suggestion, would
-> > you be happy with that?
+> Hi Mathieu,
 >
-> No, I prefer to amend this itself to keep it easy to be able to bisect.
+> On Fri, Oct 11, 2019 at 11:53:53AM -0600, Mathieu Poirier wrote:
+> > On Sat, Oct 05, 2019 at 05:16:11PM +0800, Leo Yan wrote:
+> > > Since Arm CoreSight doesn't support thread stack, the decoding cannot
+> > > display symbols with indented spaces to reflect the stack depth.
+> > >
+> > > This patch adds support thread stack for Arm CoreSight, this allows
+> > > 'perf script' to display properly for option '-F,+callindent'.
+> > >
+> > > Before:
+> > >
+> > >   # perf script -F,+callindent
+> > >             main  2808          1          branches: coresight_test1                      ffff8634f5c8 coresight_test1+0x3c (/root/coresight_test/libcstest.so)
+> > >             main  2808          1          branches: printf@plt                           aaaaba8d37ec main+0x28 (/root/coresight_test/main)
+> > >             main  2808          1          branches: printf@plt                           aaaaba8d36bc printf@plt+0xc (/root/coresight_test/main)
+> > >             main  2808          1          branches: _init                                aaaaba8d3650 _init+0x30 (/root/coresight_test/main)
+> > >             main  2808          1          branches: _dl_fixup                            ffff86373b4c _dl_runtime_resolve+0x40 (/lib/aarch64-linux-gnu/ld-2.28.so)
+> > >             main  2808          1          branches: _dl_lookup_symbol_x                  ffff8636e078 _dl_fixup+0xb8 (/lib/aarch64-linux-gnu/ld-2.28.so)
+> > >   [...]
+> > >
+> > > After:
+> > >
+> > >   # perf script -F,+callindent
+> > >             main  2808          1          branches:                 coresight_test1                                      ffff8634f5c8 coresight_test1+0x3c (/root/coresight_test/libcstest.so)
+> > >             main  2808          1          branches:                 printf@plt                                           aaaaba8d37ec main+0x28 (/root/coresight_test/main)
+> > >             main  2808          1          branches:                     printf@plt                                       aaaaba8d36bc printf@plt+0xc (/root/coresight_test/main)
+> > >             main  2808          1          branches:                     _init                                            aaaaba8d3650 _init+0x30 (/root/coresight_test/main)
+> > >             main  2808          1          branches:                     _dl_fixup                                        ffff86373b4c _dl_runtime_resolve+0x40 (/lib/aarch64-linux-gnu/ld-2.28.s
+> > >             main  2808          1          branches:                         _dl_lookup_symbol_x                          ffff8636e078 _dl_fixup+0xb8 (/lib/aarch64-linux-gnu/ld-2.28.so)
+> > >   [...]
+> > >
+> > > Signed-off-by: Leo Yan <leo.yan@linaro.org>
+> > > ---
+> > >  tools/perf/util/cs-etm.c | 44 ++++++++++++++++++++++++++++++++++++++++
+> > >  1 file changed, 44 insertions(+)
+> > >
+> > > diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
+> > > index 58ceba7b91d5..780abbfd1833 100644
+> > > --- a/tools/perf/util/cs-etm.c
+> > > +++ b/tools/perf/util/cs-etm.c
+> > > @@ -1117,6 +1117,45 @@ static void cs_etm__copy_insn(struct cs_etm_queue *etmq,
+> > >                        sample->insn_len, (void *)sample->insn);
+> > >  }
+> > >
+> > > +static void cs_etm__add_stack_event(struct cs_etm_queue *etmq,
+> > > +                               struct cs_etm_traceid_queue *tidq)
+> > > +{
+> > > +   struct cs_etm_auxtrace *etm = etmq->etm;
+> > > +   u8 trace_chan_id = tidq->trace_chan_id;
+> > > +   int insn_len;
+> > > +   u64 from_ip, to_ip;
+> > > +
+> > > +   if (etm->synth_opts.thread_stack) {
+> > > +           from_ip = cs_etm__last_executed_instr(tidq->prev_packet);
+> > > +           to_ip = cs_etm__first_executed_instr(tidq->packet);
+> > > +
+> > > +           insn_len = cs_etm__instr_size(etmq, trace_chan_id,
+> > > +                                         tidq->prev_packet->isa, from_ip);
+> > > +
+> > > +           /*
+> > > +            * Create thread stacks by keeping track of calls and returns;
+> > > +            * any call pushes thread stack, return pops the stack, and
+> > > +            * flush stack when the trace is discontinuous.
+> > > +            */
+> > > +           thread_stack__event(tidq->thread, tidq->prev_packet->cpu,
+> > > +                               tidq->prev_packet->flags,
+> > > +                               from_ip, to_ip, insn_len,
+> > > +                               etmq->buffer->buffer_nr);
+> >
+> > Details are a little fuzzy in my head but I'm pretty sure
+> > we want trace_chan_id here.
+>
+> I spent some time to look into this question, and I think we don't
+> need to add extra info for trace_chan_id.
+>
+> The main reason is for CPU wide tracing, if one task is migrated from
+> CPU_a to CPU_b, if we append 'trace_chan_id' for the buffer number, then
+> it will tell the thread_stack that the buffer has been changed (or it
+> will be considered the trace is discontinuous), then thread stack will
+> be flushed.  Actually, this is not what we want; if a task is migrated
+> from one CPU to another, we still need to keep its thread stack if the
+> trace data comes from the same buffer_nr.
 
-Alright!
+After reviewing the code I conclude that using etmq->buffer->buffer_nr
+is the correct way to proceed.
 
-So I explored this a little bit more - and it actually forced me to
-re-order some of the patches in the series, but it seems to have
-turned out well.
+That being said you have sent this new set [1], which is a rework of
+some of the code you have in the current set.  As such the only way
+forward is for you to wait until [1] I has been applied and rebase the
+remaining work in this set on top of it.
 
-In the new approach I have taken, I haven't replaced the actual
-callback for the idle state, but instead make an early decision in
-psci_enter_idle_state(), based on one single read of a per CPU
-variable/struct. This tell what path to go.
+Let me know if you have questions.
 
-I am running some final test, but should be able to post a new version
-tomorrow. Although, if you still don't think the new approach is good
-enough, we can always invent a callback, that we can assign when the
-CPU is attached to PM domain. In any case, you will have to tell what
-you think, after I posted the new version, just wanted to give you a
-heads up.
+Thanks,
+Mathieu
 
-Kind regards
-Uffe
+[1]. https://patchwork.kernel.org/cover/11130213/
+
+>
+> To be honest, I struggled to understand what's the purpose for
+> 'buffer->buffer_nr', from the code, I think 'buffer->buffer_nr' is
+> mainly used to trace the splitted buffers (e.g. the buffers are splitted
+> into different queues so the trace data coming from different trace
+> chunk?).  Now I observe 'buffer->buffer_nr' is always zero since the
+> buffer is not used with splitted mode.  If later we support 1:1 map
+> between tracers and sinks, then we need to set 'buffer->buffer_nr' so
+> can reflect the correct buffer mapping, but we don't need to use
+> trace_chan_id as extra info at here.
+>
+> Please let me know what you think about this?  If you agree with this,
+> I will send out patch v4 soon with addressing other comments.
+>
+> Thanks,
+> Leo Yan
+>
+> > > +   } else {
+> > > +           /*
+> > > +            * The thread stack can be output via thread_stack__process();
+> > > +            * thus the detailed information about paired calls and returns
+> > > +            * will be facilitated by Python script for the db-export.
+> > > +            *
+> > > +            * Need to set trace buffer number and flush thread stack if the
+> > > +            * trace buffer number has been alternate.
+> > > +            */
+> > > +           thread_stack__set_trace_nr(tidq->thread,
+> > > +                                      tidq->prev_packet->cpu,
+> > > +                                      etmq->buffer->buffer_nr);
+> >
+> > Same here.
+> >
+> > > +   }
+> > > +}
+> > > +
+> > >  static int cs_etm__synth_instruction_sample(struct cs_etm_queue *etmq,
+> > >                                         struct cs_etm_traceid_queue *tidq,
+> > >                                         u64 addr, u64 period)
+> > > @@ -1393,6 +1432,9 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
+> > >             tidq->period_instructions = instrs_over;
+> > >     }
+> > >
+> > > +   if (tidq->prev_packet->last_instr_taken_branch)
+> > > +           cs_etm__add_stack_event(etmq, tidq);
+> > > +
+> > >     if (etm->sample_branches) {
+> > >             bool generate_sample = false;
+> > >
+> > > @@ -2593,6 +2635,8 @@ int cs_etm__process_auxtrace_info(union perf_event *event,
+> > >             itrace_synth_opts__set_default(&etm->synth_opts,
+> > >                             session->itrace_synth_opts->default_no_sample);
+> > >             etm->synth_opts.callchain = false;
+> > > +           etm->synth_opts.thread_stack =
+> > > +                           session->itrace_synth_opts->thread_stack;
+> > >     }
+> > >
+> > >     err = cs_etm__synth_events(etm, session);
+> > > --
+> > > 2.17.1
+> > >
 
 _______________________________________________
 linux-arm-kernel mailing list
