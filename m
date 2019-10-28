@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AAFE5E70D9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 12:56:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D444EE70E9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 13:04:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Sesx5w4wOzUOoaDrWJWFlRDp0V73LK29I9e75K5kNT0=; b=kiP6K/TLYj7+qA
-	q4J0PbFB4s/Y7PGPyywJqBNn6gvBZgpwutOZqDo1Xd8Ahxcpo2yIFHhAcM8jJSE+oipgYFSKl+X37
-	TCXK9fJSNyNt+eT2aL1nSu0l23m16qXCAuSFwheDCzhzskZZfQ3PEsTKss55k8m6qlspMsjSCDbiO
-	oXoQ6C2s5X1nEdxlgZJP9zSMSsVfOeLRZ3vILDyvzncWFsZc/feYbsyROhMza6/rjx+hlEwuEYbl2
-	frH8Tku/UJiCt1mjVHTNMDcVIqYdJnn0JG/Lx3E4z0BMbetTFUs4RVDPytCSFTkW1N+Z7bOBUv9+A
-	5OXJcyhuu4n617WywXcg==;
+	List-Owner; bh=apJyIa9Ek4t6dQ7ycWZ9Ey2Sc3tMGhq0I+UAj1wWKQc=; b=Sc+cUkHs4MdTu+
+	MknpKulMJRyr8OPcZftfo+dfqRFxUHSCVJXKyaJzihsEAHeP3p15ZciDZP0QbB+HJwb7QtBoWKzsN
+	EDEB+NcunKbrSVxbezLmf+/fh3k27xKuo8QQJQHGAg9+IdknuUxoXKLGyWpuw85Fv7EWM334YNRVo
+	7cY99sFfQwTwUvQFnRAxOeV6dmyGE5dR09e2kIbOmG7GE3o6kdmCfuRlERYQTxyzKJYMVCOVx09oC
+	rCAeUbyImaKVwHaIrt/oS3ge4tYdxnGr3Co1gnI25PUZ5Bdsf7hQ2881Hb9Se4ezJlQqcenUodg8D
+	Em1qTdI5LCFyo1FfSvWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP3dQ-0001BH-DM; Mon, 28 Oct 2019 11:56:32 +0000
+	id 1iP3lT-0003Qd-Fz; Mon, 28 Oct 2019 12:04:51 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP3dE-0001Ao-Gc
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 11:56:22 +0000
+ id 1iP3lE-0003QH-So
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 12:04:38 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9AD65208C0;
- Mon, 28 Oct 2019 11:56:17 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id AB0E32086D;
+ Mon, 28 Oct 2019 12:04:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572263780;
- bh=ljTbQ57eBv6hOS7R6h8+fc28GrufgVplH7iOe1LXZIk=;
+ s=default; t=1572264276;
+ bh=zyG5Y+J760QevxoHDxz7mE1bnyRmrOKKPhZ5PA7C9rA=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Hda+GHACNfvLa/XgYhhfvIIFJQ81mX1Tru0ki01z7DmayFta9FD3GFgvKMG854v6e
- t4lfVKsUM9fcfHWmOYsBTxe1XgV0PBhRNRWz1QjQOQTcxbi+sNgvLKq18m077H/kX6
- 6Az+dukdz1jkelrXNM4gYixmcs+D+HqeEEcb3J9E=
-Date: Mon, 28 Oct 2019 19:55:59 +0800
+ b=fvrCWX5eXTpSwK7e8QkRd6CBhvJLmx0M6tlFpxLkdQgcAGypUr9zCSZhlK8QncFFo
+ hTmQPJflORixz9sWSMg6F+lETVDM1LavajrkTe0GsObFqddORwrEwYIJLgK3/bbldk
+ T9rmdaclD8KTYVCtZFTg83lASTsYeh3WAuiZyr4E=
+Date: Mon, 28 Oct 2019 20:04:13 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Fabio Estevam <festevam@gmail.com>
-Subject: Re: [PATCH] ARM: imx_v6_v7_defconfig: Enable CONFIG_TOUCHSCREEN_DA9052
-Message-ID: <20191028115558.GH16985@dragon>
-References: <20191024225911.14032-1-festevam@gmail.com>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH 1/2] soc: imx8: Using existing serial_number instead of UID
+Message-ID: <20191028120411.GI16985@dragon>
+References: <1571986583-21138-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191024225911.14032-1-festevam@gmail.com>
+In-Reply-To: <1571986583-21138-1-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_045620_777927_1C8FA39D 
-X-CRM114-Status: UNSURE (   7.51  )
+X-CRM114-CacheID: sfid-20191028_050436_951323_78476434 
+X-CRM114-Status: UNSURE (   7.93  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -77,20 +77,23 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
- kernel@pengutronix.de
+Cc: aisheng.dong@nxp.com, abel.vesa@nxp.com, festevam@gmail.com,
+ s.hauer@pengutronix.de, linux-kernel@vger.kernel.org, Linux-imx@nxp.com,
+ kernel@pengutronix.de, viresh.kumar@linaro.org, leonard.crestez@nxp.com,
+ daniel.baluta@nxp.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 24, 2019 at 07:59:11PM -0300, Fabio Estevam wrote:
-> Enable the CONFIG_TOUCHSCREEN_DA9052 option, so that touchscreen
-> can be functional by default on imx53-qsb.
+On Fri, Oct 25, 2019 at 02:56:22PM +0800, Anson Huang wrote:
+> The soc_device_attribute structure already contains a serial_number
+> attribute to show SoC's unique ID, just use it to show SoC's unique
+> ID instead of creating a new file called soc_uid.
 > 
-> Signed-off-by: Fabio Estevam <festevam@gmail.com>
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-Applied, thanks.
+Applied both, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
