@@ -2,55 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E63DAE6F00
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 10:23:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA748E6F2B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 10:34:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:Subject:From:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NQf5qoC/90UPc9905fYVxOoXXKZlH6oLoswLjqMluwk=; b=sBvjJBtEy3WS5v
-	0lP+WJ63cPfWkz592FvlXw2GuJe495CacjJa7kO3FBusJLH1g8cRiqFBCHomTMG9pN0kqy6sNb5bJ
-	wNWZcS1040LyWNNh0qSLNu9s7Q8r0zxi4RODFQgZvgryrzhv5va85KL1f0Y0WyvZ1mTVnFWkKusXk
-	eqVQQJVraw3q83Svls+4W0c4hmStks+y5ApH7sd8hlRvoWYNBcLZKrlDLqeSj/Dc1fJuVgXrf0+r5
-	DKZNSwpAI5y0p/VLb3oWj3KJo4xk5pP256gzeWd75BlOfLEZAakQ26fRIESKpWjy0U/qGz2xOWyLD
-	B2eNhoSxkTqz6yLuE3kA==;
+	List-Owner; bh=Rx66ndQqfS3wnBNnH1GRLMYSslWCZOlMlkpBXdmI+NU=; b=iNxtqcjNHphhG5
+	o6FD3jbUdwvacoKKI4sWFCeaJl8vsillcyfPWL6rZ/8VhoH1kKGbHDv6Pdt368P+U6Tf+bju3RPhW
+	oGDVfhodoH6h7vkhV1g6KBoR6KfC2VFVNWWLYN0lSbuugG/VUq7gInXb0YDSvxeKE+A95M/uRSkZ+
+	W+ssxFJYzq41HmQSrX9Z66OqC6ZFS5W5ON4UJBvNU81aIUtSdeQzDd0vVP3v9QtwUlRXIkVKVT45f
+	QngxRC3U4E6uls5KhjhgFF9GMdYU+4u2vsHOzYEUk94zPb0VjCRxGhLuYpwrovFvMZsFQmAr41oFv
+	9/pGK2RhL5bbAMvbx6wA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP1FQ-0006fT-Th; Mon, 28 Oct 2019 09:23:36 +0000
+	id 1iP1Pr-0003NY-PI; Mon, 28 Oct 2019 09:34:24 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP1FI-0006eq-3C
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 09:23:29 +0000
+ id 1iP1Pd-0003NA-7n
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 09:34:10 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 939C82184C;
- Mon, 28 Oct 2019 09:23:27 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B2FB020B7C;
+ Mon, 28 Oct 2019 09:34:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572254607;
- bh=7vFP1rbJdmftvAdq7vGmkHKL0iF53uaF4eRXOlzf+wc=;
+ s=default; t=1572255248;
+ bh=wt7wY2XXzBNHgwGfoHCaCbW8jjguK6Tt1epg+hNe6t0=;
  h=In-Reply-To:References:Cc:From:Subject:To:Date:From;
- b=Vm39gxsGQSc0ZolbI/+HJzBWCVlLo+C5AijJxqcd/kROaCT1ffDNYwu6Spsl0bwkf
- c9+lySfEjCuFG3tvkXD3bl/De7YpF3ngkVFpK6GZ6UJsUggkSCTS7qzCGhfVIXPt7j
- qu/FIqkwHfOzJG+jBubs+SquX+xa0Emyhp6UAJqU=
+ b=tlf0EWQenuUC9Poai0zEw4HgO3ax5MtKBHBUkhuut7YO06cu+b0OyEsix0nYsm9+8
+ UoDMBDXEXSmyxjZdpI1kLeE2HBjj3lgpX+C+Z3pjr80un8JqhF9Y/Aen7PF3RPKbvc
+ 3Y2SrzIz3O8jaUtoll2lCgp/NByODB3xbfEM3qeE=
 MIME-Version: 1.0
-In-Reply-To: <20191018154201.1276638-35-arnd@arndb.de>
+In-Reply-To: <20191018154201.1276638-36-arnd@arndb.de>
 References: <20191018154052.1276506-1-arnd@arndb.de>
- <20191018154201.1276638-35-arnd@arndb.de>
+ <20191018154201.1276638-36-arnd@arndb.de>
 From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH 35/46] cpufreq: pxa3: move clk register access to clk
- driver
+Subject: Re: [PATCH 36/46] ARM: pxa: move smemc register access from clk to
+ platform
 To: Arnd Bergmann <arnd@arndb.de>, Daniel Mack <daniel@zonque.org>,
  Haojian Zhuang <haojian.zhuang@gmail.com>,
  Robert Jarzmik <robert.jarzmik@free.fr>
 User-Agent: alot/0.8.1
-Date: Mon, 28 Oct 2019 02:23:26 -0700
-Message-Id: <20191028092327.939C82184C@mail.kernel.org>
+Date: Mon, 28 Oct 2019 02:34:07 -0700
+Message-Id: <20191028093408.B2FB020B7C@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_022328_158179_66E81ED3 
-X-CRM114-Status: GOOD (  14.33  )
+X-CRM114-CacheID: sfid-20191028_023409_306371_138F8659 
+X-CRM114-Status: UNSURE (   8.71  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,71 +80,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, linux-pm@vger.kernel.org,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
- linux-clk@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Arnd Bergmann <arnd@arndb.de>, Michael Turquette <mturquette@baylibre.com>,
+ linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
+ Linus Walleij <linus.walleij@linaro.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Arnd Bergmann (2019-10-18 08:41:50)
-> The driver needs some low-level register access for setting
-> the core and bus frequencies. These registers are owned
-> by the clk driver, so move the low-level access into that
-> driver with a slightly higher-level interface and avoid
-> any machine header file dependencies.
+Quoting Arnd Bergmann (2019-10-18 08:41:51)
+> The get_sdram_rows() and get_memclkdiv() helpers need smemc
+> register that are separate from the clk registers, move
+> them out of the clk driver, and use an extern declaration
+> instead.
 > 
 > Cc: Michael Turquette <mturquette@baylibre.com>
 > Cc: Stephen Boyd <sboyd@kernel.org>
-> Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>
-> Cc: Viresh Kumar <viresh.kumar@linaro.org>
 > Cc: linux-clk@vger.kernel.org
-> Cc: linux-pm@vger.kernel.org
 > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> ---
 
-> diff --git a/drivers/clk/pxa/clk-pxa3xx.c b/drivers/clk/pxa/clk-pxa3xx.c
-> index 027b78183565..60a0db4f3790 100644
-> --- a/drivers/clk/pxa/clk-pxa3xx.c
-> +++ b/drivers/clk/pxa/clk-pxa3xx.c
-> @@ -16,6 +16,7 @@
->  #include <linux/of.h>
->  #include <linux/soc/pxa/cpu.h>
->  #include <mach/smemc.h>
-> +#include <linux/clk/pxa.h>
->  #include <mach/pxa3xx-regs.h>
->  
->  #include <dt-bindings/clock/pxa-clock.h>
-> @@ -79,6 +80,21 @@ unsigned int pxa3xx_get_clk_frequency_khz(int info)
->         return (unsigned int)clks[0] / KHz;
->  }
->  
-> +void pxa3xx_clk_update_accr(u32 disable, u32 enable, u32 xclkcfg, u32 mask)
-> +{
-> +       u32 accr = ACCR;
-> +
-> +       accr &= ~disable;
-> +       accr |= enable;
-> +
-> +       ACCR = accr;
-> +       if (xclkcfg)
-> +               __asm__("mcr p14, 0, %0, c6, c0, 0\n" : : "r"(xclkcfg));
+Acked-by: Stephen Boyd <sboyd@kernel.org>
 
-It's just a coprocessor instruction though? I don't see what this has to
-do with clks that we model in the kernel? Why can't it just be put in
-the cpufreq driver that calls it?
-
-> +
-> +       while ((ACSR & mask) != (accr & mask))
-> +               cpu_relax();
-> +}
-> +
->  static unsigned long clk_pxa3xx_ac97_get_rate(struct clk_hw *hw,
->                                              unsigned long parent_rate)
->  {
 
 _______________________________________________
 linux-arm-kernel mailing list
