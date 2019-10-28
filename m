@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C31BE7AEF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 22:07:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BFD0DE7AF9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 22:07:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=aLQl9gghqNpdSvlRP1RKozbnhc51aXvxefzBG6u4uU4=; b=OBHkb6OTC54uqX8Z0MIT+qDRG+
-	qf9jZXkb2V8LN777uDE4zQhnvHiXkWlloVmVm83P+YFiT0VWlHk41V2xQMJBySBb60mcNQFArg+vN
-	iGgB3KcoJGSQm3RigZlPvCauOJ779Okrh14VQ1DJISSZ7EyXavYvOekV6Q2jXc7ku8laE+EduLmCt
-	WP1es6j/sE2qHVsgNs0N8twCZrfn+3Fc499vi/MlAxCV7qUO202pVGdXrOqYDyVm5pQdIKCpsan6V
-	yZfor2viGoGkXgbL7iG+kN1j4r//yLByyulmRmiv6IwjRTrDdsGDQSw7oPvXwkCrlwgPvdS8x1FYE
-	VtUmswvA==;
+	bh=DJ+G4+p2A147OvXQwfv4cH8ZcRx9XkVkJcbp+fI+JYk=; b=IGqwwUN2pE2CnQ9urSm1CIjtMc
+	RTQuuiCs+X5RWoNA1BO6WVdO3eL/gnhx1AC9hXsnep//sIHtKiQSmafLYv2Rnfi6LO8uTb0DjHZon
+	lgZn8jyYgvcKTxBHNWO/fO1h+s+IuEOIaXNbUAqdGc6obGROL9p2sHOzSqKAPOm+InKJOvGa6FhCW
+	r7TuczAswbERkYxI26ZqFR2ei/FfHRhmMbCL3DZmyplsqOabKU/DsSuo7xgkCi6i8noEEM4wABhwH
+	1c0pRMi/epjHsQK2KvL253PVVgdeOhLcA/1fupXsj6+1VHLRPjakFJlftn8s4aPaIdZUsGLayOWlW
+	K7GAR3nA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPCEK-00084T-Ai; Mon, 28 Oct 2019 21:07:12 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iPCEd-0008KF-6E; Mon, 28 Oct 2019 21:07:31 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPCDG-0007TM-LG
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 21:06:08 +0000
-Received: by mail-wr1-x444.google.com with SMTP id a11so11377372wra.6
+ id 1iPCDH-0007Tg-Ha
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 21:06:09 +0000
+Received: by mail-wm1-x344.google.com with SMTP id g24so403945wmh.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 28 Oct 2019 14:06:06 -0700 (PDT)
+ Mon, 28 Oct 2019 14:06:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=HzpPHgz9dkPSBTYUxRiI5N3ILdBG2Y7xG5fdNi+CmCc=;
- b=n0bvaGSjcdm/n45EiluVOG4AFB7gD0MPIRsc9+ExLOlf95yU+Kh2aP0sBqtAI65Oje
- UI559g1TCAZjdGhIXtuL5Uw2TSU3U1tljgnLdt78YFaVCsugwccldmNW5IIRHMv1pSMM
- iNxLx2d4vvfVH859fXX7ZOZXfxhv5Wx0fkfaWZD4cCzNI056eMVSXDaQeBXzfzk52Psh
- wN/3e7MUW6L4UJyR1iFMilspC/8EJCVAJdRo8tof4+mnyYsoRAmdYJYj6JyAWwKNIYNz
- X+oLXH8QJHW0C4Wna6USrQVxiYU7+pn6klAdBYi+Gm6i/GEijMO30OgppJ/ZUOT8eJHz
- o5iA==
+ bh=Wt6X/0E8OEKNHUN7g3xU4aGMZDZ5EHD7/+dGHnvwGeQ=;
+ b=YGEP7iPJRvBw4yNdXLHPDdf8+ai816ix7N7Bnmn+DtIkNntfuBxATktwcBQdTTghzc
+ S139y8vtzCo1l3lkEZrn9e7Qr7TBeIzmnC/WIwyB/bnmVcS9v83cv/FhRIC/Yn8ghqNo
+ c0RfSeGteHKp1y5HFIN2GCSf41EfH3JyBMQLdT45+h0nv7FeJ9ldioAIdVdbTRNeUu7X
+ lCCe2D7wL/jdh7iRz5lkmcKKX43h5srQf5ayTjDEeb5Vaert877x5FQFZjbZS8V9MMGH
+ CaT1RCOM7OWVqzXjfX4aRvXG7uuuirukdEeukUf2dmStasS8yLh7pdn0+mH4ufdgua+T
+ zG9w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=HzpPHgz9dkPSBTYUxRiI5N3ILdBG2Y7xG5fdNi+CmCc=;
- b=fsD2n2Ew/t54ymuuA95Qu1JvXaK1gWan6eVgYmQF3kWLy2Dm+pJu8HbFLRXZQLO1Zc
- 6esJeAXqumd18VMaKy8b97rZjH9KDKS5DfXxyezQxTCp6MjSl8J9gn6ejqLlkSCuih3B
- E2RFwI4yKP2yubv6XudPIp+LtR0sAUndTHDAWEQ0asTyAYD1AL6FoC69ZRQBTuwf+EfX
- 3OTUS39M6zgqSrlgLGcSbgbu5CT1SrQ0fmKj2B8CG/BDvvxhhH0MXgY5SmxLqrctiUPN
- KDjETTs/QjuYCZYXYqL6kTg/PFaHmYtOiLOTclTVp9gMzVlkc2RToxF450i9mEIr2iNO
- c5OA==
-X-Gm-Message-State: APjAAAVUc6Hkbh6ftj1Jv7d7gBTvcuSSi10V/pWHR2rzyg1eEisjIyP5
- lBSgiom8I3USSH8KP8f0YUumuw==
-X-Google-Smtp-Source: APXvYqzFqJnVOjSOYydSnQlBlFKEVK/uejnJRRcq3NDp8SAQpeKxQWcPsIMvCpbINphaS0TGA2jWDg==
-X-Received: by 2002:adf:f84f:: with SMTP id d15mr17155903wrq.112.1572296764917; 
- Mon, 28 Oct 2019 14:06:04 -0700 (PDT)
+ bh=Wt6X/0E8OEKNHUN7g3xU4aGMZDZ5EHD7/+dGHnvwGeQ=;
+ b=oH1J8c1x2pQA/vBAj0xUWhz9Ymu4etf9D/OhS8JVHCIApyPv82haIg2rxunMSbv1zA
+ j82iDfd3l+eVsRV7mh1kSpFqZqJRQmo5iAhM7Mi3guFXolyPvqfDfPPdbMf1n0IMMXK6
+ 6ODd/O+i19SO6vk84coSxUYbFhyJeCYVJuAS2+tUuB1dKHgJ2nJvQ14VJrkgEtSDeGvw
+ S/9u4BH6sJp7ughaIg9I6OolLy2ZQ/USbPouoGWmGbtNTwMVC3rdYzEPO1XsBSd64TR3
+ HTyKjn7AE1RGRMEKsCnV6U6KEuMKV793QpFm2jglFqxnfiPku1a2WZiXHQc8ERBUqKvq
+ ZN/g==
+X-Gm-Message-State: APjAAAWpTDkPodaBBNS0WpqCYgDTuuoID63EMywZxcfrni/6OVionZQb
+ tlT2RCOUvamEBUokcvzJusVg6w==
+X-Google-Smtp-Source: APXvYqzqAvwwu8fufnMscandR8x4T4e5vo0ImUH4MNWMeVXTw6UAGYm/xpeYwYMKAveMairVDQRveQ==
+X-Received: by 2002:a1c:544e:: with SMTP id p14mr1023951wmi.17.1572296765994; 
+ Mon, 28 Oct 2019 14:06:05 -0700 (PDT)
 Received: from localhost.localdomain (230.106.138.88.rev.sfr.net.
  [88.138.106.230])
- by smtp.gmail.com with ESMTPSA id b196sm927822wmd.24.2019.10.28.14.06.03
+ by smtp.gmail.com with ESMTPSA id b196sm927822wmd.24.2019.10.28.14.06.05
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 28 Oct 2019 14:06:04 -0700 (PDT)
+ Mon, 28 Oct 2019 14:06:05 -0700 (PDT)
 From: Richard Henderson <richard.henderson@linaro.org>
 X-Google-Original-From: Richard Henderson <rth@twiddle.net>
 To: linux-arch@vger.kernel.org
-Subject: [PATCH 2/6] x86: Move arch_has_random* inside CONFIG_ARCH_RANDOM
-Date: Mon, 28 Oct 2019 22:05:55 +0100
-Message-Id: <20191028210559.8289-3-rth@twiddle.net>
+Subject: [PATCH 3/6] x86: Mark archrandom.h functions __must_check
+Date: Mon, 28 Oct 2019 22:05:56 +0100
+Message-Id: <20191028210559.8289-4-rth@twiddle.net>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191028210559.8289-1-rth@twiddle.net>
 References: <20191028210559.8289-1-rth@twiddle.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_140606_691770_ECFD7CD0 
-X-CRM114-Status: GOOD (  12.31  )
+X-CRM114-CacheID: sfid-20191028_140607_585590_704A711C 
+X-CRM114-Status: GOOD (  12.15  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,9 +107,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-These functions are declared generically without CONFIG_ARCH_RANDOM.
-The only reason this compiles for x86 is that we currently have a
-mix of inline functions are preprocessor defines.
+We cannot use the pointer output without validating the
+success of the random read.
 
 Signed-off-by: Richard Henderson <rth@twiddle.net>
 ---
@@ -118,35 +117,76 @@ Cc: Ingo Molnar <mingo@redhat.com>
 Cc: Borislav Petkov <bp@alien8.de>
 Cc: "H. Peter Anvin" <hpa@zytor.com>
 ---
- arch/x86/include/asm/archrandom.h | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ arch/x86/include/asm/archrandom.h | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
 
 diff --git a/arch/x86/include/asm/archrandom.h b/arch/x86/include/asm/archrandom.h
-index af45e1452f09..5904d7d9e703 100644
+index 5904d7d9e703..9e4ea9e53dd0 100644
 --- a/arch/x86/include/asm/archrandom.h
 +++ b/arch/x86/include/asm/archrandom.h
-@@ -73,10 +73,6 @@ static inline bool rdseed_int(unsigned int *v)
+@@ -27,7 +27,7 @@
+ 
+ /* Unconditional execution of RDRAND and RDSEED */
+ 
+-static inline bool rdrand_long(unsigned long *v)
++static inline bool __must_check rdrand_long(unsigned long *v)
+ {
+ 	bool ok;
+ 	unsigned int retry = RDRAND_RETRY_LOOPS;
+@@ -41,7 +41,7 @@ static inline bool rdrand_long(unsigned long *v)
+ 	return false;
+ }
+ 
+-static inline bool rdrand_int(unsigned int *v)
++static inline bool __must_check rdrand_int(unsigned int *v)
+ {
+ 	bool ok;
+ 	unsigned int retry = RDRAND_RETRY_LOOPS;
+@@ -55,7 +55,7 @@ static inline bool rdrand_int(unsigned int *v)
+ 	return false;
+ }
+ 
+-static inline bool rdseed_long(unsigned long *v)
++static inline bool __must_check rdseed_long(unsigned long *v)
+ {
+ 	bool ok;
+ 	asm volatile(RDSEED_LONG
+@@ -64,7 +64,7 @@ static inline bool rdseed_long(unsigned long *v)
  	return ok;
  }
  
--/* Conditional execution based on CPU type */
--#define arch_has_random()	static_cpu_has(X86_FEATURE_RDRAND)
--#define arch_has_random_seed()	static_cpu_has(X86_FEATURE_RDSEED)
--
- /*
-  * These are the generic interfaces; they must not be declared if the
-  * stubs in <linux/random.h> are to be invoked,
-@@ -84,6 +80,10 @@ static inline bool rdseed_int(unsigned int *v)
-  */
- #ifdef CONFIG_ARCH_RANDOM
+-static inline bool rdseed_int(unsigned int *v)
++static inline bool __must_check rdseed_int(unsigned int *v)
+ {
+ 	bool ok;
+ 	asm volatile(RDSEED_INT
+@@ -84,22 +84,22 @@ static inline bool rdseed_int(unsigned int *v)
+ #define arch_has_random()	static_cpu_has(X86_FEATURE_RDRAND)
+ #define arch_has_random_seed()	static_cpu_has(X86_FEATURE_RDSEED)
  
-+/* Conditional execution based on CPU type */
-+#define arch_has_random()	static_cpu_has(X86_FEATURE_RDRAND)
-+#define arch_has_random_seed()	static_cpu_has(X86_FEATURE_RDSEED)
-+
- static inline bool arch_get_random_long(unsigned long *v)
+-static inline bool arch_get_random_long(unsigned long *v)
++static inline bool __must_check arch_get_random_long(unsigned long *v)
  {
  	return arch_has_random() ? rdrand_long(v) : false;
+ }
+ 
+-static inline bool arch_get_random_int(unsigned int *v)
++static inline bool __must_check arch_get_random_int(unsigned int *v)
+ {
+ 	return arch_has_random() ? rdrand_int(v) : false;
+ }
+ 
+-static inline bool arch_get_random_seed_long(unsigned long *v)
++static inline bool __must_check arch_get_random_seed_long(unsigned long *v)
+ {
+ 	return arch_has_random_seed() ? rdseed_long(v) : false;
+ }
+ 
+-static inline bool arch_get_random_seed_int(unsigned int *v)
++static inline bool __must_check arch_get_random_seed_int(unsigned int *v)
+ {
+ 	return arch_has_random_seed() ? rdseed_int(v) : false;
+ }
 -- 
 2.17.1
 
