@@ -2,76 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24251E7794
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 18:29:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 70E8CE7797
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 18:30:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=3Uz0ugfxwX5j4t+v3ohDMz+Mo3kIeYTxQyzqRqJ5CSk=; b=PsW
-	7uMbIOUsNeQ/e5VTZvPKv9OGXh8g3+Nyjyd9ccbPNN8aRTqgO5Zz343uoZSgULQ2Eoj1MUssjpOdQ
-	nc/spdX9ffZrlaDpZHx2mNfGtrSBigZCKwbCnN0sgSx4Nga5Yeft33GgkgGfc1v3tOOXyo1+mkxwi
-	QeJfRj/32o0xqwFHX5FSD0wfVCIRj14IwqvjkAzVrR8NBzLDPtuKP+rK/QwKEV2Oq2RZ+jwyz+B3B
-	08shL3zhoP9LpOqeRWgTXWCC1Ya2RA2QGkPRj6pdb6wY9TVUmwofTr8693Ddtj4/lfCFEiaoZ9XH8
-	bkJnRccl0a1mHVEnRVrP+R8mHdZC3kQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=YEl+Z4uezi2Dycvu4bNf8semzascTbeV22V99wqUDRM=; b=HakuwYxur5IKvaZD0m4wWMB0wS
+	96XqT8+0IqlWgL7BgAODnKQEkB/n8Zx7lloiGistkB5sG538L99woAhAuiw6QhhqkTAkFi2nxyUe8
+	JrjztWlxCMoeAFFwpYg68vCDnCE8+dDqUI3Abbj0TNkHcnD6ldJ3+rD2OYYEXAb9i+m0t05TbTShq
+	KgGjd71MwpuEn9EewMi5gyDBnbyFwvkTzLYdrK5ZWh8NiA3+XvgQGh85eM0FHLFJqSVihf3wfs1Zq
+	4bNp+OOeK5GN1X8k8DHp8gP/eoOdEseWdW+sVdB0uaJrHywvPs8JT5N2AoHNCPOcxHODtjuxWyT1A
+	S2aSZNrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP8pv-0004Yf-N0; Mon, 28 Oct 2019 17:29:47 +0000
-Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
+	id 1iP8qN-0004hs-LR; Mon, 28 Oct 2019 17:30:15 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP8pj-0004XM-CW
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 17:29:36 +0000
-Received: by mail-wr1-x433.google.com with SMTP id r1so10778243wrs.9
+ id 1iP8pk-0004XX-Al
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 17:29:38 +0000
+Received: by mail-wr1-x441.google.com with SMTP id e11so10798734wrv.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 28 Oct 2019 10:29:32 -0700 (PDT)
+ Mon, 28 Oct 2019 10:29:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=4h0j1y2DktN68cOwekrIvX7jwMz9RtEdu7NiWvIBj+I=;
- b=UNycCq4T9++5SpxfhlzKUrQcEJ2MW9XCLYxLXprqK7P78e4Li0WacOJmgUozVa6JZE
- H0CG5nHPGsh2NczLP0vU5vz3E1FNMgsPVd4OHrSshAtmFMiNrwAyvjArsiWR1eN0GwUX
- w4LKnnZWFCcPvNkPt1/EvL4n2Uc5S+vcmibMoL+/fPYFNISlCVqR9/Sc3cgaWu3hRjY+
- YkUUJBYISQJiFK/52/EMRxD8RBUAtXTHKT5CGi2Nkg53foAUdTIP0YwH9ieD93EQzZ3H
- DPnkukaVoMAD5vGpN9LjHvtXa38J82BRdU9hQ+Sz80Il1NpWfphaLh1eaWWPDeupYB6x
- 2kSA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=v9GEYwUiBW+L+lk1Ll0nCRIM3yrtEBZnNM1K9ZrWkdQ=;
+ b=qcMCGu6DF0B3wePXP90toGqIgAKLW+CnEkghw5xSWQfJGfmNlbEZJK0PO5BC/cRy2f
+ X/TwcnTNYhkakkpEe5D7PUI4V1Kw8XAaGSeuzhL1G0VvYkNV2lP7rWgDSQQHyoujdzXt
+ wdfrm7g2jtleviu2U8NrRyjkeosUtpLRhvJ7NYzXRBBZrzOqBtZjq9H4lSrFJ0hqCeqo
+ 0YgafMyuuHiDurAUOVeRfdyyh5cwGppAGDnXnbuUDPDnUEExP9n+mhZK4BkxNwBQdj0j
+ frw8Ae4+y6FB+7y+YgQ54NTGH9LR6AwoVHffkYrq7t20QjpyRdYNdGgZhp9oWSGLEpW8
+ COPw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=4h0j1y2DktN68cOwekrIvX7jwMz9RtEdu7NiWvIBj+I=;
- b=BymsksfDSgtGNmIrAXVcbKxHT/6q4h6+JeAww9Mi6PvtG6hQ2RdKTfdbUUEmQksH7y
- 4KEL5LsSvb0yN5qOnzQqNA7jCTgsD+g7SR75OWySubY5MnjFHsPj7l4d7vsgVwZT3Ytg
- Ut/Pr0nSRHPxrB7zRAIQled37HmnGyBglNeWezxOSI3oSn12oZuCROCmKUSJ1/0lp9jC
- OiGC/dM/SCsPwbrcUuvH8bwXxlP8hheFlT/DpaY17tHWObBvoLtDozoAZTzsTpbLoY8R
- CnY5XlV9d70A2F9C330TqSiq9CNhyD/CPMzoXIWELpT7DqcMuW+rI5UVOa28w5LmGmXZ
- uExw==
-X-Gm-Message-State: APjAAAWz8NecJW2iNLyEetMkiEL9PXrSGNcX9oqYcbFeDgk/+hc5/rv9
- VjhvX2EhB0JHOfnP12Xw7j+4dA==
-X-Google-Smtp-Source: APXvYqzj0ah01Wc2PstZV4U7mwqqyvoxYeN2HSfBJjs0fAyazqXH9zMDKR/Xrx7HTVPPjFVa+bXexg==
-X-Received: by 2002:a5d:4b51:: with SMTP id w17mr3330012wrs.357.1572283771618; 
- Mon, 28 Oct 2019 10:29:31 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=v9GEYwUiBW+L+lk1Ll0nCRIM3yrtEBZnNM1K9ZrWkdQ=;
+ b=AeQ8+DtTVEsF7K5g/qRpuSUgX6PbpDvNBygnhYcyudjUqjOGPRFJJW8hhEBoDBg8O9
+ S7Xd2bhVFPOlJ15VkL94XAb+SrRxvizCVEOxG42aVV3LCm2A/y5ngdz3Htz9WevG1zC/
+ 8ePksg2qmm8NsnfqJob2pUSBPTw+7pNlJ92Na/le9jqRAsI3nYufKm8UspV7HH+rl5Bv
+ Tul0qmtYsZ7pVcynuudP09WIj82eC4bRHqO3b7rejsVY94NcuWwPKVFvarXbFMAsnUfu
+ DDlJyehDqq+IhqJSnL6IEcsmclRCVHAAItJZLXMakEy6JvMDHw9Ul7frfSEnHDEqK49j
+ N/1Q==
+X-Gm-Message-State: APjAAAVUG1M6+RZhUdSvhmHOmDEY3hxu3ZnmJ07Lg6HQ0qMqGrdXfRU1
+ ZLiWzSE/VuH7yw+88/SpiAmiJg==
+X-Google-Smtp-Source: APXvYqwT4xmdwNXjjGfUrHMiiVm44xvHEM7ewaFfToPaslCNGykF0jr30f+MGRyEoqtTTbT5W1WwsA==
+X-Received: by 2002:adf:b602:: with SMTP id f2mr2425468wre.49.1572283774795;
+ Mon, 28 Oct 2019 10:29:34 -0700 (PDT)
 Received: from linaro.org ([2a00:23c5:6815:3901:a072:1d10:8dba:cbb])
- by smtp.gmail.com with ESMTPSA id r19sm14273295wrr.47.2019.10.28.10.29.30
+ by smtp.gmail.com with ESMTPSA id r19sm14273295wrr.47.2019.10.28.10.29.33
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 28 Oct 2019 10:29:31 -0700 (PDT)
+ Mon, 28 Oct 2019 10:29:34 -0700 (PDT)
 From: Mike Leach <mike.leach@linaro.org>
 To: linux-doc@vger.kernel.org,
 	corbet@lwn.net
-Subject: [PATCH v4 0/4] coresight: etm4x: docs: sysfs API doc updates
-Date: Mon, 28 Oct 2019 17:29:15 +0000
-Message-Id: <20191028172919.19662-1-mike.leach@linaro.org>
+Subject: [PATCH v4 3/4] coresight: docs: Create common sub-directory for
+ coresight trace.
+Date: Mon, 28 Oct 2019 17:29:18 +0000
+Message-Id: <20191028172919.19662-4-mike.leach@linaro.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191028172919.19662-1-mike.leach@linaro.org>
+References: <20191028172919.19662-1-mike.leach@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_102935_442832_9735F659 
-X-CRM114-Status: UNSURE (   8.98  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191028_102936_367472_67EE1E6B 
+X-CRM114-Status: GOOD (  14.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:433 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -101,49 +105,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Review of ETMV4 sysfs code resulted in a number of minor issues being
-discovered. Patchset fixed these and updated docs.
+There are two files in the Documentation/trace directory relating to
+coresight, with more to follow, so create a Documentation/trace/coresight
+directory and move existing files there. Fixup index to reference
+new location.
 
-Applies to coresight/next
+Update MAINTAINERS to reference this sub-directory rather than the
+individual files.
 
-Changes since v3
-  First 8 patches of v3 have been accepted onto coresight/next. The patch
-  series is now documents only
-  Docs .txt files changed to .rst by unrelated patch. This set reflects
-  this change and updates the added docs to match.
-  Indexing changed for new coresight docs directory.
-
-Changes since v2 (reviews from Mathieu and Leo):-
-  Patch 0002 now adds stable tag. Tested on 4.9, 4.14, 4.19
-  Applies to coresight/next (5.4-rc1)
-  Documentation changed to .rst format to match recent updates that
-  converted other CoreSight .txt files.
-  Misc typo / comment changes.
-
-Changes since v1 (from reviews by Mathieu and Leo):-
-  Usability patch split into 2 separate functional patches.
-  Docs patch split into 3 patches.
-  Misc style and comment typo fixes.
-
-Mike Leach (4):
-  coresight: etm4x: docs: Update ABI doc for new sysfs name scheme.
-  coresight: etm4x: docs: Update ABI doc for new sysfs etm4 attributes
-  coresight: docs: Create common sub-directory for coresight trace.
-  coresight: etm4x: docs: Adds detailed document for programming etm4x.
-
- .../testing/sysfs-bus-coresight-devices-etm4x | 183 ++--
- .../{ => coresight}/coresight-cpu-debug.rst   |   0
- .../coresight/coresight-etm4x-reference.rst   | 798 ++++++++++++++++++
- .../trace/{ => coresight}/coresight.rst       |   2 +-
- Documentation/trace/coresight/index.rst       |   9 +
- Documentation/trace/index.rst                 |   3 +-
- MAINTAINERS                                   |   3 +-
- 7 files changed, 925 insertions(+), 73 deletions(-)
+Signed-off-by: Mike Leach <mike.leach@linaro.org>
+---
+ .../trace/{ => coresight}/coresight-cpu-debug.rst        | 0
+ Documentation/trace/{ => coresight}/coresight.rst        | 2 +-
+ Documentation/trace/coresight/index.rst                  | 9 +++++++++
+ Documentation/trace/index.rst                            | 3 +--
+ MAINTAINERS                                              | 3 +--
+ 5 files changed, 12 insertions(+), 5 deletions(-)
  rename Documentation/trace/{ => coresight}/coresight-cpu-debug.rst (100%)
- create mode 100644 Documentation/trace/coresight/coresight-etm4x-reference.rst
  rename Documentation/trace/{ => coresight}/coresight.rst (99%)
  create mode 100644 Documentation/trace/coresight/index.rst
 
+diff --git a/Documentation/trace/coresight-cpu-debug.rst b/Documentation/trace/coresight/coresight-cpu-debug.rst
+similarity index 100%
+rename from Documentation/trace/coresight-cpu-debug.rst
+rename to Documentation/trace/coresight/coresight-cpu-debug.rst
+diff --git a/Documentation/trace/coresight.rst b/Documentation/trace/coresight/coresight.rst
+similarity index 99%
+rename from Documentation/trace/coresight.rst
+rename to Documentation/trace/coresight/coresight.rst
+index 72f4b7ef1bad..a566719f8e7e 100644
+--- a/Documentation/trace/coresight.rst
++++ b/Documentation/trace/coresight/coresight.rst
+@@ -489,7 +489,7 @@ interface provided for that purpose by the generic STM API::
+     crw-------    1 root     root       10,  61 Jan  3 18:11 /dev/stm0
+     root@genericarmv8:~#
+ 
+-Details on how to use the generic STM API can be found here [#second]_.
++Details on how to use the generic STM API can be found here:- :doc:`../stm` [#second]_.
+ 
+ .. [#first] Documentation/ABI/testing/sysfs-bus-coresight-devices-stm
+ 
+diff --git a/Documentation/trace/coresight/index.rst b/Documentation/trace/coresight/index.rst
+new file mode 100644
+index 000000000000..8d31b155a87c
+--- /dev/null
++++ b/Documentation/trace/coresight/index.rst
+@@ -0,0 +1,9 @@
++==============================
++CoreSight - ARM Hardware Trace
++==============================
++
++.. toctree::
++   :maxdepth: 2
++   :glob:
++
++   *
+diff --git a/Documentation/trace/index.rst b/Documentation/trace/index.rst
+index b7891cb1ab4d..04acd277c5f6 100644
+--- a/Documentation/trace/index.rst
++++ b/Documentation/trace/index.rst
+@@ -23,5 +23,4 @@ Linux Tracing Technologies
+    intel_th
+    stm
+    sys-t
+-   coresight
+-   coresight-cpu-debug
++   coresight/index
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 296de2b51c83..f903160b507c 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -1608,8 +1608,7 @@ R:	Suzuki K Poulose <suzuki.poulose@arm.com>
+ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+ S:	Maintained
+ F:	drivers/hwtracing/coresight/*
+-F:	Documentation/trace/coresight.rst
+-F:	Documentation/trace/coresight-cpu-debug.rst
++F:	Documentation/trace/coresight/*
+ F:	Documentation/devicetree/bindings/arm/coresight.txt
+ F:	Documentation/devicetree/bindings/arm/coresight-cpu-debug.txt
+ F:	Documentation/ABI/testing/sysfs-bus-coresight-devices-*
 -- 
 2.17.1
 
