@@ -2,73 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B522CE7C66
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 23:34:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2791DE7C6D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 23:37:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iTsHg1TzRIbaXZdfI268hkR62fEHkyOiLbwhbmjyBW4=; b=Ss7VMvXWDH/Wm1
-	ixqHzqFaUYRQyclCGZE+jGscijlr/V7Z2JcU1ITQ4J6st+Lnh7A+rzEh2vyPcEXkHvcGrEzjXjHfj
-	6yX54lHuYZhNWnkYdleVx4iYBPte5HFHLY0KNk9vvo4JEN5kMXQuFG4UaX07slsOiS1K0+nwG3K4k
-	jnxHyqWVhqDNrgvxEop2n47VCny3RDOgdv28rI/rn6SFaUMFyrVvig1Y3fPOPPqtkED+AiwblhY7h
-	GKPMvSfcQqtFs7hFBwgRb5fvRW/iiCA8PdC2zP0XJj6WswrJbiQsA9mj9ENGkPBF/lBhSMPR6dEy3
-	NK22V04fPRQhGGhus/BQ==;
+	List-Owner; bh=v5091rc8FBhxs9CvdgVBFJLfSmZ/LwLyqPHNB/aDxsQ=; b=tcRHrh5QgUy54A
+	Zu2WzFtJK/L4aS2liCFwa46pDCbhphhPshizsxnKB19a9usR/ygcsb2jLA2ZPmOv5PO2uXFZ32LRI
+	7IKL1Rhdzn5urQVs5GIb8l50603xJlj+gnJiVSCMDD1HCqoEM91Fo8gRvdDecYHevM30n3gooK37m
+	JJgFBAO6W3hsKQvOUHwQls5VEDZMuJDpiFcbasjlU14MCzgMJlymGl43jLWrHn7g3UfgwodEwAOC1
+	qAMZ2P15PP7xRKQzVdx2caG8b9Zi/XwLX08hcCNMtO7XoTsrYF0d3MKcNDjhQhH8tNih2oK86/5ME
+	uh6XAAmyIQefwRizD8NA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPDae-0008Uc-Nl; Mon, 28 Oct 2019 22:34:20 +0000
-Received: from mail-il1-x142.google.com ([2607:f8b0:4864:20::142])
+	id 1iPDe0-0001kP-V5; Mon, 28 Oct 2019 22:37:48 +0000
+Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPDaU-0008Tg-Rs
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 22:34:13 +0000
-Received: by mail-il1-x142.google.com with SMTP id o16so9621910ilq.9
+ id 1iPDdq-0001jX-8x
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 22:37:39 +0000
+Received: by mail-il1-x143.google.com with SMTP id t5so9628461ilh.10
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 28 Oct 2019 15:34:08 -0700 (PDT)
+ Mon, 28 Oct 2019 15:37:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=c2XX2oa9okl2tfpust4RUifahZHp7tb1+MoPm2u47Wc=;
- b=n4p86JogluIaUwX8lpVfKCl315ggHShPT/3PG9nmdvv6A+WmkcxoXlJ1p500UHclpZ
- V7orIaazLLn5Miq8ZaNeWiihu1+79cg9oAg+i/LcaIdcqZQ5iG4T4aVCMjo26c+Cdn97
- r3IOx7w0Y6kNlL3cRfnacuWuUmSw1xh6YKtgE=
+ :cc; bh=z3tX+ks7PoiFwrJMh00/G0a0ftQIDY3RWS8pN1PA/BQ=;
+ b=SKuPRKpveC6kpd0ROoNvdHULXUx99U0LlGRXDpWC4BPC2PLCNKrud8USuQ9T6iTjuu
+ yY/RhELZCceNf3/45XZWM6GsNyRX8KOElh1Wg6prkLUzt27uk4jeSXYo/9oCWj7trUCm
+ /4sm/8LdQPwR0vw2Ic0Nb7446p1joXFqG8Khw=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=c2XX2oa9okl2tfpust4RUifahZHp7tb1+MoPm2u47Wc=;
- b=aeKR2YV9PjLNAlcl4KczQRJBFRJ81ZoX9c/o4cf+XzrfoqTHtNXsa4MU8L22dXIrOD
- x3fedELLSeQy33hpyo1syvmqraqg4y4io22IJ6YMyokqYNC+V2YMInJaBB3A9rMARf+q
- idDSTOwdf0i9i16YZf/5eA/W636AbuTX7p+I3PGVWTGdTlELHQvF6f6vt+TZ9+Fj9g59
- qHZpt8SR06cAgIVTwarRNVBMiN4+bnNM6Fvjdi6QuP+SsOO/0uJX2H/FvTVZiikj2gyG
- du17j8V2NrhELXF6+FftuaL7mqt0tt4x3E4LDFPr12txy6aR97k4EQ29MBIOyWctge4+
- /Cjw==
-X-Gm-Message-State: APjAAAWkz2cQr5xlHSZ/GpCl6zqJdkqZhnmaGQYYvXG1SbBflWkWdi9A
- aqNd+fgQDNuLHi5SnH1oNfVS6DI+McLDmcBRbZ+QVQ==
-X-Google-Smtp-Source: APXvYqyCGJQl+HAm+sa8mYYJp4Wxr/m+y+g/6ntOZCrMubS4XyZUczCAk4EdzfbP8O6fyXYOHmttxwz3zGzyvqk0tc0=
-X-Received: by 2002:a92:99ca:: with SMTP id t71mr8413794ilk.61.1572302047950; 
- Mon, 28 Oct 2019 15:34:07 -0700 (PDT)
+ bh=z3tX+ks7PoiFwrJMh00/G0a0ftQIDY3RWS8pN1PA/BQ=;
+ b=s4XR6zGG/UNfWSodUmb05w2QoK5JuZTQ/K2OwsW4CVgDfKt0wSYJ7mbyd/HKPHvttN
+ 65k7W7Kd734GonKTSgdRauD5smXcCs0T2el7uRfghGcML3Sd3N0QFT0YuWeNZf9D6iMZ
+ 2RrJTl31NbKClGyPzFYX3aLOAFifp2zrpmJwkG+eMeKxLtfuaSYL8Cy2YVTIgk/jYY7H
+ /qyLyuthDvb8rqXB4CxC3bniWUucqgmDl3CyJvTA7O1qMgB80AuWkya27Gw9KWUWShY9
+ gbfD9zUvZ6jSeTabcq1uEHSR9r5z1GiaJfm1Sh0nISqAr2fYvL1WQ0laAABlQ+vYpydf
+ hBqw==
+X-Gm-Message-State: APjAAAUkl+aWFJqL77ojqfhAra4oOUIUAvkCiRi2RMk7Lm0Dv7SMA4PA
+ ILtPGnikdp6CxUyvgEiysjqkEDQzn+GgOVDGrGk29g==
+X-Google-Smtp-Source: APXvYqwIZOpM2fC3dmpYbeGTVPOWxOzVO5pYPcw3MFmyjgnC+e3sCBKiQMsTwG3PiO7rE0i53YmxyINxh4//HXXlb2c=
+X-Received: by 2002:a92:91d3:: with SMTP id e80mr24149380ill.77.1572302257323; 
+ Mon, 28 Oct 2019 15:37:37 -0700 (PDT)
 MIME-Version: 1.0
 References: <20191025175625.8011-1-jagan@amarulasolutions.com>
- <20191025175625.8011-5-jagan@amarulasolutions.com>
- <20191028153427.pc3tnoz2d23filhx@hendrix>
-In-Reply-To: <20191028153427.pc3tnoz2d23filhx@hendrix>
+ <20191025175625.8011-3-jagan@amarulasolutions.com>
+ <20191027211737.GA30896@bogus>
+In-Reply-To: <20191027211737.GA30896@bogus>
 From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Tue, 29 Oct 2019 04:03:56 +0530
-Message-ID: <CAMty3ZCisTrFGjzHyqSofqFAsKSLV1n2xP5Li3Lonhdi0WUZVA@mail.gmail.com>
-Subject: Re: [PATCH v11 4/7] drm/sun4i: dsi: Handle bus clock explicitly 
-To: Maxime Ripard <mripard@kernel.org>
+Date: Tue, 29 Oct 2019 04:07:26 +0530
+Message-ID: <CAMty3ZD8P1KGS+6AZOCbYyLpV=c7wowUdwoJXYvEMq211xbM1g@mail.gmail.com>
+Subject: Re: [PATCH v11 2/7] dt-bindings: sun6i-dsi: Add A64 DPHY compatible
+ (w/ A31 fallback)
+To: Rob Herring <robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_153411_845789_9FE6B022 
-X-CRM114-Status: GOOD (  14.42  )
+X-CRM114-CacheID: sfid-20191028_153738_314863_DED1BC89 
+X-CRM114-Status: GOOD (  15.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -92,10 +93,9 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
  devicetree <devicetree@vger.kernel.org>, David Airlie <airlied@linux.ie>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- dri-devel <dri-devel@lists.freedesktop.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>, Maxime Ripard <mripard@kernel.org>,
  linux-kernel <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+ dri-devel <dri-devel@lists.freedesktop.org>, Daniel Vetter <daniel@ffwll.ch>,
  Michael Trimarchi <michael@amarulasolutions.com>,
  linux-amarula <linux-amarula@amarulasolutions.com>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
@@ -105,36 +105,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Maxime,
-
-On Mon, Oct 28, 2019 at 9:06 PM Maxime Ripard <mripard@kernel.org> wrote:
+On Mon, Oct 28, 2019 at 2:47 AM Rob Herring <robh@kernel.org> wrote:
 >
-> On Fri, Oct 25, 2019 at 11:26:22PM +0530, Jagan Teki wrote:
-> > Usage of clocks are varies between different Allwinner
-> > DSI controllers. Clocking in A33 would need bus and
-> > mod clocks where as A64 would need only bus clock.
+> On Fri, 25 Oct 2019 23:26:20 +0530, Jagan Teki wrote:
+> > The MIPI DSI PHY controller on Allwinner A64 is similar
+> > on the one on A31.
 > >
-> > To support this kind of clocking structure variants
-> > in the same dsi driver,
->
-> There's no variance in the clock structure as far as the bus clock is
-> concerned.
->
-> > explicit handling of common clock would require since the A64
-> > doesn't need to mention the clock-names explicitly in dts since it
-> > support only one bus clock.
+> > Add A64 compatible and append A31 compatible as fallback.
 > >
-> > Also pass clk_id NULL instead "bus" to regmap clock init function
-> > since the single clock variants no need to mention clock-names
-> > explicitly.
+> > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+> > ---
+> >  .../bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml         | 6 +++++-
+> >  1 file changed, 5 insertions(+), 1 deletion(-)
+> >
 >
-> You don't need explicit clock handling. Passing NULL as the argument
-> in regmap_init_mmio_clk will make it use the first clock, which is the
-> bus clock.
+> Please add Acked-by/Reviewed-by tags when posting new versions. However,
+> there's no need to repost patches *only* to add the tags. The upstream
+> maintainer will do that for acks received on the version they apply.
+>
+> If a tag was not added on purpose, please state why and what changed.
 
-Indeed I tried that, since NULL clk_id wouldn't enable the bus clock
-during regmap_mmio_gen_context code, passing NULL triggering vblank
-timeout.
+I usually collect the tags when I send next version w/o any change.
+but this dt-binding patch has a fixed version compared to previous
+version. I have updated changelog on cover patch and may be will write
+it on respective patch itself.
 
 _______________________________________________
 linux-arm-kernel mailing list
