@@ -2,84 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88B99E797A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 20:58:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24C16E7988
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 21:02:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PU/NEk7/5z/l8IPT/qgeyPKlmEDfAEgGX+vibWFDQEI=; b=mVssZOehOz7wNz
-	zXCq4ZlJqVaT8V2vRAqAhwsvGga5KgX++hE3uTBRqGWs5T13WxXU4Hhyl/NH3k8xBRXaWPT60EfUP
-	Op52Hw3P/Wwb0fQBXpxO7EkYPY8XhuV9HOHyZ+/Qnw2KaEeL1soAPsGs2nxn9Oes0o2ytQyiMYtrs
-	CO1mO/lCezDCjo7v8Vn4WQ9ZLWREU24g/hmw90ByH9K+7hg3dsU73/JUZhX2Cv804LZGoBypHwn56
-	CfLqjcHHIKtmXmdTFjWqAOMeLDo4+QgALoWv9PBD2gjp9KBH93O4RjXPGM1PvAG8sGUb6xwaxBCj5
-	vK0uGVvzEvV83Suq8NBg==;
+	List-Owner; bh=1lkrfogQ+Z7CAoSJmKzQGPfZf4u95RwwTEbpLlmQWxE=; b=TO8u52XS71yttB
+	2tXCrBh6PoB0ud1LiMTtkhmhyu14UibAg6rbrqLpwv6y+8xU4s79W9v2UnaUER7EC7tfTDV129mCp
+	rf32Ga9PS6CCyrD5gqwHaaUcjkA8LvXBvOaU7c88Bb4gV9FYWVW56r1c6jNw6cXj5rrP+T36DYn3B
+	CeqfSYC6e2JJRoTr0wKBYJcxDPNmPJmI+ojLaFKHsirXszbMqkBLfix9VVxioUBSJk6+TAn0MqeMi
+	DiOEdd/UXEprTk4w/gl7yAInzohBkXeIuhJfvsY7QysOPMPTkzC8ULD6u4VbnGiBtvyg+yn0TOnXY
+	O7pVPGi32GTB9/aab3tQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPB9Q-00040X-DG; Mon, 28 Oct 2019 19:58:04 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1iPBDz-0005qt-VM; Mon, 28 Oct 2019 20:02:47 +0000
+Received: from gate2.alliedtelesis.co.nz ([202.36.163.20])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPB98-0003zi-C1
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 19:57:47 +0000
-Received: by mail-pg1-x542.google.com with SMTP id l3so7632235pgr.8
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 28 Oct 2019 12:57:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=+wOJCmH0g8vAxxe+FcShlh+2/nEo9CAjIamY0wkPKUQ=;
- b=O0yZqC1vKJdTDSM5n1ypj42P6mUYqFnfIcgablhmOvhVLjS1Ybl9gj4HXCMp/vZ/Jg
- IlXkNeniJ714HLUGdQmrikkPN3FAzyra+IIBoiYFS+hSOqqXECKH+9kL8TmBRqTz+il7
- BXn0qi51LmPYcG+sXB1pj3nora5+8WYXfasYo=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=+wOJCmH0g8vAxxe+FcShlh+2/nEo9CAjIamY0wkPKUQ=;
- b=dsFikiPZhxvhnrUPNCr9cyNlUfg7pxwmpQqQpbYnoypEfbhd+fip3QK6H0xiYkzYRm
- YA/4Nvh1bZ5fKaNvkFL45NRj24sLgV/cVFZQx2nrGM3Zjasg32nPvolFozJrhS0ERCAI
- 4U5inEjVaosNmynE/baLTF/MwEG+dYTGGGnT0bAItLXjvkGz1skR8KB6ol3JFOHuDPEq
- GZzyRKfalkFVaaOoXhqXM5/5FVQ2tJm1Uh8iEP/6OeX1Os7Bdq3gEPauf3e1jAgolBHR
- 1g3W120ih4ueIA/fP6jC8tKvbxIVwTsN1lHh1aeXfahSiFbfldIXirXDCtLJ8n2g5Vqj
- zoDQ==
-X-Gm-Message-State: APjAAAUpnB/GOjHR2YZSYS4Tk+JxVLIsbZ8cB/fE40Kjc1e1dvS8nGZV
- rsMzc7s6kBfYM0N+unrSiVnQDg==
-X-Google-Smtp-Source: APXvYqyKAiln1b5mOZI7AcApDWWXQnpclGuce0+3km3MXnlFB0MT9wWVjjgen/Fg+kiLaMYGZZoRxg==
-X-Received: by 2002:a62:e10c:: with SMTP id q12mr13396875pfh.248.1572292664956; 
- Mon, 28 Oct 2019 12:57:44 -0700 (PDT)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id y129sm12883990pgb.28.2019.10.28.12.57.43
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 28 Oct 2019 12:57:43 -0700 (PDT)
-Date: Mon, 28 Oct 2019 12:57:42 -0700
-From: Kees Cook <keescook@chromium.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH v2 05/17] add support for Clang's Shadow Call Stack (SCS)
-Message-ID: <201910281250.25FBA8533@keescook>
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20191024225132.13410-1-samitolvanen@google.com>
- <20191024225132.13410-6-samitolvanen@google.com>
- <20191025105643.GD40270@lakrids.cambridge.arm.com>
- <CABCJKuc+XiDRdqfvjwCF7y=1wX3QO0MCUpeu4Gdcz91+nmnEAQ@mail.gmail.com>
- <20191028163532.GA52213@lakrids.cambridge.arm.com>
+ id 1iPBDa-0005h5-Jy
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 20:02:24 +0000
+Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id D68778365D;
+ Tue, 29 Oct 2019 09:02:14 +1300 (NZDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
+ s=mail181024; t=1572292934;
+ bh=JALECq4p6zZ0EyUxViPpEvVgl0VCHYaqT+KhKKtII4I=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To;
+ b=fa/b0MaivXMk27B/JUfMz8PWM1rdu6m5aS/pZrZQPujEwjdPmKkKWz3YxMYoWtLXa
+ C/fy/7eyEHl1+Aqmhz7MJEseVcya0uQZX+XmSzVM4KMlXa0vE9pMHDm52m9jr+kDK9
+ q466o02L8jZrmEqdmYSjQ1v9rVkBjjYuoSzzIzelpKAx8JGjWeosgd67C20T3Z44wX
+ 5WBsPXVxNafXSHUbIIeMcY/u0gGWz53qO2E0hZbceeugI+68ufhIxmyHwWwcLukDly
+ U73FtfcfIpD6MmtvLk3Kn1q7OPogRL/JmOy6Ll/K1HXUm53HgK2d7HdkrJbYCL/xIm
+ +Ki0wDQVoDA9A==
+Received: from svr-chch-ex1.atlnz.lc (Not Verified[10.32.16.77]) by
+ mmarshal3.atlnz.lc with Trustwave SEG (v7, 5, 8, 10121)
+ id <B5db749440000>; Tue, 29 Oct 2019 09:02:15 +1300
+Received: from svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8::77) by
+ svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8::77) with Microsoft SMTP Server
+ (TLS) id 15.0.1156.6; Tue, 29 Oct 2019 09:02:12 +1300
+Received: from svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8]) by
+ svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8%12]) with mapi id
+ 15.00.1156.000; Tue, 29 Oct 2019 09:02:12 +1300
+From: Chris Packham <Chris.Packham@alliedtelesis.co.nz>
+To: "robh+dt@kernel.org" <robh+dt@kernel.org>
+Subject: Re: [PATCH v4 1/2] dt-bindings: gpio: brcm: Add bindings for xgs-iproc
+Thread-Topic: [PATCH v4 1/2] dt-bindings: gpio: brcm: Add bindings for
+ xgs-iproc
+Thread-Index: AQHViqlp/R7j23SnDEuk/qZzj++qxadqv4MAgATmZ4A=
+Date: Mon, 28 Oct 2019 20:02:11 +0000
+Message-ID: <54ca79b4275e06b9ebf33450b068c914ed0217a7.camel@alliedtelesis.co.nz>
+References: <20191024202703.8017-1-chris.packham@alliedtelesis.co.nz>
+ <20191024202703.8017-2-chris.packham@alliedtelesis.co.nz>
+ <CAL_JsqJ6a6cSrZsTg6piXmuB6-zuP+EO9vwkRoeH2aS9AVOT1g@mail.gmail.com>
+In-Reply-To: <CAL_JsqJ6a6cSrZsTg6piXmuB6-zuP+EO9vwkRoeH2aS9AVOT1g@mail.gmail.com>
+Accept-Language: en-NZ, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [2001:df5:b000:22:54a5:7b66:76cf:b046]
+Content-ID: <B609EAC4373C1E41898BFB8B76804CDF@atlnz.lc>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191028163532.GA52213@lakrids.cambridge.arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_125746_439705_BD5F2AF9 
-X-CRM114-Status: GOOD (  17.85  )
+X-CRM114-CacheID: sfid-20191028_130223_042962_F0423422 
+X-CRM114-Status: GOOD (  17.44  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [202.36.163.20 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -87,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,62 +99,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: clang-built-linux <clang-built-linux@googlegroups.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
- Nick Desaulniers <ndesaulniers@google.com>,
- LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- Masami Hiramatsu <mhiramat@kernel.org>,
- Sami Tolvanen <samitolvanen@google.com>,
- Kernel Hardening <kernel-hardening@lists.openwall.com>,
- Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "sbranden@broadcom.com" <sbranden@broadcom.com>,
+ "bgolaszewski@baylibre.com" <bgolaszewski@baylibre.com>,
+ "rjui@broadcom.com" <rjui@broadcom.com>,
+ "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "bcm-kernel-feedback-list@broadcom.com"
+ <bcm-kernel-feedback-list@broadcom.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 28, 2019 at 04:35:33PM +0000, Mark Rutland wrote:
-> On Fri, Oct 25, 2019 at 01:49:21PM -0700, Sami Tolvanen wrote:
-> > To keep the address of the currently active shadow stack out of
-> > memory, the arm64 implementation clears this field when it loads x18
-> > and saves the current value before a context switch. The generic code
-> > doesn't expect the arch code to necessarily do so, but does allow it.
-> > This requires us to use __scs_base() when accessing the base pointer
-> > and to reset it in idle tasks before they're reused, hence
-> > scs_task_reset().
-> 
-> Ok. That'd be worth a comment somewhere, since it adds a number of
-> things which would otherwise be unnecessary.
-> 
-> IIUC this assumes an adversary who knows the address of a task's
-> thread_info, and has an arbitrary-read (to extract the SCS base from
-> thead_info) and an arbitrary-write (to modify the SCS area).
-> 
-> Assuming that's the case, I don't think this buys much. If said
-> adversary controls two userspace threads A and B, they only need to wait
-> until A is context-switched out or in userspace, and read A's SCS base
-> using B.
-> 
-> Given that, I'd rather always store the SCS base in the thread_info, and
-> simplify the rest of the code manipulating it.
+Hi Rob,
 
-I'd like to keep this as-is since it provides a temporal protection.
-Having arbitrary kernel read and write at arbitrary time is a very
-powerful attack primitive, and is, IMO, not very common. Many attacks
-tend to be chains of bugs that give attackers narrow visibility in to the
-kernel at specific moments. I would say this design is more about stopping
-"current" from dumping thread_info (as there are many more opportunities
-for current to see its own thread_info compared to arbitrary addresses
-or another task's thread_info). As such, I think it's a reasonable
-precaution to take.
+On Fri, 2019-10-25 at 12:12 -0500, Rob Herring wrote:
+> On Thu, Oct 24, 2019 at 3:27 PM Chris Packham
+> <chris.packham@alliedtelesis.co.nz> wrote:
+> > 
+> > This GPIO controller is present on a number of Broadcom switch ASICs
+> > with integrated SoCs. It is similar to the nsp-gpio and iproc-gpio
+> > blocks but different enough to require a separate driver.
+> > 
+> > Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
+> > ---
+> > 
+> > Notes:
+> >     Changes in v4:
+> >     - rename brcm,xgs-iproc.yaml -> brcm,xgs-iproc-gpio.yaml as suggested
+> > 
+> >     Changes in v3:
+> >     - incorporate review comments from Rob and Bart
+> > 
+> >     Changes in v2:
+> >     - Document as DT schema
+> >     - Include ngpios, #gpio-cells and gpio-controller properties
+> > 
+> >  .../bindings/gpio/brcm,xgs-iproc-gpio.yaml    | 70 +++++++++++++++++++
+> >  1 file changed, 70 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/gpio/brcm,xgs-iproc-gpio.yaml
+> > 
+> > diff --git a/Documentation/devicetree/bindings/gpio/brcm,xgs-iproc-gpio.yaml b/Documentation/devicetree/bindings/gpio/brcm,xgs-iproc-gpio.yaml
+> > new file mode 100644
+> > index 000000000000..ec1fd3a64aa2
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/gpio/brcm,xgs-iproc-gpio.yaml
+> > @@ -0,0 +1,70 @@
+> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/gpio/brcm,xgs-iproc.yaml#
+> 
+> Documentation/devicetree/bindings/gpio/brcm,xgs-iproc-gpio.yaml: $id:
+> path/filename 'gpio/brcm,xgs-iproc.yaml' doesn't match actual filename
+> 
+> Otherwise,
+> 
+> Reviewed-by: Rob Herring <robh@kernel.org>
 
--- 
-Kees Cook
-
+I'll send a quick v5 of just this patch with the minor correction and
+your reviewed-by.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
