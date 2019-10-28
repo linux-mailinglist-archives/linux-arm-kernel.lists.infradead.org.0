@@ -2,84 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7355E7936
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 20:29:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88B99E797A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 20:58:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=N8DldAjqTUUH/nRdCoXAZb2YCTslnLNT+dc2y8HeF4s=; b=hSJ/7XqgxNNlVP4Em8F0PgDV23
-	TgAoU3htJorX8rvxpuuyxOp594vc2v5YUsRSPsImQ5IAcDQdbIA27oYjhO0YKdbQkctGcu+HRHSgg
-	yovatF/wTH/Ty/5PCXlWjSAfjuvdHZNdaNroI6bsAnazbLDeIyiVuptX0pjTbHElm1kUZvIsyD0I7
-	lYQc/juMqFQ5tNG6rlnDlTTeYZwN6QvXeR7BO3Zy6m6hIXpR46tIEcQ9HXYFIymlvVHaSP2W12VsJ
-	5RimU2pjKbQR/BBjWbw1MERy41Io2Y5FFh7oxx+AQ4YUqARYeDWRJw5Mx6h8EZ6qalk9XZQh3FBya
-	LASCAILw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PU/NEk7/5z/l8IPT/qgeyPKlmEDfAEgGX+vibWFDQEI=; b=mVssZOehOz7wNz
+	zXCq4ZlJqVaT8V2vRAqAhwsvGga5KgX++hE3uTBRqGWs5T13WxXU4Hhyl/NH3k8xBRXaWPT60EfUP
+	Op52Hw3P/Wwb0fQBXpxO7EkYPY8XhuV9HOHyZ+/Qnw2KaEeL1soAPsGs2nxn9Oes0o2ytQyiMYtrs
+	CO1mO/lCezDCjo7v8Vn4WQ9ZLWREU24g/hmw90ByH9K+7hg3dsU73/JUZhX2Cv804LZGoBypHwn56
+	CfLqjcHHIKtmXmdTFjWqAOMeLDo4+QgALoWv9PBD2gjp9KBH93O4RjXPGM1PvAG8sGUb6xwaxBCj5
+	vK0uGVvzEvV83Suq8NBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPAhw-0002OB-G6; Mon, 28 Oct 2019 19:29:40 +0000
-Received: from mail-io1-xd2c.google.com ([2607:f8b0:4864:20::d2c])
+	id 1iPB9Q-00040X-DG; Mon, 28 Oct 2019 19:58:04 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPAhk-0002Nf-JB
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 19:29:29 +0000
-Received: by mail-io1-xd2c.google.com with SMTP id q1so12054385ion.1
+ id 1iPB98-0003zi-C1
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 19:57:47 +0000
+Received: by mail-pg1-x542.google.com with SMTP id l3so7632235pgr.8
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 28 Oct 2019 12:29:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
- bh=vZyO6oUnRM5QCWv8Tj0U2eoY8KE3W2oe2H1OhiD1LEY=;
- b=MKxJZLS+nDjSdUWNVmV07IYdOaBNMKKHsaXFK4Isz3iRJgy2lkd8srJk6XLH+0UKJM
- e9MONkRQ22KqlDhXFCoyp0awoRE1jgUqEtSe6LFz3wiHanrrZDW0M3n/lyHXXlh92/x4
- gVqFEmi+cZ3ySxc9T1JuekfTONfxZL10KaZ8ckyjU9Sh/umGtN/jugm2BPal3c7fJel7
- rYPoGFfQ44l+db0sHjrpOhKwBMKF4iJ82WGIJDRV53DGOm+1/6I1xFQmoV9a17jgRG+v
- QRNNSICJdVvIJ4W2b/wqlBVri0iiXmQVBmGWJQtQJ92rceE4qJ4OWxOV76TtVYfUL9jR
- K+yA==
+ Mon, 28 Oct 2019 12:57:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=+wOJCmH0g8vAxxe+FcShlh+2/nEo9CAjIamY0wkPKUQ=;
+ b=O0yZqC1vKJdTDSM5n1ypj42P6mUYqFnfIcgablhmOvhVLjS1Ybl9gj4HXCMp/vZ/Jg
+ IlXkNeniJ714HLUGdQmrikkPN3FAzyra+IIBoiYFS+hSOqqXECKH+9kL8TmBRqTz+il7
+ BXn0qi51LmPYcG+sXB1pj3nora5+8WYXfasYo=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to;
- bh=vZyO6oUnRM5QCWv8Tj0U2eoY8KE3W2oe2H1OhiD1LEY=;
- b=C+9mcXGA4J8okgAvb2z4dMgQPscM9q9uUDjPclEyD593d7lQUAzg1SBJlgl44P6q5k
- hyillm1haVCKKyh8IwZmdsPEdzaPL5778qDIgd4EJ0QO8pw6gNaGfT6rAjEuSxGBVOk6
- /K1mm6nEgWHVgjgxdHQ54I0oRXwTWzaQC/1EaszI8ann0jVOU6RPIw4S00AKSrT79+6n
- Jzeaff4UV+dixwgd39RKXyrPnlf3fkZ8ZgsEiBZNOvIsvGDyJZ11cdFbuXAzPr/TqcRD
- QkfICwGkoSHAKcL2AyRaIAy/0HijUiD4LHVTRIQLNF2I+Hura/ViQB8offnv8ZuubINO
- GSKQ==
-X-Gm-Message-State: APjAAAWK2QyVM4cbglZEz2+kWEw/ZJ+Mct7Rkv7dQXom4xg7bpCgZNrO
- tAryl1dZMA1PIg8D21Gp88trdYt8QYhW1qnTsEM=
-X-Google-Smtp-Source: APXvYqyJxgevfK2t1q+5Yi4AyUe6XK99TIlppAyg9mRbAgx6g6kxQV+N6nzIuGzCpzCLBn4eNVT/sgMIYI/IQEQaxdc=
-X-Received: by 2002:a5d:9952:: with SMTP id v18mr15419147ios.58.1572290966022; 
- Mon, 28 Oct 2019 12:29:26 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=+wOJCmH0g8vAxxe+FcShlh+2/nEo9CAjIamY0wkPKUQ=;
+ b=dsFikiPZhxvhnrUPNCr9cyNlUfg7pxwmpQqQpbYnoypEfbhd+fip3QK6H0xiYkzYRm
+ YA/4Nvh1bZ5fKaNvkFL45NRj24sLgV/cVFZQx2nrGM3Zjasg32nPvolFozJrhS0ERCAI
+ 4U5inEjVaosNmynE/baLTF/MwEG+dYTGGGnT0bAItLXjvkGz1skR8KB6ol3JFOHuDPEq
+ GZzyRKfalkFVaaOoXhqXM5/5FVQ2tJm1Uh8iEP/6OeX1Os7Bdq3gEPauf3e1jAgolBHR
+ 1g3W120ih4ueIA/fP6jC8tKvbxIVwTsN1lHh1aeXfahSiFbfldIXirXDCtLJ8n2g5Vqj
+ zoDQ==
+X-Gm-Message-State: APjAAAUpnB/GOjHR2YZSYS4Tk+JxVLIsbZ8cB/fE40Kjc1e1dvS8nGZV
+ rsMzc7s6kBfYM0N+unrSiVnQDg==
+X-Google-Smtp-Source: APXvYqyKAiln1b5mOZI7AcApDWWXQnpclGuce0+3km3MXnlFB0MT9wWVjjgen/Fg+kiLaMYGZZoRxg==
+X-Received: by 2002:a62:e10c:: with SMTP id q12mr13396875pfh.248.1572292664956; 
+ Mon, 28 Oct 2019 12:57:44 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id y129sm12883990pgb.28.2019.10.28.12.57.43
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 28 Oct 2019 12:57:43 -0700 (PDT)
+Date: Mon, 28 Oct 2019 12:57:42 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH v2 05/17] add support for Clang's Shadow Call Stack (SCS)
+Message-ID: <201910281250.25FBA8533@keescook>
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20191024225132.13410-1-samitolvanen@google.com>
+ <20191024225132.13410-6-samitolvanen@google.com>
+ <20191025105643.GD40270@lakrids.cambridge.arm.com>
+ <CABCJKuc+XiDRdqfvjwCF7y=1wX3QO0MCUpeu4Gdcz91+nmnEAQ@mail.gmail.com>
+ <20191028163532.GA52213@lakrids.cambridge.arm.com>
 MIME-Version: 1.0
-References: <CAHCN7xKr-8DDt26RmQpVcfa4fj=vuGY1H-_DD4UWpsaPq6wH7A@mail.gmail.com>
-In-Reply-To: <CAHCN7xKr-8DDt26RmQpVcfa4fj=vuGY1H-_DD4UWpsaPq6wH7A@mail.gmail.com>
-From: Adam Ford <aford173@gmail.com>
-Date: Mon, 28 Oct 2019 14:29:14 -0500
-Message-ID: <CAHCN7xLgwTM8sU1uxKCRUKdtOc63RJs3e7nWHZ98_R_vp4ahmw@mail.gmail.com>
-Subject: Re: i.MX6Q LVDS colors wrong when HDMI connected when V4L2 Streaming
- with KMSSINK
-To: linux-media <linux-media@vger.kernel.org>, 
- arm-soc <linux-arm-kernel@lists.infradead.org>,
- Fabio Estevam <festevam@gmail.com>, 
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Content-Disposition: inline
+In-Reply-To: <20191028163532.GA52213@lakrids.cambridge.arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_122928_654073_03FEFBAF 
-X-CRM114-Status: GOOD (  13.56  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191028_125746_439705_BD5F2AF9 
+X-CRM114-Status: GOOD (  17.85  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d2c listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (aford173[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (aford173[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -88,6 +87,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,43 +99,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: clang-built-linux <clang-built-linux@googlegroups.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>,
+ Sami Tolvanen <samitolvanen@google.com>,
+ Kernel Hardening <kernel-hardening@lists.openwall.com>,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 28, 2019 at 2:12 PM Adam Ford <aford173@gmail.com> wrote:
->
-> I have an i.MX6Q with an OV5640 camera connected via CSI-2.
->
-> I can stream live video to LVDS just fine when HDMI is NOT connected
-> with G-Streamer and kmssink.  However, when HDMI is connected, I can
-> stream just fine to the HDMI, but when I try to stream to the LVDS
-> using KMSSINK, the colors are wrong.
->
-> If I use fbdev instead of kmssink, the colors are correct, but I would
-> prefer to use KMSSINK.
->
-> I have tried using v4l2convert to change the format, but I keep
-> getting errors that the format I try is not supported.
->
-> Might someone have any suggestions on how to stream to both HDMI and
-> LVDS without having the wrong color on the LVDS?
->
->
-> # display on hdmi
-> gst-launch-1.0 -v v4l2src ! kmssink name=imx-drm connector-id=54 sync=0
->
-> # display on LVDS
-> gst-launch-1.0 -v v4l2src ! kmssink name=imx-drm connector-id=56 sync=0
->
->
-I should have noted that if I stream to fbdevsink, the colors are
-correct on both screens simultaneously.
+On Mon, Oct 28, 2019 at 04:35:33PM +0000, Mark Rutland wrote:
+> On Fri, Oct 25, 2019 at 01:49:21PM -0700, Sami Tolvanen wrote:
+> > To keep the address of the currently active shadow stack out of
+> > memory, the arm64 implementation clears this field when it loads x18
+> > and saves the current value before a context switch. The generic code
+> > doesn't expect the arch code to necessarily do so, but does allow it.
+> > This requires us to use __scs_base() when accessing the base pointer
+> > and to reset it in idle tasks before they're reused, hence
+> > scs_task_reset().
+> 
+> Ok. That'd be worth a comment somewhere, since it adds a number of
+> things which would otherwise be unnecessary.
+> 
+> IIUC this assumes an adversary who knows the address of a task's
+> thread_info, and has an arbitrary-read (to extract the SCS base from
+> thead_info) and an arbitrary-write (to modify the SCS area).
+> 
+> Assuming that's the case, I don't think this buys much. If said
+> adversary controls two userspace threads A and B, they only need to wait
+> until A is context-switched out or in userspace, and read A's SCS base
+> using B.
+> 
+> Given that, I'd rather always store the SCS base in the thread_info, and
+> simplify the rest of the code manipulating it.
 
-> thanks,
->
-> adam
+I'd like to keep this as-is since it provides a temporal protection.
+Having arbitrary kernel read and write at arbitrary time is a very
+powerful attack primitive, and is, IMO, not very common. Many attacks
+tend to be chains of bugs that give attackers narrow visibility in to the
+kernel at specific moments. I would say this design is more about stopping
+"current" from dumping thread_info (as there are many more opportunities
+for current to see its own thread_info compared to arbitrary addresses
+or another task's thread_info). As such, I think it's a reasonable
+precaution to take.
+
+-- 
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
