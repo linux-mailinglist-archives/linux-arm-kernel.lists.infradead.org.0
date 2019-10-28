@@ -2,57 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 08CEAE7BC2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 22:49:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E3E6E7BC7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 22:51:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Dd4qtjBmf6+s7tCVbulAM5pkEiNOG7bG7bSN8eEtF/k=; b=JBnA5A9ebOaLv7
-	0JWIWfW4lwnovBvPbw5KfRfi8ftaZ9SZqv3nrBvMfh8EsEd/Cgr4Ue5A2sfjoLUi3MLewHBz2ruys
-	pwb5lJipzX5e21/xVmIqX+PXhq1X69e6Zk3wqSlWpwFORm+NFyHAGP27KFmdInrk+xiIwZlIUmC85
-	7nV9KVkyTAYMJw72bOU1jZEtG5Fv+F9mV7Hl2Rz7m8AWqMSdUrUyApml+uoiJGSnSwVnwWePAPpx3
-	YHO3r7nALFV06psxT5JVckGjcVzN8YuZq/Ci4YJy2qgTJcXtMJcrmLHWPiHvJlcOpzEsAKzGNIb4x
-	2T51jZo/a9ZObqF1VC0A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Hsc8rzcZYq1yvcVruNkKH16xoay/S52vVi3tENib3C4=; b=gJg1FnNLdaRi0H
+	mJVuOzNf5xX+veDywFypR9DsGEUcmTLU3dwqI8RkCu7an7+rhLQcnBG9Vj3zALbsXeoyNw7HmJnXE
+	IOZiy2dxN9uC/ZnaeXUUniq6F4wrvPOAKxkpPov8ie8uctnSEaxxOFn9Ucolb7Q/mP8geVvT9ZdKi
+	jbqbERBDY8hxAWobN3NbsCHQPgSofTy4mQkuAOYTESmUWD8iZUmLLqVRtFXoDJhxcSa2S8rYbu4AZ
+	IFjiGY51XNByaNupqN+Bg60+oG9JGrjk7bxHgQ2nGNFx6WcwygNqtHTLT+ttHXyQ/mSF+40T0w4MC
+	+1t9cmyJSzQBeLtL5ulg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPCtM-0000Kn-8J; Mon, 28 Oct 2019 21:49:36 +0000
-Received: from vps.xff.cz ([195.181.215.36])
+	id 1iPCul-0001qm-8d; Mon, 28 Oct 2019 21:51:03 +0000
+Received: from smtp09.smtpout.orange.fr ([80.12.242.131]
+ helo=smtp.smtpout.orange.fr)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPCtB-0000KL-0k
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 21:49:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1572299363; bh=yfQ5bNur1qQsSwWai80uin5ZDClxDtOcYUot2/fijL0=;
- h=From:To:Cc:Subject:Date:From;
- b=RVD9lhOKFIWyR8uwdk2pCEi1JXI/uuyWgSwtBUN3we5JB1c5A5vVxcsn92C47QBc3
- nU/lzm4szLyF6lnP6vBtiKuiNZ/DtVMsFUIocfOEhl1LTdROS25HWBRU2SA2j2MLqT
- xjJKew//0G2ek76ewJ6TrFzTUjb3lW3lW3QYv408=
-From: Ondrej Jirman <megous@megous.com>
-To: linux-sunxi@googlegroups.com
-Subject: [PATCH] ARM: sunxi: Fix CPU powerdown on A83T
-Date: Mon, 28 Oct 2019 22:49:14 +0100
-Message-Id: <20191028214914.3465156-1-megous@megous.com>
+ id 1iPCuV-0001qC-H5
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 21:50:49 +0000
+Received: from belgarion ([90.55.204.252]) by mwinf5d17 with ME
+ id K9qk2100a5TFNlm039qlNT; Mon, 28 Oct 2019 22:50:45 +0100
+X-ME-Helo: belgarion
+X-ME-Auth: amFyem1pay5yb2JlcnRAb3JhbmdlLmZy
+X-ME-Date: Mon, 28 Oct 2019 22:50:45 +0100
+X-ME-IP: 90.55.204.252
+From: Robert Jarzmik <robert.jarzmik@free.fr>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH 32/46] ASoC: pxa: i2s: use normal MMIO accessors
+References: <20191018154052.1276506-1-arnd@arndb.de>
+ <20191018154201.1276638-32-arnd@arndb.de>
+X-URL: http://belgarath.falguerolles.org/
+Date: Mon, 28 Oct 2019 22:50:44 +0100
+In-Reply-To: <20191018154201.1276638-32-arnd@arndb.de> (Arnd Bergmann's
+ message of "Fri, 18 Oct 2019 17:41:47 +0200")
+Message-ID: <87h83sk097.fsf@belgarion.home>
+User-Agent: Gnus/5.130008 (Ma Gnus v0.8) Emacs/26 (gnu/linux)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_144925_230097_2BA02E27 
-X-CRM114-Status: UNSURE (   9.18  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191028_145047_850717_698C1840 
+X-CRM114-Status: GOOD (  16.92  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [80.12.242.131 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robert.jarzmik[at]free.fr)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [80.12.242.131 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,54 +69,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ondrej Jirman <megous@megous.com>, Russell King <linux@armlinux.org.uk>,
- Maxime Ripard <mripard@kernel.org>, open list <linux-kernel@vger.kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, stable@vger.kernel.org,
- "moderated list:ARM/Allwinner sunXi SoC support"
- <linux-arm-kernel@lists.infradead.org>
+Cc: alsa-devel@alsa-project.org, Linus Walleij <linus.walleij@linaro.org>,
+ linux-kernel@vger.kernel.org, Haojian Zhuang <haojian.zhuang@gmail.com>,
+ Mark Brown <broonie@kernel.org>, Daniel Mack <daniel@zonque.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-PRCM_PWROFF_GATING_REG has CPU0 at bit 4 on A83T. So without this
-patch, instead of gating the CPU0, the whole cluster was power gated,
-when shutting down first CPU in the cluster.
+Arnd Bergmann <arnd@arndb.de> writes:
 
-Fixes: 6961275e72a8c1 ("ARM: sun8i: smp: Add support for A83T")
-Signed-off-by: Ondrej Jirman <megous@megous.com>
-Cc: stable@vger.kernel.org
----
- arch/arm/mach-sunxi/mc_smp.c | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+> To avoid dereferencing hardwired constant pointers from a global header
+> file, change the driver to use devm_platform_ioremap_resource for getting
+> an __iomem pointer, and then using readl/writel on that.
+>
+> Each pointer dereference gets changed by a search&replace, which leads
+> to a few overlong lines, but seems less risky than trying to clean up
+> the code at the same time.
+>
+> Cc: Mark Brown <broonie@kernel.org>
+> Cc: alsa-devel@alsa-project.org
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+Acked-by: Robert Jarzmik <robert.jarzmik@free.fr>
 
-diff --git a/arch/arm/mach-sunxi/mc_smp.c b/arch/arm/mach-sunxi/mc_smp.c
-index 239084cf8192..26cbce135338 100644
---- a/arch/arm/mach-sunxi/mc_smp.c
-+++ b/arch/arm/mach-sunxi/mc_smp.c
-@@ -481,14 +481,18 @@ static void sunxi_mc_smp_cpu_die(unsigned int l_cpu)
- static int sunxi_cpu_powerdown(unsigned int cpu, unsigned int cluster)
- {
- 	u32 reg;
-+	int gating_bit = cpu;
- 
- 	pr_debug("%s: cluster %u cpu %u\n", __func__, cluster, cpu);
- 	if (cpu >= SUNXI_CPUS_PER_CLUSTER || cluster >= SUNXI_NR_CLUSTERS)
- 		return -EINVAL;
- 
-+	if (is_a83t && cpu == 0)
-+		gating_bit = 4;
-+
- 	/* gate processor power */
- 	reg = readl(prcm_base + PRCM_PWROFF_GATING_REG(cluster));
--	reg |= PRCM_PWROFF_GATING_REG_CORE(cpu);
-+	reg |= PRCM_PWROFF_GATING_REG_CORE(gating_bit);
- 	writel(reg, prcm_base + PRCM_PWROFF_GATING_REG(cluster));
- 	udelay(20);
- 
--- 
-2.23.0
+Cheers.
 
+--
+Robert
 
 _______________________________________________
 linux-arm-kernel mailing list
