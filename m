@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ABDB6E70D2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 12:53:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 464FCE70D8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 12:56:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9kjK5V2evHJXWMKuEh+gQpyWu5rbmRX/r3dBvbcMLDk=; b=YwJJqwDabaUAnE
-	5Kl/4GFGDtR6xDKnDhIYJsJ20jJuLNqVkJpE7BXkPkeh5n20m4zeXMoOJIukLXMCExEyoctcbmNOB
-	/2K7rFb34gVPruv4+5VpaLdw6p/GerTro0mA0Hazc6V25tn/by+PfB6IxR8iI/Dgh+bHGmICBcTfp
-	vFN99PLx0GBPv21jz6iS0acski3duJVzHkFFFgRLrjZOtSaviLhnTd+6qgEPMaNt46gq8F5T03szK
-	PE/999MaAZeITm319H5VO+CEkcqGza05pBq9ozh6PulrtIHoA+ckZ6Z54lyQCYpCPDL/HCipcOWnI
-	YSSm1cDoG/TCyowDryAg==;
+	List-Owner; bh=XhJNxSZLmz7vbY34T8pTLCxDrJN49Zb50jTojoFtfYI=; b=QrXj9CwY1PC9Zm
+	6tN12gaYMqcAosva8gEZhFzzquANTtmJFxwfhCaNXbog+ePWyxSf2lmADBOLxvS7z2V9KvLyDzpQN
+	gLXTKJhYoPBjXxFtzY0cLLfOjMFvmBSQfBdIvRCK1BoRQKJeAVAlaRzWHvM1SVOaK0gNMYAJxXqWp
+	tXUqmswA+U0AzuMs5348JiUf/QfMZDAlnV90gw278LQ+quQNXFnk/9SxrQIsXGnbs196SaYsQH0CS
+	wt9wAx6OPES9pVgylBLVslmY163ZrqvUk8u+hypB3DlDupP6mma/kgKNvnaGAk3e7qYq4LiP9raFP
+	INycXmVr4usnNGwdhRxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP3aL-0007j5-Io; Mon, 28 Oct 2019 11:53:21 +0000
+	id 1iP3d0-0000wk-Tf; Mon, 28 Oct 2019 11:56:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP3Zx-0007al-Q3
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 11:52:59 +0000
+ id 1iP3cr-0000wL-7v
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 11:55:58 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4BEB1214D9;
- Mon, 28 Oct 2019 11:52:52 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A9B96208C0;
+ Mon, 28 Oct 2019 11:55:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572263577;
- bh=8hJIjJ+E1m4Pah5tqGcOg9p22uWWbGt4oxsXkgRt41c=;
+ s=default; t=1572263756;
+ bh=6gTmiF6kcLTVVMKOteRqACcD3HkmY2wWKops+mpctqI=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=1O2hMHl5Eb6yDgwV6YAT1XyKM9RjSxMVU1knnHxtWZR1B7oVbkc1B7CmbmrXHVDm3
- l0zcoTxLtYU9MZmUNcijVKBvHXa7nhKJgxKv50L/4HaXvoAkpnAfHyIEgVzgDhDOvi
- EfeObR+r6I0GjvN/r8qlqZQ7gI89UZBF+j4SP7RM=
-Date: Mon, 28 Oct 2019 19:52:35 +0800
+ b=PLnK6/W+VW+5+zdByUYNYM4s4bPdWIJLLJV7ebGKrLwjNixRZpNilOHXFuLICVRC6
+ zZUWqk/jkv+SVVYzKfa2dI6omlEnpp/x7otirSPPfLrcrAhjDruBYiIZpvqOVpcIwC
+ sXlGkORkCcuLQ6pIR1SwqsK+h1N0k2mxJojGAezo=
+Date: Mon, 28 Oct 2019 19:55:38 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: Re: [PATCH trivial] ARM: dts: imx53: Spelling
- s/configration/configuration/
-Message-ID: <20191028115233.GF16985@dragon>
-References: <20191024144443.27761-1-geert+renesas@glider.be>
+To: Fabio Estevam <festevam@gmail.com>
+Subject: Re: [PATCH] ARM: dts: imx53-qsb: Use DRM bindings for the Seiko
+ 43WVF1G panel
+Message-ID: <20191028115537.GG16985@dragon>
+References: <20191024215712.1552-1-festevam@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191024144443.27761-1-geert+renesas@glider.be>
+In-Reply-To: <20191024215712.1552-1-festevam@gmail.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_045257_916872_B9094E9A 
-X-CRM114-Status: UNSURE (   8.43  )
+X-CRM114-CacheID: sfid-20191028_045557_307320_45FE21A0 
+X-CRM114-Status: UNSURE (   9.27  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -78,19 +78,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jiri Kosina <trivial@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+Cc: s.hauer@pengutronix.de, linux-imx@nxp.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 24, 2019 at 04:44:43PM +0200, Geert Uytterhoeven wrote:
-> Fix misspelling of "configuration".
+On Thu, Oct 24, 2019 at 06:57:12PM -0300, Fabio Estevam wrote:
+> Currently the parallel panel that is supported is the CLAA WVGA panel,
+> which is the one that comes with the i.MX51 Babbage board.
 > 
-> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> The default parallel panel that goes with the imx53-qsb board is
+> the Seiko 43WVF1G LCD, so switch to the Seiko one.
+> 
+> While at it convert to DRM bindings.
+> 
+> The parallel display still remains disabled as the default display
+> port is the TVE output.
+> 
+> Signed-off-by: Fabio Estevam <festevam@gmail.com>
 
 Applied, thanks.
 
