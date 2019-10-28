@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0920E7B3A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 22:17:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C6E6E7B41
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 22:20:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
 	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kUQc8B+36JUGMEjn9p7zXpFdERWco9JG5x6wk9aW7xI=; b=Xf2KYL5X/+flOs
-	ShKECXVDHoQ1HYPKSPwKTHXGQKSggWQtx1NTHQFuIW3ZfxHJ/I9vUOg00B/x77Ht4ofjf61iX0IGg
-	aZ+BtlJojzfsQy6fsKY+5YbIO+L3BWiwNFIB2qQNjYXteJs7kRCbmYea/TVtwKTLIG6hkANpnYy8B
-	hEBHv3Kziaey1iQLbJNRsGLtpjZHBvRtZvBPghqR9Sax18rff2pZlc3Vgw2rZDrFHsDA+sY7n43ju
-	nGRt+chcbQCRbyYSDxS0U406QE1OktTToMWi7XgjKDjjLm913XO4BVZGEFyXBGM+uc6jY/LIDKRlo
-	NVXAY8XxB1YvMSOoNqaQ==;
+	List-Owner; bh=7s7OOO78ca+y1YkcjSU0frtoquvaq6fJZrsaKu16SyQ=; b=qyMhZuT23t1XK9
+	6vKVNnvB1Hwt1aMS2+SLDSwNwggXBtghfss5rwjtOPhnMazfLIOTI+D7HrXGRG66+1TfMizvpTRMh
+	nsMKAt0LHtcDblhSf+KIz8vrmw5i/jMuzYO8GttbioI3Q0kS79ZAPrS9RnuaikJsSnbP/Jw3W6+g2
+	Bc1KbJ0xx+UD9ZKWl/9fdOB0rbP6fF8eungPRwOBVB1k4Xh0VKAG1QQ05sxAU+QZw4F20lSkeqY71
+	5SZtueuInLB96XUxy/cmPihw6qyMVMDh5pGeW2xAGZY4mzMZL2gpIJ2Wk8R6dBI3vDlsc3QMF4ZLG
+	mw5A+K7Jd3vYHWjU3KZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPCOB-0004SR-0Z; Mon, 28 Oct 2019 21:17:23 +0000
+	id 1iPCQm-0004qj-2e; Mon, 28 Oct 2019 21:20:04 +0000
 Received: from smtp09.smtpout.orange.fr ([80.12.242.131]
  helo=smtp.smtpout.orange.fr)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPCO0-0004RV-Em
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 21:17:13 +0000
+ id 1iPCQY-0004pr-MJ
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 21:19:52 +0000
 Received: from belgarion ([90.55.204.252]) by mwinf5d17 with ME
- id K9H92100A5TFNlm039HAqi; Mon, 28 Oct 2019 22:17:10 +0100
+ id K9Kl210085TFNlm039Klzy; Mon, 28 Oct 2019 22:19:46 +0100
 X-ME-Helo: belgarion
 X-ME-Auth: amFyem1pay5yb2JlcnRAb3JhbmdlLmZy
-X-ME-Date: Mon, 28 Oct 2019 22:17:10 +0100
+X-ME-Date: Mon, 28 Oct 2019 22:19:46 +0100
 X-ME-IP: 90.55.204.252
 From: Robert Jarzmik <robert.jarzmik@free.fr>
 To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH 23/46] ARM: pxa: z2: use gpio lookup for audio device
+Subject: Re: [PATCH 24/46] ARM: pxa: magician: use platform driver for audio
 References: <20191018154052.1276506-1-arnd@arndb.de>
- <20191018154201.1276638-23-arnd@arndb.de>
+ <20191018154201.1276638-24-arnd@arndb.de>
 X-URL: http://belgarath.falguerolles.org/
-Date: Mon, 28 Oct 2019 22:17:07 +0100
-In-Reply-To: <20191018154201.1276638-23-arnd@arndb.de> (Arnd Bergmann's
- message of "Fri, 18 Oct 2019 17:41:38 +0200")
-Message-ID: <87ftjclgdo.fsf@belgarion.home>
+Date: Mon, 28 Oct 2019 22:19:45 +0100
+In-Reply-To: <20191018154201.1276638-24-arnd@arndb.de> (Arnd Bergmann's
+ message of "Fri, 18 Oct 2019 17:41:39 +0200")
+Message-ID: <87blu0lg9a.fsf@belgarion.home>
 User-Agent: Gnus/5.130008 (Ma Gnus v0.8) Emacs/26 (gnu/linux)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_141712_776586_17677C2E 
-X-CRM114-Status: GOOD (  18.15  )
+X-CRM114-CacheID: sfid-20191028_141951_015388_7880CA5E 
+X-CRM114-Status: GOOD (  15.11  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -80,11 +80,10 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Arnd Bergmann <arnd@arndb.de> writes:
 
-> The audio device is allocated by the audio driver, and it uses a gpio
-> number from the mach/z2.h header file.
->
-> Change it to use a gpio lookup table for the device allocated by the
-> driver to keep the header file local to the machine.
+> The magician audio driver creates a codec device and gets
+> data from a board specific header file, both of which is
+> a bit suspicious. Move these into the board file itself,
+> using a gpio lookup table.
 >
 > Cc: Mark Brown <broonie@kernel.org>
 > Cc: alsa-devel@alsa-project.org
