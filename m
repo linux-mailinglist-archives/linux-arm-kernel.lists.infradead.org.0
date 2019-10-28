@@ -2,64 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0C23E7752
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 18:08:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7D75E775B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 18:10:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=i35ragsIXhnGBkLQ+nuG16PMif3zmtqe/hgEMd9ycOU=; b=TOVyT3G6T7pJePmsJWYaFWd4G
-	DwBWuq0iH41LqEFgIOwbwGL7UBtMPylxItSdYdj8rohf5fjTXMBvE9KAuh3nVEC+yglIHHMt8AsSK
-	AAO+sSDekgWs0Li0Wz2DuU2GLxmpAvWI2pjdBR1hZpxp+iWM1Sp9sP5repx3NwLlH4CygVYgffMZN
-	EfXfViHXmUUgiHWbsPc83wyJ02HWEPRXrBBJgIqYt1VZquJiKUJVkPM/wVG+euTWr6c387tlakcnF
-	53M+3Sa2JacGElDjO88FSUhPjgXcUyvrbYYtse4o2D783HlAwF8l3wPWT2tYmrNJZ6oCeWUypvRUY
-	IqQBJ/tbQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mhcSkHypaYgejmUTPIeU72mhtEcO8YrKLAcyYLfCOdQ=; b=lCuzZr4McxegBw
+	efGiq0lVCM8TV3PFZK4UG3KqypfVLrlJtaKTNZBJQt2jeuSkSsNX7cZcnxaSXgzET67be7qQLk91c
+	2+WjE+rmxY/J3PnuqMgRhbzCm4cw+KHAI0ZrD/+jVuV01q6ZCz96BZ2lCOSnweZL4CnqtxaLBSPgp
+	AqLL4WC6OEgGKChNo1+sScpWzIded1WN42I1mcZJZdbdLCYTseee8iBFr2OwuSjQXIJcO6Ii6RPEW
+	kgNFgVe08D31P33QRvV6KF2IrbZw/wz1E4pTtfJETGaqSUWSicgNbOIYDzMC4F98Im9gOxzJeSFdG
+	a1jBsxKTAz/9CmrAc+EQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP8Vk-0004yO-JS; Mon, 28 Oct 2019 17:08:56 +0000
-Received: from mga09.intel.com ([134.134.136.24])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP8VZ-0004xQ-5n
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 17:08:46 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga002.jf.intel.com ([10.7.209.21])
- by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 28 Oct 2019 10:08:44 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.68,240,1569308400"; d="scan'208";a="211490840"
-Received: from yoojae-mobl1.amr.corp.intel.com (HELO [10.7.153.148])
- ([10.7.153.148])
- by orsmga002.jf.intel.com with ESMTP; 28 Oct 2019 10:08:44 -0700
-Subject: Re: [PATCH v2] media: aspeed-video: Fix memory leaks in
- aspeed_video_probe
-To: Navid Emamdoost <navid.emamdoost@gmail.com>
-References: <d9c04318-586a-bfc2-fce6-6218c6bab1d6@linux.intel.com>
- <20191028165827.24949-1-navid.emamdoost@gmail.com>
- <6450dbb4-aa6f-627d-7e5d-21a20f560d60@linux.intel.com>
- <CAEkB2ETFNFKtGTo+HZ4L9uzr-W1CTeuGAwfKqm8hX5fx7d8dbQ@mail.gmail.com>
-From: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
-Message-ID: <da959329-aa40-b6e7-dcc9-48183a8da716@linux.intel.com>
-Date: Mon, 28 Oct 2019 10:08:44 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1iP8Wm-0005GQ-T9; Mon, 28 Oct 2019 17:10:00 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iP8Wc-0005Fz-8s
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 17:09:51 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C62111FB;
+ Mon, 28 Oct 2019 10:09:49 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1F99E3F71F;
+ Mon, 28 Oct 2019 10:09:49 -0700 (PDT)
+Date: Mon, 28 Oct 2019 17:09:47 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH v2] KVM: arm64: Don't set HCR_EL2.TVM when S2FWB is
+ supported
+Message-ID: <20191028170946.GB52213@lakrids.cambridge.arm.com>
+References: <20191028130541.30536-1-christoffer.dall@arm.com>
+ <0c3291a7-18dc-1ae5-e706-8b04c9ab8a9e@arm.com>
+ <86pnigyh90.wl-maz@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <CAEkB2ETFNFKtGTo+HZ4L9uzr-W1CTeuGAwfKqm8hX5fx7d8dbQ@mail.gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <86pnigyh90.wl-maz@kernel.org>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_100845_275428_C91C41AF 
-X-CRM114-Status: GOOD (  17.67  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191028_100950_360417_D4A8D37C 
+X-CRM114-Status: GOOD (  15.91  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.24 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,56 +64,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-aspeed@lists.ozlabs.org, Andrew Jeffery <andrew@aj.id.au>,
- Kangjie Lu <kjlu@umn.edu>, openbmc@lists.ozlabs.org,
- Eddie James <eajames@linux.ibm.com>, LKML <linux-kernel@vger.kernel.org>,
- Navid Emamdoost <emamd001@umn.edu>, Joel Stanley <joel@jms.id.au>,
- Stephen McCamant <smccaman@umn.edu>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Alexandru Elisei <alexandru.elisei@arm.com>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/28/2019 10:06 AM, Navid Emamdoost wrote:
-> On Mon, Oct 28, 2019 at 12:01 PM Jae Hyun Yoo
-> <jae.hyun.yoo@linux.intel.com> wrote:
->>
->> On 10/28/2019 9:58 AM, Navid Emamdoost wrote:
->>> In the implementation of aspeed_video_probe() the allocated memory for
->>> video should be released if either devm_ioremap_resource()
->>> or aspeed_video_init() or aspeed_video_setup_video() fails. Replace
->>> kzalloc() with devm_kzalloc to avoid explicit release for video.
->>>
->>> Fixes: d2b4387f3bdf ("media: platform: Add Aspeed Video Engine driver")
->>> Signed-off-by: Navid Emamdoost <navid.emamdoost@gmail.com>
->>> ---
->>> Changes in v2:
->>>        -- replace kzalloc with devm_kzalloc based on Jae Hyun Yoo
->>> suggestion
->>>
->>>    drivers/media/platform/aspeed-video.c | 2 +-
->>>    1 file changed, 1 insertion(+), 1 deletion(-)
->>>
->>> diff --git a/drivers/media/platform/aspeed-video.c b/drivers/media/platform/aspeed-video.c
->>> index eb12f3793062..2aa8ea2f9824 100644
->>> --- a/drivers/media/platform/aspeed-video.c
->>> +++ b/drivers/media/platform/aspeed-video.c
->>> @@ -1646,7 +1646,7 @@ static int aspeed_video_probe(struct platform_device *pdev)
->>>    {
->>>        int rc;
->>>        struct resource *res;
->>> -     struct aspeed_video *video = kzalloc(sizeof(*video), GFP_KERNEL);
->>> +     struct aspeed_video *video = devm_kzalloc(sizeof(*video), GFP_KERNEL);
->>
->> It can't be compiled. devm_kzalloc should have 3 parameters.
->>
+On Mon, Oct 28, 2019 at 04:19:55PM +0000, Marc Zyngier wrote:
+> On Mon, 28 Oct 2019 15:12:39 +0000,
+> Alexandru Elisei <alexandru.elisei@arm.com> wrote:
+> > On 10/28/19 1:05 PM, Christoffer Dall wrote:
+> > > diff --git a/arch/arm64/include/asm/kvm_emulate.h b/arch/arm64/include/asm/kvm_emulate.h
+> > > index d69c1efc63e7..70509799a2a9 100644
+> > > --- a/arch/arm64/include/asm/kvm_emulate.h
+> > > +++ b/arch/arm64/include/asm/kvm_emulate.h
+> > > @@ -53,8 +53,18 @@ static inline void vcpu_reset_hcr(struct kvm_vcpu *vcpu)
+> > >  		/* trap error record accesses */
+> > >  		vcpu->arch.hcr_el2 |= HCR_TERR;
+> > >  	}
+> > > -	if (cpus_have_const_cap(ARM64_HAS_STAGE2_FWB))
+> > > +
+> > > +	if (cpus_have_const_cap(ARM64_HAS_STAGE2_FWB)) {
+> > >  		vcpu->arch.hcr_el2 |= HCR_FWB;
+> > > +	} else {
+> > > +		/*
+> > > +		 * For non-FWB CPUs, we trap VM ops (HCR_EL2.TVM) until M+C
+> > > +		 * get set in SCTLR_EL1 such that we can detect when the guest
+> > > +		 * MMU gets turned off and do the necessary cache maintenance
+> > > +		 * then.
+> > > +		 */
+> > > +		vcpu->arch.hcr_el2 &= ~HCR_TVM;
+> > 
+> > Don't we want to set the bit here, so we're consistent with the
+> > previous behaviour and the comment? Because with this patch, we
+> > never set HCR_EL2.TVM...
 > 
-> Oops! my bad. Do you think such a list of parameters is fine:
->      devm_kzalloc(&pdev->dev, sizeof(*video), GFP_KERNEL);
+> Of course you're right. This is how I plan to fix it:
+> 
+> diff --git a/arch/arm64/include/asm/kvm_emulate.h b/arch/arm64/include/asm/kvm_emulate.h
+> index 47c774c2d18b..7b835337f78b 100644
+> --- a/arch/arm64/include/asm/kvm_emulate.h
+> +++ b/arch/arm64/include/asm/kvm_emulate.h
+> @@ -63,7 +63,7 @@ static inline void vcpu_reset_hcr(struct kvm_vcpu *vcpu)
+>  		 * MMU gets turned on and do the necessary cache maintenance
+>  		 * then.
+>  		 */
+> -		vcpu->arch.hcr_el2 &= ~HCR_TVM;
+> +		vcpu->arch.hcr_el2 |= HCR_TVM;
+>  	}
 
-Yes, it's fine.
+Ouch, yes. That was as suggested for v1, and I missed it when saying my
+R-B held. :(
+
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
