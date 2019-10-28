@@ -2,62 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA8B8E6F2E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 10:34:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DCA17E6F39
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 10:38:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:Subject:From:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oBFyOKJG8FqZOxdBCGWqy4/PYizCpiGn05Hjg4nLCdI=; b=skNTnYfY4qbQ+l
-	xELy0Xd/LKuLRbxgsdAoT5bL0p4quZfNrJLKOF101birWqkfzdX9yJ50wIF3zES8IQY4glBKTKWaX
-	K6aOhCrNVD1ZhbQUl4zj4+y8dex9rtP44puHCEHi4hUKEK8Ari/O0eqaGqLRtEcIovPjJmH4zhEe1
-	CrX4zduDCPW9/s8AKk+HI9GhVFi11Qg2KMXnnJcJv+sg8jUKmJ8pAP0Ze18XG52RV9NGaojKizBOb
-	I6xUeGrIvJ22ww5EohNnhSPynrJ4kXBZX6yrzjHzHGUWN1hUjj7p8FIOrfwC2c9F1wWhz9bZtpZdW
-	f0LixAXF5OpSYmzX5k0w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ewq0i+F5tt61k9EbWY2XGUoyrLn3ofvOUrCLOhIoPdQ=; b=tLBPhjD3RRLb2k
+	bD4BP3zyjKK+NLVXCHovxUGxMESCCRfenD7K1BuxFQC7o+z3lmH9pp+Vx7r9+vXvRpgk//5MyBk38
+	xWFXeu4O1BW/frhXx0vhNUvc73Lc2zeOXSaAxBn5DZnpYwosH1YWRNbgdl7pgy0CWwWvS307mgYFm
+	KeSwEcmqKVs6hTfofUIMCjWRVUeiI4mOcpz6muLQH0MpNF3DFvnCno78y/MLfNIGMH8PEjlJyd03n
+	jX2sXBTa+/XHtJ1QjMp3iEb9yyZrnqYtk8VW8nIYVc1E0yzr8Y7GDVoltgZ9uo3sqO9zBFoqLrw6n
+	NBep1IA69ppoGfm+cz5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP1QN-0003b8-CH; Mon, 28 Oct 2019 09:34:55 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iP1TJ-0005Ve-51; Mon, 28 Oct 2019 09:37:57 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP1Pp-0003W7-Vq
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 09:34:23 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4F5C120B7C;
- Mon, 28 Oct 2019 09:34:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572255261;
- bh=5SNe1YQt5wJ+qM2Hq/9urdRM6IpimM8L/9d2E8ooBA8=;
- h=In-Reply-To:References:Cc:From:Subject:To:Date:From;
- b=I4bKVX0icw11mdMLxAGaZvsJ33V2GZI6JsqYC3vyXtWqf0qiQiXzL/6YpjfHgurov
- mxhD0Zy3ct8a5kr9vAbMnxz+jpwYrJgFbtAiw+pVgGsbk7lFCoHKp/aJ4qwK/dwbLS
- Ce0CioKx30+Ni5bHrzTF7toEoitPOxivfxWTkKDU=
+ id 1iP1T0-0005Uq-Se
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 09:37:40 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x9S9bYrl098528;
+ Mon, 28 Oct 2019 04:37:34 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1572255454;
+ bh=YtAxq8vmDcqPRQcPeoAHayL8HjbCgszHi2svGRDTwkQ=;
+ h=From:To:CC:Subject:Date;
+ b=YfYP3vu+opbSnCR66ZodwrSr10hn5NL3woXvfMV8lX+x8iRQK6t8KiFWw9rfMaGoM
+ FcvqD2LxLuKWA9WwjjQAyOXbVK/qbro/lz5p0nnESr9FWMszqAYOUiIu2Rr9R/dIjs
+ T5iuBKxJ9PikyVV3N9sI8S6Up8HLnIeUPOpy3YMo=
+Received: from DLEE108.ent.ti.com (dlee108.ent.ti.com [157.170.170.38])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x9S9bYkK005857
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 28 Oct 2019 04:37:34 -0500
+Received: from DLEE111.ent.ti.com (157.170.170.22) by DLEE108.ent.ti.com
+ (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 28
+ Oct 2019 04:37:22 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE111.ent.ti.com
+ (157.170.170.22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Mon, 28 Oct 2019 04:37:22 -0500
+Received: from lta0400828a.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x9S9bW4g027237;
+ Mon, 28 Oct 2019 04:37:32 -0500
+From: Roger Quadros <rogerq@ti.com>
+To: <t-kristo@ti.com>, <nm@ti.com>
+Subject: [PATCH 0/2] [PATCH 0/2] arm64: dts: ti: k3-j721e: Add USB ports
+Date: Mon, 28 Oct 2019 11:37:28 +0200
+Message-ID: <20191028093730.23094-1-rogerq@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-In-Reply-To: <20191018154201.1276638-37-arnd@arndb.de>
-References: <20191018154052.1276506-1-arnd@arndb.de>
- <20191018154201.1276638-37-arnd@arndb.de>
-From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH 37/46] ARM: pxa: move clk register definitions to driver
-To: Arnd Bergmann <arnd@arndb.de>, Daniel Mack <daniel@zonque.org>,
- Haojian Zhuang <haojian.zhuang@gmail.com>,
- Robert Jarzmik <robert.jarzmik@free.fr>
-User-Agent: alot/0.8.1
-Date: Mon, 28 Oct 2019 02:34:20 -0700
-Message-Id: <20191028093421.4F5C120B7C@mail.kernel.org>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_023422_055492_A71C816A 
-X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-CacheID: sfid-20191028_023739_009869_3E95CBF9 
+X-CRM114-Status: UNSURE (   9.26  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -79,30 +88,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Michael Turquette <mturquette@baylibre.com>,
- linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
- Linus Walleij <linus.walleij@linaro.org>, linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Roger Quadros <rogerq@ti.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Arnd Bergmann (2019-10-18 08:41:52)
-> The clock register definitions are now used (almost) exclusively in the
-> clk driver, and that relies on no other mach/*.h header files any more.
-> 
-> Remove the dependency on mach/pxa*-regs.h by addressing the registers
-> as offsets from a void __iomem * pointer, which is either passed from
-> a board file, or (for the moment) ioremapped at boot time from a hardcoded
-> address in case of DT (this should be moved into the DT of course).
-> 
-> Cc: Michael Turquette <mturquette@baylibre.com>
-> Cc: Stephen Boyd <sboyd@kernel.org>
-> Cc: linux-clk@vger.kernel.org
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> ---
+Hi,
 
-Acked-by: Stephen Boyd <sboyd@kernel.org>
+This series enables USB 2.0 support on j721e-common-proc-board.
+
+The USB0 is available as a type-C port. Although it is super-speed
+capable, we limit it to high-speed for now till SERDES PHY
+support is added.
+
+USB1 is routed via on-board USB2.0 hub to 2 type-A ports. USB1
+is used as high-speed host.
+
+Controller side DT binding is approved [1]. Driver [2] is yet to be
+in USB tree. This series is safe to be picked for -next.
+
+[1] https://lkml.org/lkml/2019/10/25/1036
+[2] https://lkml.org/lkml/2019/10/24/371
+
+Series is based on top of Tero's ti-k3-next branch.
+
+cheers,
+-roger
+
+Roger Quadros (2):
+  arm64: dts: ti: k3-j721e-main: add USB controller nodes
+  arm64: dts: ti: k3-j721e-common-proc-board: Add USB ports
+
+ .../dts/ti/k3-j721e-common-proc-board.dts     | 35 +++++++++++
+ arch/arm64/boot/dts/ti/k3-j721e-main.dtsi     | 60 +++++++++++++++++++
+ arch/arm64/boot/dts/ti/k3-j721e.dtsi          |  2 +
+ 3 files changed, 97 insertions(+)
+
+-- 
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
+Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 
 _______________________________________________
