@@ -2,60 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B8AAE7C42
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 23:21:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B522CE7C66
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 23:34:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lkIttUSVG2nW6zQ5FJzNy4zCUeaFjcl4DWf1MsmFfW0=; b=pukAek4wHhqYrZ
-	uD0Olhxe0JdRWlS5FFi+iMsPkCTUiF42IT35789aW/Kp9dTgDsbEkLkgF/mPtKP25cINXtsh+Eu/h
-	6YhUL5k0NP0hBJOW7ZElk+3c8H01H3DjybYn/HZU+MgRek8geD5kXbLzTif2xNK5rsWh7/oQGPwUZ
-	7oHMzElpMY4RK7T9/o/F4l9tVeKQo1N7q1bzCW6wy+yk/PZdNJQYtxNvvYXWevGKAxM/aSOOopmjp
-	S3bHtvXnZ9b8Rrto22Ic6tC/zyB2c7y/JnHjRmpcOnA9BTrrwQPSBs4BRsSuQfqVLd74nTCbo66TD
-	UyFs+nDa3E9BOshsJt3g==;
+	List-Owner; bh=iTsHg1TzRIbaXZdfI268hkR62fEHkyOiLbwhbmjyBW4=; b=Ss7VMvXWDH/Wm1
+	ixqHzqFaUYRQyclCGZE+jGscijlr/V7Z2JcU1ITQ4J6st+Lnh7A+rzEh2vyPcEXkHvcGrEzjXjHfj
+	6yX54lHuYZhNWnkYdleVx4iYBPte5HFHLY0KNk9vvo4JEN5kMXQuFG4UaX07slsOiS1K0+nwG3K4k
+	jnxHyqWVhqDNrgvxEop2n47VCny3RDOgdv28rI/rn6SFaUMFyrVvig1Y3fPOPPqtkED+AiwblhY7h
+	GKPMvSfcQqtFs7hFBwgRb5fvRW/iiCA8PdC2zP0XJj6WswrJbiQsA9mj9ENGkPBF/lBhSMPR6dEy3
+	NK22V04fPRQhGGhus/BQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPDNi-0004ZS-1E; Mon, 28 Oct 2019 22:20:58 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iPDae-0008Uc-Nl; Mon, 28 Oct 2019 22:34:20 +0000
+Received: from mail-il1-x142.google.com ([2607:f8b0:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPDNX-0004Z2-UM
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 22:20:49 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0F6A821479;
- Mon, 28 Oct 2019 22:20:45 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572301247;
- bh=VSBk7YAMwCwbsPuvRCBw6UeuvHY7STvzXKIvzV2nyuI=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=0gosvq7R5GnXKiYYLDbPH29ONaAKpYHE02ZEPnzDUcqvXqhp72Teg/Ds/g3vOOu+v
- FG4avd2WmHPRGFFlHNloeY/x+Kqn7qS/tlQLnwyI/SyJIWS26MT+8t3UyWWDNnzYML
- dc4R4LPqV+P2GObHwW+vgu32hGQhqxFZzIWcYSL4=
-Date: Mon, 28 Oct 2019 22:20:42 +0000
-From: Will Deacon <will@kernel.org>
-To: Rob Clark <robdclark@gmail.com>
-Subject: Re: [PATCH v2] iommu/arm-smmu: fix "hang" when games exit
-Message-ID: <20191028222042.GB8532@willie-the-truck>
-References: <418d8426-f299-1269-2b2e-f86677cf22c2@arm.com>
- <20191007204906.19571-1-robdclark@gmail.com>
+ id 1iPDaU-0008Tg-Rs
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 22:34:13 +0000
+Received: by mail-il1-x142.google.com with SMTP id o16so9621910ilq.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 28 Oct 2019 15:34:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=c2XX2oa9okl2tfpust4RUifahZHp7tb1+MoPm2u47Wc=;
+ b=n4p86JogluIaUwX8lpVfKCl315ggHShPT/3PG9nmdvv6A+WmkcxoXlJ1p500UHclpZ
+ V7orIaazLLn5Miq8ZaNeWiihu1+79cg9oAg+i/LcaIdcqZQ5iG4T4aVCMjo26c+Cdn97
+ r3IOx7w0Y6kNlL3cRfnacuWuUmSw1xh6YKtgE=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=c2XX2oa9okl2tfpust4RUifahZHp7tb1+MoPm2u47Wc=;
+ b=aeKR2YV9PjLNAlcl4KczQRJBFRJ81ZoX9c/o4cf+XzrfoqTHtNXsa4MU8L22dXIrOD
+ x3fedELLSeQy33hpyo1syvmqraqg4y4io22IJ6YMyokqYNC+V2YMInJaBB3A9rMARf+q
+ idDSTOwdf0i9i16YZf/5eA/W636AbuTX7p+I3PGVWTGdTlELHQvF6f6vt+TZ9+Fj9g59
+ qHZpt8SR06cAgIVTwarRNVBMiN4+bnNM6Fvjdi6QuP+SsOO/0uJX2H/FvTVZiikj2gyG
+ du17j8V2NrhELXF6+FftuaL7mqt0tt4x3E4LDFPr12txy6aR97k4EQ29MBIOyWctge4+
+ /Cjw==
+X-Gm-Message-State: APjAAAWkz2cQr5xlHSZ/GpCl6zqJdkqZhnmaGQYYvXG1SbBflWkWdi9A
+ aqNd+fgQDNuLHi5SnH1oNfVS6DI+McLDmcBRbZ+QVQ==
+X-Google-Smtp-Source: APXvYqyCGJQl+HAm+sa8mYYJp4Wxr/m+y+g/6ntOZCrMubS4XyZUczCAk4EdzfbP8O6fyXYOHmttxwz3zGzyvqk0tc0=
+X-Received: by 2002:a92:99ca:: with SMTP id t71mr8413794ilk.61.1572302047950; 
+ Mon, 28 Oct 2019 15:34:07 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191007204906.19571-1-robdclark@gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20191025175625.8011-1-jagan@amarulasolutions.com>
+ <20191025175625.8011-5-jagan@amarulasolutions.com>
+ <20191028153427.pc3tnoz2d23filhx@hendrix>
+In-Reply-To: <20191028153427.pc3tnoz2d23filhx@hendrix>
+From: Jagan Teki <jagan@amarulasolutions.com>
+Date: Tue, 29 Oct 2019 04:03:56 +0530
+Message-ID: <CAMty3ZCisTrFGjzHyqSofqFAsKSLV1n2xP5Li3Lonhdi0WUZVA@mail.gmail.com>
+Subject: Re: [PATCH v11 4/7] drm/sun4i: dsi: Handle bus clock explicitly 
+To: Maxime Ripard <mripard@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_152048_000368_D45FFE66 
-X-CRM114-Status: GOOD (  18.61  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191028_153411_845789_9FE6B022 
+X-CRM114-Status: GOOD (  14.42  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -65,7 +79,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,68 +90,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Clark <robdclark@chromium.org>, freedreno@lists.freedesktop.org,
- Joerg Roedel <joro@8bytes.org>, open list <linux-kernel@vger.kernel.org>,
- iommu@lists.linux-foundation.org, Robin Murphy <robin.murphy@arm.com>,
- "moderated list:ARM SMMU DRIVERS" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, David Airlie <airlied@linux.ie>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Michael Trimarchi <michael@amarulasolutions.com>,
+ linux-amarula <linux-amarula@amarulasolutions.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Icenowy Zheng <icenowy@aosc.io>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob,
+Hi Maxime,
 
-On Mon, Oct 07, 2019 at 01:49:06PM -0700, Rob Clark wrote:
-> From: Rob Clark <robdclark@chromium.org>
-> 
-> When games, browser, or anything using a lot of GPU buffers exits, there
-> can be many hundreds or thousands of buffers to unmap and free.  If the
-> GPU is otherwise suspended, this can cause arm-smmu to resume/suspend
-> for each buffer, resulting 5-10 seconds worth of reprogramming the
-> context bank (arm_smmu_write_context_bank()/arm_smmu_write_s2cr()/etc).
-> To the user it would appear that the system just locked up.
-> 
-> A simple solution is to use pm_runtime_put_autosuspend() instead, so we
-> don't immediately suspend the SMMU device.
+On Mon, Oct 28, 2019 at 9:06 PM Maxime Ripard <mripard@kernel.org> wrote:
+>
+> On Fri, Oct 25, 2019 at 11:26:22PM +0530, Jagan Teki wrote:
+> > Usage of clocks are varies between different Allwinner
+> > DSI controllers. Clocking in A33 would need bus and
+> > mod clocks where as A64 would need only bus clock.
+> >
+> > To support this kind of clocking structure variants
+> > in the same dsi driver,
+>
+> There's no variance in the clock structure as far as the bus clock is
+> concerned.
+>
+> > explicit handling of common clock would require since the A64
+> > doesn't need to mention the clock-names explicitly in dts since it
+> > support only one bus clock.
+> >
+> > Also pass clk_id NULL instead "bus" to regmap clock init function
+> > since the single clock variants no need to mention clock-names
+> > explicitly.
+>
+> You don't need explicit clock handling. Passing NULL as the argument
+> in regmap_init_mmio_clk will make it use the first clock, which is the
+> bus clock.
 
-Please can you reword the subject to be a bit more useful? The commit
-message is great, but the subject is a bit like "fix bug in code" to me.
-
-> Signed-off-by: Rob Clark <robdclark@chromium.org>
-> ---
-> v1: original
-> v2: unconditionally use autosuspend, rather than deciding based on what
->     consumer does
-> 
->  drivers/iommu/arm-smmu.c | 5 ++++-
->  1 file changed, 4 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-> index 3f1d55fb43c4..b7b41f5001bc 100644
-> --- a/drivers/iommu/arm-smmu.c
-> +++ b/drivers/iommu/arm-smmu.c
-> @@ -289,7 +289,7 @@ static inline int arm_smmu_rpm_get(struct arm_smmu_device *smmu)
->  static inline void arm_smmu_rpm_put(struct arm_smmu_device *smmu)
->  {
->  	if (pm_runtime_enabled(smmu->dev))
-> -		pm_runtime_put(smmu->dev);
-> +		pm_runtime_put_autosuspend(smmu->dev);
->  }
->  
->  static struct arm_smmu_domain *to_smmu_domain(struct iommu_domain *dom)
-> @@ -1445,6 +1445,9 @@ static int arm_smmu_attach_dev(struct iommu_domain *domain, struct device *dev)
->  	/* Looks ok, so add the device to the domain */
->  	ret = arm_smmu_domain_add_master(smmu_domain, fwspec);
-
-Please can you put a comment here explaining what this is doing? An abridged
-version of the commit message is fine.
-
-> +	pm_runtime_set_autosuspend_delay(smmu->dev, 20);
-> +	pm_runtime_use_autosuspend(smmu->dev);
-
-Cheers,
-
-Will
+Indeed I tried that, since NULL clk_id wouldn't enable the bus clock
+during regmap_mmio_gen_context code, passing NULL triggering vblank
+timeout.
 
 _______________________________________________
 linux-arm-kernel mailing list
