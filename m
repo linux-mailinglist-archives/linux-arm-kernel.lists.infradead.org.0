@@ -2,85 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4EFC3E7569
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 16:47:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E7DC3E7589
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 16:52:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=60aJneF2LbUOivl3HhnJtew0DbFR0wpEOIkwWbxKdFc=; b=lL2MCb0CT6Q2Wh
-	ct6RCRmPsl7yLURi6EBhfbf+MoHKhkd6PDweefK3USxeEt+T1Q7JEgLduKHX+neN2ufNCFALCGwwu
-	XchhHr+qS0jkARPFE4QuS8PXByfYuEXkud049QvQ7jCmJGr+Gg2IBrFp9NRLFzlC+cPqUiapxeVln
-	w6y8xEstpIPWzI9WezT8aofmVQsnECiF4QZpbv7gZTbZ+ffaToFCYgbgsLwP4FnFmAH2WD1kCFNZP
-	slhn3Bml3C/igmU7m+MJsDNeH5YNP3HgS8a2ofDuaKOkRYIoPPcj48wy8qpB3D2UfZ3bZNWHiXTE4
-	tOStXdiUQl44HI/t8cKw==;
+	List-Owner; bh=dKa3E7i+jeAiUCXHkdiuJNMkhqyboVXh4dmn8G//12M=; b=SjUygKZUbuH+mk
+	Hn38PLZwfr9oXbphwmM/MZ/FMtYkETL/Kjk53C4L9qIT8/2ie6SllPmPpZJoCqaLsLe33laFsTtOM
+	Zxh38LiDSDvW/cyUjPj69paCJmGya/M6ZirR3qiFTyAqqPK3pluqiEp0GMO3BSS/kKAR3bKQiXgMa
+	951hTphIMfjjKyRFpbm2rAtcSmB0d9haSB7eTMSOg7fP5o/ElpgRgeLaCdjqTqK+jUdQpPjDi8db5
+	ytCDgSWJYkyLNpurbMb9U7BLErZBTgVwYkV87VOUZzmsKM0yP+i44WeDm9FMhXjARf+V+bybCAapf
+	LKjPEMeXO/q9+fWZMPVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP7FD-0005T3-L9; Mon, 28 Oct 2019 15:47:47 +0000
-Received: from mail-ed1-f68.google.com ([209.85.208.68])
+	id 1iP7Jn-0007Pa-PX; Mon, 28 Oct 2019 15:52:31 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP7F3-0005SJ-GT
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 15:47:39 +0000
-Received: by mail-ed1-f68.google.com with SMTP id bm15so8237760edb.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 28 Oct 2019 08:47:36 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=xeouFKeqxI+jBZsGSFG26F9cl2bzWdfbTz7OAnsdkHs=;
- b=caVCoOPFK+eJC2OvRWnwZB/Hqo1i6MVMqF0CEbDakWafBM3uQLSuHaBoXwiBBGc8CS
- s7f91ixMJ+KLRRlUrnwzE8c190PxktWXeQyuUkNn3PI8agoDM47HtIDbv1/Q31AFuOCw
- 7i1rZUZsyF8CuMdBPDiGJiyLXE/qCwe5DZEPXhTl5B1yK0HIfFoXu8/VdWl7/XOcFENK
- wt5RmheanxyLC/e+BN+nq+RU3eXMUatJrtuMkjsyiKkqKqofLr8U0A0IgkBND+cd3Yso
- NVyD4DfcT3ffckyl7kAtUvRoXJ7TWvr0O1umcZ4D0FzQPhpa81KZ0W4ABtfejdkvQ08A
- Y9yQ==
-X-Gm-Message-State: APjAAAWW6BBkcBHPP7aBFm0Nhi4m6tXWaCdVKPxNqQuoKpKMSou5CLzt
- a+fAKXiK6Su4r8U84F9dx4I=
-X-Google-Smtp-Source: APXvYqzb5eJY5x6+xEfLs30NbzaiquwQRVOIdigZyIXD5gUp8DH2McCek9vsaaleRlSYLLP4jx4E1Q==
-X-Received: by 2002:aa7:d0c9:: with SMTP id u9mr19737617edo.217.1572277655066; 
- Mon, 28 Oct 2019 08:47:35 -0700 (PDT)
-Received: from pi3 ([194.230.155.180])
- by smtp.googlemail.com with ESMTPSA id g43sm567693edb.14.2019.10.28.08.47.33
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 28 Oct 2019 08:47:34 -0700 (PDT)
-Date: Mon, 28 Oct 2019 16:47:32 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Subject: Re: [PATCH 3/3] dt-bindings: arm: samsung: Drop syscon compatible
- from CHIPID binding
-Message-ID: <20191028154732.GA3746@pi3>
-References: <20191028152050.10220-1-s.nawrocki@samsung.com>
- <CGME20191028152100eucas1p2ed6bd2d53670c85f6bf550af0631a55a@eucas1p2.samsung.com>
- <20191028152050.10220-3-s.nawrocki@samsung.com>
+ id 1iP7Jd-0007PD-Ql
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 15:52:23 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4C7F920717;
+ Mon, 28 Oct 2019 15:52:19 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572277941;
+ bh=97yS8z5FVacniDasr5jHJ8UvydVF8s/Uj+ONoCj6FNw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=F5Heiqz7ChY3bRNtswHWSHyBW/ykGPEnDOiqXtLEHOft9Ggz/nnpIOK19X7E4ZbDd
+ TkCk4dWyYXBFMFJ5M/vMfx1Ba5pAW4LSQ2R0HO5G59OnKluKoI0cDnbHp3EvGYyctc
+ T4ygQUoDqNR7S04Bvq56Os6i5QD1BxSdS/efevGc=
+Date: Mon, 28 Oct 2019 15:52:16 +0000
+From: Will Deacon <will@kernel.org>
+To: Waiman Long <longman@redhat.com>
+Subject: Re: [PATCH 1/2] locking/Kconfig: Add INLINE_SPINLOCKS & INLINE_RWLOCKS
+Message-ID: <20191028155215.GE5576@willie-the-truck>
+References: <20191016172028.16802-1-longman@redhat.com>
+ <20191016172028.16802-2-longman@redhat.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191028152050.10220-3-s.nawrocki@samsung.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+In-Reply-To: <20191016172028.16802-2-longman@redhat.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_084737_544940_597F91DF 
-X-CRM114-Status: GOOD (  14.79  )
-X-Spam-Score: 3.8 (+++)
+X-CRM114-CacheID: sfid-20191028_085221_907545_07D69F8F 
+X-CRM114-Status: GOOD (  16.72  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (3.8 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.68 listed in list.dnswl.org]
- 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
- [194.230.155.180 listed in zen.spamhaus.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.68 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,56 +77,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-pm@vger.kernel.org, vireshk@kernel.org, b.zolnierkie@samsung.com,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org,
- m.szyprowski@samsung.com
+Cc: linux-s390@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
+ Vasily Gorbik <gor@linux.ibm.com>,
+ "Peter Zijlstra \(Intel\)" <peterz@infradead.org>, x86@kernel.org,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, linux-kernel@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>,
+ Christian Borntraeger <borntraeger@de.ibm.com>,
+ Sebastian Andrzej Siewior <sebastian@breakpoint.cc>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 28, 2019 at 04:20:50PM +0100, Sylwester Nawrocki wrote:
-> The "syscon" compatible string was introduced mainly to allow sharing
-> of the CHIPID IO region between multiple drivers. However, such sharing
-> can be also done without an additional compatible so remove "syscon".
+[I thought I replied to this already but I can't find any evidence of that.
+ Apologies if you receive this twice!]
 
-Reviewed-by: Krzysztof Kozlowski <krzk@kernel.org>
-
-Best regards,
-Krzysztof
-
+On Wed, Oct 16, 2019 at 01:20:27PM -0400, Waiman Long wrote:
+> Both the arm64 and s390 architectures decide to inline all the spinlock
+> and rwlock functions except the read_trylock() and write_trylock()
+> functions for arm64. As other architectures are contemplating about
+> inlining those locking functions as well, it makes sense to make it
+> easier and less error-prone to do this.
 > 
-> Suggested-by: Krzysztof Kozlowski <krzk@kernel.org>
-> Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
+> Two new Kconfig options INLINE_SPINLOCKS and INLINE_RWLOCKS and their
+> ARCH_* counterparts are now added to streamline this process. The s390
+> and arm64's Kconfig files are modified to use the new Kconfig options.
+> 
+> There is no functional change for s390. For arm64, both read_trylock()
+> and write_trylock() are now inlined as well.
+> 
+> Suggested-by: Arnd Bergmann <arnd@arndb.de>
+> Signed-off-by: Waiman Long <longman@redhat.com>
 > ---
->  .../devicetree/bindings/arm/samsung/exynos-chipid.yaml         | 3 +--
->  1 file changed, 1 insertion(+), 2 deletions(-)
+>  arch/arm64/Kconfig   | 28 ++-------------------------
+>  arch/s390/Kconfig    | 30 ++---------------------------
+>  kernel/Kconfig.locks | 45 +++++++++++++++++++++++++++++++++++++++++++-
+>  3 files changed, 48 insertions(+), 55 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/arm/samsung/exynos-chipid.yaml b/Documentation/devicetree/bindings/arm/samsung/exynos-chipid.yaml
-> index 53c29d567789..afcd70803c12 100644
-> --- a/Documentation/devicetree/bindings/arm/samsung/exynos-chipid.yaml
-> +++ b/Documentation/devicetree/bindings/arm/samsung/exynos-chipid.yaml
-> @@ -13,7 +13,6 @@ properties:
->    compatible:
->      items:
->        - const: samsung,exynos4210-chipid
-> -      - const: syscon
->  
->    reg:
->      maxItems: 1
-> @@ -34,7 +33,7 @@ required:
->  examples:
->    - |
->      chipid@10000000 {
-> -        compatible = "samsung,exynos4210-chipid", "syscon";
-> +        compatible = "samsung,exynos4210-chipid";
->          reg = <0x10000000 0x100>;
->          samsung,asv-bin = <2>;
->      };
-> -- 
-> 2.17.1
-> 
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index 950a56b71ff0..e440d85dd8f1 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -35,32 +35,8 @@ config ARM64
+>  	select ARCH_HAS_TEARDOWN_DMA_OPS if IOMMU_SUPPORT
+>  	select ARCH_HAS_TICK_BROADCAST if GENERIC_CLOCKEVENTS_BROADCAST
+>  	select ARCH_HAVE_NMI_SAFE_CMPXCHG
+> -	select ARCH_INLINE_READ_LOCK if !PREEMPT
+> -	select ARCH_INLINE_READ_LOCK_BH if !PREEMPT
+> -	select ARCH_INLINE_READ_LOCK_IRQ if !PREEMPT
+> -	select ARCH_INLINE_READ_LOCK_IRQSAVE if !PREEMPT
+> -	select ARCH_INLINE_READ_UNLOCK if !PREEMPT
+> -	select ARCH_INLINE_READ_UNLOCK_BH if !PREEMPT
+> -	select ARCH_INLINE_READ_UNLOCK_IRQ if !PREEMPT
+> -	select ARCH_INLINE_READ_UNLOCK_IRQRESTORE if !PREEMPT
+> -	select ARCH_INLINE_WRITE_LOCK if !PREEMPT
+> -	select ARCH_INLINE_WRITE_LOCK_BH if !PREEMPT
+> -	select ARCH_INLINE_WRITE_LOCK_IRQ if !PREEMPT
+> -	select ARCH_INLINE_WRITE_LOCK_IRQSAVE if !PREEMPT
+> -	select ARCH_INLINE_WRITE_UNLOCK if !PREEMPT
+> -	select ARCH_INLINE_WRITE_UNLOCK_BH if !PREEMPT
+> -	select ARCH_INLINE_WRITE_UNLOCK_IRQ if !PREEMPT
+> -	select ARCH_INLINE_WRITE_UNLOCK_IRQRESTORE if !PREEMPT
+> -	select ARCH_INLINE_SPIN_TRYLOCK if !PREEMPT
+> -	select ARCH_INLINE_SPIN_TRYLOCK_BH if !PREEMPT
+> -	select ARCH_INLINE_SPIN_LOCK if !PREEMPT
+> -	select ARCH_INLINE_SPIN_LOCK_BH if !PREEMPT
+> -	select ARCH_INLINE_SPIN_LOCK_IRQ if !PREEMPT
+> -	select ARCH_INLINE_SPIN_LOCK_IRQSAVE if !PREEMPT
+> -	select ARCH_INLINE_SPIN_UNLOCK if !PREEMPT
+> -	select ARCH_INLINE_SPIN_UNLOCK_BH if !PREEMPT
+> -	select ARCH_INLINE_SPIN_UNLOCK_IRQ if !PREEMPT
+> -	select ARCH_INLINE_SPIN_UNLOCK_IRQRESTORE if !PREEMPT
+> +	select ARCH_INLINE_RWLOCKS if !PREEMPT
+
+This is a change in behaviour, since you're now selecting both
+ARCH_INLINE_READ_TRYLOCK and ARCH_INLINE_WRITE_TRYLOCK for arm64.
+
+However, I /think/ that's probably just because I missed that when
+enabling the others, so cautiously:
+
+Acked-by: Will Deacon <will@kernel.org> # arm64
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
