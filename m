@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0307EE7414
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 15:54:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3014E7416
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 15:55:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:Subject:From:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9xPCR/RbZPHJX86hKzT/LKNpTL+7XFRjGvpIysa2wkM=; b=qXCb63t2lnVQvo
-	m5ZJnbUn+dDElWv/LAoyuLFvokBVW1OFOm1xZqD6HYgQlOWXwK4pqsfYedjqGGgHCuYdivZ+8eruG
-	A2b4y9NHfIthjZOt+Dpefz6NNXbQG0xkNNQuMgWnXoc62fsCAhjKjBdX/Le+s4SxpcYJRuuSkYS/g
-	S0IK1ptUmEbZHoMNRbJMnMxDPDZgROGkn1/4yJSd+207ekScugfseDn8fqQ7v8fgUH2AvkSLd4wEe
-	xCf0oWKm7oyt9JFhXJN0v9W+mVQNuOEZMK7DIYsFPljZpobuMoOZaIsuRQ9vqllyi+Qhm+iRHdLcu
-	W1FkRx7NiEvvVDK1KGCg==;
+	List-Owner; bh=w+5pLQJy7+JkjpXsIxyVodr4noxwBVjnvDfP5G23I4c=; b=OvryRH4BCxxU2I
+	BrkBZ6hapoRe7bIZRJ/nXgCGpdbykByrT26KLSFJkzL575DbQI2qfGthTGRUZciaa5C2kPBFixNOO
+	cyMQ5h5+LhskB0O9/EqkAlO6vGr0Xl1Ykh12py8rf3DzRGB7fmcz8j5o4cjaYv4j8EAUeJ9HCFvmI
+	TU+ZSMRpkS8IJvMmSnpi0NtBf7ygnbKDZiFuyqTf/9/QmCThXW3CrQyG1YVtxVZCF6+Fl+FAw6DIE
+	Zrb7oH+gyDNk6YHzodefRCyHsvFJyIC3+pasqLM237ncGSIZe5YsyWNf/6/fclRtVQmga4VC0Fdh7
+	buIYRRx/s1VDkfm4mX2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP6Pz-0007kK-JT; Mon, 28 Oct 2019 14:54:51 +0000
+	id 1iP6QP-0007z1-S5; Mon, 28 Oct 2019 14:55:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP6Pq-0007jn-Ne
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 14:54:44 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2D642208C0;
- Mon, 28 Oct 2019 14:54:41 +0000 (UTC)
+ id 1iP6Q4-0007wy-BZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 14:54:57 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id ECD1C208C0;
+ Mon, 28 Oct 2019 14:54:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572274482;
- bh=PhikCgxetaRn/QivtL9ZiSUgV42VKkp/4HdVJZ8os4U=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=dw85Ikz4lNXGWHUl0us9s7fvZdUBNCBRGUFZ7f+StA3QWPMTkkrTS4xJ/GijSDjoa
- lW3bELx6pSpRkQnSl4zhBqAq5pRiaceRHsPuqVeYioT0YyiYPDKWfOEHBOygaI6snV
- WS1JhnOoWnyxLumtfABtheA2vVBN5asMkIoImXvE=
-Date: Mon, 28 Oct 2019 14:54:37 +0000
-From: Will Deacon <will@kernel.org>
-To: Joakim Zhang <qiangqing.zhang@nxp.com>
-Subject: Re: [PATCH 1/2] perf/imx_ddr: add enhanced AXI ID filter support
-Message-ID: <20191028145436.GA5576@willie-the-truck>
-References: <20190906082356.25485-1-qiangqing.zhang@nxp.com>
+ s=default; t=1572274496;
+ bh=bDAkpnmPbY0ZEBQT9bdhKA6sZJqE13qWHCAXPLM5+Zc=;
+ h=In-Reply-To:References:Cc:From:Subject:To:Date:From;
+ b=G8qf+aG5E6ldgTjwdWHE20INP+M/SELSiDe4GvmI/hK2p3D/89WvwEef/IijeN5oi
+ QaAYABonL9IlTYVfWZVrAadRdr5eCdUOrhy7wUz8/ewOxgBxrSZDa73NnLaA7zvoH9
+ jKCjw+Rq1/nQDzxl8EpspAyAIZICYMWdE1LURhAk=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190906082356.25485-1-qiangqing.zhang@nxp.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191005200521.GB4254@piout.net>
+References: <20190920153906.20887-1-alexandre.belloni@bootlin.com>
+ <20190924122147.fojcu5u44letrele@pengutronix.de>
+ <20190924202015.EFEBF20640@mail.kernel.org> <20191005200521.GB4254@piout.net>
+From: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH] clk: at91: avoid sleeping early
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+User-Agent: alot/0.8.1
+Date: Mon, 28 Oct 2019 07:54:55 -0700
+Message-Id: <20191028145455.ECD1C208C0@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_075442_791209_DAB8A1B2 
-X-CRM114-Status: GOOD (  16.51  )
+X-CRM114-CacheID: sfid-20191028_075456_435232_46C1D908 
+X-CRM114-Status: GOOD (  21.81  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,67 +77,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>, Frank Li <frank.li@nxp.com>,
- "robin.murphy@arm.com" <robin.murphy@arm.com>,
- dl-linux-imx <linux-imx@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-kernel@vger.kernel.org, Michael Turquette <mturquette@baylibre.com>,
+ Claudiu Beznea <claudiu.beznea@microchip.com>, u.kleine-koenig@pengutronix.de,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 06, 2019 at 08:26:55AM +0000, Joakim Zhang wrote:
-> With DDR_CAP_AXI_ID_FILTER quirk, indicating HW supports AXI ID filter
-> which only can get bursts of reading/writing DDR, i.e. DDR read/write
-> request.
+Quoting Alexandre Belloni (2019-10-05 13:05:21)
+> On 24/09/2019 13:20:15-0700, Stephen Boyd wrote:
+> > Quoting Uwe  (2019-09-24 05:21:47)
+> > > On Fri, Sep 20, 2019 at 05:39:06PM +0200, Alexandre Belloni wrote:
+> > > > Note that this was already discussed a while ago and Arnd said this approach was
+> > > > reasonable:
+> > > >   https://lore.kernel.org/lkml/6120818.MyeJZ74hYa@wuerfel/
+> > > > 
+> > > >  drivers/clk/at91/clk-main.c |  5 ++++-
+> > > >  drivers/clk/at91/sckc.c     | 20 ++++++++++++++++----
+> > > >  2 files changed, 20 insertions(+), 5 deletions(-)
+> > > > 
+> > > > diff --git a/drivers/clk/at91/clk-main.c b/drivers/clk/at91/clk-main.c
+> > > > index f607ee702c83..ccd48e7a3d74 100644
+> > > > --- a/drivers/clk/at91/clk-main.c
+> > > > +++ b/drivers/clk/at91/clk-main.c
+> > > > @@ -293,7 +293,10 @@ static int clk_main_probe_frequency(struct regmap *regmap)
+> > > >               regmap_read(regmap, AT91_CKGR_MCFR, &mcfr);
+> > > >               if (mcfr & AT91_PMC_MAINRDY)
+> > > >                       return 0;
+> > > > -             usleep_range(MAINF_LOOP_MIN_WAIT, MAINF_LOOP_MAX_WAIT);
+> > > > +             if (system_state < SYSTEM_RUNNING)
+> > > > +                     udelay(MAINF_LOOP_MIN_WAIT);
+> > > > +             else
+> > > > +                     usleep_range(MAINF_LOOP_MIN_WAIT, MAINF_LOOP_MAX_WAIT);
+> > > 
+> > > Given that this construct is introduced several times, I wonder if we
+> > > want something like:
+> > > 
+> > >         static inline void early_usleep_range(unsigned long min, unsigned long max)
+> > >         {
+> > >                 if (system_state < SYSTEM_RUNNING)
+> > >                         udelay(min);
+> > >                 else
+> > >                         usleep_range(min, max);
+> > >         }
+> > > 
+> > 
+> > Maybe, but I think the intent is to not encourage this behavior? So
+> > providing a wrapper will make it "easy" and then we'll have to tell
+> > users to stop calling it. Another idea would be to make usleep_range()
+> > "do the right thing" and call udelay if the system isn't running. And
+> > another idea from tlgx[1] is to pull the delay logic into another clk op
+> > that we can call to see when the enable or prepare is done. That may be
+> > possible by introducing another clk_ops callback that when present
+> > indicates we should sleep or delay for so much time while waiting for
+> > the prepare or enable to complete.
+> > 
+> > [1] https://lkml.kernel.org/r/alpine.DEB.2.11.1606061448010.28031@nanos
+> > 
 > 
-> This patch add DDR_CAP_AXI_ID_ENHANCED_FILTER quirk, indicating HW
-> supports AXI ID filter which can get bytes of reading/writing DDR. This
-> feature is more meaningful due to we always care more about bandwidth.
+> Do you want me to implement that now or are you planning to apply the
+> patch in the meantime ?
 > 
-> Need select both above two qiurks together when HW support enhanced AXI
-> ID filter.
 > 
-> Signed-off-by: Joakim Zhang <qiangqing.zhang@nxp.com>
-> ---
->  drivers/perf/fsl_imx8_ddr_perf.c | 13 +++++++++++--
->  1 file changed, 11 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/perf/fsl_imx8_ddr_perf.c b/drivers/perf/fsl_imx8_ddr_perf.c
-> index ce7345745b42..5f70dbfa9607 100644
-> --- a/drivers/perf/fsl_imx8_ddr_perf.c
-> +++ b/drivers/perf/fsl_imx8_ddr_perf.c
-> @@ -45,7 +45,8 @@
->  static DEFINE_IDA(ddr_ida);
->  
->  /* DDR Perf hardware feature */
-> -#define DDR_CAP_AXI_ID_FILTER          0x1     /* support AXI ID filter */
-> +#define DDR_CAP_AXI_ID_FILTER			BIT(1)     /* support AXI ID filter */
+ 
+I'll just apply this for now to clk-fixes and merge it up next week. It
+would be great to do the other idea though, as a long term effort to
+reduce all the busy loop code we have in clk drivers. No worries, I'll
+put it on the todo list.
 
-Is this a deliberate change from the previous code and, if so, why?
-
-> +#define DDR_CAP_AXI_ID_FILTER_ENHANCED		BIT(2)     /* support enhanced AXI ID filter */
-
-What does it mean to have DDR_CAP_AXI_ID_FILTER_ENHANCED but not
-DDR_CAP_AXI_ID_FILTER? Could we just say that DDR_CAP_AXI_ID_FILTER_ENHANCED
-implies DDR_CAP_AXI_ID_FILTER?
-
->  struct fsl_ddr_devtype_data {
->  	unsigned int quirks;    /* quirks needed for different DDR Perf core */
-> @@ -209,7 +210,15 @@ static void ddr_perf_free_counter(struct ddr_pmu *pmu, int counter)
->  
->  static u32 ddr_perf_read_counter(struct ddr_pmu *pmu, int counter)
->  {
-> -	return readl_relaxed(pmu->base + COUNTER_READ + counter * 4);
-> +	if ((pmu->devtype_data->quirks & DDR_CAP_AXI_ID_FILTER) &&
-> +	    (pmu->devtype_data->quirks & DDR_CAP_AXI_ID_FILTER_ENHANCED)) {
-> +		if ((pmu->events[counter]->attr.config == 0x41) ||
-> +		    (pmu->events[counter]->attr.config == 0x42))
-> +			return readl_relaxed(pmu->base + COUNTER_DPCR1 + counter * 4);
-
-In which case, this could be slightly simplified.
-
-Will
 
 _______________________________________________
 linux-arm-kernel mailing list
