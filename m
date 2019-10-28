@@ -2,70 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9FDA6E7015
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 12:00:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A159E701E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 12:06:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XFe0ubV4LWiYTSD5bVJqnKowS9gvYP9tajerKCW1vzw=; b=Yx4nNJIJe6CD6C
-	6n0o9/WPcs1XMj0zJ6Cpvnov9OpDFfxBtv+RPw2YTsJibilcAnQeLVC73ebHVZnZoAEI5/gByACrD
-	/CziyxSfT1H8dc+GHRFOiGOED8frUDimHdPIuDynFL/dG7ARdZWyqejpUdt5voT66W8fl0CQgh6SM
-	tLObLhzPBBRFqnFfCwO9kwXbIe1WZ/yVENdoPAbLhzO4NfcabTbi1YrIo5Fq3Jx+e0WX2LXHNXzqu
-	XN0dC4+V06qw824J6aqESSxbmWxIQqxO+SZx0qjsHZnOzZwEF6yr5YPGatHwepfdUH7JzKGxevelR
-	AXRpW8oLd29Cg4BSUNng==;
+	List-Owner; bh=Y2YvCV0BabSBvx0uzNarUCXdS4xQ51vpCPUmcJcdf1U=; b=kEtJXvHzc2vl+6
+	zs3R7nIlKuAe2YOkklXyKcgl7lZ4nhpww+B5iKGNWCJJNZPpvpkrmmUKoTlqUv96YzxrpK7/uPxy9
+	2eYBzbqFvviK95oRPmJ1LKAegDTrpiKfwPT1WSVuDPa38kOAvhqPWM4YLZ4BVffqJiqC2oUAqDRQ1
+	c1rsop+ii6FSY9Ex0NVPggxwQDcmJ8hI/M3zK4kj8pLu24v+d0DoJmbyS+xPcBsELMQDsR/P86mYP
+	MHVsti4wk6jUZXnooKX2kViZk70BlIA9dEw0RaJzBw0s88w1pBn7gTN8HeN+U8FvNdIDXSLxl3nf7
+	yZD3eQmgf1Id106C0qaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP2ki-0001us-3S; Mon, 28 Oct 2019 11:00:00 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP2kX-0001uP-TL
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 10:59:51 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DE75C20873;
- Mon, 28 Oct 2019 10:59:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572260389;
- bh=vnID9+Oo8Ba/7JkP4NlkjT8aLuIOGGl8S6SiOMEIGLM=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ZOynHkfmFX06vNr8sfpvCZQtP+oE9c+n01F6NmlPDm8xnwdvq8mtNOSlkhGKdWkJV
- 5SNqE4Kw+KgkfR4LHBMn9kxVbXVJ0JAgzHWvt6ug5g6HreFNmQX5REz2u8FRKNnYtL
- l8HASqabKNYlo51wBS0ALEHgahupJhoOVPcDmWvw=
-Date: Mon, 28 Oct 2019 10:59:44 +0000
-From: Will Deacon <will@kernel.org>
-To: Candle Sun <candlesea@gmail.com>
-Subject: Re: [PATCH v2] ARM/hw_breakpoint: add more ARMv8 debug architecture
- versions support
-Message-ID: <20191028105943.GA4122@willie-the-truck>
-References: <20191024080539.9187-1-candlesea@gmail.com>
+	id 1iP2rI-0005NY-Fy; Mon, 28 Oct 2019 11:06:48 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iP2r7-0005My-6F
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 11:06:38 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 30E501F1;
+ Mon, 28 Oct 2019 04:06:36 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ EB70C3F71E; Mon, 28 Oct 2019 04:06:34 -0700 (PDT)
+Date: Mon, 28 Oct 2019 11:06:32 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH v2 4/5] arm64: KVM: Prevent speculative S1 PTW when
+ restoring vcpu context
+Message-ID: <20191028110632.GC16739@arrakis.emea.arm.com>
+References: <20191019095521.31722-1-maz@kernel.org>
+ <20191019095521.31722-5-maz@kernel.org>
+ <151fc868-6709-3017-e34d-649ec0e1812c@arm.com>
+ <8636ffzu30.wl-maz@kernel.org>
+ <20191028103217.GB16739@arrakis.emea.arm.com>
+ <86zhhlxhz2.wl-maz@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191024080539.9187-1-candlesea@gmail.com>
+In-Reply-To: <86zhhlxhz2.wl-maz@kernel.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_035949_973104_0956D66D 
-X-CRM114-Status: GOOD (  13.35  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191028_040637_275913_E0AA331E 
+X-CRM114-Status: GOOD (  15.24  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,75 +66,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, linux@armlinux.org.uk,
- Candle Sun <candle.sun@unisoc.com>, linux-kernel@vger.kernel.org,
- orson.zhai@unisoc.com, Nianfu Bai <nianfu.bai@unisoc.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 24, 2019 at 04:05:39PM +0800, Candle Sun wrote:
-> From: Candle Sun <candle.sun@unisoc.com>
+On Mon, Oct 28, 2019 at 10:49:37AM +0000, Marc Zyngier wrote:
+> On Mon, 28 Oct 2019 10:32:17 +0000,
+> Catalin Marinas <catalin.marinas@arm.com> wrote:
+> > On Sat, Oct 26, 2019 at 11:20:35AM +0100, Marc Zyngier wrote:
+> > > Catalin, Will: given that this series conflicts with the workaround for
+> > > erratum 1542419, do you mind taking it via the arm64 tree?
+[...]
+> > I don't mind merging it but if you want to queue it, we already have
+> > a stable for-next/neoverse-n1-stale-instr branch with 1542419 (I'll
+> > push a fixup on top soon for a clang warning). The other issue is
+> > that we get a conflict with mainline due to the tx2 erratum. If it
+> > gets too complicated, I'll also merge for-next/fixes into
+> > for-next/core.
 > 
-> When ARMv8 cores are used in AArch32 mode, arch_hw_breakpoint_init()
-> in arch/arm/kernel/hw_breakpoint.c will be used.
-> 
-> From ARMv8 specification, v8 debug architecture versions defined:
-> * 0110 ARMv8, v8 Debug architecture.
-> * 0111 ARMv8.1, v8 Debug architecture, with Virtualization Host
->   Extensions.
-> * 1000 ARMv8.2, v8.2 Debug architecture.
-> * 1001 ARMv8.4, v8.4 Debug architecture.
-> 
-> So missing ARMv8.1/ARMv8.2/ARMv8.4 cases will cause
-> enable_monitor_mode() returns -ENODEV,and eventually
-> arch_hw_breakpoint_init() will fail.
-> 
-> Signed-off-by: Candle Sun <candle.sun@unisoc.com>
-> Signed-off-by: Nianfu Bai <nianfu.bai@unisoc.com>
-> ---
-> Changes in v2:
-> - Add ARMv8.4 debug architecture case
-> - Update patch description
-> ---
->  arch/arm/include/asm/hw_breakpoint.h | 3 +++
->  arch/arm/kernel/hw_breakpoint.c      | 3 +++
->  2 files changed, 6 insertions(+)
-> 
-> diff --git a/arch/arm/include/asm/hw_breakpoint.h b/arch/arm/include/asm/hw_breakpoint.h
-> index ac54c06764e6..62358d3ca0a8 100644
-> --- a/arch/arm/include/asm/hw_breakpoint.h
-> +++ b/arch/arm/include/asm/hw_breakpoint.h
-> @@ -53,6 +53,9 @@ static inline void decode_ctrl_reg(u32 reg,
->  #define ARM_DEBUG_ARCH_V7_MM	4
->  #define ARM_DEBUG_ARCH_V7_1	5
->  #define ARM_DEBUG_ARCH_V8	6
-> +#define ARM_DEBUG_ARCH_V8_1	7
-> +#define ARM_DEBUG_ARCH_V8_2	8
-> +#define ARM_DEBUG_ARCH_V8_4	9
->  
->  /* Breakpoint */
->  #define ARM_BREAKPOINT_EXECUTE	0
-> diff --git a/arch/arm/kernel/hw_breakpoint.c b/arch/arm/kernel/hw_breakpoint.c
-> index b0c195e3a06d..02ca7adf5375 100644
-> --- a/arch/arm/kernel/hw_breakpoint.c
-> +++ b/arch/arm/kernel/hw_breakpoint.c
-> @@ -246,6 +246,9 @@ static int enable_monitor_mode(void)
->  	case ARM_DEBUG_ARCH_V7_ECP14:
->  	case ARM_DEBUG_ARCH_V7_1:
->  	case ARM_DEBUG_ARCH_V8:
-> +	case ARM_DEBUG_ARCH_V8_1:
-> +	case ARM_DEBUG_ARCH_V8_2:
-> +	case ARM_DEBUG_ARCH_V8_4:
->  		ARM_DBG_WRITE(c0, c2, 2, (dscr | ARM_DSCR_MDBGEN));
->  		isb();
->  		break;
+> OK, let me have another look at providing a resolution that includes
+> all of the above. Worse case, you'll be able to pull the branch
+> directly.
 
-Acked-by: Will Deacon <will@kernel.org>
+Don't worry about the resolution, I'll fix it up myself when merging
+into for-next/core. The latter is not a stable branch, just an octopus
+merge of various for-next/* topic branches.
 
-Will
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
