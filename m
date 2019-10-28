@@ -2,87 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEC14E777D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 18:19:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24251E7794
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 18:29:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=pxcY7sBZ597bG6IzyqUY4MZ76hcZB4KvMwF7baQFSdU=; b=VRCMxH2N6f6qUt
-	XUr6yeFG+pwd0wp1foAwnb9sQpBWcK+h/KZqjOB5R1m6fpOcR4AD//l4pyUN8bwTOTpTKjlL2p4kt
-	HbWJjU+wsX6p7lxEswsXN6beTo+XHYY5aQ7t00ODRDSQVhSOAmQ7KHOu/ViOZag5/WK5ZM/DEHoim
-	QUKp/p250AHIsdQI4H5YYSQIDOp6npYw4gY8/ynv+g6msRBzsfwtQHsgWHlOCkPGnofvgPtkU95Cj
-	Ddu11lr5D/uRqZJyzECPVogYCCu699lFiadh9rxwQBlkA3PRrF1Vk3ZhOCTRw68Nb8TEp8xvYhMab
-	tc9JoDgUuRyjf2XUPKFg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=3Uz0ugfxwX5j4t+v3ohDMz+Mo3kIeYTxQyzqRqJ5CSk=; b=PsW
+	7uMbIOUsNeQ/e5VTZvPKv9OGXh8g3+Nyjyd9ccbPNN8aRTqgO5Zz343uoZSgULQ2Eoj1MUssjpOdQ
+	nc/spdX9ffZrlaDpZHx2mNfGtrSBigZCKwbCnN0sgSx4Nga5Yeft33GgkgGfc1v3tOOXyo1+mkxwi
+	QeJfRj/32o0xqwFHX5FSD0wfVCIRj14IwqvjkAzVrR8NBzLDPtuKP+rK/QwKEV2Oq2RZ+jwyz+B3B
+	08shL3zhoP9LpOqeRWgTXWCC1Ya2RA2QGkPRj6pdb6wY9TVUmwofTr8693Ddtj4/lfCFEiaoZ9XH8
+	bkJnRccl0a1mHVEnRVrP+R8mHdZC3kQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP8fN-0000fD-FL; Mon, 28 Oct 2019 17:18:53 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1iP8pv-0004Yf-N0; Mon, 28 Oct 2019 17:29:47 +0000
+Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP8fD-0000ep-KL
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 17:18:44 +0000
-Received: by mail-pl1-x641.google.com with SMTP id y8so5931058plk.0
+ id 1iP8pj-0004XM-CW
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 17:29:36 +0000
+Received: by mail-wr1-x433.google.com with SMTP id r1so10778243wrs.9
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 28 Oct 2019 10:18:42 -0700 (PDT)
+ Mon, 28 Oct 2019 10:29:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=al2Rd12hk7dN6JAAxnkLahBDEIvO7RPzw6SmvVKtces=;
- b=ZF1SiL3aNo3Cu8ZjC4BP9Vgp5LnT1B/FdytiksaFFaCT+gihNoA9Do1mrAeruGtnmc
- 8VcewWSgwGy+h7iWnxmDEKaUUV9FpeCUqCH7lY6nAub9KnkENay2rejNUzqnwQ/SfQu7
- Fk/hz1MNU/hYfp0AKMK0JwAEGMCJYRGcLZAhpvCyCaEtuYua70afvvEbhZ4QfD/Y+C+2
- nmWMN1+gklEb4DZUR6ltojx/q9TgJ+81EJXYq7G9/NIyMXnmmZi/O7jinBzvAbp+bY1z
- uXyNNJjPAk10ejv0i4YecJYClu+/lW2ilg0xxFD21dt/owr0FhYwVKZod3UvqRUrPsCY
- b2Zg==
+ h=from:to:cc:subject:date:message-id;
+ bh=4h0j1y2DktN68cOwekrIvX7jwMz9RtEdu7NiWvIBj+I=;
+ b=UNycCq4T9++5SpxfhlzKUrQcEJ2MW9XCLYxLXprqK7P78e4Li0WacOJmgUozVa6JZE
+ H0CG5nHPGsh2NczLP0vU5vz3E1FNMgsPVd4OHrSshAtmFMiNrwAyvjArsiWR1eN0GwUX
+ w4LKnnZWFCcPvNkPt1/EvL4n2Uc5S+vcmibMoL+/fPYFNISlCVqR9/Sc3cgaWu3hRjY+
+ YkUUJBYISQJiFK/52/EMRxD8RBUAtXTHKT5CGi2Nkg53foAUdTIP0YwH9ieD93EQzZ3H
+ DPnkukaVoMAD5vGpN9LjHvtXa38J82BRdU9hQ+Sz80Il1NpWfphaLh1eaWWPDeupYB6x
+ 2kSA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=al2Rd12hk7dN6JAAxnkLahBDEIvO7RPzw6SmvVKtces=;
- b=B5/bXyybumC2wQ7EWlUq5XS9xWqH86gBf6RLktgMkRKo5KLJY8eaCgcTPwGmcC+ktY
- z9WyvxFrbKDElWivxkpn9kpoQydWtBL+XojMteQ3ixuBzomXqFVUYxbfjSCo3pVLFdTJ
- f3chxlhct+r32P9OFuQ9wNzTevfC4Ixr3edC3/6Uz41nVIj5kKp1xpq0XKlsHEMshsdu
- BOmOP9NHsmBdhdUfBBjrnQq9DYaCKTBRcJSqB8qtJ2lgno0LCBQoMuwhiTzPN6kTfGzn
- 5ycYUdrslKpBER4cbAQV0SKB9xanno5PhM2nr21iMVN/LNcMflLxdpDDTrgJ+x6RU/JP
- J70g==
-X-Gm-Message-State: APjAAAVqY2FVO2jTY5Cxm+QGHkfjo5Tc+UXnDqMl2wpgmvCC6I5+BaW9
- Oz9/AuAfB7BUNiQBdqh7FN9j0A==
-X-Google-Smtp-Source: APXvYqzwJGHJ2FuWF88+zopx/Wg6G18xL03gdif7+dab8rhMsCCn+8Dnx5FsAj4J7qWFXtbEqf3+1A==
-X-Received: by 2002:a17:902:244:: with SMTP id
- 62mr20590507plc.14.1572283121593; 
- Mon, 28 Oct 2019 10:18:41 -0700 (PDT)
-Received: from localhost.localdomain
- (104-188-17-28.lightspeed.sndgca.sbcglobal.net. [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id i7sm113353pjs.1.2019.10.28.10.18.40
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=4h0j1y2DktN68cOwekrIvX7jwMz9RtEdu7NiWvIBj+I=;
+ b=BymsksfDSgtGNmIrAXVcbKxHT/6q4h6+JeAww9Mi6PvtG6hQ2RdKTfdbUUEmQksH7y
+ 4KEL5LsSvb0yN5qOnzQqNA7jCTgsD+g7SR75OWySubY5MnjFHsPj7l4d7vsgVwZT3Ytg
+ Ut/Pr0nSRHPxrB7zRAIQled37HmnGyBglNeWezxOSI3oSn12oZuCROCmKUSJ1/0lp9jC
+ OiGC/dM/SCsPwbrcUuvH8bwXxlP8hheFlT/DpaY17tHWObBvoLtDozoAZTzsTpbLoY8R
+ CnY5XlV9d70A2F9C330TqSiq9CNhyD/CPMzoXIWELpT7DqcMuW+rI5UVOa28w5LmGmXZ
+ uExw==
+X-Gm-Message-State: APjAAAWz8NecJW2iNLyEetMkiEL9PXrSGNcX9oqYcbFeDgk/+hc5/rv9
+ VjhvX2EhB0JHOfnP12Xw7j+4dA==
+X-Google-Smtp-Source: APXvYqzj0ah01Wc2PstZV4U7mwqqyvoxYeN2HSfBJjs0fAyazqXH9zMDKR/Xrx7HTVPPjFVa+bXexg==
+X-Received: by 2002:a5d:4b51:: with SMTP id w17mr3330012wrs.357.1572283771618; 
+ Mon, 28 Oct 2019 10:29:31 -0700 (PDT)
+Received: from linaro.org ([2a00:23c5:6815:3901:a072:1d10:8dba:cbb])
+ by smtp.gmail.com with ESMTPSA id r19sm14273295wrr.47.2019.10.28.10.29.30
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 28 Oct 2019 10:18:40 -0700 (PDT)
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Shawn Guo <shawnguo@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Olof Johansson <olof@lixom.net>, Maxime Ripard <mripard@kernel.org>,
- Vinod Koul <vkoul@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
- Anson Huang <Anson.Huang@nxp.com>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- Dinh Nguyen <dinguyen@kernel.org>,
- Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>
-Subject: [PATCH] arm64: defconfig: Enable ATH10K_SNOC
-Date: Mon, 28 Oct 2019 10:18:37 -0700
-Message-Id: <20191028171837.3907550-1-bjorn.andersson@linaro.org>
-X-Mailer: git-send-email 2.23.0
-MIME-Version: 1.0
+ Mon, 28 Oct 2019 10:29:31 -0700 (PDT)
+From: Mike Leach <mike.leach@linaro.org>
+To: linux-doc@vger.kernel.org,
+	corbet@lwn.net
+Subject: [PATCH v4 0/4] coresight: etm4x: docs: sysfs API doc updates
+Date: Mon, 28 Oct 2019 17:29:15 +0000
+Message-Id: <20191028172919.19662-1-mike.leach@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_101843_732281_65CBF346 
-X-CRM114-Status: GOOD (  10.42  )
+X-CRM114-CacheID: sfid-20191028_102935_442832_9735F659 
+X-CRM114-Status: UNSURE (   8.98  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:433 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,35 +93,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: coresight@lists.linaro.org, linux-arm-kernel@lists.infradead.org,
+ mathieu.poirier@linaro.org, Mike Leach <mike.leach@linaro.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The ath10k snoc is found on the Qualcomm QCS404 and SDM845, so enable
-the driver for this.
+Review of ETMV4 sysfs code resulted in a number of minor issues being
+discovered. Patchset fixed these and updated docs.
 
-Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
----
- arch/arm64/configs/defconfig | 1 +
- 1 file changed, 1 insertion(+)
+Applies to coresight/next
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index e5e83dbf1433..c350ca25ba8e 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -308,6 +308,7 @@ CONFIG_USB_NET_PLUSB=m
- CONFIG_USB_NET_MCS7830=m
- CONFIG_ATH10K=m
- CONFIG_ATH10K_PCI=m
-+CONFIG_ATH10K_SNOC=m
- CONFIG_BRCMFMAC=m
- CONFIG_MWIFIEX=m
- CONFIG_MWIFIEX_PCIE=m
+Changes since v3
+  First 8 patches of v3 have been accepted onto coresight/next. The patch
+  series is now documents only
+  Docs .txt files changed to .rst by unrelated patch. This set reflects
+  this change and updates the added docs to match.
+  Indexing changed for new coresight docs directory.
+
+Changes since v2 (reviews from Mathieu and Leo):-
+  Patch 0002 now adds stable tag. Tested on 4.9, 4.14, 4.19
+  Applies to coresight/next (5.4-rc1)
+  Documentation changed to .rst format to match recent updates that
+  converted other CoreSight .txt files.
+  Misc typo / comment changes.
+
+Changes since v1 (from reviews by Mathieu and Leo):-
+  Usability patch split into 2 separate functional patches.
+  Docs patch split into 3 patches.
+  Misc style and comment typo fixes.
+
+Mike Leach (4):
+  coresight: etm4x: docs: Update ABI doc for new sysfs name scheme.
+  coresight: etm4x: docs: Update ABI doc for new sysfs etm4 attributes
+  coresight: docs: Create common sub-directory for coresight trace.
+  coresight: etm4x: docs: Adds detailed document for programming etm4x.
+
+ .../testing/sysfs-bus-coresight-devices-etm4x | 183 ++--
+ .../{ => coresight}/coresight-cpu-debug.rst   |   0
+ .../coresight/coresight-etm4x-reference.rst   | 798 ++++++++++++++++++
+ .../trace/{ => coresight}/coresight.rst       |   2 +-
+ Documentation/trace/coresight/index.rst       |   9 +
+ Documentation/trace/index.rst                 |   3 +-
+ MAINTAINERS                                   |   3 +-
+ 7 files changed, 925 insertions(+), 73 deletions(-)
+ rename Documentation/trace/{ => coresight}/coresight-cpu-debug.rst (100%)
+ create mode 100644 Documentation/trace/coresight/coresight-etm4x-reference.rst
+ rename Documentation/trace/{ => coresight}/coresight.rst (99%)
+ create mode 100644 Documentation/trace/coresight/index.rst
+
 -- 
-2.23.0
+2.17.1
 
 
 _______________________________________________
