@@ -2,45 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70BBBE7735
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 18:03:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 054C6E7733
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 18:03:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TudPon8wh09KnRelHvs1+sXc4VIUMc/eMrJUwDmm1+0=; b=T7sFKRW8KnXAzV
-	5Zbv53/pjWLPu+Bh+TDk0gCIkg8hObQIB/VJdTUXAr963pGtHCiKplf4Bygz9yIp5Cms1i/eJC/Ex
-	IdH5uz6LznZYs5xK2rmGy2iZzW/LixLDGGTWL8hJywJ8An3itMQ7/4LjQAMRUjnyPgqmZ+/cD9IJ/
-	L2QsJlAUkJgg0OvOSqpghxDUlHfHxUTJl46qjkeHefP8zn22wHJA9fjvzK4tRbT2sdic1pkJ4BJl0
-	zHJeftUGvMUGW/rM6ZXZpXTO5cKZ7N15A24nL3D1k2u91pEPVRtdNC57R5j4yEoR4Gms+yh80kvRW
-	2jqG6sQQtPzc58Fp3cQQ==;
+	List-Owner; bh=j9x8lepTEDTib8SOwC4V3DSc2sJEplgPUaMLKzqdgNY=; b=GtuviaSsJ/kdSn
+	k1qv2Bh9upHplFFIHmZ1L9s9/8G6zjVW7BxY4IrGyV6rb7UGcUOtf6m1CrxeLkboxcbku2HrCpIEg
+	Ro6+S48fpOuZ57cP4CgJGvHKOrySdI3XB00oO2WKrfpcEB5pSl2V4ZvxdDO8d4eJDkAPc8HfoKknL
+	8IzeosHte89V7Zu/WUbbOcVgXV/Iu2847FQNxZXZdnZ6iyfJ9a16wpMCobMyOUo1YDgpHtT4LwwQM
+	SqpWwDKz+vB0XzhW1rpJGpnMXIdlSSeHPSh+vv0CB2erhiW+8Eg0qTXW81ujjnX03vCT1jL7GGkTG
+	u6RgL1cJo7+IM5SrDqOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP8Qc-0002qE-PK; Mon, 28 Oct 2019 17:03:38 +0000
-Received: from mga17.intel.com ([192.55.52.151])
+	id 1iP8QF-0002cO-GO; Mon, 28 Oct 2019 17:03:15 +0000
+Received: from mga12.intel.com ([192.55.52.136])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP8Q4-0002bG-17; Mon, 28 Oct 2019 17:03:05 +0000
+ id 1iP8Q4-0002bJ-2U; Mon, 28 Oct 2019 17:03:05 +0000
 X-Amp-Result: UNKNOWN
 X-Amp-Original-Verdict: FILE UNKNOWN
 X-Amp-File-Uploaded: False
-Received: from fmsmga001.fm.intel.com ([10.253.24.23])
- by fmsmga107.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+Received: from orsmga006.jf.intel.com ([10.7.209.51])
+ by fmsmga106.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
  28 Oct 2019 10:03:03 -0700
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.68,240,1569308400"; d="scan'208";a="210917617"
+X-IronPort-AV: E=Sophos;i="5.68,240,1569308400"; d="scan'208";a="203319319"
 Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by fmsmga001.fm.intel.com with ESMTP; 28 Oct 2019 10:02:57 -0700
+ by orsmga006.jf.intel.com with ESMTP; 28 Oct 2019 10:02:57 -0700
 Received: from kbuild by lkp-server01 with local (Exim 4.89)
  (envelope-from <lkp@intel.com>)
- id 1iP8Pw-00099G-J0; Tue, 29 Oct 2019 01:02:56 +0800
-Date: Tue, 29 Oct 2019 01:02:45 +0800
+ id 1iP8Pw-0009Bk-RH; Tue, 29 Oct 2019 01:02:56 +0800
+Date: Tue, 29 Oct 2019 01:02:46 +0800
 From: kbuild test robot <lkp@intel.com>
 To: Cheng-Yi Chiang <cychiang@chromium.org>
-Subject: Re: [PATCH v8 3/6] ASoC: rockchip_max98090: Optionally support HDMI
- use case
-Message-ID: <201910290006.S8dvoBpK%lkp@intel.com>
+Subject: [RFC PATCH] ASoC: rockchip_max98090: rk_card_configs[] can be static
+Message-ID: <20191028170246.5uhqmm4gc576yrsh@4978f4969bb8>
 References: <20191025133007.11190-4-cychiang@chromium.org>
 MIME-Version: 1.0
 Content-Disposition: inline
@@ -48,17 +47,17 @@ In-Reply-To: <20191025133007.11190-4-cychiang@chromium.org>
 X-Patchwork-Hint: ignore
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_100304_085980_653E6126 
-X-CRM114-Status: GOOD (  14.57  )
+X-CRM114-CacheID: sfid-20191028_100304_124075_7876A7AE 
+X-CRM114-Status: GOOD (  13.34  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.151 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ medium trust [192.55.52.136 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,37 +89,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Cheng-Yi,
 
-I love your patch! Perhaps something to improve:
-
-[auto build test WARNING on rockchip/for-next]
-[also build test WARNING on v5.4-rc5 next-20191028]
-[if your patch is applied to the wrong git tree, please drop us a note to help
-improve the system. BTW, we also suggest to use '--base' option to specify the
-base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
-
-url:    https://github.com/0day-ci/linux/commits/Cheng-Yi-Chiang/Add-HDMI-jack-support-on-RK3288/20191028-212502
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git for-next
-reproduce:
-        # apt-get install sparse
-        # sparse version: v0.6.1-dirty
-        make ARCH=x86_64 allmodconfig
-        make C=1 CF='-fdiagnostic-prefix -D__CHECK_ENDIAN__'
-
-If you fix the issue, kindly add following tag
-Reported-by: kbuild test robot <lkp@intel.com>
-
-
-sparse warnings: (new ones prefixed by >>)
-
->> sound/soc/rockchip/rockchip_max98090.c:475:23: sparse: sparse: symbol 'rk_card_configs' was not declared. Should it be static?
-
-Please review and possibly fold the followup patch.
-
+Fixes: 0cc0922ae849 ("ASoC: rockchip_max98090: Optionally support HDMI use case")
+Signed-off-by: kbuild test robot <lkp@intel.com>
 ---
-0-DAY kernel test infrastructure                Open Source Technology Center
-https://lists.01.org/pipermail/kbuild-all                   Intel Corporation
+ rockchip_max98090.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/sound/soc/rockchip/rockchip_max98090.c b/sound/soc/rockchip/rockchip_max98090.c
+index 550e577897198..a476749931387 100644
+--- a/sound/soc/rockchip/rockchip_max98090.c
++++ b/sound/soc/rockchip/rockchip_max98090.c
+@@ -472,7 +472,7 @@ static int snd_rk_mc_probe(struct platform_device *pdev)
+ 	return ret;
+ }
+ 
+-struct rk_card_config rk_card_configs[] = {
++static struct rk_card_config rk_card_configs[] = {
+ 	[RK_USE_MAX98090] = {
+ 		.usage = RK_USE_MAX98090,
+ 		.card = &rockchip_max98090_card,
 
 _______________________________________________
 linux-arm-kernel mailing list
