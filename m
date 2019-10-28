@@ -2,71 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 069BCE7687
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 17:36:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69952E768B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 17:37:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H103YVuyM9ep6nAyMMW/pszf+DojwXVflyYcTGyrRLo=; b=YEVR+q1nu8niWB
-	1jXavp2Q/Admigvv1BGpsXjm7fvCsjFfmcOaqL6RsCB0URdLBCBQnUDyznQUsUQ/c9B0BX+FlxUHU
-	Yhv+r3uyyVOqHFxtWkKzhfAB0Jg81Rh84hqLujZq+FDX5j1SVWo2oQYF5nIQqD9C/65qNS5hLUAsP
-	kpq9FN9lus75uTo6gzoaFqwL/Cz/p+zetiYsuSJf+YDFyxBY3A0xMVfL2gntTR/p/hToKISv+gmIl
-	eTOlyAIUVj57/EkxHJ7CbktANPZ65u64ALkWOyER+cLpCOxeC9NjeVw9ES9KmYeLYZVLgFb9i4TCH
-	gz8uuu/WCUsj4PYAoCRw==;
+	List-Owner; bh=AxJuPn4Bosk6vsW65ykLyCgz22a/cy0M9FZh1APJuUw=; b=aYGED1f1RJTS/P
+	VRMTA+Fdg4ZeIQtlgXTK+qK1fgupiuVVNjEQHxoK3NOSFPGHXsv+MECcOSaa/YReY7N5kp9KXsqNu
+	GdLHeBDBLO6O1eHYwz46/BrFpTqaQivHVIKf/s5QlAb6ARl8XXCpBNTK/Re9gHDyPUDHM4+kHUdhW
+	oYhLv0hZxIlzV7lL23/kc0+6mOMJ5J76DD7PxQguiWIwsEDQ+zKr2PDoce7IJDUl/Bsqu7S2J1sXe
+	l21hPPlXlc5+CtAC1pIsTnEk8XebtM4sheVkrGztBi29/vzpkXL6o6DtZEVDi5l5DiqugWD7fIkke
+	ghWa7lzH5pr4W/KzRAaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP801-0001ps-7E; Mon, 28 Oct 2019 16:36:09 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
+	id 1iP80u-0002NZ-7b; Mon, 28 Oct 2019 16:37:04 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP7xF-0006sw-5d; Mon, 28 Oct 2019 16:33:19 +0000
-Received: by mail-oi1-f196.google.com with SMTP id s5so6384616oie.10;
- Mon, 28 Oct 2019 09:33:16 -0700 (PDT)
+ id 1iP7xG-0006uT-QA; Mon, 28 Oct 2019 16:33:20 +0000
+Received: by mail-ot1-f65.google.com with SMTP id r14so2410211otn.5;
+ Mon, 28 Oct 2019 09:33:18 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=YIfpHXHDoS6BpoLM/5OtgGD1veZ0kiS1z+l67O5mhv0=;
- b=t/Qp0W7b1TTtfMzOY+WvcW1gRMhSZyqfYWHNCIiJJa+qTt3rvA2zQQ4dCJ+R0fjba6
- Dy+GKY22mi9JyGL96/CHLvnfdt2wVmAyWHYdiInXPMmutcbVmFDsqIv4QflszjG3yqcR
- qW9UxzMKe/gwz43SdWO/+LL8gTxVZ5p3H5Q8JK6cYDj6pNpZTK07w5830O0/Kk+v47kk
- 4vlmzBEtalK+KCNFC4GzPhQZTqqNfIeMzz9vLav0J8H9DsQmMI15Gai1qCEcAJgioyed
- 8k9QNAsB3lhl8QniD6QSTfVYtPs9iCVaHKUNkAh07r8VPpsl1l1r4LhAQyhfM3+QOOxE
- WVcw==
-X-Gm-Message-State: APjAAAVkIS+HrT0gFB/jpZXI8FEzXbfHlPq1SsdrytTog4ldF8ggTk3h
- Jga9rQZx46GBmdflhN2g3A==
-X-Google-Smtp-Source: APXvYqwiII4tT6mUV/WZPdOOYCJP3razv09fHNkFp9JLAVkZPyu7pCRKafjRWtkftQVgR7SzFninKQ==
-X-Received: by 2002:aca:494e:: with SMTP id w75mr95048oia.159.1572280394774;
- Mon, 28 Oct 2019 09:33:14 -0700 (PDT)
+ bh=nW63jMBvuV1jC5LkGgClq/3WYdWidZxNV+2Nh/Z21ew=;
+ b=gldLjJLPYciNDCr5Dzx99nuKVcl09LppImYAOrdp5Orur/u2X9GKZHajsxdrjewbko
+ zqzZZS1MlX29vKPny8pivW38vni089L0m/Vtigw0SZ0ulbhqUx1QEXR+z6Fw/4cuxzOV
+ KvsRryjlGDW/oJdKPn3sa3C6LRw8sT6eNvd6n3aJJUiO5y9VweDY+HSbPI7sYTh6msZo
+ 9+0wxRu5MmV/MjwBPchBjMiEVDjWFg/+5OwM1qX4WfnyVdpcyfnX8BMM1jkXtKkJZIpZ
+ 3m+X4GInUrq9zK48FBho6OHelMFpfd/9X4JfzsWIcR4aKszcF2Adpn2F/f2AJKzuU7ea
+ SSNg==
+X-Gm-Message-State: APjAAAU3j9m0aEBDJ9mB9hzrl8zHmhq/zhPmpRzW+UZA+/C5+n43ghKK
+ iNkDsTSjF1NK0/xgsAhffA==
+X-Google-Smtp-Source: APXvYqxhr3QGGC8pHRguZ0KGcav4CFccx7LcyeEsqrM8IAog45S1MROIl6X64sUTv9Rs+FE/3FigSg==
+X-Received: by 2002:a05:6830:1695:: with SMTP id
+ k21mr11501497otr.339.1572280396672; 
+ Mon, 28 Oct 2019 09:33:16 -0700 (PDT)
 Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id e186sm354991oia.47.2019.10.28.09.33.13
+ by smtp.googlemail.com with ESMTPSA id e186sm354991oia.47.2019.10.28.09.33.14
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 28 Oct 2019 09:33:14 -0700 (PDT)
+ Mon, 28 Oct 2019 09:33:16 -0700 (PDT)
 From: Rob Herring <robh@kernel.org>
 To: Andrew Murray <andrew.murray@arm.com>, Bjorn Helgaas <bhelgaas@google.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: [PATCH v3 07/25] PCI: iproc: Use pci_parse_request_of_pci_ranges()
-Date: Mon, 28 Oct 2019 11:32:38 -0500
-Message-Id: <20191028163256.8004-8-robh@kernel.org>
+Subject: [PATCH v3 08/25] PCI: mediatek: Use pci_parse_request_of_pci_ranges()
+Date: Mon, 28 Oct 2019 11:32:39 -0500
+Message-Id: <20191028163256.8004-9-robh@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191028163256.8004-1-robh@kernel.org>
 References: <20191028163256.8004-1-robh@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_093317_346395_0E356AC8 
-X-CRM114-Status: GOOD (  13.71  )
+X-CRM114-CacheID: sfid-20191028_093319_170450_706DBC62 
+X-CRM114-Status: GOOD (  14.33  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
+ no trust [209.85.210.65 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
@@ -77,6 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,82 +112,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the iProc host bridge to use the common
+Convert Mediatek host bridge to use the common
 pci_parse_request_of_pci_ranges().
 
-There's no need to assign the resources to a temporary list, so just use
-bridge->windows directly.
-
+Cc: Ryder Lee <ryder.lee@mediatek.com>
 Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 Cc: Bjorn Helgaas <bhelgaas@google.com>
-Cc: Ray Jui <rjui@broadcom.com>
-Cc: Scott Branden <sbranden@broadcom.com>
-Cc: bcm-kernel-feedback-list@broadcom.com
+Cc: Matthias Brugger <matthias.bgg@gmail.com>
+Cc: linux-mediatek@lists.infradead.org
 Reviewed-by: Andrew Murray <andrew.murray@arm.com>
 Signed-off-by: Rob Herring <robh@kernel.org>
 ---
- drivers/pci/controller/pcie-iproc-platform.c | 8 ++------
- drivers/pci/controller/pcie-iproc.c          | 5 -----
- 2 files changed, 2 insertions(+), 11 deletions(-)
+v2:
+- Use resource_list_get_entry_of_type
+---
+ drivers/pci/controller/pcie-mediatek.c | 43 ++++++++------------------
+ 1 file changed, 13 insertions(+), 30 deletions(-)
 
-diff --git a/drivers/pci/controller/pcie-iproc-platform.c b/drivers/pci/controller/pcie-iproc-platform.c
-index 9ee6200a66f4..375d815f7301 100644
---- a/drivers/pci/controller/pcie-iproc-platform.c
-+++ b/drivers/pci/controller/pcie-iproc-platform.c
-@@ -43,8 +43,6 @@ static int iproc_pcie_pltfm_probe(struct platform_device *pdev)
- 	struct iproc_pcie *pcie;
- 	struct device_node *np = dev->of_node;
- 	struct resource reg;
--	resource_size_t iobase = 0;
--	LIST_HEAD(resources);
- 	struct pci_host_bridge *bridge;
- 	int ret;
+diff --git a/drivers/pci/controller/pcie-mediatek.c b/drivers/pci/controller/pcie-mediatek.c
+index 626a7c352dfd..d9206a3cd56b 100644
+--- a/drivers/pci/controller/pcie-mediatek.c
++++ b/drivers/pci/controller/pcie-mediatek.c
+@@ -216,7 +216,6 @@ struct mtk_pcie {
+ 	void __iomem *base;
+ 	struct clk *free_ck;
  
-@@ -97,8 +95,7 @@ static int iproc_pcie_pltfm_probe(struct platform_device *pdev)
- 	if (IS_ERR(pcie->phy))
- 		return PTR_ERR(pcie->phy);
+-	struct resource mem;
+ 	struct list_head ports;
+ 	const struct mtk_pcie_soc *soc;
+ 	unsigned int busnr;
+@@ -661,11 +660,19 @@ static int mtk_pcie_setup_irq(struct mtk_pcie_port *port,
+ static int mtk_pcie_startup_port_v2(struct mtk_pcie_port *port)
+ {
+ 	struct mtk_pcie *pcie = port->pcie;
+-	struct resource *mem = &pcie->mem;
++	struct pci_host_bridge *host = pci_host_bridge_from_priv(pcie);
++	struct resource *mem = NULL;
++	struct resource_entry *entry;
+ 	const struct mtk_pcie_soc *soc = port->pcie->soc;
+ 	u32 val;
+ 	int err;
  
--	ret = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff, &resources,
--						    &iobase);
-+	ret = pci_parse_request_of_pci_ranges(dev, &bridge->windows, NULL);
- 	if (ret) {
- 		dev_err(dev, "unable to get PCI host bridge resources\n");
- 		return ret;
-@@ -113,10 +110,9 @@ static int iproc_pcie_pltfm_probe(struct platform_device *pdev)
- 		pcie->map_irq = of_irq_parse_and_map_pci;
- 	}
++	entry = resource_list_first_type(&host->windows, IORESOURCE_MEM);
++	if (entry)
++		mem = entry->res;
++	if (!mem)
++		return -EINVAL;
++
+ 	/* MT7622 platforms need to enable LTSSM and ASPM from PCIe subsys */
+ 	if (pcie->base) {
+ 		val = readl(pcie->base + PCIE_SYS_CFG_V2);
+@@ -1023,39 +1030,15 @@ static int mtk_pcie_setup(struct mtk_pcie *pcie)
+ 	struct mtk_pcie_port *port, *tmp;
+ 	struct pci_host_bridge *host = pci_host_bridge_from_priv(pcie);
+ 	struct list_head *windows = &host->windows;
+-	struct resource_entry *win, *tmp_win;
+-	resource_size_t io_base;
++	struct resource *bus;
+ 	int err;
  
--	ret = iproc_pcie_setup(pcie, &resources);
-+	ret = iproc_pcie_setup(pcie, &bridge->windows);
- 	if (ret) {
- 		dev_err(dev, "PCIe controller setup failed\n");
--		pci_free_resource_list(&resources);
- 		return ret;
- 	}
+-	err = devm_of_pci_get_host_bridge_resources(dev, 0, 0xff,
+-						    windows, &io_base);
++	err = pci_parse_request_of_pci_ranges(dev, windows,
++					      &bus);
+ 	if (err)
+ 		return err;
  
-diff --git a/drivers/pci/controller/pcie-iproc.c b/drivers/pci/controller/pcie-iproc.c
-index 2d457bfdaf66..223335ee791a 100644
---- a/drivers/pci/controller/pcie-iproc.c
-+++ b/drivers/pci/controller/pcie-iproc.c
-@@ -1498,10 +1498,6 @@ int iproc_pcie_setup(struct iproc_pcie *pcie, struct list_head *res)
- 		return ret;
- 	}
- 
--	ret = devm_request_pci_bus_resources(dev, res);
--	if (ret)
--		return ret;
+-	err = devm_request_pci_bus_resources(dev, windows);
+-	if (err < 0)
+-		return err;
 -
- 	ret = phy_init(pcie->phy);
- 	if (ret) {
- 		dev_err(dev, "unable to initialize PCIe PHY\n");
-@@ -1543,7 +1539,6 @@ int iproc_pcie_setup(struct iproc_pcie *pcie, struct list_head *res)
- 		if (iproc_pcie_msi_enable(pcie))
- 			dev_info(dev, "not using iProc MSI\n");
+-	/* Get the I/O and memory ranges from DT */
+-	resource_list_for_each_entry_safe(win, tmp_win, windows) {
+-		switch (resource_type(win->res)) {
+-		case IORESOURCE_IO:
+-			err = devm_pci_remap_iospace(dev, win->res, io_base);
+-			if (err) {
+-				dev_warn(dev, "error %d: failed to map resource %pR\n",
+-					 err, win->res);
+-				resource_list_destroy_entry(win);
+-			}
+-			break;
+-		case IORESOURCE_MEM:
+-			memcpy(&pcie->mem, win->res, sizeof(*win->res));
+-			pcie->mem.name = "non-prefetchable";
+-			break;
+-		case IORESOURCE_BUS:
+-			pcie->busnr = win->res->start;
+-			break;
+-		}
+-	}
++	pcie->busnr = bus->start;
  
--	list_splice_init(res, &host->windows);
- 	host->busnr = 0;
- 	host->dev.parent = dev;
- 	host->ops = &iproc_pcie_ops;
+ 	for_each_available_child_of_node(node, child) {
+ 		int slot;
 -- 
 2.20.1
 
