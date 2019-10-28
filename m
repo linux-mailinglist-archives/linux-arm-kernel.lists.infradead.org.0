@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 96BE2E6C6A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 07:27:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 53777E6C88
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 07:50:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IgRKFtOZxWEMNAlxHvX2WHJdt7GcPK+wUePrH6Kqt+o=; b=hblf5wXWi6sZzm
-	xrrA7zrzlpvq+QaHwAeplNPTGg5VUyOhcsNDOc4OzauvEflyn6hskiiG5aSUzHLILYfSnPcWEZYd6
-	PURpQvn3nUDr469HfIi0HJdygk7DQpFFj+6kGKNC7F2TPNwEpbHludTH9R19B8dvXh7Uu/RqeQa1j
-	TlHxmkPxToSJ4d78lgHf99WJsCubIESrR4FKqsE1D0vozu7gCS+8Re1NU6G6KA2Dsza8Fevv9Eyc2
-	lMM4mX6oMfpc7HSn3BnDe0WGs8rSVZ6x1xMS587pagfqon9vOA414srDJfoEZQYgWxNp8Cjfpno1z
-	PFoXi8iXRIY7I2Dl9HQA==;
+	List-Owner; bh=evejnF5/8sEn70xymCtRsVFXAN1IXeyfNF4H21ujMAE=; b=T7+gGFT3o//62K
+	cGYjF9av1wE0iDlUs193I6orAPbFyfM8ACx2/yfsCPVSpF4cet2rZOe889TljkpbNoq7QqcpkWHsC
+	D76wT/njRH8n8BaeCFE28UhWcwquA54d4ONZkYqxRQoPBw0egNMLAZsy1m9Wagnnd9xFuY+2GIILW
+	HJkns+9N0sCXQl0UbsL7nwJsR/KHwzXvEFTj1lERdcpjIahZdJ07IyuJcbjlVPBII3MYbLWPoBXuH
+	QLvUxkZ2nrf8pe6exi/rBNTjXgY8mfeBHHRG+5Q3wTm8zHESUnzxBert99Ejo8+pfHOOhS4Xo/XIp
+	QQOGFIHDFCzZeUQfYO0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOyUx-0005GQ-3i; Mon, 28 Oct 2019 06:27:27 +0000
+	id 1iOyr1-0003ZT-1o; Mon, 28 Oct 2019 06:50:15 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOyUk-0005G8-Ep
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 06:27:15 +0000
+ id 1iOyqj-0003Yr-RC
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 06:49:59 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F3CBE20873;
- Mon, 28 Oct 2019 06:27:11 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BDA9620873;
+ Mon, 28 Oct 2019 06:49:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572244034;
- bh=HbkAY+lHAbwVtkObCGbCrSq1LaUQVDeVT+G5E/C+4/s=;
+ s=default; t=1572245397;
+ bh=hE8YrV90OgDfQQtk53yvsfWOnB4/UfgpeGSzKX0bxoE=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=1JhoMeMcY7i7DZSmAbcIw/l2aa0AWSjqrCmnkgyC0CFvlcI8XbD1KWrkUy2CdYQ0j
- 9l+L4xHaS3EPeQ6E2ayREo4VgOqUxhYquT1D7ClkzaDLTMt6PwOmSIdML8zqWpkexD
- +awmlK5pXFDkRhf/olUgHNhXzFt7ZQlS+CNq4bi0=
-Date: Mon, 28 Oct 2019 14:26:55 +0800
+ b=ITc4HThObbBHQq5pgmMs/87ilJLSD8BO1zEJ/ZyV+nNOdrzQoy7PPFQt0l6gBev9f
+ gW0QHRRGB6zpwoqoVyGkP+Z9OMhFLlsYZMsdYbgZMBL05RBA1hApCDB9sZRXcs4pBI
+ J7S/NyeYnqIPp3CNruTaEiveIBmczV3n8WPe2Who=
+Date: Mon, 28 Oct 2019 14:49:37 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Andrey Smirnov <andrew.smirnov@gmail.com>
-Subject: Re: [PATCH v2] ARM: imx: Drop imx_anatop_usb_chrg_detect_disable()
-Message-ID: <20191028062654.GP16985@dragon>
-References: <20191022041445.23897-1-andrew.smirnov@gmail.com>
+To: Fabio Estevam <festevam@gmail.com>
+Subject: Re: [PATCH 1/9] ARM: dts: imx6qdl-{apf6,apf6dev}: switch boards to
+ SPDX identifier
+Message-ID: <20191028064936.GQ16985@dragon>
+References: <20191022131655.25737-1-sebastien.szymanski@armadeus.com>
+ <20191022131655.25737-2-sebastien.szymanski@armadeus.com>
+ <CAOMZO5Bnb-Jd_XkMxdcMFRkmMzcVVikV_6+Ug=Rz6iDa5QZ_yw@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191022041445.23897-1-andrew.smirnov@gmail.com>
+In-Reply-To: <CAOMZO5Bnb-Jd_XkMxdcMFRkmMzcVVikV_6+Ug=Rz6iDa5QZ_yw@mail.gmail.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191027_232714_514513_5FE27879 
-X-CRM114-Status: UNSURE (   8.93  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191027_234957_906130_A915F291 
+X-CRM114-Status: GOOD (  10.06  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,28 +79,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Chen <peter.chen@nxp.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Fabio Estevam <festevam@gmail.com>,
- Chris Healy <cphealy@gmail.com>, linux-imx@nxp.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Julien Boibessot <julien.boibessot@armadeus.com>,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 21, 2019 at 09:14:45PM -0700, Andrey Smirnov wrote:
-> With commit b5bbe2235361 ("usb: phy: mxs: Disable external charger
-> detect in mxs_phy_hw_init()") in tree all of the necessary charger
-> setup is done by the USB PHY driver which covers all of the affected
-> i.MX6 SoCs.
-> 
-> NOTE: imx_anatop_usb_chrg_detect_disable() was also called for i.MX7D,
-> but looking at its datasheet it appears to have a different USB PHY IP
-> block, so executing i.MX6 charger disable configuration seems
-> unnecessary.
-> 
-> Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
+On Thu, Oct 24, 2019 at 05:38:22PM -0300, Fabio Estevam wrote:
+> Hi S=E9bastien,
+> =
 
-Applied, thanks.
+> On Tue, Oct 22, 2019 at 10:17 AM S=E9bastien Szymanski
+> <sebastien.szymanski@armadeus.com> wrote:
+> =
+
+> > - *  a) This file is free software; you can redistribute it and/or
+> > - *     modify it under the terms of the GNU General Public License as
+> > - *     published by the Free Software Foundation; either version 2 of
+> > - *     the License, or (at your option) any later version.
+> =
+
+> > - */
+> > +// SPDX-License-Identifier: GPL-2.0 OR MIT
+> =
+
+> The original license said "either version 2 of the License, or (at
+> your option) any later version."
+> =
+
+> So you should use:
+> =
+
+> // SPDX-License-Identifier: GPL-2.0+ OR MIT
+
+I fixed it up and applied the series.
+
+Shawn
 
 _______________________________________________
 linux-arm-kernel mailing list
