@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B016E7B1E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 22:08:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11ED9E7B33
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 22:13:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
 	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fHikwptWucagL5dbu0BuV2L4CpJ194QNVDCoAgZ0qYM=; b=gjaqbpUiu099GB
-	YYsNL7tF1Vg+qz5to3oeQ4cXEs9pKOZPSktiv02DGhOwS7tNR+pHiVY4wDxKrcVieMRO4Ie6AeS2r
-	i7ayXINvXhpihamQT1fJMFv5oe3vxT52+31pQoz+4feJuPFn19iqxR+1SWBiTlscFdO6Qn/VhiubR
-	iN1jTYuaWUMaYepZyXHGIJ5HsHdasOfHxmp8G5kiqhwBxL3wwIiKg748dNAnOoDLENrFrFE+bohW0
-	oLB8QQqMpwIBQCd46/TsX9Db/ngoKnmtBEUnEvqY09ClAiIArjTrRr65Uk85u2OB1xHZV4k+Gza0m
-	etrCWq+5zccqx0n0t5PA==;
+	List-Owner; bh=e4glxVvXBka+yxH0dG4+MOUwiFnJGVdfplKa6wb2nVI=; b=kXkB4t2TqbUAdC
+	VOZb2isFcsPm9vXAynQoSIX2QU754RqWnnFWGN67AeO/hDFWZVtOaXIIgwy7DT38o+VzXLdjA3/o7
+	c5yXhmhsJLbwrW6kG1dFa/kBWRWZWmCVjg29KIhW2/Kd4C3cHtF5e7nLyIqphbFu96xdN4ilyce3K
+	s23xtDO4xm4qGNpJ2gv3GZkR7/fhp8lLL9lukz4fG4/Aw3xCs/L93stTaYM5oMHzNm9/tBr6j9uV5
+	CHaAzLsk00iKzUlgn84ECLgC8BLIxOoVjNnKQ8aurYIoo6537Fspv+/7TuNr2l6UxNQfIWjzcrpJQ
+	cOnkCH9f/dRasC3j3ykQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPCFu-00013K-Ui; Mon, 28 Oct 2019 21:08:50 +0000
+	id 1iPCKb-0002mx-1V; Mon, 28 Oct 2019 21:13:41 +0000
 Received: from smtp09.smtpout.orange.fr ([80.12.242.131]
  helo=smtp.smtpout.orange.fr)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPCFd-00012i-J2
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 21:08:35 +0000
+ id 1iPCKL-0002m2-FO
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 21:13:28 +0000
 Received: from belgarion ([90.55.204.252]) by mwinf5d17 with ME
- id K98W2100G5TFNlm0398XDJ; Mon, 28 Oct 2019 22:08:31 +0100
+ id K9DP210045TFNlm039DPaW; Mon, 28 Oct 2019 22:13:23 +0100
 X-ME-Helo: belgarion
 X-ME-Auth: amFyem1pay5yb2JlcnRAb3JhbmdlLmZy
-X-ME-Date: Mon, 28 Oct 2019 22:08:31 +0100
+X-ME-Date: Mon, 28 Oct 2019 22:13:23 +0100
 X-ME-IP: 90.55.204.252
 From: Robert Jarzmik <robert.jarzmik@free.fr>
 To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH 21/46] ARM: pxa: spitz: use gpio descriptors for audio
+Subject: Re: [PATCH 22/46] ARM: pxa: eseries: use gpio lookup for audio
 References: <20191018154052.1276506-1-arnd@arndb.de>
- <20191018154201.1276638-21-arnd@arndb.de>
+ <20191018154201.1276638-22-arnd@arndb.de>
 X-URL: http://belgarath.falguerolles.org/
-Date: Mon, 28 Oct 2019 22:08:30 +0100
-In-Reply-To: <20191018154201.1276638-21-arnd@arndb.de> (Arnd Bergmann's
- message of "Fri, 18 Oct 2019 17:41:36 +0200")
-Message-ID: <87o8y0lgs1.fsf@belgarion.home>
+Date: Mon, 28 Oct 2019 22:13:23 +0100
+In-Reply-To: <20191018154201.1276638-22-arnd@arndb.de> (Arnd Bergmann's
+ message of "Fri, 18 Oct 2019 17:41:37 +0200")
+Message-ID: <87k18olgjw.fsf@belgarion.home>
 User-Agent: Gnus/5.130008 (Ma Gnus v0.8) Emacs/26 (gnu/linux)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_140833_907427_6887F483 
-X-CRM114-Status: GOOD (  21.96  )
+X-CRM114-CacheID: sfid-20191028_141327_412323_13CBA079 
+X-CRM114-Status: GOOD (  16.55  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -52,12 +52,12 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [80.12.242.131 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [80.12.242.131 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robert.jarzmik[at]free.fr)
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [80.12.242.131 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,61 +80,20 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Arnd Bergmann <arnd@arndb.de> writes:
 
-> The audio driver should not use a hardwired gpio number
-> from the header. Change it to use a lookup table.
+> The three eseries machines have very similar drivers for audio, all
+> using the mach/eseries-gpio.h header for finding the gpio numbers.
+>
+> Change these to use gpio descriptors to avoid the header file
+> dependency.
+>
+> I convert the _OFF gpio numbers into GPIO_ACTIVE_LOW ones for
+> consistency here.
 >
 > Cc: Mark Brown <broonie@kernel.org>
 > Cc: alsa-devel@alsa-project.org
 > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> ---
->  arch/arm/mach-pxa/spitz.c                    | 33 ++++++++++-
->  arch/arm/mach-pxa/{include/mach => }/spitz.h |  2 +-
->  arch/arm/mach-pxa/spitz_pm.c                 |  2 +-
->  sound/soc/pxa/spitz.c                        | 58 ++++++++------------
->  4 files changed, 57 insertions(+), 38 deletions(-)
->  rename arch/arm/mach-pxa/{include/mach => }/spitz.h (99%)
->
-> diff --git a/arch/arm/mach-pxa/spitz.c b/arch/arm/mach-pxa/spitz.c
-> index a4fdc399d152..6028fd83c44d 100644
-> --- a/arch/arm/mach-pxa/spitz.c
-> +++ b/arch/arm/mach-pxa/spitz.c
-> @@ -44,7 +44,7 @@
->  #include <linux/platform_data/mmc-pxamci.h>
->  #include <linux/platform_data/usb-ohci-pxa27x.h>
->  #include <linux/platform_data/video-pxafb.h>
-> -#include <mach/spitz.h>
-> +#include "spitz.h"
->  #include "sharpsl_pm.h"
->  #include <mach/smemc.h>
->  
-> @@ -948,11 +948,42 @@ static void __init spitz_i2c_init(void)
->  static inline void spitz_i2c_init(void) {}
->  #endif
->  
-> +static struct gpiod_lookup_table spitz_audio_gpio_table = {
-> +	.dev_id = "spitz-audio",
-> +	.table = {
-> +		GPIO_LOOKUP("sharp-scoop.0", SPITZ_GPIO_MUTE_L - SPITZ_SCP_GPIO_BASE,
-> +			    "mute-l", GPIO_ACTIVE_HIGH),
-> +		GPIO_LOOKUP("sharp-scoop.0", SPITZ_GPIO_MUTE_R - SPITZ_SCP_GPIO_BASE,
-> +			    "mute-r", GPIO_ACTIVE_HIGH),
-> +		GPIO_LOOKUP("sharp-scoop.1", SPITZ_GPIO_MIC_BIAS - SPITZ_SCP2_GPIO_BASE,
-> +			    "mic", GPIO_ACTIVE_HIGH),
-> +		{ },
-> +	},
-> +};
-> +
-> +static struct gpiod_lookup_table akita_audio_gpio_table = {
-> +	.dev_id = "spitz-audio",
-> +	.table = {
-> +		GPIO_LOOKUP("sharp-scoop.0", SPITZ_GPIO_MUTE_L - SPITZ_SCP_GPIO_BASE,
-> +			    "mute-l", GPIO_ACTIVE_HIGH),
-> +		GPIO_LOOKUP("sharp-scoop.0", SPITZ_GPIO_MUTE_R - SPITZ_SCP_GPIO_BASE,
-> +			    "mute-r", GPIO_ACTIVE_HIGH),
-> +		GPIO_LOOKUP("gpio-pxa", AKITA_GPIO_MIC_BIAS - AKITA_IOEXP_GPIO_BASE,
-> +			    "mic", GPIO_ACTIVE_HIGH),
-This last one looks a bit dubious, as it looks like a gpio on a gpio expander,
-could you cross-check that "gpio-pxa" shouldn't be an I2C expander gpio please ?
+Let's hope for the best :
+Acked-by: Robert Jarzmik <robert.jarzmik@free.fr>
 
 Cheers.
 
