@@ -2,81 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 169F0E77FC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 19:00:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46F3AE7819
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 19:07:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VewdcaUAsg41Uzcas6+CIkv/TE7e5t8D6p8uNHXMDjc=; b=VlTA8rzcllFB3z
-	XFtaZwgPIPUL+K2HJa8rR5su8wEWW0fWPsCIP6vYaF6bzL1cmS4S8FegyezZC3T9OSFTThZuTE4DK
-	TFVMFbqXmch0646y/a5OkzFngoKAr2zH5CDaMgu4hr/uJsbb/gJSykUdM8g5vyrU60M298LWCJEIe
-	1B2WB5yzpmic/0/JO2s1qSvUuLrzsDAJJbp1/JaLQp6RKXPr2zqH2F+yUb0d2EM0noNE9TF7Jf7rS
-	e61RdrZSoJsw2j0ba85CdafecMuOxCS/w1ZSYzYvxdG7FCp8O3JshI6cWiQsx6pVT1SP1yhqtq5gP
-	qlnf03gSngJRQUzNx9Gg==;
+	List-Owner; bh=0lLMYTvh7Bp6MvjII7W7ZM9BSDri/VyZOoLLRZXLqkg=; b=lrHH+cnyw9xMo6
+	uAzMOor82UdMMIHO0Au8JlrV6u8fetcla3qiW2YQaHZr7/yHWT4suPt7L38iSIkCmlT6ejhTL7azo
+	Af4q/R/k9/hdODL+JSxQDXD3n3YkwOGorXcYcAv8kC7Ow10NgYq3tV004M1HFb1Gxyiyb827MfjmG
+	FcCTlUl+r0XvE4TPmny9CG2Ugq85XRFknPs1IMfNWIodcvrf8n8Y21k+Oe4dq5+8Q/UNUzcM/EcyS
+	M4rvksXHXF6UQDUKPO3Sr+nJlM6GyNG+S/LZfVasyYOy5hEWy+RHT2bMu3hmy7RQBav9H+BN0kKFf
+	lB8B+eOX0Fze4wpfXGzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP9JX-00012v-Lm; Mon, 28 Oct 2019 18:00:23 +0000
-Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
+	id 1iP9QF-0003Be-Rj; Mon, 28 Oct 2019 18:07:19 +0000
+Received: from smtp09.smtpout.orange.fr ([80.12.242.131]
+ helo=smtp.smtpout.orange.fr)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP9JO-00012T-4D
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 18:00:15 +0000
-Received: by mail-il1-x143.google.com with SMTP id o16so8962543ilq.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 28 Oct 2019 11:00:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=8ZRA4B7FXW6W3RV8tn3gg3cUt3S15ss1oFglpHJlY5A=;
- b=zHLBWNkMxANTvwUl0FlcedkhxdOgCZtrZoDsoWKv+ek6Z3m8siH8NnqcPAkM57lkwO
- jl56v6UoXJmG7MMFRJ4TGFmYb1GFwcrLVjbMh+xgwhUbe++4A6g2cAcbbGafahxrBxBh
- xGwuNtGYC0Y6Og9hH3ZZWtXg3LJc43dNgkICShfZYv9yt2mQrit5Cfk0WIptLj4hqyl6
- j1lhHmL5NLI0jVpwqeXeame/kAJqn9zrtLd0gM1XjdR6GcDOEKTOaYM0YqiAJNgKRSUE
- J7jejSFSjXTPQ5c0WP7U/wrVNcJ9JZeHnLuKPhsN5uW5ll/VNZwN/gKFR7QpYz/lT6C3
- ixNw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=8ZRA4B7FXW6W3RV8tn3gg3cUt3S15ss1oFglpHJlY5A=;
- b=hRKfMXr6ddOUKZC1VxGhV3YgEtZ/JS6O3+TvIGYuCEMRWGnfLO2KwbCUTevim4IIu9
- 6AkCPrvDFAxv0u5x2sZPS8jf2jnpfNwXJxrHv8FT7z6DY5J9v7bRa76GvNeSf4iBRQlO
- 3mvTWRmuPBPqxvYWScujmcW7+EmflylLA/NvtLKi6CDgDj0J0YlOnKbm+OYabhvTgCuH
- mFHPdwMkotGPAi2WdBnawSAFqQON0qzTbL2jqtNRng0c59F27iFfJ7vXNo+im6OPG2g2
- Tlx3Gs35OkOycqW1KGyo8jO5WPNu7xfkRZtrH6OdPtQAUraeAUm2Ix5glBfJD6Skoiyl
- 2vFw==
-X-Gm-Message-State: APjAAAWuwDAQmZZlORFUtfjdWrU53Z/rvei5axjhxxjhfdc4Hq0j/Vpt
- idHF23HuZno7yCgiUhVrIbXFxLJ5k2/pohe/8yDhzQ==
-X-Google-Smtp-Source: APXvYqxcExEAISwj/XJbHLQIdEKw/l1wqOsOwo+jUVoxMxO9rsxV5Cf/v4Uwtd152UziFriUZZXVD1/2FO6vdoNUfdw=
-X-Received: by 2002:a92:1907:: with SMTP id 7mr22036675ilz.72.1572285613084;
- Mon, 28 Oct 2019 11:00:13 -0700 (PDT)
+ id 1iP9Q1-0003Ai-Ac
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 18:07:07 +0000
+Received: from belgarion ([90.55.204.252]) by mwinf5d17 with ME
+ id K66s2100Q5TFNlm0366xqb; Mon, 28 Oct 2019 19:06:59 +0100
+X-ME-Helo: belgarion
+X-ME-Auth: amFyem1pay5yb2JlcnRAb3JhbmdlLmZy
+X-ME-Date: Mon, 28 Oct 2019 19:06:59 +0100
+X-ME-IP: 90.55.204.252
+From: Robert Jarzmik <robert.jarzmik@free.fr>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH 01/46] ARM: pxa: split mach/generic.h
+References: <20191018154052.1276506-1-arnd@arndb.de>
+ <20191018154201.1276638-1-arnd@arndb.de>
+X-URL: http://belgarath.falguerolles.org/
+Date: Mon, 28 Oct 2019 19:06:52 +0100
+In-Reply-To: <20191018154201.1276638-1-arnd@arndb.de> (Arnd Bergmann's message
+ of "Fri, 18 Oct 2019 17:41:16 +0200")
+Message-ID: <87tv7soibn.fsf@belgarion.home>
+User-Agent: Gnus/5.130008 (Ma Gnus v0.8) Emacs/26 (gnu/linux)
 MIME-Version: 1.0
-References: <cbc2af1aece3762553219ba6b5222237dacaea9d.camel@pengutronix.de>
- <20191028155620.j72vxqnp6sqdl5j3@localhost>
-In-Reply-To: <20191028155620.j72vxqnp6sqdl5j3@localhost>
-From: Olof Johansson <olof@lixom.net>
-Date: Mon, 28 Oct 2019 11:00:02 -0700
-Message-ID: <CAOesGMhvCRWMsC1eLAtTA5sh0qjE8gQYnKoxb4kFOQZNjFRMuQ@mail.gmail.com>
-Subject: Re: Reset controller fixes for v5.5
-To: Philipp Zabel <p.zabel@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_110014_220850_1D6F2213 
-X-CRM114-Status: GOOD (  14.42  )
+X-CRM114-CacheID: sfid-20191028_110705_647727_F6FF3BC7 
+X-CRM114-Status: GOOD (  14.05  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [80.12.242.131 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robert.jarzmik[at]free.fr)
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [80.12.242.131 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,49 +69,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ARM-SoC Maintainers <arm@kernel.org>, Sascha Hauer <kernel@pengutronix.de>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arm-kernel@lists.infradead.org,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Haojian Zhuang <haojian.zhuang@gmail.com>, Daniel Mack <daniel@zonque.org>,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 28, 2019 at 9:00 AM Olof Johansson <olof@lixom.net> wrote:
->
-> On Mon, Oct 28, 2019 at 02:15:31PM +0100, Philipp Zabel wrote:
-> > Dear arm-soc maintainers,
-> >
-> > The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
-> >
-> >   Linux 5.4-rc1 (2019-09-30 10:35:40 -0700)
-> >
-> > are available in the Git repository at:
-> >
-> >   git://git.pengutronix.de/git/pza/linux.git tags/reset-fixes-for-v5.5
-> >
-> > for you to fetch changes up to f430c7ed8bc22992ed528b518da465b060b9223f:
-> >
-> >   reset: fix reset_control_ops kerneldoc comment (2019-10-28 12:18:23 +0100)
-> >
-> > ----------------------------------------------------------------
-> > Reset controller fixes for v5.5
-> >
-> > This tag fixes a memory leak in reset_control_array_put(), which is
-> > called by reset_control_put() for reset array controls. The other
-> > patches are small kerneldoc comment fixes to avoid documentation build
-> > warnings.
->
-> Hi,
->
-> Please send these to soc@kernel.org from here on out, so they get captured in
-> our patchwork (I bounced this time).
+Arnd Bergmann <arnd@arndb.de> writes:
 
-Seems like the automation for marking pull requests as merged (and the
-automailer) doesn't work with bounces, so: Merged into arm/fixes.
-Thanks!
+> Only one declaration from this header is actually used in drivers,
+> so move that one into the global location and leave everything else
+> private.
+>
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+Acked-by: Robert Jarzmik <robert.jarzmik@free.fr>
 
+Cheers.
 
--Olof
+--
+Robert
 
 _______________________________________________
 linux-arm-kernel mailing list
