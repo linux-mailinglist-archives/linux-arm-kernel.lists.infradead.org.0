@@ -2,75 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27B87E7354
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 15:06:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DD15E7355
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 15:06:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=GUaH15Gt43PwItKYxjty3TlX7IUYEGCFPzyZSGJYiFw=; b=blv
-	LMe+CodQs/CZcZ2U/592UlnuJjjIbbrsZsByvCc1PY+dE9rsSARfdXyISjQzWls2uYaZvCKtQ2LMY
-	Ir/oZ424kL2sjYKZJe+hvmTDrQDJ1BZFG38Vwc3nH2uxeIum5SYHtWRqyT+7eTiE2rKDyqljyqhdB
-	9xHlp82tGHDALgl3tuIq98V+Ge9Ilv5NxJi+hIz3sIAuJPr2cULpod5BJ0E3Ge6VhEgVrz8d2Tz85
-	fngMbHP0KJXlFjcB8aX3rbn6eQcByqOtn3nuGhGzWQMRgmORAt4G1Pobx3YuP5TWdyxzTFQ/pcJvH
-	SFh8k+chG2VmYMzTjvkOXRJjnkLiBHA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Gi/9KNee8Yic5RADOatTsM/gBCyT5uTq6kBb5gNccsY=; b=DKBBjRWce82RgcOP4FmwmiYcpT
+	1dlmxcktzGNxfuuSoAvcY8Kh2/xgRQIy8bOVQ+8qC2g/9K61zp+yA7tgrFeiMaMU70aRCpu7mJ5oW
+	regL4t9Wugz1P7ANO2Rc5yhE3M+XUZBtiXgxV3erGEKti2ql/WL2dqf8VJcGE9rjL9NLzOxj5KD4E
+	l8PnuHLflXEYK4GBpDMB/xMg+GHGim9BZzSeQWozd8ZVa7vqI4KmYTollTYS5L0JdxeY10bKQcza8
+	z305y42dqB1m8AXwPc7NVewdaxgHb5Airx9XcTxPnpd0feZf0hHYiDcbp+HsvjxO1mkUEDqES5x/q
+	98oz9/Mg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP5f7-0004yt-Mg; Mon, 28 Oct 2019 14:06:25 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1iP5fN-0006a7-Hs; Mon, 28 Oct 2019 14:06:41 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP5eT-0004nu-GW
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 14:05:50 +0000
-Received: by mail-qk1-x744.google.com with SMTP id a194so8533051qkg.10
+ id 1iP5eZ-0004s7-Lp
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 14:05:53 +0000
+Received: by mail-qt1-x841.google.com with SMTP id u22so14647920qtq.13
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 28 Oct 2019 07:05:43 -0700 (PDT)
+ Mon, 28 Oct 2019 07:05:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=mP1EjpYpeQZmnWOc/fj6cBSC/7lAuYtigWK9wnvfedw=;
- b=C7VIjLoesVJpY535cDWv0COuloPP4bOVG7Mf7sogybhHg0dPBb8HBjqHLAUIp1qj53
- +nvwtg8VBiHtDOjDfL4ax4xdOFNfIeinDngNS+gJupQepqDjjgZk9vBBo4GBGcOgQ+SU
- 0lkgNd0MIGcGFzQETOdpj5WX/ld2xd1GHYaAIB+dMYoPWWSo06AMHHVZsigTIf10WOJN
- YRpMmOuwhWdr/1agrvjH1X/jV9/uUVHEL/YWqDVaOmFSqWLRixGtSIao5I15mHNLk9ed
- mq0rr5/whEmz0dYhen2SJ08WlDAmsB3rIYRtWUfG5KI4no3L6l2UjOLA+DRPD0XWeyz5
- 6gZg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=PM4dE9r7yIr6C7Ua6H79vObX7BbYT9gaHWkcZNU+kUk=;
+ b=R8p5hviv6Tr+ZtM+Cyc50piYXg5v1tYeKAWMmq/s4K05WgUdQ2K5FUfhPIxL5frhSD
+ NKE+S2XVcliist6vHTAti3rLr7MBrUADyoAgBnsE91V6GjPSJuEjvfQ/V9ruIoGOuhWK
+ CgHN4d8lgwPFx2H+lMRlBOvbeqB6b0uzba0u2zLjeUW4X71M/I+p8c8XcMGZrUmrEBLI
+ 6HrzSyD6yCVlSb8NlyC5VAwrrt73LKjrY5GEoIpsskidImcCRxmAYzPdwa/pxrTKf8Kj
+ n2FUXVaji52ukOH8rXfaelXJM4vDrOdkYbBruIXsVLsZ7KmnDXA9o2/RJa+tUKwSbHDA
+ JlOw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=mP1EjpYpeQZmnWOc/fj6cBSC/7lAuYtigWK9wnvfedw=;
- b=EslPSKwCAfxjsHm8AXavlRQXwlhq279B7r/rF5qSRgau/HrmXX5f3HYd1fQ8ykJKEf
- rffyi2y2SZ479p6STgP7WteCLX8xZq0rTM5jvETGuEmXDoOkhv5JRPQj51OfmEGTHeF6
- AeXP/C1cxV8Uaf4fwOPeCD7KSrEhDcTnYO5neF0Dtu4TSAMXqYwODSkqcttLny+QnYJl
- LOpEh5JuL2xCgaXaGlg9+jKvNyVB6pQBfO2sAt4c/74t9EC7832cabm/MTKG0dkDxrIE
- 7mMiEJtmnvAG1cRgZW5T7t+mT4mNOsvdXbsxO0QqYNjax8SZlHWm2uWlUptpR1XBwUjk
- MsTQ==
-X-Gm-Message-State: APjAAAXR9CpFzgUPKO46Wtey4oAvwv7EjtOs+HRoEJIIpfniak9nenj2
- S1GOAvj+cgZ2dA0QuNCbkLc=
-X-Google-Smtp-Source: APXvYqz0xyu/b8wmgzlpTDeIYaD5nk874pSWKI7hMXXosSVXzPhaK28Wxt5gdx4vcKBFSCKbkzipZA==
-X-Received: by 2002:a05:620a:14ad:: with SMTP id
- x13mr12863420qkj.58.1572271542964; 
- Mon, 28 Oct 2019 07:05:42 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=PM4dE9r7yIr6C7Ua6H79vObX7BbYT9gaHWkcZNU+kUk=;
+ b=Zo5lF+D8SacBgcVkh4QEWuc2uzOIpjI9FwxyGt3loQftwMu4d+ecoogR4RC/1dJOXE
+ pWDmoElhrKZdjIkOfTmcADHbDM2bN+hRZcJrLeaMad4Kid8o/Ma5kQCcfJqH8+63Xt+w
+ pZ7YgtWWL/Nd8lCF1rRL4FAkDafRPAWQJsmpWbo350/5qHJ9ZfICg5635AZmj2njbYMW
+ VaVCE2014vMarqgsubPNLmC694YpsWi0khm3rTHE7Undpw7IUB3+yJGoqreM5ZSVNhp8
+ Hhe9xJSdOQotU5zPMxPyitcnzAZf0X9HZBPsz1p6PuhyF2jFDoNNhS0ia+AHzywBAvV5
+ lriw==
+X-Gm-Message-State: APjAAAXEfAmjaSt3Ns/h/i7YKI1LfYKbJEdX9FoNkx8pZtdizsOe8Bhf
+ tPjAZQDY5/YPEkRtqmzbn3g=
+X-Google-Smtp-Source: APXvYqwmEHqHyD6Lok08vyMW+/izQCCkleX4SFbKUiGdjvUdcJXC4sWtgso8QdTjcM5bf0kMeCnrtA==
+X-Received: by 2002:aed:35f4:: with SMTP id d49mr17121909qte.20.1572271546010; 
+ Mon, 28 Oct 2019 07:05:46 -0700 (PDT)
 Received: from fabio-Latitude-E5450.nxp.com ([177.221.114.206])
- by smtp.gmail.com with ESMTPSA id b185sm7000854qkg.45.2019.10.28.07.05.40
+ by smtp.gmail.com with ESMTPSA id b185sm7000854qkg.45.2019.10.28.07.05.43
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 28 Oct 2019 07:05:42 -0700 (PDT)
+ Mon, 28 Oct 2019 07:05:45 -0700 (PDT)
 From: Fabio Estevam <festevam@gmail.com>
 To: shawnguo@kernel.org
-Subject: [PATCH 1/2] ARM: dts: imx51: Adjust CPU operating points
-Date: Mon, 28 Oct 2019 11:05:44 -0300
-Message-Id: <20191028140545.10218-1-festevam@gmail.com>
+Subject: [PATCH 2/2] ARM: dts: imx53: Adjust CPU operating points
+Date: Mon, 28 Oct 2019 11:05:45 -0300
+Message-Id: <20191028140545.10218-2-festevam@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191028140545.10218-1-festevam@gmail.com>
+References: <20191028140545.10218-1-festevam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_070545_624297_2A74C1DC 
-X-CRM114-Status: GOOD (  10.44  )
+X-CRM114-CacheID: sfid-20191028_070551_768240_FA4482C2 
+X-CRM114-Status: GOOD (  10.50  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -105,28 +108,32 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Adjust the CPU operating points as per the characterized settings from
 the vendor BSP at:
 
-https://source.codeaurora.org/external/imx/linux-imx/tree/arch/arm/mach-mx5/mx51_babbage.c?h=imx_2.6.35_caf#n1343
+https://source.codeaurora.org/external/imx/linux-imx/tree/arch/arm/mach-mx5/mx53_wp.c?h=imx_2.6.35_caf#n120
 
 Signed-off-by: Fabio Estevam <festevam@gmail.com>
 ---
- arch/arm/boot/dts/imx51.dtsi | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/arm/boot/dts/imx53.dtsi | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm/boot/dts/imx51.dtsi b/arch/arm/boot/dts/imx51.dtsi
-index 0a4b9a5d9a9c..eec423785849 100644
---- a/arch/arm/boot/dts/imx51.dtsi
-+++ b/arch/arm/boot/dts/imx51.dtsi
-@@ -83,8 +83,8 @@
- 			clocks = <&clks IMX5_CLK_CPU_PODF>;
- 			clock-names = "cpu";
- 			operating-points = <
--				166000	1000000
--				600000	1050000
-+				166250	850000
-+				400000	1000000
- 				800000	1100000
- 			>;
+diff --git a/arch/arm/boot/dts/imx53.dtsi b/arch/arm/boot/dts/imx53.dtsi
+index ed341cfd9d09..eb2ec28a8d1d 100644
+--- a/arch/arm/boot/dts/imx53.dtsi
++++ b/arch/arm/boot/dts/imx53.dtsi
+@@ -58,10 +58,10 @@
  			voltage-tolerance = <5>;
+ 			operating-points = <
+ 				/* kHz */
+-				 166666  850000
+-				 400000  900000
+-				 800000 1050000
+-				1000000 1200000
++				 160000  950000
++				 400000  950000
++				 800000 1100000
++				1000000 1250000
+ 				1200000 1300000
+ 			>;
+ 		};
 -- 
 2.17.1
 
