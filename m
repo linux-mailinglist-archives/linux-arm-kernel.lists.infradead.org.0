@@ -2,117 +2,111 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A08FE74C8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 16:16:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82369E74D5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 16:18:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=7yIlvBumMlab46qfZkoLajmfL13evdwopMeB/9qu5Uc=; b=Bxx8TGoncQSqGAhkRivhGDSF0T
-	5urx2j2VmgivkUcaLPFqDCXD7+wk1ZdmHSFs0o+J6gcTCxvYNWlx076xUf/DMYiKjVdSU/YXMbiYf
-	j25WBQ0AflKH6wgKTcOo5JxxlSbOBIw0PuJIOkCN/NYl+cB4vWGhRm0MHErfvVhv53st/vGJSiAIx
-	tSEH9fyc4b7J2voj5Rn5LJV8nesS+pItqFJegZ0mbO2USegBfgfysDYLbhrI/ReaJJ+84Gtpeny+S
-	l/+/KqoZvbP+zVqJ2JRWBx8IePTYxzA8MPRp9NlZRnD/D03hgDrJiqh7XwmBRM3GCNeulyuhONgkQ
-	xfkNJ+ig==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hQVNVSKj8YhhHT6taXIrT7wnQSwZHdQBN2lOcQ/wvgc=; b=BURzDPuLxZ31JX
+	PBn2cmDteDpKXGCT9LnFepjeen+0Dm/10EtbZMQV7ZSOk31GqXj0trdNXdgsw+5aeL8fLtjIGJ0vH
+	1vLy+6oBUGFTNhfzl8DQv7MBatjjl7Es/MF3I0AXUdWg5TMU1cKtVN/KqKge2WlmBmblyoQKzR+/W
+	I/NsMxSDh8B1Mvpjzht0pg+9p/8ptajkjn6gmwrc1qFGJz1Wx8w7n7i7s7xuWXX/ADqsgdeBx+xx5
+	x7tPlopmCjQI8nzU6Ml/IyNl5QagJCERF8Iq5i7C3dhILSBuqkMnN5W+KvF6Bw5icOoU/zlns6W0w
+	95PrPGea6HWvBno6mvOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP6ku-0001LZ-Vn; Mon, 28 Oct 2019 15:16:28 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1iP6mk-0001ly-5o; Mon, 28 Oct 2019 15:18:22 +0000
+Received: from mail-oln040092071089.outbound.protection.outlook.com
+ ([40.92.71.89] helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP6kP-00017g-LD
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 15:15:58 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
- by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20191028151556euoutp01c3b992b4fd9ea2a9f9feef043357087b~R2HhSZi_r1432114321euoutp01X
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 28 Oct 2019 15:15:56 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20191028151556euoutp01c3b992b4fd9ea2a9f9feef043357087b~R2HhSZi_r1432114321euoutp01X
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1572275756;
- bh=mvXJGAa/sROCmXNX3W9XG8ie5vO3G5aWnbMGSADFAsc=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=lhkTuJQImt0auyxv4k+486oHexx2LGfk8DPrZ66hjeuq7jb7ndiPF7X2/5+H8+j4P
- KEQswfKAOcuezSLri/JQTiiuEdIxnV6TYv13ndPdGO98fA4PuVT9cySPEt8X1BOO2b
- YsaXFiy0NwnKrJw/2xmwAda8Dg3tQ0NofgmXxvcg=
-Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20191028151556eucas1p23dc9a5a8bb727bc6e9b7ac2052346f8c~R2HhF6Rf81438414384eucas1p2j;
- Mon, 28 Oct 2019 15:15:56 +0000 (GMT)
-Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
- eusmges3new.samsung.com (EUCPMTA) with SMTP id 0D.56.04374.B2607BD5; Mon, 28
- Oct 2019 15:15:55 +0000 (GMT)
-Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20191028151555eucas1p2178f1a2cfe9e09c5c03c39f0896ab289~R2Hgwqlm70572705727eucas1p2Q;
- Mon, 28 Oct 2019 15:15:55 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20191028151555eusmtrp296eab63e507e0ff2ada803bb615535c6~R2HgvbnPh2864428644eusmtrp2Y;
- Mon, 28 Oct 2019 15:15:55 +0000 (GMT)
-X-AuditID: cbfec7f5-4f7ff70000001116-7b-5db7062be17b
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id BD.27.04117.B2607BD5; Mon, 28
- Oct 2019 15:15:55 +0000 (GMT)
-Received: from AMDC3061.DIGITAL.local (unknown [106.120.51.75]) by
- eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20191028151555eusmtip12aaa466a4bb81671a191183da0e1d773~R2HgRPGLv2147221472eusmtip1z;
- Mon, 28 Oct 2019 15:15:55 +0000 (GMT)
-From: Sylwester Nawrocki <s.nawrocki@samsung.com>
-To: krzk@kernel.org
-Subject: [PATCH v6 2/2] ARM: EXYNOS: Enable exynos-asv driver for ARCH_EXYNOS
-Date: Mon, 28 Oct 2019 16:15:34 +0100
-Message-Id: <20191028151534.9920-2-s.nawrocki@samsung.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191028151534.9920-1-s.nawrocki@samsung.com>
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrFIsWRmVeSWpSXmKPExsWy7djPc7rabNtjDY6321hsnLGe1eL8+Q3s
- FpseX2O1+Nx7hNFixvl9TBZrj9xltzj8pp3VYvODY2wOHB6bVnWyeWxeUu/Rt2UVo8fnTXIB
- LFFcNimpOZllqUX6dglcGXMf/2Uv+MhSMffvT9YGxg6WLkZODgkBE4nHv2+wdjFycQgJrGCU
- WHTuBzuE84VR4lXjPUYI5zOjxP5Ld9hgWhbP2McGkVjOKLHyxxIWuJa3H5cyg1SxCRhK9B7t
- YwSxRQSEJe4tXQ42l1ngAaPEjZ0HmUASwgL+Ette3AAbyyKgKnHu6QegIg4OXgErieMnobbJ
- S6zecABsJqeAtcS05VPB5kgIvGeTeL+9jRmiyEXi6pt77BC2sMSr41ugbBmJ/zvnM0E0NDNK
- 9Oy+DdU9gVHi/vEFjBBV1hKHj19kBdnMLKApsX6XPkTYUWJe8wqwsIQAn8SNt4IgYWYgc9K2
- 6cwQYV6JjjYhiGoVid+rpjNB2FIS3U/+s0CUeEjcvJwJEhYS6GOUWPDabgKj/CyEVQsYGVcx
- iqeWFuempxYb56WW6xUn5haX5qXrJefnbmIEpojT/45/3cG470/SIUYBDkYlHt4Jl7fFCrEm
- lhVX5h5ilOBgVhLhvXgGKMSbklhZlVqUH19UmpNafIhRmoNFSZy3muFBtJBAemJJanZqakFq
- EUyWiYNTqoGxdeUWZZb1iwQee/F53jCZc+LgytsO6m4fd3IsnDNjnd6uqebNqjuTxY0LXa1m
- 9bnnntty+n6E8v26Q38D7MoF6xMyEqI32e5mt/+yzHCrzXJrJ7nFWitN9967+DHl2NUS6Zqz
- i5XWatfumvmU/8wbttlPTiT5ak9Lbfm+3Npisr6tfsh/nqjjSizFGYmGWsxFxYkAunl/Lg0D
- AAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrFLMWRmVeSWpSXmKPExsVy+t/xu7rabNtjDQ43qFpsnLGe1eL8+Q3s
- FpseX2O1+Nx7hNFixvl9TBZrj9xltzj8pp3VYvODY2wOHB6bVnWyeWxeUu/Rt2UVo8fnTXIB
- LFF6NkX5pSWpChn5xSW2StGGFkZ6hpYWekYmlnqGxuaxVkamSvp2NimpOZllqUX6dgl6GXMf
- /2Uv+MhSMffvT9YGxg6WLkZODgkBE4nFM/axdTFycQgJLGWU2HB8D1MXIwdQQkpifosSRI2w
- xJ9rXVA1nxglpk9sYAdJsAkYSvQe7WMEsUWAiu4tXc4OUsQs8IxR4vfab2AJYQFfiUfbN7CC
- 2CwCqhLnnn5gB1nAK2AlcfwkG8QCeYnVGw4wg9icAtYS05ZPBSsRAir5e5FlAiPfAkaGVYwi
- qaXFuem5xUZ6xYm5xaV56XrJ+bmbGIHhuu3Yzy07GLveBR9iFOBgVOLhfXF1W6wQa2JZcWXu
- IUYJDmYlEd6LZ4BCvCmJlVWpRfnxRaU5qcWHGE2BTprILCWanA+MpbySeENTQ3MLS0NzY3Nj
- Mwslcd4OgYMxQgLpiSWp2ampBalFMH1MHJxSDYyL8/x7Fk/d9jE9mGfeuo668qXWy7f9jll+
- gHP3u1aXeuULzryCG9f8lDjNGy93qzN13bL/V5NKZt5uOdHEw8JauS5phY/T8k3Nni3iUSdd
- HR+1HJy1c/VZQdF7V+88mXY8RfORellJ2FJulaatEsHPz1Y+SM1+M3u3t+uPPO/A7MfCtmVM
- NfJKLMUZiYZazEXFiQDQkFyCbQIAAA==
-X-CMS-MailID: 20191028151555eucas1p2178f1a2cfe9e09c5c03c39f0896ab289
-X-Msg-Generator: CA
-X-RootMTR: 20191028151555eucas1p2178f1a2cfe9e09c5c03c39f0896ab289
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20191028151555eucas1p2178f1a2cfe9e09c5c03c39f0896ab289
-References: <20191028151534.9920-1-s.nawrocki@samsung.com>
- <CGME20191028151555eucas1p2178f1a2cfe9e09c5c03c39f0896ab289@eucas1p2.samsung.com>
+ id 1iP6mZ-0001lR-Rv
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 15:18:13 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=nUauDsem3hIZHomg1MQHbCt+d96g7u89DYiyNMBF4hEDrSm4U2uboJNM0GJ2BzFtyNSL/YMbUfT+U1Ljx/yAzvW34qRFaqXGHwfgd9QviPJD6SbDi1VEV0bmGSxARgQqAuaPgkAbsKTqDH/mSQGpxdpfx2l1qUUOddofOpi9zX2kGBUjA0kVwAzGblJ1gMf5kZpXV4EjhBj4xAUL4EXFOEy33ZV/Fn1rocX6KuYMdspH6BZL8hfuJket2tNhebZm3qTDsbUSV0/eyTrQpqwjzoygX+GiDPpxEIZbGH+XB4Zq9ilXtpCth7yS88lqJyWE/KpfZCiByfAkarpGmk/jSg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=i4E1rdkWgf4DY8hM2IUaW2QANftY74qcxGWCC+ZimAc=;
+ b=n3bj+E3shOUJp6F46Zczts2bqubS1cv4/fEP6PIP1+bXEOIPh1pFP5/jbluB5XiJfPnQ2C6/mJWo007CzfAKq0HYCsEzBmF7CVuAAqfHJJKfRGh6NqbYDD+cfzk21URof0MoEK5xWnWibErqol9fU6P7vx8Xe9boNDriNgTplN05oVyynJ7g0HWrrNyVfOwhUxeM/wbPwNglmVxj2LDwJ9I/gdnvKYF6JWlyFaSrHzylrt55NodgJcJ1qKYsHS8JaB0KXWgTJIH4VtOpheNPD0HIAqF4cRoObjbEBx2GA//3C/zxFK5OQ+1spfAGeRWRS3JlTJSP90I8RHIYccQqyg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=hotmail.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=i4E1rdkWgf4DY8hM2IUaW2QANftY74qcxGWCC+ZimAc=;
+ b=GJxuXFL8v4FzEUa2gbnRqr59/1V90/0bK6INVMULc5HZwr7qQHMMOVHRpGkBaPLLrMFkQ8FeGLEIDiVCk9c48YZinWVmINpFYRG/OsixYAb6MZMM1R6UhBAhhLdColWuCuMXp07tUDlk44ThGSCmHzvWKouemZWTTWASc2lzLdW4NNMxDcHVo7rUHRaSstm7dUyVsLbg6hh8v0/XIcU/x3aEuBrbw4P4jICm8Cn9R3oKsjfEQM8lPWcBjPIiVEB8J8DX3j/ZVGk0p62ds+jI/unQ6Em+uGZYROFkssEGC834p3G4sES1gwLf6CZ0x2SLhQ/2S/RhkSQBmE+GN0QXhA==
+Received: from VE1EUR03FT020.eop-EUR03.prod.protection.outlook.com
+ (10.152.18.58) by VE1EUR03HT207.eop-EUR03.prod.protection.outlook.com
+ (10.152.19.243) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2387.20; Mon, 28 Oct
+ 2019 15:18:06 +0000
+Received: from DB7PR08MB3801.eurprd08.prod.outlook.com (10.152.18.54) by
+ VE1EUR03FT020.mail.protection.outlook.com (10.152.18.242) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2387.20 via Frontend Transport; Mon, 28 Oct 2019 15:18:05 +0000
+Received: from DB7PR08MB3801.eurprd08.prod.outlook.com
+ ([fe80::21c9:539b:1ad1:8ec4]) by DB7PR08MB3801.eurprd08.prod.outlook.com
+ ([fe80::21c9:539b:1ad1:8ec4%7]) with mapi id 15.20.2387.023; Mon, 28 Oct 2019
+ 15:18:05 +0000
+From: David Binderman <dcb314@hotmail.com>
+To: "mmayer@broadcom.com" <mmayer@broadcom.com>,
+ "bcm-kernel-feedback-list@broadcom.com"
+ <bcm-kernel-feedback-list@broadcom.com>, "rjw@rjwysocki.net"
+ <rjw@rjwysocki.net>, "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
+ "f.fainelli@gmail.com" <f.fainelli@gmail.com>, "linux-pm@vger.kernel.org"
+ <linux-pm@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, Linux Kernel Mailing List
+ <linux-kernel@vger.kernel.org>
+Subject: drivers/cpufreq/brcmstb-avs-cpufreq.c:449: bad test ?
+Thread-Topic: drivers/cpufreq/brcmstb-avs-cpufreq.c:449: bad test ?
+Thread-Index: AQHVjaKCM2IvLuSwrkm5g96lBPfVAg==
+Date: Mon, 28 Oct 2019 15:18:05 +0000
+Message-ID: <DB7PR08MB38017C35D2B5E025804338129C660@DB7PR08MB3801.eurprd08.prod.outlook.com>
+Accept-Language: en-GB, en-US
+Content-Language: en-GB
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-incomingtopheadermarker: OriginalChecksum:062831ADD149A5A09967D864BB52FA9DB2CB814538CE2969D96DFC5105086502;
+ UpperCasedChecksum:D01AAD41304BA72BCA3F225A116E3A2232313215A92017B567FE61A4B22EA71F;
+ SizeAsReceived:7262; Count:42
+x-ms-exchange-messagesentrepresentingtype: 1
+x-tmn: [AaKbNNN9EpF0OWuXyVZFuSO8dC8DPWSRG4IkcequAKDdPss/qwkefF57gafiv7LN]
+x-ms-publictraffictype: Email
+x-incomingheadercount: 42
+x-eopattributedmessage: 0
+x-ms-traffictypediagnostic: VE1EUR03HT207:
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: mJ2NkG0cjbL394+OQ7bVwIN1EkrE6XrjbnEFDXknhuJGvU7uDzDMso3Lszu9qa+ajslO15MbtILmvZE6YYQeFv2tP6NS4udn7h5zPpSxrRGcZpRbz07Wqazg+6MRR7tKynWjLUv9503UBJ+ZpGcMyK/9V95tjIBaRxz7qg7AbObAmZMT7xcWWwIMH9y3qxsQ
+x-ms-exchange-transport-forked: True
+MIME-Version: 1.0
+X-OriginatorOrg: hotmail.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: 41d300fb-9be0-42fd-a9e3-08d75bba0868
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Oct 2019 15:18:05.8256 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Internet
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1EUR03HT207
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_081557_823230_AD002F0F 
-X-CRM114-Status: UNSURE (   9.95  )
+X-CRM114-CacheID: sfid-20191028_081812_082425_16B1ED7E 
+X-CRM114-Status: UNSURE (   5.33  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-Spam-Score: 1.2 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (1.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.11 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.92.71.89 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (dcb314[at]hotmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (dcb314[at]hotmail.com)
+ 1.2 FORGED_HOTMAIL_RCVD2   hotmail.com 'From' address, but no
+ 'Received:'
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -122,7 +116,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -134,41 +127,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, b.zolnierkie@samsung.com,
- vireshk@kernel.org, linux-pm@vger.kernel.org,
- Sylwester Nawrocki <s.nawrocki@samsung.com>,
- linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="windows-1252"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable exynos-asv driver for Exynos 32-bit SoCs.
+Hello there,
 
-Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
----
-Changes since v1 (RFC):
- - none
+drivers/cpufreq/brcmstb-avs-cpufreq.c:449:61: warning: logical =91or=92 of =
+collectively exhaustive tests is always true [-Wlogical-op]
 
- arch/arm/mach-exynos/Kconfig | 1 +
- 1 file changed, 1 insertion(+)
+Source code is
 
-diff --git a/arch/arm/mach-exynos/Kconfig b/arch/arm/mach-exynos/Kconfig
-index 9dab1f50a02f..4ef56571145b 100644
---- a/arch/arm/mach-exynos/Kconfig
-+++ b/arch/arm/mach-exynos/Kconfig
-@@ -13,6 +13,7 @@ menuconfig ARCH_EXYNOS
- 	select ARM_AMBA
- 	select ARM_GIC
- 	select COMMON_CLK_SAMSUNG
-+	select EXYNOS_ASV
- 	select EXYNOS_CHIPID
- 	select EXYNOS_THERMAL
- 	select EXYNOS_PMU
---
-2.17.1
+    return (magic =3D=3D AVS_FIRMWARE_MAGIC) && ((rc !=3D -ENOTSUPP) ||
+        (rc !=3D -EINVAL));
 
+Maybe better code:
+
+    return (magic =3D=3D AVS_FIRMWARE_MAGIC) && (rc !=3D -ENOTSUPP) &&
+        (rc !=3D -EINVAL);
+
+Regards
+
+David Binderman
+
+
+Mayb
 
 _______________________________________________
 linux-arm-kernel mailing list
