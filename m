@@ -2,89 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF0EFE7907
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 20:12:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 79FDDE7917
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 20:14:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=l/SIuxv3DnXzNidJ+2nucN3vlSbuXXC2T+/fxn+3cwo=; b=b22
-	2WNUrtM+cPiHMnUFTqMb2wQtAXI438oj23tDf8tJCK74FLhW5buWI/f90OMbJrUFljV/N+C945pQR
-	EPidaaJEX++V3Do/kdi6dGvmiLt00fnw/XI6vMifMMK4+14LMihoHZdLdcnHP8NoK8FsfZTZBEZr0
-	dKTdmUUsMCaH38lUG41nebcVZcIkAhSeWqUBj02cIbdkRzU8y18jCRNNBnEmHsj9wvr/RFafr65YZ
-	eflCis8tXh8XnGff3pxuNzWeB58597xbHkApXSmTD7S3XNa/leUk5/BF5G6kRQ9VMG5QHOCdQJ3oB
-	uJW8gxzqxGz95+ikI7dwP3EQll3DnQg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BAIfFdqjXfWKnYLHp7JmbKrWG9TpE+XEWliB4Y+nALI=; b=sgNQdVdc29MNyI
+	KB76cUIW72rqJ13yCnaibpmfCoPo78nrhVc+bsicnvIaWoOAztu+VCyWt/o8RYqvEwqQ8DD0k/KiI
+	3Jp5Du2OHp0dJAtboih769GaqlcNhN+HufYyec0xLMLVPXbg6Bt8Nrv58P7sJYlAuPwZFQa7SXteW
+	TQmoDwJcCdQ1gNCmaCPEL9uw4dNHC+4FxiXLD4+mef1B54xA+rc59+zzHS+wrU7lg5m2NlNUsMdo6
+	4gv8vgMntrzqq87X+l/pND3q4OAlKkhKt/0d5Y7SsO5j2jBZfxpQ9f2b9bluX8ZfZ4bUXeIo9pPBQ
+	Kid/oOZia2l1TmDKTg4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPARd-0003p5-SB; Mon, 28 Oct 2019 19:12:49 +0000
-Received: from mail-il1-x12b.google.com ([2607:f8b0:4864:20::12b])
+	id 1iPATN-0004GK-9O; Mon, 28 Oct 2019 19:14:37 +0000
+Received: from smtp09.smtpout.orange.fr ([80.12.242.131]
+ helo=smtp.smtpout.orange.fr)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPARR-0003oK-NM
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 19:12:38 +0000
-Received: by mail-il1-x12b.google.com with SMTP id t5so9156915ilh.10
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 28 Oct 2019 12:12:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:from:date:message-id:subject:to;
- bh=v4sgx6tchij8udDll/f9f9oHOKU/r/ECQQ/X3jh4Gb4=;
- b=JulU5Znpy+o0szi7aWndZp50W4ha9IcjoKHmC6Pex0hJ19Tf7BBpz1hiyTYeBAYzpx
- 90xsZEzOu3UangkCcPwcy0MZkcs0ko+ULIXUEOSw4HZKv01KCrG2t2qpnXjBv4ZCy6er
- b5AIAqEvAPTJwb1+Kfjp2/4HZRbPUfWEgjSGkXKhOZZX0o1d+G9RVGT53aSxjch+ZxeY
- rpupSfUP35MDZYhVHPa32v8GXZOyq2UvPjuL6zHEqe+NKUzlWOatKDNGdmRktspOTE35
- lmjjgitPRGPgtfDL2lc4ntCy9aqW6T11UPQK6SOmg9XPf12S28y1GMbbdPTW77Z5AQkb
- iX9Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
- bh=v4sgx6tchij8udDll/f9f9oHOKU/r/ECQQ/X3jh4Gb4=;
- b=gb3EE/kPfr8MEdJmLWoTk6EAfNc6Zhb3JPYKUg/ckGdxesyXlxRHQfLPjlDWQ2T9D+
- tcS7FC3JABHVLRXE+1w59MdxT5Y844R24yUpsLDfcbVMp6Pp8IJ+exyvp3S4kpeVsYWT
- YAraZqN2rJK2Dv51EQnGTnwWw9bER9Ejit44qN7MfI6O5RR9S4tlemKMjSN1V1RsdeEB
- 22BGDAv5Hg3Cdhu2PhEsIPpQeY7m8D/GRZYDCIUMFU5vLkCqSO1vwc4dvjHntO+anChm
- BL7DOLcQa+9Pc9A3e1CoPP2AjRT2sGxd3DyjtKnT+e/0qlnipGAW4T9WS5nym1nnmLKm
- 560Q==
-X-Gm-Message-State: APjAAAU2TTR/jqC00xym0C4LDVFfKXABCvCG1DrGwSL0s2y8pBJ1Gus8
- QPIa2BQUkkTZ8AMqLk5tTYjDdpIJAwGIqqqfRTI=
-X-Google-Smtp-Source: APXvYqzucp6wZcJ3FHkZhEaKy/z937yKsX7gd/OWChJ2SLqyjV0cc9vVVCVy3t4zI4ol7ZZ76p60cLKq3gv5rhVHeH0=
-X-Received: by 2002:a92:5c4f:: with SMTP id q76mr21239271ilb.158.1572289956128; 
- Mon, 28 Oct 2019 12:12:36 -0700 (PDT)
+ id 1iPATC-0004Eq-RO
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 19:14:28 +0000
+Received: from belgarion ([90.55.204.252]) by mwinf5d17 with ME
+ id K7EJ2100B5TFNlm037EJ4o; Mon, 28 Oct 2019 20:14:24 +0100
+X-ME-Helo: belgarion
+X-ME-Auth: amFyem1pay5yb2JlcnRAb3JhbmdlLmZy
+X-ME-Date: Mon, 28 Oct 2019 20:14:24 +0100
+X-ME-IP: 90.55.204.252
+From: Robert Jarzmik <robert.jarzmik@free.fr>
+To: Arnd Bergmann <arnd@arndb.de>, Russell King <linux@arm.linux.org.uk>
+Subject: Re: [PATCH 05/46] ARM: pxa: split up mach/hardware.h
+References: <20191018154052.1276506-1-arnd@arndb.de>
+ <20191018154201.1276638-5-arnd@arndb.de>
+X-URL: http://belgarath.falguerolles.org/
+Date: Mon, 28 Oct 2019 20:14:18 +0100
+In-Reply-To: <20191018154201.1276638-5-arnd@arndb.de> (Arnd Bergmann's message
+ of "Fri, 18 Oct 2019 17:41:20 +0200")
+Message-ID: <87d0egof79.fsf@belgarion.home>
+User-Agent: Gnus/5.130008 (Ma Gnus v0.8) Emacs/26 (gnu/linux)
 MIME-Version: 1.0
-From: Adam Ford <aford173@gmail.com>
-Date: Mon, 28 Oct 2019 14:12:25 -0500
-Message-ID: <CAHCN7xKr-8DDt26RmQpVcfa4fj=vuGY1H-_DD4UWpsaPq6wH7A@mail.gmail.com>
-Subject: i.MX6Q LVDS colors wrong when HDMI connected when V4L2 Streaming with
- KMSSINK
-To: linux-media <linux-media@vger.kernel.org>, 
- arm-soc <linux-arm-kernel@lists.infradead.org>,
- Fabio Estevam <festevam@gmail.com>, 
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_121237_760048_4D0D4920 
-X-CRM114-Status: UNSURE (   9.05  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191028_121427_165598_6AE7C65D 
+X-CRM114-Status: GOOD (  23.30  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:12b listed in]
- [list.dnswl.org]
+ no trust [80.12.242.131 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [80.12.242.131 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (aford173[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (aford173[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ provider (robert.jarzmik[at]free.fr)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,38 +69,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Ulf Hansson <ulf.hansson@linaro.org>, linux-usb@vger.kernel.org,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Dominik Brodowski <linux@dominikbrodowski.net>, linux-mtd@lists.infradead.org,
+ Pavel Machek <pavel@ucw.cz>, linux-clk@vger.kernel.org,
+ linux-leds@vger.kernel.org, linux-rtc@vger.kernel.org,
+ linux-input@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ Guenter Roeck <linux@roeck-us.net>, linux-watchdog@vger.kernel.org,
+ alsa-devel@alsa-project.org, linux-pm@vger.kernel.org,
+ Haojian Zhuang <haojian.zhuang@gmail.com>, Mark Brown <broonie@kernel.org>,
+ Jacek Anaszewski <jacek.anaszewski@gmail.com>, linux-fbdev@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Stephen Boyd <sboyd@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ dri-devel@lists.freedesktop.org, Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Daniel Mack <daniel@zonque.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-I have an i.MX6Q with an OV5640 camera connected via CSI-2.
+Arnd Bergmann <arnd@arndb.de> writes:
 
-I can stream live video to LVDS just fine when HDMI is NOT connected
-with G-Streamer and kmssink.  However, when HDMI is connected, I can
-stream just fine to the HDMI, but when I try to stream to the LVDS
-using KMSSINK, the colors are wrong.
+> The mach/hardware.h is included in lots of places, and it provides
+> three different things on pxa:
+>
+> - the cpu_is_pxa* macros
+> - an indirect inclusion of mach/addr-map.h
+> - the __REG() and io_pv2() helper macros
+>
+> Split it up into separate <linux/soc/pxa/cpu.h> and mach/pxa-regs.h
+> headers, then change all the files that use mach/hardware.h to
+> include the exact set of those three headers that they actually
+> need, allowing for further more targeted cleanup.
+>
+> linux/soc/pxa/cpu.h can remain permanently exported and is now in
+> a global location along with similar headers. pxa-regs.h and
+> addr-map.h are only used in a very small number of drivers now
+> and can be moved to arch/arm/mach-pxa/ directly when those drivers
+> are to pass the necessary data as resources.
 
-If I use fbdev instead of kmssink, the colors are correct, but I would
-prefer to use KMSSINK.
+For the pxa part, that looks fine to me.
+I'd like to focus a bit of Russell's attention to the sa11xx part (reminder in
+[1]), and more specifically :
 
-I have tried using v4l2convert to change the format, but I keep
-getting errors that the format I try is not supported.
+ - the change to drivers/pcmcia/soc_common.c
+ - the change to drivers/pcmcia/sa1111_generic.c
 
-Might someone have any suggestions on how to stream to both HDMI and
-LVDS without having the wrong color on the LVDS?
+I must admit my knowledge of PCMCIA is relatively poor, and even if the patch
+looks harmless, one never knows if Assebet will ever by same after ...
 
+Cheers.
 
-# display on hdmi
-gst-launch-1.0 -v v4l2src ! kmssink name=imx-drm connector-id=54 sync=0
+--
+Robert
 
-# display on LVDS
-gst-launch-1.0 -v v4l2src ! kmssink name=imx-drm connector-id=56 sync=0
+[1] Extract of the patch for Russell's scrutiny
+> diff --git a/drivers/pcmcia/sa1111_generic.c b/drivers/pcmcia/sa1111_generic.c
+> index 11783410223b..2f556fa37c43 100644
+> --- a/drivers/pcmcia/sa1111_generic.c
+> +++ b/drivers/pcmcia/sa1111_generic.c
+> @@ -17,7 +17,6 @@
+>  
+>  #include <pcmcia/ss.h>
+>  
+> -#include <mach/hardware.h>
+>  #include <asm/hardware/sa1111.h>
+>  #include <asm/mach-types.h>
+>  #include <asm/irq.h>
+... zip ...
 
-
-thanks,
-
-adam
+> diff --git a/drivers/pcmcia/soc_common.c b/drivers/pcmcia/soc_common.c
+> index 3a8c84bb174d..9276a628473d 100644
+> --- a/drivers/pcmcia/soc_common.c
+> +++ b/drivers/pcmcia/soc_common.c
+> @@ -47,8 +47,6 @@
+>  #include <linux/spinlock.h>
+>  #include <linux/timer.h>
+>  
+> -#include <mach/hardware.h>
+> -
+>  #include "soc_common.h"
+>  
+>  static irqreturn_t soc_common_pcmcia_interrupt(int irq, void *dev);
 
 _______________________________________________
 linux-arm-kernel mailing list
