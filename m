@@ -2,59 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2424DE6E90
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 09:55:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D01D9E6EB9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 10:09:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fhSAFBC51K5tDeOt/2/oKHlNlEIrdmNVyCYFV5F5IjI=; b=qcBGGoKjBwuad4
-	N41fQ04WHm4ikKK0izqns5zrIm4PksFkIRbr7gWo2VxcQpVRjoMxJnxHw4toorPi2P9XEhmBWoUHw
-	Lix/c5RAesGcrafZPANe+zF73QORS2OsrH7i5vxI77uH7bWVOcNPvrRyToM7D+mxg0ISiN1UwNWQl
-	dUJVUWqSLyHKJNQKiibGJIFqPxcb4eU3XiqDNsWf9tgq3X1QrPjLAF6X/KHx56LhnwTWs0v2p4aQx
-	DHnmo+auq1YjG/7eWW+59ySLBwDUNoF9D9hFAHlL1hKYPqQliQo2eP7MwE7B2z+JQ+WMWWknFajOf
-	uga724ot8nXO40rG5OuQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=GlcPk/J+xWsIOhLVRqsTiQbIS0yWgbZ1UkjdnlPToOg=; b=I0Ti+razCEmfSc
+	fxIUJtleKeiBccYyhZANAa5JKI4IjP13mgjBWjAMBfT0QdDIIWiymKr7m15tkMQsn5PxOVayY1m0D
+	5x4IM9VCPac3mu2UBpqibspqZO4ZzwrAdVBpp40/a1J4BjVgVMfe/ns4VHMzFRbfjonWPMTrSKOLp
+	qDE/ap/UF9jly+Ro4PPD98tmcim9dBNLvzt5lDG3heGA9Cm/q/AB+Cwi/U3vO4ZSOHVCHeKFKyLYS
+	4fElKLxFMOczMynFk7p0+l12iFUNi4I4OLPy0oHN33DNuNY0x+3FIhTk8cnyxxywtdRHfKnv5m9sb
+	JTPvK5aw3rCYzmf1NsbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP0nh-0003Kh-Oj; Mon, 28 Oct 2019 08:54:57 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP0nV-0003Js-Vl
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 08:54:47 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6CBAA1FB;
- Mon, 28 Oct 2019 01:54:45 -0700 (PDT)
-Received: from [192.168.1.103] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5AB153F71E;
- Mon, 28 Oct 2019 01:54:44 -0700 (PDT)
-Subject: Re: arm version of generic VDSO?
-To: Arnd Bergmann <arnd@arndb.de>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>
-References: <CAK8P3a2RDBTnKZ-yOJkqY5+2LBeeqvGJ3AMnf+cnqbDVPeUf6g@mail.gmail.com>
- <df19494e-589b-fbf5-bf19-8e8752b5e5be@arm.com>
- <20191025191735.GE25745@shell.armlinux.org.uk>
- <20191025192843.GF25745@shell.armlinux.org.uk>
- <CAK8P3a3o517utXmG0zVxtOFDRLrP6vTnmpXsoUdr2nXSh4dEQw@mail.gmail.com>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <08d12d3a-421a-d972-5e24-8a8231600f3c@arm.com>
-Date: Mon, 28 Oct 2019 08:56:50 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1iP11t-0000Zm-Nt; Mon, 28 Oct 2019 09:09:37 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iP11d-0000Oi-MR
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 09:09:23 +0000
+Received: from DGGEMS408-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 6B82BAABADCF620220BB;
+ Mon, 28 Oct 2019 17:09:14 +0800 (CST)
+Received: from HGHY4Z004218071.china.huawei.com (10.133.224.57) by
+ DGGEMS408-HUB.china.huawei.com (10.3.19.208) with Microsoft SMTP Server id
+ 14.3.439.0; Mon, 28 Oct 2019 17:09:05 +0800
+From: Xiang Zheng <zhengxiang9@huawei.com>
+To: <catalin.marinas@arm.com>, <will@kernel.org>
+Subject: [PATCH] arm64: print additional fault message when executing non-exec
+ memory
+Date: Mon, 28 Oct 2019 17:08:37 +0800
+Message-ID: <20191028090837.39652-1-zhengxiang9@huawei.com>
+X-Mailer: git-send-email 2.15.1.windows.2
 MIME-Version: 1.0
-In-Reply-To: <CAK8P3a3o517utXmG0zVxtOFDRLrP6vTnmpXsoUdr2nXSh4dEQw@mail.gmail.com>
-Content-Language: en-US
+X-Originating-IP: [10.133.224.57]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_015446_068216_AD06F73F 
-X-CRM114-Status: GOOD (  12.93  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191028_020921_898512_9884A729 
+X-CRM114-Status: UNSURE (   8.46  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,39 +63,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: y2038 Mailman List <y2038@lists.linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: wanghaibin.wang@huawei.com, james.morse@arm.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Arnd,
+When attempting to executing non-executable memory, the fault message
+shows:
 
-On 10/25/19 8:33 PM, Arnd Bergmann wrote:
-> On Fri, Oct 25, 2019 at 9:28 PM Russell King - ARM Linux admin
-> <linux@armlinux.org.uk> wrote:
->>
->> On Fri, Oct 25, 2019 at 08:17:36PM +0100, Russell King - ARM Linux admin wrote:
->>> On Thu, Oct 24, 2019 at 01:47:24PM +0100, Vincenzo Frascino wrote:
->>
->> Okay, having discussed with Arnd what the current situation is, he
->> points out that he needs an additional patch to solve some further
->> build issues with the generic VDSO patches - caused by the Kconfig
->> changes in your first patch.
->>
->> I'd rather that gets fixed up before I apply the patches, rather
->> than applying a set of patches and a fix on top.
->>
->> Please re-spin with Arnd's Kconfig changes included.
-> 
-> For reference, this is the change I needed to get randconfig builds working
-> in configurations that did not enable CONFIG_VDSO:
-Thanks for this.
+  Unable to handle kernel read from unreadable memory at virtual address
+  ffff802dac469000
 
+This may confuse someone, so add a new fault message for instruction
+abort.
+
+Signed-off-by: Xiang Zheng <zhengxiang9@huawei.com>
+---
+ arch/arm64/mm/fault.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
+index 9fc6db0bcbad..68bf4ec376d0 100644
+--- a/arch/arm64/mm/fault.c
++++ b/arch/arm64/mm/fault.c
+@@ -318,6 +318,8 @@ static void __do_kernel_fault(unsigned long addr, unsigned int esr,
+ 	if (is_el1_permission_fault(addr, esr, regs)) {
+ 		if (esr & ESR_ELx_WNR)
+ 			msg = "write to read-only memory";
++		else if (is_el1_instruction_abort(esr))
++			msg = "execute non-executable memory";
+ 		else
+ 			msg = "read from unreadable memory";
+ 	} else if (addr < PAGE_SIZE) {
 -- 
-Regards,
-Vincenzo
+2.19.1
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
