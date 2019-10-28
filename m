@@ -2,82 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76F62E777E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 18:19:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CEC14E777D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 18:19:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=5kYFA5SmO5IajTMpSueWst3FPBAy2hvD+UNFGP1C6Yg=; b=cZ1PEN1hiH0KIGv9q5C5E05nNy
-	wUOabB0YAO+mC1COf5siMResqYjae6p+Q1z/8jrio808FmCChutPKOKXYsfdRPb9s83Te1i07MTaC
-	aRXJWrPzyV+XA/w6dURAgSTF1+wbrNgSKbB1yj03VCQhLxawHomXDRg5VFS4fMv7ssShKKYZ8FtH/
-	yX9Nma2YInGMaxTjfR9U39vFZg4/NetAl+bTCx4h8p6kCcdKF9pznfeRay1l5wIYHq3LUCi6Wm0pA
-	b93ybV8TYufr4Fh68YruD3Xf8yjP7gG1VbZ+yEa+653oEe/WDa9uGOqS7gEoPn9HnOICz/49GIs1L
-	UKutUIRA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=pxcY7sBZ597bG6IzyqUY4MZ76hcZB4KvMwF7baQFSdU=; b=VRCMxH2N6f6qUt
+	XUr6yeFG+pwd0wp1foAwnb9sQpBWcK+h/KZqjOB5R1m6fpOcR4AD//l4pyUN8bwTOTpTKjlL2p4kt
+	HbWJjU+wsX6p7lxEswsXN6beTo+XHYY5aQ7t00ODRDSQVhSOAmQ7KHOu/ViOZag5/WK5ZM/DEHoim
+	QUKp/p250AHIsdQI4H5YYSQIDOp6npYw4gY8/ynv+g6msRBzsfwtQHsgWHlOCkPGnofvgPtkU95Cj
+	Ddu11lr5D/uRqZJyzECPVogYCCu699lFiadh9rxwQBlkA3PRrF1Vk3ZhOCTRw68Nb8TEp8xvYhMab
+	tc9JoDgUuRyjf2XUPKFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP8fo-0000vd-9b; Mon, 28 Oct 2019 17:19:20 +0000
-Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
+	id 1iP8fN-0000fD-FL; Mon, 28 Oct 2019 17:18:53 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP8fM-0000l9-MQ
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 17:18:55 +0000
-Received: by mail-il1-x143.google.com with SMTP id d83so8854601ilk.7
+ id 1iP8fD-0000ep-KL
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 17:18:44 +0000
+Received: by mail-pl1-x641.google.com with SMTP id y8so5931058plk.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 28 Oct 2019 10:18:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=iuTrpxKUHZ/UCdTRpuBAw/Jl1hvuK8hDPzJ43oHoufo=;
- b=ZeldSHPeFLJ+46uOkfBauBzB4QUPRBL6FT/1IHG3H5HgV/S9oZEeCr/eYmlUMX7RQq
- IFbtyzQhlAjxV3MeEOPtjCY8Mgkf7ZOjnufKao/zkc8ODIrNdmsBxMrvOsEYgxp8plBY
- Zp0UGhtXV58wk7kTz2557fjBR2/HNO+4dc9QPt39aIk70v8soaE+VJulKOGSGN5DPj5r
- yGXE/TiVoohKDdetpgR3vFS8PLMbiOrvdEIKTalwP+ZB5NtQPEv+qqHl0Ae8gfMoYpWR
- pHfnd+NmAMEOqTOFdBKEqVr5NztbiyfO2NZAiotAE7M9JiDm1PeEbPhivg9/gcDxn0h2
- vkDg==
+ Mon, 28 Oct 2019 10:18:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=al2Rd12hk7dN6JAAxnkLahBDEIvO7RPzw6SmvVKtces=;
+ b=ZF1SiL3aNo3Cu8ZjC4BP9Vgp5LnT1B/FdytiksaFFaCT+gihNoA9Do1mrAeruGtnmc
+ 8VcewWSgwGy+h7iWnxmDEKaUUV9FpeCUqCH7lY6nAub9KnkENay2rejNUzqnwQ/SfQu7
+ Fk/hz1MNU/hYfp0AKMK0JwAEGMCJYRGcLZAhpvCyCaEtuYua70afvvEbhZ4QfD/Y+C+2
+ nmWMN1+gklEb4DZUR6ltojx/q9TgJ+81EJXYq7G9/NIyMXnmmZi/O7jinBzvAbp+bY1z
+ uXyNNJjPAk10ejv0i4YecJYClu+/lW2ilg0xxFD21dt/owr0FhYwVKZod3UvqRUrPsCY
+ b2Zg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=iuTrpxKUHZ/UCdTRpuBAw/Jl1hvuK8hDPzJ43oHoufo=;
- b=Yd4O3h7zZbCit4CFJih49SLQK89fhL4rL4qjzDgU3pj4mduvb2Owp3RKI5ab0X97p/
- pj+3hZCRcE26M0FMCMxXegiUC0TXl1lRzslp8IqowbS3AuS4N92mxz5ovLoignOXRWCZ
- EzcNhLV56X1sT+HzQYlB8e32kMBRBWxEmGFab7mkqxrvFHz4TYuCCQsuXVP36rc9v9Am
- riAMMeLlJBkecNxL8AxsD0sWMJQXail0NWMLg80EP1zMRBJMHv8mOg/JfEXHrzfvubrG
- Evjjg3GRQq71/HdIbxMJCKSxzhphQ8MADCLRBsFGwxP6qwjolgTfLAlQUX/7gy0HHp4+
- ajAg==
-X-Gm-Message-State: APjAAAWc8M9KBwnLXxL7Qff8mxJjsRQ7F8gRYI0EZdjrZn4RVYaqJTFh
- fbxBfqRxWaL8geFPT1gAYnU=
-X-Google-Smtp-Source: APXvYqzQieKGGUdlk8auRT6Jo9SvrelCUC+fWWRQTTE6KT3RIsMBxP0GS64VURM0hUE8IXpPF2ghQg==
-X-Received: by 2002:a92:ce4a:: with SMTP id a10mr22136925ilr.48.1572283131374; 
- Mon, 28 Oct 2019 10:18:51 -0700 (PDT)
-Received: from cs-dulles.cs.umn.edu (cs-dulles.cs.umn.edu. [128.101.35.54])
- by smtp.googlemail.com with ESMTPSA id f8sm1637563ilg.58.2019.10.28.10.18.50
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=al2Rd12hk7dN6JAAxnkLahBDEIvO7RPzw6SmvVKtces=;
+ b=B5/bXyybumC2wQ7EWlUq5XS9xWqH86gBf6RLktgMkRKo5KLJY8eaCgcTPwGmcC+ktY
+ z9WyvxFrbKDElWivxkpn9kpoQydWtBL+XojMteQ3ixuBzomXqFVUYxbfjSCo3pVLFdTJ
+ f3chxlhct+r32P9OFuQ9wNzTevfC4Ixr3edC3/6Uz41nVIj5kKp1xpq0XKlsHEMshsdu
+ BOmOP9NHsmBdhdUfBBjrnQq9DYaCKTBRcJSqB8qtJ2lgno0LCBQoMuwhiTzPN6kTfGzn
+ 5ycYUdrslKpBER4cbAQV0SKB9xanno5PhM2nr21iMVN/LNcMflLxdpDDTrgJ+x6RU/JP
+ J70g==
+X-Gm-Message-State: APjAAAVqY2FVO2jTY5Cxm+QGHkfjo5Tc+UXnDqMl2wpgmvCC6I5+BaW9
+ Oz9/AuAfB7BUNiQBdqh7FN9j0A==
+X-Google-Smtp-Source: APXvYqzwJGHJ2FuWF88+zopx/Wg6G18xL03gdif7+dab8rhMsCCn+8Dnx5FsAj4J7qWFXtbEqf3+1A==
+X-Received: by 2002:a17:902:244:: with SMTP id
+ 62mr20590507plc.14.1572283121593; 
+ Mon, 28 Oct 2019 10:18:41 -0700 (PDT)
+Received: from localhost.localdomain
+ (104-188-17-28.lightspeed.sndgca.sbcglobal.net. [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id i7sm113353pjs.1.2019.10.28.10.18.40
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 28 Oct 2019 10:18:50 -0700 (PDT)
-From: Navid Emamdoost <navid.emamdoost@gmail.com>
-To: jae.hyun.yoo@linux.intel.com
-Subject: [PATCH v3] media: aspeed-video: Fix memory leaks in aspeed_video_probe
-Date: Mon, 28 Oct 2019 12:18:37 -0500
-Message-Id: <20191028171838.28533-1-navid.emamdoost@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <da959329-aa40-b6e7-dcc9-48183a8da716@linux.intel.com>
-References: <da959329-aa40-b6e7-dcc9-48183a8da716@linux.intel.com>
+ Mon, 28 Oct 2019 10:18:40 -0700 (PDT)
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Olof Johansson <olof@lixom.net>, Maxime Ripard <mripard@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
+ Anson Huang <Anson.Huang@nxp.com>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ Dinh Nguyen <dinguyen@kernel.org>,
+ Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>
+Subject: [PATCH] arm64: defconfig: Enable ATH10K_SNOC
+Date: Mon, 28 Oct 2019 10:18:37 -0700
+Message-Id: <20191028171837.3907550-1-bjorn.andersson@linaro.org>
+X-Mailer: git-send-email 2.23.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_101853_236792_FF16B235 
-X-CRM114-Status: GOOD (  13.02  )
+X-CRM114-CacheID: sfid-20191028_101843_732281_65CBF346 
+X-CRM114-Status: GOOD (  10.42  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (navid.emamdoost[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -97,49 +104,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-aspeed@lists.ozlabs.org, Andrew Jeffery <andrew@aj.id.au>,
- kjlu@umn.edu, openbmc@lists.ozlabs.org, Eddie James <eajames@linux.ibm.com>,
- linux-media@vger.kernel.org, linux-kernel@vger.kernel.org, emamd001@umn.edu,
- Joel Stanley <joel@jms.id.au>, smccaman@umn.edu,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org,
- Navid Emamdoost <navid.emamdoost@gmail.com>
-MIME-Version: 1.0
+Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In the implementation of aspeed_video_probe() the allocated memory for
-video should be released if either devm_ioremap_resource()
-or aspeed_video_init() or aspeed_video_setup_video() fails. Replace
-kzalloc() with devm_kzalloc to avoid explicit release for video.
+The ath10k snoc is found on the Qualcomm QCS404 and SDM845, so enable
+the driver for this.
 
-Fixes: d2b4387f3bdf ("media: platform: Add Aspeed Video Engine driver")
-Signed-off-by: Navid Emamdoost <navid.emamdoost@gmail.com>
+Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 ---
-Changes in v3:
-	-- fix call to devm_kzalloc()
----
- drivers/media/platform/aspeed-video.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ arch/arm64/configs/defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/media/platform/aspeed-video.c b/drivers/media/platform/aspeed-video.c
-index eb12f3793062..70797b41447c 100644
---- a/drivers/media/platform/aspeed-video.c
-+++ b/drivers/media/platform/aspeed-video.c
-@@ -1646,7 +1646,8 @@ static int aspeed_video_probe(struct platform_device *pdev)
- {
- 	int rc;
- 	struct resource *res;
--	struct aspeed_video *video = kzalloc(sizeof(*video), GFP_KERNEL);
-+	struct aspeed_video *video =
-+		devm_kzalloc(&pdev->dev, sizeof(*video), GFP_KERNEL);
- 
- 	if (!video)
- 		return -ENOMEM;
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index e5e83dbf1433..c350ca25ba8e 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -308,6 +308,7 @@ CONFIG_USB_NET_PLUSB=m
+ CONFIG_USB_NET_MCS7830=m
+ CONFIG_ATH10K=m
+ CONFIG_ATH10K_PCI=m
++CONFIG_ATH10K_SNOC=m
+ CONFIG_BRCMFMAC=m
+ CONFIG_MWIFIEX=m
+ CONFIG_MWIFIEX_PCIE=m
 -- 
-2.17.1
+2.23.0
 
 
 _______________________________________________
