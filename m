@@ -2,54 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB1A8E6C63
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 07:21:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96BE2E6C6A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 07:27:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zJ4obQf1A5wbYgt9jBvy3+qIvab3wVvVwEbLSO8nxWw=; b=nAba3a/qkSvrms
-	nwGLnqlfPwOHxUy8tpE3YeB+lQ8i+oBFiVLd6VZfmoOOVMcdl9FBOFIBFwxxn1LycPXmYpCNyUtA2
-	qZtUfe0nZVmoKrZtu809wEMlu2Sii0RiI+YfzCf2AtXJwnFqeCjChow1JDJnxOEVUiA+tAhl8IV5o
-	y+fzoIAtEG1R9W+t6+ZvkiCWLvPk63lTC8ljOhGnAQFvzL6iaE4Zk0maTvQP6x0eqMp8fz6BCscyP
-	ArhWf4GbgmaN63N3sQ67//cSgS4bSFreajwJev/nDC1EjCouXYlgCrSwWFmSZYXHUSW+M/O9s/OvE
-	ynWmG5gM0mio12kcXNcA==;
+	List-Owner; bh=IgRKFtOZxWEMNAlxHvX2WHJdt7GcPK+wUePrH6Kqt+o=; b=hblf5wXWi6sZzm
+	xrrA7zrzlpvq+QaHwAeplNPTGg5VUyOhcsNDOc4OzauvEflyn6hskiiG5aSUzHLILYfSnPcWEZYd6
+	PURpQvn3nUDr469HfIi0HJdygk7DQpFFj+6kGKNC7F2TPNwEpbHludTH9R19B8dvXh7Uu/RqeQa1j
+	TlHxmkPxToSJ4d78lgHf99WJsCubIESrR4FKqsE1D0vozu7gCS+8Re1NU6G6KA2Dsza8Fevv9Eyc2
+	lMM4mX6oMfpc7HSn3BnDe0WGs8rSVZ6x1xMS587pagfqon9vOA414srDJfoEZQYgWxNp8Cjfpno1z
+	PFoXi8iXRIY7I2Dl9HQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOyPI-0003Py-7L; Mon, 28 Oct 2019 06:21:36 +0000
+	id 1iOyUx-0005GQ-3i; Mon, 28 Oct 2019 06:27:27 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOyOv-0003Gq-H3
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 06:21:15 +0000
+ id 1iOyUk-0005G8-Ep
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 06:27:15 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 17A4620659;
- Mon, 28 Oct 2019 06:21:10 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id F3CBE20873;
+ Mon, 28 Oct 2019 06:27:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572243672;
- bh=7KjOTQXNF6D5WHveWXFYCsb/3lubN3EseXC8iIzWeNE=;
+ s=default; t=1572244034;
+ bh=HbkAY+lHAbwVtkObCGbCrSq1LaUQVDeVT+G5E/C+4/s=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=xnF2K7tN1n24TDs5uBBaJVtfyLwz9eGUTE+k/nTPcuUtPkeMPsvXE8JR1D26hADNW
- LFTccm/VcpUq73FoN+yKylVLvioASQyK71fieHti5P7k6lJpkZJ0DWPFf2dX54dvTD
- CXMRoNnkRaBDcZa88myug/MWuJmq0mgQvpUj2LKE=
-Date: Mon, 28 Oct 2019 14:20:54 +0800
+ b=1JhoMeMcY7i7DZSmAbcIw/l2aa0AWSjqrCmnkgyC0CFvlcI8XbD1KWrkUy2CdYQ0j
+ 9l+L4xHaS3EPeQ6E2ayREo4VgOqUxhYquT1D7ClkzaDLTMt6PwOmSIdML8zqWpkexD
+ +awmlK5pXFDkRhf/olUgHNhXzFt7ZQlS+CNq4bi0=
+Date: Mon, 28 Oct 2019 14:26:55 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Andrey Smirnov <andrew.smirnov@gmail.com>
-Subject: Re: [PATCH 3/3] ARM: dts: imx6qdl-zii-rdu2: Specify supplies for
- accelerometer
-Message-ID: <20191028062053.GO16985@dragon>
-References: <20191022040500.18548-1-andrew.smirnov@gmail.com>
- <20191022040500.18548-3-andrew.smirnov@gmail.com>
+Subject: Re: [PATCH v2] ARM: imx: Drop imx_anatop_usb_chrg_detect_disable()
+Message-ID: <20191028062654.GP16985@dragon>
+References: <20191022041445.23897-1-andrew.smirnov@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191022040500.18548-3-andrew.smirnov@gmail.com>
+In-Reply-To: <20191022041445.23897-1-andrew.smirnov@gmail.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191027_232113_601598_4F93CBDB 
-X-CRM114-Status: UNSURE (   7.87  )
+X-CRM114-CacheID: sfid-20191027_232714_514513_5FE27879 
+X-CRM114-Status: UNSURE (   8.93  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -79,25 +77,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, Fabio Estevam <festevam@gmail.com>,
- Chris Healy <cphealy@gmail.com>, linux-arm-kernel@lists.infradead.org,
- Lucas Stach <l.stach@pengutronix.de>
+Cc: Peter Chen <peter.chen@nxp.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Fabio Estevam <festevam@gmail.com>,
+ Chris Healy <cphealy@gmail.com>, linux-imx@nxp.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 21, 2019 at 09:05:00PM -0700, Andrey Smirnov wrote:
-> Specify 'vdd' and 'vddio' supplies for accelerometer to avoid warnings
-> during boot.
+On Mon, Oct 21, 2019 at 09:14:45PM -0700, Andrey Smirnov wrote:
+> With commit b5bbe2235361 ("usb: phy: mxs: Disable external charger
+> detect in mxs_phy_hw_init()") in tree all of the necessary charger
+> setup is done by the USB PHY driver which covers all of the affected
+> i.MX6 SoCs.
+> 
+> NOTE: imx_anatop_usb_chrg_detect_disable() was also called for i.MX7D,
+> but looking at its datasheet it appears to have a different USB PHY IP
+> block, so executing i.MX6 charger disable configuration seems
+> unnecessary.
 > 
 > Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
-> Cc: Fabio Estevam <festevam@gmail.com>
-> Cc: Chris Healy <cphealy@gmail.com>
-> Cc: Lucas Stach <l.stach@pengutronix.de>
-> Cc: Shawn Guo <shawnguo@kernel.org>
-> Cc: linux-arm-kernel@lists.infradead.org,
-> Cc: linux-kernel@vger.kernel.org
 
 Applied, thanks.
 
