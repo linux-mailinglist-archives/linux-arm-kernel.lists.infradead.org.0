@@ -2,87 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE81CE7987
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 21:02:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7235DE7991
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 21:06:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sRiFso53r1NfHTdnzVADDJ4GqsmhtUv8s1PSWfUvMZ4=; b=qf90pQGZLRdC9c
-	lEqW6jkTroBGEVkFyaC6BcrYxLl+fsXO30FtO56utyj7QtPuT0DuQXvcKWQdfm/nGYdm1tnMOi/Kc
-	sOZ57iTcbJmxRcktdhrSuIG2kIkf0GBl8OS8+Uyd1LYT/shx7+HCbht3//ZnMveJPYD10t4ahw4ra
-	+JiDe1dTR3ch4B50HhGnrqULJl4JM6UVhZ9f2irUHtl4T5QqDc80UGNfmWkQ3GMTS+y2ExQlC7T34
-	eswKjhfmWDNSQNXFhfG6EYolcWdLFmay7pJPdgmEoCysIYQuQvoSGifNttnAvkxaoKGwV3weWJ8td
-	4xYenG7AKJRzye7V7uJw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KGO0lSmc/EImQlcI54lkOSvYemDFddBORbIoFaAmel4=; b=ulH1NK4Jwh4ipW
+	Cnm8BHzLdqSzHeH+eCg6HDyp2QTU4zJIf2BozykciE6a12NFXR+Zn/SsS8GWGc9CSdfNNpM2iZaE9
+	W5x+T/W5auQA2B3PXYk6qnYTewvuh/nlaCsQSfbbQg2qXS9s3JYZjG08rLVNHCtSpFTr9mxz9l2jr
+	7wr8FOdsN0c/uuDBbod+tOpqu0IshImBrq3Y4O4qW7JU67ekO8qX8b8kLHwzpLUkaXFmWP32VnaIH
+	PVyBpzda/n1glfMKhGEbtDXpVlT3FoAuvE5VI5PyMiAGh5/coGZtxoNbrLk2KIvIRG1o10yyYr3Gm
+	otVJc9LAGMge6dhef4OA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPBDk-0005ib-6f; Mon, 28 Oct 2019 20:02:32 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iPBHL-0007d2-8E; Mon, 28 Oct 2019 20:06:15 +0000
+Received: from gate2.alliedtelesis.co.nz ([202.36.163.20])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPBDb-0005hb-1R
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 20:02:24 +0000
-Received: by mail-pg1-x541.google.com with SMTP id p1so7657114pgi.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 28 Oct 2019 13:02:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=ZWh1WnHpSXynBwrGzEFdFS9dRaewgmpRz4cunacZkKY=;
- b=W/LyFiWCHVPxquHdd0jTr8+JG7XYRbQxGEDNVjf8MV4mQElYTsV8ePZkxAzktIHuCv
- NQSvIoYxVf4YtZxVlcgbG/z+IhIKCnEuLmZlYT9Vhq5tLITt04WSQL1WzLGZ0B9TZWu2
- Lf8ndycAMO3pfIrn17MaeD0PAKEZxRxNtJxoCssLqgrxZ9MfW9cGBwKkjkyPFd6vhG9N
- qro3IztbZH9pfkQeB+yCFIEQ5BAjPGi7lggkQlf3X8X8+26x6Qd8tr6MIpKHcX8sR47q
- lQMM261xup6M+USOO7c9obMzf9o4WAasye5rr36DcVzyZtxVF9z4zTns+FvIoW6RSwEn
- oppA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ZWh1WnHpSXynBwrGzEFdFS9dRaewgmpRz4cunacZkKY=;
- b=MGRVNleddikKR2zpOWVM3jsBsUumSmof/k8vhcHXpgMTPnSJbbvGLHz3CqO5u8VwGT
- Beqayny5ROPvodFjNsqXYwazz/mxj7x2C6fUqf896s7XzhQWsLlsDhcVkC0IQyJaaHyU
- 2KQdHgWCl9pfvwM9DqKhWfD31YtglyuiSJxaAvDI2xEVOxKaL/IQHtNMgZLDROC1Vosv
- hDwDOEHVKiquK5dnyqGMibBrIN/JyLExCxTxjsHTbAyc2XHmT4AiXmPPs29zFniMpnIU
- w8yxumFm4rIkyTJ8xFOjbuHxzA2yR8bjOBgJl4j6bz/WyJc7Ga+kvuQ6wKuJj7XXjs5l
- eapw==
-X-Gm-Message-State: APjAAAUoUwSE7vwnAwSRmOJgBN6dKBuaXWy1xiLbMCzdxKopz7U79naU
- +DT13AjyFGqCVnlzt87uKaTANQ==
-X-Google-Smtp-Source: APXvYqwvp8vwl59NpJT1UZnwdTf8HHV5pewkT1sXqeB3J6wVvLcceNA8x/1R5lRGssfa9YY6woUpEQ==
-X-Received: by 2002:a63:d0f:: with SMTP id c15mr22945597pgl.313.1572292942160; 
- Mon, 28 Oct 2019 13:02:22 -0700 (PDT)
-Received: from minitux (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id q23sm316379pjd.2.2019.10.28.13.02.20
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 28 Oct 2019 13:02:21 -0700 (PDT)
-Date: Mon, 28 Oct 2019 13:02:19 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: next/master boot: 257 boots: 8 failed, 237 passed with 8
- offline, 2 untried/unknown, 2 conflicts (next-20191028)
-Message-ID: <20191028200219.GS571@minitux>
-References: <5db7032c.1c69fb81.888b0.b521@mx.google.com>
- <20191028174857.GG5015@sirena.co.uk> <20191028184019.GR571@minitux>
- <20191028191121.GH5015@sirena.co.uk>
+ id 1iPBHB-0007bk-W7
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 20:06:08 +0000
+Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 934968365D;
+ Tue, 29 Oct 2019 09:05:59 +1300 (NZDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
+ s=mail181024; t=1572293159;
+ bh=TrZJM1xTX9YI9Sdqm4mhE1ENesdMtbUdy83TCSciGhM=;
+ h=From:To:Cc:Subject:Date;
+ b=nNKt5jO5bgRnJhc6K+jGMLqOOKO5vycLmCX0Wase1PP9cT/2p2HG6wnb7TOt+Pcqu
+ 19Ljg4KDdskhm6ZBczGa6+ehBnrP8BhcdfhrsMC0x4woRMWxJ+6vggLPMuen9xW5nm
+ 14i0ARyseE+yUYY+p7CO25B4tX6++LFAU3S/j0xRA9lAj1p1AIFPz3NWInGoc4rZgk
+ HoyI79t669QwjTPczbBxUn2BEh5hGL8rcGW7+Fznwzxbib9sOGRaeNYAKDJblfXO76
+ N+4lgnq+zt7q9V3Y/Y8WzZ3Ray1qa5OAa7mQOT96cTMpEiqSNZvEVlDLBopvfouiAx
+ dmNUjqSzlb6pg==
+Received: from smtp (Not Verified[10.32.16.33]) by mmarshal3.atlnz.lc with
+ Trustwave SEG (v7, 5, 8, 10121)
+ id <B5db74a260000>; Tue, 29 Oct 2019 09:05:58 +1300
+Received: from chrisp-dl.ws.atlnz.lc (chrisp-dl.ws.atlnz.lc [10.33.22.20])
+ by smtp (Postfix) with ESMTP id 91EDF13EE9C;
+ Tue, 29 Oct 2019 09:05:58 +1300 (NZDT)
+Received: by chrisp-dl.ws.atlnz.lc (Postfix, from userid 1030)
+ id ACEA128005C; Tue, 29 Oct 2019 09:05:57 +1300 (NZDT)
+From: Chris Packham <chris.packham@alliedtelesis.co.nz>
+To: linus.walleij@linaro.org, bgolaszewski@baylibre.com, robh+dt@kernel.org,
+ mark.rutland@arm.com, rjui@broadcom.com, sbranden@broadcom.com,
+ bcm-kernel-feedback-list@broadcom.com
+Subject: [PATCH v5] dt-bindings: gpio: brcm: Add bindings for xgs-iproc
+Date: Tue, 29 Oct 2019 09:05:55 +1300
+Message-Id: <20191028200555.27524-1-chris.packham@alliedtelesis.co.nz>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191028191121.GH5015@sirena.co.uk>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+x-atlnz-ls: pat
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_130223_089419_4887F731 
-X-CRM114-Status: GOOD (  16.64  )
+X-CRM114-CacheID: sfid-20191028_130606_421799_90580824 
+X-CRM114-Status: GOOD (  11.42  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [202.36.163.20 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -101,53 +86,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-build-reports@lists.linaro.org, linux-arm-msm@vger.kernel.org,
- Andy Gross <agross@kernel.org>, linux-next@vger.kernel.org,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+Cc: Rob Herring <robh@kernel.org>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
+ Chris Packham <chris.packham@alliedtelesis.co.nz>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon 28 Oct 12:11 PDT 2019, Mark Brown wrote:
+This GPIO controller is present on a number of Broadcom switch ASICs
+with integrated SoCs. It is similar to the nsp-gpio and iproc-gpio
+blocks but different enough to require a separate driver.
 
-> On Mon, Oct 28, 2019 at 11:40:19AM -0700, Bjorn Andersson wrote:
-> > On Mon 28 Oct 10:48 PDT 2019, Mark Brown wrote:
-> > > On Mon, Oct 28, 2019 at 08:03:08AM -0700, kernelci.org bot wrote:
-> 
-> > > Today's -next (anf Friday's) fails to boot on db820c:
-> 
-> > > >     defconfig:
-> > > >         gcc-8:
-> > > >             apq8096-db820c: 1 failed lab
-> 
-> > > It looks like it deadlocks somewhere, the last things in the log are a
-> > > failure to start ufshcd-qcom and then an RCU stall some time later:
-> 
-> > db820c has been failing intermittently for a while now, it seems that
-> > booting with kpti enabled causes something to go wrong. There are
-> > nothing strange in the kernel logs and ftrace seems to indicate that all
-> > the CPUs are idling nicely.
-> 
-> Oh dear.  Adding Catalin and Will.  Is it definitely KPTI that's
-> triggering stuff?  It did turn up some bugs on other systems, though
-> it's a bit strange it's only manifesting in KernelCI...
+Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
+Reviewed-by: Rob Herring <robh@kernel.org>
+---
 
-I did a test recently where I booted my db820c 100 times with kpti=yes
-and 100 times with kpti=no on the kernel command line, and the result
-was 90% failure to reach console vs 0%. Going back and looking at the
-logs for the 10% indicated that the boot CPU was fine, but I had stalls
-reported on other CPUs.
+Notes:
+    Changes in v5:
+    - correct $id line following rename
+    - add reviewed-by from Rob
+    
+    Changes in v4:
+    - rename brcm,xgs-iproc.yaml -> brcm,xgs-iproc-gpio.yaml as suggested
+    
+    Changes in v3:
+    - incorporate review comments from Rob and Bart
+    
+    Changes in v2:
+    - Document as DT schema
+    - Include ngpios, #gpio-cells and gpio-controller properties
 
-In an effort to rule out driver bugs I reduced the DT to CPUs, the core
-clocks, gic, timers and serial driver, and I still saw the problem.
+ .../bindings/gpio/brcm,xgs-iproc-gpio.yaml    | 70 +++++++++++++++++++
+ 1 file changed, 70 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/gpio/brcm,xgs-iproc-gpio.yaml
 
-I have not looked at this with jtag and hence do not know what secure
-world is doing.
+diff --git a/Documentation/devicetree/bindings/gpio/brcm,xgs-iproc-gpio.yaml b/Documentation/devicetree/bindings/gpio/brcm,xgs-iproc-gpio.yaml
+new file mode 100644
+index 000000000000..64e279a4bc10
+--- /dev/null
++++ b/Documentation/devicetree/bindings/gpio/brcm,xgs-iproc-gpio.yaml
+@@ -0,0 +1,70 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/gpio/brcm,xgs-iproc-gpio.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Broadcom XGS iProc GPIO controller
++
++maintainers:
++  - Chris Packham <chris.packham@alliedtelesis.co.nz>
++
++description: |
++  This controller is the Chip Common A GPIO present on a number of Broadcom
++  switch ASICs with integrated SoCs.
++
++properties:
++  compatible:
++    const: brcm,iproc-gpio-cca
++
++  reg:
++    items:
++      - description: the I/O address containing the GPIO controller
++                     registers.
++      - description: the I/O address containing the Chip Common A interrupt
++                     registers.
++
++  gpio-controller: true
++
++  '#gpio-cells':
++      const: 2
++
++  ngpios:
++    minimum: 0
++    maximum: 32
++
++  interrupt-controller: true
++
++  '#interrupt-cells':
++    const: 2
++
++  interrupts:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++  - "#gpio-cells"
++  - gpio-controller
++
++dependencies:
++  interrupt-controller: [ interrupts ]
++
++examples:
++  - |
++    #include <dt-bindings/interrupt-controller/irq.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    gpio@18000060 {
++        compatible = "brcm,iproc-gpio-cca";
++        #gpio-cells = <2>;
++        reg = <0x18000060 0x50>,
++              <0x18000000 0x50>;
++        ngpios = <12>;
++        gpio-controller;
++        interrupt-controller;
++        #interrupt-cells = <2>;
++        interrupts = <GIC_SPI 91 IRQ_TYPE_LEVEL_HIGH>;
++    };
++
++
++...
+-- 
+2.23.0
 
-Regards,
-Bjorn
 
 _______________________________________________
 linux-arm-kernel mailing list
