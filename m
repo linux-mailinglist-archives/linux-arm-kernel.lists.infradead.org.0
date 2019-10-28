@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CB2EE7265
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 14:08:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2B10E7273
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 14:15:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CgfZe+lFt5c1Dug6j8qPGKwjGR3BN2WvABUqBDe4vl8=; b=N/Sr1qwbmjNeg0
-	1jn8VfRHM7QimrvUTiZG2d/VWwPG/o0/W/qp76Zm+QnCS5Q1L1YKC5QNWnLcjOCZ+hO3CvlTzwCyK
-	fonWDnPsSf7yqBvP5U2jsyeolC1jFrNCpV4u3bD2q4nQQi0BVzq80/JKZbW7QvYiZH56sv02GqAFH
-	rgDQz0SyAR5nUYQ4col/PB3tgYjY83qTdmWWInFZSngJ+hL9DeZj2M6M/cMMEaoXTXomvsBpD2jxx
-	iPP0H/19RjpGO/yu7hNyoEVm7Kjf10rkr30bdUK31wiC5pwxB0Ha0HEG2ADMEeCO2bmntU1X4O80C
-	rUkGkXvkEEywQwatpxtQ==;
+	List-Owner; bh=5BICX9M5U6uulq/5sImh+lzotEHLMmpJbAzzKNi/bhg=; b=IhL4/WKYtz/ILr
+	8OhNYuob4xyMY+VL3HsLbaXCXGI5eBq2ZmzrIZbG7jFjri+lrVzYT/hKFZG3Ytv2e4/3rqQZt9n7a
+	XyKW+LB8VuIyNYHl19j/LK4Yf5aLV2ju2yCpvtNs5WxSpFB43v3aSeibB+rfEQAN4hUaUnshtnxIN
+	6HiggaKtDJgatJ5rMVFAvDJG2oBpCuMDSbq+YIvVWaiqOVG6qdQaW7GviIwNIsUBMsKTPCwMOEQh9
+	e//Yf/zODefMTHCVYqkYntMxUFvtjFDuU+8io/xsooxAHT1zm9NXZJ+qq0gcvKQT9ak5ewJFbqyb7
+	C64swgk4et1K8WeRhO5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP4kp-0004ay-J6; Mon, 28 Oct 2019 13:08:15 +0000
+	id 1iP4rL-0006VI-0l; Mon, 28 Oct 2019 13:14:59 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP4kg-0004Zk-Fl
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 13:08:07 +0000
+ id 1iP4rB-0006Un-6V
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 13:14:50 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6C3B320717;
- Mon, 28 Oct 2019 13:07:54 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DE21C20717;
+ Mon, 28 Oct 2019 13:14:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572268085;
- bh=eN/t8vEWe/l66u2wjNSnil60tzYkWczNbhhncntG/Qs=;
+ s=default; t=1572268488;
+ bh=pWaCpaVaO/FmseYToqBvScFTP4pNn04IN1BrJPwjpWI=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ZfkGtUdc9OP38mduRSaP02AMOobq0kjRV6BLT/zrP1C7FrZmLgeZHvo0m0ie71UHm
- LWJ8gu0J128Zy0RjjMH5ewZpCMqpsTw1ComTsNYRxfdXotnteA5mSV60+6r4u5RIog
- pvgl+7uUOKkBe4ZV31SnYN/7z2viBWJcmeuR2JJY=
-Date: Mon, 28 Oct 2019 21:07:36 +0800
+ b=t9dO4ZqkqF6yz6EaoSw+qSX0hLoJt6buJZGnlbqEQp/ls9yOiq85oM3sJeT8R2EIv
+ 9dSC0Afdy93bvbnCXxP8MA0JuNwG2ZbVYvViJN1ULASINBrjeJSGwuPvyeM5scXLO/
+ 5LDhhC9p2kfQDNT97+Otmhhhxrz76N7kOJaqg9V8=
+Date: Mon, 28 Oct 2019 21:14:30 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Shengjiu Wang <shengjiu.wang@nxp.com>
-Subject: Re: [PATCH] ARM64: imx8mn: Change compatible string for sdma
-Message-ID: <20191028130734.GK16985@dragon>
-References: <1571992807-31378-1-git-send-email-shengjiu.wang@nxp.com>
+To: Fabio Estevam <festevam@gmail.com>
+Subject: Re: [PATCH 1/3] arm64: dts: ls1028a-qds: Remove unnecessary
+ #address-cells/#size-cells
+Message-ID: <20191028131425.GL16985@dragon>
+References: <20191026000119.27178-1-festevam@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1571992807-31378-1-git-send-email-shengjiu.wang@nxp.com>
+In-Reply-To: <20191026000119.27178-1-festevam@gmail.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_060806_546561_51BC75FC 
-X-CRM114-Status: UNSURE (   8.50  )
+X-CRM114-CacheID: sfid-20191028_061449_259028_E49CA383 
+X-CRM114-Status: UNSURE (   7.89  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -77,28 +78,22 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, ping.bai@nxp.com,
- Anson.Huang@nxp.com, daniel.baluta@nxp.com, s.hauer@pengutronix.de,
- daniel.lezcano@linaro.org, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-imx@nxp.com, kernel@pengutronix.de, leonard.crestez@nxp.com,
- festevam@gmail.com, linux-arm-kernel@lists.infradead.org, jun.li@nxp.com
+Cc: linux-arm-kernel@lists.infradead.org, leoyang.li@nxp.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 25, 2019 at 04:40:07PM +0800, Shengjiu Wang wrote:
-> SDMA in i.MX8MN should use same configuration as i.MX8MQ
-> So need to change compatible string to be "fsl,imx8mq-sdma".
+On Fri, Oct 25, 2019 at 09:01:17PM -0300, Fabio Estevam wrote:
+> The following build warning is seen with W=1:
 > 
-> Fixes: 6c3debcbae47 ("arm64: dts: freescale: Add i.MX8MN dtsi support")
-> Signed-off-by: Shengjiu Wang <shengjiu.wang@nxp.com>
+> arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts:196.10-208.4: Warning (avoid_unnecessary_addr_size): /soc/i2c@2000000/fpga@66: unnecessary #address-cells/#size-cells without "ranges" or child "reg" property
+> 
+> Fix it by removing the unnecessary #address-cells/#size-cells.
+> 
+> Signed-off-by: Fabio Estevam <festevam@gmail.com>
 
-Updated subject like below, and applied the patch.
-
-  arm64: dts: imx8mn: fix compatible string for sdma
-
-Shawn
+Applied all, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
