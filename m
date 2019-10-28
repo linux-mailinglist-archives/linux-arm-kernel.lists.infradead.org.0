@@ -2,67 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2791DE7C6D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 23:37:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B699EE7C72
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 23:38:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v5091rc8FBhxs9CvdgVBFJLfSmZ/LwLyqPHNB/aDxsQ=; b=tcRHrh5QgUy54A
-	Zu2WzFtJK/L4aS2liCFwa46pDCbhphhPshizsxnKB19a9usR/ygcsb2jLA2ZPmOv5PO2uXFZ32LRI
-	7IKL1Rhdzn5urQVs5GIb8l50603xJlj+gnJiVSCMDD1HCqoEM91Fo8gRvdDecYHevM30n3gooK37m
-	JJgFBAO6W3hsKQvOUHwQls5VEDZMuJDpiFcbasjlU14MCzgMJlymGl43jLWrHn7g3UfgwodEwAOC1
-	qAMZ2P15PP7xRKQzVdx2caG8b9Zi/XwLX08hcCNMtO7XoTsrYF0d3MKcNDjhQhH8tNih2oK86/5ME
-	uh6XAAmyIQefwRizD8NA==;
+	List-Owner; bh=Dn9zH8vgorl9wWn0pYGNZjaoSbdzbFZzmwq984194ts=; b=mi7Xj6rDSB3GPs
+	ucGOcOuTQ8/ibI6cRlzLXVsqorRkGgEfm9yf0nFosuc+5FL6qc0hp+UyoQ9DHEWaN0qmRcYjZ7mnX
+	QHCfvYYHGFGz5rWuRr9u/cHfmWxueGmQYgZw2sxmG/AOw1SSg31wGYl08ORlz9fQJHvD0d6H/xZfo
+	j6Nvdjiz/omjGtg6XnvdM90H0ldcLn2F60DslVHzJOsF8TKtdUn5nb7kjkr9WYqeip5Kw88MrDPQe
+	PAPfdsWUchSLLx/ctvx1N5nK4a8w6wDMV42T/EE1RBNCMObRGVKZgZ9dPF6YOSjKVwu1OuS9M3c2N
+	rfvXgYRFJFX1JRQn4EvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPDe0-0001kP-V5; Mon, 28 Oct 2019 22:37:48 +0000
+	id 1iPDef-00020G-Di; Mon, 28 Oct 2019 22:38:29 +0000
 Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPDdq-0001jX-8x
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 22:37:39 +0000
-Received: by mail-il1-x143.google.com with SMTP id t5so9628461ilh.10
+ id 1iPDeS-0001zl-Iz
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 22:38:17 +0000
+Received: by mail-il1-x143.google.com with SMTP id a13so9660738ilp.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 28 Oct 2019 15:37:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
+ Mon, 28 Oct 2019 15:38:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=z3tX+ks7PoiFwrJMh00/G0a0ftQIDY3RWS8pN1PA/BQ=;
- b=SKuPRKpveC6kpd0ROoNvdHULXUx99U0LlGRXDpWC4BPC2PLCNKrud8USuQ9T6iTjuu
- yY/RhELZCceNf3/45XZWM6GsNyRX8KOElh1Wg6prkLUzt27uk4jeSXYo/9oCWj7trUCm
- /4sm/8LdQPwR0vw2Ic0Nb7446p1joXFqG8Khw=
+ :cc; bh=1pqft6NUgSGPSsYgTI6KAW/EqfWsmOX+X7GP8nWIKRQ=;
+ b=KOtAhmLxM5DZQvf2Ll3f33KbklGMeTG2PKDxS+jixVpbEYv/r2fkX8rWW/POBAh8EZ
+ bhaa9F6E4wiUOAv7xzTF/OPYtmaoF81sAIOIN1D7uz2hMlzRn/GbsAID1pmlxlh0ULbu
+ KCWrpiKfUYuFXj/u1i4vCnm4AsCswlKrH1PH0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=z3tX+ks7PoiFwrJMh00/G0a0ftQIDY3RWS8pN1PA/BQ=;
- b=s4XR6zGG/UNfWSodUmb05w2QoK5JuZTQ/K2OwsW4CVgDfKt0wSYJ7mbyd/HKPHvttN
- 65k7W7Kd734GonKTSgdRauD5smXcCs0T2el7uRfghGcML3Sd3N0QFT0YuWeNZf9D6iMZ
- 2RrJTl31NbKClGyPzFYX3aLOAFifp2zrpmJwkG+eMeKxLtfuaSYL8Cy2YVTIgk/jYY7H
- /qyLyuthDvb8rqXB4CxC3bniWUucqgmDl3CyJvTA7O1qMgB80AuWkya27Gw9KWUWShY9
- gbfD9zUvZ6jSeTabcq1uEHSR9r5z1GiaJfm1Sh0nISqAr2fYvL1WQ0laAABlQ+vYpydf
- hBqw==
-X-Gm-Message-State: APjAAAUkl+aWFJqL77ojqfhAra4oOUIUAvkCiRi2RMk7Lm0Dv7SMA4PA
- ILtPGnikdp6CxUyvgEiysjqkEDQzn+GgOVDGrGk29g==
-X-Google-Smtp-Source: APXvYqwIZOpM2fC3dmpYbeGTVPOWxOzVO5pYPcw3MFmyjgnC+e3sCBKiQMsTwG3PiO7rE0i53YmxyINxh4//HXXlb2c=
-X-Received: by 2002:a92:91d3:: with SMTP id e80mr24149380ill.77.1572302257323; 
- Mon, 28 Oct 2019 15:37:37 -0700 (PDT)
+ bh=1pqft6NUgSGPSsYgTI6KAW/EqfWsmOX+X7GP8nWIKRQ=;
+ b=WMW21A9XdJCJaz4amqUXT98k8tcPVN6fvmmZS/p6sqJhyka7a+NxPxKHadiaHMlOqf
+ GWSE8i994WUHJoVfnmBLLF0wYpdvx3FJsu/79L9Ibr8C/9xNJ4kDwaIqZaBvSlsGw2L3
+ LRJ5rsQXYnBCEw/PGnDWh2pyKDR87NEy1TzFCj50SyIZVueASQq6qzMrIs9NdCdEJIaC
+ OPuYaBEyV/DG11ShSafnEXM598E0pnlvapI4epwdmfCjaKgKsAKXNmTLH6TlTt97UUox
+ m660QVdXdBfmi5LfJitu92EOQBmryZEitR51JZxdvPub73SFsZFYywuFQ7nTznAKEcTL
+ YsTg==
+X-Gm-Message-State: APjAAAWR/I5iuCeJOQV7z1m+X3cObHtD04imk+VRHfIIUQ97denkxIc9
+ AVUXNzLTIf9DBcYJT9Frx7j3muGrGunF0RSr8IujKQ==
+X-Google-Smtp-Source: APXvYqzOjbPZql47NIkJK7AmtptD85c0h2swAJ0981IFdP5pW7aIvp/4iQe9Q33o2yPDwnBDa7OGwzugpAmPA0ld6FE=
+X-Received: by 2002:a92:6e0a:: with SMTP id j10mr5422292ilc.26.1572302295420; 
+ Mon, 28 Oct 2019 15:38:15 -0700 (PDT)
 MIME-Version: 1.0
-References: <20191025175625.8011-1-jagan@amarulasolutions.com>
- <20191025175625.8011-3-jagan@amarulasolutions.com>
- <20191027211737.GA30896@bogus>
-In-Reply-To: <20191027211737.GA30896@bogus>
-From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Tue, 29 Oct 2019 04:07:26 +0530
-Message-ID: <CAMty3ZD8P1KGS+6AZOCbYyLpV=c7wowUdwoJXYvEMq211xbM1g@mail.gmail.com>
-Subject: Re: [PATCH v11 2/7] dt-bindings: sun6i-dsi: Add A64 DPHY compatible
- (w/ A31 fallback)
-To: Rob Herring <robh@kernel.org>
+References: <418d8426-f299-1269-2b2e-f86677cf22c2@arm.com>
+ <20191007204906.19571-1-robdclark@gmail.com>
+ <20191028222042.GB8532@willie-the-truck>
+In-Reply-To: <20191028222042.GB8532@willie-the-truck>
+From: Rob Clark <robdclark@chromium.org>
+Date: Mon, 28 Oct 2019 15:38:04 -0700
+Message-ID: <CAJs_Fx7zRWsTPiAg0PFt+8nJPpHpzSkxW6XMMJwozVO6vyB78A@mail.gmail.com>
+Subject: Re: [PATCH v2] iommu/arm-smmu: fix "hang" when games exit
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_153738_314863_DED1BC89 
-X-CRM114-Status: GOOD (  15.11  )
+X-CRM114-CacheID: sfid-20191028_153816_648152_550906C7 
+X-CRM114-Status: GOOD (  21.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -80,6 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,44 +90,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, David Airlie <airlied@linux.ie>,
- linux-sunxi <linux-sunxi@googlegroups.com>, Maxime Ripard <mripard@kernel.org>,
- linux-kernel <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, Daniel Vetter <daniel@ffwll.ch>,
- Michael Trimarchi <michael@amarulasolutions.com>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Icenowy Zheng <icenowy@aosc.io>
+Cc: freedreno <freedreno@lists.freedesktop.org>, Joerg Roedel <joro@8bytes.org>,
+ iommu@lists.linux-foundation.org, open list <linux-kernel@vger.kernel.org>,
+ Rob Clark <robdclark@gmail.com>, Robin Murphy <robin.murphy@arm.com>,
+ "moderated list:ARM SMMU DRIVERS" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 28, 2019 at 2:47 AM Rob Herring <robh@kernel.org> wrote:
+On Mon, Oct 28, 2019 at 3:20 PM Will Deacon <will@kernel.org> wrote:
 >
-> On Fri, 25 Oct 2019 23:26:20 +0530, Jagan Teki wrote:
-> > The MIPI DSI PHY controller on Allwinner A64 is similar
-> > on the one on A31.
-> >
-> > Add A64 compatible and append A31 compatible as fallback.
-> >
-> > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> > ---
-> >  .../bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml         | 6 +++++-
-> >  1 file changed, 5 insertions(+), 1 deletion(-)
-> >
+> Hi Rob,
 >
-> Please add Acked-by/Reviewed-by tags when posting new versions. However,
-> there's no need to repost patches *only* to add the tags. The upstream
-> maintainer will do that for acks received on the version they apply.
+> On Mon, Oct 07, 2019 at 01:49:06PM -0700, Rob Clark wrote:
+> > From: Rob Clark <robdclark@chromium.org>
+> >
+> > When games, browser, or anything using a lot of GPU buffers exits, there
+> > can be many hundreds or thousands of buffers to unmap and free.  If the
+> > GPU is otherwise suspended, this can cause arm-smmu to resume/suspend
+> > for each buffer, resulting 5-10 seconds worth of reprogramming the
+> > context bank (arm_smmu_write_context_bank()/arm_smmu_write_s2cr()/etc).
+> > To the user it would appear that the system just locked up.
+> >
+> > A simple solution is to use pm_runtime_put_autosuspend() instead, so we
+> > don't immediately suspend the SMMU device.
 >
-> If a tag was not added on purpose, please state why and what changed.
+> Please can you reword the subject to be a bit more useful? The commit
+> message is great, but the subject is a bit like "fix bug in code" to me.
 
-I usually collect the tags when I send next version w/o any change.
-but this dt-binding patch has a fixed version compared to previous
-version. I have updated changelog on cover patch and may be will write
-it on respective patch itself.
+yeah, not the best $subject, but I wasn't quite sure how to fit
+something better in a reasonable # of chars.. maybe something like:
+"iommu/arm-smmu: optimize unmap but avoiding toggling runpm state"?
+
+BR,
+-R
+
+
+>
+> > Signed-off-by: Rob Clark <robdclark@chromium.org>
+> > ---
+> > v1: original
+> > v2: unconditionally use autosuspend, rather than deciding based on what
+> >     consumer does
+> >
+> >  drivers/iommu/arm-smmu.c | 5 ++++-
+> >  1 file changed, 4 insertions(+), 1 deletion(-)
+> >
+> > diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+> > index 3f1d55fb43c4..b7b41f5001bc 100644
+> > --- a/drivers/iommu/arm-smmu.c
+> > +++ b/drivers/iommu/arm-smmu.c
+> > @@ -289,7 +289,7 @@ static inline int arm_smmu_rpm_get(struct arm_smmu_device *smmu)
+> >  static inline void arm_smmu_rpm_put(struct arm_smmu_device *smmu)
+> >  {
+> >       if (pm_runtime_enabled(smmu->dev))
+> > -             pm_runtime_put(smmu->dev);
+> > +             pm_runtime_put_autosuspend(smmu->dev);
+> >  }
+> >
+> >  static struct arm_smmu_domain *to_smmu_domain(struct iommu_domain *dom)
+> > @@ -1445,6 +1445,9 @@ static int arm_smmu_attach_dev(struct iommu_domain *domain, struct device *dev)
+> >       /* Looks ok, so add the device to the domain */
+> >       ret = arm_smmu_domain_add_master(smmu_domain, fwspec);
+>
+> Please can you put a comment here explaining what this is doing? An abridged
+> version of the commit message is fine.
+>
+> > +     pm_runtime_set_autosuspend_delay(smmu->dev, 20);
+> > +     pm_runtime_use_autosuspend(smmu->dev);
+>
+> Cheers,
+>
+> Will
 
 _______________________________________________
 linux-arm-kernel mailing list
