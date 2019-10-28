@@ -2,49 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C4E7E7B96
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 22:43:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BA03E7BA8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 22:44:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qSg5IfuqN2cFCIm+k2ya9oH2CODKD9E3f++Qd3FzdjQ=; b=TmX6pvbycU/8In
-	CW9M2I8s7ddRBjfPQQ1K8XoIRnx+018c5C266pE54v8ANWRqK92uO9i0mmUF9JVd5D7i4cnO54Qk9
-	lbj58PyTG14Yc9b+Y+TxoxadvcHpKd8x8LczS8inCW39On9BVoCHdcFzbun5OUtb2BpAotzetsO+g
-	mPSq3BKGNlpkdA740qkUViXsDRPEAtmMeX77ITZ9X+pFciLbjkAoiIC15fJ9ZwopD0PmeTFeX9XI9
-	8rjn34gPHWP6nl8lN8WcXGBXapyTQEkYJ6KppCq89r+m8ND7L/lRwqdFRX3YtMZiycw3OfRZDrwOB
-	/1ckAkE3Uot0tCIYEebQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7AnvtEjpssd8UsDGVvxjGTD5d2Mlal4ny8qB1K1MQlw=; b=j5+F3fZK4JK71o
+	zbh+CCZyd0pekIXhMsD5eW3lbGFWPTjBi7kd7olyJTIqAg2IDaV8VDkgpl+fGA1UgXRm65BYeRXVG
+	8xFHFY8z2Yt5Gx/nnD/3Ps9j8Ve7KzkVNLJBsMJBlNplC/W/6xfRLG3ZKqIlL3JnHpjENqoUaBQbq
+	uzxqGlYAae5zBC8fB498EgYDFNHktIV9CtQGWPFE/je3sNz79vRH0hgLJSVnwRDetkzFDVkjMerIG
+	wATsGNMQESITh/KhBK2siPfyhY1xDfuzz5q9UIuk2zxiZIi7RyGAw1j8hsSbrKUr3pWqNirgJ6EG2
+	g8WAA4YNWRGrh0xy1iKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPCnS-0006DM-9c; Mon, 28 Oct 2019 21:43:30 +0000
-Received: from vps.xff.cz ([195.181.215.36])
+	id 1iPCog-0006WF-0S; Mon, 28 Oct 2019 21:44:46 +0000
+Received: from gate2.alliedtelesis.co.nz ([202.36.163.20])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPCnI-0006CX-Jn
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 21:43:22 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1572298996; bh=fyyQI3ItgxBYKXPEf2uaXYMvRSi0utH9LPQLNQj2NLA=;
- h=From:To:Cc:Subject:Date:From;
- b=KbPLKdZFai12AyFY45X80z5E+QhMa46RXM0QVHLZUZlaNqwF63nvs1lAM2jvRpNcn
- QVxdtaUXAgGe2Q1k6XKnqdq2KMbsbwd+oyh3MfMCrTl5ykVgM8svGUdAeX8LFecO37
- 8Vuq2LIvNlMXEGP8iQMDW16fZgDZ1tMyBIfPHZyw=
-From: Ondrej Jirman <megous@megous.com>
-To: linux-sunxi@googlegroups.com
-Subject: [PATCH] drm: sun4i: Add support for suspending the display driver
-Date: Mon, 28 Oct 2019 22:43:13 +0100
-Message-Id: <20191028214313.3463732-1-megous@megous.com>
+ id 1iPCoV-0006V3-82
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 21:44:37 +0000
+Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 38FFB8365D;
+ Tue, 29 Oct 2019 10:44:28 +1300 (NZDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
+ s=mail181024; t=1572299068;
+ bh=DYOidqT5tUCFVfyUT2GRpqixTq+ntsgXpdtqwuOAk6k=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To;
+ b=1q2fHQy6amqf2xgJs26FyQkL6UTYuUaWyZ+T+FwsxzszVBd7XPgzBMxyDVLYrZb0P
+ 23n0/Nt5U+HpPSNTNRF0YWRT8quYDB06byPzP6FKkhDRjh2vYoOEXWBfRgST6Yaxat
+ xShZO9FyV2UtSP9TiIWOjUJJhdoktAa9bM2schseZXWv5TNercrQ5hLNSW9kvrhcb6
+ SAjU61jBtv/8M/QjnnV0atlkMJ1my9SvzmpoR9gLG7a+ltoBySl5YN6nWycER4ddnU
+ FTNc9gY0I/TreSpiR8NZ7SVQbM76cdv1S5QTIu9ehLyE0YgRlU/Sy9jmGLw7jWhgh/
+ ma4ZSEsxA1nmg==
+Received: from svr-chch-ex1.atlnz.lc (Not Verified[10.32.16.77]) by
+ mmarshal3.atlnz.lc with Trustwave SEG (v7, 5, 8, 10121)
+ id <B5db761390000>; Tue, 29 Oct 2019 10:44:29 +1300
+Received: from svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8::77) by
+ svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8::77) with Microsoft SMTP Server
+ (TLS) id 15.0.1156.6; Tue, 29 Oct 2019 10:44:25 +1300
+Received: from svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8]) by
+ svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8%12]) with mapi id
+ 15.00.1156.000; Tue, 29 Oct 2019 10:44:25 +1300
+From: Chris Packham <Chris.Packham@alliedtelesis.co.nz>
+To: "sbranden@broadcom.com" <sbranden@broadcom.com>, "mark.rutland@arm.com"
+ <mark.rutland@arm.com>, "bcm-kernel-feedback-list@broadcom.com"
+ <bcm-kernel-feedback-list@broadcom.com>, "f.fainelli@gmail.com"
+ <f.fainelli@gmail.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "rjui@broadcom.com" <rjui@broadcom.com>, "linus.walleij@linaro.org"
+ <linus.walleij@linaro.org>
+Subject: Re: [PATCH 2/2] ARM: dts: NSP: avoid unnecessary probe deferrals
+Thread-Topic: [PATCH 2/2] ARM: dts: NSP: avoid unnecessary probe deferrals
+Thread-Index: AQHViujHZY98ZQ157ka0OeDhGPxOgadqws4AgAToBQCAABcnAA==
+Date: Mon, 28 Oct 2019 21:44:24 +0000
+Message-ID: <b8ef1b3d154e104d943d22dcb07bff2756a82315.camel@alliedtelesis.co.nz>
+References: <20191025040041.6210-1-chris.packham@alliedtelesis.co.nz>
+ <20191025040041.6210-3-chris.packham@alliedtelesis.co.nz>
+ <5d75b0ba-81c6-3d54-5bef-1127cd1c9998@gmail.com>
+ <c8c9df8f252ed42c4ac7f3a10e52bfa5f5e31d50.camel@alliedtelesis.co.nz>
+In-Reply-To: <c8c9df8f252ed42c4ac7f3a10e52bfa5f5e31d50.camel@alliedtelesis.co.nz>
+Accept-Language: en-NZ, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [2001:df5:b000:22:54a5:7b66:76cf:b046]
+Content-ID: <6C26432F61A07B46A928981BB4283381@atlnz.lc>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_144320_978452_D8D54D52 
-X-CRM114-Status: GOOD (  10.28  )
+X-CRM114-CacheID: sfid-20191028_144435_851683_6ED2BA04 
+X-CRM114-Status: GOOD (  28.52  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [202.36.163.20 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -63,69 +104,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ondrej Jirman <megous@megous.com>, David Airlie <airlied@linux.ie>,
- open list <linux-kernel@vger.kernel.org>,
- "open list:DRM DRIVERS FOR ALLWINNER A10" <dri-devel@lists.freedesktop.org>,
- Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>,
- Daniel Vetter <daniel@ffwll.ch>,
- "moderated list:ARM/Allwinner sunXi SoC support"
- <linux-arm-kernel@lists.infradead.org>
+Cc: "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Shut down the display engine during suspend.
+On Tue, 2019-10-29 at 09:21 +1300, Chris Packham wrote:
+> On Fri, 2019-10-25 at 10:26 -0700, Florian Fainelli wrote:
+> > On 10/24/19 9:00 PM, Chris Packham wrote:
+> > > The pinctrl node is used by the gpioa node. Which may have more
+> > > descendants at a board level. If the pinctrl node isn't probed first the
+> > > gpio is deferred and anything that needs a gpio pin on that chip is also
+> > > deferred.
+> > 
+> > If what you care is to optimize your boot flow such that no re-probing
+> > occurs, maybe another solution to look at is to re-order the order in
+> > which subsystems are initialized or built (_initcall changes or
+> > drivers/Makefile changes), because changing Device Tree certainly does
+> > not scale over platforms and I recall Rob indicating that he wanted to
+> > introduce randomized platform_device creation from
+> > of_platform_bus_populate() at one point or another.
+> > 
+> 
+> Hmm. I might be missing something. pinctrl-nsp-gpio.c uses
+> arch_initcall_sync() and pinctrl-nsp-mux.c uses arch_initcall() so in
+> theory they are already in the right order.
+> 
 
-Signed-off-by: Ondrej Jirman <megous@megous.com>
----
- drivers/gpu/drm/sun4i/sun4i_drv.c | 22 ++++++++++++++++++++++
- 1 file changed, 22 insertions(+)
+Actually the init calls are made in the required order w.r.t each
+other. But they are both before of_platform_populate, so it's back to
+the device tree being the determining factor for when the probe()
+functions are run.
 
-diff --git a/drivers/gpu/drm/sun4i/sun4i_drv.c b/drivers/gpu/drm/sun4i/sun4i_drv.c
-index a5757b11b730..c519d7cfcf43 100644
---- a/drivers/gpu/drm/sun4i/sun4i_drv.c
-+++ b/drivers/gpu/drm/sun4i/sun4i_drv.c
-@@ -346,6 +346,27 @@ static int sun4i_drv_add_endpoints(struct device *dev,
- 	return count;
- }
- 
-+#ifdef CONFIG_PM_SLEEP
-+static int sun4i_drv_drm_sys_suspend(struct device *dev)
-+{
-+        struct drm_device *drm = dev_get_drvdata(dev);
-+
-+        return drm_mode_config_helper_suspend(drm);
-+}
-+
-+static int sun4i_drv_drm_sys_resume(struct device *dev)
-+{
-+        struct drm_device *drm = dev_get_drvdata(dev);
-+
-+        return drm_mode_config_helper_resume(drm);
-+}
-+#endif
-+
-+static const struct dev_pm_ops sun4i_drv_drm_pm_ops = {
-+        SET_SYSTEM_SLEEP_PM_OPS(sun4i_drv_drm_sys_suspend,
-+                                sun4i_drv_drm_sys_resume)
-+};
-+
- static int sun4i_drv_probe(struct platform_device *pdev)
- {
- 	struct component_match *match = NULL;
-@@ -418,6 +439,7 @@ static struct platform_driver sun4i_drv_platform_driver = {
- 	.driver		= {
- 		.name		= "sun4i-drm",
- 		.of_match_table	= sun4i_drv_of_table,
-+		.pm = &sun4i_drv_drm_pm_ops,
- 	},
- };
- module_platform_driver(sun4i_drv_platform_driver);
--- 
-2.23.0
+With the current kernel I get
 
+nsp_pinmux_init:
+nsp_gpio_init:
+OF: of_platform_populate:
+OF: of_platform_bus_create: /axi@18000000/gpio@20
+nsp_gpio_probe:
+gpiochip_add_data_with_key: GPIOs 480..511 (18000020.gpio) failed to
+register, -517
+nsp-gpio-a 18000020.gpio: unable to add GPIO chip
+OF: of_platform_bus_create: /axi@18000000/pinctrl@3f1c0
+nsp_pinmux_probe:
+... much later ...
+nsp_gpio_probe:
 
+Would it be acceptable to change the init calls to device_initcall()
+and device_initcall_sync()? pinctrl-nsp-mux.c could even be converted
+to (builtin_)platform_driver.
+
+> > > 
+> > > Normally we and nodes in the device tree to be listed in their natural
+> > > memory mapped address order but putting the pinctrl node first avoids
+> > > the deferral of numerous devices so make an exception in this case.
+> > 
+> > That is a workaround more than a real solution, though I understand why
+> > you would to do that. One downside is that the entries are no longer in
+> > incrementing register address order and that is visually disturbing and
+> > who knows, maybe a drive by contributor whose pet project will be to
+> > order the Device Tree entries by incrementing addresses will change that
+> > in the future...
+> > 
+> 
+> I guess really what's needed is something that understands phandles and
+> tries to produce a dependency tree based on that.
+> 
+> > > 
+> > > Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
+> > > ---
+> > >  arch/arm/boot/dts/bcm-nsp.dtsi | 14 +++++++-------
+> > >  1 file changed, 7 insertions(+), 7 deletions(-)
+> > > 
+> > > diff --git a/arch/arm/boot/dts/bcm-nsp.dtsi b/arch/arm/boot/dts/bcm-nsp.dtsi
+> > > index da6d70f09ef1..dd7a65743c08 100644
+> > > --- a/arch/arm/boot/dts/bcm-nsp.dtsi
+> > > +++ b/arch/arm/boot/dts/bcm-nsp.dtsi
+> > > @@ -172,6 +172,13 @@
+> > >  		#address-cells = <1>;
+> > >  		#size-cells = <1>;
+> > >  
+> > > +		pinctrl: pinctrl@3f1c0 {
+> > > +			compatible = "brcm,nsp-pinmux";
+> > > +			reg = <0x3f1c0 0x04>,
+> > > +			      <0x30028 0x04>,
+> > > +			      <0x3f408 0x04>;
+> > > +		};
+> > > +
+> > >  		gpioa: gpio@20 {
+> > >  			compatible = "brcm,nsp-gpio-a";
+> > >  			reg = <0x0020 0x70>,
+> > > @@ -458,13 +465,6 @@
+> > >  					     "sata2";
+> > >  		};
+> > >  
+> > > -		pinctrl: pinctrl@3f1c0 {
+> > > -			compatible = "brcm,nsp-pinmux";
+> > > -			reg = <0x3f1c0 0x04>,
+> > > -			      <0x30028 0x04>,
+> > > -			      <0x3f408 0x04>;
+> > > -		};
+> > > -
+> > >  		thermal: thermal@3f2c0 {
+> > >  			compatible = "brcm,ns-thermal";
+> > >  			reg = <0x3f2c0 0x10>;
+> > > 
+> > 
+> > 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
