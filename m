@@ -2,60 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA88AE7647
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 17:33:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9EF9BE766D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 17:33:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=coCpGlvr+7Wvi9J6FDv84PNhvHcqFvh9K0Sgg5qfhbc=; b=HbQgDyHk9agwEb
-	gZr7vc178lmcwlGb8VyJQFEH1Pjge0NIDph8XIm+rKOSY+fPVkH9AvmzwON1GHuvGrEQks8IZ4SvM
-	g4MkuO1SOUsJc8pe0efIAMTqlJdMzx+9WEiNWtqgwfA40YTXiPY+u9cAnAl+vmfDHlHpVee3c4CHH
-	RzK/f8qTqpNb+a1syinH1rqbPPPmKKVs4HW2W2KYUAC3cChFFXZi3nGN8aggCI0ObvsR99uy1CTMW
-	SmjYIBaPk0ECIVGcY9sg2kN8YMw0vH+DAijBCyDM+Y0F18E1bQv8LuUVNyLyNgvsFx2Jk7XjWW6gG
-	aOMOBDGL1HYZbv/QK9uQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0TpuCbJiDigBizaY3Fs2ZACjf3KtHiuFcm2M1S3YaO8=; b=j3SIYoCQmYqPIs
+	x64gtMYN9rpMPbO7Hpxm4437fmM9Tog8Tf42OLrFmKByETy0JnSUs1PY6CjnRvEpqizWVgTObAism
+	8n+atFlPGPMgbIa54kGMzZm8XNiLNyScJgmhr6Hc2fYT7vzbyREaYlKTb4i/+yifNZjNYBIbg8qTb
+	CAh6/+FKkFtHJCdmuCCL47+p+l2R2limP6Z4fm0NY/bCvKbP9Jj9nfuaRt4lamLhQLgKggAOF0pT0
+	gbohzEb9yFYVwFDismxquPM3F2da3sR5sm/IG+9ALSKCRLcjXQW0ffAzX6hi/fn1OMoSauNsTgPLH
+	CY+YHG7NrChjTQkDGMlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP7xD-0006fi-H8; Mon, 28 Oct 2019 16:33:15 +0000
+	id 1iP7xs-00074I-Sg; Mon, 28 Oct 2019 16:33:56 +0000
 Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP7wy-0006eo-Ks; Mon, 28 Oct 2019 16:33:02 +0000
-Received: by mail-oi1-f196.google.com with SMTP id m193so1929540oig.0;
- Mon, 28 Oct 2019 09:33:00 -0700 (PDT)
+ id 1iP7wz-0006f4-T8; Mon, 28 Oct 2019 16:33:03 +0000
+Received: by mail-oi1-f196.google.com with SMTP id n16so4145397oig.2;
+ Mon, 28 Oct 2019 09:33:01 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=S4uLFulX8TejWtV4ZtyYdW8FASYgTH1zgpN3OAUfA44=;
- b=R1Ta4Yi9jOWYwwkvDbiEYXMNbqG3y3PEUeikLEcMZSRM76WDsBcTtOUQ9RGRJspv3+
- gTBXuQBjj5+wqYwd0+NOzao/LgLgHpOjoTUL7CLXzzE6D2ynP+0rPc9Mp0af2X4G7a0R
- f6iyqFsEPeXHuod2m4gC21m0lWhJ01BUcoytY00XkNxuqmqcQ2A7Lyujr5ImPjYY0/Pn
- Y4RjTnumHNoMGqtiv1SbO38Pfna5afka4GBt3t02hOmkrMCT9IbmEc5Py1X3bW3rxq0m
- p1Yy+FWGlc/Darf50c6qp3FKn3yobqWbyD+/W3PsBF1DuBWCLPC8ocQ2xQiOIOQIpeXh
- nJrg==
-X-Gm-Message-State: APjAAAUd2dIZOV/np6WNZZCjlTQ9GIgd7mZTh4cyZHshqRsliE9UAPrH
- lYblOKk41hr2Im3nsGCrNA==
-X-Google-Smtp-Source: APXvYqyCyIe7/lBj2r50NZZKCcouW4Wf/nGhcgVbzzr1X9sEHMnBAu+xzJCM7OskSMNAePIBybe/OA==
-X-Received: by 2002:aca:5015:: with SMTP id e21mr137789oib.174.1572280379222; 
- Mon, 28 Oct 2019 09:32:59 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=Ly9SwwfQU77PS/De9nePQz9/hgu0i/2+0AP8IGmXD3o=;
+ b=KSjVq6CXfFlB8cETJsVtEEsIvZXdEJwQSXSMy77lWs4AO1LebR9LaCaNn1Xvx5+Ub+
+ oVGvgenEBJfvI9yq3Dejyr+XO2uoddRbtPEfLHoB2/3yzxTdxB0RhO3F2Bo2fBf+vz9E
+ PQ/FRnKg7mESQogoyfA7OjAtX3ilBGatdfO8krePsAT3SmmyflKg3AgMZ+INwlnQ6Onf
+ fUyOtNT0ncPikcQ/6uruwAa9NOSNxyg9x39EPdL9HKNGv4hHhLsTffIY1hMLhlPl4ZUE
+ 8WByOez2Lt8WGHF8iDdJVKrfoAxzbNT7y6MvsJIFfdUkhR5qDD5dS4GMX5Z1aN+EG4Vq
+ UkFw==
+X-Gm-Message-State: APjAAAUCCtiLEY887x7+7RUl4vvyZ1dzLXBt4byIzsti72XqMEXxO7Om
+ K/egZI0bQvbh/vc3JEaSxQ==
+X-Google-Smtp-Source: APXvYqz7AvFVl42WcaIBsnF/FBWNvONUeq6ow/pzPzHbo/QsqT4JbiucFb+B7zhfVTYFjNW6To0vKg==
+X-Received: by 2002:aca:1e0c:: with SMTP id m12mr168280oic.18.1572280381198;
+ Mon, 28 Oct 2019 09:33:01 -0700 (PDT)
 Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id e186sm354991oia.47.2019.10.28.09.32.57
+ by smtp.googlemail.com with ESMTPSA id e186sm354991oia.47.2019.10.28.09.32.59
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 28 Oct 2019 09:32:58 -0700 (PDT)
+ Mon, 28 Oct 2019 09:33:00 -0700 (PDT)
 From: Rob Herring <robh@kernel.org>
 To: Andrew Murray <andrew.murray@arm.com>, Bjorn Helgaas <bhelgaas@google.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: [PATCH v3 00/25] PCI host resource consolidation
-Date: Mon, 28 Oct 2019 11:32:31 -0500
-Message-Id: <20191028163256.8004-1-robh@kernel.org>
+Subject: [PATCH v3 01/25] resource: Add a resource_list_first_type helper
+Date: Mon, 28 Oct 2019 11:32:32 -0500
+Message-Id: <20191028163256.8004-2-robh@kernel.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20191028163256.8004-1-robh@kernel.org>
+References: <20191028163256.8004-1-robh@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_093300_686644_C13942D6 
-X-CRM114-Status: GOOD (  11.00  )
+X-CRM114-CacheID: sfid-20191028_093301_937796_BF60994D 
+X-CRM114-Status: GOOD (  11.32  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
@@ -63,6 +65,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [209.85.167.196 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
@@ -71,8 +75,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -108,81 +110,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This started with just dma-ranges parsing consolidation, but has expanded
-to converting all host drivers to use pci_parse_request_of_pci_ranges()
-rather than devm_of_pci_get_host_bridge_resources(). This series moves
-the DT 'dma-ranges' parsing into common helpers utilizing a resource list.
-There's no (intended) functional change in this series though I'm also
-working on a separate series now in dt/next to improve the handling of
-'dma-ranges' and dma masks.
+A common pattern is looping over a resource_list just to get a matching
+entry with a specific type. Add resource_list_first_type() helper which
+implements this.
 
-The last patch may need to wait if there's any new users of
-devm_of_pci_get_host_bridge_resources.
-
-Only versatile has been tested (on QEMU). The rest is compiled only. A git
-branch is here[1].
-
+Signed-off-by: Rob Herring <robh@kernel.org>
+---
 v3:
-- Fix >80 char lines
 - Rename resource_list_get_entry_of_type to resource_list_first_type
 
-Rob
+ include/linux/resource_ext.h | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
 
-[1] git://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git pci-ranges-cleanup-v3
+diff --git a/include/linux/resource_ext.h b/include/linux/resource_ext.h
+index 06da59b23b79..ff0339df56af 100644
+--- a/include/linux/resource_ext.h
++++ b/include/linux/resource_ext.h
+@@ -66,4 +66,16 @@ resource_list_destroy_entry(struct resource_entry *entry)
+ #define resource_list_for_each_entry_safe(entry, tmp, list)	\
+ 	list_for_each_entry_safe((entry), (tmp), (list), node)
 
-
-Rob Herring (25):
-  resource: Add a resource_list_first_type helper
-  PCI: Export pci_parse_request_of_pci_ranges()
-  PCI: aardvark: Use pci_parse_request_of_pci_ranges()
-  PCI: altera: Use pci_parse_request_of_pci_ranges()
-  PCI: dwc: Use pci_parse_request_of_pci_ranges()
-  PCI: faraday: Use pci_parse_request_of_pci_ranges()
-  PCI: iproc: Use pci_parse_request_of_pci_ranges()
-  PCI: mediatek: Use pci_parse_request_of_pci_ranges()
-  PCI: mobiveil: Use pci_parse_request_of_pci_ranges()
-  PCI: rockchip: Use pci_parse_request_of_pci_ranges()
-  PCI: rockchip: Drop storing driver private outbound resource data
-  PCI: v3-semi: Use pci_parse_request_of_pci_ranges()
-  PCI: xgene: Use pci_parse_request_of_pci_ranges()
-  PCI: xilinx: Use pci_parse_request_of_pci_ranges()
-  PCI: xilinx-nwl: Use pci_parse_request_of_pci_ranges()
-  PCI: versatile: Use pci_parse_request_of_pci_ranges()
-  PCI: versatile: Remove usage of PHYS_OFFSET
-  PCI: versatile: Enable COMPILE_TEST
-  PCI: of: Add inbound resource parsing to helpers
-  PCI: ftpci100: Use inbound resources for setup
-  PCI: v3-semi: Use inbound resources for setup
-  PCI: xgene: Use inbound resources for setup
-  PCI: iproc: Use inbound resources for setup
-  PCI: rcar: Use inbound resources for setup
-  PCI: Make devm_of_pci_get_host_bridge_resources() static
-
- drivers/pci/controller/Kconfig                |  2 +-
- .../pci/controller/dwc/pcie-designware-host.c | 29 ++----
- drivers/pci/controller/pci-aardvark.c         | 60 +------------
- drivers/pci/controller/pci-ftpci100.c         | 79 +++++-----------
- drivers/pci/controller/pci-host-common.c      |  2 +-
- drivers/pci/controller/pci-v3-semi.c          | 74 +++++----------
- drivers/pci/controller/pci-versatile.c        | 71 ++++-----------
- drivers/pci/controller/pci-xgene.c            | 73 +++++----------
- drivers/pci/controller/pcie-altera.c          | 41 +--------
- drivers/pci/controller/pcie-cadence-host.c    |  2 +-
- drivers/pci/controller/pcie-iproc-platform.c  |  9 +-
- drivers/pci/controller/pcie-iproc.c           | 82 ++++-------------
- drivers/pci/controller/pcie-mediatek.c        | 43 +++------
- drivers/pci/controller/pcie-mobiveil.c        | 27 ++----
- drivers/pci/controller/pcie-rcar.c            | 48 ++++------
- drivers/pci/controller/pcie-rockchip-host.c   | 89 +++++++------------
- drivers/pci/controller/pcie-rockchip.h        |  5 --
- drivers/pci/controller/pcie-xilinx-nwl.c      | 21 ++---
- drivers/pci/controller/pcie-xilinx.c          | 18 +---
- drivers/pci/of.c                              | 51 +++++++++--
- drivers/pci/pci.h                             | 13 ---
- include/linux/pci.h                           |  9 +-
- include/linux/resource_ext.h                  | 12 +++
- 23 files changed, 261 insertions(+), 599 deletions(-)
-
++static inline struct resource_entry *
++resource_list_first_type(struct list_head *list, unsigned long type)
++{
++	struct resource_entry *entry;
++
++	resource_list_for_each_entry(entry, list) {
++		if (resource_type(entry->res) == type)
++			return entry;
++	}
++	return NULL;
++}
++
+ #endif /* _LINUX_RESOURCE_EXT_H */
 --
 2.20.1
 
