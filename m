@@ -2,56 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D01D9E6EB9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 10:09:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2B0BE6EB7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 28 Oct 2019 10:09:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GlcPk/J+xWsIOhLVRqsTiQbIS0yWgbZ1UkjdnlPToOg=; b=I0Ti+razCEmfSc
-	fxIUJtleKeiBccYyhZANAa5JKI4IjP13mgjBWjAMBfT0QdDIIWiymKr7m15tkMQsn5PxOVayY1m0D
-	5x4IM9VCPac3mu2UBpqibspqZO4ZzwrAdVBpp40/a1J4BjVgVMfe/ns4VHMzFRbfjonWPMTrSKOLp
-	qDE/ap/UF9jly+Ro4PPD98tmcim9dBNLvzt5lDG3heGA9Cm/q/AB+Cwi/U3vO4ZSOHVCHeKFKyLYS
-	4fElKLxFMOczMynFk7p0+l12iFUNi4I4OLPy0oHN33DNuNY0x+3FIhTk8cnyxxywtdRHfKnv5m9sb
-	JTPvK5aw3rCYzmf1NsbA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pV2Z3Ip/wf48sml9mdGYIidqix2ppglX7wIMwiP/03g=; b=f/xQheTUFLGJcJ
+	OkfsM5RPPP9KYAx7COuZMNwPWzuGaJodDsqMNpJxPcSo//u3apE7vba0Ojz9OQ20lbuGCRLGjXC8/
+	3Xi88QM0h53gYx6zQTES/A75cGLqTpXAuia6W0+4kq++y7m1+cvkuxkJ+Yqe5Gn655Auw8TKvQk6v
+	sFkhfABdrG6lkLqSqI0WXNXYKxXpQWIU6MFUVICYYf4TUw7w6+jlChaQq0B68TsAqU+Ek/qgfT5V9
+	9hVDHba1S0Iz9XAXTFVEVnKW6gCqOplBZPelS7NgOiQenELpNVWSlDp+6h2RtddMQRQjz33QAoYkz
+	Ms6z1rjUyGmh7efdoHDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP11t-0000Zm-Nt; Mon, 28 Oct 2019 09:09:37 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1iP11Y-0000IZ-Rl; Mon, 28 Oct 2019 09:09:16 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP11d-0000Oi-MR
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 09:09:23 +0000
-Received: from DGGEMS408-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 6B82BAABADCF620220BB;
- Mon, 28 Oct 2019 17:09:14 +0800 (CST)
-Received: from HGHY4Z004218071.china.huawei.com (10.133.224.57) by
- DGGEMS408-HUB.china.huawei.com (10.3.19.208) with Microsoft SMTP Server id
- 14.3.439.0; Mon, 28 Oct 2019 17:09:05 +0800
-From: Xiang Zheng <zhengxiang9@huawei.com>
-To: <catalin.marinas@arm.com>, <will@kernel.org>
-Subject: [PATCH] arm64: print additional fault message when executing non-exec
- memory
-Date: Mon, 28 Oct 2019 17:08:37 +0800
-Message-ID: <20191028090837.39652-1-zhengxiang9@huawei.com>
-X-Mailer: git-send-email 2.15.1.windows.2
+ id 1iP11Q-0000I3-VT
+ for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 09:09:10 +0000
+Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5BDCD214E0;
+ Mon, 28 Oct 2019 09:09:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572253748;
+ bh=06/Pl06TvqrXiyjDtIoxIRWAVHdXaluNLujJ17bIh4o=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=EBpmOOZvz8D75YXXw5BE4NMAxLmPkk4uRgXlWiSOa+2sSC9luD5Q59idDmSFPN3eJ
+ B81Mrp05O/LmiHhbSVWvidUXzVN726SMI+lsJSQxXzdwF8/vmlf13GkjdZQuH7p1rK
+ lhS+yjVBczlGPfK9NMXlE3MPPpU1O8hJTmF5hcA8=
+Date: Mon, 28 Oct 2019 17:08:46 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH 0/9] Add SoC serial number support for i.MX6/7 SoCs
+Message-ID: <20191028090846.GA16985@dragon>
+References: <1572232370-31580-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.133.224.57]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <1572232370-31580-1-git-send-email-Anson.Huang@nxp.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_020921_898512_9884A729 
-X-CRM114-Status: UNSURE (   8.46  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191028_020909_039238_FA5D9C06 
+X-CRM114-Status: GOOD (  10.08  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,44 +76,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wanghaibin.wang@huawei.com, james.morse@arm.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: aisheng.dong@nxp.com, s.hauer@pengutronix.de, linux@armlinux.org.uk,
+ linux-kernel@vger.kernel.org, Linux-imx@nxp.com, kernel@pengutronix.de,
+ festevam@gmail.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When attempting to executing non-executable memory, the fault message
-shows:
+On Mon, Oct 28, 2019 at 11:12:41AM +0800, Anson Huang wrote:
+> i.MX6/7 SoCs have 64-bit unique ID stored in OCOTP bank 0, word 1/2,
+> read them out as SoC serial number which can be used from userspace:
+> 
+> root@imx7dsabresd:~# cat /sys/devices/soc0/serial_number
+> 0000028FF618B953
+> 
+> Add support for i.MX6Q/6DL/6SL/6SX/6SLL/6UL/6ULL/6ULZ/7D, as they have
+> same unique ID layout in OCOTP.
+> 
+> Anson Huang (9):
+>   ARM: imx: Add serial number support for i.MX6Q
+>   ARM: imx: Add serial number support for i.MX6DL
+>   ARM: imx: Add serial number support for i.MX6SLL
+>   ARM: imx: Add serial number support for i.MX6ULL
+>   ARM: imx: Add serial number support for i.MX6UL
+>   ARM: imx: Add serial number support for i.MX6ULZ
+>   ARM: imx: Add serial number support for i.MX6SL
+>   ARM: imx: Add serial number support for i.MX6SX
+>   ARM: imx: Add serial number support for i.MX7D
 
-  Unable to handle kernel read from unreadable memory at virtual address
-  ffff802dac469000
+For this particular case, I think one single patch is even better than
+a series.  So please squash them.
 
-This may confuse someone, so add a new fault message for instruction
-abort.
+Shawn
 
-Signed-off-by: Xiang Zheng <zhengxiang9@huawei.com>
----
- arch/arm64/mm/fault.c | 2 ++
- 1 file changed, 2 insertions(+)
-
-diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
-index 9fc6db0bcbad..68bf4ec376d0 100644
---- a/arch/arm64/mm/fault.c
-+++ b/arch/arm64/mm/fault.c
-@@ -318,6 +318,8 @@ static void __do_kernel_fault(unsigned long addr, unsigned int esr,
- 	if (is_el1_permission_fault(addr, esr, regs)) {
- 		if (esr & ESR_ELx_WNR)
- 			msg = "write to read-only memory";
-+		else if (is_el1_instruction_abort(esr))
-+			msg = "execute non-executable memory";
- 		else
- 			msg = "read from unreadable memory";
- 	} else if (addr < PAGE_SIZE) {
--- 
-2.19.1
-
-
+> 
+>  arch/arm/mach-imx/cpu.c | 38 +++++++++++++++++++++++++++++++++++++-
+>  1 file changed, 37 insertions(+), 1 deletion(-)
+> 
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
