@@ -2,76 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 47CFEE8909
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 14:06:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7BA2E890C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 14:07:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=6aK9AcXCYs3OZ1Na1DoBvydTUaLZ7q4NqNhoYvi5+3s=; b=DzO
-	WF/dSbITROjooMzyBwXV3zNAL+fshvPleTjeExMpRYtXDR6AbtkJa1+3cKmmw5vK8b54XLrRS9gMP
-	5xSHZndWOVqgkt0gJci+Bgu+nJkAR0YSgHtNElO0fbJkVStrY8oRIUCvGZbrAd4XJZX9k7SeTGH6W
-	LEA1kBsZJbK6Mjx9RZJPakB90JoAraig7V0OrEwxf0xhKTKcbyv7aFq3VRztQ5o6mVvW1YZi+wcjh
-	0JiZGPvvyOfMXiajdrbo1YraxKl9LvmEse3FXQKS7wdZZYZIyNa0wKIuAaEQya2EowjAleIxnhrk2
-	EMqeCCU8sYm6qIRXDYOTyZApZr6UETg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=XZx+WcgJ/Zi21RNXKi8JIWxdJouje3iR+Eu7p+FCcck=; b=M5EZhsh+LXrU+oF87ahadTuxl8
+	wAtNgYwK8tPhdZxM8OuaGiB0g6Bb2xjOU5DSm8CvUQPSUjj98DE13vCq/D1ui8nNrtIwRyoI8vawh
+	nA6BHfTIXB1YTPWiKYASW/PuSUhPmlZm1KPtbdxRtbhZyUii+NdMn34UZeEYFlmzCl1xl/Ln4uReU
+	gyncNG1kdTgISzs5bqx1V5pVJU/bq/5n6wR771flzo/ehGn5QcPTkW5bx7p8trG0t2BYUoBTjD9ok
+	W5wHHfpB8+dCiZH3/2Kp8vCyHcU0bFAYntaKDH5s7nqRRTeqgoFtXwp3B0d3GALw5lBMw6F+NbUun
+	MvZUINkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPRCx-0008Rk-Fu; Tue, 29 Oct 2019 13:06:47 +0000
-Received: from mail-qk1-x72b.google.com ([2607:f8b0:4864:20::72b])
+	id 1iPRDB-0000AO-IT; Tue, 29 Oct 2019 13:07:01 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPRCm-0008Qy-OX
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 13:06:38 +0000
-Received: by mail-qk1-x72b.google.com with SMTP id c25so5877776qkk.1
+ id 1iPRCo-0008RH-8S
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 13:06:39 +0000
+Received: by mail-qk1-x743.google.com with SMTP id q70so12077206qke.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 29 Oct 2019 06:06:35 -0700 (PDT)
+ Tue, 29 Oct 2019 06:06:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=sKlbK3H1ruevjI656mGQdF6pA7LQOsk7wfrHcFqeEUc=;
- b=C5pOcR66qusGdM06JIyOs9kZOoCKzBtfPQvTQyXEzcu4RwEuRL6u1lE2xRzED3f2BH
- 0hODf0XDTIyLKsmRVbYdKxn2l3+1CCYhYNuOKhzyHGNPGwOgT9b4ntrjFgQlGMJ2KWDj
- LUVZoFYTEqTV0xODjrwUC0f5mgaIN0Ig6GuKTl7H4diZ7Zna3H/GcOTLL1qiW13PUJev
- vniThSSyT8KCYABzO7jA5Z5S8fRp3dP5T5l4fiESrD+1YCpJ2WxcQQEmGMd4e6Qod/X4
- 2H33ax3pMmRQuUJoIYdoRk4XYNsZIqgWBLH8A0hlpKj7az+QWhUavtrASpteqKI+PHy8
- amZg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=kz4uEWzQo25U8l3oBQUsBD0tewr1rFe/yHSt58xMc4o=;
+ b=l6TXKcJLH4OScXAkrmCDT0pTBfjcR+BAo2jCWOVct+GsV+PRPiQZgw9rK6iwuMF9cU
+ NBYzrxkr9FVdav3gnjmIgqyaIkHIt2/Dt4yvc5rFYH94iHNgjHmMN/m3k6a/jp0gwXYc
+ xli3Cc0B1yZy9pOCd3pXbakBXWJ4Wk3hcU2vhpajyGMMcR2YSQeoBi8MdljXi4ObU4/U
+ Pkv7ZWKnwS7lSov6mEYNQyaBfjq7X2Uc53jBuCgb9qOxEuvt3TIlNk8oPtYCFFmVEGID
+ WRx6cW353wfajabNbt6Ms0UslkIB8hVxRuPrQrZw7v/XI9GDYStBksOpLg75pQu60WPZ
+ eCaA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=sKlbK3H1ruevjI656mGQdF6pA7LQOsk7wfrHcFqeEUc=;
- b=StXg+RyrkB7qeinCa+koeGA0nkiqnh/5i/jtgXaQAeftNOY7516CVqUO1f/+fBD1rh
- 6X4GVikq3gOjUTzTlDTBL0jZKK5wv/YHg3PPC5mjIp4CI3gK4U+TgvCJYPkdvcwcvPOy
- ccOF4lbVvuIGuijp+In3i7XiDZficpfcGT48Lcr/coQzKQParF1ovrtYFenISFFkwvy0
- NvFEEMascmChkWnu2U3HmalEOYA9Zs+wQBs8FM5GVrMDLImTfl7Mb3yN3ErwRyCSuT2E
- P5q55saAph+g8GpNrBywbbqndMGeeezfjIAUNx5uMrjzVdMb3vDq+HwRlmwKskeVQmeZ
- djAA==
-X-Gm-Message-State: APjAAAUIOT6akdcl2MfN1iEab8ZaBtcDv/IvT9PMrawtfsztDPL0rHZj
- d7BvafLpT8lYVidgnJ43itA=
-X-Google-Smtp-Source: APXvYqwrh8hwcPugRql19k8XUvfHZRge2IsWW01iV10lsHI9bP2koEy2a0i0gHUMAWNjAKj6WkQHgg==
-X-Received: by 2002:ae9:e50f:: with SMTP id w15mr2997658qkf.436.1572354394288; 
- Tue, 29 Oct 2019 06:06:34 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=kz4uEWzQo25U8l3oBQUsBD0tewr1rFe/yHSt58xMc4o=;
+ b=otYWDfbi685mL0glgSRSTHT68ELPvz734S3zk0PTY06rIVm7QKyzKxhpl2Ihq67UyV
+ Ri4/SUO2s6UznexwKSyz/VDG+UWGgJd0l/DUeAxPQ+Sr194i44jf4IL4qhZoTmKRBfjS
+ VajaERnj3fKwqon6rdOPsnSPoFf5AYUzt2xl8C1bHGHCfjjE/5KY05fpYVpstfXXCQMR
+ WRUijz024GcfxGcdjnYAZww32v17MR7LOpbqSH/tyBoaOZLdVwcP/lpvCMGFCnSIdc5I
+ cO51KYf2kURWJgyLa2KsP98I/yvq0BOWUFmQb4bzIpJhURO0yal/WdFgVYG1cbAlMeO0
+ nFQQ==
+X-Gm-Message-State: APjAAAUqsNFGhhGk1wMNhH1DalyokwO+ZaqfJXMslEk0PrX8DcWWUAFa
+ ag5X4ftRUPYcMzlbJgc+qi0=
+X-Google-Smtp-Source: APXvYqxcU4BwUt9BA9+WH1Dx2DxSehl2n1Qjz9jsD2rjy1iajObf43ib0TwIMVBd+S1ZUByxwgtAKQ==
+X-Received: by 2002:a37:b985:: with SMTP id
+ j127mr21278593qkf.337.1572354397042; 
+ Tue, 29 Oct 2019 06:06:37 -0700 (PDT)
 Received: from fabio-Latitude-E5450.nxp.com ([177.221.114.206])
- by smtp.gmail.com with ESMTPSA id r7sm7565029qkf.124.2019.10.29.06.06.31
+ by smtp.gmail.com with ESMTPSA id r7sm7565029qkf.124.2019.10.29.06.06.34
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 29 Oct 2019 06:06:33 -0700 (PDT)
+ Tue, 29 Oct 2019 06:06:36 -0700 (PDT)
 From: Fabio Estevam <festevam@gmail.com>
 To: shawnguo@kernel.org
-Subject: [PATCH 1/2] dt-bindings: arm: fsl: Document i.MX7ULP Embedded Artists
+Subject: [PATCH 2/2] ARM: dts: imx7ulp-com: Add initial support for i.MX7UP
  COM board
-Date: Tue, 29 Oct 2019 10:06:38 -0300
-Message-Id: <20191029130639.29108-1-festevam@gmail.com>
+Date: Tue, 29 Oct 2019 10:06:39 -0300
+Message-Id: <20191029130639.29108-2-festevam@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191029130639.29108-1-festevam@gmail.com>
+References: <20191029130639.29108-1-festevam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_060636_801840_D0FC66FA 
-X-CRM114-Status: UNSURE (   8.96  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191029_060638_296978_85629A3F 
+X-CRM114-Status: GOOD (  15.00  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:72b listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -103,25 +107,117 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add an entry for the Embedded Artists i.MX7ULP COM board.
+The Embedded Artists COM board is based on NXP i.MX7ULP.
+
+It has a BD70528 PMIC from Rohm with discrete DCDC powering option and
+improved current observability (compared to the existing NXP i.MX7ULP EVK).
+
+Add the initial support for the board.
 
 Signed-off-by: Fabio Estevam <festevam@gmail.com>
 ---
- Documentation/devicetree/bindings/arm/fsl.yaml | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm/boot/dts/Makefile        |  1 +
+ arch/arm/boot/dts/imx7ulp-com.dts | 79 +++++++++++++++++++++++++++++++
+ 2 files changed, 80 insertions(+)
+ create mode 100644 arch/arm/boot/dts/imx7ulp-com.dts
 
-diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
-index b08ae59cc57f..e75f03bf8fbb 100644
---- a/Documentation/devicetree/bindings/arm/fsl.yaml
-+++ b/Documentation/devicetree/bindings/arm/fsl.yaml
-@@ -234,6 +234,7 @@ properties:
-       - description: i.MX7ULP based Boards
-         items:
-           - enum:
-+              - ea,imx7ulp-com           # i.MX7ULP Embedded Artists COM Board
-               - fsl,imx7ulp-evk           # i.MX7ULP Evaluation Kit
-           - const: fsl,imx7ulp
- 
+diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+index e352598c05ae..07949ad31a6b 100644
+--- a/arch/arm/boot/dts/Makefile
++++ b/arch/arm/boot/dts/Makefile
+@@ -611,6 +611,7 @@ dtb-$(CONFIG_SOC_IMX7D) += \
+ 	imx7s-mba7.dtb \
+ 	imx7s-warp.dtb
+ dtb-$(CONFIG_SOC_IMX7ULP) += \
++	imx7ulp-com.dtb \
+ 	imx7ulp-evk.dtb
+ dtb-$(CONFIG_SOC_LS1021A) += \
+ 	ls1021a-moxa-uc-8410a.dtb \
+diff --git a/arch/arm/boot/dts/imx7ulp-com.dts b/arch/arm/boot/dts/imx7ulp-com.dts
+new file mode 100644
+index 000000000000..c0ff354730ba
+--- /dev/null
++++ b/arch/arm/boot/dts/imx7ulp-com.dts
+@@ -0,0 +1,79 @@
++// SPDX-License-Identifier: GPL-2.0
++//
++// Copyright 2019 NXP
++
++/dts-v1/;
++
++#include "imx7ulp.dtsi"
++#include <dt-bindings/input/input.h>
++
++/ {
++	model = "Embedded Artists i.MX7ULP COM";
++	compatible = "ea,imx7ulp-com", "fsl,imx7ulp";
++
++	chosen {
++		stdout-path = &lpuart4;
++	};
++
++	memory {
++		device_type = "memory";
++		reg = <0x60000000 0x4000000>;
++	};
++};
++
++&lpuart4 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_lpuart4>;
++	status = "okay";
++};
++
++&usbotg1 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_usbotg1_id>;
++	srp-disable;
++	hnp-disable;
++	adp-disable;
++	status = "okay";
++};
++
++&usdhc0 {
++	assigned-clocks = <&pcc2 IMX7ULP_CLK_USDHC0>;
++	assigned-clock-parents = <&scg1 IMX7ULP_CLK_APLL_PFD1>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_usdhc0>;
++	non-removable;
++	bus-width = <8>;
++	no-1-8-v;
++	status = "okay";
++};
++
++&iomuxc1 {
++	pinctrl_lpuart4: lpuart4grp {
++		fsl,pins = <
++			IMX7ULP_PAD_PTC3__LPUART4_RX	0x3
++			IMX7ULP_PAD_PTC2__LPUART4_TX	0x3
++		>;
++	};
++
++	pinctrl_usbotg1_id: otg1idgrp {
++		fsl,pins = <
++			IMX7ULP_PAD_PTC13__USB0_ID	0x10003
++		>;
++	};
++
++	pinctrl_usdhc0: usdhc0grp {
++		fsl,pins = <
++			IMX7ULP_PAD_PTD1__SDHC0_CMD	0x43
++			IMX7ULP_PAD_PTD2__SDHC0_CLK	0x10042
++			IMX7ULP_PAD_PTD3__SDHC0_D7	0x43
++			IMX7ULP_PAD_PTD4__SDHC0_D6	0x43
++			IMX7ULP_PAD_PTD5__SDHC0_D5	0x43
++			IMX7ULP_PAD_PTD6__SDHC0_D4	0x43
++			IMX7ULP_PAD_PTD7__SDHC0_D3	0x43
++			IMX7ULP_PAD_PTD8__SDHC0_D2	0x43
++			IMX7ULP_PAD_PTD9__SDHC0_D1	0x43
++			IMX7ULP_PAD_PTD10__SDHC0_D0	0x43
++			IMX7ULP_PAD_PTD11__SDHC0_DQS	0x42
++		>;
++	};
++};
 -- 
 2.17.1
 
