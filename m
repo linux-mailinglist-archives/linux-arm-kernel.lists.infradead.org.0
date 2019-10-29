@@ -2,67 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE7E0E8A7E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 15:15:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DFB4E8A95
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 15:17:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=LXk1aT8nTT5Uz768tmVAm3NDFLvCsMBcRfOXbvWbC0E=; b=tNwGkF6VWZQT/ErtSCXh0NXoSZ
-	pBCp7TJx2Vwk49Y1P8gzhYQqtY1TawKq9Dh+kuUSUfDI8Rm3w7cYR2S80x9XCvbAzxz6fhg52r4tz
-	ctT7RCLvOTy1H9G7bUlPJGE1PFDNtCzJRkPnJe7Djb11NjJ8KIUzfhjglDMwmCnIcOsU/ryQVPzBb
-	zWYH6YTil9KJY99628a9uojiwqDZFeTDaz89AAO9mCLZGL+VJcCNbNMeMBcyCnpa+K0Tx9RlvBkzm
-	T8gC8s6aTFsgJ1fA1ovI/EvkHDV8YeEAfhXsTa32e0tLSy0hc1aLMkd12fVYfhylTkSS3G2kFdYyu
-	SGCy37/A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3Vw8b6YSBIeOzcBX7GK85cwk0jhd5KgM0lLKzbnPr9w=; b=JcRYOQDkXvlrOZ
+	JmJc0qG4m+Kk56ljUIXnEYUU0qn+K+pj3NJsak3APtk/WwRANEr+yC6mES2Wqc5k9dcv/S1TeHxmU
+	4Ejy0qGmYn8m3xXjdR6U0ciuz8WopZAEw3HeenjevA0zMGTsPi6Xg5vjfVY3BUAnggCH2Py/mKoAz
+	sC54jbbQQYROLXUc5URcK/kWF6FhukNMRWYvJ/PFxkgmB4DAhtPW0RUzcqv/JeEAV5hBvulZ7Z6sP
+	qKU9STlvdvgNg2hn4vLV79mSvuunXgNi41Bhw/9nwQEViHMwppev72lFm7EPDLWDFwSwsY0aoW9dY
+	2TwQQs4flwmNG8Ustyxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPSHk-0002ku-AK; Tue, 29 Oct 2019 14:15:48 +0000
-Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
- helo=smtprelay-out1.synopsys.com)
+	id 1iPSJa-0004zL-Ry; Tue, 29 Oct 2019 14:17:43 +0000
+Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPSHG-0001lV-GI
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 14:15:20 +0000
-Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
- [10.225.0.210])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 848F2C0C41;
- Tue, 29 Oct 2019 14:15:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1572358517; bh=ntn5h+EtiIr26cxuzm1ZrBPes0SSBYvLTZygjleUGzc=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
- References:From;
- b=gCIsjn8Ku5XeJLlLhtD2SPNIXN5ekmpgV5MLXScQWNw5wDoAXrpYULQWFFBbwztSU
- Ix8E+4shQdeqEqR4uFMH0I0kKW5YbVUBIHIdPhU+/dB0+liDtGQWoh2jiJ5TdofOH7
- pb0oJYWpmPS0smMcuShMfyrU1Y6/McdwmCwpqgXHtxBlqA7k0nuhJSDvLw1csBHZ4T
- +S1Ij/+5nE34GhEzuHZXvUetVDWTx/2SqQSIhpQtQJKFPteZsR0ydZmsJ28Y0yushQ
- yVVso3+RzmXVKzzVOFaVYdA5BQ/d/3Xq4DVONg0kQ1FToMu1rXAM4cvnGXeu4xfSv9
- I04ctY+eZfdgw==
-Received: from de02dwia024.internal.synopsys.com
- (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 29016A0081;
- Tue, 29 Oct 2019 14:15:15 +0000 (UTC)
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: netdev@vger.kernel.org
-Subject: [PATCH net 9/9] net: stmmac: xgmac: Disable MMC interrupts by default
-Date: Tue, 29 Oct 2019 15:14:53 +0100
-Message-Id: <4c77b55e43cf7a3243086a465b50568eb352d534.1572355609.git.Jose.Abreu@synopsys.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <cover.1572355609.git.Jose.Abreu@synopsys.com>
-References: <cover.1572355609.git.Jose.Abreu@synopsys.com>
-In-Reply-To: <cover.1572355609.git.Jose.Abreu@synopsys.com>
-References: <cover.1572355609.git.Jose.Abreu@synopsys.com>
+ id 1iPSHg-0002vs-8R
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 14:15:46 +0000
+Received: by mail-vs1-xe41.google.com with SMTP id y129so8825922vsc.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 29 Oct 2019 07:15:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=2CJkMB8W25QC+LmwHZCR/dC2OeYvdCpp2yKraECtwkc=;
+ b=erCRbeIBHUu53eIreClKHV+uY6SMssROpbDKJZMSC3l+mDep04YpyeFnPKet5PX5N1
+ K6d9GL7q+TBbHhpf38xASFO/TXfXIgOnQd+2jwtbABwkUzNKRv4crlJCQ5sm33YkfEj4
+ u0npQzAAraEWJu+naiJKHKuW/DZPeUOAf7F1bBLeNGslfkb7ZIPfYWSV9H/PfDxih3hV
+ coNmtYtFiskJu7ap8vyMmzTx37J9AxaFbD9LknHJc/hx3PVruIT1Bbo9+aHjnSy/QjoV
+ 6LB1xAnri/kSOeQaJ0PsMW1btfvx/BA9yOxpu4tBlBCWlPodHSRXiAFe8R7+Kv+9rPOU
+ vfBA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=2CJkMB8W25QC+LmwHZCR/dC2OeYvdCpp2yKraECtwkc=;
+ b=rQ4chtpV+hMuMrlpHCeOfMRiuE3GMLfcU30jyYAGvjGsVtQ2GPeXuf1VfyN5pEgeWl
+ 3Cmtyi2obzOeqH2MF+RDunYW9Fyju8YQlOOsgLFcGPqF7FzfKJVH7rWkHAHSsHSFWeu/
+ 6FtyxOzohBlDNQb1NWGX8SKzQrvfSa/BvAfJc30qTQpKJF8/ufJ1w1UQjqxQMdRYRcZk
+ TKigZg+kL+/aFqUD6zg3luqtH5GHFLCkBDwrRhAP04GY/5OwKFsMPvewQBrHnpwsPZnx
+ k9bjXnOzMdD6OeRfWD5o6sRvEDbGxf9hKaxJ0+MO2uR9666A7bmNgEZT2Y/17DXvLeXR
+ Hqcg==
+X-Gm-Message-State: APjAAAXXw9biAy89suJV671NN+qHY1SxPQcXM06vlBlsu2oHG8iSx+L9
+ SQ5lMovQGnhGezwxvaJE3NM+P8aNihPizoyAEa23UA==
+X-Google-Smtp-Source: APXvYqzrRPTOdVe3rVj/q8mFjvCWiOOTxiTZFSQn4yLUcuktimo2dgWY3hYMbxvwByEex6FdTHrCbR8bcgRkCp0CTm8=
+X-Received: by 2002:a67:fb5a:: with SMTP id e26mr1980049vsr.200.1572358542448; 
+ Tue, 29 Oct 2019 07:15:42 -0700 (PDT)
+MIME-Version: 1.0
+References: <20191021064413.19840-1-manivannan.sadhasivam@linaro.org>
+ <20191021064413.19840-5-manivannan.sadhasivam@linaro.org>
+In-Reply-To: <20191021064413.19840-5-manivannan.sadhasivam@linaro.org>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Tue, 29 Oct 2019 15:15:31 +0100
+Message-ID: <CACRpkdaZFr+DAthpoEeJgMeqhQfMbDNcd9dVQOEhqfqP6MmP=Q@mail.gmail.com>
+Subject: Re: [PATCH v3 4/4] MAINTAINERS: Add entry for RDA Micro GPIO driver
+ and binding
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_071518_569421_0D339B1A 
-X-CRM114-Status: GOOD (  12.24  )
+X-CRM114-CacheID: sfid-20191029_071544_682292_C8AA5DD8 
+X-CRM114-Status: UNSURE (   7.86  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -83,66 +93,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ linux-unisoc@lists.infradead.org, Orson Zhai <orsonzhai@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MMC interrupts were being enabled, which is not what we want because it
-will lead to a storm of interrupts that are not handled at all. Fix it
-by disabling all MMC interrupts for XGMAC.
+On Mon, Oct 21, 2019 at 8:44 AM Manivannan Sadhasivam
+<manivannan.sadhasivam@linaro.org> wrote:
 
-Fixes: b6cdf09f51c2 ("net: stmmac: xgmac: Implement MMC counters")
-Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
+> Add MAINTAINERS entry for RDA Micro GPIO driver and devicetree binding.
+>
+> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 
----
-Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>
-Cc: Jose Abreu <joabreu@synopsys.com>
-Cc: "David S. Miller" <davem@davemloft.net>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: netdev@vger.kernel.org
-Cc: linux-stm32@st-md-mailman.stormreply.com
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
----
- drivers/net/ethernet/stmicro/stmmac/mmc_core.c | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+Patch applied!
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/mmc_core.c b/drivers/net/ethernet/stmicro/stmmac/mmc_core.c
-index a223584f5f9a..252cf48c5816 100644
---- a/drivers/net/ethernet/stmicro/stmmac/mmc_core.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/mmc_core.c
-@@ -176,6 +176,7 @@
- #define MMC_XGMAC_RX_PKT_SMD_ERR	0x22c
- #define MMC_XGMAC_RX_PKT_ASSEMBLY_OK	0x230
- #define MMC_XGMAC_RX_FPE_FRAG		0x234
-+#define MMC_XGMAC_RX_IPC_INTR_MASK	0x25c
- 
- static void dwmac_mmc_ctrl(void __iomem *mmcaddr, unsigned int mode)
- {
-@@ -333,8 +334,9 @@ static void dwxgmac_mmc_ctrl(void __iomem *mmcaddr, unsigned int mode)
- 
- static void dwxgmac_mmc_intr_all_mask(void __iomem *mmcaddr)
- {
--	writel(MMC_DEFAULT_MASK, mmcaddr + MMC_RX_INTR_MASK);
--	writel(MMC_DEFAULT_MASK, mmcaddr + MMC_TX_INTR_MASK);
-+	writel(0x0, mmcaddr + MMC_RX_INTR_MASK);
-+	writel(0x0, mmcaddr + MMC_TX_INTR_MASK);
-+	writel(MMC_DEFAULT_MASK, mmcaddr + MMC_XGMAC_RX_IPC_INTR_MASK);
- }
- 
- static void dwxgmac_read_mmc_reg(void __iomem *addr, u32 reg, u32 *dest)
--- 
-2.7.4
-
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
