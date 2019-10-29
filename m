@@ -2,74 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E714EE8739
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 12:34:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BFF1EE873F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 12:36:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=n6wY9wtaoDeVl9UdsxnhkK2aJ5vHNCZcCOHWv4sJAaY=; b=LQM5tUN7rZyfVKOhDvhNk2hQR
-	ot/dc99aWUbbEzk4XqJoYXp2S5X391cADqsbQZaB1UJKnNjoOnI7rmpE4WMhLArHate917qEN4qNG
-	UlkCObEXXwd0kB5sFIss8izuBMzkxdiz41CSUMcVfPvAnKhlYEXGqltdd5doXIXcQ63HA/0O0Wn6s
-	DaJAuE13FH5mzfoJ+x17MbtJ33BT3B2a6cXDuwlh2myQ7uKnwbSOO0P09fjAIEExR/7GGBwWMShQM
-	SndNXJVQDCZgHDN3anivjB2QSZP5iVBlcEN+HFnCpcAyvDO/pQoHb5D5r3XACV+sRkQ/u5LbYQg8d
-	TbWZNGppw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ErKrKG40z/F7no2/dedMFHV9jrfIUnZLxkCD+2Ncr4A=; b=SEK2FK4wVX2gSp
+	kt7SJo47TRoHXg9LBX4w3ackEYihngGB7Na3qWFEtyh7qxDHJtM/k5PBdFw+tYefe5poeUualadrL
+	geQo2Aw4eTl6vYZ9z4Ipi22amr+171/7c2v5soo+zhSEGuVnBdF9G3tlpebJzxmFKyIe2mmEUoUvw
+	vmiF5ccaqWzKzXMmel2zArD8w3rw2uPlVvmTbfC7SKQCzwUz3jREF7nDFAqG9TsU36BP01/XwzH8e
+	qh6CzL4nCG8Vm3xGBojHvvhyjr2z+8sd1ZH8zJPNx0EwUWbqqpdxgM3Wj8v0J3D6PPKkhoZgvSaxH
+	HAc46dG7u1u4hLOsw/7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPPli-0004CS-8w; Tue, 29 Oct 2019 11:34:34 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1iPPnU-0005z7-3y; Tue, 29 Oct 2019 11:36:24 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPPlX-0004A3-Mo
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 11:34:25 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x9TBYE6Y026265;
- Tue, 29 Oct 2019 06:34:14 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1572348854;
- bh=RDinzMR4Ria3R4mBnaWd0juZSdCsUMS3GbDYK5lHLNQ=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=OF+PtD0A6jilz+Gk9mhlGVOIboLizXeeBqNcNLDQCZ55L8oFwn1XcvqCAKNDeOzkY
- uriNa0eR/uDjp2xnFK46kFctySB8VS93SwUE1jQRA9Sw5fRvkmmQkVshsSWUFjHFJu
- MhO6Gnk4Djkwy/ZGrk0TmWs9HBaGizyoBOIDBC10=
-Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x9TBYE5p093662
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 29 Oct 2019 06:34:14 -0500
-Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 29
- Oct 2019 06:34:01 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE104.ent.ti.com
- (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 29 Oct 2019 06:34:01 -0500
-Received: from [192.168.2.14] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x9TBYCoW061133;
- Tue, 29 Oct 2019 06:34:12 -0500
-Subject: Re: [PATCH 0/2] [PATCH 0/2] arm64: dts: ti: k3-j721e: Add USB ports
-To: <t-kristo@ti.com>, <nm@ti.com>
-References: <20191028093730.23094-1-rogerq@ti.com>
-From: Roger Quadros <rogerq@ti.com>
-Message-ID: <d684ada8-5a98-b02e-be0b-c133e2f44b1f@ti.com>
-Date: Tue, 29 Oct 2019 13:34:11 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iPPnI-0005yf-1l
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 11:36:13 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 777EA20862;
+ Tue, 29 Oct 2019 11:36:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572348971;
+ bh=tlknb9NnrARnO/8Jo6xu68QaVQIAbSopr0LHFOUwm+k=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=geGLqSfEdrnzxSm9FQfIRzAiLbtD2iIt8lyKJ6YUWqb3eNbFWglTqSONgv6jbCViU
+ x0FY/02oXRKa8MrrU7G9szdibvAeRlEz73QLwwFPnfKdf6BbU8RjD9LQ7OSKnC/Klv
+ qat2wwlVHkM5hSsLE0PUbjqz98Pz8DrGwv5Q8IRU=
+Date: Tue, 29 Oct 2019 11:36:07 +0000
+From: Will Deacon <will@kernel.org>
+To: Julien Grall <julien.grall@arm.com>
+Subject: Re: [PATCH] arm64: cpufeature: Export Armv8.6 Matrix feature to
+ userspace
+Message-ID: <20191029113606.GB12103@willie-the-truck>
+References: <20191025171056.30641-1-julien.grall@arm.com>
+ <20191029111517.GE11590@willie-the-truck>
+ <f58cb01f-4543-6041-df2d-7ca7ba887bc9@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20191028093730.23094-1-rogerq@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <f58cb01f-4543-6041-df2d-7ca7ba887bc9@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_043423_830238_D3613233 
-X-CRM114-Status: GOOD (  15.65  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191029_043612_115639_1EA851DA 
+X-CRM114-Status: GOOD (  15.12  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -91,57 +79,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: catalin.marinas@arm.com, Dave.Martin@arm.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, suzuki.poulose@arm.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Tero,
+On Tue, Oct 29, 2019 at 11:26:41AM +0000, Julien Grall wrote:
+> On 29/10/2019 11:15, Will Deacon wrote:
+> > On Fri, Oct 25, 2019 at 06:10:56PM +0100, Julien Grall wrote:
+> > > This patch provides support for reporting the presence of Armv8.6
+> > > Matrix and its optional features to userspace.
+> > 
+> > Are you sure this is 8.6 and not earlier?
+> 
+> This was introduced by Armv8.6 see [1] but allowed to be used by Armv8.2 and
+> onwards.
 
-On 28/10/2019 11:37, Roger Quadros wrote:
-> Hi,
-> 
-> This series enables USB 2.0 support on j721e-common-proc-board.
-> 
-> The USB0 is available as a type-C port. Although it is super-speed
-> capable, we limit it to high-speed for now till SERDES PHY
-> support is added.
-> 
-> USB1 is routed via on-board USB2.0 hub to 2 type-A ports. USB1
-> is used as high-speed host.
-> 
-> Controller side DT binding is approved [1]. Driver [2] is yet to be
-> in USB tree. This series is safe to be picked for -next.
+That doesn't mean an awful lot though, especially then the features are
+referred to in the docs as things like "ARMv8.2-F64MM".
 
-Driver is now in Maintainer's tree.
+> > > @@ -227,6 +229,12 @@ infrastructure:
+> > >        +------------------------------+---------+---------+
+> > >        | Name                         |  bits   | visible |
+> > >        +------------------------------+---------+---------+
+> > > +     | F64MM                        | [56-59] |    y    |
+> > > +     +------------------------------+---------+---------+
+> > > +     | F32MM                        | [52-55] |    y    |
+> > > +     +------------------------------+---------+---------+
+> > > +     | I8MM                         | [44-47] |    y    |
+> > > +     +------------------------------+---------+---------+
+> > 
+> > Urgh, we're inconsistent in our bitfields. Some are [lo-hi] whilst others
+> > are [hi-lo]. Please can you fix that in a preparatory patch? I prefer
+> > [hi-lo] and it matches the arch docs.
+> 
+> Sure.
 
-https://git.kernel.org/pub/scm/linux/kernel/git/balbi/usb.git/commit/?h=testing/next&id=387c359b84f71ca29c1a9fa24293c65a257f6bf5
+Thanks.
 
-> 
-> [1] https://lkml.org/lkml/2019/10/25/1036
-> [2] https://lkml.org/lkml/2019/10/24/371
-> 
-> Series is based on top of Tero's ti-k3-next branch.
-> 
-> cheers,
-> -roger
-> 
-> Roger Quadros (2):
->    arm64: dts: ti: k3-j721e-main: add USB controller nodes
->    arm64: dts: ti: k3-j721e-common-proc-board: Add USB ports
-> 
->   .../dts/ti/k3-j721e-common-proc-board.dts     | 35 +++++++++++
->   arch/arm64/boot/dts/ti/k3-j721e-main.dtsi     | 60 +++++++++++++++++++
->   arch/arm64/boot/dts/ti/k3-j721e.dtsi          |  2 +
->   3 files changed, 97 insertions(+)
-> 
-
--- 
-cheers,
--roger
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
-Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
