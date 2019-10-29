@@ -2,62 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10AB7E7FC5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 06:35:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 639E6E8007
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 07:04:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=spQ4x3BkiU6cdF3ArvOAqw4yY9wT6kUpr3BnPVCuQJY=; b=eK/lDdHGdw6k3L
-	xQppEPVZMHNeCLC3B4Tn5AVXB9jl+ekz7gn/2U19PeLuWtUEFTIoq2IKaxwQLAlRLjXRZ7zpsaOAs
-	EDeOS6RkyJ48p2CAdI5L0l0dIBIwl0AHO9MSEykoCj76uJCt/QTkzD5jsjcHXdIUlQoWc2a1Og5Lg
-	KZkETBjsnX/ESK5cLpKfudaqXjop4yQb/4YeL7gtPVL330CmbklFR+WzxAtA6UJY80FJa3+Dk2jCC
-	H7sY9LTIDfaH4yketrI9VhBGdmcB6V/b4Ukgxr92glWIRteVc1KTRgmTjI2y9hdkjho71DLSs7SWv
-	qhMBgG+/xnRKK2QzCF8A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ZHCECAfz1BZKVswO8a5479lTTJp+j2orhIsu2JhisB8=; b=aP3mPiupCu5QeZ
+	W0crGcInCEPaQ8nsRqdQ8ALQYIN+Mks35fuAwf0WuPG/V1W9bsX+hsCPl/8pnc+t6MPhYeWVsNxrD
+	wywesECgz7bpRWVBsYzvHqG+19Vme+nMBIvCrdGTagE/ditCD9KE9duE1qLuotscSlkIiRT0umJK7
+	0ROPSo7wvY4ZsuSEU5jFyZEaX1JJ49t8M6hz6qqi8hsoo5hk0obkcPT2x58meezXhvo2cYscneaop
+	78XSW8lRINXw11elkn0psDc329tyTvfAikn+XcecQ4BA6pJFCaCZr1rGmyAQFt6tmkpX6gqmJcUvn
+	MvkKqeLiF94jbZ4UVyPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPK9j-0001P9-Fy; Tue, 29 Oct 2019 05:34:59 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPK9U-0001OV-ME
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 05:34:46 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 061971F1;
- Mon, 28 Oct 2019 22:34:41 -0700 (PDT)
-Received: from e107533-lin.cambridge.arm.com (e107533-lin.shanghai.arm.com
- [10.169.109.76])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3FE2F3F71F;
- Mon, 28 Oct 2019 22:37:26 -0700 (PDT)
-Date: Tue, 29 Oct 2019 13:34:24 +0800
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: Re: [PATCH 10/13] cpuidle: psci: Add a helper to attach a CPU to its
- PM domain
-Message-ID: <20191029053414.GA4481@e107533-lin.cambridge.arm.com>
-References: <20191010113937.15962-1-ulf.hansson@linaro.org>
- <20191010113937.15962-11-ulf.hansson@linaro.org>
- <20191024163117.GB22036@bogus>
- <CAPDyKFo2Fma1_JMSd39bmQ3X1PV4SmQ0AfEuKyX5KLLe83ycmA@mail.gmail.com>
- <20191027023023.GC18111@e107533-lin.cambridge.arm.com>
- <CAPDyKFr1LJ_HP1kcfMh7LE5j7nUT9KzH4vhdCSEE9wg6RfYErQ@mail.gmail.com>
- <20191028074905.GA27884@e107533-lin.cambridge.arm.com>
- <CAPDyKFotv0Fu5jXqhv7tCqYb44HaAnOjWnQS0B3nS04sUmTrUg@mail.gmail.com>
+	id 1iPKca-00037N-14; Tue, 29 Oct 2019 06:04:48 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iPKcP-000373-Et
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 06:04:38 +0000
+Received: by mail-pg1-x544.google.com with SMTP id 15so8766289pgt.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 28 Oct 2019 23:04:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=W39xK+ySX7H/kO8T3j/KlPzC4OMMNyJJ/QXMm12Hpvo=;
+ b=wFrRxMABLQ165DVY6sbzKHMB7LJ758eBnstL/y7tQiTvNJ9qfonFBbEVwfm1VzIvhs
+ S8hLdkn+0DTr6yTaAHC5L8W9b3kpDiVc4mfQwg8oO95RSOabs0CO4WrVpZ365J6VX0gV
+ on2uKoTVeYVQr9p+1nh+gN3JFQMEPC081QZU8CGnjIihtRlciaDuYCmXQaLntpBK1ce6
+ o7VnDWn4v6iHmLBg8J6MkEMLrR3vHk1RB2SSc+ys4dF47ak0gBDS7/xKfkKV1OFtbxI3
+ j9c23q+7PiFpC5iotdyjTlXjR4CD39Y+6SGhAfa8+kOpGvl7urHlU/+X9GptTa8zT4xG
+ tt7w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=W39xK+ySX7H/kO8T3j/KlPzC4OMMNyJJ/QXMm12Hpvo=;
+ b=UVj6mts+YEhkO2Yq7m+EXzJPJK/WQcZ/MG/FYWLaOlsBXznjv8ji9IhFXv1JkPokEA
+ NNu5poyjdZJHBqhM6ypyrbIcoHV1wFT3E2u9DH6qKZjMdAtd8q/rKZJtPhfx+MqdOIQL
+ kyHzVAgbdDenDrxkDfK0miJeosxl6sZqFSlubwq3SfH6aOaDapCUWgygysjjyJOzYRhN
+ ZeYhsf75i6YxKD4MhphEL8m1oSWe5aYR6sbtXHIi2yAuHSZyDjR8qwDoTrua22T/6liM
+ aJPvPm20D+cLWQat8UoR0Gb/8wXFUkKQqd80dqp6W30030gvFx2HRJmCQRLNVlSjaUrz
+ KMfQ==
+X-Gm-Message-State: APjAAAXTSBM2BGr+tXa4r5EVyKk+Cx7o182N5Pt4JE3FVcVMgzh/6Euw
+ 5acVxdJiWzugytMFs9qek01Uhlr0tmQ=
+X-Google-Smtp-Source: APXvYqwOn0neNqJeKEUk/f0BRI2tYbCUjSJDkCwqVRLXz8R0SbZ3JB398pufLg4JdNAgA2Ia3mCNHA==
+X-Received: by 2002:a17:90b:282:: with SMTP id
+ az2mr3930080pjb.23.1572329076618; 
+ Mon, 28 Oct 2019 23:04:36 -0700 (PDT)
+Received: from localhost.localdomain
+ (104-188-17-28.lightspeed.sndgca.sbcglobal.net. [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id q34sm1338607pjb.15.2019.10.28.23.04.35
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 28 Oct 2019 23:04:35 -0700 (PDT)
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: [PATCH] arm64: cpufeature: Enable Qualcomm erratas
+Date: Mon, 28 Oct 2019 23:04:32 -0700
+Message-Id: <20191029060432.1208859-1-bjorn.andersson@linaro.org>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAPDyKFotv0Fu5jXqhv7tCqYb44HaAnOjWnQS0B3nS04sUmTrUg@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_223444_820367_7F9EADCD 
-X-CRM114-Status: GOOD (  34.09  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191028_230437_509329_8F153ED7 
+X-CRM114-Status: GOOD (  10.47  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,155 +97,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
- Linux PM <linux-pm@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Kevin Hilman <khilman@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Sudeep Holla <sudeep.holla@arm.com>, Niklas Cassel <niklas.cassel@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arm-msm@vger.kernel.org, stable@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 28, 2019 at 10:45:22AM +0100, Ulf Hansson wrote:
-> + Niklas
->
-> On Mon, 28 Oct 2019 at 08:49, Sudeep Holla <sudeep.holla@arm.com> wrote:
-> >
-> > On Mon, Oct 28, 2019 at 08:35:55AM +0100, Ulf Hansson wrote:
-> > > On Sun, 27 Oct 2019 at 03:30, Sudeep Holla <sudeep.holla@arm.com> wrote:
-> > > >
-> > > > On Thu, Oct 24, 2019 at 06:47:43PM +0200, Ulf Hansson wrote:
-> > > > > On Thu, 24 Oct 2019 at 18:31, Sudeep Holla <sudeep.holla@arm.com> wrote:
-> > > > > >
-> > > > > > On Thu, Oct 10, 2019 at 01:39:34PM +0200, Ulf Hansson wrote:
-> > > > > > > Introduce a PSCI DT helper function, psci_dt_attach_cpu(), which takes a
-> > > > > > > CPU number as an in-parameter and tries to attach the CPU's struct device
-> > > > > > > to its corresponding PM domain.
-> > > > > > >
-> > > > > > > Let's makes use of dev_pm_domain_attach_by_name(), as it allows us to
-> > > > > > > specify "psci" as the "name" of the PM domain to attach to. Additionally,
-> > > > > > > let's also prepare the attached device to be power managed via runtime PM.
-> > > > > > >
-> > > > > > > Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
-> > > > > > > ---
-> > > > > > >  drivers/cpuidle/cpuidle-psci-domain.c | 21 +++++++++++++++++++++
-> > > > > > >  drivers/cpuidle/cpuidle-psci.h        |  6 ++++++
-> > > > > > >  2 files changed, 27 insertions(+)
-> > > > > > >
-> > > > > > > diff --git a/drivers/cpuidle/cpuidle-psci-domain.c b/drivers/cpuidle/cpuidle-psci-domain.c
-> > > > > > > index 3f5143ccc3e0..7429fd7626a1 100644
-> > > > > > > --- a/drivers/cpuidle/cpuidle-psci-domain.c
-> > > > > > > +++ b/drivers/cpuidle/cpuidle-psci-domain.c
-> > > > > > > @@ -9,9 +9,11 @@
-> > > > > > >
-> > > > > > >  #define pr_fmt(fmt) "CPUidle PSCI: " fmt
-> > > > > > >
-> > > > > > > +#include <linux/cpu.h>
-> > > > > > >  #include <linux/device.h>
-> > > > > > >  #include <linux/kernel.h>
-> > > > > > >  #include <linux/pm_domain.h>
-> > > > > > > +#include <linux/pm_runtime.h>
-> > > > > > >  #include <linux/psci.h>
-> > > > > > >  #include <linux/slab.h>
-> > > > > > >  #include <linux/string.h>
-> > > > > > > @@ -279,3 +281,22 @@ static int __init psci_idle_init_domains(void)
-> > > > > > >       return ret;
-> > > > > > >  }
-> > > > > > >  subsys_initcall(psci_idle_init_domains);
-> > > > > > > +
-> > > > > > > +struct device *psci_dt_attach_cpu(int cpu)
-> > > > > > > +{
-> > > > > > > +     struct device *dev;
-> > > > > > > +
-> > > > > > > +     /* Currently limit the hierarchical topology to be used in OSI mode. */
-> > > > > > > +     if (!psci_has_osi_support())
-> > > > > > > +             return NULL;
-> > > > > > > +
-> > > > > > > +     dev = dev_pm_domain_attach_by_name(get_cpu_device(cpu), "psci");
-> > > > > >
-> > > > > > This clarifies the need for the fixed name. But why not just go by index 0
-> > > > > > as the consumer of these psci power-domains will have only one power domain
-> > > > > > entry. Why do we need this name compulsory ?
-> > > > >
-> > > > > The idea is to be future proof. If I recall correctly, the CPU node on
-> > > > > some QCOM SoCs may also have "CPR" PM domain specified, thus
-> > > > > "multiple" power-domains could be specified.
-> > > > >
-> > > >
-> > > > I am sure we don't want to mx-n-match any power domain provider with
-> > > > psci. And also I expect in these above mentioned cases, there won't be any
-> > > > psci power domains.
-> > > >
-> > > > > In any case, using "psci" doesn't really hurt, right?
-> > > > >
-> > > >
-> > > > Doesn't but I don't see need for one as only one should exist, as mentioned
-> > > > above we don't want mix-n-match with psci ever.
-> > >
-> > > Not sure I get your point, sorry.
-> > >
-> > > The CPU could very well be attached to more than one power-domain. Of
-> > > course not multiple "PSCI power-domains". One could be an PSCI power
-> > > domain and another one could be the QCOM CPR (Core power reduction)
-> > > power domain.
-> > >
-> >
-> > And who controls QCOM CPR ? If it's OSPM, this model is broken.
-> > I mean OSPM can vote, but the control *has* to be in PSCI firmware to
-> > change any CPU power state.
-> >
-> > If it's firmware controlled, then there's no need to explicitly specify
-> > both to OSPM.
->
-> This is about OPP and CPUFreq, so it has nothing to do with PSCI.
->
-> >
-> > > Have a look at these binding, there are already upstream, perhaps that
-> > > clarifies this?
-> > > Documentation/devicetree/bindings/opp/qcom-nvmem-cpufreq.txt
-> > >
-> >
-> > OK, I will have a look.
->
-> Great.
->
-> I have looped in Niklas Casell, he should be able to answer any more
-> detailed questions in regards to QCOM CPR, if that is needed.
->
+With the introduction of 'cce360b54ce6 ("arm64: capabilities: Filter the
+entries based on a given mask")' the Qualcomm erratas are no long
+applied.
 
-So had a look at the DT bindings and standalone it looks fine.
-But when it's mixed like the way you describe: yikes!
+The result of not applying errata 1003 is that MSM8996 runs into various
+RCU stalls and fails to boot most of the times.
 
-Why does a power(oh wait it's actually performance domain!) is combined
-with a device whose actual power is controlled by only by PSCI/firmware
-is associated along with another power(again actally performance)
-domain.
+Give both 1003 and 1009 a "type" to ensure they are not filtered out in
+update_cpu_capabilities().
 
-This whole representation of performance domain as power domain in the
-bindings is a *mess*. If Linux kernel chose to implement it as part
-of genpd, that's fine. But we should have had a separate binding for
-that.
+Fixes: cce360b54ce6 ("arm64: capabilities: Filter the entries based on a given mask")
+Cc: stable@vger.kernel.org
+Reported-by: Mark Brown <broonie@kernel.org>
+Suggested-by: Will Deacon <will@kernel.org>
+Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+---
+ arch/arm64/kernel/cpu_errata.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-> In any case, we are discussing whether we should require a
-> power-domain-names set to "psci" for the CPU node - and I don't see
-> how that could hurt. Right?
->
+diff --git a/arch/arm64/kernel/cpu_errata.c b/arch/arm64/kernel/cpu_errata.c
+index df9465120e2f..cdd8df033536 100644
+--- a/arch/arm64/kernel/cpu_errata.c
++++ b/arch/arm64/kernel/cpu_errata.c
+@@ -780,6 +780,7 @@ const struct arm64_cpu_capabilities arm64_errata[] = {
+ 	{
+ 		.desc = "Qualcomm Technologies Falkor/Kryo erratum 1003",
+ 		.capability = ARM64_WORKAROUND_QCOM_FALKOR_E1003,
++		.type = ARM64_CPUCAP_SCOPE_LOCAL_CPU,
+ 		.matches = cpucap_multi_entry_cap_matches,
+ 		.match_list = qcom_erratum_1003_list,
+ 	},
+@@ -788,6 +789,7 @@ const struct arm64_cpu_capabilities arm64_errata[] = {
+ 	{
+ 		.desc = "Qualcomm erratum 1009, ARM erratum 1286807",
+ 		.capability = ARM64_WORKAROUND_REPEAT_TLBI,
++		.type = ARM64_CPUCAP_SCOPE_LOCAL_CPU,
+ 		ERRATA_MIDR_RANGE_LIST(arm64_repeat_tlbi_cpus),
+ 	},
+ #endif
+-- 
+2.23.0
 
-Honestly I don't like this, but we don't have any choice I think.
-So yes, but you need to update the binding. Hope new platform move
-all these performance domain control part into firmware and have single
-control from kernel unlike the present generation which OPP through
-clock or cpufreq and the voltage/performance comtrol via genpd.
-
---
-Regards,
-Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
