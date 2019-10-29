@@ -2,77 +2,132 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DFB4E8A95
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 15:17:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69CFCE8AC5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 15:28:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3Vw8b6YSBIeOzcBX7GK85cwk0jhd5KgM0lLKzbnPr9w=; b=JcRYOQDkXvlrOZ
-	JmJc0qG4m+Kk56ljUIXnEYUU0qn+K+pj3NJsak3APtk/WwRANEr+yC6mES2Wqc5k9dcv/S1TeHxmU
-	4Ejy0qGmYn8m3xXjdR6U0ciuz8WopZAEw3HeenjevA0zMGTsPi6Xg5vjfVY3BUAnggCH2Py/mKoAz
-	sC54jbbQQYROLXUc5URcK/kWF6FhukNMRWYvJ/PFxkgmB4DAhtPW0RUzcqv/JeEAV5hBvulZ7Z6sP
-	qKU9STlvdvgNg2hn4vLV79mSvuunXgNi41Bhw/9nwQEViHMwppev72lFm7EPDLWDFwSwsY0aoW9dY
-	2TwQQs4flwmNG8Ustyxw==;
+	List-Owner; bh=60ObMwzl6uinyszFn+SPZdNpKKHoVJtAuOUGmi4mBFY=; b=fj3Gn1gvsEXJc7
+	tp3WxCsbipsRB9ZgaN1j84qpGIL7Xxv0g+5dnUn1vX1BwP1GQewa1m9wALh3opMCOSbVre6MIWvsi
+	mZ3NVTooNzmEFG0bMN7oQ6ZIOspilj2RrQq4mLd25Dt9XuZEMa23ZpoSmI2PlCPXuZHyY0EYSjbqa
+	Qvm+WQHlIyzuGCu3VSvwNYSdcEr0LklmqFrBfCiTQuLvXMfbh0w8OImXtrEIWFzJ1s3tU1zAR3GiD
+	sev3UWBml5OcAaHxIYMOMQ+JvuR7T/O6pHBVTzlpNJe9cbL1AFpeXiBFJRwYsbrEqZ9MllweVABxj
+	zhRvs3kKRje4uh48PEOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPSJa-0004zL-Ry; Tue, 29 Oct 2019 14:17:43 +0000
-Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
+	id 1iPSUK-0000iY-5p; Tue, 29 Oct 2019 14:28:48 +0000
+Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPSHg-0002vs-8R
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 14:15:46 +0000
-Received: by mail-vs1-xe41.google.com with SMTP id y129so8825922vsc.6
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 29 Oct 2019 07:15:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=2CJkMB8W25QC+LmwHZCR/dC2OeYvdCpp2yKraECtwkc=;
- b=erCRbeIBHUu53eIreClKHV+uY6SMssROpbDKJZMSC3l+mDep04YpyeFnPKet5PX5N1
- K6d9GL7q+TBbHhpf38xASFO/TXfXIgOnQd+2jwtbABwkUzNKRv4crlJCQ5sm33YkfEj4
- u0npQzAAraEWJu+naiJKHKuW/DZPeUOAf7F1bBLeNGslfkb7ZIPfYWSV9H/PfDxih3hV
- coNmtYtFiskJu7ap8vyMmzTx37J9AxaFbD9LknHJc/hx3PVruIT1Bbo9+aHjnSy/QjoV
- 6LB1xAnri/kSOeQaJ0PsMW1btfvx/BA9yOxpu4tBlBCWlPodHSRXiAFe8R7+Kv+9rPOU
- vfBA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=2CJkMB8W25QC+LmwHZCR/dC2OeYvdCpp2yKraECtwkc=;
- b=rQ4chtpV+hMuMrlpHCeOfMRiuE3GMLfcU30jyYAGvjGsVtQ2GPeXuf1VfyN5pEgeWl
- 3Cmtyi2obzOeqH2MF+RDunYW9Fyju8YQlOOsgLFcGPqF7FzfKJVH7rWkHAHSsHSFWeu/
- 6FtyxOzohBlDNQb1NWGX8SKzQrvfSa/BvAfJc30qTQpKJF8/ufJ1w1UQjqxQMdRYRcZk
- TKigZg+kL+/aFqUD6zg3luqtH5GHFLCkBDwrRhAP04GY/5OwKFsMPvewQBrHnpwsPZnx
- k9bjXnOzMdD6OeRfWD5o6sRvEDbGxf9hKaxJ0+MO2uR9666A7bmNgEZT2Y/17DXvLeXR
- Hqcg==
-X-Gm-Message-State: APjAAAXXw9biAy89suJV671NN+qHY1SxPQcXM06vlBlsu2oHG8iSx+L9
- SQ5lMovQGnhGezwxvaJE3NM+P8aNihPizoyAEa23UA==
-X-Google-Smtp-Source: APXvYqzrRPTOdVe3rVj/q8mFjvCWiOOTxiTZFSQn4yLUcuktimo2dgWY3hYMbxvwByEex6FdTHrCbR8bcgRkCp0CTm8=
-X-Received: by 2002:a67:fb5a:: with SMTP id e26mr1980049vsr.200.1572358542448; 
- Tue, 29 Oct 2019 07:15:42 -0700 (PDT)
+ id 1iPSU6-0000i8-So
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 14:28:36 +0000
+Received: from mailhost.synopsys.com (badc-mailhost1.synopsys.com
+ [10.192.0.17])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 89C9BC0C3C;
+ Tue, 29 Oct 2019 14:28:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1572359314; bh=h5gtIpA8YjzCDEZUirmF08xpzRXiU54ysGbGHhBp+NU=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=fGGfN+/tWisCH5qkvfJs28cl684dihRMQASEuYnelqeOySyISsAh0K1ykX9ziz3Ux
+ lZ9A/3jfyxQ++06C5HGnzf4bhv318ga92yQ2CewaXJiOhdLwN3Qwe2ffiIZR957fcu
+ 37G/b4horxHIiezLiK8lmaDkuWpPTdfUClx6mQqXM8UYskyuWh/02jCEd80brB26GZ
+ m5MSoz0qK3W8lQhKNA+VlskBJI1Rmc82jpak95RODD+afmCow1SSTRSqGsflI3alDC
+ py5ekSpkFvXGNj1YKCWA8CV8BakNUqU+bxyNtSYWwX+o4zrDb+Zor4rbblR1Yh7zoo
+ +6swdSp0ojmFg==
+Received: from US01WEHTC3.internal.synopsys.com
+ (us01wehtc3.internal.synopsys.com [10.15.84.232])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id BA02DA0085;
+ Tue, 29 Oct 2019 14:28:33 +0000 (UTC)
+Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
+ US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Tue, 29 Oct 2019 07:28:33 -0700
+Received: from NAM01-BN3-obe.outbound.protection.outlook.com (10.13.134.195)
+ by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Tue, 29 Oct 2019 07:28:33 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=PpahytwP8H2v86B5BQlR7MnNGIkUuReSy+l9YdjBJlC1XYA6mAVq4TzxLxZvyaTtdMFL2qNt+2H05KUYNYhvk1X3xhfXR0bs0Kx8SbgJWXtWlsdLWhmQ34vgrtrcs+cI1E4eB33jCJhGgnafErwfEbLwryfBiCdzn5r9cvOf7zgXE3U9hPf0t93I885RBHUfbDyjPRvPTSjzn3hXBf+g0biS4Dn+5DaIKtIMswX/1kdzplaFfoHrjAEB9wdPC+gM0W2vpRHZUfm0HKg7GqwOz/v0RQdUxZH3qUg+o66n1RAIiHEeb7oZE4IfNo6/Di3Mbxe4wkVBr/0TWXlQBWMgjA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=h5gtIpA8YjzCDEZUirmF08xpzRXiU54ysGbGHhBp+NU=;
+ b=O2xAbYiXSQ8R/XJpYC5vPvwTgCAnIeN7eizyTR+Cs1XMn6puuQ/JzhiLsQTlTvmq1kEe6sB95pH6AdxwA3pVMAJ62TWDmpTNVx5jSlDI6EffhfIFdguZlbG9pRcljybJ1d6v6fkjq2fhH5sSiF+j0rAR9BZv/3uBq5Coodyjwo0MxKdIgsxTzOwa73b4WMeUKJkCXpCdeMiEJeBXrCKSHFCLxD5g/KNIbrmkIRKHpa4UqCAxij7EWTRajtb17MHNwEpcAq75Xq51JC07pRRpGLu8DGLweduEmcDUU2zc4BWRtclEo7ePeui++cmL3vDUiKVBjOiJv5nyiaSNE05E3A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
+ dkim=pass header.d=synopsys.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=synopsys.onmicrosoft.com; s=selector2-synopsys-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=h5gtIpA8YjzCDEZUirmF08xpzRXiU54ysGbGHhBp+NU=;
+ b=EVbdTM4ZCcPh/Ea6C2Bhtk50G1lx5+owhkaJl0PWSCygTfz5Dv5XBOcKPpXO0EmtQ7ZAUEfsPPlEOA8R9aB2rp2EXzOZ/ZP7/p2Hgs036ZR+SLTq++zDFP8J3mMkjJoCWGmYim/Q2LBSwY6dfXW2+flsibpy3KnFmMD1CN9Ck2A=
+Received: from BN8PR12MB3266.namprd12.prod.outlook.com (20.179.67.145) by
+ BN8PR12MB3122.namprd12.prod.outlook.com (20.178.211.17) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2387.20; Tue, 29 Oct 2019 14:28:24 +0000
+Received: from BN8PR12MB3266.namprd12.prod.outlook.com
+ ([fe80::f060:9d3a:d971:e9a8]) by BN8PR12MB3266.namprd12.prod.outlook.com
+ ([fe80::f060:9d3a:d971:e9a8%5]) with mapi id 15.20.2408.018; Tue, 29 Oct 2019
+ 14:28:24 +0000
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: Jose Abreu <Jose.Abreu@synopsys.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>
+Subject: RE: [PATCH net 5/9] net: stmmac: xgmac: Only get SPH header len if
+ available
+Thread-Topic: [PATCH net 5/9] net: stmmac: xgmac: Only get SPH header len if
+ available
+Thread-Index: AQHVjmNlGpdY/wr1i0CUE5JPinf626dxrUcA
+Date: Tue, 29 Oct 2019 14:28:24 +0000
+Message-ID: <BN8PR12MB32667D41FC3A12A717F77BB5D3610@BN8PR12MB3266.namprd12.prod.outlook.com>
+References: <cover.1572355609.git.Jose.Abreu@synopsys.com>
+ <ef314ca26e4a621fa8464d76aed07882dd4b0ee5.1572355609.git.Jose.Abreu@synopsys.com>
+In-Reply-To: <ef314ca26e4a621fa8464d76aed07882dd4b0ee5.1572355609.git.Jose.Abreu@synopsys.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=joabreu@synopsys.com; 
+x-originating-ip: [83.174.63.141]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 88db2f14-6103-4fb8-7329-08d75c7c41a2
+x-ms-traffictypediagnostic: BN8PR12MB3122:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <BN8PR12MB31221A14BC2D0BFAEC071523D3610@BN8PR12MB3122.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3513;
+x-forefront-prvs: 0205EDCD76
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(366004)(376002)(396003)(136003)(346002)(39860400002)(199004)(189003)(4744005)(5660300002)(14454004)(99286004)(316002)(33656002)(11346002)(66446008)(81166006)(26005)(76116006)(64756008)(4326008)(66946007)(66556008)(6506007)(476003)(66476007)(478600001)(256004)(55016002)(8936002)(6116002)(3846002)(2906002)(186003)(25786009)(305945005)(74316002)(71190400001)(71200400001)(7736002)(2501003)(8676002)(486006)(6436002)(9686003)(66066001)(54906003)(102836004)(446003)(6246003)(86362001)(52536014)(81156014)(76176011)(229853002)(7696005)(110136005);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:BN8PR12MB3122;
+ H:BN8PR12MB3266.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: synopsys.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 4ozrLPE+l9IHUItzz4FclTut9we8v98P0UUqEBP7tjveQPmMU2SBfBQW1dAnysMFEvx51sWLzYId4FjOtrQpXyta0aUFU38WTCrhwoEmE22RXk81qqnnpXtTdyVvAQ3GoZAJLw2KshYYOk8YSAJmELkaCD1ro8hgabWozvabziICbPeJ7aa2QxCSBMXIKsbLDrS6ikFpI3esq/eUb4bnV/ouT/MUI0aNQATSv7Lj+1mHxwhF1TvncYnsQVlV6wnqMJlqodJYf6p/DBJOAioSLsNvljUiIP7A3QJLsnrRCeHewIXWrUIAJNevek3AP3W9AYcA/L1/gbgz1yvC2hOQz8hSrWAj+Kwc/qCXkmy56k9kMQ9jQ/mwQT/1v2fu7nRBY7WvKIxMkVGKXKPoyugBA1XLhu+wJa9m10QyeqNwWKJa2Kzy1WnZ1LjwVytWktmF
 MIME-Version: 1.0
-References: <20191021064413.19840-1-manivannan.sadhasivam@linaro.org>
- <20191021064413.19840-5-manivannan.sadhasivam@linaro.org>
-In-Reply-To: <20191021064413.19840-5-manivannan.sadhasivam@linaro.org>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 29 Oct 2019 15:15:31 +0100
-Message-ID: <CACRpkdaZFr+DAthpoEeJgMeqhQfMbDNcd9dVQOEhqfqP6MmP=Q@mail.gmail.com>
-Subject: Re: [PATCH v3 4/4] MAINTAINERS: Add entry for RDA Micro GPIO driver
- and binding
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+X-MS-Exchange-CrossTenant-Network-Message-Id: 88db2f14-6103-4fb8-7329-08d75c7c41a2
+X-MS-Exchange-CrossTenant-originalarrivaltime: 29 Oct 2019 14:28:24.1870 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Crk6S03bEL4m0NPQnXpTGWkzfjT5NUyBK1/UAjlPf3ooSibBv2fNyJgmwex88Nt4gS3eIBjmlRXDhc5gsOG3gw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN8PR12MB3122
+X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_071544_682292_C8AA5DD8 
-X-CRM114-Status: UNSURE (   7.86  )
+X-CRM114-CacheID: sfid-20191029_072835_000149_478A8A24 
+X-CRM114-Status: UNSURE (   8.20  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -93,27 +148,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- linux-unisoc@lists.infradead.org, Orson Zhai <orsonzhai@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ "David  S. Miller" <davem@davemloft.net>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 21, 2019 at 8:44 AM Manivannan Sadhasivam
-<manivannan.sadhasivam@linaro.org> wrote:
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+Date: Oct/29/2019, 14:14:49 (UTC+00:00)
 
-> Add MAINTAINERS entry for RDA Micro GPIO driver and devicetree binding.
->
-> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> Split Header length is only available when L34T == 0. Fix this by
+> correctly checking if L34T is zero before trying to get Header length.
 
-Patch applied!
+This is a typo, sorry. I mean:
 
-Yours,
-Linus Walleij
+"Split Header length is only available when L34T != 0."
+
+---
+Thanks,
+Jose Miguel Abreu
 
 _______________________________________________
 linux-arm-kernel mailing list
