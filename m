@@ -2,60 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 849FAE8314
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 09:20:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A4ADE8320
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 09:21:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=KFgc+Vy/bg7CPyOJdn2ydCd3BC8Z2qAvGOc00qXe2dY=; b=j0mh1jUQ+GT+/UdwTGVPskXv2
-	1QcSmecifK6WzaogkQE1GdmmSADgUi3f4ACwzyB9PcDCWVT0JfXG6syggGEOP1QTN230sFEDVUGIO
-	2Ikg1GPM3FLV3DptUq3eEzuIjaIXB6KhSm/5Q38lKLrLqHXOsRfMOEO5dsBiD2Z/4U5QNaGUUFyO1
-	j/9VG0NEZeEhEdUVsrIERcnICaXz1RTo1Nn1zlm7o279v6nxP9Dr3lv/bpUNcZ+M7GvZ8Z5ID5xt5
-	6PN+lYHm5bAqC4cGrBFBeyoMrFRi3sfyv0tl/3Ndf9z5K3JFeUHpPfAuvcEgjfHg2nHLYPDOEThZP
-	ilu4Sq2Aw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=U2icsGoQVebFZsnwn7HKJDSIzIapGqYyjjdzvWXq3tY=; b=TIXKwWUL483UCt
+	sxjGNtL/qhqydhk1kmQLxLVL3dURLpRjSlMmApT8HZMIdWc8GER4Z9XlL9u16SKARhLo/2t0Lkl9i
+	JhSZJteIFN4cpvh5MFBfhqYHFbr27wOy1+2fD5FjTYBn0anOmFgPpf+CGlYlNFi8+EMAxy/icEdZE
+	dutZtAlhg9Cby+FrIKTIbofTYPbS5s9tkuVIl0f8AYvyVdPmX9TZv0pmmW9+CfnTw4rl8b4RrG2Qq
+	ZNv/TfgPg5v2SRmzXrVoUUMg1jhj13X/imUfjR2nhb/ZnS8owaSUCZcKNbi2q4CZBbgDZAdVRZUz5
+	V8ZHbMBoozuBpvHUhkpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPMjO-0008WS-Ge; Tue, 29 Oct 2019 08:19:58 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iPMkr-0001cU-6z; Tue, 29 Oct 2019 08:21:29 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPMjE-0008VY-Eq
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 08:19:49 +0000
-Received: from localhost (unknown [91.217.168.176])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6D7BA2086A;
- Tue, 29 Oct 2019 08:19:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572337188;
- bh=ZRF796Wus2o0Ya1YW5Koj4SnZvUVISTZ2oEhfyYzeN0=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=wEVhW4da2JeAw+Ddhxd52NlhX9cZj8HNq84M+PJTQsTrWHCN/WYR4BU8SgnxIMBzG
- vMFgmkP33ElOyQ0oYD8GjVNUL6l/Bllq8lvXxpyZU3eg39Kl63Ih+U6nRFukiaJNSO
- cvty9ZXBYVkMla+Noi6iKTf9r9AOWHntdAMPhHog=
-Date: Tue, 29 Oct 2019 09:10:32 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Ondrej Jirman <megous@megous.com>
-Subject: Re: [PATCH] ARM: sunxi: Fix CPU powerdown on A83T
-Message-ID: <20191029081032.5xhysz3mv65e7azv@hendrix>
-References: <20191028214914.3465156-1-megous@megous.com>
+ id 1iPMkf-0001by-3S
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 08:21:18 +0000
+Received: by mail-wr1-x442.google.com with SMTP id n1so5107009wra.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 29 Oct 2019 01:21:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=LbGqWabkO+qsmDE6Dovu8KQsQ8ImSSqPf6QwQRVth5s=;
+ b=i6xKbxwS8JScMMcfWs747aiWLNwFekNIEHU/F7et809rV0fTf2Z1etP2smdRIclPMa
+ lhDElPf8v5ti/cVsD+at74gPj+57ePpHY3fNLUN0gidqm1w/D5T8/11fD7aJaNSIRMGI
+ oVZhfCiO0XfG6E8Ht8f7ScI6dapi7d+rOzFagYFrDCEcdijn99gGrGp8bZGVf1UL0JUB
+ TqBWqpQkCwC1zPXC6yj50TRQeTxTLqGspPZJeaI8A7ZkyROqnqwLoKnAVEIHL2stqE3B
+ o6xh9qilu4XKU/bF8Fj7I36FoMpYauUPR8LgHu7wjhJoe4VGr7qwDm/0wrvw5VhuFFmR
+ K/3A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=LbGqWabkO+qsmDE6Dovu8KQsQ8ImSSqPf6QwQRVth5s=;
+ b=iTV8LCw+fOugteTj3MZVgCZn8AQg05vQShf/BadmQK7hNEDianDmQ18t7n7rD6SxDP
+ 9sbGdYeQaJ3ecC5pUjn9dLZcb1n27ZiabFG6vnG20jUoJ1XLVPQbhXi85q+wPHec4c8+
+ 76V42Jbp9Nw9NrofkcZbTT873uf+mSPWOXeG108kcdSu6noaRnPl5iE2EWHx+f9eLD+H
+ 1/DEARfEHkvUQr//4ie8xjahZoLcNdJnUgaSXgb1DaPUbN3UeSTd5QRLQMNxMFFvG1LS
+ g8nvRNgyrR0LPA7m1sYzx09/sRWX1zqwvm++MWieEhZbBY33/2D5O9/6ixoESEE4k/jp
+ 4rYw==
+X-Gm-Message-State: APjAAAVw4wOvUxYkGanGzBGYVUb2TEs7FFf6EB1oRXQhU487YQsK46EW
+ K/cVW6sc5VA1yI36oCwW3hVwe3e1CcKCVYwWXmor8g==
+X-Google-Smtp-Source: APXvYqxq7fhyaYGafFtbCO5SV4r6hSp9ssGtNlWV8f9IBcuiRL8birbPQx/oxQqtKKJJITJiIZPwCyiQWkaM9VdkHCE=
+X-Received: by 2002:adf:fd88:: with SMTP id d8mr12239490wrr.200.1572337275488; 
+ Tue, 29 Oct 2019 01:21:15 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20191028214914.3465156-1-megous@megous.com>
-User-Agent: NeoMutt/20180716
+References: <20191028210559.8289-1-rth@twiddle.net>
+ <20191028210559.8289-2-rth@twiddle.net>
+In-Reply-To: <20191028210559.8289-2-rth@twiddle.net>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Tue, 29 Oct 2019 09:21:03 +0100
+Message-ID: <CAKv+Gu9iW341X8FLBedO1Lhr0H-XcA7jDp3bh3nQh7f7N_M0eA@mail.gmail.com>
+Subject: Re: [PATCH 1/6] random: Mark CONFIG_ARCH_RANDOM functions __must_check
+To: Richard Henderson <richard.henderson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_011948_526994_E259B556 
-X-CRM114-Status: GOOD (  10.25  )
-X-Spam-Score: -1.6 (-)
+X-CRM114-CacheID: sfid-20191029_012117_177567_80786DD3 
+X-CRM114-Status: GOOD (  14.82  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.6 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
- [91.217.168.176 listed in zen.spamhaus.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -65,7 +80,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,63 +91,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: open list <linux-kernel@vger.kernel.org>, stable@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>, linux-sunxi@googlegroups.com,
- Chen-Yu Tsai <wens@csie.org>,
- "moderated list:ARM/Allwinner sunXi SoC support"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============1818179879565092538=="
+Cc: linux-arch <linux-arch@vger.kernel.org>,
+ linux-s390 <linux-s390@vger.kernel.org>, Kees Cook <keescook@chromium.org>,
+ the arch/x86 maintainers <x86@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============1818179879565092538==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="c2ir2aunacvuu6l7"
-Content-Disposition: inline
-
-
---c2ir2aunacvuu6l7
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Mon, Oct 28, 2019 at 10:49:14PM +0100, Ondrej Jirman wrote:
-> PRCM_PWROFF_GATING_REG has CPU0 at bit 4 on A83T. So without this
-> patch, instead of gating the CPU0, the whole cluster was power gated,
-> when shutting down first CPU in the cluster.
+On Mon, 28 Oct 2019 at 22:06, Richard Henderson
+<richard.henderson@linaro.org> wrote:
 >
-> Fixes: 6961275e72a8c1 ("ARM: sun8i: smp: Add support for A83T")
-> Signed-off-by: Ondrej Jirman <megous@megous.com>
-> Cc: stable@vger.kernel.org
+> We cannot use the pointer output without validating the
+> success of the random read.
+>
+> Signed-off-by: Richard Henderson <rth@twiddle.net>
+> ---
+> Cc: Kees Cook <keescook@chromium.org>
+> Cc: "H. Peter Anvin" <hpa@zytor.com>
+> Cc: linux-arch@vger.kernel.org
+> ---
+>  include/linux/random.h | 8 ++++----
+>  1 file changed, 4 insertions(+), 4 deletions(-)
+>
+> diff --git a/include/linux/random.h b/include/linux/random.h
+> index f189c927fdea..84947b489649 100644
+> --- a/include/linux/random.h
+> +++ b/include/linux/random.h
+> @@ -167,11 +167,11 @@ static inline void prandom_seed_state(struct rnd_state *state, u64 seed)
+>  #ifdef CONFIG_ARCH_RANDOM
+>  # include <asm/archrandom.h>
+>  #else
+> -static inline bool arch_get_random_long(unsigned long *v)
+> +static inline bool __must_check arch_get_random_long(unsigned long *v)
+>  {
+>         return 0;
 
-Applied, thanks
+For symmetry with the other cleanups, you should probably change these
+into 'return false' as well
 
-Maxime
-
---c2ir2aunacvuu6l7
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXbfz+AAKCRDj7w1vZxhR
-xabNAQDq9EMAe4I8hY+8J4KL3Khhrxd27KAbY3b3TIuqdn3a/AD/U7cgXhoTiEyI
-oc9v/zgOOL7PxQCykeoNxNc8SHYdiQc=
-=XYsh
------END PGP SIGNATURE-----
-
---c2ir2aunacvuu6l7--
-
-
---===============1818179879565092538==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+>  }
+> -static inline bool arch_get_random_int(unsigned int *v)
+> +static inline bool __must_check arch_get_random_int(unsigned int *v)
+>  {
+>         return 0;
+>  }
+> @@ -179,11 +179,11 @@ static inline bool arch_has_random(void)
+>  {
+>         return 0;
+>  }
+> -static inline bool arch_get_random_seed_long(unsigned long *v)
+> +static inline bool __must_check arch_get_random_seed_long(unsigned long *v)
+>  {
+>         return 0;
+>  }
+> -static inline bool arch_get_random_seed_int(unsigned int *v)
+> +static inline bool __must_check arch_get_random_seed_int(unsigned int *v)
+>  {
+>         return 0;
+>  }
+> --
+> 2.17.1
+>
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1818179879565092538==--
-
