@@ -2,86 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 47D20E8EF8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 19:06:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CFC5AE8F0B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 19:11:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KBplgedDY90lfLaL7u7OThs8+uMSwL4R5uE4zZZpcek=; b=pgLD6qhz0eElEp
-	KAZbycUquVjnxXjCRN/bp/Tt8P47sOaGaTnupIJC87CkUgoIpon/I7VTBRWIHTMI9W/MLRS4LT1OJ
-	MDeBlIKoWPYID1orHDo5G4ntf9xUe951YCntlm0EqiTiNqZNWe7AtcTW0thDTrnf8gczcThPK/tFd
-	lu9vlLpdT52dA4MU1Dmxg778IZ4Gji3utmYD+SRYIiqXY9qJqniGOhPr3QpbdLEqih4lhxuSEY2F/
-	aAEDfrI3725dF4fud5TF/RaXE/3yUKUsW9I0uquiG1DR1PHGE5XXjkcMCsK3MOOuTNCsGqJCN3M/L
-	Fej9se+1A5Z83pFxkQEw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=7rQFIWG7PesEFb0kzr2lU53unJUBdVYS5XvTiK8gwCM=; b=ZoA
+	OvUESJPaziRBbWio4kMrFDXaod93O2FVhtWpNUP5ctRMVak8STPJSL4LEMN9M95JIZGAYrF46NU5Q
+	fJ1JracHcZ8bf8bxxvn71+faLiGK+2crtN8SbpqKXr1tqRjocQsh9xuLWNAPQT2LRuArR8snp4bs9
+	3m0Ove1OAtk1mBvH05y0mdT+ZtK7AgwxOe5XBMkq4jNHUfDLXs08qEQ5FVA7l5CJb7hv1TMnkoLUd
+	ibPJR+L2TDbkmQg3mJxTRTAX3qhXFnVhtrFKbvP/9FHdwybR+Fmqph+89aHZ86OTnOv5ZUZoWSJNF
+	UBGZnVY4b5F2ewqLpvHAgQ8DsmkVE3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPVtP-0007Co-Bs; Tue, 29 Oct 2019 18:06:55 +0000
-Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
+	id 1iPVxr-0000kp-Hu; Tue, 29 Oct 2019 18:11:31 +0000
+Received: from aserp2120.oracle.com ([141.146.126.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPVtE-0007CG-Rx
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 18:06:46 +0000
-Received: by mail-vs1-xe41.google.com with SMTP id l5so9342206vsh.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 29 Oct 2019 11:06:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=mFw8F15ZQ3Xbg7xoMFqwMMbaKM4Z7mDJFWlKx02r/fU=;
- b=jnGz5ZBcGWY68OZAM0i8Lq8WshL9lPwPCKy46KW4Q4CqK1nT+2d8ZAARAMvS6PXKWF
- o7NG7xyF6xKh5LBKn0qUtI0281c0hmJ2dzLNzU/WP3USr8iMDHoA0fHhCuf+Y5KQIysf
- /gxPbdD9yymiy7mPrRQCpSe4/hjycluO7VWmE1bnlYKlYuee/Z6PSw8Q3v0Mc8Wi7hZ8
- 2E+OE1apjm/pLB0iqvv0jz3P6BJ0NNgMR3y8PgkI3mLvUBKAsTMd1pFxzhZ05duV3AdK
- By0m5g7JzeYGXlIGp2w4GxLSQ2nwj8OLby9Tzo/kTFVRC8Fnbf+wgIcLkplHN7Gr/fSp
- 9Cyg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=mFw8F15ZQ3Xbg7xoMFqwMMbaKM4Z7mDJFWlKx02r/fU=;
- b=Z7M3e34mA+/xiY/B9JmMC0EAy0dV0ddsvXR8nJgtaJr05hksqVDC9gaDyHgystxSoX
- JHW0sI5K8k2DZfWVYTu+MwjrbPuNZyTx8+BdUPSKj+sngK48OaSWhVdHhVxDIfup5HqZ
- GNzaI/Qd4AhEV+GFaj9UmdGL4kX8YJKdgjEd5/bizZhb9NJzpsJ6MFapiUFUhY/Rom2S
- Ri0JwSColuM7xgnoQVoWyPbVdMTJ3UbiTdaC2UNFVK0rbCyECYR5i6jJWJcBjcZ87pOL
- KsSwWJSDcpYJGNgXo0U2l3rATl0PAsrTuYLLZG6tPHuiz5Tp6JmqhNIVW7vMO9Jllbrw
- qHbw==
-X-Gm-Message-State: APjAAAUMfAQ9yzD2Kd/RSoHvNgLhfdmJWhGYD+spQpvdtYxkRktYgqU2
- D8F/gkOhG7si75rj6JUQuST+YOwbdZruGoXQfQdmFg==
-X-Google-Smtp-Source: APXvYqz97vwt703X1r3/ZAfNJZMwiiBLpjsPQNbPUEOndiJkJVVqLzY5YLBzfX1ehhjXGJ9HafNP7XMVii7jjKKfRBs=
-X-Received: by 2002:a67:fe02:: with SMTP id l2mr2281254vsr.112.1572372402875; 
- Tue, 29 Oct 2019 11:06:42 -0700 (PDT)
-MIME-Version: 1.0
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20191024225132.13410-1-samitolvanen@google.com>
- <20191024225132.13410-6-samitolvanen@google.com>
- <20191025105643.GD40270@lakrids.cambridge.arm.com>
- <CABCJKuc+XiDRdqfvjwCF7y=1wX3QO0MCUpeu4Gdcz91+nmnEAQ@mail.gmail.com>
- <20191028163532.GA52213@lakrids.cambridge.arm.com>
- <201910281250.25FBA8533@keescook>
-In-Reply-To: <201910281250.25FBA8533@keescook>
-From: Sami Tolvanen <samitolvanen@google.com>
-Date: Tue, 29 Oct 2019 11:06:31 -0700
-Message-ID: <CABCJKufubiN9JdOTGUSRgmmc_0bW3SRCnk9404+zmor4kh9ZCQ@mail.gmail.com>
-Subject: Re: [PATCH v2 05/17] add support for Clang's Shadow Call Stack (SCS)
-To: Kees Cook <keescook@chromium.org>
+ id 1iPVxh-0000kG-R3
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 18:11:23 +0000
+Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
+ by aserp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x9TI59aB154930;
+ Tue, 29 Oct 2019 18:11:16 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=from : to : cc :
+ subject : date : message-id; s=corp-2019-08-05;
+ bh=KaJ74bdiHiZPr5UV51+EIJ0o1zRtfXQpXGgW5uRy3II=;
+ b=GXULujkARG1MU1D/oI/xfCWtLrKryKJFHn8r4n+4ZRpVRFbhxbAA4tlXzpjewPiqMSGA
+ bkUSe4ablP5HqhWPRhvW0V8jpwofbhbigJgQXKbJynR4SM/hMvyTrLFc3Xi2DCmONida
+ 62F4w/wg9XEdq2V0746xHoYH/K8SOi3iWNg38bX5UIjIv2SbC/oUY/IgcKJiHR2ktIvl
+ wd4RMysyfjdrftKN9kD6NjBF9YhqeG7IBPP2npPGHhD+x5AjBhEK7vNlS7C4D1MyvQ39
+ aAWdJLdCHB0S2yqgde/iW7b6Aq+h/dNQZtcAbjSwe6wrUpThgLGhm8drjhx8lc7DR12J /w== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by aserp2120.oracle.com with ESMTP id 2vve3qb0jx-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 29 Oct 2019 18:11:16 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x9TI8BQb164203;
+ Tue, 29 Oct 2019 18:11:15 GMT
+Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
+ by userp3020.oracle.com with ESMTP id 2vxpenpp2a-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 29 Oct 2019 18:11:15 +0000
+Received: from abhmp0006.oracle.com (abhmp0006.oracle.com [141.146.116.12])
+ by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x9TIB8ZJ003645;
+ Tue, 29 Oct 2019 18:11:09 GMT
+Received: from localhost.localdomain (/10.159.132.196)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Tue, 29 Oct 2019 11:11:08 -0700
+From: Santosh Shilimkar <santosh.shilimkar@oracle.com>
+To: arm@kernel.org, linux-arm-kernel@lists.infradead.org
+Subject: 
+Date: Tue, 29 Oct 2019 11:10:53 -0700
+Message-Id: <1572372654-19805-1-git-send-email-santosh.shilimkar@oracle.com>
+X-Mailer: git-send-email 1.9.1
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9425
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=962
+ adultscore=2 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1908290000 definitions=main-1910290160
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9425
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=2
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1908290000
+ definitions=main-1910290160
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_110644_926922_DA6D35BE 
-X-CRM114-Status: GOOD (  22.12  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20191029_111121_964104_DE54A4E4 
+X-CRM114-Status: GOOD (  17.55  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [141.146.126.78 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -89,8 +92,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,67 +106,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
- Nick Desaulniers <ndesaulniers@google.com>,
- LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- Masami Hiramatsu <mhiramat@kernel.org>,
- Kernel Hardening <kernel-hardening@lists.openwall.com>,
- Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: olof@lixom.net, santosh.shilimkar@oracle.com, linux-kernel@vger.kernel.org,
+ arnd@arndb.de, khilman@kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 28, 2019 at 12:57 PM Kees Cook <keescook@chromium.org> wrote:
-> On Mon, Oct 28, 2019 at 04:35:33PM +0000, Mark Rutland wrote:
-> > On Fri, Oct 25, 2019 at 01:49:21PM -0700, Sami Tolvanen wrote:
-> > > To keep the address of the currently active shadow stack out of
-> > > memory, the arm64 implementation clears this field when it loads x18
-> > > and saves the current value before a context switch. The generic code
-> > > doesn't expect the arch code to necessarily do so, but does allow it.
-> > > This requires us to use __scs_base() when accessing the base pointer
-> > > and to reset it in idle tasks before they're reused, hence
-> > > scs_task_reset().
-> >
-> > Ok. That'd be worth a comment somewhere, since it adds a number of
-> > things which would otherwise be unnecessary.
-> >
-> > IIUC this assumes an adversary who knows the address of a task's
-> > thread_info, and has an arbitrary-read (to extract the SCS base from
-> > thead_info) and an arbitrary-write (to modify the SCS area).
-> >
-> > Assuming that's the case, I don't think this buys much. If said
-> > adversary controls two userspace threads A and B, they only need to wait
-> > until A is context-switched out or in userspace, and read A's SCS base
-> > using B.
-> >
-> > Given that, I'd rather always store the SCS base in the thread_info, and
-> > simplify the rest of the code manipulating it.
->
-> I'd like to keep this as-is since it provides a temporal protection.
-> Having arbitrary kernel read and write at arbitrary time is a very
-> powerful attack primitive, and is, IMO, not very common. Many attacks
-> tend to be chains of bugs that give attackers narrow visibility in to the
-> kernel at specific moments. I would say this design is more about stopping
-> "current" from dumping thread_info (as there are many more opportunities
-> for current to see its own thread_info compared to arbitrary addresses
-> or another task's thread_info). As such, I think it's a reasonable
-> precaution to take.
+Subject: [GIT PULL 1/2] soc: TI soc updates for v5.5
 
-I'm not sure if always storing the base address in thread_info would
-simplify the code that much. We could remove __scs_base() and
-scs_task_reset(), which are both trivial, and drop a few instructions
-in the arch-specific code that clear the field. I do agree that a
-comment or two would help understand what's going on here though.
+The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
 
-Sami
+  Linux 5.4-rc1 (2019-09-30 10:35:40 -0700)
+
+are available in the git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/ssantosh/linux-keystone.git for_5.5/driver-soc
+
+for you to fetch changes up to faee19ece8263738c147cb0140e0fbc7b5397ca8:
+
+  memory: emif: remove set but not used variables 'cs1_used' and 'custom_configs' (2019-10-29 09:57:57 -0700)
+
+----------------------------------------------------------------
+Tero Kristo (9):
+      dt-bindings: omap: add new binding for PRM instances
+      soc: ti: add initial PRM driver with reset control support
+      soc: ti: omap-prm: poll for reset complete during de-assert
+      soc: ti: omap-prm: add support for denying idle for reset clockdomain
+      soc: ti: omap-prm: add omap4 PRM data
+      soc: ti: omap-prm: add data for am33xx
+      soc: ti: omap-prm: add dra7 PRM data
+      soc: ti: omap-prm: add am4 PRM data
+      soc: ti: omap-prm: add omap5 PRM data
+
+Wei Yongjun (1):
+      soc: ti: omap-prm: fix return value check in omap_prm_probe()
+
+YueHaibing (1):
+      memory: emif: remove set but not used variables 'cs1_used' and 'custom_configs'
+
+ .../devicetree/bindings/arm/omap/prm-inst.txt      |  29 ++
+ arch/arm/mach-omap2/Kconfig                        |   1 +
+ drivers/memory/emif.c                              |   5 +-
+ drivers/soc/ti/Makefile                            |   1 +
+ drivers/soc/ti/omap_prm.c                          | 391 +++++++++++++++++++++
+ include/linux/platform_data/ti-prm.h               |  21 ++
+ 6 files changed, 444 insertions(+), 4 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/arm/omap/prm-inst.txt
+ create mode 100644 drivers/soc/ti/omap_prm.c
+ create mode 100644 include/linux/platform_data/ti-prm.h
 
 _______________________________________________
 linux-arm-kernel mailing list
