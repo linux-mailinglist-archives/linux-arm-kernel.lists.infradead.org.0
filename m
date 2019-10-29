@@ -2,74 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A4ADE8320
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 09:21:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59C84E8323
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 09:22:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U2icsGoQVebFZsnwn7HKJDSIzIapGqYyjjdzvWXq3tY=; b=TIXKwWUL483UCt
-	sxjGNtL/qhqydhk1kmQLxLVL3dURLpRjSlMmApT8HZMIdWc8GER4Z9XlL9u16SKARhLo/2t0Lkl9i
-	JhSZJteIFN4cpvh5MFBfhqYHFbr27wOy1+2fD5FjTYBn0anOmFgPpf+CGlYlNFi8+EMAxy/icEdZE
-	dutZtAlhg9Cby+FrIKTIbofTYPbS5s9tkuVIl0f8AYvyVdPmX9TZv0pmmW9+CfnTw4rl8b4RrG2Qq
-	ZNv/TfgPg5v2SRmzXrVoUUMg1jhj13X/imUfjR2nhb/ZnS8owaSUCZcKNbi2q4CZBbgDZAdVRZUz5
-	V8ZHbMBoozuBpvHUhkpw==;
+	List-Owner; bh=f59l0mIfadtow9Ai6GOJ1Nwv2S+am13hSc7LK/Yesys=; b=ozZmNaQ7TEXmie
+	kdcwVNjaMVF0p8FzpLlxShL04rZPBre2q1aLpHmhCo8BAaeh+ISfw3nd5xJO7ndkK74D08OvRwgGe
+	iOBjkHVG9U7lld/yWBBssub/nedJN1f27b2L0OCKAc8Yfbx8QgYCI1DjUPAKoAsdKGGtQ71a8Gudg
+	5BE/rCxCM+ls4+i/9+ugHDcpiXsJhvl7nhqITgZGgg3n4vSLaLOw80umOOnnd1TY2MM4EamLhfW4H
+	+CennH2iwJjY5NTsBdHdR0x3wLmse6WNJjVOmCIuUQFfQjRFLn+I9BD0DlLAz1vKyXPSpWjNnUSGw
+	cQrTCwQrlfjPbQgMLDLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPMkr-0001cU-6z; Tue, 29 Oct 2019 08:21:29 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iPMm1-000218-Ow; Tue, 29 Oct 2019 08:22:41 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPMkf-0001by-3S
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 08:21:18 +0000
-Received: by mail-wr1-x442.google.com with SMTP id n1so5107009wra.10
+ id 1iPMlp-00020P-Ow
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 08:22:31 +0000
+Received: by mail-wr1-x444.google.com with SMTP id o28so12571943wro.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 29 Oct 2019 01:21:16 -0700 (PDT)
+ Tue, 29 Oct 2019 01:22:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=LbGqWabkO+qsmDE6Dovu8KQsQ8ImSSqPf6QwQRVth5s=;
- b=i6xKbxwS8JScMMcfWs747aiWLNwFekNIEHU/F7et809rV0fTf2Z1etP2smdRIclPMa
- lhDElPf8v5ti/cVsD+at74gPj+57ePpHY3fNLUN0gidqm1w/D5T8/11fD7aJaNSIRMGI
- oVZhfCiO0XfG6E8Ht8f7ScI6dapi7d+rOzFagYFrDCEcdijn99gGrGp8bZGVf1UL0JUB
- TqBWqpQkCwC1zPXC6yj50TRQeTxTLqGspPZJeaI8A7ZkyROqnqwLoKnAVEIHL2stqE3B
- o6xh9qilu4XKU/bF8Fj7I36FoMpYauUPR8LgHu7wjhJoe4VGr7qwDm/0wrvw5VhuFFmR
- K/3A==
+ :cc; bh=Dc5k5cS+lEX1SYr8UJULwUVDCp6mopnMnZfWYmGBCQo=;
+ b=A4gHFXApxerLrfS/58BvoK//1y1mARGLUGD1wXl13PVjUkYphztL0q3I9iFgWYQGSP
+ zrEjaLHDqHIsSXVnDwW8dI4GZmEfCJOKudCdIPzQM1Nh4qb0xIbNAD/naX5+pVK+5ZEn
+ ZXPjBDwmR6IOqN/inZwk3UH0Oxo/+KGG01hKggDCr/5OJeRlACGTwthTragNkLJVR9qW
+ P6U4Y7tpOEeAd0WTdtbAh7gk2izzk+2OniLv0UhtkKnHilz5Dr/h4WMeOHHcWLu8okVB
+ t8YoEOrcTUon7n2Yeb8VbwLXLy64SbWNSYyOYE8zsamK8Fh85H/tugKYuE7BDTW3e8A9
+ H3sQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=LbGqWabkO+qsmDE6Dovu8KQsQ8ImSSqPf6QwQRVth5s=;
- b=iTV8LCw+fOugteTj3MZVgCZn8AQg05vQShf/BadmQK7hNEDianDmQ18t7n7rD6SxDP
- 9sbGdYeQaJ3ecC5pUjn9dLZcb1n27ZiabFG6vnG20jUoJ1XLVPQbhXi85q+wPHec4c8+
- 76V42Jbp9Nw9NrofkcZbTT873uf+mSPWOXeG108kcdSu6noaRnPl5iE2EWHx+f9eLD+H
- 1/DEARfEHkvUQr//4ie8xjahZoLcNdJnUgaSXgb1DaPUbN3UeSTd5QRLQMNxMFFvG1LS
- g8nvRNgyrR0LPA7m1sYzx09/sRWX1zqwvm++MWieEhZbBY33/2D5O9/6ixoESEE4k/jp
- 4rYw==
-X-Gm-Message-State: APjAAAVw4wOvUxYkGanGzBGYVUb2TEs7FFf6EB1oRXQhU487YQsK46EW
- K/cVW6sc5VA1yI36oCwW3hVwe3e1CcKCVYwWXmor8g==
-X-Google-Smtp-Source: APXvYqxq7fhyaYGafFtbCO5SV4r6hSp9ssGtNlWV8f9IBcuiRL8birbPQx/oxQqtKKJJITJiIZPwCyiQWkaM9VdkHCE=
-X-Received: by 2002:adf:fd88:: with SMTP id d8mr12239490wrr.200.1572337275488; 
- Tue, 29 Oct 2019 01:21:15 -0700 (PDT)
+ bh=Dc5k5cS+lEX1SYr8UJULwUVDCp6mopnMnZfWYmGBCQo=;
+ b=WQVvcjk0XEQ0JQ4vUABBxjONggAMJgQ0blhQDpoeO4+XfpKxeCoe0qy2Z7V0VxNSWs
+ PztgIrkbzyapHZT+prOHZQjA857Z1fAzxfKwIsrYcRWss6uz7yjtawWRukU5Bv2b8sz0
+ UMiGCP7S0mHH33Wb/5tY3QHl0PcbSVAAtrIbdzLSsfQj/nBTIP6tRTiNOOLYsP6tUwY5
+ gcA50jRUGRXGHAHqsd7/Sc3Sw1uUfwUVFvYe+UzFxo3YQOZW9SvHuut5K1EBe7zsGcmx
+ NAJ6saVW5pz/f8svol0nOGUAWlHie43O/cqze/YYeMoUuc0rEfGMG7DiOyaIqkXkQPBz
+ gLQQ==
+X-Gm-Message-State: APjAAAUAhBMO8ntYIRc+5N+tp5Fx5lJaRldQzquqDxxzyzw25TRKyMWS
+ 27N+MfsDSdxpzGVrHkiF1EmzK7fF1bQBVQnMF9J+mQ==
+X-Google-Smtp-Source: APXvYqwN10D6LbfAXatOlZBrdKFI55fFKfkyB9LhxhsiVOFM0KEsohYgu7zOVPU91eDRAYF9dPJl1fNLY1QpmxWEcrI=
+X-Received: by 2002:adf:f685:: with SMTP id v5mr19497461wrp.246.1572337348180; 
+ Tue, 29 Oct 2019 01:22:28 -0700 (PDT)
 MIME-Version: 1.0
 References: <20191028210559.8289-1-rth@twiddle.net>
- <20191028210559.8289-2-rth@twiddle.net>
-In-Reply-To: <20191028210559.8289-2-rth@twiddle.net>
+In-Reply-To: <20191028210559.8289-1-rth@twiddle.net>
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Tue, 29 Oct 2019 09:21:03 +0100
-Message-ID: <CAKv+Gu9iW341X8FLBedO1Lhr0H-XcA7jDp3bh3nQh7f7N_M0eA@mail.gmail.com>
-Subject: Re: [PATCH 1/6] random: Mark CONFIG_ARCH_RANDOM functions __must_check
+Date: Tue, 29 Oct 2019 09:22:16 +0100
+Message-ID: <CAKv+Gu-mnyKK_0s7fF_8C0aq1ur+RoHscVwTfd31quEVqZhefw@mail.gmail.com>
+Subject: Re: [PATCH 0/6] Improvements for random.h/archrandom.h
 To: Richard Henderson <richard.henderson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_012117_177567_80786DD3 
-X-CRM114-Status: GOOD (  14.82  )
+X-CRM114-CacheID: sfid-20191029_012229_812471_E9DA107E 
+X-CRM114-Status: GOOD (  14.07  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -92,8 +91,8 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-arch <linux-arch@vger.kernel.org>,
- linux-s390 <linux-s390@vger.kernel.org>, Kees Cook <keescook@chromium.org>,
- the arch/x86 maintainers <x86@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ linux-s390 <linux-s390@vger.kernel.org>,
+ the arch/x86 maintainers <x86@kernel.org>,
  linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -104,54 +103,40 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On Mon, 28 Oct 2019 at 22:06, Richard Henderson
 <richard.henderson@linaro.org> wrote:
 >
-> We cannot use the pointer output without validating the
-> success of the random read.
+> During patch review for an addition of archrandom.h for arm64,
+> it was suggeted that the arch_random_get_* functions should be
+> marked __must_check.  Which does sound like a good idea, since
+> the by-reference integer output may be uninitialized when the
+> boolean result is false.
 >
-> Signed-off-by: Richard Henderson <rth@twiddle.net>
-> ---
-> Cc: Kees Cook <keescook@chromium.org>
-> Cc: "H. Peter Anvin" <hpa@zytor.com>
-> Cc: linux-arch@vger.kernel.org
-> ---
->  include/linux/random.h | 8 ++++----
->  1 file changed, 4 insertions(+), 4 deletions(-)
+> In addition, I noticed a few other minor inconsistencies between
+> the different architectures: x86 defines some functional macros
+> outside CONFIG_ARCH_RANDOM, and powerpc isn't using bool.
 >
-> diff --git a/include/linux/random.h b/include/linux/random.h
-> index f189c927fdea..84947b489649 100644
-> --- a/include/linux/random.h
-> +++ b/include/linux/random.h
-> @@ -167,11 +167,11 @@ static inline void prandom_seed_state(struct rnd_state *state, u64 seed)
->  #ifdef CONFIG_ARCH_RANDOM
->  # include <asm/archrandom.h>
->  #else
-> -static inline bool arch_get_random_long(unsigned long *v)
-> +static inline bool __must_check arch_get_random_long(unsigned long *v)
->  {
->         return 0;
+>
+> r~
+>
+>
+> Richard Henderson (6):
+>   random: Mark CONFIG_ARCH_RANDOM functions __must_check
+>   x86: Move arch_has_random* inside CONFIG_ARCH_RANDOM
+>   x86: Mark archrandom.h functions __must_check
+>   powerpc: Use bool in archrandom.h
+>   powerpc: Mark archrandom.h functions __must_check
+>   s390x: Mark archrandom.h functions __must_check
+>
 
-For symmetry with the other cleanups, you should probably change these
-into 'return false' as well
+Modulo the nit in reply to 1/6:
 
->  }
-> -static inline bool arch_get_random_int(unsigned int *v)
-> +static inline bool __must_check arch_get_random_int(unsigned int *v)
->  {
->         return 0;
->  }
-> @@ -179,11 +179,11 @@ static inline bool arch_has_random(void)
->  {
->         return 0;
->  }
-> -static inline bool arch_get_random_seed_long(unsigned long *v)
-> +static inline bool __must_check arch_get_random_seed_long(unsigned long *v)
->  {
->         return 0;
->  }
-> -static inline bool arch_get_random_seed_int(unsigned int *v)
-> +static inline bool __must_check arch_get_random_seed_int(unsigned int *v)
->  {
->         return 0;
->  }
+Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
+
+
+>  arch/powerpc/include/asm/archrandom.h | 24 +++++++++++++-----------
+>  arch/s390/include/asm/archrandom.h    |  8 ++++----
+>  arch/x86/include/asm/archrandom.h     | 24 ++++++++++++------------
+>  include/linux/random.h                |  8 ++++----
+>  4 files changed, 33 insertions(+), 31 deletions(-)
+>
 > --
 > 2.17.1
 >
