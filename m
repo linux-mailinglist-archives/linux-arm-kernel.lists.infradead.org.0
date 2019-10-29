@@ -2,74 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59C84E8323
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 09:22:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1375BE835A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 09:40:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f59l0mIfadtow9Ai6GOJ1Nwv2S+am13hSc7LK/Yesys=; b=ozZmNaQ7TEXmie
-	kdcwVNjaMVF0p8FzpLlxShL04rZPBre2q1aLpHmhCo8BAaeh+ISfw3nd5xJO7ndkK74D08OvRwgGe
-	iOBjkHVG9U7lld/yWBBssub/nedJN1f27b2L0OCKAc8Yfbx8QgYCI1DjUPAKoAsdKGGtQ71a8Gudg
-	5BE/rCxCM+ls4+i/9+ugHDcpiXsJhvl7nhqITgZGgg3n4vSLaLOw80umOOnnd1TY2MM4EamLhfW4H
-	+CennH2iwJjY5NTsBdHdR0x3wLmse6WNJjVOmCIuUQFfQjRFLn+I9BD0DlLAz1vKyXPSpWjNnUSGw
-	cQrTCwQrlfjPbQgMLDLg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=BB7QJvQG5FIhSJ6AkcVzYFpG8NGwmlGJDyI4Kpn4L3M=; b=EVYce6o9WO69AcXWKZZf0fBwi
+	sbzuyjSWkOdzzwR7m0t95GqRa9+mmLwhqfZF6pLH7nx86y0X16zBnvoiW8lu7ieC7m38dHhqN8O+d
+	KoKL4e1Z0rxbhLLlOfiedjU2ykxyZMGWXOmQSRLuExRJ/5TTEORkd8UQYzY7fQUKsBMXkNNnOhgCn
+	cyLKsLju66FhG9U3GuH7fYa4WNTx8Uh+V5A2ZbJwerJxdPb6g7KtsrTabaIS0NvCfDO0LCH5HtFfQ
+	kVvnNEyUdTk07e7lE+z7GcitnyVoPKh2O77qUxMTGFuoBWfCHq4qQUZPRABZZvBWlGdceqj6PU4ae
+	Qorq22Smw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPMm1-000218-Ow; Tue, 29 Oct 2019 08:22:41 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iPN3K-0001DR-Dx; Tue, 29 Oct 2019 08:40:34 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPMlp-00020P-Ow
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 08:22:31 +0000
-Received: by mail-wr1-x444.google.com with SMTP id o28so12571943wro.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 29 Oct 2019 01:22:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Dc5k5cS+lEX1SYr8UJULwUVDCp6mopnMnZfWYmGBCQo=;
- b=A4gHFXApxerLrfS/58BvoK//1y1mARGLUGD1wXl13PVjUkYphztL0q3I9iFgWYQGSP
- zrEjaLHDqHIsSXVnDwW8dI4GZmEfCJOKudCdIPzQM1Nh4qb0xIbNAD/naX5+pVK+5ZEn
- ZXPjBDwmR6IOqN/inZwk3UH0Oxo/+KGG01hKggDCr/5OJeRlACGTwthTragNkLJVR9qW
- P6U4Y7tpOEeAd0WTdtbAh7gk2izzk+2OniLv0UhtkKnHilz5Dr/h4WMeOHHcWLu8okVB
- t8YoEOrcTUon7n2Yeb8VbwLXLy64SbWNSYyOYE8zsamK8Fh85H/tugKYuE7BDTW3e8A9
- H3sQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Dc5k5cS+lEX1SYr8UJULwUVDCp6mopnMnZfWYmGBCQo=;
- b=WQVvcjk0XEQ0JQ4vUABBxjONggAMJgQ0blhQDpoeO4+XfpKxeCoe0qy2Z7V0VxNSWs
- PztgIrkbzyapHZT+prOHZQjA857Z1fAzxfKwIsrYcRWss6uz7yjtawWRukU5Bv2b8sz0
- UMiGCP7S0mHH33Wb/5tY3QHl0PcbSVAAtrIbdzLSsfQj/nBTIP6tRTiNOOLYsP6tUwY5
- gcA50jRUGRXGHAHqsd7/Sc3Sw1uUfwUVFvYe+UzFxo3YQOZW9SvHuut5K1EBe7zsGcmx
- NAJ6saVW5pz/f8svol0nOGUAWlHie43O/cqze/YYeMoUuc0rEfGMG7DiOyaIqkXkQPBz
- gLQQ==
-X-Gm-Message-State: APjAAAUAhBMO8ntYIRc+5N+tp5Fx5lJaRldQzquqDxxzyzw25TRKyMWS
- 27N+MfsDSdxpzGVrHkiF1EmzK7fF1bQBVQnMF9J+mQ==
-X-Google-Smtp-Source: APXvYqwN10D6LbfAXatOlZBrdKFI55fFKfkyB9LhxhsiVOFM0KEsohYgu7zOVPU91eDRAYF9dPJl1fNLY1QpmxWEcrI=
-X-Received: by 2002:adf:f685:: with SMTP id v5mr19497461wrp.246.1572337348180; 
- Tue, 29 Oct 2019 01:22:28 -0700 (PDT)
+ id 1iPN3A-0001Cb-1E
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 08:40:25 +0000
+Received: from localhost (unknown [91.217.168.176])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 292D52067D;
+ Tue, 29 Oct 2019 08:40:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572338423;
+ bh=mgWIhjckqxqZSyRbf9Ero4ZNiEz9TMOyb3Twc/C42Qw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=VX+bTrWJaxeA2GZo6IMS5PC8kXNJvpeD5Q4wP4xSZ7Dr2B5qn68G1qj1p3C1WtNj9
+ tgZPaKROjJoIbCD9PNoQMMTZg1tQrDhBnNx/3TihzsuYA5c+v07maBq+iDHzyr44sg
+ RebUP5pDHloE7kPCl3rCVrWGqXWjBrgT+dUVSSzY=
+Date: Tue, 29 Oct 2019 09:30:12 +0100
+From: Maxime Ripard <mripard@kernel.org>
+To: Ondrej Jirman <megous@megous.com>
+Subject: Re: [PATCH 3/3] arm: dts: sun8i: a83t: a711: Add touchscreen node
+Message-ID: <20191029083012.62wgvonpxkgmznpn@hendrix>
+References: <20191029005806.3577376-1-megous@megous.com>
+ <20191029005806.3577376-4-megous@megous.com>
 MIME-Version: 1.0
-References: <20191028210559.8289-1-rth@twiddle.net>
-In-Reply-To: <20191028210559.8289-1-rth@twiddle.net>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Tue, 29 Oct 2019 09:22:16 +0100
-Message-ID: <CAKv+Gu-mnyKK_0s7fF_8C0aq1ur+RoHscVwTfd31quEVqZhefw@mail.gmail.com>
-Subject: Re: [PATCH 0/6] Improvements for random.h/archrandom.h
-To: Richard Henderson <richard.henderson@linaro.org>
+In-Reply-To: <20191029005806.3577376-4-megous@megous.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_012229_812471_E9DA107E 
-X-CRM114-Status: GOOD (  14.07  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191029_014024_116467_1BE2D9A1 
+X-CRM114-Status: GOOD (  10.19  )
+X-Spam-Score: -1.6 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-1.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
+ [91.217.168.176 listed in zen.spamhaus.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -79,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,63 +78,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch <linux-arch@vger.kernel.org>,
- linux-s390 <linux-s390@vger.kernel.org>,
- the arch/x86 maintainers <x86@kernel.org>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ =?utf-8?Q?Myl=C3=A8ne?= Josserand <mylene.josserand@bootlin.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
+ Marco Felsch <m.felsch@pengutronix.de>, linux-sunxi@googlegroups.com,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ linux-input@vger.kernel.org,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ linux-kernel@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============0560018537927180716=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 28 Oct 2019 at 22:06, Richard Henderson
-<richard.henderson@linaro.org> wrote:
->
-> During patch review for an addition of archrandom.h for arm64,
-> it was suggeted that the arch_random_get_* functions should be
-> marked __must_check.  Which does sound like a good idea, since
-> the by-reference integer output may be uninitialized when the
-> boolean result is false.
->
-> In addition, I noticed a few other minor inconsistencies between
-> the different architectures: x86 defines some functional macros
-> outside CONFIG_ARCH_RANDOM, and powerpc isn't using bool.
->
->
-> r~
->
->
-> Richard Henderson (6):
->   random: Mark CONFIG_ARCH_RANDOM functions __must_check
->   x86: Move arch_has_random* inside CONFIG_ARCH_RANDOM
->   x86: Mark archrandom.h functions __must_check
->   powerpc: Use bool in archrandom.h
->   powerpc: Mark archrandom.h functions __must_check
->   s390x: Mark archrandom.h functions __must_check
->
 
-Modulo the nit in reply to 1/6:
-
-Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
+--===============0560018537927180716==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="vjc7bik6lfh4bmzh"
+Content-Disposition: inline
 
 
->  arch/powerpc/include/asm/archrandom.h | 24 +++++++++++++-----------
->  arch/s390/include/asm/archrandom.h    |  8 ++++----
->  arch/x86/include/asm/archrandom.h     | 24 ++++++++++++------------
->  include/linux/random.h                |  8 ++++----
->  4 files changed, 33 insertions(+), 31 deletions(-)
+--vjc7bik6lfh4bmzh
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Tue, Oct 29, 2019 at 01:58:06AM +0100, Ondrej Jirman wrote:
+> From: Myl=E8ne Josserand <mylene.josserand@bootlin.com>
 >
-> --
-> 2.17.1
+> Enable a FocalTech EDT-FT5x06 Polytouch touchscreen.
 >
->
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> Signed-off-by: Ondrej Jirman <megous@megous.com>
+> Signed-off-by: Myl=E8ne Josserand <mylene.josserand@bootlin.com>
+
+Applied, thanks
+
+--vjc7bik6lfh4bmzh
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXbf4lAAKCRDj7w1vZxhR
+xVbSAQDT1XY746DPYfIud8pyJ8oPJujpzqL4+l8r1CyT6njIYQD/UIVWkNxtxcoq
+K3j4wdKkaXwfIZ5fyFVqDB6uE9PToAc=
+=wvMX
+-----END PGP SIGNATURE-----
+
+--vjc7bik6lfh4bmzh--
+
+
+--===============0560018537927180716==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0560018537927180716==--
+
