@@ -2,113 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C389E89D6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 14:43:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 973F8E8A2F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 15:00:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=db/dKHTQoQKFVMs9QzPyw6IJmeSTM+5MfSZrDR497/Q=; b=lAkYsjC1kx/zPn
-	Lm4UiVrAEWiOkkfytsG6df81BLhky+aN5tCm5hut0EYbGjR75RudHhZ23FnAY/MMSKST+iZyOmoM+
-	fg0QrxxoRBcjp1ChKiBUScTLDnmSE3PJAAcNVoVSd1RgyTDeIfZa5AN9OJ5MS/g19QCnH2KgeB3D2
-	AQVX+82VNU5J+FItJBzpoCQpcJfkjOYt20awSeKzO6eVmh63FGmLa/ROth/X8gelBx2G8ZsXP7Azr
-	4xV3owLx8CiH7gAI3ovZS6yETFPm74+reAfkhQ3M3l5DCJ5U1JYuoyEv1J+uqbTPsQ9Yn5jc1MCcS
-	yiLBdGFgpbTvoHWSA6Lg==;
+	List-Owner; bh=+9hU6wd0ACa94lh5HvOK7lCeKBX02R8JTtjOd4RpBLU=; b=sJEbUIY6hcPSY9
+	88aP1Tt426hLjSAi44gRp7iktvM5EOgi/NrBZWfG4blQOJb9RYZuiAUEiZSQtCRm+pFbrz7EjXuAR
+	l8CesZ+Oxeo8Bgojy7bHhV2igVaVBi5jYwPDo9FzgNsZ5qzOZpsmwKo33Yj2kQvtGuD9xxvlzc9qr
+	jNdzKvUy1gH5F5Ycq0HIqIBR/40yJEiBJW4lXXnxjd1HFfOWUvkkZo1b7swf3oVQUqwNmHWvDBK5H
+	Oo73v6TLnEWjyfVJoPQIks3rcEWY+5k6AnvSz7m7cLt/SyLuqPwym6uhDOcxBT37+MtZDMGnMkj8Z
+	XocJLSh78XwRnu8KG+RQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPRmI-0002W8-3i; Tue, 29 Oct 2019 13:43:18 +0000
-Received: from mail-eopbgr130085.outbound.protection.outlook.com
- ([40.107.13.85] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1iPS2v-0002Zz-Kd; Tue, 29 Oct 2019 14:00:29 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPRkf-00010q-9u
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 13:41:40 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=RwgQ4AMY5mEvl6VNUemquDmcdB4TyC1Z2geCMeDfOcqGaqErEATI/en10xhE9V/zyWOh2+X4B4KubW2HOe70dOEbtnreuVSGaijq4Ip464F2rF1N25PdIksTS0TF423CCFxqrXEITZKhWUGe3RLAur2vgHXfRUiBUSb2MnHwxu6Zx+Zbkb/QFwoE1f1pPqNl3ag3jq/cNG37YFk/kcthJU/tmQZ9wK0ox4HE4+90Yw8AatzSsJ79/VbXYN1/rZEsXRXxUPGOpX0VFMauvT0e7Rlw6Rq+MZrJT8qzIpKxEjgOuisOlTsh99cRqShQ72dwPCW3XhsX4zuWSMsHxicTGg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3oLf7GDtX2gdlTwAjeFUAFyGC64Ffk0E74Fzd1BjxZg=;
- b=i+VxXkThR7XCIg34nG518rgzPb7r5nA2PUGD5VGqk18embOJ6+55HsgPiAJPiMYQb/GMw8QEGJN2awHU/Q0ArNpMzhgBE8g9vBZKJ4tNVeTmXgiiCEkqY9RQKfCAPfL8XfTSS6CDhXRL4XGd76Qe17jFEuGPvjChe0pxDbCq+gYrYNP3yDG6Kz8JSeq2PI0daE79yRwsMnSCDa4FfkPKcgn8Fc6tlqIYm4OcLy6+ShFurGgT933RDGzSL2/k8QbMOJrb+SvlxIP3ZZ0izrFXIjBvqHSL/pYe0rDDuy642a2O+7OY4Ry3AVYzw37hBI+/U06D5IFeJA3vXXHnlwPwLg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3oLf7GDtX2gdlTwAjeFUAFyGC64Ffk0E74Fzd1BjxZg=;
- b=SgwHoNETNV4oPutxFVHDtir2Ibcx/JeQWDA2eDAhJHsXEM3Smfq8upfrbEc0GAk/rKTZxy2BABOMMeVkGfCZMd3aqwALMEgJfylGfKktlDqS5luyPdbf0gIo42jbFcehaJlbOBUdoFcojwZs0Rg+dFDLL1Iah/R3Gf96QG+GY3g=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB5139.eurprd04.prod.outlook.com (20.176.215.160) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2387.20; Tue, 29 Oct 2019 13:41:27 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::843c:e722:27cb:74e1]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::843c:e722:27cb:74e1%5]) with mapi id 15.20.2387.023; Tue, 29 Oct 2019
- 13:41:27 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: "mturquette@baylibre.com" <mturquette@baylibre.com>, "sboyd@kernel.org"
- <sboyd@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "festevam@gmail.com"
- <festevam@gmail.com>, Abel Vesa <abel.vesa@nxp.com>
-Subject: [PATCH 7/7] clk: imx: gate3: Switch to clk_hw based API
-Thread-Topic: [PATCH 7/7] clk: imx: gate3: Switch to clk_hw based API
-Thread-Index: AQHVjl6QP6B/hjNO9EqRDMbJjuGEWA==
-Date: Tue, 29 Oct 2019 13:41:27 +0000
-Message-ID: <1572356175-24950-8-git-send-email-peng.fan@nxp.com>
-References: <1572356175-24950-1-git-send-email-peng.fan@nxp.com>
-In-Reply-To: <1572356175-24950-1-git-send-email-peng.fan@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.7.4
-x-clientproxiedby: HK0P153CA0030.APCP153.PROD.OUTLOOK.COM
- (2603:1096:203:17::18) To AM0PR04MB4481.eurprd04.prod.outlook.com
- (2603:10a6:208:70::15)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: c1004cfa-acc3-4b9b-0061-08d75c75b264
-x-ms-traffictypediagnostic: AM0PR04MB5139:|AM0PR04MB5139:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB5139519AD1C87C6D5BA13EF088610@AM0PR04MB5139.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3513;
-x-forefront-prvs: 0205EDCD76
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(376002)(366004)(39860400002)(396003)(136003)(199004)(189003)(6436002)(102836004)(66946007)(52116002)(66556008)(66066001)(5660300002)(66476007)(2501003)(81166006)(8676002)(486006)(81156014)(14444005)(6506007)(386003)(66446008)(6486002)(64756008)(256004)(478600001)(26005)(2906002)(3846002)(76176011)(186003)(25786009)(99286004)(71190400001)(71200400001)(6116002)(6512007)(6636002)(54906003)(14454004)(7736002)(36756003)(446003)(11346002)(476003)(2616005)(305945005)(4326008)(44832011)(50226002)(316002)(110136005)(86362001)(2201001)(8936002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5139;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 2/NkHmoK2IPxtyHYhTnH8Os90HTqvzNjNK9aPGgqlwJyK7GlnmEbYNT97kpuY88Cwk5SCsV3u5Rlb5FHZgXGRZlJ47T3etPPGHr5hitAXuiR5unL3J91ESQOuXFqF3t9qAQ6zCUskUr7DvcRAwVSqN+TXKTjNhZL810ycPaxjz35gesEciIeUk65gK02lFzRBBGX7reTYtkSWN8u4FQTx3DNAlYnmi7AgYRfSEbScKHT5OqHuhgIAfqGvofJt3AkLf8mrL8EZTSmd9+hj6WEl0dEM/+2YMJRt/9PouhObzdFmpWcqWHGZbwNJxA4jH+3o6ge0e2PjwBlS6Ow7r3LknwGemZAtCtygY+jZ4w+CLY3qY4PiGO/WKn3au7vkkIb1qAN6LaRw4exmZ9e+iOG1XyVNICxIdfHRkNtJU3nCH5mWaVjBmyxeUjNFTZkWsht
+ id 1iPS2f-0002YP-8u; Tue, 29 Oct 2019 14:00:15 +0000
+Received: by mail-pg1-x543.google.com with SMTP id r1so9629970pgj.12;
+ Tue, 29 Oct 2019 07:00:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=3RWz9l3/B7SltQRtqxThazj72fG6HLPCrRBSHamwG2Y=;
+ b=gi6vvKlZNFvT2TfBgGbjsE0fNq7TOPfVljNx5UiQBpHr53URR+V1J4LJgv3Zh00tUR
+ 2VJgWOGXtIhFvYiDZB0bCUTNEMfbclaL7v/Ca/Rl7FOH34LPgAU7BBL6fuxAnGAEwavE
+ n7O1KSsQufR0DXWwEpfFZMF/yq4pIWE5iwz5gFtm8EdiCRQmRXIN+eyl24ufo4o8VPqW
+ ZZEl2C2Sr3fOXS4AChtJ7SwEI+J6RK8qizGITJ9dPNlzX3fMOSrKIBIz5PUUlFkrp3Wz
+ NEjjVVfEe+EfNvi0utyx+i6B4rTFVAJ+eEFT0VPASxlZTciv62Exr7hAViUAvAjoQvr4
+ eulg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=3RWz9l3/B7SltQRtqxThazj72fG6HLPCrRBSHamwG2Y=;
+ b=XjWCYNYQZkXfDOIGqXddChhV3LRtFMqQgzpob0UeOCJIJ+WXtA5FmhBMv4CWKqIEjY
+ /xMa/FpT912UYNG89W06UYTmrFPwSW0QAcaebkSXmUT/qd5wO92NNDdmVOO4EpG16yX6
+ MiEGxtggxxkmASiciNVgB+s/P+BKfDsV4O1WdcsttraKTzM7zoUEMj9w+XWby9VbH0JM
+ 8Zl1/5oDQqwvDITFk/0qUafgmvOIwG1ZOKEIegES9ijCkcQiL149tQGWq1GcHNsAauUi
+ 34hjuXY8iAKFppB3yoQwpDqZ5vR2kBYCQ+XUNu52kW86aXqpqIoJgZIiljcs9Fp7VNuU
+ baZg==
+X-Gm-Message-State: APjAAAXBg8It7YmpCOaT9Cez/1yCMKQ8koNQOiKU6urS29mWg6C5rXkX
+ OuDQHFgdeVAfjKRv+ye/yHM=
+X-Google-Smtp-Source: APXvYqzMgIYYjOPJnIWQ0ODCJG9vYNsNP7C4LA+We6RWcFKY4ibzXz4QdblaFYdr8tYTJSlg5hrLIw==
+X-Received: by 2002:a65:4247:: with SMTP id d7mr27474764pgq.107.1572357611059; 
+ Tue, 29 Oct 2019 07:00:11 -0700 (PDT)
+Received: from saurav ([117.232.226.35])
+ by smtp.gmail.com with ESMTPSA id y129sm15557518pgb.28.2019.10.29.07.00.05
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 29 Oct 2019 07:00:10 -0700 (PDT)
+Date: Tue, 29 Oct 2019 19:30:02 +0530
+From: SAURAV GIREPUNJE <saurav.girepunje@gmail.com>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Subject: Re: [PATCH] mtd: devices: phram.c: Fix use true/false for bool type
+Message-ID: <20191029140002.GB4943@saurav>
+References: <20191029032142.GA6758@saurav>
+ <20191029091433.GG25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c1004cfa-acc3-4b9b-0061-08d75c75b264
-X-MS-Exchange-CrossTenant-originalarrivaltime: 29 Oct 2019 13:41:27.4339 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: qQoY+GtEYZAtTUDgio+ECKgX52cCue+4w4G0ak699eyK0wBqW3V5PT9FBG505ZAbitTT52iKkjgTV0hFu9lAOA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5139
+Content-Disposition: inline
+In-Reply-To: <20191029091433.GG25745@shell.armlinux.org.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_064137_409480_B8503004 
-X-CRM114-Status: GOOD (  11.22  )
+X-CRM114-CacheID: sfid-20191029_070013_343220_E4FCCE10 
+X-CRM114-Status: GOOD (  20.59  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.13.85 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (saurav.girepunje[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -127,58 +98,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peng Fan <peng.fan@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
- Anson Huang <anson.huang@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: vigneshr@ti.com, gregkh@linuxfoundation.org, richard@nod.at,
+ joern@lazybastard.org, linux-kernel@vger.kernel.org, marek.vasut@gmail.com,
+ linux-mtd@lists.infradead.org, miquel.raynal@bootlin.com,
+ saurav.girepunje@hotmail.com, tglx@linutronix.de, computersforpeace@gmail.com,
+ dwmw2@infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peng Fan <peng.fan@nxp.com>
-
-Switch the imx_clk_hw_gate3_flags function to clk_hw based API, rename
-accordingly and add a macro for clk based legacy. This allows us to
-move closer to a clear split between consumer and provider clk APIs.
-
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
----
- drivers/clk/imx/clk.h | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/clk/imx/clk.h b/drivers/clk/imx/clk.h
-index 9de6bc590638..cd92d9fdccf4 100644
---- a/drivers/clk/imx/clk.h
-+++ b/drivers/clk/imx/clk.h
-@@ -366,15 +366,18 @@ static inline struct clk_hw *imx_clk_hw_gate3(const char *name, const char *pare
- 			reg, shift, 0, &imx_ccm_lock);
- }
- 
--static inline struct clk *imx_clk_gate3_flags(const char *name,
-+static inline struct clk_hw *imx_clk_hw_gate3_flags(const char *name,
- 		const char *parent, void __iomem *reg, u8 shift,
- 		unsigned long flags)
- {
--	return clk_register_gate(NULL, name, parent,
-+	return clk_hw_register_gate(NULL, name, parent,
- 			flags | CLK_SET_RATE_PARENT | CLK_OPS_PARENT_ENABLE,
- 			reg, shift, 0, &imx_ccm_lock);
- }
- 
-+#define imx_clk_gate3_flags(name, parent, reg, shift, flags) \
-+	imx_clk_hw_gate3_flags(name, parent, reg, shift, flags)->clk
-+
- static inline struct clk_hw *imx_clk_hw_gate4(const char *name, const char *parent,
- 		void __iomem *reg, u8 shift)
- {
--- 
-2.16.4
-
+On Tue, Oct 29, 2019 at 09:14:33AM +0000, Russell King - ARM Linux admin wrote:
+> On Tue, Oct 29, 2019 at 08:51:42AM +0530, Saurav Girepunje wrote:
+> > Return type for security_extensions_enabled() is bool
+> > so use true/false.
+> 
+> This doesn't seem to bear any resemblence to the subject line.
+> 
+> > Signed-off-by: Saurav Girepunje <saurav.girepunje@gmail.com>
+> > ---
+> >  arch/arm/mm/nommu.c         |  2 +-
+> >  drivers/mtd/devices/phram.c | 11 +++++------
+> >  2 files changed, 6 insertions(+), 7 deletions(-)
+> > 
+> > diff --git a/arch/arm/mm/nommu.c b/arch/arm/mm/nommu.c
+> > index 24ecf8d30a1e..1fed74f93c66 100644
+> > --- a/arch/arm/mm/nommu.c
+> > +++ b/arch/arm/mm/nommu.c
+> > @@ -56,7 +56,7 @@ static inline bool security_extensions_enabled(void)
+> >  	if ((read_cpuid_id() & 0x000f0000) == 0x000f0000)
+> >  		return cpuid_feature_extract(CPUID_EXT_PFR1, 4) ||
+> >  			cpuid_feature_extract(CPUID_EXT_PFR1, 20);
+> > -	return 0;
+> > +	return true;
+> 
+> This isn't explained in the commit.  You explain why it should return
+> true or false, but you don't explain why converting this from returning
+> 0, aka false, to returning true is necessary.
+> 
+> >  }
+> >  
+> >  unsigned long setup_vectors_base(void)
+> > diff --git a/drivers/mtd/devices/phram.c b/drivers/mtd/devices/phram.c
+> > index 86ae13b756b5..931e5c2481b5 100644
+> > --- a/drivers/mtd/devices/phram.c
+> > +++ b/drivers/mtd/devices/phram.c
+> > @@ -239,27 +239,26 @@ static int phram_setup(const char *val)
+> >  
+> >  	ret = parse_name(&name, token[0]);
+> >  	if (ret)
+> > -		goto exit;
+> > +		return ret;
+> >  
+> >  	ret = parse_num64(&start, token[1]);
+> >  	if (ret) {
+> > +		kfree(name);
+> >  		parse_err("illegal start address\n");
+> > -		goto parse_err;
+> >  	}
+> >  
+> >  	ret = parse_num64(&len, token[2]);
+> >  	if (ret) {
+> > +		kfree(name);
+> >  		parse_err("illegal device length\n");
+> > -		goto parse_err;
+> >  	}
+> >  
+> >  	ret = register_device(name, start, len);
+> >  	if (!ret)
+> >  		pr_info("%s device: %#llx at %#llx\n", name, len, start);
+> > +	else
+> > +		kfree(name);
+> >  
+> > -parse_err:
+> > -	kfree(name);
+> > -exit:
+> >  	return ret;
+> >  }
+> 
+> At least this partially matches the subject line but it looks unrelated
+> to the other changes.
+> 
+> -- 
+> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+> FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+> According to speedtest.net: 11.9Mbps down 500kbps up
+Please igonre this patch. Suppose to send for only one file nommu.c. I have seperated and submitted the patch for chnages in file phram.c and nommu.c. Thanks for review ... :-)
 
 _______________________________________________
 linux-arm-kernel mailing list
