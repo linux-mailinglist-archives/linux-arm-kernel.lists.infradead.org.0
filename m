@@ -2,78 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4114E83FC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 10:15:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FDEEE8457
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 10:24:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9NuQ/bmXvdNOCyNrzML2DepTP/LILTJLtWsxuB8PZt4=; b=kF3yZPQCxItpff
-	uASuBpz26sx1MQdjQB1CZcA/M2QgL8Ab7YXQytyo2Fv7RRDyeO7TZtgb58oTMYbIHT2g0XAcYkmDi
-	wZ77+J7ySQYaAq1i9adYBSTd/+jtJfHPURLef3dsfqPeqt46FQ+alr7uHaAepmbKR5YdFy9mbrHz7
-	DHuGJUvMFQdxREfwddfjBomI7kvdFZNguZy3Wx26EZi3SsLQbr3Q6hjDjXZny7ASOFVKztKPFvMJX
-	pDEJ3D98M0rS0oVzcyDMAv5NhPqBxhgUONS3AOkwYgR96QNZFE8jqwaEw2wDADixrdUNhMh//jleC
-	tiibjoOs0oYWejicqt/A==;
+	List-Owner; bh=h8aw3+JCoXcbg6XWxvbWKdo6B2rXeDhpeuWZVKc8rmE=; b=UBSEsKPKWJjrbv
+	qTKW/62xFkmsHpSLQ+AViEMN2uyYmOazlOkhq6CMNDbNCBHd0J27sDt/EX3ie5Acq4cS+uI3tZjEu
+	vqO8uwtjVkNkRzribTJGOYGxhPbpCbNJeA+G/UrqAl4MTFhtGKu3EcKZOnKFLrQkJPtmC6/tFoXFm
+	3bM3VcFNtDXaQU0RPYeKT4tkqw19fE7ZWzDFhenoRjFm4ToqnangVg+ayxeDu8kTejJNPIFjlA/ER
+	+2jp36EdKCkacFvxH2SudC5YHI/9snB370Ht4/7qUKp53DOFZdjid1xbBT/emZrge+hlrrF6qzBIB
+	QPAnNoPNmMWJ6S6RPMCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPNay-0002oW-Tn; Tue, 29 Oct 2019 09:15:20 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1iPNjE-0005c2-Vk; Tue, 29 Oct 2019 09:23:52 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPNan-0001RY-Mx; Tue, 29 Oct 2019 09:15:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=iENbg+FdOJeAwjiRGinPqnU5SrOnnqln7JfFosCjnn4=; b=H3JkTkscyd9P7wDj27DHoHwRV
- ZRLlduecjL1PLM71TFPypN4uUjukvtpEwLe45Re5UyWtlmfQ55pC0oEwBwzNSBGA9mdpSKkar7DvS
- C8uZI25CEO34oBSLmWGrDtIOw8+XhRSUPcWrRS1VqFAnl6QiWXMCnSNRKG2I/w+l5yeK8Ve6ccaFd
- 1kjTwJQC0uIRYBCqvwAKUUVFcjzl7zH1qSQfaUZ74Sd5xHV7727LW8I9aOM+ZO9u6CTKqyVE9H+5l
- yGLChwVob0lycs2Ve0oYi0oEp7pS8SKVsAdUf5ucOk+GdclZo0OQre6e+Gxy0LKFV0L1PNZImYAr5
- eJT2c0JBw==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:48926)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1iPNaK-0000fQ-HD; Tue, 29 Oct 2019 09:14:40 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1iPNaD-0004Vk-Up; Tue, 29 Oct 2019 09:14:33 +0000
-Date: Tue, 29 Oct 2019 09:14:33 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Saurav Girepunje <saurav.girepunje@gmail.com>
-Subject: Re: [PATCH] mtd: devices: phram.c: Fix use true/false for bool type
-Message-ID: <20191029091433.GG25745@shell.armlinux.org.uk>
-References: <20191029032142.GA6758@saurav>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191029032142.GA6758@saurav>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1iPNj4-0005bJ-4C
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 09:23:43 +0000
+Received: from [91.217.168.176] (helo=big-swifty.misterjones.org)
+ by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
+ (Exim 4.80) (envelope-from <maz@kernel.org>)
+ id 1iPNj0-0005iM-ET; Tue, 29 Oct 2019 10:23:38 +0100
+Date: Tue, 29 Oct 2019 09:23:37 +0000
+Message-ID: <86mudjykfa.wl-maz@kernel.org>
+From: Marc Zyngier <maz@kernel.org>
+To: Zenghui Yu <yuzenghui@huawei.com>
+Subject: Re: [PATCH 3/3] KVM: arm/arm64: vgic: Don't rely on the wrong pending
+ table
+In-Reply-To: <20191029071919.177-4-yuzenghui@huawei.com>
+References: <20191029071919.177-1-yuzenghui@huawei.com>
+ <20191029071919.177-4-yuzenghui@huawei.com>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (aarch64-unknown-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+X-SA-Exim-Connect-IP: 91.217.168.176
+X-SA-Exim-Rcpt-To: yuzenghui@huawei.com, eric.auger@redhat.com,
+ james.morse@arm.com, julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com,
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ linux-kernel@vger.kernel.org, wanghaibin.wang@huawei.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_021509_931773_1261A152 
-X-CRM114-Status: GOOD (  17.17  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191029_022342_317488_2A0996EB 
+X-CRM114-Status: GOOD (  23.16  )
+X-Spam-Score: 4.5 (++++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (4.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
+ [91.217.168.176 listed in zen.spamhaus.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,90 +71,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: vigneshr@ti.com, gregkh@linuxfoundation.org, richard@nod.at,
- joern@lazybastard.org, linux-kernel@vger.kernel.org, marek.vasut@gmail.com,
- linux-mtd@lists.infradead.org, miquel.raynal@bootlin.com,
- saurav.girepunje@hotmail.com, tglx@linutronix.de, computersforpeace@gmail.com,
- dwmw2@infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: suzuki.poulose@arm.com, linux-kernel@vger.kernel.org, eric.auger@redhat.com,
+ james.morse@arm.com, julien.thierry.kdev@gmail.com, wanghaibin.wang@huawei.com,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 29, 2019 at 08:51:42AM +0530, Saurav Girepunje wrote:
-> Return type for security_extensions_enabled() is bool
-> so use true/false.
-
-This doesn't seem to bear any resemblence to the subject line.
-
-> Signed-off-by: Saurav Girepunje <saurav.girepunje@gmail.com>
-> ---
->  arch/arm/mm/nommu.c         |  2 +-
->  drivers/mtd/devices/phram.c | 11 +++++------
->  2 files changed, 6 insertions(+), 7 deletions(-)
+On Tue, 29 Oct 2019 07:19:19 +0000,
+Zenghui Yu <yuzenghui@huawei.com> wrote:
 > 
-> diff --git a/arch/arm/mm/nommu.c b/arch/arm/mm/nommu.c
-> index 24ecf8d30a1e..1fed74f93c66 100644
-> --- a/arch/arm/mm/nommu.c
-> +++ b/arch/arm/mm/nommu.c
-> @@ -56,7 +56,7 @@ static inline bool security_extensions_enabled(void)
->  	if ((read_cpuid_id() & 0x000f0000) == 0x000f0000)
->  		return cpuid_feature_extract(CPUID_EXT_PFR1, 4) ||
->  			cpuid_feature_extract(CPUID_EXT_PFR1, 20);
-> -	return 0;
-> +	return true;
+> It's possible that two LPIs locate in the same "byte_offset" but target
+> two different vcpus, where their pending status are indicated by two
+> different pending tables.  In such a scenario, using last_byte_offset
+> optimization will lead KVM relying on the wrong pending table entry.
+> Let us use last_ptr instead, which can be treated as a byte index into
+> a pending table and also, can be vcpu specific.
+> 
+> Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
+> ---
+> 
+> If this patch has done the right thing, we can even add the:
+> 
+> Fixes: 280771252c1b ("KVM: arm64: vgic-v3: KVM_DEV_ARM_VGIC_SAVE_PENDING_TABLES")
+> 
+> But to be honest, I'm not clear about what has this patch actually fixed.
+> Pending tables should contain all zeros before we flush vgic_irq's pending
+> status into guest's RAM (thinking that guest should never write anything
+> into it). So the pending table entry we've read from the guest memory
+> seems always be zero. And we will always do the right thing even if we
+> rely on the wrong pending table entry.
+> 
+> I think I must have some misunderstanding here... Please fix me.
 
-This isn't explained in the commit.  You explain why it should return
-true or false, but you don't explain why converting this from returning
-0, aka false, to returning true is necessary.
+I think you're spot on, and it is the code needs fixing, not you! The
+problem is that we only read a byte once, irrespective of the vcpu the
+interrupts is routed to. If we switch to another vcpu for the same
+byte offset, we must reload it.
 
->  }
->  
->  unsigned long setup_vectors_base(void)
-> diff --git a/drivers/mtd/devices/phram.c b/drivers/mtd/devices/phram.c
-> index 86ae13b756b5..931e5c2481b5 100644
-> --- a/drivers/mtd/devices/phram.c
-> +++ b/drivers/mtd/devices/phram.c
-> @@ -239,27 +239,26 @@ static int phram_setup(const char *val)
->  
->  	ret = parse_name(&name, token[0]);
->  	if (ret)
-> -		goto exit;
-> +		return ret;
->  
->  	ret = parse_num64(&start, token[1]);
->  	if (ret) {
-> +		kfree(name);
->  		parse_err("illegal start address\n");
-> -		goto parse_err;
->  	}
->  
->  	ret = parse_num64(&len, token[2]);
->  	if (ret) {
-> +		kfree(name);
->  		parse_err("illegal device length\n");
-> -		goto parse_err;
->  	}
->  
->  	ret = register_device(name, start, len);
->  	if (!ret)
->  		pr_info("%s device: %#llx at %#llx\n", name, len, start);
-> +	else
-> +		kfree(name);
->  
-> -parse_err:
-> -	kfree(name);
-> -exit:
->  	return ret;
->  }
+This can be done by either checking the vcpu, or by tracking the guest
+address that we read from (just like you do here).
 
-At least this partially matches the subject line but it looks unrelated
-to the other changes.
+A small comment below:
+
+>  virt/kvm/arm/vgic/vgic-v3.c | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
+> 
+> diff --git a/virt/kvm/arm/vgic/vgic-v3.c b/virt/kvm/arm/vgic/vgic-v3.c
+> index 5ef93e5041e1..7cd2e2f81513 100644
+> --- a/virt/kvm/arm/vgic/vgic-v3.c
+> +++ b/virt/kvm/arm/vgic/vgic-v3.c
+> @@ -363,8 +363,8 @@ int vgic_v3_lpi_sync_pending_status(struct kvm *kvm, struct vgic_irq *irq)
+>  int vgic_v3_save_pending_tables(struct kvm *kvm)
+>  {
+>  	struct vgic_dist *dist = &kvm->arch.vgic;
+> -	int last_byte_offset = -1;
+>  	struct vgic_irq *irq;
+> +	gpa_t last_ptr = -1;
+
+This should be written as
+
+     gpa_t last_ptr = ~(gpa_t)0;
+
+>  	int ret;
+>  	u8 val;
+>  
+> @@ -384,11 +384,11 @@ int vgic_v3_save_pending_tables(struct kvm *kvm)
+>  		bit_nr = irq->intid % BITS_PER_BYTE;
+>  		ptr = pendbase + byte_offset;
+>  
+> -		if (byte_offset != last_byte_offset) {
+> +		if (ptr != last_ptr) {
+>  			ret = kvm_read_guest_lock(kvm, ptr, &val, 1);
+>  			if (ret)
+>  				return ret;
+> -			last_byte_offset = byte_offset;
+> +			last_ptr = ptr;
+>  		}
+>  
+>  		stored = val & (1U << bit_nr);
+
+Otherwise, this looks good to me (no need to respin for the above
+nit).
+
+Eric, can I get an Ack from you, since you write this code?
+
+Thanks,
+
+	M.
 
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+Jazz is not dead, it just smells funny.
 
 _______________________________________________
 linux-arm-kernel mailing list
