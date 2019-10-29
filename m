@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 161F6EDD77
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 12:08:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9C66EDD76
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 12:07:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,27 +11,26 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Subject:Date:From:References:In-Reply-To:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=bfa4AAhWcvMy4+i6a1pGAVtlkFv2Cs2r67IfWK55HH0=; b=T7V8CvhuhjXcpuqPfgxlBhhpRp
-	ydgr5TljIPrDXo/ncCcbZWf2i5OlJFf5grHgRTnDkk0O7DVi66RWjUfeRVl8F8ncFinJRKOmfl5qf
-	Lkvzl54pYhjD8EbMjuqcdyze0UjFSfKY3Gp6KJew3zmFAu2crA6rZiSdVyeDlSSJaAQPEif59FQDH
-	BUPLk2P70iAPcEQv2VpC05OV6m78LHX5f93o0fXFPCMN5mZQ5XCY/xXJQ5jAzgdAE/fBLurucXPj5
-	Y+QD+wn0aWi80OabJIQHQHLpuAcR3R1kz4cRfBamK5F0Mq2RLVs+UZ1wRhBgx6XCxL9dYN318mSzw
-	5/K9SrSA==;
+	bh=OponUmLaW2/BIIvMlNRN7eFzOKlE/kokwMmat/ruy+M=; b=pwJ76E/UgCRms0WMi4GMQcrojb
+	B2vEGZtCx+RIV+puKNtEINCeS1OO0/c4p0dqNwwLdyl1vjx/lYqb9IC88guHmp6s1zwN4po3el+PK
+	4jBi/7LnnmtShtm0zFPak5AzEHPqSLayHwp2L5jOwdaMRDUShgbZpzgxN1U17DwLp98Rjt20V6ExR
+	e0OqQCbRqv+03w76qQIBNUC8gI0QfiqZQXAoFjCUXLq3TiFJmS33DLCRWujPnzsuQZ00FFy8sWsmb
+	xwYmdoQROw1us2876psaY2ovJqSMRD82ZFP4tnlIGRcFw/J5P0I6U4ltg6kjs5X+j9nHhW/22a0xl
+	VNK90N5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRaDN-0003YT-AF; Mon, 04 Nov 2019 11:08:05 +0000
+	id 1iRaD8-0003Ir-KO; Mon, 04 Nov 2019 11:07:50 +0000
 Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRaBe-0002Go-MN
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 11:06:20 +0000
+ id 1iRaBb-0002E6-SU
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 11:06:17 +0000
 Received: by verein.lst.de (Postfix, from userid 2005)
- id 750F368C7B; Mon,  4 Nov 2019 12:06:16 +0100 (CET)
+ id C3BA468C4E; Mon,  4 Nov 2019 12:06:13 +0100 (CET)
 In-Reply-To: <20191104110400.F319F68BE1@verein.lst.de>
 References: <20191104110400.F319F68BE1@verein.lst.de>
 From: Torsten Duwe <duwe@lst.de>
 Date: Tue, 29 Oct 2019 13:16:57 +0100
-Subject: [PATCH v5 7/7] arm64: dts: allwinner: a64: enable ANX6345 bridge on
- Teres-I
+Subject: [PATCH v5 6/7] dt-bindings: Add ANX6345 DP/eDP transmitter binding
 To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Thierry Reding <thierry.reding@gmail.com>,
@@ -42,10 +41,10 @@ To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  Vasily Khoruzhick <anarsoul@gmail.com>, Harald Geyer <harald@ccbib.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Thomas Gleixner <tglx@linutronix.de>
-Message-Id: <20191104110616.750F368C7B@verein.lst.de>
+Message-Id: <20191104110613.C3BA468C4E@verein.lst.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_030618_913696_3F6C1CAA 
-X-CRM114-Status: GOOD (  13.76  )
+X-CRM114-CacheID: sfid-20191104_030616_238861_4E8D5F31 
+X-CRM114-Status: GOOD (  12.00  )
 X-Spam-Score: 2.1 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (2.1 points)
@@ -76,92 +75,129 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Teres-I has an anx6345 bridge connected to the RGB666 LCD output, and
-the I2C controlling signals are connected to I2C0 bus.
+The anx6345 is an ultra-low power DisplayPort/eDP transmitter designed
+for portable devices.
 
-Enable it in the device tree, and enable the display engine, video mixer
-and tcon0 as well.
+Add a binding document for it.
 
 Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Torsten Duwe <duwe@suse.de>
+Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 ---
- .../boot/dts/allwinner/sun50i-a64-teres-i.dts      | 45 ++++++++++++++++++++--
- 1 file changed, 41 insertions(+), 4 deletions(-)
+ .../bindings/display/bridge/anx6345.yaml           | 102 ++++++++++++++++++++++
+ 1 file changed, 102 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/display/bridge/anx6345.yaml
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
-index 1069e7012c9c..970415106dcf 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
-@@ -100,18 +100,41 @@
- 	status = "okay";
- };
- 
-+&de {
-+	status = "okay";
-+};
+diff --git a/Documentation/devicetree/bindings/display/bridge/anx6345.yaml b/Documentation/devicetree/bindings/display/bridge/anx6345.yaml
+new file mode 100644
+index 000000000000..094e8e8a5faa
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/bridge/anx6345.yaml
+@@ -0,0 +1,102 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/display/bridge/anx6345.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
- &ehci1 {
- 	status = "okay";
- };
- 
- 
--/* The ANX6345 eDP-bridge is on i2c0. There is no linux (mainline)
-- * driver for this chip at the moment, the bootloader initializes it.
-- * However it can be accessed with the i2c-dev driver from user space.
-- */
- &i2c0 {
- 	clock-frequency = <100000>;
- 	status = "okay";
++title: Analogix ANX6345 eDP Transmitter Device Tree Bindings
 +
-+	anx6345: anx6345@38 {
-+		compatible = "analogix,anx6345";
-+		reg = <0x38>;
-+		reset-gpios = <&pio 3 24 GPIO_ACTIVE_LOW>; /* PD24 */
-+		dvdd25-supply = <&reg_dldo2>;
-+		dvdd12-supply = <&reg_dldo3>;
++maintainers:
++  - Torsten Duwe <duwe@lst.de>
 +
-+		ports {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
++description: |
++  The ANX6345 is an ultra-low power Full-HD eDP transmitter designed for
++  portable devices.
 +
-+			port@0 {
-+				anx6345_in: endpoint {
-+					remote-endpoint = <&tcon0_out_anx6345>;
-+				};
-+			};
-+		};
-+	};
-+};
++properties:
++  compatible:
++    const: analogix,anx6345
 +
-+&mixer0 {
-+	status = "okay";
- };
- 
- &mmc0 {
-@@ -319,6 +342,20 @@
- 	status = "okay";
- };
- 
-+&tcon0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&lcd_rgb666_pins>;
++  reg:
++    maxItems: 1
++    description: base I2C address of the device
 +
-+	status = "okay";
-+};
++  reset-gpios:
++    maxItems: 1
++    description: GPIO connected to active low reset
 +
-+&tcon0_out {
-+	tcon0_out_anx6345: endpoint@0 {
-+		reg = <0>;
-+		remote-endpoint = <&anx6345_in>;
-+	};
-+};
++  dvdd12-supply:
++    maxItems: 1
++    description: Regulator for 1.2V digital core power.
 +
- &uart0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&uart0_pb_pins>;
--- 
-2.16.4
-
++  dvdd25-supply:
++    maxItems: 1
++    description: Regulator for 2.5V digital core power.
++
++  ports:
++    type: object
++
++    properties:
++      port@0:
++        type: object
++        description: |
++          Video port for LVTTL input
++
++      port@1:
++        type: object
++        description: |
++          Video port for eDP output (panel or connector).
++          May be omitted if EDID works reliably.
++
++    required:
++      - port@0
++
++required:
++  - compatible
++  - reg
++  - reset-gpios
++  - dvdd12-supply
++  - dvdd25-supply
++  - ports
++
++additionalProperties: false
++
++examples:
++  - |
++    i2c0 {
++      #address-cells = <1>;
++      #size-cells = <0>;
++
++      anx6345: anx6345@38 {
++        compatible = "analogix,anx6345";
++        reg = <0x38>;
++        reset-gpios = <&pio42 1 /* GPIO_ACTIVE_LOW */>;
++        dvdd25-supply = <&reg_dldo2>;
++        dvdd12-supply = <&reg_fldo1>;
++
++        ports {
++          #address-cells = <1>;
++          #size-cells = <0>;
++
++          anx6345_in: port@0 {
++            #address-cells = <1>;
++            #size-cells = <0>;
++            reg = <0>;
++            anx6345_in_tcon0: endpoint@0 {
++              reg = <0>;
++              remote-endpoint = <&tcon0_out_anx6345>;
++            };
++          };
++
++          anx6345_out: port@1 {
++            #address-cells = <1>;
++            #size-cells = <0>;
++            reg = <1>;
++            anx6345_out_panel: endpoint@0 {
++              reg = <0>;
++              remote-endpoint = <&panel_in_edp>;
++            };
++          };
++        };
++      };
++    };
 
 _______________________________________________
 linux-arm-kernel mailing list
