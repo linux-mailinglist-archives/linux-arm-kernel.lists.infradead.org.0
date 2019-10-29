@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D99BF30A2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 14:54:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9AAEF3085
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 14:52:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,26 +11,27 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Subject:Date:From:References:In-Reply-To:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=OponUmLaW2/BIIvMlNRN7eFzOKlE/kokwMmat/ruy+M=; b=bJGbViRieng4tRBjy/3Ms24mLr
-	bshwn9alUjRywGZQIdyo24mZby4NphrpSTpj+GxYqkFacbbgMysbTRCRqldn/0zRDkFBG/b+3V3Nc
-	9m/P+3NO1EvyO3NR+slRzQUNQx4JXmQeeVCwIvr4zf6KuSG0+yM39CVKhIt1g+GihivCw0cwo2EvI
-	vC7Fo3hbMWQAKa/5ytZ6TDHSt7/8OpOywL6DrRSFd/j7MTL30gQrPZsXfPIDC6Z6FwwIARpGjPbvQ
-	+o1QlGr41P+SogKGPt+bfS53tVN8R/RXZXj+1UEvwfbSdFpblqqWKwMM/Z1PujvQRIiqvlboBwkOm
-	UAHaGFHQ==;
+	bh=cvAmtVy9a1vsMjMbSrvrCjz/6/W6GKsJuBNvg2Jc3oM=; b=bUayBvTDSrYquD7zjCaMcYhBAR
+	bGAT32UDlxBblna3+yFVk247xS+UTgDsbGIJCG/YuBIEPz6WipnDFJ0Z5Jj2uxBLxhjsxukT21LVS
+	jMa1T0a1+5DzACfa5Nb7ZrMy5mFY60Z1WL0k+PSgBZaWskYmKHXSmx+2UXXXtDBJ5mEAGQ2pZ5s+n
+	+fkXVoFUTU5jr3GFUKbx5luVTZu0p4E3vgcCFegmixT/uTwhKkR+uYlnlILXv9lWBwQjt0VPVyeDO
+	pMgLHyH4CmMT8JNVSi4zGOhl66cUY77RZ95lnyZPVLt9Yu82jgCWHRKdF0fOZ2y6Nq4dBc/3RWTSw
+	iG/MeLBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSiEW-0007kQ-Ok; Thu, 07 Nov 2019 13:53:56 +0000
+	id 1iSiCw-0006Ik-FI; Thu, 07 Nov 2019 13:52:18 +0000
 Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSiD3-0006Xn-1u
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 13:52:27 +0000
+ id 1iSiCj-0006Ht-4w
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 13:52:06 +0000
 Received: by verein.lst.de (Postfix, from userid 2005)
- id BD63768C4E; Thu,  7 Nov 2019 14:52:22 +0100 (CET)
+ id 2089C68BE1; Thu,  7 Nov 2019 14:52:02 +0100 (CET)
 In-Reply-To: <20191107135018.0A04068BE1@verein.lst.de>
 References: <20191107135018.0A04068BE1@verein.lst.de>
 From: Torsten Duwe <duwe@lst.de>
 Date: Tue, 29 Oct 2019 13:16:57 +0100
-Subject: [PATCH v5 6/7] dt-bindings: Add ANX6345 DP/eDP transmitter binding
+Subject: [PATCH v5 1/7] drm/bridge: move ANA78xx driver to analogix
+ subdirectory
 To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Thierry Reding <thierry.reding@gmail.com>,
@@ -41,10 +42,10 @@ To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  Vasily Khoruzhick <anarsoul@gmail.com>, Harald Geyer <harald@ccbib.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Thomas Gleixner <tglx@linutronix.de>
-Message-Id: <20191107135222.BD63768C4E@verein.lst.de>
+Message-Id: <20191107135202.2089C68BE1@verein.lst.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_055225_398964_81741CB0 
-X-CRM114-Status: GOOD (  11.34  )
+X-CRM114-CacheID: sfid-20191107_055205_489131_AE147779 
+X-CRM114-Status: GOOD (  10.44  )
 X-Spam-Score: 2.1 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (2.1 points)
@@ -75,129 +76,108 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The anx6345 is an ultra-low power DisplayPort/eDP transmitter designed
-for portable devices.
+From: Icenowy Zheng <icenowy@aosc.io>
 
-Add a binding document for it.
+As ANA78xx chips are designed and produced by Analogix Semiconductor,
+Inc, move their driver codes into analogix subdirectory.
 
 Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
 Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
-Signed-off-by: Torsten Duwe <duwe@suse.de>
 Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Signed-off-by: Torsten Duwe <duwe@suse.de>
+Reviewed-by: Andrzej Hajda <a.hajda@samsung.com>
 ---
- .../bindings/display/bridge/anx6345.yaml           | 102 ++++++++++++++++++++++
- 1 file changed, 102 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/display/bridge/anx6345.yaml
+ drivers/gpu/drm/bridge/Kconfig                           | 10 ----------
+ drivers/gpu/drm/bridge/Makefile                          |  4 ++--
+ drivers/gpu/drm/bridge/analogix/Kconfig                  | 10 ++++++++++
+ drivers/gpu/drm/bridge/analogix/Makefile                 |  1 +
+ drivers/gpu/drm/bridge/{ => analogix}/analogix-anx78xx.c |  0
+ drivers/gpu/drm/bridge/{ => analogix}/analogix-anx78xx.h |  0
+ 6 files changed, 13 insertions(+), 12 deletions(-)
+ rename drivers/gpu/drm/bridge/{ => analogix}/analogix-anx78xx.c (100%)
+ rename drivers/gpu/drm/bridge/{ => analogix}/analogix-anx78xx.h (100%)
 
-diff --git a/Documentation/devicetree/bindings/display/bridge/anx6345.yaml b/Documentation/devicetree/bindings/display/bridge/anx6345.yaml
-new file mode 100644
-index 000000000000..094e8e8a5faa
---- /dev/null
-+++ b/Documentation/devicetree/bindings/display/bridge/anx6345.yaml
-@@ -0,0 +1,102 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/display/bridge/anx6345.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kconfig
+index 1cc9f502c1f2..6c48722130fd 100644
+--- a/drivers/gpu/drm/bridge/Kconfig
++++ b/drivers/gpu/drm/bridge/Kconfig
+@@ -16,16 +16,6 @@ config DRM_PANEL_BRIDGE
+ menu "Display Interface Bridges"
+ 	depends on DRM && DRM_BRIDGE
+ 
+-config DRM_ANALOGIX_ANX78XX
+-	tristate "Analogix ANX78XX bridge"
+-	select DRM_KMS_HELPER
+-	select REGMAP_I2C
+-	---help---
+-	  ANX78XX is an ultra-low power Full-HD SlimPort transmitter
+-	  designed for portable devices. The ANX78XX transforms
+-	  the HDMI output of an application processor to MyDP
+-	  or DisplayPort.
+-
+ config DRM_CDNS_DSI
+ 	tristate "Cadence DPI/DSI bridge"
+ 	select DRM_KMS_HELPER
+diff --git a/drivers/gpu/drm/bridge/Makefile b/drivers/gpu/drm/bridge/Makefile
+index 4934fcf5a6f8..a6c7dd7727ea 100644
+--- a/drivers/gpu/drm/bridge/Makefile
++++ b/drivers/gpu/drm/bridge/Makefile
+@@ -1,5 +1,4 @@
+ # SPDX-License-Identifier: GPL-2.0
+-obj-$(CONFIG_DRM_ANALOGIX_ANX78XX) += analogix-anx78xx.o
+ obj-$(CONFIG_DRM_CDNS_DSI) += cdns-dsi.o
+ obj-$(CONFIG_DRM_DUMB_VGA_DAC) += dumb-vga-dac.o
+ obj-$(CONFIG_DRM_LVDS_ENCODER) += lvds-encoder.o
+@@ -12,8 +11,9 @@ obj-$(CONFIG_DRM_SII9234) += sii9234.o
+ obj-$(CONFIG_DRM_THINE_THC63LVD1024) += thc63lvd1024.o
+ obj-$(CONFIG_DRM_TOSHIBA_TC358764) += tc358764.o
+ obj-$(CONFIG_DRM_TOSHIBA_TC358767) += tc358767.o
+-obj-$(CONFIG_DRM_ANALOGIX_DP) += analogix/
+ obj-$(CONFIG_DRM_I2C_ADV7511) += adv7511/
+ obj-$(CONFIG_DRM_TI_SN65DSI86) += ti-sn65dsi86.o
+ obj-$(CONFIG_DRM_TI_TFP410) += ti-tfp410.o
 +
-+title: Analogix ANX6345 eDP Transmitter Device Tree Bindings
++obj-y += analogix/
+ obj-y += synopsys/
+diff --git a/drivers/gpu/drm/bridge/analogix/Kconfig b/drivers/gpu/drm/bridge/analogix/Kconfig
+index e930ff9b5cd4..29ba1b21019e 100644
+--- a/drivers/gpu/drm/bridge/analogix/Kconfig
++++ b/drivers/gpu/drm/bridge/analogix/Kconfig
+@@ -1,4 +1,14 @@
+ # SPDX-License-Identifier: GPL-2.0-only
++config DRM_ANALOGIX_ANX78XX
++	tristate "Analogix ANX78XX bridge"
++	select DRM_KMS_HELPER
++	select REGMAP_I2C
++	help
++	  ANX78XX is an ultra-low power Full-HD SlimPort transmitter
++	  designed for portable devices. The ANX78XX transforms
++	  the HDMI output of an application processor to MyDP
++	  or DisplayPort.
 +
-+maintainers:
-+  - Torsten Duwe <duwe@lst.de>
-+
-+description: |
-+  The ANX6345 is an ultra-low power Full-HD eDP transmitter designed for
-+  portable devices.
-+
-+properties:
-+  compatible:
-+    const: analogix,anx6345
-+
-+  reg:
-+    maxItems: 1
-+    description: base I2C address of the device
-+
-+  reset-gpios:
-+    maxItems: 1
-+    description: GPIO connected to active low reset
-+
-+  dvdd12-supply:
-+    maxItems: 1
-+    description: Regulator for 1.2V digital core power.
-+
-+  dvdd25-supply:
-+    maxItems: 1
-+    description: Regulator for 2.5V digital core power.
-+
-+  ports:
-+    type: object
-+
-+    properties:
-+      port@0:
-+        type: object
-+        description: |
-+          Video port for LVTTL input
-+
-+      port@1:
-+        type: object
-+        description: |
-+          Video port for eDP output (panel or connector).
-+          May be omitted if EDID works reliably.
-+
-+    required:
-+      - port@0
-+
-+required:
-+  - compatible
-+  - reg
-+  - reset-gpios
-+  - dvdd12-supply
-+  - dvdd25-supply
-+  - ports
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    i2c0 {
-+      #address-cells = <1>;
-+      #size-cells = <0>;
-+
-+      anx6345: anx6345@38 {
-+        compatible = "analogix,anx6345";
-+        reg = <0x38>;
-+        reset-gpios = <&pio42 1 /* GPIO_ACTIVE_LOW */>;
-+        dvdd25-supply = <&reg_dldo2>;
-+        dvdd12-supply = <&reg_fldo1>;
-+
-+        ports {
-+          #address-cells = <1>;
-+          #size-cells = <0>;
-+
-+          anx6345_in: port@0 {
-+            #address-cells = <1>;
-+            #size-cells = <0>;
-+            reg = <0>;
-+            anx6345_in_tcon0: endpoint@0 {
-+              reg = <0>;
-+              remote-endpoint = <&tcon0_out_anx6345>;
-+            };
-+          };
-+
-+          anx6345_out: port@1 {
-+            #address-cells = <1>;
-+            #size-cells = <0>;
-+            reg = <1>;
-+            anx6345_out_panel: endpoint@0 {
-+              reg = <0>;
-+              remote-endpoint = <&panel_in_edp>;
-+            };
-+          };
-+        };
-+      };
-+    };
+ config DRM_ANALOGIX_DP
+ 	tristate
+ 	depends on DRM
+diff --git a/drivers/gpu/drm/bridge/analogix/Makefile b/drivers/gpu/drm/bridge/analogix/Makefile
+index fdbf3fd2f087..6fcbfd3ee560 100644
+--- a/drivers/gpu/drm/bridge/analogix/Makefile
++++ b/drivers/gpu/drm/bridge/analogix/Makefile
+@@ -1,3 +1,4 @@
+ # SPDX-License-Identifier: GPL-2.0-only
+ analogix_dp-objs := analogix_dp_core.o analogix_dp_reg.o
++obj-$(CONFIG_DRM_ANALOGIX_ANX78XX) += analogix-anx78xx.o
+ obj-$(CONFIG_DRM_ANALOGIX_DP) += analogix_dp.o
+diff --git a/drivers/gpu/drm/bridge/analogix-anx78xx.c b/drivers/gpu/drm/bridge/analogix/analogix-anx78xx.c
+similarity index 100%
+rename from drivers/gpu/drm/bridge/analogix-anx78xx.c
+rename to drivers/gpu/drm/bridge/analogix/analogix-anx78xx.c
+diff --git a/drivers/gpu/drm/bridge/analogix-anx78xx.h b/drivers/gpu/drm/bridge/analogix/analogix-anx78xx.h
+similarity index 100%
+rename from drivers/gpu/drm/bridge/analogix-anx78xx.h
+rename to drivers/gpu/drm/bridge/analogix/analogix-anx78xx.h
+-- 
+2.16.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
