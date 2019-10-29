@@ -2,58 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 524F2E81D1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 08:06:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A8C1E81D2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 08:07:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W2465HYUt+wIsAZJxo56pxGIalXuc/0KAm49by7qNDc=; b=tgcXC+DZxUQKhg
-	iJco9ttD5AdGB/PZaTmMxDUjerdwvPlk4rW56DeZM2f68CZRCTkz60A+RTQJHfUkBZJ2tOew/fR/r
-	uT0zgR5AbPxQjGqU2JDauB6Jtz8fBufUv4kAZchRtFAicm2BrullGA7heiytBt2568UCpeo3giAz/
-	rxRoNKN+4JVuOd+zJGKCWsTExy/iz2QAMW0GPV03gDEQwlloeorvgc5cWwTmB/r/Xwl5HoIMDFQVe
-	m4uNb9kGVYtvhDfQchgz7UXyy19OHrNJJp7Ecjj6J4sT3Z4LJolls9hXFQcMT2DQoEaWX4+xmIOwG
-	Wtf4Jy+Kjy9p0WraQfrA==;
+	List-Owner; bh=YgeKw9gjOg2OTPwzhl5vAwgOmMZIaEANHhkX9K+mapQ=; b=IV4vlXhExVmcZs
+	VLLQJuStB2UlsLcmWU5mGPQR4OEpqP7ZqEO5GeTOpwA70gftrDyOvmOab2+gasLxpX0+4rSMth/Au
+	A1B1Z4DoXyvXk/Pl0Aw9Zau0XWq048rKk2AvvIxOjk3gkbCzM910EhZA6D3AxIrkxCHqQkCM5DCdS
+	rvS07u3jIirpVHZ7MMzjeTXByLbH5PzNS1GRe0zsAJDI3aD5JD8y9xPBDNYiJ4NDd7u3bGeDnhB3T
+	40q9oEqmu3ZGpfPvCnpo9UcpvytszBHMAWii0i219XwYd3gKQI56Zd32OhveNlYK667Zrv5APoppP
+	cYioACByoVAEIU/cooBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPLac-0005N8-KJ; Tue, 29 Oct 2019 07:06:50 +0000
-Received: from mail-eopbgr50044.outbound.protection.outlook.com ([40.107.5.44]
- helo=EUR03-VE1-obe.outbound.protection.outlook.com)
+	id 1iPLat-0005ap-32; Tue, 29 Oct 2019 07:07:07 +0000
+Received: from mail-eopbgr80051.outbound.protection.outlook.com ([40.107.8.51]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPLa5-0005AA-Do
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 07:06:18 +0000
+ id 1iPLaB-0005Eg-RZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 07:06:25 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=CTv7Hj4CJttZRJbP0X7HKwWIlylTNRHNJmwPSBEacXfyN+xeS+T29G9q0HW8rknfMkpQ31YltTPLUya9WLmtAv9MD61AajwCK3cx9k+8G9/OPZajyZvP75BiA0mUIevNzSA2+WBruBKyP5N+AXpq0E5slnnurtzBiXntlFWd3vEIPhZ++4a2UPTp5Qw6fJEsvHtZWECIHZQiWW+B0701fRZILzkor5p+yqDa9Rz/Ua8+fbYVXe+nDnaTLQ8CUZlKJ+TtjBhRpXMxDkFrDvONuZLEt88/wnfNnaz50JvPvptqn/JMQNI6iAnYcHTI5A6jfNQwu0Soot/H6ujeALCW1w==
+ b=nJJpdBIXgUn++AKIbw+4LT71WexH+2iOHWKibjeFHW4sq5m9v/zRgtmebBWvhzIij1fRzaHKQtdqNGPQOOYcMEukVefzTt+4VRCJVmoKsl8zgjWYefKFcbmkBrjOcfce7GE9YK4svygHoF/BRSLZ00yPs+Sdgjfca3SavPjtZA26nDgM/ljB+/g5Dz21BnTfijvZo3QZ1Pe//ODIhUuMBAhlL/DkaiKBHnjdeEpW8LSoJuIbqjVvZjTQcv2FQTRy5fIC41JjLJgfr71JtegTBGkExGyjMiOV0bU4VpRkDtWDXNRiVzOGIfIkY/KqUB0rqfS/FwEruzdWyL4BV7nJIA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=6E5oITvQL6hYhTrbzL4zUPSbeqjp2+wa4uRRfN+CyLk=;
- b=QXgT2VlgPDrZtTAW3Fhe73cp/KrwUqUWgo18JTrkdVHRjCRMQPqrhWpb2W3KH5OY2DXRtVnv/ZkAoyoVrlFXzlThNjrL2fu1z0ls1hiocTHxdLhigVGwhkzqvhizJiX+HwptRAHVoD77EvCBsIBiPFGEIO4dEELggG5+zldbxt6cA3LzwHv+xj3MB9USiK6l5qbGhS0QgAkSNHvfxZ4gg3SUgsdkInQiMQf8DaGwVN66pQbDc/oznYVUMzZdvEa6auAjs7LYeRExGPkNs49vachJ4PTO75Kw9YK9yg/MX4L0vy9mbCSpQ5JWyCkGi4rdWDvjCqu23qu3ChmLNWVxKw==
+ bh=wLhHsFivKKY66Q/bqWlP06H1nF2ncKIkIemq2Texi4Q=;
+ b=YtQvJZKJQmaLgPP50/BtGwmak6W/tSycbnI8jYAMkC0vciWA1Lc8xqSp836XSCWWhugyM5T6k3tokm3p0fN4S+2rmQWcgaY1px4k/8xgAlM60JCec4XFsMWF4OiHNPVjZOkdLhGIxI0wWKXOo0q0t489L/Q2wNCAzauwTwX6Oycj5+BNJYeHGyYX+5lFifI2FISVSFyIYLcB/l/Onrz0rrjOikMNYf9lBkTEFA6PVgtT/JvdS331bMJGSr3wrD8Y5laNgf+9Uu//wUYQJpzfqnZ//unN5qs+BK0FUYJrMajXDfyKCfJ78AVgCVfHMsrZ717enZSTbl9UwMGAjF+opQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=6E5oITvQL6hYhTrbzL4zUPSbeqjp2+wa4uRRfN+CyLk=;
- b=hAUlVGCFkYZ0uSWSHpQH7v9EKrC4ZA64YkfGV/LASJVRhXRd6TBQK1p8BMvNrnKu0uXa/chbGNOcsgI1o+jsBTwSdSXtC4Pp7AByknPhkms+/LHM2hp/M3QMQhOyvROtyV/Ex0kARU3N98rYELsud9YnVRHYyIHpOfE50Vgnpkc=
+ bh=wLhHsFivKKY66Q/bqWlP06H1nF2ncKIkIemq2Texi4Q=;
+ b=D4e8LUo0qfikGff9Gy12PdW+jX5bZC8P1t8QkRVtwwpZGeOySDsGBI0sLoLLm6G31VAgRdWRYoJwgY+WjIYl5WFXhfdcjanqYaZybnOhw3DdDSCVZ3HVBZ/0nSTrmOCIE2FvbLdYKtOkH0rulxyZmSuFxsQbKUb+DmvxpyzrQ2g=
 Received: from DB7PR04MB4618.eurprd04.prod.outlook.com (52.135.139.151) by
- DB7PR04MB4218.eurprd04.prod.outlook.com (52.135.128.148) with Microsoft SMTP
+ DB7PR04MB4457.eurprd04.prod.outlook.com (52.135.141.30) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2387.24; Tue, 29 Oct 2019 07:06:16 +0000
+ 15.20.2347.21; Tue, 29 Oct 2019 07:06:19 +0000
 Received: from DB7PR04MB4618.eurprd04.prod.outlook.com
  ([fe80::79f1:61a7:4076:8679]) by DB7PR04MB4618.eurprd04.prod.outlook.com
  ([fe80::79f1:61a7:4076:8679%3]) with mapi id 15.20.2367.031; Tue, 29 Oct 2019
- 07:06:16 +0000
+ 07:06:19 +0000
 From: Joakim Zhang <qiangqing.zhang@nxp.com>
 To: "will@kernel.org" <will@kernel.org>, "mark.rutland@arm.com"
  <mark.rutland@arm.com>, "robin.murphy@arm.com" <robin.murphy@arm.com>
-Subject: [PATCH V2 2/4] bindings: perf: imx-ddr: Add new compatible string
-Thread-Topic: [PATCH V2 2/4] bindings: perf: imx-ddr: Add new compatible string
-Thread-Index: AQHVjida1xihmY3i3ES3OSOWeaC+qA==
-Date: Tue, 29 Oct 2019 07:06:15 +0000
-Message-ID: <20191029070314.16719-2-qiangqing.zhang@nxp.com>
+Subject: [PATCH V2 3/4] perf/imx_ddr: Add enhanced AXI ID filter support
+Thread-Topic: [PATCH V2 3/4] perf/imx_ddr: Add enhanced AXI ID filter support
+Thread-Index: AQHVjidcsAPUWCct1E+N9V1DGkPyXA==
+Date: Tue, 29 Oct 2019 07:06:19 +0000
+Message-ID: <20191029070314.16719-3-qiangqing.zhang@nxp.com>
 References: <20191029070314.16719-1-qiangqing.zhang@nxp.com>
 In-Reply-To: <20191029070314.16719-1-qiangqing.zhang@nxp.com>
 Accept-Language: en-US
@@ -70,44 +70,41 @@ x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [119.31.174.71]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: db1bfe6e-5c79-4e94-3b32-08d75c3e7d39
-x-ms-traffictypediagnostic: DB7PR04MB4218:|DB7PR04MB4218:
+x-ms-office365-filtering-correlation-id: 0ef61c8d-ab20-4b19-b49f-08d75c3e7f4a
+x-ms-traffictypediagnostic: DB7PR04MB4457:|DB7PR04MB4457:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB7PR04MB4218DEA0C4DD0474FB83EFD3E6610@DB7PR04MB4218.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1122;
+x-microsoft-antispam-prvs: <DB7PR04MB4457E5578148A127C3E08594E6610@DB7PR04MB4457.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:873;
 x-forefront-prvs: 0205EDCD76
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(366004)(136003)(346002)(376002)(396003)(189003)(199004)(54534003)(6506007)(3846002)(386003)(76176011)(6116002)(66446008)(26005)(186003)(86362001)(102836004)(316002)(71200400001)(486006)(52116002)(2906002)(110136005)(71190400001)(54906003)(2201001)(14454004)(8676002)(4326008)(81156014)(81166006)(446003)(6512007)(2501003)(66066001)(1076003)(478600001)(36756003)(8936002)(66946007)(4744005)(64756008)(66476007)(66556008)(305945005)(7736002)(5660300002)(25786009)(50226002)(6436002)(2616005)(99286004)(476003)(11346002)(256004)(6486002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR04MB4218;
+ SFS:(10009020)(4636009)(396003)(136003)(366004)(376002)(39860400002)(346002)(54534003)(189003)(199004)(6486002)(99286004)(1076003)(66946007)(66556008)(50226002)(64756008)(52116002)(76176011)(316002)(66476007)(66446008)(2501003)(66066001)(54906003)(81156014)(110136005)(6512007)(6436002)(81166006)(4326008)(8676002)(8936002)(71190400001)(71200400001)(476003)(7736002)(305945005)(2616005)(14454004)(256004)(102836004)(11346002)(446003)(86362001)(26005)(36756003)(25786009)(6116002)(5660300002)(186003)(3846002)(2906002)(478600001)(6506007)(386003)(486006)(2201001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR04MB4457;
  H:DB7PR04MB4618.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: d+jElQkbI4LyxGr+4AOaaHHlepjwRqktpIRPVFsbwvxqiqMxDVYk/W27Ql0XsYOY47XEzv3FEJsmblS/wO5LhL7GLVPXW5d0ZWm3CCVETsAOzSr6lByRTH5UVUwYshtjF5momjzyvliNLzDSwjQ2M10GsTEemzc6ITjtNRydX8IPerE55g2eBcRyWe7U3fTaMzK8b2YG1xpQ4yu060Bftb+f2pDA1KJ/qklNofKVIsqKR7El5PeqGyO0w62LhPkiYQ5f0efCe7dFaH5mE7UGa7UA5+JJfZ/9u9SkRR0bRQ1k+rtYmrmCeGY7nJ04SNGakRcOftjlTo4LhTP/fkXPXGqR6z39H6btblvyzVEkFskbN3SMNlpvIIufVzn6LIst1jM3IckLUP6lmdnSohBYe8x7PBec0d8+Cd4CVaEysYi4+/Xvykv2Ghh4TzjbTMYe
+x-microsoft-antispam-message-info: qvfNniHQu/FTuS121qYxbzpdfhd5YxeyLtazqPwX7Xq64Ugt0FmH4Kfq4SeFOyTW6RxDybw025486UW//KZIVeZAXGCEW1oS5S3E4U9Irgr1kJgjSszuiIcM1qoU/QCOagUAYL8LRyq+4Wm7VJbBSoTeyJt1sXIwba6nHUF/41p5qhvzsYEEmve7ICF8/IzI0Qzaariusg2eQSNwbpj7eQdJLYTVNFIB9FZ84QrQ6LaRDj3JVa8Iu/gxMMxwnQdL0Y2NtiHaHePRuPi4hDyHr55irGoogqyC24mvXkztITokhev30lG/Tjz+bcmwJ8JWFuPYzQKXZGotEFcg6zmqpwzXtAIDNQCSFNZ1aAb9YMDfjEVx1v+9a4sr5g8n3zFfJCvUDEvKGwC7ZwDCN7r9B2rxhCyvluJtUecJDHJkuBCEkkES1eAWf1U1MYkPT2Uj
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: db1bfe6e-5c79-4e94-3b32-08d75c3e7d39
-X-MS-Exchange-CrossTenant-originalarrivaltime: 29 Oct 2019 07:06:15.8882 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0ef61c8d-ab20-4b19-b49f-08d75c3e7f4a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 29 Oct 2019 07:06:19.1553 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: sghfyZjfcGr6ZbziIevrOZ5KHeQhIx28uM77I+ARria062A/WLuvWHNN5c+zQ0dKP6c6Fqx81MpnZaCrqShRsQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB4218
+X-MS-Exchange-CrossTenant-userprincipalname: YDQYLUoYSjMXnnWZnmSE3BLlDZtblxEFnDjOG6Xo/NeoZuFvwegZteOGEoKBPUzkvUO6AZ49OLw8gTh4Gr3IWw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB4457
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_000617_463595_12E385AE 
-X-CRM114-Status: UNSURE (   9.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191029_000624_014821_45CF5663 
+X-CRM114-Status: GOOD (  14.18  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.5.44 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.5.44 listed in wl.mailspike.net]
+ no trust [40.107.8.51 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -136,29 +133,110 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add new compatible string for i.MX8MPlus DDR PMU core.
+With DDR_CAP_AXI_ID_FILTER quirk, indicating HW supports AXI ID filter
+which only can get bursts from DDR transaction, i.e. DDR read/write
+requests.
+
+This patch add DDR_CAP_AXI_ID_ENHANCED_FILTER quirk, indicating HW
+supports AXI ID filter which can get bursts and bytes from DDR
+transaction at the same time. We hope PMU always return bytes in the
+driver due to it is more meaningful for users.
+
+DDR_CAP_AXI_ID_ENHANCED_FILTER is based on DDR_CAP_AXI_ID_FILTER and
+extend it a bit. So need select both above two qiurks together when
+HW supports enhanced AXI ID filter.
 
 Signed-off-by: Joakim Zhang <qiangqing.zhang@nxp.com>
 ---
-ChangeLog:
+Changelog:
 V1->V2:
-	* new add in V2.
+	* use ddr_perf_is_filtered() helper to simply the code.
+	* improve the commit message.
 ---
- Documentation/devicetree/bindings/perf/fsl-imx-ddr.txt | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/perf/fsl_imx8_ddr_perf.c | 55 ++++++++++++++++++++------------
+ 1 file changed, 34 insertions(+), 21 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/perf/fsl-imx-ddr.txt b/Documentation/devicetree/bindings/perf/fsl-imx-ddr.txt
-index d77e3f26f9e6..7822a806ea0a 100644
---- a/Documentation/devicetree/bindings/perf/fsl-imx-ddr.txt
-+++ b/Documentation/devicetree/bindings/perf/fsl-imx-ddr.txt
-@@ -5,6 +5,7 @@ Required properties:
- - compatible: should be one of:
- 	"fsl,imx8-ddr-pmu"
- 	"fsl,imx8m-ddr-pmu"
-+	"fsl,imx8mp-ddr-pmu"
+diff --git a/drivers/perf/fsl_imx8_ddr_perf.c b/drivers/perf/fsl_imx8_ddr_perf.c
+index ce7345745b42..17c817d89222 100644
+--- a/drivers/perf/fsl_imx8_ddr_perf.c
++++ b/drivers/perf/fsl_imx8_ddr_perf.c
+@@ -45,7 +45,8 @@
+ static DEFINE_IDA(ddr_ida);
  
- - reg: physical address and size
+ /* DDR Perf hardware feature */
+-#define DDR_CAP_AXI_ID_FILTER          0x1     /* support AXI ID filter */
++#define DDR_CAP_AXI_ID_FILTER			BIT(1)     /* support AXI ID filter */
++#define DDR_CAP_AXI_ID_FILTER_ENHANCED		BIT(2)     /* support enhanced AXI ID filter */
  
+ struct fsl_ddr_devtype_data {
+ 	unsigned int quirks;    /* quirks needed for different DDR Perf core */
+@@ -178,6 +179,26 @@ static const struct attribute_group *attr_groups[] = {
+ 	NULL,
+ };
+ 
++static bool ddr_perf_is_filtered(struct perf_event *event)
++{
++	return event->attr.config == 0x41 || event->attr.config == 0x42;
++}
++
++static u32 ddr_perf_filter_val(struct perf_event *event)
++{
++	return event->attr.config1;
++}
++
++static bool ddr_perf_filters_compatible(struct perf_event *a,
++					struct perf_event *b)
++{
++	if (!ddr_perf_is_filtered(a))
++		return true;
++	if (!ddr_perf_is_filtered(b))
++		return true;
++	return ddr_perf_filter_val(a) == ddr_perf_filter_val(b);
++}
++
+ static u32 ddr_perf_alloc_counter(struct ddr_pmu *pmu, int event)
+ {
+ 	int i;
+@@ -209,27 +230,19 @@ static void ddr_perf_free_counter(struct ddr_pmu *pmu, int counter)
+ 
+ static u32 ddr_perf_read_counter(struct ddr_pmu *pmu, int counter)
+ {
+-	return readl_relaxed(pmu->base + COUNTER_READ + counter * 4);
+-}
++	struct perf_event *event = pmu->events[counter];
+ 
+-static bool ddr_perf_is_filtered(struct perf_event *event)
+-{
+-	return event->attr.config == 0x41 || event->attr.config == 0x42;
+-}
+-
+-static u32 ddr_perf_filter_val(struct perf_event *event)
+-{
+-	return event->attr.config1;
+-}
+-
+-static bool ddr_perf_filters_compatible(struct perf_event *a,
+-					struct perf_event *b)
+-{
+-	if (!ddr_perf_is_filtered(a))
+-		return true;
+-	if (!ddr_perf_is_filtered(b))
+-		return true;
+-	return ddr_perf_filter_val(a) == ddr_perf_filter_val(b);
++	/*
++	 * return bytes instead of bursts from ddr transaction for
++	 * axid-read and axid-write event if PMU core supports enhanced
++	 * filter.
++	 */
++	if ((pmu->devtype_data->quirks & DDR_CAP_AXI_ID_FILTER) &&
++	    (pmu->devtype_data->quirks & DDR_CAP_AXI_ID_FILTER_ENHANCED) &&
++	    ddr_perf_is_filtered(event)) {
++		return readl_relaxed(pmu->base + COUNTER_DPCR1 + counter * 4);
++	} else
++		return readl_relaxed(pmu->base + COUNTER_READ + counter * 4);
+ }
+ 
+ static int ddr_perf_event_init(struct perf_event *event)
 -- 
 2.17.1
 
