@@ -2,34 +2,34 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F2F0E81AD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 07:59:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 514FCE81B4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 08:00:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aC/BevF2x9C8baODxLndXenMuUigqwZvR7krqbnIw2Q=; b=hvhy/X0KcgeT7U
-	bOZOF6qdwLeiylYcNEPNp0Q9mxt9LGc8FwI7flAq/I3CNiWasUhP0bln0/1h2Ktun7L0ju9uDWTrK
-	mE1l35fUbIpa35NigGoZwhYM0abvbubT0645sNzXO/LXYqfMEgFF6JmUtjRi3HsJEOVNa7FT0HjN3
-	8rzE3+P/JPkrVlMn2MvL+Yvp91CIH/8Ju7udFGWJNW9Xck8NPavyuUTK8ypNKRO9y98rnJwHsWGK7
-	2xvW/A3XT/9pj2w9J+cs6PLNPhQkqx/GlJcaNDh6khHVAzI5AnhufURFHKRleCByvfXUGLfVfXuId
-	JsqKNT6K/5iErgOFroHg==;
+	List-Owner; bh=aTG602OkgajYxS2pGkSRxc3qAhuMogR1ANZo9zkYCeo=; b=BqdUs1oe3NBuXX
+	nFbKjvwhCTJL3fM+IaXJCH++EP/tpWJQDvDD8mjqWmD23xFnm1oJvuDS+wgNWzPhiFoPJJuHAr2uE
+	V0ld22+6MQ+phKWrHw2NMHWtbkzcNJjqCETMeTMnCq4LQ8QJNw8gMq3FLfbps0N8KpvlowJVNi1PS
+	FLgMvztqs/rk9F+5oIpn6piNx0DjumzjqLC6mNvSZ1cRrG6b37BkpVtQESQHDmxSFCqdUw8sUR5XS
+	3zueJfUoKo5NuTPeD71SKi8nK+7UHb640ZiMxguLx8EUPdpRY+jmTNTozQzWzS9DKmX+xkKVgUFRx
+	TIKVH+1x4CozNW7qjxjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPLTm-0007WF-Ud; Tue, 29 Oct 2019 06:59:47 +0000
+	id 1iPLUR-0000ti-OM; Tue, 29 Oct 2019 07:00:27 +0000
 Received: from [2001:4bb8:18c:c7d:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPLJt-000498-OC; Tue, 29 Oct 2019 06:49:34 +0000
+ id 1iPLJw-0004D0-K2; Tue, 29 Oct 2019 06:49:37 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Arnd Bergmann <arnd@arndb.de>, Guo Ren <guoren@kernel.org>,
  Michal Simek <monstr@monstr.eu>, Greentime Hu <green.hu@gmail.com>,
  Vincent Chen <deanbo422@gmail.com>, Guan Xuetao <gxt@pku.edu.cn>,
  x86@kernel.org
-Subject: [PATCH 18/21] riscv: use the generic ioremap code
-Date: Tue, 29 Oct 2019 07:48:31 +0100
-Message-Id: <20191029064834.23438-19-hch@lst.de>
+Subject: [PATCH 19/21] nds32: use generic ioremap
+Date: Tue, 29 Oct 2019 07:48:32 +0100
+Message-Id: <20191029064834.23438-20-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191029064834.23438-1-hch@lst.de>
 References: <20191029064834.23438-1-hch@lst.de>
@@ -48,179 +48,167 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
  linux-ia64@vger.kernel.org, linux-parisc@vger.kernel.org,
  linux-sh@vger.kernel.org, linux-hexagon@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, Paul Walmsley <paul.walmsley@sifive.com>,
- linux-mips@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-m68k@lists.linux-m68k.org, openrisc@lists.librecores.org,
- linux-mtd@lists.infradead.org, linux-alpha@vger.kernel.org,
- sparclinux@vger.kernel.org, nios2-dev@lists.rocketboards.org,
- linux-riscv@lists.infradead.org, linux-snps-arc@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+ linux-xtensa@linux-xtensa.org, linux-mips@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-m68k@lists.linux-m68k.org,
+ openrisc@lists.librecores.org, linux-mtd@lists.infradead.org,
+ linux-alpha@vger.kernel.org, sparclinux@vger.kernel.org,
+ nios2-dev@lists.rocketboards.org, linux-riscv@lists.infradead.org,
+ linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use the generic ioremap code instead of providing a local version.
-Note that this relies on the asm-generic no-op definition of
-pgprot_noncached.
+Use the generic ioremap_prot and iounmap helpers.
+
+Note that the io.h include in pgtable.h had to be removed to not create
+an include loop.  As far as I can tell there was no need for it to
+start with.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
-Reviewed-by: Paul Walmsley <paul.walmsley@sifive.com>
-Tested-by: Paul Walmsley <paul.walmsley@sifive.com> # rv32, rv64 boot
-Acked-by: Paul Walmsley <paul.walmsley@sifive.com> # arch/riscv
 ---
- arch/riscv/Kconfig               |  1 +
- arch/riscv/include/asm/io.h      |  3 --
- arch/riscv/include/asm/pgtable.h |  6 +++
- arch/riscv/mm/Makefile           |  1 -
- arch/riscv/mm/ioremap.c          | 84 --------------------------------
- 5 files changed, 7 insertions(+), 88 deletions(-)
- delete mode 100644 arch/riscv/mm/ioremap.c
+ arch/nds32/Kconfig               |  1 +
+ arch/nds32/include/asm/io.h      |  3 +-
+ arch/nds32/include/asm/pgtable.h |  4 ++-
+ arch/nds32/mm/Makefile           |  3 +-
+ arch/nds32/mm/ioremap.c          | 62 --------------------------------
+ 5 files changed, 6 insertions(+), 67 deletions(-)
+ delete mode 100644 arch/nds32/mm/ioremap.c
 
-diff --git a/arch/riscv/Kconfig b/arch/riscv/Kconfig
-index 8eebbc8860bb..a02e91ed747a 100644
---- a/arch/riscv/Kconfig
-+++ b/arch/riscv/Kconfig
-@@ -30,6 +30,7 @@ config RISCV
- 	select GENERIC_STRNLEN_USER
- 	select GENERIC_SMP_IDLE_THREAD
- 	select GENERIC_ATOMIC64 if !64BIT
+diff --git a/arch/nds32/Kconfig b/arch/nds32/Kconfig
+index fbd68329737f..12c06a833b7c 100644
+--- a/arch/nds32/Kconfig
++++ b/arch/nds32/Kconfig
+@@ -20,6 +20,7 @@ config NDS32
+ 	select GENERIC_CLOCKEVENTS
+ 	select GENERIC_IRQ_CHIP
+ 	select GENERIC_IRQ_SHOW
 +	select GENERIC_IOREMAP
- 	select HAVE_ARCH_AUDITSYSCALL
- 	select HAVE_ASM_MODVERSIONS
- 	select HAVE_MEMBLOCK_NODE_MAP
-diff --git a/arch/riscv/include/asm/io.h b/arch/riscv/include/asm/io.h
-index c1de6875cc77..df4c8812ff64 100644
---- a/arch/riscv/include/asm/io.h
-+++ b/arch/riscv/include/asm/io.h
-@@ -14,9 +14,6 @@
- #include <linux/types.h>
- #include <asm/mmiowb.h>
+ 	select GENERIC_LIB_ASHLDI3
+ 	select GENERIC_LIB_ASHRDI3
+ 	select GENERIC_LIB_CMPDI2
+diff --git a/arch/nds32/include/asm/io.h b/arch/nds32/include/asm/io.h
+index fb0e8a24c7af..e57378d04006 100644
+--- a/arch/nds32/include/asm/io.h
++++ b/arch/nds32/include/asm/io.h
+@@ -6,8 +6,6 @@
  
--extern void __iomem *ioremap(phys_addr_t offset, unsigned long size);
+ #include <linux/types.h>
+ 
+-void __iomem *ioremap(phys_addr_t phys_addr, size_t size);
 -extern void iounmap(volatile void __iomem *addr);
--
- /* Generic IO read/write.  These perform native-endian accesses. */
  #define __raw_writeb __raw_writeb
  static inline void __raw_writeb(u8 val, volatile void __iomem *addr)
-diff --git a/arch/riscv/include/asm/pgtable.h b/arch/riscv/include/asm/pgtable.h
-index 0352f20c29f4..9fd8a6b27670 100644
---- a/arch/riscv/include/asm/pgtable.h
-+++ b/arch/riscv/include/asm/pgtable.h
-@@ -61,6 +61,12 @@
- 
- #define PAGE_TABLE		__pgprot(_PAGE_TABLE)
- 
-+/*
-+ * The RISC-V ISA doesn't yet specify how to query or modify PMAs, so we can't
-+ * change the properties of memory regions.
-+ */
-+#define _PAGE_IOREMAP _PAGE_KERNEL
+ {
+@@ -80,6 +78,7 @@ static inline u32 __raw_readl(const volatile void __iomem *addr)
+ #define writeb(v,c)	({ __iowmb(); writeb_relaxed((v),(c)); })
+ #define writew(v,c)	({ __iowmb(); writew_relaxed((v),(c)); })
+ #define writel(v,c)	({ __iowmb(); writel_relaxed((v),(c)); })
 +
- extern pgd_t swapper_pg_dir[];
+ #include <asm-generic/io.h>
  
- /* MAP_PRIVATE permissions: xwr (copy-on-write) */
-diff --git a/arch/riscv/mm/Makefile b/arch/riscv/mm/Makefile
-index 9d9a17335686..b3a356c80c1f 100644
---- a/arch/riscv/mm/Makefile
-+++ b/arch/riscv/mm/Makefile
-@@ -8,7 +8,6 @@ endif
- obj-y += init.o
- obj-y += fault.o
- obj-y += extable.o
--obj-y += ioremap.o
- obj-y += cacheflush.o
- obj-y += context.o
- obj-y += sifive_l2_cache.o
-diff --git a/arch/riscv/mm/ioremap.c b/arch/riscv/mm/ioremap.c
+ #endif /* __ASM_NDS32_IO_H */
+diff --git a/arch/nds32/include/asm/pgtable.h b/arch/nds32/include/asm/pgtable.h
+index 0588ec99725c..6fbf251cfc26 100644
+--- a/arch/nds32/include/asm/pgtable.h
++++ b/arch/nds32/include/asm/pgtable.h
+@@ -12,7 +12,6 @@
+ #include <asm/nds32.h>
+ #ifndef __ASSEMBLY__
+ #include <asm/fixmap.h>
+-#include <asm/io.h>
+ #include <nds32_intrinsic.h>
+ #endif
+ 
+@@ -130,6 +129,9 @@ extern void __pgd_error(const char *file, int line, unsigned long val);
+ #define _PAGE_CACHE		_PAGE_C_MEM_WB
+ #endif
+ 
++#define _PAGE_IOREMAP \
++	(_PAGE_V | _PAGE_M_KRW | _PAGE_D | _PAGE_G | _PAGE_C_DEV)
++
+ /*
+  * + Level 1 descriptor (PMD)
+  */
+diff --git a/arch/nds32/mm/Makefile b/arch/nds32/mm/Makefile
+index bd360e4583b5..897ecaf5cf54 100644
+--- a/arch/nds32/mm/Makefile
++++ b/arch/nds32/mm/Makefile
+@@ -1,6 +1,5 @@
+ # SPDX-License-Identifier: GPL-2.0-only
+-obj-y				:= extable.o tlb.o \
+-				   fault.o init.o ioremap.o mmap.o \
++obj-y				:= extable.o tlb.o fault.o init.o mmap.o \
+                                    mm-nds32.o cacheflush.o proc.o
+ 
+ obj-$(CONFIG_ALIGNMENT_TRAP)	+= alignment.o
+diff --git a/arch/nds32/mm/ioremap.c b/arch/nds32/mm/ioremap.c
 deleted file mode 100644
-index ac621ddb45c0..000000000000
---- a/arch/riscv/mm/ioremap.c
+index 690140bb23a2..000000000000
+--- a/arch/nds32/mm/ioremap.c
 +++ /dev/null
-@@ -1,84 +0,0 @@
--// SPDX-License-Identifier: GPL-2.0-only
--/*
-- * (C) Copyright 1995 1996 Linus Torvalds
-- * (C) Copyright 2012 Regents of the University of California
-- */
+@@ -1,62 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0
+-// Copyright (C) 2005-2017 Andes Technology Corporation
 -
--#include <linux/export.h>
--#include <linux/mm.h>
 -#include <linux/vmalloc.h>
 -#include <linux/io.h>
--
+-#include <linux/mm.h>
 -#include <asm/pgtable.h>
 -
--/*
-- * Remap an arbitrary physical address space into the kernel virtual
-- * address space. Needed when the kernel wants to access high addresses
-- * directly.
-- *
-- * NOTE! We need to allow non-page-aligned mappings too: we will obviously
-- * have to convert them into an offset in a page-aligned mapping, but the
-- * caller shouldn't need to know that small detail.
-- */
--static void __iomem *__ioremap_caller(phys_addr_t addr, size_t size,
--	pgprot_t prot, void *caller)
--{
--	phys_addr_t last_addr;
--	unsigned long offset, vaddr;
--	struct vm_struct *area;
+-void __iomem *ioremap(phys_addr_t phys_addr, size_t size);
 -
--	/* Disallow wrap-around or zero size */
--	last_addr = addr + size - 1;
--	if (!size || last_addr < addr)
+-static void __iomem *__ioremap_caller(phys_addr_t phys_addr, size_t size,
+-				      void *caller)
+-{
+-	struct vm_struct *area;
+-	unsigned long addr, offset, last_addr;
+-	pgprot_t prot;
+-
+-	/* Don't allow wraparound or zero size */
+-	last_addr = phys_addr + size - 1;
+-	if (!size || last_addr < phys_addr)
 -		return NULL;
 -
--	/* Page-align mappings */
--	offset = addr & (~PAGE_MASK);
--	addr -= offset;
--	size = PAGE_ALIGN(size + offset);
+-	/*
+-	 * Mappings have to be page-aligned
+-	 */
+-	offset = phys_addr & ~PAGE_MASK;
+-	phys_addr &= PAGE_MASK;
+-	size = PAGE_ALIGN(last_addr + 1) - phys_addr;
 -
+-	/*
+-	 * Ok, go for it..
+-	 */
 -	area = get_vm_area_caller(size, VM_IOREMAP, caller);
 -	if (!area)
 -		return NULL;
--	vaddr = (unsigned long)area->addr;
 -
--	if (ioremap_page_range(vaddr, vaddr + size, addr, prot)) {
--		free_vm_area(area);
+-	area->phys_addr = phys_addr;
+-	addr = (unsigned long)area->addr;
+-	prot = __pgprot(_PAGE_V | _PAGE_M_KRW | _PAGE_D |
+-			_PAGE_G | _PAGE_C_DEV);
+-	if (ioremap_page_range(addr, addr + size, phys_addr, prot)) {
+-		vunmap((void *)addr);
 -		return NULL;
 -	}
+-	return (__force void __iomem *)(offset + (char *)addr);
 -
--	return (void __iomem *)(vaddr + offset);
 -}
 -
--/*
-- * ioremap     -   map bus memory into CPU space
-- * @offset:    bus address of the memory
-- * @size:      size of the resource to map
-- *
-- * ioremap performs a platform specific sequence of operations to
-- * make bus memory CPU accessible via the readb/readw/readl/writeb/
-- * writew/writel functions and the other mmio helpers. The returned
-- * address is not guaranteed to be usable directly as a virtual
-- * address.
-- *
-- * Must be freed with iounmap.
-- */
--void __iomem *ioremap(phys_addr_t offset, unsigned long size)
+-void __iomem *ioremap(phys_addr_t phys_addr, size_t size)
 -{
--	return __ioremap_caller(offset, size, PAGE_KERNEL,
--		__builtin_return_address(0));
+-	return __ioremap_caller(phys_addr, size,
+-				__builtin_return_address(0));
 -}
+-
 -EXPORT_SYMBOL(ioremap);
 -
--
--/**
-- * iounmap - Free a IO remapping
-- * @addr: virtual address from ioremap_*
-- *
-- * Caller must ensure there is only one unmapping for the same pointer.
-- */
--void iounmap(volatile void __iomem *addr)
+-void iounmap(volatile void __iomem * addr)
 -{
--	vunmap((void *)((unsigned long)addr & PAGE_MASK));
+-	vunmap((void *)(PAGE_MASK & (unsigned long)addr));
 -}
+-
 -EXPORT_SYMBOL(iounmap);
 -- 
 2.20.1
