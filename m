@@ -2,63 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 734A9E866A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 12:16:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93155E86C9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 12:26:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9JKQInOIPmhrNgAvp6tA0344Ba/6+4WbtF4r00lJ9/4=; b=iofW3ihcMX+h7G
-	FGt/RJRWrjFGBdPoSIC5uPBhc6IvXqXfVs3yAkKLaofo5Jrb6D8RQd+AGEj7/sazA0jXHpy1CenPR
-	qnJB0FOhLgWI6FE6PfK+zg/mPUwkFECYuQoQK7oJ6WKh/MaQl7KFp2vNHWs7HQngWdziBEHpxLnt4
-	szj/ITQgVFB9qWO6CPwgjZ+2MRV/egfpHsprIamj0HccKdAkv1iiiINMLAoMdCV3uf1HLqkCtVvkz
-	l+d5LQ1pPJxiQdrPd59EUKuZaVslxtzzCXAurSskggmcTVOMC8rdwJ3zExkzx67IIprW/QTrYp2hm
-	N9QZ2/+BTQxjSszG+QYA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hlf9KXyvzrUZfnRY9fH3iQs5uqgJyG66p2tKAcO1WIw=; b=aCGUbGs0HimWbJ
+	6y3Tmi4gli+u9Q2z2XmR5TfVa3h4pkaZfDnupGPUZxpjl2rABeyDaHtsiDFrA9atocgQB9od7m0Q3
+	J6R0nDkDGm3OBlVFuZFdRCEFcXcJNoxVgAuWwHEm08Kv1Va/9jwBwWjApSgrgpD68JztPWaUIE4v9
+	WbEKpz7yn89Aw1p0yGPhzeyKI78UtbaxmjKLsMbB29XYMA02n1C3hKms8a2RZ3zvSc36cDuA9pfQ+
+	lLvHEwgZaH61EEsMW2i0j8fGWElJIP+LKWWg+akpc6XXnZej4dCzrlMt1wm7oRlk7Gws7SoVzqaUG
+	IjiSU2o9NU3fux2ye+qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPPTv-0002B4-3F; Tue, 29 Oct 2019 11:16:11 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iPPeI-0005Cs-KI; Tue, 29 Oct 2019 11:26:54 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPPTk-0002AM-UL
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 11:16:02 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 12913208E3;
- Tue, 29 Oct 2019 11:15:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572347760;
- bh=PYpYmLCcRCDnvoNd2S0sMHcaEM2JronWu9CsKftbO3I=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=GdaMUmmgMjWuXCjwK0dWZlcoWZbdkss1hf/IPKcAItun5DvAeYWYvYEXepIKuV8F4
- Cgj6BmO5LCR5kVQSqH6TeJrA5sMtyubLtUhcJCViQ3HQZ9x8ffrdD48QttQIxJTdvs
- cKuoCU3Lo8JRJ8savTdPFUcs8+VjcCEB/d/GTobo=
-Date: Tue, 29 Oct 2019 11:15:56 +0000
-From: Will Deacon <will@kernel.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH v2] iommu/arm-smmu: fix "hang" when games exit
-Message-ID: <20191029111555.GF11590@willie-the-truck>
-References: <418d8426-f299-1269-2b2e-f86677cf22c2@arm.com>
- <20191007204906.19571-1-robdclark@gmail.com>
- <20191028222042.GB8532@willie-the-truck>
- <CAJs_Fx7zRWsTPiAg0PFt+8nJPpHpzSkxW6XMMJwozVO6vyB78A@mail.gmail.com>
- <e3fc88d9-4934-0227-d9c7-b1cb37a8811e@arm.com>
+ id 1iPPWJ-00046u-Gx
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 11:18:40 +0000
+Received: by mail-ed1-x544.google.com with SMTP id p59so10406944edp.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 29 Oct 2019 04:18:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:openpgp:message-id:date:mime-version
+ :in-reply-to:content-language:content-transfer-encoding;
+ bh=J1TIX7KBOhkEDUvUlXCGfzo0ftBx/02dSVP1EsfH5Yg=;
+ b=dRF2HbKHVHZixPbPX+wgFMrl+ava9svy0g4H+AkjUAcPK0/X9wQNgWR7E4xc9rGnJJ
+ Q8w1LWl7IpS143XNVa/X9gi74DroRujwtmaXM3cFuH5xJpUZCw1qvZsSKD7tAQjMToSd
+ CrRqpsnKgB5FGnz+0yeyPaKDMjuXJaiEKX/aR01gm3uVzlZC1/KLX3TXuFM48rvPwYXb
+ QO9rf1WaTR7vBt/wtpuAge1A+VnktpxZ+YwZRiOY89NLKIcam0zRgxniYjThF0njXyuT
+ 6FkIPf7LBst1dRg9OY75eSlSy0Cg05guoNJNXlnu6GCVvzD1xWZ6gztSL6b0W6e68lN5
+ vPPA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:message-id
+ :date:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=J1TIX7KBOhkEDUvUlXCGfzo0ftBx/02dSVP1EsfH5Yg=;
+ b=DFCFO9oV0DEzti7OPmwvUTxF0TAMZRGEz9zJ8LyZJCTvWyIOTRzalli9z+4PRneIsl
+ TVQraUl8oULiElWYj/rHP1VU7qEfWDCpqJExcPofN1UbG1NLslsubIh6RcE+6vckUnjk
+ 67hcW76bUgXdJgqYz+g5aCq0gfXesICXA4GsxglGvWX4YGufkS8dGmMq+L8QagsSwMfY
+ 4ror42VDvBlHKa1ucNxbIX9IGZwgfLYjcLDmyRnxjGZ1CtOKOtZANbydn1dPru6X63lE
+ 4W3esKotb9o3+NH5NRurP2NCRDHc2KaYF1rUbsSikECpQkVVgew6empkIeq6ohmzap+r
+ sA9Q==
+X-Gm-Message-State: APjAAAVm5l2oDNoGEy80oQJimekWcOiQmGQjtBckpg1BUumX5h5698+0
+ cVgadDFTyZSRQI/xVovp4T4cc2frvQT8ow==
+X-Google-Smtp-Source: APXvYqxd0UnsWHkLoXCSeSyxR75r+FTK/wmY+wYx0WxrkEu7pYPLkgW0m0xq0i3miyTwErZqOzkjWw==
+X-Received: by 2002:a50:9930:: with SMTP id k45mr25056228edb.134.1572347917211; 
+ Tue, 29 Oct 2019 04:18:37 -0700 (PDT)
+Received: from [192.168.27.135] ([37.157.136.206])
+ by smtp.googlemail.com with ESMTPSA id g9sm420189edv.86.2019.10.29.04.18.36
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 29 Oct 2019 04:18:36 -0700 (PDT)
+Subject: Re: [PATCH v2 0/4] ARM: qcom: add defconfig items and dts nodes
+To: Brian Masney <masneyb@onstation.org>, agross@kernel.org,
+ bjorn.andersson@linaro.org
+References: <20191024103140.10077-1-masneyb@onstation.org>
+From: Georgi Djakov <georgi.djakov@linaro.org>
+Openpgp: preference=signencrypt
+Message-ID: <49006809-0dde-ba24-4e91-0b210fe45599@linaro.org>
+Date: Tue, 29 Oct 2019 13:18:35 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <e3fc88d9-4934-0227-d9c7-b1cb37a8811e@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191024103140.10077-1-masneyb@onstation.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_041601_001655_71FF9806 
-X-CRM114-Status: GOOD (  15.63  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191029_041839_583234_40DAD331 
+X-CRM114-Status: UNSURE (   9.88  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -68,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,46 +100,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Clark <robdclark@chromium.org>, Joerg Roedel <joro@8bytes.org>,
- iommu@lists.linux-foundation.org, open list <linux-kernel@vger.kernel.org>,
- Rob Clark <robdclark@gmail.com>, freedreno <freedreno@lists.freedesktop.org>,
- "moderated list:ARM SMMU DRIVERS" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 28, 2019 at 10:51:53PM +0000, Robin Murphy wrote:
-> On 2019-10-28 10:38 pm, Rob Clark wrote:
-> > On Mon, Oct 28, 2019 at 3:20 PM Will Deacon <will@kernel.org> wrote:
-> > > On Mon, Oct 07, 2019 at 01:49:06PM -0700, Rob Clark wrote:
-> > > > From: Rob Clark <robdclark@chromium.org>
-> > > > 
-> > > > When games, browser, or anything using a lot of GPU buffers exits, there
-> > > > can be many hundreds or thousands of buffers to unmap and free.  If the
-> > > > GPU is otherwise suspended, this can cause arm-smmu to resume/suspend
-> > > > for each buffer, resulting 5-10 seconds worth of reprogramming the
-> > > > context bank (arm_smmu_write_context_bank()/arm_smmu_write_s2cr()/etc).
-> > > > To the user it would appear that the system just locked up.
-> > > > 
-> > > > A simple solution is to use pm_runtime_put_autosuspend() instead, so we
-> > > > don't immediately suspend the SMMU device.
-> > > 
-> > > Please can you reword the subject to be a bit more useful? The commit
-> > > message is great, but the subject is a bit like "fix bug in code" to me.
-> > 
-> > yeah, not the best $subject, but I wasn't quite sure how to fit
-> > something better in a reasonable # of chars.. maybe something like:
-> > "iommu/arm-smmu: optimize unmap but avoiding toggling runpm state"?
-> 
-> FWIW, I'd be inclined to frame it as something like "avoid pathological RPM
-> behaviour for unmaps".
-
-LGTM!
-
-Will
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjQuMTAuMTkg0LMuIDEzOjMxINGHLiwgQnJpYW4gTWFzbmV5IHdyb3RlOgo+IEhlcmUncyBh
+IHNtYWxsIHBhdGNoIHNlcmllcyB0aGF0IGFkZHMgc29tZSBhZGRpdGlvbmFsIGZ1bmN0aW9uYWxp
+dHkKPiB0byBxY29tX2RlZmNvbmZpZyBhbmQgdG8gcWNvbS1tc204OTc0LmR0c2k6IGludGVyY29u
+bmVjdCwgb2NtZW0sCj4gYW5kIEhETUkgYnJpZGdlIChkZWZjb25maWcgb25seSkuCj4gCj4gU29t
+ZSBoaWdoLWxldmVsIGNoYW5nZXMgc2luY2UgdjE6Cj4gLSBVcGRhdGVkIGludGVyY29ubmVjdCBz
+dXBwb3J0LiBTZWUgcGF0Y2ggIzQgaW4gdGhpcyBzZXJpZXMgZm9yIGRldGFpbHMuCj4gLSBEcm9w
+cGVkIG9jbWVtIGRlZmNvbmZpZyBzaW5jZSB0aGF0IGdvdCBtZXJnZWQuCj4gCj4gQnJpYW4gTWFz
+bmV5ICg0KToKPiAgIEFSTTogcWNvbV9kZWZjb25maWc6IGFkZCBtc204OTc0IGludGVyY29ubmVj
+dCBzdXBwb3J0Cj4gICBBUk06IHFjb21fZGVmY29uZmlnOiBhZGQgYW54Nzh4eCBIRE1JIGJyaWRn
+ZSBzdXBwb3J0Cj4gICBBUk06IGR0czogcWNvbTogbXNtODk3NDogYWRkIG9jbWVtIG5vZGUKPiAg
+IEFSTTogZHRzOiBxY29tOiBtc204OTc0OiBhZGQgaW50ZXJjb25uZWN0IG5vZGVzCj4gCj4gIGFy
+Y2gvYXJtL2Jvb3QvZHRzL3Fjb20tbXNtODk3NC5kdHNpIHwgNzcgKysrKysrKysrKysrKysrKysr
+KysrKysrKysrKysKPiAgYXJjaC9hcm0vY29uZmlncy9xY29tX2RlZmNvbmZpZyAgICAgfCAgNCAr
+Kwo+ICAyIGZpbGVzIGNoYW5nZWQsIDgxIGluc2VydGlvbnMoKykKCkZvciB0aGUgc2VyaWVzOgpS
+ZXZpZXdlZC1ieTogR2VvcmdpIERqYWtvdiA8Z2VvcmdpLmRqYWtvdkBsaW5hcm8ub3JnPgoKX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtl
+cm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
+dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5l
+bAo=
