@@ -2,87 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F373CE8F15
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 19:14:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2788E8F16
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 19:15:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=1bDPcAzVCZXoGiJrURa35MNcUopxB2onLSS5HwojkXY=; b=W2+
-	gX0aWbcJG9XB/FCaurrdrGZ0X6P+p4nZ7N5hXR4RKVevgn1znFwCgUyAf9KT8HRmFv6T1untLryPq
-	sF2LuE6j1+5fYmcsOjgSs8bpxfrtrB/9uldh+TFae39ErCJc/DyO6x6zLHedYX4y89XCxiMU1LAJm
-	mC25jBSX3IbrX9np08B24MLjg15zRuKXVR51orj1tUSOkjb8BDg/vAgfmQgFSx5yd0PrH7UFhnHpw
-	RKx/DFE8I0ZgoQ/LePYXzhJwsApvitWnChwPfpGrPokrn0T2207XHzwfA6T810RQ1qxq+N+bBxqj6
-	ShF+agXQuSFir6t14sBAAAYS8NeU3hA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=vV6va5IMaoHnQ8IqW3Wv/C/kmJ+5ESACFMZECHPUkvI=; b=pVLH/QQ0pI2qLrQoDugdDKkceT
+	o2IcCoKpi+vCDvF7fwuCR4A4uX7C4s0USTS8qAcDlAG6y8s7ARvDMObhD42pHu0rw217fbD9FPDwk
+	zkGuNmT887kpy6v8DcUU/uD0ko3seqp1PNsG0bm5FqO34O6TjQTsGMYL4nIXV+uW2/Jv++p8U7upm
+	dKjq3MeHpT6lM8R8X2GBzmUnTEDpBs95WUyP3PWoU5Mcc57FM1NdUdM7aHfYQEjqnLSg/pzhE5PDK
+	cLONAsdUqVbZkQ4SFfo7q4G6I5lZc+pvo9oX711qFCSsNRYr8z72s3YNXI5pqK535mTVhbAkFPF3q
+	j7cWVcIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPW0w-0001Yt-9t; Tue, 29 Oct 2019 18:14:42 +0000
-Received: from userp2130.oracle.com ([156.151.31.86])
+	id 1iPW1C-0001kg-KU; Tue, 29 Oct 2019 18:14:58 +0000
+Received: from aserp2120.oracle.com ([141.146.126.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPW0h-0001Y2-5w
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 18:14:28 +0000
-Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
- by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x9TI5Edg175947;
- Tue, 29 Oct 2019 18:14:23 GMT
+ id 1iPW0i-0001YJ-I7
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 18:14:29 +0000
+Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
+ by aserp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x9TI5T80155035;
+ Tue, 29 Oct 2019 18:14:24 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
  h=from : to : cc :
- subject : date : message-id; s=corp-2019-08-05;
- bh=WkZ9zbwFeDXQfqWTR1gASliBtGitlEcG01F4/M1sPtI=;
- b=Z8vduQv06HXTJGt+06q4bnJkBE2cRhWRisjZxjdSYIeERv/78O+GdM9jwxF+35dV2ypt
- 3WVsAN2kgaaSHAnNQHWQ2jyxzzVnBF5jVXeCcsHaXfs67dPLHVyOiWSzPEmuV5gw6gmR
- wBFlhtgyY+GcbgKpxNfE1dvyyxpye+YhQgBoIakyMkNsPQJSXmn+nADRs68JalP6lyzR
- Nd/kFl7sKdMyqq56WN+q5jqVoKVNsze04zNMoql2NtIqZmtGtjgUXcGjZtjljDEkOeNB
- 1PQ1+WEu+3n9fV6J6zCshuvRgC/1Bpr7MOliem9mpsvkREdNRrTIZXHFdtf6VYIRtsUI Sw== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by userp2130.oracle.com with ESMTP id 2vvdjub7v8-1
+ subject : date : message-id : in-reply-to : references; s=corp-2019-08-05;
+ bh=qaQdjobmQtaH6OaMW3nXXlGU1il8zvLtLFMQ9b8Lhjc=;
+ b=iGMi7HG2OLI+ccbYCT0uY2MV3I3m5uQEXXRSgyMNboYyj42W53jgFjOKQk8uVtpmj+5w
+ hOEBJqRHcwh6c6FSpToeyqNduoh4I+Sg5BzCzHUUwAeY21C/jVT+aIYJozC1AbW7kLdF
+ q17VYjpljfIEQyZ5XcT8z4V2QG5xsuTUa8qaqQXMx7qdONW/DKLq36637WzTDbKfcYaO
+ z6ozkEZ2eSCVZh4S+27pa9flJYgYWtOsoxkLA/38cwnec1N6RhB7pCs51j3eycSDEliM
+ 71H2WlnBoJsN8FiqYchI3jmv0N4lllFV2qhWwt3WrtXZgUeeTCRXgATetkiQgeQcBeE8 rw== 
+Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
+ by aserp2120.oracle.com with ESMTP id 2vve3qb19j-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 29 Oct 2019 18:14:24 +0000
+Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
+ by userp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x9TI8Ro6052354;
+ Tue, 29 Oct 2019 18:14:23 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by userp3030.oracle.com with ESMTP id 2vxj8gpw76-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
  Tue, 29 Oct 2019 18:14:23 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x9TI8lO6040494;
- Tue, 29 Oct 2019 18:14:22 GMT
-Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
- by aserp3030.oracle.com with ESMTP id 2vxpgfdmvv-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 29 Oct 2019 18:14:22 +0000
 Received: from abhmp0022.oracle.com (abhmp0022.oracle.com [141.146.116.28])
- by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x9TIELHG005793;
- Tue, 29 Oct 2019 18:14:21 GMT
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x9TIEMB0005800;
+ Tue, 29 Oct 2019 18:14:22 GMT
 Received: from localhost.localdomain (/10.159.132.196)
  by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Tue, 29 Oct 2019 11:14:21 -0700
+ with ESMTP ; Tue, 29 Oct 2019 11:14:22 -0700
 From: Santosh Shilimkar <santosh.shilimkar@oracle.com>
 To: arm@kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [RESEND][GIT PULL 1/2] soc: TI soc updates for v5.5
-Date: Tue, 29 Oct 2019 11:14:15 -0700
-Message-Id: <1572372856-20598-1-git-send-email-santosh.shilimkar@oracle.com>
+Subject: [RESEND][GIT PULL 2/2] ARM: Keystone platform DTS updates for v5.5
+Date: Tue, 29 Oct 2019 11:14:16 -0700
+Message-Id: <1572372856-20598-2-git-send-email-santosh.shilimkar@oracle.com>
 X-Mailer: git-send-email 1.9.1
+In-Reply-To: <1572372856-20598-1-git-send-email-santosh.shilimkar@oracle.com>
+References: <1572372856-20598-1-git-send-email-santosh.shilimkar@oracle.com>
 X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9425
  signatures=668685
 X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
  malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=4 classifier=spam adjust=0 reason=mlx scancount=1
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=612
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.0.1-1908290000 definitions=main-1910290160
 X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9425
  signatures=668685
 X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
  priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=4
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=712 adultscore=0
  classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1908290000
  definitions=main-1910290160
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_111427_308316_7CEAA386 
-X-CRM114-Status: GOOD (  17.82  )
+X-CRM114-CacheID: sfid-20191029_111428_689274_AE27BEE3 
+X-CRM114-Status: GOOD (  15.45  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.86 listed in list.dnswl.org]
+ medium trust [141.146.126.78 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -120,40 +123,28 @@ The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
 
 are available in the git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/ssantosh/linux-keystone.git for_5.5/driver-soc
+  git://git.kernel.org/pub/scm/linux/kernel/git/ssantosh/linux-keystone.git for_5.5/keystone-dts
 
-for you to fetch changes up to faee19ece8263738c147cb0140e0fbc7b5397ca8:
+for you to fetch changes up to cfc0e76bbbde6875e026c18ea72f181e5d00d93f:
 
-  memory: emif: remove set but not used variables 'cs1_used' and 'custom_configs' (2019-10-29 09:57:57 -0700)
+  ARM: configs: keystone: enable cpts (2019-10-07 10:59:10 -0700)
 
 ----------------------------------------------------------------
-Tero Kristo (9):
-      dt-bindings: omap: add new binding for PRM instances
-      soc: ti: add initial PRM driver with reset control support
-      soc: ti: omap-prm: poll for reset complete during de-assert
-      soc: ti: omap-prm: add support for denying idle for reset clockdomain
-      soc: ti: omap-prm: add omap4 PRM data
-      soc: ti: omap-prm: add data for am33xx
-      soc: ti: omap-prm: add dra7 PRM data
-      soc: ti: omap-prm: add am4 PRM data
-      soc: ti: omap-prm: add omap5 PRM data
+Grygorii Strashko (6):
+      ARM: dts: keystone-clocks: add input fixed clocks
+      ARM: dts: k2e-clocks: add input ext. fixed clocks tsipclka/b
+      ARM: dts: k2e-netcp: add cpts refclk_mux node
+      ARM: dts: k2hk-netcp: add cpts refclk_mux node
+      ARM: dts: k2l-netcp: add cpts refclk_mux node
+      ARM: configs: keystone: enable cpts
 
-Wei Yongjun (1):
-      soc: ti: omap-prm: fix return value check in omap_prm_probe()
-
-YueHaibing (1):
-      memory: emif: remove set but not used variables 'cs1_used' and 'custom_configs'
-
- .../devicetree/bindings/arm/omap/prm-inst.txt      |  29 ++
- arch/arm/mach-omap2/Kconfig                        |   1 +
- drivers/memory/emif.c                              |   5 +-
- drivers/soc/ti/Makefile                            |   1 +
- drivers/soc/ti/omap_prm.c                          | 391 +++++++++++++++++++++
- include/linux/platform_data/ti-prm.h               |  21 ++
- 6 files changed, 444 insertions(+), 4 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/arm/omap/prm-inst.txt
- create mode 100644 drivers/soc/ti/omap_prm.c
- create mode 100644 include/linux/platform_data/ti-prm.h
+ arch/arm/boot/dts/keystone-clocks.dtsi     | 27 +++++++++++++++++++++++++++
+ arch/arm/boot/dts/keystone-k2e-clocks.dtsi | 20 ++++++++++++++++++++
+ arch/arm/boot/dts/keystone-k2e-netcp.dtsi  | 21 +++++++++++++++++++--
+ arch/arm/boot/dts/keystone-k2hk-netcp.dtsi | 20 ++++++++++++++++++--
+ arch/arm/boot/dts/keystone-k2l-netcp.dtsi  | 20 ++++++++++++++++++--
+ arch/arm/configs/keystone_defconfig        |  1 +
+ 6 files changed, 103 insertions(+), 6 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
