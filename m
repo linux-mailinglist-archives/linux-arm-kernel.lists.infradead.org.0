@@ -2,86 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36D83E8DA2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 18:06:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4626E8DA3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 18:07:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j7PfClrYodVMb2sZ5BwnogrkTn7uKIU5jjUBlkM0I2k=; b=WlOFpxWxwkKhvK
-	SvBrt66mdTtdGkxhEuxlr49DhyauPl2XDcBVfPuvHh0+/HDi2gMtl0yDjRqqeAdUb6hXryEz0i6pY
-	+xvmz7ozeoZyMiYXpIuwi9tjPYrL+PiN4TIRIBwh0w+BpYckVYfiOPBsopQsH/ds8rgyJICb1cSgT
-	qs6rARpZYrHN5BD5PXUA8TgaVWJs7GKTLx2UY1ujM86FkqbnkoI7sH6ZWM3cHvu6AHeGLBTW++WOQ
-	+UmUau7+bQwa0lY38DvePZkyb5RoIWY1h6UNprw1a4BrGg34xLqrXqir7ekB9UwLdMCPJQs73I4+I
-	xU+8hZargkTE5O61Z18g==;
+	List-Owner; bh=4cGmQnbR+JfNDTLOEQjQeO95c54c908nCA6Hr+0ohtY=; b=VtLmoYHVGILIYB
+	ZSTNWu7EGJKpgqgjsAcBf0zJQWMhiduZMc1wy6hlPrmV18JOqJZsN9BYNf8uEy+RJL5LsqJv5Q+Ue
+	G3cl+vMgEryQ0ne7NO9LrNoEUoePTDnyyL2RNMMpyrbyBeP0TbSo5Amh5kKWG0lnb3HwPNPLFdrQ/
+	agLjRvgF+AboDy5PHmunkRE8Pfxer8NkUED60dXvrzic+mi9h9drwz5qufY04hmyAAC3sA+S6jZhn
+	bV9NN4XYBai6VrmyF8EyXa0pmW/e9xToQ3+dch63md/YaaVtKf6a29UWXevmCgH042Qro12K+0A3r
+	TaeZIeozbhnn1jL6E6eQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPUxL-0002vB-S8; Tue, 29 Oct 2019 17:06:55 +0000
-Received: from mail-ot1-f68.google.com ([209.85.210.68])
+	id 1iPUxX-00036y-CE; Tue, 29 Oct 2019 17:07:07 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPUwz-0002uj-Hg
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 17:06:35 +0000
-Received: by mail-ot1-f68.google.com with SMTP id c7so10415377otm.3
+ id 1iPUx4-0002wi-15
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 17:06:39 +0000
+Received: by mail-pf1-x441.google.com with SMTP id v4so10011643pff.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 29 Oct 2019 10:06:32 -0700 (PDT)
+ Tue, 29 Oct 2019 10:06:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=u4GnrTtOrQejEaELYRBPSBE1OQ/6WvsreGc0J38yGc4=;
+ b=XVWRXF/oQeqO5hH9MARUaj/lEcqlZvJbHvV6EO4Kut1kVF5eW35IIzTOHx/WYTrR54
+ X3Ltd/8PkY9MLBzG7hJTP9eGaRITzL890W1dDPbxiDe1GZakMyCU0ElbfFOGkTdZ18uU
+ YDBrfpUcUilQVaDw38ZYzkoCcHPJrglUtXc/+QL+kXavMHBjwJVJy3YHB4GJsliSzCrz
+ FF05853tBjX97KOLJx1zMwKIrvNbNo8wMQ1Zuhi0/K7wDoBw35GUmfbeFrepewkFZhVa
+ KDIby2o4jPPDg6NZNtMU/naIDRSlvVWPED0z6MorsCcmq7niig++8q81VSvN+ZbZFxHQ
+ FpIQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=GC14i0a6vNTrt70DU58VN8zmHmdhRfAj/+MPmYGUtXE=;
- b=cpaQUTe4jhy2WrnLPxV3P/GdYzg9xQ9+jzBfiJq26Q5b1F2uwEU2xakalU4jSWV4EI
- 2FYkZOrCmelgPXx9UCz4Tn5OBtaU6tH19/+3BVaGuKkSJKrT+RpfOXMSNE3vJ5xkwx/h
- fr5NeQirC2lJ3m3WJECVWozzzPSrBMGOLliOX9NK1ujFVBAmoViNJawDBgppcBq2njkn
- 9bIev+AaXp8TbqiPJdpVOYWaPVOf/iexoAUR8iAKOAGmp3jz7Axtg5kj5Qy7ruB1ssKZ
- ImOqkePMgbWOktWvpmzuFkWItEOm1+8X0QgoRWrIEvJVwaOOSzzI/LVeIEDwkf5v3Qz7
- SHiA==
-X-Gm-Message-State: APjAAAX29zoXiTy6pxyDxoQZ62Ld+zGFCmvJ/P0wsDVutVgfP9k8amC7
- u6YFCSqFfApa9ZApAFLQOA==
-X-Google-Smtp-Source: APXvYqwxuc1qq0Pe/NQx2tQToKOzPAe2SqdStbORUFAU/t3w6hFmNCek/Ptj3HmFxeR6nGnCCMMOsw==
-X-Received: by 2002:a05:6830:2105:: with SMTP id
- i5mr5918445otc.334.1572368791887; 
- Tue, 29 Oct 2019 10:06:31 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id i10sm793631oii.2.2019.10.29.10.06.30
+ bh=u4GnrTtOrQejEaELYRBPSBE1OQ/6WvsreGc0J38yGc4=;
+ b=dId/8k/MD7LKGENG12MULrEmX5D24akLIG58QFDSccn0u2d+bVL3qJUKnOcBmeT+uh
+ lx+Kgh6sABm7iSAQyZNwLftUpO+ztj1br2sb9kgxipQgc7jEuVV84BBLUYjkA/Ur3MiV
+ SogcDbmHtDCzSpI7jSFmmcHJvyo1RwxjMj9utazodBE2RSVSeG/f+dDQBzZrY+j9owUi
+ sm/r94bfU0V522EA1TeqWjbxWCudKkwk1rSBtqH6kU2wbPqwX34+5EehRNrvns+JmWJR
+ YI3LWwodpPKYUKMscyyBcNY0I9qrSr3P1VRBhfqvRZITCq5UIuj+mgvO+4hY8FjwMqzJ
+ vh4A==
+X-Gm-Message-State: APjAAAXM476QeD5eOKVt/v0633Ope7ib6YWJDyUPCGw0M/G8G2KOuX0i
+ 6lYGz3D1E8yiYXfTVnuOT/aZTA==
+X-Google-Smtp-Source: APXvYqxxmhkL7zLBgZCW8TKbKUkshYT4R+uLXT2RMbgocDu5SuK+1rnnfEXwzR+Htceb946hUMHc/A==
+X-Received: by 2002:a65:5541:: with SMTP id t1mr28199191pgr.39.1572368797042; 
+ Tue, 29 Oct 2019 10:06:37 -0700 (PDT)
+Received: from minitux (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id 37sm13127555pgv.32.2019.10.29.10.06.35
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 29 Oct 2019 10:06:31 -0700 (PDT)
-Date: Tue, 29 Oct 2019 12:06:30 -0500
-From: Rob Herring <robh@kernel.org>
-To: Maxime Ripard <mripard@kernel.org>
-Subject: Re: [PATCH] dt-bindings: usb: Convert Allwinner USB PHY controller
- to a schema
-Message-ID: <20191029170630.GA14239@bogus>
-References: <20191022161810.43451-1-mripard@kernel.org>
+ Tue, 29 Oct 2019 10:06:36 -0700 (PDT)
+Date: Tue, 29 Oct 2019 10:06:33 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: Re: [PATCH] arm64: cpufeature: Enable Qualcomm erratas
+Message-ID: <20191029170633.GX571@minitux>
+References: <20191029060432.1208859-1-bjorn.andersson@linaro.org>
+ <20191029113956.GC12103@willie-the-truck>
+ <1d1a3dca-16ce-f541-5d78-e61ad24227e0@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191022161810.43451-1-mripard@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1d1a3dca-16ce-f541-5d78-e61ad24227e0@arm.com>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_100633_594061_7927BBC4 
-X-CRM114-Status: GOOD (  18.93  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191029_100638_127315_DCEF3B14 
+X-CRM114-Status: GOOD (  24.03  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.68 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,659 +100,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- kishon@ti.com, Chen-Yu Tsai <wens@csie.org>,
- Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
+ stable@vger.kernel.org, broonie@kernel.org, linux-arm-msm@vger.kernel.org,
+ will@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 22, 2019 at 06:18:10PM +0200, Maxime Ripard wrote:
-> The Allwinner SoCs have a USB PHY controller that is supported in Linux,
-> with a matching Device Tree binding.
-> 
-> Now that we have the DT validation in place, let's convert the device tree
-> bindings for that controller over to a YAML schemas.
-> 
-> Signed-off-by: Maxime Ripard <mripard@kernel.org>
-> ---
->  .../phy/allwinner,sun4i-a10-usb-phy.yaml      | 541 ++++++++++++++++++
->  .../devicetree/bindings/phy/sun4i-usb-phy.txt |  68 ---
->  2 files changed, 541 insertions(+), 68 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/phy/allwinner,sun4i-a10-usb-phy.yaml
->  delete mode 100644 Documentation/devicetree/bindings/phy/sun4i-usb-phy.txt
+On Tue 29 Oct 05:04 PDT 2019, Suzuki K Poulose wrote:
 
-Perhaps this one should be split into multiple files. The oneOf's and 
-if/then's are a bit much IMO.
+> On 10/29/2019 11:39 AM, Will Deacon wrote:
+> > On Mon, Oct 28, 2019 at 11:04:32PM -0700, Bjorn Andersson wrote:
+> > > With the introduction of 'cce360b54ce6 ("arm64: capabilities: Filter the
+> > > entries based on a given mask")' the Qualcomm erratas are no long
+> > > applied.
+> > > 
+> > > The result of not applying errata 1003 is that MSM8996 runs into various
+> > > RCU stalls and fails to boot most of the times.
+> > > 
+> > > Give both 1003 and 1009 a "type" to ensure they are not filtered out in
+> > > update_cpu_capabilities().
+> > 
+> > Oh nasty. Thanks for debugging and fixing this.
+> > 
+> > > Fixes: cce360b54ce6 ("arm64: capabilities: Filter the entries based on a given mask")
+> > > Cc: stable@vger.kernel.org
+> > > Reported-by: Mark Brown <broonie@kernel.org>
+> > > Suggested-by: Will Deacon <will@kernel.org>
+> > > Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+> > > ---
+> > >   arch/arm64/kernel/cpu_errata.c | 2 ++
+> > >   1 file changed, 2 insertions(+)
+> > > 
+> > > diff --git a/arch/arm64/kernel/cpu_errata.c b/arch/arm64/kernel/cpu_errata.c
+> > > index df9465120e2f..cdd8df033536 100644
+> > > --- a/arch/arm64/kernel/cpu_errata.c
+> > > +++ b/arch/arm64/kernel/cpu_errata.c
+> > > @@ -780,6 +780,7 @@ const struct arm64_cpu_capabilities arm64_errata[] = {
+> > >   	{
+> > >   		.desc = "Qualcomm Technologies Falkor/Kryo erratum 1003",
+> > >   		.capability = ARM64_WORKAROUND_QCOM_FALKOR_E1003,
+> > > +		.type = ARM64_CPUCAP_SCOPE_LOCAL_CPU,
+> > >   		.matches = cpucap_multi_entry_cap_matches,
+> > 
+> > This should probably be ARM64_CPUCAP_LOCAL_CPU_ERRATUM instead, but I'll
+> > want Suzuki's ack before I take the change.
+> 
+> Yes, it must be ARM64_CPUCAP_LOCAL_CPU_ERRATUM.
+> 
 
-You could always extract what's common and then $ref the common file.
+Thanks, will fix.
+
+> It may be a good idea to stick in a check to make sure that the scope is
+> set for all the capabilities in a separate patch. e.g,
+> 
+> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+> index d260e3bdf07b..51a79b4a44eb 100644
+> --- a/arch/arm64/kernel/cpufeature.c
+> +++ b/arch/arm64/kernel/cpufeature.c
+> @@ -546,6 +546,8 @@ static void __init
+>  init_cpu_hwcaps_indirect_list_from_array(const struct
+> arm64_cpu_capabilities *caps)
+>  {
+>  	for (; caps->matches; caps++) {
+> +		WARN(!cpucap_default_scope(caps),
+> +		     "Invalid scope for capability %d\n", caps->capability);
+>  		if (WARN(caps->capability >= ARM64_NCAPS,
+>  			"Invalid capability %d\n", caps->capability))
+> 			continue;
+
+In hindsight this would have saved me a considerable amount of time, so
+I like this proposal!
+
+Regards,
+Bjorn
 
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/allwinner,sun4i-a10-usb-phy.yaml b/Documentation/devicetree/bindings/phy/allwinner,sun4i-a10-usb-phy.yaml
-> new file mode 100644
-> index 000000000000..de63a5eb1e2a
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/allwinner,sun4i-a10-usb-phy.yaml
-> @@ -0,0 +1,541 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/allwinner,sun4i-a10-usb-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Allwinner A10 USB PHY Device Tree Bindings
-> +
-> +maintainers:
-> +  - Chen-Yu Tsai <wens@csie.org>
-> +  - Maxime Ripard <maxime.ripard@bootlin.com>
-> +
-> +properties:
-> +  "#phy-cells":
-> +    const: 1
-> +
-> +  compatible:
-> +    enum:
-> +      - allwinner,sun4i-a10-usb-phy
-> +      - allwinner,sun5i-a13-usb-phy
-> +      - allwinner,sun6i-a31-usb-phy
-> +      - allwinner,sun7i-a20-usb-phy
-> +      - allwinner,sun8i-a23-usb-phy
-> +      - allwinner,sun8i-a33-usb-phy
-> +      - allwinner,sun8i-a83t-usb-phy
-> +      - allwinner,sun8i-h3-usb-phy
-> +      - allwinner,sun8i-r40-usb-phy
-> +      - allwinner,sun8i-v3s-usb-phy
-> +      - allwinner,sun50i-a64-usb-phy
-> +      - allwinner,sun50i-h6-usb-phy
-> +
-> +  reg:
-> +    anyOf:
-> +      - minItems: 2
-> +        maxItems: 3
-> +        items:
-> +          - description: PHY Control registers
-> +          - description: PHY PMU1 registers
-> +          - description: PHY PMU2 registers
-> +
-> +      - minItems: 2
-> +        maxItems: 5
-> +        items:
-> +          - description: PHY Control registers
-> +          - description: PHY PMU0 registers
-> +          - description: PHY PMU1 registers
-> +          - description: PHY PMU2 registers
-> +          - description: PHY PMU3 registers
-> +
-> +      - items:
-> +          - description: PHY Control registers
-> +          - description: PHY PMU0 registers
-> +          - description: PHY PMU3 registers
-> +
-> +  reg-names:
-> +    oneOf:
-> +      - minItems: 2
-> +        maxItems: 3
-> +        items:
-> +          - const: phy_ctrl
-> +          - const: pmu1
-> +          - const: pmu2
-> +
-> +      - minItems: 2
-> +        maxItems: 5
-> +        items:
-> +          - const: phy_ctrl
-> +          - const: pmu0
-> +          - const: pmu1
-> +          - const: pmu2
-> +          - const: pmu3
-> +
-> +      - items:
-> +          - const: phy_ctrl
-> +          - const: pmu0
-> +          - const: pmu3
-> +
-> +  clocks:
-> +    anyOf:
-> +      - description: USB PHY bus clock
-> +
-> +      - minItems: 1
-> +        maxItems: 4
-> +        items:
-> +          - description: USB OTG PHY bus clock
-> +          - description: USB Host 0 PHY bus clock
-> +          - description: USB Host 1 PHY bus clock
-> +          - description: USB Host 2 PHY bus clock
-> +
-> +      - items:
-> +          - description: USB OTG PHY bus clock
-> +          - description: USB Host 0 PHY bus clock
-> +          - description: USB Host 1 PHY bus clock
-> +          - description: USB HSIC 12MHz clock
-> +
-> +      - items:
-> +          - description: USB OTG PHY bus clock
-> +          - description: USB Host PHY bus clock
-> +
-> +  clock-names:
-> +    oneOf:
-> +      - const: usb_phy
-> +
-> +      - minItems: 1
-> +        maxItems: 4
-> +        items:
-> +          - const: usb0_phy
-> +          - const: usb1_phy
-> +          - const: usb2_phy
-> +          - const: usb3_phy
-> +
-> +      - items:
-> +          - const: usb0_phy
-> +          - const: usb1_phy
-> +          - const: usb2_phy
-> +          - const: usb2_hsic_12M
-> +
-> +      - items:
-> +          - const: usb0_phy
-> +          - const: usb3_phy
-> +
-> +  resets:
-> +    anyOf:
-> +      - minItems: 1
-> +        maxItems: 4
-> +        items:
-> +          - description: USB OTG reset
-> +          - description: USB Host 1 Controller reset
-> +          - description: USB Host 2 Controller reset
-> +          - description: USB Host 3 Controller reset
-> +
-> +      - items:
-> +          - description: USB OTG reset
-> +          - description: USB Host Controller reset
-> +
-> +  reset-names:
-> +    oneOf:
-> +      - minItems: 1
-> +        maxItems: 4
-> +        items:
-> +          - const: usb0_reset
-> +          - const: usb1_reset
-> +          - const: usb2_reset
-> +          - const: usb3_reset
-> +
-> +      - items:
-> +          - const: usb0_reset
-> +          - const: usb3_reset
-> +
-> +  usb0_id_det-gpios:
-> +    description: GPIO to the USB OTG ID pin
-> +
-> +  usb0_vbus_det-gpios:
-> +    description: GPIO to the USB OTG VBUS detect pin
-> +
-> +  usb0_vbus_power-supply:
-> +    description: Power supply to detect the USB OTG VBUS
-> +
-> +  usb0_vbus-supply:
-> +    description: Regulator controlling USB OTG VBUS
-> +
-> +  usb1_vbus-supply:
-> +    description: Regulator controlling USB1 Host controller
-> +
-> +  usb2_vbus-supply:
-> +    description: Regulator controlling USB2 Host controller
-> +
-> +  usb3_vbus-supply:
-> +    description: Regulator controlling USB3 Host controller
-> +
-> +required:
-> +  - "#phy-cells"
-> +  - compatible
-> +  - clocks
-> +  - clock-names
-> +  - reg
-> +  - reg-names
-> +  - resets
-> +  - reset-names
-> +
-> +additionalProperties: false
-> +
-> +allOf:
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - allwinner,sun4i-a10-usb-phy
-> +              - allwinner,sun7i-a20-usb-phy
-> +
-> +    then:
-> +      properties:
-> +        reg:
-> +          maxItems: 3
-> +
-> +        reg-names:
-> +          items:
-> +            - const: phy_ctrl
-> +            - const: pmu1
-> +            - const: pmu2
-> +
-> +        clocks:
-> +          maxItems: 1
-> +
-> +        clock-names:
-> +          const: usb_phy
-> +
-> +        resets:
-> +          maxItems: 3
-> +
-> +        reset-names:
-> +          items:
-> +            - const: usb0_reset
-> +            - const: usb1_reset
-> +            - const: usb2_reset
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - allwinner,sun5i-a13-usb-phy
-> +
-> +    then:
-> +      properties:
-> +        reg:
-> +          maxItems: 2
-> +
-> +        reg-names:
-> +          items:
-> +            - const: phy_ctrl
-> +            - const: pmu1
-> +
-> +        clocks:
-> +          maxItems: 1
-> +
-> +        clock-names:
-> +          const: usb_phy
-> +
-> +        resets:
-> +          maxItems: 2
-> +
-> +        reset-names:
-> +          items:
-> +            - const: usb0_reset
-> +            - const: usb1_reset
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: allwinner,sun6i-a31-usb-phy
-> +
-> +    then:
-> +      properties:
-> +        reg:
-> +          maxItems: 3
-> +
-> +        reg-names:
-> +          items:
-> +            - const: phy_ctrl
-> +            - const: pmu1
-> +            - const: pmu2
-> +
-> +        clocks:
-> +          maxItems: 3
-> +
-> +        clock-names:
-> +          items:
-> +            - const: usb0_phy
-> +            - const: usb1_phy
-> +            - const: usb2_phy
-> +
-> +        resets:
-> +          maxItems: 3
-> +
-> +        reset-names:
-> +          items:
-> +            - const: usb0_reset
-> +            - const: usb1_reset
-> +            - const: usb2_reset
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - allwinner,sun8i-a23-usb-phy
-> +              - allwinner,sun8i-a33-usb-phy
-> +
-> +    then:
-> +      properties:
-> +        reg:
-> +          maxItems: 2
-> +
-> +        reg-names:
-> +          items:
-> +            - const: phy_ctrl
-> +            - const: pmu1
-> +
-> +        clocks:
-> +          maxItems: 2
-> +
-> +        clock-names:
-> +          items:
-> +            - const: usb0_phy
-> +            - const: usb1_phy
-> +
-> +        resets:
-> +          maxItems: 2
-> +
-> +        reset-names:
-> +          items:
-> +            - const: usb0_reset
-> +            - const: usb1_reset
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: allwinner,sun8i-a83t-usb-phy
-> +
-> +    then:
-> +      properties:
-> +        reg:
-> +          maxItems: 3
-> +
-> +        reg-names:
-> +          items:
-> +            - const: phy_ctrl
-> +            - const: pmu1
-> +            - const: pmu2
-> +
-> +        clocks:
-> +          maxItems: 4
-> +
-> +        clock-names:
-> +          items:
-> +            - const: usb0_phy
-> +            - const: usb1_phy
-> +            - const: usb2_phy
-> +            - const: usb2_hsic_12M
-> +
-> +        resets:
-> +          maxItems: 3
-> +
-> +        reset-names:
-> +          items:
-> +            - const: usb0_reset
-> +            - const: usb1_reset
-> +            - const: usb2_reset
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: allwinner,sun8i-h3-usb-phy
-> +
-> +    then:
-> +      properties:
-> +        reg:
-> +          maxItems: 5
-> +
-> +        reg-names:
-> +          items:
-> +            - const: phy_ctrl
-> +            - const: pmu0
-> +            - const: pmu1
-> +            - const: pmu2
-> +            - const: pmu3
-> +
-> +        clocks:
-> +          maxItems: 4
-> +
-> +        clock-names:
-> +          items:
-> +            - const: usb0_phy
-> +            - const: usb1_phy
-> +            - const: usb2_phy
-> +            - const: usb3_phy
-> +
-> +        resets:
-> +          maxItems: 4
-> +
-> +        reset-names:
-> +          items:
-> +            - const: usb0_reset
-> +            - const: usb1_reset
-> +            - const: usb2_reset
-> +            - const: usb3_reset
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: allwinner,sun8i-r40-usb-phy
-> +
-> +    then:
-> +      properties:
-> +        reg:
-> +          maxItems: 4
-> +
-> +        reg-names:
-> +          items:
-> +            - const: phy_ctrl
-> +            - const: pmu0
-> +            - const: pmu1
-> +            - const: pmu2
-> +
-> +        clocks:
-> +          maxItems: 3
-> +
-> +        clock-names:
-> +          items:
-> +            - const: usb0_phy
-> +            - const: usb1_phy
-> +            - const: usb2_phy
-> +
-> +        resets:
-> +          maxItems: 3
-> +
-> +        reset-names:
-> +          items:
-> +            - const: usb0_reset
-> +            - const: usb1_reset
-> +            - const: usb2_reset
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: allwinner,sun8i-v3s-usb-phy
-> +
-> +    then:
-> +      properties:
-> +        reg:
-> +          maxItems: 2
-> +
-> +        reg-names:
-> +          items:
-> +            - const: phy_ctrl
-> +            - const: pmu0
-> +
-> +        clocks:
-> +          maxItems: 1
-> +
-> +        clock-names:
-> +          const: usb0_phy
-> +
-> +        resets:
-> +          maxItems: 1
-> +
-> +        reset-names:
-> +          const: usb0_reset
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: allwinner,sun50i-a64-usb-phy
-> +
-> +    then:
-> +      properties:
-> +        reg:
-> +          maxItems: 3
-> +
-> +        reg-names:
-> +          items:
-> +            - const: phy_ctrl
-> +            - const: pmu0
-> +            - const: pmu1
-> +
-> +        clocks:
-> +          maxItems: 2
-> +
-> +        clock-names:
-> +          items:
-> +            - const: usb0_phy
-> +            - const: usb1_phy
-> +
-> +        resets:
-> +          maxItems: 2
-> +
-> +        reset-names:
-> +          items:
-> +            - const: usb0_reset
-> +            - const: usb1_reset
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: allwinner,sun50i-h6-usb-phy
-> +
-> +    then:
-> +      properties:
-> +        reg:
-> +          maxItems: 3
-> +
-> +        reg-names:
-> +          items:
-> +            - const: phy_ctrl
-> +            - const: pmu0
-> +            - const: pmu3
-> +
-> +        clocks:
-> +          maxItems: 2
-> +
-> +        clock-names:
-> +          items:
-> +            - const: usb0_phy
-> +            - const: usb3_phy
-> +
-> +        resets:
-> +          maxItems: 2
-> +
-> +        reset-names:
-> +          items:
-> +            - const: usb0_reset
-> +            - const: usb3_reset
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/gpio/gpio.h>
-> +
-> +    usbphy: phy@01c13400 {
-> +        compatible = "allwinner,sun4i-a10-usb-phy";
-> +        reg = <0x01c13400 0x10>, <0x01c14800 0x4>, <0x01c1c800 0x4>;
-> +        reg-names = "phy_ctrl", "pmu1", "pmu2";
-> +        clocks = <&usb_clk 8>;
-> +        clock-names = "usb_phy";
-> +        resets = <&usb_clk 0>, <&usb_clk 1>, <&usb_clk 2>;
-> +        reset-names = "usb0_reset", "usb1_reset", "usb2_reset";
-> +        usb0_id_det-gpios = <&pio 7 19 GPIO_ACTIVE_HIGH>;
-> +        usb0_vbus_det-gpios = <&pio 7 22 GPIO_ACTIVE_HIGH>;
-> +        usb0_vbus-supply = <&reg_usb0_vbus>;
-> +        usb1_vbus-supply = <&reg_usb1_vbus>;
-> +        usb2_vbus-supply = <&reg_usb2_vbus>;
-> +        #phy-cells = <1>;
-> +    };
-> diff --git a/Documentation/devicetree/bindings/phy/sun4i-usb-phy.txt b/Documentation/devicetree/bindings/phy/sun4i-usb-phy.txt
-> deleted file mode 100644
-> index f2e120af17f0..000000000000
-> --- a/Documentation/devicetree/bindings/phy/sun4i-usb-phy.txt
-> +++ /dev/null
-> @@ -1,68 +0,0 @@
-> -Allwinner sun4i USB PHY
-> ------------------------
-> -
-> -Required properties:
-> -- compatible : should be one of
-> -  * allwinner,sun4i-a10-usb-phy
-> -  * allwinner,sun5i-a13-usb-phy
-> -  * allwinner,sun6i-a31-usb-phy
-> -  * allwinner,sun7i-a20-usb-phy
-> -  * allwinner,sun8i-a23-usb-phy
-> -  * allwinner,sun8i-a33-usb-phy
-> -  * allwinner,sun8i-a83t-usb-phy
-> -  * allwinner,sun8i-h3-usb-phy
-> -  * allwinner,sun8i-r40-usb-phy
-> -  * allwinner,sun8i-v3s-usb-phy
-> -  * allwinner,sun50i-a64-usb-phy
-> -  * allwinner,sun50i-h6-usb-phy
-> -- reg : a list of offset + length pairs
-> -- reg-names :
-> -  * "phy_ctrl"
-> -  * "pmu0" for H3, V3s, A64 or H6
-> -  * "pmu1"
-> -  * "pmu2" for sun4i, sun6i, sun7i, sun8i-a83t or sun8i-h3
-> -  * "pmu3" for sun8i-h3 or sun50i-h6
-> -- #phy-cells : from the generic phy bindings, must be 1
-> -- clocks : phandle + clock specifier for the phy clocks
-> -- clock-names :
-> -  * "usb_phy" for sun4i, sun5i or sun7i
-> -  * "usb0_phy", "usb1_phy" and "usb2_phy" for sun6i
-> -  * "usb0_phy", "usb1_phy" for sun8i
-> -  * "usb0_phy", "usb1_phy", "usb2_phy" and "usb2_hsic_12M" for sun8i-a83t
-> -  * "usb0_phy", "usb1_phy", "usb2_phy" and "usb3_phy" for sun8i-h3
-> -  * "usb0_phy" and "usb3_phy" for sun50i-h6
-> -- resets : a list of phandle + reset specifier pairs
-> -- reset-names :
-> -  * "usb0_reset"
-> -  * "usb1_reset"
-> -  * "usb2_reset" for sun4i, sun6i, sun7i, sun8i-a83t or sun8i-h3
-> -  * "usb3_reset" for sun8i-h3 and sun50i-h6
-> -
-> -Optional properties:
-> -- usb0_id_det-gpios : gpio phandle for reading the otg id pin value
-> -- usb0_vbus_det-gpios : gpio phandle for detecting the presence of usb0 vbus
-> -- usb0_vbus_power-supply: power-supply phandle for usb0 vbus presence detect
-> -- usb0_vbus-supply : regulator phandle for controller usb0 vbus
-> -- usb1_vbus-supply : regulator phandle for controller usb1 vbus
-> -- usb2_vbus-supply : regulator phandle for controller usb2 vbus
-> -- usb3_vbus-supply : regulator phandle for controller usb3 vbus
-> -
-> -Example:
-> -	usbphy: phy@01c13400 {
-> -		#phy-cells = <1>;
-> -		compatible = "allwinner,sun4i-a10-usb-phy";
-> -		/* phy base regs, phy1 pmu reg, phy2 pmu reg */
-> -		reg = <0x01c13400 0x10 0x01c14800 0x4 0x01c1c800 0x4>;
-> -		reg-names = "phy_ctrl", "pmu1", "pmu2";
-> -		clocks = <&usb_clk 8>;
-> -		clock-names = "usb_phy";
-> -		resets = <&usb_clk 0>, <&usb_clk 1>, <&usb_clk 2>;
-> -		reset-names = "usb0_reset", "usb1_reset", "usb2_reset";
-> -		pinctrl-names = "default";
-> -		pinctrl-0 = <&usb0_id_detect_pin>, <&usb0_vbus_detect_pin>;
-> -		usb0_id_det-gpios = <&pio 7 19 GPIO_ACTIVE_HIGH>; /* PH19 */
-> -		usb0_vbus_det-gpios = <&pio 7 22 GPIO_ACTIVE_HIGH>; /* PH22 */
-> -		usb0_vbus-supply = <&reg_usb0_vbus>;
-> -		usb1_vbus-supply = <&reg_usb1_vbus>;
-> -		usb2_vbus-supply = <&reg_usb2_vbus>;
-> -	};
-> -- 
-> 2.23.0
+> Otherwise looks good to me.
 > 
+> > >   		.match_list = qcom_erratum_1003_list,
+> > >   	},
+> > > @@ -788,6 +789,7 @@ const struct arm64_cpu_capabilities arm64_errata[] = {
+> > >   	{
+> > >   		.desc = "Qualcomm erratum 1009, ARM erratum 1286807",
+> > >   		.capability = ARM64_WORKAROUND_REPEAT_TLBI,
+> > > +		.type = ARM64_CPUCAP_SCOPE_LOCAL_CPU,
+> > >   		ERRATA_MIDR_RANGE_LIST(arm64_repeat_tlbi_cpus),
+> > 
+> > ERRATA_MIDR_RANGE_LIST sets the type already, so I think this is redundant.
+> > 
+> > Will
+> > 
+> 
+> 
+> 
+> Cheers
+> Suzuki
 
 _______________________________________________
 linux-arm-kernel mailing list
