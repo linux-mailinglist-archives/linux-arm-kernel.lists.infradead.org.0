@@ -2,85 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E832DE8F71
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 19:41:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86B24E8FA9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 20:03:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xRa7asP4O9lPjzM0RIUxJvY05/dkI7v/2FJbELuz624=; b=mxwKM1mkGjKbEH
-	1uKVkNyMnVPAoxApn1X1WRIa7OQJj8HG6EJgVW2WbQSTaeSH1I8eQitx4Z9igV18QlnQGx/afwuxx
-	NPe8pjsDO8eqdZEF7aQ7BNrFQVFq1mmUAH42EWxsEksxGjyviLIsyh2UAPnoaXoXNWVjR8sO1grmf
-	XPvBVCqBHWE59eJQr12QXYk+ZLpp12J0zN3HgbUKAzpj8RzDLrr9quB6kUgLKWjD0bfAmfhSbnOJA
-	o2jo9DEj29RwY6iLRRWT10E7QAigBEmMzGi5M+XCBlU/V6rGSI/LlTLDqShlAk5zeBxvo84GuNS2f
-	+qFTRuZXaw7vUGLexfTg==;
+	List-Owner; bh=D3tl8Hb1q5bi3r6BVHHgK6oFS2bQVRCL4SYXk9AyyDI=; b=ja6YytwPcP0N6e
+	AlU8GRAXHI0mAgiN3VlZWyIWukxmtc/zYevLIUJJWV/HI+5kKVIUyfYej53Oo8UvrJNeYr7C4hqLM
+	dYrVFRDtMu8wedc0H8egiC4oQx35YtFo1wZjFvRGyS2w8etfQuuAxA/oVLL+A6/MVj9fnW2K9HPA3
+	/4toS9uqPIsYjulLtEsGw4+crn0ZdBMA8rch0gW1r18zRrExsBY5RWJXlnzEstMg7jl20B/viIkHB
+	huc85lgxaa/dVerd6h+hCuG//6xAO4oYnH0CsI+1qjHxZXuskRI4EUAonMgLQlCVwKA1mjMY90YwX
+	EO5DLr8oYFjT2zTuLG/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPWRB-0004Rx-0E; Tue, 29 Oct 2019 18:41:49 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1iPWlh-0003tn-3l; Tue, 29 Oct 2019 19:03:01 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPWQw-0004Q7-AR; Tue, 29 Oct 2019 18:41:37 +0000
-Received: by mail-ot1-f67.google.com with SMTP id u13so10700733ote.0;
- Tue, 29 Oct 2019 11:41:34 -0700 (PDT)
+ id 1iPWlV-0003t7-0w
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 19:02:50 +0000
+Received: by mail-lf1-x142.google.com with SMTP id j5so5008999lfh.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 29 Oct 2019 12:02:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=R+5n6HzGqXwqylYQMJuUdb3nBEM9S+F065OE1s2NqT4=;
+ b=JWJt/IwbphIEGjhvM8Mkx2Krgta251lsS3ryU+P1KWl5pA4pmnxitipM9KclwTJHNr
+ CCEBoAIIi2zFetwMqzDluLM6612o4DgEaJzW+uegkm+a3LfJTpg7tY8H6ZpU5j0pWHMj
+ X0lbrt409/7nWB+vCjGkOEFEHA6bE7C4sbQ+F/9NF7/HwGnbSLbBA50XkJT9laFkF0vZ
+ dzLQO/SRVbvR2nzvZkDJyAHQOCksFJKTBzSeMvxm+/xSFP97F8H/bBjjtS1eulQocXrC
+ Ssw8HMkdrSAjqMUEeAOthNgLV7fGVivELZuu4mt8Uf+yL/Kjk2suTZkipN3iKbonQiVs
+ lUbQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=lCcDgbdqbuBTEikUEcKsB8OyooPRstoWxTDmJWpZKMA=;
- b=uhSwqq9nxH8Ptn6QoOFTG5NQwS8zGSaoQaWpDo2eUHYOLpd9uoG4xlwM477d6tRhCc
- jV4wjCiyF+5CWHWNpg3sLmEMqNxOsGsbp8CIDkI1XI7AStXnT2R59ubwog98Wb0AS6Za
- ovDiRwX4FbvfyW0osPY/i1yWwe2smU4PkwueS69bJem3N4E6S+6ZBqPgDGKCVkEiG5gv
- lI13+qvbJGhYBaBXojmyGJ916MYXeq15hyIEyg3othA5WdB+MZxLd3IGRNACO5iYxfgU
- H8gm7O9wGtlqEtI8lWN169z1nSDw/pPUxO0JGNYC3BZzdDy8xrmcfT3DU+PjpYjAjNy/
- uRKw==
-X-Gm-Message-State: APjAAAX00y+8VkE2ulPsYlTf/EZ1nkr4/HxVoYTU2Iz3e/mqAl05IN5B
- M5Z7FeJK6qRIucPdm+Cbvg==
-X-Google-Smtp-Source: APXvYqyVgC8Gsnj0NziyjeH40B60+G7bSv4Br+vl1MPHSuG6P0wTssUrdGYhc3TeATcb8OHCX8obxw==
-X-Received: by 2002:a9d:5f89:: with SMTP id g9mr18830085oti.227.1572374493211; 
- Tue, 29 Oct 2019 11:41:33 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id y4sm4155556oie.42.2019.10.29.11.41.32
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 29 Oct 2019 11:41:32 -0700 (PDT)
-Date: Tue, 29 Oct 2019 13:41:31 -0500
-From: Rob Herring <robh@kernel.org>
-To: Wen Su <Wen.Su@mediatek.com>
-Subject: Re: [PATCH 1/4] dt-bindings: regulator: Add document for MT6359
- regulator
-Message-ID: <20191029184131.GA3733@bogus>
-References: <1571218786-15073-1-git-send-email-Wen.Su@mediatek.com>
- <1571218786-15073-2-git-send-email-Wen.Su@mediatek.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=R+5n6HzGqXwqylYQMJuUdb3nBEM9S+F065OE1s2NqT4=;
+ b=R42y1DrBrczJqqd+FfOPu36f74P+eCoZd/TIZtHaF/bnFyt9EtTiYEwegocpIC+odM
+ pYOdwcx0nH4mrVBMFID5sMfZNP+0w+08WrTzAqJqLztqKI86vgOk2HW50jblcAF3UnBg
+ IAlDPng/A3a2gyNcelYVeX1cbG49g+QxntGzB75CIIVzjyXNYrX4nSlUHr6HUMyaXPz8
+ rXalR2y0vha6NSxmNRpGEj4SexfNeQ3yheiy9nGkioUW0+dbBOTMre/F+QumkE6DIa4d
+ akkBs1gcUTbn/Pn7MIS7gJ6RHPwyfXYeWphoc6FYihqkqth0QXx3gB35yIqCT5QF1Q5Y
+ O3bA==
+X-Gm-Message-State: APjAAAX5QoZnjWAJtbAvuuGlFXm4a3JREhCWnj7U2QG69R8Prq8zYZLM
+ esGVSUEtrA0hWg5E82nL2efhs8vqagCqdJxjMGM=
+X-Google-Smtp-Source: APXvYqxvJAzOcdbgfYPkBxJQAQ0zwhUQS9PZL+lzJrE8mOVv7fJHfsreK8SX3W4pZVAE21BGaOS8HOPd713iJOBucpc=
+X-Received: by 2002:a19:4318:: with SMTP id q24mr3415688lfa.12.1572375766538; 
+ Tue, 29 Oct 2019 12:02:46 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1571218786-15073-2-git-send-email-Wen.Su@mediatek.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20191028140545.10218-1-festevam@gmail.com>
+ <20191028142913.GN16985@dragon>
+In-Reply-To: <20191028142913.GN16985@dragon>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Tue, 29 Oct 2019 16:02:49 -0300
+Message-ID: <CAOMZO5DcCXA3FExsw5Eo6Ua6VEkbwBu7rA4KCJObHsGb7LYx3w@mail.gmail.com>
+Subject: Re: [PATCH 1/2] ARM: dts: imx51: Adjust CPU operating points
+To: Shawn Guo <shawnguo@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_114134_357567_3F290405 
-X-CRM114-Status: UNSURE (   9.39  )
+X-CRM114-CacheID: sfid-20191029_120249_095490_08AD05BD 
+X-CRM114-Status: UNSURE (   9.34  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.5 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.67 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ provider (festevam[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,29 +94,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- wen.su@mediatek.com, wsd_upstream@mediatek.com,
- Liam Girdwood <lgirdwood@gmail.com>, linux-kernel@vger.kernel.org,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Lee Jones <lee.jones@linaro.org>, linux-arm-kernel@lists.infradead.org
+Cc: "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Chris Healy <cphealy@gmail.com>,
+ NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 16 Oct 2019 17:39:43 +0800, Wen Su wrote:
-> From: "wen.su" <wen.su@mediatek.com>
-> 
-> add dt-binding document for MediaTek MT6359 PMIC
-> 
-> Signed-off-by: wen.su <wen.su@mediatek.com>
-> ---
->  .../bindings/regulator/mt6359-regulator.txt        | 59 ++++++++++++++++++++++
->  1 file changed, 59 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/regulator/mt6359-regulator.txt
-> 
+Hi Shawn,
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+On Mon, Oct 28, 2019 at 11:29 AM Shawn Guo <shawnguo@kernel.org> wrote:
+>
+> On Mon, Oct 28, 2019 at 11:05:44AM -0300, Fabio Estevam wrote:
+> > Adjust the CPU operating points as per the characterized settings from
+> > the vendor BSP at:
+> >
+> > https://source.codeaurora.org/external/imx/linux-imx/tree/arch/arm/mach-mx5/mx51_babbage.c?h=imx_2.6.35_caf#n1343
+>
+> Does it match what datasheet says?
+
+It matches all operational points from the i.MX53 consumer datasheet.
+
+On i.MX51 I noticed one discrepancy, so I will update it in v2.
 
 _______________________________________________
 linux-arm-kernel mailing list
