@@ -2,39 +2,40 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49176E820F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 08:21:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DFF8E8211
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 08:21:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+PSyspBT7q6QrSNo3Yt5osNMqnOqZZsazold3XbntBk=; b=FUAe5T36NrBCj6
-	wBO6ayPVc/s8t4Zh4DVbuuPtTUcZglS7DMU2w8W1FMDP8NU8JEdik8dPMP1G6CchlDa5i4cCPVV2H
-	oHG3lMV/PXWRDwiKvSaXVK6wNyKAQZWsMVRT9qHg24fUUfKk9XZhlQENFDML8+iyppKR4RYAVZRum
-	NNgeQsDvxaxiwm7jYXP18EipJmH4KTG9YYSdp2GKpps3p/wVucCVv/37qM3bB0f88wfn9H+xN7zil
-	8oi5IFuBGijuXpW+mTHilCsIR+OGfIOQGMgPoeYJim+0FJNpiljv1MaXd2bWcNlz1O7mlm+zhW3Gy
-	dZKvtFwLI8uRDJ65x/0A==;
+	List-Owner; bh=kPNHE6zrBuvDf/0nzx7/7s1S2SS+MIJjPl6bnWsWnyk=; b=ufjF2YJmESD33B
+	pFXoz6p/HKFkSJZvOwkcfFCInpz1JL8e5swl7rlgW+bLSRgpSNwl+snPj7e861qR9HrXfq0Vhljc1
+	33OvSzYc91Btr8Mekm42PVydm9/8JKi2zo3T0ICkTpZ0XiTl5uOeIibVEGjmkX7FzK6wenDFGyP5B
+	dSvuT/Ho4MVVJ5cWyOTBCTPpLkaETy7Q11wzn0pARMeHWAtRKoJIQYJ4HzB9cPzvyVSIKBGdfL1XA
+	qIRFiES7SLBSa0Ln+X//+PI+vU+0bKU1qp7GH84TkQupAG2DxWCNFNQRSyGywkQRKnScNxXhsTicr
+	sMT5z5KTJnxBB8Vh4mAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPLoO-0002q5-PQ; Tue, 29 Oct 2019 07:21:04 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1iPLok-0003JL-FM; Tue, 29 Oct 2019 07:21:26 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPLnq-0002bG-Il
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 07:20:32 +0000
+ id 1iPLns-0002cB-9a
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 07:20:33 +0000
 Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 3C181374D1B2EC7E14A6;
- Tue, 29 Oct 2019 15:20:22 +0800 (CST)
+ by Forcepoint Email with ESMTP id 453D89AEB92ADC6E058B;
+ Tue, 29 Oct 2019 15:20:27 +0800 (CST)
 Received: from DESKTOP-8RFUVS3.china.huawei.com (10.173.222.27) by
  DGGEMS414-HUB.china.huawei.com (10.3.19.214) with Microsoft SMTP Server id
- 14.3.439.0; Tue, 29 Oct 2019 15:20:16 +0800
+ 14.3.439.0; Tue, 29 Oct 2019 15:20:17 +0800
 From: Zenghui Yu <yuzenghui@huawei.com>
 To: <maz@kernel.org>, <eric.auger@redhat.com>, <james.morse@arm.com>,
  <julien.thierry.kdev@gmail.com>, <suzuki.poulose@arm.com>
-Subject: [PATCH 2/3] KVM: arm/arm64: vgic: Fix some comments typo
-Date: Tue, 29 Oct 2019 15:19:18 +0800
-Message-ID: <20191029071919.177-3-yuzenghui@huawei.com>
+Subject: [PATCH 3/3] KVM: arm/arm64: vgic: Don't rely on the wrong pending
+ table
+Date: Tue, 29 Oct 2019 15:19:19 +0800
+Message-ID: <20191029071919.177-4-yuzenghui@huawei.com>
 X-Mailer: git-send-email 2.23.0.windows.1
 In-Reply-To: <20191029071919.177-1-yuzenghui@huawei.com>
 References: <20191029071919.177-1-yuzenghui@huawei.com>
@@ -42,16 +43,15 @@ MIME-Version: 1.0
 X-Originating-IP: [10.173.222.27]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_002030_807958_D7F7377E 
-X-CRM114-Status: UNSURE (   9.73  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191029_002032_553696_F4200297 
+X-CRM114-Status: GOOD (  12.54  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ medium trust [45.249.212.32 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -73,55 +73,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-s/vgic_its_save_pending_tables/vgic_v3_save_pending_tables/
-s/then/the/
+It's possible that two LPIs locate in the same "byte_offset" but target
+two different vcpus, where their pending status are indicated by two
+different pending tables.  In such a scenario, using last_byte_offset
+optimization will lead KVM relying on the wrong pending table entry.
+Let us use last_ptr instead, which can be treated as a byte index into
+a pending table and also, can be vcpu specific.
 
 Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
 ---
- include/kvm/arm_vgic.h      | 2 +-
- virt/kvm/arm/vgic/vgic-v3.c | 2 +-
- virt/kvm/arm/vgic/vgic-v4.c | 2 +-
- 3 files changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/include/kvm/arm_vgic.h b/include/kvm/arm_vgic.h
-index 0fb240ec0a2a..01f8b3739a09 100644
---- a/include/kvm/arm_vgic.h
-+++ b/include/kvm/arm_vgic.h
-@@ -240,7 +240,7 @@ struct vgic_dist {
- 	 * Contains the attributes and gpa of the LPI configuration table.
- 	 * Since we report GICR_TYPER.CommonLPIAff as 0b00, we can share
- 	 * one address across all redistributors.
--	 * GICv3 spec: 6.1.2 "LPI Configuration tables"
-+	 * GICv3 spec "LPI Configuration tables"
- 	 */
- 	u64			propbaser;
- 
+If this patch has done the right thing, we can even add the:
+
+Fixes: 280771252c1b ("KVM: arm64: vgic-v3: KVM_DEV_ARM_VGIC_SAVE_PENDING_TABLES")
+
+But to be honest, I'm not clear about what has this patch actually fixed.
+Pending tables should contain all zeros before we flush vgic_irq's pending
+status into guest's RAM (thinking that guest should never write anything
+into it). So the pending table entry we've read from the guest memory
+seems always be zero. And we will always do the right thing even if we
+rely on the wrong pending table entry.
+
+I think I must have some misunderstanding here... Please fix me.
+
+ virt/kvm/arm/vgic/vgic-v3.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
 diff --git a/virt/kvm/arm/vgic/vgic-v3.c b/virt/kvm/arm/vgic/vgic-v3.c
-index 8d69f007dd0c..5ef93e5041e1 100644
+index 5ef93e5041e1..7cd2e2f81513 100644
 --- a/virt/kvm/arm/vgic/vgic-v3.c
 +++ b/virt/kvm/arm/vgic/vgic-v3.c
-@@ -357,7 +357,7 @@ int vgic_v3_lpi_sync_pending_status(struct kvm *kvm, struct vgic_irq *irq)
- }
- 
- /**
-- * vgic_its_save_pending_tables - Save the pending tables into guest RAM
-+ * vgic_v3_save_pending_tables - Save the pending tables into guest RAM
-  * kvm lock and all vcpu lock must be held
-  */
+@@ -363,8 +363,8 @@ int vgic_v3_lpi_sync_pending_status(struct kvm *kvm, struct vgic_irq *irq)
  int vgic_v3_save_pending_tables(struct kvm *kvm)
-diff --git a/virt/kvm/arm/vgic/vgic-v4.c b/virt/kvm/arm/vgic/vgic-v4.c
-index 477af6aebb97..d864cf8dd212 100644
---- a/virt/kvm/arm/vgic/vgic-v4.c
-+++ b/virt/kvm/arm/vgic/vgic-v4.c
-@@ -266,7 +266,7 @@ int kvm_vgic_v4_set_forwarding(struct kvm *kvm, int virq,
+ {
+ 	struct vgic_dist *dist = &kvm->arch.vgic;
+-	int last_byte_offset = -1;
+ 	struct vgic_irq *irq;
++	gpa_t last_ptr = -1;
+ 	int ret;
+ 	u8 val;
  
- 	mutex_lock(&its->its_lock);
+@@ -384,11 +384,11 @@ int vgic_v3_save_pending_tables(struct kvm *kvm)
+ 		bit_nr = irq->intid % BITS_PER_BYTE;
+ 		ptr = pendbase + byte_offset;
  
--	/* Perform then actual DevID/EventID -> LPI translation. */
-+	/* Perform the actual DevID/EventID -> LPI translation. */
- 	ret = vgic_its_resolve_lpi(kvm, its, irq_entry->msi.devid,
- 				   irq_entry->msi.data, &irq);
- 	if (ret)
+-		if (byte_offset != last_byte_offset) {
++		if (ptr != last_ptr) {
+ 			ret = kvm_read_guest_lock(kvm, ptr, &val, 1);
+ 			if (ret)
+ 				return ret;
+-			last_byte_offset = byte_offset;
++			last_ptr = ptr;
+ 		}
+ 
+ 		stored = val & (1U << bit_nr);
 -- 
 2.19.1
 
