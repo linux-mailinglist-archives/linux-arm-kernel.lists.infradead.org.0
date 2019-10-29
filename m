@@ -2,53 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9AF23E8D80
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 18:01:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0AF4CE8D82
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 18:01:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=2nxbF1vs3Nj5kYlMbSxpud7xLt91oShNb1E3Lf5efZY=; b=YacW3RrTLIhdQlPlFU84PMliPt
-	rvz5fwqUm1FI9bBoSaTjw45OTlLsKzSQE3vQbA3VnpN+FVGodoYRbvpWg0HeHmplDSSgqrO/INVfa
-	fNm8VhdarHqaUfbtpt5G9Ij4QMj6gnELzFMTydB33NEf9aA9rri5oqwKXhnAJvq5ScC8eD36tprFg
-	DEXlCQTNXVFfIME8LKSu+8QAwkGPbXuxtEgVA/kcx6mfLhSDoy+FiuY2XTA6HFEherp1VUxXb7GLL
-	oo5z0EjE106kIJhE/M+XxJAorP+a7/Oa2OwoiIQwG3rx8+afjoe6X4wjQJ0mFM/HE25ndPHApqaiu
-	fknEI2Ag==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tMq95Aqj29PwakMFZJDuFRKwiE0jw/mCiGO8du7t4Ns=; b=IqT6VvEXwp+o8B
+	lLR74ijbVVHKfF7Wh/cEQ5AoL+r69noKLcXvNadJu6BaLDwwAbFGFQE71HNYjcoqcr2y0u/z2dAJl
+	Xo7zB6ka7p53ZDWQ26WUXafeyYQJfP1+BlBznuiZrsm5cd1BZbsSiQXC+SSiYu8CvOn9BIeTj79gE
+	8cbQPnb7GkYFz72Nw/kaVU0KB2Ty7Uv3cCL5O0emEvoH0lQhHLqS0lOCKEscGJ/Jdd5QGGOp/aMmL
+	ca9JD1SiXdGl/LY4E2mjXEZe1btg+aD9DoBsEwxkbaaYSOSdmhlgMbu0ur5gOTJYREnZkxw7K9iY1
+	TypawS4sVReUA3ZDGOHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPUrb-0008PA-Mc; Tue, 29 Oct 2019 17:00:59 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPUq8-0005ni-6s
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 16:59:31 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5F8347AD;
+	id 1iPUs3-0000Vc-RB; Tue, 29 Oct 2019 17:01:27 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iPUqB-0005oA-GB
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 16:59:33 +0000
+Received: by mail-oi1-f196.google.com with SMTP id i185so9538208oif.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 29 Oct 2019 09:59:29 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=WEljFb7fdnZ7H/05vl76i/wPX1q7/WajKC2wO1/piAU=;
+ b=C3q1tNnEWWYyCfOqdK+vCTn9bMQh+QuWX4ynMOHrXGnCpch8XRCu3q4JxEf8Rb0rGv
+ DJ5Ygo/rM8LZOttXUMljSWMg4dVKzUQNJkcvEvxvmaGQEoXzFOsaa4HyoUETr2KTEzMI
+ mpXFmN6BI1PDytMxVwSYZ335ah2Zj+fvRx766Tw9B+hWtWD5UjwPQLVfwAq6YC94YxeJ
+ OQWbvMvzT055c7J+Vw+emLc2CmAaMAPjGUWq/qb4scvDRoCm+n8GBJUiriDz7ky3Aqcf
+ w6dngsBRSZQJMddprhYLJGuL4kvGcncMbDfddsvM9FFxAHtbds0cIyEeiRRF+KPFgYaN
+ 8ZJQ==
+X-Gm-Message-State: APjAAAXj4A4pJwfdKSd2VKkhr1kibjMLU1jSWZm2+OnlUZGWb72+xhC0
+ x7ias2NdLGG4xGD3GK+ewg==
+X-Google-Smtp-Source: APXvYqzZn8tr0orO+5cx6rMdFkShcbrABGLcIDgX+2WMu+I6/bo6/LAyDfAJE1DqoVUT6p1xLa0LDA==
+X-Received: by 2002:aca:5015:: with SMTP id e21mr5136685oib.174.1572368368009; 
+ Tue, 29 Oct 2019 09:59:28 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id o22sm4676415otk.47.2019.10.29.09.59.27
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
  Tue, 29 Oct 2019 09:59:27 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 0B57C3F71F;
- Tue, 29 Oct 2019 09:59:24 -0700 (PDT)
-From: Mark Rutland <mark.rutland@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCHv2 8/8] arm64: ftrace: minimize ifdeffery
-Date: Tue, 29 Oct 2019 16:58:32 +0000
-Message-Id: <20191029165832.33606-9-mark.rutland@arm.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20191029165832.33606-1-mark.rutland@arm.com>
-References: <20191029165832.33606-1-mark.rutland@arm.com>
+Date: Tue, 29 Oct 2019 11:59:26 -0500
+From: Rob Herring <robh@kernel.org>
+To: Maxime Ripard <mripard@kernel.org>
+Subject: Re: [PATCH] dt-bindings: can: Convert Allwinner A10 CAN controller
+ to a schema
+Message-ID: <20191029165926.GA13915@bogus>
+References: <20191022154745.41865-1-mripard@kernel.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191022154745.41865-1-mripard@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_095928_510887_79D2B471 
-X-CRM114-Status: GOOD (  12.97  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191029_095931_555928_D86ED7BC 
+X-CRM114-Status: GOOD (  11.43  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.196 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,107 +91,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, jthierry@redhat.com, linux-parisc@vger.kernel.org,
- peterz@infradead.org, catalin.marinas@arm.com, deller@gmx.de,
- jpoimboe@redhat.com, linux-kernel@vger.kernel.org, rostedt@goodmis.org,
- James.Bottomley@HansenPartnership.com, takahiro.akashi@linaro.org,
- will@kernel.org, mingo@redhat.com, james.morse@arm.com, jeyu@kernel.org,
- amit.kachhap@arm.com, svens@stackframe.org, duwe@suse.de
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, netdev@vger.kernel.org,
+ linux-can@vger.kernel.org, mkl@pengutronix.de,
+ linux-arm-kernel@lists.infradead.org, davem@davemloft.net, wg@grandegger.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that we no longer refer to mod->arch.ftrace_trampolines in the body
-of ftrace_make_call(), we can use IS_ENABLED() rather than ifdeffery,
-and make the code easier to follow. Likewise in ftrace_make_nop().
+On Tue, 22 Oct 2019 17:47:45 +0200, Maxime Ripard wrote:
+> The older Allwinner SoCs have a CAN controller that is supported in Linux,
+> with a matching Device Tree binding.
+> 
+> Now that we have the DT validation in place, let's convert the device tree
+> bindings for that controller over to a YAML schemas.
+> 
+> Signed-off-by: Maxime Ripard <mripard@kernel.org>
+> ---
+>  .../net/can/allwinner,sun4i-a10-can.yaml      | 51 +++++++++++++++++++
+>  .../devicetree/bindings/net/can/sun4i_can.txt | 36 -------------
+>  2 files changed, 51 insertions(+), 36 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/net/can/allwinner,sun4i-a10-can.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/net/can/sun4i_can.txt
+> 
 
-Let's do so.
+Applied, thanks.
 
-Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-Reviewed-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
----
- arch/arm64/kernel/ftrace.c | 18 ++++++++----------
- 1 file changed, 8 insertions(+), 10 deletions(-)
-
-diff --git a/arch/arm64/kernel/ftrace.c b/arch/arm64/kernel/ftrace.c
-index aea652c33a38..8618faa82e6d 100644
---- a/arch/arm64/kernel/ftrace.c
-+++ b/arch/arm64/kernel/ftrace.c
-@@ -62,18 +62,18 @@ int ftrace_update_ftrace_func(ftrace_func_t func)
- 	return ftrace_modify_code(pc, 0, new, false);
- }
- 
--#ifdef CONFIG_ARM64_MODULE_PLTS
- static struct plt_entry *get_ftrace_plt(struct module *mod, unsigned long addr)
- {
-+#ifdef CONFIG_ARM64_MODULE_PLTS
- 	struct plt_entry *plt = mod->arch.ftrace_trampolines;
- 
- 	if (addr == FTRACE_ADDR)
- 		return &plt[FTRACE_PLT_IDX];
- 	if (addr == FTRACE_REGS_ADDR && IS_ENABLED(CONFIG_FTRACE_WITH_REGS))
- 		return &plt[FTRACE_REGS_PLT_IDX];
-+#endif
- 	return NULL;
- }
--#endif
- 
- /*
-  * Turn on the call to ftrace_caller() in instrumented function
-@@ -85,10 +85,12 @@ int ftrace_make_call(struct dyn_ftrace *rec, unsigned long addr)
- 	long offset = (long)pc - (long)addr;
- 
- 	if (offset < -SZ_128M || offset >= SZ_128M) {
--#ifdef CONFIG_ARM64_MODULE_PLTS
- 		struct module *mod;
- 		struct plt_entry *plt;
- 
-+		if (!IS_ENABLED(CONFIG_ARM64_MODULE_PLTS))
-+			return -EINVAL;
-+
- 		/*
- 		 * On kernels that support module PLTs, the offset between the
- 		 * branch instruction and its target may legally exceed the
-@@ -113,9 +115,6 @@ int ftrace_make_call(struct dyn_ftrace *rec, unsigned long addr)
- 		}
- 
- 		addr = (unsigned long)plt;
--#else /* CONFIG_ARM64_MODULE_PLTS */
--		return -EINVAL;
--#endif /* CONFIG_ARM64_MODULE_PLTS */
- 	}
- 
- 	old = aarch64_insn_gen_nop();
-@@ -185,9 +184,11 @@ int ftrace_make_nop(struct module *mod, struct dyn_ftrace *rec,
- 	long offset = (long)pc - (long)addr;
- 
- 	if (offset < -SZ_128M || offset >= SZ_128M) {
--#ifdef CONFIG_ARM64_MODULE_PLTS
- 		u32 replaced;
- 
-+		if (!IS_ENABLED(CONFIG_ARM64_MODULE_PLTS))
-+			return -EINVAL;
-+
- 		/*
- 		 * 'mod' is only set at module load time, but if we end up
- 		 * dealing with an out-of-range condition, we can assume it
-@@ -218,9 +219,6 @@ int ftrace_make_nop(struct module *mod, struct dyn_ftrace *rec,
- 			return -EINVAL;
- 
- 		validate = false;
--#else /* CONFIG_ARM64_MODULE_PLTS */
--		return -EINVAL;
--#endif /* CONFIG_ARM64_MODULE_PLTS */
- 	} else {
- 		old = aarch64_insn_gen_branch_imm(pc, addr,
- 						  AARCH64_INSN_BRANCH_LINK);
--- 
-2.11.0
-
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
