@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88993E919E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 22:16:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 491B2E91A3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 22:17:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,66 +11,66 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=HSHrQuBcloKRHy/wP4KvXI9pktP1qAQ6fVGBKUePO/U=; b=hTvrL6QjYZrMxx1cjFORgh5gvu
-	T+123gOwqrGwXJ3HAbuBgmSQ5pe6++pFjwpguATQDiqGSg5PNJT7ksaqVN5qAo3ybtMoCC8VxHSr8
-	VNzo86/+Cl9Vn0ihWr2bRlwgHz9lhittN7Vgqf6KkMHyHNzVSQvRhU7/fzySqUHrOHHQNVafHZReL
-	3Pe1bs5MVI6Cui9AXZeTVtJXJhJtJxFYXB3znleDqlS1RLvHJt9DUw/EZmyB3Dzaz4ZXgQj07cyE4
-	1xv3K/kKqu7nTudgQ6INWCwkXIE/Nz/RVjOuMQhDE04fIkBluIAAfBVY4VAodsOkYGVrFiQSTGvxK
-	j23LANtA==;
+	bh=FHYEPfowEET14HZnaGn8K7+zASZ25X0zbhitQOHPoZk=; b=KPIGUjTDzd+6baZ08RYpxbiQli
+	GrMIeHpxtuflrYCWcSxxfzJWXKc6IQZtjDviRk8S9Hn2OHk64HlBXqRpweyBOWMMNKsyBIAjO563u
+	Yb1Vbf+eo2PcKsrU4cA4O4SiCEhXWDNO+poHICwIx1GA7XZ8k4StysPSQgAiCGV56qf5CJFBDyYd8
+	deYv/dv8fic/Wva/1UfX9EflhWGtJ007V+Q/d4jgsXrm838NMJa+VKCvmN4gXDu4k+V1QltxBiYvX
+	pUP2g8LAsi7EUI+4Sk5TO57slaqQLj+gBdhFTV+foS9694fAxDI0SfTKBZfyMZUBpT9GEdsEpeAoc
+	J/DtnaRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPYqn-00075D-RE; Tue, 29 Oct 2019 21:16:25 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iPYri-0007v6-Ga; Tue, 29 Oct 2019 21:17:22 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPYob-0004Sp-CU
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 21:14:10 +0000
-Received: by mail-pg1-x541.google.com with SMTP id p12so10507209pgn.6
+ id 1iPYoc-0004UH-OC
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 21:14:12 +0000
+Received: by mail-pl1-x643.google.com with SMTP id t10so8300055plr.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 29 Oct 2019 14:14:09 -0700 (PDT)
+ Tue, 29 Oct 2019 14:14:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=j9O9o67lY/P6wlTEjsCX8aHvBVVSD/zx23uzcL5Y/Qk=;
- b=YmH7JoRcIpuxHSBEzuyBZcI2cXlEocfRSYinjuQggynP+Yn5Bn4zkxrvfy7jAIlUuJ
- 3z/TlcEeTvA6xOI+hfOAcAJs7nBEtgLlKKNYCzlXJEj1NFiiqMvLbkPYxAWyblfxS+ij
- cYtL8PEwHkOICPVjXRXFQwTlPFkJBooeg3rsQ=
+ bh=/BlCq1vuoPK6b90i9+3dEN0gsbsUxI5XzRVDtU+Y9n4=;
+ b=M3a1uKeinpfYILyOgto01x3Z0/Do7xHci3ACE83vFIz62Z9cDjf3QuJSqLQlVdoz5I
+ 0rW3KKzQ7S0KkakxOpNlTmyhieiHv+YebhpWX4iC97xSOcSmbsnsoy8a6PUwi+eJhllx
+ qwaZZ60pVF22RF1UdIfw2PTFkL9ZBlI7t+Doc=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=j9O9o67lY/P6wlTEjsCX8aHvBVVSD/zx23uzcL5Y/Qk=;
- b=o2SX9E7KQSw6aC4pjFyznSFZh1IjXEhFPqcQCJ9Hd82ntLg0OXhlXwZnDc8Po3YdDe
- 07pVCeb9NYe/3AxML7HRiKMGFWaPwjJ4OJru51YXFNm/Kg1lDuRRw0lctu6LSiwRCPst
- 3My/cyFBdcp2Sy/NEtSD/B90WGeOVPIq/n5A8jld53naHV1pZvHPFCamydYQNrV5QUl7
- mAVrSNOMqtc9HPZ8Syhs3QsKT6oOVfq9r6qa0fAdNwsWKhS4kbAWMtMY2RRybM3lLxlK
- anygOSc75Nt8UI5h6zY+LLPXbj1S+Zxw/3ZsdnodmmY9RPaKEOPzMD/JqA/StK+5AChE
- rLdw==
-X-Gm-Message-State: APjAAAULZjD0XnKU8Fw8NlRbuPETRn63bV4wdLyeWsv69W6FtYsm/3l3
- tK9+Tkv3cuI25+TOmPh23VbbHw==
-X-Google-Smtp-Source: APXvYqwjW3Si7/tNLiB0yWdzOESspeMKg8ZGEJduGjpXWpuGODoydLiyAFH5fAhzQLyONbMAITVrtg==
-X-Received: by 2002:a63:b5b:: with SMTP id a27mr30641499pgl.262.1572383648493; 
- Tue, 29 Oct 2019 14:14:08 -0700 (PDT)
+ bh=/BlCq1vuoPK6b90i9+3dEN0gsbsUxI5XzRVDtU+Y9n4=;
+ b=JRWY8yOHlt/rgY7PJuE3S77nQ8UIHVz72kzjBUFqmXjpsFQS8Va9Z7JafvC6Y9TEq+
+ eJ0dSCcwLSjcZIi8hRFYh+GPgcud1YIxODFrsxwLjZPCMZPeApx9X3af8MqnrQ0P3y1D
+ Un+ROpmY1gmfnA/OBk1XlCMIiOQVbBMbI+w7xh8G05QrKzfokHkYfykGjokBCVrWNzgb
+ aOgAqoEzjWZDkUsY871I7MaBUwpujkcNdZIcyhjpJiMQhd+N/FHIhlh119OFkHWfz7oT
+ pkYCNVknsbt7U3ewr4iFUc1gsBqMTk4YcJpiDLibv4uO1X5ZpXmq7wcsFJaaBYYzNrB5
+ xfxQ==
+X-Gm-Message-State: APjAAAV5XUzzXtIvMwxwz90mPDRuEOVPWoO8swC+7pP0ZSdCyPStiHxG
+ HCQ+lBLsYxVB6KAj2a6NR7BmSQ==
+X-Google-Smtp-Source: APXvYqwBlr/dG9EoHmIzcD/284bTMRVUng+VSZNVn2USM8IUIAoIBLGaDuOHmKUNb6KZndWlR52IoQ==
+X-Received: by 2002:a17:902:ab82:: with SMTP id f2mr774907plr.39.1572383649691; 
+ Tue, 29 Oct 2019 14:14:09 -0700 (PDT)
 Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id y8sm134824pgs.34.2019.10.29.14.14.01
+ by smtp.gmail.com with ESMTPSA id z25sm41774pfa.88.2019.10.29.14.14.02
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
  Tue, 29 Oct 2019 14:14:04 -0700 (PDT)
 From: Kees Cook <keescook@chromium.org>
 To: Borislav Petkov <bp@alien8.de>
-Subject: [PATCH v3 06/29] s390: Move RO_DATA into "text" PT_LOAD Program Header
-Date: Tue, 29 Oct 2019 14:13:28 -0700
-Message-Id: <20191029211351.13243-7-keescook@chromium.org>
+Subject: [PATCH v3 07/29] x86: Restore "text" Program Header with dummy section
+Date: Tue, 29 Oct 2019 14:13:29 -0700
+Message-Id: <20191029211351.13243-8-keescook@chromium.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191029211351.13243-1-keescook@chromium.org>
 References: <20191029211351.13243-1-keescook@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_141409_440078_3AB7948B 
-X-CRM114-Status: GOOD (  11.07  )
+X-CRM114-CacheID: sfid-20191029_141410_892227_14187C95 
+X-CRM114-Status: GOOD (  13.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -110,38 +110,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In preparation for moving NOTES into RO_DATA, move RO_DATA back into the
-"text" PT_LOAD Program Header, as done with other architectures. The
-"data" PT_LOAD now starts with the writable data section.
+In a linker script, if once places a section in one or more segments using
+":PHDR", then the linker will place all subsequent allocatable sections,
+which do not specify ":PHDR", into the same segments. In order to have
+the NOTES section in both PT_LOAD (":text") and PT_NOTE (":note"), both
+segments are marked, and the only way to to undo this to keep subsequent
+sections out of PT_NOTE is to mark the following section with just the
+single desired PT_LOAD (":text").
+
+In preparation for having a common NOTES macro, perform the segment
+assignment use a dummy section (as done by other architectures).
 
 Signed-off-by: Kees Cook <keescook@chromium.org>
-Acked-by: Heiko Carstens <heiko.carstens@de.ibm.com>
 ---
- arch/s390/kernel/vmlinux.lds.S | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/x86/kernel/vmlinux.lds.S | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/arch/s390/kernel/vmlinux.lds.S b/arch/s390/kernel/vmlinux.lds.S
-index 7e0eb4020917..13294fef473e 100644
---- a/arch/s390/kernel/vmlinux.lds.S
-+++ b/arch/s390/kernel/vmlinux.lds.S
-@@ -52,7 +52,7 @@ SECTIONS
+diff --git a/arch/x86/kernel/vmlinux.lds.S b/arch/x86/kernel/vmlinux.lds.S
+index e2feacf921a0..788e78978030 100644
+--- a/arch/x86/kernel/vmlinux.lds.S
++++ b/arch/x86/kernel/vmlinux.lds.S
+@@ -147,8 +147,9 @@ SECTIONS
+ 	} :text = 0x9090
  
  	NOTES :text :note
- 
--	.dummy : { *(.dummy) } :data
 +	.dummy : { *(.dummy) } :text
  
- 	RO_DATA_SECTION(PAGE_SIZE)
+-	EXCEPTION_TABLE(16) :text = 0x9090
++	EXCEPTION_TABLE(16)
  
-@@ -64,7 +64,7 @@ SECTIONS
- 	.data..ro_after_init : {
- 		 *(.data..ro_after_init)
- 		JUMP_TABLE_DATA
--	}
-+	} :data
- 	EXCEPTION_TABLE(16)
+ 	/* .text should occupy whole number of pages */
  	. = ALIGN(PAGE_SIZE);
- 	__end_ro_after_init = .;
 -- 
 2.17.1
 
