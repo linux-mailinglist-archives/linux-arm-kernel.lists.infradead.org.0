@@ -2,88 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24FADE7D5E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 01:00:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 839ABE7D75
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 01:13:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=c5XQ8/66TB2FlTsbAcTMIZ04dK7UbT/kQ/tIkJ9sYEg=; b=P2JgCZaglTo1QkKzB2Mv1WsCk
-	N5GotOOhZvFZImOob5GFKzpBOq6npRnpVmaEqZXjkQlc1HSEWOYkCEQ0SmbvAh2EiG+2bV7DgNs7m
-	Xike7c1czFGDthYk/pgsQ3JBCRgI81/MA/ZsqIxEEyedy4AIKoamsERwBEURTb6yUVvQGo1MReOvD
-	5YFLoPX4Wr56TK2qMiPiZOuRwg65o8Ysg6Y5Z6rPTOgS/huc8PIHJr7zaYXAySV9Ti5ndcueJepp9
-	r3dzVIgLJYUgHjfSUT6Iux+lQRcnxpOFlXMjnXFCRKciWvGb2BGpvU/zfAVu+61QEzHajd3ctA0Xm
-	dbvkldb8Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YDEVJLH6EpsV0StmbUr9i/ecaTyUPUE0Kf4+2nLNkuc=; b=oYgzJv9OOag9DO
+	gFF4VngnnJG3ukPMTnkVs+icA0/TXd/pXGd/BHyWyBGdjJ6kSC7pz9GbNurbIDr16Q5Ku6sslwAev
+	liZol3FeAkKYhRvTnn8L0zodDPAUBAdq+xX5RSL0/O3M9WDWb+N7kEHhBhpv61fcPx8zGrneTd1Ss
+	H0yZgYe5LRBbW+TsiH8ixv1jG9FsCv+049SzJsQXzRHFT+ebhFAHEOsck/pOaE50CpG4eeFJqD210
+	V4yMgs/PE8t0KlT37Vk1nrU710POtg+4K3ZTGJAPWuO42dfTBilOrYPlx9SkDj2DAj/cbpM0MVDp7
+	X7s3JZDk3qYHpnuQGkzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPEvW-000588-Al; Mon, 28 Oct 2019 23:59:58 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1iPF8E-0001LD-VO; Tue, 29 Oct 2019 00:13:06 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPEvJ-00057F-SM
- for linux-arm-kernel@lists.infradead.org; Mon, 28 Oct 2019 23:59:47 +0000
-Received: by mail-pl1-x644.google.com with SMTP id p5so1389149plr.7
+ id 1iPF84-0001Kr-6A
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 00:12:57 +0000
+Received: by mail-pf1-x441.google.com with SMTP id c7so6974267pfo.12
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 28 Oct 2019 16:59:45 -0700 (PDT)
+ Mon, 28 Oct 2019 17:12:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-transfer-encoding:content-language;
- bh=6PbNC9ZYBewrGx4YYy/4pVIAWb+IMk+47XVy1Sx5zzI=;
- b=HYAW/Y0L2chXTWqpU2iL0mEYEyFN8O5JV3K7uT5zi5MVAHM10rAzOumCdJH84zYxS+
- 6KQq51xBpAp+0GQjRvOibReUcU59U3AUuy1kQUQ5CcdwbzgoBwp0KdeN6itX3xSo5UQt
- /mMMuxzxj/B7EGZayugehJU3wbrFEknjC+t+/sf5/LUs5Mr0rkWMLHvjdv6ao6IUbVCf
- mS/H6anHtrzQWKZmdnph7Hx4LDFc1h3T5W1gxadaykgczBZakktCleeu5MV+gy2d37/d
- ebNnz9/PmR6LKowLihYoAiAvHmgj3N+3IbUVfnIaVRrnL8N4c6OjMLxR/1QN5mTnFtKz
- 15Xg==
+ h=date:from:to:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=A5yaNWv/seSl0C8AghK+VDA/9mfH1ZBe7Dx7Tv/glfs=;
+ b=Iasc2Z6T19iMWg44i7udDoIG+WipYhIzrHUEMTfbXZzB6OmNtDS+/BoCJ6NRSYpx+r
+ YuJ2L9Gk5ELKHCYyEgX23prPM8HURNK4bXD8seGpd3uXji+JDjhtWffOMixxw79aMIz6
+ qrmy3Sq7gE3cpPV/LQO6slKe+axxu3zCIn9KBrNegcEfFe/zMgOa3GW4kgfn1r3SI29a
+ T6DYoXsuyEG3rWRF0nSKf89Z09zd3PtuvANpCLkH2IvLTgpfzCq/XLekWTm8IwJlw/A3
+ WhIgGB1cQ2DlACH8j4CANJ9MeEzwjnpZJWU+GeKxz1OhWN2WSeGOGFn/2RX+HKP8rCuJ
+ Kdng==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=6PbNC9ZYBewrGx4YYy/4pVIAWb+IMk+47XVy1Sx5zzI=;
- b=PLSxrVKB6ywGFgkg77sreSrXy52Cjg/n4Sh+f4Eex70NVUWkZwj89D8B6XO90fKaoF
- apim/7Z89VKI8KSaWRo0tTDiCGMV1/Dokhae0Ln+wocwewaV+Cdy/KG06xpqCN2oJJ7a
- XQKBggwGpLd/AT1cOvR7pgcl3WchBgviioEFjh9wjlss5Hkhw/vuzdv6Zyj1kVDwnFN9
- zl9Bkfp9gZ+E2W0dql7BU92FXMlU1voEfAwVoX0pv+sG0D8KFu8iU3eWf2Kr5Jh8kbJ9
- gKp/TTr61eC5QpqWLP+jSAvVq+8uVUjC6jTj6LBuT0NDwZKkzuG3l/BpWMqHHZbDkP46
- 3q4A==
-X-Gm-Message-State: APjAAAVk2gX0Vt+X68wQzC+Gv/GG6FbPgnDnnSiAhxZX/354CmZeYPM0
- aouuv+KhUeiBCPCMnZWRnuYgMeE4
-X-Google-Smtp-Source: APXvYqxHQOFG5/pQ1j8cv44WDxjt9j7KSDG8Izwx7Veg0LydX0N9MI97H/fzaTvx1p1mbLvx6KdoyA==
-X-Received: by 2002:a17:902:7089:: with SMTP id z9mr751398plk.51.1572307184139; 
- Mon, 28 Oct 2019 16:59:44 -0700 (PDT)
-Received: from [172.30.89.111] (sjewanfw1-nat.mentorg.com. [139.181.7.34])
- by smtp.gmail.com with ESMTPSA id r33sm579115pjb.5.2019.10.28.16.59.38
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 28 Oct 2019 16:59:43 -0700 (PDT)
-Subject: Re: [PATCH 2/2] dt-bindings: timer: imx: gpt: Add pin group bindings
- for input capture
-To: Rob Herring <robh@kernel.org>
-References: <20191016010544.14561-1-slongerbeam@gmail.com>
- <20191016010544.14561-3-slongerbeam@gmail.com> <20191027212121.GA3049@bogus>
-From: Steve Longerbeam <slongerbeam@gmail.com>
-Message-ID: <2daa37a6-83a7-ec08-b89c-a07268b3ea4a@gmail.com>
-Date: Mon, 28 Oct 2019 16:59:36 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ h=x-gm-message-state:date:from:to:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=A5yaNWv/seSl0C8AghK+VDA/9mfH1ZBe7Dx7Tv/glfs=;
+ b=ufVEvv+1mp+vpg0YnUzDRXjKEqpLjjjR90xCa5CNbKW0UKrRwXC+gm7DYQK21n0Msl
+ U8iBP3V4yn8R1oHWXf4r7nQCkxW3wRJA2EYaAAO9nydC8k5+TKex+jgtVp0m92dKTQ43
+ w/LCYPWvBq85DK7Xv8fAR0u6eATOA8yprI0HaPmc488oayfzupTnELaALohd2idcIvv7
+ OHF1zglzRJ4J6qRW07E73TUsIG/fBJphrugYHuUK/IHpkCLWEWpGepiNInD6sEO3asLC
+ oYBbuSv506Gg9hznnvsLrq1lel8EPmp4j5PzONpYTLLVO9vEzjD1bPJdv0uTJr1tBpA/
+ KDKQ==
+X-Gm-Message-State: APjAAAWMFpe9YPBYy/vyEZ4ddr4LxvwNrADNAO5rwQmWy4jBx6beN9+a
+ Lh19aKgqVRy773pKxleC13M=
+X-Google-Smtp-Source: APXvYqxxDw4ncyQIZPOiJf5E3XENtqZsrbt+OFXIeyq46XTgCttk1fe12p28+YLNCsYlI7hzlyIQfQ==
+X-Received: by 2002:a17:90a:8a0d:: with SMTP id
+ w13mr2412350pjn.137.1572307974732; 
+ Mon, 28 Oct 2019 17:12:54 -0700 (PDT)
+Received: from dtor-ws ([2620:15c:202:201:3adc:b08c:7acc:b325])
+ by smtp.gmail.com with ESMTPSA id c12sm7702901pfp.67.2019.10.28.17.12.52
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 28 Oct 2019 17:12:53 -0700 (PDT)
+Date: Mon, 28 Oct 2019 17:12:50 -0700
+From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+To: linux-sunxi@googlegroups.com, Hans de Goede <hdegoede@redhat.com>,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ "open list:SUN4I LOW RES ADC ATTACHED TABLET KEYS DRIVER"
+ <linux-input@vger.kernel.org>, 
+ "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>, 
+ open list <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH] input: sun4i-lradc-keys: Add wakup support
+Message-ID: <20191029001250.GB57214@dtor-ws>
+References: <20191028221502.3503543-1-megous@megous.com>
+ <20191028233828.GA57214@dtor-ws>
+ <20191028235626.5afvszxtppsieywi@core.my.home>
 MIME-Version: 1.0
-In-Reply-To: <20191027212121.GA3049@bogus>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191028235626.5afvszxtppsieywi@core.my.home>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_165945_918649_7DE0A2BD 
-X-CRM114-Status: GOOD (  23.20  )
+X-CRM114-CacheID: sfid-20191028_171256_253174_B90ECD37 
+X-CRM114-Status: GOOD (  23.81  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (slongerbeam[at]gmail.com)
+ provider (dmitry.torokhov[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -103,127 +109,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Fabio Estevam <festevam@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, "open list:CLOCKSOURCE,
- CLOCKEVENT DRIVERS" <linux-kernel@vger.kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Thomas Gleixner <tglx@linutronix.de>, Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob,
-
-Thanks for reviewing.
-
-On 10/27/19 2:21 PM, Rob Herring wrote:
-> On Tue, Oct 15, 2019 at 06:05:44PM -0700, Steve Longerbeam wrote:
->> Add pin group bindings to support input capture function of the i.MX
->> GPT.
->>
->> Signed-off-by: Steve Longerbeam <slongerbeam@gmail.com>
->> ---
->>   .../devicetree/bindings/timer/fsl,imxgpt.txt  | 28 +++++++++++++++++++
->>   1 file changed, 28 insertions(+)
->>
->> diff --git a/Documentation/devicetree/bindings/timer/fsl,imxgpt.txt b/Documentation/devicetree/bindings/timer/fsl,imxgpt.txt
->> index 5d8fd5b52598..32797b7b0d02 100644
->> --- a/Documentation/devicetree/bindings/timer/fsl,imxgpt.txt
->> +++ b/Documentation/devicetree/bindings/timer/fsl,imxgpt.txt
->> @@ -33,6 +33,13 @@ Required properties:
->>              an entry for each entry in clock-names.
->>   - clock-names : must include "ipg" entry first, then "per" entry.
->>   
->> +Optional properties:
->> +
->> +- pinctrl-0: For the i.MX GPT to support the Input Capture function,
->> +  	     the input capture channel pin groups must be listed here.
->> +- pinctrl-names: must be "default".
->> +
->> +
->>   Example:
->>   
->>   gpt1: timer@10003000 {
->> @@ -43,3 +50,24 @@ gpt1: timer@10003000 {
->>   		 <&clks IMX27_CLK_PER1_GATE>;
->>   	clock-names = "ipg", "per";
->>   };
->> +
->> +
->> +Example with input capture channel 0 support:
->> +
->> +pinctrl_gpt_input_capture0: gptinputcapture0grp {
->> +	fsl,pins = <
->> +		MX6QDL_PAD_SD1_DAT0__GPT_CAPTURE1 0x1b0b0
->> +	>;
->> +};
->> +
->> +gpt: gpt@2098000 {
-> timer@...
-
-Ok.
-
->
-> I don't really think this merits another example though.
-
-Ok.
-
-But for version 2 of this patch-set I'd like to run some ideas by you.
-
-Because in this version I did not make any attempt to create a generic 
-timer capture framework. I just exported a couple imx-specific functions 
-to request and free a timer input capture channel in the imx-gpt driver.
-
-So for version 2 I am thinking about a simple framework that other SoC 
-timers with timer input capture support can make use of.
-
-To begin with I don't see that timer input capture warrants the 
-definition of a new device. At least for imx, timer input capture is 
-just one function of the imx GPT, where the other is Output Compare 
-which is used for the system timer. I think that is likely the case for 
-most all SoC timers, that is, input capture and output compare are 
-tightly interwoven functions of general purpose timers.
-
-So I'm thinking there needs to be an additional #input-capture-cells 
-property that defines how many input capture channels the timer 
-contains, where a channel refers to a single input signal edge that can 
-capture the timer counter. The imx GPT has two input capture channels (2 
-separate input signals).
-
-For example, on imx:
-
-gpt: timer@2098000 {
-	compatible = "fsl,imx6q-gpt", "fsl,imx31-gpt";
-	/* ... */
-	#input-capture-cells = <1>;
-	pinctrl-names = "default", "icap1";
-	pinctrl-0 = <&pinctrl_gpt_input_capture0>;
-	pinctrl-1 = <&pinctrl_gpt_input_capture1>;
-};
-
-
-A device that is a listener/consumer of an timer capture event would then refer to a timer capture channel:
-
-some-device {
-	/* ... */
-	timer-input-capture = <&gpt 0>;
-};
-
-
-Is this a sound approach? Let me know what you think.
-
-Thanks,
-Steve
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCBPY3QgMjksIDIwMTkgYXQgMTI6NTY6MjZBTSArMDEwMCwgT25kxZllaiBKaXJtYW4g
+d3JvdGU6Cj4gSGVsbG8gRG1pdHJ5LAo+IAo+IE9uIE1vbiwgT2N0IDI4LCAyMDE5IGF0IDA0OjM4
+OjI4UE0gLTA3MDAsIERtaXRyeSBUb3Jva2hvdiB3cm90ZToKPiA+IEhpIE9uZHJlaiwKPiA+IAo+
+ID4gT24gTW9uLCBPY3QgMjgsIDIwMTkgYXQgMTE6MTU6MDJQTSArMDEwMCwgT25kcmVqIEppcm1h
+biB3cm90ZToKPiA+ID4gQWxsb3cgdGhlIGRyaXZlciB0byB3YWtldXAgdGhlIHN5c3RlbSBvbiBr
+ZXkgcHJlc3MuCj4gPiA+IAo+ID4gPiBTaWduZWQtb2ZmLWJ5OiBPbmRyZWogSmlybWFuIDxtZWdv
+dXNAbWVnb3VzLmNvbT4KPiA+ID4gLS0tCj4gPiA+ICBkcml2ZXJzL2lucHV0L2tleWJvYXJkL3N1
+bjRpLWxyYWRjLWtleXMuYyB8IDIyICsrKysrKysrKysrKysrKysrKy0tLS0KPiA+ID4gIDEgZmls
+ZSBjaGFuZ2VkLCAxOCBpbnNlcnRpb25zKCspLCA0IGRlbGV0aW9ucygtKQo+ID4gPiAKPiA+ID4g
+ZGlmZiAtLWdpdCBhL2RyaXZlcnMvaW5wdXQva2V5Ym9hcmQvc3VuNGktbHJhZGMta2V5cy5jIGIv
+ZHJpdmVycy9pbnB1dC9rZXlib2FyZC9zdW40aS1scmFkYy1rZXlzLmMKPiA+ID4gaW5kZXggNGE3
+OTZiZWQ0OGFjLi5iYmE2NzlkN2I1NGIgMTAwNjQ0Cj4gPiA+IC0tLSBhL2RyaXZlcnMvaW5wdXQv
+a2V5Ym9hcmQvc3VuNGktbHJhZGMta2V5cy5jCj4gPiA+ICsrKyBiL2RyaXZlcnMvaW5wdXQva2V5
+Ym9hcmQvc3VuNGktbHJhZGMta2V5cy5jCj4gPiA+IEBAIC0yMiw2ICsyMiw4IEBACj4gPiA+ICAj
+aW5jbHVkZSA8bGludXgvbW9kdWxlLmg+Cj4gPiA+ICAjaW5jbHVkZSA8bGludXgvb2ZfcGxhdGZv
+cm0uaD4KPiA+ID4gICNpbmNsdWRlIDxsaW51eC9wbGF0Zm9ybV9kZXZpY2UuaD4KPiA+ID4gKyNp
+bmNsdWRlIDxsaW51eC9wbV93YWtlaXJxLmg+Cj4gPiA+ICsjaW5jbHVkZSA8bGludXgvcG1fd2Fr
+ZXVwLmg+Cj4gPiA+ICAjaW5jbHVkZSA8bGludXgvcmVndWxhdG9yL2NvbnN1bWVyLmg+Cj4gPiA+
+ICAjaW5jbHVkZSA8bGludXgvc2xhYi5oPgo+ID4gPiAgCj4gPiA+IEBAIC0yMjYsOCArMjI4LDcg
+QEAgc3RhdGljIGludCBzdW40aV9scmFkY19wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpw
+ZGV2KQo+ID4gPiAgewo+ID4gPiAgCXN0cnVjdCBzdW40aV9scmFkY19kYXRhICpscmFkYzsKPiA+
+ID4gIAlzdHJ1Y3QgZGV2aWNlICpkZXYgPSAmcGRldi0+ZGV2Owo+ID4gPiAtCWludCBpOwo+ID4g
+PiAtCWludCBlcnJvcjsKPiA+ID4gKwlpbnQgaSwgZXJyb3IsIGlycTsKPiA+ID4gIAo+ID4gPiAg
+CWxyYWRjID0gZGV2bV9remFsbG9jKGRldiwgc2l6ZW9mKHN0cnVjdCBzdW40aV9scmFkY19kYXRh
+KSwgR0ZQX0tFUk5FTCk7Cj4gPiA+ICAJaWYgKCFscmFkYykKPiA+ID4gQEAgLTI3Miw4ICsyNzMs
+MTMgQEAgc3RhdGljIGludCBzdW40aV9scmFkY19wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNl
+ICpwZGV2KQo+ID4gPiAgCWlmIChJU19FUlIobHJhZGMtPmJhc2UpKQo+ID4gPiAgCQlyZXR1cm4g
+UFRSX0VSUihscmFkYy0+YmFzZSk7Cj4gPiA+ICAKPiA+ID4gLQllcnJvciA9IGRldm1fcmVxdWVz
+dF9pcnEoZGV2LCBwbGF0Zm9ybV9nZXRfaXJxKHBkZXYsIDApLAo+ID4gPiAtCQkJCSBzdW40aV9s
+cmFkY19pcnEsIDAsCj4gPiA+ICsJaXJxID0gcGxhdGZvcm1fZ2V0X2lycShwZGV2LCAwKTsKPiA+
+ID4gKwlpZiAoaXJxIDwgMCkgewo+ID4gPiArCQlkZXZfZXJyKCZwZGV2LT5kZXYsICJGYWlsZWQg
+dG8gZ2V0IElSUVxuIik7Cj4gPiA+ICsJCXJldHVybiBpcnE7Cj4gPiA+ICsJfQo+ID4gPiArCj4g
+PiA+ICsJZXJyb3IgPSBkZXZtX3JlcXVlc3RfaXJxKGRldiwgaXJxLCBzdW40aV9scmFkY19pcnEs
+IDAsCj4gPiA+ICAJCQkJICJzdW40aS1hMTAtbHJhZGMta2V5cyIsIGxyYWRjKTsKPiA+ID4gIAlp
+ZiAoZXJyb3IpCj4gPiA+ICAJCXJldHVybiBlcnJvcjsKPiA+ID4gQEAgLTI4Miw2ICsyODgsMTQg
+QEAgc3RhdGljIGludCBzdW40aV9scmFkY19wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpw
+ZGV2KQo+ID4gPiAgCWlmIChlcnJvcikKPiA+ID4gIAkJcmV0dXJuIGVycm9yOwo+ID4gPiAgCj4g
+PiA+ICsJZGV2aWNlX2luaXRfd2FrZXVwKGRldiwgdHJ1ZSk7Cj4gPiAKPiA+IEkgZG8gbm90IHRo
+aW5rIHdlIHdhbnQgdG8gZG8gdGhpcyB1bmNvbmRpdGlvbmFsbHkuIENhbiB3ZSBtYXliZSBrZXkg
+b2ZmCj4gPiAid2FrZXVwLXNvdXJjZSIgZGV2aWNlIHByb3BlcnR5Lgo+IAo+IFN1cmUgdGhpbmcu
+Cj4gCj4gPiA+ICsKPiA+ID4gKwllcnJvciA9IGRldl9wbV9zZXRfd2FrZV9pcnEoZGV2LCBpcnEp
+Owo+ID4gPiArCWlmIChlcnJvcikgewo+ID4gPiArCQlkZXZfZXJyKGRldiwgIkNvdWxkIG5vdCBz
+ZXQgd2FrZSBJUlFcbiIpOwo+ID4gPiArCQlyZXR1cm4gZXJyb3I7Cj4gPiA+ICsJfQo+ID4gPiAr
+Cj4gPiAKPiA+IEkgd29uZGVyIGlmIHdlIGNvdWxkIHRlYWNoIHBsYXRmb3JtIGRyaXZlciBjb3Jl
+IHRvIGhhbmRsZSB0aGlzIGZvciB1cy4KPiAKPiBOb3Qgc3VyZSwgc29tZSBkcml2ZXJzIGRvIGVu
+YWJsZS9kaXNhYmxlIHdha2VfaXJxIGJ5IGhhbmQgaW4gc3VzcGVuZC9yZXN1bWUKPiBjYWxsYmFj
+a3MsIHNvIGl0IHdvdWxkIHByb2JhYmx5IG5lZWQgdG8gYmUgb3B0LWluIHNvbWVob3cuIEkgZ3Vl
+c3MgY2FsbGluZyB0aGUKPiBmdW5jdGlvbiBsaWtlIHRoaXMgaXMgb25lIHdheSB0byBtYWtlIGl0
+IG9wdC1pbi4KPiAKPiBUaGUgb3RoZXIgd2F5IG1heSBiZSBieSBwYXNzaW5nIGEgZmxhZyBzb21l
+d2hlcmUsIGxpa2UgdG8KPiByZXF1ZXN0X3RocmVhZGVkX2lycS4gRGlkIHlvdSBoYXZlIHNvbWV0
+aGluZyBtb3JlIGNvbmNyZXRlIGluIG1pbmQ/CgpJIHRoaW5rIGl0IGlzIHBlcmZlY3RseSBmaW5l
+IHRvIGNvbnRpbnVlIHVzaW5nIGVuYWJsZV9pcnFfd2FrZSBhbmQKZGlzYWJsZV9pcnFfd2FrZSBm
+cm9tIHRoZSBkcml2ZXIgd2hpbGUgbWFya2luZyBpcnEgYXMgYmVpbmcgd2FrZSBpcnEKZm9ybSB0
+aGUgY29yZS4KClRoYW5rcy4KCi0tIApEbWl0cnkKCl9fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4
+LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9y
+Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
