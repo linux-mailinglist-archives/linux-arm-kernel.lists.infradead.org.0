@@ -2,48 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B589FE87A9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 13:01:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E6D2E87C5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 13:09:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=JxnOJSFGH/+K9keeVJZKAzpcvmh7XlEmX/xatBhM0kA=; b=VZdUkyleMHUnN7+Catq5v++Ye
-	HOoSB/FhrNqs69AYb4mR0ERqoFvipvOXjX1bQJDX8EaLij+F7eU0D4EVAIiIx7A19w7IbC45eXhjl
-	IGqbF+QoWEgfnGgfjr6l4nwyZxYI5qX+XYkXbUY4jzQJN6i12jyqlkrrqxaaTRj4q6Li12xTAsmMJ
-	/7Lr1pYnjtiEItjIXFoFt7N/RK1uGex8Fbrv9tBdOjR0+F5TiA2HoT5sce8Ls/FD8FMCyk+1NyBjK
-	T9AH/Cf5ut9PALodd9mUlXf8Z1sl7WRo8hX8jCoVQO7W+Led63Q6kO45cxS/mYGiBBmuL+LTV9ggw
-	zRPNdeTPQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=a5Tz7AQqyIYRosjRq4czNiRZ3Dd6Ztz/iRF0cf+yjoQ=; b=WRd269GFBk3KEl
+	Ukat7oSASQcXs4To3MtZk2wOoVEX2/5bsliHnnKPs1WYLeWPsw0P0eRdcslqNBwM0mn//MCTGBitP
+	DnJh0GpvXZmtnwvBQ94Ec203fNen4ETiI91f9TBzA2sylS8U1rjI7SVxpasfDb8kVw8l3KQqxk7bf
+	H+srj8zbf/NKg85bOrn97teOV+wW9NIVqajlMHCIj396SMqFx5z/+JxHhUOym5Ush81L6jtiwS4hA
+	zTgtWWNr2J0EkfZOESzgO9qEDXZLEZuJ3K+3/1CY6zUwAH5fIOnmK3iU80oyAswM9SycsQqjPnuDI
+	LIn2pUb44PDYGpvFIO6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPQBJ-0008Lp-MI; Tue, 29 Oct 2019 12:01:01 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPQB5-0008D4-OH
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 12:00:49 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C98F41F1;
- Tue, 29 Oct 2019 05:00:44 -0700 (PDT)
-Received: from [10.37.13.3] (unknown [10.37.13.3])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 261F03F71E;
- Tue, 29 Oct 2019 05:00:42 -0700 (PDT)
-Subject: Re: [PATCH] arm64: cpufeature: Enable Qualcomm erratas
-To: will@kernel.org, bjorn.andersson@linaro.org
-References: <20191029060432.1208859-1-bjorn.andersson@linaro.org>
- <20191029113956.GC12103@willie-the-truck>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <1d1a3dca-16ce-f541-5d78-e61ad24227e0@arm.com>
-Date: Tue, 29 Oct 2019 12:04:21 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.7.0
+	id 1iPQJi-0002d6-Pp; Tue, 29 Oct 2019 12:09:42 +0000
+Received: from mail-sh.amlogic.com ([58.32.228.43])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iPQJY-0002be-Rv; Tue, 29 Oct 2019 12:09:34 +0000
+Received: from [10.18.29.227] (10.18.29.227) by mail-sh.amlogic.com
+ (10.18.11.5) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Tue, 29 Oct
+ 2019 20:09:39 +0800
+Subject: Re: [PATCH v3 1/4] dt-bindings: power: add Amlogic secure power
+ domains bindings
+To: Rob Herring <robh@kernel.org>
+References: <1571391167-79679-1-git-send-email-jianxin.pan@amlogic.com>
+ <1571391167-79679-2-git-send-email-jianxin.pan@amlogic.com>
+ <20191029020125.GA11182@bogus>
+From: Jianxin Pan <jianxin.pan@amlogic.com>
+Message-ID: <07f0ed9d-0b1a-d84f-de8b-1967e56bbd21@amlogic.com>
+Date: Tue, 29 Oct 2019 20:09:39 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20191029113956.GC12103@willie-the-truck>
+In-Reply-To: <20191029020125.GA11182@bogus>
 Content-Language: en-US
+X-Originating-IP: [10.18.29.227]
+X-ClientProxiedBy: mail-sh.amlogic.com (10.18.11.5) To mail-sh.amlogic.com
+ (10.18.11.5)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_050047_855435_CDAEC735 
-X-CRM114-Status: GOOD (  20.28  )
+X-CRM114-CacheID: sfid-20191029_050932_900934_FFCF5985 
+X-CRM114-Status: GOOD (  11.33  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -62,91 +64,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org, broonie@kernel.org, linux-arm-msm@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
+ Victor Wan <victor.wan@amlogic.com>, linux-pm@vger.kernel.org,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>, Neil Armstrong <narmstrong@baylibre.com>,
+ linux-kernel@vger.kernel.org, Jian Hu <jian.hu@amlogic.com>,
+ Xingyu Chen <xingyu.chen@amlogic.com>, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/29/2019 11:39 AM, Will Deacon wrote:
-> On Mon, Oct 28, 2019 at 11:04:32PM -0700, Bjorn Andersson wrote:
->> With the introduction of 'cce360b54ce6 ("arm64: capabilities: Filter the
->> entries based on a given mask")' the Qualcomm erratas are no long
->> applied.
+Hi Jerome,
+
+Could you give some advice about this?
+
+In a1/c1, watchdog and powerdomain are the same, they use secure monitor [0] and
+there is no share memory needed.
+
+[0]
+https://lore.kernel.org/linux-amlogic/20190731082339.20163-1-ccaione@baylibre.com/
+
+On 2019/10/29 10:01, Rob Herring wrote:
+> On Fri, Oct 18, 2019 at 05:32:44PM +0800, Jianxin Pan wrote:
+>> Add the bindings for the Amlogic Secure power domains, controlling the
+>> secure power domains.
 >>
->> The result of not applying errata 1003 is that MSM8996 runs into various
->> RCU stalls and fails to boot most of the times.
+>> The bindings targets the Amlogic A1 and C1 compatible SoCs, in which the
+>> power domain registers are in secure world.
 >>
->> Give both 1003 and 1009 a "type" to ensure they are not filtered out in
->> update_cpu_capabilities().
-> 
-> Oh nasty. Thanks for debugging and fixing this.
-> 
->> Fixes: cce360b54ce6 ("arm64: capabilities: Filter the entries based on a given mask")
->> Cc: stable@vger.kernel.org
->> Reported-by: Mark Brown <broonie@kernel.org>
->> Suggested-by: Will Deacon <will@kernel.org>
->> Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+>> Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
 >> ---
->>   arch/arm64/kernel/cpu_errata.c | 2 ++
->>   1 file changed, 2 insertions(+)
+>>  .../bindings/power/amlogic,meson-sec-pwrc.yaml     | 42 ++++++++++++++++++++++
+>>  include/dt-bindings/power/meson-a1-power.h         | 32 +++++++++++++++++
+>>  2 files changed, 74 insertions(+)
+>>  create mode 100644 Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
+>>  create mode 100644 include/dt-bindings/power/meson-a1-power.h
 >>
->> diff --git a/arch/arm64/kernel/cpu_errata.c b/arch/arm64/kernel/cpu_errata.c
->> index df9465120e2f..cdd8df033536 100644
->> --- a/arch/arm64/kernel/cpu_errata.c
->> +++ b/arch/arm64/kernel/cpu_errata.c
->> @@ -780,6 +780,7 @@ const struct arm64_cpu_capabilities arm64_errata[] = {
->>   	{
->>   		.desc = "Qualcomm Technologies Falkor/Kryo erratum 1003",
->>   		.capability = ARM64_WORKAROUND_QCOM_FALKOR_E1003,
->> +		.type = ARM64_CPUCAP_SCOPE_LOCAL_CPU,
->>   		.matches = cpucap_multi_entry_cap_matches,
+>> diff --git a/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
+>> new file mode 100644
+>> index 00000000..88d8261
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
+>> @@ -0,0 +1,42 @@
+>> +# SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+>> +# Copyright (c) 2019 Amlogic, Inc
+>> +# Author: Jianxin Pan <jianxin.pan@amlogic.com>
+>> +%YAML 1.2
+>> +---
+>> +$id: "http://devicetree.org/schemas/power/amlogic,meson-sec-pwrc.yaml#"
+>> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+>> +
+>> +title: Amlogic Meson Secure Power Domains
+>> +
+>> +maintainers:
+>> +  - Jianxin Pan <jianxin.pan@amlogic.com>
+>> +
+>> +description: |+
+>> +  Meson Secure Power Domains used in A1/C1 SoCs.
+>> +
+>> +properties:
+>> +  compatible:
+>> +    enum:
+>> +      - amlogic,meson-a1-pwrc
+>> +
+>> +  "#power-domain-cells":
+>> +    const: 1
+>> +
+>> +  secure-monitor:
+>> +    description: phandle to the secure-monitor node
+>> +    $ref: /schemas/types.yaml#/definitions/phandle
 > 
-> This should probably be ARM64_CPUCAP_LOCAL_CPU_ERRATUM instead, but I'll
-> want Suzuki's ack before I take the change.
-
-Yes, it must be ARM64_CPUCAP_LOCAL_CPU_ERRATUM.
-
-It may be a good idea to stick in a check to make sure that the scope is
-set for all the capabilities in a separate patch. e.g,
-
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index d260e3bdf07b..51a79b4a44eb 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -546,6 +546,8 @@ static void __init
-  init_cpu_hwcaps_indirect_list_from_array(const struct 
-arm64_cpu_capabilities *caps)
-  {
-  	for (; caps->matches; caps++) {
-+		WARN(!cpucap_default_scope(caps),
-+		     "Invalid scope for capability %d\n", caps->capability);
-  		if (WARN(caps->capability >= ARM64_NCAPS,
-  			"Invalid capability %d\n", caps->capability))
-			continue;
-
-Otherwise looks good to me.
-
->>   		.match_list = qcom_erratum_1003_list,
->>   	},
->> @@ -788,6 +789,7 @@ const struct arm64_cpu_capabilities arm64_errata[] = {
->>   	{
->>   		.desc = "Qualcomm erratum 1009, ARM erratum 1286807",
->>   		.capability = ARM64_WORKAROUND_REPEAT_TLBI,
->> +		.type = ARM64_CPUCAP_SCOPE_LOCAL_CPU,
->>   		ERRATA_MIDR_RANGE_LIST(arm64_repeat_tlbi_cpus),
+> Like the watchdog, make this a child or the secure firmware node. Or 
+> just add '#power-domain-cells' to it. You don't really need a child node 
+> here if there's not other resources in DT for this.
 > 
-> ERRATA_MIDR_RANGE_LIST sets the type already, so I think this is redundant.
+> Rob
 > 
-> Will
+> .
 > 
 
-
-
-Cheers
-Suzuki
 
 _______________________________________________
 linux-arm-kernel mailing list
