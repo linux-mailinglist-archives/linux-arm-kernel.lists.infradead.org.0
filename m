@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 363CDE9199
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 22:15:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB4E3E9190
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 22:15:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,66 +11,66 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=pSX8TU4QZP7ATT6s2W6SOJ3Vc/1N+wuc77o1zG6waXY=; b=cHmz5CLWj05+ByL7t4aaFX6XSc
-	cigY5SMTDnPU06MyfJBQZqEfqrgAF/y8F2/e1zZNpjlKxb3FQX+rUhunlzrJcwVk0DeK+m5q2Puo/
-	VxXukBus+Uj756TRbLS0LNNdCGxtHaFQLGbMETnvlXZBUvZ57ms9NXmwNHzCMUM9S4zZOYPd7Ou24
-	IF+9EkFxivxuQs+Iaei3nFdz9yYIRz/YcE+elASokuNKVJRor9I0dyA2L7n9lQdc2PRodWtXKPdIf
-	nKVBF60BOjgmzJAOlIJRUtJT94deSSJiWF4nbnhFLt1FhLWGfEwRiYC5kdcDONHAtItQhZqr1iXzv
-	UbmCG74w==;
+	bh=etc8HhijoZ0CqZGZwpNJR1UMJFuzclMqPWd/Iha6CbI=; b=pTBh3aWP4V0Ox2JHphK2dJ56fx
+	97T1DvN6NnQaxDhkwBwNckr0IDwjUib6V62HI06oqc6y4MYyYkVF0lkCUo1D3UeFHoPa7eWikV0KW
+	aHvNo4o1aUH6j8HBoiC6yLwIgBuXsaxArRKNMEkZYUGQEWPFOjgt0vftw7gKyxkUCFoyNCaFqrh9q
+	EcMmJd8OETd1ZhWZXQErWTGPqc4GplA0sa0QDxuvgFF9Z73xNVjoeMAEK6C2zLzJbeCZx03BrzAC7
+	XcSDD2kK6JfR1R49KLucJwfTxHOiFFac+0PRoepVbdfI77L0Q5UzaBFMeKKtoOcPPjX4txvuo0ozy
+	8JP+jL+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPYqD-0006bN-Ee; Tue, 29 Oct 2019 21:15:49 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1iPYpR-0004vD-5O; Tue, 29 Oct 2019 21:15:01 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPYoX-0004Ol-4q
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 21:14:07 +0000
-Received: by mail-pg1-x542.google.com with SMTP id p12so10507088pgn.6
+ id 1iPYoW-0004O8-9b
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 21:14:05 +0000
+Received: by mail-pl1-x642.google.com with SMTP id y8so8320402plk.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 29 Oct 2019 14:14:05 -0700 (PDT)
+ Tue, 29 Oct 2019 14:14:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=IUB0MN6IjH7KcACf0jON8xeDsmoKIFP2Ldh5d1L6UPI=;
- b=Mf8D0saeSN+0m1YpxFdkmvjwDLF69xca5s60V1U26r/aG9tDbY+KmdSEZ+ycIlGrdm
- fJay3bujo2c2izvt9E/Xr7795kKH5LjAp715+5k8tVYty/z0ImtxaP1C8iM07/GXFMce
- avtalpOy9rw451gCCfHNsjmH0eMt4o1fE+6Ws=
+ bh=JlR9HB+AtjkcOVkmTX2Eg2H+ZftC0HH+zvchdZkpMjY=;
+ b=Vu+Cz3Bdr08FSpvurZE6wBEe8DPddNVCED4EbuBPLwaTYSq1C3hmodOBylEmeZ5fDF
+ y1zF6hUioUHj4Jt94NznScqaHTONpB2VPrjf+1SWvp2je3tJCr6C8uetE+3Pf1UJpm+s
+ lVZUPSKcsBhxaTrvaBH+v13ap8LI2UehQEeHs=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=IUB0MN6IjH7KcACf0jON8xeDsmoKIFP2Ldh5d1L6UPI=;
- b=O46QpLFbkC5MPEZD4cbmOd/RaMgkfOl0EKUQpcGm0eTmYKozR/5Xs5zTF19/XTBwxA
- LqiszIb1WzKCWHh+bAG2I/TLEORodpqOhOXCTDl5eiyI4NTI4WY1vqaq5NTvl9uDMgjz
- juW2Rb/TLGnzl3yu6aWVsAEm7eogIhRRKxZl9SLgUW1mCXPP+9G7NyrHtR+OFrWTKjDs
- L//gZ8r2q7E0xuLQYV2xz15IdzUngosSyRn1qFR71oMCYcVMSe4wiysjAQklX33MzrkG
- jtw99yJL9+pypi25XvvtsBx/vcxH3uW6IhXLkBnr6ivjzxyvIlKeKs7BOint/deK77/t
- jkLQ==
-X-Gm-Message-State: APjAAAX5knKQpoNmqw4Og9kWSp2i9W+AdEWwGRgdGaPD+J63smfEYp/W
- L8vXEOTOFo7EVStOyqVyrTpsUw==
-X-Google-Smtp-Source: APXvYqyam6Nj/3qGHt41KW7lrAi/B4rZMlVCWM/rpmjyHxsuoq9yc40ldr6w0Vf1EPp7DW/iR8X5qQ==
-X-Received: by 2002:aa7:9157:: with SMTP id 23mr3843926pfi.73.1572383644781;
- Tue, 29 Oct 2019 14:14:04 -0700 (PDT)
+ bh=JlR9HB+AtjkcOVkmTX2Eg2H+ZftC0HH+zvchdZkpMjY=;
+ b=XiBq1yApc+JNeFTX7dZdP30YKv6NpVHNBJ7jC8T3d15uylRiwXsUaPbJXVxjoX4uXn
+ XFhKRUz16ry5atCZAN7WipCNxqpKUOkZCSkiLMGHcz0l3FO5eVFdvE3vSyTfjtnQECmk
+ Ux8+G526bn/9dDzxjM4PuIBzOOf3g0BftdvhYHfE+xmYGTH93jkM+r6OuxZ+S34ugE32
+ dzOE4LIQv1F4CtSO8wrvr0dTbsSD5ddfh11aczEdggYGOslEtEpxcc9BQ9NpO7pqEjR+
+ aCPy4cMjuSqZFCF7Gd/ykYVlsFGgd6+Ta2XhHMhzPj0GlNp9ooAV6x1sHB0tR/gMrear
+ IcmA==
+X-Gm-Message-State: APjAAAUX8eUSLd5wqabqEo6VmIM+I7kYgsceHHLRKIA5LPMgOHmoivVP
+ Oz47DfE/HJ+h1sWT0m2Ow9/qPQ==
+X-Google-Smtp-Source: APXvYqw+HrHYWhGYydF8kNZSKv8NuZ4R4TmpMJCE64dPlGrdUiNxIUpv7BIOTO3KxcC7XYK68jIPIA==
+X-Received: by 2002:a17:902:9f81:: with SMTP id g1mr801835plq.82.1572383643666; 
+ Tue, 29 Oct 2019 14:14:03 -0700 (PDT)
 Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id c26sm25490pfo.173.2019.10.29.14.13.59
+ by smtp.gmail.com with ESMTPSA id a8sm51854pff.5.2019.10.29.14.13.59
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
  Tue, 29 Oct 2019 14:14:00 -0700 (PDT)
 From: Kees Cook <keescook@chromium.org>
 To: Borislav Petkov <bp@alien8.de>
-Subject: [PATCH v3 02/29] powerpc: Remove PT_NOTE workaround
-Date: Tue, 29 Oct 2019 14:13:24 -0700
-Message-Id: <20191029211351.13243-3-keescook@chromium.org>
+Subject: [PATCH v3 03/29] powerpc: Rename PT_LOAD identifier "kernel" to "text"
+Date: Tue, 29 Oct 2019 14:13:25 -0700
+Message-Id: <20191029211351.13243-4-keescook@chromium.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191029211351.13243-1-keescook@chromium.org>
 References: <20191029211351.13243-1-keescook@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_141405_185489_687B0235 
-X-CRM114-Status: GOOD (  12.68  )
+X-CRM114-CacheID: sfid-20191029_141404_333993_978DA7EA 
+X-CRM114-Status: GOOD (  11.48  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -110,57 +110,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In preparation for moving NOTES into RO_DATA, remove the PT_NOTE
-workaround since the kernel requires at least gcc 4.6 now.
+In preparation for moving NOTES into RO_DATA, rename the linker script
+internal identifier for the PT_LOAD Program Header from "kernel" to
+"text" to match other architectures.
 
 Signed-off-by: Kees Cook <keescook@chromium.org>
 Acked-by: Michael Ellerman <mpe@ellerman.id.au>
 ---
- arch/powerpc/kernel/vmlinux.lds.S | 24 ++----------------------
- 1 file changed, 2 insertions(+), 22 deletions(-)
+ arch/powerpc/kernel/vmlinux.lds.S | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
 diff --git a/arch/powerpc/kernel/vmlinux.lds.S b/arch/powerpc/kernel/vmlinux.lds.S
-index 81e672654789..a3c8492b2b19 100644
+index a3c8492b2b19..e184a63aa5b0 100644
 --- a/arch/powerpc/kernel/vmlinux.lds.S
 +++ b/arch/powerpc/kernel/vmlinux.lds.S
-@@ -20,20 +20,6 @@ ENTRY(_stext)
+@@ -18,7 +18,7 @@
+ ENTRY(_stext)
+ 
  PHDRS {
- 	kernel PT_LOAD FLAGS(7); /* RWX */
+-	kernel PT_LOAD FLAGS(7); /* RWX */
++	text PT_LOAD FLAGS(7); /* RWX */
  	note PT_NOTE FLAGS(0);
--	dummy PT_NOTE FLAGS(0);
--
--	/* binutils < 2.18 has a bug that makes it misbehave when taking an
--	   ELF file with all segments at load address 0 as input.  This
--	   happens when running "strip" on vmlinux, because of the AT() magic
--	   in this linker script.  People using GCC >= 4.2 won't run into
--	   this problem, because the "build-id" support will put some data
--	   into the "notes" segment (at a non-zero load address).
--
--	   To work around this, we force some data into both the "dummy"
--	   segment and the kernel segment, so the dummy segment will get a
--	   non-zero load address.  It's not enough to always create the
--	   "notes" segment, since if nothing gets assigned to it, its load
--	   address will be zero.  */
  }
  
- #ifdef CONFIG_PPC64
-@@ -178,14 +164,8 @@ SECTIONS
+@@ -63,7 +63,7 @@ SECTIONS
+ #else /* !CONFIG_PPC64 */
+ 		HEAD_TEXT
+ #endif
+-	} :kernel
++	} :text
+ 
+ 	__head_end = .;
+ 
+@@ -112,7 +112,7 @@ SECTIONS
+ 		__got2_end = .;
+ #endif /* CONFIG_PPC32 */
+ 
+-	} :kernel
++	} :text
+ 
+ 	. = ALIGN(ETEXT_ALIGN_SIZE);
+ 	_etext = .;
+@@ -163,9 +163,9 @@ SECTIONS
+ #endif
  	EXCEPTION_TABLE(0)
  
- 	NOTES :kernel :note
--
--	/* The dummy segment contents for the bug workaround mentioned above
--	   near PHDRS.  */
--	.dummy : AT(ADDR(.dummy) - LOAD_OFFSET) {
--		LONG(0)
--		LONG(0)
--		LONG(0)
--	} :kernel :dummy
-+	/* Restore program header away from PT_NOTE. */
-+	.dummy : { *(.dummy) } :kernel
+-	NOTES :kernel :note
++	NOTES :text :note
+ 	/* Restore program header away from PT_NOTE. */
+-	.dummy : { *(.dummy) } :kernel
++	.dummy : { *(.dummy) } :text
  
  /*
   * Init sections discarded at runtime
+@@ -180,7 +180,7 @@ SECTIONS
+ #ifdef CONFIG_PPC64
+ 		*(.tramp.ftrace.init);
+ #endif
+-	} :kernel
++	} :text
+ 
+ 	/* .exit.text is discarded at runtime, not link time,
+ 	 * to deal with references from __bug_table
 -- 
 2.17.1
 
