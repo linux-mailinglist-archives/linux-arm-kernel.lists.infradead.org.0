@@ -2,74 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49A3FE9390
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 00:27:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DF03E9391
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 00:28:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=q5qzROpHdSahdtJJ+qdzzZlNDj0Enf5/CWWsgY3gZ5I=; b=NwtAxCbmCemwOt
-	wOo7oMP7gsdk37QCups/U34Y+IjaKoLmxaNQjB2LVgPIdrSavj+v9jvBpd55M1E+4eJkuPzvzIspj
-	SpVQlGGlgBcfMWhEMU1QTdyGecxkb9cE2pua8BwXVgja2aGlOjhLO1n6PeXUCJ+wUSEUh7JzaIRpy
-	LPozu764kcYfxUun032P5hBsn41F9/19Xu5pQ8EiLZv8YsXgz+AyJGh3h8SZaRYu1mUjBI2KFP8bv
-	udUy0Xn86/ZMmde+KtwOsWQXEyJpCPFSL2bu2a1jOv1W1aVxugGNyDLYA99bBci0KnU6hSeS4wCX/
-	ywZR/ed78MQ8/TAcFnBA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VgMTA2Vr72KUuMw37U0DXCaHLiigM3w3OQ2L571jkyM=; b=a2i/iELOYSBvEl
+	J1VYW3hx8vRUqOyZvYT3hWfatWb3OgxuuudSopCf/NYHT7DzMeQAQ1pSYT9diQuc5b3THaiTu3FnZ
+	1U8ijWdSfVacOznjU2aiUaY2K3FEgoyLlfhjE0z5mcO/UnnKpY26+NLKpivsX77b6wcbLZZK2iFg8
+	8bfyOwivj1QhuCPslSGpe/T3eXmcE8XmWnDbh9RdVsiTHhL26IGyQgJMFHHiYPOCHbeXbskBhbTgM
+	60lfhfCkUZG3XhyZMpxkFq4lE7QlHac0g3CgJCJpXgOE21Km+QGy9tJbHymJWeY/y6ZtgPMPjXFeL
+	9tsVukdugDLZnwtZQ6/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPau2-0002Ku-3J; Tue, 29 Oct 2019 23:27:54 +0000
+	id 1iPauN-0002Xv-S7; Tue, 29 Oct 2019 23:28:15 +0000
 Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPatr-0002KR-NF
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 23:27:45 +0000
-Received: by mail-pl1-x641.google.com with SMTP id y24so49605plr.12
+ id 1iPau1-0002TL-P5
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 23:27:55 +0000
+Received: by mail-pl1-x641.google.com with SMTP id p5so60167plr.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 29 Oct 2019 16:27:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=ACl3OaVOTym+qDwRiwEDHteytsmPG8qRkDZ/xp8Jsfs=;
- b=Sg0u4cvybiJKNJ2yk93E2dB2T47O85yhZ0eGiygp5ebFLX8FXezKujJzdiva88wV/8
- Zg9GPLhEFk4fP51MbMbYuBFfk6V505AMJniXLB0aL//ZQrrk086ByYlv/uYxl4s+qdgI
- YptgAvtlYL2Tr2cRDl2DMTc8kyJJhDQjpsSbrYX9iIr7Q2hQxkAvCt1dhy8714CcAqIC
- zJuJavMzQeTIiyzRXrqcd4kFFnwpPvnWveIOHNon8Y4R7o9fBbUm+7J/JTzYcf3fI3lr
- ISkDKmeM2glo/AHCqjlFq2Ra55NGniPP1aj+IXTdznBwbGZfMf6oisKYkVulczJnXkV9
- izPg==
+ Tue, 29 Oct 2019 16:27:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=lCL+qmkduKTNInPXDzVxZW1X0UXjGITVjnfZG+cBMXQ=;
+ b=iKQ8U5OeP+PDnVRLSst/F/ejE8x6+hnsj3lMQTij/hL/bhctavzcvXVU34rWrDT5J3
+ ytpLA+/HeBmYfjgFiAN6iknJ9iePJBF/Jk9D6/QM0uXliaJYp3Z14XzcE0txUquzTmqI
+ VHfaV9SQAHw1kMWu7oLfKtUFDlWa/R94kNW0g=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=ACl3OaVOTym+qDwRiwEDHteytsmPG8qRkDZ/xp8Jsfs=;
- b=HCo3eYx+5AO6bxw6M+rXw8snX22P1X+DNmN62HnhQ4fJCQug3AoAKi89CzSTBie7C/
- tPiFS3iB6oDV0kEstiHl2dNecUYb5Guxj8Tm6a8FTtI/88tXia7Iv932XnuOQpqk5jin
- ktIi9vdXPklsF9wCkhxWtgI095QjlcsaYLpH/+AYVnzxEMZnfgF67OhGArJTzXXeKCYu
- GBTrEJcNpn6Vu83mnqKI/l4VyCxRb9Bv/AgvwpwDliiiIsmLB8t2YwGA99GbpGy37vIM
- v1LqNWNsM7mao+OSKsIwwtPzmEpDcccZkdvIOlHemABhH9LxyRxd+2xiT2B7m6uaIyBN
- TI4w==
-X-Gm-Message-State: APjAAAUfOjPINayXykqoU4HJogcmu9LWEGnHfGkzij51RWAYx3kiB6pX
- 5fEVASjOGz9989RNpFWYOGHr7g==
-X-Google-Smtp-Source: APXvYqxOTPAX0Pab8uisqVInBDEc0929OSy+5xrNgVs1Q/j1JgZT6U0hX+J++tV2P0onHll9jWcFpw==
-X-Received: by 2002:a17:902:b116:: with SMTP id
- q22mr1259148plr.201.1572391662476; 
- Tue, 29 Oct 2019 16:27:42 -0700 (PDT)
-Received: from localhost.localdomain
- (104-188-17-28.lightspeed.sndgca.sbcglobal.net. [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id v19sm211050pff.46.2019.10.29.16.27.41
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=lCL+qmkduKTNInPXDzVxZW1X0UXjGITVjnfZG+cBMXQ=;
+ b=Y+XTUkMVYcz1QcDlJ6zy32NrL1u/SDE4FihaUhQ27E8lt0lxj5wrM/YwOE5MLhVHBS
+ hjQjtB5oIV1sSUpOZUYxpL19rpeFZd2lbj6j749w0bLT+EKjZhdNcSRhqpYMg5BTDgI+
+ zySpcTq0bRGw6+5EMgtAcrweAiFy+xbNZqqsAMeI3wBUFBVOHaLmGjmlOWJ0T6T4NQJk
+ DFNmVLyTvCtM+pdPojz3FsaQaxc1YZqYKCETJmcwCnRKS6T6+I3o+qzY560pmO60C5GY
+ 6daDBOWrFOqt0Caq2UPBhJCoyQVmkKHq7+ibj7lyw9DR6mIsDNZFwlEq2zP6PvqJCvF+
+ nhyQ==
+X-Gm-Message-State: APjAAAV/Phm5B2SoB5ye8UHHnWc6a/bwoJC3YEwDKVMXgaFZKLv7JL5u
+ Q7o46msnrBQ3WCeKYYqkhGw9Aw==
+X-Google-Smtp-Source: APXvYqzJpMkTL97KzIqXA8RQm0cq9CmPjJLMJSpojHVK72yWjaZBCCvtF6lYUeAg19RPBP/RAlHTUA==
+X-Received: by 2002:a17:902:7d85:: with SMTP id
+ a5mr1310958plm.196.1572391673010; 
+ Tue, 29 Oct 2019 16:27:53 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id z13sm302714pgz.42.2019.10.29.16.27.51
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 29 Oct 2019 16:27:41 -0700 (PDT)
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Catalin Marinas <catalin.marinas@arm.com>,
-	Will Deacon <will@kernel.org>
-Subject: [PATCH v2] arm64: cpufeature: Enable Qualcomm Falkor errata 1009 for
- Kryo
-Date: Tue, 29 Oct 2019 16:27:38 -0700
-Message-Id: <20191029232738.1483923-1-bjorn.andersson@linaro.org>
-X-Mailer: git-send-email 2.23.0
+ Tue, 29 Oct 2019 16:27:52 -0700 (PDT)
+Date: Tue, 29 Oct 2019 16:27:51 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Amit Daniel Kachhap <amit.kachhap@arm.com>
+Subject: Re: [PATCH 06/11] arm64: rename ptrauth key structures to be
+ user-specific
+Message-ID: <201910291627.0823B87@keescook>
+References: <1571300065-10236-1-git-send-email-amit.kachhap@arm.com>
+ <1571300065-10236-7-git-send-email-amit.kachhap@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1571300065-10236-7-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_162743_819632_53840560 
-X-CRM114-Status: GOOD (  10.32  )
+X-CRM114-CacheID: sfid-20191029_162753_885294_AD2E565A 
+X-CRM114-Status: GOOD (  22.93  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -87,6 +85,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,72 +97,254 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Kryo cores share errata 1009 with Falkor, so add their model
-definitions and enable it for them as well.
+On Thu, Oct 17, 2019 at 01:44:20PM +0530, Amit Daniel Kachhap wrote:
+> From: Kristina Martsenko <kristina.martsenko@arm.com>
+> 
+> We currently enable ptrauth for userspace, but do not use it within the
+> kernel. We're going to enable it for the kernel, and will need to manage
+> a separate set of ptrauth keys for the kernel.
+> 
+> We currently keep all 5 keys in struct ptrauth_keys. However, as the
+> kernel will only need to use 1 key, it is a bit wasteful to allocate a
+> whole ptrauth_keys struct for every thread.
+> 
+> Therefore, a subsequent patch will define a separate struct, with only 1
+> key, for the kernel. In preparation for that, rename the existing struct
+> (and associated macros and functions) to reflect that they are specific
+> to userspace.
+> 
+> Signed-off-by: Kristina Martsenko <kristina.martsenko@arm.com>
 
-Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
----
+This appears very mechanical; easy to review! ;)
 
-Changes since v1:
-- Use is_kryo_midr(), rather than listing each individual model.
+Reviewed-by: Kees Cook <keescook@chromium.org>
 
- arch/arm64/kernel/cpu_errata.c | 20 ++++++++++++++------
- 1 file changed, 14 insertions(+), 6 deletions(-)
+-Kees
 
-diff --git a/arch/arm64/kernel/cpu_errata.c b/arch/arm64/kernel/cpu_errata.c
-index 3facd5ca52ed..613075817abe 100644
---- a/arch/arm64/kernel/cpu_errata.c
-+++ b/arch/arm64/kernel/cpu_errata.c
-@@ -623,17 +623,23 @@ static const struct midr_range arm64_harden_el2_vectors[] = {
- #endif
- 
- #ifdef CONFIG_ARM64_WORKAROUND_REPEAT_TLBI
--
--static const struct midr_range arm64_repeat_tlbi_cpus[] = {
-+static const struct arm64_cpu_capabilities arm64_repeat_tlbi_list[] = {
- #ifdef CONFIG_QCOM_FALKOR_ERRATUM_1009
--	MIDR_RANGE(MIDR_QCOM_FALKOR_V1, 0, 0, 0, 0),
-+	{
-+		ERRATA_MIDR_REV(MIDR_QCOM_FALKOR_V1, 0, 0)
-+	},
-+	{
-+		.midr_range.model = MIDR_QCOM_KRYO,
-+		.matches = is_kryo_midr,
-+	},
- #endif
- #ifdef CONFIG_ARM64_ERRATUM_1286807
--	MIDR_RANGE(MIDR_CORTEX_A76, 0, 0, 3, 0),
-+	{
-+		ERRATA_MIDR_RANGE(MIDR_CORTEX_A76, 0, 0, 3, 0),
-+	},
- #endif
- 	{},
- };
--
- #endif
- 
- #ifdef CONFIG_CAVIUM_ERRATUM_27456
-@@ -789,7 +795,9 @@ const struct arm64_cpu_capabilities arm64_errata[] = {
- 	{
- 		.desc = "Qualcomm erratum 1009, ARM erratum 1286807",
- 		.capability = ARM64_WORKAROUND_REPEAT_TLBI,
--		ERRATA_MIDR_RANGE_LIST(arm64_repeat_tlbi_cpus),
-+		.type = ARM64_CPUCAP_LOCAL_CPU_ERRATUM,
-+		.matches = cpucap_multi_entry_cap_matches,
-+		.match_list = arm64_repeat_tlbi_list,
- 	},
- #endif
- #ifdef CONFIG_ARM64_ERRATUM_858921
+> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+> ---
+> Changes since RFC v2:
+>  - New patch in this version, to optimize struct usage [Dave]
+> 
+>  arch/arm64/include/asm/asm_pointer_auth.h | 10 +++++-----
+>  arch/arm64/include/asm/pointer_auth.h     |  6 +++---
+>  arch/arm64/include/asm/processor.h        |  2 +-
+>  arch/arm64/kernel/asm-offsets.c           | 10 +++++-----
+>  arch/arm64/kernel/pointer_auth.c          |  4 ++--
+>  arch/arm64/kernel/ptrace.c                | 16 ++++++++--------
+>  6 files changed, 24 insertions(+), 24 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/asm_pointer_auth.h b/arch/arm64/include/asm/asm_pointer_auth.h
+> index cb21a06..3d39788 100644
+> --- a/arch/arm64/include/asm/asm_pointer_auth.h
+> +++ b/arch/arm64/include/asm/asm_pointer_auth.h
+> @@ -15,21 +15,21 @@
+>  alternative_if_not ARM64_HAS_ADDRESS_AUTH
+>  	b	.Laddr_auth_skip_\@
+>  alternative_else_nop_endif
+> -	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_KEY_APIA]
+> +	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_USER_KEY_APIA]
+>  	msr_s	SYS_APIAKEYLO_EL1, \tmp2
+>  	msr_s	SYS_APIAKEYHI_EL1, \tmp3
+> -	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_KEY_APIB]
+> +	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_USER_KEY_APIB]
+>  	msr_s	SYS_APIBKEYLO_EL1, \tmp2
+>  	msr_s	SYS_APIBKEYHI_EL1, \tmp3
+> -	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_KEY_APDA]
+> +	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_USER_KEY_APDA]
+>  	msr_s	SYS_APDAKEYLO_EL1, \tmp2
+>  	msr_s	SYS_APDAKEYHI_EL1, \tmp3
+> -	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_KEY_APDB]
+> +	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_USER_KEY_APDB]
+>  	msr_s	SYS_APDBKEYLO_EL1, \tmp2
+>  	msr_s	SYS_APDBKEYHI_EL1, \tmp3
+>  .Laddr_auth_skip_\@:
+>  alternative_if ARM64_HAS_GENERIC_AUTH
+> -	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_KEY_APGA]
+> +	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_USER_KEY_APGA]
+>  	msr_s	SYS_APGAKEYLO_EL1, \tmp2
+>  	msr_s	SYS_APGAKEYHI_EL1, \tmp3
+>  alternative_else_nop_endif
+> diff --git a/arch/arm64/include/asm/pointer_auth.h b/arch/arm64/include/asm/pointer_auth.h
+> index 21c2115..cc42145 100644
+> --- a/arch/arm64/include/asm/pointer_auth.h
+> +++ b/arch/arm64/include/asm/pointer_auth.h
+> @@ -22,7 +22,7 @@ struct ptrauth_key {
+>   * We give each process its own keys, which are shared by all threads. The keys
+>   * are inherited upon fork(), and reinitialised upon exec*().
+>   */
+> -struct ptrauth_keys {
+> +struct ptrauth_keys_user {
+>  	struct ptrauth_key apia;
+>  	struct ptrauth_key apib;
+>  	struct ptrauth_key apda;
+> @@ -30,7 +30,7 @@ struct ptrauth_keys {
+>  	struct ptrauth_key apga;
+>  };
+>  
+> -static inline void ptrauth_keys_init(struct ptrauth_keys *keys)
+> +static inline void ptrauth_keys_init_user(struct ptrauth_keys_user *keys)
+>  {
+>  	if (system_supports_address_auth()) {
+>  		get_random_bytes(&keys->apia, sizeof(keys->apia));
+> @@ -58,7 +58,7 @@ static inline unsigned long ptrauth_strip_insn_pac(unsigned long ptr)
+>  }
+>  
+>  #define ptrauth_thread_init_user(tsk)					\
+> -	ptrauth_keys_init(&(tsk)->thread.keys_user)
+> +	ptrauth_keys_init_user(&(tsk)->thread.keys_user)
+>  
+>  #else /* CONFIG_ARM64_PTR_AUTH */
+>  #define ptrauth_prctl_reset_keys(tsk, arg)	(-EINVAL)
+> diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
+> index 5623685..8ec792d 100644
+> --- a/arch/arm64/include/asm/processor.h
+> +++ b/arch/arm64/include/asm/processor.h
+> @@ -144,7 +144,7 @@ struct thread_struct {
+>  	unsigned long		fault_code;	/* ESR_EL1 value */
+>  	struct debug_info	debug;		/* debugging */
+>  #ifdef CONFIG_ARM64_PTR_AUTH
+> -	struct ptrauth_keys	keys_user;
+> +	struct ptrauth_keys_user	keys_user;
+>  #endif
+>  };
+>  
+> diff --git a/arch/arm64/kernel/asm-offsets.c b/arch/arm64/kernel/asm-offsets.c
+> index ef0c24b..cf15182 100644
+> --- a/arch/arm64/kernel/asm-offsets.c
+> +++ b/arch/arm64/kernel/asm-offsets.c
+> @@ -131,11 +131,11 @@ int main(void)
+>    DEFINE(SDEI_EVENT_PRIORITY,	offsetof(struct sdei_registered_event, priority));
+>  #endif
+>  #ifdef CONFIG_ARM64_PTR_AUTH
+> -  DEFINE(PTRAUTH_KEY_APIA,	offsetof(struct ptrauth_keys, apia));
+> -  DEFINE(PTRAUTH_KEY_APIB,	offsetof(struct ptrauth_keys, apib));
+> -  DEFINE(PTRAUTH_KEY_APDA,	offsetof(struct ptrauth_keys, apda));
+> -  DEFINE(PTRAUTH_KEY_APDB,	offsetof(struct ptrauth_keys, apdb));
+> -  DEFINE(PTRAUTH_KEY_APGA,	offsetof(struct ptrauth_keys, apga));
+> +  DEFINE(PTRAUTH_USER_KEY_APIA,		offsetof(struct ptrauth_keys_user, apia));
+> +  DEFINE(PTRAUTH_USER_KEY_APIB,		offsetof(struct ptrauth_keys_user, apib));
+> +  DEFINE(PTRAUTH_USER_KEY_APDA,		offsetof(struct ptrauth_keys_user, apda));
+> +  DEFINE(PTRAUTH_USER_KEY_APDB,		offsetof(struct ptrauth_keys_user, apdb));
+> +  DEFINE(PTRAUTH_USER_KEY_APGA,		offsetof(struct ptrauth_keys_user, apga));
+>    BLANK();
+>  #endif
+>    return 0;
+> diff --git a/arch/arm64/kernel/pointer_auth.c b/arch/arm64/kernel/pointer_auth.c
+> index 95985be..1e77736 100644
+> --- a/arch/arm64/kernel/pointer_auth.c
+> +++ b/arch/arm64/kernel/pointer_auth.c
+> @@ -9,7 +9,7 @@
+>  
+>  int ptrauth_prctl_reset_keys(struct task_struct *tsk, unsigned long arg)
+>  {
+> -	struct ptrauth_keys *keys = &tsk->thread.keys_user;
+> +	struct ptrauth_keys_user *keys = &tsk->thread.keys_user;
+>  	unsigned long addr_key_mask = PR_PAC_APIAKEY | PR_PAC_APIBKEY |
+>  				      PR_PAC_APDAKEY | PR_PAC_APDBKEY;
+>  	unsigned long key_mask = addr_key_mask | PR_PAC_APGAKEY;
+> @@ -18,7 +18,7 @@ int ptrauth_prctl_reset_keys(struct task_struct *tsk, unsigned long arg)
+>  		return -EINVAL;
+>  
+>  	if (!arg) {
+> -		ptrauth_keys_init(keys);
+> +		ptrauth_keys_init_user(keys);
+>  		return 0;
+>  	}
+>  
+> diff --git a/arch/arm64/kernel/ptrace.c b/arch/arm64/kernel/ptrace.c
+> index 21176d0..0793739 100644
+> --- a/arch/arm64/kernel/ptrace.c
+> +++ b/arch/arm64/kernel/ptrace.c
+> @@ -986,7 +986,7 @@ static struct ptrauth_key pac_key_from_user(__uint128_t ukey)
+>  }
+>  
+>  static void pac_address_keys_to_user(struct user_pac_address_keys *ukeys,
+> -				     const struct ptrauth_keys *keys)
+> +				     const struct ptrauth_keys_user *keys)
+>  {
+>  	ukeys->apiakey = pac_key_to_user(&keys->apia);
+>  	ukeys->apibkey = pac_key_to_user(&keys->apib);
+> @@ -994,7 +994,7 @@ static void pac_address_keys_to_user(struct user_pac_address_keys *ukeys,
+>  	ukeys->apdbkey = pac_key_to_user(&keys->apdb);
+>  }
+>  
+> -static void pac_address_keys_from_user(struct ptrauth_keys *keys,
+> +static void pac_address_keys_from_user(struct ptrauth_keys_user *keys,
+>  				       const struct user_pac_address_keys *ukeys)
+>  {
+>  	keys->apia = pac_key_from_user(ukeys->apiakey);
+> @@ -1008,7 +1008,7 @@ static int pac_address_keys_get(struct task_struct *target,
+>  				unsigned int pos, unsigned int count,
+>  				void *kbuf, void __user *ubuf)
+>  {
+> -	struct ptrauth_keys *keys = &target->thread.keys_user;
+> +	struct ptrauth_keys_user *keys = &target->thread.keys_user;
+>  	struct user_pac_address_keys user_keys;
+>  
+>  	if (!system_supports_address_auth())
+> @@ -1025,7 +1025,7 @@ static int pac_address_keys_set(struct task_struct *target,
+>  				unsigned int pos, unsigned int count,
+>  				const void *kbuf, const void __user *ubuf)
+>  {
+> -	struct ptrauth_keys *keys = &target->thread.keys_user;
+> +	struct ptrauth_keys_user *keys = &target->thread.keys_user;
+>  	struct user_pac_address_keys user_keys;
+>  	int ret;
+>  
+> @@ -1043,12 +1043,12 @@ static int pac_address_keys_set(struct task_struct *target,
+>  }
+>  
+>  static void pac_generic_keys_to_user(struct user_pac_generic_keys *ukeys,
+> -				     const struct ptrauth_keys *keys)
+> +				     const struct ptrauth_keys_user *keys)
+>  {
+>  	ukeys->apgakey = pac_key_to_user(&keys->apga);
+>  }
+>  
+> -static void pac_generic_keys_from_user(struct ptrauth_keys *keys,
+> +static void pac_generic_keys_from_user(struct ptrauth_keys_user *keys,
+>  				       const struct user_pac_generic_keys *ukeys)
+>  {
+>  	keys->apga = pac_key_from_user(ukeys->apgakey);
+> @@ -1059,7 +1059,7 @@ static int pac_generic_keys_get(struct task_struct *target,
+>  				unsigned int pos, unsigned int count,
+>  				void *kbuf, void __user *ubuf)
+>  {
+> -	struct ptrauth_keys *keys = &target->thread.keys_user;
+> +	struct ptrauth_keys_user *keys = &target->thread.keys_user;
+>  	struct user_pac_generic_keys user_keys;
+>  
+>  	if (!system_supports_generic_auth())
+> @@ -1076,7 +1076,7 @@ static int pac_generic_keys_set(struct task_struct *target,
+>  				unsigned int pos, unsigned int count,
+>  				const void *kbuf, const void __user *ubuf)
+>  {
+> -	struct ptrauth_keys *keys = &target->thread.keys_user;
+> +	struct ptrauth_keys_user *keys = &target->thread.keys_user;
+>  	struct user_pac_generic_keys user_keys;
+>  	int ret;
+>  
+> -- 
+> 2.7.4
+> 
+
 -- 
-2.23.0
-
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
