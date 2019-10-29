@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86B24E8FA9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 20:03:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5968E8FC9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 20:17:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D3tl8Hb1q5bi3r6BVHHgK6oFS2bQVRCL4SYXk9AyyDI=; b=ja6YytwPcP0N6e
-	AlU8GRAXHI0mAgiN3VlZWyIWukxmtc/zYevLIUJJWV/HI+5kKVIUyfYej53Oo8UvrJNeYr7C4hqLM
-	dYrVFRDtMu8wedc0H8egiC4oQx35YtFo1wZjFvRGyS2w8etfQuuAxA/oVLL+A6/MVj9fnW2K9HPA3
-	/4toS9uqPIsYjulLtEsGw4+crn0ZdBMA8rch0gW1r18zRrExsBY5RWJXlnzEstMg7jl20B/viIkHB
-	huc85lgxaa/dVerd6h+hCuG//6xAO4oYnH0CsI+1qjHxZXuskRI4EUAonMgLQlCVwKA1mjMY90YwX
-	EO5DLr8oYFjT2zTuLG/w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=FOR/iG9gm/73SYEkOYOUgsG9DK0wEjXvhH9gEYwj4kk=; b=Yv1
+	Cjsp2GEZb2WKg7Kqc5XxkRYlBolNmKZdiAvQkutlp/kLBo2ox6HhgAFE2FaHHADujLYx/o3dPuGwX
+	a1Tn+UPvU1G969DriBzkm+E3qrF9OXNStaG1xMBqLm8kBqiaDW1XTietJsdBFFcG1ZigSXll4YYSX
+	wOSmsRhvdaDzQswQ+uXmaCRVTD4cv1bIgX89O3gxWy6oyZa5SiXrThPE146Yti+PeFN/bJXWLgJcc
+	dgUXJPOhf9MWa9tSS2u8u75GhdHEAu1MbhGfKaEEefba0MQGEkYKVWHFN2rhu2TUL/DFUxdt/ksCr
+	VVwtXmPTMhR5o1R+WBmYjMh7wPVoWOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPWlh-0003tn-3l; Tue, 29 Oct 2019 19:03:01 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1iPWzk-0001Xr-FS; Tue, 29 Oct 2019 19:17:32 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPWlV-0003t7-0w
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 19:02:50 +0000
-Received: by mail-lf1-x142.google.com with SMTP id j5so5008999lfh.10
+ id 1iPWzN-0001LS-Fc
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 19:17:10 +0000
+Received: by mail-wm1-x344.google.com with SMTP id c22so3638876wmd.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 29 Oct 2019 12:02:48 -0700 (PDT)
+ Tue, 29 Oct 2019 12:17:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=R+5n6HzGqXwqylYQMJuUdb3nBEM9S+F065OE1s2NqT4=;
- b=JWJt/IwbphIEGjhvM8Mkx2Krgta251lsS3ryU+P1KWl5pA4pmnxitipM9KclwTJHNr
- CCEBoAIIi2zFetwMqzDluLM6612o4DgEaJzW+uegkm+a3LfJTpg7tY8H6ZpU5j0pWHMj
- X0lbrt409/7nWB+vCjGkOEFEHA6bE7C4sbQ+F/9NF7/HwGnbSLbBA50XkJT9laFkF0vZ
- dzLQO/SRVbvR2nzvZkDJyAHQOCksFJKTBzSeMvxm+/xSFP97F8H/bBjjtS1eulQocXrC
- Ssw8HMkdrSAjqMUEeAOthNgLV7fGVivELZuu4mt8Uf+yL/Kjk2suTZkipN3iKbonQiVs
- lUbQ==
+ h=from:to:cc:subject:date:message-id;
+ bh=lypg9C4ry4DPd4ImOzQhAGtmZAf1Ysh6wu62GTtQEkQ=;
+ b=dDjaYRz7Ny2C0svhKXBGm/aXJSNM5l55D8Mofm8aLwCat9G/GlebWTuYPy6lGRWQR+
+ RCnLg2bsaKl7wILCPxgLS818zlTieKrNbPSrXSlQJQx9DfQsaT/CS9GhXn3TAZmrYQMp
+ C3gou8znUyeyR636z8FRCPuhzYmAcqbCGK07ohlqqT+0eaW2fq3z2W4/NxmZdyykc98x
+ zmg6n0+nAq649JaTiUCqi2MsCbPlPWBnxl+JEPLnjDHFyK5pasY5uTp1cTc4ZnhwPTgE
+ GQKiLkKSjqU0412o6shY3U2XFX5ap+wf7SI0hb4HuR6MB+JDeyXESQToFlf3I8v1/6Pn
+ K40A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=R+5n6HzGqXwqylYQMJuUdb3nBEM9S+F065OE1s2NqT4=;
- b=R42y1DrBrczJqqd+FfOPu36f74P+eCoZd/TIZtHaF/bnFyt9EtTiYEwegocpIC+odM
- pYOdwcx0nH4mrVBMFID5sMfZNP+0w+08WrTzAqJqLztqKI86vgOk2HW50jblcAF3UnBg
- IAlDPng/A3a2gyNcelYVeX1cbG49g+QxntGzB75CIIVzjyXNYrX4nSlUHr6HUMyaXPz8
- rXalR2y0vha6NSxmNRpGEj4SexfNeQ3yheiy9nGkioUW0+dbBOTMre/F+QumkE6DIa4d
- akkBs1gcUTbn/Pn7MIS7gJ6RHPwyfXYeWphoc6FYihqkqth0QXx3gB35yIqCT5QF1Q5Y
- O3bA==
-X-Gm-Message-State: APjAAAX5QoZnjWAJtbAvuuGlFXm4a3JREhCWnj7U2QG69R8Prq8zYZLM
- esGVSUEtrA0hWg5E82nL2efhs8vqagCqdJxjMGM=
-X-Google-Smtp-Source: APXvYqxvJAzOcdbgfYPkBxJQAQ0zwhUQS9PZL+lzJrE8mOVv7fJHfsreK8SX3W4pZVAE21BGaOS8HOPd713iJOBucpc=
-X-Received: by 2002:a19:4318:: with SMTP id q24mr3415688lfa.12.1572375766538; 
- Tue, 29 Oct 2019 12:02:46 -0700 (PDT)
-MIME-Version: 1.0
-References: <20191028140545.10218-1-festevam@gmail.com>
- <20191028142913.GN16985@dragon>
-In-Reply-To: <20191028142913.GN16985@dragon>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Tue, 29 Oct 2019 16:02:49 -0300
-Message-ID: <CAOMZO5DcCXA3FExsw5Eo6Ua6VEkbwBu7rA4KCJObHsGb7LYx3w@mail.gmail.com>
-Subject: Re: [PATCH 1/2] ARM: dts: imx51: Adjust CPU operating points
-To: Shawn Guo <shawnguo@kernel.org>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=lypg9C4ry4DPd4ImOzQhAGtmZAf1Ysh6wu62GTtQEkQ=;
+ b=OEz877/j7eqPdztXg/ltgZQLJgvacuXfVIHwMkkod0m+E7oabYtxIM55i2zR7rFbpE
+ 2gYaY3sjCySFsnuplVc2pjSqvd02gkLkCOmAT12BdV914VOCjjVY0EOmXyY3d10sRT8f
+ 6z0aHlNSt32npyZrlbU6zvwK8g6MRnTswV442MsuFLGEnbweVZ/BobPxqaDrzAmsffxZ
+ 46ZVjDhG1LlFndtUCMt4faNFdCxEYqGaxCaLKWd/p2jWMLi9MFlD4ULMzdyDe/1+8/Y9
+ wbmDyGPHcUe7N3gvaIokdTrlMTuIJ4tvUj7mJqIIG8AKSBy8sNAMbG3TS7iGl7v28Pv8
+ snaw==
+X-Gm-Message-State: APjAAAUZjgTJPUJbhYtmY7+qv4EF2cFoSB1sOMDP9GgQW3xFdxPowONx
+ fIu3LfU0W2HiKNpgZXK5QQ+voKFs
+X-Google-Smtp-Source: APXvYqz7tv8yAogXi5IzRNfj/AtWXiJGRh//k9cZU8b9Ujrkd3h/ZwCTCfSHqEXRvaIu5YrBFEjT4A==
+X-Received: by 2002:a1c:b4c1:: with SMTP id d184mr5192319wmf.37.1572376624942; 
+ Tue, 29 Oct 2019 12:17:04 -0700 (PDT)
+Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id 16sm2373674wmj.48.2019.10.29.12.17.00
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 29 Oct 2019 12:17:03 -0700 (PDT)
+From: Florian Fainelli <f.fainelli@gmail.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: apply ARM64_ERRATUM_845719 workaround for Brahma-B53
+ core
+Date: Tue, 29 Oct 2019 12:16:19 -0700
+Message-Id: <20191029191623.17839-1-f.fainelli@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_120249_095490_08AD05BD 
-X-CRM114-Status: UNSURE (   9.34  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191029_121709_562482_096B0EDA 
+X-CRM114-Status: GOOD (  12.20  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
+ provider (f.fainelli[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -94,29 +94,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Chris Healy <cphealy@gmail.com>,
- NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>
+Cc: Vladimir Murzin <vladimir.murzin@arm.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, John Garry <john.garry@huawei.com>,
+ Hanjun Guo <guohanjun@huawei.com>, open list <linux-kernel@vger.kernel.org>,
+ Jeremy Linton <jeremy.linton@arm.com>, Zhang Lei <zhang.lei@jp.fujitsu.com>,
+ Andre Przywara <andre.przywara@arm.com>, Doug Berger <opendmb@gmail.com>,
+ bcm-kernel-feedback-list@broadcom.com, Marc Zyngier <maz@kernel.org>,
+ Qian Cai <cai@lca.pw>, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Shawn,
+From: Doug Berger <opendmb@gmail.com>
 
-On Mon, Oct 28, 2019 at 11:29 AM Shawn Guo <shawnguo@kernel.org> wrote:
->
-> On Mon, Oct 28, 2019 at 11:05:44AM -0300, Fabio Estevam wrote:
-> > Adjust the CPU operating points as per the characterized settings from
-> > the vendor BSP at:
-> >
-> > https://source.codeaurora.org/external/imx/linux-imx/tree/arch/arm/mach-mx5/mx51_babbage.c?h=imx_2.6.35_caf#n1343
->
-> Does it match what datasheet says?
+The Broadcom Brahma-B53 core is susceptible to the issue described by
+ARM64_ERRATUM_845719 so this commit enables the workaround to be applied
+when executing on that core.
 
-It matches all operational points from the i.MX53 consumer datasheet.
+Since there are now multiple entries to match, we must convert the
+existing ARM64_ERRATUM_845719 into an erratum list.
 
-On i.MX51 I noticed one discrepancy, so I will update it in v2.
+Signed-off-by: Doug Berger <opendmb@gmail.com>
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+---
+ arch/arm64/include/asm/cputype.h |  2 ++
+ arch/arm64/kernel/cpu_errata.c   | 13 +++++++++++--
+ 2 files changed, 13 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm64/include/asm/cputype.h b/arch/arm64/include/asm/cputype.h
+index b1454d117cd2..aca07c2f6e6e 100644
+--- a/arch/arm64/include/asm/cputype.h
++++ b/arch/arm64/include/asm/cputype.h
+@@ -79,6 +79,7 @@
+ #define CAVIUM_CPU_PART_THUNDERX_83XX	0x0A3
+ #define CAVIUM_CPU_PART_THUNDERX2	0x0AF
+ 
++#define BRCM_CPU_PART_BRAHMA_B53	0x100
+ #define BRCM_CPU_PART_VULCAN		0x516
+ 
+ #define QCOM_CPU_PART_FALKOR_V1		0x800
+@@ -105,6 +106,7 @@
+ #define MIDR_THUNDERX_81XX MIDR_CPU_MODEL(ARM_CPU_IMP_CAVIUM, CAVIUM_CPU_PART_THUNDERX_81XX)
+ #define MIDR_THUNDERX_83XX MIDR_CPU_MODEL(ARM_CPU_IMP_CAVIUM, CAVIUM_CPU_PART_THUNDERX_83XX)
+ #define MIDR_CAVIUM_THUNDERX2 MIDR_CPU_MODEL(ARM_CPU_IMP_CAVIUM, CAVIUM_CPU_PART_THUNDERX2)
++#define MIDR_BRAHMA_B53 MIDR_CPU_MODEL(ARM_CPU_IMP_BRCM, BRCM_CPU_PART_BRAHMA_B53)
+ #define MIDR_BRCM_VULCAN MIDR_CPU_MODEL(ARM_CPU_IMP_BRCM, BRCM_CPU_PART_VULCAN)
+ #define MIDR_QCOM_FALKOR_V1 MIDR_CPU_MODEL(ARM_CPU_IMP_QCOM, QCOM_CPU_PART_FALKOR_V1)
+ #define MIDR_QCOM_FALKOR MIDR_CPU_MODEL(ARM_CPU_IMP_QCOM, QCOM_CPU_PART_FALKOR)
+diff --git a/arch/arm64/kernel/cpu_errata.c b/arch/arm64/kernel/cpu_errata.c
+index 6c3b10a41bd8..c065dd48d661 100644
+--- a/arch/arm64/kernel/cpu_errata.c
++++ b/arch/arm64/kernel/cpu_errata.c
+@@ -737,6 +737,16 @@ static const struct midr_range erratum_1418040_list[] = {
+ };
+ #endif
+ 
++#ifdef CONFIG_ARM64_ERRATUM_845719
++static const struct midr_range erratum_845719_list[] = {
++	/* Cortex-A53 r0p[01234] */
++	MIDR_REV_RANGE(MIDR_CORTEX_A53, 0, 0, 4),
++	/* Brahma-B53 r0p[0] */
++	MIDR_REV(MIDR_BRAHMA_B53, 0, 0),
++	{},
++};
++#endif
++
+ const struct arm64_cpu_capabilities arm64_errata[] = {
+ #ifdef CONFIG_ARM64_WORKAROUND_CLEAN_CACHE
+ 	{
+@@ -777,10 +787,9 @@ const struct arm64_cpu_capabilities arm64_errata[] = {
+ #endif
+ #ifdef CONFIG_ARM64_ERRATUM_845719
+ 	{
+-	/* Cortex-A53 r0p[01234] */
+ 		.desc = "ARM erratum 845719",
+ 		.capability = ARM64_WORKAROUND_845719,
+-		ERRATA_MIDR_REV_RANGE(MIDR_CORTEX_A53, 0, 0, 4),
++		ERRATA_MIDR_RANGE_LIST(erratum_845719_list),
+ 	},
+ #endif
+ #ifdef CONFIG_CAVIUM_ERRATUM_23154
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
