@@ -2,60 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E415E8513
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 11:06:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74EFAE8551
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 11:16:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=657JfzQ3WO3EVj30GTlBH8Nx9QECBQlyxe3rdShX0Hs=; b=PAJ
-	kh33WplZzcohBYkBbq3nn2YTB96+jGIe0vnfWYVitcxqMYNYB+bjtOsnssKr0gvhCLxUWWSyQwmZX
-	dLMqIeIF/mOuNRQOx1IZa7CMbqNnZIMVLKodwAOhYBlPcPiUT0XzbKkPFYFI+k65CZabO8Uk5kJMg
-	V0tlaBrlXtRdm3VOaMWAzwpys/RjCbYfSxRjYJ6E3QmurppveKzrGxk7zcL7t8jtHC8qLlXQ7AE4N
-	30btaAM8+XJtUmFy/j2DKZEq9WyFIsyn979EeGz+0AfCKj1H4xUW2cB80xbJQMc22SohI6Z8+/+tU
-	SwuIwDwJ5vTULoRCUtDGL4GLzgXqK8Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kaEhA9tYnP1VosS6x913SoG6R4MgheYgpncuGVghdjw=; b=fAqknn1ZzrLxed
+	GfrcLcbXPbdkDL2jHU0GyVhLmK29cwrQv0iVX+8wdVW0EPX0wY0EQ3/tht+aDlKIWf6I5VzPliLRD
+	u8gU5vSitNgj2Whg1qE97ZxP7aNjG9IApTI3spO8y87fN1QYn0MC7Y9jngtuL+vt1NokCHF/0KdQ4
+	cNg146brlrNpu59vyMSOZhfXSid6gDnurN/YF2VBB2nZ81VrF4cWPLiU8BtDAVRmIFn+VC/2jy/ZX
+	jth43FaF/TVU8WbLhf7Bh7xk4gInzBXqJHTnscI2pJu7oWDLnsyVzLyvyJFFnAMIbso34b49tE/C5
+	XhFdzdWL3i3Dog7+1YLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPOOU-0005FZ-Ra; Tue, 29 Oct 2019 10:06:30 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1iPOYJ-0001zq-Cp; Tue, 29 Oct 2019 10:16:39 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPOOM-0005EM-IB
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 10:06:24 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id DAF571A09BE;
- Tue, 29 Oct 2019 11:06:17 +0100 (CET)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 5A2F41A09CC;
- Tue, 29 Oct 2019 11:06:13 +0100 (CET)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 8253840307;
- Tue, 29 Oct 2019 18:06:07 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] ARM: dts: imx7ulp-evk: Use APLL_PFD1 as usdhc's clock source
-Date: Tue, 29 Oct 2019 18:02:52 +0800
-Message-Id: <1572343372-6303-1-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1iPOX9-00010t-Jx
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 10:15:29 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x9TACQqB029013; Tue, 29 Oct 2019 11:14:52 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type :
+ content-transfer-encoding; s=STMicroelectronics;
+ bh=2+X7n8kYh+eyI478R9QoZl24SqMf0i4AANekeGpV2V0=;
+ b=bo1IIq9EpbnkuyFLVKyyKelvOegHh+jMBkCnJYrALmj5rXUptONPwJPkUiSbJNfxvbqW
+ b3bAvPbmSTpdwI55NOzN6Ai8GA8kdT9pLpDx5sRz59UnspekXsF8Z/iyGUtoGNA9C/Pl
+ DsghnDfiT2lvQjRTpKzMyV1Hf6AUbEqszlMLrkwSgvY+TOiGR3riJAfemo2LhqrhWwbF
+ TLtSL5If407AEum3azpX+o5704/raW/XvSCuQYKGHJsqYsehftECe1gi3uSdp1xv3Nmj
+ A5edU4met2LnAgatEGmkG7xO5CXMezOdFUI0MYkOuBSMOxdPZEFq430gm6Kh84razTLI Lw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2vvd1gpp0a-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 29 Oct 2019 11:14:52 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 90C0A100034;
+ Tue, 29 Oct 2019 11:14:50 +0100 (CET)
+Received: from Webmail-eu.st.com (Safex1hubcas24.st.com [10.75.90.94])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 7783D2B28D8;
+ Tue, 29 Oct 2019 11:14:50 +0100 (CET)
+Received: from SAFEX1HUBCAS22.st.com (10.75.90.93) by Safex1hubcas24.st.com
+ (10.75.90.94) with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 29 Oct
+ 2019 11:14:50 +0100
+Received: from localhost (10.201.22.222) by Webmail-ga.st.com (10.75.90.48)
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 29 Oct 2019 11:14:49
+ +0100
+From: Christophe Roullier <christophe.roullier@st.com>
+To: <robh@kernel.org>, <davem@davemloft.net>, <joabreu@synopsys.com>,
+ <mark.rutland@arm.com>, <mcoquelin.stm32@gmail.com>,
+ <alexandre.torgue@st.com>, <peppe.cavallaro@st.com>
+Subject: [PATCH 0/5] net: ethernet: stmmac: some fixes and optimizations
+Date: Tue, 29 Oct 2019 11:14:36 +0100
+Message-ID: <20191029101441.17290-1-christophe.roullier@st.com>
+X-Mailer: git-send-email 2.17.1
+MIME-Version: 1.0
+X-Originating-IP: [10.201.22.222]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
+ definitions=2019-10-29_03:2019-10-28,2019-10-29 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_030622_741497_95CB395E 
-X-CRM114-Status: GOOD (  10.36  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191029_031527_959391_C087FA37 
+X-CRM114-Status: GOOD (  10.24  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,58 +95,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, andrew@lunn.ch, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ christophe.roullier@st.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-i.MX7ULP does NOT support runtime switching clock source for PCC,
-APLL_PFD1 by default is usdhc's clock source, so just use it
-in kernel to avoid below kernel dump during kernel boot up and
-make sure kernel can boot up with SD root file-system.
+Some improvements (manage syscfg as optional clock, update slew rate of
+ETH_MDIO pin, Enable gating of the MAC TX clock during TX low-power mode)
+Fix warning build message when W=1
 
-[    3.035892] Loading compiled-in X.509 certificates
-[    3.136301] sdhci-esdhc-imx 40370000.mmc: Got CD GPIO
-[    3.242886] mmc0: Reset 0x1 never completed.
-[    3.247190] mmc0: sdhci: ============ SDHCI REGISTER DUMP ===========
-[    3.253751] mmc0: sdhci: Sys addr:  0x00000000 | Version:  0x00000002
-[    3.260218] mmc0: sdhci: Blk size:  0x00000200 | Blk cnt:  0x00000001
-[    3.266775] mmc0: sdhci: Argument:  0x00009a64 | Trn mode: 0x00000000
-[    3.273333] mmc0: sdhci: Present:   0x00088088 | Host ctl: 0x00000002
-[    3.279794] mmc0: sdhci: Power:     0x00000000 | Blk gap:  0x00000080
-[    3.286350] mmc0: sdhci: Wake-up:   0x00000008 | Clock:    0x0000007f
-[    3.292901] mmc0: sdhci: Timeout:   0x0000008c | Int stat: 0x00000000
-[    3.299364] mmc0: sdhci: Int enab:  0x007f010b | Sig enab: 0x00000000
-[    3.305918] mmc0: sdhci: ACmd stat: 0x00000000 | Slot int: 0x00008402
-[    3.312471] mmc0: sdhci: Caps:      0x07eb0000 | Caps_1:   0x0000b400
-[    3.318934] mmc0: sdhci: Cmd:       0x0000113a | Max curr: 0x00ffffff
-[    3.325488] mmc0: sdhci: Resp[0]:   0x00000900 | Resp[1]:  0x0039b37f
-[    3.332040] mmc0: sdhci: Resp[2]:   0x325b5900 | Resp[3]:  0x00400e00
-[    3.338501] mmc0: sdhci: Host ctl2: 0x00000000
-[    3.343051] mmc0: sdhci: ============================================
+Christophe Roullier (5):
+  net: ethernet: stmmac: Add support for syscfg clock
+  net: ethernet: stmmac: fix warning when w=1 option is used during
+    build
+  ARM: dts: stm32: remove syscfg clock on stm32mp157c ethernet
+  ARM: dts: stm32: adjust slew rate for Ethernet
+  ARM: dts: stm32: Enable gating of the MAC TX clock during TX low-power
+    mode on stm32mp157c
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
- arch/arm/boot/dts/imx7ulp-evk.dts | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm/boot/dts/stm32mp157-pinctrl.dtsi     |  9 +++-
+ arch/arm/boot/dts/stm32mp157c.dtsi            |  7 ++--
+ .../net/ethernet/stmicro/stmmac/dwmac-stm32.c | 42 ++++++++++++-------
+ 3 files changed, 38 insertions(+), 20 deletions(-)
 
-diff --git a/arch/arm/boot/dts/imx7ulp-evk.dts b/arch/arm/boot/dts/imx7ulp-evk.dts
-index f1093d2..a863a2b 100644
---- a/arch/arm/boot/dts/imx7ulp-evk.dts
-+++ b/arch/arm/boot/dts/imx7ulp-evk.dts
-@@ -78,7 +78,7 @@
- 
- &usdhc0 {
- 	assigned-clocks = <&pcc2 IMX7ULP_CLK_USDHC0>;
--	assigned-clock-parents = <&scg1 IMX7ULP_CLK_NIC1_DIV>;
-+	assigned-clock-parents = <&scg1 IMX7ULP_CLK_APLL_PFD1>;
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_usdhc0>;
- 	cd-gpios = <&gpio_ptc 10 GPIO_ACTIVE_LOW>;
 -- 
-2.7.4
+2.17.1
 
 
 _______________________________________________
