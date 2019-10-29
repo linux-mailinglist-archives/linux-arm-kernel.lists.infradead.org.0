@@ -2,102 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F066CE8F4B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 19:28:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C136BE8F6C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 19:40:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5POB5bsxZvEHXJUPUId73tefd134xfVc78fKoLoMCOc=; b=Dmi/5Jb0Fo52N7
-	wwpmrafGx928tLtYkaXUpTPuMQxDANTqAQpXpun2po6zjxBqag8jAj8Y51Op6KzTUV3dsYZUw1S+9
-	D/YeI9iAhJC1HIiWLqO6XxFHB27Nk/b7TnBlE8H/X3Jgez20RCp4fizD6lyKoXXHV+kzp3QBAfu/R
-	FaFSTkceI1mHBB7L2XB0cLoUHs7RaEJ7fxQTk7jBUJFUFlWa5QphsrVpj1L0c2wOpkZXEI6zvTKhl
-	FQqgJtEL8YCZZwguLbTd/Tb6HoNPu9dRPmebxlD62HpbRTikInzD6Fr3PQYlzVuH91mfrJNLy9dHt
-	Sxo6+RELCwB1cD/NEYcw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Vzr5RhrJcH192FdCo5L2D3TCkzAH3va8GQO6L0ldDJ8=; b=OaqXGfCfidrpwp
+	HePQqsure/duFNPUOyPW8zbHv5pA7aARvP6l2BYbGzpA+IwxVzyPnYuyns7qBYM3h+qhh4CLZqwVG
+	0aPnUgSXE0DL8uFUwLCgySmSZxi3v4RpSWeZ8H8WI5W7CTVCKQGPHvbCPEB/9ns5l0lAoIxjTjhFA
+	AnV1QYBb2BvNo4RqkNOmOqCl4iyJI+gJAy2qT7GWUNUjpac7S+YhG15rbJlyfjtvIrTX0lw8k9CEP
+	Pwgt+j1Rlh76JT7T4aW9XAp25g433Wx0mDqP7XSj8mrUPUcSkVFd2rD1PlYZX1ZcM8m8y7HqWMMwn
+	FeH8eBGW2D3UaRH/2Ilg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPWDt-00076u-L3; Tue, 29 Oct 2019 18:28:05 +0000
-Received: from aserp2120.oracle.com ([141.146.126.78])
+	id 1iPWPv-0003yh-N7; Tue, 29 Oct 2019 18:40:31 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPWDi-00076H-Ej
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 18:27:55 +0000
-Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
- by aserp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x9TIOKxm171399;
- Tue, 29 Oct 2019 18:27:51 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=date : from : to : cc
- : subject : message-id : mime-version : content-type; s=corp-2019-08-05;
- bh=3AATR/URPY9uyZaZu/wUmJ2Mmcno1iZta5grAKv46Tg=;
- b=CAURuji1EtN3K6OGy/DGSnsNq4Qj9vpPCto45l5eIF6ATqG1GT6ryOu3pgZmH7zXKCSo
- XJh0NAUoOkB7TYTQHqIfWZsQi6E/LdjOwnWgHPpYYTPdgpN+PcK+GoY4Fi0V/5nKMC0m
- iuhLFcnZfdWtMQ8a1MEjLRCc5vlWyhgxOmMrjjiVwbXeuRYXwDOTNvdHxJDuVtYyDJWY
- xfQ7yt8cBntk0Uj0coyhf2vex2ThVTN+/UlLaemfy+Qh134rQ/d9lWC9l4LZwmb4H44T
- 6qT3pgVePGxMzci203Cy1u9N089JXkkZzO86jT7R7U+PHRT3wM13EIH4NE5W8bPE7nqk NQ== 
-Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
- by aserp2120.oracle.com with ESMTP id 2vve3qb3je-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 29 Oct 2019 18:27:51 +0000
-Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
- by userp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x9TI8SEf052470;
- Tue, 29 Oct 2019 18:27:50 GMT
-Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
- by userp3030.oracle.com with ESMTP id 2vxj8gqhyy-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 29 Oct 2019 18:27:50 +0000
-Received: from abhmp0003.oracle.com (abhmp0003.oracle.com [141.146.116.9])
- by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x9TIRmHE013828;
- Tue, 29 Oct 2019 18:27:48 GMT
-Received: from mwanda (/41.57.98.10) by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Tue, 29 Oct 2019 11:27:47 -0700
-Date: Tue, 29 Oct 2019 21:27:42 +0300
-From: Dan Carpenter <dan.carpenter@oracle.com>
-To: Kukjin Kim <kgene@kernel.org>
-Subject: [PATCH] soc: samsung: exynos-asv: Potential NULL dereference in
- exynos_asv_update_opps()
-Message-ID: <20191029182742.GC17569@mwanda>
+ id 1iPWPl-0003wp-LX
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 18:40:22 +0000
+Received: by mail-ot1-f65.google.com with SMTP id 89so10633330oth.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 29 Oct 2019 11:40:17 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=iDxdZruyiKYu6zF9b1JiWGiLIkNbAfqYufuqttmPvyM=;
+ b=GoTS0+fhxCH3ISVEBGV8gtAYBXcnUTSRGgnlX5Rd5rQpTY8kcZA3vztG/SWVDi5cYU
+ X7QdOgOqJgfaqc1v3DeIvYU6q/3AxXj1JC7yTcMaGnc+IFb9HtSL9z9hSxISonyOwPMF
+ aP5zlNn/MAPWnmiDPRWPamuofG4lcKiq/cC6/NTQVzgj1K2zBOLdqOoAe3XqVVVFjJHM
+ Q3Nu8nbWqQAEgZNMJXTtOHgxCeoT03vUF+T21QO6aFdJBs3XgUCRIbRxd0EK8JyD0Fka
+ RQ7X4O+fAdvLQNXV+VlaCoiB+TC4uP9MW3zVqc+3RlQVJl4qoXGnSHMPvrJ00BGfbOUh
+ 49ug==
+X-Gm-Message-State: APjAAAXu5GaP/AMU4SDHpnMLbXcH8mp4oJCNkZ346HcnknqrHZHM2Aat
+ V031SdnWM68391zqUwN0Rg==
+X-Google-Smtp-Source: APXvYqxGDWSxCV3m1MjSffGqN3eqpsL9XchgtHMl706xJRcvchuAFMgZoqmBkf0ja7eF7gUpCpJdCQ==
+X-Received: by 2002:a9d:ef0:: with SMTP id 103mr18967111otj.2.1572374416544;
+ Tue, 29 Oct 2019 11:40:16 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id z1sm3178864oih.14.2019.10.29.11.40.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 29 Oct 2019 11:40:15 -0700 (PDT)
+Date: Tue, 29 Oct 2019 13:40:14 -0500
+From: Rob Herring <robh@kernel.org>
+To: Manish Narani <manish.narani@xilinx.com>
+Subject: Re: [PATCH v4 2/8] dt-bindings: mmc: arasan: Update Documentation
+ for the input clock
+Message-ID: <20191029184014.GA837@bogus>
+References: <1572345042-101207-1-git-send-email-manish.narani@xilinx.com>
+ <1572345042-101207-2-git-send-email-manish.narani@xilinx.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-X-Mailer: git-send-email haha only kidding
+In-Reply-To: <1572345042-101207-2-git-send-email-manish.narani@xilinx.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9425
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1908290000 definitions=main-1910290160
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9425
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1908290000
- definitions=main-1910290161
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_112754_585368_D69DB233 
-X-CRM114-Status: GOOD (  17.10  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191029_114021_704545_44860CDB 
+X-CRM114-Status: GOOD (  11.91  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [141.146.126.78 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,48 +93,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, kernel-janitors@vger.kernel.org,
- linux-kernel@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, ulf.hansson@linaro.org,
+ rajan.vaja@xilinx.com, nava.manne@xilinx.com, linux-mmc@vger.kernel.org,
+ adrian.hunter@intel.com, michal.simek@xilinx.com, robh+dt@kernel.org,
+ manish.narani@xilinx.com, linux-arm-kernel@lists.infradead.org,
+ jolly.shah@xilinx.com, linux-kernel@vger.kernel.org, git@xilinx.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The dev_pm_opp_get_opp_table() returns error pointers if it's disabled
-in the config and it returns NULL if there is an error.  This code only
-checks for error pointers so it could lead to an Oops inside the
-dev_pm_opp_put_opp_table() function.
+On Tue, 29 Oct 2019 16:00:36 +0530, Manish Narani wrote:
+> Add documentation for an optional input clock which is essentially used
+> in sampling the input data coming from the card.
+> 
+> Signed-off-by: Manish Narani <manish.narani@xilinx.com>
+> ---
+>  Documentation/devicetree/bindings/mmc/arasan,sdhci.txt | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
+> 
 
-Fixes: 5ea428595cc5 ("soc: samsung: Add Exynos Adaptive Supply Voltage driver")
-Signed-off-by: Dan Carpenter <dan.carpenter@oracle.com>
----
-When we add a new driver, could we specify the which prefix will be used
-going forward?  In other words commit 5ea428595cc5 could have the
-prefix "soc: samsung: exynos-asv: Add Exynos Adaptive Supply Voltage
-driver".  The "exynos-asv" bit was missing so the first person to send a
-fix has to guess what is desired.
+Please add Acked-by/Reviewed-by tags when posting new versions. However,
+there's no need to repost patches *only* to add the tags. The upstream
+maintainer will do that for acks received on the version they apply.
 
- drivers/soc/samsung/exynos-asv.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/soc/samsung/exynos-asv.c b/drivers/soc/samsung/exynos-asv.c
-index 8abf4dfaa5c5..30bb7b7cc769 100644
---- a/drivers/soc/samsung/exynos-asv.c
-+++ b/drivers/soc/samsung/exynos-asv.c
-@@ -93,7 +93,7 @@ static int exynos_asv_update_opps(struct exynos_asv *asv)
- 			continue;
- 
- 		opp_table = dev_pm_opp_get_opp_table(cpu);
--		if (IS_ERR(opp_table))
-+		if (IS_ERR_OR_NULL(opp_table))
- 			continue;
- 
- 		if (!last_opp_table || opp_table != last_opp_table) {
--- 
-2.20.1
-
+If a tag was not added on purpose, please state why and what changed.
 
 _______________________________________________
 linux-arm-kernel mailing list
