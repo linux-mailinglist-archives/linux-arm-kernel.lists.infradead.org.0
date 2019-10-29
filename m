@@ -2,60 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5AA3E8828
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 13:28:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B605E882F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 13:29:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=DwV4QI4Mb0mEve9z7LSb36PqGI3Xx4yBOswJP/XDiCc=; b=koUzzzTTDxZnCHu6m/fhBVsoW
-	++r0dzJvoGVkb1Rtto1m2tgcdvvxm/fnNi0CFqjcBhgNidTNeeDlS9USKVEgDYlKogLAitB73B3qn
-	BRRiIEgfezKIobE4MVanM/hAX+WdOkCXHpLcfPXTKBT+7KtOdcAYlRVz4Tff4QidF0VbkHJjxkhXW
-	BIAQzEPLnhETx3l4InL+N2uQT7PtWxrjvVnQE+nOB+GlfGiLWf6NwB2oyK7bivzBgmVpl6KnFWzRr
-	y08mN3Umtri2+zmNeGE8/GbSlHb2HoNp1MoJbm2epiEkXUqcmAAucItUsWx/UsW32J6erNJaW03y0
-	ceN4QaA6g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CiboUvjjbqrdFZyo1o0wF8CfHtBqsg1UgTg6FL9/nH8=; b=lTvuzLvSU/dpbd
+	6uPBEgcSJzkStgkx6L31YAvKV/8q5uPIdyFew2j/LeFDbuJGF9HniHM38x5eWju7eK30stwfye2Gp
+	+oJFwGc/2Urk0e4xKGVYkB8nDmXGcaJb9lrLXuaalLcz3743Ngf/g4R85R0GPZ8TtrGUXr6k6Iz2k
+	g/duR8ZSVoAGjzOQ9AMSMtg6+6WQeUiuCldef+L0jKc/4X6j1zl/Nl4DAoRjy5d3VrJiuuPkzT7cF
+	6bPA0UeCT20aFM0G2fWiUeKatT6DK0Hsw+xznSJx1KX4fpGyr/pNam9h1vQmpTEN4fWquypzFXdBk
+	nuLYor3KGaP0Vvoy+VtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPQbl-00040Q-6R; Tue, 29 Oct 2019 12:28:21 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1iPQdD-0004Oq-58; Tue, 29 Oct 2019 12:29:51 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPQbb-0003yz-NF
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 12:28:13 +0000
-Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 41C96AAB6D429E4EEA23;
- Tue, 29 Oct 2019 20:28:06 +0800 (CST)
-Received: from [127.0.0.1] (10.173.222.27) by DGGEMS405-HUB.china.huawei.com
- (10.3.19.205) with Microsoft SMTP Server id 14.3.439.0; Tue, 29 Oct 2019
- 20:27:58 +0800
-Subject: Re: [PATCH 3/3] KVM: arm/arm64: vgic: Don't rely on the wrong pending
- table
-To: Marc Zyngier <maz@kernel.org>
-References: <20191029071919.177-1-yuzenghui@huawei.com>
- <20191029071919.177-4-yuzenghui@huawei.com> <86mudjykfa.wl-maz@kernel.org>
-From: Zenghui Yu <yuzenghui@huawei.com>
-Message-ID: <f8a30e65-7077-301a-1558-7fc504b5e891@huawei.com>
-Date: Tue, 29 Oct 2019 20:27:56 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
+ id 1iPQd0-0004Ns-9A
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 12:29:39 +0000
+Received: by mail-oi1-f195.google.com with SMTP id v138so8742876oif.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 29 Oct 2019 05:29:37 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=okLPsosnjsIdAglbOpT+46TAv0woYLu5g4KKw1XBUMA=;
+ b=gfCgHEthKg1H8qiQhuRWgAYMiPKY3up9SI/05oxlK/9HaY2YCr0v65A3oVHVAjNK4w
+ 2FxZ88o0PPTO2sdKZv/QBJH0QhHiXPkbSdMmOoO3K+lIJazWNLJhcomTs+V5RzF0GdmJ
+ UfYhOAm6j8o2rbs1z4djIEqgkz2gq2/tOskuzy85UxIaHpebtQXwzAcFqHhfwqN42Azn
+ PCOauwVTXjs+Qy5OaiQI92w9LYXEuSvm4bA4mWoZ23n5AZpIiATMp0y4dY1H2o9Wmh8C
+ 0Vc53pbrM9PYLnKDrmzgqEkPsBJJpNFwCFQ5spbctSDnd+eH/OACIGU7osfoOhjrIgob
+ jDqw==
+X-Gm-Message-State: APjAAAXPCBo6/106XHVwbBLaVDN/GUeN6Oy+nxfra6OAkBrtjijSIUWk
+ LjIkLRZK0lr0ZAXV40NUkw==
+X-Google-Smtp-Source: APXvYqyO8DH2IEhStv2gSlye9+VbvTmQX6+T9WxWt66DaOIg31GxlTrzat5+Bsvuee/7K8GJyRccXw==
+X-Received: by 2002:aca:4896:: with SMTP id v144mr3970672oia.16.1572352176888; 
+ Tue, 29 Oct 2019 05:29:36 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id m4sm4653250otm.14.2019.10.29.05.29.35
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 29 Oct 2019 05:29:36 -0700 (PDT)
+Date: Tue, 29 Oct 2019 07:29:35 -0500
+From: Rob Herring <robh@kernel.org>
+To: Kamel Bouhara <kamel.bouhara@bootlin.com>
+Subject: Re: [PATCH 1/2] dt-bindings: arm: at91: Document Kizboxmini boards
+ binding
+Message-ID: <20191029122935.GA8412@bogus>
+References: <20191018140304.31547-1-kamel.bouhara@bootlin.com>
+ <20191018140304.31547-2-kamel.bouhara@bootlin.com>
 MIME-Version: 1.0
-In-Reply-To: <86mudjykfa.wl-maz@kernel.org>
-Content-Language: en-US
-X-Originating-IP: [10.173.222.27]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20191018140304.31547-2-kamel.bouhara@bootlin.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_052811_932790_49D8EE59 
-X-CRM114-Status: GOOD (  21.20  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191029_052938_320520_4EF39E0E 
+X-CRM114-Status: GOOD (  13.86  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.195 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,117 +92,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: suzuki.poulose@arm.com, linux-kernel@vger.kernel.org, eric.auger@redhat.com,
- james.morse@arm.com, julien.thierry.kdev@gmail.com, wanghaibin.wang@huawei.com,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ linux-kernel@vger.kernel.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
-
-On 2019/10/29 17:23, Marc Zyngier wrote:
-> On Tue, 29 Oct 2019 07:19:19 +0000,
-> Zenghui Yu <yuzenghui@huawei.com> wrote:
->>
->> It's possible that two LPIs locate in the same "byte_offset" but target
->> two different vcpus, where their pending status are indicated by two
->> different pending tables.  In such a scenario, using last_byte_offset
->> optimization will lead KVM relying on the wrong pending table entry.
->> Let us use last_ptr instead, which can be treated as a byte index into
->> a pending table and also, can be vcpu specific.
->>
->> Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
->> ---
->>
->> If this patch has done the right thing, we can even add the:
->>
->> Fixes: 280771252c1b ("KVM: arm64: vgic-v3: KVM_DEV_ARM_VGIC_SAVE_PENDING_TABLES")
->>
->> But to be honest, I'm not clear about what has this patch actually fixed.
->> Pending tables should contain all zeros before we flush vgic_irq's pending
->> status into guest's RAM (thinking that guest should never write anything
->> into it). So the pending table entry we've read from the guest memory
->> seems always be zero. And we will always do the right thing even if we
->> rely on the wrong pending table entry.
->>
->> I think I must have some misunderstanding here... Please fix me.
+On Fri, Oct 18, 2019 at 04:03:03PM +0200, Kamel Bouhara wrote:
+> Document devicetree's bindings for the SAM9G25 Kizbox Mini boards of
+> Overkiz SAS.
 > 
-> I think you're spot on, and it is the code needs fixing, not you! The
-> problem is that we only read a byte once, irrespective of the vcpu the
-> interrupts is routed to. If we switch to another vcpu for the same
-> byte offset, we must reload it.
+> Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
+> ---
+>  .../devicetree/bindings/arm/atmel-at91.yaml        | 14 ++++++++++++++
+>  1 file changed, 14 insertions(+)
 > 
-> This can be done by either checking the vcpu, or by tracking the guest
-> address that we read from (just like you do here).
+> diff --git a/Documentation/devicetree/bindings/arm/atmel-at91.yaml b/Documentation/devicetree/bindings/arm/atmel-at91.yaml
+> index 1e72e3e6e025..666462988179 100644
+> --- a/Documentation/devicetree/bindings/arm/atmel-at91.yaml
+> +++ b/Documentation/devicetree/bindings/arm/atmel-at91.yaml
+> @@ -35,6 +35,20 @@ properties:
+>                - atmel,at91sam9x60
+>            - const: atmel,at91sam9
+>  
+> +      - description: Overkiz kizbox Mini Mother Board
+> +        items:
+> +          - const: overkiz,kizboxmini-mb
+> +          - const: atmel,at91sam9g25
+> +          - const: atmel,at91sam9x5
+> +          - const: atmel,at91sam9
+> +
+> +      - description: Overkiz kizbox Mini RailDIN
+> +        items:
+> +          - const: overkiz,kizboxmini-rd
+> +          - const: atmel,at91sam9g25
+> +          - const: atmel,at91sam9x5
+> +          - const: atmel,at91sam9
 
-okay, the remaining question is that in vgic_v3_save_pending_tables():
+These 2 can also be combined into 1 entry.
 
-	stored = val & (1U << bit_nr);
-	if (stored == irq->pending_latch)
-		continue;
-
-	if (irq->pending_latch)
-		val |= 1 << bit_nr;
-	else
-		val &= ~(1 << bit_nr);
-
-Do we really have a scenario where irq->pending_latch==false and
-stored==true (corresponds to the above "else") and then we clear
-pending status of this LPI in guest memory?
-I can not think out one now.
-
+> +
+>        - items:
+>            - enum:
+>                - atmel,at91sam9g15
+> -- 
+> 2.23.0
 > 
-> A small comment below:
-> 
->>   virt/kvm/arm/vgic/vgic-v3.c | 6 +++---
->>   1 file changed, 3 insertions(+), 3 deletions(-)
->>
->> diff --git a/virt/kvm/arm/vgic/vgic-v3.c b/virt/kvm/arm/vgic/vgic-v3.c
->> index 5ef93e5041e1..7cd2e2f81513 100644
->> --- a/virt/kvm/arm/vgic/vgic-v3.c
->> +++ b/virt/kvm/arm/vgic/vgic-v3.c
->> @@ -363,8 +363,8 @@ int vgic_v3_lpi_sync_pending_status(struct kvm *kvm, struct vgic_irq *irq)
->>   int vgic_v3_save_pending_tables(struct kvm *kvm)
->>   {
->>   	struct vgic_dist *dist = &kvm->arch.vgic;
->> -	int last_byte_offset = -1;
->>   	struct vgic_irq *irq;
->> +	gpa_t last_ptr = -1;
-> 
-> This should be written as
-> 
->       gpa_t last_ptr = ~(gpa_t)0;
-
-Thanks for pointing it out.
-
-> 
->>   	int ret;
->>   	u8 val;
->>   
->> @@ -384,11 +384,11 @@ int vgic_v3_save_pending_tables(struct kvm *kvm)
->>   		bit_nr = irq->intid % BITS_PER_BYTE;
->>   		ptr = pendbase + byte_offset;
->>   
->> -		if (byte_offset != last_byte_offset) {
->> +		if (ptr != last_ptr) {
->>   			ret = kvm_read_guest_lock(kvm, ptr, &val, 1);
->>   			if (ret)
->>   				return ret;
->> -			last_byte_offset = byte_offset;
->> +			last_ptr = ptr;
->>   		}
->>   
->>   		stored = val & (1U << bit_nr);
-> 
-> Otherwise, this looks good to me (no need to respin for the above
-> nit).
-
-Thanks,
-
-Zenghui
-
 
 _______________________________________________
 linux-arm-kernel mailing list
