@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 594CBE8706
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 12:31:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7407E8714
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 12:31:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CBVtBvakltEenkJtpkVC7vdSPzh6CpAevHpxb1hfWuA=; b=Oob/Sh37hEWFf2
-	jVoA9/+G9CKPPfumOwAtHMN5nA7JrlZ7K2tLD8yizV0TSLIf7yyirIr6trNp7Pvk7PMEz9Ngk79RU
-	ye3YEuTpp2dcZC5hwlBXQfxpSgKCvjXSNwwDMrGaniibcCA8XUS6jOYCLCD2w7LPJgMrhvrK0klZy
-	eXfV98S3tXSDTQDgzSGnUHIPvpsTzLmc+aatrStTzOfjZrX0IT0a5/oy3OI9LSY0pF2FgGNPNH8+7
-	0TEVIHUkGimQUDelFFtg2S35x6HGpG3/hjQC0Hg9OAlT4uHHnXxWwS2N0vTmdU3jOUMk5h84FS6JM
-	hv+kAtfNb/Tg30gcZYwA==;
+	List-Owner; bh=l7P9mR2UFn7qVt0LCq/zgwc4W/8IxSP6zLxy7mwzLok=; b=rYsTVs71XeHDuB
+	HbQa/385QSPsWdKNxRoydG1V0eOk6ux8gL5oE9GGalrHb62eEA7zlyBiONF+vTWIY1vpqKazB8jlo
+	PrcWI3PlZo/dtKjsYwvGAPPeqQbSviSsQSpIGdXVrhc9kEszhlhSkNlDe97AmaM/VG/2ITklS5uwA
+	tiZMIturteVjTRFzfP6vSkbSlZQT/++PnIi/AZezPPYuioqCh5EiNHSrmYswdepXgUD/Y0EE8nM3V
+	ZPyaJNt/xzTk2ikGlzQ+y0H67uO0jCezcvAe0PxCnZgsWbf2o3PUxoTYw2le1O6fKohfmtnQ/XE4z
+	8SQTOn8AoP4FLwR9Gjyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPPiX-0001wB-9W; Tue, 29 Oct 2019 11:31:17 +0000
+	id 1iPPin-0002Bv-0i; Tue, 29 Oct 2019 11:31:33 +0000
 Received: from skedge03.snt-world.com ([91.208.41.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPPfd-0006fM-1Y
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 11:28:19 +0000
-Received: from sntmail12r.snt-is.com (unknown [10.203.32.182])
+ id 1iPPff-0006hA-LO
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 11:28:21 +0000
+Received: from sntmail11s.snt-is.com (unknown [10.203.32.181])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by skedge03.snt-world.com (Postfix) with ESMTPS id 32CBA60CF62;
- Tue, 29 Oct 2019 12:28:14 +0100 (CET)
-Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail12r.snt-is.com
- (10.203.32.182) with Microsoft SMTP Server (version=TLS1_2,
+ by skedge03.snt-world.com (Postfix) with ESMTPS id 33AF660CF51;
+ Tue, 29 Oct 2019 12:28:17 +0100 (CET)
+Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail11s.snt-is.com
+ (10.203.32.181) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Tue, 29 Oct
- 2019 12:28:13 +0100
+ 2019 12:28:16 +0100
 Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
  sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
- 15.01.1713.004; Tue, 29 Oct 2019 12:28:13 +0100
+ 15.01.1713.004; Tue, 29 Oct 2019 12:28:16 +0100
 From: Schrempf Frieder <frieder.schrempf@kontron.de>
 To: Krzysztof Kozlowski <krzk@kernel.org>, Fabio Estevam <festevam@gmail.com>, 
  Schrempf Frieder <frieder.schrempf@kontron.de>, Mark Rutland
  <mark.rutland@arm.com>, NXP Linux Team <linux-imx@nxp.com>, "Pengutronix
  Kernel Team" <kernel@pengutronix.de>, Rob Herring <robh+dt@kernel.org>,
  "Sascha Hauer" <s.hauer@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH v2 10/11] MAINTAINERS: Add an entry for Kontron Electronics
- ARM board support
-Thread-Topic: [PATCH v2 10/11] MAINTAINERS: Add an entry for Kontron
- Electronics ARM board support
-Thread-Index: AQHVjkvzp/N7dg+mjkCwTQSNv+vrJQ==
-Date: Tue, 29 Oct 2019 11:28:13 +0000
-Message-ID: <20191029112655.15058-11-frieder.schrempf@kontron.de>
+Subject: [PATCH v2 11/11] ARM: dts: imx6ul-kontron-n6310-s-43: Add missing
+ includes for GPIOs and IRQs
+Thread-Topic: [PATCH v2 11/11] ARM: dts: imx6ul-kontron-n6310-s-43: Add
+ missing includes for GPIOs and IRQs
+Thread-Index: AQHVjkv1caDmIh8k/USvzgDB9794sg==
+Date: Tue, 29 Oct 2019 11:28:16 +0000
+Message-ID: <20191029112655.15058-12-frieder.schrempf@kontron.de>
 References: <20191029112655.15058-1-frieder.schrempf@kontron.de>
 In-Reply-To: <20191029112655.15058-1-frieder.schrempf@kontron.de>
 Accept-Language: de-DE, en-US
@@ -59,7 +59,7 @@ x-originating-ip: [172.25.9.193]
 x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
 MIME-Version: 1.0
 X-SnT-MailScanner-Information: Please contact the ISP for more information
-X-SnT-MailScanner-ID: 32CBA60CF62.AF66E
+X-SnT-MailScanner-ID: 33AF660CF51.AF070
 X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
  Provider for details
 X-SnT-MailScanner-SpamCheck: 
@@ -71,8 +71,8 @@ X-SnT-MailScanner-To: devicetree@vger.kernel.org, festevam@gmail.com,
  robh+dt@kernel.org, s.hauer@pengutronix.de, shawnguo@kernel.org
 X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_042817_329100_AB6C37EF 
-X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-CacheID: sfid-20191029_042819_898465_CE7A1D65 
+X-CRM114-Status: UNSURE (   9.88  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -104,33 +104,26 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Frieder Schrempf <frieder.schrempf@kontron.de>
 
-Kontron Electronics GmbH produces several ARM boards, that are
-planned to be upstreamed eventually. For now we have some
-i.MX6UL/ULL based SoMs and boards, that are already available
-in the kernel.
-
 Signed-off-by: Frieder Schrempf <frieder.schrempf@kontron.de>
+Fixes: 1ea4b76cdfde ("ARM: dts: imx6ul-kontron-n6310: Add Kontron i.MX6UL N6310 SoM and boards")
 ---
- MAINTAINERS | 6 ++++++
- 1 file changed, 6 insertions(+)
+ arch/arm/boot/dts/imx6ul-kontron-n6310-s-43.dts | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 296de2b51c83..a461d31ee98d 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -9103,6 +9103,12 @@ F:	include/linux/kmod.h
- F:	lib/test_kmod.c
- F:	tools/testing/selftests/kmod/
+diff --git a/arch/arm/boot/dts/imx6ul-kontron-n6310-s-43.dts b/arch/arm/boot/dts/imx6ul-kontron-n6310-s-43.dts
+index 5bad29683cc3..295bc3138fea 100644
+--- a/arch/arm/boot/dts/imx6ul-kontron-n6310-s-43.dts
++++ b/arch/arm/boot/dts/imx6ul-kontron-n6310-s-43.dts
+@@ -7,6 +7,9 @@
  
-+KONTRON ELECTRONICS ARM BOARDS SUPPORT
-+M:	Frieder Schrempf <frieder.schrempf@kontron.de>
-+S:	Maintained
-+F:	arch/arm/boot/dts/imx6ul-kontron-*
-+F:	arch/arm/boot/dts/imx6ull-kontron-*
+ #include "imx6ul-kontron-n6310-s.dts"
+ 
++#include <dt-bindings/interrupt-controller/irq.h>
++#include <dt-bindings/gpio/gpio.h>
 +
- KPROBES
- M:	Naveen N. Rao <naveen.n.rao@linux.ibm.com>
- M:	Anil S Keshavamurthy <anil.s.keshavamurthy@intel.com>
+ / {
+ 	model = "Kontron N6310 S 43";
+ 	compatible = "kontron,imx6ul-n6310-s-43", "kontron,imx6ul-n6310-s",
 -- 
 2.17.1
 
