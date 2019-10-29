@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4F16E8BFB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 16:40:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C11A4E8C08
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 16:42:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,27 +11,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Subject:Date:From:References:In-Reply-To:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=FaP50qz2Os1gSraLGi2fjz0ncbJEnMROkrPVhdEasNw=; b=AWzJzaSHhNAeVIh/6Lf6E/mxyX
-	x8rVDNX/i+/XoKlchE5UtG7Cuz54GpFO5QOkou09LrxiCwCGCl5asecOR1W0SwdlDvlfSEdQl9LN1
-	cGTQAMRY9fvl4wacqmV7ShZhZSZ7km9e17IZ/z5HPlVo36cTDS9+piw7UT2LD296YMdSCCIW0Td5l
-	yzrDLwtnLGPp6hA1LoCh3GMmxxmZ6vp9PbSUwDD7cQ3bxeWaqDviSihyQKcHwXPAYmhP6sFeV5QtG
-	0WIFoE2A5gV+DdB4B7uUaWV+chby7yh/S4L+I/5lp1KWzofjcb4tWAd2yCkuuIcnLrQLeq6sXWa4h
-	zm3Q8iJQ==;
+	bh=VvPQyyBTZpXrPkRw07Zcv0eG2yk2SiCIlszUSuyTUHg=; b=r6G7GhJLEgT7SMj/Gk88paaXve
+	dk/QgmKj9iM2J0+QaLDdGUUeGmYMAB+dMiutbAM4CrE2GmepogJcwn6pwmWi+8abxqDOANfyD4Q37
+	EU7+wpLM1w31s07ztMrTV/frvmUjnbYXxFzygf8/WbqgAY3f8OrYvNNJHYAnB1BOuOzsdJ3Al7siy
+	H1sYY8jlFaRxmzI6x1WkTd1Yt/kpyetVLZ8d0ACiL5DxKg9fVyP4hE+l2mZYap5qUsQBJ7HzeZI36
+	tin2oepVe4589eqUxOjBj5w2dSOSNJPpb1oakj0ElkCXh40hbuxmCtXQssPMDXVrqo38bsAJiYFx5
+	hIqy/0IA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPTbw-0000HB-DY; Tue, 29 Oct 2019 15:40:44 +0000
-Received: from verein.lst.de ([213.95.11.211])
+	id 1iPTdY-0001e3-00; Tue, 29 Oct 2019 15:42:24 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPTb0-00072e-7H
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 15:39:50 +0000
+ id 1iPTbF-0007Lk-TP
+ for linux-arm-kernel@bombadil.infradead.org; Tue, 29 Oct 2019 15:40:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Message-Id:Cc:To:Subject:Date:From:
+ References:In-Reply-To:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=QWaEE0C/NWtObSaioABdTp7g/r4QdcU4pM3jMoF7TAA=; b=asUidiLj6gYHKsWGQQt6mxLSy
+ 3iIX5gAWUvDqnzQMJBgdtUHopOr1kFCbBvuQBwfoFMMjkbsACb4mfmHww+NqT9BFt4fylzzEeD79s
+ 7oT1ry2QZyyPIMLtLILwBS6HIzYmZReqE83GkGRi8yiw82Bt6WGknEz0LJYak3lM9C6Uh34VaByfz
+ 3e8lVv9q5vHzaooFYA8UvfSDGn4ENeuJoVraU3oYcedbvvEYwbgHfmgocCVP2pZSKm1gae8leK5x1
+ +fflQEd6xKx0roFvGDxtee4OTez1RBqKZCALHEOqjZLzkT1Ng82cvZ2YCi1Knh5TJ1K4Rvf2yuZ1y
+ scoe0je9w==;
+Received: from verein.lst.de ([213.95.11.211])
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iPTbC-0006LO-Ci
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 15:40:00 +0000
 Received: by verein.lst.de (Postfix, from userid 2005)
- id AB2B468CEC; Tue, 29 Oct 2019 16:39:43 +0100 (CET)
+ id 669CD68D07; Tue, 29 Oct 2019 16:39:50 +0100 (CET)
 In-Reply-To: <20191029153815.C631668C4E@verein.lst.de>
 References: <20191029153815.C631668C4E@verein.lst.de>
 From: Torsten Duwe <duwe@lst.de>
 Date: Tue, 29 Oct 2019 13:16:57 +0100
-Subject: [PATCH v4 2/7] drm/bridge: split some definitions of ANX78xx to
- dedicated headers
+Subject: [PATCH v4 5/7] drm/bridge: Add Analogix anx6345 support
 To: Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Thierry Reding <thierry.reding@gmail.com>,
@@ -42,20 +57,18 @@ To: Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
  Vasily Khoruzhick <anarsoul@gmail.com>, Harald Geyer <harald@ccbib.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Thomas Gleixner <tglx@linutronix.de>
-Message-Id: <20191029153943.AB2B468CEC@verein.lst.de>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_083946_565553_0D0C0A0C 
-X-CRM114-Status: GOOD (  10.38  )
+Message-Id: <20191029153950.669CD68D07@verein.lst.de>
+X-Spam-Note: CRM114 invocation failed
 X-Spam-Score: 1.1 (+)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
  Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 1.1 DATE_IN_PAST_03_06     Date: is 3 to 6 hours before Received: date
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [213.95.11.211 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 1.1 DATE_IN_PAST_03_06     Date: is 3 to 6 hours before Received: date
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,1004 +90,854 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Icenowy Zheng <icenowy@aosc.io>
 
-Some definitions currently in analogix-anx78xx.h are not restricted to
-the ANX78xx series, but also applicable to other DisplayPort
-transmitters by Analogix.
+The ANX6345 is an ultra-low power DisplayPower/eDP transmitter designed
+for portable devices. This driver adds initial support for RGB to eDP
+mode, without HPD and interrupts.
 
-Split out them to dedicated headers, and make analogix-anx78xx.h include
-them.
+This is a configuration usually seen in eDP applications.
 
 Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
 Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
 Signed-off-by: Torsten Duwe <duwe@suse.de>
-Reviewed-by: Andrzej Hajda <a.hajda@samsung.com>
 ---
- drivers/gpu/drm/bridge/analogix/analogix-anx78xx.h | 465 +--------------------
- .../gpu/drm/bridge/analogix/analogix-i2c-dptx.h    | 247 +++++++++++
- .../drm/bridge/analogix/analogix-i2c-txcommon.h    | 233 +++++++++++
- 3 files changed, 485 insertions(+), 460 deletions(-)
- create mode 100644 drivers/gpu/drm/bridge/analogix/analogix-i2c-dptx.h
- create mode 100644 drivers/gpu/drm/bridge/analogix/analogix-i2c-txcommon.h
+ drivers/gpu/drm/bridge/analogix/Kconfig            |  12 +
+ drivers/gpu/drm/bridge/analogix/Makefile           |   1 +
+ drivers/gpu/drm/bridge/analogix/analogix-anx6345.c | 793 +++++++++++++++++++++
+ 3 files changed, 806 insertions(+)
+ create mode 100644 drivers/gpu/drm/bridge/analogix/analogix-anx6345.c
 
-diff --git a/drivers/gpu/drm/bridge/analogix/analogix-anx78xx.h b/drivers/gpu/drm/bridge/analogix/analogix-anx78xx.h
-index 25e063bcecbc..be68afc955c9 100644
---- a/drivers/gpu/drm/bridge/analogix/analogix-anx78xx.h
-+++ b/drivers/gpu/drm/bridge/analogix/analogix-anx78xx.h
-@@ -2,13 +2,15 @@
- /*
-  * Copyright(c) 2016, Analogix Semiconductor. All rights reserved.
-  */
--
- #ifndef __ANX78xx_H
- #define __ANX78xx_H
- 
--#define TX_P0				0x70
-+#include "analogix-i2c-dptx.h"
-+#include "analogix-i2c-txcommon.h"
+diff --git a/drivers/gpu/drm/bridge/analogix/Kconfig b/drivers/gpu/drm/bridge/analogix/Kconfig
+index 29ba1b21019e..1425a96a28c3 100644
+--- a/drivers/gpu/drm/bridge/analogix/Kconfig
++++ b/drivers/gpu/drm/bridge/analogix/Kconfig
+@@ -1,6 +1,18 @@
+ # SPDX-License-Identifier: GPL-2.0-only
++config DRM_ANALOGIX_ANX6345
++	tristate "Analogix ANX6345 bridge"
++	select DRM_ANALOGIX_DP
++	select DRM_KMS_HELPER
++	select REGMAP_I2C
++	help
++	  ANX6345 is an ultra-low Full-HD DisplayPort/eDP
++	  transmitter designed for portable devices. The
++	  ANX6345 transforms the LVTTL RGB output of an
++	  application processor to eDP or DisplayPort.
 +
-+#define TX_P0				ANALOGIX_I2C_DPTX
- #define TX_P1				0x7a
--#define TX_P2				0x72
-+#define TX_P2				ANALOGIX_I2C_TXCOMMON
- 
- #define RX_P0				0x7e
- #define RX_P1				0x80
-@@ -216,463 +218,6 @@
- #define SP_CLEAR_AVMUTE			BIT(4)
- #define SP_SET_AVMUTE			BIT(0)
- 
--/***************************************************************/
--/* Register definition of device address 0x70                  */
--/***************************************************************/
--
--/* HDCP Status Register */
--#define SP_TX_HDCP_STATUS_REG		0x00
--#define SP_AUTH_FAIL			BIT(5)
--#define SP_AUTHEN_PASS			BIT(1)
--
--/* HDCP Control Register 0 */
--#define SP_HDCP_CTRL0_REG		0x01
--#define SP_RX_REPEATER			BIT(6)
--#define SP_RE_AUTH			BIT(5)
--#define SP_SW_AUTH_OK			BIT(4)
--#define SP_HARD_AUTH_EN			BIT(3)
--#define SP_HDCP_ENC_EN			BIT(2)
--#define SP_BKSV_SRM_PASS		BIT(1)
--#define SP_KSVLIST_VLD			BIT(0)
--/* HDCP Function Enabled */
--#define SP_HDCP_FUNCTION_ENABLED	(BIT(0) | BIT(1) | BIT(2) | BIT(3))
--
--/* HDCP Receiver BSTATUS Register 0 */
--#define	SP_HDCP_RX_BSTATUS0_REG		0x1b
--/* HDCP Receiver BSTATUS Register 1 */
--#define	SP_HDCP_RX_BSTATUS1_REG		0x1c
--
--/* HDCP Embedded "Blue Screen" Content Registers */
--#define SP_HDCP_VID0_BLUE_SCREEN_REG	0x2c
--#define SP_HDCP_VID1_BLUE_SCREEN_REG	0x2d
--#define SP_HDCP_VID2_BLUE_SCREEN_REG	0x2e
--
--/* HDCP Wait R0 Timing Register */
--#define SP_HDCP_WAIT_R0_TIME_REG	0x40
--
--/* HDCP Link Integrity Check Timer Register */
--#define SP_HDCP_LINK_CHECK_TIMER_REG	0x41
--
--/* HDCP Repeater Ready Wait Timer Register */
--#define SP_HDCP_RPTR_RDY_WAIT_TIME_REG	0x42
--
--/* HDCP Auto Timer Register */
--#define SP_HDCP_AUTO_TIMER_REG		0x51
--
--/* HDCP Key Status Register */
--#define SP_HDCP_KEY_STATUS_REG		0x5e
--
--/* HDCP Key Command Register */
--#define SP_HDCP_KEY_COMMAND_REG		0x5f
--#define SP_DISABLE_SYNC_HDCP		BIT(2)
--
--/* OTP Memory Key Protection Registers */
--#define SP_OTP_KEY_PROTECT1_REG		0x60
--#define SP_OTP_KEY_PROTECT2_REG		0x61
--#define SP_OTP_KEY_PROTECT3_REG		0x62
--#define SP_OTP_PSW1			0xa2
--#define SP_OTP_PSW2			0x7e
--#define SP_OTP_PSW3			0xc6
--
--/* DP System Control Registers */
--#define SP_DP_SYSTEM_CTRL_BASE		(0x80 - 1)
--/* Bits for DP System Control Register 2 */
--#define SP_CHA_STA			BIT(2)
--/* Bits for DP System Control Register 3 */
--#define SP_HPD_STATUS			BIT(6)
--#define SP_STRM_VALID			BIT(2)
--/* Bits for DP System Control Register 4 */
--#define SP_ENHANCED_MODE		BIT(3)
--
--/* DP Video Control Register */
--#define SP_DP_VIDEO_CTRL_REG		0x84
--#define SP_COLOR_F_MASK			0x06
--#define SP_COLOR_F_SHIFT		1
--#define SP_BPC_MASK			0xe0
--#define SP_BPC_SHIFT			5
--#  define SP_BPC_6BITS			0x00
--#  define SP_BPC_8BITS			0x01
--#  define SP_BPC_10BITS			0x02
--#  define SP_BPC_12BITS			0x03
--
--/* DP Audio Control Register */
--#define SP_DP_AUDIO_CTRL_REG		0x87
--#define SP_AUD_EN			BIT(0)
--
--/* 10us Pulse Generate Timer Registers */
--#define SP_I2C_GEN_10US_TIMER0_REG	0x88
--#define SP_I2C_GEN_10US_TIMER1_REG	0x89
--
--/* Packet Send Control Register */
--#define SP_PACKET_SEND_CTRL_REG		0x90
--#define SP_AUD_IF_UP			BIT(7)
--#define SP_AVI_IF_UD			BIT(6)
--#define SP_MPEG_IF_UD			BIT(5)
--#define SP_SPD_IF_UD			BIT(4)
--#define SP_AUD_IF_EN			BIT(3)
--#define SP_AVI_IF_EN			BIT(2)
--#define SP_MPEG_IF_EN			BIT(1)
--#define SP_SPD_IF_EN			BIT(0)
--
--/* DP HDCP Control Register */
--#define SP_DP_HDCP_CTRL_REG		0x92
--#define SP_AUTO_EN			BIT(7)
--#define SP_AUTO_START			BIT(5)
--#define SP_LINK_POLLING			BIT(1)
--
--/* DP Main Link Bandwidth Setting Register */
--#define SP_DP_MAIN_LINK_BW_SET_REG	0xa0
--#define SP_LINK_BW_SET_MASK		0x1f
--#define SP_INITIAL_SLIM_M_AUD_SEL	BIT(5)
--
--/* DP Training Pattern Set Register */
--#define SP_DP_TRAINING_PATTERN_SET_REG	0xa2
--
--/* DP Lane 0 Link Training Control Register */
--#define SP_DP_LANE0_LT_CTRL_REG		0xa3
--#define SP_TX_SW_SET_MASK		0x1b
--#define SP_MAX_PRE_REACH		BIT(5)
--#define SP_MAX_DRIVE_REACH		BIT(4)
--#define SP_PRE_EMP_LEVEL1		BIT(3)
--#define SP_DRVIE_CURRENT_LEVEL1		BIT(0)
--
--/* DP Link Training Control Register */
--#define SP_DP_LT_CTRL_REG		0xa8
--#define SP_LT_ERROR_TYPE_MASK		0x70
--#  define SP_LT_NO_ERROR		0x00
--#  define SP_LT_AUX_WRITE_ERROR		0x01
--#  define SP_LT_MAX_DRIVE_REACHED	0x02
--#  define SP_LT_WRONG_LANE_COUNT_SET	0x03
--#  define SP_LT_LOOP_SAME_5_TIME	0x04
--#  define SP_LT_CR_FAIL_IN_EQ		0x05
--#  define SP_LT_EQ_LOOP_5_TIME		0x06
--#define SP_LT_EN			BIT(0)
--
--/* DP CEP Training Control Registers */
--#define SP_DP_CEP_TRAINING_CTRL0_REG	0xa9
--#define SP_DP_CEP_TRAINING_CTRL1_REG	0xaa
--
--/* DP Debug Register 1 */
--#define SP_DP_DEBUG1_REG		0xb0
--#define SP_DEBUG_PLL_LOCK		BIT(4)
--#define SP_POLLING_EN			BIT(1)
--
--/* DP Polling Control Register */
--#define SP_DP_POLLING_CTRL_REG		0xb4
--#define SP_AUTO_POLLING_DISABLE		BIT(0)
--
--/* DP Link Debug Control Register */
--#define SP_DP_LINK_DEBUG_CTRL_REG	0xb8
--#define SP_M_VID_DEBUG			BIT(5)
--#define SP_NEW_PRBS7			BIT(4)
--#define SP_INSERT_ER			BIT(1)
--#define SP_PRBS31_EN			BIT(0)
--
--/* AUX Misc control Register */
--#define SP_AUX_MISC_CTRL_REG		0xbf
--
--/* DP PLL control Register */
--#define SP_DP_PLL_CTRL_REG		0xc7
--#define SP_PLL_RST			BIT(6)
--
--/* DP Analog Power Down Register */
--#define SP_DP_ANALOG_POWER_DOWN_REG	0xc8
--#define SP_CH0_PD			BIT(0)
--
--/* DP Misc Control Register */
--#define SP_DP_MISC_CTRL_REG		0xcd
--#define SP_EQ_TRAINING_LOOP		BIT(6)
--
--/* DP Extra I2C Device Address Register */
--#define SP_DP_EXTRA_I2C_DEV_ADDR_REG	0xce
--#define SP_I2C_STRETCH_DISABLE		BIT(7)
--
--#define SP_I2C_EXTRA_ADDR		0x50
--
--/* DP Downspread Control Register 1 */
--#define SP_DP_DOWNSPREAD_CTRL1_REG	0xd0
--
--/* DP M Value Calculation Control Register */
--#define SP_DP_M_CALCULATION_CTRL_REG	0xd9
--#define SP_M_GEN_CLK_SEL		BIT(0)
--
--/* AUX Channel Access Status Register */
--#define SP_AUX_CH_STATUS_REG		0xe0
--#define SP_AUX_STATUS			0x0f
--
--/* AUX Channel DEFER Control Register */
--#define SP_AUX_DEFER_CTRL_REG		0xe2
--#define SP_DEFER_CTRL_EN		BIT(7)
--
--/* DP Buffer Data Count Register */
--#define SP_BUF_DATA_COUNT_REG		0xe4
--#define SP_BUF_DATA_COUNT_MASK		0x1f
--#define SP_BUF_CLR			BIT(7)
--
--/* DP AUX Channel Control Register 1 */
--#define SP_DP_AUX_CH_CTRL1_REG		0xe5
--#define SP_AUX_TX_COMM_MASK		0x0f
--#define SP_AUX_LENGTH_MASK		0xf0
--#define SP_AUX_LENGTH_SHIFT		4
--
--/* DP AUX CH Address Register 0 */
--#define SP_AUX_ADDR_7_0_REG		0xe6
--
--/* DP AUX CH Address Register 1 */
--#define SP_AUX_ADDR_15_8_REG		0xe7
--
--/* DP AUX CH Address Register 2 */
--#define SP_AUX_ADDR_19_16_REG		0xe8
--#define SP_AUX_ADDR_19_16_MASK		0x0f
--
--/* DP AUX Channel Control Register 2 */
--#define SP_DP_AUX_CH_CTRL2_REG		0xe9
--#define SP_AUX_SEL_RXCM			BIT(6)
--#define SP_AUX_CHSEL			BIT(3)
--#define SP_AUX_PN_INV			BIT(2)
--#define SP_ADDR_ONLY			BIT(1)
--#define SP_AUX_EN			BIT(0)
--
--/* DP Video Stream Control InfoFrame Register */
--#define SP_DP_3D_VSC_CTRL_REG		0xea
--#define SP_INFO_FRAME_VSC_EN		BIT(0)
--
--/* DP Video Stream Data Byte 1 Register */
--#define SP_DP_VSC_DB1_REG		0xeb
--
--/* DP AUX Channel Control Register 3 */
--#define SP_DP_AUX_CH_CTRL3_REG		0xec
--#define SP_WAIT_COUNTER_7_0_MASK	0xff
--
--/* DP AUX Channel Control Register 4 */
--#define SP_DP_AUX_CH_CTRL4_REG		0xed
--
--/* DP AUX Buffer Data Registers */
--#define SP_DP_BUF_DATA0_REG		0xf0
--
--/***************************************************************/
--/* Register definition of device address 0x72                  */
--/***************************************************************/
--
--/*
-- * Core Register Definitions
-- */
--
--/* Device ID Low Byte Register */
--#define SP_DEVICE_IDL_REG		0x02
--
--/* Device ID High Byte Register */
--#define SP_DEVICE_IDH_REG		0x03
--
--/* Device version register */
--#define SP_DEVICE_VERSION_REG		0x04
--
--/* Power Down Control Register */
--#define SP_POWERDOWN_CTRL_REG		0x05
--#define SP_REGISTER_PD			BIT(7)
--#define SP_HDCP_PD			BIT(5)
--#define SP_AUDIO_PD			BIT(4)
--#define SP_VIDEO_PD			BIT(3)
--#define SP_LINK_PD			BIT(2)
--#define SP_TOTAL_PD			BIT(1)
--
--/* Reset Control Register 1 */
--#define SP_RESET_CTRL1_REG		0x06
--#define SP_MISC_RST			BIT(7)
--#define SP_VIDCAP_RST			BIT(6)
--#define SP_VIDFIF_RST			BIT(5)
--#define SP_AUDFIF_RST			BIT(4)
--#define SP_AUDCAP_RST			BIT(3)
--#define SP_HDCP_RST			BIT(2)
--#define SP_SW_RST			BIT(1)
--#define SP_HW_RST			BIT(0)
--
--/* Reset Control Register 2 */
--#define SP_RESET_CTRL2_REG		0x07
--#define SP_AUX_RST			BIT(2)
--#define SP_SERDES_FIFO_RST		BIT(1)
--#define SP_I2C_REG_RST			BIT(0)
--
--/* Video Control Register 1 */
--#define SP_VID_CTRL1_REG		0x08
--#define SP_VIDEO_EN			BIT(7)
--#define SP_VIDEO_MUTE			BIT(2)
--#define SP_DE_GEN			BIT(1)
--#define SP_DEMUX			BIT(0)
--
--/* Video Control Register 2 */
--#define SP_VID_CTRL2_REG		0x09
--#define SP_IN_COLOR_F_MASK		0x03
--#define SP_IN_YC_BIT_SEL		BIT(2)
--#define SP_IN_BPC_MASK			0x70
--#define SP_IN_BPC_SHIFT			4
--#  define SP_IN_BPC_12BIT		0x03
--#  define SP_IN_BPC_10BIT		0x02
--#  define SP_IN_BPC_8BIT		0x01
--#  define SP_IN_BPC_6BIT		0x00
--#define SP_IN_D_RANGE			BIT(7)
--
--/* Video Control Register 3 */
--#define SP_VID_CTRL3_REG		0x0a
--#define SP_HPD_OUT			BIT(6)
--
--/* Video Control Register 5 */
--#define SP_VID_CTRL5_REG		0x0c
--#define SP_CSC_STD_SEL			BIT(7)
--#define SP_XVYCC_RNG_LMT		BIT(6)
--#define SP_RANGE_Y2R			BIT(5)
--#define SP_CSPACE_Y2R			BIT(4)
--#define SP_RGB_RNG_LMT			BIT(3)
--#define SP_Y_RNG_LMT			BIT(2)
--#define SP_RANGE_R2Y			BIT(1)
--#define SP_CSPACE_R2Y			BIT(0)
--
--/* Video Control Register 6 */
--#define SP_VID_CTRL6_REG		0x0d
--#define SP_TEST_PATTERN_EN		BIT(7)
--#define SP_VIDEO_PROCESS_EN		BIT(6)
--#define SP_VID_US_MODE			BIT(3)
--#define SP_VID_DS_MODE			BIT(2)
--#define SP_UP_SAMPLE			BIT(1)
--#define SP_DOWN_SAMPLE			BIT(0)
--
--/* Video Control Register 8 */
--#define SP_VID_CTRL8_REG		0x0f
--#define SP_VID_VRES_TH			BIT(0)
--
--/* Total Line Status Low Byte Register */
--#define SP_TOTAL_LINE_STAL_REG		0x24
--
--/* Total Line Status High Byte Register */
--#define SP_TOTAL_LINE_STAH_REG		0x25
--
--/* Active Line Status Low Byte Register */
--#define SP_ACT_LINE_STAL_REG		0x26
--
--/* Active Line Status High Byte Register */
--#define SP_ACT_LINE_STAH_REG		0x27
--
--/* Vertical Front Porch Status Register */
--#define SP_V_F_PORCH_STA_REG		0x28
--
--/* Vertical SYNC Width Status Register */
--#define SP_V_SYNC_STA_REG		0x29
--
--/* Vertical Back Porch Status Register */
--#define SP_V_B_PORCH_STA_REG		0x2a
--
--/* Total Pixel Status Low Byte Register */
--#define SP_TOTAL_PIXEL_STAL_REG		0x2b
--
--/* Total Pixel Status High Byte Register */
--#define SP_TOTAL_PIXEL_STAH_REG		0x2c
--
--/* Active Pixel Status Low Byte Register */
--#define SP_ACT_PIXEL_STAL_REG		0x2d
--
--/* Active Pixel Status High Byte Register */
--#define SP_ACT_PIXEL_STAH_REG		0x2e
--
--/* Horizontal Front Porch Status Low Byte Register */
--#define SP_H_F_PORCH_STAL_REG		0x2f
--
--/* Horizontal Front Porch Statys High Byte Register */
--#define SP_H_F_PORCH_STAH_REG		0x30
--
--/* Horizontal SYNC Width Status Low Byte Register */
--#define SP_H_SYNC_STAL_REG		0x31
--
--/* Horizontal SYNC Width Status High Byte Register */
--#define SP_H_SYNC_STAH_REG		0x32
--
--/* Horizontal Back Porch Status Low Byte Register */
--#define SP_H_B_PORCH_STAL_REG		0x33
--
--/* Horizontal Back Porch Status High Byte Register */
--#define SP_H_B_PORCH_STAH_REG		0x34
--
--/* InfoFrame AVI Packet DB1 Register */
--#define SP_INFOFRAME_AVI_DB1_REG	0x70
--
--/* Bit Control Specific Register */
--#define SP_BIT_CTRL_SPECIFIC_REG	0x80
--#define SP_BIT_CTRL_SELECT_SHIFT	1
--#define SP_ENABLE_BIT_CTRL		BIT(0)
--
--/* InfoFrame Audio Packet DB1 Register */
--#define SP_INFOFRAME_AUD_DB1_REG	0x83
--
--/* InfoFrame MPEG Packet DB1 Register */
--#define SP_INFOFRAME_MPEG_DB1_REG	0xb0
--
--/* Audio Channel Status Registers */
--#define SP_AUD_CH_STATUS_BASE		0xd0
--
--/* Audio Channel Num Register 5 */
--#define SP_I2S_CHANNEL_NUM_MASK		0xe0
--#  define SP_I2S_CH_NUM_1		(0x00 << 5)
--#  define SP_I2S_CH_NUM_2		(0x01 << 5)
--#  define SP_I2S_CH_NUM_3		(0x02 << 5)
--#  define SP_I2S_CH_NUM_4		(0x03 << 5)
--#  define SP_I2S_CH_NUM_5		(0x04 << 5)
--#  define SP_I2S_CH_NUM_6		(0x05 << 5)
--#  define SP_I2S_CH_NUM_7		(0x06 << 5)
--#  define SP_I2S_CH_NUM_8		(0x07 << 5)
--#define SP_EXT_VUCP			BIT(2)
--#define SP_VBIT				BIT(1)
--#define SP_AUDIO_LAYOUT			BIT(0)
--
--/* Analog Debug Register 2 */
--#define SP_ANALOG_DEBUG2_REG		0xdd
--#define SP_FORCE_SW_OFF_BYPASS		0x20
--#define SP_XTAL_FRQ			0x1c
--#  define SP_XTAL_FRQ_19M2		(0x00 << 2)
--#  define SP_XTAL_FRQ_24M		(0x01 << 2)
--#  define SP_XTAL_FRQ_25M		(0x02 << 2)
--#  define SP_XTAL_FRQ_26M		(0x03 << 2)
--#  define SP_XTAL_FRQ_27M		(0x04 << 2)
--#  define SP_XTAL_FRQ_38M4		(0x05 << 2)
--#  define SP_XTAL_FRQ_52M		(0x06 << 2)
--#define SP_POWERON_TIME_1P5MS		0x03
--
--/* Analog Control 0 Register */
--#define SP_ANALOG_CTRL0_REG		0xe1
--
--/* Common Interrupt Status Register 1 */
--#define SP_COMMON_INT_STATUS_BASE	(0xf1 - 1)
--#define SP_PLL_LOCK_CHG			0x40
--
--/* Common Interrupt Status Register 2 */
--#define SP_COMMON_INT_STATUS2		0xf2
--#define SP_HDCP_AUTH_CHG		BIT(1)
--#define SP_HDCP_AUTH_DONE		BIT(0)
--
--#define SP_HDCP_LINK_CHECK_FAIL		BIT(0)
--
--/* Common Interrupt Status Register 4 */
--#define SP_COMMON_INT_STATUS4_REG	0xf4
--#define SP_HPD_IRQ			BIT(6)
--#define SP_HPD_ESYNC_ERR		BIT(4)
--#define SP_HPD_CHG			BIT(2)
--#define SP_HPD_LOST			BIT(1)
--#define SP_HPD_PLUG			BIT(0)
--
--/* DP Interrupt Status Register */
--#define SP_DP_INT_STATUS1_REG		0xf7
--#define SP_TRAINING_FINISH		BIT(5)
--#define SP_POLLING_ERR			BIT(4)
--
--/* Common Interrupt Mask Register */
--#define SP_COMMON_INT_MASK_BASE		(0xf8 - 1)
--
--#define SP_COMMON_INT_MASK4_REG		0xfb
--
--/* DP Interrupts Mask Register */
--#define SP_DP_INT_MASK1_REG		0xfe
--
--/* Interrupt Control Register */
--#define SP_INT_CTRL_REG			0xff
--
- /***************************************************************/
- /* Register definition of device address 0x7a                  */
- /***************************************************************/
-diff --git a/drivers/gpu/drm/bridge/analogix/analogix-i2c-dptx.h b/drivers/gpu/drm/bridge/analogix/analogix-i2c-dptx.h
+ config DRM_ANALOGIX_ANX78XX
+ 	tristate "Analogix ANX78XX bridge"
++	select DRM_ANALOGIX_DP
+ 	select DRM_KMS_HELPER
+ 	select REGMAP_I2C
+ 	help
+diff --git a/drivers/gpu/drm/bridge/analogix/Makefile b/drivers/gpu/drm/bridge/analogix/Makefile
+index 7623b9b80167..97669b374098 100644
+--- a/drivers/gpu/drm/bridge/analogix/Makefile
++++ b/drivers/gpu/drm/bridge/analogix/Makefile
+@@ -1,4 +1,5 @@
+ # SPDX-License-Identifier: GPL-2.0-only
+ analogix_dp-objs := analogix_dp_core.o analogix_dp_reg.o analogix-i2c-dptx.o
++obj-$(CONFIG_DRM_ANALOGIX_ANX6345) += analogix-anx6345.o
+ obj-$(CONFIG_DRM_ANALOGIX_ANX78XX) += analogix-anx78xx.o
+ obj-$(CONFIG_DRM_ANALOGIX_DP) += analogix_dp.o
+diff --git a/drivers/gpu/drm/bridge/analogix/analogix-anx6345.c b/drivers/gpu/drm/bridge/analogix/analogix-anx6345.c
 new file mode 100644
-index 000000000000..6295be668cae
+index 000000000000..af09a61eb472
 --- /dev/null
-+++ b/drivers/gpu/drm/bridge/analogix/analogix-i2c-dptx.h
-@@ -0,0 +1,247 @@
++++ b/drivers/gpu/drm/bridge/analogix/analogix-anx6345.c
+@@ -0,1 +1,793 @@
 +/* SPDX-License-Identifier: GPL-2.0-only */
 +/*
 + * Copyright(c) 2016, Analogix Semiconductor.
++ * Copyright(c) 2017, Icenowy Zheng <icenowy@aosc.io>
 + *
 + * Based on anx7808 driver obtained from chromeos with copyright:
 + * Copyright(c) 2013, Google Inc.
 + */
-+#ifndef _ANALOGIX_I2C_DPTX_H_
-+#define _ANALOGIX_I2C_DPTX_H_
-+
-+#define ANALOGIX_I2C_DPTX		0x70
-+
-+/***************************************************************/
-+/* Register definition of device address 0x70                  */
-+/***************************************************************/
-+
-+/* HDCP Status Register */
-+#define SP_TX_HDCP_STATUS_REG		0x00
-+#define SP_AUTH_FAIL			BIT(5)
-+#define SP_AUTHEN_PASS			BIT(1)
-+
-+/* HDCP Control Register 0 */
-+#define SP_HDCP_CTRL0_REG		0x01
-+#define SP_RX_REPEATER			BIT(6)
-+#define SP_RE_AUTH			BIT(5)
-+#define SP_SW_AUTH_OK			BIT(4)
-+#define SP_HARD_AUTH_EN			BIT(3)
-+#define SP_HDCP_ENC_EN			BIT(2)
-+#define SP_BKSV_SRM_PASS		BIT(1)
-+#define SP_KSVLIST_VLD			BIT(0)
-+/* HDCP Function Enabled */
-+#define SP_HDCP_FUNCTION_ENABLED	(BIT(0) | BIT(1) | BIT(2) | BIT(3))
-+
-+/* HDCP Receiver BSTATUS Register 0 */
-+#define	SP_HDCP_RX_BSTATUS0_REG		0x1b
-+/* HDCP Receiver BSTATUS Register 1 */
-+#define	SP_HDCP_RX_BSTATUS1_REG		0x1c
-+
-+/* HDCP Embedded "Blue Screen" Content Registers */
-+#define SP_HDCP_VID0_BLUE_SCREEN_REG	0x2c
-+#define SP_HDCP_VID1_BLUE_SCREEN_REG	0x2d
-+#define SP_HDCP_VID2_BLUE_SCREEN_REG	0x2e
-+
-+/* HDCP Wait R0 Timing Register */
-+#define SP_HDCP_WAIT_R0_TIME_REG	0x40
-+
-+/* HDCP Link Integrity Check Timer Register */
-+#define SP_HDCP_LINK_CHECK_TIMER_REG	0x41
-+
-+/* HDCP Repeater Ready Wait Timer Register */
-+#define SP_HDCP_RPTR_RDY_WAIT_TIME_REG	0x42
-+
-+/* HDCP Auto Timer Register */
-+#define SP_HDCP_AUTO_TIMER_REG		0x51
-+
-+/* HDCP Key Status Register */
-+#define SP_HDCP_KEY_STATUS_REG		0x5e
-+
-+/* HDCP Key Command Register */
-+#define SP_HDCP_KEY_COMMAND_REG		0x5f
-+#define SP_DISABLE_SYNC_HDCP		BIT(2)
-+
-+/* OTP Memory Key Protection Registers */
-+#define SP_OTP_KEY_PROTECT1_REG		0x60
-+#define SP_OTP_KEY_PROTECT2_REG		0x61
-+#define SP_OTP_KEY_PROTECT3_REG		0x62
-+#define SP_OTP_PSW1			0xa2
-+#define SP_OTP_PSW2			0x7e
-+#define SP_OTP_PSW3			0xc6
-+
-+/* DP System Control Registers */
-+#define SP_DP_SYSTEM_CTRL_BASE		(0x80 - 1)
-+/* Bits for DP System Control Register 2 */
-+#define SP_CHA_STA			BIT(2)
-+/* Bits for DP System Control Register 3 */
-+#define SP_HPD_STATUS			BIT(6)
-+#define SP_STRM_VALID			BIT(2)
-+/* Bits for DP System Control Register 4 */
-+#define SP_ENHANCED_MODE		BIT(3)
-+
-+/* DP Video Control Register */
-+#define SP_DP_VIDEO_CTRL_REG		0x84
-+#define SP_COLOR_F_MASK			0x06
-+#define SP_COLOR_F_SHIFT		1
-+#define SP_BPC_MASK			0xe0
-+#define SP_BPC_SHIFT			5
-+#  define SP_BPC_6BITS			0x00
-+#  define SP_BPC_8BITS			0x01
-+#  define SP_BPC_10BITS			0x02
-+#  define SP_BPC_12BITS			0x03
-+
-+/* DP Audio Control Register */
-+#define SP_DP_AUDIO_CTRL_REG		0x87
-+#define SP_AUD_EN			BIT(0)
-+
-+/* 10us Pulse Generate Timer Registers */
-+#define SP_I2C_GEN_10US_TIMER0_REG	0x88
-+#define SP_I2C_GEN_10US_TIMER1_REG	0x89
-+
-+/* Packet Send Control Register */
-+#define SP_PACKET_SEND_CTRL_REG		0x90
-+#define SP_AUD_IF_UP			BIT(7)
-+#define SP_AVI_IF_UD			BIT(6)
-+#define SP_MPEG_IF_UD			BIT(5)
-+#define SP_SPD_IF_UD			BIT(4)
-+#define SP_AUD_IF_EN			BIT(3)
-+#define SP_AVI_IF_EN			BIT(2)
-+#define SP_MPEG_IF_EN			BIT(1)
-+#define SP_SPD_IF_EN			BIT(0)
-+
-+/* DP HDCP Control Register */
-+#define SP_DP_HDCP_CTRL_REG		0x92
-+#define SP_AUTO_EN			BIT(7)
-+#define SP_AUTO_START			BIT(5)
-+#define SP_LINK_POLLING			BIT(1)
-+
-+/* DP Main Link Bandwidth Setting Register */
-+#define SP_DP_MAIN_LINK_BW_SET_REG	0xa0
-+#define SP_LINK_BW_SET_MASK		0x1f
-+#define SP_INITIAL_SLIM_M_AUD_SEL	BIT(5)
-+
-+/* DP Training Pattern Set Register */
-+#define SP_DP_TRAINING_PATTERN_SET_REG	0xa2
-+
-+/* DP Lane 0 Link Training Control Register */
-+#define SP_DP_LANE0_LT_CTRL_REG		0xa3
-+#define SP_TX_SW_SET_MASK		0x1b
-+#define SP_MAX_PRE_REACH		BIT(5)
-+#define SP_MAX_DRIVE_REACH		BIT(4)
-+#define SP_PRE_EMP_LEVEL1		BIT(3)
-+#define SP_DRVIE_CURRENT_LEVEL1		BIT(0)
-+
-+/* DP Link Training Control Register */
-+#define SP_DP_LT_CTRL_REG		0xa8
-+#define SP_LT_ERROR_TYPE_MASK		0x70
-+#  define SP_LT_NO_ERROR		0x00
-+#  define SP_LT_AUX_WRITE_ERROR		0x01
-+#  define SP_LT_MAX_DRIVE_REACHED	0x02
-+#  define SP_LT_WRONG_LANE_COUNT_SET	0x03
-+#  define SP_LT_LOOP_SAME_5_TIME	0x04
-+#  define SP_LT_CR_FAIL_IN_EQ		0x05
-+#  define SP_LT_EQ_LOOP_5_TIME		0x06
-+#define SP_LT_EN			BIT(0)
-+
-+/* DP CEP Training Control Registers */
-+#define SP_DP_CEP_TRAINING_CTRL0_REG	0xa9
-+#define SP_DP_CEP_TRAINING_CTRL1_REG	0xaa
-+
-+/* DP Debug Register 1 */
-+#define SP_DP_DEBUG1_REG		0xb0
-+#define SP_DEBUG_PLL_LOCK		BIT(4)
-+#define SP_POLLING_EN			BIT(1)
-+
-+/* DP Polling Control Register */
-+#define SP_DP_POLLING_CTRL_REG		0xb4
-+#define SP_AUTO_POLLING_DISABLE		BIT(0)
-+
-+/* DP Link Debug Control Register */
-+#define SP_DP_LINK_DEBUG_CTRL_REG	0xb8
-+#define SP_M_VID_DEBUG			BIT(5)
-+#define SP_NEW_PRBS7			BIT(4)
-+#define SP_INSERT_ER			BIT(1)
-+#define SP_PRBS31_EN			BIT(0)
-+
-+/* AUX Misc control Register */
-+#define SP_AUX_MISC_CTRL_REG		0xbf
-+
-+/* DP PLL control Register */
-+#define SP_DP_PLL_CTRL_REG		0xc7
-+#define SP_PLL_RST			BIT(6)
-+
-+/* DP Analog Power Down Register */
-+#define SP_DP_ANALOG_POWER_DOWN_REG	0xc8
-+#define SP_CH0_PD			BIT(0)
-+
-+/* DP Misc Control Register */
-+#define SP_DP_MISC_CTRL_REG		0xcd
-+#define SP_EQ_TRAINING_LOOP		BIT(6)
-+
-+/* DP Extra I2C Device Address Register */
-+#define SP_DP_EXTRA_I2C_DEV_ADDR_REG	0xce
-+#define SP_I2C_STRETCH_DISABLE		BIT(7)
-+
-+#define SP_I2C_EXTRA_ADDR		0x50
-+
-+/* DP Downspread Control Register 1 */
-+#define SP_DP_DOWNSPREAD_CTRL1_REG	0xd0
-+
-+/* DP M Value Calculation Control Register */
-+#define SP_DP_M_CALCULATION_CTRL_REG	0xd9
-+#define SP_M_GEN_CLK_SEL		BIT(0)
-+
-+/* AUX Channel Access Status Register */
-+#define SP_AUX_CH_STATUS_REG		0xe0
-+#define SP_AUX_STATUS			0x0f
-+
-+/* AUX Channel DEFER Control Register */
-+#define SP_AUX_DEFER_CTRL_REG		0xe2
-+#define SP_DEFER_CTRL_EN		BIT(7)
-+
-+/* DP Buffer Data Count Register */
-+#define SP_BUF_DATA_COUNT_REG		0xe4
-+#define SP_BUF_DATA_COUNT_MASK		0x1f
-+#define SP_BUF_CLR			BIT(7)
-+
-+/* DP AUX Channel Control Register 1 */
-+#define SP_DP_AUX_CH_CTRL1_REG		0xe5
-+#define SP_AUX_TX_COMM_MASK		0x0f
-+#define SP_AUX_LENGTH_MASK		0xf0
-+#define SP_AUX_LENGTH_SHIFT		4
-+
-+/* DP AUX CH Address Register 0 */
-+#define SP_AUX_ADDR_7_0_REG		0xe6
-+
-+/* DP AUX CH Address Register 1 */
-+#define SP_AUX_ADDR_15_8_REG		0xe7
-+
-+/* DP AUX CH Address Register 2 */
-+#define SP_AUX_ADDR_19_16_REG		0xe8
-+#define SP_AUX_ADDR_19_16_MASK		0x0f
-+
-+/* DP AUX Channel Control Register 2 */
-+#define SP_DP_AUX_CH_CTRL2_REG		0xe9
-+#define SP_AUX_SEL_RXCM			BIT(6)
-+#define SP_AUX_CHSEL			BIT(3)
-+#define SP_AUX_PN_INV			BIT(2)
-+#define SP_ADDR_ONLY			BIT(1)
-+#define SP_AUX_EN			BIT(0)
-+
-+/* DP Video Stream Control InfoFrame Register */
-+#define SP_DP_3D_VSC_CTRL_REG		0xea
-+#define SP_INFO_FRAME_VSC_EN		BIT(0)
-+
-+/* DP Video Stream Data Byte 1 Register */
-+#define SP_DP_VSC_DB1_REG		0xeb
-+
-+/* DP AUX Channel Control Register 3 */
-+#define SP_DP_AUX_CH_CTRL3_REG		0xec
-+#define SP_WAIT_COUNTER_7_0_MASK	0xff
-+
-+/* DP AUX Channel Control Register 4 */
-+#define SP_DP_AUX_CH_CTRL4_REG		0xed
-+
-+/* DP AUX Buffer Data Registers */
-+#define SP_DP_BUF_DATA0_REG		0xf0
-+
-+#endif
-diff --git a/drivers/gpu/drm/bridge/analogix/analogix-i2c-txcommon.h b/drivers/gpu/drm/bridge/analogix/analogix-i2c-txcommon.h
-new file mode 100644
-index 000000000000..c1030e0f74cc
---- /dev/null
-+++ b/drivers/gpu/drm/bridge/analogix/analogix-i2c-txcommon.h
-@@ -0,0 +1,233 @@
-+/* SPDX-License-Identifier: GPL-2.0-only */
-+/*
-+ * Copyright(c) 2016, Analogix Semiconductor. All rights reserved.
-+ */
-+#ifndef _ANALOGIX_I2C_TXCOMMON_H_
-+#define _ANALOGIX_I2C_TXCOMMON_H_
-+
-+#define ANALOGIX_I2C_TXCOMMON		0x72
-+
-+/***************************************************************/
-+/* Register definition of device address 0x72                  */
-+/***************************************************************/
-+
-+/*
-+ * Core Register Definitions
-+ */
-+
-+/* Device ID Low Byte Register */
-+#define SP_DEVICE_IDL_REG		0x02
-+
-+/* Device ID High Byte Register */
-+#define SP_DEVICE_IDH_REG		0x03
-+
-+/* Device version register */
-+#define SP_DEVICE_VERSION_REG		0x04
-+
-+/* Power Down Control Register */
-+#define SP_POWERDOWN_CTRL_REG		0x05
-+#define SP_REGISTER_PD			BIT(7)
-+#define SP_HDCP_PD			BIT(5)
-+#define SP_AUDIO_PD			BIT(4)
-+#define SP_VIDEO_PD			BIT(3)
-+#define SP_LINK_PD			BIT(2)
-+#define SP_TOTAL_PD			BIT(1)
-+
-+/* Reset Control Register 1 */
-+#define SP_RESET_CTRL1_REG		0x06
-+#define SP_MISC_RST			BIT(7)
-+#define SP_VIDCAP_RST			BIT(6)
-+#define SP_VIDFIF_RST			BIT(5)
-+#define SP_AUDFIF_RST			BIT(4)
-+#define SP_AUDCAP_RST			BIT(3)
-+#define SP_HDCP_RST			BIT(2)
-+#define SP_SW_RST			BIT(1)
-+#define SP_HW_RST			BIT(0)
-+
-+/* Reset Control Register 2 */
-+#define SP_RESET_CTRL2_REG		0x07
-+#define SP_AUX_RST			BIT(2)
-+#define SP_SERDES_FIFO_RST		BIT(1)
-+#define SP_I2C_REG_RST			BIT(0)
-+
-+/* Video Control Register 1 */
-+#define SP_VID_CTRL1_REG		0x08
-+#define SP_VIDEO_EN			BIT(7)
-+#define SP_VIDEO_MUTE			BIT(2)
-+#define SP_DE_GEN			BIT(1)
-+#define SP_DEMUX			BIT(0)
-+
-+/* Video Control Register 2 */
-+#define SP_VID_CTRL2_REG		0x09
-+#define SP_IN_COLOR_F_MASK		0x03
-+#define SP_IN_YC_BIT_SEL		BIT(2)
-+#define SP_IN_BPC_MASK			0x70
-+#define SP_IN_BPC_SHIFT			4
-+#  define SP_IN_BPC_12BIT		0x03
-+#  define SP_IN_BPC_10BIT		0x02
-+#  define SP_IN_BPC_8BIT		0x01
-+#  define SP_IN_BPC_6BIT		0x00
-+#define SP_IN_D_RANGE			BIT(7)
-+
-+/* Video Control Register 3 */
-+#define SP_VID_CTRL3_REG		0x0a
-+#define SP_HPD_OUT			BIT(6)
-+
-+/* Video Control Register 5 */
-+#define SP_VID_CTRL5_REG		0x0c
-+#define SP_CSC_STD_SEL			BIT(7)
-+#define SP_XVYCC_RNG_LMT		BIT(6)
-+#define SP_RANGE_Y2R			BIT(5)
-+#define SP_CSPACE_Y2R			BIT(4)
-+#define SP_RGB_RNG_LMT			BIT(3)
-+#define SP_Y_RNG_LMT			BIT(2)
-+#define SP_RANGE_R2Y			BIT(1)
-+#define SP_CSPACE_R2Y			BIT(0)
-+
-+/* Video Control Register 6 */
-+#define SP_VID_CTRL6_REG		0x0d
-+#define SP_TEST_PATTERN_EN		BIT(7)
-+#define SP_VIDEO_PROCESS_EN		BIT(6)
-+#define SP_VID_US_MODE			BIT(3)
-+#define SP_VID_DS_MODE			BIT(2)
-+#define SP_UP_SAMPLE			BIT(1)
-+#define SP_DOWN_SAMPLE			BIT(0)
-+
-+/* Video Control Register 8 */
-+#define SP_VID_CTRL8_REG		0x0f
-+#define SP_VID_VRES_TH			BIT(0)
-+
-+/* Total Line Status Low Byte Register */
-+#define SP_TOTAL_LINE_STAL_REG		0x24
-+
-+/* Total Line Status High Byte Register */
-+#define SP_TOTAL_LINE_STAH_REG		0x25
-+
-+/* Active Line Status Low Byte Register */
-+#define SP_ACT_LINE_STAL_REG		0x26
-+
-+/* Active Line Status High Byte Register */
-+#define SP_ACT_LINE_STAH_REG		0x27
-+
-+/* Vertical Front Porch Status Register */
-+#define SP_V_F_PORCH_STA_REG		0x28
-+
-+/* Vertical SYNC Width Status Register */
-+#define SP_V_SYNC_STA_REG		0x29
-+
-+/* Vertical Back Porch Status Register */
-+#define SP_V_B_PORCH_STA_REG		0x2a
-+
-+/* Total Pixel Status Low Byte Register */
-+#define SP_TOTAL_PIXEL_STAL_REG		0x2b
-+
-+/* Total Pixel Status High Byte Register */
-+#define SP_TOTAL_PIXEL_STAH_REG		0x2c
-+
-+/* Active Pixel Status Low Byte Register */
-+#define SP_ACT_PIXEL_STAL_REG		0x2d
-+
-+/* Active Pixel Status High Byte Register */
-+#define SP_ACT_PIXEL_STAH_REG		0x2e
-+
-+/* Horizontal Front Porch Status Low Byte Register */
-+#define SP_H_F_PORCH_STAL_REG		0x2f
-+
-+/* Horizontal Front Porch Statys High Byte Register */
-+#define SP_H_F_PORCH_STAH_REG		0x30
-+
-+/* Horizontal SYNC Width Status Low Byte Register */
-+#define SP_H_SYNC_STAL_REG		0x31
-+
-+/* Horizontal SYNC Width Status High Byte Register */
-+#define SP_H_SYNC_STAH_REG		0x32
-+
-+/* Horizontal Back Porch Status Low Byte Register */
-+#define SP_H_B_PORCH_STAL_REG		0x33
-+
-+/* Horizontal Back Porch Status High Byte Register */
-+#define SP_H_B_PORCH_STAH_REG		0x34
-+
-+/* InfoFrame AVI Packet DB1 Register */
-+#define SP_INFOFRAME_AVI_DB1_REG	0x70
-+
-+/* Bit Control Specific Register */
-+#define SP_BIT_CTRL_SPECIFIC_REG	0x80
-+#define SP_BIT_CTRL_SELECT_SHIFT	1
-+#define SP_ENABLE_BIT_CTRL		BIT(0)
-+
-+/* InfoFrame Audio Packet DB1 Register */
-+#define SP_INFOFRAME_AUD_DB1_REG	0x83
-+
-+/* InfoFrame MPEG Packet DB1 Register */
-+#define SP_INFOFRAME_MPEG_DB1_REG	0xb0
-+
-+/* Audio Channel Status Registers */
-+#define SP_AUD_CH_STATUS_BASE		0xd0
-+
-+/* Audio Channel Num Register 5 */
-+#define SP_I2S_CHANNEL_NUM_MASK		0xe0
-+#  define SP_I2S_CH_NUM_1		(0x00 << 5)
-+#  define SP_I2S_CH_NUM_2		(0x01 << 5)
-+#  define SP_I2S_CH_NUM_3		(0x02 << 5)
-+#  define SP_I2S_CH_NUM_4		(0x03 << 5)
-+#  define SP_I2S_CH_NUM_5		(0x04 << 5)
-+#  define SP_I2S_CH_NUM_6		(0x05 << 5)
-+#  define SP_I2S_CH_NUM_7		(0x06 << 5)
-+#  define SP_I2S_CH_NUM_8		(0x07 << 5)
-+#define SP_EXT_VUCP			BIT(2)
-+#define SP_VBIT				BIT(1)
-+#define SP_AUDIO_LAYOUT			BIT(0)
-+
-+/* Analog Debug Register 2 */
-+#define SP_ANALOG_DEBUG2_REG		0xdd
-+#define SP_FORCE_SW_OFF_BYPASS		0x20
-+#define SP_XTAL_FRQ			0x1c
-+#  define SP_XTAL_FRQ_19M2		(0x00 << 2)
-+#  define SP_XTAL_FRQ_24M		(0x01 << 2)
-+#  define SP_XTAL_FRQ_25M		(0x02 << 2)
-+#  define SP_XTAL_FRQ_26M		(0x03 << 2)
-+#  define SP_XTAL_FRQ_27M		(0x04 << 2)
-+#  define SP_XTAL_FRQ_38M4		(0x05 << 2)
-+#  define SP_XTAL_FRQ_52M		(0x06 << 2)
-+#define SP_POWERON_TIME_1P5MS		0x03
-+
-+/* Analog Control 0 Register */
-+#define SP_ANALOG_CTRL0_REG		0xe1
-+
-+/* Common Interrupt Status Register 1 */
-+#define SP_COMMON_INT_STATUS_BASE	(0xf1 - 1)
-+#define SP_PLL_LOCK_CHG			0x40
-+
-+/* Common Interrupt Status Register 2 */
-+#define SP_COMMON_INT_STATUS2		0xf2
-+#define SP_HDCP_AUTH_CHG		BIT(1)
-+#define SP_HDCP_AUTH_DONE		BIT(0)
-+
-+#define SP_HDCP_LINK_CHECK_FAIL		BIT(0)
-+
-+/* Common Interrupt Status Register 4 */
-+#define SP_COMMON_INT_STATUS4_REG	0xf4
-+#define SP_HPD_IRQ			BIT(6)
-+#define SP_HPD_ESYNC_ERR		BIT(4)
-+#define SP_HPD_CHG			BIT(2)
-+#define SP_HPD_LOST			BIT(1)
-+#define SP_HPD_PLUG			BIT(0)
-+
-+/* DP Interrupt Status Register */
-+#define SP_DP_INT_STATUS1_REG		0xf7
-+#define SP_TRAINING_FINISH		BIT(5)
-+#define SP_POLLING_ERR			BIT(4)
-+
-+/* Common Interrupt Mask Register */
-+#define SP_COMMON_INT_MASK_BASE		(0xf8 - 1)
-+
-+#define SP_COMMON_INT_MASK4_REG		0xfb
-+
-+/* DP Interrupts Mask Register */
-+#define SP_DP_INT_MASK1_REG		0xfe
-+
-+/* Interrupt Control Register */
-+#define SP_INT_CTRL_REG			0xff
-+
-+#endif /* _ANALOGIX_I2C_TXCOMMON_H_ */
++#include <linux/delay.h>
++#include <linux/err.h>
++#include <linux/gpio/consumer.h>
++#include <linux/i2c.h>
++#include <linux/interrupt.h>
++#include <linux/kernel.h>
++#include <linux/module.h>
++#include <linux/of_platform.h>
++#include <linux/regmap.h>
++#include <linux/regulator/consumer.h>
++#include <linux/types.h>
++
++#include <drm/drm_atomic_helper.h>
++#include <drm/drm_crtc.h>
++#include <drm/drm_crtc_helper.h>
++#include <drm/drm_dp_helper.h>
++#include <drm/drm_edid.h>
++#include <drm/drm_of.h>
++#include <drm/drm_panel.h>
++#include <drm/drm_print.h>
++#include <drm/drm_probe_helper.h>
++
++#include "analogix-i2c-dptx.h"
++#include "analogix-i2c-txcommon.h"
++
++#define POLL_DELAY		50000 /* us */
++#define POLL_TIMEOUT		5000000 /* us */
++
++#define I2C_IDX_DPTX		0
++#define I2C_IDX_TXCOM		1
++
++static const u8 anx6345_i2c_addresses[] = {
++	[I2C_IDX_DPTX]	= ANALOGIX_I2C_DPTX,
++	[I2C_IDX_TXCOM]	= ANALOGIX_I2C_TXCOMMON,
++};
++#define I2C_NUM_ADDRESSES	ARRAY_SIZE(anx6345_i2c_addresses)
++
++struct anx6345 {
++	struct drm_dp_aux aux;
++	struct drm_bridge bridge;
++	struct i2c_client *client;
++	struct edid *edid;
++	struct drm_connector connector;
++	struct drm_dp_link link;
++	struct drm_panel *panel;
++	struct regulator *dvdd12;
++	struct regulator *dvdd25;
++	struct gpio_desc *gpiod_reset;
++	struct mutex lock;	/* protect EDID access */
++
++	/* I2C Slave addresses of ANX6345 are mapped as DPTX and SYS */
++	struct i2c_client *i2c_clients[I2C_NUM_ADDRESSES];
++	struct regmap *map[I2C_NUM_ADDRESSES];
++
++	u16 chipid;
++	u8 dpcd[DP_RECEIVER_CAP_SIZE];
++
++	bool powered;
++};
++
++static inline struct anx6345 *connector_to_anx6345(struct drm_connector *c)
++{
++	return container_of(c, struct anx6345, connector);
++}
++
++static inline struct anx6345 *bridge_to_anx6345(struct drm_bridge *bridge)
++{
++	return container_of(bridge, struct anx6345, bridge);
++}
++
++static int anx6345_set_bits(struct regmap *map, u8 reg, u8 mask)
++{
++	return regmap_update_bits(map, reg, mask, mask);
++}
++
++static int anx6345_clear_bits(struct regmap *map, u8 reg, u8 mask)
++{
++	return regmap_update_bits(map, reg, mask, 0);
++}
++
++static ssize_t anx6345_aux_transfer(struct drm_dp_aux *aux,
++				    struct drm_dp_aux_msg *msg)
++{
++	struct anx6345 *anx6345 = container_of(aux, struct anx6345, aux);
++
++	return anx_dp_aux_transfer(anx6345->map[I2C_IDX_DPTX], msg);
++}
++
++static int anx6345_dp_link_training(struct anx6345 *anx6345)
++{
++	unsigned int value;
++	u8 dp_bw;
++	int err;
++
++	err = anx6345_clear_bits(anx6345->map[I2C_IDX_TXCOM],
++				 SP_POWERDOWN_CTRL_REG,
++				 SP_TOTAL_PD);
++	if (err)
++		return err;
++
++	err = drm_dp_dpcd_readb(&anx6345->aux, DP_MAX_LINK_RATE, &dp_bw);
++	if (err < 0)
++		return err;
++
++	switch (dp_bw) {
++	case DP_LINK_BW_1_62:
++	case DP_LINK_BW_2_7:
++		break;
++
++	default:
++		DRM_DEBUG_KMS("DP bandwidth (%#02x) not supported\n", dp_bw);
++		return -EINVAL;
++	}
++
++	err = anx6345_set_bits(anx6345->map[I2C_IDX_TXCOM], SP_VID_CTRL1_REG,
++			       SP_VIDEO_MUTE);
++	if (err)
++		return err;
++
++	err = anx6345_clear_bits(anx6345->map[I2C_IDX_TXCOM],
++				 SP_VID_CTRL1_REG, SP_VIDEO_EN);
++	if (err)
++		return err;
++
++	/* Get DPCD info */
++	err = drm_dp_dpcd_read(&anx6345->aux, DP_DPCD_REV,
++			       &anx6345->dpcd, DP_RECEIVER_CAP_SIZE);
++	if (err < 0) {
++		DRM_ERROR("Failed to read DPCD: %d\n", err);
++		return err;
++	}
++
++	/* Clear channel x SERDES power down */
++	err = anx6345_clear_bits(anx6345->map[I2C_IDX_DPTX],
++				 SP_DP_ANALOG_POWER_DOWN_REG, SP_CH0_PD);
++	if (err)
++		return err;
++
++	/* Check link capabilities */
++	err = drm_dp_link_probe(&anx6345->aux, &anx6345->link);
++	if (err < 0) {
++		DRM_ERROR("Failed to probe link capabilities: %d\n", err);
++		return err;
++	}
++
++	/* Power up the sink */
++	err = drm_dp_link_power_up(&anx6345->aux, &anx6345->link);
++	if (err < 0) {
++		DRM_ERROR("Failed to power up DisplayPort link: %d\n", err);
++		return err;
++	}
++
++	/* Possibly enable downspread on the sink */
++	err = regmap_write(anx6345->map[I2C_IDX_DPTX],
++			   SP_DP_DOWNSPREAD_CTRL1_REG, 0);
++	if (err)
++		return err;
++
++	if (anx6345->dpcd[DP_MAX_DOWNSPREAD] & DP_MAX_DOWNSPREAD_0_5) {
++		DRM_DEBUG("Enable downspread on the sink\n");
++		/* 4000PPM */
++		err = regmap_write(anx6345->map[I2C_IDX_DPTX],
++				   SP_DP_DOWNSPREAD_CTRL1_REG, 8);
++		if (err)
++			return err;
++
++		err = drm_dp_dpcd_writeb(&anx6345->aux, DP_DOWNSPREAD_CTRL,
++					 DP_SPREAD_AMP_0_5);
++		if (err < 0)
++			return err;
++	} else {
++		err = drm_dp_dpcd_writeb(&anx6345->aux, DP_DOWNSPREAD_CTRL, 0);
++		if (err < 0)
++			return err;
++	}
++
++	/* Set the lane count and the link rate on the sink */
++	if (drm_dp_enhanced_frame_cap(anx6345->dpcd))
++		err = anx6345_set_bits(anx6345->map[I2C_IDX_DPTX],
++				       SP_DP_SYSTEM_CTRL_BASE + 4,
++				       SP_ENHANCED_MODE);
++	else
++		err = anx6345_clear_bits(anx6345->map[I2C_IDX_DPTX],
++					 SP_DP_SYSTEM_CTRL_BASE + 4,
++					 SP_ENHANCED_MODE);
++	if (err)
++		return err;
++
++	value = drm_dp_link_rate_to_bw_code(anx6345->link.rate);
++	err = regmap_write(anx6345->map[I2C_IDX_DPTX],
++			   SP_DP_MAIN_LINK_BW_SET_REG, value);
++	if (err)
++		return err;
++
++	err = regmap_write(anx6345->map[I2C_IDX_DPTX],
++			   SP_DP_LANE_COUNT_SET_REG, anx6345->link.num_lanes);
++	if (err)
++		return err;
++
++	err = drm_dp_link_configure(&anx6345->aux, &anx6345->link);
++	if (err < 0) {
++		DRM_ERROR("Failed to configure DisplayPort link: %d\n", err);
++		return err;
++	}
++
++	/* Start training on the source */
++	err = regmap_write(anx6345->map[I2C_IDX_DPTX], SP_DP_LT_CTRL_REG,
++			   SP_LT_EN);
++	if (err)
++		return err;
++
++	return regmap_read_poll_timeout(anx6345->map[I2C_IDX_DPTX],
++				       SP_DP_LT_CTRL_REG,
++				       value, !(value & SP_DP_LT_INPROGRESS),
++				       POLL_DELAY, POLL_TIMEOUT);
++}
++
++static int anx6345_tx_initialization(struct anx6345 *anx6345)
++{
++	int err, i;
++
++	/* FIXME: colordepth is hardcoded for now */
++	err = regmap_write(anx6345->map[I2C_IDX_TXCOM], SP_VID_CTRL2_REG,
++			   SP_IN_BPC_6BIT << SP_IN_BPC_SHIFT);
++	if (err)
++		return err;
++
++	err = regmap_write(anx6345->map[I2C_IDX_DPTX], SP_DP_PLL_CTRL_REG, 0);
++	if (err)
++		return err;
++
++	err = regmap_write(anx6345->map[I2C_IDX_TXCOM],
++			   SP_ANALOG_DEBUG1_REG, 0);
++	if (err)
++		return err;
++
++	err = regmap_write(anx6345->map[I2C_IDX_DPTX],
++			   SP_DP_LINK_DEBUG_CTRL_REG,
++			   SP_NEW_PRBS7 | SP_M_VID_DEBUG);
++	if (err)
++		return err;
++
++	err = regmap_write(anx6345->map[I2C_IDX_DPTX],
++			   SP_DP_ANALOG_POWER_DOWN_REG, 0);
++	if (err)
++		return err;
++
++	/* Force HPD */
++	err = anx6345_set_bits(anx6345->map[I2C_IDX_DPTX],
++			       SP_DP_SYSTEM_CTRL_BASE + 3,
++			       SP_HPD_FORCE | SP_HPD_CTRL);
++	if (err)
++		return err;
++
++	for (i = 0; i < 4; i++) {
++		/* 4 lanes */
++		err = regmap_write(anx6345->map[I2C_IDX_DPTX],
++				   SP_DP_LANE0_LT_CTRL_REG + i, 0);
++		if (err)
++			return err;
++	}
++
++	/* Reset AUX */
++	err = anx6345_set_bits(anx6345->map[I2C_IDX_TXCOM],
++			       SP_RESET_CTRL2_REG, SP_AUX_RST);
++	if (err)
++		return err;
++
++	return anx6345_clear_bits(anx6345->map[I2C_IDX_TXCOM],
++				 SP_RESET_CTRL2_REG, SP_AUX_RST);
++}
++
++static void anx6345_poweron(struct anx6345 *anx6345)
++{
++	int err;
++
++	/* Ensure reset is asserted before starting power on sequence */
++	gpiod_set_value_cansleep(anx6345->gpiod_reset, 1);
++	usleep_range(1000, 2000);
++
++	err = regulator_enable(anx6345->dvdd12);
++	if (err) {
++		DRM_ERROR("Failed to enable dvdd12 regulator: %d\n",
++			  err);
++		return;
++	}
++
++	/* T1 - delay between VDD12 and VDD25 should be 0-2ms */
++	usleep_range(1000, 2000);
++
++	err = regulator_enable(anx6345->dvdd25);
++	if (err) {
++		DRM_ERROR("Failed to enable dvdd25 regulator: %d\n",
++			  err);
++		return;
++	}
++
++	/* T2 - delay between RESETN and all power rail stable,
++	 * should be 2-5ms
++	 */
++	usleep_range(2000, 5000);
++
++	gpiod_set_value_cansleep(anx6345->gpiod_reset, 0);
++
++	/* Power on registers module */
++	anx6345_set_bits(anx6345->map[I2C_IDX_TXCOM], SP_POWERDOWN_CTRL_REG,
++			 SP_HDCP_PD | SP_AUDIO_PD | SP_VIDEO_PD | SP_LINK_PD);
++	anx6345_clear_bits(anx6345->map[I2C_IDX_TXCOM], SP_POWERDOWN_CTRL_REG,
++			   SP_REGISTER_PD | SP_TOTAL_PD);
++
++	if (anx6345->panel)
++		drm_panel_prepare(anx6345->panel);
++
++	anx6345->powered = true;
++}
++
++static void anx6345_poweroff(struct anx6345 *anx6345)
++{
++	int err;
++
++	gpiod_set_value_cansleep(anx6345->gpiod_reset, 1);
++	usleep_range(1000, 2000);
++
++	if (anx6345->panel)
++		drm_panel_unprepare(anx6345->panel);
++
++	err = regulator_disable(anx6345->dvdd25);
++	if (err) {
++		DRM_ERROR("Failed to disable dvdd25 regulator: %d\n",
++			  err);
++		return;
++	}
++
++	usleep_range(5000, 10000);
++
++	err = regulator_disable(anx6345->dvdd12);
++	if (err) {
++		DRM_ERROR("Failed to disable dvdd12 regulator: %d\n",
++			  err);
++		return;
++	}
++
++	usleep_range(1000, 2000);
++
++	anx6345->powered = false;
++}
++
++static int anx6345_start(struct anx6345 *anx6345)
++{
++	int err;
++
++	if (!anx6345->powered)
++		anx6345_poweron(anx6345);
++
++	/* Power on needed modules */
++	err = anx6345_clear_bits(anx6345->map[I2C_IDX_TXCOM],
++				SP_POWERDOWN_CTRL_REG,
++				SP_VIDEO_PD | SP_LINK_PD);
++
++	err = anx6345_tx_initialization(anx6345);
++	if (err) {
++		DRM_ERROR("Failed eDP transmitter initialization: %d\n", err);
++		anx6345_poweroff(anx6345);
++		return err;
++	}
++
++	err = anx6345_dp_link_training(anx6345);
++	if (err) {
++		DRM_ERROR("Failed link training: %d\n", err);
++		anx6345_poweroff(anx6345);
++		return err;
++	}
++
++	/*
++	 * This delay seems to help keep the hardware in a good state. Without
++	 * it, there are times where it fails silently.
++	 */
++	usleep_range(10000, 15000);
++
++	return 0;
++}
++
++static int anx6345_config_dp_output(struct anx6345 *anx6345)
++{
++	int err;
++
++	err = anx6345_clear_bits(anx6345->map[I2C_IDX_TXCOM], SP_VID_CTRL1_REG,
++				 SP_VIDEO_MUTE);
++	if (err)
++		return err;
++
++	/* Enable DP output */
++	err = anx6345_set_bits(anx6345->map[I2C_IDX_TXCOM], SP_VID_CTRL1_REG,
++			       SP_VIDEO_EN);
++	if (err)
++		return err;
++
++	/* Force stream valid */
++	return anx6345_set_bits(anx6345->map[I2C_IDX_DPTX],
++			       SP_DP_SYSTEM_CTRL_BASE + 3,
++			       SP_STRM_FORCE | SP_STRM_CTRL);
++}
++
++static int anx6345_get_downstream_info(struct anx6345 *anx6345)
++{
++	u8 value;
++	int err;
++
++	err = drm_dp_dpcd_readb(&anx6345->aux, DP_SINK_COUNT, &value);
++	if (err < 0) {
++		DRM_ERROR("Get sink count failed %d\n", err);
++		return err;
++	}
++
++	if (!DP_GET_SINK_COUNT(value)) {
++		DRM_ERROR("Downstream disconnected\n");
++		return -EIO;
++	}
++
++	return 0;
++}
++
++static int anx6345_get_modes(struct drm_connector *connector)
++{
++	struct anx6345 *anx6345 = connector_to_anx6345(connector);
++	int err, num_modes = 0;
++	bool power_off = false;
++
++	mutex_lock(&anx6345->lock);
++
++	if (!anx6345->edid) {
++		if (!anx6345->powered) {
++			anx6345_poweron(anx6345);
++			power_off = true;
++		}
++
++		err = anx6345_get_downstream_info(anx6345);
++		if (err) {
++			DRM_ERROR("Failed to get downstream info: %d\n", err);
++			goto unlock;
++		}
++
++		anx6345->edid = drm_get_edid(connector, &anx6345->aux.ddc);
++		if (!anx6345->edid)
++			DRM_ERROR("Failed to read EDID from panel\n");
++
++		err = drm_connector_update_edid_property(connector,
++							 anx6345->edid);
++		if (err) {
++			DRM_ERROR("Failed to update EDID property: %d\n", err);
++			goto unlock;
++		}
++	}
++
++	num_modes += drm_add_edid_modes(connector, anx6345->edid);
++
++unlock:
++	if (power_off)
++		anx6345_poweroff(anx6345);
++
++	mutex_unlock(&anx6345->lock);
++
++	if (!num_modes && anx6345->panel)
++		num_modes += drm_panel_get_modes(anx6345->panel);
++
++	return num_modes;
++}
++
++static const struct drm_connector_helper_funcs anx6345_connector_helper_funcs = {
++	.get_modes = anx6345_get_modes,
++};
++
++static void
++anx6345_connector_destroy(struct drm_connector *connector)
++{
++	struct anx6345 *anx6345 = connector_to_anx6345(connector);
++
++	if (anx6345->panel)
++		drm_panel_detach(anx6345->panel);
++	drm_connector_cleanup(connector);
++}
++
++static const struct drm_connector_funcs anx6345_connector_funcs = {
++	.fill_modes = drm_helper_probe_single_connector_modes,
++	.destroy = anx6345_connector_destroy,
++	.reset = drm_atomic_helper_connector_reset,
++	.atomic_duplicate_state = drm_atomic_helper_connector_duplicate_state,
++	.atomic_destroy_state = drm_atomic_helper_connector_destroy_state,
++};
++
++static int anx6345_bridge_attach(struct drm_bridge *bridge)
++{
++	struct anx6345 *anx6345 = bridge_to_anx6345(bridge);
++	int err;
++
++	if (!bridge->encoder) {
++		DRM_ERROR("Parent encoder object not found");
++		return -ENODEV;
++	}
++
++	/* Register aux channel */
++	anx6345->aux.name = "DP-AUX";
++	anx6345->aux.dev = &anx6345->client->dev;
++	anx6345->aux.transfer = anx6345_aux_transfer;
++
++	err = drm_dp_aux_register(&anx6345->aux);
++	if (err < 0) {
++		DRM_ERROR("Failed to register aux channel: %d\n", err);
++		return err;
++	}
++
++	err = drm_connector_init(bridge->dev, &anx6345->connector,
++				 &anx6345_connector_funcs,
++				 DRM_MODE_CONNECTOR_eDP);
++	if (err) {
++		DRM_ERROR("Failed to initialize connector: %d\n", err);
++		return err;
++	}
++
++	drm_connector_helper_add(&anx6345->connector,
++				 &anx6345_connector_helper_funcs);
++
++	err = drm_connector_register(&anx6345->connector);
++	if (err) {
++		DRM_ERROR("Failed to register connector: %d\n", err);
++		return err;
++	}
++
++	anx6345->connector.polled = DRM_CONNECTOR_POLL_HPD;
++
++	err = drm_connector_attach_encoder(&anx6345->connector,
++					   bridge->encoder);
++	if (err) {
++		DRM_ERROR("Failed to link up connector to encoder: %d\n", err);
++		return err;
++	}
++
++	if (anx6345->panel) {
++		err = drm_panel_attach(anx6345->panel, &anx6345->connector);
++		if (err) {
++			DRM_ERROR("Failed to attach panel: %d\n", err);
++			return err;
++		}
++	}
++
++	return 0;
++}
++
++static enum drm_mode_status
++anx6345_bridge_mode_valid(struct drm_bridge *bridge,
++			  const struct drm_display_mode *mode)
++{
++	if (mode->flags & DRM_MODE_FLAG_INTERLACE)
++		return MODE_NO_INTERLACE;
++
++	/* Max 1200p at 5.4 Ghz, one lane */
++	if (mode->clock > 154000)
++		return MODE_CLOCK_HIGH;
++
++	return MODE_OK;
++}
++
++static void anx6345_bridge_disable(struct drm_bridge *bridge)
++{
++	struct anx6345 *anx6345 = bridge_to_anx6345(bridge);
++
++	/* Power off all modules except configuration registers access */
++	anx6345_set_bits(anx6345->map[I2C_IDX_TXCOM], SP_POWERDOWN_CTRL_REG,
++			 SP_HDCP_PD | SP_AUDIO_PD | SP_VIDEO_PD | SP_LINK_PD);
++	if (anx6345->panel)
++		drm_panel_disable(anx6345->panel);
++
++	if (anx6345->powered)
++		anx6345_poweroff(anx6345);
++}
++
++static void anx6345_bridge_enable(struct drm_bridge *bridge)
++{
++	struct anx6345 *anx6345 = bridge_to_anx6345(bridge);
++	int err;
++
++	if (anx6345->panel)
++		drm_panel_enable(anx6345->panel);
++
++	err = anx6345_start(anx6345);
++	if (err) {
++		DRM_ERROR("Failed to initialize: %d\n", err);
++		return;
++	}
++
++	err = anx6345_config_dp_output(anx6345);
++	if (err)
++		DRM_ERROR("Failed to enable DP output: %d\n", err);
++}
++
++static const struct drm_bridge_funcs anx6345_bridge_funcs = {
++	.attach = anx6345_bridge_attach,
++	.mode_valid = anx6345_bridge_mode_valid,
++	.disable = anx6345_bridge_disable,
++	.enable = anx6345_bridge_enable,
++};
++
++static void unregister_i2c_dummy_clients(struct anx6345 *anx6345)
++{
++	unsigned int i;
++
++	for (i = 1; i < ARRAY_SIZE(anx6345->i2c_clients); i++)
++		if (anx6345->i2c_clients[i] &&
++		    anx6345->i2c_clients[i]->addr != anx6345->client->addr)
++			i2c_unregister_device(anx6345->i2c_clients[i]);
++}
++
++static const struct regmap_config anx6345_regmap_config = {
++	.reg_bits = 8,
++	.val_bits = 8,
++	.max_register = 0xff,
++	.cache_type = REGCACHE_NONE,
++};
++
++static const u16 anx6345_chipid_list[] = {
++	0x6345,
++};
++
++static bool anx6345_get_chip_id(struct anx6345 *anx6345)
++{
++	unsigned int i, idl, idh, version;
++
++	if (regmap_read(anx6345->map[I2C_IDX_TXCOM], SP_DEVICE_IDL_REG, &idl))
++		return false;
++
++	if (regmap_read(anx6345->map[I2C_IDX_TXCOM], SP_DEVICE_IDH_REG, &idh))
++		return false;
++
++	anx6345->chipid = (u8)idl | ((u8)idh << 8);
++
++	if (regmap_read(anx6345->map[I2C_IDX_TXCOM], SP_DEVICE_VERSION_REG,
++			&version))
++		return false;
++
++	for (i = 0; i < ARRAY_SIZE(anx6345_chipid_list); i++) {
++		if (anx6345->chipid == anx6345_chipid_list[i]) {
++			DRM_INFO("Found ANX%x (ver. %d) eDP Transmitter\n",
++				 anx6345->chipid, version);
++			return true;
++		}
++	}
++
++	DRM_ERROR("ANX%x (ver. %d) not supported by this driver\n",
++		  anx6345->chipid, version);
++
++	return false;
++}
++
++static int anx6345_i2c_probe(struct i2c_client *client,
++			     const struct i2c_device_id *id)
++{
++	struct anx6345 *anx6345;
++	struct device *dev;
++	int i, err;
++
++	anx6345 = devm_kzalloc(&client->dev, sizeof(*anx6345), GFP_KERNEL);
++	if (!anx6345)
++		return -ENOMEM;
++
++	mutex_init(&anx6345->lock);
++
++	anx6345->bridge.of_node = client->dev.of_node;
++
++	anx6345->client = client;
++	i2c_set_clientdata(client, anx6345);
++
++	dev = &anx6345->client->dev;
++
++	err = drm_of_find_panel_or_bridge(client->dev.of_node, 1, 0,
++					  &anx6345->panel, NULL);
++	if (err == -EPROBE_DEFER)
++		return err;
++
++	if (err)
++		DRM_DEBUG("No panel found\n");
++
++	/* 1.2V digital core power regulator  */
++	anx6345->dvdd12 = devm_regulator_get(dev, "dvdd12-supply");
++	if (IS_ERR(anx6345->dvdd12)) {
++		DRM_ERROR("dvdd12-supply not found\n");
++		return PTR_ERR(anx6345->dvdd12);
++	}
++
++	/* 2.5V digital core power regulator  */
++	anx6345->dvdd25 = devm_regulator_get(dev, "dvdd25-supply");
++	if (IS_ERR(anx6345->dvdd25)) {
++		DRM_ERROR("dvdd25-supply not found\n");
++		return PTR_ERR(anx6345->dvdd25);
++	}
++
++	/* GPIO for chip reset */
++	anx6345->gpiod_reset = devm_gpiod_get(dev, "reset", GPIOD_OUT_LOW);
++	if (IS_ERR(anx6345->gpiod_reset)) {
++		DRM_ERROR("Reset gpio not found\n");
++		return PTR_ERR(anx6345->gpiod_reset);
++	}
++
++	/* Map slave addresses of ANX6345 */
++	for (i = 0; i < I2C_NUM_ADDRESSES; i++) {
++		if (anx6345_i2c_addresses[i] >> 1 != client->addr)
++			anx6345->i2c_clients[i] = i2c_new_dummy(client->adapter,
++						anx6345_i2c_addresses[i] >> 1);
++		else
++			anx6345->i2c_clients[i] = client;
++
++		if (!anx6345->i2c_clients[i]) {
++			err = -ENOMEM;
++			DRM_ERROR("Failed to reserve I2C bus %02x\n",
++				  anx6345_i2c_addresses[i]);
++			goto err_unregister_i2c;
++		}
++
++		anx6345->map[i] = devm_regmap_init_i2c(anx6345->i2c_clients[i],
++						       &anx6345_regmap_config);
++		if (IS_ERR(anx6345->map[i])) {
++			err = PTR_ERR(anx6345->map[i]);
++			DRM_ERROR("Failed regmap initialization %02x\n",
++				  anx6345_i2c_addresses[i]);
++			goto err_unregister_i2c;
++		}
++	}
++
++	/* Look for supported chip ID */
++	anx6345_poweron(anx6345);
++	if (anx6345_get_chip_id(anx6345)) {
++		anx6345->bridge.funcs = &anx6345_bridge_funcs;
++		drm_bridge_add(&anx6345->bridge);
++
++		return 0;
++	} else {
++		anx6345_poweroff(anx6345);
++		err = -ENODEV;
++	}
++
++err_unregister_i2c:
++	unregister_i2c_dummy_clients(anx6345);
++	return err;
++}
++
++static int anx6345_i2c_remove(struct i2c_client *client)
++{
++	struct anx6345 *anx6345 = i2c_get_clientdata(client);
++
++	drm_bridge_remove(&anx6345->bridge);
++
++	unregister_i2c_dummy_clients(anx6345);
++
++	kfree(anx6345->edid);
++
++	mutex_destroy(&anx6345->lock);
++
++	return 0;
++}
++
++static const struct i2c_device_id anx6345_id[] = {
++	{ "anx6345", 0 },
++	{ /* sentinel */ }
++};
++MODULE_DEVICE_TABLE(i2c, anx6345_id);
++
++static const struct of_device_id anx6345_match_table[] = {
++	{ .compatible = "analogix,anx6345", },
++	{ /* sentinel */ },
++};
++MODULE_DEVICE_TABLE(of, anx6345_match_table);
++
++static struct i2c_driver anx6345_driver = {
++	.driver = {
++		   .name = "anx6345",
++		   .of_match_table = of_match_ptr(anx6345_match_table),
++		  },
++	.probe = anx6345_i2c_probe,
++	.remove = anx6345_i2c_remove,
++	.id_table = anx6345_id,
++};
++module_i2c_driver(anx6345_driver);
++
++MODULE_DESCRIPTION("ANX6345 eDP Transmitter driver");
++MODULE_AUTHOR("Icenowy Zheng <icenowy@aosc.io>");
++MODULE_LICENSE("GPL v2");
 -- 
 2.16.4
 
