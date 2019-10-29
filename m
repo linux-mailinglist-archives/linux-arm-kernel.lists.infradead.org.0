@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEB8FE91AF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 22:18:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16671E91EC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 22:21:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,66 +11,66 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=iWi6YdQXyEhRXZdL0IkFDNMpY9xz8Fj9+Xf2RAT6fU4=; b=Y4cQaUJaiegxNWsAW1w0hSDpiF
-	7Rs4P5R2NBKejvJU2TbGzugjZiuTrwjRNjcanrIWLTEZhWm2WPxEskyxHUKkJ7Ou/SltmzbllwiYC
-	rQuVMCNfTjaqdHm1dzZAvzD61S8TCIZSqhz5pa3OrBVg0LKkjToTaq7BzHMosnY1OnG/PSwT9w1bi
-	g9+CLQMtmcyG98lHoW+pWejpkErSm2hb091FE4laH2s6rTRZOC3z2tDs/Pz/RZP+ThmbIJwhRyvep
-	X9kMd1a1UE8mOR4Oi3GuLPUJwRb3zgyZvbKghXpnkj7rtHdRzTcO3VEgkgzh2Cu0z1zowL8wAww67
-	0rpBQXjg==;
+	bh=4X5IgAoIkdtAuIrXzDvAI2WgBEHgY5aVpgxHe9GlMhg=; b=MDNBkoOGHEeVgZK3N6vnuZwJGX
+	bDnna73ZaECmOu1uoFkDQ7dyiu/cYwha5QeHuT0yHZYntHdbYSAj/ALle/nXUc2SQjTUSHty6wG25
+	zAWi/Lr1qB+48MbIrKMtFQOyIUa7G2qiB9CqfECDRkKfJUuhNLmh0RY5jLdhnfEydiPEE8Y+Ga98K
+	E+tOM3l+oh6KgbZ1YZ8cbHAhhno0Ca15TwfFIftUBZlBqCOt50qdXo/hzC24aJjJmUW1cnB5hHPIM
+	Sd40lBnc8WrZHTsfLRbfN6JL0RbS+xtVJAlquoGKgEMBvufUC5QQGrH00sKMVJfeJhmOhHMYTPHWN
+	ZFlHq02A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPYtB-0000pl-In; Tue, 29 Oct 2019 21:18:53 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1iPYvE-0003tC-Am; Tue, 29 Oct 2019 21:21:00 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPYom-0004dD-6d
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 21:14:22 +0000
-Received: by mail-pg1-x542.google.com with SMTP id p12so10507495pgn.6
+ id 1iPYup-0003hQ-9j
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 21:20:37 +0000
+Received: by mail-pg1-x541.google.com with SMTP id e10so10494669pgd.11
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 29 Oct 2019 14:14:19 -0700 (PDT)
+ Tue, 29 Oct 2019 14:20:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=l+J574mlC+dRmZJG9pHhpppQFEze5VvTPTaNiTnbyaQ=;
- b=XxYZzxUJLSS1EjXOu0N/W8WJ4nsXkGW0wuYPPQz4S9Q7ybSmxfOvzX4/Pbx0hRVhwL
- IrpMdG7OEhiyZc3pXm3O/EWpZWxxrVnOcBtrFviHXzAXJGTEX7UE4FQN2re4YmyUukvg
- kN8X/p4Rc2H96j4CDSRi5o2KB2cQvjaVsgVbU=
+ bh=zkQRciK9mkrlSR6uxFsvjRswhc34+65nZ5EFVAGwQNE=;
+ b=OT6Bg1lwC9BgCPm4rshensSgeFlVA9rsXs7DneW7qlK4COjqiDZfzJlwEnUsw0ndzg
+ 7OlU1CFW21fcf6eEhN9CjdJHaNcMdDpPKpuJT/ADgQMFfGMLcXWO74t21PFZRJHFpnqp
+ xUOjVNPPFhABmfh6UvzbnvtwsYLRpChZ5bAS8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=l+J574mlC+dRmZJG9pHhpppQFEze5VvTPTaNiTnbyaQ=;
- b=Dmb2LeQ2tbA/5QleMnkdJAPduAmXl8BHo7LbsShHTWb+SHgNgHh3USyPsTOQs2cjVs
- 72hYO96kcIfHmS5n30k56p64rYyTDXT6A9aNmC3VmY3fXA/Ieo9qBU0qbvA8kB15byHG
- ppjs05dqqluBQtwux1HId1JwY+z2pQ4DMvcO5ksiuPFmnLzO/BzATC68BTUxotTTmwWS
- mt7fD/AY1QxDO7ujdggd4w6H01BhMjWwvhtJeKaY14amJv2V+kSNex8yyHKgz4AKl2Hm
- uskUKuoXJ5PCTRGAIZIVQj6p8DOD9gKJajPi2gRkKXOLCypOIdHvBpnKGTTFvuHoC9wm
- RfGQ==
-X-Gm-Message-State: APjAAAXIh/9f3cIAccinv8lYOvCdxSY9bXpHmwzJVBmixF8GJcdTtZV2
- l+5+1+YJaX5i+iXo+mFYHZC14A==
-X-Google-Smtp-Source: APXvYqwDTCHy7ekbXHpuxYWgHEZHkPXVWMIgLthR/cRPbNMgyLncTh1RVOtUSpgF7h0Elx7DzeS6cg==
-X-Received: by 2002:a65:5382:: with SMTP id x2mr1341257pgq.420.1572383658639; 
- Tue, 29 Oct 2019 14:14:18 -0700 (PDT)
+ bh=zkQRciK9mkrlSR6uxFsvjRswhc34+65nZ5EFVAGwQNE=;
+ b=L9WB73OeHnf6QWHRA0Zt/GjWPGq87jjxs05VN8xPbSdsZ4WzkgqVn2ai2mKtfilaQm
+ t16r3dUkHQZm5rska7UHd8TNCLgVY0GBGoTDxiLMf/hbgSKd44spGauDaj8M9eFKjT/S
+ 4qbVj2OcFG98TfV4xUPXY5CWzSQwAncZDat/6ECWPf4NLkcRX+4qUOI4kj+9X68KFaLq
+ Q1sQbm3PgaFgNrz/c5BRCGMNmwguzl6F/g0jveKWVPVBDqVjjlaEizFZEv2u2npdpaml
+ AVwhcO4NBrkHXBPcnRgykJRfdU1WZgyYOoToR4meRMe9f00stblGiRDKPLo66omNZAxH
+ BS0g==
+X-Gm-Message-State: APjAAAVy+iudK6t5/q5JsJYavyFH11tCDrlDc4B29Kb3icmpQR1RVI7r
+ FGraicqanMGUgeVsNt8N+EameA==
+X-Google-Smtp-Source: APXvYqzgHSbr71WtU2uD7eID82s/2JfBvoDXdBNTCeGS1sZq6cmXG05yPiu3ymW6JJe84UPYZH6mkg==
+X-Received: by 2002:a63:495b:: with SMTP id y27mr29706814pgk.438.1572384034053; 
+ Tue, 29 Oct 2019 14:20:34 -0700 (PDT)
 Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id i11sm150632pgd.7.2019.10.29.14.14.08
+ by smtp.gmail.com with ESMTPSA id k9sm48893pfk.72.2019.10.29.14.20.32
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 29 Oct 2019 14:14:12 -0700 (PDT)
+ Tue, 29 Oct 2019 14:20:32 -0700 (PDT)
 From: Kees Cook <keescook@chromium.org>
 To: Borislav Petkov <bp@alien8.de>
-Subject: [PATCH v3 19/29] c6x: Move EXCEPTION_TABLE to RO_DATA segment
-Date: Tue, 29 Oct 2019 14:13:41 -0700
-Message-Id: <20191029211351.13243-20-keescook@chromium.org>
+Subject: [PATCH v3 20/29] h8300: Move EXCEPTION_TABLE to RO_DATA segment
+Date: Tue, 29 Oct 2019 14:13:42 -0700
+Message-Id: <20191029211351.13243-21-keescook@chromium.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191029211351.13243-1-keescook@chromium.org>
 References: <20191029211351.13243-1-keescook@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_141420_291510_0B03A36C 
-X-CRM114-Status: GOOD (  11.24  )
+X-CRM114-CacheID: sfid-20191029_142035_428770_7FB91590 
+X-CRM114-Status: GOOD (  10.91  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -114,32 +114,29 @@ Since the EXCEPTION_TABLE is read-only, collapse it into RO_DATA.
 
 Signed-off-by: Kees Cook <keescook@chromium.org>
 ---
- arch/c6x/kernel/vmlinux.lds.S | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+ arch/h8300/kernel/vmlinux.lds.S | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/arch/c6x/kernel/vmlinux.lds.S b/arch/c6x/kernel/vmlinux.lds.S
-index a3547f9d415b..ac99ba0864bf 100644
---- a/arch/c6x/kernel/vmlinux.lds.S
-+++ b/arch/c6x/kernel/vmlinux.lds.S
-@@ -5,6 +5,9 @@
-  *  Copyright (C) 2010, 2011 Texas Instruments Incorporated
-  *  Mark Salter <msalter@redhat.com>
-  */
+diff --git a/arch/h8300/kernel/vmlinux.lds.S b/arch/h8300/kernel/vmlinux.lds.S
+index 2ac7bdcd2fe0..6b1afc2f9b68 100644
+--- a/arch/h8300/kernel/vmlinux.lds.S
++++ b/arch/h8300/kernel/vmlinux.lds.S
+@@ -1,4 +1,7 @@
+ /* SPDX-License-Identifier: GPL-2.0 */
 +
 +#define RO_EXCEPTION_TABLE_ALIGN	16
 +
  #include <asm-generic/vmlinux.lds.h>
- #include <asm/thread_info.h>
  #include <asm/page.h>
-@@ -80,8 +83,6 @@ SECTIONS
- 		*(.gnu.warning)
+ #include <asm/thread_info.h>
+@@ -37,7 +40,6 @@ SECTIONS
+ #endif
+ 	_etext = . ;
  	}
- 
 -	EXCEPTION_TABLE(16)
--
- 	RO_DATA(PAGE_SIZE)
- 	.const :
- 	{
+ 	RO_DATA(4)
+ 	ROMEND = .;
+ #if defined(CONFIG_ROMKERNEL)
 -- 
 2.17.1
 
