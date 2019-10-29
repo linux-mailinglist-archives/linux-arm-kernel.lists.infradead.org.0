@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2950E8BFD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 16:41:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B73FE8C06
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 16:42:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,26 +11,26 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Subject:Date:From:References:In-Reply-To:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=7UA9rsvy/KgVpNKCgJXrM6RacOBBUYRBd4QoTpAXU08=; b=tIXlzk9YryT4eiyMj6maGZLKUA
-	q3MD4PBMBVCOmrZWwtwawiqo7i2NRibpGpBHrp+79Eh7lDLMXrJcTRYhjPldN1LsEIIlBQWpBd4M9
-	toffPXJ13vZOv3nVRWLmDhtEEvr/bEH379MdqMHFkLu+1mv76tajZTtic/G3k75DI13PD34pKPNSx
-	+RlNsR9BQeajq2WQ+xn39OuvWIOLp6fUfKzGtMt2LNz+xQ+McXbERYCylXkHZlWxfxk5TILdERCSB
-	TRTo/Dh7hEDw1KPv/AVkPS+ryc33b1g2gn+/RNVFmJdUO/oiAJHDh/E4O0vViJsgR/pzThdKTDVQY
-	bsAuSbKg==;
+	bh=EXY7XyWVmcNPQJahwC+aeEcyFqEfzUZeGAKbR/H3A8U=; b=WCLm+4hVM/xG53PVSWTaufL+Ci
+	cHcOXxK6lpWu/8G6oEd+AoNXZ2NkJBPf/dWkNzpDWgDp48prL9L+giFSHqQX6Zkp+YXFnQJAO+cH1
+	YySg+/o0G/1KV5+NNxhhHTSF6Fdiaog6GghXuAnV+4r9xNtlVyMxuyFMUCbyfTa5V0ucialVVvHgz
+	geb5xKUCl2xyxLMmlxRqOI+mUfvJewOdAqBZN7W9OH/34T3987TUH9gTwS7oXBf1XY1GPMH86+zXP
+	YZN5I7g9l0RqZGj7iixqW/AWC7PdZi7yy5SLHzUEkAB9CssHjMFmvSAgzAGrlUc7CMkV92QN/NPQ6
+	dVVQRaew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPTcS-0000np-Ra; Tue, 29 Oct 2019 15:41:16 +0000
+	id 1iPTdA-0001JB-FK; Tue, 29 Oct 2019 15:42:00 +0000
 Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPTb3-000760-U9
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 15:39:51 +0000
+ id 1iPTb9-0007Ci-VO
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 15:39:58 +0000
 Received: by verein.lst.de (Postfix, from userid 2005)
- id 6E30B68CFC; Tue, 29 Oct 2019 16:39:47 +0100 (CET)
+ id 8EE9B68D04; Tue, 29 Oct 2019 16:39:53 +0100 (CET)
 In-Reply-To: <20191029153815.C631668C4E@verein.lst.de>
 References: <20191029153815.C631668C4E@verein.lst.de>
 From: Torsten Duwe <duwe@lst.de>
 Date: Tue, 29 Oct 2019 13:16:57 +0100
-Subject: [PATCH v4 4/7] drm/bridge: Prepare Analogix anx6345 support
+Subject: [PATCH v4 6/7] dt-bindings: Add ANX6345 DP/eDP transmitter binding
 To: Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Thierry Reding <thierry.reding@gmail.com>,
@@ -41,10 +41,10 @@ To: Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
  Vasily Khoruzhick <anarsoul@gmail.com>, Harald Geyer <harald@ccbib.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Thomas Gleixner <tglx@linutronix.de>
-Message-Id: <20191029153947.6E30B68CFC@verein.lst.de>
+Message-Id: <20191029153953.8EE9B68D04@verein.lst.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_083950_313926_0C47C4B1 
-X-CRM114-Status: GOOD (  11.87  )
+X-CRM114-CacheID: sfid-20191029_083956_318033_851A8D4D 
+X-CRM114-Status: GOOD (  11.45  )
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
@@ -74,80 +74,119 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add bit definitions required for the anx6345 and add a
-sanity check in anx_dp_aux_transfer.
+The anx6345 is an ultra-low power DisplayPort/eDP transmitter designed
+for portable devices.
+
+Add a binding document for it.
 
 Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
 Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Torsten Duwe <duwe@suse.de>
-Reviewed-by: Andrzej Hajda <a.hajda@samsung.com>
+Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 ---
- drivers/gpu/drm/bridge/analogix/analogix-i2c-dptx.c     | 2 +-
- drivers/gpu/drm/bridge/analogix/analogix-i2c-dptx.h     | 8 ++++++++
- drivers/gpu/drm/bridge/analogix/analogix-i2c-txcommon.h | 3 +++
- 3 files changed, 12 insertions(+), 1 deletion(-)
+ .../bindings/display/bridge/anx6345.yaml           | 92 ++++++++++++++++++++++
+ 1 file changed, 92 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/display/bridge/anx6345.yaml
 
-diff --git a/drivers/gpu/drm/bridge/analogix/analogix-i2c-dptx.c b/drivers/gpu/drm/bridge/analogix/analogix-i2c-dptx.c
-index 60707bb5afe7..fe40bab21530 100644
---- a/drivers/gpu/drm/bridge/analogix/analogix-i2c-dptx.c
-+++ b/drivers/gpu/drm/bridge/analogix/analogix-i2c-dptx.c
-@@ -116,7 +116,7 @@ ssize_t anx_dp_aux_transfer(struct regmap *map_dptx,
- 	else	/* For non-zero-sized set the length field. */
- 		ctrl1 |= (msg->size - 1) << SP_AUX_LENGTH_SHIFT;
- 
--	if ((msg->request & DP_AUX_I2C_READ) == 0) {
-+	if ((msg->size > 0) && ((msg->request & DP_AUX_I2C_READ) == 0)) {
- 		/* When WRITE | MOT write values to data buffer */
- 		err = regmap_bulk_write(map_dptx,
- 					SP_DP_BUF_DATA0_REG, buffer,
-diff --git a/drivers/gpu/drm/bridge/analogix/analogix-i2c-dptx.h b/drivers/gpu/drm/bridge/analogix/analogix-i2c-dptx.h
-index 430a039c10cd..24bc67ac5479 100644
---- a/drivers/gpu/drm/bridge/analogix/analogix-i2c-dptx.h
-+++ b/drivers/gpu/drm/bridge/analogix/analogix-i2c-dptx.h
-@@ -74,7 +74,11 @@
- #define SP_CHA_STA			BIT(2)
- /* Bits for DP System Control Register 3 */
- #define SP_HPD_STATUS			BIT(6)
-+#define SP_HPD_FORCE			BIT(5)
-+#define SP_HPD_CTRL			BIT(4)
- #define SP_STRM_VALID			BIT(2)
-+#define SP_STRM_FORCE			BIT(1)
-+#define SP_STRM_CTRL			BIT(0)
- /* Bits for DP System Control Register 4 */
- #define SP_ENHANCED_MODE		BIT(3)
- 
-@@ -119,6 +123,9 @@
- #define SP_LINK_BW_SET_MASK		0x1f
- #define SP_INITIAL_SLIM_M_AUD_SEL	BIT(5)
- 
-+/* DP Lane Count Setting Register */
-+#define SP_DP_LANE_COUNT_SET_REG	0xa1
+diff --git a/Documentation/devicetree/bindings/display/bridge/anx6345.yaml b/Documentation/devicetree/bindings/display/bridge/anx6345.yaml
+new file mode 100644
+index 000000000000..094e8e8a5faa
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/bridge/anx6345.yaml
+@@ -0,0 +1,92 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/display/bridge/anx6345.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
- /* DP Training Pattern Set Register */
- #define SP_DP_TRAINING_PATTERN_SET_REG	0xa2
- 
-@@ -132,6 +139,7 @@
- 
- /* DP Link Training Control Register */
- #define SP_DP_LT_CTRL_REG		0xa8
-+#define SP_DP_LT_INPROGRESS		0x80
- #define SP_LT_ERROR_TYPE_MASK		0x70
- #  define SP_LT_NO_ERROR		0x00
- #  define SP_LT_AUX_WRITE_ERROR		0x01
-diff --git a/drivers/gpu/drm/bridge/analogix/analogix-i2c-txcommon.h b/drivers/gpu/drm/bridge/analogix/analogix-i2c-txcommon.h
-index c1030e0f74cc..9fa6f426f990 100644
---- a/drivers/gpu/drm/bridge/analogix/analogix-i2c-txcommon.h
-+++ b/drivers/gpu/drm/bridge/analogix/analogix-i2c-txcommon.h
-@@ -179,6 +179,9 @@
- #define SP_VBIT				BIT(1)
- #define SP_AUDIO_LAYOUT			BIT(0)
- 
-+/* Analog Debug Register 1 */
-+#define SP_ANALOG_DEBUG1_REG		0xdc
++title: Analogix ANX6345 eDP Transmitter Device Tree Bindings
 +
- /* Analog Debug Register 2 */
- #define SP_ANALOG_DEBUG2_REG		0xdd
- #define SP_FORCE_SW_OFF_BYPASS		0x20
++maintainers:
++  - Torsten Duwe <duwe@lst.de>
++
++description: |
++  The ANX6345 is an ultra-low power Full-HD eDP transmitter designed for
++  portable devices.
++
++properties:
++  compatible:
++    const: analogix,anx6345
++
++  reg:
++    maxItems: 1
++    description: base I2C address of the device
++
++  reset-gpios:
++    maxItems: 1
++    description: GPIO connected to active low reset
++
++  dvdd12-supply:
++    maxItems: 1
++    description: Regulator for 1.2V digital core power.
++
++  dvdd25-supply:
++    maxItems: 1
++    description: Regulator for 2.5V digital core power.
++
++  ports:
++    anyOf:
++      - port@0:
++        description: Video port for LVTTL input
++      - port@1:
++        description: Video port for eDP output (panel or connector).
++                     May be omitted if EDID works reliably.
++    required:
++      - port@0
++
++required:
++  - compatible
++  - reg
++  - reset-gpios
++  - dvdd12-supply
++  - dvdd25-supply
++  - ports
++
++examples:
++  - |
++    i2c0 {
++      #address-cells = <1>;
++      #size-cells = <0>;
++
++      anx6345: anx6345@38 {
++        compatible = "analogix,anx6345";
++        reg = <0x38>;
++        reset-gpios = <&pio42 1 /* GPIO_ACTIVE_LOW */>;
++        dvdd25-supply = <&reg_dldo2>;
++        dvdd12-supply = <&reg_fldo1>;
++
++        ports {
++          #address-cells = <1>;
++          #size-cells = <0>;
++
++          anx6345_in: port@0 {
++            #address-cells = <1>;
++            #size-cells = <0>;
++            reg = <0>;
++            anx6345_in_tcon0: endpoint@0 {
++              reg = <0>;
++              remote-endpoint = <&tcon0_out_anx6345>;
++            };
++          };
++
++          anx6345_out: port@1 {
++            #address-cells = <1>;
++            #size-cells = <0>;
++            reg = <1>;
++            anx6345_out_panel: endpoint@0 {
++              reg = <0>;
++              remote-endpoint = <&panel_in_edp>;
++            };
++          };
++        };
++      };
++    };
 -- 
 2.16.4
 
