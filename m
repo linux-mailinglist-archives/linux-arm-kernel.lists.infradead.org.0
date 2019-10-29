@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 491B2E91A3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 22:17:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8ED11E91A0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 22:16:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,66 +11,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=FHYEPfowEET14HZnaGn8K7+zASZ25X0zbhitQOHPoZk=; b=KPIGUjTDzd+6baZ08RYpxbiQli
-	GrMIeHpxtuflrYCWcSxxfzJWXKc6IQZtjDviRk8S9Hn2OHk64HlBXqRpweyBOWMMNKsyBIAjO563u
-	Yb1Vbf+eo2PcKsrU4cA4O4SiCEhXWDNO+poHICwIx1GA7XZ8k4StysPSQgAiCGV56qf5CJFBDyYd8
-	deYv/dv8fic/Wva/1UfX9EflhWGtJ007V+Q/d4jgsXrm838NMJa+VKCvmN4gXDu4k+V1QltxBiYvX
-	pUP2g8LAsi7EUI+4Sk5TO57slaqQLj+gBdhFTV+foS9694fAxDI0SfTKBZfyMZUBpT9GEdsEpeAoc
-	J/DtnaRg==;
+	bh=oJXp0XRP4ybQ2iASGcqZ9/ys/HjggV+bEByHcfRU7Vg=; b=XFu+diGATF4ht1gqB/4v6dLK4k
+	L/H/i6i1GVhum1XS6ovn/ijIuy5chu7aIGOjWcYz0y/I7L0XtW/BLYy42gqXx6KlNy6mYjm4WBS8L
+	Yo2hZX/BCBJDX51nQ6K8YQetdS2KricI0+bRkZZ4Whd0SeIl4RdzpxcXwc4dRScJHW0W/efqHSCIn
+	qhhc5gqkp+1obfawr2+QUuIjkPoOWyXX8fIbsUT5fM1CPD6undzkFJxMtZITeKS33SlkexSHFyf2r
+	v4DsZ2cxauUhvs6JtS56ACnzTZhDGcSozoPuR0vcRXaAHT307aKwUgcA8wMI0QQw/31nO4hFBFcXN
+	Ekv8Kr2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPYri-0007v6-Ga; Tue, 29 Oct 2019 21:17:22 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1iPYrA-0007Ng-S0; Tue, 29 Oct 2019 21:16:48 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPYoc-0004UH-OC
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 21:14:12 +0000
-Received: by mail-pl1-x643.google.com with SMTP id t10so8300055plr.8
+ id 1iPYod-0004V0-JO
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 21:14:13 +0000
+Received: by mail-pg1-x542.google.com with SMTP id p12so10507255pgn.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 29 Oct 2019 14:14:10 -0700 (PDT)
+ Tue, 29 Oct 2019 14:14:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=/BlCq1vuoPK6b90i9+3dEN0gsbsUxI5XzRVDtU+Y9n4=;
- b=M3a1uKeinpfYILyOgto01x3Z0/Do7xHci3ACE83vFIz62Z9cDjf3QuJSqLQlVdoz5I
- 0rW3KKzQ7S0KkakxOpNlTmyhieiHv+YebhpWX4iC97xSOcSmbsnsoy8a6PUwi+eJhllx
- qwaZZ60pVF22RF1UdIfw2PTFkL9ZBlI7t+Doc=
+ bh=WDpEXta6gblz8RcQG8Y0aSP7MVebXWwYNQQzkqw1syM=;
+ b=SKSnYHxJHmii8xo5Z4mTmdRCVC7yrS/D7oEkTo/iOkxl6ZHwOveMu6U4vwyneQKKse
+ wkiElGkgFNqM/pnNorMlK0ipsYoYkCUlQluZIT2JQEfehDHl0Rk4eib7HwU4Q5SXpm1R
+ hLusOWfC9hyYA7DP6xjHwrrx4gSVO2QQe2Xfk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=/BlCq1vuoPK6b90i9+3dEN0gsbsUxI5XzRVDtU+Y9n4=;
- b=JRWY8yOHlt/rgY7PJuE3S77nQ8UIHVz72kzjBUFqmXjpsFQS8Va9Z7JafvC6Y9TEq+
- eJ0dSCcwLSjcZIi8hRFYh+GPgcud1YIxODFrsxwLjZPCMZPeApx9X3af8MqnrQ0P3y1D
- Un+ROpmY1gmfnA/OBk1XlCMIiOQVbBMbI+w7xh8G05QrKzfokHkYfykGjokBCVrWNzgb
- aOgAqoEzjWZDkUsY871I7MaBUwpujkcNdZIcyhjpJiMQhd+N/FHIhlh119OFkHWfz7oT
- pkYCNVknsbt7U3ewr4iFUc1gsBqMTk4YcJpiDLibv4uO1X5ZpXmq7wcsFJaaBYYzNrB5
- xfxQ==
-X-Gm-Message-State: APjAAAV5XUzzXtIvMwxwz90mPDRuEOVPWoO8swC+7pP0ZSdCyPStiHxG
- HCQ+lBLsYxVB6KAj2a6NR7BmSQ==
-X-Google-Smtp-Source: APXvYqwBlr/dG9EoHmIzcD/284bTMRVUng+VSZNVn2USM8IUIAoIBLGaDuOHmKUNb6KZndWlR52IoQ==
-X-Received: by 2002:a17:902:ab82:: with SMTP id f2mr774907plr.39.1572383649691; 
- Tue, 29 Oct 2019 14:14:09 -0700 (PDT)
+ bh=WDpEXta6gblz8RcQG8Y0aSP7MVebXWwYNQQzkqw1syM=;
+ b=b0OE9RSiwbB2yh05ijiS9+AmtxhKbV0ZXkgGDmn9EQIkr/+K7poUPCwlf1fT6983M+
+ O1/5HXUgF3SSq+/Ol0TQ09WbBduTKeI8k/L78hQbjVqRsQoxgQCwI4vA8mrfUS28S9fs
+ 3PjsmWbGx34c/bim5vT1hIQ8eXJDwlMSrTqctYb8avGG9K+yo8vMX2IQNBr43cspjihx
+ z6Xvo4RJnCNvI50TyfnRi1vcpSt7Tx74/pS76kPRLmU7g6RkbPfFgszYD4krwVs6u5iX
+ UkvIdCYedJvrBeC3BDN3Va8C6bwJ/ezDGl4EG1z9p7unWyuYV5Isaf0yktQpsY8BXuLd
+ JSYQ==
+X-Gm-Message-State: APjAAAULqeMHfyVAF7r35j39YfLJmULKXR0lUNuv9NWGZZ0cgzz4yknD
+ V3s2MpW1HjN4hkVQbhMCDMwgSw==
+X-Google-Smtp-Source: APXvYqxFx3lAs83NleldSHvJtGYr8uultjy/q194MXgo4WsWAIjlsO+XPESSMmA+TJVWlA+I7JD0Zw==
+X-Received: by 2002:a62:3441:: with SMTP id b62mr30262216pfa.233.1572383650475; 
+ Tue, 29 Oct 2019 14:14:10 -0700 (PDT)
 Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id z25sm41774pfa.88.2019.10.29.14.14.02
+ by smtp.gmail.com with ESMTPSA id f25sm50907pfk.10.2019.10.29.14.14.02
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
  Tue, 29 Oct 2019 14:14:04 -0700 (PDT)
 From: Kees Cook <keescook@chromium.org>
 To: Borislav Petkov <bp@alien8.de>
-Subject: [PATCH v3 07/29] x86: Restore "text" Program Header with dummy section
-Date: Tue, 29 Oct 2019 14:13:29 -0700
-Message-Id: <20191029211351.13243-8-keescook@chromium.org>
+Subject: [PATCH v3 08/29] vmlinux.lds.h: Provide EMIT_PT_NOTE to indicate
+ export of .notes
+Date: Tue, 29 Oct 2019 14:13:30 -0700
+Message-Id: <20191029211351.13243-9-keescook@chromium.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191029211351.13243-1-keescook@chromium.org>
 References: <20191029211351.13243-1-keescook@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_141410_892227_14187C95 
-X-CRM114-Status: GOOD (  13.23  )
+X-CRM114-CacheID: sfid-20191029_141411_686827_A28C7453 
+X-CRM114-Status: GOOD (  14.24  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -110,37 +111,133 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In a linker script, if once places a section in one or more segments using
-":PHDR", then the linker will place all subsequent allocatable sections,
-which do not specify ":PHDR", into the same segments. In order to have
-the NOTES section in both PT_LOAD (":text") and PT_NOTE (":note"), both
-segments are marked, and the only way to to undo this to keep subsequent
-sections out of PT_NOTE is to mark the following section with just the
-single desired PT_LOAD (":text").
-
-In preparation for having a common NOTES macro, perform the segment
-assignment use a dummy section (as done by other architectures).
+In preparation for moving NOTES into RO_DATA, provide a mechanism for
+architectures that want to emit a PT_NOTE Program Header to do so.
 
 Signed-off-by: Kees Cook <keescook@chromium.org>
+Acked-by: Heiko Carstens <heiko.carstens@de.ibm.com> # s390
 ---
- arch/x86/kernel/vmlinux.lds.S | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ arch/alpha/kernel/vmlinux.lds.S   |  3 +++
+ arch/ia64/kernel/vmlinux.lds.S    |  2 ++
+ arch/mips/kernel/vmlinux.lds.S    | 12 ++++++------
+ arch/powerpc/kernel/vmlinux.lds.S |  1 +
+ arch/s390/kernel/vmlinux.lds.S    |  2 ++
+ arch/x86/kernel/vmlinux.lds.S     |  2 ++
+ include/asm-generic/vmlinux.lds.h |  8 ++++++++
+ 7 files changed, 24 insertions(+), 6 deletions(-)
 
+diff --git a/arch/alpha/kernel/vmlinux.lds.S b/arch/alpha/kernel/vmlinux.lds.S
+index 781090cacc96..363a60ba7c31 100644
+--- a/arch/alpha/kernel/vmlinux.lds.S
++++ b/arch/alpha/kernel/vmlinux.lds.S
+@@ -1,4 +1,7 @@
+ /* SPDX-License-Identifier: GPL-2.0 */
++
++#define EMITS_PT_NOTE
++
+ #include <asm-generic/vmlinux.lds.h>
+ #include <asm/thread_info.h>
+ #include <asm/cache.h>
+diff --git a/arch/ia64/kernel/vmlinux.lds.S b/arch/ia64/kernel/vmlinux.lds.S
+index 2c4f23c390ad..7cf4958b732d 100644
+--- a/arch/ia64/kernel/vmlinux.lds.S
++++ b/arch/ia64/kernel/vmlinux.lds.S
+@@ -5,6 +5,8 @@
+ #include <asm/pgtable.h>
+ #include <asm/thread_info.h>
+ 
++#define EMITS_PT_NOTE
++
+ #include <asm-generic/vmlinux.lds.h>
+ 
+ OUTPUT_FORMAT("elf64-ia64-little")
+diff --git a/arch/mips/kernel/vmlinux.lds.S b/arch/mips/kernel/vmlinux.lds.S
+index 33ee0d18fb0a..1c95612eb800 100644
+--- a/arch/mips/kernel/vmlinux.lds.S
++++ b/arch/mips/kernel/vmlinux.lds.S
+@@ -10,6 +10,11 @@
+  */
+ #define BSS_FIRST_SECTIONS *(.bss..swapper_pg_dir)
+ 
++/* Cavium Octeon should not have a separate PT_NOTE Program Header. */
++#ifndef CONFIG_CAVIUM_OCTEON_SOC
++#define EMITS_PT_NOTE
++#endif
++
+ #include <asm-generic/vmlinux.lds.h>
+ 
+ #undef mips
+@@ -76,12 +81,7 @@ SECTIONS
+ 		__stop___dbe_table = .;
+ 	}
+ 
+-#ifdef CONFIG_CAVIUM_OCTEON_SOC
+-#define NOTES_HEADER
+-#else /* CONFIG_CAVIUM_OCTEON_SOC */
+-#define NOTES_HEADER :note
+-#endif /* CONFIG_CAVIUM_OCTEON_SOC */
+-	NOTES :text NOTES_HEADER
++	NOTES NOTES_HEADERS
+ 	.dummy : { *(.dummy) } :text
+ 
+ 	_sdata = .;			/* Start of data section */
+diff --git a/arch/powerpc/kernel/vmlinux.lds.S b/arch/powerpc/kernel/vmlinux.lds.S
+index e184a63aa5b0..7e26e20c8324 100644
+--- a/arch/powerpc/kernel/vmlinux.lds.S
++++ b/arch/powerpc/kernel/vmlinux.lds.S
+@@ -6,6 +6,7 @@
+ #endif
+ 
+ #define BSS_FIRST_SECTIONS *(.bss.prominit)
++#define EMITS_PT_NOTE
+ 
+ #include <asm/page.h>
+ #include <asm-generic/vmlinux.lds.h>
+diff --git a/arch/s390/kernel/vmlinux.lds.S b/arch/s390/kernel/vmlinux.lds.S
+index 13294fef473e..646d939346df 100644
+--- a/arch/s390/kernel/vmlinux.lds.S
++++ b/arch/s390/kernel/vmlinux.lds.S
+@@ -15,6 +15,8 @@
+ /* Handle ro_after_init data on our own. */
+ #define RO_AFTER_INIT_DATA
+ 
++#define EMITS_PT_NOTE
++
+ #include <asm-generic/vmlinux.lds.h>
+ #include <asm/vmlinux.lds.h>
+ 
 diff --git a/arch/x86/kernel/vmlinux.lds.S b/arch/x86/kernel/vmlinux.lds.S
-index e2feacf921a0..788e78978030 100644
+index 788e78978030..2e18bf5c1aed 100644
 --- a/arch/x86/kernel/vmlinux.lds.S
 +++ b/arch/x86/kernel/vmlinux.lds.S
-@@ -147,8 +147,9 @@ SECTIONS
- 	} :text = 0x9090
+@@ -21,6 +21,8 @@
+ #define LOAD_OFFSET __START_KERNEL_map
+ #endif
  
- 	NOTES :text :note
-+	.dummy : { *(.dummy) } :text
++#define EMITS_PT_NOTE
++
+ #include <asm-generic/vmlinux.lds.h>
+ #include <asm/asm-offsets.h>
+ #include <asm/thread_info.h>
+diff --git a/include/asm-generic/vmlinux.lds.h b/include/asm-generic/vmlinux.lds.h
+index dae64600ccbf..f5dd45ce73f1 100644
+--- a/include/asm-generic/vmlinux.lds.h
++++ b/include/asm-generic/vmlinux.lds.h
+@@ -54,6 +54,14 @@
+ #define LOAD_OFFSET 0
+ #endif
  
--	EXCEPTION_TABLE(16) :text = 0x9090
-+	EXCEPTION_TABLE(16)
++/*
++ * Only some architectures want to have the .notes segment visible in
++ * a separate PT_NOTE ELF Program Header.
++ */
++#ifdef EMITS_PT_NOTE
++#define NOTES_HEADERS		:text :note
++#endif
++
+ /* Align . to a 8 byte boundary equals to maximum function alignment. */
+ #define ALIGN_FUNCTION()  . = ALIGN(8)
  
- 	/* .text should occupy whole number of pages */
- 	. = ALIGN(PAGE_SIZE);
 -- 
 2.17.1
 
