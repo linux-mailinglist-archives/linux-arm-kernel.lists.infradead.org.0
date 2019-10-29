@@ -2,53 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85E3FE8666
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 12:15:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 734A9E866A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 12:16:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QhX5I7be0J5WbPfPKe4J4Mox3AAptB/dt/hO5LcrCPA=; b=JScPLXVD6qvccX
-	4kyp0WK1PrL1AxJVins8lD7HSqZTffYicAwbFxooHu3xIYw8ra9fg/5dmfE5+S959dlH6QFzdCrqm
-	R5poHeL3xHug58lF1gXaNj/XQnUi25IDQYgd2FQj5Bx8pD7/ZJhBOTVZGBQqAFVuKmJi3mREeBus8
-	HkHnLAe2DeFYbtcTSSA93hYEZOm+r2ZUNblieMVvrCilw3M2XUfzCCIdPDLmn3mJLkQ9YnaImEtpI
-	PQGrDKC7NrPAbdTVfw0gkNwuBqcyAlqtGZwqs7Sp81IJeyGndA+80oQWGsT4NiaYlFOJuwGN9MkFE
-	vkNuji5wW45aTrz+aXTA==;
+	List-Owner; bh=9JKQInOIPmhrNgAvp6tA0344Ba/6+4WbtF4r00lJ9/4=; b=iofW3ihcMX+h7G
+	FGt/RJRWrjFGBdPoSIC5uPBhc6IvXqXfVs3yAkKLaofo5Jrb6D8RQd+AGEj7/sazA0jXHpy1CenPR
+	qnJB0FOhLgWI6FE6PfK+zg/mPUwkFECYuQoQK7oJ6WKh/MaQl7KFp2vNHWs7HQngWdziBEHpxLnt4
+	szj/ITQgVFB9qWO6CPwgjZ+2MRV/egfpHsprIamj0HccKdAkv1iiiINMLAoMdCV3uf1HLqkCtVvkz
+	l+d5LQ1pPJxiQdrPd59EUKuZaVslxtzzCXAurSskggmcTVOMC8rdwJ3zExkzx67IIprW/QTrYp2hm
+	N9QZ2/+BTQxjSszG+QYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPPTK-0001sI-BD; Tue, 29 Oct 2019 11:15:34 +0000
+	id 1iPPTv-0002B4-3F; Tue, 29 Oct 2019 11:16:11 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPPT9-0001rr-1U
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 11:15:24 +0000
+ id 1iPPTk-0002AM-UL
+ for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 11:16:02 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 11E4020874;
- Tue, 29 Oct 2019 11:15:20 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 12913208E3;
+ Tue, 29 Oct 2019 11:15:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572347722;
- bh=SRzW6FPQi8ILQcHxWmUOSb/ba5l1skxBzk0N9Zb67L4=;
+ s=default; t=1572347760;
+ bh=PYpYmLCcRCDnvoNd2S0sMHcaEM2JronWu9CsKftbO3I=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=MJdt7Qkk8k8EZ3/tmQnFyxliB71kW0Fijqg99du9tXDTYkAjb/luEfkEjNGNcaZwg
- +HMHEyLiKIi9Eui/X2aR2rO4gQQR2I113KBb4OV19kIVsDSHx0qGFkdXJhnjZBu40T
- 587urYEACjLw9EEzNQ6voqtMd9lA5yn3AW3eFhvQ=
-Date: Tue, 29 Oct 2019 11:15:17 +0000
+ b=GdaMUmmgMjWuXCjwK0dWZlcoWZbdkss1hf/IPKcAItun5DvAeYWYvYEXepIKuV8F4
+ Cgj6BmO5LCR5kVQSqH6TeJrA5sMtyubLtUhcJCViQ3HQZ9x8ffrdD48QttQIxJTdvs
+ cKuoCU3Lo8JRJ8savTdPFUcs8+VjcCEB/d/GTobo=
+Date: Tue, 29 Oct 2019 11:15:56 +0000
 From: Will Deacon <will@kernel.org>
-To: Julien Grall <julien.grall@arm.com>
-Subject: Re: [PATCH] arm64: cpufeature: Export Armv8.6 Matrix feature to
- userspace
-Message-ID: <20191029111517.GE11590@willie-the-truck>
-References: <20191025171056.30641-1-julien.grall@arm.com>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH v2] iommu/arm-smmu: fix "hang" when games exit
+Message-ID: <20191029111555.GF11590@willie-the-truck>
+References: <418d8426-f299-1269-2b2e-f86677cf22c2@arm.com>
+ <20191007204906.19571-1-robdclark@gmail.com>
+ <20191028222042.GB8532@willie-the-truck>
+ <CAJs_Fx7zRWsTPiAg0PFt+8nJPpHpzSkxW6XMMJwozVO6vyB78A@mail.gmail.com>
+ <e3fc88d9-4934-0227-d9c7-b1cb37a8811e@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191025171056.30641-1-julien.grall@arm.com>
+In-Reply-To: <e3fc88d9-4934-0227-d9c7-b1cb37a8811e@arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_041523_143558_26973209 
-X-CRM114-Status: GOOD (  15.60  )
+X-CRM114-CacheID: sfid-20191029_041601_001655_71FF9806 
+X-CRM114-Status: GOOD (  15.63  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,71 +80,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, Dave.Martin@arm.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, suzuki.poulose@arm.com
+Cc: Rob Clark <robdclark@chromium.org>, Joerg Roedel <joro@8bytes.org>,
+ iommu@lists.linux-foundation.org, open list <linux-kernel@vger.kernel.org>,
+ Rob Clark <robdclark@gmail.com>, freedreno <freedreno@lists.freedesktop.org>,
+ "moderated list:ARM SMMU DRIVERS" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 25, 2019 at 06:10:56PM +0100, Julien Grall wrote:
-> This patch provides support for reporting the presence of Armv8.6
-> Matrix and its optional features to userspace.
-
-Are you sure this is 8.6 and not earlier?
-
-> This based on [1] + commit ec52c7134b1f "arm64: cpufeature: Treat
-> ID_AA64ZFR0_EL1 as RAZ when SVE is not enabled" (taken from v5.4-rc4).
+On Mon, Oct 28, 2019 at 10:51:53PM +0000, Robin Murphy wrote:
+> On 2019-10-28 10:38 pm, Rob Clark wrote:
+> > On Mon, Oct 28, 2019 at 3:20 PM Will Deacon <will@kernel.org> wrote:
+> > > On Mon, Oct 07, 2019 at 01:49:06PM -0700, Rob Clark wrote:
+> > > > From: Rob Clark <robdclark@chromium.org>
+> > > > 
+> > > > When games, browser, or anything using a lot of GPU buffers exits, there
+> > > > can be many hundreds or thousands of buffers to unmap and free.  If the
+> > > > GPU is otherwise suspended, this can cause arm-smmu to resume/suspend
+> > > > for each buffer, resulting 5-10 seconds worth of reprogramming the
+> > > > context bank (arm_smmu_write_context_bank()/arm_smmu_write_s2cr()/etc).
+> > > > To the user it would appear that the system just locked up.
+> > > > 
+> > > > A simple solution is to use pm_runtime_put_autosuspend() instead, so we
+> > > > don't immediately suspend the SMMU device.
+> > > 
+> > > Please can you reword the subject to be a bit more useful? The commit
+> > > message is great, but the subject is a bit like "fix bug in code" to me.
+> > 
+> > yeah, not the best $subject, but I wasn't quite sure how to fit
+> > something better in a reasonable # of chars.. maybe something like:
+> > "iommu/arm-smmu: optimize unmap but avoiding toggling runpm state"?
 > 
-> [1]  arm64/for-next/elf-hwcap-docs
-> ---
->  Documentation/arm64/cpu-feature-registers.rst |  8 ++++++++
->  Documentation/arm64/elf_hwcaps.rst            | 15 +++++++++++++++
->  arch/arm64/include/asm/hwcap.h                |  4 ++++
->  arch/arm64/include/asm/sysreg.h               |  7 +++++++
->  arch/arm64/include/uapi/asm/hwcap.h           |  4 ++++
->  arch/arm64/kernel/cpufeature.c                | 11 +++++++++++
->  arch/arm64/kernel/cpuinfo.c                   |  4 ++++
->  7 files changed, 53 insertions(+)
-> 
-> diff --git a/Documentation/arm64/cpu-feature-registers.rst b/Documentation/arm64/cpu-feature-registers.rst
-> index ffcf4e2c71ef..d1d6d56a7b08 100644
-> --- a/Documentation/arm64/cpu-feature-registers.rst
-> +++ b/Documentation/arm64/cpu-feature-registers.rst
-> @@ -193,6 +193,8 @@ infrastructure:
->       +------------------------------+---------+---------+
->       | Name                         |  bits   | visible |
->       +------------------------------+---------+---------+
-> +     | I8MM                         | [52-55] |    y    |
-> +     +------------------------------+---------+---------+
+> FWIW, I'd be inclined to frame it as something like "avoid pathological RPM
+> behaviour for unmaps".
 
-Looking at:
-
-https://developer.arm.com/docs/ddi0601/latest/aarch64-system-registers/id_aa64isar1_el1
-
-Then I8MM is advertised as "Armv8.2", alongside other fields that we haven't
-listed here such as BF16 and SPECRES.
-
-So we probably want a patch bringing all of this up to speed, rather than
-randomly advertising some features and not others.
-
->       | SB                           | [36-39] |    y    |
->       +------------------------------+---------+---------+
->       | FRINTTS                      | [32-35] |    y    |
-> @@ -227,6 +229,12 @@ infrastructure:
->       +------------------------------+---------+---------+
->       | Name                         |  bits   | visible |
->       +------------------------------+---------+---------+
-> +     | F64MM                        | [56-59] |    y    |
-> +     +------------------------------+---------+---------+
-> +     | F32MM                        | [52-55] |    y    |
-> +     +------------------------------+---------+---------+
-> +     | I8MM                         | [44-47] |    y    |
-> +     +------------------------------+---------+---------+
-
-Urgh, we're inconsistent in our bitfields. Some are [lo-hi] whilst others
-are [hi-lo]. Please can you fix that in a preparatory patch? I prefer
-[hi-lo] and it matches the arch docs.
+LGTM!
 
 Will
 
