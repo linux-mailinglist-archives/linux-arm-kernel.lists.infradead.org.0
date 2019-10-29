@@ -2,83 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BE3CE88B6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 13:49:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98341E88DB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 29 Oct 2019 13:57:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/7+GvYotLV7DEt6FkkcyJz0Ck+Pz874WxxA4IoUvju8=; b=kuzNBnEbrXmgzq
-	hwqeu/jSBCUtTf0026eM72pHkt4l62+9+SSAWbWfM6oTTCWFvShi5+BGHJ6tTeN30XeXxPh98j0/d
-	VmZ5SD0iU7+yoPAQGFgFUs+NDi7vRtxxdj41ztitvHYZZtW4pUvVv4j1qjsEv9mMI6iqkvOhgqy3t
-	B3eluVXK1kyFrAgbk4hzCtQ0WlygotpWIWjt/t8pJ72xxpAJ3LcUcDOV2yybvu/+lDyBNxDAo/aDj
-	a4FKNwx4mtSHE3TcKsrDpXqo7nrrNs8knHAqhx+tcQdzXbP+hf5C1Nj1u8TU2lneccdlD76UjVfKp
-	0n9gW2Hz6wR1FytSb9vQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
+	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=bTTtGBGFCjUL3DjVNn8bNIB5pHVMUwDiatsKwC+FM58=; b=t6v
+	T62blgCNh+YodKlfLUdEM+CiLCD+7/B+MsXtd9OObY5khKxCN76j6bHHwwWOiKGENK0A24jq9P518
+	ZYqZoVF6MdzWvrW0oydtLpSkjWQgjGecMrgCMr1pnMdSL0yFsIoC0bzvywB9uIc8s7rct6sBbcP6p
+	ZABIzk1m6+1SZBtkHL/arH19JBuqfhbYpG6yLVysvuG5Vq7ii5U5IRSkno/Lg90SJ5rZqoD4j2BbS
+	klEauxywzA+Um67QxlzdP64tFUf+6HGY5Y67M4nPAyqkW5UFGcwdUvYYUejxn7tm+cQQcMf12fI6A
+	mMs7Tuhy4qgLnPDZjlNT0BKwSOajjMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPQwK-0007mM-VV; Tue, 29 Oct 2019 12:49:36 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1iPR3s-0003Kb-Cw; Tue, 29 Oct 2019 12:57:24 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPQw8-0007lB-KL
- for linux-arm-kernel@lists.infradead.org; Tue, 29 Oct 2019 12:49:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1572353362;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=6BV4BcyOxaroiRY1nHh/W3bkCNLJ+ckD/r50Gn1yPT0=;
- b=TYes92p0H7fd2VFu+U+M2eu77wlbQnYZ0ej4bTRVTBXYvh6aWfiv72Bt+u/VbFhTINImZl
- 1i+Zvhlao17RoXnXBm2RgtXbFO62ApQlG9tdm0gOI0m5gtgrhUHS9RWGqg2yKihaIdJM38
- mYfFxhyqm0WtniCGfwlhPsFbZq4qXyA=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-281-xZ4E5mL8OxaCghK5UyvDWg-1; Tue, 29 Oct 2019 08:49:18 -0400
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 30293800C80;
- Tue, 29 Oct 2019 12:49:17 +0000 (UTC)
-Received: from [10.36.118.15] (unknown [10.36.118.15])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 3123F600C4;
- Tue, 29 Oct 2019 12:49:13 +0000 (UTC)
-Subject: Re: [PATCH 3/3] KVM: arm/arm64: vgic: Don't rely on the wrong pending
- table
-To: Zenghui Yu <yuzenghui@huawei.com>, Marc Zyngier <maz@kernel.org>
-References: <20191029071919.177-1-yuzenghui@huawei.com>
- <20191029071919.177-4-yuzenghui@huawei.com> <86mudjykfa.wl-maz@kernel.org>
- <f8a30e65-7077-301a-1558-7fc504b5e891@huawei.com>
-From: Auger Eric <eric.auger@redhat.com>
-Message-ID: <e2141f6a-c530-46d5-d5d9-26806b02d55b@redhat.com>
-Date: Tue, 29 Oct 2019 13:49:10 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
-MIME-Version: 1.0
-In-Reply-To: <f8a30e65-7077-301a-1558-7fc504b5e891@huawei.com>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
-X-MC-Unique: xZ4E5mL8OxaCghK5UyvDWg-1
-X-Mimecast-Spam-Score: 0
+ id 1iPR3g-0003Iv-Sr; Tue, 29 Oct 2019 12:57:15 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
+ Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+ List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
+ List-Archive; bh=CBQLq/65CvGse5vZ5IhccpSwngNnItVee/+ILoQUur0=; b=NEe6XtxYcThn
+ bTmvcMIN1MnRHLAE6mcDNDsazPISqwuyVYdrzzrgGR+HvCwcXVZV2vxjLKF4FSZ0mFTHoV+xfLv4s
+ c/BOBFzrvWrbQvplTiRlCb4rfhIHMdrFXPtMS9+zJkSmWGuM3vVUGcGMw7kyuoEqZK35b97YdL9qC
+ upl4c=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1iPR3T-0002DG-Pu; Tue, 29 Oct 2019 12:56:59 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id 5564627428D8; Tue, 29 Oct 2019 12:56:59 +0000 (GMT)
+From: Mark Brown <broonie@kernel.org>
+To: Cheng-Yi Chiang <cychiang@chromium.org>
+Subject: Applied "ASoC: rockchip_max98090: Optionally support HDMI use case"
+ to the asoc tree
+In-Reply-To: <20191028071930.145899-4-cychiang@chromium.org>
+X-Patchwork-Hint: ignore
+Message-Id: <20191029125659.5564627428D8@ypsilon.sirena.org.uk>
+Date: Tue, 29 Oct 2019 12:56:59 +0000 (GMT)
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_054924_748146_742BC329 
-X-CRM114-Status: GOOD (  23.17  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191029_055713_242956_1D98CF0B 
+X-CRM114-Status: GOOD (  21.21  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [207.211.31.81 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [172.104.155.198 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -93,89 +77,466 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: suzuki.poulose@arm.com, linux-kernel@vger.kernel.org, james.morse@arm.com,
- linux-arm-kernel@lists.infradead.org, wanghaibin.wang@huawei.com,
- kvmarm@lists.cs.columbia.edu, julien.thierry.kdev@gmail.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, alsa-devel@alsa-project.org,
+ dianders@chromium.org, Heiko Stuebner <heiko@sntech.de>,
+ Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ dri-devel@lists.freedesktop.org, Liam Girdwood <lgirdwood@gmail.com>,
+ Hans Verkuil <hverkuil@xs4all.nl>, Andrzej Hajda <a.hajda@samsung.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jerome Brunet <jbrunet@baylibre.com>, Takashi Iwai <tiwai@suse.com>,
+ linux-rockchip@lists.infradead.org, dgreid@chromium.org,
+ devicetree@vger.kernel.org, tzungbi@chromium.org,
+ Jonas Karlman <jonas@kwiboo.se>, Russell King <rmk+kernel@armlinux.org.uk>,
+ Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
+ linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Daniel Vetter <daniel@ffwll.ch>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgWmVuZ2h1aSwKCk9uIDEwLzI5LzE5IDE6MjcgUE0sIFplbmdodWkgWXUgd3JvdGU6Cj4gSGkg
-TWFyYywKPiAKPiBPbiAyMDE5LzEwLzI5IDE3OjIzLCBNYXJjIFp5bmdpZXIgd3JvdGU6Cj4+IE9u
-IFR1ZSwgMjkgT2N0IDIwMTkgMDc6MTk6MTkgKzAwMDAsCj4+IFplbmdodWkgWXUgPHl1emVuZ2h1
-aUBodWF3ZWkuY29tPiB3cm90ZToKPj4+Cj4+PiBJdCdzIHBvc3NpYmxlIHRoYXQgdHdvIExQSXMg
-bG9jYXRlIGluIHRoZSBzYW1lICJieXRlX29mZnNldCIgYnV0IHRhcmdldAo+Pj4gdHdvIGRpZmZl
-cmVudCB2Y3B1cywgd2hlcmUgdGhlaXIgcGVuZGluZyBzdGF0dXMgYXJlIGluZGljYXRlZCBieSB0
-d28KPj4+IGRpZmZlcmVudCBwZW5kaW5nIHRhYmxlcy7CoCBJbiBzdWNoIGEgc2NlbmFyaW8sIHVz
-aW5nIGxhc3RfYnl0ZV9vZmZzZXQKPj4+IG9wdGltaXphdGlvbiB3aWxsIGxlYWQgS1ZNIHJlbHlp
-bmcgb24gdGhlIHdyb25nIHBlbmRpbmcgdGFibGUgZW50cnkuCj4+PiBMZXQgdXMgdXNlIGxhc3Rf
-cHRyIGluc3RlYWQsIHdoaWNoIGNhbiBiZSB0cmVhdGVkIGFzIGEgYnl0ZSBpbmRleCBpbnRvCj4+
-PiBhIHBlbmRpbmcgdGFibGUgYW5kIGFsc28sIGNhbiBiZSB2Y3B1IHNwZWNpZmljLgo+Pj4KPj4+
-IFNpZ25lZC1vZmYtYnk6IFplbmdodWkgWXUgPHl1emVuZ2h1aUBodWF3ZWkuY29tPgo+Pj4gLS0t
-Cj4+Pgo+Pj4gSWYgdGhpcyBwYXRjaCBoYXMgZG9uZSB0aGUgcmlnaHQgdGhpbmcsIHdlIGNhbiBl
-dmVuIGFkZCB0aGU6Cj4+Pgo+Pj4gRml4ZXM6IDI4MDc3MTI1MmMxYiAoIktWTTogYXJtNjQ6IHZn
-aWMtdjM6Cj4+PiBLVk1fREVWX0FSTV9WR0lDX1NBVkVfUEVORElOR19UQUJMRVMiKQo+Pj4KPj4+
-IEJ1dCB0byBiZSBob25lc3QsIEknbSBub3QgY2xlYXIgYWJvdXQgd2hhdCBoYXMgdGhpcyBwYXRj
-aCBhY3R1YWxseQo+Pj4gZml4ZWQuCj4+PiBQZW5kaW5nIHRhYmxlcyBzaG91bGQgY29udGFpbiBh
-bGwgemVyb3MgYmVmb3JlIHdlIGZsdXNoIHZnaWNfaXJxJ3MKPj4+IHBlbmRpbmcKPj4+IHN0YXR1
-cyBpbnRvIGd1ZXN0J3MgUkFNICh0aGlua2luZyB0aGF0IGd1ZXN0IHNob3VsZCBuZXZlciB3cml0
-ZSBhbnl0aGluZwo+Pj4gaW50byBpdCkuIFNvIHRoZSBwZW5kaW5nIHRhYmxlIGVudHJ5IHdlJ3Zl
-IHJlYWQgZnJvbSB0aGUgZ3Vlc3QgbWVtb3J5Cj4+PiBzZWVtcyBhbHdheXMgYmUgemVyby4gQW5k
-IHdlIHdpbGwgYWx3YXlzIGRvIHRoZSByaWdodCB0aGluZyBldmVuIGlmIHdlCj4+PiByZWx5IG9u
-IHRoZSB3cm9uZyBwZW5kaW5nIHRhYmxlIGVudHJ5Lgo+Pj4KPj4+IEkgdGhpbmsgSSBtdXN0IGhh
-dmUgc29tZSBtaXN1bmRlcnN0YW5kaW5nIGhlcmUuLi4gUGxlYXNlIGZpeCBtZS4KPj4KPj4gSSB0
-aGluayB5b3UncmUgc3BvdCBvbiwgYW5kIGl0IGlzIHRoZSBjb2RlIG5lZWRzIGZpeGluZywgbm90
-IHlvdSEgVGhlCj4+IHByb2JsZW0gaXMgdGhhdCB3ZSBvbmx5IHJlYWQgYSBieXRlIG9uY2UsIGly
-cmVzcGVjdGl2ZSBvZiB0aGUgdmNwdSB0aGUKPj4gaW50ZXJydXB0cyBpcyByb3V0ZWQgdG8uIElm
-IHdlIHN3aXRjaCB0byBhbm90aGVyIHZjcHUgZm9yIHRoZSBzYW1lCj4+IGJ5dGUgb2Zmc2V0LCB3
-ZSBtdXN0IHJlbG9hZCBpdC4KPj4KPj4gVGhpcyBjYW4gYmUgZG9uZSBieSBlaXRoZXIgY2hlY2tp
-bmcgdGhlIHZjcHUsIG9yIGJ5IHRyYWNraW5nIHRoZSBndWVzdAo+PiBhZGRyZXNzIHRoYXQgd2Ug
-cmVhZCBmcm9tIChqdXN0IGxpa2UgeW91IGRvIGhlcmUpLgo+IAo+IG9rYXksIHRoZSByZW1haW5p
-bmcgcXVlc3Rpb24gaXMgdGhhdCBpbiB2Z2ljX3YzX3NhdmVfcGVuZGluZ190YWJsZXMoKToKPiAK
-PiDCoMKgwqDCoHN0b3JlZCA9IHZhbCAmICgxVSA8PCBiaXRfbnIpOwo+IMKgwqDCoMKgaWYgKHN0
-b3JlZCA9PSBpcnEtPnBlbmRpbmdfbGF0Y2gpCj4gwqDCoMKgwqDCoMKgwqAgY29udGludWU7Cj4g
-Cj4gwqDCoMKgwqBpZiAoaXJxLT5wZW5kaW5nX2xhdGNoKQo+IMKgwqDCoMKgwqDCoMKgIHZhbCB8
-PSAxIDw8IGJpdF9ucjsKPiDCoMKgwqDCoGVsc2UKPiDCoMKgwqDCoMKgwqDCoCB2YWwgJj0gfigx
-IDw8IGJpdF9ucik7Cj4gCj4gRG8gd2UgcmVhbGx5IGhhdmUgYSBzY2VuYXJpbyB3aGVyZSBpcnEt
-PnBlbmRpbmdfbGF0Y2g9PWZhbHNlIGFuZAo+IHN0b3JlZD09dHJ1ZSAoY29ycmVzcG9uZHMgdG8g
-dGhlIGFib3ZlICJlbHNlIikgYW5kIHRoZW4gd2UgY2xlYXIKPiBwZW5kaW5nIHN0YXR1cyBvZiB0
-aGlzIExQSSBpbiBndWVzdCBtZW1vcnk/Cj4gSSBjYW4gbm90IHRoaW5rIG91dCBvbmUgbm93LgoK
-aWYgeW91IHNhdmUsIHJlc3RvcmUgYW5kIHNhdmUgYWdhaW4uIE9uIHRoZSAxc3Qgc2F2ZSB0aGUg
-TFBJIG1heSBiZQpwZW5kaW5nLCBpdCBnZXRzIHN0b3JlZC4gT24gdGhlIHNlY29uZCBzYXZlIHRo
-ZSBMUEkgbWF5IGJlIG5vdCBwZW5kaW5nCmFueW1vcmU/CgpUaGFua3MKCkVyaWMKPiAKPj4KPj4g
-QSBzbWFsbCBjb21tZW50IGJlbG93Ogo+Pgo+Pj4gwqAgdmlydC9rdm0vYXJtL3ZnaWMvdmdpYy12
-My5jIHwgNiArKystLS0KPj4+IMKgIDEgZmlsZSBjaGFuZ2VkLCAzIGluc2VydGlvbnMoKyksIDMg
-ZGVsZXRpb25zKC0pCj4+Pgo+Pj4gZGlmZiAtLWdpdCBhL3ZpcnQva3ZtL2FybS92Z2ljL3ZnaWMt
-djMuYyBiL3ZpcnQva3ZtL2FybS92Z2ljL3ZnaWMtdjMuYwo+Pj4gaW5kZXggNWVmOTNlNTA0MWUx
-Li43Y2QyZTJmODE1MTMgMTAwNjQ0Cj4+PiAtLS0gYS92aXJ0L2t2bS9hcm0vdmdpYy92Z2ljLXYz
-LmMKPj4+ICsrKyBiL3ZpcnQva3ZtL2FybS92Z2ljL3ZnaWMtdjMuYwo+Pj4gQEAgLTM2Myw4ICsz
-NjMsOCBAQCBpbnQgdmdpY192M19scGlfc3luY19wZW5kaW5nX3N0YXR1cyhzdHJ1Y3Qga3ZtCj4+
-PiAqa3ZtLCBzdHJ1Y3QgdmdpY19pcnEgKmlycSkKPj4+IMKgIGludCB2Z2ljX3YzX3NhdmVfcGVu
-ZGluZ190YWJsZXMoc3RydWN0IGt2bSAqa3ZtKQo+Pj4gwqAgewo+Pj4gwqDCoMKgwqDCoCBzdHJ1
-Y3QgdmdpY19kaXN0ICpkaXN0ID0gJmt2bS0+YXJjaC52Z2ljOwo+Pj4gLcKgwqDCoCBpbnQgbGFz
-dF9ieXRlX29mZnNldCA9IC0xOwo+Pj4gwqDCoMKgwqDCoCBzdHJ1Y3QgdmdpY19pcnEgKmlycTsK
-Pj4+ICvCoMKgwqAgZ3BhX3QgbGFzdF9wdHIgPSAtMTsKPj4KPj4gVGhpcyBzaG91bGQgYmUgd3Jp
-dHRlbiBhcwo+Pgo+PiDCoMKgwqDCoMKgIGdwYV90IGxhc3RfcHRyID0gfihncGFfdCkwOwo+IAo+
-IFRoYW5rcyBmb3IgcG9pbnRpbmcgaXQgb3V0Lgo+IAo+Pgo+Pj4gwqDCoMKgwqDCoCBpbnQgcmV0
-Owo+Pj4gwqDCoMKgwqDCoCB1OCB2YWw7Cj4+PiDCoCBAQCAtMzg0LDExICszODQsMTEgQEAgaW50
-IHZnaWNfdjNfc2F2ZV9wZW5kaW5nX3RhYmxlcyhzdHJ1Y3Qga3ZtICprdm0pCj4+PiDCoMKgwqDC
-oMKgwqDCoMKgwqAgYml0X25yID0gaXJxLT5pbnRpZCAlIEJJVFNfUEVSX0JZVEU7Cj4+PiDCoMKg
-wqDCoMKgwqDCoMKgwqAgcHRyID0gcGVuZGJhc2UgKyBieXRlX29mZnNldDsKPj4+IMKgIC3CoMKg
-wqDCoMKgwqDCoCBpZiAoYnl0ZV9vZmZzZXQgIT0gbGFzdF9ieXRlX29mZnNldCkgewo+Pj4gK8Kg
-wqDCoMKgwqDCoMKgIGlmIChwdHIgIT0gbGFzdF9wdHIpIHsKPj4+IMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgIHJldCA9IGt2bV9yZWFkX2d1ZXN0X2xvY2soa3ZtLCBwdHIsICZ2YWwsIDEpOwo+
-Pj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgaWYgKHJldCkKPj4+IMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqAgcmV0dXJuIHJldDsKPj4+IC3CoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgIGxhc3RfYnl0ZV9vZmZzZXQgPSBieXRlX29mZnNldDsKPj4+ICvCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgIGxhc3RfcHRyID0gcHRyOwo+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgIH0KPj4+IMKgIMKg
-wqDCoMKgwqDCoMKgwqDCoCBzdG9yZWQgPSB2YWwgJiAoMVUgPDwgYml0X25yKTsKPj4KPj4gT3Ro
-ZXJ3aXNlLCB0aGlzIGxvb2tzIGdvb2QgdG8gbWUgKG5vIG5lZWQgdG8gcmVzcGluIGZvciB0aGUg
-YWJvdmUKPj4gbml0KS4KPiAKPiBUaGFua3MsCj4gCj4gWmVuZ2h1aQo+IAo+IAo+IF9fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4gbGludXgtYXJtLWtlcm5l
-bCBtYWlsaW5nIGxpc3QKPiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKPiBo
-dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJu
-ZWwKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
-eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
-cm0ta2VybmVsCg==
+The patch
+
+   ASoC: rockchip_max98090: Optionally support HDMI use case
+
+has been applied to the asoc tree at
+
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.5
+
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
+
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+From 05b754f5f41c1ea5366c37c8f0ee04c4b4899ff9 Mon Sep 17 00:00:00 2001
+From: Cheng-Yi Chiang <cychiang@chromium.org>
+Date: Mon, 28 Oct 2019 15:19:27 +0800
+Subject: [PATCH] ASoC: rockchip_max98090: Optionally support HDMI use case
+
+Support three different use cases with rockchip_max98090 driver.
+
+The three use cases:
+- max98090 only: Current usage, where HDMI link is missing.
+- HDMI only: Needed use case for veyron_mickey board.
+- max98090 + HDMI: Ideal use case for veyron_jerry, veyron_minnie..etc.
+
+The presence of max98090 is determined by the presence of
+rockchip,audio-codec device property.
+
+The presence of HDMI is determined by the presence of
+rockchip,hdmi-codec device property.
+
+Create different sound card based on the configuration.
+Note that we keep max98090 only usage for backward compatibility.
+
+Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+Link: https://lore.kernel.org/r/20191028071930.145899-4-cychiang@chromium.org
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ sound/soc/rockchip/rockchip_max98090.c | 291 +++++++++++++++++++------
+ 1 file changed, 226 insertions(+), 65 deletions(-)
+
+diff --git a/sound/soc/rockchip/rockchip_max98090.c b/sound/soc/rockchip/rockchip_max98090.c
+index 0097df1fae66..50ef9b8e7ce4 100644
+--- a/sound/soc/rockchip/rockchip_max98090.c
++++ b/sound/soc/rockchip/rockchip_max98090.c
+@@ -6,6 +6,7 @@
+  */
+ 
+ #include <linux/module.h>
++#include <linux/of_device.h>
+ #include <linux/platform_device.h>
+ #include <linux/slab.h>
+ #include <linux/gpio.h>
+@@ -36,28 +37,73 @@ static struct snd_soc_jack_pin headset_jack_pins[] = {
+ 
+ };
+ 
+-static const struct snd_soc_dapm_widget rk_dapm_widgets[] = {
+-	SND_SOC_DAPM_HP("Headphone", NULL),
+-	SND_SOC_DAPM_MIC("Headset Mic", NULL),
+-	SND_SOC_DAPM_MIC("Int Mic", NULL),
+-	SND_SOC_DAPM_SPK("Speaker", NULL),
++#define RK_MAX98090_WIDGETS \
++	SND_SOC_DAPM_HP("Headphone", NULL), \
++	SND_SOC_DAPM_MIC("Headset Mic", NULL), \
++	SND_SOC_DAPM_MIC("Int Mic", NULL), \
++	SND_SOC_DAPM_SPK("Speaker", NULL)
++
++#define RK_HDMI_WIDGETS \
++	SND_SOC_DAPM_LINE("HDMI", NULL)
++
++static const struct snd_soc_dapm_widget rk_max98090_dapm_widgets[] = {
++	RK_MAX98090_WIDGETS,
++};
++
++static const struct snd_soc_dapm_widget rk_hdmi_dapm_widgets[] = {
++	RK_HDMI_WIDGETS,
++};
++
++static const struct snd_soc_dapm_widget rk_max98090_hdmi_dapm_widgets[] = {
++	RK_MAX98090_WIDGETS,
++	RK_HDMI_WIDGETS,
++};
++
++#define RK_MAX98090_AUDIO_MAP \
++	{"IN34", NULL, "Headset Mic"}, \
++	{"Headset Mic", NULL, "MICBIAS"}, \
++	{"DMICL", NULL, "Int Mic"}, \
++	{"Headphone", NULL, "HPL"}, \
++	{"Headphone", NULL, "HPR"}, \
++	{"Speaker", NULL, "SPKL"}, \
++	{"Speaker", NULL, "SPKR"}
++
++#define RK_HDMI_AUDIO_MAP \
++	{"HDMI", NULL, "TX"}
++
++static const struct snd_soc_dapm_route rk_max98090_audio_map[] = {
++	RK_MAX98090_AUDIO_MAP,
++};
++
++static const struct snd_soc_dapm_route rk_hdmi_audio_map[] = {
++	RK_HDMI_AUDIO_MAP,
+ };
+ 
+-static const struct snd_soc_dapm_route rk_audio_map[] = {
+-	{"IN34", NULL, "Headset Mic"},
+-	{"Headset Mic", NULL, "MICBIAS"},
+-	{"DMICL", NULL, "Int Mic"},
+-	{"Headphone", NULL, "HPL"},
+-	{"Headphone", NULL, "HPR"},
+-	{"Speaker", NULL, "SPKL"},
+-	{"Speaker", NULL, "SPKR"},
++static const struct snd_soc_dapm_route rk_max98090_hdmi_audio_map[] = {
++	RK_MAX98090_AUDIO_MAP,
++	RK_HDMI_AUDIO_MAP,
++};
++
++#define RK_MAX98090_CONTROLS \
++	SOC_DAPM_PIN_SWITCH("Headphone"), \
++	SOC_DAPM_PIN_SWITCH("Headset Mic"), \
++	SOC_DAPM_PIN_SWITCH("Int Mic"), \
++	SOC_DAPM_PIN_SWITCH("Speaker")
++
++#define RK_HDMI_CONTROLS \
++	SOC_DAPM_PIN_SWITCH("HDMI")
++
++static const struct snd_kcontrol_new rk_max98090_controls[] = {
++	RK_MAX98090_CONTROLS,
+ };
+ 
+-static const struct snd_kcontrol_new rk_mc_controls[] = {
+-	SOC_DAPM_PIN_SWITCH("Headphone"),
+-	SOC_DAPM_PIN_SWITCH("Headset Mic"),
+-	SOC_DAPM_PIN_SWITCH("Int Mic"),
+-	SOC_DAPM_PIN_SWITCH("Speaker"),
++static const struct snd_kcontrol_new rk_hdmi_controls[] = {
++	RK_HDMI_CONTROLS,
++};
++
++static const struct snd_kcontrol_new rk_max98090_hdmi_controls[] = {
++	RK_MAX98090_CONTROLS,
++	RK_HDMI_CONTROLS,
+ };
+ 
+ static int rk_jack_event(struct notifier_block *nb, unsigned long event,
+@@ -122,15 +168,20 @@ static int rk_aif1_hw_params(struct snd_pcm_substream *substream,
+ 
+ 	ret = snd_soc_dai_set_sysclk(cpu_dai, 0, mclk,
+ 				     SND_SOC_CLOCK_OUT);
+-	if (ret < 0) {
+-		dev_err(codec_dai->dev, "Can't set codec clock %d\n", ret);
++	if (ret) {
++		dev_err(cpu_dai->dev, "Can't set cpu dai clock %d\n", ret);
+ 		return ret;
+ 	}
+ 
+ 	ret = snd_soc_dai_set_sysclk(codec_dai, 0, mclk,
+ 				     SND_SOC_CLOCK_IN);
+-	if (ret < 0) {
+-		dev_err(codec_dai->dev, "Can't set codec clock %d\n", ret);
++
++	/* HDMI codec dai does not need to set sysclk. */
++	if (!strcmp(rtd->dai_link->name, "HDMI"))
++		return 0;
++
++	if (ret) {
++		dev_err(codec_dai->dev, "Can't set codec dai clock %d\n", ret);
+ 		return ret;
+ 	}
+ 
+@@ -152,20 +203,67 @@ static const struct snd_soc_ops rk_aif1_ops = {
+ 	.startup = rk_aif1_startup,
+ };
+ 
+-SND_SOC_DAILINK_DEFS(hifi,
+-	DAILINK_COMP_ARRAY(COMP_EMPTY()),
+-	DAILINK_COMP_ARRAY(COMP_CODEC(NULL, "HiFi")),
+-	DAILINK_COMP_ARRAY(COMP_EMPTY()));
+-
+-static struct snd_soc_dai_link rk_dailink = {
+-	.name = "max98090",
+-	.stream_name = "Audio",
+-	.init = rk_init,
+-	.ops = &rk_aif1_ops,
+-	/* set max98090 as slave */
+-	.dai_fmt = SND_SOC_DAIFMT_I2S | SND_SOC_DAIFMT_NB_NF |
+-		SND_SOC_DAIFMT_CBS_CFS,
+-	SND_SOC_DAILINK_REG(hifi),
++SND_SOC_DAILINK_DEFS(analog,
++		     DAILINK_COMP_ARRAY(COMP_EMPTY()),
++		     DAILINK_COMP_ARRAY(COMP_CODEC(NULL, "HiFi")),
++		     DAILINK_COMP_ARRAY(COMP_EMPTY()));
++
++SND_SOC_DAILINK_DEFS(hdmi,
++		     DAILINK_COMP_ARRAY(COMP_EMPTY()),
++		     DAILINK_COMP_ARRAY(COMP_CODEC(NULL, "i2s-hifi")),
++		     DAILINK_COMP_ARRAY(COMP_EMPTY()));
++
++enum {
++	DAILINK_MAX98090,
++	DAILINK_HDMI,
++};
++
++/* max98090 dai_link */
++static struct snd_soc_dai_link rk_max98090_dailinks[] = {
++	{
++		.name = "max98090",
++		.stream_name = "Analog",
++		.init = rk_init,
++		.ops = &rk_aif1_ops,
++		/* set max98090 as slave */
++		.dai_fmt = SND_SOC_DAIFMT_I2S | SND_SOC_DAIFMT_NB_NF |
++			SND_SOC_DAIFMT_CBS_CFS,
++		SND_SOC_DAILINK_REG(analog),
++	},
++};
++
++/* HDMI codec dai_link */
++static struct snd_soc_dai_link rk_hdmi_dailinks[] = {
++	{
++		.name = "HDMI",
++		.stream_name = "HDMI",
++		.ops = &rk_aif1_ops,
++		.dai_fmt = SND_SOC_DAIFMT_I2S | SND_SOC_DAIFMT_NB_NF |
++			SND_SOC_DAIFMT_CBS_CFS,
++		SND_SOC_DAILINK_REG(hdmi),
++	}
++};
++
++/* max98090 and HDMI codec dai_link */
++static struct snd_soc_dai_link rk_max98090_hdmi_dailinks[] = {
++	[DAILINK_MAX98090] = {
++		.name = "max98090",
++		.stream_name = "Analog",
++		.init = rk_init,
++		.ops = &rk_aif1_ops,
++		/* set max98090 as slave */
++		.dai_fmt = SND_SOC_DAIFMT_I2S | SND_SOC_DAIFMT_NB_NF |
++			SND_SOC_DAIFMT_CBS_CFS,
++		SND_SOC_DAILINK_REG(analog),
++	},
++	[DAILINK_HDMI] = {
++		.name = "HDMI",
++		.stream_name = "HDMI",
++		.ops = &rk_aif1_ops,
++		.dai_fmt = SND_SOC_DAIFMT_I2S | SND_SOC_DAIFMT_NB_NF |
++			SND_SOC_DAIFMT_CBS_CFS,
++		SND_SOC_DAILINK_REG(hdmi),
++	}
+ };
+ 
+ static int rk_98090_headset_init(struct snd_soc_component *component);
+@@ -175,19 +273,47 @@ static struct snd_soc_aux_dev rk_98090_headset_dev = {
+ 	.init = rk_98090_headset_init,
+ };
+ 
+-static struct snd_soc_card snd_soc_card_rk = {
++static struct snd_soc_card rockchip_max98090_card = {
+ 	.name = "ROCKCHIP-I2S",
+ 	.owner = THIS_MODULE,
+-	.dai_link = &rk_dailink,
+-	.num_links = 1,
++	.dai_link = rk_max98090_dailinks,
++	.num_links = ARRAY_SIZE(rk_max98090_dailinks),
+ 	.aux_dev = &rk_98090_headset_dev,
+ 	.num_aux_devs = 1,
+-	.dapm_widgets = rk_dapm_widgets,
+-	.num_dapm_widgets = ARRAY_SIZE(rk_dapm_widgets),
+-	.dapm_routes = rk_audio_map,
+-	.num_dapm_routes = ARRAY_SIZE(rk_audio_map),
+-	.controls = rk_mc_controls,
+-	.num_controls = ARRAY_SIZE(rk_mc_controls),
++	.dapm_widgets = rk_max98090_dapm_widgets,
++	.num_dapm_widgets = ARRAY_SIZE(rk_max98090_dapm_widgets),
++	.dapm_routes = rk_max98090_audio_map,
++	.num_dapm_routes = ARRAY_SIZE(rk_max98090_audio_map),
++	.controls = rk_max98090_controls,
++	.num_controls = ARRAY_SIZE(rk_max98090_controls),
++};
++
++static struct snd_soc_card rockchip_hdmi_card = {
++	.name = "ROCKCHIP-HDMI",
++	.owner = THIS_MODULE,
++	.dai_link = rk_hdmi_dailinks,
++	.num_links = ARRAY_SIZE(rk_hdmi_dailinks),
++	.dapm_widgets = rk_hdmi_dapm_widgets,
++	.num_dapm_widgets = ARRAY_SIZE(rk_hdmi_dapm_widgets),
++	.dapm_routes = rk_hdmi_audio_map,
++	.num_dapm_routes = ARRAY_SIZE(rk_hdmi_audio_map),
++	.controls = rk_hdmi_controls,
++	.num_controls = ARRAY_SIZE(rk_hdmi_controls),
++};
++
++static struct snd_soc_card rockchip_max98090_hdmi_card = {
++	.name = "ROCKCHIP-MAX98090-HDMI",
++	.owner = THIS_MODULE,
++	.dai_link = rk_max98090_hdmi_dailinks,
++	.num_links = ARRAY_SIZE(rk_max98090_hdmi_dailinks),
++	.aux_dev = &rk_98090_headset_dev,
++	.num_aux_devs = 1,
++	.dapm_widgets = rk_max98090_hdmi_dapm_widgets,
++	.num_dapm_widgets = ARRAY_SIZE(rk_max98090_hdmi_dapm_widgets),
++	.dapm_routes = rk_max98090_hdmi_audio_map,
++	.num_dapm_routes = ARRAY_SIZE(rk_max98090_hdmi_audio_map),
++	.controls = rk_max98090_hdmi_controls,
++	.num_controls = ARRAY_SIZE(rk_max98090_hdmi_controls),
+ };
+ 
+ static int rk_98090_headset_init(struct snd_soc_component *component)
+@@ -195,7 +321,7 @@ static int rk_98090_headset_init(struct snd_soc_component *component)
+ 	int ret;
+ 
+ 	/* Enable Headset and 4 Buttons Jack detection */
+-	ret = snd_soc_card_jack_new(&snd_soc_card_rk, "Headset Jack",
++	ret = snd_soc_card_jack_new(component->card, "Headset Jack",
+ 				    SND_JACK_HEADSET |
+ 				    SND_JACK_BTN_0 | SND_JACK_BTN_1 |
+ 				    SND_JACK_BTN_2 | SND_JACK_BTN_3,
+@@ -210,41 +336,75 @@ static int rk_98090_headset_init(struct snd_soc_component *component)
+ 	return ret;
+ }
+ 
++static int rk_parse_headset_from_of(struct device *dev, struct device_node *np)
++{
++	rk_98090_headset_dev.dlc.of_node = of_parse_phandle(
++			np, "rockchip,headset-codec", 0);
++	if (!rk_98090_headset_dev.dlc.of_node) {
++		dev_err(dev,
++			"Property 'rockchip,headset-codec' missing/invalid\n");
++		return -EINVAL;
++	}
++	return 0;
++}
++
+ static int snd_rk_mc_probe(struct platform_device *pdev)
+ {
+ 	int ret = 0;
+-	struct snd_soc_card *card = &snd_soc_card_rk;
++	struct snd_soc_card *card;
++	struct device *dev = &pdev->dev;
+ 	struct device_node *np = pdev->dev.of_node;
++	struct device_node *np_cpu;
++	struct device_node *np_audio, *np_hdmi;
+ 
+-	/* register the soc card */
+-	card->dev = &pdev->dev;
++	/* Parse DTS for I2S controller. */
++	np_cpu = of_parse_phandle(np, "rockchip,i2s-controller", 0);
+ 
+-	rk_dailink.codecs->of_node = of_parse_phandle(np,
+-			"rockchip,audio-codec", 0);
+-	if (!rk_dailink.codecs->of_node) {
++	if (!np_cpu) {
+ 		dev_err(&pdev->dev,
+-			"Property 'rockchip,audio-codec' missing or invalid\n");
++			"Property 'rockchip,i2s-controller missing or invalid\n");
+ 		return -EINVAL;
+ 	}
+ 
+-	rk_dailink.cpus->of_node = of_parse_phandle(np,
+-			"rockchip,i2s-controller", 0);
+-	if (!rk_dailink.cpus->of_node) {
+-		dev_err(&pdev->dev,
+-			"Property 'rockchip,i2s-controller' missing or invalid\n");
++	/*
++	 * Find the card to use based on the presences of audio codec
++	 * and hdmi codec in device property. Set their of_node accordingly.
++	 */
++	np_audio = of_parse_phandle(np, "rockchip,audio-codec", 0);
++	np_hdmi = of_parse_phandle(np, "rockchip,hdmi-codec", 0);
++	if (np_audio && np_hdmi) {
++		card = &rockchip_max98090_hdmi_card;
++		card->dai_link[DAILINK_MAX98090].codecs->of_node = np_audio;
++		card->dai_link[DAILINK_HDMI].codecs->of_node = np_hdmi;
++		card->dai_link[DAILINK_MAX98090].cpus->of_node = np_cpu;
++		card->dai_link[DAILINK_MAX98090].platforms->of_node = np_cpu;
++		card->dai_link[DAILINK_HDMI].cpus->of_node = np_cpu;
++		card->dai_link[DAILINK_HDMI].platforms->of_node = np_cpu;
++	} else if (np_audio) {
++		card = &rockchip_max98090_card;
++		card->dai_link[0].codecs->of_node = np_audio;
++		card->dai_link[0].cpus->of_node = np_cpu;
++		card->dai_link[0].platforms->of_node = np_cpu;
++	} else if (np_hdmi) {
++		card = &rockchip_hdmi_card;
++		card->dai_link[0].codecs->of_node = np_hdmi;
++		card->dai_link[0].cpus->of_node = np_cpu;
++		card->dai_link[0].platforms->of_node = np_cpu;
++	} else {
++		dev_err(dev, "At least one of codecs should be specified\n");
+ 		return -EINVAL;
+ 	}
+ 
+-	rk_dailink.platforms->of_node = rk_dailink.cpus->of_node;
++	card->dev = dev;
+ 
+-	rk_98090_headset_dev.dlc.of_node = of_parse_phandle(np,
+-			"rockchip,headset-codec", 0);
+-	if (!rk_98090_headset_dev.dlc.of_node) {
+-		dev_err(&pdev->dev,
+-			"Property 'rockchip,headset-codec' missing/invalid\n");
+-		return -EINVAL;
++	/* Parse headset detection codec. */
++	if (np_audio) {
++		ret = rk_parse_headset_from_of(dev, np);
++		if (ret)
++			return ret;
+ 	}
+ 
++	/* Parse card name. */
+ 	ret = snd_soc_of_parse_card_name(card, "rockchip,model");
+ 	if (ret) {
+ 		dev_err(&pdev->dev,
+@@ -252,6 +412,7 @@ static int snd_rk_mc_probe(struct platform_device *pdev)
+ 		return ret;
+ 	}
+ 
++	/* register the soc card */
+ 	ret = devm_snd_soc_register_card(&pdev->dev, card);
+ 	if (ret) {
+ 		dev_err(&pdev->dev,
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
