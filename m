@@ -2,92 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43E2FE965E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 07:27:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46E61E9683
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 07:41:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aF7azuyc1BjljyHEQYnmQrAc0iY3TrN2jMUZVknqymM=; b=nSd0mqBZsWJhen
-	JLV+E/a6+PFLUZsc6nlhNUc33YEH+PcKMuHyeNT9R73t5H3enzQjeFgGtW8hmSh8aGPsXHtXNQf37
-	yxiq7EnQvCH6oNzc7sGF0+pjrKjDIxJ/uw/vAFaE2SP98hXF5MwDNDu8+JdkFscVtSTNSYNLmZ8p/
-	LO8ETapp+22PxQdZV3UzznD0lQSiPKrn3q0jfsJKHfQa3FzidFNKCiy5dGQ9E/VpJvwsJjIexR4UB
-	Z75IYpDMabv08k9IOjrlpn5UnFYCcgPFPx/JC1jNApaAYVxXkWJi4mpwmvRkEQkA3/9PfrpaZbVv+
-	6fxyYU6f76ag6iTDFgkQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7JQZbTkCBgPMQJIhEsnvkyX6EFZzZ7DKLtKHmaQ8heo=; b=Js7Ic6cvdstmaI
+	mudKVZ0F+LK2v22iyzFeHULYyelVNvavewQrBfM7Hauth6YE2XJ/ONI6k/WVeQLb/U6TmYfpTxD0Y
+	xBh2MpANUDIAjJcHRo0yZ+5dCgLUiivVfZTb7Rf7L2geHHRcA7RN+zsLqZFAb8Xd7Tmz2DGOLCHTE
+	O+ZjGtVBU0EL3zb4QsjYkLu1eBfnv+dcsbqFoeh2c1nwSJoKyDbav/4/+0GzF1R8HsCuHTnsZl1/i
+	AW/gLU7MxigoL5KiOblTs4s7aB7C5s8JyJQ1ffJQFb5LhN8KUf8aZ/qMKvOh0egaRfmuAtUDjxLH6
+	YNlD/HZ/2Co0c6rFZWSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPhRb-0000XZ-40; Wed, 30 Oct 2019 06:26:59 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1iPhfZ-00062X-NK; Wed, 30 Oct 2019 06:41:25 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPhRO-0000Wk-HZ
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 06:26:49 +0000
-Received: by mail-pg1-x542.google.com with SMTP id c8so783107pgb.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 29 Oct 2019 23:26:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=kLWnPbrx3G3eMtTMX76QVxU9DfcAGdsABeG5H/fw+gA=;
- b=xVfWRKIP6644NMUhEdy40daJcARSly6MLymoD8Sa05w7paZKgDBkkydNuYM6UmaPZf
- Jq4FEyihVqBvAPvZIgmk1ZzTU6So3s0JPsnLpOWMsu2sbb5lp7mOrGGyRO+bXZyQSCfm
- H+yJAyCP178KTuNds+FdnJ5WuZcj/LBFmD5ucuSaoG/vLGdbU4uVoif4SrsHy4DEQljp
- WI6/Bmd+XHLQrIUkts1QxZmBzdla3BTUv88n8sN03VGAQxSEdtmKZAGLDffR+eZ0D2V3
- SkCKu7BU0jYX+K/AGV9ulAUWcx+r+A2wHw4TY88J1FN5cHdfvPrgFfarIweG6sfcvPzW
- XRWw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=kLWnPbrx3G3eMtTMX76QVxU9DfcAGdsABeG5H/fw+gA=;
- b=Q4Bk8WBik1lxbzMwobmMJzCvh7TV0UAvHJ8Z9OhrFTKMhJ+vnMn2TSp1FWDGiSzHmC
- 3oFr3WsOMofYQ92SHke/B7sPU0sAMdzCRjObgr7Jrr7lONkP7W3O5/6g+uTL88m5rni5
- UG0zpGCuOn8PA1uof+JNrWMqK55ogum/cuFsAmbDJC2CnX6yaaIDC4PdFt1IKk4ERJ9P
- ++BziaCKEkoTSq6oiVhmW6x04GwexOHvDkeR1Ug8n/BsgNi4bMzbCA4y6dmaVLnlMiJc
- 3pbG4yrlWebb50p/lVTscDOVygyvg7qJPY6rigJKdu6Knb/T0Y7RRVE4vS72VrG10cw0
- u99Q==
-X-Gm-Message-State: APjAAAV9f3RaSobqGyigL6QdtpJ0KzJadpXLpYKtddgD8AsuuH/6pbFu
- KQfyJKJqH6NA8qLRJP9huhUl
-X-Google-Smtp-Source: APXvYqzhVMiMYfNl9Pm63vHaD3NL/CA/fF34GjBPEWzhj53p0ITxywuz82L8ASzEFCjzY6JVY4rBlg==
-X-Received: by 2002:a63:dc45:: with SMTP id f5mr32110528pgj.250.1572416804524; 
- Tue, 29 Oct 2019 23:26:44 -0700 (PDT)
-Received: from Mani-XPS-13-9360 ([2409:4072:618e:77d9:c9fa:423a:3851:8df4])
- by smtp.gmail.com with ESMTPSA id j6sm1090843pfa.124.2019.10.29.23.26.37
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 29 Oct 2019 23:26:43 -0700 (PDT)
-Date: Wed, 30 Oct 2019 11:56:34 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Sakari Ailus <sakari.ailus@iki.fi>
-Subject: Re: [PATCH v3 2/2] media: i2c: Add IMX296 CMOS image sensor driver
-Message-ID: <20191030062634.GA11637@Mani-XPS-13-9360>
-References: <20191025175908.14260-1-manivannan.sadhasivam@linaro.org>
- <20191025175908.14260-3-manivannan.sadhasivam@linaro.org>
- <20191029121320.GA5017@valkosipuli.retiisi.org.uk>
+ id 1iPhfQ-00061s-9v
+ for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 06:41:18 +0000
+Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 55E4C2DE5344E65999DB;
+ Wed, 30 Oct 2019 14:41:10 +0800 (CST)
+Received: from localhost.localdomain (10.69.192.56) by
+ DGGEMS401-HUB.china.huawei.com (10.3.19.201) with Microsoft SMTP Server id
+ 14.3.439.0; Wed, 30 Oct 2019 14:41:02 +0800
+From: Shaokun Zhang <zhangshaokun@hisilicon.com>
+To: <linux-arm-kernel@lists.infradead.org>
+Subject: [RFC] arm64: cpufeatures: Add support for tlbi range maintenance
+Date: Wed, 30 Oct 2019 14:41:25 +0800
+Message-ID: <1572417685-32955-1-git-send-email-zhangshaokun@hisilicon.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191029121320.GA5017@valkosipuli.retiisi.org.uk>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Originating-IP: [10.69.192.56]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_232646_601607_541C2E63 
-X-CRM114-Status: GOOD (  29.53  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191029_234116_532139_5ADC8759 
+X-CRM114-Status: GOOD (  15.25  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,886 +61,202 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
- linux-kernel@vger.kernel.org, a.brela@framos.com, peter.griffin@linaro.org,
- robh+dt@kernel.org, mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Shaokun Zhang <zhangshaokun@hisilicon.com>,
+ Tangnianyao <tangnianyao@huawei.com>, Marc Zyngier <maz@kernel.org>,
+ Will Deacon <will@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sakari,
+From: Tangnianyao <tangnianyao@huawei.com>
 
-Thanks for the review!
+ARMv8.4-TLBI provides TLBI invalidation instruction that apply to a
+range of input addresses. This patch adds support for this feature.
+And provide another implementation for flush_tlb_range with tlbi
+range instruction.
 
-On Tue, Oct 29, 2019 at 02:13:20PM +0200, Sakari Ailus wrote:
-> Hi Manivannan,
-> 
-> On Fri, Oct 25, 2019 at 11:29:08PM +0530, Manivannan Sadhasivam wrote:
-> > Add driver for Sony IMX296 CMOS image sensor driver. The driver only
-> > supports I2C interface for programming and MIPI CSI-2 for sensor output.
-> > 
-> > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> > ---
-> >  MAINTAINERS                |   8 +
-> >  drivers/media/i2c/Kconfig  |  11 +
-> >  drivers/media/i2c/Makefile |   1 +
-> >  drivers/media/i2c/imx296.c | 733 +++++++++++++++++++++++++++++++++++++
-> >  4 files changed, 753 insertions(+)
-> >  create mode 100644 drivers/media/i2c/imx296.c
-> > 
-> > diff --git a/MAINTAINERS b/MAINTAINERS
-> > index 55199ef7fa74..5b7332d121d8 100644
-> > --- a/MAINTAINERS
-> > +++ b/MAINTAINERS
-> > @@ -15140,6 +15140,14 @@ S:	Maintained
-> >  F:	drivers/media/i2c/imx274.c
-> >  F:	Documentation/devicetree/bindings/media/i2c/imx274.txt
-> >  
-> > +SONY IMX296 SENSOR DRIVER
-> > +M:	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> > +L:	linux-media@vger.kernel.org
-> > +T:	git git://linuxtv.org/media_tree.git
-> > +S:	Maintained
-> > +F:	drivers/media/i2c/imx296.c
-> > +F:	Documentation/devicetree/bindings/media/i2c/imx296.txt
-> 
-> The new bindings are in YAML format, so txt -> yaml.
-> 
-> Also the MAINTAINERS change needs to be done no later than adding the
-> files.
-> 
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will@kernel.org> 
+Cc: Marc Zyngier <maz@kernel.org>
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Signed-off-by: Tangnianyao <tangnianyao@huawei.com>
+Signed-off-by: Shaokun Zhang <zhangshaokun@hisilicon.com>
+---
+For ARMv8.4-TLBI TLB range instructions, it needs binutils which
+shall be 2.30 or later version.
 
-Ah, yes!
+ arch/arm64/include/asm/cpucaps.h  |  3 +-
+ arch/arm64/include/asm/sysreg.h   |  5 +++
+ arch/arm64/include/asm/tlbflush.h | 75 ++++++++++++++++++++++++++++++++++++++-
+ arch/arm64/kernel/cpufeature.c    | 10 ++++++
+ 4 files changed, 91 insertions(+), 2 deletions(-)
 
-> > +
-> >  SONY IMX319 SENSOR DRIVER
-> >  M:	Bingbu Cao <bingbu.cao@intel.com>
-> >  L:	linux-media@vger.kernel.org
-> > diff --git a/drivers/media/i2c/Kconfig b/drivers/media/i2c/Kconfig
-> > index 7eee1812bba3..930db46fa2b8 100644
-> > --- a/drivers/media/i2c/Kconfig
-> > +++ b/drivers/media/i2c/Kconfig
-> > @@ -598,6 +598,17 @@ config VIDEO_IMX274
-> >  	  This is a V4L2 sensor driver for the Sony IMX274
-> >  	  CMOS image sensor.
-> >  
-> > +config VIDEO_IMX296
-> > +	tristate "Sony IMX296 sensor support"
-> > +	depends on I2C && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
-> > +	select V4L2_FWNODE
-> > +	help
-> > +	  This is a Video4Linux2 sensor driver for the Sony
-> > +	  IMX296 camera sensor.
-> > +
-> > +	  To compile this driver as a module, choose M here: the
-> > +	  module will be called imx296.
-> > +
-> >  config VIDEO_IMX319
-> >  	tristate "Sony IMX319 sensor support"
-> >  	depends on I2C && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
-> > diff --git a/drivers/media/i2c/Makefile b/drivers/media/i2c/Makefile
-> > index beb170b002dc..ed0c02bda450 100644
-> > --- a/drivers/media/i2c/Makefile
-> > +++ b/drivers/media/i2c/Makefile
-> > @@ -112,6 +112,7 @@ obj-$(CONFIG_VIDEO_TC358743)	+= tc358743.o
-> >  obj-$(CONFIG_VIDEO_IMX214)	+= imx214.o
-> >  obj-$(CONFIG_VIDEO_IMX258)	+= imx258.o
-> >  obj-$(CONFIG_VIDEO_IMX274)	+= imx274.o
-> > +obj-$(CONFIG_VIDEO_IMX296)	+= imx296.o
-> >  obj-$(CONFIG_VIDEO_IMX319)	+= imx319.o
-> >  obj-$(CONFIG_VIDEO_IMX355)	+= imx355.o
-> >  obj-$(CONFIG_VIDEO_ST_MIPID02) += st-mipid02.o
-> > diff --git a/drivers/media/i2c/imx296.c b/drivers/media/i2c/imx296.c
-> > new file mode 100644
-> > index 000000000000..98fff0a93277
-> > --- /dev/null
-> > +++ b/drivers/media/i2c/imx296.c
-> > @@ -0,0 +1,733 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Sony IMX296 CMOS Image Sensor Driver
-> > + *
-> > + * Copyright (C) 2019 FRAMOS GmbH.
-> > + *
-> > + * Copyright (C) 2019 Linaro Ltd.
-> > + * Author: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> > + */
-> > +
-> > +#include <linux/clk.h>
-> > +#include <linux/delay.h>
-> > +#include <linux/gpio/consumer.h>
-> > +#include <linux/i2c.h>
-> > +#include <linux/module.h>
-> > +#include <linux/pm_runtime.h>
-> > +#include <linux/regmap.h>
-> > +#include <linux/regulator/consumer.h>
-> > +#include <media/media-entity.h>
-> > +#include <media/v4l2-ctrls.h>
-> > +#include <media/v4l2-device.h>
-> > +#include <media/v4l2-fwnode.h>
-> > +#include <media/v4l2-subdev.h>
-> > +
-> > +#define IMX296_STANDBY 0x3000
-> > +#define IMX296_REGHOLD 0x3008
-> > +#define IMX296_XMSTA 0x300a
-> > +#define IMX296_GAIN_LOW 0x3204
-> > +#define IMX296_GAIN_HIGH 0x3205
-> > +
-> > +#define IMX296_DEFAULT_FORMAT MEDIA_BUS_FMT_SRGGB10_1X10
-> > +
-> > +static const char * const imx296_supply_name[] = {
-> > +	"vdda",
-> > +	"vddd",
-> > +	"vddo",
-> > +};
-> > +
-> > +#define IMX296_NUM_SUPPLIES ARRAY_SIZE(imx296_supply_name)
-> > +
-> > +struct imx296_regval {
-> > +	u16 reg;
-> > +	u8 val;
-> > +};
-> > +
-> > +struct imx296_mode {
-> > +	u32 width;
-> > +	u32 height;
-> > +	u32 pixel_rate;
-> > +
-> > +	const struct imx296_regval *data;
-> > +	u32 data_size;
-> > +};
-> > +
-> > +struct imx296 {
-> > +	struct device *dev;
-> > +	struct clk *mclk;
-> > +	struct regmap *regmap;
-> > +
-> > +	struct v4l2_subdev sd;
-> > +	struct v4l2_fwnode_endpoint ep;
-> > +	struct media_pad pad;
-> > +	struct v4l2_mbus_framefmt current_format;
-> > +	const struct imx296_mode *current_mode;
-> > +
-> > +	struct regulator_bulk_data supplies[IMX296_NUM_SUPPLIES];
-> > +	struct gpio_desc *rst_gpio;
-> > +
-> > +	struct v4l2_ctrl_handler ctrls;
-> > +	struct v4l2_ctrl *pixel_rate;
-> > +
-> > +	struct mutex lock;
-> > +};
-> > +
-> > +static const struct regmap_config imx296_regmap_config = {
-> > +	.reg_bits = 16,
-> > +	.val_bits = 8,
-> > +	.cache_type = REGCACHE_RBTREE,
-> > +};
-> > +
-> > +static const struct imx296_regval imx296_global_init_settings[] = {
-> > +	{ 0x3a00, 0x80 },
-> > +	{ 0x3005, 0xf0 },
-> > +	{ 0x350b, 0x0f },
-> > +	{ 0x300d, 0x00 },
-> > +	{ 0x400e, 0x58 },
-> > +	{ 0x3010, 0x5e },
-> > +	{ 0x3011, 0x04 },
-> > +	{ 0x3014, 0x4c },
-> > +	{ 0x4014, 0x1c },
-> > +	{ 0x3015, 0x04 },
-> > +	{ 0x3516, 0x77 },
-> > +	{ 0x321a, 0x00 },
-> > +	{ 0x3226, 0x02 },
-> > +	{ 0x3832, 0xf5 },
-> > +	{ 0x3833, 0x00 },
-> > +	{ 0x3541, 0x72 },
-> > +	{ 0x4041, 0x2a },
-> > +	{ 0x3d48, 0xa3 },
-> > +	{ 0x3d49, 0x00 },
-> > +	{ 0x3d4a, 0x85 },
-> > +	{ 0x3d4b, 0x00 },
-> > +	{ 0x3256, 0x01 },
-> > +	{ 0x3758, 0xa3 },
-> > +	{ 0x3759, 0x00 },
-> > +	{ 0x375a, 0x85 },
-> > +	{ 0x375b, 0x00 },
-> > +	{ 0x3165, 0x00 },
-> > +	{ 0x3169, 0x10 },
-> > +	{ 0x316a, 0x02 },
-> > +	{ 0x4174, 0x00 },
-> > +	{ 0x3079, 0x08 },
-> > +	{ 0x3090, 0x04 },
-> > +	{ 0x3094, 0x04 },
-> > +	{ 0x3098, 0x04 },
-> > +	{ 0x309e, 0x04 },
-> > +	{ 0x30a0, 0x04 },
-> > +	{ 0x30a1, 0x3c },
-> > +	{ 0x38a2, 0xf6 },
-> > +	{ 0x40a2, 0x06 },
-> > +	{ 0x38a3, 0x00 },
-> > +	{ 0x30a4, 0x5f },
-> > +	{ 0x30a8, 0x91 },
-> > +	{ 0x30ac, 0x28 },
-> > +	{ 0x30af, 0x09 },
-> > +	{ 0x40c1, 0xf6 },
-> > +	{ 0x40c7, 0x0f },
-> > +	{ 0x31c8, 0xf3 },
-> > +	{ 0x40c8, 0x00 },
-> > +	{ 0x31d0, 0xf4 },
-> > +	{ 0x30df, 0x00 },
-> > +};
-> > +
-> > +static const struct imx296_regval imx296_1440_1088_settings[] = {
-> > +	{ 0x300d, 0x00 },
-> > +	{ 0x3010, 0xcb },
-> > +	{ 0x3011, 0x08 },
-> > +	{ 0x3014, 0x4c },
-> > +	{ 0x3015, 0x04 },
-> > +	{ 0x3300, 0x03 },
-> > +	{ 0x3310, 0x08 },
-> > +	{ 0x3311, 0x00 },
-> > +	{ 0x3312, 0x00 },
-> > +	{ 0x3313, 0x00 },
-> > +	{ 0x3314, 0xa0 },
-> > +	{ 0x3315, 0x05 },
-> > +	{ 0x3316, 0x40 },
-> > +	{ 0x3317, 0x04 },
-> > +
-> > +	{ 0x3204, 0x00 },
-> > +	{ 0x3205, 0x00 },
-> > +	{ 0x3212, 0x08 },
-> > +	{ 0x3254, 0x3c },
-> > +	{ 0x3255, 0x00 },
-> > +	{ 0x3089, 0x80 },
-> > +	{ 0x308a, 0x0b },
-> > +	{ 0x308b, 0x80 },
-> > +	{ 0x308c, 0x08 },
-> > +	{ 0x418c, 0x74 },
-> > +	{ 0x308d, 0x0e },
-> > +	{ 0x308e, 0x00 },
-> > +	{ 0x308f, 0x00 },
-> > +};
-> > +
-> > +/* Mode configs */
-> > +static const struct imx296_mode imx296_modes[] = {
-> > +	{
-> > +		.width = 1440,
-> > +		.height = 1088,
-> > +		.data = imx296_1440_1088_settings,
-> > +		.data_size = ARRAY_SIZE(imx296_1440_1088_settings),
-> > +		.pixel_rate = 80000000,
-> > +	},
-> > +};
-> > +
-> > +static inline struct imx296 *to_imx296(struct v4l2_subdev *_sd)
-> > +{
-> > +	return container_of(_sd, struct imx296, sd);
-> > +}
-> > +
-> > +static inline int imx296_read_reg(struct imx296 *imx296, u16 addr, u8 *value)
-> > +{
-> > +	unsigned int regval;
-> > +	int ret;
-> > +
-> > +	ret = regmap_read(imx296->regmap, addr, &regval);
-> > +	if (ret) {
-> > +		dev_err(imx296->dev, "I2C read failed for addr: %x\n", addr);
-> > +		return ret;
-> > +	}
-> > +
-> > +	*value = regval & 0xff;
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int imx296_write_reg(struct imx296 *imx296, u16 addr, u8 value)
-> > +{
-> > +	int ret;
-> > +
-> > +	ret = regmap_write(imx296->regmap, addr, value);
-> > +	if (ret) {
-> > +		dev_err(imx296->dev, "I2C write failed for addr: %x\n", addr);
-> > +		return ret;
-> > +	}
-> > +
-> > +	return ret;
-> > +}
-> > +
-> > +static int imx296_set_register_array(struct imx296 *imx296,
-> > +				     const struct imx296_regval *settings,
-> > +				     unsigned int num_settings)
-> > +{
-> > +	unsigned int i;
-> > +	int ret;
-> > +
-> > +	for (i = 0; i < num_settings; ++i, ++settings) {
-> > +		ret = imx296_write_reg(imx296, settings->reg, settings->val);
-> > +		if (ret < 0)
-> > +			return ret;
-> > +
-> > +		/* Settle time is 10ms for all registers */
-> 
-> Is this really needed? It'll take very long...
-> 
+diff --git a/arch/arm64/include/asm/cpucaps.h b/arch/arm64/include/asm/cpucaps.h
+index ac1dbca3d0cd..2f88725263d2 100644
+--- a/arch/arm64/include/asm/cpucaps.h
++++ b/arch/arm64/include/asm/cpucaps.h
+@@ -54,7 +54,8 @@
+ #define ARM64_WORKAROUND_1463225		44
+ #define ARM64_WORKAROUND_CAVIUM_TX2_219_TVM	45
+ #define ARM64_WORKAROUND_CAVIUM_TX2_219_PRFM	46
++#define ARM64_HAS_TLBI_EXT			47
+ 
+-#define ARM64_NCAPS				47
++#define ARM64_NCAPS				48
+ 
+ #endif /* __ASM_CPUCAPS_H */
+diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
+index 6e919fafb43d..cfb7551ea37d 100644
+--- a/arch/arm64/include/asm/sysreg.h
++++ b/arch/arm64/include/asm/sysreg.h
+@@ -539,6 +539,7 @@
+ 			 ENDIAN_SET_EL1 | SCTLR_EL1_UCI  | SCTLR_EL1_RES1)
+ 
+ /* id_aa64isar0 */
++#define ID_AA64ISAR0_TLB_SHIFT		56
+ #define ID_AA64ISAR0_TS_SHIFT		52
+ #define ID_AA64ISAR0_FHM_SHIFT		48
+ #define ID_AA64ISAR0_DP_SHIFT		44
+@@ -552,6 +553,10 @@
+ #define ID_AA64ISAR0_SHA1_SHIFT		8
+ #define ID_AA64ISAR0_AES_SHIFT		4
+ 
++#define ID_AA64ISAR0_TLB_NI		0
++#define ID_AA64ISAR0_TLB_OS		1
++#define ID_AA64ISAR0_TLB_OS_RANGE	2
++
+ /* id_aa64isar1 */
+ #define ID_AA64ISAR1_SB_SHIFT		36
+ #define ID_AA64ISAR1_FRINTTS_SHIFT	32
+diff --git a/arch/arm64/include/asm/tlbflush.h b/arch/arm64/include/asm/tlbflush.h
+index bc3949064725..c4ece64aa500 100644
+--- a/arch/arm64/include/asm/tlbflush.h
++++ b/arch/arm64/include/asm/tlbflush.h
+@@ -59,6 +59,27 @@
+ 		__ta;						\
+ 	})
+ 
++/* This macro creates a properly formatted VA operand for the TLBI extension*/
++#define __TLBI_VADDR_EXT(addr, asid, tg, scale, num, ttl)	\
++	({							\
++		unsigned long __ta = (addr) >> 12;		\
++		__ta &= GENMASK_ULL(43, 0);			\
++		__ta |= (unsigned long)(asid) << 48;		\
++		__ta |= (unsigned long)(tg) << 46;		\
++		__ta |= (unsigned long)(scale) << 44;		\
++		__ta |= (unsigned long)(num) << 39;		\
++		__ta |= (unsigned long)(ttl) << 37;		\
++		__ta;						\
++	})
++
++#ifdef CONFIG_ARM64_64K_PAGES
++#define TLBI_TG_FLAGS	UL(1)
++#elif defined(CONFIG_ARM64_16K_PAGES)
++#define TLBI_TG_FLAGS	UL(2)
++#else /* CONFIG_ARM64_4K_PAGES */
++#define TLBI_TG_FLAGS	UL(0)
++#endif
++
+ /*
+  *	TLB Invalidation
+  *	================
+@@ -211,6 +232,55 @@ static inline void __flush_tlb_range(struct vm_area_struct *vma,
+ 	dsb(ish);
+ }
+ 
++static inline void __flush_tlb_range_ext(struct vm_area_struct *vma,
++				     unsigned long start, unsigned long end,
++				     unsigned long stride, bool last_level)
++{
++	unsigned long asid = ASID(vma->vm_mm);
++	unsigned long addr;
++	unsigned long scale;
++	unsigned long num;
++	unsigned long range;
++	unsigned long unit_shift;
++
++	start = round_down(start, stride);
++	end = round_up(end, stride);
++
++	if ((end - start) >= (MAX_TLBI_OPS * stride)) {
++		flush_tlb_mm(vma->vm_mm);
++		return;
++	}
++
++	/* Convert the stride into units of 4k */
++	stride >>= 12;
++
++	start = __TLBI_VADDR(start, asid);
++	end = __TLBI_VADDR(end, asid);
++
++	range = ((end - start) >> (PAGE_SHIFT + 5));
++	scale = 0;
++	while (range) {
++		range = (range >> 5);
++		scale++;
++	}
++
++	unit_shift = PAGE_SHIFT + 5*scale + 1;
++	num = DIV_ROUND_UP(end-start, BIT(unit_shift)) - 1;
++	addr = start;
++	__TLBI_VADDR_EXT(addr, asid, TLBI_TG_FLAGS,
++			scale, num, 0);
++
++	dsb(ishst);
++	if (last_level) {
++		__tlbi(rvale1is, addr);
++		__tlbi_user(rvale1is, addr);
++	} else {
++		__tlbi(rvae1is, addr);
++		__tlbi_user(rvae1is, addr);
++	}
++	dsb(ish);
++}
++
+ static inline void flush_tlb_range(struct vm_area_struct *vma,
+ 				   unsigned long start, unsigned long end)
+ {
+@@ -218,7 +288,10 @@ static inline void flush_tlb_range(struct vm_area_struct *vma,
+ 	 * We cannot use leaf-only invalidation here, since we may be invalidating
+ 	 * table entries as part of collapsing hugepages or moving page tables.
+ 	 */
+-	__flush_tlb_range(vma, start, end, PAGE_SIZE, false);
++	if (!preemptible() && this_cpu_has_cap(ARM64_HAS_TLBI_EXT))
++		__flush_tlb_range_ext(vma, start, end, PAGE_SIZE, false);
++	else
++		__flush_tlb_range(vma, start, end, PAGE_SIZE, false);
+ }
+ 
+ static inline void flush_tlb_kernel_range(unsigned long start, unsigned long end)
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index 80f459ad0190..a0aaab3f7fd5 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -1566,6 +1566,16 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
+ 		.min_field_value = 1,
+ 	},
+ #endif
++	{
++		.desc = "TLB maintenance and TLB range instructions",
++		.capability = ARM64_HAS_TLBI_EXT,
++		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
++		.matches = has_cpuid_feature,
++		.sys_reg = SYS_ID_AA64ISAR0_EL1,
++		.field_pos = ID_AA64ISAR0_TLB_SHIFT,
++		.sign = FTR_UNSIGNED,
++		.min_field_value = ID_AA64ISAR0_TLB_NI,
++	},
+ 	{},
+ };
+ 
+-- 
+2.7.4
 
-After digging into the datasheet, it looks like this delay can be moved out
-of the loop. So it will become 10ms delay after setting all registers. I
-misunderstood the reference driver earlier...
-
-> > +		msleep(10);
-> > +	}
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int imx296_write_buffered_reg(struct imx296 *imx296, u16 address_low,
-> > +				     u8 nr_regs, u32 value)
-> > +{
-> > +	unsigned int i;
-> > +	int ret;
-> > +
-> > +	ret = imx296_write_reg(imx296, IMX296_REGHOLD, 0x01);
-> > +	if (ret) {
-> > +		dev_err(imx296->dev, "Error setting hold register\n");
-> > +		return ret;
-> > +	}
-> > +
-> > +	for (i = 0; i < nr_regs; i++) {
-> > +		ret = imx296_write_reg(imx296, address_low + i,
-> > +				       (u8)(value >> (i * 8)));
-> > +		if (ret) {
-> > +			dev_err(imx296->dev, "Error writing buffered registers\n");
-> > +			return ret;
-> > +		}
-> > +	}
-> > +
-> > +	ret = imx296_write_reg(imx296, IMX296_REGHOLD, 0x00);
-> > +	if (ret) {
-> > +		dev_err(imx296->dev, "Error setting hold register\n");
-> > +		return ret;
-> > +	}
-> > +
-> > +	return ret;
-> > +}
-> > +
-> > +static int imx296_set_gain(struct imx296 *imx296, u32 value)
-> > +{
-> > +	int ret;
-> > +
-> > +	ret = imx296_write_buffered_reg(imx296, IMX296_GAIN_HIGH, 1,
-> > +					(u8)((value >> 8) & 0xFF));
-> > +	if (ret < 0)
-> > +		return ret;
-> > +
-> > +	ret = imx296_write_buffered_reg(imx296, IMX296_GAIN_HIGH, 1,
-> 
-> return ...
-> 
-> > +					(u8)((value) & 0xFF));
-> 
-> You need neither casting nor and here as the value will be cast by
-> imx296_write_buffered_reg() soon.
-> 
-
-There is a mistake here as well. This should eventually be simplified
-as below:
-
-static inline int imx296_set_gain(struct imx296 *imx296, u32 value)
-{
-        return imx296_write_buffered_reg(imx296, IMX296_GAIN_LOW, 2, value);
-}
-
-> > +	if (ret < 0)
-> > +		return ret;
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +/* Stop streaming */
-> > +static int imx296_stop_streaming(struct imx296 *imx296)
-> > +{
-> > +	int ret;
-> > +
-> > +	ret = imx296_write_reg(imx296, IMX296_STANDBY, 0x01);
-> > +	if (ret < 0)
-> > +		return ret;
-> > +
-> > +	msleep(30);
-> > +
-> > +	return imx296_write_reg(imx296, IMX296_XMSTA, 0x01);
-> > +}
-> > +
-> > +static int imx296_set_ctrl(struct v4l2_ctrl *ctrl)
-> > +{
-> > +	struct imx296 *imx296 = container_of(ctrl->handler,
-> > +					     struct imx296, ctrls);
-> > +	int ret = 0;
-> > +
-> > +	/* V4L2 controls values will be applied only when power is already up */
-> > +	if (!pm_runtime_get_if_in_use(imx296->dev))
-> > +		return 0;
-> > +
-> > +	switch (ctrl->id) {
-> > +	case V4L2_CID_GAIN:
-> > +		ret = imx296_set_gain(imx296, ctrl->val);
-> > +		break;
-> > +	default:
-> > +		ret = -EINVAL;
-> > +		break;
-> > +	}
-> > +
-> > +	pm_runtime_put(imx296->dev);
-> > +
-> > +	return ret;
-> > +}
-> > +
-> > +static const struct v4l2_ctrl_ops imx296_ctrl_ops = {
-> > +	.s_ctrl = imx296_set_ctrl,
-> > +};
-> > +
-> > +static int imx296_enum_mbus_code(struct v4l2_subdev *sd,
-> > +				 struct v4l2_subdev_pad_config *cfg,
-> > +				 struct v4l2_subdev_mbus_code_enum *code)
-> > +{
-> > +	code->code = IMX296_DEFAULT_FORMAT;
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int imx296_get_fmt(struct v4l2_subdev *sd,
-> > +			  struct v4l2_subdev_pad_config *cfg,
-> > +			  struct v4l2_subdev_format *fmt)
-> > +{
-> > +	struct imx296 *imx296 = to_imx296(sd);
-> > +	struct v4l2_mbus_framefmt *framefmt;
-> > +
-> > +	mutex_lock(&imx296->lock);
-> > +
-> > +	if (fmt->which == V4L2_SUBDEV_FORMAT_TRY)
-> > +		framefmt = v4l2_subdev_get_try_format(&imx296->sd, cfg,
-> > +						      fmt->pad);
-> > +	else
-> > +		framefmt = &imx296->current_format;
-> > +
-> > +	fmt->format = *framefmt;
-> > +
-> > +	mutex_unlock(&imx296->lock);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int imx296_set_fmt(struct v4l2_subdev *sd,
-> > +			  struct v4l2_subdev_pad_config *cfg,
-> > +			  struct v4l2_subdev_format *fmt)
-> > +{
-> > +	struct imx296 *imx296 = to_imx296(sd);
-> > +	const struct imx296_mode *mode;
-> > +	struct v4l2_mbus_framefmt *format;
-> > +	int ret = 0;
-> > +
-> > +	mutex_lock(&imx296->lock);
-> > +
-> > +	mode = v4l2_find_nearest_size(imx296_modes,
-> > +				      ARRAY_SIZE(imx296_modes),
-> > +				      width, height,
-> > +				      fmt->format.width, fmt->format.height);
-> > +
-> > +	fmt->format.width = mode->width;
-> > +	fmt->format.height = mode->height;
-> > +
-> > +	fmt->format.code = IMX296_DEFAULT_FORMAT;
-> > +	fmt->format.field = V4L2_FIELD_NONE;
-> > +
-> > +	if (fmt->which == V4L2_SUBDEV_FORMAT_TRY) {
-> > +		format = v4l2_subdev_get_try_format(sd, cfg, fmt->pad);
-> > +	} else {
-> > +		format = &imx296->current_format;
-> > +		__v4l2_ctrl_s_ctrl_int64(imx296->pixel_rate, mode->pixel_rate);
-> > +
-> > +		imx296->current_mode = mode;
-> > +	}
-> > +
-> > +	*format = fmt->format;
-> > +
-> > +	mutex_unlock(&imx296->lock);
-> > +
-> > +	return ret;
-> > +}
-> > +
-> > +static int imx296_entity_init_cfg(struct v4l2_subdev *subdev,
-> > +				  struct v4l2_subdev_pad_config *cfg)
-> > +{
-> > +	struct v4l2_subdev_format fmt = { 0 };
-> > +
-> > +	fmt.which = cfg ? V4L2_SUBDEV_FORMAT_TRY : V4L2_SUBDEV_FORMAT_ACTIVE;
-> > +	fmt.format.width = 1440;
-> > +	fmt.format.height = 1088;
-> > +
-> > +	imx296_set_fmt(subdev, cfg, &fmt);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +/* Start streaming */
-> > +static int imx296_start_streaming(struct imx296 *imx296)
-> > +{
-> > +	int ret;
-> > +
-> > +	/* Set init register settings */
-> > +	ret = imx296_set_register_array(imx296, imx296_global_init_settings,
-> > +				ARRAY_SIZE(imx296_global_init_settings));
-> > +	if (ret < 0) {
-> > +		dev_err(imx296->dev, "Could not set init registers\n");
-> > +		return ret;
-> > +	}
-> > +
-> > +	/* Apply default values of current mode */
-> > +	ret = imx296_set_register_array(imx296, imx296->current_mode->data,
-> > +					imx296->current_mode->data_size);
-> > +	if (ret < 0) {
-> > +		dev_err(imx296->dev, "Could not set current mode\n");
-> > +		return ret;
-> > +	}
-> > +
-> > +	/* Apply customized values from user */
-> > +	ret = v4l2_ctrl_handler_setup(imx296->sd.ctrl_handler);
-> > +	if (ret) {
-> > +		dev_err(imx296->dev, "Could not sync v4l2 controls\n");
-> > +		return ret;
-> > +	}
-> > +
-> > +	ret = imx296_write_reg(imx296, IMX296_STANDBY, 0x00);
-> > +	if (ret < 0)
-> > +		return ret;
-> > +
-> > +	msleep(30);
-> > +
-> > +	/* Start streaming */
-> > +	return imx296_write_reg(imx296, IMX296_XMSTA, 0x00);
-> > +}
-> > +
-> > +static int imx296_set_stream(struct v4l2_subdev *sd, int enable)
-> > +{
-> > +	struct imx296 *imx296 = to_imx296(sd);
-> > +	int ret;
-> > +
-> > +	if (enable) {
-> > +		ret = pm_runtime_get_sync(imx296->dev);
-> > +		if (ret < 0) {
-> > +			pm_runtime_put_noidle(imx296->dev);
-> > +			return ret;
-> > +		}
-> > +
-> > +		ret = imx296_start_streaming(imx296);
-> > +		if (ret) {
-> > +			dev_err(imx296->dev, "Start stream failed\n");
-> > +			pm_runtime_put(imx296->dev);
-> > +			return ret;
-> > +		}
-> > +	} else {
-> > +		imx296_stop_streaming(imx296);
-> > +		pm_runtime_put(imx296->dev);
-> > +	}
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int imx296_get_regulators(struct device *dev, struct imx296 *imx296)
-> > +{
-> > +	unsigned int i;
-> > +
-> > +	for (i = 0; i < IMX296_NUM_SUPPLIES; i++)
-> > +		imx296->supplies[i].supply = imx296_supply_name[i];
-> > +
-> > +	return devm_regulator_bulk_get(dev, IMX296_NUM_SUPPLIES,
-> > +				       imx296->supplies);
-> > +}
-> > +
-> > +static int imx296_power_on(struct device *dev)
-> > +{
-> > +	struct i2c_client *client = to_i2c_client(dev);
-> > +	struct v4l2_subdev *sd = i2c_get_clientdata(client);
-> > +	struct imx296 *imx296 = to_imx296(sd);
-> > +	int ret;
-> > +
-> > +	ret = regulator_bulk_enable(IMX296_NUM_SUPPLIES, imx296->supplies);
-> > +	if (ret) {
-> > +		dev_err(imx296->dev, "Failed to enable regulators\n");
-> > +		return ret;
-> > +	}
-> > +
-> > +	usleep_range(1, 2);
-> > +
-> > +	gpiod_set_value_cansleep(imx296->rst_gpio, 1);
-> > +
-> > +	usleep_range(1, 2);
-> > +
-> > +	ret = clk_prepare_enable(imx296->mclk);
-> > +	if (ret) {
-> > +		dev_err(imx296->dev, "Failed to enable clock\n");
-> > +		return ret;
-> > +	}
-> > +
-> > +	usleep_range(30000, 31000);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int imx296_power_off(struct device *dev)
-> > +{
-> > +	struct i2c_client *client = to_i2c_client(dev);
-> > +	struct v4l2_subdev *sd = i2c_get_clientdata(client);
-> > +	struct imx296 *imx296 = to_imx296(sd);
-> > +
-> > +	clk_disable_unprepare(imx296->mclk);
-> > +	gpiod_set_value_cansleep(imx296->rst_gpio, 0);
-> > +	regulator_bulk_disable(IMX296_NUM_SUPPLIES, imx296->supplies);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static const struct dev_pm_ops imx296_pm_ops = {
-> > +	SET_RUNTIME_PM_OPS(imx296_power_on, imx296_power_off, NULL)
-> > +};
-> > +
-> > +static const struct v4l2_subdev_video_ops imx296_video_ops = {
-> > +	.s_stream = imx296_set_stream,
-> > +};
-> > +
-> > +static const struct v4l2_subdev_pad_ops imx296_pad_ops = {
-> > +	.init_cfg = imx296_entity_init_cfg,
-> > +	.enum_mbus_code = imx296_enum_mbus_code,
-> > +	.get_fmt = imx296_get_fmt,
-> > +	.set_fmt = imx296_set_fmt,
-> > +};
-> > +
-> > +static const struct v4l2_subdev_ops imx296_subdev_ops = {
-> > +	.video = &imx296_video_ops,
-> > +	.pad = &imx296_pad_ops,
-> > +};
-> > +
-> > +static const struct media_entity_operations imx296_subdev_entity_ops = {
-> > +	.link_validate = v4l2_subdev_link_validate,
-> > +};
-> > +
-> > +static int imx296_probe(struct i2c_client *client)
-> > +{
-> > +	struct device *dev = &client->dev;
-> > +	struct fwnode_handle *endpoint;
-> > +	struct imx296 *imx296;
-> > +	u32 mclk_freq;
-> > +	int ret;
-> > +
-> > +	imx296 = devm_kzalloc(dev, sizeof(*imx296), GFP_KERNEL);
-> > +	if (!imx296)
-> > +		return -ENOMEM;
-> > +
-> > +	imx296->dev = dev;
-> > +	imx296->regmap = devm_regmap_init_i2c(client, &imx296_regmap_config);
-> > +	if (IS_ERR(imx296->regmap)) {
-> > +		dev_err(dev, "Unable to initialize I2C\n");
-> > +		return -ENODEV;
-> > +	}
-> > +
-> > +	endpoint = fwnode_graph_get_next_endpoint(dev_fwnode(dev), NULL);
-> > +	if (!endpoint) {
-> > +		dev_err(dev, "Endpoint node not found\n");
-> > +		return -EINVAL;
-> > +	}
-> > +
-> > +	ret = v4l2_fwnode_endpoint_alloc_parse(endpoint, &imx296->ep);
-> 
-> Please allocate ep in stack instead, there's no need to keep it around
-> further as the driver doesn't use it. Also initialise the bus_type field;
-> support for figuring it out is there just for old drivers.
-> 
-
-Makes sense!
-
-> > +	fwnode_handle_put(endpoint);
-> > +	if (ret) {
-> > +		dev_err(dev, "Parsing endpoint node failed\n");
-> > +		goto free_err;
-> > +	}
-> > +
-> > +	/* Only CSI2 is supported for now */
-> > +	if (imx296->ep.bus_type != V4L2_MBUS_CSI2_DPHY) {
-> 
-> After setting the bus_type field, you can omit this check.
-> 
-> > +		dev_err(dev, "Unsupported bus type, should be CSI2\n");
-> > +		ret = -EINVAL;
-> > +		goto free_err;
-> > +	}
-> > +
-> > +	/* Set default mode to max resolution */
-> > +	imx296->current_mode = &imx296_modes[0];
-> > +
-> > +	/* get system clock (mclk) */
-> > +	imx296->mclk = devm_clk_get(dev, "mclk");
-> > +	if (IS_ERR(imx296->mclk)) {
-> > +		dev_err(dev, "Could not get mclk");
-> > +		ret = PTR_ERR(imx296->mclk);
-> > +		goto free_err;
-> > +	}
-> > +
-> > +	ret = fwnode_property_read_u32(dev_fwnode(dev), "clock-frequency",
-> > +				       &mclk_freq);
-> > +	if (ret) {
-> > +		dev_err(dev, "Could not get mclk frequency\n");
-> > +		goto free_err;
-> > +	}
-> > +
-> > +	/* external clock must be 37.125 MHz */
-> > +	if (mclk_freq != 37125000) {
-> > +		dev_err(dev, "External clock frequency %u is not supported\n",
-> > +			mclk_freq);
-> > +		ret = -EINVAL;
-> > +		goto free_err;
-> > +	}
-> > +
-> > +	ret = clk_set_rate(imx296->mclk, mclk_freq);
-> > +	if (ret) {
-> > +		dev_err(dev, "Could not set mclk frequency\n");
-> > +		goto free_err;
-> > +	}
-> > +
-> > +	ret = imx296_get_regulators(dev, imx296);
-> > +	if (ret < 0) {
-> > +		dev_err(dev, "Cannot get regulators\n");
-> > +		goto free_err;
-> > +	}
-> > +
-> > +	imx296->rst_gpio = devm_gpiod_get_optional(dev, "reset", GPIOD_ASIS);
-> > +	if (IS_ERR(imx296->rst_gpio)) {
-> > +		dev_err(dev, "Cannot get reset gpio\n");
-> > +		ret = PTR_ERR(imx296->rst_gpio);
-> > +		goto free_err;
-> > +	}
-> > +
-> > +	mutex_init(&imx296->lock);
-> > +
-> > +	v4l2_ctrl_handler_init(&imx296->ctrls, 3);
-> > +
-> > +	v4l2_ctrl_new_std(&imx296->ctrls, &imx296_ctrl_ops,
-> > +			  V4L2_CID_GAIN, 0, 72, 1, 0);
-> > +
-> > +	imx296->pixel_rate = v4l2_ctrl_new_std(&imx296->ctrls, &imx296_ctrl_ops,
-> > +					       V4L2_CID_PIXEL_RATE, 1,
-> > +					       INT_MAX, 1,
-> > +					       imx296_modes[0].pixel_rate);
-> > +
-> > +	imx296->sd.ctrl_handler = &imx296->ctrls;
-> > +
-> > +	if (imx296->ctrls.error) {
-> > +		dev_err(dev, "Control initialization error %d\n",
-> > +			imx296->ctrls.error);
-> > +		ret = imx296->ctrls.error;
-> > +		goto free_ctrl;
-> > +	}
-> > +
-> > +	v4l2_i2c_subdev_init(&imx296->sd, client, &imx296_subdev_ops);
-> > +	imx296->sd.flags |= V4L2_SUBDEV_FL_HAS_DEVNODE;
-> > +	imx296->sd.dev = &client->dev;
-> > +	imx296->sd.entity.ops = &imx296_subdev_entity_ops;
-> > +	imx296->sd.entity.function = MEDIA_ENT_F_CAM_SENSOR;
-> > +
-> > +	imx296->pad.flags = MEDIA_PAD_FL_SOURCE;
-> > +	ret = media_entity_pads_init(&imx296->sd.entity, 1, &imx296->pad);
-> > +	if (ret < 0) {
-> > +		dev_err(dev, "Could not register media entity\n");
-> > +		goto free_ctrl;
-> > +	}
-> > +
-> > +	ret = v4l2_async_register_subdev(&imx296->sd);
-> > +	if (ret < 0) {
-> > +		dev_err(dev, "Could not register v4l2 device\n");
-> > +		goto free_entity;
-> > +	}
-> > +
-> > +	/* Power on the device to match runtime PM state below */
-> > +	ret = imx296_power_on(dev);
-> > +	if (ret < 0) {
-> > +		dev_err(dev, "Could not power on the device\n");
-> > +		goto free_entity;
-> > +	}
-> > +
-> > +	pm_runtime_set_active(dev);
-> > +	pm_runtime_enable(dev);
-> > +	pm_runtime_idle(dev);
-> > +
-> > +	v4l2_fwnode_endpoint_free(&imx296->ep);
-> > +
-> > +	return 0;
-> > +
-> > +free_entity:
-> > +	media_entity_cleanup(&imx296->sd.entity);
-> > +free_ctrl:
-> > +	v4l2_ctrl_handler_free(&imx296->ctrls);
-> > +	mutex_destroy(&imx296->lock);
-> > +free_err:
-> > +	v4l2_fwnode_endpoint_free(&imx296->ep);
-> > +
-> > +	return ret;
-> > +}
-> > +
-> > +static int imx296_remove(struct i2c_client *client)
-> > +{
-> > +	struct v4l2_subdev *sd = i2c_get_clientdata(client);
-> > +	struct imx296 *imx296 = to_imx296(sd);
-> > +
-> > +	v4l2_async_unregister_subdev(sd);
-> > +	media_entity_cleanup(&sd->entity);
-> > +	v4l2_ctrl_handler_free(sd->ctrl_handler);
-> > +
-> > +	mutex_destroy(&imx296->lock);
-> > +
-> > +	pm_runtime_disable(imx296->dev);
-> > +	if (!pm_runtime_status_suspended(imx296->dev))
-> > +		imx296_power_off(imx296->dev);
-> > +	pm_runtime_set_suspended(imx296->dev);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static const struct of_device_id imx296_of_match[] = {
-> > +	{ .compatible = "sony,imx296" },
-> > +	{ /* sentinel */ }
-> > +};
-> > +MODULE_DEVICE_TABLE(of, imx296_of_match);
-> > +
-> > +static struct i2c_driver imx296_i2c_driver = {
-> > +	.probe_new  = imx296_probe,
-> > +	.remove = imx296_remove,
-> > +	.driver = {
-> > +		.name  = "imx296",
-> > +		.pm = &imx296_pm_ops,
-> > +		.of_match_table = of_match_ptr(imx296_of_match),
-> 
-> No need for of_match_ptr here.
-> 
-
-AFAIK, of_match_ptr is needed for !OF case. Else we need to manually add
-#ifdef clut to make it NULL. Does the situation changed now?
-
-Thanks,
-Mani
-
-> > +	},
-> > +};
-> > +
-> > +module_i2c_driver(imx296_i2c_driver);
-> > +
-> > +MODULE_DESCRIPTION("Sony IMX296 CMOS Image Sensor Driver");
-> > +MODULE_AUTHOR("FRAMOS GmbH");
-> > +MODULE_AUTHOR("Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>");
-> > +MODULE_LICENSE("GPL v2");
-> 
-> -- 
-> Kind regards,
-> 
-> Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
