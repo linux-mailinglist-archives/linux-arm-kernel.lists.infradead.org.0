@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30660E9955
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 10:41:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4009E9959
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 10:43:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:From:To:
 	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
 	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=T5XBtqzdBqV0of+8AcEG0FkwhxTjwi7adR3S2Rh7yoo=; b=J8/CVNcMMHOP5SbU7VOWqPxdVY
-	rYRgsShcexS9Ff0XcbuPED9YSaD67MD+B45neH+XDmRSpvxs+GZPRbabmFS5WrsFNurK5TN+fVJxZ
-	vHuNJfp54imu74lSSE+88BT/DP6XLJsIB58/DJHWVvpiBwUfCmdGVMFEC+uCyq1znvu8wCv4gikRk
-	gmSyhwiUDoPGYsshPy7EK5wH8dT+Oym3RH/bigBkIk0NnIVZVvphuk8hH9cq/2rbZ7nJVcIM+PIak
-	YDD58Qo1n5bnPms+vOyJqKAHbuzpAagycBDAXon0mdU33x9bUT65x/6YCAfIf5uKVkrhjg8LVE83Z
-	BQ6DWG/Q==;
+	bh=MQXEpSk8727gDDD8OxoAWJvAzmji8CssBY+sy8KEmG8=; b=cS6beUav3A2Aa3+tHu1DGWjQBF
+	X/e9v17b0H+Xmj+6Pgg4JBQcMIBUCKESBnlFOmfbKHBckL9cExAzYLPfb25mFXWJw+IvXw5L6SZw7
+	7r/wKNB1CC9r8vDX+fDz0V3Sjb0Vrax6xdKpTi6IFQgqetHlbrVoDRJAk1QKB7lk4wJ4IrLNG116e
+	e2VZlpItAewK6gEQU+YC5IgGLCJsLufpHu6E4q8OhOxSIgUnPp/mZaHJnm7hJAFWtMNEZaAB6E7bd
+	Dbfd8woZvixUmwWDqBPrb+cmSlHkqya+rvcyrTia22WKQFmh0cz6oX2ix4XJXMlZQxv8/WEZRMwrb
+	mKupa0UQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPkTg-0005BS-Aw; Wed, 30 Oct 2019 09:41:20 +0000
+	id 1iPkVW-00062T-Fa; Wed, 30 Oct 2019 09:43:14 +0000
 Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPkTW-0005B2-9o
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 09:41:11 +0000
-Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 64FEC989A355AD588CEA;
- Wed, 30 Oct 2019 17:41:08 +0800 (CST)
-Received: from [127.0.0.1] (10.57.101.250) by DGGEMS407-HUB.china.huawei.com
- (10.3.19.207) with Microsoft SMTP Server id 14.3.439.0; Wed, 30 Oct 2019
- 17:41:00 +0800
+ id 1iPkVN-000629-5a
+ for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 09:43:06 +0000
+Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id BC5552A381D875A76C4D;
+ Wed, 30 Oct 2019 17:43:03 +0800 (CST)
+Received: from [127.0.0.1] (10.57.101.250) by DGGEMS411-HUB.china.huawei.com
+ (10.3.19.211) with Microsoft SMTP Server id 14.3.439.0; Wed, 30 Oct 2019
+ 17:42:54 +0800
 To: <soc@kernel.org>, "arm@kernel.org" <arm@kernel.org>,
  "linux-arm-kernel@lists.infradead.org"
  <linux-arm-kernel@lists.infradead.org>, Olof Johansson <olof@lixom.net>,
  "Arnd Bergmann" <arnd@arndb.de>
 From: Wei Xu <xuwei5@hisilicon.com>
-Subject: [GIT PULL] arm64: dts: hisilicon dts updates for v5.5
-Message-ID: <5DB95AAB.8060405@hisilicon.com>
-Date: Wed, 30 Oct 2019 17:40:59 +0800
+Subject: [GIT PULL] arm64: defconfig: hisilicon config updates for v5.5
+Message-ID: <5DB95B1E.8060607@hisilicon.com>
+Date: Wed, 30 Oct 2019 17:42:54 +0800
 User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101
  Thunderbird/38.2.0
 MIME-Version: 1.0
 X-Originating-IP: [10.57.101.250]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_024110_502255_3D4CF5D2 
-X-CRM114-Status: UNSURE (   8.28  )
+X-CRM114-CacheID: sfid-20191030_024305_375476_99CF3AE1 
+X-CRM114-Status: UNSURE (   8.48  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -72,7 +72,7 @@ Cc: Salil Mehta <salil.mehta@huawei.com>, jinying@hisilicon.com,
  Tangkunshan <tangkunshan@huawei.com>, John Garry <john.garry@huawei.com>,
  Linuxarm <linuxarm@huawei.com>,
  Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
- Peter Griffin <peter.griffin@linaro.org>, John Stultz <john.stultz@linaro.org>,
+ "Wangzhou \(B\)" <wangzhou1@hisilicon.com>,
  huangdaode <huangdaode@hisilicon.com>, "xuwei \(O\)" <xuwei5@huawei.com>,
  Jonathan Cameron <jonathan.cameron@huawei.com>,
  "Liguozhu \(Kenneth\)" <liguozhu@hisilicon.com>,
@@ -98,25 +98,26 @@ The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
 
 are available in the Git repository at:
 
-   git://github.com/hisilicon/linux-hisi.git tags/hisi-arm64-dt-for-5.5
+   git://github.com/hisilicon/linux-hisi.git 
+tags/hisi-arm64-defconfig-for-5.5
 
-for you to fetch changes up to 37a92df9612265307bee53d423b2d7e7eb0fa985:
+for you to fetch changes up to 006ece996d2206082d281ba271b1ed17f1ee6422:
 
-   arm64: dts: hisilicon: Add Mali-450 MP4 GPU DT entry (2019-10-26 
-15:39:00 +0800)
-
-----------------------------------------------------------------
-ARM64: DT: Hisilicon SoCs DT updates for 5.5
-
-- add Mali450 MP4 GPU node in the hi6220 SoC
+   arm64: defconfig: Enable SMMU v3 PMCG (2019-10-26 15:29:03 +0800)
 
 ----------------------------------------------------------------
-Peter Griffin (1):
-       arm64: dts: hisilicon: Add Mali-450 MP4 GPU DT entry
+ARM64: hisilicon: defconfig updates for 5.5
 
-  arch/arm64/boot/dts/hisilicon/hi6220.dtsi | 38 
-+++++++++++++++++++++++++++++++
-  1 file changed, 38 insertions(+)
+- enable ARM SMMUv3 PMU and hisi ZIP controller as module for
+   Kunpeng920 SoC
+
+----------------------------------------------------------------
+Zhou Wang (2):
+       arm64: defconfig: Enable HiSilicon ZIP controller
+       arm64: defconfig: Enable SMMU v3 PMCG
+
+  arch/arm64/configs/defconfig | 2 ++
+  1 file changed, 2 insertions(+)
 
 
 
