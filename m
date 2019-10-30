@@ -2,48 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87263EA202
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 17:46:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE1D5EA204
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 17:46:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bdm5U3PJCTZ0+a8hMIkme36Fdxe1DocHsaCVwTTebzU=; b=gnFOUM+z+sUA8/
-	Ck1HGWt5ue4bBZX+/3BX8x69A/IxHuKr14vBql5YOr7bjWXw55RlwQHKMiwW/W121+wmqpwtyjohE
-	stVgNzRikI2cvEC9jcOSEQRKHuzj0FVtvqWUOhemp0WAADJHHoDklMCdyrM5jm25PZS/fbaQqVz+K
-	0U1MZDtwAtsh4AE5a6LCyV8a5yMs3eH/tTC1+S/3ixR9p6nVsZQPEERgJ7oAOJEfAwX4axY3DCJOs
-	qBcZpCW2CmBagHsA5Q/as1gYaYhfwII3RaFUgE6VYd0OS1N+3guzApoRzdMb+oSDJbOS6HuWC/6al
-	6TuPIB18lcC9pbvyKjDQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=T3XtGi4noddeU+ir8mCNmT9yDjC8GnBfT6YoooJpU7k=; b=QathtGeOnaNe6V
+	6OJgfaemJ1wr7YEufaiaKfAAKYekeCz++E8sNaY7hF78MPtjPByDLJk9BiK2k5OmxqXxyCbzFe7wy
+	jMqHCjHX7/X+W8+Neku9Y+yrZarMbF/tZum0t46YAGtr/Dl6I94GKRhZwgmd1fEa1dqyF7hWsam5o
+	RxgXvc23nvtMxtQjO9+nVsHj8LbNqIdJzRrZ/WmhNuXODiZZ3k6ytZV6XYIiqDgAQH3FSq+X9QqtM
+	UZm+ED6S0WFNzD8xGuKEcAx6p8BtFkovwI7fzvdk1PKMqem3rGdmwImY/vlkkl098kDr51CZpH+IW
+	pDHrS9hJwg7VYrmrMBrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPr6X-0002GL-NT; Wed, 30 Oct 2019 16:45:53 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPr6L-0002FX-VZ
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 16:45:44 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7FBDB31F;
- Wed, 30 Oct 2019 09:45:40 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 119493F6C4; Wed, 30 Oct 2019 09:45:37 -0700 (PDT)
-Date: Wed, 30 Oct 2019 16:45:35 +0000
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Steven Price <steven.price@arm.com>
-Subject: Re: [PATCH v14 21/22] arm64: mm: Convert mm/dump.c to use
- walk_page_range()
-Message-ID: <20191030164535.GC13309@arrakis.emea.arm.com>
-References: <20191028135910.33253-1-steven.price@arm.com>
- <20191028135910.33253-22-steven.price@arm.com>
+	id 1iPr7D-0002aw-Mh; Wed, 30 Oct 2019 16:46:35 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iPr72-0002aD-N3
+ for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 16:46:25 +0000
+Received: from dude02.hi.pengutronix.de ([2001:67c:670:100:1d::28]
+ helo=dude02.pengutronix.de.)
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <l.stach@pengutronix.de>)
+ id 1iPr71-0003yZ-D1; Wed, 30 Oct 2019 17:46:23 +0100
+From: Lucas Stach <l.stach@pengutronix.de>
+To: Shawn Guo <shawnguo@kernel.org>
+Subject: [PATCH] arm64: dts: zii-ultra: fix ARM regulator GPIO handle
+Date: Wed, 30 Oct 2019 17:46:23 +0100
+Message-Id: <20191030164623.1902-1-l.stach@pengutronix.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191028135910.33253-22-steven.price@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::28
+X-SA-Exim-Mail-From: l.stach@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_094542_061775_5CDC0176 
-X-CRM114-Status: GOOD (  18.33  )
+X-CRM114-CacheID: sfid-20191030_094624_749310_7AD72B2D 
+X-CRM114-Status: GOOD (  12.21  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -62,90 +61,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, x86@kernel.org,
- Arnd Bergmann <arnd@arndb.de>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, =?iso-8859-1?B?Suly9G1l?= Glisse <jglisse@redhat.com>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
- James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
- Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org, "Liang, Kan" <kan.liang@linux.intel.com>
+Cc: kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org,
+ patchwork-lst@pengutronix.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 28, 2019 at 01:59:09PM +0000, Steven Price wrote:
-> diff --git a/arch/arm64/mm/dump.c b/arch/arm64/mm/dump.c
-> index 93f9f77582ae..9d9b740a86d2 100644
-> --- a/arch/arm64/mm/dump.c
-> +++ b/arch/arm64/mm/dump.c
-> @@ -15,6 +15,7 @@
->  #include <linux/io.h>
->  #include <linux/init.h>
->  #include <linux/mm.h>
-> +#include <linux/ptdump.h>
->  #include <linux/sched.h>
->  #include <linux/seq_file.h>
->  
-> @@ -75,10 +76,11 @@ static struct addr_marker address_markers[] = {
->   * dumps out a description of the range.
->   */
->  struct pg_state {
-> +	struct ptdump_state ptdump;
->  	struct seq_file *seq;
->  	const struct addr_marker *marker;
->  	unsigned long start_address;
-> -	unsigned level;
-> +	int level;
->  	u64 current_prot;
->  	bool check_wx;
->  	unsigned long wx_pages;
-> @@ -178,6 +180,10 @@ static struct pg_level pg_level[] = {
->  		.name	= "PGD",
->  		.bits	= pte_bits,
->  		.num	= ARRAY_SIZE(pte_bits),
-> +	}, { /* p4d */
-> +		.name	= "P4D",
-> +		.bits	= pte_bits,
-> +		.num	= ARRAY_SIZE(pte_bits),
->  	}, { /* pud */
->  		.name	= (CONFIG_PGTABLE_LEVELS > 3) ? "PUD" : "PGD",
->  		.bits	= pte_bits,
+The GPIO handle is referencing the wrong GPIO, so the voltage did not
+actually change as intended. The pinmux is already correct, so just
+correct the GPIO number.
 
-We could use "PGD" for the p4d entry since we don't have five levels.
-This patches the "PGD" name used for pud/pmd when these levels are
-folded.
+Fixes: 4a13b3bec3b4 (arm64: dts: imx: add Zii Ultra board support)
+Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
+---
+Urgh, second fix for this regulator, it was really wrong in the
+beginning. This time I actually measured the voltage on the board and
+saw it changing as expected, so hopefully we are good now.
+---
+ arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-> @@ -240,11 +246,15 @@ static void note_prot_wx(struct pg_state *st, unsigned long addr)
->  	st->wx_pages += (addr - st->start_address) / PAGE_SIZE;
->  }
->  
-> -static void note_page(struct pg_state *st, unsigned long addr, unsigned level,
-> -				u64 val)
-> +static void note_page(struct ptdump_state *pt_st, unsigned long addr, int level,
-> +		      unsigned long val)
->  {
-> +	struct pg_state *st = container_of(pt_st, struct pg_state, ptdump);
->  	static const char units[] = "KMGTPE";
-> -	u64 prot = val & pg_level[level].mask;
-> +	u64 prot = 0;
-> +
-> +	if (level >= 0)
-> +		prot = val & pg_level[level].mask;
-
-I think this test is not needed as we never have level < 0. The only
-call with a level 0 is from ptdump_hole() where the level passed is
-depth+1 while depth is -1 or higher.
-
-Anyway, we can keep this test _if_ we shift the levels down. I find it
-quite confusing that ptdump_hole() takes a 'depth' argument where 0 is
-PGD and 4 is PTE while for note_page() 1 is PGD and 5 PTE.
-
+diff --git a/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi b/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi
+index 087b5b6ebe89..32ce14936b01 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi
+@@ -88,7 +88,7 @@
+ 		regulator-name = "0V9_ARM";
+ 		regulator-min-microvolt = <900000>;
+ 		regulator-max-microvolt = <1000000>;
+-		gpios = <&gpio3 19 GPIO_ACTIVE_HIGH>;
++		gpios = <&gpio3 16 GPIO_ACTIVE_HIGH>;
+ 		states = <1000000 0x1
+ 		           900000 0x0>;
+ 		regulator-always-on;
 -- 
-Catalin
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
