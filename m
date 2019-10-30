@@ -2,37 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF068EA5B2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 22:49:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C2EFEA5C3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 22:52:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6EGSdaqNxG7itzaKX8tH4gnvtCdLEzUz586SEq+ogT8=; b=VlJwYiP2Wt2vBU
-	9xL1gdIIIEFFCCIcln+NVTdX+Ro+SuFb2+zaXmXvXrOKBqHXrFpt4JsUg3m4WjNsNcFqA1ixob4oT
-	sGO24yo6h5Pv0mtnSzm64c1GGDCnjMAXxchO7tYm/xCRMINpXhAG8u1c/orXI77G6pGO5o55WtRYV
-	K8Lhipgo8IVUUyfTPLHRMlvueAidvOwBvXREafxKj6h5DP9j39aUDNBGWgBIzCwz86cEQ+DzWLUoo
-	0fWjtns9xd2LIAg/iMx7MKPX7sri3DF4cfndscwTpm6fUGNZSmzkcByxAqiTyUCvrgTIaqGdISmSF
-	ngB4CgybME5CipJPoWiw==;
+	List-Owner; bh=u0OQe6A995MNmNlZavWBVqLKAeaV4bF/Etf2Ab6pgNY=; b=HsGoPvmodvZl/w
+	o9z64yeWIKXtcK26CujTAWkifZmOvw8AdLBs/5P0yBpi1dFtRTn1SuSVGAqlFu8ygmPnviVVWoG81
+	A5T4A26uyEhgwPZmjFsPvJLfgN6ssUo7/Ggr47Y74Gjk9ScTehVylKV9b99ryMhhwhssRyi/YgmHm
+	ePHxRpjipv2UR+QewgmY+Cw9EUvE2615r5nrjLXrd8OyhxmU5rYmnmy8yairlilJCNpHXxvY1dIsF
+	9x5PXgMiJxyxE1ZwoqQKhOU8fD6bk9dFlJvmHgBylkkBj+KQMI7xFtbQV0NIWrFe2V5s/URKhKilD
+	flMx5zGK4EKHesqBp9VQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPvqI-0004Gj-0t; Wed, 30 Oct 2019 21:49:26 +0000
-Received: from hch by bombadil.infradead.org with local (Exim 4.92.3 #3 (Red
- Hat Linux)) id 1iPvq6-0004GJ-Sq; Wed, 30 Oct 2019 21:49:14 +0000
-Date: Wed, 30 Oct 2019 14:49:14 -0700
-From: Christoph Hellwig <hch@infradead.org>
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: Re: [PATCH RFC 1/5] dma/direct: turn ARCH_ZONE_DMA_BITS into a
- variable
-Message-ID: <20191030214914.GA15939@infradead.org>
-References: <20191014183108.24804-1-nsaenzjulienne@suse.de>
- <20191014183108.24804-2-nsaenzjulienne@suse.de>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191014183108.24804-2-nsaenzjulienne@suse.de>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+	id 1iPvtZ-0005zk-9r; Wed, 30 Oct 2019 21:52:49 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iPvtP-0005yg-K5
+ for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 21:52:40 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f00:1e2::d71])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 5DB1114CFAAEA;
+ Wed, 30 Oct 2019 14:52:35 -0700 (PDT)
+Date: Wed, 30 Oct 2019 14:52:34 -0700 (PDT)
+Message-Id: <20191030.145234.1629187794527849559.davem@davemloft.net>
+To: Jose.Abreu@synopsys.com
+Subject: Re: [PATCH net 4/9] net: stmmac: selftests: Must remove UC/MC
+ addresses to prevent false positives
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <36d9af9080068c4e38cf50e80b6f2a5eafc9ed99.1572355609.git.Jose.Abreu@synopsys.com>
+References: <cover.1572355609.git.Jose.Abreu@synopsys.com>
+ <cover.1572355609.git.Jose.Abreu@synopsys.com>
+ <36d9af9080068c4e38cf50e80b6f2a5eafc9ed99.1572355609.git.Jose.Abreu@synopsys.com>
+X-Mailer: Mew version 6.8 on Emacs 26.1
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Wed, 30 Oct 2019 14:52:35 -0700 (PDT)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20191030_145239_660959_E681F396 
+X-CRM114-Status: GOOD (  10.47  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -44,32 +65,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, mbrugger@suse.com,
- Vasily Gorbik <gor@linux.ibm.com>, wahrenst@gmx.net,
- Michael Ellerman <mpe@ellerman.id.au>,
- Catalin Marinas <catalin.marinas@arm.com>, linuxppc-dev@lists.ozlabs.org,
- Will Deacon <will@kernel.org>, linux-kernel@vger.kernel.org,
- Heiko Carstens <heiko.carstens@de.ibm.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>,
- iommu@lists.linux-foundation.org, f.fainelli@gmail.com,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Paul Mackerras <paulus@samba.org>, Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: Joao.Pinto@synopsys.com, alexandre.torgue@st.com, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ peppe.cavallaro@st.com, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 14, 2019 at 08:31:03PM +0200, Nicolas Saenz Julienne wrote:
-> Some architectures, notably ARM, are interested in tweaking this
-> depending on their runtime DMA addressing limitations.
-> 
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+Date: Tue, 29 Oct 2019 15:14:48 +0100
 
-Do you want me to pick this up for the 5.5 dma-mapping tree, or do you
-want me to wait for the rest to settle?
+> @@ -499,9 +501,18 @@ static int stmmac_test_hfilt(struct stmmac_priv *priv)
+>  	if (netdev_mc_count(priv->dev) >= priv->hw->multicast_filter_bins)
+>  		return -EOPNOTSUPP;
+
+This test above...
+
+> +	dummy_dev = alloc_etherdev(0);
+> +	if (!dummy_dev)
+> +		return -ENOMEM;
+> +
+> +	/* Remove all MC addresses */
+> +	netdev_for_each_mc_addr(ha, priv->dev)
+> +		dev_mc_add(dummy_dev, ha->addr);
+> +	dev_mc_flush(priv->dev);
+
+No longer makes any sense now that you're removing all of the MC
+addresses.
+
+Also I know it seems that it should be guaranteed that re-adding all of
+the previously configured MC addresses should succeed.  But I am always
+wary when I see error codes ignored like this.
+
+This test makes destructure changes to the device's configuration,
+perhaps in a non-restorable fashion if errors occur re-adding the MC
+list entries.
+
+Running a test should never even remotely introduce a change in the
+device state like that.
+
+I really don't like this, to be honest.  I'd hate to be the user who
+had this somehow trigger on them and then have to diagnose it. :-/
+
 
 _______________________________________________
 linux-arm-kernel mailing list
