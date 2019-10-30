@@ -2,84 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28F8AE9EAE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 16:16:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3DB0CE9EC1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 16:20:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SfHm7Id94Smw+D7XKGpvKSLRTMlHkhu85khJJEvt5Y0=; b=BSEDcWl3UVeoAB
-	LNVkCzwFhozn58teW5iv+TO2HJTkQqKOx2PTAxamuCmQQrM9Kk9U+Y/qAfyvm9OrqWKHFfP90pAUL
-	0YOB24HFsbKCFL3NgARA6DYv/Cm2E+LnNNOz3vNFUmk4usGeLqn+oGKW6XK+NHd96vaBSA42O/4P/
-	cfW/IRcxtTAvOtoosQlopTunZRE3fpz3ZsbDsSt/D0ETOL6WyFim2PVoU2ODwd8aQDiyfBwoWhfU2
-	6/6yJIU4GuCg8uqyJYDm/o49zlm9Zk2WYgRlT4DMadQIVj0GasfjV75qoGJQkqv23tlQlap+dSRbt
-	DIObAFBoou/KMp/J7kEQ==;
+	List-Owner; bh=QShOFhXe/z17p3lg+Grvf+tjfwFAPKX/h81tSPOi1k4=; b=h4bOZUthrzOCz5
+	+E4ke+Q+etFxCnEjyZxTOhBwe05TgYdulU8GSG1wh+Y/h648r5h41/oELYA67C+GmNxFjk3vifJL4
+	en3WjvSTmBjZim3Tg5FZQsALwBe5a6gTfd0Et2SXOCKC3onK2adXsJHa2RTBnhIWZg/+fx21sFxZO
+	ZwNoLInGERKToz7swiZHFXulhSWh5jIsGK7/SsLRLqfklwvASkeIGzpjLB5sLUaWZD0M2EgQIaUEI
+	SP+b/AJk/a3ZRPQ54hQ7sT5H4mo5b29asmixDdRo6L53cNdIuioBjdooxO+d3TunIXWLczv3MX0Vf
+	tCRYgU5iWSxBQN886OsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPphe-0000WL-9A; Wed, 30 Oct 2019 15:16:06 +0000
-Received: from mail-ed1-f65.google.com ([209.85.208.65])
+	id 1iPplP-0001NW-4T; Wed, 30 Oct 2019 15:19:59 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPphU-0000Ug-IG
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 15:15:57 +0000
-Received: by mail-ed1-f65.google.com with SMTP id l25so2040250edt.6
+ id 1iPplB-0001Mi-4a
+ for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 15:19:46 +0000
+Received: by mail-io1-xd41.google.com with SMTP id w12so2931337iol.11
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 30 Oct 2019 08:15:55 -0700 (PDT)
+ Wed, 30 Oct 2019 08:19:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=7YNXyj7f8rW8+zjDkawxxyLGJtQwCp34SKVerNZRPbQ=;
+ b=oWsbYVn2wH21E81tjjJ3l6Iq0ORB/qlP3WR+Q8r9Z2fUjpbg/uUl9HaP6IzyxnYvVH
+ WKmf9Rh+YOwz8WuIcq//YSJmAZD7YV4XP3/kSQFRTSz6C0I0Io0QAnLsOfHciN7ppMzq
+ SYuesKoavkQkd03pGl0yhQoo60VYnyfRdJucp9IcL/tuKLm7e5HN1XpIFNp3wYLh5UcY
+ bdgym8PGD+cNTB/boNti3JS3zsSRAMNelmsCtMiVsCUujfHKuhVkpS/uXaHhuTmCfr3e
+ 5RRWn2T+sQ/VNSmZq9Tj7hidfFMMrTf6wFnH9cIkxYKWtjlEKRlOEUgsWgDTnQ9mhjDi
+ gzPw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Y+WK5GKecV/KBDUIy9GWTH4bwpBGohOzkeFmBQZf1R0=;
- b=IA7Lms6aQggPdgi/VL3MmQA55/rivsk8eJBaFFj1Z/1wv855aOXmoN1fDF07PBgp0g
- 6x2rKuNJB5PyUY5dh2cTwp0xz26cIlSsOTpmJU+yyH4z19jBklyVxqoS2q+ZEBp7pPtw
- 0Fqp196vazaQ9sP1f27Swefo0PP1yWU/RCR+9aF1X+9kgE+QX9F6DzDMiCBBxxKL6fX0
- pDrofexSpi2LD4F/YCs6Df9tXOo5uyQ2tZ6TXD5s+1yXPrDB4bQICDZhqgWcETCfFhpo
- b6i42ZAVPJVSowmKyPlv3zjZcp/NfALrtjOyEkduGRVpKPaL2ZMbDwoQv0RD7HxDIrbN
- jhbA==
-X-Gm-Message-State: APjAAAVjA2qWGxM0ZafSg+wa+XDOZRUy1Mz/VjjNk9g6wacz0UBJaMEA
- mN8nUXEwBG2bJ+FdGYQ346YuYQ9x
-X-Google-Smtp-Source: APXvYqzW36JMfOP+9Ckkk57hi580dnNzKCE+o0IDHat7XROi4wbyfWLMRXpJoPeDKapILbXIURAeVg==
-X-Received: by 2002:a17:906:85da:: with SMTP id
- i26mr25000ejy.186.1572448553957; 
- Wed, 30 Oct 2019 08:15:53 -0700 (PDT)
-Received: from pi3 ([194.230.155.180])
- by smtp.googlemail.com with ESMTPSA id 32sm6111edq.23.2019.10.30.08.15.52
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 30 Oct 2019 08:15:53 -0700 (PDT)
-Date: Wed, 30 Oct 2019 16:15:51 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Colin King <colin.king@canonical.com>
-Subject: Re: [PATCH][next] soc: samsung: exynos-asv: fix potential overflow
- in multiply
-Message-ID: <20191030151551.GA25718@pi3>
-References: <20191030145457.10120-1-colin.king@canonical.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=7YNXyj7f8rW8+zjDkawxxyLGJtQwCp34SKVerNZRPbQ=;
+ b=AzRoMJDs+0RuEPm6rWly8LGF0YZAy8ACSo74Dg5ie8QPDaMIQuLRXHl/8b0xiUNEa0
+ ILTz9PfKHi2WgY24RRe2HiJwZpcLWJJHWyMtsZjNrlB8y8AYCONruEqB0z9zE4IFrV1C
+ rSvEiQjJkJk++LiRTejzQlImQ0fitvkDRbnWUO4NwLBol7WgBbSwD62HY2ozwjHkgiLw
+ A3cOGLMLgyBzAQgWfM1lh71v0mQlaG/7jCcb+H89PopmN4i63TEqyQca/QenDwoZj7Bp
+ HfgSQFLg5zLj24JDq0CagGdDQK3qcCFMPEy1eqe1ytgMP65SjQFEMK91dqQtHchf7oiV
+ eXYw==
+X-Gm-Message-State: APjAAAVdrDL9rc6jTxztOCaprobBIOLZ9lqNS440Jlcy3UjYktJAGy/s
+ BaIkPQ9+aOkoesWkSgaZwgUeMbomHUnAUg27F0tDww==
+X-Google-Smtp-Source: APXvYqyKGgTnRfDLHHdkSB7llCvZ5cVDKjpUAmAFIAQromO+MWT4WMhJv0CW7Uy5syPMKhupsj3GiXgNXpc5RVQa4ak=
+X-Received: by 2002:a05:6638:392:: with SMTP id
+ y18mr165770jap.98.1572448783867; 
+ Wed, 30 Oct 2019 08:19:43 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191030145457.10120-1-colin.king@canonical.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+References: <20190829213321.4092-4-mike.leach@linaro.org>
+ <20191026202633.835854-1-rikard.falkeborn@gmail.com>
+In-Reply-To: <20191026202633.835854-1-rikard.falkeborn@gmail.com>
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+Date: Wed, 30 Oct 2019 09:19:33 -0600
+Message-ID: <CANLsYky8WozdqOFrD7Q46P3uxWo4dcBjOTpwo+33u9W36WRA5g@mail.gmail.com>
+Subject: Re: [PATCH] coresight: etm4x: Fix BMVAL misuse
+To: Rikard Falkeborn <rikard.falkeborn@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_081556_599468_5B6B5D80 
-X-CRM114-Status: GOOD (  20.46  )
-X-Spam-Score: 3.8 (+++)
+X-CRM114-CacheID: sfid-20191030_081945_184566_95E1C007 
+X-CRM114-Status: GOOD (  15.80  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (3.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.65 listed in list.dnswl.org]
- 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
- [194.230.155.180 listed in zen.spamhaus.org]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.65 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,91 +92,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, kernel-janitors@vger.kernel.org,
- linux-kernel@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Jon Corbet <corbet@lwn.net>, Greg KH <gregkh@linuxfoundation.org>,
+ Coresight ML <coresight@lists.linaro.org>,
+ "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
+ "Suzuki K. Poulose" <suzuki.poulose@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 30, 2019 at 02:54:57PM +0000, Colin King wrote:
-> From: Colin Ian King <colin.king@canonical.com>
-> 
-> The multiplication of opp_freq by MHZ is performed using unsigned int
-> multiplication however the result is being passed into a function where
-> the frequency is an unsigned long, so there is an expectation that the
-> result won't fit into an unsigned int. Fix any potential integer overflow
-> my making opp_freq an unsigned long.  Also change from %u to %lu format
-> specifiers
-> 
-> Addresses-Coverity: ("Unintentional integer overflow")
-> Fixes: 5ea428595cc5 ("soc: samsung: Add Exynos Adaptive Supply Voltage driver")
-
-Although I like the idea of using the same type as the
-dev_pm_opp_find_freq_exact() interface, but I do not agree with severity
-of this. This is currently only ARMv7 (32-bit) driver, so using long
-does not change anything. It's still 4 bytes and it is still up to 4
-GHz.
-
-Therefore on ARMv7, the possibility of overflow is exactly the same as
-before. Nothing was fixed.
-
-If we really want to fix it, then all this should be "long long" or
-value should be checked while parsing DT.
-
-Semantically I agree, so I would prefer to adjust only the commit
-message.
-
-Best regards,
-Krzysztof
-
-
-> Signed-off-by: Colin Ian King <colin.king@canonical.com>
+On Sat, 26 Oct 2019 at 14:26, Rikard Falkeborn
+<rikard.falkeborn@gmail.com> wrote:
+>
+> The second argument should be the lsb and the third argument should be
+> the msb.
+>
+> Fixes: 62ab9bce3bc7 ("coresight: etm4x: Add missing API to set EL match on address filters")
+> Signed-off-by: Rikard Falkeborn <rikard.falkeborn@gmail.com>
 > ---
->  drivers/soc/samsung/exynos-asv.c | 8 ++++----
->  1 file changed, 4 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/soc/samsung/exynos-asv.c b/drivers/soc/samsung/exynos-asv.c
-> index 8abf4dfaa5c5..d66fc74379a3 100644
-> --- a/drivers/soc/samsung/exynos-asv.c
-> +++ b/drivers/soc/samsung/exynos-asv.c
-> @@ -30,7 +30,7 @@ static int exynos_asv_update_cpu_opps(struct exynos_asv *asv,
->  {
->  	struct exynos_asv_subsys *subsys = NULL;
->  	struct dev_pm_opp *opp;
-> -	unsigned int opp_freq;
-> +	unsigned long opp_freq;
->  	int i;
->  
->  	for (i = 0; i < ARRAY_SIZE(asv->subsys); i++) {
-> @@ -51,7 +51,7 @@ static int exynos_asv_update_cpu_opps(struct exynos_asv *asv,
->  
->  		opp = dev_pm_opp_find_freq_exact(cpu, opp_freq * MHZ, true);
->  		if (IS_ERR(opp)) {
-> -			dev_info(asv->dev, "cpu%d opp%d, freq: %u missing\n",
-> +			dev_info(asv->dev, "cpu%d opp%d, freq: %lu missing\n",
->  				 cpu->id, i, opp_freq);
->  
->  			continue;
-> @@ -68,11 +68,11 @@ static int exynos_asv_update_cpu_opps(struct exynos_asv *asv,
->  						new_volt, new_volt, new_volt);
->  		if (ret < 0)
->  			dev_err(asv->dev,
-> -				"Failed to adjust OPP %u Hz/%u uV for cpu%d\n",
-> +				"Failed to adjust OPP %lu Hz/%u uV for cpu%d\n",
->  				opp_freq, new_volt, cpu->id);
->  		else
->  			dev_dbg(asv->dev,
-> -				"Adjusted OPP %u Hz/%u -> %u uV, cpu%d\n",
-> +				"Adjusted OPP %lu Hz/%u -> %u uV, cpu%d\n",
->  				opp_freq, volt, new_volt, cpu->id);
->  	}
->  
-> -- 
-> 2.20.1
-> 
+> Spotted while trying to get compile time checking that the order of the
+> arguments to GENMASK macro is correct (BMVAL uses GENMASK).
+>
+> I have only compile tested the patch.
+>
+>  drivers/hwtracing/coresight/coresight-etm4x-sysfs.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+>
+> diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> index 3fc12ac44270..ce41482431f9 100644
+> --- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> +++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> @@ -1246,7 +1246,7 @@ static ssize_t addr_exlevel_s_ns_show(struct device *dev,
+>
+>         spin_lock(&drvdata->spinlock);
+>         idx = config->addr_idx;
+> -       val = BMVAL(config->addr_acc[idx], 14, 8);
+> +       val = BMVAL(config->addr_acc[idx], 8, 14);
+
+Good catch - thank you for that,
+Mathieu
+
+>         spin_unlock(&drvdata->spinlock);
+>         return scnprintf(buf, PAGE_SIZE, "%#lx\n", val);
+>  }
+> --
+> 2.23.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
