@@ -2,57 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10EE9E9F05
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 16:31:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65E5BE9F04
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 16:30:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=yR3DesLlsf3jZY1xZz5Rlmlm8kPXkde/d7+s9xiMIok=; b=ka4
-	IxXSBpxCX5lIzIX4Q1SlG1GrIILA3qUgZwgVwEl92zqwo+rorEoPbi3fQgmVS90aEm/N1wCh75MCD
-	hOl/xeMN0d5tpSr1gwoex8ZFtYGKPca2rWyinSPqKROqeQPO1aSweBk2J4Dull/Uc6EhE3t5bSAcT
-	j1rnXzywUzPA6VBmU2OPhzGoE81S5AJKttf3cTo5cddZg7bOQ+bdwl0SiBWdUvFeG0z4ipwKWQuoO
-	r2JNCcfsS5htfuSz6aXZjUotZIufRU1emLXrP5H3tedUr7xyBz+7UjvhNtdH7BZZRZH64v785cxkY
-	sr2r1CswjKJR+/jNMNn0M59i94qvmoA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=nSk975NVxAYBmiQwQAi92Rb/rZTveNncI1nDH0TP1qU=; b=UunRspE/p804AOon2LghO3zHbr
+	SGQEvtf2VdF+nnptMiX6DufWfVWx7w0zDQAYc1WLm6uJZsL9/Q2XJYFwIe4BGKWucQuAH8/Lsr7wF
+	iUAfUgRpDNydb0Lo7DvVNl5f53PBydN22CmQf1x/6SYorjMW6FsHWthY/UHiSWBRf1rdOUEms/xa8
+	dSA0QDf42y3fJPBdTU/dn+zjz8bUPIIq5QpQJKAZNTNPFQtOh748pJM7C7Q//ghClrdH4G36RRBX/
+	29sikqmNr/M2ECwInSUOnA1OCcHO8IAlv24oVHkAV/wj2Z8wwJctqxokkw11Si8f/76CfcUD7mbYx
+	ynRQMgkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPpwH-0001Kq-DQ; Wed, 30 Oct 2019 15:31:13 +0000
+	id 1iPpvv-00016z-OY; Wed, 30 Oct 2019 15:30:51 +0000
 Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPpuB-0007No-UT
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 15:29:06 +0000
+ id 1iPpuB-0007Lp-DL
+ for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 15:29:05 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
  [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 32231C0DE4;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 321ADC0DE2;
  Wed, 30 Oct 2019 15:29:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1572449343; bh=66e/bYyhcGrAFctAHp4076TE/JEaWIo4me4coBNTLE4=;
- h=From:To:Cc:Subject:Date:From;
- b=UisusYJw9jOvIsXZkfJxzPB8s+FfMXeBNTap3qWNDjaLtsNIAJo3ZDActVJ3vMkg/
- so418MsACo0KkbTR3ZntPXQF9s1g8LrZ+tWzFSWxmJqJ1qJ26AM5hqtgJR20LaQAKW
- dVekW/7G5jUlyAVeIi+xEGsty4fYBzi3Zs423KPVO4bugjqj45dSH8V5YhAI52lAN6
- EtN1OntgLkWJBn3zOop8FBT0QkGuYsNvoi1JwweQoBlp1p+F8ZWfKtfXK2NIXNVEgO
- sYJDAMgmfZ+QSEi15Iu9kV0C2woDau+Pt94hGEpdFPB3jxiUQLYSzL+TyL2YthpRN7
- ZOXfxvQLH8tOg==
+ t=1572449340; bh=IZywiHnu0e/BLA3nx1WdYdgGskrAid2hLTgOAWQdqjk=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
+ References:From;
+ b=fC3Mbtd+L98bzvx0hZENOCeAUrHlaSGTfFBRoOcTMFc5K+doLwJrHlwkV+OwmvzRZ
+ gGax+cYRRzMf2bvr8xUfm6EE8+pHDzQ8paXwe+wK5CgJiJ4ADggjQT6Z4rEmeGhYSB
+ 2MeCOsLw1bBIbE6CWmAUYHoZGVsaYAeJgZymQHnYoRrQulouZv5QNXENqDGr9ClhrP
+ KTgmpYAKqAkG7yBGJmdXtU+k3A7dGVU2qytibjnwdUngkSS6PV+py82RxSTrdx54VS
+ 0Yzv1ILrFeKcrWIU6Bv/UeVX/R+d5XdzKWIko4DflkkXkylsr2fXZnbVdzEkO4eUP0
+ wdTHb65dPtMqQ==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 51946A0057;
- Wed, 30 Oct 2019 15:28:56 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTP id C4D30A005C;
+ Wed, 30 Oct 2019 15:28:58 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next 0/3] net: stmmac: Improvements for -next
-Date: Wed, 30 Oct 2019 16:28:47 +0100
-Message-Id: <cover.1572449009.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH net-next 1/3] net: stmmac: gmac4+: Add Split Header support
+Date: Wed, 30 Oct 2019 16:28:48 +0100
+Message-Id: <abdcac879bde07de794d5d6454a6eeaf42243d5f.1572449009.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <cover.1572449009.git.Jose.Abreu@synopsys.com>
+References: <cover.1572449009.git.Jose.Abreu@synopsys.com>
+In-Reply-To: <cover.1572449009.git.Jose.Abreu@synopsys.com>
+References: <cover.1572449009.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_082904_193543_E9EF7B6B 
-X-CRM114-Status: UNSURE (   9.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191030_082903_478420_9F3CF5F5 
+X-CRM114-Status: GOOD (  15.16  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -90,16 +95,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Misc improvements for stmmac.
+GMAC4+ cores also support the Split Header feature.
 
-Patch 1/3, adds the support for Split Header feature in GMAC4+ cores. This
-was already available for XGMAC and now with this change it is supported in
-all relevant cores.
+Add the support for Split Header feature in the RX path following the
+same implementation logic that XGMAC followed.
 
-Patch 2/3, adds the support for C45 MDIO callbacks in XGMAC cores.
-
-Patch 3/3, removes the speed dependency in TC CBS callbacks because XGMAC3
-supports CBS feature at speeds up to 10Gbps
+Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
 ---
 Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
@@ -112,21 +113,172 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
-
-Jose Abreu (3):
-  net: stmmac: gmac4+: Add Split Header support
-  net: stmmac: xgmac: Add C45 PHY support in the MDIO callbacks
-  net: stmmac: tc: Remove the speed dependency
-
- drivers/net/ethernet/stmicro/stmmac/dwmac4.h       |  7 ++++
- drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.c | 21 ++++++++--
+ drivers/net/ethernet/stmicro/stmmac/dwmac4.h       |  7 +++++++
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.c | 21 ++++++++++++++++++---
  drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.h |  1 +
- drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c   | 19 +++++++++
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c   | 19 +++++++++++++++++++
  drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.h   |  1 +
- drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c  | 47 ++++++++++++++++++++--
- drivers/net/ethernet/stmicro/stmmac/stmmac_tc.c    |  2 -
- 7 files changed, 89 insertions(+), 9 deletions(-)
+ 5 files changed, 46 insertions(+), 3 deletions(-)
 
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4.h b/drivers/net/ethernet/stmicro/stmmac/dwmac4.h
+index 07e97f45755d..2dc70d104161 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac4.h
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4.h
+@@ -14,6 +14,7 @@
+ 
+ /*  MAC registers */
+ #define GMAC_CONFIG			0x00000000
++#define GMAC_EXT_CONFIG			0x00000004
+ #define GMAC_PACKET_FILTER		0x00000008
+ #define GMAC_HASH_TAB(x)		(0x10 + (x) * 4)
+ #define GMAC_VLAN_TAG			0x00000050
+@@ -188,6 +189,11 @@ enum power_event {
+ #define GMAC_CONFIG_TE			BIT(1)
+ #define GMAC_CONFIG_RE			BIT(0)
+ 
++/* MAC extended config */
++#define GMAC_CONFIG_HDSMS		GENMASK(22, 20)
++#define GMAC_CONFIG_HDSMS_SHIFT		20
++#define GMAC_CONFIG_HDSMS_256		(0x2 << GMAC_CONFIG_HDSMS_SHIFT)
++
+ /* MAC HW features0 bitmap */
+ #define GMAC_HW_FEAT_SAVLANINS		BIT(27)
+ #define GMAC_HW_FEAT_ADDMAC		BIT(18)
+@@ -211,6 +217,7 @@ enum power_event {
+ #define GMAC_HW_HASH_TB_SZ		GENMASK(25, 24)
+ #define GMAC_HW_FEAT_AVSEL		BIT(20)
+ #define GMAC_HW_TSOEN			BIT(18)
++#define GMAC_HW_FEAT_SPHEN		BIT(17)
+ #define GMAC_HW_ADDR64			GENMASK(15, 14)
+ #define GMAC_HW_TXFIFOSIZE		GENMASK(10, 6)
+ #define GMAC_HW_RXFIFOSIZE		GENMASK(4, 0)
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.c
+index 707ab5eba8da..3e14da69f378 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.c
+@@ -83,9 +83,10 @@ static int dwmac4_wrback_get_rx_status(void *data, struct stmmac_extra_stats *x,
+ 	if (unlikely(rdes3 & RDES3_OWN))
+ 		return dma_own;
+ 
+-	/* Verify rx error by looking at the last segment. */
+-	if (likely(!(rdes3 & RDES3_LAST_DESCRIPTOR)))
++	if (unlikely(rdes3 & RDES3_CONTEXT_DESCRIPTOR))
+ 		return discard_frame;
++	if (likely(!(rdes3 & RDES3_LAST_DESCRIPTOR)))
++		return rx_not_ls;
+ 
+ 	if (unlikely(rdes3 & RDES3_ERROR_SUMMARY)) {
+ 		if (unlikely(rdes3 & RDES3_GIANT_PACKET))
+@@ -188,7 +189,7 @@ static void dwmac4_set_tx_owner(struct dma_desc *p)
+ 
+ static void dwmac4_set_rx_owner(struct dma_desc *p, int disable_rx_ic)
+ {
+-	p->des3 = cpu_to_le32(RDES3_OWN | RDES3_BUFFER1_VALID_ADDR);
++	p->des3 |= cpu_to_le32(RDES3_OWN | RDES3_BUFFER1_VALID_ADDR);
+ 
+ 	if (!disable_rx_ic)
+ 		p->des3 |= cpu_to_le32(RDES3_INT_ON_COMPLETION_EN);
+@@ -492,6 +493,18 @@ static void dwmac4_set_vlan(struct dma_desc *p, u32 type)
+ 	p->des2 |= cpu_to_le32(type & TDES2_VLAN_TAG_MASK);
+ }
+ 
++static int dwmac4_get_rx_header_len(struct dma_desc *p, unsigned int *len)
++{
++	*len = le32_to_cpu(p->des2) & RDES2_HL;
++	return 0;
++}
++
++static void dwmac4_set_sec_addr(struct dma_desc *p, dma_addr_t addr)
++{
++	p->des2 = cpu_to_le32(lower_32_bits(addr));
++	p->des3 = cpu_to_le32(upper_32_bits(addr) | RDES3_BUFFER2_VALID_ADDR);
++}
++
+ const struct stmmac_desc_ops dwmac4_desc_ops = {
+ 	.tx_status = dwmac4_wrback_get_tx_status,
+ 	.rx_status = dwmac4_wrback_get_rx_status,
+@@ -519,6 +532,8 @@ const struct stmmac_desc_ops dwmac4_desc_ops = {
+ 	.set_sarc = dwmac4_set_sarc,
+ 	.set_vlan_tag = dwmac4_set_vlan_tag,
+ 	.set_vlan = dwmac4_set_vlan,
++	.get_rx_header_len = dwmac4_get_rx_header_len,
++	.set_sec_addr = dwmac4_set_sec_addr,
+ };
+ 
+ const struct stmmac_mode_ops dwmac4_ring_mode_ops = {
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.h b/drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.h
+index 0d7b3bbcd5a7..6d92109dc9aa 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.h
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.h
+@@ -109,6 +109,7 @@
+ #define RDES2_L4_FILTER_MATCH		BIT(28)
+ #define RDES2_L3_L4_FILT_NB_MATCH_MASK	GENMASK(27, 26)
+ #define RDES2_L3_L4_FILT_NB_MATCH_SHIFT	26
++#define RDES2_HL			GENMASK(9, 0)
+ 
+ /* RDES3 (write back format) */
+ #define RDES3_PACKET_SIZE_MASK		GENMASK(14, 0)
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c
+index b24c89572745..36a0af8bf89f 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c
+@@ -368,6 +368,7 @@ static void dwmac4_get_hw_feature(void __iomem *ioaddr,
+ 	dma_cap->hash_tb_sz = (hw_cap & GMAC_HW_HASH_TB_SZ) >> 24;
+ 	dma_cap->av = (hw_cap & GMAC_HW_FEAT_AVSEL) >> 20;
+ 	dma_cap->tsoen = (hw_cap & GMAC_HW_TSOEN) >> 18;
++	dma_cap->sphen = (hw_cap & GMAC_HW_FEAT_SPHEN) >> 17;
+ 
+ 	dma_cap->addr64 = (hw_cap & GMAC_HW_ADDR64) >> 14;
+ 	switch (dma_cap->addr64) {
+@@ -460,6 +461,22 @@ static void dwmac4_set_bfsize(void __iomem *ioaddr, int bfsize, u32 chan)
+ 	writel(value, ioaddr + DMA_CHAN_RX_CONTROL(chan));
+ }
+ 
++static void dwmac4_enable_sph(void __iomem *ioaddr, bool en, u32 chan)
++{
++	u32 value = readl(ioaddr + GMAC_EXT_CONFIG);
++
++	value &= ~GMAC_CONFIG_HDSMS;
++	value |= GMAC_CONFIG_HDSMS_256; /* Segment max 256 bytes */
++	writel(value, ioaddr + GMAC_EXT_CONFIG);
++
++	value = readl(ioaddr + DMA_CHAN_CONTROL(chan));
++	if (en)
++		value |= DMA_CONTROL_SPH;
++	else
++		value &= ~DMA_CONTROL_SPH;
++	writel(value, ioaddr + DMA_CHAN_CONTROL(chan));
++}
++
+ const struct stmmac_dma_ops dwmac4_dma_ops = {
+ 	.reset = dwmac4_dma_reset,
+ 	.init = dwmac4_dma_init,
+@@ -486,6 +503,7 @@ const struct stmmac_dma_ops dwmac4_dma_ops = {
+ 	.enable_tso = dwmac4_enable_tso,
+ 	.qmode = dwmac4_qmode,
+ 	.set_bfsize = dwmac4_set_bfsize,
++	.enable_sph = dwmac4_enable_sph,
+ };
+ 
+ const struct stmmac_dma_ops dwmac410_dma_ops = {
+@@ -514,4 +532,5 @@ const struct stmmac_dma_ops dwmac410_dma_ops = {
+ 	.enable_tso = dwmac4_enable_tso,
+ 	.qmode = dwmac4_qmode,
+ 	.set_bfsize = dwmac4_set_bfsize,
++	.enable_sph = dwmac4_enable_sph,
+ };
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.h b/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.h
+index 5299fa1001a3..589931795847 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.h
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.h
+@@ -110,6 +110,7 @@
+ #define DMA_CHAN_STATUS(x)		(DMA_CHANX_BASE_ADDR(x) + 0x60)
+ 
+ /* DMA Control X */
++#define DMA_CONTROL_SPH			BIT(24)
+ #define DMA_CONTROL_MSS_MASK		GENMASK(13, 0)
+ 
+ /* DMA Tx Channel X Control register defines */
 -- 
 2.7.4
 
