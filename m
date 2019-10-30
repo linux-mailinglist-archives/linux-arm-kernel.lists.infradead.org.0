@@ -2,48 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29F78EA20A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 17:48:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9302EA212
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 17:51:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Tgic5/3ndOeETot9IdltgwKVq3ufrhQ/jTl7W+1iguE=; b=ZycqvKr41kI+on
-	6R180exZ5aZ2l8W8ZYYJnny4TUf6oS56T+TXpypzM9tvWOUIJ8y4lUeYVzDIAaaMgSIiBA9UFeB9w
-	yr1ollLQGWeqwZMDMgYltB5STsz6xwXw67m2f27qvj/T8ANzH0mt3P4dz9vfM5W4rYgE6SYXZlmIF
-	X3D08V2nd8Y+qIV0S7f2w1mdnHIa82wVuFbENSdxJS5KjQdBv3RDW2Pp9NzZLaZuB4BciND9n0U9/
-	VqgRMaY3vgMJfvjD/fotSJXZOkXWxvvRh9vz9mPn+gsUnUJeOdWUcn1epfzJrYhMuyo/+JTexiORr
-	hzhw/z0OpJBrwvl0rClA==;
+	List-Owner; bh=4+lefmrEE5+1zogygruRDIJB/QvETA8i6GHV4WQSaCw=; b=I1kFPDTHpzSigh
+	B+897/B3cBOiu/ggzE02hezqK7q5R5orYJ0LOxctqF34pMafKs/G22088ItvM+tzH1ndyV8nSnYJf
+	E/yi/hl4FBaI3TJbJFUcJHjIjF+t0pmZEw7jZQ/rZEH2VJivnVwNbjXUctSY9NWYUBs1QEs5G0MKZ
+	yLJwlyO8Rp+43vDNdF6ygqgFyn5tXRVCIJ16brF8gVYmwtYZo3O3atTRA+EtgbbzpBLtOCKihtQM2
+	9u54XwKgs//OjPoIvmWUjPu0Y5+cfR0aF198SRsM4C+Go8s8pM+wfUR6dix8+9gXonK06NMXziQ+Y
+	QCrRUmPksa5TZETrR0Uw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPr91-0002wP-8R; Wed, 30 Oct 2019 16:48:27 +0000
+	id 1iPrBg-0004X5-B5; Wed, 30 Oct 2019 16:51:12 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPr8s-0002vz-OC
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 16:48:20 +0000
+ id 1iPrBU-0004WD-GF
+ for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 16:51:01 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2D50E31F;
- Wed, 30 Oct 2019 09:48:18 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8372A31F;
+ Wed, 30 Oct 2019 09:50:58 -0700 (PDT)
 Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
  by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- B27D93F6C4; Wed, 30 Oct 2019 09:48:15 -0700 (PDT)
-Date: Wed, 30 Oct 2019 16:48:13 +0000
+ 1504C3F6C4; Wed, 30 Oct 2019 09:50:55 -0700 (PDT)
+Date: Wed, 30 Oct 2019 16:50:54 +0000
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: Steven Price <steven.price@arm.com>
-Subject: Re: [PATCH v14 19/22] mm: Add generic ptdump
-Message-ID: <20191030164812.GD13309@arrakis.emea.arm.com>
+Subject: Re: [PATCH v14 22/22] arm64: mm: Display non-present entries in ptdump
+Message-ID: <20191030165053.GE13309@arrakis.emea.arm.com>
 References: <20191028135910.33253-1-steven.price@arm.com>
- <20191028135910.33253-20-steven.price@arm.com>
+ <20191028135910.33253-23-steven.price@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191028135910.33253-20-steven.price@arm.com>
+In-Reply-To: <20191028135910.33253-23-steven.price@arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_094818_831411_06EFB03C 
-X-CRM114-Status: UNSURE (   9.98  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191030_095100_582742_56C665E7 
+X-CRM114-Status: GOOD (  10.81  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -77,31 +76,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 28, 2019 at 01:59:07PM +0000, Steven Price wrote:
-> +struct ptdump_state {
-> +	void (*note_page)(struct ptdump_state *st, unsigned long addr,
-> +			  int level, unsigned long val);
-> +	const struct ptdump_range *range;
-> +};
+On Mon, Oct 28, 2019 at 01:59:10PM +0000, Steven Price wrote:
+> Previously the /sys/kernel/debug/kernel_page_tables file would only show
+> lines for entries present in the page tables. However it is useful to
+> also show non-present entries as this makes the size and level of the
+> holes more visible. This aligns the behaviour with x86 which also shows
+> holes.
+> 
+> Signed-off-by: Steven Price <steven.price@arm.com>
 
-It would be nice to have a comment above note_page about what 'level'
-actually means...
-
-[...]
-> +static int ptdump_hole(unsigned long addr, unsigned long next,
-> +		       int depth, struct mm_walk *walk)
-> +{
-> +	struct ptdump_state *st = walk->private;
-> +
-> +	st->note_page(st, addr, depth + 1, 0);
-
-... as it took me a while to figure out why you 'depth + 1' here.
-
-But see my other reply on the arm64 patch. Is it possible to align depth
-and level here to have the same range?
-
--- 
-Catalin
+Acked-by: Catalin Marinas <catalin.marinas@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
