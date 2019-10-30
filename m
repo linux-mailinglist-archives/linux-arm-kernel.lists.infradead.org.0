@@ -2,33 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1ABEEA530
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 22:12:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B228EA551
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 22:21:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
 	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y4w1mpVPLVpPGVfo4mXSe2jASHhhsWWjmOZs1lZvio4=; b=Uu/gsu0HaFO6cS
-	ioox/elsGAjaDC9zSIz6nj6+493WRtSGtu+/DwCb11iu2/wzs2nybX2gpMMCxxQ1dGlpvnJPBXHgc
-	c9l6VJSDfpxFevmvyKc9smVyODqMvjY/GY4LH4dbbcMZhtICeC+XuG+uKo6vbIs2vfHgF6/o9tkRZ
-	gvDCfhMSkfM4rFbWbdIFOXcklN+0zXH3U6jVOdZd3DnTB1KYzHthL73YKPjMx2EjLayqcESDPyYcS
-	gbhWjNznfUI7ixmpbVQDU7athbuzlQpjDt9YuwpnTGjEAyZCZkHUMGXIIE4UVZpW+SXRblECY/nl+
-	8MXjdJXE3W7/p8+XWjSg==;
+	List-Owner; bh=y4w1mpVPLVpPGVfo4mXSe2jASHhhsWWjmOZs1lZvio4=; b=RX9YUQ7vE53iiG
+	1qhnMPF+LYovdmjIpj8cGds+9msd0dcN08tQi12dxgpZDOCul1CBfb8OFa/mbWC/RNJMAa2D2y+OO
+	kPK+K5WDit2cVr72w6dgV8B8A9Cfe50JsyeUyrJb4qGFeipLQoAHHmZbBeZCtuDJidb0j7Kh2w6Rw
+	kMS2o//uNKeFRx/QzFitgl1Ir+pnRYRTsKYVzRMagXIGZz8zu+zM/ocIEUN5JgYOWkUHMRwhS8zK0
+	zvpJiZWKF+iln31o3lnRv7Oqhpg7rzg51aoQjb7YQQr8i0mG/q3knRuIWnZzQzvuIyaGUeRq4uNfG
+	4hWG5AJGKUoITQ0/N0wA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPvGG-0007LY-MA; Wed, 30 Oct 2019 21:12:12 +0000
+	id 1iPvPG-0002dO-Q6; Wed, 30 Oct 2019 21:21:30 +0000
 Received: from smtp08.smtpout.orange.fr ([80.12.242.130]
  helo=smtp.smtpout.orange.fr)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPvG6-0007H1-Io
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 21:12:04 +0000
+ id 1iPvP5-0002c0-CL
+ for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 21:21:21 +0000
 Received: from belgarion ([90.55.204.252]) by mwinf5d15 with ME
- id KxC02100A5TFNlm03xC0Rv; Wed, 30 Oct 2019 22:12:01 +0100
+ id KxMG210075TFNlm03xMGp5; Wed, 30 Oct 2019 22:21:17 +0100
 X-ME-Helo: belgarion
 X-ME-Auth: amFyem1pay5yb2JlcnRAb3JhbmdlLmZy
-X-ME-Date: Wed, 30 Oct 2019 22:12:01 +0100
+X-ME-Date: Wed, 30 Oct 2019 22:21:17 +0100
 X-ME-IP: 90.55.204.252
 From: Robert Jarzmik <robert.jarzmik@free.fr>
 To: Sebastian Reichel <sre@kernel.org>
@@ -37,15 +37,15 @@ References: <20191018154052.1276506-1-arnd@arndb.de>
  <20191018154201.1276638-39-arnd@arndb.de>
  <20191019090749.ps27yjfebzscw2pk@earth.universe>
 X-URL: http://belgarath.falguerolles.org/
-Date: Wed, 30 Oct 2019 22:12:00 +0100
+Date: Wed, 30 Oct 2019 22:21:16 +0100
 In-Reply-To: <20191019090749.ps27yjfebzscw2pk@earth.universe> (Sebastian
  Reichel's message of "Sat, 19 Oct 2019 11:07:49 +0200")
-Message-ID: <87d0eelyzj.fsf@belgarion.home>
+Message-ID: <878sp2lyk3.fsf@belgarion.home>
 User-Agent: Gnus/5.130008 (Ma Gnus v0.8) Emacs/26 (gnu/linux)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_141202_901630_AF20A413 
-X-CRM114-Status: GOOD (  16.81  )
+X-CRM114-CacheID: sfid-20191030_142119_701370_D9446B9A 
+X-CRM114-Status: GOOD (  16.73  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -54,11 +54,11 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [80.12.242.130 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [80.12.242.130 listed in wl.mailspike.net]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robert.jarzmik[at]free.fr)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [80.12.242.130 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
