@@ -2,57 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F935E942A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 01:42:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0EB42E9437
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 01:51:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=wKoKfRCGmjNulriZ17y0S4pd+tPSrBywQnxXkNgkiGE=; b=L3Q
-	LgtyXKbB1lM0NTHJt5HN4TfdKSvEBYUsLCWmCJrsf8RVFVY9QlZyGrJcXnJ6H0OA+x7N16pQcV1IC
-	tqzFSh2S6VtE6y7gb5EmMNaypvHuNa1iYQ4Eh3TY7RwhgPoUIUurd9VGy0wd/e3sIC2htoFQIil01
-	+PnxLLjwPe/TxAjl6JcPqjai+x30lxXkzLWx9r41mxOrUbCuefcDkQQC/lNA3uHgxziSUuQaC9Sg4
-	ASDFKCfHBsV95RkBKcKRKPYYUihi+Lbbbga0DWvsxZBQi35Lcv3hSWLnPEo3LY544Y+35Q5+1+P1f
-	o+8J4EVVLuApHxwZNkQiYxegOKEmx9w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=F3PtA1RoRFdnc2BTYIWc+JrrEMLb89+wQQwL3c22rx4=; b=s1tYTdEIhyrDCa
+	DxbfMLLpsovzTA4WrI6Tc38nUYTkg741sgUVRUkJ4eFlfF6TabAnHyEuQDR1qRqIsd99HCLKmw9HG
+	lJ4pJ2dJh2OoGh3GLN7CnSXEFA2qC1/o2j/KH6GG02R9AQSiEidvkXrtaYxNzkxXKkiAS/2d6mCFf
+	QubHKXnIrOKFc1WmUdNPhi1qlJrrAQrfe/xXQtEng/S2EUGXsorubtwTfiDCE769/jAq+FagMLJ+K
+	0UiA7GFcrP3LpUISo71PzEnGaS7ag5+47lejnS5I2ktORpLJ/JYKqOauilphBgWXsK8vVy+EeBnD5
+	OeP92W4+IrSgbpf/b9ZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPc3q-0003fY-9C; Wed, 30 Oct 2019 00:42:06 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPc3f-0003f4-FT
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 00:41:57 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A41BD1A040E;
- Wed, 30 Oct 2019 01:41:53 +0100 (CET)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 972831A03EF;
- Wed, 30 Oct 2019 01:41:53 +0100 (CET)
-Received: from fsr-ub1864-112.ea.freescale.net
- (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 30000205C7;
- Wed, 30 Oct 2019 01:41:53 +0100 (CET)
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Viresh Kumar <viresh.kumar@linaro.org>
-Subject: [PATCH] cpufreq: Add user_min/max_freq
-Date: Wed, 30 Oct 2019 02:41:49 +0200
-Message-Id: <c222deda79ad334ff4edcbd49ddda248685c4ee1.1572395990.git.leonard.crestez@nxp.com>
-X-Mailer: git-send-email 2.17.1
-X-Virus-Scanned: ClamAV using ClamSMTP
+	id 1iPcCR-0007CW-Ls; Wed, 30 Oct 2019 00:50:59 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iPcCH-0007Bs-N7
+ for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 00:50:51 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B640C1FB;
+ Tue, 29 Oct 2019 17:50:48 -0700 (PDT)
+Received: from e107533-lin.cambridge.arm.com (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6B7A23F71E;
+ Tue, 29 Oct 2019 17:50:40 -0700 (PDT)
+Date: Wed, 30 Oct 2019 08:50:32 +0800
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Niklas Cassel <niklas.cassel@linaro.org>
+Subject: Re: [PATCH 10/13] cpuidle: psci: Add a helper to attach a CPU to its
+ PM domain
+Message-ID: <20191030005032.GA9448@e107533-lin.cambridge.arm.com>
+References: <20191010113937.15962-1-ulf.hansson@linaro.org>
+ <20191010113937.15962-11-ulf.hansson@linaro.org>
+ <20191024163117.GB22036@bogus>
+ <CAPDyKFo2Fma1_JMSd39bmQ3X1PV4SmQ0AfEuKyX5KLLe83ycmA@mail.gmail.com>
+ <20191027023023.GC18111@e107533-lin.cambridge.arm.com>
+ <CAPDyKFr1LJ_HP1kcfMh7LE5j7nUT9KzH4vhdCSEE9wg6RfYErQ@mail.gmail.com>
+ <20191028074905.GA27884@e107533-lin.cambridge.arm.com>
+ <CAPDyKFotv0Fu5jXqhv7tCqYb44HaAnOjWnQS0B3nS04sUmTrUg@mail.gmail.com>
+ <20191029053414.GA4481@e107533-lin.cambridge.arm.com>
+ <20191029094444.GA12635@centauri>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191029094444.GA12635@centauri>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_174155_796816_8889BA88 
-X-CRM114-Status: UNSURE (   9.07  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191029_175049_844664_95AA64E1 
+X-CRM114-Status: GOOD (  37.89  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -66,172 +70,164 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>,
- Saravana Kannan <saravanak@google.com>, linux-pm@vger.kernel.org,
- Chanwoo Choi <cw00.choi@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, Matthias Kaehlcke <mka@chromium.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
+ Linux PM <linux-pm@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Kevin Hilman <khilman@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Current values in scaling_min_freq and scaling_max freq can change on
-the fly due to event such as thermal monitoring. This behavior is
-confusing for userspace and because once an userspace limit is written
-to scaling_min/max_freq it is not possible to read it back.
+On Tue, Oct 29, 2019 at 10:44:44AM +0100, Niklas Cassel wrote:
+> On Tue, Oct 29, 2019 at 01:34:24PM +0800, Sudeep Holla wrote:
+> > On Mon, Oct 28, 2019 at 10:45:22AM +0100, Ulf Hansson wrote:
+> > > + Niklas
+> > >
+> > > On Mon, 28 Oct 2019 at 08:49, Sudeep Holla <sudeep.holla@arm.com> wrote:
+> > > >
+> > > > On Mon, Oct 28, 2019 at 08:35:55AM +0100, Ulf Hansson wrote:
+> > > > > On Sun, 27 Oct 2019 at 03:30, Sudeep Holla <sudeep.holla@arm.com> wrote:
+> > > > > >
+> > > > > > On Thu, Oct 24, 2019 at 06:47:43PM +0200, Ulf Hansson wrote:
+> > > > > > > On Thu, 24 Oct 2019 at 18:31, Sudeep Holla <sudeep.holla@arm.com> wrote:
+> > > > > > > >
+> > > > > > > > On Thu, Oct 10, 2019 at 01:39:34PM +0200, Ulf Hansson wrote:
+> > > > > > > > > Introduce a PSCI DT helper function, psci_dt_attach_cpu(), which takes a
+> > > > > > > > > CPU number as an in-parameter and tries to attach the CPU's struct device
+> > > > > > > > > to its corresponding PM domain.
+> > > > > > > > >
+> > > > > > > > > Let's makes use of dev_pm_domain_attach_by_name(), as it allows us to
+> > > > > > > > > specify "psci" as the "name" of the PM domain to attach to. Additionally,
+> > > > > > > > > let's also prepare the attached device to be power managed via runtime PM.
+> > > > > > > > >
+> > > > > > > > > Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+> > > > > > > > > ---
+> > > > > > > > >  drivers/cpuidle/cpuidle-psci-domain.c | 21 +++++++++++++++++++++
+> > > > > > > > >  drivers/cpuidle/cpuidle-psci.h        |  6 ++++++
+> > > > > > > > >  2 files changed, 27 insertions(+)
+> > > > > > > > >
+> > > > > > > > > diff --git a/drivers/cpuidle/cpuidle-psci-domain.c b/drivers/cpuidle/cpuidle-psci-domain.c
+> > > > > > > > > index 3f5143ccc3e0..7429fd7626a1 100644
+> > > > > > > > > --- a/drivers/cpuidle/cpuidle-psci-domain.c
+> > > > > > > > > +++ b/drivers/cpuidle/cpuidle-psci-domain.c
+> > > > > > > > > @@ -9,9 +9,11 @@
+> > > > > > > > >
+> > > > > > > > >  #define pr_fmt(fmt) "CPUidle PSCI: " fmt
+> > > > > > > > >
+> > > > > > > > > +#include <linux/cpu.h>
+> > > > > > > > >  #include <linux/device.h>
+> > > > > > > > >  #include <linux/kernel.h>
+> > > > > > > > >  #include <linux/pm_domain.h>
+> > > > > > > > > +#include <linux/pm_runtime.h>
+> > > > > > > > >  #include <linux/psci.h>
+> > > > > > > > >  #include <linux/slab.h>
+> > > > > > > > >  #include <linux/string.h>
+> > > > > > > > > @@ -279,3 +281,22 @@ static int __init psci_idle_init_domains(void)
+> > > > > > > > >       return ret;
+> > > > > > > > >  }
+> > > > > > > > >  subsys_initcall(psci_idle_init_domains);
+> > > > > > > > > +
+> > > > > > > > > +struct device *psci_dt_attach_cpu(int cpu)
+> > > > > > > > > +{
+> > > > > > > > > +     struct device *dev;
+> > > > > > > > > +
+> > > > > > > > > +     /* Currently limit the hierarchical topology to be used in OSI mode. */
+> > > > > > > > > +     if (!psci_has_osi_support())
+> > > > > > > > > +             return NULL;
+> > > > > > > > > +
+> > > > > > > > > +     dev = dev_pm_domain_attach_by_name(get_cpu_device(cpu), "psci");
+> > > > > > > >
+> > > > > > > > This clarifies the need for the fixed name. But why not just go by index 0
+> > > > > > > > as the consumer of these psci power-domains will have only one power domain
+> > > > > > > > entry. Why do we need this name compulsory ?
+> > > > > > >
+> > > > > > > The idea is to be future proof. If I recall correctly, the CPU node on
+> > > > > > > some QCOM SoCs may also have "CPR" PM domain specified, thus
+> > > > > > > "multiple" power-domains could be specified.
+> > > > > > >
+> > > > > >
+> > > > > > I am sure we don't want to mx-n-match any power domain provider with
+> > > > > > psci. And also I expect in these above mentioned cases, there won't be any
+> > > > > > psci power domains.
+> > > > > >
+> > > > > > > In any case, using "psci" doesn't really hurt, right?
+> > > > > > >
+> > > > > >
+> > > > > > Doesn't but I don't see need for one as only one should exist, as mentioned
+> > > > > > above we don't want mix-n-match with psci ever.
+> > > > >
+> > > > > Not sure I get your point, sorry.
+> > > > >
+> > > > > The CPU could very well be attached to more than one power-domain. Of
+> > > > > course not multiple "PSCI power-domains". One could be an PSCI power
+> > > > > domain and another one could be the QCOM CPR (Core power reduction)
+> > > > > power domain.
+> > > > >
+> > > >
+> > > > And who controls QCOM CPR ? If it's OSPM, this model is broken.
+> > > > I mean OSPM can vote, but the control *has* to be in PSCI firmware to
+> > > > change any CPU power state.
+> > > >
+> > > > If it's firmware controlled, then there's no need to explicitly specify
+> > > > both to OSPM.
+> > >
+> > > This is about OPP and CPUFreq, so it has nothing to do with PSCI.
+> > >
+> > > >
+> > > > > Have a look at these binding, there are already upstream, perhaps that
+> > > > > clarifies this?
+> > > > > Documentation/devicetree/bindings/opp/qcom-nvmem-cpufreq.txt
+> > > > >
+> > > >
+> > > > OK, I will have a look.
+> > >
+> > > Great.
+> > >
+> > > I have looped in Niklas Casell, he should be able to answer any more
+> > > detailed questions in regards to QCOM CPR, if that is needed.
+> > >
+> >
+> > So had a look at the DT bindings and standalone it looks fine.
+> > But when it's mixed like the way you describe: yikes!
+> >
+> > Why does a power(oh wait it's actually performance domain!) is combined
+> > with a device whose actual power is controlled by only by PSCI/firmware
+> > is associated along with another power(again actally performance)
+> > domain.
+> >
+> > This whole representation of performance domain as power domain in the
+> > bindings is a *mess*. If Linux kernel chose to implement it as part
+> > of genpd, that's fine. But we should have had a separate binding for
+> > that.
+> >
+> > > In any case, we are discussing whether we should require a
+> > > power-domain-names set to "psci" for the CPU node - and I don't see
+> > > how that could hurt. Right?
+> > >
+> >
+> > Honestly I don't like this, but we don't have any choice I think.
+> > So yes, but you need to update the binding. Hope new platform move
+> > all these performance domain control part into firmware and have single
+> > control from kernel unlike the present generation which OPP through
+> > clock or cpufreq and the voltage/performance comtrol via genpd.
+>
+> FWIW, in newer generation Qualcomm SoCs like SDM845,
+> the voltage/performance control is done in firmware,
+> by the OSM (drivers/cpufreq/qcom-cpufreq-hw.c).
+>
 
-Introduce two new user_min/max_freq files which only contain the limits
-imposed by userspace, without any aggregation.
+Indeed, I was implicitly referring to this platform but just wanted to be
+assured that we are not going back.
 
-Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-
----
-This was motivated by these discussions:
-
-* https://patchwork.kernel.org/patch/11078475/#22805379
-* https://patchwork.kernel.org/patch/11171817/#22917099
-
-Those threads are about devfreq but same issue applies to cpufreq as
-well. Let me know if this solution seems reasonable?
-
-An alternative would be to make scaling_min/max_freq always read back
-the configured value and introduce new effective_min/max_freq files for
-the aggregate values. That might break existing users (though I'm not
-familiar with any).
-
- Documentation/admin-guide/pm/cpufreq.rst | 27 ++++++++++++++++++------
- drivers/cpufreq/cpufreq.c                | 19 +++++++++++++++++
- include/linux/pm_qos.h                   |  4 ++++
- 3 files changed, 44 insertions(+), 6 deletions(-)
-
-diff --git a/Documentation/admin-guide/pm/cpufreq.rst b/Documentation/admin-guide/pm/cpufreq.rst
-index 0c74a7784964..734c01c1040e 100644
---- a/Documentation/admin-guide/pm/cpufreq.rst
-+++ b/Documentation/admin-guide/pm/cpufreq.rst
-@@ -309,21 +309,36 @@ are the following:
- 
- ``scaling_max_freq``
- 	Maximum frequency the CPUs belonging to this policy are allowed to be
- 	running at (in kHz).
- 
--	This attribute is read-write and writing a string representing an
--	integer to it will cause a new limit to be set (it must not be lower
--	than the value of the ``scaling_min_freq`` attribute).
-+	This attribute is read-write: writing an integer will set a new limit
-+	(just like ``user_max_freq``) while reading will show the current
-+	limit (potentially affected by other system contraints such as thermal
-+	throttling).
- 
- ``scaling_min_freq``
- 	Minimum frequency the CPUs belonging to this policy are allowed to be
- 	running at (in kHz).
- 
--	This attribute is read-write and writing a string representing a
--	non-negative integer to it will cause a new limit to be set (it must not
--	be higher than the value of the ``scaling_max_freq`` attribute).
-+	This attribute is read-write: writing an integer will set a new limit
-+	(just like ``user_min_freq``) while reading will show the current
-+	limit (potentially affected by other system contraints).
-+
-+``user_max_freq``
-+	Userspace contraint for the maximum frequency the CPUs belonging to
-+	this policy are allowed to be running at (in kHz).
-+
-+	This attribute is read-write: writing an integer will set a new limit
-+	and reading will show the last limit set by userspace.
-+
-+``user_min_freq``
-+	Userspace contraint for minimum frequency the CPUs belonging to this
-+	policy are allowed to be running at (in kHz).
-+
-+	This attribute is read-write: writing an integer will set a new limit
-+	and reading will show the last limit set by userspace.
- 
- ``scaling_setspeed``
- 	This attribute is functional only if the `userspace`_ scaling governor
- 	is attached to the given policy.
- 
-diff --git a/drivers/cpufreq/cpufreq.c b/drivers/cpufreq/cpufreq.c
-index 48a224a6b178..caefed0dac43 100644
---- a/drivers/cpufreq/cpufreq.c
-+++ b/drivers/cpufreq/cpufreq.c
-@@ -722,13 +722,28 @@ static ssize_t store_##file_name					\
- 									\
- 	ret = freq_qos_update_request(policy->object##_freq_req, val);\
- 	return ret >= 0 ? count : ret;					\
- }
- 
-+store_one(user_min_freq, min);
-+store_one(user_max_freq, max);
- store_one(scaling_min_freq, min);
- store_one(scaling_max_freq, max);
- 
-+#undef show_one
-+
-+#define show_one(file_name, object)					\
-+static ssize_t show_##file_name						\
-+(struct cpufreq_policy *policy, char *buf)				\
-+{									\
-+	s32 val = freq_qos_get_request_value(policy->object##_freq_req);\
-+	return sprintf(buf, "%d\n", val);				\
-+}
-+
-+show_one(user_min_freq, min);
-+show_one(user_max_freq, max);
-+
- /**
-  * show_cpuinfo_cur_freq - current CPU frequency as detected by hardware
-  */
- static ssize_t show_cpuinfo_cur_freq(struct cpufreq_policy *policy,
- 					char *buf)
-@@ -906,10 +921,12 @@ cpufreq_freq_attr_ro(related_cpus);
- cpufreq_freq_attr_ro(affected_cpus);
- cpufreq_freq_attr_rw(scaling_min_freq);
- cpufreq_freq_attr_rw(scaling_max_freq);
- cpufreq_freq_attr_rw(scaling_governor);
- cpufreq_freq_attr_rw(scaling_setspeed);
-+cpufreq_freq_attr_rw(user_min_freq);
-+cpufreq_freq_attr_rw(user_max_freq);
- 
- static struct attribute *default_attrs[] = {
- 	&cpuinfo_min_freq.attr,
- 	&cpuinfo_max_freq.attr,
- 	&cpuinfo_transition_latency.attr,
-@@ -919,10 +936,12 @@ static struct attribute *default_attrs[] = {
- 	&related_cpus.attr,
- 	&scaling_governor.attr,
- 	&scaling_driver.attr,
- 	&scaling_available_governors.attr,
- 	&scaling_setspeed.attr,
-+	&user_min_freq.attr,
-+	&user_max_freq.attr,
- 	NULL
- };
- 
- #define to_policy(k) container_of(k, struct cpufreq_policy, kobj)
- #define to_attr(a) container_of(a, struct freq_attr, attr)
-diff --git a/include/linux/pm_qos.h b/include/linux/pm_qos.h
-index e97c2e376889..90b147b7d7a3 100644
---- a/include/linux/pm_qos.h
-+++ b/include/linux/pm_qos.h
-@@ -310,7 +310,11 @@ int freq_qos_add_notifier(struct freq_constraints *qos,
- 			  enum freq_qos_req_type type,
- 			  struct notifier_block *notifier);
- int freq_qos_remove_notifier(struct freq_constraints *qos,
- 			     enum freq_qos_req_type type,
- 			     struct notifier_block *notifier);
-+static inline s32 freq_qos_get_request_value(struct freq_qos_request *req)
-+{
-+	return req->pnode.prio;
-+}
- 
- #endif
--- 
-2.17.1
-
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
