@@ -2,71 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D2F6FE99B6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 11:08:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68EEEE99C5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 11:14:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1DCFTIObnYZmNZSP01459m7dD8rCJMO499+nCypFDFM=; b=nMehbY4Xp0dj2D
-	zvE6XiSfK0vco0EbgqMciG3TleqOjT4QROF50keUGQwe79ZxLGyvoClRQ3ZCE7TwLK9zChmpR69RV
-	WRlqp8Oc7PgdV3yAuI0ln+jn4UkTOlNhiDtNmegk0vw/Plvy7M0inCPWgTKaxFweL0OzeAqfR+4KC
-	kvpwNc3nieiKnm2eCw9gNuBJ7Bi2r8ru+Mt3k8VZh4CuyIzCENLvCobe7SAPCwO4I5BzkivNnXI+Y
-	j5o4MjgpGplvDHg1W17Lgd/zN/J3FpvvBMlRPKp3kCMZLeC0X7K1Npjz4Ejlea4bTcRvw91zAU+HD
-	/+pXsqQXzWBSJSNFrXtg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=FytJ1ewqqzPgj2WQkRZcdnPTSPyq5nTxrApmnyWPp8w=; b=f9+
+	7B1DuPq0NXT814JE8sumMpYRqIQ0HTJYxpyfcZYOjLwwjJcs59F+3vTbUmX69kiX7m5WyMmwjBS/q
+	NccELfDmg0xq0/RSQlPkrNI2+uLp3RUPVST7H9vnIUmqcwPzTlUZ5/k0iGVTmCQjmJ2H6SHv1Z9nL
+	8RLpI8LOto0DARvJOaVbgShKi5/yZAJBTBSGUd+XMtAXbkVqw2crbGIfgrrfii7jBwtqkGjNjL5df
+	pqotCP5dVqdfxvdTvKqTCOGaAn5lf3b2C2S800XrQ8Vg00Q8qBiVC5hTdwJdWX8p2rFJ37/rLKsze
+	dy8lt6C3CaR8EBnVcHPkpOq60WMSbiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPktW-00087s-Rp; Wed, 30 Oct 2019 10:08:02 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPktM-00087D-Ga
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 10:07:54 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 307E720862;
- Wed, 30 Oct 2019 10:07:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572430072;
- bh=ZSC1pS78JVvL51QcHrVIIOScFUVceBP265/cOrW1peA=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=QS8zqaq4UV1QoIE3jvb2qjhocS+Z27owqGoJyjuOhOTGgoh9qa6JHdSyXmaCcLqjC
- nmoKPdjb90+k7KxqrtRsNU8F5003WVbDGTe5bH0WNRdCS/4o+xYZXRkln/H5L+oZb7
- rxg3Vqk1YqI6KgkPXTwy5ro00tMKdWV4kLFnPaRs=
-Date: Wed, 30 Oct 2019 10:07:48 +0000
-From: Will Deacon <will@kernel.org>
-To: Jan Stancek <jstancek@redhat.com>
-Subject: Re: =?utf-8?B?4p2MIEZBSUw=?= =?utf-8?Q?=3A?= Test report for kernel
- 5.4.0-rc5-34072e5.cki (arm-next)
-Message-ID: <20191030100747.GB17773@willie-the-truck>
-References: <cki.B60F5FC773.1FIT7OYFJ2@redhat.com>
- <1219834772.9691319.1572429836705.JavaMail.zimbra@redhat.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1219834772.9691319.1572429836705.JavaMail.zimbra@redhat.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+	id 1iPkzV-0001az-FC; Wed, 30 Oct 2019 10:14:13 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iPkzJ-0001aS-Qh
+ for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 10:14:03 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E05BD1F1;
+ Wed, 30 Oct 2019 03:13:58 -0700 (PDT)
+Received: from login2.euhpc.arm.com (login2.euhpc.arm.com [10.6.27.34])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id EF5C13F71E;
+ Wed, 30 Oct 2019 03:13:57 -0700 (PDT)
+From: Vladimir Murzin <vladimir.murzin@arm.com>
+To: linux-arm-kernel@lists.infradead.org,
+	iommu@lists.linux-foundation.org
+Subject: [PATCH] dma-mapping: fix handling of dma-ranges for reserved memory
+ (again)
+Date: Wed, 30 Oct 2019 10:13:13 +0000
+Message-Id: <1572430393-40203-1-git-send-email-vladimir.murzin@arm.com>
+X-Mailer: git-send-email 2.0.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_030752_588537_BF33465D 
-X-CRM114-Status: GOOD (  11.21  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191030_031401_961729_3293B6F6 
+X-CRM114-Status: GOOD (  11.18  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,38 +58,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin marinas <catalin.marinas@arm.com>,
- Memory Management <mm-qe@redhat.com>, CKI Project <cki-project@redhat.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: hch@lst.de, robin.murphy@arm.com, alexandre.torgue@st.com,
+ daniele.alessandrelli@gmail.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCBPY3QgMzAsIDIwMTkgYXQgMDY6MDM6NTZBTSAtMDQwMCwgSmFuIFN0YW5jZWsgd3Jv
-dGU6Cj4gCj4gCj4gLS0tLS0gT3JpZ2luYWwgTWVzc2FnZSAtLS0tLQo+ID4gCj4gPiBIZWxsbywK
-PiA+IAo+ID4gV2UgcmFuIGF1dG9tYXRlZCB0ZXN0cyBvbiBhIHJlY2VudCBjb21taXQgZnJvbSB0
-aGlzIGtlcm5lbCB0cmVlOgo+ID4gCj4gPiAgICAgICAgS2VybmVsIHJlcG86Cj4gPiAgICAgICAg
-Z2l0Oi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L2FybTY0L2xpbnV4
-LmdpdAo+ID4gICAgICAgICAgICAgQ29tbWl0OiAzNDA3MmU1MmEzZmMgLSBNZXJnZSByZW1vdGUt
-dHJhY2tpbmcgYnJhbmNoCj4gPiAgICAgICAgICAgICAnYXJtNjQvZm9yLW5leHQvbWVtb3J5LWhv
-dHJlbW92ZScgaW50byBmb3Ita2VybmVsY2kKPiA+IAo+ID4gVGhlIHJlc3VsdHMgb2YgdGhlc2Ug
-YXV0b21hdGVkIHRlc3RzIGFyZSBwcm92aWRlZCBiZWxvdy4KPiA+IAo+ID4gICAgIE92ZXJhbGwg
-cmVzdWx0OiBGQUlMRUQgKHNlZSBkZXRhaWxzIGJlbG93KQo+ID4gICAgICAgICAgICAgIE1lcmdl
-OiBPSwo+ID4gICAgICAgICAgICBDb21waWxlOiBPSwo+ID4gICAgICAgICAgICAgIFRlc3RzOiBG
-QUlMRUQKPiA+IAo+ID4gQWxsIGtlcm5lbCBiaW5hcmllcywgY29uZmlnIGZpbGVzLCBhbmQgbG9n
-cyBhcmUgYXZhaWxhYmxlIGZvciBkb3dubG9hZCBoZXJlOgo+ID4gCj4gPiAgIGh0dHBzOi8vYXJ0
-aWZhY3RzLmNraS1wcm9qZWN0Lm9yZy9waXBlbGluZXMvMjU1MzYyCj4gPiAKPiA+IE9uZSBvciBt
-b3JlIGtlcm5lbCB0ZXN0cyBmYWlsZWQ6Cj4gPiAKPiA+ICAgICBhYXJjaDY0Ogo+ID4gICAgICDi
-nYwgTFRQIGxpdGUKPiAKPiBXaGF0J3MgZmFpbGluZyBpcyBwcmVhZHYyL3JlYWR2IG92ZXIgUFJP
-VF9OT05FIG1hcHBpbmc6Cj4gCj4gW3BpZCAgMjQyNF0gbW1hcChOVUxMLCAxLCBQUk9UX05PTkUs
-IE1BUF9QUklWQVRFfE1BUF9BTk9OWU1PVVMsIDAsIDApID0gMHgzZmY3ZjhiMDAwMAo+IFtwaWQg
-IDI0MjRdIHByZWFkdjIoMywgW3tpb3ZfYmFzZT0weDNmZjdmOGIwMDAwLCBpb3ZfbGVuPTY0fV0s
-IDEsIDAsIDApID0gMTYKPiAKPiBUZXN0IGV4cGVjdHMgRUZBVUxULgo+IAo+IEl0IHNlZW1zIHNw
-ZWNpZmljIHRvIGFybTY0L2xpbnV4LmdpdCBhcyBJIGRvIG5vdCBzZWUgaXQgZmFpbCBvbgo+IExp
-bnVzJyBtYXN0ZXIgKHY1LjQtcmM1LTM0LWcyM2ZkYjE5OGFlODEpLgoKQWhhLCBvdXIgZW1haWxz
-IGNyb3NzZWQgcGF0aHMuIFRoYW5rcywgSSdsbCB0cnkgdG8gcmVwcm9kdWNlIHRoZSBmYWlsdXJl
-CmxvY2FsbHkuCgpXaWxsCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
-c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Daniele reported that issue previously fixed in c41f9ea998f3
+("drivers: dma-coherent: Account dma_pfn_offset when used with device
+tree") reappear shortly after 43fc509c3efb ("dma-coherent: introduce
+interface for default DMA pool") where fix was accidentally dropped.
+
+Lets put fix back in place and respect dma-ranges for reserved memory.
+
+Fixes: 43fc509c3efb ("dma-coherent: introduce interface for default DMA pool")
+
+Reported-by: Daniele Alessandrelli <daniele.alessandrelli@gmail.com>
+Tested-by: Daniele Alessandrelli <daniele.alessandrelli@gmail.com>
+Tested-by: Alexandre Torgue <alexandre.torgue@st.com>
+Signed-off-by: Vladimir Murzin <vladimir.murzin@arm.com>
+---
+ arch/arm/mm/dma-mapping-nommu.c |  2 +-
+ include/linux/dma-mapping.h     |  4 ++--
+ kernel/dma/coherent.c           | 16 +++++++++-------
+ 3 files changed, 12 insertions(+), 10 deletions(-)
+
+diff --git a/arch/arm/mm/dma-mapping-nommu.c b/arch/arm/mm/dma-mapping-nommu.c
+index db92478..287ef89 100644
+--- a/arch/arm/mm/dma-mapping-nommu.c
++++ b/arch/arm/mm/dma-mapping-nommu.c
+@@ -35,7 +35,7 @@ static void *arm_nommu_dma_alloc(struct device *dev, size_t size,
+ 				 unsigned long attrs)
+ 
+ {
+-	void *ret = dma_alloc_from_global_coherent(size, dma_handle);
++	void *ret = dma_alloc_from_global_coherent(dev, size, dma_handle);
+ 
+ 	/*
+ 	 * dma_alloc_from_global_coherent() may fail because:
+diff --git a/include/linux/dma-mapping.h b/include/linux/dma-mapping.h
+index 4a1c4fc..10918c5 100644
+--- a/include/linux/dma-mapping.h
++++ b/include/linux/dma-mapping.h
+@@ -162,7 +162,7 @@ int dma_release_from_dev_coherent(struct device *dev, int order, void *vaddr);
+ int dma_mmap_from_dev_coherent(struct device *dev, struct vm_area_struct *vma,
+ 			    void *cpu_addr, size_t size, int *ret);
+ 
+-void *dma_alloc_from_global_coherent(ssize_t size, dma_addr_t *dma_handle);
++void *dma_alloc_from_global_coherent(struct device *dev, ssize_t size, dma_addr_t *dma_handle);
+ int dma_release_from_global_coherent(int order, void *vaddr);
+ int dma_mmap_from_global_coherent(struct vm_area_struct *vma, void *cpu_addr,
+ 				  size_t size, int *ret);
+@@ -172,7 +172,7 @@ int dma_mmap_from_global_coherent(struct vm_area_struct *vma, void *cpu_addr,
+ #define dma_release_from_dev_coherent(dev, order, vaddr) (0)
+ #define dma_mmap_from_dev_coherent(dev, vma, vaddr, order, ret) (0)
+ 
+-static inline void *dma_alloc_from_global_coherent(ssize_t size,
++static inline void *dma_alloc_from_global_coherent(struct device *dev, ssize_t size,
+ 						   dma_addr_t *dma_handle)
+ {
+ 	return NULL;
+diff --git a/kernel/dma/coherent.c b/kernel/dma/coherent.c
+index 545e386..551b0eb 100644
+--- a/kernel/dma/coherent.c
++++ b/kernel/dma/coherent.c
+@@ -123,8 +123,9 @@ int dma_declare_coherent_memory(struct device *dev, phys_addr_t phys_addr,
+ 	return ret;
+ }
+ 
+-static void *__dma_alloc_from_coherent(struct dma_coherent_mem *mem,
+-		ssize_t size, dma_addr_t *dma_handle)
++static void *__dma_alloc_from_coherent(struct device *dev,
++				       struct dma_coherent_mem *mem,
++				       ssize_t size, dma_addr_t *dma_handle)
+ {
+ 	int order = get_order(size);
+ 	unsigned long flags;
+@@ -143,7 +144,7 @@ static void *__dma_alloc_from_coherent(struct dma_coherent_mem *mem,
+ 	/*
+ 	 * Memory was found in the coherent area.
+ 	 */
+-	*dma_handle = mem->device_base + (pageno << PAGE_SHIFT);
++	*dma_handle = dma_get_device_base(dev, mem) + (pageno << PAGE_SHIFT);
+ 	ret = mem->virt_base + (pageno << PAGE_SHIFT);
+ 	spin_unlock_irqrestore(&mem->spinlock, flags);
+ 	memset(ret, 0, size);
+@@ -175,17 +176,18 @@ int dma_alloc_from_dev_coherent(struct device *dev, ssize_t size,
+ 	if (!mem)
+ 		return 0;
+ 
+-	*ret = __dma_alloc_from_coherent(mem, size, dma_handle);
++	*ret = __dma_alloc_from_coherent(dev, mem, size, dma_handle);
+ 	return 1;
+ }
+ 
+-void *dma_alloc_from_global_coherent(ssize_t size, dma_addr_t *dma_handle)
++void *dma_alloc_from_global_coherent(struct device *dev, ssize_t size,
++				     dma_addr_t *dma_handle)
+ {
+ 	if (!dma_coherent_default_memory)
+ 		return NULL;
+ 
+-	return __dma_alloc_from_coherent(dma_coherent_default_memory, size,
+-			dma_handle);
++	return __dma_alloc_from_coherent(dev, dma_coherent_default_memory, size,
++					 dma_handle);
+ }
+ 
+ static int __dma_release_from_coherent(struct dma_coherent_mem *mem,
+-- 
+2.7.4
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
