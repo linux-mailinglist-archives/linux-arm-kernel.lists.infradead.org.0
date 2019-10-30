@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A131EA33E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 19:23:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72E67EA340
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 19:23:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=6i+7Lc96oEbUeWEofkT0ufUXCIKNC9oyLPy+GlhIFqQ=; b=FVxqkO+c+AEF4PVNagjZRG6TkA
-	5W8XYEWAiJsA4MDOZ4lxH9SZsPibrl584gYJCEYbN5aGvPyYnYy+rO9nzMHwU2098mVlKbSe4v5gB
-	OhGsoUaq55gXDdq564me9PYnYpdV8vf5J252Z/3KS1L90cvxyUQl2oBJaX1uk6mdXdmBhrueFdUE7
-	sVtlZBSuSYewRg6wzrO+LUrKnGh0BPTBwxbBUcakeTYMQgXfU8KcoLce0I+PQU36L0Ko8XZzfJC8e
-	kItW/Bwhmoc9jRD8/9Z0T+tFOrNcW2jYUESx6mARQTxjn7lchfhBvOCyFgjqqDJp6Tf6iQC3d4/Me
-	U2hbxp3Q==;
+	bh=uFJufmO0+i+aMwfL4iKLVe9qp4X1dDqlKw0BnGLm0w8=; b=qyh018Hdvff5lT+R1phyENDPjr
+	0rSLFWk32ELeVQ81VQ8mpNaNH/DU1WhWvDWj1tHU8SCE6Fiq9d3Zzb70nAJ08r69aC/aKlGcCn7/W
+	ycWPY5ilWcsBx6SuzmttegvzCMg/q1jtoVPU0nlgiBoSZcn01omzfH3vbGtuW44FGi3y+RKNkL6Q0
+	jdDvo3i7Ull3+NCn1qsQivfxx5uRiRigszAAMboH5KyRZMifHBwYmbqQXz39/y/8rpzJZVENb26cG
+	ek59zEbYCqOx3XfwWiyfoDEXoeBucZ1gLNZ3xtg8+QuUG55WRjzG18cv8pjzem+SSlsIpoj+yb7Sh
+	GRtiZ71A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPscj-0004yM-Dy; Wed, 30 Oct 2019 18:23:13 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1iPscz-0005EE-8z; Wed, 30 Oct 2019 18:23:29 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPsbo-0004Kc-Ll
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 18:22:19 +0000
-Received: by mail-pg1-x544.google.com with SMTP id j22so2025592pgh.3
+ id 1iPsbu-0004QO-SI
+ for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 18:22:24 +0000
+Received: by mail-pf1-x442.google.com with SMTP id 193so855442pfc.13
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 30 Oct 2019 11:22:16 -0700 (PDT)
+ Wed, 30 Oct 2019 11:22:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=otlqAInALZr2P9dty8XUUL6zB6HI1wPTVfKnXgrgDz0=;
- b=pEEW2f30nRHch1s2EgqqRpTUyvDRjLA9w9GBytO7Iw7WGg74ykAWtVnXm+1cP6BNtm
- 1mZF181hfY9IbKuci1v4a3VeACfmv4FpXcXMcwSypF1tBsNJWotuP7sN+4Wdojq3NzFM
- lkGzXXf5YVCclaf7qH/X2d2FAFMTbvvJD7hCPoZnx6o8FzriL3hBjpsiEO1a/bXJKcG+
- s5kFzBta7vgBbyXUtBcw2om6ScDUWrSGvn2l+eKVoMlBYEg+OVu9h30wNIM2EdTZq1Vw
- ISn/w/OD8N0iGySp/i2MduBFT/UipcSQXv80fKEpxchF7keX0MXQ7ricV0tlvH5gyYmd
- mdpg==
+ bh=RMrszFJgqQZnz4BQZjFom+3bPfD40qA/+5eRpXchJeY=;
+ b=NS0T9NTn2sGO0rWBgW+4jVzupq39TCXDMIQTAD01DlJUEUxJasNRvYxTN7lhEcBxAO
+ MJnXnU2YnlB5hJLWIYhhQJPobtXE07VNl3h8cPpZX3RaQK2Pqvysp1i2oTAKqoR3uMdB
+ f74lLKWqLpqaNrN2EaQK/FTBSE2S4Qv2LdoxZObnuHBUKJCh31lwglekb9hOGGovtoVY
+ W3N8p/9IH+gPHj8dmWQ0VB+tMf4EwMbPdE1UrNf6MUdlk3VrGn2jM11wUEeN7LnpIuAv
+ MI2oK0TN/QUT5PpN2X0uZKU1TKX2+lL87m6iXHXsAGNam2rQmBqKAl9+YixKSr966MBy
+ 6BUg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=otlqAInALZr2P9dty8XUUL6zB6HI1wPTVfKnXgrgDz0=;
- b=Gv2FL3mQpt85lYPyMD6U2orcT/B6oRmFi6aVBvWqU+wsBvUDyqkPe+JUeHBZXxfEq2
- 1+b6/rt6ERpu5CWnbLYWbFMLoyv7BP+EuPjThEUPf485rRqmk5qyLv2aBYCwvC3EZijB
- H8Cc8bl6xfIUAtPerK2ckTujWSLpVkm038Qg8cEeHI0j/rVNrLS/7Sb15ubGIUnlDgz6
- itc2m/yJLYADuYpwBGuwwEwCB6kK+FyXCovyC6b3ADnaeuqStXSatXN+cgyO50XfjhD3
- I4vGD/1nPj9Rl3WrHCxFEmLTASWV0YOAm8HAfxAaFytutRybrrMRgDe36pIOD7aypm3n
- P2Lg==
-X-Gm-Message-State: APjAAAU5k3N00EsmZc7UKyrmWEskLV+lkM09ZJcTHUfPG25jX0dNT5u7
- LHXRpLPR+Sp7o+e2mfeoq2w=
-X-Google-Smtp-Source: APXvYqxk/HB2PwWsDYa2sz7k6NPxepTRZ9yjvxvqoyqYJW22soLktVzEJMlRx6lO+FPLQKHqV+cFoQ==
-X-Received: by 2002:a63:4081:: with SMTP id n123mr888165pga.444.1572459735810; 
- Wed, 30 Oct 2019 11:22:15 -0700 (PDT)
+ bh=RMrszFJgqQZnz4BQZjFom+3bPfD40qA/+5eRpXchJeY=;
+ b=HXcfi9DVBmS0uyiw0EXfVq7HeE/2KKfxFbIjKFbL06s7nsxya/CbiaZURVbvC2/Gq0
+ yuhckY02D+uV0G2sYQ8E3R+bBbSEb0vmEA/bF29ZfwlDQjbxItO9ub9aB+8BpMfkzlSS
+ wSBUv0Rb0KXgu4wVJQFNxYp8cGP5mAbcPxU3lvqJJ2yCFVPqJcDMmGm7ACWhjoMqXHuZ
+ d9+csG07zRGbyscPRx3SYMGEZk26x429Av6OypVFwOisVljOegv84DsHsEjs0UlkFuE8
+ OwwkbYlME0esq3Q/7tQzgiMlSgHP16xDZC9eAuC1dw0FR7Va0ecjaYCdOSaPtyv2f5fl
+ p6aw==
+X-Gm-Message-State: APjAAAWkEMi7w2hjkiFseAWPje4n5B78l8hhueRAqbK4xj/KKLyMPVdk
+ jp7/51Vrjwcm9360Np6Epak=
+X-Google-Smtp-Source: APXvYqx5ES4peqb/VFYaSUgBoAeQE3RpPCPQ5SNkOCGGUcY1JED3KHtlljdhgijC8J6e++KDRJUf4A==
+X-Received: by 2002:a17:90a:d58f:: with SMTP id
+ v15mr767564pju.17.1572459741909; 
+ Wed, 30 Oct 2019 11:22:21 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id z5sm521637pgi.19.2019.10.30.11.22.10
+ by smtp.gmail.com with ESMTPSA id z5sm521637pgi.19.2019.10.30.11.22.16
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 30 Oct 2019 11:22:15 -0700 (PDT)
+ Wed, 30 Oct 2019 11:22:21 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 5/6] thermal: brcmstb_thermal: Restructure interrupt
- registration
-Date: Wed, 30 Oct 2019 11:21:31 -0700
-Message-Id: <20191030182132.25763-6-f.fainelli@gmail.com>
+Subject: [PATCH 6/6] thermal: brcmstb_thermal: Register different ops per
+ process
+Date: Wed, 30 Oct 2019 11:21:32 -0700
+Message-Id: <20191030182132.25763-7-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191030182132.25763-1-f.fainelli@gmail.com>
 References: <20191030182132.25763-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_112216_844979_4581A23A 
-X-CRM114-Status: GOOD (  14.39  )
+X-CRM114-CacheID: sfid-20191030_112223_226096_009A973C 
+X-CRM114-Status: GOOD (  15.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -116,45 +117,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If we are successful grabbing the interrupt resource, then register an
-interrupt handler, this makes it easier to support the interrupt as
-being optional, which is it for 7216.
+Since we do not have interrupts on BCM7216, we cannot have trip point
+crossing, the thermal subsystem expects us to provide a NULL set_trips
+operation in that case, so make it possible to provide per-process
+thermal_zone_of_device_ops
 
 Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- drivers/thermal/broadcom/brcmstb_thermal.c | 19 +++++++++----------
- 1 file changed, 9 insertions(+), 10 deletions(-)
+ drivers/thermal/broadcom/brcmstb_thermal.c | 13 ++++++++++---
+ 1 file changed, 10 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/thermal/broadcom/brcmstb_thermal.c b/drivers/thermal/broadcom/brcmstb_thermal.c
-index 41d4a142707c..64f715053ce9 100644
+index 64f715053ce9..a75a335d1bb3 100644
 --- a/drivers/thermal/broadcom/brcmstb_thermal.c
 +++ b/drivers/thermal/broadcom/brcmstb_thermal.c
-@@ -339,16 +339,15 @@ static int brcmstb_thermal_probe(struct platform_device *pdev)
- 	priv->thermal = thermal;
+@@ -96,6 +96,7 @@ static struct avs_tmon_trip avs_tmon_trips[] = {
+ struct brcmstb_thermal_params {
+ 	unsigned int offset;
+ 	unsigned int mult;
++	const struct thermal_zone_of_device_ops *of_ops;
+ };
  
- 	irq = platform_get_irq(pdev, 0);
--	if (irq < 0) {
--		dev_err(&pdev->dev, "could not get IRQ\n");
--		return irq;
--	}
--	ret = devm_request_threaded_irq(&pdev->dev, irq, NULL,
--					brcmstb_tmon_irq_thread, IRQF_ONESHOT,
--					DRV_NAME, priv);
--	if (ret < 0) {
--		dev_err(&pdev->dev, "could not request IRQ: %d\n", ret);
--		return ret;
-+	if (irq >= 0) {
-+		ret = devm_request_threaded_irq(&pdev->dev, irq, NULL,
-+						brcmstb_tmon_irq_thread,
-+						IRQF_ONESHOT,
-+						DRV_NAME, priv);
-+		if (ret < 0) {
-+			dev_err(&pdev->dev, "could not request IRQ: %d\n", ret);
-+			return ret;
-+		}
- 	}
+ struct brcmstb_thermal_priv {
+@@ -278,19 +279,25 @@ static int brcmstb_set_trips(void *data, int low, int high)
+ 	return 0;
+ }
  
- 	dev_info(&pdev->dev, "registered AVS TMON of-sensor driver\n");
+-static const struct thermal_zone_of_device_ops of_ops = {
++static const struct thermal_zone_of_device_ops brcmstb_16nm_of_ops = {
+ 	.get_temp	= brcmstb_get_temp,
+-	.set_trips	= brcmstb_set_trips,
+ };
+ 
+ static const struct brcmstb_thermal_params brcmstb_16nm_params = {
+ 	.offset	= 457829,
+ 	.mult	= 557,
++	.of_ops	= &brcmstb_16nm_of_ops,
++};
++
++static const struct thermal_zone_of_device_ops brcmstb_28nm_of_ops = {
++	.get_temp	= brcmstb_get_temp,
++	.set_trips	= brcmstb_set_trips,
+ };
+ 
+ static const struct brcmstb_thermal_params brcmstb_28nm_params = {
+ 	.offset	= 410040,
+ 	.mult	= 487,
++	.of_ops	= &brcmstb_28nm_of_ops,
+ };
+ 
+ static const struct of_device_id brcmstb_thermal_id_table[] = {
+@@ -329,7 +336,7 @@ static int brcmstb_thermal_probe(struct platform_device *pdev)
+ 	platform_set_drvdata(pdev, priv);
+ 
+ 	thermal = devm_thermal_zone_of_sensor_register(&pdev->dev, 0, priv,
+-						       &of_ops);
++						       priv->temp_params.of_ops);
+ 	if (IS_ERR(thermal)) {
+ 		ret = PTR_ERR(thermal);
+ 		dev_err(&pdev->dev, "could not register sensor: %d\n", ret);
 -- 
 2.17.1
 
