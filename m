@@ -2,49 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7413EA1F8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 17:44:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87263EA202
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 17:46:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+B5lD94L6hoTe8Z4DQBrpDBX3b6m+pWrRzZfeuBc5dg=; b=j7PoQ8GHMWTgXO
-	OtzEumkj6mXzncUJefUYzPp8chegcNLjmj6c6aMGeRlJVaXXHx749IMVEOq8690NB4apuzAzDKRPW
-	UF/ZQ/GQ6POCJiQJcoDMoYqioAUcvZ1HeBuRNQ7WmyGSb3oP6KGSexsA9xUK3tDxG3nZ7BdsvmGNT
-	mssjdW+XbyHETI79O2kijr5/zcJxG2+RUy1jNKr/jskELeo2Feih42xvynUYkQbNtFwACjGu5szZz
-	bj2lWqDL/L2Y4bmlvFNKJKhTgfI9qlHn/7cuk9vL4UOTN8NgHVO+YcfrO4xarP+8WpY+C68u3Ud4c
-	WEIHmTKP9xcF31XWC/jg==;
+	List-Owner; bh=Bdm5U3PJCTZ0+a8hMIkme36Fdxe1DocHsaCVwTTebzU=; b=gnFOUM+z+sUA8/
+	Ck1HGWt5ue4bBZX+/3BX8x69A/IxHuKr14vBql5YOr7bjWXw55RlwQHKMiwW/W121+wmqpwtyjohE
+	stVgNzRikI2cvEC9jcOSEQRKHuzj0FVtvqWUOhemp0WAADJHHoDklMCdyrM5jm25PZS/fbaQqVz+K
+	0U1MZDtwAtsh4AE5a6LCyV8a5yMs3eH/tTC1+S/3ixR9p6nVsZQPEERgJ7oAOJEfAwX4axY3DCJOs
+	qBcZpCW2CmBagHsA5Q/as1gYaYhfwII3RaFUgE6VYd0OS1N+3guzApoRzdMb+oSDJbOS6HuWC/6al
+	6TuPIB18lcC9pbvyKjDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPr5P-0000Uf-Dh; Wed, 30 Oct 2019 16:44:43 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPr5C-0000Tp-NS
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 16:44:32 +0000
-Received: from kresse.hi.pengutronix.de ([2001:67c:670:100:1d::2a])
- by metis.ext.pengutronix.de with esmtp (Exim 4.92)
- (envelope-from <l.stach@pengutronix.de>)
- id 1iPr59-0003Yy-U8; Wed, 30 Oct 2019 17:44:27 +0100
-Message-ID: <83fa447fc696aa54d2ae8cc82f78b0639f08d196.camel@pengutronix.de>
-Subject: Re: [PATCH] arm64: dts: zii-ultra: add i210 ethernet node
-From: Lucas Stach <l.stach@pengutronix.de>
-To: Shawn Guo <shawnguo@kernel.org>
-Date: Wed, 30 Oct 2019 17:44:27 +0100
-In-Reply-To: <20191028061540.GM16985@dragon>
-References: <20191021164200.31051-1-l.stach@pengutronix.de>
- <20191028061540.GM16985@dragon>
-User-Agent: Evolution 3.30.5-1.1 
+	id 1iPr6X-0002GL-NT; Wed, 30 Oct 2019 16:45:53 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iPr6L-0002FX-VZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 16:45:44 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7FBDB31F;
+ Wed, 30 Oct 2019 09:45:40 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 119493F6C4; Wed, 30 Oct 2019 09:45:37 -0700 (PDT)
+Date: Wed, 30 Oct 2019 16:45:35 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Steven Price <steven.price@arm.com>
+Subject: Re: [PATCH v14 21/22] arm64: mm: Convert mm/dump.c to use
+ walk_page_range()
+Message-ID: <20191030164535.GC13309@arrakis.emea.arm.com>
+References: <20191028135910.33253-1-steven.price@arm.com>
+ <20191028135910.33253-22-steven.price@arm.com>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::2a
-X-SA-Exim-Mail-From: l.stach@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <20191028135910.33253-22-steven.price@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_094430_764285_73A218A3 
-X-CRM114-Status: GOOD (  16.18  )
+X-CRM114-CacheID: sfid-20191030_094542_061775_5CDC0176 
+X-CRM114-Status: GOOD (  18.33  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,70 +62,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
- kernel@pengutronix.de, patchwork-lst@pengutronix.de
+Cc: Mark Rutland <Mark.Rutland@arm.com>, x86@kernel.org,
+ Arnd Bergmann <arnd@arndb.de>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Dave Hansen <dave.hansen@linux.intel.com>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, =?iso-8859-1?B?Suly9G1l?= Glisse <jglisse@redhat.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org, "Liang, Kan" <kan.liang@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mo, 2019-10-28 at 14:15 +0800, Shawn Guo wrote:
-> On Mon, Oct 21, 2019 at 06:42:00PM +0200, Lucas Stach wrote:
-> > Used by the bootloader to patch in the correct MAC address for
-> > the ethernet adapter.
-> > 
-> > Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
-> > ---
-> >  arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi | 11
-> > +++++++++++
-> >  1 file changed, 11 insertions(+)
-> > 
-> > diff --git a/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi
-> > b/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi
-> > index 087b5b6ebe89..7933c685fe6a 100644
-> > --- a/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi
-> > +++ b/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra.dtsi
-> > @@ -475,6 +475,17 @@
-> >  	         <&pcie1_refclk>;
-> >  	clock-names = "pcie", "pcie_aux", "pcie_phy", "pcie_bus";
-> >  	status = "okay";
-> > +
-> > +	host@0 {
-> 
-> Where is the bindings documenting this child node of pcie device?
+On Mon, Oct 28, 2019 at 01:59:09PM +0000, Steven Price wrote:
+> diff --git a/arch/arm64/mm/dump.c b/arch/arm64/mm/dump.c
+> index 93f9f77582ae..9d9b740a86d2 100644
+> --- a/arch/arm64/mm/dump.c
+> +++ b/arch/arm64/mm/dump.c
+> @@ -15,6 +15,7 @@
+>  #include <linux/io.h>
+>  #include <linux/init.h>
+>  #include <linux/mm.h>
+> +#include <linux/ptdump.h>
+>  #include <linux/sched.h>
+>  #include <linux/seq_file.h>
+>  
+> @@ -75,10 +76,11 @@ static struct addr_marker address_markers[] = {
+>   * dumps out a description of the range.
+>   */
+>  struct pg_state {
+> +	struct ptdump_state ptdump;
+>  	struct seq_file *seq;
+>  	const struct addr_marker *marker;
+>  	unsigned long start_address;
+> -	unsigned level;
+> +	int level;
+>  	u64 current_prot;
+>  	bool check_wx;
+>  	unsigned long wx_pages;
+> @@ -178,6 +180,10 @@ static struct pg_level pg_level[] = {
+>  		.name	= "PGD",
+>  		.bits	= pte_bits,
+>  		.num	= ARRAY_SIZE(pte_bits),
+> +	}, { /* p4d */
+> +		.name	= "P4D",
+> +		.bits	= pte_bits,
+> +		.num	= ARRAY_SIZE(pte_bits),
+>  	}, { /* pud */
+>  		.name	= (CONFIG_PGTABLE_LEVELS > 3) ? "PUD" : "PGD",
+>  		.bits	= pte_bits,
 
-This is part of the "PCI Bus Binding to: IEEE Std 1275-1994" document,
-which is referenced in Documentation/devicetree/bindings/pci/pci.txt.
-This is a standard PCIe topology description mapped to DT.
+We could use "PGD" for the p4d entry since we don't have five levels.
+This patches the "PGD" name used for pud/pmd when these levels are
+folded.
 
-> > +		reg = <0 0 0 0 0>;
-> > +
-> > +		#address-cells = <3>;
-> > +		#size-cells = <2>;
-> > +
-> > +		i210: i210@0 {
-> 
-> Can we have generic node name for it?
+> @@ -240,11 +246,15 @@ static void note_prot_wx(struct pg_state *st, unsigned long addr)
+>  	st->wx_pages += (addr - st->start_address) / PAGE_SIZE;
+>  }
+>  
+> -static void note_page(struct pg_state *st, unsigned long addr, unsigned level,
+> -				u64 val)
+> +static void note_page(struct ptdump_state *pt_st, unsigned long addr, int level,
+> +		      unsigned long val)
+>  {
+> +	struct pg_state *st = container_of(pt_st, struct pg_state, ptdump);
+>  	static const char units[] = "KMGTPE";
+> -	u64 prot = val & pg_level[level].mask;
+> +	u64 prot = 0;
+> +
+> +	if (level >= 0)
+> +		prot = val & pg_level[level].mask;
 
-I would like to avoid this if possible. We are sharing the code to
-patch in the MAC address from the bootloader with the RDU2, which has
-the same node name and the patching code looks for the specific name. 
+I think this test is not needed as we never have level < 0. The only
+call with a level 0 is from ptdump_hole() where the level passed is
+depth+1 while depth is -1 or higher.
 
-Regards,
-Lucas
+Anyway, we can keep this test _if_ we shift the levels down. I find it
+quite confusing that ptdump_hole() takes a 'depth' argument where 0 is
+PGD and 4 is PTE while for note_page() 1 is PGD and 5 PTE.
 
-> Shawn
-> 
-> > +			reg = <0 0 0 0 0>;
-> > +		};
-> > +	};
-> >  };
-> >  
-> >  &pgc_gpu {
-> > -- 
-> > 2.20.1
-> > 
-
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
