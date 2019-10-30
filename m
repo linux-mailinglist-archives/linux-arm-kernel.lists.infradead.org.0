@@ -2,98 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C00A7E9771
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 08:56:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F9A1E97A0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 09:09:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
-	Date:From:References:To:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r3konhHdYol3lup4qm54RDhojyGbwjCr3wz3TZNSZVI=; b=RThf0Zlcxn3krJ
-	UtxCVEGOjRtnyNxomAUengSPzv2bRzdqwZgYJSYz2nEfpeNLXmjYtIb4bWs9GqsNaIig7pKhDyJsS
-	g03qbL/iG5AHBAyTpoG62XjR+CHuwS4TijsEUMrccz1KSwfxzzE67kWSql54dVipjU8em/FDSSB1+
-	Z5zpUPnIzvOGY9N0+twfkKou/5tRp9AaG/Fmd7bwHtRfsuOzoOrY3+DqCc2lw2tXBjvNuizcZefQL
-	oaR67VYqlJIvnmsUuE64we7fxmG4T5E+wyw93E0e+nfG2QL3qxWILrSD0vi+A90SB8QI6d5B/dkfC
-	l6JCpdjTIW4iAu4/OgWg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3RL8OnMIGlaw1X0yftyB8CYjquVDXlmoWJIXWW5mFwE=; b=IBPjq4Ipe4zfrt
+	z+czwXELeDtUEjjS7S5Emw9wqkhMlGCFY/by+6wkXXgXrLN+Lc09BPMCM19FAtMGT5aXGQL8GOIbE
+	HCLWcNU/EBAnoifqUnmSERy07MlLdqOGgT/AiuZXRPP3htYtqXh2qk5P6Dzlt/O6Jj6ma8q3UqB8v
+	2IfCQkb/zn/GmcoNq1N3DHtGyJ35rT9JY77kwgoj0oFVwKAr7kImQ0A7u4mfQsuZgVqQK9WmI7tba
+	04hHZy8FwWhiJNn6SOdgOsbbc82Kc2+7jQajbFz7L8WVHv/n6xx92nRaVbTUUTrmSmKi7nDz5s9SO
+	hz7oJseOTH4aJqgT6lsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPiqB-00009A-F3; Wed, 30 Oct 2019 07:56:27 +0000
-Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
+	id 1iPj2S-0004a6-5M; Wed, 30 Oct 2019 08:09:08 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPiq1-00008E-5Q
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 07:56:18 +0000
-Received: from pps.filterd (m0098396.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x9U7leL8110370
- for <linux-arm-kernel@lists.infradead.org>; Wed, 30 Oct 2019 03:56:15 -0400
-Received: from e06smtp07.uk.ibm.com (e06smtp07.uk.ibm.com [195.75.94.103])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2vy37vwd6p-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Wed, 30 Oct 2019 03:56:15 -0400
-Received: from localhost
- by e06smtp07.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-arm-kernel@lists.infradead.org> from <freude@linux.ibm.com>;
- Wed, 30 Oct 2019 07:56:13 -0000
-Received: from b06cxnps4074.portsmouth.uk.ibm.com (9.149.109.196)
- by e06smtp07.uk.ibm.com (192.168.101.137) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Wed, 30 Oct 2019 07:56:09 -0000
-Received: from d06av24.portsmouth.uk.ibm.com (mk.ibm.com [9.149.105.60])
- by b06cxnps4074.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x9U7u7Ri45416546
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 30 Oct 2019 07:56:08 GMT
-Received: from d06av24.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id D5DA942042;
- Wed, 30 Oct 2019 07:56:07 +0000 (GMT)
-Received: from d06av24.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 3DCD44203F;
- Wed, 30 Oct 2019 07:56:07 +0000 (GMT)
-Received: from funtu.home (unknown [9.145.158.134])
- by d06av24.portsmouth.uk.ibm.com (Postfix) with ESMTP;
- Wed, 30 Oct 2019 07:56:07 +0000 (GMT)
-Subject: Re: [PATCH 6/6] s390x: Mark archrandom.h functions __must_check
-To: Richard Henderson <richard.henderson@linaro.org>,
- linux-arch@vger.kernel.org
-References: <20191028210559.8289-1-rth@twiddle.net>
- <20191028210559.8289-7-rth@twiddle.net>
- <935cf73a-d06c-365d-131a-23dcb350ba17@linux.ibm.com>
- <cd6b5b8c-77f0-ad7e-702a-27e5a929ca54@linaro.org>
-From: Harald Freudenberger <freude@linux.ibm.com>
-Date: Wed, 30 Oct 2019 08:56:07 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iPj23-0004M4-2l; Wed, 30 Oct 2019 08:08:44 +0000
+X-UUID: 7640225c4a25481e94ce0a9a72b2c247-20191030
+X-UUID: 7640225c4a25481e94ce0a9a72b2c247-20191030
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <luhua.xu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 630928706; Wed, 30 Oct 2019 00:08:50 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 30 Oct 2019 01:08:32 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 30 Oct 2019 16:08:30 +0800
+Received: from localhost.localdomain (10.15.20.246) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 30 Oct 2019 16:08:29 +0800
+From: Luhua Xu <luhua.xu@mediatek.com>
+To: Mark Brown <broonie@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH V2] spi: add power control when set_cs
+Date: Wed, 30 Oct 2019 16:08:16 +0800
+Message-ID: <1572422896-29487-1-git-send-email-luhua.xu@mediatek.com>
+X-Mailer: git-send-email 2.6.4
 MIME-Version: 1.0
-In-Reply-To: <cd6b5b8c-77f0-ad7e-702a-27e5a929ca54@linaro.org>
-Content-Language: en-US
-X-TM-AS-GCONF: 00
-x-cbid: 19103007-0028-0000-0000-000003B10491
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19103007-0029-0000-0000-00002473484E
-Message-Id: <95aa7fd3-5e80-f11b-3f74-42628f7dfba4@linux.ibm.com>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-10-30_03:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1908290000 definitions=main-1910300077
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_005617_210259_46519906 
-X-CRM114-Status: GOOD (  21.54  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191030_010843_158286_269BFCF2 
+X-CRM114-Status: UNSURE (   9.15  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.156.1 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,35 +71,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, Vasily Gorbik <gor@linux.ibm.com>,
- x86@kernel.org, Heiko Carstens <heiko.carstens@de.ibm.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org
+Cc: wsd_upstream@mediatek.com, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, Luhua Xu <luhua.xu@mediatek.com>,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 29.10.19 14:18, Richard Henderson wrote:
-> On 10/29/19 8:26 AM, Harald Freudenberger wrote:
->> Fine with me, Thanks, reviewed, build and tested.
->> You may add my reviewed-by: Harald Freudenberger <freude@linux.ibm.com>
->> However, will this go into the kernel tree via crypto or s390 subsystem ?
-> That's an excellent question.
->
-> As an API decision, perhaps going via crypto makes more sense,
-> but none of the patches are dependent on one another, so they
-> could go through separate architecture trees.
->
-> It has been a long time since I have done much kernel work;
-> I'm open to suggestions on the subject.
->
->
-> r~
-Since the change needs to be done in include/linux/random.h
-and in parallel with all the arch files in arch/xxx/include/asm/archrandom.h
-it should go in one shot. I'd suggest to post the patch series to linux-crypto
-and let Herbert Xu handle this.
+From: "Luhua Xu" <luhua.xu@mediatek.com>
+
+As to set_cs takes effect immediately, power spi
+is needed when setup spi.
+
+Signed-off-by: Luhua Xu <luhua.xu@mediatek.com>
+---
+V2:
+- move set_cs PM control from .set_cs callback in
+  vendor driver to spi_setup in spi framework
+
+
+ drivers/spi/spi.c | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/spi/spi.c b/drivers/spi/spi.c
+index f9502db..19007e0 100644
+--- a/drivers/spi/spi.c
++++ b/drivers/spi/spi.c
+@@ -3091,7 +3091,20 @@ int spi_setup(struct spi_device *spi)
+ 	if (spi->controller->setup)
+ 		status = spi->controller->setup(spi);
+ 
+-	spi_set_cs(spi, false);
++	if (spi->controller->auto_runtime_pm && spi->controller->set_cs) {
++		status = pm_runtime_get_sync(spi->controller->dev.parent);
++		if (status < 0) {
++			pm_runtime_put_noidle(spi->controller->dev.parent);
++			dev_err(&spi->controller->dev, "Failed to power device: %d\n",
++				status);
++			return status;
++		}
++		spi_set_cs(spi, false);
++		pm_runtime_mark_last_busy(spi->controller->dev.parent);
++		pm_runtime_put_autosuspend(spi->controller->dev.parent);
++	} else {
++		spi_set_cs(spi, false);
++	}
+ 
+ 	if (spi->rt && !spi->controller->rt) {
+ 		spi->controller->rt = true;
+-- 
+2.6.4
 
 
 _______________________________________________
