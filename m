@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0ED6EE9F06
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 16:31:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33EC9E9F07
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 16:31:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,54 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Vf8IN6vC/c4egQzHp1fv0aiecVY5NrDJxVDAF3KKJtA=; b=oU1kA/gy+PyMbAGW9SCI1G8z86
-	DQSGxL0Ft9tvxgw+iRYAHKmDowXUC3Kwsk0+yPNRlr0TDCWwjCCmavc/h+I+A5aF8XHHdanWiVEIf
-	wvL67tUdZOWzitquQ2lzksF9yOsl0BMGc03nvuVm9N4F0McPK/QSRX1x2iDApdwe3KnSpq+veeLRX
-	0W+vMGU7o8/152N/1PMb9sL1gQAjFhkAXJUAg8ejVvJuQtYVhs84ti3f+TefLvxHT9V1IqMPvdaLQ
-	G4EFfvWFiVY8uHA0QgMbgf2jUBUIzkF5IkuZd4xBXqMOsIzH7LhHOvG7ZDcpOkfCAjU2mrwG6f4F3
-	7F5SvjcA==;
+	bh=amaxnWYkUlyVFtjyAQlOnklO9FVnp/JIKoi+U9jzZv4=; b=pHJ3v5UwbWrOP31RByVQDSjCJ4
+	SQ94BYtGyfIqUuYnGWqxLV9kHd9PqXcEczddORr7tj+/HbmHDq0fMPn8JlmBCgQSSfuWo9wkApPyb
+	USK9mFi8CEUDx4DV6/0jLAPcgoEQUnm1dgPU2JMiaPn8erC51GDhnSapvuWdK9gbFOHyKn7RQPH+w
+	L1eCjOVqipmZYa1RPNXpJ8yTNzJt1Rt8eiI9yI/XnRk9t1AcAtINWUvLBGwuFutaHg2Nd/AbHLexG
+	djKjb85CkKB7Bss90NgEhiron2HJeV8Vrsb/+QlMesBNgp6DGgg3/0BX3y2+srKYvd454Z4ERs0bW
+	Dup+9mJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPpwT-0001ZT-9U; Wed, 30 Oct 2019 15:31:25 +0000
-Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
- helo=smtprelay-out1.synopsys.com)
+	id 1iPpwg-0001lt-4W; Wed, 30 Oct 2019 15:31:38 +0000
+Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPpuB-0007Lv-V0
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 15:29:06 +0000
+ id 1iPpuE-0007QL-Og
+ for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 15:29:08 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
  [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 39569C0DE6;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 33041C0DE5;
  Wed, 30 Oct 2019 15:29:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1572449340; bh=IBTxSbYOJI2JqoFiSiKIKTl72eA3gBkCoN+l7ptVNIU=;
+ t=1572449345; bh=scoltA+WigVvTzqdJe03QvtfADm3p97oUkWlWeL7UFM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=B5mKN+7R3KLvrfqfPcW0EF3dBnqKZqg7X9MCt3cPDw5eCYWCrYEZo2/L7sciMerX8
- vxpY1YkAwWykYPBJw+tR/bBYBJKFrBkvmACNTIZQgoUwri5GLT9x57R/TLY11Ic9wu
- rcu+2tfOcGGTdzyBU69C8Y7y69v+iemQIpgoTEVzq5kngUjIESpDZ7oyRs4XmaHS8C
- +Bb8ViqCz6RdrrTxuuLxmQYq27kXHDBrRJPuDWkuwozXuSJJeRLDr5oh092lIm5cTb
- VqpzF2D2IEJhldNqaf7Pl+TtDVHAwQMWUbL+NTBEJTE+xCCnQAGnFa5iqAJSLTnDhA
- 77IYmglHi+05A==
+ b=C0JfV5wftejE2Zrc7hs298DB1il00674wv+0PaRxFtNkoGvpmkNNtTFYJ56xnidN1
+ ASC+0Bp+rlLpTP8I5d7QuzkcAsG8LsLqVr0WY9fooMt95yhVFfTGQKasuHDyYjAFpd
+ wwfn7bGENArpW0UOcDBE43gaHU0+tMDashY/KkBJDGcAmRF5rNJJbxCsmPPUvxX8fa
+ BJNIN7zlxrFGqowRw3UQkFZrHvZVMTqV8jGG+EGOSMYOpdzXOt63EQebBLYhhnOjpU
+ oT/PRO+FlNRz0SXTEuChQ4TlDTskk1uulbWMQ/eeu6HOAT5NzFA1YPWAUx1EC5D1l4
+ 7MiGLNceonL9w==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id CBD3BA0060;
+ by mailhost.synopsys.com (Postfix) with ESMTP id DD1DCA0064;
  Wed, 30 Oct 2019 15:28:58 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next 2/3] net: stmmac: xgmac: Add C45 PHY support in the
- MDIO callbacks
-Date: Wed, 30 Oct 2019 16:28:49 +0100
-Message-Id: <444208cef341686bcf35f8361f409467f539c73b.1572449009.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH net-next 3/3] net: stmmac: tc: Remove the speed dependency
+Date: Wed, 30 Oct 2019 16:28:50 +0100
+Message-Id: <e376abc1b9511f9196977b7b4bb2f871dcbd44fe.1572449009.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1572449009.git.Jose.Abreu@synopsys.com>
 References: <cover.1572449009.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1572449009.git.Jose.Abreu@synopsys.com>
 References: <cover.1572449009.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_082904_094843_FFFCF415 
-X-CRM114-Status: GOOD (  13.61  )
+X-CRM114-CacheID: sfid-20191030_082907_007571_4FD2276A 
+X-CRM114-Status: GOOD (  10.69  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -96,8 +94,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the support for C45 PHYs in the MDIO callbacks for XGMAC. This was
-tested using Synopsys DesignWare XPCS.
+XGMAC3 supports full CBS features with speeds that can go up to 10G so
+we can now remove the maximum speed check of CBS.
 
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
@@ -112,104 +110,22 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c | 47 +++++++++++++++++++++--
- 1 file changed, 43 insertions(+), 4 deletions(-)
+ drivers/net/ethernet/stmicro/stmmac/stmmac_tc.c | 2 --
+ 1 file changed, 2 deletions(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
-index 40c42637ad75..143bffd28acf 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
-@@ -41,6 +41,29 @@
- #define MII_XGMAC_BUSY			BIT(22)
- #define MII_XGMAC_MAX_C22ADDR		3
- #define MII_XGMAC_C22P_MASK		GENMASK(MII_XGMAC_MAX_C22ADDR, 0)
-+#define MII_XGMAC_PA_SHIFT		16
-+#define MII_XGMAC_DA_SHIFT		21
-+
-+static int stmmac_xgmac2_c45_format(struct stmmac_priv *priv, int phyaddr,
-+				    int phyreg, u32 *hw_addr)
-+{
-+	unsigned int mii_data = priv->hw->mii.data;
-+	u32 tmp;
-+
-+	/* Wait until any existing MII operation is complete */
-+	if (readl_poll_timeout(priv->ioaddr + mii_data, tmp,
-+			       !(tmp & MII_XGMAC_BUSY), 100, 10000))
-+		return -EBUSY;
-+
-+	/* Set port as Clause 45 */
-+	tmp = readl(priv->ioaddr + XGMAC_MDIO_C22P);
-+	tmp &= ~BIT(phyaddr);
-+	writel(tmp, priv->ioaddr + XGMAC_MDIO_C22P);
-+
-+	*hw_addr = (phyaddr << MII_XGMAC_PA_SHIFT) | (phyreg & 0xffff);
-+	*hw_addr |= (phyreg >> MII_DEVADDR_C45_SHIFT) << MII_XGMAC_DA_SHIFT;
-+	return 0;
-+}
- 
- static int stmmac_xgmac2_c22_format(struct stmmac_priv *priv, int phyaddr,
- 				    int phyreg, u32 *hw_addr)
-@@ -76,16 +99,22 @@ static int stmmac_xgmac2_mdio_read(struct mii_bus *bus, int phyaddr, int phyreg)
- 	int ret;
- 
- 	if (phyreg & MII_ADDR_C45) {
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_tc.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_tc.c
+index f9a9a9d82233..7d972e0fd2b0 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_tc.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_tc.c
+@@ -321,8 +321,6 @@ static int tc_setup_cbs(struct stmmac_priv *priv,
+ 		return -EINVAL;
+ 	if (!priv->dma_cap.av)
+ 		return -EOPNOTSUPP;
+-	if (priv->speed != SPEED_100 && priv->speed != SPEED_1000)
 -		return -EOPNOTSUPP;
-+		phyreg &= ~MII_ADDR_C45;
-+
-+		ret = stmmac_xgmac2_c45_format(priv, phyaddr, phyreg, &addr);
-+		if (ret)
-+			return ret;
- 	} else {
- 		ret = stmmac_xgmac2_c22_format(priv, phyaddr, phyreg, &addr);
- 		if (ret)
- 			return ret;
-+
-+		value |= MII_XGMAC_SADDR;
- 	}
  
- 	value |= (priv->clk_csr << priv->hw->mii.clk_csr_shift)
- 		& priv->hw->mii.clk_csr_mask;
--	value |= MII_XGMAC_SADDR | MII_XGMAC_READ;
-+	value |= MII_XGMAC_READ;
- 
- 	/* Wait until any existing MII operation is complete */
- 	if (readl_poll_timeout(priv->ioaddr + mii_data, tmp,
-@@ -116,16 +145,22 @@ static int stmmac_xgmac2_mdio_write(struct mii_bus *bus, int phyaddr,
- 	int ret;
- 
- 	if (phyreg & MII_ADDR_C45) {
--		return -EOPNOTSUPP;
-+		phyreg &= ~MII_ADDR_C45;
-+
-+		ret = stmmac_xgmac2_c45_format(priv, phyaddr, phyreg, &addr);
-+		if (ret)
-+			return ret;
- 	} else {
- 		ret = stmmac_xgmac2_c22_format(priv, phyaddr, phyreg, &addr);
- 		if (ret)
- 			return ret;
-+
-+		value |= MII_XGMAC_SADDR;
- 	}
- 
- 	value |= (priv->clk_csr << priv->hw->mii.clk_csr_shift)
- 		& priv->hw->mii.clk_csr_mask;
--	value |= phydata | MII_XGMAC_SADDR;
-+	value |= phydata;
- 	value |= MII_XGMAC_WRITE;
- 
- 	/* Wait until any existing MII operation is complete */
-@@ -363,6 +398,10 @@ int stmmac_mdio_register(struct net_device *ndev)
- 		goto bus_register_fail;
- 	}
- 
-+	/* Looks like we need a dummy read for XGMAC only and C45 PHYs */
-+	if (priv->plat->has_xgmac)
-+		stmmac_xgmac2_mdio_read(new_bus, 0, MII_ADDR_C45);
-+
- 	if (priv->plat->phy_node || mdio_node)
- 		goto bus_register_done;
- 
+ 	mode_to_use = priv->plat->tx_queues_cfg[queue].mode_to_use;
+ 	if (mode_to_use == MTL_QUEUE_DCB && qopt->enable) {
 -- 
 2.7.4
 
