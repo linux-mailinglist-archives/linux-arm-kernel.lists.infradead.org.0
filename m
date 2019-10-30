@@ -2,150 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74F22E97CC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 09:14:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A59E5E97E6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 09:15:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3FjHWBa+Ma8xF0uytLH4Sg+XxyamfLaR8eazf95ZQQM=; b=JVEevc75yNPKmv
-	kuqg9AisPGgbVfpIcoZ5SgQ90t5McoGuaYT5Hl59QsgwlgUy30192Lo9ZSquzw2qoD9mMOuoVYINL
-	wWGl2R2JbJr82PoeaWYFx4ahmq8qNcqg3f2ah72xOrQrHx2SE2zjumBYLoBlN5UVAAyB4GDNV5CGj
-	3C9j/mrnBB0J6/7u3x7R2Zd6GfkHMMpGRq0UHJvQT8GdYQIzdagDXvfY84+dfDvl7iWUn8Z9Y6CvY
-	SsN4vEKm0JCpDnTZII7NDwxn42BbUPNIyvAoOxYpjAedfOdvlzG3ShjiiuIpwj2yDLmJRxi8I/iBf
-	9H9WHPm1usmBNqvnDpGA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ug4z0n0+vyhpgfbfqj9P3bD79R6vpl2kiTqOkgEk1Os=; b=u1TL6As41RY+/M
+	MpSymFe2APezYZOod4u2oWajb0+h5IMVjXQuH3h+iR5k2Sch73oCXHDO+JQP1sIGOY7n4Jnp+U9E+
+	9Nn9AGJHzw1rEoAXaCluNZv32yP8xBvpNaizva86mH5hJiDjDOzDbOtSSbM0XRAnUfA5iVouZA3I0
+	wHowvZ0dHTH5kaTp0tilNZIXFA1uLVSNYiiyiNE3q3eNOo6zy+gYVM/SCdsYjf00HpUfz4PrtpjZY
+	VLmwMr5jFcmiaNckfoFBv4sp6HDLQC04SPZc3voCcQ+DFebmc9UUWpHgCchPstc99jClMM38ALcIC
+	aJTuFjtNxmbZmlhasZhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPj7e-0006YN-1E; Wed, 30 Oct 2019 08:14:30 +0000
-Received: from mout01.posteo.de ([185.67.36.65])
+	id 1iPj8R-0006pd-QE; Wed, 30 Oct 2019 08:15:19 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPj7T-0006XH-26
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 08:14:21 +0000
-Received: from submission (posteo.de [89.146.220.130]) 
- by mout01.posteo.de (Postfix) with ESMTPS id 5F1F2160062
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 30 Oct 2019 09:14:14 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=posteo.de; s=2017;
- t=1572423254; bh=RYPYP+F8gVPZ8o0ZAvxHAkBE0tiwCokEgPwCU2Q5Xvs=;
- h=Subject:To:Cc:From:Openpgp:Autocrypt:Date:From;
- b=XwzPtGU5IVpGfZWEtPy45pSQGa0aum2pbL5TVRTccKHrXRuCSJOTDRBipp74ZSz8k
- lJOnmslyEn6kTZVmLZS7aTvSvx0IXz+KKl8+E4/5rCunGP4uc3dkdb/LA69X/HuQ9d
- fJAxekLY+AXE4B5B7B1xcGx1tiYxlV3xE86D/6O2wqPR4PhBdt1BpaW980ET4hGd5V
- 0YZzd1VXhfUUGbccFz54z/eg2WdQMDvivvuG0Hulx6JCcu27R0xPhZbHM3+tpZN3qm
- RkeasnKicul6dxpqUh3AU3PoAL+21EAGbr97fzZYEBOFTgw11/c2FC2djEvy8QGTNV
- l6xau4s4yH+Lw==
-Received: from customer (localhost [127.0.0.1])
- by submission (posteo.de) with ESMTPSA id 4731Sg5CdRz6tm6;
- Wed, 30 Oct 2019 09:14:11 +0100 (CET)
-Subject: Re: [RFC 0/2] Add workaround for core wake-up on IPI for i.MX8MQ
-To: Abel Vesa <abel.vesa@nxp.com>
-References: <20190610121346.15779-1-abel.vesa@nxp.com>
- <d217a9d2-fc60-e057-6775-116542e39e8d@posteo.de>
- <7d3a868a-768c-3cb1-c6d8-bf5fcd1ddd1c@posteo.de>
- <20191030080727.7pcvhd4466dproy4@fsr-ub1664-175>
-From: Martin Kepplinger <martink@posteo.de>
-Openpgp: preference=signencrypt
-Autocrypt: addr=martink@posteo.de; keydata=
- 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
-Message-ID: <0c023990-4482-fc42-30ba-3e801693dbec@posteo.de>
-Date: Wed, 30 Oct 2019 09:14:11 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iPj82-0006oY-Nt; Wed, 30 Oct 2019 08:14:56 +0000
+X-UUID: 07aed7db15a348d1a860412bf55c6508-20191030
+X-UUID: 07aed7db15a348d1a860412bf55c6508-20191030
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 401261223; Wed, 30 Oct 2019 00:15:07 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 30 Oct 2019 01:14:49 -0700
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N1.mediatek.inc
+ (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Wed, 30 Oct 2019 16:14:47 +0800
+Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 30 Oct 2019 16:14:46 +0800
+Message-ID: <1572423288.18464.38.camel@mhfsdcap03>
+Subject: Re: [PATCH] usb: mtk-xhci: Set the XHCI_NO_64BIT_SUPPORT quirk
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Tomasz Figa <tfiga@chromium.org>
+Date: Wed, 30 Oct 2019 16:14:48 +0800
+In-Reply-To: <CAAFQd5AszvSow2vgRq+CbtBzdNO7ysymXp=xerR6dtmi8OxMZw@mail.gmail.com>
+References: <20191010075004.192818-1-tfiga@chromium.org>
+ <1570697118.32135.20.camel@mhfsdcap03>
+ <CAAFQd5AU53=BRUrK_i-0dRYueVoSd3Bg3AtvZUMHgFv3hLuNug@mail.gmail.com>
+ <1570705147.22261.13.camel@mhfsdcap03>
+ <CAAFQd5AszvSow2vgRq+CbtBzdNO7ysymXp=xerR6dtmi8OxMZw@mail.gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <20191030080727.7pcvhd4466dproy4@fsr-ub1664-175>
-Content-Language: en-US
+X-TM-SNTS-SMTP: 60E1840DBE94508B2E5CDABD7A6FC01DE1971C6B2AD893D3FFBB7A973753CDDD2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_011420_094641_0350D3AF 
-X-CRM114-Status: GOOD (  25.15  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191030_011454_781601_BA876359 
+X-CRM114-Status: GOOD (  31.95  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.67.36.65 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -157,85 +77,123 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Jacky Bai <ping.bai@nxp.com>,
- Carlo Caione <ccaione@baylibre.com>, Marc Zyngier <marc.zyngier@arm.com>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Abel Vesa <abelvesa@gmail.com>, Thomas Gleixner <tglx@linutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Lucas Stach <l.stach@pengutronix.de>
+Cc: Nicolas Boichat <drinkcat@chromium.org>,
+ Changqi Hu <Changqi.Hu@mediatek.com>, Mathias Nyman <mathias.nyman@intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ open list <linux-kernel@vger.kernel.org>, Shik Chen <shik@chromium.org>,
+ "moderated list:ARM/Mediatek SoC
+ support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ "moderated list:ARM/Mediatek SoC support"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 30.10.19 09:08, Abel Vesa wrote:
-> On 19-10-30 07:11:37, Martin Kepplinger wrote:
->> On 23.06.19 13:47, Martin Kepplinger wrote:
->>> On 10.06.19 14:13, Abel Vesa wrote:
->>>> This is another alternative for the RFC:
->>>> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Flkml.org%2Flkml%2F2019%2F3%2F27%2F545&amp;data=02%7C01%7Cabel.vesa%40nxp.com%7Cf5f8d8dd37974234fcb108d75d000944%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C1%7C637080127051582184&amp;sdata=qZEo1fY1lkTjqZWuuQftYJ5euEsSxjEAqGILCY8ChnU%3D&amp;reserved=0
->>>>
->>>> This new workaround proposal is a little bit more hacky but more contained
->>>> since everything is done within the irq-imx-gpcv2 driver.
->>>>
->>>> Basically, it 'hijacks' the registered gic_raise_softirq __smp_cross_call
->>>> handler and registers instead a wrapper which calls in the 'hijacked' 
->>>> handler, after that calling into EL3 which will take care of the actual
->>>> wake up. This time, instead of expanding the PSCI ABI, we use a new vendor SIP.
->>>>
->>>> I also have the patches ready for TF-A but I'll hold on to them until I see if
->>>> this has a chance of getting in.
->>>
->>
->> Hi Abel,
->>
->> Running this workaround doesn't seem to work anymore on 5.4-rcX. Linux
->> doesn't boot, with ATF unchanged (includes your workaround changes). I
->> can try to add more details to this...
->>
-> 
-> This is happening because the system counter is now enabled on 8mq.
-> And since the irq-imx-gpcv2 is using as irq_set_affinity the 
-> irq_chip_set_affinity_parent. This is because the actual implementation
-> of the driver relies on GIC to set the right affinity. On a SoC
-> that has the wake_request signales linked to the power controller this
-> works fine. Since the system counter is actually the tick broadcast
-> device and the set affinity relies only on GIC, the cores can't be
-> woken up by the broadcast interrupt.
-> 
->> Have you tested this for 5.4? Could you update this workaround? Please
->> let me know if I missed any earlier update on this (having a cpu-sleep
->> idle state).
->>
-> 
-> The solution is to implement the set affinity in the irq-imx-gpcv2 driver
-> which would allow the gpc to wake up the target core when the broadcast
-> irq arrives.
-> 
-> I have a patch for this. I just need to clean it up a little bit.
-> Unfortunately, it won't go upstream since everuone thinks the gic
-> should be the one to control the affinity. This obviously doesn't work
-> on 8mq.
+Hi Tomasz,
 
-I see and that's fine for the moment.
+On Fri, 2019-10-11 at 13:35 +0900, Tomasz Figa wrote:
+> On Thu, Oct 10, 2019 at 7:59 PM Chunfeng Yun <chunfeng.yun@mediatek.com> wrote:
+> >
+> > On Thu, 2019-10-10 at 18:00 +0900, Tomasz Figa wrote:
+> > > Hi Chunfeng,
+> > >
+> > > On Thu, Oct 10, 2019 at 5:45 PM Chunfeng Yun <chunfeng.yun@mediatek.com> wrote:
+> > > >
+> > > > Hi, Tomasz,
+> > > >
+> > > > On Thu, 2019-10-10 at 16:50 +0900, Tomasz Figa wrote:
+> > > > > MediaTek XHCI host controller does not support 64-bit addressing despite
+> > > > > the AC64 bit of HCCPARAMS1 register being set. The platform-specific
+> > > > > glue sets the DMA mask to 32 bits on its own, but it has no effect,
+> > > > > because xhci_gen_setup() overrides it according to hardware
+> > > > > capabilities.
+> > Yes, this is what I want to do, maybe need remove DMA mask setting in
+> > platform-specific.
+> >
+> > > > >
+> > > > > Use the XHCI_NO_64BIT_SUPPORT quirk to tell the XHCI core to force
+> > > > > 32-bit DMA mask instead.
+> > > > >
+> > > > > Signed-off-by: Tomasz Figa <tfiga@chromium.org>
+> > > > > ---
+> > > > >  drivers/usb/host/xhci-mtk.c | 10 +++++-----
+> > > > >  1 file changed, 5 insertions(+), 5 deletions(-)
+> > > > >
+> > > > > diff --git a/drivers/usb/host/xhci-mtk.c b/drivers/usb/host/xhci-mtk.c
+> > > > > index b18a6baef204a..4d101d52cc11b 100644
+> > > > > --- a/drivers/usb/host/xhci-mtk.c
+> > > > > +++ b/drivers/usb/host/xhci-mtk.c
+> > > > > @@ -395,6 +395,11 @@ static void xhci_mtk_quirks(struct device *dev, struct xhci_hcd *xhci)
+> > > > >       xhci->quirks |= XHCI_SPURIOUS_SUCCESS;
+> > > > >       if (mtk->lpm_support)
+> > > > >               xhci->quirks |= XHCI_LPM_SUPPORT;
+> > > > > +     /*
+> > > > > +      * MTK host controller does not support 64-bit addressing, despite
+> > > > > +      * having the AC64 bit of the HCCPARAMS1 register set.
+> > > > > +      */
+> > > > > +     xhci->quirks |= XHCI_NO_64BIT_SUPPORT;
+> > > > Somes SoCs support 64bits in fact, so can't support this quirk, do you
+> > > > encounter any issues without this quirk?
+> > > >
+> > >
+> > > Thanks for taking a look at this patch.
+> > >
+> > > Yes, on MT8183 the DMA mask ended up being set to 64 bits, but
+> > > according to the information I received from MediaTek, the controller
+> > > on that SoC only supports 32 bits.
+> > As I know, mt8183 doesn't support memory greater than 4G mode.
+> >
+> 
+> We have 4GB of DRAM at 0x40000000-0x140000000 on our board with
+> MT8183. What happens if you attempt to use the memory from
+> 0x100000000-0x140000000 with the XHCI controller on this SoC?
+
+Sorry for the late reply.
+
+I've checked it with USB DE, USB IP supports 64bit on MT8183, so no need
+set XHCI_NO_64BIT_SUPPORT. 
+Would you please help to send a new patch to remove local dma mask
+setting, no need set it.
+
+Thanks a lot
+
 
 > 
-> Currently, I'm at ELCE in Lyon. Will get back at the office tomorrow
-> and sned you what I have.
+> > >
+> > > If some SoCs support only 32 bits and some support 64 bits, we may
+> > > either need to use different DT compatible string for them or add a DT
+> > > property and set the quirk based on that. Right now in upstream we
+> > > have:
+> > >
+> > > 1) "mediatek,mt8173-xhci", used by:
+> > > MT8173
+> > >
+> > > 2)"mediatek,mtk-xhci", used by:
+> > > MT2712
+> > > MT7622
+> > > MT8183 (not yet upstream, but I suppose it's on the mailing lists)
+> > >
+> > > Would you be able to check which of the SoCs above report 64 bits but
+> > > support only 32? (and so would need this quirk)
+> > I'm afraid I can't, almost all MTK SoCs supporting xHCI are using this
+> > driver, AC64 should be set rightly according to addressing capability.
+> >
 > 
+> Does it mean that only MT8183 may be the only SoC with a problem with
+> this capability bit?
+> 
+> Matthias, do you have access to MT2712 and MT7622 devices? I have
+> MT8173 and MT8183, so I can check them, but would be good to check
+> this on the other ones too.
 
-Thanks for answering so quickly. I'll test as soon as you can send that
-update.
 
-thanks for this work,
+> 
+> Best regards,
+> Tomasz
 
-                                martin
+
 
 _______________________________________________
 linux-arm-kernel mailing list
