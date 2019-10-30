@@ -2,78 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E09ABE997C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 10:50:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A271AE997D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 10:50:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=UlcgC+xXo8owZQGaYQAGDuGSQMm+6YO206/vHx++VLM=; b=OHQ
-	WUJj6JLM2NN52aMRlWnlGUIhc/XszG90TCHDJE5uwh+HvPTVP3Ks/7p6oidm9WpB4n8OyiaM1LatA
-	d92H7eZ/F0FBVV4XKRf/SB7+z9H1X80hmvjyCeOSjiPaykSa9YsQNh2SZFAnUdqcPaWBDIkz2fnh8
-	+AvuW908bQKjoagMmXFISn1XTDQKltkBoo4g6MPwKfiWa790cJFpMltu5kTI2OtqfqDSlf9+Giv7J
-	ZsICqbdJAh8AlDjm6webvnSNV8hpjAl+7CpjRelwRmjdSbH21yiW38NnqkYupg9GhQgOqtCymBueN
-	r9dNmveBcnsvW3yAVEILP8Pzp2WZWrA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=NaNTYMzYnRI9f//KyWLKoFUpwShf/lR/U0IpJx1vxcU=; b=jIxStytzNiiTUmCKpsi87GtChA
+	Av2etdxUPjy9AUW/yT+SQWh1EsMvGgJxY0DERDIH57lgWSq/bpt4X1jzHda87Fz4rsLEnB9rCDoR8
+	CVt+9s80EdKfR2vQ3lGhuNU9L45DHTdUePd+k0tRFfyK1CODnL1RoWdnEwwklToK8joF/uMgpvGpl
+	Gg4buSlJk0fJHHOh99UhDHYsSuhNSiRHLoMaAHiXt1fr9C4l/1RRvBA8czUcBIGUqff8zQLzlPD4p
+	yGf8i/L6pz2eazmU2bEZJ+RoBAXjmilsErOOC9XPNwqBfio89J1WZPWaLJeJElqnfPCHWykbOIC5y
+	VN58cKog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPkce-0001C2-7q; Wed, 30 Oct 2019 09:50:36 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1iPkct-0001Qq-49; Wed, 30 Oct 2019 09:50:51 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPkcK-0001BL-D8
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 09:50:17 +0000
-Received: by mail-pl1-x643.google.com with SMTP id q16so743338pll.11
+ id 1iPkcR-0001Fa-PB
+ for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 09:50:25 +0000
+Received: by mail-pf1-x443.google.com with SMTP id c184so1240237pfb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 30 Oct 2019 02:50:16 -0700 (PDT)
+ Wed, 30 Oct 2019 02:50:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=dxdq8UVKYIoWezTIVtNtXNzC1j7K03aSUVKZV0KfYRw=;
- b=YnXmlhvmJfVKB0QmBFuEk1Dm6DSXTswd+nqgqBYqzmGyWTUPCNZxiLaZ6OveR3YPSE
- IW2bdz58hEfhH1XY8lrAtgzQa2fz9t7PRS1LVa8dzzm95V2ktPvt4+u7Zsd8pQHkGerw
- 6Lx+ce3tDBWdv3koWwURnOQutmFyd+s9QK1OsuJaiTcO7x3Q4ZII363HZpWB2+/O30mM
- SwYaPJ53x/pu5UyACmPBtEsATFQ6TYlmatUqqXiEIK0VOFLxKD4M+O8AjMSnD0+cq/nF
- o33Vv7TjeO+rV/OuPdcUyYEgIuw33LFtFrUkyk6bqnwzC30I3hcbeeOjPBA4wQCfXtGU
- Ch2g==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=cftdRVtAP8UQA9RZHk0z4GAx0m9Po/cdw/g0rW6uNcc=;
+ b=wCdwA8cDhGfP5x35MPbKU+N2lcODb5ADD1ZdosQ9P1AD9v+CY/1Ivk72MjrDwA9IcY
+ 4keYhmYK6mey0FY84tfA6G4xJut1d3DST6qfp+zzACfPIZ3SzM3BKY3kjgzbUwOy7eaq
+ CJ+FwHlqPVo8hIBr2momd3M+it81ipB5kVvz6UjGKzCC8hrDDbmMRT1tUN/Ru5h/llLo
+ c0LR6zTTogqUgQ7tX2V3O/xLHlbKFYSUvjhFJ7uX2jE9nX9lEoy5+3h3cEDJ7lkEIG/c
+ xOuE0kqO66JULtB2d8/H7iLZD5Tvfgd097ckzS6uEf1zutX2SXXeHMfl5guq2EUm/eCb
+ 00UQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=dxdq8UVKYIoWezTIVtNtXNzC1j7K03aSUVKZV0KfYRw=;
- b=hBZbhhkRX9ABsQ4GV1D/lwjZ++ShQv9SPl9HJgZEQygAa4acd2NuwKtZPOT1+wfB5J
- MqMofXZZk7e4tHaKWIrnaac3AMNkGJHWcw1E1hsyXcwrPypZHJ1ufdXPm8g24KVsh/Wk
- V52o3+PObaD19YaoTNdqZOW8duEBVBhYAmaemJmlnhsVp5sTyb6K/3swh3rgWNgEG/ni
- iGVfVMzypTFxVzW/IFXs92DufURUwvxPwR3xl8d7QL0K2Ts1vcMJWvvYhRAkQUsxE9gV
- zRGyZH2zLUNcmMZDlN45zTmqjbLybdez9lT1osxljV0GJGxmr3dbmDkACb3V6ry6QA0c
- dPkw==
-X-Gm-Message-State: APjAAAWTbpVCecWw75MCGjJSi8WuD1botxFEArQWh1R0hQo4gocAYJwe
- pSdJhj3fxRu5FjbH3L63ulKy
-X-Google-Smtp-Source: APXvYqw4kJLQKZSWO1XO57Sx5aIe0oheAiqfVnYm2K1VgupBhhuZBmqESudgkztCyR7WtYQb6nqZTQ==
-X-Received: by 2002:a17:902:8d86:: with SMTP id
- v6mr3621909plo.79.1572429015669; 
- Wed, 30 Oct 2019 02:50:15 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=cftdRVtAP8UQA9RZHk0z4GAx0m9Po/cdw/g0rW6uNcc=;
+ b=CxMygwWPIjTdC4+9FsAOr20dfUguMF7015oMHTQshBgEd8TEQOBtE7lsa3yPJorKdA
+ qa2VQQjMTG+hJ786QrfGvh3uCmSLOiD87ldbZwdB232jSF2RvmlAGoXt4z8gvOTxpNFH
+ Cs55c4wHZfffZ5CMVjC18tlnP2z+nSAjXB8bBUp+jjSB6h1v1Zi2+QIcv827NkmD6Y4h
+ uYRFbJQ4svSVTzcDLbyHI55uhNmfKGM7zfblrQTh2/bAYygUG4PXOm34ABnxl4kWbVsQ
+ SqlRJv8qIrG95G+IfHax9q864V/f9/RFIui2okht9utF3wQFUAGuHYfsXd0aTXaYAPPr
+ 3iyg==
+X-Gm-Message-State: APjAAAVBP1u4a+UblRs5LBlMlh3zur635xfNr7iyYrH8Ym+J/jTq8rmj
+ A6q+pK/ryznrVa2bGy+8seYf
+X-Google-Smtp-Source: APXvYqxc4nIJKggYP3YGCmdXDUVXHR+G1fS7IEc9x7gSziWCnoF0WyDLvXL7vMZlHVfbUF4IM9KpKQ==
+X-Received: by 2002:a65:6203:: with SMTP id d3mr32446041pgv.272.1572429022561; 
+ Wed, 30 Oct 2019 02:50:22 -0700 (PDT)
 Received: from localhost.localdomain
  ([2409:4072:618e:77d9:c9fa:423a:3851:8df4])
- by smtp.gmail.com with ESMTPSA id n23sm2301329pff.137.2019.10.30.02.50.09
+ by smtp.gmail.com with ESMTPSA id n23sm2301329pff.137.2019.10.30.02.50.16
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 30 Oct 2019 02:50:15 -0700 (PDT)
+ Wed, 30 Oct 2019 02:50:21 -0700 (PDT)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: mchehab@kernel.org,
 	robh+dt@kernel.org,
 	sakari.ailus@iki.fi
-Subject: [PATCH v4 0/2] Add IMX296 CMOS image sensor support
-Date: Wed, 30 Oct 2019 15:19:00 +0530
-Message-Id: <20191030094902.32582-1-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v4 1/2] dt-bindings: media: i2c: Add IMX296 CMOS sensor binding
+Date: Wed, 30 Oct 2019 15:19:01 +0530
+Message-Id: <20191030094902.32582-2-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191030094902.32582-1-manivannan.sadhasivam@linaro.org>
+References: <20191030094902.32582-1-manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_025016_475397_D0C9BC4B 
-X-CRM114-Status: GOOD (  10.23  )
+X-CRM114-CacheID: sfid-20191030_025023_832874_0A6D6F10 
+X-CRM114-Status: GOOD (  14.02  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,47 +108,135 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+Add YAML devicetree binding for IMX296 CMOS image sensor. Let's also
+add MAINTAINERS entry for the binding and driver.
 
-This patchset adds support for IMX296 CMOS image sensor from Sony.
-Sensor can be programmed through I2C and 4-wire interface but the
-current driver only supports I2C interface. The sensor is
-capable of outputting frames in CSI2 format (1 Lane). In the case
-of sensor resolution, driver only supports 1440x1088 at 30 FPS.
-
-The driver has been validated using Framos IMX296 module interfaced to
-96Boards Dragonboard410c.
-
-Thanks,
-Mani
-
-Changes in v4:
-
-* Fixed issues related to gain settings and few misc cleanups in driver
-* Documented port node and removed maxItems, default prop from dt binding
-  as per the review
-
-Changes in v3:
-
-* Fixed the reference to video-interfaces.txt in binding.
-
-Changes in v2:
-
-* Switched to YAML binding
-
-Manivannan Sadhasivam (2):
-  dt-bindings: media: i2c: Add IMX296 CMOS sensor binding
-  media: i2c: Add IMX296 CMOS image sensor driver
-
- .../devicetree/bindings/media/i2c/imx296.yaml |  94 +++
- MAINTAINERS                                   |   8 +
- drivers/media/i2c/Kconfig                     |  11 +
- drivers/media/i2c/Makefile                    |   1 +
- drivers/media/i2c/imx296.c                    | 715 ++++++++++++++++++
- 5 files changed, 829 insertions(+)
+Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+---
+ .../devicetree/bindings/media/i2c/imx296.yaml | 94 +++++++++++++++++++
+ MAINTAINERS                                   |  8 ++
+ 2 files changed, 102 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/media/i2c/imx296.yaml
- create mode 100644 drivers/media/i2c/imx296.c
 
+diff --git a/Documentation/devicetree/bindings/media/i2c/imx296.yaml b/Documentation/devicetree/bindings/media/i2c/imx296.yaml
+new file mode 100644
+index 000000000000..c04ec2203268
+--- /dev/null
++++ b/Documentation/devicetree/bindings/media/i2c/imx296.yaml
+@@ -0,0 +1,94 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/media/i2c/imx296.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Sony IMX296 1/2.8-Inch CMOS Image Sensor
++
++maintainers:
++  - Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
++
++description: |-
++  The Sony IMX296 is a 1/2.9-Inch active pixel type CMOS Solid-state image
++  sensor with square pixel array and 1.58 M effective pixels. This chip
++  features a global shutter with variable charge-integration time. It is
++  programmable through I2C and 4-wire interfaces. The sensor output is
++  available via CSI-2 serial data output (1 Lane).
++
++properties:
++  compatible:
++    const: sony,imx296
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  clock-names:
++    description:
++      Input clock for the sensor.
++    items:
++      - const: mclk
++
++  clock-frequency:
++    description:
++      Frequency of the mclk clock in Hertz.
++
++  vddo-supply:
++    description:
++      Definition of the regulator used as interface power supply.
++
++  vdda-supply:
++    description:
++      Definition of the regulator used as analog power supply.
++
++  vddd-supply:
++    description:
++      Definition of the regulator used as digital power supply.
++
++  reset-gpios:
++    description:
++      The phandle and specifier for the GPIO that controls sensor reset.
++    maxItems: 1
++
++  port: true
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - clock-names
++  - clock-frequency
++  - vddo-supply
++  - vdda-supply
++  - vddd-supply
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/gpio/gpio.h>
++
++    imx296: camera-sensor@1a {
++        compatible = "sony,imx296";
++        reg = <0x1a>;
++        reset-gpios = <&msmgpio 35 GPIO_ACTIVE_LOW>;
++        pinctrl-names = "default";
++        pinctrl-0 = <&camera_rear_default>;
++        clocks = <&gcc 90>;
++        clock-names = "mclk";
++        clock-frequency = <37125000>;
++        vddo-supply = <&camera_vddo_1v8>;
++        vdda-supply = <&camera_vdda_3v3>;
++        vddd-supply = <&camera_vddd_1v2>;
++
++        port {
++            imx296_ep: endpoint {
++                remote-endpoint = <&csiphy0_ep>;
++            };
++        };
++    };
++
++...
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 55199ef7fa74..51194bb2c392 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -15140,6 +15140,14 @@ S:	Maintained
+ F:	drivers/media/i2c/imx274.c
+ F:	Documentation/devicetree/bindings/media/i2c/imx274.txt
+ 
++SONY IMX296 SENSOR DRIVER
++M:	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
++L:	linux-media@vger.kernel.org
++T:	git git://linuxtv.org/media_tree.git
++S:	Maintained
++F:	drivers/media/i2c/imx296.c
++F:	Documentation/devicetree/bindings/media/i2c/imx296.yaml
++
+ SONY IMX319 SENSOR DRIVER
+ M:	Bingbu Cao <bingbu.cao@intel.com>
+ L:	linux-media@vger.kernel.org
 -- 
 2.17.1
 
