@@ -2,65 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA49EE98DE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 10:09:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BFAEE98E0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 10:09:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2JyhkMjlUNzcPvpRSuCW7+V9N6wH7tv038y2ATeMgbI=; b=ELEJRiXq1wuuO5
-	jrBcS0v8FF5il7lkBgfNWnz2+uTv31AoG1lQZJPKwM4UWQK7rRfBT3PdhC+QgJVNaCf0vYEQ0cDgY
-	VmbvE0co1wR5Pov2Y868HJsUj0gh37ZD+wp8uNSnPmOQObUeoiOAwwoFRrFy+aiDbUeqmIGEFHSJd
-	7Mf7fM2RN5V+uwcfaTl0ReTjbCTEnZTJCKKSE7ZXTNcKqZ/eJiTv4vYtRl6EpJOGKdNEO1NwSIKL2
-	9XH/QeBUR9IuqFYLFUedBEZnFYBHfu0/72dnWUL1cC3VkACLgH6j093YNV2qrbE5NepWW+YTG05WE
-	jWyNhE/u78wrNRnhTIMA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=OmCO0ItsYbVeRIvDPSCUcxZ7NNNsLn2/03kWkstH/Zw=; b=PHu2l63Jk7bPHt8YpjaIurHEA
+	pN9jGdwPkBNy6qdl6Z2LOKyx5WInhSqhI265TkqzL9ph+N2g4QD+UPUCxyKxkxMcs5eRwnui448DB
+	GAnC+wzZtD68j/ycrMXc8Pnde4NilMvh7stm3X4uvflx+9lLGdCXjju8IhAfFkQl1YB6G700qlQEz
+	n/bnlBL4nuQ0AnYc66Ee/RDz37uqWsAV09FRGOm06yHLLSpdVUrN/lIcf3WdKnHndHPzYsQWqhrFY
+	/zTxud0QkrossHfnaFk+ffdRgcPgVJqLwb62ZXdM5wdrzTe0Cnb67dFEFix7XfhDnJ3jyXYvbGOZh
+	7h3iAJs4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPjyT-0007dO-J4; Wed, 30 Oct 2019 09:09:05 +0000
-Received: from mga14.intel.com ([192.55.52.115])
+	id 1iPjz6-00083z-W2; Wed, 30 Oct 2019 09:09:45 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPjyE-0007cU-2d; Wed, 30 Oct 2019 09:08:51 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga006.fm.intel.com ([10.253.24.20])
- by fmsmga103.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 30 Oct 2019 02:08:49 -0700
-X-IronPort-AV: E=Sophos;i="5.68,246,1569308400"; d="scan'208";a="401441344"
-Received: from paasikivi.fi.intel.com ([10.237.72.42])
- by fmsmga006-auth.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 30 Oct 2019 02:08:45 -0700
-Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
- id 97D7A208A0; Wed, 30 Oct 2019 11:08:43 +0200 (EET)
-Date: Wed, 30 Oct 2019 11:08:43 +0200
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
-To: Dongchun Zhu <dongchun.zhu@mediatek.com>
-Subject: Re: [V2, 1/2] media: dt-bindings: media: i2c: Add bindings for ov8856
-Message-ID: <20191030090843.GG10211@paasikivi.fi.intel.com>
-References: <20190910130446.26413-1-dongchun.zhu@mediatek.com>
- <20190910130446.26413-2-dongchun.zhu@mediatek.com>
- <20190910173743.GI2680@smile.fi.intel.com>
- <20190917120205.GO5781@paasikivi.fi.intel.com>
- <20190917144412.GA23952@bogus>
- <1572426023.21623.257.camel@mhfsdcap03>
+ id 1iPjyu-00082A-6L
+ for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 09:09:33 +0000
+Received: from DGGEMS406-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 1D2C7455219B66472DC8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 30 Oct 2019 17:09:25 +0800 (CST)
+Received: from [127.0.0.1] (10.57.101.250) by DGGEMS406-HUB.china.huawei.com
+ (10.3.19.206) with Microsoft SMTP Server id 14.3.439.0; Wed, 30 Oct 2019
+ 17:09:17 +0800
+Subject: Re: [PATCH] ARM: hisi: drop useless depend on ARCH_MULTI_V7
+To: Kefeng Wang <wangkefeng.wang@huawei.com>
+References: <20190527155128.192006-1-wangkefeng.wang@huawei.com>
+From: Wei Xu <xuwei5@hisilicon.com>
+Message-ID: <5DB9533D.6040802@hisilicon.com>
+Date: Wed, 30 Oct 2019 17:09:17 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101
+ Thunderbird/38.2.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1572426023.21623.257.camel@mhfsdcap03>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190527155128.192006-1-wangkefeng.wang@huawei.com>
+X-Originating-IP: [10.57.101.250]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_020850_131396_F7695402 
-X-CRM114-Status: GOOD (  13.07  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191030_020932_424697_332E386C 
+X-CRM114-Status: GOOD (  12.93  )
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.115 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.191 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,50 +67,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Rob Herring <robh@kernel.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- srv_heupstream@mediatek.com, devicetree@vger.kernel.org,
- shengnan.wang@mediatek.com, tfiga@chromium.org, louis.kuo@mediatek.com,
- sj.huang@mediatek.com, drinkcat@chromium.org,
- linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
- bingbu.cao@intel.com, mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Dongchun,
 
-On Wed, Oct 30, 2019 at 05:00:23PM +0800, Dongchun Zhu wrote:
-> Hi Rob,
-> 
-> On Tue, 2019-09-17 at 09:44 -0500, Rob Herring wrote:
-> > On Tue, Sep 17, 2019 at 03:02:06PM +0300, Sakari Ailus wrote:
-> > > On Tue, Sep 10, 2019 at 08:37:43PM +0300, Andy Shevchenko wrote:
-> > > > On Tue, Sep 10, 2019 at 09:04:45PM +0800, dongchun.zhu@mediatek.com wrote:
-> > > > > From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > > > > 
-> > > > > This patch adds device tree bindings documentation for the ov8856 CMOS
-> > > > > image sensor.
-> > > > 
-> > > > New bindings in YAML, please.
-> > > 
-> > > My understanding is text documents are still fine.
-> > 
-> > Schema are preferred, but still up to the subsystem for now.
-> >  
-> 
-> It seems that there are no bindings in YAML under the path:
-> Documentation/devicetree/bindings/media/i2c.
-> So we would keep the text documents for OV8856.
 
-That is going to change very soon with the addition of IMX296 bindings:
+On 2019/5/27 23:51, Kefeng Wang wrote:
+> The ARCH_HISI depends on ARCH_MULTI_V7, no need to add this depend
+> to each sub-menu config, and use tabs where possible.
+>
+> Signed-off-by: Kefeng Wang <wangkefeng.wang@huawei.com>
 
-<URL:https://lore.kernel.org/linux-media/20191029220928.GA17996@bogus/T/#mdd27731659215b1e35049892ef82bb6b62e80b61>
+Thanks!
+Applied to the hisilicon armv7 SoC tree.
 
--- 
-Sakari Ailus
+Best Regards,
+Wei
+
+> ---
+>   arch/arm/mach-hisi/Kconfig | 16 ++++++----------
+>   1 file changed, 6 insertions(+), 10 deletions(-)
+>
+> diff --git a/arch/arm/mach-hisi/Kconfig b/arch/arm/mach-hisi/Kconfig
+> index 98338a489921..3b010fe7c0e9 100644
+> --- a/arch/arm/mach-hisi/Kconfig
+> +++ b/arch/arm/mach-hisi/Kconfig
+> @@ -15,7 +15,6 @@ menu "Hisilicon platform type"
+>   
+>   config ARCH_HI3xxx
+>   	bool "Hisilicon Hi36xx family"
+> -	depends on ARCH_MULTI_V7
+>   	select CACHE_L2X0
+>   	select HAVE_ARM_SCU if SMP
+>   	select HAVE_ARM_TWD if SMP
+> @@ -25,17 +24,15 @@ config ARCH_HI3xxx
+>   	  Support for Hisilicon Hi36xx SoC family
+>   
+>   config ARCH_HIP01
+> -       bool "Hisilicon HIP01 family"
+> -       depends on ARCH_MULTI_V7
+> -       select HAVE_ARM_SCU if SMP
+> -       select HAVE_ARM_TWD if SMP
+> -       select ARM_GLOBAL_TIMER
+> -       help
+> -         Support for Hisilicon HIP01 SoC family
+> +	bool "Hisilicon HIP01 family"
+> +	select HAVE_ARM_SCU if SMP
+> +	select HAVE_ARM_TWD if SMP
+> +	select ARM_GLOBAL_TIMER
+> +	help
+> +	  Support for Hisilicon HIP01 SoC family
+>   
+>   config ARCH_HIP04
+>   	bool "Hisilicon HiP04 Cortex A15 family"
+> -	depends on ARCH_MULTI_V7
+>   	select ARM_ERRATA_798181 if SMP
+>   	select HAVE_ARM_ARCH_TIMER
+>   	select MCPM if SMP
+> @@ -46,7 +43,6 @@ config ARCH_HIP04
+>   
+>   config ARCH_HIX5HD2
+>   	bool "Hisilicon X5HD2 family"
+> -	depends on ARCH_MULTI_V7
+>   	select CACHE_L2X0
+>   	select HAVE_ARM_SCU if SMP
+>   	select HAVE_ARM_TWD if SMP
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
