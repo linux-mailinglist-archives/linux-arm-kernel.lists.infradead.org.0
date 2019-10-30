@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D99AE9D0E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 15:04:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA64EE9D1B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 15:05:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RM5HJUEF5H09Ghvd8XYJggdBtHr8WqVCouq2Yw9RrgY=; b=tc1l2QTuY/rX0X
-	oFYxajulZAWadLF366uUDCQieYT97NmTIOfsK76K047BAGZX5uE6UMCgKTcd+SW/7ifpYQDFKHlRx
-	UacffTefvaOosZU7tF2BGvJKK3BLW8y5jWk/px6Hhc0WQnmUob3AJV2IBwyMIMvqu5LD99sb6RAq3
-	GUxPKAKUL3UwDxdE0gvpfZrgAZnfYwJVSHxGvv/sqh8SUeOM49r1eFv+NHDU35DoXTZYXLfVtjGwy
-	mPrGFPwQHIbsUuQfCebDng1BBLgNXWdzym8z1v/XjMNV7CgiVxvLRarADp98fJFKgNDZlkHSd37gL
-	240DG76PozewYZso67fQ==;
+	List-Owner; bh=BgBD1C0N3zB4KrisGJmpS7eaGLTMxdKhQ0d9yjXqxKQ=; b=fFVNm3iVvhYGrc
+	nd6teDEZG230+fIQqN4BN5Yzl8BOscsTNPwjfUL/JvgTbFUF3Y26p7mFNrl34lv0DyRWN5RCU47yU
+	HDRx5HG3d1xZAPpEp4CQosNHgX8HpeKOSj32BdibYY9q3wsLDfoY0rllKiNOF8p5LWdBbnprYeLgp
+	hDKd2GR6w5wWXltZvHzecpstNOIqck5DV9pMsh31+rH1EJj+GpIcOzQOKjd2tH/6WoQizQzccavRY
+	pwyjxe1UGRpCfDWIdESVs5Qpn+3jRvki47iQdU0qjbHyzux6HUv+VsDGRyXnSDa7zhnRUjN5rrLL+
+	IcdiUwHkF78zyYYEd7TA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPoaF-00032c-UD; Wed, 30 Oct 2019 14:04:23 +0000
+	id 1iPob7-0003xO-Bi; Wed, 30 Oct 2019 14:05:17 +0000
 Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPoa6-00032G-GM
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 14:04:15 +0000
-Received: by mail-oi1-f195.google.com with SMTP id v186so2048650oie.5
+ id 1iPoas-0003Rc-Fo
+ for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 14:05:03 +0000
+Received: by mail-oi1-f195.google.com with SMTP id k2so2021812oij.12
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 30 Oct 2019 07:04:14 -0700 (PDT)
+ Wed, 30 Oct 2019 07:05:02 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=LZENjOjFmyezYiGxEO/wBimrkyphD0pCUUhpP3wSbYA=;
- b=LlhhyicXVO14Uoxd0E7xrRHmOwo4U43osHp1hGUYwz4nJVXoI1dHQmoRMT6FChhC4k
- 0ayv7S10reiw99IAt6LheqCW3n7yDUYXtUQzdLPsMB2C32DoYg1WxFtMfOB97jaj91rJ
- sInAUU/wTCAyAShO/dqrUZ0H4fjv+ffl4f8GRBkRNPX43jP7HAeDTqZfI21rNlbIC87w
- zIAyx/hVrwc0HQqseYc0D9gbiEzHwtF2YUjcx3WnUftdwbNxK52nHrdhRtACL91bnWso
- JnaehgYvmesFRz8kQzMLdmX5aldZXGVrJI7aPgvK0L5iHQHgAlrV0sQZWplMbaWYVlZI
- rkDA==
-X-Gm-Message-State: APjAAAWM2EE4+luNSKB/WxLr/kC5G81uclDa3zDTYw2eMOo5owTuI1PL
- smc22cNsbhDHYXrO6nHxkQ==
-X-Google-Smtp-Source: APXvYqy9QfgVpVNGitqDKbBjh8KZJ0eJt7caUcK4cnWlU27Z+TsCw/YG99rFknF3PL95JPfG2/G3Aw==
-X-Received: by 2002:aca:4c8c:: with SMTP id z134mr8550002oia.15.1572444253766; 
- Wed, 30 Oct 2019 07:04:13 -0700 (PDT)
+ bh=VjUbeXseZNfZ1pV6P1oZr6TvD5+K3+0WHvnHgaOVfyc=;
+ b=JC+Tw9s4CJ27DX4TFpeBJzekSI3PqCRjWrATBFRqg5OqudUVyliqu1Uu9lHRF9o2ap
+ vu4J4gzrFZ+U3HKQczoar27pZupcPFH9Rx6JElsgxqFIYtZNFZ4m16nCRSvCn98idSRA
+ p1jB0ncpzjfv2InoInK3XUdJeTxrmorxXSte4CYMcXgc7znhOme3G0JIYc4L3S4Io4sV
+ dRujgpdi1Jten/IcG8D9+C0JNtE1FXNFcd1LapIeI8yfJ1UX2P2RpzbW2psjNDZuVYgm
+ wZcBFuQQ5AmPzzztM76hnMQ2wKm8MXpBJPMsVKZK5D03ODJvGDfss8rXbMOoFmvZhBhs
+ o1UQ==
+X-Gm-Message-State: APjAAAVl7BHpE9ZJfkg10SqX2bVB3OABpLH1pj3AfZYTb0dby5U0P+Us
+ mm4brDy6G2q8vsA0Gz71Vw==
+X-Google-Smtp-Source: APXvYqxh7UaJbqXooxPymSVpV2Dkk9RFHomlOl61v/922QK11EtyGIdV7wMcJTOi1B5ho34SClF9Fw==
+X-Received: by 2002:aca:5d8a:: with SMTP id r132mr8536367oib.119.1572444301779; 
+ Wed, 30 Oct 2019 07:05:01 -0700 (PDT)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id j129sm20974oib.22.2019.10.30.07.04.12
+ by smtp.gmail.com with ESMTPSA id t12sm55049otl.71.2019.10.30.07.04.56
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 30 Oct 2019 07:04:12 -0700 (PDT)
-Date: Wed, 30 Oct 2019 09:04:11 -0500
+ Wed, 30 Oct 2019 07:04:56 -0700 (PDT)
+Date: Wed, 30 Oct 2019 09:04:55 -0500
 From: Rob Herring <robh@kernel.org>
 To: Marcel Ziswiler <marcel@ziswiler.com>
 Subject: Re: [PATCH v2 3/5] dt-bindings: input: tochscreen: ad7879: generic
- node  names in example
-Message-ID: <20191030140411.GA4262@bogus>
+ node names in example
+Message-ID: <20191030140455.GA4544@bogus>
 References: <20191026090403.3057-1-marcel@ziswiler.com>
  <20191026090403.3057-3-marcel@ziswiler.com>
 MIME-Version: 1.0
@@ -60,8 +60,8 @@ Content-Disposition: inline
 In-Reply-To: <20191026090403.3057-3-marcel@ziswiler.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_070414_537804_FE15A0B8 
-X-CRM114-Status: GOOD (  10.72  )
+X-CRM114-CacheID: sfid-20191030_070502_532627_DBC10EF8 
+X-CRM114-Status: GOOD (  11.24  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
@@ -102,8 +102,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 26 Oct 2019 11:04:01 +0200, Marcel Ziswiler wrote:
+On Sat, Oct 26, 2019 at 11:04:01AM +0200, Marcel Ziswiler wrote:
 > From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+
+There's a typo in the subject.
+
 > 
 > Update example in ad7879 devicetree documentation to use generic touch
 > controller node names.
@@ -116,9 +119,6 @@ On Sat, 26 Oct 2019 11:04:01 +0200, Marcel Ziswiler wrote:
 > 
 >  .../devicetree/bindings/input/touchscreen/ad7879.txt          | 4 ++--
 >  1 file changed, 2 insertions(+), 2 deletions(-)
-> 
-
-Acked-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
