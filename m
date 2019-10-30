@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C606E98AC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 10:02:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C195E98B3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 10:02:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,73 +11,74 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=aLzPDw3DHRUJV2Y6fSwILNDTmSzt5MTNxc0HkpS8G/0=; b=QtuMW4e09nMR5peOYYodlx97Fg
-	2o743bmSOdgRKkDCuXayE2qSykw2fKnXSQYpihj64OVjpirrLm2Wti0e8miHi89PzD6g0MVFSGS/Y
-	vAXQrBMe7AZoQdyTYvVIS0ZtE2whhxCzT9DHOCOGaFrsX5HScswKrTjOOGmC7GCiluR3L3vKqAtjN
-	iLsO33GqKNc8OP4S+YPGyr48xQwBpRaPkiud9FFP8TJeBlZfmeM7P+WwLh/zZTkYSE1HzYn4p1Olj
-	8fmaDze9mzF8Ta0cOzAc6wKSwVnyjYy9CvntUEP7/thqRpjc4ozT4vOu2PWJXme/5Yyma9LMcaEq2
-	nkpi5aKg==;
+	bh=kN63HQ3k2G1AKYOg8EJBx/0BhIKGSYOY/8mF55kyS5o=; b=rVgZz1mev1TIC3uziezAc2cKKK
+	Mq/Md1gc+lC5SyJ2942UxU3g5ihnERAbeN6wALdQ+3auryLLrlegw/1bUrVkJ6QHcxdh3zevEl/bq
+	hmS+E0C++Ci4HoLMQKOKfFhwnuhSipgaN1M1/QN75erblAHYuiovGhcSBnawu7BCPuWHvBA5p/Ug7
+	j9XTL7m/nFlJvTRsC/5p50h+aY8a+TTXY+HwINYYkavtJbsVzncLdG8hD2d0sfpNsV34lzBgYT7t5
+	BPptulZ7l51p87rXLXN3/0BY/703FQN4Xztbm1vuCR2G/1u0WSxaaadl/YkmuVvGYRj/171xgToSP
+	WmTnT/LQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPjs2-0003tV-Fw; Wed, 30 Oct 2019 09:02:26 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1iPjsN-0004BN-CI; Wed, 30 Oct 2019 09:02:47 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPjra-0003j4-Cd
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 09:02:00 +0000
-Received: by mail-pl1-x644.google.com with SMTP id q16so682865pll.11
+ id 1iPjri-0003qb-PY
+ for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 09:02:09 +0000
+Received: by mail-pg1-x541.google.com with SMTP id p12so1043773pgn.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 30 Oct 2019 02:01:58 -0700 (PDT)
+ Wed, 30 Oct 2019 02:02:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=m5azgLhd2I2E3q9JQtIgUVQ0suPVCkYbQEeRBm5oMb8=;
- b=SNIJd0jrHsBMX6/ZKZfmY+w36WI2FQ8qqZCU7AAOSX1m1BH+waTBtt4HsR5Cpitl0M
- qizjCUyqfRXUfN6QTVJOMhqIJjxSn2xIGAaLdkeydUjLLMvQqr564H7wMctcKfSwSKhI
- 34pcDje4oDfteKOd0sOIWEPkpGduCiO9uBJes8AEfdXJj//H+RJxVEhKME1VjEfcglcv
- bQtYVMecgFVUuv8CqgXp3WMq/wv1mpqGjiGcc+F8WXGpzrls96q4j9uVNmvQtTjNZqOy
- xRH30D1vP/r22R/QtbgSOmLCKl/U61AlaG9mLcczOCemky44THQcAFq/cMwg0aH4OZ4p
- j7dQ==
+ bh=19R5LsKrbgqwghaZ71mmjHUlNxFRBymDHjBQo6p8lc4=;
+ b=iXm81CQavjLlHdERzGPrpTTyW7r5NcqLhXFQ1WTyFwd+Z6701Mb2qRcRfg5NKqcz9T
+ nzePMn/HZp7MECls2uqe67R5z7/Kt84ihDs9n0aseUOZhymnypq1pNIRqiT6x7e9JMi5
+ 4P8nxqOnOnymKHdeojgbnKk9W9P10K/gCNd76px0xlCr0Ok7i7BigOn/D99Lu6x9cEM2
+ khUU9lr8+DL784zXy36KHdzoAVcwpDpoQdx2Ya9i5v1E+7QCJ48ShqIcdLbdKF5YSSGz
+ j8OaVO4qQAyXo1Uzd5vKUwAscz2pFh4nZdgUkthhf4AWXGYlWJO6Kb6enL6DZnyYynGq
+ soWA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=m5azgLhd2I2E3q9JQtIgUVQ0suPVCkYbQEeRBm5oMb8=;
- b=PjkmXjDPU4O8UkE+YzSRhFacDbIAGS5jazfPVZ1L4xKCIgWnYTLQxY+XRV4c+poh2C
- CRsqQAD++Y0YoDksUnUd8PQwSWp0RiFEsSkY2RfPgRrqxoXUkAm3u/ZLffNwxbR/yrpK
- RAei52ojOWAW28Bui2LC8Bl4TVPx891E9F1wR3uzvrZNKYVS/XUDbuOEMVq5/P2ajI1+
- /aQuK8Wdhd86oCCeopqM6Pbvv0rxgtuCRqcPZ3e9K5ePzMvgRZm6bJtTJ4EJdI5E9sE7
- RGUS5kZR/C3nRleGZrdVhp53IKLnm015VEm51H0h1JngtFjVDABZyRFcb7e0puI3eyZK
- OWxQ==
-X-Gm-Message-State: APjAAAUnvjlrl6M+O4q5cKIeOOHkXcJjRnaVWmLWxylajQZQttBusUn8
- dZS+Qdrw+bUaaR7XcvrEhS3w
-X-Google-Smtp-Source: APXvYqx1+RxRWncZTcuyUZhz6kgWlf5fD+XfO4AMeFborkT4X05rfAgRFXHGr0HdkiWpGhfJT+G4fg==
-X-Received: by 2002:a17:902:d891:: with SMTP id
- b17mr3445548plz.310.1572426117078; 
- Wed, 30 Oct 2019 02:01:57 -0700 (PDT)
+ bh=19R5LsKrbgqwghaZ71mmjHUlNxFRBymDHjBQo6p8lc4=;
+ b=Xl65cXgoqTV5PMEUl3YqPCMkgEydpxJbamDJmEfPndsl3nEpegNmEBYxnYIvNFujDm
+ SV8mkhJvI6RtwHU8aMS4DpLbepga3WfCdHwQH+lGk8YhJEoKJJ4fsf8HP6WHNFSu1Kzr
+ Cpj0JrZFo3AEo75Al8E2/X8OwXqPlOtvS7CkgdCF3OHAYQ0a5QWKyTcBVAPOxmhi5NgW
+ iKuHxjBS1XBe2rsXXSwNPzoUonNJQfM2+RrzSvBcwhAtoaD15y2/dqtbwmZMMYgm4DtM
+ MYOJIEM8RBzEYbDH+WctipQEg5nUkzYwc0VzdrO62eGXsFQahLCBnW4pGfXTi6eJkqCr
+ UP9w==
+X-Gm-Message-State: APjAAAWkWvWovqxGIyOIZRYU7bju1FmkFWU2gtkXYTWR7jOmCnF34ljP
+ Jfbfg2qrZ2CT4sTBfFNp0MIj+BdNRw==
+X-Google-Smtp-Source: APXvYqwUuGARa9qA1Xv26SDwtPBHlu97DYP79Xh26qXZ4IpI9ZV/Bzj19v7ntAvjvWo3KKyAV/P64g==
+X-Received: by 2002:a17:90a:a598:: with SMTP id
+ b24mr12829604pjq.46.1572426125350; 
+ Wed, 30 Oct 2019 02:02:05 -0700 (PDT)
 Received: from localhost.localdomain
  ([2409:4072:618e:77d9:c9fa:423a:3851:8df4])
- by smtp.gmail.com with ESMTPSA id g24sm2070351pfi.81.2019.10.30.02.01.48
+ by smtp.gmail.com with ESMTPSA id g24sm2070351pfi.81.2019.10.30.02.01.57
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 30 Oct 2019 02:01:56 -0700 (PDT)
+ Wed, 30 Oct 2019 02:02:04 -0700 (PDT)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: shawnguo@kernel.org,
 	s.hauer@pengutronix.de,
 	robh+dt@kernel.org
-Subject: [PATCH v2 1/4] dt-bindings: leds: Document commonly used LED triggers
-Date: Wed, 30 Oct 2019 14:31:21 +0530
-Message-Id: <20191030090124.24900-2-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v2 2/4] dt-bindings: arm: Add devicetree binding for Thor96
+ Board
+Date: Wed, 30 Oct 2019 14:31:22 +0530
+Message-Id: <20191030090124.24900-3-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191030090124.24900-1-manivannan.sadhasivam@linaro.org>
 References: <20191030090124.24900-1-manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_020158_561826_162E2D39 
-X-CRM114-Status: GOOD (  10.11  )
+X-CRM114-CacheID: sfid-20191030_020206_898028_99641245 
+X-CRM114-Status: GOOD (  10.70  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -99,61 +100,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dan Murphy <dmurphy@ti.com>, devicetree@vger.kernel.org,
- Pavel Machek <pavel@ucw.cz>, linux-kernel@vger.kernel.org,
- darshak.patel@einfochips.com, Jacek Anaszewski <jacek.anaszewski@gmail.com>,
- linux-imx@nxp.com, kernel@pengutronix.de,
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ darshak.patel@einfochips.com, linux-imx@nxp.com, kernel@pengutronix.de,
  Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, festevam@gmail.com,
- linux-leds@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- prajose.john@einfochips.com
+ linux-arm-kernel@lists.infradead.org, prajose.john@einfochips.com
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This commit documents the LED triggers used commonly in the SoCs. Not
-all triggers are documented as some of them are very application specific.
-Most of the triggers documented here are currently used in devicetrees
-of many SoCs.
+Add devicetree binding for Thor96 Board from Einfochips. This board is
+one of the 96Boards Consumer Edition platform powered by NXP i.MX8MQ SoC.
 
-Cc: Jacek Anaszewski <jacek.anaszewski@gmail.com>
-Cc: Pavel Machek <pavel@ucw.cz>
-Cc: Dan Murphy <dmurphy@ti.com>
-Cc: linux-leds@vger.kernel.org
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Reviewed-by: Marco Felsch <m.felsch@pengutronix.de>
+Acked-by: Rob Herring <robh@kernel.org>
 ---
- .../devicetree/bindings/leds/common.txt         | 17 +++++++++++++++++
- 1 file changed, 17 insertions(+)
+ Documentation/devicetree/bindings/arm/fsl.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/leds/common.txt b/Documentation/devicetree/bindings/leds/common.txt
-index 9fa6f9795d50..2a6806161590 100644
---- a/Documentation/devicetree/bindings/leds/common.txt
-+++ b/Documentation/devicetree/bindings/leds/common.txt
-@@ -55,6 +55,23 @@ Optional properties for child nodes:
-      "timer" - LED flashes at a fixed, configurable rate
-      "pattern" - LED alters the brightness for the specified duration with one
-                  software timer (requires "led-pattern" property)
-+     "mmc[N]" - LED indicates [N]th MMC storage activity
-+     "flash" - LED indicates camera flash state
-+     "torch" - LED indicates camera torch state
-+     "audio-mute" - LED indicates audio mute state
-+     "audio-micmute" - LED indicates mic mute state
-+     "bluetooth-power" - LED indicates bluetooth power state
-+     "usb-gadget" - LED indicates USB gadget activity
-+     "usb-host" - LED indicates USB host activity
-+     "mtd" - LED indicates MTD memory activity
-+     "nand-disk" - LED indicates NAND memory activity (deprecated),
-+                  in new implementations use "mtd"
-+     "disk-read" - LED indicates disk read activity
-+     "disk-write" - LED indicates disk write activity
-+     "none" - No trigger assigned to the LED. This is the default mode
-+              if trigger is absent
-+     "cpu" - LED indicates activity of all CPUs
-+     "cpu[N]" - LED indicates activity of [N]th CPU
- 
- - led-pattern : Array of integers with default pattern for certain triggers.
-                 Each trigger may parse this property differently:
+diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
+index 1b4b4e6573b5..8016174d5e49 100644
+--- a/Documentation/devicetree/bindings/arm/fsl.yaml
++++ b/Documentation/devicetree/bindings/arm/fsl.yaml
+@@ -239,6 +239,7 @@ properties:
+         items:
+           - enum:
+               - boundary,imx8mq-nitrogen8m # i.MX8MQ NITROGEN Board
++              - einfochips,imx8mq-thor96  # i.MX8MQ Thor96 Board
+               - fsl,imx8mq-evk            # i.MX8MQ EVK Board
+               - purism,librem5-devkit     # Purism Librem5 devkit
+               - solidrun,hummingboard-pulse # SolidRun Hummingboard Pulse
 -- 
 2.17.1
 
