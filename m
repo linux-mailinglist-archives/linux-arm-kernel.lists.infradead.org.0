@@ -2,91 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28153E98BA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 10:03:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C5C8E98CE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 10:04:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=eRj2XAYE6yHAXp6QKNvDE9N7LDA6Q83VVtyuQMf5Bu4=; b=fgj6+tKmOGpsZZWqpIE3HAY1/p
-	gbkLhRLdYXC8Y9iiu2ymd7LYPGdLxOUHkKhTfEUwlLyxLBB16xDbc3GQzK/e/OYw7HPctuIVCuWZZ
-	bxQxijfFqNc9tK2vs99EIeRcJl61aPhg3YWmGpPqwKTTEVA3bTijku9kyZMJ22kPUzY44tcjgJXq/
-	R6ngBVFXUR63NNycH9sX8I0u9Llqg2cpYR6mplgJ0zXaxpbtPV4lLWmNP13dCo8mjIvViCbDrFGBR
-	lB0HCZMjFNtQ/R1bYHWw6u9806UgpdzQY3Vda17tdUHueaPxI4Tm7NLsBFs2TsKj0+4umUrwXfOwa
-	sMxMmQsA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dwHpi6NbPezGDduS9PgYlPgCLRucZlTyOZLAINib7c8=; b=p8BqMAMbaGY/DC
+	vkf9yufeLOzDz38fEInZWPuEXG4M/aUA7Y1dC4Mc23neEBlHuwACcLuiAhHO0sFx3Qjyq3xgBAcri
+	hYXKlCh2q6uUywW2ohc9BF7jWDr/2uSaby8plIKu2QToD18Z9q7LftvjqzmyFDWbOTNC+cFfFHKJJ
+	Oa4DtANSlIPPSO26NEXZPjNnEoWG2aslqalJtdw0Az5Br3jSeaNL/JQHEe2WTOmRqZXunvX29xbIl
+	SJt1RqG7eM9P6KmZdSQ6ce3xeo7XZLf3vSYyuH5gqm3MBDGcPrHgnAvjEZP7XRcJbpRmACOxi4XqS
+	oISwcrBww8ycTPE4FSKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPjtC-0004zZ-BW; Wed, 30 Oct 2019 09:03:38 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iPjtw-0005Ll-Pq; Wed, 30 Oct 2019 09:04:24 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPjs5-0004BQ-3S
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 09:02:32 +0000
-Received: by mail-pg1-x541.google.com with SMTP id w3so1045295pgt.5
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 30 Oct 2019 02:02:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=LAPsnGt1pYtfbduk+JeNTkq03C0NkkTkxfb05DzEQJ0=;
- b=OjUstP+ZDVdOGkJvM7Td/6qBjFXM/KJF6OJzUcEP7TyIJ4ZvUAn9T7yD8XjYxDNEJN
- KHjfvWijYiNtqenb9bwa4Sd1uGk/jU8FssM6dooJ4yDHUi45cn17lSpLQFbVew2amgW1
- FPa8iEp/VeagMZARlx0/Hkpd+Tt/g031BieCjXyxwn2gsco2zYNWb50cT4woJ+ovMB3Z
- fzA4VRtI6KPvbdbp/WHauQOggzc/Pzxm45n53SBGlLJ/X4cN+ny0thBTdo/0mLdX21nN
- udm+afipjTPSHKncaghH/3F0Zwzwekn1z/WYsofoSyAtuLp7QCy8b/4kPAXWhs5jUQrf
- Bfnw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=LAPsnGt1pYtfbduk+JeNTkq03C0NkkTkxfb05DzEQJ0=;
- b=QziXSYUOuokYdGbTjMrJ1lVDIOUlFEXC4u9LNW2PClYh835EvbktgFCiUpT6SQp1Sh
- W0y6GYrYmTu8jwD5xNR5xq3SAlPEoHazl9o2pg6by4/GyIt+ukdEq2LK2z0tvqHACysE
- oT0POwBW25Yji/qlQV4UOUWadPkVlwGDgMN4wyhRTfE+XcQNPoMa10T/JnpTJ1ibGJJg
- ZEG9tiC83DDy0Fa1N21AThfqhlRHutq7+Xm64p6aw+iYL7bnIXoq4CLPbEgQvSGDiLEx
- hzf6b4cPW0h/I3rXWmgH/QIlLHkRj6SRm6SAjv2wzD7XA3c9Kuss+KfdhZpS2ia8+ypc
- XGkA==
-X-Gm-Message-State: APjAAAW8hZkc7TX+/FUF4GXaU3+EnXrfotDOXck2jJCZrluHDieznzLI
- WXzInxhJ0n1QfypCwqXnButi
-X-Google-Smtp-Source: APXvYqxsyssWpqE3cm5I9+vC1DFWm8h7Zo1nOKgSKfAdxUIWWIrp9fIwVWU5LGEWc9pZGi9gWdp/CA==
-X-Received: by 2002:a63:6d02:: with SMTP id i2mr33658547pgc.64.1572426146740; 
- Wed, 30 Oct 2019 02:02:26 -0700 (PDT)
-Received: from localhost.localdomain
- ([2409:4072:618e:77d9:c9fa:423a:3851:8df4])
- by smtp.gmail.com with ESMTPSA id g24sm2070351pfi.81.2019.10.30.02.02.15
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 30 Oct 2019 02:02:26 -0700 (PDT)
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: shawnguo@kernel.org,
-	s.hauer@pengutronix.de,
-	robh+dt@kernel.org
-Subject: [PATCH v2 4/4] mtd: spi-nor: Add support for w25q256jw
-Date: Wed, 30 Oct 2019 14:31:24 +0530
-Message-Id: <20191030090124.24900-5-manivannan.sadhasivam@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191030090124.24900-1-manivannan.sadhasivam@linaro.org>
-References: <20191030090124.24900-1-manivannan.sadhasivam@linaro.org>
+ id 1iPjtW-0005Ki-Ve; Wed, 30 Oct 2019 09:04:00 +0000
+X-UUID: f858ac9b8e734a1392a2b7aad1f8a0e2-20191030
+X-UUID: f858ac9b8e734a1392a2b7aad1f8a0e2-20191030
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <luhua.xu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1943393116; Wed, 30 Oct 2019 01:04:12 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 30 Oct 2019 02:03:49 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 30 Oct 2019 17:03:47 +0800
+Received: from localhost.localdomain (10.15.20.246) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 30 Oct 2019 17:03:47 +0800
+From: Luhua Xu <luhua.xu@mediatek.com>
+To: Mark Brown <broonie@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH V2] spi: add power control when set_cs
+Date: Wed, 30 Oct 2019 17:03:54 +0800
+Message-ID: <1572426234-30019-1-git-send-email-luhua.xu@mediatek.com>
+X-Mailer: git-send-email 2.6.4
+MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_020229_382228_178FFF85 
-X-CRM114-Status: GOOD (  15.03  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191030_020359_030916_1DA7B890 
+X-CRM114-Status: UNSURE (   9.15  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,57 +71,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Richard Weinberger <richard@nod.at>,
- Marek Vasut <marek.vasut@gmail.com>, Miquel Raynal <miquel.raynal@bootlin.com>,
- David Woodhouse <dwmw2@infradead.org>,
- Tudor Ambarus <tudor.ambarus@microchip.com>, linux-kernel@vger.kernel.org,
- Vignesh Raghavendra <vigneshr@ti.com>, darshak.patel@einfochips.com,
- linux-mtd@lists.infradead.org, linux-imx@nxp.com, kernel@pengutronix.de,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- Brian Norris <computersforpeace@gmail.com>, festevam@gmail.com,
- linux-arm-kernel@lists.infradead.org, prajose.john@einfochips.com
-MIME-Version: 1.0
+Cc: wsd_upstream@mediatek.com, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, Luhua Xu <luhua.xu@mediatek.com>,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add MTD support for w25q256jw SPI NOR chip from Winbond. This chip
-supports dual/quad I/O mode with 512 blocks of memory organized in
-64KB sectors. In addition to this, there is also small 4KB sectors
-available for flexibility. The device has been validated using Thor96
-board.
+From: "Luhua Xu" <luhua.xu@mediatek.com>
 
-Cc: Marek Vasut <marek.vasut@gmail.com>
-Cc: Tudor Ambarus <tudor.ambarus@microchip.com>
-Cc: David Woodhouse <dwmw2@infradead.org>
-Cc: Brian Norris <computersforpeace@gmail.com>
-Cc: Miquel Raynal <miquel.raynal@bootlin.com>
-Cc: Richard Weinberger <richard@nod.at>
-Cc: Vignesh Raghavendra <vigneshr@ti.com>
-Cc: linux-mtd@lists.infradead.org
-Signed-off-by: Darshak Patel <darshak.patel@einfochips.com>
-[Mani: cleaned up for upstream]
-Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+As to set_cs takes effect immediately, power spi
+is needed when setup spi.
+
+Cc: Mark Brown <broonie@kernel.org>
+Signed-off-by: Luhua Xu <luhua.xu@mediatek.com>
 ---
- drivers/mtd/spi-nor/spi-nor.c | 2 ++
- 1 file changed, 2 insertions(+)
+V2:
+- move set_cs PM control from .set_cs callback in
+  vendor driver to spi_setup in spi framework.
 
-diff --git a/drivers/mtd/spi-nor/spi-nor.c b/drivers/mtd/spi-nor/spi-nor.c
-index 1d8621d43160..2c25b371d9f0 100644
---- a/drivers/mtd/spi-nor/spi-nor.c
-+++ b/drivers/mtd/spi-nor/spi-nor.c
-@@ -2482,6 +2482,8 @@ static const struct flash_info spi_nor_ids[] = {
- 	{ "w25q256", INFO(0xef4019, 0, 64 * 1024, 512, SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ) },
- 	{ "w25q256jvm", INFO(0xef7019, 0, 64 * 1024, 512,
- 			     SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ) },
-+	{ "w25q256jw", INFO(0xef6019, 0, 64 * 1024, 512,
-+			     SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ) },
- 	{ "w25m512jv", INFO(0xef7119, 0, 64 * 1024, 1024,
- 			SECT_4K | SPI_NOR_QUAD_READ | SPI_NOR_DUAL_READ) },
+
+ drivers/spi/spi.c | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/spi/spi.c b/drivers/spi/spi.c
+index f9502db..19007e0 100644
+--- a/drivers/spi/spi.c
++++ b/drivers/spi/spi.c
+@@ -3091,7 +3091,20 @@ int spi_setup(struct spi_device *spi)
+ 	if (spi->controller->setup)
+ 		status = spi->controller->setup(spi);
  
+-	spi_set_cs(spi, false);
++	if (spi->controller->auto_runtime_pm && spi->controller->set_cs) {
++		status = pm_runtime_get_sync(spi->controller->dev.parent);
++		if (status < 0) {
++			pm_runtime_put_noidle(spi->controller->dev.parent);
++			dev_err(&spi->controller->dev, "Failed to power device: %d\n",
++				status);
++			return status;
++		}
++		spi_set_cs(spi, false);
++		pm_runtime_mark_last_busy(spi->controller->dev.parent);
++		pm_runtime_put_autosuspend(spi->controller->dev.parent);
++	} else {
++		spi_set_cs(spi, false);
++	}
+ 
+ 	if (spi->rt && !spi->controller->rt) {
+ 		spi->controller->rt = true;
 -- 
-2.17.1
+2.6.4
 
 
 _______________________________________________
