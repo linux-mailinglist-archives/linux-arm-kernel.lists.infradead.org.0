@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6218AE9F4B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 16:42:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80622E9F4C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 16:42:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=PHvKN1SI7FmoN1Fhw4/wBsUbMIY7CXwt9INMr7oJ4dM=; b=fvppq4VFrddHXqgBxsjLCqwUsX
-	jFrknE3JyWEsLqgZiJvat7VnDFMVqMRVHduD+aCTthRNFooX0wcD/rt19PjBTuPoOYTcS0jCb5HmY
-	JGy/s51Lx4tWKlvtoVYOtQOwS8Hj53h82lB2QVB/mX9bmsNMVZ6paD/hc/1RkQs0Y0b7LuKUmfCJ0
-	fM1oOilJRX30OrUDA/7OoyuUKN8aqiQ+Kx7LYDuSzMvBuek7pJqLigbAKPBgOpWHsBnYKUrX3kpPi
-	tG+FTSR+mhaK4a/cYVKUtcNcC0xH10hdv7bWNaKdtian0hvIy339bfLNO5RIbpX54ewUYDSuozX56
-	DTjV2l2w==;
+	bh=tOIL+GJQvhlqNY7LScyjGz/J9cZ97CRuad5Ql7YKTVM=; b=eQR/WPfPGlDiLmZ58Bm88R/rkq
+	iAUP71T0/S893QLHvtyGn6lzKvBsa37rOxPFRR9D9h2uj3dXGMFXvYBkCvbxxJY/NfEoBcK54SWWr
+	jIiO8Rd9afw3v9BUXxinsvnHoxDvX5t8DZ8+ws6Naf7jyCqQfcsiWcj7BpMEOrPQA137A44gQC9YO
+	cdNFfbtTj8HqLv06uwdeqUg2EnNyDOHH1t6zW1UgqphLxMHn0PgKPiepGmBWVXByaO5zpNQxd5Gq8
+	sbE8RgXr6yLiKKFqnq4pEqEVNfs83ba9rR+gqCOt1F/oNUhJmczeosFVIOo1WCO6SQiaZra1LfSH/
+	6DXW5tbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPq6y-0006Zl-5U; Wed, 30 Oct 2019 15:42:16 +0000
+	id 1iPq7O-0006r9-0p; Wed, 30 Oct 2019 15:42:42 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPq6o-0006ZK-AV
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 15:42:07 +0000
+ id 1iPq7E-0006q6-1T
+ for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 15:42:33 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BADFF4F5;
- Wed, 30 Oct 2019 08:42:05 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3FD927AD;
+ Wed, 30 Oct 2019 08:42:31 -0700 (PDT)
 Received: from e107158-lin.cambridge.arm.com (e107158-lin.cambridge.arm.com
  [10.1.195.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 67D883F6C4;
- Wed, 30 Oct 2019 08:42:03 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3CE883F6C4;
+ Wed, 30 Oct 2019 08:42:30 -0700 (PDT)
 From: Qais Yousef <qais.yousef@arm.com>
 To: Thomas Gleixner <tglx@linutronix.de>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Subject: [PATCH 01/12] arm64: hibernate.c: create a new function to handle
- cpu_up(sleep_cpu)
-Date: Wed, 30 Oct 2019 15:38:26 +0000
-Message-Id: <20191030153837.18107-2-qais.yousef@arm.com>
+Subject: [PATCH 09/12] firmware: psci: Replace cpu_up/down with
+ device_online/offline
+Date: Wed, 30 Oct 2019 15:38:34 +0000
+Message-Id: <20191030153837.18107-10-qais.yousef@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191030153837.18107-1-qais.yousef@arm.com>
 References: <20191030153837.18107-1-qais.yousef@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_084206_446027_86F76FE2 
-X-CRM114-Status: GOOD (  15.32  )
+X-CRM114-CacheID: sfid-20191030_084232_122708_114EE2EE 
+X-CRM114-Status: GOOD (  12.86  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -62,121 +62,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-kernel@vger.kernel.org,
- Steve Capper <steve.capper@arm.com>,
- "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Pavankumar Kondeti <pkondeti@codeaurora.org>,
- Zhenzhong Duan <zhenzhong.duan@oracle.com>,
- Nicholas Piggin <npiggin@gmail.com>, Ingo Molnar <mingo@kernel.org>,
- Richard Fontana <rfontana@redhat.com>, James Morse <james.morse@arm.com>,
- Josh Poimboeuf <jpoimboe@redhat.com>, Jiri Kosina <jkosina@suse.cz>,
- Will Deacon <will@kernel.org>, Qais Yousef <qais.yousef@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Qais Yousef <qais.yousef@arm.com>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In preparation to make cpu_up/down private - move the user in arm64
-hibernate.c to use a new generic function that provides what arm64
-needs.
+The core device API performs extra housekeeping bits that are missing
+from directly calling cpu_up/down.
+
+See commit a6717c01ddc2 ("powerpc/rtas: use device model APIs and
+serialization during LPM") for an example description of what might go
+wrong.
+
+This also prepares to make cpu_up/down a private interface for anything
+but the cpu subsystem.
 
 Signed-off-by: Qais Yousef <qais.yousef@arm.com>
-CC: Catalin Marinas <catalin.marinas@arm.com>
-CC: Will Deacon <will@kernel.org>
-CC: Steve Capper <steve.capper@arm.com>
-CC: Richard Fontana <rfontana@redhat.com>
-CC: James Morse <james.morse@arm.com>
 CC: Mark Rutland <mark.rutland@arm.com>
-CC: Thomas Gleixner <tglx@linutronix.de>
-CC: Josh Poimboeuf <jpoimboe@redhat.com>
-CC: Ingo Molnar <mingo@kernel.org>
-CC: "Peter Zijlstra (Intel)" <peterz@infradead.org>
-CC: Nicholas Piggin <npiggin@gmail.com>
-CC: Daniel Lezcano <daniel.lezcano@linaro.org>
-CC: Jiri Kosina <jkosina@suse.cz>
-CC: Pavankumar Kondeti <pkondeti@codeaurora.org>
-CC: Zhenzhong Duan <zhenzhong.duan@oracle.com>
+CC: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 CC: linux-arm-kernel@lists.infradead.org
 CC: linux-kernel@vger.kernel.org
 ---
+ drivers/firmware/psci/psci_checker.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
-AFAICT we can't use device_online() directly here because suspend happens via
-cpu_down() not device_offline(). If it is actually safe to use device_online()
-then that would be simpler than creating the new function. Although the
-operation seems generic enough to me and could benefit another arch user in the
-future so the new function makes sense.
-
-
- arch/arm64/kernel/hibernate.c | 13 +++++--------
- include/linux/cpu.h           |  1 +
- kernel/cpu.c                  | 14 ++++++++++++++
- 3 files changed, 20 insertions(+), 8 deletions(-)
-
-diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
-index e0a7fce0e01c..3b178055022f 100644
---- a/arch/arm64/kernel/hibernate.c
-+++ b/arch/arm64/kernel/hibernate.c
-@@ -166,14 +166,11 @@ int arch_hibernation_header_restore(void *addr)
- 		sleep_cpu = -EINVAL;
- 		return -EINVAL;
+diff --git a/drivers/firmware/psci/psci_checker.c b/drivers/firmware/psci/psci_checker.c
+index 6a445397771c..9e4b1bade659 100644
+--- a/drivers/firmware/psci/psci_checker.c
++++ b/drivers/firmware/psci/psci_checker.c
+@@ -83,8 +83,9 @@ static unsigned int down_and_up_cpus(const struct cpumask *cpus,
+ 	cpumask_clear(offlined_cpus);
+ 
+ 	/* Try to power down all CPUs in the mask. */
++	lock_device_hotplug();
+ 	for_each_cpu(cpu, cpus) {
+-		int ret = cpu_down(cpu);
++		int ret = device_offline(get_cpu_device(cpu));
+ 
+ 		/*
+ 		 * cpu_down() checks the number of online CPUs before the TOS
+@@ -116,7 +117,7 @@ static unsigned int down_and_up_cpus(const struct cpumask *cpus,
+ 
+ 	/* Try to power up all the CPUs that have been offlined. */
+ 	for_each_cpu(cpu, offlined_cpus) {
+-		int ret = cpu_up(cpu);
++		int ret = device_online(get_cpu_device(cpu));
+ 
+ 		if (ret != 0) {
+ 			pr_err("Error occurred (%d) while trying "
+@@ -126,6 +127,7 @@ static unsigned int down_and_up_cpus(const struct cpumask *cpus,
+ 			cpumask_clear_cpu(cpu, offlined_cpus);
+ 		}
  	}
--	if (!cpu_online(sleep_cpu)) {
--		pr_info("Hibernated on a CPU that is offline! Bringing CPU up.\n");
--		ret = cpu_up(sleep_cpu);
--		if (ret) {
--			pr_err("Failed to bring hibernate-CPU up!\n");
--			sleep_cpu = -EINVAL;
--			return ret;
--		}
-+
-+	ret = hibernation_bringup_sleep_cpu(sleep_cpu);
-+	if (ret) {
-+		sleep_cpu = -EINVAL;
-+		return ret;
- 	}
++	unlock_device_hotplug();
  
- 	resume_hdr = *hdr;
-diff --git a/include/linux/cpu.h b/include/linux/cpu.h
-index 88dc0c653925..3b1fbe192989 100644
---- a/include/linux/cpu.h
-+++ b/include/linux/cpu.h
-@@ -87,6 +87,7 @@ int cpu_up(unsigned int cpu);
- void notify_cpu_starting(unsigned int cpu);
- extern void cpu_maps_update_begin(void);
- extern void cpu_maps_update_done(void);
-+extern int hibernation_bringup_sleep_cpu(unsigned int sleep_cpu);
- 
- #else	/* CONFIG_SMP */
- #define cpuhp_tasks_frozen	0
-diff --git a/kernel/cpu.c b/kernel/cpu.c
-index e1967e9eddc2..219f9033f438 100644
---- a/kernel/cpu.c
-+++ b/kernel/cpu.c
-@@ -1197,6 +1197,20 @@ int cpu_up(unsigned int cpu)
- }
- EXPORT_SYMBOL_GPL(cpu_up);
- 
-+int hibernation_bringup_sleep_cpu(unsigned int sleep_cpu)
-+{
-+	int ret;
-+
-+	if (!cpu_online(sleep_cpu)) {
-+		pr_info("Hibernated on a CPU that is offline! Bringing CPU up.\n");
-+		ret = cpu_up(sleep_cpu);
-+		if (ret) {
-+			pr_err("Failed to bring hibernate-CPU up!\n");
-+			return ret;
-+		}
-+	}
-+}
-+
- #ifdef CONFIG_PM_SLEEP_SMP
- static cpumask_var_t frozen_cpus;
- 
+ 	/*
+ 	 * Something went bad at some point and some CPUs could not be turned
 -- 
 2.17.1
 
