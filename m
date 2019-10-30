@@ -2,75 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 956C6E9420
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 01:36:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F935E942A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 01:42:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4eYtJslctamPpntIAP/hGrO8+deHRVS4eaLFidNb6rs=; b=S93X/poHjm5fzg
-	NPr09D2PMWBQBpbq6BtXla3oUb75cCmPavDaL7n2N0l6EjIu0s1X1HHOIY+r+oNHIXZi4oQb9z6eK
-	usoQs3VhsJhFq6kknxJl44w0Rs/f36M4Ta8E1i8YgIAwMTnZ1oLaGj5QxZ53tBo09EYbpVBExUtag
-	qcgqJmciVvn3WVr60tub/3QTJnBmOlk+BoK9ynr2Coi7zSB+hP7TPzrlEZ/DRf6NiTOIgLOIailsB
-	Fz1kosU3IynzVQx5W7PtmkI6L1+OkBXQQF4G+SuqFJzpWx1yWSsoe7zlVa5jh1iC8ziUIQxVrz79z
-	Opf9jHOY1SZs0Bbnqklg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=wKoKfRCGmjNulriZ17y0S4pd+tPSrBywQnxXkNgkiGE=; b=L3Q
+	LgtyXKbB1lM0NTHJt5HN4TfdKSvEBYUsLCWmCJrsf8RVFVY9QlZyGrJcXnJ6H0OA+x7N16pQcV1IC
+	tqzFSh2S6VtE6y7gb5EmMNaypvHuNa1iYQ4Eh3TY7RwhgPoUIUurd9VGy0wd/e3sIC2htoFQIil01
+	+PnxLLjwPe/TxAjl6JcPqjai+x30lxXkzLWx9r41mxOrUbCuefcDkQQC/lNA3uHgxziSUuQaC9Sg4
+	ASDFKCfHBsV95RkBKcKRKPYYUihi+Lbbbga0DWvsxZBQi35Lcv3hSWLnPEo3LY544Y+35Q5+1+P1f
+	o+8J4EVVLuApHxwZNkQiYxegOKEmx9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPbyo-0001oa-Kp; Wed, 30 Oct 2019 00:36:54 +0000
-Received: from bilbo.ozlabs.org ([2401:3900:2:1::2] helo=ozlabs.org)
+	id 1iPc3q-0003fY-9C; Wed, 30 Oct 2019 00:42:06 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPbyf-0001mh-0V
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 00:36:47 +0000
-Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by mail.ozlabs.org (Postfix) with ESMTPSA id 472qJX3hTfz9sPc;
- Wed, 30 Oct 2019 11:36:28 +1100 (AEDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ellerman.id.au;
- s=201909; t=1572395789;
- bh=cULIR7FKewGoqcCdVz8c9GWUqTWBzH9vqip6TO04VUc=;
- h=From:To:Cc:Subject:In-Reply-To:References:Date:From;
- b=ZrnBz8u9UtK35OIBdIYRAEKio8qsnCeoIwPBgPl54K4vLbIV96JpIRijFpj2d6VB/
- 3yh38Zr83pyrrBKy1ob5pSFhYxjuOlDR0wxkT8j7sl+eURIwkfQTLhKOPMbjRLCHNq
- MPU6tRZ65hAlAqqvCFI2RrdLVQrG78Wr2+aweqLgfwKHT2b4iNG1L0VLagLCRgHq71
- 9Qowav3rgtSLYQrVlsSwHP5FNWVuKn5384n4lcPyxoq23HnVPJULVs58QCVxd2xxKS
- D2BpI2IuAS9K0kM2/GMwh2a5yxiVaLELSZ6BKELGQ4NYJ1J1dErqYrlReUBS6dnZ/y
- akJSpbqkFajEA==
-From: Michael Ellerman <mpe@ellerman.id.au>
-To: Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Christoph Hellwig <hch@infradead.org>
-Subject: Re: [PATCH 4/7] soc: fsl: qe: replace spin_event_timeout by
- readx_poll_timeout_atomic
-In-Reply-To: <a11aaeaa-7075-4ad0-aa26-d8d7eafa72f5@rasmusvillemoes.dk>
-References: <20191018125234.21825-1-linux@rasmusvillemoes.dk>
- <20191018125234.21825-5-linux@rasmusvillemoes.dk>
- <20191018160852.GA13036@infradead.org>
- <a11aaeaa-7075-4ad0-aa26-d8d7eafa72f5@rasmusvillemoes.dk>
-Date: Wed, 30 Oct 2019 11:36:27 +1100
-Message-ID: <87wocnf4s4.fsf@mpe.ellerman.id.au>
-MIME-Version: 1.0
+ id 1iPc3f-0003f4-FT
+ for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 00:41:57 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A41BD1A040E;
+ Wed, 30 Oct 2019 01:41:53 +0100 (CET)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 972831A03EF;
+ Wed, 30 Oct 2019 01:41:53 +0100 (CET)
+Received: from fsr-ub1864-112.ea.freescale.net
+ (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 30000205C7;
+ Wed, 30 Oct 2019 01:41:53 +0100 (CET)
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Viresh Kumar <viresh.kumar@linaro.org>
+Subject: [PATCH] cpufreq: Add user_min/max_freq
+Date: Wed, 30 Oct 2019 02:41:49 +0200
+Message-Id: <c222deda79ad334ff4edcbd49ddda248685c4ee1.1572395990.git.leonard.crestez@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_173645_268389_57E740C0 
-X-CRM114-Status: GOOD (  10.97  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191029_174155_796816_8889BA88 
+X-CRM114-Status: UNSURE (   9.07  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,56 +66,172 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Qiang Zhao <qiang.zhao@nxp.com>, linuxppc-dev@lists.ozlabs.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Li Yang <leoyang.li@nxp.com>
+Cc: Ulf Hansson <ulf.hansson@linaro.org>,
+ Saravana Kannan <saravanak@google.com>, linux-pm@vger.kernel.org,
+ Chanwoo Choi <cw00.choi@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>, Matthias Kaehlcke <mka@chromium.org>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Rasmus Villemoes <linux@rasmusvillemoes.dk> writes:
-> On 18/10/2019 18.08, Christoph Hellwig wrote:
->> On Fri, Oct 18, 2019 at 02:52:31PM +0200, Rasmus Villemoes wrote:
->>>  	/* wait for the QE_CR_FLG to clear */
->>> -	ret = spin_event_timeout((ioread32be(&qe_immr->cp.cecr) & QE_CR_FLG) == 0,
->>> -				 100, 0);
->>> -	/* On timeout (e.g. failure), the expression will be false (ret == 0),
->>> -	   otherwise it will be true (ret == 1). */
->>> +	ret = readx_poll_timeout_atomic(ioread32be, &qe_immr->cp.cecr, val, (val & QE_CR_FLG) == 0,
->> 
->> This creates an overly long line.
->
-> Yeah, readx_poll_timeout_atomic is a mouthful, and then one also has to
-> put in the name of the accessor... I'll wrap it when I respin the
-> series, thanks.
->
->> Btw, given how few users of spin_event_timeout we have it might be good
->> idea to just kill it entirely.
->
-> Maybe. That's for the ppc folks to comment on; the iopoll.h helpers are
-> not completely equivalent (because obviously they don't read tbl
-> directly).
+Current values in scaling_min_freq and scaling_max freq can change on
+the fly due to event such as thermal monitoring. This behavior is
+confusing for userspace and because once an userspace limit is written
+to scaling_min/max_freq it is not possible to read it back.
 
-AFAICS it was added by and only ever used by Freescale folks, most of
-whom have now moved on to other things.
+Introduce two new user_min/max_freq files which only contain the limits
+imposed by userspace, without any aggregation.
 
-I'd be happy to see it replaced with something generic.
+Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 
-I created an issue in our github to remind us to do that cleanup. Though
-in practice that probably just means we'll never get around to it:
+---
+This was motivated by these discussions:
 
-  https://github.com/linuxppc/issues/issues/280
+* https://patchwork.kernel.org/patch/11078475/#22805379
+* https://patchwork.kernel.org/patch/11171817/#22917099
 
-> Maybe the generic versions should be taught
-> spin_begin/spin_end/spin_cpu_relax so at least that part would be
-> drop-in replacement.
+Those threads are about devfreq but same issue applies to cpufreq as
+well. Let me know if this solution seems reasonable?
 
-That would be nice. Though TBH the intersection of platforms that use
-spin_event_timeout() and also define a non-empty spin_begin() etc. is
-close to if not zero.
+An alternative would be to make scaling_min/max_freq always read back
+the configured value and introduce new effective_min/max_freq files for
+the aggregate values. That might break existing users (though I'm not
+familiar with any).
 
-cheers
+ Documentation/admin-guide/pm/cpufreq.rst | 27 ++++++++++++++++++------
+ drivers/cpufreq/cpufreq.c                | 19 +++++++++++++++++
+ include/linux/pm_qos.h                   |  4 ++++
+ 3 files changed, 44 insertions(+), 6 deletions(-)
+
+diff --git a/Documentation/admin-guide/pm/cpufreq.rst b/Documentation/admin-guide/pm/cpufreq.rst
+index 0c74a7784964..734c01c1040e 100644
+--- a/Documentation/admin-guide/pm/cpufreq.rst
++++ b/Documentation/admin-guide/pm/cpufreq.rst
+@@ -309,21 +309,36 @@ are the following:
+ 
+ ``scaling_max_freq``
+ 	Maximum frequency the CPUs belonging to this policy are allowed to be
+ 	running at (in kHz).
+ 
+-	This attribute is read-write and writing a string representing an
+-	integer to it will cause a new limit to be set (it must not be lower
+-	than the value of the ``scaling_min_freq`` attribute).
++	This attribute is read-write: writing an integer will set a new limit
++	(just like ``user_max_freq``) while reading will show the current
++	limit (potentially affected by other system contraints such as thermal
++	throttling).
+ 
+ ``scaling_min_freq``
+ 	Minimum frequency the CPUs belonging to this policy are allowed to be
+ 	running at (in kHz).
+ 
+-	This attribute is read-write and writing a string representing a
+-	non-negative integer to it will cause a new limit to be set (it must not
+-	be higher than the value of the ``scaling_max_freq`` attribute).
++	This attribute is read-write: writing an integer will set a new limit
++	(just like ``user_min_freq``) while reading will show the current
++	limit (potentially affected by other system contraints).
++
++``user_max_freq``
++	Userspace contraint for the maximum frequency the CPUs belonging to
++	this policy are allowed to be running at (in kHz).
++
++	This attribute is read-write: writing an integer will set a new limit
++	and reading will show the last limit set by userspace.
++
++``user_min_freq``
++	Userspace contraint for minimum frequency the CPUs belonging to this
++	policy are allowed to be running at (in kHz).
++
++	This attribute is read-write: writing an integer will set a new limit
++	and reading will show the last limit set by userspace.
+ 
+ ``scaling_setspeed``
+ 	This attribute is functional only if the `userspace`_ scaling governor
+ 	is attached to the given policy.
+ 
+diff --git a/drivers/cpufreq/cpufreq.c b/drivers/cpufreq/cpufreq.c
+index 48a224a6b178..caefed0dac43 100644
+--- a/drivers/cpufreq/cpufreq.c
++++ b/drivers/cpufreq/cpufreq.c
+@@ -722,13 +722,28 @@ static ssize_t store_##file_name					\
+ 									\
+ 	ret = freq_qos_update_request(policy->object##_freq_req, val);\
+ 	return ret >= 0 ? count : ret;					\
+ }
+ 
++store_one(user_min_freq, min);
++store_one(user_max_freq, max);
+ store_one(scaling_min_freq, min);
+ store_one(scaling_max_freq, max);
+ 
++#undef show_one
++
++#define show_one(file_name, object)					\
++static ssize_t show_##file_name						\
++(struct cpufreq_policy *policy, char *buf)				\
++{									\
++	s32 val = freq_qos_get_request_value(policy->object##_freq_req);\
++	return sprintf(buf, "%d\n", val);				\
++}
++
++show_one(user_min_freq, min);
++show_one(user_max_freq, max);
++
+ /**
+  * show_cpuinfo_cur_freq - current CPU frequency as detected by hardware
+  */
+ static ssize_t show_cpuinfo_cur_freq(struct cpufreq_policy *policy,
+ 					char *buf)
+@@ -906,10 +921,12 @@ cpufreq_freq_attr_ro(related_cpus);
+ cpufreq_freq_attr_ro(affected_cpus);
+ cpufreq_freq_attr_rw(scaling_min_freq);
+ cpufreq_freq_attr_rw(scaling_max_freq);
+ cpufreq_freq_attr_rw(scaling_governor);
+ cpufreq_freq_attr_rw(scaling_setspeed);
++cpufreq_freq_attr_rw(user_min_freq);
++cpufreq_freq_attr_rw(user_max_freq);
+ 
+ static struct attribute *default_attrs[] = {
+ 	&cpuinfo_min_freq.attr,
+ 	&cpuinfo_max_freq.attr,
+ 	&cpuinfo_transition_latency.attr,
+@@ -919,10 +936,12 @@ static struct attribute *default_attrs[] = {
+ 	&related_cpus.attr,
+ 	&scaling_governor.attr,
+ 	&scaling_driver.attr,
+ 	&scaling_available_governors.attr,
+ 	&scaling_setspeed.attr,
++	&user_min_freq.attr,
++	&user_max_freq.attr,
+ 	NULL
+ };
+ 
+ #define to_policy(k) container_of(k, struct cpufreq_policy, kobj)
+ #define to_attr(a) container_of(a, struct freq_attr, attr)
+diff --git a/include/linux/pm_qos.h b/include/linux/pm_qos.h
+index e97c2e376889..90b147b7d7a3 100644
+--- a/include/linux/pm_qos.h
++++ b/include/linux/pm_qos.h
+@@ -310,7 +310,11 @@ int freq_qos_add_notifier(struct freq_constraints *qos,
+ 			  enum freq_qos_req_type type,
+ 			  struct notifier_block *notifier);
+ int freq_qos_remove_notifier(struct freq_constraints *qos,
+ 			     enum freq_qos_req_type type,
+ 			     struct notifier_block *notifier);
++static inline s32 freq_qos_get_request_value(struct freq_qos_request *req)
++{
++	return req->pnode.prio;
++}
+ 
+ #endif
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
