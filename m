@@ -2,56 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E6447E955C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 04:46:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F286E956A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 04:50:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Bq09zCWPOEeqPphuTLCI0J1EfCfdZRMmrYRgxP7DqXo=; b=XK0l/NUDnTYKdD
-	9kqIx+T4vu5E3aI4x/xzUp836ydoefp1Zk4iDen0noZz8vhQfL0Ujv0YgOwEy55sAV3x4vucMtEvX
-	nkL6nu1cXpAe5y1xXqwaYDU3dgG/xD6efGoqiEeSENrwwVm1phcRIxEAKGUQeuiS+D+wWoiNVOjUr
-	GNd18rmmDsLuOpTtbu62v/zNJYOWojD9Xkl52+COKeJaLUYQTZ992Ljnkfd8hBYsy3UOQV7JWfsog
-	bUGzFJbbI0w99fZD7hAzdASvFeqMQf9H7tVY1UF2/q5aj6kcIjq5GGvNW7hhJ+HoGW5USw5YA0fTX
-	gHQkng2Ls1b3JI037x9Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wclxVcQymXlI3laxAMbmTtj6mn/aW+I0MhfpiVI1J3o=; b=Oe/jmF0dYIoiXd
+	IVEVyFFpC6qPoqqoQiGkYcmyzMnOgbhcz4ZMkgT2QQqNH7mpjBE+/jOrXFj6ZD/l6+MgIMl9cAcn8
+	Bfl321RmFXi6Xg6u58/Yqr3HBPQjl45d39jUR1bbTMgpMtVXlnqMsHrhXn0M2p2UWVBrKRcJoS69x
+	oTUUaM0HaYTF3VR233hZhGrHw1qMxFqg6Jb4bIYBbSlY3FKHaaoa3X7Mys0o0Ax+aBaDPHHfdMB8b
+	JzEnlOE0uSt2YKb0sY3yS5vgBM9m78/BA4M55MacGjUWOVeO1pwlYtL/faMIvs8mctKubpWqm+LUk
+	CBzKehPtDa/BkOYL/cfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPew2-0001Sa-3L; Wed, 30 Oct 2019 03:46:14 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1iPezu-0001xD-EB; Wed, 30 Oct 2019 03:50:14 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPevs-0001RH-5g
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 03:46:07 +0000
-Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 8B8D33DDFD17CCB1BAD0;
- Wed, 30 Oct 2019 11:45:51 +0800 (CST)
-Received: from localhost.localdomain (10.69.192.56) by
- DGGEMS402-HUB.china.huawei.com (10.3.19.202) with Microsoft SMTP Server id
- 14.3.439.0; Wed, 30 Oct 2019 11:45:43 +0800
-From: Shaokun Zhang <zhangshaokun@hisilicon.com>
-To: <linux-arm-kernel@lists.infradead.org>
-Subject: [PATCH] arm64: perf: Simplify the ARMv8 PMUv3 event attributes
-Date: Wed, 30 Oct 2019 11:46:17 +0800
-Message-ID: <1572407177-48229-1-git-send-email-zhangshaokun@hisilicon.com>
-X-Mailer: git-send-email 2.7.4
+ id 1iPezY-0001wZ-Ki; Wed, 30 Oct 2019 03:49:54 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id B046FB39F;
+ Wed, 30 Oct 2019 03:49:50 +0000 (UTC)
+Subject: Re: [PATCH 3/3] ARM: dts: Prepare Realtek RTD1195 and MeLE X1000
+To: Rob Herring <robh@kernel.org>
+References: <20191021021035.7032-1-afaerber@suse.de>
+ <20191021021035.7032-4-afaerber@suse.de> <20191029154129.GA24908@bogus>
+ <6e6087af-6a62-f0ff-07af-48e4836c38e6@suse.de>
+ <CAL_Jsq+QgAyR7vUJRBRrO56uKJXi4=meW2qnPpZUCAqBBP7PMA@mail.gmail.com>
+From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
+Organization: SUSE Software Solutions Germany GmbH
+Message-ID: <63c3b9b5-e409-7f43-cd03-9b4b2ee57056@suse.de>
+Date: Wed, 30 Oct 2019 04:49:50 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.1
 MIME-Version: 1.0
-X-Originating-IP: [10.69.192.56]
-X-CFilter-Loop: Reflected
+In-Reply-To: <CAL_Jsq+QgAyR7vUJRBRrO56uKJXi4=meW2qnPpZUCAqBBP7PMA@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_204604_745848_084421D1 
-X-CRM114-Status: UNSURE (   9.52  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -1.5 (-)
+X-CRM114-CacheID: sfid-20191029_204952_976331_BDC9CCAA 
+X-CRM114-Status: GOOD (  24.06  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,231 +64,209 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shaokun Zhang <zhangshaokun@hisilicon.com>,
- Mark Rutland <mark.rutland@arm.com>, Will Deacon <will@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ LAKML <linux-arm-kernel@lists.infradead.org>,
+ linux-realtek-soc@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For each PMU event, there is a ARMV8_EVENT_ATTR(xx, XX) and
-&armv8_event_attr_xx.attr.attr. Let's redefine the ARMV8_EVENT_ATTR
-to simplify the armv8_pmuv3_event_attrs.
-
-Cc: Will Deacon <will@kernel.org>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Signed-off-by: Shaokun Zhang <zhangshaokun@hisilicon.com>
----
- arch/arm64/kernel/perf_event.c | 189 ++++++++++++++---------------------------
- 1 file changed, 65 insertions(+), 124 deletions(-)
-
-diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
-index a0b4f1bca491..d0f084939bcf 100644
---- a/arch/arm64/kernel/perf_event.c
-+++ b/arch/arm64/kernel/perf_event.c
-@@ -159,132 +159,73 @@ armv8pmu_events_sysfs_show(struct device *dev,
- }
- 
- #define ARMV8_EVENT_ATTR(name, config) \
--	PMU_EVENT_ATTR(name, armv8_event_attr_##name, \
--		       config, armv8pmu_events_sysfs_show)
--
--ARMV8_EVENT_ATTR(sw_incr, ARMV8_PMUV3_PERFCTR_SW_INCR);
--ARMV8_EVENT_ATTR(l1i_cache_refill, ARMV8_PMUV3_PERFCTR_L1I_CACHE_REFILL);
--ARMV8_EVENT_ATTR(l1i_tlb_refill, ARMV8_PMUV3_PERFCTR_L1I_TLB_REFILL);
--ARMV8_EVENT_ATTR(l1d_cache_refill, ARMV8_PMUV3_PERFCTR_L1D_CACHE_REFILL);
--ARMV8_EVENT_ATTR(l1d_cache, ARMV8_PMUV3_PERFCTR_L1D_CACHE);
--ARMV8_EVENT_ATTR(l1d_tlb_refill, ARMV8_PMUV3_PERFCTR_L1D_TLB_REFILL);
--ARMV8_EVENT_ATTR(ld_retired, ARMV8_PMUV3_PERFCTR_LD_RETIRED);
--ARMV8_EVENT_ATTR(st_retired, ARMV8_PMUV3_PERFCTR_ST_RETIRED);
--ARMV8_EVENT_ATTR(inst_retired, ARMV8_PMUV3_PERFCTR_INST_RETIRED);
--ARMV8_EVENT_ATTR(exc_taken, ARMV8_PMUV3_PERFCTR_EXC_TAKEN);
--ARMV8_EVENT_ATTR(exc_return, ARMV8_PMUV3_PERFCTR_EXC_RETURN);
--ARMV8_EVENT_ATTR(cid_write_retired, ARMV8_PMUV3_PERFCTR_CID_WRITE_RETIRED);
--ARMV8_EVENT_ATTR(pc_write_retired, ARMV8_PMUV3_PERFCTR_PC_WRITE_RETIRED);
--ARMV8_EVENT_ATTR(br_immed_retired, ARMV8_PMUV3_PERFCTR_BR_IMMED_RETIRED);
--ARMV8_EVENT_ATTR(br_return_retired, ARMV8_PMUV3_PERFCTR_BR_RETURN_RETIRED);
--ARMV8_EVENT_ATTR(unaligned_ldst_retired, ARMV8_PMUV3_PERFCTR_UNALIGNED_LDST_RETIRED);
--ARMV8_EVENT_ATTR(br_mis_pred, ARMV8_PMUV3_PERFCTR_BR_MIS_PRED);
--ARMV8_EVENT_ATTR(cpu_cycles, ARMV8_PMUV3_PERFCTR_CPU_CYCLES);
--ARMV8_EVENT_ATTR(br_pred, ARMV8_PMUV3_PERFCTR_BR_PRED);
--ARMV8_EVENT_ATTR(mem_access, ARMV8_PMUV3_PERFCTR_MEM_ACCESS);
--ARMV8_EVENT_ATTR(l1i_cache, ARMV8_PMUV3_PERFCTR_L1I_CACHE);
--ARMV8_EVENT_ATTR(l1d_cache_wb, ARMV8_PMUV3_PERFCTR_L1D_CACHE_WB);
--ARMV8_EVENT_ATTR(l2d_cache, ARMV8_PMUV3_PERFCTR_L2D_CACHE);
--ARMV8_EVENT_ATTR(l2d_cache_refill, ARMV8_PMUV3_PERFCTR_L2D_CACHE_REFILL);
--ARMV8_EVENT_ATTR(l2d_cache_wb, ARMV8_PMUV3_PERFCTR_L2D_CACHE_WB);
--ARMV8_EVENT_ATTR(bus_access, ARMV8_PMUV3_PERFCTR_BUS_ACCESS);
--ARMV8_EVENT_ATTR(memory_error, ARMV8_PMUV3_PERFCTR_MEMORY_ERROR);
--ARMV8_EVENT_ATTR(inst_spec, ARMV8_PMUV3_PERFCTR_INST_SPEC);
--ARMV8_EVENT_ATTR(ttbr_write_retired, ARMV8_PMUV3_PERFCTR_TTBR_WRITE_RETIRED);
--ARMV8_EVENT_ATTR(bus_cycles, ARMV8_PMUV3_PERFCTR_BUS_CYCLES);
--/* Don't expose the chain event in /sys, since it's useless in isolation */
--ARMV8_EVENT_ATTR(l1d_cache_allocate, ARMV8_PMUV3_PERFCTR_L1D_CACHE_ALLOCATE);
--ARMV8_EVENT_ATTR(l2d_cache_allocate, ARMV8_PMUV3_PERFCTR_L2D_CACHE_ALLOCATE);
--ARMV8_EVENT_ATTR(br_retired, ARMV8_PMUV3_PERFCTR_BR_RETIRED);
--ARMV8_EVENT_ATTR(br_mis_pred_retired, ARMV8_PMUV3_PERFCTR_BR_MIS_PRED_RETIRED);
--ARMV8_EVENT_ATTR(stall_frontend, ARMV8_PMUV3_PERFCTR_STALL_FRONTEND);
--ARMV8_EVENT_ATTR(stall_backend, ARMV8_PMUV3_PERFCTR_STALL_BACKEND);
--ARMV8_EVENT_ATTR(l1d_tlb, ARMV8_PMUV3_PERFCTR_L1D_TLB);
--ARMV8_EVENT_ATTR(l1i_tlb, ARMV8_PMUV3_PERFCTR_L1I_TLB);
--ARMV8_EVENT_ATTR(l2i_cache, ARMV8_PMUV3_PERFCTR_L2I_CACHE);
--ARMV8_EVENT_ATTR(l2i_cache_refill, ARMV8_PMUV3_PERFCTR_L2I_CACHE_REFILL);
--ARMV8_EVENT_ATTR(l3d_cache_allocate, ARMV8_PMUV3_PERFCTR_L3D_CACHE_ALLOCATE);
--ARMV8_EVENT_ATTR(l3d_cache_refill, ARMV8_PMUV3_PERFCTR_L3D_CACHE_REFILL);
--ARMV8_EVENT_ATTR(l3d_cache, ARMV8_PMUV3_PERFCTR_L3D_CACHE);
--ARMV8_EVENT_ATTR(l3d_cache_wb, ARMV8_PMUV3_PERFCTR_L3D_CACHE_WB);
--ARMV8_EVENT_ATTR(l2d_tlb_refill, ARMV8_PMUV3_PERFCTR_L2D_TLB_REFILL);
--ARMV8_EVENT_ATTR(l2i_tlb_refill, ARMV8_PMUV3_PERFCTR_L2I_TLB_REFILL);
--ARMV8_EVENT_ATTR(l2d_tlb, ARMV8_PMUV3_PERFCTR_L2D_TLB);
--ARMV8_EVENT_ATTR(l2i_tlb, ARMV8_PMUV3_PERFCTR_L2I_TLB);
--ARMV8_EVENT_ATTR(remote_access, ARMV8_PMUV3_PERFCTR_REMOTE_ACCESS);
--ARMV8_EVENT_ATTR(ll_cache, ARMV8_PMUV3_PERFCTR_LL_CACHE);
--ARMV8_EVENT_ATTR(ll_cache_miss, ARMV8_PMUV3_PERFCTR_LL_CACHE_MISS);
--ARMV8_EVENT_ATTR(dtlb_walk, ARMV8_PMUV3_PERFCTR_DTLB_WALK);
--ARMV8_EVENT_ATTR(itlb_walk, ARMV8_PMUV3_PERFCTR_ITLB_WALK);
--ARMV8_EVENT_ATTR(ll_cache_rd, ARMV8_PMUV3_PERFCTR_LL_CACHE_RD);
--ARMV8_EVENT_ATTR(ll_cache_miss_rd, ARMV8_PMUV3_PERFCTR_LL_CACHE_MISS_RD);
--ARMV8_EVENT_ATTR(remote_access_rd, ARMV8_PMUV3_PERFCTR_REMOTE_ACCESS_RD);
--ARMV8_EVENT_ATTR(sample_pop, ARMV8_SPE_PERFCTR_SAMPLE_POP);
--ARMV8_EVENT_ATTR(sample_feed, ARMV8_SPE_PERFCTR_SAMPLE_FEED);
--ARMV8_EVENT_ATTR(sample_filtrate, ARMV8_SPE_PERFCTR_SAMPLE_FILTRATE);
--ARMV8_EVENT_ATTR(sample_collision, ARMV8_SPE_PERFCTR_SAMPLE_COLLISION);
-+	(&((struct perf_pmu_events_attr[]) { \
-+		{ .attr = __ATTR(name, 0444, armv8pmu_events_sysfs_show, NULL), \
-+		  .id = config, } \
-+	})[0].attr.attr)
- 
- static struct attribute *armv8_pmuv3_event_attrs[] = {
--	&armv8_event_attr_sw_incr.attr.attr,
--	&armv8_event_attr_l1i_cache_refill.attr.attr,
--	&armv8_event_attr_l1i_tlb_refill.attr.attr,
--	&armv8_event_attr_l1d_cache_refill.attr.attr,
--	&armv8_event_attr_l1d_cache.attr.attr,
--	&armv8_event_attr_l1d_tlb_refill.attr.attr,
--	&armv8_event_attr_ld_retired.attr.attr,
--	&armv8_event_attr_st_retired.attr.attr,
--	&armv8_event_attr_inst_retired.attr.attr,
--	&armv8_event_attr_exc_taken.attr.attr,
--	&armv8_event_attr_exc_return.attr.attr,
--	&armv8_event_attr_cid_write_retired.attr.attr,
--	&armv8_event_attr_pc_write_retired.attr.attr,
--	&armv8_event_attr_br_immed_retired.attr.attr,
--	&armv8_event_attr_br_return_retired.attr.attr,
--	&armv8_event_attr_unaligned_ldst_retired.attr.attr,
--	&armv8_event_attr_br_mis_pred.attr.attr,
--	&armv8_event_attr_cpu_cycles.attr.attr,
--	&armv8_event_attr_br_pred.attr.attr,
--	&armv8_event_attr_mem_access.attr.attr,
--	&armv8_event_attr_l1i_cache.attr.attr,
--	&armv8_event_attr_l1d_cache_wb.attr.attr,
--	&armv8_event_attr_l2d_cache.attr.attr,
--	&armv8_event_attr_l2d_cache_refill.attr.attr,
--	&armv8_event_attr_l2d_cache_wb.attr.attr,
--	&armv8_event_attr_bus_access.attr.attr,
--	&armv8_event_attr_memory_error.attr.attr,
--	&armv8_event_attr_inst_spec.attr.attr,
--	&armv8_event_attr_ttbr_write_retired.attr.attr,
--	&armv8_event_attr_bus_cycles.attr.attr,
--	&armv8_event_attr_l1d_cache_allocate.attr.attr,
--	&armv8_event_attr_l2d_cache_allocate.attr.attr,
--	&armv8_event_attr_br_retired.attr.attr,
--	&armv8_event_attr_br_mis_pred_retired.attr.attr,
--	&armv8_event_attr_stall_frontend.attr.attr,
--	&armv8_event_attr_stall_backend.attr.attr,
--	&armv8_event_attr_l1d_tlb.attr.attr,
--	&armv8_event_attr_l1i_tlb.attr.attr,
--	&armv8_event_attr_l2i_cache.attr.attr,
--	&armv8_event_attr_l2i_cache_refill.attr.attr,
--	&armv8_event_attr_l3d_cache_allocate.attr.attr,
--	&armv8_event_attr_l3d_cache_refill.attr.attr,
--	&armv8_event_attr_l3d_cache.attr.attr,
--	&armv8_event_attr_l3d_cache_wb.attr.attr,
--	&armv8_event_attr_l2d_tlb_refill.attr.attr,
--	&armv8_event_attr_l2i_tlb_refill.attr.attr,
--	&armv8_event_attr_l2d_tlb.attr.attr,
--	&armv8_event_attr_l2i_tlb.attr.attr,
--	&armv8_event_attr_remote_access.attr.attr,
--	&armv8_event_attr_ll_cache.attr.attr,
--	&armv8_event_attr_ll_cache_miss.attr.attr,
--	&armv8_event_attr_dtlb_walk.attr.attr,
--	&armv8_event_attr_itlb_walk.attr.attr,
--	&armv8_event_attr_ll_cache_rd.attr.attr,
--	&armv8_event_attr_ll_cache_miss_rd.attr.attr,
--	&armv8_event_attr_remote_access_rd.attr.attr,
--	&armv8_event_attr_sample_pop.attr.attr,
--	&armv8_event_attr_sample_feed.attr.attr,
--	&armv8_event_attr_sample_filtrate.attr.attr,
--	&armv8_event_attr_sample_collision.attr.attr,
-+	ARMV8_EVENT_ATTR(sw_incr, ARMV8_PMUV3_PERFCTR_SW_INCR),
-+	ARMV8_EVENT_ATTR(l1i_cache_refill, ARMV8_PMUV3_PERFCTR_L1I_CACHE_REFILL),
-+	ARMV8_EVENT_ATTR(l1i_tlb_refill, ARMV8_PMUV3_PERFCTR_L1I_TLB_REFILL),
-+	ARMV8_EVENT_ATTR(l1d_cache_refill, ARMV8_PMUV3_PERFCTR_L1D_CACHE_REFILL),
-+	ARMV8_EVENT_ATTR(l1d_cache, ARMV8_PMUV3_PERFCTR_L1D_CACHE),
-+	ARMV8_EVENT_ATTR(l1d_tlb_refill, ARMV8_PMUV3_PERFCTR_L1D_TLB_REFILL),
-+	ARMV8_EVENT_ATTR(ld_retired, ARMV8_PMUV3_PERFCTR_LD_RETIRED),
-+	ARMV8_EVENT_ATTR(st_retired, ARMV8_PMUV3_PERFCTR_ST_RETIRED),
-+	ARMV8_EVENT_ATTR(inst_retired, ARMV8_PMUV3_PERFCTR_INST_RETIRED),
-+	ARMV8_EVENT_ATTR(exc_taken, ARMV8_PMUV3_PERFCTR_EXC_TAKEN),
-+	ARMV8_EVENT_ATTR(exc_return, ARMV8_PMUV3_PERFCTR_EXC_RETURN),
-+	ARMV8_EVENT_ATTR(cid_write_retired, ARMV8_PMUV3_PERFCTR_CID_WRITE_RETIRED),
-+	ARMV8_EVENT_ATTR(pc_write_retired, ARMV8_PMUV3_PERFCTR_PC_WRITE_RETIRED),
-+	ARMV8_EVENT_ATTR(br_immed_retired, ARMV8_PMUV3_PERFCTR_BR_IMMED_RETIRED),
-+	ARMV8_EVENT_ATTR(br_return_retired, ARMV8_PMUV3_PERFCTR_BR_RETURN_RETIRED),
-+	ARMV8_EVENT_ATTR(unaligned_ldst_retired, ARMV8_PMUV3_PERFCTR_UNALIGNED_LDST_RETIRED),
-+	ARMV8_EVENT_ATTR(br_mis_pred, ARMV8_PMUV3_PERFCTR_BR_MIS_PRED),
-+	ARMV8_EVENT_ATTR(cpu_cycles, ARMV8_PMUV3_PERFCTR_CPU_CYCLES),
-+	ARMV8_EVENT_ATTR(br_pred, ARMV8_PMUV3_PERFCTR_BR_PRED),
-+	ARMV8_EVENT_ATTR(mem_access, ARMV8_PMUV3_PERFCTR_MEM_ACCESS),
-+	ARMV8_EVENT_ATTR(l1i_cache, ARMV8_PMUV3_PERFCTR_L1I_CACHE),
-+	ARMV8_EVENT_ATTR(l1d_cache_wb, ARMV8_PMUV3_PERFCTR_L1D_CACHE_WB),
-+	ARMV8_EVENT_ATTR(l2d_cache, ARMV8_PMUV3_PERFCTR_L2D_CACHE),
-+	ARMV8_EVENT_ATTR(l2d_cache_refill, ARMV8_PMUV3_PERFCTR_L2D_CACHE_REFILL),
-+	ARMV8_EVENT_ATTR(l2d_cache_wb, ARMV8_PMUV3_PERFCTR_L2D_CACHE_WB),
-+	ARMV8_EVENT_ATTR(bus_access, ARMV8_PMUV3_PERFCTR_BUS_ACCESS),
-+	ARMV8_EVENT_ATTR(memory_error, ARMV8_PMUV3_PERFCTR_MEMORY_ERROR),
-+	ARMV8_EVENT_ATTR(inst_spec, ARMV8_PMUV3_PERFCTR_INST_SPEC),
-+	ARMV8_EVENT_ATTR(ttbr_write_retired, ARMV8_PMUV3_PERFCTR_TTBR_WRITE_RETIRED),
-+	ARMV8_EVENT_ATTR(bus_cycles, ARMV8_PMUV3_PERFCTR_BUS_CYCLES),
-+	/* Don't expose the chain event in /sys, since it's useless in isolation */
-+	ARMV8_EVENT_ATTR(l1d_cache_allocate, ARMV8_PMUV3_PERFCTR_L1D_CACHE_ALLOCATE),
-+	ARMV8_EVENT_ATTR(l2d_cache_allocate, ARMV8_PMUV3_PERFCTR_L2D_CACHE_ALLOCATE),
-+	ARMV8_EVENT_ATTR(br_retired, ARMV8_PMUV3_PERFCTR_BR_RETIRED),
-+	ARMV8_EVENT_ATTR(br_mis_pred_retired, ARMV8_PMUV3_PERFCTR_BR_MIS_PRED_RETIRED),
-+	ARMV8_EVENT_ATTR(stall_frontend, ARMV8_PMUV3_PERFCTR_STALL_FRONTEND),
-+	ARMV8_EVENT_ATTR(stall_backend, ARMV8_PMUV3_PERFCTR_STALL_BACKEND),
-+	ARMV8_EVENT_ATTR(l1d_tlb, ARMV8_PMUV3_PERFCTR_L1D_TLB),
-+	ARMV8_EVENT_ATTR(l1i_tlb, ARMV8_PMUV3_PERFCTR_L1I_TLB),
-+	ARMV8_EVENT_ATTR(l2i_cache, ARMV8_PMUV3_PERFCTR_L2I_CACHE),
-+	ARMV8_EVENT_ATTR(l2i_cache_refill, ARMV8_PMUV3_PERFCTR_L2I_CACHE_REFILL),
-+	ARMV8_EVENT_ATTR(l3d_cache_allocate, ARMV8_PMUV3_PERFCTR_L3D_CACHE_ALLOCATE),
-+	ARMV8_EVENT_ATTR(l3d_cache_refill, ARMV8_PMUV3_PERFCTR_L3D_CACHE_REFILL),
-+	ARMV8_EVENT_ATTR(l3d_cache, ARMV8_PMUV3_PERFCTR_L3D_CACHE),
-+	ARMV8_EVENT_ATTR(l3d_cache_wb, ARMV8_PMUV3_PERFCTR_L3D_CACHE_WB),
-+	ARMV8_EVENT_ATTR(l2d_tlb_refill, ARMV8_PMUV3_PERFCTR_L2D_TLB_REFILL),
-+	ARMV8_EVENT_ATTR(l2i_tlb_refill, ARMV8_PMUV3_PERFCTR_L2I_TLB_REFILL),
-+	ARMV8_EVENT_ATTR(l2d_tlb, ARMV8_PMUV3_PERFCTR_L2D_TLB),
-+	ARMV8_EVENT_ATTR(l2i_tlb, ARMV8_PMUV3_PERFCTR_L2I_TLB),
-+	ARMV8_EVENT_ATTR(remote_access, ARMV8_PMUV3_PERFCTR_REMOTE_ACCESS),
-+	ARMV8_EVENT_ATTR(ll_cache, ARMV8_PMUV3_PERFCTR_LL_CACHE),
-+	ARMV8_EVENT_ATTR(ll_cache_miss, ARMV8_PMUV3_PERFCTR_LL_CACHE_MISS),
-+	ARMV8_EVENT_ATTR(dtlb_walk, ARMV8_PMUV3_PERFCTR_DTLB_WALK),
-+	ARMV8_EVENT_ATTR(itlb_walk, ARMV8_PMUV3_PERFCTR_ITLB_WALK),
-+	ARMV8_EVENT_ATTR(ll_cache_rd, ARMV8_PMUV3_PERFCTR_LL_CACHE_RD),
-+	ARMV8_EVENT_ATTR(ll_cache_miss_rd, ARMV8_PMUV3_PERFCTR_LL_CACHE_MISS_RD),
-+	ARMV8_EVENT_ATTR(remote_access_rd, ARMV8_PMUV3_PERFCTR_REMOTE_ACCESS_RD),
-+	ARMV8_EVENT_ATTR(sample_pop, ARMV8_SPE_PERFCTR_SAMPLE_POP),
-+	ARMV8_EVENT_ATTR(sample_feed, ARMV8_SPE_PERFCTR_SAMPLE_FEED),
-+	ARMV8_EVENT_ATTR(sample_filtrate, ARMV8_SPE_PERFCTR_SAMPLE_FILTRATE),
-+	ARMV8_EVENT_ATTR(sample_collision, ARMV8_SPE_PERFCTR_SAMPLE_COLLISION),
- 	NULL,
- };
- 
--- 
-2.7.4
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QW0gMjkuMTAuMTkgdW0gMjE6NDAgc2NocmllYiBSb2IgSGVycmluZzoKPiBPbiBUdWUsIE9jdCAy
+OSwgMjAxOSBhdCAxMDo1MiBBTSBBbmRyZWFzIEbDpHJiZXIgPGFmYWVyYmVyQHN1c2UuZGU+IHdy
+b3RlOgo+PiBBbSAyOS4xMC4xOSB1bSAxNjo0MSBzY2hyaWViIFJvYiBIZXJyaW5nOgo+Pj4gT24g
+TW9uLCBPY3QgMjEsIDIwMTkgYXQgMDQ6MTA6MzVBTSArMDIwMCwgQW5kcmVhcyBGw6RyYmVyIHdy
+b3RlOgo+Pj4+IEFkZCBEZXZpY2UgVHJlZXMgZm9yIFJlYWx0ZWsgUlREMTE5NSBTb0MgYW5kIE1l
+TEUgWDEwMDAgVFYgYm94Lgo+Pj4+Cj4+Pj4gUmV1c2UgdGhlIGV4aXN0aW5nIFJURDEyOTUgd2F0
+Y2hkb2cgY29tcGF0aWJsZSBmb3Igbm93Lgo+Pj4+Cj4+Pj4gU2lnbmVkLW9mZi1ieTogQW5kcmVh
+cyBGw6RyYmVyIDxhZmFlcmJlckBzdXNlLmRlPgo+Pj4+IC0tLQo+Pj4+ICBhcmNoL2FybS9ib290
+L2R0cy9NYWtlZmlsZSAgICAgICAgICAgICAgIHwgICAyICsKPj4+PiAgYXJjaC9hcm0vYm9vdC9k
+dHMvcnRkMTE5NS1tZWxlLXgxMDAwLmR0cyB8ICAzMCArKysrKysrKwo+Pj4+ICBhcmNoL2FybS9i
+b290L2R0cy9ydGQxMTk1LmR0c2kgICAgICAgICAgIHwgMTI4ICsrKysrKysrKysrKysrKysrKysr
+KysrKysrKysrKysKPj4+PiAgMyBmaWxlcyBjaGFuZ2VkLCAxNjAgaW5zZXJ0aW9ucygrKQo+Pj4+
+ICBjcmVhdGUgbW9kZSAxMDA2NDQgYXJjaC9hcm0vYm9vdC9kdHMvcnRkMTE5NS1tZWxlLXgxMDAw
+LmR0cwo+Pj4+ICBjcmVhdGUgbW9kZSAxMDA2NDQgYXJjaC9hcm0vYm9vdC9kdHMvcnRkMTE5NS5k
+dHNpCj4+Pj4KPj4+PiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvTWFrZWZpbGUgYi9h
+cmNoL2FybS9ib290L2R0cy9NYWtlZmlsZQo+Pj4+IGluZGV4IDczZDMzNjExYzM3Mi4uODlhOTUx
+NDg1ZGE4IDEwMDY0NAo+Pj4+IC0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL01ha2VmaWxlCj4+Pj4g
+KysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvTWFrZWZpbGUKPj4+PiBAQCAtODU4LDYgKzg1OCw4IEBA
+IGR0Yi0kKENPTkZJR19BUkNIX1FDT00pICs9IFwKPj4+PiAgZHRiLSQoQ09ORklHX0FSQ0hfUkRB
+KSArPSBcCj4+Pj4gICAgICByZGE4ODEwcGwtb3JhbmdlcGktMmctaW90LmR0YiBcCj4+Pj4gICAg
+ICByZGE4ODEwcGwtb3JhbmdlcGktaTk2LmR0Ygo+Pj4+ICtkdGItJChDT05GSUdfQVJDSF9SRUFM
+VEVLKSArPSBcCj4+Pj4gKyAgICBydGQxMTk1LW1lbGUteDEwMDAuZHRiCj4+Pj4gIGR0Yi0kKENP
+TkZJR19BUkNIX1JFQUxWSUVXKSArPSBcCj4+Pj4gICAgICBhcm0tcmVhbHZpZXctcGIxMTc2LmR0
+YiBcCj4+Pj4gICAgICBhcm0tcmVhbHZpZXctcGIxMW1wLmR0YiBcCj4+Pj4gZGlmZiAtLWdpdCBh
+L2FyY2gvYXJtL2Jvb3QvZHRzL3J0ZDExOTUtbWVsZS14MTAwMC5kdHMgYi9hcmNoL2FybS9ib290
+L2R0cy9ydGQxMTk1LW1lbGUteDEwMDAuZHRzCj4+Pj4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPj4+
+PiBpbmRleCAwMDAwMDAwMDAwMDAuLmNlOWEyNTU5NTBkMwo+Pj4+IC0tLSAvZGV2L251bGwKPj4+
+PiArKysgYi9hcmNoL2FybS9ib290L2R0cy9ydGQxMTk1LW1lbGUteDEwMDAuZHRzCj4+Pj4gQEAg
+LTAsMCArMSwzMCBAQAo+Pj4+ICsvLyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogKEdQTC0yLjAt
+b3ItbGF0ZXIgT1IgQlNELTItQ2xhdXNlKQo+Pj4+ICsvKgo+Pj4+ICsgKiBDb3B5cmlnaHQgKGMp
+IDIwMTcgQW5kcmVhcyBGw6RyYmVyCj4+Pgo+Pj4gMjAxOT8KPj4KPj4gTm9wZSwgSSBhbSBmbHVz
+aGluZyBvdXQgb2xkIHF1ZXVlcywgYW5kIHVwZGF0aW5nIFNQRFggbGluZSBkb2VzIG5vdAo+PiBy
+ZWFsbHkgd2FycmFudCBhIGNvcHlyaWdodCBidW1wIElNTy4gVGhlIGNoYW5nZXMgYmVsb3cgd291
+bGQgdGhvdWdoLgoKVXBkYXRlZCBoZXJlLCBidXQgbm90IHlldCBmb3IgdGhlIC5kdHNpLgoKPj4+
+PiArICovCj4+Pj4gKwo+Pj4+ICsvZHRzLXYxLzsKPj4+PiArCj4+Pj4gKyNpbmNsdWRlICJydGQx
+MTk1LmR0c2kiCj4+Pj4gKwo+Pj4+ICsvIHsKPj4+PiArICAgIGNvbXBhdGlibGUgPSAibWVsZSx4
+MTAwMCIsICJyZWFsdGVrLHJ0ZDExOTUiOwo+Pj4+ICsgICAgbW9kZWwgPSAiTWVMRSBYMTAwMCI7
+Cj4+Pj4gKwo+Pj4+ICsgICAgYWxpYXNlcyB7Cj4+Pj4gKyAgICAgICAgICAgIHNlcmlhbDAgPSAm
+dWFydDA7Cj4+Pj4gKyAgICB9Owo+Pj4+ICsKPj4+PiArICAgIGNob3NlbiB7Cj4+Pj4gKyAgICAg
+ICAgICAgIHN0ZG91dC1wYXRoID0gInNlcmlhbDA6MTE1MjAwbjgiOwo+Pj4+ICsgICAgfTsKPj4+
+PiArCj4+Pj4gKyAgICBtZW1vcnkgewo+Pj4KPj4+IG1lbW9yeUAwCj4+Cj4+IFdpbGwgdGVzdC4K
+CkZpeGVkLiAoTm8gZHVwbGljYXRlIG5vZGUgZnJvbSBVLUJvb3QuKQoKPj4+PiArICAgICAgICAg
+ICAgZGV2aWNlX3R5cGUgPSAibWVtb3J5IjsKPj4+PiArICAgICAgICAgICAgcmVnID0gPDB4MCAw
+eDQwMDAwMDAwPjsKPj4+PiArICAgIH07Cj4+Pj4gK307Cj4+Pj4gKwo+Pj4+ICsmdWFydDAgewo+
+Pj4+ICsgICAgc3RhdHVzID0gIm9rYXkiOwo+Pj4+ICt9Owo+Pj4+IGRpZmYgLS1naXQgYS9hcmNo
+L2FybS9ib290L2R0cy9ydGQxMTk1LmR0c2kgYi9hcmNoL2FybS9ib290L2R0cy9ydGQxMTk1LmR0
+c2kKPj4+PiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+Pj4+IGluZGV4IDAwMDAwMDAwMDAwMC4uNDc1
+NzQwYzY3ZDI2Cj4+Pj4gLS0tIC9kZXYvbnVsbAo+Pj4+ICsrKyBiL2FyY2gvYXJtL2Jvb3QvZHRz
+L3J0ZDExOTUuZHRzaQo+Pj4+IEBAIC0wLDAgKzEsMTI4IEBACj4+Pj4gKy8vIFNQRFgtTGljZW5z
+ZS1JZGVudGlmaWVyOiAoR1BMLTIuMC1vci1sYXRlciBPUiBCU0QtMi1DbGF1c2UpCj4+Pj4gKy8q
+Cj4+Pj4gKyAqIENvcHlyaWdodCAoYykgMjAxNyBBbmRyZWFzIEbDpHJiZXIKPj4+PiArICovCj4+
+Pj4gKwo+Pj4+ICsvbWVtcmVzZXJ2ZS8gMHgwMDAwMDAwMCAweDAwMDBjMDAwOyAvKiBib290IGNv
+ZGUgKi8KPj4+PiArL21lbXJlc2VydmUvIDB4MDAwMGMwMDAgMHgwMDBmNDAwMDsKPj4+PiArL21l
+bXJlc2VydmUvIDB4MDFiMDAwMDAgMHgwMDQwMDAwMDsgLyogYXVkaW8gKi8KPj4+PiArL21lbXJl
+c2VydmUvIDB4MDFmZmUwMDAgMHgwMDAwNDAwMDsgLyogcnBjIHJpbmdidWYgKi8KPj4+PiArL21l
+bXJlc2VydmUvIDB4MTAwMDAwMDAgMHgwMDEwMDAwMDsgLyogc2VjdXJlICovCj4+Pj4gKy9tZW1y
+ZXNlcnZlLyAweDE3ZmZmMDAwIDB4MDAwMDEwMDA7Cj4+Pj4gKy9tZW1yZXNlcnZlLyAweDE4MDAw
+MDAwIDB4MDAxMDAwMDA7IC8qIHJidXMgKi8KPj4+PiArL21lbXJlc2VydmUvIDB4MTgxMDAwMDAg
+MHgwMTAwMDAwMDsgLyogbm9yICovCj4+Pgo+Pj4gWW91IHNob3VsZG4ndCBoYXZlIHRoZSBzYW1l
+IGVudHJpZXMgaGVyZSBhbmQgaW4gL3Jlc2VydmVkLW1lbW9yeS4gVGhlcmUKPj4+IHdhcyBhIHRp
+bWUgYmVmb3JlIC9yZXNlcnZlZC1tZW1vcnkgd2FzIGZ1bGx5IHN1cHBvcnRlZCwgYnV0IHdlIHNo
+b3VsZCBiZQo+Pj4gd2VsbCBwYXN0IHRoYXQgbm93Lgo+Pgo+PiBJIGFtIGRlYWxpbmcgd2l0aCBh
+IHYyMDEyLjA3IGJhc2VkIGRvd25zdHJlYW0gVS1Cb290IHRoYXQgSSBkbyBub3QgaGF2ZQo+PiBz
+b3VyY2VzIGZvciwgc28gSSB3b3VsZG4ndCBiZSBzbyBzdXJlIHRoZXJlLi4uIEl0IHdpbGwgb25s
+eSByZXNwZWN0Cj4+IG1lbXJlc2VydmUgSSB0aGluaywgd2hlcmVhcyByZXNlcnZlZC1tZW1vcnkg
+YmVsb3cgaXMgZm9yIHRoZSBrZXJuZWwsIG5vPwo+IAo+IFNpZ2guLi4gV2VsbCwgdGhhdCBtYXkg
+YmUgdG9vIG9sZC4gOigKPiAKPiBJIGNvdWxkIGJlIHdyb25nIHRvbyBhbmQgbm8gb25lIGV2ZXIg
+YWRkZWQgL3Jlc2VydmVkLW1lbW9yeSBzdXBwb3J0Cj4gZm9yIHUtYm9vdC4gVGhlIGludGVudCB3
+YXMgbmV2ZXIgdGhhdCBvbmUgd2FzIGZvciB1LWJvb3QgYW5kIHRoZSBvdGhlcgo+IGZvciB0aGUg
+a2VybmVsLiBUaGUga2VybmVsIGhhbmRsZXMgYm90aC4gcmVzZXJ2ZWQtbWVtb3J5IHdhcyB0bwo+
+IG92ZXJjb21lIHRoZSBsaW1pdGF0aW9ucyBvZiBtZW1yZXNlcnZlLgoKV2hhdCBJIG1lYW50IHdh
+cyB0aGF0IHNvbWUgdmVyc2lvbnMgb2YgVS1Cb290IHByb2Nlc3MgYW5kIHByaW50Cm1lbXJlc2Vy
+dmUgcmVnaW9ucyBfYmVmb3JlXyBib290aW5nIGludG8gdGhlIGtlcm5lbCwgaS5lLiB3ZSBkb24n
+dCB3YW50ClUtQm9vdCdzIGJvb3RYIGNvbW1hbmRzIHRvIHdyaXRlIGRhdGEgaW50byB0aGUgcmVz
+ZXJ2ZWQgcmVnaW9ucy4KL3Jlc2VydmVkLW1lbW9yeSBhbGxvd3MgdGhlIGtlcm5lbC9ib290bG9h
+ZGVyIHRvIGFzc29jaWF0ZSBtZW1vcnkKcmVnaW9ucyB3aXRoIGRyaXZlcnMgdmlhIG1lbW9yeS1y
+ZWdpb24gbm9kZSByZWZlcmVuY2VzIGFuZCB0byBzdGVlcgp3aGV0aGVyIG9yIG5vdCB0aGUgcmVz
+ZXJ2ZWQgbWVtb3J5IHJlbWFpbnMgbWFwcGVkLgoKPj4+PiArI2luY2x1ZGUgPGR0LWJpbmRpbmdz
+L2ludGVycnVwdC1jb250cm9sbGVyL2FybS1naWMuaD4KPj4+PiArCj4+Pj4gKy8gewo+Pj4+ICsg
+ICAgY29tcGF0aWJsZSA9ICJyZWFsdGVrLHJ0ZDExOTUiOwo+Pj4+ICsgICAgaW50ZXJydXB0LXBh
+cmVudCA9IDwmZ2ljPjsKPj4+PiArICAgICNhZGRyZXNzLWNlbGxzID0gPDE+Owo+Pj4+ICsgICAg
+I3NpemUtY2VsbHMgPSA8MT47Cj4+Pj4gKwo+Pj4+ICsgICAgY3B1cyB7Cj4+Pj4gKyAgICAgICAg
+ICAgICNhZGRyZXNzLWNlbGxzID0gPDE+Owo+Pj4+ICsgICAgICAgICAgICAjc2l6ZS1jZWxscyA9
+IDwwPjsKPj4+PiArCj4+Pj4gKyAgICAgICAgICAgIGNwdTA6IGNwdUAwIHsKPj4+PiArICAgICAg
+ICAgICAgICAgICAgICBkZXZpY2VfdHlwZSA9ICJjcHUiOwo+Pj4+ICsgICAgICAgICAgICAgICAg
+ICAgIGNvbXBhdGlibGUgPSAiYXJtLGNvcnRleC1hNyI7Cj4+Pj4gKyAgICAgICAgICAgICAgICAg
+ICAgcmVnID0gPDB4MD47Cj4+Pj4gKyAgICAgICAgICAgICAgICAgICAgY2xvY2stZnJlcXVlbmN5
+ID0gPDEwMDAwMDAwMDA+Owo+Pj4+ICsgICAgICAgICAgICB9Owo+Pj4+ICsKPj4+PiArICAgICAg
+ICAgICAgY3B1MTogY3B1QDEgewo+Pj4+ICsgICAgICAgICAgICAgICAgICAgIGRldmljZV90eXBl
+ID0gImNwdSI7Cj4+Pj4gKyAgICAgICAgICAgICAgICAgICAgY29tcGF0aWJsZSA9ICJhcm0sY29y
+dGV4LWE3IjsKPj4+PiArICAgICAgICAgICAgICAgICAgICByZWcgPSA8MHgxPjsKPj4+PiArICAg
+ICAgICAgICAgICAgICAgICBjbG9jay1mcmVxdWVuY3kgPSA8MTAwMDAwMDAwMD47Cj4+Pj4gKyAg
+ICAgICAgICAgIH07Cj4+Pj4gKyAgICB9Owo+Pj4+ICsKPj4+PiArICAgIHJlc2VydmVkLW1lbW9y
+eSB7Cj4+Pj4gKyAgICAgICAgICAgICNhZGRyZXNzLWNlbGxzID0gPDE+Owo+Pj4+ICsgICAgICAg
+ICAgICAjc2l6ZS1jZWxscyA9IDwxPjsKPj4+PiArICAgICAgICAgICAgcmFuZ2VzOwo+Pj4+ICsK
+Pj4+PiArICAgICAgICAgICAgc2VjdXJlQDEwMDAwMDAwIHsKPj4+PiArICAgICAgICAgICAgICAg
+ICAgICByZWcgPSA8MHgxMDAwMDAwMCAweDEwMDAwMD47Cj4+Pj4gKyAgICAgICAgICAgICAgICAg
+ICAgbm8tbWFwOwo+Pj4+ICsgICAgICAgICAgICB9Owo+Pj4+ICsKPj4+PiArICAgICAgICAgICAg
+cmJ1c0AxODAwMDAwMCB7Cj4+Pj4gKyAgICAgICAgICAgICAgICAgICAgcmVnID0gPDB4MTgwMDAw
+MDAgMHgxMDAwMDA+Owo+Pj4+ICsgICAgICAgICAgICAgICAgICAgIG5vLW1hcDsKPj4+Cj4+PiBU
+aGlzIGRvZXNuJ3QgbG9vayByaWdodCBhcyBpdCBvdmVybGFwcyB0aGUgcmVnaXN0ZXIgc3BhY2Uu
+Cj4+Cj4+IFdpbGwgdHJ5IGRyb3BwaW5nIGl0LiBKYW1lcz8KCk15IHRlc3RpbmcgKHdpdGggaXJx
+Y2hpcCBwYXRjaGVzKSBzaG93cyB0aGF0IGxlYXZpbmcgdGhlIG1lbXJlc2VydmUgaW4KcGxhY2Ug
+YW5kIGRyb3BwaW5nIHRoaXMgbm9kZSBsZWFkcyB0byB0aGUgZm9sbG93aW5nIGVycm9yOgoKWyAg
+ICAwLjAwMDAwMF0gTlJfSVJRUzogMTYsIG5yX2lycXM6IDE2LCBwcmVhbGxvY2F0ZWQgaXJxczog
+MTYKWyAgICAwLjAwMDAwMF0gLS0tLS0tLS0tLS0tWyBjdXQgaGVyZSBdLS0tLS0tLS0tLS0tClsg
+ICAgMC4wMDAwMDBdIFdBUk5JTkc6IENQVTogMCBQSUQ6IDAgYXQgYXJjaC9hcm0vbW0vaW9yZW1h
+cC5jOjMwNApfX2FybV9pb3JlbWFwX3Bmbl9jYWxsZXIrMHgxZTQvMHgyMDgKWyAgICAwLjAwMDAw
+MF0gTW9kdWxlcyBsaW5rZWQgaW46ClsgICAgMC4wMDAwMDBdIENQVTogMCBQSUQ6IDAgQ29tbTog
+c3dhcHBlci8wIE5vdCB0YWludGVkCjUuNC4wLXJjNS1uZXh0LTIwMTkxMDI5KyAjMTUyClsgICAg
+MC4wMDAwMDBdIEhhcmR3YXJlIG5hbWU6IEdlbmVyaWMgRFQgYmFzZWQgc3lzdGVtClsgICAgMC4w
+MDAwMDBdIFs8YzAyMmY0Njg+XSAodW53aW5kX2JhY2t0cmFjZSkgZnJvbSBbPGMwMjJiY2EwPl0K
+KHNob3dfc3RhY2srMHgxMC8weDE0KQpbICAgIDAuMDAwMDAwXSBbPGMwMjJiY2EwPl0gKHNob3df
+c3RhY2spIGZyb20gWzxjMDhhYjdjMD5dCihkdW1wX3N0YWNrKzB4NzgvMHg4YykKWyAgICAwLjAw
+MDAwMF0gWzxjMDhhYjdjMD5dIChkdW1wX3N0YWNrKSBmcm9tIFs8YzAyM2UzNDQ+XQooX193YXJu
+KzB4YmMvMHhkOCkKWyAgICAwLjAwMDAwMF0gWzxjMDIzZTM0ND5dIChfX3dhcm4pIGZyb20gWzxj
+MDIzZTNjND5dCih3YXJuX3Nsb3dwYXRoX2ZtdCsweDY0LzB4YzQpClsgICAgMC4wMDAwMDBdIFs8
+YzAyM2UzYzQ+XSAod2Fybl9zbG93cGF0aF9mbXQpIGZyb20gWzxjMDIzNTljOD5dCihfX2FybV9p
+b3JlbWFwX3Bmbl9jYWxsZXIrMHgxZTQvMHgyMDgpClsgICAgMC4wMDAwMDBdIFs8YzAyMzU5Yzg+
+XSAoX19hcm1faW9yZW1hcF9wZm5fY2FsbGVyKSBmcm9tIFs8YzAyMzVhODg+XQooaW9yZW1hcCsw
+eDIwLzB4MjgpClsgICAgMC4wMDAwMDBdIFs8YzAyMzVhODg+XSAoaW9yZW1hcCkgZnJvbSBbPGMw
+NzM5MzE4Pl0gKG9mX2lvbWFwKzB4NDAvMHg2NCkKWyAgICAwLjAwMDAwMF0gWzxjMDczOTMxOD5d
+IChvZl9pb21hcCkgZnJvbSBbPGMwZTE5OWM4Pl0KKHJ0ZDExOXhfaXJxX211eF9pbml0KzB4M2Mv
+MHgxMzQpClsgICAgMC4wMDAwMDBdIFs8YzBlMTk5Yzg+XSAocnRkMTE5eF9pcnFfbXV4X2luaXQp
+IGZyb20gWzxjMGUyMWU0OD5dCihvZl9pcnFfaW5pdCsweDE5NC8weDJiNCkKWyAgICAwLjAwMDAw
+MF0gWzxjMGUyMWU0OD5dIChvZl9pcnFfaW5pdCkgZnJvbSBbPGMwZTAyOWY0Pl0KKGluaXRfSVJR
+KzB4MjQvMHg3OCkKWyAgICAwLjAwMDAwMF0gWzxjMGUwMjlmND5dIChpbml0X0lSUSkgZnJvbSBb
+PGMwZTAwYzAwPl0KKHN0YXJ0X2tlcm5lbCsweDI5Yy8weDQ4OCkKWyAgICAwLjAwMDAwMF0gWzxj
+MGUwMGMwMD5dIChzdGFydF9rZXJuZWwpIGZyb20gWzwwMDAwMDAwMD5dICgweDApClsgICAgMC4w
+MDAwMDBdIHJhbmRvbTogZ2V0X3JhbmRvbV9ieXRlcyBjYWxsZWQgZnJvbQpwcmludF9vb3BzX2Vu
+ZF9tYXJrZXIrMHgyNC8weDRjIHdpdGggY3JuZ19pbml0PTAKWyAgICAwLjAwMDAwMF0gLS0tWyBl
+bmQgdHJhY2UgMDAwMDAwMDAwMDAwMDAwMCBdLS0tClsgICAgMC4wMDAwMDBdIDg8LS0tIGN1dCBo
+ZXJlIC0tLQpbICAgIDAuMDAwMDAwXSBVbmFibGUgdG8gaGFuZGxlIGtlcm5lbCBOVUxMIHBvaW50
+ZXIgZGVyZWZlcmVuY2UgYXQKdmlydHVhbCBhZGRyZXNzIDAwMDAwMDQwClsgICAgMC4wMDAwMDBd
+IHBnZCA9IChwdHJ2YWwpClsgICAgMC4wMDAwMDBdIFswMDAwMDA0MF0gKnBnZD04MDAwMDAwMDEw
+NDAwMywgKnBtZD0wMDAwMDAwMApbICAgIDAuMDAwMDAwXSBJbnRlcm5hbCBlcnJvcjogT29wczog
+YTA2IFsjMV0gUFJFRU1QVCBTTVAgQVJNClsgICAgMC4wMDAwMDBdIE1vZHVsZXMgbGlua2VkIGlu
+OgpbICAgIDAuMDAwMDAwXSBDUFU6IDAgUElEOiAwIENvbW06IHN3YXBwZXIvMCBUYWludGVkOiBH
+ICAgICAgICBXCiA1LjQuMC1yYzUtbmV4dC0yMDE5MTAyOSsgIzE1MgpbICAgIDAuMDAwMDAwXSBI
+YXJkd2FyZSBuYW1lOiBHZW5lcmljIERUIGJhc2VkIHN5c3RlbQpbICAgIDAuMDAwMDAwXSBQQyBp
+cyBhdCBydGQxMTl4X2lycV9tdXhfaW5pdCsweDk0LzB4MTM0ClsgICAgMC4wMDAwMDBdIExSIGlz
+IGF0IDB4MApbICAgIDAuMDAwMDAwXSBwYyA6IFs8YzBlMTlhMjA+XSAgICBsciA6IFs8MDAwMDAw
+MDA+XSAgICBwc3I6IGEwMDAwMGQzClsgICAgMC4wMDAwMDBdIHNwIDogYzEwMDFmMzggIGlwIDog
+ZWIwMDFkODAgIGZwIDogYzBiZGI3ZDAKWyAgICAwLjAwMDAwMF0gcjEwOiAwMDAwMDEwMCAgcjkg
+OiAwMDAwMDEyMiAgcjggOiAwMDAwMDAwMApbICAgIDAuMDAwMDAwXSByNyA6IGMwYTRkZDhjICBy
+NiA6IGVmNWY4ZmJjICByNSA6IGViMDAxZDQwICByNCA6IDAwMDAwMDQwClsgICAgMC4wMDAwMDBd
+IHIzIDogMDAwMDAwMDQgIHIyIDogMDAwMDAwMDAgIHIxIDogMDAwMDAwMDAgIHIwIDogMDAwMDAw
+NDAKWyAgICAwLjAwMDAwMF0gRmxhZ3M6IE56Q3YgIElSUXMgb2ZmICBGSVFzIG9mZiAgTW9kZSBT
+VkNfMzIgIElTQSBBUk0KU2VnbWVudCB1c2VyClsgICAgMC4wMDAwMDBdIENvbnRyb2w6IDMwYzUz
+ODdkICBUYWJsZTogMDAxMDMwMDAgIERBQzogZmZmZmZmZmQKWyAgICAwLjAwMDAwMF0gUHJvY2Vz
+cyBzd2FwcGVyLzAgKHBpZDogMCwgc3RhY2sgbGltaXQgPSAweChwdHJ2YWwpKQpbICAgIDAuMDAw
+MDAwXSBTdGFjazogKDB4YzEwMDFmMzggdG8gMHhjMTAwMjAwMCkKWyAgICAwLjAwMDAwMF0gMWYy
+MDoKICAgMDAwMDAxMjIgMDAwMDAxMDAKWyAgICAwLjAwMDAwMF0gMWY0MDogZWIwMDFjYzAgZWY1
+ZjlhMjAgYzEwMDFmNjQgYzEwMDFmNmMgZWIwMDFkMDAKYzBlMjFlNDggYzEwNWIyZWMgYzAyODQz
+NDgKWyAgICAwLjAwMDAwMF0gMWY2MDogMDAwMDAwMDAgZWIwMDFkMDAgZWIwMDFkMDAgYzEwMDFm
+NmMgYzEwMDFmNmMKYzEwMDNlNTAgMDAwMDAwMDEgYzBlMzJhMzAKWyAgICAwLjAwMDAwMF0gMWY4
+MDogYzEwMDNlNDAgYzEwNjE3ZGMgYzEwMzVkODAgZmZmZmZmZmYgY2NjY2NjY2QKMDAwMDAwMDEg
+YzBlMzJhNDAgYzBlMDI5ZjQKWyAgICAwLjAwMDAwMF0gMWZhMDogY2NjY2NjY2QgYzBlMDBjMDAg
+ZmZmZmZmZmYgZmZmZmZmZmYgMDAwMDAwMDAKYzBlMDA1ODQgMDAwMDAwMDAgZWY1ZjdlMDAKWyAg
+ICAwLjAwMDAwMF0gMWZjMDogMDAwMDAwMDAgYzBlMzJhNDAgMDAwMDAwMDAgYzEwMDNlNTAgMDAw
+MDAwMDAKYzBlMDAzMzAgMDAwMDAwMDAgMzBjMDM4N2QKWyAgICAwLjAwMDAwMF0gMWZlMDogMDAw
+MDEzOGEgMDFmZjIwMDAgNDEwZmMwNzUgMzBjNTM4N2QgMDAwMDAwMDAKMDAwMDAwMDAgMDAwMDAw
+MDAgMDAwMDAwMDAKWyAgICAwLjAwMDAwMF0gWzxjMGUxOWEyMD5dIChydGQxMTl4X2lycV9tdXhf
+aW5pdCkgZnJvbSBbPGMwZTIxZTQ4Pl0KKG9mX2lycV9pbml0KzB4MTk0LzB4MmI0KQpbICAgIDAu
+MDAwMDAwXSBbPGMwZTIxZTQ4Pl0gKG9mX2lycV9pbml0KSBmcm9tIFs8YzBlMDI5ZjQ+XQooaW5p
+dF9JUlErMHgyNC8weDc4KQpbICAgIDAuMDAwMDAwXSBbPGMwZTAyOWY0Pl0gKGluaXRfSVJRKSBm
+cm9tIFs8YzBlMDBjMDA+XQooc3RhcnRfa2VybmVsKzB4MjljLzB4NDg4KQpbICAgIDAuMDAwMDAw
+XSBbPGMwZTAwYzAwPl0gKHN0YXJ0X2tlcm5lbCkgZnJvbSBbPDAwMDAwMDAwPl0gKDB4MCkKWyAg
+ICAwLjAwMDAwMF0gQ29kZTogZTU4NTMwMDQgZTU5NzAwMDggZTA4NDQwMDAgZTU4NTQwMDggKGU1
+ODQ4MDAwKQpbICAgIDAuMDAwMDAwXSAtLS1bIGVuZCB0cmFjZSBmNjg3MjhhMGQzMDUzYjUyIF0t
+LS0KWyAgICAwLjAwMDAwMF0gS2VybmVsIHBhbmljIC0gbm90IHN5bmNpbmc6IEF0dGVtcHRlZCB0
+byBraWxsIHRoZSBpZGxlIHRhc2shClsgICAgMC4wMDAwMDBdIC0tLVsgZW5kIEtlcm5lbCBwYW5p
+YyAtIG5vdCBzeW5jaW5nOiBBdHRlbXB0ZWQgdG8ga2lsbAp0aGUgaWRsZSB0YXNrISBdLS0tCgpU
+aGlzIGFwcGVhcnMgdG8gYmUgaW4gcGFydCBhIGJ1ZyBpbiBteSBlcnJvciBoYW5kbGluZyBvZiBv
+Zl9pb21hcCAtIGl0CnJldHVybnMgTlVMTCwgbm90IFBUUl9FUlIoKS4gQnV0IGV2ZW4gd2l0aCB0
+aGF0IGZpeGVkIEkgZ2V0IGZhdGFsIGVycm9ycwphdCBzb21lIHBvaW50LgoKVGhlIHdvcmthcm91
+bmQgSSBoYXZlIGlzIGEgY3VzdG9tIG1hY2gtcmVhbHRlayBtYWNoaW5lX2Rlc2Mgd2l0aCAubWFw
+X2lvCmFzc2lnbmluZyBleHBsaWNpdCAudmlydHVhbCBhZGRyZXNzZXMgYW5kIE1UX0RFVklDRSBm
+b3IgdGhlc2UgcmFuZ2VzLiBJCmFsc28gZXhwZXJpbWVudGVkIHdpdGggLnJlc2VydmUgcmVtb3Zp
+bmcgdGhyZWUgbWVtYmxvY2tzLCBzbyB3ZSBoYXZlIGEKcHV6emxlIG9mIGZvdXIgcGxhY2VzIG1l
+c3Npbmcgd2l0aCB0aGUgc2FtZSBtZW1vcnkgcmVnaW9ucyBhbmQgc29tZQpjb21iaW5hdGlvbnMg
+d29ya2luZyBpbiB0aGUgZW5kLCB1bmNsZWFyIHdoeSBleGFjdGx5LgoKPj4+PiArICAgICAgICAg
+ICAgfTsKPj4+PiArCj4+Pj4gKyAgICAgICAgICAgIG5vckAxODEwMDAwMCB7Cj4+Pj4gKyAgICAg
+ICAgICAgICAgICAgICAgcmVnID0gPDB4MTgxMDAwMDAgMHgxMDAwMDAwPjsKPj4+PiArICAgICAg
+ICAgICAgICAgICAgICBuby1tYXA7Cj4+Pj4gKyAgICAgICAgICAgIH07Cj4+Cj4+IFNhbWUgaXNz
+dWUgaGVyZSwgSSBndWVzcz8KPiAKPiBZZXMuCgpJIGZlYXIgdGhlIG9ubHkgY29uY2x1c2lvbiBy
+aWdodCBub3cgd291bGQgYmUgdG8gZGVmZXIgUlREMTE5NSB0byB2NS42CnNvIHRoYXQgYXQgbGVh
+c3QgUlREMTI5eCBwYXJ0cyBjYW4gcHJvZ3Jlc3MgZm9yIHY1LjU/IFVubGVzcyB3ZSBjYW4KYWdy
+ZWUgb24gYSBzdWJzZXQgdG8gYXQgbGVhc3Qgc2hvd2Nhc2UgaW5pdGlhbCBlYXJseWNvbiBvdXRw
+dXQgYW5kIGFsbG93CnVzIHRvIGFkZCBub2Rlcywgc3VjaCBhcyByZXNldCBjb250cm9sbGVycywg
+YXMgd2UgYWRkL2VuYWJsZSBkcml2ZXJzLgoKUmVnYXJkcywKQW5kcmVhcwoKLS0gClNVU0UgU29m
+dHdhcmUgU29sdXRpb25zIEdlcm1hbnkgR21iSApNYXhmZWxkc3RyLiA1LCA5MDQwOSBOw7xybmJl
+cmcsIEdlcm1hbnkKR0Y6IEZlbGl4IEltZW5kw7ZyZmZlcgpIUkIgMzY4MDkgKEFHIE7DvHJuYmVy
+ZykKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
+LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
+Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
+bS1rZXJuZWwK
