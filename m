@@ -2,84 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72E67EA340
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 19:23:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6868BEA3F6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 20:18:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=uFJufmO0+i+aMwfL4iKLVe9qp4X1dDqlKw0BnGLm0w8=; b=qyh018Hdvff5lT+R1phyENDPjr
-	0rSLFWk32ELeVQ81VQ8mpNaNH/DU1WhWvDWj1tHU8SCE6Fiq9d3Zzb70nAJ08r69aC/aKlGcCn7/W
-	ycWPY5ilWcsBx6SuzmttegvzCMg/q1jtoVPU0nlgiBoSZcn01omzfH3vbGtuW44FGi3y+RKNkL6Q0
-	jdDvo3i7Ull3+NCn1qsQivfxx5uRiRigszAAMboH5KyRZMifHBwYmbqQXz39/y/8rpzJZVENb26cG
-	ek59zEbYCqOx3XfwWiyfoDEXoeBucZ1gLNZ3xtg8+QuUG55WRjzG18cv8pjzem+SSlsIpoj+yb7Sh
-	GRtiZ71A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6x36IkfweTMWb9FN1pRtLxjjdtlg8rb4X759bOkf/ks=; b=beiy2lsi1OnQc1
+	rVnpSLvV5IxE6J4m9AX2Vewd1WEiAAqbrJu+XTweNPcTX06039xh9KyPPJb/A08e9AGvCh6uXHAKz
+	CY2AGrS3l8zkGUQXDFiaPKUZs2qJhAVOhu55nCC7Ckgra9uaKAoU3X4BMhecnwFXh3/+95ffgD+Ds
+	B/HnfC6z2Wm6AJJQ0sKyLzKp1OeMQPsPR1cSR1DZjUevgFvMLBB64DksVSBLGW1sA0mpfoxZha1gh
+	mssQag1kT6O8SrvRr2jLQBh7OOy0bU+9DrKBdpf4ZMCTDpLCNGa0jqCkvzpPWHJJ3sFLcww1p3slt
+	80bPTrQv9An9ISbAfcSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPscz-0005EE-8z; Wed, 30 Oct 2019 18:23:29 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1iPtUF-0006bo-W3; Wed, 30 Oct 2019 19:18:32 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPsbu-0004QO-SI
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 18:22:24 +0000
-Received: by mail-pf1-x442.google.com with SMTP id 193so855442pfc.13
+ id 1iPtU6-0006bH-A2
+ for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 19:18:23 +0000
+Received: by mail-pl1-x644.google.com with SMTP id p13so1421921pll.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 30 Oct 2019 11:22:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=RMrszFJgqQZnz4BQZjFom+3bPfD40qA/+5eRpXchJeY=;
- b=NS0T9NTn2sGO0rWBgW+4jVzupq39TCXDMIQTAD01DlJUEUxJasNRvYxTN7lhEcBxAO
- MJnXnU2YnlB5hJLWIYhhQJPobtXE07VNl3h8cPpZX3RaQK2Pqvysp1i2oTAKqoR3uMdB
- f74lLKWqLpqaNrN2EaQK/FTBSE2S4Qv2LdoxZObnuHBUKJCh31lwglekb9hOGGovtoVY
- W3N8p/9IH+gPHj8dmWQ0VB+tMf4EwMbPdE1UrNf6MUdlk3VrGn2jM11wUEeN7LnpIuAv
- MI2oK0TN/QUT5PpN2X0uZKU1TKX2+lL87m6iXHXsAGNam2rQmBqKAl9+YixKSr966MBy
- 6BUg==
+ Wed, 30 Oct 2019 12:18:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=2OlkZ0fbcuhFnCC06vBucpby6j2rTDvW/LLqNAsLplQ=;
+ b=L2CD3ce3d2ob0TvHZzIn6TzM2d4+RIlDTsEZL5nV9u8YgBB2f8vbP+XZjWtLXbFiiC
+ +oMuwq2U7SWqrBMsyJtJdlzoG3ZuYzS3daVtslG/Vj2Vn70eYQ5t5MSaXSF8JC6XbQ/p
+ IzOhi544QFjXbAhDSScXE5zO3SR8mcfLOMhGg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=RMrszFJgqQZnz4BQZjFom+3bPfD40qA/+5eRpXchJeY=;
- b=HXcfi9DVBmS0uyiw0EXfVq7HeE/2KKfxFbIjKFbL06s7nsxya/CbiaZURVbvC2/Gq0
- yuhckY02D+uV0G2sYQ8E3R+bBbSEb0vmEA/bF29ZfwlDQjbxItO9ub9aB+8BpMfkzlSS
- wSBUv0Rb0KXgu4wVJQFNxYp8cGP5mAbcPxU3lvqJJ2yCFVPqJcDMmGm7ACWhjoMqXHuZ
- d9+csG07zRGbyscPRx3SYMGEZk26x429Av6OypVFwOisVljOegv84DsHsEjs0UlkFuE8
- OwwkbYlME0esq3Q/7tQzgiMlSgHP16xDZC9eAuC1dw0FR7Va0ecjaYCdOSaPtyv2f5fl
- p6aw==
-X-Gm-Message-State: APjAAAWkEMi7w2hjkiFseAWPje4n5B78l8hhueRAqbK4xj/KKLyMPVdk
- jp7/51Vrjwcm9360Np6Epak=
-X-Google-Smtp-Source: APXvYqx5ES4peqb/VFYaSUgBoAeQE3RpPCPQ5SNkOCGGUcY1JED3KHtlljdhgijC8J6e++KDRJUf4A==
-X-Received: by 2002:a17:90a:d58f:: with SMTP id
- v15mr767564pju.17.1572459741909; 
- Wed, 30 Oct 2019 11:22:21 -0700 (PDT)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id z5sm521637pgi.19.2019.10.30.11.22.16
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 30 Oct 2019 11:22:21 -0700 (PDT)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 6/6] thermal: brcmstb_thermal: Register different ops per
- process
-Date: Wed, 30 Oct 2019 11:21:32 -0700
-Message-Id: <20191030182132.25763-7-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191030182132.25763-1-f.fainelli@gmail.com>
-References: <20191030182132.25763-1-f.fainelli@gmail.com>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=2OlkZ0fbcuhFnCC06vBucpby6j2rTDvW/LLqNAsLplQ=;
+ b=hH9Qiv/OI4D1eAcAOgkDdTonHJdCv2oTI55sTREqlwv3JawcGA/EVpA5m6E7NzbnxG
+ T9wkSwo6ym9i8uC5KcD4Y+TF5c7h7NvTssj0ifQi5FHo4OQ3GjsmSJJbWsv/NITHhd7l
+ GNPTZhULmKwADKVmZ7mI2QYACY6Cwz5y9TRS1Lf8lLEJa1MMZjY8EVrmGNfCiDsVR/Md
+ R8b7dOXlyw8pOLnIdLB+ornlZBFgjCCQDHVKJ8UMBooRnuTxf92hq1vHJULqhQSXmueu
+ W0hqH4W2VgSFJa9U4eL0bDQ+IflJz2VMqZPC2GzUq89HgkxvNp2cKK+kN3sDRcWNK75z
+ XbDg==
+X-Gm-Message-State: APjAAAUeXrIMHHrp9irhVJ4aFQ+NhpQ4Etx0NSOjL5i/q7PihUbuT5vk
+ 0FvPopG58wvfAnqHkcg947oK0MjLKdw=
+X-Google-Smtp-Source: APXvYqx4N2VLKcKkoi0hP0tFPhHeamd6/J7d2dmaS7igYbxnjmiCmAT3z1euOVcdNEw9NpujQQVijQ==
+X-Received: by 2002:a17:902:547:: with SMTP id
+ 65mr1671958plf.239.1572463101315; 
+ Wed, 30 Oct 2019 12:18:21 -0700 (PDT)
+Received: from localhost ([2620:15c:202:1:4fff:7a6b:a335:8fde])
+ by smtp.gmail.com with ESMTPSA id h9sm705436pfn.167.2019.10.30.12.18.20
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 30 Oct 2019 12:18:20 -0700 (PDT)
+Date: Wed, 30 Oct 2019 12:18:19 -0700
+From: Matthias Kaehlcke <mka@chromium.org>
+To: Leonard Crestez <leonard.crestez@nxp.com>
+Subject: Re: [PATCH] cpufreq: Add user_min/max_freq
+Message-ID: <20191030191819.GB27773@google.com>
+References: <c222deda79ad334ff4edcbd49ddda248685c4ee1.1572395990.git.leonard.crestez@nxp.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <c222deda79ad334ff4edcbd49ddda248685c4ee1.1572395990.git.leonard.crestez@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_112223_226096_009A973C 
-X-CRM114-Status: GOOD (  15.14  )
+X-CRM114-CacheID: sfid-20191030_121822_349509_BBE88640 
+X-CRM114-Status: GOOD (  13.60  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -88,6 +84,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,86 +96,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Amit Kucheria <amit.kucheria@verdurent.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- "open list:BROADCOM STB AVS TMON DRIVER" <linux-pm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Eduardo Valentin <edubezval@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- "maintainer:BROADCOM STB AVS TMON DRIVER"
- <bcm-kernel-feedback-list@broadcom.com>, Markus Mayer <mmayer@broadcom.com>,
- Zhang Rui <rui.zhang@intel.com>,
- "moderated list:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-MIME-Version: 1.0
+Cc: Ulf Hansson <ulf.hansson@linaro.org>,
+ Saravana Kannan <saravanak@google.com>, linux-pm@vger.kernel.org,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since we do not have interrupts on BCM7216, we cannot have trip point
-crossing, the thermal subsystem expects us to provide a NULL set_trips
-operation in that case, so make it possible to provide per-process
-thermal_zone_of_device_ops
+On Wed, Oct 30, 2019 at 02:41:49AM +0200, Leonard Crestez wrote:
+> Current values in scaling_min_freq and scaling_max freq can change on
+> the fly due to event such as thermal monitoring. This behavior is
+> confusing for userspace and because once an userspace limit is written
+> to scaling_min/max_freq it is not possible to read it back.
 
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
----
- drivers/thermal/broadcom/brcmstb_thermal.c | 13 ++++++++++---
- 1 file changed, 10 insertions(+), 3 deletions(-)
+Yes, this is indeed confusing.
 
-diff --git a/drivers/thermal/broadcom/brcmstb_thermal.c b/drivers/thermal/broadcom/brcmstb_thermal.c
-index 64f715053ce9..a75a335d1bb3 100644
---- a/drivers/thermal/broadcom/brcmstb_thermal.c
-+++ b/drivers/thermal/broadcom/brcmstb_thermal.c
-@@ -96,6 +96,7 @@ static struct avs_tmon_trip avs_tmon_trips[] = {
- struct brcmstb_thermal_params {
- 	unsigned int offset;
- 	unsigned int mult;
-+	const struct thermal_zone_of_device_ops *of_ops;
- };
- 
- struct brcmstb_thermal_priv {
-@@ -278,19 +279,25 @@ static int brcmstb_set_trips(void *data, int low, int high)
- 	return 0;
- }
- 
--static const struct thermal_zone_of_device_ops of_ops = {
-+static const struct thermal_zone_of_device_ops brcmstb_16nm_of_ops = {
- 	.get_temp	= brcmstb_get_temp,
--	.set_trips	= brcmstb_set_trips,
- };
- 
- static const struct brcmstb_thermal_params brcmstb_16nm_params = {
- 	.offset	= 457829,
- 	.mult	= 557,
-+	.of_ops	= &brcmstb_16nm_of_ops,
-+};
-+
-+static const struct thermal_zone_of_device_ops brcmstb_28nm_of_ops = {
-+	.get_temp	= brcmstb_get_temp,
-+	.set_trips	= brcmstb_set_trips,
- };
- 
- static const struct brcmstb_thermal_params brcmstb_28nm_params = {
- 	.offset	= 410040,
- 	.mult	= 487,
-+	.of_ops	= &brcmstb_28nm_of_ops,
- };
- 
- static const struct of_device_id brcmstb_thermal_id_table[] = {
-@@ -329,7 +336,7 @@ static int brcmstb_thermal_probe(struct platform_device *pdev)
- 	platform_set_drvdata(pdev, priv);
- 
- 	thermal = devm_thermal_zone_of_sensor_register(&pdev->dev, 0, priv,
--						       &of_ops);
-+						       priv->temp_params.of_ops);
- 	if (IS_ERR(thermal)) {
- 		ret = PTR_ERR(thermal);
- 		dev_err(&pdev->dev, "could not register sensor: %d\n", ret);
--- 
-2.17.1
+> Introduce two new user_min/max_freq files which only contain the limits
+> imposed by userspace, without any aggregation.
+> 
+> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> 
+> ---
+> This was motivated by these discussions:
+> 
+> * https://patchwork.kernel.org/patch/11078475/#22805379
+> * https://patchwork.kernel.org/patch/11171817/#22917099
+> 
+> Those threads are about devfreq but same issue applies to cpufreq as
+> well. Let me know if this solution seems reasonable?
+> 
+> An alternative would be to make scaling_min/max_freq always read back
+> the configured value and introduce new effective_min/max_freq files for
+> the aggregate values. That might break existing users (though I'm not
+> familiar with any).
 
+It seems there isn't really a perfect solution :(
+
+This change creates a set of new, consistent attributes, but since we
+can't make the current min/max attributes read-only userspace will keep
+using them forever.
+
+It's somewhat doubtful that userspace can do anything useful with the
+current min/max values, since they might change just after being read.
+Anything besides monitoring the limits (approximately) would be inherently
+broken.
+
+Having min/max return the configured value would be the expected behavior
+(IMO), but obviously I also don't know for sure if there are userspace
+components relying on the current behavior.
 
 _______________________________________________
 linux-arm-kernel mailing list
