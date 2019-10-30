@@ -2,83 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B266BE9A75
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 11:55:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0EFF4E9A7E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 30 Oct 2019 11:56:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=03qoPWVb9PqzN8nS82qVYh8d97IIObJal8DEuQz9ZLc=; b=kygwwu7a4Pyl93fnvfFGqF6yu
-	xc1VjOIiqJwIEgLcunRiMJSskaNRP0Hwc9IGS/Fi9DhWVbCQ/gF9tUpS9Y08GTa1A0616JPciLkku
-	I0lL3l43o92uvIZdKF44Ur6FQIqYHF7wNr8586X2g5Ko9/1WsanRhLlLqYM6FWsdBue/v5pmEwtqk
-	ys3B3eGv6fn0RpOUvZy+HHK/RzW2oq4OkE/bozKWaQhLUfkFTyoW61krF6N586kdUtKCEXb1K8K9R
-	HL2/z6+adrjUMdxigByKxH/KtktY7BdhlI4pHu1DIIHnt4Uwnwxdb7i6hhp2NSjQewsSixvyk/mN+
-	Tvyf4zaEQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YNYEW1YARtoPM+KdKHu8c6YTgjADI9Mab3oapotdb9A=; b=jpa2nJjuaZEJpW
+	mN675QtKDtSBypr0zp4vP1Jivg+mz9Ly8Hj+Ux+6peGaK15K2YINsGH5xyodBBntm7pcK3R/Qi9SJ
+	3jKWtS6AxAtYtPuCP7dNs4KZLQejw0AL+v59gA1JZEWzHh+6GnY6Lwac8ZfZaxTyCFsPQHZR4DF7E
+	sgKP14sRqjgK9dgiiqqXW7G+tUoRhswn3S3w+RZsuajxqQ6t3kJtbdloeeNZ5hhVX3PexCZnEs3K5
+	x3JecHZOhsdWAHzy+k9R0bPiRPVNgET9SdAUVKMibIbKzL9GtQbpCrTydUV/tSS5llGwoitje7sZA
+	G/der8jTnQaB3tVZxhxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPldd-0005xn-7S; Wed, 30 Oct 2019 10:55:41 +0000
-Received: from pegase1.c-s.fr ([93.17.236.30])
+	id 1iPleW-0006Qp-JV; Wed, 30 Oct 2019 10:56:36 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPldT-0005x6-Fn
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 10:55:32 +0000
-Received: from localhost (mailhub1-int [192.168.12.234])
- by localhost (Postfix) with ESMTP id 47352k62rMz9vC12;
- Wed, 30 Oct 2019 11:55:26 +0100 (CET)
-Authentication-Results: localhost; dkim=pass
- reason="1024-bit key; insecure key"
- header.d=c-s.fr header.i=@c-s.fr header.b=XPYljseg; dkim-adsp=pass;
- dkim-atps=neutral
-X-Virus-Scanned: Debian amavisd-new at c-s.fr
-Received: from pegase1.c-s.fr ([192.168.12.234])
- by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
- with ESMTP id uu25dTN3YMcD; Wed, 30 Oct 2019 11:55:26 +0100 (CET)
-Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
- by pegase1.c-s.fr (Postfix) with ESMTP id 47352k4xR0z9vC0y;
- Wed, 30 Oct 2019 11:55:26 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
- t=1572432926; bh=HBlLtJ215+QvNQV7weZ8681fHhQDwH2De/MKiJrOgxs=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=XPYljsegKvIoZZ73/DxSEYx5OsvSxbA+Hd6P+HQiQ3ZUh4+jo5s+sZzSK7NK4s9yC
- JLx4+RhY6mEPpHzgt4+APDzn6+yfkVGrNWrsLyZBWSsZZ/Qmu0xyZ6GN7pHcx2b0b6
- fTiwtAD8hBNHVYODKxDOn6blIOsbkSbkX7ginzsA=
-Received: from localhost (localhost [127.0.0.1])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id D07E58B7C8;
- Wed, 30 Oct 2019 11:55:27 +0100 (CET)
-X-Virus-Scanned: amavisd-new at c-s.fr
-Received: from messagerie.si.c-s.fr ([127.0.0.1])
- by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
- with ESMTP id W6nV1hCwWHCU; Wed, 30 Oct 2019 11:55:27 +0100 (CET)
-Received: from [192.168.4.90] (unknown [192.168.4.90])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id D23078B86A;
- Wed, 30 Oct 2019 11:55:25 +0100 (CET)
-Subject: Re: [PATCH v2 19/23] net: ethernet: freescale: make UCC_GETH
- explicitly depend on PPC32
-To: Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>
-References: <20191018125234.21825-1-linux@rasmusvillemoes.dk>
- <20191025124058.22580-1-linux@rasmusvillemoes.dk>
- <20191025124058.22580-20-linux@rasmusvillemoes.dk>
-From: Christophe Leroy <christophe.leroy@c-s.fr>
-Message-ID: <a8b52b7f-9a96-7f7e-1360-7e4ed723d286@c-s.fr>
-Date: Wed, 30 Oct 2019 11:55:25 +0100
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iPleC-0006Dx-T2
+ for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 10:56:18 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=uIegkZQzkn1zcqdyq67bNlxNwZqbG1dPi+BTChwc7jw=; b=Toq0Mv2v84YfwvtbALBytVUt2
+ tVFOKbqj5yElqIGud8SkSy5s0ilJ9aeo7zs3Yfcn4dVVHqjmP4hXHVYNOZ6ouyr9OSwR2oybr895m
+ oDsyqNEcS8AkLyA44zjEkH62Hxv6LZu6rkCp9FQ7M46IpkAl9U4K46IDC+NNIPAyDIfwe9aZRDxlb
+ g9qe1+h0Ai4OtVpFj7zm1fr+/fkuxZj52NhnBUAhDIhysi0Q6Aum7izpBQpCDomhfzZ6VE0ibOFUW
+ iDZZlot+hHl8yhVo7WjSfEdQjZAj5UkzOQVgxedpGwKP7zAr/wGg9vlQMie/5RcdG7asheA0JWQFR
+ 7VXrEswKA==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:56890)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1iPlds-0007ur-Rj; Wed, 30 Oct 2019 10:55:56 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1iPldp-0005So-HG; Wed, 30 Oct 2019 10:55:53 +0000
+Date: Wed, 30 Oct 2019 10:55:53 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Anders Roxell <anders.roxell@linaro.org>
+Subject: Re: linux-next: Tree for Oct 29
+Message-ID: <20191030105553.GH25745@shell.armlinux.org.uk>
+References: <20191029180731.2153b90c@canb.auug.org.au>
+ <CADYN=9+aqqHVP8tKFFCTKi_zzSt=PW5JVyU2sdaThgrHpYSjzQ@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20191025124058.22580-20-linux@rasmusvillemoes.dk>
-Content-Language: fr
+Content-Disposition: inline
+In-Reply-To: <CADYN=9+aqqHVP8tKFFCTKi_zzSt=PW5JVyU2sdaThgrHpYSjzQ@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_035531_679469_E61C466A 
-X-CRM114-Status: GOOD (  15.16  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191030_035616_976666_85F7C99D 
+X-CRM114-Status: GOOD (  11.91  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [93.17.236.30 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -98,32 +87,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Valentin Longchamp <valentin.longchamp@keymile.com>, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, Scott Wood <oss@buserror.net>,
- linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Stephen Rothwell <sfr@canb.auug.org.au>,
+ Linux Next Mailing List <linux-next@vger.kernel.org>,
+ linux-trace-devel@vger.kernel.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpMZSAyNS8xMC8yMDE5IMOgIDE0OjQwLCBSYXNtdXMgVmlsbGVtb2VzIGEgw6ljcml0wqA6Cj4g
-Q3VycmVudGx5LCBRVUlDQ19FTkdJTkUgZGVwZW5kcyBvbiBQUEMzMiwgc28gdGhpcyBpbiBpdHNl
-bGYgZG9lcyBub3QKPiBjaGFuZ2UgYW55dGhpbmcuIEluIG9yZGVyIHRvIGFsbG93IHJlbW92aW5n
-IHRoZSBQUEMzMiBkZXBlbmRlbmN5IGZyb20KPiBRVUlDQ19FTkdJTkUgYW5kIGF2b2lkIGFsbG1v
-ZGNvbmZpZyBidWlsZCBmYWlsdXJlcywgYWRkIHRoaXMgZXhwbGljaXQKPiBkZXBlbmRlbmN5Lgo+
-IAo+IFNpZ25lZC1vZmYtYnk6IFJhc211cyBWaWxsZW1vZXMgPGxpbnV4QHJhc211c3ZpbGxlbW9l
-cy5kaz4KPiAtLS0KPiAgIGRyaXZlcnMvbmV0L2V0aGVybmV0L2ZyZWVzY2FsZS9LY29uZmlnIHwg
-MSArCj4gICAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKykKPiAKPiBkaWZmIC0tZ2l0IGEv
-ZHJpdmVycy9uZXQvZXRoZXJuZXQvZnJlZXNjYWxlL0tjb25maWcgYi9kcml2ZXJzL25ldC9ldGhl
-cm5ldC9mcmVlc2NhbGUvS2NvbmZpZwo+IGluZGV4IDZhN2U4OTkzMTE5Zi4uOTdkMjdjNzc0MGQ0
-IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvbmV0L2V0aGVybmV0L2ZyZWVzY2FsZS9LY29uZmlnCj4g
-KysrIGIvZHJpdmVycy9uZXQvZXRoZXJuZXQvZnJlZXNjYWxlL0tjb25maWcKPiBAQCAtNzUsNiAr
-NzUsNyBAQCBjb25maWcgRlNMX1hHTUFDX01ESU8KPiAgIGNvbmZpZyBVQ0NfR0VUSAo+ICAgCXRy
-aXN0YXRlICJGcmVlc2NhbGUgUUUgR2lnYWJpdCBFdGhlcm5ldCIKPiAgIAlkZXBlbmRzIG9uIFFV
-SUNDX0VOR0lORQo+ICsJZGVwZW5kcyBvbiBQUEMzMgoKSSB0aGluayBpdCB3b3VsZCBiZSBtb3Jl
-IG9idmlvdXMgdG8gaGF2ZToKCWRlcGVuZHMgb24gUVVJQ0NfRU5HSU5FICYmIFBQQzMyCgpDaHJp
-c3RvcGhlCgo+ICAgCXNlbGVjdCBGU0xfUFFfTURJTwo+ICAgCXNlbGVjdCBQSFlMSUIKPiAgIAkt
-LS1oZWxwLS0tCj4gCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
-LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1hcm0ta2VybmVsCg==
+Please trim your replies; there's no need to force everyone to page
+through 500 lines of Stephen's email to get to the content of your
+message.
+
+On Wed, Oct 30, 2019 at 11:25:19AM +0100, Anders Roxell wrote:
+> When I'm building an arm kernel with this .config [1], I can see this
+> build error on next tag next-20191029 and next-20191030. Tag
+> next-20191028 built fine.
+> 
+> 
+> $ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- -skj$(getconf
+> _NPROCESSORS_ONLN) O=obj-arm-20191029 zImage
+> arm-linux-gnueabi-ld: kernel/trace/trace_preemptirq.o: in function
+> `trace_hardirqs_on':
+> trace_preemptirq.c:(.text+0x2a0): undefined reference to `return_address'
+> arm-linux-gnueabi-ld: trace_preemptirq.c:(.text+0x2dc): undefined
+> reference to `return_address'
+> arm-linux-gnueabi-ld: kernel/trace/trace_preemptirq.o: in function
+> `trace_hardirqs_off':
+> trace_preemptirq.c:(.text+0x468): undefined reference to `return_address'
+> arm-linux-gnueabi-ld: trace_preemptirq.c:(.text+0x494): undefined
+> reference to `return_address'
+> arm-linux-gnueabi-ld: kernel/trace/trace_irqsoff.o: in function
+> `start_critical_timings':
+> trace_irqsoff.c:(.text+0x798): undefined reference to `return_address'
+> arm-linux-gnueabi-ld:
+> kernel/trace/trace_irqsoff.o:trace_irqsoff.c:(.text+0xed4): more
+> undefined references to `return_address' follow
+> make[1]: *** [/srv/src/kernel/next-testing/Makefile:1074: vmlinux] Error 1
+> make[1]: Target 'zImage' not remade because of errors.
+> make: *** [Makefile:179: sub-make] Error 2
+> make: Target 'zImage' not remade because of errors.
+
+Known problem with one of Ben Dooks patches, which was dropped very
+quickly when Olof's builder spotted the issue... though it looks like
+I didn't push it out.  Ben doesn't seem to be responding about his
+broken patch though...
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
