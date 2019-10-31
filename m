@@ -2,89 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3174CEA790
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 00:12:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA3B3EA811
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 01:08:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YR4ZKTxWsr48O2pdTM1lYBwGmzSEr6BVjyo4eGDc+fY=; b=GPH2ommqGHun+R
-	KZgjA2eJ5SqJpGGFM68fgx71i+gojB/0AJSE6D8puptqG8ddpEqOxDFjc+tcbYX0nevi6DkEZXatL
-	hdq+km+eX0Y8fbNxzdaS0yGeJoeA76Q+KnrAz5+TGNJsoEvEnOzofZ7EaBnmeqXr26jcKY271xGKs
-	xe9raU+rtQaOyIGvBDSCq40HlrCSf137HlPNO3E3QqkRNpaYHUB6hlNQK2zhXPu4buNHTrgZuKQ7F
-	qU7CZwWKPKytSblRSQqQVs+l1en/0oL60We0q5rcCKOoMJbyYuOqD82ecsZNTzP9/qn+abmDXTMFi
-	YCC3T8fmywdSYWiFjKMA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=t1qyuqKbfEUx4pTf0Rh95AQ7RzWTOng1CCvmxNhfsew=; b=WsHXknq/1xNArB
+	21Oglo8dbUZmN161scA0WS/5aE6UOfv8D+JrQf1WMs0fbZ9RBGFV+jf6Od52EYbEfSJ5zdB3EG9Hn
+	OMJM17G3ia1rM8LdOc7BwEGolwLj4gTyrbH+a6AIShvu7m98gwUn8FkMiv8KroGKNHh0qTx2xgA6p
+	XTc51hyi4qNnxclgnibqqGRgxN/MrEJ3zCU2ukRZpFSIMUv5Gq+eXTzo5hg7gR8TgVdkJ8a8VJwB2
+	ij1Bvs9lKdNnwZE7LKQYk7AlTTLpUbd3ZLDTYkr9lRxoe25NWqQ3TeAjbXKp+AZxX/DcvsoIpg2uO
+	6t1kGuA0M+gFP89HzGRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPx8U-0004i8-L8; Wed, 30 Oct 2019 23:12:18 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iPy0q-00088N-2M; Thu, 31 Oct 2019 00:08:28 +0000
+Received: from hqemgate14.nvidia.com ([216.228.121.143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPx8L-0004hE-OC
- for linux-arm-kernel@lists.infradead.org; Wed, 30 Oct 2019 23:12:11 +0000
-Received: by mail-pg1-x543.google.com with SMTP id l3so2572231pgr.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 30 Oct 2019 16:12:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=885nbPg6jGyxC22i6djzkMtMUJgUk22kfQ1KMF5dCF4=;
- b=oLRbvfDJm8VrWgYQ6QhhHNuvFg0HWFeMlx6uraE9cHEIEbD8Y1oHlM+S7uMR89ykig
- BfnUSMWbX5wXD6M1Luqc9OvqhZCIF6SP5AJBqS5JclOKquwXOCvDsPXkqnE01c+5FPp3
- UE67elkNz3DkQ2pUbtKXhNOQQ3mOta+UP73RbCv1nErNEX6a+3mjlG44qBG2gPZLXqat
- gZswl4CcAZgj7NiEFz8QmrQEttmSAeNdYh0DtpI3YkTRDdLmPzQ4AiXauoif2iJOqtwe
- u9VlEXoki011PG3H38z5ruJcH44K4kv4CvDQ9vm2frP71hTvnG1h/yE0nunVg8VfNv2G
- daFA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=885nbPg6jGyxC22i6djzkMtMUJgUk22kfQ1KMF5dCF4=;
- b=ZPY6c2EwsaZmzxiM7i21WDPqrHn+uvK1QZp4WDjbYYaHfEyYE2VaaSzfo57GZG9Rcl
- 8cA63g6HM26BBmWfV3WsOhK9E6iPNB64ihWO4kweriwcxXcRFiTI/tXRlM5vYkNZkoHd
- PbOVtS0L1siOPRLuPjlB/rdGxYvgadND1EXwbHOJMpDJ/ylpSAlSF/NkCtyAFw/ComQI
- rnQHL8JgtOD3LkM7gToX8+TY/91c5j9g/5uMHaF8Jvet5Xje1woDHNi+MPBuGMSa94cZ
- z88lojOcXrnjwUzJVT2W/FTX3qvXxSdtG0G9uoj9xxDqdxSKqNZG8E5i7S5tmboUZgI2
- 0cFw==
-X-Gm-Message-State: APjAAAUvLZXkXhWNCVPeQDiTJFdWghG2AVUZ0EU3GlAF81SFgOPVQje/
- Z9hFv95FJXmwdQGB4lpPslg=
-X-Google-Smtp-Source: APXvYqxbfiwz4ogo5Kw8lSy4iUdkk8hpOLAZPedWTkyCs30wo0LDOGX1RlN+6AjnPZgj+BoIq0bmnQ==
-X-Received: by 2002:a17:90a:a504:: with SMTP id
- a4mr2279687pjq.61.1572477128315; 
- Wed, 30 Oct 2019 16:12:08 -0700 (PDT)
-Received: from dtor-ws ([2620:15c:202:201:3adc:b08c:7acc:b325])
- by smtp.gmail.com with ESMTPSA id r21sm1079774pfc.27.2019.10.30.16.12.07
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 30 Oct 2019 16:12:07 -0700 (PDT)
-Date: Wed, 30 Oct 2019 16:12:05 -0700
-From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v2 3/5] dt-bindings: input: tochscreen: ad7879: generic
- node names in example
-Message-ID: <20191030231205.GI57214@dtor-ws>
-References: <20191026090403.3057-1-marcel@ziswiler.com>
- <20191026090403.3057-3-marcel@ziswiler.com>
- <20191030140455.GA4544@bogus>
+ id 1iPxzx-0007XA-IG
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 00:07:35 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate14.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5dba25c80000>; Wed, 30 Oct 2019 17:07:36 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Wed, 30 Oct 2019 17:07:30 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Wed, 30 Oct 2019 17:07:30 -0700
+Received: from HQMAIL111.nvidia.com (172.20.187.18) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Thu, 31 Oct
+ 2019 00:07:29 +0000
+Received: from hqnvemgw02.nvidia.com (172.16.227.111) by HQMAIL111.nvidia.com
+ (172.20.187.18) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via
+ Frontend Transport; Thu, 31 Oct 2019 00:07:29 +0000
+Received: from vdumpa-ubuntu.nvidia.com (Not Verified[172.17.173.140]) by
+ hqnvemgw02.nvidia.com with Trustwave SEG (v7, 5, 8, 10121)
+ id <B5dba25c10000>; Wed, 30 Oct 2019 17:07:29 -0700
+From: Krishna Reddy <vdumpa@nvidia.com>
+To: 
+Subject: [PATCH v4 0/6] Nvidia Arm SMMUv2 Implementation
+Date: Wed, 30 Oct 2019 17:07:11 -0700
+Message-ID: <1572480437-28449-1-git-send-email-vdumpa@nvidia.com>
+X-Mailer: git-send-email 2.7.4
+X-NVConfidentiality: public
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191030140455.GA4544@bogus>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1572480456; bh=twA38AxT+vglESgZl57xrwZUdLq1unS/ukF862ESTCs=;
+ h=X-PGP-Universal:From:To:CC:Subject:Date:Message-ID:X-Mailer:
+ X-NVConfidentiality:MIME-Version:Content-Type;
+ b=CXOTXa9hDqtYTPrMUbv9IfoOpO1/9f9EMLBpdpoSn/wVbLzM2MUmiJbuX19RhEED5
+ cRqL83gefTkE5qRcLQqUj3AeUxKVImFw6srlsXgK/TD21H9rHkLtByRtQgneUKgp/j
+ pO7ItNbHh9tNWRuWYejbSAmpotFxxVnf0SlPz43D6W3/dlONflBdcVZCB8x5+sNiaE
+ BuUki5rEoQxXfhU0sf22IksBlRcasT+hvRYTzQ2v0UIF4QMGOKSvCPfCNKvyNgBMgG
+ 6osi9xp+E0Q/pGpH3D3ke0shqbjzBCmE2HBGmZTq1pWp4KJxj0u2UuSXbLoPy7yUZV
+ VvoYeDvWLT4Qg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_161209_811777_865E3AE8 
-X-CRM114-Status: GOOD (  13.62  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191030_170733_611376_7E19A7C3 
+X-CRM114-Status: UNSURE (   8.07  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.143 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (dmitry.torokhov[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -92,6 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,40 +90,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Marcel Ziswiler <marcel.ziswiler@toradex.com>, linux-kernel@vger.kernel.org,
- Philippe Schenker <philippe.schenker@toradex.com>,
- Marcel Ziswiler <marcel@ziswiler.com>, linux-input@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com
+Cc: snikam@nvidia.com, jtukkinen@nvidia.com, mperttunen@nvidia.com,
+ will@kernel.org, joro@8bytes.org, linux-kernel@vger.kernel.org,
+ praithatha@nvidia.com, talho@nvidia.com, olof@lixom.net,
+ iommu@lists.linux-foundation.org, nicolinc@nvidia.com,
+ linux-tegra@vger.kernel.org, yhsu@nvidia.com, treding@nvidia.com,
+ robin.murphy@arm.com, avanbrunt@nvidia.com,
+ linux-arm-kernel@lists.infradead.org, bbiswas@nvidia.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 30, 2019 at 09:04:55AM -0500, Rob Herring wrote:
-> On Sat, Oct 26, 2019 at 11:04:01AM +0200, Marcel Ziswiler wrote:
-> > From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
-> 
-> There's a typo in the subject.
+Changes in v4:
+Rebased on top of https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/ for-joerg/arm-smmu/updates.
+Updated arm-smmu-nvidia.c to use the tlb_sync implementation hook.
+Dropped patch that updates arm_smmu_flush_ops for override as it is no longer necessary.
 
-I fixed it up file applying, thank you for noticing.
+v3 - https://lkml.org/lkml/2019/10/18/1601
+v2 - https://lkml.org/lkml/2019/9/2/980
+v1 - https://lkml.org/lkml/2019/8/29/1588
 
-> 
-> > 
-> > Update example in ad7879 devicetree documentation to use generic touch
-> > controller node names.
-> > 
-> > Signed-off-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
-> > 
-> > ---
-> > 
-> > Changes in v2: New patch.
-> > 
-> >  .../devicetree/bindings/input/touchscreen/ad7879.txt          | 4 ++--
-> >  1 file changed, 2 insertions(+), 2 deletions(-)
+Krishna Reddy (6):
+  iommu/arm-smmu: add NVIDIA implementation for dual ARM MMU-500 usage
+  dt-bindings: arm-smmu: Add binding for Tegra194 SMMU
+  iommu/arm-smmu: Add global/context fault implementation hooks
+  arm64: tegra: Add Memory controller DT node on T194
+  arm64: tegra: Add DT node for T194 SMMU
+  arm64: tegra: enable SMMU for SDHCI and EQOS on T194
+
+ .../devicetree/bindings/iommu/arm,smmu.txt         |   4 +
+ MAINTAINERS                                        |   2 +
+ arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi     |   4 +
+ arch/arm64/boot/dts/nvidia/tegra194.dtsi           |  88 +++++++
+ drivers/iommu/Makefile                             |   2 +-
+ drivers/iommu/arm-smmu-impl.c                      |   3 +
+ drivers/iommu/arm-smmu-nvidia.c                    | 261 +++++++++++++++++++++
+ drivers/iommu/arm-smmu.c                           |  11 +-
+ drivers/iommu/arm-smmu.h                           |   4 +
+ 9 files changed, 376 insertions(+), 3 deletions(-)
+ create mode 100644 drivers/iommu/arm-smmu-nvidia.c
 
 -- 
-Dmitry
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
