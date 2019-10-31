@@ -2,69 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E9A74EB473
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 17:08:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82D3AEB498
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 17:23:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Pcp+cJiSPuUp9tbziVpoMQDfeo7OQ8DSVGOWiCViUyk=; b=r3Afri3yMz+WH2
-	RjlHO1xz+tl+BmCNJNqd17RzVHkDXbtwSAikFTRrZV4kI/aMJwzRz3bXyKMDGVtGJ+N6Fz8k/KlEy
-	/X5kJtigF1RnOdBJuqQmKYi6ilagI5aHAW7xSaOsieWq5GwBFJIXG1qy3aj7/RRC0RSN27L1hERLD
-	l3HCovqAnDYZvpXaZidatL1ON7xiNe2jv/Pd1HVK2zTVt3ouH6TDHzuiuoOLdMrUl3vLYfzT+3JDT
-	nC0Iicek0Z6FBj1qTqW4SkzAPHe6H3C/wAaR5JAq7nYIdIHDu/gwzye2lFx8CZxxiJKBwaKQe5fZT
-	dkjbjxRQZ8zZIMoxHW5g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=v/bbS/GpxLxYIaqjFIBGWchW40DKDm6RfOFKsWOS7Js=; b=r0rkCwiJZACxAvkVB9PdjDzwB
+	ZJc2MVIHT6a1XhRNdrNl+Rp0xwbmPoiQnw3ydAdH39yUBUMPqEWaZ7alDFOQcbe48mTAhs3eGP4Gj
+	bTfb1g+C1xwxUzxY5Fg9qdDFIMUvwJcb/A+Nf+N4vNT1GVCYx0cVMM5rvD+j9X8cokxdWtL0ICKYN
+	mjj5ltXyyTHHJr+MvmWlV/WCiCHBVrA1JRpaoN8UBLxarVRE+bi50F7aAs0aQOKXj8/rY/PMSrPMy
+	b+WeDPQLCBkife8jrnR13lxKsp/zr5AbDjl7PfcoDu2n1stUhggqkeNiUwIo09rZPs9CFW3JaXytM
+	/HIGnyXQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQCzk-0007XW-PV; Thu, 31 Oct 2019 16:08:20 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iQDE9-0004aS-GD; Thu, 31 Oct 2019 16:23:13 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQCzZ-0007Wy-8c
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 16:08:10 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 22A8820873;
- Thu, 31 Oct 2019 16:08:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572538088;
- bh=fghdOvr2OgY+0ekHMFjXmZkPb2T75OfCtlZkaJYklJw=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=NaTt76GTXoj8jPo2lH9hUzpA4tWIvlqdPiVwStWyMBljnoJ/Q9SzcJvpTEYk1+lEY
- ySh6s/kiYEaNvmC/z8PqgPp32F3VXTYJa/2asMvQKZ9K57Tp5tjQw0KoTmeHW+vfYf
- 2Vvv88P1YYwi3XFBdCfO6a9n7AuhifuB42c8bZD0=
-Date: Thu, 31 Oct 2019 16:08:04 +0000
-From: Will Deacon <will@kernel.org>
-To: Shaokun Zhang <zhangshaokun@hisilicon.com>
-Subject: Re: [PATCH] arm64: perf: Simplify the ARMv8 PMUv3 event attributes
-Message-ID: <20191031160804.GA28325@willie-the-truck>
-References: <1572407177-48229-1-git-send-email-zhangshaokun@hisilicon.com>
+ id 1iQDDz-0004ZR-V9
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 16:23:05 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 60797B833;
+ Thu, 31 Oct 2019 16:23:01 +0000 (UTC)
+Message-ID: <6726a651c12d91ca22b9d8984745d90db5d507ec.camel@suse.de>
+Subject: Re: [PATCH] dma/direct: turn ARCH_ZONE_DMA_BITS into a variable
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Christoph Hellwig <hch@lst.de>
+Date: Thu, 31 Oct 2019 17:22:59 +0100
+In-Reply-To: <20191031155750.GA7394@lst.de>
+References: <20191031152837.15253-1-nsaenzjulienne@suse.de>
+ <20191031154759.GA7162@lst.de>
+ <40d06d463c05d36968e8b64924d78f7794f8de50.camel@suse.de>
+ <20191031155750.GA7394@lst.de>
+User-Agent: Evolution 3.34.1 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1572407177-48229-1-git-send-email-zhangshaokun@hisilicon.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_090809_323042_BB739422 
-X-CRM114-Status: GOOD (  13.09  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191031_092304_151780_C46763A8 
+X-CRM114-Status: GOOD (  17.03  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,50 +62,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-s390@vger.kernel.org, Vasily Gorbik <gor@linux.ibm.com>,
+ Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ linuxppc-dev@lists.ozlabs.org, Heiko Carstens <heiko.carstens@de.ibm.com>,
+ linux-kernel@vger.kernel.org, Christian Borntraeger <borntraeger@de.ibm.com>,
+ iommu@lists.linux-foundation.org, Paul Mackerras <paulus@samba.org>,
+ Michael Ellerman <mpe@ellerman.id.au>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Type: multipart/mixed; boundary="===============3053091502514754171=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 30, 2019 at 11:46:17AM +0800, Shaokun Zhang wrote:
-> For each PMU event, there is a ARMV8_EVENT_ATTR(xx, XX) and
-> &armv8_event_attr_xx.attr.attr. Let's redefine the ARMV8_EVENT_ATTR
-> to simplify the armv8_pmuv3_event_attrs.
-> 
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Mark Rutland <mark.rutland@arm.com>
-> Signed-off-by: Shaokun Zhang <zhangshaokun@hisilicon.com>
-> ---
->  arch/arm64/kernel/perf_event.c | 189 ++++++++++++++---------------------------
->  1 file changed, 65 insertions(+), 124 deletions(-)
-> 
-> diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
-> index a0b4f1bca491..d0f084939bcf 100644
-> --- a/arch/arm64/kernel/perf_event.c
-> +++ b/arch/arm64/kernel/perf_event.c
-> @@ -159,132 +159,73 @@ armv8pmu_events_sysfs_show(struct device *dev,
->  }
 
-[...]
+--===============3053091502514754171==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-geumnkbETQYdG1ZUMwUA"
 
-> +	(&((struct perf_pmu_events_attr[]) { \
-> +		{ .attr = __ATTR(name, 0444, armv8pmu_events_sysfs_show, NULL), \
-> +		  .id = config, } \
-> +	})[0].attr.attr)
 
-I don't get the need for the array here. Why can't you do:
+--=-geumnkbETQYdG1ZUMwUA
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-	(&((struct perf_pmu_events_attr) {
-		.attr = ...,
-		.id = ...,
-	}).attr.attr)
+On Thu, 2019-10-31 at 16:57 +0100, Christoph Hellwig wrote:
+> On Thu, Oct 31, 2019 at 04:53:13PM +0100, Nicolas Saenz Julienne wrote:
+> > > > +#define ARM64_ZONE_DMA_BITS	30
+> > > > +
+> > > >  /*
+> > > >   * We need to be able to catch inadvertent references to memstart_=
+addr
+> > > >   * that occur (potentially in generic code) before
+> > > > arm64_memblock_init()
+> > > > @@ -424,6 +427,8 @@ void __init arm64_memblock_init(void)
+> > > >  	else
+> > > >  		arm64_dma_phys_limit =3D PHYS_MASK + 1;
+> > > > =20
+> > > > +	zone_dma_bits =3D ARM64_ZONE_DMA_BITS;
+> > > > +
+> > > >  	reserve_crashkernel();
+> > >=20
+> > > This actually adds a new limit, as there wasn't one before for arm64.
+> >=20
+> > Well, as zone_dma_bits is only relevant in dma/direct when ZONE_DMA is
+> > defined
+> > I figured it doesn't matter if the variable is set conditionally to ZON=
+E_DMA
+> > or
+> > not.
+>=20
+> I'd much prefer that to do separately.
 
-?
+OK, I see what you mean now. It's wrong indeed.
 
-Will
+The trouble is the ZONE_DMA series[1] in arm64, also due for v5.5, will be
+affected by this patch. I don't know the right way to approach this problem
+since depending on the merge order, this patch should be updated or the arm=
+64
+ZONE_DMA series fixed.
+
+Maybe it's easier to just wait for v5.6.
+
+Regards,
+Nicolas
+
+[1] https://lkml.org/lkml/2019/9/11/734
+
+
+--=-geumnkbETQYdG1ZUMwUA
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl27CmMACgkQlfZmHno8
+x/4b+AgAoH8wv9sfGomdszgwev9YRlMzey4HKe8HTYaOtmPwv+9I5u2Q1L0Hll8U
+oOvfmsMi3/GCphnYxgVI15TV3gT23I4f+e1sVmHtdJwOja145qdVYeN0eVrJBGlW
+gllgXNWdKSeomR5jQYRo6/r/e4b2DFreMuJMYO5Ac0Jmp4lqqbZ9tXDqMvKt0VcB
+4olZERu99fJIT8AxzUVXOG9cft6l18Fio1WtXJLzXgVrjxEKnxGLAq1GxY5o8VF7
+mf5621L1pvp/rNs/CBhehPADNaJqYwdS+nm7md9u/My8zRvp2OqT8O9a4e7RxcQi
+QPdhGBoQVaeZdUmbRgLmr2hq8cGTqw==
+=2ip7
+-----END PGP SIGNATURE-----
+
+--=-geumnkbETQYdG1ZUMwUA--
+
+
+
+--===============3053091502514754171==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3053091502514754171==--
+
+
