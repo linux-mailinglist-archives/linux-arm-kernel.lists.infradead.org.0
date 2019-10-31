@@ -2,64 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2D3BEB916
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 22:38:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E49C4EB941
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 22:48:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=oGMb0jEyfgMIlCV+Qd9fVX6k9M8IdXQlhsQJ0DmoADc=; b=YllBdjN/Jnabq+KN6SN7FhEFTR
-	lrf15sLNO61CeiM9/1LBYDrJie0bwxpi8W9iW/C1sYNZC/qGLdvgvNCEH4USlMbVXqEe5WOEiqy3N
-	J1EPyQPpcfEnZvKdDaVcU6rWYJtF00YFSZPJJvzygM6+q4Smiw9e8P/8gaAh/b1gDqCpWodirPos4
-	G5YraydJT3ChOX2nGOJocmqKCZksEk+yR5FDEJBXPkyBjUuDO4/7Z8B1gwta3EK5fwCbakuHBUzNA
-	9GaJIJ705PyRsYIAr3/GwMd5VBa7t8/i3BUWpF2UeDap/jht+pZr684H4LiX+/8Zg7S/9SPNNKik4
-	EEH21rkg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=To2YVlkbymtFrKjtZJox6U+BYmVnadt4GaqrqK3qHgA=; b=f6w
+	DutMxvqAyTbqcxXFfxW9QxWeeKmpc9BH5V+MfgpMhAuK6yWPQaWQJJ88nckFRD0HJUwn5G5N8qdDM
+	+pPZLbx9AqlPyE+AJPc7980uo9OOrJlCG4IU/3sPKcpIEs95DFDPjROH2yRPygOdtJBR/ah2LBJPG
+	b2Mufa0jwM74X7Z7pCdofkRN4KD+ijKbRgOJn970MF8LMnX6QrSVL9zwwf5mMR7Wzw0q7ZCbnLb7e
+	iTxzdSXVmMBriRzSu6SBxCbwwrAXpi9cIPUVah3tHV0dQzLDY0YbqO2hJ2c/c3QREty/+JaO3jEh6
+	O+JezxGlHCwSFPeHACpg6399Qj+BS6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQI8c-00079j-Bb; Thu, 31 Oct 2019 21:37:50 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1iQIIz-0002wX-JV; Thu, 31 Oct 2019 21:48:33 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQI5Z-0003jK-0M
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 21:34:43 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B21351A057E;
- Thu, 31 Oct 2019 22:34:39 +0100 (CET)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A4A6B1A0112;
- Thu, 31 Oct 2019 22:34:39 +0100 (CET)
-Received: from fsr-ub1864-112.ea.freescale.net
- (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 0CDEC205E9;
- Thu, 31 Oct 2019 22:34:39 +0100 (CET)
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: MyungJoo Ham <myungjoo.ham@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>
-Subject: [PATCH v10 11/11] PM / devfreq: Use PM QoS for sysfs min/max_freq
-Date: Thu, 31 Oct 2019 23:34:28 +0200
-Message-Id: <5b58df9e6244d79768617d20ff1a9a825da6293d.1572556786.git.leonard.crestez@nxp.com>
+ id 1iQIIk-0002ul-HF
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 21:48:20 +0000
+Received: by mail-wr1-x441.google.com with SMTP id w18so7893071wrt.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 31 Oct 2019 14:48:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=sEuZEsN3CO17Mk96Q9i8WbzrGmqYVcLxl0EB6NndMBA=;
+ b=NHGlhWOH/lPzkiisqXGbCuqEH3Cld5YZg5wB3dQ5EjwTa2udUJNWsdHlxUGKg23GAT
+ 5X6weI8hStYzrXSUv3yWPZWKvm+ql7YOJTqq9CQrjDzjlDxaHOO5QDMmkdvFrxKyImVg
+ l7cFw15yuXDcDQAQ9Jj19zsXBpy85G6mfCyF7ZKRWloLgf6pd5Er82Y9hBhOgc31d6k3
+ kzvjGCSMK83TiVP0PsUdBW5Aqsq6S+KrournTX1g5JHIoUV2U1zYYittS5pyaxgjuaYt
+ IRG21NXAysTNvlN3e9MckdKqEP5zoetsDm+TN3CnidRGBibcEZGLlPydXAnzmwxNfVvy
+ CwXg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=sEuZEsN3CO17Mk96Q9i8WbzrGmqYVcLxl0EB6NndMBA=;
+ b=QdFz0djiLibq+EwfC2sg8K9n3Y8ypikU9B2ZWTMMvDmUZwXZwL7BhbZdQ1nbRK0p8i
+ WfD4BVU7f+ius6RJxMFC+AaMqJOHPCGQdCh+5BW0lJAIWd4sjjPYIhedm4sXL0s3/+23
+ L2I1ko9EKc9HNI3nESiFYRIaXVV8trRn1f5CXDggoQpf2HIdhonXWcsXFslQy4/PItQB
+ s9kNNvi+KxkFkp18BWkQAKI0orXBHZ7wEZctwSglPmTGV5t/ilwJIApH/sqk23bg3oQV
+ cM1brGG7ubGuVP6wPX2aqSXc7pQ8ougjI4GtzuM5JQSVYVhkFNISAD5jdzjrBEU4XmtG
+ HswA==
+X-Gm-Message-State: APjAAAXqTMDCUuT4CgrQIPKnNaiGPuCGN3exNWuZQO9FUjZ2TYLFeegV
+ f7ixkLjULcz2gZvrlkOmXHF0NEfB
+X-Google-Smtp-Source: APXvYqwONELlt6nYOaizT5kkHAo20vYTlb0GLvd1u+tok17wOcwrfhYhLQBU7nsf0a6o7FC9F5iitA==
+X-Received: by 2002:adf:8088:: with SMTP id 8mr7492245wrl.230.1572558496697;
+ Thu, 31 Oct 2019 14:48:16 -0700 (PDT)
+Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id g184sm5813674wma.8.2019.10.31.14.48.12
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 31 Oct 2019 14:48:15 -0700 (PDT)
+From: Florian Fainelli <f.fainelli@gmail.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2 0/3] arm64: Brahma-B53 erratum updates
+Date: Thu, 31 Oct 2019 14:47:22 -0700
+Message-Id: <20191031214725.1491-1-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <cover.1572556786.git.leonard.crestez@nxp.com>
-References: <cover.1572556786.git.leonard.crestez@nxp.com>
-In-Reply-To: <cover.1572556786.git.leonard.crestez@nxp.com>
-References: <cover.1572556786.git.leonard.crestez@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_143441_352424_AE824CE5 
-X-CRM114-Status: GOOD (  15.36  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191031_144818_594619_EC9794B9 
+X-CRM114-Status: GOOD (  10.54  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,210 +93,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?Artur=20=C5=9Awigo=C5=84?= <a.swigon@partner.samsung.com>,
- Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
- linux-pm@vger.kernel.org, Viresh Kumar <viresh.kumar@linaro.org>,
- NXP Linux Team <linux-imx@nxp.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Chanwoo Choi <cw00.choi@samsung.com>, Matthias Kaehlcke <mka@chromium.org>,
- Alexandre Bailon <abailon@baylibre.com>,
- Georgi Djakov <georgi.djakov@linaro.org>, linux-arm-kernel@lists.infradead.org,
- Jacky Bai <ping.bai@nxp.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jonathan Corbet <corbet@lwn.net>,
+ "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
+ open list <linux-kernel@vger.kernel.org>,
+ Jeremy Linton <jeremy.linton@arm.com>, Zhang Lei <zhang.lei@jp.fujitsu.com>,
+ Andre Przywara <andre.przywara@arm.com>,
+ Vladimir Murzin <vladimir.murzin@arm.com>, Qian Cai <cai@lca.pw>,
+ Hanjun Guo <guohanjun@huawei.com>, Doug Berger <opendmb@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Switch the handling of min_freq and max_freq from sysfs to use the
-dev_pm_qos_request interface.
+Hi Will,
 
-Since PM QoS handles frequencies as kHz this change reduces the
-precision of min_freq and max_freq. This shouldn't introduce problems
-because frequencies which are not an integer number of kHz are likely
-not an integer number of Hz either.
+This patch series enable the Brahma-B53 CPU to be matched for the
+ARM64_ERRATUM_845719 and ARM64_ERRATUM_843419 and while we are it, also
+whitelists it for SSB and spectre v2.
 
-Try to ensure compatibility by rounding min values down and rounding
-max values up.
+The silicon-errata.rst document is updated accordingly, we unfortunately
+do not have internal numbers tracking those errata.
 
-Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-Reviewed-by: Matthias Kaehlcke <mka@chromium.org>
-Reviewed-by: Chanwoo Choi <cw00.choi@samsung.com>
-Tested-by: Matthias Kaehlcke <mka@chromium.org>
----
- drivers/devfreq/devfreq.c | 58 +++++++++++++++++++++++++++------------
- include/linux/devfreq.h   |  9 +++---
- 2 files changed, 46 insertions(+), 21 deletions(-)
+Doug Berger (1):
+  arm64: apply ARM64_ERRATUM_845719 workaround for Brahma-B53 core
 
-diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
-index 776dec301a4e..ddf6a8ff454d 100644
---- a/drivers/devfreq/devfreq.c
-+++ b/drivers/devfreq/devfreq.c
-@@ -139,14 +139,10 @@ static void get_freq_range(struct devfreq *devfreq,
- 	*min_freq = max(*min_freq, (unsigned long)HZ_PER_KHZ * qos_min_freq);
- 	if (qos_max_freq != PM_QOS_MAX_FREQUENCY_DEFAULT_VALUE)
- 		*max_freq = min(*max_freq,
- 				(unsigned long)HZ_PER_KHZ * qos_max_freq);
- 
--	/* Apply constraints from sysfs */
--	*min_freq = max(*min_freq, devfreq->min_freq);
--	*max_freq = min(*max_freq, devfreq->max_freq);
--
- 	/* Apply constraints from OPP interface */
- 	*min_freq = max(*min_freq, devfreq->scaling_min_freq);
- 	*max_freq = min(*max_freq, devfreq->scaling_max_freq);
- 
- 	if (*min_freq > *max_freq)
-@@ -688,10 +684,19 @@ static void devfreq_dev_release(struct device *dev)
- 			"Failed to remove min_freq notifier: %d\n", err);
- 
- 	if (devfreq->profile->exit)
- 		devfreq->profile->exit(devfreq->dev.parent);
- 
-+	err = dev_pm_qos_remove_request(&devfreq->user_max_freq_req);
-+	if (err)
-+		dev_warn(dev->parent,
-+			"Failed to remove max_freq request: %d\n", err);
-+	err = dev_pm_qos_remove_request(&devfreq->user_min_freq_req);
-+	if (err)
-+		dev_warn(dev->parent,
-+			"Failed to remove min_freq request: %d\n", err);
-+
- 	mutex_destroy(&devfreq->lock);
- 	kfree(devfreq);
- }
- 
- /**
-@@ -755,18 +760,26 @@ struct devfreq *devfreq_add_device(struct device *dev,
- 	devfreq->scaling_min_freq = find_available_min_freq(devfreq);
- 	if (!devfreq->scaling_min_freq) {
- 		err = -EINVAL;
- 		goto err_dev;
- 	}
--	devfreq->min_freq = devfreq->scaling_min_freq;
- 
- 	devfreq->scaling_max_freq = find_available_max_freq(devfreq);
- 	if (!devfreq->scaling_max_freq) {
- 		err = -EINVAL;
- 		goto err_dev;
- 	}
--	devfreq->max_freq = devfreq->scaling_max_freq;
-+
-+	err = dev_pm_qos_add_request(dev, &devfreq->user_min_freq_req,
-+				     DEV_PM_QOS_MIN_FREQUENCY, 0);
-+	if (err < 0)
-+		goto err_dev;
-+	err = dev_pm_qos_add_request(dev, &devfreq->user_max_freq_req,
-+				     DEV_PM_QOS_MAX_FREQUENCY,
-+				     PM_QOS_MAX_FREQUENCY_DEFAULT_VALUE);
-+	if (err < 0)
-+		goto err_dev;
- 
- 	devfreq->suspend_freq = dev_pm_opp_get_suspend_opp_freq(dev);
- 	atomic_set(&devfreq->suspend_count, 0);
- 
- 	devfreq->trans_table = devm_kzalloc(&devfreq->dev,
-@@ -1401,14 +1414,15 @@ static ssize_t min_freq_store(struct device *dev, struct device_attribute *attr,
- 
- 	ret = sscanf(buf, "%lu", &value);
- 	if (ret != 1)
- 		return -EINVAL;
- 
--	mutex_lock(&df->lock);
--	df->min_freq = value;
--	update_devfreq(df);
--	mutex_unlock(&df->lock);
-+	/* Round down to kHz for PM QoS */
-+	ret = dev_pm_qos_update_request(&df->user_min_freq_req,
-+					value / HZ_PER_KHZ);
-+	if (ret < 0)
-+		return ret;
- 
- 	return count;
- }
- 
- static ssize_t min_freq_show(struct device *dev, struct device_attribute *attr,
-@@ -1433,18 +1447,28 @@ static ssize_t max_freq_store(struct device *dev, struct device_attribute *attr,
- 
- 	ret = sscanf(buf, "%lu", &value);
- 	if (ret != 1)
- 		return -EINVAL;
- 
--	mutex_lock(&df->lock);
--
--	if (!value)
--		value = ULONG_MAX;
-+	/*
-+	 * PM QoS frequencies are in kHz so we need to convert. Convert by
-+	 * rounding upwards so that the acceptable interval never shrinks.
-+	 *
-+	 * For example if the user writes "666666666" to sysfs this value will
-+	 * be converted to 666667 kHz and back to 666667000 Hz before an OPP
-+	 * lookup, this ensures that an OPP of 666666666Hz is still accepted.
-+	 *
-+	 * A value of zero means "no limit".
-+	 */
-+	if (value)
-+		value = DIV_ROUND_UP(value, HZ_PER_KHZ);
-+	else
-+		value = PM_QOS_MAX_FREQUENCY_DEFAULT_VALUE;
- 
--	df->max_freq = value;
--	update_devfreq(df);
--	mutex_unlock(&df->lock);
-+	ret = dev_pm_qos_update_request(&df->user_max_freq_req, value);
-+	if (ret < 0)
-+		return ret;
- 
- 	return count;
- }
- static DEVICE_ATTR_RW(min_freq);
- 
-diff --git a/include/linux/devfreq.h b/include/linux/devfreq.h
-index dac0dffeabb4..d4d1ec04aeea 100644
---- a/include/linux/devfreq.h
-+++ b/include/linux/devfreq.h
-@@ -11,10 +11,11 @@
- #define __LINUX_DEVFREQ_H__
- 
- #include <linux/device.h>
- #include <linux/notifier.h>
- #include <linux/pm_opp.h>
-+#include <linux/pm_qos.h>
- 
- #define DEVFREQ_NAME_LEN 16
- 
- /* DEVFREQ governor name */
- #define DEVFREQ_GOV_SIMPLE_ONDEMAND	"simple_ondemand"
-@@ -121,12 +122,12 @@ struct devfreq_dev_profile {
-  *		devfreq.nb to the corresponding register notifier call chain.
-  * @work:	delayed work for load monitoring.
-  * @previous_freq:	previously configured frequency value.
-  * @data:	Private data of the governor. The devfreq framework does not
-  *		touch this.
-- * @min_freq:	Limit minimum frequency requested by user (0: none)
-- * @max_freq:	Limit maximum frequency requested by user (0: none)
-+ * @user_min_freq_req:	PM QoS minimum frequency request from user (via sysfs)
-+ * @user_max_freq_req:	PM QoS maximum frequency request from user (via sysfs)
-  * @scaling_min_freq:	Limit minimum frequency requested by OPP interface
-  * @scaling_max_freq:	Limit maximum frequency requested by OPP interface
-  * @stop_polling:	 devfreq polling status of a device.
-  * @suspend_freq:	 frequency of a device set during suspend phase.
-  * @resume_freq:	 frequency of a device set in resume phase.
-@@ -161,12 +162,12 @@ struct devfreq {
- 	unsigned long previous_freq;
- 	struct devfreq_dev_status last_status;
- 
- 	void *data; /* private data for governors */
- 
--	unsigned long min_freq;
--	unsigned long max_freq;
-+	struct dev_pm_qos_request user_min_freq_req;
-+	struct dev_pm_qos_request user_max_freq_req;
- 	unsigned long scaling_min_freq;
- 	unsigned long scaling_max_freq;
- 	bool stop_polling;
- 
- 	unsigned long suspend_freq;
+Florian Fainelli (2):
+  arm64: Brahma-B53 is SSB and spectre v2 safe
+  arm64: apply ARM64_ERRATUM_843419 workaround for Brahma-B53 core
+
+ Documentation/arm64/silicon-errata.rst |  5 ++++
+ arch/arm64/include/asm/cputype.h       |  2 ++
+ arch/arm64/kernel/cpu_errata.c         | 38 ++++++++++++++++++++++----
+ 3 files changed, 40 insertions(+), 5 deletions(-)
+
 -- 
 2.17.1
 
