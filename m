@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46F43EBA0E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 23:54:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5C1FEBA0B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 23:54:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=RSolQ94z82XdRlHBtHNIt/VCRMAruc1Qgtdb7PdMYEg=; b=M6wWdVOL61wyWPa99AfWBTBIDG
-	DfE6EtoC4cil8Vyv58pJxY3mj/3e8HFqeDjRi2TVmtoi4aCzbB5aNsdwNyUUFGrZv3dT4rtZA6AXr
-	7SSR7hgScmUVwrR///oqWBS5ZCeOOgWUnu8UPluZOBz9ifZJbj0M0XoAx7/vh75U2xGjeDCs1BJMO
-	hPQXexMkQw91XuhVkKmuROvaGw6n5hBV31/BXk8Q6+RZx+8/GcY9TwxNJPFMKHM35SjAC5RbGmtOi
-	lyoK3uhfgo03RYFk/aCBUeXogaJArpSdebyU1ReKEg+ZaFxL9XTE7FYi+R4sLDP2mKRHGQDGyn9MO
-	kiFuhSHw==;
+	bh=/rGUNJKM5zmXHwS1pPqMaM+Y+PcMp2gpiR4vL1YwCRI=; b=piD5puP/LPINQ17Xu5oRCWflsv
+	LBSoOyOQhXA9FQoms89MLmFKGG5DlkDfGTBIPcDqYnid2e5+lNLERWJ27CmG0uoBky3Bqrl2Rz2xP
+	AbEBkkBoXrZ+AHnVmKgOT+R5pVg9XCfpMpaOi2UBMQS2Va+Wn91yE2WX4l+6lNUl8Bxm2tjJtmWil
+	1q9nYK3e5BXzw6T1XTZW9WY8/+WQd7WX4pjaBeqD7oFcLNIsMCfh+s2DJTIA8lcTv4c9KyP61RpDX
+	taHYdWHlAhmJI0NOReOhk0WKGNKh6+iV2e3+op8N6/utPAF072YFTMnvtQB3661UD2pXJE7OP6FHJ
+	gLx7N/5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQJLD-0003O4-27; Thu, 31 Oct 2019 22:54:55 +0000
+	id 1iQJKw-000384-FU; Thu, 31 Oct 2019 22:54:38 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQJIp-0001aI-2o
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 22:52:29 +0000
+ id 1iQJIq-0001bD-DE
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 22:52:30 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id B666A2000BF;
- Thu, 31 Oct 2019 23:52:25 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id C2E892002ED;
+ Thu, 31 Oct 2019 23:52:26 +0100 (CET)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 9D9D52000BB;
- Thu, 31 Oct 2019 23:52:25 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id B3B592000BB;
+ Thu, 31 Oct 2019 23:52:26 +0100 (CET)
 Received: from fsr-ub1864-112.ea.freescale.net
  (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 9757F205E9;
- Thu, 31 Oct 2019 23:52:24 +0100 (CET)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id AD91E205E9;
+ Thu, 31 Oct 2019 23:52:25 +0100 (CET)
 From: Leonard Crestez <leonard.crestez@nxp.com>
 To: Georgi Djakov <georgi.djakov@linaro.org>, Rob Herring <robh+dt@kernel.org>,
  Chanwoo Choi <cw00.choi@samsung.com>
-Subject: [PATCH RFC v5 07/10] interconnect: imx: Add platform driver for imx8mq
-Date: Fri,  1 Nov 2019 00:52:06 +0200
-Message-Id: <8cffe91e357c87f55d6cb592f4a0db9241895771.1572562150.git.leonard.crestez@nxp.com>
+Subject: [PATCH RFC v5 08/10] interconnect: imx: Add platform driver for imx8mn
+Date: Fri,  1 Nov 2019 00:52:07 +0200
+Message-Id: <ec955d579cda611a7783ab53c2f1d84f25d3afd1.1572562150.git.leonard.crestez@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1572562150.git.leonard.crestez@nxp.com>
 References: <cover.1572562150.git.leonard.crestez@nxp.com>
@@ -48,8 +48,8 @@ In-Reply-To: <cover.1572562150.git.leonard.crestez@nxp.com>
 References: <cover.1572562150.git.leonard.crestez@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_155227_428820_28864242 
-X-CRM114-Status: GOOD (  13.41  )
+X-CRM114-CacheID: sfid-20191031_155228_775927_C337E40B 
+X-CRM114-Status: GOOD (  14.07  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -90,47 +90,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a platform driver for the i.MX8MQ SoC describing bus topology,
-based on internal documentation.
+Add a platform driver for the i.MX8MN SoC describing bus topology, based
+on internal documentation.
 
 Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 ---
- drivers/interconnect/imx/Kconfig          |   4 +
- drivers/interconnect/imx/Makefile         |   1 +
- drivers/interconnect/imx/imx8mq.c         | 103 ++++++++++++++++++++++
- include/dt-bindings/interconnect/imx8mq.h |  48 ++++++++++
- 4 files changed, 156 insertions(+)
- create mode 100644 drivers/interconnect/imx/imx8mq.c
- create mode 100644 include/dt-bindings/interconnect/imx8mq.h
+ drivers/interconnect/imx/Kconfig          |  4 +
+ drivers/interconnect/imx/Makefile         |  1 +
+ drivers/interconnect/imx/imx8mn.c         | 94 +++++++++++++++++++++++
+ include/dt-bindings/interconnect/imx8mn.h | 41 ++++++++++
+ 4 files changed, 140 insertions(+)
+ create mode 100644 drivers/interconnect/imx/imx8mn.c
+ create mode 100644 include/dt-bindings/interconnect/imx8mn.h
 
 diff --git a/drivers/interconnect/imx/Kconfig b/drivers/interconnect/imx/Kconfig
-index 15671fe7f600..e0d36355eeb8 100644
+index e0d36355eeb8..bc311e86d255 100644
 --- a/drivers/interconnect/imx/Kconfig
 +++ b/drivers/interconnect/imx/Kconfig
-@@ -5,5 +5,9 @@ config INTERCONNECT_IMX
- 	  Generic interconnect driver for i.MX SOCs
+@@ -6,8 +6,12 @@ config INTERCONNECT_IMX
  
  config INTERCONNECT_IMX8MM
  	def_bool y
  	depends on INTERCONNECT_IMX
-+
-+config INTERCONNECT_IMX8MQ
+ 
++config INTERCONNECT_IMX8MN
 +	def_bool y
 +	depends on INTERCONNECT_IMX
++
+ config INTERCONNECT_IMX8MQ
+ 	def_bool y
+ 	depends on INTERCONNECT_IMX
 diff --git a/drivers/interconnect/imx/Makefile b/drivers/interconnect/imx/Makefile
-index 5f658c1608a6..8c5d6f9e47f5 100644
+index 8c5d6f9e47f5..e39d6c6af3b7 100644
 --- a/drivers/interconnect/imx/Makefile
 +++ b/drivers/interconnect/imx/Makefile
-@@ -1,2 +1,3 @@
+@@ -1,3 +1,4 @@
  obj-$(CONFIG_INTERCONNECT_IMX) += imx.o
  obj-$(CONFIG_INTERCONNECT_IMX8MM) += imx8mm.o
-+obj-$(CONFIG_INTERCONNECT_IMX8MQ) += imx8mq.o
-diff --git a/drivers/interconnect/imx/imx8mq.c b/drivers/interconnect/imx/imx8mq.c
++obj-$(CONFIG_INTERCONNECT_IMX8MN) += imx8mn.o
+ obj-$(CONFIG_INTERCONNECT_IMX8MQ) += imx8mq.o
+diff --git a/drivers/interconnect/imx/imx8mn.c b/drivers/interconnect/imx/imx8mn.c
 new file mode 100644
-index 000000000000..1dccb05b6336
+index 000000000000..3141ac42c8e6
 --- /dev/null
-+++ b/drivers/interconnect/imx/imx8mq.c
-@@ -0,0 +1,103 @@
++++ b/drivers/interconnect/imx/imx8mn.c
+@@ -0,0 +1,94 @@
 +// SPDX-License-Identifier: GPL-2.0
 +/*
 + * Interconnect framework driver for i.MX SoC
@@ -143,16 +147,16 @@ index 000000000000..1dccb05b6336
 +#include <linux/of_platform.h>
 +#include <linux/platform_device.h>
 +
-+#include <dt-bindings/interconnect/imx8mq.h>
++#include <dt-bindings/interconnect/imx8mn.h>
 +
 +#include "imx.h"
 +
-+static const struct imx_icc_node_adj_desc imx8mq_dram_adj = {
++static const struct imx_icc_node_adj_desc imx8mn_dram_adj = {
 +	.bw_mul = 1,
 +	.bw_div = 4,
 +};
 +
-+static const struct imx_icc_node_adj_desc imx8mq_noc_adj = {
++static const struct imx_icc_node_adj_desc imx8mn_noc_adj = {
 +	.bw_mul = 1,
 +	.bw_div = 4,
 +};
@@ -164,82 +168,73 @@ index 000000000000..1dccb05b6336
 + * PL301 nics which are skipped/merged into PL301_MAIN
 + */
 +static struct imx_icc_node_desc nodes[] = {
-+	DEFINE_BUS_INTERCONNECT("NOC", IMX8MQ_ICN_NOC, &imx8mq_noc_adj,
-+			IMX8MQ_ICS_DRAM, IMX8MQ_ICN_MAIN),
++	DEFINE_BUS_INTERCONNECT("NOC", IMX8MN_ICN_NOC, &imx8mn_noc_adj,
++			IMX8MN_ICS_DRAM, IMX8MN_ICN_MAIN),
 +
-+	DEFINE_BUS_SLAVE("DRAM", IMX8MQ_ICS_DRAM, &imx8mq_dram_adj),
-+	DEFINE_BUS_SLAVE("OCRAM", IMX8MQ_ICS_OCRAM, NULL),
-+	DEFINE_BUS_MASTER("A53", IMX8MQ_ICM_A53, IMX8MQ_ICN_NOC),
-+
-+	/* VPUMIX */
-+	DEFINE_BUS_MASTER("VPU", IMX8MQ_ICM_VPU, IMX8MQ_ICN_VIDEO),
-+	DEFINE_BUS_INTERCONNECT("PL301_VIDEO", IMX8MQ_ICN_VIDEO, NULL, IMX8MQ_ICN_NOC),
++	DEFINE_BUS_SLAVE("DRAM", IMX8MN_ICS_DRAM, &imx8mn_dram_adj),
++	DEFINE_BUS_SLAVE("OCRAM", IMX8MN_ICS_OCRAM, NULL),
++	DEFINE_BUS_MASTER("A53", IMX8MN_ICM_A53, IMX8MN_ICN_NOC),
 +
 +	/* GPUMIX */
-+	DEFINE_BUS_MASTER("GPU", IMX8MQ_ICM_GPU, IMX8MQ_ICN_GPU),
-+	DEFINE_BUS_INTERCONNECT("PL301_GPU", IMX8MQ_ICN_GPU, NULL, IMX8MQ_ICN_NOC),
++	DEFINE_BUS_MASTER("GPU", IMX8MN_ICM_GPU, IMX8MN_ICN_GPU),
++	DEFINE_BUS_INTERCONNECT("PL301_GPU", IMX8MN_ICN_GPU, NULL, IMX8MN_ICN_NOC),
 +
-+	/* DISPMIX (only for DCSS) */
-+	DEFINE_BUS_MASTER("DC", IMX8MQ_ICM_DCSS, IMX8MQ_ICN_DCSS),
-+	DEFINE_BUS_INTERCONNECT("PL301_DC", IMX8MQ_ICN_DCSS, NULL, IMX8MQ_ICN_NOC),
++	/* DISPLAYMIX */
++	DEFINE_BUS_MASTER("CSI1", IMX8MN_ICM_CSI1, IMX8MN_ICN_MIPI),
++	DEFINE_BUS_MASTER("CSI2", IMX8MN_ICM_CSI2, IMX8MN_ICN_MIPI),
++	DEFINE_BUS_MASTER("ISI", IMX8MN_ICM_ISI, IMX8MN_ICN_MIPI),
++	DEFINE_BUS_MASTER("LCDIF", IMX8MN_ICM_LCDIF, IMX8MN_ICN_MIPI),
++	DEFINE_BUS_INTERCONNECT("PL301_MIPI", IMX8MN_ICN_MIPI, NULL, IMX8MN_ICN_NOC),
 +
-+	/* USBMIX */
-+	DEFINE_BUS_MASTER("USB1", IMX8MQ_ICM_USB1, IMX8MQ_ICN_USB),
-+	DEFINE_BUS_MASTER("USB2", IMX8MQ_ICM_USB2, IMX8MQ_ICN_USB),
-+	DEFINE_BUS_INTERCONNECT("PL301_USB", IMX8MQ_ICN_USB, NULL, IMX8MQ_ICN_NOC),
++	/* USB goes straight to NOC */
++	DEFINE_BUS_MASTER("USB", IMX8MN_ICM_USB, IMX8MN_ICN_NOC),
 +
-+	/* PL301_DISPLAY (IPs other than DCSS, inside SUPERMIX) */
-+	DEFINE_BUS_MASTER("CSI1", IMX8MQ_ICM_CSI1, IMX8MQ_ICN_DISPLAY),
-+	DEFINE_BUS_MASTER("CSI2", IMX8MQ_ICM_CSI2, IMX8MQ_ICN_DISPLAY),
-+	DEFINE_BUS_MASTER("LCDIF", IMX8MQ_ICM_LCDIF, IMX8MQ_ICN_DISPLAY),
-+	DEFINE_BUS_INTERCONNECT("PL301_DISPLAY", IMX8MQ_ICN_DISPLAY, NULL, IMX8MQ_ICN_MAIN),
++	/* Audio */
++	DEFINE_BUS_MASTER("SDMA2", IMX8MN_ICM_SDMA2, IMX8MN_ICN_AUDIO),
++	DEFINE_BUS_MASTER("SDMA3", IMX8MN_ICM_SDMA3, IMX8MN_ICN_AUDIO),
++	DEFINE_BUS_INTERCONNECT("PL301_AUDIO", IMX8MN_ICN_AUDIO, NULL, IMX8MN_ICN_MAIN),
 +
-+	/* AUDIO */
-+	DEFINE_BUS_MASTER("SDMA2", IMX8MQ_ICM_SDMA2, IMX8MQ_ICN_AUDIO),
-+	DEFINE_BUS_INTERCONNECT("PL301_AUDIO", IMX8MQ_ICN_AUDIO, NULL, IMX8MQ_ICN_DISPLAY),
++	/* Ethernet */
++	DEFINE_BUS_MASTER("ENET", IMX8MN_ICM_ENET, IMX8MN_ICN_ENET),
++	DEFINE_BUS_INTERCONNECT("PL301_ENET", IMX8MN_ICN_ENET, NULL, IMX8MN_ICN_MAIN),
 +
-+	/* ENET */
-+	DEFINE_BUS_MASTER("ENET", IMX8MQ_ICM_ENET, IMX8MQ_ICN_ENET),
-+	DEFINE_BUS_INTERCONNECT("PL301_ENET", IMX8MQ_ICN_ENET, NULL, IMX8MQ_ICN_MAIN),
-+
-+	/* OTHER */
-+	DEFINE_BUS_MASTER("SDMA1", IMX8MQ_ICM_SDMA1, IMX8MQ_ICN_MAIN),
-+	DEFINE_BUS_MASTER("NAND", IMX8MQ_ICM_NAND, IMX8MQ_ICN_MAIN),
-+	DEFINE_BUS_MASTER("USDHC1", IMX8MQ_ICM_USDHC1, IMX8MQ_ICN_MAIN),
-+	DEFINE_BUS_MASTER("USDHC2", IMX8MQ_ICM_USDHC2, IMX8MQ_ICN_MAIN),
-+	DEFINE_BUS_MASTER("PCIE1", IMX8MQ_ICM_PCIE1, IMX8MQ_ICN_MAIN),
-+	DEFINE_BUS_MASTER("PCIE2", IMX8MQ_ICM_PCIE2, IMX8MQ_ICN_MAIN),
-+	DEFINE_BUS_INTERCONNECT("PL301_MAIN", IMX8MQ_ICN_MAIN, NULL,
-+			IMX8MQ_ICN_NOC, IMX8MQ_ICS_OCRAM),
++	/* Other */
++	DEFINE_BUS_MASTER("SDMA1", IMX8MN_ICM_SDMA1, IMX8MN_ICN_MAIN),
++	DEFINE_BUS_MASTER("NAND", IMX8MN_ICM_NAND, IMX8MN_ICN_MAIN),
++	DEFINE_BUS_MASTER("USDHC1", IMX8MN_ICM_USDHC1, IMX8MN_ICN_MAIN),
++	DEFINE_BUS_MASTER("USDHC2", IMX8MN_ICM_USDHC2, IMX8MN_ICN_MAIN),
++	DEFINE_BUS_MASTER("USDHC3", IMX8MN_ICM_USDHC3, IMX8MN_ICN_MAIN),
++	DEFINE_BUS_INTERCONNECT("PL301_MAIN", IMX8MN_ICN_MAIN, NULL,
++			IMX8MN_ICN_NOC, IMX8MN_ICS_OCRAM),
 +};
 +
-+static int imx8mq_icc_probe(struct platform_device *pdev)
++static int imx8mn_icc_probe(struct platform_device *pdev)
 +{
 +	return imx_icc_register(pdev, nodes, ARRAY_SIZE(nodes));
 +}
 +
-+static int imx8mq_icc_remove(struct platform_device *pdev)
++static int imx8mn_icc_remove(struct platform_device *pdev)
 +{
 +	return imx_icc_unregister(pdev);
 +}
 +
-+static struct platform_driver imx8mq_icc_driver = {
-+	.probe = imx8mq_icc_probe,
-+	.remove = imx8mq_icc_remove,
++static struct platform_driver imx8mn_icc_driver = {
++	.probe = imx8mn_icc_probe,
++	.remove = imx8mn_icc_remove,
 +	.driver = {
-+		.name = "imx8mq-interconnect",
++		.name = "imx8mn-interconnect",
 +	},
 +};
 +
-+module_platform_driver(imx8mq_icc_driver);
++module_platform_driver(imx8mn_icc_driver);
 +MODULE_AUTHOR("Leonard Crestez <leonard.crestez@nxp.com>");
 +MODULE_LICENSE("GPL v2");
-diff --git a/include/dt-bindings/interconnect/imx8mq.h b/include/dt-bindings/interconnect/imx8mq.h
+diff --git a/include/dt-bindings/interconnect/imx8mn.h b/include/dt-bindings/interconnect/imx8mn.h
 new file mode 100644
-index 000000000000..94701b19f35a
+index 000000000000..03d099dd71f8
 --- /dev/null
-+++ b/include/dt-bindings/interconnect/imx8mq.h
-@@ -0,0 +1,48 @@
++++ b/include/dt-bindings/interconnect/imx8mn.h
+@@ -0,0 +1,41 @@
 +/* SPDX-License-Identifier: GPL-2.0 */
 +/*
 + * Interconnect framework driver for i.MX SoC
@@ -247,47 +242,40 @@ index 000000000000..94701b19f35a
 + * Copyright (c) 2019, NXP
 + */
 +
-+#ifndef __IMX8MQ_ICM_INTERCONNECT_IDS_H
-+#define __IMX8MQ_ICM_INTERCONNECT_IDS_H
++#ifndef __IMX8MN_ICM_INTERCONNECT_IDS_H
++#define __IMX8MN_ICM_INTERCONNECT_IDS_H
 +
-+#define IMX8MQ_ICN_NOC		1
-+#define IMX8MQ_ICS_DRAM		2
-+#define IMX8MQ_ICS_OCRAM	3
-+#define IMX8MQ_ICM_A53		4
++#define IMX8MN_ICN_NOC		1
++#define IMX8MN_ICS_DRAM		2
++#define IMX8MN_ICS_OCRAM	3
++#define IMX8MN_ICM_A53		4
 +
-+#define IMX8MQ_ICM_VPU		5
-+#define IMX8MQ_ICN_VIDEO	6
++#define IMX8MN_ICM_GPU		5
++#define IMX8MN_ICN_GPU		6
 +
-+#define IMX8MQ_ICM_GPU		7
-+#define IMX8MQ_ICN_GPU		8
++#define IMX8MN_ICM_CSI1		7
++#define IMX8MN_ICM_CSI2		8
++#define IMX8MN_ICM_ISI		9
++#define IMX8MN_ICM_LCDIF	10
++#define IMX8MN_ICN_MIPI		11
 +
-+#define IMX8MQ_ICM_DCSS		9
-+#define IMX8MQ_ICN_DCSS		10
++#define IMX8MN_ICM_USB		12
 +
-+#define IMX8MQ_ICM_USB1		11
-+#define IMX8MQ_ICM_USB2		12
-+#define IMX8MQ_ICN_USB		13
++#define IMX8MN_ICM_SDMA2	13
++#define IMX8MN_ICM_SDMA3	14
++#define IMX8MN_ICN_AUDIO	15
 +
-+#define IMX8MQ_ICM_CSI1		14
-+#define IMX8MQ_ICM_CSI2		15
-+#define IMX8MQ_ICM_LCDIF	16
-+#define IMX8MQ_ICN_DISPLAY	17
++#define IMX8MN_ICN_ENET		16
++#define IMX8MN_ICM_ENET		17
 +
-+#define IMX8MQ_ICM_SDMA2	18
-+#define IMX8MQ_ICN_AUDIO	19
++#define IMX8MN_ICM_NAND		18
++#define IMX8MN_ICM_SDMA1	19
++#define IMX8MN_ICM_USDHC1	20
++#define IMX8MN_ICM_USDHC2	21
++#define IMX8MN_ICM_USDHC3	22
++#define IMX8MN_ICN_MAIN		23
 +
-+#define IMX8MQ_ICN_ENET		20
-+#define IMX8MQ_ICM_ENET		21
-+
-+#define IMX8MQ_ICM_SDMA1	22
-+#define IMX8MQ_ICM_NAND		23
-+#define IMX8MQ_ICM_USDHC1	24
-+#define IMX8MQ_ICM_USDHC2	25
-+#define IMX8MQ_ICM_PCIE1	26
-+#define IMX8MQ_ICM_PCIE2	27
-+#define IMX8MQ_ICN_MAIN		28
-+
-+#endif /* __IMX8MQ_ICM_INTERCONNECT_IDS_H */
++#endif /* __IMX8MN_ICM_INTERCONNECT_IDS_H */
 -- 
 2.17.1
 
