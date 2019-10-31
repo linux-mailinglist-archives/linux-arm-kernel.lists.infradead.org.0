@@ -2,70 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB74BEB111
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 14:22:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DC4BEB11C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 14:24:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
+	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tE0mIxrzDdfEdzDr5yLwEP78Dbd+63K2WRI+IKqXzuc=; b=pcuhzOX68fSnFN
-	JmDRtc6azqgpm2f2O4LwO6PLPFi7gjaTw33NhQnZfVxHWBxAWwQpgQvBawCXXYTtRO69JslqhSvCo
-	fLbiajtXe9IZfVHm6DE0jq13zxo/pFHJxN/X1CChIR+1I7h8rtB9Ubg3DQo8fgACgapV284D4Udea
-	GY7tMx8+SfEqOlpAteIafEVGtlEwgIvho+ZEMVBRqRcPVD4k8N/Kbc9EXBg3+LGWIau9/iBKO9W7H
-	SGmISlgC5TJETXbZnOB05MJgHahhSDu2Yz3EmV4FcupWLCEA/H/JHpBak4Gb65Gffll1dSW7J1pnm
-	n2Wsjk5jvaAUrT2koNyA==;
+	References:List-Owner; bh=YnNVtgK0feG3vwPNdzYVnWf2tz/niTrnMjrl8dAv1Ts=; b=Yar
+	QoiiE/IVsiQKQRoYRCa6VGzrzX4aM5Kjbiv1TGHf2HX4wm7rFkI38LvdmgguLVtvE8ihUhS4ksNOH
+	jNLAH/k6I3A1E/XXp+NHdgvYXMfu96+BmWkfyvemSw3Z7gCwihxaLcwwkVcPlY/4WDMnfSnD7T3bI
+	5lW3g9XYMZzJiNDLCLVvHFqIBvVFqXr9Unv77EB7cSrQq2f3ysVczoUmjDyTYUBRv/Uszq42X4M60
+	Q+7xXW+coWuRe2uueilm7ETRzTQDgzuEO/reUGnkSB+T34CLn03ib6CCqI41ExhHNj3fyNtQnTRnp
+	F72QP3RPA3XNZh8Dm+U5Pk7gGZsDPNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQAOy-0004pO-GX; Thu, 31 Oct 2019 13:22:12 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iQAQe-0005LK-EP; Thu, 31 Oct 2019 13:23:56 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQAOk-0004mt-Mp
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 13:22:00 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 91E2120873;
- Thu, 31 Oct 2019 13:21:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572528118;
- bh=d5GVMjWHdmBFZQb6CC+/OkfJlqVkbsbDGygJpji33EM=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=1F4El6uIQCICKKWR3TZaZm298EiHiseD2Ube8CF+PE4N7oXJUc2gfXYTSJgb7xqG+
- XtVptZjlKFgl0xmyYacSujyU4ytTEWZjUBY+RbWqDAFVfned0Flk2JBXnutvZ4Nkb5
- xsB2bPLmCy/Now10Gw/PMcpfp60/QxcPdSxX6I9g=
-Date: Thu, 31 Oct 2019 13:21:52 +0000
-From: Will Deacon <will@kernel.org>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: Re: [PATCH] arm64: apply ARM64_ERRATUM_845719 workaround for
- Brahma-B53 core
-Message-ID: <20191031132151.GC27196@willie-the-truck>
-References: <20191029191623.17839-1-f.fainelli@gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191029191623.17839-1-f.fainelli@gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1iQAQS-0005Kl-H6; Thu, 31 Oct 2019 13:23:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
+ Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+ List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
+ List-Archive; bh=cX2GQwx79KGhyI+8o2ddFRP7SU55uxLjju8Bx0zNqbU=; b=w1GXU7OLZ6V9
+ NOlCeGWK+uVSClvkjcRzuo/o3l28fh9fTqmntUC3CxAMXZbyyEhVLz8thrd9JSq8WC+IZJcgUheOy
+ AswowT/c5ZDEURBcNqn1LcApNg7ae2XT2Rahmf+6bGkCr7jeSdXSFfIcLmWo8tdC2FrqIB2gHcbzX
+ fViD0=;
+Received: from [91.217.168.176] (helo=fitzroy.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1iQAQQ-0007p7-C8; Thu, 31 Oct 2019 13:23:42 +0000
+Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
+ id 100F1D020AA; Thu, 31 Oct 2019 13:23:42 +0000 (GMT)
+From: Mark Brown <broonie@kernel.org>
+To: Luhua Xu <luhua.xu@mediatek.com>
+Subject: Applied "spi: add power control when set_cs" to the spi tree
+In-Reply-To: <1572426234-30019-1-git-send-email-luhua.xu@mediatek.com>
+X-Patchwork-Hint: ignore
+Message-Id: <20191031132342.100F1D020AA@fitzroy.sirena.org.uk>
+Date: Thu, 31 Oct 2019 13:23:42 +0000 (GMT)
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_062158_769079_94D24D65 
-X-CRM114-Status: GOOD (  10.80  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191031_062344_569204_D8AD4890 
+X-CRM114-Status: GOOD (  13.47  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [172.104.155.198 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,36 +77,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Vladimir Murzin <vladimir.murzin@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, John Garry <john.garry@huawei.com>,
- Hanjun Guo <guohanjun@huawei.com>, open list <linux-kernel@vger.kernel.org>,
- Jeremy Linton <jeremy.linton@arm.com>, Zhang Lei <zhang.lei@jp.fujitsu.com>,
- Andre Przywara <andre.przywara@arm.com>, Doug Berger <opendmb@gmail.com>,
- bcm-kernel-feedback-list@broadcom.com, Marc Zyngier <maz@kernel.org>,
- Qian Cai <cai@lca.pw>, Thomas Gleixner <tglx@linutronix.de>,
+Cc: wsd_upstream@mediatek.com, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, Mark Brown <broonie@kernel.org>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
  linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 29, 2019 at 12:16:19PM -0700, Florian Fainelli wrote:
-> From: Doug Berger <opendmb@gmail.com>
-> 
-> The Broadcom Brahma-B53 core is susceptible to the issue described by
-> ARM64_ERRATUM_845719 so this commit enables the workaround to be applied
-> when executing on that core.
-> 
-> Since there are now multiple entries to match, we must convert the
-> existing ARM64_ERRATUM_845719 into an erratum list.
+The patch
 
-Looks fine to me, but I have to ask: are you sure you don't want to select
-any of ARM64_ERRATUM_{826319, 827319, 824069, 819472, 843419} ?
+   spi: add power control when set_cs
 
-Also, please can you update Documentation/arm64/silicon-errata.rst ?
+has been applied to the spi tree at
 
-Will
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.5
+
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
+
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+From d948e6ca189985495a21cd622c31e30e72b6b688 Mon Sep 17 00:00:00 2001
+From: Luhua Xu <luhua.xu@mediatek.com>
+Date: Wed, 30 Oct 2019 17:03:54 +0800
+Subject: [PATCH] spi: add power control when set_cs
+
+As to set_cs takes effect immediately, power spi
+is needed when setup spi.
+
+Cc: Mark Brown <broonie@kernel.org>
+Signed-off-by: Luhua Xu <luhua.xu@mediatek.com>
+Link: https://lore.kernel.org/r/1572426234-30019-1-git-send-email-luhua.xu@mediatek.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ drivers/spi/spi.c | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/spi/spi.c b/drivers/spi/spi.c
+index 5ba19ef809c2..294d0038eea6 100644
+--- a/drivers/spi/spi.c
++++ b/drivers/spi/spi.c
+@@ -3261,7 +3261,20 @@ int spi_setup(struct spi_device *spi)
+ 	if (spi->controller->setup)
+ 		status = spi->controller->setup(spi);
+ 
+-	spi_set_cs(spi, false);
++	if (spi->controller->auto_runtime_pm && spi->controller->set_cs) {
++		status = pm_runtime_get_sync(spi->controller->dev.parent);
++		if (status < 0) {
++			pm_runtime_put_noidle(spi->controller->dev.parent);
++			dev_err(&spi->controller->dev, "Failed to power device: %d\n",
++				status);
++			return status;
++		}
++		spi_set_cs(spi, false);
++		pm_runtime_mark_last_busy(spi->controller->dev.parent);
++		pm_runtime_put_autosuspend(spi->controller->dev.parent);
++	} else {
++		spi_set_cs(spi, false);
++	}
+ 
+ 	if (spi->rt && !spi->controller->rt) {
+ 		spi->controller->rt = true;
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
