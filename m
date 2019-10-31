@@ -2,53 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32DC7EB336
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 15:52:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D2B9EEB34B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 15:59:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=52OWUG38tH6u4HmcfsJU031Kf3RzJdE0ycyJLrBVC/c=; b=EYhbd96GvRx0lA
-	gg93W06pE5rMNtZS/XzAufz4xZMe/CLX+RFHqU9sMn+wjD/ZaeIbUX9PRbE3XjgLM9XQ/6QDt1zkd
-	p+USPnRdpQhIF2+nxN1aQqIi/U2f2PT0sQhqGZS8Tx9LvLBNaF5U5uaCw4BSgIQgGs5TunNwoIM37
-	J5b0PM/xzhAvwvb29EPF44vk3iDF8rXOtKJ1taJS/z0tAg5f1072D+FYKQI+6RSvmOwwCD75utGFX
-	D8n593Q17lT/crFQfanXAFmIVSo+/vuVVYZIROAjIf1ZQhdv7m6SoXptBdiS7t2rUDrKvSKqq29eC
-	CxOdqQM41OiJfiWpys2A==;
+	List-Owner; bh=ztHVWAdh9mygvtxD2zMykEdvRK4Dpm8bOvg0p+PYbUs=; b=lYbp+1Ut9rgOmD
+	V4LpEShNTHSSCSBSnyair60IfL4OAqJfFZp7PczjiDgKDjghFvxXVOjps6zs7jy9GyenXO2N6ARdH
+	tUwwGTw+/lEv2KQe41E/GXI8Au9haSY2e442rDvctjef1Tls4OsYlS6w5godWeclYukS6ZDxieKf9
+	82JABnAwpxk60VsiWQtH3frJtHtQIJP9UFoz6DQK5kGxhY1qoBPN2yx7WAy0aBr6um3IwtBC1Hj56
+	vx7SmQxCT6Nzql73Qzrf9ZKG09gIscs33jDnVrLyiR00ih3Phih+uWBUsHiUcWn9xce8LYkjbwHzy
+	dWLHSnlNc4VM+cvOV7rA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQBoW-0002Aw-8R; Thu, 31 Oct 2019 14:52:40 +0000
-Received: from verein.lst.de ([213.95.11.211])
+	id 1iQBuX-00046P-WF; Thu, 31 Oct 2019 14:58:54 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQBoL-00029s-Vk
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 14:52:31 +0000
-Received: by verein.lst.de (Postfix, from userid 2005)
- id 0102D68BE1; Thu, 31 Oct 2019 15:52:24 +0100 (CET)
-Date: Thu, 31 Oct 2019 15:52:24 +0100
-From: Torsten Duwe <duwe@lst.de>
-To: Maxime Ripard <mripard@kernel.org>
-Subject: Re: [PATCH v4 6/7] dt-bindings: Add ANX6345 DP/eDP transmitter binding
-Message-ID: <20191031145224.GA5973@lst.de>
-References: <20191029153815.C631668C4E@verein.lst.de>
- <20191029153953.8EE9B68D04@verein.lst.de>
- <20191031125100.qprbdaaysg3tmhif@hendrix>
+ id 1iQBuM-00045o-Nx
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 14:58:44 +0000
+Received: by mail-pg1-x543.google.com with SMTP id f19so4198668pgn.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 31 Oct 2019 07:58:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=wd8Ydy5zI08ENTcanTYfVXPKw0S2sQWsullzEMfk7rQ=;
+ b=MATi3vkPvCiMr4+UiaeWs9j6XA6Ee4hxcdUFDrIZUcE960Da2PCpKrgNX3lOYJVORf
+ kjGtwykAZk1CO3SPjlEM19TYE10BGXfr6iodpfABU+PvPt8W9d/GGtXfQwaRS3cpI4t8
+ X8v8E0VU9loMbWAfNuCIeHtf41n24YolQpRSOw2aq277L3Kexz1Izu+FC01MH/amZYZS
+ 6etmN7QJnMaFVEq9WMgkdq02ym+4qkl0M64AxMRuGGko2h5fWoHE7f2P/Y6nMF+xMJRa
+ 90RVs5Lx07rcWPbkp4WYJ/pGMxhUsy/QHCxUoOoK4MiwSGun6H02mdjrtL1YDS3i5YSp
+ EAOQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=wd8Ydy5zI08ENTcanTYfVXPKw0S2sQWsullzEMfk7rQ=;
+ b=WYX3IvRAOgvE1HT47uoFedv8xfpfDY6uB32+ilXFjyvRJoKHyh5ibcfqs9x1l0N+5j
+ V5P6nbcwZp9kGFtm3a6Af0TsNXBfx0dPcvetfiCFvxGBZhroxCYONVcWfwvCuFu+ohpn
+ Odv2iOeOpe9qEJ2K6JwMjopE3DnAntc4k5boyzDplorGJSbN5D7rt/inUlYXOi2wuUBa
+ bFvoOe6CHaqYHyImUGZl5SVsznF6g6uv71tBK/lobb0ru8yuPnRKsMv9JzxyyzArTigY
+ oA+5x2vCH6I2yWtVcRqNFW2/k5QQyyE49Xnaqt5ix78zy/KKYQra67NM2nAliW0eKr72
+ rnRw==
+X-Gm-Message-State: APjAAAUTmX/EP70QOT0mjSP6EU5R3nJEw//PWObbUCez6+KSViMljbKO
+ Zp6kpktwV8D2VSvvI2GRni5t
+X-Google-Smtp-Source: APXvYqxM+gswwlpQxJViGySnazlj4i+t35eyJuQby6bTFIUSurtlH9D8LQqbBLKTMOWksA2rFGOkHw==
+X-Received: by 2002:a63:6581:: with SMTP id z123mr7193723pgb.367.1572533921416; 
+ Thu, 31 Oct 2019 07:58:41 -0700 (PDT)
+Received: from mani ([103.59.133.81])
+ by smtp.gmail.com with ESMTPSA id fh5sm5626592pjb.2.2019.10.31.07.58.37
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 31 Oct 2019 07:58:40 -0700 (PDT)
+Date: Thu, 31 Oct 2019 20:28:31 +0530
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Subject: Re: [PATCH v4 1/2] dt-bindings: media: i2c: Add IMX296 CMOS sensor
+ binding
+Message-ID: <20191031145831.GA27800@mani>
+References: <20191030094902.32582-1-manivannan.sadhasivam@linaro.org>
+ <20191030094902.32582-2-manivannan.sadhasivam@linaro.org>
+ <20191031131538.GA9170@pendragon.ideasonboard.com>
+ <20191031134512.GB24273@mani>
+ <20191031141141.GD5018@pendragon.ideasonboard.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191031125100.qprbdaaysg3tmhif@hendrix>
-User-Agent: Mutt/1.5.17 (2007-11-01)
+In-Reply-To: <20191031141141.GD5018@pendragon.ideasonboard.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_075230_169611_E6E21780 
-X-CRM114-Status: GOOD (  15.69  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191031_075842_813598_0F3A89EA 
+X-CRM114-Status: GOOD (  31.65  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,99 +102,204 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- David Airlie <airlied@linux.ie>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
- Sean Paul <seanpaul@chromium.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
+Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
+ linux-kernel@vger.kernel.org, a.brela@framos.com, peter.griffin@linaro.org,
+ robh+dt@kernel.org, sakari.ailus@iki.fi, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 31, 2019 at 01:51:00PM +0100, Maxime Ripard wrote:
-> On Tue, Oct 29, 2019 at 01:16:57PM +0100, Torsten Duwe wrote:
-> > +
-> > +  ports:
-> > +    anyOf:
-> > +      - port@0:
-> > +        description: Video port for LVTTL input
-> > +      - port@1:
-> > +        description: Video port for eDP output (panel or connector).
-> > +                     May be omitted if EDID works reliably.
-> > +    required:
-> > +      - port@0
+Hi Laurent,
+
+On Thu, Oct 31, 2019 at 04:11:41PM +0200, Laurent Pinchart wrote:
+> Hi Mani,
 > 
-> Have you tried to validate those two ports in a DT?
-
-Yes, it validates as expected, like I wrote. Various sources told me that
-json-schema is not always straightforward so I assumed anyOf was OK.
-
-> I'm not quite sure what you wanted to express with that anyOf, but if
-> it was something like port@0 is mandatory, and port@1 is optional, it
-> should be something like this:
+> On Thu, Oct 31, 2019 at 07:15:12PM +0530, Manivannan Sadhasivam wrote:
+> > On Thu, Oct 31, 2019 at 03:15:38PM +0200, Laurent Pinchart wrote:
+> > > On Wed, Oct 30, 2019 at 03:19:01PM +0530, Manivannan Sadhasivam wrote:
+> > >> Add YAML devicetree binding for IMX296 CMOS image sensor. Let's also
+> > >> add MAINTAINERS entry for the binding and driver.
+> > >> 
+> > >> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> > >> ---
+> > >>  .../devicetree/bindings/media/i2c/imx296.yaml | 94 +++++++++++++++++++
+> > >>  MAINTAINERS                                   |  8 ++
+> > >>  2 files changed, 102 insertions(+)
+> > >>  create mode 100644 Documentation/devicetree/bindings/media/i2c/imx296.yaml
+> > >> 
+> > >> diff --git a/Documentation/devicetree/bindings/media/i2c/imx296.yaml b/Documentation/devicetree/bindings/media/i2c/imx296.yaml
+> > >> new file mode 100644
+> > >> index 000000000000..c04ec2203268
+> > >> --- /dev/null
+> > >> +++ b/Documentation/devicetree/bindings/media/i2c/imx296.yaml
+> > >> @@ -0,0 +1,94 @@
+> > >> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> > >> +%YAML 1.2
+> > >> +---
+> > >> +$id: http://devicetree.org/schemas/media/i2c/imx296.yaml#
+> > >> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > >> +
+> > >> +title: Sony IMX296 1/2.8-Inch CMOS Image Sensor
+> > >> +
+> > >> +maintainers:
+> > >> +  - Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> > >> +
+> > >> +description: |-
+> > >> +  The Sony IMX296 is a 1/2.9-Inch active pixel type CMOS Solid-state image
+> > >> +  sensor with square pixel array and 1.58 M effective pixels. This chip
+> > >> +  features a global shutter with variable charge-integration time. It is
+> > >> +  programmable through I2C and 4-wire interfaces. The sensor output is
+> > >> +  available via CSI-2 serial data output (1 Lane).
+> > >> +
+> > >> +properties:
+> > >> +  compatible:
+> > >> +    const: sony,imx296
+> > >> +
+> > >> +  reg:
+> > >> +    maxItems: 1
+> > >> +
+> > >> +  clocks:
+> > >> +    maxItems: 1
+> > >> +
+> > >> +  clock-names:
+> > >> +    description:
+> > >> +      Input clock for the sensor.
+> > >> +    items:
+> > >> +      - const: mclk
+> > > 
+> > > The pin is named INCK, let's name the clock accordingly.
+> > 
+> > Okay, I thought generic names are preferred here!
+> >  
+> > >> +  clock-frequency:
+> > >> +    description:
+> > >> +      Frequency of the mclk clock in Hertz.
+> > > 
+> > > This shouldn't be needed, you can retrieve the clock frequency at
+> > > runtime from the clock source.
+> > 
+> > Unless the clock source is a fixed one! What if the clock source comes from
+> > SoC? We need to set the rate, right?
 > 
-> properties:
+> In that case, if you want to hardcode the clock in DT, the preferred way
+> is to use the assigned-clock-rates property. Otherwise, if the driver
+> requires a specific clock frequency, it's better to hardcode it in the
+> driver itself. In this specific case, I think assigned-clock-rates is
+> best as the device can support three different clock frequencies.
 > 
->   ...
+
+Agree. assigned-clock* properties makes sense for multiple frequencies. In
+my driver, I only used one frequency so I was happy with clock-frequency :)
+
+> > >> +  vddo-supply:
+> > >> +    description:
+> > >> +      Definition of the regulator used as interface power supply.
+> > >> +
+> > >> +  vdda-supply:
+> > >> +    description:
+> > >> +      Definition of the regulator used as analog power supply.
+> > >> +
+> > >> +  vddd-supply:
+> > >> +    description:
+> > >> +      Definition of the regulator used as digital power supply.
+> > > 
+> > > Do we really need three regulators ? I agree that the sensor has three
+> > > power rails, but aren't they usually powered by regulators that are
+> > > tied together, without individual control ? The IMX926 specifications
+> > > require the three power supplies to raise within 200ms, which we should
+> > > be able to ensure in software. What does your board use, does it have
+> > > multiple GPIOs to control each power supply ? If not I wonder if we
+> > > could just define vddd-supply now, and add vdda-supply and vddo-supply
+> > > later if we need to support systems that can control the supplies
+> > > individually.
+> > 
+> > The whole power supply model is a bit rotten. In my case, there are 3 different
+> > regulators used with no software control. So, I can't control the rise time
+> > (I assume that they are handled by the external power regulator itself).
+> > 
+> > So to be sane, I just documented with the assumption of fixed-regulators.
 > 
->   ports:
->     type: object
+> Should we then go for one supply, and add the other two when (and if)
+> needed ?
 > 
->     properties:
->       port@0:
->         type: object
->         description: |
-> 	  Video port for LVTTL input
+
+I'm not really sure if we should use one power supply here. The single power
+supply configuration is not true for all cases. And following what other
+sensors are using, I'd prefer to have 3 individual power supplies.
+
+Thanks,
+Mani
+
+> > >> +  reset-gpios:
+> > >> +    description:
+> > >> +      The phandle and specifier for the GPIO that controls sensor reset.
+> > >> +    maxItems: 1
+> > >> +
+> > >> +  port: true
+> > >> +
+> > >> +required:
+> > >> +  - compatible
+> > >> +  - reg
+> > >> +  - clocks
+> > >> +  - clock-names
+> > >> +  - clock-frequency
+> > >> +  - vddo-supply
+> > >> +  - vdda-supply
+> > >> +  - vddd-supply
+> > >> +
+> > >> +additionalProperties: false
+> > >> +
+> > >> +examples:
+> > >> +  - |
+> > >> +    #include <dt-bindings/gpio/gpio.h>
+> > >> +
+> > >> +    imx296: camera-sensor@1a {
+> > >> +        compatible = "sony,imx296";
+> > >> +        reg = <0x1a>;
+> > >> +        reset-gpios = <&msmgpio 35 GPIO_ACTIVE_LOW>;
+> > >> +        pinctrl-names = "default";
+> > >> +        pinctrl-0 = <&camera_rear_default>;
+> > >> +        clocks = <&gcc 90>;
+> > >> +        clock-names = "mclk";
+> > >> +        clock-frequency = <37125000>;
+> > >> +        vddo-supply = <&camera_vddo_1v8>;
+> > >> +        vdda-supply = <&camera_vdda_3v3>;
+> > >> +        vddd-supply = <&camera_vddd_1v2>;
+> > >> +
+> > >> +        port {
+> > >> +            imx296_ep: endpoint {
+> > >> +                remote-endpoint = <&csiphy0_ep>;
+> > >> +            };
+> > >> +        };
+> > >> +    };
+> > >> +
+> > >> +...
+> > >> diff --git a/MAINTAINERS b/MAINTAINERS
+> > >> index 55199ef7fa74..51194bb2c392 100644
+> > >> --- a/MAINTAINERS
+> > >> +++ b/MAINTAINERS
+> > >> @@ -15140,6 +15140,14 @@ S:	Maintained
+> > >>  F:	drivers/media/i2c/imx274.c
+> > >>  F:	Documentation/devicetree/bindings/media/i2c/imx274.txt
+> > >>  
+> > >> +SONY IMX296 SENSOR DRIVER
+> > >> +M:	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> > >> +L:	linux-media@vger.kernel.org
+> > >> +T:	git git://linuxtv.org/media_tree.git
+> > >> +S:	Maintained
+> > >> +F:	drivers/media/i2c/imx296.c
+> > >> +F:	Documentation/devicetree/bindings/media/i2c/imx296.yaml
+> > >> +
+> > >>  SONY IMX319 SENSOR DRIVER
+> > >>  M:	Bingbu Cao <bingbu.cao@intel.com>
+> > >>  L:	linux-media@vger.kernel.org
 > 
->       port@1:
->         type: object
->         description: |
-> 	  Video port for eDP output (..)
+> -- 
+> Regards,
 > 
->     required:
->       - port@0
-> 
-> This way, you express that both port@0 and port@1 must by nodes, under
-> a node called ports, and port@0 is mandatory.
-
-That validates, too. Looks better, admittedly. I don't have a strong
-opinion here. It's just that Rob wrote in
-<CAL_JsqKAU3WG3L=KP8A8u4vW=q_BQWPN-m_c+ADOwTioJ2-cmg@mail.gmail.com>:
-
-| For this case specifically, we do need to define a common graph
-| schema, but haven't yet. You can assume we do and only really need to    
-| capture what Maxime said above.
-(your points back then were port@N descriptions and neccessity for port@0)
-
-Are you sure that "object" is specific enough?
-
-> You should even push this a bit further by adding
-> additionalProperties: false to prevent a DT from having undocumented
-> properties and children for the main node and ports node.
-
-You mean like
-
-| jsonschema.exceptions.SchemaError: Additional properties are not allowed ('unevaluatedProperties' was unexpected)
-[...]
-| On schema:
-|    {'$id': 'http://devicetree.org/schemas/watchdog/allwinner,sun4i-a10-wdt.yaml#',
-[...]
-|      'unevaluatedProperties': False}
-
-? ;-)
-
-But yes, this patch series passes even with additionalProperties: false.
-
-In which form would you like to receive the update?
-
-	Torsten
-
+> Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
