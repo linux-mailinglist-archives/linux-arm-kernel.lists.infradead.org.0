@@ -2,59 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DED5EB105
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 14:17:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B10FEB104
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 14:17:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wAFUuy0bbqGyfdYZJIDbRKvVveMjIneJdlRfNmD1t1g=; b=n2OwViz5CEJy+k
-	9zSh8p1Q4mVQxlD+olX9WzTkVD9krxN2e65yl/gJ8PgWqt7qpuvHlJOwjgRWjAExtrQMwyola3dH7
-	oYKz0RcsYhOeZkRA8/p/qtsMjf8hTz1z5k8ci5Th28oriCgw2vfAN2yOBZaMQET68Mh4SEsjqw+j/
-	kS17dbKS1vhqopK5yn9EV6vFSjoC/5lpDS/evFmCNJBqngefEY4SnyLhlxRk9qypCJ5PSV7kY1uts
-	ub/4Rt/ohEy3T8NMvcdxD6U1d7qMZhIZY/7MLeiPA8kcyknvhUj3jYr8RtFTDtPSMgfavHsTA7uTf
-	IGjZqbDRkR7FSHvR82nw==;
+	List-Owner; bh=DRF44rTUCtQNOE1mQDXfJ7k2F9uhzTFRkUlDIjq8rvY=; b=gFebbLC1ONugY5
+	7OiESMOqCMCz6N9zvIcPQYlFRz3HWgqesJUfVCHf40kry5s0hIkUkoHTLvxVWryIGBsOvi+CQYIoT
+	9KzW6K3GCfg/VO9JgB2U6udDUroQLASLchMiORbOOY2G4a8zJCVhmIZcdc5ZteuScRYRhmusoCUE9
+	2jqWDcgJ6gYZiefhNGi09QvG/ovAff6IsblXOt6mIIXq2Ix3+ibGuzmQunSLD8bpXPY1QstvrgDwW
+	N8KeQBV6lD7d4PZokvROUD+Pr/vQjYBwns9evJ5kwYqz6H8ubuKKuqN4Lq0A704DusvXtQuUpCotW
+	Ei2BSUrOa7LCQqcYbnXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQAKG-0002X5-RH; Thu, 31 Oct 2019 13:17:20 +0000
-Received: from perceval.ideasonboard.com
- ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+	id 1iQAK2-0002Mv-MM; Thu, 31 Oct 2019 13:17:06 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQAJs-0002MF-DZ
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 13:16:57 +0000
-Received: from pendragon.ideasonboard.com
- (lmontsouris-658-1-103-151.w92-154.abo.wanadoo.fr [92.154.14.151])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 7F29B320;
- Thu, 31 Oct 2019 14:16:53 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1572527813;
- bh=PLmT7haSn/x6jKex7ohVnLZSNCbvD6oFv1ZIkyIdKJ8=;
+ id 1iQAJq-0002MG-JP
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 13:16:55 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D78E520873;
+ Thu, 31 Oct 2019 13:16:52 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572527814;
+ bh=ZQ0V22YoSa9c7EKuj3yIdixpoPPlTAbI84D2KqgffqY=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=rc9ZmDhqhFW5wMz4EyRD2ilAFzR4j/Mx35VYo5lruLiGrsRxblokmre5HepxFfDm6
- ALoJTDw2jErAaU8q95C2upbb0/H7emxuvdGZ2DN+SRDBvROKfpd/elRiJa52yKlQwG
- pqFFjBnvbcnIkdO9fmoVAKfHn4jcRVnPEjVQNTGk=
-Date: Thu, 31 Oct 2019 15:16:44 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: Re: [PATCH v4 0/2] Add IMX296 CMOS image sensor support
-Message-ID: <20191031131644.GA8917@pendragon.ideasonboard.com>
-References: <20191030094902.32582-1-manivannan.sadhasivam@linaro.org>
+ b=0fMUQ/WsRACP6CLkTRGspWvAEX7hCe2P2F1Rbk1u0/Xv5aCIO8QOTzjkEFZzOxO68
+ lfZmVNz6KEOYg0uILdfJPZ66g8PYoJ3H8NsbHwuf77Hszsd3ajX+S5pTMfrJEY97+Q
+ CD4KbBrTXpLkvf2z5ikEgBqzsu+zJ2pwrq35jpCM=
+Date: Thu, 31 Oct 2019 13:16:49 +0000
+From: Will Deacon <will@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [RFC] arm64: cpufeatures: Add support for tlbi range maintenance
+Message-ID: <20191031131649.GB27196@willie-the-truck>
+References: <1572417685-32955-1-git-send-email-zhangshaokun@hisilicon.com>
+ <20191030173359.GF13309@arrakis.emea.arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191030094902.32582-1-manivannan.sadhasivam@linaro.org>
+In-Reply-To: <20191030173359.GF13309@arrakis.emea.arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_061656_601669_1D83A72A 
-X-CRM114-Status: GOOD (  13.81  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191031_061654_662267_A937738D 
+X-CRM114-Status: GOOD (  13.84  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -62,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,67 +77,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
- linux-kernel@vger.kernel.org, a.brela@framos.com, peter.griffin@linaro.org,
- robh+dt@kernel.org, sakari.ailus@iki.fi, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Shaokun Zhang <zhangshaokun@hisilicon.com>,
+ Tangnianyao <tangnianyao@huawei.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mani,
+On Wed, Oct 30, 2019 at 05:34:00PM +0000, Catalin Marinas wrote:
+> On Wed, Oct 30, 2019 at 02:41:25PM +0800, Shaokun Zhang wrote:
+> > ARMv8.4-TLBI provides TLBI invalidation instruction that apply to a
+> > range of input addresses. This patch adds support for this feature.
+> > And provide another implementation for flush_tlb_range with tlbi
+> > range instruction.
+> 
+> Do you have any performance numbers in favour of this patch? Last time
+> we looked, it didn't really matter for Linux since most user TLBI ranges
+> were 1 or 2 pages long. Of course you can write some mprotect() loop to
+> show that it matters but I'm rather interested in real world impact.
 
-Thank you for the patches.
+The other major concern I have with this patch relates to the feature in
+general: my understanding is that probing for the presence of the
+instruction at the CPU level tells you nothing about whether or not it's
+support by the interconnect/DVM implementation.
 
-On Wed, Oct 30, 2019 at 03:19:00PM +0530, Manivannan Sadhasivam wrote:
-> Hello,
-> 
-> This patchset adds support for IMX296 CMOS image sensor from Sony.
-> Sensor can be programmed through I2C and 4-wire interface but the
-> current driver only supports I2C interface. The sensor is
-> capable of outputting frames in CSI2 format (1 Lane). In the case
-> of sensor resolution, driver only supports 1440x1088 at 30 FPS.
-> 
-> The driver has been validated using Framos IMX296 module interfaced to
-> 96Boards Dragonboard410c.
+There's this ominous and badly-worded note in the Arm ARM:
 
-I've just been made aware of your work. I also worked on an IMX296
-sensor driver in parallel, which I will post to the list. My driver
-doesn't hardcode the resolution but computes register values at runtime,
-so I wonder if it could be a better option. I'll post it now.
+  | The set of masters containing TLBs that can be affected by the TLB range
+  | maintenance instructions are defined by the system architecture. This means
+  | that all masters in a system might not contain TLBs within the defined
+  | shareability domains.
 
-> Changes in v4:
-> 
-> * Fixed issues related to gain settings and few misc cleanups in driver
-> * Documented port node and removed maxItems, default prop from dt binding
->   as per the review
-> 
-> Changes in v3:
-> 
-> * Fixed the reference to video-interfaces.txt in binding.
-> 
-> Changes in v2:
-> 
-> * Switched to YAML binding
-> 
-> Manivannan Sadhasivam (2):
->   dt-bindings: media: i2c: Add IMX296 CMOS sensor binding
->   media: i2c: Add IMX296 CMOS image sensor driver
-> 
->  .../devicetree/bindings/media/i2c/imx296.yaml |  94 +++
->  MAINTAINERS                                   |   8 +
->  drivers/media/i2c/Kconfig                     |  11 +
->  drivers/media/i2c/Makefile                    |   1 +
->  drivers/media/i2c/imx296.c                    | 715 ++++++++++++++++++
->  5 files changed, 829 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/media/i2c/imx296.yaml
->  create mode 100644 drivers/media/i2c/imx296.c
+which I think makes this practically useless without something like a
+firmware-based discoverability mechanism.
 
--- 
-Regards,
-
-Laurent Pinchart
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
