@@ -2,78 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 382DFEB55D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 17:51:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A781EB560
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 17:52:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8n2YeW1XDafyUasxypWJNI3UNzskVxPq9Zh3X/98SNU=; b=RAke438Ktn0VmM
-	M2775owswGG2FrzDMxBRSVMECswsltS8ZqQxduv++8QpIAyO2LjsH2PSJoqGFV/ka44wFDfoVHeUB
-	+7KuQeetDxKA3PgTRdbdzTLTb0xCMaV9z7T86QjyghzE3iOEBKzIndyGskinbOehQ4JOFayfbYaPk
-	E7F9cBpJLxcVACbSoqJbSUt5ZJawNDAb+0nNNssUXIf3QBnD56J8BhxsVzr2T6uzNpbhyeg3FUot0
-	KPBaQ9LI/LZyuOuJZaMxGNwfHAev3ZGg1Bl/jOvhUCotb5rEDRuHfu9T0FTuG10qUqraU73+U3EYL
-	zsDqwU2UcxnDmEaVRS2Q==;
+	List-Owner; bh=rSq1Wn/y0yNzKuZFpSTgtk8QeQpxKvGypegv+0TRVK8=; b=ImbvfO1qtdEAJt
+	ahd5yVvk+0IYXSrWagKKRmJclJo0n941/Gi7XelHxiIhj8Sg0O/6o1KuTsemfDkHCU0WqyvCG6sKc
+	dyyoLNFHbB+LZRQQd6HavNDeW3zWl48xb6oAYs1B4ogkuRggDxYMP2+LOaEm9t/pKD/hsNAYdslrj
+	i30YuXkNqgNJhvnzwxLpSOd2WIBGvvyUQmEs8dmFwIdeojBvPwqOgpQGqOipsuQSqpxxPHxjqsXVx
+	iROI3erYIiBiAPCG6bqYVQQxJ++lQApMPWjS9Chi3J8H/7deK/V/KKIGsCoHGje0mMZdshrk/ZVkC
+	8qKKLRnCMKDIKRFv6VRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQDfb-0002TF-OB; Thu, 31 Oct 2019 16:51:41 +0000
-Received: from mail-qt1-x84a.google.com ([2607:f8b0:4864:20::84a])
+	id 1iQDfy-0002lH-9q; Thu, 31 Oct 2019 16:51:58 +0000
+Received: from mail-pf1-x44a.google.com ([2607:f8b0:4864:20::44a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQDbP-00079D-Ix
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 16:47:17 +0000
-Received: by mail-qt1-x84a.google.com with SMTP id l32so6898884qtk.9
+ id 1iQDbR-0007BZ-6t
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 16:47:18 +0000
+Received: by mail-pf1-x44a.google.com with SMTP id v11so4980141pfm.23
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 31 Oct 2019 09:47:14 -0700 (PDT)
+ Thu, 31 Oct 2019 09:47:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=B4VLNzxMuvBiHcofU7yya6+NRz/joAG8uuuPQJlxTTo=;
- b=LiHsXWMw7bxtDeGEYRXpMn16nSyLdNS5lx+NSaesHfyJwbpJ9dv/hg1+masT0ktx+u
- GX0uOBJ11DAuMgxht/T5EF39gfFO9xTW1PSK4PEU0jy3aCOEqI3nPxqbXhiO3dkUpjDo
- urzDfwcuWckptE/Ao67JmdtLQrusiSCYPZDDMBcxYj/czYbCp7NNwbd7zcOwa1VvwCwl
- bCLZbQgxKTiU/SHhlKA9CxZwmprb/+rX2Rq8iGPkaL2PUwfngGsbWXLDbVI9z7gs6RBM
- TDT5FjyYB3G7P0cpX1mb1ilVQEka4Aw0h0I4BCIiujvaIlw0NIXAczBNyr3B++VVcB+3
- +Cow==
+ :cc; bh=P4MEC/JNWY+R+03CT6BMcXkN4eq/H40mvA6s8gty/0o=;
+ b=FyBd2DZREBGldSQmdAl4ctWmHh0W3zmoUaOrqpBjG9EgJjGFba3+Gk8Ux29MjmAeBe
+ sicne4I37jGUHXgzNedjLIMvsWVJI0ltGloZSO14XUHh9UTS3ARo7k97sP37e/Sb7gOS
+ DkHrE6/vOZ1GtiQPangd/sumad9YQICceEEnhyVa//W66pwrVwkXh36b+vmOtbBKreKQ
+ Cj7tQe1j/bGJXIWzMcMzK/I2qD4i61lE8pjYfsfIy6BaWm8QzTnAU3MchHhGnejhk8Hg
+ PI+E7X6+lVUF1d6bWAow+VePWBv3sp0SROOStKCkYLe92oec5OgOSb4SSowmvPYz6/dp
+ uItw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=B4VLNzxMuvBiHcofU7yya6+NRz/joAG8uuuPQJlxTTo=;
- b=KcF+1qWJvdIPDzpAnJCK+a5DkbEO+GxuOHfuNBnjMvfiKMa/eIOmBklyB84+mjcZHk
- eD2QTpIYE0xF7919yGU+RjiNGZsw9ncup0U8I72UF1pQN5XXjVwM/M5w4bAdFazQq6Sh
- pPaxVG/t6Yek2P9iWbX1C2akoFYaaL88TEdYBVAszHwW6d5iXI+c8x9HQRK3pnZFuera
- ugqWcXmaKSN5MUy+F/oQQQm0QviLfCVuL+ETSlsHtx74NNG5EINHxNRTocLC87LOzuy6
- e15wQzhJ4bdU5+Widbq6/IM4sMp83hlyP3B6aP77sl/5XKDUWrxPgHMhTVtwiBxbCp/+
- v27A==
-X-Gm-Message-State: APjAAAWB0AYA599JWttZgONTgSJt9YwV4QA+Fg1/hfUBGzxyragH1uSP
- 77UfEB9q/VGXlXLkdra/0yNYX6hRmZsCS/8dYAY=
-X-Google-Smtp-Source: APXvYqwoggK1YVUJpQXUwc7FiBvv7A/DJq1W/EwQk4BCJ6LoqoLRq9NRXAmJ6C3gzBh1eCK8VeecRlAeD8DpBndQofs=
-X-Received: by 2002:ac8:22c4:: with SMTP id g4mr5716668qta.45.1572540432881;
- Thu, 31 Oct 2019 09:47:12 -0700 (PDT)
-Date: Thu, 31 Oct 2019 09:46:31 -0700
+ bh=P4MEC/JNWY+R+03CT6BMcXkN4eq/H40mvA6s8gty/0o=;
+ b=R+noPOcuKC57/4dIJp0OegUeyFU+/nr/0KngKiGV13KYBicqGjCJdUFSdi5p/62ptR
+ 00Lys4Kcu/WiXtdW7KsPKSQRESlFJgaKJ4pKLjLJwR9bFM3Q3RpvJ9xA3ia5zEGDgLk1
+ wpzHw7DUvBgejW/N0HF0MOkRP/z3Ef2FxU3I3v7MdCb9yuQacYoHLoc2fQ4gYfKvndtt
+ ptf0+mIFdvn+gM94WsseKG1D8nqScuuCqThVkcWzL4igUyiL0LnwY820q4Xdukodr+Rr
+ ER1n4beV/5Yy6MevXtj/PSRXXU0cWmkUJgjTlf18yDNtyAfV1aewMg8VNVXVEzzWMTbe
+ y8KQ==
+X-Gm-Message-State: APjAAAWDdYJujEkk2gkkH3Lnj52miBp1+1u93pwe/kfLPxuSVl+2NLYi
+ G2X0h36dpTLL+8j9K9CQ0bucrO8+fLMvPNrrTiI=
+X-Google-Smtp-Source: APXvYqyE0l4dMPPmCmPFvy8Hsugb5xtiMU18+Uv3gR8RxmoCWwbgYDkks7ERiHhw5CjwrT6msMO6tlilVlKLUvoeCVQ=
+X-Received: by 2002:a63:6cf:: with SMTP id 198mr7655687pgg.259.1572540435556; 
+ Thu, 31 Oct 2019 09:47:15 -0700 (PDT)
+Date: Thu, 31 Oct 2019 09:46:32 -0700
 In-Reply-To: <20191031164637.48901-1-samitolvanen@google.com>
-Message-Id: <20191031164637.48901-12-samitolvanen@google.com>
+Message-Id: <20191031164637.48901-13-samitolvanen@google.com>
 Mime-Version: 1.0
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20191031164637.48901-1-samitolvanen@google.com>
 X-Mailer: git-send-email 2.24.0.rc0.303.g954a862665-goog
-Subject: [PATCH v3 11/17] arm64: disable function graph tracing with SCS
+Subject: [PATCH v3 12/17] arm64: reserve x18 from general allocation with SCS
 From: samitolvanen@google.com
 To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
  Steven Rostedt <rostedt@goodmis.org>,
  Masami Hiramatsu <mhiramat@kernel.org>, 
  Ard Biesheuvel <ard.biesheuvel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_094715_672867_59DE19E0 
-X-CRM114-Status: GOOD (  10.97  )
+X-CRM114-CacheID: sfid-20191031_094717_266472_9C86EB70 
+X-CRM114-Status: UNSURE (   9.07  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:84a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:44a listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
@@ -111,29 +112,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-With CONFIG_FUNCTION_GRAPH_TRACER, function return addresses are
-modified in ftrace_graph_caller and prepare_ftrace_return to redirect
-control flow to ftrace_return_to_handler. This is incompatible with
-SCS.
+Reserve the x18 register from general allocation when SCS is enabled,
+because the compiler uses the register to store the current task's
+shadow stack pointer. Note that all external kernel modules must also be
+compiled with -ffixed-x18 if the kernel has SCS enabled.
 
 Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
 ---
- arch/arm64/Kconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/Makefile | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index e7b57a8a5531..42867174920f 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -148,7 +148,7 @@ config ARM64
- 	select HAVE_FTRACE_MCOUNT_RECORD
- 	select HAVE_FUNCTION_TRACER
- 	select HAVE_FUNCTION_ERROR_INJECTION
--	select HAVE_FUNCTION_GRAPH_TRACER
-+	select HAVE_FUNCTION_GRAPH_TRACER if !SHADOW_CALL_STACK
- 	select HAVE_GCC_PLUGINS
- 	select HAVE_HW_BREAKPOINT if PERF_EVENTS
- 	select HAVE_IRQ_TIME_ACCOUNTING
+diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+index 2c0238ce0551..ef76101201b2 100644
+--- a/arch/arm64/Makefile
++++ b/arch/arm64/Makefile
+@@ -72,6 +72,10 @@ stack_protector_prepare: prepare0
+ 					include/generated/asm-offsets.h))
+ endif
+ 
++ifeq ($(CONFIG_SHADOW_CALL_STACK), y)
++KBUILD_CFLAGS	+= -ffixed-x18
++endif
++
+ ifeq ($(CONFIG_CPU_BIG_ENDIAN), y)
+ KBUILD_CPPFLAGS	+= -mbig-endian
+ CHECKFLAGS	+= -D__AARCH64EB__
 -- 
 2.24.0.rc0.303.g954a862665-goog
 
