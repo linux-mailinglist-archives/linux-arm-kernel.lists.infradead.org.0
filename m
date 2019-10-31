@@ -2,83 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C265EB5D5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 18:09:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 36C12EB5D8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 18:10:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ojy5rz9uTumE839eCMG2Q2Rhw4UGgRRUXqoNpwaomQ4=; b=SJl1yWp7e+Pbdk
-	tN9tT77ujpsrp4KN+MiDmWd5PoGThs3gpp7e4Ga33qKjrAsd5sFE6OWBtC7Zj4zQLUkq0AfvDJ0Ip
-	EMfiAjsrA62fc0uM/4LuROsCEiAJ7Uxw027eID2157Lfa2cqbRabaDnE5PUsvILHrIhm/mbXhilzM
-	5Jbo4jkIebuODsMdhZoFPl6sJRpfgTdvoH4QLJ4PnUMX9B6/UgqvFfsB7X2hPAh0BLX15jteXoWIq
-	SAPpsxXPLyE/BTtmEloc3p255MuazM8HPm9DQjPwvitKmTh+6hjBCGEpNslgsaspXkmtKZOjRaaMA
-	o4JK/CShG4mU2MJHyjBA==;
+	List-Owner; bh=qcglavhbUFr/Zto6TZHsmnGHo10+tsjrfXUKbxzYDhU=; b=h9D6POW6iSyWRH
+	r6Rk65rVhubx1OSR3J69KtA5f+JY2QIwXwmySlarNDcCzLHdNMOOudlbrmPdlsu3/usYHJwEa+dZE
+	I98PLE048seyhxXfD7Kglc79aLDqvj6RJW8BShxLclLyUOCzSX0bzUQeNKvC0VpY6pj27dzgY14F1
+	bnBMGtW9MjSCRI3TJbv+2g+voL6asoh6CO0n1qhABHczqZ3tsDl+Qzywky3N64iWZSWjMDzPixPEQ
+	vqeraXXZ9Iu8pzqbpNsBbIHkXVPP1f1YDWRVIIPPCacugzGSK+60Fnu2Dh0i+wsqJDeP6zd0QIJgY
+	XgO6NCbqJGysx0bWNZvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQDxB-00048Y-W5; Thu, 31 Oct 2019 17:09:46 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1iQDxh-0004Sw-8Q; Thu, 31 Oct 2019 17:10:17 +0000
+Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQDx1-00046y-41; Thu, 31 Oct 2019 17:09:36 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id j85so4551983vsd.11;
- Thu, 31 Oct 2019 10:09:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=BbJu3UVGxb/D3O3Jaajy2yYceop1LdG6jIZpC2UGdME=;
- b=sILgo0ExuXrqJv9wUbE2Tumq0ELe9CBQDKkU77dnmj/RuVa26/zmecu0GpbeZGTHBM
- ePVf1uFkrSYmYYbtLs705cqb8LfV8HUlHunhiFQbAbOik3oQEtW7EJPpasqgTvjQ2TM0
- LIrREjmrFrRvjpBgBmRubuP6d0oRUxDI8Hc32Y4qIlmCaBj2B/JSC+PHwtXGcKgLiWus
- DEKo5bKI89SVAivdVDnQ+wCLFKmAm9oWYDSxKRXcB3/y3uZeqC/7CvcgrGjxfvkSWxoG
- TG6wKMt7wZHp7DAHNEHqrk4ygoaC3HxA8z/wUcmHdZrBvMtS821UR9VsV2r3le3tgedY
- vrJg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=BbJu3UVGxb/D3O3Jaajy2yYceop1LdG6jIZpC2UGdME=;
- b=X3F6ZYULWnhfUZhsmHYRf3McuoGeSiqSuXnN6wfvWBE3JvGky23q9MN/c6ISVdr/fa
- ZanOZQgd4IRA9ICVgPwUmkHNLU4pIEI8dsRajmIreV/hnawg1FyA7KNO5kxQFK1TY85p
- xjJJ02VRx9JwhPgahysBwYkMMGa2cJs5l/gtdh8+jxNMb8exR0sDceWf5MrkGjzH3Dhh
- JvkdT3vE8fk4T2tBeDOMqpPnArV6ADb++ah/NXhS/v8wZDneO8Vfh7rxwn3uQWsDmpcv
- F8tffpY9QB2WXHUNeRU//N/rVnacoE8rs6hB+Szzq+vNP29wrzbhCO9BPRRxRGYCbZOx
- rXFA==
-X-Gm-Message-State: APjAAAWMhfGIOUYteCnBCnEXGwWz5XuAWNvkaV/4ahi5lP2Sf0VRtbTK
- qYmMQ5l+I1B8rdjjP4Z1m0KvuC/Tm6NiwFVXYl36Ykku
-X-Google-Smtp-Source: APXvYqyLkkWgJ7ICTVfMGBOcq4S2OAn5nYpk6VJZW0O94lgZM/BCKp35+LK16Ms8/t5Z7RoL2Vj7T2VyJxX2Oc575EY=
-X-Received: by 2002:a67:77d4:: with SMTP id s203mr3435400vsc.118.1572541771757; 
- Thu, 31 Oct 2019 10:09:31 -0700 (PDT)
+ id 1iQDx4-00048E-Ha
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 17:09:41 +0000
+Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
+ [IPv6:2a01:4f9:c010:4572::80:2])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id E1E9E634C87;
+ Thu, 31 Oct 2019 19:08:38 +0200 (EET)
+Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
+ (envelope-from <sakari.ailus@retiisi.org.uk>)
+ id 1iQDw5-0001nA-UE; Thu, 31 Oct 2019 19:08:37 +0200
+Date: Thu, 31 Oct 2019 19:08:37 +0200
+From: Sakari Ailus <sakari.ailus@iki.fi>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Subject: Re: [PATCH v4 1/2] dt-bindings: media: i2c: Add IMX296 CMOS sensor
+ binding
+Message-ID: <20191031170837.GN6253@valkosipuli.retiisi.org.uk>
+References: <20191030094902.32582-1-manivannan.sadhasivam@linaro.org>
+ <20191030094902.32582-2-manivannan.sadhasivam@linaro.org>
+ <20191031131538.GA9170@pendragon.ideasonboard.com>
+ <20191031134512.GB24273@mani>
+ <20191031141141.GD5018@pendragon.ideasonboard.com>
+ <20191031142817.GK6253@valkosipuli.retiisi.org.uk>
+ <20191031165444.GE5018@pendragon.ideasonboard.com>
 MIME-Version: 1.0
-References: <20191031142633.12460-1-adrian.ratiu@collabora.com>
-In-Reply-To: <20191031142633.12460-1-adrian.ratiu@collabora.com>
-From: Emil Velikov <emil.l.velikov@gmail.com>
-Date: Thu, 31 Oct 2019 17:07:36 +0000
-Message-ID: <CACvgo50NmofJrCvADOTxJqJqKEWDsy8qD-1B6R356vFMcmdbWA@mail.gmail.com>
-Subject: Re: [PATCH 0/4] Genericize DW MIPI DSI bridge and add i.MX 6 driver
-To: Adrian Ratiu <adrian.ratiu@collabora.com>
+Content-Disposition: inline
+In-Reply-To: <20191031165444.GE5018@pendragon.ideasonboard.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_100935_182307_EF1A19AA 
-X-CRM114-Status: GOOD (  14.54  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191031_100939_004963_C58861AB 
+X-CRM114-Status: GOOD (  20.61  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (emil.l.velikov[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,56 +73,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Linux-Kernel@Vger. Kernel. Org" <linux-kernel@vger.kernel.org>,
- ML dri-devel <dri-devel@lists.freedesktop.org>,
- linux-rockchip <linux-rockchip@lists.infradead.org>, kernel@collabora.com,
- linux-stm32@st-md-mailman.stormreply.com,
- LAKML <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
+ linux-kernel@vger.kernel.org, a.brela@framos.com, peter.griffin@linaro.org,
+ robh+dt@kernel.org, Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Adrian,
+Hi Laurent,
 
-On Thu, 31 Oct 2019 at 14:26, Adrian Ratiu <adrian.ratiu@collabora.com> wrote:
->
-> Having a generic Synopsis DesignWare MIPI-DSI host controller bridge
-> driver is a very good idea, however the current implementation has
-> hardcoded quite a lot of the register layouts used by the two supported
-> SoC vendors, STM and Rockchip, which use IP cores v1.30 and v1.31.
->
-> This makes it hard to support other SoC vendors like the FSL/NXP i.MX 6
-> which use older v1.01 cores or future versions because, based on history,
-> layout changes should also be expected in new DSI versions / SoCs.
->
-> This patch series converts the bridge and platform drivers to access
-> registers via generic regmap APIs and allows each platform driver to
-> configure its register layout via struct reg_fields, then adds support
-> for the host controller found on i.MX 6.
->
-Have you considered keeping the difference internal to the dw-mipi-dsi driver?
-Say having the iMX6 module "request" the v1.01 regmap from the bridge
-driver, while rockchip/others doing the equivalent.
+On Thu, Oct 31, 2019 at 06:54:44PM +0200, Laurent Pinchart wrote:
+> Hi Sakari,
+> 
+> On Thu, Oct 31, 2019 at 04:28:17PM +0200, Sakari Ailus wrote:
+> > On Thu, Oct 31, 2019 at 04:11:41PM +0200, Laurent Pinchart wrote:
+> > > On Thu, Oct 31, 2019 at 07:15:12PM +0530, Manivannan Sadhasivam wrote:
+> > >> On Thu, Oct 31, 2019 at 03:15:38PM +0200, Laurent Pinchart wrote:
+> > >>> On Wed, Oct 30, 2019 at 03:19:01PM +0530, Manivannan Sadhasivam wrote:
+> > >>>> Add YAML devicetree binding for IMX296 CMOS image sensor. Let's also
+> > >>>> add MAINTAINERS entry for the binding and driver.
+> > >>>> 
+> > >>>> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> > >>>> ---
+> > >>>>  .../devicetree/bindings/media/i2c/imx296.yaml | 94 +++++++++++++++++++
+> > >>>>  MAINTAINERS                                   |  8 ++
+> > >>>>  2 files changed, 102 insertions(+)
+> > >>>>  create mode 100644 Documentation/devicetree/bindings/media/i2c/imx296.yaml
+> > >>>> 
+> > >>>> diff --git a/Documentation/devicetree/bindings/media/i2c/imx296.yaml b/Documentation/devicetree/bindings/media/i2c/imx296.yaml
+> > >>>> new file mode 100644
+> > >>>> index 000000000000..c04ec2203268
+> > >>>> --- /dev/null
+> > >>>> +++ b/Documentation/devicetree/bindings/media/i2c/imx296.yaml
+> > >>>> @@ -0,0 +1,94 @@
+> > >>>> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> > >>>> +%YAML 1.2
+> > >>>> +---
+> > >>>> +$id: http://devicetree.org/schemas/media/i2c/imx296.yaml#
+> > >>>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > >>>> +
+> > >>>> +title: Sony IMX296 1/2.8-Inch CMOS Image Sensor
+> > >>>> +
+> > >>>> +maintainers:
+> > >>>> +  - Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> > >>>> +
+> > >>>> +description: |-
+> > >>>> +  The Sony IMX296 is a 1/2.9-Inch active pixel type CMOS Solid-state image
+> > >>>> +  sensor with square pixel array and 1.58 M effective pixels. This chip
+> > >>>> +  features a global shutter with variable charge-integration time. It is
+> > >>>> +  programmable through I2C and 4-wire interfaces. The sensor output is
+> > >>>> +  available via CSI-2 serial data output (1 Lane).
+> > >>>> +
+> > >>>> +properties:
+> > >>>> +  compatible:
+> > >>>> +    const: sony,imx296
+> > >>>> +
+> > >>>> +  reg:
+> > >>>> +    maxItems: 1
+> > >>>> +
+> > >>>> +  clocks:
+> > >>>> +    maxItems: 1
+> > >>>> +
+> > >>>> +  clock-names:
+> > >>>> +    description:
+> > >>>> +      Input clock for the sensor.
+> > >>>> +    items:
+> > >>>> +      - const: mclk
+> > >>> 
+> > >>> The pin is named INCK, let's name the clock accordingly.
+> > >> 
+> > >> Okay, I thought generic names are preferred here!
+> > >>  
+> > >>>> +  clock-frequency:
+> > >>>> +    description:
+> > >>>> +      Frequency of the mclk clock in Hertz.
+> > >>> 
+> > >>> This shouldn't be needed, you can retrieve the clock frequency at
+> > >>> runtime from the clock source.
+> > >> 
+> > >> Unless the clock source is a fixed one! What if the clock source comes from
+> > >> SoC? We need to set the rate, right?
+> > > 
+> > > In that case, if you want to hardcode the clock in DT, the preferred way
+> > > is to use the assigned-clock-rates property. Otherwise, if the driver
+> > > requires a specific clock frequency, it's better to hardcode it in the
+> > > driver itself. In this specific case, I think assigned-clock-rates is
+> > > best as the device can support three different clock frequencies.
+> > 
+> > Just note that if ACPI support is added to the sensor driver, you'll need
+> > the clock-frequency property again, for that's the only way how the driver
+> > will get the clock frequency.
+> 
+> Why is so ? Why can't we implement of assigned-clock-rates for ACPI ?
 
->  .../bindings/display/imx/mipi-dsi.txt         |  56 ++
->  drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c | 518 +++++++++---------
->  drivers/gpu/drm/imx/Kconfig                   |   7 +
->  drivers/gpu/drm/imx/Makefile                  |   1 +
->  drivers/gpu/drm/imx/dw_mipi_dsi-imx.c         | 502 +++++++++++++++++
->  .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   | 154 +++++-
->  drivers/gpu/drm/stm/dw_mipi_dsi-stm.c         | 160 +++++-
->  include/drm/bridge/dw_mipi_dsi.h              |  60 +-
->  8 files changed, 1185 insertions(+), 273 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/display/imx/mipi-dsi.txt
->  create mode 100644 drivers/gpu/drm/imx/dw_mipi_dsi-imx.c
->
+ACPI doesn't deal with clocks as such. So there's also no ACPI defined way
+to access clocks specifically, including the frequency --- instead the
+clock is controlled by an AML methods which implement power on and off
+sequences for the device.
 
-This should make the delta a lot smaller, avoiding the unnecessary
-copy of register fields and regmap.
-Plus plugging future users will be dead trivial.
-
--Emil
+-- 
+Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
