@@ -2,86 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 678F0EB299
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 15:27:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11D8FEB29C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 15:28:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CBVtBvakltEenkJtpkVC7vdSPzh6CpAevHpxb1hfWuA=; b=mTTRL+WpjuhQGl
-	uec+wBYHJt8P4GR2eIaX/pX6Eh80CUEO0EzgMGZ7d/DGYTdPfbXLmft8LvvUMnNlzXJG2w82GnqAJ
-	IMu1y4+6OnKMoUjBr4DEmcY0AxJW1TTJj0Qh9FQkKcw3E8UupUEtO860AeVYm+/qGj+r2iBqmvvFk
-	0GKzbashJAKy30/nN9zus30CzrDLf/LRbP7UNC0i98KrmROg1bBbaS45dT4t4vH6RbFIDvPo7NHRe
-	GydtV+TgZKRlBJAo58RK0rSQcMNgwIdyOz5OIh4B5T3KlOa34OgUn3txJPaaQDuSdVtCkZZhzqoQ6
-	asnthzxnbu/Jr53OgO/g==;
+	List-Owner; bh=N5augZHyEjr0tvYYvzAJtiR+766hH/GJzoVkA+WDFkM=; b=lAyOHJ/lsznTFt
+	+vQV8nJ8a/PThn1W3oyoHjgycZ6r4cjUX7pleVck80H+uEavpkvBk7dYl3ZZ3IHYzC+wMCFzXgH/G
+	pxsWFQ/1/mKjY0Rhlj8D+pf5YGeDWkqDT5yQK02NXKBZOhfCiyIPRtedQMIVZyBq/j4Qa9WBlMjcB
+	n9jHsCd3FV/Udqw6/ANlDYtxI2NKNs5CqfJ/dn3UoaH//EvmmUivsvyBpjWtueDHEpl2Sh4kk98Mw
+	RhFKgfAnoetE+wd5KTn2KNeS9Pswzs5UyDkqVzr9BaX6/5U63XQFkTnzMqnNLySqWbNWi7YycoWjX
+	mtZlbMxmp2yUTXZbGyjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQBQH-00067a-DY; Thu, 31 Oct 2019 14:27:37 +0000
-Received: from skedge03.snt-world.com ([91.208.41.68])
+	id 1iQBQo-0006hI-CO; Thu, 31 Oct 2019 14:28:11 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQBNP-0002t8-Ba
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 14:24:41 +0000
-Received: from sntmail12r.snt-is.com (unknown [10.203.32.182])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by skedge03.snt-world.com (Postfix) with ESMTPS id BFA3F60CB06;
- Thu, 31 Oct 2019 15:24:34 +0100 (CET)
-Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail12r.snt-is.com
- (10.203.32.182) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Thu, 31 Oct
- 2019 15:24:34 +0100
-Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
- sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
- 15.01.1713.004; Thu, 31 Oct 2019 15:24:34 +0100
-From: Schrempf Frieder <frieder.schrempf@kontron.de>
-To: Krzysztof Kozlowski <krzk@kernel.org>, Fabio Estevam <festevam@gmail.com>, 
- Schrempf Frieder <frieder.schrempf@kontron.de>, Mark Rutland
- <mark.rutland@arm.com>, NXP Linux Team <linux-imx@nxp.com>, "Pengutronix
- Kernel Team" <kernel@pengutronix.de>, Rob Herring <robh+dt@kernel.org>,
- "Sascha Hauer" <s.hauer@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH v3 11/11] MAINTAINERS: Add an entry for Kontron Electronics
- ARM board support
-Thread-Topic: [PATCH v3 11/11] MAINTAINERS: Add an entry for Kontron
- Electronics ARM board support
-Thread-Index: AQHVj/bq00l6FB82qEKQsJ90JRSWJQ==
-Date: Thu, 31 Oct 2019 14:24:34 +0000
-Message-ID: <20191031142112.12431-12-frieder.schrempf@kontron.de>
-References: <20191031142112.12431-1-frieder.schrempf@kontron.de>
-In-Reply-To: <20191031142112.12431-1-frieder.schrempf@kontron.de>
-Accept-Language: de-DE, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.17.1
-x-originating-ip: [172.25.9.193]
-x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
+ id 1iQBNq-0003Iq-80; Thu, 31 Oct 2019 14:25:08 +0000
+Received: from dhcp-64-28.ens-lyon.fr ([140.77.64.28] helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1iQBNk-0005pO-8a; Thu, 31 Oct 2019 15:25:00 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: Markus Reichl <m.reichl@fivetechno.de>
+Subject: Re: [PATCH] arm64: dts: rockchip: Rework voltage supplies for
+ regulators on rk3399-roc-pc
+Date: Thu, 31 Oct 2019 15:24:59 +0100
+Message-ID: <2490751.hSll4LLrj9@phil>
+In-Reply-To: <22b56700-3c9e-0f60-cd74-7ff24d4f1a23@fivetechno.de>
+References: <22b56700-3c9e-0f60-cd74-7ff24d4f1a23@fivetechno.de>
 MIME-Version: 1.0
-X-SnT-MailScanner-Information: Please contact the ISP for more information
-X-SnT-MailScanner-ID: BFA3F60CB06.A0AF1
-X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
- Provider for details
-X-SnT-MailScanner-SpamCheck: 
-X-SnT-MailScanner-From: frieder.schrempf@kontron.de
-X-SnT-MailScanner-To: devicetree@vger.kernel.org, festevam@gmail.com,
- kernel@pengutronix.de, krzk@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
- linux-kernel@vger.kernel.org, mark.rutland@arm.com,
- robh+dt@kernel.org, s.hauer@pengutronix.de, shawnguo@kernel.org
-X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_072439_593486_F418A09B 
-X-CRM114-Status: UNSURE (   8.75  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191031_072506_732690_5CE04E5E 
+X-CRM114-Status: GOOD (  15.21  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [91.208.41.68 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -94,45 +56,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Frieder Schrempf <frieder.schrempf@kontron.de>
+Am Donnerstag, 31. Oktober 2019, 14:30:06 CET schrieb Markus Reichl:
+> Correct the voltage supplies according to the board schematics
+> ROC-3399-PC-V10-A-20180804.
+> 
+> Signed-off-by: Markus Reichl <m.reichl@fivetechno.de>
+> ---
+>  .../arm64/boot/dts/rockchip/rk3399-roc-pc.dts | 30 ++++++++++---------
+>  1 file changed, 16 insertions(+), 14 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
+> index e06e4163605b..def8bca7d158 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
+> @@ -142,7 +142,7 @@
+>  		regulator-boot-on;
+>  		regulator-min-microvolt = <3300000>;
+>  		regulator-max-microvolt = <3300000>;
+> -		vin-supply = <&vcc_sys>;
+> +		vin-supply = <&dc_12v>;
+>  	};
+>  
+>  	/* Actually 3 regulators (host0, 1, 2) controlled by the same gpio */
+> @@ -190,7 +190,7 @@
+>  		regulator-boot-on;
+>  		regulator-min-microvolt = <800000>;
+>  		regulator-max-microvolt = <1400000>;
+> -		vin-supply = <&vcc_sys>;
+> +		vin-supply = <&vcc3v3_sys>;
+>  	};
+>  
+>  	/* on roc-rk3399-mezzanine board */
 
-Kontron Electronics GmbH produces several ARM boards, that are
-planned to be upstreamed eventually. For now we have some
-i.MX6UL/ULL based SoMs and boards, that are already available
-in the kernel.
+This seems to be some change from somewhere else.
+In any case I adapted that to the current dts and applied
+the patch for 5.5. Please double-check though.
 
-Signed-off-by: Frieder Schrempf <frieder.schrempf@kontron.de>
----
- MAINTAINERS | 6 ++++++
- 1 file changed, 6 insertions(+)
+Thanks
+Heiko
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 296de2b51c83..a461d31ee98d 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -9103,6 +9103,12 @@ F:	include/linux/kmod.h
- F:	lib/test_kmod.c
- F:	tools/testing/selftests/kmod/
- 
-+KONTRON ELECTRONICS ARM BOARDS SUPPORT
-+M:	Frieder Schrempf <frieder.schrempf@kontron.de>
-+S:	Maintained
-+F:	arch/arm/boot/dts/imx6ul-kontron-*
-+F:	arch/arm/boot/dts/imx6ull-kontron-*
-+
- KPROBES
- M:	Naveen N. Rao <naveen.n.rao@linux.ibm.com>
- M:	Anil S Keshavamurthy <anil.s.keshavamurthy@intel.com>
--- 
-2.17.1
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
