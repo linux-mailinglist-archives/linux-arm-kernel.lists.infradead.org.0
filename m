@@ -2,54 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC63BEAB28
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 08:55:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A99AEEAB67
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 09:13:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/3AtEc8g6SUne3RdmjBaGNLnlGnxl7S4MTp1oh1uYW0=; b=j9z8RsIDHRinHS
-	5Bz63KBu4G7B1PsHNkWGI4KY0HTVQAKpTNyphj1ILjnoTVEGJBsLfBOb70UBrpVnOC6SG8jp9oi6d
-	kpOjiePt/FV8bbKgroB9/LoyXjlXQmX4K9fgYdybOFb2zVUC+5LsRsgYJ56DtiaqbEWLd+pdLm5ER
-	SgGGd1zUQkZc4YvHyPnhPQ7d685CZydypJj4H3ThUnbv/rK4BAr8GXaBr2f9l16k+MPRQhJYwTA0L
-	45kOucduKmgkkStIBLWnLHxVsv2Y917bY5GZNMKNNDTlDZy7FpkOTYd4+nVOWy2pDz7svygKD1ovb
-	PJJCwt169hoHSZZRLWyw==;
+	List-Owner; bh=5UROl5Da0s9zsgtMZnJ+LzCChL3gWtiDwE+SG72n+Nc=; b=HCSygjOcc4sFpl
+	lzbWJDxsoUSUyXKFMff3r5qkrAZZCmZHj+WODYT1WyTJ4d1LygHu/jrTOxzVwRuvJWbaQWRsiT6nN
+	4ahyqrgh+PIlBof9IYaq5oDrV9WtsFiBB22UMKO1pQmOJv3nSWv3MOUxbtIx6Ra5JzhAvWFJejhrB
+	3rO841enIObALYGnLU7Mb8D+x44HYetFkjMHXdszRHKunC4gTqpDh4K0L4Md7HZuLb3koPqZyYU6W
+	gaTLdOeAQ1z3EAxf1JSe3Tx1yChApLOx+1D6mU+93YMtYDsApDxqqyGl46k+ncYNCrkI8Ithrt1nX
+	On9Wivy3eC5M39xPp1WQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQ5Iq-000280-Rj; Thu, 31 Oct 2019 07:55:32 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQ5Ie-00027K-6u
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 07:55:21 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1BF3A1FB;
- Thu, 31 Oct 2019 00:55:14 -0700 (PDT)
-Received: from blommer (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CDE643F71E;
- Thu, 31 Oct 2019 00:55:12 -0700 (PDT)
-Date: Thu, 31 Oct 2019 07:55:06 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Richard Henderson <richard.henderson@linaro.org>
-Subject: Re: [PATCH] arm64: perf: Simplify the ARMv8 PMUv3 event attributes
-Message-ID: <20191031075505.GA3412@blommer>
-References: <1572407177-48229-1-git-send-email-zhangshaokun@hisilicon.com>
- <b603fc49-01f5-b5b4-7c2c-5f0bc53b6fc1@linaro.org>
+	id 1iQ5aJ-0007FS-Qs; Thu, 31 Oct 2019 08:13:35 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iQ5aC-0007En-NE
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 08:13:30 +0000
+Received: by mail-wr1-x441.google.com with SMTP id v9so5152860wrq.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 31 Oct 2019 01:13:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=cVTpH9x5w5p5t2TLyqv/I4Qxh336u+KvXbCEegt8Uv0=;
+ b=c14BIyVgJODeeLH4b+TJ4cZ3xE088RbzxSHE1oTs79eyAHCgcKk3JXB0jSQIKMQBnF
+ 14T+VdlXD9Yhegoso0KsMVDY8BamFtWhmdyNa8fck76+mXM51IIrNkdguUrXkvA4gtj0
+ lb1GzN5v4I9LbC+uEo91w4pMPlRwq5lQlQ1TYYB7KJT1hmZQQCsC96cvUOG6Pwg0ICSm
+ P1NMe+P4DWXxpyUfW2mH9OoZ6RS2AylG1gmVsVTuUOrNiQXuC+S1BYcijFNSWxXd2n3D
+ 4prXedSxCp0ksj6cqn8BrOVUvrR9qh2IlvII0AkqKmYmSBuB3BB7RSvVICzQFd33hlME
+ x5Hw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=cVTpH9x5w5p5t2TLyqv/I4Qxh336u+KvXbCEegt8Uv0=;
+ b=al2rqpvaYXjmd3PBZm8q/7lrzvrULz8oO+V8T8d15uQEH+lcNjSyyl4zJVlVXl1eFf
+ I+M7bkojSw0G3FtiC3GpB+43jdHMYQOfENjkhm7xnc4ZOVU3+uqcEwsX9nGNI+Hvw4ur
+ 2oP2hAGKaF1vRlhbbftvT7yk+M6avSoYFzLXXeHW3yeiOuyGsulzjXGJ/0nIMY8lJxhl
+ 2uVh00op0OY1BkBM5kMR/AFqauLiR1uN0xdp+3iKs4bbR5HYtVnTLOFEEltSjRtnCG2l
+ Ssx07Arb4YRVBQH+IvFNJhKnn3Nj2kvny91bjmLcdy1zC4QP/PdTH8MpXZAvlKYbODBm
+ mA8Q==
+X-Gm-Message-State: APjAAAWY5F2c9dUUeMKzjkays7rFB7F0/2Vs+4cuTd+6/+fUh0msZWNS
+ 3ey5vFKL2fQGr41v7bzRPjC6Pe/NBraWAw5HK1kprg==
+X-Google-Smtp-Source: APXvYqz6adAsRCPRenCDRosUSP27YreZHLiRCFj8jQzS6Tz09/zC+Fh0l+FEOJ0uIHx4MuiYSdWocUlHuB9/hM3TrEg=
+X-Received: by 2002:a5d:6b0a:: with SMTP id v10mr3981224wrw.32.1572509602778; 
+ Thu, 31 Oct 2019 01:13:22 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <b603fc49-01f5-b5b4-7c2c-5f0bc53b6fc1@linaro.org>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+References: <aaf0f585-3a06-8af1-e2f1-ab301e560d49@huawei.com>
+ <32b39396-d514-524f-a85c-3bc627454ba7@huawei.com>
+In-Reply-To: <32b39396-d514-524f-a85c-3bc627454ba7@huawei.com>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Thu, 31 Oct 2019 09:13:10 +0100
+Message-ID: <CAKv+Gu8A+kDK0Jtmu6oOO6jhgFkgYQ7=4tw_eMStmYPMkMp6iQ@mail.gmail.com>
+Subject: Re: [PATCH v3] crypto: arm64/aes-neonbs - add return value of
+ skcipher_walk_done() in __xts_crypt()
+To: Yunfeng Ye <yeyunfeng@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_005520_302690_0221D108 
-X-CRM114-Status: GOOD (  17.72  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191031_011328_758919_55DF18DE 
+X-CRM114-Status: GOOD (  16.96  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,74 +92,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shaokun Zhang <zhangshaokun@hisilicon.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Herbert Xu <herbert@gondor.apana.org.au>, hushiyuan@huawei.com,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "linfeilong@huawei.com" <linfeilong@huawei.com>,
+ "open list:HARDWARE RANDOM NUMBER GENERATOR CORE"
+ <linux-crypto@vger.kernel.org>, Will Deacon <will@kernel.org>,
+ "David S. Miller" <davem@davemloft.net>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 30, 2019 at 02:34:37PM +0100, Richard Henderson wrote:
-> On 10/30/19 4:46 AM, Shaokun Zhang wrote:
-> > For each PMU event, there is a ARMV8_EVENT_ATTR(xx, XX) and
-> > &armv8_event_attr_xx.attr.attr. Let's redefine the ARMV8_EVENT_ATTR
-> > to simplify the armv8_pmuv3_event_attrs.
-> ...
-> >  #define ARMV8_EVENT_ATTR(name, config) \
-> > +	(&((struct perf_pmu_events_attr[]) { \
-> > +		{ .attr = __ATTR(name, 0444, armv8pmu_events_sysfs_show, NULL), \
-> > +		  .id = config, } \
-> > +	})[0].attr.attr)
-> >  
-> >  static struct attribute *armv8_pmuv3_event_attrs[] = {
-> > +	ARMV8_EVENT_ATTR(sw_incr, ARMV8_PMUV3_PERFCTR_SW_INCR),
-> 
-> You do realize this creates complete perf_pmu_events_attr structures, most of
-> which is unused and unreachable, right?
+On Thu, 31 Oct 2019 at 08:02, Yunfeng Ye <yeyunfeng@huawei.com> wrote:
+>
+> A warning is found by the static code analysis tool:
+>   "Identical condition 'err', second condition is always false"
+>
+> Fix this by adding return value of skcipher_walk_done().
+>
+> Fixes: 67cfa5d3b721 ("crypto: arm64/aes-neonbs - implement ciphertext stealing for XTS")
+> Signed-off-by: Yunfeng Ye <yeyunfeng@huawei.com>
+> Acked-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 
-In armv8pmu_events_sysfs_show() we use container_of() to access the
-perf_pmu_events_attr, and extracts the id field:
+Please don't send the exact same patch twice, and when you feel the
+need to do so, just ask instead whether your patch was received or
+not.
 
-| static ssize_t
-| armv8pmu_events_sysfs_show(struct device *dev,
-|                            struct device_attribute *attr, char *page)
-| {
-|         struct perf_pmu_events_attr *pmu_attr;
-| 
-|         pmu_attr = container_of(attr, struct perf_pmu_events_attr, attr);
-| 
-|         return sprintf(page, "event=0x%03llx\n", pmu_attr->id);
-| }
+I'm sure Herbert will pick it up shortly.
 
-> Also, why not take the opportunity to assert that the armv8_pmuv3_event_attrs
-> array cannot get out of sync with the ARMV8_PMUV3_* defines?
-> 
-> Slightly better would seem to be
-> 
-> #define ARMV8_EVENT_ATTR(name, config) \
-> 	[config] = &((struct device_attribute) \
-> 		__ATTR(name, 0444, armv8pmu_events_sysfs_show, NULL)).attr
-
-I'm not sure I follow. This is not equivalent, and you're using the config
-field in a very different way -- that's not an index in the parent array in the
-current code. How do you expect armv8pmu_events_sysfs_show to get the config
-value in this case?
-
-> 
-> though I'm not sure why __ATTR is particularly desired above
-> 
-> #define ARMV8_EVENT_ATTR(name, config)      \
-> 	[config] = &(struct attribute){     \
-> 		.name = __stringify(name),  \
-> 		.mode = 0444,               \
-> 	}
-
-Using __ATTR is consistent with other drivers, so I don't see a reason to
-change that unless there's a significant simplification, or a functional
-improvement
-
-Thanks,
-Mark.
+> ---
+> v2 -> v3:
+>  - add "Acked-by:"
+>
+> v1 -> v2:
+>  - update the subject and comment
+>  - add return value of skcipher_walk_done()
+>
+>  arch/arm64/crypto/aes-neonbs-glue.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+>
+> diff --git a/arch/arm64/crypto/aes-neonbs-glue.c b/arch/arm64/crypto/aes-neonbs-glue.c
+> index ea873b8904c4..e3e27349a9fe 100644
+> --- a/arch/arm64/crypto/aes-neonbs-glue.c
+> +++ b/arch/arm64/crypto/aes-neonbs-glue.c
+> @@ -384,7 +384,7 @@ static int __xts_crypt(struct skcipher_request *req, bool encrypt,
+>                         goto xts_tail;
+>
+>                 kernel_neon_end();
+> -               skcipher_walk_done(&walk, nbytes);
+> +               err = skcipher_walk_done(&walk, nbytes);
+>         }
+>
+>         if (err || likely(!tail))
+> --
+> 2.7.4.3
+>
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
