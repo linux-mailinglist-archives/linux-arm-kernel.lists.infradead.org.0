@@ -2,86 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 740ECEB16F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 14:45:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E356EB184
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 14:49:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mN6BYfFv3j81tsxVwbVII5RWwALMMSmfKPoG7ZixNXQ=; b=V0y7KEjyQOg5eb
-	z7i3eJD1fIGEpkwYctgNuhKZgp2H7WmuOam6vNaziNfA/fBiqMwjgA2qrzYkO+R5w2JHhjgKZHBQ6
-	GohMBj6x9NvN5nSyaDsuZsg/KnrAdMe5dbKTd1ddtOJEJBg7yY0qd7VEISNV8U90vJ5tfmtFcod6a
-	qQxtnmEMtMAxHgWzgX3WjUwv0vi7yTascmHs33ao6EtIXLWRIdf3Es561bNIjSxDLSfrRZLxY79ZS
-	MdpogZqH7FuRSUCCBrJK4L2ShlvpLOZJ3yPwQ1H3cVBvaXVoQRcML6ILtHED/+qqdGw2AQZG8f6lP
-	Le/6KqxqfvKoQHcxh55g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=vkXXCvjF4MYVpbayFxnwRuGiMnNzpsWp+LABdnJd6cg=; b=Hzd/arvit5eZJZ
+	DUlxHNkZ3m9vZTiVM71+wRunERd1+R0vkiT6qeuD4jdR79y70i1VNVn25tk/PdgAMqmPGrM8FV8Q+
+	DCNdignY9ro+pkp8nRRogfPDJsyuQpNgqnchlkXMeNKYPJ7nLzRTXg2FymiSn02u5rFp0r3BICkUE
+	p1f6OeEsBDqaNRBHzVgri9EznUSzmTmK089SjTGHJTx34ixXO+w7pM8t6r9jvdNUZAA+toKO5OdTj
+	ZcnMutDOLB+oR1dgLGbTsJOEDQ9PABDz1QX0sHbFZai0sA9gSoQyROgbJVLlsmJyqutvv46QjkcS0
+	MNlSNuAlrdanpAyKhFEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQAlX-0000ls-JQ; Thu, 31 Oct 2019 13:45:31 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1iQApK-0001zm-5E; Thu, 31 Oct 2019 13:49:26 +0000
+Received: from wnew2-smtp.messagingengine.com ([64.147.123.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQAlO-0000lW-7e
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 13:45:24 +0000
-Received: by mail-pf1-x441.google.com with SMTP id 3so4401843pfb.10
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 31 Oct 2019 06:45:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=B4S3LkETZTQ6ciTtg+e4/uC9IOySHk8KduItAFIDCAk=;
- b=KVauYvVSqsYWwSxOsteFFPrRimBn3s6dfVYJPLzP/z3LcsfsDO/h9ST4jQH6/Au/D5
- CY65Z5zdq4G7NHpb17ZLHkVV2lp+aNBPNGGr2ZUq+0mkno2gL40mDh7CPP6iF05oCyYX
- xbC2P2Hi13dEu55xAmMNe5FjzHJiW8uYrCVVbz9zqk3LVWLcZEj4g/PjgHn+MwncGcBF
- UzFUlpfv9/oVlYkzhbH9p1Tek1X5VWAC9mHf6iewIGKmFCgYJeJhvbl1q+Rft5QE/CaZ
- y64ojSEFKoEm+dqTqj3axvCH4zV7DlRNr5I4opyn0gQN0UBtnvk9lYlfZPxVYvUpPZBD
- LZsA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=B4S3LkETZTQ6ciTtg+e4/uC9IOySHk8KduItAFIDCAk=;
- b=p6WgxBacbBko2h1lSqk0l9NlbZLfkNkxHvaUQjxTRWkjA7xxBCvGPgASzPNt4HXABn
- tAUCzq4uYiMKyRWvLK6PWh6f1vBTFUnZ1FdHntcEoNkxlIcQxKHPhqxXJa6PNsXprEIT
- 3LouF9hnKuHk1OTw0kSfbP88USTBgRjty2o4bPSqo1YHiD9gXpbJJdvOMC1LAH725Pcm
- 9fpZYTcUUJc4VpWI8dT7BMY4JTqs4JXVYeSQOgXxZFg+sdyXfR2FEHp/JfMOijZkyqSz
- 1D5qmQpbGUCoqCWr+RX96XNPO1e72XYYmAwH3SyuTxqJJHrA2UwMaOoDzhgtOeC4dKJv
- L3Vg==
-X-Gm-Message-State: APjAAAVHfSF9f2J8F7RFQYriV+izkmfaa+7d+B+4s359AGcV0BacdrjC
- fKHx0/nxuh/R8nBz+T06/bgg
-X-Google-Smtp-Source: APXvYqyuqikEx9a3SP3UIaKfDeFTz5s3pu4Hg2hMzULCTaQWQKi9SfavbFkVlqJwlYsJqfgnYKSBzw==
-X-Received: by 2002:a63:d70e:: with SMTP id d14mr6718846pgg.10.1572529521194; 
- Thu, 31 Oct 2019 06:45:21 -0700 (PDT)
-Received: from mani ([103.59.133.81])
- by smtp.gmail.com with ESMTPSA id f5sm4898579pjq.24.2019.10.31.06.45.17
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 31 Oct 2019 06:45:20 -0700 (PDT)
-Date: Thu, 31 Oct 2019 19:15:12 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Subject: Re: [PATCH v4 1/2] dt-bindings: media: i2c: Add IMX296 CMOS sensor
- binding
-Message-ID: <20191031134512.GB24273@mani>
-References: <20191030094902.32582-1-manivannan.sadhasivam@linaro.org>
- <20191030094902.32582-2-manivannan.sadhasivam@linaro.org>
- <20191031131538.GA9170@pendragon.ideasonboard.com>
+ id 1iQAp8-0001zM-KU
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 13:49:16 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailnew.west.internal (Postfix) with ESMTP id 7F70B5E6;
+ Thu, 31 Oct 2019 09:49:09 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute3.internal (MEProxy); Thu, 31 Oct 2019 09:49:09 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding; s=fm1; bh=Nx5GWEmGQeh0OOakHK6KFtCxiu
+ W2yys+4PNvQAdJVYU=; b=TLw+9UatFeXZYsXVQEMBZPxIDxyJppuRbaaPeFEaN8
+ vk+kN1Dl3amp3lnMYFOB9HE+8B4ZZR8C34ImAWuOBOHoC6OrdrDQMq6AbusyN4af
+ 4c6pvUhLKsBx8by5K7Fqm+tBVsh9wwtMTQuH64og9zeQJLO3zpUenTFXOVx/fg6G
+ SR9W9QE3RxpvUUm/xa4IUZwseeavGrsDZ4XQjenn6+Vji6082Tu/RkNfFmdIQAeu
+ EEHa4//1DHVDJjK2T8P7s4FMJiTCN9fBr8vx7MItc7XOZRuUfy3KcXt6lUtAK3kg
+ aBxQub7xhVFgP5C/eygaMeDoAkNdgdtb2KJIUJHN/9NA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:date:from
+ :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=Nx5GWEmGQeh0OOakH
+ K6KFtCxiuW2yys+4PNvQAdJVYU=; b=VmM3tkdvvUPEkKYCMOEfXtFFbRPNPrQls
+ Dz4AKlvoR1dkH817r68DUT0BFtnZwJ6RwSbGGXbj2LNClssKi/MPcgtqqiQZJeSj
+ JoDmuII2AUTvFIB/5nahqW2JvkY65/QwJOqIRPuAO4oAN426d8fPEiN1sSEwNqXd
+ lGtjwrX2mZygPBJMmEy8wewPqeXR8I74g5q+jvDfINSU8DWz7O7SGAOSauU4uJcj
+ VfgjN+B6EK1Y4OlDSqX08+EclxdjuaRxmNOGH1VPpmoyRTA1jHPlERCdG3eJZBur
+ dCaxLpHxS1dPihnXgSf1q1wYHHehj3J4+3wzNpGBHLJwNFJg4FOQQ==
+X-ME-Sender: <xms:VOa6XW_pbDlkLPxYh-wVZiQGgwAV8yoxci7taVyvRK3AJ6p3D0bQ4g>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedruddthedgheegucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucenucfjughrpefhvffufffkofgggfestdekredtre
+ dttdenucfhrhhomhepofgrgihimhgvucftihhprghrugcuoehmrgigihhmvgestggvrhhn
+ ohdrthgvtghhqeenucfkphepkedvrddvheegrdegrddufeeknecurfgrrhgrmhepmhgrih
+ hlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghhnecuvehluhhsthgvrhfuihii
+ vgepud
+X-ME-Proxy: <xmx:VOa6XSzPa77q2lTs40MbCBkRfemlJ9eXWLz0R1yQ760apN8A5iEb8g>
+ <xmx:VOa6XXWzB27j28QnSSvhlmidHKA0A6j9qgHy4x9zNb5WY8OKftsmYw>
+ <xmx:VOa6Xdbjyq6JkK3iLDObPcxWCxETomiNZUJZysEpRobK0RBdCuLIGQ>
+ <xmx:VOa6XZIV8huga_zDN1BW9aVk51X06qDHML5yLtB-aIIO8NxQs-bK-8GtwZU>
+Received: from localhost (lns-bzn-32-82-254-4-138.adsl.proxad.net
+ [82.254.4.138])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 427463060062;
+ Thu, 31 Oct 2019 09:49:08 -0400 (EDT)
+From: Maxime Ripard <maxime@cerno.tech>
+To: Chen-Yu Tsai <wens@csie.org>,
+	Maxime Ripard <mripard@kernel.org>
+Subject: [PATCH] ARM: dts: sun6i: Remove useless reset-names
+Date: Thu, 31 Oct 2019 14:49:05 +0100
+Message-Id: <20191031134905.241453-1-maxime@cerno.tech>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191031131538.GA9170@pendragon.ideasonboard.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_064522_289657_C572EB9A 
-X-CRM114-Status: GOOD (  27.46  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191031_064914_694094_E793AD22 
+X-CRM114-Status: UNSURE (   8.27  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [64.147.123.27 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -100,188 +102,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
- linux-kernel@vger.kernel.org, a.brela@framos.com, peter.griffin@linaro.org,
- robh+dt@kernel.org, sakari.ailus@iki.fi, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Maxime Ripard <maxime@cerno.tech>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Laurent,
+The HDMI controller definition in the A31 DTSI has a reset-names property,
+yet the binding for that controller doesn't declare it.
 
-On Thu, Oct 31, 2019 at 03:15:38PM +0200, Laurent Pinchart wrote:
-> Hi Mani,
-> 
-> Thank you for the patch.
-> 
-> On Wed, Oct 30, 2019 at 03:19:01PM +0530, Manivannan Sadhasivam wrote:
-> > Add YAML devicetree binding for IMX296 CMOS image sensor. Let's also
-> > add MAINTAINERS entry for the binding and driver.
-> > 
-> > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> > ---
-> >  .../devicetree/bindings/media/i2c/imx296.yaml | 94 +++++++++++++++++++
-> >  MAINTAINERS                                   |  8 ++
-> >  2 files changed, 102 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/media/i2c/imx296.yaml
-> > 
-> > diff --git a/Documentation/devicetree/bindings/media/i2c/imx296.yaml b/Documentation/devicetree/bindings/media/i2c/imx296.yaml
-> > new file mode 100644
-> > index 000000000000..c04ec2203268
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/media/i2c/imx296.yaml
-> > @@ -0,0 +1,94 @@
-> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/media/i2c/imx296.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Sony IMX296 1/2.8-Inch CMOS Image Sensor
-> > +
-> > +maintainers:
-> > +  - Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> > +
-> > +description: |-
-> > +  The Sony IMX296 is a 1/2.9-Inch active pixel type CMOS Solid-state image
-> > +  sensor with square pixel array and 1.58 M effective pixels. This chip
-> > +  features a global shutter with variable charge-integration time. It is
-> > +  programmable through I2C and 4-wire interfaces. The sensor output is
-> > +  available via CSI-2 serial data output (1 Lane).
-> > +
-> > +properties:
-> > +  compatible:
-> > +    const: sony,imx296
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  clocks:
-> > +    maxItems: 1
-> > +
-> > +  clock-names:
-> > +    description:
-> > +      Input clock for the sensor.
-> > +    items:
-> > +      - const: mclk
-> 
-> The pin is named INCK, let's name the clock accordingly.
->
+Remove it.
 
-Okay, I thought generic names are preferred here!
- 
-> > +  clock-frequency:
-> > +    description:
-> > +      Frequency of the mclk clock in Hertz.
-> 
-> This shouldn't be needed, you can retrieve the clock frequency at
-> runtime from the clock source.
-> 
+Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+---
+ arch/arm/boot/dts/sun6i-a31.dtsi | 1 -
+ 1 file changed, 1 deletion(-)
 
-Unless the clock source is a fixed one! What if the clock source comes from
-SoC? We need to set the rate, right?
+diff --git a/arch/arm/boot/dts/sun6i-a31.dtsi b/arch/arm/boot/dts/sun6i-a31.dtsi
+index ac7638078420..2cf34ae1c17b 100644
+--- a/arch/arm/boot/dts/sun6i-a31.dtsi
++++ b/arch/arm/boot/dts/sun6i-a31.dtsi
+@@ -469,7 +469,6 @@
+ 				 <&ccu CLK_PLL_VIDEO1_2X>;
+ 			clock-names = "ahb", "mod", "ddc", "pll-0", "pll-1";
+ 			resets = <&ccu RST_AHB1_HDMI>;
+-			reset-names = "ahb";
+ 			dma-names = "ddc-tx", "ddc-rx", "audio-tx";
+ 			dmas = <&dma 13>, <&dma 13>, <&dma 14>;
+ 			status = "disabled";
+-- 
+2.23.0
 
-> > +  vddo-supply:
-> > +    description:
-> > +      Definition of the regulator used as interface power supply.
-> > +
-> > +  vdda-supply:
-> > +    description:
-> > +      Definition of the regulator used as analog power supply.
-> > +
-> > +  vddd-supply:
-> > +    description:
-> > +      Definition of the regulator used as digital power supply.
-> 
-> Do we really need three regulators ? I agree that the sensor has three
-> power rails, but aren't they usually powered by regulators that are
-> tied together, without individual control ? The IMX926 specifications
-> require the three power supplies to raise within 200ms, which we should
-> be able to ensure in software. What does your board use, does it have
-> multiple GPIOs to control each power supply ? If not I wonder if we
-> could just define vddd-supply now, and add vdda-supply and vddo-supply
-> later if we need to support systems that can control the supplies
-> individually.
-> 
-
-The whole power supply model is a bit rotten. In my case, there are 3 different
-regulators used with no software control. So, I can't control the rise time
-(I assume that they are handled by the external power regulator itself).
-
-So to be sane, I just documented with the assumption of fixed-regulators.
-
-Thanks,
-Mani
-> > +  reset-gpios:
-> > +    description:
-> > +      The phandle and specifier for the GPIO that controls sensor reset.
-> > +    maxItems: 1
-> > +
-> > +  port: true
-> > +
-> > +required:
-> > +  - compatible
-> > +  - reg
-> > +  - clocks
-> > +  - clock-names
-> > +  - clock-frequency
-> > +  - vddo-supply
-> > +  - vdda-supply
-> > +  - vddd-supply
-> > +
-> > +additionalProperties: false
-> > +
-> > +examples:
-> > +  - |
-> > +    #include <dt-bindings/gpio/gpio.h>
-> > +
-> > +    imx296: camera-sensor@1a {
-> > +        compatible = "sony,imx296";
-> > +        reg = <0x1a>;
-> > +        reset-gpios = <&msmgpio 35 GPIO_ACTIVE_LOW>;
-> > +        pinctrl-names = "default";
-> > +        pinctrl-0 = <&camera_rear_default>;
-> > +        clocks = <&gcc 90>;
-> > +        clock-names = "mclk";
-> > +        clock-frequency = <37125000>;
-> > +        vddo-supply = <&camera_vddo_1v8>;
-> > +        vdda-supply = <&camera_vdda_3v3>;
-> > +        vddd-supply = <&camera_vddd_1v2>;
-> > +
-> > +        port {
-> > +            imx296_ep: endpoint {
-> > +                remote-endpoint = <&csiphy0_ep>;
-> > +            };
-> > +        };
-> > +    };
-> > +
-> > +...
-> > diff --git a/MAINTAINERS b/MAINTAINERS
-> > index 55199ef7fa74..51194bb2c392 100644
-> > --- a/MAINTAINERS
-> > +++ b/MAINTAINERS
-> > @@ -15140,6 +15140,14 @@ S:	Maintained
-> >  F:	drivers/media/i2c/imx274.c
-> >  F:	Documentation/devicetree/bindings/media/i2c/imx274.txt
-> >  
-> > +SONY IMX296 SENSOR DRIVER
-> > +M:	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> > +L:	linux-media@vger.kernel.org
-> > +T:	git git://linuxtv.org/media_tree.git
-> > +S:	Maintained
-> > +F:	drivers/media/i2c/imx296.c
-> > +F:	Documentation/devicetree/bindings/media/i2c/imx296.yaml
-> > +
-> >  SONY IMX319 SENSOR DRIVER
-> >  M:	Bingbu Cao <bingbu.cao@intel.com>
-> >  L:	linux-media@vger.kernel.org
-> 
-> -- 
-> Regards,
-> 
-> Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
