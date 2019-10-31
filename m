@@ -2,58 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D08DFEAB04
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 08:39:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC63BEAB28
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 08:55:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pseXkmgZ1kxKb/3HZyyC5sKh0Wd4tqLSRidSf7yLKY8=; b=aA+HZg/4cn2Ih7
-	6gZQPbSsWgwzrRbu0Uj7haKRLbt1QueQp/hUbjSp5wHpMo7OY5ZhR+pIeSYQ308eh/B9i8R0sHeb+
-	qjU0LZuSZHumrVrXVSoQTjJThMZAOSu1gGW/ZAl3q2LdJuiYsXnv9NIWv3jlW+9/AsQ85Lg6kglgK
-	clu7WlK72j60OpEfVw4Q4VITn6URoXZTtrZ1M12YDq5kMxKQqT4qGUNQ1ZgqsgnJC3QtG6EQG3Nxw
-	rGmJMGNKaEYw0vlx+J//ZLQQWdpmejeOHLCrXfOasm+eQke+Ml7BautkRMtWewJmev7zsoWo2KK1K
-	CcpuejHwY6U68YJrX0LQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/3AtEc8g6SUne3RdmjBaGNLnlGnxl7S4MTp1oh1uYW0=; b=j9z8RsIDHRinHS
+	5Bz63KBu4G7B1PsHNkWGI4KY0HTVQAKpTNyphj1ILjnoTVEGJBsLfBOb70UBrpVnOC6SG8jp9oi6d
+	kpOjiePt/FV8bbKgroB9/LoyXjlXQmX4K9fgYdybOFb2zVUC+5LsRsgYJ56DtiaqbEWLd+pdLm5ER
+	SgGGd1zUQkZc4YvHyPnhPQ7d685CZydypJj4H3ThUnbv/rK4BAr8GXaBr2f9l16k+MPRQhJYwTA0L
+	45kOucduKmgkkStIBLWnLHxVsv2Y917bY5GZNMKNNDTlDZy7FpkOTYd4+nVOWy2pDz7svygKD1ovb
+	PJJCwt169hoHSZZRLWyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQ52q-0003fQ-Lk; Thu, 31 Oct 2019 07:39:00 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQ52h-0003eW-MH
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 07:38:53 +0000
-Received: from DGGEMS408-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 8F85CEC2F485E290CBBA;
- Thu, 31 Oct 2019 15:38:41 +0800 (CST)
-Received: from [127.0.0.1] (10.74.221.148) by DGGEMS408-HUB.china.huawei.com
- (10.3.19.208) with Microsoft SMTP Server id 14.3.439.0; Thu, 31 Oct 2019
- 15:38:33 +0800
-Subject: Re: [RFC] arm64: cpufeatures: Add support for tlbi range maintenance
-To: Catalin Marinas <catalin.marinas@arm.com>
-References: <1572417685-32955-1-git-send-email-zhangshaokun@hisilicon.com>
- <20191030173359.GF13309@arrakis.emea.arm.com>
-From: Shaokun Zhang <zhangshaokun@hisilicon.com>
-Message-ID: <5d546fe6-850d-6e0d-317d-9a6f7c90de5a@hisilicon.com>
-Date: Thu, 31 Oct 2019 15:38:31 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.1.1
+	id 1iQ5Iq-000280-Rj; Thu, 31 Oct 2019 07:55:32 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iQ5Ie-00027K-6u
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 07:55:21 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1BF3A1FB;
+ Thu, 31 Oct 2019 00:55:14 -0700 (PDT)
+Received: from blommer (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CDE643F71E;
+ Thu, 31 Oct 2019 00:55:12 -0700 (PDT)
+Date: Thu, 31 Oct 2019 07:55:06 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Richard Henderson <richard.henderson@linaro.org>
+Subject: Re: [PATCH] arm64: perf: Simplify the ARMv8 PMUv3 event attributes
+Message-ID: <20191031075505.GA3412@blommer>
+References: <1572407177-48229-1-git-send-email-zhangshaokun@hisilicon.com>
+ <b603fc49-01f5-b5b4-7c2c-5f0bc53b6fc1@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <20191030173359.GF13309@arrakis.emea.arm.com>
-X-Originating-IP: [10.74.221.148]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <b603fc49-01f5-b5b4-7c2c-5f0bc53b6fc1@linaro.org>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_003851_894446_760DCB80 
-X-CRM114-Status: GOOD (  10.28  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191031_005520_302690_0221D108 
+X-CRM114-Status: GOOD (  17.72  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,46 +61,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
- Tangnianyao <tangnianyao@huawei.com>, Will Deacon <will@kernel.org>,
+Cc: Shaokun Zhang <zhangshaokun@hisilicon.com>, Will Deacon <will@kernel.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Catalin,
-
-On 2019/10/31 1:34, Catalin Marinas wrote:
-> On Wed, Oct 30, 2019 at 02:41:25PM +0800, Shaokun Zhang wrote:
->> ARMv8.4-TLBI provides TLBI invalidation instruction that apply to a
->> range of input addresses. This patch adds support for this feature.
->> And provide another implementation for flush_tlb_range with tlbi
->> range instruction.
+On Wed, Oct 30, 2019 at 02:34:37PM +0100, Richard Henderson wrote:
+> On 10/30/19 4:46 AM, Shaokun Zhang wrote:
+> > For each PMU event, there is a ARMV8_EVENT_ATTR(xx, XX) and
+> > &armv8_event_attr_xx.attr.attr. Let's redefine the ARMV8_EVENT_ATTR
+> > to simplify the armv8_pmuv3_event_attrs.
+> ...
+> >  #define ARMV8_EVENT_ATTR(name, config) \
+> > +	(&((struct perf_pmu_events_attr[]) { \
+> > +		{ .attr = __ATTR(name, 0444, armv8pmu_events_sysfs_show, NULL), \
+> > +		  .id = config, } \
+> > +	})[0].attr.attr)
+> >  
+> >  static struct attribute *armv8_pmuv3_event_attrs[] = {
+> > +	ARMV8_EVENT_ATTR(sw_incr, ARMV8_PMUV3_PERFCTR_SW_INCR),
 > 
-> Do you have any performance numbers in favour of this patch? Last time
+> You do realize this creates complete perf_pmu_events_attr structures, most of
+> which is unused and unreachable, right?
 
-There is no performance data and we also want to see the profit from this
-feature, but the kernel doesn't support it now. I sent it as a RFC firstly.
+In armv8pmu_events_sysfs_show() we use container_of() to access the
+perf_pmu_events_attr, and extracts the id field:
 
-> we looked, it didn't really matter for Linux since most user TLBI ranges
-> were 1 or 2 pages long. Of course you can write some mprotect() loop to
+| static ssize_t
+| armv8pmu_events_sysfs_show(struct device *dev,
+|                            struct device_attribute *attr, char *page)
+| {
+|         struct perf_pmu_events_attr *pmu_attr;
+| 
+|         pmu_attr = container_of(attr, struct perf_pmu_events_attr, attr);
+| 
+|         return sprintf(page, "event=0x%03llx\n", pmu_attr->id);
+| }
 
-Thanks your guidance, I almost don't pay attention on this. I will do more
-learning on it. Since ARM ARM supports this, I think it shall be some useful
-for performance. ;-)
+> Also, why not take the opportunity to assert that the armv8_pmuv3_event_attrs
+> array cannot get out of sync with the ARMV8_PMUV3_* defines?
+> 
+> Slightly better would seem to be
+> 
+> #define ARMV8_EVENT_ATTR(name, config) \
+> 	[config] = &((struct device_attribute) \
+> 		__ATTR(name, 0444, armv8pmu_events_sysfs_show, NULL)).attr
 
-> show that it matters but I'm rather interested in real world impact.
+I'm not sure I follow. This is not equivalent, and you're using the config
+field in a very different way -- that's not an index in the parent array in the
+current code. How do you expect armv8pmu_events_sysfs_show to get the config
+value in this case?
 
-Okay, I will run some server works to check it whether continuous TLBI range
-will be issued, like JAVA application: Hadoop etc.
+> 
+> though I'm not sure why __ATTR is particularly desired above
+> 
+> #define ARMV8_EVENT_ATTR(name, config)      \
+> 	[config] = &(struct attribute){     \
+> 		.name = __stringify(name),  \
+> 		.mode = 0444,               \
+> 	}
+
+Using __ATTR is consistent with other drivers, so I don't see a reason to
+change that unless there's a significant simplification, or a functional
+improvement
 
 Thanks,
-Shaokun
-
-> 
-
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
