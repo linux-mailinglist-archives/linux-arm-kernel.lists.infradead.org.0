@@ -2,57 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4265EEB6B5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 19:14:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 004CFEB700
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 19:33:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=UM7FZ/tE7e6x8VtU6WyR876nacU511Npb/vAHQnW0ko=; b=EX4jgCiPR2eybO
-	lcS1whkof1EYj89NsYSCG+ECi9ZG5bTAUqw1R5aqO3Wdz4cW7+9r5choYhrK4OG0Z5hB02z93yAKm
-	Q0podaEbxNvtSHcEXg7IObkmV8KfIGDBbzxWDpv5P/BtGPbgOC3CKwIw5ug7T1t2PWTE+AVoLQsAf
-	btsmIYYHx4hn8W3HBLFc+lTR+2Xh2PAW/Rzx7g4x1MRefPO2yh6VWa1zOkZqzzVVIG5iYQWW1wHOH
-	61AGXqaezNXFbfBkky9PvhGSVT9qHTMsaZCGAmaAxMCTFllWP+UfdV4RyRfvNgd7CJ/Ws7DVbwSff
-	Vwr0L5fGtLmPG8zYF3RA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EIKEm55gRb+V7H7FbcnVMsc3YFpjmOT+Sccv6RE+Lak=; b=T9hOhcOXHb+tHm
+	tzSZuQ4UAezVYo8iWS15VWXaZrWOdlB2xZRskwvSOBtGrFC6+syyO6SL+N918C0wFNAsb5RzlSWl5
+	tagdYmPdTJ6f9BgN/vxK7YPhEdzVoADJWcmsQgEg3Vch9c7gYuv2ZkvCJJmrvuTTk3HfxFQZ48aSB
+	UuCWTDkTXJRdJZ5gVPlH92kaFHZsfE+H1+xoq1XRRMlCoz4h5ctTOb23GpnMRhCIFs4GnHR1/RPK6
+	gl3jpIPbVdGF4fBU3yG/CvSX/6UwN532MjFujNGs+ybld7cBC+vKvzH/J40AiWeXfVCVzi9GTL1Mt
+	qJeCS3yR2Ye3sU7SDX3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQExl-0006oL-Iu; Thu, 31 Oct 2019 18:14:25 +0000
-Received: from vps.xff.cz ([195.181.215.36])
+	id 1iQFFu-00052X-8a; Thu, 31 Oct 2019 18:33:10 +0000
+Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQExX-0006hq-Ex
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 18:14:13 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1572545646; bh=+8+aVOF3iSqGvzL1N7hB/tIOgnCmWN7n8SmI/voLyuw=;
- h=From:To:Cc:Subject:Date:From;
- b=QbLwWY74HjtrueocUL8/R6dmMGmMTLGX3Dtb/snOuodi4/KJ9dq9X1jj4qf9QgnL7
- Ob52iOVQ/R+gj88YDgepIN76L1UZZbucbHXnbTQD/flG9XuTD2lC5Hr/uFx5h9P/Vm
- jaXcikK1Gat9slDGatNmvF4/K6ATPO5tww36z3PY=
-From: Ondrej Jirman <megous@megous.com>
-To: linux-sunxi@googlegroups.com
-Subject: [PATCH] cpufreq: sun50i: Fix CPU speed bin detection
-Date: Thu, 31 Oct 2019 19:13:58 +0100
-Message-Id: <20191031181359.282617-1-megous@megous.com>
+ id 1iQFFk-00051j-IL
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 18:33:02 +0000
+Received: by verein.lst.de (Postfix, from userid 2407)
+ id DC3F5227A81; Thu, 31 Oct 2019 19:32:55 +0100 (CET)
+Date: Thu, 31 Oct 2019 19:32:55 +0100
+From: Christoph Hellwig <hch@lst.de>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH] dma/direct: turn ARCH_ZONE_DMA_BITS into a variable
+Message-ID: <20191031183255.GA10116@lst.de>
+References: <20191031152837.15253-1-nsaenzjulienne@suse.de>
+ <20191031154759.GA7162@lst.de>
+ <40d06d463c05d36968e8b64924d78f7794f8de50.camel@suse.de>
+ <20191031155750.GA7394@lst.de>
+ <6726a651c12d91ca22b9d8984745d90db5d507ec.camel@suse.de>
+ <20191031165853.GA8532@lst.de> <20191031180619.GI39590@arrakis.emea.arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191031180619.GI39590@arrakis.emea.arm.com>
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_111411_749721_16B15F39 
-X-CRM114-Status: UNSURE (   7.80  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191031_113300_757363_7E9EBB24 
+X-CRM114-Status: GOOD (  15.38  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [213.95.11.211 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,66 +63,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ondrej Jirman <megous@megous.com>,
- "open list:ALLWINNER CPUFREQ DRIVER" <linux-pm@vger.kernel.org>,
- Yangtao Li <tiny.windzz@gmail.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- open list <linux-kernel@vger.kernel.org>, Maxime Ripard <mripard@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>,
- "moderated list:ARM/Allwinner sunXi SoC support"
- <linux-arm-kernel@lists.infradead.org>
+Cc: linux-s390@vger.kernel.org, Vasily Gorbik <gor@linux.ibm.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ linuxppc-dev@lists.ozlabs.org, Heiko Carstens <heiko.carstens@de.ibm.com>,
+ Robin Murphy <robin.murphy@arm.com>, linux-kernel@vger.kernel.org,
+ Christian Borntraeger <borntraeger@de.ibm.com>,
+ iommu@lists.linux-foundation.org, Paul Mackerras <paulus@samba.org>,
+ linux-arm-kernel@lists.infradead.org, Michael Ellerman <mpe@ellerman.id.au>,
+ Will Deacon <will@kernel.org>, Christoph Hellwig <hch@lst.de>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-I have failures to boot on Orange Pi 3, because this driver determined
-that my SoC is from the normal bin, but my SoC only works reliably with
-the OPP values for the slowest bin.
+On Thu, Oct 31, 2019 at 06:06:19PM +0000, Catalin Marinas wrote:
+> On Thu, Oct 31, 2019 at 05:58:53PM +0100, Christoph Hellwig wrote:
+> > On Thu, Oct 31, 2019 at 05:22:59PM +0100, Nicolas Saenz Julienne wrote:
+> > > OK, I see what you mean now. It's wrong indeed.
+> > > 
+> > > The trouble is the ZONE_DMA series[1] in arm64, also due for v5.5, will be
+> > > affected by this patch. I don't know the right way to approach this problem
+> > > since depending on the merge order, this patch should be updated or the arm64
+> > > ZONE_DMA series fixed.
+> > > 
+> > > Maybe it's easier to just wait for v5.6.
+> > 
+> > Ok, I can wait.  Or the arm64 maintainers can pick up this patch if
+> > you want to add it to that series.
+> 
+> This branch is stable (may add a fix but not I'm not rebasing it) if you
+> want to base this patch on top:
+> 
+> https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/log/?h=for-next/zone-dma
+> 
+> Otherwise, with your ack, I can add it on top of the above branch (aimed
+> at 5.5).
 
-Looking at BSP code, I found that efuse values have following meanings
-on H6:
+Please go ahead:
 
-- 0b000 invalid (interpreted in vendor's BSP as normal bin)
-- 0b001 slowest bin
-- 0b011 normal bin
-- 0b111 fastest bin
-
-Let's play it safe and interpret 0 as the slowest bin, but fix detection
-of other bins to match vendor code.
-
-Fixes: f328584f7bff ("cpufreq: Add sun50i nvmem based CPU scaling driver")
-Signed-off-by: Ondrej Jirman <megous@megous.com>
----
-
-See https://megous.com/git/linux/tree/drivers/soc/sunxi/sunxi-sid.c?h=h6-4.9-bsp#n484
-and https://megous.com/git/linux/tree/drivers/cpufreq/sunxi-cpufreq.c?h=h6-4.9-bsp#n428
-(1 is substracted from soc_bin number here!)
-
- drivers/cpufreq/sun50i-cpufreq-nvmem.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/cpufreq/sun50i-cpufreq-nvmem.c b/drivers/cpufreq/sun50i-cpufreq-nvmem.c
-index df35ef3ef567..41dad03e245c 100644
---- a/drivers/cpufreq/sun50i-cpufreq-nvmem.c
-+++ b/drivers/cpufreq/sun50i-cpufreq-nvmem.c
-@@ -71,9 +71,12 @@ static int sun50i_cpufreq_get_efuse(u32 *versions)
- 	efuse_value = (*speedbin >> NVMEM_SHIFT) & NVMEM_MASK;
- 	switch (efuse_value) {
- 	case 0b0001:
--		*versions = 1;
-+		*versions = 0;
- 		break;
- 	case 0b0011:
-+		*versions = 1;
-+		break;
-+	case 0b0111:
- 		*versions = 2;
- 		break;
- 	default:
--- 
-2.23.0
-
+Acked-by: Christoph Hellwig <hch@lst.de>
 
 _______________________________________________
 linux-arm-kernel mailing list
