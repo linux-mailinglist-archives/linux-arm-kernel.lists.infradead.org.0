@@ -2,65 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E0F7EB7D4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 20:13:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C0FFEB802
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 20:36:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ocb8bGqclgHJ4DC07/C/fjdYpX6Kr0GqoF2y3JhXWsg=; b=MRvXNLqvQ7Wdcp
-	Zxvtf4+ZvjnNduHP78J/1TaTgBNTHwJZ1VJGDE/eX9AqnxpDrLcaM7Sc230HBRzN0mvqbqQwDa4kF
-	l+Mq9tNDM8unJFZLO6FBIYY3q2QtoxFfy3BMSeoCNJ44AIaPu9dC6CGiVIf++rNXT6FkExhe01GPx
-	PAJXRGAeL3IBxlbPMr24sw2Mn1vhsdd5FBrwmZI9RRyKWVFD/e+rT0D2VhQ30KvyVZcg8sgS2weAE
-	WJMQ63rChmDdY/aXV0NXXwIqf1tFErZujqaj376mZ+ylRqbAJ1BkkuorIp5B/4GYNbXhXBNZffc9L
-	0msnPnSbEad9FaRtFkpg==;
+	List-Owner; bh=p2K8nYkTLBJjWD11Udx0ByrS2Q+kN/V0Mu3ruCG5t3A=; b=G95Qq7hglL3ugU
+	O2xt8C61c3OzZYAtRJgDVToGqH6CJ63k/QfPvR8k4cbwPoBqYJvn6qLoi/05Z/8GGLM1FCSGJwyzz
+	XJaIdTrqBosTSQpeH1n8mv7xLTP85k1sl8iVeNsyf2exF1MYcXoNNbz+2N6o2PueD0VhVMiIP4WWR
+	hUm/GSXHdJoYtI9T7sL+t4wXqavnHt2M9RdKrwZdDSMogMTBMUNiaHwalrwCRcameKABEa15HoNig
+	UReV5u+/UBwCMIHqQIIK74QBROSTprxGBppG/XdH7QLn3YARVWoL8tZZk4aC1nIZv5NYj5BB7oAWV
+	PbbczGULdt1tL/opzi4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQFsb-0003Oa-Pt; Thu, 31 Oct 2019 19:13:09 +0000
-Received: from vps.xff.cz ([195.181.215.36])
+	id 1iQGEW-0003up-Ub; Thu, 31 Oct 2019 19:35:48 +0000
+Received: from gate2.alliedtelesis.co.nz ([202.36.163.20])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQFsR-0003O9-No
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 19:13:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1572549177; bh=FBhBhCbprAZVkPZ3QAQvStNaQNJCu5ZanEhE9s1mTjM=;
- h=Date:From:To:Cc:Subject:References:X-My-GPG-KeyId:From;
- b=hCM/GltDpo77xYTpaz5/dMejRWcp59srCsks7ySNzk7z79SyUnRSfnGdVP5DlrOpR
- 1ip+EBcUGDaNCK/biB6v8CbSlFIlqVZTyRqOaNPsSiM08tOHV1BKrSXrIv6dKpRsSJ
- jVyh+iOa7L3nh1tSDQgOAVE7UuRJ/AB0EBdoG/ys=
-Date: Thu, 31 Oct 2019 20:12:57 +0100
-From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
-To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
-Subject: Re: [linux-sunxi] [PATCH] cpufreq: sun50i: Fix CPU speed bin detection
-Message-ID: <20191031191257.j7bpxx5xyot2ay2i@core.my.home>
-Mail-Followup-To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- Yangtao Li <tiny.windzz@gmail.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- "open list:ALLWINNER CPUFREQ DRIVER" <linux-pm@vger.kernel.org>,
- "moderated list:ARM/Allwinner sunXi SoC support"
- <linux-arm-kernel@lists.infradead.org>, 
- open list <linux-kernel@vger.kernel.org>
-References: <20191031181359.282617-1-megous@megous.com>
- <CAJiuCcdZqpoXKuupk_w3F1npZgCHDgb=+Fdd1ukKA22K2PJ6Ww@mail.gmail.com>
+ id 1iQGEN-0003tt-Ha
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 19:35:42 +0000
+Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 768008365D;
+ Fri,  1 Nov 2019 08:35:33 +1300 (NZDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
+ s=mail181024; t=1572550533;
+ bh=E93uVfw+8Sv9aFniBPMkATe9ycroU/eB0+p7RpM6SlA=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To;
+ b=F7Q+3WazE4DEFImOB2xZ4pivLcl6lyZDOa051lMUsnuJjiDOnLZqYdJB2InfY74Kw
+ d+WMefMFl20rEyIL5JZCP4Yh0RAYAxQhOpIJbMWV2edqp7fkjiw3txEIuO+u4Ei7qm
+ spAmx5eRqXnoC/3/rjAW14AWozrfUOrc7pvnKKsFrtQqsMJYpeIo3B0XtUufTB82gD
+ 4SLwNZHjmU761wfyV+eg1CabIjsNy/Bd5Kc2hWe7gINE5L79DE67K6zQSdR5tfroEs
+ hf8tJOMxgOkhtWsI+qTFbkvqbZTAzqxtja04Wvn5cFtblGoMNJPNiNDL5MnA1+o8Rs
+ 6nFEovFHVG7Jw==
+Received: from svr-chch-ex1.atlnz.lc (Not Verified[10.32.16.77]) by
+ mmarshal3.atlnz.lc with Trustwave SEG (v7, 5, 8, 10121)
+ id <B5dbb37820000>; Fri, 01 Nov 2019 08:35:32 +1300
+Received: from svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8::77) by
+ svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8::77) with Microsoft SMTP Server
+ (TLS) id 15.0.1156.6; Fri, 1 Nov 2019 08:35:31 +1300
+Received: from svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8]) by
+ svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8%12]) with mapi id
+ 15.00.1156.000; Fri, 1 Nov 2019 08:35:31 +1300
+From: Chris Packham <Chris.Packham@alliedtelesis.co.nz>
+To: "scott.branden@broadcom.com" <scott.branden@broadcom.com>,
+ "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
+ "tomeu.vizoso@collabora.com" <tomeu.vizoso@collabora.com>,
+ "mgalka@collabora.com" <mgalka@collabora.com>, "linus.walleij@linaro.org"
+ <linus.walleij@linaro.org>, "matthew.hart@linaro.org"
+ <matthew.hart@linaro.org>, "broonie@kernel.org" <broonie@kernel.org>,
+ "bot@kernelci.org" <bot@kernelci.org>, "khilman@baylibre.com"
+ <khilman@baylibre.com>, "guillaume.tucker@collabora.com"
+ <guillaume.tucker@collabora.com>
+Subject: Re: linusw/devel boot bisection: v5.4-rc1-31-g6a41b6c5fc20 on
+ rk3399-puma-haikou
+Thread-Topic: linusw/devel boot bisection: v5.4-rc1-31-g6a41b6c5fc20 on
+ rk3399-puma-haikou
+Thread-Index: AQHVkBrPgYhki3sbH0mOvdKD5EMjb6d0SpEA
+Date: Thu, 31 Oct 2019 19:35:30 +0000
+Message-ID: <9d1a6cba9687f94b2d36a82f42f5d4be2b16e7a6.camel@alliedtelesis.co.nz>
+References: <5dbb2acf.1c69fb81.54ce2.2f48@mx.google.com>
+In-Reply-To: <5dbb2acf.1c69fb81.54ce2.2f48@mx.google.com>
+Accept-Language: en-NZ, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [2001:df5:b000:22:f9a5:3a1:c94b:a6f5]
+Content-ID: <007B585A5A5044459D519245F35A99C3@atlnz.lc>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAJiuCcdZqpoXKuupk_w3F1npZgCHDgb=+Fdd1ukKA22K2PJ6Ww@mail.gmail.com>
-X-My-GPG-KeyId: EBFBDDE11FB918D44D1F56C1F9F0A873BE9777ED
- <https://xff.cz/key.txt>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_121300_103341_EEEA31F2 
-X-CRM114-Status: GOOD (  24.28  )
+X-CRM114-CacheID: sfid-20191031_123540_146513_62F2A917 
+X-CRM114-Status: GOOD (  15.74  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [202.36.163.20 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -79,131 +106,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:ALLWINNER CPUFREQ DRIVER" <linux-pm@vger.kernel.org>,
- Yangtao Li <tiny.windzz@gmail.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, Chen-Yu Tsai <wens@csie.org>,
- Maxime Ripard <mripard@kernel.org>, open list <linux-kernel@vger.kernel.org>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- "moderated list:ARM/Allwinner sunXi SoC support"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: "sbranden@broadcom.com" <sbranden@broadcom.com>,
+ "bgolaszewski@baylibre.com" <bgolaszewski@baylibre.com>,
+ "rjui@broadcom.com" <rjui@broadcom.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "bcm-kernel-feedback-list@broadcom.com"
+ <bcm-kernel-feedback-list@broadcom.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Thu, 2019-10-31 at 11:41 -0700, kernelci.org bot wrote:
+> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+> * This automated bisection report was sent to you on the basis  *
+> * that you may be involved with the breaking commit it has      *
+> * found.  No manual investigation has been done to verify it,   *
+> * and the root cause of the problem may be somewhere else.      *
+> *                                                               *
+> * If you do send a fix, please include this trailer:            *
+> *   Reported-by: "kernelci.org bot" <bot@kernelci.org>          *
+> *                                                               *
+> * Hope this helps!                                              *
+> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+> 
+> linusw/devel boot bisection: v5.4-rc1-31-g6a41b6c5fc20 on rk3399-puma-haikou
+> 
+> Summary:
+>   Start:      6a41b6c5fc20 gpio: Add xgs-iproc driver
+>   Details:    https://kernelci.org/boot/id/5dbb12bf59b514404f60ee79
+>   Plain log:  https://storage.kernelci.org//linusw/devel/v5.4-rc1-31-g6a41b6c5fc20/arm64/defconfig/gcc-8/lab-theobroma-systems/boot-rk3399-puma-haikou.txt
+>   HTML log:   https://storage.kernelci.org//linusw/devel/v5.4-rc1-31-g6a41b6c5fc20/arm64/defconfig/gcc-8/lab-theobroma-systems/boot-rk3399-puma-haikou.html
+>   Result:     6a41b6c5fc20 gpio: Add xgs-iproc driver
+> 
+> Checks:
+>   revert:     PASS
+>   verify:     PASS
+> 
+> Parameters:
+>   Tree:       linusw
+>   URL:        https://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-gpio.git/
+>   Branch:     devel
+>   Target:     rk3399-puma-haikou
+>   CPU arch:   arm64
+>   Lab:        lab-theobroma-systems
+>   Compiler:   gcc-8
+>   Config:     defconfig
+>   Test suite: boot
+> 
+> Breaking commit found:
+> 
+> -------------------------------------------------------------------------------
+> commit 6a41b6c5fc20abced88fa0eed42ae5e5cb70b280
+> Author: Chris Packham <chris.packham@alliedtelesis.co.nz>
+> Date:   Fri Oct 25 09:27:03 2019 +1300
+> 
+>     gpio: Add xgs-iproc driver
+>     
+>     This driver supports the Chip Common A GPIO controller present on a
+>     number of Broadcom switch ASICs with integrated SoCs. The controller is
+>     similar to the pinctrl-nsp-gpio and pinctrl-iproc-gpio blocks but
+>     different enough that a separate driver is required.
+>     
+>     This has been ported from Broadcom's XLDK 5.0.3 retaining only the CCA
+>     support (pinctrl-iproc-gpio covers CCB).
+>     
+>     Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
+>     Link: https://lore.kernel.org/r/20191024202703.8017-3-chris.packham@alliedtelesis.co.nz
+>     Acked-by: Scott Branden <scott.branden@broadcom.com>
+>     Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 
-On Thu, Oct 31, 2019 at 07:55:43PM +0100, Cl=E9ment P=E9ron wrote:
-> Hi Ondrej,
-> =
+Hmm,
 
-> On Thu, 31 Oct 2019 at 19:14, Ondrej Jirman <megous@megous.com> wrote:
-> >
-> > I have failures to boot on Orange Pi 3, because this driver determined
-> > that my SoC is from the normal bin, but my SoC only works reliably with
-> > the OPP values for the slowest bin.
-> >
-> > Looking at BSP code, I found that efuse values have following meanings
-> > on H6:
-> >
-> > - 0b000 invalid (interpreted in vendor's BSP as normal bin)
-> > - 0b001 slowest bin
-> > - 0b011 normal bin
-> > - 0b111 fastest bin
-> =
-
-> Maybe have some defines will be more readable no ?
-> https://megous.com/git/linux/tree/drivers/soc/sunxi/sunxi-sid.c?h=3Dh6-4.=
-9-bsp#n213
-
-Hmm, Alwwinner is really funny. Unused macros that just confuse things.
-
-#if defined(CONFIG_ARCH_SUN50IW6)
-#define TYPE_SB (0b001)
-#define TYPE_NB (0b010)
-#define TYPE_FB (0b011)
-#else
-#define TYPE_SB (0b001)
-#define TYPE_NB (0b011)
-#define TYPE_FB (0b111)
-#endif
-
-So for H6 they define special bin values and actually use different ones
-in code. Fun.
-
-I've sent out some testing program to Armbian forums, so hopefully, we'll
-collect some real efuse_values from real SoCs, to see what's really being
-used in the wild. If we see value 0b010, the BSP code is probably just
-wrong.
-
-Interestingly, TYPE_NB 0b010 would be interpreted as normal bin even with
-the current BSP code, and TYPE_FB would be misdetected as TYPE_NB.
-
-> #define SUN50I_NVEM_INVALID_CPU_OPP (0b000)
-> #define SUN50I_NVEM_LOW_CPU_OPP (0b001)
-> #define SUN50I_NVEM_NORMAL_CPU_OPP (0b011)
-> #define SUN50I_NVEM_HIGH_CPU_OPP (0b111)
-
-I'd rather not describe meanings just yet, until we get some real-world
-data from H6 owners.
-
-https://forum.armbian.com/topic/9368-orangepi-3-h6-allwiner-chip/?do=3Dfind=
-Comment&comment=3D88439
-
-regards,
-	o.
-
-> Regards,
-> Cl=E9ment
-> =
-
-> >
-> > Let's play it safe and interpret 0 as the slowest bin, but fix detection
-> > of other bins to match vendor code.
-> >
-> > Fixes: f328584f7bff ("cpufreq: Add sun50i nvmem based CPU scaling drive=
-r")
-> > Signed-off-by: Ondrej Jirman <megous@megous.com>
-> > ---
-> >
-> > See https://megous.com/git/linux/tree/drivers/soc/sunxi/sunxi-sid.c?h=
-=3Dh6-4.9-bsp#n484
-> > and https://megous.com/git/linux/tree/drivers/cpufreq/sunxi-cpufreq.c?h=
-=3Dh6-4.9-bsp#n428
-> > (1 is substracted from soc_bin number here!)
-> >
-> >  drivers/cpufreq/sun50i-cpufreq-nvmem.c | 5 ++++-
-> >  1 file changed, 4 insertions(+), 1 deletion(-)
-> >
-> > diff --git a/drivers/cpufreq/sun50i-cpufreq-nvmem.c b/drivers/cpufreq/s=
-un50i-cpufreq-nvmem.c
-> > index df35ef3ef567..41dad03e245c 100644
-> > --- a/drivers/cpufreq/sun50i-cpufreq-nvmem.c
-> > +++ b/drivers/cpufreq/sun50i-cpufreq-nvmem.c
-> > @@ -71,9 +71,12 @@ static int sun50i_cpufreq_get_efuse(u32 *versions)
-> >         efuse_value =3D (*speedbin >> NVMEM_SHIFT) & NVMEM_MASK;
-> >         switch (efuse_value) {
-> >         case 0b0001:
-> > -               *versions =3D 1;
-> > +               *versions =3D 0;
-> >                 break;
-> >         case 0b0011:
-> > +               *versions =3D 1;
-> > +               break;
-> > +       case 0b0111:
-> >                 *versions =3D 2;
-> >                 break;
-> >         default:
-> > --
-> > 2.23.0
-> >
-> > --
-> > You received this message because you are subscribed to the Google Grou=
-ps "linux-sunxi" group.
-> > To unsubscribe from this group and stop receiving emails from it, send =
-an email to linux-sunxi+unsubscribe@googlegroups.com.
-> > To view this discussion on the web, visit https://groups.google.com/d/m=
-sgid/linux-sunxi/20191031181359.282617-1-megous%40megous.com.
+I don't see how this commit would have caused the oops. The new driver
+shouldn't (and doesn't appear to be) run on any platform as nothing
+declares .compatible = "brcm,iproc-gpio-cca" (yet).
 
 _______________________________________________
 linux-arm-kernel mailing list
