@@ -2,55 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82D3AEB498
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 17:23:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A82FEB4A8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 17:24:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=v/bbS/GpxLxYIaqjFIBGWchW40DKDm6RfOFKsWOS7Js=; b=r0rkCwiJZACxAvkVB9PdjDzwB
-	ZJc2MVIHT6a1XhRNdrNl+Rp0xwbmPoiQnw3ydAdH39yUBUMPqEWaZ7alDFOQcbe48mTAhs3eGP4Gj
-	bTfb1g+C1xwxUzxY5Fg9qdDFIMUvwJcb/A+Nf+N4vNT1GVCYx0cVMM5rvD+j9X8cokxdWtL0ICKYN
-	mjj5ltXyyTHHJr+MvmWlV/WCiCHBVrA1JRpaoN8UBLxarVRE+bi50F7aAs0aQOKXj8/rY/PMSrPMy
-	b+WeDPQLCBkife8jrnR13lxKsp/zr5AbDjl7PfcoDu2n1stUhggqkeNiUwIo09rZPs9CFW3JaXytM
-	/HIGnyXQA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PoHIjtEzgv5BtQh1vyCNXrv38ixBdfOc+GJUny15rpA=; b=ayPF5+OG4cqXg5
+	IydtzFgV0ZhUOsgkOfUDeP416xMfLCK3SNy9iH4Jsv9+5m1Yf4Xy4J27cSy7o13902X5UM86SUBDr
+	0LxEDNwudzZ6iWe6ctyP9lJF+9JxYOlKS1vqiHAEG6FygpoWHGD0rYOjWe/qyz2XrOMaGGjp4/quc
+	5JN88kXw3dj82GzbHMXoj99G4Y2sN3ptU9qwUUvGt72X7i+Ic7vvZN6jdoadL/qptBumrAjx0fjO4
+	hb7clegdSk1PZzKCXs2pY6Tf4+Asvf2j4iUaqfWyMh+AyTk0fiRf4xNqlvbHEXSkCIoAUv2zDVlAD
+	/VHvTqOp6Ojog3cUh0ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQDE9-0004aS-GD; Thu, 31 Oct 2019 16:23:13 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1iQDFR-0004ui-Gc; Thu, 31 Oct 2019 16:24:33 +0000
+Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQDDz-0004ZR-V9
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 16:23:05 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 60797B833;
- Thu, 31 Oct 2019 16:23:01 +0000 (UTC)
-Message-ID: <6726a651c12d91ca22b9d8984745d90db5d507ec.camel@suse.de>
-Subject: Re: [PATCH] dma/direct: turn ARCH_ZONE_DMA_BITS into a variable
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Christoph Hellwig <hch@lst.de>
-Date: Thu, 31 Oct 2019 17:22:59 +0100
-In-Reply-To: <20191031155750.GA7394@lst.de>
-References: <20191031152837.15253-1-nsaenzjulienne@suse.de>
- <20191031154759.GA7162@lst.de>
- <40d06d463c05d36968e8b64924d78f7794f8de50.camel@suse.de>
- <20191031155750.GA7394@lst.de>
-User-Agent: Evolution 3.34.1 
+ id 1iQDFC-0004tw-Jl
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 16:24:20 +0000
+Received: by mail-vs1-xe42.google.com with SMTP id k15so4489420vsp.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 31 Oct 2019 09:24:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=yPIDo2fSmnVpiauzvpAAbaK4lF2gIAi5NghO5p90Ozs=;
+ b=khzDIJIPRAGhIdZTay7i4L5qhMiwaisFOVhQwT9VB0W5RAwk50WnAC+s9lN4QBmjet
+ S7nW7xbAJsHQj/lREQfdyhdToFzSWNsG6Nmzoa8CYnhTNFRyVJzi8KdEOAiZagzomntK
+ SvI9itLHPv9NBi04RsumdCRqAEYfHRgcDUD7Ih2vFEfb0DBwd86oieQekamm/PIJQF9y
+ uHJdXeFqkylwDT+4BlpG1idBPSeXoomT0mr64+OlZ9yH9o9FDVe7dRR20+DP/cuCTObZ
+ l71VczynWJnlq6y4ZzHfL6HNCs+XxS4+9ksqEFfqGvufglrkApqnwWLEmTLZ9QkBcYv6
+ iEmw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=yPIDo2fSmnVpiauzvpAAbaK4lF2gIAi5NghO5p90Ozs=;
+ b=bQtUIzsKbzfbGpnFmnNDLdzRVKf0CgjQndb2uV6M5Vj3pBL9CpdGs01FkiXAP/GDys
+ lhvrYTxm6i71pn9mWiHQLZC2/kk1ERKgidJ3CJ3UHSIty4v12aTj+3fESJyknJhWtMyH
+ 0f4e1D+U4/mSD0FjkyyvpsIm0uZlovkNSM18MCuIHFlpctCZa+AUqsyS8ywbQQZRSqOC
+ NGdO5iSeF4hquHJfVvCVeyoOUGsl1CNz5XYSflzlxRZcGtBUyB3DToIRpGg5t4pGjpxC
+ D2jLnMatkUDHDNQ2a0GEjZZAYsiC3NAdyK49SoeprYg1Uz9/FWCF9TTXBe79rrHR5/x5
+ S7CA==
+X-Gm-Message-State: APjAAAX4EeFmou9dcF2BUkpXybMWDQoRL9jPcWkkjcZpbnxMm4BkJ6+H
+ Wz1C3lQK5MxsR5PLhhJtBCZqa/laqvJJgt70t0vOBw==
+X-Google-Smtp-Source: APXvYqwALcYbrmJQuMMQV7datNl1JuMFD5T9xVx+oBGGYVorWljG30SurqydJbjDqFGCToghHd7hGUnpIqW5lZBfwrE=
+X-Received: by 2002:a05:6102:36d:: with SMTP id
+ f13mr3268985vsa.34.1572539056794; 
+ Thu, 31 Oct 2019 09:24:16 -0700 (PDT)
 MIME-Version: 1.0
+References: <cover.1571510481.git.hns@goldelico.com>
+ <0887d84402f796d1e7361261b88ec6057fbb0065.1571510481.git.hns@goldelico.com>
+ <CAPDyKFp3EjTuCTj+HXhxf+Ssti0hW8eMDR-NrGYWDWSDmQz6Lw@mail.gmail.com>
+ <607E3AE4-65BF-4003-86BE-C70646D53D09@goldelico.com>
+In-Reply-To: <607E3AE4-65BF-4003-86BE-C70646D53D09@goldelico.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Thu, 31 Oct 2019 17:23:40 +0100
+Message-ID: <CAPDyKFr3oh9HcExn4Sx0Cd2e0oBTsxz+L4tDvypRFP8=hQP=cg@mail.gmail.com>
+Subject: Re: [PATCH v2 04/11] mmc: host: omap_hsmmc: add code for special init
+ of wl1251 to get rid of pandora_wl1251_init_card
+To: "H. Nikolaus Schaller" <hns@goldelico.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_092304_151780_C46763A8 
-X-CRM114-Status: GOOD (  17.03  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191031_092418_654358_EE28978C 
+X-CRM114-Status: GOOD (  31.44  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,105 +95,137 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, Vasily Gorbik <gor@linux.ibm.com>,
- Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- linuxppc-dev@lists.ozlabs.org, Heiko Carstens <heiko.carstens@de.ibm.com>,
- linux-kernel@vger.kernel.org, Christian Borntraeger <borntraeger@de.ibm.com>,
- iommu@lists.linux-foundation.org, Paul Mackerras <paulus@samba.org>,
- Michael Ellerman <mpe@ellerman.id.au>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: multipart/mixed; boundary="===============3053091502514754171=="
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Kefeng Wang <wangkefeng.wang@huawei.com>, DTML <devicetree@vger.kernel.org>,
+ Tony Lindgren <tony@atomide.com>,
+ linux-wireless <linux-wireless@vger.kernel.org>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
+ "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
+ Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
+ Yangtao Li <tiny.windzz@gmail.com>, Kalle Valo <kvalo@codeaurora.org>,
+ Petr Mladek <pmladek@suse.com>,
+ =?UTF-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
+ kernel@pyra-handheld.com, Alexios Zavras <alexios.zavras@intel.com>,
+ Rob Herring <robh+dt@kernel.org>, John Stultz <john.stultz@linaro.org>,
+ David Sterba <dsterba@suse.com>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-omap <linux-omap@vger.kernel.org>, Allison Randal <allison@lohutok.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "# 4.0+" <stable@vger.kernel.org>, Sakari Ailus <sakari.ailus@linux.intel.com>,
+ netdev <netdev@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, 30 Oct 2019 at 18:25, H. Nikolaus Schaller <hns@goldelico.com> wrote:
+>
+> Hi Ulf,
+>
+> > Am 30.10.2019 um 16:51 schrieb Ulf Hansson <ulf.hansson@linaro.org>:
+> >
+> >> +
+> >> +               np = of_get_compatible_child(np, "ti,wl1251");
+> >> +               if (np) {
+> >> +                       /*
+> >> +                        * We have TI wl1251 attached to MMC3. Pass this information to
+> >> +                        * SDIO core because it can't be probed by normal methods.
+> >> +                        */
+> >> +
+> >> +                       dev_info(host->dev, "found wl1251\n");
+> >> +                       card->quirks |= MMC_QUIRK_NONSTD_SDIO;
+> >> +                       card->cccr.wide_bus = 1;
+> >> +                       card->cis.vendor = 0x104c;
+> >> +                       card->cis.device = 0x9066;
+> >> +                       card->cis.blksize = 512;
+> >> +                       card->cis.max_dtr = 24000000;
+> >> +                       card->ocr = 0x80;
+> >
+> > These things should really be figured out by the mmc core during SDIO
+> > card initialization itself, not via the host ops ->init_card()
+> > callback. That is just poor hack, which in the long run should go
+> > away.
+>
+> Yes, I agree.
+>
+> But I am just the poor guy who is trying to fix really broken code with
+> as low effort as possible.
 
---===============3053091502514754171==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-geumnkbETQYdG1ZUMwUA"
+I see. Thanks for looking at this mess!
 
+In general, as long as we improve the code, I am happy to move forward.
 
---=-geumnkbETQYdG1ZUMwUA
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+However, my main concern at this point, is to make sure we get the DT
+bindings and the DTS files updated correctly. We don't want to come
+back to this again.
 
-On Thu, 2019-10-31 at 16:57 +0100, Christoph Hellwig wrote:
-> On Thu, Oct 31, 2019 at 04:53:13PM +0100, Nicolas Saenz Julienne wrote:
-> > > > +#define ARM64_ZONE_DMA_BITS	30
-> > > > +
-> > > >  /*
-> > > >   * We need to be able to catch inadvertent references to memstart_=
-addr
-> > > >   * that occur (potentially in generic code) before
-> > > > arm64_memblock_init()
-> > > > @@ -424,6 +427,8 @@ void __init arm64_memblock_init(void)
-> > > >  	else
-> > > >  		arm64_dma_phys_limit =3D PHYS_MASK + 1;
-> > > > =20
-> > > > +	zone_dma_bits =3D ARM64_ZONE_DMA_BITS;
-> > > > +
-> > > >  	reserve_crashkernel();
-> > >=20
-> > > This actually adds a new limit, as there wasn't one before for arm64.
-> >=20
-> > Well, as zone_dma_bits is only relevant in dma/direct when ZONE_DMA is
-> > defined
-> > I figured it doesn't matter if the variable is set conditionally to ZON=
-E_DMA
-> > or
-> > not.
->=20
-> I'd much prefer that to do separately.
+>
+> I don't even have a significant clue what this code is exactly doing and what
+> the magic values mean. They were setup by pandora_wl1251_init_card() in the
+> same way so that I have just moved the code here and make it called in (almost)
+> the same situation.
 
-OK, I see what you mean now. It's wrong indeed.
+Okay!
 
-The trouble is the ZONE_DMA series[1] in arm64, also due for v5.5, will be
-affected by this patch. I don't know the right way to approach this problem
-since depending on the merge order, this patch should be updated or the arm=
-64
-ZONE_DMA series fixed.
+>
+> > Moreover, I think we should add a subnode to the host node in the DT,
+> > to describe the embedded SDIO card, rather than parsing the subnode
+> > for the SDIO func - as that seems wrong to me.
+>
+> You mean a second subnode?
+>
+> The wl1251 is the child node of the mmc node and describes the SDIO card.
+> We just check if it is a wl1251 or e.g. wl1837 or something else or even
+> no child.
 
-Maybe it's easier to just wait for v5.6.
+The reason why I brought this up, was because there are sometimes
+cases where an SDIO card is shared between more than one SDIO func.
+WiFi+Bluetooth for example, but if I am correct, that is not the case
+for wl1251?
 
-Regards,
-Nicolas
+That said, I am happy to continue with your approach.
 
-[1] https://lkml.org/lkml/2019/9/11/734
+>
+> > To add a subnode for the SDIO card, we already have a binding that I
+> > think we should extend. Please have a look at
+> > Documentation/devicetree/bindings/mmc/mmc-card.txt.
+> >
+> > If you want an example of how to implement this for your case, do a
+> > git grep "broken-hpi" in the driver/mmc/core/, I think it will tell
+> > you more of what I have in mind.
+>
+> So while I agree that it should be improved in the long run, we should
+> IMHO fix the hack first (broken since v4.9!), even if it remains a hack
+> for now. Improving this part seems to be quite independent and focussed
+> on the mmc subsystem, while the other patches involve other subsystems.
 
+I agree.
 
---=-geumnkbETQYdG1ZUMwUA
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
+>
+> Maybe should we make a REVISIT note in the code? Or add something to
+> the commit message about the idea how it should be done right?
 
------BEGIN PGP SIGNATURE-----
+Just add a note that we should move this DT parsing of the subnode to
+the mmc core, but that we are leaving that as a future improvement.
+That's good enough. Then I can have a look as a second step, and when
+I get some time, to move this to the mmc core.
 
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl27CmMACgkQlfZmHno8
-x/4b+AgAoH8wv9sfGomdszgwev9YRlMzey4HKe8HTYaOtmPwv+9I5u2Q1L0Hll8U
-oOvfmsMi3/GCphnYxgVI15TV3gT23I4f+e1sVmHtdJwOja145qdVYeN0eVrJBGlW
-gllgXNWdKSeomR5jQYRo6/r/e4b2DFreMuJMYO5Ac0Jmp4lqqbZ9tXDqMvKt0VcB
-4olZERu99fJIT8AxzUVXOG9cft6l18Fio1WtXJLzXgVrjxEKnxGLAq1GxY5o8VF7
-mf5621L1pvp/rNs/CBhehPADNaJqYwdS+nm7md9u/My8zRvp2OqT8O9a4e7RxcQi
-QPdhGBoQVaeZdUmbRgLmr2hq8cGTqw==
-=2ip7
------END PGP SIGNATURE-----
+However, there is one thing I would like you to add to the series. That is:
 
---=-geumnkbETQYdG1ZUMwUA--
+In the struct omap_hsmmc_platform_data, there is an ->init_card()
+callback. Beyond the changes of this series, there is no longer any
+users of that, unless I am mistaken. Going forward, let's make sure it
+doesn't get used again, so can you please remove it!?
 
+[...]
 
-
---===============3053091502514754171==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Kind regards
+Uffe
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3053091502514754171==--
-
-
