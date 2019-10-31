@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9DB20EAFC9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 13:07:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93000EAFD2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 13:09:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZJXzo6OkNlGASqg7wVlYW5VhwUcQCKe65pthsjroj3w=; b=ixkuY4fwEE88EY
-	1tKoBcTFfvs/Q1F+0TBdCGonH78O5luDkcKacrryv1ob0lzApVpESnRLhzFmYS45D9lXbMBX+2sH2
-	5BZ5D2oDSQ30rqJEdMUcTQncl7XlNYLg0/gx2pKIHwFRejlEhs+/pQynftsNQ5rixMB/b90Y9o6Cf
-	d8XRl8YxaOM700UGc1d2fWwYmbnETFMqid/VTZDaCi//NRpBPO0+L4oc4wkWsdrXbbIvXXBaT9wSu
-	cM3Vdyxiq1wjZ7vl0tsTavTPgvUrrk75dx2eLF5S75j5I3X+JM3pzSAOJdQcRKZMNF0jqpeSRuFv9
-	TsQvQyhEt2edPOtupNZg==;
+	List-Owner; bh=skjqLSkL6/vvXf50EFRahvQFhmPtk/jwFLUsQ4CfMoo=; b=O2ELOv/Ngmof8+
+	sKTaVLItmaHSb4HwnIO3dw3CdOGW23fFme5EGfZFioJaizYwZmPwflTxdkx8KMEAddjSap2zBNNaB
+	6U8hA6n3w8qtlXUWei0O4JJGyFGVALdCdyFNHWc4iCVwM/p7fbzFAWlw8JXeUh8uTEg3Su/FZOMpu
+	CCmpxLNzhCQcHVJEd7Kj+VgZEZZCS+YwM/W98fq4n+XKnzmKA+p2X2zqPmzjwc0O6+nywv3+bkvwz
+	ICyiqReiAXw+uzjzLb5Qg/SguFqoTJkowjCzILgAKx0EPSzGUxjY4mFdzNgAY/jgJ+EaagcM36Ow7
+	VBISrdqIY+An8+pd5zpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQ9Eb-0006G3-1A; Thu, 31 Oct 2019 12:07:25 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1iQ9GX-0006ap-Hz; Thu, 31 Oct 2019 12:09:25 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQ9ER-0006FG-Pq
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 12:07:17 +0000
-Received: by mail-lf1-x143.google.com with SMTP id y6so4458539lfj.2
+ id 1iQ9GL-0006aS-5T
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 12:09:14 +0000
+Received: by mail-lf1-x142.google.com with SMTP id j5so4447714lfh.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 31 Oct 2019 05:07:15 -0700 (PDT)
+ Thu, 31 Oct 2019 05:09:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=yLdb6BKKsBwdTyCqC3oQr2+bLOSWyaoFNjx8aaET/HU=;
- b=sWvZD90G57wEHYe8Pgdv+Opt8LMv8QJ47fYyZyYAqKyVohLypEc/k5xmxMYQrtVhtg
- c4+Gv2vRm4USOBpQChSEyz9IopS/XX8Nl1yar4DVdPV/s63tDtR0oHYJXqRA6DA/S5Ti
- 5QJLHveP0STTYEV8W4SiS2rMZRRbomLtlf3r3x7hKsrL8J5fXJ5yPcKx4qSkYCnygOao
- PYBgSFir3lDNXeZ4NFHEwNj6yQMg1E4ihqoD2GKV5gFuNBcwxomAEOl1gqaw8ejkLIAu
- VgzS0eFF6O9yCe6NhWxr1UoK1QHd182uEFLpuvx7FW1l55L/61MnXJIF7FzMvumAECoz
- 7D4A==
+ :cc; bh=MM8p4D9tb2q7mG4877MY6R6xnh9uakrw6zADFmTTks4=;
+ b=OPCqsC6VoU5JERR4Cw0CfReLN6eQqnM9iRJ8CH+KWnBn0jcB4gCsE49jFqANG9ZrFm
+ Gg8B+QwvYfXHEPUHLleelZfQxiiZlTgjHgozQOBxZlgqNFXrUDA1VYpr3UvWhKkuSFs4
+ wtslteQ3K0G+y8JgTmVNm7he27ntG62voXmO7Fl8z5l0d0zvRcvqcGciMjVeyBIrS5ZP
+ MV+aGcCFg88yhnXL2BGiWjacFOQCb/BXgrf4X+CuYOWn1Av8//Y2CAINO1DwfuAIWZIl
+ y8K8RyxzwZ+wdaEW6IlYMMy/pZ78EQteNAV5pEOfrq9YIovzMVoY2AgHeU1Tz4Ih6S5p
+ tGAg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=yLdb6BKKsBwdTyCqC3oQr2+bLOSWyaoFNjx8aaET/HU=;
- b=r+3zlw9t5FZnZ1TOyq4CG2spM4gVhvgFpXPVLvXLrcYHgsueOyyMaA6C0ji98/Yygz
- Aki1SRbuqbSm7zxmt84VAoXamSt4ljI70viiZPb6aeoFdnAZJYhYxKe5uHwqgpjLKmkY
- DpTz+rTFwQD8Yx/q05ltiItzMQZounv/e7On6lzOgIJ9u1K9wByrBYSaGqoSZKG090xI
- SzNKqFiZ4iPhsEcTLEjKBFBhyiZyZi75kw0NI1QiehMcYud7tRN2dFvXKj1seTVZd9yf
- tJCAmEzvR1YFt+YFvB7MJn7ic+GMlUNcEx1nalryqgmeEMWrQPU4T6LLHU5phG/r2f7o
- CTQQ==
-X-Gm-Message-State: APjAAAWWyR+TSu4wX1SOiKRKLXwqlGtV816GhKwkTHQLTflJUw0+RN7+
- o/prrf1GSb2gHo7uLQMd9ueFQtnWZIEtPqTRhGo=
-X-Google-Smtp-Source: APXvYqzouS1Q1he9V4ma5fFVHYkpzWmxxcN5v9/+VSFY+GMtwPnz/Rhj664y3z7SNUmnvg/zabQ+BfeH/1fUBA55JkM=
-X-Received: by 2002:ac2:4564:: with SMTP id k4mr3360446lfm.20.1572523633629;
- Thu, 31 Oct 2019 05:07:13 -0700 (PDT)
+ bh=MM8p4D9tb2q7mG4877MY6R6xnh9uakrw6zADFmTTks4=;
+ b=AYkSoJtN5abDLqCgFzyvAgaFQkTqaqZ3YrPW8VcC7mMP2VRBbVh/IEqQQCXIKhq53R
+ MFJxqyWZ5WGF/2BSP4+pjj5PvdvrEOr7JIhxRtI4inVbVRorlvww+E6EMa2eFCX+/wFT
+ OVqomt+ctbo9Cvgkr9OQCHUJ65jCO4TMMASFUqZ/FEChHi7mtDYZTZo45BlM72WWwDaB
+ utDPNJdOx6Ms4byvlS/+DhP8L1FA8ScrrOYPtFK1oMt/Twu72ElyWvevryh4YQJ0IAcC
+ f+moNW9OP8KUiY+nUOc5X4ZpDACg2wU//D2x6vhbxHRff67z2s9Dwsty6FitzIecSaoA
+ 0R9Q==
+X-Gm-Message-State: APjAAAUcu1S0LMtrAxT7k/T8c+udEU2WglFfPHTxG7tjDoYqK5Ymdjn9
+ ZjTtdbOXEe6Entfe0/1lZW10QBnwEc77V5TRf9c=
+X-Google-Smtp-Source: APXvYqwkYSRy9WIGL9SPdl9jeCJJ+BOIZ4Zza5PJfCxqy+TrdFNJETJc7MR5x1D+zSUZe3bjDByCvJLy8a/43ChjJu8=
+X-Received: by 2002:a19:6759:: with SMTP id e25mr3136789lfj.80.1572523751272; 
+ Thu, 31 Oct 2019 05:09:11 -0700 (PDT)
 MIME-Version: 1.0
 References: <1572515888-3385-1-git-send-email-peng.fan@nxp.com>
- <1572515888-3385-3-git-send-email-peng.fan@nxp.com>
-In-Reply-To: <1572515888-3385-3-git-send-email-peng.fan@nxp.com>
+ <1572515888-3385-2-git-send-email-peng.fan@nxp.com>
+In-Reply-To: <1572515888-3385-2-git-send-email-peng.fan@nxp.com>
 From: Fabio Estevam <festevam@gmail.com>
-Date: Thu, 31 Oct 2019 09:07:22 -0300
-Message-ID: <CAOMZO5DWphRs_ZdDiNPLo0MPo45vBTEojWhYnZyWYF6+t12jxw@mail.gmail.com>
-Subject: Re: [PATCH 2/2] clk: imx: imx7d: remove clk_set_parent
+Date: Thu, 31 Oct 2019 09:09:20 -0300
+Message-ID: <CAOMZO5C6kRvsGv_vR=r+5WesGDdLRUab4ri2P1V97-=juXcLQQ@mail.gmail.com>
+Subject: Re: [PATCH 1/2] arm: dts: imx7s: ccm: add assigned-clocks
 To: Peng Fan <peng.fan@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_050715_862801_D63FEDFD 
-X-CRM114-Status: UNSURE (   7.83  )
+X-CRM114-CacheID: sfid-20191031_050913_211854_F4A3C0FF 
+X-CRM114-Status: UNSURE (   8.89  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (festevam[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -112,16 +112,17 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi Peng,
 
-On Thu, Oct 31, 2019 at 7:02 AM Peng Fan <peng.fan@nxp.com> wrote:
+On Thu, Oct 31, 2019 at 7:01 AM Peng Fan <peng.fan@nxp.com> wrote:
 >
 > From: Peng Fan <peng.fan@nxp.com>
 >
-> Since the set parent could be done by assigned-clock-parents in
-> dts, so no need clk_set_parent in driver.
+> Add assigned-clocks and assigned-clock-parents, then
+> we could remove the clk_set_parent code in clk-imx7d.c.
 
-It looks like this will cause breakage if someone is using an old dtb, right?
+Change itself looks good, but please do not mention the clock driver
+in the commit log.
 
-We try not to break existing dtbs.
+Devicetree should be OS agnostic.
 
 _______________________________________________
 linux-arm-kernel mailing list
