@@ -2,85 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C93AEB060
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 13:32:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10ADEEB08F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 13:45:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q9EzL5L+RK88yN0vzqdnTrmLw2b0uKP2toKL66pzR5A=; b=N+d2RFBapfo//+
-	K/Juwr0l/ReiN4x8qtMIyrFo4Xr6lXYkVRCz2lDr9Th5ymm0s/vaeSEN98gzbNJOAHyDGvKErkwId
-	Ga+ITl1Up3Vui6QUIkj8XIB1inm55n5WqK/NPH/z79KDrPuMaJwWpF3ynr11qOV+MIabA0vC2JA0I
-	36HfxdeR8Ciw7MMcG2txi/VR5NzvzxDCZ4P/mVAoGpsETGrWxEwxw9wMzDlpovKPxlzNMp1+F8yJs
-	7bFeAcFXurEaO2QCekrxfiiG0DIuXq7K8r/w1D4a2VhPtRkMJRfDpaTlUP+D7mEpFvqkn9HS29q5E
-	KKZsEXi7ZbtCp47ChQRA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=H6imcmPea569dWyk270oG835Emem0sTyy8nllVcTt/g=; b=VyydgrHp8h6jvKRp1P36NTJvN
+	GRFglvs+qprgG59f9wTe/6KkQfSjiThoyh448Ryo31Lf0p1IDSpt6q2WV1DFCFc9Nz4TQv6Z6wFBp
+	ujljE7Mpx3HeSE7zmIpzdNOrCeNeCg1KWULCsAoAKjRgJ5PauU6Q83K34lsqIk+5xqGb7i6emFHEn
+	daTok+z5gVCXJTODTVC9T4XHwIPfFos4If8F24hqsNVNCm1CC8O2t9AII6815yhVGp4OCq0j4IKBS
+	PKhnX27B2SBCCZJBDjMDP14Vt4CJ1T7sxQmc7fpsr+q+dUOVzs72AXYjaD1uTH4oel1am1+fXDREi
+	KP0Hqf2ww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQ9d3-0008K4-Vy; Thu, 31 Oct 2019 12:32:42 +0000
-Received: from mail-ed1-f67.google.com ([209.85.208.67])
+	id 1iQ9pD-0004a9-J4; Thu, 31 Oct 2019 12:45:15 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQ9cA-0007dj-VR
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 12:31:48 +0000
-Received: by mail-ed1-f67.google.com with SMTP id l25so4624270edt.6
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 31 Oct 2019 05:31:46 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=vls7ZE/ReY4sJGi7uI5GGsGPMcKXRM5Mo/neO76jsVQ=;
- b=IYxFKQd/M8MMc5dSXJhNfNSzCEo9PkHS0zyHP+6Z7m5Ee3g3VeT8pZZiPkgs24z0wd
- woiCtxnFr2nj2TUlYMFmXBzlXWi5m2T7bSBKoTjhgjd+d+HlhfNGQ17X3fpjaInF3aqY
- 6+aClAaab2vxQvlDKVgxQNLB03FPXnTdkjvtSI6dzRxpM7mkdMMeQLX6ewK3VHF6RaNi
- J3PO0yCOpDjRknqpRdEe5a5MPWc1QV795dSVs0PUWzusFe0SRqXBHJuNQwIadnvl0OKH
- g80/PGlwi1f0xTrSXmKrUPPv7BpIlBluAbzya5puJAjnLuL4lsKXx21ud5xW4FA1K0Ee
- nqxw==
-X-Gm-Message-State: APjAAAXyJUPodZG3/Je6ZjzaXKrpXS7KJWgqdyYupTEcd1SNGd+sp2rs
- Jbbbh43UTBCm0tv1hwpfyRo=
-X-Google-Smtp-Source: APXvYqxv+iB25I5NrbvVPiR7XWHGPnqcPx2J39IflRtWXVi/n7ge7s91adZiNxuKFrKu9WoulT7Cdw==
-X-Received: by 2002:a05:6402:110c:: with SMTP id
- u12mr5701239edv.127.1572525104909; 
- Thu, 31 Oct 2019 05:31:44 -0700 (PDT)
-Received: from pi3 ([194.230.155.180])
- by smtp.googlemail.com with ESMTPSA id s16sm57296edd.39.2019.10.31.05.31.43
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 31 Oct 2019 05:31:44 -0700 (PDT)
-Date: Thu, 31 Oct 2019 13:31:42 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Schrempf Frieder <frieder.schrempf@kontron.de>
-Subject: Re: [PATCH v2 01/11] ARM: dts: imx6ul-kontron-n6310: Move common SoM
- nodes to a separate file
-Message-ID: <20191031123142.GA27967@pi3>
-References: <20191029112655.15058-1-frieder.schrempf@kontron.de>
- <20191029112655.15058-2-frieder.schrempf@kontron.de>
+ id 1iQ9oz-00044t-Ow
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 12:45:03 +0000
+Received: from localhost (lns-bzn-32-82-254-4-138.adsl.proxad.net
+ [82.254.4.138])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id CAAF02067D;
+ Thu, 31 Oct 2019 12:45:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572525901;
+ bh=0DNBeenyH7rB/8g2YXDHf6rJYEKF+j4UGX0CUbblXaA=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=mZ2EFnFaQxMFoSOwRwqwyd2Y9KZ+YtRrSiC6EbdzRR+rfKo31dkjxb3WqL6WD2PLV
+ CXi8nj0pOAqaL5Jz40Ey/pB2Q/l9RqFR3ZJ7RxF6l/Ildoo5XduUSMQXz18Y2y0tzL
+ GzoBlIYLheWU7SCpbNIdcCe9B1hw0oYK3jgmmIdY=
+Date: Thu, 31 Oct 2019 13:35:43 +0100
+From: Maxime Ripard <mripard@kernel.org>
+To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Subject: Re: [PATCH v7 0/2] Allwinner H6 Mali GPU support
+Message-ID: <20191031123543.lllmoat4zv5f47pd@hendrix>
+References: <20191030150742.3573-1-peron.clem@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191029112655.15058-2-frieder.schrempf@kontron.de>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+In-Reply-To: <20191030150742.3573-1-peron.clem@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_053147_134584_2B972012 
-X-CRM114-Status: GOOD (  13.97  )
-X-Spam-Score: 3.8 (+++)
+X-CRM114-CacheID: sfid-20191031_054501_864348_2B5B01A5 
+X-CRM114-Status: GOOD (  11.00  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (3.8 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.67 listed in list.dnswl.org]
- 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
- [194.230.155.180 listed in zen.spamhaus.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.67 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,40 +75,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Tomeu Vizoso <tomeu.vizoso@collabora.com>, linux-kernel@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============4173812096525983343=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 29, 2019 at 11:27:44AM +0000, Schrempf Frieder wrote:
-> From: Frieder Schrempf <frieder.schrempf@kontron.de>
-> 
-> The Kontron N6311 and N6411 SoMs are very similar to N6310. In
-> preparation to add support for them, we move the common nodes to a
-> separate file imx6ul-kontron-n6x1x-som-common.dtsi.
-> 
-> Signed-off-by: Frieder Schrempf <frieder.schrempf@kontron.de>
-> ---
->  .../boot/dts/imx6ul-kontron-n6310-som.dtsi    |  95 +---------------
->  .../dts/imx6ul-kontron-n6x1x-som-common.dtsi  | 103 ++++++++++++++++++
->  2 files changed, 104 insertions(+), 94 deletions(-)
->  create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6x1x-som-common.dtsi
 
-Reviewed-by: Krzysztof Kozlowski <krzk@kernel.org>
+--===============4173812096525983343==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="nd6i5yai3phkhdlv"
+Content-Disposition: inline
 
-Best regards,
-Krzysztof
 
+--nd6i5yai3phkhdlv
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Wed, Oct 30, 2019 at 04:07:40PM +0100, Cl=E9ment P=E9ron wrote:
+> Hi,
+>
+> Proper iommu patches has been merged[0].
+>
+> There is still work to do to make it works with panfrost
+> but all modules can be probed and removed smoothly.
+>
+> These bindings could be used also for out-of-tree modules.
+
+Applied both, thanks
+
+Maxime
+
+--nd6i5yai3phkhdlv
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXbrVHwAKCRDj7w1vZxhR
+xWqMAQClAAyrxFvMUcdFqsOw4AphcLAVcXIVqpAF1731LJ7ZBgEAn8EdQHaxfj6V
+RLMcF7zHur0tsbHuhAtC/gJY0sHFFQM=
+=pJeb
+-----END PGP SIGNATURE-----
+
+--nd6i5yai3phkhdlv--
+
+
+--===============4173812096525983343==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4173812096525983343==--
+
