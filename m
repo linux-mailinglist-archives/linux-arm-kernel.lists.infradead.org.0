@@ -2,63 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA07EEB964
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 22:52:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1FC49EB978
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 23:01:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=60Vin8GlBX5CwiF7dMv39X+QPl+h64+0gOZBzBhSvtQ=; b=LY52N8aaKB2Q3W6F3dKMZLUE4O
-	8qvKWDS4oBIpISu3Um6NScAc7bgXswJMau6J0HsfqhBaKMhI7ZX71l5mqUm+hsKORmor10s+V7w6S
-	/GSPHY9x7lIXju2YQrUSbILEIn+Tl4Ok3UBl2A70PuFgzifxCmjhYXgxhDBP3926Ccf8iq4CdXZJT
-	pzsyH9I/qz+2nww/lUtxaHS0Bq1kC2MZPpMVK1CNmy8QCmlaQUW/9+63avpx4TPhS8utTbMHzyIR2
-	lqywFVSqREToixMk2LpPMZMMOPIvlltsrTerv5fJy19sh+8KF27jyqEe5IddB9Sp3chnHkobpznfg
-	t+e9j2tw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=7NHEwwlXp9zgIAuL340Z6K9JIfGVFu+K+cIWBo4vn/o=; b=cAB
+	m7G5AhYPb9MiYwFinJKkuAh0X0b3/5GsdIcMu/5xawSpN4mvvL7GAqIx8yhAPyoBM4SHWwa6P4K2d
+	+8+3qmJ32dWDvoxZsOlgi6qskNp7sV39GPOa6AXhv/s1aaBa08i6lShQs0vO1/Uob5EaozYhSAUYK
+	tJuTmFJMUzxYZmIrwIpAvjpbh9RZAfhcKQjlUSU4b11Niy42zwpqfeuxMgNNACZjTHeiT+THnWSFJ
+	VMPH88TOSeHorY/m0sJXQ3Kp7QylYwKsQix57h2QRZ4iyK5zNMGwGSdx7yr+8JlR7Rtk+x5NsvLQV
+	KnSkZavnk5+2OktiutgAiDLMG7Ku5dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQIMz-0006d3-TV; Thu, 31 Oct 2019 21:52:41 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1iQIVj-0001qN-FR; Thu, 31 Oct 2019 22:01:43 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQIL2-0005Iy-5w
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 21:50:42 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id D11281A059C;
- Thu, 31 Oct 2019 22:50:38 +0100 (CET)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B98B81A0214;
- Thu, 31 Oct 2019 22:50:38 +0100 (CET)
-Received: from fsr-ub1864-112.ea.freescale.net
- (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id AB5102062B;
- Thu, 31 Oct 2019 22:50:37 +0100 (CET)
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Stephen Boyd <sboyd@kernel.org>, MyungJoo Ham <myungjoo.ham@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v3 6/6] arm64: dts: imx8m: Add ddr controller nodes
-Date: Thu, 31 Oct 2019 23:50:27 +0200
-Message-Id: <44dcab5a136f5b046092e6ed456d8e206413059f.1572558427.git.leonard.crestez@nxp.com>
+ id 1iQIVY-0001pg-22
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 22:01:33 +0000
+Received: by mail-wr1-x442.google.com with SMTP id o28so7880509wro.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 31 Oct 2019 15:01:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=TSWfpuHlmZHBiZrAWDxgOb4uOk4kRce+AnQCKIxwQCA=;
+ b=UYmNphie/gQPdtCpL+hIWLXiLGsjYbKuHWIKg2Ek8H5e8tWfy7gevZIMPHNPG8C11z
+ lsJlMQ5hNr7TBkGgF/XR5L+T8OU6+oAiGiLN48KHunq1bmTmrDQ4y2Xo4iG2PvF2sB8+
+ SJdUBnYF4dxhqC5s8yLtehKA4sTKNanVW3fBLXlzMF6QW+lAvZ2WkJanznmtfJk9cgeH
+ 8taZMEJmQtP57TIWusOYJDdNA4r0lx0IyqqjJ8iMCSCasiGv7VE74m9u9ukY23Ch6VP0
+ 7rKcz27gQ9FWanmFF6wGeLyZRtDH98JI/VDYzu7cQU/iRCiXByBoLyeFv53Nq+c4wvDT
+ L8jA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=TSWfpuHlmZHBiZrAWDxgOb4uOk4kRce+AnQCKIxwQCA=;
+ b=pjLgJ3gpx82rm4PADbBJ0kBsaD8fmKgC2AotT21WcXJfR8Z3HeqQ/ysuFl75aiiwEV
+ MNuM6GhOoFKxdg8MgIebsKgKrrMvYgZzkWHQiVy4rFUrsezUxezro4Jfhn4BGNFB9tif
+ /WeJQKJQGqGW0sXN1rnWLcME01dOyTlshhfq8hGsrAnmBJ51p++AtrA04bGTi4kqXgZN
+ 7oKlxT8Gd5wRbBb5RL4o0eN6dGuEvkbyhMTojyCyp8wsOVX/LYfA0FCMGj37vmT4k2nW
+ kN1cd4EzekwZgM8FVKnlvvoSCM1z+tVbnaZnzKJmBjjmU/gwbJDnQ2OE+zX/aV0JMTZk
+ N3RQ==
+X-Gm-Message-State: APjAAAURzcF28fx0Lyg7wPfJE76vxtQxgn4C7i2/c3Mf8A06MmcCO6Fg
+ DSFD6jX0jXQtuEghaEX1GiEz5x/x
+X-Google-Smtp-Source: APXvYqyLIoyqUyRVy0CLKSm5HCoIrvAuvATFFRdjjXa27GCEStef7EHk7MkbTQKmJWpNw/KX0PRu5g==
+X-Received: by 2002:a5d:4644:: with SMTP id j4mr8245262wrs.355.1572559289699; 
+ Thu, 31 Oct 2019 15:01:29 -0700 (PDT)
+Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id d4sm7514172wrc.54.2019.10.31.15.01.26
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 31 Oct 2019 15:01:28 -0700 (PDT)
+From: Florian Fainelli <f.fainelli@gmail.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] ARM: spectre-v2: remove Brahma-B53 from hardening
+Date: Thu, 31 Oct 2019 15:00:51 -0700
+Message-Id: <20191031220053.2720-1-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <cover.1572558427.git.leonard.crestez@nxp.com>
-References: <cover.1572558427.git.leonard.crestez@nxp.com>
-In-Reply-To: <cover.1572558427.git.leonard.crestez@nxp.com>
-References: <cover.1572558427.git.leonard.crestez@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_145040_525564_D53FF5A9 
-X-CRM114-Status: GOOD (  13.22  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191031_150132_123494_E006EBF4 
+X-CRM114-Status: GOOD (  11.39  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,268 +93,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- =?UTF-8?q?Artur=20=C5=9Awigo=C5=84?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
- Alexandre Bailon <abailon@baylibre.com>, linux-clk@vger.kernel.org,
- Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
- Matthias Kaehlcke <mka@chromium.org>, linux-imx@nxp.com,
- devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
- Martin Kepplinger <martink@posteo.de>, linux-arm-kernel@lists.infradead.org,
- Dong Aisheng <aisheng.dong@nxp.com>, Anson Huang <Anson.Huang@nxp.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, kernel@pengutronix.de,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Georgi Djakov <georgi.djakov@linaro.org>
+Cc: Doug Berger <opendmb@gmail.com>, catalin.marinas@arm.com,
+ Russell King <linux@armlinux.org.uk>, open list <linux-kernel@vger.kernel.org>,
+ Florian Fainelli <f.fainelli@gmail.com>, bcm-kernel-feedback-list@broadcom.com,
+ will@kernel.org, Julien Thierry <julien.thierry.kdev@gmail.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is used by the imx-ddrc devfreq driver to implement dynamic
-frequency scaling of DRAM.
+From: Doug Berger <opendmb@gmail.com>
 
-Add a devfreq-event link to the dram PMU in order to support on-demand
-scaling of ddrc based on measured dram bandwidth usage.
+When the default processor handling was added to the function
+cpu_v7_spectre_init() it only excluded other ARM implemented processor
+cores. The Broadcom Brahma B53 core is not implemented by ARM so it
+ended up falling through into the set of processors that attempt to use
+the ARM_SMCCC_ARCH_WORKAROUND_1 service to harden the branch predictor.
 
-Support for proactive scaling via interconnect will come later. The
-high-performance bus masters which need that (display, vpu, gpu) are not
-yet enabled in upstream anyway.
+Since this workaround is not necessary for the Brahma-B53 this commit
+explicitly checks for it and prevents it from applying a branch
+predictor hardening workaround.
 
-Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+Fixes: 10115105cb3a ("ARM: spectre-v2: add firmware based hardening")
+Signed-off-by: Doug Berger <opendmb@gmail.com>
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- arch/arm64/boot/dts/freescale/imx8mm-evk.dts  | 18 ++++++++++++++
- arch/arm64/boot/dts/freescale/imx8mm.dtsi     | 17 ++++++++++++-
- .../boot/dts/freescale/imx8mn-ddr4-evk.dts    | 18 ++++++++++++++
- arch/arm64/boot/dts/freescale/imx8mn.dtsi     | 16 ++++++++++++-
- arch/arm64/boot/dts/freescale/imx8mq-evk.dts  | 24 +++++++++++++++++++
- arch/arm64/boot/dts/freescale/imx8mq.dtsi     | 16 ++++++++++++-
- 6 files changed, 106 insertions(+), 3 deletions(-)
+ arch/arm/mm/proc-v7-bugs.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-index 4f5e408d6e6a..be9abd8e4478 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-+++ b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-@@ -69,16 +69,34 @@
- 		simple-audio-card,codec {
- 			sound-dai = <&wm8524>;
- 			clocks = <&clk IMX8MM_CLK_SAI3_ROOT>;
- 		};
- 	};
-+
-+	ddrc_opp_table: ddrc-opp-table {
-+		compatible = "operating-points-v2";
-+
-+		opp-25M {
-+			opp-hz = /bits/ 64 <25000000>;
-+		};
-+		opp-100M {
-+			opp-hz = /bits/ 64 <100000000>;
-+		};
-+		opp-750M {
-+			opp-hz = /bits/ 64 <750000000>;
-+		};
-+	};
- };
+diff --git a/arch/arm/mm/proc-v7-bugs.c b/arch/arm/mm/proc-v7-bugs.c
+index 9a07916af8dd..a6554fdb56c5 100644
+--- a/arch/arm/mm/proc-v7-bugs.c
++++ b/arch/arm/mm/proc-v7-bugs.c
+@@ -65,6 +65,9 @@ static void cpu_v7_spectre_init(void)
+ 		break;
  
- &A53_0 {
- 	cpu-supply = <&buck2_reg>;
- };
- 
-+&ddrc {
-+	operating-points-v2 = <&ddrc_opp_table>;
-+};
-+
- &fec1 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_fec1>;
- 	phy-mode = "rgmii-id";
- 	phy-handle = <&ethphy0>;
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-index 6edbdfe2d0d7..5404870d80d5 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-@@ -856,11 +856,26 @@
- 			#interrupt-cells = <3>;
- 			interrupt-controller;
- 			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
- 		};
- 
--		ddr-pmu@3d800000 {
-+		ddrc: dram-controller@3d400000 {
-+			compatible = "fsl,imx8mm-ddrc", "fsl,imx8m-ddrc";
-+			reg = <0x3d400000 0x400000>;
-+			clock-names = "dram_core",
-+				      "dram_pll",
-+				      "dram_alt",
-+				      "dram_apb";
-+			clocks = <&clk IMX8MM_CLK_DRAM_CORE>,
-+				 <&clk IMX8MM_DRAM_PLL>,
-+				 <&clk IMX8MM_CLK_DRAM_ALT>,
-+				 <&clk IMX8MM_CLK_DRAM_APB>;
-+			devfreq-events = <&ddr_pmu>;
-+			operating-points-v2 = <&ddrc_opp_table>;
-+		};
-+
-+		ddr_pmu: ddr-pmu@3d800000 {
- 			compatible = "fsl,imx8mm-ddr-pmu", "fsl,imx8m-ddr-pmu";
- 			reg = <0x3d800000 0x400000>;
- 			interrupt-parent = <&gic>;
- 			interrupts = <GIC_SPI 98 IRQ_TYPE_LEVEL_HIGH>;
- 		};
-diff --git a/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts b/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts
-index 071949412caf..ab2060667671 100644
---- a/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts
-+++ b/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts
-@@ -9,16 +9,34 @@
- #include "imx8mn-evk.dtsi"
- 
- / {
- 	model = "NXP i.MX8MNano DDR4 EVK board";
- 	compatible = "fsl,imx8mn-ddr4-evk", "fsl,imx8mn";
-+
-+	ddrc_opp_table: ddrc-opp-table {
-+		compatible = "operating-points-v2";
-+
-+		opp-25M {
-+			opp-hz = /bits/ 64 <25000000>;
-+		};
-+		opp-100M {
-+			opp-hz = /bits/ 64 <100000000>;
-+		};
-+		opp-600M {
-+			opp-hz = /bits/ 64 <600000000>;
-+		};
-+	};
- };
- 
- &A53_0 {
- 	cpu-supply = <&buck2_reg>;
- };
- 
-+&ddrc {
-+	operating-points-v2 = <&ddrc_opp_table>;
-+};
-+
- &i2c1 {
- 	pmic@4b {
- 		compatible = "rohm,bd71847";
- 		reg = <0x4b>;
- 		pinctrl-0 = <&pinctrl_pmic>;
-diff --git a/arch/arm64/boot/dts/freescale/imx8mn.dtsi b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-index e91625063f8e..344dd777635f 100644
---- a/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-@@ -757,11 +757,25 @@
- 			#interrupt-cells = <3>;
- 			interrupt-controller;
- 			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
- 		};
- 
--		ddr-pmu@3d800000 {
-+		ddrc: dram-controller@3d400000 {
-+			compatible = "fsl,imx8mn-ddrc", "fsl,imx8m-ddrc";
-+			reg = <0x3d400000 0x400000>;
-+			clock-names = "dram_core",
-+				      "dram_pll",
-+				      "dram_alt",
-+				      "dram_apb";
-+			clocks = <&clk IMX8MN_CLK_DRAM_CORE>,
-+				 <&clk IMX8MN_DRAM_PLL>,
-+				 <&clk IMX8MN_CLK_DRAM_ALT>,
-+				 <&clk IMX8MN_CLK_DRAM_APB>;
-+			devfreq-events = <&ddr_pmu>;
-+		};
-+
-+		ddr_pmu: ddr-pmu@3d800000 {
- 			compatible = "fsl,imx8mn-ddr-pmu", "fsl,imx8m-ddr-pmu";
- 			reg = <0x3d800000 0x400000>;
- 			interrupts = <GIC_SPI 98 IRQ_TYPE_LEVEL_HIGH>;
- 		};
- 	};
-diff --git a/arch/arm64/boot/dts/freescale/imx8mq-evk.dts b/arch/arm64/boot/dts/freescale/imx8mq-evk.dts
-index c36685916683..fc4c12ab8991 100644
---- a/arch/arm64/boot/dts/freescale/imx8mq-evk.dts
-+++ b/arch/arm64/boot/dts/freescale/imx8mq-evk.dts
-@@ -85,10 +85,30 @@
- 		link_codec: simple-audio-card,codec {
- 			sound-dai = <&wm8524>;
- 			clocks = <&clk IMX8MQ_CLK_SAI2_ROOT>;
- 		};
- 	};
-+
-+	ddrc_opp_table: ddrc-opp-table {
-+		compatible = "operating-points-v2";
-+
-+		opp-25M {
-+			opp-hz = /bits/ 64 <25000000>;
-+		};
-+		opp-100M {
-+			opp-hz = /bits/ 64 <100000000>;
-+		};
-+		/*
-+		 * On imx8mq B0 PLL can't be bypassed so low bus is 166M
-+		 */
-+		opp-166M {
-+			opp-hz = /bits/ 64 <166935483>;
-+		};
-+		opp-800M {
-+			opp-hz = /bits/ 64 <800000000>;
-+		};
-+	};
- };
- 
- &A53_0 {
- 	cpu-supply = <&buck2_reg>;
- };
-@@ -103,10 +123,14 @@
- 
- &A53_3 {
- 	cpu-supply = <&buck2_reg>;
- };
- 
-+&ddrc {
-+	operating-points-v2 = <&ddrc_opp_table>;
-+};
-+
- &fec1 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_fec1>;
- 	phy-mode = "rgmii-id";
- 	phy-handle = <&ethphy0>;
-diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-index 7f9319452b58..6ef1af41ef68 100644
---- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-@@ -1111,11 +1111,25 @@
- 			interrupt-controller;
- 			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
- 			interrupt-parent = <&gic>;
- 		};
- 
--		ddr-pmu@3d800000 {
-+		ddrc: dram-controller@3d400000 {
-+			compatible = "fsl,imx8mq-ddrc", "fsl,imx8m-ddrc";
-+			reg = <0x3d400000 0x400000>;
-+			clock-names = "dram_core",
-+				      "dram_pll",
-+				      "dram_alt",
-+				      "dram_apb";
-+			clocks = <&clk IMX8MQ_CLK_DRAM_CORE>,
-+				 <&clk IMX8MQ_DRAM_PLL_OUT>,
-+				 <&clk IMX8MQ_CLK_DRAM_ALT>,
-+				 <&clk IMX8MQ_CLK_DRAM_APB>;
-+			devfreq-events = <&ddr_pmu>;
-+		};
-+
-+		ddr_pmu: ddr-pmu@3d800000 {
- 			compatible = "fsl,imx8mq-ddr-pmu", "fsl,imx8m-ddr-pmu";
- 			reg = <0x3d800000 0x400000>;
- 			interrupt-parent = <&gic>;
- 			interrupts = <GIC_SPI 98 IRQ_TYPE_LEVEL_HIGH>;
- 		};
+ #ifdef CONFIG_ARM_PSCI
++	case ARM_CPU_PART_BRAHMA_B53:
++		/* Requires no workaround */
++		break;
+ 	default:
+ 		/* Other ARM CPUs require no workaround */
+ 		if (read_cpuid_implementor() == ARM_CPU_IMP_ARM)
 -- 
 2.17.1
 
