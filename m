@@ -2,54 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2DBEEB43F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 16:52:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6785BEB446
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 16:53:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+KMDoyTL9yjroVrak7CSLF+UUhDtiyPuXXi739AoE4k=; b=HYVnsgQE6zdYV2
-	K/HAyzWaXB9PfYq89fkH4bBUMFotdWqsi3FUrLZpZST2deh8g3tu3p47o7qJ3Wg997ku9dht7DrxW
-	zHzwsn0ehhZoVYWJ0iKrtW6B7yXA+uSxOCVCbu3HsMVjCOWK9BLCTuIZDWAWrkj2Sg4BOSH2Hk1KZ
-	TrZZUWaW4Nny239sIXD32FjA3cRQi8wxFzoO0pZ/eEAsZZXT9d2wI0WBUhD0S9McutoGBkEKT6RVL
-	XjJ3RdssRI6jVwqoQGu+Bpzh+wGPReomRU4Pg4RLPkhOca2BknIKVNWfuX9tnhBRzglUTwNlDRZtj
-	zDHGUC3Q9kP0vs7Db8hQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=20Xv3ltO/MM4GFhKMXelcwJ9hAnCSZLhYuZbWXizzAw=; b=KPWTfr4t9tihNvVmebRG3rz5t
+	7N/hqcCpeL3YFfRR5rGcd18+/E09m+RAqgEH+/LW/7XSJWBWXHHqPWDv0Lc3G7lnKs35AEfhCM10U
+	xvjuU11mScyPJlBYrBemTk/N0IbxX8pepsF7aiudv/8IeumIPtZgZRvxjKSk8K7v+8wb9nN9mctCY
+	NucD/xmkisr5RzF5PO/dtuZFrpALaGFKDa2q8n83nOs6rj2WsDEaGAFOjG38w6OYPsowA1CPpGNvq
+	dmh7MAEO+s6zfvkAXUATgvtCvvwHMeWR20UGAH9gTY1JHre5aI1is/nd9nfvnPn8YkBs2ehvny+J8
+	cLDOCRW3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQCjz-0000hf-CG; Thu, 31 Oct 2019 15:52:03 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQCjm-0000gl-Fv; Thu, 31 Oct 2019 15:51:52 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B2CF41F1;
- Thu, 31 Oct 2019 08:51:49 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- AFB3B3F71E; Thu, 31 Oct 2019 08:51:47 -0700 (PDT)
-Date: Thu, 31 Oct 2019 15:51:45 +0000
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: Re: [PATCH v6 3/4] arm64: use both ZONE_DMA and ZONE_DMA32
-Message-ID: <20191031155145.GF39590@arrakis.emea.arm.com>
-References: <6703f8dab4a21fe4e1049f8f224502e1733bf72c.camel@suse.de>
- <A1A8EEF0-2273-4338-B4D8-D9B1328484B4@lca.pw>
- <9208de061fe2b9ee7b74206b3cd52cc116e43ac0.camel@suse.de>
- <AA6D37F1-A1B3-4EC4-8620-007095168BC7@lca.pw>
- <1956a2c8f4911b2a7e2ba3c53506c0f06efb93f8.camel@suse.de>
+	id 1iQClK-00013c-6c; Thu, 31 Oct 2019 15:53:26 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iQClA-00012j-Dj
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 15:53:19 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id E32D1B7DF;
+ Thu, 31 Oct 2019 15:53:14 +0000 (UTC)
+Message-ID: <40d06d463c05d36968e8b64924d78f7794f8de50.camel@suse.de>
+Subject: Re: [PATCH] dma/direct: turn ARCH_ZONE_DMA_BITS into a variable
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Christoph Hellwig <hch@lst.de>
+Date: Thu, 31 Oct 2019 16:53:13 +0100
+In-Reply-To: <20191031154759.GA7162@lst.de>
+References: <20191031152837.15253-1-nsaenzjulienne@suse.de>
+ <20191031154759.GA7162@lst.de>
+User-Agent: Evolution 3.34.1 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1956a2c8f4911b2a7e2ba3c53506c0f06efb93f8.camel@suse.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_085150_573165_4A858C0C 
-X-CRM114-Status: GOOD (  15.22  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191031_085316_610362_18A46326 
+X-CRM114-Status: GOOD (  16.55  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -63,70 +60,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: f.fainelli@gmail.com, wahrenst@gmx.net, marc.zyngier@arm.com,
- will@kernel.org, Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, linux-mm@kvack.org, mbrugger@suse.com,
- Qian Cai <cai@lca.pw>, linux-rpi-kernel@lists.infradead.org,
- phill@raspberrypi.org, Robin Murphy <Robin.Murphy@arm.com>,
- Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org,
- m.szyprowski@samsung.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-s390@vger.kernel.org, Vasily Gorbik <gor@linux.ibm.com>,
+ Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ linuxppc-dev@lists.ozlabs.org, Heiko Carstens <heiko.carstens@de.ibm.com>,
+ linux-kernel@vger.kernel.org, Christian Borntraeger <borntraeger@de.ibm.com>,
+ iommu@lists.linux-foundation.org, Paul Mackerras <paulus@samba.org>,
+ Michael Ellerman <mpe@ellerman.id.au>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Type: multipart/mixed; boundary="===============6459875798169825110=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-(sorry, I've been away last week and only now caught up with emails)
 
-On Tue, Oct 22, 2019 at 01:23:32PM +0200, Nicolas Saenz Julienne wrote:
-> On Mon, 2019-10-21 at 16:36 -0400, Qian Cai wrote:
-> > I managed to get more information here,
-> > 
-> > [    0.000000] cma: dma_contiguous_reserve(limit c0000000)
-> > [    0.000000] cma: dma_contiguous_reserve: reserving 64 MiB for global area
-> > [    0.000000] cma: cma_declare_contiguous(size 0x0000000004000000, base
-> > 0x0000000000000000, limit 0x00000000c0000000 alignment 0x0000000000000000)
-> > [    0.000000] cma: Failed to reserve 512 MiB
-> > 
-> > Full dmesg:
-> > 
-> > https://cailca.github.io/files/dmesg.txt
-> 
-> OK I got it, reproduced it too.
-> 
-> Here are the relevant logs:
-> 
-> 	[    0.000000]   DMA      [mem 0x00000000802f0000-0x00000000bfffffff]
-> 	[    0.000000]   DMA32    [mem 0x00000000c0000000-0x00000000ffffffff]
-> 	[    0.000000]   Normal   [mem 0x0000000100000000-0x00000097fcffffff]
-> 
-> As you can see ZONE_DMA spans from 0x00000000802f0000-0x00000000bfffffff which
-> is slightly smaller than 1GB.
-> 
-> 	[    0.000000] crashkernel reserved: 0x000000009fe00000 - 0x00000000bfe00000 (512 MB)
-> 
-> Here crashkernel reserved 512M in ZONE_DMA.
-> 
-> 	[    0.000000] cma: Failed to reserve 512 MiB
-> 
-> CMA tried to allocate 512M in ZONE_DMA which fails as there is no enough space.
-> Makes sense.
-> 
-> A fix could be moving crashkernel reservations after CMA and then if unable to
-> fit in ZONE_DMA try ZONE_DMA32 before bailing out. Maybe it's a little over the
-> top, yet although most devices will be fine with ZONE_DMA32, the RPi4 needs
-> crashkernel to be reserved in ZONE_DMA.
-
-Does RPi4 need CMA in ZONE_DMA? If not, I'd rather reserve the CMA from
-ZONE_DMA32.
-
-Even if you moved the crash kernel, someone else might complain that
-they had 2GB of CMA and it no longer works.
+--===============6459875798169825110==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-IbItouLWOYON9B5ojQkb"
 
 
--- 
-Catalin
+--=-IbItouLWOYON9B5ojQkb
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+On Thu, 2019-10-31 at 16:47 +0100, Christoph Hellwig wrote:
+> On Thu, Oct 31, 2019 at 04:28:37PM +0100, Nicolas Saenz Julienne wrote:
+> > Some architectures, notably ARM, are interested in tweaking this
+> > depending on their runtime DMA addressing limitations.
+> >=20
+> > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> > ---
+> >=20
+> > Changes since RFC:
+> >  - Rebased to v5.4-rc6, fixed arm64 code.
+> >=20
+> > NOTE: This will only apply to linux-next, where=20
+>=20
+> missing end of the sentence.  But only applying to linux-next isn't
+> going to help anyone..
+
+Arrgh, excuse me, I meant to delete that line.
+
+> > diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
+> > index 45c00a54909c..f716ea634804 100644
+> > --- a/arch/arm64/mm/init.c
+> > +++ b/arch/arm64/mm/init.c
+> > @@ -20,6 +20,7 @@
+> >  #include <linux/sort.h>
+> >  #include <linux/of.h>
+> >  #include <linux/of_fdt.h>
+> > +#include <linux/dma-direct.h>
+> >  #include <linux/dma-mapping.h>
+> >  #include <linux/dma-contiguous.h>
+> >  #include <linux/efi.h>
+> > @@ -41,6 +42,8 @@
+> >  #include <asm/tlb.h>
+> >  #include <asm/alternative.h>
+> > =20
+> > +#define ARM64_ZONE_DMA_BITS	30
+> > +
+> >  /*
+> >   * We need to be able to catch inadvertent references to memstart_addr
+> >   * that occur (potentially in generic code) before arm64_memblock_init=
+()
+> > @@ -424,6 +427,8 @@ void __init arm64_memblock_init(void)
+> >  	else
+> >  		arm64_dma_phys_limit =3D PHYS_MASK + 1;
+> > =20
+> > +	zone_dma_bits =3D ARM64_ZONE_DMA_BITS;
+> > +
+> >  	reserve_crashkernel();
+>=20
+> This actually adds a new limit, as there wasn't one before for arm64.
+
+Well, as zone_dma_bits is only relevant in dma/direct when ZONE_DMA is defi=
+ned
+I figured it doesn't matter if the variable is set conditionally to ZONE_DM=
+A or
+not.
+
+
+--=-IbItouLWOYON9B5ojQkb
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl27A2kACgkQlfZmHno8
+x/7XBAf+KJ5m8SMWsJJk7jjM0aD1BkIeWDHPYCN7ZJq7655nTwa46aZv3zb18e3J
+4muJ6LfXcTh/PbK64B+/uJ+wGYyg0y4ObyEshTyxygfgDnnyCQ4Mr3kD38jm40tR
+pJh9bItNrHBr+LzC2oZhwwnj4K4haI2q1HO8C6waGzeQLNW6KGmQquBqbROWiTG3
+EJVQ5SwIHesd1qwzVo+Lpba3IHAf6FrVDoZ1/TnUCDgkEvPOX2N20IUroOb0O2Eu
+5L80i++E4veGNr4AxY2Ne0kXVIZWCiZNoO5HpB7EPreFYta5w5JCbVqZDvGl9YGI
+T+txLLE6SqBuvD/E5j2iwzXXv2SqQA==
+=jZsg
+-----END PGP SIGNATURE-----
+
+--=-IbItouLWOYON9B5ojQkb--
+
+
+
+--===============6459875798169825110==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6459875798169825110==--
+
+
