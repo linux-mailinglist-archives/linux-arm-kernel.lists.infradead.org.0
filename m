@@ -2,66 +2,139 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C46BEA955
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 03:49:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18177EA95C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 03:56:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P/rclo2w322FK/xyghSl5Vrel4E4plZa5r2S4VzHB/M=; b=KJsu1wiBj5B9/u
-	7CWoxKWrMet8NMboRnG5FdpijTzwneTq11PmSLm4sF0AJRdn2yecffLxbmjcy4LxXMczxhtkmKfme
-	aD8xApP2AjLZuZaRH1ume8M/n+smtFzYBSTFvZpt5PKl1siP4A6lUnaP//EkUJ25n+NWLqnnwTYFd
-	qBEVbd4ShiXKaJOFbxk8Zs+HLFtYk6cXPs7t82pFVt0wEZAqNKoR2VBE+6pmV2cy5JWcm2fZgUMkQ
-	hq8cMK8IkkMTPswqsCsw2JV7GnXL50eOIQ60fDLniR/8z4dp/EigkOw9LqS0DE6wnMwMPC4W/8zqd
-	QXEWYiMbrVa42LcHPXHA==;
+	List-Owner; bh=zmKhqfjpZukRyc4h+yV2g6OWiNO8osnhjnCdJz7Ie9E=; b=YatLBRn2dboSYX
+	tAex7IRxlqgJWgAwxong3R5csGw/ghRu2M+JLr16/ZRrHvVv63Zvx+1/QE70qocPsUy2bCNcujPkM
+	4ur6Wmf9G30GY41XIr4/g7bUxhDrgGnqu9Paffoan9Zs2KKTWflPwmzBqsXuVzucA2kBKE90MwFNv
+	2GzhsFmWPwcy1O2ib5pbIQXib7nh8EB6VP2TECH2GIV3+BlaDfQ7HfCtUE/GNEnGB2Vk4BV30hfYj
+	I2oNWg/P4IP605fmPsZg+ceBq/ZG2eS52ffDNU2RQJB4n2l+MGnkdyY29PoYMZRyJXkhdOZKSb+3z
+	O/60jgfflhPMgYpb4HrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQ0WJ-0003Rt-FU; Thu, 31 Oct 2019 02:49:07 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1iQ0cv-0006ll-ER; Thu, 31 Oct 2019 02:55:57 +0000
+Received: from mailout4.samsung.com ([203.254.224.34])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQ0W6-0003Qk-NC; Thu, 31 Oct 2019 02:48:57 +0000
-X-UUID: 2110694586e442dca643a6c3d904e623-20191030
-X-UUID: 2110694586e442dca643a6c3d904e623-20191030
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 110641074; Wed, 30 Oct 2019 18:48:26 -0800
-Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 30 Oct 2019 19:48:46 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 31 Oct 2019 10:48:38 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 31 Oct 2019 10:48:38 +0800
-Message-ID: <1572490120.25108.5.camel@mtksdaap41>
-Subject: Re: [PATCH v2] drm/mediatek: support CMDQ interface in ddp component
-From: CK Hu <ck.hu@mediatek.com>
-To: Bibby Hsieh <bibby.hsieh@mediatek.com>
-Date: Thu, 31 Oct 2019 10:48:40 +0800
-In-Reply-To: <20191025053843.16808-3-bibby.hsieh@mediatek.com>
-References: <20191025053843.16808-1-bibby.hsieh@mediatek.com>
- <20191025053843.16808-3-bibby.hsieh@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1iQ0cf-0006l9-1s
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 02:55:43 +0000
+Received: from epcas1p2.samsung.com (unknown [182.195.41.46])
+ by mailout4.samsung.com (KnoxPortal) with ESMTP id
+ 20191031025533epoutp04c139701c66729c5adad11d52f44257da~Sm88g1PZd0921309213epoutp04v
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 31 Oct 2019 02:55:33 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com
+ 20191031025533epoutp04c139701c66729c5adad11d52f44257da~Sm88g1PZd0921309213epoutp04v
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1572490533;
+ bh=sspSSTqpzNiYjZffVd3hhHbrR/X1IETvBAP6ijeDJvM=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=l/kkKlDusoR6ip0qLiU7BP4AonCOGaiRnkzEy7hWLO7sjc7VIehsp/h6ZBMRkk88p
+ d9aQJvg9TBbjjwU7ttAWkkb5BL8jQ0zjZQDZUF6UmJCucnW4DyBMu0OwM/iphHZhh6
+ GYOFJ5ADUCSMNKQtPkW8S1ziK4xeTlXFEO+N/iiM=
+Received: from epsnrtp3.localdomain (unknown [182.195.42.164]) by
+ epcas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20191031025533epcas1p1c3536e718da10fd71e5a684a2f082f2a~Sm88E52jc3144531445epcas1p1a;
+ Thu, 31 Oct 2019 02:55:33 +0000 (GMT)
+Received: from epsmges1p3.samsung.com (unknown [182.195.40.153]) by
+ epsnrtp3.localdomain (Postfix) with ESMTP id 473VLV5533zMqYkZ; Thu, 31 Oct
+ 2019 02:55:30 +0000 (GMT)
+Received: from epcas1p1.samsung.com ( [182.195.41.45]) by
+ epsmges1p3.samsung.com (Symantec Messaging Gateway) with SMTP id
+ B2.BC.04085.22D4ABD5; Thu, 31 Oct 2019 11:55:30 +0900 (KST)
+Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
+ epcas1p4.samsung.com (KnoxPortal) with ESMTPA id
+ 20191031025529epcas1p41580433643982bb082673d91dcc9b9ce~Sm84z03j30530705307epcas1p4b;
+ Thu, 31 Oct 2019 02:55:29 +0000 (GMT)
+Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
+ epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20191031025529epsmtrp25d7fabbed6701e99a9adb642c00f89c7~Sm84y86QN1072710727epsmtrp2Q;
+ Thu, 31 Oct 2019 02:55:29 +0000 (GMT)
+X-AuditID: b6c32a37-e19ff70000000ff5-f6-5dba4d226ecd
+Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
+ epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ D7.4D.24756.12D4ABD5; Thu, 31 Oct 2019 11:55:29 +0900 (KST)
+Received: from [10.113.221.102] (unknown [10.113.221.102]) by
+ epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20191031025529epsmtip24d93453850093c3825fa77ab3061516b~Sm84kxec72027120271epsmtip2X;
+ Thu, 31 Oct 2019 02:55:29 +0000 (GMT)
+Subject: Re: [PATCH v9 7/8] PM / devfreq: Add PM QoS support
+To: Leonard Crestez <leonard.crestez@nxp.com>, Matthias Kaehlcke
+ <mka@chromium.org>, MyungJoo Ham <myungjoo.ham@samsung.com>
+From: Chanwoo Choi <cw00.choi@samsung.com>
+Organization: Samsung Electronics
+Message-ID: <67149311-a716-b175-ee19-fdde3a40b28a@samsung.com>
+Date: Thu, 31 Oct 2019 12:01:01 +0900
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <f538324afaeaef3256b3ea997e67562e940c2e3c.1570044052.git.leonard.crestez@nxp.com>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrEJsWRmVeSWpSXmKPExsWy7bCmrq6S765Yg6Vr1S0OHdvKbvH19ClG
+ i2WXjjJaTN+7ic3i/PkN7BZnm96wW6y4+5HVYtPja6wWXb9WMlt87j3CaPF5w2NGi9uNK9gs
+ Vp87yGbRdegvm8XGrx4O/B7vb7Sye8xuuMjisWBTqcemVZ1sHneu7WHz2Lyk3mPjux1MHgff
+ 7WHy6NuyitHj8ya5AK6obJuM1MSU1CKF1Lzk/JTMvHRbJe/geOd4UzMDQ11DSwtzJYW8xNxU
+ WyUXnwBdt8wcoCeUFMoSc0qBQgGJxcVK+nY2RfmlJakKGfnFJbZKqQUpOQWWBXrFibnFpXnp
+ esn5uVaGBgZGpkCFCdkZL0+9YSr47lCxquUTewPje+MuRk4OCQETie1nljN1MXJxCAnsYJQ4
+ de4EO0hCSOATo8TNKYUQiW+MEpPnXWKF6Wj++BWqYy+jxP8nN1ghnPeMEn9b9rGAVAkL2Ei8
+ uXiVCcQWEaiTuLX4BDNIEbPAc2aJpwdnMoMk2AS0JPa/uMEGYvMLKEpc/fGYEcTmFbCT2Pr+
+ KVgNi4CqxPptbUBxDg5RgQiJ018TIUoEJU7OfMICEuYUiJOY020CEmYWEJe49WQ+E4QtL9G8
+ dTbYWgmBc+wSix/sYoT4wEVi69MFTBC2sMSr41vYIWwpic/v9rJB2NUSK08eYYNo7mCU2LL/
+ AtT7xhL7l05mAlnMLKApsX6XPkRYUWLn77mMEIv5JN597WEFKZEQ4JXoaBOCKFGWuPzgLtRa
+ SYnF7Z1sExiVZiH5ZhaSF2YheWEWwrIFjCyrGMVSC4pz01OLDQuMkSN7EyM4fWuZ72DccM7n
+ EKMAB6MSD++Esp2xQqyJZcWVuYcYJTiYlUR4v9kAhXhTEiurUovy44tKc1KLDzGaAsN6IrOU
+ aHI+MLfklcQbmhoZGxtbmBiamRoaKonzOi5fGiskkJ5YkpqdmlqQWgTTx8TBKdXAKD5/3aOD
+ QfXJX77xf5L6bstzil94jow926bbjBtnL7woXuArcFLE1I15nqnck6e6lY96fq+UclD44/Yj
+ ZHVNyQ8Llzed29siDU/Mrsl2qjoTbSf/nDWXReE094drzZsWH5jULBwm8t1ik8l6c6d65SYF
+ ryfmxQrBSgZ6+lZRTt7uK4wzJ9grsRRnJBpqMRcVJwIAcBlBUPUDAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrHIsWRmVeSWpSXmKPExsWy7bCSvK6i765Yg97LuhaHjm1lt/h6+hSj
+ xbJLRxktpu/dxGZx/vwGdouzTW/YLVbc/chqsenxNVaLrl8rmS0+9x5htPi84TGjxe3GFWwW
+ q88dZLPoOvSXzWLjVw8Hfo/3N1rZPWY3XGTxWLCp1GPTqk42jzvX9rB5bF5S77Hx3Q4mj4Pv
+ 9jB59G1ZxejxeZNcAFcUl01Kak5mWWqRvl0CV8bLU2+YCr47VKxq+cTewPjeuIuRk0NCwESi
+ +eNXpi5GLg4hgd2MEjOm32KFSEhKTLt4lLmLkQPIFpY4fLgYouYto8SaN7vBaoQFbCTeXLzK
+ BGKLCNRJ/Hm+D2wQs8BzZokN97+yQnQ8YpR43feSHaSKTUBLYv+LG2wgNr+AosTVH48ZQWxe
+ ATuJre+fMoPYLAKqEuu3tYHFRQUiJJ5vvwFVIyhxcuYTFpCLOAXiJOZ0m4CEmQXUJf7Mu8QM
+ YYtL3HoynwnClpdo3jqbeQKj8Cwk3bOQtMxC0jILScsCRpZVjJKpBcW56bnFhgWGeanlesWJ
+ ucWleel6yfm5mxjBsayluYPx8pL4Q4wCHIxKPLwTynbGCrEmlhVX5h5ilOBgVhLh/WYDFOJN
+ SaysSi3Kjy8qzUktPsQozcGiJM77NO9YpJBAemJJanZqakFqEUyWiYNTqoFR70LjXbnSPOFj
+ z6NyM0RnHK4LY/v+8ReXS0na5kzFaCddU7G6y0uZc9NFQle9ufWgca5IBFeCn1+3IvufSY8c
+ 7q8vajjjsrVqz8L55501ZK+JaqnMX1n4R4S75m/qa4OONtaQuRGXbSdbNrYxvj5uI/aw/P7+
+ G+3lzGXH1osvTND+MeORw1IlluKMREMt5qLiRABqYeFw4QIAAA==
+X-CMS-MailID: 20191031025529epcas1p41580433643982bb082673d91dcc9b9ce
+X-Msg-Generator: CA
+X-Sendblock-Type: SVC_REQ_APPROVE
+CMS-TYPE: 101P
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20191002192529epcas3p3573b0d65d7b149fe3f2c073e2113a07f
+References: <cover.1570044052.git.leonard.crestez@nxp.com>
+ <CGME20191002192529epcas3p3573b0d65d7b149fe3f2c073e2113a07f@epcas3p3.samsung.com>
+ <f538324afaeaef3256b3ea997e67562e940c2e3c.1570044052.git.leonard.crestez@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_194854_770282_3B530B30 
-X-CRM114-Status: GOOD (  19.68  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191030_195541_439026_6886B099 
+X-CRM114-Status: GOOD (  30.90  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [203.254.224.34 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,620 +146,161 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: drinkcat@chromium.org, Yongqiang Niu <yongqiang.niu@mediatek.com>,
- srv_heupstream@mediatek.com, David Airlie <airlied@linux.ie>,
- Daniel Vetter <daniel.vetter@ffwll.ch>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, tfiga@chromium.org,
- YT Shen <yt.shen@mediatek.com>, Thierry Reding <thierry.reding@gmail.com>,
- linux-mediatek@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
+ Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
+ linux-pm@vger.kernel.org, Viresh Kumar <viresh.kumar@linaro.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ Alexandre Bailon <abailon@baylibre.com>,
+ Georgi Djakov <georgi.djakov@linaro.org>, linux-arm-kernel@lists.infradead.org,
+ Jacky Bai <ping.bai@nxp.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Bibby:
-
-On Fri, 2019-10-25 at 13:38 +0800, Bibby Hsieh wrote:
-> The CMDQ (Command Queue) in MT8183 is used to help
-> update all relevant display controller registers
-> with critical time limation.
-> This patch add cmdq interface in ddp_comp interface,
-> let all ddp_comp interface can support cpu/cmdq function
-> at the same time.
-
-Please also send the patch which use cmdq interface so that I could
-review this interface more completely.
-
-Regards,
-CK
-
-> 
-> This patch depends on ptach:
-> add drm support for MT8183
-> (https://patchwork.kernel.org/cover/11121519/)
-> support gce on mt8183 platform
-> (https://patchwork.kernel.org/cover/11208315/)
-> 
-> Changes since v1:
->  - remove unnecessary change
->  - fixup indent
-> 
-> Signed-off-by: YT Shen <yt.shen@mediatek.com>
-> Signed-off-by: CK Hu <ck.hu@mediatek.com>
-> Signed-off-by: Philipp Zabel <p.zabel@pengutronix.de>
-> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
-> Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> ---
->  drivers/gpu/drm/mediatek/mtk_disp_color.c   |   7 +-
->  drivers/gpu/drm/mediatek/mtk_disp_ovl.c     |  65 +++++------
->  drivers/gpu/drm/mediatek/mtk_disp_rdma.c    |  43 ++++----
->  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c | 114 +++++++++++++-------
->  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h |  53 +++++----
->  5 files changed, 176 insertions(+), 106 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_disp_color.c b/drivers/gpu/drm/mediatek/mtk_disp_color.c
-> index 59de2a46aa49..6fb0d6983a4a 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_disp_color.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_disp_color.c
-> @@ -9,6 +9,7 @@
->  #include <linux/of_device.h>
->  #include <linux/of_irq.h>
->  #include <linux/platform_device.h>
-> +#include <linux/soc/mediatek/mtk-cmdq.h>
->  
->  #include "mtk_drm_crtc.h"
->  #include "mtk_drm_ddp_comp.h"
-> @@ -45,12 +46,12 @@ static inline struct mtk_disp_color *comp_to_color(struct mtk_ddp_comp *comp)
->  
->  static void mtk_color_config(struct mtk_ddp_comp *comp, unsigned int w,
->  			     unsigned int h, unsigned int vrefresh,
-> -			     unsigned int bpc)
-> +			     unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
->  {
->  	struct mtk_disp_color *color = comp_to_color(comp);
->  
-> -	writel(w, comp->regs + DISP_COLOR_WIDTH(color));
-> -	writel(h, comp->regs + DISP_COLOR_HEIGHT(color));
-> +	mtk_ddp_write(cmdq_pkt, w, comp, DISP_COLOR_WIDTH(color));
-> +	mtk_ddp_write(cmdq_pkt, h, comp, DISP_COLOR_HEIGHT(color));
->  }
->  
->  static void mtk_color_start(struct mtk_ddp_comp *comp)
-> diff --git a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-> index d11c20f212e5..1a1b50f4e9ac 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-> @@ -10,6 +10,7 @@
->  #include <linux/of_irq.h>
->  #include <linux/platform_device.h>
->  #include <linux/pm_runtime.h>
-> +#include <linux/soc/mediatek/mtk-cmdq.h>
->  
->  #include "mtk_drm_crtc.h"
->  #include "mtk_drm_ddp_comp.h"
-> @@ -121,14 +122,15 @@ static void mtk_ovl_stop(struct mtk_ddp_comp *comp)
->  
->  static void mtk_ovl_config(struct mtk_ddp_comp *comp, unsigned int w,
->  			   unsigned int h, unsigned int vrefresh,
-> -			   unsigned int bpc)
-> +			   unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
->  {
->  	if (w != 0 && h != 0)
-> -		writel_relaxed(h << 16 | w, comp->regs + DISP_REG_OVL_ROI_SIZE);
-> -	writel_relaxed(0x0, comp->regs + DISP_REG_OVL_ROI_BGCLR);
-> +		mtk_ddp_write_relaxed(cmdq_pkt, h << 16 | w, comp,
-> +				      DISP_REG_OVL_ROI_SIZE);
-> +	mtk_ddp_write_relaxed(cmdq_pkt, 0x0, comp, DISP_REG_OVL_ROI_BGCLR);
->  
-> -	writel(0x1, comp->regs + DISP_REG_OVL_RST);
-> -	writel(0x0, comp->regs + DISP_REG_OVL_RST);
-> +	mtk_ddp_write(cmdq_pkt, 0x1, comp, DISP_REG_OVL_RST);
-> +	mtk_ddp_write(cmdq_pkt, 0x0, comp, DISP_REG_OVL_RST);
->  }
->  
->  static unsigned int mtk_ovl_layer_nr(struct mtk_ddp_comp *comp)
-> @@ -138,16 +140,16 @@ static unsigned int mtk_ovl_layer_nr(struct mtk_ddp_comp *comp)
->  	return ovl->data->layer_nr;
->  }
->  
-> -static void mtk_ovl_layer_on(struct mtk_ddp_comp *comp, unsigned int idx)
-> +static void mtk_ovl_layer_on(struct mtk_ddp_comp *comp, unsigned int idx,
-> +			     struct cmdq_pkt *cmdq_pkt)
->  {
-> -	unsigned int reg;
->  	unsigned int gmc_thrshd_l;
->  	unsigned int gmc_thrshd_h;
->  	unsigned int gmc_value;
->  	struct mtk_disp_ovl *ovl = comp_to_ovl(comp);
->  
-> -	writel(0x1, comp->regs + DISP_REG_OVL_RDMA_CTRL(idx));
-> -
-> +	mtk_ddp_write(cmdq_pkt, 0x1, comp,
-> +		      DISP_REG_OVL_RDMA_CTRL(idx));
->  	gmc_thrshd_l = GMC_THRESHOLD_LOW >>
->  		      (GMC_THRESHOLD_BITS - ovl->data->gmc_bits);
->  	gmc_thrshd_h = GMC_THRESHOLD_HIGH >>
-> @@ -157,22 +159,19 @@ static void mtk_ovl_layer_on(struct mtk_ddp_comp *comp, unsigned int idx)
->  	else
->  		gmc_value = gmc_thrshd_l | gmc_thrshd_l << 8 |
->  			    gmc_thrshd_h << 16 | gmc_thrshd_h << 24;
-> -	writel(gmc_value, comp->regs + DISP_REG_OVL_RDMA_GMC(idx));
-> -
-> -	reg = readl(comp->regs + DISP_REG_OVL_SRC_CON);
-> -	reg = reg | BIT(idx);
-> -	writel(reg, comp->regs + DISP_REG_OVL_SRC_CON);
-> +	mtk_ddp_write(cmdq_pkt, gmc_value,
-> +		      comp, DISP_REG_OVL_RDMA_GMC(idx));
-> +	mtk_ddp_write_mask(cmdq_pkt, BIT(idx), comp,
-> +			   DISP_REG_OVL_SRC_CON, BIT(idx));
->  }
->  
-> -static void mtk_ovl_layer_off(struct mtk_ddp_comp *comp, unsigned int idx)
-> +static void mtk_ovl_layer_off(struct mtk_ddp_comp *comp, unsigned int idx,
-> +			      struct cmdq_pkt *cmdq_pkt)
->  {
-> -	unsigned int reg;
-> -
-> -	reg = readl(comp->regs + DISP_REG_OVL_SRC_CON);
-> -	reg = reg & ~BIT(idx);
-> -	writel(reg, comp->regs + DISP_REG_OVL_SRC_CON);
-> -
-> -	writel(0x0, comp->regs + DISP_REG_OVL_RDMA_CTRL(idx));
-> +	mtk_ddp_write_mask(cmdq_pkt, 0, comp,
-> +			   DISP_REG_OVL_SRC_CON, BIT(idx));
-> +	mtk_ddp_write(cmdq_pkt, 0, comp,
-> +		      DISP_REG_OVL_RDMA_CTRL(idx));
->  }
->  
->  static unsigned int ovl_fmt_convert(struct mtk_disp_ovl *ovl, unsigned int fmt)
-> @@ -212,7 +211,8 @@ static unsigned int ovl_fmt_convert(struct mtk_disp_ovl *ovl, unsigned int fmt)
->  }
->  
->  static void mtk_ovl_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
-> -				 struct mtk_plane_state *state)
-> +				 struct mtk_plane_state *state,
-> +				 struct cmdq_pkt *cmdq_pkt)
->  {
->  	struct mtk_disp_ovl *ovl = comp_to_ovl(comp);
->  	struct mtk_plane_pending_state *pending = &state->pending;
-> @@ -224,20 +224,25 @@ static void mtk_ovl_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
->  	unsigned int con;
->  
->  	if (!pending->enable)
-> -		mtk_ovl_layer_off(comp, idx);
-> +		mtk_ovl_layer_off(comp, idx, cmdq_pkt);
->  
->  	con = ovl_fmt_convert(ovl, fmt);
->  	if (idx != 0)
->  		con |= OVL_CON_AEN | OVL_CON_ALPHA;
->  
-> -	writel_relaxed(con, comp->regs + DISP_REG_OVL_CON(idx));
-> -	writel_relaxed(pitch, comp->regs + DISP_REG_OVL_PITCH(idx));
-> -	writel_relaxed(src_size, comp->regs + DISP_REG_OVL_SRC_SIZE(idx));
-> -	writel_relaxed(offset, comp->regs + DISP_REG_OVL_OFFSET(idx));
-> -	writel_relaxed(addr, comp->regs + DISP_REG_OVL_ADDR(ovl, idx));
-> +	mtk_ddp_write_relaxed(cmdq_pkt, con, comp,
-> +			      DISP_REG_OVL_CON(idx));
-> +	mtk_ddp_write_relaxed(cmdq_pkt, pitch, comp,
-> +			      DISP_REG_OVL_PITCH(idx));
-> +	mtk_ddp_write_relaxed(cmdq_pkt, src_size, comp,
-> +			      DISP_REG_OVL_SRC_SIZE(idx));
-> +	mtk_ddp_write_relaxed(cmdq_pkt, offset, comp,
-> +			      DISP_REG_OVL_OFFSET(idx));
-> +	mtk_ddp_write_relaxed(cmdq_pkt, addr, comp,
-> +			      DISP_REG_OVL_ADDR(ovl, idx));
->  
->  	if (pending->enable)
-> -		mtk_ovl_layer_on(comp, idx);
-> +		mtk_ovl_layer_on(comp, idx, cmdq_pkt);
->  }
->  
->  static void mtk_ovl_bgclr_in_on(struct mtk_ddp_comp *comp)
-> diff --git a/drivers/gpu/drm/mediatek/mtk_disp_rdma.c b/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
-> index 15cc4ae84aee..c1abde3743bf 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
-> @@ -10,6 +10,7 @@
->  #include <linux/of_irq.h>
->  #include <linux/platform_device.h>
->  #include <linux/pm_runtime.h>
-> +#include <linux/soc/mediatek/mtk-cmdq.h>
->  
->  #include "mtk_drm_crtc.h"
->  #include "mtk_drm_ddp_comp.h"
-> @@ -127,15 +128,17 @@ static void mtk_rdma_stop(struct mtk_ddp_comp *comp)
->  
->  static void mtk_rdma_config(struct mtk_ddp_comp *comp, unsigned int width,
->  			    unsigned int height, unsigned int vrefresh,
-> -			    unsigned int bpc)
-> +			    unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
->  {
->  	unsigned int threshold;
->  	unsigned int reg;
->  	struct mtk_disp_rdma *rdma = comp_to_rdma(comp);
->  	u32 rdma_fifo_size;
->  
-> -	rdma_update_bits(comp, DISP_REG_RDMA_SIZE_CON_0, 0xfff, width);
-> -	rdma_update_bits(comp, DISP_REG_RDMA_SIZE_CON_1, 0xfffff, height);
-> +	mtk_ddp_write_mask(cmdq_pkt, width, comp,
-> +			   DISP_REG_RDMA_SIZE_CON_0, 0xfff);
-> +	mtk_ddp_write_mask(cmdq_pkt, height, comp,
-> +			   DISP_REG_RDMA_SIZE_CON_1, 0xfffff);
->  
->  	if (rdma->fifo_size)
->  		rdma_fifo_size = rdma->fifo_size;
-> @@ -152,7 +155,7 @@ static void mtk_rdma_config(struct mtk_ddp_comp *comp, unsigned int width,
->  	reg = RDMA_FIFO_UNDERFLOW_EN |
->  	      RDMA_FIFO_PSEUDO_SIZE(rdma_fifo_size) |
->  	      RDMA_OUTPUT_VALID_FIFO_THRESHOLD(threshold);
-> -	writel(reg, comp->regs + DISP_REG_RDMA_FIFO_CON);
-> +	mtk_ddp_write(cmdq_pkt, reg, comp, DISP_REG_RDMA_FIFO_CON);
->  }
->  
->  static unsigned int rdma_fmt_convert(struct mtk_disp_rdma *rdma,
-> @@ -198,7 +201,8 @@ static unsigned int mtk_rdma_layer_nr(struct mtk_ddp_comp *comp)
->  }
->  
->  static void mtk_rdma_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
-> -				  struct mtk_plane_state *state)
-> +				  struct mtk_plane_state *state,
-> +				  struct cmdq_pkt *cmdq_pkt)
->  {
->  	struct mtk_disp_rdma *rdma = comp_to_rdma(comp);
->  	struct mtk_plane_pending_state *pending = &state->pending;
-> @@ -208,24 +212,27 @@ static void mtk_rdma_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
->  	unsigned int con;
->  
->  	con = rdma_fmt_convert(rdma, fmt);
-> -	writel_relaxed(con, comp->regs + DISP_RDMA_MEM_CON);
-> +	mtk_ddp_write_relaxed(cmdq_pkt, con, comp, DISP_RDMA_MEM_CON);
->  
->  	if (fmt == DRM_FORMAT_UYVY || fmt == DRM_FORMAT_YUYV) {
-> -		rdma_update_bits(comp, DISP_REG_RDMA_SIZE_CON_0,
-> -				 RDMA_MATRIX_ENABLE, RDMA_MATRIX_ENABLE);
-> -		rdma_update_bits(comp, DISP_REG_RDMA_SIZE_CON_0,
-> -				 RDMA_MATRIX_INT_MTX_SEL,
-> -				 RDMA_MATRIX_INT_MTX_BT601_to_RGB);
-> +		mtk_ddp_write_mask(cmdq_pkt, RDMA_MATRIX_ENABLE, comp,
-> +				   DISP_REG_RDMA_SIZE_CON_0,
-> +				   RDMA_MATRIX_ENABLE);
-> +		mtk_ddp_write_mask(cmdq_pkt, RDMA_MATRIX_INT_MTX_BT601_to_RGB,
-> +				   comp, DISP_REG_RDMA_SIZE_CON_0,
-> +				   RDMA_MATRIX_INT_MTX_SEL);
->  	} else {
-> -		rdma_update_bits(comp, DISP_REG_RDMA_SIZE_CON_0,
-> -				 RDMA_MATRIX_ENABLE, 0);
-> +		mtk_ddp_write_mask(cmdq_pkt, 0, comp,
-> +				   DISP_REG_RDMA_SIZE_CON_0,
-> +				   RDMA_MATRIX_ENABLE);
->  	}
-> +	mtk_ddp_write_relaxed(cmdq_pkt, addr, comp, DISP_RDMA_MEM_START_ADDR);
-> +	mtk_ddp_write_relaxed(cmdq_pkt, pitch, comp, DISP_RDMA_MEM_SRC_PITCH);
-> +	mtk_ddp_write(cmdq_pkt, RDMA_MEM_GMC, comp,
-> +		      DISP_RDMA_MEM_GMC_SETTING_0);
-> +	mtk_ddp_write_mask(cmdq_pkt, RDMA_MODE_MEMORY, comp,
-> +			   DISP_REG_RDMA_GLOBAL_CON, RDMA_MODE_MEMORY);
->  
-> -	writel_relaxed(addr, comp->regs + DISP_RDMA_MEM_START_ADDR);
-> -	writel_relaxed(pitch, comp->regs + DISP_RDMA_MEM_SRC_PITCH);
-> -	writel(RDMA_MEM_GMC, comp->regs + DISP_RDMA_MEM_GMC_SETTING_0);
-> -	rdma_update_bits(comp, DISP_REG_RDMA_GLOBAL_CON,
-> -			 RDMA_MODE_MEMORY, RDMA_MODE_MEMORY);
->  }
->  
->  static const struct mtk_ddp_comp_funcs mtk_disp_rdma_funcs = {
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-> index 3407d38aff8f..0abe47246483 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-> @@ -12,7 +12,8 @@
->  #include <linux/of_irq.h>
->  #include <linux/of_platform.h>
->  #include <linux/platform_device.h>
-> -
-> +#include <drm/drmP.h>
-> +#include <linux/soc/mediatek/mtk-cmdq.h>
->  #include "mtk_drm_drv.h"
->  #include "mtk_drm_plane.h"
->  #include "mtk_drm_ddp_comp.h"
-> @@ -76,36 +77,76 @@
->  #define DITHER_ADD_LSHIFT_G(x)			(((x) & 0x7) << 4)
->  #define DITHER_ADD_RSHIFT_G(x)			(((x) & 0x7) << 0)
->  
-> +void mtk_ddp_write(struct cmdq_pkt *cmdq_pkt, unsigned int value,
-> +		   struct mtk_ddp_comp *comp, unsigned int offset)
-> +{
-> +	if (IS_ENABLED(CONFIG_MTK_CMDQ) && cmdq_pkt)
-> +		cmdq_pkt_write(cmdq_pkt, comp->subsys,
-> +			       comp->regs_pa + offset, value);
-> +	else
-> +		writel(value, comp->regs + offset);
-> +}
-> +
-> +void mtk_ddp_write_relaxed(struct cmdq_pkt *cmdq_pkt, unsigned int value,
-> +			   struct mtk_ddp_comp *comp,
-> +			   unsigned int offset)
-> +{
-> +	if (IS_ENABLED(CONFIG_MTK_CMDQ) && cmdq_pkt)
-> +		cmdq_pkt_write(cmdq_pkt, comp->subsys,
-> +			       comp->regs_pa + offset, value);
-> +	else
-> +		writel_relaxed(value, comp->regs + offset);
-> +}
-> +
-> +void mtk_ddp_write_mask(struct cmdq_pkt *cmdq_pkt,
-> +			unsigned int value,
-> +			struct mtk_ddp_comp *comp,
-> +			unsigned int offset,
-> +			unsigned int mask)
-> +{
-> +	if (IS_ENABLED(CONFIG_MTK_CMDQ) && cmdq_pkt) {
-> +		cmdq_pkt_write_mask(cmdq_pkt, comp->subsys,
-> +				    comp->regs_pa + offset, value, mask);
-> +	} else {
-> +		u32 tmp = readl(comp->regs + offset);
-> +
-> +		tmp = (tmp & ~mask) | (value & mask);
-> +		writel(tmp, comp->regs + offset);
-> +	}
-> +}
-> +
->  void mtk_dither_set(struct mtk_ddp_comp *comp, unsigned int bpc,
-> -		    unsigned int CFG)
-> +		    unsigned int CFG, struct cmdq_pkt *cmdq_pkt)
->  {
->  	/* If bpc equal to 0, the dithering function didn't be enabled */
->  	if (bpc == 0)
->  		return;
->  
->  	if (bpc >= MTK_MIN_BPC) {
-> -		writel(0, comp->regs + DISP_DITHER_5);
-> -		writel(0, comp->regs + DISP_DITHER_7);
-> -		writel(DITHER_LSB_ERR_SHIFT_R(MTK_MAX_BPC - bpc) |
-> -		       DITHER_ADD_LSHIFT_R(MTK_MAX_BPC - bpc) |
-> -		       DITHER_NEW_BIT_MODE,
-> -		       comp->regs + DISP_DITHER_15);
-> -		writel(DITHER_LSB_ERR_SHIFT_B(MTK_MAX_BPC - bpc) |
-> -		       DITHER_ADD_LSHIFT_B(MTK_MAX_BPC - bpc) |
-> -		       DITHER_LSB_ERR_SHIFT_G(MTK_MAX_BPC - bpc) |
-> -		       DITHER_ADD_LSHIFT_G(MTK_MAX_BPC - bpc),
-> -		       comp->regs + DISP_DITHER_16);
-> -		writel(DISP_DITHERING, comp->regs + CFG);
-> +		mtk_ddp_write(cmdq_pkt, 0, comp, DISP_DITHER_5);
-> +		mtk_ddp_write(cmdq_pkt, 0, comp, DISP_DITHER_7);
-> +		mtk_ddp_write(cmdq_pkt,
-> +			      DITHER_LSB_ERR_SHIFT_R(MTK_MAX_BPC - bpc) |
-> +			      DITHER_ADD_LSHIFT_R(MTK_MAX_BPC - bpc) |
-> +			      DITHER_NEW_BIT_MODE,
-> +			      comp, DISP_DITHER_15);
-> +		mtk_ddp_write(cmdq_pkt,
-> +			      DITHER_LSB_ERR_SHIFT_B(MTK_MAX_BPC - bpc) |
-> +			      DITHER_ADD_LSHIFT_B(MTK_MAX_BPC - bpc) |
-> +			      DITHER_LSB_ERR_SHIFT_G(MTK_MAX_BPC - bpc) |
-> +			      DITHER_ADD_LSHIFT_G(MTK_MAX_BPC - bpc),
-> +			      comp, DISP_DITHER_16);
-> +		mtk_ddp_write(cmdq_pkt, DISP_DITHERING, comp, CFG);
->  	}
->  }
->  
->  static void mtk_od_config(struct mtk_ddp_comp *comp, unsigned int w,
->  			  unsigned int h, unsigned int vrefresh,
-> -			  unsigned int bpc)
-> +			  unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
->  {
-> -	writel(w << 16 | h, comp->regs + DISP_OD_SIZE);
-> -	writel(OD_RELAYMODE, comp->regs + DISP_OD_CFG);
-> -	mtk_dither_set(comp, bpc, DISP_OD_CFG);
-> +	mtk_ddp_write(cmdq_pkt, w << 16 | h, comp, DISP_OD_SIZE);
-> +	mtk_ddp_write(cmdq_pkt, OD_RELAYMODE, comp, DISP_OD_CFG);
-> +	mtk_dither_set(comp, bpc, DISP_OD_CFG, cmdq_pkt);
->  }
->  
->  static void mtk_od_start(struct mtk_ddp_comp *comp)
-> @@ -120,9 +161,9 @@ static void mtk_ufoe_start(struct mtk_ddp_comp *comp)
->  
->  static void mtk_aal_config(struct mtk_ddp_comp *comp, unsigned int w,
->  			   unsigned int h, unsigned int vrefresh,
-> -			   unsigned int bpc)
-> +			   unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
->  {
-> -	writel(h << 16 | w, comp->regs + DISP_AAL_SIZE);
-> +	mtk_ddp_write(cmdq_pkt, h << 16 | w, comp, DISP_AAL_SIZE);
->  }
->  
->  static void mtk_aal_start(struct mtk_ddp_comp *comp)
-> @@ -137,10 +178,10 @@ static void mtk_aal_stop(struct mtk_ddp_comp *comp)
->  
->  static void mtk_ccorr_config(struct mtk_ddp_comp *comp, unsigned int w,
->  			     unsigned int h, unsigned int vrefresh,
-> -			     unsigned int bpc)
-> +			     unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
->  {
-> -	writel(h << 16 | w, comp->regs + DISP_CCORR_SIZE);
-> -	writel(CCORR_RELAY_MODE, comp->regs + DISP_CCORR_CFG);
-> +	mtk_ddp_write(cmdq_pkt, h << 16 | w, comp, DISP_CCORR_SIZE);
-> +	mtk_ddp_write(cmdq_pkt, CCORR_RELAY_MODE, comp, DISP_CCORR_CFG);
->  }
->  
->  static void mtk_ccorr_start(struct mtk_ddp_comp *comp)
-> @@ -155,10 +196,10 @@ static void mtk_ccorr_stop(struct mtk_ddp_comp *comp)
->  
->  static void mtk_dither_config(struct mtk_ddp_comp *comp, unsigned int w,
->  			      unsigned int h, unsigned int vrefresh,
-> -			      unsigned int bpc)
-> +			      unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
->  {
-> -	writel(h << 16 | w, comp->regs + DISP_DITHER_SIZE);
-> -	writel(DITHER_RELAY_MODE, comp->regs + DISP_DITHER_CFG);
-> +	mtk_ddp_write(cmdq_pkt, h << 16 | w, comp, DISP_DITHER_SIZE);
-> +	mtk_ddp_write(cmdq_pkt, DITHER_RELAY_MODE, comp, DISP_DITHER_CFG);
->  }
->  
->  static void mtk_dither_start(struct mtk_ddp_comp *comp)
-> @@ -173,10 +214,10 @@ static void mtk_dither_stop(struct mtk_ddp_comp *comp)
->  
->  static void mtk_gamma_config(struct mtk_ddp_comp *comp, unsigned int w,
->  			     unsigned int h, unsigned int vrefresh,
-> -			     unsigned int bpc)
-> +			     unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
->  {
-> -	writel(h << 16 | w, comp->regs + DISP_GAMMA_SIZE);
-> -	mtk_dither_set(comp, bpc, DISP_GAMMA_CFG);
-> +	mtk_ddp_write(cmdq_pkt, h << 16 | w, comp, DISP_GAMMA_SIZE);
-> +	mtk_dither_set(comp, bpc, DISP_GAMMA_CFG, cmdq_pkt);
->  }
->  
->  static void mtk_gamma_start(struct mtk_ddp_comp *comp)
-> @@ -190,24 +231,23 @@ static void mtk_gamma_stop(struct mtk_ddp_comp *comp)
->  }
->  
->  static void mtk_gamma_set(struct mtk_ddp_comp *comp,
-> -			  struct drm_crtc_state *state)
-> +			  struct drm_crtc_state *state,
-> +			  struct cmdq_pkt *cmdq_pkt)
->  {
-> -	unsigned int i, reg;
-> +	unsigned int i;
->  	struct drm_color_lut *lut;
-> -	void __iomem *lut_base;
->  	u32 word;
->  
->  	if (state->gamma_lut) {
-> -		reg = readl(comp->regs + DISP_GAMMA_CFG);
-> -		reg = reg | GAMMA_LUT_EN;
-> -		writel(reg, comp->regs + DISP_GAMMA_CFG);
-> -		lut_base = comp->regs + DISP_GAMMA_LUT;
-> +		mtk_ddp_write_mask(cmdq_pkt, GAMMA_LUT_EN, comp,
-> +				   DISP_GAMMA_CFG, GAMMA_LUT_EN);
->  		lut = (struct drm_color_lut *)state->gamma_lut->data;
->  		for (i = 0; i < MTK_LUT_SIZE; i++) {
->  			word = (((lut[i].red >> 6) & LUT_10BIT_MASK) << 20) +
->  				(((lut[i].green >> 6) & LUT_10BIT_MASK) << 10) +
->  				((lut[i].blue >> 6) & LUT_10BIT_MASK);
-> -			writel(word, (lut_base + i * 4));
-> +			mtk_ddp_write(cmdq_pkt, word, comp,
-> +				      DISP_GAMMA_LUT + i * 4);
->  		}
->  	}
->  }
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-> index 52f5aa8f21ca..237dd43d603c 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-> @@ -69,21 +69,26 @@ enum mtk_ddp_comp_id {
->  };
->  
->  struct mtk_ddp_comp;
-> -
-> +struct cmdq_pkt;
->  struct mtk_ddp_comp_funcs {
->  	void (*config)(struct mtk_ddp_comp *comp, unsigned int w,
-> -		       unsigned int h, unsigned int vrefresh, unsigned int bpc);
-> +		       unsigned int h, unsigned int vrefresh,
-> +		       unsigned int bpc, struct cmdq_pkt *cmdq_pkt);
->  	void (*start)(struct mtk_ddp_comp *comp);
->  	void (*stop)(struct mtk_ddp_comp *comp);
->  	void (*enable_vblank)(struct mtk_ddp_comp *comp, struct drm_crtc *crtc);
->  	void (*disable_vblank)(struct mtk_ddp_comp *comp);
->  	unsigned int (*layer_nr)(struct mtk_ddp_comp *comp);
-> -	void (*layer_on)(struct mtk_ddp_comp *comp, unsigned int idx);
-> -	void (*layer_off)(struct mtk_ddp_comp *comp, unsigned int idx);
-> +	void (*layer_on)(struct mtk_ddp_comp *comp, unsigned int idx,
-> +			 struct cmdq_pkt *cmdq_pkt);
-> +	void (*layer_off)(struct mtk_ddp_comp *comp, unsigned int idx,
-> +			  struct cmdq_pkt *cmdq_pkt);
->  	void (*layer_config)(struct mtk_ddp_comp *comp, unsigned int idx,
-> -			     struct mtk_plane_state *state);
-> +			     struct mtk_plane_state *state,
-> +			     struct cmdq_pkt *cmdq_pkt);
->  	void (*gamma_set)(struct mtk_ddp_comp *comp,
-> -			  struct drm_crtc_state *state);
-> +			  struct drm_crtc_state *state,
-> +			  struct cmdq_pkt *cmdq_pkt);
->  	void (*bgclr_in_on)(struct mtk_ddp_comp *comp);
->  	void (*bgclr_in_off)(struct mtk_ddp_comp *comp);
->  };
-> @@ -99,10 +104,11 @@ struct mtk_ddp_comp {
->  
->  static inline void mtk_ddp_comp_config(struct mtk_ddp_comp *comp,
->  				       unsigned int w, unsigned int h,
-> -				       unsigned int vrefresh, unsigned int bpc)
-> +				       unsigned int vrefresh, unsigned int bpc,
-> +				       struct cmdq_pkt *cmdq_pkt)
->  {
->  	if (comp->funcs && comp->funcs->config)
-> -		comp->funcs->config(comp, w, h, vrefresh, bpc);
-> +		comp->funcs->config(comp, w, h, vrefresh, bpc, cmdq_pkt);
->  }
->  
->  static inline void mtk_ddp_comp_start(struct mtk_ddp_comp *comp)
-> @@ -139,32 +145,36 @@ static inline unsigned int mtk_ddp_comp_layer_nr(struct mtk_ddp_comp *comp)
->  }
->  
->  static inline void mtk_ddp_comp_layer_on(struct mtk_ddp_comp *comp,
-> -					 unsigned int idx)
-> +					 unsigned int idx,
-> +					 struct cmdq_pkt *cmdq_pkt)
->  {
->  	if (comp->funcs && comp->funcs->layer_on)
-> -		comp->funcs->layer_on(comp, idx);
-> +		comp->funcs->layer_on(comp, idx, cmdq_pkt);
->  }
->  
->  static inline void mtk_ddp_comp_layer_off(struct mtk_ddp_comp *comp,
-> -					  unsigned int idx)
-> +					  unsigned int idx,
-> +					  struct cmdq_pkt *cmdq_pkt)
->  {
->  	if (comp->funcs && comp->funcs->layer_off)
-> -		comp->funcs->layer_off(comp, idx);
-> +		comp->funcs->layer_off(comp, idx, cmdq_pkt);
->  }
->  
->  static inline void mtk_ddp_comp_layer_config(struct mtk_ddp_comp *comp,
->  					     unsigned int idx,
-> -					     struct mtk_plane_state *state)
-> +					     struct mtk_plane_state *state,
-> +					     struct cmdq_pkt *cmdq_pkt)
->  {
->  	if (comp->funcs && comp->funcs->layer_config)
-> -		comp->funcs->layer_config(comp, idx, state);
-> +		comp->funcs->layer_config(comp, idx, state, cmdq_pkt);
->  }
->  
->  static inline void mtk_ddp_gamma_set(struct mtk_ddp_comp *comp,
-> -				     struct drm_crtc_state *state)
-> +				     struct drm_crtc_state *state,
-> +				     struct cmdq_pkt *cmdq_pkt)
->  {
->  	if (comp->funcs && comp->funcs->gamma_set)
-> -		comp->funcs->gamma_set(comp, state);
-> +		comp->funcs->gamma_set(comp, state, cmdq_pkt);
->  }
->  
->  static inline void mtk_ddp_comp_bgclr_in_on(struct mtk_ddp_comp *comp)
-> @@ -187,6 +197,13 @@ int mtk_ddp_comp_init(struct device *dev, struct device_node *comp_node,
->  int mtk_ddp_comp_register(struct drm_device *drm, struct mtk_ddp_comp *comp);
->  void mtk_ddp_comp_unregister(struct drm_device *drm, struct mtk_ddp_comp *comp);
->  void mtk_dither_set(struct mtk_ddp_comp *comp, unsigned int bpc,
-> -		    unsigned int CFG);
-> -
-> +		    unsigned int CFG, struct cmdq_pkt *cmdq_pkt);
-> +enum mtk_ddp_comp_type mtk_ddp_comp_get_type(enum mtk_ddp_comp_id comp_id);
-> +void mtk_ddp_write(struct cmdq_pkt *cmdq_pkt, unsigned int value,
-> +		   struct mtk_ddp_comp *comp, unsigned int offset);
-> +void mtk_ddp_write_relaxed(struct cmdq_pkt *cmdq_pkt, unsigned int value,
-> +			   struct mtk_ddp_comp *comp, unsigned int offset);
-> +void mtk_ddp_write_mask(struct cmdq_pkt *cmdq_pkt, unsigned int value,
-> +			struct mtk_ddp_comp *comp, unsigned int offset,
-> +			unsigned int mask);
->  #endif /* MTK_DRM_DDP_COMP_H */
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgTGVvbmFyZCwKCkl0IGxvb2tzIGdvb2QgdG8gbWUuIFRoYW5rcyBmb3IgeW91ciBlZmZvcnQu
+CkJ1dCwgSSBoYXZlIG9uZSBtaW5vciBjb21tZW50IHJlbGF0ZWQgdG8gJ292ZXIgODAgY2hhcicu
+CgpJbiB0aGUgZGV2ZnJlcV9kZXZfcmVsZWFzZSgpLCBwbGVhc2UgZWRpdCB0aGlzIGxpbmUKYXMg
+Zm9sbG93aW5nIHRvIHByb3RlY3QgdGhlIG92ZXIgODAgY2hhciBvbiBvbmUgbGluZQppZiB0aGVy
+ZSBhcmUgbm8gc3BlY2lmaWMgcmVhc29uLgoKCQlkZXZfd2FybihkZXYtPnBhcmVudCwKCQkJIkZh
+aWxlZCB0byByZW1vdmUgREVWX1BNX1FPU19NQVhfRlJFUVVFTkNZIG5vdGlmaWVyOiAlZFxuIiwK
+CQkJZXJyKTsKCgkJZGV2X3dhcm4oZGV2LT5wYXJlbnQsCgkJCSJGYWlsZWQgdG8gcmVtb3ZlIERF
+Vl9QTV9RT1NfTUlOX0ZSRVFVRU5DWSBub3RpZmllcjogJWRcbiIsCgkJCWVycik7CgoKSWYgeW91
+IGVkaXQgdGhlbSwgZmVlbCBmcmVlIHRvIGFkZCBteSByZXZpZXdlZC1ieSB0YWc6CgpSZXZpZXdl
+ZC1ieTogQ2hhbndvbyBDaG9pIDxjdzAwLmNob2lAc2Ftc3VuZy5jb20+CgoKT24gMTkuIDEwLiAz
+LiDsmKTsoIQgNDoyNSwgTGVvbmFyZCBDcmVzdGV6IHdyb3RlOgo+IFJlZ2lzdGVyIG5vdGlmaWVy
+cyB3aXRoIHRoZSBQTSBRb1MgZnJhbWV3b3JrIGluIG9yZGVyIHRvIHJlc3BvbmQgdG8KPiByZXF1
+ZXN0cyBmb3IgREVWX1BNX1FPU19NSU5fRlJFUVVFTkNZIGFuZCBERVZfUE1fUU9TX01BWF9GUkVR
+VUVOQ1kuCj4gCj4gTm8gbm90aWZpZXJzIGFyZSBhZGRlZCBieSB0aGlzIHBhdGNoIGJ1dCBQTSBR
+b1MgY29uc3RyYWludHMgY2FuIGJlCj4gaW1wb3NlZCBleHRlcm5hbGx5IChmb3IgZXhhbXBsZSBm
+cm9tIG90aGVyIGRldmljZXMpLgo+IAo+IFNpZ25lZC1vZmYtYnk6IExlb25hcmQgQ3Jlc3RleiA8
+bGVvbmFyZC5jcmVzdGV6QG54cC5jb20+Cj4gLS0tCj4gIGRyaXZlcnMvZGV2ZnJlcS9kZXZmcmVx
+LmMgfCA3OCArKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysKPiAgaW5jbHVk
+ZS9saW51eC9kZXZmcmVxLmggICB8ICA1ICsrKwo+ICAyIGZpbGVzIGNoYW5nZWQsIDgzIGluc2Vy
+dGlvbnMoKykKPiAKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9kZXZmcmVxL2RldmZyZXEuYyBiL2Ry
+aXZlcnMvZGV2ZnJlcS9kZXZmcmVxLmMKPiBpbmRleCAyZDYzNjkyOTAzZmYuLjQ2ZjY5OWI4NGEy
+MiAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL2RldmZyZXEvZGV2ZnJlcS5jCj4gKysrIGIvZHJpdmVy
+cy9kZXZmcmVxL2RldmZyZXEuYwo+IEBAIC0yMiwxNSArMjIsMTggQEAKPiAgI2luY2x1ZGUgPGxp
+bnV4L3BsYXRmb3JtX2RldmljZS5oPgo+ICAjaW5jbHVkZSA8bGludXgvbGlzdC5oPgo+ICAjaW5j
+bHVkZSA8bGludXgvcHJpbnRrLmg+Cj4gICNpbmNsdWRlIDxsaW51eC9ocnRpbWVyLmg+Cj4gICNp
+bmNsdWRlIDxsaW51eC9vZi5oPgo+ICsjaW5jbHVkZSA8bGludXgvcG1fcW9zLmg+Cj4gICNpbmNs
+dWRlICJnb3Zlcm5vci5oIgo+ICAKPiAgI2RlZmluZSBDUkVBVEVfVFJBQ0VfUE9JTlRTCj4gICNp
+bmNsdWRlIDx0cmFjZS9ldmVudHMvZGV2ZnJlcS5oPgo+ICAKPiArI2RlZmluZSBIWl9QRVJfS0ha
+CTEwMDAKPiArCj4gIHN0YXRpYyBzdHJ1Y3QgY2xhc3MgKmRldmZyZXFfY2xhc3M7Cj4gIAo+ICAv
+Kgo+ICAgKiBkZXZmcmVxIGNvcmUgcHJvdmlkZXMgZGVsYXllZCB3b3JrIGJhc2VkIGxvYWQgbW9u
+aXRvcmluZyBoZWxwZXIKPiAgICogZnVuY3Rpb25zLiBHb3Zlcm5vcnMgY2FuIHVzZSB0aGVzZSBv
+ciBjYW4gaW1wbGVtZW50IHRoZWlyIG93bgo+IEBAIC0xMDksMTAgKzExMiwxMSBAQCBzdGF0aWMg
+dW5zaWduZWQgbG9uZyBmaW5kX2F2YWlsYWJsZV9tYXhfZnJlcShzdHJ1Y3QgZGV2ZnJlcSAqZGV2
+ZnJlcSkKPiAgc3RhdGljIHZvaWQgZ2V0X2ZyZXFfcmFuZ2Uoc3RydWN0IGRldmZyZXEgKmRldmZy
+ZXEsCj4gIAkJCSAgIHVuc2lnbmVkIGxvbmcgKm1pbl9mcmVxLAo+ICAJCQkgICB1bnNpZ25lZCBs
+b25nICptYXhfZnJlcSkKPiAgewo+ICAJdW5zaWduZWQgbG9uZyAqZnJlcV90YWJsZSA9IGRldmZy
+ZXEtPnByb2ZpbGUtPmZyZXFfdGFibGU7Cj4gKwlzMzIgcW9zX21pbl9mcmVxLCBxb3NfbWF4X2Zy
+ZXE7Cj4gIAo+ICAJbG9ja2RlcF9hc3NlcnRfaGVsZCgmZGV2ZnJlcS0+bG9jayk7Cj4gIAo+ICAJ
+LyoKPiAgCSAqIEluaXRpYWxpemUgbWluaW11bS9tYXhpbXVtIGZyZXF1ZW5jeSBmcm9tIGZyZXEg
+dGFibGUuCj4gQEAgLTEyNSwxMCArMTI5LDIwIEBAIHN0YXRpYyB2b2lkIGdldF9mcmVxX3Jhbmdl
+KHN0cnVjdCBkZXZmcmVxICpkZXZmcmVxLAo+ICAJfSBlbHNlIHsKPiAgCQkqbWluX2ZyZXEgPSBm
+cmVxX3RhYmxlW2RldmZyZXEtPnByb2ZpbGUtPm1heF9zdGF0ZSAtIDFdOwo+ICAJCSptYXhfZnJl
+cSA9IGZyZXFfdGFibGVbMF07Cj4gIAl9Cj4gIAo+ICsJLyogQXBwbHkgY29uc3RyYWludHMgZnJv
+bSBQTSBRb1MgKi8KPiArCXFvc19taW5fZnJlcSA9IGRldl9wbV9xb3NfcmVhZF92YWx1ZShkZXZm
+cmVxLT5kZXYucGFyZW50LAo+ICsJCQkJCSAgICAgREVWX1BNX1FPU19NSU5fRlJFUVVFTkNZKTsK
+PiArCXFvc19tYXhfZnJlcSA9IGRldl9wbV9xb3NfcmVhZF92YWx1ZShkZXZmcmVxLT5kZXYucGFy
+ZW50LAo+ICsJCQkJCSAgICAgREVWX1BNX1FPU19NQVhfRlJFUVVFTkNZKTsKPiArCSptaW5fZnJl
+cSA9IG1heCgqbWluX2ZyZXEsICh1bnNpZ25lZCBsb25nKUhaX1BFUl9LSFogKiBxb3NfbWluX2Zy
+ZXEpOwo+ICsJaWYgKHFvc19tYXhfZnJlcSAhPSBQTV9RT1NfTUFYX0ZSRVFVRU5DWV9ERUZBVUxU
+X1ZBTFVFKQo+ICsJCSptYXhfZnJlcSA9IG1pbigqbWF4X2ZyZXEsCj4gKwkJCQkodW5zaWduZWQg
+bG9uZylIWl9QRVJfS0haICogcW9zX21heF9mcmVxKTsKPiArCj4gIAkvKiBBcHBseSBjb25zdHJh
+aW50cyBmcm9tIHN5c2ZzICovCj4gIAkqbWluX2ZyZXEgPSBtYXgoKm1pbl9mcmVxLCBkZXZmcmVx
+LT5taW5fZnJlcSk7Cj4gIAkqbWF4X2ZyZXEgPSBtaW4oKm1heF9mcmVxLCBkZXZmcmVxLT5tYXhf
+ZnJlcSk7Cj4gIAo+ICAJLyogQXBwbHkgY29uc3RyYWludHMgZnJvbSBPUFAgaW50ZXJmYWNlICov
+Cj4gQEAgLTYwOCwyNCArNjIyLDc1IEBAIHN0YXRpYyBpbnQgZGV2ZnJlcV9ub3RpZmllcl9jYWxs
+KHN0cnVjdCBub3RpZmllcl9ibG9jayAqbmIsIHVuc2lnbmVkIGxvbmcgdHlwZSwKPiAgCQkJZXJy
+KTsKPiAgCj4gIAlyZXR1cm4gTk9USUZZX09LOwo+ICB9Cj4gIAo+ICsvKioKPiArICogcW9zX25v
+dGlmaWVyX2NhbGwoKSAtIENvbW1vbiBoYW5kbGVyIGZvciBRb1MgY29uc3RyYWludHMuCj4gKyAq
+IEBkZXZmcmVxOiAgICB0aGUgZGV2ZnJlcSBpbnN0YW5jZS4KPiArICovCj4gK3N0YXRpYyBpbnQg
+cW9zX25vdGlmaWVyX2NhbGwoc3RydWN0IGRldmZyZXEgKmRldmZyZXEpCj4gK3sKPiArCWludCBl
+cnI7Cj4gKwo+ICsJbXV0ZXhfbG9jaygmZGV2ZnJlcS0+bG9jayk7Cj4gKwllcnIgPSB1cGRhdGVf
+ZGV2ZnJlcShkZXZmcmVxKTsKPiArCW11dGV4X3VubG9jaygmZGV2ZnJlcS0+bG9jayk7Cj4gKwlp
+ZiAoZXJyKQo+ICsJCWRldl9lcnIoZGV2ZnJlcS0+ZGV2LnBhcmVudCwKPiArCQkJImZhaWxlZCB0
+byB1cGRhdGUgZnJlcXVlbmN5IGZyb20gUE0gUW9TICglZClcbiIsCj4gKwkJCWVycik7Cj4gKwo+
+ICsJcmV0dXJuIE5PVElGWV9PSzsKPiArfQo+ICsKPiArLyoqCj4gKyAqIHFvc19taW5fbm90aWZp
+ZXJfY2FsbCgpIC0gQ2FsbGJhY2sgZm9yIFFvUyBtaW5fZnJlcSBjaGFuZ2VzLgo+ICsgKiBAbmI6
+CQlTaG91bGQgYmUgZGV2ZnJlcS0+bmJfbWluCj4gKyAqLwo+ICtzdGF0aWMgaW50IHFvc19taW5f
+bm90aWZpZXJfY2FsbChzdHJ1Y3Qgbm90aWZpZXJfYmxvY2sgKm5iLAo+ICsJCQkJCSB1bnNpZ25l
+ZCBsb25nIHZhbCwgdm9pZCAqcHRyKQo+ICt7Cj4gKwlyZXR1cm4gcW9zX25vdGlmaWVyX2NhbGwo
+Y29udGFpbmVyX29mKG5iLCBzdHJ1Y3QgZGV2ZnJlcSwgbmJfbWluKSk7Cj4gK30KPiArCj4gKy8q
+Kgo+ICsgKiBxb3NfbWF4X25vdGlmaWVyX2NhbGwoKSAtIENhbGxiYWNrIGZvciBRb1MgbWF4X2Zy
+ZXEgY2hhbmdlcy4KPiArICogQG5iOgkJU2hvdWxkIGJlIGRldmZyZXEtPm5iX21heAo+ICsgKi8K
+PiArc3RhdGljIGludCBxb3NfbWF4X25vdGlmaWVyX2NhbGwoc3RydWN0IG5vdGlmaWVyX2Jsb2Nr
+ICpuYiwKPiArCQkJCQkgdW5zaWduZWQgbG9uZyB2YWwsIHZvaWQgKnB0cikKPiArewo+ICsJcmV0
+dXJuIHFvc19ub3RpZmllcl9jYWxsKGNvbnRhaW5lcl9vZihuYiwgc3RydWN0IGRldmZyZXEsIG5i
+X21heCkpOwo+ICt9Cj4gKwo+ICAvKioKPiAgICogZGV2ZnJlcV9kZXZfcmVsZWFzZSgpIC0gQ2Fs
+bGJhY2sgZm9yIHN0cnVjdCBkZXZpY2UgdG8gcmVsZWFzZSB0aGUgZGV2aWNlLgo+ICAgKiBAZGV2
+Ogl0aGUgZGV2ZnJlcSBkZXZpY2UKPiAgICoKPiAgICogUmVtb3ZlIGRldmZyZXEgZnJvbSB0aGUg
+bGlzdCBhbmQgcmVsZWFzZSBpdHMgcmVzb3VyY2VzLgo+ICAgKi8KPiAgc3RhdGljIHZvaWQgZGV2
+ZnJlcV9kZXZfcmVsZWFzZShzdHJ1Y3QgZGV2aWNlICpkZXYpCj4gIHsKPiAgCXN0cnVjdCBkZXZm
+cmVxICpkZXZmcmVxID0gdG9fZGV2ZnJlcShkZXYpOwo+ICsJaW50IGVycjsKPiAgCj4gIAltdXRl
+eF9sb2NrKCZkZXZmcmVxX2xpc3RfbG9jayk7Cj4gIAlsaXN0X2RlbCgmZGV2ZnJlcS0+bm9kZSk7
+Cj4gIAltdXRleF91bmxvY2soJmRldmZyZXFfbGlzdF9sb2NrKTsKPiAgCj4gKwllcnIgPSBkZXZf
+cG1fcW9zX3JlbW92ZV9ub3RpZmllcihkZXZmcmVxLT5kZXYucGFyZW50LCAmZGV2ZnJlcS0+bmJf
+bWF4LAo+ICsJCQkJCSBERVZfUE1fUU9TX01BWF9GUkVRVUVOQ1kpOwo+ICsJaWYgKGVycikKPiAr
+CQlkZXZfd2FybihkZXYtPnBhcmVudCwgIkZhaWxlZCB0byByZW1vdmUgREVWX1BNX1FPU19NQVhf
+RlJFUVVFTkNZIG5vdGlmaWVyOiAlZFxuIiwKPiArCQkJIGVycik7CgpQbGVhc2UgZWRpdCB0aGlz
+IGxpbmUgYXMgZm9sbG93aW5nIHRvIHByb3RlY3QgdGhlIG92ZXIgODAgY2hhcgpvbiBvbmUgbGlu
+ZSBpZiB0aGVyZSBhcmUgbm8gc3BlY2lmaWMgcmVhc29uLgoKCQlkZXZfd2FybihkZXYtPnBhcmVu
+dCwKCQkJIkZhaWxlZCB0byByZW1vdmUgREVWX1BNX1FPU19NQVhfRlJFUVVFTkNZIG5vdGlmaWVy
+OiAlZFxuIiwKCQkJZXJyKTsKCgo+ICsJZXJyID0gZGV2X3BtX3Fvc19yZW1vdmVfbm90aWZpZXIo
+ZGV2ZnJlcS0+ZGV2LnBhcmVudCwgJmRldmZyZXEtPm5iX21pbiwKPiArCQkJREVWX1BNX1FPU19N
+SU5fRlJFUVVFTkNZKTsKPiArCWlmIChlcnIpCj4gKwkJZGV2X3dhcm4oZGV2LT5wYXJlbnQsICJG
+YWlsZWQgdG8gcmVtb3ZlIERFVl9QTV9RT1NfTUlOX0ZSRVFVRU5DWSBub3RpZmllcjogJWRcbiIs
+Cj4gKwkJCSBlcnIpOwo+ICsKClBsZWFzZSBlZGl0IHRoaXMgbGluZSBhcyBmb2xsb3dpbmcgdG8g
+cHJvdGVjdCB0aGUgb3ZlciA4MCBjaGFyCm9uIG9uZSBsaW5lIGlmIHRoZXJlIGFyZSBubyBzcGVj
+aWZpYyByZWFzb24uCgoKCQlkZXZfd2FybihkZXYtPnBhcmVudCwKCQkJIkZhaWxlZCB0byByZW1v
+dmUgREVWX1BNX1FPU19NSU5fRlJFUVVFTkNZIG5vdGlmaWVyOiAlZFxuIiwKCQkJZXJyKTsKCgo+
+ICAJaWYgKGRldmZyZXEtPnByb2ZpbGUtPmV4aXQpCj4gIAkJZGV2ZnJlcS0+cHJvZmlsZS0+ZXhp
+dChkZXZmcmVxLT5kZXYucGFyZW50KTsKPiAgCj4gIAlrZnJlZShkZXZmcmVxLT50aW1lX2luX3N0
+YXRlKTsKPiAgCWtmcmVlKGRldmZyZXEtPnRyYW5zX3RhYmxlKTsKPiBAQCAtNzM1LDEwICs4MDAs
+MjIgQEAgc3RydWN0IGRldmZyZXEgKmRldmZyZXFfYWRkX2RldmljZShzdHJ1Y3QgZGV2aWNlICpk
+ZXYsCj4gIAlpZiAoZXJyKSB7Cj4gIAkJcHV0X2RldmljZSgmZGV2ZnJlcS0+ZGV2KTsKPiAgCQln
+b3RvIGVycl9vdXQ7Cj4gIAl9Cj4gIAo+ICsJZGV2ZnJlcS0+bmJfbWluLm5vdGlmaWVyX2NhbGwg
+PSBxb3NfbWluX25vdGlmaWVyX2NhbGw7Cj4gKwllcnIgPSBkZXZfcG1fcW9zX2FkZF9ub3RpZmll
+cihkZXZmcmVxLT5kZXYucGFyZW50LCAmZGV2ZnJlcS0+bmJfbWluLAo+ICsJCQkJICAgICAgREVW
+X1BNX1FPU19NSU5fRlJFUVVFTkNZKTsKPiArCWlmIChlcnIpCj4gKwkJZ290byBlcnJfZGV2ZnJl
+cTsKPiArCj4gKwlkZXZmcmVxLT5uYl9tYXgubm90aWZpZXJfY2FsbCA9IHFvc19tYXhfbm90aWZp
+ZXJfY2FsbDsKPiArCWVyciA9IGRldl9wbV9xb3NfYWRkX25vdGlmaWVyKGRldmZyZXEtPmRldi5w
+YXJlbnQsICZkZXZmcmVxLT5uYl9tYXgsCj4gKwkJCQkgICAgICBERVZfUE1fUU9TX01BWF9GUkVR
+VUVOQ1kpOwo+ICsJaWYgKGVycikKPiArCQlnb3RvIGVycl9kZXZmcmVxOwo+ICsKPiAgCW11dGV4
+X2xvY2soJmRldmZyZXFfbGlzdF9sb2NrKTsKPiAgCj4gIAlnb3Zlcm5vciA9IHRyeV90aGVuX3Jl
+cXVlc3RfZ292ZXJub3IoZGV2ZnJlcS0+Z292ZXJub3JfbmFtZSk7Cj4gIAlpZiAoSVNfRVJSKGdv
+dmVybm9yKSkgewo+ICAJCWRldl9lcnIoZGV2LCAiJXM6IFVuYWJsZSB0byBmaW5kIGdvdmVybm9y
+IGZvciB0aGUgZGV2aWNlXG4iLAo+IEBAIC03NjIsMTAgKzgzOSwxMSBAQCBzdHJ1Y3QgZGV2ZnJl
+cSAqZGV2ZnJlcV9hZGRfZGV2aWNlKHN0cnVjdCBkZXZpY2UgKmRldiwKPiAgCj4gIAlyZXR1cm4g
+ZGV2ZnJlcTsKPiAgCj4gIGVycl9pbml0Ogo+ICAJbXV0ZXhfdW5sb2NrKCZkZXZmcmVxX2xpc3Rf
+bG9jayk7Cj4gK2Vycl9kZXZmcmVxOgo+ICAJZGV2ZnJlcV9yZW1vdmVfZGV2aWNlKGRldmZyZXEp
+Owo+ICAJcmV0dXJuIEVSUl9QVFIoZXJyKTsKPiAgCj4gIGVycl9kZXY6Cj4gIAkvKgo+IGRpZmYg
+LS1naXQgYS9pbmNsdWRlL2xpbnV4L2RldmZyZXEuaCBiL2luY2x1ZGUvbGludXgvZGV2ZnJlcS5o
+Cj4gaW5kZXggMmJhZTllZDNjNzgzLi44YjkyY2NiZDE5NjIgMTAwNjQ0Cj4gLS0tIGEvaW5jbHVk
+ZS9saW51eC9kZXZmcmVxLmgKPiArKysgYi9pbmNsdWRlL2xpbnV4L2RldmZyZXEuaAo+IEBAIC0x
+MzQsMTAgKzEzNCwxMiBAQCBzdHJ1Y3QgZGV2ZnJlcV9kZXZfcHJvZmlsZSB7Cj4gICAqIEB0b3Rh
+bF90cmFuczoJTnVtYmVyIG9mIGRldmZyZXEgdHJhbnNpdGlvbnMKPiAgICogQHRyYW5zX3RhYmxl
+OglTdGF0aXN0aWNzIG9mIGRldmZyZXEgdHJhbnNpdGlvbnMKPiAgICogQHRpbWVfaW5fc3RhdGU6
+CVN0YXRpc3RpY3Mgb2YgZGV2ZnJlcSBzdGF0ZXMKPiAgICogQGxhc3Rfc3RhdF91cGRhdGVkOglU
+aGUgbGFzdCB0aW1lIHN0YXQgdXBkYXRlZAo+ICAgKiBAdHJhbnNpdGlvbl9ub3RpZmllcl9saXN0
+OiBsaXN0IGhlYWQgb2YgREVWRlJFUV9UUkFOU0lUSU9OX05PVElGSUVSIG5vdGlmaWVyCj4gKyAq
+IEBuYl9taW46CQlOb3RpZmllciBibG9jayBmb3IgREVWX1BNX1FPU19NSU5fRlJFUVVFTkNZCj4g
+KyAqIEBuYl9tYXg6CQlOb3RpZmllciBibG9jayBmb3IgREVWX1BNX1FPU19NQVhfRlJFUVVFTkNZ
+Cj4gICAqCj4gICAqIFRoaXMgc3RydWN0dXJlIHN0b3JlcyB0aGUgZGV2ZnJlcSBpbmZvcm1hdGlv
+biBmb3IgYSBnaXZlIGRldmljZS4KPiAgICoKPiAgICogTm90ZSB0aGF0IHdoZW4gYSBnb3Zlcm5v
+ciBhY2Nlc3NlcyBlbnRyaWVzIGluIHN0cnVjdCBkZXZmcmVxIGluIGl0cwo+ICAgKiBmdW5jdGlv
+bnMgZXhjZXB0IGZvciB0aGUgY29udGV4dCBvZiBjYWxsYmFja3MgZGVmaW5lZCBpbiBzdHJ1Y3QK
+PiBAQCAtMTc2LDEwICsxNzgsMTMgQEAgc3RydWN0IGRldmZyZXEgewo+ICAJdW5zaWduZWQgaW50
+ICp0cmFuc190YWJsZTsKPiAgCXVuc2lnbmVkIGxvbmcgKnRpbWVfaW5fc3RhdGU7Cj4gIAl1bnNp
+Z25lZCBsb25nIGxhc3Rfc3RhdF91cGRhdGVkOwo+ICAKPiAgCXN0cnVjdCBzcmN1X25vdGlmaWVy
+X2hlYWQgdHJhbnNpdGlvbl9ub3RpZmllcl9saXN0Owo+ICsKPiArCXN0cnVjdCBub3RpZmllcl9i
+bG9jayBuYl9taW47Cj4gKwlzdHJ1Y3Qgbm90aWZpZXJfYmxvY2sgbmJfbWF4Owo+ICB9Owo+ICAK
+PiAgc3RydWN0IGRldmZyZXFfZnJlcXMgewo+ICAJdW5zaWduZWQgbG9uZyBvbGQ7Cj4gIAl1bnNp
+Z25lZCBsb25nIG5ldzsKPiAKCgotLSAKQmVzdCBSZWdhcmRzLApDaGFud29vIENob2kKU2Ftc3Vu
+ZyBFbGVjdHJvbmljcwoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0
+cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
+Zm8vbGludXgtYXJtLWtlcm5lbAo=
