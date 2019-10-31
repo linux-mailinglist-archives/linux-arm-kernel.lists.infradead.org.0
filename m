@@ -2,64 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44598EB2BF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 15:31:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5ABF6EB2DB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 15:36:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YZGtLMpLnKPZWV7fI7FQoCN7FpfTopylCC5RNTgscDs=; b=e6f3vTJUvG/Vj5
-	m0HNzl8xqalcHYNsOBQ/KRWfyQ03gnRHhEsJG24/BvCmP38vp7Zug97XZeKa+V7zT2OIHt7cdbAzP
-	jgWxHq+l0tGKwS3OmCjgW3K6c0+usSQ5xG3fgX+MHHQmJzQhtHs7FF65yhr4l2fO8bnB+Ehj8aeic
-	3zLhdcTSujXgxgcR/8taKCgPBluuIrUtpcjg3qKT9QFfmIw7ieRUjvhgkMVWbfbsdodfZUpj4SECV
-	PJuk3+CD5VPgOHJdkZDUTqT/sGiiVgbQozy5sY0V5/saelo0yNXCmk/llUH6fvbJ5oNvWctKtG9aK
-	ijJ7fDP79XoLwvyg92Zg==;
+	List-Owner; bh=O9gIBrdjEH0S+glbd5tYJm8tPeGBQfo2KltMEc9Jcn8=; b=ltMQplHSo4vXyu
+	0aDdEJ2ZsnOa0CvJ/wUnPQ7DhmpNmM2n51j1cHVxAi9hbkLChLEBVzECjdmUQZzPf/74U3EMtFTpU
+	SU1e4kbukKsLJlVATyOw2qe0AFywYv8cBf8PvMre1VzMXdh9NPpDxRjttr7FHISamVP0vXSgDfHpQ
+	VYKgkqATVnRhVWOa97KBxyLX/5gollGBmvTQmhLLlGXqCS9z6Hy/jlxRFUtgRqv0T6E5FH1RbWPTt
+	5fv03wxmv17AQcQWaOfzpMpvk9zQm4pau8JpfhDYXchSiiQzu1MEKw6GMrg/u+MhEVk9Z1yXjVq9D
+	RYgMCM92WYNf5XBWtbcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQBU6-00023h-Ve; Thu, 31 Oct 2019 14:31:34 +0000
-Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQBTv-00022n-LJ
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 14:31:25 +0000
-Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
- [IPv6:2a01:4f9:c010:4572::80:2])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id AF5C9634C87;
- Thu, 31 Oct 2019 16:28:18 +0200 (EET)
-Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
- (envelope-from <sakari.ailus@retiisi.org.uk>)
- id 1iQBQv-0001lR-Oc; Thu, 31 Oct 2019 16:28:17 +0200
-Date: Thu, 31 Oct 2019 16:28:17 +0200
-From: Sakari Ailus <sakari.ailus@iki.fi>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Subject: Re: [PATCH v4 1/2] dt-bindings: media: i2c: Add IMX296 CMOS sensor
- binding
-Message-ID: <20191031142817.GK6253@valkosipuli.retiisi.org.uk>
-References: <20191030094902.32582-1-manivannan.sadhasivam@linaro.org>
- <20191030094902.32582-2-manivannan.sadhasivam@linaro.org>
- <20191031131538.GA9170@pendragon.ideasonboard.com>
- <20191031134512.GB24273@mani>
- <20191031141141.GD5018@pendragon.ideasonboard.com>
+	id 1iQBYb-0003lT-Ph; Thu, 31 Oct 2019 14:36:13 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iQBYU-0003lA-HE
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 14:36:07 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C0C111F1;
+ Thu, 31 Oct 2019 07:36:05 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 6ADB53F71E; Thu, 31 Oct 2019 07:36:03 -0700 (PDT)
+Date: Thu, 31 Oct 2019 14:36:01 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Steven Price <steven.price@arm.com>
+Subject: Re: [PATCH] mm: ptdump: Reduce level numbers by 1 in note_page()
+Message-ID: <20191031143600.GD39590@arrakis.emea.arm.com>
+References: <40956d62-241c-6685-72f1-bfc01183141e@arm.com>
+ <20191031133322.3239-1-steven.price@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191031141141.GD5018@pendragon.ideasonboard.com>
+In-Reply-To: <20191031133322.3239-1-steven.price@arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_073124_054976_EE61F77E 
-X-CRM114-Status: GOOD (  21.77  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191031_073606_613213_B1C39272 
+X-CRM114-Status: GOOD (  13.64  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,104 +61,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
- linux-kernel@vger.kernel.org, a.brela@framos.com, peter.griffin@linaro.org,
- robh+dt@kernel.org, Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, x86@kernel.org,
+ Arnd Bergmann <arnd@arndb.de>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Dave Hansen <dave.hansen@linux.intel.com>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, =?iso-8859-1?B?Suly9G1l?= Glisse <jglisse@redhat.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, "H . Peter Anvin" <hpa@zytor.com>,
+ James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Laurent,
-
-On Thu, Oct 31, 2019 at 04:11:41PM +0200, Laurent Pinchart wrote:
-> Hi Mani,
+On Thu, Oct 31, 2019 at 01:33:22PM +0000, Steven Price wrote:
+> Rather than having to increment the 'depth' number by 1 in
+> ptdump_hole(), let's change the meaning of 'level' in note_page() since
+> that makes the code simplier.
 > 
-> On Thu, Oct 31, 2019 at 07:15:12PM +0530, Manivannan Sadhasivam wrote:
-> > On Thu, Oct 31, 2019 at 03:15:38PM +0200, Laurent Pinchart wrote:
-> > > On Wed, Oct 30, 2019 at 03:19:01PM +0530, Manivannan Sadhasivam wrote:
-> > >> Add YAML devicetree binding for IMX296 CMOS image sensor. Let's also
-> > >> add MAINTAINERS entry for the binding and driver.
-> > >> 
-> > >> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> > >> ---
-> > >>  .../devicetree/bindings/media/i2c/imx296.yaml | 94 +++++++++++++++++++
-> > >>  MAINTAINERS                                   |  8 ++
-> > >>  2 files changed, 102 insertions(+)
-> > >>  create mode 100644 Documentation/devicetree/bindings/media/i2c/imx296.yaml
-> > >> 
-> > >> diff --git a/Documentation/devicetree/bindings/media/i2c/imx296.yaml b/Documentation/devicetree/bindings/media/i2c/imx296.yaml
-> > >> new file mode 100644
-> > >> index 000000000000..c04ec2203268
-> > >> --- /dev/null
-> > >> +++ b/Documentation/devicetree/bindings/media/i2c/imx296.yaml
-> > >> @@ -0,0 +1,94 @@
-> > >> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > >> +%YAML 1.2
-> > >> +---
-> > >> +$id: http://devicetree.org/schemas/media/i2c/imx296.yaml#
-> > >> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > >> +
-> > >> +title: Sony IMX296 1/2.8-Inch CMOS Image Sensor
-> > >> +
-> > >> +maintainers:
-> > >> +  - Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> > >> +
-> > >> +description: |-
-> > >> +  The Sony IMX296 is a 1/2.9-Inch active pixel type CMOS Solid-state image
-> > >> +  sensor with square pixel array and 1.58 M effective pixels. This chip
-> > >> +  features a global shutter with variable charge-integration time. It is
-> > >> +  programmable through I2C and 4-wire interfaces. The sensor output is
-> > >> +  available via CSI-2 serial data output (1 Lane).
-> > >> +
-> > >> +properties:
-> > >> +  compatible:
-> > >> +    const: sony,imx296
-> > >> +
-> > >> +  reg:
-> > >> +    maxItems: 1
-> > >> +
-> > >> +  clocks:
-> > >> +    maxItems: 1
-> > >> +
-> > >> +  clock-names:
-> > >> +    description:
-> > >> +      Input clock for the sensor.
-> > >> +    items:
-> > >> +      - const: mclk
-> > > 
-> > > The pin is named INCK, let's name the clock accordingly.
-> > 
-> > Okay, I thought generic names are preferred here!
-> >  
-> > >> +  clock-frequency:
-> > >> +    description:
-> > >> +      Frequency of the mclk clock in Hertz.
-> > > 
-> > > This shouldn't be needed, you can retrieve the clock frequency at
-> > > runtime from the clock source.
-> > 
-> > Unless the clock source is a fixed one! What if the clock source comes from
-> > SoC? We need to set the rate, right?
+> Note that for x86, the level numbers were previously increased by 1 in
+> commit 45dcd2091363 ("x86/mm/dump_pagetables: Fix printout of p4d level")
+> and the comment "Bit 7 has a different meaning" was not updated, so this
+> change also makes the code match the comment again.
 > 
-> In that case, if you want to hardcode the clock in DT, the preferred way
-> is to use the assigned-clock-rates property. Otherwise, if the driver
-> requires a specific clock frequency, it's better to hardcode it in the
-> driver itself. In this specific case, I think assigned-clock-rates is
-> best as the device can support three different clock frequencies.
+> Signed-off-by: Steven Price <steven.price@arm.com>
+> ---
+>  arch/arm64/mm/dump.c          |  6 +++---
+>  arch/x86/mm/dump_pagetables.c | 19 ++++++++++---------
+>  include/linux/ptdump.h        |  1 +
+>  mm/ptdump.c                   | 16 ++++++++--------
 
-Just note that if ACPI support is added to the sensor driver, you'll need
-the clock-frequency property again, for that's the only way how the driver
-will get the clock frequency.
+For the arm64 part:
 
-This is certainly not something that has to be taken into account in DT
-bindings, but in any case it'll add some lines of code in the driver which
-are not very useful.
-
--- 
-Sakari Ailus
+Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
