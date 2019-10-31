@@ -2,55 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F5E7EAD6F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 11:30:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E1DD4EAD92
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 11:36:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BFlGc2wNBcR+GaszjvSCSl/A8dSwnlQ2h1ufGHvRpgs=; b=lwWvgDOUL8HMr0cENXHr6NPK6
-	yqyDWbbXgKckWwG4JKZuYL33X6XVv9eIVc8/ZreQx8nkwgDmUjYxHQSCjPezEJrb/Wr1Uswvi/a6T
-	JfqhXUpsfVJFkTNFvyhEtYHkuawqWDWsU5u8nEBqo54ilUPWeUyu/tcBzTS9HkiKuEPvMvSC2ZhIG
-	uZP9aq3huEjA1qztbuhKQWTDcXCyXaW9QzzmAQTw+ShmNQ1ClHDr6BJVFlI8ediISoNckIKr0njzw
-	oTDUj4csnbDJkujs6LTDay1hW/73Wdy+nbDHHRwmHDoP1aYMP1vg8wJcq2atztAeMFAfkQxXL+Whe
-	rrnIa360A==;
+	 bh=Ab/7rliVcbjlPwhvx82wG2M5gxp38i68CSiQ6dKD7Rg=; b=OeeXCMBLUej10/L7GHakzJqzy
+	1BQQgnVtP/97Si/9FX2LJ5JGgocovOEjFTyOUSz4obsFIbC8JppEFc8kkziImRn0BdQQjE1J4OTfe
+	rXfG1A6v6ZnGTJMJnlt/nF8UdZEIWiM+sEIf/jEWhAIMBQ9yCMl8J/bW66noineOAkgDMagMYYN7q
+	dnGfZKF5PL1fXPzympT4wBZ1yP1eRsnQ3EOoUXgXFcmJukrde9nFFD2j0pm0nwt1z7PJ9oGX2StXy
+	cs8dXvZKygKpXdbvebFc25Q0C67tFbiCL4qvJAM4lmU5OIGHjG6stUBgV9x5BPOqZ3kh37r0xrcTv
+	cDivuqIYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQ7jA-0006N4-Ph; Thu, 31 Oct 2019 10:30:52 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1iQ7oG-0001L1-9o; Thu, 31 Oct 2019 10:36:08 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQ7j1-0006Lc-Ra; Thu, 31 Oct 2019 10:30:45 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 89138B38E;
- Thu, 31 Oct 2019 10:30:40 +0000 (UTC)
-Message-ID: <8c525f66c1c0d9f07e0cff4948d1ec3229756220.camel@suse.de>
-Subject: Re: [PATCH RFC 1/5] dma/direct: turn ARCH_ZONE_DMA_BITS into a
- variable
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Christoph Hellwig <hch@infradead.org>
-Date: Thu, 31 Oct 2019 11:30:36 +0100
-In-Reply-To: <20191030214914.GA15939@infradead.org>
-References: <20191014183108.24804-1-nsaenzjulienne@suse.de>
- <20191014183108.24804-2-nsaenzjulienne@suse.de>
- <20191030214914.GA15939@infradead.org>
-User-Agent: Evolution 3.34.1 
+ id 1iQ7nu-00017F-FK
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 10:35:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=ek7XM560qV+StynVczYlFQiXViPBna3iW5nPGbWlqSw=; b=SeTIR9ax/GwPIXgfwPfKsSVmK
+ cSp6HBSDF69CF4rrrNV2mjsEW9fbNGB5Pe221Us0APB5bACGtBkuIPYTqsWh9ZxWgJcoCZMrRP+x0
+ eVATurdv5d/wI0FP+Gbm0bQOcVMgSVvBgQNGgLjUntGi6PwerajOz+yl6LVIS9fNVWdRM=;
+Received: from [91.217.168.176] (helo=fitzroy.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1iQ7nr-0007Uj-O9; Thu, 31 Oct 2019 10:35:43 +0000
+Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
+ id 4255BD020AA; Thu, 31 Oct 2019 10:35:43 +0000 (GMT)
+Date: Thu, 31 Oct 2019 11:35:43 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v4 4/4] arm64: Use a variable to store non-global
+ mappings decision
+Message-ID: <20191031103543.GP4568@sirena.org.uk>
+References: <20191024214207.20588-1-broonie@kernel.org>
+ <20191024214207.20588-5-broonie@kernel.org>
+ <20191030121307.GB10294@arrakis.emea.arm.com>
+ <20191030124153.GB7218@sirena.co.uk>
+ <20191030141732.GA13309@arrakis.emea.arm.com>
+ <20191031081807.GO4568@sirena.org.uk>
+ <20191031101819.GA39590@arrakis.emea.arm.com>
 MIME-Version: 1.0
+In-Reply-To: <20191031101819.GA39590@arrakis.emea.arm.com>
+X-Cookie: Keep out of the sunlight.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_033044_041765_30254BE9 
-X-CRM114-Status: UNSURE (   9.19  )
+X-CRM114-CacheID: sfid-20191031_033546_527143_CACBC4E2 
+X-CRM114-Status: UNSURE (   8.56  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: 3.7 (+++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (3.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [172.104.155.198 listed in list.dnswl.org]
+ 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
+ [91.217.168.176 listed in zen.spamhaus.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,69 +89,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, mbrugger@suse.com,
- Vasily Gorbik <gor@linux.ibm.com>, wahrenst@gmx.net,
- Michael Ellerman <mpe@ellerman.id.au>,
- Catalin Marinas <catalin.marinas@arm.com>, linuxppc-dev@lists.ozlabs.org,
- Will Deacon <will@kernel.org>, linux-kernel@vger.kernel.org,
- Heiko Carstens <heiko.carstens@de.ibm.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>,
- iommu@lists.linux-foundation.org, f.fainelli@gmail.com,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Paul Mackerras <paulus@samba.org>, Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: multipart/mixed; boundary="===============3957388887034063554=="
+Cc: Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============3865984627951265777=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============3957388887034063554==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-c/h1zpmiYL5xA/R3DgLo"
+--===============3865984627951265777==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="96dIhm/ZjrNld+BP"
+Content-Disposition: inline
 
 
---=-c/h1zpmiYL5xA/R3DgLo
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+--96dIhm/ZjrNld+BP
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-On Wed, 2019-10-30 at 14:49 -0700, Christoph Hellwig wrote:
-> On Mon, Oct 14, 2019 at 08:31:03PM +0200, Nicolas Saenz Julienne wrote:
-> > Some architectures, notably ARM, are interested in tweaking this
-> > depending on their runtime DMA addressing limitations.
-> >=20
-> > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
->=20
-> Do you want me to pick this up for the 5.5 dma-mapping tree, or do you
-> want me to wait for the rest to settle?
+On Thu, Oct 31, 2019 at 10:18:19AM +0000, Catalin Marinas wrote:
 
-I'd say take it, this will be ultimately needed once we push forward with A=
-RM.
+> Anyway, if you send patches to Will or me for upstream, please rebase
+> (and test) on top of the vanilla kernel, otherwise we may not be able to
+> apply them. You can (should) do a merge with -next and flag any
+> conflicts or run-time issues.
 
+Right, that's mostly what I'm doing - I pull stuff out when I'm
+preparing to send it, the -next tracking is just for ongoing
+work while I'm developing things.  I had been using your tree
+rather than mainline as the base because it's what most
+maintainers want, they're expecting people to test with what
+they've already got applied and send things they can apply
+directly.
 
---=-c/h1zpmiYL5xA/R3DgLo
+--96dIhm/ZjrNld+BP
 Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl26t8wACgkQlfZmHno8
-x/6Bvgf8CKw0zktkkeQiMRg7+/wfA7jkI0EdKaeR38AVackkoByc3ab5S2A4Qepy
-XpQVhaciStaOBkqCzcHLVJnucMd/6d9YH+49GubC64NT12ukfjVwUBbfzgVHTJH2
-SOf3YpmsDw+8RokSUatZQZwY4D+b+jezcgK12EYOj244ip65tNEnM87G5ZUZVG1U
-2rXnFOH4ne4LmUn6u6Gdgydn5j7pSJnvYH0U0DRU0PLK7kV2uxOrllqSnvdENiRz
-QLSjWe2SON35T0OsddsecCq/FWrNzYBYa6bEfc2NsA0qdNAEJVaXQEn3p9bROBPw
-I2SkWEPTaKCtL9hUC1eiqUx1nLTY8g==
-=5BcM
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl26uPwACgkQJNaLcl1U
+h9AvdQf8DskTQXUt0Nk63YpVtch2awcUM018arVxXUmTR1PgUkMHGpjGJGvismxq
++xkTQ19jJ/rCdMBGc6rdC4nXyBrmYI1phA847dowpwXakTNoCBuUTuqpE3bzfSzl
+27zZmzxeD1fCZhx5Q/QhFvPJRyQ0HOsvqQHMG7S3H5t64y2oK7u/2/uYeNVpftz5
+dem8BIfnKoZ3bdarvEpkzKi594ZIdTFdAGczdgJHbFFP9B+Qj0RkUBVyMbbM+j2E
+dM6KjZwk6G4CwygR++Icr63+9i74VYZ0xkaMFux6+0og5xottGt+27G8mrWmbYmQ
+fIm6pWwdLnOK8ZLAgf1TqRqMkTR+8g==
+=AUdE
 -----END PGP SIGNATURE-----
 
---=-c/h1zpmiYL5xA/R3DgLo--
+--96dIhm/ZjrNld+BP--
 
 
-
---===============3957388887034063554==
+--===============3865984627951265777==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -135,6 +149,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============3957388887034063554==--
-
+--===============3865984627951265777==--
 
