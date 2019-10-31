@@ -2,60 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BB55EAE75
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 12:08:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17057EAEE2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 12:26:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZJvxrW5s+DKVtkkjQrUJ6/hbNyJVN1qrR4kbKLbKm/s=; b=p0qb5FN1AFT1UE
-	hnjUm7OvY5zcQRmLFKTPEawdrqgcv2zUPaJpmMz/s6A/wiauZkL9w924BDjP1lGI+A8U5XJxXyfUm
-	UjNpWczVVXF62fvRLMCyOV9BdYGK8eg69cvXxJQ87Os23GK0vhn2D+htQ1apGoaYh17778o8XoRKu
-	sDq9VOTBCzG8Y3CYUZzP7OmLn9W2SQr7mLDRY5O6k6KRgiAxgxicXNMXbhg7YdrhPkC1W/BrSrzAW
-	HigboOmque0tzdNY3hv3n3yD1vDfzQKPTn0g2FU2vBAiqCl3NOWedqhe4DLrl/lItfG7o7xtg3t45
-	xUByIgJw5uA3/AuCP0Sw==;
+	List-Owner; bh=aV5RWCrj91JM+tQAMP5MaaKlk1+eqONeFV5NNRk/dJo=; b=hiuX6orSiJfCPg
+	B9hysFqS1y1KHR8Zs7EKlqoSOWICpAwkrFEEamxIh9rfZRE+gmYp6t4Xlx3n3S8PvGlf8ld4j/4qD
+	tdgFij2aUWnBzQ3BD59WzGPTG+BHXNVEi7334E96aovO75j4OoJdiS5tWdgL8NclrG14banDD94Pl
+	A7kWJvB3td1+k39OaQsDlTN302BXmiZ9Es1za/dBr4sWvdIox+2Obo8L2Ut1Ey36iWAUKtc6rqqdN
+	/nsIp5zpyU66x2/qeA44rnJxR3gMQSsfPa9KZsK8bni/OVGd5HajIjSh5gd0ehPKIteKi7pjWkU4k
+	LNmgxDeHzslsWUg9yWUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQ8Jg-0001Qq-2T; Thu, 31 Oct 2019 11:08:36 +0000
-Received: from relay9-d.mail.gandi.net ([217.70.183.199])
+	id 1iQ8au-0000mM-VK; Thu, 31 Oct 2019 11:26:24 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQ8JR-0001PC-ON
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 11:08:23 +0000
-X-Originating-IP: 91.217.168.176
-Received: from localhost (unknown [91.217.168.176])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 942B6FF810;
- Thu, 31 Oct 2019 11:08:11 +0000 (UTC)
-Date: Thu, 31 Oct 2019 12:08:11 +0100
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH 2/2] ARM: dts: at91: add a common kizboxmini dtsi file
-Message-ID: <20191031110811.GC2967@piout.net>
-References: <20191018140304.31547-1-kamel.bouhara@bootlin.com>
- <20191018140304.31547-3-kamel.bouhara@bootlin.com>
- <20191029123426.GB8412@bogus>
+ id 1iQ8al-0000lU-NY
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 11:26:17 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3325D208E3;
+ Thu, 31 Oct 2019 11:26:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572521175;
+ bh=scynK1w3RbTaGbWJXWwUlo8xZ4qi2RZOr8IV+A7V3JM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=sIphd9o6lhzuPuXTqCp9obiSPG5bi6IZHv2BKfPVmFMkKlg/q7GLTucZrx/ma7wqB
+ alzzktK19yzwsQ++8QXjv4vcgDsYmh3kYN7za7HAk84ISJtbsR8NSmUdoZZDdBMPe9
+ 1Vsv8nmZTrl2NDqcqwnLPHb1yHAIs0mbxiRLQqdo=
+Date: Thu, 31 Oct 2019 11:26:10 +0000
+From: Will Deacon <will@kernel.org>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH v4 0/4] E0PD support
+Message-ID: <20191031112610.GA26059@willie-the-truck>
+References: <20191024214207.20588-1-broonie@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191029123426.GB8412@bogus>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <20191024214207.20588-1-broonie@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_040821_932381_FC1C6374 
-X-CRM114-Status: GOOD (  15.65  )
-X-Spam-Score: 2.9 (++)
+X-CRM114-CacheID: sfid-20191031_042615_787678_9CE72333 
+X-CRM114-Status: GOOD (  12.01  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.199 listed in list.dnswl.org]
- 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
- [91.217.168.176 listed in zen.spamhaus.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.199 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,87 +76,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kamel Bouhara <kamel.bouhara@bootlin.com>, devicetree@vger.kernel.org,
- Mickael GARDET <m.gardet@overkiz.com>, linux-kernel@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- =?iso-8859-1?Q?K=E9vin?= RAYMOND <k.raymond@overkiz.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+Cc: Catalin Marinas <catalin.marinas@arm.com>, john.garry@huawei.com,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 29/10/2019 07:34:26-0500, Rob Herring wrote:
-> On Fri, Oct 18, 2019 at 04:03:04PM +0200, Kamel Bouhara wrote:
-> > Split the Kizbox Mini boards into two board configuration, the
-> > Kizboxmini Mother board and the Kizboxmini RailDIN board.
-> > =
+[+John Garry]
 
-> > Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
-> > Signed-off-by: K=E9vin RAYMOND <k.raymond@overkiz.com>
-> > Signed-off-by: Mickael GARDET <m.gardet@overkiz.com>
-> > ---
-> >  arch/arm/boot/dts/Makefile                    |   2 +
-> >  arch/arm/boot/dts/at91-kizboxmini-mb.dts      |  38 ++++
-> >  arch/arm/boot/dts/at91-kizboxmini-rd.dts      |  54 ++++++
-> >  arch/arm/boot/dts/at91-kizboxmini_common.dtsi | 166 ++++++++++++++++++
-> >  4 files changed, 260 insertions(+)
-> >  create mode 100644 arch/arm/boot/dts/at91-kizboxmini-mb.dts
-> >  create mode 100644 arch/arm/boot/dts/at91-kizboxmini-rd.dts
-> >  create mode 100644 arch/arm/boot/dts/at91-kizboxmini_common.dtsi
-> > =
+Hi Mark,
 
-> > diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-> > index c976b72a4c94..6b3a65f3f6f8 100644
-> > --- a/arch/arm/boot/dts/Makefile
-> > +++ b/arch/arm/boot/dts/Makefile
-> > @@ -38,6 +38,8 @@ dtb-$(CONFIG_SOC_AT91SAM9) +=3D \
-> >  	at91-ariettag25.dtb \
-> >  	at91-cosino_mega2560.dtb \
-> >  	at91-kizboxmini.dtb \
-> > +	at91-kizboxmini-mb.dtb \
-> > +	at91-kizboxmini-rd.dtb \
-> >  	at91-wb45n.dtb \
-> >  	at91sam9g15ek.dtb \
-> >  	at91sam9g25ek.dtb \
-> > diff --git a/arch/arm/boot/dts/at91-kizboxmini-mb.dts b/arch/arm/boot/d=
-ts/at91-kizboxmini-mb.dts
-> > new file mode 100644
-> > index 000000000000..52921f547dd6
-> > --- /dev/null
-> > +++ b/arch/arm/boot/dts/at91-kizboxmini-mb.dts
-> > @@ -0,0 +1,38 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Copyright (C) 2015-2018 Overkiz SAS
-> > + *   Author: Mickael Gardet <m.gardet@overkiz.com>
-> > + *           K=E9vin Raymond <k.raymond@overkiz.com>
-> > + */
-> > +/dts-v1/;
-> > +#include "at91-kizboxmini_common.dtsi"
-> > +
-> > +/ {
-> > +	model =3D "Overkiz Kizbox Mini Mother Board";
-> > +	compatible =3D "overkiz,kizboxmini-mb", "atmel,at91sam9g25",
-> > +		     "atmel,at91sam9x5", "atmel,at91sam9";
-> > +
-> > +	clocks {
-> > +		slow_xtal {
-> =
+On Thu, Oct 24, 2019 at 10:42:03PM +0100, Mark Brown wrote:
+> This series adds support for E0PD. We enable E0PD unconditionally where
+> present on systems where all the CPUs in the system support E0PD and
+> change to not enabling KPTI by default on systems where we have enabled
+> E0PD. It also converts the runtime checks for use of non-global mappings
+> into a variable.
 
-> Don't use '_' in node names.
-> =
+Although I welcome the simplification introduced by this patch set, I'm
+worried that we might be removing a significant optimisation to KASLR
+boot-time on machines with large memory. John reported issues with this
+in the past, so I'm looping him in in case he has a chance to test this
+(branch here [1]). Of course, I could just be missing something since
+this code was really subtle to begin with.
 
+On KASLR systems other than TX1, we should use nG mappings by default so
+that we can avoid the time-consuming task of rewriting swapper during boot.
+However, with your patches, I think we defer the decision to use nG mappings
+to the cpufeature code which means we always end up rewriting swapper in
+this scenario because of the global mappings installed early on.
 
-We are stuck with that one until we change the dtsi.
+Have I got that right?
 
+Cheers,
 
--- =
+Will
 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/log/?h=for-next/e0pd
 
 _______________________________________________
 linux-arm-kernel mailing list
