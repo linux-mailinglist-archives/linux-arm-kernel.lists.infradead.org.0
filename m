@@ -2,59 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4DD6EEABB8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 09:46:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 677FCEABD1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 09:52:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h2J9K8Zk9tcG1E55FzNGza4toF/w+y6OUwNWIk7sCQU=; b=C2vY/q0DUzIPeE
-	98gDq8+voyTa63hfDNkDJ1uUu75ItWyvhtEy3UpgsnVZ5yvCzZ/CIlrKHzxzCAUaTzXOH9HfCHj4+
-	x8iek/6yhs4KbQOWtNTK8X6zaHvAPCv5qlUTWCLp4TJcc+H5a7YF18UqnjSnDjGADjaMqk8IAJk9N
-	T7nyn5Pk9SyzDSGAFr98Fd1WczwaircvfE2b+RKg+xBkfKWcycOzotV+oUlv3NKqDo2QPJ2pHB6CH
-	AZhv54b9EWTmN3Wj410IZU+AVsQhuHZB2TYlneRkexN5Qi52hHYRX/aDV1O/PTcopTfLwnWvz/Emz
-	SQAr+HBzjAjfdYbuQq3A==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=2WpxsIhfser8aUAOd7qfpkMC38+61XOhn5j/5XB6+ZY=; b=p7Jju7LmydjJ0K
+	rHOojuMCEid4rcLD6fY4x1hl0JthlGoFXdQF4Z2QUtoZ0+ivxaG9+wJOkYG3g2IX8GiOTRDuLRAcN
+	Wq/Da63ygcth1xAXtc4Edm8Gw7CE4mWd/bHSh5TQi8TVOXJ1AXmsCvDgEVOp0/GVJvOYNsTJhL+79
+	7lWpU4TWggGp/s+Rw2lh2FH5tz2/0RqvWfEZ45aiZHqE2/LcQNvaRLzwWReUI5KR2Bx2L7QhdzldG
+	qqODX/EI1NSLKF0jycewPwjqg3jNGZF0he5eXtJYYNzJdnxvgZio5ibfVn1BOMZeCCA2ZDhEpWu2O
+	zicrq7fR3Yknx3PvTvgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQ65r-0002Tv-9u; Thu, 31 Oct 2019 08:46:11 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1iQ6Bo-0004E2-KE; Thu, 31 Oct 2019 08:52:20 +0000
+Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQ65i-0002TN-Sf
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 08:46:04 +0000
-Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 7E79336CC2BF1554C2DA;
- Thu, 31 Oct 2019 16:45:58 +0800 (CST)
-Received: from [127.0.0.1] (10.74.221.148) by DGGEMS402-HUB.china.huawei.com
- (10.3.19.202) with Microsoft SMTP Server id 14.3.439.0; Thu, 31 Oct 2019
- 16:45:52 +0800
-Subject: Re: [PATCH] arm64: perf: Simplify the ARMv8 PMUv3 event attributes
-To: Richard Henderson <richard.henderson@linaro.org>,
- <linux-arm-kernel@lists.infradead.org>
-References: <1572407177-48229-1-git-send-email-zhangshaokun@hisilicon.com>
- <b603fc49-01f5-b5b4-7c2c-5f0bc53b6fc1@linaro.org>
-From: Shaokun Zhang <zhangshaokun@hisilicon.com>
-Message-ID: <a503b65c-3bf1-83d5-08ba-3f25c880ba97@hisilicon.com>
-Date: Thu, 31 Oct 2019 16:45:52 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.1.1
+ id 1iQ6Bg-0004Cu-FZ; Thu, 31 Oct 2019 08:52:14 +0000
+Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
+ (helo=hermes.fivetechno.de); authenticated
+ by wp126.webpack.hosteurope.de running ExIM with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ id 1iQ6BU-0006VO-BN; Thu, 31 Oct 2019 09:52:00 +0100
+X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
+ linuxbbg.five-lan.de
+Received: from [192.168.34.101] (p5098d998.dip0.t-ipconnect.de
+ [80.152.217.152]) (authenticated bits=0)
+ by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
+ x9V8puaM011029
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
+ Thu, 31 Oct 2019 09:51:56 +0100
+From: Markus Reichl <m.reichl@fivetechno.de>
+Subject: [PATCH] arm64: dts: rockchip: Add vcc_sys enable pin on rk3399-roc-pc
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>, Jagan Teki <jagan@amarulasolutions.com>,
+ Markus Reichl <m.reichl@fivetechno.de>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+Autocrypt: addr=m.reichl@fivetechno.de; prefer-encrypt=mutual; keydata=
+ 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
+ eD/Xv4SsK2JTO4nkQYw8
+Organization: five technologies GmbH
+Message-ID: <c72db0ad-c261-af4f-efe6-22bbcf4a0b7b@fivetechno.de>
+Date: Thu, 31 Oct 2019 09:51:56 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.1
 MIME-Version: 1.0
-In-Reply-To: <b603fc49-01f5-b5b4-7c2c-5f0bc53b6fc1@linaro.org>
-X-Originating-IP: [10.74.221.148]
-X-CFilter-Loop: Reflected
+Content-Language: de-DE
+X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1572511932;
+ 6a12b9e2; 
+X-HE-SMSGID: 1iQ6BU-0006VO-BN
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_014603_103250_BF294233 
-X-CRM114-Status: GOOD (  12.84  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191031_015212_660668_C2CCA4B4 
+X-CRM114-Status: GOOD (  11.61  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,70 +106,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Will Deacon <will@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Richard,
+rk3399-roc-pc has vcc_sys 5V supply for USB and other peripherals.
+Add the GPIO pin to enable the regulator.
 
-Thanks your comments and Mark has helped to reply some.
+Signed-off-by: Markus Reichl <m.reichl@fivetechno.de>
+---
+ arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-On 2019/10/30 21:34, Richard Henderson wrote:
-> On 10/30/19 4:46 AM, Shaokun Zhang wrote:
->> For each PMU event, there is a ARMV8_EVENT_ATTR(xx, XX) and
->> &armv8_event_attr_xx.attr.attr. Let's redefine the ARMV8_EVENT_ATTR
->> to simplify the armv8_pmuv3_event_attrs.
-> ...
->>  #define ARMV8_EVENT_ATTR(name, config) \
->> +	(&((struct perf_pmu_events_attr[]) { \
->> +		{ .attr = __ATTR(name, 0444, armv8pmu_events_sysfs_show, NULL), \
->> +		  .id = config, } \
->> +	})[0].attr.attr)
->>  
->>  static struct attribute *armv8_pmuv3_event_attrs[] = {
->> +	ARMV8_EVENT_ATTR(sw_incr, ARMV8_PMUV3_PERFCTR_SW_INCR),
-> 
-> You do realize this creates complete perf_pmu_events_attr structures, most of
-> which is unused and unreachable, right?
-> 
-> Also, why not take the opportunity to assert that the armv8_pmuv3_event_attrs
-> array cannot get out of sync with the ARMV8_PMUV3_* defines?
-> 
-
-For my initial purpose: remove the &armv8_event_attr_xx.attr.attr and only
-maintain the armv8_pmuv3_event_attrs array directly when we want to add one new
-PMU event. For example:
-#define ARMV8_PMUV3_PERFCTR_OP_RETIRED 		0x3A
-.....
-static struct attribute *armv8_pmuv3_event_attrs[] = {
-	......
-	ARMV8_EVENT_ATTR(op_retired, ARMV8_PMUV3_PERFCTR_OP_RETIRED),
-	NULL,
-};
-
-Thanks,
-Shaokun
-
-> Slightly better would seem to be
-> 
-> #define ARMV8_EVENT_ATTR(name, config) \
-> 	[config] = &((struct device_attribute) \
-> 		__ATTR(name, 0444, armv8pmu_events_sysfs_show, NULL)).attr
-> 
-> though I'm not sure why __ATTR is particularly desired above
-> 
-> #define ARMV8_EVENT_ATTR(name, config)      \
-> 	[config] = &(struct attribute){     \
-> 		.name = __stringify(name),  \
-> 		.mode = 0444,               \
-> 	}
-> 
-> 
-> r~
-> 
-> 
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
+index 4150e6900788..c0c2d896f4da 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
+@@ -140,6 +140,10 @@
+ 
+ 	vcc_sys: vcc-sys {
+ 		compatible = "regulator-fixed";
++		enable-active-high;
++		gpio = <&gpio2 RK_PA6 GPIO_ACTIVE_HIGH>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&vcc_sys_en>;
+ 		regulator-name = "vcc_sys";
+ 		regulator-always-on;
+ 		regulator-boot-on;
+@@ -600,6 +604,10 @@
+ 			rockchip,pins = <1 RK_PA0 RK_FUNC_GPIO &pcfg_pull_none>;
+ 		};
+ 
++		vcc_sys_en: vcc-sys-en {
++			rockchip,pins = <2 RK_PA6 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++
+ 		hub_rst: hub-rst {
+ 			rockchip,pins = <2 RK_PA4 RK_FUNC_GPIO &pcfg_output_high>;
+ 		};
+-- 
+2.20.1
 
 
 _______________________________________________
