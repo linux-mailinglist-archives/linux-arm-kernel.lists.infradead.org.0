@@ -2,57 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C2A9EAE6E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 12:07:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3BB55EAE75
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 12:08:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lDlQpJkoKLOENl0jL0ORSwghYwaT5KiHaca/ag3BPr0=; b=kyapVFVd4J0z6U
-	2tWWswG0rk8RwsDIsiXxTKR6ESnHfcz77po38EmyScWOozIDnjqXuueNiy/dQrCykEskBIRFY8L95
-	pPC01PkDu8LZX/PB4JSDK9BG3Pdn8f+7sGEDf2f8HhirDAxEMegt2EVzgaabwi9p+Bs7MYYj8b/E3
-	HSNq6cCAP45MdF8Dj7ihvyixYKAQRFYuklLVylTuxcpblr9bxByqrUib136ukLv6TCQbsqQ5O4G+F
-	p/3TWSkWNY9d+Yt4WBF9dyFdMWCdF0lKEO7CdexrGx9PcY4mqQSQyS8WgrfwVM85Sww7+UjredMHP
-	UyiHToBI3tlj17APQ9aA==;
+	List-Owner; bh=ZJvxrW5s+DKVtkkjQrUJ6/hbNyJVN1qrR4kbKLbKm/s=; b=p0qb5FN1AFT1UE
+	hnjUm7OvY5zcQRmLFKTPEawdrqgcv2zUPaJpmMz/s6A/wiauZkL9w924BDjP1lGI+A8U5XJxXyfUm
+	UjNpWczVVXF62fvRLMCyOV9BdYGK8eg69cvXxJQ87Os23GK0vhn2D+htQ1apGoaYh17778o8XoRKu
+	sDq9VOTBCzG8Y3CYUZzP7OmLn9W2SQr7mLDRY5O6k6KRgiAxgxicXNMXbhg7YdrhPkC1W/BrSrzAW
+	HigboOmque0tzdNY3hv3n3yD1vDfzQKPTn0g2FU2vBAiqCl3NOWedqhe4DLrl/lItfG7o7xtg3t45
+	xUByIgJw5uA3/AuCP0Sw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQ8IH-0000kh-Gh; Thu, 31 Oct 2019 11:07:09 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQ8I7-0000kE-16
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 11:07:00 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7A6BF1F1;
- Thu, 31 Oct 2019 04:06:58 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 9245D3F719; Thu, 31 Oct 2019 04:06:57 -0700 (PDT)
-Date: Thu, 31 Oct 2019 11:06:55 +0000
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: =?utf-8?B?4p2MIEZBSUw=?= =?utf-8?Q?=3A?= Test report for kernel
- 5.4.0-rc5-34072e5.cki (arm-next)
-Message-ID: <20191031110655.GB39590@arrakis.emea.arm.com>
-References: <cki.B60F5FC773.1FIT7OYFJ2@redhat.com>
- <1219834772.9691319.1572429836705.JavaMail.zimbra@redhat.com>
- <20191030100747.GB17773@willie-the-truck>
- <20191030104520.GC17773@willie-the-truck>
- <4c22a384-ce30-8879-19a5-9ec6743268dc@arm.com>
- <b8a59be8-e0dd-3c99-09bf-f578b449b77f@arm.com>
+	id 1iQ8Jg-0001Qq-2T; Thu, 31 Oct 2019 11:08:36 +0000
+Received: from relay9-d.mail.gandi.net ([217.70.183.199])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iQ8JR-0001PC-ON
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 11:08:23 +0000
+X-Originating-IP: 91.217.168.176
+Received: from localhost (unknown [91.217.168.176])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 942B6FF810;
+ Thu, 31 Oct 2019 11:08:11 +0000 (UTC)
+Date: Thu, 31 Oct 2019 12:08:11 +0100
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH 2/2] ARM: dts: at91: add a common kizboxmini dtsi file
+Message-ID: <20191031110811.GC2967@piout.net>
+References: <20191018140304.31547-1-kamel.bouhara@bootlin.com>
+ <20191018140304.31547-3-kamel.bouhara@bootlin.com>
+ <20191029123426.GB8412@bogus>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <b8a59be8-e0dd-3c99-09bf-f578b449b77f@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191029123426.GB8412@bogus>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_040659_111056_57A5BFD8 
-X-CRM114-Status: GOOD (  13.64  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191031_040821_932381_FC1C6374 
+X-CRM114-Status: GOOD (  15.65  )
+X-Spam-Score: 2.9 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (2.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.199 listed in list.dnswl.org]
+ 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
+ [91.217.168.176 listed in zen.spamhaus.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.199 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -66,55 +67,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, Memory Management <mm-qe@redhat.com>,
- Will Deacon <will@kernel.org>, Jan Stancek <jstancek@redhat.com>,
- CKI Project <cki-project@redhat.com>
+Cc: Kamel Bouhara <kamel.bouhara@bootlin.com>, devicetree@vger.kernel.org,
+ Mickael GARDET <m.gardet@overkiz.com>, linux-kernel@vger.kernel.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ =?iso-8859-1?Q?K=E9vin?= RAYMOND <k.raymond@overkiz.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="iso-8859-1"
 Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 30, 2019 at 03:08:36PM +0000, Robin Murphy wrote:
-> > > > On Wed, Oct 30, 2019 at 06:03:56AM -0400, Jan Stancek wrote:
-> > > > > What's failing is preadv2/readv over PROT_NONE mapping:
-> > > > > =
+On 29/10/2019 07:34:26-0500, Rob Herring wrote:
+> On Fri, Oct 18, 2019 at 04:03:04PM +0200, Kamel Bouhara wrote:
+> > Split the Kizbox Mini boards into two board configuration, the
+> > Kizboxmini Mother board and the Kizboxmini RailDIN board.
+> > =
 
-> > > > > [pid=A0 2424] mmap(NULL, 1, PROT_NONE,
-> > > > > MAP_PRIVATE|MAP_ANONYMOUS, 0, 0) =3D 0x3ff7f8b0000
-> > > > > [pid=A0 2424] preadv2(3, [{iov_base=3D0x3ff7f8b0000,
-> > > > > iov_len=3D64}], 1, 0, 0) =3D 16
-> > > > > =
+> > Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
+> > Signed-off-by: K=E9vin RAYMOND <k.raymond@overkiz.com>
+> > Signed-off-by: Mickael GARDET <m.gardet@overkiz.com>
+> > ---
+> >  arch/arm/boot/dts/Makefile                    |   2 +
+> >  arch/arm/boot/dts/at91-kizboxmini-mb.dts      |  38 ++++
+> >  arch/arm/boot/dts/at91-kizboxmini-rd.dts      |  54 ++++++
+> >  arch/arm/boot/dts/at91-kizboxmini_common.dtsi | 166 ++++++++++++++++++
+> >  4 files changed, 260 insertions(+)
+> >  create mode 100644 arch/arm/boot/dts/at91-kizboxmini-mb.dts
+> >  create mode 100644 arch/arm/boot/dts/at91-kizboxmini-rd.dts
+> >  create mode 100644 arch/arm/boot/dts/at91-kizboxmini_common.dtsi
+> > =
 
-> > > > > Test expects EFAULT.
-> > > > > =
-
-> > > > > It seems specific to arm64/linux.git as I do not see it fail on
-> > > > > Linus' master (v5.4-rc5-34-g23fdb198ae81).
-[...]
-> OK, what's up is that we designed the improved fixup logic to support off=
-set
-> addressing in the implicit context of the existing copy template, where
-> accesses were always in strictly increasing order. And then we also plumb=
-ed
-> in a clever new template which in certain cases does some out-of-order
-> copying to support overlaps :(
+> > diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+> > index c976b72a4c94..6b3a65f3f6f8 100644
+> > --- a/arch/arm/boot/dts/Makefile
+> > +++ b/arch/arm/boot/dts/Makefile
+> > @@ -38,6 +38,8 @@ dtb-$(CONFIG_SOC_AT91SAM9) +=3D \
+> >  	at91-ariettag25.dtb \
+> >  	at91-cosino_mega2560.dtb \
+> >  	at91-kizboxmini.dtb \
+> > +	at91-kizboxmini-mb.dtb \
+> > +	at91-kizboxmini-rd.dtb \
+> >  	at91-wb45n.dtb \
+> >  	at91sam9g15ek.dtb \
+> >  	at91sam9g25ek.dtb \
+> > diff --git a/arch/arm/boot/dts/at91-kizboxmini-mb.dts b/arch/arm/boot/d=
+ts/at91-kizboxmini-mb.dts
+> > new file mode 100644
+> > index 000000000000..52921f547dd6
+> > --- /dev/null
+> > +++ b/arch/arm/boot/dts/at91-kizboxmini-mb.dts
+> > @@ -0,0 +1,38 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +/*
+> > + * Copyright (C) 2015-2018 Overkiz SAS
+> > + *   Author: Mickael Gardet <m.gardet@overkiz.com>
+> > + *           K=E9vin Raymond <k.raymond@overkiz.com>
+> > + */
+> > +/dts-v1/;
+> > +#include "at91-kizboxmini_common.dtsi"
+> > +
+> > +/ {
+> > +	model =3D "Overkiz Kizbox Mini Mother Board";
+> > +	compatible =3D "overkiz,kizboxmini-mb", "atmel,at91sam9g25",
+> > +		     "atmel,at91sam9x5", "atmel,at91sam9";
+> > +
+> > +	clocks {
+> > +		slow_xtal {
 > =
 
-> If a nonzero return from copy_*_user() is allowed to underestimate how ma=
-ny
-> bytes were actually copied, then I think there should be a relatively sim=
-ple
-> fix; if it must always be exact, then I've got some more thinking to do...
+> Don't use '_' in node names.
+> =
 
-I think in various incarnations of the copy routines we always had some
-risk of underestimating. For example, we align the source but not the
-destination. The destination is written via STP post-indexed but if the
-second 64-bit write fails, we still report the copy based on the
-unmodified dst, so underestimating by 8 bytes.
+
+We are stuck with that one until we change the dtsi.
+
 
 -- =
 
-Catalin
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
