@@ -2,56 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35C7DEB614
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 18:26:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E7BEEB61C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 18:27:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=FKVK7FQgUKhFdoGj9DftlDE7iiYIO5nrVzDA6SCztCs=; b=fFPNvkfD7G14H4EPQ1OFsM8wp
-	jvB+PWQZ29iYg0KqF6/QJLczUHugq+DC7pvefeCPrCV/XocuWXci+c0fquYhSwxB0hEXLNvIHTq+q
-	vBzPpD0o7Xe4cNuR1HOVpDJbarJz/nvjqou4TjLdt18gkPlOj87wj4rV4DlVVPwxAJ/30QdH6xWh1
-	0AFuMPnjm8SrXJpMkDgj/cloqjj/0CB6y6NJVTm0qgnRusicOwJLwkPj+jg4wdbKPlMEKOocBw/dF
-	VF55RlO9PmmQVAh5SFwiY66y3vLDt7WsXB2HTy+r1scp75POyGkaWCddTa6vT/pNdsqyKMqO8oRig
-	7YJG6sg6Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yKQQwj0NZ4uMjA3lzRNZxUhVA8Eul5TQ1lP34eBAWbM=; b=MQqTMTkj0tFgaZ
+	zy6SaJkyZu8liYfnwZ7dbW61QWzVxSdE5p5Bsw0QrHbNovHwrzSbpFxCz+3YkIptjH5Ak8PzgRHvk
+	rh7ZA4Je60qfAkSuvkugV7sxYY1tkvY8oxWlzCMpGpYfAXiC+5RmXAbBzYeY7INCJcDmVHTllZWgY
+	3NSlpA32CTjncwKwtEraV5hBagTbFVDMoeuTdyFJDDZKrQ+HKms/BPvaejxkz0DjZLtJextgJk0gj
+	boiRNm4wUOC4cMGawupyQhd/8Ua4zoP2UVl5JBaIIctKpc7I3gypw3hFp9eaT7NcGR9VTitv2U5uQ
+	xOGBrqj1uSsHFq3q4Glg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQEDM-0004SD-25; Thu, 31 Oct 2019 17:26:28 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1iQEEh-0004o0-Ui; Thu, 31 Oct 2019 17:27:51 +0000
+Received: from mail-ua1-x942.google.com ([2607:f8b0:4864:20::942])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQEDB-0004Qx-9h; Thu, 31 Oct 2019 17:26:18 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 3E70EB961;
- Thu, 31 Oct 2019 17:26:14 +0000 (UTC)
-Message-ID: <9c051b0f2d89baa36fd3d3669a107f549c310d49.camel@suse.de>
-Subject: Re: [PATCH RFC 1/5] dma/direct: turn ARCH_ZONE_DMA_BITS into a
- variable
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Date: Thu, 31 Oct 2019 18:26:10 +0100
-In-Reply-To: <20191031133831.GA21509@infradead.org>
-References: <20191014183108.24804-1-nsaenzjulienne@suse.de>
- <20191014183108.24804-2-nsaenzjulienne@suse.de>
- <20191030214914.GA15939@infradead.org>
- <8c525f66c1c0d9f07e0cff4948d1ec3229756220.camel@suse.de>
- <20191031133831.GA21509@infradead.org>
-User-Agent: Evolution 3.34.1 
+ id 1iQEEY-0004mk-NH
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 17:27:44 +0000
+Received: by mail-ua1-x942.google.com with SMTP id o9so380412uat.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 31 Oct 2019 10:27:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=46AmydREw6SfU27IOaxxeyDyoZWG9jeVi2WIEFhrMqA=;
+ b=uKrGepNXzPXDPzJbvbemKuf7R6S5LOyd1Myup06RKzLSP2nrNd0gQdYUKo5Mow3DAS
+ +SE7IfD6gsDwY0qy8BSl0pYU8GPWYV87yKCwXeFmUj8tfcvjCxE6XCZvWViSX7BLJr2h
+ JeRICf0gxuCWKgnMwiCuZSLMzerlDUIsThoYOFbNVmV4Iio6o99JIWYLgpdzR7oI4BDx
+ tISF+YHwsfL5BB8DS6m0YqBcFdYRIfZsqtAtZCMGUCUGgOjGgmE4qf5gvZ9MBWNon0hF
+ l2JKhPx8hF2es29OTb38GxXTjoyqOeNJvDE0LRnzacnT1nPR0db8A8Us17QUjMd2B+Rn
+ jUDw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=46AmydREw6SfU27IOaxxeyDyoZWG9jeVi2WIEFhrMqA=;
+ b=nmdpMAsMPk8yfN9h5awtA7R36MjIRx9n7Jpg9cNOBohENU5z38ruiO8slupuBJy0TO
+ iIA2Pmj44Cb45OX9VFcHJul4ntsO96NJsduxp0PTjqCnBjYdPzMVP+vFoL4YyfRZ9e3Z
+ +kkqsx/UbGMzAKTATklE3An2RNjo2J1S7v/L96nZl1d858IM1mpwdTUoGs+3eW4uNSXc
+ 4ZG75zZVme43yyV+3rmLj7R7LTlKZmTgqyhMdyPjcwpQIvC/Raxdvko27KXz1guxZpys
+ GmwMHTwPE0okcZps0hpyr+3edT2QLBTJ4scLqwrrSGHA/DPwh1UM1NnWL49Q3jafbExx
+ j7Cg==
+X-Gm-Message-State: APjAAAVQewfqVH8jvO7dVlWL94mm3fNj4rTTsNdbh/AJbCcuyH75u8lF
+ f3ZpW2DXXyIRExXl4YqayFjarghwbLabli1vybzutw==
+X-Google-Smtp-Source: APXvYqwHBpr5C3UNKE6XLzBUe1Jy/aZ4Jd12qOfI93i2wDsaUH2oAUrgK4KH1mAvPJ/zcWPVngS0f/6vsb1FU+PAYk8=
+X-Received: by 2002:a9f:3772:: with SMTP id a47mr3382097uae.53.1572542858440; 
+ Thu, 31 Oct 2019 10:27:38 -0700 (PDT)
 MIME-Version: 1.0
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20191031164637.48901-1-samitolvanen@google.com>
+ <20191031164637.48901-14-samitolvanen@google.com>
+ <CAKwvOd=kcPS1CU=AUjOPr7SAipPFhs-v_mXi=AbqW5Vp9XUaiw@mail.gmail.com>
+In-Reply-To: <CAKwvOd=kcPS1CU=AUjOPr7SAipPFhs-v_mXi=AbqW5Vp9XUaiw@mail.gmail.com>
+From: Sami Tolvanen <samitolvanen@google.com>
+Date: Thu, 31 Oct 2019 10:27:26 -0700
+Message-ID: <CABCJKudb2_OH5CRFm64rxv-VVnuOrO-ZOrXRHg8hR98Vj+BzVw@mail.gmail.com>
+Subject: Re: [PATCH v3 13/17] arm64: preserve x18 when CPU is suspended
+To: Nick Desaulniers <ndesaulniers@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_102617_481974_F3A00F22 
-X-CRM114-Status: GOOD (  13.65  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191031_102742_782889_810884DF 
+X-CRM114-Status: UNSURE (   8.77  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:942 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,95 +100,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, mbrugger@suse.com,
- Vasily Gorbik <gor@linux.ibm.com>, wahrenst@gmx.net,
- Michael Ellerman <mpe@ellerman.id.au>, Will Deacon <will@kernel.org>,
- linuxppc-dev@lists.ozlabs.org, Heiko Carstens <heiko.carstens@de.ibm.com>,
- linux-kernel@vger.kernel.org, ChristophHellwig <hch@infradead.org>,
- Christian Borntraeger <borntraeger@de.ibm.com>,
- iommu@lists.linux-foundation.org, f.fainelli@gmail.com,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Paul Mackerras <paulus@samba.org>, Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: multipart/mixed; boundary="===============7559373325739897373=="
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
+ LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Kernel Hardening <kernel-hardening@lists.openwall.com>,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, Oct 31, 2019 at 10:18 AM Nick Desaulniers
+<ndesaulniers@google.com> wrote:
+> > +#ifdef CONFIG_SHADOW_CALL_STACK
+> > +       ldr     x18, [x0, #96]
+> > +       str     xzr, [x0, #96]
+>
+> How come we zero out x0+#96, but not for other offsets? Is this str necessary?
 
---===============7559373325739897373==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-HUsDE4pCuvQagD+CYqmq"
+It clears the shadow stack pointer from the sleep state buffer, which
+is not strictly speaking necessary, but leaves one fewer place to find
+it.
 
-
---=-HUsDE4pCuvQagD+CYqmq
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-On Thu, 2019-10-31 at 06:38 -0700, Christoph Hellwig wrote:
-> On Thu, Oct 31, 2019 at 11:30:36AM +0100, Nicolas Saenz Julienne wrote:
-> > On Wed, 2019-10-30 at 14:49 -0700, Christoph Hellwig wrote:
-> > > On Mon, Oct 14, 2019 at 08:31:03PM +0200, Nicolas Saenz Julienne wrot=
-e:
-> > > > Some architectures, notably ARM, are interested in tweaking this
-> > > > depending on their runtime DMA addressing limitations.
-> > > >=20
-> > > > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> > >=20
-> > > Do you want me to pick this up for the 5.5 dma-mapping tree, or do yo=
-u
-> > > want me to wait for the rest to settle?
-> >=20
-> > I'd say take it, this will be ultimately needed once we push forward wi=
-th
-> > ARM.
->=20
-> Can you resend a version that applies against 5.4-rc?  The current one
-> has conflicts in the arm64 code.
-
-Hi Catalin,
-would you mind taking this patch on top of the arm64 ZONE_DMA series?
-
-I tried to go though Christoph's tree but it ultimately clashes with the
-ZONE_DMA series. It's simpler to apply it on top of your tree.
-
-Regrads,
-Nicolas
-
-
---=-HUsDE4pCuvQagD+CYqmq
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl27GTIACgkQlfZmHno8
-x/6rAgf/ZoMMGW7IRaV6x5ZwhpeWmnDuHERj4vzVJa0/eBKTyeFHQYuyNBygdzOW
-JGunOdpAkJNo6DdJKxyUt8u5d8vvnq3mIm+g0xkoz6PxzzUtPlEuFZ1fgP1oGYIT
-BdBcYj23cYMrYjtqcJJkBoBu+5JBkx28Mu5oGyWeRojupXkK+9NN53qUZMmYcFD+
-Lw9i3nBQmiozrdeHMiErrYTXOkz93sipx2zeo2jF4CsOtj67BfJMhmsRogeQTIe+
-Z5A6Ik+LQ8AejhKOAisJzXidZPdUwaENRKw2qicQFBoifWbqinhT6JxmrEk/AHR1
-eg9iA75sotbQfuNiAzn6qCofWaKfcg==
-=jqtB
------END PGP SIGNATURE-----
-
---=-HUsDE4pCuvQagD+CYqmq--
-
-
-
---===============7559373325739897373==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Sami
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7559373325739897373==--
-
-
