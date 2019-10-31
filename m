@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8D5FEB908
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 22:35:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 445F3EB90B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 22:35:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Q8/ngSRqtXSumolPZP9QBa60VxxCDCHr7029aJc1pcM=; b=DjyDl+SnH9VMTIFyegL4RYwtv/
-	Ib8gbYDdpITgY/giOn14rNPBr6DjIuxK2BheT/bAKH08AKlNTI1DRdoWGYhi3OMPp+SV8hRndrMsA
-	IsFFD0tpk5BfPbBmY3W1zps+d4M4wCjBJLH5mcT4tgEJPPbucqXjUqJ9ZhzA9acH0V8UNCtUs+vQ4
-	wz5OmLs55F6PBAAfMm7E2H5DC8rDTfgBpcmMVRDfl707ZBhhJcb/KJcFvbuE5t32gXwTJ7sVxoUgn
-	4NkDtMY4vdY4S74ZNOG8R6HJrypldTaDF2VEM+EtZBTGSNpin8O3nyefnPvEhggfXotxddLoyrQPe
-	8prdjScA==;
+	bh=iqp2adNSx/IZge/H9cKxfOLqEQVpOs8YUdwYRewMJfM=; b=cJTV7OgmkwwsLFBWn24IOUfpUU
+	LRjz9YFEPOteRu7KWQGZZ6vkrxjA1FDuz9Y16aAqMO6Ns3nYgZGqiRJJ68aPanm1uoL4V3+XBsQpR
+	6jzy7evYJPNuNTObV5EwIzDCV5bDDeaxMWpMT2+PVwUXQlPkcFArPeYLp5F+tptyC2ceWDtGNhloP
+	KHmjdQBSGHdXoXDjZpV+x6F8Sf8QRPYrmdB1ZQm0JbnUfS4h5x39ReV8MEJIMz3pQFB343l0h3TEG
+	DKLA6H6KwDhcX9puJoHfT3R55rTY9maWbhP8daUaskbUtRXXX1d4TTbn0+ZzSbrbzxcdDOc6dmDzY
+	JZRtGtmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQI6P-0005KV-QM; Thu, 31 Oct 2019 21:35:33 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1iQI6g-0005ZR-Ii; Thu, 31 Oct 2019 21:35:50 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQI5S-0003dn-MD
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 21:34:36 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 81B4C1A057E;
- Thu, 31 Oct 2019 22:34:33 +0100 (CET)
+ id 1iQI5T-0003eA-HM
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 21:34:37 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 34D05200563;
+ Thu, 31 Oct 2019 22:34:34 +0100 (CET)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 741951A0214;
- Thu, 31 Oct 2019 22:34:33 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 26B372001CC;
+ Thu, 31 Oct 2019 22:34:34 +0100 (CET)
 Received: from fsr-ub1864-112.ea.freescale.net
  (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id C6BE0205E9;
- Thu, 31 Oct 2019 22:34:32 +0100 (CET)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 83365205E9;
+ Thu, 31 Oct 2019 22:34:33 +0100 (CET)
 From: Leonard Crestez <leonard.crestez@nxp.com>
 To: MyungJoo Ham <myungjoo.ham@samsung.com>,
  Kyungmin Park <kyungmin.park@samsung.com>,
  "Rafael J. Wysocki" <rjw@rjwysocki.net>
-Subject: [PATCH v10 02/11] PM / devfreq: Set scaling_max_freq to max on OPP
- notifier error
-Date: Thu, 31 Oct 2019 23:34:19 +0200
-Message-Id: <e7098a35e93f329a3044f16724a4eb504545ad61.1572556786.git.leonard.crestez@nxp.com>
+Subject: [PATCH v10 03/11] PM / devfreq: Split device_register usage
+Date: Thu, 31 Oct 2019 23:34:20 +0200
+Message-Id: <369bcb0a87fb6fffa595e22fd085c6802a7c0281.1572556786.git.leonard.crestez@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1572556786.git.leonard.crestez@nxp.com>
 References: <cover.1572556786.git.leonard.crestez@nxp.com>
@@ -50,16 +49,15 @@ In-Reply-To: <cover.1572556786.git.leonard.crestez@nxp.com>
 References: <cover.1572556786.git.leonard.crestez@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_143434_859856_FE539FAD 
-X-CRM114-Status: UNSURE (   9.88  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191031_143435_717138_5490A218 
+X-CRM114-Status: GOOD (  11.02  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -87,40 +85,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The devfreq_notifier_call functions will update scaling_min_freq and
-scaling_max_freq when the OPP table is updated.
+Splitting device_register into device_initialize and device_add allows
+devm-based allocations to be performed before device_add.
 
-If fetching the maximum frequency fails then scaling_max_freq remains
-set to zero which is confusing. Set to ULONG_MAX instead so we don't
-need special handling for this case in other places.
+It also simplifies error paths in devfreq_add_device: just call
+put_device instead of duplicating parts of devfreq_dev_release.
 
 Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-Reviewed-by: Matthias Kaehlcke <mka@chromium.org>
-Reviewed-by: Chanwoo Choi <cw00.choi@samsung.com>
 ---
- drivers/devfreq/devfreq.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ drivers/devfreq/devfreq.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
 diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
-index b65faa1a2baa..715127f1cda5 100644
+index 715127f1cda5..603681f8cd73 100644
 --- a/drivers/devfreq/devfreq.c
 +++ b/drivers/devfreq/devfreq.c
-@@ -557,12 +557,14 @@ static int devfreq_notifier_call(struct notifier_block *nb, unsigned long type,
- 	devfreq->scaling_min_freq = find_available_min_freq(devfreq);
- 	if (!devfreq->scaling_min_freq)
- 		goto out;
+@@ -639,10 +639,11 @@ struct devfreq *devfreq_add_device(struct device *dev,
+ 	mutex_init(&devfreq->lock);
+ 	mutex_lock(&devfreq->lock);
+ 	devfreq->dev.parent = dev;
+ 	devfreq->dev.class = devfreq_class;
+ 	devfreq->dev.release = devfreq_dev_release;
++	device_initialize(&devfreq->dev);
+ 	INIT_LIST_HEAD(&devfreq->node);
+ 	devfreq->profile = profile;
+ 	strncpy(devfreq->governor_name, governor_name, DEVFREQ_NAME_LEN);
+ 	devfreq->previous_freq = profile->initial_freq;
+ 	devfreq->last_status.current_frequency = profile->initial_freq;
+@@ -676,15 +677,14 @@ struct devfreq *devfreq_add_device(struct device *dev,
+ 	devfreq->suspend_freq = dev_pm_opp_get_suspend_opp_freq(dev);
+ 	atomic_set(&devfreq->suspend_count, 0);
  
- 	devfreq->scaling_max_freq = find_available_max_freq(devfreq);
--	if (!devfreq->scaling_max_freq)
-+	if (!devfreq->scaling_max_freq) {
-+		devfreq->scaling_max_freq = ULONG_MAX;
- 		goto out;
-+	}
+ 	dev_set_name(&devfreq->dev, "devfreq%d",
+ 				atomic_inc_return(&devfreq_no));
+-	err = device_register(&devfreq->dev);
++	err = device_add(&devfreq->dev);
+ 	if (err) {
+ 		mutex_unlock(&devfreq->lock);
+-		put_device(&devfreq->dev);
+-		goto err_out;
++		goto err_dev;
+ 	}
  
- 	err = update_devfreq(devfreq);
+ 	devfreq->trans_table = devm_kzalloc(&devfreq->dev,
+ 			array3_size(sizeof(unsigned int),
+ 				    devfreq->profile->max_state,
+@@ -739,13 +739,13 @@ struct devfreq *devfreq_add_device(struct device *dev,
  
- out:
- 	mutex_unlock(&devfreq->lock);
+ err_init:
+ 	mutex_unlock(&devfreq_list_lock);
+ err_devfreq:
+ 	devfreq_remove_device(devfreq);
+-	devfreq = NULL;
++	return ERR_PTR(err);
+ err_dev:
+-	kfree(devfreq);
++	put_device(&devfreq->dev);
+ err_out:
+ 	return ERR_PTR(err);
+ }
+ EXPORT_SYMBOL(devfreq_add_device);
+ 
 -- 
 2.17.1
 
