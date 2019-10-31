@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67D7DEAE3A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 12:02:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB943EAE3B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 12:02:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,54 +11,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=LXk1aT8nTT5Uz768tmVAm3NDFLvCsMBcRfOXbvWbC0E=; b=ocKTU89T1lYgZ7s+ozrBN+EGy0
-	pmHmTvn6OasGhztmnpSmIhdVpxDkMAsZL9nR8Vkass4nYMkLmZrr5KlCKVNwF13ddkjycdT5WS3r+
-	CVVDhw/VHhQQ/VizXAmiMCEBguP/JbKHaDcftoN6umiX6NrajdhiZpxx6vLWQGkv0Dg+P9VT3rxhk
-	DGy0/1kHmhTlLxls3eMFs+wrz7iuGVkC1R4kpulb/HXt816y3IFD3qth2cqUK2oR91Qj+ruwzFVD1
-	xBCzu/b+2LkBNimNe3jarJTZqWMHqq6ksm82MrgCRsl325+7F4t4XlZcRWKABvBHb2YMtOEcftvZw
-	5YtJF1HA==;
+	bh=jGlVanAhP+lDUV6geLFQuCY7q0d5SPKdLisdxGLyglE=; b=kQ6g72WiiOvQhVasYMlif4MU8J
+	4UZbnplEtjdGRB7cH6+VfgY4/bKuGXSmj/zZjF9794aOalrkyJHgf4RZ+xiQi+VMvDjlZkGGGVoT+
+	5JcbXtQ34d2GUOwITgdCbuTDlr0xL+PHEiaQq2L6+zWjjYzt6/atdQFUa1pYeEEhWuVbEc+QrUH8u
+	jZtRsKxd/rscujIJJSipEHRO2/3CTO5uPrdweaETzUn0DMCk/vBSDLlddrBPG9Tbe0JaTqoY9gcAn
+	WivJS4LcvMSQCdmpjoZVlFBjrvL3aOQ5pYOaDebZ862tAoO/O2jPd1dfaMJIJkaWHvJT97sI4jxih
+	52JysRMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQ8DZ-0004iH-1R; Thu, 31 Oct 2019 11:02:17 +0000
+	id 1iQ8Dk-0004xh-Q3; Thu, 31 Oct 2019 11:02:28 +0000
 Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQ8CQ-0003yV-Sc
+ id 1iQ8CQ-0003yX-SY
  for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 11:01:11 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
  [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id A3C9FC08B2;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id A9D25C08B4;
  Thu, 31 Oct 2019 11:01:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1572519662; bh=ntn5h+EtiIr26cxuzm1ZrBPes0SSBYvLTZygjleUGzc=;
+ t=1572519662; bh=wQtrPv+GIGZu+Tp6DHyLxgJSIlQY5yW+McFB8EMBWDw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=DKM3PU3osEKlPg/G6gOJfS+aTyS2/t/N8kW6/jCSb1PquRB22I5cHaY8TgiaGjLOU
- tn1Ge6ZgjB3oUMJlWeV97ZOOSAnBjJa5J1+MbtFkDnbf1RD/yoFuc/mm1Go8flCqj2
- IxGQ7VnhG9MlaY3XyNjCDSpQOK38MZEX2ZQeb2krvD3gpUYS3WQ0WNfQRukNV0umdk
- z7aHziG0TqsLa6wwcc07wYmPDRs/7k+46f42+6CDy8B+uEJNnrU+4SLEtvRpeWTc8P
- eAez1tH7mCcZGz0++rIXYjIEdQzNKUHsEiUCYowE0bzn9KGRmy7gWkHvDzkN6DiVx8
- gy8EvXR3VQ4Lg==
+ b=K/aKKSqtUKMUPsRWVnHHIm2YegPgnrOvZJEXFBuVYB3VfFvDtR5DmRkE/4sHx8dYn
+ 8UCcbjSiKuPTW28gEwgPMHiEZSLHYu0BkDpYE/wUBUZ4Yr2rET0tlekHTlmKDFML7P
+ fs5Y9EN+E240v3Jh6QwpMNk06hiBycl1qC6Dl++9vV4lpxxMRDRrKLlfL93nLyTC27
+ 9WbGslZnYlzYLplmyuPhU3Qe7cNIsEVpV2pjuJ2fEKyqqxEfzFBecdnMOHJJyCtOH8
+ uQnLn4xVptxRBgKTF1qXPaehvXxQx6+EMszS5opgyfDjZ+Dlr3FKS4Q8qY9Sv521ZL
+ 0GtzrIWbODuEA==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 65F90A0083;
+ by mailhost.synopsys.com (Postfix) with ESMTP id 6D854A0087;
  Thu, 31 Oct 2019 11:01:00 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net v2 09/10] net: stmmac: xgmac: Disable MMC interrupts by
- default
-Date: Thu, 31 Oct 2019 12:00:47 +0100
-Message-Id: <a2d61459a7818d16a7b2d04dc2cee1913fcab7c5.1572519070.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH net v2 10/10] net: stmmac: Fix the packet count in stmmac_rx()
+Date: Thu, 31 Oct 2019 12:00:48 +0100
+Message-Id: <fca9407d676529289866358f5f57656138ef039e.1572519070.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1572519070.git.Jose.Abreu@synopsys.com>
 References: <cover.1572519070.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1572519070.git.Jose.Abreu@synopsys.com>
 References: <cover.1572519070.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_040107_051754_33C7AD86 
-X-CRM114-Status: GOOD (  12.01  )
+X-CRM114-CacheID: sfid-20191031_040107_051177_E70EE771 
+X-CRM114-Status: GOOD (  12.32  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -96,11 +95,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MMC interrupts were being enabled, which is not what we want because it
-will lead to a storm of interrupts that are not handled at all. Fix it
-by disabling all MMC interrupts for XGMAC.
+Currently, stmmac_rx() is counting the number of descriptors but it
+should count the number of packets as specified by the NAPI limit.
 
-Fixes: b6cdf09f51c2 ("net: stmmac: xgmac: Implement MMC counters")
+Fix this.
+
+Fixes: ec222003bd94 ("net: stmmac: Prepare to add Split Header support")
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
 ---
@@ -114,33 +114,46 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/mmc_core.c | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/mmc_core.c b/drivers/net/ethernet/stmicro/stmmac/mmc_core.c
-index a223584f5f9a..252cf48c5816 100644
---- a/drivers/net/ethernet/stmicro/stmmac/mmc_core.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/mmc_core.c
-@@ -176,6 +176,7 @@
- #define MMC_XGMAC_RX_PKT_SMD_ERR	0x22c
- #define MMC_XGMAC_RX_PKT_ASSEMBLY_OK	0x230
- #define MMC_XGMAC_RX_FPE_FRAG		0x234
-+#define MMC_XGMAC_RX_IPC_INTR_MASK	0x25c
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+index 063b0ecd244b..d3886d2b16d4 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+@@ -3505,8 +3505,6 @@ static int stmmac_rx(struct stmmac_priv *priv, int limit, u32 queue)
+ 		if (unlikely(status & dma_own))
+ 			break;
  
- static void dwmac_mmc_ctrl(void __iomem *mmcaddr, unsigned int mode)
- {
-@@ -333,8 +334,9 @@ static void dwxgmac_mmc_ctrl(void __iomem *mmcaddr, unsigned int mode)
+-		count++;
+-
+ 		rx_q->cur_rx = STMMAC_GET_ENTRY(rx_q->cur_rx, DMA_RX_SIZE);
+ 		next_entry = rx_q->cur_rx;
  
- static void dwxgmac_mmc_intr_all_mask(void __iomem *mmcaddr)
- {
--	writel(MMC_DEFAULT_MASK, mmcaddr + MMC_RX_INTR_MASK);
--	writel(MMC_DEFAULT_MASK, mmcaddr + MMC_TX_INTR_MASK);
-+	writel(0x0, mmcaddr + MMC_RX_INTR_MASK);
-+	writel(0x0, mmcaddr + MMC_TX_INTR_MASK);
-+	writel(MMC_DEFAULT_MASK, mmcaddr + MMC_XGMAC_RX_IPC_INTR_MASK);
- }
+@@ -3533,6 +3531,7 @@ static int stmmac_rx(struct stmmac_priv *priv, int limit, u32 queue)
+ 			goto read_again;
+ 		if (unlikely(error)) {
+ 			dev_kfree_skb(skb);
++			count++;
+ 			continue;
+ 		}
  
- static void dwxgmac_read_mmc_reg(void __iomem *addr, u32 reg, u32 *dest)
+@@ -3572,6 +3571,7 @@ static int stmmac_rx(struct stmmac_priv *priv, int limit, u32 queue)
+ 			skb = napi_alloc_skb(&ch->rx_napi, len);
+ 			if (!skb) {
+ 				priv->dev->stats.rx_dropped++;
++				count++;
+ 				continue;
+ 			}
+ 
+@@ -3637,6 +3637,7 @@ static int stmmac_rx(struct stmmac_priv *priv, int limit, u32 queue)
+ 
+ 		priv->dev->stats.rx_packets++;
+ 		priv->dev->stats.rx_bytes += len;
++		count++;
+ 	}
+ 
+ 	if (status & rx_not_ls) {
 -- 
 2.7.4
 
