@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48086EB694
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 19:03:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8BE4BEB6A0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 19:06:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NfopiZLyJmFGu+61+C0dSB7OUtVZhmjfg3GPS2UYgO8=; b=RLMQVSl18ITh90
-	4S0thf1B5WRJKGjNb2DYlv9kpjgQO/ULGxlvs0pI8CaG5/hMPJ6IiqEz0W0eiucc6p4exgOOe5k9D
-	OCGZlP2jMiwMZGytNBmhI0+pYX3kRdIvzf2b6iKqTpYMVYXloFPj20bg2ar2Crw7mP/fL9NJVVfkz
-	8wq3TH6A9FqhfZKQnxLWXdSCC3WCZfiQQCrpu/+q81ZknGx7r5YD3jGqFPE50q8Co1xjFjmYWs+yK
-	BaU8xzn3hZxw6121dlx7M8r6nbHFau1yduUx9g2iHtXXe42crJjRjO+H5KgYywQpi90q78mRSNU06
-	lQGzMKkUw6nX7peffCsA==;
+	List-Owner; bh=KWrWEi5R51SdRjJqYHtftFLRUpv1QtwoEMckWeJFiHI=; b=Nkmk1trb2u+YQx
+	i4jgR1eUv/V3lUzx/LB49qqMiP96XxZP9vogPJ2aHV969HXEZJ0QrrqM98NS8cXp774WkoeNmM4aV
+	qYqR9SF95TUAa72hEPs6PHv+x9PTQXWtgcmcLvdpQS67+iIgj1RntusNceLX0qIBmcSK9l0+3kS3u
+	SH74JFwAc51YdDFysbbuooWSlLtXP76p9at6dNGdwM3cVBdiwxnNVFjOKo1Ii4lg/8XtNXq9Jw0sY
+	YusacwVcALGuhLh1b8TPFKSdmevKT8z9AI1DIP5GYXC3saNEPOpQy3LYNoTsP12H1dyOz96FyXFV9
+	5ZwKM1Y7whcq1Oj/YOTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQEmk-0002OC-0C; Thu, 31 Oct 2019 18:03:02 +0000
+	id 1iQEqB-0003zf-M5; Thu, 31 Oct 2019 18:06:35 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQEmU-0002NR-3Q; Thu, 31 Oct 2019 18:02:47 +0000
+ id 1iQEq1-0003yz-42
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 18:06:26 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8783A1FB;
- Thu, 31 Oct 2019 11:02:44 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AC1D41FB;
+ Thu, 31 Oct 2019 11:06:23 -0700 (PDT)
 Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
  by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 86E343F6C4; Thu, 31 Oct 2019 11:02:42 -0700 (PDT)
-Date: Thu, 31 Oct 2019 18:02:40 +0000
+ A95563F6C4; Thu, 31 Oct 2019 11:06:21 -0700 (PDT)
+Date: Thu, 31 Oct 2019 18:06:19 +0000
 From: Catalin Marinas <catalin.marinas@arm.com>
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: Re: [PATCH v6 3/4] arm64: use both ZONE_DMA and ZONE_DMA32
-Message-ID: <20191031180240.GH39590@arrakis.emea.arm.com>
-References: <6703f8dab4a21fe4e1049f8f224502e1733bf72c.camel@suse.de>
- <A1A8EEF0-2273-4338-B4D8-D9B1328484B4@lca.pw>
- <9208de061fe2b9ee7b74206b3cd52cc116e43ac0.camel@suse.de>
- <AA6D37F1-A1B3-4EC4-8620-007095168BC7@lca.pw>
- <1956a2c8f4911b2a7e2ba3c53506c0f06efb93f8.camel@suse.de>
- <20191031155145.GF39590@arrakis.emea.arm.com>
- <6fd539b82cbbb2ae307a67a76eb4c2ead0bd5d4a.camel@suse.de>
+To: Christoph Hellwig <hch@lst.de>
+Subject: Re: [PATCH] dma/direct: turn ARCH_ZONE_DMA_BITS into a variable
+Message-ID: <20191031180619.GI39590@arrakis.emea.arm.com>
+References: <20191031152837.15253-1-nsaenzjulienne@suse.de>
+ <20191031154759.GA7162@lst.de>
+ <40d06d463c05d36968e8b64924d78f7794f8de50.camel@suse.de>
+ <20191031155750.GA7394@lst.de>
+ <6726a651c12d91ca22b9d8984745d90db5d507ec.camel@suse.de>
+ <20191031165853.GA8532@lst.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <6fd539b82cbbb2ae307a67a76eb4c2ead0bd5d4a.camel@suse.de>
+In-Reply-To: <20191031165853.GA8532@lst.de>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_110246_231390_672D48DE 
-X-CRM114-Status: GOOD (  22.18  )
+X-CRM114-CacheID: sfid-20191031_110625_209957_0745ED8C 
+X-CRM114-Status: GOOD (  14.95  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,85 +65,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: f.fainelli@gmail.com, mbrugger@suse.com, marc.zyngier@arm.com,
- Robin Murphy <Robin.Murphy@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, linux-mm@kvack.org,
- Rob Herring <robh+dt@kernel.org>, Qian Cai <cai@lca.pw>, wahrenst@gmx.net,
- m.szyprowski@samsung.com, phill@raspberrypi.org, will@kernel.org,
- Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org,
- linux-rpi-kernel@lists.infradead.org
+Cc: linux-s390@vger.kernel.org, Vasily Gorbik <gor@linux.ibm.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ linuxppc-dev@lists.ozlabs.org, Heiko Carstens <heiko.carstens@de.ibm.com>,
+ Robin Murphy <robin.murphy@arm.com>, linux-kernel@vger.kernel.org,
+ Christian Borntraeger <borntraeger@de.ibm.com>,
+ iommu@lists.linux-foundation.org, Paul Mackerras <paulus@samba.org>,
+ linux-arm-kernel@lists.infradead.org, Michael Ellerman <mpe@ellerman.id.au>,
+ Will Deacon <will@kernel.org>, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 31, 2019 at 05:04:34PM +0100, Nicolas Saenz Julienne wrote:
-> On Thu, 2019-10-31 at 15:51 +0000, Catalin Marinas wrote:
-> > (sorry, I've been away last week and only now caught up with emails)
+On Thu, Oct 31, 2019 at 05:58:53PM +0100, Christoph Hellwig wrote:
+> On Thu, Oct 31, 2019 at 05:22:59PM +0100, Nicolas Saenz Julienne wrote:
+> > OK, I see what you mean now. It's wrong indeed.
 > > 
-> > On Tue, Oct 22, 2019 at 01:23:32PM +0200, Nicolas Saenz Julienne wrote:
-> > > On Mon, 2019-10-21 at 16:36 -0400, Qian Cai wrote:
-> > > > I managed to get more information here,
-> > > > 
-> > > > [    0.000000] cma: dma_contiguous_reserve(limit c0000000)
-> > > > [    0.000000] cma: dma_contiguous_reserve: reserving 64 MiB for global
-> > > > area
-> > > > [    0.000000] cma: cma_declare_contiguous(size 0x0000000004000000, base
-> > > > 0x0000000000000000, limit 0x00000000c0000000 alignment 0x0000000000000000)
-> > > > [    0.000000] cma: Failed to reserve 512 MiB
-> > > > 
-> > > > Full dmesg:
-> > > > 
-> > > > https://cailca.github.io/files/dmesg.txt
-> > > 
-> > > OK I got it, reproduced it too.
-> > > 
-> > > Here are the relevant logs:
-> > > 
-> > > 	[    0.000000]   DMA      [mem 0x00000000802f0000-0x00000000bfffffff]
-> > > 	[    0.000000]   DMA32    [mem 0x00000000c0000000-0x00000000ffffffff]
-> > > 	[    0.000000]   Normal   [mem 0x0000000100000000-0x00000097fcffffff]
-> > > 
-> > > As you can see ZONE_DMA spans from 0x00000000802f0000-0x00000000bfffffff
-> > > which
-> > > is slightly smaller than 1GB.
-> > > 
-> > > 	[    0.000000] crashkernel reserved: 0x000000009fe00000 -
-> > > 0x00000000bfe00000 (512 MB)
-> > > 
-> > > Here crashkernel reserved 512M in ZONE_DMA.
-> > > 
-> > > 	[    0.000000] cma: Failed to reserve 512 MiB
-> > > 
-> > > CMA tried to allocate 512M in ZONE_DMA which fails as there is no enough
-> > > space.
-> > > Makes sense.
-> > > 
-> > > A fix could be moving crashkernel reservations after CMA and then if unable
-> > > to
-> > > fit in ZONE_DMA try ZONE_DMA32 before bailing out. Maybe it's a little over
-> > > the
-> > > top, yet although most devices will be fine with ZONE_DMA32, the RPi4 needs
-> > > crashkernel to be reserved in ZONE_DMA.
+> > The trouble is the ZONE_DMA series[1] in arm64, also due for v5.5, will be
+> > affected by this patch. I don't know the right way to approach this problem
+> > since depending on the merge order, this patch should be updated or the arm64
+> > ZONE_DMA series fixed.
 > > 
-> > Does RPi4 need CMA in ZONE_DMA? If not, I'd rather reserve the CMA from
-> > ZONE_DMA32.
+> > Maybe it's easier to just wait for v5.6.
 > 
-> Yes, CMA is imperatively to be reserved in ZONE_DMA.
-> 
-> > Even if you moved the crash kernel, someone else might complain that
-> > they had 2GB of CMA and it no longer works.
-> 
-> I have yet to look into it, but I've been told that on x86/x64 they have a
-> 'high' flag to be set alongside with crashkernel that forces the allocation
-> into ZONE_DMA32. We could mimic this behavior for big servers that don't depend
-> on ZONE_DMA but need to reserve big chunks of memory.
+> Ok, I can wait.  Or the arm64 maintainers can pick up this patch if
+> you want to add it to that series.
 
-The 'high' flag actually talks about crashkernel reserved above 4G which
-is not really the case here. Since RPi4 is the odd one out, I'd rather
-have the default crashkernel and CMA in the ZONE_DMA32 (current mainline
-behaviour) and have the RPi4 use explicit size@offset parameters for
-crashkernel and cma.
+This branch is stable (may add a fix but not I'm not rebasing it) if you
+want to base this patch on top:
+
+https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/log/?h=for-next/zone-dma
+
+Otherwise, with your ack, I can add it on top of the above branch (aimed
+at 5.5).
 
 -- 
 Catalin
