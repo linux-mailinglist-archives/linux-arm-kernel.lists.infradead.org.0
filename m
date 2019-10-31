@@ -2,87 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D2B9EEB34B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 15:59:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5F7FEB38C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 16:11:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ztHVWAdh9mygvtxD2zMykEdvRK4Dpm8bOvg0p+PYbUs=; b=lYbp+1Ut9rgOmD
-	V4LpEShNTHSSCSBSnyair60IfL4OAqJfFZp7PczjiDgKDjghFvxXVOjps6zs7jy9GyenXO2N6ARdH
-	tUwwGTw+/lEv2KQe41E/GXI8Au9haSY2e442rDvctjef1Tls4OsYlS6w5godWeclYukS6ZDxieKf9
-	82JABnAwpxk60VsiWQtH3frJtHtQIJP9UFoz6DQK5kGxhY1qoBPN2yx7WAy0aBr6um3IwtBC1Hj56
-	vx7SmQxCT6Nzql73Qzrf9ZKG09gIscs33jDnVrLyiR00ih3Phih+uWBUsHiUcWn9xce8LYkjbwHzy
-	dWLHSnlNc4VM+cvOV7rA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rBHpFQnHa2DG5/WyfLj0zLm9yhxt8tgvATACP8WQvLk=; b=pTr1v8wRfSXkmI
+	p3V0M4K2fuNyQClmolW4OuL29HOyEhj1eqAp5G+Gg1VngD4JsYlraqiuhsIzQE4IczZca7rpAPvAs
+	JGOK2xRYbJHZ4G4zS3GemcmJ2RRCmcqaZJP6ge0qAObHFwYJViuznFEOLG/SCDi2hkI6YVOGP/ntD
+	z9i3lyEXhxzUl8J6m06TS/5KfWDPgmEq1RAmIgAKoBKcpW3Utvd/BpZI6gxAUaBs7GmuXNEi5b+Xa
+	UMhf/nDo8h0CsducCW0YCF/ito3vdfm32ELOtoGTXyr9ErJ3d6J+HyVzvIKaYhwuPDzdc6M+tKue7
+	FuVjM4mFQjH5GC5XdrVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQBuX-00046P-WF; Thu, 31 Oct 2019 14:58:54 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iQC71-00011e-R4; Thu, 31 Oct 2019 15:11:47 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQBuM-00045o-Nx
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 14:58:44 +0000
-Received: by mail-pg1-x543.google.com with SMTP id f19so4198668pgn.13
+ id 1iQC6t-00010L-NC
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 15:11:41 +0000
+Received: by mail-lj1-x242.google.com with SMTP id y3so7033132ljj.6
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 31 Oct 2019 07:58:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=wd8Ydy5zI08ENTcanTYfVXPKw0S2sQWsullzEMfk7rQ=;
- b=MATi3vkPvCiMr4+UiaeWs9j6XA6Ee4hxcdUFDrIZUcE960Da2PCpKrgNX3lOYJVORf
- kjGtwykAZk1CO3SPjlEM19TYE10BGXfr6iodpfABU+PvPt8W9d/GGtXfQwaRS3cpI4t8
- X8v8E0VU9loMbWAfNuCIeHtf41n24YolQpRSOw2aq277L3Kexz1Izu+FC01MH/amZYZS
- 6etmN7QJnMaFVEq9WMgkdq02ym+4qkl0M64AxMRuGGko2h5fWoHE7f2P/Y6nMF+xMJRa
- 90RVs5Lx07rcWPbkp4WYJ/pGMxhUsy/QHCxUoOoK4MiwSGun6H02mdjrtL1YDS3i5YSp
- EAOQ==
+ Thu, 31 Oct 2019 08:11:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=r0+SnsUBrU036ki/u9zXA8lU9FLF8N+QpK3TWylHn0Q=;
+ b=fyHdS+HJpockD668OHkgA5XWU4kJhvi09lJzp4Lmn0gj9ww3frs6YizoKFUG7/q5s5
+ yCrf77w2f2Ec/Lo7RSZMahCH6aELWJtf4xNXgGs5rRalLGmPCqVcD0mCbNvXySSIYMxN
+ dMvNxsvKV7KADWYduV6qnMSa/odUQs+3F0X55hIhYsCjmBkgGDjEGaAfngTyF6vbcDWT
+ C+AIMTh06LTnoNKZiH35xAx19YZVscI+ujNzkM7GmRwg/Txss7fn5kMaTgyxzeSwUEvi
+ 1Xu/0Ot2YJI5sYZcAClB8Rz0WngryEDvOitG+TQfccG/GDx/5eAod7YMO+ew0PW7U06l
+ Nvjw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=wd8Ydy5zI08ENTcanTYfVXPKw0S2sQWsullzEMfk7rQ=;
- b=WYX3IvRAOgvE1HT47uoFedv8xfpfDY6uB32+ilXFjyvRJoKHyh5ibcfqs9x1l0N+5j
- V5P6nbcwZp9kGFtm3a6Af0TsNXBfx0dPcvetfiCFvxGBZhroxCYONVcWfwvCuFu+ohpn
- Odv2iOeOpe9qEJ2K6JwMjopE3DnAntc4k5boyzDplorGJSbN5D7rt/inUlYXOi2wuUBa
- bFvoOe6CHaqYHyImUGZl5SVsznF6g6uv71tBK/lobb0ru8yuPnRKsMv9JzxyyzArTigY
- oA+5x2vCH6I2yWtVcRqNFW2/k5QQyyE49Xnaqt5ix78zy/KKYQra67NM2nAliW0eKr72
- rnRw==
-X-Gm-Message-State: APjAAAUTmX/EP70QOT0mjSP6EU5R3nJEw//PWObbUCez6+KSViMljbKO
- Zp6kpktwV8D2VSvvI2GRni5t
-X-Google-Smtp-Source: APXvYqxM+gswwlpQxJViGySnazlj4i+t35eyJuQby6bTFIUSurtlH9D8LQqbBLKTMOWksA2rFGOkHw==
-X-Received: by 2002:a63:6581:: with SMTP id z123mr7193723pgb.367.1572533921416; 
- Thu, 31 Oct 2019 07:58:41 -0700 (PDT)
-Received: from mani ([103.59.133.81])
- by smtp.gmail.com with ESMTPSA id fh5sm5626592pjb.2.2019.10.31.07.58.37
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 31 Oct 2019 07:58:40 -0700 (PDT)
-Date: Thu, 31 Oct 2019 20:28:31 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Subject: Re: [PATCH v4 1/2] dt-bindings: media: i2c: Add IMX296 CMOS sensor
- binding
-Message-ID: <20191031145831.GA27800@mani>
-References: <20191030094902.32582-1-manivannan.sadhasivam@linaro.org>
- <20191030094902.32582-2-manivannan.sadhasivam@linaro.org>
- <20191031131538.GA9170@pendragon.ideasonboard.com>
- <20191031134512.GB24273@mani>
- <20191031141141.GD5018@pendragon.ideasonboard.com>
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=r0+SnsUBrU036ki/u9zXA8lU9FLF8N+QpK3TWylHn0Q=;
+ b=GXffFGRk6/TjDikPtPA7ue+LMOFMvKIGfZWOP0O6JX/N6NW+vytSOTUqY78gFLED21
+ MoaIycKRlwpE2Jsg5Hv7AEZlp1jtFBPhggSLq7wcmDizMtirzaQoW4FTyYoO8vq8GpRC
+ wp8TYws/jYVePPaHPlkApUW2Pl/oiwLFR2j9/sKeAbpBJ15NAevwgkx9caD4CqDJl389
+ AFVr104OaWHvc6y9FqFy8eYiZQtAeO987NIIb9bA1vt8d8Z9CvKX97TOYwADUf13rLps
+ I33rMzJz2fOu8z5MQu8zIsDegJ5T6bR6kexKwtD+u2HarbqcIOuBY6QInqP8zDkeEaua
+ BNhg==
+X-Gm-Message-State: APjAAAWXOKO0PLuVP9ua7BGPh/rg+v/exaRwwKip2E9pWHoTKYTQBtCs
+ pz6Dptd/OzYlyj6txg3UZ0k=
+X-Google-Smtp-Source: APXvYqxfCFOTJwk0Wgd+b3I7BxOouq4x08OssycSq7/WciF8tOieiyeyL8dP8lEXb05tn7e5zQXg/g==
+X-Received: by 2002:a2e:3016:: with SMTP id w22mr4636537ljw.117.1572534695491; 
+ Thu, 31 Oct 2019 08:11:35 -0700 (PDT)
+Received: from [192.168.2.145] (94-29-10-250.dynamic.spd-mgts.ru.
+ [94.29.10.250])
+ by smtp.googlemail.com with ESMTPSA id 12sm1323631lju.55.2019.10.31.08.11.34
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 31 Oct 2019 08:11:34 -0700 (PDT)
+Subject: Re: [RFC 1/3] memory: Introduce memory controller mini-framework
+To: Thierry Reding <thierry.reding@gmail.com>, Arnd Bergmann <arnd@arndb.de>
+References: <20191015162945.1203736-1-thierry.reding@gmail.com>
+ <20191015162945.1203736-2-thierry.reding@gmail.com>
+From: Dmitry Osipenko <digetx@gmail.com>
+Message-ID: <0888ea6f-2092-001e-5663-3a1d3f305ba4@gmail.com>
+Date: Thu, 31 Oct 2019 18:11:33 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191031141141.GD5018@pendragon.ideasonboard.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20191015162945.1203736-2-thierry.reding@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_075842_813598_0F3A89EA 
-X-CRM114-Status: GOOD (  31.65  )
+X-CRM114-CacheID: sfid-20191031_081139_783128_AC1CA52B 
+X-CRM114-Status: GOOD (  29.64  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (digetx[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -102,206 +103,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
- linux-kernel@vger.kernel.org, a.brela@framos.com, peter.griffin@linaro.org,
- robh+dt@kernel.org, sakari.ailus@iki.fi, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Will Deacon <will@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
+ iommu@lists.linux-foundation.org, linux-tegra@vger.kernel.org,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Laurent,
-
-On Thu, Oct 31, 2019 at 04:11:41PM +0200, Laurent Pinchart wrote:
-> Hi Mani,
-> 
-> On Thu, Oct 31, 2019 at 07:15:12PM +0530, Manivannan Sadhasivam wrote:
-> > On Thu, Oct 31, 2019 at 03:15:38PM +0200, Laurent Pinchart wrote:
-> > > On Wed, Oct 30, 2019 at 03:19:01PM +0530, Manivannan Sadhasivam wrote:
-> > >> Add YAML devicetree binding for IMX296 CMOS image sensor. Let's also
-> > >> add MAINTAINERS entry for the binding and driver.
-> > >> 
-> > >> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> > >> ---
-> > >>  .../devicetree/bindings/media/i2c/imx296.yaml | 94 +++++++++++++++++++
-> > >>  MAINTAINERS                                   |  8 ++
-> > >>  2 files changed, 102 insertions(+)
-> > >>  create mode 100644 Documentation/devicetree/bindings/media/i2c/imx296.yaml
-> > >> 
-> > >> diff --git a/Documentation/devicetree/bindings/media/i2c/imx296.yaml b/Documentation/devicetree/bindings/media/i2c/imx296.yaml
-> > >> new file mode 100644
-> > >> index 000000000000..c04ec2203268
-> > >> --- /dev/null
-> > >> +++ b/Documentation/devicetree/bindings/media/i2c/imx296.yaml
-> > >> @@ -0,0 +1,94 @@
-> > >> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > >> +%YAML 1.2
-> > >> +---
-> > >> +$id: http://devicetree.org/schemas/media/i2c/imx296.yaml#
-> > >> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > >> +
-> > >> +title: Sony IMX296 1/2.8-Inch CMOS Image Sensor
-> > >> +
-> > >> +maintainers:
-> > >> +  - Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> > >> +
-> > >> +description: |-
-> > >> +  The Sony IMX296 is a 1/2.9-Inch active pixel type CMOS Solid-state image
-> > >> +  sensor with square pixel array and 1.58 M effective pixels. This chip
-> > >> +  features a global shutter with variable charge-integration time. It is
-> > >> +  programmable through I2C and 4-wire interfaces. The sensor output is
-> > >> +  available via CSI-2 serial data output (1 Lane).
-> > >> +
-> > >> +properties:
-> > >> +  compatible:
-> > >> +    const: sony,imx296
-> > >> +
-> > >> +  reg:
-> > >> +    maxItems: 1
-> > >> +
-> > >> +  clocks:
-> > >> +    maxItems: 1
-> > >> +
-> > >> +  clock-names:
-> > >> +    description:
-> > >> +      Input clock for the sensor.
-> > >> +    items:
-> > >> +      - const: mclk
-> > > 
-> > > The pin is named INCK, let's name the clock accordingly.
-> > 
-> > Okay, I thought generic names are preferred here!
-> >  
-> > >> +  clock-frequency:
-> > >> +    description:
-> > >> +      Frequency of the mclk clock in Hertz.
-> > > 
-> > > This shouldn't be needed, you can retrieve the clock frequency at
-> > > runtime from the clock source.
-> > 
-> > Unless the clock source is a fixed one! What if the clock source comes from
-> > SoC? We need to set the rate, right?
-> 
-> In that case, if you want to hardcode the clock in DT, the preferred way
-> is to use the assigned-clock-rates property. Otherwise, if the driver
-> requires a specific clock frequency, it's better to hardcode it in the
-> driver itself. In this specific case, I think assigned-clock-rates is
-> best as the device can support three different clock frequencies.
-> 
-
-Agree. assigned-clock* properties makes sense for multiple frequencies. In
-my driver, I only used one frequency so I was happy with clock-frequency :)
-
-> > >> +  vddo-supply:
-> > >> +    description:
-> > >> +      Definition of the regulator used as interface power supply.
-> > >> +
-> > >> +  vdda-supply:
-> > >> +    description:
-> > >> +      Definition of the regulator used as analog power supply.
-> > >> +
-> > >> +  vddd-supply:
-> > >> +    description:
-> > >> +      Definition of the regulator used as digital power supply.
-> > > 
-> > > Do we really need three regulators ? I agree that the sensor has three
-> > > power rails, but aren't they usually powered by regulators that are
-> > > tied together, without individual control ? The IMX926 specifications
-> > > require the three power supplies to raise within 200ms, which we should
-> > > be able to ensure in software. What does your board use, does it have
-> > > multiple GPIOs to control each power supply ? If not I wonder if we
-> > > could just define vddd-supply now, and add vdda-supply and vddo-supply
-> > > later if we need to support systems that can control the supplies
-> > > individually.
-> > 
-> > The whole power supply model is a bit rotten. In my case, there are 3 different
-> > regulators used with no software control. So, I can't control the rise time
-> > (I assume that they are handled by the external power regulator itself).
-> > 
-> > So to be sane, I just documented with the assumption of fixed-regulators.
-> 
-> Should we then go for one supply, and add the other two when (and if)
-> needed ?
-> 
-
-I'm not really sure if we should use one power supply here. The single power
-supply configuration is not true for all cases. And following what other
-sensors are using, I'd prefer to have 3 individual power supplies.
-
-Thanks,
-Mani
-
-> > >> +  reset-gpios:
-> > >> +    description:
-> > >> +      The phandle and specifier for the GPIO that controls sensor reset.
-> > >> +    maxItems: 1
-> > >> +
-> > >> +  port: true
-> > >> +
-> > >> +required:
-> > >> +  - compatible
-> > >> +  - reg
-> > >> +  - clocks
-> > >> +  - clock-names
-> > >> +  - clock-frequency
-> > >> +  - vddo-supply
-> > >> +  - vdda-supply
-> > >> +  - vddd-supply
-> > >> +
-> > >> +additionalProperties: false
-> > >> +
-> > >> +examples:
-> > >> +  - |
-> > >> +    #include <dt-bindings/gpio/gpio.h>
-> > >> +
-> > >> +    imx296: camera-sensor@1a {
-> > >> +        compatible = "sony,imx296";
-> > >> +        reg = <0x1a>;
-> > >> +        reset-gpios = <&msmgpio 35 GPIO_ACTIVE_LOW>;
-> > >> +        pinctrl-names = "default";
-> > >> +        pinctrl-0 = <&camera_rear_default>;
-> > >> +        clocks = <&gcc 90>;
-> > >> +        clock-names = "mclk";
-> > >> +        clock-frequency = <37125000>;
-> > >> +        vddo-supply = <&camera_vddo_1v8>;
-> > >> +        vdda-supply = <&camera_vdda_3v3>;
-> > >> +        vddd-supply = <&camera_vddd_1v2>;
-> > >> +
-> > >> +        port {
-> > >> +            imx296_ep: endpoint {
-> > >> +                remote-endpoint = <&csiphy0_ep>;
-> > >> +            };
-> > >> +        };
-> > >> +    };
-> > >> +
-> > >> +...
-> > >> diff --git a/MAINTAINERS b/MAINTAINERS
-> > >> index 55199ef7fa74..51194bb2c392 100644
-> > >> --- a/MAINTAINERS
-> > >> +++ b/MAINTAINERS
-> > >> @@ -15140,6 +15140,14 @@ S:	Maintained
-> > >>  F:	drivers/media/i2c/imx274.c
-> > >>  F:	Documentation/devicetree/bindings/media/i2c/imx274.txt
-> > >>  
-> > >> +SONY IMX296 SENSOR DRIVER
-> > >> +M:	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> > >> +L:	linux-media@vger.kernel.org
-> > >> +T:	git git://linuxtv.org/media_tree.git
-> > >> +S:	Maintained
-> > >> +F:	drivers/media/i2c/imx296.c
-> > >> +F:	Documentation/devicetree/bindings/media/i2c/imx296.yaml
-> > >> +
-> > >>  SONY IMX319 SENSOR DRIVER
-> > >>  M:	Bingbu Cao <bingbu.cao@intel.com>
-> > >>  L:	linux-media@vger.kernel.org
-> 
-> -- 
-> Regards,
-> 
-> Laurent Pinchart
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+MTUuMTAuMjAxOSAxOToyOSwgVGhpZXJyeSBSZWRpbmcg0L/QuNGI0LXRgjoKPiBGcm9tOiBUaGll
+cnJ5IFJlZGluZyA8dHJlZGluZ0BudmlkaWEuY29tPgo+IAo+IFRoaXMgbmV3IGZyYW1ld29yayBp
+cyBjdXJyZW50bHkgbm90aGluZyBtb3JlIHRoYW4gYSByZWdpc3RyeSBvZiBtZW1vcnkKPiBjb250
+cm9sbGVycywgd2l0aCB0aGUgZ29hbCBiZWluZyB0byBvcmRlciBkZXZpY2UgcHJvYmluZy4gT25l
+IHVzZS1jYXNlCj4gd2hlcmUgdGhpcyBpcyB1c2VmdWwsIGZvciBleGFtcGxlLCBpcyBhIG1lbW9y
+eSBjb250cm9sbGVyIGRldmljZSB3aGljaAo+IG5lZWRzIHRvIHByb2dyYW0gc29tZSByZWdpc3Rl
+cnMgYmVmb3JlIHRoZSBzeXN0ZW0gTU1VIGNhbiBiZSBlbmFibGVkLgo+IEFzc29jaWF0aW5nIHRo
+ZSBtZW1vcnkgY29udHJvbGxlciB3aXRoIHRoZSBTTU1VIGFsbG93cyB0aGUgU01NVSBkcml2ZXIK
+PiB0byBkZWZlciB0aGUgcHJvYmUgdW50aWwgdGhlIG1lbW9yeSBjb250cm9sbGVyIGhhcyBiZWVu
+IHJlZ2lzdGVyZWQuCj4gCj4gT25lIHN1Y2ggZXhhbXBsZSBpcyBUZWdyYTE4NiB3aGVyZSB0aGUg
+bWVtb3J5IGNvbnRyb2xsZXIgY29udGFpbnMgc29tZQo+IHJlZ2lzdGVycyB0aGF0IGFyZSB1c2Vk
+IHRvIHByb2dyYW0gc3RyZWFtIElEcyBmb3IgdGhlIHZhcmlvdXMgbWVtb3J5Cj4gY2xpZW50cyAo
+ZGlzcGxheSwgVVNCLCBQQ0ksIC4uLikgaW4gdGhlIHN5c3RlbS4gUHJvZ3JhbW1pbmcgdGhlc2Ug
+U0lEcwo+IGlzIHJlcXVpcmVkIGZvciB0aGUgbWVtb3J5IGNsaWVudHMgdG8gZW1pdCB0aGUgcHJv
+cGVyIFNJRHMgYXMgcGFydCBvZgo+IHRoZWlyIG1lbW9yeSByZXF1ZXN0cy4gVGhlIG1lbW9yeSBj
+b250cm9sbGVyIGRyaXZlciB0aGVyZWZvcmUgbmVlZHMgdG8KPiBiZSBwcm9ncmFtbWVkIHByaW9y
+IHRvIHRoZSBTTU1VIGRyaXZlci4gVG8gYWNoaWV2ZSB0aGF0LCB0aGUgbWVtb3J5Cj4gY29udHJv
+bGxlciB3aWxsIGJlIHJlZmVyZW5jZWQgdmlhIHBoYW5kbGUgZnJvbSB0aGUgU01NVSBkZXZpY2Ug
+dHJlZQo+IG5vZGUsIHRoZSBTTU1VIGRyaXZlciBjYW4gdGhlbiB1c2UgdGhlIG1lbW9yeSBjb250
+cm9sbGVyIGZyYW1ld29yayB0bwo+IGZpbmQgaXQgYW5kIGRlZmVyIHByb2JlIHVudGlsIGl0IGhh
+cyBiZWVuIHJlZ2lzdGVyZWQuCj4gCj4gU2lnbmVkLW9mZi1ieTogVGhpZXJyeSBSZWRpbmcgPHRy
+ZWRpbmdAbnZpZGlhLmNvbT4KPiAtLS0KPiAgZHJpdmVycy9tZW1vcnkvTWFrZWZpbGUgICAgICAg
+ICAgIHwgIDEgKwo+ICBkcml2ZXJzL21lbW9yeS9jb3JlLmMgICAgICAgICAgICAgfCA5OSArKysr
+KysrKysrKysrKysrKysrKysrKysrKysrKysrCj4gIGluY2x1ZGUvbGludXgvbWVtb3J5LWNvbnRy
+b2xsZXIuaCB8IDI1ICsrKysrKysrCj4gIDMgZmlsZXMgY2hhbmdlZCwgMTI1IGluc2VydGlvbnMo
+KykKPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvbWVtb3J5L2NvcmUuYwo+ICBjcmVhdGUg
+bW9kZSAxMDA2NDQgaW5jbHVkZS9saW51eC9tZW1vcnktY29udHJvbGxlci5oCgpIZWxsbyBUaGll
+cnJ5LAoKVGhpcyBsb29rcyBsaWtlIGEgdmVyeSBnb29kIGVuZGVhdm91ciEgSSBoYXZlIGNvdXBs
+ZSBjb21tZW50cywgcGxlYXNlCnNlZSB0aGVtIGJlbG93LgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVy
+cy9tZW1vcnkvTWFrZWZpbGUgYi9kcml2ZXJzL21lbW9yeS9NYWtlZmlsZQo+IGluZGV4IDI3YjQ5
+MzQzNWU2MS4uZDE2ZTdkY2E4ZWY5IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvbWVtb3J5L01ha2Vm
+aWxlCj4gKysrIGIvZHJpdmVycy9tZW1vcnkvTWFrZWZpbGUKPiBAQCAtMyw2ICszLDcgQEAKPiAg
+IyBNYWtlZmlsZSBmb3IgbWVtb3J5IGRldmljZXMKPiAgIwo+ICAKPiArb2JqLXkJCQkJKz0gY29y
+ZS5vCj4gIG9iai0kKENPTkZJR19ERFIpCQkrPSBqZWRlY19kZHJfZGF0YS5vCj4gIGlmZXEgKCQo
+Q09ORklHX0REUikseSkKPiAgb2JqLSQoQ09ORklHX09GKQkJKz0gb2ZfbWVtb3J5Lm8KPiBkaWZm
+IC0tZ2l0IGEvZHJpdmVycy9tZW1vcnkvY29yZS5jIGIvZHJpdmVycy9tZW1vcnkvY29yZS5jCj4g
+bmV3IGZpbGUgbW9kZSAxMDA2NDQKPiBpbmRleCAwMDAwMDAwMDAwMDAuLjE3NzJlODM5MzA1YQo+
+IC0tLSAvZGV2L251bGwKPiArKysgYi9kcml2ZXJzL21lbW9yeS9jb3JlLmMKPiBAQCAtMCwwICsx
+LDk5IEBACj4gKy8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBHUEwtMi4wCj4gKy8qCj4gKyAq
+IENvcHlyaWdodCAoQykgMjAxOSBOVklESUEgQ29ycG9yYXRpb24uCj4gKyAqLwo+ICsKPiArI2lu
+Y2x1ZGUgPGxpbnV4L21lbW9yeS1jb250cm9sbGVyLmg+Cj4gKyNpbmNsdWRlIDxsaW51eC9vZi5o
+Pgo+ICsKPiArc3RhdGljIERFRklORV9NVVRFWChjb250cm9sbGVyc19sb2NrKTsKPiArc3RhdGlj
+IExJU1RfSEVBRChjb250cm9sbGVycyk7Cj4gKwo+ICtzdGF0aWMgdm9pZCBtZW1vcnlfY29udHJv
+bGxlcl9yZWxlYXNlKHN0cnVjdCBrcmVmICpyZWYpCj4gK3sKPiArCXN0cnVjdCBtZW1vcnlfY29u
+dHJvbGxlciAqbWMgPSBjb250YWluZXJfb2YocmVmLCBzdHJ1Y3QgbWVtb3J5X2NvbnRyb2xsZXIs
+IHJlZik7Cj4gKwo+ICsJV0FSTl9PTighbGlzdF9lbXB0eSgmbWMtPmxpc3QpKTsKPiArfQo+ICsK
+PiAraW50IG1lbW9yeV9jb250cm9sbGVyX3JlZ2lzdGVyKHN0cnVjdCBtZW1vcnlfY29udHJvbGxl
+ciAqbWMpCj4gK3sKPiArCWtyZWZfaW5pdCgmbWMtPnJlZik7Cj4gKwo+ICsJbXV0ZXhfbG9jaygm
+Y29udHJvbGxlcnNfbG9jayk7Cj4gKwlsaXN0X2FkZF90YWlsKCZtYy0+bGlzdCwgJmNvbnRyb2xs
+ZXJzKTsKPiArCW11dGV4X3VubG9jaygmY29udHJvbGxlcnNfbG9jayk7Cj4gKwo+ICsJcmV0dXJu
+IDA7Cj4gK30KPiArRVhQT1JUX1NZTUJPTF9HUEwobWVtb3J5X2NvbnRyb2xsZXJfcmVnaXN0ZXIp
+Owo+ICsKPiArdm9pZCBtZW1vcnlfY29udHJvbGxlcl91bnJlZ2lzdGVyKHN0cnVjdCBtZW1vcnlf
+Y29udHJvbGxlciAqbWMpCj4gK3sKPiArCW11dGV4X2xvY2soJmNvbnRyb2xsZXJzX2xvY2spOwo+
+ICsJbGlzdF9kZWxfaW5pdCgmbWMtPmxpc3QpOwo+ICsJbXV0ZXhfdW5sb2NrKCZjb250cm9sbGVy
+c19sb2NrKTsKPiArCj4gKwlrcmVmX3B1dCgmbWMtPnJlZiwgbWVtb3J5X2NvbnRyb2xsZXJfcmVs
+ZWFzZSk7Cj4gK30KPiArRVhQT1JUX1NZTUJPTF9HUEwobWVtb3J5X2NvbnRyb2xsZXJfdW5yZWdp
+c3Rlcik7Cj4gKwo+ICtzdGF0aWMgc3RydWN0IG1lbW9yeV9jb250cm9sbGVyICoKPiArb2ZfbWVt
+b3J5X2NvbnRyb2xsZXJfZ2V0KHN0cnVjdCBkZXZpY2UgKmRldiwgc3RydWN0IGRldmljZV9ub2Rl
+ICpucCwKPiArCQkJIGNvbnN0IGNoYXIgKmNvbl9pZCkKPiArewo+ICsJY29uc3QgY2hhciAqY2Vs
+bHMgPSAiI21lbW9yeS1jb250cm9sbGVyLWNlbGxzIjsKPiArCWNvbnN0IGNoYXIgKm5hbWVzID0g
+Im1lbW9yeS1jb250cm9sbGVyLW5hbWVzIjsKPiArCWNvbnN0IGNoYXIgKnByb3AgPSAibWVtb3J5
+LWNvbnRyb2xsZXJzIjsKPiArCXN0cnVjdCBtZW1vcnlfY29udHJvbGxlciAqbWM7Cj4gKwlzdHJ1
+Y3Qgb2ZfcGhhbmRsZV9hcmdzIGFyZ3M7Cj4gKwlpbnQgaW5kZXggPSAwLCBlcnI7Cj4gKwo+ICsJ
+aWYgKGNvbl9pZCkgewo+ICsJCWluZGV4ID0gb2ZfcHJvcGVydHlfbWF0Y2hfc3RyaW5nKG5wLCBu
+YW1lcywgY29uX2lkKTsKPiArCQlpZiAoaW5kZXggPCAwKQo+ICsJCQlyZXR1cm4gRVJSX1BUUihp
+bmRleCk7Cj4gKwl9Cj4gKwo+ICsJZXJyID0gb2ZfcGFyc2VfcGhhbmRsZV93aXRoX2FyZ3MobnAs
+IHByb3AsIGNlbGxzLCBpbmRleCwgJmFyZ3MpOwo+ICsJaWYgKGVycikgewo+ICsJCWlmIChlcnIg
+PT0gLUVOT0VOVCkKPiArCQkJZXJyID0gLUVOT0RFVjsKPiArCj4gKwkJcmV0dXJuIEVSUl9QVFIo
+ZXJyKTsKPiArCX0KPiArCj4gKwltdXRleF9sb2NrKCZjb250cm9sbGVyc19sb2NrKTsKPiArCj4g
+KwlsaXN0X2Zvcl9lYWNoX2VudHJ5KG1jLCAmY29udHJvbGxlcnMsIGxpc3QpIHsKPiArCQlpZiAo
+bWMtPmRldiAmJiBtYy0+ZGV2LT5vZl9ub2RlID09IGFyZ3MubnApIHsKPiArCQkJa3JlZl9nZXQo
+Jm1jLT5yZWYpOwoKVGhpcyBpcyBub3QgZW5vdWdoIGJlY2F1c2UgbWVtb3J5IGNvbnRyb2xsZXIg
+ZHJpdmVyIGNvdWxkIGJlIGEgbG9hZGFibGUKbW9kdWxlLCB0aHVzIHNvbWV0aGluZyBsaWtlIHRo
+aXMgaXMgbmVlZGVkIGhlcmU6CgoJX19tb2R1bGVfZ2V0KG1jLT5kZXYtPmRyaXZlci0+b3duZXIp
+OwoKVGhpcyB3b24ndCBhbGxvdyBNQyBkcml2ZXIgdG8gYmUgdW5sb2FkZWQgd2hpbGUgaXQgaGFz
+IGFjdGl2ZSB1c2Vycy4KCj4gKwkJCW11dGV4X3VubG9jaygmY29udHJvbGxlcnNfbG9jayk7Cj4g
+KwkJCWdvdG8gdW5sb2NrOwo+ICsJCX0KPiArCX0KPiArCj4gKwltYyA9IEVSUl9QVFIoLUVQUk9C
+RV9ERUZFUik7Cj4gKwo+ICt1bmxvY2s6Cj4gKwltdXRleF91bmxvY2soJmNvbnRyb2xsZXJzX2xv
+Y2spOwo+ICsJb2Zfbm9kZV9wdXQoYXJncy5ucCk7Cj4gKwlyZXR1cm4gbWM7Cj4gK30KPiArCj4g
+K3N0cnVjdCBtZW1vcnlfY29udHJvbGxlciAqCj4gK21lbW9yeV9jb250cm9sbGVyX2dldChzdHJ1
+Y3QgZGV2aWNlICpkZXYsIGNvbnN0IGNoYXIgKmNvbl9pZCkKPiArewo+ICsJaWYgKElTX0VOQUJM
+RUQoQ09ORklHX09GKSAmJiBkZXYgJiYgZGV2LT5vZl9ub2RlKQo+ICsJCXJldHVybiBvZl9tZW1v
+cnlfY29udHJvbGxlcl9nZXQoZGV2LCBkZXYtPm9mX25vZGUsIGNvbl9pZCk7Cj4gKwo+ICsJcmV0
+dXJuIEVSUl9QVFIoLUVOT0RFVik7Cj4gK30KPiArRVhQT1JUX1NZTUJPTF9HUEwobWVtb3J5X2Nv
+bnRyb2xsZXJfZ2V0KTsKCkluIG1vc3QgY2FzZXMgbWVtb3J5IGNvbnRyb2xsZXJzIGFyZSB1bmlx
+dWUgaW4gYSBzeXN0ZW0sIHNvIGl0IGxvb2tzIHRvCm1lIHRoYXQgaXQgd2lsbCBiZSBtb3JlIHVu
+aXZlcnNhbCB0byBoYXZlIGFiaWxpdHkgdG8gZ2V0IE1DIGJ5IGl0cwpkZXZpY2UtdHJlZSBjb21w
+YXRpYmxlIG5hbWUuIExpa2UgdGhpczoKCglvZl9tZW1vcnlfY29udHJvbGxlcl9nZXRfYnlfY29t
+cGF0aWJsZShjb25zdCBjaGFyICpjb21wYXRpYmxlKTsKClRoaXMgd2lsbCBhbGxvdyBjdXJyZW50
+IGRyaXZlcnMgKGxpa2UgVGVncmEyMCBkZXZmcmVxIGRyaXZlciBmb3IKZXhhbXBsZSkgdG8gdXRp
+bGl6ZSB0aGlzIG5ldyBBUEkgd2l0aG91dCBoYXZpbmcgdHJvdWJsZSBvZiBtYWludGFpbmluZwpi
+YWNrd2FyZHMgY29tcGF0aWJpbGl0eSB3aXRoIG9sZGVyIGRldmljZS10cmVlcyB0aGF0IGRvIG5v
+dCBoYXZlIGEKcGhhbmRsZSB0byBNQy4KCmh0dHBzOi8vZWxpeGlyLmJvb3RsaW4uY29tL2xpbnV4
+L3Y1LjQtcmM1L3NvdXJjZS9kcml2ZXJzL2RldmZyZXEvdGVncmEyMC1kZXZmcmVxLmMjTDEwMAoK
+T2YgY291cnNlIHRoZXJlIGNvdWxkIGJlIGNhc2VzIHdoZXJlIHRoZXJlIGFyZSBtdWx0aXBsZSBj
+b250cm9sbGVycyB3aXRoCnRoZSBzYW1lIGNvbXBhdGlibGUsIGJ1dCB0aGF0IGNhc2UgY291bGQg
+YmUgc3VwcG9ydGVkIGxhdGVyIG9uIGJ5IHRob3NlCndobyByZWFsbHkgbmVlZCBpdC4gSSBkb24n
+dCB0aGluayB0aGF0IGFueSBvZiBOVklESUEgVGVncmEgU29DcyBmYWxsCmludG8gdGhhdCBjYXRl
+Z29yeS4KCj4gK3ZvaWQgbWVtb3J5X2NvbnRyb2xsZXJfcHV0KHN0cnVjdCBtZW1vcnlfY29udHJv
+bGxlciAqbWMpCj4gK3sKPiArCWlmIChtYykKPiArCQlrcmVmX3B1dCgmbWMtPnJlZiwgbWVtb3J5
+X2NvbnRyb2xsZXJfcmVsZWFzZSk7CgkJbW9kdWxlX3B1dChtYy0+ZGV2LT5kcml2ZXItPm93bmVy
+KTsKCj4gK30KPiArRVhQT1JUX1NZTUJPTF9HUEwobWVtb3J5X2NvbnRyb2xsZXJfcHV0KTsKCgpb
+c25pcF0KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxp
+bnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
+LWFybS1rZXJuZWwK
