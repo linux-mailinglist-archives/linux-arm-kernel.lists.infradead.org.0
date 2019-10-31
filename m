@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 601E3EB683
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 18:59:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B658CEB686
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 18:59:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,65 +11,65 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=3+lTqq2HhsqzJgqapvk8Gz4KbcWkhSBv22DBeAJ3bRY=; b=CG3giz99MPigHUS+JoWJMzsUC0
-	oF8sejDGb8aFYSpVgbQotOS5P61kA8kS5TG2lyCDe+qEZEI+FT7GsnQPYvB6YoD4giHQ6Ud6sjLj/
-	MJ8P/m0IUckeGdpPN3tSKIlw13V+6nFQgMChp6tCfkrnkhRQerJpGFadv1Jx7dZggu+dwbKM4MTe7
-	0ZrQyr6wiBBKZ5Wor2o4MjJMlR2ohADWuDaM7YuVaQo8GUoF6RpAcHXXt8m61//dhH54+tY+u14SV
-	OkKtWtc5NZzXjQ4NtY3n8Er7Krp/lA2wVFl6CkkvE9NLj+vGs5MEx3k080r96UJkATNsTvWG39NF+
-	lksRoXDg==;
+	bh=lKNwjE5r1NvjuITOZ0SZml0Q9En+vNW/54yqoybDkao=; b=nNTGymdOmbmIf0YsA9RvoZ5wtK
+	GbVmZWzr+7S5+aIUOpM0Tzg+Bn1wb8RoYSqDJ4FAW8jHa0+YXGXoGVYuCrX04qkSd115J34UQgwDS
+	Mf1TKeeR5rmDkwH55VdSD0CnjlG8+9TOhXSQGhukYuUlZ+86joOEO7wwNawe+S2ms696VtCoIkcxa
+	y+bYqPN4sKvUq3EEW2QdnjFRV5e3Tyw+QdKjErcZy3XAzJjY9qpjahrbryF997hoAM0rzk8RUlQ/j
+	/wTVae+SczmvM/EVvM7wy2vPREi8xpN1lq1DaR+ztqfesRP3oU+sozy0Ogs3Oh+yeVNl/rIjK4mhy
+	vFtA8rzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQEix-0008IP-UY; Thu, 31 Oct 2019 17:59:08 +0000
+	id 1iQEjP-0000K2-PW; Thu, 31 Oct 2019 17:59:35 +0000
 Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQEiU-00088S-A1
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 17:58:39 +0000
-Received: by mail-pf1-x441.google.com with SMTP id q26so4855415pfn.11
+ id 1iQEiV-00088v-JE
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 17:58:41 +0000
+Received: by mail-pf1-x441.google.com with SMTP id r4so4870930pfl.7
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 31 Oct 2019 10:58:38 -0700 (PDT)
+ Thu, 31 Oct 2019 10:58:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=/ws48OPfYIJsP3hLi0od0xxVO+NdaAYQZFQkL5nisiM=;
- b=ATidlEjEqD00UPJarL+ncmaSsGAlcuIP8YB2LTb+0EVSJWNqesZQj6dFeAV7iSzX91
- BvzrjMRoTBs2lfTwKEYXe1AaDvKWhphMavrmAx2ZYd0y/qHStcqHTKuY9klBNyRDp0j3
- q2YmpFczqJajz69+imTNDU0LtX4QTyHZXLV6dtzD+Ya50UY7DaX8YXNtRWGQaBopGBsx
- s8AtgTZTQZnO7FZ+f7A9fbcxsCQUnsTIY5Ba3i+Gxs/cfmQvb7hxQu035hpAq+jaakyJ
- 4Vo1yK6PH210LLJPYdll0hlBzeYvNDkd3//aqYIpb++z5Xwas2SMkC0E0aBx9AUuY7Rx
- Sbnw==
+ bh=NdEpwlKLBgKBcXE2fFCtVpGdvVkjrw2sI0goqWCkBdA=;
+ b=S1s4ZBDp6uqMHkVpEGnCdWM8Si7bOQukbUsBYHkmhp42sGnfVQUfBqIhbUrZv8/1Bd
+ GIPNkDZRN8H2f1dZKKmqB+rzvOwpXGJHC6nQUEkRHPJhGdUa+yfME+7PZSa/gx0aK1Eh
+ 6TMgI+npdwcCV9RXyX4JrFetgRz9/Uvo5mEm9iVdvha5adtZ7/glQTzdaKySToFqwHIR
+ 8a1+U2w54ZDu/BPtiMtKgc9QqjqG4DMO35Fj/jWk0i8TUZNTQVH0lxHpxNxc1k2Ednu6
+ vqZ9GN9sz3a0gPxRdzFq7uSrrPWpb/dxLWlVNhuFCXaDCVaYvp2hhFpXyxCpd/rD+8nE
+ /8Mg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=/ws48OPfYIJsP3hLi0od0xxVO+NdaAYQZFQkL5nisiM=;
- b=quYr6wPhZwWsYxTPyHcv/o7boYSjtqavMzEkA9ulE3Nu5+gx1f/HTq/eeyzQhCCC3k
- 34Ex5kb65LZHh5viABGHaDorf3bo5O+pslNggsMOTYQfdGhw0t8/k+kdAaUU537aPCns
- 4LvdVY2Idz9fBoUjQP0y7ZNzBJNGsRs3jzYd29bZd8P4i8F3x7aLeE6dAWQrXMDF9HY3
- 4+pWVaCfJT4g294Em+5YKIhb0sNakEkTAi8X1FczPx9s/S7xcMDC8fMyzStEiDD+kCpT
- YlVmnGYyzbIYe79GqlG3+qLvkJy98AuZ111V6CE+OYLxJDU44KqdqMb9tygqjU8MhpWN
- rm9w==
-X-Gm-Message-State: APjAAAWyKrrx/jGh6gS2IgU7ww/Gbtu7BjLqtFCAfBmM9nyWf5gyhk9x
- Vy0fBizozrUeFjUvbv3HaRkbRG3t9yA=
-X-Google-Smtp-Source: APXvYqxQs8ZQ5Ruv/C9/lnpJ42h8VwAa6x+pIpe8aXf0grM0GwA7KunaMBdVfcWHB/0EeZDApjFciA==
-X-Received: by 2002:a63:65c6:: with SMTP id z189mr7889040pgb.433.1572544717693; 
- Thu, 31 Oct 2019 10:58:37 -0700 (PDT)
+ bh=NdEpwlKLBgKBcXE2fFCtVpGdvVkjrw2sI0goqWCkBdA=;
+ b=d8HXxfmG34W6p/mVKJ4Vr6DElAWi6D3TKqqr0aBKA0A+bZrO0En2FdccFwtPLjgN/5
+ mVqF9x4MClXPXkuBR7B5PGYb9Xb0qAQBHbNUvnc7UhljDwMpCVCE27NwqWCzTowE1EVL
+ n1h51p/XgcfYkX99/bTFm42HvTRs+8kALwbBayKAwdcaWpMuld0PIbhsCo4pVOx05kSW
+ YzvBerviqXozhy/PvGoGdpa5+2i9dilVcLSuUco5PGkA7H+hxDEWHYIcds/AoyZrpdzP
+ HmT8kIYfv8u5iu2Qg4tOO64Qt0uVwhm2vz8hC8quRAWKkkEk/vobNmOIf6LTTFXI6mmB
+ Z4IA==
+X-Gm-Message-State: APjAAAXOrbPnlhgDPfBYfRkpEvfVnRAjC7j2vp+X1q+NU7aHoEQXHtMt
+ VXBOuzfLbUCM5dujB0INuz+TCQ==
+X-Google-Smtp-Source: APXvYqwd3FlgdzgAYcA2WWKMKif4l8T22wIogkRw7QM8/8o0Cj9nXkWHvBlseKOwuTl7PoNVsM3lhQ==
+X-Received: by 2002:a17:90a:9306:: with SMTP id
+ p6mr9028719pjo.68.1572544718745; 
+ Thu, 31 Oct 2019 10:58:38 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id c6sm4382210pfj.59.2019.10.31.10.58.36
+ by smtp.gmail.com with ESMTPSA id c6sm4382210pfj.59.2019.10.31.10.58.37
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 31 Oct 2019 10:58:37 -0700 (PDT)
+ Thu, 31 Oct 2019 10:58:38 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: corbet@lwn.net
-Subject: [PATCH 2/4] coresight: etm4x: docs: Update ABI doc for new sysfs etm4
- attributes
-Date: Thu, 31 Oct 2019 11:58:32 -0600
-Message-Id: <20191031175834.17548-3-mathieu.poirier@linaro.org>
+Subject: [PATCH 3/4] coresight: docs: Create common sub-directory for
+ coresight trace.
+Date: Thu, 31 Oct 2019 11:58:33 -0600
+Message-Id: <20191031175834.17548-4-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191031175834.17548-1-mathieu.poirier@linaro.org>
 References: <20191031175834.17548-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_105838_347164_DDC3D05C 
-X-CRM114-Status: UNSURE (   8.75  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191031_105839_704533_141D12A0 
+X-CRM114-Status: GOOD (  13.76  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -108,74 +108,87 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Mike Leach <mike.leach@linaro.org>
 
-This updates the ABI document to reflect recent additions to the ETM4.X
-driver sysfs interface.
+There are two files in the Documentation/trace directory relating to
+coresight, with more to follow, so create a Documentation/trace/coresight
+directory and move existing files there. Fixup index to reference
+new location.
+
+Update MAINTAINERS to reference this sub-directory rather than the
+individual files.
 
 Signed-off-by: Mike Leach <mike.leach@linaro.org>
-[Updated Date and KernelVersion fields]
 Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- .../testing/sysfs-bus-coresight-devices-etm4x | 47 +++++++++++++++++++
- 1 file changed, 47 insertions(+)
+ .../trace/{ => coresight}/coresight-cpu-debug.rst        | 0
+ Documentation/trace/{ => coresight}/coresight.rst        | 2 +-
+ Documentation/trace/coresight/index.rst                  | 9 +++++++++
+ Documentation/trace/index.rst                            | 3 +--
+ MAINTAINERS                                              | 3 +--
+ 5 files changed, 12 insertions(+), 5 deletions(-)
+ rename Documentation/trace/{ => coresight}/coresight-cpu-debug.rst (100%)
+ rename Documentation/trace/{ => coresight}/coresight.rst (99%)
+ create mode 100644 Documentation/trace/coresight/index.rst
 
-diff --git a/Documentation/ABI/testing/sysfs-bus-coresight-devices-etm4x b/Documentation/ABI/testing/sysfs-bus-coresight-devices-etm4x
-index 9290010e973e..614874e2cf53 100644
---- a/Documentation/ABI/testing/sysfs-bus-coresight-devices-etm4x
-+++ b/Documentation/ABI/testing/sysfs-bus-coresight-devices-etm4x
-@@ -282,6 +282,53 @@ Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
- Description:	(RW) Mask for all 8 virtual machine ID comparator value
- 		registers (if implemented).
+diff --git a/Documentation/trace/coresight-cpu-debug.rst b/Documentation/trace/coresight/coresight-cpu-debug.rst
+similarity index 100%
+rename from Documentation/trace/coresight-cpu-debug.rst
+rename to Documentation/trace/coresight/coresight-cpu-debug.rst
+diff --git a/Documentation/trace/coresight.rst b/Documentation/trace/coresight/coresight.rst
+similarity index 99%
+rename from Documentation/trace/coresight.rst
+rename to Documentation/trace/coresight/coresight.rst
+index 72f4b7ef1bad..a566719f8e7e 100644
+--- a/Documentation/trace/coresight.rst
++++ b/Documentation/trace/coresight/coresight.rst
+@@ -489,7 +489,7 @@ interface provided for that purpose by the generic STM API::
+     crw-------    1 root     root       10,  61 Jan  3 18:11 /dev/stm0
+     root@genericarmv8:~#
  
-+What:		/sys/bus/coresight/devices/etm<N>/addr_exlevel_s_ns
-+Date:		December 2019
-+KernelVersion:	5.5
-+Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
-+Description:	(RW) Set the Exception Level matching bits for secure and
-+		non-secure exception levels.
+-Details on how to use the generic STM API can be found here [#second]_.
++Details on how to use the generic STM API can be found here:- :doc:`../stm` [#second]_.
+ 
+ .. [#first] Documentation/ABI/testing/sysfs-bus-coresight-devices-stm
+ 
+diff --git a/Documentation/trace/coresight/index.rst b/Documentation/trace/coresight/index.rst
+new file mode 100644
+index 000000000000..8d31b155a87c
+--- /dev/null
++++ b/Documentation/trace/coresight/index.rst
+@@ -0,0 +1,9 @@
++==============================
++CoreSight - ARM Hardware Trace
++==============================
 +
-+What:		/sys/bus/coresight/devices/etm<N>/vinst_pe_cmp_start_stop
-+Date:		December 2019
-+KernelVersion:	5.5
-+Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
-+Description:	(RW) Access the start stop control register for PE input
-+		comparators.
++.. toctree::
++   :maxdepth: 2
++   :glob:
 +
-+What:		/sys/bus/coresight/devices/etm<N>/addr_cmp_view
-+Date:		December 2019
-+KernelVersion:	5.5
-+Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
-+Description:	(R) Print the current settings for the selected address
-+		comparator.
-+
-+What:		/sys/bus/coresight/devices/etm<N>/sshot_idx
-+Date:		December 2019
-+KernelVersion:	5.5
-+Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
-+Description:	(RW) Select the single shot control register to access.
-+
-+What:		/sys/bus/coresight/devices/etm<N>/sshot_ctrl
-+Date:		December 2019
-+KernelVersion:	5.5
-+Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
-+Description:	(RW) Access the selected single shot control register.
-+
-+What:		/sys/bus/coresight/devices/etm<N>/sshot_status
-+Date:		December 2019
-+KernelVersion:	5.5
-+Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
-+Description:	(R) Print the current value of the selected single shot
-+		status register.
-+
-+What:		/sys/bus/coresight/devices/etm<N>/sshot_pe_ctrl
-+Date:		December 2019
-+KernelVersion:	5.5
-+Contact:	Mathieu Poirier <mathieu.poirier@linaro.org>
-+Description:	(RW) Access the selected single show PE comparator control
-+		register.
-+
- What:		/sys/bus/coresight/devices/etm<N>/mgmt/trcoslsr
- Date:		April 2015
- KernelVersion:	4.01
++   *
+diff --git a/Documentation/trace/index.rst b/Documentation/trace/index.rst
+index b7891cb1ab4d..04acd277c5f6 100644
+--- a/Documentation/trace/index.rst
++++ b/Documentation/trace/index.rst
+@@ -23,5 +23,4 @@ Linux Tracing Technologies
+    intel_th
+    stm
+    sys-t
+-   coresight
+-   coresight-cpu-debug
++   coresight/index
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 296de2b51c83..f903160b507c 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -1608,8 +1608,7 @@ R:	Suzuki K Poulose <suzuki.poulose@arm.com>
+ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+ S:	Maintained
+ F:	drivers/hwtracing/coresight/*
+-F:	Documentation/trace/coresight.rst
+-F:	Documentation/trace/coresight-cpu-debug.rst
++F:	Documentation/trace/coresight/*
+ F:	Documentation/devicetree/bindings/arm/coresight.txt
+ F:	Documentation/devicetree/bindings/arm/coresight-cpu-debug.txt
+ F:	Documentation/ABI/testing/sysfs-bus-coresight-devices-*
 -- 
 2.17.1
 
