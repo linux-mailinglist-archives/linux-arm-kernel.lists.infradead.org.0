@@ -2,81 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C31FFEB86D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 21:35:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77BABEB870
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 21:35:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4numglsJu4BKvql+el5KjBIBUBx0uQdPiACztcd9zME=; b=ENJrBLiFcE7BLs
-	csM6MhXgpZ1YAFiQjX39SvMa19uoZ/p8iQeZ2wdcOTtZ4uvxX6l/DA8s3Rfc5Q77+/GOVLBLEmimF
-	BNnxGQWYJ3CMS90rFUxszGhHxlb8GK6F2zdRTsCCk7EK7UgZ/RFGkYajZsBdQ/ur8QfgGaEuVABpW
-	5sZmJCraZrikXQOtfzqsIDtucgLlUDd9RXIVdMNIWxuh2VlGBX057HwfBiqJ9l+Oe7Dj5v4R9IY6X
-	CCnhyVOTygWa1506A3Lp4uZxTFurE2406aGuxMTzhqbjCRduze/WxEU1gBbu/FYH/yH0/qQwPCnWq
-	/ZPTrfDm6ckd4hpEDvUQ==;
+	List-Owner; bh=BPNiTZ8hXOXHhaQVyzVLijUznlivluCq7QPoNbpRx9g=; b=aGjPbOixShrSZd
+	tc9+qepBt4yhA4cXjU1II1qJbtmEU2ka+1rzpow0KjHNiWbo5+LReCA2sPiuvaYr0xnvUxyav0D0O
+	r09+ozs44gT65dgbcY9WbqYpkqVFXAHwBwC+0FOZPgwc9iFK0m8Ps8/h4iAtWB/giqQF2OcPvuo06
+	H44wghPSoxOsPjlCp7UQJ9g0arjiCTua5zM4Lk+dM/ic4/zeHqRKa2ysZkunJ+CcES7Yzp+v7qX2B
+	+QR2nwNitmX+SkH1KkM0kBK0IiZ3u0IB8lqvo+YT/u1pycz+23O2eISSY9X4sW6jyL7oA3OK7KBJH
+	8meQpegtGCWjAJ8oWbDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQH9m-00074p-Bd; Thu, 31 Oct 2019 20:34:58 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1iQHAY-0000Dg-RY; Thu, 31 Oct 2019 20:35:46 +0000
+Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQH9c-00074S-8X
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 20:34:50 +0000
-Received: by mail-pl1-x641.google.com with SMTP id y8so3245044plk.0
+ id 1iQHAO-0000D8-J5
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 20:35:38 +0000
+Received: by mail-ot1-x341.google.com with SMTP id z6so6598463otb.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 31 Oct 2019 13:34:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ Thu, 31 Oct 2019 13:35:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=9l1iF8Yd4cbsJGLUM/SW26KknarkUcShmOF9BoqHMJM=;
- b=S73tGnS/ZJF+fbC8RaG3esksSLQBz+nONIb30B9/d/c+3qgRZlPslhdi+Dd2ioA26M
- PJHW6SksmlJG77+8/8DZ0wpWUccicLrqaqJ4uf7iC0f8qoW91fkgKMdBv2HzhdM5ZhRY
- JtBK0SuAzoRRSSimV8NxKRmJ2vC9x7dCXosKDgTYrSUDvoCUsOst+zVzu+dX+80qrG4P
- HcgKQgui+YTZJ2owEaUwOYTJRSRshPqlnN41gQOoONKs+gr/+bWC/l8D/yhgG7w4Aibi
- GtBrdgenJ+HX8dk6AAqHs90uD8DqVBv67u1oym9EUwHuH3cc8BRCW2MYetnnV015VO5v
- HaKg==
+ :cc:content-transfer-encoding;
+ bh=t0DHiOISrXItcMrIJK7SNbmGlocu7WmjuFaA/UQvHXU=;
+ b=LyxJI54a7aS6aahuK8tjqsI+3mX36WDCDNqP8G0+xINjLjsdsGEUOCNSBE1NQB0r9A
+ 73PRPl6P6FVHPLYa2wL5AOgtVDMwVzL3m5BlVDPY7l/LypJ5Ry0VKXlxO2YxR5b9/py0
+ aB25HwbLUvvY4SMj84BJFGlrbNxQicZCwWpPvE5MVgqAm33bG6PakV32i7+EfXJcbdKq
+ uNVT+sCHr5gBSV1Src6OFWyG9hVAyzfj03AuWJ/0h5DY2SFJchXi83YBzbW6+DgfdHgG
+ zTu6YFMRtfkNPK5MaUEcI/A+L/4bs55GMkVNqEoLrAgojF4JkVrdbqHevSyox/Uc5Enw
+ KBYw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=9l1iF8Yd4cbsJGLUM/SW26KknarkUcShmOF9BoqHMJM=;
- b=ETx4BooFplrHcXnH5CB7PG0pDULTHDjeH6rYdQ1PXXyDfJcZ3QvvExtY3FLMfy+nMs
- yDH4bvsPxzDeQQsiZPx0eUkfzH0swfeOzCsO6OYWbyvBUNhZ4J1EI6bn3UL9oYIuk0MA
- W+Bx1ggrNRjVL3ciFn2A6XX6aJ/TAKOoIZN9Y8+G4jgMa+IACWGzjEHxzrNa3MtMtm+d
- Pq053NNPTQ2LinfV7OcLI7ZGwE5+KlSXYlp8PWKL3xlBbipG9JeUW4qmLUzoTh414zI+
- Lhw7DuZ/tx0EffyS3aoAFYXVpPbSV6MgyI+KRW5poqNptoOqMrqcjNv8JInUlDPMqYMt
- gYgw==
-X-Gm-Message-State: APjAAAVe7kgId2jppXIeX7spz7BuMXxZPTO2L8fcj6XMpENxAw0edYcP
- KHrroNWR6JIbpKv5KZg7Y2NHKuu9IcJMoA43dXMQmw==
-X-Google-Smtp-Source: APXvYqzcD14QDUDnhl1h/xb9pVpb0meKYJHEz18BKXPjesZw3450QpjcDJjWrObThnSCdYXF/xHv/UlLi4VWbhNZWi8=
-X-Received: by 2002:a17:902:9b83:: with SMTP id
- y3mr8343680plp.179.1572554086594; 
- Thu, 31 Oct 2019 13:34:46 -0700 (PDT)
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=t0DHiOISrXItcMrIJK7SNbmGlocu7WmjuFaA/UQvHXU=;
+ b=iq8TUmfQghg7NJCk1OTW5woHzNAY0be71M0oTXV3qT3Jdveje7RNXteK/7eemEPi7g
+ rRM7Ebp0T5uCUI00/ToymHqynngF/EBzMQRUiopESdJc6VAGZK5KzioRZkZGm3OAS3wW
+ i0ISnvLfBXBvXcnVBqtV+IUPIgu8VBuOtPFfsRx4QuUCSSovKe43jPY8+gRdgMgABFc9
+ Hkc7rz+65lYprp+VkbiLgpf25x7Ega17JM9+1RZW8MskKGIKGwVToVGA3x7zeP/z4SpG
+ k8NuPZdUEGhScKSQkCeTNd15wBeFfnGVCXOepZNfSxJ8AbdXwJZ25BdqdgvXFfnNXVnr
+ wGyw==
+X-Gm-Message-State: APjAAAV/zSbhOsJyTd2J6Pt0ew7NFlyXtkqt03QxvG54gOwNEUnlBqit
+ vfVxhqkMfcDj0UXK2roi3nEWutunii4jcuDLbOw=
+X-Google-Smtp-Source: APXvYqzpZ6MXM1sZZcFyRs7iX1/khcpzkLOTHDYjc2b2ymiPQ1xiya5F8HnCwIYFgL8hKFRE/2gjCTkKwbI3k5QjxEM=
+X-Received: by 2002:a05:6830:602:: with SMTP id
+ w2mr6176723oti.312.1572554135273; 
+ Thu, 31 Oct 2019 13:35:35 -0700 (PDT)
 MIME-Version: 1.0
-References: <20191031195705.36916-1-samitolvanen@google.com>
-In-Reply-To: <20191031195705.36916-1-samitolvanen@google.com>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Thu, 31 Oct 2019 13:34:35 -0700
-Message-ID: <CAKwvOdnnGFQSbchQrCKhzx5KxsD0MQAB9_0LO4d67AV8_u_tug@mail.gmail.com>
-Subject: Re: [RESEND PATCH v2] arm64: lse: fix LSE atomics with LLVM's
- integrated assembler
-To: Sami Tolvanen <samitolvanen@google.com>
+References: <CA+E=qVeAR4AFN99ZVy8EZLW6p_8ucTewOdMis37wnpV3DObaGg@mail.gmail.com>
+ <20190807115614.phm7sbyae6yajkug@flea>
+ <CA+E=qVdh3MHMsEC9XKe5-7O8fGTHFh76WLOgVf+PZPv7c4JE9w@mail.gmail.com>
+ <20190808162628.pthvy3tgf3naj76s@flea>
+ <CA+E=qVeiWoRGn05HpMzx_5yidit4GM18tBrziW5MBo00f_-PKQ@mail.gmail.com>
+ <20190812080420.saelmqb36vkelxn4@flea>
+ <CA+E=qVchsqOF_hVD-qBuKwi7PTMYtUR-LE2dD_mpptFJcWE_yw@mail.gmail.com>
+ <20190813053905.hu2hyi7fah2vujzz@flea>
+ <CA+E=qVegU8M09tmbxGUaBSoueGU6PRsAtr9XWrc8V8HnCPjULg@mail.gmail.com>
+ <CA+E=qVeArUV0u_17ty=HgaU35TwcBfQjSOJf0A5yM6L6+W-0Og@mail.gmail.com>
+ <20190925110844.qfm5ris7xeze44th@gilmour>
+ <CAJiuCcfcmkb_BgDcDJziUwoZXAgLN4Bh0GGZKR3NVNRpnFhBEQ@mail.gmail.com>
+In-Reply-To: <CAJiuCcfcmkb_BgDcDJziUwoZXAgLN4Bh0GGZKR3NVNRpnFhBEQ@mail.gmail.com>
+From: Vasily Khoruzhick <anarsoul@gmail.com>
+Date: Thu, 31 Oct 2019 13:35:40 -0700
+Message-ID: <CA+E=qVeopby6zn1PBsOGb0JjA6-viTN_iXxRnWF6+NGtbZ_BtQ@mail.gmail.com>
+Subject: Re: [PATCH] arm64: dts: allwinner: a64: Drop PMU node
+To: =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_133448_331014_EB0F31CC 
-X-CRM114-Status: GOOD (  16.59  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20191031_133536_658114_5E5952E0 
+X-CRM114-Status: GOOD (  35.95  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (anarsoul[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -85,8 +94,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,242 +105,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>, LKML <linux-kernel@vger.kernel.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Andrew Murray <andrew.murray@arm.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ "Jared D . McNeill" <jmcneill@netbsd.org>, Maxime Ripard <mripard@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Harald Geyer <harald@ccbib.org>, Robin Murphy <robin.murphy@arm.com>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 31, 2019 at 12:57 PM Sami Tolvanen <samitolvanen@google.com> wrote:
->
-> Unlike gcc, clang considers each inline assembly block to be independent
-> and therefore, when using the integrated assembler for inline assembly,
-> any preambles that enable features must be repeated in each block.
->
-> This change defines __LSE_PREAMBLE and adds it to each inline assembly
-> block that has LSE instructions, which allows them to be compiled also
-> with clang's assembler.
->
-> Link: https://github.com/ClangBuiltLinux/linux/issues/671
-> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-> Tested-by: Andrew Murray <andrew.murray@arm.com>
-> Tested-by: Kees Cook <keescook@chromium.org>
-> Reviewed-by: Andrew Murray <andrew.murray@arm.com>
-> Reviewed-by: Kees Cook <keescook@chromium.org>
-
-Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
-
-> ---
-> v2:
->  - Add a preamble to inline assembly blocks that use LSE instead
->    of allowing the compiler to emit LSE instructions everywhere.
->
-> ---
->  arch/arm64/include/asm/atomic_lse.h | 19 +++++++++++++++++++
->  arch/arm64/include/asm/lse.h        |  6 +++---
->  2 files changed, 22 insertions(+), 3 deletions(-)
->
-> diff --git a/arch/arm64/include/asm/atomic_lse.h b/arch/arm64/include/asm/atomic_lse.h
-> index 574808b9df4c..da3280f639cd 100644
-> --- a/arch/arm64/include/asm/atomic_lse.h
-> +++ b/arch/arm64/include/asm/atomic_lse.h
-> @@ -14,6 +14,7 @@
->  static inline void __lse_atomic_##op(int i, atomic_t *v)                       \
->  {                                                                      \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->  "      " #asm_op "     %w[i], %[v]\n"                                  \
->         : [i] "+r" (i), [v] "+Q" (v->counter)                           \
->         : "r" (v));                                                     \
-> @@ -30,6 +31,7 @@ ATOMIC_OP(add, stadd)
->  static inline int __lse_atomic_fetch_##op##name(int i, atomic_t *v)    \
->  {                                                                      \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->  "      " #asm_op #mb " %w[i], %w[i], %[v]"                             \
->         : [i] "+r" (i), [v] "+Q" (v->counter)                           \
->         : "r" (v)                                                       \
-> @@ -58,6 +60,7 @@ static inline int __lse_atomic_add_return##name(int i, atomic_t *v)   \
->         u32 tmp;                                                        \
->                                                                         \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->         "       ldadd" #mb "    %w[i], %w[tmp], %[v]\n"                 \
->         "       add     %w[i], %w[i], %w[tmp]"                          \
->         : [i] "+r" (i), [v] "+Q" (v->counter), [tmp] "=&r" (tmp)        \
-> @@ -77,6 +80,7 @@ ATOMIC_OP_ADD_RETURN(        , al, "memory")
->  static inline void __lse_atomic_and(int i, atomic_t *v)
->  {
->         asm volatile(
-> +       __LSE_PREAMBLE
->         "       mvn     %w[i], %w[i]\n"
->         "       stclr   %w[i], %[v]"
->         : [i] "+&r" (i), [v] "+Q" (v->counter)
-> @@ -87,6 +91,7 @@ static inline void __lse_atomic_and(int i, atomic_t *v)
->  static inline int __lse_atomic_fetch_and##name(int i, atomic_t *v)     \
->  {                                                                      \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->         "       mvn     %w[i], %w[i]\n"                                 \
->         "       ldclr" #mb "    %w[i], %w[i], %[v]"                     \
->         : [i] "+&r" (i), [v] "+Q" (v->counter)                          \
-> @@ -106,6 +111,7 @@ ATOMIC_FETCH_OP_AND(        , al, "memory")
->  static inline void __lse_atomic_sub(int i, atomic_t *v)
->  {
->         asm volatile(
-> +       __LSE_PREAMBLE
->         "       neg     %w[i], %w[i]\n"
->         "       stadd   %w[i], %[v]"
->         : [i] "+&r" (i), [v] "+Q" (v->counter)
-> @@ -118,6 +124,7 @@ static inline int __lse_atomic_sub_return##name(int i, atomic_t *v) \
->         u32 tmp;                                                        \
->                                                                         \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->         "       neg     %w[i], %w[i]\n"                                 \
->         "       ldadd" #mb "    %w[i], %w[tmp], %[v]\n"                 \
->         "       add     %w[i], %w[i], %w[tmp]"                          \
-> @@ -139,6 +146,7 @@ ATOMIC_OP_SUB_RETURN(        , al, "memory")
->  static inline int __lse_atomic_fetch_sub##name(int i, atomic_t *v)     \
->  {                                                                      \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->         "       neg     %w[i], %w[i]\n"                                 \
->         "       ldadd" #mb "    %w[i], %w[i], %[v]"                     \
->         : [i] "+&r" (i), [v] "+Q" (v->counter)                          \
-> @@ -159,6 +167,7 @@ ATOMIC_FETCH_OP_SUB(        , al, "memory")
->  static inline void __lse_atomic64_##op(s64 i, atomic64_t *v)           \
->  {                                                                      \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->  "      " #asm_op "     %[i], %[v]\n"                                   \
->         : [i] "+r" (i), [v] "+Q" (v->counter)                           \
->         : "r" (v));                                                     \
-> @@ -175,6 +184,7 @@ ATOMIC64_OP(add, stadd)
->  static inline long __lse_atomic64_fetch_##op##name(s64 i, atomic64_t *v)\
->  {                                                                      \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->  "      " #asm_op #mb " %[i], %[i], %[v]"                               \
->         : [i] "+r" (i), [v] "+Q" (v->counter)                           \
->         : "r" (v)                                                       \
-> @@ -203,6 +213,7 @@ static inline long __lse_atomic64_add_return##name(s64 i, atomic64_t *v)\
->         unsigned long tmp;                                              \
->                                                                         \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->         "       ldadd" #mb "    %[i], %x[tmp], %[v]\n"                  \
->         "       add     %[i], %[i], %x[tmp]"                            \
->         : [i] "+r" (i), [v] "+Q" (v->counter), [tmp] "=&r" (tmp)        \
-> @@ -222,6 +233,7 @@ ATOMIC64_OP_ADD_RETURN(        , al, "memory")
->  static inline void __lse_atomic64_and(s64 i, atomic64_t *v)
->  {
->         asm volatile(
-> +       __LSE_PREAMBLE
->         "       mvn     %[i], %[i]\n"
->         "       stclr   %[i], %[v]"
->         : [i] "+&r" (i), [v] "+Q" (v->counter)
-> @@ -232,6 +244,7 @@ static inline void __lse_atomic64_and(s64 i, atomic64_t *v)
->  static inline long __lse_atomic64_fetch_and##name(s64 i, atomic64_t *v)        \
->  {                                                                      \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->         "       mvn     %[i], %[i]\n"                                   \
->         "       ldclr" #mb "    %[i], %[i], %[v]"                       \
->         : [i] "+&r" (i), [v] "+Q" (v->counter)                          \
-> @@ -251,6 +264,7 @@ ATOMIC64_FETCH_OP_AND(        , al, "memory")
->  static inline void __lse_atomic64_sub(s64 i, atomic64_t *v)
->  {
->         asm volatile(
-> +       __LSE_PREAMBLE
->         "       neg     %[i], %[i]\n"
->         "       stadd   %[i], %[v]"
->         : [i] "+&r" (i), [v] "+Q" (v->counter)
-> @@ -263,6 +277,7 @@ static inline long __lse_atomic64_sub_return##name(s64 i, atomic64_t *v)    \
->         unsigned long tmp;                                              \
->                                                                         \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->         "       neg     %[i], %[i]\n"                                   \
->         "       ldadd" #mb "    %[i], %x[tmp], %[v]\n"                  \
->         "       add     %[i], %[i], %x[tmp]"                            \
-> @@ -284,6 +299,7 @@ ATOMIC64_OP_SUB_RETURN(        , al, "memory")
->  static inline long __lse_atomic64_fetch_sub##name(s64 i, atomic64_t *v)        \
->  {                                                                      \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->         "       neg     %[i], %[i]\n"                                   \
->         "       ldadd" #mb "    %[i], %[i], %[v]"                       \
->         : [i] "+&r" (i), [v] "+Q" (v->counter)                          \
-> @@ -305,6 +321,7 @@ static inline s64 __lse_atomic64_dec_if_positive(atomic64_t *v)
->         unsigned long tmp;
->
->         asm volatile(
-> +       __LSE_PREAMBLE
->         "1:     ldr     %x[tmp], %[v]\n"
->         "       subs    %[ret], %x[tmp], #1\n"
->         "       b.lt    2f\n"
-> @@ -332,6 +349,7 @@ __lse__cmpxchg_case_##name##sz(volatile void *ptr,                  \
->         unsigned long tmp;                                              \
->                                                                         \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->         "       mov     %" #w "[tmp], %" #w "[old]\n"                   \
->         "       cas" #mb #sfx "\t%" #w "[tmp], %" #w "[new], %[v]\n"    \
->         "       mov     %" #w "[ret], %" #w "[tmp]"                     \
-> @@ -379,6 +397,7 @@ __lse__cmpxchg_double##name(unsigned long old1,                             \
->         register unsigned long x4 asm ("x4") = (unsigned long)ptr;      \
->                                                                         \
->         asm volatile(                                                   \
-> +       __LSE_PREAMBLE                                                  \
->         "       casp" #mb "\t%[old1], %[old2], %[new1], %[new2], %[v]\n"\
->         "       eor     %[old1], %[old1], %[oldval1]\n"                 \
->         "       eor     %[old2], %[old2], %[oldval2]\n"                 \
-> diff --git a/arch/arm64/include/asm/lse.h b/arch/arm64/include/asm/lse.h
-> index 80b388278149..73834996c4b6 100644
-> --- a/arch/arm64/include/asm/lse.h
-> +++ b/arch/arm64/include/asm/lse.h
-> @@ -6,6 +6,8 @@
->
->  #if defined(CONFIG_AS_LSE) && defined(CONFIG_ARM64_LSE_ATOMICS)
->
-> +#define __LSE_PREAMBLE ".arch armv8-a+lse\n"
-> +
->  #include <linux/compiler_types.h>
->  #include <linux/export.h>
->  #include <linux/jump_label.h>
-> @@ -14,8 +16,6 @@
->  #include <asm/atomic_lse.h>
->  #include <asm/cpucaps.h>
->
-> -__asm__(".arch_extension       lse");
-> -
->  extern struct static_key_false cpu_hwcap_keys[ARM64_NCAPS];
->  extern struct static_key_false arm64_const_caps_ready;
->
-> @@ -34,7 +34,7 @@ static inline bool system_uses_lse_atomics(void)
->
->  /* In-line patching at runtime */
->  #define ARM64_LSE_ATOMIC_INSN(llsc, lse)                               \
-> -       ALTERNATIVE(llsc, lse, ARM64_HAS_LSE_ATOMICS)
-> +       ALTERNATIVE(llsc, __LSE_PREAMBLE lse, ARM64_HAS_LSE_ATOMICS)
->
->  #else  /* CONFIG_AS_LSE && CONFIG_ARM64_LSE_ATOMICS */
->
-> --
-> 2.24.0.rc0.303.g954a862665-goog
->
-
-
--- 
-Thanks,
-~Nick Desaulniers
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVGh1LCBPY3QgMzEsIDIwMTkgYXQgMTI6MTAgUE0gQ2zDqW1lbnQgUMOpcm9uIDxwZXJvbi5j
+bGVtQGdtYWlsLmNvbT4gd3JvdGU6Cj4KPiBIaSwKPgo+IEp1c3QgYSByZW1hcmsgaGVyZSBidXQg
+dGhlIGludGVycnVwdCBhcmUgZnJvbSAxNTIgdG8gMTU1IFNQSS4KPiBCdXQgdGhlcmUgaXMgYW4g
+b2Zmc2V0IG9mIDMyIG5vIChyZW1vdmUgU0dJL1BQSSk/Cj4gVGhpcyBzaG91bGQgYmUgZnJvbSAx
+MjAgdG8gMTIzCgpJIGFscmVhZHkgdHJpZWQgaXQgKGFuZCBJIGJlbGlldmUgc29tZW9uZSBhbHJl
+YWR5IHN1Z2dlc3RlZCBpdCBhYm92ZSksCml0IGRvZXNuJ3QgZml4IFBNVSBpbnRlcnJ1cHRzIHRo
+b3VnaC4KCj4gUmVnYXJkcywKPiBDbMOpbWVudAo+Cj4gT24gV2VkLCAyNSBTZXAgMjAxOSBhdCAx
+MzowOSwgTWF4aW1lIFJpcGFyZCA8bXJpcGFyZEBrZXJuZWwub3JnPiB3cm90ZToKPiA+Cj4gPiBP
+biBNb24sIFNlcCAyMywgMjAxOSBhdCAwNDo1NTo1OVBNIC0wNzAwLCBWYXNpbHkgS2hvcnV6aGlj
+ayB3cm90ZToKPiA+ID4gT24gTW9uLCBTZXAgMjMsIDIwMTkgYXQgNDo1MSBQTSBWYXNpbHkgS2hv
+cnV6aGljayA8YW5hcnNvdWxAZ21haWwuY29tPiB3cm90ZToKPiA+ID4gPgo+ID4gPiA+IE9uIE1v
+biwgQXVnIDEyLCAyMDE5IGF0IDEwOjM5IFBNIE1heGltZSBSaXBhcmQKPiA+ID4gPiA8bWF4aW1l
+LnJpcGFyZEBib290bGluLmNvbT4gd3JvdGU6Cj4gPiA+ID4gPgo+ID4gPiA+ID4gT24gTW9uLCBB
+dWcgMTIsIDIwMTkgYXQgMTE6MDE6NTFBTSAtMDcwMCwgVmFzaWx5IEtob3J1emhpY2sgd3JvdGU6
+Cj4gPiA+ID4gPiA+IE9uIE1vbiwgQXVnIDEyLCAyMDE5IGF0IDE6MDQgQU0gTWF4aW1lIFJpcGFy
+ZCA8bWF4aW1lLnJpcGFyZEBib290bGluLmNvbT4gd3JvdGU6Cj4gPiA+ID4gPiA+ID4KPiA+ID4g
+PiA+ID4gPiBPbiBUaHUsIEF1ZyAwOCwgMjAxOSBhdCAxMjo1OTowN1BNIC0wNzAwLCBWYXNpbHkg
+S2hvcnV6aGljayB3cm90ZToKPiA+ID4gPiA+ID4gPiA+IE9uIFRodSwgQXVnIDgsIDIwMTkgYXQg
+OToyNiBBTSBNYXhpbWUgUmlwYXJkIDxtYXhpbWUucmlwYXJkQGJvb3RsaW4uY29tPiB3cm90ZToK
+PiA+ID4gPiA+ID4gPiA+ID4KPiA+ID4gPiA+ID4gPiA+ID4gT24gV2VkLCBBdWcgMDcsIDIwMTkg
+YXQgMTA6MzY6MDhBTSAtMDcwMCwgVmFzaWx5IEtob3J1emhpY2sgd3JvdGU6Cj4gPiA+ID4gPiA+
+ID4gPiA+ID4gT24gV2VkLCBBdWcgNywgMjAxOSBhdCA0OjU2IEFNIE1heGltZSBSaXBhcmQgPG1h
+eGltZS5yaXBhcmRAYm9vdGxpbi5jb20+IHdyb3RlOgo+ID4gPiA+ID4gPiA+ID4gPiA+ID4KPiA+
+ID4gPiA+ID4gPiA+ID4gPiA+IE9uIFR1ZSwgQXVnIDA2LCAyMDE5IGF0IDA3OjM5OjI2UE0gLTA3
+MDAsIFZhc2lseSBLaG9ydXpoaWNrIHdyb3RlOgo+ID4gPiA+ID4gPiA+ID4gPiA+ID4gPiBPbiBU
+dWUsIEF1ZyA2LCAyMDE5IGF0IDI6MTQgUE0gUm9iaW4gTXVycGh5IDxyb2Jpbi5tdXJwaHlAYXJt
+LmNvbT4gd3JvdGU6Cj4gPiA+ID4gPiA+ID4gPiA+ID4gPiA+ID4KPiA+ID4gPiA+ID4gPiA+ID4g
+PiA+ID4gPiBPbiAyMDE5LTA4LTA2IDk6NTIgcG0sIFZhc2lseSBLaG9ydXpoaWNrIHdyb3RlOgo+
+ID4gPiA+ID4gPiA+ID4gPiA+ID4gPiA+ID4gT24gVHVlLCBBdWcgNiwgMjAxOSBhdCAxOjE5IFBN
+IEhhcmFsZCBHZXllciA8aGFyYWxkQGNjYmliLm9yZz4gd3JvdGU6Cj4gPiA+ID4gPiA+ID4gPiA+
+ID4gPiA+ID4gPj4KPiA+ID4gPiA+ID4gPiA+ID4gPiA+ID4gPiA+PiBWYXNpbHkgS2hvcnV6aGlj
+ayB3cml0ZXM6Cj4gPiA+ID4gPiA+ID4gPiA+ID4gPiA+ID4gPj4+IE9uIFR1ZSwgQXVnIDYsIDIw
+MTkgYXQgNzozNSBBTSBSb2JpbiBNdXJwaHkgPHJvYmluLm11cnBoeUBhcm0uY29tPiB3cm90ZToK
+PiA+ID4gPiA+ID4gPiA+ID4gPiA+ID4gPiA+Pj4+Cj4gPiA+ID4gPiA+ID4gPiA+ID4gPiA+ID4g
+Pj4+PiBPbiAwNi8wOC8yMDE5IDE1OjAxLCBWYXNpbHkgS2hvcnV6aGljayB3cm90ZToKPiA+ID4g
+PiA+ID4gPiA+ID4gPiA+ID4gPiA+Pj4+PiBMb29rcyBsaWtlIFBNVSBpbiBBNjQgaXMgYnJva2Vu
+LCBpdCBnZW5lcmF0ZXMgbm8gaW50ZXJydXB0cyBhdCBhbGwgYW5kCj4gPiA+ID4gPiA+ID4gPiA+
+ID4gPiA+ID4gPj4+Pj4gYXMgcmVzdWx0ICdwZXJmIHRvcCcgc2hvd3Mgbm8gZXZlbnRzLgo+ID4g
+PiA+ID4gPiA+ID4gPiA+ID4gPiA+ID4+Pj4KPiA+ID4gPiA+ID4gPiA+ID4gPiA+ID4gPiA+Pj4+
+IERvZXMgc29tZXRoaW5nIGxpa2UgJ3BlcmYgc3RhdCBzbGVlcCAxJyBhdCBsZWFzdCBjb3VudCBj
+eWNsZXMgY29ycmVjdGx5Pwo+ID4gPiA+ID4gPiA+ID4gPiA+ID4gPiA+ID4+Pj4gSXQgY291bGQg
+d2VsbCBqdXN0IGJlIHRoYXQgdGhlIGludGVycnVwdCBudW1iZXJzIGFyZSB3cm9uZy4uLgo+ID4g
+PiA+ID4gPiA+ID4gPiA+ID4gPiA+ID4+Pgo+ID4gPiA+ID4gPiA+ID4gPiA+ID4gPiA+ID4+PiBM
+b29rcyBsaWtlIGl0IGRvZXMsIGF0IGxlYXN0IHJlc3VsdCBsb29rcyBwbGF1c2libGU6Cj4gPiA+
+ID4gPiA+ID4gPiA+ID4gPiA+ID4gPj4KPiA+ID4gPiA+ID4gPiA+ID4gPiA+ID4gPiA+PiBJJ20g
+dXNpbmcgcGVyZiBzdGF0IHJlZ3VsYXJseSAoY2FjaGUgYmVuY2htYXJrcykgYW5kIGl0IHdvcmtz
+IGZpbmUuCj4gPiA+ID4gPiA+ID4gPiA+ID4gPiA+ID4gPj4KPiA+ID4gPiA+ID4gPiA+ID4gPiA+
+ID4gPiA+PiBVbmZvcnR1bmF0ZWx5IEkgd2Fzbid0IGF3YXJlIHRoYXQgcGVyZiBzdGF0IGlzIGEg
+cG9vciB0ZXN0IGZvcgo+ID4gPiA+ID4gPiA+ID4gPiA+ID4gPiA+ID4+IHRoZSBpbnRlcnJ1cHRz
+IHBhcnQgb2YgdGhlIG5vZGUsIHdoZW4gSSBhZGRlZCBpdC4gU28gSSdtIG5vdCB0b28KPiA+ID4g
+PiA+ID4gPiA+ID4gPiA+ID4gPiA+PiBzdXJwcmlzZWQgSSBnb3QgaXQgd3JvbmcuCj4gPiA+ID4g
+PiA+ID4gPiA+ID4gPiA+ID4gPj4KPiA+ID4gPiA+ID4gPiA+ID4gPiA+ID4gPiA+PiBIb3dldmVy
+LCBpdCB3b3VsZCBiZSB1bmZvcnR1bmF0ZSBpZiB0aGUgbm9kZSBnb3QgcmVtb3ZlZCBjb21wbGV0
+ZWx5LAo+ID4gPiA+ID4gPiA+ID4gPiA+ID4gPiA+ID4+IGJlY2F1c2UgcGVyZiBzdGF0IHdvdWxk
+IG5vdCB3b3JrIGFueW1vcmUuIE1heWJlIHdlIGNhbiBvbmx5IHJlbW92ZQo+ID4gPiA+ID4gPiA+
+ID4gPiA+ID4gPiA+ID4+IHRoZSBpbnRlcnJ1cHRzIG9yIGp1c3QgZml4IHRoZW0gZXZlbiBpZiB0
+aGUgSFcgZG9lc24ndCB3b3JrPwo+ID4gPiA+ID4gPiA+ID4gPiA+ID4gPiA+ID4KPiA+ID4gPiA+
+ID4gPiA+ID4gPiA+ID4gPiA+IEknbSBub3QgZmFtaWxpYXIgd2l0aCBQTVUgZHJpdmVyLiBJcyBp
+dCBwb3NzaWJsZSB0byBnZXQgaXQgd29ya2luZwo+ID4gPiA+ID4gPiA+ID4gPiA+ID4gPiA+ID4g
+d2l0aG91dCBpbnRlcnJ1cHRzPwo+ID4gPiA+ID4gPiA+ID4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+
+ID4gPiA+ID4gPiA+ID4gWXVwIC0geW91IGdldCBhIGdydW1weSBtZXNzYWdlIGZyb20gdGhlIGRy
+aXZlciwgaXQgd2lsbCByZWZ1c2Ugc2FtcGxpbmcKPiA+ID4gPiA+ID4gPiA+ID4gPiA+ID4gPiBl
+dmVudHMgKHRoZSBvbmVzIHdoaWNoIHdlcmVuJ3Qgd29ya2luZyBhbnl3YXkpLCBhbmQgaWYgeW91
+IG1lYXN1cmUKPiA+ID4gPiA+ID4gPiA+ID4gPiA+ID4gPiBhbnl0aGluZyBmb3IgbG9uZyBlbm91
+Z2ggdGhhdCBhIGNvdW50ZXIgb3ZlcmZsb3dzIHlvdSdsbCBnZXQgd29ua3kKPiA+ID4gPiA+ID4g
+PiA+ID4gPiA+ID4gPiByZXN1bHRzLiBCdXQgZm9yIGNvdW50aW5nIGhhcmR3YXJlIGV2ZW50cyBv
+dmVyIHJlbGF0aXZlbHkgc2hvcnQgcGVyaW9kcwo+ID4gPiA+ID4gPiA+ID4gPiA+ID4gPiA+IGl0
+J2xsIHN0aWxsIGRvIHRoZSBqb2IuCj4gPiA+ID4gPiA+ID4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+
+ID4gPiA+ID4gPiA+IEkgdHJpZWQgdG8gZHJvcCBpbnRlcnJ1cHRzIGNvbXBsZXRlbHkgZnJvbSB0
+aGUgbm9kZSBidXQgJ3BlcmYgdG9wJyBpcwo+ID4gPiA+ID4gPiA+ID4gPiA+ID4gPiBzdGlsbCBi
+cm9rZW4uIFRob3VnaCBub3cgaW4gZGlmZmVyZW50IHdheTogaXQgY29tcGxhaW5zICJjeWNsZXM6
+IFBNVQo+ID4gPiA+ID4gPiA+ID4gPiA+ID4gPiBIYXJkd2FyZSBkb2Vzbid0IHN1cHBvcnQgc2Ft
+cGxpbmcvb3ZlcmZsb3ctaW50ZXJydXB0cy4gVHJ5ICdwZXJmCj4gPiA+ID4gPiA+ID4gPiA+ID4g
+PiA+IHN0YXQnIgo+ID4gPiA+ID4gPiA+ID4gPiA+ID4KPiA+ID4gPiA+ID4gPiA+ID4gPiA+IEkg
+aGF2ZSBubyBpZGVhIGlmIHRoYXQncyB0aGUgY3VscHJpdCwgYnV0IHdoYXQgaXMgdGhlIHN0YXRl
+IG9mIHRoZQo+ID4gPiA+ID4gPiA+ID4gPiA+ID4gMHgwOTAxMDAwMCByZWdpc3Rlcj8KPiA+ID4g
+PiA+ID4gPiA+ID4gPgo+ID4gPiA+ID4gPiA+ID4gPiA+IFdoYXQgcmVnaXN0ZXIgaXMgdGhhdCBh
+bmQgaG93IGRvIEkgY2hlY2sgaXQ/Cj4gPiA+ID4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+ID4gPiA+
+IEl0J3MgaW4gdGhlIENQVVggQ29uZmlndXJhdGlvbiBibG9jaywgYW5kIHRoZSBiaXRzIGFyZSBs
+YWJlbGxlZCBhcyBDUFUKPiA+ID4gPiA+ID4gPiA+ID4gRGVidWcgUmVzZXQuCj4gPiA+ID4gPiA+
+ID4gPiA+Cj4gPiA+ID4gPiA+ID4gPiA+IEFuZCBpZiB5b3UgaGF2ZSBidXN5Ym94LCB5b3UgY2Fu
+IHVzZSBkZXZtZW0uCj4gPiA+ID4gPiA+ID4gPgo+ID4gPiA+ID4gPiA+ID4gQ1BVWCBjb25maWd1
+cmF0aW9uIGJsb2NrIGlzIGF0IDB4MDE3MDAwMDAgYWNjb3JkaW5nIHRvIEE2NCB1c2VyCj4gPiA+
+ID4gPiA+ID4gPiBtYW51YWwsIGFuZCBwYXJ0aWN1bGFyIHJlZ2lzdGVyIHlvdSdyZSBpbnRlcmVz
+dGVkIGluIGlzIGF0IDB4MDE3MDAwODAsCj4gPiA+ID4gPiA+ID4gPiBpdHMgdmFsdWUgaXMgMHgx
+MTEwMTEwRi4KPiA+ID4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+ID4gPiBCaXRzIDE2LTE5IGFyZSBu
+b3QgZGVmaW5lZCBpbiB1c2VyIG1hbnVhbCBhbmQgYXJlIG5vdCBzZXQuCj4gPiA+ID4gPiA+ID4K
+PiA+ID4gPiA+ID4gPiBTb3JyeSwgSSBzb21laG93IHRob3VnaHQgdGhpcyB3YXMgZm9yIHRoZSBI
+Ni4uLgo+ID4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+ID4gSSBkb24ndCBoYXZlIGFueSBpZGVhIHRo
+ZW4gOi8KPiA+ID4gPiA+ID4KPiA+ID4gPiA+ID4gT0ssIHNvIHdoYXQgc2hvdWxkIHdlIGRvPyAn
+cGVyZiB0b3AnLydwZXJmIHJlY29yZCcgd29yayBmaW5lIGlmIFBNVQo+ID4gPiA+ID4gPiBub2Rl
+IGlzIGRyb3BwZWQsIGJ1dCB0aGV5IGRvbid0IHdvcmsgaWYgUE1VIG5vZGUgaXMgcHJlc2VudCAo
+ZXZlbiB3aXRoCj4gPiA+ID4gPiA+IGludGVycnVwdHMgZHJvcHBlZCkuIEknZCBwcmVmZXIgdG8g
+aGF2ZSAncGVyZiB0b3AnIGFuZCAncGVyZiByZWNvcmQnCj4gPiA+ID4gPiA+IHdvcmtpbmcgaW5z
+dGVhZCBvZiAncGVyZiBzdGF0Jwo+ID4gPiA+ID4KPiA+ID4gPiA+IFdlbGwsIGl0IGRvZXNuJ3Qg
+d29yayBzbyB3ZSBzaG91bGQganVzdCByZW1vdmUgdGhlIG5vZGUsIGFuZCBpZgo+ID4gPiA+ID4g
+c29tZW9uZSB3YW50cyBpdCBiYWNrLCB0aGV5IHNob3VsZCBmaWd1cmUgaXQgb3V0Lgo+ID4gPiA+
+Cj4gPiA+ID4gSGV5IE1heGltZSwKPiA+ID4gPgo+ID4gPiA+IFNvIGNhbiB5b3UgbWVyZ2UgdGhp
+cyBwYXRjaD8KPiA+ID4KPiA+ID4gQWRkZWQgbmV3IE1heGltZSdzIGVtYWlsIHRvIENDCj4gPgo+
+ID4gUXVldWVkIGFzIGEgZml4IGZvciA1LjQsIHRoYW5rcyEKPiA+IE1heGltZQo+ID4gX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KPiA+IGxpbnV4LWFybS1r
+ZXJuZWwgbWFpbGluZyBsaXN0Cj4gPiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
+cmcKPiA+IGh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
+YXJtLWtlcm5lbAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
+bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
+bGludXgtYXJtLWtlcm5lbAo=
