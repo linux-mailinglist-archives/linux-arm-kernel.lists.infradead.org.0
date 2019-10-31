@@ -2,83 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 857C5EB5DD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 18:11:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62E64EB5EC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 18:14:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0zPx06TzfZOCnNCZiYy0iCj2NJQ+UUhYYk/owX7iMLs=; b=PjUxmM3zHR1lhq
-	5ivOzJSVGQg138MsWVpE0n8yYL3NgV25jGFKf68H2mCjpnJ8wlnKqmhch2hXoDHCOGZuThI/JPzAi
-	HH0q6211Pi7GPHd3iNqaUnMOH360Rd4+gk9T6YMtqrN4hQR1TzYAndtn1+uPOAiW1LZTMnvcblAp7
-	wBN3d3BKrWehVXMrcIKok9Ur9Kq7y1TSS6l/3v6AaPOsI6BxZZCknhMvQrABT1UNjZyJyrNLVHPqy
-	ySeBFwBl7S6rHtgkTW7/Udgq20019eOiSR+Mxt6mfr7ENmylEtQpb4ri3J0AdvrJYMhz1+CIZ8zL+
-	NGWrKzD5P3nqCMsg3qBg==;
+	List-Owner; bh=X1juNLqsLfR/K/EX+v/DtLViV32/soZupwHztM9lysY=; b=K8dGhYNJWmRAEj
+	PWep/qNO9ormeOlW3WxnkfNwQIT0/6DRVLV31uZt7N7yjFwPoUj+y+qXgsUZG1K7ChWaeHr7SbulI
+	1F9SL1592flGE6A15yalAR4GWTCKq0sDNcxlAbbyI7QKpoiP/sAsGNG7mv6KeQX7HRPPfgE6rKHcX
+	Ey0WjaMDWw3S0B6tunctewRIgwmm/tgL32Wec5BS5Aj2167LWJpPpV5LwDbsJI2rqNrFdhMRQfsH4
+	zhnVYMffLzSyu8NPpjKquf3qbXaU92cPJaIAaAEEH16zbqlIma5Cr6d1vU9vw38W9MJA60Jrbtc4x
+	3Nz+g6uTS3M54cc19RFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQDz3-0006Er-1a; Thu, 31 Oct 2019 17:11:41 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1iQE1w-0006dS-CJ; Thu, 31 Oct 2019 17:14:40 +0000
+Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQDyu-0006E5-0Z
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 17:11:33 +0000
-Received: by mail-pl1-x643.google.com with SMTP id y24so2959014plr.12
+ id 1iQE1l-0006cZ-32
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 17:14:30 +0000
+Received: by mail-il1-x143.google.com with SMTP id d83so6056977ilk.7
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 31 Oct 2019 10:11:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ Thu, 31 Oct 2019 10:14:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=b0X5YfN75r7PDdNJxvGQlnZAXFwdwuMLiQ3l0U13bDg=;
- b=Jy/SacxJhf/Nbsx+JKEbMsxTmi9nTvRx9QrYmlIIdjaRaYWNvdZdUveUzeL7wIBsMZ
- yB8Nz5UMhco8wy0o9k2IWrgIZlOKbDsMBdp3atJjR2eE50+zYjEZBM7mTKuaEMqSUi91
- ueCuaeZ6gpnfO9SKoIhfR/pmAwffakughLyHWB5/OC9EGvGmL4MkTswLiMaKPF11fEWK
- w0yeyTRVppcLDoCs0H8aL/rz2ddY3Gr0oQA89wXCPpwffH+YyILuj3R30CX+hlyoHfZ7
- WFIUgANql15NGTPB5eu58+Vz5mden9xZ/hmIuvN0j6C6tSpO51yEvLSx5eUFDkhOQhtj
- fI9g==
+ :cc; bh=7/oQbUrLxzCFxSXaMBW51XHkJmtd4pn/y99rXYOWrkw=;
+ b=MAlgB0uBqzuhtFTfYmLyMxFFpONdoI5/VWbG2WlqRhIbxtoHyINwTblMx5ZJl++Q1n
+ GLyXlK0maDw4a14GrRsGiv0loH3883wNDvMgaCbHz5BOm3Az5FjdwMsL6Gj97rfpoHoK
+ /Z30ThzxPpBT+nsheY4LRR0KPtJ0MYgWPUgW9uU12inuCfLdBjLYNFjeL6K6IfZB+Gcv
+ G9IjBqmA0aM7pe18CuWUk6X3WihR1OxQsK3T4+LlBvSRr6YHNuYEqYANbBcW9NwQF/64
+ cacbSJiLaffDMs/hRowxOuQSDaHedLDPhR4Nby7PKXqR/dOzhL6xpionBwirVT/gK3ek
+ wLRw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=b0X5YfN75r7PDdNJxvGQlnZAXFwdwuMLiQ3l0U13bDg=;
- b=HVBDGtxQItZvZDXtTBiW9IOhPT1fDunUxwE5Dm8xtNUCIbnstc2sxxzgxFO1SlfASz
- TyrQmDSkHpEaUuP9MhpNsyyt4BDr7tYbsxYDYWI4ljkAw26Dp5XS7+5ZyTK701Aejzpa
- tS581KsJ7zrd/Rp6lmBKp3UEldzpLasU3FsHB4JU2gEPYhkC1mQ91n4Zr2pBxlYUXE3Y
- 9eh7qSNJzvP3AiFb5jUxHsG6Ztlv/gqdcFUzJFEeTzAMadcNDHyFTuoUFoocS1iETdkA
- 9Qot6HwS/yVqpAZCUzDd0W/rkJKVfw58qWMOmnCzMUlIxw30RSc3bC1KbgIlL0B9pCUf
- KdHQ==
-X-Gm-Message-State: APjAAAWhwh0s/yIWJtWqx9B70A9SeLo8r6VJIE2iltbWreU3J0ZWF7qZ
- HrZT4OYrGEIPCkYVilNKbDO4ZXjxZZGIavj1GvkvrQ==
-X-Google-Smtp-Source: APXvYqyggyEISFvRqnEZ0+/A7Iby9Fs7Q+2KDnPlM3xak8otQQ4zH05zLjAp9ajmSpT131omcbyYgDm2ydz5aTw6/As=
-X-Received: by 2002:a17:902:b40f:: with SMTP id
- x15mr3965837plr.119.1572541887443; 
- Thu, 31 Oct 2019 10:11:27 -0700 (PDT)
+ bh=7/oQbUrLxzCFxSXaMBW51XHkJmtd4pn/y99rXYOWrkw=;
+ b=d20iKwKg95H841IeyedfoB7onOfmik8ImErwOGNLdBQXja+/DSFAexsbL0cRICoJCG
+ buplY9Bx+ojuPfngAIjAeYx8zrshV927YzwCQzhabEP6doHkYAaCMON3Ea5fHCXd7JPl
+ 3cRyK9A7n0QJnUxciirUEkoOpuKYZX+dS8tuvW4vW5nYFkcStlDYdwVs9O4pO3pLSDS+
+ ghx1WZpt8oYKbb6F50TCar2mQBQHWlruMeYhTgpjGO75S6BDRTDM4JGrtWwehAdAnwao
+ 7O2Kwizg/cWv4k7kdQuaCUHWc9OPk/KyoCAI5GlGsjJuW0Ocxy0U5CV8PSZHHUxv+uS3
+ 4B+w==
+X-Gm-Message-State: APjAAAUa6H4oPquUTVoFeg70lXVB52M9iTDwiQ2j9vVeFwl07kZZfEte
+ 96RV3mOTQuapiIlVp0E1JGrLsH8Q5Plzao5AAKGsLw==
+X-Google-Smtp-Source: APXvYqze3SlsQZNFScaS5sJPjKwOg8mZYClWIkEjiqcbU0pp4edztHY6mx36sdZdgZaf7Cy9UzY//sBKr4k79oSg1xI=
+X-Received: by 2002:a92:1907:: with SMTP id 7mr7540052ilz.72.1572542066045;
+ Thu, 31 Oct 2019 10:14:26 -0700 (PDT)
 MIME-Version: 1.0
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20191031164637.48901-1-samitolvanen@google.com>
- <20191031164637.48901-13-samitolvanen@google.com>
-In-Reply-To: <20191031164637.48901-13-samitolvanen@google.com>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Thu, 31 Oct 2019 10:11:16 -0700
-Message-ID: <CAKwvOdmBcHuhZZV54-76zY60F0Tvd_0DGCi+5dzFTxk0upOYrQ@mail.gmail.com>
-Subject: Re: [PATCH v3 12/17] arm64: reserve x18 from general allocation with
- SCS
-To: Sami Tolvanen <samitolvanen@google.com>
+References: <20191024151325.28623-1-leo.yan@linaro.org>
+In-Reply-To: <20191024151325.28623-1-leo.yan@linaro.org>
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+Date: Thu, 31 Oct 2019 11:14:15 -0600
+Message-ID: <CANLsYkzaB2kU20ibuDJVokYeEEuR8wd7MoHzX9+UKnM0jNV1Jg@mail.gmail.com>
+Subject: Re: [PATCH v1 0/4] perf cs-etm: Fix synthesizing instruction samples
+To: Leo Yan <leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_101132_085315_A29E3159 
-X-CRM114-Status: GOOD (  14.28  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20191031_101429_135228_259F6AEB 
+X-CRM114-Status: GOOD (  15.59  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -87,8 +79,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,68 +90,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
- LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- Masami Hiramatsu <mhiramat@kernel.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Kernel Hardening <kernel-hardening@lists.openwall.com>,
- Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Coresight ML <coresight@lists.linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
+ Robert Walker <robert.walker@arm.com>, Jiri Olsa <jolsa@redhat.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 31, 2019 at 9:47 AM <samitolvanen@google.com> wrote:
+On Thu, 24 Oct 2019 at 09:15, Leo Yan <leo.yan@linaro.org> wrote:
 >
-> Reserve the x18 register from general allocation when SCS is enabled,
-> because the compiler uses the register to store the current task's
-> shadow stack pointer. Note that all external kernel modules must also be
-> compiled with -ffixed-x18 if the kernel has SCS enabled.
-
-Inline/out-of-line assembly will also need to be careful not to
-accidentally overwrite the current task's shadow stack pointer.
-
-Without automated checking for that, we'll have to rely on a
-"gentlemen's promise" for code reviewers, though we'd likely hit such
-a regression with Android+mainline.
-
-Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
-
+> This patch series is to address the issue for synthesizing instruction
+> samples, especially when the instruction sample period is small enough,
+> the current logic cannot synthesize multiple instruction samples within
+> one instruction range packet.
 >
-> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-> ---
->  arch/arm64/Makefile | 4 ++++
->  1 file changed, 4 insertions(+)
+> To fix this issue, patch 0001 avoids to reset the last branches for
+> every instruction sample; if reset the last branches when every time
+> generate instruction sample, then the later samples in the same range
+> packet cannot use the last branches anymore.
 >
-> diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
-> index 2c0238ce0551..ef76101201b2 100644
-> --- a/arch/arm64/Makefile
-> +++ b/arch/arm64/Makefile
-> @@ -72,6 +72,10 @@ stack_protector_prepare: prepare0
->                                         include/generated/asm-offsets.h))
->  endif
+> Patch 0002 is the main patch to fix the logic for synthesizing
+> instruction samples; it allows to handle different instruction periods.
 >
-> +ifeq ($(CONFIG_SHADOW_CALL_STACK), y)
-> +KBUILD_CFLAGS  += -ffixed-x18
-> +endif
-> +
->  ifeq ($(CONFIG_CPU_BIG_ENDIAN), y)
->  KBUILD_CPPFLAGS        += -mbig-endian
->  CHECKFLAGS     += -D__AARCH64EB__
-> --
-> 2.24.0.rc0.303.g954a862665-goog
+> Patch 0003 is an optimization for copying last branches; it only copies
+> last branches once if the instruction samples share the same last
+> branches.
 >
+> Patch 0004 is a minor fix for unsigned variable comparison to zero.
+>
+> To verify my changing for synthesizing instruction samples, I added
+> some logs in the code, and reviewed the output log manually for
+> instuctions samples.  The below commands are tested on DB410c board:
+>
+>   # perf script --itrace=i2
+>   # perf script --itrace=i2li16
+>   # perf inject --itrace=i2il16 -i perf.data -o perf.data.new
+>   # perf inject --itrace=i100il16 -i perf.data -o perf.data.new
+>
+>
+> Leo Yan (4):
+>   perf cs-etm: Continuously record last branches
+>   perf cs-etm: Correct synthesizing instruction samples
+>   perf cs-etm: Optimize copying last branches
+>   perf cs-etm: Fix unsigned variable comparison to zero
 
+I have reviewed and agree with the changes in this set but won't move
+forward until Mike has looked at patch 2/4.
 
--- 
 Thanks,
-~Nick Desaulniers
+Mathieu
+
+>
+>  tools/perf/util/cs-etm.c | 137 ++++++++++++++++++++++++++++++++-------
+>  1 file changed, 115 insertions(+), 22 deletions(-)
+>
+> --
+> 2.17.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
