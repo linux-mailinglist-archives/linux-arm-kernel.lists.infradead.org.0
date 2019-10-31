@@ -2,61 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3DDC9EA859
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 01:47:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEF89EA85D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 01:50:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=R00mOH0fq+4JPn2BE00i5QWc8H3tqosUiBtY0iX+Nkw=; b=ONt
-	/VzNCKorYajdZSULTQvGLIrf8Hw/qmU96g5ZNufjR7qtM6GSGhkymLeMEL/w+Tlhf1AqJOoCQL0Do
-	A3L3wkv9VVNF0r1sp50X2KKVklaGopExo85wJSwGW24XI7u14nXL39dlvz6RoonGZASgFvT+dwbY6
-	EA3CaZewTcHMY7MirUsKxZpHl8a5z4YLat1lUc0ESeCwSWa072MlRJBSyHiEqrV5+7BMtIru1mYYZ
-	R9dexxlZeGoKNJ0kMvJyrLazrOk1Ny5Ix8gH2g4Gy4MGiQXk2jzOVdtn6gIUlstQVNqhkDJ6VQUhn
-	k1Xe2jOVWoDhWY7OmdPrF56MfplV3rA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zYGKmIdBW3XWY58YWsxkaBw/2+ZGAgHC+73nCe5q+vg=; b=k9ywQOLOm3zdY/
+	mEHnrRuOkcDJRA5+6aZcl3lkn9bxDshrjpeuAByQ0xjPf5UxkG9UMWzaB3iFV1gKF6fBA7jIgWhxH
+	iauvTrSsndgyzHq+Ilaq3pwoV91wt7u2rH7jFALq2vetFSiaYiyzso6JQIporL2nuzcZWspklOEWf
+	Dxb56A/68VtlQiX8QcjGzW6x1nNV8hxSkGZZEeUeJbYqjcjQaSXP2D6umDcK85GhliigCr04ix4lg
+	C4nf6TVHu2YzxTHoI9wba+Ps+IcO4LCS9+hNfRE98rUXhsSvkun+tD35NEgiyDjwO4OPKBmY1AceM
+	8O1Rvs/6LsPbM+bwVNAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPycW-00056v-6u; Thu, 31 Oct 2019 00:47:24 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1iPyfH-0005sW-Ki; Thu, 31 Oct 2019 00:50:15 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPycL-00055n-2R
- for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 00:47:14 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 2D3C61A04BC;
- Thu, 31 Oct 2019 01:47:09 +0100 (CET)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A4CD01A01F5;
- Thu, 31 Oct 2019 01:47:04 +0100 (CET)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id CE09E4029B;
- Thu, 31 Oct 2019 08:46:58 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH V2] ARM: dts: imx7ulp-evk: Use APLL_PFD1 as usdhc's clock
- source
-Date: Thu, 31 Oct 2019 08:43:42 +0800
-Message-Id: <1572482622-22070-1-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1iPyf2-0005QA-H6
+ for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 00:50:03 +0000
+Received: by mail-lj1-x244.google.com with SMTP id c4so4716518lja.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 30 Oct 2019 17:49:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=2ANRS5wbwl/qhMyqDjpLwYIen+6o/RnmGm7reuX+RDc=;
+ b=iSsXAz2h6lI4/+bDAgo3ame/BZgVRj1aE4CRhVp1rkjDm5vlU5S7NBZHxBEgHg/wEo
+ LHjrlUjzfObyMjWplPS4iUm9RjAgF5qeticJqVKdiQIoBq9hkhZrryXIwlO/lC3rF9zI
+ RUGDn7MhN1RZ4aziEd7tokbiKmLKGtqN1oh1/Bkjo66ARSTwDEhXLfli2ZXzr+qUE27g
+ ego3mqJPqzkvZTa4lU2SYZa52RhXEJMi+KQRYiuHajDJTdUR2yAdoa+b3h4qMUN8tIfP
+ QZ6T99SeDihkZKnIxQBn1vOcNEJvsNSn6so+SKVs83W44KBmKnvrJIpsFergM970YDYy
+ jX0w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=2ANRS5wbwl/qhMyqDjpLwYIen+6o/RnmGm7reuX+RDc=;
+ b=fbfm9f3WKKJm6JXQOmllFMgYESW08kSr80QBQgowctjzWErHHxlq/jVp1dnJLE/yeK
+ 4RFmnhTy7J4ruLjx1KBOvxCej+wrOrBpTBi3ZLVTY7BZOgx3OZEjKRDPT4qoXrBAOsL6
+ hwsw8w/8Dl2pIZ4drOjUblKChc1WFH6Z9WXrOlqqPymWqlmyLP0MSXqL4CIsJ2gbuMTb
+ HkqIDgdCmO0AtHvfNRTPEyXCjom9a7rbJOx/CePf+mKIkencBHJb/Do+4OqQNgDHW12L
+ Wjo5xSRjBAZKrV0N/q9PFaDOAjT56YPDe+SQTB1IsqE5RrXLWfJst7bAetyMtPk9MML7
+ ax8A==
+X-Gm-Message-State: APjAAAWFgnh9VcwQTvo5Q4eXkmtO/EzAyPnK++p9hgiABkIsWoRQWKQz
+ Rmv5V05rDSQLWRmFjjX8CL8rAFLSrPdlK/rgLv8T/Q==
+X-Google-Smtp-Source: APXvYqwM7PCCU+3fgkz+ysEB76Izdi4UnxQslU0hMR9roPFMeD2kCgFi2OfvADVGoZLpFkAT3ZECdzLcVTd/EaP9GRk=
+X-Received: by 2002:a2e:90b:: with SMTP id 11mr1671387ljj.233.1572482995258;
+ Wed, 30 Oct 2019 17:49:55 -0700 (PDT)
+MIME-Version: 1.0
+References: <20191028224909.1069-1-rentao.bupt@gmail.com>
+In-Reply-To: <20191028224909.1069-1-rentao.bupt@gmail.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Thu, 31 Oct 2019 01:49:43 +0100
+Message-ID: <CACRpkdbOPq4AYt9CLoganV_Ck9bYS9+_U3bggGKAukaQ=FHXkA@mail.gmail.com>
+Subject: Re: [PATCH] ARM: ASPEED: update default ARCH_NR_GPIO for ARCH_ASPEED
+To: rentao.bupt@gmail.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_174713_251965_397B9703 
-X-CRM114-Status: GOOD (  10.30  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191030_175000_630757_67ABF60F 
+X-CRM114-Status: GOOD (  10.51  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,64 +90,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: Arnd Bergmann <arnd@arndb.de>, Paul Burton <paulburton@kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Andrew Jeffery <andrew@aj.id.au>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ OpenBMC Maillist <openbmc@lists.ozlabs.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Joel Stanley <joel@jms.id.au>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>, Tao Ren <taoren@fb.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Doug Anderson <armlinux@m.disordat.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-i.MX7ULP does NOT support runtime switching clock source for PCC,
-APLL_PFD1 by default is usdhc's clock source, so just use it
-in kernel to avoid below kernel dump during kernel boot up and
-make sure kernel can boot up with SD root file-system.
+On Mon, Oct 28, 2019 at 11:49 PM <rentao.bupt@gmail.com> wrote:
 
-[    3.035892] Loading compiled-in X.509 certificates
-[    3.136301] sdhci-esdhc-imx 40370000.mmc: Got CD GPIO
-[    3.242886] mmc0: Reset 0x1 never completed.
-[    3.247190] mmc0: sdhci: ============ SDHCI REGISTER DUMP ===========
-[    3.253751] mmc0: sdhci: Sys addr:  0x00000000 | Version:  0x00000002
-[    3.260218] mmc0: sdhci: Blk size:  0x00000200 | Blk cnt:  0x00000001
-[    3.266775] mmc0: sdhci: Argument:  0x00009a64 | Trn mode: 0x00000000
-[    3.273333] mmc0: sdhci: Present:   0x00088088 | Host ctl: 0x00000002
-[    3.279794] mmc0: sdhci: Power:     0x00000000 | Blk gap:  0x00000080
-[    3.286350] mmc0: sdhci: Wake-up:   0x00000008 | Clock:    0x0000007f
-[    3.292901] mmc0: sdhci: Timeout:   0x0000008c | Int stat: 0x00000000
-[    3.299364] mmc0: sdhci: Int enab:  0x007f010b | Sig enab: 0x00000000
-[    3.305918] mmc0: sdhci: ACmd stat: 0x00000000 | Slot int: 0x00008402
-[    3.312471] mmc0: sdhci: Caps:      0x07eb0000 | Caps_1:   0x0000b400
-[    3.318934] mmc0: sdhci: Cmd:       0x0000113a | Max curr: 0x00ffffff
-[    3.325488] mmc0: sdhci: Resp[0]:   0x00000900 | Resp[1]:  0x0039b37f
-[    3.332040] mmc0: sdhci: Resp[2]:   0x325b5900 | Resp[3]:  0x00400e00
-[    3.338501] mmc0: sdhci: Host ctl2: 0x00000000
-[    3.343051] mmc0: sdhci: ============================================
+> From: Tao Ren <rentao.bupt@gmail.com>
+>
+> Increase the max number of GPIOs from default 512 to 1024 for ASPEED
+> platforms, because Facebook Yamp (AST2500) BMC platform has total 594
+> GPIO pins (232 provided by ASPEED SoC, and 362 by I/O Expanders).
+>
+> Signed-off-by: Tao Ren <rentao.bupt@gmail.com>
 
-Fixes: 20434dc92c05 ("ARM: dts: imx: add common imx7ulp dtsi support")
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-Tested-by: Fabio Estevam <festevam@gmail.com>
----
-Changes since V1:
-	- Add fixes tag.
----
- arch/arm/boot/dts/imx7ulp-evk.dts | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 
-diff --git a/arch/arm/boot/dts/imx7ulp-evk.dts b/arch/arm/boot/dts/imx7ulp-evk.dts
-index f1093d2..a863a2b 100644
---- a/arch/arm/boot/dts/imx7ulp-evk.dts
-+++ b/arch/arm/boot/dts/imx7ulp-evk.dts
-@@ -78,7 +78,7 @@
- 
- &usdhc0 {
- 	assigned-clocks = <&pcc2 IMX7ULP_CLK_USDHC0>;
--	assigned-clock-parents = <&scg1 IMX7ULP_CLK_NIC1_DIV>;
-+	assigned-clock-parents = <&scg1 IMX7ULP_CLK_APLL_PFD1>;
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_usdhc0>;
- 	cd-gpios = <&gpio_ptc 10 GPIO_ACTIVE_LOW>;
--- 
-2.7.4
+Please send this patch to the ARM SoC and SoC maintainers:
+arm@kernel.org
+soc@kernel.org
 
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
