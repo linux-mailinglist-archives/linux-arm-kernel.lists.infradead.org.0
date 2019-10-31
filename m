@@ -2,78 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68CA9EB565
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 17:52:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6F11EB563
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 31 Oct 2019 17:52:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tf+G9K/bVmix+9AW6oszASmpKV+CZ2r69yPqolg1rBc=; b=EYr0cYC5E2IYBu
-	VkevPLr5v49avPYHBCaH10Pnxvu7YdY76Kt4pUbi/dpEiuFFL/p7DEszqfZ31xTo9TQsyNADvBGb8
-	qLZUTPQk19GQkILxbqYRqi9bhJuMrzGN5wPjSKfJ8Nq3qORCr9EIKT3rKVb3V0WxEyFCcshIjc7E7
-	kAKDmpugSBbM4g+PfxDL34M4yV8xS6ZP90g8QzVHxh+atya824ZlKdxhT8yZ0f0U5MtNYZ4X8eDg9
-	jZrrd32yagf07odtqM8xit8jbMDvc4qtBg6TlCdMlzdRyy1bE01TVk9GGBaBsYwaWnoUr8NTzCDaW
-	S3aaNvJXR6PvMNo1wBlw==;
+	List-Owner; bh=tebTlJWWCpdWXp8J4Tf+blbkmrCpuAuclWirnoqIQrU=; b=I5COLjf8dpzFaW
+	KxXN3iKQXeudRGf9prMZhGXRQH4qr24R6BUP7iONtJDhP756Vp1/0SbvhgIbntANTqdQO8M0Kad8K
+	LP2JDUhN2ivYwjRiwtJETRjsPBDHeBVr6NlPL6Eg1Mj9Vw73O2aYtO+9z/egxOICQq/1+y4dg5apS
+	vytI0pnfC9//8eQHoNVfsDbgH5JfDODxkNSniTek6aAsFlR4rGR973grzHu86ujhz8TwFKKrjLvC1
+	MNNW7Qn9zAgqEJY7l4dRidwST2fOrMRUiKTtB9pCUXMo8g5BrlNUf3vDqTBgDQMHrSWXRZC0/f1LU
+	W/6OrSoQWcUYx+37g++g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQDga-0003BA-34; Thu, 31 Oct 2019 16:52:36 +0000
-Received: from mail-pg1-x54a.google.com ([2607:f8b0:4864:20::54a])
+	id 1iQDgF-0002xG-2B; Thu, 31 Oct 2019 16:52:15 +0000
+Received: from mail-pf1-x449.google.com ([2607:f8b0:4864:20::449])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQDbY-0007EP-Ks
+ id 1iQDba-0007Eb-UK
  for linux-arm-kernel@lists.infradead.org; Thu, 31 Oct 2019 16:47:34 +0000
-Received: by mail-pg1-x54a.google.com with SMTP id t28so4778590pgl.21
+Received: by mail-pf1-x449.google.com with SMTP id c8so5007471pfo.9
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 31 Oct 2019 09:47:23 -0700 (PDT)
+ Thu, 31 Oct 2019 09:47:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=hi8Cu8vAZVRE/aapAAyha6S0ojR+GJofj/wY0IAnOZ0=;
- b=P67vDmmf7l8iN6O8NA0rTRghuQ+TRNhS1arwHEnYxr1ViR1HY50ozBsDIgmKlmnXOV
- md0XEh+hEaxcVLZPP1QTlLYLvdf0FZ5h5YQ+hUhhwDYcR//ZTfxu2AYXNsiA1wS45nTi
- SVUQGq6SEiGtWg0iKnZxq+hsmFHJd94RUh0NNXXCkm0GrJaiN4pxdntxDEe2SE7qvN8R
- 1E85Ba2ueIH7RNmmMjNsZslAzajrycwYYcrlzySe7vhPJyXlXhUCKyZb31QYebgcsA/j
- hbzgteQSWbLyHD9/3p76Xl00fiAX0l+Zr68AJyUeyf5tCJXRfOLQIH0Q1QaNskmKKaMW
- A+Aw==
+ :cc; bh=J83AV+8pmxy6MQ8Uszleewce6gVoMir4DYxUv0MBtSY=;
+ b=JwFwWyNMv/RSq1lmIG7yeu7XzK5N0yGFebd9HD0oWd+L64cVHCjNrLKXvpd31A8m+o
+ zacFSlAh7/S3GrsWYw8wOsz2riJzwAmUFphK9R3y/YJdaVSd/jkXF/Q3qSE7wm8QON6m
+ 8mWRne5R6DOJ3KZmWMsv6rx2Y/vxcHDIQsZfg/5fmf+Zp5HlVd7VP1G5fKtX4FB8a3Bm
+ 8RVCvD6+cudu/Eg1HxbSqa7xROHq/x3T25smtETOf5KVnSr4x5SBcV1jFg774W893DEo
+ G58Q3hgq+5V0/nL/ilZ23sMkgZGieLq55EJ/1/61Mg1lGY8hcPLmSpXvq/AV5DgETbO1
+ ZBgQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=hi8Cu8vAZVRE/aapAAyha6S0ojR+GJofj/wY0IAnOZ0=;
- b=awwIJnIumRZYIpUWE4mzolcStt4K1aA3h+cnltcEIVbLNa3n9mSY0UCxCRWO+4HrcO
- YAA5iKXi6gx72tv1hs1k9UrzBiuAx9MkZpEvTuVxkboWcfUJUsBiNVx8PobLliEsqq6G
- izgg9uUJpM+hINR8Gr7cHT1NYR2cem5tTpLOyJPEu31AvE6/rklwsWCaGyXjpUQkKWnh
- OD+XUK/ZCtA/zYJ9x6IMI6yOGwXOH4+08ZG4tp2D5W9mVv2lxsOCtEwqMfJIN6uNmfW3
- 3TY7t4fcmT5McmEMjjhg07UAXdUpJJ9d+FzrF6OVFPg55GHbKOn5PgbThI6bHZz5uzBo
- Q6IA==
-X-Gm-Message-State: APjAAAWMczQp7jWBdSG3BHl8tUq0GX3bO/ihtEpUgUeIue7e0WsswxPK
- 0TiWWCmgmS513G1LeukOCtoGonZ7XQIlllLIO88=
-X-Google-Smtp-Source: APXvYqz6YRDXL8kUecfGxnqeQq30ocBHNq/zxXBU9i1Pelv7UcRC8hJJlGnCkmCBQjmZ8Y0bj93wNqvrOEFGlVoQDyk=
-X-Received: by 2002:a63:134a:: with SMTP id 10mr7622711pgt.441.1572540443216; 
- Thu, 31 Oct 2019 09:47:23 -0700 (PDT)
-Date: Thu, 31 Oct 2019 09:46:35 -0700
+ bh=J83AV+8pmxy6MQ8Uszleewce6gVoMir4DYxUv0MBtSY=;
+ b=X6TkeJmXWcCW9DVUGoUGVQ8izEFXyfKeiEkCYxMm2UYjmDwCV55zpYhZi8GGi18HHL
+ JOxkcb4/fPaJRiMG/+acetGgVe6vR2g4rjdK3vJtLn0uxWuLXX6sFaabKKQYVtWTQNx0
+ Yj3juxRlaf5GPj/0smPbiJhDBd1fPZ4ktYi0dmm+UJtZjjKOTPZ4n6BIWogzXMTG8wk+
+ uavPSFpKQezJ6VPvX8BM/zrggN1PquIbirckz+sMjTi3uwUIZNRNBTeZquRD+EX+kqFN
+ M4/nhQ9tyCsJga2dAUjKkHrhPGlDkuSZ0WzLAdFqAtWzs8V+pwnPassXfymomxneWyRv
+ sReQ==
+X-Gm-Message-State: APjAAAUiuz8oOqE62wYzjQN3duaDRlUIpb/x4w/GTKxcnczaNmjN7e5c
+ G6aNZCsYJN+trTukuOlbqqAX0r2KmNfe+DVgb+g=
+X-Google-Smtp-Source: APXvYqz5tyIdUbH5XenlPdO5u18Bp097Z3l5i1ng81ta9dMEULM4omVmWKyeE1529Bf0daIn3cRdGv4Ho7NXy7c+5zY=
+X-Received: by 2002:a63:e056:: with SMTP id n22mr7564302pgj.73.1572540445818; 
+ Thu, 31 Oct 2019 09:47:25 -0700 (PDT)
+Date: Thu, 31 Oct 2019 09:46:36 -0700
 In-Reply-To: <20191031164637.48901-1-samitolvanen@google.com>
-Message-Id: <20191031164637.48901-16-samitolvanen@google.com>
+Message-Id: <20191031164637.48901-17-samitolvanen@google.com>
 Mime-Version: 1.0
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20191031164637.48901-1-samitolvanen@google.com>
 X-Mailer: git-send-email 2.24.0.rc0.303.g954a862665-goog
-Subject: [PATCH v3 15/17] arm64: vdso: disable Shadow Call Stack
+Subject: [PATCH v3 16/17] arm64: disable SCS for hypervisor code
 From: samitolvanen@google.com
 To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
  Steven Rostedt <rostedt@goodmis.org>,
  Masami Hiramatsu <mhiramat@kernel.org>, 
  Ard Biesheuvel <ard.biesheuvel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_094732_791961_A0288497 
-X-CRM114-Status: GOOD (  10.29  )
+X-CRM114-CacheID: sfid-20191031_094732_837477_C502EE5B 
+X-CRM114-Status: UNSURE (   9.59  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:54a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:449 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
@@ -111,24 +112,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Filter out CC_FLAGS_SCS for code that runs at a different exception
+level.
+
+Suggested-by: Steven Rostedt (VMware) <rostedt@goodmis.org>
 Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
 ---
- arch/arm64/kernel/vdso/Makefile | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/kvm/hyp/Makefile | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
-index dd2514bb1511..a87a4f11724e 100644
---- a/arch/arm64/kernel/vdso/Makefile
-+++ b/arch/arm64/kernel/vdso/Makefile
-@@ -25,7 +25,7 @@ ccflags-y += -DDISABLE_BRANCH_PROFILING
- 
- VDSO_LDFLAGS := -Bsymbolic
- 
--CFLAGS_REMOVE_vgettimeofday.o = $(CC_FLAGS_FTRACE) -Os
-+CFLAGS_REMOVE_vgettimeofday.o = $(CC_FLAGS_FTRACE) -Os $(CC_FLAGS_SCS)
- KBUILD_CFLAGS			+= $(DISABLE_LTO)
- KASAN_SANITIZE			:= n
- UBSAN_SANITIZE			:= n
+diff --git a/arch/arm64/kvm/hyp/Makefile b/arch/arm64/kvm/hyp/Makefile
+index ea710f674cb6..17ea3da325e9 100644
+--- a/arch/arm64/kvm/hyp/Makefile
++++ b/arch/arm64/kvm/hyp/Makefile
+@@ -28,3 +28,6 @@ GCOV_PROFILE	:= n
+ KASAN_SANITIZE	:= n
+ UBSAN_SANITIZE	:= n
+ KCOV_INSTRUMENT	:= n
++
++# remove the SCS flags from all objects in this directory
++KBUILD_CFLAGS := $(filter-out $(CC_FLAGS_SCS), $(KBUILD_CFLAGS))
 -- 
 2.24.0.rc0.303.g954a862665-goog
 
