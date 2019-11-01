@@ -2,79 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1D2BEBC9F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 04:58:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 280C0EBCA2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 04:59:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kViqTDT++hJIio+j6Y8c8CTRpEdu3SHW2WmYDMxzcNA=; b=SutPL0v3qQibxi
-	wrAcn/5q/7toDSdJ9l2SN/KnONfR+3VgACpvAnPZKdXUIkBzSZ77+ozmSn9hTIjApaqg4swOPdj8c
-	X0FL+gtyZNAFRuCOZJMpsEbCBYUSIyVy+Q4/66j4L9uTx6bK6yVB5EojKo3tvaghXdYGarttU9lVa
-	KiKz3F98aXzwl4lYGWwTB6PWj1HkaeP9B8jpjd1bmLAxe3meI8Ijtt8vdB53ps9Xxcjl6Fj83EA0f
-	hvxndK7AHB+M33yPe+n15X/F7CuVvBNXOXab9oEVBth/D25fvAO+B8aPpbYbX2dBripxvIg2zWJ+t
-	5ev/1pwwQ0eelUuA0Arw==;
+	List-Owner; bh=A2f15GLLHuObE6G9PP9zUd3wPebDCT+lp01RJV1OgDE=; b=Bj0zrELNHbiwCW
+	tnBb6i3orD3Iz8cPOp3S9+Q6K5f18kGR0pTyWvuBY4Lb1lEAcrrnal4v26Qu8uR3/hu3jzEwn3hK4
+	ANZzQeXueTerBRZNnTTXHo/bMhEM9poEmqe4wfcU8p8TYHQRZWP4Dtbu9ZNzHP/S+VrFo49Nbfa/8
+	uwRsETrdyFnQyhX4eak9sxOxX1eCm5g+eSJ6ldcd1GLubwrMhW7YpsFbD3LqTyHxqLGmo0ddsWpvW
+	dbNCRiSqchmKNnZt4SacA3ZP+zOq7IsFuRpBJ8uLKWh813FmhVlYbEmWlYJZ/n10iktqqx20fmrR0
+	bufQn0rWiVKtpjpz9LIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQO4p-00024P-JI; Fri, 01 Nov 2019 03:58:19 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1iQO6D-0002OP-IK; Fri, 01 Nov 2019 03:59:45 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQO4Z-000240-7M
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 03:58:04 +0000
-Received: by mail-pf1-x442.google.com with SMTP id z4so51801pfn.12
+ id 1iQO61-0002Nw-AE
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 03:59:34 +0000
+Received: by mail-pg1-x541.google.com with SMTP id l24so5595020pgh.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 31 Oct 2019 20:58:03 -0700 (PDT)
+ Thu, 31 Oct 2019 20:59:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=KTD68U7akKeCQJeQQO/3NWtyqqeAW/3/QV3ZglVyD2U=;
- b=g7eFmtjav3cj0iIv3dbseME7IVoTl6guKvHDgto9iv8aby8HSUCvIJ9sygsE5R3aF7
- sKXlGLL8uYrezZz9ZBeSn3ezAH1xjYETzfnrSaxHbKNbjiGxvuZvvDGELcQqBkpd+r4G
- E7p34oIlOhqLBiMnYarxTp8OFroVAyrGZ/Sfs=
+ bh=jWbfirm5A7lClilm5TrxMUwFVETsZ0QZ3dgXNGgwJk0=;
+ b=LILcQjVb+J77OLR0Wqh8wnQrNbg/1wbjTbvcWvcASlmFUoRhF+FiABYaQL4F6fbQbF
+ uxzeSY91YoL9miij3Kit1NzjdfNC1KqoUlTChwS9qCXgWIlOVwAzcIYT52gA3K2PVO/8
+ zI4nwynvLe0KA4Pq1Usu8zAit0zL/9zkfYAew=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=KTD68U7akKeCQJeQQO/3NWtyqqeAW/3/QV3ZglVyD2U=;
- b=G4qsUrb9NrPYP3+SXocl+5oDGWx9/F+1Frr+uesFLBeGYHaLQNqtqB9I4CJEvbtFUL
- YGE8aM+K/inDDJ+B5jpDrXpaiG1kTC+jYtscT4RJ5oPsWhGHNCafl+JfbfglWSMhoHvx
- kr997P2rS0HKkap5WqoknSQZnyRVfLtpWu08D+sqJJwGWEjf1LphbNODDyQw5Q3hzD2Y
- zLlu5eb/7w82/edCaxBtbIHxkfW54SCOW/+6WkFpTkjm6s0iZ5NbZTj+7CDXimTcDhDM
- l63hj/99LFelFwTslcMByZQhqj5fwFnHfdov4fJwFInjp+nUIJhfGAf+HJynDOl6Oqha
- HVfQ==
-X-Gm-Message-State: APjAAAVhGgTnsRQ72Wlge9Q/adWZhELF4O2z4GVMZnK2AwH+92xx9TI8
- aMad4RHIZHD8h5PeREFMmUZspQ==
-X-Google-Smtp-Source: APXvYqzUltQIjex4hQjkY+4c/lISYONuL0ugq2i91UuUeDXV/D7mzBYyTbSsX4Ym4f6zfYJqkCbq5g==
-X-Received: by 2002:a17:90a:d149:: with SMTP id
- t9mr12088130pjw.108.1572580682690; 
- Thu, 31 Oct 2019 20:58:02 -0700 (PDT)
+ bh=jWbfirm5A7lClilm5TrxMUwFVETsZ0QZ3dgXNGgwJk0=;
+ b=nSdp9T8bic/j5cLXrBZoOLzVfw/PuLSl6O+b3FbIzqEpQBqXsejVqeD1Mkls/C7cA4
+ QwQOLWcLd2GTmxVgcRw4jlYxRxp5C4iyEqzaq+hq6WfBzevsfYEqPi2B+yz+ZIOvIb5/
+ 94sRwZMdItoOorJ7kjQS/evKznL0ISFTzVx0oSuu03vJCXsyM9XSZAx6nDsTWjLd/wbU
+ BAJJ6qhGz+cGSMjuPDR5fu40gzITytkXLnH+IP/J88poBvRmC1jJ85D9EoXAvwnhZWXr
+ PMj9E2eL/cO34dV/tLBZJeSKLS3MJqeWIhwgszrfwbSBCTvxSqiLWidkIBhpKqlC48IZ
+ w7cw==
+X-Gm-Message-State: APjAAAWlBdWnZLyqyG9BA3cj2ah+1N25B2tYwPq5uwiCnePMRjpqPLt0
+ ZgNFlFzQpZEQpQiqh7p9qJwuUw==
+X-Google-Smtp-Source: APXvYqy5NPe898RXSU+w1c0UaOFby31e22ngkYRTC9hJdLIA+7oZafTpdC/J3+7KdM9QjpM8htFvPw==
+X-Received: by 2002:a63:ee48:: with SMTP id n8mr11288858pgk.374.1572580772699; 
+ Thu, 31 Oct 2019 20:59:32 -0700 (PDT)
 Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id y2sm4973514pfe.126.2019.10.31.20.58.01
+ by smtp.gmail.com with ESMTPSA id c184sm5427852pfc.159.2019.10.31.20.59.31
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 31 Oct 2019 20:58:01 -0700 (PDT)
-Date: Thu, 31 Oct 2019 20:58:00 -0700
+ Thu, 31 Oct 2019 20:59:31 -0700 (PDT)
+Date: Thu, 31 Oct 2019 20:59:30 -0700
 From: Kees Cook <keescook@chromium.org>
-To: samitolvanen@google.com
-Subject: Re: [PATCH v3 11/17] arm64: disable function graph tracing with SCS
-Message-ID: <201910312056.E3315F0F@keescook>
+To: Nick Desaulniers <ndesaulniers@google.com>
+Subject: Re: [PATCH v3 13/17] arm64: preserve x18 when CPU is suspended
+Message-ID: <201910312059.59F983B@keescook>
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20191031164637.48901-1-samitolvanen@google.com>
- <20191031164637.48901-12-samitolvanen@google.com>
+ <20191031164637.48901-14-samitolvanen@google.com>
+ <CAKwvOd=kcPS1CU=AUjOPr7SAipPFhs-v_mXi=AbqW5Vp9XUaiw@mail.gmail.com>
+ <CABCJKudb2_OH5CRFm64rxv-VVnuOrO-ZOrXRHg8hR98Vj+BzVw@mail.gmail.com>
+ <CAKwvOd=dO2QjiRWegjCtnMmVguaJ2YHacJRP3SbVVy9jhx-BWw@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191031164637.48901-12-samitolvanen@google.com>
+In-Reply-To: <CAKwvOd=dO2QjiRWegjCtnMmVguaJ2YHacJRP3SbVVy9jhx-BWw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_205803_267865_B3612FED 
-X-CRM114-Status: GOOD (  16.76  )
+X-CRM114-CacheID: sfid-20191031_205933_355385_517C68F2 
+X-CRM114-Status: GOOD (  12.71  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -97,62 +99,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, clang-built-linux@googlegroups.com,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
  Ard Biesheuvel <ard.biesheuvel@linaro.org>,
  Masahiro Yamada <yamada.masahiro@socionext.com>,
  Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
- Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
- Steven Rostedt <rostedt@goodmis.org>,
+ LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
  Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- Masami Hiramatsu <mhiramat@kernel.org>, kernel-hardening@lists.openwall.com,
+ Masami Hiramatsu <mhiramat@kernel.org>,
+ Sami Tolvanen <samitolvanen@google.com>,
+ Kernel Hardening <kernel-hardening@lists.openwall.com>,
  Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+ Dave Martin <Dave.Martin@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 31, 2019 at 09:46:31AM -0700, samitolvanen@google.com wrote:
-> With CONFIG_FUNCTION_GRAPH_TRACER, function return addresses are
-> modified in ftrace_graph_caller and prepare_ftrace_return to redirect
-> control flow to ftrace_return_to_handler. This is incompatible with
-> SCS.
+On Thu, Oct 31, 2019 at 10:34:53AM -0700, Nick Desaulniers wrote:
+> On Thu, Oct 31, 2019 at 10:27 AM Sami Tolvanen <samitolvanen@google.com> wrote:
+> >
+> > On Thu, Oct 31, 2019 at 10:18 AM Nick Desaulniers
+> > <ndesaulniers@google.com> wrote:
+> > > > +#ifdef CONFIG_SHADOW_CALL_STACK
+> > > > +       ldr     x18, [x0, #96]
+> > > > +       str     xzr, [x0, #96]
+> > >
+> > > How come we zero out x0+#96, but not for other offsets? Is this str necessary?
+> >
+> > It clears the shadow stack pointer from the sleep state buffer, which
+> > is not strictly speaking necessary, but leaves one fewer place to find
+> > it.
+> 
+> That sounds like a good idea.  Consider adding comments or to the
+> commit message so that the str doesn't get removed accidentally in the
+> future.
+> Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
 
-IIRC, the argument was to disable these on a per-arch basis instead of
-doing it as a "depends on !SHADOW_CALL_STACK" in the top-level function
-graph tracer Kconfig? (I'm just thinking ahead to doing this again for
-other architectures, though, I guess, there is much more work than just
-that for, say, x86.)
-
-Regardless:
+Yeah, with the comment added:
 
 Reviewed-by: Kees Cook <keescook@chromium.org>
 
 -Kees
-
-
-> 
-> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-> ---
->  arch/arm64/Kconfig | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> index e7b57a8a5531..42867174920f 100644
-> --- a/arch/arm64/Kconfig
-> +++ b/arch/arm64/Kconfig
-> @@ -148,7 +148,7 @@ config ARM64
->  	select HAVE_FTRACE_MCOUNT_RECORD
->  	select HAVE_FUNCTION_TRACER
->  	select HAVE_FUNCTION_ERROR_INJECTION
-> -	select HAVE_FUNCTION_GRAPH_TRACER
-> +	select HAVE_FUNCTION_GRAPH_TRACER if !SHADOW_CALL_STACK
->  	select HAVE_GCC_PLUGINS
->  	select HAVE_HW_BREAKPOINT if PERF_EVENTS
->  	select HAVE_IRQ_TIME_ACCOUNTING
-> -- 
-> 2.24.0.rc0.303.g954a862665-goog
-> 
 
 -- 
 Kees Cook
