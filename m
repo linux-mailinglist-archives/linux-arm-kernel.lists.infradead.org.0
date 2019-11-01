@@ -2,45 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07CF1EC64C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 17:00:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5E12EC64A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 17:00:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=0oG3oIiUCNH92xNy0hmRjcbwgV08GB5pmfcHYW3pboQ=; b=Qnm
-	PmzqxZX5KUdCgwk8tE8J5JLYzmMIrSYKQZkL6yaXq30y1QAFRjgGda0H/OeEC8ZSG9qibI9ozoTEK
-	zsCKhNJCy91geXUDAD+4YnHtEKz3Ck4dZYkl8g/is2vYTNI6ZEU6lvOwMqKRj4N0Vtj7mR3ZAVKP9
-	EnMPe9yGEBl9mcqDqUTH4HxZd894bOrZtbLUQAzICwdaPkiPFA+EDu8SBQ9JjZCPTCju7lyr4g3Ly
-	1WgfDnZG0szFZMUpfpy10jlvP5qGd5ewBUCckuXaNN5BDCAETyKJDHJS8MRdny+W8jtOiPEYHxw+G
-	LvrFDhlS9ogHpPnfF3tGBIS0IFtBZLA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=vZ67/dGW7+ZFnxFd0YmMX4xT0ghLKe/M12vNlCr/hhs=; b=iBlzBipZuCjBCDfJQWIJ4MvrcY
+	oRqduaeu1cVmOFn2BrYvWBa0E2MhhMV+zSDSL1+4s8a/jhIowCcvkyNTVOLj7B8yf5q6tDdwjrHiT
+	FDXelWmoJj72vT4RdbNQUxdPnt6BLDzpCCNm+q8+dF6wOkfnUa2sN6NT2HxDiDsbLKt8Y/2d2X69L
+	/qonFlUReLQOFZK+Jms3rwrHvrgjVa5bHbXcaeQGL87xla5XT1le5CrYHPACeJ0gjhRlfrRlycHTP
+	zuIHxQSr8ZUryUoqeunlRqLr8+i4W3IvkpvOPRWoPj1mgedO6oq+bNuBdXmc0QsUcxOfVnR9duGcY
+	FHpTfDiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQZLm-0004Mx-4W; Fri, 01 Nov 2019 16:00:34 +0000
+	id 1iQZLZ-0002vM-Gk; Fri, 01 Nov 2019 16:00:21 +0000
 Received: from andre.telenet-ops.be ([2a02:1800:120:4::f00:15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQZKH-0001pZ-PR
+ id 1iQZKH-0001pa-QZ
  for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 15:59:05 +0000
 Received: from ramsan ([84.195.182.253]) by andre.telenet-ops.be with bizsmtp
- id Lfyp210095USYZQ01fypyM; Fri, 01 Nov 2019 16:58:52 +0100
+ id Lfyu2100K5USYZQ01fyuzV; Fri, 01 Nov 2019 16:58:54 +0100
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1iQZK5-0002rR-26; Fri, 01 Nov 2019 16:58:49 +0100
+ id 1iQZKA-0002rY-8g; Fri, 01 Nov 2019 16:58:54 +0100
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1iQZK4-0008CQ-W0; Fri, 01 Nov 2019 16:58:49 +0100
+ id 1iQZKA-0008CX-7k; Fri, 01 Nov 2019 16:58:54 +0100
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: arm-soc <arm@kernel.org>,
 	arm-soc <soc@kernel.org>
-Subject: [GIT PULL 0/6] Renesas SoC updates for v5.5 (take two)
-Date: Fri,  1 Nov 2019 16:58:36 +0100
-Message-Id: <20191101155842.31467-1-geert+renesas@glider.be>
+Subject: [GIT PULL 2/6] Renesas ARM SoC updates for v5.5
+Date: Fri,  1 Nov 2019 16:58:38 +0100
+Message-Id: <20191101155842.31467-3-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191101155842.31467-1-geert+renesas@glider.be>
+References: <20191101155842.31467-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_085902_028975_545A1C9C 
-X-CRM114-Status: UNSURE (   6.43  )
+X-CRM114-CacheID: sfid-20191101_085902_044408_C4078DE6 
+X-CRM114-Status: UNSURE (   7.89  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -74,66 +77,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-	Hi arm-soc folks,
+The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
 
-This is my second pull request for the inclusion of Renesas SoC updates
-for v5.5.
+  Linux 5.4-rc1 (2019-09-30 10:35:40 -0700)
 
-It consists of 6 parts:
+are available in the Git repository at:
 
-  [GIT PULL 1/6] Renesas ARM defconfig updates for v5.5
+  git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel.git tags/renesas-arm-soc-for-v5.5-tag1
 
-    - Refresh shmobile_defconfig for v5.4-rc1.
+for you to fetch changes up to 0a4319b5c87a29e6b283cabb3a2493af132a4b9a:
 
-  [GIT PULL 2/6] Renesas ARM SoC updates for v5.5
+  ARM: shmobile: rcar-gen2: Drop legacy DT clock support (2019-10-25 14:08:10 +0200)
 
-    - Drop legacy DT clock support on R-Car Gen2.
+----------------------------------------------------------------
+Renesas ARM SoC updates for v5.5
 
-  [GIT PULL 3/6] Renesas ARM64 defconfig updates for v5.5 (take two)
+  - Drop legacy DT clock support on R-Car Gen2.
 
-    - Enable support for the new R-Car M3-W+ (r8a77961) SoC.
+----------------------------------------------------------------
+Geert Uytterhoeven (1):
+      ARM: shmobile: rcar-gen2: Drop legacy DT clock support
 
-  [GIT PULL 4/6] Renesas ARM64 DT updates for v5.5 (take two)
-
-    - Video-Input and Serial-ATA support on RZ/G2N,
-    - Color Management Module support on various R-Car Gen3 SoCs,
-    - Initial support for the R-Car M3-W+ (r8a77961) SoC on the
-      Salvator-XS board.
-
-  [GIT PULL 5/6] Renesas driver updates for v5.5 (take two)
-
-    - Initial support for the R-Car M3-W+ (r8a77961) SoC,
-    - A minor fix.
-
-  [GIT PULL 6/6] Renesas DT binding updates for v5.5 (take two)
-
-    - JSON schema conversion,
-    - Core support for the new R-Car M3-W+ (r8a77961) SoC,
-    - Board compatible updates.
-
-Note that the new Renesas R-Car M3-W+ DT Binding Definitions are shared
-by driver and DT source files, and thus included in 3 pull requests:
-  - "[GIT PULL 4/6] Renesas ARM64 DT updates for v5.5 (take two)" (for
-    arm-soc),
-  - "[GIT PULL 5/6] Renesas driver updates for v5.5 (take two)" (for
-    arm-soc),
-  - "[GIT PULL] clk: renesas: Updates for v5.5 (take two)] (for clk).
-
-If you prefer to merge this dependency explicitly, please pull tag
-renesas-r8a77961-dt-binding-defs-tag first.
-
-Thanks for pulling!
-
-Gr{oetje,eeting}s,
-
-						Geert
-
---
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-							    -- Linus Torvalds
+ arch/arm/mach-shmobile/setup-rcar-gen2.c | 1 -
+ 1 file changed, 1 deletion(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
