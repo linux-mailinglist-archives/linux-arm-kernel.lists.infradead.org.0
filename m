@@ -2,91 +2,153 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 448AFECB49
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 23:17:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3260EECB58
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 23:26:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
-	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wUKyN0X5MG9Z8l/7SFdZbixw9KcXeN02GUk2jItEqiU=; b=ogZ4yqvod51XbI
-	L9yXUGkeeCugMkpB5OoPdCAJrwD2YVG4mjjB98Eu0k7I7i+8Ketvsel6AQM2J+qzUbgGrGxQGC3Ye
-	3T1nswZatz5ivVdb7yNW4iA4gSJ+1yq6Rm06T4ySeA1mg5wqVsiwTY2950hixvDbbP4TUgMOBJdN2
-	iiRoCgXd5z0Pc8IadYNz/66qFqz+eB5dAKtn99Mwu8ajdqMgNZB/LejEjENqKxlquIY7EFmbKSx7a
-	8txRtvldskqZsozLYKGSQ66wp33K9QRtNOvsbtgj1vBY5buVRP1JuoFMbWrvf1h69xnYJIQU6XHvG
-	ASqNnUvzwFcNiu3oy8rQ==;
+	List-Owner; bh=Pz9Wfzxc0w1jmZlX/knA1zySiJLvNUJ/ORN2GJwOirM=; b=rIgupVMe+dORmt
+	485LWu5D7kbSGtq4hB94Nr0xPP80c5EqfzaF5Fqd7SzaFlyq0aq6COYkCEesuiRs39zQU0fvAN07G
+	00ymO2VcAN7Sg1h/5KrrlIRMo1489D2cJGLldiHx4HwVHhP56d4ZbUZIWrxkAuWRJXvdA4ryz15am
+	6EXme1QqY6HtpRcUrACEKleQ0h7djIMI8t9OZ5r2+wVd19yYMCIIwpul7cO5UKjf1s+GM18qIGL4p
+	hRNlTLsQ3auBgXSy/Ysi/RgwW1QZzebVWUCH0L5elDhnBhECkPgoTVvFKsWl3FFwHH9L3d9zt4ixg
+	R4CkKBa+Jcd87BF+mNkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQfEA-0005C5-OU; Fri, 01 Nov 2019 22:17:06 +0000
-Received: from mail-pl1-x64a.google.com ([2607:f8b0:4864:20::64a])
+	id 1iQfNB-0001KN-Ts; Fri, 01 Nov 2019 22:26:25 +0000
+Received: from esa3.microchip.iphmx.com ([68.232.153.233])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQf9x-0008PX-96
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 22:12:47 +0000
-Received: by mail-pl1-x64a.google.com with SMTP id g7so7168496plo.5
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 01 Nov 2019 15:12:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=die3x67ovmzWsWhvopUJvu6mU5I+GEuDo3qNBzEJCbM=;
- b=oFYpNtWp8IVtnl4tSZnpqO/2yUP+BEVmb3I/w9P/l7O0sI/RSB7j5R6VsFUYzjK8Ar
- oHGwre/O4pLHBzABM29Tf5rk4gomHAaTA5lJZtiLwYJoIsDz/o3NCvI9JPntwCUSEm0v
- fxkCSUnGt9W7sX4B79fro0qdhcKgmoFf2guUypNPf0Nf/1vY6NXf/uDWF9EteDvv8yz+
- bRrCagTPSIykzT/fiZPT5tJQDFTScoAOWBZQz04svyzYQoxwzmfCR7xOifQQ4PbGni06
- gbfmweTHedc8VvpNpuRaFwWTDy3OsYqolqxDdUe7s6fz3i6sUAI09KFlV7tIypxg86uv
- Uq0A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:in-reply-to:message-id:mime-version
- :references:subject:from:to:cc;
- bh=die3x67ovmzWsWhvopUJvu6mU5I+GEuDo3qNBzEJCbM=;
- b=oIESH03uWW+eD0oJ45R81s5jlEDCCdfXp3kXfI/PSYI51L4koKTa5lSLPPwHIHSOKw
- 0Ly9pY/h+JaOzzQkirYFgPZEulgYxwHExaQz441vostxmcxlfilTigoMwn240Ftl7ory
- jpbfxOqotV+6HohLwtVLqJKV52+XNsMA8WAXpNAwnDbCDlmM2jsqCDl1RNe9+F4r8ftB
- RIWq5Q+fYNfuMY2oA0EBX6Pa4vkh8ETmiXEw0BjrQTcP0lAf87wE8Yr4Xcjd+vYO3Owl
- lOyy4hvO6Ot+vKHG0t88gPaA9DyopRSdqo+4X3YsSzcVJeb+wRqeuZnhNe/XiHDVelfx
- aYtQ==
-X-Gm-Message-State: APjAAAUKJ0beCs1oKIfpoJbWaXSHpXCHPPcU9K5roaUy4VJQospXYbV/
- 3FlJ1zMT7BSi/clfnaPvHO4edTdA3edCPOtjY64=
-X-Google-Smtp-Source: APXvYqzB6uUGqkuzOL6z7LyH53TR06l8k2phfWBLsMkqVxMrZpFDw+a5MeU2xONzAMSK5KNI5p6R8FP5Qbp12Jf2xC8=
-X-Received: by 2002:a63:eb47:: with SMTP id b7mr15595265pgk.179.1572646363390; 
- Fri, 01 Nov 2019 15:12:43 -0700 (PDT)
-Date: Fri,  1 Nov 2019 15:11:50 -0700
-In-Reply-To: <20191101221150.116536-1-samitolvanen@google.com>
-Message-Id: <20191101221150.116536-18-samitolvanen@google.com>
-Mime-Version: 1.0
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20191101221150.116536-1-samitolvanen@google.com>
-X-Mailer: git-send-email 2.24.0.rc1.363.gb1bccd3e3d-goog
-Subject: [PATCH v4 17/17] arm64: implement Shadow Call Stack
-From: Sami Tolvanen <samitolvanen@google.com>
-To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
- Steven Rostedt <rostedt@goodmis.org>,
- Masami Hiramatsu <mhiramat@kernel.org>, 
- Ard Biesheuvel <ard.biesheuvel@linaro.org>
+ id 1iQfN3-0001JE-6n
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 22:26:21 +0000
+Received-SPF: Pass (esa3.microchip.iphmx.com: domain of
+ Claudiu.Beznea@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="Claudiu.Beznea@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa3.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa3.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: vTk8Xw/Jz0giKfyq11MxmgdHKVtgrzmmS9WtKt4n0u6JD8ieR5/2zzuIdZRl4fXCXnLhRjPQjQ
+ nnrZgVrI6kGncKvGD6kfUteDHokMgD3Q4yGU5i/Zc/SyXN28UU7n/Taq7sRB6SBG0eTNqOBgle
+ ECkK6OQKptzQwhZ1A45kj2Cx54qKsf18CAhsCi6Wgb7474U/HcHBdBCQg/ue+pkHpSyCz9wqqR
+ oiKVAV9VnqSZ4aC7lza7kx3xvagjNG8eeHHM6mHNayXVQUK1uEd7tyfpPGCfi8gwfrNdQFs2Eu
+ Z/E=
+X-IronPort-AV: E=Sophos;i="5.68,257,1569308400"; d="scan'208";a="55383965"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 01 Nov 2019 15:26:09 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Fri, 1 Nov 2019 15:26:09 -0700
+Received: from NAM03-CO1-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.71) with Microsoft SMTP Server
+ (version=TLS1_2, 
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
+ Transport; Fri, 1 Nov 2019 15:26:09 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ETuSKV3eExHhosRqvtQbfELNCbacmO/TfExpjstCtV/+q/S2gVk+sIISj9SVnrwz9huwtHbEZ0bND5r681BOT/S9pTsboCXFdYfgMwNLG0Z2oq5xGTWnq6Yc6E7XeaqQ5Df8BJ49brweYE+pofty/cMTme/+R6eORtB4sAhLtFfURH0r9nzWeF6LavGqP41YQYsDqfqQtWizsoAg/fRmlPv99KBgZHj50XdHiKBYyrEnJJz94vGujPyEHBDQg+pymbFJu0X32K+vVAe2v6IGQChcmH+SM5itMWrm259nI5qP933rBMxGVIkRZ2h+6gIdthHrklTRDEuNMRRKgJ+Q8w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=hWSwu6l/A38ttzOxR6zL+0Q2TPRNkyixy5A9GPh/0NQ=;
+ b=crXAdE93DAPJJGlJ/lkAhLUF/VUJK26JlKxxOG3mIQwhpHs4en2Bf1VS4KBAZKwjYkZkmq5e7cUORVSkIZhaZ6tcQ5OlHpWwitNNSC3vcLOubivZEcy6RVZSM3q22arM31MjhY04/J6/d6/rDYgkIuvZo8Oeo+BkhXeGvKZfFbHRgZVmq2b00cFA5jD1GPjZ+D1gIiuy+T96R5WABBXGhrA3MzwK3CsHx14ZHY4/ocEa85qKTgo5IqEcfVEL44atYKF9mJUq1W8F65PUvPcyBKCVgAMqgbVve9wOwlYA8P0egXIOrHn4yDAeUGnj06ok0q7HOJfE9QGJsSOLAanDhg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=hWSwu6l/A38ttzOxR6zL+0Q2TPRNkyixy5A9GPh/0NQ=;
+ b=oHuEBqESFm3cOpN9YcKBULsEung1q2hkeP/qY6D8riht6XDGpEA/eYB39sFdcKnJHEeqp1O24093VDD1vZDH9rcjFu0rxeyP9OayhZ0M3Lu3X9U6h+vWfJ/tG39cMcXRArH5XIbpJIy2OUJAqsgbpc9x3jZh051vQDkKwovMMUA=
+Received: from DM6PR11MB3225.namprd11.prod.outlook.com (20.176.120.85) by
+ DM6PR11MB4186.namprd11.prod.outlook.com (20.176.127.223) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2408.24; Fri, 1 Nov 2019 22:26:07 +0000
+Received: from DM6PR11MB3225.namprd11.prod.outlook.com
+ ([fe80::3874:9f3c:5325:d22]) by DM6PR11MB3225.namprd11.prod.outlook.com
+ ([fe80::3874:9f3c:5325:d22%6]) with mapi id 15.20.2408.018; Fri, 1 Nov 2019
+ 22:26:07 +0000
+From: <Claudiu.Beznea@microchip.com>
+To: <Ludovic.Desroches@microchip.com>, <Codrin.Ciubotariu@microchip.com>
+Subject: Re: [PATCH v2] pinctrl: at91: Enable slewrate by default on SAM9X60
+Thread-Topic: [PATCH v2] pinctrl: at91: Enable slewrate by default on SAM9X60
+Thread-Index: AQHVkQNaIVwwnhsvuE+7AE46+3c0oQ==
+Date: Fri, 1 Nov 2019 22:26:07 +0000
+Message-ID: <4255d320-e6c2-8865-7167-ddf9e1951250@microchip.com>
+References: <20191101092031.24896-1-codrin.ciubotariu@microchip.com>
+ <20191101142602.voj2jeexvvgwgr23@M43218.corp.atmel.com>
+In-Reply-To: <20191101142602.voj2jeexvvgwgr23@M43218.corp.atmel.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: PR1PR01CA0009.eurprd01.prod.exchangelabs.com
+ (2603:10a6:102::22) To DM6PR11MB3225.namprd11.prod.outlook.com
+ (2603:10b6:5:59::21)
+x-ms-exchange-messagesentrepresentingtype: 1
+x-tagtoolbar-keys: D20191102002600222
+x-originating-ip: [65.39.94.206]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 4449cc85-e3ea-427d-804c-08d75f1a7d29
+x-ms-traffictypediagnostic: DM6PR11MB4186:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DM6PR11MB4186711CCBA4FE109284905F87620@DM6PR11MB4186.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1051;
+x-forefront-prvs: 020877E0CB
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(376002)(346002)(136003)(39860400002)(366004)(396003)(199004)(189003)(6246003)(2616005)(64756008)(66556008)(66476007)(66446008)(446003)(11346002)(476003)(486006)(4326008)(14454004)(6486002)(31696002)(110136005)(86362001)(186003)(316002)(229853002)(66946007)(53546011)(36756003)(3846002)(6506007)(102836004)(6116002)(26005)(54906003)(76176011)(386003)(52116002)(5660300002)(31686004)(256004)(6636002)(66066001)(14444005)(81156014)(71190400001)(71200400001)(25786009)(99286004)(478600001)(7736002)(305945005)(6436002)(6512007)(8936002)(81166006)(2906002)(8676002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR11MB4186;
+ H:DM6PR11MB3225.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: SEQVpM5+QBYNIOscFMiJX0o/DO/wBLGl0LnegaZ6jRWseYaKfUCLOW2sfuK3GG051JQUKnRF59KapeLjDVxW7VaspC7r0Qbs8Ff7ZBbUlqnzAaOASDxOCul5YQwZ3tlPT9qur3aDxqokFURA3yRp48uMeUQVryu6o3IEq/D6KCDFLXniTNo+S6PwDVhEF0z4ZBDkwHu+TfWdX1A2wEQoAGvEn8NoaG33RGzmwYPUnEVeKVLqqWK2SCPxrCsLwLjwYzZxa53gGYHe4AB1ULBcKnLvNxyF+MCiZGYyh23ZOD1Zw5Gze1BSwIYHFNnVCC2eo+t56G3c39u5MLoBmYhYrxhyD2SACQWfEnhrx25dHDyFKU9R2Q2lQnrVMdNuiH+iw1BYTueIsYHZ+uVyIrsZRkYOVc1TTKvOGE5UWO44GnUYP+/Cg4qNugxZbqmUj+sX
+Content-ID: <582B8FF54CA6194CADDB631A932BB54C@namprd11.prod.outlook.com>
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4449cc85-e3ea-427d-804c-08d75f1a7d29
+X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Nov 2019 22:26:07.5141 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: ojpnM6EC2Ys632QfqldCFI7SkkRn8VwSK4sW6NxWhaHdsIK4R6aXvVSz40T9sftrE/xd/TxHtl3BbiDda7AVUcffnzoeRhRsCZUTl8u+88A=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR11MB4186
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_151245_349769_EECE7BD2 
-X-CRM114-Status: GOOD (  17.86  )
-X-Spam-Score: -7.7 (-------)
+X-CRM114-CacheID: sfid-20191101_152617_257120_469C0E1D 
+X-CRM114-Status: GOOD (  13.61  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:64a listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.153.233 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,381 +160,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Jann Horn <jannh@google.com>, Masahiro Yamada <yamada.masahiro@socionext.com>,
- Marc Zyngier <maz@kernel.org>, kernel-hardening@lists.openwall.com,
- Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- clang-built-linux@googlegroups.com, Sami Tolvanen <samitolvanen@google.com>,
- Laura Abbott <labbott@redhat.com>, Dave Martin <Dave.Martin@arm.com>,
+Cc: devicetree@vger.kernel.org, alexandre.belloni@bootlin.com,
+ linus.walleij@linaro.org, linux-kernel@vger.kernel.org,
+ linux-gpio@vger.kernel.org, robh+dt@kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This change implements shadow stack switching, initial SCS set-up,
-and interrupt shadow stacks for arm64.
-
-Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-Reviewed-by: Kees Cook <keescook@chromium.org>
----
- arch/arm64/Kconfig                   |  5 ++++
- arch/arm64/include/asm/scs.h         | 37 ++++++++++++++++++++++++++
- arch/arm64/include/asm/stacktrace.h  |  4 +++
- arch/arm64/include/asm/thread_info.h |  3 +++
- arch/arm64/kernel/Makefile           |  1 +
- arch/arm64/kernel/asm-offsets.c      |  3 +++
- arch/arm64/kernel/entry.S            | 28 ++++++++++++++++++++
- arch/arm64/kernel/head.S             |  9 +++++++
- arch/arm64/kernel/irq.c              |  2 ++
- arch/arm64/kernel/process.c          |  2 ++
- arch/arm64/kernel/scs.c              | 39 ++++++++++++++++++++++++++++
- arch/arm64/kernel/smp.c              |  4 +++
- 12 files changed, 137 insertions(+)
- create mode 100644 arch/arm64/include/asm/scs.h
- create mode 100644 arch/arm64/kernel/scs.c
-
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 42867174920f..f4c94c5e8012 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -66,6 +66,7 @@ config ARM64
- 	select ARCH_USE_QUEUED_RWLOCKS
- 	select ARCH_USE_QUEUED_SPINLOCKS
- 	select ARCH_SUPPORTS_MEMORY_FAILURE
-+	select ARCH_SUPPORTS_SHADOW_CALL_STACK if CC_HAVE_SHADOW_CALL_STACK
- 	select ARCH_SUPPORTS_ATOMIC_RMW
- 	select ARCH_SUPPORTS_INT128 if GCC_VERSION >= 50000 || CC_IS_CLANG
- 	select ARCH_SUPPORTS_NUMA_BALANCING
-@@ -948,6 +949,10 @@ config ARCH_HAS_CACHE_LINE_SIZE
- config ARCH_ENABLE_SPLIT_PMD_PTLOCK
- 	def_bool y if PGTABLE_LEVELS > 2
- 
-+# Supported by clang >= 7.0
-+config CC_HAVE_SHADOW_CALL_STACK
-+	def_bool $(cc-option, -fsanitize=shadow-call-stack -ffixed-x18)
-+
- config SECCOMP
- 	bool "Enable seccomp to safely compute untrusted bytecode"
- 	---help---
-diff --git a/arch/arm64/include/asm/scs.h b/arch/arm64/include/asm/scs.h
-new file mode 100644
-index 000000000000..c50d2b0c6c5f
---- /dev/null
-+++ b/arch/arm64/include/asm/scs.h
-@@ -0,0 +1,37 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef _ASM_SCS_H
-+#define _ASM_SCS_H
-+
-+#ifndef __ASSEMBLY__
-+
-+#include <linux/scs.h>
-+
-+#ifdef CONFIG_SHADOW_CALL_STACK
-+
-+extern void scs_init_irq(void);
-+
-+static __always_inline void scs_save(struct task_struct *tsk)
-+{
-+	void *s;
-+
-+	asm volatile("mov %0, x18" : "=r" (s));
-+	task_set_scs(tsk, s);
-+}
-+
-+static inline void scs_overflow_check(struct task_struct *tsk)
-+{
-+	if (unlikely(scs_corrupted(tsk)))
-+		panic("corrupted shadow stack detected inside scheduler\n");
-+}
-+
-+#else /* CONFIG_SHADOW_CALL_STACK */
-+
-+static inline void scs_init_irq(void) {}
-+static inline void scs_save(struct task_struct *tsk) {}
-+static inline void scs_overflow_check(struct task_struct *tsk) {}
-+
-+#endif /* CONFIG_SHADOW_CALL_STACK */
-+
-+#endif /* __ASSEMBLY __ */
-+
-+#endif /* _ASM_SCS_H */
-diff --git a/arch/arm64/include/asm/stacktrace.h b/arch/arm64/include/asm/stacktrace.h
-index 4d9b1f48dc39..b6cf32fb4efe 100644
---- a/arch/arm64/include/asm/stacktrace.h
-+++ b/arch/arm64/include/asm/stacktrace.h
-@@ -68,6 +68,10 @@ extern void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk);
- 
- DECLARE_PER_CPU(unsigned long *, irq_stack_ptr);
- 
-+#ifdef CONFIG_SHADOW_CALL_STACK
-+DECLARE_PER_CPU(unsigned long *, irq_shadow_call_stack_ptr);
-+#endif
-+
- static inline bool on_irq_stack(unsigned long sp,
- 				struct stack_info *info)
- {
-diff --git a/arch/arm64/include/asm/thread_info.h b/arch/arm64/include/asm/thread_info.h
-index f0cec4160136..8c73764b9ed2 100644
---- a/arch/arm64/include/asm/thread_info.h
-+++ b/arch/arm64/include/asm/thread_info.h
-@@ -41,6 +41,9 @@ struct thread_info {
- #endif
- 		} preempt;
- 	};
-+#ifdef CONFIG_SHADOW_CALL_STACK
-+	void			*shadow_call_stack;
-+#endif
- };
- 
- #define thread_saved_pc(tsk)	\
-diff --git a/arch/arm64/kernel/Makefile b/arch/arm64/kernel/Makefile
-index 478491f07b4f..b3995329d9e5 100644
---- a/arch/arm64/kernel/Makefile
-+++ b/arch/arm64/kernel/Makefile
-@@ -63,6 +63,7 @@ obj-$(CONFIG_CRASH_CORE)		+= crash_core.o
- obj-$(CONFIG_ARM_SDE_INTERFACE)		+= sdei.o
- obj-$(CONFIG_ARM64_SSBD)		+= ssbd.o
- obj-$(CONFIG_ARM64_PTR_AUTH)		+= pointer_auth.o
-+obj-$(CONFIG_SHADOW_CALL_STACK)		+= scs.o
- 
- obj-y					+= vdso/ probes/
- obj-$(CONFIG_COMPAT_VDSO)		+= vdso32/
-diff --git a/arch/arm64/kernel/asm-offsets.c b/arch/arm64/kernel/asm-offsets.c
-index 214685760e1c..f6762b9ae1e1 100644
---- a/arch/arm64/kernel/asm-offsets.c
-+++ b/arch/arm64/kernel/asm-offsets.c
-@@ -33,6 +33,9 @@ int main(void)
-   DEFINE(TSK_TI_ADDR_LIMIT,	offsetof(struct task_struct, thread_info.addr_limit));
- #ifdef CONFIG_ARM64_SW_TTBR0_PAN
-   DEFINE(TSK_TI_TTBR0,		offsetof(struct task_struct, thread_info.ttbr0));
-+#endif
-+#ifdef CONFIG_SHADOW_CALL_STACK
-+  DEFINE(TSK_TI_SCS,		offsetof(struct task_struct, thread_info.shadow_call_stack));
- #endif
-   DEFINE(TSK_STACK,		offsetof(struct task_struct, stack));
- #ifdef CONFIG_STACKPROTECTOR
-diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-index cf3bd2976e57..1eff08c71403 100644
---- a/arch/arm64/kernel/entry.S
-+++ b/arch/arm64/kernel/entry.S
-@@ -172,6 +172,10 @@ alternative_cb_end
- 
- 	apply_ssbd 1, x22, x23
- 
-+#ifdef CONFIG_SHADOW_CALL_STACK
-+	ldr	x18, [tsk, #TSK_TI_SCS]		// Restore shadow call stack
-+	str	xzr, [tsk, #TSK_TI_SCS]		// Limit visibility of saved SCS
-+#endif
- 	.else
- 	add	x21, sp, #S_FRAME_SIZE
- 	get_current_task tsk
-@@ -278,6 +282,12 @@ alternative_else_nop_endif
- 	ct_user_enter
- 	.endif
- 
-+#ifdef CONFIG_SHADOW_CALL_STACK
-+	.if	\el == 0
-+	str	x18, [tsk, #TSK_TI_SCS]		// Save shadow call stack
-+	.endif
-+#endif
-+
- #ifdef CONFIG_ARM64_SW_TTBR0_PAN
- 	/*
- 	 * Restore access to TTBR0_EL1. If returning to EL0, no need for SPSR
-@@ -383,6 +393,9 @@ alternative_insn eret, nop, ARM64_UNMAP_KERNEL_AT_EL0
- 
- 	.macro	irq_stack_entry
- 	mov	x19, sp			// preserve the original sp
-+#ifdef CONFIG_SHADOW_CALL_STACK
-+	mov	x20, x18		// preserve the original shadow stack
-+#endif
- 
- 	/*
- 	 * Compare sp with the base of the task stack.
-@@ -400,6 +413,12 @@ alternative_insn eret, nop, ARM64_UNMAP_KERNEL_AT_EL0
- 
- 	/* switch to the irq stack */
- 	mov	sp, x26
-+
-+#ifdef CONFIG_SHADOW_CALL_STACK
-+	/* also switch to the irq shadow stack */
-+	ldr_this_cpu x18, irq_shadow_call_stack_ptr, x26
-+#endif
-+
- 9998:
- 	.endm
- 
-@@ -409,6 +428,10 @@ alternative_insn eret, nop, ARM64_UNMAP_KERNEL_AT_EL0
- 	 */
- 	.macro	irq_stack_exit
- 	mov	sp, x19
-+#ifdef CONFIG_SHADOW_CALL_STACK
-+	/* x20 is also preserved */
-+	mov	x18, x20
-+#endif
- 	.endm
- 
- /* GPRs used by entry code */
-@@ -1155,6 +1178,11 @@ ENTRY(cpu_switch_to)
- 	ldr	lr, [x8]
- 	mov	sp, x9
- 	msr	sp_el0, x1
-+#ifdef CONFIG_SHADOW_CALL_STACK
-+	str	x18, [x0, #TSK_TI_SCS]
-+	ldr	x18, [x1, #TSK_TI_SCS]
-+	str	xzr, [x1, #TSK_TI_SCS]		// limit visibility of saved SCS
-+#endif
- 	ret
- ENDPROC(cpu_switch_to)
- NOKPROBE(cpu_switch_to)
-diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
-index 989b1944cb71..2be977c6496f 100644
---- a/arch/arm64/kernel/head.S
-+++ b/arch/arm64/kernel/head.S
-@@ -27,6 +27,7 @@
- #include <asm/pgtable-hwdef.h>
- #include <asm/pgtable.h>
- #include <asm/page.h>
-+#include <asm/scs.h>
- #include <asm/smp.h>
- #include <asm/sysreg.h>
- #include <asm/thread_info.h>
-@@ -424,6 +425,10 @@ __primary_switched:
- 	stp	xzr, x30, [sp, #-16]!
- 	mov	x29, sp
- 
-+#ifdef CONFIG_SHADOW_CALL_STACK
-+	adr_l	x18, init_shadow_call_stack	// Set shadow call stack
-+#endif
-+
- 	str_l	x21, __fdt_pointer, x5		// Save FDT pointer
- 
- 	ldr_l	x4, kimage_vaddr		// Save the offset between
-@@ -731,6 +736,10 @@ __secondary_switched:
- 	ldr	x2, [x0, #CPU_BOOT_TASK]
- 	cbz	x2, __secondary_too_slow
- 	msr	sp_el0, x2
-+#ifdef CONFIG_SHADOW_CALL_STACK
-+	ldr	x18, [x2, #TSK_TI_SCS]		// Set shadow call stack
-+	str	xzr, [x2, #TSK_TI_SCS]
-+#endif
- 	mov	x29, #0
- 	mov	x30, #0
- 	b	secondary_start_kernel
-diff --git a/arch/arm64/kernel/irq.c b/arch/arm64/kernel/irq.c
-index 04a327ccf84d..fe0ca522ff60 100644
---- a/arch/arm64/kernel/irq.c
-+++ b/arch/arm64/kernel/irq.c
-@@ -21,6 +21,7 @@
- #include <linux/vmalloc.h>
- #include <asm/daifflags.h>
- #include <asm/vmap_stack.h>
-+#include <asm/scs.h>
- 
- unsigned long irq_err_count;
- 
-@@ -63,6 +64,7 @@ static void init_irq_stacks(void)
- void __init init_IRQ(void)
- {
- 	init_irq_stacks();
-+	scs_init_irq();
- 	irqchip_init();
- 	if (!handle_arch_irq)
- 		panic("No interrupt controller found.");
-diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-index 71f788cd2b18..5f0aec285848 100644
---- a/arch/arm64/kernel/process.c
-+++ b/arch/arm64/kernel/process.c
-@@ -52,6 +52,7 @@
- #include <asm/mmu_context.h>
- #include <asm/processor.h>
- #include <asm/pointer_auth.h>
-+#include <asm/scs.h>
- #include <asm/stacktrace.h>
- 
- #if defined(CONFIG_STACKPROTECTOR) && !defined(CONFIG_STACKPROTECTOR_PER_TASK)
-@@ -507,6 +508,7 @@ __notrace_funcgraph struct task_struct *__switch_to(struct task_struct *prev,
- 	uao_thread_switch(next);
- 	ptrauth_thread_switch(next);
- 	ssbs_thread_switch(next);
-+	scs_overflow_check(next);
- 
- 	/*
- 	 * Complete any pending TLB or cache maintenance on this CPU in case
-diff --git a/arch/arm64/kernel/scs.c b/arch/arm64/kernel/scs.c
-new file mode 100644
-index 000000000000..6f255072c9a9
---- /dev/null
-+++ b/arch/arm64/kernel/scs.c
-@@ -0,0 +1,39 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Shadow Call Stack support.
-+ *
-+ * Copyright (C) 2019 Google LLC
-+ */
-+
-+#include <linux/percpu.h>
-+#include <linux/vmalloc.h>
-+#include <asm/scs.h>
-+
-+DEFINE_PER_CPU(unsigned long *, irq_shadow_call_stack_ptr);
-+
-+#ifndef CONFIG_SHADOW_CALL_STACK_VMAP
-+DEFINE_PER_CPU(unsigned long [SCS_SIZE/sizeof(long)], irq_shadow_call_stack)
-+	__aligned(SCS_SIZE);
-+#endif
-+
-+void scs_init_irq(void)
-+{
-+	int cpu;
-+
-+	for_each_possible_cpu(cpu) {
-+#ifdef CONFIG_SHADOW_CALL_STACK_VMAP
-+		unsigned long *p;
-+
-+		p = __vmalloc_node_range(SCS_SIZE, SCS_SIZE,
-+					 VMALLOC_START, VMALLOC_END,
-+					 SCS_GFP, PAGE_KERNEL,
-+					 0, cpu_to_node(cpu),
-+					 __builtin_return_address(0));
-+
-+		per_cpu(irq_shadow_call_stack_ptr, cpu) = p;
-+#else
-+		per_cpu(irq_shadow_call_stack_ptr, cpu) =
-+			per_cpu(irq_shadow_call_stack, cpu);
-+#endif /* CONFIG_SHADOW_CALL_STACK_VMAP */
-+	}
-+}
-diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
-index dc9fe879c279..cc1938a585d2 100644
---- a/arch/arm64/kernel/smp.c
-+++ b/arch/arm64/kernel/smp.c
-@@ -44,6 +44,7 @@
- #include <asm/pgtable.h>
- #include <asm/pgalloc.h>
- #include <asm/processor.h>
-+#include <asm/scs.h>
- #include <asm/smp_plat.h>
- #include <asm/sections.h>
- #include <asm/tlbflush.h>
-@@ -357,6 +358,9 @@ void cpu_die(void)
- {
- 	unsigned int cpu = smp_processor_id();
- 
-+	/* Save the shadow stack pointer before exiting the idle task */
-+	scs_save(current);
-+
- 	idle_task_exit();
- 
- 	local_daif_mask();
--- 
-2.24.0.rc1.363.gb1bccd3e3d-goog
 
 
+On 01.11.2019 16:26, Ludovic Desroches - M43218 wrote:
+> On Fri, Nov 01, 2019 at 11:20:31AM +0200, Codrin Ciubotariu wrote:
+>> On SAM9X60, slewrate should be enabled on pins with a switching frequency
+>> below 50Mhz. Since most of our pins do not exceed this value, we enable
+>> slewrate by default. Pins with a switching value that exceeds 50Mhz will
+>> have to explicitly disable slewrate.
+>>
+>> This patch changes the ABI. However, the slewrate macros are only used
+>> by SAM9X60 and, at this moment, there are no device-tree files available
+>> for this platform.
+>>
+>> Suggested-by: Ludovic Desroches <ludovic.desroches@microchip.com>
+>> Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
+> Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com>
+
+Reviewed-by: Claudiu Beznea <claudiu.beznea@microchip.com>
+
+> 
+> Thanks
+> 
+>> ---
+>>
+>> Changes in v2:
+>>  - updated commit message to reflect the ABI change
+>>
+>>  drivers/pinctrl/pinctrl-at91.c     | 4 ++--
+>>  include/dt-bindings/pinctrl/at91.h | 4 ++--
+>>  2 files changed, 4 insertions(+), 4 deletions(-)
+>>
+>> diff --git a/drivers/pinctrl/pinctrl-at91.c b/drivers/pinctrl/pinctrl-at91.c
+>> index 117075b5798f..c135149e84e9 100644
+>> --- a/drivers/pinctrl/pinctrl-at91.c
+>> +++ b/drivers/pinctrl/pinctrl-at91.c
+>> @@ -85,8 +85,8 @@ enum drive_strength_bit {
+>>  					 DRIVE_STRENGTH_SHIFT)
+>>  
+>>  enum slewrate_bit {
+>> -	SLEWRATE_BIT_DIS,
+>>  	SLEWRATE_BIT_ENA,
+>> +	SLEWRATE_BIT_DIS,
+>>  };
+>>  
+>>  #define SLEWRATE_BIT_MSK(name)		(SLEWRATE_BIT_##name << SLEWRATE_SHIFT)
+>> @@ -669,7 +669,7 @@ static void at91_mux_sam9x60_set_slewrate(void __iomem *pio, unsigned pin,
+>>  {
+>>  	unsigned int tmp;
+>>  
+>> -	if (setting < SLEWRATE_BIT_DIS || setting > SLEWRATE_BIT_ENA)
+>> +	if (setting < SLEWRATE_BIT_ENA || setting > SLEWRATE_BIT_DIS)
+>>  		return;
+>>  
+>>  	tmp = readl_relaxed(pio + SAM9X60_PIO_SLEWR);
+>> diff --git a/include/dt-bindings/pinctrl/at91.h b/include/dt-bindings/pinctrl/at91.h
+>> index 3831f91fb3ba..e8e117306b1b 100644
+>> --- a/include/dt-bindings/pinctrl/at91.h
+>> +++ b/include/dt-bindings/pinctrl/at91.h
+>> @@ -27,8 +27,8 @@
+>>  #define AT91_PINCTRL_DRIVE_STRENGTH_MED			(0x2 << 5)
+>>  #define AT91_PINCTRL_DRIVE_STRENGTH_HI			(0x3 << 5)
+>>  
+>> -#define AT91_PINCTRL_SLEWRATE_DIS	(0x0 << 9)
+>> -#define AT91_PINCTRL_SLEWRATE_ENA	(0x1 << 9)
+>> +#define AT91_PINCTRL_SLEWRATE_ENA	(0x0 << 9)
+>> +#define AT91_PINCTRL_SLEWRATE_DIS	(0x1 << 9)
+>>  
+>>  #define AT91_PIOA	0
+>>  #define AT91_PIOB	1
+>> -- 
+>> 2.20.1
+>>
+> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
