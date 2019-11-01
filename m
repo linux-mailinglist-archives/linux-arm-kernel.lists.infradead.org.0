@@ -2,91 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 796F2EC052
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 10:12:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C88DEC05A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 10:13:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:References:
+	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gk94C94XcWmtM0HmPlxyRs+V4FsbHovNml3QWGF87QA=; b=ZPq4q9E+ErAATu
-	v16YR6hPt7Yp64dQ4MfFGFE/hKyyUacBWf/CYfLmSDRJwjDasdpgGzg37WY8xQmY0QpnqKVRbAeHR
-	meSvrcxID4/BQzpmRrw8nTgQfUKfDGxs79yreU6MU3iTMqT7xsOtlk9dSgrLw9aTWZDTCWI+CpO6L
-	93pA1mUhjFQj1aP98REz7zSEwI0V4VIwqAS8rl1y7J8Lbe3k5PZg8e7BNpvayNPgw68mF3YlptG1C
-	Cihll3p1bCvdWTuCT0LK6NB37AJK4AyXXr6L4SgLv5DtOZLuIy21jj1ncHPWBWMBBCYHB1dG7C/Gs
-	wIoVobcZNAV6hDwEaiiA==;
+	List-Owner; bh=L8tEa3XfSjISyU+GcRC6TbH7U/bE1bwc1YoXu9No7UQ=; b=b+4WMZnD+vGQFE
+	I217wJHaCfCG25q6dYXH3VQsby/yrkbTArtC3rlbPXHp1FopHiwrSPsKMVlGTngcKp1/wpJ3dVYJI
+	ErynvRrMaZsbDeaovThuzs/nfCeJ+0c1it/8fixbjZ95EnB+58gyiecKxW1NKU5f94g5ljrk3p5JX
+	32lpqQx7aRnp7AYiTcNAHTMLptz2BeObFyZ8k7nre5ma2iUS5VXSM8sJeZpUXDWOKBfmV18aR9f2p
+	zxRZFUHODB+SouMbSv9HL0BD6dZG8nY5Jx52ff21tEbsAo/JUD9V/zKz79ddahqVOQDLU3eTZ9sG1
+	gtNLcKOpf4UHTzpTBSEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQSyb-00033f-3F; Fri, 01 Nov 2019 09:12:13 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1iQSzf-0003nI-1R; Fri, 01 Nov 2019 09:13:19 +0000
+Received: from lithops.sigma-star.at ([195.201.40.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQSyP-00031K-11
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 09:12:02 +0000
-Received: by mail-lf1-x143.google.com with SMTP id v4so6734340lfd.11
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 01 Nov 2019 02:12:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=shutemov-name.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=XlvIQVFH0OsvvtfZAtH/Qzezeu3c9I63M8S4KPzBTmI=;
- b=UuJXdNFjFQHl67JtwQY9epQ7JZlX/qPb15ER8c6Lqil7fRSMcWNmfwOoeV2vHvtVIf
- MQprOmpD0hwsPPFv2gxzxn4Ufk5Qeavun2lFUk2TgV9/BJmHdQ9LjJJ4cLQHvBjOt2iq
- 7InLsmyICkBrD2SFovxTIo55dNntzl9yo0IcQEGHox/sHEWXjP92g9WoW1Z/R7RjoyCR
- dw+A/DYMa1eBrvJi7jIO94xX+0zK2qTl0s4ygNxkGhD9Tvg/jlXPIsDkskH/BRFS0OFW
- rBmZ4ZqdBwG72D4QcTsAOtQDJM+k21sLl7cD2V9ljZhidt0HoZbQbczQibBO+ANCIENx
- R3Eg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=XlvIQVFH0OsvvtfZAtH/Qzezeu3c9I63M8S4KPzBTmI=;
- b=GOE4/xAhyXcd4tnbk3ly8XpR/uI/V5/+NR3ZkYWyur+lj0H8d4kiVKilkURYCP9Sfb
- ICaA+INgAU2bxUJxYArlVHwBRD1Zi0CTKc/aJT8ZvEqhM+GpkOxVSQgBmDcHMWwgcyOK
- Lyblbzb6CgYUTL5qIUdKefpQJ0NcUIkjc+VtMOSH+uWTTBh5jo/qPiCj7S/xPTYtvhef
- sM5k1b9hxYu3Cb8aIk6Lx2PDJeXBnIvdRgFBOiJZyzSux6+APAMcXrI4Ot3p+84Orw/z
- h5tZ75L6n/ctCIzR7/fJ9qmPTnL+nM57Qychaw8bZQl9cOQnuNIpTK0Fk70KOH5j/uyn
- 18ig==
-X-Gm-Message-State: APjAAAVRPC9FDtxF7UC+LKKFWmzUhU9MbLIm4k5yc8rckYvEo9G+oU+1
- v39cHXdUW9CofdoYtuTdTLNTCg==
-X-Google-Smtp-Source: APXvYqz/HnRIkMMRi6lyXHmUXuPZQAZA0KSr/y66JRxF1fApobZgQwfrztMJrO8lOUblE8ZNClOn4A==
-X-Received: by 2002:a19:6b04:: with SMTP id d4mr6761779lfa.10.1572599518710;
- Fri, 01 Nov 2019 02:11:58 -0700 (PDT)
-Received: from box.localdomain ([86.57.175.117])
- by smtp.gmail.com with ESMTPSA id r1sm2237427ljk.83.2019.11.01.02.11.57
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 01 Nov 2019 02:11:57 -0700 (PDT)
-Received: by box.localdomain (Postfix, from userid 1000)
- id 3778110134C; Fri,  1 Nov 2019 12:11:57 +0300 (+03)
-Date: Fri, 1 Nov 2019 12:11:57 +0300
-From: "Kirill A. Shutemov" <kirill@shutemov.name>
+ id 1iQSzW-0003lY-Qb; Fri, 01 Nov 2019 09:13:13 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by lithops.sigma-star.at (Postfix) with ESMTP id 8EBD962EBCBC;
+ Fri,  1 Nov 2019 10:13:00 +0100 (CET)
+Received: from lithops.sigma-star.at ([127.0.0.1])
+ by localhost (lithops.sigma-star.at [127.0.0.1]) (amavisd-new, port 10032)
+ with ESMTP id PQahXYOT46px; Fri,  1 Nov 2019 10:12:56 +0100 (CET)
+Received: from localhost (localhost [127.0.0.1])
+ by lithops.sigma-star.at (Postfix) with ESMTP id 2AE38608313B;
+ Fri,  1 Nov 2019 10:12:56 +0100 (CET)
+Received: from lithops.sigma-star.at ([127.0.0.1])
+ by localhost (lithops.sigma-star.at [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id c14mF2Z6Kv1A; Fri,  1 Nov 2019 10:12:55 +0100 (CET)
+Received: from lithops.sigma-star.at (lithops.sigma-star.at [195.201.40.130])
+ by lithops.sigma-star.at (Postfix) with ESMTP id C825D6083139;
+ Fri,  1 Nov 2019 10:12:55 +0100 (CET)
+Date: Fri, 1 Nov 2019 10:12:55 +0100 (CET)
+From: Richard Weinberger <richard@nod.at>
 To: Mike Rapoport <rppt@kernel.org>
-Subject: Re: [PATCH v2 01/13] alpha: use pgtable-nop4d instead of 4level-fixup
-Message-ID: <20191101091157.q4cesn6vsiy5qj2j@box>
+Message-ID: <1156525130.69849.1572599575743.JavaMail.zimbra@nod.at>
+In-Reply-To: <1572597584-6390-12-git-send-email-rppt@kernel.org>
 References: <1572597584-6390-1-git-send-email-rppt@kernel.org>
- <1572597584-6390-2-git-send-email-rppt@kernel.org>
+ <1572597584-6390-12-git-send-email-rppt@kernel.org>
+Subject: Re: [PATCH v2 11/13] um: remove unused pxx_offset_proc() and
+ addr_pte() functions
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1572597584-6390-2-git-send-email-rppt@kernel.org>
-User-Agent: NeoMutt/20180716
+X-Originating-IP: [195.201.40.130]
+X-Mailer: Zimbra 8.8.12_GA_3807 (ZimbraWebClient - FF68 (Linux)/8.8.12_GA_3809)
+Thread-Topic: remove unused pxx_offset_proc() and addr_pte() functions
+Thread-Index: uAt1m92PQC0j1btKcTDhR35rev+lrQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_021201_218569_1BDA9E89 
-X-CRM114-Status: UNSURE (   9.89  )
+X-CRM114-CacheID: sfid-20191101_021311_155235_75013FC7 
+X-CRM114-Status: UNSURE (   4.67  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,39 +77,57 @@ Cc: "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
  linux-mm@kvack.org, sparclinux@vger.kernel.org,
  Rolf Eike Beer <eike-kernel@sf-tec.de>, Vincent Chen <deanbo422@gmail.com>,
  Greg Ungerer <gerg@linux-m68k.org>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>, linux-arch@vger.kernel.org,
- linux-c6x-dev@linux-c6x.org, Richard Weinberger <richard@nod.at>,
+ anton ivanov <anton.ivanov@cambridgegreys.com>,
+ linux-arch <linux-arch@vger.kernel.org>, linux-c6x-dev@linux-c6x.org,
  Helge Deller <deller@gmx.de>, Russell King <linux@armlinux.org.uk>,
  Mike Rapoport <rppt@linux.ibm.com>, Geert Uytterhoeven <geert@linux-m68k.org>,
  Mark Salter <msalter@redhat.com>, Matt Turner <mattst88@gmail.com>,
  Jeff Dike <jdike@addtoit.com>, Sam Creasey <sammy@sammy.net>,
  Arnd Bergmann <arnd@arndb.de>, Vineet Gupta <Vineet.Gupta1@synopsys.com>,
- linux-um@lists.infradead.org, linux-m68k@lists.linux-m68k.org,
- Greentime Hu <green.hu@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ linux-um <linux-um@lists.infradead.org>, linux-m68k@lists.linux-m68k.org,
+ Greentime Hu <green.hu@gmail.com>, "Kirill A. Shutemov" <kirill@shutemov.name>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
  Michal Simek <monstr@monstr.eu>, linux-parisc@vger.kernel.org,
- linux-kernel@vger.kernel.org, "David S. Miller" <davem@davemloft.net>,
+ linux-kernel <linux-kernel@vger.kernel.org>, davem <davem@davemloft.net>,
  linux-alpha@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>, Peter Rosin <peda@axentia.se>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ torvalds <torvalds@linux-foundation.org>, Peter Rosin <peda@axentia.se>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 01, 2019 at 10:39:32AM +0200, Mike Rapoport wrote:
-> From: Mike Rapoport <rppt@linux.ibm.com>
-> 
-> It is not likely alpha will have 5-level page tables.
-> 
-> Replace usage of include/asm-generic/4level-fixup.h and implied
-> __ARCH_HAS_4LEVEL_HACK with include/asm-generic/pgtable-nop4d.h and adjust
-> page table manipulation macros and functions accordingly.
-
-Not pgtable-nop4d.h, but pgtable-nopud.h. Also in subject.
-
--- 
- Kirill A. Shutemov
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+LS0tLS0gVXJzcHLDvG5nbGljaGUgTWFpbCAtLS0tLQo+IFZvbjogIk1pa2UgUmFwb3BvcnQiIDxy
+cHB0QGtlcm5lbC5vcmc+Cj4gQW46IGxpbnV4LW1tQGt2YWNrLm9yZwo+IENDOiAiQW5kcmV3IE1v
+cnRvbiIgPGFrcG1AbGludXgtZm91bmRhdGlvbi5vcmc+LCAiYW50b24gaXZhbm92IiA8YW50b24u
+aXZhbm92QGNhbWJyaWRnZWdyZXlzLmNvbT4sICJBcm5kIEJlcmdtYW5uIgo+IDxhcm5kQGFybmRi
+LmRlPiwgImRhdmVtIiA8ZGF2ZW1AZGF2ZW1sb2Z0Lm5ldD4sICJHZWVydCBVeXR0ZXJob2V2ZW4i
+IDxnZWVydEBsaW51eC1tNjhrLm9yZz4sICJHcmVlbnRpbWUgSHUiCj4gPGdyZWVuLmh1QGdtYWls
+LmNvbT4sICJHcmVnIFVuZ2VyZXIiIDxnZXJnQGxpbnV4LW02OGsub3JnPiwgIkhlbGdlIERlbGxl
+ciIgPGRlbGxlckBnbXguZGU+LCAiSmFtZXMgRS5KLiBCb3R0b21sZXkiCj4gPEphbWVzLkJvdHRv
+bWxleUBIYW5zZW5QYXJ0bmVyc2hpcC5jb20+LCAiSmVmZiBEaWtlIiA8amRpa2VAYWRkdG9pdC5j
+b20+LCAiS2lyaWxsIEEuIFNodXRlbW92IiA8a2lyaWxsQHNodXRlbW92Lm5hbWU+LAo+ICJ0b3J2
+YWxkcyIgPHRvcnZhbGRzQGxpbnV4LWZvdW5kYXRpb24ub3JnPiwgIk1hcmsgU2FsdGVyIiA8bXNh
+bHRlckByZWRoYXQuY29tPiwgIk1hdHQgVHVybmVyIiA8bWF0dHN0ODhAZ21haWwuY29tPiwKPiAi
+TWljaGFsIFNpbWVrIiA8bW9uc3RyQG1vbnN0ci5ldT4sICJQZXRlciBSb3NpbiIgPHBlZGFAYXhl
+bnRpYS5zZT4sICJyaWNoYXJkIiA8cmljaGFyZEBub2QuYXQ+LCAiUm9sZiBFaWtlIEJlZXIiCj4g
+PGVpa2Uta2VybmVsQHNmLXRlYy5kZT4sICJSdXNzZWxsIEtpbmciIDxsaW51eEBhcm1saW51eC5v
+cmcudWs+LCAiU2FtIENyZWFzZXkiIDxzYW1teUBzYW1teS5uZXQ+LCAiVmluY2VudCBDaGVuIgo+
+IDxkZWFuYm80MjJAZ21haWwuY29tPiwgIlZpbmVldCBHdXB0YSIgPFZpbmVldC5HdXB0YTFAc3lu
+b3BzeXMuY29tPiwgIk1pa2UgUmFwb3BvcnQiIDxycHB0QGtlcm5lbC5vcmc+LAo+IGxpbnV4LWFs
+cGhhQHZnZXIua2VybmVsLm9yZywgImxpbnV4LWFyY2giIDxsaW51eC1hcmNoQHZnZXIua2VybmVs
+Lm9yZz4sICJsaW51eC1hcm0ta2VybmVsIgo+IDxsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
+ZGVhZC5vcmc+LCBsaW51eC1jNngtZGV2QGxpbnV4LWM2eC5vcmcsICJsaW51eC1rZXJuZWwiIDxs
+aW51eC1rZXJuZWxAdmdlci5rZXJuZWwub3JnPiwKPiBsaW51eC1tNjhrQGxpc3RzLmxpbnV4LW02
+OGsub3JnLCBsaW51eC1wYXJpc2NAdmdlci5rZXJuZWwub3JnLCAibGludXgtdW0iIDxsaW51eC11
+bUBsaXN0cy5pbmZyYWRlYWQub3JnPiwKPiBzcGFyY2xpbnV4QHZnZXIua2VybmVsLm9yZywgIk1p
+a2UgUmFwb3BvcnQiIDxycHB0QGxpbnV4LmlibS5jb20+Cj4gR2VzZW5kZXQ6IEZyZWl0YWcsIDEu
+IE5vdmVtYmVyIDIwMTkgMDk6Mzk6NDIKPiBCZXRyZWZmOiBbUEFUQ0ggdjIgMTEvMTNdIHVtOiBy
+ZW1vdmUgdW51c2VkIHB4eF9vZmZzZXRfcHJvYygpIGFuZCBhZGRyX3B0ZSgpIGZ1bmN0aW9ucwoK
+PiBGcm9tOiBNaWtlIFJhcG9wb3J0IDxycHB0QGxpbnV4LmlibS5jb20+Cj4gCj4gVGhlIHB4eF9v
+ZmZzZXRfcHJvYygpIGFuZCBhZGRyX3B0ZSgpIGZ1bmN0aW9ucyBhcmUgbmV2ZXIgdXNlZC4KPiBS
+ZW1vdmUgdGhlbS4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBNaWtlIFJhcG9wb3J0IDxycHB0QGxpbnV4
+LmlibS5jb20+CgpBY2tlZC1ieTogUmljaGFyZCBXZWluYmVyZ2VyIDxyaWNoYXJkQG5vZC5hdD4K
+ClRoYW5rcywKLy9yaWNoYXJkCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
+aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
