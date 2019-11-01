@@ -2,58 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51CA5EBF43
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 09:36:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1987EBF44
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 09:37:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nu7SkMt0g4NZwbCpPYux21nToSYQuv5WXRatYQVTRtc=; b=phPeLbtJXgrhr8
-	fxP/LMxV0C3uex48uFBFYBt8fEdRkhAikb4v4EM18wMF3qYCyiDpwQ8+07wNkb8KeU9qEkY6b7H4S
-	BQNT6suSFC3USi76AsyD0qSrT/RmIrIZMyOAGnQg63C0Kx4A2df7f3N0NVhi09Svckej3iyq4pWFq
-	6y592Bl/NG2mHM9mNa/Ikl4Hkc177wnkDzkq5qwJlMjPnprbLyaEXcz1HmPtdG/88qQprswErTOPq
-	l40ospDSkm5h1jz5VPDEqDz7koc5KmJ9RMgQ+Tx2tvbHz4L4JueRuIUH5RB6F9aFgQGBke2TQrEsH
-	BBxjhHThzV3GYrZH2jAw==;
+	List-Owner; bh=a563sGw0ViFBwB/cckuzfJgqt75nzV/+xDf3D7t4zGI=; b=etam1actB/UZyO
+	ssMFs/DeJQY/CYG5WndH0KyeuQfaH7Wj+BEmUT3uKxmCjcADwS4Wb0ykP2ma9QzwgEjbHz8qEfXjb
+	q28/TpsrBD/DrdjFYVtnrVzFji9qBy7NV2UKRUxqfB1JnYWxMaREs82DLZakHCyfw6Ksurk9CJXNs
+	WWgwMxrxjvTKIMOsmJk0MrCCgrAQxjDvJCcK2tXeUMVAFercbRx3+kZgcn3WxqpTmQ1rvZaV/kkXN
+	ZXtu7LkTWFViuQ1wuQU+O8W/VHY7WWGmxSVw+eZh27+AyfyFYsIBW4ew6aj8H5mVnK8s/uAf+7HAP
+	6FjYJxpBrLN5fUKVk9Ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQSQJ-0005Ww-RA; Fri, 01 Nov 2019 08:36:47 +0000
+	id 1iQSQY-0005ov-7Z; Fri, 01 Nov 2019 08:37:02 +0000
 Received: from mail-eopbgr150051.outbound.protection.outlook.com
  ([40.107.15.51] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQSPs-0005BG-Pc
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 08:36:22 +0000
+ id 1iQSPu-0005BG-Rx
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 08:36:24 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Jv/36Dq4sC9eTat8LQtmvWXqyOH8GkXQEUMTw7x7MRPyUhCG3etRFG5pjabmkMIPq05VY45UdgDzes3vCq4OMnuw5Swq4kwVdF+5pt7xbTJOnds9llgjV6pBA/wgWINUkPpR403MCt4gDQ3K/0IMZEydGGX6wH71BUEslEZhQcKPmX9kgASSrtds69FxL0CbtK8+1GGuBf6DqOkFbhYNaP1meH2TGKn2U+5nZF9RIifSns13Wb2BwA1kHfxyLFI1g26sUAgMAak/GzgP2KuTHsYAt82ltjflqrLQ+PzgOkldvijmCTPh818peeNEGZn6Sx9UthUgFGWhpeXft/YOOg==
+ b=GX/iRnvvzvdxzt24V9XjSJjiVQlNGv9smdmCs0CGJnQFPmZldxS4ZWWs637DbqYKmtg8GbtWp2y493iaXQwUhsfjxegs5COpViRJYf4WVxaQLqcxQbPQxIpctrOEcno0998FplajmVhRq6ihUnieW6xgJUvZ1Qj2vDvVVZULken3dkgmdPFq6lOE6ug4Rp/omhcVI/d1qLoY63bJd+v5pumZdOs3jmLSdSC6J0WZCAAfhsyj0G2X8dPnXUXqyQyL+02onf9Kdi7uv/7DWm+kgLcHKz0ezzqv+JvEpyImsNv7TeFDDwnNUfak+bfplsBeloBIkDQiQqWmef6tIvl0vQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=SKxWzn0a3BBvMq+CafuIXl8+bWFjmlHs+kq5mgTtoNE=;
- b=Y/UaEUMHamL1GCv/JXmQAxn0DO5UZy6sFTEBUaGZRRNlArYuo2z6xSeNBg/RcMf7+K0JltDE6Mh6g/0He0OrAoWo5E10XbHSD+Gsvfn2tAvfNRLr6ALfoPQ3JDl9jJyOaf8F4exq+EbodiPWYAm1pdTEF+qAvEaiAGvql0BVm8HU7FmukTQCyNQXBvHtD+hrxxyZ8Rb98JHCNSNd6dTEp53Q5pfg2cbCLQWH4S8fIAWkVXxRb6VyOAT2KGRGy/u2MWmnXvgw6Ev0YW5Oivsq+HRDqkXqGHrs+/ofXRBFXyInd8oJWt3dUOmbqL+ULm1a/ty551IsuyjK/dEhImcR/w==
+ bh=vAyeJN92LNQcn29C6mRPqr3YXPFZ5VzJXqMKDAfDTP8=;
+ b=nBZOu6T70yQuFVNZUOi3wHCRkdh6KqcOJh0cw21oKFD5u+Fyq0gJr6EJ+i3XAlXN2y20oBeVy3EOxiB4V6ZVi2MmccISnrbLAo1zooMgNR2xcVQyAwSOKJUEUbQlByoXl02O/jqGrWAKb+3WXowONAyoWCWjhxRKiwAB4NU8+++sKFNmwpXExWIO6NXez0LoSV86SF/VDxZW0wMWoLP1eamg8vhTMYHtoVL/4jtHiEdc1yqVzmzrLvJEzqZ7Sd9orIibQB932rxuz4iGcPMIqMWoJaP+UQJTVmmgpT5yHLsRiFxEaZ5PdgnpIgU/TkTjMKzq2W4y/J8W3fsoIf+xEA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=SKxWzn0a3BBvMq+CafuIXl8+bWFjmlHs+kq5mgTtoNE=;
- b=TWzEREHu/8WbbjEpjh0Sj8DRVTUMq094yVX/wL2dIXCDf7CiOPXT3aHAGzibbjw5f6yjg+3i/VanuiI2yoldNQnAz6oWM153dAmbUpaxnGpHVqg6cnBkwAKqkNTv7UGkXQDuJeYWiyxw6gzHebsFrBz6NxEHEfzKQ7rLqZJCv/Q=
+ bh=vAyeJN92LNQcn29C6mRPqr3YXPFZ5VzJXqMKDAfDTP8=;
+ b=Od7VwqHSwPddkwmu+rsJWlmlWbnk9hNce09UkqzG8knSNsgKCzt+2PPHqyCpkgbfmwOkeajmaQV6ZM+AI4tVy5niEJ6z3cvYGKfCG3mYlkuuWKWn1u5TkL36kwUxqB9M1LoMrJkEpn92I2kgxugzKDwiSwvylFhUtu721xL0wyE=
 Received: from DB7PR04MB4618.eurprd04.prod.outlook.com (52.135.139.151) by
  DB7PR04MB5948.eurprd04.prod.outlook.com (20.178.106.213) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2387.24; Fri, 1 Nov 2019 08:36:17 +0000
+ 15.20.2387.24; Fri, 1 Nov 2019 08:36:20 +0000
 Received: from DB7PR04MB4618.eurprd04.prod.outlook.com
  ([fe80::79f1:61a7:4076:8679]) by DB7PR04MB4618.eurprd04.prod.outlook.com
  ([fe80::79f1:61a7:4076:8679%3]) with mapi id 15.20.2367.031; Fri, 1 Nov 2019
- 08:36:17 +0000
+ 08:36:20 +0000
 From: Joakim Zhang <qiangqing.zhang@nxp.com>
 To: "will@kernel.org" <will@kernel.org>, "mark.rutland@arm.com"
  <mark.rutland@arm.com>, "robin.murphy@arm.com" <robin.murphy@arm.com>
-Subject: [PATCH V3 3/4] perf/imx_ddr: Add enhanced AXI ID filter support
-Thread-Topic: [PATCH V3 3/4] perf/imx_ddr: Add enhanced AXI ID filter support
-Thread-Index: AQHVkI9tmOl/phINXEWndRHoKw3IpQ==
-Date: Fri, 1 Nov 2019 08:36:16 +0000
-Message-ID: <20191101083317.29510-3-qiangqing.zhang@nxp.com>
+Subject: [PATCH V3 4/4] perf/imx_ddr: Add driver for DDR PMU in i.MX8MPlus
+Thread-Topic: [PATCH V3 4/4] perf/imx_ddr: Add driver for DDR PMU in i.MX8MPlus
+Thread-Index: AQHVkI9vv4SK7CRzBUGqIx/n4cRLXQ==
+Date: Fri, 1 Nov 2019 08:36:20 +0000
+Message-ID: <20191101083317.29510-4-qiangqing.zhang@nxp.com>
 References: <20191101083317.29510-1-qiangqing.zhang@nxp.com>
 In-Reply-To: <20191101083317.29510-1-qiangqing.zhang@nxp.com>
 Accept-Language: en-US
@@ -69,14 +69,14 @@ x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [119.31.174.71]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: e792dd91-2a88-4315-0202-08d75ea68fdb
+x-ms-office365-filtering-correlation-id: 2a9d8d78-8c04-405d-8195-08d75ea691e1
 x-ms-traffictypediagnostic: DB7PR04MB5948:|DB7PR04MB5948:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB7PR04MB59481C190A8B82A1F8FD3859E6620@DB7PR04MB5948.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:773;
+x-microsoft-antispam-prvs: <DB7PR04MB5948ED516058FF35D3893AEDE6620@DB7PR04MB5948.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1091;
 x-forefront-prvs: 020877E0CB
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(376002)(136003)(396003)(39860400002)(346002)(189003)(199004)(54534003)(478600001)(2201001)(66946007)(26005)(11346002)(4326008)(3846002)(25786009)(186003)(5660300002)(486006)(2616005)(476003)(7736002)(54906003)(110136005)(86362001)(2906002)(256004)(6512007)(71190400001)(2501003)(8676002)(66446008)(52116002)(81166006)(66556008)(8936002)(316002)(446003)(36756003)(6436002)(305945005)(50226002)(66476007)(64756008)(6486002)(14454004)(1076003)(76176011)(102836004)(99286004)(386003)(66066001)(71200400001)(6506007)(6116002)(81156014);
+ SFS:(10009020)(4636009)(366004)(376002)(136003)(396003)(39860400002)(346002)(189003)(199004)(54534003)(478600001)(2201001)(66946007)(26005)(11346002)(4326008)(3846002)(25786009)(186003)(5660300002)(486006)(2616005)(476003)(7736002)(4744005)(54906003)(110136005)(86362001)(2906002)(256004)(6512007)(71190400001)(2501003)(8676002)(66446008)(52116002)(81166006)(66556008)(8936002)(316002)(446003)(36756003)(6436002)(305945005)(50226002)(66476007)(64756008)(6486002)(14454004)(1076003)(76176011)(102836004)(99286004)(386003)(66066001)(71200400001)(6506007)(6116002)(81156014);
  DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR04MB5948;
  H:DB7PR04MB4618.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
@@ -84,19 +84,20 @@ received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: JTeGgu5aUXZQmivs/eJDrqXvQmjvEvUQGE+ql7AhORw2dZ+JW0dJzY/JT72/eYJpI55+FfA9Fbj707Ni124i09cY081c4tDdZae9T19H1XXSGhY/2+ccRPek4ENGwI4xISWfIMY9s5dlESrO2TifvQHktbL6oh2bmQgUg3WD2eacgQ3Qov/1N8HSY0zaRho08V/rdHGH5K7uBPUcnYmIoeTwXSyxMIbddcHYTPT4t9k1ybRL+Qg1cfvZm+Y/8M/9jD30aL15tnvFminv9qVExadw3qKs6Tm0jD4Lm1TBaYgQ0cMfIe1xSSQVXkwlWVs32g0p8nyudVta44ZShrozSX8Uvp12PCEzGmiv1keEeJzqhaxMWHPaCyVslQcUUbT6ZokRV+ZtRdihwjAdfK9sDpI6Qczv32a667MzUp5rrHPudX72+9t5ZNMs/u7+mmXu
+x-microsoft-antispam-message-info: VVvJbTB+S4CSmlHf/26fB4S3R1HDFgJVoTpRrh09iX8602NfYuL4HlhkSB8hZkw8QjIQT4hqVK5dHPXMxkQfuav2P1uABXTorgMec1YGJwNQXf2nhi0sWsHiUClNYUe6jBc0dzfX9NmXwbXgtQLN080a+qxQ6yLluWjnvupuQBhRXY9pJoUy4NtJfQCpNemuUThw7XuJEzwbV2EBNIEV8cIYwhGFneN79jJgNmF+uD/hlT17NtcT74enHQkA/yQDlFoJI2Q1lrIM8/D5IIzLS6tzsQKFO9qiQL/8rg+gtmrIdlaqWMOSyXUrCuhtrW3oRCd3fg0gnty6sjl8VFeOhs/Apq+6Sbp97cNgj7Vvbycg5XGZcSxZulWTkl5upaACnXA2CeV8p04sBE9PnpPzjQIfpbvF/LNjGAxO6hVezvF7ewaV9FMVy/9SRBVdkujp
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e792dd91-2a88-4315-0202-08d75ea68fdb
-X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Nov 2019 08:36:17.1608 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2a9d8d78-8c04-405d-8195-08d75ea691e1
+X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Nov 2019 08:36:20.5389 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 7JSWhXKa4pB0B8C0JuOBboE7bZGMG1nVNifnP4HdvOoOfAevF8xxFe3qHApA/SaXJq436TJKuBIzTq+in1hocg==
+X-MS-Exchange-CrossTenant-userprincipalname: EwVeR1mP/v6jlx875Mk9aU4Fvhhg9ntK34wYx0CcRvbQnv/7ymkHEdROFyakLy02xDsfDiesSF3qX23qfvxHNw==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB5948
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_013620_860038_4B073371 
-X-CRM114-Status: GOOD (  13.28  )
+X-CRM114-CacheID: sfid-20191101_013622_914160_31822FB3 
+X-CRM114-Status: UNSURE (   9.76  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -132,117 +133,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-With DDR_CAP_AXI_ID_FILTER quirk, indicating HW supports AXI ID filter
-which only can get bursts from DDR transaction, i.e. DDR read/write
-requests.
-
-This patch add DDR_CAP_AXI_ID_ENHANCED_FILTER quirk, indicating HW
-supports AXI ID filter which can get bursts and bytes from DDR
-transaction at the same time. We hope PMU always return bytes in the
-driver due to it is more meaningful for users.
+Add driver for DDR PMU in i.MX8MPlus.
 
 Signed-off-by: Joakim Zhang <qiangqing.zhang@nxp.com>
 ---
-Changelog:
+ChangeLog:
 V1->V2:
-	* use ddr_perf_is_filtered() helper to simply the code.
-	* improve the commit message.
+	* new add in V2.
 V2->V3:
-	* change definition of DDR_CAP_AXI_ID_FILTER_ENHANCED quirk.
-	* add ddr_perf_is_enhanced_filtered() helper.
+	* change quirk select for imx8mp.
 ---
- drivers/perf/fsl_imx8_ddr_perf.c | 63 +++++++++++++++++++++-----------
- 1 file changed, 42 insertions(+), 21 deletions(-)
+ drivers/perf/fsl_imx8_ddr_perf.c | 5 +++++
+ 1 file changed, 5 insertions(+)
 
 diff --git a/drivers/perf/fsl_imx8_ddr_perf.c b/drivers/perf/fsl_imx8_ddr_perf.c
-index ce7345745b42..2a3966d059e7 100644
+index 2a3966d059e7..3bbf806209a6 100644
 --- a/drivers/perf/fsl_imx8_ddr_perf.c
 +++ b/drivers/perf/fsl_imx8_ddr_perf.c
-@@ -45,7 +45,8 @@
- static DEFINE_IDA(ddr_ida);
- 
- /* DDR Perf hardware feature */
--#define DDR_CAP_AXI_ID_FILTER          0x1     /* support AXI ID filter */
-+#define DDR_CAP_AXI_ID_FILTER			0x1     /* support AXI ID filter */
-+#define DDR_CAP_AXI_ID_FILTER_ENHANCED		0x3     /* support enhanced AXI ID filter */
- 
- struct fsl_ddr_devtype_data {
- 	unsigned int quirks;    /* quirks needed for different DDR Perf core */
-@@ -178,6 +179,36 @@ static const struct attribute_group *attr_groups[] = {
- 	NULL,
+@@ -58,9 +58,14 @@ static const struct fsl_ddr_devtype_data imx8m_devtype_data = {
+ 	.quirks = DDR_CAP_AXI_ID_FILTER,
  };
  
-+static bool ddr_perf_is_filtered(struct perf_event *event)
-+{
-+	return event->attr.config == 0x41 || event->attr.config == 0x42;
-+}
++static const struct fsl_ddr_devtype_data imx8mp_devtype_data = {
++	.quirks = DDR_CAP_AXI_ID_FILTER_ENHANCED,
++};
 +
-+static u32 ddr_perf_filter_val(struct perf_event *event)
-+{
-+	return event->attr.config1;
-+}
-+
-+static bool ddr_perf_filters_compatible(struct perf_event *a,
-+					struct perf_event *b)
-+{
-+	if (!ddr_perf_is_filtered(a))
-+		return true;
-+	if (!ddr_perf_is_filtered(b))
-+		return true;
-+	return ddr_perf_filter_val(a) == ddr_perf_filter_val(b);
-+}
-+
-+static bool ddr_perf_is_enhanced_filtered(struct perf_event *event)
-+{
-+	unsigned int filt;
-+	struct ddr_pmu *pmu = to_ddr_pmu(event->pmu);
-+
-+	filt = pmu->devtype_data->quirks & DDR_CAP_AXI_ID_FILTER_ENHANCED;
-+	return (filt == DDR_CAP_AXI_ID_FILTER_ENHANCED) &&
-+		ddr_perf_is_filtered(event);
-+}
-+
- static u32 ddr_perf_alloc_counter(struct ddr_pmu *pmu, int event)
- {
- 	int i;
-@@ -209,27 +240,17 @@ static void ddr_perf_free_counter(struct ddr_pmu *pmu, int counter)
- 
- static u32 ddr_perf_read_counter(struct ddr_pmu *pmu, int counter)
- {
--	return readl_relaxed(pmu->base + COUNTER_READ + counter * 4);
--}
--
--static bool ddr_perf_is_filtered(struct perf_event *event)
--{
--	return event->attr.config == 0x41 || event->attr.config == 0x42;
--}
-+	struct perf_event *event = pmu->events[counter];
-+	void __iomem *base = pmu->base;
- 
--static u32 ddr_perf_filter_val(struct perf_event *event)
--{
--	return event->attr.config1;
--}
--
--static bool ddr_perf_filters_compatible(struct perf_event *a,
--					struct perf_event *b)
--{
--	if (!ddr_perf_is_filtered(a))
--		return true;
--	if (!ddr_perf_is_filtered(b))
--		return true;
--	return ddr_perf_filter_val(a) == ddr_perf_filter_val(b);
-+	/*
-+	 * return bytes instead of bursts from ddr transaction for
-+	 * axid-read and axid-write event if PMU core supports enhanced
-+	 * filter.
-+	 */
-+	base += ddr_perf_is_enhanced_filtered(event) ? COUNTER_DPCR1 :
-+						       COUNTER_READ;
-+	return readl_relaxed(base + counter * 4);
- }
- 
- static int ddr_perf_event_init(struct perf_event *event)
+ static const struct of_device_id imx_ddr_pmu_dt_ids[] = {
+ 	{ .compatible = "fsl,imx8-ddr-pmu", .data = &imx8_devtype_data},
+ 	{ .compatible = "fsl,imx8m-ddr-pmu", .data = &imx8m_devtype_data},
++	{ .compatible = "fsl,imx8mp-ddr-pmu", .data = &imx8mp_devtype_data},
+ 	{ /* sentinel */ }
+ };
+ MODULE_DEVICE_TABLE(of, imx_ddr_pmu_dt_ids);
 -- 
 2.17.1
 
