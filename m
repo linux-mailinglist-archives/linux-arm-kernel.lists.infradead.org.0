@@ -2,55 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97DB4EC03C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 10:03:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1FD74EC039
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 10:02:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=KLlj86vJ0FTOnxXyHjP+XNPkEteAGGEqkFMNUNRYD2U=; b=ilLIk9WqvdzCxs
-	Zm0rrIOLQTYlPyQHCpTy9REpYdob01tHxxdBdmS7AfM8toWv7t8oA2cX56euVQ802PYyaJp7JftJU
-	vyrs4A3eCW0iEYjL8O/dKjzoJO3XGLGw1hGHeEq8qUUlfzl6c7upnjjGwsaIZu2Pc9Arrf0hWvJ2f
-	q5d9pVBz3igPRsy1DHwFXotRWqE0KcNAUpI2eAd2IQ7wsgqMk51otXHqTIIKuXubhfAvlK1LXoPTs
-	2dPZv7ep5jeXcshOqcwn3c/4NCCqL1QMmuoVrOMZq7NrebfM+17TfaRV6qZtOwHXMjpsTc4zS0vAX
-	vaAcxtohTcY6j3mwvHxQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=c7+BAqm/pJ+vJFZb8rQothK2KtO/LUUf99CYZI8tY/A=; b=copTZn5TB8LJR3
+	VWEWwd106b8hP0o+S2vr6a6LEfgYPvhzLC/mQwTC2yisH8Tri7Va2HIUdlwvNdsnHlxmhSEVsGgWY
+	pWXnfXOM5C4XIQO6rKOT2HzjU0+9sbhVX+2I/lMST4ZR6ttddJLOPFvep1YeipQQ63kbWuYrwCQgu
+	B/20gGZ4TQH6gggTe/oiDWBt6SEO101Zp1t/nRmunpxTQ47oQNRmStPcqbPDOcxoldtZXlcaxffqi
+	Nw6hfQDqmHsLW9HVWd3mvk8HFeS/TKwF5M01p4lx8HJ/1r2wPij1I3YE1O+1Kqt0wwBs9itvJmh6q
+	iVh4viQ0LkYc2ibInzRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQSpr-0007Yx-Bx; Fri, 01 Nov 2019 09:03:11 +0000
-Received: from mail2-relais-roc.national.inria.fr ([192.134.164.83])
+	id 1iQSpH-0007BV-JJ; Fri, 01 Nov 2019 09:02:35 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQSpi-0007YL-I5
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 09:03:04 +0000
-X-IronPort-AV: E=Sophos;i="5.68,254,1569276000"; d="scan'208";a="409892343"
-Received: from abo-45-121-68.mrs.modulonet.fr (HELO hadrien) ([85.68.121.45])
- by mail2-relais-roc.national.inria.fr with
- ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384; 01 Nov 2019 09:55:35 +0100
-Date: Fri, 1 Nov 2019 09:55:34 +0100 (CET)
-From: Julia Lawall <julia.lawall@lip6.fr>
-X-X-Sender: jll@hadrien
-To: Corentin Labbe <clabbe.montjoie@gmail.com>
-Subject: [PATCH] crypto: fix memdup.cocci warnings
-Message-ID: <alpine.DEB.2.21.1911010953590.2883@hadrien>
-User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
+ id 1iQSp7-0007Af-GO; Fri, 01 Nov 2019 09:02:27 +0000
+Received: from localhost (unknown [84.241.195.165])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DC5402080F;
+ Fri,  1 Nov 2019 09:02:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572598944;
+ bh=03ykDqOkaZ+vfMFgBSEbYV3PoG8YuXm3FEcL5G+ws2Q=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=eEu30SGt42zSHoc5LlbGoOeueGeW6yn0Qevu53KZYtf2dIR9IyWJRdto8azhTnLLm
+ 6gO3bZr94b44n6IGTAVS/RmtJTvo9eAogiTW5naegoh007djmcOALGxUqyTSZuQ7GU
+ jNrB4ZY3g8V4ej2K+GtEc1otaCuzw3cf+nx6Z35A=
+Date: Fri, 1 Nov 2019 10:02:21 +0100
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>
+Subject: Re: [RFC PATCH] usb: common: change usb_debug_root as static variable
+Message-ID: <20191101090221.GC2671695@kroah.com>
+References: <1572575349-5596-1-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1572575349-5596-1-git-send-email-chunfeng.yun@mediatek.com>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_020302_866488_97AF3981 
-X-CRM114-Status: UNSURE (   8.83  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.7 (--)
+X-CRM114-CacheID: sfid-20191101_020225_566747_6D023C25 
+X-CRM114-Status: GOOD (  15.53  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.134.164.83 listed in list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [85.68.121.45 listed in dnsbl.sorbs.net]
- 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 HDRS_LCASE             Odd capitalization of message header
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,64 +71,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kbuild-all@lists.01.org, Herbert Xu <herbert@gondor.apana.org.au>,
- linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, linux-crypto@vger.kernel.org,
+Cc: Fabrizio Castro <fabrizio.castro@bp.renesas.com>,
+ Felipe Balbi <felipe.balbi@linux.intel.com>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: kbuild test robot <lkp@intel.com>
+On Fri, Nov 01, 2019 at 10:29:09AM +0800, Chunfeng Yun wrote:
+> Try to avoid using extern global variable, and provide two
+> functions for the usage cases
 
-Use kmemdup rather than duplicating its implementation
+That is 3 different things all in one patch, not generally considered a
+good thing at all.
 
-Generated by: scripts/coccinelle/api/memdup.cocci
+Also, who is going to use these new functions?  Why are they needed?
 
-Fixes: f08fcced6d00 ("crypto: allwinner - Add sun8i-ss cryptographic offloader")
-CC: Corentin Labbe <clabbe.montjoie@gmail.com>
-Signed-off-by: kbuild test robot <lkp@intel.com>
-Signed-off-by: Julia Lawall <julia.lawall@lip6.fr>
----
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> ---
+> NOTE:
+>     Prepared but not send out patches for drivers using usb_debug_root,
+> because I'm not sure whether this patch is needed, and many drivers
+> will be modified.
+> ---
+>  drivers/usb/common/common.c | 16 ++++++++++++++--
+>  include/linux/usb.h         |  5 ++++-
+>  2 files changed, 18 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/usb/common/common.c b/drivers/usb/common/common.c
+> index 1433260d99b4..639ee6d243a2 100644
+> --- a/drivers/usb/common/common.c
+> +++ b/drivers/usb/common/common.c
+> @@ -293,8 +293,20 @@ struct device *usb_of_get_companion_dev(struct device *dev)
+>  EXPORT_SYMBOL_GPL(usb_of_get_companion_dev);
+>  #endif
+>  
+> -struct dentry *usb_debug_root;
+> -EXPORT_SYMBOL_GPL(usb_debug_root);
+> +static struct dentry *usb_debug_root;
 
-tree:   https://git.kernel.org/pub/scm/linux/kernel/git/herbert/cryptodev-2.6.git master
-head:   298b4c604008025b134bc6fccbc4018449945d60
-commit: f08fcced6d0017c39cb6eccb571290867119d049 [154/163] crypto: allwinner - Add sun8i-ss cryptographic offloader
-:::::: branch date: 3 hours ago
-:::::: commit date: 3 hours ago
+Doesn't this break things as-is?  You can't do that in a single patch
+either :(
 
-Please take the patch only if it's a positive warning. Thanks!
+> +
+> +struct dentry *usb_debugfs_create_dir(const char *name)
+> +{
+> +	return debugfs_create_dir(name, usb_debug_root);
+> +}
+> +EXPORT_SYMBOL_GPL(usb_debugfs_create_dir);
+> +
+> +struct dentry *usb_debugfs_create_file(const char *name, umode_t mode,
+> +			void *data, const struct file_operations *fops)
+> +{
+> +	return debugfs_create_file(name, mode, usb_debug_root, data, fops);
 
- sun8i-ss-cipher.c |    6 ++----
- 1 file changed, 2 insertions(+), 4 deletions(-)
+I doubt many people want to create a file in the usb "root" debugfs
+directory, right?  They _should_ be just creating a new subdirectory in
+there instead.
 
---- a/drivers/crypto/allwinner/sun8i-ss/sun8i-ss-cipher.c
-+++ b/drivers/crypto/allwinner/sun8i-ss/sun8i-ss-cipher.c
-@@ -398,10 +398,9 @@ int sun8i_ss_aes_setkey(struct crypto_sk
- 		kfree(op->key);
- 	}
- 	op->keylen = keylen;
--	op->key = kmalloc(keylen, GFP_KERNEL | GFP_DMA);
-+	op->key = kmemdup(key, keylen, GFP_KERNEL | GFP_DMA);
- 	if (!op->key)
- 		return -ENOMEM;
--	memcpy(op->key, key, keylen);
+thanks,
 
- 	crypto_sync_skcipher_clear_flags(op->fallback_tfm, CRYPTO_TFM_REQ_MASK);
- 	crypto_sync_skcipher_set_flags(op->fallback_tfm, tfm->base.crt_flags & CRYPTO_TFM_REQ_MASK);
-@@ -426,10 +425,9 @@ int sun8i_ss_des3_setkey(struct crypto_s
- 		kfree(op->key);
- 	}
- 	op->keylen = keylen;
--	op->key = kmalloc(keylen, GFP_KERNEL | GFP_DMA);
-+	op->key = kmemdup(key, keylen, GFP_KERNEL | GFP_DMA);
- 	if (!op->key)
- 		return -ENOMEM;
--	memcpy(op->key, key, keylen);
-
- 	crypto_sync_skcipher_clear_flags(op->fallback_tfm, CRYPTO_TFM_REQ_MASK);
- 	crypto_sync_skcipher_set_flags(op->fallback_tfm, tfm->base.crt_flags & CRYPTO_TFM_REQ_MASK);
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
