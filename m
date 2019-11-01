@@ -2,54 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 25D94ECA5C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 22:41:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D10CBECA80
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 22:48:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:
-	Subject:To:From:Date:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YJi8r1vTWh9i6+obDJptrY+6zI7mQ7v16y8Xj3QZ6fs=; b=mmkWPCDYyVGQQL
-	Wfuu+fXkhZV8a/VvUsc73i0Q6VNzm2Hct7HbqGcrJ1cJjdDIsyMvtO2gCnvNKt6knvY/zO1i8Cl7V
-	Q5+uDWFKpWJJ4kiE5oZG43veJr9JHMvo3JV64SGJj8355WFK39XjgjpcZorWlKlswsPGORStWiZA3
-	tM7vZyjH9CDbJu327P+6bd+Wao8BefjAeWVds6HG+gxmq2M/xik29fhXnxgTwCHWP+TcnDNFRfCOI
-	e1CAyUHxOGw4ZTP7ZpjP8Lh88MDvuN/pnFHRDDDu7vi0ypV8Z71EH458gbBwUIFaL2rmIY/KSm0xs
-	Aj8pioISW9Tu5yEjZ79A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1gozwXnBCN9zo/7Bxlxrc3Yfp+JSTvGfJ4Gz9RXmDbY=; b=BDcN5a4tFeIP7b
+	mq/juwH6I4wMuA/6tN+jbtdYIJzgOx0hUbdS1foGG6R9/FUPkTm1Bc6X3TNH+DT6QxaCZftSfyLVJ
+	UjBmpiVIuG7H/yhIRfgLdFP3bT4LqnEngQl7bTqnJYWszw5vxsLs2BnEfdLnBudY6Pyy5pFFyjcaQ
+	f7i0z0kjPbeZR9XexdUBF1feulMqWFgp1gi3qi63qwftAMmgLCBP300bg2eh4jwC00s5QDPLaj8hc
+	0IjAOCs5hzkHPDvIbynAqPXy/P+G6+piIynbYXhbqRrBNgqY4ZjK76+6LtHOhxrrSLhmVxwcVwYqH
+	YUQzkuheXVVKXy8vAdew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQefB-0005Gg-0A; Fri, 01 Nov 2019 21:40:57 +0000
+	id 1iQemD-0007La-KN; Fri, 01 Nov 2019 21:48:13 +0000
 Received: from mail.kmu-office.ch ([2a02:418:6a02::a2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQef3-0005Fe-CI
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 21:40:50 +0000
-Received: from webmail.kmu-office.ch (unknown [IPv6:2a02:418:6a02::a3])
- by mail.kmu-office.ch (Postfix) with ESMTPSA id 656935C35E6;
- Fri,  1 Nov 2019 22:40:46 +0100 (CET)
+ id 1iQem5-0007Hh-GY
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 21:48:07 +0000
+Received: from zyt.lan (unknown [37.17.234.113])
+ by mail.kmu-office.ch (Postfix) with ESMTPSA id 10A635C3996;
+ Fri,  1 Nov 2019 22:48:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=agner.ch; s=dkim;
- t=1572644446;
+ t=1572644884;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=UQ0Zt0OUXYdDbK7jxc5SzMQz2nIcNAjdmM4xf+Xj0xg=;
- b=fCkfsPf1F5hA9GJWCThZmjWj1+FNW5GZKdKpnKUwT5LWRVCdsb/CIVe7yEpxO2FlY037AN
- jxLcritbSksusfUPz6luuuHmdYErc8fluMSWjV5+KAhmXzV4X+QvdDwqrjtcoLQLXJtTpR
- NV5kDvWJBlXpbA9NcjAa+g8yI+ZPij0=
-MIME-Version: 1.0
-Date: Fri, 01 Nov 2019 22:40:46 +0100
+ to:to:cc:cc:mime-version:mime-version:content-type:
+ content-transfer-encoding:content-transfer-encoding:in-reply-to:
+ references; bh=O13dNAYrYnYnAw0xq29Wh01pA7LkcCcNnwb/S9BEyZ4=;
+ b=oqrarDW4zfIMJCdBVsRFd58EEyoqwH0Xltu0lQsxy8nEPGMa3cBdF7fCHTqr1sYp7csyKD
+ Q730qm7qYjDz3FFMTtEaPIC+qAK0QKVff3Hw+XfMDA9SE/qRDBlT6FIW5mZ/vjWNENXntr
+ uTvyhbWoTQAVLwrcYpQfodgIRt0bbvk=
 From: Stefan Agner <stefan@agner.ch>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: Re: [PATCH] ARM: imx: use generic function to exit coherency
-In-Reply-To: <20190416042337.GA4690@X250.skyworth_vap>
-References: <3f58c55e48c28f41e92883e81c675b8478af6a5e.1554937960.git.stefan@agner.ch>
- <20190416042337.GA4690@X250.skyworth_vap>
-Message-ID: <a99b439b8c8deb247f7ba2e6b598e808@agner.ch>
-X-Sender: stefan@agner.ch
-User-Agent: Roundcube Webmail/1.3.9
+To: linux@armlinux.org.uk
+Subject: [PATCH] ARM: use APSR_nzcv instead of r15 as mrc operand
+Date: Fri,  1 Nov 2019 22:47:58 +0100
+Message-Id: <472f8bd1f000f45343cc0c66a26380fe4b532147.1572644664.git.stefan@agner.ch>
+X-Mailer: git-send-email 2.23.0
+MIME-Version: 1.0
+X-Spam: Yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_144049_566690_B34077CF 
-X-CRM114-Status: GOOD (  10.68  )
+X-CRM114-CacheID: sfid-20191101_144805_848582_FA807904 
+X-CRM114-Status: GOOD (  11.20  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -75,34 +71,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: s.hauer@pengutronix.de, linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
- linux-imx@nxp.com, kernel@pengutronix.de, festevam@gmail.com,
- linux-arm-kernel@lists.infradead.org
+Cc: ard.biesheuvel@linaro.org, linus.walleij@linaro.org, nico@fluxnic.net,
+ ndesaulniers@google.com, linux-kernel@vger.kernel.org,
+ Stefan Agner <stefan@agner.ch>, clang-built-linux@googlegroups.com,
+ rfranz@marvell.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Shawn,
+LLVM's integrated assembler does not accept r15 as mrc operand.
+  arch/arm/boot/compressed/head.S:1267:16: error: operand must be a register in range [r0, r14] or apsr_nzcv
+  1: mrc p15, 0, r15, c7, c14, 3 @ test,clean,invalidate D cache
+                 ^
 
-On 2019-04-16 07:46, Shawn Guo wrote:
-> On Thu, Apr 11, 2019 at 01:14:12AM +0200, Stefan Agner wrote:
->> The common ARM architecture code provides a generic function to exit
->> coherency called v7_exit_coherency_flush(). Replace the machine
->> specific implementation using the generic function.
->>
->> Tested on a i.MX 6Dual by hotplugging the secondary CPU under load
->> through sysfs several 1000 times.
->>
->> Tested-by: Stefan Agner <stefan@agner.ch>
->> Signed-off-by: Stefan Agner <stefan@agner.ch>
-> 
-> Applied, thanks.
+Use APSR_nzcv instead of r15. The GNU assembler supports this
+syntax since binutils 2.21 [0].
 
-It seems like this patch never made it upstream. Any specific reason?
+[0] https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;a=commit;h=db472d6ff0f438a21b357249a9b48e4b74498076
 
---
-Stefan
+Signed-off-by: Stefan Agner <stefan@agner.ch>
+---
+ arch/arm/boot/compressed/head.S | 2 +-
+ arch/arm/mm/proc-arm1026.S      | 4 ++--
+ arch/arm/mm/proc-arm926.S       | 4 ++--
+ 3 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
+index 15ecad944847..ead21e5f2b80 100644
+--- a/arch/arm/boot/compressed/head.S
++++ b/arch/arm/boot/compressed/head.S
+@@ -1273,7 +1273,7 @@ iflush:
+ __armv5tej_mmu_cache_flush:
+ 		tst	r4, #1
+ 		movne	pc, lr
+-1:		mrc	p15, 0, r15, c7, c14, 3	@ test,clean,invalidate D cache
++1:		mrc	p15, 0, APSR_nzcv, c7, c14, 3	@ test,clean,invalidate D cache
+ 		bne	1b
+ 		mcr	p15, 0, r0, c7, c5, 0	@ flush I cache
+ 		mcr	p15, 0, r0, c7, c10, 4	@ drain WB
+diff --git a/arch/arm/mm/proc-arm1026.S b/arch/arm/mm/proc-arm1026.S
+index 10e21012380b..0bdf25a95b10 100644
+--- a/arch/arm/mm/proc-arm1026.S
++++ b/arch/arm/mm/proc-arm1026.S
+@@ -138,7 +138,7 @@ ENTRY(arm1026_flush_kern_cache_all)
+ 	mov	ip, #0
+ __flush_whole_cache:
+ #ifndef CONFIG_CPU_DCACHE_DISABLE
+-1:	mrc	p15, 0, r15, c7, c14, 3		@ test, clean, invalidate
++1:	mrc	p15, 0, APSR_nzcv, c7, c14, 3		@ test, clean, invalidate
+ 	bne	1b
+ #endif
+ 	tst	r2, #VM_EXEC
+@@ -363,7 +363,7 @@ ENTRY(cpu_arm1026_switch_mm)
+ #ifdef CONFIG_MMU
+ 	mov	r1, #0
+ #ifndef CONFIG_CPU_DCACHE_DISABLE
+-1:	mrc	p15, 0, r15, c7, c14, 3		@ test, clean, invalidate
++1:	mrc	p15, 0, APSR_nzcv, c7, c14, 3		@ test, clean, invalidate
+ 	bne	1b
+ #endif
+ #ifndef CONFIG_CPU_ICACHE_DISABLE
+diff --git a/arch/arm/mm/proc-arm926.S b/arch/arm/mm/proc-arm926.S
+index 3188ab2bac61..1ba253c2bce1 100644
+--- a/arch/arm/mm/proc-arm926.S
++++ b/arch/arm/mm/proc-arm926.S
+@@ -131,7 +131,7 @@ __flush_whole_cache:
+ #ifdef CONFIG_CPU_DCACHE_WRITETHROUGH
+ 	mcr	p15, 0, ip, c7, c6, 0		@ invalidate D cache
+ #else
+-1:	mrc	p15, 0, r15, c7, c14, 3 	@ test,clean,invalidate
++1:	mrc	p15, 0, APSR_nzcv, c7, c14, 3 	@ test,clean,invalidate
+ 	bne	1b
+ #endif
+ 	tst	r2, #VM_EXEC
+@@ -358,7 +358,7 @@ ENTRY(cpu_arm926_switch_mm)
+ 	mcr	p15, 0, ip, c7, c6, 0		@ invalidate D cache
+ #else
+ @ && 'Clean & Invalidate whole DCache'
+-1:	mrc	p15, 0, r15, c7, c14, 3 	@ test,clean,invalidate
++1:	mrc	p15, 0, APSR_nzcv, c7, c14, 3 	@ test,clean,invalidate
+ 	bne	1b
+ #endif
+ 	mcr	p15, 0, ip, c7, c5, 0		@ invalidate I cache
+-- 
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
