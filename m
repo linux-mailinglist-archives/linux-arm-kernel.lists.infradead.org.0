@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C70A9EBC8F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 04:55:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74AD3EBC94
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 04:56:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ULhpxiQ5s6W7/vZ6/C4cS+CrxtehzKBnHhKLl6Jqji8=; b=QlDV4WMex8N+1W
-	KVhn//C5jImU9nkJgVSSsA4B/Fz3lPQi9UuE3ViNz47P2tTkVqJuW5iIp44tFy5pB1748+QwD+rv6
-	nswX7OU1enQhASFrqG85GMnEIQ6CaBnFOV4JgpawHTwdHu0y8K5+6gBa0Ut3zeTXNFbxJJjTk63fg
-	dHHUjk6MxKSVXeNqN/cEm9drcAk2iODc3c61xKTTAS9LhPr4DIOY/FR15C2OctWITAw4DZ+tYAcTX
-	+uCew5EQVvG/ki6cEVwCt6ULPy4aUSqOaHJKXkAn2CoG+5vpnPmftpLqeCRqT12ormmWEvwksXixb
-	CNCoRbdrMSUo4/wOM1Ig==;
+	List-Owner; bh=+nUuNm1F1vl5WWepFJR47FgCygdRPOlAi7pQEOPPlfo=; b=YXvYctchXmwCyW
+	Av5OLhyl9gfM3uqAHW1jWkXIyoypLUNkjZnGK9RrGeVmQRN9liU+5zf6+EeoMSk8Llf1HJztg1efu
+	45TayR5r/q8TLzVr1zQuakLsbehQdtOhlIXYPNJ9J2WLxGLeVGvGod04+8I2/fjKfduijFn2IfGGr
+	js/nstkJfqTLBboj68xhkLoWGehq1wA9I5vKCQww59JljhOBSvAE61Angd33ZLU/hO2iAXzxGy/m4
+	HMswBIoG1Z6xhfp+XZKuH/UQDt+NI69+C5mPlAwwEW//ppanaqRbzpfzF9gciEMXLeQWgDMqximKu
+	EwY1qCT8gz2BcfXQ8Fdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQO2G-00010G-2n; Fri, 01 Nov 2019 03:55:40 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1iQO2y-0001GU-HO; Fri, 01 Nov 2019 03:56:24 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQO23-0000yp-QC
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 03:55:29 +0000
-Received: by mail-pf1-x441.google.com with SMTP id p26so6078067pfq.8
+ id 1iQO2o-0001G8-74
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 03:56:15 +0000
+Received: by mail-pl1-x641.google.com with SMTP id y8so3771047plk.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 31 Oct 2019 20:55:27 -0700 (PDT)
+ Thu, 31 Oct 2019 20:56:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=YiqPN73/qfLoGFPAaCK046WeDsIyHq2v7vxAoPf2Hxg=;
- b=DGvNnz+GeHeNfKZ6f7YLJzc3HABEEC30I8/B/IBZTbAoWTqYDEBA+PWjh7ne14xEji
- PE2FdEWksdLdMt2PKYPe0QSMEXkBcV49KFClWQ42/xFPVspDKk4kFzSNVn/0QiVKU0Hk
- Z4vIKb88INGDp/qLR22O2YTnuCwiKgJmJAvqs=
+ bh=Z+nYmbiX+N1St4EAeF06ZLBIc22exSOWn82chVWgQ58=;
+ b=CCX57PXeSP8raTIa7stPdOtMkXfDOMY7T1F5hUmVdwgHt3jJlYyT6pDYvyD+nZPnjd
+ RDynOfkryq8ctGOLHdv/HhV7WAh/aJmiBALoqt5gki6zK0lyCCvj+8TBwx4BlVd4ZsYn
+ QlzmEfXTcWlJFOzLS3MwRZqKvvLzEB2qTfEAY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=YiqPN73/qfLoGFPAaCK046WeDsIyHq2v7vxAoPf2Hxg=;
- b=O3J+0QqzVilNx8muMIbcFo49dHGP5qw0MMK4DMngvqCewGVE2XjTsoDlVgTwSWvbFB
- 3jOPIYOn/IRmBoaZDPC61M3jVVJN9r/DZ5i/Kut3LMBmKetOhcIHDFdwRs0rMWV1CzfR
- swlNG/ZBAe6T1uGWZkSdpgY96h6xCmLJ6KENGXk2b9Xi/j99XoV58aMk23uzdNCKPzhX
- 7AhTzo48EUfh4xHQde5yoUinLN/LC6rCFrCkFHN10JO/r1kEdC5kak6gFU29tlxnTEM8
- G7nCcHQ8vqNxq0ZNcyRdLYYICyxMMhQ83gMw9fb17QNxGAAFbgCxoItAdO9ZO7kLDRD1
- oFsQ==
-X-Gm-Message-State: APjAAAVJMfW86LAtas4SHUfGERPSl9kqM40okJsu9eIW6UoVWzTPbig9
- 1YvWwn8nvo27qcGP+zarIfkjcg==
-X-Google-Smtp-Source: APXvYqxD7MNY1jVYOjRfhYGo3ogwiiuExle/jPXGM0/pINsljnFcAcPtUzMI8R27pVSvoSzQhhOLJg==
-X-Received: by 2002:a17:90a:f310:: with SMTP id
- ca16mr5852511pjb.20.1572580527358; 
- Thu, 31 Oct 2019 20:55:27 -0700 (PDT)
+ bh=Z+nYmbiX+N1St4EAeF06ZLBIc22exSOWn82chVWgQ58=;
+ b=TZV2JZopPxW6b6xUltjR4TQkh8gBSa9EBbtvaXnURD6R8Ho99XS2kJRVHlpnYFyCS1
+ Xo8JWmujgGGHwByMl5JKpIeouMhilK/WxG0Jq1wQt1F2T6rwENxBKc/hiX4DokhqZVdE
+ URx6iSfgpi1LRRICsXAvLoJpQomUaeD1SfXx1JphKmYC0BpgyX1+9EXWl3opPVu8IPl0
+ cAQ0gwaekrLqobvJiBpsOioDlGSMcCiwFanI0Ihv0y0aCLY6tfOg3Ny4F/wAAzyRJtWu
+ N8BeXwON7JDaHteySjTqeOwoSzK+KD2VyulDJZHoE77Irze4VyQ74k2kIDS4Zg8p6QMZ
+ SdiQ==
+X-Gm-Message-State: APjAAAXTkqr9tknU9MU/1NwRQVzQaHitIEb6JJ7Ym2i+Cw+eGK0kFZA1
+ xldW431u45EnOCprOTLgn/DByw==
+X-Google-Smtp-Source: APXvYqzjbJ7PTCwR8dbLX9yGoruNQd+AcfmNqc/IOeBXJ7CEpc7/rFxnCKUJlN4CgjbHYqxLA44oZA==
+X-Received: by 2002:a17:902:988d:: with SMTP id
+ s13mr10329146plp.335.1572580573736; 
+ Thu, 31 Oct 2019 20:56:13 -0700 (PDT)
 Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id 2sm4704403pfo.91.2019.10.31.20.55.26
+ by smtp.gmail.com with ESMTPSA id z5sm4476882pgi.19.2019.10.31.20.56.12
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 31 Oct 2019 20:55:26 -0700 (PDT)
-Date: Thu, 31 Oct 2019 20:55:25 -0700
+ Thu, 31 Oct 2019 20:56:12 -0700 (PDT)
+Date: Thu, 31 Oct 2019 20:56:11 -0700
 From: Kees Cook <keescook@chromium.org>
 To: samitolvanen@google.com
-Subject: Re: [PATCH v3 08/17] kprobes: fix compilation without
+Subject: Re: [PATCH v3 09/17] arm64: kprobes: fix kprobes without
  CONFIG_KRETPROBES
-Message-ID: <201910312055.B551A6CB4@keescook>
+Message-ID: <201910312055.BD31A966DB@keescook>
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20191031164637.48901-1-samitolvanen@google.com>
- <20191031164637.48901-9-samitolvanen@google.com>
+ <20191031164637.48901-10-samitolvanen@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191031164637.48901-9-samitolvanen@google.com>
+In-Reply-To: <20191031164637.48901-10-samitolvanen@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_205527_846095_E1389BF5 
-X-CRM114-Status: GOOD (  17.55  )
+X-CRM114-CacheID: sfid-20191031_205614_255472_09B6E473 
+X-CRM114-Status: GOOD (  14.03  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -113,79 +113,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 31, 2019 at 09:46:28AM -0700, samitolvanen@google.com wrote:
-> kprobe_on_func_entry and arch_kprobe_on_func_entry need to be available
-> even if CONFIG_KRETPROBES is not selected.
+On Thu, Oct 31, 2019 at 09:46:29AM -0700, samitolvanen@google.com wrote:
+> This allows CONFIG_KRETPROBES to be disabled without disabling
+> kprobes entirely.
 > 
 > Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
 
-FWIW:
+Is this worth folding this into the prior kprobes patch? Regardless:
 
 Reviewed-by: Kees Cook <keescook@chromium.org>
 
 -Kees
 
-> Acked-by: Masami Hiramatsu <mhiramat@kernel.org>
 > ---
->  kernel/kprobes.c | 38 +++++++++++++++++++-------------------
->  1 file changed, 19 insertions(+), 19 deletions(-)
+>  arch/arm64/kernel/probes/kprobes.c | 2 ++
+>  1 file changed, 2 insertions(+)
 > 
-> diff --git a/kernel/kprobes.c b/kernel/kprobes.c
-> index 53534aa258a6..b5e20a4669b8 100644
-> --- a/kernel/kprobes.c
-> +++ b/kernel/kprobes.c
-> @@ -1829,6 +1829,25 @@ unsigned long __weak arch_deref_entry_point(void *entry)
->  	return (unsigned long)entry;
+> diff --git a/arch/arm64/kernel/probes/kprobes.c b/arch/arm64/kernel/probes/kprobes.c
+> index c4452827419b..98230ae979ca 100644
+> --- a/arch/arm64/kernel/probes/kprobes.c
+> +++ b/arch/arm64/kernel/probes/kprobes.c
+> @@ -551,6 +551,7 @@ void __kprobes __used *trampoline_probe_handler(struct pt_regs *regs)
+>  	return (void *)orig_ret_address;
 >  }
 >  
-> +bool __weak arch_kprobe_on_func_entry(unsigned long offset)
-> +{
-> +	return !offset;
-> +}
-> +
-> +bool kprobe_on_func_entry(kprobe_opcode_t *addr, const char *sym, unsigned long offset)
-> +{
-> +	kprobe_opcode_t *kp_addr = _kprobe_addr(addr, sym, offset);
-> +
-> +	if (IS_ERR(kp_addr))
-> +		return false;
-> +
-> +	if (!kallsyms_lookup_size_offset((unsigned long)kp_addr, NULL, &offset) ||
-> +						!arch_kprobe_on_func_entry(offset))
-> +		return false;
-> +
-> +	return true;
-> +}
-> +
->  #ifdef CONFIG_KRETPROBES
->  /*
->   * This kprobe pre_handler is registered with every kretprobe. When probe
-> @@ -1885,25 +1904,6 @@ static int pre_handler_kretprobe(struct kprobe *p, struct pt_regs *regs)
->  }
->  NOKPROBE_SYMBOL(pre_handler_kretprobe);
->  
-> -bool __weak arch_kprobe_on_func_entry(unsigned long offset)
-> -{
-> -	return !offset;
-> -}
-> -
-> -bool kprobe_on_func_entry(kprobe_opcode_t *addr, const char *sym, unsigned long offset)
-> -{
-> -	kprobe_opcode_t *kp_addr = _kprobe_addr(addr, sym, offset);
-> -
-> -	if (IS_ERR(kp_addr))
-> -		return false;
-> -
-> -	if (!kallsyms_lookup_size_offset((unsigned long)kp_addr, NULL, &offset) ||
-> -						!arch_kprobe_on_func_entry(offset))
-> -		return false;
-> -
-> -	return true;
-> -}
-> -
->  int register_kretprobe(struct kretprobe *rp)
+> +#ifdef CONFIG_KRETPROBES
+>  void __kprobes arch_prepare_kretprobe(struct kretprobe_instance *ri,
+>  				      struct pt_regs *regs)
 >  {
->  	int ret = 0;
+> @@ -564,6 +565,7 @@ int __kprobes arch_trampoline_kprobe(struct kprobe *p)
+>  {
+>  	return 0;
+>  }
+> +#endif
+>  
+>  int __init arch_init_kprobes(void)
+>  {
 > -- 
 > 2.24.0.rc0.303.g954a862665-goog
 > 
