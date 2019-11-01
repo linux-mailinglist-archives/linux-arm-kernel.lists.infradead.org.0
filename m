@@ -2,72 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89801EC10B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 11:08:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 174C3EC115
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 11:09:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1Olz24JVSal7c5wHraBb2Ef4KW9r2N0S8bjCrmRsPuc=; b=oVCmy9g33QUxN5
-	iqtJpDxbZoCYfWoOdI7SbagtzYuqfZvn8O5aW9id6PWMjxTkHRXWh9IV+2MCMSLcpGlUjxigJL5UM
-	n31PrhcKztVQSnbnIDkxIj8bBqRbiUFUMTXLuZJLSE2wMdWC2Eoy6vwIdOWgtVgv5VxNgsELxDtbL
-	TmE2gYdsqdxnEdbp3p/yLXSnVbZ1Kyw7rxqwKbjfOImrwG2x2olmEY4ERPZho2PQoyprVXmVqdjTF
-	Uuf6OWHx1rnG6GSGvp1QG0Fbk6/iQL8FwiYtWx0pgh5d9hkq1U/xk7XxXnx8piJC+jd4SgvIA2ImK
-	3G61ORi1yuvHt57nNODQ==;
+	List-Owner; bh=vhAZm0mDO90k8EE/mgqIRILPGXZQknbeZehQ5NheQr4=; b=nofTQxEH+mA0gT
+	10KzIkXR7YZ6HWu/z+0L4qYZ0pqEsiCN69/Ntj6lys1uy9FAWC/wvYcSBKIgj/GBywTS+h3zua8Ds
+	Ngsr+aeCKq2ZeO6n694d3bXh+ybydpjh2gUVD1fL+msds8owAz8SZDH2sgzChDISy3um7s+9Efhv+
+	uk04HqLCOJyWWJ1JHf3yH96/pXdcX6+bycPtZwxdppBzcU3sMr42nOWP4/u3PAhMPFehMCJXYThnW
+	SolYZyeIV48G25i2/gYQrzf4byUPLGerInUeIEQxHedjzywm9u9VHF5r3aq9oaCqH/BHGy5aW7ALc
+	4wgIxJqF0LAvGQ1KQaSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQTr0-0001Th-Ci; Fri, 01 Nov 2019 10:08:26 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
+	id 1iQTrW-0001lj-Ah; Fri, 01 Nov 2019 10:08:58 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQTqu-0001Sl-5y; Fri, 01 Nov 2019 10:08:21 +0000
-Received: by mail-oi1-f196.google.com with SMTP id i185so7707240oif.9;
- Fri, 01 Nov 2019 03:08:19 -0700 (PDT)
+ id 1iQTrP-0001l7-5G
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 10:08:52 +0000
+Received: by mail-qt1-x841.google.com with SMTP id y39so12316598qty.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 01 Nov 2019 03:08:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=dixvlRxBe1XqqJqVc1zgKXwNqGAEbJcLWXze4Juxj/A=;
+ b=D6/bx9Qt4Sz4Zl1m7/iyiTMXK4O//gXhNKiXB2chqIP3aluDGN2fva+Y6wVKBDNG0P
+ Li4oORgU/Hq8vdPn77G6Hk377QzmddzW+CNPZ9pO+TM2ikk2UmEM/qXJryAK1BMRT+/f
+ 4kl53gQeEIhRpSQ2xOi1McdZWP5sJpnLuRBcI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=+I3xQl9ln+lrGFb5a1qNX1dE+zwF+Br3GKgAcoIpVg0=;
- b=d2DByR5ZMRXHr+YEZ9ozLLeXTJe3QYWpLWLyCAU6DFIZA697tpwf5iNbrideKyCf6s
- VWBjoALwWtfA/BCxIiHjXn37VrfjYp1eHhfSe1+nIbN5DTxPYuZrp8yGFuHmeZaKUR89
- kFHheHDZqqz0JejP2PxQ9ne5NrEmM+CjUZyko0a/HpTgTrMWwEBlvQokxVUbmbX/noDi
- Pyr8O2/qPYhUfEazinbD3bjnf4Qpd5fxZrpScqqozFgnlaLKQZYjPyp9a96X6OLmKAe2
- kXdIb0/y7Cj1QY03C/rOLopFOPKymw6aRek5UkIscYk3a1QrKy2YW4Mz4ya+CIJEczKT
- gjmA==
-X-Gm-Message-State: APjAAAXy6aZrIIIx61WjBWtjPuvQDbOXMVgsCIgk6lda9TsPJx7ZUNt5
- V9/kfaj9pKC3SP5AjW7dXtOivtPm/6gdsSuL4YU=
-X-Google-Smtp-Source: APXvYqyFWgpB6XEGfMCjZsYPk2WDJOLqiGcZrURCT7LaEN/S0hFYXldPAmBySb2Ylqn/7Yv1GVxJdkW9M3x45yHrDHI=
-X-Received: by 2002:aca:4ac5:: with SMTP id x188mr3592931oia.148.1572602898727; 
- Fri, 01 Nov 2019 03:08:18 -0700 (PDT)
+ bh=dixvlRxBe1XqqJqVc1zgKXwNqGAEbJcLWXze4Juxj/A=;
+ b=aa6ZLUrXXP2xuWKwijYaJn0upr8cAx0x/ReMCuZbSrAvDzdpf5cntjt6+YBPwHw1Wl
+ EmvIMpQBpn5T007+NslpWKifmxpx87yaiGuE6gIzBEyDDi9fw6DeTAm+MhOJRGQveAqC
+ dMkyJht5BjXR7R0z+qfgfWNq+QWVZGS8vs7M+GsOLu7JCSYnCRZxF+ilYByRFtObttHM
+ 1vnIyW15l42rBeG6LH7l1kfxKM9YszsiBpn1FK1ruTYrO7GGOjkbrAVMc2CgBvMPZjbd
+ J6jzrBslm+KWff6tr7ihr9fgmeIljql2DxxyN2EPtGF2bdbIcA9QV2Azidds5N9JMHgy
+ ydQw==
+X-Gm-Message-State: APjAAAUol8t6kEldUn3heqN9b5r1O7W/nuTnaNDu6FWvYBjwEG7BmZqW
+ 9WB2Xxlxp4Oqfy6AyfiPJDwUEK/HBhPD5LGwamg=
+X-Google-Smtp-Source: APXvYqy0Z22TcpdNer9jICrspqvBdfKr5qP78g1hshmD7TQOwlJJKb1RCeY5BVLa6y96G8jOc0taqrKjoAq9DFAyCus=
+X-Received: by 2002:ac8:e03:: with SMTP id a3mr9899612qti.169.1572602929835;
+ Fri, 01 Nov 2019 03:08:49 -0700 (PDT)
 MIME-Version: 1.0
-References: <20191021161351.20789-1-krzk@kernel.org>
- <20191021161351.20789-4-krzk@kernel.org>
-In-Reply-To: <20191021161351.20789-4-krzk@kernel.org>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Fri, 1 Nov 2019 11:08:07 +0100
-Message-ID: <CAMuHMdXr7_HP5NUQ_0D76N-eBuootQqyPusqmf6nyDnLN__ORA@mail.gmail.com>
-Subject: Re: [PATCH v4 4/7] dt-bindings: sram: Merge Renesas SRAM bindings
- into generic
-To: Krzysztof Kozlowski <krzk@kernel.org>
+References: <20191021194820.293556-1-taoren@fb.com>
+In-Reply-To: <20191021194820.293556-1-taoren@fb.com>
+From: Joel Stanley <joel@jms.id.au>
+Date: Fri, 1 Nov 2019 10:08:35 +0000
+Message-ID: <CACPK8XcNxs5T=ZC_mRnvkOF_kqS1AvP=9PvMB6w9Fgn_XbtZQw@mail.gmail.com>
+Subject: Re: [PATCH 0/4] ARM: dts: aspeed: add dtsi for Facebook AST2500
+ Network BMCs
+To: Tao Ren <taoren@fb.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_030820_221143_6C1F7C33 
-X-CRM114-Status: GOOD (  15.17  )
+X-CRM114-CacheID: sfid-20191101_030851_404331_13D2E51A 
+X-CRM114-Status: GOOD (  13.39  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
+ provider (joel.stan[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -82,98 +93,60 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ devicetree <devicetree@vger.kernel.org>,
+ linux-aspeed <linux-aspeed@lists.ozlabs.org>, Andrew Jeffery <andrew@aj.id.au>,
+ OpenBMC Maillist <openbmc@lists.ozlabs.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Maxime Ripard <mripard@kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Krzysztof,
+Hi Tao,
 
-On Mon, Oct 21, 2019 at 6:15 PM Krzysztof Kozlowski <krzk@kernel.org> wrote:
-> The Renesas SRAM bindings list only compatible so integrate them into
-> generic SRAM bindings schema.
+On Mon, 21 Oct 2019 at 19:49, Tao Ren <taoren@fb.com> wrote:
 >
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+> The patch series adds "facebook-netbmc-ast2500-common.dtsi" which defines
+> devices that are common cross all Facebook AST2500 Network BMC platforms.
+> The major purpose is to minimize duplicated device entries among Facebook
+> Network BMC dts files.
+>
+> Patch #1 (of 4) adds "facebook-netbmc-ast2500-common.dtsi" file, and the
+> remaining 3 patches update CMM, Minipack and Yamp device tree to consume
+> the new dtsi file.
 
-Thanks for your patch, whcih is now commit 0759b09eadd0d9a1 ("dt-bindings:
-sram: Merge Renesas SRAM bindings into generic") in Rob's for-next branch.
+The patches look okay to me. I modified the file name to match the
+convention used by other device trees in the arm directory, where it
+includes the SOC name first.
 
-> --- a/Documentation/devicetree/bindings/sram/renesas,smp-sram.txt
-> +++ /dev/null
-> @@ -1,27 +0,0 @@
-> -* Renesas SMP SRAM
-> -
-> -Renesas R-Car Gen2 and RZ/G1 SoCs need a small piece of SRAM for the jump stub
-> -for secondary CPU bringup and CPU hotplug.
-> -This memory is reserved by adding a child node to a "mmio-sram" node, cfr.
-> -Documentation/devicetree/bindings/sram/sram.txt.
-> -
-> -Required child node properties:
-> -  - compatible: Must be "renesas,smp-sram",
-> -  - reg: Address and length of the reserved SRAM.
-> -    The full physical (bus) address must be aligned to a 256 KiB boundary.
-> -
-> -
-> -Example:
-> -
-> -       icram1: sram@e63c0000 {
-> -               compatible = "mmio-sram";
-> -               reg = <0 0xe63c0000 0 0x1000>;
-> -               #address-cells = <1>;
-> -               #size-cells = <1>;
-> -               ranges = <0 0 0xe63c0000 0x1000>;
-> -
-> -               smp-sram@0 {
-> -                       compatible = "renesas,smp-sram";
-> -                       reg = <0 0x10>;
-> -               };
+I also reworded the commit messages a little.
 
-> --- a/Documentation/devicetree/bindings/sram/sram.yaml
-> +++ b/Documentation/devicetree/bindings/sram/sram.yaml
-
-> @@ -186,3 +187,17 @@ examples:
->              reg = <0x1ff80 0x8>;
->          };
->      };
-> +
-> +  - |
-> +    sram@e63c0000 {
-> +        compatible = "mmio-sram";
-> +        reg = <0xe63c0000 0x1000>;
-
-Is there any specific reason you converted the example from 64-bit to
-32-bit addressing?
-All Renesas SoCs using this have #address-cells and #size-cells = <2>.
+They have been merged into the aspeed tree for submission to 5.5.
 
 Thanks!
 
-> +        #address-cells = <1>;
-> +        #size-cells = <1>;
-> +        ranges = <0 0xe63c0000 0x1000>;
-> +
-> +        smp-sram@0 {
-> +            compatible = "renesas,smp-sram";
-> +            reg = <0 0x10>;
-> +        };
-> +    };
+Joel
 
-Gr{oetje,eeting}s,
-
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+>
+> Tao Ren (4):
+>   ARM: dts: aspeed: add dtsi for Facebook AST2500 Network BMCs
+>   ARM: dts: aspeed: cmm: include dtsi for common network BMC devices
+>   ARM: dts: aspeed: minipack: include dtsi for common network BMC
+>     devices
+>   ARM: dts: aspeed: yamp: include dtsi for common network BMC devices
+>
+>  arch/arm/boot/dts/aspeed-bmc-facebook-cmm.dts | 66 ++++---------
+>  .../boot/dts/aspeed-bmc-facebook-minipack.dts | 59 ++++--------
+>  .../arm/boot/dts/aspeed-bmc-facebook-yamp.dts | 62 +-----------
+>  .../dts/facebook-netbmc-ast2500-common.dtsi   | 96 +++++++++++++++++++
+>  4 files changed, 136 insertions(+), 147 deletions(-)
+>  create mode 100644 arch/arm/boot/dts/facebook-netbmc-ast2500-common.dtsi
+>
+> --
+> 2.17.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
