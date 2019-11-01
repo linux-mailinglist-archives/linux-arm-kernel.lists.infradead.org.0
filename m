@@ -2,79 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95A35EC2DE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 13:42:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B136EC2F5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 13:43:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R/Io1TDculi07pDWANG8XU8ejupy4YkvFX+vjUyFZBE=; b=cFr9upGatcz6xp
-	TlrmbSZ1KfR5I8EUYZEHLG6bvS3CwJkF860oBJYMJfz52/Dqqakvt4pKTHMhjc2bDrrhjhedZWHZn
-	qb5qYrdxD7T+05zxAruFogZrgm2B/sU6G+wQfNzYfc9nljaKpC4AQQirn4l5rSO1FMGVbcuL2SGLc
-	3ubhlHaojx40zHOZe+DIYdJmTH0UhDsB3JhjCa3uOAKCMtp6rKVtPEGxBMcdeojWgYicQDEo1JdCU
-	GeZHX7lz9YM5E+oSf4U7qFxzKCV7oByW7VFHO6UTnJPgh5jVPj9IdWRDkI+hPm9HEkIS68FWLorlI
-	qzsCbBmo/UBq+h/dfWfg==;
+	List-Owner; bh=hWb7doDzhG7tWt/2wMTCH4sJLiSi9e2Hzmdh4v6Ut+w=; b=UMNFCY2H8YI98a
+	kFMw/8N4G8c+x6ivdB6TBsegsdAxiQvTT6+WUTfeyeXC5zmsJmtJFgw88la7ixtxN03NLivyshgaz
+	uOuBK6ujqed95l7Mebc3E+yvPpruxoZaMDos5nR6pbHb4Ix0zHkw2RIFnQNrEKRPWsW9c9pIzdbbs
+	N3hXigi5fqT3SaZvAfOOK+amDzOFXuAp2lOwrOJZhCXmzs8wSYIfvg5ckfTpcVZN8UnxIEk8ATxTq
+	78hQNB0pi64UFd+Nu0gELKodkTG9FJKFt+WZFN4+hQQdqtl5nRmN9LKr8/bittXSrz4Y0lhGpArAM
+	qcikqZAuomIyIA+bfNHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQWG6-0007pN-1h; Fri, 01 Nov 2019 12:42:30 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1iQWGr-000055-WF; Fri, 01 Nov 2019 12:43:18 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQWFv-0007n4-T5
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 12:42:21 +0000
-Received: by mail-lf1-x144.google.com with SMTP id j14so7133664lfb.8
+ id 1iQWFv-0007n9-Vp
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 12:42:22 +0000
+Received: by mail-lf1-x141.google.com with SMTP id v4so7126232lfd.11
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 01 Nov 2019 05:42:17 -0700 (PDT)
+ Fri, 01 Nov 2019 05:42:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=7uK8xEnPEigQ7dFIza6M7Wg35/gDKz/RHXvPNwcggqY=;
- b=FJGEyUjDMyY3qQwDxrXdaq6kbDtEuWaQ9DdM3JQbmkDv5/TqT279el/27e2uU9No1a
- f+iz8Vxf6Hy5Yia656Z3D2IFrlqCrNAHpa+4MZwbyXZwnzKLGOuyKeoeouKUynNENL+w
- 9N/0jeI/nf5AWsvbX8qp/uDqSP/sxEhYzWMsk=
+ bh=IwcdyWxRDO/TUjQjvqfZVlSTaDYPWlQZLs741mWfW6c=;
+ b=EBWLnh2gewMrrOR7Ur4LtjqcL3qopz+JE1MaR/3SxQxLBmY2+j/GbFh12o1lOdzalc
+ ZRBnxmxYZCyK/rBsgZu94RdJDHriGBjSx7Za5We9/D7NfeWht012JDaNZ7n9PZuuewps
+ BAJRmnhCZcl0RMHcCXhFwHJnb4m8Sqwg157Iw=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=7uK8xEnPEigQ7dFIza6M7Wg35/gDKz/RHXvPNwcggqY=;
- b=JGlehW+tZey0Ao78lCkrYcQmTq/SXsIyyZDZKJaBeVjljvOTbkRwrwF+o2WUae1DI9
- 6LlNAwV92M9kgyyAd6HvP1dGIA2G0wki0e+HUeqK82XsG5tw6TEMTyuRm8XBUh7OxETJ
- GhYANA583/eb12FMX3u0byEMCPMwdrEygArC13Q9K3norqzro1Mlo1sx08ORaI069TdB
- PDVmokVzXJuckfv7JpK2Ys3Al9iK0rCEj6nkcmDzh+3h4l43542vqQZ5dulervULYeqo
- 0Rmf5wOanATIycHnl7lQND7OZpC4zUnvqps5b4gHJcUiGtq8NhTe7m0o6eJftX6YNwoi
- Un7Q==
-X-Gm-Message-State: APjAAAWBcue5SzGQnchCGxJxwaW9KiIIsPJH6UC6Umct+2vcvYWvwb2e
- yv5io8EgDuV/ELRyiw5mN7w0ahUSocFkdiIU
-X-Google-Smtp-Source: APXvYqx10tC45xnMYXxbHsIhOZZte50RDX5EOtgZaSoKO0iY2QuiQYHpnCYFw+LsHLxAu07eF6ZXqA==
-X-Received: by 2002:ac2:424c:: with SMTP id m12mr7265781lfl.140.1572612136042; 
- Fri, 01 Nov 2019 05:42:16 -0700 (PDT)
+ bh=IwcdyWxRDO/TUjQjvqfZVlSTaDYPWlQZLs741mWfW6c=;
+ b=lFP1UpydiD6trNkAmZzbXzeWPZjlDLUt7d83dBFF0rP4ZUIN9SbEwxsg9agqltBc69
+ Q4vMRLH/TPGczsGT9ygbE3vEtIf4V1YzfeJf0yKDRFv9xdqHriRuOIutNdPR2WQZIQI0
+ sGH04mAjrY5VfKK2lVcl9pUk4PwXNA6CwD75I6QM/YeG17l4scLke+tRl3So0ja82ver
+ 5RL1QEVC4jZUu8QfaYzXcoE5g5svuR7GXSRxiOV2UrYzupCRIxqCuLDH6OGKOUAUup+u
+ RisjcudCT3Fbxxl7C0BMteOUuo3GivaOJ9mqbP/+7kKW0PJq8IHzOKhwxWZaEgbYf5yn
+ a19w==
+X-Gm-Message-State: APjAAAVzQNZ9EmrGy4QBx5UPYMdDeL81e4yU1UYe/X3zyANtaDntAvkk
+ yB+pw8X42dcbaoz35Q5Kkz4fQxOkwkld0SGx
+X-Google-Smtp-Source: APXvYqxzoeTf3Ohah/Hpr41qNMeO2Vmhemx5HLuusE1IMFHrUr2Wo8tZj5QwdBFSwyhHAjtrni+Ssw==
+X-Received: by 2002:ac2:5295:: with SMTP id q21mr7028523lfm.93.1572612137175; 
+ Fri, 01 Nov 2019 05:42:17 -0700 (PDT)
 Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id o26sm2458540lfi.57.2019.11.01.05.42.14
+ by smtp.gmail.com with ESMTPSA id o26sm2458540lfi.57.2019.11.01.05.42.16
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 01 Nov 2019 05:42:15 -0700 (PDT)
+ Fri, 01 Nov 2019 05:42:16 -0700 (PDT)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
  Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v3 01/36] soc: fsl: qe: remove space-before-tab
-Date: Fri,  1 Nov 2019 13:41:35 +0100
-Message-Id: <20191101124210.14510-2-linux@rasmusvillemoes.dk>
+Subject: [PATCH v3 02/36] soc: fsl: qe: drop volatile qualifier of struct
+ qe_ic::regs
+Date: Fri,  1 Nov 2019 13:41:36 +0100
+Message-Id: <20191101124210.14510-3-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191101124210.14510-1-linux@rasmusvillemoes.dk>
 References: <20191018125234.21825-1-linux@rasmusvillemoes.dk>
  <20191101124210.14510-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_054219_937217_BB770114 
-X-CRM114-Status: GOOD (  10.35  )
+X-CRM114-CacheID: sfid-20191101_054220_045884_146248B3 
+X-CRM114-Status: GOOD (  12.78  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,26 +105,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The actual io accessors (e.g. in_be32) implicitly add a volatile
+qualifier to their address argument. Remove volatile from the struct
+definition and the qe_ic_(read/write) helpers, in preparation for
+switching from the ppc-specific io accessors to generic ones.
+
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- drivers/soc/fsl/qe/qe.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/soc/fsl/qe/qe_ic.c | 4 ++--
+ drivers/soc/fsl/qe/qe_ic.h | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/soc/fsl/qe/qe.c b/drivers/soc/fsl/qe/qe.c
-index 417df7e19281..2a0e6e642776 100644
---- a/drivers/soc/fsl/qe/qe.c
-+++ b/drivers/soc/fsl/qe/qe.c
-@@ -378,8 +378,8 @@ static int qe_sdma_init(void)
- 	}
+diff --git a/drivers/soc/fsl/qe/qe_ic.c b/drivers/soc/fsl/qe/qe_ic.c
+index 9bac546998d3..791adcd121d1 100644
+--- a/drivers/soc/fsl/qe/qe_ic.c
++++ b/drivers/soc/fsl/qe/qe_ic.c
+@@ -171,12 +171,12 @@ static struct qe_ic_info qe_ic_info[] = {
+ 		},
+ };
  
- 	out_be32(&sdma->sdebcr, (u32) sdma_buf_offset & QE_SDEBCR_BA_MASK);
-- 	out_be32(&sdma->sdmr, (QE_SDMR_GLB_1_MSK |
-- 					(0x1 << QE_SDMR_CEN_SHIFT)));
-+	out_be32(&sdma->sdmr, (QE_SDMR_GLB_1_MSK |
-+		 (0x1 << QE_SDMR_CEN_SHIFT)));
- 
- 	return 0;
+-static inline u32 qe_ic_read(volatile __be32  __iomem * base, unsigned int reg)
++static inline u32 qe_ic_read(__be32  __iomem *base, unsigned int reg)
+ {
+ 	return in_be32(base + (reg >> 2));
  }
+ 
+-static inline void qe_ic_write(volatile __be32  __iomem * base, unsigned int reg,
++static inline void qe_ic_write(__be32  __iomem *base, unsigned int reg,
+ 			       u32 value)
+ {
+ 	out_be32(base + (reg >> 2), value);
+diff --git a/drivers/soc/fsl/qe/qe_ic.h b/drivers/soc/fsl/qe/qe_ic.h
+index 08c695672a03..9420378d9b6b 100644
+--- a/drivers/soc/fsl/qe/qe_ic.h
++++ b/drivers/soc/fsl/qe/qe_ic.h
+@@ -72,7 +72,7 @@
+ 
+ struct qe_ic {
+ 	/* Control registers offset */
+-	volatile u32 __iomem *regs;
++	u32 __iomem *regs;
+ 
+ 	/* The remapper for this QEIC */
+ 	struct irq_domain *irqhost;
 -- 
 2.23.0
 
