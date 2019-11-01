@@ -2,93 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27278EC4C4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 15:32:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18829EC4C7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 15:32:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hZX2W8/4KSh00FzqGjsmmCkHgxcfG/IEPb+Hte+nLbA=; b=B6IJsZ+7A5pZJR
-	tf1nQUQmmNn99yky85VRU7Plp534y0LSlPe9MY5zf+/XHsnF5RtS4bKSoMJBPlK3l3ZLr3hlvnaAZ
-	ALCq53DYiZCXimgryGXUi8IuLTyxmZ8ObJuvENTVKh4A/exC+GbIDJLNm5zXeDk/NjNTnkLjf3TAv
-	CqTFbGZdiGaAj9OSIa12MLjp+76Z+hAS4CcjgDurRSP7jARXBwIEniZkLSz9uPHC6tIvMax6qCnLL
-	UEAUFYDJvfF0ewQCNktrBsrNs/gppQ/fmtpwQR0Ig3nBTaA2JZk5Em4O8F8KJdUi4zMFRHVSgaezg
-	W9G/LrWOCsXh7T+i1Hmg==;
+	List-Owner; bh=ZYDUWEHZTh3SbDHcPSHkPpNcdRRLl80oMOLG7gzEkmY=; b=DB0jDpnS9Mluub
+	qWHPm5/n1qMGimVDn60HqEhtjGOStBcpwZ+WAkKBIryY/KOyZUk2cMy/OLOJ/Qo85RD+ill6IqufR
+	VQUNJyhj16BEPJWGupqCpvaiXCfzcjty1tH3WONafa8AmNsTn7y0AvYsIehdI3Az6cPmLxyKJjqW/
+	iLf3/1p3KMH04flJk+TqBSpYSYqiz7N+fV1N+inhQQAXUr269ZCcTRP5PaAn1kvhUjSYPszbATbyd
+	99q8P2IgZ3y1J0z/Xo9HZyvkCV+RuSrUWV0yrVHR9+JIKWSAvSQMNs4lkuK8V2Ez/DXB0HNPMHOP4
+	6i+YyLjpv/FBMBf9/S6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQXyA-0005mE-Oq; Fri, 01 Nov 2019 14:32:06 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQXxq-0005fp-03; Fri, 01 Nov 2019 14:31:48 +0000
-Received: by mail-pg1-x541.google.com with SMTP id r1so6586230pgj.12;
- Fri, 01 Nov 2019 07:31:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=2FrXDkN5ZNQ5+RGqx6Mrb8PAqmL7u63EHey24e7/ywQ=;
- b=oKlSmGu0l/QNsOmfcHoqvh5d2HYh7/VJfA3eELWS00z9HspCj6ziNT3qNtmtXxVKhG
- /vCFVTNxv+a7lZm6fQD+5HMGXDtNWu4ixskrHf/fxeAKHOos596BB/JiRvJ755+4vnGM
- nMb+cz/eWsPvmTC/FtInM60g+zC92ick5Q0KU5+4pkYcDA80pFrVBk31mqtWezAyU+7v
- O8oyQgfEzBDPa0Rv1Cd0SfY/do5hILcfNRMFbg+3UNg5pNTe191UC7s7l9QZjWRWFv3V
- rGKWYvmp9uaT0wQq/UmCj+HxrZRHN46GnjnLKx7uNHJbzXRjRQj1wvn7QSodQnbJhdNT
- lsLA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=2FrXDkN5ZNQ5+RGqx6Mrb8PAqmL7u63EHey24e7/ywQ=;
- b=J3zPqJKyZBCSIlweML7pk2E44XKzbiz152T3A/natC//BMgFeQebYI+BdR2+W7dMB+
- CEZN1Bot4jZgXUsguGhnozyFwjN6sppGL1mHOIv3jKmxm64wF5SIuLUkH08iJhK9lH8p
- stWtzEM2fV6EmBo441LXR1JJZ6+F00Q37Rez8YQuguhD8Y+DMTecDc9Qn2l8grpfMKoO
- NT/zQw28TMma2N4KYd9oMixg1B9EQglTm0Rd01wvpzQfYRzz2oGe9JI55yEMRUWbLsko
- f1d3NN0Qmm/M6z+t41KDTKBgCYWDjKSBpHOjQ4C6ft/+WREkaqVGstIMKpSl5kuR+uHN
- 5tew==
-X-Gm-Message-State: APjAAAWfKAsZsiIuxcr+0GGxO2ROkqUGDhG8u6tlb4l33mcdAo8/Nc+E
- lN4kOgy9g3UR5jSeecMDBwE=
-X-Google-Smtp-Source: APXvYqwMma5R3MDVUeyvdrFzn/WU1yusLdcF5o5dfhV+xy+nI2ygjZLpe9NmzO0LZq+qPjbUw3w8YA==
-X-Received: by 2002:a63:1c06:: with SMTP id c6mr13721047pgc.417.1572618705268; 
- Fri, 01 Nov 2019 07:31:45 -0700 (PDT)
-Received: from localhost.localdomain ([45.114.62.165])
- by smtp.gmail.com with ESMTPSA id x9sm9273061pje.27.2019.11.01.07.31.42
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 01 Nov 2019 07:31:44 -0700 (PDT)
-From: Anand Moon <linux.amoon@gmail.com>
-To: Rob Herring <robh+dt@kernel.org>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Jerome Brunet <jbrunet@baylibre.com>,
- Neil Armstrong <narmstrong@baylibre.com>,
- Kevin Hilman <khilman@baylibre.com>
-Subject: [RFC-next 1/1] arm64: dts: meson: odroid-c2: Enable SCPI DVFS for cpu
-Date: Fri,  1 Nov 2019 14:31:26 +0000
-Message-Id: <20191101143126.2549-2-linux.amoon@gmail.com>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191101143126.2549-1-linux.amoon@gmail.com>
-References: <20191101143126.2549-1-linux.amoon@gmail.com>
+	id 1iQXyq-0006Ri-68; Fri, 01 Nov 2019 14:32:48 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iQXyh-0006RK-Tx
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 14:32:41 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6E65431F;
+ Fri,  1 Nov 2019 07:32:39 -0700 (PDT)
+Received: from blommer (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 64A1B3F718;
+ Fri,  1 Nov 2019 07:32:38 -0700 (PDT)
+Date: Fri, 1 Nov 2019 14:32:32 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH] arm64: perf: Simplify the ARMv8 PMUv3 event attributes
+Message-ID: <20191101143231.GA13020@blommer>
+References: <1572407177-48229-1-git-send-email-zhangshaokun@hisilicon.com>
+ <20191031160804.GA28325@willie-the-truck>
+ <20191101085319.GA3508@blommer>
+ <20191101103616.GA2392@willie-the-truck>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191101103616.GA2392@willie-the-truck>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_073146_077927_8EAD62DD 
-X-CRM114-Status: GOOD (  12.38  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191101_073240_014547_CEA7A24E 
+X-CRM114-Status: GOOD (  19.32  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (linux.amoon[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,50 +63,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org
+Cc: Shaokun Zhang <zhangshaokun@hisilicon.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable System Control and Power Interface, DVFS for cpu
-with setting 1.54 GHz as max freq in the initial SCPI tables
-loaded by the BL2, i.e. packed with U-Boot.
+On Fri, Nov 01, 2019 at 10:36:17AM +0000, Will Deacon wrote:
+> On Fri, Nov 01, 2019 at 08:53:19AM +0000, Mark Rutland wrote:
+> > On Thu, Oct 31, 2019 at 04:08:04PM +0000, Will Deacon wrote:
+> > > On Wed, Oct 30, 2019 at 11:46:17AM +0800, Shaokun Zhang wrote:
+> > > > For each PMU event, there is a ARMV8_EVENT_ATTR(xx, XX) and
+> > > > &armv8_event_attr_xx.attr.attr. Let's redefine the ARMV8_EVENT_ATTR
+> > > > to simplify the armv8_pmuv3_event_attrs.
+> > > > 
+> > > > Cc: Will Deacon <will@kernel.org>
+> > > > Cc: Mark Rutland <mark.rutland@arm.com>
+> > > > Signed-off-by: Shaokun Zhang <zhangshaokun@hisilicon.com>
+> > > > ---
+> > > >  arch/arm64/kernel/perf_event.c | 189 ++++++++++++++---------------------------
+> > > >  1 file changed, 65 insertions(+), 124 deletions(-)
+> > > > 
+> > > > diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
+> > > > index a0b4f1bca491..d0f084939bcf 100644
+> > > > --- a/arch/arm64/kernel/perf_event.c
+> > > > +++ b/arch/arm64/kernel/perf_event.c
+> > > > @@ -159,132 +159,73 @@ armv8pmu_events_sysfs_show(struct device *dev,
+> > > >  }
+> > > 
+> > > [...]
+> > > 
+> > > > +	(&((struct perf_pmu_events_attr[]) { \
+> > > > +		{ .attr = __ATTR(name, 0444, armv8pmu_events_sysfs_show, NULL), \
+> > > > +		  .id = config, } \
+> > > > +	})[0].attr.attr)
+> > > 
+> > > I don't get the need for the array here. Why can't you do:
+> > > 
+> > > 	(&((struct perf_pmu_events_attr) {
+> > > 		.attr = ...,
+> > > 		.id = ...,
+> > > 	}).attr.attr)
+> > 
+> > You need want &(obj.attr.attr) rather than &(obj).attr.attr, i.e.
+> > 
+> > #define ARMV8_EVENT_ATTR(name, config) \
+> > 	(&((struct perf_pmu_events_attr) { \
+> > 		.attr = __ATTR(name, 0444, armv8pmu_events_sysfs_show, NULL), \
+> > 		.id = config, \
+> > 	}.attr.attr))
+> >  
+> > ... which compiles for me.
+> 
+> Weird, the following compiles fine for me with both GCC and clang:
+> 
+> #define ARMV8_EVENT_ATTR(name, config)						\
+> 	(&((struct perf_pmu_events_attr) {					\
+> 		.attr = __ATTR(name, 0444, armv8pmu_events_sysfs_show, NULL),	\
+> 		.id = config,							\
+> 	}).attr.attr)
 
-Fixes: f7bcd4b6f698 (ARM64: dts: meson-gxbb-odroidc2: Disable SCPI DVFS)
-Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Cc: Jerome Brunet <jbrunet@baylibre.com>
-Cc: Neil Armstrong <narmstrong@baylibre.com>
-Cc: Kevin Hilman <khilman@baylibre.com>
-Suggested-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Signed-off-by: Anand Moon <linux.amoon@gmail.com>
----
-In discuss on other mailing list thread below.
-[0] https://lkml.org/lkml/2019/8/30/186
+Works for me, too (I'm using the kernel.org crosstool GCC 8.1.0).
 
-Tested on mainline U-Boot 2019.07-1 (Aug 01 2019 - 23:58:01 +0000) Arch Linux ARM
-on archlinux distro.
----
- arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+I must've messed up locally such that I had (&obj).attr.attr.
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts b/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
-index 6ded279c40c8..9678784aa1a9 100644
---- a/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
-@@ -307,7 +307,7 @@
- };
- 
- &scpi_clocks {
--	status = "disabled";
-+	status = "okay";
- };
- 
- /* SD */
--- 
-2.23.0
+> > It'd be worth checking that yields a working data structure at runtime.
+> 
+> ...and perf list works as expected.
 
+Perfect.
+
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
