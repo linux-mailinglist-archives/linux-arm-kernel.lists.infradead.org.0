@@ -2,79 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 735BBECAFC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 23:12:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4A65ECB0D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 23:13:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u0sYw9VkBZ219IQwYUBUpm4475fuaSSl1zM4nVBroXM=; b=bQly73Dv9Fckg+
-	PWPsADeBWHJSwKIk4eOCMuJVRVwQVykpdO0LMQcUmrGgrNlkXKZZJXd7CL8AL5L0AtgZm1f9YLy3q
-	ZiaGT/BRs3A4Q6AhMPXTiNBCuOmVcxSb0FQ234TTJhjTadj8ZVN+n4FocrTR/ecBRaQUHKGLiDL9s
-	995eRwWe1qiAcogCVm25kE2kzbYWnbTF0Ju8sZhE8szKPh8WOhICzQwmMMPVkts/f2aALY43xRaJu
-	mP2xhNuQFSXElMjQDbgeVfU0LKkvVckAhA5VnX4W/pCQEfflSyqaXVXxIYDBShJ9GLYMSKg/DyZcw
-	GKULQhe6i81EjTx+dCGA==;
+	List-Owner; bh=QMzMIckDD8LXvaTnwwv1OTj6jHEPyRyDFXVu0f329RI=; b=AfzwZrFeD29qh/
+	4jZxaNNnjHaZGSjB6Ejwe0fcfoL0cFO/zmH/JvBnTOh5pjnhM10ndvGkAnpUWCrJQhDca6OOiwMV5
+	s/+bVJaFrBCbHUd0+iY7Ef/MCgBq4M/R0i1+fSgoOL68gg0YPVeFWyH8tMiXtH2covjLw0Y/aDLV1
+	Zuw5X4X8J9gWAqenjlYEL4f8Y8dZ8s6FH/ThW8sWDSALIIRydDgSOqCFGJgeuvbEVZkhrd1xo19Vb
+	vvTVUtNFurn9DXgibmH2uj4m1kDvLuK3TmE929xTM+k9Wta6o2fMaFSG5ejBALl++klzj7Rc2f2lo
+	5u/A8LNisic4OzBOBBAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQf9K-0007fA-OO; Fri, 01 Nov 2019 22:12:06 +0000
-Received: from mail-pl1-x649.google.com ([2607:f8b0:4864:20::649])
+	id 1iQfAL-00008q-3D; Fri, 01 Nov 2019 22:13:09 +0000
+Received: from mail-pf1-x44a.google.com ([2607:f8b0:4864:20::44a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQf9D-0007dn-3d
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 22:12:00 +0000
-Received: by mail-pl1-x649.google.com with SMTP id u9so1472057plq.1
+ id 1iQf9G-0007ey-1H
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 22:12:04 +0000
+Received: by mail-pf1-x44a.google.com with SMTP id r187so8428325pfc.16
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 01 Nov 2019 15:11:58 -0700 (PDT)
+ Fri, 01 Nov 2019 15:12:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=g+FZBFl4/jtEHUrecvJjSJDyfo/JMaY/R05FvQww7Ew=;
- b=H/ovEUCUoKIya9z0Y7W61l4KBSDBXc8TsOG7hs/OHvt0y9UAR+pD4g9nrrXBU0wrQq
- V3Xv8T9+jQ0lOgGsjG3GZJPhp4lbn2XfTTMZHHRaekqYKuH/T4m9iLr9VI7TsiDUvt4b
- sDDmHgKXeSxdhxsfj4H9HDNQw/ZR4RnEHqpPLuKyQIVjBOuJmpWE7s70NonvITbd0/PO
- MppftbHIINpO8szfUH+nJLRx0qdne3AgLd2YbZDV4fUfMivPV9oSUatIlASqWKzwXntJ
- HeG1Ulhlt49Dmw0e+yx1QfE3/39NeumvMU64mQDoyIjIx+F8pyhPORKjx+0AdnDSYiwm
- aHCw==
+ :cc; bh=OH2SjYe0B8esWxTAcCgR+62MsPomBC+RzRSTMU1rFk8=;
+ b=Q0ypX2RRPc9BCIL2STVCLvfQgO8tit2Vbhk/ba4d6hjxn/SWRm9m0P3+RgrNT2Mz6L
+ sR+GG/DQFJrsOpiRvBMZe/oQtxBn0b/Aw4IaKtUdtT9BIZjbq98xY+73BjaIsIx8Adyg
+ M5/Y6BEGGBeU1F0DiCWwVE0YrYEJUkeeSdYpDOR4oINiHvrg4NRPL6mRj2HcLoQWQnuD
+ PYDoVjgxtSwP/n5hXyxm9HZngM/5zcLb8ANWcQjpR6xl/qqaKAenvDZks2pyB05/I9H1
+ +gQ/L2rTv3QAg1ciPxxnHi9CW/af4LKSwTNtbc9o4woUjjbzkrkmW3ha88Kih8MYyqXD
+ oGUQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=g+FZBFl4/jtEHUrecvJjSJDyfo/JMaY/R05FvQww7Ew=;
- b=OZxJAdVm1/kCOyqjOqe2AULm4My9qR+Dad+5qOwdFjzPGuNW63xUl6Bx4ZohPxAZ3M
- 6njbLUcp4irZM2+bpWwghZ61ACdS4Iu1FWP4rSoiVeIUmrhwUn0AZdoF9Xn28jsbmPSP
- iEb9/rCMTUGvhQFE0QBTTeVfDxZ9BDHgpcRVbqjW8i4WpdqzHQ9qKuyNct99pgxtZSGF
- dMr18VggHmNE9/PuD905mb7bAonX/RCH14VCxeSX1XyoUmR3mUezDNnlT4YYcpoaGtRg
- uzjmOIRrB1TVZK5zyiANoTolXytXLSjO9wdXgKrBwJRQ+q7K+VE4lw6Kf5hkpVojB670
- hpJA==
-X-Gm-Message-State: APjAAAUks6fpwg3vdWBd9tW8qE3/5u3qEJL8vyxNWYwZLthy9SABM70a
- 7AIMjWlAgaWAGQC3JhG40IiHQ7P96jdr4Mxi0/E=
-X-Google-Smtp-Source: APXvYqwWJizqznswz2NLt2QFw2UmOTSRfvX8QdaNGFlpQWjP8Kjaeosw9eI19g7pulu6RKNVswWCRLsv6MO42umNMPw=
-X-Received: by 2002:a63:6744:: with SMTP id b65mr15837971pgc.13.1572646317280; 
- Fri, 01 Nov 2019 15:11:57 -0700 (PDT)
-Date: Fri,  1 Nov 2019 15:11:34 -0700
+ bh=OH2SjYe0B8esWxTAcCgR+62MsPomBC+RzRSTMU1rFk8=;
+ b=b3VrUfTY3QLjdUtVMnLCKjgS9JqdDHGA8E8jh034xCr7eQXPc0DDcUC5L7Hf6DlYOY
+ hGL4rvJSxaGw+ekKQ+SywHlpdEhtR5I5/0ibHo9ZSeNVWO0kbA32EfFR4XNDjKv2qMtr
+ NzefHqPjlId318nO+sr7YNHaae09Fi3uy4Ax/gDZ3NsoM8Evzd20a5ttIyUj8ykq4TE3
+ tjlfbke3xsMEytRBCUZ66U4eMQJxvFFbNPSUcH18XLjbfV3ZYxG8Y2AwxQhZWh55Af1I
+ PoOMNuUfJP4UBeebDOITlTu3axDupb07xZTVUI8HoZVRGfn7XKCPoFVpOS6PFGMEu9cv
+ sxcg==
+X-Gm-Message-State: APjAAAUrGC0FPdLVLhinnoah/WqwkjXU7szd2sYEBKhzuYWcZOqYafFf
+ C1dApUybWyc5sUrodxFn0NfFnOIu8VwvDFUrLic=
+X-Google-Smtp-Source: APXvYqyE5ghbfjaqrUWmTezRWNfWGA0WB8HP1ZsfnYTWo7dD5ai7FSDVVzfSZssPNsNmD4T/gU2ZN0nL/1GoUaJgugM=
+X-Received: by 2002:a63:e454:: with SMTP id i20mr15822954pgk.319.1572646319823; 
+ Fri, 01 Nov 2019 15:11:59 -0700 (PDT)
+Date: Fri,  1 Nov 2019 15:11:35 -0700
 In-Reply-To: <20191101221150.116536-1-samitolvanen@google.com>
-Message-Id: <20191101221150.116536-2-samitolvanen@google.com>
+Message-Id: <20191101221150.116536-3-samitolvanen@google.com>
 Mime-Version: 1.0
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20191101221150.116536-1-samitolvanen@google.com>
 X-Mailer: git-send-email 2.24.0.rc1.363.gb1bccd3e3d-goog
-Subject: [PATCH v4 01/17] arm64: mm: avoid x18 in
- idmap_kpti_install_ng_mappings
+Subject: [PATCH v4 02/17] arm64/lib: copy_page: avoid x18 register in
+ assembler code
 From: Sami Tolvanen <samitolvanen@google.com>
 To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
  Steven Rostedt <rostedt@goodmis.org>,
  Masami Hiramatsu <mhiramat@kernel.org>, 
  Ard Biesheuvel <ard.biesheuvel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_151159_146465_5361F4FC 
-X-CRM114-Status: GOOD (  10.24  )
+X-CRM114-CacheID: sfid-20191101_151202_087276_DC708E30 
+X-CRM114-Status: UNSURE (   9.49  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:649 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:44a listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
@@ -112,126 +113,89 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-idmap_kpti_install_ng_mappings uses x18 as a temporary register, which
-will result in a conflict when x18 is reserved. Use x16 and x17 instead
-where needed.
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 
+Register x18 will no longer be used as a caller save register in the
+future, so stop using it in the copy_page() code.
+
+Link: https://patchwork.kernel.org/patch/9836869/
+Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+[Sami: changed the offset and bias to be explicit]
 Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
 Reviewed-by: Mark Rutland <mark.rutland@arm.com>
 ---
- arch/arm64/mm/proc.S | 63 ++++++++++++++++++++++----------------------
- 1 file changed, 32 insertions(+), 31 deletions(-)
+ arch/arm64/lib/copy_page.S | 38 +++++++++++++++++++-------------------
+ 1 file changed, 19 insertions(+), 19 deletions(-)
 
-diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
-index a1e0592d1fbc..fdabf40a83c8 100644
---- a/arch/arm64/mm/proc.S
-+++ b/arch/arm64/mm/proc.S
-@@ -250,15 +250,15 @@ ENTRY(idmap_kpti_install_ng_mappings)
- 	/* We're the boot CPU. Wait for the others to catch up */
- 	sevl
- 1:	wfe
--	ldaxr	w18, [flag_ptr]
--	eor	w18, w18, num_cpus
--	cbnz	w18, 1b
-+	ldaxr	w17, [flag_ptr]
-+	eor	w17, w17, num_cpus
-+	cbnz	w17, 1b
+diff --git a/arch/arm64/lib/copy_page.S b/arch/arm64/lib/copy_page.S
+index bbb8562396af..290dd3c5266c 100644
+--- a/arch/arm64/lib/copy_page.S
++++ b/arch/arm64/lib/copy_page.S
+@@ -34,45 +34,45 @@ alternative_else_nop_endif
+ 	ldp	x14, x15, [x1, #96]
+ 	ldp	x16, x17, [x1, #112]
  
- 	/* We need to walk swapper, so turn off the MMU. */
- 	pre_disable_mmu_workaround
--	mrs	x18, sctlr_el1
--	bic	x18, x18, #SCTLR_ELx_M
--	msr	sctlr_el1, x18
-+	mrs	x17, sctlr_el1
-+	bic	x17, x17, #SCTLR_ELx_M
-+	msr	sctlr_el1, x17
- 	isb
+-	mov	x18, #(PAGE_SIZE - 128)
++	add	x0, x0, #256
+ 	add	x1, x1, #128
+ 1:
+-	subs	x18, x18, #128
++	tst	x0, #(PAGE_SIZE - 1)
  
- 	/* Everybody is enjoying the idmap, so we can rewrite swapper. */
-@@ -281,9 +281,9 @@ skip_pgd:
- 	isb
+ alternative_if ARM64_HAS_NO_HW_PREFETCH
+ 	prfm	pldl1strm, [x1, #384]
+ alternative_else_nop_endif
  
- 	/* We're done: fire up the MMU again */
--	mrs	x18, sctlr_el1
--	orr	x18, x18, #SCTLR_ELx_M
--	msr	sctlr_el1, x18
-+	mrs	x17, sctlr_el1
-+	orr	x17, x17, #SCTLR_ELx_M
-+	msr	sctlr_el1, x17
- 	isb
+-	stnp	x2, x3, [x0]
++	stnp	x2, x3, [x0, #-256]
+ 	ldp	x2, x3, [x1]
+-	stnp	x4, x5, [x0, #16]
++	stnp	x4, x5, [x0, #16 - 256]
+ 	ldp	x4, x5, [x1, #16]
+-	stnp	x6, x7, [x0, #32]
++	stnp	x6, x7, [x0, #32 - 256]
+ 	ldp	x6, x7, [x1, #32]
+-	stnp	x8, x9, [x0, #48]
++	stnp	x8, x9, [x0, #48 - 256]
+ 	ldp	x8, x9, [x1, #48]
+-	stnp	x10, x11, [x0, #64]
++	stnp	x10, x11, [x0, #64 - 256]
+ 	ldp	x10, x11, [x1, #64]
+-	stnp	x12, x13, [x0, #80]
++	stnp	x12, x13, [x0, #80 - 256]
+ 	ldp	x12, x13, [x1, #80]
+-	stnp	x14, x15, [x0, #96]
++	stnp	x14, x15, [x0, #96 - 256]
+ 	ldp	x14, x15, [x1, #96]
+-	stnp	x16, x17, [x0, #112]
++	stnp	x16, x17, [x0, #112 - 256]
+ 	ldp	x16, x17, [x1, #112]
  
- 	/*
-@@ -353,46 +353,47 @@ skip_pte:
- 	b.ne	do_pte
- 	b	next_pmd
+ 	add	x0, x0, #128
+ 	add	x1, x1, #128
  
-+	.unreq	cpu
-+	.unreq	num_cpus
-+	.unreq	swapper_pa
-+	.unreq	cur_pgdp
-+	.unreq	end_pgdp
-+	.unreq	pgd
-+	.unreq	cur_pudp
-+	.unreq	end_pudp
-+	.unreq	pud
-+	.unreq	cur_pmdp
-+	.unreq	end_pmdp
-+	.unreq	pmd
-+	.unreq	cur_ptep
-+	.unreq	end_ptep
-+	.unreq	pte
-+
- 	/* Secondary CPUs end up here */
- __idmap_kpti_secondary:
- 	/* Uninstall swapper before surgery begins */
--	__idmap_cpu_set_reserved_ttbr1 x18, x17
-+	__idmap_cpu_set_reserved_ttbr1 x16, x17
+-	b.gt	1b
++	b.ne	1b
  
- 	/* Increment the flag to let the boot CPU we're ready */
--1:	ldxr	w18, [flag_ptr]
--	add	w18, w18, #1
--	stxr	w17, w18, [flag_ptr]
-+1:	ldxr	w16, [flag_ptr]
-+	add	w16, w16, #1
-+	stxr	w17, w16, [flag_ptr]
- 	cbnz	w17, 1b
+-	stnp	x2, x3, [x0]
+-	stnp	x4, x5, [x0, #16]
+-	stnp	x6, x7, [x0, #32]
+-	stnp	x8, x9, [x0, #48]
+-	stnp	x10, x11, [x0, #64]
+-	stnp	x12, x13, [x0, #80]
+-	stnp	x14, x15, [x0, #96]
+-	stnp	x16, x17, [x0, #112]
++	stnp	x2, x3, [x0, #-256]
++	stnp	x4, x5, [x0, #16 - 256]
++	stnp	x6, x7, [x0, #32 - 256]
++	stnp	x8, x9, [x0, #48 - 256]
++	stnp	x10, x11, [x0, #64 - 256]
++	stnp	x12, x13, [x0, #80 - 256]
++	stnp	x14, x15, [x0, #96 - 256]
++	stnp	x16, x17, [x0, #112 - 256]
  
- 	/* Wait for the boot CPU to finish messing around with swapper */
- 	sevl
- 1:	wfe
--	ldxr	w18, [flag_ptr]
--	cbnz	w18, 1b
-+	ldxr	w16, [flag_ptr]
-+	cbnz	w16, 1b
- 
- 	/* All done, act like nothing happened */
--	offset_ttbr1 swapper_ttb, x18
-+	offset_ttbr1 swapper_ttb, x16
- 	msr	ttbr1_el1, swapper_ttb
- 	isb
  	ret
- 
--	.unreq	cpu
--	.unreq	num_cpus
--	.unreq	swapper_pa
- 	.unreq	swapper_ttb
- 	.unreq	flag_ptr
--	.unreq	cur_pgdp
--	.unreq	end_pgdp
--	.unreq	pgd
--	.unreq	cur_pudp
--	.unreq	end_pudp
--	.unreq	pud
--	.unreq	cur_pmdp
--	.unreq	end_pmdp
--	.unreq	pmd
--	.unreq	cur_ptep
--	.unreq	end_ptep
--	.unreq	pte
- ENDPROC(idmap_kpti_install_ng_mappings)
- 	.popsection
- #endif
+ ENDPROC(copy_page)
 -- 
 2.24.0.rc1.363.gb1bccd3e3d-goog
 
