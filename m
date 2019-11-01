@@ -2,78 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1916BECB40
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 23:16:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23874ECB41
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 23:16:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jSFIuWRWi5sAZJc4zYZPj20GSXSzq1zG+GUirAebXsA=; b=EKv/r2BaYpF7qI
-	VNRYgnnuCDZoXWk1PfUUe82zAaOEmvz/xy4vRvZ73oyZYXPm6yg2C8Sl/kRdt/TogS/LBCxCyZLct
-	VrGKW6UOSSy4TFckAIFOO6prrIAHQj9IhHT5QcMAlUofrWXP0sQNcTbo5cM7S1feHNvgPiwWmcwsw
-	4HsI8TVFUlwWRHCvzqHq02bvz+6PpxyorWEGRi4lc5SaWGzj6wxaL0Cxy8hDqMDQzs4AXzxr0uTif
-	a+cShHjrIHEJj/jlc3Ga9YcBXGBa24noH5c3swhbuhK6MTuAWanThnD9zPo97OSFj9xWD43bBIC3U
-	DU/AGlHHmJtCjKuj6TQA==;
+	List-Owner; bh=wgg+ynFX765AsTUmjlJn9/2mlvlVDI5jTY+W9EuxF1k=; b=ci84wJ5904ZVpZ
+	yLTtaj9HGVCLUThuZElQwEeLk/jb6J1XvyQ3qCKASOhvKzDNQWBLzjmAWxCL+gBy5Ofl0AEDVu/xP
+	md14iPYnBrtSNgyXoZ/hp5n//xVFxbXAIDixdkxPFQ3W7Hpn6M944Xg79v52WE7qkqkyp3OCbTJU+
+	oXHhx/F1K882Vx5+N6IPQogONbDryY2lxzSOUyv6gEo8Po73Ikpob3hWGt4GTb1sZeC+muLynOBqN
+	NMLyjCioyP9xZuSKKyxotLzmFVl99GSeHNuHiXtk6kymbCuDiozXb3C6SHCh9OEEky9T1Fg/sINi1
+	9v1wfmchTCjG0/qH51BA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQfD8-00049p-LC; Fri, 01 Nov 2019 22:16:02 +0000
-Received: from mail-vk1-xa4a.google.com ([2607:f8b0:4864:20::a4a])
+	id 1iQfDN-0004OD-LP; Fri, 01 Nov 2019 22:16:17 +0000
+Received: from mail-pg1-x54a.google.com ([2607:f8b0:4864:20::54a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQf9k-0008BT-1Q
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 22:12:33 +0000
-Received: by mail-vk1-xa4a.google.com with SMTP id s17so4464356vkb.5
+ id 1iQf9n-0008E0-1M
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 22:12:36 +0000
+Received: by mail-pg1-x54a.google.com with SMTP id w13so7993675pge.15
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 01 Nov 2019 15:12:30 -0700 (PDT)
+ Fri, 01 Nov 2019 15:12:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=oPoEfiJ829HFiTJF4c1zGL5TdlrTqAGNgCQhkPxdZv8=;
- b=LtAl7DtyP3CWOemlPwjpOVNnzn34lyrO0lR489D5hiJ2VdFoF7EvYDq2wfAcUETMUj
- AJJV9M7q6HlU6FTXIdD1nVIYYwLxTKh17kUwJIBUkK7g2ckd+p7WgRLwUL+U4LhnUrbS
- 88BQeTCyX9oSneGkX/XIJMANH1JIMKlq987kvfi9Jwu3IO8heBNjQe3JNyCoyIBcqE5C
- r14KyfVUCK2DPs+EL3vCGkIShUp8wmIdLEHOjtbfUl144pnEGGFEFKJlhFi/qSds+L4C
- EczTWrE0OgWD8kqUXRcCY/eBf8by4lrn14g7ldLKqA66pCBxbbWJBFgW5xjq+nWP9ZjC
- NtIw==
+ :cc; bh=uZ/kQt4EYM2LvpfCusnWoxftHyD2DxgcHTICv7X7dqw=;
+ b=odv3zPa4RgQ8s6dsoDxvbsmHF3EENGYKEFkki0g9WgsTtiUy1PWOo4QagxAFwNjlM5
+ UaXo+6ESXS0tfN9t/uaTyImKPgoUdkbU5/6mXIU+WDuhuaMZVZlToQjZBZjUeJ+XCKaN
+ AZaYtQv4cn3jcrlvgSVPiMAL2aX2o/kWtvg0ZhsbFx5XNHfG27Zn+lw1m2rgEzTuN0Qx
+ AhXuI7DUwTtXfZmNooQs1nB+s/Ns/DX1LvGMoiAbd56F3AJ+mJtqGL8w4imrJ9czieHh
+ o3BNgiNlRATQnbvYsOjBOz35StnAU9Usdu1hP8mnieHo1tIou+WOWs5WVmR96RMvFpMw
+ BkXA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=oPoEfiJ829HFiTJF4c1zGL5TdlrTqAGNgCQhkPxdZv8=;
- b=YwuGfprfys0+MM15f356l0LPoNODh8Bw60YPT+DSvySx1ulYuoZJRaiYCtUkJ6C31L
- l6IWPJok7wfKA0/fA+7WqyjFIDAc7Y+mnAeBzKK38gmeUsMZVYuElEMqNoHR5V9n0bFJ
- fKfux3byEg3cblUvrCn5vcQ59P0cTdwuoVg9KfvQC6/wQBXU0X+8rtAemSPY72zfqsYG
- TIyH0ltSpYQGKT42g6tN8ygvIQA2eK0m4do/S8yaECL6Eh+uobUDuq3+9sj8QdXSKI3q
- p3kMqfvx48oKXw22svIUTANxOdi8M6LFPM8PVLEEZr+ZlLaP1ky9Sj9bRJts2FqEFo6d
- mVcg==
-X-Gm-Message-State: APjAAAVW3abebGEtokStDoEacH0jDjk5sn5aLcNNg7DOnP+EdoG9/n2j
- M1j+DGrvwlF0aeLX6ffRqbCiCl/uA9Qb3D9gsLw=
-X-Google-Smtp-Source: APXvYqxf6pyuy2b0C7kGwVb9cMM9HBx/dT4rTM6z4dJTmBDml32z4MNPrDuebbuZ9ExwOLM18YhheN7oDa5AKWC4xdM=
-X-Received: by 2002:a67:f7d0:: with SMTP id a16mr2505843vsp.108.1572646349491; 
- Fri, 01 Nov 2019 15:12:29 -0700 (PDT)
-Date: Fri,  1 Nov 2019 15:11:46 -0700
+ bh=uZ/kQt4EYM2LvpfCusnWoxftHyD2DxgcHTICv7X7dqw=;
+ b=oIXae33PstjqHSqFeZ/VpvIisQ9zmP6RG7KnAxQjcEIFAuH10ZNfgBcYYjIOBXHM7C
+ 2yar5lEZnlRemW2x/lEqFOrTCSVHKbp8cHl092gS2kGYZBotAXijabcOb88xkGQ5Qfed
+ QOLsNhSChlCq3emQ1g/BHLeHHtBwWiCCap1/VmVW2I/cyD0soU/QpELWXPsWrhEv619D
+ veBHK2QJ8THNMWuepiSw7G+MDsR6C+ul85taZYA/6NmlhgQyT2fhv7wxjsPK590HB+cE
+ EkkrZ03orVedW9CdI/atlN4PnVhHnO2pOz8fCIld+7NEC0TkZAAwxOUdm2yuhYN/e2dL
+ aw8g==
+X-Gm-Message-State: APjAAAU9k4rjOQ1QJmtPnVHai4zRrdZKAVixxFpz1upxpjxnPNwRhO8G
+ m4xGP70hEb/QmVU7hYSFD/91JhsLP7yjZXwd19E=
+X-Google-Smtp-Source: APXvYqxnvjccMKGZa+EMFNvyVvl4JQq0YHBc8XNC8xBIuIHK+TPnyLwR96cD6M+G58PTtTiYueuKAoyE/cNOXhTJ/L8=
+X-Received: by 2002:a63:3203:: with SMTP id y3mr15810585pgy.437.1572646351983; 
+ Fri, 01 Nov 2019 15:12:31 -0700 (PDT)
+Date: Fri,  1 Nov 2019 15:11:47 -0700
 In-Reply-To: <20191101221150.116536-1-samitolvanen@google.com>
-Message-Id: <20191101221150.116536-14-samitolvanen@google.com>
+Message-Id: <20191101221150.116536-15-samitolvanen@google.com>
 Mime-Version: 1.0
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20191101221150.116536-1-samitolvanen@google.com>
 X-Mailer: git-send-email 2.24.0.rc1.363.gb1bccd3e3d-goog
-Subject: [PATCH v4 13/17] arm64: preserve x18 when CPU is suspended
+Subject: [PATCH v4 14/17] arm64: efi: restore x18 if it was corrupted
 From: Sami Tolvanen <samitolvanen@google.com>
 To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
  Steven Rostedt <rostedt@goodmis.org>,
  Masami Hiramatsu <mhiramat@kernel.org>, 
  Ard Biesheuvel <ard.biesheuvel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_151232_154447_66EB763A 
-X-CRM114-Status: GOOD (  10.77  )
+X-CRM114-CacheID: sfid-20191101_151235_131149_8BCB2142 
+X-CRM114-Status: UNSURE (   9.43  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a4a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:54a listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
@@ -111,64 +112,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Don't lose the current task's shadow stack when the CPU is suspended.
+If we detect a corrupted x18 and SCS is enabled, restore the register
+before jumping back to instrumented code. This is safe, because the
+wrapper is called with preemption disabled and a separate shadow stack
+is used for interrupt handling.
 
 Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
 Reviewed-by: Kees Cook <keescook@chromium.org>
 ---
- arch/arm64/include/asm/suspend.h |  2 +-
- arch/arm64/mm/proc.S             | 10 ++++++++++
- 2 files changed, 11 insertions(+), 1 deletion(-)
+ arch/arm64/kernel/efi-rt-wrapper.S | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/include/asm/suspend.h b/arch/arm64/include/asm/suspend.h
-index 8939c87c4dce..0cde2f473971 100644
---- a/arch/arm64/include/asm/suspend.h
-+++ b/arch/arm64/include/asm/suspend.h
-@@ -2,7 +2,7 @@
- #ifndef __ASM_SUSPEND_H
- #define __ASM_SUSPEND_H
- 
--#define NR_CTX_REGS 12
-+#define NR_CTX_REGS 13
- #define NR_CALLEE_SAVED_REGS 12
- 
- /*
-diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
-index fdabf40a83c8..5616dc52a033 100644
---- a/arch/arm64/mm/proc.S
-+++ b/arch/arm64/mm/proc.S
-@@ -49,6 +49,8 @@
-  * cpu_do_suspend - save CPU registers context
-  *
-  * x0: virtual address of context pointer
-+ *
-+ * This must be kept in sync with struct cpu_suspend_ctx in <asm/suspend.h>.
-  */
- ENTRY(cpu_do_suspend)
- 	mrs	x2, tpidr_el0
-@@ -73,6 +75,9 @@ alternative_endif
- 	stp	x8, x9, [x0, #48]
- 	stp	x10, x11, [x0, #64]
- 	stp	x12, x13, [x0, #80]
-+#ifdef CONFIG_SHADOW_CALL_STACK
-+	str	x18, [x0, #96]
-+#endif
+diff --git a/arch/arm64/kernel/efi-rt-wrapper.S b/arch/arm64/kernel/efi-rt-wrapper.S
+index 3fc71106cb2b..945744f16086 100644
+--- a/arch/arm64/kernel/efi-rt-wrapper.S
++++ b/arch/arm64/kernel/efi-rt-wrapper.S
+@@ -34,5 +34,10 @@ ENTRY(__efi_rt_asm_wrapper)
+ 	ldp	x29, x30, [sp], #32
+ 	b.ne	0f
  	ret
- ENDPROC(cpu_do_suspend)
- 
-@@ -89,6 +94,11 @@ ENTRY(cpu_do_resume)
- 	ldp	x9, x10, [x0, #48]
- 	ldp	x11, x12, [x0, #64]
- 	ldp	x13, x14, [x0, #80]
+-0:	b	efi_handle_corrupted_x18	// tail call
++0:
 +#ifdef CONFIG_SHADOW_CALL_STACK
-+	ldr	x18, [x0, #96]
-+	/* Clear the SCS pointer from the state buffer */
-+	str	xzr, [x0, #96]
++	/* Restore x18 before returning to instrumented code. */
++	mov	x18, x2
 +#endif
- 	msr	tpidr_el0, x2
- 	msr	tpidrro_el0, x3
- 	msr	contextidr_el1, x4
++	b	efi_handle_corrupted_x18	// tail call
+ ENDPROC(__efi_rt_asm_wrapper)
 -- 
 2.24.0.rc1.363.gb1bccd3e3d-goog
 
