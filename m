@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1586EBF41
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 09:36:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30E7AEBF42
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 09:36:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=dYgNsdaCEkcBidajsVo4cfsFnrxFVnXSTm7fXgXEosk=; b=eUfEmeAP/id+rp
-	YOBMoI4l64yASfDTFVIwyGoTR7I3x4+yAMYViy9UWvrwmOOHiyWpmQCX0Mlwo/RB66cyR5GZEMf9W
-	T7r9KIjGfi/x/KyNmPSoYJDYzOqk5m6KPdMlR93PGM2N19LU49lgUi11LtDUmVGNfyX/gX/i9IcWq
-	ZEhQGICoKlLRXhKVwMMIOF5q9QteVnzW9oDhXqPUOxilqycMrO2Za0bPywA+FkZSyCaa2wptoHrMW
-	ebCTZZLyvH90YtC86CM0xOCfeCWAgz36xoBb5R0rLxBOym6O3O69tc/PbiAWWnkjg7JCC6w3gKkR4
-	9Npm3E1l25zvtlkx1WHw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ix6bWFtvlQKJOfDCxhNwQ0fEnEQcflxqHezhxFIFdXo=; b=W/J7bhKppkJDLy
+	uPlIXHrrjv+BAVCZrYls/Hpi1TR5A2Ns3ZtfisWL+f5rlozw7SCpEReoxUA0nAZ0myJKaFpZpYdFu
+	JMt3Q3ZKi9s1ApWOYv/ihly39Stx5C/e/kJqIxdEKvS6dji4x+yWjZ2UYQa7H8IQ7DWGuGVKw+Ffc
+	zqjeRj4YTq+3/w3GiTvvyHDGCKBLe5SHV0OdAvxVit2fGWmKnDZY+ke89+Hd2jIcRAyoZdnX+Lthf
+	nPsYOaoTbaVluq2r5KkBkzOfZGFhrb7Cmazh77AEvMhUg2z6vs1Fc9aawL+6oV1sAA/JfTMq9ccu7
+	MueZ0ljtsmKozXdq23+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQSPu-00059Z-4H; Fri, 01 Nov 2019 08:36:22 +0000
+	id 1iQSQ4-0005GU-T1; Fri, 01 Nov 2019 08:36:32 +0000
 Received: from mail-eopbgr10085.outbound.protection.outlook.com ([40.107.1.85]
  helo=EUR02-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQSPm-00058h-Cp
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 08:36:15 +0000
+ id 1iQSPo-00058h-8q
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 08:36:17 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=YkNecX0BoeTP4LoytKVUeX6jBL7l2rIDYCZUzjkZ9aq1DQr5UIP8AGCbCopUf7CjABniccbek0qgiGoCfI1JMmo4nn7a96L5Z7phrEGPEEUiP3qQhvaRdaeWmBFzVb0MkN3lu4GsqO81ULFR4gY5zR24EEsQ1Iy3on1Pkjs3uCvMH8G5uAFcfoazPoh37e7hALjldFzsB+XYOkboojyG64zWrXZAQruR9x2EucTu5okcCZ/w5ioL8VHUIw5lgeirY7o91rIZ5oiMjErm0MNtp/OhkEsv4UgFDb4OI57os/Go6p2wqb2tXkzc0cZYBgOdZ2ZJsdiMvgi7x/ZPrx4VMA==
+ b=QzpLIIqyzaPrMCWDoT5KwEWdbKSseVzs9geuVKxCr6rYl8JFCrGHyQ94GITJWssV+pjg1jrWQVNhvvmy+2GWcV4KdB1LJTNtMqAZofLkklfKc1Kh6xkoMWFF0ZbKSTuCGo0h5tMTp7F8ylNerBa9V4xrWOQ9KAU0QM2cCDaVtmiImnxDVAoHS995Zmb2xv2QtZse82b2fTkixXzzjen8zDLmxekFGATzhOoASanWGMh+7jmYtWp4zLGkMaMEZQAO79CwEyPI7XMaw/hMRLXpLttSamJ6xK3hcnMr88SowzZ8hpXcIfqGbwZttgU+D0PdGwp9OvV11WmfxVHFxNE3uQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=WL1A5fcxcsaLb327ePmqfW3R4XxlouLMMh5f/CNWngw=;
- b=QCRazVLlFaH36bdNLlxwQii4v7kMYZA91CPGNWhZi2b7M4s2j0udkEhliRpIw476OgHaqAk0vawtb0sRNiv6X6TCRovKFFEraJ2YbadVjebLI+8dZwC1cbus4zm8KqcN2dBXV47Bhr8IPps+TCkW6WwXIJOZnRQU9y8cVaXGtSO+cndCmHmhF2u8/lCPp+KmMPbDso0WPI/QQssjoilwlW7HPqQawqfKyCIGk65R/TrABCe4h/mlDTWepyiPBJ3MlmBbUyO1YepuOOxhC5RiUpiF+IeFh3Q+8xM+jkodAnHUqhEccX7ASv2JCvbuZzUUasP4dPZoLogeYeyBT1MQfg==
+ bh=bAAg9dFVN/hX6j9VmFpFYPcEXVUs2FlkWHkAN5a3ToY=;
+ b=PWiy+GiJ4JdSewMGfHw/fyqxsOJTho+JO1w7TNVhl4BlX8NIyExRf5dIVfhdt0qV95RAoGK/NI4NavVRMiLaflsU+R8djhK6sZczyZkuDVhkHtkDmTytTEr0v+XIdAvVFFtdFMra4M8nh4DL1wD4oKJy2Hy3GDmrNWqa0qXH/u5PtV97z+ousgEDs/G0icywnOALWKsBmiQhA35ny+pzJ51IcBfKZ+fMsVQ/xQTcOh0Wqfoi1Tm5rpH6NznUupZ+X7M/BNRoqWZ9uSv/i0yt5uAAOf27KctQtrUiKIM9hVTcGxj+5nkYXTU++6mkajl/5ZhoNxLcHlWAuQxVoT8jZw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=WL1A5fcxcsaLb327ePmqfW3R4XxlouLMMh5f/CNWngw=;
- b=S5ir6G6/0Do9MMarDtqKFyoL8DB7S1BhNeHhrP+TqbqcTweudWVlofBV4vZNTl/qR3ydigRyks1dt0aNS91msZWLnhjwMs8L874BRb5O+jJIb+MWEmnf5BDjW4Pr9Py2X2h42lfEq1bVRAKOGF8u2HTNXGhJz+Ze8iKa5gDMu0U=
+ bh=bAAg9dFVN/hX6j9VmFpFYPcEXVUs2FlkWHkAN5a3ToY=;
+ b=TUP8ZngKZwN9HUSbrhkmeoLz3875V1FhxZH0/zUuzRRFUHrONH6/8IMrviReNuMdrxNwx3ORmIcxOkcg4KaODGy7nE1oRDY+Iyzz7kFxKQOFnT3vGj8y9QVCFmAM9MHQVUDvjvzJjpvH5/FpAJV+OpBFS+6nro35gyQLGJHcY2w=
 Received: from DB7PR04MB4618.eurprd04.prod.outlook.com (52.135.139.151) by
  DB7PR04MB5948.eurprd04.prod.outlook.com (20.178.106.213) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2387.24; Fri, 1 Nov 2019 08:36:10 +0000
+ 15.20.2387.24; Fri, 1 Nov 2019 08:36:14 +0000
 Received: from DB7PR04MB4618.eurprd04.prod.outlook.com
  ([fe80::79f1:61a7:4076:8679]) by DB7PR04MB4618.eurprd04.prod.outlook.com
  ([fe80::79f1:61a7:4076:8679%3]) with mapi id 15.20.2367.031; Fri, 1 Nov 2019
- 08:36:10 +0000
+ 08:36:13 +0000
 From: Joakim Zhang <qiangqing.zhang@nxp.com>
 To: "will@kernel.org" <will@kernel.org>, "mark.rutland@arm.com"
  <mark.rutland@arm.com>, "robin.murphy@arm.com" <robin.murphy@arm.com>
-Subject: [PATCH V3 1/4] docs/perf: Add explanation for
- DDR_CAP_AXI_ID_FILTER_ENHANCED quirk
-Thread-Topic: [PATCH V3 1/4] docs/perf: Add explanation for
- DDR_CAP_AXI_ID_FILTER_ENHANCED quirk
-Thread-Index: AQHVkI9p4K7tGFD97Ee5sgRPKHNZiQ==
-Date: Fri, 1 Nov 2019 08:36:10 +0000
-Message-ID: <20191101083317.29510-1-qiangqing.zhang@nxp.com>
+Subject: [PATCH V3 2/4] bindings: perf: imx-ddr: Add new compatible string
+Thread-Topic: [PATCH V3 2/4] bindings: perf: imx-ddr: Add new compatible string
+Thread-Index: AQHVkI9rvl+5igGDNkCOwe4G0+1kpg==
+Date: Fri, 1 Nov 2019 08:36:13 +0000
+Message-ID: <20191101083317.29510-2-qiangqing.zhang@nxp.com>
+References: <20191101083317.29510-1-qiangqing.zhang@nxp.com>
+In-Reply-To: <20191101083317.29510-1-qiangqing.zhang@nxp.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -69,14 +69,14 @@ x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [119.31.174.71]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: b1e88953-3c66-4c53-3ef2-08d75ea68bd6
+x-ms-office365-filtering-correlation-id: 851f5384-7e2c-4b6a-c308-08d75ea68dda
 x-ms-traffictypediagnostic: DB7PR04MB5948:|DB7PR04MB5948:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB7PR04MB5948F50B4FF681E25916F271E6620@DB7PR04MB5948.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-microsoft-antispam-prvs: <DB7PR04MB5948846792E267E7DE3314E0E6620@DB7PR04MB5948.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1122;
 x-forefront-prvs: 020877E0CB
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(376002)(136003)(396003)(39860400002)(346002)(189003)(199004)(54534003)(478600001)(2201001)(66946007)(26005)(4326008)(3846002)(25786009)(186003)(5660300002)(486006)(2616005)(476003)(7736002)(54906003)(110136005)(86362001)(2906002)(256004)(6512007)(71190400001)(2501003)(8676002)(66446008)(52116002)(81166006)(66556008)(8936002)(316002)(36756003)(6436002)(305945005)(50226002)(66476007)(64756008)(6486002)(14454004)(1076003)(102836004)(99286004)(386003)(66066001)(71200400001)(6506007)(6116002)(81156014);
+ SFS:(10009020)(4636009)(366004)(376002)(136003)(396003)(39860400002)(346002)(189003)(199004)(54534003)(478600001)(2201001)(66946007)(26005)(11346002)(4326008)(3846002)(25786009)(186003)(5660300002)(486006)(2616005)(476003)(7736002)(4744005)(54906003)(110136005)(86362001)(2906002)(256004)(6512007)(71190400001)(2501003)(8676002)(66446008)(52116002)(81166006)(66556008)(8936002)(316002)(446003)(36756003)(6436002)(305945005)(50226002)(66476007)(64756008)(6486002)(14454004)(1076003)(76176011)(102836004)(99286004)(386003)(66066001)(71200400001)(6506007)(6116002)(81156014);
  DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR04MB5948;
  H:DB7PR04MB4618.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
@@ -84,19 +84,19 @@ received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: JWLzngMmrcIPLHoKT4iOiBZoubbjufJZQlJn97pX+iwxwaskXVYBOohbwI4mSYbeY9QXt5hci21XMEstAaeB/DkunAt+0pLyC6mwmZURzZr4TrnDsTbGO4F/5fltRZ04c2kJPzqx7cBjO49EBuJeYpPGWtsYNWCkN8siO5dfwbOa3MMV8o1g1bHzVA7SBjC90Bo5pmlODW0g5RJ0xsU68rRvBiXI+E0PEN8iFfFP6b2emE0lZjqAx2JFG3dEQai5y3vxzlxSkaXg63t+HSi5bSkTcL44IEfBwMkNNpOyJRqx9EOsBQCzwx1/YW3ojAcilW4GGAsPcQ/FAi3/KohVHtCpDO7LNZ0xdE+7bHQK5gqbCoiWqwj63H7RfGPoM7xdPLtZiFB5M56yw8QBdr1uVtfF7UqT+rGxWmFJQ2xGNMK0zPWUnHOEmkZn9rs1KcuQ
+x-microsoft-antispam-message-info: 3VkAmBLFyzahBs2WVkuZBj9wWT2rfKFfFOv+fmyajAYtPvqvYusw3hVo2t/whOGPEbYvSh+FqaSvQF7RAlWgH85tXzyQqt41U/wSvOFwTjS6OvBVP20BL+wKiNXISMl+WMAIaAO2SSqY93jXeiV8TwtEDcNEm6MtB5QJ4nKTHciIwk4m2cF1CS6sB/DWaCl/CdrD91OTA3Q9A6Iyi+2r1aEzWzhP0DvKN4rgfYtuc5eiqQ4B2kIdFCNcff1JpFotR1ZKt2UM/RBFqUWlQoR9L8kUdWOtFpXXFsNaEYaaH4rd6VEfDV/pnnfhDYtkHcmce2wEzK4Ve5+MntKaIgQjFbuG+jRQxwt3aV8OypMyXnt294NWQAVrNxeBTD6273vum+sHYOid82A+VgP1p9SugiXy06Ff64AREF/9KmBBv9ulFvEULgTAJGF2liMLcJBe
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b1e88953-3c66-4c53-3ef2-08d75ea68bd6
-X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Nov 2019 08:36:10.4417 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 851f5384-7e2c-4b6a-c308-08d75ea68dda
+X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Nov 2019 08:36:13.7898 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: mx4RKo01LgGqKmdCk4oGFbBx1hB8vmrr4bOKVO+uOQQE+FbVnjwi0e1+MxParr266W4qmx8I8kAQytiAgn+w/g==
+X-MS-Exchange-CrossTenant-userprincipalname: bGjybtydiGrJt0ZUJjsTFtAqj5AKxfYnaAjALiZUdJ8WiLOj4Eq/uEn1nroTjzM7hMVLU2k7+gbsU8Twk0G58A==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB5948
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_013614_438780_EEE68E8D 
-X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-CacheID: sfid-20191101_013616_309123_A75B18F8 
+X-CRM114-Status: UNSURE (   9.43  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -133,35 +133,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add explanation for DDR_CAP_AXI_ID_FILTER_ENHANCED quirk.
+Add new compatible string for i.MX8MPlus DDR PMU core.
 
 Signed-off-by: Joakim Zhang <qiangqing.zhang@nxp.com>
 ---
 ChangeLog:
 V1->V2:
-	* improve the context a bit.
+	* new add in V2.
 V2->V3:
-	* only need select this enhanced quirk if HW supports.
+	* none.
 ---
- Documentation/admin-guide/perf/imx-ddr.rst | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ Documentation/devicetree/bindings/perf/fsl-imx-ddr.txt | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/admin-guide/perf/imx-ddr.rst b/Documentation/admin-guide/perf/imx-ddr.rst
-index 517a205abad6..d1347928ac39 100644
---- a/Documentation/admin-guide/perf/imx-ddr.rst
-+++ b/Documentation/admin-guide/perf/imx-ddr.rst
-@@ -50,3 +50,11 @@ in the driver.
-   axi_id to monitor a specific id, rather than having to specify axi_mask.
-   e.g.::
-         perf stat -a -e imx8_ddr0/axid-read,axi_id=0x12/ cmd, which will monitor ARID=0x12
-+
-+* With DDR_CAP_AXI_ID_FILTER_ENHANCED quirk.
-+  This is the extension of DDR_CAP_AXI_ID_FILTER quirk which is only support getting
-+  bursts from DDR transaction, i.e. only can get DDR read or write requests. You
-+  can select DDR_CAP_AXI_ID_FILTER_ENHANCED quirk if HW supports enhanced filter.
-+  Enhanced filter means that it can count bursts and bytes from DDR transaction
-+  at the same time as it implements another set of data counters. DDR PMU driver
-+  always return bytes for enhanced filter due to it is more meaningful for users.
+diff --git a/Documentation/devicetree/bindings/perf/fsl-imx-ddr.txt b/Documentation/devicetree/bindings/perf/fsl-imx-ddr.txt
+index d77e3f26f9e6..7822a806ea0a 100644
+--- a/Documentation/devicetree/bindings/perf/fsl-imx-ddr.txt
++++ b/Documentation/devicetree/bindings/perf/fsl-imx-ddr.txt
+@@ -5,6 +5,7 @@ Required properties:
+ - compatible: should be one of:
+ 	"fsl,imx8-ddr-pmu"
+ 	"fsl,imx8m-ddr-pmu"
++	"fsl,imx8mp-ddr-pmu"
+ 
+ - reg: physical address and size
+ 
 -- 
 2.17.1
 
