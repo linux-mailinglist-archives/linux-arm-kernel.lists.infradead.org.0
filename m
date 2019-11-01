@@ -2,82 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BC68EC6B7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 17:28:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F818EC6B5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 17:28:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WMBdn9c5wYJgRf3Du03tUueeKtlG0EfT8gsfYkvgUPM=; b=pbnwUen9PLGxy9
-	GKdKfRNS/TlOoQnbyv5ZWqni0AkiNcYQOY10eCVZt/oieCAHmiCeBB3erGCjERHTdEwWm4z4UyesS
-	f0Ovcpp+dMTk5sB+Aq0WFMTMnwCIauQIUl2KOs2SDhOJ89m0+IrlmoyYnk1jbkVDcImD5TI2YVjXi
-	WONqvUTU2BZOalzYY45seyes2b+Q3jZWhumbel2sHms7pl3Glm5KOeSBwZRy1Bm+lEwFYvEWGEXIm
-	IRi95AWbI+w5i8VF2bF+KsPUcArEWmM0h3rsfeqX7dDwUL+DOAxt9e3kCQFBsdtJPvYYWll6B5C1Z
-	cGad2Xaqw21boucn5w1Q==;
+	List-Owner; bh=AystfivMkQ1e93lwL0VqnJuIhdnnQN+Mtp2W2hFh7pc=; b=dztAE7p6ghBBtk
+	+duXfmwHAjMy3Zfpb0l5w9TzrGPJLMdfO3QIl74N3GorL6ThMIM8IlzHtyNeHhtV2bN9Z97jUJmc+
+	WqlaJ0pfqARXL2Ew6y4EatAyly0FBpODdunEP+SetUEJAVTkmS5C1iwdP9Cs4DM919dDh9z0sR+Y0
+	Yh0R7ybmrlBAqILf4Ch4xzvVZ6iy+VogHWXeeVve5pL+FADFm0PFEy+cE2pbtV8BOJSfwHN8R/IRN
+	dTu3RF/kTxpDSuv/0h9Psa4HrCLMxucogw5fKdvEcoP1UYCt+x6kY59kDjUvMbfBYwSujBfIs6Lce
+	uQFkvGiXRa6r29MbGleg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQZn8-00022o-5c; Fri, 01 Nov 2019 16:28:50 +0000
-Received: from mail-ua1-x941.google.com ([2607:f8b0:4864:20::941])
+	id 1iQZmx-0001ss-RX; Fri, 01 Nov 2019 16:28:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQZmt-0001vW-Bd
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 16:28:36 +0000
-Received: by mail-ua1-x941.google.com with SMTP id l38so3080061uad.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 01 Nov 2019 09:28:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=cugJW9F3kTAr1l84/vLpT5yr86XijpMcBnCXxXWK4UA=;
- b=ai3N6Ic4RRGuSAsXlls5IzMaslA5Wbr/HVntf4UgHRgBb1znSgpSqTQDhgWkXAk5oM
- H0TMkU5NqeJqmaviuucs+F/wv2mYGbxw4p/TlWjmTA7nxtnYoIewy1UZepA7s1zvqFi+
- J0gxVuzM5VGToU0Rd8Mze3tyCLh7RZ7qRdkeI4u+x2bACiJuZjdPOS6PF5wclT402Cyl
- E4V47Z+G3JNyTOeTMcNM9nltwL7iNcdGY46YKNmZkjxzRh51T0x1vup1917ckL2zPFgG
- WhafP3q/o/Aolmq4VvLO1/E0Za4fVCa/z+d1jFfQQJXZNS7+zE2mjM1J0A4RaF2Z5bp3
- En0Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=cugJW9F3kTAr1l84/vLpT5yr86XijpMcBnCXxXWK4UA=;
- b=QTZ1zI29TNfNorsx9mPhT+elGcRVkLEcDoDN0DxZ2ayrfMdlFMHRnICrXEMpWQYRJ1
- R36jPkjiFIJjxrWTWAmMXEf+7PTtW9ASM1hh8WURCDVC2ZcLpJ1qWZaD6cbqqF6gBlfG
- /oYMmGA4xdWp6dHdRYSBT06knT8pVrAS71GRnExeCp68O42A4NUAorKIfGjWyD/TVLTv
- yQlvlX34bhJ2yzBlbXJTwAJTGQvYrXb7Um3cRQ0gI6paiqH5J9+pt/YdcOgbxiC3aYTl
- ZkWFzzhF9ALzTsmcdd9kBB3EJmxfZtkN+84/QCvNReUjlpBl+8zAYbrzWJA9//w3KOfQ
- Dxjw==
-X-Gm-Message-State: APjAAAVXDa2KrXRbHnVgULjAzEYgaPxOUqQnT/XoipkYPOzeU2J66dhC
- KvvJ5gnPOotbTed76BP+VumHhDiqqWeQdawxGiuRPg==
-X-Google-Smtp-Source: APXvYqz0PMfInUZYTnVA7QuGr/acGPXLqC8RP/nrNkyeFglf9nt3ZmPDMS4W5mUNYn60Yk/KFVXZFpuxRp6NFZg7Kqc=
-X-Received: by 2002:ab0:2381:: with SMTP id b1mr5975220uan.106.1572625713398; 
- Fri, 01 Nov 2019 09:28:33 -0700 (PDT)
+ id 1iQZmo-0001sU-4M
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 16:28:31 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 285742080F;
+ Fri,  1 Nov 2019 16:28:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572625709;
+ bh=AGQ8iiY4Sv5ExrC2tV2HF7L3Htvu/REfvE6er7pPcDE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=LWIoDTqvjr1SCA/3GbYgq+sLE9RAhMhlWeB1gGurTUZhTOIvM7KnkzLcVdTA5gedp
+ uAwRBvfPV03Q9adG3rLnJwhDhpqJDlKRj+Wct6rHI3OlwDxhXDqNkRnLPE+CSK/k4r
+ Fu02H3jtWb+tXTEXJgoOjKmVtX6ZO2qWHQZt38Ko=
+Date: Fri, 1 Nov 2019 16:28:24 +0000
+From: Will Deacon <will@kernel.org>
+To: Rob Clark <robdclark@gmail.com>
+Subject: Re: [PATCH] iommu/arm-smmu: avoid pathological RPM behaviour for
+ unmaps
+Message-ID: <20191101162824.GB3603@willie-the-truck>
+References: <20191031213102.17108-1-robdclark@gmail.com>
 MIME-Version: 1.0
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20191031164637.48901-1-samitolvanen@google.com>
- <20191031164637.48901-6-samitolvanen@google.com>
- <201910312050.C538F8F3@keescook>
-In-Reply-To: <201910312050.C538F8F3@keescook>
-From: Sami Tolvanen <samitolvanen@google.com>
-Date: Fri, 1 Nov 2019 09:28:21 -0700
-Message-ID: <CABCJKueLtOJsq+k-ywyUCOU+QCqxjKN2bO76Te4U43g0Xp9g-A@mail.gmail.com>
-Subject: Re: [PATCH v3 05/17] add support for Clang's Shadow Call Stack (SCS)
-To: Kees Cook <keescook@chromium.org>
+Content-Disposition: inline
+In-Reply-To: <20191031213102.17108-1-robdclark@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_092835_446100_F05C8013 
-X-CRM114-Status: GOOD (  10.18  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20191101_092830_190168_23010E7B 
+X-CRM114-Status: GOOD (  18.42  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:941 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -86,8 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,35 +77,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
- Nick Desaulniers <ndesaulniers@google.com>,
- LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- Masami Hiramatsu <mhiramat@kernel.org>,
- Kernel Hardening <kernel-hardening@lists.openwall.com>,
- Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Rob Clark <robdclark@chromium.org>, Robin Murphy <robin.murphy@arm.com>,
+ Joerg Roedel <joro@8bytes.org>, open list <linux-kernel@vger.kernel.org>,
+ iommu@lists.linux-foundation.org, linux-arm-msm@vger.kernel.org,
+ freedreno@lists.freedesktop.org,
+ "moderated list:ARM SMMU DRIVERS" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 31, 2019 at 8:51 PM Kees Cook <keescook@chromium.org> wrote:
-> > +/* A random number to mark the end of the shadow stack. */
-> > +#define SCS_END_MAGIC        0xaf0194819b1635f6UL
->
-> Is 0xaf.... non-canonical for arm64? While "random", it should also
-> likely be an "impossible" value to find on the call stack.
+On Thu, Oct 31, 2019 at 02:31:02PM -0700, Rob Clark wrote:
+> From: Rob Clark <robdclark@chromium.org>
+> 
+> When games, browser, or anything using a lot of GPU buffers exits, there
+> can be many hundreds or thousands of buffers to unmap and free.  If the
+> GPU is otherwise suspended, this can cause arm-smmu to resume/suspend
+> for each buffer, resulting 5-10 seconds worth of reprogramming the
+> context bank (arm_smmu_write_context_bank()/arm_smmu_write_s2cr()/etc).
+> To the user it would appear that the system just locked up.
+> 
+> A simple solution is to use pm_runtime_put_autosuspend() instead, so we
+> don't immediately suspend the SMMU device.
+> 
+> Signed-off-by: Rob Clark <robdclark@chromium.org>
+> ---
+>  drivers/iommu/arm-smmu.c | 16 +++++++++++++++-
+>  1 file changed, 15 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+> index 7c503a6bc585..5abc0d210d90 100644
+> --- a/drivers/iommu/arm-smmu.c
+> +++ b/drivers/iommu/arm-smmu.c
+> @@ -122,7 +122,7 @@ static inline int arm_smmu_rpm_get(struct arm_smmu_device *smmu)
+>  static inline void arm_smmu_rpm_put(struct arm_smmu_device *smmu)
+>  {
+>  	if (pm_runtime_enabled(smmu->dev))
+> -		pm_runtime_put(smmu->dev);
+> +		pm_runtime_put_autosuspend(smmu->dev);
+>  }
+>  
+>  static struct arm_smmu_domain *to_smmu_domain(struct iommu_domain *dom)
+> @@ -1154,6 +1154,20 @@ static int arm_smmu_attach_dev(struct iommu_domain *domain, struct device *dev)
+>  	/* Looks ok, so add the device to the domain */
+>  	ret = arm_smmu_domain_add_master(smmu_domain, fwspec);
+>  
+> +	/*
+> +	 * Setup an autosuspend delay to avoid bouncing runpm state.
+> +	 * Otherwise, if a driver for a suspendend consumer device
 
-Agreed, and yes, this is non-canonical for arm64 and AFAIK all 64-bit
-architectures the kernel supports. I'll add a note about it.
+I fixed this typo and applied with Robin's reviewed-by from before.
 
-Sami
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
