@@ -2,112 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E74AECB6A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 23:31:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CDC54ECB72
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 23:36:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P9Z8AYXeaGz2osaHZXayiy+FnsVvqNlTHNjQGFYmhSM=; b=jajPyEo5itW6cc
-	3Bz+y2Uocl37SAXFd4/ieHoBgvXmKx4IdRYZQ6pDG7RNKImlsSITju9sPOdriwn2jb8uum4OfHj+X
-	gES6amD1k106TZ5qxgRt7DFgLfOff8Mbju94Pcs1sJDRUpQl/qw/cNuXdb0FKGZ7UXWPxdaTkzIRp
-	oMpiyCO4SzxqaPRNSkjOGWNX6b8K9QyuI6UsA6zLCC4Ch/415mtQx+7uml16/RcdgCQe/ZHfvBC9L
-	47JScZTk60gtRZKJlXd8ne/stsKbfSY4+GldEyHuHbLNBGKbeYb3nQswG1vOnLDY6lHCmRd2hXieV
-	BcDh/cOej84Pw4l5f3Rg==;
+	List-Owner; bh=OW+xEOCnk6GLEXu3pZQezG5uL4Mr+P073MDIOMeDYfA=; b=kP81swMxxP65z0
+	6bMzkgQOKfGtuoUyrB/jZBXDmaFJGssJm8l42Iu6JZ7HHo3j6YhvTW7+O+DZCnZXE5odT94vttaUU
+	KPWIGSatlT4uqkIV06OTWP7a2x7z7ff6Ulf4CVS7YSYWJLzOvwaE+2JUuZKDuKc42axgS4gzDclxE
+	En0YJZVN+QMEjjy5rv3Xj8klsTRtUGuTNwgSODt6k//c7ynLkaUs7T6e9iUEZ1WzFFofX/jLnY2h4
+	FNJ7k5FEhzRff/dP/dQoy58KPj/akM57bP8FRymiJ2lKje+WgK06Gxo+szdgBAAm8H0DHbfxm6VGJ
+	0zthyKNMIYnPfBs/1Dhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQfSO-0004Vs-0R; Fri, 01 Nov 2019 22:31:48 +0000
-Received: from mail-eopbgr140045.outbound.protection.outlook.com
- ([40.107.14.45] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1iQfWw-0006BO-2S; Fri, 01 Nov 2019 22:36:30 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQfSG-0004V6-QA
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 22:31:42 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=SRkhuEc7RtEZhMC/yYuE9oyt2Bod56iiJ0/bUO/0RypUU332++dKYzazkwYdXzeFgUFELfX0UZ8e3OYqVm2aZgxAIv9pev1DB7atlHJ1BelBFXUfIcKm3C/urXSSJTC/ne+wi2O//aJxhAr7LoZgnYacgCT42Fr877SgRGof4YRXJDx0L+I0XZe7xQi2WhIs3gElN+2aV4PSD1blhZxAwhZACpxGARFsVHw4gvFOTVGUFb5t2XplWNY2DtgRkRg+XPQM++6bh+PkqIGhdu2gobZXM9MIgGZzPR5ertDkifhGC9WfZxYoS8tivKrDGvGDaziLCIEYz0ksxAL0akLFyw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=UoSdfEf0S2KG70IGeYqXN+qRwsu6JOnahPHZmSVBa9U=;
- b=M0Tw0Iuk0pfYFNGAeiH3CgYQ79o2rf89l17LTJ8A60/+skN4phEWi3s+8u7nmgeF5yVOEXtvdUFkV0TYV28Zqp6Vr5bXF0AeHSJhlqs7dfS0pfX0evbRi8sR4oO+5qwmLNau/mB7Y6eZwmBNcxdxfI2WDISQ/hZs14oHOnfKshyOyNdvZI+xkIYIk0yL2YX9gFMR0XI0/yGldpOdVa21vFmDb2tgauk4Aaw8oNOKXi9WV9RsdeI1uz241MwbO6RQfS/lItW+C1eskPi/hmhDJeEYTduLuSZ7EwzzkfKE0yNDOI7ehNllWSrTmKq9lqxhktUHN7Hymg+X09A/0T4ArQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=UoSdfEf0S2KG70IGeYqXN+qRwsu6JOnahPHZmSVBa9U=;
- b=ekCVvxQ7GnsnculGpwXG0Nw6jL5bge6OvOaiacF09sLR1dckKXmQNzBWKpfGryRx0m71NVBiAuuXIKL6Cj5rHdM+wnmCQt5I4G8T2n8VZUdZqD13BdJNJTr/f5TteKJbj/xpBYGA/fbz4eeLqFxDAJj1J5TZfEsPH/Z3AxES0j8=
-Received: from VE1PR04MB6687.eurprd04.prod.outlook.com (20.179.234.30) by
- VE1PR04MB6430.eurprd04.prod.outlook.com (20.179.232.155) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2387.25; Fri, 1 Nov 2019 22:31:35 +0000
-Received: from VE1PR04MB6687.eurprd04.prod.outlook.com
- ([fe80::c93:c279:545b:b6b6]) by VE1PR04MB6687.eurprd04.prod.outlook.com
- ([fe80::c93:c279:545b:b6b6%3]) with mapi id 15.20.2387.031; Fri, 1 Nov 2019
- 22:31:35 +0000
-From: Leo Li <leoyang.li@nxp.com>
-To: Christophe Leroy <christophe.leroy@c-s.fr>, Rasmus Villemoes
- <linux@rasmusvillemoes.dk>, Qiang Zhao <qiang.zhao@nxp.com>
-Subject: RE: [PATCH v3 35/36] net/wan: make FSL_UCC_HDLC explicitly depend on
- PPC32
-Thread-Topic: [PATCH v3 35/36] net/wan: make FSL_UCC_HDLC explicitly depend on
- PPC32
-Thread-Index: AQHVkLHlr4/lsG9mMkGX3of9x6ljgad2gb8AgABkExA=
-Date: Fri, 1 Nov 2019 22:31:35 +0000
-Message-ID: <VE1PR04MB6687D4620E32176BDC120DBA8F620@VE1PR04MB6687.eurprd04.prod.outlook.com>
-References: <20191018125234.21825-1-linux@rasmusvillemoes.dk>
- <20191101124210.14510-1-linux@rasmusvillemoes.dk>
- <20191101124210.14510-36-linux@rasmusvillemoes.dk>
- <4e2ac670-2bf4-fb47-2130-c0120bcf0111@c-s.fr>
-In-Reply-To: <4e2ac670-2bf4-fb47-2130-c0120bcf0111@c-s.fr>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leoyang.li@nxp.com; 
-x-originating-ip: [64.157.242.222]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 5e94ad1d-2ce6-43b0-0b1a-08d75f1b4111
-x-ms-traffictypediagnostic: VE1PR04MB6430:|VE1PR04MB6430:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VE1PR04MB64302A11636E3781DA5CFB2A8F620@VE1PR04MB6430.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4714;
-x-forefront-prvs: 020877E0CB
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(346002)(39860400002)(376002)(396003)(136003)(189003)(199004)(13464003)(6116002)(3846002)(7736002)(316002)(4326008)(9686003)(25786009)(81156014)(66066001)(74316002)(476003)(2906002)(6436002)(66556008)(66476007)(64756008)(81166006)(5660300002)(66946007)(66446008)(229853002)(52536014)(76116006)(110136005)(55016002)(66574012)(8676002)(305945005)(6246003)(14444005)(6636002)(53546011)(7696005)(186003)(446003)(8936002)(54906003)(99286004)(486006)(76176011)(11346002)(26005)(478600001)(86362001)(71200400001)(6506007)(71190400001)(14454004)(102836004)(256004)(33656002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR04MB6430;
- H:VE1PR04MB6687.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 4mnH4VDWTjh1v5hvFq8CqyQfnxWrze5/frsVbHbLCrm+Clw2zUtH9SKp4LrIKsmHMciOu6MFdeWdr25beB3zId8oSw4/O56VG+xdyxrWzLqgkMKRXdgv38+xpgjsm5Or+ELNrYUXlhSkTZz9kZisvGdQZ8Hwq71TL3jIPbUfsUzCFbGlvdjbpNxHS8CCQH9QzbyFVVb9/RyKpiHPoa32+exI7ynXFLTLnj3gXrkvjSfuZfctFS6q6SD6dqnLbv09ht0v+SMf/4SIPoJl056Lz/f7QXY2+VEHTCUlzHw60KQzgoWrHlbAkkuZ+xGdkO1VKQcNKhnm9vg45kASaP+aR5ZULhFRHm+xSdUpgy0dzIkhFR3NmrBVOPegg8jH/COy+DPY44bjEGoKADrDlXPc4Len5jKtwE5xypi6uuHu7JAdcpoTV/vnauckUsQTy0iQ
+ id 1iQfWo-0006Ac-7F
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 22:36:23 +0000
+Received: by mail-lj1-x242.google.com with SMTP id q2so5166521ljg.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 01 Nov 2019 15:36:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=VOVEnixRZLxQkCHgEpMJYKVl9naG8q4Bhsey3a4BJyw=;
+ b=Bli3xmuBt9/GwnfhQ+WLZeBpC+LGylrKEihKmG9wDJcaF6w3L/ZQ8vt3GI4YPWXFJQ
+ 5Om7iCdkbv/lP18+LV92eRVs401olXcWreQAxfwPfepVtiVSDh9+nHAn2/3d+gfz9UVm
+ yMWAVezWZJNqsbBLHANyYxJW6QpG5vniX1o53MF1dl5bc0zwLsqDDWKMYaMNZ47JDbyE
+ v0XCStgcgsGwANfNW7O2l7MqWzWiGoQksAS9QIjgoVFUAhEy6735xDLs92DbjUK8gYCH
+ q+fHcZwm6Ytrc4SrW8PPtsChFVdCSMaGofeTewgiaGn6jHXy73Odpndaqn2pcpxNkMKy
+ K1qA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=VOVEnixRZLxQkCHgEpMJYKVl9naG8q4Bhsey3a4BJyw=;
+ b=orXKvQi28MnUMdwrjPPqFQyF/H78XS1EltfMfU75qGS4Kv+2fRdLe1M1xqCRToNfHv
+ F5K+m1Ev8jJ+0S3L9iwfS04ROcU12X15mnSDFKsC/yAXCdUa8J6VwhEexhab+cejjR3G
+ Nv5Q/TSPrUy9MeC7Qk6fiLMS0v7ZPv68aoNdLK8KZNOih0Qmb4JGbqw/fQva2tjbDcWL
+ C/nGkQe8vvSntI49NwdsX93edJBw+Q2eIZkKiAv5nHqodDb/NCWwcrsY2DKcOd9yc+MB
+ E6RMHSDEqiR9Y+bm7UGzqbu3vHwBy1oUAQI4PIZA/H5PbE12GhNI4/Qj+BCFipU3i69N
+ ffjA==
+X-Gm-Message-State: APjAAAV0K5ksij+SiGC3N7ari77XcrKsReDecElitgSqbyE7bl62xgGW
+ 0wM6dkqAFX7GgLI+qx0A229PCYnxYcqdZqd6zCs=
+X-Google-Smtp-Source: APXvYqy3a3LpygwD50Ud81Z6exZF+LaVqLS3Tw+hEBAZP5UzR+Yt5u6jie3UaWjeMgSpzygcRllXXMsmSmfSgwH5eE4=
+X-Received: by 2002:a2e:8852:: with SMTP id z18mr9873721ljj.230.1572647776833; 
+ Fri, 01 Nov 2019 15:36:16 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5e94ad1d-2ce6-43b0-0b1a-08d75f1b4111
-X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Nov 2019 22:31:35.1149 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 24MFtzoLRHfmMLc19Dkue/4BuhpxlRJ2YJn1GAy3vL/JYrReFhOPUqCFAqiWqGWvlErdEUNpNCTFR1JW/ivv2Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6430
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20191101221150.116536-1-samitolvanen@google.com>
+ <20191101221150.116536-6-samitolvanen@google.com>
+In-Reply-To: <20191101221150.116536-6-samitolvanen@google.com>
+From: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
+Date: Fri, 1 Nov 2019 23:36:05 +0100
+Message-ID: <CANiq72=Z285XTHguDoL5Eq_7XRcounmBfscquFPRWk3BH5kLvA@mail.gmail.com>
+Subject: Re: [PATCH v4 05/17] add support for Clang's Shadow Call Stack (SCS)
+To: Sami Tolvanen <samitolvanen@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_153140_984286_C6BFAF0E 
-X-CRM114-Status: GOOD (  16.83  )
+X-CRM114-CacheID: sfid-20191101_153622_261634_5FD26FEF 
+X-CRM114-Status: GOOD (  12.08  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.14.45 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.14.45 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (miguel.ojeda.sandonis[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -127,50 +94,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Scott Wood <oss@buserror.net>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Steven Rostedt <rostedt@goodmis.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>, Marc Zyngier <maz@kernel.org>,
+ Kernel Hardening <kernel-hardening@lists.openwall.com>,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-DQoNCj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0NCj4gRnJvbTogQ2hyaXN0b3BoZSBMZXJv
-eSA8Y2hyaXN0b3BoZS5sZXJveUBjLXMuZnI+DQo+IFNlbnQ6IEZyaWRheSwgTm92ZW1iZXIgMSwg
-MjAxOSAxMTozMCBBTQ0KPiBUbzogUmFzbXVzIFZpbGxlbW9lcyA8bGludXhAcmFzbXVzdmlsbGVt
-b2VzLmRrPjsgUWlhbmcgWmhhbw0KPiA8cWlhbmcuemhhb0BueHAuY29tPjsgTGVvIExpIDxsZW95
-YW5nLmxpQG54cC5jb20+DQo+IENjOiBsaW51eHBwYy1kZXZAbGlzdHMub3psYWJzLm9yZzsgbGlu
-dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnOw0KPiBsaW51eC1rZXJuZWxAdmdlci5r
-ZXJuZWwub3JnOyBTY290dCBXb29kIDxvc3NAYnVzZXJyb3IubmV0PjsNCj4gbmV0ZGV2QHZnZXIu
-a2VybmVsLm9yZw0KPiBTdWJqZWN0OiBSZTogW1BBVENIIHYzIDM1LzM2XSBuZXQvd2FuOiBtYWtl
-IEZTTF9VQ0NfSERMQyBleHBsaWNpdGx5DQo+IGRlcGVuZCBvbiBQUEMzMg0KPiANCj4gDQo+IA0K
-PiBMZSAwMS8xMS8yMDE5IMOgIDEzOjQyLCBSYXNtdXMgVmlsbGVtb2VzIGEgw6ljcml0wqA6DQo+
-ID4gQ3VycmVudGx5LCBGU0xfVUNDX0hETEMgZGVwZW5kcyBvbiBRVUlDQ19FTkdJTkUsIHdoaWNo
-IGluIHR1cm4NCj4gZGVwZW5kcw0KPiA+IG9uIFBQQzMyLiBBcyBwcmVwYXJhdGlvbiBmb3IgcmVt
-b3ZpbmcgdGhlIGxhdHRlciBhbmQgdGh1cyBhbGxvd2luZyB0aGUNCj4gPiBjb3JlIFFFIGNvZGUg
-dG8gYmUgYnVpbHQgZm9yIG90aGVyIGFyY2hpdGVjdHVyZXMsIG1ha2UgRlNMX1VDQ19IRExDDQo+
-ID4gZXhwbGljaXRseSBkZXBlbmQgb24gUFBDMzIuDQo+IA0KPiBJcyB0aGF0IHJlYWxseSBwb3dl
-cnBjIHNwZWNpZmljID8gQ2FuJ3QgdGhlIEFSTSBRRSBwZXJmb3JtIEhETEMgb24gVUNDID8NCg0K
-Tm8uICBBY3R1YWxseSB0aGUgSERMQyBhbmQgVERNIGFyZSB0aGUgbWFqb3IgcmVhc29uIHRvIGlu
-dGVncmF0ZSBhIFFFIG9uIHRoZSBBUk0gYmFzZWQgTGF5ZXJzY2FwZSBTb0NzLg0KDQpTaW5jZSBS
-YXNtdXMgZG9lc24ndCBoYXZlIHRoZSBoYXJkd2FyZSB0byB0ZXN0IHRoaXMgZmVhdHVyZSBRaWFu
-ZyBaaGFvIHByb2JhYmx5IGNhbiBoZWxwIHZlcmlmeSB0aGUgZnVuY3Rpb25hbGl0eSBvZiBURE0g
-YW5kIHdlIGNhbiBkcm9wIHRoaXMgcGF0Y2guDQoNClJlZ2FyZHMsDQpMZW8NCg0KPiANCj4gQ2hy
-aXN0b3BoZQ0KPiANCj4gPg0KPiA+IFNpZ25lZC1vZmYtYnk6IFJhc211cyBWaWxsZW1vZXMgPGxp
-bnV4QHJhc211c3ZpbGxlbW9lcy5kaz4NCj4gPiAtLS0NCj4gPiAgIGRyaXZlcnMvbmV0L3dhbi9L
-Y29uZmlnIHwgMiArLQ0KPiA+ICAgMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspLCAxIGRl
-bGV0aW9uKC0pDQo+ID4NCj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9uZXQvd2FuL0tjb25maWcg
-Yi9kcml2ZXJzL25ldC93YW4vS2NvbmZpZyBpbmRleA0KPiA+IGRkMWExNDdmMjk3MS4uNzg3ODVk
-NzkwYmNjIDEwMDY0NA0KPiA+IC0tLSBhL2RyaXZlcnMvbmV0L3dhbi9LY29uZmlnDQo+ID4gKysr
-IGIvZHJpdmVycy9uZXQvd2FuL0tjb25maWcNCj4gPiBAQCAtMjcwLDcgKzI3MCw3IEBAIGNvbmZp
-ZyBGQVJTWU5DDQo+ID4gICBjb25maWcgRlNMX1VDQ19IRExDDQo+ID4gICAJdHJpc3RhdGUgIkZy
-ZWVzY2FsZSBRVUlDQyBFbmdpbmUgSERMQyBzdXBwb3J0Ig0KPiA+ICAgCWRlcGVuZHMgb24gSERM
-Qw0KPiA+IC0JZGVwZW5kcyBvbiBRVUlDQ19FTkdJTkUNCj4gPiArCWRlcGVuZHMgb24gUVVJQ0Nf
-RU5HSU5FICYmIFBQQzMyDQo+ID4gICAJaGVscA0KPiA+ICAgCSAgRHJpdmVyIGZvciBGcmVlc2Nh
-bGUgUVVJQ0MgRW5naW5lIEhETEMgY29udHJvbGxlci4gVGhlIGRyaXZlcg0KPiA+ICAgCSAgc3Vw
-cG9ydHMgSERMQyBpbiBOTVNJIGFuZCBURE0gbW9kZS4NCj4gPg0KX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
-c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Fri, Nov 1, 2019 at 11:12 PM Sami Tolvanen <samitolvanen@google.com> wrote:
+>
+> This change adds generic support for Clang's Shadow Call Stack,
+> which uses a shadow stack to protect return addresses from being
+> overwritten by an attacker. Details are available here:
+>
+>   https://clang.llvm.org/docs/ShadowCallStack.html
+>
+> Note that security guarantees in the kernel differ from the
+> ones documented for user space. The kernel must store addresses
+> of shadow stacks used by other tasks and interrupt handlers in
+> memory, which means an attacker capable reading and writing
+> arbitrary memory may be able to locate them and hijack control
+> flow by modifying shadow stacks that are not currently in use.
+>
+> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
+> Reviewed-by: Kees Cook <keescook@chromium.org>
+
+Reviewed-by: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
+
+Cheers,
+Miguel
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
