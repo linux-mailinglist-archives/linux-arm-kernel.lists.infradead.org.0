@@ -2,38 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 791B3EC3F3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 14:44:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F307EC3EE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 14:43:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=RWJc1WPiVMPIc/RrQC0bY+9Vef14J+MPihyBaKXIapg=; b=deY
-	EbGgBk3XBqHHT1XR5tTY82gBjqW1iZhJeO1PjlUvlk3wtNmaO/acluu0yoaqMBfuxGhmmZKSQfWRh
-	g3egzjoRmcDO/eTQ0Dna+vS0B98kqRdgDzrbcHYE1V3HU7kaSZq3QtMMPbjs+VaRNFqQONV2D80vn
-	VbZBlt5xoiOSo7c8PQevGA/QJ+cqX2YPYKchYy4fmfHnz731utydqZB9qRaYdgYMrred25a/ThWxs
-	EGn0q5PPsWjfiPCqVZOsoRHPYlIkIsiEzQD0yQS3JRg4hcTgUl5g7BQpcpJHOTR8boR20XxmMIlFQ
-	npDFwaWc7zmbpf3cA7B3QZ7NtcrIqiw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=c553bi9c8ccy4Xb4RZAhcD9oXhxMAMMma01ciH8nrbE=; b=l8dmcZ4OIM4LRvrQV8nAqf/cEN
+	+QTMQzLLqaDx7FuBl8XmaPgLhVM/FWeQe60+ubaBi8aGI1rNRGwn4CNMDzqUlrx5lbDZDvZvGb+5Y
+	l0rtabELmj4C3jCoHdCQaQQhGbh/Bmom6X5D4bRVaRQthgiB48nMna7e/dnBonNqcVNLXDngknyf0
+	y/qawzEw29xDFvsejsnG4RM1tGgaxnBcPf9GqIVng58kzvv6JY/J8us3Ae3b2clgT04pbKe7xw4Wp
+	/TrgYscCkKMVSWa3ij7yt4bUcXAn8neXJkbftA0UFT/HNaOZiWjsZ+cJJk3t2yEXKPy93jX1YVnTs
+	IUNZR0Vw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQXDu-0005li-QZ; Fri, 01 Nov 2019 13:44:18 +0000
-Received: from mout.gmx.net ([212.227.17.20])
+	id 1iQXDO-0004vG-G1; Fri, 01 Nov 2019 13:43:46 +0000
+Received: from mout.gmx.net ([212.227.17.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQXD3-0004jJ-7t
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 13:43:26 +0000
+ id 1iQXD1-0004iV-5W
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 13:43:25 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1572615789;
- bh=kcBKcJVOa9O9gt/1gGKhUY/mTXUJsEdNU9cT780Y7Og=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
- b=XoByljlPxUx2ORHxVRylkGzQHBRaOhdOBUSliRz9zmfeGNoM6nKTrj4yRwcWVeLAv
- 60abCnG42zVXdU3+WUCWyOMBVt2bLg51VXdoa1xt0/9vexbu7LvFXlCkS1NGACj5op
- njiP9I1SdecTozWYl7AOiTJOe1kBT835OnFxAUG4=
+ s=badeba3b8450; t=1572615790;
+ bh=G2JQYHldnl50zbZW3JMKhp0c1cNsuaONpIMkrJ/KY1A=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=As2ICfrZ6dP9svRVq3VYkJZapZIuGCT4dfGp5jepvxoPepDqUZ7/GdEBLYOLczpsD
+ YLwzcIZprxLKFy/Nhj09ng2eCZ4lIzOZ+l3eilNnBHSDdG++8nSUZ36bZh0lmjtGq+
+ Gd23zG9lwzpFh5cZkQtrvgLf+X0N0VGPAuQyWiOQ=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.112]) by mail.gmx.com
  (mrgmx104 [212.227.17.168]) with ESMTPSA (Nemesis) id
- 1MVNB1-1iZ5Ug1luZ-00SLQ7; Fri, 01 Nov 2019 14:43:09 +0100
+ 1N8GMq-1hvtKY0FqS-0148Tw; Fri, 01 Nov 2019 14:43:10 +0100
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Zhang Rui <rui.zhang@intel.com>, Eduardo Valentin <edubezval@gmail.com>,
  Daniel Lezcano <daniel.lezcano@linaro.org>,
@@ -42,44 +43,46 @@ To: Zhang Rui <rui.zhang@intel.com>, Eduardo Valentin <edubezval@gmail.com>,
  Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
  Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  Markus Mayer <mmayer@broadcom.com>
-Subject: [PATCH 0/4] ARM: Enable thermal support for Raspberry Pi 4
-Date: Fri,  1 Nov 2019 14:42:25 +0100
-Message-Id: <1572615749-9524-1-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH 1/4] dt-bindings: Add BCM2711 thermal
+Date: Fri,  1 Nov 2019 14:42:26 +0100
+Message-Id: <1572615749-9524-2-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
-X-Provags-ID: V03:K1:LYhrgAqYuJOSKZBHS4xtwA6qw+Fd7NI7pnQJ1JEonsrCmfvtrIH
- Lyq+cNclMYkZADaN6b92h1cQbUBuJfONajbE6qeK1AFP7U/h2xJQ8P+r6vNODLZwZhZ2ktO
- InieNmIR8xR/yHy3Q51s8ZZx+IG1AHDs4AvYognOK0TIYxglAVQ4arD9pW9QuppgrqwRRGj
- CERsa8Vesen2yT7oA5lPw==
+In-Reply-To: <1572615749-9524-1-git-send-email-wahrenst@gmx.net>
+References: <1572615749-9524-1-git-send-email-wahrenst@gmx.net>
+X-Provags-ID: V03:K1:XnyeRi2jiPspsf4cwaVjO7Sm9iumAfDgEuhhWAzWuUTyzpkYTrn
+ BZ4zqBog/lv978dQiAbhvrQjw18T1QuN0sYetKc4U8LKMDUfOQy8viOFMaPkuyQrzg2eoM9
+ AFlppBpsz+22+a2Xt0WGqS+MpsOQXB9B9kJrBbw6ou+lIoIn19T7tcZVYbzk8FpdRc9xp4G
+ ICQ+A5ANyQLuqvaacA29A==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:7sBRXt/lcKo=:iyAG+/n+l2vq9c1Lv6rdmK
- oZOzFVFYUoeBQXkrBSSZro4Xi9DwaC/cZyG9NXwLaw+Oob+aNnPe8TB1kG0+hC/9WMGEjvrKi
- ht99cgtuWDjfH17nU5MXUsPhtv70Af1Rg5XLlgQX4ChkSpwxYeCem3b2umMdN1pfuvyFq4hUc
- vVM2MgLN5WKRqLUzNS5gGSdomiFeliBF915Gfb2c8GzWkY2NxDMtppRP0BpME2HpMGfyoO0+D
- iYMoALpyHcNPEsSsYAC36MD8AV3eeXxPcf+q66ApkMJuI5Metvdt7UqBAO4LNteg+sdKo+8id
- T2Uo14Uw8VjQC+X6dlMO3LSbYGtL1KIZp6D9PHS9YGC1dZv+UO08UxFlD3OAWz3KsLyDksxYy
- 7Kp6U+kiyp//FnTEsW+jPWTEFQXTi2+wxCWniMo6GkVVZkNe/nYZukVA1n6EQLPX1+W/zewYP
- kfp/TtI0dstoZJ0hxXA5+mQE8u1jD/CIX+fbuBiXLjqsn5567kbqt2CSB8bM+MxCVH4kc3NMf
- 0zvMbkq9rondCg4XtKutQcPa21/BcaKd4ig5gIPY5s7MiUX6VdGGr21BTDG1tmraXJSdaYuaq
- RFefkC53yFd7BmtIO53K8DKpNQyNqVT4D3peO/hBsEjXVjC5lODvrPXj94uGia0prycDtuP7+
- S8A+TAMEBDfKQ9Bvvx9oqpA8lUHK1beVqz2NLdpABWNPFGDU9mEt7IMWanWwwMq3zD0JNSx4c
- gokYLzVj6HvyOe/gR3AQp6jz41mX8+VCklXgQAYJYOoWnPF+ZjXFgPFhjulYn+U178kydwB1g
- 3KEz+K3bRmcZbxfHHUPMipHkowE9/GOmdm9I4NKx4yhq4QY4G17UY4T0D+fKKdIGKarJ2aQeR
- MWKkE8F1Oqwh8ilH7bIyFDb01fpjp9WMJdzH4zMoGCzuOssfnwaO6c81yB0ZYiJn6PuwEfojx
- 6wdBOrQ50UBOJ+8Ala1O6nF8ELXwodyRpzCqH/CNgxafsLCjITtUPHLPgJmWPgp3iB/sxPs45
- 8hKBuiJQwX1olIO/rRnREf256C61AtjOiAk/2d/4YKoWLOtjxLCas77YTgyGxHsW5t16Y8WSS
- He6b0WX4JSi7/JRFpz3SnAXu9d9KP/j8s0+anO5FY4REYqIU2Lz0HoaNlb//MnZ2p25sXu0ts
- 5Hldo73ASMxmhg4EfplLu8R5s9dSlHyl9Fc8gZCKitzbGYHhmYOQj/VRIE6qdRecTBU1skvsB
- CHl/KE4xvW/OvQuS+iKyaQrmebJwb9QRuF/34Cw==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:eb27wEqko/8=:dZYolVj9YmOQf1lyukuXK+
+ wbcZ6wQJnr8dEEwvs2blpP12a8QH1sc9E+o6QUjCEsLP0/+OhWW0OsHaammYuVbloP7QwkNJc
+ dboo9BfdAPBZXckhXFdBK5U/DA5v35KL+2Ax4lj50NzOOd5GD5GqPslbMgyLfp92Qpt9wW49t
+ utMfXvQFK0HqT5Lkljnlmzbt/869k2GU1AcedKK8kPvJDhgLry5EkDtSGY8uCtZk9Tzj8k2vm
+ XiTIn0ZBkR10CcS9r+rovHe9JxiWm2X91v4d4D9L9Lx4ed/pbh1eAIaW1P1gmlavpIND/gHVA
+ 1q9tw+c0HBOhR5BoXT/ZRMoUCQN2JvgkiEUmC+DkFgP8uJUdZha4qLmEtrpv+FzYNAPI4l6Ed
+ R943ngFB90lWQIkr+98iv6YO1uDvcCbrXRmywEBX478vpJlfqDvmo6CiPxKGI1ZL960CbKevO
+ YgJXxhCPjVcdbLkVJ6TVT2mxT7fJkmDNCv7/ClL7YGjdyOBEikXORb6qx5PTXi4xBZ8VKqKj0
+ zy5JFc4WfKrBgT/m6DnI5EY6KvzYV6QyH7C87WaON1ujpuPuK8P3v395S7kJBLAJtBltpEqUg
+ W1CmvJwx9M+C8j9h+RGyc/4vC3xm5gBQFZCDqOtaeln5n7BuQxKQ/nf570AqhuG+Z+RCKESrb
+ p6FJmB0YyIawSi8JDmjZV0cEaKl9XfNCuzZufjr8izFLxn+qE6rKINp+BRIp8rvhwejNabMWf
+ MySojlAt7i37Jd4vFvz8LEhXVzOuTH99ovxQv6+mQgIxeqJnU4BG8umOPwDzlhd06+TT/3Fd3
+ xLCq+L0F/4Lj3SwtoM36OWQR6dMFBaffsTOzAsfmpLUon748NF5x4r2v3wkM33ME3pLmNa20m
+ CKEq+5lyOJALTjZY1DATbsp1UdHhRF7GFZsxgnvIyptEKGFAkoB1ftCzo3OKJ+MpW+huCc3+F
+ xGM05bpv9RYy8pcKOZDq1lYndf/tmNFSMnSGWCBoIF48NsgjJImwfrB1eWEldlWtWbpxaQEiH
+ uqmbyEZ5cBFiPwqR/zW2GdShItd22ARYL1HPYJWq0sgv8BOCGZWYepVDuCctnlA3u++xQlkF9
+ Ex2fjYWes3671H9njr/6zGKkblMzxsEe74SSasSavXt94OvdnGjhwZjUMyJ/2J6Q+apEQfHby
+ na0b7n11ecULFE6C+saJKfYggBtullLsEemT53BJx3h1Df1yCbM8wGETtoMilj79pu7p28nG1
+ 8UICQTetG56wX0DWfQu8EmdKuIt3ardik89PYRA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_064325_576383_2351E261 
-X-CRM114-Status: GOOD (  11.65  )
+X-CRM114-CacheID: sfid-20191101_064323_502874_2D867005 
+X-CRM114-Status: GOOD (  12.05  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.20 listed in list.dnswl.org]
+ low trust [212.227.17.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (wahrenst[at]gmx.net)
@@ -111,28 +114,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series enables thermal support for the Raspberry Pi 4. Neither the
-bcm2835_thermal nor the brcmstb_thermal are suitable for the BCM2711.
-So add a new thermal driver to read out the SoC temperature from the
-AVS RO block of the BCM2711.
+Since the BCM2711 doesn't have a AVS TMON block, the thermal information
+must be retrieved from the AVS ring oscillator block. So add a new
+suitable binding.
 
-Stefan Wahren (4):
-  dt-bindings: Add BCM2711 thermal
-  thermal: Add BCM2711 thermal driver
-  ARM: dts: bcm2711: Enable thermal
-  ARM: configs: Build BCM2711 thermal as module
-
- .../bindings/thermal/brcm,bcm2711-thermal.txt      |  39 ++++++
- arch/arm/boot/dts/bcm2711.dtsi                     |   9 ++
- arch/arm/configs/multi_v7_defconfig                |   1 +
- arch/arm64/configs/defconfig                       |   1 +
- drivers/thermal/broadcom/Kconfig                   |   8 ++
- drivers/thermal/broadcom/Makefile                  |   1 +
- drivers/thermal/broadcom/bcm2711_thermal.c         | 146 +++++++++++++++++++++
- 7 files changed, 205 insertions(+)
+Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+---
+ .../bindings/thermal/brcm,bcm2711-thermal.txt      | 39 ++++++++++++++++++++++
+ 1 file changed, 39 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/thermal/brcm,bcm2711-thermal.txt
- create mode 100644 drivers/thermal/broadcom/bcm2711_thermal.c
 
+diff --git a/Documentation/devicetree/bindings/thermal/brcm,bcm2711-thermal.txt b/Documentation/devicetree/bindings/thermal/brcm,bcm2711-thermal.txt
+new file mode 100644
+index 0000000..5531d3f
+--- /dev/null
++++ b/Documentation/devicetree/bindings/thermal/brcm,bcm2711-thermal.txt
+@@ -0,0 +1,39 @@
++Binding for Thermal Sensor driver for BCM2711 SoCs.
++
++Required properties:
++- compatible:		must be: "brcm,bcm2711-thermal"
++- reg:			Address range of the thermal registers.
++- clocks:		Phandle of the clock used by the thermal sensor.
++- #thermal-sensor-cells:	should be 0 (see thermal.txt)
++
++Example:
++
++thermal-zones {
++	cpu_thermal: cpu-thermal {
++		polling-delay-passive = <0>;
++		polling-delay = <1000>;
++
++		thermal-sensors = <&thermal>;
++
++		trips {
++			cpu-crit {
++				temperature	= <80000>;
++				hysteresis	= <0>;
++				type		= "critical";
++			};
++		};
++
++		coefficients = <(-487)  410040>;
++
++		cooling-maps {
++		};
++	};
++};
++
++thermal@7d5d2200 {
++	compatible = "brcm,bcm2711-thermal";
++	reg = <0x7d5d2200 0x4>;
++	clocks = <&clocks BCM2835_CLOCK_TSENS>;
++	#thermal-sensor-cells = <0>;
++};
++
 --
 2.7.4
 
