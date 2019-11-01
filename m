@@ -2,78 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0301AECB43
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 23:16:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D21CCECB47
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 23:16:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EDLkDIRY8EbcoQ0omMi5wbuWxlquPR1aWUydVyB+3bo=; b=WwuBK1s84GPEdD
-	7WIAktzZLFwEV2aHm/q3YK62rhgyO5dsAp1YohXUUbIAMSVvL4GFSewX9v/YmOcb5/Jz9ZvXnGInd
-	V00XjZ3TaZ8Zp3Mh32f91P8baHdhRJ55b2aLcYhVrvdM8hGPK/1AavN0lvq69Po/Htb/SFRUrhwZB
-	9g2fMcRkrkC39ms9X4KhJ+fOJXCCY8//jCie/rqryibOTPhBikIE3/RzUMmeemHuJ70quaQ/4eqcI
-	+nUyMGfDuBYdjKmqMFx08p/zH39vgA83UktSmIFzH2tuxHqkzQY/GJyJaPFCOzbKabu5dTVPdBV2n
-	6lzlJznfa6SO1QxswEww==;
+	List-Owner; bh=web2MIqdaQaZlmbioBDkjzWbHxP3CjuG09uVLcrnlVY=; b=NPDSgI+MI/TCTm
+	8sSoVbO3CGRVFdIHO17oM0dAcJQnXk98gm4ASKPabve3tACZFWUyvYy1VQf/ztaR1z8xZiPvxGVdv
+	W2EcKun4lHxa78Ux3EG57RNk+CXWbPLbWLlqS0J3nUogU5CSjkloU74eC4Zg9mCiuWOq+9kh/ehDY
+	4b7p3cQFwqDeFVi2Q0c6qczVMuFEGe4riuWFKfENtkvzlWXiuQ/twHwapq5HAFlv9BWaCiLDaqaQj
+	jU7CmKVZR6R+KpTayMdu+hSi8xOKS4AZCwlPh08aTRfFGQqY2aoll0I5KrnXNpTDVdpCZpN119tz0
+	TOBXm41kAKVs05P9F6Aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQfDb-0004fI-83; Fri, 01 Nov 2019 22:16:31 +0000
-Received: from mail-pg1-x549.google.com ([2607:f8b0:4864:20::549])
+	id 1iQfDw-0004xl-LO; Fri, 01 Nov 2019 22:16:52 +0000
+Received: from mail-pf1-x449.google.com ([2607:f8b0:4864:20::449])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQf9o-0008Go-Eh
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 22:12:37 +0000
-Received: by mail-pg1-x549.google.com with SMTP id o3so5702776pgb.16
+ id 1iQf9s-0008Jx-Jm
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 22:12:42 +0000
+Received: by mail-pf1-x449.google.com with SMTP id w2so8449000pfi.7
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 01 Nov 2019 15:12:35 -0700 (PDT)
+ Fri, 01 Nov 2019 15:12:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=oB4lIvjzdBiHgRAUphuiQVPgI+jp2K5bMoUCGUiH4hk=;
- b=mLcd5Ko+fJmhjxDMoBpGZ3EPC3b/VP/PBLdcmlypMJNdCOc5u9jhjSLWUNRMYr69hx
- U2P5JSWVYdV6u8EzfA94UAbX9w5Q1ZrloIyJVyjdf/ObF5XN+RiQraEntwZF84tiJw4A
- SKbzKEtQORywvZdxPhMYx0LHvfikuCCPY9XvjfKtjRiin1Jn0QFeomQACCaJo3jt8lCW
- KyuDz5lfuSMpAGWUw7ut45j+6bJefZga8POnR6VI0FVyWw/cL8vyvxBQD9C59E1UjFOA
- 7acbvIVDECPMMh62wKUfHOE3f3OZYuymQJbmahdFgydr8nJ0p/3u8CSBUyJzVVefqNG+
- Z8oA==
+ :cc; bh=SBPjjox/K0nQBp9p/UReaX06mOCKZA5VG5oKrHSRp3U=;
+ b=jD7UphcOofzvzp+Fej+FGAYX3qlgaInC3q6riheK3W8LCKmKWtfTlTrJ/vzD4a19an
+ +Hcrv+tkq9TdRVKgDOaa6Ic5PZn6XxN9+vLYJmvkleDiug2F9Tcj89ldzM4/Wx0mDp22
+ mgzUKliuIEQOx7CwzvE6V9myvgkQNgKcVgCutPLeSHS/wibMi+2JvOa+OCv75/Nwje2O
+ 8oWep5ZzzzdxjS5LcG8wINg1XSm4eYtuiQytGXDC4/Up/8zjkIUOQ+XAAMs0f9WdxGw6
+ GvK3uzJndPpvEwWoClt/0ppEIta5+qJS7qlUvBidggYVVp60p9g8sBe1C+92bc/icYtq
+ Aalg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=oB4lIvjzdBiHgRAUphuiQVPgI+jp2K5bMoUCGUiH4hk=;
- b=BS9UzqKVSSzpXRwCW6d7WJOwik4OBPQRqp7lc6VdSquRCi7TTHMMDoHc9MZ7PhXKVR
- c0jSOc7vSv1cvEyVfc+ms0QEQaQH5Dg5TWmxMS65LFN90rMbEW1KUCM/AjJg4AN3YXZk
- AuhyxHPpEBcFkVynKoCd4ncXbActoGPGXol5R320QXfCMp1cHHLfUA1mU1YSaeLmKrxW
- VVums/Y5lfDTtvNwXCHr98xNn5dQ375IyAHdsoYYOVSI5PeyiVR2wJBot1xtQNc5kA/4
- LiW2HbwXkSW+SPqFQCKgMlV2KpXrNz/3hYFn/1YBemMAS+/1im25Q2XpJ8uPBKLdSn5B
- ukow==
-X-Gm-Message-State: APjAAAXWs5mZeEBPkksVx58pd4AZw1HRi+RCXRBAcu170nq2aP4XDYpF
- vjMzVg9bn5/Mk4DlOooRymXXfjkKd5jibXOYtlQ=
-X-Google-Smtp-Source: APXvYqxeW4tUSlj5Rjy/RV2utncaJwaQyF3tWO3lBVE2VevumOyR70VNIZ9Nj/gJhm+HF4+zxBXbctrnYgLnOQF1Wjw=
-X-Received: by 2002:a63:d20c:: with SMTP id a12mr14724175pgg.402.1572646354642; 
- Fri, 01 Nov 2019 15:12:34 -0700 (PDT)
-Date: Fri,  1 Nov 2019 15:11:48 -0700
+ bh=SBPjjox/K0nQBp9p/UReaX06mOCKZA5VG5oKrHSRp3U=;
+ b=NBNDX7x2Rmq2zBsN9JR01GPYAQj/JncqKFxqr6MOFVIR6hJHQsaEMC2DE8tzhZsUUF
+ QjOK8p6gq4n5IhFrqU7gl34acCwWJeRtBXbsoly82u5c+EquBkr+9Vxao1i42JeuXuM8
+ qVkGm9Vw18WfY+iBtIv2eejKeXC7E+89SKiYvw7eJ23hrZEJTEaSYRIp2H7MKCkh7baM
+ LXLRTdSSXdPLKf8AlkOkiia5E5yEurIq/e/AT5MwQKvBO7MZuTRMfw/R4T0eGRBTsS+8
+ LkMa7KWZ2XPRyAQO0mgXRukMZje3FiifLC0fkwaQQZnOQSVvhlZtkn/wwRDkXK5khtq0
+ 8i5w==
+X-Gm-Message-State: APjAAAVad3ZNyLJ4NL1ZaSt35kCTRXfMlZ6pZEKryjiWPE2K/oF8xgwk
+ acV63g6nB0Svjn6ySQQz2CkNLZrmtLGgScwGj70=
+X-Google-Smtp-Source: APXvYqxqSMUGI9UyircMqSL5QLFPtKAtuhwEXcqXTbAsf4XrCTVNUwTxLrj6ufv4Kgs0IKAfQNkuo4iX4Ohmpxbq4g8=
+X-Received: by 2002:a63:4525:: with SMTP id s37mr16212936pga.148.1572646357518; 
+ Fri, 01 Nov 2019 15:12:37 -0700 (PDT)
+Date: Fri,  1 Nov 2019 15:11:49 -0700
 In-Reply-To: <20191101221150.116536-1-samitolvanen@google.com>
-Message-Id: <20191101221150.116536-16-samitolvanen@google.com>
+Message-Id: <20191101221150.116536-17-samitolvanen@google.com>
 Mime-Version: 1.0
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20191101221150.116536-1-samitolvanen@google.com>
 X-Mailer: git-send-email 2.24.0.rc1.363.gb1bccd3e3d-goog
-Subject: [PATCH v4 15/17] arm64: vdso: disable Shadow Call Stack
+Subject: [PATCH v4 16/17] arm64: disable SCS for hypervisor code
 From: Sami Tolvanen <samitolvanen@google.com>
 To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
  Steven Rostedt <rostedt@goodmis.org>,
  Masami Hiramatsu <mhiramat@kernel.org>, 
  Ard Biesheuvel <ard.biesheuvel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_151236_514708_07EB3DEF 
-X-CRM114-Status: GOOD (  10.41  )
+X-CRM114-CacheID: sfid-20191101_151240_885443_812EACED 
+X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:549 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:449 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
@@ -111,29 +112,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Shadow stacks are only available in the kernel, so disable SCS
-instrumentation for the vDSO.
+Filter out CC_FLAGS_SCS for code that runs at a different exception
+level.
 
+Suggested-by: Steven Rostedt (VMware) <rostedt@goodmis.org>
 Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
 Reviewed-by: Kees Cook <keescook@chromium.org>
 ---
- arch/arm64/kernel/vdso/Makefile | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/kvm/hyp/Makefile | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
-index dd2514bb1511..a87a4f11724e 100644
---- a/arch/arm64/kernel/vdso/Makefile
-+++ b/arch/arm64/kernel/vdso/Makefile
-@@ -25,7 +25,7 @@ ccflags-y += -DDISABLE_BRANCH_PROFILING
- 
- VDSO_LDFLAGS := -Bsymbolic
- 
--CFLAGS_REMOVE_vgettimeofday.o = $(CC_FLAGS_FTRACE) -Os
-+CFLAGS_REMOVE_vgettimeofday.o = $(CC_FLAGS_FTRACE) -Os $(CC_FLAGS_SCS)
- KBUILD_CFLAGS			+= $(DISABLE_LTO)
- KASAN_SANITIZE			:= n
- UBSAN_SANITIZE			:= n
+diff --git a/arch/arm64/kvm/hyp/Makefile b/arch/arm64/kvm/hyp/Makefile
+index ea710f674cb6..17ea3da325e9 100644
+--- a/arch/arm64/kvm/hyp/Makefile
++++ b/arch/arm64/kvm/hyp/Makefile
+@@ -28,3 +28,6 @@ GCOV_PROFILE	:= n
+ KASAN_SANITIZE	:= n
+ UBSAN_SANITIZE	:= n
+ KCOV_INSTRUMENT	:= n
++
++# remove the SCS flags from all objects in this directory
++KBUILD_CFLAGS := $(filter-out $(CC_FLAGS_SCS), $(KBUILD_CFLAGS))
 -- 
 2.24.0.rc1.363.gb1bccd3e3d-goog
 
