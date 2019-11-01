@@ -2,58 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0CCE3EC0C7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 10:49:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52CEBEC08C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 10:34:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=E1BHc6KhG9CzZ58iaU6vl1tDn3kRjEClKi1mUqhss0A=; b=GsKt3tcPC1c6vuoyl/X0hXKIQ
-	Mkjhb20FMm7EC6lLdHb4p8DkOIUVR4NPK1C6xjk4I4EvcNHWLdLnsy38EO5Oqr6/XN3p9dfz55ao/
-	oN5P43Go2QtvrVDDsxd6hCRDIiPW/iCelk84OeB/LLpKzwTxNMnXp1knQX0T830jwFb/SXSDpdLUT
-	3HNUQcZfCaC++adnJlOK+MiwfjBTZt0A4nIRTHwJGEGC8Xn6FYbDcRjK2WCihs8DL+R8qjDbbyFtE
-	ybtAYDISz6YLCIxzs43+/gL391CW0R/uGizTXsL3HmtlL8RzIBZ72PZBPuD8uXNT6MacENxZRRXGX
-	b3VzO5lqg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=moTtE2ba/8PSfHhhcqB5/HS+Xkklain3aU26C7YpgeM=; b=IPm8AIxD2v4Li0
+	EDDd0M5kmxclcQs5XFqIUK2nudWeoRt5p8l19jgxXWmqf++/fjOfVcbViR/aybdc4VBIkatldvttz
+	CyO4yXqfsbOhqsABFUrf3iKKO3HbldtDYRKGipq2o+ZTUpMmeG/RajmZjcRx2guAMst5Pp60Vv7Lc
+	5CKHHybSgJyHej0pxPLvGO3+0Je4lffhu6cvXp31vFrRodo6/sCUQ7bbZf/W03UYAzXsw4GjAJfoQ
+	Afso9uMVJJMO26oPTmKsrlWjTuNDqF2xBXO/B4vY4XoKyaNzr+4z+p8HTW7124fAmC/mQnzgsC5Lz
+	pXS1gMpAPZ+CXh7NCtUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQTZ3-0003AF-63; Fri, 01 Nov 2019 09:49:53 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iQTKK-0003Q4-JW; Fri, 01 Nov 2019 09:34:40 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQTYw-00039d-Cw
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 09:49:47 +0000
-Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0C21E21734;
- Fri,  1 Nov 2019 09:49:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572601785;
- bh=aiGS91Hq8+Tec6OiEGfp5Qwq1/HH+r0uYEeMYIfR75k=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=i3qeQrfZSl3zPj3zgJ30NfU7CFQF6wiw1wKgjJT2us5LYriK7mZUp7vPfkzIQq6DE
- c2bYz9vhIqMCQCzs/YkdCyepzJSh5lmKiCesD810nITnWA0su/BJ3EnXAFlwUV5zAA
- vziUQOMwyTUiIzbjW9o3TXvNm0jL9qWrEMZxW1i8=
-Date: Fri, 1 Nov 2019 10:12:53 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Georgii Staroselskii <georgii.staroselskii@emlid.com>
-Subject: Re: [PATCH v2] arm64: dts: allwinner: bluetooth for Emlid Neutis N5
-Message-ID: <20191101091253.oxopdmq7igtyfpjz@hendrix>
-References: <1572601413-10353-1-git-send-email-georgii.staroselskii@emlid.com>
+ id 1iQTKB-0003O9-6R
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 09:34:33 +0000
+Received: by mail-lf1-x143.google.com with SMTP id z12so6783369lfj.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 01 Nov 2019 02:34:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=P2Wy+d6SJv+zW1h7gwcrJ9wMcc9z6tW4Pf7OV3vuzIM=;
+ b=ADFX2EB5FnE/sL/t/2Vc3e3rF5fsiteBk+A1NMThui6yAi2ffh/Vfsjgbu7Q64wo//
+ /ZbliqCo0dGLps5HIDxXXgS8YTSVHRxr64v7UdeaW8Qf2v3MIf0SEitoyEbRpK2+uOHa
+ En0OqRHTtilLbQCkItdwdeHtmcVVfvRLXG8YLPaMGFGYo5ZxaMRtIYSxsXu8XGBcfHj1
+ iSZwCHcfn4tEC5oOdZQn9ZMJXSZyTqUzXYwSX0L+ebBJ/jMT/clmdue5MBGMan58F22M
+ 7JtxmPGOYoJQ4ykrVOkiawCvP5XGhfk2BeCjFy/fju8i27uwEYR8I/i/6a1uJhu82shX
+ zzBg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=P2Wy+d6SJv+zW1h7gwcrJ9wMcc9z6tW4Pf7OV3vuzIM=;
+ b=SIcFocLpSitWwIyDGkfvKUuGgM7atz1xlaWSFN1WidwQPtYTdyrqvxV6c/Wne0gS5n
+ b0OBdJiCkl3BChRUYyxliYs/FLTHjPGRz3nSL2EkBYzmnGkb2uQ+j7WLcNLPoWT3/96w
+ EPDdjPWaUOcocppbV/FqjhTd5qFOZunU1CR39M37h9OjFvEuivH4we0GMz8zmTTpa25D
+ JMftd8ooWCHwbrO/b6Nt7yFZ2jQAUymel5ueCioXdX+YfMm6H9m84Y4DwmFVBJFrmQ3i
+ KiwE+PXbrl5xqU6cWMk1/DBKNnUXJ/oq/dh3VhDpJhPyJmI+FdeYVqEckPsdrc89jOO3
+ iEbg==
+X-Gm-Message-State: APjAAAX314UDjNbc2qkg98SIi0/S/W0anvKewNMsGHF/X5bfX4yXTPs6
+ aiD37dY+yNSDpYS5jVP1/SWLqo84lOp4Ld+WcutV8Q==
+X-Google-Smtp-Source: APXvYqykFl40jxMDQlJMBgGfbD2FRHdfPvjdr0aHRQNEMjEwkimo+7UrmZo1Gp8KiXJ6RvnSoNWXnAaB8dvQSi7cRbs=
+X-Received: by 2002:a05:6512:409:: with SMTP id u9mr6753625lfk.0.1572600869571; 
+ Fri, 01 Nov 2019 02:34:29 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <1572601413-10353-1-git-send-email-georgii.staroselskii@emlid.com>
+References: <1572530323-14802-1-git-send-email-sumit.garg@linaro.org>
+ <1572530323-14802-7-git-send-email-sumit.garg@linaro.org>
+ <20191031214745.GG10507@linux.intel.com>
+In-Reply-To: <20191031214745.GG10507@linux.intel.com>
+From: Sumit Garg <sumit.garg@linaro.org>
+Date: Fri, 1 Nov 2019 15:04:18 +0530
+Message-ID: <CAFA6WYMkE928v-v76gGtWmsS0PwRp-OHUtkS0+Ts4V6x0AKBqQ@mail.gmail.com>
+Subject: Re: [Patch v3 6/7] doc: keys: Document usage of TEE based Trusted Keys
+To: Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_024946_457099_866C0320 
-X-CRM114-Status: UNSURE (   9.55  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191101_023431_248794_75B6E720 
+X-CRM114-Status: GOOD (  15.40  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -63,7 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,58 +92,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, wens@csie.org, robh+dt@kernel.org,
- linux-sunxi@googlegroups.com, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1070384519975330961=="
+Cc: "tee-dev @ lists . linaro . org" <tee-dev@lists.linaro.org>,
+ Daniel Thompson <daniel.thompson@linaro.org>,
+ Janne Karhunen <janne.karhunen@gmail.com>, Jonathan Corbet <corbet@lwn.net>,
+ jejb@linux.ibm.com, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ James Morris <jmorris@namei.org>, Mimi Zohar <zohar@linux.ibm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, dhowells@redhat.com,
+ linux-security-module@vger.kernel.org,
+ "open list:ASYMMETRIC KEYS" <keyrings@vger.kernel.org>,
+ Stuart Yoder <stuart.yoder@arm.com>, Casey Schaufler <casey@schaufler-ca.com>,
+ linux-integrity@vger.kernel.org, Jens Wiklander <jens.wiklander@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ "Serge E. Hallyn" <serge@hallyn.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============1070384519975330961==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="mzwb6azrgqwhad27"
-Content-Disposition: inline
-
-
---mzwb6azrgqwhad27
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Fri, Nov 01, 2019 at 12:43:33PM +0300, Georgii Staroselskii wrote:
-> The Emlid Neutis N5 board has AP6212 BT+WiFi chip. This patch is in
-> line with 8558c6e21ceb ("ARM: dts: sun8i: h3: bluetooth for Banana Pi
-> M2 Zero board") and other commits that add Bluetooth support for
-> similar boards.
+On Fri, 1 Nov 2019 at 03:17, Jarkko Sakkinen
+<jarkko.sakkinen@linux.intel.com> wrote:
 >
-> Signed-off-by: Georgii Staroselskii <georgii.staroselskii@emlid.com>
+> On Thu, Oct 31, 2019 at 07:28:42PM +0530, Sumit Garg wrote:
+> > Provide documentation for usage of TEE based Trusted Keys via existing
+> > user-space "keyctl" utility. Also, document various use-cases.
+> >
+> > Signed-off-by: Sumit Garg <sumit.garg@linaro.org>
+>
+> This is the most important commit in order for someone who don't deal
+> that much with ARM TEE to get right.
+>
 
-Applied, thanks!
-Maxime
+I agree that documentation needs to be updated and your following
+comments seems to be somewhat similar to comments from Mimi here [1].
 
---mzwb6azrgqwhad27
-Content-Type: application/pgp-signature; name="signature.asc"
+> Until this commit is right, I don't
+> unfortunately have much to say about other commits.
 
------BEGIN PGP SIGNATURE-----
+Isn't this statement contradicting with your earlier statement
+regarding the right order would be to complete TEE patches review
+first and then come up with documentation here [2]?
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXbv3FQAKCRDj7w1vZxhR
-xfUgAQCuRYFEN+ejqrBG+YTreOb8P10E18Xoz+gEr6dNf53YUwEApuYBkd0OBB8p
-ZnbSNQFsqFeh7t/NBMUCdjJEEIO3fg4=
-=1eoJ
------END PGP SIGNATURE-----
+[1] https://lore.kernel.org/linux-integrity/1568025601.4614.253.camel@linux.ibm.com/
+[2] https://lore.kernel.org/linux-integrity/20190909163643.qxmzpcggi567hmhv@linux.intel.com/
 
---mzwb6azrgqwhad27--
+> Instead of making disjoint islands, you should edit trusted-encrypted.rst
+> so that it describes commonalities and differences.
+>
+> What the document currently describes is the usage model. It could be a
+> section of its own. In that you should describe first the common
+> parameters and separetely the backend specific parametrs.
+>
+> From kernel internals (there could be a section with this name)  the
+> document describe the key generation e.g. is the hardware used and how
+> it is used, is there salting with krng and so forth.
 
+BTW, here is the info regarding RNG provided by OP-TEE (an open-source
+TEE implementation).
 
---===============1070384519975330961==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+It's either direct output from hardware based RNG (if platform
+supports one) [3] or a software based Fortuna CSPRNG (executing in
+trusted environment) [4] which is seeded via multiple entropy sources
+as described here [5].
+
+Overall, I think salting this with krng sounds reasonable to address
+single RNG source concern. So I would suggest to have a common wrapper
+API that would do salting of trust source (TPM or TEE) RNG output with
+krng.
+
+[3] https://github.com/OP-TEE/optee_os/blob/master/core/crypto/rng_hw.c
+[4] https://github.com/OP-TEE/optee_os/blob/master/core/crypto/rng_fortuna.c
+[5] https://github.com/OP-TEE/optee_os/blob/master/core/include/crypto/crypto.h#L272
+
+-Sumit
+
+>
+> /Jarkko
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1070384519975330961==--
-
