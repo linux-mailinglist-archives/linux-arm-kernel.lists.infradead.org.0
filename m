@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1248BEBC59
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 04:27:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F31AEBC63
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 04:34:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=emw3FkYVs4fBBuKzmdWHGD102xrS06yQJntzv0Q0kYw=; b=bsEciegHVhq8FG
-	j611DEqJk8etdCSxHrAJEDKPP98zvEO61hIH8zSsroii1q/j5NqLTDVZ302WaAfcSF3BhkdzFx8uk
-	3W9sc5Basfc54O9g3L+x7N0RJCr+Mn6pYOCS78retaMjQmCg9RlaoeTl3xn3o32FH+dzCNkDSbbXk
-	XZbMxfiNqNhvMrypTdsMMZEpKn3Zh+Oq27BdR9pqGy4rszRCT4fsVl+q4AC91NLIgNn5cQQMo6a8e
-	ZGqem5ISx4ltED7qwRWYWbwD83+8BaqybVe21T9Pl+5qkKew9vmDn0Jt+LWS1cgkqn7a3GqsTbOqD
-	PYNiHEnjHFMGXgTiiGjQ==;
+	List-Owner; bh=INICMeZbBhcRJImDsgD+9hRCFJB4eKN6mMDzPa2QSQc=; b=CSurEQaTYobVoA
+	cZaxq9OvJ3+7yvc3bcQi/cRDXhhZNp6sSMOCvt8OSxDjMi0H4jKL8Am30d0dnYd7D/g6ugzONSTUF
+	LCA0E37jFJUt2v6ECtR9pcofvrYavGnoG2M7AM15B917fy66bgcSV3sLKPBv+FaUZG4mnc5B3gWLk
+	X4npn12yvyomkvW58HCtHoiBJ9x/5phvUhQpaMt9XZsClAOfZbm7g4kaAQQW8cXXIMNz5peA6oHZH
+	jKc35oX31B07oTP4iS/su5Ck99BE3fcbVg5L9KyGRrGWez4/U6CWCmUirLKQGLV5/yy5fvKRvjJw/
+	lgK6Ni3IJXFu/f87bShQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQNaS-0004PO-N0; Fri, 01 Nov 2019 03:26:56 +0000
+	id 1iQNhA-0007QB-34; Fri, 01 Nov 2019 03:33:52 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQNaJ-0004Ob-Ib; Fri, 01 Nov 2019 03:26:49 +0000
-X-UUID: 4ae60e5820ac479d8e17bdc2ee0be868-20191031
-X-UUID: 4ae60e5820ac479d8e17bdc2ee0be868-20191031
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ id 1iQNgv-0007Pc-HN; Fri, 01 Nov 2019 03:33:41 +0000
+X-UUID: 9cba81f970364f6b90095b4c119c4c6d-20191031
+X-UUID: 9cba81f970364f6b90095b4c119c4c6d-20191031
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
  (envelope-from <ck.hu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1825651021; Thu, 31 Oct 2019 19:25:52 -0800
-Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 31 Oct 2019 20:16:35 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 1 Nov 2019 11:16:34 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ with ESMTP id 1240065181; Thu, 31 Oct 2019 19:32:39 -0800
+Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 31 Oct 2019 20:33:23 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 1 Nov 2019 11:33:22 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 1 Nov 2019 11:16:34 +0800
-Message-ID: <1572578198.10339.15.camel@mtksdaap41>
+ Transport; Fri, 1 Nov 2019 11:33:22 +0800
+Message-ID: <1572579206.1728.2.camel@mtksdaap41>
 Subject: Re: [PATCH] drm/mediatek: update cursors by using async atomic update
 From: CK Hu <ck.hu@mediatek.com>
 To: Bibby Hsieh <bibby.hsieh@mediatek.com>
-Date: Fri, 1 Nov 2019 11:16:38 +0800
+Date: Fri, 1 Nov 2019 11:33:26 +0800
 In-Reply-To: <20191025053843.16808-2-bibby.hsieh@mediatek.com>
 References: <20191025053843.16808-1-bibby.hsieh@mediatek.com>
  <20191025053843.16808-2-bibby.hsieh@mediatek.com>
@@ -49,8 +49,8 @@ X-Mailer: Evolution 3.10.4-0ubuntu2
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_202647_619741_664A2688 
-X-CRM114-Status: GOOD (  17.14  )
+X-CRM114-CacheID: sfid-20191031_203337_585836_08D05C17 
+X-CRM114-Status: GOOD (  14.99  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -118,9 +118,6 @@ On Fri, 2019-10-25 at 13:38 +0800, Bibby Hsieh wrote:
 > +		return;
 > +
 > +	plane_helper_funcs->atomic_update(plane, new_state);
-
-Why do you not call mtk_plane_atomic_update() directly?
-
 > +
 > +	for (i = 0; i < mtk_crtc->layer_nr; i++) {
 > +		struct drm_plane *plane = &mtk_crtc->planes[i];
@@ -130,6 +127,13 @@ Why do you not call mtk_plane_atomic_update() directly?
 > +		if (plane_state->pending.dirty) {
 > +			plane_state->pending.config = true;
 > +			plane_state->pending.dirty = false;
+
+You do this for all plane but I think you should only do this for this
+plane. Other plane should do this only when atomic_flush.
+
+Regards,
+CK
+
 > +		}
 > +	}
 > +	mtk_crtc->pending_planes = true;
@@ -138,13 +142,6 @@ Why do you not call mtk_plane_atomic_update() directly?
 > +		mtk_crtc_ddp_config(crtc);
 > +		mtk_disp_mutex_release(mtk_crtc->mutex);
 > +	}
-
-This part is the same as the part in mtk_drm_crtc_atomic_flush. Separate
-the common part to an independent function.
-
-Regards,
-CK
-
 > +}
 > +
 >  static void mtk_drm_crtc_atomic_enable(struct drm_crtc *crtc,
