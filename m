@@ -2,84 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDF80EC1D0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 12:29:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40D32EC1D7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 12:30:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z+/pyoIPRwZNuqq78cud2JaCfzJnYggAf2DN61X/WnQ=; b=Tnjywn/dGNKNSq
-	d6R0EuQX5Kj5kNWV2RsxIxDpMu5HxIyp+wZmV8axqa9R8efeLTobDUkgBe3xXkv1yS2P+kevFAU0N
-	hOo58SiTW5HDMNArh+tsI0yXAzlUk+CLO6u0evqgvMhN2WBcDNHY5bjUypqTBFfuzRQZIN4F7nPQ+
-	PSTfvwVQ2gkqzpIBZ+YLXozOt4lpxHep9/hjCKnuBSdxOlbo3yFtrWbnSa6IasMtmLrbSY1MqDcpH
-	IOUs4R8n1nuRPPiwmq1PrDyU5rlyX8rZyii4N7pvVuqf45EEvJAESwO+HaaqYmf9VQKwsN+79EmRi
-	lmZfoAuyXXxG/Ow6j3fg==;
+	List-Owner; bh=WIwgg64Ii6QNyj+dSX/SMddnvdwATiGKKKs6P9ribrQ=; b=sw7hf1/JXbl6xr
+	ADo4cEVuycAsZ5Yr4CYzgPByLJpcUMPu+YqjG7n6gA2HfZfdPrwVh+EYGKN/RuXs1jLr4gP0NRZrm
+	dFxK4TALh9CWy+QE9zL9hXz4DBZSSOOi733SJMxCeamyGhKrcLgh+0jnnCLT+iB9L1XsLdOxccw2y
+	ddWAh04KHuv2TaH6/ADVLU2xitDs+lx02MhBKMez5YwJ8HAeSnHxg1rQr1Q+BHtLcSsk6EkaDwfER
+	zEGA2MNnqRbajfOjsRplpF4XarEiplyKN4JejRqABP6Y2DBXtu1dpjH0BPLbzEQuPbHPLHw0zEzAC
+	LnS8D7FLsRbfLq9VIwZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQV7g-0006Cb-Rv; Fri, 01 Nov 2019 11:29:44 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1iQV7u-0006To-OG; Fri, 01 Nov 2019 11:29:58 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQV7Q-00066e-Lj
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 11:29:30 +0000
-Received: by mail-pl1-x642.google.com with SMTP id x6so4234402pln.2
+ id 1iQV7X-0006Ev-QF
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 11:29:37 +0000
+Received: by mail-pf1-x444.google.com with SMTP id p24so355580pfn.4
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 01 Nov 2019 04:29:28 -0700 (PDT)
+ Fri, 01 Nov 2019 04:29:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=A8jyKNCvhqIlTF0nOXjRHhr0IkGR523dr7Xptd4WjeU=;
- b=VZuTw0liEBDgNPWag7s9u3rT605jQW0C+J9kOxrKuQW2SxAoWVtJY5L7HTRc+O6ivd
- JcUwmNKYhJGe4hwcuUhbggHM9ZzSmDCgPXuGZMQKsfTFZmNraNHLn1MZWh3IJuypD08b
- 38q5aqZkn3caQVxCkWi6mWT4UCcw5oJnmwhrI4vUJmpuHy7Po0SbAN7mc0jtMMFtK9Go
- UcSY2zIHqIzy7obLnZGpgy09SeNyVmRfxMSV2T944ka0fwMlKHO9SObLixReJaExUA7C
- Cwh87oW/fZ0vGDOr4IqKzY7Xqi4CcWF2Adxhn63hmg/cExGR4N7AMfT7bwW1a2Mq/0ls
- Rdkw==
+ bh=T4yR60OY8mdfdPHyuNjXPb3G3l2Y7DqgyO8YNCtTTi8=;
+ b=saeMX5o9o7dLOr8zbt7HBdYkfDgKvi+dBZr1DhL8Cs0mymsTne+VwQ8Zyx5D9TI4u3
+ 94RWplO4PbbkYUGGCnlU9UmAyaeZzJLYjGHDvOJL5zVL8gAe005jwR0pCqm5IUVsTaZb
+ RWyzbwf9nfRgb+uDIZIlVOXiCHuWxOEBDeCHpQxGO4jPzWG3o4nO3+SlW/u5NhMWMTwg
+ uIH9w0GniUa5I91+z950pG9LXCncBsf6fIq32ynGMssxwY7MbABgzoQ/HFoDzXdTMHex
+ faHZco7gxOiLZj58fl4VDQOGMOMnptgg0O19Fr2HK+c53TH3rrhZPM5+7w6psVbpxSrl
+ kG9A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
  :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=A8jyKNCvhqIlTF0nOXjRHhr0IkGR523dr7Xptd4WjeU=;
- b=RgTYgX3LJCravHtFHC9l9f4DwpzBwmoEOeGaQ8ruNyDFOeOo5f/qL8Jj1j6L3FETUZ
- Kw9Pzh1XvhdcNGmYNH7el831bW5Rivq53lMJRs6QMYIdw8NUgaWFe2pZViR+GwOQOejZ
- bCkcIYFxBbslOuLBrTTbDWZgfb2rEgS/LQVbCYBeJbQUaF+Dh7RmqkJ3ovx5/b7O6L8u
- DyAfoy4RWT4M6rZMKW1MnYAe4l2PrtEhExgkYEBlOtp36HRmKNg5kzx9DeOT2o0tXaGn
- Nd2Tf3lTgZtnFgNc3Xl129k4czERuU27s3OI8Himfr7wn1LPb5ud/nuSFFcAq6uwNF/5
- zifQ==
-X-Gm-Message-State: APjAAAUdSOhBi/4TmKIYCI7aO64harme7xdwVBQ/7WHQMLtU7bG1p4BE
- mz7MOiWkgGi5Otn+Beeu5Ic=
-X-Google-Smtp-Source: APXvYqycVMxkU+yInakKmu4Soq8iUpqZIlFuQ9dRzFPGLmsXP4Q7kIBEThFumlZYy0ruVHJaor6kwg==
-X-Received: by 2002:a17:902:bb8b:: with SMTP id
- m11mr12169747pls.235.1572607767843; 
- Fri, 01 Nov 2019 04:29:27 -0700 (PDT)
+ bh=T4yR60OY8mdfdPHyuNjXPb3G3l2Y7DqgyO8YNCtTTi8=;
+ b=uoBfE3hBkzseEgeKVaTUjKdlCneu5cCGVKs53rUqQYYAsIr6N5BIIrbY4P5fmS+KAU
+ DmsORFGjekTecWABLJBR/VNwxuVBtSJ4ATR0JD+Xcldv2kw7JZlIKrGwS1HiztbT7iX4
+ BhjQhLSBQ/cRDwm7p009bPG681w0RqDCqcy/pWHtVOKp70SjJvwtPanKXjorcuWujKJB
+ c1iP+rkBCEYB4zphzLMRmzLlHgb7BZ9/QwtjXm4GZWAPcXPg7adCEPq25JYggdGZ2hSS
+ 7H0x0l6OFCt5SfMba+DFdKDc03xcQEyCTDOCw5FhhsbrGhCszY72khQJI+hwnVBQUGyk
+ DKNQ==
+X-Gm-Message-State: APjAAAUoC2d5W/6ZBcezotNePvIDJrJ4rn+DrkfXBDh03n7iDI3c9I0u
+ 9Vv9F87gbRkOKGJecZVghq4=
+X-Google-Smtp-Source: APXvYqybJWi+D5zoN/EAlr0cYtoj/ItxMIK96HM0iVzu/zTz7xtx555y5DxsPlqJKlyyeVSiVVIQtA==
+X-Received: by 2002:a17:90a:cc07:: with SMTP id
+ b7mr6289460pju.135.1572607773917; 
+ Fri, 01 Nov 2019 04:29:33 -0700 (PDT)
 Received: from voyager.lan ([45.124.203.14])
- by smtp.gmail.com with ESMTPSA id w12sm1369427pfn.105.2019.11.01.04.29.22
+ by smtp.gmail.com with ESMTPSA id w12sm1369427pfn.105.2019.11.01.04.29.28
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 01 Nov 2019 04:29:27 -0700 (PDT)
+ Fri, 01 Nov 2019 04:29:33 -0700 (PDT)
 From: Joel Stanley <joel@jms.id.au>
 To: Rob Herring <robh+dt@kernel.org>, Andrew Jeffery <andrew@aj.id.au>,
  Jeremy Kerr <jk@ozlabs.org>, Alistar Popple <alistair@popple.id.au>,
  Eddie James <eajames@linux.ibm.com>, Steven Rostedt <rostedt@goodmis.org>,
  Ingo Molnar <mingo@redhat.com>
-Subject: [PATCH 0/3] fsi: Add AST2600 FSI master
-Date: Fri,  1 Nov 2019 21:59:02 +1030
-Message-Id: <20191101112905.7282-2-joel@jms.id.au>
+Subject: [PATCH 1/3] dt-bindings: fsi: Add description of FSI master
+Date: Fri,  1 Nov 2019 21:59:03 +1030
+Message-Id: <20191101112905.7282-3-joel@jms.id.au>
 X-Mailer: git-send-email 2.24.0.rc1
 In-Reply-To: <20191101112905.7282-1-joel@jms.id.au>
 References: <20191101112905.7282-1-joel@jms.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_042928_721429_94835225 
-X-CRM114-Status: UNSURE (   9.47  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191101_042935_868039_3B81FE43 
+X-CRM114-Status: GOOD (  11.18  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -113,33 +112,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds support for the FSI master included in the ASPEED AST2600 BMC
-SoC.
+This describes the FSI master present in the AST2600.
 
-The driver has been tested on hardware for most operations. Future
-enhancements include robust error recovery, DMA support and interrupt
-support.
-
-This patch doesn't include Andrew's endian fix from today, but we can
-merge that as a follow up.
-
-Please review!
-
-Joel Stanley (3):
-  dt-bindings: fsi: Add description of FSI master
-  fsi: Add ast2600 master driver
-  fsi: aspeed: Add trace points
-
- .../bindings/fsi/fsi-master-aspeed.txt        |  24 +
- drivers/fsi/Kconfig                           |   6 +
- drivers/fsi/Makefile                          |   1 +
- drivers/fsi/fsi-master-aspeed.c               | 550 ++++++++++++++++++
- include/trace/events/fsi_master_aspeed.h      |  77 +++
- 5 files changed, 658 insertions(+)
+Signed-off-by: Joel Stanley <joel@jms.id.au>
+---
+ .../bindings/fsi/fsi-master-aspeed.txt        | 24 +++++++++++++++++++
+ 1 file changed, 24 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/fsi/fsi-master-aspeed.txt
- create mode 100644 drivers/fsi/fsi-master-aspeed.c
- create mode 100644 include/trace/events/fsi_master_aspeed.h
 
+diff --git a/Documentation/devicetree/bindings/fsi/fsi-master-aspeed.txt b/Documentation/devicetree/bindings/fsi/fsi-master-aspeed.txt
+new file mode 100644
+index 000000000000..c804897fa936
+--- /dev/null
++++ b/Documentation/devicetree/bindings/fsi/fsi-master-aspeed.txt
+@@ -0,0 +1,24 @@
++Device-tree bindings for AST2600 FSI master
++-------------------------------------------
++
++The AST2600 contains two identical FSI masters. They share a clock and have a
++separate interrupt line and output pins.
++
++Required properties:
++ - compatible: "aspeed,ast2600-fsi-master"
++ - reg: base address and length
++ - clocks: phandle and clock number
++ - interrupts: platform dependant interrupt description
++ - pinctrl-0: phandle to pinctrl node
++ - pinctrl-names: pinctrl state
++
++Examples:
++
++    fsi-master {
++        compatible = "aspeed,ast2600-fsi-master", "fsi-master";
++        reg = <0x1e79b000 0x94>;
++	interrupts = <GIC_SPI 100 IRQ_TYPE_LEVEL_HIGH>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_fsi1_default>;
++	clocks = <&syscon ASPEED_CLK_GATE_FSICLK>;
++    };
 -- 
 2.24.0.rc1
 
