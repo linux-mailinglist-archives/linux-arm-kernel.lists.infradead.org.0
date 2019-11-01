@@ -2,62 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14DE0EC785
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 18:29:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E53FEC80E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 18:41:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F7cHJnLXVjwbps8Y6FGq+FdSQiwNijek4SlLGv7AWFc=; b=UA49Yt4I3aFKRR
-	VY1LqoLhWc6FpzKnCq1q0sQOwIZEBYspOovHjvVnSf3ReJWUzNuQy6h69pSYOIQ8i4R59rmnHNvaz
-	ltP9QNFmi2jnM6BlEhmpxwTZKUOLhEohKTAfKJ0+4palnRLUFOktvYXkc/7NQLatIDfFujpwe2moI
-	OGdgL5Ys7EMvhrI2m+AEegSFhwBDSDBbNeD5oxNgh0cC7D1GCp3EOsqeJOq4foh2q1/F28udDyjMd
-	v+FZqCUIo+YYjfFBzjfCp0usHxVbiBKiw2i1Z8QROM2rSKul6BSxQ5zoQH4TO9TzwxzBB7xnx7CZh
-	bum6JGtHoyYdqMHsyApQ==;
+	List-Owner; bh=dq5EqHYZW39JsV1c4J5AvBDgDL3K0x8fmvqib3LLYEU=; b=X47b+wcaX0hjzo
+	xr0Rsr6P7IvOY71CzPrfYmVf3Ki16n16/C86XguWoQ88q+YoiRxayz7q0Qb9CWtP8NnjUx7WbDCOD
+	dwj5lkj8sNA9umr+PvfXZ9EzIQXMn0AgMPYzL6X9WfHlkSgNfn4/OtEG08+gU7U6pfNtHKs2+RkD8
+	LXDuWDpdcv/4f9yFc4Kz0BsjMsvpx15deFzhDg3OX5mlRgGgJENu9Wjidbe9e4aAD3ItQDzXpoGQ1
+	AhqqVpBpVdi1vpnt2FHwitTw8wXZMqR9sEH1OopR8NvT1Ikt9ZNUCi5RPdPikm1fPyFO/tcz+IXu0
+	+vIrJ+xkhwDSpGyuaN9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQajQ-00014O-Vw; Fri, 01 Nov 2019 17:29:05 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iQav2-0005wS-KQ; Fri, 01 Nov 2019 17:41:04 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQajK-00013x-2l
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 17:28:59 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 539D62085B;
- Fri,  1 Nov 2019 17:28:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572629337;
- bh=m02R3EnPw9HBK/yXEyfNbqhE61yOKQTOoNAaAEoR/Gk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=2qDebQSS7mENXOUn9hv2TqOTWqQRgqiHFhwkM+1ALr14M42QYl5GXSdhetj/+RkYb
- T/wGe+xO/pj4RHWtB+LmtZBZ8Spnkggoa83J0JCy1qsgzdw6jJsdnaZKOZuisqMLFH
- MdvA/QV78Sp0FTsyeMo3TE2ejfHYxgR7m8uAMzzk=
-Date: Fri, 1 Nov 2019 17:28:51 +0000
-From: Will Deacon <will@kernel.org>
-To: "qi.fuli@fujitsu.com" <qi.fuli@fujitsu.com>
-Subject: Re: [PATCH 0/2] arm64: Introduce boot parameter to disable TLB flush
- instruction within the same inner shareable domain
-Message-ID: <20191101172851.GC3983@willie-the-truck>
-References: <20190617143255.10462-1-indou.takao@jp.fujitsu.com>
- <93009dbd-b31c-7364-86d2-21f0fac36676@jp.fujitsu.com>
+ id 1iQauv-0005vU-QH
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 17:40:59 +0000
+Received: by mail-pg1-x543.google.com with SMTP id l24so6895242pgh.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 01 Nov 2019 10:40:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=nFNT0LPVheWA4KBpnwRedDxe323lH3c78BcmwLbJ700=;
+ b=ge/UTzPgmx562dBN7M+gJnaLpgdt7tTLMJj965/UtlsjHMookPjfZEeSyuW6yaBJ/t
+ aziJDTH8+9YwXmzr0Xx5hpG5e9caR15dZKiaMPAf4PyasAzBv0vx87Vf02OLwoM8qUbQ
+ 6lPYg2bQvvDGYW2hQQo3KXH6Ha7iuEaqv3kZymF1Pya4y1sjKq/0iDVomDCBsrW3lD8g
+ ojwug482SwJTWzYJ62hWzrQPU1DwHsebPq4qsbWjVIH8HEXoJSGpXC7EiUAYFoakcosh
+ BvXhyG9EnJgXnPi+dYOf2m1VxgGQ8+bZg54SqXSHvHom7gowiYfuCyJdZaeqoOS04AsO
+ TbAA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=nFNT0LPVheWA4KBpnwRedDxe323lH3c78BcmwLbJ700=;
+ b=gONacFmaxXVQ5ZnlOKKzJZ+8PWpZPVRbjGwNH2Hmod8mwhr9/vMEYj0/Z/DooeEATt
+ Fk4fTMGT7mqO29p2QY8Nlrrmmx/RGSdfB5opP2czd2faBOhYnqxKeZ4s07D+KznkPnw7
+ S8sPypoPpgl3IJqIPZ8/XMDfB5vgW4iDx/kiBaqXHjhQaQMok4wXk25rmgF/67G2zFzW
+ DOZWPZgMzDrL+38v4g0nD9SaBHWtH8LbtxFE88qZDwMKy77gpiVofqfqCh6LCZYzktR0
+ QdJA6kkbzmJt2othi0rmx+YbteVZuhxFP7FKP2mwQg25Rwt8OzTbMFLZK8YhHiY7nSAz
+ Dh6Q==
+X-Gm-Message-State: APjAAAUMXeFrGmQTMWRgz3VkZODiFZ8a4k2iFy6Hbsc/QBEbwuMKwo0m
+ 5A7ZW0b5DiHSGp9vdhQuEI0=
+X-Google-Smtp-Source: APXvYqxEMn19nRiQYdcMHXDUyl1sN5kC5K5u0Di4ZM95TyefIw5grebLlrUdxgtbp3mv1L0GC8D08g==
+X-Received: by 2002:a65:5388:: with SMTP id x8mr8040065pgq.398.1572630055931; 
+ Fri, 01 Nov 2019 10:40:55 -0700 (PDT)
+Received: from taoren-ubuntu-R90MNF91 ([2620:10d:c090:200::3:155b])
+ by smtp.gmail.com with ESMTPSA id b18sm7009793pfi.157.2019.11.01.10.40.54
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 01 Nov 2019 10:40:55 -0700 (PDT)
+Date: Fri, 1 Nov 2019 10:40:45 -0700
+From: Tao Ren <rentao.bupt@gmail.com>
+To: Joel Stanley <joel@jms.id.au>
+Subject: Re: [PATCH 0/4] ARM: dts: aspeed: add dtsi for Facebook AST2500
+ Network BMCs
+Message-ID: <20191101174044.GA13557@taoren-ubuntu-R90MNF91>
+References: <20191021194820.293556-1-taoren@fb.com>
+ <CACPK8XcNxs5T=ZC_mRnvkOF_kqS1AvP=9PvMB6w9Fgn_XbtZQw@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <93009dbd-b31c-7364-86d2-21f0fac36676@jp.fujitsu.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <CACPK8XcNxs5T=ZC_mRnvkOF_kqS1AvP=9PvMB6w9Fgn_XbtZQw@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_102858_165810_044E87DD 
-X-CRM114-Status: GOOD (  27.29  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191101_104057_853094_46C039E5 
+X-CRM114-Status: GOOD (  18.61  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (rentao.bupt[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -66,7 +90,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,128 +101,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "tokamoto@jp.fujitsu.com" <tokamoto@jp.fujitsu.com>,
- Jon Masters <jcm@jonmasters.org>, Jonathan Corbet <corbet@lwn.net>,
- "peterz@infradead.org" <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- Will Deacon <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "maeda.naoaki@fujitsu.com" <maeda.naoaki@fujitsu.com>,
- "misono.tomohiro@fujitsu.com" <misono.tomohiro@fujitsu.com>,
- Itaru Kitayama <itaru.kitayama@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "indou.takao@fujitsu.com" <indou.takao@fujitsu.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ linux-aspeed <linux-aspeed@lists.ozlabs.org>, Tao Ren <taoren@fb.com>,
+ OpenBMC Maillist <openbmc@lists.ozlabs.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-[please note that my email address has changed and the old one doesn't work
- any more]
-
-On Fri, Nov 01, 2019 at 09:56:05AM +0000, qi.fuli@fujitsu.com wrote:
-> First of all thanks for the comments for the patch.
+On Fri, Nov 01, 2019 at 10:08:35AM +0000, Joel Stanley wrote:
+> Hi Tao,
 > 
-> I'm still struggling with this problem to find out the solution.
-> As a result of an investigation on this problem, after all, I think it 
-> is necessary to improve TLB flush mechanism of the kernel to fix this 
-> problem completely.
+> On Mon, 21 Oct 2019 at 19:49, Tao Ren <taoren@fb.com> wrote:
+> >
+> > The patch series adds "facebook-netbmc-ast2500-common.dtsi" which defines
+> > devices that are common cross all Facebook AST2500 Network BMC platforms.
+> > The major purpose is to minimize duplicated device entries among Facebook
+> > Network BMC dts files.
+> >
+> > Patch #1 (of 4) adds "facebook-netbmc-ast2500-common.dtsi" file, and the
+> > remaining 3 patches update CMM, Minipack and Yamp device tree to consume
+> > the new dtsi file.
 > 
-> So, I'd like to restart a discussion. At first, I summarize this problem 
-> to recall what was the problem and then I want to discuss how to fix it.
+> The patches look okay to me. I modified the file name to match the
+> convention used by other device trees in the arm directory, where it
+> includes the SOC name first.
 > 
-> Summary of the problem:
-> A few months ago I proposed patches to solve a performance problem due 
-> to TLB flush.[1]
+> I also reworded the commit messages a little.
 > 
-> A problem is that TLB flush on a core affects all other cores even if 
-> all other cores do not need actual flush, and it causes performance 
-> degradation.
+> They have been merged into the aspeed tree for submission to 5.5.
 > 
-> In this thread, I explained that:
-> * I found a performance problem which is caused by TLBI-is instruction.
-> * The problem occurs like this:
->   1) On a core, OS tries to flush TLB using TLBI-is instruction
->   2) TLBI-is instruction causes a broadcast to all other cores, and
->   each core received hard-wired signal
->   3) Each core check if there are TLB entries which have the specified 
-> ASID/VA
-
-For those following along at home, my understanding is that this "check"
-effectively stalls the pipeline as though it is being performed in software.
-
-Some questions:
-
-Does this mean a malicious virtual machine can effectively DoS the system?
-What about a malicious application calling mprotect()?
-
-Do all broadcast TLBI instructions cause this expensive check, or are
-some significantly slower than others?
-
->   4) This check causes performance degradation
-> * We ran FWQ[2] and detected OS jitter due to this problem, this noise
->   is serious for HPC usage.
+> Thanks!
 > 
-> The noise means here a difference between maximum time and minimum time 
-> which the same work takes.
-> 
-> How to fix:
-> I think the cause is TLB flush by TLBI-is because the instruction 
-> affects cores that are not related to its flush.
+> Joel
 
-Does broadcast I-cache maintenance cause the same problem?
+Got it. Thanks a lot for doing this, Joel.
 
-> So the previous patch I posted is
-> * Use mm_cpumask in mm_struct to find appropriate CPUs for TLB flush
-> * Exec TLBI instead of TLBI-is only to CPUs specified by mm_cpumask
->   (This is the same behavior as arm32 and x86)
-> 
-> And after the discussion about this patch, I got the following comments.
-> 1) This patch switches the behavior (original flush by TLBI-is and new 
-> flush by TLBI) by boot parameter, this implementation is not acceptable 
-> due to bad maintainability.
-> 2) Even if this patch fixes this problem, it may cause another 
-> performance problem.
-> 
-> I'd like to start over the implementation by considering these points.
-> For the second comment above, I will run a benchmark test to analyze the 
-> impact on performance.
-> Please let me know if there are other points I should take into 
-> consideration.
+Cheers,
 
-I think it's worth bearing in mind that I have little sympathy for the
-problem that you are seeing. As far as I can tell, you've done the
-following:
+Tao
 
-  1. You designed a CPU micro-architecture that stalls whenever it receives
-     a TLB invalidation request.
-
-  2. You integrated said CPU design into a system where broadcast TLB
-     invalidation is not filtered and therefore stalls every CPU every
-     time that /any/ TLB invalidation is broadcast.
-
-  3. You deployed a mixture of Linux and jitter-sensitive software on
-     this system, and now you're failing to meet your performance
-     requirements.
-
-Have I got that right?
-
-If so, given that your CPU design isn't widely available, nobody else
-appears to have made this mistake and jitter hasn't been reported as an
-issue for any other systems, it's very unlikely that we're going to make
-invasive upstream kernel changes to support you. I'm sorry, but all I can
-suggest is that you check that your micro-architecture and performance
-requirements are aligned with the design of Linux *before* building another
-machine like this in future.
-
-I hate to be blunt, but I also don't want to waste your time.
-
-Thanks,
-
-Will
+> >
+> > Tao Ren (4):
+> >   ARM: dts: aspeed: add dtsi for Facebook AST2500 Network BMCs
+> >   ARM: dts: aspeed: cmm: include dtsi for common network BMC devices
+> >   ARM: dts: aspeed: minipack: include dtsi for common network BMC
+> >     devices
+> >   ARM: dts: aspeed: yamp: include dtsi for common network BMC devices
+> >
+> >  arch/arm/boot/dts/aspeed-bmc-facebook-cmm.dts | 66 ++++---------
+> >  .../boot/dts/aspeed-bmc-facebook-minipack.dts | 59 ++++--------
+> >  .../arm/boot/dts/aspeed-bmc-facebook-yamp.dts | 62 +-----------
+> >  .../dts/facebook-netbmc-ast2500-common.dtsi   | 96 +++++++++++++++++++
+> >  4 files changed, 136 insertions(+), 147 deletions(-)
+> >  create mode 100644 arch/arm/boot/dts/facebook-netbmc-ast2500-common.dtsi
+> >
+> > --
+> > 2.17.1
+> >
 
 _______________________________________________
 linux-arm-kernel mailing list
