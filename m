@@ -2,67 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ABE94EC5DF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 16:49:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A94AEC5A2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 16:30:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=h9y1xL7jaDvC2UZEIZidEW+xJO/j8SHD8Aop9pBr2qs=; b=Wv3kOuIKnr7In/M/7T0JyKnty
-	sc3lfqipEhKvbFpVZmXGK9GgzuoI8N23wNllVKRuBqP1p/fvbDfoCoo/BotOi/e2Ki+vDd2QNBCfx
-	6pQlBMN0fJ4F74y6ARrzaAbntfVO2LQKHJBHquAEsUtqYY89pGY7WVlZ6Ij6LxhCym76AAqrjJPMY
-	OhMOCDsCwvXDRVICDxkalyhWUlsAvur640YOwkBB4Xf0eqlf57wGN3/xfJnD//0OkgdAf4/UFZAiN
-	fkG5KOc2uL+w208ey8FpLDIK82rJQ69Q/owwz4jJP0QxiNcUCtIIHUZF8r18thLm67TpOa7Kv85w5
-	k0K9VcqqA==;
+	 bh=7nkJNBNxo8CysduE2ttrhs1zzjxFreaZKeC3ivgtr5g=; b=o7gu+aqjwvGJKHQA/zzJ+BtIt
+	3QWWOhHGpqlmQFITRD+nCmuRpYCoYYT+fZraRTBX5w3fVIboL1yELbowhNqvp8GjtxjUYbadpkHMv
+	Zwa0Khf5/T7GB6Ss05jfcZe8hdNxZv5p1Xg2SorqvrVyXED8U3SPFxQBpaE5KmQDMrGuxG3OIBTlK
+	/zZLwWaLHYqVILztJHSnR+4riQmxbgR8sii9QWEu1DyMsk0xUW9H2PujRsR1TVKFNId0KgsnoEPf7
+	+STBhdRb6iRnuOebO8YlTWy8DxDICAVGsrXwjWlAzx26LTRqD3obzWrd9hv2l/ERpPhaRIwSlwQiY
+	cbDXXqD9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQZBO-0003Fi-LE; Fri, 01 Nov 2019 15:49:50 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQZBE-0003FI-4V
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 15:49:41 +0000
-Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C625721734;
- Fri,  1 Nov 2019 15:49:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572623379;
- bh=wdIW0/QLcRnGZarqavMjg3f1Q6gO9y6P1i5x8XnrKC4=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=chJsFqRrFQAkIuvN3HeWEC/ZgBqGFyB54Lohux3DUr9V3T7pnBow3Tn11j/JLpRD/
- Wndm4HzwQJtvJF9DPGrJnTaDkiSwbsEdo3IgooYz2kh/PXILxPniKykE3XC/kUKQux
- AcI32uRZ3U1IV1D52C0TtrTxa+gQaGz6FvqY87HA=
-Date: Fri, 1 Nov 2019 16:07:01 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Ondrej Jirman <megous@megous.com>
-Subject: Re: [PATCH] cpufreq: sun50i: Fix CPU speed bin detection
-Message-ID: <20191101150701.fgke7hoad5zn3vn2@hendrix>
-References: <20191031181359.282617-1-megous@megous.com>
+	id 1iQYt4-0004OO-6I; Fri, 01 Nov 2019 15:30:54 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iQYsx-0004N3-P4
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 15:30:49 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 842A731F;
+ Fri,  1 Nov 2019 08:30:40 -0700 (PDT)
+Received: from [10.0.2.15] (unknown [10.37.12.136])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6A2133F719;
+ Fri,  1 Nov 2019 08:30:37 -0700 (PDT)
+Subject: Re: [PATCH v2 1/4] perf cs-etm: Continuously record last branches
+To: Leo Yan <leo.yan@linaro.org>, Arnaldo Carvalho de Melo <acme@kernel.org>, 
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Mike Leach
+ <mike.leach@linaro.org>, Peter Zijlstra <peterz@infradead.org>,
+ Ingo Molnar <mingo@redhat.com>, Mark Rutland <mark.rutland@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Jiri Olsa <jolsa@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Coresight ML <coresight@lists.linaro.org>
+References: <20191101020750.29063-1-leo.yan@linaro.org>
+ <20191101020750.29063-2-leo.yan@linaro.org>
+From: Robert Walker <robert.walker@arm.com>
+Message-ID: <3dd30190-b266-826d-3e2d-91f1446cc5fc@arm.com>
+Date: Fri, 1 Nov 2019 15:30:19 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20191031181359.282617-1-megous@megous.com>
+In-Reply-To: <20191101020750.29063-2-leo.yan@linaro.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_084940_203594_98720401 
-X-CRM114-Status: GOOD (  11.60  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191101_083047_903126_56195D89 
+X-CRM114-Status: GOOD (  24.59  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,77 +71,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:ALLWINNER CPUFREQ DRIVER" <linux-pm@vger.kernel.org>,
- Yangtao Li <tiny.windzz@gmail.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, Chen-Yu Tsai <wens@csie.org>,
- open list <linux-kernel@vger.kernel.org>, linux-sunxi@googlegroups.com,
- "moderated list:ARM/Allwinner sunXi SoC support"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============5083156148986484503=="
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============5083156148986484503==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="cxmms35ejqeprbv6"
-Content-Disposition: inline
-
-
---cxmms35ejqeprbv6
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Thu, Oct 31, 2019 at 07:13:58PM +0100, Ondrej Jirman wrote:
-> I have failures to boot on Orange Pi 3, because this driver determined
-> that my SoC is from the normal bin, but my SoC only works reliably with
-> the OPP values for the slowest bin.
->
-> Looking at BSP code, I found that efuse values have following meanings
-> on H6:
->
-> - 0b000 invalid (interpreted in vendor's BSP as normal bin)
-> - 0b001 slowest bin
-> - 0b011 normal bin
-> - 0b111 fastest bin
->
-> Let's play it safe and interpret 0 as the slowest bin, but fix detection
-> of other bins to match vendor code.
->
-> Fixes: f328584f7bff ("cpufreq: Add sun50i nvmem based CPU scaling driver")
-> Signed-off-by: Ondrej Jirman <megous@megous.com>
-
-Acked-by: Maxime Ripard <mripard@kernel.org>
-
-Out of curiosity, which OPP table is being used? I guess it's one of
-the dozens of patches sitting there...
-
-Maxime
-
---cxmms35ejqeprbv6
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXbxKFQAKCRDj7w1vZxhR
-xfcRAQDCSZvITYVU4ONlpersX7CkPXMk47yfFv5qPasvorZbCAD8DOHH9GG8dEHE
-Q0G94TyC+NiQEhK6W0kM+D5jpHiE0gg=
-=Z6U9
------END PGP SIGNATURE-----
-
---cxmms35ejqeprbv6--
-
-
---===============5083156148986484503==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5083156148986484503==--
-
+T24gMDEvMTEvMjAxOSAwMjowNywgTGVvIFlhbiB3cm90ZToKPiBFdmVyeSB0aW1lIHN5bnRoZXNp
+emUgaW5zdHJ1Y3Rpb24gc2FtcGxlLCB0aGUgbGFzdCBicmFuY2hlcyByZWNvcmRpbmcKPiB3aWxs
+IGJlIHJlc2V0LiAgVGhpcyB3b3VsZCBiZSBmaW5lIGlmIHRoZSBpbnN0cnVjdGlvbiBwZXJpb2Qg
+aXMgYmlnCj4gZW5vdWdoLCBmb3IgZXhhbXBsZSBpZiB3ZSB1c2UgdGhlIG9wdGlvbiAnLS1pdHJh
+Y2U9aTEwMDAwMCcsIHRoZSBsYXN0Cj4gYnJhbmNoIGFycmF5IGlzIHJlc2V0IGZvciBldmVyeSBp
+bnN0cnVjdGlvbiBzYW1wbGUgKDEwMDAwIGluc3RydWN0aW9ucwo+IHBlciBwZXJpb2QpOyBiZWZv
+cmUgZ2VuZXJhdGUgdGhlIG5leHQgaW5zdHJ1Y3Rpb24gc2FtcGxlLCB0aGVyZSBoYXMgdGhlCj4g
+ZW5vdWdoIHBhY2tldHMgY29taW5nIHRvIGZpbGwgbGFzdCBicmFuY2ggYXJyYXkuICBPbiB0aGUg
+b3RoZXIgaGFuZCwKPiBpZiBzZXQgYSB2ZXJ5IHNtYWxsIHBlcmlvZCwgdGhlIHBhY2tldHMgd2ls
+bCBiZSBzaWduaWZpY2FudGx5IHJlZHVjZWQKPiBiZXR3ZWVuIHR3byBjb250aW51b3VzIGluc3Ry
+dWN0aW9uIHNhbXBsZXMsIHRodXMgaWYgdGhlIGxhc3QgYnJhbmNoCj4gYXJyYXkgaXMgcmVzZXQg
+Zm9yIHRoZSBwcmV2aW91cyBpbnN0cnVjdGlvbiBzYW1wbGUsIGl0J3MgYWxtb3N0IGVtcHR5Cj4g
+Zm9yIHRoZSBuZXh0IGluc3RydWN0aW9uIHNhbXBsZS4KPgo+IFRvIGFsbG93IHRoZSBsYXN0IGJy
+YW5jaGVzIHRvIHdvcmsgZm9yIGFueSBpbnN0cnVjdGlvbiBwZXJpb2RzLCB0aGlzCj4gcGF0Y2gg
+YXZvaWRzIHRvIHJlc2V0IHRoZSBsYXN0IGJyYW5jaGVzIGZvciBldmVyeSBpbnN0cnVjdGlvbiBz
+YW1wbGUKPiBhbmQgb25seSByZXNldCBpdCB3aGVuIGZsdXNoIHRoZSB0cmFjZSBkYXRhLiAgVGhl
+IGxhc3QgYnJhbmNoZXMgd2lsbAo+IGJlIHJlc2V0IG9ubHkgZm9yIHR3byBjYXNlcywgb25lIGlz
+IGZvciB0cmFjZSBzdGFydGluZywgYW5vdGhlciBjYXNlCj4gaXMgZm9yIGRpc2NvbnRpbnVvdXMg
+dHJhY2U7IHRodXMgaXQgY2FuIGNvbnRpbnVvdXNseSByZWNvcmQgbGFzdAo+IGJyYW5jaGVzLgoK
+SXMgdGhpcyB0aGUgcmlnaHQgdGhpbmcgdG8gZG8/wqAgVGhpcyB3b3VsZCBjYXVzZSBwcm9maWxp
+bmcgdG9vbHMgdG8gCmNvdW50IHRoZSBzYW1lIGJyYW5jaCBzZXZlcmFsIHRpbWVzIGlmIGl0IGFw
+cGVhcnMgaW4gbXVsdGlwbGUgCmluc3RydWN0aW9uIHNhbXBsZXMsIHdoaWNoIGNvdWxkIHJlc3Vs
+dCBpbiBhIGJpYXNlZCBwcm9maWxlLgoKVGhlIGN1cnJlbnQgaW1wbGVtZW50YXRpb24gbWF0Y2hl
+cyB0aGUgYmVoYXZpb3Igb2YgaW50ZWxfcHQgd2hlcmUgdGhlIApicmFuY2ggYnVmZmVyIGlzIHJl
+c2V0IGFmdGVyIGVhY2ggc2FtcGxlLCBzb8KgIHRoZSBpbnN0cnVjdGlvbiBzYW1wbGUgCm9ubHkg
+aW5jbHVkZXMgYnJhbmNoZXMgc2luY2UgdGhlIHByZXZpb3VzIHNhbXBsZS4KCkhvd2V2ZXIgeDg2
+IGxiciAocGVyZiByZWNvcmQgLWIpIGRvZXMgYXBwZWFyIHRvIHJlcGVhdCB0aGUgc2FtZSBmdWxs
+IApicmFuY2ggc3RhY2sgb24gc2V2ZXJhbCBzYW1wbGVzIHVudGlsIGEgbmV3IHN0YWNrIGlzIGNh
+cHR1cmVkLgoKSSdtIG5vdCBzdXJlIHdoYXQgdGhlIHJpZ2h0IG9yIHdyb25nIGFuc3dlciBpcyBo
+ZXJlLsKgIEZvciBBdXRvRkRPLCB3ZSdyZSAKbGlrZWx5IHRvIHVzZSBhIG11Y2ggYmlnZ2VyIHBl
+cmlvZCAoPjEwMDAwIGluc3RydWN0aW9ucykgc28gd29uJ3QgYmUgCmFmZmVjdGVkLCBidXQgb3Ro
+ZXIgdG9vbHMgbWlnaHQgYmUuCgpSZWdhcmRzCgoKUm9iCgoKPiBTaWduZWQtb2ZmLWJ5OiBMZW8g
+WWFuIDxsZW8ueWFuQGxpbmFyby5vcmc+Cj4gLS0tCj4gICB0b29scy9wZXJmL3V0aWwvY3MtZXRt
+LmMgfCA3ICsrKystLS0KPiAgIDEgZmlsZSBjaGFuZ2VkLCA0IGluc2VydGlvbnMoKyksIDMgZGVs
+ZXRpb25zKC0pCj4KPiBkaWZmIC0tZ2l0IGEvdG9vbHMvcGVyZi91dGlsL2NzLWV0bS5jIGIvdG9v
+bHMvcGVyZi91dGlsL2NzLWV0bS5jCj4gaW5kZXggZjVmODU1ZmZmNDEyLi44YmU2ZDAxMGFlODQg
+MTAwNjQ0Cj4gLS0tIGEvdG9vbHMvcGVyZi91dGlsL2NzLWV0bS5jCj4gKysrIGIvdG9vbHMvcGVy
+Zi91dGlsL2NzLWV0bS5jCj4gQEAgLTExNTMsOSArMTE1Myw2IEBAIHN0YXRpYyBpbnQgY3NfZXRt
+X19zeW50aF9pbnN0cnVjdGlvbl9zYW1wbGUoc3RydWN0IGNzX2V0bV9xdWV1ZSAqZXRtcSwKPiAg
+IAkJCSJDUyBFVE0gVHJhY2U6IGZhaWxlZCB0byBkZWxpdmVyIGluc3RydWN0aW9uIGV2ZW50LCBl
+cnJvciAlZFxuIiwKPiAgIAkJCXJldCk7Cj4gICAKPiAtCWlmIChldG0tPnN5bnRoX29wdHMubGFz
+dF9icmFuY2gpCj4gLQkJY3NfZXRtX19yZXNldF9sYXN0X2JyYW5jaF9yYih0aWRxKTsKPiAtCj4g
+ICAJcmV0dXJuIHJldDsKPiAgIH0KPiAgIAo+IEBAIC0xNDg2LDYgKzE0ODMsMTAgQEAgc3RhdGlj
+IGludCBjc19ldG1fX2ZsdXNoKHN0cnVjdCBjc19ldG1fcXVldWUgKmV0bXEsCj4gICAJCXRpZHEt
+PnByZXZfcGFja2V0ID0gdG1wOwo+ICAgCX0KPiAgIAo+ICsJLyogUmVzZXQgbGFzdCBicmFuY2hl
+cyBhZnRlciBmbHVzaCB0aGUgdHJhY2UgKi8KPiArCWlmIChldG0tPnN5bnRoX29wdHMubGFzdF9i
+cmFuY2gpCj4gKwkJY3NfZXRtX19yZXNldF9sYXN0X2JyYW5jaF9yYih0aWRxKTsKPiArCj4gICAJ
+cmV0dXJuIGVycjsKPiAgIH0KPiAgIAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtl
+cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
