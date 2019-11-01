@@ -2,75 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A66CFEBC34
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 04:06:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1461CEBC40
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 04:09:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=hrYjVC0XkYyYkliRvS4OIWiylweVp22qBm1+7JqMPNI=; b=Bx8
-	eyHjAU0qHnx9jSTxFWXBk7S0DdHlZpjXohk6suCATLzLFG23ANha5QeLMAfTDoYJFEqZmQ3m1s2va
-	JSZmFRMjGiAPWjq0AMjhRdpRjp8CMIEjwUIxYvrn8raJyIDW6Ki1j3sEB3Bn3fNHZlwCDCMlggd6I
-	7S2FWj8EMYVeaHrB5ow9CUndEhqC2eJziWjV8mvQ3WPbbHm0sXzKk7sYzc1ITXFY+A6PaBUDgmfZr
-	D7NlS9mAoxC63dINaG+P/4r9lgpiJQcXfwA6Ciqox0rEJYFymeXSHTylqf7UJeKPpytIZqmEO+fkD
-	+jCaksQI5MvvmJ1DX07SaLGTHj3Skkg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cHdXIVChUVcxvS/58vg9Dt1++JUNe9EKrB8+iMngoKE=; b=XnPHjVUoXrqSd9
+	8mifI09nIIVioMHUZliffybhE2Cxyi27g70/J1m5cAB8f2CjllbHoRaO+zzG2Ks1J5ZG8IMFZabcK
+	QwBLSAfChoU2snYXtOgQqwKNQYasmW+FM0XCuRs4ZLuNRE7kx1u5Ovbvb2G86eFL+j6eNXKRqgyJd
+	Q+P1erK69zseWDlQsMI7a6BK57flVPOpEiSjXVvneKRJHXSyWzNzIWyLAoVb+JtSgwhKv3MWsZlZd
+	sElrg6IbKuXYXY39t56nHX6F/jVuvpgaRqIfkCsVDBxt7jOJMt/Z68CiuUtEKDrsRxdGZPaaeGpwK
+	61ZLLc9R91ClXEItqcjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQNGm-00067G-40; Fri, 01 Nov 2019 03:06:36 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iQNJa-0006Y9-CW; Fri, 01 Nov 2019 03:09:30 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQNGc-00066s-VN
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 03:06:28 +0000
-Received: by mail-wm1-x342.google.com with SMTP id t26so3760367wmi.4
+ id 1iQNJP-0006Xm-0S
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 03:09:20 +0000
+Received: by mail-wr1-x443.google.com with SMTP id n1so8362981wra.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 31 Oct 2019 20:06:26 -0700 (PDT)
+ Thu, 31 Oct 2019 20:09:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=ABoCwU9PP9ddyUwXERXcCZdYWkmzW6JWRZWKZZduMb8=;
- b=fipki4JiNUGyDzM+Uhc6AJgfupy3T53fUwGXdyAPBips59hmCtphQspTnuEcGfG3aU
- fcWZQICG3N0MgtYCEPy3CVcxS1ogVjKr+kUtuISKj8JqU6SGRrucgJ6Yt/O13E6WA8LI
- M+4q5vFDs8Dfwqti3Ng+jhtVUG/H8A9nYazaBrk9MIrgk0k9zIcwrpt/cATyNpZsvRtx
- dIXCArYC0M6rwTQVrDAeYclcMV/slp98rLSJsJgFNKqTe+rjYhm2CHxZcKJ+IvLdpYFE
- a/j2O3elx9oo86L0xZ3X0uFvO7pzJYJnWJ3R2OSxuBeN95Mpsh/crlUZPmDy9gl87Lqn
- LzEg==
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=MilvW8KF1q1GBDWNa38zLUbdbpUmypfuUOJIrybukug=;
+ b=i1vdbmthHHL/BD//a+Lc4IWp0ufRC1HSfc+xoViJcNxseK8PgLdkpo23OB131Oonci
+ u6rzC9GICpbfyzeWs+LS4PV7whOmAXAwVFThc4JZTt3EGpxiu6Oy8TrGHtp/5z5sxKUG
+ /jjH+cMRhUmo25sp11d5vTnyvsUddHZG6VqYa9uGv6CMRMO2cZo8SXdnmHivTiLaPpOZ
+ xa9pjxLrMZgp319+bjpZKm1r5iHtDfHbWqXcqdhcAGT8M5sOhKd2xkeU0W1s3I7oofM8
+ uMkP4s+6Htf1VMcp5fgJ7NzetLpKgcGHIq88q11eSHRypKglYUoceaoGb50yPph7qoqz
+ Ai4Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=ABoCwU9PP9ddyUwXERXcCZdYWkmzW6JWRZWKZZduMb8=;
- b=g3y6v2DVsnY8aaWsLpr9z85+cM5YWEy74ZrFer77nXJiB7Ga2IgC041raz9QMFIwTz
- /6+wRkOmLy9aedCseyZBOMyuH2BjCSVrtVg2PVXx7+4qz+jUtoCeiFX3lhAj5MEfFf8O
- VqXNY5gaP8nix0M+RYuuOcAV+MyyP/azRl0+s56VAVn9FCxcjYS6Jo8yhmeI58ye6/5N
- qmYtyRHaY9DdKTgJEq3A3Lb0syjLWJpFIGLBSFlJyJR65M9XfpADl72ugUOT4vSEkuiF
- UzYxOiEyVg0izyVOWKpKvWubnXGqcsyLNHfDDaa/jhonCMHN33XwZNq0jj9X99zgfhuF
- +51w==
-X-Gm-Message-State: APjAAAW0zzxhfDOrf284sxHZDTocANrbQOKlnKL9ru9wS8D+R0IakE/h
- mBwxU0d9k4Dk2huPpyjNKow=
-X-Google-Smtp-Source: APXvYqxuscdYaOY+WQrYM+P8BeaEGx5d1Xq3998VHM+OFwKySzE77N586ldM9L8zBHAtJieEBn01vg==
-X-Received: by 2002:a05:600c:20c7:: with SMTP id
- y7mr7292101wmm.34.1572577585137; 
- Thu, 31 Oct 2019 20:06:25 -0700 (PDT)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id j11sm2625299wrq.26.2019.10.31.20.06.23
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 31 Oct 2019 20:06:24 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=MilvW8KF1q1GBDWNa38zLUbdbpUmypfuUOJIrybukug=;
+ b=FY91jygcwr/PSLFL7e/rOjvs3+5uMiKlafX7pLU+tMFByhKsKuYPEk7oLQVBYg8bRX
+ WwUD+NZNt6q7EJkqnhluv+xX48ruwpFtE9ikDidjfSFLa01pXIWIYpDBne3no1ENgRO3
+ 3csoLu5o+T00v6hGXcBfCSvvIbPslf4QA1ZD/1sgTVvJKcygrcEHTBnzvgTWMtoZLqve
+ XUKz7tnPpDTcnmJafkzTD6YExJpjnQBxEdEgRGvAm0YHgZMV0lt9iNe/I++A/IqZiQoU
+ QMPViUK9YmQl//SWod3bwaMqbDZt9BRYsoNfAYO1YpKuyjDJgvjRCaDAb10x4ufmH42G
+ fcIw==
+X-Gm-Message-State: APjAAAW/mjS8FIyp6j3DuX1OJ3uXAxL4i/6DxfUNyeKS3pA8VD4qWH5b
+ BZIsj7uvC/Q0wynRipKMO2o=
+X-Google-Smtp-Source: APXvYqxOq8uZUxxuLNBzeC5oJfEwK0DGyj8pTKhYtDY1N4Yuug8YgW27P1o874r9SV8ZDTA4Z3kJiw==
+X-Received: by 2002:adf:fec3:: with SMTP id q3mr8604105wrs.343.1572577757353; 
+ Thu, 31 Oct 2019 20:09:17 -0700 (PDT)
+Received: from [10.230.29.119] ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id n17sm5484967wrt.25.2019.10.31.20.09.15
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 31 Oct 2019 20:09:16 -0700 (PDT)
+Subject: Re: [PATCH] reset: brcmstb: Fix resource checks
+To: linux-arm-kernel@vger.kernel.org, Philipp Zabel <p.zabel@pengutronix.de>
+References: <20191101030616.27372-1-f.fainelli@gmail.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
-To: linux-arm-kernel@vger.kernel.org
-Subject: [PATCH] reset: brcmstb: Fix resource checks
-Date: Thu, 31 Oct 2019 20:06:15 -0700
-Message-Id: <20191101030616.27372-1-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
+Message-ID: <0f0c6be8-0e3c-7294-75aa-58c3b33d621e@gmail.com>
+Date: Thu, 31 Oct 2019 20:09:13 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.0
+MIME-Version: 1.0
+In-Reply-To: <20191101030616.27372-1-f.fainelli@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_200627_012051_5BE3EF0B 
-X-CRM114-Status: GOOD (  11.71  )
+X-CRM114-CacheID: sfid-20191031_200919_052676_4D4AE147 
+X-CRM114-Status: GOOD (  11.83  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -94,50 +101,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
- "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
+Cc: "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
  <bcm-kernel-feedback-list@broadcom.com>,
+ open list <linux-kernel@vger.kernel.org>,
  "moderated list:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Philipp Zabel <p.zabel@pengutronix.de>,
- open list <linux-kernel@vger.kernel.org>
-MIME-Version: 1.0
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The use of IS_ALIGNED() is incorrect, the typical resource we pass looks
-like this: start: 0x8404318, size: 0x30. When using IS_ALIGNED() we will
-get the following 0x8404318 & (0x18 - 1) = 0x10 which is definitively
-not equal to 0.
 
-Replace this with an appropriate check on the start address and the
-resource size to be a multiple of SW_INIT_BANK_SIZE.
 
-Fixes: 77750bc089e4 ("reset: Add Broadcom STB SW_INIT reset controller driver")
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
----
- drivers/reset/reset-brcmstb.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+On 10/31/2019 8:06 PM, Florian Fainelli wrote:
+> The use of IS_ALIGNED() is incorrect, the typical resource we pass looks
+> like this: start: 0x8404318, size: 0x30. When using IS_ALIGNED() we will
+> get the following 0x8404318 & (0x18 - 1) = 0x10 which is definitively
+> not equal to 0.
+> 
+> Replace this with an appropriate check on the start address and the
+> resource size to be a multiple of SW_INIT_BANK_SIZE.
+> 
+> Fixes: 77750bc089e4 ("reset: Add Broadcom STB SW_INIT reset controller driver")
+> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 
-diff --git a/drivers/reset/reset-brcmstb.c b/drivers/reset/reset-brcmstb.c
-index a608f445dad6..21ca6fa51365 100644
---- a/drivers/reset/reset-brcmstb.c
-+++ b/drivers/reset/reset-brcmstb.c
-@@ -91,8 +91,8 @@ static int brcmstb_reset_probe(struct platform_device *pdev)
- 		return -ENOMEM;
- 
- 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	if (!IS_ALIGNED(res->start, SW_INIT_BANK_SIZE) ||
--	    !IS_ALIGNED(resource_size(res), SW_INIT_BANK_SIZE)) {
-+	if ((res->start & SW_INIT_BANK_SIZE) != SW_INIT_BANK_SIZE ||
-+	    resource_size(res) % SW_INIT_BANK_SIZE) {
- 		dev_err(kdev, "incorrect register range\n");
- 		return -EINVAL;
- 	}
+Sorry this fails building on 32-bit because it triggers a 64-bit
+division let me go back and fix this...
 -- 
-2.17.1
-
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
