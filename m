@@ -2,114 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1C32EBF23
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 09:21:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DA2FEBF2A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 09:23:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zmpc69F+E8+7oJsZIuaBjcN2MALWrtFi28Rtl8GJYCM=; b=IYCTOwCDoRcjKS
-	o/cyrJY4+qh7l0aQOCnmrPSPvGN5s/cNTktvlmaC8mD959QyUJq0MOr4UbE0CYuNwiAlKOY5oeur+
-	AHzyiLEAqDcnpdtIdjNPpXKrMFc3jL2bNVJj3xzMCfJg9EpCIVkWDMA7mMKu0m2xXy5/jY6qUmkZX
-	b99dXaUIO6xw7aPHxSG0LFtJvaZJo2jeYSAIZ8PEJOdKBi3pNa3SXAfmelYkv23M7Xllm6AyaObOb
-	C21wATxxKyJ8oZthNlyGCR6inuTPoV0ioWOgt0u79vmOzOQWj/0C5rg2V3RN4rG09TWDQ6WjxjhYP
-	o7tkcfL9AJpEkUYpV/pw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=CRiIXOnMlOVCK5v9aRpN5vfvFCHgkC4dkrgMUfPTLs8=; b=bccg511mczkRPf4fiyYGLBsqH
+	YxzDMkZ8avYHbB8elgxgU6P6qEtFwPhPV051KikscLOa4qXedh6Qg31pkRPPVbivfSl4+ToS+dHQt
+	wJwqfJK+bfT98NKdMXxjPw1nE5DnlwO3tJbLlpu4MgY5uCgvGt36sOZ+zzsnXN21q/3rcALhyVfY4
+	XL+saiK89zd1k48iUZ0Pf5bXSFGf362FfPJndOPP50ez8gRhq7/X58Nlz39GR+0N322Dyy+kZ/TSU
+	IjMZH/NbCQJr4Px4F+GNTlMFMhzqC73XAwrQyd8uD7Oh3WROZId3gwW/84DUmVNypFeQo1F8DPkJs
+	8jCYtYOHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQSBR-0007NC-UJ; Fri, 01 Nov 2019 08:21:25 +0000
-Received: from mail-eopbgr40082.outbound.protection.outlook.com ([40.107.4.82]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1iQSDc-0007it-G8; Fri, 01 Nov 2019 08:23:40 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQSBK-0007MV-Ke
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 08:21:20 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=TBPEHYlzLw/UOatb0X3q5VxJljijKu/4FusbAfMSUEmxvBBmOVHieCEiFGESX+LBJTNdR3VliFHFAftDlCaDLwmmNJyfL788b4abnZe7pgzX3uD4XBnVn7xMryoEVJ4AA/mInp81av98BhXnUe+eamVzM7CT+ZbZiNzOt34yD3civOov5vWTKzHUFpeIZQkYVlNSZeFKV5Aw1z7MjU7hmO7d3GbccUbEKWa+fxVCS+xY/5ZLyDAd5PDtLUESAw1o5erZ0uSsAStP91XtiTdb2NlUwhBLTfeaijTakLsxF0yAujcrOzPo0mQ7KjOI54MFB7z2RZ18iTjTB7zo5s2ZVA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=8LZvjT340XYd8SfzpfVllXllz8QPbO8Xf5n0xXOS3cM=;
- b=cqIWS/oLEqp1Y1cM00pIzBYk61lYPERRK/a4sk6peulRS+4AsTEZJF9fz+sF6Gjed1GKlna3pRUBoTZ8yfW6kK84fEGBgvvf9WXXkuTbLhTQPVtV5+zYeq6mQ0b4YJkYvBnwGgbXfWZuYNeCbU0f9AzKih4ui612GoM/WKPkKVxetBPLymPMaQA24hFYI2C1Er8ztMWpxgnTeJjklxZFNGh9TvRuMB028eKs8uJ/OlkbJBChqf13L/hwdcgTdwuXtoiaZAI+eIBKk4dBLEyzj7Rsk0C255IBlCxkHHuWgIFQ4GWrzY3b80RSnIK58T6kDD290YVwWmlPqqHURNN8lw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=8LZvjT340XYd8SfzpfVllXllz8QPbO8Xf5n0xXOS3cM=;
- b=ST+t521jZcXPYNNamy+OmbuYCpd5Hj0OIOqg8/q/oZ7Zg4yRUW3z0yUeVXSgQtWo47wMKWpO6yD4RjvtpCV+jaiEYpNtjgoC3WPLrvC2+R2o+Q2wr6x5gl26srSOCcBQYVWzXvOqIw7C5QGdwX3mfIyuekeqwoWBXg74ufc26As=
-Received: from DB7PR04MB4618.eurprd04.prod.outlook.com (52.135.139.151) by
- DB7PR04MB4281.eurprd04.prod.outlook.com (52.135.128.139) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2387.24; Fri, 1 Nov 2019 08:21:13 +0000
-Received: from DB7PR04MB4618.eurprd04.prod.outlook.com
- ([fe80::79f1:61a7:4076:8679]) by DB7PR04MB4618.eurprd04.prod.outlook.com
- ([fe80::79f1:61a7:4076:8679%3]) with mapi id 15.20.2367.031; Fri, 1 Nov 2019
- 08:21:13 +0000
-From: Joakim Zhang <qiangqing.zhang@nxp.com>
-To: Will Deacon <will@kernel.org>
-Subject: RE: [PATCH V2 3/4] perf/imx_ddr: Add enhanced AXI ID filter support
-Thread-Topic: [PATCH V2 3/4] perf/imx_ddr: Add enhanced AXI ID filter support
-Thread-Index: AQHVjidcsAPUWCct1E+N9V1DGkPyXKd05lAAgAEU4PA=
-Date: Fri, 1 Nov 2019 08:21:12 +0000
-Message-ID: <DB7PR04MB4618FA29B07B6FEE5A65B00FE6620@DB7PR04MB4618.eurprd04.prod.outlook.com>
-References: <20191029070314.16719-1-qiangqing.zhang@nxp.com>
- <20191029070314.16719-3-qiangqing.zhang@nxp.com>
- <20191031153858.GA28061@willie-the-truck>
-In-Reply-To: <20191031153858.GA28061@willie-the-truck>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=qiangqing.zhang@nxp.com; 
-x-originating-ip: [119.31.174.71]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: a825654d-92a8-4d74-1240-08d75ea47564
-x-ms-traffictypediagnostic: DB7PR04MB4281:|DB7PR04MB4281:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB7PR04MB42813C667B0143F64516DDCAE6620@DB7PR04MB4281.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:862;
-x-forefront-prvs: 020877E0CB
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(366004)(396003)(39860400002)(136003)(376002)(54534003)(13464003)(189003)(199004)(8676002)(316002)(305945005)(6506007)(53546011)(5660300002)(7736002)(54906003)(478600001)(52536014)(102836004)(14454004)(99286004)(26005)(76176011)(7696005)(86362001)(64756008)(6436002)(186003)(66066001)(486006)(71190400001)(66446008)(11346002)(476003)(55016002)(446003)(66946007)(6246003)(229853002)(9686003)(256004)(66476007)(66556008)(6916009)(71200400001)(8936002)(4326008)(25786009)(3846002)(81156014)(81166006)(6116002)(74316002)(2906002)(76116006)(33656002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR04MB4281;
- H:DB7PR04MB4618.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: SZNGCajKqIyD/b3MYFttvoJvvAVMwSSHEgbxUickNzlrf1ecZx/HGyHVC+LSeZC0T1wcr15ziNTVEA0hwjUODRs1mWEI9/C0nXB2MfGCAUgV1CPRWCzBNt7yyIIzzBxdYqFUBoA2Z+s2ojgZj+zISKqCNZcYFzpDejNM6wB/qhZ/MGhTLJqyzDFni+YGSiTHwl9TA99vU87PMgzSRiJX4cPTD+KUDrX3xLfrVoDdUJJrfZzwIpk8np7yp4PgdD4Aat2YE+UldsY2c8SYRaH1s2oqKlomdxfqyexV7JkKvYOw38RrG0oBrRWPasrQX59DvTKMLbigmOk00HSQgQXbGXnh0T/ho0M7w1AUZjR97ZGD/+IjLvMUApdzZfq7RX+L0fVY+wC6apV4M91+LeVL10Id908tur4V0NoZKPx9M+sD78kPeImi+a797hLbAy+k
+ id 1iQSDV-0007hG-Gn
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 08:23:35 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xA18NUb6014331;
+ Fri, 1 Nov 2019 03:23:30 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1572596610;
+ bh=9mT8EACeZWCGyrUJOHbpL28LGZaahlCj2GAuPGYtZfg=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=RzYkjOhSN33pe+hDy6de5+dBOaQlkTgNEiP8f+714LFv6Th4+r5fmcB5xBBh8qXy/
+ O220bn4FknARVvrIe0W00wQyhnqsl6GoUqzL0AWgi2M/ebPfzryzyt1lKDCsq4LXjk
+ lUYLP2MZ91EUBXQPHUzwGns0sYjAQrZQ5W5RRvkM=
+Received: from DLEE107.ent.ti.com (dlee107.ent.ti.com [157.170.170.37])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xA18NUZF097534
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 1 Nov 2019 03:23:30 -0500
+Received: from DLEE102.ent.ti.com (157.170.170.32) by DLEE107.ent.ti.com
+ (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Fri, 1 Nov
+ 2019 03:23:30 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE102.ent.ti.com
+ (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Fri, 1 Nov 2019 03:23:16 -0500
+Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xA18NRsG088943;
+ Fri, 1 Nov 2019 03:23:28 -0500
+Subject: Re: [PATCH] firmware: ti_sci: rm: Add support for tx_tdtype parameter
+ for tx channel
+To: Peter Ujfalusi <peter.ujfalusi@ti.com>, <nm@ti.com>, <ssantosh@kernel.org>
+References: <20191025084715.25098-1-peter.ujfalusi@ti.com>
+From: Tero Kristo <t-kristo@ti.com>
+Message-ID: <b2231065-ae16-8870-03ac-a435f190ee9f@ti.com>
+Date: Fri, 1 Nov 2019 10:23:26 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a825654d-92a8-4d74-1240-08d75ea47564
-X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Nov 2019 08:21:13.1065 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: QZPQCgiXVGVBvZj3JnC2VQtvh4fxGNHX4IH8P+eWhWXXTuhtZZbC60h6K7MvasJA5QsjdFv/zqQtf8nSFRFPjA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB4281
+In-Reply-To: <20191025084715.25098-1-peter.ujfalusi@ti.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_012118_752381_BF793832 
-X-CRM114-Status: GOOD (  20.93  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191101_012333_706742_ACE77254 
+X-CRM114-Status: GOOD (  23.20  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.4.82 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -121,79 +92,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>, Frank Li <frank.li@nxp.com>,
- "robin.murphy@arm.com" <robin.murphy@arm.com>,
- dl-linux-imx <linux-imx@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="gb2312"
-Content-Transfer-Encoding: base64
+Cc: grygorii.strashko@ti.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-DQo+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tDQo+IEZyb206IFdpbGwgRGVhY29uIDx3aWxs
-QGtlcm5lbC5vcmc+DQo+IFNlbnQ6IDIwMTnE6jEw1MIzMcjVIDIzOjM5DQo+IFRvOiBKb2FraW0g
-WmhhbmcgPHFpYW5ncWluZy56aGFuZ0BueHAuY29tPg0KPiBDYzogbWFyay5ydXRsYW5kQGFybS5j
-b207IHJvYmluLm11cnBoeUBhcm0uY29tOyBkbC1saW51eC1pbXgNCj4gPGxpbnV4LWlteEBueHAu
-Y29tPjsgRnJhbmsgTGkgPGZyYW5rLmxpQG54cC5jb20+Ow0KPiBsaW51eC1hcm0ta2VybmVsQGxp
-c3RzLmluZnJhZGVhZC5vcmcNCj4gU3ViamVjdDogUmU6IFtQQVRDSCBWMiAzLzRdIHBlcmYvaW14
-X2RkcjogQWRkIGVuaGFuY2VkIEFYSSBJRCBmaWx0ZXIgc3VwcG9ydA0KPiANCj4gT24gVHVlLCBP
-Y3QgMjksIDIwMTkgYXQgMDc6MDY6MTlBTSArMDAwMCwgSm9ha2ltIFpoYW5nIHdyb3RlOg0KPiA+
-IFdpdGggRERSX0NBUF9BWElfSURfRklMVEVSIHF1aXJrLCBpbmRpY2F0aW5nIEhXIHN1cHBvcnRz
-IEFYSSBJRCBmaWx0ZXINCj4gPiB3aGljaCBvbmx5IGNhbiBnZXQgYnVyc3RzIGZyb20gRERSIHRy
-YW5zYWN0aW9uLCBpLmUuIEREUiByZWFkL3dyaXRlDQo+ID4gcmVxdWVzdHMuDQo+ID4NCj4gPiBU
-aGlzIHBhdGNoIGFkZCBERFJfQ0FQX0FYSV9JRF9FTkhBTkNFRF9GSUxURVIgcXVpcmssIGluZGlj
-YXRpbmcgSFcNCj4gPiBzdXBwb3J0cyBBWEkgSUQgZmlsdGVyIHdoaWNoIGNhbiBnZXQgYnVyc3Rz
-IGFuZCBieXRlcyBmcm9tIEREUg0KPiA+IHRyYW5zYWN0aW9uIGF0IHRoZSBzYW1lIHRpbWUuIFdl
-IGhvcGUgUE1VIGFsd2F5cyByZXR1cm4gYnl0ZXMgaW4gdGhlDQo+ID4gZHJpdmVyIGR1ZSB0byBp
-dCBpcyBtb3JlIG1lYW5pbmdmdWwgZm9yIHVzZXJzLg0KPiA+DQo+ID4gRERSX0NBUF9BWElfSURf
-RU5IQU5DRURfRklMVEVSIGlzIGJhc2VkIG9uIEREUl9DQVBfQVhJX0lEX0ZJTFRFUg0KPiBhbmQN
-Cj4gPiBleHRlbmQgaXQgYSBiaXQuIFNvIG5lZWQgc2VsZWN0IGJvdGggYWJvdmUgdHdvIHFpdXJr
-cyB0b2dldGhlciB3aGVuIEhXDQo+ID4gc3VwcG9ydHMgZW5oYW5jZWQgQVhJIElEIGZpbHRlci4N
-Cj4gPg0KPiA+IFNpZ25lZC1vZmYtYnk6IEpvYWtpbSBaaGFuZyA8cWlhbmdxaW5nLnpoYW5nQG54
-cC5jb20+DQo+ID4gLS0tDQo+ID4gQ2hhbmdlbG9nOg0KPiA+IFYxLT5WMjoNCj4gPiAJKiB1c2Ug
-ZGRyX3BlcmZfaXNfZmlsdGVyZWQoKSBoZWxwZXIgdG8gc2ltcGx5IHRoZSBjb2RlLg0KPiA+IAkq
-IGltcHJvdmUgdGhlIGNvbW1pdCBtZXNzYWdlLg0KPiA+IC0tLQ0KPiA+ICBkcml2ZXJzL3BlcmYv
-ZnNsX2lteDhfZGRyX3BlcmYuYyB8IDU1DQo+ID4gKysrKysrKysrKysrKysrKysrKystLS0tLS0t
-LS0tLS0NCj4gPiAgMSBmaWxlIGNoYW5nZWQsIDM0IGluc2VydGlvbnMoKyksIDIxIGRlbGV0aW9u
-cygtKQ0KPiA+DQo+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGVyZi9mc2xfaW14OF9kZHJfcGVy
-Zi5jDQo+ID4gYi9kcml2ZXJzL3BlcmYvZnNsX2lteDhfZGRyX3BlcmYuYw0KPiA+IGluZGV4IGNl
-NzM0NTc0NWI0Mi4uMTdjODE3ZDg5MjIyIDEwMDY0NA0KPiA+IC0tLSBhL2RyaXZlcnMvcGVyZi9m
-c2xfaW14OF9kZHJfcGVyZi5jDQo+ID4gKysrIGIvZHJpdmVycy9wZXJmL2ZzbF9pbXg4X2Rkcl9w
-ZXJmLmMNCj4gPiBAQCAtNDUsNyArNDUsOCBAQA0KPiA+ICBzdGF0aWMgREVGSU5FX0lEQShkZHJf
-aWRhKTsNCj4gPg0KPiA+ICAvKiBERFIgUGVyZiBoYXJkd2FyZSBmZWF0dXJlICovDQo+ID4gLSNk
-ZWZpbmUgRERSX0NBUF9BWElfSURfRklMVEVSICAgICAgICAgIDB4MSAgICAgLyogc3VwcG9ydCBB
-WEkgSUQNCj4gZmlsdGVyICovDQo+ID4gKyNkZWZpbmUgRERSX0NBUF9BWElfSURfRklMVEVSCQkJ
-QklUKDEpICAgICAvKiBzdXBwb3J0IEFYSSBJRA0KPiBmaWx0ZXIgKi8NCj4gPiArI2RlZmluZSBE
-RFJfQ0FQX0FYSV9JRF9GSUxURVJfRU5IQU5DRUQJCUJJVCgyKSAgICAgLyoNCj4gc3VwcG9ydCBl
-bmhhbmNlZCBBWEkgSUQgZmlsdGVyICovDQo+IA0KPiBJIHN0aWxsIGRvbid0IHVuZGVyc3RhbmQg
-d2h5IHlvdSBkb24ndCBkbyBzb21ldGhpbmcgbGlrZSB0aGlzOg0KDQpUaGlzIGNvdWxkIGJlIGJl
-dHRlciBhcyB1c2VyIGlzIGF3YXJlIHRoYXQgZW5oYW5jZWQgZmlsdGVyIGlzIGJhc2VkIG9uIHBy
-ZXZpb3VzIGZpbHRlci4NCg0KPiAjZGVmaW5lIEREUl9DQVBfQVhJX0lEX0ZJTFRFUgkJMHgxIC8q
-IHN1cHBvcnQgQVhJIElEIGZpbHRlciAqLw0KPiAjZGVmaW5lIEREUl9DQVBfQVhJX0lEX0ZJTFRF
-Ul9FTkhBTkNFRAkweDMgLyogc3VwcG9ydCBlbmhhbmNlZCBBWEkNCj4gSUQgZmlsdGVyICovDQo+
-IA0KPiANCj4gc3RhdGljIGJvb2wgZGRyX3BlcmZfaXNfZW5oYW5jZWRfZmlsdGVyZWQoc3RydWN0
-IHBlcmZfZXZlbnQgKmV2ZW50KSB7DQo+IAl1bnNpZ25lZCBpbnQgZmlsdDsNCj4gCXN0cnVjdCBk
-ZHJfcG11ICpwbXUgPSB0b19kZHJfcG11KGV2ZW50LT5wbXUpOw0KPiANCj4gCWZpbHQgPSBwbXUt
-PmRldnR5cGVfZGF0YS0+cXVpcmtzICYNCj4gRERSX0NBUF9BWElfSURfRklMVEVSX0VOSEFOQ0VE
-Ow0KPiAJcmV0dXJuIChmaWx0ID09IEREUl9DQVBfQVhJX0lEX0ZJTFRFUl9FTkhBTkNFRCkgJiYN
-Cj4gCQlkZHJfcGVyZl9pc19maWx0ZXJlZChldmVudCk7DQo+IH0NCj4gDQo+IA0KPiBhbmQgdGhl
-bjoNCj4gDQo+ID4gKwkvKg0KPiA+ICsJICogcmV0dXJuIGJ5dGVzIGluc3RlYWQgb2YgYnVyc3Rz
-IGZyb20gZGRyIHRyYW5zYWN0aW9uIGZvcg0KPiA+ICsJICogYXhpZC1yZWFkIGFuZCBheGlkLXdy
-aXRlIGV2ZW50IGlmIFBNVSBjb3JlIHN1cHBvcnRzIGVuaGFuY2VkDQo+ID4gKwkgKiBmaWx0ZXIu
-DQo+ID4gKwkgKi8NCj4gPiArCWlmICgocG11LT5kZXZ0eXBlX2RhdGEtPnF1aXJrcyAmIEREUl9D
-QVBfQVhJX0lEX0ZJTFRFUikgJiYNCj4gPiArCSAgICAocG11LT5kZXZ0eXBlX2RhdGEtPnF1aXJr
-cyAmDQo+IEREUl9DQVBfQVhJX0lEX0ZJTFRFUl9FTkhBTkNFRCkgJiYNCj4gPiArCSAgICBkZHJf
-cGVyZl9pc19maWx0ZXJlZChldmVudCkpIHsNCj4gDQo+IHN0YXRpYyB1MzIgZGRyX3BlcmZfcmVh
-ZF9jb3VudGVyKHN0cnVjdCBkZHJfcG11ICpwbXUsIGludCBjb3VudGVyKSB7DQo+IAlzdHJ1Y3Qg
-cGVyZl9ldmVudCAqZXZlbnQgPSBwbXUtPmV2ZW50c1tjb3VudGVyXTsNCj4gCXZvaWQgX19pb21l
-bSAqYmFzZSA9IHBtdS0+YmFzZTsNCj4gDQo+IAliYXNlICs9IGRkcl9wZXJmX2lzX2VuaGFuY2Vk
-X2ZpbHRlcmVkKGV2ZW50KSA/IENPVU5URVJfRFBDUjEgOg0KPiAJCQkJCQkgICAgICAgQ09VTlRF
-Ul9SRUFEOw0KPiAJcmV0dXJuIHJlYWRsX3JlbGF4ZWQoYmFzZSArIGNvdW50ZXIgKiA0KTsgfQ0K
-PiANCj4gDQo+IEluIHBhdGNoIDQgeW91IGNhbiB0aGVuIGRvOg0KPiANCj4gLnF1aXJrcyA9IERE
-Ul9DQVBfQVhJX0lEX0ZJTFRFUl9FTkhBTkNFRDsNCj4gDQo+IE1ha2Ugc2Vuc2U/DQoNCkdyZWF0
-LCB0aGlzIG1ha2VzIGNvZGUgbW9yZSBtb2R1bGFyLiBXaWxsLCB0aGFua3MgZm9yIHlvdXIgcGVy
-ZmVjdCBjb2RpbmchDQoNCkJlc3QgUmVnYXJkcywNCkpvYWtpbSBaaGFuZw0KPiBXaWxsDQpfX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
-bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
-Cg==
+On 25/10/2019 11:47, Peter Ujfalusi wrote:
+> The system controller's resource manager have support for configuring the
+> TDTYPE of TCHAN_CFG register on j721e.
+> With this parameter the teardown completion can be controlled:
+> TDTYPE == 0: Return without waiting for peer to complete the teardown
+> TDTYPE == 1: Wait for peer to complete the teardown
+> 
+> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
+
+Reviewed-by: Tero Kristo <t-kristo@ti.com>
+
+> ---
+> Hi,
+> 
+> I know it is kind of getting late for 5.5, but can you consider this small
+> addition so I can add the support for it in the initial DMA driver?
+> 
+> Thanks and regards,
+> Peter
+> 
+>   drivers/firmware/ti_sci.c              | 1 +
+>   drivers/firmware/ti_sci.h              | 7 +++++++
+>   include/linux/soc/ti/ti_sci_protocol.h | 2 ++
+>   3 files changed, 10 insertions(+)
+> 
+> diff --git a/drivers/firmware/ti_sci.c b/drivers/firmware/ti_sci.c
+> index 4126be9e3216..f13e4a96f3b7 100644
+> --- a/drivers/firmware/ti_sci.c
+> +++ b/drivers/firmware/ti_sci.c
+> @@ -2412,6 +2412,7 @@ static int ti_sci_cmd_rm_udmap_tx_ch_cfg(const struct ti_sci_handle *handle,
+>   	req->fdepth = params->fdepth;
+>   	req->tx_sched_priority = params->tx_sched_priority;
+>   	req->tx_burst_size = params->tx_burst_size;
+> +	req->tx_tdtype = params->tx_tdtype;
+>   
+>   	ret = ti_sci_do_xfer(info, xfer);
+>   	if (ret) {
+> diff --git a/drivers/firmware/ti_sci.h b/drivers/firmware/ti_sci.h
+> index f0d068c03944..255327171dae 100644
+> --- a/drivers/firmware/ti_sci.h
+> +++ b/drivers/firmware/ti_sci.h
+> @@ -910,6 +910,7 @@ struct rm_ti_sci_msg_udmap_rx_flow_opt_cfg {
+>    *   12 - Valid bit for @ref ti_sci_msg_rm_udmap_tx_ch_cfg::tx_credit_count
+>    *   13 - Valid bit for @ref ti_sci_msg_rm_udmap_tx_ch_cfg::fdepth
+>    *   14 - Valid bit for @ref ti_sci_msg_rm_udmap_tx_ch_cfg::tx_burst_size
+> + *   15 - Valid bit for @ref ti_sci_msg_rm_udmap_tx_ch_cfg::tx_tdtype
+>    *
+>    * @nav_id: SoC device ID of Navigator Subsystem where tx channel is located
+>    *
+> @@ -973,6 +974,11 @@ struct rm_ti_sci_msg_udmap_rx_flow_opt_cfg {
+>    *
+>    * @tx_burst_size: UDMAP transmit channel burst size configuration to be
+>    * programmed into the tx_burst_size field of the TCHAN_TCFG register.
+> + *
+> + * @tx_tdtype: UDMAP transmit channel teardown type configuration to be
+> + * programmed into the tdtype field of the TCHAN_TCFG register:
+> + * 0 - Return immediately
+> + * 1 - Wait for completion message from remote peer
+>    */
+>   struct ti_sci_msg_rm_udmap_tx_ch_cfg_req {
+>   	struct ti_sci_msg_hdr hdr;
+> @@ -994,6 +1000,7 @@ struct ti_sci_msg_rm_udmap_tx_ch_cfg_req {
+>   	u16 fdepth;
+>   	u8 tx_sched_priority;
+>   	u8 tx_burst_size;
+> +	u8 tx_tdtype;
+>   } __packed;
+>   
+>   /**
+> diff --git a/include/linux/soc/ti/ti_sci_protocol.h b/include/linux/soc/ti/ti_sci_protocol.h
+> index 9531ec823298..f3aed0b91564 100644
+> --- a/include/linux/soc/ti/ti_sci_protocol.h
+> +++ b/include/linux/soc/ti/ti_sci_protocol.h
+> @@ -342,6 +342,7 @@ struct ti_sci_msg_rm_udmap_tx_ch_cfg {
+>   #define TI_SCI_MSG_VALUE_RM_UDMAP_CH_TX_SUPR_TDPKT_VALID        BIT(11)
+>   #define TI_SCI_MSG_VALUE_RM_UDMAP_CH_TX_CREDIT_COUNT_VALID      BIT(12)
+>   #define TI_SCI_MSG_VALUE_RM_UDMAP_CH_TX_FDEPTH_VALID            BIT(13)
+> +#define TI_SCI_MSG_VALUE_RM_UDMAP_CH_TX_TDTYPE_VALID            BIT(15)
+>   	u16 nav_id;
+>   	u16 index;
+>   	u8 tx_pause_on_err;
+> @@ -359,6 +360,7 @@ struct ti_sci_msg_rm_udmap_tx_ch_cfg {
+>   	u16 fdepth;
+>   	u8 tx_sched_priority;
+>   	u8 tx_burst_size;
+> +	u8 tx_tdtype;
+>   };
+>   
+>   /**
+> 
+
+--
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
