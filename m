@@ -2,56 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17BB9EBBBA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 02:32:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82F08EBBC4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 02:42:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6Y8tN/VGqnqtc92+vh/kdfgNdmbTdOgRa5QLwEVgk9Y=; b=L8okTuxPFjcIQj
-	gDbs9jh9AFHwOdbBkylvbI56WozKF/ARg7lIUhFKYBOivp6rM67bjLXpMZdMsbynnXKH5z+HYL7x4
-	Q1Cc/Z49Y6PNNAquXb5XC47mWpXDzrXnmH1RjiELvHVLtpVbyZL0N/3wzHDg4FaIeliZgpC72QU8C
-	HGjHRgbvnqj4t5d+HjpG6IXRWtrY+Kfek8CDj3q77Jsemvn40opp+3DVgHgLy4QuV+0CerwGVf1kW
-	3eSgEWF1ZAfJLrQwPft/LB7qYNyCEdJWnVLyUVsomdl9b3jZ21XTyvLdDRBhiqHm0ocFpiYHNz/yh
-	vioJq+P62ffefA8cQV0g==;
+	List-Owner; bh=duhHYCZIurFUwL2HfZtC8n6Ms+X+yyDX/If63n6HCm0=; b=Iv9ccFMtBfjztw
+	/BDV5YntRkC1nN1pFDMX9WiygTSvgWzYPHH8z0yvkoRTCVrLU88bewW8wMgdijGiV4fKY/ca8Bb+9
+	p4p7yp8C40Q+48rFFzywNcUQEc62xFfCxyUsicKMOtOmi3gutf3GlBdKFon+KP8FiVseVxnCvzkQg
+	tHs36fbZI3H1i7Ze7Z9A3RG/PaZCwJ27j3/1KbehXIhN/kuoIOfBkPrE5Kh+BVuTD9YGd4rje2HHO
+	9L8CPtNxOFiXOatc3zkesRaysEpsih6dMe24q0T0Ww6rwef1shGoTb2M6gHFqUB6uWAUuR08FW0vC
+	QXg1Ge+YgdmfXdPQsqDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQLnL-000614-IZ; Fri, 01 Nov 2019 01:32:07 +0000
+	id 1iQLxU-0000xI-5w; Fri, 01 Nov 2019 01:42:36 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQLn2-0005zI-AE; Fri, 01 Nov 2019 01:31:54 +0000
-X-UUID: 5130383db0bf41b9b2c0732fb8e4eb9e-20191031
-X-UUID: 5130383db0bf41b9b2c0732fb8e4eb9e-20191031
+ id 1iQLxI-0000wn-HC; Fri, 01 Nov 2019 01:42:26 +0000
+X-UUID: 7032ce091e7f4d6f9c9657c3b3a84692-20191031
+X-UUID: 7032ce091e7f4d6f9c9657c3b3a84692-20191031
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <michael.kao@mediatek.com>)
+ (envelope-from <ck.hu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 678234526; Thu, 31 Oct 2019 17:31:10 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ with ESMTP id 1337969759; Thu, 31 Oct 2019 17:41:48 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
  MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 31 Oct 2019 18:31:37 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 1 Nov 2019 09:31:35 +0800
-Received: from [172.21.84.99] (172.21.84.99) by MTKCAS06.mediatek.inc
+ 15.0.1395.4; Thu, 31 Oct 2019 18:42:15 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 1 Nov 2019 09:42:13 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 1 Nov 2019 09:31:35 +0800
-Message-ID: <1572571899.23942.3.camel@mtksdccf07>
-Subject: Re: [RESEND PATCH] thermal: mediatek: add suspend/resume callback
-From: Michael Kao <michael.kao@mediatek.com>
-To: Daniel Lezcano <daniel.lezcano@linaro.org>
-Date: Fri, 1 Nov 2019 09:31:39 +0800
-In-Reply-To: <a0af0b72-dbc3-f284-34b7-fc94bbe349a4@linaro.org>
-References: <1570613704-16609-1-git-send-email-michael.kao@mediatek.com>
- <a0af0b72-dbc3-f284-34b7-fc94bbe349a4@linaro.org>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ Transport; Fri, 1 Nov 2019 09:42:13 +0800
+Message-ID: <1572572537.10339.12.camel@mtksdaap41>
+Subject: Re: [PATCH] drm/mediatek: covert to helper nonblocking atomic commit
+From: CK Hu <ck.hu@mediatek.com>
+To: Bibby Hsieh <bibby.hsieh@mediatek.com>
+Date: Fri, 1 Nov 2019 09:42:17 +0800
+In-Reply-To: <20191025053843.16808-1-bibby.hsieh@mediatek.com>
+References: <20191025053843.16808-1-bibby.hsieh@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: FBAAD417DA093FF98E142D814BA2901E3D11B820C756EC48F85BA1DB00C7872C2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_183152_516544_DD5B9666 
-X-CRM114-Status: GOOD (  12.02  )
+X-CRM114-CacheID: sfid-20191031_184224_576449_FA6E4624 
+X-CRM114-Status: GOOD (  22.38  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -74,37 +72,229 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-pm@vger.kernel.org, Louis Yu <louis.yu@mediatek.com>,
- linux-kernel@vger.kernel.org, Eduardo Valentin <edubezval@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- hsinyi@chromium.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Zhang Rui <rui.zhang@intel.com>, linux-arm-kernel@lists.infradead.org
+Cc: drinkcat@chromium.org, srv_heupstream@mediatek.com,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel.vetter@ffwll.ch>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ tfiga@chromium.org, YT Shen <yt.shen@mediatek.com>,
+ Thierry Reding <thierry.reding@gmail.com>, linux-mediatek@lists.infradead.org,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, 2019-10-13 at 19:50 +0200, Daniel Lezcano wrote:
-> On 09/10/2019 11:35, michael.kao@mediatek.com wrote:
-> > From: Louis Yu <louis.yu@mediatek.com>
-> > 
-> > Add suspend/resume callback to disable/enable Mediatek thermal sensor
-> > respectively. Since thermal power domain is off in suspend, thermal driver
-> > needs re-initialization during resume.
-> > 
-> > Signed-off-by: Louis Yu <louis.yu@mediatek.com>
-> > Signed-off-by: Michael Kao <michael.kao@mediatek.com>
-> > ---
-> > This patch series base on these patches [1][2].
-> > 
-> > [1]thermal: mediatek: mt8183: fix bank number settings (https://patchwork.kernel.org/patch/10938817/)
-> > [2]thermal: mediatek: add another get_temp ops for thermal sensors (https://patchwork.kernel.org/patch/10938829/)
+Hi, Bibby:
+
+On Fri, 2019-10-25 at 13:38 +0800, Bibby Hsieh wrote:
+> In order to commit state asynchronously, we change
+> .atomic_commit to drm_atomic_helper_commit().
 > 
-> There is no new version with the comments take into account. Did I miss
-> something?
+> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> ---
+>  drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 11 ++++
+>  drivers/gpu/drm/mediatek/mtk_drm_drv.c  | 86 ++-----------------------
+>  drivers/gpu/drm/mediatek/mtk_drm_drv.h  |  7 --
+>  3 files changed, 16 insertions(+), 88 deletions(-)
 > 
-> The patch base on Kenrel 5.4. I resend to linux-pm. The original patch is at linux-mediatek only.
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> index b97eb5f58483..b07dc9b59ca3 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> @@ -317,6 +317,7 @@ static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
+>  static void mtk_crtc_ddp_hw_fini(struct mtk_drm_crtc *mtk_crtc)
+>  {
+>  	struct drm_device *drm = mtk_crtc->base.dev;
+> +	struct drm_crtc *crtc = &mtk_crtc->base;
+>  	int i;
+>  
+>  	DRM_DEBUG_DRIVER("%s\n", __func__);
+> @@ -340,6 +341,13 @@ static void mtk_crtc_ddp_hw_fini(struct mtk_drm_crtc *mtk_crtc)
+>  	mtk_disp_mutex_unprepare(mtk_crtc->mutex);
+>  
+>  	pm_runtime_put(drm->dev);
+> +
+> +	if (crtc->state->event && !crtc->state->active) {
+> +		spin_lock_irq(&crtc->dev->event_lock);
+> +		drm_crtc_send_vblank_event(crtc, crtc->state->event);
+> +		crtc->state->event = NULL;
+> +		spin_unlock_irq(&crtc->dev->event_lock);
+> +	}
+
+This part looks like a bug fix. When the power is off, the latest event
+may not process yet. So just send it here. But in
+mtk_drm_crtc_atomic_disable(), it already wait for a vblank, why the
+latest event has not processed yet?
+
+>  }
+>  
+>  static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
+> @@ -456,12 +464,15 @@ static void mtk_drm_crtc_atomic_begin(struct drm_crtc *crtc,
+>  	if (mtk_crtc->event && state->base.event)
+>  		DRM_ERROR("new event while there is still a pending event\n");
+>  
+> +	spin_lock_irq(&crtc->dev->event_lock);
+>  	if (state->base.event) {
+>  		state->base.event->pipe = drm_crtc_index(crtc);
+>  		WARN_ON(drm_crtc_vblank_get(crtc) != 0);
+> +		WARN_ON(mtk_crtc->event);
+>  		mtk_crtc->event = state->base.event;
+>  		state->base.event = NULL;
+>  	}
+> +	spin_unlock_irq(&crtc->dev->event_lock);
+
+This part is a bug fix. The 'event' variable would be access by thread
+context in mtk_drm_crtc_atomic_begin() or by interrupt context in
+mtk_drm_crtc_finish_page_flip(), so each part should be a critical
+section. Move this to an independent patch.
+
+>  }
+>  
+>  static void mtk_drm_crtc_atomic_flush(struct drm_crtc *crtc,
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> index 6588dc6dd5e3..16e5771d182e 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> @@ -36,89 +36,14 @@
+>  #define DRIVER_MAJOR 1
+>  #define DRIVER_MINOR 0
+>  
+> -static void mtk_atomic_schedule(struct mtk_drm_private *private,
+> -				struct drm_atomic_state *state)
+> -{
+> -	private->commit.state = state;
+> -	schedule_work(&private->commit.work);
+> -}
+> -
+> -static void mtk_atomic_complete(struct mtk_drm_private *private,
+> -				struct drm_atomic_state *state)
+> -{
+> -	struct drm_device *drm = private->drm;
+> -
+> -	drm_atomic_helper_wait_for_fences(drm, state, false);
+> -
+> -	/*
+> -	 * Mediatek drm supports runtime PM, so plane registers cannot be
+> -	 * written when their crtc is disabled.
+> -	 *
+> -	 * The comment for drm_atomic_helper_commit states:
+> -	 *     For drivers supporting runtime PM the recommended sequence is
+> -	 *
+> -	 *     drm_atomic_helper_commit_modeset_disables(dev, state);
+> -	 *     drm_atomic_helper_commit_modeset_enables(dev, state);
+> -	 *     drm_atomic_helper_commit_planes(dev, state,
+> -	 *                                     DRM_PLANE_COMMIT_ACTIVE_ONLY);
+> -	 *
+> -	 * See the kerneldoc entries for these three functions for more details.
+> -	 */
+> -	drm_atomic_helper_commit_modeset_disables(drm, state);
+> -	drm_atomic_helper_commit_modeset_enables(drm, state);
+> -	drm_atomic_helper_commit_planes(drm, state,
+> -					DRM_PLANE_COMMIT_ACTIVE_ONLY);
+> -
+> -	drm_atomic_helper_wait_for_vblanks(drm, state);
+> -
+> -	drm_atomic_helper_cleanup_planes(drm, state);
+> -	drm_atomic_state_put(state);
+> -}
+> -
+> -static void mtk_atomic_work(struct work_struct *work)
+> -{
+> -	struct mtk_drm_private *private = container_of(work,
+> -			struct mtk_drm_private, commit.work);
+> -
+> -	mtk_atomic_complete(private, private->commit.state);
+> -}
+> -
+> -static int mtk_atomic_commit(struct drm_device *drm,
+> -			     struct drm_atomic_state *state,
+> -			     bool async)
+> -{
+> -	struct mtk_drm_private *private = drm->dev_private;
+> -	int ret;
+> -
+> -	ret = drm_atomic_helper_prepare_planes(drm, state);
+> -	if (ret)
+> -		return ret;
+> -
+> -	mutex_lock(&private->commit.lock);
+> -	flush_work(&private->commit.work);
+> -
+> -	ret = drm_atomic_helper_swap_state(state, true);
+> -	if (ret) {
+> -		mutex_unlock(&private->commit.lock);
+> -		drm_atomic_helper_cleanup_planes(drm, state);
+> -		return ret;
+> -	}
+> -
+> -	drm_atomic_state_get(state);
+> -	if (async)
+> -		mtk_atomic_schedule(private, state);
+> -	else
+> -		mtk_atomic_complete(private, state);
+> -
+> -	mutex_unlock(&private->commit.lock);
+> -
+> -	return 0;
+> -}
+> +static const struct drm_mode_config_helper_funcs mtk_drm_mode_config_helpers = {
+> +	.atomic_commit_tail = drm_atomic_helper_commit_tail_rpm,
+> +};
+>  
+>  static const struct drm_mode_config_funcs mtk_drm_mode_config_funcs = {
+>  	.fb_create = mtk_drm_mode_fb_create,
+>  	.atomic_check = drm_atomic_helper_check,
+> -	.atomic_commit = mtk_atomic_commit,
+> +	.atomic_commit = drm_atomic_helper_commit,
+
+This does not like what the title describe. You just change
+atomic_commit implementation from mtk version to helper version. Even
+though we don't implement nonblocking atomic commit, this modification
+is also necessary because this would reduce the duplicated code in
+mediatek drm driver.
+
+Regards,
+CK
+
+>  };
+>  
+>  static const enum mtk_ddp_comp_id mt2701_mtk_ddp_main[] = {
+> @@ -265,6 +190,7 @@ static int mtk_drm_kms_init(struct drm_device *drm)
+>  	drm->mode_config.max_width = 4096;
+>  	drm->mode_config.max_height = 4096;
+>  	drm->mode_config.funcs = &mtk_drm_mode_config_funcs;
+> +	drm->mode_config.helper_private = &mtk_drm_mode_config_helpers;
+>  
+>  	ret = component_bind_all(drm->dev, drm);
+>  	if (ret)
+> @@ -540,8 +466,6 @@ static int mtk_drm_probe(struct platform_device *pdev)
+>  	if (!private)
+>  		return -ENOMEM;
+>  
+> -	mutex_init(&private->commit.lock);
+> -	INIT_WORK(&private->commit.work, mtk_atomic_work);
+>  	private->data = of_device_get_match_data(dev);
+>  
+>  	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.h b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+> index b6a82728d563..9f4ce60174f6 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+> @@ -46,13 +46,6 @@ struct mtk_drm_private {
+>  	struct device_node *comp_node[DDP_COMPONENT_ID_MAX];
+>  	struct mtk_ddp_comp *ddp_comp[DDP_COMPONENT_ID_MAX];
+>  	const struct mtk_mmsys_driver_data *data;
+> -
+> -	struct {
+> -		struct drm_atomic_state *state;
+> -		struct work_struct work;
+> -		struct mutex lock;
+> -	} commit;
+> -
+>  	struct drm_atomic_state *suspend_state;
+>  
+>  	bool dma_parms_allocated;
 
 
 
