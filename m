@@ -2,65 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50BC9EBBD5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 02:57:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1BBBEBBD7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 02:57:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+10W5ZrzjIkptWGtgBNX0Hb8nazz9tYgflfgRIxhUJ8=; b=LBA3Gl0wEQGiWV
-	Ede4j4j9h7NsH69U6MEabUkfoN/rCvBrdDx6qxDtGLeFqZ1EinKp+srRQMa6kkEXqBuB5wWtj4k9M
-	bADCaGfLsfr8OKkpImem7FLFJSacLo0yjiypW4QgkXw3LPKchyjLWTn80/CR6IRemu5MgP8Ey0gZY
-	vGHOnt5EZCiiC9xGA7lHuKf7eApGG84ZMs1q/t93KjKG5ET/nCN075qFSjx+xDS9Lur6OMaBZkTA6
-	w90R1W2cRLzPyXC55gydA0LuxitXTKq22I5TQA/lyacJNErQHbi17v9RhTFrTqh03ZKVCZYJxokcq
-	oEVL5XrL0md3mWpfFUjQ==;
+	List-Owner; bh=5hp3Fd2k4PCVadmjA2N6Xwd7f+HhD4d3a/9veItdApo=; b=TJKNOkTjvc60HC
+	5iVpiOFv5qFNvotaq8qylgzlJCTsNxkJJmoeV9g1Mv+QbNQSSRn3rizlBiEaFATAoyn1eP+gNbAGH
+	20BLRLQkDITDOKplVOKEWwxs5MyXqd7gxDqjL08fEUoEKZLZIuWwXf76eGomtU9EzJPz/kn5qdhz1
+	IWhfMB5rOCiKDPn/25+XcS4XgF7O0MIlHySdl2FjaoiO3hq4GGmxH1TMk3D2W6LE1r6stfU+IEAVg
+	0nx21iMYV+1zEmlIXN+9rlsTpsW4MXwzBXbj6B8a/rFWXfeO3Bmw8uIKTIpwLyPSfDEO8SXYtEQMc
+	OqKewRQX9lS+6Xo6WUww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQMBi-0006Nc-3Y; Fri, 01 Nov 2019 01:57:18 +0000
+	id 1iQMBs-0006eL-U2; Fri, 01 Nov 2019 01:57:28 +0000
 Received: from gate2.alliedtelesis.co.nz ([2001:df5:b000:5::4])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQMBF-00062y-Ho
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 01:56:51 +0000
+ id 1iQMBH-00062x-Gp
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 01:56:53 +0000
 Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (Client did not present a certificate)
- by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 193FD886BF;
+ by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 1FF3F891A9;
  Fri,  1 Nov 2019 14:56:26 +1300 (NZDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
  s=mail181024; t=1572573386;
- bh=wR5JhDoY/vK9cccfkWSIZy/u8k9NCELZHvIDPskBVz0=;
+ bh=9M1MGBTQ7mnEWOluZ5FLAkbw1oDfFqicXGB0I8+p50k=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References;
- b=RVbTz0BOzglI8FE9wT58LOU3EK+nq7U5FtrcVqVRY3Iqauax+lyh4ZD0FhDqqHrdL
- waoPSqoFzPVH/IoWV+pcMqTrin9reh1W4jS+DIwMBXE8qYfcGonZaQreUrNvxv2ClO
- hJPELTwyB4siSJSiOcwayWILklnJdCx7IHMgzIZT8wvAcfIuNOWTht+ZaJdovfPKoS
- seC36wfu4PJm0z2phtZ0bQ019pSfVpp/JRK5Ip2G5gtDOfr5TUPVzb+E/jjEgyu/E1
- 8yGq9peO0WKGkMAslsbf9tYJAWrZ7mY1+r65dgBNYue+gdj0j0U3orkQ04GGL2HOOs
- Ma+LHq0+vaYXA==
+ b=27rQn54iHxSt0Td8lwLW5LxO/HUUmhKkLjLFCCQXcwMzi9ScY1yDp7FdgT8VfGAdh
+ lW5JWr+hdQ54BzmnXtCICc+8TG3PBRRVZyaKLFUg5GMIzHSaAqMan5iMW4xFLU1BvZ
+ arcIwgtSKvuJrGeoHJkiwJ1Iq4uS1dKtvah3yYioqiXpNOTIDRsNuLx+1doiy0fzz0
+ CSPzzzZnfPDIQsVxBQ5f5Qvbkc0RU8tAR7jivYFwut/W9ah49tXoNvtWC+EtWuhn+Q
+ EbGBUIINhEXuc2Zx1vMl2psqb7MSil6ZuszBnXq14jIj/lHhyvalPSqYTyBr4NS7KV
+ sJkHWvWG5OlsA==
 Received: from smtp (Not Verified[10.32.16.33]) by mmarshal3.atlnz.lc with
  Trustwave SEG (v7, 5, 8, 10121)
- id <B5dbb90c90001>; Fri, 01 Nov 2019 14:56:25 +1300
+ id <B5dbb90ca0000>; Fri, 01 Nov 2019 14:56:26 +1300
 Received: from chrisp-dl.ws.atlnz.lc (chrisp-dl.ws.atlnz.lc [10.33.22.20])
- by smtp (Postfix) with ESMTP id 6851E13EED4;
+ by smtp (Postfix) with ESMTP id 89B7F13EED4;
  Fri,  1 Nov 2019 14:56:25 +1300 (NZDT)
 Received: by chrisp-dl.ws.atlnz.lc (Postfix, from userid 1030)
- id C962428005D; Fri,  1 Nov 2019 14:56:25 +1300 (NZDT)
+ id EAC1A28005D; Fri,  1 Nov 2019 14:56:25 +1300 (NZDT)
 From: Chris Packham <chris.packham@alliedtelesis.co.nz>
 To: linus.walleij@linaro.org, rjui@broadcom.com, sbranden@broadcom.com,
  bcm-kernel-feedback-list@broadcom.com
-Subject: [PATCH 1/2] pinctrl: bcm: nsp: use gpiolib infrastructure for
- interrupts
-Date: Fri,  1 Nov 2019 14:56:20 +1300
-Message-Id: <20191101015621.12451-2-chris.packham@alliedtelesis.co.nz>
+Subject: [PATCH 2/2] pinctrl: bcm: nsp: implement get_direction
+Date: Fri,  1 Nov 2019 14:56:21 +1300
+Message-Id: <20191101015621.12451-3-chris.packham@alliedtelesis.co.nz>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191101015621.12451-1-chris.packham@alliedtelesis.co.nz>
 References: <20191101015621.12451-1-chris.packham@alliedtelesis.co.nz>
 MIME-Version: 1.0
 x-atlnz-ls: pat
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_185649_921087_32FE197A 
-X-CRM114-Status: GOOD (  18.51  )
+X-CRM114-CacheID: sfid-20191031_185651_768879_7E9EE3D7 
+X-CRM114-Status: GOOD (  10.58  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -94,270 +93,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use more of the gpiolib infrastructure for handling interrupts. The
-root interrupt still needs to be handled manually as it is shared with
-other peripherals on the SoC.
-
-This will allow multiple instances of this driver to be supported and
-will clean up gracefully on failure thanks to the device managed APIs.
+The get_direction api is strongly recommended to be implemented. In fact
+if it is not implemented gpio-hogs will not get the correct direction.
+Add an implementation of get_direction for the nsp-gpio driver.
 
 Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
 ---
 
 Notes:
     Changes in v2:
-    - none
+    - New
 
- drivers/pinctrl/bcm/pinctrl-nsp-gpio.c | 105 ++++++++++---------------
- 1 file changed, 42 insertions(+), 63 deletions(-)
+ drivers/pinctrl/bcm/pinctrl-nsp-gpio.c | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
 
 diff --git a/drivers/pinctrl/bcm/pinctrl-nsp-gpio.c b/drivers/pinctrl/bcm/pinctrl-nsp-gpio.c
-index e67ae52023ad..cf77c6fe9f9c 100644
+index cf77c6fe9f9c..a38b82bff87b 100644
 --- a/drivers/pinctrl/bcm/pinctrl-nsp-gpio.c
 +++ b/drivers/pinctrl/bcm/pinctrl-nsp-gpio.c
-@@ -64,17 +64,16 @@
-  * @gc: GPIO chip
-  * @pctl: pointer to pinctrl_dev
-  * @pctldesc: pinctrl descriptor
-- * @irq_domain: pointer to irq domain
-  * @lock: lock to protect access to I/O registers
-  */
- struct nsp_gpio {
- 	struct device *dev;
- 	void __iomem *base;
- 	void __iomem *io_ctrl;
-+	struct irq_chip irqchip;
- 	struct gpio_chip gc;
- 	struct pinctrl_dev *pctl;
- 	struct pinctrl_desc pctldesc;
--	struct irq_domain *irq_domain;
- 	raw_spinlock_t lock;
- };
- 
-@@ -136,8 +135,8 @@ static inline bool nsp_get_bit(struct nsp_gpio *chip, enum base_type address,
- 
- static irqreturn_t nsp_gpio_irq_handler(int irq, void *data)
- {
--	struct nsp_gpio *chip = (struct nsp_gpio *)data;
--	struct gpio_chip gc = chip->gc;
-+	struct gpio_chip *gc = (struct gpio_chip *)data;
-+	struct nsp_gpio *chip = gpiochip_get_data(gc);
- 	int bit;
- 	unsigned long int_bits = 0;
- 	u32 int_status;
-@@ -155,14 +154,14 @@ static irqreturn_t nsp_gpio_irq_handler(int irq, void *data)
- 		level &= readl(chip->base + NSP_GPIO_INT_MASK);
- 		int_bits = level | event;
- 
--		for_each_set_bit(bit, &int_bits, gc.ngpio) {
-+		for_each_set_bit(bit, &int_bits, gc->ngpio) {
- 			/*
- 			 * Clear the interrupt before invoking the
- 			 * handler, so we do not leave any window
- 			 */
- 			writel(BIT(bit), chip->base + NSP_GPIO_EVENT);
- 			generic_handle_irq(
--				irq_linear_revmap(chip->irq_domain, bit));
-+				irq_linear_revmap(gc->irq.domain, bit));
- 		}
- 	}
- 
-@@ -171,7 +170,8 @@ static irqreturn_t nsp_gpio_irq_handler(int irq, void *data)
- 
- static void nsp_gpio_irq_ack(struct irq_data *d)
- {
--	struct nsp_gpio *chip = irq_data_get_irq_chip_data(d);
-+	struct gpio_chip *gc = irq_data_get_irq_chip_data(d);
-+	struct nsp_gpio *chip = gpiochip_get_data(gc);
- 	unsigned gpio = d->hwirq;
- 	u32 val = BIT(gpio);
- 	u32 trigger_type;
-@@ -189,7 +189,8 @@ static void nsp_gpio_irq_ack(struct irq_data *d)
-  */
- static void nsp_gpio_irq_set_mask(struct irq_data *d, bool unmask)
- {
--	struct nsp_gpio *chip = irq_data_get_irq_chip_data(d);
-+	struct gpio_chip *gc = irq_data_get_irq_chip_data(d);
-+	struct nsp_gpio *chip = gpiochip_get_data(gc);
- 	unsigned gpio = d->hwirq;
- 	u32 trigger_type;
- 
-@@ -202,7 +203,8 @@ static void nsp_gpio_irq_set_mask(struct irq_data *d, bool unmask)
- 
- static void nsp_gpio_irq_mask(struct irq_data *d)
- {
--	struct nsp_gpio *chip = irq_data_get_irq_chip_data(d);
-+	struct gpio_chip *gc = irq_data_get_irq_chip_data(d);
-+	struct nsp_gpio *chip = gpiochip_get_data(gc);
- 	unsigned long flags;
- 
- 	raw_spin_lock_irqsave(&chip->lock, flags);
-@@ -212,7 +214,8 @@ static void nsp_gpio_irq_mask(struct irq_data *d)
- 
- static void nsp_gpio_irq_unmask(struct irq_data *d)
- {
--	struct nsp_gpio *chip = irq_data_get_irq_chip_data(d);
-+	struct gpio_chip *gc = irq_data_get_irq_chip_data(d);
-+	struct nsp_gpio *chip = gpiochip_get_data(gc);
- 	unsigned long flags;
- 
- 	raw_spin_lock_irqsave(&chip->lock, flags);
-@@ -222,7 +225,8 @@ static void nsp_gpio_irq_unmask(struct irq_data *d)
- 
- static int nsp_gpio_irq_set_type(struct irq_data *d, unsigned int type)
- {
--	struct nsp_gpio *chip = irq_data_get_irq_chip_data(d);
-+	struct gpio_chip *gc = irq_data_get_irq_chip_data(d);
-+	struct nsp_gpio *chip = gpiochip_get_data(gc);
- 	unsigned gpio = d->hwirq;
- 	bool level_low;
- 	bool falling;
-@@ -265,16 +269,6 @@ static int nsp_gpio_irq_set_type(struct irq_data *d, unsigned int type)
+@@ -297,6 +297,19 @@ static int nsp_gpio_direction_output(struct gpio_chip *gc, unsigned gpio,
  	return 0;
  }
  
--static struct irq_chip nsp_gpio_irq_chip = {
--	.name = "gpio-a",
--	.irq_enable = nsp_gpio_irq_unmask,
--	.irq_disable = nsp_gpio_irq_mask,
--	.irq_ack = nsp_gpio_irq_ack,
--	.irq_mask = nsp_gpio_irq_mask,
--	.irq_unmask = nsp_gpio_irq_unmask,
--	.irq_set_type = nsp_gpio_irq_set_type,
--};
--
- static int nsp_gpio_direction_input(struct gpio_chip *gc, unsigned gpio)
++static int nsp_gpio_get_direction(struct gpio_chip *gc, unsigned gpio)
++{
++	struct nsp_gpio *chip = gpiochip_get_data(gc);
++	unsigned long flags;
++	int val;
++
++	raw_spin_lock_irqsave(&chip->lock, flags);
++	val = nsp_get_bit(chip, REG, NSP_GPIO_OUT_EN, gpio);
++	raw_spin_unlock_irqrestore(&chip->lock, flags);
++
++	return !val;
++}
++
+ static void nsp_gpio_set(struct gpio_chip *gc, unsigned gpio, int val)
  {
  	struct nsp_gpio *chip = gpiochip_get_data(gc);
-@@ -322,13 +316,6 @@ static int nsp_gpio_get(struct gpio_chip *gc, unsigned gpio)
- 	return !!(readl(chip->base + NSP_GPIO_DATA_IN) & BIT(gpio));
- }
- 
--static int nsp_gpio_to_irq(struct gpio_chip *gc, unsigned offset)
--{
--	struct nsp_gpio *chip = gpiochip_get_data(gc);
--
--	return irq_linear_revmap(chip->irq_domain, offset);
--}
--
- static int nsp_get_groups_count(struct pinctrl_dev *pctldev)
- {
- 	return 1;
-@@ -613,10 +600,9 @@ static const struct of_device_id nsp_gpio_of_match[] = {
- static int nsp_gpio_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
--	struct resource *res;
- 	struct nsp_gpio *chip;
- 	struct gpio_chip *gc;
--	u32 val, count;
-+	u32 val;
- 	int irq, ret;
- 
- 	if (of_property_read_u32(pdev->dev.of_node, "ngpios", &val)) {
-@@ -631,15 +617,13 @@ static int nsp_gpio_probe(struct platform_device *pdev)
- 	chip->dev = dev;
- 	platform_set_drvdata(pdev, chip);
- 
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	chip->base = devm_ioremap_resource(dev, res);
-+	chip->base = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(chip->base)) {
- 		dev_err(dev, "unable to map I/O memory\n");
- 		return PTR_ERR(chip->base);
- 	}
- 
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 1);
--	chip->io_ctrl = devm_ioremap_resource(dev, res);
-+	chip->io_ctrl = devm_platform_ioremap_resource(pdev, 1);
- 	if (IS_ERR(chip->io_ctrl)) {
- 		dev_err(dev, "unable to map I/O memory\n");
- 		return PTR_ERR(chip->io_ctrl);
-@@ -659,44 +643,44 @@ static int nsp_gpio_probe(struct platform_device *pdev)
+@@ -641,6 +654,7 @@ static int nsp_gpio_probe(struct platform_device *pdev)
+ 	gc->free = gpiochip_generic_free;
+ 	gc->direction_input = nsp_gpio_direction_input;
  	gc->direction_output = nsp_gpio_direction_output;
++	gc->get_direction = nsp_gpio_get_direction;
  	gc->set = nsp_gpio_set;
  	gc->get = nsp_gpio_get;
--	gc->to_irq = nsp_gpio_to_irq;
  
- 	/* optional GPIO interrupt support */
- 	irq = platform_get_irq(pdev, 0);
- 	if (irq > 0) {
--		/* Create irq domain so that each pin can be assigned an IRQ.*/
--		chip->irq_domain = irq_domain_add_linear(gc->of_node, gc->ngpio,
--							 &irq_domain_simple_ops,
--							 chip);
--		if (!chip->irq_domain) {
--			dev_err(&pdev->dev, "Couldn't allocate IRQ domain\n");
--			return -ENXIO;
--		}
-+		struct gpio_irq_chip *girq;
-+		struct irq_chip *irqc;
- 
--		/* Map each gpio to an IRQ and set the handler for gpiolib. */
--		for (count = 0; count < gc->ngpio; count++) {
--			int irq = irq_create_mapping(chip->irq_domain, count);
-+		irqc = &chip->irqchip;
-+		irqc->name = dev_name(dev);
-+		irqc->irq_ack = nsp_gpio_irq_ack;
-+		irqc->irq_mask = nsp_gpio_irq_mask;
-+		irqc->irq_unmask = nsp_gpio_irq_unmask;
-+		irqc->irq_set_type = nsp_gpio_irq_set_type;
- 
--			irq_set_chip_and_handler(irq, &nsp_gpio_irq_chip,
--						 handle_simple_irq);
--			irq_set_chip_data(irq, chip);
--		}
-+		val = readl(chip->base + NSP_CHIP_A_INT_MASK);
-+		val = val | NSP_CHIP_A_GPIO_INT_BIT;
-+		writel(val, (chip->base + NSP_CHIP_A_INT_MASK));
- 
- 		/* Install ISR for this GPIO controller. */
--		ret = devm_request_irq(&pdev->dev, irq, nsp_gpio_irq_handler,
--				       IRQF_SHARED, "gpio-a", chip);
-+		ret = devm_request_irq(dev, irq, nsp_gpio_irq_handler,
-+				       IRQF_SHARED, "gpio-a", &chip->gc);
- 		if (ret) {
- 			dev_err(&pdev->dev, "Unable to request IRQ%d: %d\n",
- 				irq, ret);
--			goto err_rm_gpiochip;
-+			return ret;
- 		}
- 
--		val = readl(chip->base + NSP_CHIP_A_INT_MASK);
--		val = val | NSP_CHIP_A_GPIO_INT_BIT;
--		writel(val, (chip->base + NSP_CHIP_A_INT_MASK));
-+		girq = &chip->gc.irq;
-+		girq->chip = irqc;
-+		/* This will let us handle the parent IRQ in the driver */
-+		girq->parent_handler = NULL;
-+		girq->num_parents = 0;
-+		girq->parents = NULL;
-+		girq->default_type = IRQ_TYPE_NONE;
-+		girq->handler = handle_simple_irq;
- 	}
- 
--	ret = gpiochip_add_data(gc, chip);
-+	ret = devm_gpiochip_add_data(dev, gc, chip);
- 	if (ret < 0) {
- 		dev_err(dev, "unable to add GPIO chip\n");
- 		return ret;
-@@ -705,15 +689,10 @@ static int nsp_gpio_probe(struct platform_device *pdev)
- 	ret = nsp_gpio_register_pinconf(chip);
- 	if (ret) {
- 		dev_err(dev, "unable to register pinconf\n");
--		goto err_rm_gpiochip;
-+		return ret;
- 	}
- 
- 	return 0;
--
--err_rm_gpiochip:
--	gpiochip_remove(gc);
--
--	return ret;
- }
- 
- static struct platform_driver nsp_gpio_driver = {
 -- 
 2.23.0
 
