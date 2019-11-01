@@ -2,71 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 174C3EC115
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 11:09:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62111EC123
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 11:12:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vhAZm0mDO90k8EE/mgqIRILPGXZQknbeZehQ5NheQr4=; b=nofTQxEH+mA0gT
-	10KzIkXR7YZ6HWu/z+0L4qYZ0pqEsiCN69/Ntj6lys1uy9FAWC/wvYcSBKIgj/GBywTS+h3zua8Ds
-	Ngsr+aeCKq2ZeO6n694d3bXh+ybydpjh2gUVD1fL+msds8owAz8SZDH2sgzChDISy3um7s+9Efhv+
-	uk04HqLCOJyWWJ1JHf3yH96/pXdcX6+bycPtZwxdppBzcU3sMr42nOWP4/u3PAhMPFehMCJXYThnW
-	SolYZyeIV48G25i2/gYQrzf4byUPLGerInUeIEQxHedjzywm9u9VHF5r3aq9oaCqH/BHGy5aW7ALc
-	4wgIxJqF0LAvGQ1KQaSA==;
+	List-Owner; bh=qvozw4fuKzshZmEH4vuYDcs8289C3VP0CxwWiuunUbo=; b=KrfHbb4ZOEQGH6
+	vD0pqFbcLF78Lxd9mVhi6NSibmBlyTejiSDGT7Oib+pbWfazfvBfYIWfKE7mXh5zX/zjIN3YAlkbl
+	86ksyw7A7towvFFMEYuYv323n/uMPn9y/9Tv2YJK9djIMxdJc8AnL5MDryV6btHRn9cb9BH96mMO5
+	DTn5zRk90fb1p0iOjjZ+fS26T9U9irku/GZR1tOBJwUWnOUzRxS5eaD0THYuNRLA3KsRiUd338m1z
+	WtNYbFRox6xLFBShH0idp0650Xm6GkeoOhB/9vS8rBG840ZSr/vRXpNwVdn9K5uTqd3aUqft+I86g
+	5vWb0aTR+tAtweuktL6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQTrW-0001lj-Ah; Fri, 01 Nov 2019 10:08:58 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1iQTuv-0003nt-8M; Fri, 01 Nov 2019 10:12:29 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQTrP-0001l7-5G
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 10:08:52 +0000
-Received: by mail-qt1-x841.google.com with SMTP id y39so12316598qty.0
+ id 1iQTup-0003nO-Hb
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 10:12:24 +0000
+Received: by mail-qk1-x741.google.com with SMTP id m16so9770098qki.11
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 01 Nov 2019 03:08:50 -0700 (PDT)
+ Fri, 01 Nov 2019 03:12:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=dixvlRxBe1XqqJqVc1zgKXwNqGAEbJcLWXze4Juxj/A=;
- b=D6/bx9Qt4Sz4Zl1m7/iyiTMXK4O//gXhNKiXB2chqIP3aluDGN2fva+Y6wVKBDNG0P
- Li4oORgU/Hq8vdPn77G6Hk377QzmddzW+CNPZ9pO+TM2ikk2UmEM/qXJryAK1BMRT+/f
- 4kl53gQeEIhRpSQ2xOi1McdZWP5sJpnLuRBcI=
+ :cc; bh=ND8y/KAJEHxe8vYu6nFNiGmvLZloLNx/Qhcmj2riyfs=;
+ b=DrBwmdA2hyuypUMdqsxgKAPOBwvzb/c3z7uksP87rq82GzxeMEHhvZFCbdACHdfw8N
+ vjkd6BctJNzkmDNGqy5YoXmnCNryXR+Cq3mWpEqQz0/vV6JZZg/cExsisJWSnJ5c3vig
+ rwnuKfQ2s4VZLHbJovbnP2amAl6xDURhPW/7o=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=dixvlRxBe1XqqJqVc1zgKXwNqGAEbJcLWXze4Juxj/A=;
- b=aa6ZLUrXXP2xuWKwijYaJn0upr8cAx0x/ReMCuZbSrAvDzdpf5cntjt6+YBPwHw1Wl
- EmvIMpQBpn5T007+NslpWKifmxpx87yaiGuE6gIzBEyDDi9fw6DeTAm+MhOJRGQveAqC
- dMkyJht5BjXR7R0z+qfgfWNq+QWVZGS8vs7M+GsOLu7JCSYnCRZxF+ilYByRFtObttHM
- 1vnIyW15l42rBeG6LH7l1kfxKM9YszsiBpn1FK1ruTYrO7GGOjkbrAVMc2CgBvMPZjbd
- J6jzrBslm+KWff6tr7ihr9fgmeIljql2DxxyN2EPtGF2bdbIcA9QV2Azidds5N9JMHgy
- ydQw==
-X-Gm-Message-State: APjAAAUol8t6kEldUn3heqN9b5r1O7W/nuTnaNDu6FWvYBjwEG7BmZqW
- 9WB2Xxlxp4Oqfy6AyfiPJDwUEK/HBhPD5LGwamg=
-X-Google-Smtp-Source: APXvYqy0Z22TcpdNer9jICrspqvBdfKr5qP78g1hshmD7TQOwlJJKb1RCeY5BVLa6y96G8jOc0taqrKjoAq9DFAyCus=
-X-Received: by 2002:ac8:e03:: with SMTP id a3mr9899612qti.169.1572602929835;
- Fri, 01 Nov 2019 03:08:49 -0700 (PDT)
+ bh=ND8y/KAJEHxe8vYu6nFNiGmvLZloLNx/Qhcmj2riyfs=;
+ b=rF6RL+fD1gs10nSxjkk/Vg6VcunbWswhW451Sk1One05fbIBOLnvVnsWI7Edfja5Nk
+ IdICySZwX5iIhFgPJtcz7f/eqPn+F1uCESMXeEtAvFWrq7tKXeHiPEwM7FOy+GUFBX2w
+ TeShxo4Q67FGT5NGYXJ9nJHmOjSCn3LoMiJdvtPVdWMD14z3Y5LLCJvnM78PUgXlJtcK
+ MOyPxNYaI7DlSb8UEGKGDyc8KBeciEYLGmu8u7w73G0GbifTJNaCiqiIqyYmHa5xYyu/
+ UTKjHk/j8XV7LIqbgo/29Ysz0cTJKrHS6L2mA0lq+lmYjuLhVTEvJAhqx54R6dKhjc8H
+ iImw==
+X-Gm-Message-State: APjAAAX56jZ4xoqWMImtpnj0mlK2UJch4QjKt+TFKlC6B/F0i0Wdd2/+
+ JsRa1ZpeXOm1ghOx1e22gh2DigbM4n5Lq8fU3RQ=
+X-Google-Smtp-Source: APXvYqwoU1k7FEmT61Ivo0VZaveC+nWADRFHlsA0BlwLNyI+e6RuAdTXAbMLTDbS33RCVwVgM/jm6sohxZSvu01ohA8=
+X-Received: by 2002:a37:5fc1:: with SMTP id t184mr2349520qkb.171.1572603142333; 
+ Fri, 01 Nov 2019 03:12:22 -0700 (PDT)
 MIME-Version: 1.0
 References: <20191021194820.293556-1-taoren@fb.com>
-In-Reply-To: <20191021194820.293556-1-taoren@fb.com>
+ <20191021194820.293556-2-taoren@fb.com>
+In-Reply-To: <20191021194820.293556-2-taoren@fb.com>
 From: Joel Stanley <joel@jms.id.au>
-Date: Fri, 1 Nov 2019 10:08:35 +0000
-Message-ID: <CACPK8XcNxs5T=ZC_mRnvkOF_kqS1AvP=9PvMB6w9Fgn_XbtZQw@mail.gmail.com>
-Subject: Re: [PATCH 0/4] ARM: dts: aspeed: add dtsi for Facebook AST2500
+Date: Fri, 1 Nov 2019 10:12:10 +0000
+Message-ID: <CACPK8XfebA9PcpyWkofCJ5fAZ9ddUjQ4ZeCf73KXb51+k_+N1Q@mail.gmail.com>
+Subject: Re: [PATCH 1/4] ARM: dts: aspeed: add dtsi for Facebook AST2500
  Network BMCs
 To: Tao Ren <taoren@fb.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_030851_404331_13D2E51A 
-X-CRM114-Status: GOOD (  13.39  )
+X-CRM114-CacheID: sfid-20191101_031223_582522_63815AAC 
+X-CRM114-Status: GOOD (  11.00  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -95,6 +96,7 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Mark Rutland <mark.rutland@arm.com>,
  devicetree <devicetree@vger.kernel.org>,
  linux-aspeed <linux-aspeed@lists.ozlabs.org>, Andrew Jeffery <andrew@aj.id.au>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
  OpenBMC Maillist <openbmc@lists.ozlabs.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  Rob Herring <robh+dt@kernel.org>,
@@ -104,49 +106,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Tao,
-
 On Mon, 21 Oct 2019 at 19:49, Tao Ren <taoren@fb.com> wrote:
 >
-> The patch series adds "facebook-netbmc-ast2500-common.dtsi" which defines
-> devices that are common cross all Facebook AST2500 Network BMC platforms.
-> The major purpose is to minimize duplicated device entries among Facebook
-> Network BMC dts files.
+> Introduce "facebook-netbmc-ast2500-common.dtsi" which is included by all
+> Facebook AST2500 Network BMC platforms. The major purpose is to minimize
+> duplicated device entries cross Facebook Network BMC dts files.
 >
-> Patch #1 (of 4) adds "facebook-netbmc-ast2500-common.dtsi" file, and the
-> remaining 3 patches update CMM, Minipack and Yamp device tree to consume
-> the new dtsi file.
 
-The patches look okay to me. I modified the file name to match the
-convention used by other device trees in the arm directory, where it
-includes the SOC name first.
+> +
+> +&mac1 {
+> +       status = "okay";
+> +       no-hw-checksum;
 
-I also reworded the commit messages a little.
+Was this included to work around the IPv6 issue that Benh recently fixed?
 
-They have been merged into the aspeed tree for submission to 5.5.
+If you can test your platform with
+88824e3bf29a2fcacfd9ebbfe03063649f0f3254 applied and the
+no-hw-checksum property removed, please send a follow up to remove
+this property.
 
-Thanks!
+It's not doing any harm, but by cleaning it up there's less chance
+others blindly copy the same thing.
+
+Thanks,
 
 Joel
 
->
-> Tao Ren (4):
->   ARM: dts: aspeed: add dtsi for Facebook AST2500 Network BMCs
->   ARM: dts: aspeed: cmm: include dtsi for common network BMC devices
->   ARM: dts: aspeed: minipack: include dtsi for common network BMC
->     devices
->   ARM: dts: aspeed: yamp: include dtsi for common network BMC devices
->
->  arch/arm/boot/dts/aspeed-bmc-facebook-cmm.dts | 66 ++++---------
->  .../boot/dts/aspeed-bmc-facebook-minipack.dts | 59 ++++--------
->  .../arm/boot/dts/aspeed-bmc-facebook-yamp.dts | 62 +-----------
->  .../dts/facebook-netbmc-ast2500-common.dtsi   | 96 +++++++++++++++++++
->  4 files changed, 136 insertions(+), 147 deletions(-)
->  create mode 100644 arch/arm/boot/dts/facebook-netbmc-ast2500-common.dtsi
->
-> --
-> 2.17.1
->
+> +       pinctrl-names = "default";
+> +       pinctrl-0 = <&pinctrl_rgmii2_default &pinctrl_mdio2_default>;
+> +};
 
 _______________________________________________
 linux-arm-kernel mailing list
