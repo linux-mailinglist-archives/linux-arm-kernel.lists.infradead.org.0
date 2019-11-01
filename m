@@ -2,87 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8D68EC071
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 10:21:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4EB36EC086
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 10:34:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=niOx5EfpdJuukTf7rpRbF+XKhlbt1aKp7ZTncCZZdC8=; b=svCTwQeltxzevb
-	yNU8QoGcikpjiHBhHp9pE5KCTC3h0bNrdKMSIBaqkLBcSvGjBjbU9iAghTfS1BAe6oFK96II5Quo0
-	AytZw2oBmajLu3qEwu8XtWir6XuLaHEYAdDSCrUzjP9sth6cl7U5KsrAV7CBUM+z1ArSwq9pf6xms
-	JWbP38+GG4BGtLDHMSHtpGaPgeeLEqQL1dWSVdy7PZlem5q3RIkdWYcr2qs4Dpyx4f3hIrn+h6sbe
-	9a3i1RgW+L7VUgsTCo6tna+FMYqVJyhrvcHdyrgMIRjpYehbh7YiL7ByXyq2RMqX6/mIQE46MbvGi
-	wAE4NAs8vExyos8kJNEg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=DTGLaJdj4dAzSDLD8a6N4zmslhhx4jY3QDfcKcS9dnY=; b=MAhyr9TTXIhSi6qedDuCQP30u
+	zBHjUfXNFhzCV7lVWOZFaiR2JvAul+Pb1k8PY04P9V3g8FpEHTiX0ZAAHX9mhf3KwIcC/EKchs1I+
+	Z5y41SdOZxqWMjieOODTCj8w9fqHzxgR4eMqmxSB4AMUiTfFm6tkuKYVUG6gTtQxKNlmU4RHrai1Z
+	K/pZQ5EIu2XKjj97z0oO8spdmVkciL2MunzVGFUp7sZ8bD+s8JiFLszsCbj+hbKeZ/H80kg3y8l02
+	xrdyrVT4pVy6eS9YxJ3IRgJ+gdgsHZ3cnegO0YzrHg5IMAefRD1LFJoB8Aqn+YIbeH5DFic8LLf+j
+	Ss3QT2jRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQT6y-0007Yp-Nc; Fri, 01 Nov 2019 09:20:52 +0000
-Received: from esa5.microchip.iphmx.com ([216.71.150.166])
+	id 1iQTJw-0002vq-V8; Fri, 01 Nov 2019 09:34:16 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQT6l-0007Xk-7a
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 09:20:42 +0000
-Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
- Codrin.Ciubotariu@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
- envelope-from="Codrin.Ciubotariu@microchip.com";
- x-sender="Codrin.Ciubotariu@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa5.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
- envelope-from="Codrin.Ciubotariu@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa5.microchip.iphmx.com;
- dkim=none (message not signed) header.i=none;
- spf=Pass smtp.mailfrom=Codrin.Ciubotariu@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: 4EucVUhtbVEvbbmY/hUuxzdLY3HCA1DJyUwm5BdYJsMKc+vK+Hl1Tad9RkaHzU00ItPmJTt4fx
- D3rUN1GvKpNhF7r+p2hYpM3hG7ghEPYimBdDHMChdk8lG+BbpTDHb1JLoR/94JaHgvdSJO6Mgr
- bNFSJKPlVmTVQBRnsyMJjC0kqtVRxOF7cIQE0uvUvzuvQSt82Jky/x2MURFc+bF8sPhSNYbR8A
- jaeN388kkBxt45fbOkIOLPHRyjLrcROGbACLj3vccRiVjc0R0bE9GLWfXvCZV83xITufjKic9p
- 5vQ=
-X-IronPort-AV: E=Sophos;i="5.68,254,1569308400"; d="scan'208";a="53750120"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 01 Nov 2019 02:20:37 -0700
-Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Fri, 1 Nov 2019 02:20:35 -0700
-Received: from rob-ult-m19940.corp.atmel.com (10.10.85.251) by
- chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Fri, 1 Nov 2019 02:20:33 -0700
-From: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
-To: <linux-arm-kernel@lists.infradead.org>, <linux-gpio@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>
-Subject: [PATCH v2] pinctrl: at91: Enable slewrate by default on SAM9X60
-Date: Fri, 1 Nov 2019 11:20:31 +0200
-Message-ID: <20191101092031.24896-1-codrin.ciubotariu@microchip.com>
-X-Mailer: git-send-email 2.20.1
+ id 1iQTJp-0002v0-Ha
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 09:34:10 +0000
+Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id EF46321734;
+ Fri,  1 Nov 2019 09:34:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572600848;
+ bh=0jCij/Fv8ugOCVAh4PqFfAXdu/PxgN5AcduaY+7TskQ=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=r20eSui4efPABmYo7hpS0vYVKlcPj8rC24asoji9XM5GANsx40FkR/8T+L4QEfS+c
+ ySou75re54nj88ZPjkzC5BKc0ECclHEmHcEdLWXOPQDeTNeNHdWNgC86bZmua5pwxJ
+ tCGk8Y9PWOTFmXYWYqjI017VLS81unr9CPgr6FHs=
+Date: Fri, 1 Nov 2019 09:58:57 +0100
+From: Maxime Ripard <mripard@kernel.org>
+To: Herbert Xu <herbert@gondor.apana.org.au>
+Subject: Re: [PATCH v3 0/4] crypto: add sun8i-ss driver for Allwinner
+ Security System
+Message-ID: <20191101085857.bukatiog3zxugjng@hendrix>
+References: <20191025185128.24068-1-clabbe.montjoie@gmail.com>
+ <20191101061154.abwwbcqzm6lg7uvi@gondor.apana.org.au>
 MIME-Version: 1.0
+In-Reply-To: <20191101061154.abwwbcqzm6lg7uvi@gondor.apana.org.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_022039_278491_9DEE160E 
-X-CRM114-Status: UNSURE (   9.56  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191101_023409_632130_CACD0BCB 
+X-CRM114-Status: GOOD (  18.04  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.150.166 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,78 +76,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, linus.walleij@linaro.org,
- ludovic.desroches@microchip.com, robh+dt@kernel.org,
- Codrin Ciubotariu <codrin.ciubotariu@microchip.com>,
- claudiu.beznea@microchip.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org, wens@csie.org,
+ robh+dt@kernel.org, Corentin Labbe <clabbe.montjoie@gmail.com>,
+ linux-crypto@vger.kernel.org, p.zabel@pengutronix.de, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7062614736909925970=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On SAM9X60, slewrate should be enabled on pins with a switching frequency
-below 50Mhz. Since most of our pins do not exceed this value, we enable
-slewrate by default. Pins with a switching value that exceeds 50Mhz will
-have to explicitly disable slewrate.
 
-This patch changes the ABI. However, the slewrate macros are only used
-by SAM9X60 and, at this moment, there are no device-tree files available
-for this platform.
+--===============7062614736909925970==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="phjdavwqd433by7q"
+Content-Disposition: inline
 
-Suggested-by: Ludovic Desroches <ludovic.desroches@microchip.com>
-Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
----
 
-Changes in v2:
- - updated commit message to reflect the ABI change
+--phjdavwqd433by7q
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
- drivers/pinctrl/pinctrl-at91.c     | 4 ++--
- include/dt-bindings/pinctrl/at91.h | 4 ++--
- 2 files changed, 4 insertions(+), 4 deletions(-)
+On Fri, Nov 01, 2019 at 02:11:54PM +0800, Herbert Xu wrote:
+> On Fri, Oct 25, 2019 at 08:51:24PM +0200, Corentin Labbe wrote:
+> > Hello
+> >
+> > This patch serie adds support for the second version of Allwinner Security System.
+> > The first generation of the Security System is already handled by the sun4i-ss driver.
+> > Due to major change, the first driver cannot handle the second one.
+> > This new Security System is present on A80 and A83T SoCs.
+> >
+> > For the moment, the driver support only DES3/AES in ECB/CBC mode.
+> > Patchs for CTR/CTS, RSA and RNGs will came later.
+> >
+> > This serie is tested with CRYPTO_MANAGER_EXTRA_TESTS
+> > and tested on:
+> > sun8i-a83t-bananapi-m3
+> > sun9i-a80-cubieboard4
+> >
+> > This serie is based on top of the "crypto: add sun8i-ce driver for
+> > Allwinner crypto engine" serie.
+> >
+> > Regards
+> >
+> > Changes since v2:
+> > - Made the reset mandatory
+> > - Removed reset-names
+> >
+> > Changes since v1:
+> > - fixed uninitialized err in sun8i_ss_allocate_chanlist
+> > - Added missing commit description on DT Documentation patch
+> >
+> > Corentin Labbe (4):
+> >   crypto: Add Allwinner sun8i-ss cryptographic offloader
+> >   dt-bindings: crypto: Add DT bindings documentation for sun8i-ss
+> >     Security System
+> >   ARM: dts: sun8i: a83t: Add Security System node
+> >   ARM: dts: sun9i: a80: Add Security System node
+> >
+> >  .../bindings/crypto/allwinner,sun8i-ss.yaml   |  61 ++
+> >  arch/arm/boot/dts/sun8i-a83t.dtsi             |   9 +
+> >  arch/arm/boot/dts/sun9i-a80.dtsi              |   9 +
+> >  drivers/crypto/allwinner/Kconfig              |  28 +
+> >  drivers/crypto/allwinner/Makefile             |   1 +
+> >  drivers/crypto/allwinner/sun8i-ss/Makefile    |   2 +
+> >  .../allwinner/sun8i-ss/sun8i-ss-cipher.c      | 438 ++++++++++++
+> >  .../crypto/allwinner/sun8i-ss/sun8i-ss-core.c | 642 ++++++++++++++++++
+> >  drivers/crypto/allwinner/sun8i-ss/sun8i-ss.h  | 218 ++++++
+> >  9 files changed, 1408 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/crypto/allwinner,sun8i-ss.yaml
+> >  create mode 100644 drivers/crypto/allwinner/sun8i-ss/Makefile
+> >  create mode 100644 drivers/crypto/allwinner/sun8i-ss/sun8i-ss-cipher.c
+> >  create mode 100644 drivers/crypto/allwinner/sun8i-ss/sun8i-ss-core.c
+> >  create mode 100644 drivers/crypto/allwinner/sun8i-ss/sun8i-ss.h
+>
+> Patches 1,2 applied.  Thanks.
 
-diff --git a/drivers/pinctrl/pinctrl-at91.c b/drivers/pinctrl/pinctrl-at91.c
-index 117075b5798f..c135149e84e9 100644
---- a/drivers/pinctrl/pinctrl-at91.c
-+++ b/drivers/pinctrl/pinctrl-at91.c
-@@ -85,8 +85,8 @@ enum drive_strength_bit {
- 					 DRIVE_STRENGTH_SHIFT)
- 
- enum slewrate_bit {
--	SLEWRATE_BIT_DIS,
- 	SLEWRATE_BIT_ENA,
-+	SLEWRATE_BIT_DIS,
- };
- 
- #define SLEWRATE_BIT_MSK(name)		(SLEWRATE_BIT_##name << SLEWRATE_SHIFT)
-@@ -669,7 +669,7 @@ static void at91_mux_sam9x60_set_slewrate(void __iomem *pio, unsigned pin,
- {
- 	unsigned int tmp;
- 
--	if (setting < SLEWRATE_BIT_DIS || setting > SLEWRATE_BIT_ENA)
-+	if (setting < SLEWRATE_BIT_ENA || setting > SLEWRATE_BIT_DIS)
- 		return;
- 
- 	tmp = readl_relaxed(pio + SAM9X60_PIO_SLEWR);
-diff --git a/include/dt-bindings/pinctrl/at91.h b/include/dt-bindings/pinctrl/at91.h
-index 3831f91fb3ba..e8e117306b1b 100644
---- a/include/dt-bindings/pinctrl/at91.h
-+++ b/include/dt-bindings/pinctrl/at91.h
-@@ -27,8 +27,8 @@
- #define AT91_PINCTRL_DRIVE_STRENGTH_MED			(0x2 << 5)
- #define AT91_PINCTRL_DRIVE_STRENGTH_HI			(0x3 << 5)
- 
--#define AT91_PINCTRL_SLEWRATE_DIS	(0x0 << 9)
--#define AT91_PINCTRL_SLEWRATE_ENA	(0x1 << 9)
-+#define AT91_PINCTRL_SLEWRATE_ENA	(0x0 << 9)
-+#define AT91_PINCTRL_SLEWRATE_DIS	(0x1 << 9)
- 
- #define AT91_PIOA	0
- #define AT91_PIOB	1
--- 
-2.20.1
+Applied 3 and 4, thanks!
+Maxime
 
+--phjdavwqd433by7q
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXbvz0QAKCRDj7w1vZxhR
+xVjTAQCdeiXvBM+rscw9plENTZiXAjVbmkADgjas85s2VUzpVQEA04vUS0idMiY/
+RxN28qg8bHvQsTZGYtLIbTxPsSpgCQI=
+=vYi/
+-----END PGP SIGNATURE-----
+
+--phjdavwqd433by7q--
+
+
+--===============7062614736909925970==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7062614736909925970==--
+
