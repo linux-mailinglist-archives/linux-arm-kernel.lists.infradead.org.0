@@ -2,59 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F5EBEBBE3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 03:08:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 173EBEBBE4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 03:08:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=cTtKclSpFDtVQbJHwn8gdkLdluQnjfilba7j19olHRI=; b=cwf
-	z0USkFo1fJ8+nBAE0dixOHmgR25V2ySFIjxtA5JbO+zjpKEaOQVSxsjaAFkusTsvDDJpU3hifQf+y
-	coUfUWUJQKspdO4KqeaX9B/M4AROnERIWzfN0ynNay3tjEVQ9W6AZen9enSjTMZkGYb6ojxb9VQWe
-	j1BfelHD3cfk8XY8dSo6nDf4ruo/cGECWcWpMXMEu4j78s2XMHyLyfal59njBSyf0RUqe0Gb/vFZs
-	wO4rkn+1ZRAbuThqG+xgZBtLc4QGkegdm5wkX3BWLBK4HMLVsiATR46P2kITBq1F/aSBAW17lUpUU
-	tcGcoP0lfD23tuLGBH1bl4eYqiDOu1Q==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=BSAjX+GYHTVdl21Z8a9cDfL7YYkhfk0pG1uiAh4JPD0=; b=lOuT8a4+kdgeyAJrLabzF2Edbx
+	I9UUKlKEa5J2y58YuZxYW0eRbmAxL0kWAP+yePFuVD81XS/hJK7dDCccCYBUfXVRwh2JXzimAahVI
+	yFs6PXXi/umPzl/k5gVnfvEZJWfIWC7XvK2c5Kl9vArmjoLYh/kZBqnKpjPf+QrxYU9lcw8TNVcpc
+	UaB500UMDYXP/HjRGimjSWM3on4agZll6pKkQG1lmSTKNtFZV3YvL9RjOFNHgE1SGUqQ3W2nE/DFF
+	zO+OCvg8A615Pi9uNabMJeORN68gtuyI0gUN1JpDigw9W2PsbuZ736b7Z/8+XEeZ5TZmEeaDaKRTR
+	Ri1qVjMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQMMS-0002C5-MY; Fri, 01 Nov 2019 02:08:24 +0000
-Received: from mail-yw1-xc41.google.com ([2607:f8b0:4864:20::c41])
+	id 1iQMMn-0002RN-Vi; Fri, 01 Nov 2019 02:08:46 +0000
+Received: from mail-yw1-xc42.google.com ([2607:f8b0:4864:20::c42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQMMB-00028m-0y
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 02:08:08 +0000
-Received: by mail-yw1-xc41.google.com with SMTP id a83so1553204ywe.11
+ id 1iQMMF-0002CQ-IY
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 02:08:13 +0000
+Received: by mail-yw1-xc42.google.com with SMTP id x65so2959641ywf.12
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 31 Oct 2019 19:08:05 -0700 (PDT)
+ Thu, 31 Oct 2019 19:08:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=A/ta4o63hQ96fBCgzb5RGLjMhlxTMZ+PcK5dvaw+Anc=;
- b=C/NqR3xxIKG4023ZzRSgbk9XuoVpmk3xyEfEYwHqucSMXZYPUKg00oCcEmNmSjoPdq
- m6MafLbKbrsEgumWyIYlHPe99C9Hz4w//Rj9WvnYYpaDmEjfeCw2EeTkZPYvKZq5HyoF
- gHGgl6NLx+bfgPniQGFNrqJtrKZIqzNq4TQfRrf6OvSFO6d8io5xr/dUcjz38TfDWYqE
- deP9D6rYbVTI7ueuTY2YUeoHJe1++HLc/NMt9EF/YyBG5leyN4w6gL4PMVErIXo/OxJZ
- 7gRDQNMnBDE2UsqBvZ1y5yY6WeP4514WIK9HOADV1vw9P9IE3XY7fqZYE9TlDcSmLe8d
- YN3g==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=iAgomrDaaw+p9SyPDKe+DIwZEIKyPHeJdp6rMCsSqrc=;
+ b=KBf2RlKG/HVF+HdZkZwipGGFDc87+W3TEb3cKUL72YSFO06gGeEQCdgEwVcGArbIEC
+ 0hSgawpERrPxShlj96U8j0EgDlDAsSoXTlAfDF2GR344/R8BofFgqibEFBlB+mtGqpuN
+ yFMWgZDIShlUYgLFAy6VDY/j17XU0RC2KQPP9Zcp0/Fq/zv2fYl5Gzg2C+K9spCxNznK
+ QykUXf43faePtkV1/a+P/HuHQYCopqaTgTTJtmlrkvjthjf5XRXXi8vGr5ds8Y7RcjoL
+ KbYzAlzMi2De7OyKSieTdE1sGOTS6Q/7qt25zBlxC+3NjFCaXNOZpXMQxfg/hFGQtbec
+ FXmA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=A/ta4o63hQ96fBCgzb5RGLjMhlxTMZ+PcK5dvaw+Anc=;
- b=eMm6bOWTXIFKt+1e09MtpdSOe7VxRsdpPrWEXaIiCDJLmh0vkEgqHf2SLRfPbbw00A
- oAvqfmA3tLIYccvcHOBh1wJiwqhCJjt3sfugxO/a9Em9hoOM3/rLNUablb4VqWjnUJsn
- 2t0VCxJsKZIZQbWb37jWxCLGrTr9VRoEHEYZMAGCNOQwPIzHOUZggU4VRdKsgUz3ujhn
- rD2ad5WF6eEbXfvK/zj/wrzXaOedjupvPuFa9KKnihBvadopQyAcXSQwob2zsYiIalaU
- 7YRg0hrZ4M0sc0Wr+UybOEgW4eLwEkXOZR7LrTCBd1eXDzpsZhFjR7I+EKtayDCmgkWK
- n8JQ==
-X-Gm-Message-State: APjAAAUtu1clT9UQ3Trl6Jx8dpTStmpnH0nmgrm/OZAk/qB+zkc9QmZW
- Xe3bip2juodG+LK2p4+MfPTPbQ==
-X-Google-Smtp-Source: APXvYqyxpCWVDWsP19hRctcE2z7o5p5vtcKC3m638NJPhzYms8Uqdwj7fvtQQudg7Ye0vVxrqI3+2A==
-X-Received: by 2002:a81:5b46:: with SMTP id p67mr6513588ywb.228.1572574084527; 
- Thu, 31 Oct 2019 19:08:04 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=iAgomrDaaw+p9SyPDKe+DIwZEIKyPHeJdp6rMCsSqrc=;
+ b=fkCbQhWmuOSdJI8rABbf9nDMPklwFwj01ZehIsObjSTqAEUOnYfrICpQOqdytcyC0n
+ LZFX/QW5OuDEybwnKu8UaIC5iPdZnraA94MIlQ8C8sjEsmzPYy2K6D3+mtyedglc3W7o
+ jyU/RbBQqfmcIl/CNttWCYcPyR7HG00LkNDn4fWe/EEfaoV9tGb29AHpa77vQFNn/Pr+
+ UBjqsKLYoXwt5iF+h8uHu27qew+M0aQjs8wTAGLg/j2lC92C4IV2QQ+y90eJOaOKTcX8
+ lBWi5yDqwJ0y11nVNHKnIM+/hWNM8SfZLhSoE8iQejh4BUFc9lU4wUdd0VmSrmeDc4PC
+ Yajg==
+X-Gm-Message-State: APjAAAWl48f6Uuemvvg9tNYlNkeZn2vSvCEWMs48ZsJnqHuQ8VwGTJrX
+ TpoAx1z8DG0ZVTaYDMsZGMoT8w==
+X-Google-Smtp-Source: APXvYqwocgrzQk2qV7HduXfj8l1PhQC22H7kaTVlKis0qq4lCq0+YnTVSRlOOzrOxdeHR3aunn2FAQ==
+X-Received: by 2002:a81:8501:: with SMTP id v1mr6501020ywf.406.1572574090230; 
+ Thu, 31 Oct 2019 19:08:10 -0700 (PDT)
 Received: from localhost.localdomain (li1038-30.members.linode.com.
  [45.33.96.30])
- by smtp.gmail.com with ESMTPSA id m5sm3762076ywj.27.2019.10.31.19.07.59
+ by smtp.gmail.com with ESMTPSA id m5sm3762076ywj.27.2019.10.31.19.08.04
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 31 Oct 2019 19:08:03 -0700 (PDT)
+ Thu, 31 Oct 2019 19:08:09 -0700 (PDT)
 From: Leo Yan <leo.yan@linaro.org>
 To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Mathieu Poirier <mathieu.poirier@linaro.org>,
@@ -67,20 +69,22 @@ To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  Coresight ML <coresight@lists.linaro.org>,
  Robert Walker <robert.walker@arm.com>
-Subject: [PATCH v2 0/4] perf cs-etm: Fix synthesizing instruction samples
-Date: Fri,  1 Nov 2019 10:07:46 +0800
-Message-Id: <20191101020750.29063-1-leo.yan@linaro.org>
+Subject: [PATCH v2 1/4] perf cs-etm: Continuously record last branches
+Date: Fri,  1 Nov 2019 10:07:47 +0800
+Message-Id: <20191101020750.29063-2-leo.yan@linaro.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191101020750.29063-1-leo.yan@linaro.org>
+References: <20191101020750.29063-1-leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_190807_129857_0985EF5D 
-X-CRM114-Status: GOOD (  11.05  )
+X-CRM114-CacheID: sfid-20191031_190811_703265_0571ECAD 
+X-CRM114-Status: GOOD (  16.25  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c42 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -109,49 +113,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch series is to address the issue for synthesizing instruction
-samples, especially when the instruction sample period is small enough,
-the current logic cannot synthesize multiple instruction samples within
-one instruction range packet.
+Every time synthesize instruction sample, the last branches recording
+will be reset.  This would be fine if the instruction period is big
+enough, for example if we use the option '--itrace=i100000', the last
+branch array is reset for every instruction sample (10000 instructions
+per period); before generate the next instruction sample, there has the
+enough packets coming to fill last branch array.  On the other hand,
+if set a very small period, the packets will be significantly reduced
+between two continuous instruction samples, thus if the last branch
+array is reset for the previous instruction sample, it's almost empty
+for the next instruction sample.
 
-To fix this issue, patch 0001 avoids to reset the last branches for
-every instruction sample; if reset the last branches when every time
-generate instruction sample, then the later samples in the same range
-packet cannot use the last branches anymore.
-
-Patch 0002 is the main patch to fix the logic for synthesizing
-instruction samples; it allows to handle different instruction periods.
-
-Patch 0003 is an optimization for copying last branches; it only copies
-last branches once if the instruction samples share the same last
+To allow the last branches to work for any instruction periods, this
+patch avoids to reset the last branches for every instruction sample
+and only reset it when flush the trace data.  The last branches will
+be reset only for two cases, one is for trace starting, another case
+is for discontinuous trace; thus it can continuously record last
 branches.
 
-Patch 0004 is a minor fix for unsigned variable comparison to zero.
+Signed-off-by: Leo Yan <leo.yan@linaro.org>
+---
+ tools/perf/util/cs-etm.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
-To verify my changing for synthesizing instruction samples, I added
-some logs in the code, and reviewed the output log manually for
-instuctions samples.  The below commands are tested on DB410c board:
-
-  # perf script --itrace=i2
-  # perf script --itrace=i2il16
-  # perf inject --itrace=i2il16 -i perf.data -o perf.data.new
-  # perf inject --itrace=i100il16 -i perf.data -o perf.data.new
-
-
-Changes from v1:
-* Rebased patch set on perf/core branch with latest commit 9fec3cd5fa4a
-  ("perf map: Check if the map still has some refcounts on exit").
-
-
-Leo Yan (4):
-  perf cs-etm: Continuously record last branches
-  perf cs-etm: Correct synthesizing instruction samples
-  perf cs-etm: Optimize copying last branches
-  perf cs-etm: Fix unsigned variable comparison to zero
-
- tools/perf/util/cs-etm.c | 137 ++++++++++++++++++++++++++++++++-------
- 1 file changed, 115 insertions(+), 22 deletions(-)
-
+diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
+index f5f855fff412..8be6d010ae84 100644
+--- a/tools/perf/util/cs-etm.c
++++ b/tools/perf/util/cs-etm.c
+@@ -1153,9 +1153,6 @@ static int cs_etm__synth_instruction_sample(struct cs_etm_queue *etmq,
+ 			"CS ETM Trace: failed to deliver instruction event, error %d\n",
+ 			ret);
+ 
+-	if (etm->synth_opts.last_branch)
+-		cs_etm__reset_last_branch_rb(tidq);
+-
+ 	return ret;
+ }
+ 
+@@ -1486,6 +1483,10 @@ static int cs_etm__flush(struct cs_etm_queue *etmq,
+ 		tidq->prev_packet = tmp;
+ 	}
+ 
++	/* Reset last branches after flush the trace */
++	if (etm->synth_opts.last_branch)
++		cs_etm__reset_last_branch_rb(tidq);
++
+ 	return err;
+ }
+ 
 -- 
 2.17.1
 
