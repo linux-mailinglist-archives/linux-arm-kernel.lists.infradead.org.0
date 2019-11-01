@@ -2,94 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1461CEBC40
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 04:09:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1248BEBC59
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 04:27:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cHdXIVChUVcxvS/58vg9Dt1++JUNe9EKrB8+iMngoKE=; b=XnPHjVUoXrqSd9
-	8mifI09nIIVioMHUZliffybhE2Cxyi27g70/J1m5cAB8f2CjllbHoRaO+zzG2Ks1J5ZG8IMFZabcK
-	QwBLSAfChoU2snYXtOgQqwKNQYasmW+FM0XCuRs4ZLuNRE7kx1u5Ovbvb2G86eFL+j6eNXKRqgyJd
-	Q+P1erK69zseWDlQsMI7a6BK57flVPOpEiSjXVvneKRJHXSyWzNzIWyLAoVb+JtSgwhKv3MWsZlZd
-	sElrg6IbKuXYXY39t56nHX6F/jVuvpgaRqIfkCsVDBxt7jOJMt/Z68CiuUtEKDrsRxdGZPaaeGpwK
-	61ZLLc9R91ClXEItqcjA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=emw3FkYVs4fBBuKzmdWHGD102xrS06yQJntzv0Q0kYw=; b=bsEciegHVhq8FG
+	j611DEqJk8etdCSxHrAJEDKPP98zvEO61hIH8zSsroii1q/j5NqLTDVZ302WaAfcSF3BhkdzFx8uk
+	3W9sc5Basfc54O9g3L+x7N0RJCr+Mn6pYOCS78retaMjQmCg9RlaoeTl3xn3o32FH+dzCNkDSbbXk
+	XZbMxfiNqNhvMrypTdsMMZEpKn3Zh+Oq27BdR9pqGy4rszRCT4fsVl+q4AC91NLIgNn5cQQMo6a8e
+	ZGqem5ISx4ltED7qwRWYWbwD83+8BaqybVe21T9Pl+5qkKew9vmDn0Jt+LWS1cgkqn7a3GqsTbOqD
+	PYNiHEnjHFMGXgTiiGjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQNJa-0006Y9-CW; Fri, 01 Nov 2019 03:09:30 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1iQNaS-0004PO-N0; Fri, 01 Nov 2019 03:26:56 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQNJP-0006Xm-0S
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 03:09:20 +0000
-Received: by mail-wr1-x443.google.com with SMTP id n1so8362981wra.10
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 31 Oct 2019 20:09:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=MilvW8KF1q1GBDWNa38zLUbdbpUmypfuUOJIrybukug=;
- b=i1vdbmthHHL/BD//a+Lc4IWp0ufRC1HSfc+xoViJcNxseK8PgLdkpo23OB131Oonci
- u6rzC9GICpbfyzeWs+LS4PV7whOmAXAwVFThc4JZTt3EGpxiu6Oy8TrGHtp/5z5sxKUG
- /jjH+cMRhUmo25sp11d5vTnyvsUddHZG6VqYa9uGv6CMRMO2cZo8SXdnmHivTiLaPpOZ
- xa9pjxLrMZgp319+bjpZKm1r5iHtDfHbWqXcqdhcAGT8M5sOhKd2xkeU0W1s3I7oofM8
- uMkP4s+6Htf1VMcp5fgJ7NzetLpKgcGHIq88q11eSHRypKglYUoceaoGb50yPph7qoqz
- Ai4Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=MilvW8KF1q1GBDWNa38zLUbdbpUmypfuUOJIrybukug=;
- b=FY91jygcwr/PSLFL7e/rOjvs3+5uMiKlafX7pLU+tMFByhKsKuYPEk7oLQVBYg8bRX
- WwUD+NZNt6q7EJkqnhluv+xX48ruwpFtE9ikDidjfSFLa01pXIWIYpDBne3no1ENgRO3
- 3csoLu5o+T00v6hGXcBfCSvvIbPslf4QA1ZD/1sgTVvJKcygrcEHTBnzvgTWMtoZLqve
- XUKz7tnPpDTcnmJafkzTD6YExJpjnQBxEdEgRGvAm0YHgZMV0lt9iNe/I++A/IqZiQoU
- QMPViUK9YmQl//SWod3bwaMqbDZt9BRYsoNfAYO1YpKuyjDJgvjRCaDAb10x4ufmH42G
- fcIw==
-X-Gm-Message-State: APjAAAW/mjS8FIyp6j3DuX1OJ3uXAxL4i/6DxfUNyeKS3pA8VD4qWH5b
- BZIsj7uvC/Q0wynRipKMO2o=
-X-Google-Smtp-Source: APXvYqxOq8uZUxxuLNBzeC5oJfEwK0DGyj8pTKhYtDY1N4Yuug8YgW27P1o874r9SV8ZDTA4Z3kJiw==
-X-Received: by 2002:adf:fec3:: with SMTP id q3mr8604105wrs.343.1572577757353; 
- Thu, 31 Oct 2019 20:09:17 -0700 (PDT)
-Received: from [10.230.29.119] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id n17sm5484967wrt.25.2019.10.31.20.09.15
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 31 Oct 2019 20:09:16 -0700 (PDT)
-Subject: Re: [PATCH] reset: brcmstb: Fix resource checks
-To: linux-arm-kernel@vger.kernel.org, Philipp Zabel <p.zabel@pengutronix.de>
-References: <20191101030616.27372-1-f.fainelli@gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <0f0c6be8-0e3c-7294-75aa-58c3b33d621e@gmail.com>
-Date: Thu, 31 Oct 2019 20:09:13 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
+ id 1iQNaJ-0004Ob-Ib; Fri, 01 Nov 2019 03:26:49 +0000
+X-UUID: 4ae60e5820ac479d8e17bdc2ee0be868-20191031
+X-UUID: 4ae60e5820ac479d8e17bdc2ee0be868-20191031
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1825651021; Thu, 31 Oct 2019 19:25:52 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 31 Oct 2019 20:16:35 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 1 Nov 2019 11:16:34 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 1 Nov 2019 11:16:34 +0800
+Message-ID: <1572578198.10339.15.camel@mtksdaap41>
+Subject: Re: [PATCH] drm/mediatek: update cursors by using async atomic update
+From: CK Hu <ck.hu@mediatek.com>
+To: Bibby Hsieh <bibby.hsieh@mediatek.com>
+Date: Fri, 1 Nov 2019 11:16:38 +0800
+In-Reply-To: <20191025053843.16808-2-bibby.hsieh@mediatek.com>
+References: <20191025053843.16808-1-bibby.hsieh@mediatek.com>
+ <20191025053843.16808-2-bibby.hsieh@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <20191101030616.27372-1-f.fainelli@gmail.com>
-Content-Language: en-US
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_200919_052676_4D4AE147 
-X-CRM114-Status: GOOD (  11.83  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191031_202647_619741_664A2688 
+X-CRM114-Status: GOOD (  17.14  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,34 +71,168 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <bcm-kernel-feedback-list@broadcom.com>,
- open list <linux-kernel@vger.kernel.org>,
- "moderated list:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: drinkcat@chromium.org, srv_heupstream@mediatek.com,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel.vetter@ffwll.ch>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ tfiga@chromium.org, YT Shen <yt.shen@mediatek.com>,
+ Thierry Reding <thierry.reding@gmail.com>, linux-mediatek@lists.infradead.org,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi, Bibby:
 
-
-On 10/31/2019 8:06 PM, Florian Fainelli wrote:
-> The use of IS_ALIGNED() is incorrect, the typical resource we pass looks
-> like this: start: 0x8404318, size: 0x30. When using IS_ALIGNED() we will
-> get the following 0x8404318 & (0x18 - 1) = 0x10 which is definitively
-> not equal to 0.
+On Fri, 2019-10-25 at 13:38 +0800, Bibby Hsieh wrote:
+> Support to async updates of cursors by using the new atomic
+> interface for that.
 > 
-> Replace this with an appropriate check on the start address and the
-> resource size to be a multiple of SW_INIT_BANK_SIZE.
+> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> ---
+>  drivers/gpu/drm/mediatek/mtk_drm_crtc.c  | 32 +++++++++++++++++
+>  drivers/gpu/drm/mediatek/mtk_drm_crtc.h  |  3 ++
+>  drivers/gpu/drm/mediatek/mtk_drm_plane.c | 44 ++++++++++++++++++++++++
+>  3 files changed, 79 insertions(+)
 > 
-> Fixes: 77750bc089e4 ("reset: Add Broadcom STB SW_INIT reset controller driver")
-> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> index b07dc9b59ca3..3c96178bd559 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> @@ -395,6 +395,38 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
+>  	}
+>  }
+>  
+> +void mtk_drm_crtc_cursor_update(struct drm_crtc *crtc, struct drm_plane *plane,
+> +				struct drm_plane_state *new_state)
+> +{
+> +	struct mtk_drm_private *priv = crtc->dev->dev_private;
+> +	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
+> +	const struct drm_plane_helper_funcs *plane_helper_funcs =
+> +			plane->helper_private;
+> +	int i;
+> +
+> +	if (!mtk_crtc->enabled)
+> +		return;
+> +
+> +	plane_helper_funcs->atomic_update(plane, new_state);
 
-Sorry this fails building on 32-bit because it triggers a 64-bit
-division let me go back and fix this...
--- 
-Florian
+Why do you not call mtk_plane_atomic_update() directly?
+
+> +
+> +	for (i = 0; i < mtk_crtc->layer_nr; i++) {
+> +		struct drm_plane *plane = &mtk_crtc->planes[i];
+> +		struct mtk_plane_state *plane_state;
+> +
+> +		plane_state = to_mtk_plane_state(plane->state);
+> +		if (plane_state->pending.dirty) {
+> +			plane_state->pending.config = true;
+> +			plane_state->pending.dirty = false;
+> +		}
+> +	}
+> +	mtk_crtc->pending_planes = true;
+> +	if (priv->data->shadow_register) {
+> +		mtk_disp_mutex_acquire(mtk_crtc->mutex);
+> +		mtk_crtc_ddp_config(crtc);
+> +		mtk_disp_mutex_release(mtk_crtc->mutex);
+> +	}
+
+This part is the same as the part in mtk_drm_crtc_atomic_flush. Separate
+the common part to an independent function.
+
+Regards,
+CK
+
+> +}
+> +
+>  static void mtk_drm_crtc_atomic_enable(struct drm_crtc *crtc,
+>  				       struct drm_crtc_state *old_state)
+>  {
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.h b/drivers/gpu/drm/mediatek/mtk_drm_crtc.h
+> index fcc134eb00c9..e65d58db201d 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.h
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.h
+> @@ -20,4 +20,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+>  			const enum mtk_ddp_comp_id *path,
+>  			unsigned int path_len);
+>  
+> +void mtk_drm_crtc_cursor_update(struct drm_crtc *crtc, struct drm_plane *plane,
+> +				struct drm_plane_state *plane_state);
+> +
+>  #endif /* MTK_DRM_CRTC_H */
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_plane.c b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
+> index 584a9ecadce6..f0e91ecb3b4c 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_plane.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
+> @@ -7,6 +7,7 @@
+>  #include <drm/drm_atomic.h>
+>  #include <drm/drm_atomic_helper.h>
+>  #include <drm/drm_fourcc.h>
+> +#include <drm/drm_atomic_uapi.h>
+>  #include <drm/drm_plane_helper.h>
+>  #include <drm/drm_gem_framebuffer_helper.h>
+>  
+> @@ -70,6 +71,47 @@ static void mtk_drm_plane_destroy_state(struct drm_plane *plane,
+>  	kfree(to_mtk_plane_state(state));
+>  }
+>  
+> +static int mtk_plane_atomic_async_check(struct drm_plane *plane,
+> +					struct drm_plane_state *state)
+> +{
+> +	struct drm_crtc_state *crtc_state;
+> +
+> +	if (plane != state->crtc->cursor)
+> +		return -EINVAL;
+> +
+> +	if (!plane->state)
+> +		return -EINVAL;
+> +
+> +	if (!plane->state->fb)
+> +		return -EINVAL;
+> +
+> +	if (state->state)
+> +		crtc_state = drm_atomic_get_existing_crtc_state(state->state,
+> +								state->crtc);
+> +	else /* Special case for asynchronous cursor updates. */
+> +		crtc_state = state->crtc->state;
+> +
+> +	return drm_atomic_helper_check_plane_state(plane->state, crtc_state,
+> +						   DRM_PLANE_HELPER_NO_SCALING,
+> +						   DRM_PLANE_HELPER_NO_SCALING,
+> +						   true, true);
+> +}
+> +
+> +static void mtk_plane_atomic_async_update(struct drm_plane *plane,
+> +					  struct drm_plane_state *new_state)
+> +{
+> +	plane->state->crtc_x = new_state->crtc_x;
+> +	plane->state->crtc_y = new_state->crtc_y;
+> +	plane->state->crtc_h = new_state->crtc_h;
+> +	plane->state->crtc_w = new_state->crtc_w;
+> +	plane->state->src_x = new_state->src_x;
+> +	plane->state->src_y = new_state->src_y;
+> +	plane->state->src_h = new_state->src_h;
+> +	plane->state->src_w = new_state->src_w;
+> +
+> +	mtk_drm_crtc_cursor_update(new_state->crtc, plane, new_state);
+> +}
+> +
+>  static const struct drm_plane_funcs mtk_plane_funcs = {
+>  	.update_plane = drm_atomic_helper_update_plane,
+>  	.disable_plane = drm_atomic_helper_disable_plane,
+> @@ -151,6 +193,8 @@ static const struct drm_plane_helper_funcs mtk_plane_helper_funcs = {
+>  	.atomic_check = mtk_plane_atomic_check,
+>  	.atomic_update = mtk_plane_atomic_update,
+>  	.atomic_disable = mtk_plane_atomic_disable,
+> +	.atomic_async_update = mtk_plane_atomic_async_update,
+> +	.atomic_async_check = mtk_plane_atomic_async_check,
+>  };
+>  
+>  int mtk_plane_init(struct drm_device *dev, struct drm_plane *plane,
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
