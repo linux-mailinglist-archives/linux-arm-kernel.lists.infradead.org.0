@@ -2,109 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30CA6EC154
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 11:43:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76C40EC167
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 11:54:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QLEbaoai6KGO6QFSfMKRvYxPcfghdjFhySgf3k31gWI=; b=b3588fYwnDP6Wk
-	Zrt6WNMehj4qne6F/hNaekQUdtV9UJU6jWvb5jQFa2VVoWEN4jNBT2YrqbBTJQ85JFdCiDpWNVFMs
-	f0Fr5ZoVLSAl6pIjPxpI4UoH9ovEXsOJ1JoOejjICX+kbiYdT/OLzwCft1mmaDw3VjdhYv+hekIuj
-	zrP/rA0+BgT3YsNyIkUf81tSvqKhftk95l96LvbooeBjQ+2zVq7++W7nbCpZKDPlFrN+evZmscCIX
-	b6h3GCVrwLKreV95xYhKpV2INTTYb6lguNtaHEnz8HkbUBtddCYPuV4vXcpPrCg/3jCCkNSFZR8Ms
-	hqT1mSWPB8MOsh2yWNzQ==;
+	List-Owner; bh=/jvMd81FhWjPT6dDiS1BRxcWsB6nqSoJ/oR27kEbzsI=; b=N8Rq27n5IWQGA7
+	esU04Cc5l61gTlAtfZHYzYGwaX74KU/AwftGtC4dcDhv/ZlcZ5qHs4xy/6T8MXvDP076w1kfss9tf
+	NIDpqiKrNEZNU0umpeeelL6V5q90xg/HnkCWkbDschLvjlZoKvv//0ymUFyq8lK6Kjkvsbgs/LO8p
+	HHjfcw9OJp8NLSfNvX/Ot3c/rASvIIXpjLByQoBPS7wtegexx7zS4/Be6fK6a//wms0EkRl2X9/LE
+	YWC1gjmrlYYqsw3b+W1Otd/XxNX0EAcjySvU5h/Z5w+JDaSJ91K4MAMTBTkkrfDG8UZuL+GLW50dP
+	bIe9ih9nW++Usl4fEIbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQUOU-0005sx-VW; Fri, 01 Nov 2019 10:43:02 +0000
-Received: from mail-eopbgr00065.outbound.protection.outlook.com ([40.107.0.65]
- helo=EUR02-AM5-obe.outbound.protection.outlook.com)
+	id 1iQUZB-0001G4-Dk; Fri, 01 Nov 2019 10:54:05 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQUOM-0005sZ-UN
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 10:42:56 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=oFqOHl642LZ4wOOAmWJKE+GfhryzlSrnW80CVBFBh87EKQewMtnxE/ezy3XAFp5T5D831zS7xNOx+fbnvLSzfi+mFhAsLZYg7s7TdooKUGN6i+SZSpPuLopHuPXjZkQLa3pzMbcKslnjvF9HOJwYzR0iW1Pf+3wMiXGVPyP+fCpr5gCZbPtlzuIDOwnE1ONkWT4BaNVslci2gYoBxNbnzWpEZvdBS2QzOsNspGrV29focLDL5Ath2r94oBVeCsaMHjZKuNAR5+vQwpriZrMj0rMWftjSjQy+YYmRxO3pYb67A7oJg8V3YhwRDVAgclnO4Fg52Acu+lom4KgAW2o1hQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ABF9wcCz+X+0ikMg81YgNSDGQvyS5akFNiD1j8XVvu4=;
- b=b00qau+cog1Qq7Tgn3m1laxTZiNECgJgUgIze3WQyDEkcib4Jqmidrnjb8AmFTqbfCnoD0wUfQ6QyCnosczeAm+R3n7AQMBBRAufWk+/0UAp1OI3Tu59vDjqo9frjIt+a5JZaP0ZLbb0SZoHWaRZeyrN+kj5iTLb+RjuIjlIIfStzNf3BAh7VDC0pEzkpkOIgHPS/528xlxqz2v/XyzsiiAiJwnvD18O9D+zNDIF38k+EkctxnLvadaXCZW+AzYZrNRaWfc0QT9MA6q9f7+4ghoA+SUZrywxBFHwO0Mr69o5LOfVS2mvhqrYCxREHym/144XKTs7XsTduB0dvgWMiQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ABF9wcCz+X+0ikMg81YgNSDGQvyS5akFNiD1j8XVvu4=;
- b=nWI00kdPHzbHeCcS0rFcTju2h1yn+NhuOuKZRMKSausg7EZKoei/UxijbkXXZUCpXuw3xY9qHj4JULZxyEXAcE0vGURnKyCPsGnR7/1pcBwK7sqx7yGm3xZzodJ8FKs0M0F1g5WULgjKtHBQT5nyAUMmzuL7FVrtuXmb3lIii38=
-Received: from AM0PR04MB5779.eurprd04.prod.outlook.com (20.178.202.151) by
- AM0PR04MB6547.eurprd04.prod.outlook.com (20.179.253.19) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2387.25; Fri, 1 Nov 2019 10:42:50 +0000
-Received: from AM0PR04MB5779.eurprd04.prod.outlook.com
- ([fe80::fd44:1b14:587c:9fde]) by AM0PR04MB5779.eurprd04.prod.outlook.com
- ([fe80::fd44:1b14:587c:9fde%7]) with mapi id 15.20.2408.024; Fri, 1 Nov 2019
- 10:42:50 +0000
-From: Abel Vesa <abel.vesa@nxp.com>
-To: Peng Fan <peng.fan@nxp.com>
-Subject: Re: [PATCH] clk: imx: clk-composite-8m: add lock to gate/mux
-Thread-Topic: [PATCH] clk: imx: clk-composite-8m: add lock to gate/mux
-Thread-Index: AQHVkJ1nitbWRrQWUkuauMi+K6eGNad2IPkA
-Date: Fri, 1 Nov 2019 10:42:49 +0000
-Message-ID: <20191101104248.qqpt3hg437rccsri@fsr-ub1664-175>
-References: <1572603166-24594-1-git-send-email-peng.fan@nxp.com>
-In-Reply-To: <1572603166-24594-1-git-send-email-peng.fan@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: AM5PR0402CA0023.eurprd04.prod.outlook.com
- (2603:10a6:203:90::33) To AM0PR04MB5779.eurprd04.prod.outlook.com
- (2603:10a6:208:131::23)
-x-originating-ip: [89.37.124.34]
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=abel.vesa@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 753b6fa0-79af-46ce-f5ac-08d75eb83da1
-x-ms-traffictypediagnostic: AM0PR04MB6547:|AM0PR04MB6547:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB654704AE6BBB37D78A5628B2F6620@AM0PR04MB6547.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6108;
-x-forefront-prvs: 020877E0CB
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(7916004)(4636009)(39860400002)(376002)(366004)(346002)(136003)(396003)(199004)(189003)(476003)(76176011)(6116002)(5660300002)(33716001)(71200400001)(71190400001)(229853002)(81156014)(1076003)(14454004)(3846002)(81166006)(478600001)(8936002)(6636002)(316002)(66066001)(8676002)(54906003)(86362001)(6506007)(99286004)(6246003)(6436002)(102836004)(386003)(6486002)(6862004)(66946007)(66476007)(64756008)(66446008)(14444005)(256004)(2906002)(25786009)(53546011)(186003)(11346002)(446003)(7736002)(305945005)(44832011)(4326008)(26005)(66556008)(52116002)(6512007)(9686003)(486006);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6547;
- H:AM0PR04MB5779.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: JzmC8m3eXdyFitZxH6nhYc8aOBZ4MZ/xpau8xIvxu5qHOIJUEqbmUGALwIWjTdxnQcdgztDAMEhDzu0b9Ba7GBA2wsZLLUvd11D7YT/R2ARxws0cPKHcD7BBZ5ffvAMAsO4FQjClP0uV2Uo3apvxWRVAwofndFVJbebFhIOFhpKHxIyvBK9hZdpRs/GTQIMZauB87NXEixHMiDDGflSvwB0JLPKojWv33OS0YcvKTYcVi+iIy5XOmcLkucSHvk7hUZ5Z70DtChhOjCFCSImauAJG93qvmpHcfReNS+yROEdimgCwusgrL9Wwn5T4VITxnZ6nIVrz/nwnfPB437TNPxTu2R70cFY2pOhjpuUD9XqbwM/PnRt8nEYjhJQtzhJjYlmshhZHPcEiauX9mATdWlBcIDLCgQBUOTlollKqqz69kYLwD5vX4/0pXABdftUc
-Content-ID: <F3789F8DAE0BB44AAFCACCD50CF0592F@eurprd04.prod.outlook.com>
+ id 1iQUZ6-0001FX-0Z; Fri, 01 Nov 2019 10:54:01 +0000
+Received: from mail-lf1-f51.google.com (mail-lf1-f51.google.com
+ [209.85.167.51])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 097F021835;
+ Fri,  1 Nov 2019 10:53:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572605639;
+ bh=Qq5uDUh2NAo8fqV6wNGVGEMgX1RTvNFGVvP2NZoDCJs=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=dJssP0BubNF96U27YGA25BF4L03OtdVguBaTCc00FUo0WFtULEicmT4wttke4p4Pt
+ 2O2Rw0nW5apd0QaniBP3+m0ewuiu6nlWqaooJT7vgZVV01uND28whgkmCp5XzM9yX4
+ WTfayBWyWoyWkUOz9uP+o3u6Hr7XkXfFoIsMlAOU=
+Received: by mail-lf1-f51.google.com with SMTP id q28so6942079lfa.5;
+ Fri, 01 Nov 2019 03:53:58 -0700 (PDT)
+X-Gm-Message-State: APjAAAUqiH6YROSzuc0ykRaBfj+4lO/3M5pdC1cdKFuFN+vLEY1rSjDv
+ VR0jxiLVcg0q4IPgSv5hdfrocLkFaaDXKObOmAY=
+X-Google-Smtp-Source: APXvYqzPNO+lSp1NGMQoEFqECmKTS1sJUS58FFxOWntNonCUIVnUCLRCXSqjn52p8zPDEzb3zy9Uf2v1Rt6VLAnp19Y=
+X-Received: by 2002:a19:ad4a:: with SMTP id s10mr6726882lfd.159.1572605637145; 
+ Fri, 01 Nov 2019 03:53:57 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 753b6fa0-79af-46ce-f5ac-08d75eb83da1
-X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Nov 2019 10:42:49.9331 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: DoAsqaxmWHnOZv/q3K7xpp7lXKrj0ZPKuVGxaYQ7I602t9k/uwKK/JFklFmha8gcWNAVWKgWq4/vJZsKr36N0A==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6547
+References: <20191021161351.20789-1-krzk@kernel.org>
+ <20191021161351.20789-4-krzk@kernel.org>
+ <CAMuHMdXr7_HP5NUQ_0D76N-eBuootQqyPusqmf6nyDnLN__ORA@mail.gmail.com>
+In-Reply-To: <CAMuHMdXr7_HP5NUQ_0D76N-eBuootQqyPusqmf6nyDnLN__ORA@mail.gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Fri, 1 Nov 2019 11:53:45 +0100
+X-Gmail-Original-Message-ID: <CAJKOXPcZGhC1+-tOwL6N_ohWzXEqJ3T6=HWefNzXsa3eeQN1fg@mail.gmail.com>
+Message-ID: <CAJKOXPcZGhC1+-tOwL6N_ohWzXEqJ3T6=HWefNzXsa3eeQN1fg@mail.gmail.com>
+Subject: Re: [PATCH v4 4/7] dt-bindings: sram: Merge Renesas SRAM bindings
+ into generic
+To: Geert Uytterhoeven <geert@linux-m68k.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_034254_985028_B98BE367 
-X-CRM114-Status: GOOD (  12.75  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191101_035400_098799_58BE6F0D 
+X-CRM114-Status: GOOD (  18.76  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.0.65 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -113,6 +73,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,63 +85,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jacky Bai <ping.bai@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- "sboyd@kernel.org" <sboyd@kernel.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19-11-01 10:16:19, Peng Fan wrote:
-> From: Peng Fan <peng.fan@nxp.com>
-> 
-> There is a lock to diviver in the composite driver, but that's not
-> enought. lock to gate/mux are also needed to provide exclusive access
-> to the register.
-> 
-> Fixes: d3ff9728134e ("clk: imx: Add imx composite clock")
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+On Fri, 1 Nov 2019 at 11:08, Geert Uytterhoeven <geert@linux-m68k.org> wrote:
+>
+> Hi Krzysztof,
+>
+> On Mon, Oct 21, 2019 at 6:15 PM Krzysztof Kozlowski <krzk@kernel.org> wrote:
+> > The Renesas SRAM bindings list only compatible so integrate them into
+> > generic SRAM bindings schema.
+> >
+> > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+>
+> Thanks for your patch, whcih is now commit 0759b09eadd0d9a1 ("dt-bindings:
+> sram: Merge Renesas SRAM bindings into generic") in Rob's for-next branch.
+>
+> > --- a/Documentation/devicetree/bindings/sram/renesas,smp-sram.txt
+> > +++ /dev/null
+> > @@ -1,27 +0,0 @@
+> > -* Renesas SMP SRAM
+> > -
+> > -Renesas R-Car Gen2 and RZ/G1 SoCs need a small piece of SRAM for the jump stub
+> > -for secondary CPU bringup and CPU hotplug.
+> > -This memory is reserved by adding a child node to a "mmio-sram" node, cfr.
+> > -Documentation/devicetree/bindings/sram/sram.txt.
+> > -
+> > -Required child node properties:
+> > -  - compatible: Must be "renesas,smp-sram",
+> > -  - reg: Address and length of the reserved SRAM.
+> > -    The full physical (bus) address must be aligned to a 256 KiB boundary.
+> > -
+> > -
+> > -Example:
+> > -
+> > -       icram1: sram@e63c0000 {
+> > -               compatible = "mmio-sram";
+> > -               reg = <0 0xe63c0000 0 0x1000>;
+> > -               #address-cells = <1>;
+> > -               #size-cells = <1>;
+> > -               ranges = <0 0 0xe63c0000 0x1000>;
+> > -
+> > -               smp-sram@0 {
+> > -                       compatible = "renesas,smp-sram";
+> > -                       reg = <0 0x10>;
+> > -               };
+>
+> > --- a/Documentation/devicetree/bindings/sram/sram.yaml
+> > +++ b/Documentation/devicetree/bindings/sram/sram.yaml
+>
+> > @@ -186,3 +187,17 @@ examples:
+> >              reg = <0x1ff80 0x8>;
+> >          };
+> >      };
+> > +
+> > +  - |
+> > +    sram@e63c0000 {
+> > +        compatible = "mmio-sram";
+> > +        reg = <0xe63c0000 0x1000>;
+>
+> Is there any specific reason you converted the example from 64-bit to
+> 32-bit addressing?
+> All Renesas SoCs using this have #address-cells and #size-cells = <2>.
 
-Looks good to me.
+I should mention it in commit msg. The reason is because examples are
+compiled inside a {} with address/size cells of 1. Instead of
+conversion maybe it would be reasonable to put it inside additional
+node adjusting the address/size cells.
 
-Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
-
-> ---
->  drivers/clk/imx/clk-composite-8m.c | 2 ++
->  1 file changed, 2 insertions(+)
-> 
-> diff --git a/drivers/clk/imx/clk-composite-8m.c b/drivers/clk/imx/clk-composite-8m.c
-> index e0f25983e80f..20f7c91c03d2 100644
-> --- a/drivers/clk/imx/clk-composite-8m.c
-> +++ b/drivers/clk/imx/clk-composite-8m.c
-> @@ -142,6 +142,7 @@ struct clk_hw *imx8m_clk_hw_composite_flags(const char *name,
->  	mux->reg = reg;
->  	mux->shift = PCG_PCS_SHIFT;
->  	mux->mask = PCG_PCS_MASK;
-> +	mux->lock = &imx_ccm_lock;
->  
->  	div = kzalloc(sizeof(*div), GFP_KERNEL);
->  	if (!div)
-> @@ -161,6 +162,7 @@ struct clk_hw *imx8m_clk_hw_composite_flags(const char *name,
->  	gate_hw = &gate->hw;
->  	gate->reg = reg;
->  	gate->bit_idx = PCG_CGC_SHIFT;
-> +	gate->lock = &imx_ccm_lock;
->  
->  	hw = clk_hw_register_composite(NULL, name, parent_names, num_parents,
->  			mux_hw, &clk_mux_ops, div_hw,
-> -- 
-> 2.16.4
-> 
+Best regards,
+Krzysztof
 
 _______________________________________________
 linux-arm-kernel mailing list
