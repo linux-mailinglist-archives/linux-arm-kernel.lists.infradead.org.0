@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 551ACEC641
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 16:59:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9FCAEC647
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 16:59:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=NV0Gd7PBkNeiyVwD70kRxGMpOw1ib0L4I8ifBswxoII=; b=twCP1hMiW3fSbJEPC1atr7gf7x
-	gDHUzKtICUUrdXA/HugfdWtU8eBKtSUcar2W3h3w/U1stMdOV1Yl6gJgDn/ZhmpSdOcW2VH4DIvY1
-	GDN98QBYKhihl2nU0fX0Dqwd4lOZuDMrBIF0tYoLqjO7CKUdRo6v9kUZZDixcmM2y52aq5oNiQBaS
-	bFUER4q5LbWNJdbunHxzo9eFGRBR2yn26YqAaB0QGRe3P4hALOTrei/gREC10eikGNusLy9CXxayX
-	9fC81dTNvLMwRlS3kr6/TKuJwW2raWTuACQWKIDSI7p4+Ib1PVy96a7CmF3VUgiiLktWYvyGjxORh
-	0+mInd0w==;
+	bh=VhiZqQ1oyPoSCEoHRQZF66/0WM9e9eZvZJ1IsqFhFi4=; b=UJ0zBuE8ZgUmNNwBYLonv624cr
+	MAkyR4Ehn+wB+qbjTnRQJAuPPhlCNG07QJtYxxkMZsmLuDw0rsbNyessWp3jguHNyXNqyVIh84dOI
+	yVHgJMLXcIJJYwrwGdgbpuaBWw+vk9wCbXgiaDR96QbTBeRBNlcrEeMIPLSNy7KF/WDJvQ+23W1kG
+	/6AFzAOSV+qPHr9ioV/QT8VP6dsddk7ZnVSX6sKbCczKs/OulkVrpMfKwSfQXYL+TEk30UGa47wnO
+	JKkhhIG61ZsT1n/tyvgyFZJ0I4UsfAnJx/P/z9T0q04n7l+FPbej3mo45D9DbWRi9G63hHQk+r7Tz
+	9dFMhEVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQZKR-0001rh-Ss; Fri, 01 Nov 2019 15:59:11 +0000
-Received: from laurent.telenet-ops.be ([2a02:1800:110:4::f00:19])
+	id 1iQZL1-0002Qx-VC; Fri, 01 Nov 2019 15:59:47 +0000
+Received: from xavier.telenet-ops.be ([2a02:1800:120:4::f00:14])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQZKH-0001pU-P9
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 15:59:03 +0000
-Received: from ramsan ([84.195.182.253]) by laurent.telenet-ops.be with bizsmtp
- id Lfyu210075USYZQ01fyusB; Fri, 01 Nov 2019 16:58:54 +0100
+ id 1iQZKI-0001pf-4a
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 15:59:05 +0000
+Received: from ramsan ([84.195.182.253]) by xavier.telenet-ops.be with bizsmtp
+ id Lfyu210115USYZQ01fyuaP; Fri, 01 Nov 2019 16:58:56 +0100
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1iQZKA-0002rg-Aq; Fri, 01 Nov 2019 16:58:54 +0100
+ id 1iQZKA-0002ri-BY; Fri, 01 Nov 2019 16:58:54 +0100
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1iQZKA-0008Cf-9t; Fri, 01 Nov 2019 16:58:54 +0100
+ id 1iQZKA-0008Ci-Ag; Fri, 01 Nov 2019 16:58:54 +0100
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: arm-soc <arm@kernel.org>,
 	arm-soc <soc@kernel.org>
-Subject: [GIT PULL 5/6] Renesas driver updates for v5.5 (take two)
-Date: Fri,  1 Nov 2019 16:58:41 +0100
-Message-Id: <20191101155842.31467-6-geert+renesas@glider.be>
+Subject: [GIT PULL 6/6] Renesas DT binding updates for v5.5 (take two)
+Date: Fri,  1 Nov 2019 16:58:42 +0100
+Message-Id: <20191101155842.31467-7-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191101155842.31467-1-geert+renesas@glider.be>
 References: <20191101155842.31467-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_085901_991757_9E59AEE9 
-X-CRM114-Status: UNSURE (   9.64  )
+X-CRM114-CacheID: sfid-20191101_085902_340643_680FD5E9 
+X-CRM114-Status: UNSURE (   9.78  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -51,7 +51,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:1800:110:4:0:0:f00:19 listed in]
+ low trust [2a02:1800:120:4:0:0:f00:14 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -77,49 +77,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The following changes since commit 6655c568ced0789479f00b9399603c5d6ee48640:
+The following changes since commit 4d3cae42544775c71521e8ed5adb64c1839036b9:
 
-  soc: renesas: rcar-sysc: Add r8a774b1 support (2019-10-01 10:29:40 +0200)
+  dt-bindings: reset: rcar-rst: Document r8a774b1 reset module (2019-10-01 09:52:34 +0200)
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel.git tags/renesas-drivers-for-v5.5-tag2
+  git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel.git tags/renesas-dt-bindings-for-v5.5-tag2
 
-for you to fetch changes up to bdde3d3ec934839b3c11689ead467099f1c36c12:
+for you to fetch changes up to e7f1eb321b1a8497c5ddd59303c18864a95ab8bd:
 
-  soc: renesas: rcar-sysc: Add R8A77961 support (2019-11-01 14:25:53 +0100)
-
-----------------------------------------------------------------
-Renesas driver updates for v5.5 (take two)
-
-  - Initial support for the R-Car M3-W+ (r8a77961) SoC,
-  - A minor fix.
+  dt-bindings: power: rcar-sysc: Document r8a77961 support (2019-11-01 11:54:01 +0100)
 
 ----------------------------------------------------------------
-Geert Uytterhoeven (10):
-      dt-bindings: power: Add r8a77961 SYSC power domain definitions
-      dt-bindings: clock: Add r8a77961 CPG Core Clock Definitions
-      soc: renesas: Add missing check for non-zero product register address
-      Merge tag 'renesas-r8a77961-dt-binding-defs-tag' into renesas-drivers-for-v5.5
-      soc: renesas: Rename SYSC_R8A7796 to SYSC_R8A77960
-      soc: renesas: Add ARCH_R8A77960 for existing R-Car M3-W
-      soc: renesas: Add ARCH_R8A77961 for new R-Car M3-W+
-      soc: renesas: Identify R-Car M3-W+
-      soc: renesas: rcar-rst: Add R8A77961 support
-      soc: renesas: rcar-sysc: Add R8A77961 support
+Renesas DT binding updates for v5.5 (take two)
 
- drivers/soc/renesas/Kconfig                   | 21 +++++++--
- drivers/soc/renesas/Makefile                  |  3 +-
- drivers/soc/renesas/r8a7796-sysc.c            | 27 ++++++-----
- drivers/soc/renesas/rcar-rst.c                |  1 +
- drivers/soc/renesas/rcar-sysc.c               |  7 ++-
- drivers/soc/renesas/rcar-sysc.h               |  3 +-
- drivers/soc/renesas/renesas-soc.c             |  7 ++-
- include/dt-bindings/clock/r8a77961-cpg-mssr.h | 65 +++++++++++++++++++++++++++
- include/dt-bindings/power/r8a77961-sysc.h     | 32 +++++++++++++
- 9 files changed, 145 insertions(+), 21 deletions(-)
- create mode 100644 include/dt-bindings/clock/r8a77961-cpg-mssr.h
- create mode 100644 include/dt-bindings/power/r8a77961-sysc.h
+  - JSON schema conversion,
+  - Core support for the new R-Car M3-W+ (r8a77961) SoC,
+  - Board compatible updates.
+
+----------------------------------------------------------------
+Geert Uytterhoeven (5):
+      dt-bindings: arm: renesas: Add R-Car M3-N ULCB with Kingfisher
+      dt-bindings: arm: renesas: Document R-Car M3-W+ SoC DT bindings
+      dt-bindings: arm: renesas: Add Salvator-XS board with R-Car M3-W+
+      dt-bindings: reset: rcar-rst: Document r8a77961 support
+      dt-bindings: power: rcar-sysc: Document r8a77961 support
+
+Simon Horman (1):
+      dt-bindings: arm: renesas: Convert 'renesas,prr' to json-schema
+
+ .../devicetree/bindings/arm/renesas,prr.txt        | 20 -------------
+ .../devicetree/bindings/arm/renesas,prr.yaml       | 35 ++++++++++++++++++++++
+ Documentation/devicetree/bindings/arm/renesas.yaml |  8 +++++
+ .../bindings/power/renesas,rcar-sysc.txt           |  1 +
+ .../devicetree/bindings/reset/renesas,rst.txt      |  1 +
+ 5 files changed, 45 insertions(+), 20 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/arm/renesas,prr.txt
+ create mode 100644 Documentation/devicetree/bindings/arm/renesas,prr.yaml
 
 _______________________________________________
 linux-arm-kernel mailing list
