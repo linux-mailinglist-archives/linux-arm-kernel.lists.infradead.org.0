@@ -2,57 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB708EBDAC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 07:10:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B62A2EBDB0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 07:12:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mfeL35lO/YGK/BJc4wS++j8s2IQ83VoqQ3WO22s0e7c=; b=caGun8zzLvZPz1
-	zhtdtH2yQYJNVrJFkAzx8ITVBESt7UFuRi0v4W64ozb6yjJIKK6EJT87o9aysnunIqriv6nUreXeK
-	ZKZqQtdEVHTEP+VU3hrXAMIMZbObnXvoh6JFT2zHF714dHDihF3iWwucm+SJ1//D5NLcIdHMIc39T
-	a0QzAgRvTmdofaaoymxpfKg+5713NpPE5IIF5/3rpPSEU2f0YGilOyx9qiZ2I4vnT2qCZB8vREQof
-	MS5HSyzBo32iDnKnSE+3Cr0M2SF4OnJXi5NGXnlcs0HtY7a9JvLYNEU+Kn+CFArUXit763xRbq2uw
-	HHCSa9hBltPRijMzad0Q==;
+	List-Owner; bh=+1taYnZWf4lEzIuKwolVk2EUDTTEbt/1/BjxK+aWtt8=; b=LWMcHQrzV5a1rV
+	YVZwvimVt3gEs9IIsxKLGtsF+FWqA4l5DbN8YSqVINEQKb7iSyzqG9qxnDvEkIu2xLnCS+7BX4jCy
+	HCvG6XWwbyu65dljygwiuJnVUqSKYyBqq1sRCbqdUQbfaTTa72ynyhi8luJU9KyxJ/sfA7UI9Ndoa
+	P3EZD+PiFq8uib6KuRsdVuVLTX+PxGNhNUAQdB75h2ZeYRaMCynkLOWvUQD6Q/MI0niqyqMLLZXAS
+	yY4keTmHkkp1niD9iniwKBFLWh3PMmigVlpHDt7GfnhgvrYw/Ozem6ltnv72Yu7JoFt4JKmaVcz0c
+	G40WACwKodpMnRTQhfyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQQ92-0006Qp-73; Fri, 01 Nov 2019 06:10:48 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1iQQAT-0006t8-Qu; Fri, 01 Nov 2019 06:12:17 +0000
+Received: from helcar.hmeau.com ([216.24.177.18] helo=deadmen.hmeau.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQQ8R-0005ZT-QU; Fri, 01 Nov 2019 06:10:17 +0000
-X-UUID: 24e65507c1494c7aa813e1e79f3bcbee-20191031
-X-UUID: 24e65507c1494c7aa813e1e79f3bcbee-20191031
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <roger.lu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1339201955; Thu, 31 Oct 2019 22:10:06 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 31 Oct 2019 23:09:59 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 1 Nov 2019 14:09:57 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 1 Nov 2019 14:09:57 +0800
-Message-ID: <1572588602.6939.1.camel@mtksdaap41>
-Subject: Re: [PATCH v5 3/3] PM / AVS: SVS: Introduce SVS engine
-From: Roger Lu <roger.lu@mediatek.com>
-To: Pi-Hsun Shih <pihsun@chromium.org>
-Date: Fri, 1 Nov 2019 14:10:02 +0800
-In-Reply-To: <CANdKZ0dAWWy7QMMZhNHAha5ZpcBo1GHebPc5_FRu5gvBc569QA@mail.gmail.com>
-References: <20190906100514.30803-1-roger.lu@mediatek.com>
- <20190906100514.30803-4-roger.lu@mediatek.com>
- <CANdKZ0dAWWy7QMMZhNHAha5ZpcBo1GHebPc5_FRu5gvBc569QA@mail.gmail.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1iQQAE-0006sm-KB
+ for linux-arm-kernel@lists.infradead.orG; Fri, 01 Nov 2019 06:12:04 +0000
+Received: from gondobar.mordor.me.apana.org.au ([192.168.128.4] helo=gondobar)
+ by deadmen.hmeau.com with esmtps (Exim 4.89 #2 (Debian))
+ id 1iQQA7-0001yS-KT; Fri, 01 Nov 2019 14:11:55 +0800
+Received: from herbert by gondobar with local (Exim 4.89)
+ (envelope-from <herbert@gondor.apana.org.au>)
+ id 1iQQA6-0004uG-Co; Fri, 01 Nov 2019 14:11:54 +0800
+Date: Fri, 1 Nov 2019 14:11:54 +0800
+From: Herbert Xu <herbert@gondor.apana.org.au>
+To: Corentin Labbe <clabbe.montjoie@gmail.com>
+Subject: Re: [PATCH v3 0/4] crypto: add sun8i-ss driver for Allwinner
+ Security System
+Message-ID: <20191101061154.abwwbcqzm6lg7uvi@gondor.apana.org.au>
+References: <20191025185128.24068-1-clabbe.montjoie@gmail.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 37EE6EFD37277920D5707B79253F0016321E83FB9A72C31F0E381067B1C135692000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20191025185128.24068-1-clabbe.montjoie@gmail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_231012_082260_FFF00FF9 
-X-CRM114-Status: GOOD (  11.19  )
+X-CRM114-CacheID: sfid-20191031_231202_811837_AED2D77D 
+X-CRM114-Status: GOOD (  13.01  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -60,8 +50,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,86 +61,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Nicolas Boichat <drinkcat@google.com>,
- Angus Lin <Angus.Lin@mediatek.com>, Kevin Hilman <khilman@kernel.org>,
- Stephen Boyd <sboyd@kernel.org>,
- "open list:THERMAL" <linux-pm@vger.kernel.org>,
- open list <linux-kernel@vger.kernel.org>,
- HenryC Chen <HenryC.Chen@mediatek.com>, yt.lee@mediatek.com, Fan
- Chen <fan.chen@mediatek.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE
- BINDINGS" <devicetree@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek
- SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>, Nishanth
- Menon <nm@ti.com>, "moderated list:ARM/Mediatek SoC
- support" <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org, mripard@kernel.org,
+ wens@csie.org, robh+dt@kernel.org, linux-crypto@vger.kernel.org,
+ p.zabel@pengutronix.de, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Dear Pi-Hsun,
-
-Thanks for reminding me. I'll add dev_pm_opp_put(opp) in the next
-patchset.
-
-On Mon, 2019-10-21 at 15:51 +0800, Pi-Hsun Shih wrote:
-> Hi Roger,
+On Fri, Oct 25, 2019 at 08:51:24PM +0200, Corentin Labbe wrote:
+> Hello
 > 
-> On Fri, Sep 6, 2019 at 6:06 PM Roger Lu <roger.lu@mediatek.com> wrote:
-> > ...
-> > +static int svs_resource_setup(struct mtk_svs *svs)
-> > ...
-> > +               for (i = 0, freq = (u32)-1; i < svsb->opp_count; i++, freq--) {
-> > +                       opp = dev_pm_opp_find_freq_floor(svsb->dev, &freq);
-> > +                       if (IS_ERR(opp)) {
-> > +                               pr_err("%s: error opp entry!!, err = %ld\n",
-> > +                                      svsb->name, PTR_ERR(opp));
-> > +                               return PTR_ERR(opp);
-> > +                       }
-> > +
-> > +                       svsb->opp_freqs[i] = freq;
-> > +                       svsb->opp_volts[i] = dev_pm_opp_get_voltage(opp);
-> > +                       svsb->freqs_pct[i] = percent(svsb->opp_freqs[i],
-> > +                                                    svsb->freq_base) & 0xff;
+> This patch serie adds support for the second version of Allwinner Security System.
+> The first generation of the Security System is already handled by the sun4i-ss driver.
+> Due to major change, the first driver cannot handle the second one.
+> This new Security System is present on A80 and A83T SoCs.
 > 
-> Should have dev_pm_opp_put(opp); here.
-Sure. Thanks.
-
+> For the moment, the driver support only DES3/AES in ECB/CBC mode.
+> Patchs for CTR/CTS, RSA and RNGs will came later.
 > 
-> > +               }
-> > +       }
-> > +
-> > +       return 0;
-> > +}
-> > ...
-> > +static int svs_status_proc_show(struct seq_file *m, void *v)
-> > ...
-> > +       for (i = 0, freq = (u32)-1; i < svsb->opp_count; i++, freq--) {
-> > +               opp = dev_pm_opp_find_freq_floor(svsb->dev, &freq);
-> > +               if (IS_ERR(opp)) {
-> > +                       seq_printf(m, "%s: error opp entry!!, err = %ld\n",
-> > +                                  svsb->name, PTR_ERR(opp));
-> > +                       return PTR_ERR(opp);
-> > +               }
-> > +
-> > +               seq_printf(m, "opp_freqs[%02u]: %lu, volts[%02u]: %lu, ",
-> > +                          i, freq, i, dev_pm_opp_get_voltage(opp));
-> > +               seq_printf(m, "svsb_volts[%02u]: 0x%x, freqs_pct[%02u]: %u\n",
-> > +                          i, svsb->volts[i], i, svsb->freqs_pct[i]);
+> This serie is tested with CRYPTO_MANAGER_EXTRA_TESTS
+> and tested on:
+> sun8i-a83t-bananapi-m3
+> sun9i-a80-cubieboard4
 > 
-> Same here.
-Sure. Thanks.
-
+> This serie is based on top of the "crypto: add sun8i-ce driver for
+> Allwinner crypto engine" serie.
 > 
-> > +       }
-> > +
-> > +       return 0;
-> > +}
-> > ...
+> Regards
+> 
+> Changes since v2:
+> - Made the reset mandatory
+> - Removed reset-names
+> 
+> Changes since v1:
+> - fixed uninitialized err in sun8i_ss_allocate_chanlist
+> - Added missing commit description on DT Documentation patch
+> 
+> Corentin Labbe (4):
+>   crypto: Add Allwinner sun8i-ss cryptographic offloader
+>   dt-bindings: crypto: Add DT bindings documentation for sun8i-ss
+>     Security System
+>   ARM: dts: sun8i: a83t: Add Security System node
+>   ARM: dts: sun9i: a80: Add Security System node
+> 
+>  .../bindings/crypto/allwinner,sun8i-ss.yaml   |  61 ++
+>  arch/arm/boot/dts/sun8i-a83t.dtsi             |   9 +
+>  arch/arm/boot/dts/sun9i-a80.dtsi              |   9 +
+>  drivers/crypto/allwinner/Kconfig              |  28 +
+>  drivers/crypto/allwinner/Makefile             |   1 +
+>  drivers/crypto/allwinner/sun8i-ss/Makefile    |   2 +
+>  .../allwinner/sun8i-ss/sun8i-ss-cipher.c      | 438 ++++++++++++
+>  .../crypto/allwinner/sun8i-ss/sun8i-ss-core.c | 642 ++++++++++++++++++
+>  drivers/crypto/allwinner/sun8i-ss/sun8i-ss.h  | 218 ++++++
+>  9 files changed, 1408 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/crypto/allwinner,sun8i-ss.yaml
+>  create mode 100644 drivers/crypto/allwinner/sun8i-ss/Makefile
+>  create mode 100644 drivers/crypto/allwinner/sun8i-ss/sun8i-ss-cipher.c
+>  create mode 100644 drivers/crypto/allwinner/sun8i-ss/sun8i-ss-core.c
+>  create mode 100644 drivers/crypto/allwinner/sun8i-ss/sun8i-ss.h
 
-
+Patches 1,2 applied.  Thanks.
+-- 
+Email: Herbert Xu <herbert@gondor.apana.org.au>
+Home Page: http://gondor.apana.org.au/~herbert/
+PGP Key: http://gondor.apana.org.au/~herbert/pubkey.txt
 
 _______________________________________________
 linux-arm-kernel mailing list
