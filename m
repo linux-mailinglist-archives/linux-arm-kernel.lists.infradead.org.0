@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 83AAAEBE9F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 08:46:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF26CEBEA0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 08:46:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,64 +11,64 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=05XxNjEs981QXwlmagm6rm/y2oAxRWSVHeHlpdJPcio=; b=Mwrep6wXIf60Nxlfsgh9da9W03
-	YtpuPx6qRGTvy76C1bxfUHW5eOM8me47qdG4trzom1p9du6G6R/GYTWVxhcChFRXb09rarybhDt4N
-	sfJFxRiPolUP8MprA1fpbQeBOxeI0R7ro0cqVKydWqn/gbKVflLtFj1Wolvl+bs3CafUkVjsfgD0r
-	Bi57p9QXJk+Zc2tisiQIfvuf2PIGHxI7tgxGKUoyosP+L3CtCO+mrlI48HimuIu9mtrDcBmz5oqT/
-	zpMGqcDrQMh2Agg3kl6jKAVC/RfLNqi9wvVVZiPUY0fyYMXM0ljLKqGleo11P2E0lW3SUplz7e0Zb
-	BSu4v43w==;
+	bh=an/2T8AbfBakU0H8KCpRfmHS+0u3m4+VOGaQYgaWOUA=; b=LkwdIE/LwN1FWj2cY56jgcUJJ5
+	l0AOXHd1VYfCAog15u80ZD/oId6DLtWT9a+CzNwtJMBP2OoICHHuOC/ZXbiGmHZNniYXRWv7Kq1ko
+	cW3z7FB7Kcd69PHe+tpt1v92cpMPmN1m392jQH6Tc4Gwk7bwncwUKXjaTZ3+k3v/tCEZJUEOjisJ/
+	cvviLxHWu3UuAM0yoIPZwKvAL9cuKbUEWG9VTm+La+KgmMfJjjUaN47MP9gHBBAv5oh7zND0OC+UX
+	j71BNmX542XgvCrM86opMaUgCYv/XsHo1L5dv7pEN8B+BRFOJ0V8D3jnu/ZnUXU8ytPocqw/IlGKG
+	m3jrPNjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQRdk-0000bA-T4; Fri, 01 Nov 2019 07:46:36 +0000
+	id 1iQRdz-0000ok-4G; Fri, 01 Nov 2019 07:46:51 +0000
 Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQRcd-00082w-GE
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 07:45:29 +0000
-Received: by mail-wm1-x343.google.com with SMTP id w9so8234059wmm.5
+ id 1iQRce-00084r-VV
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 07:45:30 +0000
+Received: by mail-wm1-x343.google.com with SMTP id q130so8242065wme.2
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 01 Nov 2019 00:45:27 -0700 (PDT)
+ Fri, 01 Nov 2019 00:45:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=o/WXNJ1LA673vdJ8sFOa/ninCgRnpi26dheEONfyqB0=;
- b=NLpmXnv7R42LKiqA47VpSnkRY8XSxT2H2FVSayMw/zkOdsQZzOkqdbPIQ/zqzCB0db
- y1kbqWP6t1ZUqf2oG8daRFBPtTfdlI0EhlkJjDINFp0R+3vik28XAfGFzUi/YcMLwbZ4
- q5YudIUt0fOEXyeHJzEPJKZHIEheIL/Vl2oW2w92Bksv+d5sT+DP9vkVugFdl/uXBG0Z
- DTkzSlSAWby6oCttAgyuuRZpASHljJq6nuGd0k9KJ8HyDyz4Gad2Ni90RK5h/+fk+tfK
- Xxp5P3XYMA0CjrWLUpV8mIegqZNVrZgpJRxOU5z/h2T25UfZimy0TX/BlswzJX++KXp4
- KvyQ==
+ bh=GReEFG2GWwJjsYxj+qnWr2ZeJ1W345Xh+fZqhg0GuOc=;
+ b=aPAUMhk6ayoWZyrvs0fsQnUU17xXjJv6voGdabNYsT7kPSp8UW342XBwFG/EeCKz0M
+ 9HsX/Ldh/pDdk8lDjcmMli0SNg0TYdag8vMTj25aA78BvXaLqt9Cip7XMGccXX3djbMt
+ f5T+xevpesx2ybGhZaHvyv/4lfHjcQ8WKL17xX0pbqQCYyF5U7q2oaX4MLyl5liN0hHz
+ CQpfRklQ5z2fEf9l34Dg4zNLAGIIvGG8s0970wnbzNziW5bYYqeUboSChFg21DExUJgn
+ MmSriuu9eSFRucviBK0WmT8DoZUToeM4JmB7oRR+ek1UV/IoV6ueW0DXiGuiCb9GxbAb
+ /5uQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=o/WXNJ1LA673vdJ8sFOa/ninCgRnpi26dheEONfyqB0=;
- b=icwGmk5HLja0qRZvATFOYL8agovkQyU4B2qA0sseBtoPG77RkwN3xI7wJQgKp8OG1n
- ESiH9A5X8onLXLiT4JXfNId7w7dJ8gnv2u4k+BeiUOEeBYNmJLpKduwEemCEBYt3tAKC
- u0BOUNt1oCONU/eQF6KMZHY2gbRVeXVxU7EzLZpqK36PduyBn1FOzqoINpZk7mhgnA/N
- bV7yjfZQb4ah5um6qeE2VfKWtv4ru/SGE3tyQjr3Ly3pjXjCcFhgPqdUvIMOKq1BfvEH
- QuHVL8dUt0XK06KNvcQLL5DB/mqDcKgbonYK/SXCDezVsNB5v4HHnNdug7WFaxjJ1L+1
- weVg==
-X-Gm-Message-State: APjAAAUQLq72xZxN/RaxeYjNpKJI6e/Dq+KveH9IXfm4TDyWWdC8qVIl
- 4JL3+bxneqLkglu5S4zihv1xWw==
-X-Google-Smtp-Source: APXvYqxrp51r0BToycxLzs+62ME/8nCKs9NXgANVP3qglKRs+XlWI6yZaUm8W6tBL1BpnBLsbC2Slg==
-X-Received: by 2002:a1c:5f04:: with SMTP id t4mr8374156wmb.23.1572594326248;
- Fri, 01 Nov 2019 00:45:26 -0700 (PDT)
+ bh=GReEFG2GWwJjsYxj+qnWr2ZeJ1W345Xh+fZqhg0GuOc=;
+ b=K6aJKmA9C9O46FbxMI+r1E4mTNZoZ5It3jhX6j4vUECrcZcVjzfSmCkLFTkB8K0/8a
+ qt63jFVyn0Rd19l6RSGTNZ30bM+pbJWyukC2CbeDJep80R9MxbRVad3Fh5jGERiIhLMH
+ ePgG4bcfsFAkOubInXDhZHTWmztPQJjCGOWwznZQWDkRI5hwg17NvSw2KBBSXkMngiA8
+ +8+3kKL1eyR+vZ/IxqrWowCfjOzO2ncmKs++oLD/bC6X9R0Caf8Sxhhze38+ZBGZjng+
+ LKx8YdMdSEcikYZW9p8nwa4tL5c7l/+VaUmYD6ZkngT7nIyN6PlzWslDnIkNluBQd3+q
+ iWBQ==
+X-Gm-Message-State: APjAAAX7OlY0xXlP/jHfIxyhjlmZ5J4Z2QeMpDWTX3pLQUPD/wY53CKQ
+ gGtxsHTM6ieQ+y7CTt3PPT1Uhg==
+X-Google-Smtp-Source: APXvYqxqiXxfND79tU2euKm70y8ndsR62OXKUOIdUDdm+VT6d6erzdd+NNvtgc9PKa8pxvqTSzxBnQ==
+X-Received: by 2002:a1c:808d:: with SMTP id b135mr8624500wmd.175.1572594327746; 
+ Fri, 01 Nov 2019 00:45:27 -0700 (PDT)
 Received: from localhost.localdomain ([2.31.163.64])
- by smtp.gmail.com with ESMTPSA id b1sm576215wrw.77.2019.11.01.00.45.25
+ by smtp.gmail.com with ESMTPSA id b1sm576215wrw.77.2019.11.01.00.45.26
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 01 Nov 2019 00:45:25 -0700 (PDT)
+ Fri, 01 Nov 2019 00:45:27 -0700 (PDT)
 From: Lee Jones <lee.jones@linaro.org>
 To: daniel.thompson@linaro.org,
 	broonie@kernel.org
-Subject: [PATCH v4 04/10] mfd: cs5535-mfd: Register clients using their own
- dedicated MFD cell entries
-Date: Fri,  1 Nov 2019 07:45:12 +0000
-Message-Id: <20191101074518.26228-5-lee.jones@linaro.org>
+Subject: [PATCH v4 05/10] mfd: mfd-core: Protect against NULL call-back
+ function pointer
+Date: Fri,  1 Nov 2019 07:45:13 +0000
+Message-Id: <20191101074518.26228-6-lee.jones@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191101074518.26228-1-lee.jones@linaro.org>
 References: <20191101074518.26228-1-lee.jones@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_004527_552587_B75DB5B1 
-X-CRM114-Status: GOOD (  13.49  )
+X-CRM114-CacheID: sfid-20191101_004529_123905_13522342 
+X-CRM114-Status: GOOD (  13.60  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -106,64 +106,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CS5535 is the only user of mfd_clone_cell().  It makes more sense to
-register child devices in the traditional way and remove the quite
-bespoke mfd_clone_cell() call from the MFD API.
+If a child device calls mfd_cell_{en,dis}able() without an appropriate
+call-back being set, we are likely to encounter a panic.  Avoid this
+by adding suitable checking.
 
 Signed-off-by: Lee Jones <lee.jones@linaro.org>
 Reviewed-by: Daniel Thompson <daniel.thompson@linaro.org>
+Reviewed-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/mfd/cs5535-mfd.c | 25 ++++++++++++++++---------
- 1 file changed, 16 insertions(+), 9 deletions(-)
+ drivers/mfd/mfd-core.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-diff --git a/drivers/mfd/cs5535-mfd.c b/drivers/mfd/cs5535-mfd.c
-index 3b569b231510..d0fb2e52ee76 100644
---- a/drivers/mfd/cs5535-mfd.c
-+++ b/drivers/mfd/cs5535-mfd.c
-@@ -50,16 +50,19 @@ static struct mfd_cell cs5535_mfd_cells[] = {
- 		.num_resources = 1,
- 		.resources = &cs5535_mfd_resources[PMS_BAR],
- 	},
-+};
+diff --git a/drivers/mfd/mfd-core.c b/drivers/mfd/mfd-core.c
+index 23276a80e3b4..96d02b6f06fd 100644
+--- a/drivers/mfd/mfd-core.c
++++ b/drivers/mfd/mfd-core.c
+@@ -28,6 +28,11 @@ int mfd_cell_enable(struct platform_device *pdev)
+ 	const struct mfd_cell *cell = mfd_get_cell(pdev);
+ 	int err = 0;
+ 
++	if (!cell->enable) {
++		dev_dbg(&pdev->dev, "No .enable() call-back registered\n");
++		return 0;
++	}
 +
-+static struct mfd_cell cs5535_olpc_mfd_cells[] = {
- 	{
--		.name = "cs5535-acpi",
-+		.name = "olpc-xo1-pm-acpi",
-+		.num_resources = 1,
-+		.resources = &cs5535_mfd_resources[ACPI_BAR],
-+	},
-+	{
-+		.name = "olpc-xo1-sci-acpi",
- 		.num_resources = 1,
- 		.resources = &cs5535_mfd_resources[ACPI_BAR],
- 	},
--};
--
--static const char *olpc_acpi_clones[] = {
--	"olpc-xo1-pm-acpi",
--	"olpc-xo1-sci-acpi"
- };
+ 	/* only call enable hook if the cell wasn't previously enabled */
+ 	if (atomic_inc_return(cell->usage_count) == 1)
+ 		err = cell->enable(pdev);
+@@ -45,6 +50,11 @@ int mfd_cell_disable(struct platform_device *pdev)
+ 	const struct mfd_cell *cell = mfd_get_cell(pdev);
+ 	int err = 0;
  
- static int cs5535_mfd_probe(struct pci_dev *pdev,
-@@ -101,10 +104,14 @@ static int cs5535_mfd_probe(struct pci_dev *pdev,
- 			goto err_remove_devices;
- 		}
- 
--		err = mfd_clone_cell("cs5535-acpi", olpc_acpi_clones,
--				     ARRAY_SIZE(olpc_acpi_clones));
-+		err = mfd_add_devices(&pdev->dev, PLATFORM_DEVID_NONE,
-+				      cs5535_olpc_mfd_cells,
-+				      ARRAY_SIZE(cs5535_olpc_mfd_cells),
-+				      NULL, 0, NULL);
- 		if (err) {
--			dev_err(&pdev->dev, "Failed to clone MFD cell\n");
-+			dev_err(&pdev->dev,
-+				"Failed to add CS5535 OLPC sub-devices: %d\n",
-+				err);
- 			goto err_release_acpi;
- 		}
- 	}
++	if (!cell->disable) {
++		dev_dbg(&pdev->dev, "No .disable() call-back registered\n");
++		return 0;
++	}
++
+ 	/* only disable if no other clients are using it */
+ 	if (atomic_dec_return(cell->usage_count) == 0)
+ 		err = cell->disable(pdev);
 -- 
 2.17.1
 
