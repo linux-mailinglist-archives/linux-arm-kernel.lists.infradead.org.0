@@ -2,137 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03AA7EBE1D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 07:46:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55FFDEBE58
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 08:14:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qo2kQLUndh6KPWnfVcxoke6wtdgj1axA+jX7oLtJb4w=; b=FvpbnQtEniUIZM
-	1sN/JcZq4Kg4QWk0sFSx6pwRBFxsaqM/IUQHklq4EKyB6NTnqkn/1kDK1WhZIh886ar7xX/1zObmH
-	GNVOT4pci1Zg8CaNDl1N2U4ENEzkg+iBqiZaacKPWNln+RqbCMzzV3UjUsJVMjI880JxNQslnr1UG
-	tMkbPzRARXyszEzCLDK8HNYM43LKxfmVRcOaDXYIYFIpvu5UG75IsNSnAeGBHH7SyaN451bMssYk/
-	+UE2W3SbSWRWBoXzI6/Ra7cewUkvzRDK8hwBUSebyPNn0fpUp1R0/rtDi/cS2UOe/6jTqwh9jNRb3
-	n8XMQ/saIlrvBBzRG8Ew==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=fQTyKMBPNmuz86sxU6GGV8BJb1P/DqBdwaQwh72/suk=; b=PXIAPY+Yb+r8wCwAIWhUghzst
+	p9HkFX9b7h4+GgrWagD3JEIIk2FAOUES9MAVbxRhPl5UIMLHUfcVVMKQo1MJe3Em9YevucqXyEWlx
+	4wQGCGlyNrFrlg/HXXO1effr51kvGs/ODyI5i/gr27gr9InAggtkDMYpKaZKSIDNh4SiA+jy0cWtF
+	gLhQxRRsvhvmNSeiY+x0GzSDizww4T3I1BuH3PD8YglOJ2z3KPRKGg6gxcb0FYrgTtlRDpeUxTb7r
+	74pkx3SscHGhn7iaBZCU1FuLH/Xu5wTWw1vdDYj8HRFqERfWtcO0KpyDrjwC3rwEjmio6S/4/dj8g
+	aCNEhnoKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQQhQ-0004gZ-7b; Fri, 01 Nov 2019 06:46:20 +0000
-Received: from mailout2.samsung.com ([203.254.224.25])
+	id 1iQR8Y-00054C-Kw; Fri, 01 Nov 2019 07:14:22 +0000
+Received: from mout.kundenserver.de ([217.72.192.75])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQQhE-0004g1-T5
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 06:46:10 +0000
-Received: from epcas1p1.samsung.com (unknown [182.195.41.45])
- by mailout2.samsung.com (KnoxPortal) with ESMTP id
- 20191101064605epoutp02e98c48b9ef9561c53bb118c35b38ff5d~S9vgx9tNM1987019870epoutp025
- for <linux-arm-kernel@lists.infradead.org>;
- Fri,  1 Nov 2019 06:46:05 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com
- 20191101064605epoutp02e98c48b9ef9561c53bb118c35b38ff5d~S9vgx9tNM1987019870epoutp025
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1572590765;
- bh=oE1vKRf9KfKqu3zr6FieGsODlnie4bMmsyb+gfv+dTQ=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=enpaHuDYwXQPo3Zfcq56V26Y5sq/iIA+vdp+FznzNGNwMsDAkZ5xi4653DPD7xL0m
- hp3ZjKghOO65sRffB4MN0rWVyBppakvTWToYjGAyLgkuLDzzE30TzgzvhZYnaqKvma
- lVs83BI3qDamhC4J7RfqE2DTAVyYASJRnt4GhRkE=
-Received: from epsnrtp3.localdomain (unknown [182.195.42.164]) by
- epcas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20191101064605epcas1p1323ab4351d7b964f67d531f2b6110bc5~S9vgY_6AN0373603736epcas1p1E;
- Fri,  1 Nov 2019 06:46:05 +0000 (GMT)
-Received: from epsmges1p4.samsung.com (unknown [182.195.40.156]) by
- epsnrtp3.localdomain (Postfix) with ESMTP id 474CQ25d6MzMqYkh; Fri,  1 Nov
- 2019 06:46:02 +0000 (GMT)
-Received: from epcas1p4.samsung.com ( [182.195.41.48]) by
- epsmges1p4.samsung.com (Symantec Messaging Gateway) with SMTP id
- AF.E7.04224.AA4DBBD5; Fri,  1 Nov 2019 15:46:02 +0900 (KST)
-Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
- epcas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20191101064602epcas1p10339b9c1a2eed204bac1acf3885d79a7~S9vdTg6lV0610206102epcas1p1R;
- Fri,  1 Nov 2019 06:46:02 +0000 (GMT)
-Received: from epsmgms1p2new.samsung.com (unknown [182.195.42.42]) by
- epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20191101064602epsmtrp2cd1980aeab7e3cfe894743e329be8b97~S9vdSpE4H2799827998epsmtrp2q;
- Fri,  1 Nov 2019 06:46:02 +0000 (GMT)
-X-AuditID: b6c32a38-d5bff70000001080-d9-5dbbd4aa66dd
-Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
- epsmgms1p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
- D4.A6.25663.9A4DBBD5; Fri,  1 Nov 2019 15:46:01 +0900 (KST)
-Received: from [10.113.221.102] (unknown [10.113.221.102]) by
- epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20191101064601epsmtip2286b09d9f75b10b361a36590c3420d72~S9vdA0cqz2931229312epsmtip28;
- Fri,  1 Nov 2019 06:46:01 +0000 (GMT)
-Subject: Re: [PATCH] PM / devfreq: events: fix excessive stack usage
-To: Arnd Bergmann <arnd@arndb.de>, MyungJoo Ham <myungjoo.ham@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>
-From: Chanwoo Choi <cw00.choi@samsung.com>
-Organization: Samsung Electronics
-Message-ID: <e0d6b270-477a-9438-e992-263187bc52aa@samsung.com>
-Date: Fri, 1 Nov 2019 15:51:32 +0900
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iQR8Q-00053d-MY
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 07:14:16 +0000
+Received: from methusalix.home.lespocky.de ([92.117.33.203]) by
+ mrelayeu.kundenserver.de (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis)
+ id 1Mna0x-1hjAHd3m8D-00jaQS; Fri, 01 Nov 2019 08:13:53 +0100
+Received: from falbala.home.lespocky.de ([192.168.243.94]
+ helo=falbala.internal.home.lespocky.de)
+ by methusalix.home.lespocky.de with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
+ (envelope-from <post@lespocky.de>)
+ id 1iQR82-0004RY-6g; Fri, 01 Nov 2019 08:13:51 +0100
+Date: Fri, 1 Nov 2019 08:13:49 +0100
+From: Alexander Dahl <post@lespocky.de>
+To: Nicolas.Ferre@microchip.com
+Subject: Re: [PATCH v5] soc: at91: Add Atmel SFR SN (Serial Number) support
+Message-ID: <20191101071348.niwyn3w3ybxoltvg@falbala.internal.home.lespocky.de>
+Mail-Followup-To: Nicolas.Ferre@microchip.com, Tudor.Ambarus@microchip.com,
+ kamel.bouhara@bootlin.com, alexandre.belloni@bootlin.com,
+ Ludovic.Desroches@microchip.com,
+ linux-arm-kernel@lists.infradead.org, thomas.petazzoni@bootlin.com
+References: <20191004141256.14491-1-kamel.bouhara@bootlin.com>
+ <a8c16919-9842-8a2a-81b0-16551c6a7944@microchip.com>
+ <c4af6562-16e4-026a-3c54-bde1d4f1b5c3@microchip.com>
 MIME-Version: 1.0
-In-Reply-To: <20191022142703.1789898-1-arnd@arndb.de>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrOJsWRmVeSWpSXmKPExsWy7bCmge6qK7tjDVYtVrP4O+kYu0X/49fM
- FufPb2C3ONv0ht3iVoOMxabH11gtLu+aw2bxufcIo8WM8/uYLG43rmBz4PL4/WsSo8emVZ1s
- HpuX1HscfLeHyaNvyypGj8+b5ALYorJtMlITU1KLFFLzkvNTMvPSbZW8g+Od403NDAx1DS0t
- zJUU8hJzU22VXHwCdN0yc4AOU1IoS8wpBQoFJBYXK+nb2RTll5akKmTkF5fYKqUWpOQUWBbo
- FSfmFpfmpesl5+daGRoYGJkCFSZkZ1z7KlxwULRiwdmnzA2MEwW7GDk4JARMJE71hnQxcnEI
- CexglFi/dDsLhPOJUeL9yilMEM43RomzB06zdzFygnU8n3SEGSKxl1Fi2fnXjBDOe0aJfbuW
- sYBUCQu4SHy+/44NJCEisJ9RYvHt92AOs8BGRom9k6+BVbEJaEnsf3GDDcTmF1CUuPrjMSOI
- zStgJ7Fs1xGwOIuAisTiKz/YQa4VFYiQOP01EaJEUOLkzCdgYzgFTCWW90K0MguIS9x6Mp8J
- wpaXaN46G+xUCYF2dol5j+9D/eAise/tckYIW1ji1fEtUHEpic/v9rJB2NUSK08eYYNo7mCU
- 2LL/AitEwlhi/9LJTCAHMQtoSqzfpQ8RVpTY+Xsu1BF8Eu++9rBCQphXoqNNCKJEWeLyg7tM
- ELakxOL2TrYJjEqzkLwzC8kLs5C8MAth2QJGllWMYqkFxbnpqcWGBSbIsb2JEZxotSx2MO45
- 53OIUYCDUYmHd0bX7lgh1sSy4srcQ4wSHMxKIrzb1wGFeFMSK6tSi/Lji0pzUosPMZoCA3si
- s5Rocj4wC+SVxBuaGhkbG1uYGJqZGhoqifM6Ll8aKySQnliSmp2aWpBaBNPHxMEp1cC47siK
- L7PSvTJn8FlJnQmdMO/1rXqxqpUP6j9U2t1tEZB8uSZ12b9X6flZF08pFjFfcmzZna/2/+vU
- TfJFj5/OkFpzq+ywy2M75XPx6/4bPnh4oOmXGBvr8uzqtYEPPfU1V+RNPXGO6eq5cKmJ16v8
- pm5ccaz13PcOFtNlsp+NWhSuLzDT6L2zQomlOCPRUIu5qDgRAP/Wx6fKAwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrEIsWRmVeSWpSXmKPExsWy7bCSvO7KK7tjDRbdtrD4O+kYu0X/49fM
- FufPb2C3ONv0ht3iVoOMxabH11gtLu+aw2bxufcIo8WM8/uYLG43rmBz4PL4/WsSo8emVZ1s
- HpuX1HscfLeHyaNvyypGj8+b5ALYorhsUlJzMstSi/TtErgyrn0VLjgoWrHg7FPmBsaJgl2M
- nBwSAiYSzycdYQaxhQR2M0o8eckLEZeUmHbxKFCcA8gWljh8uLiLkQuo5C2jxINvG1hAaoQF
- XCQ+33/HBpIQEdjPKHHyz0FmEIdZYCNQ1eK5TBAtHYwS5z9fB1vBJqAlsf/FDTYQm19AUeLq
- j8eMIDavgJ3Esl1HwOIsAioSi6/8YAexRQUiJJ5vvwFVIyhxcuYTsNWcAqYSy3shepkF1CX+
- zLvEDGGLS9x6Mp8JwpaXaN46m3kCo/AsJO2zkLTMQtIyC0nLAkaWVYySqQXFuem5xYYFRnmp
- 5XrFibnFpXnpesn5uZsYwTGnpbWD8cSJ+EOMAhyMSjy8M7p2xwqxJpYVV+YeYpTgYFYS4d2+
- DijEm5JYWZValB9fVJqTWnyIUZqDRUmcVz7/WKSQQHpiSWp2ampBahFMlomDU6qBMVBpyz35
- GdPTFXjCAm7vafNsjNvAZCn0ff3cPQev6k014W5N1niz6FSY9bfLTokrC1mZH9bqvb71T+r9
- yiWnFQPCWE8cSPp7V999yUJe4+7exmzdRtOPVht4y/xCLzN4uT862nPu41KOh+ezdi9Zu+e5
- wedzn7epFK0Ma7djeMqgXr8pa7pJvRJLcUaioRZzUXEiALC0KYy1AgAA
-X-CMS-MailID: 20191101064602epcas1p10339b9c1a2eed204bac1acf3885d79a7
-X-Msg-Generator: CA
-X-Sendblock-Type: SVC_REQ_APPROVE
-CMS-TYPE: 101P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20191022142726epcas3p4c09cde8944f5e8f1472b496e1e1fbccc
-References: <CGME20191022142726epcas3p4c09cde8944f5e8f1472b496e1e1fbccc@epcas3p4.samsung.com>
- <20191022142703.1789898-1-arnd@arndb.de>
+In-Reply-To: <c4af6562-16e4-026a-3c54-bde1d4f1b5c3@microchip.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-Scan-Signature: 581c7ffa71bd056d31bcd0d50462ce09
+X-Spam-Score: -2.6 (--)
+X-Provags-ID: V03:K1:WBLEnmQMPjEV9crY81Jev7gs7Rfynb5aDzsMkqjkqtWuu7x0geL
+ 8dt1eW8xGt/xzHZe64kwFvtbmeWE5o7c14JNA2mX4N/5mfWDAk67/j/JnUPIGoa7eb8DeVu
+ 8qwWi2sF7lmj1zIOpN0Pir/kbdmiT4q1tOoJVBemjBb4SfNgAM9svlInPylqfNKDMaH4XYG
+ gT+mj0vJtMMLKWtOXxNLw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:whaqN/2jMMI=:TzEcq5xTmE8Q9frtCf05sM
+ am5lW74H9lR8cSKSQi3WrqNV982kDntV1jqQlycJ5izzKYMZaUf9I2bIevVnCpAkjX80EWUQA
+ XL39ap5L2Q+BxtVQNdPEX1H5KwCZdy72HYzlrk0RqXOrGXtFFv4DLQANgEKRKdEgmmp/IFi3W
+ rIfJFGaE0ro0PoToTMPrx3APW4oSnVSeCzsuo9l0aMu1NohH/jW/nlbgXBATt/9u128hH8g9m
+ nrDZSFyC5SMF9dC/lNV+IQSxARkYaYwhfXO2BXygVieTs7AVcoLf6nMDTaolI7N4SsX0IKwzd
+ y/VO//tYaK6ksNtDVi8DjA0gMtLRIFV7IrO9yUFsjPt4grMokKHUZ1UQohkJHD+KYGs50vQkP
+ bRqaJRhFWdzvZhRYmcMLBqucZPK2BJgZHuuWMtUMffX/4hV2oIBHW2/tEENn9mTqVpiSCi0A1
+ x/Dla+YsbuJs+LwxpV1ieXht5aRsAPWzCN2P5OOMMwQG6Cl2Fztcc8bu/XxxUKNc4VG+p4DBv
+ C45LWhgNwJb+zIPLk25yEyKxbGel7wbZjChknWXeaELLsjPo2xqUue0/q3eZXSa9YSVSnBVWc
+ 11OeVuMF5WpVKwf5cmKrLatSaU+yyEKKJrHYvaXQVeTFyQRxKI0GB8qHSpqbOed9WsVBjTy8B
+ y/gyaSd4OeYBIhZfksylp0xNBKfOlk2/TIDDRK+ysi4Wo5mltYbq6CD7hiOiCgjzbFfL9oM0b
+ zQddtl9PebOOEPftivxIJp2FG7IUkCPXI9/U6BFfktruR0DmOrI5Bwt7bRK7Sq0fMrS+Qo7WY
+ w9E8TstlfgV34neTWkr8+U/+bHWcBBuya/qZQmiSn56xzDHSSijcKKxLWttnb/e7SRzlBW198
+ 0kNoHiqYmdtXrC8V48eA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_234609_176615_26B76251 
-X-CRM114-Status: GOOD (  26.65  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191101_001415_036955_05B69AD8 
+X-CRM114-Status: GOOD (  15.59  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.25 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.72.192.75 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -144,61 +91,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Lukasz Luba <l.luba@partner.samsung.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: kamel.bouhara@bootlin.com, alexandre.belloni@bootlin.com,
+ Tudor.Ambarus@microchip.com, Ludovic.Desroches@microchip.com,
+ thomas.petazzoni@bootlin.com, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5877770264144721145=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgQXJuZCwKCk9uIDE5LiAxMC4gMjIuIOyYpO2bhCAxMToyNiwgQXJuZCBCZXJnbWFubiB3cm90
-ZToKPiBQdXR0aW5nIGEgJ3N0cnVjdCBkZXZmcmVxX2V2ZW50X2Rldicgb2JqZWN0IG9uIHRoZSBz
-dGFjayBpcyBnZW5lcmFsbHkKPiBhIGJhZCBpZGVhIGFuZCBoZXJlIGl0IGxlYWRzIHRvIGEgd2Fy
-bmlnIGFib3V0IHBvdGVudGlhbCBzdGFjayBvdmVyZmxvdzoKPiAKPiBkcml2ZXJzL2RldmZyZXEv
-ZXZlbnQvZXh5bm9zLXBwbXUuYzo2NDM6MTI6IGVycm9yOiBzdGFjayBmcmFtZSBzaXplIG9mIDEw
-NDAgYnl0ZXMgaW4gZnVuY3Rpb24gJ2V4eW5vc19wcG11X3Byb2JlJyBbLVdlcnJvciwtV2ZyYW1l
-LWxhcmdlci10aGFuPV0KPiAKPiBUaGVyZSBpcyBubyByZWFsIG5lZWQgZm9yIHRoZSBkZXZpY2Ug
-c3RydWN0dXJlLCBvbmx5IHRoZSBzdHJpbmcgaW5zaWRlCj4gaXQsIHNvIGFkZCBhbiBpbnRlcm5h
-bCBoZWxwZXIgZnVuY3Rpb24gdGhhdCBzaW1wbHkgdGFrZXMgdGhlIHN0cmluZwo+IGFzIGl0cyBh
-cmd1bWVudCBhbmQgcmVtb3ZlIHRoZSBkZXZpY2Ugc3RydWN0dXJlLgo+IAo+IEZpeGVzOiAxZGQ2
-MmM2NmQzNDUgKCJQTSAvIGRldmZyZXE6IGV2ZW50czogZXh0ZW5kIGV2ZW50cyBieSB0eXBlIG9m
-IGNvdW50ZWQgZGF0YSIpCj4gU2lnbmVkLW9mZi1ieTogQXJuZCBCZXJnbWFubiA8YXJuZEBhcm5k
-Yi5kZT4KPiAtLS0KPiAgZHJpdmVycy9kZXZmcmVxL2V2ZW50L2V4eW5vcy1wcG11LmMgfCAxMyAr
-KysrKysrKy0tLS0tCj4gIDEgZmlsZSBjaGFuZ2VkLCA4IGluc2VydGlvbnMoKyksIDUgZGVsZXRp
-b25zKC0pCj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvZGV2ZnJlcS9ldmVudC9leHlub3MtcHBt
-dS5jIGIvZHJpdmVycy9kZXZmcmVxL2V2ZW50L2V4eW5vcy1wcG11LmMKPiBpbmRleCA4N2I0MjA1
-NWU2YmMuLjMwMmU0NjY1NDlkMyAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL2RldmZyZXEvZXZlbnQv
-ZXh5bm9zLXBwbXUuYwo+ICsrKyBiL2RyaXZlcnMvZGV2ZnJlcS9ldmVudC9leHlub3MtcHBtdS5j
-Cj4gQEAgLTEwMSwxNyArMTAxLDIyIEBAIHN0YXRpYyBzdHJ1Y3QgX19leHlub3NfcHBtdV9ldmVu
-dHMgewo+ICAJUFBNVV9FVkVOVChkbWMxXzEpLAo+ICB9Owo+ICAKPiAtc3RhdGljIGludCBleHlu
-b3NfcHBtdV9maW5kX3BwbXVfaWQoc3RydWN0IGRldmZyZXFfZXZlbnRfZGV2ICplZGV2KQo+ICtz
-dGF0aWMgaW50IF9fZXh5bm9zX3BwbXVfZmluZF9wcG11X2lkKGNvbnN0IGNoYXIgKmVkZXZfbmFt
-ZSkKPiAgewo+ICAJaW50IGk7Cj4gIAo+ICAJZm9yIChpID0gMDsgaSA8IEFSUkFZX1NJWkUocHBt
-dV9ldmVudHMpOyBpKyspCj4gLQkJaWYgKCFzdHJjbXAoZWRldi0+ZGVzYy0+bmFtZSwgcHBtdV9l
-dmVudHNbaV0ubmFtZSkpCj4gKwkJaWYgKCFzdHJjbXAoZWRldl9uYW1lLCBwcG11X2V2ZW50c1tp
-XS5uYW1lKSkKPiAgCQkJcmV0dXJuIHBwbXVfZXZlbnRzW2ldLmlkOwo+ICAKPiAgCXJldHVybiAt
-RUlOVkFMOwo+ICB9Cj4gIAo+ICtzdGF0aWMgaW50IGV4eW5vc19wcG11X2ZpbmRfcHBtdV9pZChz
-dHJ1Y3QgZGV2ZnJlcV9ldmVudF9kZXYgKmVkZXYpCj4gK3sKPiArCXJldHVybiBfX2V4eW5vc19w
-cG11X2ZpbmRfcHBtdV9pZChlZGV2LT5kZXNjLT5uYW1lKTsKPiArfQo+ICsKPiAgLyoKPiAgICog
-VGhlIGRldmZyZXEtZXZlbnQgb3BzIHN0cnVjdHVyZSBmb3IgUFBNVSB2MS4xCj4gICAqLwo+IEBA
-IC01NTYsMTMgKzU2MSwxMSBAQCBzdGF0aWMgaW50IG9mX2dldF9kZXZmcmVxX2V2ZW50cyhzdHJ1
-Y3QgZGV2aWNlX25vZGUgKm5wLAo+ICAJCQkgKiB1c2UgZGVmYXVsdCBpZiBub3QuCj4gIAkJCSAq
-Lwo+ICAJCQlpZiAoaW5mby0+cHBtdV90eXBlID09IEVYWU5PU19UWVBFX1BQTVVfVjIpIHsKPiAt
-CQkJCXN0cnVjdCBkZXZmcmVxX2V2ZW50X2RldiBlZGV2Owo+ICAJCQkJaW50IGlkOwo+ICAJCQkJ
-LyogTm90IGFsbCByZWdpc3RlcnMgdGFrZSB0aGUgc2FtZSB2YWx1ZSBmb3IKPiAgCQkJCSAqIHJl
-YWQrd3JpdGUgZGF0YSBjb3VudC4KPiAgCQkJCSAqLwo+IC0JCQkJZWRldi5kZXNjID0gJmRlc2Nb
-al07Cj4gLQkJCQlpZCA9IGV4eW5vc19wcG11X2ZpbmRfcHBtdV9pZCgmZWRldik7Cj4gKwkJCQlp
-ZCA9IF9fZXh5bm9zX3BwbXVfZmluZF9wcG11X2lkKGRlc2MtPm5hbWUpOwoKSSBnb3QgdGhhdCB0
-aGUgb3JpZ2luYWwgZXh5bm9zX3BwbXVfZmluZF9wcG11X2lkKCkgZnVuY3Rpb24KaGFzIHRoZSBi
-dWcuIElmICdldmVudHMnIG5vZGUgY29udGFpbnMgdGhlIG9uZSBtb3JlIGV2ZW50cywKaXQgd2ls
-bCBiZSBmYWlsZWQuIEJlY2F1c2UgJ2V2ZW50cycgbm9kZSBvbmx5IGNvbnRhaW5lZAp0aGUgb25s
-eSBvbmUgZXZlbnQgb24gZGV2aWNlLXRyZWUgbm9kZSBvbiByZWFsIHVzZS1jYXNlLAp0aGUgcHJv
-YmxlbSBoYWQgbm90IGhhcHBlbmVkLgoKJ2Rlc2MnIGluZGljYXRlcyB0aGUgYXJyYXkuIFNvLCBp
-bnN0ZWFkIG9mIGRlc2MtPm5hbWUsCmhhdmUgdG8gdXNlICdkZXNjW2pdLm5hbWUgY29ycmVjdGx5
-LiAKCkFuZCBJJ2xsIGZpeCB0aGUgZnVuZGFtZW50YWwgYnVnIG9uIHNlcGFyYXRlIHBhdGNoLgoK
-PiAgCj4gIAkJCQlzd2l0Y2ggKGlkKSB7Cj4gIAkJCQljYXNlIFBQTVVfUE1OQ05UMDoKPiAKCgot
-LSAKQmVzdCBSZWdhcmRzLApDaGFud29vIENob2kKU2Ftc3VuZyBFbGVjdHJvbmljcwoKX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5l
-bCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+
+--===============5877770264144721145==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="v37vbtfyxweicvu2"
+Content-Disposition: inline
+
+
+--v37vbtfyxweicvu2
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hei hei,
+
+I know this was already applied, but let me add some comments.
+
+On Fri, Oct 04, 2019 at 03:25:27PM +0000, Nicolas.Ferre@microchip.com wrote:
+> Well, I'm sure to not know all the applications of this feature but=20
+> surely unique serial number (per single chip) is very useful while=20
+> wanting to identify your system precisely: attributing a MAC address,=20
+> pairing with one service or user software, generating unique keys, etc.
+
++1
+
+> What I don't know is if there is special API in the kernel to use it as=
+=20
+> several vendors seem to expose it differently (/proc/cpuinfo being one=20
+> other option). This one in nvmem /sys file is surely a valid one.
+
+With commit 9aebf4de2203 ("base: soc: Add serial_number attribute to soc")
+there was added a member serial_number to struct soc_device_attribute.
+As far as I can see this is part of mainline since v5.4-rc1.
+
+I saw some patches for i.MX on this list recently, which also got
+applied, and which use that mechanism. So there seem to be at least
+two different ways to access this now.
+
+FWIW: I was working on a patch for exposing the sama5d2 SN through
+that interface. If anyone is interested:=20
+
+https://github.com/LeSpocky/linux/tree/wip/sama5d2-sn-squash
+
+One thing I noticed on the original patch: there's already a header
+file for register offsets in SFR block: soc/at91/atmel-sfr.h =E2=80=93 IMHO
+this should have been used instead of defining those in .c file.
+
+Greets
+Alex
+
+--=20
+/"\ ASCII RIBBON | =C2=BBWith the first link, the chain is forged. The first
+\ / CAMPAIGN     | speech censured, the first thought forbidden, the
+ X  AGAINST      | first freedom denied, chains us all irrevocably.=C2=AB
+/ \ HTML MAIL    | (Jean-Luc Picard, quoting Judge Aaron Satie)
+
+--v37vbtfyxweicvu2
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEwo7muQJjlc+Prwj6NK3NAHIhXMYFAl272ygACgkQNK3NAHIh
+XMY4Jw/9EDzM9J4dh3cqIwcjnak2+bdiD+NiKTGnZ2bWkEpQFLe+GFI6CHYlYPs5
+J/hfPCqRm0EjA699R7z1VBvnU2YDafkQ1NoTSY6XReMBwS3iVUTamO0NY8rRxLag
+Ubn5+2B6vGukpQtadjad45XvzsUdzRp6SHtJFwIRJLAXMSuHrIm7b+3dJeDzQQ8p
+ryFzQQpNfvC5BZniu4OK5KLZZ5yHKBIH6ILWMQwKqcZCjl511vbe3aI3BMJeWJD5
+0rXZKFwwMF04f5Z0M0skZ5kUCBjPrB3bKNgRGpesZRtErBQRfbKXMg5ix0AHdoPA
+jTNfG8kX9aZS5Wq85E3WT7J9L7JlSHBw8J/hyZ/AFQzpWQKr2OqyC69iPCYgM66Y
+LlRGVc/JjZ86FwTywrHF5j19eyJ5klcjK0XsYHpDVyB1OOfwDpDgjXgABivS+Otq
+sY3TYLHzNAZNG9q7ZFc7N8xr/x2lW046KU0VBZpQz/YAuciGOsISH1A3MIt1VYKe
+i5PYaLaSqHMS/z5M9JQ5H3pJQmusZMtgxbJRTdGTRM+bl9Fqdk+6hWEuBAXFAkPy
+eos728Q/2wqav6SYKtswbjGIT7HU5Sn2/7o49eFwcqnKoGGqx3k00jols2deHufq
+ZmEcaLi8ST4D2iosmoYFk4QpAA+azd1nLzlSXC1d/nja/IwxNLQ=
+=BraD
+-----END PGP SIGNATURE-----
+
+--v37vbtfyxweicvu2--
+
+
+--===============5877770264144721145==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5877770264144721145==--
+
