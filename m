@@ -2,50 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 403BEEC0BB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 10:45:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE0CEEC0BE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 10:47:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=OsXDqxqWYmS3P9GLdKpJdDGT0ftZLm368m3smS/SkSo=; b=j4s7T2SxGPRt00oi8051CgHYL
-	8JsD5KR2Udd+SGheqXX74E4ACo/myi0DDlhYX0SgkF4cf9KL8ztwkXxD2lhJ3I+JjzSl5LV3io3eq
-	kdjsXKkeWhuMlTd7mrAGwAGYiE9Vh8A+e1X56H/UtEDiKPED6frbJcvV8poH9C5pOjiSv0UCmgD5v
-	U+KMrPgkvXUp31eJAfD52XpRAnv2Hnnnv/w/DWPf0q0O1YHz9b0Ya5FjTqVP1yFN3Hw6tAT42ywGw
-	9W/cxyuHIUwEbuWfpuRz+EP2xYgS3qypBddbP83BwcgQpUTsaGkSBFtwKth+/3gJBfJDL/6YjqN6A
-	I1KSvYJ9g==;
+	 bh=1p73EZ/3O9tyupEDNQdA9O27JWFjXnomm03AsUWpJLg=; b=bVZu+HxlT/vzXTdSBi67QexrW
+	U75KKOdqQDg6rOGW8SYz0CrqqcyM5nJ8X8cXIrtvZGYgSlZc7ovP13MJhmr0gy+rpwfP+/r7Gu0zN
+	0ioSfmL11lk6qSvS41HS5Nm7Svu3SLju98Y9UloQk0rzc0bg6eGZxjfSZQe+udvKHcbZm+HBmUCev
+	EOPyisaUWYoQJ+54P3HXCJcw20/mXwJDrNA9BFQ02lFcTH0Jp6cjAeGPks4V/l+ULtaO/4Kuv4N3j
+	KtS0Sp+9OrHIDnfvged8YEXFOvApPCfD1vZhwciOgI+lvoXPD3WDSIQ8xKU8a7Sxl9z409IHslY4k
+	3qJ+YTbiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQTUD-00015o-9e; Fri, 01 Nov 2019 09:44:53 +0000
+	id 1iQTWt-0002fH-J4; Fri, 01 Nov 2019 09:47:39 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQTU3-000159-3M
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 09:44:44 +0000
+ id 1iQTWl-0002es-Fg
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 09:47:32 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0D26F217D9;
- Fri,  1 Nov 2019 09:44:41 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7B93F20862;
+ Fri,  1 Nov 2019 09:47:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572601482;
- bh=rCQ6d1QymEkAWTGHm97xpYJ6iBB6fGvwlUVc4yCNFBA=;
+ s=default; t=1572601651;
+ bh=CY/hMjHfyMMX+U7BKi2bH3TFPPXU/+N6UkBkX9i+Ewo=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=CMihrINSGxGduiBOF0rvqoDCKnbS1TsmSq6zdzR3RZdRem5IuD8NoVWP4TxSplM0V
- Q5kRAFhiwPRkQ00CQ3kPaJtVEQNrXE8gm6TOeHzicbAJGzw+1t1UoIP7xxXKDIn/aM
- GLKz81k9dBh38BWy0PPZpq2gClwfqflpk4nO0BSc=
-Date: Fri, 1 Nov 2019 10:08:19 +0100
+ b=S7FtnlFSbXmfDYtmTaGXcBHmbU02YgBn2F7tB35KASJT29vyBtOADArIDO5z72SWe
+ 9a2sFMYbs7XcdTRJk8mda2qMXP+3yIy0zDpuMKwbEMO7sw2ztTaAm3nxAU4xR/vyrR
+ 1krMgQdGgzp0Hos06JZzNzU5F3VGrpGyBf5zuMNk=
+Date: Fri, 1 Nov 2019 10:10:50 +0100
 From: Maxime Ripard <mripard@kernel.org>
 To: Karl Palsson <karlp@tweak.net.au>
-Subject: Re: [PATCH 2/3] ARM: dts: sun8i: add FriendlyARM NanoPi Duo2
-Message-ID: <20191101090819.u3v2ryfelblij6ts@hendrix>
+Subject: Re: [PATCH 3/3] ARM: dts: sun8i: add FriendlyARM NanoPi Duo2-IoT Box
+Message-ID: <20191101091050.iw3n4qiqyueoymif@hendrix>
 References: <20191031231216.30903-2-karlp@tweak.net.au>
+ <20191031231216.30903-3-karlp@tweak.net.au>
 MIME-Version: 1.0
-In-Reply-To: <20191031231216.30903-2-karlp@tweak.net.au>
+In-Reply-To: <20191031231216.30903-3-karlp@tweak.net.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_024443_181898_91BF6DBE 
-X-CRM114-Status: GOOD (  20.84  )
+X-CRM114-CacheID: sfid-20191101_024731_543030_8C42BBCE 
+X-CRM114-Status: GOOD (  10.94  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,242 +77,53 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: wens@csie.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8601069844020747314=="
+Content-Type: multipart/mixed; boundary="===============4453279257704345952=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============8601069844020747314==
+--===============4453279257704345952==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="synunn7434hjolrf"
+	protocol="application/pgp-signature"; boundary="hyk2mpjmgefias6x"
 Content-Disposition: inline
 
 
---synunn7434hjolrf
+--hyk2mpjmgefias6x
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-Hi,
-
-On Thu, Oct 31, 2019 at 11:12:15PM +0000, Karl Palsson wrote:
-> This is an Allwinner H3 based board, with 512MB ram, a USB OTG port,
-> microsd slot, an onboard AP6212A wifi/bluetooth module, and a CSI
-> connector.
+On Thu, Oct 31, 2019 at 11:12:16PM +0000, Karl Palsson wrote:
+> The IoT-Box is a dock for the NanoPi Duo2, adding two USB host ports, a
+> 10/100 ethernet port, a variety of pin headers for i2c and uarts, and a
+> quad band 2G GSM module, a SIM800C.
 >
-> Full details and schematic available from vendor:
-> http://wiki.friendlyarm.com/wiki/index.php/NanoPi_Duo2
+> Full documentation and schematics available from vendor:
+> http://wiki.friendlyarm.com/wiki/index.php/NanoPi_Duo2_IoT-Box
 >
 > Signed-off-by: Karl Palsson <karlp@tweak.net.au>
-> ---
->  arch/arm/boot/dts/Makefile                 |   1 +
->  arch/arm/boot/dts/sun8i-h3-nanopi-duo2.dts | 161 +++++++++++++++++++++
->  2 files changed, 162 insertions(+)
->  create mode 100644 arch/arm/boot/dts/sun8i-h3-nanopi-duo2.dts
->
-> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-> index 9159fa2cea90..d8bf02abcda1 100644
-> --- a/arch/arm/boot/dts/Makefile
-> +++ b/arch/arm/boot/dts/Makefile
-> @@ -1096,6 +1096,7 @@ dtb-$(CONFIG_MACH_SUN8I) += \
->  	sun8i-h3-beelink-x2.dtb \
->  	sun8i-h3-libretech-all-h3-cc.dtb \
->  	sun8i-h3-mapleboard-mp130.dtb \
-> +	sun8i-h3-nanopi-duo2.dtb \
->  	sun8i-h3-nanopi-m1.dtb	\
->  	sun8i-h3-nanopi-m1-plus.dtb \
->  	sun8i-h3-nanopi-neo.dtb \
-> diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-duo2.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-duo2.dts
-> new file mode 100644
-> index 000000000000..ecfaaa0ec73e
-> --- /dev/null
-> +++ b/arch/arm/boot/dts/sun8i-h3-nanopi-duo2.dts
-> @@ -0,0 +1,161 @@
-> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-> +/*
-> + * Copyright (C) 2019 Karl Palsson <karlp@tweak.net.au>
-> + */
-> +
-> +/dts-v1/;
-> +#include "sun8i-h3.dtsi"
-> +#include "sunxi-common-regulators.dtsi"
-> +
-> +#include <dt-bindings/gpio/gpio.h>
-> +#include <dt-bindings/input/input.h>
-> +
-> +/ {
-> +	model = "FriendlyARM NanoPi Duo2";
-> +	compatible = "friendlyarm,nanopi-duo2", "allwinner,sun8i-h3";
 
-This needs to be added to Documentation/devicetree/bindings/arm/sunxi.yaml
+It seems like it's something that can be connected / disconnected at
+will?
 
-> +
-> +	aliases {
-> +		serial0 = &uart0;
-> +	};
-> +
-> +	chosen {
-> +		stdout-path = "serial0:115200n8";
-> +	};
-> +
-> +	leds {
-> +		compatible = "gpio-leds";
-> +
-> +		status {
-> +			label = "nanopi:green:status";
-> +			gpios = <&pio 0 10 GPIO_ACTIVE_HIGH>;
-> +			linux,default-trigger = "heartbeat";
-> +		};
-> +
-> +		pwr {
-> +			label = "nanopi:red:pwr";
-> +			gpios = <&r_pio 0 10 GPIO_ACTIVE_HIGH>;
-> +			default-state = "on";
-> +		};
-> +	};
-> +
-> +	r_gpio_keys {
-> +		compatible = "gpio-keys";
-> +
-> +		k1 {
-> +			label = "k1";
-> +			linux,code = <BTN_0>;
-> +			gpios = <&r_pio 0 3 GPIO_ACTIVE_LOW>;
-> +		};
-> +	};
-> +
-> +	reg_vdd_cpux: vdd-cpux-regulator {
-> +		compatible = "regulator-gpio";
-> +		regulator-name = "vdd-cpux";
-> +		regulator-boot-on;
-> +		regulator-always-on;
-> +		regulator-min-microvolt = <1100000>;
-> +		regulator-max-microvolt = <1300000>;
-> +		regulator-ramp-delay = <50>; /* 4ms */
-> +
-> +		gpios = <&r_pio 0 6 GPIO_ACTIVE_HIGH>; /* PL6 */
-> +		enable-active-high;
-> +		gpios-states = <0x1>;
-> +		states = <1100000 0x0
-> +			  1300000 0x1>;
-> +	};
-> +
-> +	wifi_pwrseq: wifi_pwrseq {
-> +		compatible = "mmc-pwrseq-simple";
-> +		reset-gpios = <&r_pio 0 7 GPIO_ACTIVE_LOW>; /* PL7 */
-> +		clocks = <&rtc 1>;
-> +		clock-names = "ext_clock";
-> +	};
-> +
-> +};
-> +
-> +&cpu0 {
-> +	cpu-supply = <&reg_vdd_cpux>;
-> +};
-> +
-> +&usb_otg {
-> +	status = "okay";
-> +	dr_mode = "otg";
-> +};
-> +
-> +&ehci0 {
-> +	status = "okay";
-> +};
-> +
-> +&ohci0 {
-> +	status = "okay";
-> +};
-> +
-> +&reg_usb0_vbus {
-> +	gpio = <&r_pio 0 2 GPIO_ACTIVE_HIGH>; /* PL2 */
-> +	status = "okay";
-> +};
-> +
-> +&usbphy {
-> +	usb0_id_det-gpios = <&pio 6 12 GPIO_ACTIVE_HIGH>; /* PG12 */
-> +	usb0_vbus-supply = <&reg_usb0_vbus>;
-> +	status = "okay";
-> +};
-> +
-> +&mmc0 {
-> +	bus-width = <4>;
-> +	cd-gpios = <&pio 5 6 GPIO_ACTIVE_LOW>;
-> +	status = "okay";
-> +	vmmc-supply = <&reg_vcc3v3>;
-> +};
-
-Nodes should be ordered alphabetically.
-
-> +&mmc1 {
-> +	vmmc-supply = <&reg_vcc3v3>;
-> +	vqmmc-supply = <&reg_vcc3v3>;
-> +	mmc-pwrseq = <&wifi_pwrseq>;
-> +	bus-width = <4>;
-> +	non-removable;
-> +	status = "okay";
-> +
-> +	sdio_wifi: sdio_wifi@1 {
-> +		reg = <1>;
-> +		compatible = "brcm,bcm4329-fmac";
-> +		interrupt-parent = <&pio>;
-> +		interrupts = <6 10 IRQ_TYPE_LEVEL_LOW>; /* PG10 / EINT10 */
-> +		interrupt-names = "host-wake";
-> +	};
-> +};
-> +
-> +&uart0 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&uart0_pa_pins>;
-> +	status = "okay";
-> +};
-> +
-> +&uart2 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&uart2_pins>, <&uart2_rts_cts_pins>;
-> +	uart-has-rtscts;
-> +	status = "okay";
-> +
-> +	bluetooth {
-> +		compatible = "brcm,bcm43438-bt";
-> +		//clocks = <&osc32k 1>;
-> +		clocks = <&rtc 1>; // this is what bananapi-m2-zero does, and it has same schematic...
-> +		clock-names = "lpo";
-> +
-> +		// these are both fine..
-> +		vbat-supply = <&reg_vcc3v3>;
-> +		vddio-supply = <&reg_vcc3v3>;
-> +		// on opi-win, device-wakup is pl6 is AP-WAKE-BT is module pin 6, bt-wake.
-> +		// YES; PA8 is correct.
-> +		device-wakeup-gpios = <&pio 0 8 GPIO_ACTIVE_HIGH>; /* PA8 */
-> +
-> +		// on opi-win, hostwakeup (pl5) is bt-wake-ap is module pin 7, bt-host-wake
-> +		// YES; PA7 is correct
-> +		host-wakeup-gpios = <&pio 0 7 GPIO_ACTIVE_HIGH>; /* PA7 */
-> +
-> +		// on opi-win, shutdown is pl4, is BT-RST-N is moduel pin 34
-> +		// YES; PG13 is correct.
-> +		shutdown-gpios = <&pio 6 13 GPIO_ACTIVE_HIGH>; /* PG13 */
-> +	};
-> +};
-
-I'm not sure we need all these comments
+If so, then it should be an overlay, not a full blown DTS.
 
 Maxime
 
---synunn7434hjolrf
+--hyk2mpjmgefias6x
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXbv2AwAKCRDj7w1vZxhR
-xUkOAP97R0tLjac4DxGa88NB2u1mjPxISbTRCTmeWelrsCZqPQD+NViNydqL6W2s
-gZEctLqwilQdhBXgTH7TygRTO9yUcg8=
-=mUlR
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXbv2mgAKCRDj7w1vZxhR
+xTIaAP4pb+9RwvqXKqIc2E6Dpb3WFADpapl+AWFeMQpFWV27RgEAzsIeguDEm+wg
+FPaKYna7zMELFqKZbFp9C2uGOBo5hwk=
+=ia8F
 -----END PGP SIGNATURE-----
 
---synunn7434hjolrf--
+--hyk2mpjmgefias6x--
 
 
---===============8601069844020747314==
+--===============4453279257704345952==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -322,5 +134,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============8601069844020747314==--
+--===============4453279257704345952==--
 
