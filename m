@@ -2,56 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18829EC4C7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 15:32:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81FBFEC4C8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 Nov 2019 15:33:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZYDUWEHZTh3SbDHcPSHkPpNcdRRLl80oMOLG7gzEkmY=; b=DB0jDpnS9Mluub
-	qWHPm5/n1qMGimVDn60HqEhtjGOStBcpwZ+WAkKBIryY/KOyZUk2cMy/OLOJ/Qo85RD+ill6IqufR
-	VQUNJyhj16BEPJWGupqCpvaiXCfzcjty1tH3WONafa8AmNsTn7y0AvYsIehdI3Az6cPmLxyKJjqW/
-	iLf3/1p3KMH04flJk+TqBSpYSYqiz7N+fV1N+inhQQAXUr269ZCcTRP5PaAn1kvhUjSYPszbATbyd
-	99q8P2IgZ3y1J0z/Xo9HZyvkCV+RuSrUWV0yrVHR9+JIKWSAvSQMNs4lkuK8V2Ez/DXB0HNPMHOP4
-	6i+YyLjpv/FBMBf9/S6Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qYG7m9saJKIuzr04qtpXlVEbwatZLm16WJFb1VqORwY=; b=l2HjNmZUcaKAGl
+	qLAb/A+LnyOjYrX2lwU6DRzU7PskCL2bUyU1ngrv+HBJXTjrGCv+T+rm/CBPzp1ewgaTs3QaYPpB9
+	M3VjXRvwrbQ6Bq9Mg1N/UtOZ/FGwfIXPNyYfp5PNU+ScLKfFwqcAOCjsU91/voqoASv0IIvckzOY9
+	WpToqY6fza+B24VaXRpS5X6DF+DIj6jDHPLwtR7bM66jnWUDPnTJuHAuyQFoVs8qZOF660bZm7Jch
+	JVHgrGV7StDomBkh8tfu+biz/Zn6gAQxa15VYRqJKpk/8v21jU2Mx//rH6aXvaooxCzL9c+JJvYr0
+	JwcfSLndIu2Zh+BiGhBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQXyq-0006Ri-68; Fri, 01 Nov 2019 14:32:48 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQXyh-0006RK-Tx
- for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 14:32:41 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6E65431F;
- Fri,  1 Nov 2019 07:32:39 -0700 (PDT)
-Received: from blommer (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 64A1B3F718;
- Fri,  1 Nov 2019 07:32:38 -0700 (PDT)
-Date: Fri, 1 Nov 2019 14:32:32 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH] arm64: perf: Simplify the ARMv8 PMUv3 event attributes
-Message-ID: <20191101143231.GA13020@blommer>
-References: <1572407177-48229-1-git-send-email-zhangshaokun@hisilicon.com>
- <20191031160804.GA28325@willie-the-truck>
- <20191101085319.GA3508@blommer>
- <20191101103616.GA2392@willie-the-truck>
+	id 1iQXz1-0006c7-I2; Fri, 01 Nov 2019 14:32:59 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iQXyq-0006VU-QH
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 Nov 2019 14:32:50 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7153120862;
+ Fri,  1 Nov 2019 14:32:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572618765;
+ bh=awMAnw9Qq2gBQEeEgcYC7CS6pz44jp0V0kf6PkvwF+c=;
+ h=Date:From:To:Cc:Subject:From;
+ b=ry9apcOW3hjwZVKiKAmkcHGbORCoYyIuehNaDmc/LW5REQPkKsJObcxnWHdyYbg/f
+ vt2KQcCJU/bGqsctJdzBipw1NzQ56ctc2kuHWYdehk12LpkkBK/W4aqMCFwA1witTG
+ FjGBtkfEZE2I/sGiS4Uzui1t4iN7dkfwLL741jqc=
+Date: Fri, 1 Nov 2019 14:32:40 +0000
+From: Will Deacon <will@kernel.org>
+To: torvalds@linux-foundation.org
+Subject: [GIT PULL] arm64: Fixes for -rc6
+Message-ID: <20191101143240.GA3287@willie-the-truck>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191101103616.GA2392@willie-the-truck>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_073240_014547_CEA7A24E 
-X-CRM114-Status: GOOD (  19.32  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191101_073248_877605_AA98FD5B 
+X-CRM114-Status: GOOD (  11.82  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,79 +74,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shaokun Zhang <zhangshaokun@hisilicon.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: peterz@infradead.org, catalin.marinas@arm.com,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux ARM Kernel Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 01, 2019 at 10:36:17AM +0000, Will Deacon wrote:
-> On Fri, Nov 01, 2019 at 08:53:19AM +0000, Mark Rutland wrote:
-> > On Thu, Oct 31, 2019 at 04:08:04PM +0000, Will Deacon wrote:
-> > > On Wed, Oct 30, 2019 at 11:46:17AM +0800, Shaokun Zhang wrote:
-> > > > For each PMU event, there is a ARMV8_EVENT_ATTR(xx, XX) and
-> > > > &armv8_event_attr_xx.attr.attr. Let's redefine the ARMV8_EVENT_ATTR
-> > > > to simplify the armv8_pmuv3_event_attrs.
-> > > > 
-> > > > Cc: Will Deacon <will@kernel.org>
-> > > > Cc: Mark Rutland <mark.rutland@arm.com>
-> > > > Signed-off-by: Shaokun Zhang <zhangshaokun@hisilicon.com>
-> > > > ---
-> > > >  arch/arm64/kernel/perf_event.c | 189 ++++++++++++++---------------------------
-> > > >  1 file changed, 65 insertions(+), 124 deletions(-)
-> > > > 
-> > > > diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
-> > > > index a0b4f1bca491..d0f084939bcf 100644
-> > > > --- a/arch/arm64/kernel/perf_event.c
-> > > > +++ b/arch/arm64/kernel/perf_event.c
-> > > > @@ -159,132 +159,73 @@ armv8pmu_events_sysfs_show(struct device *dev,
-> > > >  }
-> > > 
-> > > [...]
-> > > 
-> > > > +	(&((struct perf_pmu_events_attr[]) { \
-> > > > +		{ .attr = __ATTR(name, 0444, armv8pmu_events_sysfs_show, NULL), \
-> > > > +		  .id = config, } \
-> > > > +	})[0].attr.attr)
-> > > 
-> > > I don't get the need for the array here. Why can't you do:
-> > > 
-> > > 	(&((struct perf_pmu_events_attr) {
-> > > 		.attr = ...,
-> > > 		.id = ...,
-> > > 	}).attr.attr)
-> > 
-> > You need want &(obj.attr.attr) rather than &(obj).attr.attr, i.e.
-> > 
-> > #define ARMV8_EVENT_ATTR(name, config) \
-> > 	(&((struct perf_pmu_events_attr) { \
-> > 		.attr = __ATTR(name, 0444, armv8pmu_events_sysfs_show, NULL), \
-> > 		.id = config, \
-> > 	}.attr.attr))
-> >  
-> > ... which compiles for me.
-> 
-> Weird, the following compiles fine for me with both GCC and clang:
-> 
-> #define ARMV8_EVENT_ATTR(name, config)						\
-> 	(&((struct perf_pmu_events_attr) {					\
-> 		.attr = __ATTR(name, 0444, armv8pmu_events_sysfs_show, NULL),	\
-> 		.id = config,							\
-> 	}).attr.attr)
+Hi Linus,
 
-Works for me, too (I'm using the kernel.org crosstool GCC 8.1.0).
+Please pull these arm64 fixes for -rc6. They're almost exclusively
+related to CPU errata in CPUs from Broadcom and Qualcomm where the
+workarounds were either not being enabled when they should have been or
+enabled when they shouldn't have been. The only "interesting" fix is
+ensuring that writeable, shared mappings are initially mapped as clean
+since we inadvertently broke the logic back in v4.14 and then noticed
+the problem via code inspection the other day.
 
-I must've messed up locally such that I had (&obj).attr.attr.
+The only critical issue we have outstanding is a sporadic NULL
+dereference in the scheduler, which doesn't appear to be arm64-specific
+and PeterZ is tearing his hair out over it at the moment.
 
-> > It'd be worth checking that yields a working data structure at runtime.
-> 
-> ...and perf list works as expected.
+Cheers,
 
-Perfect.
+Will
 
-Thanks,
-Mark.
+--->8
+
+The following changes since commit 777d062e5bee0e3c0751cdcbce116a76ee2310ec:
+
+  Merge branch 'errata/tx2-219' into for-next/fixes (2019-10-17 13:42:42 -0700)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git tags/arm64-fixes
+
+for you to fetch changes up to 1cf45b8fdbb87040e1d1bd793891089f4678aa41:
+
+  arm64: apply ARM64_ERRATUM_843419 workaround for Brahma-B53 core (2019-11-01 10:47:37 +0000)
+
+----------------------------------------------------------------
+arm64 fixes for -rc6
+
+- Enable CPU errata workarounds for Broadcom Brahma-B53
+
+- Enable CPU errata workarounds for Qualcomm Hydra/Kryo CPUs
+
+- Fix initial dirty status of writeable, shared mappings
+
+----------------------------------------------------------------
+Bjorn Andersson (2):
+      arm64: cpufeature: Enable Qualcomm Falkor/Kryo errata 1003
+      arm64: cpufeature: Enable Qualcomm Falkor errata 1009 for Kryo
+
+Catalin Marinas (1):
+      arm64: Ensure VM_WRITE|VM_SHARED ptes are clean by default
+
+Doug Berger (1):
+      arm64: apply ARM64_ERRATUM_845719 workaround for Brahma-B53 core
+
+Florian Fainelli (2):
+      arm64: Brahma-B53 is SSB and spectre v2 safe
+      arm64: apply ARM64_ERRATUM_843419 workaround for Brahma-B53 core
+
+ Documentation/arm64/silicon-errata.rst |  7 +++-
+ arch/arm64/include/asm/cputype.h       |  2 ++
+ arch/arm64/include/asm/pgtable-prot.h  | 15 +++++----
+ arch/arm64/kernel/cpu_errata.c         | 59 +++++++++++++++++++++++++++-------
+ 4 files changed, 64 insertions(+), 19 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
