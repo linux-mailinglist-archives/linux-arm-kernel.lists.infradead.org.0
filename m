@@ -2,87 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 942EDECCEF
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 Nov 2019 03:55:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F00C5ECCF2
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 Nov 2019 03:56:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+qrcSsnB9Rrim5Ke7QbhT3ytafARJ6D6Y5f0CEQhHL4=; b=PqVjwpipL9Ew6A
-	kqgtlOZ3DniNISosm6goNVP2s7Ub8tc4u9O3k4d3x9v5KibzEetrxljcMkjpGUsXuoiy38Ontqy+9
-	8DT/RixcwUBr08D16N0EQkc76Q8zyop5lNmDewxuE1dA89q/zD/XAzrskQWcRF+8P1tJPxvhI5omz
-	FgZdrKd9tVBfgIWwlC8cyN64SdDwFYAD6jAH5nyalU7D2ITGRB+AXUdJmbWraYZgVtslm/05FkUBw
-	6Yv9mF8x8xshSGVOcOvGuwTxv0L+CX/1tAW89j1sgaV0X3e52EPIVT5ywWOcICCSBnvP3sDMMWXUw
-	Ng7Vz96kfvRO6jHM++Og==;
+	List-Owner; bh=W4e8anvLqfIaIVG3TFblZAYWLr8Zi4YwA+lEk3GEOhs=; b=KlOQVXVXhCVQWd
+	6FvuSyTsjopAgDWAfhzj+HpQ55uAyMMx/5H44wuBbA4jJM9nZTe4iLIAXrmHqEvrhaNheLlBleTT4
+	9J68NDr1ymZy9GkZTaTTLgE/Kjstp1H/cr7+p5YtOKNfBo7qCz8xO+F9PvOrhcU1HS11A0RyJwcBq
+	Og1qK7xzTF8wCcL0C5wFHwc7+R3grPXLpaT1AjU1zInNxr8YiVgaGID6VsUHaAD8veisWpovJgwBg
+	v8d6dFgyAI/yhlUTwtkD8KTwMswuOt9+myErn2IPkJE4wWvU8jw3/06xrIqhcqEknxpTgNqMC4mKm
+	xh5KqU1y3k5U4FgQsdAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQjZS-00043c-EZ; Sat, 02 Nov 2019 02:55:22 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1iQja5-0004OS-Cz; Sat, 02 Nov 2019 02:56:01 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQjZL-00042m-DK
- for linux-arm-kernel@lists.infradead.org; Sat, 02 Nov 2019 02:55:17 +0000
-Received: by mail-pf1-x443.google.com with SMTP id d13so8265063pfq.2
+ id 1iQjZu-0004O7-Fm
+ for linux-arm-kernel@lists.infradead.org; Sat, 02 Nov 2019 02:55:51 +0000
+Received: by mail-pg1-x544.google.com with SMTP id e10so7573748pgd.11
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 01 Nov 2019 19:55:14 -0700 (PDT)
+ Fri, 01 Nov 2019 19:55:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=7ZNNTe5mkOuzZ1b3W8Xkq2eMV4qjyE7CsioiQ3occ8s=;
- b=JgBG/edDtW18OFtkSYrEnJo1YamRpxQlTLQnoYLDbIDMyNZv3mVxKQzwAEE3KI9Cz0
- iBJWao3C2C8VQJZrubB5eHV4+I4iKNohnhwjQJnnnjeVNOS1yRtI/7JuCO+vfwFDIzcw
- npNswin/PMLjK5R9h/kE9NHOP2G4O3PJqiJJ3R1yy5zPY7JAQYidXb4UtSGO5Hapv70t
- 4aPLzEN9KCBVaK7EaUuWLb3SOKddLqc7A12/va8N2IoCRCShOy+M2MIq/H0v11X9TB/2
- 5+UdFuAo4sAX3kn5gIFCdgGvUd5585gtZybpTc0wdozCAp0DqtWFVeC/fTjcvYbuvdZk
- RW0A==
+ bh=xFTNRYksg5hjJmBCliKtQprKj5dj8NPap0MuwQWTDx4=;
+ b=JzZ54Ca/aYsIg4kl18Pwqdb56A5YbfqFYibHegzjtPq+/nX8Jjnlx/bGP2fg4zmtwo
+ 9xDBCMkAHy7y4Xdz9M9qSFy82GikNWN5LpelPlZx5XdwhziozECm7OoX7alN6A8m0X6u
+ r4qKj0mKq4G297mGlLafNrWWjo9yceMvuUh0wMF68fopww0lGjjLjdFOALD2wEXiEihp
+ Auhf9xfLG7yc8vaWgNvjwfNI7SxPj09U9GIlSQP4zFQTNES9deSfyvRgFOIlQuZNKBy+
+ +bykio1h3I2Z95fvIYqXzjvFzj/cRH/+JkJd/odg6JGebDGcB9b8xdBcH3EToVhG1iXF
+ IpMw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=7ZNNTe5mkOuzZ1b3W8Xkq2eMV4qjyE7CsioiQ3occ8s=;
- b=YtlvOV09JzcC06919eVL6lN1V9BiRkzvfTmQevqnACBz8ywLB9zOprJUzXExWno3cH
- G3b2jdpXFVgL0gwSSbawpjIRV0Es1K0fF0YttOWWKzlbLBDNjfFG0ITxfupEcpmQE/lS
- 4UjibYHm2zjraCGRp6mziqO3XUm5pUSdy/nEJfQe7prUSATMDNPEiICDJ13+bTk0tGX0
- dITfW1Rap8h5pELLHPwVE7fb5lJucxk9KI+dtujVjOZAqiy0cJG7u2DZb0r5ckluDSaK
- YC/oVs16l0vgKQHN5V4TotpiDS36JbcSnjjM2Drpzbrm/l0xvgguu42fta/xsNNn7aCl
- bSMw==
-X-Gm-Message-State: APjAAAXrrRQNF+3QE9vL6udxvl8i34WvGavMQ/86Ra53IaUm4pjcevry
- ESl11ckdDrQqe6+GSsAR/wQTKfDV
-X-Google-Smtp-Source: APXvYqxg4OgJaYUyM3OKDwg+WHMVAXgkfTOYP2+s9ay3+BRTVdfbTd4PGssEzC8VuRD1mvWisVejHg==
-X-Received: by 2002:aa7:9639:: with SMTP id r25mr17314826pfg.17.1572663313252; 
- Fri, 01 Nov 2019 19:55:13 -0700 (PDT)
+ bh=xFTNRYksg5hjJmBCliKtQprKj5dj8NPap0MuwQWTDx4=;
+ b=ddnztlb5PYw8vj04ZTNBrYAVcnuaM64xoafVh2e+XlfWQKSv9/55XELX11+YLtpcOd
+ kFg6JRrnxnPo5hF8GiANaPoP/UYFD7PZGlXOhZQvGSdEOkUhHQ9VnqKEeiu7UX42GL58
+ 3lrGrGp2ZXAsaBFFV2Xp7eBSvVYIrMw4tDrrnpVqUuWB2UHNzcR2O19xKmiLDZ2XDV/9
+ iwB0MU3/7rdnXWvvFo2ZWO1eAn4e3wS1ziMTg0jUZZAYnqQf2z6yTkLWHvzbVEkQBVjB
+ LPGHv8hEhB1qHom8YMP2DsZcF7kzAbxbcAGtckiOtv/CFbiokdeSx7OQWidHd4RGMIK2
+ 1vPg==
+X-Gm-Message-State: APjAAAWdqQKmLVvS2pok89/F67XkWs5NmknDRdrB26BKaXkjEf7iKAlq
+ 5CYQi8tou69yIg7EqZQcbZcTkw1R
+X-Google-Smtp-Source: APXvYqzeyJwMJ3x8rKK5HX81hTOz8v7spnlXbx1lkmavVOINNHDRP65dyZnjDg9DB0XkFShAoj29Cw==
+X-Received: by 2002:a17:90a:9291:: with SMTP id
+ n17mr19824023pjo.60.1572663349847; 
+ Fri, 01 Nov 2019 19:55:49 -0700 (PDT)
 Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
  by smtp.gmail.com with ESMTPSA id
- z14sm5449440pfq.66.2019.11.01.19.55.11
+ a12sm3441851pfo.136.2019.11.01.19.55.47
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 01 Nov 2019 19:55:12 -0700 (PDT)
-Subject: Re: [PATCH 1/2] pinctrl: bcm: nsp: use gpiolib infrastructure for
- interrupts
+ Fri, 01 Nov 2019 19:55:49 -0700 (PDT)
+Subject: Re: [PATCH 2/2] pinctrl: bcm: nsp: implement get_direction
 To: Chris Packham <chris.packham@alliedtelesis.co.nz>,
  linus.walleij@linaro.org, rjui@broadcom.com, sbranden@broadcom.com,
  bcm-kernel-feedback-list@broadcom.com
 References: <20191101015621.12451-1-chris.packham@alliedtelesis.co.nz>
- <20191101015621.12451-2-chris.packham@alliedtelesis.co.nz>
+ <20191101015621.12451-3-chris.packham@alliedtelesis.co.nz>
 From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <b681ed9d-a31a-e5cc-04ba-6f38a5cc745b@gmail.com>
-Date: Fri, 1 Nov 2019 19:55:11 -0700
+Message-ID: <3cc0fc66-c6da-45ba-c2d5-32877a180b57@gmail.com>
+Date: Fri, 1 Nov 2019 19:55:48 -0700
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.0
 MIME-Version: 1.0
-In-Reply-To: <20191101015621.12451-2-chris.packham@alliedtelesis.co.nz>
+In-Reply-To: <20191101015621.12451-3-chris.packham@alliedtelesis.co.nz>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_195515_479603_FD17CF05 
-X-CRM114-Status: GOOD (  19.09  )
+X-CRM114-CacheID: sfid-20191101_195550_523446_1D3AA72B 
+X-CRM114-Status: GOOD (  10.26  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -116,72 +116,14 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 On 10/31/2019 6:56 PM, Chris Packham wrote:
-> Use more of the gpiolib infrastructure for handling interrupts. The
-> root interrupt still needs to be handled manually as it is shared with
-> other peripherals on the SoC.
-> 
-> This will allow multiple instances of this driver to be supported and
-> will clean up gracefully on failure thanks to the device managed APIs.
+> The get_direction api is strongly recommended to be implemented. In fact
+> if it is not implemented gpio-hogs will not get the correct direction.
+> Add an implementation of get_direction for the nsp-gpio driver.
 > 
 > Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
-> ---
-
-Just a couple of comments below:
-
-[snip]
-
-> +		irqc->name = dev_name(dev);
-
-The irq_chip used to be named "gpio-a" now it most likely will contain
-the address.unit-name notation from Device Tree, since this is visible
-in /proc/interrupts one might consider this to be an ABI breakage.
-
-> +		irqc->irq_ack = nsp_gpio_irq_ack;
-> +		irqc->irq_mask = nsp_gpio_irq_mask;
-> +		irqc->irq_unmask = nsp_gpio_irq_unmask;
-> +		irqc->irq_set_type = nsp_gpio_irq_set_type;
->  
-> -			irq_set_chip_and_handler(irq, &nsp_gpio_irq_chip,
-> -						 handle_simple_irq);
-> -			irq_set_chip_data(irq, chip);
-> -		}
-> +		val = readl(chip->base + NSP_CHIP_A_INT_MASK);
-> +		val = val | NSP_CHIP_A_GPIO_INT_BIT;
-> +		writel(val, (chip->base + NSP_CHIP_A_INT_MASK));
->  
->  		/* Install ISR for this GPIO controller. */
-> -		ret = devm_request_irq(&pdev->dev, irq, nsp_gpio_irq_handler,
-> -				       IRQF_SHARED, "gpio-a", chip);
-> +		ret = devm_request_irq(dev, irq, nsp_gpio_irq_handler,
-> +				       IRQF_SHARED, "gpio-a", &chip->gc);
->  		if (ret) {
->  			dev_err(&pdev->dev, "Unable to request IRQ%d: %d\n",
->  				irq, ret);
-> -			goto err_rm_gpiochip;
-> +			return ret;
->  		}
->  
-> -		val = readl(chip->base + NSP_CHIP_A_INT_MASK);
-> -		val = val | NSP_CHIP_A_GPIO_INT_BIT;
-> -		writel(val, (chip->base + NSP_CHIP_A_INT_MASK));
-> +		girq = &chip->gc.irq;
-> +		girq->chip = irqc;
-> +		/* This will let us handle the parent IRQ in the driver */
-> +		girq->parent_handler = NULL;
-> +		girq->num_parents = 0;
-> +		girq->parents = NULL;
-> +		girq->default_type = IRQ_TYPE_NONE;
-> +		girq->handler = handle_simple_irq;
-
-It might be worth creating a helper that can be called to initialize all
-relevant members to the values that indicate: let me manage the
-interrupt. This would make us more future proof with respect to
-assumptions being made in gpiolib as well as if new fields are added in
-the future. This would be a separate patch obviously.
-
-Other than that:
 
 Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+
 -- 
 Florian
 
