@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32F91ECEE1
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 Nov 2019 14:43:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E959FECEE0
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 Nov 2019 14:43:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,18 +11,18 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ihAuNQ83RwBxcpNc0YNSXA0IBRk3cN6vbL2gBGLunE0=; b=BiuLc90kUv/6+vM51Pc9sSY4mo
-	FwhR1Q9yWy3U1DgRpHtrGNuxsv3K2Me07dfB8CC8nRPQULiOxyv4tXdH0i4D59n7bLqz3SG1TwAcf
-	KcHShjBxM9fkYehZa075AD+X9nZ+l/zixt0xIQ8EGeM7YqnPilnEFwyrIjlBjrVLDwrg/wEnD9WyG
-	argI+Hop6ZgS5cAy1Q9PeKu0/igE3S8TnJ09Put8xl8Mmu/nMwGsbw7VrSWrsHeNFehn0RwBuN1ND
-	zm7nuUWD1mQpwWfCKh+7lcG6WRKgT/wz+86qi1OyVfSnRkbctRNkN9YtE4FRjaRX25v9GZR1rlPku
-	sSjFc1Rw==;
+	bh=QSLAVE/3FRVH7GTvFpWVni+6j+SpOBrE04xlfHONW34=; b=lLH/IUm43O8lHRihvRVPillZWk
+	CuXj+sgrxsSn9i7j87LPhF2RfZ3Mn0sdejOfQRtM5o9Kov0ispvacPf0bhYJNutE7cnVm7XkLGtzt
+	lg63i4Hc6n9VxkaAsMywOS4S6uhWFlYPKIv2t//veKS6opEPJ2pqHjpUSgMT6zmV0dxKD2A9o7/Or
+	DsHo9S17chWCRrdEx7H36O0ucQPo7Z4tkKf8LxgydFWLrHAFxEHrpIekD+NPZ0D0H/yqu6Pp7KhNR
+	RhNYORuWTjwHovWbgRSmjVwz5YLJp2Gev9yybFLjd9ODNkE2GxJwjwp8fZ9cqCIsBhqgsY9NpD6wQ
+	Vh+D6ZZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQtgH-0003CF-HW; Sat, 02 Nov 2019 13:43:05 +0000
+	id 1iQtg6-0002zh-JV; Sat, 02 Nov 2019 13:42:54 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQtfX-0002bi-UJ
+ id 1iQtfX-0002bk-VX
  for linux-arm-kernel@bombadil.infradead.org; Sat, 02 Nov 2019 13:42:19 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:References:
@@ -30,65 +30,66 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=qNraPAnob0rxBqsJD296BXwCwdfv9IrOGozERg6GI1s=; b=cqdDaY1dVEfstde/mpMR4eEXJz
- EVk8EF83xvjBuMQQwspVhopoZswFbDBDD2unLAkf1i+Nq/aCpQaS9mT4EYotsy3DwTXbLdtg+1tI9
- kvRzgZ1oadcQuQEUAUsKkomfmKyFLG/gE+neEK30HFzGXCkpUcws56t97YnjD9sNSQytaTp0SJP7p
- /IBUoNsx31Y4n44FeF2TOJKQBOjGaVCtbXD8v7V736iEnqKIOS/wVp+FBycQ8GVzcMMmMk6BnDWED
- IepH2ErARUdTv6v1sF8QIl11rA1PR9QVhLetHu2iZQUFKgYEtf93xVdkSBSVQZRFiZyTUrfUY0r6q
- /fYiEKuQ==;
+ bh=2yfWJqB0ed/KYV7bbtLnrJs31Xt8meKCH3j8k5uNtxE=; b=kuplRVacvmDWy0OwoFllMx+iW4
+ PY9dvfsX79gqPlnvBvnwSWBIxaBnXYQ8JI78OPkE1mPffV6Hid2Y2YU8bJHemJTj3Db5LCBx33gzD
+ KXfHqA/l7BkikiYEYPMiC/hUgszcHVPkaJoz0N4rN4cwbrC2FKv+H+UJNxljj5ce6PgjcjOVyISiW
+ EGR7C7hdWYLdtQgJP/fIFRaB9PYRHD7HxJUpackgCeni1ppTJDDrVydz2p+qfKNjtyKGCefzT0jfR
+ mIAypHLYa05jhD8GhwCbpZEDxO7BN3YC5CjitXYS3KKvmAh7sf1RtqgRxvtDeJ/o2hcOSs2yNEj5+
+ BoZ5mghA==;
 Received: from mout.gmx.net ([212.227.17.20])
  by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQtfz-0001b5-GX
+ id 1iQtfz-0001b6-GZ
  for linux-arm-kernel@lists.infradead.org; Sat, 02 Nov 2019 13:42:49 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
  s=badeba3b8450; t=1572702114;
- bh=Gt8mtaRoWgef35XMJ2bznCxioijqTL1JeO9yIP8m0jk=;
+ bh=t37Bbd37Ccjo2tsA8xcaxuE8pZbiD+UMaXKQ1I8p+k0=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=Zluhl/HQN/QJi8FpCGnsv3PiWab2FfFsaZFJYue2XZUDutAZF0s9dPtXFWBY8anxo
- cEo/GLhNmvRcqmFof0fI7tnotkXNjyd2q+8ajBh4oXjKP/IMu2ZxkLUKgM4mtNjLsZ
- bSIx3yJLWT0FF0rX+OhjTxlveNJLjkoPHdJ3zZxg=
+ b=RkWQLl7ajsSGAWppXkAWFfzu/FRxiVAX0iYeu6TYy18syol733oP5k79lM1zj5uqa
+ muXwOjqwsOiCCByny10bR2m4w+c7MmnNzImA/dX+/wuTxxJS6F3CZfehFhdnxT2TGP
+ tvETtUZhCvBxxfyh0BO+zeboivi7B+sX2/Hyrumw=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.112]) by mail.gmx.com
  (mrgmx105 [212.227.17.168]) with ESMTPSA (Nemesis) id
- 1MIdeX-1iCMvk3Ent-00EbY9; Sat, 02 Nov 2019 14:41:53 +0100
+ 1MdNcG-1hrYqQ0udk-00ZNVM; Sat, 02 Nov 2019 14:41:54 +0100
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Matthias Brugger <matthias.bgg@kernel.org>,
  Matthias Brugger <mbrugger@suse.com>,
  "David S . Miller" <davem@davemloft.net>,
  Florian Fainelli <f.fainelli@gmail.com>
-Subject: [PATCH RFC V2 1/6] net: bcmgenet: Fix error handling on IRQ retrieval
-Date: Sat,  2 Nov 2019 14:41:28 +0100
-Message-Id: <1572702093-18261-2-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH RFC V2 2/6] net: bcmgenet: Avoid touching non-existent
+ interrupt
+Date: Sat,  2 Nov 2019 14:41:29 +0100
+Message-Id: <1572702093-18261-3-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1572702093-18261-1-git-send-email-wahrenst@gmx.net>
 References: <1572702093-18261-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:4KOkdHKpqwUQBL+sP9jFmD/wRZEjL6GMtTHhcX3nDLnL4Y5dcZd
- U7Um4XjIfonOnK7J34g2rQh/EK1hD2iUFPp4PQS+ct8tqMFN7vA1M2Ht346gAXF15OSP0LR
- 0li69YNIZaGqrhekDHg7VnT+xA5LBqhh0yShLZ1WdGXn3MULzo4O8eGXoZPF13X3V/QBuxr
- 6nmBp24Wg/3ZBMYm7zu6Q==
+X-Provags-ID: V03:K1:m70ZrcwjQDnPhyAoISCZwujzpEcNMroE6UD6xkpYQpJr0Stf0e1
+ U/xs+b03It1McpME+nIS0a1tNlbl9VYbgBwyYENB7ug+O0x/3HfWu1QwhfBymzLB/CHFpJr
+ 4t+I6At5JhECJ9jAPQxPral/jbWZM+y3OGAc62QzDOIMhGY66/LCZ1hXsnGFTZQvmtNXaYH
+ 9BvIaHuqz0PMVExPlWRMA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:jUH8TvmwCkk=:rYJhhWDaD6/v9EYrP+WEkI
- 2wQhuOuc+u5FT6fyBXrx5yVKOLVsTmFiTWK7rzFsnwcGJzo5Y4b5zuO55AmBM8V9nKBuyymdr
- oYPPPMegpVyEp7zcaz9fvPQIDMsw1a5a5TFHbiBTC1NVsEDoAifGJuIEjAitygwcGJJt1cFgE
- MGad+QfmPfl2OvdFtfI4+GmYUdUQNlEIEf6dzDybIqPVKEhpGacOqRq/PWgUq8ATbHrOvjbaw
- Wb5djpkbh/ui9Rb+T5Q4Ai2PMq38da0ZDrnyDiSpHTEXtXc+7Fn+Suct9XBsNTTXpTQ6M7cgl
- 3+111cwcgAXJEiY5aRAWGhPJiFgUdHV1o6ozMBTN235fVZZ0Nh5AjJtpmTu8DOc45bgA8NLRy
- DDv92somX1T+n2PSgO12FR1areNNYVIMydXsa7BTnbL6ToZQZTiatVcK9CIWGu0BTi/FdK4Lr
- rkmgpBzeCV4bOJP1QzKyvoIiSXH8k/fGVtM8lfeSU3rHfeXfHbZVBzMcQGmuhPYvXYUlQOnho
- JZgT+OHImyjzpJJ8VA4kYpw1aK/mZ17gxbI9mEjS7bR5VkpeIW2WJ/5veewfo77G1DL3QMnD6
- j8by582hlVXwPBrQfphM3ZkJxdv99ETr7GcLhPFPq+1GONr+d6rnMrgmEA62s4U4jg41ZDrZA
- Q/v4XuOzIX5Yu6suSuplYg0gOY3XvOaI5FYAMYWS8rpAMOCohEL2G5aUW6Zt5a8CJBkkeL8e3
- 3TC0280zjKIf5X61elDCe4l1zd5CnEf4lRdCv5Ym+oa/SEqmqEODw3MkBj0nExvHG3ST8f8rc
- 7TJsAw3lnTPFAjVxZJBt5F5ejF00T5PwPDdFvFlLeiPcwG7GJmg/SzCnVjESlXHmroFcAoqnV
- anU6JGxqvLBICJ4xpAMSjcjkSVF0pdKxsj0UqLvXTseQ+q8jBEDw/OLJN7aJhQvvkZ61//AY0
- F+hEW2wjWTB4zrejq+zF0PvuN3pg413NCtUKX80CMaC5IL8BhutDzzh32/S96sNHAPiiuCMyg
- 5FrucD0SWpksEI2yggz5ORYIOY2UpCNX0sE9UasftU7ay88FB4j+TFpIdOmui29YDj0N/YjNm
- JMEllR6rYUivjsP1lJTOMxlanwMDY+J5bxMMPLVsc58DgHvrOs1Brggx3S80ywWP+brHs68EI
- 1cbMRZSB6ugrKAlifwY9m/EGtI3tFnn1GCBjVeshTsfpz5mZTtkFpl2huZxywOTzZ8DtqnHpx
- x4JVjrhUcbLDCf9kWDTBxov+AmwMytHWpJoTE5Q==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:a2cd4/ZezW8=:INoGZaVH+y9KSWDZV4bTvI
+ ezpJhyU/brrpwp318wl44izLQT+wF481cufb4kP3o28qR2QnNX9AAii2UcZdYU290y3m5PdBD
+ Ty2AAk/oqiEceKF5JuTLEmUmfGru1JxZlxLxBvDAymZmxbtNBN1vgFpU31YK2fLecyvImimNK
+ KZjDP0LmkM4kGLj+3o0hbAs9E2K07pYrYy1Us+XqTgAbi+eIKrwXQSUPWG+5iGcHL8RhHT63V
+ mb1UNlIu+AsGQDvyFrcy9tJCsa9OPAdsCV0XKfebxlbAfO6qgi7J6xSqZruFVULv9eEtanTxH
+ Ji/JuMjFbayCQTW0QvfG1w3JhYEyWd7UWX65a2Z6mmnfFNxuc7c3dg/AbWHbHN+xQ98oaRGoD
+ dYGinTYafFLS30jjvFrJK60QVLT9ZKMwRXJZgIFSEKBnrt4p2jBWJfm+iVQBMa7HvJj0oiO9D
+ 8VV+4Z6Sp4W2X1qcF3DFI+zCLv97C/vVMBxDZ+cxJ9QENhiWK0dukpBMDolpQEzKwVZnDf1Gu
+ wcv1ieQRaHOXr5D95VF/3PILKs1wX7oRzMSMkL3h8z7xFqeChl1BC+nt6QJpxh3cRNP3xATs+
+ YIvK0Xit1gA0AET9HyzakvkQK4Je/nxJ5QfaBcjvzk0nJmtX3068djY7tjnEQfaJNXosoIHWF
+ 3hVjoVVZ2z84z4OoyQHua46Z8703azIk2LTJMVHwxH/o6HDfMaVWUI9bYuWBn/EOnCm6j4USm
+ 7G4KJksgUbYmlYaPWnAesyMuodsbsmNNepfC+5jGNrWb36Va+NS407BTgCEzHGhdSM0KSaaiY
+ yea7A8jTGX9T+Nl/uSfhzSr2ZIEB7/eWQsYJc/RV3rECpkwVOXTzKeXlfsL1BTcXmr7cchfRy
+ K6nc2n7xoixrnNqpgaOuYrXvvOp1e7ROYLw4uBFWYVj14azuLT+8UGCe3G9iJCN1haypTPqO2
+ XRKZYpBXqObCHBTdxdxBpDlC58P7kInUurBvipOla8M+XKTwPyK20E0v6kknYMPI+WTXA4yYu
+ 0nTcD/a4hi7pLB9mlFLRY9tJkXeogmKy0QA2SpqlL1P1LFGFXC3VslK7pY5D/eH32LRPhvc6Y
+ rA0rAe75XV9XBMVcJ1GPTVx58ffn471sypWJIeVx9ds22tgC82gM3jtdQjInVD084okx0O5Mz
+ +E1NHOBSEmp8AYJx8wNCnp6mmr21n6DdXaDPx0lekh4N8BSX5pdqOK2MZar/zjQeNPOKv+N4j
+ OqU+Pr+QXEhooQAJwaKojNK1cdY/7DqPgtP5QMw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191102_134247_628179_7F3C6254 
-X-CRM114-Status: GOOD (  11.34  )
+X-CRM114-CacheID: sfid-20191102_134247_632844_6876CF48 
+X-CRM114-Status: GOOD (  11.35  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
  Content analysis details:   (-0.9 points, 5.0 required)
@@ -128,37 +129,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This fixes the error handling for the mandatory IRQs. There is no need
-for the error message anymore, this is now handled by platform_get_irq.
+As platform_get_irq() now prints an error when the interrupt does not
+exist, we are getting a confusing error message in case the optional
+WOL IRQ is not defined:
 
-Fixes: 1c1008c793fa ("net: bcmgenet: add main driver file")
+  bcmgenet fd58000.ethernet: IRQ index 2 not found
+
+Fix this by using the platform_irq_count() helper to avoid touching a
+non-existent interrupt.
+
+Fixes: 7723f4c5ecdb8d83 ("driver core: platform: Add an error message to platform_get_irq*()")
 Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 ---
- drivers/net/ethernet/broadcom/genet/bcmgenet.c | 11 +++++++----
- 1 file changed, 7 insertions(+), 4 deletions(-)
+ drivers/net/ethernet/broadcom/genet/bcmgenet.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/net/ethernet/broadcom/genet/bcmgenet.c b/drivers/net/ethernet/broadcom/genet/bcmgenet.c
-index 4f689fb..105b3be 100644
+index 105b3be..ac554a6 100644
 --- a/drivers/net/ethernet/broadcom/genet/bcmgenet.c
 +++ b/drivers/net/ethernet/broadcom/genet/bcmgenet.c
-@@ -3464,13 +3464,16 @@ static int bcmgenet_probe(struct platform_device *pdev)
-
- 	priv = netdev_priv(dev);
- 	priv->irq0 = platform_get_irq(pdev, 0);
-+	if (priv->irq0 < 0) {
-+		err = priv->irq0;
-+		goto err;
-+	}
- 	priv->irq1 = platform_get_irq(pdev, 1);
--	priv->wol_irq = platform_get_irq(pdev, 2);
--	if (!priv->irq0 || !priv->irq1) {
--		dev_err(&pdev->dev, "can't find IRQs\n");
--		err = -EINVAL;
-+	if (priv->irq1 < 0) {
-+		err = priv->irq1;
+@@ -3473,7 +3473,8 @@ static int bcmgenet_probe(struct platform_device *pdev)
+ 		err = priv->irq1;
  		goto err;
  	}
-+	priv->wol_irq = platform_get_irq(pdev, 2);
+-	priv->wol_irq = platform_get_irq(pdev, 2);
++	if (platform_irq_count(pdev) > 2)
++		priv->wol_irq = platform_get_irq(pdev, 2);
 
  	if (dn)
  		macaddr = of_get_mac_address(dn);
