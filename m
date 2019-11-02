@@ -2,47 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D006AECE92
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 Nov 2019 13:12:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D41BECEA9
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 Nov 2019 13:19:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=mS4w2H6QjC4lE0tTN5j2ZpHHvm/q46fNapuXJaNFeI0=; b=NW3pchH4pmNSVMwWNrXa7SaUo
-	z2KVUySzkrWHiinCVLqmGnj1knSNuuUTiCFQoSVagqVJX/qnwxf99pl0JJRWHgzcnlrBXJTqOKVJ9
-	PbumxpClNrycKH2BijstspcQNlGB2YIwnZjjWGOEk2H3A8uXi290DIuEd/kB2qmuIyb8YYv03eBGK
-	8WkN+eNhmOyDZ9bVW8FKN7RsFRDzWRHgubTQopgRcNSf4m6mwwHgtyCd4kXL+eNn1ondZT51euL+5
-	45veWGJd+ZMRi74IEQ0sdWNIvrLqrL4u4TW7xlzcq26szxCMPr9SBz/gV7HL/e1VkGS0tX9Nb4DDr
-	mi4UZu/QA==;
+	 bh=krEgT4QHm5Q/UQ8B9aZVbfwBBMYmTfj9qmT6THvRNSU=; b=GyLarPivt9oREtUhjZrb0DRXn
+	oy2ULFKFgb2mAeq11qpE5Fh1JzmhFNb8719IV9UB2IDG/F2o26Vv1ZgOaENgtPUrvgujUniUj4C6+
+	43/c9D00OQ9LYFZAjsXfRAGTpbNkYhlFY11EyzutnEchZaXI3pdNAe/IkGBFH+itDj2rPcc5kpOui
+	Etlv7D12hbUkZTu0Y7C2/7IJs6QchOKuNAQRrvxDJZl3aKGc7K7rIU98mPWWGhc5RCEr/F4+aO1bL
+	hsdcSdEAcMSBBx6p6widA+Vx+HLuugiG1mzR5vfr/QKqoUQyx5O/GqzGTJNhFKO5KMEIdy+1RXrhc
+	1xSHEjcFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQsGs-0005ki-Lf; Sat, 02 Nov 2019 12:12:46 +0000
+	id 1iQsNB-0007nq-6C; Sat, 02 Nov 2019 12:19:17 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQsGk-0005kO-0f
- for linux-arm-kernel@lists.infradead.org; Sat, 02 Nov 2019 12:12:39 +0000
+ id 1iQsN1-0007nS-PM
+ for linux-arm-kernel@lists.infradead.org; Sat, 02 Nov 2019 12:19:09 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 820ED31F;
- Sat,  2 Nov 2019 05:12:32 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1BA8B328;
+ Sat,  2 Nov 2019 05:19:07 -0700 (PDT)
 Received: from [10.162.0.144] (a075553-lin.blr.arm.com [10.162.0.144])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D83913F718;
- Sat,  2 Nov 2019 05:12:27 -0700 (PDT)
-Subject: Re: [PATCHv2 0/8] arm64: ftrace cleanup + FTRACE_WITH_REGS
-To: Mark Rutland <mark.rutland@arm.com>, linux-arm-kernel@lists.infradead.org
-References: <20191029165832.33606-1-mark.rutland@arm.com>
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 785103F718;
+ Sat,  2 Nov 2019 05:19:02 -0700 (PDT)
 From: Amit Daniel Kachhap <amit.kachhap@arm.com>
-Message-ID: <42c113ee-e7fc-3e94-cca0-f05f1c89fdb8@arm.com>
-Date: Sat, 2 Nov 2019 17:42:25 +0530
+Subject: Re: [PATCHv2 1/8] ftrace: add ftrace_init_nop()
+To: Mark Rutland <mark.rutland@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Steven Rostedt <rostedt@goodmis.org>
+References: <20191029165832.33606-1-mark.rutland@arm.com>
+ <20191029165832.33606-2-mark.rutland@arm.com>
+Message-ID: <daad0785-a33f-3cfb-cf0f-657b6c677257@arm.com>
+Date: Sat, 2 Nov 2019 17:49:00 +0530
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.4.0
 MIME-Version: 1.0
-In-Reply-To: <20191029165832.33606-1-mark.rutland@arm.com>
+In-Reply-To: <20191029165832.33606-2-mark.rutland@arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191102_051238_146363_D4791F71 
-X-CRM114-Status: GOOD (  21.62  )
+X-CRM114-CacheID: sfid-20191102_051907_912647_26265489 
+X-CRM114-Status: GOOD (  32.14  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,10 +65,9 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: jthierry@redhat.com, linux-parisc@vger.kernel.org, peterz@infradead.org,
  catalin.marinas@arm.com, deller@gmx.de, jpoimboe@redhat.com,
- linux-kernel@vger.kernel.org, rostedt@goodmis.org,
- James.Bottomley@HansenPartnership.com, takahiro.akashi@linaro.org,
- will@kernel.org, mingo@redhat.com, james.morse@arm.com, jeyu@kernel.org,
- svens@stackframe.org, duwe@suse.de
+ linux-kernel@vger.kernel.org, James.Bottomley@HansenPartnership.com,
+ takahiro.akashi@linaro.org, will@kernel.org, mingo@redhat.com,
+ james.morse@arm.com, jeyu@kernel.org, svens@stackframe.org, duwe@suse.de
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -75,94 +76,142 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Hi Mark,
 
 On 10/29/19 10:28 PM, Mark Rutland wrote:
-> Hi,
+> Architectures may need to perform special initialization of ftrace
+> callsites, and today they do so by special-casing ftrace_make_nop() when
+> the expected branch address is MCOUNT_ADDR. In some cases (e.g. for
+> patchable-function-entry), we don't have an mcount-like symbol and don't
+s/an mcount/a mcount.
+> want a synthetic MCOUNT_ADDR, but we may need to perform some
+> initialization of callsites.
 > 
-> This series is a reworked version of Torsten's FTRACE_WITH_REGS series
-> [1]. I've tried to rework the existing code in preparatory patches so
-> that the patchable-function-entry bits slot in with fewer surprises.
-> This version is based on v5.4-rc3, and can be found in my
-> arm64/ftrace-with-regs branch [2].
+> To make it possible to separate initialization from runtime
+> modification, and to handle cases without an mcount-like symbol, this
+Same as above.
+> patch adds an optional ftrace_init_nop() function that architectures can
+> implement, which does not pass a branch address.
 > 
-> Patch 1 adds an (optional) ftrace_init_nop(), which the core code uses
-> to initialize callsites. This allows us to avoid a synthetic MCOUNT_ADDR
-> symbol, and more cleanly separates the one-time initialization of the
-> callsite from dynamic NOP<->CALL modification. Architectures which don't
-> implement this get the existing ftrace_make_nop() with MCOUNT_ADDR.
+> Where an architecture does not provide ftrace_init_nop(), we will fall
+> back to the existing behaviour of calling ftrace_make_nop() with
+> MCOUNT_ADDR.
 > 
-> Recently parisc gained ftrace support using patchable-function-entry.
-> Patch 2 makes the handling of module callsite locations common in
-> kernel/module.c with a new FTRACE_CALLSITE_SECTION definition, and
-> removed the newly redundant bits from arch/parisc.
+> At the same time, ftrace_code_disable() is renamed to
+> ftrace_nop_initialize() to make it clearer that it is intended to
+> intialize a callsite into a disabled state, and is not for disabling a
+> callsite that has been runtime enabled. The kerneldoc description of rec
+> arguments is updated to cover non-mcount callsites.
 > 
-> Patches 3 and 4 move the module PLT initialization to module load time,
-> which simplifies runtime callsite modification. This also means that we
-> don't transitently mark the module text RW, and will allow for the
-> removal of module_disable_ro().
+> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+> Reviewed-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> Cc: Ingo Molnar <mingo@redhat.com>
+> Cc: Steven Rostedt <rostedt@goodmis.org>
+> Cc: Torsten Duwe <duwe@suse.de>
+> ---
+>   include/linux/ftrace.h | 35 ++++++++++++++++++++++++++++++++---
+>   kernel/trace/ftrace.c  |  6 +++---
+>   2 files changed, 35 insertions(+), 6 deletions(-)
 > 
-> Patches 5 and 6 add some trivial infrastructure, with patch 7 finally
-> adding FTRACE_WITH_REGS support. Additional work will be required for
-> livepatching (e.g. implementing reliable stack trace), which is
-> commented as part of patch 7.
-> 
-> Patch 8 is a trivial cleanup atop of the rest of the series, making the
-> code easier to read and less susceptible to config-specific breakage.
-I tested the whole series with my latest in-kernel ptrauth patches [1]
-and graph_tracer/function_graph_tracer works fine, So for the whole series,
-Tested-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
-
-Also I gave few minor comments in the individual patches. With those
-comments,
-Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+> diff --git a/include/linux/ftrace.h b/include/linux/ftrace.h
+> index 8a8cb3c401b2..9867d90d635e 100644
+> --- a/include/linux/ftrace.h
+> +++ b/include/linux/ftrace.h
+> @@ -499,7 +499,7 @@ static inline int ftrace_disable_ftrace_graph_caller(void) { return 0; }
+>   /**
+>    * ftrace_make_nop - convert code into nop
+>    * @mod: module structure if called by module load initialization
+> - * @rec: the mcount call site record
+> + * @rec: the call site record (e.g. mcount/fentry)
+>    * @addr: the address that the call site should be calling
+>    *
+>    * This is a very sensitive operation and great care needs
+> @@ -520,9 +520,38 @@ static inline int ftrace_disable_ftrace_graph_caller(void) { return 0; }
+>   extern int ftrace_make_nop(struct module *mod,
+>   			   struct dyn_ftrace *rec, unsigned long addr);
+>   
+> +
+> +/**
+> + * ftrace_init_nop - initialize a nop call site
+> + * @mod: module structure if called by module load initialization
+> + * @rec: the call site record (e.g. mcount/fentry)
+> + *
+> + * This is a very sensitive operation and great care needs
+> + * to be taken by the arch.  The operation should carefully
+> + * read the location, check to see if what is read is indeed
+> + * what we expect it to be, and then on success of the compare,
+> + * it should write to the location.
+> + *
+> + * The code segment at @rec->ip should contain the contents created by
+> + * the compiler
+Nit: Will it be better to write it as "@rec->ip should store the 
+adjusted ftrace entry address of the call site" or something like that.
+> + *
+> + * Return must be:
+> + *  0 on success
+> + *  -EFAULT on error reading the location
+> + *  -EINVAL on a failed compare of the contents
+> + *  -EPERM  on error writing to the location
+> + * Any other value will be considered a failure.
+> + */
+> +#ifndef ftrace_init_nop
+> +static inline int ftrace_init_nop(struct module *mod, struct dyn_ftrace *rec)
+> +{
+> +	return ftrace_make_nop(mod, rec, MCOUNT_ADDR);
+> +}
+> +#endif
+> +
+Now that ftrace_init_nop is also an arch implemented function so it may 
+be added in Documentation/trace/ftrace-design.rst along with 
+ftrace_make_nop.
+In general also, adding some description about patchable-function-entry
+in kernel Documentation will be useful.
 
 Thanks,
 Amit Daniel
-[1]: https://patchwork.kernel.org/cover/11195085/
-> 
-> Since v1 [3]:
-> * Add a couple of people to Cc
-> * Fold in Ard's Reviewed-by tag
-> * Rename ftrace_code_init_disabled() to ftrace_nop_initialize()
-> * Move ftrace_init_nop() to <linux/ftrace.h>, with kerneldoc
-> * Update kerneldoc for rec parameters
-> 
-> Thanks,
-> Mark.
-> 
-> [1] https://lore.kernel.org/r/20190208150826.44EBC68DD2@newverein.lst.de
-> [2] git://git.kernel.org/pub/scm/linux/kernel/git/mark/linux.git arm64/ftrace-with-regs
-> [3] https://lore.kernel.org/r/20191021163426.9408-1-mark.rutland@arm.com
-> 
-> Mark Rutland (7):
->    ftrace: add ftrace_init_nop()
->    module/ftrace: handle patchable-function-entry
->    arm64: module: rework special section handling
->    arm64: module/ftrace: intialize PLT at load time
->    arm64: insn: add encoder for MOV (register)
->    arm64: asm-offsets: add S_FP
->    arm64: ftrace: minimize ifdeffery
-> 
-> Torsten Duwe (1):
->    arm64: implement ftrace with regs
-> 
->   arch/arm64/Kconfig               |   2 +
->   arch/arm64/Makefile              |   5 ++
->   arch/arm64/include/asm/ftrace.h  |  23 +++++++
->   arch/arm64/include/asm/insn.h    |   3 +
->   arch/arm64/include/asm/module.h  |   2 +-
->   arch/arm64/kernel/asm-offsets.c  |   1 +
->   arch/arm64/kernel/entry-ftrace.S | 140 +++++++++++++++++++++++++++++++++++++--
->   arch/arm64/kernel/ftrace.c       | 123 ++++++++++++++++++++--------------
->   arch/arm64/kernel/insn.c         |  13 ++++
->   arch/arm64/kernel/module-plts.c  |   3 +-
->   arch/arm64/kernel/module.c       |  57 +++++++++++++---
->   arch/parisc/Makefile             |   1 -
->   arch/parisc/kernel/module.c      |  10 ++-
->   arch/parisc/kernel/module.lds    |   7 --
->   include/linux/ftrace.h           |  40 ++++++++++-
->   kernel/module.c                  |   2 +-
->   kernel/trace/ftrace.c            |   6 +-
->   17 files changed, 355 insertions(+), 83 deletions(-)
->   delete mode 100644 arch/parisc/kernel/module.lds
+>   /**
+>    * ftrace_make_call - convert a nop call site into a call to addr
+> - * @rec: the mcount call site record
+> + * @rec: the call site record (e.g. mcount/fentry)
+>    * @addr: the address that the call site should call
+>    *
+>    * This is a very sensitive operation and great care needs
+> @@ -545,7 +574,7 @@ extern int ftrace_make_call(struct dyn_ftrace *rec, unsigned long addr);
+>   #ifdef CONFIG_DYNAMIC_FTRACE_WITH_REGS
+>   /**
+>    * ftrace_modify_call - convert from one addr to another (no nop)
+> - * @rec: the mcount call site record
+> + * @rec: the call site record (e.g. mcount/fentry)
+>    * @old_addr: the address expected to be currently called to
+>    * @addr: the address to change to
+>    *
+> diff --git a/kernel/trace/ftrace.c b/kernel/trace/ftrace.c
+> index f296d89be757..5259d4dea675 100644
+> --- a/kernel/trace/ftrace.c
+> +++ b/kernel/trace/ftrace.c
+> @@ -2494,14 +2494,14 @@ struct dyn_ftrace *ftrace_rec_iter_record(struct ftrace_rec_iter *iter)
+>   }
+>   
+>   static int
+> -ftrace_code_disable(struct module *mod, struct dyn_ftrace *rec)
+> +ftrace_nop_initialize(struct module *mod, struct dyn_ftrace *rec)
+>   {
+>   	int ret;
+>   
+>   	if (unlikely(ftrace_disabled))
+>   		return 0;
+>   
+> -	ret = ftrace_make_nop(mod, rec, MCOUNT_ADDR);
+> +	ret = ftrace_init_nop(mod, rec);
+>   	if (ret) {
+>   		ftrace_bug_type = FTRACE_BUG_INIT;
+>   		ftrace_bug(ret, rec);
+> @@ -2943,7 +2943,7 @@ static int ftrace_update_code(struct module *mod, struct ftrace_page *new_pgs)
+>   			 * to the NOP instructions.
+>   			 */
+>   			if (!__is_defined(CC_USING_NOP_MCOUNT) &&
+> -			    !ftrace_code_disable(mod, p))
+> +			    !ftrace_nop_initialize(mod, p))
+>   				break;
+>   
+>   			update_cnt++;
 > 
 
 _______________________________________________
