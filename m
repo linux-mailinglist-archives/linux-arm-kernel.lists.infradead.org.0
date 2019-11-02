@@ -2,70 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75ED9ED067
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 Nov 2019 20:35:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32F64ED069
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 Nov 2019 20:35:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=37tlvNe4/IUdlMOTe9vFecRxbN8TNmoyX7+myIb6gEE=; b=VXJ8mINiv7DcVB
-	n/XNJg9psyiSrR8RX3q1sJBJrHeO4Q46vrocJmzb/Zoqm0pRpP15TSU7ZEN3imUCEwpDipReG1dRs
-	xtM59al6BB+9Lz2nx4xYrscp8Sr3wLJbRvppDMIT5CZ96T1cTh/V2d35PwF3TWF4+KMNG6QeX6elZ
-	aNRud3/rcnizhMaLDHOscjD4SUmJtHdSWGnwmG9LZDgAovHnPYQdL6xErIFd0mdzqjT3sx7kS0V2l
-	DcdL7WaCOp4UEQpZVzDaNJj/k8IRwBgD/8b4WbZnLLyJW6GtJ0rbCsnWwziNljIu8lBp37APSsqjv
-	o4BqQMGRReGkYnPbR6Lg==;
+	List-Owner; bh=uKUEVaa9wugVzfUamNVoopZ+Ge8ogSkH3bL7zTRU8Zw=; b=tuGInwRPIxwL34
+	V16Dl35dNreVLfesgHDx2ZjagbQPHFwSuGVPcXm11Zcay040zIKpNYdSUvuFhbG2UXTYOpWyRwPV2
+	3wWww+Y1yS1zdGRjUZ5i5XjoYGS/K58AwpDkMo4h80gzerknK378dI7DIyqIFu12TlvFmNdRRnIX0
+	oYgcr54DEKawTihZEO5a4a9kjavggWxS6cGbHBcwFK4wV+PpSN+3UFetJ6iP1eNoA2CKvwrqJ/dMN
+	M35wZVVnty/qzgieykCC5W1ZeY/BkLACBgukmkb93xdULNmSatZjdxHP1VU+t66gm0SpnE0LN+S+Z
+	qiiCiDASKiZjAH2LvQLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQzAp-0007tT-DV; Sat, 02 Nov 2019 19:34:59 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1iQzB6-0007z1-72; Sat, 02 Nov 2019 19:35:16 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQzAj-0007t0-Ky
- for linux-arm-kernel@lists.infradead.org; Sat, 02 Nov 2019 19:34:55 +0000
-Received: by mail-wm1-x344.google.com with SMTP id 8so5169921wmo.0
+ id 1iQzAo-0007uf-J3
+ for linux-arm-kernel@lists.infradead.org; Sat, 02 Nov 2019 19:35:00 +0000
+Received: by mail-wm1-x342.google.com with SMTP id m17so3411123wmi.5
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 02 Nov 2019 12:34:52 -0700 (PDT)
+ Sat, 02 Nov 2019 12:34:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:subject:to:cc:references:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=XrAM25vpWZD5MTWL7vyE3YXP4ScFEtr0870Eoi4wxso=;
- b=SyFCUiJ63BrzjubzWkv9d+F3cDrNjv9Oxe5yTcZG4TgXdHM68u0QB3NZpH5qCkChiC
- Mpn4Sdstcgkg7xgmh8cXd2UgqY6XSJ3IQ35/REpExZg8mY6s/vzf8jiuXD4OiVd9MlqQ
- 1JpYoxQMiaZmEthuHS8tmLDMWI1z4QWRhHIMLHg3liOjkCI5OtcQNN35OVrY9zew6onA
- 1Cve0bkiyu9PIlXC3xrZIesUaRuSg5jB03fOMW8lHGkHWX7xEAonOGKPSQ4OT45xggW5
- udU4rnK0fnv9fjLzVFtPKtUwkR2QAZf8xU/h2Ca5MKz6SLJ6E4tHr5U62dAhKGOMlhP2
- GLXQ==
+ bh=WLDZnkNch35rzg1d+1R+WfXdW5pqxZdV5yyeRP+ZRtE=;
+ b=ZISsDfxUMG7oe1ufNTKEa+Hsy4SU5lnYNUl+LQwWxZvA77njCaZYRzEDYEgZbtuMlw
+ HO8TrSNxRElqfOtA2miTGoXLsdYLIOTXgtD3B4cgRbhj2nJCY2jot1OQBEf/3d5Gs9Bn
+ uvVyoqBdZpxYez21nOf8RBjytpvq4kfXp176gEPbkveQWWkgSJP1JXtI7+I99cdCXQ67
+ w5i80/PQSvyiViMY298+OmK/DFBdPp9/sxWQAWjGtMimepPyaVhmK2OT/hycVsTJZahO
+ j1FP0VyP8LeHS+sTzSFmD9k07KyrOWgKeaaORcYIiKtmIFeE0raW7Exyd2bFWvYAhXHL
+ eWCg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:subject:to:cc:references:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=XrAM25vpWZD5MTWL7vyE3YXP4ScFEtr0870Eoi4wxso=;
- b=Y72FUV5brTWUdmtZFTO0qFOPFVR9tPuX2et2jHgUj9/uhHyseMCiHaT6H1L6sZu1zU
- TsdueUx4dqS670H+IBZ0Hs11KgZEr+ryKeP5yTatGXCmAJw45g45MtUN/EfwUKm+9/VF
- kYo1JTU5w+kU2/qsZusW+vTV9y0PsjVToCx594OSlSBtTM21H/9XbBXtVqNUKgzgRw/v
- IXgEy8ncmukHRMhAY9P/VhvF3+XDejyo8mhg5MaF2gGzvnsjAib5dZBPGfwmp/uqpGZZ
- 51JJq4vfouAMTjGVT12vGV2HG24zn/S+HdfSyZVA2PDczuRQ+QEXVlJmH8/TBr1hB1yX
- EH1g==
-X-Gm-Message-State: APjAAAVc/lM0NHI5djTsY6fXtQU8qDEV5w2mq385E/gP8fm/z5EHGAAM
- DT6q/lmeZ06GeIfj1vuviJOnwhYc
-X-Google-Smtp-Source: APXvYqxKUFgr6ValYFAzYN6/aTyEwKVGGONbq0glLWx8r8nDNSPSdVCQz4qVXCtd1f8wW5EzqpD6oA==
-X-Received: by 2002:a7b:cd04:: with SMTP id f4mr11287498wmj.91.1572723291468; 
- Sat, 02 Nov 2019 12:34:51 -0700 (PDT)
+ bh=WLDZnkNch35rzg1d+1R+WfXdW5pqxZdV5yyeRP+ZRtE=;
+ b=EblHoDsiaLJ/dE3l7NAPC75t8HVzQS8OsKW6mjY20vNB9C/TumPlutVBvQjMAvqDOX
+ XAiHVhDn9so6ahYZJtlm4nAwv2v/DAKnKUdvTkPC9ulQB5hsv8pZ7mzd8uy1TTsIv3e3
+ h5BrGJ5o/aHBub5mY/nSmSy9Eme6SLP+zU+ZhmXbD3495R0oAPYSBgN2vLL5yrcj9ktQ
+ 6EK6/WJInwAAU2n/EEqtzS95u1TEAuo4u/V/9rvdcN2ePZFpuYYtX80DSNKgvdbe9V/S
+ ZQ5SWdrXyYvWTNXa3jMltfLVhIER4nAP8hRRxc1p2ELhXT+Bh1sUi+h82pXtD/i3tgzV
+ YQpQ==
+X-Gm-Message-State: APjAAAWPr9NbRkpm6K0eMht9dchigt9s5UGZHETRFhtGzxQF+J9Y2N8w
+ CUzCEiPZdkEgd9kdx8cA/AbJj2AR
+X-Google-Smtp-Source: APXvYqxJ/c1BidoAblA6fJg1WaB6hPp9D45poKcaXu63+G/T3P3+RTT4zCttoWYPXzSoUwKEKiu/tA==
+X-Received: by 2002:a1c:2d49:: with SMTP id t70mr16119202wmt.131.1572723296781; 
+ Sat, 02 Nov 2019 12:34:56 -0700 (PDT)
 Received: from [10.230.29.119] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id t185sm17703784wmf.45.2019.11.02.12.34.47
+ by smtp.gmail.com with ESMTPSA id d16sm13098113wmb.27.2019.11.02.12.34.53
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sat, 02 Nov 2019 12:34:49 -0700 (PDT)
+ Sat, 02 Nov 2019 12:34:56 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
-Subject: Re: [PATCH RFC V2 3/6] net: bcmgenet: use optional max DMA burst size
- property
+Subject: Re: [PATCH RFC V2 2/6] net: bcmgenet: Avoid touching non-existent
+ interrupt
 To: Stefan Wahren <wahrenst@gmx.net>,
  Matthias Brugger <matthias.bgg@kernel.org>,
  Matthias Brugger <mbrugger@suse.com>, "David S . Miller"
  <davem@davemloft.net>, Florian Fainelli <f.fainelli@gmail.com>
 References: <1572702093-18261-1-git-send-email-wahrenst@gmx.net>
- <1572702093-18261-4-git-send-email-wahrenst@gmx.net>
+ <1572702093-18261-3-git-send-email-wahrenst@gmx.net>
 Autocrypt: addr=f.fainelli@gmail.com; keydata=
  mQGiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
  xGlkaOSDuu09rxuW+69Y2f1TzjFuGpBk4ysWOR85O2Nx8AJ6fYGCoeTbovrNlGT1M9obSFGQ
@@ -120,23 +120,23 @@ Autocrypt: addr=f.fainelli@gmail.com; keydata=
  caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
  6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9qfUATKC9NgZjRvBztfqy4
  a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
-Message-ID: <e1182432-19d8-6c9d-fd41-bb4d739b579a@gmail.com>
-Date: Sat, 2 Nov 2019 12:34:45 -0700
+Message-ID: <4c88389b-7aad-7a87-8443-3a368690edd7@gmail.com>
+Date: Sat, 2 Nov 2019 12:34:52 -0700
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.1
 MIME-Version: 1.0
-In-Reply-To: <1572702093-18261-4-git-send-email-wahrenst@gmx.net>
+In-Reply-To: <1572702093-18261-3-git-send-email-wahrenst@gmx.net>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191102_123453_713851_1A3F7EF1 
-X-CRM114-Status: GOOD (  15.50  )
+X-CRM114-CacheID: sfid-20191102_123458_649788_A9628AFF 
+X-CRM114-Status: GOOD (  19.30  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -170,44 +170,34 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 11/2/2019 6:41 AM, Stefan Wahren wrote:
-> From: Matthias Brugger <mbrugger@suse.com>
+> As platform_get_irq() now prints an error when the interrupt does not
+> exist, we are getting a confusing error message in case the optional
+> WOL IRQ is not defined:
 > 
-> Depending on the HW, the maximal usable DMA burst size can vary.
-> If not set accordingly a timeout in the transmit queue happens and no
-> package can be sent. Read to optional max-burst-sz property, if not
-> present, fallback to the standard value.
+>   bcmgenet fd58000.ethernet: IRQ index 2 not found
 > 
-> Signed-off-by: Matthias Brugger <mbrugger@suse.com>
-
-Missing your Signed-off-by here since you are carrying this patch from
-Matthias.
-
+> Fix this by using the platform_irq_count() helper to avoid touching a
+> non-existent interrupt.
+> 
+> Fixes: 7723f4c5ecdb8d83 ("driver core: platform: Add an error message to platform_get_irq*()")
+> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 > ---
+>  drivers/net/ethernet/broadcom/genet/bcmgenet.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/net/ethernet/broadcom/genet/bcmgenet.c b/drivers/net/ethernet/broadcom/genet/bcmgenet.c
+> index 105b3be..ac554a6 100644
+> --- a/drivers/net/ethernet/broadcom/genet/bcmgenet.c
+> +++ b/drivers/net/ethernet/broadcom/genet/bcmgenet.c
+> @@ -3473,7 +3473,8 @@ static int bcmgenet_probe(struct platform_device *pdev)
+>  		err = priv->irq1;
+>  		goto err;
+>  	}
+> -	priv->wol_irq = platform_get_irq(pdev, 2);
+> +	if (platform_irq_count(pdev) > 2)
+> +		priv->wol_irq = platform_get_irq(pdev, 2);
 
-[snip]
-
-> +	if (dn) {
-> +		of_property_read_u32(dn, "dma-burst-sz",
-> +				     &priv->dma_max_burst_length);
-> +	} else {
-> +		priv->dma_max_burst_length = DMA_MAX_BURST_LENGTH;
-> +	}
-
-I would maintain the previous position provided on Matthias' patch
-series, which is the integration of the GENETv5 hardware block in 2711
-is done in a way that is different enough (due to the SCB/AXI bridge)
-that a separate compatibility string would be in order. Once you that
-defined that "brcm,bcm2711-genet-v5" compatibility string defined, you
-can derive the DMA burst size off of it.
-
-If adding a compatibility string is not practical because of the
-downstream DTBs, then can we at least fix this patch in two ways:
-
-- define the property in the binding document
-- spell out the property in full names: max-dma-burst-size so as to
-reflect what it does
-
-Thanks!
+Or you could use platform_get_irq_optional() for the WoL IRQ line?
 -- 
 Florian
 
