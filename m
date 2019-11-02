@@ -2,68 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3B11ED07B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 Nov 2019 21:02:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8EE44ED07F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 Nov 2019 21:08:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hcnT5Hu6ge50efO2Kq1KtgAt0XbEeLSF/4G14SZyat8=; b=rR0WTcOTrcPwh/
-	TTKoftwlKJvL++4doULE/YtL73CskmSCiBUzvFCV1ovmw768V/83CHTi5ZakrDXVQQyjoch5zm/hj
-	X29JLhtCdz7QjULnyoLpN4VpcZjvEWxIJ7QBvKFqC9QTRwmkbU+5H9DAcqAhfKpraMWZsjhOFjMv7
-	nc/OTb7/mqHIpsZXy1YtNcQVhoYzsgS+3J3Rs5Hgrh0FZjx1lAtVoeDmy7ysUX3J9HOOHo9iz4/6i
-	W94q0EIs0t0a+/PiYHbosF/6EieFs+BNiwO/kwqFdGQHPrsqj3kXvSZ1KZoqbNSdb/Sy3MALMdxLK
-	Y/eWf54EMvhyUIFzE7mA==;
+	List-Owner; bh=dIrd/k9L1B6Yj0cgsuPh3EI9cX23MovpEasN82suA6I=; b=jN4v/KCRHizXGL
+	mo6T17UVJ8Fg2Mahe+fjVhrguf7hE+VxrJvOgL69R5nI2mfGkRpMlIHBprcfQZOoHwQmptoScm8ys
+	K+LfG17lzQXox30kYK7y4b5tL+NtyWRaEj9jsy2kpGfNLoabBeWHSuRdFMHJZRxuOIAO1nhxXt9uT
+	bjfRtNoIlz6khr7pzRQPtg2sEXTNhTBH6kNI2kPv1QMDGwCHZHlTLiBKBKWe0Ou6B1VO4XfRxflkj
+	aA+mJlyRhuQ92W7PQam04LQ2hb769tgXEGpKE/Piz/dnsVGNesJn3Z0juSqZUvB3tK5q+KcfXHByW
+	BodxDqFM66dIfHec45dA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQzbm-0001FT-Pa; Sat, 02 Nov 2019 20:02:50 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iQzhF-0002qq-Q8; Sat, 02 Nov 2019 20:08:29 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQzbg-0001F7-32
- for linux-arm-kernel@lists.infradead.org; Sat, 02 Nov 2019 20:02:45 +0000
-Received: by mail-wm1-x342.google.com with SMTP id f3so1111407wmc.5
+ id 1iQzh6-0002pz-QO
+ for linux-arm-kernel@lists.infradead.org; Sat, 02 Nov 2019 20:08:22 +0000
+Received: by mail-pg1-x544.google.com with SMTP id j30so5124198pgn.5
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 02 Nov 2019 13:02:43 -0700 (PDT)
+ Sat, 02 Nov 2019 13:08:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=rD2GO//uNM6f6fHwOF+vVUXCWQljjK6YePsHKgplkms=;
- b=SrRuCYOCBC79irXNubEbDTPgrM+91W65BqwWXocSY2ahUl4bxj3gXQR6hhYIFWKn+w
- lIzZItMo5Dn9opG9NNTP14kPisjebGdjrqAhwK8ZuXj98KYpH6kjoFKZs6Ke1gANqs7S
- 558hL3DfTUUHf2GU8Bhg5h4YmYkhXcP6i6ky56TdB3/WSnQoWvajreADsowIaFJy2g6i
- cRtd3+EaoBehu8FFdKFdm5Ffvy1njTclj4U3hOpK/Bbe9R5+9hHnYbgxE2uobIjIaLT5
- XYj9sRfR6SpfmQnWOQQGO9Zj1Y9OF9bIZuFbwuUzQO7GkPNT1fqgki4qCXKXiRNb9dPO
- UPtw==
+ bh=F+LJuSA9zYv6k9YdRZEWKHWTfKXaTuVbsoBaox/gbnU=;
+ b=YxGbXU2/vN8Hoi12jC49mIUxMs9OQs3AveW/wKPUIDYu1hVOQwpaDjI0VJlvC14QsM
+ 01/vGjLQz7juqPutPSsS4KRL3vszcZZimvsUIglY4+1jAl/ccTgq2/yHfnPflZR5o2ne
+ Zb0uuHiWbcjEYqj+dTFBbWlZH4lZlDKrhaNuwKLX1VtYXFR1TqZwKGVAzLIv/Jqu6S7L
+ paf2nAolE33LHUg1/XMZzIlXOiARgnhJW42ErWFJQHYoH7JhNr8ec9UefJOq2VLbiQ56
+ /2fYeoQ0rh+AKHPNynZPT5UoeUBa1Dm4yHuWw7ZaElVRfjMmaE7zFPsYSpBmnab8YBfg
+ ESQg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=rD2GO//uNM6f6fHwOF+vVUXCWQljjK6YePsHKgplkms=;
- b=c1vi24Sh4kYMzA1wmXUpxqsKob7p4QY6VO8D7q5OUuY6b4A0DlJ/MHdGfRvrlJXSUH
- iKxfvKlQznhKV8iCtQ8FHpuwO8WKhtOI4bDQXlCFwlR+I8iuDj5r+R4x3V9BIsUo98zp
- P6ohHZio+qY8qCQdsg42RJk4hnyo31nroDACOVqrIKemli1NHYOfjMhSFFygzorAUb/l
- cEEc0uS9R4sNPtH8nqjKcvvdvAWGNP934dzRESgmDKg5FsT4QsTJ6xONuw9K2gkg+Z5c
- KbznZLMOxXRTeWBr4dlGnbqLsk86hNTcFK8ZwoqwvRMTXeTsfJK4p9ANLJYMQt4V356e
- u6Gw==
-X-Gm-Message-State: APjAAAWF6WlEbm5KXgQ2IZuHNR2YQFT4y+aY4kRShD9wGkxknJoeg+wl
- 32RIsQpdOU0fnSS76Z33clEYP0Uq
-X-Google-Smtp-Source: APXvYqwhWugMAnHGPNvckwgkrH3lBypoPMEO5SWCEr4XHJDzSLSqUgXEGtJyg8Jb1ve6NOC3WCvqSA==
-X-Received: by 2002:a1c:2706:: with SMTP id n6mr17199657wmn.154.1572724962415; 
- Sat, 02 Nov 2019 13:02:42 -0700 (PDT)
+ bh=F+LJuSA9zYv6k9YdRZEWKHWTfKXaTuVbsoBaox/gbnU=;
+ b=PavyRXhhUTfn+eU923n6+1vFm7U1S+ly08v5kloC+UfumbXh0L+e+pGIWo5At8R3es
+ SDTtB/Ng5OeoCDYtfl67xhg0S/XIS09NIH4/V0YoAbzAWkog7gN7+5WGdI2bchUap5mM
+ ijCBuAmXRp3nAOXNjXtDWTWfFmn4ua/umWiTf4RXpV6RxKBiWGatdFy77FMEh/OL7eCs
+ keYc0htGGvwBOMP3elGUiowBm3+UTkkqp1AKq9ZhMc7XEiFLLdTSzALEtLzY3krCNdvD
+ 4DVKrpzJZTLY6SaSjs3fD9cxbdAChO+1fkrYGkbBoNMFOceFdZGAZzoTERIW9u6uWeFu
+ DJDA==
+X-Gm-Message-State: APjAAAVeHe+J6IduJn7KvRqTHwxaZSnS1LqjGcucE7SKea/UNsTmDaBb
+ 3T6s25SPD0rgso/YUg2Ux9w=
+X-Google-Smtp-Source: APXvYqzU/WsMOydHRlnyc5LVDUhqiCE4gXRpNebp5AHwCQ9lC2lnC0jbELFIpQqjXKtlJDItwSeD5Q==
+X-Received: by 2002:a62:1d8e:: with SMTP id d136mr22676638pfd.49.1572725299117; 
+ Sat, 02 Nov 2019 13:08:19 -0700 (PDT)
 Received: from [10.230.29.119] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id 36sm25412466wrj.42.2019.11.02.13.02.39
+ by smtp.gmail.com with ESMTPSA id m68sm10524014pfb.122.2019.11.02.13.08.17
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sat, 02 Nov 2019 13:02:41 -0700 (PDT)
-Subject: Re: [PATCH RFC V2 6/6] ARM: dts: bcm2711-rpi-4: Enable GENET support
-To: Stefan Wahren <wahrenst@gmx.net>,
- Matthias Brugger <matthias.bgg@kernel.org>,
- Matthias Brugger <mbrugger@suse.com>, "David S . Miller"
- <davem@davemloft.net>, Florian Fainelli <f.fainelli@gmail.com>
-References: <1572702093-18261-1-git-send-email-wahrenst@gmx.net>
- <1572702093-18261-7-git-send-email-wahrenst@gmx.net>
+ Sat, 02 Nov 2019 13:08:18 -0700 (PDT)
+Subject: Re: [PATCH 0/4] ARM: Enable thermal support for Raspberry Pi 4
+To: Stefan Wahren <wahrenst@gmx.net>, Zhang Rui <rui.zhang@intel.com>,
+ Eduardo Valentin <edubezval@gmail.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Amit Kucheria <amit.kucheria@verdurent.com>, Rob Herring
+ <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Markus Mayer <mmayer@broadcom.com>
+References: <1572615749-9524-1-git-send-email-wahrenst@gmx.net>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; keydata=
  mQGiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -119,28 +122,28 @@ Autocrypt: addr=f.fainelli@gmail.com; keydata=
  caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
  6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9qfUATKC9NgZjRvBztfqy4
  a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
-Message-ID: <69e7a48f-4a31-32af-9c04-889a44e19f96@gmail.com>
-Date: Sat, 2 Nov 2019 13:02:38 -0700
+Message-ID: <1c8ccf12-743c-cad0-bd63-3f46abe7d1c4@gmail.com>
+Date: Sat, 2 Nov 2019 13:08:15 -0700
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.1
 MIME-Version: 1.0
-In-Reply-To: <1572702093-18261-7-git-send-email-wahrenst@gmx.net>
+In-Reply-To: <1572615749-9524-1-git-send-email-wahrenst@gmx.net>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191102_130244_133089_4AA8E985 
-X-CRM114-Status: GOOD (  17.37  )
+X-CRM114-CacheID: sfid-20191102_130820_858543_C0EBB3A4 
+X-CRM114-Status: GOOD (  18.04  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (f.fainelli[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -159,62 +162,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Doug Berger <opendmb@gmail.com>, netdev@vger.kernel.org,
- Eric Anholt <eric@anholt.net>, bcm-kernel-feedback-list@broadcom.com,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Chen-Yu Tsai <wens@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org,
+ linux-pm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 11/1/2019 6:42 AM, Stefan Wahren wrote:
+> This series enables thermal support for the Raspberry Pi 4. Neither the
+> bcm2835_thermal nor the brcmstb_thermal are suitable for the BCM2711.
+> So add a new thermal driver to read out the SoC temperature from the
+> AVS RO block of the BCM2711.
 
+It seems to me that with minor tweaks you could use the brcmstb_thermal
+driver, since the two key differences are essentially:
 
-On 11/2/2019 6:41 AM, Stefan Wahren wrote:
-> This enables the Gigabit Ethernet support on the Raspberry Pi 4.
-> The defined PHY mode is equivalent to the default register settings
-> in the downstream tree.
-> 
-> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
-> Signed-off-by: Matthias Brugger <mbrugger@suse.com>
-> ---
->  arch/arm/boot/dts/bcm2711-rpi-4-b.dts | 23 +++++++++++++++++++++++
->  arch/arm/boot/dts/bcm2711.dtsi        | 19 +++++++++++++++++++
->  2 files changed, 42 insertions(+)
-> 
-> diff --git a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-> index cccc1cc..904efe1 100644
-> --- a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-> +++ b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-> @@ -19,6 +19,10 @@
->  		reg = <0 0 0>;
->  	};
-> 
-> +	aliases {
-> +		ethernet0 = &genet;
-> +	};
-> +
->  	leds {
->  		act {
->  			gpios = <&gpio 42 GPIO_ACTIVE_HIGH>;
-> @@ -97,6 +101,25 @@
->  	status = "okay";
->  };
-> 
-> +&genet {
-> +	phy-handle = <&phy1>;
-> +	phy-mode = "rgmii-rxid";
-> +	status = "okay";
-> +
-> +	mdio@e14 {
-> +		compatible = "brcm,genet-mdio-v5";
-> +		reg = <0xe14 0x8>;
-> +		reg-names = "mdio";
-> +		#address-cells = <0x0>;
-> +		#size-cells = <0x1>;
+- lack of interrupt, which is also the case on the latest STB SoCs
+- different way to determine that data is valid, by checking both bit 16
+and bit 10, as opposed to bit 11, and a reduced ADC code from 11 bits
+down to 10.
 
-The MDIO controller is always present, therefore its node definition
-would be better placed in bcm2711.dtsi. Other than that:
+This seems like a simple enough set of changes to build on top of this
+patch series:
+
+https://lore.kernel.org/linux-arm-kernel/20191030182132.25763-1-f.fainelli@gmail.com/
+
+My concern is that we went down that road before with other drivers like
+bcm2835-rng and bcm63xx-rng, when really there were little to no
+differences other than some integrations bits (different clock,
+compatible, and more important people having worked separately on those
+things).
+
+Your call, the patch series looks good to me otherwise:
 
 Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
 -- 
