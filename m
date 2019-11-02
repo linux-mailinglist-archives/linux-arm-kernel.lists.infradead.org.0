@@ -2,84 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DBE2ECF4C
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 Nov 2019 15:47:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C4E3ECF4B
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 Nov 2019 15:46:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PlIh6/yPgczVhUiMer35qHSL0FY2oXxkydbJ5GvOeGE=; b=B7g9QLDrNFJmrL
-	IV+w+Cv8LIRje5u2TV8gq0vabCPJMZJY31PtP5cMsMCWUJVbMteQtdgNzcQw2GhLReVQiNtKkxu9Z
-	GRzwM3RSL4OtNG9D9DoxGW2ObE6ZyiH4PyoxiaSL0vAY3w9bnKEW0aDMpkX3Dmo/eXxgzUbUQmaQX
-	pRmT1aN7NIJrY/vVY9yq681g0/5rd2e5MhOUFqhPQ5tqsbIwbS0nRuxZhOqPElDd3meLs3vHQCMkX
-	83Xhm5XQXa7dHXqpEBlcNeKHQ6z5NZ39qnT87lV1e2GDG+Mg+S+GRjGl9/0Qg8VIBWvdgE//mADR8
-	1AifFxjo/cYk1EU6ELUQ==;
+	List-Owner; bh=1oB0rANwB7Szl7Y4tKU2rkiz0++0qatAYm2A3N2RvYI=; b=eakbGrNdWq3S20
+	EDaSMRhaqVdGzbxMYnhpSWo/yZ9SLZOnLdo4eqLaBnLbwVYi4vEsi0q7wPVzxLkjfMyU2TyuwD7Wr
+	ZX2D2fJqAFaD0MViN/X4X+E+n3xtqQwBG5kzFP3eP8Ebm5xE4ujOX4s0vgPVdauVyNtveOiSLniII
+	af7jsNnvx86kctKJI2wvfzHi5kd2qa0KaKGwwTe6K3jdAetsRqLtbxBjLUl5obK466Q3t7abyEJk5
+	wa5CqpyDaQvl8S5KcAkjw5k75r9GLLOGFhj9QvnBBLKaKKiVvL24v6aY32CO2C7QlSDqZX3haNcMu
+	GoIJK98NBSLRxXLiFGuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQugA-0000mj-05; Sat, 02 Nov 2019 14:47:02 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iQufv-0000Zw-Vb; Sat, 02 Nov 2019 14:46:47 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQueo-0007wp-Pc
- for linux-arm-kernel@lists.infradead.org; Sat, 02 Nov 2019 14:45:40 +0000
-Received: by mail-wr1-x444.google.com with SMTP id f2so3549251wrs.11
+ id 1iQuen-0007zN-T7
+ for linux-arm-kernel@lists.infradead.org; Sat, 02 Nov 2019 14:45:39 +0000
+Received: by mail-wr1-x441.google.com with SMTP id a11so12438110wra.6
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 02 Nov 2019 07:45:35 -0700 (PDT)
+ Sat, 02 Nov 2019 07:45:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=GTGCNNiwKlBZVXsP21r2PDJNhcrsvyHQEwunsy6fCNY=;
- b=rcWEGveY6X709tbXwN6s8SvMz7ml0y6EsmqVmxGvSRPQ8hfntrn9VUEvJLHdtQDWxk
- coLNwUc8KZXOI47qMn9wY8dfENBn0a0eP4kp4n5y1kJxnVO8lIBojpOEd9mN7yKtLp7i
- pyJY3deugA+ttt9dBn61tHtPE61yS/9Rou5TNlRy4FxwjG+P0/8DwzcpJSfUR6ZfPKmv
- al3SV/T8k6LJc7dX3RGDu6QVsq9Clj6sfWFfHz1oB7/uDGFEzyvQNASqdEXCdLO1D4Vt
- qNyR7HKPc4MncuPa9EpWORwhxL/ldISBCvcYfzou6oLF753jVk3UHxTHn1A5DSnNSzMa
- RhTA==
+ bh=+sFGkSU5hfvo4D8WEpa51VLxLij3Lp+HaowAkrxp1ro=;
+ b=rl29Ph4qud6uyCcyXTxYAu/hiB9okEPNBlYsJrBkrZpE4RemCfNUNC2TRp4DTDNF0R
+ 4SWVQrp9+/SiGnkifwdpBxUg069WHmcsZAuWdI1Zpf7Nhl31OydBCbyWb1wCbQ94IMZJ
+ NhTlxOUe/CajwtmurKcXSd19KQPkr/lPMjMMBZ8y4RByQBoeOLml/SqzXEWXhTjt2KwI
+ AxP6K7fmWU4vxVeQy6rkbpyplc15xB5lQBAEHGph1yYssxgrYJGAcGdhTFXXl89tUivg
+ nhJFLQrMdv6eudwSyH89jSYc1GasVSpyDr6rqGAKxsrBWEsqBkP6Bx67mZ1NppDZtaQx
+ ISEA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=GTGCNNiwKlBZVXsP21r2PDJNhcrsvyHQEwunsy6fCNY=;
- b=t1EUB702j5FYJEtDxWIXLIr1AO0t2AfhAOujuXslTqrCMjGYeQ+j7VuIZ5zZ7UpokK
- g2nncixIAEFBqoZE2ggKfpXM7hYFsSoaE+1ocRzDsiAkIZyzleTYoxPXpt78yjqkLzU1
- nJpOr02JHoO/rGDmtImEhW+4NQsP0gmbRWj2Ecbt5NrxprXGgcnRXKrdTBOyrg5KFDMS
- UXFSiBORpF946afMMZbNAqaR0RNt9v4IIPCPZaOFzr11qovct7dKb5Hl+Pq0MyE/yJcI
- d7xoNO5KvbxUyRWjC4BO1xr5EnBnSmc1UYDIhiYXj71wDK+R5qR8Xc9JaywW1DIqFatb
- N+yw==
-X-Gm-Message-State: APjAAAW1k4cgKWTrlOsXp3mI2Ht39a8Km8pvkXzP9YPCC4PdQyKAzu6C
- IvVNrMZYJ+iBMaAQaVsfe3Y=
-X-Google-Smtp-Source: APXvYqy+xYvA/2HeaYAIKYtmDkGGWTh5MMXnEgwk/5eFijrAmPS+e9HTtim0QbkJme1uOSomo+YgFg==
-X-Received: by 2002:a5d:4982:: with SMTP id r2mr9656465wrq.254.1572705934336; 
- Sat, 02 Nov 2019 07:45:34 -0700 (PDT)
+ bh=+sFGkSU5hfvo4D8WEpa51VLxLij3Lp+HaowAkrxp1ro=;
+ b=HMOOCQghAHRsxoBvY6CUWzmb1HAb+i+czspfuLLJwRT2ZK/i8BCjKHfwJXt42uwSBt
+ T6EjPYglWjsbkNVhXjZuXcMtLSvXdGIM+FWHFIBDx8PcXnoAPF/0TOJBd8LHKDfdxWGg
+ 9EwI5xNDI/joVoxCAKU0lKtRq4Cms1MdSuoL+USvYHUVDpGLV+tvN1sTk/lB74UDkWhP
+ Ye3+wyFgNx5fTdEjFjxHqbljTA830IcAtQ8knT2gg0bJLYyJXU2T75QL8Uc7umo/iAAe
+ 4Gz9W+5A65UqfGzXVPBV8MSizmbROzL8Auc9C4tzCqlyqYhKwLNXmEDBvbrgRAl8+TAR
+ rlNw==
+X-Gm-Message-State: APjAAAV+JD8QCLvVxZR5TGfQpYRcEBtMEEo3YwqW8aeEzD0wM2ZP9Vpa
+ +Q7JpYAv1eTCr6xLXF4Xxv1JWd9f
+X-Google-Smtp-Source: APXvYqzhvJd1Y2aYHcUDzBlX0wsJzxhkHNrrh9rVamnR23xGELdkN01ebONy5VyHPUZ8Oe5RRmM85Q==
+X-Received: by 2002:a5d:4dd2:: with SMTP id f18mr14880467wru.4.1572705936521; 
+ Sat, 02 Nov 2019 07:45:36 -0700 (PDT)
 Received: from localhost (p2E5BE2CE.dip0.t-ipconnect.de. [46.91.226.206])
- by smtp.gmail.com with ESMTPSA id o81sm2119190wmb.38.2019.11.02.07.45.33
+ by smtp.gmail.com with ESMTPSA id j22sm15143980wrd.41.2019.11.02.07.45.35
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 02 Nov 2019 07:45:33 -0700 (PDT)
+ Sat, 02 Nov 2019 07:45:35 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: arm@kernel.org
-Subject: [GIT PULL 6/8] ARM: tegra: Device tree changes for v5.5-rc1
-Date: Sat,  2 Nov 2019 15:45:19 +0100
-Message-Id: <20191102144521.3863321-6-thierry.reding@gmail.com>
+Subject: [GIT PULL 7/8] ARM: tegra: Default configuration changes for v5.5-rc1
+Date: Sat,  2 Nov 2019 15:45:20 +0100
+Message-Id: <20191102144521.3863321-7-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191102144521.3863321-1-thierry.reding@gmail.com>
 References: <20191102144521.3863321-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191102_074538_849897_1BF5FE69 
-X-CRM114-Status: GOOD (  13.61  )
+X-CRM114-CacheID: sfid-20191102_074538_014505_AE13617D 
+X-CRM114-Status: GOOD (  10.57  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (thierry.reding[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -113,69 +113,28 @@ The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.5-arm-dt
+  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.5-arm-defconfig
 
-for you to fetch changes up to 4053aa65c517fba954af05e826bb97b2eaefe92a:
+for you to fetch changes up to 480bb31f4286d838fc0eebcfd813dd83236406e7:
 
-  ARM: tegra: cardhu-a04: Add CPU Operating Performance Points (2019-10-29 20:29:17 +0100)
+  ARM: tegra: Enable Tegra VDE driver in tegra_defconfig (2019-10-29 14:10:35 +0100)
 
 Thanks,
 Thierry
 
 ----------------------------------------------------------------
-ARM: tegra: Device tree changes for v5.5-rc1
+ARM: tegra: Default configuration changes for v5.5-rc1
 
-Adds support for CPU frequency scaling on Tegra20 and Tegra30, EMC
-frequency scaling on Tegra30, SMMU support for VDE on Tegra30, the
-STMPE ADC found on Toradex T30 modules as well as fixes for eDP
-support on Venice2.
+Enables the Tegra VDE driver by default. This is currently in staging
+but can be used with existing userspace to do hardware-accelerated video
+decoding of H.264 streams.
 
 ----------------------------------------------------------------
-Dmitry Osipenko (12):
-      ARM: tegra: Connect SMMU with Video Decoder Engine on Tegra30
-      ARM: tegra: nyan-big: Add timings for RAM codes 4 and 6
-      ARM: tegra: Add External Memory Controller node on Tegra30
-      ARM: tegra: Add Tegra20 CPU clock
-      ARM: tegra: Add Tegra30 CPU clock
-      ARM: tegra: Add CPU Operating Performance Points for Tegra20
-      ARM: tegra: Add CPU Operating Performance Points for Tegra30
-      ARM: tegra: paz00: Set up voltage regulators for DVFS
-      ARM: tegra: paz00: Add CPU Operating Performance Points
-      ARM: tegra: trimslice: Add CPU Operating Performance Points
-      ARM: tegra: cardhu-a04: Set up voltage regulators for DVFS
-      ARM: tegra: cardhu-a04: Add CPU Operating Performance Points
+Dmitry Osipenko (1):
+      ARM: tegra: Enable Tegra VDE driver in tegra_defconfig
 
-Philippe Schenker (1):
-      ARM: tegra: Add stmpe-adc DT node to Toradex T30 modules
-
-Thierry Reding (4):
-      dt-bindings: clock: tegra: Rename SOR0_LVDS to SOR0_OUT
-      Merge branch 'for-5.5/dt-bindings'
-      ARM: tegra: Add SOR0_OUT clock on Tegra124
-      ARM: tegra: Add eDP power supplies on Venice2
-
- arch/arm/boot/dts/tegra124-nyan-big-emc.dtsi     | 7869 +++++++++++++++++-----
- arch/arm/boot/dts/tegra124-venice2.dts           |    3 +
- arch/arm/boot/dts/tegra124.dtsi                  |    3 +-
- arch/arm/boot/dts/tegra20-cpu-opp-microvolt.dtsi |  201 +
- arch/arm/boot/dts/tegra20-cpu-opp.dtsi           |  302 +
- arch/arm/boot/dts/tegra20-paz00.dts              |   41 +-
- arch/arm/boot/dts/tegra20-trimslice.dts          |   11 +
- arch/arm/boot/dts/tegra20.dtsi                   |    2 +
- arch/arm/boot/dts/tegra30-apalis-v1.1.dtsi       |   22 +-
- arch/arm/boot/dts/tegra30-apalis.dtsi            |   22 +-
- arch/arm/boot/dts/tegra30-cardhu-a04.dts         |   48 +
- arch/arm/boot/dts/tegra30-colibri.dtsi           |   22 +-
- arch/arm/boot/dts/tegra30-cpu-opp-microvolt.dtsi |  801 +++
- arch/arm/boot/dts/tegra30-cpu-opp.dtsi           | 1202 ++++
- arch/arm/boot/dts/tegra30.dtsi                   |   14 +
- include/dt-bindings/clock/tegra124-car-common.h  |    3 +-
- include/dt-bindings/clock/tegra210-car.h         |    3 +-
- 17 files changed, 8914 insertions(+), 1655 deletions(-)
- create mode 100644 arch/arm/boot/dts/tegra20-cpu-opp-microvolt.dtsi
- create mode 100644 arch/arm/boot/dts/tegra20-cpu-opp.dtsi
- create mode 100644 arch/arm/boot/dts/tegra30-cpu-opp-microvolt.dtsi
- create mode 100644 arch/arm/boot/dts/tegra30-cpu-opp.dtsi
+ arch/arm/configs/tegra_defconfig | 2 ++
+ 1 file changed, 2 insertions(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
