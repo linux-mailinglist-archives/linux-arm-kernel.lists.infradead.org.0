@@ -2,63 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2B56ECC56
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 Nov 2019 01:25:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 942EDECCEF
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 Nov 2019 03:55:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oxHar4cYh1FcABU9pjyEfToKk5p7GWfzvjB2q7AGMSg=; b=loGHhwfz57jn3F
-	WVk5SmVRu/GrkdQrNyX8zQTpZjgYCv3x4N2B12YDVAdPRrfbWNmNrygEgk/wLq43yePABSSxU8f8J
-	pxMGBwV12vD2mcyGOipANdjnMNXUPEAopmDqq6M9pr7J+KGzHWiYvDwzWuEUnjur+B0OzSxhcKPul
-	ffhZDXePJtz4q5VQ7lw+zL9byY0mFBLLz5skisQi0+6jDMsnw8XTJSbDTuOI06S4d1GsXrgU+OjKU
-	pLJd2JkNLmCLq3yRtKJVTlv3Uxz31MA2JqWwgeuw338CBbN/knS+UKqH2kwnELzSM3ekmOJsQIPWA
-	Sbd2B9lC0g6OVbx/mmqg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+qrcSsnB9Rrim5Ke7QbhT3ytafARJ6D6Y5f0CEQhHL4=; b=PqVjwpipL9Ew6A
+	kqgtlOZ3DniNISosm6goNVP2s7Ub8tc4u9O3k4d3x9v5KibzEetrxljcMkjpGUsXuoiy38Ontqy+9
+	8DT/RixcwUBr08D16N0EQkc76Q8zyop5lNmDewxuE1dA89q/zD/XAzrskQWcRF+8P1tJPxvhI5omz
+	FgZdrKd9tVBfgIWwlC8cyN64SdDwFYAD6jAH5nyalU7D2ITGRB+AXUdJmbWraYZgVtslm/05FkUBw
+	6Yv9mF8x8xshSGVOcOvGuwTxv0L+CX/1tAW89j1sgaV0X3e52EPIVT5ywWOcICCSBnvP3sDMMWXUw
+	Ng7Vz96kfvRO6jHM++Og==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQhEh-0008L8-Ms; Sat, 02 Nov 2019 00:25:47 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1iQjZS-00043c-EZ; Sat, 02 Nov 2019 02:55:22 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQhEZ-0008Jj-AS; Sat, 02 Nov 2019 00:25:41 +0000
-X-UUID: c6bc90a570244596b55882643dc9dd2a-20191101
-X-UUID: c6bc90a570244596b55882643dc9dd2a-20191101
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 333636974; Fri, 01 Nov 2019 16:25:42 -0800
-Received: from mtkexhb01.mediatek.inc (172.21.101.102) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 1 Nov 2019 17:25:33 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkexhb01.mediatek.inc (172.21.101.102) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sat, 2 Nov 2019 08:25:19 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Sat, 2 Nov 2019 08:25:18 +0800
-Message-ID: <1572654319.24679.4.camel@mtksdaap41>
-Subject: Re: [PATCH] drm/mediatek: Support reflect-y plane rotation
-From: CK Hu <ck.hu@mediatek.com>
-To: Sean Paul <sean@poorly.run>
-Date: Sat, 2 Nov 2019 08:25:19 +0800
-In-Reply-To: <20191101132647.189033-1-sean@poorly.run>
-References: <20191101132647.189033-1-sean@poorly.run>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1iQjZL-00042m-DK
+ for linux-arm-kernel@lists.infradead.org; Sat, 02 Nov 2019 02:55:17 +0000
+Received: by mail-pf1-x443.google.com with SMTP id d13so8265063pfq.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 01 Nov 2019 19:55:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=7ZNNTe5mkOuzZ1b3W8Xkq2eMV4qjyE7CsioiQ3occ8s=;
+ b=JgBG/edDtW18OFtkSYrEnJo1YamRpxQlTLQnoYLDbIDMyNZv3mVxKQzwAEE3KI9Cz0
+ iBJWao3C2C8VQJZrubB5eHV4+I4iKNohnhwjQJnnnjeVNOS1yRtI/7JuCO+vfwFDIzcw
+ npNswin/PMLjK5R9h/kE9NHOP2G4O3PJqiJJ3R1yy5zPY7JAQYidXb4UtSGO5Hapv70t
+ 4aPLzEN9KCBVaK7EaUuWLb3SOKddLqc7A12/va8N2IoCRCShOy+M2MIq/H0v11X9TB/2
+ 5+UdFuAo4sAX3kn5gIFCdgGvUd5585gtZybpTc0wdozCAp0DqtWFVeC/fTjcvYbuvdZk
+ RW0A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=7ZNNTe5mkOuzZ1b3W8Xkq2eMV4qjyE7CsioiQ3occ8s=;
+ b=YtlvOV09JzcC06919eVL6lN1V9BiRkzvfTmQevqnACBz8ywLB9zOprJUzXExWno3cH
+ G3b2jdpXFVgL0gwSSbawpjIRV0Es1K0fF0YttOWWKzlbLBDNjfFG0ITxfupEcpmQE/lS
+ 4UjibYHm2zjraCGRp6mziqO3XUm5pUSdy/nEJfQe7prUSATMDNPEiICDJ13+bTk0tGX0
+ dITfW1Rap8h5pELLHPwVE7fb5lJucxk9KI+dtujVjOZAqiy0cJG7u2DZb0r5ckluDSaK
+ YC/oVs16l0vgKQHN5V4TotpiDS36JbcSnjjM2Drpzbrm/l0xvgguu42fta/xsNNn7aCl
+ bSMw==
+X-Gm-Message-State: APjAAAXrrRQNF+3QE9vL6udxvl8i34WvGavMQ/86Ra53IaUm4pjcevry
+ ESl11ckdDrQqe6+GSsAR/wQTKfDV
+X-Google-Smtp-Source: APXvYqxg4OgJaYUyM3OKDwg+WHMVAXgkfTOYP2+s9ay3+BRTVdfbTd4PGssEzC8VuRD1mvWisVejHg==
+X-Received: by 2002:aa7:9639:: with SMTP id r25mr17314826pfg.17.1572663313252; 
+ Fri, 01 Nov 2019 19:55:13 -0700 (PDT)
+Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
+ by smtp.gmail.com with ESMTPSA id
+ z14sm5449440pfq.66.2019.11.01.19.55.11
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 01 Nov 2019 19:55:12 -0700 (PDT)
+Subject: Re: [PATCH 1/2] pinctrl: bcm: nsp: use gpiolib infrastructure for
+ interrupts
+To: Chris Packham <chris.packham@alliedtelesis.co.nz>,
+ linus.walleij@linaro.org, rjui@broadcom.com, sbranden@broadcom.com,
+ bcm-kernel-feedback-list@broadcom.com
+References: <20191101015621.12451-1-chris.packham@alliedtelesis.co.nz>
+ <20191101015621.12451-2-chris.packham@alliedtelesis.co.nz>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Message-ID: <b681ed9d-a31a-e5cc-04ba-6f38a5cc745b@gmail.com>
+Date: Fri, 1 Nov 2019 19:55:11 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.0
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20191101015621.12451-2-chris.packham@alliedtelesis.co.nz>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_172539_365976_B2609C20 
-X-CRM114-Status: GOOD (  20.84  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191101_195515_479603_FD17CF05 
+X-CRM114-Status: GOOD (  19.09  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,130 +106,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniele Castagna <dcastagna@chromium.org>, dri-devel@lists.freedesktop.org,
- Matthias
- Brugger <matthias.bgg@gmail.com>, Miguel Casas <mcasas@chromium.org>,
- Sean Paul <seanpaul@chromium.org>, Philipp Zabel <p.zabel@pengutronix.de>,
- Fritz Koenig <frkoenig@chromium.org>, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, Mark Yacoub <markyacoub@google.com>
+Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Sean:
 
-On Fri, 2019-11-01 at 09:26 -0400, Sean Paul wrote:
-> From: Sean Paul <seanpaul@chromium.org>
+
+On 10/31/2019 6:56 PM, Chris Packham wrote:
+> Use more of the gpiolib infrastructure for handling interrupts. The
+> root interrupt still needs to be handled manually as it is shared with
+> other peripherals on the SoC.
 > 
-> Expose the rotation property and handle REFLECT_Y rotations.
+> This will allow multiple instances of this driver to be supported and
+> will clean up gracefully on failure thanks to the device managed APIs.
 > 
-> Cc: Fritz Koenig <frkoenig@chromium.org>
-> Cc: Daniele Castagna <dcastagna@chromium.org>
-> Cc: Miguel Casas <mcasas@chromium.org>
-> Cc: Mark Yacoub <markyacoub@google.com>
-> Signed-off-by: Sean Paul <seanpaul@chromium.org>
+> Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
 > ---
-> 
-> The hardware also supports REFLECT_X, but I just could not figure out
-> how to get it working. If someone is interested in getting this going,
-> I'm happy to share notes and my WIP patch. For now, though, I actually
-> only need y-flip so I'm giving up on x-flip.
 
-Does [1] give you any hint for x-flip, or that patch is incorrect?
+Just a couple of comments below:
 
-[1]
-https://chromium-review.googlesource.com/c/chromiumos/third_party/kernel/+/1533519
+[snip]
 
-> 
-> 
->  drivers/gpu/drm/mediatek/mtk_disp_ovl.c  |  6 ++++++
->  drivers/gpu/drm/mediatek/mtk_drm_plane.c | 11 ++++++++++-
->  drivers/gpu/drm/mediatek/mtk_drm_plane.h |  1 +
->  3 files changed, 17 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-> index 14878ebf59d7..6505479ee506 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-> @@ -50,6 +50,7 @@
->  					OVL_CON_CLRFMT_RGB : 0)
->  #define	OVL_CON_AEN		BIT(8)
->  #define	OVL_CON_ALPHA		0xff
-> +#define	OVL_CON_VIRT_FLIP	BIT(9)
+> +		irqc->name = dev_name(dev);
+
+The irq_chip used to be named "gpio-a" now it most likely will contain
+the address.unit-name notation from Device Tree, since this is visible
+in /proc/interrupts one might consider this to be an ABI breakage.
+
+> +		irqc->irq_ack = nsp_gpio_irq_ack;
+> +		irqc->irq_mask = nsp_gpio_irq_mask;
+> +		irqc->irq_unmask = nsp_gpio_irq_unmask;
+> +		irqc->irq_set_type = nsp_gpio_irq_set_type;
 >  
->  struct mtk_disp_ovl_data {
->  	unsigned int addr;
-> @@ -229,6 +230,11 @@ static void mtk_ovl_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
->  	if (idx != 0)
->  		con |= OVL_CON_AEN | OVL_CON_ALPHA;
+> -			irq_set_chip_and_handler(irq, &nsp_gpio_irq_chip,
+> -						 handle_simple_irq);
+> -			irq_set_chip_data(irq, chip);
+> -		}
+> +		val = readl(chip->base + NSP_CHIP_A_INT_MASK);
+> +		val = val | NSP_CHIP_A_GPIO_INT_BIT;
+> +		writel(val, (chip->base + NSP_CHIP_A_INT_MASK));
 >  
-> +	if (pending->rotation & DRM_MODE_REFLECT_Y) {
-> +		con |= OVL_CON_VIRT_FLIP;
-> +		addr += (pending->height - 1) * pending->pitch;
-> +	}
-> +
->  	writel_relaxed(con, comp->regs + DISP_REG_OVL_CON(idx));
->  	writel_relaxed(pitch, comp->regs + DISP_REG_OVL_PITCH(idx));
->  	writel_relaxed(src_size, comp->regs + DISP_REG_OVL_SRC_SIZE(idx));
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_plane.c b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
-> index 584a9ecadce6..4d8f2b55334b 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_plane.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
-> @@ -88,6 +88,9 @@ static int mtk_plane_atomic_check(struct drm_plane *plane,
->  	if (!fb)
->  		return 0;
+>  		/* Install ISR for this GPIO controller. */
+> -		ret = devm_request_irq(&pdev->dev, irq, nsp_gpio_irq_handler,
+> -				       IRQF_SHARED, "gpio-a", chip);
+> +		ret = devm_request_irq(dev, irq, nsp_gpio_irq_handler,
+> +				       IRQF_SHARED, "gpio-a", &chip->gc);
+>  		if (ret) {
+>  			dev_err(&pdev->dev, "Unable to request IRQ%d: %d\n",
+>  				irq, ret);
+> -			goto err_rm_gpiochip;
+> +			return ret;
+>  		}
 >  
-> +	if (fb->format->is_yuv && (state->rotation & ~DRM_MODE_ROTATE_0) != 0)
-> +		return -EINVAL;
+> -		val = readl(chip->base + NSP_CHIP_A_INT_MASK);
+> -		val = val | NSP_CHIP_A_GPIO_INT_BIT;
+> -		writel(val, (chip->base + NSP_CHIP_A_INT_MASK));
+> +		girq = &chip->gc.irq;
+> +		girq->chip = irqc;
+> +		/* This will let us handle the parent IRQ in the driver */
+> +		girq->parent_handler = NULL;
+> +		girq->num_parents = 0;
+> +		girq->parents = NULL;
+> +		girq->default_type = IRQ_TYPE_NONE;
+> +		girq->handler = handle_simple_irq;
 
-If this patch does not support all color format, please describe what
-color format does this patch support, so others could try to make the
-rest color format work.
+It might be worth creating a helper that can be called to initialize all
+relevant members to the values that indicate: let me manage the
+interrupt. This would make us more future proof with respect to
+assumptions being made in gpiolib as well as if new fields are added in
+the future. This would be a separate patch obviously.
 
-Regards,
-CK
+Other than that:
 
-> +
->  	if (!state->crtc)
->  		return 0;
->  
-> @@ -132,6 +135,7 @@ static void mtk_plane_atomic_update(struct drm_plane *plane,
->  	state->pending.y = plane->state->dst.y1;
->  	state->pending.width = drm_rect_width(&plane->state->dst);
->  	state->pending.height = drm_rect_height(&plane->state->dst);
-> +	state->pending.rotation = plane->state->rotation;
->  	wmb(); /* Make sure the above parameters are set before update */
->  	state->pending.dirty = true;
->  }
-> @@ -166,7 +170,12 @@ int mtk_plane_init(struct drm_device *dev, struct drm_plane *plane,
->  		return err;
->  	}
->  
-> -	drm_plane_helper_add(plane, &mtk_plane_helper_funcs);
-> +	err = drm_plane_create_rotation_property(plane, 0,
-> +						 DRM_MODE_ROTATE_0 |
-> +						 DRM_MODE_REFLECT_Y);
-> +	if (err)
-> +		DRM_INFO("Create rotation property failed, continuing...\n");
->  
-> +	drm_plane_helper_add(plane, &mtk_plane_helper_funcs);
->  	return 0;
->  }
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_plane.h b/drivers/gpu/drm/mediatek/mtk_drm_plane.h
-> index 6f842df722c7..83b634a997cc 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_plane.h
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_plane.h
-> @@ -20,6 +20,7 @@ struct mtk_plane_pending_state {
->  	unsigned int			y;
->  	unsigned int			width;
->  	unsigned int			height;
-> +	unsigned int			rotation;
->  	bool				dirty;
->  };
->  
-
-
+Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+-- 
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
