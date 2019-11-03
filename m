@@ -2,90 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09FFDED517
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 Nov 2019 22:18:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60307ED5E4
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 Nov 2019 22:31:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E5vMdooOXmPSgdRegJEIgtBwFenL1cOQ6xAUnSFrRqg=; b=Pj1NPaHYBcgzWS
-	fCAQ4PxcgwbEqT1Un6pKOamWDJLp0IMdssGO8aGdOckd2MnSaoXijHIWzPGPxwHR0texK3wDvfGst
-	YVPC6gJFTMVBi9UBremuIVCiljNYxyTZ6GJj/pz+YK10NE8SZw9tGeexMJ3WOXE3yHT+SnjtKnPr3
-	L4RPKtZl7ZZtjSms64q9B8jA9Uq7Za8E5+/SEydY8IdVf1sKVOmkIJJt72R3F5Fvd37898vv6gx2F
-	lNJ6ryeZZTZMTdczauF/tQILyUkeoLm/9TTyiKvMRVKuH42F+CoSScQcu9YrmPedm8Kastt1yrNgJ
-	qpp3C0RYPuz1frHJmWSA==;
+	List-Owner; bh=J1htJapAh4QtNXBkR4VsTDOBqW35Qn7/GYNpoAZPRYM=; b=sdHpEvNgycE2aW
+	leUwJMUL4IVoEfzQzCpDzjCtk2lJTcNkWsmgzOn1eAlw6LBl58Cw2151DZJAptnJ5rGjDlyQ+NNyo
+	yS3Op19PFwQb14XlA36oRhQinBfygxw1InoPYVXmrds1IyhbKTLQrJKJDRCYnOGQ4V2+UxJhIv72A
+	loAFYPK/CiKcDgIx7FqhpHtm2PaXUdo5HMx0saphtC3B2NgpnPVa9aRexVU3Delox8QwRL1CsH+qA
+	1M3RDlurkz/A6Lx1Pc12DhIf3XSCrBCi2NXpCfXVLwdeCJhrWsZdSBzLaiwLphD6QX2+QVKqGb3/H
+	Tcgyx+S0IlACBUJbvGaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRNG4-0005zG-0Y; Sun, 03 Nov 2019 21:18:00 +0000
-Received: from gate2.alliedtelesis.co.nz ([202.36.163.20])
+	id 1iRNSi-0007SA-3y; Sun, 03 Nov 2019 21:31:04 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRNFw-0005yH-5T
- for linux-arm-kernel@lists.infradead.org; Sun, 03 Nov 2019 21:17:54 +0000
-Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (Client did not present a certificate)
- by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id A8FFD8365A;
- Mon,  4 Nov 2019 10:17:43 +1300 (NZDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
- s=mail181024; t=1572815863;
- bh=dwIa5UBqxZ5+WyHNhpTgf/cGLb9kltXhBmUP4qmi7jE=;
- h=From:To:CC:Subject:Date:References:In-Reply-To;
- b=ndWpDzkFk75cG//mnByCLXMkD1lu1yvb1b7YgyL/WPGfOZ9O8n9zTwpQtpMKNp16R
- DeJ6BvGIloDQerULQymfXYM93VpuiuRVQfjtKOMiRjf6fdnhbkKPrUdgD0w7FRjlTt
- LBDKByXEZJ2NEEEPcsXQf446JXEBB0Sklx7QLWl9wxWnw+D5ou942K8Cz3tyb841oR
- ecoJ+mIjpaCWtQbdSd8cQOv7JxZUd9vLF+YXXzvAj867RefIPuqru+9gZEyYIEKNDk
- WvtSC9IE8Pzds/kFRg5a1rDdLzoY8aBLtFg9HYE5tsj0pZ35LKy+N6Qrvzb5DUcDVm
- feIcG/xW3az7w==
-Received: from svr-chch-ex1.atlnz.lc (Not Verified[10.32.16.77]) by
- mmarshal3.atlnz.lc with Trustwave SEG (v7, 5, 8, 10121)
- id <B5dbf43f50000>; Mon, 04 Nov 2019 10:17:43 +1300
-Received: from svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8::77) by
- svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8::77) with Microsoft SMTP Server
- (TLS) id 15.0.1156.6; Mon, 4 Nov 2019 10:17:40 +1300
-Received: from svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8]) by
- svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8%12]) with mapi id
- 15.00.1156.000; Mon, 4 Nov 2019 10:17:40 +1300
-From: Chris Packham <Chris.Packham@alliedtelesis.co.nz>
-To: "sbranden@broadcom.com" <sbranden@broadcom.com>,
- "bcm-kernel-feedback-list@broadcom.com"
- <bcm-kernel-feedback-list@broadcom.com>, "f.fainelli@gmail.com"
- <f.fainelli@gmail.com>, "linus.walleij@linaro.org"
- <linus.walleij@linaro.org>, "rjui@broadcom.com" <rjui@broadcom.com>
-Subject: Re: [PATCH 1/2] pinctrl: bcm: nsp: use gpiolib infrastructure for
- interrupts
-Thread-Topic: [PATCH 1/2] pinctrl: bcm: nsp: use gpiolib infrastructure for
- interrupts
-Thread-Index: AQHVkFeSBgXJhb3KgUu11iFh5fDST6d2V0WAgALGW4A=
-Date: Sun, 3 Nov 2019 21:17:39 +0000
-Message-ID: <f6ac1bc26d404aa99b9b1f619552bdc441c37f6c.camel@alliedtelesis.co.nz>
-References: <20191101015621.12451-1-chris.packham@alliedtelesis.co.nz>
- <20191101015621.12451-2-chris.packham@alliedtelesis.co.nz>
- <b681ed9d-a31a-e5cc-04ba-6f38a5cc745b@gmail.com>
-In-Reply-To: <b681ed9d-a31a-e5cc-04ba-6f38a5cc745b@gmail.com>
-Accept-Language: en-NZ, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [2001:df5:b000:22:c5c6:9a61:cb8f:b19f]
-Content-ID: <DEC19D1D8A2BCA428FDDA13688F0F327@atlnz.lc>
+ id 1iRNSa-0007Rn-Jf
+ for linux-arm-kernel@lists.infradead.org; Sun, 03 Nov 2019 21:30:58 +0000
+Received: by mail-wr1-x443.google.com with SMTP id v9so14893504wrq.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 03 Nov 2019 13:30:56 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=dENupFMZvUKLj3H059NPWsyYbib0XEeUAnwjyNjU9ZI=;
+ b=RNgtwwdXd2vr2cWTtlBkv/iQTAnrgASL8lr2x72jRW5QZecSWoV4wJRPX9Iz3Ppdwv
+ VWWMZ9wQ+kL3wURCLJOfeBuDOim8WAhjIuulC8pDbDa1yZM3UCbQoXOQbu1pl1JoPDLE
+ TM5P87G5OZWLmt3veBI2OOf1+K8o1wi459tz3HCT3gAMg/S/ZbJkunoBgSc6SzqKFb8G
+ l1/ugXOcxBdxNuAcJIS7mXv27RkK4zXXO8k1yT/lEd14abNUH2YhpgEzZc+7S+e5r6Al
+ esDTqv2gzcwnDOMUziwzFhlChaRpERQdCerdBaJQqVolpNo6ptT4TXQa32vRi1ANh/po
+ 157g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=dENupFMZvUKLj3H059NPWsyYbib0XEeUAnwjyNjU9ZI=;
+ b=OuWd3z876mKJnlTDVin4vsiGN7wWCCaRtq359MFJ1/3/Is7DmYrhu5lWc64lldMpzV
+ +LoAJNdwXkzKZG7CGt4EbiPte7tQL4e5z2A1EoSK/rxL6+RdamGmn9LLx8Jd7q6cR//8
+ T+UF7eqXok2UnPp+28yGaOIXeDBAX7iBBtlpPxx0nNRSBmFPQhp7NDE5sLYlhp3zQItC
+ DKV5cKbsKwNw8s18PUrRKtnO5BVOwRo5fv2WpXqYC1kwsXj0csL+ydU16XCl8EEeLk16
+ 71f5hFZ1pLtAX1oqoRePQ9CQbcwHHS2FWazuhR7X+B3zjCJSGQtj34EPWhuupwFZCh/1
+ 4DDQ==
+X-Gm-Message-State: APjAAAWFnfjD9yrEhpwzlxiWwKmpG4ryPUIvstN4iZRtli3TogUh5pU5
+ dpaq/0LqoCTFbW5O/97MSWwokWItNTEDnpxidUc=
+X-Google-Smtp-Source: APXvYqzexYZ74NlB44n8w9SsqOsbVsFckU5M2A/wMBg6SxfO7AFKMZa7056ZglUmmDrSKQABtiQmvhDhXJz25nXGUak=
+X-Received: by 2002:a5d:490c:: with SMTP id x12mr17869293wrq.301.1572816654957; 
+ Sun, 03 Nov 2019 13:30:54 -0800 (PST)
 MIME-Version: 1.0
+References: <20191018171835.12666-1-f.fainelli@gmail.com>
+ <CAN8TOE9xftQxTFjzuxomknS-5xebrDvmgpt38xprWE7VNBODig@mail.gmail.com>
+In-Reply-To: <CAN8TOE9xftQxTFjzuxomknS-5xebrDvmgpt38xprWE7VNBODig@mail.gmail.com>
+From: Gregory Fong <gregory.0xf0@gmail.com>
+Date: Sun, 3 Nov 2019 13:30:28 -0800
+Message-ID: <CADtm3G4BqYko3RkGYE2thNuk7XupKDoQcyUeBy_XOMmCcYDn9A@mail.gmail.com>
+Subject: Re: [PATCH] MAINTAINERS: Remove Gregory and Brian for ARCH_BRCMSTB
+To: Brian Norris <computersforpeace@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191103_131752_791781_B35D2969 
-X-CRM114-Status: GOOD (  25.11  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191103_133056_648203_DF4EB0B6 
+X-CRM114-Status: GOOD (  10.04  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [202.36.163.20 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (gregory.0xf0[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (gregory.0xf0[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -104,94 +95,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Brian Norris <briannorris@chromium.org>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2019-11-01 at 19:55 -0700, Florian Fainelli wrote:
-> 
-> On 10/31/2019 6:56 PM, Chris Packham wrote:
-> > Use more of the gpiolib infrastructure for handling interrupts. The
-> > root interrupt still needs to be handled manually as it is shared with
-> > other peripherals on the SoC.
-> > 
-> > This will allow multiple instances of this driver to be supported and
-> > will clean up gracefully on failure thanks to the device managed APIs.
-> > 
-> > Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
+I'm a bit late, but...
+
+On Fri, Oct 18, 2019 at 11:33 AM Brian Norris
+<computersforpeace@gmail.com> wrote:
+>
+> On Fri, Oct 18, 2019 at 10:18 AM Florian Fainelli <f.fainelli@gmail.com> wrote:
+> >
+> > The last time Gregory and Brian did a review was sometime around 2015,
+> > since then, they have not been active for ARCH_BRCMSTB changes.
+> > Following the position of other maintainers and Harald Welte's position
+> > here:
+> >
+> > [1] http://laforge.gnumonks.org/blog/20180307-mchardy-gpl/
+> >
+> > remove both of them.
+> >
+> > Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 > > ---
-> 
-> Just a couple of comments below:
-> 
-> [snip]
-> 
-> > +		irqc->name = dev_name(dev);
-> 
-> The irq_chip used to be named "gpio-a" now it most likely will contain
-> the address.unit-name notation from Device Tree, since this is visible
-> in /proc/interrupts one might consider this to be an ABI breakage.
-> 
+> > Brian, Gregory,
+> >
+> > I don't expect you two to object to this, but if you would like to stay
+> > active, let me know, thanks! This is intended to go in v5.5
+>
+> Acked-by: Brian Norris <computersforpeace@gmail.com>
 
-Oops my bad. I'd even been told as much from another patch. Fixed in
-v3.
+Acked-by: Gregory Fong <gregory.0xf0@gmail.com>
 
-> > +		irqc->irq_ack = nsp_gpio_irq_ack;
-> > +		irqc->irq_mask = nsp_gpio_irq_mask;
-> > +		irqc->irq_unmask = nsp_gpio_irq_unmask;
-> > +		irqc->irq_set_type = nsp_gpio_irq_set_type;
-> >  
-> > -			irq_set_chip_and_handler(irq, &nsp_gpio_irq_chip,
-> > -						 handle_simple_irq);
-> > -			irq_set_chip_data(irq, chip);
-> > -		}
-> > +		val = readl(chip->base + NSP_CHIP_A_INT_MASK);
-> > +		val = val | NSP_CHIP_A_GPIO_INT_BIT;
-> > +		writel(val, (chip->base + NSP_CHIP_A_INT_MASK));
-> >  
-> >  		/* Install ISR for this GPIO controller. */
-> > -		ret = devm_request_irq(&pdev->dev, irq, nsp_gpio_irq_handler,
-> > -				       IRQF_SHARED, "gpio-a", chip);
-> > +		ret = devm_request_irq(dev, irq, nsp_gpio_irq_handler,
-> > +				       IRQF_SHARED, "gpio-a", &chip->gc);
-> >  		if (ret) {
-> >  			dev_err(&pdev->dev, "Unable to request IRQ%d: %d\n",
-> >  				irq, ret);
-> > -			goto err_rm_gpiochip;
-> > +			return ret;
-> >  		}
-> >  
-> > -		val = readl(chip->base + NSP_CHIP_A_INT_MASK);
-> > -		val = val | NSP_CHIP_A_GPIO_INT_BIT;
-> > -		writel(val, (chip->base + NSP_CHIP_A_INT_MASK));
-> > +		girq = &chip->gc.irq;
-> > +		girq->chip = irqc;
-> > +		/* This will let us handle the parent IRQ in the driver */
-> > +		girq->parent_handler = NULL;
-> > +		girq->num_parents = 0;
-> > +		girq->parents = NULL;
-> > +		girq->default_type = IRQ_TYPE_NONE;
-> > +		girq->handler = handle_simple_irq;
-> 
-> It might be worth creating a helper that can be called to initialize all
-> relevant members to the values that indicate: let me manage the
-> interrupt. This would make us more future proof with respect to
-> assumptions being made in gpiolib as well as if new fields are added in
-> the future. This would be a separate patch obviously.
-
-For now I'll leave this as-is. Linus W was thinking about what an API
-for devices requiring shared irqs would look like. If that happens soon
-then then this driver could switch to use this API. If it's going to be
-a while I'll look at adding a helper as suggested and updating the 3
-drivers that I know of that could benefit from it.
-
-> 
-> Other than that:
-> 
-> Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
