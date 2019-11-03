@@ -2,92 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 251D4ED2C4
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 Nov 2019 10:48:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B9ACED308
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 Nov 2019 12:08:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BxGGSQOSYWUDRwt9GXBLwC05lyJI9nnSy2DYK0gzg5U=; b=GJtQwpqGisFtXf
-	REZUWtWb4D8nX8HkolBf0LoCczISb4+3TcD9sem1KlYIlogz6Nxy1kGd2+YPaCKeyCWItlDXAyXvj
-	hAH8hhMjfZiwEngsephfFPpAcVdXIo46UVLzlBgi4x21fd3mluJMIQfNqb03luAHXvVZtPlj4FHXu
-	zmp0tuph/NdBorac3oikksBi4fpIcVb0i5cS6ulTE7n769y0jWfWoIQFN58pht3Hb0k8FQb6P8jzx
-	aKkdA3ctneL0jc5FEorBq3+FnbrmKdXDcyOXi3qLOl3+xkeUnAZGwjba1lWqXvxDEWnMLCoHwcPvt
-	/F7z43muYefVvqwNb3yg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dAANWG1wetYXSU4PpdGHAEMjCG58Jfcr8ASzrYS5ueY=; b=PtPJHKVGkSTESA
+	4gxZS0KzGN2HE4pfMhtlWGKWE2XPWgx0Qlq9RrNBBKnax9UuXmCiC/KvRdbH5hewBhgfYgjpcj7NP
+	ZjgLDqfawHfVqexzgAnV1jouzMAsrlQM5cV/OXeJ/SI+teOuLBlcCNs3ddrI9ivlboxC4ggeTi1Aw
+	PODqT9IJpNo6KSsUFFhv8u46CouPCzM3ub7jwP7o0YfxUNf4z6LB+mxXOUph8ZEFLqhXoNj0WBt6C
+	ouwCcZnI71Zsa24Y37UoZzPx5DSKXZVpISGZlljPduWgHev4ByH6vA8VxP6lLWqOVtuAN2DLlp6uY
+	EZuOlRRsgaaOvq3+Ld7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRCV5-0005Di-Iq; Sun, 03 Nov 2019 09:48:47 +0000
-Received: from mout.gmx.net ([212.227.17.20])
+	id 1iRDkc-0004cE-Iz; Sun, 03 Nov 2019 11:08:54 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRCUx-0005DN-Aq
- for linux-arm-kernel@lists.infradead.org; Sun, 03 Nov 2019 09:48:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1572774500;
- bh=N2kuRaL/NF7eaENHQ2C+jDHjdPCKjWSQuPIkJH8g0pI=;
- h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
- b=Q2LlccFTCc8rL0GBfgZNe9A0tsXwG98A45djoICyEGqjYkhqOm/3zKgqakud0cGA4
- v/FKU9L7M9GbZlJWKd1dFqjGyYoC5x07EqtkZ1SPfPQ4uNIWY+nGCkieEeOjMAraW5
- xnqUoW+Ygn0g2uXdDb9SKCo4b9S2b+ThdE/5yZsc=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [192.168.1.162] ([37.4.249.112]) by mail.gmx.com (mrgmx105
- [212.227.17.168]) with ESMTPSA (Nemesis) id 1MEm27-1iBW6S3N87-00GEz5; Sun, 03
- Nov 2019 10:48:19 +0100
-Subject: Re: [PATCH RFC V2 3/6] net: bcmgenet: use optional max DMA burst size
- property
-To: Florian Fainelli <f.fainelli@gmail.com>,
- Matthias Brugger <matthias.bgg@kernel.org>,
- Matthias Brugger <mbrugger@suse.com>, "David S . Miller"
- <davem@davemloft.net>
-References: <1572702093-18261-1-git-send-email-wahrenst@gmx.net>
- <1572702093-18261-4-git-send-email-wahrenst@gmx.net>
- <e1182432-19d8-6c9d-fd41-bb4d739b579a@gmail.com>
-From: Stefan Wahren <wahrenst@gmx.net>
-Message-ID: <b2066bc6-2191-5b9d-ff59-2ba4a95bfa03@gmx.net>
-Date: Sun, 3 Nov 2019 10:48:17 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iRDkX-0004bt-2o
+ for linux-arm-kernel@lists.infradead.org; Sun, 03 Nov 2019 11:08:50 +0000
+Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
+ [82.4.196.95])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9974820842;
+ Sun,  3 Nov 2019 11:08:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572779327;
+ bh=FbaoVaWioLqr0Z7FxL6DKXeAOHtNY6YOT3zMnzdc8eU=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=aD6PQEf1YtBiqkJF3yrAS2+/Z6KUwhqc68hNZX6/JK6K79E/SC6l/MJJK/XPvHMVo
+ FKFtMgi5uMvstFpoEvL8wAOJ/0IAUtx1un5J0bwBbMya+o7K3qc6EBB8uSXwD0/x9c
+ +PTJWqhrPJrpGPKRQQy4w5Ow7wodiZeOSRK/hR54=
+Date: Sun, 3 Nov 2019 11:08:41 +0000
+From: Jonathan Cameron <jic23@kernel.org>
+To: Benjamin Gaignard <benjamin.gaignard@st.com>
+Subject: Re: [PATCH 2/4] dt-bindings: iio: timer: Convert stm32 IIO trigger
+ bindings to json-schema
+Message-ID: <20191103110841.3ad3ecfb@archlinux>
+In-Reply-To: <20191031123040.26316-3-benjamin.gaignard@st.com>
+References: <20191031123040.26316-1-benjamin.gaignard@st.com>
+ <20191031123040.26316-3-benjamin.gaignard@st.com>
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <e1182432-19d8-6c9d-fd41-bb4d739b579a@gmail.com>
-Content-Language: en-US
-X-Provags-ID: V03:K1:TjbITlT8S+N4og2qQ/L3geR8VbQ2YegWvTpFryWOffB3y8H+u80
- XLSmbluUbx8OVBwiaWmxpvvlM7wsb2uLvD555bD2uNrumhZi/Km8E01QePV4vlhawwvvi4d
- blhtsDCxHJZhwbGSp6MorGuS40UOzwJwf+U+UlllsOS2EutMSb+q9/izOCTvAo2SuH5T97B
- gqlKvZmOU9Lbwkqc9OMLg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:vWSAY7d1Vro=:zlEbxOb1E1Pibo+wZSmzpV
- s2Q8zNIc0w6kFiQmPNbea5t7ZzjjZ5gu6CnKjJzT6usef1WJYworSJ54eRD0xcNDcZx9uaAkE
- Z0SqiKIgnk0F/wSyxgbVOpgZdz/mRtnKYNqirMbnif2ut1B2jtJcfSmgRWBWBMjZrEJofGz68
- Ps2S94xnpAsuqY+3LwWGesl8XXUJ6umFuLdeDlZZtwH6N65hYmXUV2J1yaJVyP6XghqU7WhiD
- xPfyyKFGqD7NE85rpgjaND1xR74W+OmU5bCTD3aRTW3TpzjIgpUYpnn/M+87FNbki2Ayv2T5k
- nazuloDFRCjO1CYFSLf15r5qDUAdeMP4iIuXvO60qzIOvybpwwboU4VJL6diJpYmSyPYNvLcJ
- 8zTDJaT7F6Q7vaOsEVZR9fonQJQmPvXIw5+xw13HB7e009mmC1eJCn8VZDtIsqpRH0pqrkF+T
- 4X6exuiEQNTN64cYUUo+sXvntnPAp1lShFvrqde+bSvW9zQroUqrD3lbvRvP/NX+kXu06pMXH
- zplhx3X/fTgJN+CfN7m4bvZW5KspwsbM1IqVhQORe8BtXTFcK+vfx4Ae6JA5l80uBTYz6QnOJ
- eE9GbinWwy8JJobsr2k4Aq6w9FX0HwGhNVlghT/JmlwwMiq3dVs7tKpECrv4u40L1k0cVmsFM
- 9f/frQFeNkh6C47vhVwZr2grGejjuiPIRC3u4E3HExvuq4NRFoS/kZKHsJtGAYsEH3G7Z9M04
- m+B24TQomgVTyV1iPgYk12mxuVRDegQUu945XUyZLP8RxeZfQRs8yV3NmwqWa3eRQJl5T1RBo
- IsAB1v5CRrgiGrdafnwDyXDWnn4Nw/hwBA3VZ82lAbn9K4j3AQnjl0pkcEPbUPHfzIB9Ajxty
- o6aGm/1IUHMxB75JO8LE0OXeppBB66DBh+K1zLpGFPnf7oXohZTT+StzCR5B1WjfH86CvV4yg
- /rxNSKLY5pXbpkRYXGSjWssAn0UmdgyJicTd0qg/qqS7rc/y20q5qIm2j0LbYarOG2UlOFgUO
- uIud4bHb8XHvUhGt0s5TGc2PzWiE7XL04vIb6WSCY9yzi/XwhDqtI+SiHEOUSaB4oelDJWW5l
- NqE/ErlKex4zJ8Z8rlc6VMd4mgUROL4QR3q9rERE14XUOFrc/Nchwg/yu1njAUqLkiyzwFD4o
- a/r1qgdaMbv06t8E38azNMNwAUva4Jx1hk1Jkvzoxn0b4EnYXaZyBSn2QZjM6TEwClZM/filY
- JycQpcPl3ahxhb5JeHh1hqVHro0yASWcRqkWCkp7tba170VUyu4sKMKo1Tys=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191103_014839_708354_CF5B15E4 
-X-CRM114-Status: GOOD (  17.00  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191103_030849_164634_2CB28439 
+X-CRM114-Status: GOOD (  17.79  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.20 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -96,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,64 +78,129 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Doug Berger <opendmb@gmail.com>, netdev@vger.kernel.org,
- Eric Anholt <eric@anholt.net>, bcm-kernel-feedback-list@broadcom.com,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lars@metafoo.de,
+ alexandre.torgue@st.com, linux-pwm@vger.kernel.org, linux-iio@vger.kernel.org,
+ u.kleine-koenig@pengutronix.de, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, thierry.reding@gmail.com, pmeerw@pmeerw.net,
+ knaack.h@gmx.de, fabrice.gasnier@st.com, lee.jones@linaro.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Florian,
+On Thu, 31 Oct 2019 13:30:38 +0100
+Benjamin Gaignard <benjamin.gaignard@st.com> wrote:
 
-Am 02.11.19 um 20:34 schrieb Florian Fainelli:
-> On 11/2/2019 6:41 AM, Stefan Wahren wrote:
->> From: Matthias Brugger <mbrugger@suse.com>
->>
->> Depending on the HW, the maximal usable DMA burst size can vary.
->> If not set accordingly a timeout in the transmit queue happens and no
->> package can be sent. Read to optional max-burst-sz property, if not
->> present, fallback to the standard value.
->>
->> Signed-off-by: Matthias Brugger <mbrugger@suse.com>
-> Missing your Signed-off-by here since you are carrying this patch from
-> Matthias.
-oops
->
->> ---
-> [snip]
->
->> +	if (dn) {
->> +		of_property_read_u32(dn, "dma-burst-sz",
->> +				     &priv->dma_max_burst_length);
->> +	} else {
->> +		priv->dma_max_burst_length = DMA_MAX_BURST_LENGTH;
->> +	}
-> I would maintain the previous position provided on Matthias' patch
-> series, which is the integration of the GENETv5 hardware block in 2711
-> is done in a way that is different enough (due to the SCB/AXI bridge)
-> that a separate compatibility string would be in order. Once you that
-> defined that "brcm,bcm2711-genet-v5" compatibility string defined, you
-> can derive the DMA burst size off of it.
-this is what i meant with didn't address all your comments. I'm fine
-with your suggestion, but too lazy to integrate it in this patch series.
-I assumed Matthias already take care of it.
-> If adding a compatibility string is not practical because of the
-> downstream DTBs, then can we at least fix this patch in two ways:
->
-> - define the property in the binding document
-> - spell out the property in full names: max-dma-burst-size so as to
-> reflect what it does
+> Convert the STM32 IIO trigger binding to DT schema format using json-schema
+> 
+> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+I'm far from great on these as still haven't taken the time I should to learn
+the yaml syntax properly.  A few comments inline however based mostly on this
+doesn't quite look like other ones I've seen recently.
 
-In case of incompatibilities with the downstream DTB, i will take care
-of it in the downstream tree like last time.
+Thanks,
 
-Regards
-Stefan
+Jonathan
 
->
-> Thanks!
+> ---
+>  .../bindings/iio/timer/st,stm32-timer-trigger.yaml | 44 ++++++++++++++++++++++
+>  .../bindings/iio/timer/stm32-timer-trigger.txt     | 25 ------------
+>  2 files changed, 44 insertions(+), 25 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/iio/timer/st,stm32-timer-trigger.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/iio/timer/stm32-timer-trigger.txt
+> 
+> diff --git a/Documentation/devicetree/bindings/iio/timer/st,stm32-timer-trigger.yaml b/Documentation/devicetree/bindings/iio/timer/st,stm32-timer-trigger.yaml
+> new file mode 100644
+> index 000000000000..1c8c8b55e8cd
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/iio/timer/st,stm32-timer-trigger.yaml
+> @@ -0,0 +1,44 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/iio/timer/st,stm32-timer-trigger.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: STMicroelectronics STM32 Timers IIO timer bindings
+> +
+> +maintainers:
+> +  - Benjamin Gaignard <benjamin.gaignard@st.com>
+> +  - Fabrice Gasnier <fabrice.gasnier@st.com>
+> +
+> +properties:
+> +  $nodemane:
+
+nodename?
+
+> +    pattern: "^timer@[0-9]+$"
+> +    type: object
+> +
+> +    description:
+> +      must be a sub-node of an STM32 Timer device tree node
+> +
+> +    properties:
+> +      compatible:
+> +        oneOf:
+
+enum is I think preferred for these.
+
+> +          - const: st,stm32-timer-trigger
+> +          - const: st,stm32h7-timer-trigger
+> +            
+> +      reg: true
+
+Normally some info for what the reg value is..
+
+> +
+> +    required:
+> +      - compatible
+> +      - reg
+> +
+> +examples:
+> +  - |
+> +    timers2: timer@40000000 {
+> +      #address-cells = <1>;
+> +      #size-cells = <0>;
+> +      timer@0 {
+> +        compatible = "st,stm32-timer-trigger";
+> +        reg = <0>;
+> +      };
+> +    };
+> +    
+> +...
+> diff --git a/Documentation/devicetree/bindings/iio/timer/stm32-timer-trigger.txt b/Documentation/devicetree/bindings/iio/timer/stm32-timer-trigger.txt
+> deleted file mode 100644
+> index b8e8c769d434..000000000000
+> --- a/Documentation/devicetree/bindings/iio/timer/stm32-timer-trigger.txt
+> +++ /dev/null
+> @@ -1,25 +0,0 @@
+> -STMicroelectronics STM32 Timers IIO timer bindings
+> -
+> -Must be a sub-node of an STM32 Timers device tree node.
+> -See ../mfd/stm32-timers.txt for details about the parent node.
+> -
+> -Required parameters:
+> -- compatible:	Must be one of:
+> -		"st,stm32-timer-trigger"
+> -		"st,stm32h7-timer-trigger"
+> -- reg:		Identify trigger hardware block.
+> -
+> -Example:
+> -	timers@40010000 {
+> -		#address-cells = <1>;
+> -		#size-cells = <0>;
+> -		compatible = "st,stm32-timers";
+> -		reg = <0x40010000 0x400>;
+> -		clocks = <&rcc 0 160>;
+> -		clock-names = "int";
+> -
+> -		timer@0 {
+> -			compatible = "st,stm32-timer-trigger";
+> -			reg = <0>;
+> -		};
+> -	};
+
 
 _______________________________________________
 linux-arm-kernel mailing list
