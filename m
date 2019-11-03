@@ -2,67 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 865BFED3D7
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 Nov 2019 17:22:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 032A3ED3F6
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 Nov 2019 18:13:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=uQ+n+PjEHjVFslidkSO5LinAQUOlLuWJSkqBL1E6awE=; b=HoIBCdpjmPU7+MGyTHEKNXtMT
-	8oZgUh7Up8oPiXRXBNXtu5uh3FarMbRGN43Zsph+EoxeJpCCZ2GiYjZoFteWFLiBWg1SFRb1Dq6ID
-	ZNpErxkr08PYbanEJ7XmxkxbWQJYVq5XBmcb82HSC7h4ZS99ThOQGI8X0AVPxv7s+2eeANu8Ui6w1
-	/cqlCpQv+EqGMt7AZc7PLFCrsIJm1Vyl1vsGso4BeH5y636f98PF9RwF+bLKKVFLv+3zK/lxTmXKp
-	AxzQbZ3I3+ckw5b6rzjD+p2QLEgNdBAc/yL4few7n9kQ8GtIpqZfm9BGOYPlJR1ntRbr7SWHMcOBQ
-	OXZ/DCk+g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7UArrQqpWwCOa/AcirDugTR3eBmIn2lP7YKXBvyPZk8=; b=Y6IsFvvTlfcBkj
+	v2CdSoodYbgDubjRLK2OW0f8GWm6QZRWEpBXjFG52iuel6rIjmTnwhdFoG0BHuHpU1m/vO0LL/rZ8
+	RugotSJLsVTKceOYuHrPFK4SKHYLH1ekqVjGOKygXuy/kO2+X8vzZ0rlysW82lGRMUcZCgiCo23/4
+	/uwYZS29I9Rpb12ZfYSfm0QNNUbVsJZmqVs1shrGEPK+UjrjNFecv8gChNEfCnowDyNlGIxwawnV0
+	SiBe58GhwYvuqOQw2UcpA7dV5RsiOTzQJh9Qru31B+sY5+5aw2Tz+J7yddc54ijsNeR2URGEbRXX+
+	MbznBlvqRTvAsG4Oy7GA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRIeS-0003JW-Dy; Sun, 03 Nov 2019 16:22:52 +0000
+	id 1iRJRX-00021A-CB; Sun, 03 Nov 2019 17:13:35 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRIeL-0003J6-2z
- for linux-arm-kernel@lists.infradead.org; Sun, 03 Nov 2019 16:22:46 +0000
-Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 08E2120848;
- Sun,  3 Nov 2019 16:22:43 +0000 (UTC)
+ id 1iRJRP-00020B-UI
+ for linux-arm-kernel@lists.infradead.org; Sun, 03 Nov 2019 17:13:29 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1F35120848;
+ Sun,  3 Nov 2019 17:13:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572798164;
- bh=MdoURyUZcQbm9ELJ4P+9FxCOSf3poCqyZ7a+DoWIQyE=;
+ s=default; t=1572801206;
+ bh=1f8uqX2M3g4e8ajbRWXxGgjt5VZyz4HsWLqzRg8UxC8=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=g/cUA6VvRX7z30gTnCo/+VC+PGcOH9r5T840xs199WPGBApWOGRy2Wm5LUaX4j0pY
- EoI5jgyoy363VH9KVlPR4UtMIYvtwz2tccFji240s4eGESkaS7oL7T8mNgz3hl/c98
- xgD8raEyuuEVMwpz5R+QWGG1CM7lg+36MzEpGLbI=
-Date: Sun, 3 Nov 2019 17:22:41 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Karl Palsson <karlp@tweak.net.au>
-Subject: Re: [PATCH 3/3] ARM: dts: sun8i: add FriendlyARM NanoPi Duo2-IoT Box
-Message-ID: <20191103162241.GE7001@gilmour>
-References: <20191101091050.iw3n4qiqyueoymif@hendrix>
- <kCnyFRBTNPaksjpFGz3Vnx92t6yIivNcqixk5m2h238c@mailpile>
+ b=diUW5bwnXwDv0EaVWoRkouwwU+DHIHaJ0WEJF3KaeoA40jZb5mtcybcBEzJOCdBup
+ 08VLIoBPIrKhOhvvLA+YH3NtAJJikRqR1xypdfnNjIQ5S2gs2Um8qD4wEo74nMWmpf
+ BXOMfC6kDROQaNqnaig5Y0TO4HDqClQhM3OfVjzk=
+Date: Sun, 3 Nov 2019 18:13:24 +0100
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Geert Uytterhoeven <geert+renesas@glider.be>
+Subject: Re: [PATCH v2 0/7] debugfs: Add and use debugfs_create_xul()
+Message-ID: <20191103171324.GA700462@kroah.com>
+References: <20191025094130.26033-1-geert+renesas@glider.be>
 MIME-Version: 1.0
-In-Reply-To: <kCnyFRBTNPaksjpFGz3Vnx92t6yIivNcqixk5m2h238c@mailpile>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+Content-Disposition: inline
+In-Reply-To: <20191025094130.26033-1-geert+renesas@glider.be>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191103_082245_153473_57EAD85E 
-X-CRM114-Status: GOOD (  18.36  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191103_091328_000328_7E4C9D0A 
+X-CRM114-Status: GOOD (  15.23  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -76,86 +73,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "wens@csie.org" <wens@csie.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============1101591066818113243=="
+Cc: linux-wireless@vger.kernel.org, Ulf Hansson <ulf.hansson@linaro.org>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Jonathan Corbet <corbet@lwn.net>, linux-mmc@vger.kernel.org,
+ "Rafael J . Wysocki" <rafael@kernel.org>, linux-doc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Jaehoon Chung <jh80.chung@samsung.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>, netdev@vger.kernel.org,
+ Johannes Berg <johannes@sipsolutions.net>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Fri, Oct 25, 2019 at 11:41:23AM +0200, Geert Uytterhoeven wrote:
+>         Hi all,
+> 
+> The existing debugfs_create_ulong() function supports objects of
+> type "unsigned long", which are 32-bit or 64-bit depending on the
+> platform, in decimal form.  To format objects in hexadecimal, various
+> debugfs_create_x*() functions exist, but all of them take fixed-size
+> types. 
+>   
+> To work around this, some drivers call one of debugfs_create_x{32,64}(),
+> depending on the size of unsigned long.
+> Other drivers just cast the value pointer to "u32 *" or "u64 *",
+> introducing portability bugs or data leaks in the process.
+>  
+> Hence this patch series adds a debugfs helper for "unsigned long"
+> objects in hexadecimal format, and converts drivers to make use of it.
+> It also contains two cleanups removing superfluous casts, which I added
+> to this series to avoid conflicts.
+>  
+> Changes compared to v1[1]:
+>   - Add kerneldoc,
+>   - Update Documentation/filesystems/debugfs.txt,
+>   - Add Acked-by.
+> 
+> Dependencies:
+>   - The first patch now depends on "Documentation: debugfs: Document
+>     debugfs helper for unsigned long values"[2], which Jon said he
+>     applied to his tree.
 
---===============1101591066818113243==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="u65IjBhB3TIa72Vp"
-Content-Disposition: inline
+I did not take patches 2 or 3 as I need acks from those subsystem
+maintainers to do so.
 
+But I did take all the others.
 
---u65IjBhB3TIa72Vp
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+thanks,
 
-On Fri, Nov 01, 2019 at 09:55:41AM -0000, Karl Palsson wrote:
->
-> Maxime Ripard <mripard@kernel.org> wrote:
-> > On Thu, Oct 31, 2019 at 11:12:16PM +0000, Karl Palsson wrote:
-> > > The IoT-Box is a dock for the NanoPi Duo2, adding two USB host ports, a
-> > > 10/100 ethernet port, a variety of pin headers for i2c and uarts, and a
-> > > quad band 2G GSM module, a SIM800C.
-> > >
-> > > Full documentation and schematics available from vendor:
-> > > http://wiki.friendlyarm.com/wiki/index.php/NanoPi_Duo2_IoT-Box
-> > >
-> > > Signed-off-by: Karl Palsson <karlp@tweak.net.au>
-> >
-> > It seems like it's something that can be connected /
-> > disconnected at will?
-> >
-> > If so, then it should be an overlay, not a full blown DTS.
->
-> Fine with me, I wasn't sure on the best procedure for things like
-> this. It's not something you plug / unplug at run time, you'd
-> tend to just always have this, or not. Is it best to just have
-> user space distributions handle selecting the overlay then? and
-> they maintain the overlay file?
-
-Another option would be to do it at the bootloader level, based on a
-discovery mechanism (eeproms storing data / the overlay itself, the
-presence of some devices on buses that you can probe (i2c, mmc, etc).
-
-> I'd considered overlays something for _per user_ customization,
-> but I'm perfectly happy if it it's intended to be used for per
-> product customization too if that's the right method.
-
-Overlays are for dynamic configuration. The user customization is one
-of its use case, but add-on boards are another (being used by the RPi
-and the Beaglebones), just like FPGA configuration for example.
-
-Maxime
-
---u65IjBhB3TIa72Vp
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXb7+0QAKCRDj7w1vZxhR
-xUOhAQDZpbpB1JhUwpEpa1m0lL+I/g1BtVN/bGFs5sVjL+uXpAD/eo1qcpSUyU3K
-al1o/BWKh2teIAwI9z/EMruIiD4CZgk=
-=8zLz
------END PGP SIGNATURE-----
-
---u65IjBhB3TIa72Vp--
-
-
---===============1101591066818113243==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1101591066818113243==--
-
