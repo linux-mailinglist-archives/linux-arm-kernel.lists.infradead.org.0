@@ -2,54 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EFA56ED3CE
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 Nov 2019 17:01:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 865BFED3D7
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 Nov 2019 17:22:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=o9GsbmoYQYa99/2vlCIQfgTHFa2tGST3ScPrE0PNIqQ=; b=fZSQy6/ZHHBlkeI4O4m6CnQux
-	LjjGiol0cBUn1+1VV0BMIzEUcCWV5EiJdharIf+bMbv4olc3gtVkLcovMp8zdnfvlmytlvpHq1CJF
-	8zbFeH3CDPzkvX0TOoV6C6YG+9HnqBCj2h3rYKMvgV8KVTIkOZYXZ9xVfs52bcf9BPNKshTHwsvLE
-	yMjk66lL96OCyB8qti1XRZIaA4vIQBAB8pIK7yFgoIHsrZK4TJXvR8rPLKJCyP3emysoko8wRP1DJ
-	l6vuJ1lEV/11s+qNzlJoRnCRL9V23wj9d0TWItKNMlHwcgKFn17zJLLBm+RFQuslRZZJW0Hh/+s+8
-	TsbPRiewQ==;
+	 bh=uQ+n+PjEHjVFslidkSO5LinAQUOlLuWJSkqBL1E6awE=; b=HoIBCdpjmPU7+MGyTHEKNXtMT
+	8oZgUh7Up8oPiXRXBNXtu5uh3FarMbRGN43Zsph+EoxeJpCCZ2GiYjZoFteWFLiBWg1SFRb1Dq6ID
+	ZNpErxkr08PYbanEJ7XmxkxbWQJYVq5XBmcb82HSC7h4ZS99ThOQGI8X0AVPxv7s+2eeANu8Ui6w1
+	/cqlCpQv+EqGMt7AZc7PLFCrsIJm1Vyl1vsGso4BeH5y636f98PF9RwF+bLKKVFLv+3zK/lxTmXKp
+	AxzQbZ3I3+ckw5b6rzjD+p2QLEgNdBAc/yL4few7n9kQ8GtIpqZfm9BGOYPlJR1ntRbr7SWHMcOBQ
+	OXZ/DCk+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRIJj-0005B8-Rm; Sun, 03 Nov 2019 16:01:27 +0000
+	id 1iRIeS-0003JW-Dy; Sun, 03 Nov 2019 16:22:52 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRIJZ-00059k-SE
- for linux-arm-kernel@lists.infradead.org; Sun, 03 Nov 2019 16:01:19 +0000
+ id 1iRIeL-0003J6-2z
+ for linux-arm-kernel@lists.infradead.org; Sun, 03 Nov 2019 16:22:46 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 04CCD2084D;
- Sun,  3 Nov 2019 16:01:16 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 08E2120848;
+ Sun,  3 Nov 2019 16:22:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572796877;
- bh=Lpq9fn2fii7gBSLXJ89Ao8eK1QO7fC9NIhZkf0eEtYA=;
+ s=default; t=1572798164;
+ bh=MdoURyUZcQbm9ELJ4P+9FxCOSf3poCqyZ7a+DoWIQyE=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=OCwDFQkWKusxtKXsxi91PdS4FMndv/PZ40OLVWxDDGqjae8h/Dw/eR2w/CFWnlCiF
- 05LMTf6JN+eJiF+Asn1yAmFM6COsnzFFyJfRcI32IyI//GopKIp2PAbknEArZTo53t
- 8EvQSINAYXMGp654yYfuaWc8jOv6b5LkCNJF2Nxs=
-Date: Sun, 3 Nov 2019 17:01:14 +0100
+ b=g/cUA6VvRX7z30gTnCo/+VC+PGcOH9r5T840xs199WPGBApWOGRy2Wm5LUaX4j0pY
+ EoI5jgyoy363VH9KVlPR4UtMIYvtwz2tccFji240s4eGESkaS7oL7T8mNgz3hl/c98
+ xgD8raEyuuEVMwpz5R+QWGG1CM7lg+36MzEpGLbI=
+Date: Sun, 3 Nov 2019 17:22:41 +0100
 From: Maxime Ripard <mripard@kernel.org>
-To: Torsten Duwe <duwe@lst.de>
-Subject: Re: [PATCH v4 6/7] dt-bindings: Add ANX6345 DP/eDP transmitter binding
-Message-ID: <20191103160114.GD7001@gilmour>
-References: <20191029153815.C631668C4E@verein.lst.de>
- <20191029153953.8EE9B68D04@verein.lst.de>
- <20191031125100.qprbdaaysg3tmhif@hendrix>
- <20191031145224.GA5973@lst.de>
+To: Karl Palsson <karlp@tweak.net.au>
+Subject: Re: [PATCH 3/3] ARM: dts: sun8i: add FriendlyARM NanoPi Duo2-IoT Box
+Message-ID: <20191103162241.GE7001@gilmour>
+References: <20191101091050.iw3n4qiqyueoymif@hendrix>
+ <kCnyFRBTNPaksjpFGz3Vnx92t6yIivNcqixk5m2h238c@mailpile>
 MIME-Version: 1.0
-In-Reply-To: <20191031145224.GA5973@lst.de>
+In-Reply-To: <kCnyFRBTNPaksjpFGz3Vnx92t6yIivNcqixk5m2h238c@mailpile>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191103_080117_952931_43F4085A 
-X-CRM114-Status: GOOD (  25.10  )
+X-CRM114-CacheID: sfid-20191103_082245_153473_57EAD85E 
+X-CRM114-Status: GOOD (  18.36  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,139 +76,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- David Airlie <airlied@linux.ie>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
- Sean Paul <seanpaul@chromium.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
-Content-Type: multipart/mixed; boundary="===============1154334342399695054=="
+Cc: "wens@csie.org" <wens@csie.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============1101591066818113243=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============1154334342399695054==
+--===============1101591066818113243==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="O3RTKUHj+75w1tg5"
+	protocol="application/pgp-signature"; boundary="u65IjBhB3TIa72Vp"
 Content-Disposition: inline
 
 
---O3RTKUHj+75w1tg5
+--u65IjBhB3TIa72Vp
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Thu, Oct 31, 2019 at 03:52:24PM +0100, Torsten Duwe wrote:
-> On Thu, Oct 31, 2019 at 01:51:00PM +0100, Maxime Ripard wrote:
-> > On Tue, Oct 29, 2019 at 01:16:57PM +0100, Torsten Duwe wrote:
-> > > +
-> > > +  ports:
-> > > +    anyOf:
-> > > +      - port@0:
-> > > +        description: Video port for LVTTL input
-> > > +      - port@1:
-> > > +        description: Video port for eDP output (panel or connector).
-> > > +                     May be omitted if EDID works reliably.
-> > > +    required:
-> > > +      - port@0
-> >
-> > Have you tried to validate those two ports in a DT?
+On Fri, Nov 01, 2019 at 09:55:41AM -0000, Karl Palsson wrote:
 >
-> Yes, it validates as expected, like I wrote. Various sources told me that
-> json-schema is not always straightforward so I assumed anyOf was OK.
+> Maxime Ripard <mripard@kernel.org> wrote:
+> > On Thu, Oct 31, 2019 at 11:12:16PM +0000, Karl Palsson wrote:
+> > > The IoT-Box is a dock for the NanoPi Duo2, adding two USB host ports, a
+> > > 10/100 ethernet port, a variety of pin headers for i2c and uarts, and a
+> > > quad band 2G GSM module, a SIM800C.
+> > >
+> > > Full documentation and schematics available from vendor:
+> > > http://wiki.friendlyarm.com/wiki/index.php/NanoPi_Duo2_IoT-Box
+> > >
+> > > Signed-off-by: Karl Palsson <karlp@tweak.net.au>
+> >
+> > It seems like it's something that can be connected /
+> > disconnected at will?
+> >
+> > If so, then it should be an overlay, not a full blown DTS.
 >
-> > I'm not quite sure what you wanted to express with that anyOf, but if
-> > it was something like port@0 is mandatory, and port@1 is optional, it
-> > should be something like this:
-> >
-> > properties:
-> >
-> >   ...
-> >
-> >   ports:
-> >     type: object
-> >
-> >     properties:
-> >       port@0:
-> >         type: object
-> >         description: |
-> > 	  Video port for LVTTL input
-> >
-> >       port@1:
-> >         type: object
-> >         description: |
-> > 	  Video port for eDP output (..)
-> >
-> >     required:
-> >       - port@0
-> >
-> > This way, you express that both port@0 and port@1 must by nodes, under
-> > a node called ports, and port@0 is mandatory.
->
-> That validates, too. Looks better, admittedly. I don't have a strong
-> opinion here. It's just that Rob wrote in
-> <CAL_JsqKAU3WG3L=KP8A8u4vW=q_BQWPN-m_c+ADOwTioJ2-cmg@mail.gmail.com>:
->
-> | For this case specifically, we do need to define a common graph
-> | schema, but haven't yet. You can assume we do and only really need to
-> | capture what Maxime said above.
-> (your points back then were port@N descriptions and neccessity for port@0)
->
-> Are you sure that "object" is specific enough?
+> Fine with me, I wasn't sure on the best procedure for things like
+> this. It's not something you plug / unplug at run time, you'd
+> tend to just always have this, or not. Is it best to just have
+> user space distributions handle selecting the overlay then? and
+> they maintain the overlay file?
 
-Possibly not, but at least it checks that there's indeed something
-called port@0 (and port@1), and that they are both nodes (and not
-properties).
+Another option would be to do it at the bootloader level, based on a
+discovery mechanism (eeproms storing data / the overlay itself, the
+presence of some devices on buses that you can probe (i2c, mmc, etc).
 
-We can probably refine this further, but this is good enough at the
-moment.
+> I'd considered overlays something for _per user_ customization,
+> but I'm perfectly happy if it it's intended to be used for per
+> product customization too if that's the right method.
 
-> > You should even push this a bit further by adding
-> > additionalProperties: false to prevent a DT from having undocumented
-> > properties and children for the main node and ports node.
->
-> You mean like
->
-> | jsonschema.exceptions.SchemaError: Additional properties are not allowed ('unevaluatedProperties' was unexpected)
-> [...]
-> | On schema:
-> |    {'$id': 'http://devicetree.org/schemas/watchdog/allwinner,sun4i-a10-wdt.yaml#',
-> [...]
-> |      'unevaluatedProperties': False}
->
-> ? ;-)
+Overlays are for dynamic configuration. The user customization is one
+of its use case, but add-on boards are another (being used by the RPi
+and the Beaglebones), just like FPGA configuration for example.
 
-That would be on the meta-schema, but yes, we want to trigger warnings
-on something that isn't described.
-
->
-> But yes, this patch series passes even with additionalProperties: false.
->
-> In which form would you like to receive the update?
-
-Please send a new version.
-
-Thanks!
 Maxime
 
---O3RTKUHj+75w1tg5
+--u65IjBhB3TIa72Vp
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXb75ygAKCRDj7w1vZxhR
-xQ7rAQCZLQcuukaEIuQQut4PC1tgBMKrdJ+kUMMrTujJsMh0KAD/XxEP4qvCHVOh
-pyNiY1VTEuJDPf//SnH0gq+kzuonjQ8=
-=cdL1
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXb7+0QAKCRDj7w1vZxhR
+xUOhAQDZpbpB1JhUwpEpa1m0lL+I/g1BtVN/bGFs5sVjL+uXpAD/eo1qcpSUyU3K
+al1o/BWKh2teIAwI9z/EMruIiD4CZgk=
+=8zLz
 -----END PGP SIGNATURE-----
 
---O3RTKUHj+75w1tg5--
+--u65IjBhB3TIa72Vp--
 
 
---===============1154334342399695054==
+--===============1101591066818113243==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -221,5 +157,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============1154334342399695054==--
+--===============1101591066818113243==--
 
