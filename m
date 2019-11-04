@@ -2,53 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B8BBEE2BA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 15:39:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8771FEE2E5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 15:55:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LH8xtb1bUjlLY5RrUr4P9KMkcFijUePV/WVO2FVcnRg=; b=odpO9t2nns/Opt
-	EXBuX0apQQ2ctj0h4r8Aq13qbN5X1f0FNW6bKm4FtvJh9QSU5kKFGJ4abuOTW6yLVrxApL2RUa/VW
-	Zfdp975u1emefAUjnjMcdd6FYqynYYhpfZDTitbcWn5DkMAsWuO40ul/Jksd5gb04nqNFBVRYcJRw
-	5lvuNdPJyWsQSiXEjYAlwbRl5F9DFwyfu1VPiq5PZkDWe8+c1PN1YZAbmO6BLm8MLWxB6r/0EmDZR
-	qD1RqYv+5NYWPugpzPeBj/+a3zoO7nTTGGE44BCWxs+izHMViheZvH+kLBISbwJLoO9/93ZXkCPhd
-	V+UzflqSlCrtsrKoCD0Q==;
+	List-Owner; bh=k8Ouk3j1bTsdbVbY5zTrqKH/WbbqJEWErFmcEAzVo6M=; b=SMRxZ144BuuI7V
+	WVDWjgihSFZYvAJtxFttajJ/0khYf+HSGAVXjyP7AU3PC/HCJw0Zq51vqZM2Y/vr1zJ61Q/xfORFn
+	cbQZ4/CDNL5/nt0gSS5Wb5nhHnhq04k+a72wrqoJbQZVYYTJvuvbvtMlkQiH/hJZOyuCiFcMx86ub
+	nFSZrHwRcPIk5+G2FNbLk16qI/mlrf46iFpGALUb8T6u1UBZDbk/JkRTc/bZfCb+R8tiw/cdNe5vS
+	Qnre65aVSK6tK1KJB7MKZKjdIUCrxpjGCBkao5cXs1L+3HVbGN+4WJ3AiMmppD9MK5R7a6xJFIOGl
+	wut92tmdOCLBm+Xme/SA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRdVr-0004nS-AY; Mon, 04 Nov 2019 14:39:23 +0000
+	id 1iRdlE-0002AO-AZ; Mon, 04 Nov 2019 14:55:16 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRdVl-0004mu-9i
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 14:39:18 +0000
-Received: from dragon (li1038-30.members.linode.com [45.33.96.30])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4BEF721D7D;
- Mon,  4 Nov 2019 14:39:10 +0000 (UTC)
+ id 1iRdkx-00027y-J4
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 14:55:01 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0EA54218BA;
+ Mon,  4 Nov 2019 14:54:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572878356;
- bh=rBD591jAd5nuzaGDk6Z/gE1VUXjG7vny3xKcPb3R5hQ=;
+ s=default; t=1572879299;
+ bh=6rRIRiMvEbXCG3QPuZKfZ9Jdv/4SGQLHarIzq2Kxy2I=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=zK/5Iy8EzzxsdwVFYIqQjFAqf3sny0M+yC08xIROTlZfFllRHCWvvN7lnEHp7oksa
- +BH0PLqkrNhRGd9XAsrdhe8OErtjUReXs3uKIh7M1vz+wSfwSeM5eCkB16iH2O8jZE
- vcRCrd6vx1ykwc/p1gsdG4Lco/WVnG/zpMN0wIdo=
-Date: Mon, 4 Nov 2019 22:38:48 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Schrempf Frieder <frieder.schrempf@kontron.de>
-Subject: Re: [PATCH v4 0/9] Add support for more Kontron i.MX6UL/ULL SoMs and
- boards
-Message-ID: <20191104143844.GZ24620@dragon>
-References: <20191104115352.8728-1-frieder.schrempf@kontron.de>
+ b=YfTYW7/PukRlCg+kCvWI+4A3e4Tqr0ygVO2ugYjPiKrm3Ml1KSfRj28Z2beWYCYJD
+ oml1Vx3WNBAsqAf3vwbPwsK04qXR6ff7gRFCDCfM4MgvTlF/WuA1SFCi+8E8bOYKhg
+ i+bFV3z6IT1aI8Vvvw6w56wnXjde35ZHNdVeziQ0=
+Date: Mon, 4 Nov 2019 14:54:54 +0000
+From: Will Deacon <will@kernel.org>
+To: Joakim Zhang <qiangqing.zhang@nxp.com>
+Subject: Re: [PATCH V3 3/4] perf/imx_ddr: Add enhanced AXI ID filter support
+Message-ID: <20191104145454.GA24909@willie-the-truck>
+References: <20191101083317.29510-1-qiangqing.zhang@nxp.com>
+ <20191101083317.29510-3-qiangqing.zhang@nxp.com>
+ <20191101151657.GB3287@willie-the-truck>
+ <DB7PR04MB4618F9CF365DB9EF35DE40EFE67F0@DB7PR04MB4618.eurprd04.prod.outlook.com>
+ <20191104123226.GA24108@willie-the-truck>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191104115352.8728-1-frieder.schrempf@kontron.de>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+In-Reply-To: <20191104123226.GA24108@willie-the-truck>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_063917_359419_0DCE7F2E 
-X-CRM114-Status: GOOD (  11.21  )
+X-CRM114-CacheID: sfid-20191104_065459_655451_C3D94EBB 
+X-CRM114-Status: GOOD (  17.67  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,39 +80,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>,
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>, Frank Li <frank.li@nxp.com>,
+ "robin.murphy@arm.com" <robin.murphy@arm.com>,
+ dl-linux-imx <linux-imx@nxp.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 04, 2019 at 11:53:56AM +0000, Schrempf Frieder wrote:
-> Frieder Schrempf (9):
->   ARM: dts: imx6ul-kontron-n6310: Move common SoM nodes to a separate
->     file
->   ARM: dts: Add support for two more Kontron SoMs N6311 and N6411
->   ARM: dts: imx6ul-kontron-n6310-s: Disable the snvs-poweroff driver
->   ARM: dts: imx6ul-kontron-n6310-s: Move common nodes to a separate file
->   ARM: dts: Add support for two more Kontron evalkit boards 'N6311 S'
->     and 'N6411 S'
->   ARM: dts: imx6ul-kontron-n6x1x: Add 'chosen' node with 'stdout-path'
->   ARM: dts: imx6ul-kontron-n6x1x-s: Add vbus-supply and overcurrent
->     polarity to usb nodes
->   ARM: dts: imx6ul-kontron-n6x1x-s: Remove an obsolete comment and fix
->     indentation
->   dt-bindings: arm: fsl: Add more Kontron i.MX6UL/ULL compatibles
-
-Applied all, thanks.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gTW9uLCBOb3YgMDQsIDIwMTkgYXQgMTI6MzI6MjZQTSArMDAwMCwgV2lsbCBEZWFjb24gd3Jv
+dGU6Cj4gT24gTW9uLCBOb3YgMDQsIDIwMTkgYXQgMDE6MjE6NTFBTSArMDAwMCwgSm9ha2ltIFpo
+YW5nIHdyb3RlOgo+ID4gCj4gPiA+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tCj4gPiA+IEZy
+b206IFdpbGwgRGVhY29uIDx3aWxsQGtlcm5lbC5vcmc+Cj4gPiA+IFNlbnQ6IDIwMTnlubQxMeac
+iDHml6UgMjM6MTcKPiA+ID4gVG86IEpvYWtpbSBaaGFuZyA8cWlhbmdxaW5nLnpoYW5nQG54cC5j
+b20+Cj4gPiA+IENjOiBtYXJrLnJ1dGxhbmRAYXJtLmNvbTsgcm9iaW4ubXVycGh5QGFybS5jb207
+IGRsLWxpbnV4LWlteAo+ID4gPiA8bGludXgtaW14QG54cC5jb20+OyBGcmFuayBMaSA8ZnJhbmsu
+bGlAbnhwLmNvbT47Cj4gPiA+IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwo+
+ID4gPiBTdWJqZWN0OiBSZTogW1BBVENIIFYzIDMvNF0gcGVyZi9pbXhfZGRyOiBBZGQgZW5oYW5j
+ZWQgQVhJIElEIGZpbHRlciBzdXBwb3J0Cj4gPiA+IAo+ID4gPiBPbiBGcmksIE5vdiAwMSwgMjAx
+OSBhdCAwODozNjoxNkFNICswMDAwLCBKb2FraW0gWmhhbmcgd3JvdGU6Cj4gPiA+ID4gV2l0aCBE
+RFJfQ0FQX0FYSV9JRF9GSUxURVIgcXVpcmssIGluZGljYXRpbmcgSFcgc3VwcG9ydHMgQVhJIElE
+IGZpbHRlcgo+ID4gPiA+IHdoaWNoIG9ubHkgY2FuIGdldCBidXJzdHMgZnJvbSBERFIgdHJhbnNh
+Y3Rpb24sIGkuZS4gRERSIHJlYWQvd3JpdGUKPiA+ID4gPiByZXF1ZXN0cy4KPiA+ID4gPgo+ID4g
+PiA+IFRoaXMgcGF0Y2ggYWRkIEREUl9DQVBfQVhJX0lEX0VOSEFOQ0VEX0ZJTFRFUiBxdWlyaywg
+aW5kaWNhdGluZyBIVwo+ID4gPiA+IHN1cHBvcnRzIEFYSSBJRCBmaWx0ZXIgd2hpY2ggY2FuIGdl
+dCBidXJzdHMgYW5kIGJ5dGVzIGZyb20gRERSCj4gPiA+ID4gdHJhbnNhY3Rpb24gYXQgdGhlIHNh
+bWUgdGltZS4gV2UgaG9wZSBQTVUgYWx3YXlzIHJldHVybiBieXRlcyBpbiB0aGUKPiA+ID4gPiBk
+cml2ZXIgZHVlIHRvIGl0IGlzIG1vcmUgbWVhbmluZ2Z1bCBmb3IgdXNlcnMuCj4gPiA+IAo+ID4g
+PiBUaGFua3MuIEkndmUgcXVldWVkIHRoZSBzZXJpZXMgbG9jYWxseSwgYnV0IHRoZSBwYXJ0IEkn
+bSBzdGlsbCB3b25kZXJpbmcgYWJvdXQgaXMKPiA+ID4gaG93IHdlIGFkdmVydGlzZSB0aGUgZW5o
+YW5jZWQgZmlsdGVyLgo+ID4gPiAKPiA+ID4gRm9yIGV4YW1wbGUsIGhvdyBkb2VzIHVzZXJzcGFj
+ZSBrbm93IHdoZXRoZXIgb3Igbm90IGl0IHdpbGwgZ2V0IGJ1cnN0cyBvcgo+ID4gPiBieXRlcyBi
+YWNrIHdoZW4gc3BlY2lmeWluZyBhbiBBWEkgZmlsdGVyPyBTaG91bGQgd2UgY3JlYXRlIHNvbWV0
+aGluZyBsaWtlCj4gPiA+IGNhcHMvZW5oYW5jZWRfZmlsdGVyIHdoaWNoIHJlYWRzIGFzIDAvMSBk
+ZXBlbmRpbmcgb24gd2hldGhlciBvciBub3QgdGhlIHF1aXJrCj4gPiA+IGlzIHNldD8gWW91IGNh
+biBsb29rIGF0IGludGVsLXB0LmMgYW5kIGFybV9zcGVfcG11LmMgZm9yIGV4YW1wbGVzIG9mIHRo
+aXMgc29ydAo+ID4gPiBvZiB0aGluZy4KPiA+ID4gCj4gPiA+IElmIHlvdSBhZ3JlZSwgcGxlYXNl
+IHNlbmQgYSBwYXRjaCBvbiB0b3AgdG8gaW1wbGVtZW50IHRoaXMuCj4gPiAKPiA+IFRoYW5rcyBX
+aWxsLCBhZ3JlZSwgSSB3aWxsIGltcGxlbWVudCB0aGlzIGxhdGVyLgo+IAo+IEdpdmVuIHRoYXQg
+aXQncyBBQkksIHBsZWFzZSBjYW4geW91IGRvIGl0IHRoaXMgd2VlayBzbyB0aGF0IHdlIGhhdmUK
+PiBzb21ldGhpbmcgY29uc2lzdGVudCBmb3IgNS41PwoKU29ycnksIEkgbm90aWNlIHlvdSd2ZSBh
+bHJlYWR5IHNlbnQgdGhlbS4gVGhhbmtzIQoKV2lsbAoKX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
+dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
+b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
