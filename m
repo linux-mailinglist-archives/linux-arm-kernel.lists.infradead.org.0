@@ -2,81 +2,145 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D4F3EE421
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 16:46:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E99A3EE426
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 16:47:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xE2omh0pyVonfTppHH194PGi2WBB999bOD9kMsNX62c=; b=gPJBYV+PoFzA4d
-	n34w9Rd0e0Vzeeht8mcm29+nsApZ+FDgkb3J4seB7nQbL3qm1VzEHfrauxhpGWgNq88STEuhJL2o2
-	QfieLtsbDUOuHXWcyQIr7iGifxtX+4mJo2rn3wlIYX8IqB2IBjAnYb+jHK9n/YuIdT5T2EbAj4m0V
-	n92k8jD/6wV80ez1qQ4FQywuVVyChWdjV9noHyKjmLL1Wb6Zjh8kJOTkasAV1sR+zJ0cE1QP9DN0r
-	jSAFIzA5xOFa47haHADqQIl9CYVA4IVYiKq65M/jGBwDBCqLnOB01yTQoeIiHFHjOxyEqqet7lhrq
-	UoaVpFBoyaD0PiDr8yuw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hGmAjg68rtkQpQLUaJVXdiN6UoTwXD4DUg21bnKG6Sw=; b=ERGs+vj5UZWMg8
+	FedL/9TcSQ3er4K8OypKxjzqN6VFw1XtpBtedcqUKTQFywDMGdMH+P73ZEX2cYWGU22cPKI9F2TbI
+	l7eOFMGyeDup5ZIIjz1kLxPrq8AwgTePQRixTQyDoymjNSpBUrk6D1VSmg0/vMWKe7zUZo5KYd7Cw
+	nBOAsfDTIt1YP2dimZ1xj5eJI3q0InVLKVI6idzVa3MzSfKGCP9TNEJn/Sx89Qu0B9ZxIokaixtJC
+	hHiPeuEhw4sRzX9FGLKJr/+a2cceJwHld5gMfHZzWKlXudWyssHeGdxROQz1wUUm8hfNWdK78MpNO
+	Am7+eDMiB3WBP7rJlR4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iReYM-0002vH-4Q; Mon, 04 Nov 2019 15:46:02 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1iReZG-0003Dp-73; Mon, 04 Nov 2019 15:46:58 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iReYG-0002ut-0s
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 15:45:57 +0000
-Received: by mail-lf1-x142.google.com with SMTP id v8so12568682lfa.12
+ id 1iReZ6-0003B2-Rz
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 15:46:50 +0000
+Received: by mail-wr1-x442.google.com with SMTP id w18so17677366wrt.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 Nov 2019 07:45:55 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=DwOQqfkML6mZVQQJ0E1pEMWKtqr2r31eZ85PaIGMmgU=;
- b=IQqhJBlgWadnxdyu6cfIUzn+zx293WrU0J+vvVeex9J89EKwEta3C+qpkGchecJNst
- 94ZcUnB59g0NBqIFhuspeGj+nDwA5WvzUg44Idu5OAztaNmUdRQR2UAAwYBCHjgOjYxZ
- 3jip6PFRtj1srZaUJ0ller1NjpZwW6IXAyS8f4/TKPJo4R0+MzH7pVU6m5AefC0T853K
- BWYv7Qo+U2WWHKmjH+VFGTtcLgtu42ZVpYOkG5bhQkMx82LEjUVeElNVi02LiLcTSqIu
- +JFf18NG48PeCeIH3j0oao+twWgoUcO+mQzVHiGK28OzkMxw/Aihuyx8xgOlItbFJggv
- aHMg==
+ Mon, 04 Nov 2019 07:46:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:openpgp:autocrypt:organization
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=GcYuPs1cNrrP4kTbD7o/yf87/Vd3ph8WcfwcPZc9pRc=;
+ b=Rg9NHtHURZKPJxkIfhuDYWOC0aC+Y72USxYEw0qVX/H/8jtKHh9JUbWAzLLXimFsSm
+ VYAYvbZRVM60FIo0tzSKz/a9WS0gDqF4A7LnGh9QTQUUv8Xstk5bbYomRuj8lgkTmiDZ
+ nt3bkJIXDfAGR+rLQeqBo0dmKhagP7CdYVmDlI2N3Ner4CfiBzM8APtm7J8vHrBfDoxu
+ ZiN1L4VddnE+CBUxIvRjAMDMwQqrmofRSiX3Gjd0JHlyfzkiK5FfGh6LomAMIp2/VI33
+ 5m7vappwWPuIAORc94EhNdbSUN50bljunqNbTyJREUx39Fq15DLzLtfLeebOyh7zPK1E
+ vTQA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=DwOQqfkML6mZVQQJ0E1pEMWKtqr2r31eZ85PaIGMmgU=;
- b=gr0N+LI/fE/oZZPa9YjA0WmW0d9sFHLihap/XZSAKdNt4WMtOpo6MK2IPpknjxJ54r
- rMe5s3ZQ/HymJe10hbPEfdo/JFrRqYVPpDG5wQqEK3/aexSA2kbSUueAB0zyXjjcfVgK
- 0nWo8WNW6qta19pQUNN0TNvjXGYogEYqPWC+fQPKFZ5z+y5Ud1k87rFveoAa5kWjB1LJ
- 6ItA1rc0SoQU7BO+xb6fDcvlgUn2Er9TKBH7LmDCymWFCzciICaaR+KLwXRfS9KlrV2G
- dMkKLXncTrsAJNgJ5D4DwTyrYCHMck1nYr6wF/MN9GuP12Gm9Fz0EOtjWpvlUO7h5Fed
- L99A==
-X-Gm-Message-State: APjAAAWJr9SaWpy51WIoOrX72WzxSLflu7Euze1pu88rMlKsePO77OxN
- PUllfQEy56JbzYQyLmoSXzvrArtSiiSKs1y9okxRouwyq74=
-X-Google-Smtp-Source: APXvYqwttKRdVsyVJcuL188wpW/OsgZ62RtyOb5/f6UDc4Kan+iShKlu2eMEBGHO+HNXoRn8M2t5FVfJxN4hDx/+sU0=
-X-Received: by 2002:a19:651b:: with SMTP id z27mr17005776lfb.117.1572882354242; 
- Mon, 04 Nov 2019 07:45:54 -0800 (PST)
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :organization:message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=GcYuPs1cNrrP4kTbD7o/yf87/Vd3ph8WcfwcPZc9pRc=;
+ b=HfWQhtCJrJQO9Vdj7y75GWgtQvxcuVQy5cyONRIEOWBPL1rTZRasGxUr2nZNs9JU5F
+ IZ8Pg/t/Tn6wDUW0zCXuQDgy13KHJSdmslcmTVVk1vDsHpu+x90bjl+Z3sYlbUH8Wina
+ aDfWU+KqQ337sN5sumex/pCEh+SyIzsg1s8NMBUp/5RuJI9eGXJXAgO3yPp3wfNO8qoM
+ WMCrh7no7ZxYzLSGTRkX0OyWpTKFsM8wKjr7P+5on0C6CIQ8zs7gV8BRRv+MJSEkAtt9
+ TSZJw4gv6RhyPPFXfTNZCmjzTT7VCUZuyuOGrGGuA43IpUXjP/CLj5LT2V/3XbxJBFNe
+ jOQQ==
+X-Gm-Message-State: APjAAAWQUV1crZzCuRrKdTjLqFqwdJQS3P7TEZaRrTvm656+IHqDRIbd
+ kcdrgWooaa4VtxCOF8Il8341ew==
+X-Google-Smtp-Source: APXvYqxUQiqp7+jF6njQK2or7Uil2dOr133Khama4oVWlQf4wrnorykSfR1lTfV+gc2T7HfRX/v5zg==
+X-Received: by 2002:adf:e8cf:: with SMTP id k15mr12603822wrn.256.1572882405948; 
+ Mon, 04 Nov 2019 07:46:45 -0800 (PST)
+Received: from [10.1.2.12] (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr.
+ [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id u21sm21354436wmu.27.2019.11.04.07.46.45
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 04 Nov 2019 07:46:45 -0800 (PST)
+Subject: Re: [PATCH 1/4] drm: bridge: dw_mipi_dsi: access registers via a
+ regmap
+To: Adrian Ratiu <adrian.ratiu@collabora.com>,
+ linux-arm-kernel@lists.infradead.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-rockchip@lists.infradead.org
+References: <20191031142633.12460-1-adrian.ratiu@collabora.com>
+ <20191031142633.12460-2-adrian.ratiu@collabora.com>
+ <974be8e9-fcb4-4457-8831-40b2fa834ae2@baylibre.com>
+ <87v9rz97bn.fsf@collabora.com>
+From: Neil Armstrong <narmstrong@baylibre.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
+ 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
+ ZaTUOEkgIor5losDrePdPgE=
+Organization: Baylibre
+Message-ID: <3b3bbf68-a19e-77ea-7e7c-770f75a81a21@baylibre.com>
+Date: Mon, 4 Nov 2019 16:46:44 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <20191018154052.1276506-1-arnd@arndb.de>
- <20191018154201.1276638-15-arnd@arndb.de>
-In-Reply-To: <20191018154201.1276638-15-arnd@arndb.de>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 4 Nov 2019 16:45:41 +0100
-Message-ID: <CACRpkdbb9xy7EFGZ1f3DumM46UDZ3wzQ8Ubc9rz4MGNo84E6Jw@mail.gmail.com>
-Subject: Re: [PATCH 15/46] ARM: pxa: maybe fix gpio lookup tables
-To: Arnd Bergmann <arnd@arndb.de>
+In-Reply-To: <87v9rz97bn.fsf@collabora.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_074556_068767_34F2C96C 
-X-CRM114-Status: GOOD (  11.19  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191104_074648_908181_362685BB 
+X-CRM114-Status: GOOD (  14.92  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -91,34 +155,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Robert Jarzmik <robert.jarzmik@free.fr>,
- Haojian Zhuang <haojian.zhuang@gmail.com>, Daniel Mack <daniel@zonque.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Cc: kernel@collabora.com, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org,
+ Boris Brezillon <boris.brezillon@collabora.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 18, 2019 at 5:42 PM Arnd Bergmann <arnd@arndb.de> wrote:
+Hi Adrian,
 
-> From inspection I found a couple of GPIO lookups that are
-> listed with device "gpio-pxa", but actually have a number
-> from a different gpio controller.
->
-> Try to rectify that here, with a guess of what the actual
-> device name is.
->
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+On 04/11/2019 13:03, Adrian Ratiu wrote:
+> On Mon, 04 Nov 2019, Neil Armstrong <narmstrong@baylibre.com> wrote:
+>> On 31/10/2019 15:26, Adrian Ratiu wrote:
+>>
+>> OK for the dw-mipi-dsi changes, but why should the dw_mipi_dsi-stm be changed aswell ?
+>> AFAIK these are independent.
+> 
+> I don't understand how they are independent. Isn't the stm driver also using the same dw-mipi-dsi bridge as rockchip and now imx since it was first added in commit
+> c1c026dbc183 ("drm/stm: Add STM32 DSI controller driver") ?
+> 
+> I don't have the hardware to test the stm driver on a live boot, but compilation certainly fails if I don't modify it :)
 
-OOps my mistakes:
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+Ignore my comment, this patch is fine, please keep:
+Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
 
-I suppose this tells us a bit about how much these platforms
-are getting tested in real life though :/
+when resending.
 
-Yours,
-Linus Walleij
+Neil
+
+> 
+>>
+>> Neil
+
 
 _______________________________________________
 linux-arm-kernel mailing list
