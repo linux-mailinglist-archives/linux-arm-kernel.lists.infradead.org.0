@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 215D3EE82B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 20:20:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C0553EE837
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 20:21:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DGHucamTh6rAkWAGP/UJz3B8uQYYRiSa0GNc6jPLCuM=; b=BRYXrZYZU9ASg8
-	D0ABOrclWy526rM6NLFQ0FjYLBFI8bou2dw51SjvJbDQ4luNmc584TQ8nSMWYpBa4azozjur2iWrW
-	2BC5Xxn/e86WL4+iKrVTKnxSYcgQz7NEPR3KaSRr4TuZGJuhvJI6zv3hH1r958o4oV50LIlJ4TAkD
-	x0aWHRaMV3OwkoYi06y2dPSoLJyqyoanKRLPXiuXy57aw87Ox4f8daUImOoXfoDGRGJ1Sw+r5hwe2
-	ACepTZQ52AtuwAhCM08PYYbLXOEgfkLt8neHXJtIkT7JNxTTR1B+GW5E7o4RQWeWrIycNReDMXLXP
-	G3jPkbLV7bjFav28+otg==;
+	List-Owner; bh=Lxt0HOaLti/qoVN7Y5YcVkBNC2RqQp7t8PVgxsQOXAw=; b=j8a1Wzfg2s34sP
+	8uWj9Y2MWOuX4rTFsjx5xo0vXwwG62/dcqaRVN/Bs+eGMDHAvJwr6kYYOLF4sxSltKXPAYWIftzu/
+	AWOa1k4z2tOhJX2iOrDMT9lh06onKNPYOSiUuRL6TiFbPE8amAwgI4X69xyr2OLcAQqkLANVp7iaI
+	TduCcBFSerWyupFg6FFafjyYII84aI5rElkXcjiRKbaDrp7u5pHAzEE2BZo/FzM/7kxVxlp/wEG9r
+	AJbMDguJTlH3s60CUSXaTel4Xhlo+Rww65d60WrztyGl9iAtsG7BBOr4spkJX0GK7FUHIRIdsQbRD
+	Zxay90UttoJfepW9UDSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRhtp-00069v-4n; Mon, 04 Nov 2019 19:20:25 +0000
+	id 1iRhuX-0006Rl-IS; Mon, 04 Nov 2019 19:21:09 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRhti-00069R-UV
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 19:20:20 +0000
+ id 1iRhuQ-0006RM-P2
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 19:21:04 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7C1FE2084D;
- Mon,  4 Nov 2019 19:20:17 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 95E1120869;
+ Mon,  4 Nov 2019 19:21:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572895218;
- bh=cDz9gfK8MWilHlMzVfKaiaO3yX6AZlcXNifxBXP/KPQ=;
+ s=default; t=1572895262;
+ bh=0pyQ8Sc7FGWhaT61rQFe+TgPhbVjyMRw3yVAjAFRHLg=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=mhE/SkjnYFG/Lopp8nsY6/eoCtWw7QPgBqtTjOZnv3vl5GZ96mrg5vhmSoQGXyB6S
- eq1XJ5bTDlbcsckkim34gvAzLzDRisKi39u9eLEORy4KjaineI029mNNSkesgmPuD2
- MoXRNwDLEQ48qQo3a3nJMZmX5UQdFSg3OuVSTd8c=
-Date: Mon, 4 Nov 2019 19:20:11 +0000
+ b=azk+ixxdkGfyQsjm7JGI0AccOCitFiYsmJKUFe10dmGKJRKXJFZ4V7WhM8E1AY0S+
+ SaZJJ4TFvolsYecyc/V67Wh/W3EFgX725W3Hs84b73KN7QjEsJYtwxkv3IzgV4IipR
+ H10c4ggXFXuyD/KZtp1hNphP0Wqa6eKHgPf9wKXQ=
+Date: Mon, 4 Nov 2019 19:20:58 +0000
 From: Will Deacon <will@kernel.org>
 To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH v2 06/10] iommu/io-pgtable-arm: Simplify level indexing
-Message-ID: <20191104192010.GJ24909@willie-the-truck>
+Subject: Re: [PATCH v2 07/10] iommu/io-pgtable-arm: Rationalise MAIR handling
+Message-ID: <20191104192058.GK24909@willie-the-truck>
 References: <cover.1572024119.git.robin.murphy@arm.com>
- <698173b487383735e470a28e5cca4f9db22703de.1572024120.git.robin.murphy@arm.com>
- <20191104181722.GF24909@willie-the-truck>
- <f39248b0-b70e-4138-3eb9-81ce2cfbee4b@arm.com>
+ <c6bee9e6de5e7f4aa2293ee5385ffa2dd95600d3.1572024120.git.robin.murphy@arm.com>
+ <20191104182029.GG24909@willie-the-truck>
+ <d7d7513d-9e54-6ae8-168a-2460a306a027@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <f39248b0-b70e-4138-3eb9-81ce2cfbee4b@arm.com>
+In-Reply-To: <d7d7513d-9e54-6ae8-168a-2460a306a027@arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_112019_024236_ADD6DB39 
-X-CRM114-Status: GOOD (  23.75  )
+X-CRM114-CacheID: sfid-20191104_112102_834233_D024B7E4 
+X-CRM114-Status: GOOD (  20.92  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,75 +86,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 04, 2019 at 06:36:51PM +0000, Robin Murphy wrote:
-> On 04/11/2019 18:17, Will Deacon wrote:
-> > On Fri, Oct 25, 2019 at 07:08:35PM +0100, Robin Murphy wrote:
-> > > The nature of the LPAE format means that data->pg_shift is always
-> > > redundant with data->bits_per_level, since they represent the size of a
-> > > page and the number of PTEs per page respectively, and the size of a PTE
-> > > is constant. Thus it works out more efficient to only store the latter,
-> > > and derive the former via a trivial addition where necessary.
+On Mon, Nov 04, 2019 at 06:43:06PM +0000, Robin Murphy wrote:
+> On 04/11/2019 18:20, Will Deacon wrote:
+> > On Fri, Oct 25, 2019 at 07:08:36PM +0100, Robin Murphy wrote:
+> > > Between VMSAv8-64 and the various 32-bit formats, there is either one
+> > > 64-bit MAIR or a pair of 32-bit MAIR0/MAIR1 or NMRR/PMRR registers.
+> > > As such, keeping two 64-bit values in io_pgtable_cfg has always been
+> > > overkill.
 > > > 
 > > > Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 > > > ---
-> > >   drivers/iommu/io-pgtable-arm.c | 29 +++++++++++++----------------
-> > >   1 file changed, 13 insertions(+), 16 deletions(-)
+> > >   drivers/iommu/arm-smmu-v3.c    | 2 +-
+> > >   drivers/iommu/arm-smmu.c       | 4 ++--
+> > >   drivers/iommu/io-pgtable-arm.c | 3 +--
+> > >   drivers/iommu/ipmmu-vmsa.c     | 2 +-
+> > >   drivers/iommu/qcom_iommu.c     | 4 ++--
+> > >   include/linux/io-pgtable.h     | 2 +-
+> > >   6 files changed, 8 insertions(+), 9 deletions(-)
 > > > 
-> > > diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
-> > > index 4b1483eb0ccf..15b4927ce36b 100644
-> > > --- a/drivers/iommu/io-pgtable-arm.c
-> > > +++ b/drivers/iommu/io-pgtable-arm.c
-> > > @@ -36,10 +36,11 @@
-> > >    * in a virtual address mapped by the pagetable in d.
-> > >    */
-> > >   #define ARM_LPAE_LVL_SHIFT(l,d)						\
-> > > -	(((ARM_LPAE_MAX_LEVELS - 1 - (l)) * (d)->bits_per_level) +	\
-> > > -	(d)->pg_shift)
-> > > +	(((ARM_LPAE_MAX_LEVELS - (l)) * (d)->bits_per_level) +		\
-> > > +	ilog2(sizeof(arm_lpae_iopte)))
-> > > -#define ARM_LPAE_GRANULE(d)		(1UL << (d)->pg_shift)
-> > > +#define ARM_LPAE_GRANULE(d)						\
-> > > +	(sizeof(arm_lpae_iopte) << (d)->bits_per_level)
-> > >   #define ARM_LPAE_PGD_SIZE(d)						\
-> > >   	(sizeof(arm_lpae_iopte) << (d)->pgd_bits)
-> > > @@ -55,9 +56,7 @@
-> > >   	 ((1 << ((d)->bits_per_level + ARM_LPAE_PGD_IDX(l,d))) - 1))
-> > >   /* Calculate the block/page mapping size at level l for pagetable in d. */
-> > > -#define ARM_LPAE_BLOCK_SIZE(l,d)					\
-> > > -	(1ULL << (ilog2(sizeof(arm_lpae_iopte)) +			\
-> > > -		((ARM_LPAE_MAX_LEVELS - (l)) * (d)->bits_per_level)))
-> > > +#define ARM_LPAE_BLOCK_SIZE(l,d)	(1ULL << ARM_LPAE_LVL_SHIFT(l,d))
-> > >   /* Page table bits */
-> > >   #define ARM_LPAE_PTE_TYPE_SHIFT		0
-> > > @@ -175,8 +174,7 @@ struct arm_lpae_io_pgtable {
-> > >   	int			pgd_bits;
-> > >   	int			start_level;
-> > > -	unsigned long		pg_shift;
-> > > -	unsigned long		bits_per_level;
-> > > +	int			bits_per_level;
-> > >   	void			*pgd;
-> > >   };
-> > > @@ -206,7 +204,7 @@ static phys_addr_t iopte_to_paddr(arm_lpae_iopte pte,
-> > >   {
-> > >   	u64 paddr = pte & ARM_LPAE_PTE_ADDR_MASK;
-> > > -	if (data->pg_shift < 16)
-> > > +	if (data->bits_per_level < 13) /* i.e. 64K granule */
+> > > diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+> > > index 8da93e730d6f..3f20e548f1ec 100644
+> > > --- a/drivers/iommu/arm-smmu-v3.c
+> > > +++ b/drivers/iommu/arm-smmu-v3.c
+> > > @@ -2172,7 +2172,7 @@ static int arm_smmu_domain_finalise_s1(struct arm_smmu_domain *smmu_domain,
+> > >   	cfg->cd.asid	= (u16)asid;
+> > >   	cfg->cd.ttbr	= pgtbl_cfg->arm_lpae_s1_cfg.ttbr[0];
+> > >   	cfg->cd.tcr	= pgtbl_cfg->arm_lpae_s1_cfg.tcr;
+> > > -	cfg->cd.mair	= pgtbl_cfg->arm_lpae_s1_cfg.mair[0];
+> > > +	cfg->cd.mair	= pgtbl_cfg->arm_lpae_s1_cfg.mair;
+> > >   	return 0;
+> > >   out_free_asid:
+> > > diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+> > > index 080af0326816..2bc3e93b11e6 100644
+> > > --- a/drivers/iommu/arm-smmu.c
+> > > +++ b/drivers/iommu/arm-smmu.c
+> > > @@ -552,8 +552,8 @@ static void arm_smmu_init_context_bank(struct arm_smmu_domain *smmu_domain,
+> > >   			cb->mair[0] = pgtbl_cfg->arm_v7s_cfg.prrr;
+> > >   			cb->mair[1] = pgtbl_cfg->arm_v7s_cfg.nmrr;
+> > >   		} else {
+> > > -			cb->mair[0] = pgtbl_cfg->arm_lpae_s1_cfg.mair[0];
+> > > -			cb->mair[1] = pgtbl_cfg->arm_lpae_s1_cfg.mair[1];
+> > > +			cb->mair[0] = pgtbl_cfg->arm_lpae_s1_cfg.mair;
+> > > +			cb->mair[1] = pgtbl_cfg->arm_lpae_s1_cfg.mair >> 32;
 > > 
-> > nit, but:
-> > 
-> > 	if (ARM_LPAE_GRANULE(data) < SZ_64K)
-> > 
-> > might be clearer and avoid the need for a comment?
+> > Does this work correctly for big-endian?
 > 
-> Unfortunately GCC doesn't treat the two as directly equivalent (presumably
-> due to boundary conditions) so will emit the additional faff to actually
-> compute and compare the intermediate value every time, rather than just
-> trivially testing the shift. I figured the minor I$/register pressure win
-> was worth the small price of a comment.
+> I don't see why it wouldn't - cfg.mair is read and written as a u64, so this
+> should always return its most significant word regardless of the storage
+> format. We're not doing anything dodgy like trying to type-pun the u64
+> directly into the u32[2].
 
-Bet ya can't measure the difference ;)
-
-I'd prefer the readable version in the absence of numbers.
+Urgh, I need to convince myself about this then. Off to draw those silly
+ABCD DCBA diagrams on some paper.
 
 Will
 
