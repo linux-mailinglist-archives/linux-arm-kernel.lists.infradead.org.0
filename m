@@ -2,65 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99624EE907
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 20:57:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11E6EEE912
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 20:59:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=52zezjwDeE9mfEUoq8S8hGzASF2qUDvhSZ1Yyr9MZlA=; b=Cc0rr2+nTvrGGs
-	TJJNJVxtA8oJMdoHSnuJustLLsK1LNEWQB8Q+XAG9ryBjJ5BxNNV2hdf3Lzb5KPTuhxb+OrVOSqTE
-	wsxWVGrp5IQPhc2HULovUdBlvvfKsgF4aHHFC5ncoTY7TcKKkX0miEoGkTTjKgAOh4Gg29m82QbkA
-	QTntDsTJaIXxiioLooCS8T4CuU9tVWPDDfoTsBRHuL+/jhuOIjLFnV1RR3BI9ekO0oqfyRnYoSSQR
-	4sqcKbzpWZ/ZDXAlSInqulANAJ3TeKGNL5ZD88PsLnxZo9nF7yuOOmeS0R+1j9J+MmJBCC2HKMAyz
-	aA9xo3B7uJqXUmO15GYQ==;
+	List-Owner; bh=PyQyho5MYE3RYaGKv7Cermr3e5oYXBuUu38ssHyqbDQ=; b=Od7VkkrlKgzCm2
+	5k/2Bs7iS+VEpdemaGjuDuzHBDDgHNSSjx1EgBEO7gSYkFsG8t02YWlhM2cDUGmk6O0Z/ITtomU7d
+	amqSz1hWVbKqujSyBe2NXhjdYrlhNSk4fOVaNR384whpeup25cpm6bEYD8B0muy/JtR9mklewfjD3
+	9ckGF0JsWfmcC40zyVihLaGnFUGdWRHaOkSegz3aX70H9GUvlwn9WfsIXW1sDMeivw5WEOe3y9bVy
+	rGNAGQkZuF1k3OoHSfl8U3A3fTxkWJPf5Tl2ytk7JUHmHtEl2ofrKHTngj9XMQR6qB6c9o10RWWbn
+	H9T0dbZC8U7BuA6ioyIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRiTr-0003xu-90; Mon, 04 Nov 2019 19:57:39 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iRiVG-0004WE-4u; Mon, 04 Nov 2019 19:59:06 +0000
+Received: from gate2.alliedtelesis.co.nz ([2001:df5:b000:5::4])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRiTj-0003xK-KH
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 19:57:32 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4E3E4206BA;
- Mon,  4 Nov 2019 19:57:30 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572897451;
- bh=97Dtze6o2XzFNmhhMSxNCYQqcshoW4t7kxQPlXUyMP4=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=kmi34sQqlqdSIPSpW/SBgmg47vBTlexNqCNFFo1L46i8bHH0o1dJA4UpIe/LwbIR8
- IN1iqLMm61Y3kXipU2gnxMKvDmpjnY+szPDGNU0g5K5DG2IoYag1mz02dwaSsh+uAo
- 5klgz+xltkzs9ju8nLsBr+DWRNwTUJInN9B+7hL0=
-Date: Mon, 4 Nov 2019 19:57:27 +0000
-From: Will Deacon <will@kernel.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH v2 07/10] iommu/io-pgtable-arm: Rationalise MAIR handling
-Message-ID: <20191104195726.GM24909@willie-the-truck>
-References: <cover.1572024119.git.robin.murphy@arm.com>
- <c6bee9e6de5e7f4aa2293ee5385ffa2dd95600d3.1572024120.git.robin.murphy@arm.com>
- <20191104182029.GG24909@willie-the-truck>
- <d7d7513d-9e54-6ae8-168a-2460a306a027@arm.com>
- <20191104192058.GK24909@willie-the-truck>
+ id 1iRiV8-0004Ud-C7
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 19:59:00 +0000
+Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 694A6886BF;
+ Tue,  5 Nov 2019 08:58:53 +1300 (NZDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
+ s=mail181024; t=1572897533;
+ bh=HdBTywQc8qrpgd8ZsBDiYT4SQgvtb8dj3sZGk/RXvG0=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To;
+ b=fFaosFEgfCj2/CfG9pTFKZ9c7jlN98OkxyMbJ0ZU0iXJBR/CJC2aQj+CUHtyhSH3Z
+ kw/cyrljwO9a06dRMvlcworxsJ9w1NgI2kC97RqqKK4Zh0CsYPITQmu3Ekfr+zO2yH
+ OSNAjgoUn+NYb2CsaV0V4nfdDzmL4yw/yeHYkpyDoSgA8qddnse/qUEdORrBQ2iCAD
+ PC3RhpP9sJWdlA7WJfdxIn1mME1vmX4ZmZYrBwQeL9IRmbaPoOrib6+2IB6tiiyEjP
+ KKeCghhgeA7vPS8SXJMfuIoI5GObywi2TJ1EBBi/p977IenryFC2+MCa5EElu9tcoz
+ J2Ep4yCIwAbkw==
+Received: from svr-chch-ex1.atlnz.lc (Not Verified[10.32.16.77]) by
+ mmarshal3.atlnz.lc with Trustwave SEG (v7, 5, 8, 10121)
+ id <B5dc082fd0000>; Tue, 05 Nov 2019 08:58:53 +1300
+Received: from svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8:409d:36f5:8899:92e8)
+ by svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8:409d:36f5:8899:92e8) with
+ Microsoft SMTP Server (TLS) id 15.0.1156.6; Tue, 5 Nov 2019 08:58:53 +1300
+Received: from svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8]) by
+ svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8%12]) with mapi id
+ 15.00.1156.000; Tue, 5 Nov 2019 08:58:53 +1300
+From: Chris Packham <Chris.Packham@alliedtelesis.co.nz>
+To: "linus.walleij@linaro.org" <linus.walleij@linaro.org>
+Subject: Re: [PATCH v3 2/2] pinctrl: bcm: nsp: implement get_direction
+Thread-Topic: [PATCH v3 2/2] pinctrl: bcm: nsp: implement get_direction
+Thread-Index: AQHVkqVeZmr/Y3m5nU6eLv+86DO9ead6SMkAgABMjgA=
+Date: Mon, 4 Nov 2019 19:58:52 +0000
+Message-ID: <ee32b9a0d6f8ecef9c70fb684e5e29b873993cf5.camel@alliedtelesis.co.nz>
+References: <20191104001819.2300-1-chris.packham@alliedtelesis.co.nz>
+ <20191104001819.2300-3-chris.packham@alliedtelesis.co.nz>
+ <CACRpkdb530Do3BnVBA6Q7TWOQ0_QfytqaPHPXCPoZP_742Rvzw@mail.gmail.com>
+In-Reply-To: <CACRpkdb530Do3BnVBA6Q7TWOQ0_QfytqaPHPXCPoZP_742Rvzw@mail.gmail.com>
+Accept-Language: en-NZ, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [2001:df5:b000:22:d0c9:dea8:da1e:f79e]
+Content-ID: <635A444F9D55034FA62731C85A549751@atlnz.lc>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191104192058.GK24909@willie-the-truck>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_115731_704164_F08E9A38 
-X-CRM114-Status: GOOD (  22.81  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191104_115858_939971_99DD4703 
+X-CRM114-Status: GOOD (  16.83  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -68,7 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,73 +96,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: iommu@lists.linux-foundation.org, jcrouse@codeaurora.org,
- linux-arm-kernel@lists.infradead.org
+Cc: "sbranden@broadcom.com" <sbranden@broadcom.com>,
+ "rjui@broadcom.com" <rjui@broadcom.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "bcm-kernel-feedback-list@broadcom.com"
+ <bcm-kernel-feedback-list@broadcom.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 04, 2019 at 07:20:58PM +0000, Will Deacon wrote:
-> On Mon, Nov 04, 2019 at 06:43:06PM +0000, Robin Murphy wrote:
-> > On 04/11/2019 18:20, Will Deacon wrote:
-> > > On Fri, Oct 25, 2019 at 07:08:36PM +0100, Robin Murphy wrote:
-> > > > Between VMSAv8-64 and the various 32-bit formats, there is either one
-> > > > 64-bit MAIR or a pair of 32-bit MAIR0/MAIR1 or NMRR/PMRR registers.
-> > > > As such, keeping two 64-bit values in io_pgtable_cfg has always been
-> > > > overkill.
-> > > > 
-> > > > Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-> > > > ---
-> > > >   drivers/iommu/arm-smmu-v3.c    | 2 +-
-> > > >   drivers/iommu/arm-smmu.c       | 4 ++--
-> > > >   drivers/iommu/io-pgtable-arm.c | 3 +--
-> > > >   drivers/iommu/ipmmu-vmsa.c     | 2 +-
-> > > >   drivers/iommu/qcom_iommu.c     | 4 ++--
-> > > >   include/linux/io-pgtable.h     | 2 +-
-> > > >   6 files changed, 8 insertions(+), 9 deletions(-)
-> > > > 
-> > > > diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-> > > > index 8da93e730d6f..3f20e548f1ec 100644
-> > > > --- a/drivers/iommu/arm-smmu-v3.c
-> > > > +++ b/drivers/iommu/arm-smmu-v3.c
-> > > > @@ -2172,7 +2172,7 @@ static int arm_smmu_domain_finalise_s1(struct arm_smmu_domain *smmu_domain,
-> > > >   	cfg->cd.asid	= (u16)asid;
-> > > >   	cfg->cd.ttbr	= pgtbl_cfg->arm_lpae_s1_cfg.ttbr[0];
-> > > >   	cfg->cd.tcr	= pgtbl_cfg->arm_lpae_s1_cfg.tcr;
-> > > > -	cfg->cd.mair	= pgtbl_cfg->arm_lpae_s1_cfg.mair[0];
-> > > > +	cfg->cd.mair	= pgtbl_cfg->arm_lpae_s1_cfg.mair;
-> > > >   	return 0;
-> > > >   out_free_asid:
-> > > > diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-> > > > index 080af0326816..2bc3e93b11e6 100644
-> > > > --- a/drivers/iommu/arm-smmu.c
-> > > > +++ b/drivers/iommu/arm-smmu.c
-> > > > @@ -552,8 +552,8 @@ static void arm_smmu_init_context_bank(struct arm_smmu_domain *smmu_domain,
-> > > >   			cb->mair[0] = pgtbl_cfg->arm_v7s_cfg.prrr;
-> > > >   			cb->mair[1] = pgtbl_cfg->arm_v7s_cfg.nmrr;
-> > > >   		} else {
-> > > > -			cb->mair[0] = pgtbl_cfg->arm_lpae_s1_cfg.mair[0];
-> > > > -			cb->mair[1] = pgtbl_cfg->arm_lpae_s1_cfg.mair[1];
-> > > > +			cb->mair[0] = pgtbl_cfg->arm_lpae_s1_cfg.mair;
-> > > > +			cb->mair[1] = pgtbl_cfg->arm_lpae_s1_cfg.mair >> 32;
-> > > 
-> > > Does this work correctly for big-endian?
-> > 
-> > I don't see why it wouldn't - cfg.mair is read and written as a u64, so this
-> > should always return its most significant word regardless of the storage
-> > format. We're not doing anything dodgy like trying to type-pun the u64
-> > directly into the u32[2].
+On Mon, 2019-11-04 at 16:24 +0100, Linus Walleij wrote:
+> On Mon, Nov 4, 2019 at 1:18 AM Chris Packham
+> <chris.packham@alliedtelesis.co.nz> wrote:
 > 
-> Urgh, I need to convince myself about this then. Off to draw those silly
-> ABCD DCBA diagrams on some paper.
+> > The get_direction api is strongly recommended to be implemented. In fact
+> > if it is not implemented gpio-hogs will not get the correct direction.
+> > Add an implementation of get_direction for the nsp-gpio driver.
+> > 
+> > Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
+> > Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+> 
+> BTW I think it looks like this the GPIO part of this driver can be
+> converted to use GPIO_GENERIC. Compare to other
+> drivers such as drivers/gpio/gpio-ftgpio010.c.
+> 
+> It's a fun way to cut down lines if you have time to check
+> and test!
+> 
 
-Yes, you're right, it's fine. I was worried about explicitly writing
-2x32-bit MAIRs and then loading them as one, but that's not what is going on
-here.
-
-Will
-
+I'll see if I can fit it in. Got another problem I'm chasing on the
+same platform.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
