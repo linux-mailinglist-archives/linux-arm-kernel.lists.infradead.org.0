@@ -2,67 +2,128 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB9D3EDD7F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 12:09:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4DDFEDD8B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 12:14:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ijZ2fWO6V1d7D6LJuFjkD2JVUrrG7ZOi+S6Ig2qJDEE=; b=CNYWqj5H+8dxWX
-	b3+FuXBx21a6s4DLrv6qdz+jsXpdv4Ofm1RwjU54/FFeaI++CEHOcQ7skNK+thcaIKdAceAQJLjK5
-	lTUjMHUNpU1sqGH0o9PjvAyYneR30EteJ6DMVhL78AegbFm0Yk+8pXk2/OrJu0mjnYPROBLbfuHwL
-	J3ycnrO2JkVkmFWeTD8kI4Kt+CiAyF6R1FgUofzGaXK+H2Bp9trzfiLHRZlWQek7ByfKGfkQ5pOeF
-	oivc4WFbcagthtL+hGmV23oYTBSKJ2+ARLLvQRgVlaXTLRYZ1MNGJR6//Apim97sD0Mdismjr5Yzh
-	JgfLPhtQJhGrH3FjKoiw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GrD+xetGCDDFCLFobljiDgSQzHEDeRfBVQ31TNJzb8Q=; b=EUa6dx6sjSSPhc
+	WnwGf3Kh6NsG0NOlR6H289nOQOscRiQuwSFunJbp4bvcNVL1Fz6LBsWmJmmJwvnBfgRbA72C9FqYr
+	ZYPNRmfPxtH3WPWDB/a0xC1bVjPIq6bQlGR5SVIDiqiVWS+BlE+GL2tuHUEnnkg3lj+9xFtyy83Gz
+	QMhsAF3rcNYam41CMFjfBYgnfCAMPDKrtQvhLBeUZcHxcEPSE67e1IHCiBewJJsbqDk1g4D26Uoqr
+	CBe+GsFXHLrhZXymzeBAR5XvzJH4MJpyWiqi0l8FitnrjlMWdpYa9r0fFSiKnniF0fbevEbv8jn3G
+	MW55ptSOLMzNr+vGqHiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRaEn-0004a4-Kk; Mon, 04 Nov 2019 11:09:33 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iRaJT-0006l9-FS; Mon, 04 Nov 2019 11:14:23 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRaEd-0004Zc-H0
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 11:09:24 +0000
-Received: from dragon (li1038-30.members.linode.com [45.33.96.30])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4F18521D81;
- Mon,  4 Nov 2019 11:09:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572865763;
- bh=ED2+1l4ATP0OGk62gY0UI54W/7Sig6CV0sihleJDKzA=;
- h=Date:From:To:Cc:Subject:From;
- b=cfSvfGSuyCd7Gp5N+tSJ751niPlDFEuZRhtOva2P/UBpeL8dqWk9Bk8LhqabdsLfP
- N7aJIWYYRkuk/E/+/l5JoirmB7IJ/hkt0x4Br0Pj8EOJQEtuc3zxs37weDpuDiNiuu
- dxwyI5d8r6gyhjUJLuzbDovxEnwt5k9LqWNl9pGs=
-Date: Mon, 4 Nov 2019 19:08:57 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Stephen Boyd <sboyd@kernel.org>
-Subject: [GIT PULL] i.MX clock changes for 5.5
-Message-ID: <20191104110856.GX24620@dragon>
+ id 1iRaJL-0006kB-LX; Mon, 04 Nov 2019 11:14:17 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 3F045ABD0;
+ Mon,  4 Nov 2019 11:14:12 +0000 (UTC)
+Subject: Re: [PATCH v5 03/12] clk: mediatek: mt8173: switch mmsys to platform
+ device probing
+To: Hsin-Yi Wang <hsinyi@chromium.org>, matthias.bgg@kernel.org
+References: <20181116125449.23581-1-matthias.bgg@kernel.org>
+ <20181116125449.23581-4-matthias.bgg@kernel.org>
+ <CAJMQK-jHHAsBoL6Zcv8ZW1nRAD9NRjEbH1hnf9q418zGka8Vxg@mail.gmail.com>
+From: Matthias Brugger <mbrugger@suse.com>
+Autocrypt: addr=mbrugger@suse.com; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <35f31784-6703-435a-2675-95bea33adf35@suse.com>
+Date: Mon, 4 Nov 2019 12:14:10 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.1
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.5.21 (2010-09-15)
+In-Reply-To: <CAJMQK-jHHAsBoL6Zcv8ZW1nRAD9NRjEbH1hnf9q418zGka8Vxg@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_030923_601463_C8E6AB44 
-X-CRM114-Status: GOOD (  13.12  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191104_031415_994620_20B5CB18 
+X-CRM114-Status: GOOD (  13.27  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,90 +135,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Agner <stefan@agner.ch>, linux-imx@nxp.com, kernel@pengutronix.de,
- Fabio Estevam <festevam@gmail.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Devicetree List <devicetree@vger.kernel.org>, sean.wang@mediatek.com,
+ David Airlie <airlied@linux.ie>, mturquette@baylibre.com,
+ rdunlap@infradead.org, sboyd@codeaurora.org,
+ lkml <linux-kernel@vger.kernel.org>, dri-devel@lists.freedesktop.org,
+ sean.wang@kernel.org, ulrich.hecht+renesas@gmail.com, wens@csie.org,
+ Rob Herring <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ laurent.pinchart@ideasonboard.com, Philipp Zabel <p.zabel@pengutronix.de>,
+ CK Hu <ck.hu@mediatek.com>, linux-mediatek@lists.infradead.org,
+ linux-clk@vger.kernel.org,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
 
-  Linux 5.4-rc1 (2019-09-30 10:35:40 -0700)
 
-are available in the Git repository at:
+On 31/10/2019 05:17, Hsin-Yi Wang wrote:
+> On Fri, Nov 16, 2018 at 12:54 PM <matthias.bgg@kernel.org> wrote:
+>>
+>> From: Matthias Brugger <mbrugger@suse.com>
+>>
+>> Switch probing for the MMSYS to support invocation to a
+>> plain paltform device. The driver will be probed by the DRM subsystem.
+>>
+>> Signed-off-by: Matthias Brugger <mbrugger@suse.com>
+>> ---
+> 
+>> +
+>> +static struct platform_driver clk_mt8173_mm_drv = {
+>> +       .probe = mtk_mmsys_probe,
+>> +       .probe = mtk_mmsys_remove,
+> Should be .remove?
+> 
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/imx-clk-5.5
+Yes, definitely.
 
-for you to fetch changes up to bceed71ba13116de4b1459c2c6db47d927b48e68:
-
-  clk: imx: imx8mq: fix sys3_pll_out_sels (2019-11-04 09:10:49 +0800)
-
-----------------------------------------------------------------
-i.MX clock changes for 5.5:
- - Make 1443X/1416X PLL clock structure common for reusing among i.MX8
-   SoCs.
- - A couple of imx7ulp clock multiplexer option corrections.
- - Drop IMX7ULP_CLK_MIPI_PLL clock, as it's a MIPI DSI local clock and
-   shouldn't be used externally.
- - Add VIDEO2_PLL clock for imx8mq which is needed by DCSS when high
-   resolutions are used.
- - Add missing gate clock for pll1/2 fixed dividers on i.MX8 SoCs.
- - Register SYS_PLL1 and SYS_PLL2 as fixed clock rather than pll14xx
-   type of clock.
- - Use imx_obtain_fixed_clk_hw() to simplify i.MX6/7/8 clock driver code
-   a little bit.
- - One cosmetic change on clk-pll14xx code to make variables static.
-
-----------------------------------------------------------------
-Anson Huang (4):
-      clk: imx8mm: Move 1443X/1416X PLL clock structure to common place
-      clk: imx8mn: Use common 1443X/1416X PLL clock structure
-      clk: imx7ulp: Correct system clock source option #7
-      clk: imx7ulp: Correct DDR clock mux options
-
-Fancy Fang (1):
-      clk: imx7ulp: do not export out IMX7ULP_CLK_MIPI_PLL clock
-
-Laurentiu Palcu (1):
-      clk: imx8mq: Add VIDEO2_PLL clock
-
-Leonard Crestez (4):
-      clk: imx: pll14xx: Fix quick switch of S/K parameter
-      clk: imx8mq: Define gates for pll1/2 fixed dividers
-      clk: imx8mm: Define gates for pll1/2 fixed dividers
-      clk: imx8mn: Define gates for pll1/2 fixed dividers
-
-Peng Fan (8):
-      clk: imx: imx8mm: mark sys_pll1/2 as fixed clock
-      clk: imx: imx8mn: mark sys_pll1/2 as fixed clock
-      clk: imx: imx8mq: mark sys1/2_pll as fixed clock
-      clk: imx: imx7d: use imx_obtain_fixed_clk_hw to simplify code
-      clk: imx: imx6sll: use imx_obtain_fixed_clk_hw to simplify code
-      clk: imx: imx6sx: use imx_obtain_fixed_clk_hw to simplify code
-      clk: imx: imx6ul: use imx_obtain_fixed_clk_hw to simplify code
-      clk: imx: imx8mq: fix sys3_pll_out_sels
-
-YueHaibing (1):
-      clk: imx: clk-pll14xx: Make two variables static
-
- .../devicetree/bindings/clock/imx7ulp-clock.txt    |   1 -
- drivers/clk/imx/clk-imx6sll.c                      |   8 +-
- drivers/clk/imx/clk-imx6sx.c                       |  12 +-
- drivers/clk/imx/clk-imx6ul.c                       |   8 +-
- drivers/clk/imx/clk-imx7d.c                        |   4 +-
- drivers/clk/imx/clk-imx7ulp.c                      |   9 +-
- drivers/clk/imx/clk-imx8mm.c                       | 150 +++++++-------------
- drivers/clk/imx/clk-imx8mn.c                       | 152 +++++++--------------
- drivers/clk/imx/clk-imx8mq.c                       |  77 +++++++----
- drivers/clk/imx/clk-pll14xx.c                      |  72 +++++-----
- drivers/clk/imx/clk.h                              |   3 +
- include/dt-bindings/clock/imx7ulp-clock.h          |   1 +
- include/dt-bindings/clock/imx8mm-clock.h           |  19 ++-
- include/dt-bindings/clock/imx8mn-clock.h           |  19 ++-
- include/dt-bindings/clock/imx8mq-clock.h           |  24 +++-
- 15 files changed, 268 insertions(+), 291 deletions(-)
+>> +       .driver = {
+>> +               .name = "clk-mt8173-mm",
+>> +       },
+>> +};
+>> +module_platform_driver(clk_mt8173_mm_drv);
+>>
+>>  static void __init mtk_vdecsys_init(struct device_node *node)
+>>  {
 
 _______________________________________________
 linux-arm-kernel mailing list
