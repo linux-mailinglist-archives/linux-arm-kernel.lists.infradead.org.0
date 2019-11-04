@@ -2,143 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81DC3EE616
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 18:36:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9370FEE663
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 18:42:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=efl15Rt8cnv7tNxZAMqnEvwo2zJP58NvqwAkO3xg4To=; b=OwVuB8X5ogWoo3
-	0Ce+Ks8GMC1/wHgMw2r80BDEKj0m9nNh9kipsUV1ocKA9gxVPmMuxgEuOyqTiAd+2VjCO31Eo+LXf
-	41vDPf9TiAIsD8Xcf6Ruwc5Jwwp4z0yuq5jV6Ey9sn/FQvs66NKYqr6J+AReiZUS7BGK4HK4euJAH
-	cbTa41YRs/YVz8I0VL0OJmRmogJF7RDeX2c+mNC4KrvjAXiaVNyfau/45LmY/ZG/80pgrQardX7aP
-	RNhoKGjHFBFhAh7CqYr/FFN60IshQ9gc3Z3UvWELWHKu4O2gwAg/DqXEHn5pGicuj/vP61M5beRTJ
-	3HadYaTVDIt8dZkfQgiA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GEy1qbZY15618mbM9Ho/PjubAGUDJH5QV1X6EHb+KZk=; b=WWOcBfzVI516SV
+	srvzLAF+wOvdxMdej+H/8dLJU/4ZZdY/exL1VFq/axlJ1Ki5WzUyN1vygzN2FjMhCrvKfdp/dKz4c
+	XdweZbKaRZoYJJox/RjhYiKsWq1eRSa9taCx1iMZJAP/eKABJ8ZYVNSatKIrtdrSGmOwtTDvQbugj
+	0t7WOzivjuUAPmvGSMBmwmmq0GkChVC4cEZiWGtekv92BtmvR7i6jkQrqSP9sj1N6RQklyFRgsvxQ
+	w8ndsXHvnOIyhmST0+yoRMZJPVT0gYy1hMVwLkgU4XKIgPZUKRSSKDO5Uj/tlJvOMFUhpbt+srDQP
+	ivNsgOkLlFFeCHSV+7oQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRgHI-0000rH-7R; Mon, 04 Nov 2019 17:36:32 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1iRgN3-0003G4-NC; Mon, 04 Nov 2019 17:42:29 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRgH9-0000qF-Qu
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 17:36:25 +0000
-Received: by mail-ed1-x541.google.com with SMTP id c4so13853740edl.0
+ id 1iRgMx-0003F4-BM
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 17:42:24 +0000
+Received: by mail-wr1-x444.google.com with SMTP id a11so18105188wra.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 Nov 2019 09:36:20 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=2OsvrwszToLv3inr26bHbJl2IPf0+khdgkqsRTySDaM=;
- b=nhuEVF56pEjsAGc6RuP8QUSnLUP50dxER7Z7+lHnTazc/32LdVJjbnfYpwfUfrwb2V
- sak4szEMs6dn09/Uk3a+uz7FXBWCVZayUmWQ/nlScm73DZitGfmFHRy17T4JPc+kYzaW
- Bmi7OZtdPCqmreYpkndRp19j4I2s8irXrqNE6hW8oI8Ew0N1c86y/BKOr4HLgMEvEFHz
- e2fvvpb6rvb1/pweRju1tsPiDUsIv+nWdt+OCRLtkdFvMUVXd4FumHOk01t3AyC3xgCu
- QCAf65N9W3uUWvQCdKR/KRpCC13mkhk1lI+/ACNO+eikx32uVzvMiEKpOAwaxExNc+LW
- VCng==
+ Mon, 04 Nov 2019 09:42:22 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
+ h=sender:date:from:to:cc:subject:message-id:mail-followup-to
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=5ogVv9yu3iXpW756OAqxBZcAaxMrrDVeZyf4/i652TM=;
+ b=jvjHe6OReDuWCuVv2+9UAh0oNSew20Cf90E08ulRCvHLHeXfSPKJ1HoefQFlUG7hM8
+ cvxTxB0gdhOTdqmAYguK071cnJKBuGonRdGwubEbmvi30uVk49BVOBFvBbnXyV6fgY1B
+ /GBBc6/JCDu4mXohl8A5LHq8adjS1+871lhRU=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=2OsvrwszToLv3inr26bHbJl2IPf0+khdgkqsRTySDaM=;
- b=rPcoo/TVJcYCOZg+QyHxjJuO1HHn4gh4LlyoMSFbl7BXYDhQO2mUlxMmIM6Hl9cyGX
- HDYvuB5y8ElR18GuMFRzDtUyHyhgRYMosjoTtyMIvYjBB2S+GQBJZsd5l/pJSlXJL/J8
- 6itUifkZScd4NnXwhbzr7ymV2RoXd2Ago8E55QsmHbvDUxG+X3pbAoQPfNIqA9GuDkgZ
- chZtdgmF8AtxgVq8Qy1QQxESSa5lm0zIbAvc+P02K6kyTSg4PUng/EUTWGTyKHJMLkvr
- lp2BqiMeDcztsLOixvfs4bEB+yW+DQqhUR3TOSzrJ94oemsjw5ihkxD0Eluu7fjNFSeD
- YjRw==
-X-Gm-Message-State: APjAAAWiLZOSkppbMsgYlXhE96fHD1bl6tQF4Y71ZxfGcIvCx8Q0Pvks
- y7wqH/eUd3zJf5+nIy9WLDQ=
-X-Google-Smtp-Source: APXvYqyVg2wpSn9IXwTvuRgUoH/FldN1GjzXIxzeKL0EAcBkhe6HyrleR63teUsDWD1IKDYITF4zcQ==
-X-Received: by 2002:a17:906:53cc:: with SMTP id
- p12mr24947699ejo.52.1572888978991; 
- Mon, 04 Nov 2019 09:36:18 -0800 (PST)
-Received: from [10.67.50.53] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id v5sm936001edd.90.2019.11.04.09.36.13
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 04 Nov 2019 09:36:18 -0800 (PST)
-Subject: Re: [PATCH] rtc: brcmstb-waketimer: add missed clk_disable_unprepare
-To: Chuhong Yuan <hslester96@gmail.com>
-References: <20191104155019.9053-1-hslester96@gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <420cbb31-1754-444c-cbc2-d32d77e43ca0@gmail.com>
-Date: Mon, 4 Nov 2019 09:36:11 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :mail-followup-to:references:mime-version:content-disposition
+ :in-reply-to:user-agent;
+ bh=5ogVv9yu3iXpW756OAqxBZcAaxMrrDVeZyf4/i652TM=;
+ b=rbYUaBaw82rGpZ1dML5Sbbh+4Fn8mCtqYcjqVeoPz/REqgcL/OolUaCLZkKdeOVeGV
+ ec2fukoK8XUvT37F/lcTlHUYf8QiLl6ma5u3imgtI/tPTpWaKm5Q5hmbb0l1J20CbBxQ
+ VzO3J5qlVjvIOLDCrLhDbD4FnoER3UyfMAfLLtPjxlIZGs7INpjTSCsG9nKVctr57Bma
+ tM5eHNWd+vzH83t0SZ2ujU4zjX9s4XCWI9zn6ruoBWcIM41pDEpSTIUaywfy1eIQ2ZLP
+ VHiEwzdmtYkgnm3N6o6NN0A3JeDvPPhwM5yGVqc8tP54i7grSzjWVe2WFGewPKOzvmwb
+ USCg==
+X-Gm-Message-State: APjAAAU5c+ocIzeFFs4OI5xuiwkNyGIUmyIOaGmkomX59DLI+45ZZQNF
+ Wwy84vzUQ/VQk8Ajc+ECH/t5Jg==
+X-Google-Smtp-Source: APXvYqyo30Cx3N9aLHROc1bhJ+WNVO3huy0tpFL+gtfZWVC0nSZZlSOaRK2D60u0zqloh6U7cb3wBA==
+X-Received: by 2002:adf:e889:: with SMTP id d9mr26191161wrm.266.1572889341116; 
+ Mon, 04 Nov 2019 09:42:21 -0800 (PST)
+Received: from phenom.ffwll.local (212-51-149-96.fiber7.init7.net.
+ [212.51.149.96])
+ by smtp.gmail.com with ESMTPSA id f13sm17424754wrq.96.2019.11.04.09.42.19
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 04 Nov 2019 09:42:20 -0800 (PST)
+Date: Mon, 4 Nov 2019 18:42:18 +0100
+From: Daniel Vetter <daniel@ffwll.ch>
+To: Ondrej Jirman <megous@megous.com>
+Subject: Re: [PATCH v2] drm: sun4i: Add support for suspending the display
+ driver
+Message-ID: <20191104174218.GL10326@phenom.ffwll.local>
+Mail-Followup-To: Ondrej Jirman <megous@megous.com>,
+ linux-sunxi@googlegroups.com, Maxime Ripard <mripard@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, David Airlie <airlied@linux.ie>,
+ "open list:DRM DRIVERS FOR ALLWINNER A10" <dri-devel@lists.freedesktop.org>,
+ "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>, 
+ open list <linux-kernel@vger.kernel.org>
+References: <20191029112846.3604925-1-megous@megous.com>
 MIME-Version: 1.0
-In-Reply-To: <20191104155019.9053-1-hslester96@gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191029112846.3604925-1-megous@megous.com>
+X-Operating-System: Linux phenom 5.2.0-3-amd64 
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_093623_872548_5150459D 
-X-CRM114-Status: GOOD (  13.94  )
+X-CRM114-CacheID: sfid-20191104_094223_389369_0F9B38AC 
+X-CRM114-Status: GOOD (  18.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -158,32 +105,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Florian Fainelli <f.fainelli@gmail.com>, linux-kernel@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org
+Cc: David Airlie <airlied@linux.ie>, Chen-Yu Tsai <wens@csie.org>,
+ "open list:DRM DRIVERS FOR ALLWINNER A10"
+ <dri-devel@lists.freedesktop.org>, open list <linux-kernel@vger.kernel.org>,
+ linux-sunxi@googlegroups.com, Maxime Ripard <mripard@kernel.org>,
+ Daniel Vetter <daniel@ffwll.ch>,
+ "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/4/19 7:50 AM, Chuhong Yuan wrote:
-> This driver forgets to disable and unprepare clock when remove.
-> Add a call to clk_disable_unprepare to fix it.
+On Tue, Oct 29, 2019 at 12:28:46PM +0100, Ondrej Jirman wrote:
+> Shut down the display engine during suspend.
 > 
-> Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
+> Signed-off-by: Ondrej Jirman <megous@megous.com>
+> ---
+> Changes in v2:
+> - spaces -> tabs
+> 
+>  drivers/gpu/drm/sun4i/sun4i_drv.c | 22 ++++++++++++++++++++++
+>  1 file changed, 22 insertions(+)
+> 
+> diff --git a/drivers/gpu/drm/sun4i/sun4i_drv.c b/drivers/gpu/drm/sun4i/sun4i_drv.c
+> index a5757b11b730..c519d7cfcf43 100644
+> --- a/drivers/gpu/drm/sun4i/sun4i_drv.c
+> +++ b/drivers/gpu/drm/sun4i/sun4i_drv.c
+> @@ -346,6 +346,27 @@ static int sun4i_drv_add_endpoints(struct device *dev,
+>  	return count;
+>  }
+>  
+> +#ifdef CONFIG_PM_SLEEP
+> +static int sun4i_drv_drm_sys_suspend(struct device *dev)
+> +{
+> +	struct drm_device *drm = dev_get_drvdata(dev);
+> +
+> +	return drm_mode_config_helper_suspend(drm);
+> +}
+> +
+> +static int sun4i_drv_drm_sys_resume(struct device *dev)
+> +{
+> +	struct drm_device *drm = dev_get_drvdata(dev);
+> +
+> +	return drm_mode_config_helper_resume(drm);
+> +}
+> +#endif
+> +
+> +static const struct dev_pm_ops sun4i_drv_drm_pm_ops = {
+> +	SET_SYSTEM_SLEEP_PM_OPS(sun4i_drv_drm_sys_suspend,
+> +				sun4i_drv_drm_sys_resume)
+> +};
 
-This looks fine, you do not need to check for timer->clk, since the
-clk_* APIs do that, and we made sure in the probe function that we would
-not be passing a timer->clk handle which is valid.
+I wonder whether we should have these as default helpers somewhere,
+there's probably a few drivers that could use them? It's just a handful of
+lines we're saving here, but we have enough kms drivers to justify this
+kind of stuff nowadays ...
+-Daniel
 
-Also feel free to add:
+> +
+>  static int sun4i_drv_probe(struct platform_device *pdev)
+>  {
+>  	struct component_match *match = NULL;
+> @@ -418,6 +439,7 @@ static struct platform_driver sun4i_drv_platform_driver = {
+>  	.driver		= {
+>  		.name		= "sun4i-drm",
+>  		.of_match_table	= sun4i_drv_of_table,
+> +		.pm = &sun4i_drv_drm_pm_ops,
+>  	},
+>  };
+>  module_platform_driver(sun4i_drv_platform_driver);
+> -- 
+> 2.23.0
+> 
 
-Fixes: c4f07ecee22e ("rtc: brcmstb-waketimer: Add Broadcom STB wake-timer")
-
-Thank you
 -- 
-Florian
+Daniel Vetter
+Software Engineer, Intel Corporation
+http://blog.ffwll.ch
 
 _______________________________________________
 linux-arm-kernel mailing list
