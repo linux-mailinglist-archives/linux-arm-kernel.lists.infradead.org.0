@@ -2,68 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 624C6EEB2D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 22:34:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22ADCEEB3F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 22:35:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eiIzvXg5q2QkQ6nX6KkB3J8FVwHgEFO8OrZEvH/U2to=; b=jgeM027cdQts4N
-	c49OU/xpZHk8MrZLDSQIiYmRdnBzsIt7i2Yu7GIue5QZhKmhR7d64R5jQu2OjPz61jTKnC8YtZsvx
-	Neg7IxLddUfdzIHEtOthbX14xGR7BslswhJehu/XO7ssyhqrzwFdevaQVGcBOYCTwRV9uAfL840a6
-	cPRBLcsFmGdpnJa3w07AStBXYq83S8b8o/dDR7fynPbkk+PFxU66gzp19raTjJx6Pf/WKSvK7R8np
-	6sVuhykU+lNTGpGCESihF/Nou/h/wm8UCG9QpENWXPrpynd5ocBnfrEm4Z5Eajq0M6PyuWjkMdtaW
-	aXvbKn1L+B1xYnZ3eKtQ==;
+	List-Owner; bh=LQtLa4Uqp9O6Y2NxDidkJzli778MlXyRxPIutc2WJqg=; b=Eh+Kb289WNhJ2w
+	ArbYE2I/2TzWajm7fq6LIZs0fQ/049NUnq4T75he8CqbwnkBjX9FsZgYcdr0PnAcyQpjWfXnbj9eA
+	CEj7h067RKHUDpoSyXqulXBuNC153NcoAfBgF/LQ1nHGv3IW9AHkURA8CnYi3nXnTp9HH3IQqN3TN
+	JRzmqZBt9f94olzc5EbTTY5tkU+RIvwn57lC0e5yw4WybTi3BETPwIP2YUdLqZpEaetfsGA4ZDPcN
+	iCl41R9bcoZN5z3x84mn2nZtXeKNF47uIlwIg2Szgljvm+0cV+VoXo1ypsX2haDYIesKveXjjYZn0
+	gmnaq4dIaV/OPiiB5IRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRjz6-0005gc-Q9; Mon, 04 Nov 2019 21:34:00 +0000
-Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
+	id 1iRk0q-0007GW-NN; Mon, 04 Nov 2019 21:35:48 +0000
+Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRjyy-0005g2-5X
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 21:33:54 +0000
-Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
- [IPv6:2a01:4f9:c010:4572::80:2])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id 03C84634C87;
- Mon,  4 Nov 2019 23:30:33 +0200 (EET)
-Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
- (envelope-from <sakari.ailus@retiisi.org.uk>)
- id 1iRjvl-0002Ko-04; Mon, 04 Nov 2019 23:30:33 +0200
-Date: Mon, 4 Nov 2019 23:30:32 +0200
-From: Sakari Ailus <sakari.ailus@iki.fi>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Subject: Re: [PATCH v4 1/2] dt-bindings: media: i2c: Add IMX296 CMOS sensor
- binding
-Message-ID: <20191104213032.GT6253@valkosipuli.retiisi.org.uk>
-References: <20191030094902.32582-1-manivannan.sadhasivam@linaro.org>
- <20191030094902.32582-2-manivannan.sadhasivam@linaro.org>
- <20191031131538.GA9170@pendragon.ideasonboard.com>
- <20191031134512.GB24273@mani>
- <20191031141141.GD5018@pendragon.ideasonboard.com>
- <20191031142817.GK6253@valkosipuli.retiisi.org.uk>
- <20191031165444.GE5018@pendragon.ideasonboard.com>
- <20191031170837.GN6253@valkosipuli.retiisi.org.uk>
- <20191104190201.GF4913@pendragon.ideasonboard.com>
+ id 1iRk0j-0007G4-MP
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 21:35:42 +0000
+Received: by mail-vs1-xe43.google.com with SMTP id m6so5456690vsn.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 04 Nov 2019 13:35:41 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=+iM6UF9mA8yEqKM2m+szbX2ng9KhnEZYRb5X/ojWJG0=;
+ b=WQqOCU6qrDuZG8nuHgiV+CHsG7gWSoR72oOp+M0wKsltRJK+cGqjt2t0ZxI2LM6V8C
+ 1RQXAzRnu6jhZem6MHYFf5TI8O0Eb0LMsQH/RUeNBQLsild5ptqHR2+8pjmiMbj3JxhX
+ gRUGg1RmBpVc1Q1nhoC4mIIl7umwH3N3gETvGBsHefq3zid8veGm9BMAaqqXtchvboU3
+ oe82rt/ua0dQOwqs4AcW0tswAhd4f8FEmYPR+Wai5JGF1id5ch5hL+dBrDB6AtOUJFPg
+ GiGCKXyOExBSa2rtb1uirhcrkQbT6A5dkDAwpPptAzVGzCMyH1PZXR7LWJ4+2g7vZ1c1
+ epJA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=+iM6UF9mA8yEqKM2m+szbX2ng9KhnEZYRb5X/ojWJG0=;
+ b=mzXy6AScm4WQdgzgCvmWBNLb4vB3TZ9xywLsOfKGAJ4OuhlT2FfTMQtJkBfETSVgml
+ V5n42ner9TBYulRNeyouXtxYeGvnc6dYM63x1sGvkPP1kyt0QuHRwOq75dE9PZvs6Oo9
+ 3lbimYNpA+uoDfHCo/KdzAPH4BqQ2K6sUwy89UKvoBGc9+AWYLQYIRi9po0vZrA2eGqG
+ acVUHOPKW/pRpcNPcbqEpR2W5IF4Fw1UZ7+8h9ZjXGZhshYK19+itAnSFa1vr5UXgyA4
+ R7lone3P08fh0hpnnX6PduqnVhJlFxOAzW9MrADykihkK+Z/06sq6Wmy9z8YazRKobay
+ wlpg==
+X-Gm-Message-State: APjAAAUJXgH9L3ZmEGLveEMcIPdLyIdvB45INEWeYtZ5ZwAgIOaja8wD
+ CfxrbayEiplNBfZwojxn4iUo1y74PCYhYLhQUb2DSg==
+X-Google-Smtp-Source: APXvYqw2qurgJaO5Z50222coqPPYraifWu1WpUrqJjCs3EdmK1uhIyv2tT4xgK/tp1HQy+BY+QUyECFV9cgzh+9tP6o=
+X-Received: by 2002:a05:6102:36a:: with SMTP id
+ f10mr9282538vsa.44.1572903339925; 
+ Mon, 04 Nov 2019 13:35:39 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191104190201.GF4913@pendragon.ideasonboard.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20191101221150.116536-1-samitolvanen@google.com>
+ <20191101221150.116536-8-samitolvanen@google.com>
+ <20191104124017.GD45140@lakrids.cambridge.arm.com>
+In-Reply-To: <20191104124017.GD45140@lakrids.cambridge.arm.com>
+From: Sami Tolvanen <samitolvanen@google.com>
+Date: Mon, 4 Nov 2019 13:35:28 -0800
+Message-ID: <CABCJKueoJs7hS7VrVoz6CY_oAjTGcV-W61v9GAdwg+zk0W5ErA@mail.gmail.com>
+Subject: Re: [PATCH v4 07/17] scs: add support for stack usage debugging
+To: Mark Rutland <mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_133352_573739_2ECA428F 
-X-CRM114-Status: GOOD (  24.56  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191104_133541_757677_A23D340E 
+X-CRM114-Status: GOOD (  13.15  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,134 +100,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
- linux-kernel@vger.kernel.org, a.brela@framos.com, peter.griffin@linaro.org,
- robh+dt@kernel.org, Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>, Marc Zyngier <maz@kernel.org>,
+ Kernel Hardening <kernel-hardening@lists.openwall.com>,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Laurent,
+On Mon, Nov 4, 2019 at 4:40 AM Mark Rutland <mark.rutland@arm.com> wrote:
+> > +#ifdef CONFIG_DEBUG_STACK_USAGE
+> > +static inline unsigned long scs_used(struct task_struct *tsk)
+> > +{
+> > +     unsigned long *p = __scs_base(tsk);
+> > +     unsigned long *end = scs_magic(tsk);
+> > +     uintptr_t s = (uintptr_t)p;
+>
+> As previously, please use unsigned long for consistency.
 
-On Mon, Nov 04, 2019 at 09:02:01PM +0200, Laurent Pinchart wrote:
-> Hi Sakari,
-> 
-> On Thu, Oct 31, 2019 at 07:08:37PM +0200, Sakari Ailus wrote:
-> > On Thu, Oct 31, 2019 at 06:54:44PM +0200, Laurent Pinchart wrote:
-> > > On Thu, Oct 31, 2019 at 04:28:17PM +0200, Sakari Ailus wrote:
-> > >> On Thu, Oct 31, 2019 at 04:11:41PM +0200, Laurent Pinchart wrote:
-> > >>> On Thu, Oct 31, 2019 at 07:15:12PM +0530, Manivannan Sadhasivam wrote:
-> > >>>> On Thu, Oct 31, 2019 at 03:15:38PM +0200, Laurent Pinchart wrote:
-> > >>>>> On Wed, Oct 30, 2019 at 03:19:01PM +0530, Manivannan Sadhasivam wrote:
-> > >>>>>> Add YAML devicetree binding for IMX296 CMOS image sensor. Let's also
-> > >>>>>> add MAINTAINERS entry for the binding and driver.
-> > >>>>>> 
-> > >>>>>> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> > >>>>>> ---
-> > >>>>>>  .../devicetree/bindings/media/i2c/imx296.yaml | 94 +++++++++++++++++++
-> > >>>>>>  MAINTAINERS                                   |  8 ++
-> > >>>>>>  2 files changed, 102 insertions(+)
-> > >>>>>>  create mode 100644 Documentation/devicetree/bindings/media/i2c/imx296.yaml
-> > >>>>>> 
-> > >>>>>> diff --git a/Documentation/devicetree/bindings/media/i2c/imx296.yaml b/Documentation/devicetree/bindings/media/i2c/imx296.yaml
-> > >>>>>> new file mode 100644
-> > >>>>>> index 000000000000..c04ec2203268
-> > >>>>>> --- /dev/null
-> > >>>>>> +++ b/Documentation/devicetree/bindings/media/i2c/imx296.yaml
-> > >>>>>> @@ -0,0 +1,94 @@
-> > >>>>>> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > >>>>>> +%YAML 1.2
-> > >>>>>> +---
-> > >>>>>> +$id: http://devicetree.org/schemas/media/i2c/imx296.yaml#
-> > >>>>>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > >>>>>> +
-> > >>>>>> +title: Sony IMX296 1/2.8-Inch CMOS Image Sensor
-> > >>>>>> +
-> > >>>>>> +maintainers:
-> > >>>>>> +  - Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> > >>>>>> +
-> > >>>>>> +description: |-
-> > >>>>>> +  The Sony IMX296 is a 1/2.9-Inch active pixel type CMOS Solid-state image
-> > >>>>>> +  sensor with square pixel array and 1.58 M effective pixels. This chip
-> > >>>>>> +  features a global shutter with variable charge-integration time. It is
-> > >>>>>> +  programmable through I2C and 4-wire interfaces. The sensor output is
-> > >>>>>> +  available via CSI-2 serial data output (1 Lane).
-> > >>>>>> +
-> > >>>>>> +properties:
-> > >>>>>> +  compatible:
-> > >>>>>> +    const: sony,imx296
-> > >>>>>> +
-> > >>>>>> +  reg:
-> > >>>>>> +    maxItems: 1
-> > >>>>>> +
-> > >>>>>> +  clocks:
-> > >>>>>> +    maxItems: 1
-> > >>>>>> +
-> > >>>>>> +  clock-names:
-> > >>>>>> +    description:
-> > >>>>>> +      Input clock for the sensor.
-> > >>>>>> +    items:
-> > >>>>>> +      - const: mclk
-> > >>>>> 
-> > >>>>> The pin is named INCK, let's name the clock accordingly.
-> > >>>> 
-> > >>>> Okay, I thought generic names are preferred here!
-> > >>>>  
-> > >>>>>> +  clock-frequency:
-> > >>>>>> +    description:
-> > >>>>>> +      Frequency of the mclk clock in Hertz.
-> > >>>>> 
-> > >>>>> This shouldn't be needed, you can retrieve the clock frequency at
-> > >>>>> runtime from the clock source.
-> > >>>> 
-> > >>>> Unless the clock source is a fixed one! What if the clock source comes from
-> > >>>> SoC? We need to set the rate, right?
-> > >>> 
-> > >>> In that case, if you want to hardcode the clock in DT, the preferred way
-> > >>> is to use the assigned-clock-rates property. Otherwise, if the driver
-> > >>> requires a specific clock frequency, it's better to hardcode it in the
-> > >>> driver itself. In this specific case, I think assigned-clock-rates is
-> > >>> best as the device can support three different clock frequencies.
-> > >> 
-> > >> Just note that if ACPI support is added to the sensor driver, you'll need
-> > >> the clock-frequency property again, for that's the only way how the driver
-> > >> will get the clock frequency.
-> > > 
-> > > Why is so ? Why can't we implement of assigned-clock-rates for ACPI ?
-> > 
-> > ACPI doesn't deal with clocks as such. So there's also no ACPI defined way
-> > to access clocks specifically, including the frequency --- instead the
-> > clock is controlled by an AML methods which implement power on and off
-> > sequences for the device.
-> 
-> It's a shortcoming of ACPI, which should be addressed at the ACPI level.
-> We shouldn't polute the DT bindings with a clock-frequency property for
-> this reason.
+Ack.
 
-It's really not a shortcoming but a design decision: what belongs to the
-scope of the firmware? And in this case system and device power management
-implementation is included. I do not believe this will be revisited in any
-foreseeable future, i.e. there will be no clock control interface for ACPI.
+> > +     while (p < end && *p)
+> > +             p++;
+>
+> I think this is the only place where we legtimately access the shadow
+> call stack directly.
 
-Explicitly stating the frequency also has an added benefit: the driver
-can be certain that the given frequency is intended to be used on the
-board. Otherwise the frequency could have been changed by e.g. another
-driver. This does matter, as the frequency determines which link
-frequencies can be achieved, and as the two effectively have to be
-compliant, an unintended external clock frequency also means there will be
-no match between possible link frequencies and configured link frequencies.
+There's also scs_corrupted, which checks that the end magic is intact.
 
-I.e. no images to capture either.
+> When using SCS and KASAN, are the
+> compiler-generated accesses to the SCS instrumented?
+>
+> If not, it might make sense to make this:
+>
+>         while (p < end && READ_ONCE_NOCKECK(*p))
+>
+> ... and poison the allocation from KASAN's PoV, so that we can find
+> unintentional accesses more easily.
 
-That said, I don't know if this has been a practical issue in the past.
+Sure, that makes sense. I can poison the allocation for the
+non-vmalloc case, I'll just need to refactor scs_set_magic to happen
+before the poisoning.
 
--- 
-Regards,
-
-Sakari Ailus
+Sami
 
 _______________________________________________
 linux-arm-kernel mailing list
