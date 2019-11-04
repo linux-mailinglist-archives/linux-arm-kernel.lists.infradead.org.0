@@ -2,92 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CBD9EE75A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 19:25:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29177EE777
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 19:37:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NNXKdS7aIOza8bmQ59LyJ3barxTlL4QeNHlDTG4UpoY=; b=ByA9jEBEZIkPOm
-	J0qBi5uR1gwN/I/rrM4L3Foje3OQngXxzJDmiP3Osg3C07nIU7pjxh2Yvy66M73uoBm4zEx3AgDLs
-	1MOdQeHeekFlL4Mv/gysQ8Tw0ngeATNpWU7qFLL1hqdlVLIifu64Bv8sxfuphCcptSXUevNF2KJLH
-	JnxHltsH6U+uXo2d1/A7/ev09tPU+O0jj3YrGIOmQgE2yGt3qwsd82fmnLbD9W2H6QN5gNeeSHKqD
-	kpzUF6DVh0kj00zrNhNz4+rUgdogjCaGfFSZRDqfYA0WPzdWYAYRR3Gps//ApM5Jwjtd/CrgQCpSS
-	Lg1JOv4UJD+0WQPbXyWg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=JReZgmISaIXxgXXvYv/+ULKxnOn7Igl1ROdX272En6w=; b=XyrmMyDVSKDy6ynjdSJow/VGG
+	4NMOEU20FobdHhDIlxLbLPPVctCLut69S9cZipVmHAJF61wmYvfuWPsE8RGnZ/XmhwfzN+RRJzkbU
+	v1SvjzFJkkG0pf8A1L4trVByU+m8g9Kt7upH53OGOSX3Sqibf6WUUBCiqrpLJ8lIFs3JDOXKurn3C
+	JJIQqvXlGNK0xJQW31WanR2rOdCAz5tyN1qVMxbgfdVKgRYf0yZlIVEr7xYrTorxSUEdN1NW1vDDI
+	CrI6Feuok9gYig4uhdZIaJ8tJGp56uGX5dYO1+TzCckk7etHmmilrddLi5iDXXQo83v3hplrI/vQ3
+	ztr0pIPuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRh2x-0008LC-0A; Mon, 04 Nov 2019 18:25:47 +0000
-Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRh2o-0008KT-IB
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 18:25:41 +0000
-Received: by mail-vs1-xe41.google.com with SMTP id k15so11643119vsp.2
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 Nov 2019 10:25:37 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=wt2wTLQmxuTdMREEhAUzUopx1z+7npE/zcGOwaeBYN0=;
- b=DDqpEeTelp0KBAryLFhu0seN089G4kwryRW1DYK2wQrlbIi7CRZsh9v2rcHQEPNl6J
- BBj2NRR2Pk1HlvbuSVjDZIuO5wVpct/qrEFvtbSEy6x4C/TVeLKcEZpKnWq2cs6UPc/M
- l7AgZnDwg4JIqG/CsJuuCNB9U1+Pn6+/Myvlpdne5Wi8ejUqBS+ZbHgKuK0h9LlQ/9U9
- vzflZtZYP33BApxQ0ZnwHc47l2lV6Z24PHrJlAKr48TzpPfeXaXAEYeAe6OnXza1Qus0
- lUbnCrKgtbRLcXOh4dTgIClkyiJiSPQUSNXlnm00vzIZKxY6NiiDXTVHK7IRRgPyZIPf
- 8rLw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=wt2wTLQmxuTdMREEhAUzUopx1z+7npE/zcGOwaeBYN0=;
- b=Cn0Z9UPcNfEsd8r7a/QHRU0zQfVyekg07aQ7oZsRQw52c8kobq76dNR935rWAlUbSE
- 9h7wYyIJbDKK/7CYKrQW5AtiZH+n6mPAA5U2xMP+GXaaI4ho88Os77+wxK8cS75rdIL6
- vF2/TiYrvNTZGxU6AYDO9UiQnxTDKoSZA9Z/DtAEfaZbWo5r1jG7bdlALRossjUc0ZWV
- 4TIpXMhPmePNq8Rpb6JXTFW9504KXj0NqRUFONy4zIfp9TnmkoMWowQ9F4Epq2vzzF5a
- EYwh6+TzEe5E869jFTbBxyv26rpUuBAVx8I2bbA1Vb5n27JPD6dBREeXYP7Xb85a0+Mg
- cuqg==
-X-Gm-Message-State: APjAAAXtMZRdBIv7RlYP4pHUXv64p/EA4YM/wLyAM6Jfs5qNkPwJCSOa
- qFPOOlv64wfknO7IYAzNPkXnm9xPvdfbnMMI5J+XRQ==
-X-Google-Smtp-Source: APXvYqxQ+BbqVGy/ZlafGenaa87R0O4QfL/HHG42BUFGVSDt18L0htIGyWtjiK0hi3VHdQ62vQ0H7BnCJt/j4lp4Ang=
-X-Received: by 2002:a67:e951:: with SMTP id p17mr10322928vso.112.1572891936159; 
- Mon, 04 Nov 2019 10:25:36 -0800 (PST)
+	id 1iRhEH-000410-0V; Mon, 04 Nov 2019 18:37:29 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iRhDr-0003sH-0B
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 18:37:04 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5B3091F1;
+ Mon,  4 Nov 2019 10:36:57 -0800 (PST)
+Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BB33F3F71A;
+ Mon,  4 Nov 2019 10:36:56 -0800 (PST)
+Subject: Re: [PATCH v2 06/10] iommu/io-pgtable-arm: Simplify level indexing
+To: Will Deacon <will@kernel.org>
+References: <cover.1572024119.git.robin.murphy@arm.com>
+ <698173b487383735e470a28e5cca4f9db22703de.1572024120.git.robin.murphy@arm.com>
+ <20191104181722.GF24909@willie-the-truck>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <f39248b0-b70e-4138-3eb9-81ce2cfbee4b@arm.com>
+Date: Mon, 4 Nov 2019 18:36:51 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20191101221150.116536-1-samitolvanen@google.com>
- <20191101221150.116536-6-samitolvanen@google.com>
- <20191104123126.GC45140@lakrids.cambridge.arm.com>
-In-Reply-To: <20191104123126.GC45140@lakrids.cambridge.arm.com>
-From: Sami Tolvanen <samitolvanen@google.com>
-Date: Mon, 4 Nov 2019 10:25:24 -0800
-Message-ID: <CABCJKudAiafvGk60oOjcZwcSHV69vGYZYpHaDD9HRgAuEx4jBw@mail.gmail.com>
-Subject: Re: [PATCH v4 05/17] add support for Clang's Shadow Call Stack (SCS)
-To: Mark Rutland <mark.rutland@arm.com>
+In-Reply-To: <20191104181722.GF24909@willie-the-truck>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_102540_030311_4C313D17 
-X-CRM114-Status: GOOD (  29.07  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20191104_103703_127697_08544732 
+X-CRM114-Status: GOOD (  19.37  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,161 +63,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
- Nick Desaulniers <ndesaulniers@google.com>,
- LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Masami Hiramatsu <mhiramat@kernel.org>, Marc Zyngier <maz@kernel.org>,
- Kernel Hardening <kernel-hardening@lists.openwall.com>,
- Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: iommu@lists.linux-foundation.org, jcrouse@codeaurora.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 4, 2019 at 4:31 AM Mark Rutland <mark.rutland@arm.com> wrote:
-> > +/*
-> > + * In testing, 1 KiB shadow stack size (i.e. 128 stack frames on a 64-bit
-> > + * architecture) provided ~40% safety margin on stack usage while keeping
-> > + * memory allocation overhead reasonable.
-> > + */
-> > +#define SCS_SIZE     1024
->
-> To make it easier to reason about type promotion rules (and avoid that
-> we accidentaly mask out high bits when using this to generate a mask),
-> can we please make this 1024UL?
+On 04/11/2019 18:17, Will Deacon wrote:
+> On Fri, Oct 25, 2019 at 07:08:35PM +0100, Robin Murphy wrote:
+>> The nature of the LPAE format means that data->pg_shift is always
+>> redundant with data->bits_per_level, since they represent the size of a
+>> page and the number of PTEs per page respectively, and the size of a PTE
+>> is constant. Thus it works out more efficient to only store the latter,
+>> and derive the former via a trivial addition where necessary.
+>>
+>> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+>> ---
+>>   drivers/iommu/io-pgtable-arm.c | 29 +++++++++++++----------------
+>>   1 file changed, 13 insertions(+), 16 deletions(-)
+>>
+>> diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
+>> index 4b1483eb0ccf..15b4927ce36b 100644
+>> --- a/drivers/iommu/io-pgtable-arm.c
+>> +++ b/drivers/iommu/io-pgtable-arm.c
+>> @@ -36,10 +36,11 @@
+>>    * in a virtual address mapped by the pagetable in d.
+>>    */
+>>   #define ARM_LPAE_LVL_SHIFT(l,d)						\
+>> -	(((ARM_LPAE_MAX_LEVELS - 1 - (l)) * (d)->bits_per_level) +	\
+>> -	(d)->pg_shift)
+>> +	(((ARM_LPAE_MAX_LEVELS - (l)) * (d)->bits_per_level) +		\
+>> +	ilog2(sizeof(arm_lpae_iopte)))
+>>   
+>> -#define ARM_LPAE_GRANULE(d)		(1UL << (d)->pg_shift)
+>> +#define ARM_LPAE_GRANULE(d)						\
+>> +	(sizeof(arm_lpae_iopte) << (d)->bits_per_level)
+>>   #define ARM_LPAE_PGD_SIZE(d)						\
+>>   	(sizeof(arm_lpae_iopte) << (d)->pgd_bits)
+>>   
+>> @@ -55,9 +56,7 @@
+>>   	 ((1 << ((d)->bits_per_level + ARM_LPAE_PGD_IDX(l,d))) - 1))
+>>   
+>>   /* Calculate the block/page mapping size at level l for pagetable in d. */
+>> -#define ARM_LPAE_BLOCK_SIZE(l,d)					\
+>> -	(1ULL << (ilog2(sizeof(arm_lpae_iopte)) +			\
+>> -		((ARM_LPAE_MAX_LEVELS - (l)) * (d)->bits_per_level)))
+>> +#define ARM_LPAE_BLOCK_SIZE(l,d)	(1ULL << ARM_LPAE_LVL_SHIFT(l,d))
+>>   
+>>   /* Page table bits */
+>>   #define ARM_LPAE_PTE_TYPE_SHIFT		0
+>> @@ -175,8 +174,7 @@ struct arm_lpae_io_pgtable {
+>>   
+>>   	int			pgd_bits;
+>>   	int			start_level;
+>> -	unsigned long		pg_shift;
+>> -	unsigned long		bits_per_level;
+>> +	int			bits_per_level;
+>>   
+>>   	void			*pgd;
+>>   };
+>> @@ -206,7 +204,7 @@ static phys_addr_t iopte_to_paddr(arm_lpae_iopte pte,
+>>   {
+>>   	u64 paddr = pte & ARM_LPAE_PTE_ADDR_MASK;
+>>   
+>> -	if (data->pg_shift < 16)
+>> +	if (data->bits_per_level < 13) /* i.e. 64K granule */
+> 
+> nit, but:
+> 
+> 	if (ARM_LPAE_GRANULE(data) < SZ_64K)
+> 
+> might be clearer and avoid the need for a comment?
 
-Sure.
+Unfortunately GCC doesn't treat the two as directly equivalent 
+(presumably due to boundary conditions) so will emit the additional faff 
+to actually compute and compare the intermediate value every time, 
+rather than just trivially testing the shift. I figured the minor 
+I$/register pressure win was worth the small price of a comment.
 
-> > --- a/kernel/sched/core.c
-> > +++ b/kernel/sched/core.c
-> > @@ -6013,6 +6013,8 @@ void init_idle(struct task_struct *idle, int cpu)
-> >       raw_spin_lock_irqsave(&idle->pi_lock, flags);
-> >       raw_spin_lock(&rq->lock);
-> >
-> > +     scs_task_reset(idle);
->
-> Could we please do this next to the kasan_unpoison_task_stack() call,
-> Either just before, or just after?
->
-> They're boot addressing the same issue where previously live stack is
-> being reused, and in general I'd expect them to occur at the same time
-> (though I understand idle will be a bit different).
+Robin.
 
-Good point, I'll move this.
-
-> > --- a/kernel/sched/sched.h
-> > +++ b/kernel/sched/sched.h
-> > @@ -58,6 +58,7 @@
-> >  #include <linux/profile.h>
-> >  #include <linux/psi.h>
-> >  #include <linux/rcupdate_wait.h>
-> > +#include <linux/scs.h>
-> >  #include <linux/security.h>
-> >  #include <linux/stop_machine.h>
-> >  #include <linux/suspend.h>
->
-> This include looks extraneous.
-
-I added this to sched.h, because most of the includes used in
-kernel/sched appear to be there, but I can move this to
-kernel/sched/core.c instead.
-
-> > +static inline void *__scs_base(struct task_struct *tsk)
-> > +{
-> > +     /*
-> > +      * We allow architectures to use the shadow_call_stack field in
-> > +      * struct thread_info to store the current shadow stack pointer
-> > +      * during context switches.
-> > +      *
-> > +      * This allows the implementation to also clear the field when
-> > +      * the task is active to avoid keeping pointers to the current
-> > +      * task's shadow stack in memory. This can make it harder for an
-> > +      * attacker to locate the shadow stack, but also requires us to
-> > +      * compute the base address when needed.
-> > +      *
-> > +      * We assume the stack is aligned to SCS_SIZE.
-> > +      */
->
-> How about:
->
->         /*
->          * To minimize risk the of exposure, architectures may clear a
->          * task's thread_info::shadow_call_stack while that task is
->          * running, and only save/restore the active shadow call stack
->          * pointer when the usual register may be clobbered (e.g. across
->          * context switches).
->          *
->          * The shadow call stack is aligned to SCS_SIZE, and grows
->          * upwards, so we can mask out the low bits to extract the base
->          * when the task is not running.
->          */
->
-> ... which I think makes the lifetime and constraints a bit clearer.
-
-Sounds good to me, thanks.
-
-> > +     return (void *)((uintptr_t)task_scs(tsk) & ~(SCS_SIZE - 1));
->
-> We usually use unsigned long ratehr than uintptr_t. Could we please use
-> that for consistency?
->
-> The kernel relies on sizeof(unsigned long) == sizeof(void *) tree-wide,
-> so that doesn't cause issues for us here.
->
-> Similarly, as suggested above, it would be easier to reason about this
-> knowing that SCS_SIZE is an unsigned long. While IIUC we'd get sign
-> extension here when it's promoted, giving the definition a UL suffix
-> minimizes the scope for error.
-
-OK, I'll switch to unsigned long.
-
-> > +/* Keep a cache of shadow stacks */
-> > +#define SCS_CACHE_SIZE 2
->
-> How about:
->
-> /* Matches NR_CACHED_STACKS for VMAP_STACK */
-> #define NR_CACHED_SCS 2
->
-> ... which explains where the number came from, and avoids confusion that
-> the SIZE is a byte size rather than number of elements.
-
-Agreed, that sounds better.
-
-> > +static void scs_free(void *s)
-> > +{
-> > +     int i;
-> > +
-> > +     for (i = 0; i < SCS_CACHE_SIZE; i++)
-> > +             if (this_cpu_cmpxchg(scs_cache[i], 0, s) == 0)
-> > +                     return;
->
-> Here we should compare to NULL rather than 0.
-
-Ack.
-
-> > +void __init scs_init(void)
-> > +{
-> > +     cpuhp_setup_state(CPUHP_BP_PREPARE_DYN, "scs:scs_cache", NULL,
-> > +             scs_cleanup);
->
-> We probably want to do something if this call fails. It looks like we'd
-> only leak two pages (and we'd be able to use them if/when that CPU is
-> brought back online. A WARN_ON() is probably fine.
-
-fork_init() in kernel/fork.c lets this fail quietly, but adding a
-WARN_ON seems fine.
-
-I will include these changes in v5.
-
-Sami
+> (I can make the change locally if you agree)
+> 
+> Will
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
