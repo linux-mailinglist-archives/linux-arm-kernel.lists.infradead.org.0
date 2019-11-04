@@ -2,76 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 920A8EECCD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 23:00:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50E36EECFA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 23:02:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MioWxw3CidNp9ZZWLgt01ZEYDem16jnfCUM/G8RKHmo=; b=YEviq2JZ+Jd5P5
-	bnyNwQZ9p4U1jzkcDoblkWfX2wTukqkOj9Gs9rIu7GoU73YvDiP1u3bVoTWGXvLzhT4a9tEwXM5BG
-	DnUWSOtGF3Gfr82vI0ezEXJ/zX5rupnbNrPUu0jOjdSRWHPfse0NUrUhU7Zln/zRng/5ZzaPAhNuR
-	9iz7l5DU+vdkXlXpTxh2QSdgWEA4RinvGa6R+pEucdmwOz7mNnNh3IHjxPYvI/aWz7XBYG8Mg55ge
-	8EdlPzdRJ+oJ26LqxnT2cooOIG4ZBOte10fNFbxyUjRHfHpt9DAnex5nyXhslW6B4J31su8NYLwQe
-	+3KyGmQtqsP57m0xtXJA==;
+	List-Owner; bh=5cz1kfBSn/lTPoCt53UbGcfE9k/cb0acTc+XPJESs7c=; b=bJ3UKxvyGZW29D
+	DfgysJzhD3NtnhzDEhpDu6zOebA/igW3UZKUfOIjLx9cKt2eOaKnpGeqf3Hn2pEp/OIkS3CPB5m22
+	MJOB75XklI/NdYbXPnlgaJg3yfArPAmuMdka/maB4J3BSaRKF/rX/W66AbGnM9zT/XC9/92b7wJPG
+	2cuY7cbzcH9oYyG1ShDRbr4QvKzzkBW7Z0yxnEPk3tNnWCQffAj3PJfo+RxJrzgjc9v3oP/UPRlRl
+	Yik5JzB4rmWw3jhM9U1XxL2AS33PCBL69pUn8moP24EOZG/RnYur4iU1W9boVxNG1klHv4Fdo3aoz
+	QyRvwVPjsN1P1ovCjFqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRkP1-0001iU-4M; Mon, 04 Nov 2019 22:00:47 +0000
-Received: from perceval.ideasonboard.com
- ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+	id 1iRkQ6-00023J-V5; Mon, 04 Nov 2019 22:01:54 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRkOu-0001h5-G3
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 22:00:42 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 3D50E2D1;
- Mon,  4 Nov 2019 23:00:34 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1572904834;
- bh=U7dc9nsQPKj1QZiCGWXXVJuwGqsni7BqpYcYhcA6cnw=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=L3k5oPOcoS11AhVjBWhfs8etQATrw9dPiF6/5nWFBKt3H7eCsMUsTArKLZOXRrtwZ
- VSOv/+m32oxlN/GXdp6h3c+rKhSzXcqMBbH9CGZwRyBqF9jV0e/PUVZQou9lsvEoBk
- DhptT89wPTL1FqF4XOpyUlJe6x48Jn/gQR02g8YU=
-Date: Tue, 5 Nov 2019 00:00:26 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Sakari Ailus <sakari.ailus@iki.fi>
-Subject: Re: [PATCH v4 1/2] dt-bindings: media: i2c: Add IMX296 CMOS sensor
- binding
-Message-ID: <20191104220026.GG4913@pendragon.ideasonboard.com>
-References: <20191030094902.32582-1-manivannan.sadhasivam@linaro.org>
- <20191030094902.32582-2-manivannan.sadhasivam@linaro.org>
- <20191031131538.GA9170@pendragon.ideasonboard.com>
- <20191031134512.GB24273@mani>
- <20191031141141.GD5018@pendragon.ideasonboard.com>
- <20191031142817.GK6253@valkosipuli.retiisi.org.uk>
- <20191031165444.GE5018@pendragon.ideasonboard.com>
- <20191031170837.GN6253@valkosipuli.retiisi.org.uk>
- <20191104190201.GF4913@pendragon.ideasonboard.com>
- <20191104213032.GT6253@valkosipuli.retiisi.org.uk>
+ id 1iRkPz-00022Y-GY
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 22:01:49 +0000
+Received: by mail-oi1-f194.google.com with SMTP id v186so15624566oie.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 04 Nov 2019 14:01:46 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=gICVn3u8ASpKk8yKpGUgqNBScOIqpiBNd4WtMocjQ8o=;
+ b=LMi/nHgF+hzL3TA2iQyjwn/RXJw3gw1ljIQSP0Bi/JlB7Hi4i4oLJb9yf2J0CNDwCc
+ ++nxZVVBx34Xj/04ZHMyfaBZhkVVlX9prcpwtuVnA/PNKKsSjufrLBWV9HFXC4Gt7vUJ
+ hjT3AGDFG869A6UMpWN/jsQwy2qfltb/huJs+n3O7Fp5bJW2PjJoGX3B2pgCj6mNuBBi
+ 8tS1Mk29QngwoNPYU0C+Xao21O7rQEY+PFgmYXFSke49wVYukljwGvPAbcwEiSHYYBNJ
+ Vopgb79CT707uXqkp1P6kOsIXiJTp0zMQpRbpbZ5muexNCEyfPyp3oolkE3dzBKALWQh
+ a39A==
+X-Gm-Message-State: APjAAAW4hjFerHOWQtUHUfAOMj26tAlGOZCYRXUux0mi3LtIsc0y/K/H
+ iHSSO0F5zl46pHTYkHcwsA==
+X-Google-Smtp-Source: APXvYqwLHKhqTibA1uW3XY9c8wtsWQIYuDLFvJINilMATw8yBBYyhOv5hhkQXaGX5VRglnSSyVHobw==
+X-Received: by 2002:a54:4484:: with SMTP id v4mr1058881oiv.49.1572904905923;
+ Mon, 04 Nov 2019 14:01:45 -0800 (PST)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id 68sm5857904otw.56.2019.11.04.14.01.45
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 04 Nov 2019 14:01:45 -0800 (PST)
+Date: Mon, 4 Nov 2019 16:01:44 -0600
+From: Rob Herring <robh@kernel.org>
+To: Leonard Crestez <leonard.crestez@nxp.com>
+Subject: Re: [PATCH v3 6/6] arm64: dts: imx8m: Add ddr controller nodes
+Message-ID: <20191104220144.GA5218@bogus>
+References: <cover.1572558427.git.leonard.crestez@nxp.com>
+ <44dcab5a136f5b046092e6ed456d8e206413059f.1572558427.git.leonard.crestez@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191104213032.GT6253@valkosipuli.retiisi.org.uk>
+In-Reply-To: <44dcab5a136f5b046092e6ed456d8e206413059f.1572558427.git.leonard.crestez@nxp.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_140040_842324_F5A1A989 
-X-CRM114-Status: GOOD (  29.18  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191104_140147_552674_B50D41CB 
+X-CRM114-Status: GOOD (  22.96  )
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.194 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.194 listed in wl.mailspike.net]
+ 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,162 +91,283 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
- linux-kernel@vger.kernel.org, a.brela@framos.com, peter.griffin@linaro.org,
- robh+dt@kernel.org, Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Artur =?utf-8?B?xZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
+ Jacky Bai <ping.bai@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
+ Alexandre Bailon <abailon@baylibre.com>, Matthias Kaehlcke <mka@chromium.org>,
+ Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, linux-clk@vger.kernel.org,
+ Chanwoo Choi <cw00.choi@samsung.com>, MyungJoo Ham <myungjoo.ham@samsung.com>,
+ linux-imx@nxp.com, devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
+ Martin Kepplinger <martink@posteo.de>, linux-arm-kernel@lists.infradead.org,
+ Dong Aisheng <aisheng.dong@nxp.com>, Anson Huang <Anson.Huang@nxp.com>,
+ Stephen Boyd <sboyd@kernel.org>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Kyungmin Park <kyungmin.park@samsung.com>, kernel@pengutronix.de,
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ Georgi Djakov <georgi.djakov@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sakari,
-
-On Mon, Nov 04, 2019 at 11:30:32PM +0200, Sakari Ailus wrote:
-> On Mon, Nov 04, 2019 at 09:02:01PM +0200, Laurent Pinchart wrote:
-> > On Thu, Oct 31, 2019 at 07:08:37PM +0200, Sakari Ailus wrote:
-> >> On Thu, Oct 31, 2019 at 06:54:44PM +0200, Laurent Pinchart wrote:
-> >>> On Thu, Oct 31, 2019 at 04:28:17PM +0200, Sakari Ailus wrote:
-> >>>> On Thu, Oct 31, 2019 at 04:11:41PM +0200, Laurent Pinchart wrote:
-> >>>>> On Thu, Oct 31, 2019 at 07:15:12PM +0530, Manivannan Sadhasivam wrote:
-> >>>>>> On Thu, Oct 31, 2019 at 03:15:38PM +0200, Laurent Pinchart wrote:
-> >>>>>>> On Wed, Oct 30, 2019 at 03:19:01PM +0530, Manivannan Sadhasivam wrote:
-> >>>>>>>> Add YAML devicetree binding for IMX296 CMOS image sensor. Let's also
-> >>>>>>>> add MAINTAINERS entry for the binding and driver.
-> >>>>>>>> 
-> >>>>>>>> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> >>>>>>>> ---
-> >>>>>>>>  .../devicetree/bindings/media/i2c/imx296.yaml | 94 +++++++++++++++++++
-> >>>>>>>>  MAINTAINERS                                   |  8 ++
-> >>>>>>>>  2 files changed, 102 insertions(+)
-> >>>>>>>>  create mode 100644 Documentation/devicetree/bindings/media/i2c/imx296.yaml
-> >>>>>>>> 
-> >>>>>>>> diff --git a/Documentation/devicetree/bindings/media/i2c/imx296.yaml b/Documentation/devicetree/bindings/media/i2c/imx296.yaml
-> >>>>>>>> new file mode 100644
-> >>>>>>>> index 000000000000..c04ec2203268
-> >>>>>>>> --- /dev/null
-> >>>>>>>> +++ b/Documentation/devicetree/bindings/media/i2c/imx296.yaml
-> >>>>>>>> @@ -0,0 +1,94 @@
-> >>>>>>>> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> >>>>>>>> +%YAML 1.2
-> >>>>>>>> +---
-> >>>>>>>> +$id: http://devicetree.org/schemas/media/i2c/imx296.yaml#
-> >>>>>>>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> >>>>>>>> +
-> >>>>>>>> +title: Sony IMX296 1/2.8-Inch CMOS Image Sensor
-> >>>>>>>> +
-> >>>>>>>> +maintainers:
-> >>>>>>>> +  - Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> >>>>>>>> +
-> >>>>>>>> +description: |-
-> >>>>>>>> +  The Sony IMX296 is a 1/2.9-Inch active pixel type CMOS Solid-state image
-> >>>>>>>> +  sensor with square pixel array and 1.58 M effective pixels. This chip
-> >>>>>>>> +  features a global shutter with variable charge-integration time. It is
-> >>>>>>>> +  programmable through I2C and 4-wire interfaces. The sensor output is
-> >>>>>>>> +  available via CSI-2 serial data output (1 Lane).
-> >>>>>>>> +
-> >>>>>>>> +properties:
-> >>>>>>>> +  compatible:
-> >>>>>>>> +    const: sony,imx296
-> >>>>>>>> +
-> >>>>>>>> +  reg:
-> >>>>>>>> +    maxItems: 1
-> >>>>>>>> +
-> >>>>>>>> +  clocks:
-> >>>>>>>> +    maxItems: 1
-> >>>>>>>> +
-> >>>>>>>> +  clock-names:
-> >>>>>>>> +    description:
-> >>>>>>>> +      Input clock for the sensor.
-> >>>>>>>> +    items:
-> >>>>>>>> +      - const: mclk
-> >>>>>>> 
-> >>>>>>> The pin is named INCK, let's name the clock accordingly.
-> >>>>>> 
-> >>>>>> Okay, I thought generic names are preferred here!
-> >>>>>>  
-> >>>>>>>> +  clock-frequency:
-> >>>>>>>> +    description:
-> >>>>>>>> +      Frequency of the mclk clock in Hertz.
-> >>>>>>> 
-> >>>>>>> This shouldn't be needed, you can retrieve the clock frequency at
-> >>>>>>> runtime from the clock source.
-> >>>>>> 
-> >>>>>> Unless the clock source is a fixed one! What if the clock source comes from
-> >>>>>> SoC? We need to set the rate, right?
-> >>>>> 
-> >>>>> In that case, if you want to hardcode the clock in DT, the preferred way
-> >>>>> is to use the assigned-clock-rates property. Otherwise, if the driver
-> >>>>> requires a specific clock frequency, it's better to hardcode it in the
-> >>>>> driver itself. In this specific case, I think assigned-clock-rates is
-> >>>>> best as the device can support three different clock frequencies.
-> >>>> 
-> >>>> Just note that if ACPI support is added to the sensor driver, you'll need
-> >>>> the clock-frequency property again, for that's the only way how the driver
-> >>>> will get the clock frequency.
-> >>> 
-> >>> Why is so ? Why can't we implement of assigned-clock-rates for ACPI ?
-> >> 
-> >> ACPI doesn't deal with clocks as such. So there's also no ACPI defined way
-> >> to access clocks specifically, including the frequency --- instead the
-> >> clock is controlled by an AML methods which implement power on and off
-> >> sequences for the device.
-> > 
-> > It's a shortcoming of ACPI, which should be addressed at the ACPI level.
-> > We shouldn't polute the DT bindings with a clock-frequency property for
-> > this reason.
+On Thu, Oct 31, 2019 at 11:50:27PM +0200, Leonard Crestez wrote:
+> This is used by the imx-ddrc devfreq driver to implement dynamic
+> frequency scaling of DRAM.
 > 
-> It's really not a shortcoming but a design decision: what belongs to the
-> scope of the firmware? And in this case system and device power management
-> implementation is included. I do not believe this will be revisited in any
-> foreseeable future, i.e. there will be no clock control interface for ACPI.
-
-I'm not saying there's a need to control clocks, but if the driver of
-the camera sensor needs to know the frequency of an externally supplied
-clock, the firmware should give a way for the operating system to
-retrieve the clock frequency. Doing so with a clock-frequency in the
-sensor node is a hack to work around a limitation of ACPI, as the Linux
-model to retrieve clock frequencies it to interogate the clock provider.
-
-> Explicitly stating the frequency also has an added benefit: the driver
-> can be certain that the given frequency is intended to be used on the
-> board. Otherwise the frequency could have been changed by e.g. another
-> driver. This does matter, as the frequency determines which link
-> frequencies can be achieved, and as the two effectively have to be
-> compliant, an unintended external clock frequency also means there will be
-> no match between possible link frequencies and configured link frequencies.
-
-This doesn't solve anything, quite the contrary. With
-assigned-clock-rates the frequency is set once in the firmware, the
-operating system configures the clock provider to set the frequency, and
-the sensor driver then queries the provider. There's a single source of
-clock frequency information. With clock-frequency, you have two sources
-of information, the value of the property and the value set when
-programming the clock provider in the firmware (either in the BIOS/UEFI,
-or in the ACPI DSDT AML). That's a chance to get it wrong, and we both
-know how reliable firmware is.
-
-Furthermore, the clock-frequency property requires drivers to be
-informed of firmware details. On DT-based systems they should use
-clk_get_rate(), while on ACPI-based systems they should read the
-clock-frequency property. If you want to support ACPI, this should be
-hidden by the firmware, with retrieval of clock frequency from the
-firmware handled in core code.
-
-One option would be to create fixed clocks automatically for ACPI
-devices that report clock frequency through an ACPI-specific (as in
-defined outside of the ACPI standard, through DSD for instance) mean.
-Drivers would then be able to call clk_get() and clk_get_rate().
-
-> I.e. no images to capture either.
+> Add a devfreq-event link to the dram PMU in order to support on-demand
+> scaling of ddrc based on measured dram bandwidth usage.
 > 
-> That said, I don't know if this has been a practical issue in the past.
+> Support for proactive scaling via interconnect will come later. The
+> high-performance bus masters which need that (display, vpu, gpu) are not
+> yet enabled in upstream anyway.
+> 
+> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> ---
+>  arch/arm64/boot/dts/freescale/imx8mm-evk.dts  | 18 ++++++++++++++
+>  arch/arm64/boot/dts/freescale/imx8mm.dtsi     | 17 ++++++++++++-
+>  .../boot/dts/freescale/imx8mn-ddr4-evk.dts    | 18 ++++++++++++++
+>  arch/arm64/boot/dts/freescale/imx8mn.dtsi     | 16 ++++++++++++-
+>  arch/arm64/boot/dts/freescale/imx8mq-evk.dts  | 24 +++++++++++++++++++
+>  arch/arm64/boot/dts/freescale/imx8mq.dtsi     | 16 ++++++++++++-
+>  6 files changed, 106 insertions(+), 3 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
+> index 4f5e408d6e6a..be9abd8e4478 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
+> +++ b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
+> @@ -69,16 +69,34 @@
+>  		simple-audio-card,codec {
+>  			sound-dai = <&wm8524>;
+>  			clocks = <&clk IMX8MM_CLK_SAI3_ROOT>;
+>  		};
+>  	};
+> +
+> +	ddrc_opp_table: ddrc-opp-table {
+> +		compatible = "operating-points-v2";
+> +
+> +		opp-25M {
+> +			opp-hz = /bits/ 64 <25000000>;
+> +		};
+> +		opp-100M {
+> +			opp-hz = /bits/ 64 <100000000>;
+> +		};
+> +		opp-750M {
+> +			opp-hz = /bits/ 64 <750000000>;
+> +		};
+> +	};
+>  };
+>  
+>  &A53_0 {
+>  	cpu-supply = <&buck2_reg>;
+>  };
+>  
+> +&ddrc {
+> +	operating-points-v2 = <&ddrc_opp_table>;
+> +};
+> +
+>  &fec1 {
+>  	pinctrl-names = "default";
+>  	pinctrl-0 = <&pinctrl_fec1>;
+>  	phy-mode = "rgmii-id";
+>  	phy-handle = <&ethphy0>;
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> index 6edbdfe2d0d7..5404870d80d5 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> @@ -856,11 +856,26 @@
+>  			#interrupt-cells = <3>;
+>  			interrupt-controller;
+>  			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
+>  		};
+>  
+> -		ddr-pmu@3d800000 {
+> +		ddrc: dram-controller@3d400000 {
+> +			compatible = "fsl,imx8mm-ddrc", "fsl,imx8m-ddrc";
+> +			reg = <0x3d400000 0x400000>;
 
--- 
-Regards,
+Do you really need the OS to map 4MB of register space? Virtual 
+space on 64-bit doesn't matter, but it's still wasting 2KB of memory 
+just to map all that if only a few pages are needed. Adds up if the 
+whole DT is done this way.
 
-Laurent Pinchart
+> +			clock-names = "dram_core",
+> +				      "dram_pll",
+> +				      "dram_alt",
+> +				      "dram_apb";
+> +			clocks = <&clk IMX8MM_CLK_DRAM_CORE>,
+> +				 <&clk IMX8MM_DRAM_PLL>,
+> +				 <&clk IMX8MM_CLK_DRAM_ALT>,
+> +				 <&clk IMX8MM_CLK_DRAM_APB>;
+> +			devfreq-events = <&ddr_pmu>;
+> +			operating-points-v2 = <&ddrc_opp_table>;
+> +		};
+> +
+> +		ddr_pmu: ddr-pmu@3d800000 {
+>  			compatible = "fsl,imx8mm-ddr-pmu", "fsl,imx8m-ddr-pmu";
+>  			reg = <0x3d800000 0x400000>;
+>  			interrupt-parent = <&gic>;
+>  			interrupts = <GIC_SPI 98 IRQ_TYPE_LEVEL_HIGH>;
+>  		};
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts b/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts
+> index 071949412caf..ab2060667671 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts
+> +++ b/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts
+> @@ -9,16 +9,34 @@
+>  #include "imx8mn-evk.dtsi"
+>  
+>  / {
+>  	model = "NXP i.MX8MNano DDR4 EVK board";
+>  	compatible = "fsl,imx8mn-ddr4-evk", "fsl,imx8mn";
+> +
+> +	ddrc_opp_table: ddrc-opp-table {
+
+I think it would be better to put this under the ddrc node (and named 
+'opp-table'). Yes, it's kind of silly to have a phandle to a child node, 
+but that still works.
+
+> +		compatible = "operating-points-v2";
+> +
+> +		opp-25M {
+> +			opp-hz = /bits/ 64 <25000000>;
+> +		};
+> +		opp-100M {
+> +			opp-hz = /bits/ 64 <100000000>;
+> +		};
+> +		opp-600M {
+> +			opp-hz = /bits/ 64 <600000000>;
+> +		};
+> +	};
+>  };
+>  
+>  &A53_0 {
+>  	cpu-supply = <&buck2_reg>;
+>  };
+>  
+> +&ddrc {
+> +	operating-points-v2 = <&ddrc_opp_table>;
+> +};
+> +
+>  &i2c1 {
+>  	pmic@4b {
+>  		compatible = "rohm,bd71847";
+>  		reg = <0x4b>;
+>  		pinctrl-0 = <&pinctrl_pmic>;
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mn.dtsi b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
+> index e91625063f8e..344dd777635f 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mn.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
+> @@ -757,11 +757,25 @@
+>  			#interrupt-cells = <3>;
+>  			interrupt-controller;
+>  			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
+>  		};
+>  
+> -		ddr-pmu@3d800000 {
+> +		ddrc: dram-controller@3d400000 {
+> +			compatible = "fsl,imx8mn-ddrc", "fsl,imx8m-ddrc";
+> +			reg = <0x3d400000 0x400000>;
+> +			clock-names = "dram_core",
+> +				      "dram_pll",
+> +				      "dram_alt",
+> +				      "dram_apb";
+> +			clocks = <&clk IMX8MN_CLK_DRAM_CORE>,
+> +				 <&clk IMX8MN_DRAM_PLL>,
+> +				 <&clk IMX8MN_CLK_DRAM_ALT>,
+> +				 <&clk IMX8MN_CLK_DRAM_APB>;
+> +			devfreq-events = <&ddr_pmu>;
+> +		};
+> +
+> +		ddr_pmu: ddr-pmu@3d800000 {
+>  			compatible = "fsl,imx8mn-ddr-pmu", "fsl,imx8m-ddr-pmu";
+>  			reg = <0x3d800000 0x400000>;
+>  			interrupts = <GIC_SPI 98 IRQ_TYPE_LEVEL_HIGH>;
+>  		};
+>  	};
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mq-evk.dts b/arch/arm64/boot/dts/freescale/imx8mq-evk.dts
+> index c36685916683..fc4c12ab8991 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mq-evk.dts
+> +++ b/arch/arm64/boot/dts/freescale/imx8mq-evk.dts
+> @@ -85,10 +85,30 @@
+>  		link_codec: simple-audio-card,codec {
+>  			sound-dai = <&wm8524>;
+>  			clocks = <&clk IMX8MQ_CLK_SAI2_ROOT>;
+>  		};
+>  	};
+> +
+> +	ddrc_opp_table: ddrc-opp-table {
+> +		compatible = "operating-points-v2";
+> +
+> +		opp-25M {
+> +			opp-hz = /bits/ 64 <25000000>;
+> +		};
+> +		opp-100M {
+> +			opp-hz = /bits/ 64 <100000000>;
+> +		};
+> +		/*
+> +		 * On imx8mq B0 PLL can't be bypassed so low bus is 166M
+> +		 */
+> +		opp-166M {
+> +			opp-hz = /bits/ 64 <166935483>;
+> +		};
+> +		opp-800M {
+> +			opp-hz = /bits/ 64 <800000000>;
+> +		};
+> +	};
+>  };
+>  
+>  &A53_0 {
+>  	cpu-supply = <&buck2_reg>;
+>  };
+> @@ -103,10 +123,14 @@
+>  
+>  &A53_3 {
+>  	cpu-supply = <&buck2_reg>;
+>  };
+>  
+> +&ddrc {
+> +	operating-points-v2 = <&ddrc_opp_table>;
+> +};
+> +
+>  &fec1 {
+>  	pinctrl-names = "default";
+>  	pinctrl-0 = <&pinctrl_fec1>;
+>  	phy-mode = "rgmii-id";
+>  	phy-handle = <&ethphy0>;
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+> index 7f9319452b58..6ef1af41ef68 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+> @@ -1111,11 +1111,25 @@
+>  			interrupt-controller;
+>  			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
+>  			interrupt-parent = <&gic>;
+>  		};
+>  
+> -		ddr-pmu@3d800000 {
+> +		ddrc: dram-controller@3d400000 {
+> +			compatible = "fsl,imx8mq-ddrc", "fsl,imx8m-ddrc";
+> +			reg = <0x3d400000 0x400000>;
+> +			clock-names = "dram_core",
+> +				      "dram_pll",
+> +				      "dram_alt",
+> +				      "dram_apb";
+> +			clocks = <&clk IMX8MQ_CLK_DRAM_CORE>,
+> +				 <&clk IMX8MQ_DRAM_PLL_OUT>,
+> +				 <&clk IMX8MQ_CLK_DRAM_ALT>,
+> +				 <&clk IMX8MQ_CLK_DRAM_APB>;
+> +			devfreq-events = <&ddr_pmu>;
+> +		};
+> +
+> +		ddr_pmu: ddr-pmu@3d800000 {
+>  			compatible = "fsl,imx8mq-ddr-pmu", "fsl,imx8m-ddr-pmu";
+>  			reg = <0x3d800000 0x400000>;
+>  			interrupt-parent = <&gic>;
+>  			interrupts = <GIC_SPI 98 IRQ_TYPE_LEVEL_HIGH>;
+>  		};
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
