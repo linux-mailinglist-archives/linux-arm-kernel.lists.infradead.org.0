@@ -2,66 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51770EF0AE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 23:39:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 326A1EF0C9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 23:50:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=+2ZWCUNgQf/zPwcBPddNLsoaudyWKrYMyXTGqR2mbLA=; b=EfE
-	N9gyEPif5IU0/7vuIbIJbiuxnU8p+N8uiKXnNhohI9vDVlm/ujMgx/uxFnsqGCiD42XzwKiQ7Li3d
-	MUsolf5hfyfV01gwZeEUPICDntB60+P84Qh010MAGqbVTVtkhxSxRftF/KYFENJzfVbvtBl1h7SYL
-	ZaElfW6kiXmI0LKhyFve+0T1ehqFLE8qkabPeIaO6+L9TnBH+IyiQ77jaIKn0QiuAwBbQvI3bzgEo
-	snoWJw2BtlUib2sW7zk1AYiMqrkc3MKGXB78l7LVfkBRtALC9MKS1ovQjorrzD4cQr4i24ZuoFJ43
-	Y0+9i5N6FZCn1TQSv4tt4ukMlpXAIiA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=J8RcvCZxYMBbNiXhgtfy5inF8j8ePYiKDRQXk6zOz88=; b=iw0V4cfS2z1LSl
+	ydkO1JPPg+Gtjc8lseRvBPC/OeEyN0ldBNmtKBNycIsL65VoXTkh3XDL6My+JCPnkX+hOFsnTdwA+
+	Etn9+uJWSV0TGbVX/QC5axb6yCOjEF4NFHpY70K8vMiW6/fhHXNbIfDYoiUenM0PetgtPW0rofx9L
+	zbI4nb08FyAIey4lvP1Aymj5iIxNEKVtPZaJ2p7nnUFtPawJaLjrIvLcV23JCpckX34WGpuUzCR1c
+	dYi39tYZr7YLvI/jXbw2lZXSJ75wbBR9qcB+w+hHoJ6dnU3gXMXzs/ZtW8l4m8CH3yW3c0fCnaM+h
+	j+9JvRU5C5y/Gz6R6FCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRl0f-0000vV-Gm; Mon, 04 Nov 2019 22:39:41 +0000
-Received: from ozlabs.org ([203.11.71.1])
+	id 1iRlAb-00049W-MJ; Mon, 04 Nov 2019 22:49:57 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRl0W-0000sh-DG
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 22:39:33 +0000
-Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by mail.ozlabs.org (Postfix) with ESMTPSA id 476SQk0J3jz9s4Y;
- Tue,  5 Nov 2019 09:39:26 +1100 (AEDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
- s=201702; t=1572907166;
- bh=9oLJgy9YhD2/uxYf9HCCJm4CgrXLkCKAqUiXoi7Lzm0=;
- h=Date:From:To:Cc:Subject:From;
- b=qCZfwWIeGg949YF6o72C31LNMDkkKUwtcNqN0j08fNYuzB8MHGKlEqt81xEtP/0Cl
- x348o6g69/g+bLLm/5aExm0eWwK9p6oLaALBeQEsorkv7ssimIaKRSjb2N42v/uGZa
- CigtPL0tZeX5ujIFCApkB8YTTYqFgbqPwiSXkUSgqOQZl8/8T+6Wf6RK65Rd3/lx6x
- qf9973MdWppY+BRsqHewyMHrlv2pLMkrD/35CTHpjrM/F/QBiejfVuWeRG1lS4d5R7
- nIognTgoS2osyNNHgQnk+DnamR5ls4JtR/FfDrB6LpZ4paYbKztHJOnhyEqh/U7pBP
- gNWdDRx/QIJ6g==
-Date: Tue, 5 Nov 2019 09:39:20 +1100
-From: Stephen Rothwell <sfr@canb.auug.org.au>
-To: Andy Gross <agross@kernel.org>, Olof Johansson <olof@lixom.net>, Arnd
- Bergmann <arnd@arndb.de>, ARM <linux-arm-kernel@lists.infradead.org>
-Subject: linux-next: manual merge of the qcom tree with the arm-soc tree
-Message-ID: <20191105093920.7869c1eb@canb.auug.org.au>
+ id 1iRlAU-000493-Co
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 22:49:52 +0000
+Received: by mail-oi1-f196.google.com with SMTP id j7so15751716oib.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 04 Nov 2019 14:49:49 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=1s5GDpJ2vznfw9Ye+nOltlxe2jd1EibRhiWFAsltDOo=;
+ b=ighYNGvcZOYm99Win3QjhnyVZ3s1dt1bksOKpKdcgN3AjPfr05VPRLAtgLtr7PPSjS
+ U+hERZ6Mv2QRpJo5rH8CQweIxjNoyX6o9ULibem5dfKsF/c9JkJd212yHPV5skQa/OzJ
+ so4Tr2G1wfS2ChE3monHsOoDemYK1TN5VDEmiNh1zc3ZlJ5x9P7jdrk64QZktDSE5iHn
+ WxXHq3PDZl/Y1tRNVfWexLz7mjprCA9S92v8/jZCkdTxl7y8qNjqjWKWi7yySyUAGhzE
+ sajNqYsjii+wcSKy+sKHXP5GBAIaj40K22bNnmC3bYFihOINllvWU7x44JiB0V1wCYfp
+ NqbQ==
+X-Gm-Message-State: APjAAAWN+BDZFBk4hR1vYBlNjUnJWo3ojeDdNHoqR5F8pfHGYSd1tY+a
+ IEPBK/9/i8XpKZHmArkXDg==
+X-Google-Smtp-Source: APXvYqwG00PUvlv7RmfQfRiqNp9ITUkLiJAd1yqfHFQBbyuGVd95+23AWlzongxB/8/UtaXQTn3VGA==
+X-Received: by 2002:aca:da06:: with SMTP id r6mr1204237oig.82.1572907788770;
+ Mon, 04 Nov 2019 14:49:48 -0800 (PST)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id k24sm5033064oic.29.2019.11.04.14.49.47
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 04 Nov 2019 14:49:47 -0800 (PST)
+Date: Mon, 4 Nov 2019 16:49:46 -0600
+From: Rob Herring <robh@kernel.org>
+To: Leonard Crestez <leonard.crestez@nxp.com>
+Subject: Re: [PATCH RFC v5 01/10] dt-bindings: devfreq: Add bindings for
+ generic imx buses
+Message-ID: <20191104224946.GB17515@bogus>
+References: <cover.1572562150.git.leonard.crestez@nxp.com>
+ <0e4118456f8eb67e1ba8a7c23127fc3def58547b.1572562150.git.leonard.crestez@nxp.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <0e4118456f8eb67e1ba8a7c23127fc3def58547b.1572562150.git.leonard.crestez@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_143932_611066_190075EA 
-X-CRM114-Status: UNSURE (   7.73  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20191104_144950_435687_72113EEE 
+X-CRM114-Status: GOOD (  23.58  )
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.196 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,103 +92,153 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Zhou Wang <wangzhou1@hisilicon.com>,
- Linux Next Mailing List <linux-next@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Wei Xu <xuwei5@hisilicon.com>, Bjorn Andersson <bjorn.andersson@linaro.org>
-Content-Type: multipart/mixed; boundary="===============3065028582502720278=="
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Artur =?utf-8?B?xZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
+ Jacky Bai <ping.bai@nxp.com>, "Rafael J. Wysocki" <rafael@kernel.org>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>, Abel Vesa <abel.vesa@nxp.com>,
+ Anson Huang <Anson.Huang@nxp.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Chanwoo Choi <cw00.choi@samsung.com>, Matthias Kaehlcke <mka@chromium.org>,
+ linux-imx@nxp.com, devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
+ Martin Kepplinger <martink@posteo.de>, linux-arm-kernel@lists.infradead.org,
+ Dong Aisheng <aisheng.dong@nxp.com>, Saravana Kannan <saravanak@google.com>,
+ Stephen Boyd <sboyd@kernel.org>, Kyungmin Park <kyungmin.park@samsung.com>,
+ kernel@pengutronix.de, Fabio Estevam <fabio.estevam@nxp.com>,
+ Shawn Guo <shawnguo@kernel.org>, Georgi Djakov <georgi.djakov@linaro.org>,
+ Alexandre Bailon <abailon@baylibre.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============3065028582502720278==
-Content-Type: multipart/signed; boundary="Sig_/N.KP0oVduH6feDqNG=/N3Wb";
- protocol="application/pgp-signature"; micalg=pgp-sha256
+On Fri, Nov 01, 2019 at 12:52:00AM +0200, Leonard Crestez wrote:
+> Add initial dt bindings for the interconnects inside i.MX chips.
+> Multiple external IPs are involved but SOC integration means the
+> software controllable interfaces are very similar.
+> 
+> Single node also acts as interconnect provider if #interconnect-cells is
+> present.
+> 
+> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> Acked-by: MyungJoo Ham <myungjoo.ham@samsung.com>
+> ---
+>  .../devicetree/bindings/devfreq/imx.yaml      | 83 +++++++++++++++++++
 
---Sig_/N.KP0oVduH6feDqNG=/N3Wb
-Content-Type: text/plain; charset=US-ASCII
-Content-Transfer-Encoding: quoted-printable
+bindings/interconnect/
 
-Hi all,
+>  1 file changed, 83 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/devfreq/imx.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/devfreq/imx.yaml b/Documentation/devicetree/bindings/devfreq/imx.yaml
+> new file mode 100644
+> index 000000000000..bfc825407764
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/devfreq/imx.yaml
+> @@ -0,0 +1,83 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/devfreq/imx.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Generic i.MX bus frequency device
 
-Today's linux-next merge of the qcom tree got a conflict in:
+i.MX8 specific?
 
-  arch/arm64/configs/defconfig
+> +
+> +maintainers:
+> +  - Leonard Crestez <leonard.crestez@nxp.com>
+> +
+> +description: |
+> +  The i.MX SoC family has multiple buses for which clock frequency (and
+> +  sometimes voltage) can be adjusted.
+> +
+> +  Some of those buses expose register areas mentioned in the memory maps as GPV
+> +  ("Global Programmers View") but not all. Access to this area might be denied
+> +  for normal (non-secure) world.
+> +
+> +  The buses are based on externally licensed IPs such as ARM NIC-301 and
+> +  Arteris FlexNOC but DT bindings are specific to the integration of these bus
+> +  interconnect IPs into imx SOCs.
+> +
+> +properties:
+> +  compatible:
+> +    oneOf:
+> +      - items:
+> +        - enum:
+> +          - fsl,imx8mn-nic
+> +          - fsl,imx8mm-nic
+> +          - fsl,imx8mq-nic
+> +        - const: fsl,imx8m-nic
+> +      - items:
+> +        - enum:
+> +          - fsl,imx8mn-noc
+> +          - fsl,imx8mm-noc
+> +          - fsl,imx8mq-noc
+> +        - const: fsl,imx8m-noc
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    maxItems: 1
+> +
+> +  operating-points-v2: true
+> +
+> +  devfreq:
+> +    description: |
+> +      Phandle to another devfreq device to match OPPs with by using the
+> +      passive governor.
+> +    $ref: "/schemas/types.yaml#/definitions/phandle"
+> +
+> +  '#interconnect-cells':
+> +    description: |
+> +      If specified then also act as an interconnect provider. Should only be
+> +      set once per soc on main noc.
+> +    const: 1
+> +
+> +  interconnect-node-id:
 
-between commit:
+Looks like common property, but it's not...
 
-  af24cb20689d ("arm64: defconfig: Enable HiSilicon ZIP controller")
+Generally, we don't do indexes or instance ids. So it needs a better 
+explanation or drop this. The driver side looks like an odd marriage 
+between interconnect and devfreq drivers that needs better integration, 
+but I'm not all that familar with either.
 
-from the arm-soc tree and commit:
+> +    description: |
+> +      i.MX chips have multiple scalable buses based on the same IP, this is
+> +      used to distinguish between. Uses same identifier namespace as consumer
 
-  ca1561a3d8e4 ("arm64: defconfig: Enable Qualcomm pseudo rng")
+It's not names, so number space? Just guessing because there's no type 
+nor example.
 
-from the qcom tree.
-
-I fixed it up (see below) and can carry the fix as necessary. This
-is now fixed as far as linux-next is concerned, but any non trivial
-conflicts should be mentioned to your upstream maintainer when your tree
-is submitted for merging.  You may also want to consider cooperating
-with the maintainer of the conflicting tree to minimise any particularly
-complex conflicts.
-
---=20
-Cheers,
-Stephen Rothwell
-
-diff --cc arch/arm64/configs/defconfig
-index d3a289e12c92,0de751801c98..000000000000
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@@ -750,8 -749,8 +759,9 @@@ CONFIG_QCOM_SMEM=3D
-  CONFIG_QCOM_SMD_RPM=3Dy
-  CONFIG_QCOM_SMP2P=3Dy
-  CONFIG_QCOM_SMSM=3Dy
-+ CONFIG_QCOM_SOCINFO=3Dm
-  CONFIG_ARCH_R8A774A1=3Dy
- +CONFIG_ARCH_R8A774B1=3Dy
-  CONFIG_ARCH_R8A774C0=3Dy
-  CONFIG_ARCH_R8A7795=3Dy
-  CONFIG_ARCH_R8A7796=3Dy
-@@@ -861,7 -860,8 +873,9 @@@ CONFIG_NLS_ISO8859_1=3D
-  CONFIG_SECURITY=3Dy
-  CONFIG_CRYPTO_ECHAINIV=3Dy
-  CONFIG_CRYPTO_ANSI_CPRNG=3Dy
- +CONFIG_CRYPTO_DEV_HISI_ZIP=3Dm
-+ CONFIG_CRYPTO_USER_API_RNG=3Dm
-+ CONFIG_CRYPTO_DEV_QCOM_RNG=3Dm
-  CONFIG_DMA_CMA=3Dy
-  CONFIG_CMA_SIZE_MBYTES=3D32
-  CONFIG_PRINTK_TIME=3Dy
-
---Sig_/N.KP0oVduH6feDqNG=/N3Wb
-Content-Type: application/pgp-signature
-Content-Description: OpenPGP digital signature
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAl3AqJgACgkQAVBC80lX
-0GzN9gf/ZVgW42+vigalmlsEuJfUi4o5+3pp/xfkPhZCycQypHIZnNKwPQ/pZT5N
-Jf5jpxWHLXA+ScZSF53P1mJtFq9Xwty4wIC0qDgworyfy69F+PPBky3nSnkUVv6I
-CSdufLshzxmJd5TCMzagS1WXY96t3Qkwo9FRkMTzpaS1Y/K0wYF3hr7Rj2wYBhgy
-wneGoCMNp/DtgzkWrMuC+hJIJHyBfFh8x1zhkbvNdMn9eyqTHE1oPeXPDVcP7bBF
-CuxO+/26ppYpkzmIJamWJZkHo9P3KO9cCIgdGNF/0uNvSMxl9aBm53Yxw7iDOhed
-QJ4IrHVT1ATczepnbej766XETAwgMQ==
-=QRTI
------END PGP SIGNATURE-----
-
---Sig_/N.KP0oVduH6feDqNG=/N3Wb--
-
-
---===============3065028582502720278==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> +      "interconnects" property, for example one of the values in
+> +      "include/dt-bindings/interconnect/imx8mm.h"
+> +
+> +    const: 1
+> +
+> +required:
+> +  - compatible
+> +  - clocks
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/imx8mm-clock.h>
+> +    noc: noc@32700000 {
+> +            compatible = "fsl,imx8mm-noc", "fsl,imx8m-noc";
+> +            reg = <0x32700000 0x100000>;
+> +            clocks = <&clk IMX8MM_CLK_NOC>;
+> +            operating-points-v2 = <&noc_opp_table>;
+> +    };
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3065028582502720278==--
-
