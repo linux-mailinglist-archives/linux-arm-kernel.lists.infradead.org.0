@@ -2,71 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4641EE142
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 14:32:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5C5DEE163
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 14:37:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BnDXFvT9/7/czfNpYoOzyUISgYlo+YtLuhSdLcNW24I=; b=LCIePH3VhWkmCOeeHv40+TSFr
-	UbVBHBTyqle84fiE5U90pXCGg4GKukgCFOq9IRJfaGNhMmreEEmDEzv/7TCZg1bQUIV93meA0MkT3
-	HqOzAWIaO/X40wHeDZo0+eImVXPiR3Jz3N58Z9ekg5wzY/XEB9nhwfk+71126uPhsvkzEIkCJmwE9
-	tJuo1soXxoLO807P/mypNOlc+OJ/bg0eTDgvFwhePBrVXI6rX9JHZySEU/OwxCdSXv8Z8oDT/Fu/A
-	+ZSZufwiW8r4smwWeU9pfPQa1ybvgpVDgf8VmwCzUDA0mF2cZU++RaQDTLKjoWIuwHu8eTwD7++1l
-	BEj46Fdwg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wp8yQjHGM2HPkZY5gXpD4hlgrjBi90qhKcNrs7whNrc=; b=GlE9SQWF3EPn/Y
+	jNoTdKw4TuCLAmh/tSQ8GOKOI26QyOHVAxNBSExo2MlSxcV8WEVWo9O0QJS20O+W9FoWcnuTTHRZj
+	7HROqMEVMg13EiTAKYTW1fnF1Uu6vWEN9vg8YjrJDNeACCCgWUdseqqsP+xzvS/Y0WPRVzgPsdSg+
+	lwE6fTCinUwg1SzVUg3+ubA2vrzX1iGeppD5i8yerYi8BE1rlcGsKA/4KeZ6cyTdvx2CSETqvTeRF
+	y323wNQHqiRCDO9y4JYOlzVe1glMIARDVEN/lOCRg+OyR3nH+RKI5i2iMLzz+FVfU0j/hkp3IMzji
+	sPZPMmv1KTBk6af7IAGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRcT1-0000xe-DK; Mon, 04 Nov 2019 13:32:23 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1iRcXv-00049J-Fg; Mon, 04 Nov 2019 13:37:27 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRcRO-000803-GR
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 13:30:44 +0000
-Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1iRcQv-0005Lj-UU; Mon, 04 Nov 2019 14:30:13 +0100
-To: Sami Tolvanen <samitolvanen@google.com>
-Subject: Re: [PATCH v4 03/17] arm64: kvm: stop treating register x18 as caller
- save
-X-PHP-Originating-Script: 0:main.inc
+ id 1iRcXl-00045D-Ji
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 13:37:19 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xA4DWFkJ026453; Mon, 4 Nov 2019 14:37:06 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=0V0+n6EoG5ZZ+IdpLsOxLEtGg4+FYYg6VUMRseHZqHA=;
+ b=MRlR2bfvQfp6TmzTJF+TAOFdz7iv72iApjX1BtIml+gWAdhk6XTdhD5zMwAGlWJn7hiX
+ 72UnCam408Cz3k86Sv/6Df6UmeXtjiQTeCRxKGJMKJ0rAzRPuIFznZ0ivwESy9yDBJUD
+ 6WHkjeIAnKqOqsl2s79PQbqLg+RiaU2K9BglSVceDVFx7HykUvbMsjVgTpgNtL4REiSc
+ LeGoYL3b7+3oeUNsdWMVjNhPBDxOlAaJyibOnJo0Yg67CVkpH7C8j+9f/wHfBRmPn/7q
+ 1NycHLFlHspA50/WNl2EZ+FGz2bCxW4Dd+L3nMHohxAZip2sbdKxUu+PEI3F769J0Rma hA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2w10f19mg4-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 04 Nov 2019 14:37:06 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 496CB100042;
+ Mon,  4 Nov 2019 14:37:06 +0100 (CET)
+Received: from Webmail-eu.st.com (Safex1hubcas22.st.com [10.75.90.92])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 1C5C12FF5DB;
+ Mon,  4 Nov 2019 14:37:06 +0100 (CET)
+Received: from SAFEX1HUBCAS24.st.com (10.75.90.95) by Safex1hubcas22.st.com
+ (10.75.90.92) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 4 Nov 2019
+ 14:37:06 +0100
+Received: from localhost (10.201.21.218) by webmail-ga.st.com (10.75.90.48)
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 4 Nov 2019 14:37:05
+ +0100
+From: Olivier Moysan <olivier.moysan@st.com>
+To: <lgirdwood@gmail.com>, <broonie@kernel.org>, <perex@perex.cz>,
+ <tiwai@suse.com>, <mcoquelin.stm32@gmail.com>,
+ <alexandre.torgue@st.com>, <alsa-devel@alsa-project.org>,
+ <linux-arm-kernel@lists.infradead.org>,
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ <linux-kernel@vger.kernel.org>, <olivier.moysan@st.com>,
+ <arnaud.pouliquen@st.com>
+Subject: [PATCH] ASoC: stm32: sai: add restriction on mmap support
+Date: Mon, 4 Nov 2019 14:36:54 +0100
+Message-ID: <20191104133654.28750-1-olivier.moysan@st.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Date: Mon, 04 Nov 2019 14:39:34 +0109
-From: Marc Zyngier <maz@kernel.org>
-In-Reply-To: <79e8f958cbde52a3d90aec24dd4638d9@www.loen.fr>
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20191101221150.116536-1-samitolvanen@google.com>
- <20191101221150.116536-4-samitolvanen@google.com>
- <79e8f958cbde52a3d90aec24dd4638d9@www.loen.fr>
-Message-ID: <63921b46250e2eb8eb9fcf0f8ec93b0c@www.loen.fr>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/0.7.2
-X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: samitolvanen@google.com, will@kernel.org,
- catalin.marinas@arm.com, rostedt@goodmis.org, mhiramat@kernel.org,
- ard.biesheuvel@linaro.org, dave.martin@arm.com, keescook@chromium.org,
- labbott@redhat.com, mark.rutland@arm.com, ndesaulniers@google.com,
- jannh@google.com, miguel.ojeda.sandonis@gmail.com,
- yamada.masahiro@socionext.com, clang-built-linux@googlegroups.com,
- kernel-hardening@lists.openwall.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+X-Originating-IP: [10.201.21.218]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
+ definitions=2019-11-04_08:2019-11-04,2019-11-04 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_053042_750520_22D867A7 
-X-CRM114-Status: UNSURE (   9.49  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.7 (+)
+X-CRM114-CacheID: sfid-20191104_053717_966442_E7ADD31E 
+X-CRM114-Status: GOOD (  14.78  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.6 INVALID_DATE_TZ_ABSURD Invalid Date: header (timezone does not
- exist)
- 0.1 BUG6152_INVALID_DATE_TZ_ABSURD No description available.
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,56 +97,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
- Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
- Steven Rostedt <rostedt@goodmis.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- Masami Hiramatsu <mhiramat@kernel.org>, clang-built-linux@googlegroups.com,
- kernel-hardening@lists.openwall.com, Laura Abbott <labbott@redhat.com>,
- Will Deacon <will@kernel.org>, Dave Martin <dave.martin@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: benjamin.gaignard@st.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-11-04 12:13, Marc Zyngier wrote:
-> Hi Sami,
->
-> On 2019-11-01 23:20, Sami Tolvanen wrote:
->> From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
->>
->> In preparation of reserving x18, stop treating it as caller save in
->> the KVM guest entry/exit code. Currently, the code assumes there is
->> no need to preserve it for the host, given that it would have been
->> assumed clobbered anyway by the function call to __guest_enter().
->> Instead, preserve its value and restore it upon return.
->>
->> Link: https://patchwork.kernel.org/patch/9836891/
->> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
->> [Sami: updated commit message, switched from x18 to x29 for the 
->> guest
->> context]
->> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
->> Reviewed-by: Kees Cook <keescook@chromium.org>
->
-> If you intend for this to be merged via the arm64 tree, please add my
->
-> Reviewed-by: Marc Zyngier <marc.zyngier@arm.com>
+Do not support mmap in S/PDIF mode. In S/PDIF mode
+the buffer has to be copied, to allow the channel status
+bits insertion.
 
-Erm... Muscle memory strikes again. Please ignore the above and use the
-following instead:
+Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
+---
+ sound/soc/stm/stm32_sai_sub.c | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
 
-Reviewed-by: Marc Zyngier <maz@kernel.org>
-
-Thanks,
-
-         M.
+diff --git a/sound/soc/stm/stm32_sai_sub.c b/sound/soc/stm/stm32_sai_sub.c
+index a4060813bc74..48e629ac2d88 100644
+--- a/sound/soc/stm/stm32_sai_sub.c
++++ b/sound/soc/stm/stm32_sai_sub.c
+@@ -1218,6 +1218,16 @@ static int stm32_sai_pcm_process_spdif(struct snd_pcm_substream *substream,
+ 	return 0;
+ }
+ 
++/* No support of mmap in S/PDIF mode */
++static const struct snd_pcm_hardware stm32_sai_pcm_hw_spdif = {
++	.info = SNDRV_PCM_INFO_INTERLEAVED,
++	.buffer_bytes_max = 8 * PAGE_SIZE,
++	.period_bytes_min = 1024,
++	.period_bytes_max = PAGE_SIZE,
++	.periods_min = 2,
++	.periods_max = 8,
++};
++
+ static const struct snd_pcm_hardware stm32_sai_pcm_hw = {
+ 	.info = SNDRV_PCM_INFO_INTERLEAVED | SNDRV_PCM_INFO_MMAP,
+ 	.buffer_bytes_max = 8 * PAGE_SIZE,
+@@ -1270,7 +1280,7 @@ static const struct snd_dmaengine_pcm_config stm32_sai_pcm_config = {
+ };
+ 
+ static const struct snd_dmaengine_pcm_config stm32_sai_pcm_config_spdif = {
+-	.pcm_hardware = &stm32_sai_pcm_hw,
++	.pcm_hardware = &stm32_sai_pcm_hw_spdif,
+ 	.prepare_slave_config = snd_dmaengine_pcm_prepare_slave_config,
+ 	.process = stm32_sai_pcm_process_spdif,
+ };
 -- 
-Jazz is not dead. It just smells funny...
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
