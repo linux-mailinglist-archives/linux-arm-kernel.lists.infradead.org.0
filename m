@@ -2,79 +2,147 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21587EE791
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 19:43:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BFC6EE7A7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 19:49:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=szD025SSb51PSz2tR/SV0RxFoBePtpko6kT8cGaEsFs=; b=EhyL8cBUuXD+D0
-	h5A09ZMSHhO39wthkpmor8cjUX08CePP9M/U9XbZgAHRix4t/VTXCWW6BNlcqULTYcUPI76snzdv4
-	4g09u+k2xogpfNCpboydcCshuOiOFYWoDYdm/zoKhzH1ZOryuwv3LdGxQnVsqKnOZhRyuGLJvVIk+
-	k0F1NbE3Bf+VaTCbX8LSd55V4V0u91LolA7+tvzJ//2R21e6QEBUxvFYlQq3it9uux8YDKd8JsfVS
-	Jg985aKj4ZTfiR92Mr8nZda6v0FPeKor6XDYZOsRmNffvQkt2hJ5Uu9enYWR40+/gV6WGeve6r13v
-	XsqnKZSPYu/6OXeZX/Mw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mhOh7ADkNz/CDFLqo3NVfVcphate7Ir5Y4iDXctqsN8=; b=JKhoVVNOEsuj1D
+	V9hBLuotHAGkuwQE7WCVnsFMba01retWHMk/sEfCUcjwVK/2dc0GSwMffeItLgyJ/IB9mb3+Zeqzj
+	B+e5pXSI5TOJ26NXlG4U72Wj4jGZnHQ6H7J9L8HKNQ4VeymFTjsKpOvWURuBAnUYoDZQQO+zSDHj4
+	Iav4Z63t6r2ewF1QjB3prLPotHfVjmux9eTCkRvO2tx8A4c5fWzxQ4bMMtXuqx12Lefr1W91SFHGj
+	OEuYucGlheImrWkwjiNhXiKfbh11fnhw57E1x17/E0DuJNwwPvZ8LKBE0yFgeqSs7LoKIcKeG1ZnT
+	zdjjimN17v1i99GWm22Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRhKC-0006XJ-3L; Mon, 04 Nov 2019 18:43:36 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1iRhPc-0000eD-MN; Mon, 04 Nov 2019 18:49:12 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRhJz-0006UI-Ip
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 18:43:25 +0000
-Received: by mail-pg1-x544.google.com with SMTP id 29so623632pgm.6
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 Nov 2019 10:43:21 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=cyveooZxsbFfSYt42gpZZRf9Ppul5ahlN5Luw1xLEm4=;
- b=FO4ChYOqG1oNRDV8SFJM1O6g1rKgs4mD1S0mwnjOEy5e6gznsdmb5Jbzut8qZl6Npe
- nqbw1ZRdW9fKLWI5Fl5LwloHqCuMW7rAUEVfq0trD5a+642EDknbaeqZIRAT5A62TOuR
- nIucVLMqEbDF1rT+VQ24c/BaY4GgmhPZAGiq+fG8zGyDtzg2xmJu/a8ZacMBFkjSqeEd
- rqbgql8j3pybZYsun81OVSIhtsL3ptEH0Zd2G0xjPuoDh0Cx1vRULjqZYELe6VPVwPlG
- Yd7sLRbWek0Zz+j+/3c8/eyRXvV9+bz1a+94RsFKowibI+XSM/pcD6UMqaoe5Z4qqPnh
- LYsA==
+ id 1iRhPV-0000dV-U6; Mon, 04 Nov 2019 18:49:07 +0000
+Received: by mail-ed1-x542.google.com with SMTP id x11so3929778eds.13;
+ Mon, 04 Nov 2019 10:49:05 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=IPQis5SC3dCTHc4GNUG+t4827Fcc7d7luBNpt763ahY=;
+ b=D4G/ZggoyS6TSds2Lor/Cf+Um8HPBNJ7+Y06vU8VsJm5nD8L3huYdvLxGf3nP5VTqS
+ nAIb7yNLVF/bzMSHrZEzT027WL5izroGe7CVD9cf1viLfXooibgKiIn5HuepeP6lTkyP
+ Y3KUNopU2D357FH5AKOp+E0qGBbFocYoeSruFCYpkd+YRVABQqiqeOGmfB8O2fQc6Uot
+ 3ohArJyJqAG8GQ9JVVKX++HunLf4hHMvWO+8fR9lsRZJJq2wPU5mAJGnCQVbBJ7kvwHi
+ 6hrNxV8zsO2iQVT4DNzOSFNS3i2bRes0YD/nDqki91/9sPvpyM91Focw2q9G/wqKZhzN
+ QZFQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=cyveooZxsbFfSYt42gpZZRf9Ppul5ahlN5Luw1xLEm4=;
- b=FvXJ7UeSHZXuNTs0oRrk/dlnps8uRCYSTmH2dxw5eiW4K2pqm+YBoPj9sxHda8GicH
- y0wY7WfNhEsJGegoGKDtZk/JjqYK4QLJVm2h8+kRVev0jEzA/aomCnCdlOyrhusvVm9v
- jMwRX/3nyATp/2Q/9xolytnZlWXbJNUqKJuQhWCa9OP+o0ByEMV5Ix26J7JLT+xldeE5
- zPk6TFShEFOdovluLxl4YqLejEc3xlljQciZYDQYTXHXgfiu03n6mL54wsB1RAwK1WIG
- CC8nB69HLqHwWP+WLYrG5yMRyJEw2nibTaLCvWNdHsH8HJG8jJnjKxk8zubOyIraEuAA
- VxMQ==
-X-Gm-Message-State: APjAAAU1FFUY3jqFLAZaYCdohEzhGf+0D1hT0C+Gha+41k6/c2HOdHP7
- pHK4BsuuaYra/gk/QEKvs5ibWO5zVltN/ZWX7ZRUdg==
-X-Google-Smtp-Source: APXvYqzuga0pKYHVfkPxXV2Lqd6Ui/1l1fMs3gogk5Nnz/GzfH+hGl3UgXjsw4DiCvAlC8VU05yqiG01ckGdVV3QW3g=
-X-Received: by 2002:a63:d70e:: with SMTP id d14mr31076676pgg.10.1572893000068; 
- Mon, 04 Nov 2019 10:43:20 -0800 (PST)
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=IPQis5SC3dCTHc4GNUG+t4827Fcc7d7luBNpt763ahY=;
+ b=Trnbij4o/mmAZ/fzKpnzpM/xxmlmaQFy5t4sqX9j6JvzjLHN91msTevZVjuBwBaiLn
+ bayoC96yAPoEa0ix8jIOOgBRndgrFHJukDyeZQN25Hj2xXRykg8HF1U1+Uen9HJZe+0M
+ 4d3Arp/NKp6gUc6ka+sbhOdZpwU3ARw7UHoFGxH1mj8Lm7h0XGRpNxS1IFAYcC0fuqi6
+ jpwtEeYFwxn5sfBE2jDK6c2eHUoPacjhXWovFzifVoeSKjG0trwlJeBUQ3iPa080pPHe
+ CRt6k4xx1wse8JwTAna6P5mXeFDIVN3/8SnFnC17gwkVJNDunkjRun4b4HODZI6jsUJG
+ +/MA==
+X-Gm-Message-State: APjAAAV83shx/+9FjS26fLE4Lr8h/5cB4rkYjW2U9hkzOpy+WrEDR74S
+ x8PzFF/GR/w5HyeSSlFe9lc=
+X-Google-Smtp-Source: APXvYqw9Ou1tLAVjZJDgAqAYlPB9g/w73IXvpusIrcwK+XJaXSxT5g5TgAD9DwcRBw7Z9tPmjUaBTQ==
+X-Received: by 2002:aa7:d7d7:: with SMTP id e23mr14872572eds.236.1572893344062; 
+ Mon, 04 Nov 2019 10:49:04 -0800 (PST)
+Received: from [10.67.50.53] ([192.19.223.252])
+ by smtp.googlemail.com with ESMTPSA id p12sm907573edw.81.2019.11.04.10.48.58
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 04 Nov 2019 10:49:03 -0800 (PST)
+Subject: Re: [PATCH 1/2] ARM: dts: bcm2711: force CMA into first GB of memory
+To: Florian Fainelli <f.fainelli@gmail.com>, Stefan Wahren
+ <wahrenst@gmx.net>, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ catalin.marinas@arm.com, devicetree@vger.kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, Eric Anholt <eric@anholt.net>
+References: <20191104135412.32118-1-nsaenzjulienne@suse.de>
+ <20191104135412.32118-2-nsaenzjulienne@suse.de>
+ <588d05b4-e66c-4aa0-436e-12d244a6efd8@gmx.net>
+ <05f00d57-6151-45df-67ee-b49a18a611c7@gmail.com>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+ M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
+Message-ID: <9b53f901-09d1-a307-b88e-f1da13eedaaf@gmail.com>
+Date: Mon, 4 Nov 2019 10:48:57 -0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <20191030174429.248697-1-ndesaulniers@google.com>
- <fa4e28a9a16c54319916be005159e250@agner.ch>
-In-Reply-To: <fa4e28a9a16c54319916be005159e250@agner.ch>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Mon, 4 Nov 2019 10:43:08 -0800
-Message-ID: <CAKwvOd==f801+AfJWwrO3tbSRoizCa2HV7pViOqedJbipN9nOw@mail.gmail.com>
-Subject: Re: [PATCH] arm: replace Sun/Solaris style flag on section directive
-To: Stefan Agner <stefan@agner.ch>
+In-Reply-To: <05f00d57-6151-45df-67ee-b49a18a611c7@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_104323_640577_29FA4F68 
-X-CRM114-Status: GOOD (  15.03  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20191104_104905_992328_0E0886A7 
+X-CRM114-Status: GOOD (  18.62  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -84,8 +152,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,58 +163,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Richard Fontana <rfontana@redhat.com>,
- afzal mohammed <afzal.mohd.ma@gmail.com>, Fangrui Song <maskray@google.com>,
- Russell King <linux@armlinux.org.uk>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Allison Randal <allison@lohutok.net>, Dave Martin <Dave.Martin@arm.com>,
- Vladimir Murzin <vladimir.murzin@arm.com>,
- Hans Ulli Kroll <ulli.kroll@googlemail.com>, Jian Cai <jiancai@google.com>,
- Peter Smith <peter.smith@linaro.org>, Roy Franz <rfranz@marvell.com>,
- Doug Anderson <armlinux@m.disordat.com>, Thomas Gleixner <tglx@linutronix.de>,
- Sonny Rao <sonnyrao@chromium.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Nicolas Pitre <nico@fluxnic.net>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- LKML <linux-kernel@vger.kernel.org>, Enrico Weigelt <info@metux.net>
+Cc: linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 1, 2019 at 2:05 PM Stefan Agner <stefan@agner.ch> wrote:
->
-> Hi Nick,
->
-> On 2019-10-30 18:44, Nick Desaulniers wrote:
-> > It looks like a section directive was using "Solaris style" to declare
-> > the section flags. Replace this with the GNU style so that Clang's
-> > integrated assembler can assemble this directive.
-> >
-> > The modified instances were identified via:
-> > $ ag \\.section | grep \#
+On 11/4/19 9:51 AM, Florian Fainelli wrote:
+> On 11/4/19 9:09 AM, Stefan Wahren wrote:
+> 
+> [snip]
+> 
+>>> +	reserved-memory {
+>>> +		#address-cells = <2>;
+>>> +		#size-cells = <1>;
+>>> +		ranges;
+>>> +
+>>> +		/*
+>>> +		 * arm64 reserves the CMA by default somewhere in ZONE_DMA32,
+>>> +		 * that's not good enough for the Raspberry Pi 4 as some
+>>> +		 * devices can only address the lower 1G of memory (ZONE_DMA).
+>>> +		 */
+>>> +		linux,cma {
+>>> +			compatible = "shared-dma-pool";
+>>> +			size = <0x2000000>; /* 32MB */
+>>> +			alloc-ranges = <0x0 0x00000000 0x40000000>;
+>>> +			reusable;
+>>> +			linux,cma-default;
+>>> +		};
+>>> +	};
+>>> +
+>>
+>> i think this is a SoC-specific issue not a board specifc one. Please
+>> move this to bcm2711.dtsi
+> 
+> This sounds like a possibly fragile solution if someone changes
+> CONFIG_CMA_SIZE_MBYTES to a value greater than 32MB no?
+> 
+> I know we don't want machine descriptors for ARM64 kernels, but since
+> there is already a specific 2711 machine compatible string check, maybe
+> you could use that as well for determining whether arm64_dma_phys_limit
+> or arm64_dma32_phys_limit should be chosen?
 
-Submitted: https://www.armlinux.org.uk/developer/patches/viewpatch.php?id=8933/1
-
->
-> I actually have the *very same* patch on my tree, just did not cleanup
-> the commit message and submit :-(
-
-Send in those patches!
-
->
-> Anyways, this looks good to me:
->
-> Reviewed-by: Stefan Agner <stefan@agner.ch>
-
-
-Thanks all for those reviews.
+This last sentence was referring to an earlier version of another patch
+series, this is not being done right now, although ARCH_BCM2835 does
+forcibly select ZONE_DMA. Nevermind then, I do not see a cleaner
+solution right now either.
 -- 
-Thanks,
-~Nick Desaulniers
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
