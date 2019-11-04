@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 628EEEE3DA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 16:32:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0BA6EE3E7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 16:34:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pImF9PeBEIl/TNSPBKHdI5VVDogx9cftlQzcI7KJ+BM=; b=AXhwGo6YTq9zD4
-	gv2JcKq7mNB0Qxg/e3u/yRWuR+/sMFt4h6vcLMZGV4ER06P7FSg8e0CtYYSdDPkkgdxqiFzS9/6sS
-	vOwsiplYGehTGptsYysN43pzWwjUUn1xvKHsAY6Z+6Aj1Xt6wogK1F7DrSwC4badcYuu/vBM0AMYl
-	KGdsTDskSnmpXdcujaglG4XF8FJd59NnBsNvVoknuBcy8yrwgSp99E9ERHcQZEc7LUZaTWNcwwGac
-	Ntr6M/n/TjU80vtxatCvhJTiLvQvSySEXNILf03sctVgZr16wmIY9CaADc2w2OYWvM/LtQ5VXjMDI
-	uGE46eYJtJL4DJILSotg==;
+	List-Owner; bh=qIHQc5f7dOJouyUi4PMMDXmr8yOPmG6qqj/0kVPiX+M=; b=uGqxia9nr9avTX
+	0A4g/kPQSzkJpsyB63AwAHu3dGCCL6krpaJozMW2NKDL627see35AIkXuirtz7U9xydaTjAq8PrJD
+	hIzJFAdpm7o/4+QhpwjA/EtgB3mnoYAHuieXnD3efgrPx2nnMmKRNxABVYxrCSS4sFkOUNrJgDkgk
+	UBFhjn/YsubosfDFt7Guv/wG3xurs4D12pcYS20eiwrsk/1DYMtgHm7D6yhSjXqIjyPpxhbpk1zCj
+	EYwkqrWxY4kn5ccCaTMA+0dAmeryFS/1KOuKlK59c3GI50SpokB/9QbRvwYcycZcQUewbzE3BaBiO
+	ztqNbeAPve8wFYVNaqaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iReL8-0004Lk-Mw; Mon, 04 Nov 2019 15:32:22 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1iReMo-0004tI-1K; Mon, 04 Nov 2019 15:34:06 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iReKx-0004KF-8D
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 15:32:12 +0000
-Received: by mail-lf1-x143.google.com with SMTP id z12so12568369lfj.9
+ id 1iReMa-0004rM-L4
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 15:33:53 +0000
+Received: by mail-lj1-x242.google.com with SMTP id n21so4480820ljg.12
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 Nov 2019 07:32:10 -0800 (PST)
+ Mon, 04 Nov 2019 07:33:51 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Mr/Uxcplv3NXuIJk8Ti1kfrQNEUtvUFgTdHmY4Gpbzk=;
- b=njWpSQ8wDNfkaVeUU2fNdyl/gHikLxNHX+GZiK4dn0gkcKvE2mFYSrOLzmK2F+9yI2
- yDo7PYJAV0oFUMmlVjZkfIPH4OJYceMAFu0zAAst9LYxuOk3A6wMgldPfh8qYnbwtEiS
- iuZ67Ot57VBDn7SomMOrrcp2180LktPjNdmsEbuPvcbfOj344XahHiSBnukd+u7OAY6q
- COjC6T+tZYOp5/Kf4yz9UkVsB/4xPlqch4aZmdpLncF2G5Oo1HApFzkg1F/tMZ8izNTI
- /0OB+EkTifoz0cTCW4/1xKTo0f4iMZ3uFpVbdVlwTl6aZP+xmcRscxWfxcC7ikuH0pyS
- bHlQ==
+ :cc; bh=DBMbcScUQGQZVNBdTsiLXor9xyXQU7D+1E9hPAM9ZKA=;
+ b=Y17/dQyIIuBV7qFVbf3hljdrzyzDXMH3+Q7l6qUsJpgq4TKcHmzgXg3WqeQuOs/Ofr
+ mt2X8W/YV22xCxDSI7shE92hjOUSTvROnDYbTxNm1xYEndn+xp9O/ei1MZbUJxV6NJoN
+ xZausHHAo7VcDDwOsRj9NvgnwvXaFD92HMPjiSmUcBMYtj9mw0nxOc+p3cXXndAcjDnk
+ aGaq3jsRxA2dLzVTii61YjV/gf2b54iJ3BhoYJ/OCVyMlTmGJ9i0FMaiTKNYRj5YNy61
+ u2YAwqRk7R6fyPzl2R98OqG+hOyGHDz1J36kBp1LS+6gSTEBnwLs13XR2sHVIs/RcOiK
+ davQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Mr/Uxcplv3NXuIJk8Ti1kfrQNEUtvUFgTdHmY4Gpbzk=;
- b=UTWL7AWxZyRgp/a4Hn4ytR3/pknZftu+94kpzSWXhRUkGo+cDdw3LqDsmzCJU845pG
- 6fVnsS6zJCbuOP2ZTQhS//bnv0xi9OOFaPY/6Jzyg6Ysbx+Df9vma49Bt900yfws1MFE
- v2rYDwu8vzmn1bNN/+7D1bvxz2XzHnWX7JgLCP6JutkIQ9tSicL2tYAJSV5nh9PLwVdM
- X0ta3B2uxZXMGzSbBL3PHUo/llWmYt1M4V3ZEord+aBKA8P1Mjs9t3EsUIKyKd/zhEiP
- 65pNnmXi+wViRMxKlQdGX+pdOMQwvUlpOgxLbHJGad8cVm8G8+6Ce5sEBCW7ZaIF9qT9
- eOyg==
-X-Gm-Message-State: APjAAAXaZg1xoHk2mX/O1k3Us1tG4IewZ27HH4X17PIa9rhgo3j0ZyR2
- 4kg4BjwGt2YfevmNn+YzE16UBeCcMkmEXEr0Tp20RQ==
-X-Google-Smtp-Source: APXvYqxK6Pwq1Qm86hnw4EI2i8gx2+V2iuKJsfnwP8M8v6pQOu8BH+b+jtXWQgx2oKQZuZQAKVxi6hoscfSl4OQ33fo=
-X-Received: by 2002:ac2:4a8f:: with SMTP id l15mr16987288lfp.5.1572881529546; 
- Mon, 04 Nov 2019 07:32:09 -0800 (PST)
+ bh=DBMbcScUQGQZVNBdTsiLXor9xyXQU7D+1E9hPAM9ZKA=;
+ b=aNI7E+O4dX2CIaLE62ThswN5RyyNP+Oy86u9Q2c0Kn7TT+goAgwWTWWvNjFy7e3xCU
+ 9F6yYx3bcdpFbQqd+eK9ykfB8GnI88RfFG8ho2cL0Vsn/KQc6d6IccCLAJ2FuxESIxf1
+ Mpk6VTOduKAaumCfWab1LreOh6XxZBwjb4qzlLjTaQM2Kx0l+V3R4+FM/SRD0xEYbofh
+ 1NBSZu2Atatq/rPWZRw5jkQgus9O1f8rIqPAxQewuYbBxhVGF94F+QGA7tAFE9oNlo5N
+ 0oKqki9tF8OQt9pLg8ubCKD0weEi7cegt6XZl2bvt3IGUGQLAKLu5NUM/iGtko3zMKvY
+ rI7g==
+X-Gm-Message-State: APjAAAXUrNLKYx/jo3Q2zVxpTsPJL11vnRgE6cAiMzzOVwUO0bt0m51Q
+ IopXciPK891ItZ1oH1rq/C1jayBfXqyIGXwS1Rf8WA==
+X-Google-Smtp-Source: APXvYqzeyNb16dPEjCkVmBtMh5caBJBGKo91VcHGLZKHPNSD5nRiCk1pJcF4RPBtbEVrq+xcQYHHZlXiwcUyrN8+Ke8=
+X-Received: by 2002:a2e:9a12:: with SMTP id o18mr11818095lji.191.1572881630658; 
+ Mon, 04 Nov 2019 07:33:50 -0800 (PST)
 MIME-Version: 1.0
 References: <1572004167-24150-1-git-send-email-qianggui.song@amlogic.com>
  <1572004167-24150-2-git-send-email-qianggui.song@amlogic.com>
-In-Reply-To: <1572004167-24150-2-git-send-email-qianggui.song@amlogic.com>
+ <CACRpkdZZpc0yrewfseG3PUXgvV3H9XED25Ej21VeMYn8cUxasg@mail.gmail.com>
+In-Reply-To: <CACRpkdZZpc0yrewfseG3PUXgvV3H9XED25Ej21VeMYn8cUxasg@mail.gmail.com>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 4 Nov 2019 16:31:57 +0100
-Message-ID: <CACRpkdZZpc0yrewfseG3PUXgvV3H9XED25Ej21VeMYn8cUxasg@mail.gmail.com>
+Date: Mon, 4 Nov 2019 16:33:39 +0100
+Message-ID: <CACRpkdZbvdVfLAmfPRXrrZCvyNCJWHkJCE_SBCb9W=O2UpMxrQ@mail.gmail.com>
 Subject: Re: [PATCH v4 1/4] pinctrl: add compatible for Amlogic Meson A1 pin
  controller
 To: Qianggui Song <qianggui.song@amlogic.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_073211_300433_1883115E 
-X-CRM114-Status: UNSURE (   9.33  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191104_073352_689412_636A8C1F 
+X-CRM114-Status: GOOD (  12.43  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -112,18 +112,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 25, 2019 at 1:49 PM Qianggui Song <qianggui.song@amlogic.com> wrote:
-
-> Add new compatible name for Amlogic's Meson-A1 pin controller
-> add a dt-binding header file which document the detail pin names.
-> Note that A1 doesn't need DS bank reg any more, use gpio reg as
-> base.
+On Mon, Nov 4, 2019 at 4:31 PM Linus Walleij <linus.walleij@linaro.org> wrote:
+> On Fri, Oct 25, 2019 at 1:49 PM Qianggui Song <qianggui.song@amlogic.com> wrote:
 >
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
-> Signed-off-by: Qianggui Song <qianggui.song@amlogic.com>
+> > Add new compatible name for Amlogic's Meson-A1 pin controller
+> > add a dt-binding header file which document the detail pin names.
+> > Note that A1 doesn't need DS bank reg any more, use gpio reg as
+> > base.
+> >
+> > Reviewed-by: Rob Herring <robh@kernel.org>
+> > Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
+> > Signed-off-by: Qianggui Song <qianggui.song@amlogic.com>
+>
+> Patch applied.
 
-Patch applied.
+I see there are still comments on the code patches but that is
+fine, we can merge these bindings anyway. Just resend the
+remaining 3 patches when you repost.
 
 Yours,
 Linus Walleij
