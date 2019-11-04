@@ -2,109 +2,111 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B050ED845
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 05:36:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE0A4ED8AD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 06:46:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5B9+jV6aLVvlFndpYOm8dy7PDr45YtOWNHpL/5BP5ZY=; b=G1NO7pyepHEIFX
-	IXrPi7NKDIv3nq8wQw+stpk/P9bJ/A294m3uiLrUzhi7+0IpMexH/5rRIt5FzhXIdZZtqdWVEMoqh
-	i6G3xvLc1qGXOkHRDiBVoRqPwSHUQlqspkC4GlUYrnuTCz5UUR2bnVniId7z6DqP6Q0WU1QThR3+e
-	x5D8aq1cV0p0coxRU5VlCW//UbjeT3TEPqJEMGyUg9xnaKvbqZFbNSvT9dLYTOJNcvDuwv6XxfS1j
-	eXpvRcXdu2Ul8bsT7yS60cHdPRddv0x76V6YyaJbmgSWe4G/ciJvt4GKM8dSr3g+kMguAYYeT0dts
-	/iwp0bn66ncathhFHKZQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LcUWQ1V4GeBH1ELm3SL6XXu8lYo5hNyAJTZ3QhN5UH4=; b=p3buhl3EudF9Pb
+	sele5EwhpPJdJzrjYx4edELzMOpMO8GC/eqFnGLDTLi6LZE9ymSmzT88I1AWO6zjp7DqPNK8Pyv3+
+	T6DyesSqSX9ez8JwhrHRB8JTfoIOlZejo1RyniiyyiMQwZrfxhzZjJXXXfF8sf6roCTGvsCcXDmil
+	Qrp7iK2DhoIK9RhShNtBjLpEw+jujJyKlnvHbL/dl1CO4R67fy3YYZPXXq9Dh4GPpxPBSbidOtIYS
+	cik5zR/yP1iztcDX0aiVa64B8q1blNXmEqxn4pUF74VTfJ4CqzeJyTdw0QgIQ4hfJwj9yAnKdCIIv
+	l+cijIEks5c4t5J7a5Tw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRU6n-0005fg-6A; Mon, 04 Nov 2019 04:36:53 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1iRVBs-0005mc-6b; Mon, 04 Nov 2019 05:46:12 +0000
+Received: from mail-eopbgr40059.outbound.protection.outlook.com ([40.107.4.59]
+ helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRU6g-0005fB-Km
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 04:36:48 +0000
-Received: by mail-qk1-x743.google.com with SMTP id e187so3641134qkf.4
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 03 Nov 2019 20:36:45 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=ZLgZcvhJjOGhGgB5eDSXNRDxozk3YfD0qt93J2vZH8Q=;
- b=h/ngSt/0LguupexOPjOpR1IsHkLhqh/uhz7IJ7kkP69D0Ry4IbALAnIZy93ZlbN7Ir
- 8N/3Ntc3RVStDGwyKm27ruyMqfzDWOt1PcOdu9KEo1I9h9AbnHIYAJFGiNZY9wpmjkDV
- I8LKjdGllvdxbwFKUpR+w0qfp6LOorKmG8vTY0zg8rLhYd3e54nkAAKyDsn8Yff4oLpW
- uSzNSAVrSRT3qWnFAKl5pdY6FDt0UkMVvrXywTG3jQNbYKY7xep2LuM36LtPVAKgsevS
- 4LZr8ecfgjn3m37mbcF1XUIk2W82UzViMzpAh+9KLLmC6wR1dCQmxo9NuJRpxdzcmNC1
- 5Pyw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ZLgZcvhJjOGhGgB5eDSXNRDxozk3YfD0qt93J2vZH8Q=;
- b=arx7CtE/JFBl5cUTuMza0tg+sWLMHR/zotGbGgMwcKqpT8fP043u91IcBUiotXKtCQ
- JpH96ZvzjCaj+f+hCZZ2NrjSOiB3riqp2wElIMFniqSjwuMhgx1D11vbIvgdzBoG8Ikm
- OEWbMB73/GNvUZ/I80GscOJ+8NV/BbfCX4KAHqfptMQtY1Q7OU+YCUoKjjYGqdrDT2os
- bjz3lOcy+iDEX5u7aA590necrp7mn4Panc1KP1wXFKH1jfAmv0tReNWjk3Kq80Y4g9RV
- 95FE1yl0NDHQVQehjGbXzD/If9FMO976f1dZXonj5JLXmjWdKKOfOuB1X6SvgKjVHAFB
- nTAA==
-X-Gm-Message-State: APjAAAWv4q+pOldok8cI+xFfspsDZH6I3j8KXZu2QuuF8KS1Y8EMEajV
- NQJKhRD6P2Nzg5+CVP63DXM=
-X-Google-Smtp-Source: APXvYqw62+FgpfqqLbgeJmlLh9WhBZMHM6GXrpIjwHJQU6NAC1YX55ZF7qvIig8Pz+13znFnzFNZgA==
-X-Received: by 2002:ae9:d60f:: with SMTP id r15mr20937232qkk.207.1572842205086; 
- Sun, 03 Nov 2019 20:36:45 -0800 (PST)
-Received: from auth2-smtp.messagingengine.com (auth2-smtp.messagingengine.com.
- [66.111.4.228])
- by smtp.gmail.com with ESMTPSA id t20sm2275746qtq.55.2019.11.03.20.36.43
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 03 Nov 2019 20:36:44 -0800 (PST)
-Received: from compute6.internal (compute6.nyi.internal [10.202.2.46])
- by mailauth.nyi.internal (Postfix) with ESMTP id 4E47721903;
- Sun,  3 Nov 2019 23:36:43 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute6.internal (MEProxy); Sun, 03 Nov 2019 23:36:43 -0500
-X-ME-Sender: <xms:2aq_Xa9yFKGdUA5zRabXV2-8wVSTaGzKdUQFa_MEvNrnbcEHQM7WDg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrudduvddgjedtucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepfffhvffukfhfgggtuggjfgesthdtredttdervdenucfhrhhomhepuehoqhhu
- nhcuhfgvnhhguceosghoqhhunhdrfhgvnhhgsehgmhgrihhlrdgtohhmqeenucfkphepud
- eijedrvddvtddrvdehhedrvdeknecurfgrrhgrmhepmhgrihhlfhhrohhmpegsohhquhhn
- odhmvghsmhhtphgruhhthhhpvghrshhonhgrlhhithihqdeiledvgeehtdeigedqudejje
- ekheehhedvqdgsohhquhhnrdhfvghngheppehgmhgrihhlrdgtohhmsehfihigmhgvrdhn
- rghmvgenucevlhhushhtvghrufhiiigvpedt
-X-ME-Proxy: <xmx:2aq_XSVq7OPhkzzt9dsP_OrhV1cZDcmc0EC82s8iLbn1hX51Ai6dQw>
- <xmx:2aq_Xdpqi_GI_vch_O4HyO8Wr4hBKXMjgre8gTDpxh3PFqAsQPExgQ>
- <xmx:2aq_XckY4TpXzl9iRM-V8EA9BIN9qc78w8bRBqZ9WqzUVnLP3M7D7w>
- <xmx:26q_XV_T1Rzff5BsIYIdOt0V2A0YOJsXGxlaqXZzbgsKyL3Z06QJVWuYi0Y>
-Received: from localhost (unknown [167.220.255.28])
- by mail.messagingengine.com (Postfix) with ESMTPA id 2F92D3060057;
- Sun,  3 Nov 2019 23:36:40 -0500 (EST)
-Date: Mon, 4 Nov 2019 12:36:32 +0800
-From: Boqun Feng <boqun.feng@gmail.com>
-To: Michael Kelley <mikelley@microsoft.com>
-Subject: Re: [PATCH v5 2/8] arm64: hyperv: Add hypercall and register access
- functions
-Message-ID: <20191104043632.GB182@boqun-laptop.fareast.corp.microsoft.com>
-References: <1570129355-16005-1-git-send-email-mikelley@microsoft.com>
- <1570129355-16005-3-git-send-email-mikelley@microsoft.com>
+ id 1iRVBl-0005m6-I9
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 05:46:07 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=j/+ZXY2BDiIT4qN1EJkeIyeuOCqduoIi+xgGzMsSWlurN4zuSYFubthywXZLFcynwe77cnwVURlTjMtyJccDtW0yCouUpwAc5yvedSlWtJlBcdNhl00nC9jjCIAxbfFb+/uxfJ0BlG9YYSUjNT8ev58rovMQEXyo/rwsvyRjIXNyeXSkwauNyHz4az/LTdnUD55JFghi2Pg+ayxzbGL5GpLtWubOQEJ4atE2xa3jd/oYZMJFvkA0W1V8sbRCeALd2zLGlUkWbhHxsg3G259Mbq5ZjFOQaebKcwLaee+SbrRR+gYRG31Zy4JSGTo6j5k1+elA//zYKmc1Q+w94/iUFg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=YIrWcMx7RwRi1aHg6dnGuGuh7s3vtfQuUXell/JUxHM=;
+ b=dp/o0rd05nuNvkciMY76yxLQ5HyhWWDhuZeokWz0q+Q2wywgANLwbxj1QrCvyi8kpePoFz4DOoHexJHSSPRtWGy21jV6x3Y31DXLb0zC0VtlsVhAkQ6ny6XZWrW3d1TaaoQoAZ2+Y1Eux675h3KuQTE/zQfJJ2tIAbHJl04rFXRnIGJOCXNW5Sj1ZJTwTV+GXZ+LwL5stsy2iKSYpnWpjGgcCxu9tNANBbTW1I/g9WURxcjQa4KSxeWcPFn+iCM8VDdcAvytYK2fN3iUyHupkeaZ9cA8+3pHqZrvhMREezV/+ZS7ZrRApmj2yU0y4983JT/H4J4ZJRd5BddHJiMX0Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=YIrWcMx7RwRi1aHg6dnGuGuh7s3vtfQuUXell/JUxHM=;
+ b=mvDTFO+/eMwz4rNnokrDV3sHPCK416vT8eXa/uOlQabCEA3fEBo4BnuVxyDW8W392ol3HtiN7Cnh/hMbHKZdzmkhMtjZ+JUEwCHkwgoUajtw0jrqElMr1ZXhAJbMNx2F2YI4h9zjXF2x88VAUXq3xOC3tzA2cB88NsVvLkB2xyw=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB6451.eurprd04.prod.outlook.com (20.179.252.208) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2408.24; Mon, 4 Nov 2019 05:46:02 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::f16d:a26a:840:f97c]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::f16d:a26a:840:f97c%4]) with mapi id 15.20.2408.024; Mon, 4 Nov 2019
+ 05:46:02 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: "sboyd@kernel.org" <sboyd@kernel.org>, "shawnguo@kernel.org"
+ <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>, Abel Vesa <abel.vesa@nxp.com>
+Subject: [PATCH V2 0/4] clk: imx: imx8m[x]: switch to clk_hw API
+Thread-Topic: [PATCH V2 0/4] clk: imx: imx8m[x]: switch to clk_hw API
+Thread-Index: AQHVktMk8ePu9WQHCE2BNQEucqhFbw==
+Date: Mon, 4 Nov 2019 05:46:02 +0000
+Message-ID: <1572846270-24375-1-git-send-email-peng.fan@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.7.4
+x-clientproxiedby: HK0PR03CA0110.apcprd03.prod.outlook.com
+ (2603:1096:203:b0::26) To AM0PR04MB4481.eurprd04.prod.outlook.com
+ (2603:10a6:208:70::15)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: cf1a5e37-45b3-4556-8da7-08d760ea466e
+x-ms-traffictypediagnostic: AM0PR04MB6451:|AM0PR04MB6451:
+x-ms-exchange-purlcount: 2
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM0PR04MB645128D6F458C30FF41C8769887F0@AM0PR04MB6451.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2089;
+x-forefront-prvs: 0211965D06
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(39860400002)(346002)(366004)(136003)(396003)(376002)(189003)(199004)(386003)(4744005)(6486002)(36756003)(66446008)(476003)(6512007)(2501003)(8676002)(2616005)(256004)(26005)(50226002)(316002)(6306002)(2201001)(6116002)(6636002)(3846002)(14454004)(6436002)(64756008)(66946007)(14444005)(71190400001)(71200400001)(66556008)(66476007)(478600001)(4326008)(966005)(2906002)(102836004)(86362001)(186003)(305945005)(7736002)(8936002)(25786009)(54906003)(66066001)(99286004)(486006)(44832011)(5660300002)(81156014)(81166006)(52116002)(110136005)(6506007)(32563001)(15585785002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6451;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: x/ni+s8d/K0BoOAhxKjmp1HRtWIoyv7HwYaFK6V46B7umJovipA2JC3PQQUOS1N57+FSS4cGlq0JvFHefmBQE5R437HVcxO7qBQq7Doy6w14uzg6UPtng4J5IYzc4Ll6omg9o/yj80jhClJ5i0YHgDd5kkP+GJzyvAkQQcmGTUzbwEe+T/m0Jd7PYruL4XcNJOUVuuayrEcH0rRSnZITW9PEjM9+y8v9GK6d7KpHefDl3tIrFOHw6jUNRfZfRU3GWsYVXkS725YDaVJfgX9IRwQCFfRZ5s3oLyZjntGGMxG3wuIjYX/61R4uwP1P/5yZGQPKzRRtfOLr8o/o2aG2ngrdixO+s6qREBAIBjNkLnMx8BUVBtF4HSlCkVVkfilqvaV7OvTNXbDP6WmX/k21N8u6Bd7XaDC2queyGH1E9HKaLcsFxZss5L0JfjAVM5RAazOGYy65bbGE9lpNOjsnHXqCZYZkT6CCiEwzuUURpiI=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1570129355-16005-3-git-send-email-mikelley@microsoft.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: cf1a5e37-45b3-4556-8da7-08d760ea466e
+X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Nov 2019 05:46:02.0726 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: lXXDZ9VBetRnbwOFIMpds/EhGC3GTD9JAbAwbPGUmqWDNH9C+4IuQs/1UTnw1K4wE4CUCTNhmFYeULfkCO8GSw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6451
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191103_203646_707168_EEF23B90 
-X-CRM114-Status: GOOD (  18.52  )
+X-CRM114-CacheID: sfid-20191103_214605_704933_BDFB3F3C 
+X-CRM114-Status: UNSURE (   7.58  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (boqun.feng[at]gmail.com)
+ no trust [40.107.4.59 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -124,114 +126,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "maz@kernel.org" <maz@kernel.org>,
- "linux-hyperv@vger.kernel.org" <linux-hyperv@vger.kernel.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "jasowang@redhat.com" <jasowang@redhat.com>,
+Cc: Peng Fan <peng.fan@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
+ Anson Huang <anson.huang@nxp.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "marcelo.cerri@canonical.com" <marcelo.cerri@canonical.com>,
- "olaf@aepfle.de" <olaf@aepfle.de>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "apw@canonical.com" <apw@canonical.com>,
- "devel@linuxdriverproject.org" <devel@linuxdriverproject.org>,
- vkuznets <vkuznets@redhat.com>, KY Srinivasan <kys@microsoft.com>,
- "will@kernel.org" <will@kernel.org>, Sunil Muthuswamy <sunilmut@microsoft.com>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Michael,
+From: Peng Fan <peng.fan@nxp.com>
 
-On Thu, Oct 03, 2019 at 07:03:19PM +0000, Michael Kelley wrote:
-> Add ARM64-specific code to make Hyper-V hypercalls and to
-> access virtual processor synthetic registers via hypercalls.
-> Hypercalls use a Hyper-V specific calling sequence with a non-zero
-> immediate value per Section 2.9 of the SMC Calling Convention
-> spec.
-> 
-> This code is architecture dependent and is mostly driven by
-> architecture independent code in the VMbus driver and the
-> Hyper-V timer clocksource driver.
-> 
-> This code is built only when CONFIG_HYPERV is enabled.
-> 
-> Signed-off-by: Michael Kelley <mikelley@microsoft.com>
-> ---
->  MAINTAINERS                 |   1 +
->  arch/arm64/Kbuild           |   1 +
->  arch/arm64/hyperv/Makefile  |   2 +
->  arch/arm64/hyperv/hv_hvc.S  |  44 +++++++++++++++
->  arch/arm64/hyperv/hv_init.c | 133 ++++++++++++++++++++++++++++++++++++++++++++
->  5 files changed, 181 insertions(+)
->  create mode 100644 arch/arm64/hyperv/Makefile
->  create mode 100644 arch/arm64/hyperv/hv_hvc.S
->  create mode 100644 arch/arm64/hyperv/hv_init.c
-> 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index d464067..84f76f9 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -7566,6 +7566,7 @@ F:	arch/x86/kernel/cpu/mshyperv.c
->  F:	arch/x86/hyperv
->  F:	arch/arm64/include/asm/hyperv-tlfs.h
->  F:	arch/arm64/include/asm/mshyperv.h
-> +F:	arch/arm64/hyperv
->  F:	drivers/clocksource/hyperv_timer.c
->  F:	drivers/hid/hid-hyperv.c
->  F:	drivers/hv/
-> diff --git a/arch/arm64/Kbuild b/arch/arm64/Kbuild
-> index d646582..2469421 100644
-> --- a/arch/arm64/Kbuild
-> +++ b/arch/arm64/Kbuild
-> @@ -3,4 +3,5 @@ obj-y			+= kernel/ mm/
->  obj-$(CONFIG_NET)	+= net/
->  obj-$(CONFIG_KVM)	+= kvm/
->  obj-$(CONFIG_XEN)	+= xen/
-> +obj-$(CONFIG_HYPERV)	+= hyperv/
 
-I did a kernel built with CONFIG_HYPERV=m today, and found out this line
-should be (similar to x86):
+V2:
+ Add a new patch patch 1/4 to avoid build warning for arm64
+ clk: imx: Remove __init for imx_obtain_fixed_clk_hw() API
 
-	+obj-$(subst m,y,$(CONFIG_HYPERV))      += hyperv/
+This patchset is to Switch i.MX8MN/M/Q clk driver to clk_hw
+based API.
 
-, otherwise, when CONFIG_HYPERV=m, files in arch/arm64/hyperv/ will be
-compiled as obj-m, and symbols defined in those files cannot be
-used by kernel builtin, e.g. hyperv_timer (since CONFIG_HYPERV_TIMER=y
-in this case).
+Based on imx/next branch, with [1][2] applied.
 
-A compile/link error I hit today is:
+[1]  clk: imx: switch to clk_hw based API
+     https://patchwork.kernel.org/cover/11217881/
+[2]  clk: imx: imx8mq: fix sys3_pll_out_sels
+     https://patchwork.kernel.org/patch/11214551/
 
-| /home/boqun/linux-arm64/drivers/clocksource/hyperv_timer.c:98: undefined reference to `hv_set_vpreg'
-| aarch64-linux-gnu-ld: /home/boqun/linux-arm64/drivers/clocksource/hyperv_timer.c:98: undefined reference to `hv_set_vpreg'
+Peng Fan (4):
+  clk: imx: Remove __init for imx_obtain_fixed_clk_hw() API
+  clk: imx: imx8mn: Switch to clk_hw based API
+  clk: imx: imx8mm: Switch to clk_hw based API
+  clk: imx: imx8mq: Switch to clk_hw based API
 
-[...]
+ drivers/clk/imx/clk-imx8mm.c | 550 +++++++++++++++++++++--------------------
+ drivers/clk/imx/clk-imx8mn.c | 475 ++++++++++++++++++------------------
+ drivers/clk/imx/clk-imx8mq.c | 569 ++++++++++++++++++++++---------------------
+ drivers/clk/imx/clk.c        |   4 +-
+ 4 files changed, 819 insertions(+), 779 deletions(-)
 
-Besides, another problem I hit when compiled with CONFIG_HYPERV=m is:
+-- 
+2.16.4
 
-| ERROR: "screen_info" [drivers/hv/hv_vmbus.ko] undefined!
-
-, which can be fixed by the following change.
-
-Regards,
-Boqun
-
----------------->8
-diff --git a/arch/arm64/kernel/efi.c b/arch/arm64/kernel/efi.c
-index d0cf596db82c..8ff557ae5cc6 100644
---- a/arch/arm64/kernel/efi.c
-+++ b/arch/arm64/kernel/efi.c
-
-@@ -55,6 +55,7 @@ static __init pteval_t create_mapping_protection(efi_memory_desc_t *md)
-
- /* we will fill this structure from the stub, so don't put it in .bss */
- struct screen_info screen_info __section(.data);
-+EXPORT_SYMBOL(screen_info);
-
- int __init efi_create_mapping(struct mm_struct *mm, efi_memory_desc_t *md)
- {
 
 _______________________________________________
 linux-arm-kernel mailing list
