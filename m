@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 326A1EF0C9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 23:50:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22BE8EF111
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 00:14:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J8RcvCZxYMBbNiXhgtfy5inF8j8ePYiKDRQXk6zOz88=; b=iw0V4cfS2z1LSl
-	ydkO1JPPg+Gtjc8lseRvBPC/OeEyN0ldBNmtKBNycIsL65VoXTkh3XDL6My+JCPnkX+hOFsnTdwA+
-	Etn9+uJWSV0TGbVX/QC5axb6yCOjEF4NFHpY70K8vMiW6/fhHXNbIfDYoiUenM0PetgtPW0rofx9L
-	zbI4nb08FyAIey4lvP1Aymj5iIxNEKVtPZaJ2p7nnUFtPawJaLjrIvLcV23JCpckX34WGpuUzCR1c
-	dYi39tYZr7YLvI/jXbw2lZXSJ75wbBR9qcB+w+hHoJ6dnU3gXMXzs/ZtW8l4m8CH3yW3c0fCnaM+h
-	j+9JvRU5C5y/Gz6R6FCg==;
+	List-Owner; bh=apqdTSphAEH9UJUWXa9DKlrz268CJgvTR0d71w2sY4A=; b=nDQ8HhLJmt4Rd8
+	dfrP3JOU5694UUv6wziBc+uWUcC4l05+K1MvdehRGcU3yeDhBfIsVIgLZ8iOM90TrnSo8fNSntoqL
+	7SIcIg4Q0y9mphTF9ICEbWR2ZZUMDpic6uDubpl0vFTvZReA7U8cogXuUEfKdKSRopFvBKVGheVNw
+	vMWagdTwP6yVY1hkMPF42qCxITORIJRsWKtj4K+fbx5+/fUQ9NhIOHDDHunEJHpsPLE5330XXnK46
+	1Pb/dGh4ZHaBQVbcownz4w6ssAP0VFIV3LCq20BdoL3fRe8r+JR1eC21rfVd8uBQpm0zBmsuWQb2W
+	wbfHElk9bd5TQtIwD61A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRlAb-00049W-MJ; Mon, 04 Nov 2019 22:49:57 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
+	id 1iRlYS-00059e-Sf; Mon, 04 Nov 2019 23:14:36 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRlAU-000493-Co
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 22:49:52 +0000
-Received: by mail-oi1-f196.google.com with SMTP id j7so15751716oib.3
+ id 1iRlYN-00058V-5f
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 23:14:32 +0000
+Received: by mail-oi1-f194.google.com with SMTP id s71so15766032oih.11
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 Nov 2019 14:49:49 -0800 (PST)
+ Mon, 04 Nov 2019 15:14:29 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=1s5GDpJ2vznfw9Ye+nOltlxe2jd1EibRhiWFAsltDOo=;
- b=ighYNGvcZOYm99Win3QjhnyVZ3s1dt1bksOKpKdcgN3AjPfr05VPRLAtgLtr7PPSjS
- U+hERZ6Mv2QRpJo5rH8CQweIxjNoyX6o9ULibem5dfKsF/c9JkJd212yHPV5skQa/OzJ
- so4Tr2G1wfS2ChE3monHsOoDemYK1TN5VDEmiNh1zc3ZlJ5x9P7jdrk64QZktDSE5iHn
- WxXHq3PDZl/Y1tRNVfWexLz7mjprCA9S92v8/jZCkdTxl7y8qNjqjWKWi7yySyUAGhzE
- sajNqYsjii+wcSKy+sKHXP5GBAIaj40K22bNnmC3bYFihOINllvWU7x44JiB0V1wCYfp
- NqbQ==
-X-Gm-Message-State: APjAAAWN+BDZFBk4hR1vYBlNjUnJWo3ojeDdNHoqR5F8pfHGYSd1tY+a
- IEPBK/9/i8XpKZHmArkXDg==
-X-Google-Smtp-Source: APXvYqwG00PUvlv7RmfQfRiqNp9ITUkLiJAd1yqfHFQBbyuGVd95+23AWlzongxB/8/UtaXQTn3VGA==
-X-Received: by 2002:aca:da06:: with SMTP id r6mr1204237oig.82.1572907788770;
- Mon, 04 Nov 2019 14:49:48 -0800 (PST)
+ bh=0s5eHuTsunlw8bqFz+rzViXBrMYpKgr6RnCJYn4WElg=;
+ b=gllqnY0avCQUdydrB+S7bZo1fWUW/HloMHhbvEeeMfPNCEjdDD53UwVyk/teiCwcIN
+ 0y4bnY741Nh41QMWe3rqLf3xTMwn5oT9aWnX6ifh9p+/BFRTSrAQb9WpUmNuXNseBD/2
+ sWOIXyvHUCfPWL6ftBpHmjRG3ratCyOoWVtOUP7blvhtoUPB9tV2rCjXx2XHxvGIOIMt
+ bXJ8iFV3sWsT3kKraK3PA4h4Hk1Vm4vOce40ur5xWk38hVysyxM60qtU8TuYeo2f0R4v
+ R7pU+POh5NxSb9n7rMKm/GcY8ZY661u4EdsYowE665FMg4Cvp7HBBkkNXRhPA68eKZay
+ UBTw==
+X-Gm-Message-State: APjAAAX9s79I6Q2nmRm4Tk0JhkztkG6tufAWGHeIJtQpIKBGQK4KNutt
+ us3/9tSHKBd8YwEi/9RnVQ==
+X-Google-Smtp-Source: APXvYqx+ynBSlgqnWKE4r7VqCKzMalb5FPZcpp7PVoYmQGaUXm4gN7FKLPzlCpmpR3QcYqmpPcjtKQ==
+X-Received: by 2002:aca:1e14:: with SMTP id m20mr1388093oic.20.1572909268626; 
+ Mon, 04 Nov 2019 15:14:28 -0800 (PST)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id k24sm5033064oic.29.2019.11.04.14.49.47
+ by smtp.gmail.com with ESMTPSA id e93sm5785180otb.60.2019.11.04.15.14.27
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 04 Nov 2019 14:49:47 -0800 (PST)
-Date: Mon, 4 Nov 2019 16:49:46 -0600
+ Mon, 04 Nov 2019 15:14:28 -0800 (PST)
+Date: Mon, 4 Nov 2019 17:14:27 -0600
 From: Rob Herring <robh@kernel.org>
-To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [PATCH RFC v5 01/10] dt-bindings: devfreq: Add bindings for
- generic imx buses
-Message-ID: <20191104224946.GB17515@bogus>
-References: <cover.1572562150.git.leonard.crestez@nxp.com>
- <0e4118456f8eb67e1ba8a7c23127fc3def58547b.1572562150.git.leonard.crestez@nxp.com>
+To: Manish Narani <manish.narani@xilinx.com>
+Subject: Re: [PATCH v5 4/8] dt-bindings: mmc: Add optional generic properties
+ for mmc
+Message-ID: <20191104231427.GA7606@bogus>
+References: <1572588353-110682-1-git-send-email-manish.narani@xilinx.com>
+ <1572588353-110682-5-git-send-email-manish.narani@xilinx.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <0e4118456f8eb67e1ba8a7c23127fc3def58547b.1572562150.git.leonard.crestez@nxp.com>
+In-Reply-To: <1572588353-110682-5-git-send-email-manish.narani@xilinx.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_144950_435687_72113EEE 
-X-CRM114-Status: GOOD (  23.58  )
+X-CRM114-CacheID: sfid-20191104_151431_214385_515BD7C9 
+X-CRM114-Status: GOOD (  16.96  )
 X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
+ no trust [209.85.167.194 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.194 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
@@ -92,151 +92,135 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Artur =?utf-8?B?xZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, "Rafael J. Wysocki" <rafael@kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, Abel Vesa <abel.vesa@nxp.com>,
- Anson Huang <Anson.Huang@nxp.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Chanwoo Choi <cw00.choi@samsung.com>, Matthias Kaehlcke <mka@chromium.org>,
- linux-imx@nxp.com, devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
- Martin Kepplinger <martink@posteo.de>, linux-arm-kernel@lists.infradead.org,
- Dong Aisheng <aisheng.dong@nxp.com>, Saravana Kannan <saravanak@google.com>,
- Stephen Boyd <sboyd@kernel.org>, Kyungmin Park <kyungmin.park@samsung.com>,
- kernel@pengutronix.de, Fabio Estevam <fabio.estevam@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, Georgi Djakov <georgi.djakov@linaro.org>,
- Alexandre Bailon <abailon@baylibre.com>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, ulf.hansson@linaro.org,
+ rajan.vaja@xilinx.com, nava.manne@xilinx.com, linux-mmc@vger.kernel.org,
+ adrian.hunter@intel.com, michal.simek@xilinx.com,
+ linux-arm-kernel@lists.infradead.org, jolly.shah@xilinx.com,
+ linux-kernel@vger.kernel.org, git@xilinx.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 01, 2019 at 12:52:00AM +0200, Leonard Crestez wrote:
-> Add initial dt bindings for the interconnects inside i.MX chips.
-> Multiple external IPs are involved but SOC integration means the
-> software controllable interfaces are very similar.
+On Fri, Nov 01, 2019 at 11:35:49AM +0530, Manish Narani wrote:
+> Add optional properties for mmc hosts which are used to set clk delays
+> for different speed modes in the controller.
 > 
-> Single node also acts as interconnect provider if #interconnect-cells is
-> present.
-> 
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-> Acked-by: MyungJoo Ham <myungjoo.ham@samsung.com>
+> Signed-off-by: Manish Narani <manish.narani@xilinx.com>
 > ---
->  .../devicetree/bindings/devfreq/imx.yaml      | 83 +++++++++++++++++++
-
-bindings/interconnect/
-
->  1 file changed, 83 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/devfreq/imx.yaml
+>  .../bindings/mmc/mmc-controller.yaml          | 92 +++++++++++++++++++
+>  1 file changed, 92 insertions(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/devfreq/imx.yaml b/Documentation/devicetree/bindings/devfreq/imx.yaml
-> new file mode 100644
-> index 000000000000..bfc825407764
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/devfreq/imx.yaml
-> @@ -0,0 +1,83 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/devfreq/imx.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> diff --git a/Documentation/devicetree/bindings/mmc/mmc-controller.yaml b/Documentation/devicetree/bindings/mmc/mmc-controller.yaml
+> index 080754e0ef35..87a83d966851 100644
+> --- a/Documentation/devicetree/bindings/mmc/mmc-controller.yaml
+> +++ b/Documentation/devicetree/bindings/mmc/mmc-controller.yaml
+> @@ -212,6 +212,98 @@ properties:
+>      description:
+>        eMMC HS400 enhanced strobe mode is supported
+>  
+> +  # Below mentioned are the clock (phase) delays which are to be configured
+> +  # in the controller while switching to particular speed mode. The range
+> +  # of values are 0 to 359 degrees.
 > +
-> +title: Generic i.MX bus frequency device
+> +  clk-phase-legacy:
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32
+> +      - minimum: 0
+> +      - maximum: 359
+> +    description:
+> +      Input/Output Clock Delay pair in degrees for Legacy Mode.
+> +
+> +  clk-phase-mmc-hs:
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32
+> +      - minimum: 0
+> +      - maximum: 359
+> +    description:
+> +      Input/Output Clock Delay pair degrees for MMC HS.
+> +
+> +  clk-phase-sd-hs:
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32
+> +      - minimum: 0
+> +      - maximum: 359
+> +    description:
+> +      Input/Output Clock Delay pair in degrees for SD HS.
+> +
+> +  clk-phase-uhs-sdr12:
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32
+> +      - minimum: 0
+> +      - maximum: 359
+> +    description:
+> +      Input/Output Clock Delay pair in degrees for SDR12.
+> +
+> +  clk-phase-uhs-sdr25:
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32
+> +      - minimum: 0
+> +      - maximum: 359
+> +    description:
+> +      Input/Output Clock Delay pair in degrees for SDR25.
+> +
+> +  clk-phase-uhs-sdr50:
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32
+> +      - minimum: 0
+> +      - maximum: 359
+> +    description:
+> +      Input/Output Clock Delay pair in degrees for SDR50.
+> +
+> +  clk-phase-uhs-sdr104:
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32
+> +      - minimum: 0
+> +      - maximum: 359
+> +    description:
+> +      Input/Output Clock Delay pair in degrees for SDR104.
+> +
+> +  clk-phase-uhs-ddr50:
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32
+> +      - minimum: 0
+> +      - maximum: 359
+> +    description:
+> +      Input/Output Clock Delay pair in degrees for SD DDR50.
+> +
+> +  clk-phase-mmc-ddr52:
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32
+> +      - minimum: 0
+> +      - maximum: 359
+> +    description:
+> +      Input/Output Clock Delay pair in degrees for MMC DDR52.
+> +
+> +  clk-phase-mmc-hs200:
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32
+> +      - minimum: 0
+> +      - maximum: 359
+> +    description:
+> +      Input/Output Clock Delay pair in degrees for MMC HS200.
+> +
+> +  clk-phase-mmc-hs400:
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32
+> +      - minimum: 0
+> +      - maximum: 359
+> +    description:
+> +      Input/Output Clock Delay pair in degrees for MMC HS400.
 
-i.MX8 specific?
+This can be condensed into:
 
-> +
-> +maintainers:
-> +  - Leonard Crestez <leonard.crestez@nxp.com>
-> +
-> +description: |
-> +  The i.MX SoC family has multiple buses for which clock frequency (and
-> +  sometimes voltage) can be adjusted.
-> +
-> +  Some of those buses expose register areas mentioned in the memory maps as GPV
-> +  ("Global Programmers View") but not all. Access to this area might be denied
-> +  for normal (non-secure) world.
-> +
-> +  The buses are based on externally licensed IPs such as ARM NIC-301 and
-> +  Arteris FlexNOC but DT bindings are specific to the integration of these bus
-> +  interconnect IPs into imx SOCs.
-> +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - items:
-> +        - enum:
-> +          - fsl,imx8mn-nic
-> +          - fsl,imx8mm-nic
-> +          - fsl,imx8mq-nic
-> +        - const: fsl,imx8m-nic
-> +      - items:
-> +        - enum:
-> +          - fsl,imx8mn-noc
-> +          - fsl,imx8mm-noc
-> +          - fsl,imx8mq-noc
-> +        - const: fsl,imx8m-noc
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 1
-> +
-> +  operating-points-v2: true
-> +
-> +  devfreq:
-> +    description: |
-> +      Phandle to another devfreq device to match OPPs with by using the
-> +      passive governor.
-> +    $ref: "/schemas/types.yaml#/definitions/phandle"
-> +
-> +  '#interconnect-cells':
-> +    description: |
-> +      If specified then also act as an interconnect provider. Should only be
-> +      set once per soc on main noc.
-> +    const: 1
-> +
-> +  interconnect-node-id:
+patternProperties:
+  
+"^clk-phase-(legacy|sd-hs|mmc-(hs|hs[24]00|ddr52)|uhs-(sdr(12|25|50|104)|ddr50))$":
 
-Looks like common property, but it's not...
+Or if you want to divide them between SD and MMC ones, that would be 
+fine for me.
 
-Generally, we don't do indexes or instance ids. So it needs a better 
-explanation or drop this. The driver side looks like an odd marriage 
-between interconnect and devfreq drivers that needs better integration, 
-but I'm not all that familar with either.
-
-> +    description: |
-> +      i.MX chips have multiple scalable buses based on the same IP, this is
-> +      used to distinguish between. Uses same identifier namespace as consumer
-
-It's not names, so number space? Just guessing because there's no type 
-nor example.
-
-> +      "interconnects" property, for example one of the values in
-> +      "include/dt-bindings/interconnect/imx8mm.h"
-> +
-> +    const: 1
-> +
-> +required:
-> +  - compatible
-> +  - clocks
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/imx8mm-clock.h>
-> +    noc: noc@32700000 {
-> +            compatible = "fsl,imx8mm-noc", "fsl,imx8m-noc";
-> +            reg = <0x32700000 0x100000>;
-> +            clocks = <&clk IMX8MM_CLK_NOC>;
-> +            operating-points-v2 = <&noc_opp_table>;
-> +    };
-> -- 
-> 2.17.1
-> 
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
