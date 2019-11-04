@@ -2,81 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16024EE73D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 19:19:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AE32EE72C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 19:17:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=HJV1R8YxdGDBmiUPuoaYEHxsUk4kMnH6AuDMK04e1j8=; b=PMsB3YQYiyrWjb01VpqQhJfYcH
-	6GTnFRBeOjbV6MkJtmOzsuT+4xyA8ZDrQxAxenwep+DZJDwT1QoghrmEJ4MoI8HbOtUc2dRjq/Bs2
-	sQSFB0NVPOAt9zpHUBdbMXD6b9nMsRPLdb4gV1kDYE487JsrVLftpdg6C9lN37luk7SBzGsKNum7b
-	x9fIbZ/QaHDkIreZs9ZjuqiOjGWrqfFpYvDGuZ2q9O3ezYm0MkbXoxLtUExrYXXzcb2XMxMdC0TtH
-	Gt3lfMHQL6/o4MATg5qOXbF7k7hn5FeDVXgdykbBY2dfVP6QXpNlWwSC003ErYxbSkMCyXRcen+KL
-	JbAQpLQA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=c8tE9mYlmrxqqHVc+3NrUXUKZOl2777krniHdMV9W6E=; b=hs8p/bpw2/K1D2
+	VcDUfnKmR52Sueq9u6+fk1ofzVEKWo5nlKSV1ZRDukjYeDmAAnP+WCLDmynlxWxj8f6ZjM6S8eRN2
+	ThUbraijR/2ajDmxcIaBEyq93GQQejBjmCkC46Kz6ci+S/3zcN/ka4GgIEfvx6I3QyL3FzLiC4xIN
+	O3NAeI4vC7M9/L7sKBJxFKbSp90qmt7tiR25gsv5IciXqIkH7MyHgeKzVJ/vmoL2KnwtcaXI1BcE8
+	pl/XVowKFYygweROUycqO0ImwkHUVp3JKvGcIIoXqEyJC7IWJ43Tw4ZAnMvYxEToHk20uv7oxY/EV
+	WEqdsnULARC0dHzwE5Ww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRgxG-0004su-Te; Mon, 04 Nov 2019 18:19:54 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1iRgvB-0003za-32; Mon, 04 Nov 2019 18:17:45 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRgwj-0004So-UU
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 18:19:23 +0000
-Received: by mail-wm1-x341.google.com with SMTP id t26so13042702wmi.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 Nov 2019 10:19:21 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=crl/sUJTIYngi8fCHSniOxSSni3lgNa7iQh3Jutt6vc=;
- b=rCPl+46hCB8Mnj8qi6TYtxjg6Ezu+S1u9FI7m3WICddeN51CJeVMntsykKw9XxBwcp
- 9IUdFhOkA2la4PN3vJv9GrNi7JET4iS5y265fGNnb8SHwd0GlRiqnexA6tLXX5JGwKeV
- /K1ASK6k89Obg7/lasOFryB+BWSwTgROvyS1s0aO1nPzd9LHq7NGxdLpw/ygTa/62Tpe
- 9tpZ8uXwtmBQ3KKnVIDG8vANv9F6XwRO12Pw4JgIyQ/XNpy4PrPUhrQxIegc71nrMGkV
- Y3YkNNOnbDpPRDz+4OEJg0deyP0bWWL+W2iYgURBBYgFggTWefElTHO8G6qX6xdpDRzf
- +NaQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=crl/sUJTIYngi8fCHSniOxSSni3lgNa7iQh3Jutt6vc=;
- b=ujxmoZlk05ymw8hfE4wgtzulZSWJjjxHLsVps0alvy+i8Whk5T4ILS876h6KhVplqj
- IUgHwXQmb5KeqqVPGeRZ73PVMQKM40D9fmlPt1ZeLUEa1ixuNYgt5xXzXEQV41oQaGa8
- pR/BKrtXJ1mS9eld/T4Kfi+OAeQQiNI0uz7RFS6KbSP3hEFuqpHttVFBxcZC0s1+HPFV
- uaCfwyBY4wXPew7C383xvzve/I+FgKCXhrDUH2m9Oacq3h7wsS4WHgeMNUZV7/8kbV7E
- bFKmV9krkY9l3O8I/sW7bS9zS61mowaqJo58RQxVVmukOBPLGcqMMhBO4WdJ5hkr/gKQ
- Z74Q==
-X-Gm-Message-State: APjAAAUkQZEBIjTQz2qBVaUFsM16reDfv2INQ0a5UqhAkPyDY5FLAvr1
- I+cLg4PMXZqDD3oOG0DFRSZLi4bp
-X-Google-Smtp-Source: APXvYqyi85IXeYNlKiRU9CfS3VUsHIeGRvcoN3KGVKyN/8gCemDLZxmG2aberbhL23uSfab6ZAZFnA==
-X-Received: by 2002:a1c:6a14:: with SMTP id f20mr375073wmc.110.1572891559775; 
- Mon, 04 Nov 2019 10:19:19 -0800 (PST)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id w8sm23127580wrr.44.2019.11.04.10.19.17
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 04 Nov 2019 10:19:18 -0800 (PST)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/2] reset: brcmstb: Remove resource checks
-Date: Mon,  4 Nov 2019 10:15:02 -0800
-Message-Id: <20191104181502.15679-3-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191104181502.15679-1-f.fainelli@gmail.com>
-References: <20191104181502.15679-1-f.fainelli@gmail.com>
+ id 1iRguu-0003vq-2l
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 18:17:29 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B025420578;
+ Mon,  4 Nov 2019 18:17:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572891447;
+ bh=I0ClEyfYYg+5vZmQ5JQDLaZ5AFVtu2E4q0e7uMtVpz4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=MregfVcg4Le7ebB4b6p6lGzAOFFhK7K25ALaLHWbsDc8WmaRHztAMBvyXPfhH57Zk
+ Ymq4nsLSWJaxb1X/M0ZO4nPFio44FxATL1oAHF4tzCygnuURfV/PK0o/voR6/EdndF
+ D+4XkeyENeKp0wa3XYpIN0XyIod2Um9Mjw6r+M4A=
+Date: Mon, 4 Nov 2019 18:17:23 +0000
+From: Will Deacon <will@kernel.org>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH v2 06/10] iommu/io-pgtable-arm: Simplify level indexing
+Message-ID: <20191104181722.GF24909@willie-the-truck>
+References: <cover.1572024119.git.robin.murphy@arm.com>
+ <698173b487383735e470a28e5cca4f9db22703de.1572024120.git.robin.murphy@arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <698173b487383735e470a28e5cca4f9db22703de.1572024120.git.robin.murphy@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_101921_996710_C05F1033 
-X-CRM114-Status: GOOD (  12.68  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191104_101728_179263_6546C397 
+X-CRM114-Status: GOOD (  19.03  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -86,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,54 +77,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
- Florian Fainelli <f.fainelli@gmail.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
- "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <bcm-kernel-feedback-list@broadcom.com>,
- Philipp Zabel <p.zabel@pengutronix.de>
-MIME-Version: 1.0
+Cc: iommu@lists.linux-foundation.org, jcrouse@codeaurora.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The use of IS_ALIGNED() is incorrect, the typical resource we pass looks
-like this: start: 0x8404318, size: 0x30. When using IS_ALIGNED() we will
-get the following 0x8404318 & (0x18 - 1) = 0x10 which is definitively
-not equal to 0, same goes with the size. These two checks would make the
-driver fail probing.
+On Fri, Oct 25, 2019 at 07:08:35PM +0100, Robin Murphy wrote:
+> The nature of the LPAE format means that data->pg_shift is always
+> redundant with data->bits_per_level, since they represent the size of a
+> page and the number of PTEs per page respectively, and the size of a PTE
+> is constant. Thus it works out more efficient to only store the latter,
+> and derive the former via a trivial addition where necessary.
+> 
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> ---
+>  drivers/iommu/io-pgtable-arm.c | 29 +++++++++++++----------------
+>  1 file changed, 13 insertions(+), 16 deletions(-)
+> 
+> diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
+> index 4b1483eb0ccf..15b4927ce36b 100644
+> --- a/drivers/iommu/io-pgtable-arm.c
+> +++ b/drivers/iommu/io-pgtable-arm.c
+> @@ -36,10 +36,11 @@
+>   * in a virtual address mapped by the pagetable in d.
+>   */
+>  #define ARM_LPAE_LVL_SHIFT(l,d)						\
+> -	(((ARM_LPAE_MAX_LEVELS - 1 - (l)) * (d)->bits_per_level) +	\
+> -	(d)->pg_shift)
+> +	(((ARM_LPAE_MAX_LEVELS - (l)) * (d)->bits_per_level) +		\
+> +	ilog2(sizeof(arm_lpae_iopte)))
+>  
+> -#define ARM_LPAE_GRANULE(d)		(1UL << (d)->pg_shift)
+> +#define ARM_LPAE_GRANULE(d)						\
+> +	(sizeof(arm_lpae_iopte) << (d)->bits_per_level)
+>  #define ARM_LPAE_PGD_SIZE(d)						\
+>  	(sizeof(arm_lpae_iopte) << (d)->pgd_bits)
+>  
+> @@ -55,9 +56,7 @@
+>  	 ((1 << ((d)->bits_per_level + ARM_LPAE_PGD_IDX(l,d))) - 1))
+>  
+>  /* Calculate the block/page mapping size at level l for pagetable in d. */
+> -#define ARM_LPAE_BLOCK_SIZE(l,d)					\
+> -	(1ULL << (ilog2(sizeof(arm_lpae_iopte)) +			\
+> -		((ARM_LPAE_MAX_LEVELS - (l)) * (d)->bits_per_level)))
+> +#define ARM_LPAE_BLOCK_SIZE(l,d)	(1ULL << ARM_LPAE_LVL_SHIFT(l,d))
+>  
+>  /* Page table bits */
+>  #define ARM_LPAE_PTE_TYPE_SHIFT		0
+> @@ -175,8 +174,7 @@ struct arm_lpae_io_pgtable {
+>  
+>  	int			pgd_bits;
+>  	int			start_level;
+> -	unsigned long		pg_shift;
+> -	unsigned long		bits_per_level;
+> +	int			bits_per_level;
+>  
+>  	void			*pgd;
+>  };
+> @@ -206,7 +204,7 @@ static phys_addr_t iopte_to_paddr(arm_lpae_iopte pte,
+>  {
+>  	u64 paddr = pte & ARM_LPAE_PTE_ADDR_MASK;
+>  
+> -	if (data->pg_shift < 16)
+> +	if (data->bits_per_level < 13) /* i.e. 64K granule */
 
-Remove the resource checks, since there should be no constraint on the
-base addresse or size.
+nit, but:
 
-Fixes: 77750bc089e4 ("reset: Add Broadcom STB SW_INIT reset controller driver")
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
----
- drivers/reset/reset-brcmstb.c | 6 ------
- 1 file changed, 6 deletions(-)
+	if (ARM_LPAE_GRANULE(data) < SZ_64K)
 
-diff --git a/drivers/reset/reset-brcmstb.c b/drivers/reset/reset-brcmstb.c
-index a608f445dad6..f213264c8567 100644
---- a/drivers/reset/reset-brcmstb.c
-+++ b/drivers/reset/reset-brcmstb.c
-@@ -91,12 +91,6 @@ static int brcmstb_reset_probe(struct platform_device *pdev)
- 		return -ENOMEM;
- 
- 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	if (!IS_ALIGNED(res->start, SW_INIT_BANK_SIZE) ||
--	    !IS_ALIGNED(resource_size(res), SW_INIT_BANK_SIZE)) {
--		dev_err(kdev, "incorrect register range\n");
--		return -EINVAL;
--	}
--
- 	priv->base = devm_ioremap_resource(kdev, res);
- 	if (IS_ERR(priv->base))
- 		return PTR_ERR(priv->base);
--- 
-2.17.1
+might be clearer and avoid the need for a comment?
 
+(I can make the change locally if you agree)
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
