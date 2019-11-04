@@ -2,83 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 250BEEEA76
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 21:51:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07A7FEEA88
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 21:55:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/lMzgQrOumI9ln2mpNaOIKOyPsGiKFYhcqVHDI9/vNE=; b=MK+SAM8jqALtF6
-	k0jlj+lw7HY5KGAhN/2MBoAaErJVcQvANZDijccfL9xi2z2zL1s0brrz1Jn7YVY7lgkC6iVulWyHQ
-	/50fdyxct8rE35AQmVo/EI2Ra799wO+xXrINzFyvGd7BWyRAvwW65xNUDd8N0FV0caAe3CvK4XvgW
-	whfwzrNAIM6ocRxxdOfUn8sD09F3m7sMyXZqID9SU5CTrgCb1I/epTIR93cNoYI65YOL/DiN5vkWQ
-	vPhuhvqIOLXepWkmhNQOxq6R18M2QHsg8JCyHQIjmslyi/DF7FvxBX6hmO7noQO3tl07Fq+SUgPpJ
-	TsywNXPmluJPSJ02CoEQ==;
+	List-Owner; bh=3t/JEPffHunV428m7iyFm5IxqKGiSjp2PLq8Y3sYThU=; b=WT6SqOQ1t9Ik8L
+	QqM4hroEi8McFDuagfLFxRrmL25pvJhFRrU3d9MXxcs/ux/bL4gvHodUNtWAbd5cFjNsjhyznkOMW
+	kq8RU9nGC0oLnEpQuYmWASaUrtGKSq3q4j3IDir9bI/8lhOs3T3k1BiiSmg6XR3UKfyZKMVT/fsri
+	b5DWbU4KWqrzrbs1/LoKm+vlw1JFueGolDbcPAKJIfd+gpfwzvv1a7rejq5OZfF1L0ZGqfAED63DB
+	CF6GiHNDhr5nHMG6zd1bDwpBO2F+Lbi2A6pxkAMfGJFJ1qJ7FhrHHMcA0fSdwFNcRzunyux1x7gzO
+	ydeKiz4XLgD0IsoSfi+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRjJm-00041M-UZ; Mon, 04 Nov 2019 20:51:18 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1iRjNw-0006XT-QV; Mon, 04 Nov 2019 20:55:36 +0000
+Received: from mga09.intel.com ([134.134.136.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRjHz-00013M-4R
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 20:49:30 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id xA4KnO2Y026188;
- Mon, 4 Nov 2019 14:49:24 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1572900564;
- bh=JbeuG6x+HZ6/ASKy0zgpiATKRBUjPk9l7qqUTTj/NzQ=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=ANrWDakW3EinmgutU4vXfESX1R4ERJZXALwhTVKsD4P2ppZViwOIqr1/C/F9FvwTa
- np38tH5Qek3Ovzq5/GhlDOxAAgXn1+wBESiCxzMOT/HeR5UWRGX+bjARCHFcrnJitQ
- 48C26x9z5wbeInpKgeey+O3j7rb5ve9Epv1pP1Ag=
-Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xA4KnNQB005344;
- Mon, 4 Nov 2019 14:49:24 -0600
-Received: from DFLE110.ent.ti.com (10.64.6.31) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 4 Nov
- 2019 14:49:09 -0600
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE110.ent.ti.com
- (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Mon, 4 Nov 2019 14:49:09 -0600
-Received: from ula0869644.dal.design.ti.com (ileax41-snat.itg.ti.com
- [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xA4Kmv06038360;
- Mon, 4 Nov 2019 14:49:23 -0600
-From: Benoit Parrot <bparrot@ti.com>
-To: Tony Lindgren <tony@atomide.com>, Tero Kristo <t-kristo@ti.com>
-Subject: [Patch v2 10/10] arm64: dts: k3-am654-base-board: Add CSI2 OV5640
- camera
-Date: Mon, 4 Nov 2019 14:48:53 -0600
-Message-ID: <20191104204853.4355-11-bparrot@ti.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191104204853.4355-1-bparrot@ti.com>
-References: <20191104204853.4355-1-bparrot@ti.com>
+ id 1iRjNm-0006UF-U3
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 20:55:28 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from orsmga008.jf.intel.com ([10.7.209.65])
+ by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 04 Nov 2019 12:55:20 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.68,268,1569308400"; d="scan'208";a="195581057"
+Received: from rczubala-mobl.ger.corp.intel.com (HELO localhost)
+ ([10.252.7.245])
+ by orsmga008.jf.intel.com with ESMTP; 04 Nov 2019 12:55:08 -0800
+Date: Mon, 4 Nov 2019 22:55:06 +0200
+From: Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>
+To: Sumit Garg <sumit.garg@linaro.org>
+Subject: Re: [Patch v3 6/7] doc: keys: Document usage of TEE based Trusted Keys
+Message-ID: <20191104205453.GA29713@linux.intel.com>
+References: <1572530323-14802-1-git-send-email-sumit.garg@linaro.org>
+ <1572530323-14802-7-git-send-email-sumit.garg@linaro.org>
+ <20191031214745.GG10507@linux.intel.com>
+ <CAFA6WYMkE928v-v76gGtWmsS0PwRp-OHUtkS0+Ts4V6x0AKBqQ@mail.gmail.com>
+ <20191101201957.GA8369@linux.intel.com>
+ <CAFA6WYNwSSaZv5OM=q+LCyn0mEdpg7K+W_v2_NBHhtktg1BFXw@mail.gmail.com>
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <CAFA6WYNwSSaZv5OM=q+LCyn0mEdpg7K+W_v2_NBHhtktg1BFXw@mail.gmail.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_124927_306181_A0B1FECC 
-X-CRM114-Status: GOOD (  12.95  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191104_125527_013413_83B119F2 
+X-CRM114-Status: GOOD (  12.65  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [134.134.136.24 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,86 +73,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- Benoit Parrot <bparrot@ti.com>, Rob Herring <robh+dt@kernel.org>,
- linux-omap@vger.kernel.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: "tee-dev @ lists . linaro . org" <tee-dev@lists.linaro.org>,
+ Daniel Thompson <daniel.thompson@linaro.org>,
+ Janne Karhunen <janne.karhunen@gmail.com>, Jonathan Corbet <corbet@lwn.net>,
+ jejb@linux.ibm.com, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ James Morris <jmorris@namei.org>, Mimi Zohar <zohar@linux.ibm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, dhowells@redhat.com,
+ linux-security-module@vger.kernel.org,
+ "open list:ASYMMETRIC KEYS" <keyrings@vger.kernel.org>,
+ Stuart Yoder <stuart.yoder@arm.com>, Casey Schaufler <casey@schaufler-ca.com>,
+ linux-integrity@vger.kernel.org, Jens Wiklander <jens.wiklander@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ "Serge E. Hallyn" <serge@hallyn.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for the OV5640 CSI camera:
-- add the OV5640 nodes
-- add the CAL node linkage
-- enable CAL node
+On Mon, Nov 04, 2019 at 12:28:47PM +0530, Sumit Garg wrote:
+> On Sat, 2 Nov 2019 at 01:50, Jarkko Sakkinen
+> <jarkko.sakkinen@linux.intel.com> wrote:
+> >
+> > On Fri, Nov 01, 2019 at 03:04:18PM +0530, Sumit Garg wrote:
+> >
+> > > Isn't this statement contradicting with your earlier statement
+> > > regarding the right order would be to complete TEE patches review
+> > > first and then come up with documentation here [2]?
+> > >
+> > > [1] https://lore.kernel.org/linux-integrity/1568025601.4614.253.camel@linux.ibm.com/
+> > > [2] https://lore.kernel.org/linux-integrity/20190909163643.qxmzpcggi567hmhv@linux.intel.com/
+> >
+> > With the intersecting issues, namely key generation and conflicting
+> > keyctl parameters, that was not a well considered statement.
+> 
+> Okay, let me work on documentation first, but I think resending whole
+> patch-set just for documentation review and rework would be an
+> overkill. Would minor revisions of this patch only like v3.1, v3.2
+> etc. work for you? And later I could send next version of this
+> patch-set once we agree on documentation.
 
-Signed-off-by: Benoit Parrot <bparrot@ti.com>
----
- .../arm64/boot/dts/ti/k3-am654-base-board.dts | 36 +++++++++++++++++++
- 1 file changed, 36 insertions(+)
+Yeah, we could iterate through the documentation patch and once
+we are happy with it you can bundle it to your main patch set.
 
-diff --git a/arch/arm64/boot/dts/ti/k3-am654-base-board.dts b/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
-index 1102b84f853d..73290c646334 100644
---- a/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
-+++ b/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
-@@ -53,6 +53,12 @@
- 			gpios = <&wkup_gpio0 27 GPIO_ACTIVE_LOW>;
- 		};
- 	};
-+
-+	clk_ov5640_fixed: clock {
-+		compatible = "fixed-clock";
-+		#clock-cells = <0>;
-+		clock-frequency = <24000000>;
-+	};
- };
- 
- &wkup_pmx0 {
-@@ -184,6 +190,23 @@
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&main_i2c1_pins_default>;
- 	clock-frequency = <400000>;
-+
-+	ov5640@3c {
-+		compatible = "ovti,ov5640";
-+		reg = <0x3c>;
-+
-+		clocks = <&clk_ov5640_fixed>;
-+		clock-names = "xclk";
-+
-+		port {
-+			csi2_cam0: endpoint {
-+				remote-endpoint = <&csi2_phy0>;
-+				clock-lanes = <0>;
-+				data-lanes = <1 2>;
-+			};
-+		};
-+	};
-+
- };
- 
- &main_i2c2 {
-@@ -280,3 +303,16 @@
- &pcie1_ep {
- 	status = "disabled";
- };
-+
-+&cal {
-+	status = "okay";
-+};
-+
-+&csi2_0 {
-+	csi2_phy0: endpoint@0 {
-+		remote-endpoint = <&csi2_cam0>;
-+		clock-lanes = <0>;
-+		data-lanes = <1 2>;
-+	};
-+};
-+
--- 
-2.17.1
-
+/Jarkko
 
 _______________________________________________
 linux-arm-kernel mailing list
