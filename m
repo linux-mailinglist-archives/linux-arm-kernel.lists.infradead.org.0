@@ -2,93 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1BB5EE440
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 16:50:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DD68EE446
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 16:51:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Nx72V9rxOj9T+g7pJa90jJg1NarM3HAjiS0oN1bKo/I=; b=VQdtZwAenUyrcd
-	KXKSafTPFxWhyxSa+dmgXQHsC0sD/LG3cnRPy5TvHchl7X+45uHl67mWVghZ7crzojBLBE8jGVBXe
-	PAJeL3V82fDoobOXW5fQCw5IssuQRDZ+aDO3WUdn0Edz/FkOk5+AVy+BIRN5c2BOASiW1k4nHDK8i
-	JOQHNB4v7aYlaOaDb0TP0ygFIAYxc1MpQI2F9CMqBiECxrWcC5Za6kaZ3pOwQob0m8hxpt7hT8IDl
-	U2/5l9Y93POCKKmC3H0mtHAo7YsqIVZjwRnTj/CvLTZGo0NABrnp/VIiyRLrSm290weYKBDneoW4j
-	sYuwm771ipw6j7hVqtJA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=W6MplqTN6IRXZKqnxY0RVn1ECA+U/VnbGwOn6Dg7RX0=; b=Zn4p/GLdh519Id
+	V8ll75/aPZISW9Xb3pQoGzG/h+fIaFy/aaOcz4iyq3Xir2GmFPB6VroLJXrA86/efxc04qJn1CYx/
+	hW/DsA4vQihNCABiEFQt+5OSqhbNQT6MG5qE3niEr640Yc4QI/rVskCsMUscuyyLcQdTl66LWLp5z
+	5V3bBBcyaTeZSY077iB/AV2PZcTejjR0Y5ccPhpJx22MlnlPBq/Esv94GQVqLSowdkD6LY9lcTseV
+	3g3o1u0N8yIlorfSCrTheDkSMwCbMpJ+mPDzS+xByKjEV9EYtgeaVsWCFgak7VpTC6n6rs4RnBEzI
+	I7ERh+zQH/Kg5ITgecIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRecs-0005DI-9s; Mon, 04 Nov 2019 15:50:42 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRecj-0005Ce-0J
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 15:50:34 +0000
-Received: by mail-wr1-x443.google.com with SMTP id b3so11900854wrs.13
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 Nov 2019 07:50:32 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=clU1bKHT6brcxpybdIWScjXO4jR8ML9CYkdJSkfKRuE=;
- b=Yw9n7TwiEYa9fp+A5e/RLb4byJXfyYLBxxAel9gksuFgNn5rPRTZQAALS6u8CTiY3p
- CNxhKo/8GnZzIJawDAPcgoiBSmqrksuYcM27uS5yGZiTDFT2BzpK1LutVBMfLvLA1+s6
- npojTeyELwkekqwg2YHynh7GiuNCKh9TL+Po8U5XLY/7hTORMzvGkFNXIAto1u698GeJ
- vDt/YgSG8zbIF1Cx5iIXusAfukLzSl8L/2i1QmIBWXyjIFRA5pMc81b9YgfJ3q0c1OyL
- N1011f0bgmrFW5HLSyfi8tfvczCcS6Od+ruyvM85nEUNOI8wL0+T/iomvnF48Oqq8xav
- qevQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=clU1bKHT6brcxpybdIWScjXO4jR8ML9CYkdJSkfKRuE=;
- b=qv2NE0aCg8XF9nd3m914gDtL+rUudnt05dR9ewAw3VtYJ7qe++Bm8lYF+VlOK8C2w6
- SyyuvR8ef+yC2UUqwbmDMzKxdJO4Rpu79eimhKK7LwED1jkYzFys3S2B17DdD9lFHqT7
- Hcs9G7HGipko8CUaRfUOhN7/s11BYCUDnqyptoM9EJ9ovP9kG3sfXf0SvBym/BUxqoCH
- 5WFqw+v7LWmPXTW/34aTbv9tYCvhnMSDco2mCVluvlTCkri3kwSGBekHuGuuWlaJkXzs
- twb9NJ6TL8Z0CAlCjI8Ers5aq5DITmc3qlP7YBxAlqTiqOFP/ObnjNEZqU8ToH7wSKtz
- +ewQ==
-X-Gm-Message-State: APjAAAU5OgZyLhHmQrL5hF5brx7HXBppTBKZGoLtSKSW8O0kuOHDrbAi
- przeoR/XQxejXRmwef/ABZc=
-X-Google-Smtp-Source: APXvYqwBJhMarOb9DuoSeD9Eo8Lc26NxpepeppxQG4OIxoUZW28lf16IvA+EqxulYRqvcR8eaU6MUw==
-X-Received: by 2002:adf:ab4c:: with SMTP id r12mr20114632wrc.3.1572882631918; 
- Mon, 04 Nov 2019 07:50:31 -0800 (PST)
-Received: from suzukaze.ipads-lab.se.sjtu.edu.cn ([202.120.40.82])
- by smtp.gmail.com with ESMTPSA id k4sm19569710wmk.26.2019.11.04.07.50.26
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 04 Nov 2019 07:50:31 -0800 (PST)
-From: Chuhong Yuan <hslester96@gmail.com>
-To: 
-Subject: [PATCH] rtc: brcmstb-waketimer: add missed clk_disable_unprepare
-Date: Mon,  4 Nov 2019 23:50:19 +0800
-Message-Id: <20191104155019.9053-1-hslester96@gmail.com>
-X-Mailer: git-send-email 2.23.0
+	id 1iRedx-0005aX-I0; Mon, 04 Nov 2019 15:51:49 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iRedp-0005Zr-4p
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 15:51:42 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 15BE41FB;
+ Mon,  4 Nov 2019 07:51:40 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CA20A3F71A;
+ Mon,  4 Nov 2019 07:51:37 -0800 (PST)
+Date: Mon, 4 Nov 2019 15:51:33 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: linux-arm-kernel@lists.infradead.org, Jessica Yu <jeyu@kernel.org>,
+ Helge Deller <deller@gmx.de>,
+ "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>
+Subject: Re: [PATCHv2 2/8] module/ftrace: handle patchable-function-entry
+Message-ID: <20191104155132.GA1643@lakrids.cambridge.arm.com>
+References: <20191029165832.33606-1-mark.rutland@arm.com>
+ <20191029165832.33606-3-mark.rutland@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191029165832.33606-3-mark.rutland@arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_075033_045973_7C57782C 
-X-CRM114-Status: GOOD (  12.01  )
-X-Spam-Score: 1.6 (+)
+X-CRM114-CacheID: sfid-20191104_075141_277736_EF0FB748 
+X-CRM114-Status: GOOD (  26.20  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.6 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [202.120.40.82 listed in dnsbl.sorbs.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (hslester96[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (hslester96[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,40 +64,166 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Florian Fainelli <f.fainelli@gmail.com>, Chuhong Yuan <hslester96@gmail.com>,
- linux-kernel@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- linux-arm-kernel@lists.infradead.org
+Cc: jthierry@redhat.com, linux-parisc@vger.kernel.org, peterz@infradead.org,
+ catalin.marinas@arm.com, duwe@suse.de, linux-kernel@vger.kernel.org,
+ rostedt@goodmis.org, takahiro.akashi@linaro.org, will@kernel.org,
+ mingo@redhat.com, james.morse@arm.com, jpoimboe@redhat.com,
+ amit.kachhap@arm.com, svens@stackframe.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This driver forgets to disable and unprepare clock when remove.
-Add a call to clk_disable_unprepare to fix it.
+Hi Jessica, Helge,
 
-Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
----
- drivers/rtc/rtc-brcmstb-waketimer.c | 2 ++
- 1 file changed, 2 insertions(+)
+Are you ok with the module and parisc changes, repectively?
 
-diff --git a/drivers/rtc/rtc-brcmstb-waketimer.c b/drivers/rtc/rtc-brcmstb-waketimer.c
-index 3e9800f9878a..06b2bdde584a 100644
---- a/drivers/rtc/rtc-brcmstb-waketimer.c
-+++ b/drivers/rtc/rtc-brcmstb-waketimer.c
-@@ -277,6 +277,8 @@ static int brcmstb_waketmr_remove(struct platform_device *pdev)
- 	struct brcmstb_waketmr *timer = dev_get_drvdata(&pdev->dev);
- 
- 	unregister_reboot_notifier(&timer->reboot_notifier);
-+	if (timer->clk)
-+		clk_disable_unprepare(timer->clk);
- 
- 	return 0;
- }
--- 
-2.23.0
+The kbuild test robot is happy building this for multiple architectures,
+Sven has tested that this works correctly on parisc, and others have
+tested other architectures.
 
+I'd like to queue this in the arm64 tree soon if possible.
+
+Thanks,
+Mark.
+
+On Tue, Oct 29, 2019 at 04:58:26PM +0000, Mark Rutland wrote:
+> When using patchable-function-entry, the compiler will record the
+> callsites into a section named "__patchable_function_entries" rather
+> than "__mcount_loc". Let's abstract this difference behind a new
+> FTRACE_CALLSITE_SECTION, so that architectures don't have to handle this
+> explicitly (e.g. with custom module linker scripts).
+> 
+> As parisc currently handles this explicitly, it is fixed up accordingly,
+> with its custom linker script removed. Since FTRACE_CALLSITE_SECTION is
+> only defined when DYNAMIC_FTRACE is selected, the parisc module loading
+> code is updated to only use the definition in that case. When
+> DYNAMIC_FTRACE is not selected, modules shouldn't have this section, so
+> this removes some redundant work in that case.
+> 
+> I built parisc generic-{32,64}bit_defconfig with DYNAMIC_FTRACE enabled,
+> and verified that the section made it into the .ko files for modules.
+> 
+> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+> Reviewed-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> Cc: Helge Deller <deller@gmx.de>
+> Cc: Ingo Molnar <mingo@redhat.com>
+> Cc: James E.J. Bottomley <James.Bottomley@HansenPartnership.com>
+> Cc: Jessica Yu <jeyu@kernel.org>
+> Cc: Steven Rostedt <rostedt@goodmis.org>
+> Cc: Sven Schnelle <svens@stackframe.org>
+> Cc: linux-parisc@vger.kernel.org
+> ---
+>  arch/parisc/Makefile          |  1 -
+>  arch/parisc/kernel/module.c   | 10 +++++++---
+>  arch/parisc/kernel/module.lds |  7 -------
+>  include/linux/ftrace.h        |  5 +++++
+>  kernel/module.c               |  2 +-
+>  5 files changed, 13 insertions(+), 12 deletions(-)
+>  delete mode 100644 arch/parisc/kernel/module.lds
+> 
+> diff --git a/arch/parisc/Makefile b/arch/parisc/Makefile
+> index 36b834f1c933..dca8f2de8cf5 100644
+> --- a/arch/parisc/Makefile
+> +++ b/arch/parisc/Makefile
+> @@ -60,7 +60,6 @@ KBUILD_CFLAGS += -DCC_USING_PATCHABLE_FUNCTION_ENTRY=1 \
+>  		 -DFTRACE_PATCHABLE_FUNCTION_SIZE=$(NOP_COUNT)
+>  
+>  CC_FLAGS_FTRACE := -fpatchable-function-entry=$(NOP_COUNT),$(shell echo $$(($(NOP_COUNT)-1)))
+> -KBUILD_LDS_MODULE += $(srctree)/arch/parisc/kernel/module.lds
+>  endif
+>  
+>  OBJCOPY_FLAGS =-O binary -R .note -R .comment -S
+> diff --git a/arch/parisc/kernel/module.c b/arch/parisc/kernel/module.c
+> index ac5f34993b53..1c50093e2ebe 100644
+> --- a/arch/parisc/kernel/module.c
+> +++ b/arch/parisc/kernel/module.c
+> @@ -43,6 +43,7 @@
+>  #include <linux/elf.h>
+>  #include <linux/vmalloc.h>
+>  #include <linux/fs.h>
+> +#include <linux/ftrace.h>
+>  #include <linux/string.h>
+>  #include <linux/kernel.h>
+>  #include <linux/bug.h>
+> @@ -862,7 +863,7 @@ int module_finalize(const Elf_Ehdr *hdr,
+>  	const char *strtab = NULL;
+>  	const Elf_Shdr *s;
+>  	char *secstrings;
+> -	int err, symindex = -1;
+> +	int symindex = -1;
+>  	Elf_Sym *newptr, *oldptr;
+>  	Elf_Shdr *symhdr = NULL;
+>  #ifdef DEBUG
+> @@ -946,11 +947,13 @@ int module_finalize(const Elf_Ehdr *hdr,
+>  			/* patch .altinstructions */
+>  			apply_alternatives(aseg, aseg + s->sh_size, me->name);
+>  
+> +#ifdef CONFIG_DYNAMIC_FTRACE
+>  		/* For 32 bit kernels we're compiling modules with
+>  		 * -ffunction-sections so we must relocate the addresses in the
+> -		 *__mcount_loc section.
+> +		 *  ftrace callsite section.
+>  		 */
+> -		if (symindex != -1 && !strcmp(secname, "__mcount_loc")) {
+> +		if (symindex != -1 && !strcmp(secname, FTRACE_CALLSITE_SECTION)) {
+> +			int err;
+>  			if (s->sh_type == SHT_REL)
+>  				err = apply_relocate((Elf_Shdr *)sechdrs,
+>  							strtab, symindex,
+> @@ -962,6 +965,7 @@ int module_finalize(const Elf_Ehdr *hdr,
+>  			if (err)
+>  				return err;
+>  		}
+> +#endif
+>  	}
+>  	return 0;
+>  }
+> diff --git a/arch/parisc/kernel/module.lds b/arch/parisc/kernel/module.lds
+> deleted file mode 100644
+> index 1a9a92aca5c8..000000000000
+> --- a/arch/parisc/kernel/module.lds
+> +++ /dev/null
+> @@ -1,7 +0,0 @@
+> -/* SPDX-License-Identifier: GPL-2.0 */
+> -
+> -SECTIONS {
+> -	__mcount_loc : {
+> -		*(__patchable_function_entries)
+> -	}
+> -}
+> diff --git a/include/linux/ftrace.h b/include/linux/ftrace.h
+> index 9867d90d635e..9141f2263286 100644
+> --- a/include/linux/ftrace.h
+> +++ b/include/linux/ftrace.h
+> @@ -738,6 +738,11 @@ static inline unsigned long get_lock_parent_ip(void)
+>  
+>  #ifdef CONFIG_FTRACE_MCOUNT_RECORD
+>  extern void ftrace_init(void);
+> +#ifdef CC_USING_PATCHABLE_FUNCTION_ENTRY
+> +#define FTRACE_CALLSITE_SECTION	"__patchable_function_entries"
+> +#else
+> +#define FTRACE_CALLSITE_SECTION	"__mcount_loc"
+> +#endif
+>  #else
+>  static inline void ftrace_init(void) { }
+>  #endif
+> diff --git a/kernel/module.c b/kernel/module.c
+> index ff2d7359a418..acf7962936c4 100644
+> --- a/kernel/module.c
+> +++ b/kernel/module.c
+> @@ -3222,7 +3222,7 @@ static int find_module_sections(struct module *mod, struct load_info *info)
+>  #endif
+>  #ifdef CONFIG_FTRACE_MCOUNT_RECORD
+>  	/* sechdrs[0].sh_size is always zero */
+> -	mod->ftrace_callsites = section_objs(info, "__mcount_loc",
+> +	mod->ftrace_callsites = section_objs(info, FTRACE_CALLSITE_SECTION,
+>  					     sizeof(*mod->ftrace_callsites),
+>  					     &mod->num_ftrace_callsites);
+>  #endif
+> -- 
+> 2.11.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
