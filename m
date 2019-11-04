@@ -2,44 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8335DEDDF5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 12:48:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 083EAEDE05
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 12:52:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pn8Heu7uaPnFWUwE+ZKKL5UtZel7lPpSc9RQStX7fGk=; b=cxOcW3Pao+gIxu
-	mFTq2JgX7j+sObPzM6adymvnRbwWVDFlTDDspJgoRWqhx8YnQcjM6Sohu/UUF5vcEZlWYzcEJ2zdX
-	DUOc6INYN13M+JBsVTMosgAKY75Nx0vfE9j8jXihBh6flwUyqtiU9XBABBq198nmTZTEgL4K7u4gO
-	AANUOEQBRnrNBTc6vBge5eBDie2e6Vk6BqhrWHIdF7v3bX2PkdTv95Km7Ne98C2gUwzpz0MDraOcP
-	Wa52OjC+9d2KIOzvNEPIg+UmuUmKzQUYknUTWWj+6IlcSqjP3255nEMmcElEtufESlev7djYHXcwM
-	Pb7nMvK+ZyMmcpljPLmw==;
+	List-Owner; bh=xGEHPk8UwlMCR+508sDhwGdkFmrS/1QSlf2OIM3tD6Y=; b=EmXQhGg0bjdcjx
+	H7dYZ/j15t/nwQYm22Cob/uO7i9IO4qvwYZENUvcu6gm02C/DHdv0XQ97Bw448eq0ZsQoZJ/gwKuJ
+	qdwbqKpZyP3SSNXqza5S5aWjZ82Kx/t6xvkVHVgAQCLKo6nWUIGv/Ns/Vtp/CUBlx5Woo/cSXU++Z
+	rVKPDJ2Ef3Me5VSWc2sV5lf6nGkPnuLFkY12ZAdAOTYazZsOT0IU/9L8MAcri+OhCK07+3dHDtm76
+	yy7nHJht4Iq1kjIRIEk7N6yEdbnsRMoZtyiI+BEPpqIDuyc92MlvhVq+ihbYe57mRVKk59DnI6s5z
+	UBWOHvAnYEpym+QSWRKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRaqb-00048j-62; Mon, 04 Nov 2019 11:48:37 +0000
-Received: from mail-sh.amlogic.com ([58.32.228.43])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRapb-0002yJ-HX; Mon, 04 Nov 2019 11:47:36 +0000
-Received: from droid13.amlogic.com (116.236.93.172) by mail-sh.amlogic.com
- (10.18.11.5) with Microsoft SMTP Server id 15.1.1591.10; Mon, 4 Nov 2019
- 19:47:38 +0800
-From: Jianxin Pan <jianxin.pan@amlogic.com>
-To: Kevin Hilman <khilman@baylibre.com>, <linux-amlogic@lists.infradead.org>
-Subject: [PATCH v4 4/4] arm64: dts: meson: a1: add secure power domain
- controller
-Date: Mon, 4 Nov 2019 19:47:08 +0800
-Message-ID: <1572868028-73076-5-git-send-email-jianxin.pan@amlogic.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1572868028-73076-1-git-send-email-jianxin.pan@amlogic.com>
-References: <1572868028-73076-1-git-send-email-jianxin.pan@amlogic.com>
+	id 1iRatl-00069N-D8; Mon, 04 Nov 2019 11:51:53 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iRate-00068b-8t
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 11:51:48 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6535A1FB;
+ Mon,  4 Nov 2019 03:51:43 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 29D123F6C4;
+ Mon,  4 Nov 2019 03:51:41 -0800 (PST)
+Date: Mon, 4 Nov 2019 11:51:39 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Sami Tolvanen <samitolvanen@google.com>
+Subject: Re: [PATCH v4 03/17] arm64: kvm: stop treating register x18 as
+ caller save
+Message-ID: <20191104115138.GB45140@lakrids.cambridge.arm.com>
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20191101221150.116536-1-samitolvanen@google.com>
+ <20191101221150.116536-4-samitolvanen@google.com>
 MIME-Version: 1.0
-X-Originating-IP: [116.236.93.172]
+Content-Disposition: inline
+In-Reply-To: <20191101221150.116536-4-samitolvanen@google.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_034735_591321_86CD3269 
-X-CRM114-Status: UNSURE (   7.00  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191104_035146_404102_8BAEB1C2 
+X-CRM114-Status: GOOD (  19.44  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -58,54 +64,159 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
- Victor Wan <victor.wan@amlogic.com>, Jianxin Pan <jianxin.pan@amlogic.com>,
- linux-pm@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Neil Armstrong <narmstrong@baylibre.com>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Jian Hu <jian.hu@amlogic.com>,
- Xingyu Chen <xingyu.chen@amlogic.com>, linux-arm-kernel@lists.infradead.org,
- Jerome Brunet <jbrunet@baylibre.com>
+Cc: Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ Steven Rostedt <rostedt@goodmis.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ clang-built-linux@googlegroups.com, Masami Hiramatsu <mhiramat@kernel.org>,
+ Marc Zyngier <maz@kernel.org>, kernel-hardening@lists.openwall.com,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable power domain controller for Meson A1 SoC.
+On Fri, Nov 01, 2019 at 03:11:36PM -0700, Sami Tolvanen wrote:
+> From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> 
+> In preparation of reserving x18, stop treating it as caller save in
+> the KVM guest entry/exit code. Currently, the code assumes there is
+> no need to preserve it for the host, given that it would have been
+> assumed clobbered anyway by the function call to __guest_enter().
+> Instead, preserve its value and restore it upon return.
+> 
+> Link: https://patchwork.kernel.org/patch/9836891/
+> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> [Sami: updated commit message, switched from x18 to x29 for the guest context]
+> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
+> Reviewed-by: Kees Cook <keescook@chromium.org>
+> ---
+>  arch/arm64/kvm/hyp/entry.S | 41 +++++++++++++++++++-------------------
+>  1 file changed, 20 insertions(+), 21 deletions(-)
+> 
+> diff --git a/arch/arm64/kvm/hyp/entry.S b/arch/arm64/kvm/hyp/entry.S
+> index e5cc8d66bf53..c3c2d842c609 100644
+> --- a/arch/arm64/kvm/hyp/entry.S
+> +++ b/arch/arm64/kvm/hyp/entry.S
+> @@ -23,6 +23,7 @@
+>  	.pushsection	.hyp.text, "ax"
+>  
 
-Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
----
- arch/arm64/boot/dts/amlogic/meson-a1.dtsi | 7 +++++++
- 1 file changed, 7 insertions(+)
+Could we please add a note here, e.g.
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-index 7210ad0..6fdc0dd 100644
---- a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-@@ -5,6 +5,7 @@
- 
- #include <dt-bindings/interrupt-controller/irq.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
-+#include <dt-bindings/power/meson-a1-power.h>
- 
- / {
- 	compatible = "amlogic,a1";
-@@ -93,6 +94,12 @@
- 				clock-names = "xtal", "pclk", "baud";
- 				status = "disabled";
- 			};
-+
-+			pwrc: power-controller {
-+				compatible = "amlogic,meson-a1-pwrc";
-+				#power-domain-cells = <1>;
-+				status = "okay";
-+			};
- 		};
- 
- 		gic: interrupt-controller@ff901000 {
--- 
-2.7.4
+/*
+ * We treat x18 as callee-saved as the host may use it as a platform
+ * register (e.g. for shadow call stack).
+ */
 
+... as that will avoid anyone trying to optimize this away in future
+after reading the AAPCS.
+
+>  .macro save_callee_saved_regs ctxt
+> +	str	x18,      [\ctxt, #CPU_XREG_OFFSET(18)]
+>  	stp	x19, x20, [\ctxt, #CPU_XREG_OFFSET(19)]
+>  	stp	x21, x22, [\ctxt, #CPU_XREG_OFFSET(21)]
+>  	stp	x23, x24, [\ctxt, #CPU_XREG_OFFSET(23)]
+> @@ -32,6 +33,8 @@
+>  .endm
+>  
+>  .macro restore_callee_saved_regs ctxt
+> +	// We assume \ctxt is not x18-x28
+
+Probably worth s/assume/require/ here.
+
+Otherwise, this looks godo to me:
+
+Reviewed-by: Mark Rutland <mark.rutland@arm.com>
+
+Mark.
+
+> +	ldr	x18,      [\ctxt, #CPU_XREG_OFFSET(18)]
+>  	ldp	x19, x20, [\ctxt, #CPU_XREG_OFFSET(19)]
+>  	ldp	x21, x22, [\ctxt, #CPU_XREG_OFFSET(21)]
+>  	ldp	x23, x24, [\ctxt, #CPU_XREG_OFFSET(23)]
+> @@ -48,7 +51,7 @@ ENTRY(__guest_enter)
+>  	// x0: vcpu
+>  	// x1: host context
+>  	// x2-x17: clobbered by macros
+> -	// x18: guest context
+> +	// x29: guest context
+>  
+>  	// Store the host regs
+>  	save_callee_saved_regs x1
+> @@ -67,31 +70,28 @@ alternative_else_nop_endif
+>  	ret
+>  
+>  1:
+> -	add	x18, x0, #VCPU_CONTEXT
+> +	add	x29, x0, #VCPU_CONTEXT
+>  
+>  	// Macro ptrauth_switch_to_guest format:
+>  	// 	ptrauth_switch_to_guest(guest cxt, tmp1, tmp2, tmp3)
+>  	// The below macro to restore guest keys is not implemented in C code
+>  	// as it may cause Pointer Authentication key signing mismatch errors
+>  	// when this feature is enabled for kernel code.
+> -	ptrauth_switch_to_guest x18, x0, x1, x2
+> +	ptrauth_switch_to_guest x29, x0, x1, x2
+>  
+>  	// Restore guest regs x0-x17
+> -	ldp	x0, x1,   [x18, #CPU_XREG_OFFSET(0)]
+> -	ldp	x2, x3,   [x18, #CPU_XREG_OFFSET(2)]
+> -	ldp	x4, x5,   [x18, #CPU_XREG_OFFSET(4)]
+> -	ldp	x6, x7,   [x18, #CPU_XREG_OFFSET(6)]
+> -	ldp	x8, x9,   [x18, #CPU_XREG_OFFSET(8)]
+> -	ldp	x10, x11, [x18, #CPU_XREG_OFFSET(10)]
+> -	ldp	x12, x13, [x18, #CPU_XREG_OFFSET(12)]
+> -	ldp	x14, x15, [x18, #CPU_XREG_OFFSET(14)]
+> -	ldp	x16, x17, [x18, #CPU_XREG_OFFSET(16)]
+> -
+> -	// Restore guest regs x19-x29, lr
+> -	restore_callee_saved_regs x18
+> -
+> -	// Restore guest reg x18
+> -	ldr	x18,      [x18, #CPU_XREG_OFFSET(18)]
+> +	ldp	x0, x1,   [x29, #CPU_XREG_OFFSET(0)]
+> +	ldp	x2, x3,   [x29, #CPU_XREG_OFFSET(2)]
+> +	ldp	x4, x5,   [x29, #CPU_XREG_OFFSET(4)]
+> +	ldp	x6, x7,   [x29, #CPU_XREG_OFFSET(6)]
+> +	ldp	x8, x9,   [x29, #CPU_XREG_OFFSET(8)]
+> +	ldp	x10, x11, [x29, #CPU_XREG_OFFSET(10)]
+> +	ldp	x12, x13, [x29, #CPU_XREG_OFFSET(12)]
+> +	ldp	x14, x15, [x29, #CPU_XREG_OFFSET(14)]
+> +	ldp	x16, x17, [x29, #CPU_XREG_OFFSET(16)]
+> +
+> +	// Restore guest regs x18-x29, lr
+> +	restore_callee_saved_regs x29
+>  
+>  	// Do not touch any register after this!
+>  	eret
+> @@ -114,7 +114,7 @@ ENTRY(__guest_exit)
+>  	// Retrieve the guest regs x0-x1 from the stack
+>  	ldp	x2, x3, [sp], #16	// x0, x1
+>  
+> -	// Store the guest regs x0-x1 and x4-x18
+> +	// Store the guest regs x0-x1 and x4-x17
+>  	stp	x2, x3,   [x1, #CPU_XREG_OFFSET(0)]
+>  	stp	x4, x5,   [x1, #CPU_XREG_OFFSET(4)]
+>  	stp	x6, x7,   [x1, #CPU_XREG_OFFSET(6)]
+> @@ -123,9 +123,8 @@ ENTRY(__guest_exit)
+>  	stp	x12, x13, [x1, #CPU_XREG_OFFSET(12)]
+>  	stp	x14, x15, [x1, #CPU_XREG_OFFSET(14)]
+>  	stp	x16, x17, [x1, #CPU_XREG_OFFSET(16)]
+> -	str	x18,      [x1, #CPU_XREG_OFFSET(18)]
+>  
+> -	// Store the guest regs x19-x29, lr
+> +	// Store the guest regs x18-x29, lr
+>  	save_callee_saved_regs x1
+>  
+>  	get_host_ctxt	x2, x3
+> -- 
+> 2.24.0.rc1.363.gb1bccd3e3d-goog
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
