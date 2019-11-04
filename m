@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3B45EDA10
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 08:44:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 178FEEDA19
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 08:45:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=39xzcAjqGBRCg8qW64zWemXSrx5rLkCEFrhGxe0b8xk=; b=c51jr2cbKJOJL6
-	hinlK3gBfMhzNp62f+PCXesQXatsneLByDCceEzQO2vioMsHPRUGNQYH04lSUHvrq0zlHI/sEiXmg
-	/k4ulGFqEda/2N98IMe7STADJCiyYz4rJ9ZRPT1RYbzpvnE2vTpuFQdyumvFBMNX8+QKY1JFZBMrZ
-	JV3KHkN/AgOgJX6PwNZBPoRw4pn7WerxAitYD4O9vQ/Pu5bCd2WHmFEzMJZJFdEN9V/0ycPetkj4S
-	4gyKAVJuWSKWi78Ybh2YPrameBmwZYnO9BIOBtatU88W6jZ4zDVWtQdJvqZ0JOJouDXXFTPZRQPsv
-	FDo0TzDqD+k6MdLMXo2w==;
+	List-Owner; bh=cgWHRTYS4uEXLY3TXNJh43rjcXX+ppED5r/9pat3VUw=; b=UT/u4n1tN/dHVf
+	zxKNCGWaFiaeO7MNjPuwWD/qLTEwSy/eWmSkKekpVgmr0Kmj6mpzER+bnHc/M4Oi6CRlpMvKopAs/
+	yy6PRNzGbrqKEN4o306A7QaPU6uhFDgUWBt22e+7+88kUFDHZeAZSHU3O5WRGCnRnj+rzD8j+Yl3M
+	9UAdGjnj/rUywwMxlXJVpGPkMlwuQZ0uWUrLKySre+klz2rSxrp1ftmIPP9mB4c8LwpI210ndaRT1
+	Egc1nPdvkY/EkqONprCFh9RTvzMbCKms/qbOvoiRq19C9XOG+vJHPrNySz1XHAEkC48PRjZfO5xXO
+	MpGlpEpnvreB8EmBChjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRX2H-000775-E7; Mon, 04 Nov 2019 07:44:25 +0000
+	id 1iRX3e-0000Gm-DK; Mon, 04 Nov 2019 07:45:50 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRX25-00075K-K2
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 07:44:14 +0000
+ id 1iRX3W-0000GP-UA
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 07:45:44 +0000
 Received: from dragon (li1038-30.members.linode.com [45.33.96.30])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DF09B2190F;
- Mon,  4 Nov 2019 07:44:08 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A251A2190F;
+ Mon,  4 Nov 2019 07:45:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572853453;
- bh=rqP4SSpNvx234d+AvWoRHCFkLgHT+IVU/z6pCg63G3U=;
+ s=default; t=1572853542;
+ bh=WTVqOEcC1dHVSVyC4yYVjyjBZVnNFJMwi8QDFxKH53I=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=zGPC6D60oP3iEGoEXdXdIB+wDXS1YRB7VcZuICeBUVX6uvWfBcT/JUarHJPTXoqTv
- HKUtalEQ/hfW/KuJVqlgkgCwHWWi1Rdk8KAiuRgGYmctRDU2x51kvQUEqYZocdHqb+
- mTcNAAhkUsObuVD5Bn0YX3fHDw1jx8WntyHmfStI=
-Date: Mon, 4 Nov 2019 15:43:47 +0800
+ b=Rg4OuNF1FndrApd6dvSlvD0vw4tU7S7IQYdV8o9YydcB85WqTlGWHhLwAeYgcZNYm
+ /BjWAx0vkKLnr0TCno438srfISO6vL94qEGMtFaJpW4PWD6lfnqwj7LJF8sUTr5ND5
+ EyRQ5XdBxMAxhuQXu/Mh/jeByrYoqF36VgRNJjnw=
+Date: Mon, 4 Nov 2019 15:45:16 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Schrempf Frieder <frieder.schrempf@kontron.de>
-Subject: Re: [PATCH v3 09/11] ARM: dts: imx6ul-kontron-n6x1x-s: Disable the
- snvs-poweroff driver
-Message-ID: <20191104074346.GT24620@dragon>
+Subject: Re: [PATCH v3 11/11] MAINTAINERS: Add an entry for Kontron
+ Electronics ARM board support
+Message-ID: <20191104074514.GU24620@dragon>
 References: <20191031142112.12431-1-frieder.schrempf@kontron.de>
- <20191031142112.12431-10-frieder.schrempf@kontron.de>
+ <20191031142112.12431-12-frieder.schrempf@kontron.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191031142112.12431-10-frieder.schrempf@kontron.de>
+In-Reply-To: <20191031142112.12431-12-frieder.schrempf@kontron.de>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191103_234413_680179_6C07C9DB 
-X-CRM114-Status: GOOD (  21.23  )
+X-CRM114-CacheID: sfid-20191103_234542_991449_6EED76B7 
+X-CRM114-Status: GOOD (  14.27  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -92,51 +92,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 31, 2019 at 02:24:27PM +0000, Schrempf Frieder wrote:
+On Thu, Oct 31, 2019 at 02:24:34PM +0000, Schrempf Frieder wrote:
 > From: Frieder Schrempf <frieder.schrempf@kontron.de>
 > 
-> The snvs-poweroff driver can power off the system by pulling the
-> PMIC_ON_REQ signal low, to let the PMIC disable the power.
-> The Kontron SoMs do not have this signal connected, so let's remove
-> the node.
-> 
-> This seems to fix a real issue when the signal is asserted at
-> poweroff, but not actually causing the power to turn off. It was
-> observed, that in this case the system would not shut down properly.
-
-I do not quite follow on this.  How does disabling snvs_poweroff fix the
-issue?  The root cause of system not shut down properly seems to be that
-PMIC doesn't shut down power.  This looks like a clean-up rather than
-bug fix.
-
+> Kontron Electronics GmbH produces several ARM boards, that are
+> planned to be upstreamed eventually. For now we have some
+> i.MX6UL/ULL based SoMs and boards, that are already available
+> in the kernel.
 > 
 > Signed-off-by: Frieder Schrempf <frieder.schrempf@kontron.de>
-> Fixes: 1ea4b76cdfde ("ARM: dts: imx6ul-kontron-n6310: Add Kontron i.MX6UL N6310 SoM and boards")
 
-If you think this is really a bug fix, it should be applied to the file
-before renaming rather than the one after renaming.
+We usually do not need MAINTAINERS entry for individual DTS files.
 
 Shawn
 
 > ---
->  arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi | 4 ----
->  1 file changed, 4 deletions(-)
+>  MAINTAINERS | 6 ++++++
+>  1 file changed, 6 insertions(+)
 > 
-> diff --git a/arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi b/arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi
-> index e18a8bd239be..4682a79f5b23 100644
-> --- a/arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi
-> +++ b/arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi
-> @@ -158,10 +158,6 @@
->  	status = "okay";
->  };
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index 296de2b51c83..a461d31ee98d 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -9103,6 +9103,12 @@ F:	include/linux/kmod.h
+>  F:	lib/test_kmod.c
+>  F:	tools/testing/selftests/kmod/
 >  
-> -&snvs_poweroff {
-> -	status = "okay";
-> -};
-> -
->  &uart1 {
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_uart1>;
+> +KONTRON ELECTRONICS ARM BOARDS SUPPORT
+> +M:	Frieder Schrempf <frieder.schrempf@kontron.de>
+> +S:	Maintained
+> +F:	arch/arm/boot/dts/imx6ul-kontron-*
+> +F:	arch/arm/boot/dts/imx6ull-kontron-*
+> +
+>  KPROBES
+>  M:	Naveen N. Rao <naveen.n.rao@linux.ibm.com>
+>  M:	Anil S Keshavamurthy <anil.s.keshavamurthy@intel.com>
 > -- 
 > 2.17.1
 
