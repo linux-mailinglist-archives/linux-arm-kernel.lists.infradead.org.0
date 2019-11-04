@@ -2,141 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 800C9EDACD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 09:49:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22B7CEDAD1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 09:50:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BEmqtoeosrqrMObPq5hGR6QOwY2QUxRZljDC2BGqhRY=; b=R7pPc+c0w1uZ+R
-	el88tmTuSTrupRii64tGoiRCKhkL+MQoRPHpVQF5BuUVxL7WcBzc3sLHU2aYCoB5uGlZVUj41VFga
-	Ixyzjzjr9wP0ZjhjlCmd1D77NjnSQA6wz7vteDViH3hyHlWqtarlhQ2bK5jdD4feJ0rp8Ay/7zsZz
-	SHpb9A0btMgwaPZ2IzLt7doiSboNxDd2Ghz5eha01D9g4jpDhJ6zdD4WF8FrW5n8h+T3PEHY++qe9
-	Wq0Fe60k0DU8r6UQoI4YITs4t9Q01QpOD9ukCva5Qp/MCLvJmCvBDtd/NKBNMgY5HIf59T383yp4b
-	ynqVb4QgJ1NxWUiwH8KA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=HhxzwJts0SU4MehbWHiQZsdK+Bb5b+odS4zER8F59Bo=; b=m+oRPluYdcatkyj5ptg/x5XiF
+	V1T77H9WzNcG9PlujxGOV3+3BOdo7oKSlWHcB80hRS8X1HgaJTyr2fMhCoaEL/9iLPnNNztUPDQmf
+	inZiHDH/MjC/PsjAByHpLTVSryEFDhtLh+e3LBO2KkSqQKUX50+kOtphlqJfsNPRj+cYqJ192NH//
+	0NhJfS7j6es7OLhLpZRvxGkaA+rpQlc1pH8zO3Bwwa9OECkpxicGxdjTmY0+6WfinyRqhrinP917k
+	yCtvp+Qx2g1sIw49pHyPhE3t2tTPqGtA8ZK8GDFnvDZJ56Yu2ynqEga6Iqb7bJRFRTlYVZUF3kN/c
+	Ly5/DVkCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRY3M-0002jx-22; Mon, 04 Nov 2019 08:49:36 +0000
-Received: from mout02.posteo.de ([185.67.36.66])
+	id 1iRY3l-000309-2k; Mon, 04 Nov 2019 08:50:01 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRY3E-0002iB-V4
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 08:49:31 +0000
-Received: from submission (posteo.de [89.146.220.130]) 
- by mout02.posteo.de (Postfix) with ESMTPS id D7B70240106
+ id 1iRY3X-0002xw-ER
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 08:49:52 +0000
+Received: by mail-wm1-x342.google.com with SMTP id 11so15664200wmk.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon,  4 Nov 2019 09:49:22 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=posteo.de; s=2017;
- t=1572857362; bh=sdz1m0DjhYDFxTl4Yya6gDtCRLXKUyg0QnsFFpK2y7Y=;
- h=Subject:To:Cc:From:Openpgp:Autocrypt:Date:From;
- b=EtP8Dy4559hfjSJ7cSls5A5w3tChJKRZeJCTbMlu8aZG9HbNNuXiffFottttGU4E6
- HQ3oHIgibXhfkbJi2rnsBdBXgD7QIbzZpnl06O4Tg7z++75xuevKFAQN0A8ZSTc7gR
- qdtKdH5hAJNWiamUtv1i4HR6YzIATkYlxJRmlz8KDcoNYsKX597YA7jAiwEoXRC4K7
- s/eVUCAr8wu8f58KyExTyh0/FLRmJZeDrcGlyaU1ruOj6Y3UM7VmvwoP2L8/FrNHSh
- 5AL2uMHW6ciVbWj0rW71jnT/3SSTGivvMk6Up+li9JostKSsI3URR/s7QMkLkW6D6C
- 7v2/fYvbLgulw==
-Received: from customer (localhost [127.0.0.1])
- by submission (posteo.de) with ESMTPSA id 47660v1G77z9rxk;
- Mon,  4 Nov 2019 09:49:19 +0100 (CET)
-Subject: Re: [RFC 0/2] Add workaround for core wake-up on IPI for i.MX8MQ
-To: Abel Vesa <abel.vesa@nxp.com>
-References: <20190610121346.15779-1-abel.vesa@nxp.com>
- <d217a9d2-fc60-e057-6775-116542e39e8d@posteo.de>
- <7d3a868a-768c-3cb1-c6d8-bf5fcd1ddd1c@posteo.de>
- <20191030080727.7pcvhd4466dproy4@fsr-ub1664-175>
-From: Martin Kepplinger <martink@posteo.de>
-Openpgp: preference=signencrypt
-Autocrypt: addr=martink@posteo.de; keydata=
- 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
-Message-ID: <523f92bd-7e89-b48a-afd0-0a9a8bca8344@posteo.de>
-Date: Mon, 4 Nov 2019 09:49:18 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ Mon, 04 Nov 2019 00:49:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=subject:from:to:cc:references:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=AZd8DxR702MwoAlKE7sREzCDnCS7TFuUgJFAdqqjsLA=;
+ b=h92Y4u9I19V2o1s+5lGhO17NSFYSHZk9QgvM5mDhCb3p4Vr39mQBIAAeC5nqfpsi7E
+ 4Bu32H/W8VKvnuNSVHaBWMXpaykRQBdpqblyb005vmpwKAd2pPajeArxEgBntM3nBLKj
+ CddUtibvOMTxVJx2KNlPjR3XoBIJe+NH2U3j4K0JJelFf1HEtWdgk3iyAHOejVVD2gf+
+ RJwDT9t3Hb7iL4cAFs4mdD4rEQqzd1PD/0A6AYCrvWEvFCYF3aqv09lC/5EFGKCN59wI
+ T1KGPDXOWiB478W6LZxF6RvwiHkYgYy1j3yOyQ1KqccT28HwFd28G/rbXCZe5nN7BE4U
+ VQdw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:from:to:cc:references:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=AZd8DxR702MwoAlKE7sREzCDnCS7TFuUgJFAdqqjsLA=;
+ b=a/AQ4Ad5UTiF3XOfUPuA4g1K2KajvMbvA6095kEtujLjzoxBIz0e4fWs/TRYAgSHfN
+ e8d/E9besIcuiokyImymigderidd0sZA07OkD2qYXOLHlhEWBz00dbz4paz/Rf7z873S
+ XK+3EQT+CYsoSWYkpxNK0iHwqd6MSdgdtDbyOBW+pTKIHpYhf3mD46j2iRMZ5wcV6jH+
+ 2e9A6SSQvjQUaXlXjDnsPpfiPV/H/r1UZeO7phY9b53U6MyAo0PFQcwlUFqRmh88yE3a
+ 8V0OAWm0u46c6hZMxFfgzkh9++QW02zY3VrEPuweZgDoBf1xlXNiEhhTxtR/A2nP5NzM
+ EWKQ==
+X-Gm-Message-State: APjAAAWSijm7W59Wfijtq9BjWC/48aIkyUePsL42U7t6WsCtDjmPHjz8
+ hTdvCkN/rt3if2U8QKAJ8LdvvA==
+X-Google-Smtp-Source: APXvYqzYY3HzDkh794xMS1oJwQdQFMlMRYGSpRhna8XwoC1msLOBd9EdnxKhwo914zrovZJbmWsmAw==
+X-Received: by 2002:a05:600c:2383:: with SMTP id
+ m3mr18810088wma.166.1572857385472; 
+ Mon, 04 Nov 2019 00:49:45 -0800 (PST)
+Received: from [192.168.86.166] (83-86-89-107.cable.dynamic.v4.ziggo.nl.
+ [83.86.89.107])
+ by smtp.gmail.com with ESMTPSA id o187sm15137370wmo.20.2019.11.04.00.49.44
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 04 Nov 2019 00:49:44 -0800 (PST)
+Subject: Re: ALSA: pcm: use dma_can_mmap() to check if a device supports
+ dma_mmap_*
+From: Greg Kroah-Hartman <gregkh@google.com>
+To: youling 257 <youling257@gmail.com>, Takashi Iwai <tiwai@suse.de>
+References: <CAOzgRdYSaaF6OkXGME2=fn1dfTbpyt_GqEs=10oXH=V6SudfyA@mail.gmail.com>
+ <s5himo0cbmm.wl-tiwai@suse.de>
+ <CAOzgRdYTa-nAa7QV6c2aZs910BACg91vAjcjw4V-Oy8KCZVmmQ@mail.gmail.com>
+ <60ee349a-1fe7-46f0-5161-1dcfcb6fbee9@google.com>
+Message-ID: <19c3f0ca-9b21-0c5e-894d-976594f38a86@google.com>
+Date: Mon, 4 Nov 2019 09:49:43 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.0
 MIME-Version: 1.0
-In-Reply-To: <20191030080727.7pcvhd4466dproy4@fsr-ub1664-175>
-Content-Language: en-US
+In-Reply-To: <60ee349a-1fe7-46f0-5161-1dcfcb6fbee9@google.com>
+Content-Language: en-US-large
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_004929_439509_4CC88F27 
-X-CRM114-Status: GOOD (  26.35  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191104_004947_524678_ECCDA27A 
+X-CRM114-Status: GOOD (  14.20  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.67.36.66 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -146,6 +98,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -157,85 +111,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Jacky Bai <ping.bai@nxp.com>,
- Carlo Caione <ccaione@baylibre.com>, Marc Zyngier <marc.zyngier@arm.com>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Abel Vesa <abelvesa@gmail.com>, Thomas Gleixner <tglx@linutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Lucas Stach <l.stach@pengutronix.de>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-xtensa@linux-xtensa.org, Michal Simek <monstr@monstr.eu>,
+ Vladimir Murzin <vladimir.murzin@arm.com>, linux-parisc@vger.kernel.org,
+ linux-sh@vger.kernel.org, Robin Murphy <robin.murphy@arm.com>,
+ Helge Deller <deller@gmx.de>, x86@kernel.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-m68k@lists.linux-m68k.org, linuxppc-dev@lists.ozlabs.org, hch@lst.de,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 30.10.19 09:08, Abel Vesa wrote:
-> On 19-10-30 07:11:37, Martin Kepplinger wrote:
->> On 23.06.19 13:47, Martin Kepplinger wrote:
->>> On 10.06.19 14:13, Abel Vesa wrote:
->>>> This is another alternative for the RFC:
->>>> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Flkml.org%2Flkml%2F2019%2F3%2F27%2F545&amp;data=02%7C01%7Cabel.vesa%40nxp.com%7Cf5f8d8dd37974234fcb108d75d000944%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C1%7C637080127051582184&amp;sdata=qZEo1fY1lkTjqZWuuQftYJ5euEsSxjEAqGILCY8ChnU%3D&amp;reserved=0
->>>>
->>>> This new workaround proposal is a little bit more hacky but more contained
->>>> since everything is done within the irq-imx-gpcv2 driver.
->>>>
->>>> Basically, it 'hijacks' the registered gic_raise_softirq __smp_cross_call
->>>> handler and registers instead a wrapper which calls in the 'hijacked' 
->>>> handler, after that calling into EL3 which will take care of the actual
->>>> wake up. This time, instead of expanding the PSCI ABI, we use a new vendor SIP.
->>>>
->>>> I also have the patches ready for TF-A but I'll hold on to them until I see if
->>>> this has a chance of getting in.
->>>
->>
->> Hi Abel,
->>
->> Running this workaround doesn't seem to work anymore on 5.4-rcX. Linux
->> doesn't boot, with ATF unchanged (includes your workaround changes). I
->> can try to add more details to this...
->>
-> 
-> This is happening because the system counter is now enabled on 8mq.
-> And since the irq-imx-gpcv2 is using as irq_set_affinity the 
-> irq_chip_set_affinity_parent. This is because the actual implementation
-> of the driver relies on GIC to set the right affinity. On a SoC
-> that has the wake_request signales linked to the power controller this
-> works fine. Since the system counter is actually the tick broadcast
-> device and the set affinity relies only on GIC, the cores can't be
-> woken up by the broadcast interrupt.
-> 
->> Have you tested this for 5.4? Could you update this workaround? Please
->> let me know if I missed any earlier update on this (having a cpu-sleep
->> idle state).
->>
-> 
-> The solution is to implement the set affinity in the irq-imx-gpcv2 driver
-> which would allow the gpc to wake up the target core when the broadcast
-> irq arrives.
-> 
-> I have a patch for this. I just need to clean it up a little bit.
-> Unfortunately, it won't go upstream since everuone thinks the gic
-> should be the one to control the affinity. This obviously doesn't work
-> on 8mq.
-> 
-> Currently, I'm at ELCE in Lyon. Will get back at the office tomorrow
-> and sned you what I have.
-> 
+On 11/4/19 9:32 AM, Greg Kroah-Hartman wrote:
+ > On 11/4/19 9:27 AM, youling 257 wrote:
+ >  > This driver
+ > 
+https://android.googlesource.com/kernel/common/+/refs/heads/android-mainline/drivers/usb/gadget/function/f_audio_source.c 
 
-Hi Abel,
+ >
+ >  >
+ >
+ > The driver is broken and needs to be fixed.  Please feel free to submit
+ > patches to AOSP to do so as you can trigger this easily.
 
-Do you have any news on said patch for testing? That'd be great for my
-plannings.
+Hm, maybe the driver isn't broken...
 
-thanks a lot,
+snd_pcm_lib_preallocate_pages_for_all() is called with
+SNDRV_DMA_TYPE_DEV set, so that should be fine, and the only other
+buffer I can see allocate here is with a call to
+snd_pcm_lib_alloc_vmalloc_buffer() which _should_ be ok, right?
 
-                                 martin
+I don't see any buffers coming off the stack here, unless the gadget
+controller is the one creating them?
 
+thanks,
+
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
