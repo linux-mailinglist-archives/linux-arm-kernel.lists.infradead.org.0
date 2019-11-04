@@ -2,80 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 20D35EE1C6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 15:00:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 467AEEE1C7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 15:00:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rcRHDDjkfvVtyFNyXy2vDCvCEMqv62y72rHl8baO6KI=; b=o5Tio+ofZj7CH1
-	aBjTra8XeAF2yBmwOWwM+dlQjvdXMN86F6ZwMOcP1kVpotnMG6qKvEj8lFhBWUYRTpDPZi0eVU9Lj
-	rvrm5KqokhqPe8GMtCre1z6UPRSOvae6Yc+8HW5kn6OiAa5CEENFszkqz+RZINSNUZHNBmmfUnZGV
-	m2T/2qGpwwtnMmBa6j6zxpDkevJNOgp1L/FEjwTG/M6fuUyrCoiKLCO98jVY6NZ0hHIWgKOSvaQOa
-	kStvnvM7sZJ0i/kEGie2WS0f46HA+RcHNXpmU252TjGorLGUgBs5vGwN4MBhMAzbGgEaqb94GdODE
-	2rZEb+soZm76MqeTbbDg==;
+	List-Owner; bh=v/a3PuBvAtZGSMtzDORElctdjkivmabCA23cHc13yn0=; b=HkcUWctauH421v
+	Qy6boGSL/tlFWe2YdqsPXIBZ3D6gierTj3SC9p5TTqs+ZZu47hpHe0q0AS9Fg+uomehnT0OU6i9+C
+	TXj7DsHxNv2mMnaJwE8Ss68yUlHNPoyOr9v4eBpBv9XuQWGXKDc3lgpTt5+stzFurw8ZCgn8av+2O
+	awll9gRavYYoSfAhvij/YTlTonAAO81D0nktTVU+MxIvMaWaL4YZ8q/zPWM+SrbZEnL+1+pOim36s
+	VT1C/BzsUHO2bgaogeiElZG7kkzr1z3m6oVGP3EVbc5EtdZzwTEWT0xUiCYoRJ5CUKXxIVD/1QaKM
+	CKv/L457ueo8DUTeX+8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRcuI-0005zs-LI; Mon, 04 Nov 2019 14:00:34 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRcuB-0005yz-I9
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 14:00:28 +0000
-Received: from mail-qt1-f174.google.com (mail-qt1-f174.google.com
- [209.85.160.174])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 68CA9222C9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon,  4 Nov 2019 14:00:26 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572876026;
- bh=OWbKtK0i0fpZ7HMq4IWDZ/zHR1wQIHsCjhclNVqI7cs=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=L3F9qVpuKwq2k4DJhdeBUeaZDrY5/2BO9ZEILgx1UqbvBX47zpfteH8Riw33D90lY
- FK87rhNlLQL0Nv0Ze8GAJR2IUvzOLk8xM1+a22zySFweu+8rNFlQSXWknbwA5WDoLd
- N8cMt0+CaX99DaLgV9Pq4rTimFFfmAXLCuvpqk+U=
-Received: by mail-qt1-f174.google.com with SMTP id p20so5739133qtq.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 Nov 2019 06:00:26 -0800 (PST)
-X-Gm-Message-State: APjAAAUXjOtG6egkuTME6+l/zd54qbQc/ykoj/1mJMJE4uj4YN7VpCpo
- Fl0EX09Sp0pa2nNmX2vojUopLDWk7aemp/OzJA==
-X-Google-Smtp-Source: APXvYqwC/UsXG1zJ1xc8CR86GG8c20fgOKNAVt0QWyGvdkTztw6vTdeoGSWn0GfCtBbRQCyxI47fJxmWk+2G9rlJau8=
-X-Received: by 2002:a0c:d2b4:: with SMTP id q49mr21523114qvh.135.1572876025475; 
- Mon, 04 Nov 2019 06:00:25 -0800 (PST)
+	id 1iRcuZ-0006Bg-KJ; Mon, 04 Nov 2019 14:00:51 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iRcuE-0005zk-GD
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 14:00:32 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7498F1FB;
+ Mon,  4 Nov 2019 06:00:25 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 371433F6C4;
+ Mon,  4 Nov 2019 06:00:23 -0800 (PST)
+Date: Mon, 4 Nov 2019 14:00:21 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Steven Rostedt <rostedt@goodmis.org>
+Subject: Re: [PATCHv2 2/8] module/ftrace: handle patchable-function-entry
+Message-ID: <20191104140020.GI45140@lakrids.cambridge.arm.com>
+References: <20191029165832.33606-1-mark.rutland@arm.com>
+ <20191029165832.33606-3-mark.rutland@arm.com>
+ <20191030150302.GA965@suse.de> <20191031090231.GA3340@blommer>
+ <20191031114223.GA11684@suse.de> <20191031130022.GB3477@blommer>
+ <20191104082810.70f1b72a@grimm.local.home>
 MIME-Version: 1.0
-References: <20191101061411.16988-1-yamada.masahiro@socionext.com>
- <20191101061411.16988-2-yamada.masahiro@socionext.com>
-In-Reply-To: <20191101061411.16988-2-yamada.masahiro@socionext.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Mon, 4 Nov 2019 08:00:14 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqJbmFd5wZ0RCP2baqv-bjWwzaJ+hLqtGeYjK5LPJ54dXA@mail.gmail.com>
-Message-ID: <CAL_JsqJbmFd5wZ0RCP2baqv-bjWwzaJ+hLqtGeYjK5LPJ54dXA@mail.gmail.com>
-Subject: Re: [PATCH 1/3] libfdt: add SPDX-License-Identifier to libfdt wrappers
-To: Masahiro Yamada <yamada.masahiro@socionext.com>
+Content-Disposition: inline
+In-Reply-To: <20191104082810.70f1b72a@grimm.local.home>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_060027_620152_9A738B5C 
-X-CRM114-Status: UNSURE (   9.90  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191104_060030_589431_7CAB900B 
+X-CRM114-Status: GOOD (  11.66  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,30 +65,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Frank Rowand <frowand.list@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- David Gibson <david@gibson.dropbear.id.au>
+Cc: jthierry@redhat.com, linux-parisc@vger.kernel.org, peterz@infradead.org,
+ catalin.marinas@arm.com, Torsten Duwe <duwe@suse.de>, jpoimboe@redhat.com,
+ linux-kernel@vger.kernel.org,
+ "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
+ takahiro.akashi@linaro.org, will@kernel.org, mingo@redhat.com,
+ james.morse@arm.com, Jessica Yu <jeyu@kernel.org>, amit.kachhap@arm.com,
+ svens@stackframe.org, Helge Deller <deller@gmx.de>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 1, 2019 at 1:19 AM Masahiro Yamada
-<yamada.masahiro@socionext.com> wrote:
->
-> These are kernel source code even though they are just two-line wrappers.
->
-> Files without explicit license information fall back to GPL-2.0-only,
-> which is the project default.
+On Mon, Nov 04, 2019 at 08:28:10AM -0500, Steven Rostedt wrote:
+> On Thu, 31 Oct 2019 13:00:22 +0000
+> Mark Rutland <mark.rutland@arm.com> wrote:
+> 
+> > Sure. I've folded the above into this patch, and pushed out an updated branch:
+> > 
+> >   https://git.kernel.org/pub/scm/linux/kernel/git/mark/linux.git/log/?h=arm64/ftrace-with-regs
+> 
+> Just to keep this change in lore, can you at a minimum reply to this
+> patch's thread with the new update?
 
-That is true and these are kernel only files, but given they are just
-a wrapper around the .c files, maybe they should have the same
-license?
+The new change is below (with all else unchanged). I can send a v3 of
+the series if you want the whole patch?
 
-Rob
+Thanks,
+Mark.
+
+diff --git a/include/asm-generic/vmlinux.lds.h b/include/asm-generic/vmlinux.lds.h
+index dae64600ccbf..a9c4e4721434 100644
+--- a/include/asm-generic/vmlinux.lds.h
++++ b/include/asm-generic/vmlinux.lds.h
+@@ -110,17 +110,17 @@
+ #endif
+ 
+ #ifdef CONFIG_FTRACE_MCOUNT_RECORD
+-#ifdef CC_USING_PATCHABLE_FUNCTION_ENTRY
+-#define MCOUNT_REC()   . = ALIGN(8);                           \
+-                       __start_mcount_loc = .;                 \
+-                       KEEP(*(__patchable_function_entries))   \
+-                       __stop_mcount_loc = .;
+-#else
++/*
++ * The ftrace call sites are logged to a section whose name depends on the
++ * compiler option used. A given kernel image will only use one, AKA
++ * FTRACE_CALLSITE_SECTION. We capture all of them here to avoid header
++ * dependencies for FTRACE_CALLSITE_SECTION's definition.
++ */
+ #define MCOUNT_REC()   . = ALIGN(8);                           \
+                        __start_mcount_loc = .;                 \
+                        KEEP(*(__mcount_loc))                   \
++                       KEEP(*(__patchable_function_entries))   \
+                        __stop_mcount_loc = .;
+-#endif
+ #else
+ #define MCOUNT_REC()
+ #endif
+
 
 _______________________________________________
 linux-arm-kernel mailing list
