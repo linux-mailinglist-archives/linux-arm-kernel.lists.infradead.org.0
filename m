@@ -2,90 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9370FEE663
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 18:42:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 579B1EE695
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 18:49:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GEy1qbZY15618mbM9Ho/PjubAGUDJH5QV1X6EHb+KZk=; b=WWOcBfzVI516SV
-	srvzLAF+wOvdxMdej+H/8dLJU/4ZZdY/exL1VFq/axlJ1Ki5WzUyN1vygzN2FjMhCrvKfdp/dKz4c
-	XdweZbKaRZoYJJox/RjhYiKsWq1eRSa9taCx1iMZJAP/eKABJ8ZYVNSatKIrtdrSGmOwtTDvQbugj
-	0t7WOzivjuUAPmvGSMBmwmmq0GkChVC4cEZiWGtekv92BtmvR7i6jkQrqSP9sj1N6RQklyFRgsvxQ
-	w8ndsXHvnOIyhmST0+yoRMZJPVT0gYy1hMVwLkgU4XKIgPZUKRSSKDO5Uj/tlJvOMFUhpbt+srDQP
-	ivNsgOkLlFFeCHSV+7oQ==;
+	List-Owner; bh=pGDQkORULO8VP0Lxz1PGBDJmOwJDtsnhvlU0L1lMbG4=; b=gfIACL3adLTcWm
+	efW0Q3eNtSxkXRwV1UWEXJDs6zkf02yowD7xCgRe1i7HXm5l1ih4FE2kkgju0wlSPmTRKewTUIYhE
+	GI8dzr8Kq0LYMZ0tzMHn8fbv2IZY72G1uIs/vBDot2nXzDFl0T6uivVwR+k0SBC5p0GL1J5XKalCV
+	I7qlMhC9u6G5qg2Nh97GF3abRvNnVxwjXZSzMmjTckHKovmT0h3mkhH0Jed0z/9cgNenwpuSALMiP
+	bpwQUe18zypC/hVw6HBOSGBXvu1Zl4eawCpAi8noj9N7+wsF2d81tbOX+mweXtPskBP0oimsTPFUg
+	WGBIfAXdXGocNxdUMczw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRgN3-0003G4-NC; Mon, 04 Nov 2019 17:42:29 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iRgTh-0005cL-Tv; Mon, 04 Nov 2019 17:49:21 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRgMx-0003F4-BM
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 17:42:24 +0000
-Received: by mail-wr1-x444.google.com with SMTP id a11so18105188wra.6
+ id 1iRgTZ-0005aX-NZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 17:49:16 +0000
+Received: by mail-wm1-x344.google.com with SMTP id q130so17008456wme.2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 Nov 2019 09:42:22 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=sender:date:from:to:cc:subject:message-id:mail-followup-to
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=5ogVv9yu3iXpW756OAqxBZcAaxMrrDVeZyf4/i652TM=;
- b=jvjHe6OReDuWCuVv2+9UAh0oNSew20Cf90E08ulRCvHLHeXfSPKJ1HoefQFlUG7hM8
- cvxTxB0gdhOTdqmAYguK071cnJKBuGonRdGwubEbmvi30uVk49BVOBFvBbnXyV6fgY1B
- /GBBc6/JCDu4mXohl8A5LHq8adjS1+871lhRU=
+ Mon, 04 Nov 2019 09:49:13 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=p2xKl9sk3AGAtQ4LlnI3zNkpScq7gYHsvOfvGfAQyL4=;
+ b=hDuEqnDhVk7kPLTfGLMq/WeOZAhbhSMAJJbCeOf+BLERB82koHBkKphxwkbknhDs3J
+ Obr+dHWwQWzWiEy1P9TZaAGqTwD9QQLPDKlpSq2UeZQ72RKbsbQW2kmOjIH3jjybyQar
+ jiapj0psw8heQmPX0/1XhGmakh5EQEDo03gownZn2neuCbngAF1WMIJ2w4VvaB7zLmNR
+ smmZAcW1rzVodKEX6DURemUVuZhKbcuxtcg+h7b7+J/bdYiMga1q9epRQj6i+BVp/fOi
+ AMd5GIZyPG55XP9KQuaqH6yfrfUaKokf2Rzc+DBfmeurrUhAuhXpu3805K50ix2tLlgm
+ W4HA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :mail-followup-to:references:mime-version:content-disposition
- :in-reply-to:user-agent;
- bh=5ogVv9yu3iXpW756OAqxBZcAaxMrrDVeZyf4/i652TM=;
- b=rbYUaBaw82rGpZ1dML5Sbbh+4Fn8mCtqYcjqVeoPz/REqgcL/OolUaCLZkKdeOVeGV
- ec2fukoK8XUvT37F/lcTlHUYf8QiLl6ma5u3imgtI/tPTpWaKm5Q5hmbb0l1J20CbBxQ
- VzO3J5qlVjvIOLDCrLhDbD4FnoER3UyfMAfLLtPjxlIZGs7INpjTSCsG9nKVctr57Bma
- tM5eHNWd+vzH83t0SZ2ujU4zjX9s4XCWI9zn6ruoBWcIM41pDEpSTIUaywfy1eIQ2ZLP
- VHiEwzdmtYkgnm3N6o6NN0A3JeDvPPhwM5yGVqc8tP54i7grSzjWVe2WFGewPKOzvmwb
- USCg==
-X-Gm-Message-State: APjAAAU5c+ocIzeFFs4OI5xuiwkNyGIUmyIOaGmkomX59DLI+45ZZQNF
- Wwy84vzUQ/VQk8Ajc+ECH/t5Jg==
-X-Google-Smtp-Source: APXvYqyo30Cx3N9aLHROc1bhJ+WNVO3huy0tpFL+gtfZWVC0nSZZlSOaRK2D60u0zqloh6U7cb3wBA==
-X-Received: by 2002:adf:e889:: with SMTP id d9mr26191161wrm.266.1572889341116; 
- Mon, 04 Nov 2019 09:42:21 -0800 (PST)
-Received: from phenom.ffwll.local (212-51-149-96.fiber7.init7.net.
- [212.51.149.96])
- by smtp.gmail.com with ESMTPSA id f13sm17424754wrq.96.2019.11.04.09.42.19
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 04 Nov 2019 09:42:20 -0800 (PST)
-Date: Mon, 4 Nov 2019 18:42:18 +0100
-From: Daniel Vetter <daniel@ffwll.ch>
-To: Ondrej Jirman <megous@megous.com>
-Subject: Re: [PATCH v2] drm: sun4i: Add support for suspending the display
- driver
-Message-ID: <20191104174218.GL10326@phenom.ffwll.local>
-Mail-Followup-To: Ondrej Jirman <megous@megous.com>,
- linux-sunxi@googlegroups.com, Maxime Ripard <mripard@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, David Airlie <airlied@linux.ie>,
- "open list:DRM DRIVERS FOR ALLWINNER A10" <dri-devel@lists.freedesktop.org>,
- "moderated list:ARM/Allwinner sunXi SoC support"
- <linux-arm-kernel@lists.infradead.org>, 
- open list <linux-kernel@vger.kernel.org>
-References: <20191029112846.3604925-1-megous@megous.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=p2xKl9sk3AGAtQ4LlnI3zNkpScq7gYHsvOfvGfAQyL4=;
+ b=WQHAquiQjxGrDcdwyGIi381YNQyX/7g9pJj9B0p6FHEeb7qqJO2IjE73SLoMA6z4NC
+ Io7Gxrb94vZjpXoCI1gF8KOVvaq4HgOTJvkK72WcP8Bu1ouSsAvHKaOkZymXOiDJJ/TS
+ pLaZ5bz7GzFLX9IjqYQ/hFrT7+CdArD7yCz/8sDt/re4uAvYR0SvB4D2Ycb/kvTzOl1h
+ +noeuhn0TmqXbkG6B+dzlWVUKSq67+e4mS217WZWQ36uBwqznR9hzskYAmXTxCTaIfk5
+ 0sjWn9WUYt4prtrJwSRuBNAhzJCDO6c7r2aCrBTDtNK2hvjP7yW/L8w/IBCQAH+ta1eE
+ A6Mg==
+X-Gm-Message-State: APjAAAWB1F0DlVUGb6mpszTg95HjtCejm+Uyn3tNrezZR+Jut4m7pfo9
+ BoqCGJKmEEZJ8enjopy/fEYcRJ04SR0hVsZbLuM=
+X-Google-Smtp-Source: APXvYqwOHtKxgzOFlIXHimPJ2owhRc/to3TzER1kse9EqS8W/w1eEg9DUEJJUI1U5VQmdGnU3C50BansJnwSlPsMMA0=
+X-Received: by 2002:a05:600c:228e:: with SMTP id
+ 14mr241937wmf.119.1572889751662; 
+ Mon, 04 Nov 2019 09:49:11 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191029112846.3604925-1-megous@megous.com>
-X-Operating-System: Linux phenom 5.2.0-3-amd64 
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20191103203334.10539-1-peron.clem@gmail.com>
+ <20191103203334.10539-2-peron.clem@gmail.com>
+ <20191104080359.6kjugbt3yi63ywhb@pengutronix.de>
+In-Reply-To: <20191104080359.6kjugbt3yi63ywhb@pengutronix.de>
+From: =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Date: Mon, 4 Nov 2019 18:49:00 +0100
+Message-ID: <CAJiuCccf3=McRfJ85SiudDHZ4nDOT+d7hh+nKDgC1u6nTpphPQ@mail.gmail.com>
+Subject: Re: [PATCH v2 1/7] dt-bindings: pwm: allwinner: Add H6 PWM description
+To: =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_094223_389369_0F9B38AC 
-X-CRM114-Status: GOOD (  18.75  )
+X-CRM114-CacheID: sfid-20191104_094913_791844_C7B69E46 
+X-CRM114-Status: GOOD (  21.30  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (peron.clem[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -105,86 +96,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Airlie <airlied@linux.ie>, Chen-Yu Tsai <wens@csie.org>,
- "open list:DRM DRIVERS FOR ALLWINNER A10"
- <dri-devel@lists.freedesktop.org>, open list <linux-kernel@vger.kernel.org>,
- linux-sunxi@googlegroups.com, Maxime Ripard <mripard@kernel.org>,
- Daniel Vetter <daniel@ffwll.ch>,
- "moderated list:ARM/Allwinner sunXi SoC support"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-pwm@vger.kernel.org,
+ Jernej Skrabec <jernej.skrabec@siol.net>,
+ devicetree <devicetree@vger.kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Thierry Reding <thierry.reding@gmail.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 29, 2019 at 12:28:46PM +0100, Ondrej Jirman wrote:
-> Shut down the display engine during suspend.
-> 
-> Signed-off-by: Ondrej Jirman <megous@megous.com>
-> ---
-> Changes in v2:
-> - spaces -> tabs
-> 
->  drivers/gpu/drm/sun4i/sun4i_drv.c | 22 ++++++++++++++++++++++
->  1 file changed, 22 insertions(+)
-> 
-> diff --git a/drivers/gpu/drm/sun4i/sun4i_drv.c b/drivers/gpu/drm/sun4i/sun4i_drv.c
-> index a5757b11b730..c519d7cfcf43 100644
-> --- a/drivers/gpu/drm/sun4i/sun4i_drv.c
-> +++ b/drivers/gpu/drm/sun4i/sun4i_drv.c
-> @@ -346,6 +346,27 @@ static int sun4i_drv_add_endpoints(struct device *dev,
->  	return count;
->  }
->  
-> +#ifdef CONFIG_PM_SLEEP
-> +static int sun4i_drv_drm_sys_suspend(struct device *dev)
-> +{
-> +	struct drm_device *drm = dev_get_drvdata(dev);
-> +
-> +	return drm_mode_config_helper_suspend(drm);
-> +}
-> +
-> +static int sun4i_drv_drm_sys_resume(struct device *dev)
-> +{
-> +	struct drm_device *drm = dev_get_drvdata(dev);
-> +
-> +	return drm_mode_config_helper_resume(drm);
-> +}
-> +#endif
-> +
-> +static const struct dev_pm_ops sun4i_drv_drm_pm_ops = {
-> +	SET_SYSTEM_SLEEP_PM_OPS(sun4i_drv_drm_sys_suspend,
-> +				sun4i_drv_drm_sys_resume)
-> +};
-
-I wonder whether we should have these as default helpers somewhere,
-there's probably a few drivers that could use them? It's just a handful of
-lines we're saving here, but we have enough kms drivers to justify this
-kind of stuff nowadays ...
--Daniel
-
-> +
->  static int sun4i_drv_probe(struct platform_device *pdev)
->  {
->  	struct component_match *match = NULL;
-> @@ -418,6 +439,7 @@ static struct platform_driver sun4i_drv_platform_driver = {
->  	.driver		= {
->  		.name		= "sun4i-drm",
->  		.of_match_table	= sun4i_drv_of_table,
-> +		.pm = &sun4i_drv_drm_pm_ops,
->  	},
->  };
->  module_platform_driver(sun4i_drv_platform_driver);
-> -- 
-> 2.23.0
-> 
-
--- 
-Daniel Vetter
-Software Engineer, Intel Corporation
-http://blog.ffwll.ch
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gTW9uLCA0IE5vdiAyMDE5IGF0IDA5OjA0LCBVd2UgS2xlaW5lLUvDtm5pZwo8dS5rbGVpbmUt
+a29lbmlnQHBlbmd1dHJvbml4LmRlPiB3cm90ZToKPgo+IE9uIFN1biwgTm92IDAzLCAyMDE5IGF0
+IDA5OjMzOjI4UE0gKzAxMDAsIENsw6ltZW50IFDDqXJvbiB3cm90ZToKPiA+IEZyb206IEplcm5l
+aiBTa3JhYmVjIDxqZXJuZWouc2tyYWJlY0BzaW9sLm5ldD4KPiA+Cj4gPiBINiBQV00gYmxvY2sg
+aXMgYmFzaWNhbGx5IHRoZSBzYW1lIGFzIEEyMCBQV00sIGV4Y2VwdCB0aGF0IGl0IGFsc28gaGFz
+Cj4gPiBidXMgY2xvY2sgYW5kIHJlc2V0IGxpbmUgd2hpY2ggbmVlZHMgdG8gYmUgaGFuZGxlZCBh
+Y2NvcmRpbmdseS4KPiA+Cj4gPiBFeHBhbmQgQWxsd2lubmVyIFBXTSBiaW5kaW5nIHdpdGggSDYg
+UFdNIHNwZWNpZmljcy4KPiA+Cj4gPiBTaWduZWQtb2ZmLWJ5OiBKZXJuZWogU2tyYWJlYyA8amVy
+bmVqLnNrcmFiZWNAc2lvbC5uZXQ+Cj4gPiBTaWduZWQtb2ZmLWJ5OiBDbMOpbWVudCBQw6lyb24g
+PHBlcm9uLmNsZW1AZ21haWwuY29tPgo+ID4gLS0tCj4gPiAgLi4uL2JpbmRpbmdzL3B3bS9hbGx3
+aW5uZXIsc3VuNGktYTEwLXB3bS55YW1sIHwgNDUgKysrKysrKysrKysrKysrKysrLQo+ID4gIDEg
+ZmlsZSBjaGFuZ2VkLCA0NCBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0pCj4gPgo+ID4gZGlm
+ZiAtLWdpdCBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9wd20vYWxsd2lubmVy
+LHN1bjRpLWExMC1wd20ueWFtbCBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9w
+d20vYWxsd2lubmVyLHN1bjRpLWExMC1wd20ueWFtbAo+ID4gaW5kZXggMGFjNTJmODNhNThjLi5i
+ZjM2ZWE1MDlmMzEgMTAwNjQ0Cj4gPiAtLS0gYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmlu
+ZGluZ3MvcHdtL2FsbHdpbm5lcixzdW40aS1hMTAtcHdtLnlhbWwKPiA+ICsrKyBiL0RvY3VtZW50
+YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9wd20vYWxsd2lubmVyLHN1bjRpLWExMC1wd20ueWFt
+bAo+ID4gQEAgLTMwLDEzICszMCw0NiBAQCBwcm9wZXJ0aWVzOgo+ID4gICAgICAgIC0gaXRlbXM6
+Cj4gPiAgICAgICAgICAgIC0gY29uc3Q6IGFsbHdpbm5lcixzdW41MGktaDUtcHdtCj4gPiAgICAg
+ICAgICAgIC0gY29uc3Q6IGFsbHdpbm5lcixzdW41aS1hMTMtcHdtCj4gPiArICAgICAgLSBjb25z
+dDogYWxsd2lubmVyLHN1bjUwaS1oNi1wd20KPiA+Cj4gPiAgICByZWc6Cj4gPiAgICAgIG1heEl0
+ZW1zOiAxCj4gPgo+ID4gLSAgY2xvY2tzOgo+ID4gKyAgIyBFdmVuIHRob3VnaCBpdCBvbmx5IGFw
+cGxpZXMgdG8gc3Vic2NoZW1hcyB1bmRlciB0aGUgY29uZGl0aW9uYWxzLAo+ID4gKyAgIyBub3Qg
+bGlzdGluZyB0aGVtIGhlcmUgd2lsbCB0cmlnZ2VyIGEgd2FybmluZyBiZWNhdXNlIG9mIHRoZQo+
+ID4gKyAgIyBhZGRpdGlvbmFsc1Byb3BlcnRpZXMgc2V0IHRvIGZhbHNlLgo+ID4gKyAgY2xvY2tz
+OiB0cnVlCj4gPiArICBjbG9jay1uYW1lczogdHJ1ZQo+ID4gKyAgcmVzZXRzOgo+ID4gICAgICBt
+YXhJdGVtczogMQo+ID4KPiA+ICsgIGlmOgo+ID4gKyAgICBwcm9wZXJ0aWVzOgo+ID4gKyAgICAg
+IGNvbXBhdGlibGU6Cj4gPiArICAgICAgICBjb250YWluczoKPiA+ICsgICAgICAgICAgY29uc3Q6
+IGFsbHdpbm5lcixzdW41MGktaDYtcHdtCj4gPiArCj4gPiArICB0aGVuOgo+ID4gKyAgICBwcm9w
+ZXJ0aWVzOgo+ID4gKyAgICAgIGNsb2NrczoKPiA+ICsgICAgICAgIGl0ZW1zOgo+ID4gKyAgICAg
+ICAgICAtIGRlc2NyaXB0aW9uOiBNb2R1bGUgQ2xvY2sKPiA+ICsgICAgICAgICAgLSBkZXNjcmlw
+dGlvbjogQnVzIENsb2NrCj4gPiArCj4gPiArICAgICAgY2xvY2stbmFtZXM6Cj4gPiArICAgICAg
+ICBpdGVtczoKPiA+ICsgICAgICAgICAgLSBjb25zdDogbW9kCj4gPiArICAgICAgICAgIC0gY29u
+c3Q6IGJ1cwo+ID4gKwo+ID4gKyAgICByZXF1aXJlZDoKPiA+ICsgICAgICAtIGNsb2NrLW5hbWVz
+Cj4gPiArICAgICAgLSByZXNldHMKPiA+ICsKPiA+ICsgIGVsc2U6Cj4gPiArICAgIHByb3BlcnRp
+ZXM6Cj4gPiArICAgICAgY2xvY2tzOgo+ID4gKyAgICAgICAgbWF4SXRlbXM6IDEKPiA+ICsKPgo+
+IEkgZ3Vlc3MgdGhpcyBodW5rIHNheXMgIklmIHRoaXMgaXMgYSBhbGx3aW5uZXIsc3VuNTBpLWg2
+LXB3bSwgYSBtb2QgYW5kCj4gYnVzIGNsb2NrIGlzIHJlcXVpcmVkLiIsIHJpZ2h0PwoKQ29ycmVj
+dC4KPgo+Cj4gSSB3b25kZXIgaWYgaXQgaXMgc2Vuc2libGUgdG8gcmVxdWlyZSBhIGNsb2NrLW5h
+bWVzIHByb3BlcnR5IGluIHRoZSBlbHNlCj4gYnJhbmNoLCB0b28uIFRoaXMgd291bGQgbWFrZSBp
+dCBvYnZpb3VzIGlmIHRoZSBjbG9jayB0aGVyZSBjb3JyZXNwb25kcwo+IHRvIHRoZSAibW9kIiBv
+ciB0aGUgImJ1cyIgY2xvY2sgb24gSDYuIChJIGd1ZXNzIGl0J3MgIm1vZCIuKQoKVGhpcyB3aWxs
+IGFsc28gcmVxdWlyZSB0byBjaGFuZ2UgZXhhbXBsZSBhbmQgYWxsIHRoZSBjdXJyZW50IGFsbHdp
+bm5lcgpkZXZpY2UtdHJlZSB0aGF0IGhhdmUgYSBQV00gZGVjbGFyZWQuCgpSZWdhcmRzLApDbMOp
+bWVudAoKPgo+IEJlc3QgcmVnYXJkcwo+IFV3ZQo+Cj4gLS0KPiBQZW5ndXRyb25peCBlLksuICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgfCBVd2UgS2xlaW5lLUvDtm5pZyAgICAgICAgICAgIHwK
+PiBJbmR1c3RyaWFsIExpbnV4IFNvbHV0aW9ucyAgICAgICAgICAgICAgICAgfCBodHRwOi8vd3d3
+LnBlbmd1dHJvbml4LmRlLyAgfAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5l
+bEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
+bGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
