@@ -2,58 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0ACA9ED9A4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 08:01:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3029ED9A7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 08:01:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=KoHwbOEDuNTVcvJgt4Vgyff3uNhs7LWfm5h8+BSsKFo=; b=cdE8aZmQ7KJUZE6NF1lBF9owN/
-	j3bca3Kxbk53ky6MnIqayb1PxHyxbDl2QutqlWBhfhYQTuAm8kVx3EOhlL6URHix4HdxzjLHXLFN4
-	Q9dslv4d5Ap1Vp0XK6aWqYNbV2RpZkaclyc2qylPHRa4qjH19ElHtzVpm4lO9H0zpoko/blanCxPW
-	AUsqqiNJTGB4HUXXjl0xHjUSdXJz8viZslQMrT3QTfnz4I9cVZcr9DgrY8ecBgtmx6+ca7bGPNYop
-	vFhSm4gBHnYFJwQ/M2vMgnZwblsDGTffDGfnCMEkj+EYrxnFvvgQyz+U1/bq29mJc3Oaym8envFfr
-	RNfS+2Hw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=q++3yjGP+FiAp7Ue6uM9yq3QuGrNbUwVgVPMKeUpH50=; b=lipFe1kQ/4IbE7
+	KOsz0bBsHDFvYuGeJzhRe8p+2b9mba3AeEdAdPoK4BLlB3Plk5QSJA7WAPnibmjXUbF9DPvfWkB4x
+	m+2ej9Ot6z9pAS5FnaUzjw63dW7KksSBS3pYTQLBUlUNdgcvV1nzxyd7bPK5rM6T/1al0pM49+2kF
+	ocie3SgVEP+CFhweWj5fhzDTOT37bTFMzqYkd6cFmm/Cn4ZEKjMOl/oLLYnzVvz25ZsphpKnGyxS2
+	iKVUXDrRUtniVrXoPM24kBEX4l9rKg/l3lQDzfkP/wZuFSER5HfHt/DbxSqR46wHzHg4qHqXsnQJ/
+	+y/FNBF4yEDGTFWTDYvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRWMQ-0001yJ-F7; Mon, 04 Nov 2019 07:01:10 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iRWMg-0002DJ-MI; Mon, 04 Nov 2019 07:01:26 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRWK0-0007Lz-Lt; Mon, 04 Nov 2019 06:58:42 +0000
-Received: from aquarius.haifa.ibm.com (nesher1.haifa.il.ibm.com [195.110.40.7])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 60C4722468;
- Mon,  4 Nov 2019 06:58:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572850719;
- bh=0lGj0AI/IfAJbVTLRfdK6fD/lMA7GlT+qoua/5oNwys=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Wr+WMJECeH/M1Pn3KdzWLNvJHglih66+/tqZrVLvVIkAOW6resJH3KFuVOfbUwbpP
- 3Ee4i/8/TFA20e/QQnyzLRrGm4sRjhKrakK9B4M9D00SEX3C8nuPZRRAgDo3/DhADp
- pcy3WvSnO0+rQyqTHc/Hb+lkcykYgUuRVFwvTDHU=
-From: Mike Rapoport <rppt@kernel.org>
-To: linux-mm@kvack.org
-Subject: [PATCH v3 13/13] mm: remove __ARCH_HAS_4LEVEL_HACK and
- include/asm-generic/4level-fixup.h
-Date: Mon,  4 Nov 2019 08:56:27 +0200
-Message-Id: <1572850587-20314-14-git-send-email-rppt@kernel.org>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1572850587-20314-1-git-send-email-rppt@kernel.org>
-References: <1572850587-20314-1-git-send-email-rppt@kernel.org>
+ id 1iRWKM-0007fD-8n
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 06:59:04 +0000
+Received: by mail-lj1-x244.google.com with SMTP id r7so7618105ljg.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 03 Nov 2019 22:59:01 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ef40HtgLagkWmNMc93ySVU+8+raGbvhremm/3vIkPJs=;
+ b=vvdCJc1RINMcL5JoJz312DaAniIDfMzCcnwAI/nzlhioj8GGGYgW5khIKfb5WKPoih
+ qMp+vCbDbemdWq8i0Mf58v3uh/mu8EhKBMgRhulZLShXtK+MNVeAUm7PQ2aQiAtYd/+j
+ Jg6nmlI9XTaqFYG/d/qIJDVf1ikfm6/i0iK1k912esWDVF1151DSFoBkdr1dAOlWvfmC
+ jsn+40LPewRJA3SIUnwPlyony4u564JLgwa29HfMy3fBdaUY2d1amOC0D3N4Y4FXSyEs
+ uXfrP9qkdne00KhZwEYKvXolsJ2gV5a0/Mi5PvdRJEwJ90Nr/tnHijeE3ql/YqVMQM1K
+ AvmQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ef40HtgLagkWmNMc93ySVU+8+raGbvhremm/3vIkPJs=;
+ b=aSkOwqx49G9aIXTEbyNYP1ULFJgletc5eu9SkyP+ZK1/jlOlt3lthpW4FwNtz7e/ix
+ kdDX0CshGqEdzZMCRD4RQmx+Z3Q9OBd/inn+5gakAmbck/I5ccj4wOCs5vBy3oSI0xR5
+ 2q6stwVr60OHp48FBRX6FrgvuRCt8stq9JY/AsACjAyrdiRI5I3J9RN66W2XIqxN8P4B
+ RAWngytFzERfaHKlaKCWwXh0yWrKatlkqTG4bLcXbkPtO9L8O6FGf2WDxAK2xtGwUpj9
+ dLFq84nErj0m92Wca67XfnvALsv/lORKQrevQRvp00CX2waGqKktXhdcx89OM8ObcswU
+ n+Ag==
+X-Gm-Message-State: APjAAAUFe9yGnMnaltZlSHfwu6ULAn8NII7/kOCVIGC/d49HvqgliiIl
+ aMNTa8pqapPVkBd3tTBf4AuQFk6nvhTO8dODjEZakg==
+X-Google-Smtp-Source: APXvYqwDEcaV1wOC5X14ad1vPw2VW4B5zXbZYrai12akzfGxkCIeR+UrJYYWYChUz2q1aw4cIzuU9bUsn4PO7ZkCq3g=
+X-Received: by 2002:a2e:9a12:: with SMTP id o18mr9966567lji.191.1572850738786; 
+ Sun, 03 Nov 2019 22:58:58 -0800 (PST)
+MIME-Version: 1.0
+References: <1572530323-14802-1-git-send-email-sumit.garg@linaro.org>
+ <1572530323-14802-7-git-send-email-sumit.garg@linaro.org>
+ <20191031214745.GG10507@linux.intel.com>
+ <CAFA6WYMkE928v-v76gGtWmsS0PwRp-OHUtkS0+Ts4V6x0AKBqQ@mail.gmail.com>
+ <20191101201957.GA8369@linux.intel.com>
+In-Reply-To: <20191101201957.GA8369@linux.intel.com>
+From: Sumit Garg <sumit.garg@linaro.org>
+Date: Mon, 4 Nov 2019 12:28:47 +0530
+Message-ID: <CAFA6WYNwSSaZv5OM=q+LCyn0mEdpg7K+W_v2_NBHhtktg1BFXw@mail.gmail.com>
+Subject: Re: [Patch v3 6/7] doc: keys: Document usage of TEE based Trusted Keys
+To: Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191103_225840_811884_41823306 
-X-CRM114-Status: GOOD (  13.30  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191103_225902_366467_C1B799BE 
+X-CRM114-Status: UNSURE (   9.66  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -63,7 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,167 +95,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- sparclinux@vger.kernel.org, Rolf Eike Beer <eike-kernel@sf-tec.de>,
- Vincent Chen <deanbo422@gmail.com>, Greg Ungerer <gerg@linux-m68k.org>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>, linux-arch@vger.kernel.org,
- linux-c6x-dev@linux-c6x.org, Richard Weinberger <richard@nod.at>,
- Helge Deller <deller@gmx.de>, Russell King <linux@armlinux.org.uk>,
- Mike Rapoport <rppt@linux.ibm.com>, Geert Uytterhoeven <geert@linux-m68k.org>,
- Mark Salter <msalter@redhat.com>, Matt Turner <mattst88@gmail.com>,
- Jeff Dike <jdike@addtoit.com>, Sam Creasey <sammy@sammy.net>,
- Arnd Bergmann <arnd@arndb.de>, Vineet Gupta <Vineet.Gupta1@synopsys.com>,
- linux-um@lists.infradead.org, linux-m68k@lists.linux-m68k.org,
- Greentime Hu <green.hu@gmail.com>, "Kirill A. Shutemov" <kirill@shutemov.name>,
- linux-arm-kernel@lists.infradead.org, Michal Simek <monstr@monstr.eu>,
- linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
- "David S. Miller" <davem@davemloft.net>, linux-alpha@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>, Peter Rosin <peda@axentia.se>,
- Mike Rapoport <rppt@kernel.org>
-MIME-Version: 1.0
+Cc: "tee-dev @ lists . linaro . org" <tee-dev@lists.linaro.org>,
+ Daniel Thompson <daniel.thompson@linaro.org>,
+ Janne Karhunen <janne.karhunen@gmail.com>, Jonathan Corbet <corbet@lwn.net>,
+ jejb@linux.ibm.com, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ James Morris <jmorris@namei.org>, Mimi Zohar <zohar@linux.ibm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, dhowells@redhat.com,
+ linux-security-module@vger.kernel.org,
+ "open list:ASYMMETRIC KEYS" <keyrings@vger.kernel.org>,
+ Stuart Yoder <stuart.yoder@arm.com>, Casey Schaufler <casey@schaufler-ca.com>,
+ linux-integrity@vger.kernel.org, Jens Wiklander <jens.wiklander@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ "Serge E. Hallyn" <serge@hallyn.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Mike Rapoport <rppt@linux.ibm.com>
+On Sat, 2 Nov 2019 at 01:50, Jarkko Sakkinen
+<jarkko.sakkinen@linux.intel.com> wrote:
+>
+> On Fri, Nov 01, 2019 at 03:04:18PM +0530, Sumit Garg wrote:
+>
+> > Isn't this statement contradicting with your earlier statement
+> > regarding the right order would be to complete TEE patches review
+> > first and then come up with documentation here [2]?
+> >
+> > [1] https://lore.kernel.org/linux-integrity/1568025601.4614.253.camel@linux.ibm.com/
+> > [2] https://lore.kernel.org/linux-integrity/20190909163643.qxmzpcggi567hmhv@linux.intel.com/
+>
+> With the intersecting issues, namely key generation and conflicting
+> keyctl parameters, that was not a well considered statement.
 
-There are no architectures that use include/asm-generic/4level-fixup.h
-therefore it can be removed along with __ARCH_HAS_4LEVEL_HACK define.
+Okay, let me work on documentation first, but I think resending whole
+patch-set just for documentation review and rework would be an
+overkill. Would minor revisions of this patch only like v3.1, v3.2
+etc. work for you? And later I could send next version of this
+patch-set once we agree on documentation.
 
-Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
----
- include/asm-generic/4level-fixup.h | 40 --------------------------------------
- include/asm-generic/tlb.h          |  2 --
- include/linux/mm.h                 | 10 +++++-----
- mm/memory.c                        |  8 --------
- 4 files changed, 5 insertions(+), 55 deletions(-)
- delete mode 100644 include/asm-generic/4level-fixup.h
+-Sumit
 
-diff --git a/include/asm-generic/4level-fixup.h b/include/asm-generic/4level-fixup.h
-deleted file mode 100644
-index e3667c9..0000000
---- a/include/asm-generic/4level-fixup.h
-+++ /dev/null
-@@ -1,40 +0,0 @@
--/* SPDX-License-Identifier: GPL-2.0 */
--#ifndef _4LEVEL_FIXUP_H
--#define _4LEVEL_FIXUP_H
--
--#define __ARCH_HAS_4LEVEL_HACK
--#define __PAGETABLE_PUD_FOLDED 1
--
--#define PUD_SHIFT			PGDIR_SHIFT
--#define PUD_SIZE			PGDIR_SIZE
--#define PUD_MASK			PGDIR_MASK
--#define PTRS_PER_PUD			1
--
--#define pud_t				pgd_t
--
--#define pmd_alloc(mm, pud, address) \
--	((unlikely(pgd_none(*(pud))) && __pmd_alloc(mm, pud, address))? \
-- 		NULL: pmd_offset(pud, address))
--
--#define pud_offset(pgd, start)		(pgd)
--#define pud_none(pud)			0
--#define pud_bad(pud)			0
--#define pud_present(pud)		1
--#define pud_ERROR(pud)			do { } while (0)
--#define pud_clear(pud)			pgd_clear(pud)
--#define pud_val(pud)			pgd_val(pud)
--#define pud_populate(mm, pud, pmd)	pgd_populate(mm, pud, pmd)
--#define pud_page(pud)			pgd_page(pud)
--#define pud_page_vaddr(pud)		pgd_page_vaddr(pud)
--
--#undef pud_free_tlb
--#define pud_free_tlb(tlb, x, addr)	do { } while (0)
--#define pud_free(mm, x)			do { } while (0)
--#define __pud_free_tlb(tlb, x, addr)	do { } while (0)
--
--#undef  pud_addr_end
--#define pud_addr_end(addr, end)		(end)
--
--#include <asm-generic/5level-fixup.h>
--
--#endif
-diff --git a/include/asm-generic/tlb.h b/include/asm-generic/tlb.h
-index 04c0644..5e0c2d0 100644
---- a/include/asm-generic/tlb.h
-+++ b/include/asm-generic/tlb.h
-@@ -584,7 +584,6 @@ static inline void tlb_end_vma(struct mmu_gather *tlb, struct vm_area_struct *vm
- 	} while (0)
- #endif
- 
--#ifndef __ARCH_HAS_4LEVEL_HACK
- #ifndef pud_free_tlb
- #define pud_free_tlb(tlb, pudp, address)			\
- 	do {							\
-@@ -594,7 +593,6 @@ static inline void tlb_end_vma(struct mmu_gather *tlb, struct vm_area_struct *vm
- 		__pud_free_tlb(tlb, pudp, address);		\
- 	} while (0)
- #endif
--#endif
- 
- #ifndef __ARCH_HAS_5LEVEL_HACK
- #ifndef p4d_free_tlb
-diff --git a/include/linux/mm.h b/include/linux/mm.h
-index cc29227..477b52a 100644
---- a/include/linux/mm.h
-+++ b/include/linux/mm.h
-@@ -1850,12 +1850,12 @@ static inline void mm_dec_nr_ptes(struct mm_struct *mm) {}
- int __pte_alloc(struct mm_struct *mm, pmd_t *pmd);
- int __pte_alloc_kernel(pmd_t *pmd);
- 
-+#if defined(CONFIG_MMU)
-+
- /*
-- * The following ifdef needed to get the 4level-fixup.h header to work.
-- * Remove it when 4level-fixup.h has been removed.
-+ * The following ifdef needed to get the 5level-fixup.h header to work.
-+ * Remove it when 5level-fixup.h has been removed.
-  */
--#if defined(CONFIG_MMU) && !defined(__ARCH_HAS_4LEVEL_HACK)
--
- #ifndef __ARCH_HAS_5LEVEL_HACK
- static inline p4d_t *p4d_alloc(struct mm_struct *mm, pgd_t *pgd,
- 		unsigned long address)
-@@ -1877,7 +1877,7 @@ static inline pmd_t *pmd_alloc(struct mm_struct *mm, pud_t *pud, unsigned long a
- 	return (unlikely(pud_none(*pud)) && __pmd_alloc(mm, pud, address))?
- 		NULL: pmd_offset(pud, address);
- }
--#endif /* CONFIG_MMU && !__ARCH_HAS_4LEVEL_HACK */
-+#endif /* CONFIG_MMU */
- 
- #if USE_SPLIT_PTE_PTLOCKS
- #if ALLOC_SPLIT_PTLOCKS
-diff --git a/mm/memory.c b/mm/memory.c
-index b1ca51a..50300f0 100644
---- a/mm/memory.c
-+++ b/mm/memory.c
-@@ -4095,19 +4095,11 @@ int __pmd_alloc(struct mm_struct *mm, pud_t *pud, unsigned long address)
- 	smp_wmb(); /* See comment in __pte_alloc */
- 
- 	ptl = pud_lock(mm, pud);
--#ifndef __ARCH_HAS_4LEVEL_HACK
- 	if (!pud_present(*pud)) {
- 		mm_inc_nr_pmds(mm);
- 		pud_populate(mm, pud, new);
- 	} else	/* Another has populated it */
- 		pmd_free(mm, new);
--#else
--	if (!pgd_present(*pud)) {
--		mm_inc_nr_pmds(mm);
--		pgd_populate(mm, pud, new);
--	} else /* Another has populated it */
--		pmd_free(mm, new);
--#endif /* __ARCH_HAS_4LEVEL_HACK */
- 	spin_unlock(ptl);
- 	return 0;
- }
--- 
-2.7.4
-
+>
+> /Jarkko
 
 _______________________________________________
 linux-arm-kernel mailing list
