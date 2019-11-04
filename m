@@ -2,57 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56942EE5B1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 18:20:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 292F4EE5B2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 18:20:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=JhUSH//5QB2ObkJNOU7X1xZkloirY+vtxzBc6UNZBL4=; b=s3fvALiYn09vZpehlvJiqhRmI
-	G07cr3DcLDvypmrf+/ciZXFq/2WurbkpBhOe7f5GfWh4Gw7N4HL9g5d4f03gjVYPP9QCNUjhhkbzV
-	FW9gkHYYbU2ehI2IGQPsLRs661VDscUJqkUKWeV8rjPRTpIdrtB5zFV1VgkdvemBl0j28CEKQ2HGw
-	+MGs+8p4goTsIoEVblVQbN/CNmx9YScd3mDzJ2D+zsHo3ECTJHKvJwZ+TFrEtz+EoMeLwaN497SWc
-	Vr7D4nO1hBJ7xLIjR56vwWFkZt74fUyEXe+aaZyyBhsfqqbJGLcLhZE9BwzGQQ/OZOaXY0qZsmWc6
-	Dz+TEBlog==;
+	 bh=DZ62yT9VO553E+8M0RJuTCrBtPH1UtzKYfkd5hbgZTE=; b=lkd6HMr17zX10f0/z7J95MePd
+	gvn3uUbyLUngSyTsmcBo60DE4wmzsDmsFcPJiB51H3M1ahKm8ySQCuFO1Rxh2q1wdsnjU0ueH6Zph
+	3n2q5nGzpKGCQSg1AG3rhZ6hQKnLueQ3kwJa+Z1cK7CHLM0dkkh0hTIugcIH1nctWJTRl4esmf3Bw
+	Va+Krpp9JUmWMJb5F6tNGOSk3LYBVKcFtAqVO4b97+rP9i27Fg+EMQIVirfjdMoJZrlRpOPz/T+ad
+	/fvmKVPynHtTJo2cKn4Zeq8ZybReWHzigybqkSQojtGyLOHtAJsgLJEO6IolXFKepEmAsrPmbhxpk
+	DTLIT59sA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRg1G-0002G8-FF; Mon, 04 Nov 2019 17:19:58 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1iRg1j-0003iG-Sc; Mon, 04 Nov 2019 17:20:27 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRg19-0002FA-DV; Mon, 04 Nov 2019 17:19:52 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 55381B190;
- Mon,  4 Nov 2019 17:19:48 +0000 (UTC)
-Message-ID: <34bd65923697528b5ee540ef30b31542cfc5ba8e.camel@suse.de>
-Subject: Re: [PATCH 1/2] ARM: dts: bcm2711: force CMA into first GB of memory
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Stefan Wahren <wahrenst@gmx.net>, catalin.marinas@arm.com, 
- devicetree@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com, 
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Eric Anholt <eric@anholt.net>
-Date: Mon, 04 Nov 2019 18:19:45 +0100
-In-Reply-To: <588d05b4-e66c-4aa0-436e-12d244a6efd8@gmx.net>
-References: <20191104135412.32118-1-nsaenzjulienne@suse.de>
- <20191104135412.32118-2-nsaenzjulienne@suse.de>
- <588d05b4-e66c-4aa0-436e-12d244a6efd8@gmx.net>
-User-Agent: Evolution 3.34.1 
+ id 1iRg1Y-0002yh-RU
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 17:20:18 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=tf6hLsSwplFytlo2TB+Z5JnYPsclYxQ2Qx/+4XG6RfY=; b=VIgT9re61cIt5YjjebURdy8eJ
+ sO5160HuoNajseJhAScS/j/zYK1guwG7HuS/zf5p75k0ER4/gcWVf813LSbuXIYyFVOhYmwoMHw+P
+ 8S4mH96N8DvfyEQdbdzcE6Rm+jAfGsKFyNLuuiar199Y1NMkBEFzUXAYGJjAn883ZQCPs=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1iRg1V-0002uc-T9; Mon, 04 Nov 2019 17:20:14 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id 43ADF274301E; Mon,  4 Nov 2019 17:20:11 +0000 (GMT)
+Date: Mon, 4 Nov 2019 17:20:11 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v4 4/4] arm64: Use a variable to store non-global
+ mappings decision
+Message-ID: <20191104172011.GG5238@sirena.co.uk>
+References: <20191024214207.20588-1-broonie@kernel.org>
+ <20191024214207.20588-5-broonie@kernel.org>
+ <20191030121307.GB10294@arrakis.emea.arm.com>
+ <20191030124153.GB7218@sirena.co.uk>
+ <20191030141732.GA13309@arrakis.emea.arm.com>
+ <20191031081807.GO4568@sirena.org.uk>
+ <20191031101819.GA39590@arrakis.emea.arm.com>
 MIME-Version: 1.0
+In-Reply-To: <20191031101819.GA39590@arrakis.emea.arm.com>
+X-Cookie: This page intentionally left blank.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_091951_605366_E7BE2DDC 
-X-CRM114-Status: GOOD (  20.80  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191104_092016_932793_8F009EE7 
+X-CRM114-Status: GOOD (  12.30  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [172.104.155.198 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,106 +85,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============8763799606383744176=="
+Cc: Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============6818102341519463153=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============8763799606383744176==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-ILh2Kn6IzlMFXja+veOK"
+--===============6818102341519463153==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="PpAOPzA3dXsRhoo+"
+Content-Disposition: inline
 
 
---=-ILh2Kn6IzlMFXja+veOK
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+--PpAOPzA3dXsRhoo+
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-On Mon, 2019-11-04 at 18:09 +0100, Stefan Wahren wrote:
-> Hi Nicolas,
->=20
-> Am 04.11.19 um 14:54 schrieb Nicolas Saenz Julienne:
-> > arm64 places the CMA in ZONE_DMA32, which is not good enough for the
-> > Raspberry Pi 4 since it contains peripherals that can only address the
-> > first GB of memory. Explicitly place the CMA into that area.
-> >=20
-> > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
->=20
-> do you want this in Linux 5.5 via devicetree/fixes? In this case please
-> add an fixes tag.
+On Thu, Oct 31, 2019 at 10:18:19AM +0000, Catalin Marinas wrote:
+> On Thu, Oct 31, 2019 at 09:18:07AM +0100, Mark Brown wrote:
 
-This has to go into v5.5 if the second patch is accepted. That said I can't=
- add
-a fixes tag as the code being fixed isn't yet in linus' tree.
+> > For my working branch I usually track -next since I've been
+> > burned repeatedly in the past by interactions with other work
+> > that's going on, both code conflicts and unfortunate runtime
+> > interactions.
 
-Any suggestions? Maybe go through Catalin's tree?
+> I guess it's up to you, I personally find tracking -next during
+> development a lot more distracting.
 
-> Otherwise this will be queued for Linux 5.6.
->=20
-> > ---
-> >  arch/arm/boot/dts/bcm2711-rpi-4-b.dts | 19 +++++++++++++++++++
-> >  1 file changed, 19 insertions(+)
-> >=20
-> > diff --git a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-> > b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-> > index cccc1ccd19be..3c7833e9005a 100644
-> > --- a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-> > +++ b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-> > @@ -19,6 +19,25 @@
-> >  		reg =3D <0 0 0>;
-> >  	};
-> >=20
-> > +	reserved-memory {
-> > +		#address-cells =3D <2>;
-> > +		#size-cells =3D <1>;
-> > +		ranges;
-> > +
-> > +		/*
-> > +		 * arm64 reserves the CMA by default somewhere in ZONE_DMA32,
-> > +		 * that's not good enough for the Raspberry Pi 4 as some
-> > +		 * devices can only address the lower 1G of memory (ZONE_DMA).
-> > +		 */
-> > +		linux,cma {
-> > +			compatible =3D "shared-dma-pool";
-> > +			size =3D <0x2000000>; /* 32MB */
-> > +			alloc-ranges =3D <0x0 0x00000000 0x40000000>;
-> > +			reusable;
-> > +			linux,cma-default;
-> > +		};
-> > +	};
-> > +
->=20
-> i think this is a SoC-specific issue not a board specifc one. Please
-> move this to bcm2711.dtsi
+> Anyway, if you send patches to Will or me for upstream, please rebase
+> (and test) on top of the vanilla kernel, otherwise we may not be able to
+> apply them. You can (should) do a merge with -next and flag any
+> conflicts or run-time issues.
 
-Noted, thanks!
+I should also point out here that while with my workflow I see the
+issues rebasing on -next the same conflicts will also come up whenever
+merging into -next for testing which happens about as often.  The core
+problem is that cpucaps.h can't use an enum because the assembler
+doesn't understand that so it's pretty much guaranteed to lead to
+frequent conflicts, hence the desire to get such patches merged.
 
-Regards,
-Nicolas
-
-
---=-ILh2Kn6IzlMFXja+veOK
+--PpAOPzA3dXsRhoo+
 Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl3AXbIACgkQlfZmHno8
-x/5bNQf+Pcwr9fITGn9iaLSMaqlCHQzeOM1OgDs4kXXqGotT/PNltTgdxEJIhFIp
-5DAU9kQRHwIG/69W9dXmUngZQe7seTMSBvS2ZrSKxgU45h/O/L1dQbWePZrl1PEF
-k4eXAWFJhwKQrFxBnT6F2IlCfoY5CrMikuhV+uSBP0UhLiAoWQ1h1fl0qnU57ODL
-cFz0GYgNS45rFhQ1GNfb5daGUXxgJyjMwRokrBS7dT+fnC7BqmXGBRwAWT7n+MC1
-9wyrMaWXVWpkrVCkKkhXsKjK9MBnqC+FIGIo06F/cttUQr24QOD8Xkcho+OXzKgP
-HzfSwcMdLuACsoS8BonBZgS1YIzAOA==
-=AtDb
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl3AXcoACgkQJNaLcl1U
+h9A5YAf+PeK1hAwPDzv5tSFZ31HsKCztxg2xzdl0dlyDav7Rr6QWhwLkU+WgZDZ2
+dwyZt1nKXY0KU22eJNCxkkFkahAyuBwLo84A9z6vGIJFXzBHIlOULTq6CCkQZ23R
+MGU5BGFaZcpcEOzG5qIJ/RJu4WIv/4zkJ4wploEkm05zEE6lvebx0YvMtaXrEIp5
+QMsUfaDSAkL9C6g8huv3b8NyFqL3T7YUXFGRt6ZvzJcmy0Yf30EDPSiaRv8CQkxC
+Iij+dAnhpcbgZUJ0tdMySddgvKPkR3cuEpr/ovfDVyQZGOBFVZIET+7swqsEJqbw
+gNizuO9CdJIS5E69FEP7/Zdu25RNlA==
+=3OU7
 -----END PGP SIGNATURE-----
 
---=-ILh2Kn6IzlMFXja+veOK--
+--PpAOPzA3dXsRhoo+--
 
 
-
---===============8763799606383744176==
+--===============6818102341519463153==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -174,6 +153,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============8763799606383744176==--
-
+--===============6818102341519463153==--
 
