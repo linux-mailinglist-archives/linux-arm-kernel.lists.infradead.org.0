@@ -2,95 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29EA4ED9F9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 08:39:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4852EDA00
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 08:39:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cuGR/Rw6/eepWCk4tUyPIEFJoif5ZmN/EpV8K/9KeaM=; b=E/K7ZwnJy1ORTq
-	ciZuREzO+FHvY9wdz43ALmKYtzsp0Ne5A4c3wc3FvTSFKgqXAQqGY+hqHAARz1guWVdvya6JglMq2
-	ll0X54qjYrBxkIJMaTX5kYYL7Q1xHHpEa+h5qDygmK/ER/cKoDxOCz0PdjL+jScldprchHOd1RznT
-	Cj4TMeF+E/s1Tlx0dfpnZLruY36oqMxQYakHNr+mks+KN/O19GIUp0TSCrhoOY3fDDF+FucgffYCh
-	f1iRgNY8zpAKm2fIToShAl8kD5v8Lzz7f3oBhX6wBJqbja6kYZ75hxUy0PYhOl/XTgZCSlMU1yFPw
-	nUQ6t19w5xRZEVKmoO0A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4ovsCASdpFE/p6YHxxVL8HDAjbXLu9pOW1YwXou/m+E=; b=lucRnYxr2fAOGW
+	lqD67sE6O+IQKBgHVjcaAakAQnvUcYDmzCU3N73+kqvCMS/TrYNT/ZwzBStNYNIMO1EKZrVjpQttK
+	N3vkiFs7s3zFDb7Lm7DkK0U+9il40QIoW62Zatu/LY/iDNdkxa4905eNBUtQtOsFYSUsY0t/70eSE
+	gVZcJD4JSCnsQ8XSoYkuq6HLhlFW15vINs0QuXS8Y9dYibycFgm6cZ+bRLCDnjRxOTlZCbxMNVPF5
+	+bcadBB6dDJuTKQLBzu9UblC/NCKjb6GHoz2Zi2IE4RBXcCrDcUK6K0UCRrqb3Ioleg4GnCs+I1Nb
+	goA3eM2GlZoeMNwsvsGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRWwv-0004Jd-PN; Mon, 04 Nov 2019 07:38:53 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1iRWxm-0004bh-EY; Mon, 04 Nov 2019 07:39:46 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRWwo-0004Ce-HT
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 07:38:48 +0000
-Received: by mail-lj1-x241.google.com with SMTP id e9so3096935ljp.13
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 03 Nov 2019 23:38:44 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=rasmusvillemoes.dk; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Skx+IlvEjbz4Ey3Z8Es5BpI/gDpf4xIU9seBvakWE2o=;
- b=fKyAoSLbBB7K6Hwz7WQ1hkLB8UolD91873nvpgYDwu3vHgk9FskSurtOXN9GkL1c/5
- O1QO4r/LPsSNuj4aQkwxPg2auKprW4F4lCLH/I6JsLtqOEwdNwfRS8W2sWECsVQqK6CO
- JdWAYkhmIGvDXKDiJ6rIDpzfpG3P7N4TPq36U=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=Skx+IlvEjbz4Ey3Z8Es5BpI/gDpf4xIU9seBvakWE2o=;
- b=miws2gxTLxDrQds+eOijpo3NsQL51a4ne8CK1hfhp+lTca1a6ucxv1e3Y7EHOrbzPd
- Tl+Zg0L9SN+Ox9UwZGlLIhsdc3UsgwVjw6A9BNdJCTXNwHBmVHpnObK6kxUnC41DAX7u
- 3bSjy/AuOUDtqihUhFZiBatZkOM/2JIOqCRSbkXxFtjFyhz8gehZdQLFt1DC6TWDKurX
- 0o2IvWYFZT1vH+VuTGuWGTrh9RooVfaadvPBvUiY0Lo566duMHoMTu4XnpPe53v0KtBC
- vGkXJA0PXlVwhVmIUpEgI3Ng5dhoo6z4tsIcr8Hnmn2Eb+TuPyrq0cAB8s4YdBf6V4s4
- B3lQ==
-X-Gm-Message-State: APjAAAVNPvm2cKyvlYLP5v7/knTGef9z9FdwAG/iIOneicaRr4Tmk7G4
- 3SLPrtIKXa9U7rMl8Q5F6GSeCQ==
-X-Google-Smtp-Source: APXvYqy0dojhXdV/Wyv7nl7DnnJ1xyl+IlR4kyBZvriN/BA2WM6WGs9kvJj6pwDEOoKIklqLOYQZtg==
-X-Received: by 2002:a2e:5d1:: with SMTP id 200mr18228489ljf.50.1572853123654; 
- Sun, 03 Nov 2019 23:38:43 -0800 (PST)
-Received: from [172.16.11.28] ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id c5sm6344575ljd.57.2019.11.03.23.38.42
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 03 Nov 2019 23:38:42 -0800 (PST)
-Subject: Re: [PATCH v3 28/36] serial: ucc_uart: explicitly include
- soc/fsl/cpm.h
-To: Christophe Leroy <christophe.leroy@c-s.fr>,
- Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>
-References: <20191018125234.21825-1-linux@rasmusvillemoes.dk>
- <20191101124210.14510-1-linux@rasmusvillemoes.dk>
- <20191101124210.14510-29-linux@rasmusvillemoes.dk>
- <a921b57b-04d5-4874-89e2-df29dfe99bfc@c-s.fr>
-From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
-Message-ID: <0acb2e96-3485-5e49-bed1-8deb2051cb91@rasmusvillemoes.dk>
-Date: Mon, 4 Nov 2019 08:38:41 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iRWxe-0004bE-TC
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 07:39:40 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id CFBB2205C9;
+ Mon,  4 Nov 2019 07:39:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572853178;
+ bh=0btWQZ/A2BUDNkIHPwbXhBS2yMK898sYA7OTvZ/A/kM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=eP4zRw3aA67jEZP2e1660qzvfePuKZvb1xI9F6E/uHXRsxN+Lsi3Mofnfo2oStjmQ
+ b2bfTIei9WEZxjGb7i1aLsxUFvg1NsS323Lgui0Xr+5PfZl3vYQjrF7S2lqOUJrpLb
+ 5pORMKu6PSNjmYOZdL4mVa4Cy6HQLVUQeF6nnpzk=
+Date: Mon, 4 Nov 2019 08:39:35 +0100
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Johannes Berg <johannes@sipsolutions.net>
+Subject: Re: [PATCH v2 2/7] mac80211: Use debugfs_create_xul() helper
+Message-ID: <20191104073935.GA1292321@kroah.com>
+References: <20191025094130.26033-1-geert+renesas@glider.be>
+ <20191025094130.26033-3-geert+renesas@glider.be>
+ <69baa44c928ae7f6ca1f4631b7beb6b2c2b1c033.camel@sipsolutions.net>
 MIME-Version: 1.0
-In-Reply-To: <a921b57b-04d5-4874-89e2-df29dfe99bfc@c-s.fr>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <69baa44c928ae7f6ca1f4631b7beb6b2c2b1c033.camel@sipsolutions.net>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191103_233847_527500_067CA3AA 
-X-CRM114-Status: GOOD (  12.16  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191103_233938_964572_363292E2 
+X-CRM114-Status: GOOD (  13.65  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,26 +75,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Scott Wood <oss@buserror.net>, linuxppc-dev@lists.ozlabs.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-serial@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-wireless@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, Jonathan Corbet <corbet@lwn.net>,
+ linux-mmc@vger.kernel.org, "Rafael J . Wysocki" <rafael@kernel.org>,
+ linux-doc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Jaehoon Chung <jh80.chung@samsung.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>, netdev@vger.kernel.org,
+ Ulf Hansson <ulf.hansson@linaro.org>, "David S . Miller" <davem@davemloft.net>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMDEvMTEvMjAxOSAxNy4xOSwgQ2hyaXN0b3BoZSBMZXJveSB3cm90ZToKPiBMZSAwMS8xMS8y
-MDE5IMOgIDEzOjQyLCBSYXNtdXMgVmlsbGVtb2VzIGEgw6ljcml0wqA6Cj4+IFRoaXMgZHJpdmVy
-IHVzZXMgI2RlZmluZXMgZnJvbSBzb2MvZnNsL2NwbS5oLCBzbyBpbnN0ZWFkIG9mIHJlbHlpbmcg
-b24KPj4gc29tZSBvdGhlciBoZWFkZXIgcHVsbGluZyB0aGF0IGluLCBkbyB0aGF0IGV4cGxpY2l0
-bHkuIFRoaXMgaXMKPj4gcHJlcGFyYXRpb24gZm9yIGFsbG93aW5nIHRoaXMgZHJpdmVyIHRvIGJ1
-aWxkIG9uIEFSTS4KPj4KPiAKPiBVQ0MgYXJlIG9ubHkgb24gUUUuCj4gQ1BNIGhhcyBTQ0NzLiBp
-bnN0ZWFkLgo+IFNvIHRoaXMgZHJpdmVyIHNob3VsZG4ndCBuZWVkIGNwbS5oCgpCdXQgaXQgZG9l
-cy4gQXQgdGhlIHZlcnkgbGVhc3QgZm9yIHRoZSBCRF9TQ18qIGRlZmluZXMsIHBvc3NpYmx5IG90
-aGVycwp0aGluZ3MuIEl0J3MgcG9zc2libGUgb25lIGNvdWxkIHNwbGl0IG9mZiB0aGUgY29tbW9u
-IHBhcnQgdG8gYSBzZXBhcmF0ZQpoZWFkZXIsIGJ1dCB0aGF0IHNvcnQgb2YgY2xlYW51cC9yZWZh
-Y3RvcmluZyBpcyBiZXlvbmQgd2hhdCBJJ2QgYmUKY29tZm9ydGFibGUgaW5jbHVkaW5nIGluIHRo
-aXMgc2VyaWVzLgoKUmFzbXVzCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Mon, Nov 04, 2019 at 08:28:57AM +0100, Johannes Berg wrote:
+> On Fri, 2019-10-25 at 11:41 +0200, Geert Uytterhoeven wrote:
+> > Use the new debugfs_create_xul() helper instead of open-coding the same
+> > operation.
+> > 
+> > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> 
+> Sorry Greg, this slipped through on my side.
+> 
+> Acked-by: Johannes Berg <johannes@sipsolutions.net>
+> 
+> Do you prefer to take this to your tree still, or should I pick it up
+> later once debugfs_create_xul() is available (to me)?
+
+I can take it now, thanks!
+
+greg k-h
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
