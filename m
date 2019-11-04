@@ -2,72 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AEC29EE4E1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 17:40:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1629EE4F3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 17:43:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uL27PigvSUCOpsWL9f8i+s9KsKOgdnbsQ+BeRd/8JY8=; b=elTHy3lOaTyJQH
-	66aj9KYzo6UIVZAyFk5hG1f4S3qYQvt0apE3hPcyCV6AykZx50uihiz+uV2NQaL+A+E0FbUiOvC9t
-	78xUVCF8kmMx/SAcHqDfWNe3PxDnWHo5cRy1wkWDujESmyhkrjYO4FAOv0Fox3kBF9LS5dWXAlR6w
-	KSTyDVX956R+8u5skv04wC5+Dzd7nNZ3uF+NZGtOauFoDGWsdLs23yqYIXM5BVyIcOjQdeQMUc9tu
-	eGyz53GiAbe+HJbKQyuFQZswgQRizg31ydGQj0jEr5x2XEqW2LwrdK37sm7E3MNc9MSam+rxuKvGG
-	ASjTW7xbPqp324G+cEJg==;
+	List-Owner; bh=8O+XknJnx+x+RDGTWFFaaUFZKWGxKS+kp5OFy8nbUQw=; b=eGsGani9ksJblU
+	smX0mFVYKHfzJA4EzoXheQRI1FwvbEvuXZUkQLrgaD1SVsRt+O9jD78VQQC+qQnevqZn89Hn6SeBG
+	Lh5PMC4i+oIAH+kIoUv/Q8l2p0s0pYOcnuQQbA8oFL16vvzvA0WwhRkh4zAGK6gtx4+CLllG7Xr7R
+	GQDAzE6wYI2LFjvNQ2BHEVSKwPrTv0aPAxe4B7vZkveSj6JCZCDGelQ758+IfGVHtbuTx+lns/1aQ
+	44sxMv0rWAeWwcLjBtf7X8K0dL/7+cb9fO9OWeNy00YeFSSfhOYjqicdkW3JT7neeX3/tUXWsvwSI
+	Rpt4t54mO7x1cNpy6Phg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRfOo-00071U-JW; Mon, 04 Nov 2019 16:40:14 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRfO4-0006gk-AL; Mon, 04 Nov 2019 16:39:33 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DEE5B68D;
- Mon,  4 Nov 2019 08:39:26 -0800 (PST)
-Received: from e119886-lin.cambridge.arm.com (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9FAFA3F71A;
- Mon,  4 Nov 2019 08:39:17 -0800 (PST)
-From: Andrew Murray <andrew.murray@arm.com>
-To: Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Ley Foon Tan <lftan@altera.com>, Jesper Nilsson <jesper.nilsson@axis.com>,
- Tom Joseph <tjoseph@cadence.com>, Richard Zhu <hongxing.zhu@nxp.com>,
- Lucas Stach <l.stach@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, Zhou Wang <wangzhou1@hisilicon.com>,
- Will Deacon <will@kernel.org>, Xiaowei Song <songxiaowei@hisilicon.com>,
- Binghui Wang <wangbinghui@hisilicon.com>,
- Ryder Lee <ryder.lee@mediatek.com>,
- Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>,
- Hou Zhiqiang <Zhiqiang.Hou@nxp.com>, David Daney <david.daney@cavium.com>,
- Jonathan Chocron <jonnyc@amazon.com>, Andy Gross <agross@kernel.org>,
- Shawn Lin <shawn.lin@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Toan Le <toan@os.amperecomputing.com>,
- Michal Simek <michal.simek@xilinx.com>,
- Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH v1 7/7] dt-bindings: PCI: Use IRQ flags for legacy PCI IRQ
- interrupts
-Date: Mon,  4 Nov 2019 16:38:21 +0000
-Message-Id: <20191104163834.8932-8-andrew.murray@arm.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20191104163834.8932-1-andrew.murray@arm.com>
-References: <20191104163834.8932-1-andrew.murray@arm.com>
+	id 1iRfRb-0000oi-Le; Mon, 04 Nov 2019 16:43:07 +0000
+Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iRfRU-0000nE-2b
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 16:43:01 +0000
+Received: by mail-vs1-xe43.google.com with SMTP id j85so11387000vsd.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 04 Nov 2019 08:42:57 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=z61Nf+IXfPnYSf/CB16houpRDee1KdZw1ehNvN59rnE=;
+ b=PjhxObLSYnDarkuAbAcbN/xcMBh9/RLTTwOBpfJMobbA2sy11V60GhbV1hoQ3TnrVQ
+ MIGqkV7apEXKziLYFAgmPcnR7gDQ1QIfFx/fgaFfieqf9BvRpo2jDlght+XCs8RdEaeA
+ x8ARi7tdM/WujTuWotF0tyekaX2W6yMiIuW12MuP0uaNGXCLGc9wvXUnbz0dJin1Q31V
+ ddXKsHwKyEREN9TPTpjsetiMHoYvt7iPZtSmkRC9qkz3ySM678YNrAr5VbKNNH+CjtlH
+ 7GUkM+JblIdOMXy6FxStWdstKENAqGAK8jaJpNvnDfUZEztTCL3vbhro+Z+9dJyt/fJF
+ aZjQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=z61Nf+IXfPnYSf/CB16houpRDee1KdZw1ehNvN59rnE=;
+ b=ioBHZTm/nDqxq2FDOzag4M+BoFiKdG1xWRcJVZ9ENTGLyXCPsllsUnoGO8OxgrmY/h
+ Wgbn11ClajXyhsvmiIgnBrZMg8QZs7FfMZrzua2A0WN5bdFYsfgBaq0GqYQRs03sA58i
+ BqiLnURBHuxgVjBzcH7LRthFPExJr/GzJd4HzVtgfDMkih4CehOLpEeqHWd8yR/2zkQA
+ A7YN5/ga5TYg+k1kiryb5/qSJmF2f56qbT8SoEo3hkPeha4iF4LRS8v/j8gRT003efbk
+ xUXh2tOHY/TdtVNnBR/erZXBzu9Codu7ClEy7+gNbPk1d3cD/SdcE3F0K2gB58FqKNzQ
+ LvAw==
+X-Gm-Message-State: APjAAAXpGULP8UuNG1i0J1zdRZ+myJRZzZXXm11dDfTgDWzjsxnB3Lvy
+ vhEY1WehO3rTFLQrpXd1InpQTxIebT0tOCnDJsrVrw==
+X-Google-Smtp-Source: APXvYqyDVcfgLDeXQC3A5gJNX8/wN+mjRR+GghpG8/3JWVcJW3k8DuwIYEezXPcXMkAZs+NIu3TLNRNVKUeU+c1tML4=
+X-Received: by 2002:a05:6102:36a:: with SMTP id
+ f10mr8580793vsa.44.1572885775766; 
+ Mon, 04 Nov 2019 08:42:55 -0800 (PST)
 MIME-Version: 1.0
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20191101221150.116536-1-samitolvanen@google.com>
+ <20191101221150.116536-7-samitolvanen@google.com>
+ <791fc70f7bcaf13a89abaee9aae52dfe@www.loen.fr>
+In-Reply-To: <791fc70f7bcaf13a89abaee9aae52dfe@www.loen.fr>
+From: Sami Tolvanen <samitolvanen@google.com>
+Date: Mon, 4 Nov 2019 08:42:43 -0800
+Message-ID: <CABCJKuegREpQiJCY01B_=nsNJFFCkyxxp63tQOPT=h+yAPifyA@mail.gmail.com>
+Subject: Re: [PATCH v4 06/17] scs: add accounting
+To: Marc Zyngier <maz@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_083928_475552_5C67D355 
-X-CRM114-Status: GOOD (  14.82  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191104_084300_142105_47A11D36 
+X-CRM114-Status: UNSURE (   8.74  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,854 +101,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
- rfi@lists.rocketboards.org, linux-arm-kernel@axis.com,
- linux-rockchip@lists.infradead.org, linux-mediatek@lists.infradead.org,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, linux-arm-msm@vger.kernel.org,
- linux-omap@vger.kernel.org, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Kernel Hardening <kernel-hardening@lists.openwall.com>,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <dave.martin@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Replace magic numbers used to describe legacy PCI IRQ interrupts
-with #define.
+On Mon, Nov 4, 2019 at 5:13 AM Marc Zyngier <maz@kernel.org> wrote:
+> Is there any reason why you're not consistently using only one of
+> "#if IS_ENABLED(...)" or "#ifdef ...", but instead a mix of both?
 
-Signed-off-by: Andrew Murray <andrew.murray@arm.com>
----
- .../devicetree/bindings/pci/83xx-512x-pci.txt | 18 ++---
- .../devicetree/bindings/pci/aardvark-pci.txt  | 10 +--
- .../devicetree/bindings/pci/altera-pcie.txt   | 10 +--
- .../bindings/pci/axis,artpec6-pcie.txt        | 10 +--
- .../bindings/pci/cdns,cdns-pcie-host.txt      | 10 +--
- .../bindings/pci/faraday,ftpci100.txt         | 68 +++++++++----------
- .../bindings/pci/fsl,imx6q-pcie.txt           | 10 +--
- .../bindings/pci/hisilicon-pcie.txt           | 20 +++---
- .../bindings/pci/host-generic-pci.txt         | 10 +--
- .../devicetree/bindings/pci/kirin-pcie.txt    | 10 +--
- .../bindings/pci/layerscape-pci.txt           | 10 +--
- .../devicetree/bindings/pci/mediatek-pcie.txt | 40 +++++------
- .../devicetree/bindings/pci/mobiveil-pcie.txt |  8 +--
- .../devicetree/bindings/pci/pci-rcar-gen2.txt |  8 +--
- .../bindings/pci/pci-thunder-pem.txt          | 10 +--
- .../devicetree/bindings/pci/pcie-al.txt       |  4 +-
- .../devicetree/bindings/pci/qcom,pcie.txt     | 20 +++---
- .../bindings/pci/ralink,rt3883-pci.txt        | 18 ++---
- .../bindings/pci/rockchip-pcie-host.txt       | 10 +--
- .../devicetree/bindings/pci/ti-pci.txt        | 10 +--
- .../devicetree/bindings/pci/uniphier-pcie.txt | 10 +--
- .../bindings/pci/v3-v360epc-pci.txt           | 34 +++++-----
- .../devicetree/bindings/pci/versatile.txt     | 40 +++++------
- .../devicetree/bindings/pci/xgene-pci-msi.txt | 10 +--
- .../devicetree/bindings/pci/xgene-pci.txt     | 10 +--
- .../bindings/pci/xilinx-nwl-pcie.txt          | 10 +--
- .../devicetree/bindings/pci/xilinx-pcie.txt   | 20 +++---
- 27 files changed, 224 insertions(+), 224 deletions(-)
+This is to match the style already used in each file. For example,
+fs/proc/meminfo.c uses #ifdef for other configs in the same function,
+and include/linux/mmzone.h uses #if IS_ENABLED(...).
 
-diff --git a/Documentation/devicetree/bindings/pci/83xx-512x-pci.txt b/Documentation/devicetree/bindings/pci/83xx-512x-pci.txt
-index 3abeecf4983f..cb80b9e49a2b 100644
---- a/Documentation/devicetree/bindings/pci/83xx-512x-pci.txt
-+++ b/Documentation/devicetree/bindings/pci/83xx-512x-pci.txt
-@@ -9,19 +9,19 @@ Freescale 83xx and 512x SOCs include the same PCI bridge core.
- 
- Example (MPC8313ERDB)
- 	pci0: pci@e0008500 {
--		interrupt-map-mask = <0xf800 0x0 0x0 0x7>;
-+		interrupt-map-mask = <0xf800 0x0 0x0 IRQ_INT_ALL>;
- 		interrupt-map = <
- 				/* IDSEL 0x0E -mini PCI */
--				 0x7000 0x0 0x0 0x1 &ipic 18 0x8
--				 0x7000 0x0 0x0 0x2 &ipic 18 0x8
--				 0x7000 0x0 0x0 0x3 &ipic 18 0x8
--				 0x7000 0x0 0x0 0x4 &ipic 18 0x8
-+				 0x7000 0x0 0x0 IRQ_INTA &ipic 18 0x8
-+				 0x7000 0x0 0x0 IRQ_INTB &ipic 18 0x8
-+				 0x7000 0x0 0x0 IRQ_INTC &ipic 18 0x8
-+				 0x7000 0x0 0x0 IRQ_INTD &ipic 18 0x8
- 
- 				/* IDSEL 0x0F - PCI slot */
--				 0x7800 0x0 0x0 0x1 &ipic 17 0x8
--				 0x7800 0x0 0x0 0x2 &ipic 18 0x8
--				 0x7800 0x0 0x0 0x3 &ipic 17 0x8
--				 0x7800 0x0 0x0 0x4 &ipic 18 0x8>;
-+				 0x7800 0x0 0x0 IRQ_INTA &ipic 17 0x8
-+				 0x7800 0x0 0x0 IRQ_INTB &ipic 18 0x8
-+				 0x7800 0x0 0x0 IRQ_INTC &ipic 17 0x8
-+				 0x7800 0x0 0x0 IRQ_INTD &ipic 18 0x8>;
- 		interrupt-parent = <&ipic>;
- 		interrupts = <66 0x8>;
- 		bus-range = <0x0 0x0>;
-diff --git a/Documentation/devicetree/bindings/pci/aardvark-pci.txt b/Documentation/devicetree/bindings/pci/aardvark-pci.txt
-index 310ef7145c47..ca8fe542edc9 100644
---- a/Documentation/devicetree/bindings/pci/aardvark-pci.txt
-+++ b/Documentation/devicetree/bindings/pci/aardvark-pci.txt
-@@ -43,11 +43,11 @@ Example:
- 		msi-parent = <&pcie0>;
- 		ranges = <0x82000000 0 0xe8000000   0 0xe8000000 0 0x1000000 /* Port 0 MEM */
- 			  0x81000000 0 0xe9000000   0 0xe9000000 0 0x10000>; /* Port 0 IO*/
--		interrupt-map-mask = <0 0 0 7>;
--		interrupt-map = <0 0 0 1 &pcie_intc 0>,
--				<0 0 0 2 &pcie_intc 1>,
--				<0 0 0 3 &pcie_intc 2>,
--				<0 0 0 4 &pcie_intc 3>;
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0 0 0 IRQ_INTA &pcie_intc 0>,
-+				<0 0 0 IRQ_INTB &pcie_intc 1>,
-+				<0 0 0 IRQ_INTC &pcie_intc 2>,
-+				<0 0 0 IRQ_INTD &pcie_intc 3>;
- 		pcie_intc: interrupt-controller {
- 			interrupt-controller;
- 			#interrupt-cells = <1>;
-diff --git a/Documentation/devicetree/bindings/pci/altera-pcie.txt b/Documentation/devicetree/bindings/pci/altera-pcie.txt
-index 816b244a221e..f9902dca1a03 100644
---- a/Documentation/devicetree/bindings/pci/altera-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/altera-pcie.txt
-@@ -40,11 +40,11 @@ Example
- 		msi-parent = <&msi_to_gic_gen_0>;
- 		#address-cells = <3>;
- 		#size-cells = <2>;
--		interrupt-map-mask = <0 0 0 7>;
--		interrupt-map = <0 0 0 1 &pcie_0 1>,
--			            <0 0 0 2 &pcie_0 2>,
--			            <0 0 0 3 &pcie_0 3>,
--			            <0 0 0 4 &pcie_0 4>;
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0 0 0 IRQ_INTA &pcie_0 1>,
-+			            <0 0 0 IRQ_INTB &pcie_0 2>,
-+			            <0 0 0 IRQ_INTC &pcie_0 3>,
-+			            <0 0 0 IRQ_INTD &pcie_0 4>;
- 		ranges = <0x82000000 0x00000000 0x00000000 0xc0000000 0x00000000 0x10000000
- 			  0x82000000 0x00000000 0x10000000 0xd0000000 0x00000000 0x10000000>;
- 	};
-diff --git a/Documentation/devicetree/bindings/pci/axis,artpec6-pcie.txt b/Documentation/devicetree/bindings/pci/axis,artpec6-pcie.txt
-index 979dc7b6cfe8..c71dbe94f0eb 100644
---- a/Documentation/devicetree/bindings/pci/axis,artpec6-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/axis,artpec6-pcie.txt
-@@ -41,10 +41,10 @@ Example:
- 		interrupts = <GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>;
- 		interrupt-names = "msi";
- 		#interrupt-cells = <1>;
--		interrupt-map-mask = <0 0 0 0x7>;
--		interrupt-map = <0 0 0 1 &intc GIC_SPI 144 IRQ_TYPE_LEVEL_HIGH>,
--		                <0 0 0 2 &intc GIC_SPI 145 IRQ_TYPE_LEVEL_HIGH>,
--		                <0 0 0 3 &intc GIC_SPI 146 IRQ_TYPE_LEVEL_HIGH>,
--		                <0 0 0 4 &intc GIC_SPI 147 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0 0 0 IRQ_INTA &intc GIC_SPI 144 IRQ_TYPE_LEVEL_HIGH>,
-+		                <0 0 0 IRQ_INTB &intc GIC_SPI 145 IRQ_TYPE_LEVEL_HIGH>,
-+		                <0 0 0 IRQ_INTC &intc GIC_SPI 146 IRQ_TYPE_LEVEL_HIGH>,
-+		                <0 0 0 IRQ_INTD &intc GIC_SPI 147 IRQ_TYPE_LEVEL_HIGH>;
- 		axis,syscon-pcie = <&syscon>;
- 	};
-diff --git a/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-host.txt b/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-host.txt
-index 91de69c713a9..67845103c8f0 100644
---- a/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-host.txt
-+++ b/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-host.txt
-@@ -52,12 +52,12 @@ pcie@fb000000 {
- 
- 	#interrupt-cells = <0x1>;
- 
--	interrupt-map = <0x0 0x0 0x0  0x1  &gic  0x0 0x0 0x0 14 0x1
--			 0x0 0x0 0x0  0x2  &gic  0x0 0x0 0x0 15 0x1
--			 0x0 0x0 0x0  0x3  &gic  0x0 0x0 0x0 16 0x1
--			 0x0 0x0 0x0  0x4  &gic  0x0 0x0 0x0 17 0x1>;
-+	interrupt-map = <0x0 0x0 0x0  IRQ_INTA  &gic  0x0 0x0 0x0 14 0x1
-+			 0x0 0x0 0x0  IRQ_INTB  &gic  0x0 0x0 0x0 15 0x1
-+			 0x0 0x0 0x0  IRQ_INTC  &gic  0x0 0x0 0x0 16 0x1
-+			 0x0 0x0 0x0  IRQ_INTD  &gic  0x0 0x0 0x0 17 0x1>;
- 
--	interrupt-map-mask = <0x0 0x0 0x0  0x7>;
-+	interrupt-map-mask = <0x0 0x0 0x0 IRQ_INT_ALL>;
- 
- 	msi-parent = <&its_pci>;
- 
-diff --git a/Documentation/devicetree/bindings/pci/faraday,ftpci100.txt b/Documentation/devicetree/bindings/pci/faraday,ftpci100.txt
-index 5f8cb4962f8d..b267d4853773 100644
---- a/Documentation/devicetree/bindings/pci/faraday,ftpci100.txt
-+++ b/Documentation/devicetree/bindings/pci/faraday,ftpci100.txt
-@@ -61,24 +61,24 @@ variant) interrupts assigns the default interrupt mapping/swizzling has
- typically been like this, doing the swizzling on the interrupt controller side
- rather than in the interconnect:
- 
--interrupt-map-mask = <0xf800 0 0 7>;
-+interrupt-map-mask = <0xf800 0 0 IRQ_INT_ALL>;
- interrupt-map =
--	<0x4800 0 0 1 &pci_intc 0>, /* Slot 9 */
--	<0x4800 0 0 2 &pci_intc 1>,
--	<0x4800 0 0 3 &pci_intc 2>,
--	<0x4800 0 0 4 &pci_intc 3>,
--	<0x5000 0 0 1 &pci_intc 1>, /* Slot 10 */
--	<0x5000 0 0 2 &pci_intc 2>,
--	<0x5000 0 0 3 &pci_intc 3>,
--	<0x5000 0 0 4 &pci_intc 0>,
--	<0x5800 0 0 1 &pci_intc 2>, /* Slot 11 */
--	<0x5800 0 0 2 &pci_intc 3>,
--	<0x5800 0 0 3 &pci_intc 0>,
--	<0x5800 0 0 4 &pci_intc 1>,
--	<0x6000 0 0 1 &pci_intc 3>, /* Slot 12 */
--	<0x6000 0 0 2 &pci_intc 0>,
--	<0x6000 0 0 3 &pci_intc 1>,
--	<0x6000 0 0 4 &pci_intc 2>;
-+	<0x4800 0 0 IRQ_INTA &pci_intc 0>, /* Slot 9 */
-+	<0x4800 0 0 IRQ_INTB &pci_intc 1>,
-+	<0x4800 0 0 IRQ_INTC &pci_intc 2>,
-+	<0x4800 0 0 IRQ_INTD &pci_intc 3>,
-+	<0x5000 0 0 IRQ_INTA &pci_intc 1>, /* Slot 10 */
-+	<0x5000 0 0 IRQ_INTB &pci_intc 2>,
-+	<0x5000 0 0 IRQ_INTC &pci_intc 3>,
-+	<0x5000 0 0 IRQ_INTD &pci_intc 0>,
-+	<0x5800 0 0 IRQ_INTA &pci_intc 2>, /* Slot 11 */
-+	<0x5800 0 0 IRQ_INTB &pci_intc 3>,
-+	<0x5800 0 0 IRQ_INTC &pci_intc 0>,
-+	<0x5800 0 0 IRQ_INTD &pci_intc 1>,
-+	<0x6000 0 0 IRQ_INTA &pci_intc 3>, /* Slot 12 */
-+	<0x6000 0 0 IRQ_INTB &pci_intc 0>,
-+	<0x6000 0 0 IRQ_INTC &pci_intc 1>,
-+	<0x6000 0 0 IRQ_INTD &pci_intc 2>;
- 
- Example:
- 
-@@ -108,24 +108,24 @@ pci@50000000 {
- 	/* 64MiB at 0x00000000-0x03ffffff */
- 	<0x02000000 0 0x00000000 0x00000000 0 0x04000000>;
- 
--	interrupt-map-mask = <0xf800 0 0 7>;
-+	interrupt-map-mask = <0xf800 0 0 IRQ_INT_ALL>;
- 	interrupt-map =
--		<0x4800 0 0 1 &pci_intc 0>, /* Slot 9 */
--		<0x4800 0 0 2 &pci_intc 1>,
--		<0x4800 0 0 3 &pci_intc 2>,
--		<0x4800 0 0 4 &pci_intc 3>,
--		<0x5000 0 0 1 &pci_intc 1>, /* Slot 10 */
--		<0x5000 0 0 2 &pci_intc 2>,
--		<0x5000 0 0 3 &pci_intc 3>,
--		<0x5000 0 0 4 &pci_intc 0>,
--		<0x5800 0 0 1 &pci_intc 2>, /* Slot 11 */
--		<0x5800 0 0 2 &pci_intc 3>,
--		<0x5800 0 0 3 &pci_intc 0>,
--		<0x5800 0 0 4 &pci_intc 1>,
--		<0x6000 0 0 1 &pci_intc 3>, /* Slot 12 */
--		<0x6000 0 0 2 &pci_intc 0>,
--		<0x6000 0 0 3 &pci_intc 0>,
--		<0x6000 0 0 4 &pci_intc 0>;
-+		<0x4800 0 0 IRQ_INTA &pci_intc 0>, /* Slot 9 */
-+		<0x4800 0 0 IRQ_INTB &pci_intc 1>,
-+		<0x4800 0 0 IRQ_INTC &pci_intc 2>,
-+		<0x4800 0 0 IRQ_INTD &pci_intc 3>,
-+		<0x5000 0 0 IRQ_INTA &pci_intc 1>, /* Slot 10 */
-+		<0x5000 0 0 IRQ_INTB &pci_intc 2>,
-+		<0x5000 0 0 IRQ_INTC &pci_intc 3>,
-+		<0x5000 0 0 IRQ_INTD &pci_intc 0>,
-+		<0x5800 0 0 IRQ_INTA &pci_intc 2>, /* Slot 11 */
-+		<0x5800 0 0 IRQ_INTB &pci_intc 3>,
-+		<0x5800 0 0 IRQ_INTC &pci_intc 0>,
-+		<0x5800 0 0 IRQ_INTD &pci_intc 1>,
-+		<0x6000 0 0 IRQ_INTA &pci_intc 3>, /* Slot 12 */
-+		<0x6000 0 0 IRQ_INTB &pci_intc 0>,
-+		<0x6000 0 0 IRQ_INTC &pci_intc 0>,
-+		<0x6000 0 0 IRQ_INTD &pci_intc 0>;
- 	pci_intc: interrupt-controller {
- 		interrupt-parent = <&intcon>;
- 		interrupt-controller;
-diff --git a/Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.txt b/Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.txt
-index de4b2baf91e8..dc331885124a 100644
---- a/Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.txt
-@@ -77,11 +77,11 @@ Example:
- 		interrupts = <GIC_SPI 120 IRQ_TYPE_LEVEL_HIGH>;
- 		interrupt-names = "msi";
- 		#interrupt-cells = <1>;
--		interrupt-map-mask = <0 0 0 0x7>;
--		interrupt-map = <0 0 0 1 &intc GIC_SPI 123 IRQ_TYPE_LEVEL_HIGH>,
--		                <0 0 0 2 &intc GIC_SPI 122 IRQ_TYPE_LEVEL_HIGH>,
--		                <0 0 0 3 &intc GIC_SPI 121 IRQ_TYPE_LEVEL_HIGH>,
--		                <0 0 0 4 &intc GIC_SPI 120 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0 0 0 IRQ_INTA &intc GIC_SPI 123 IRQ_TYPE_LEVEL_HIGH>,
-+		                <0 0 0 IRQ_INTB &intc GIC_SPI 122 IRQ_TYPE_LEVEL_HIGH>,
-+		                <0 0 0 IRQ_INTC &intc GIC_SPI 121 IRQ_TYPE_LEVEL_HIGH>,
-+		                <0 0 0 IRQ_INTD &intc GIC_SPI 120 IRQ_TYPE_LEVEL_HIGH>;
- 		clocks = <&clks 144>, <&clks 206>, <&clks 189>;
- 		clock-names = "pcie", "pcie_bus", "pcie_phy";
- 	};
-diff --git a/Documentation/devicetree/bindings/pci/hisilicon-pcie.txt b/Documentation/devicetree/bindings/pci/hisilicon-pcie.txt
-index 0dcb87d6554f..3e809c7d9b07 100644
---- a/Documentation/devicetree/bindings/pci/hisilicon-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/hisilicon-pcie.txt
-@@ -35,11 +35,11 @@ Hip05 Example (note that Hip06 is the same except compatible):
- 		num-lanes = <8>;
- 		port-id = <1>;
- 		#interrupt-cells = <1>;
--		interrupt-map-mask = <0xf800 0 0 7>;
--		interrupt-map = <0x0 0 0 1 &mbigen_pcie 1 10
--				 0x0 0 0 2 &mbigen_pcie 2 11
--				 0x0 0 0 3 &mbigen_pcie 3 12
--				 0x0 0 0 4 &mbigen_pcie 4 13>;
-+		interrupt-map-mask = <0xf800 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0x0 0 0 IRQ_INTA &mbigen_pcie 1 10
-+				 0x0 0 0 IRQ_INTB &mbigen_pcie 2 11
-+				 0x0 0 0 IRQ_INTC &mbigen_pcie 3 12
-+				 0x0 0 0 IRQ_INTD &mbigen_pcie 4 13>;
- 	};
- 
- HiSilicon Hip06/Hip07 PCIe host bridge DT (almost-ECAM) description.
-@@ -77,9 +77,9 @@ Example:
- 		ranges = <0x02000000 0 0xb2000000 0x0 0xb2000000 0 0x5ff0000
- 			  0x01000000 0 0 0 0xb7ff0000 0 0x10000>;
- 		#interrupt-cells = <1>;
--		interrupt-map-mask = <0xf800 0 0 7>;
--		interrupt-map = <0x0 0 0 1 &mbigen_pcie0 650 4
--				 0x0 0 0 2 &mbigen_pcie0 650 4
--				 0x0 0 0 3 &mbigen_pcie0 650 4
--				 0x0 0 0 4 &mbigen_pcie0 650 4>;
-+		interrupt-map-mask = <0xf800 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0x0 0 0 IRQ_INTA &mbigen_pcie0 650 4
-+				 0x0 0 0 IRQ_INTB &mbigen_pcie0 650 4
-+				 0x0 0 0 IRQ_INTC &mbigen_pcie0 650 4
-+				 0x0 0 0 IRQ_INTD &mbigen_pcie0 650 4>;
- 	};
-diff --git a/Documentation/devicetree/bindings/pci/host-generic-pci.txt b/Documentation/devicetree/bindings/pci/host-generic-pci.txt
-index 614b594f4e72..51a56ad3f1a9 100644
---- a/Documentation/devicetree/bindings/pci/host-generic-pci.txt
-+++ b/Documentation/devicetree/bindings/pci/host-generic-pci.txt
-@@ -91,11 +91,11 @@ pci {
-     #interrupt-cells = <0x1>;
- 
-     // PCI_DEVICE(3)  INT#(1)  CONTROLLER(PHANDLE)  CONTROLLER_DATA(3)
--    interrupt-map = <  0x0 0x0 0x0  0x1  &gic  0x0 0x4 0x1
--                     0x800 0x0 0x0  0x1  &gic  0x0 0x5 0x1
--                    0x1000 0x0 0x0  0x1  &gic  0x0 0x6 0x1
--                    0x1800 0x0 0x0  0x1  &gic  0x0 0x7 0x1>;
-+    interrupt-map = <  0x0 0x0 0x0 IRQ_INTA  &gic  0x0 0x4 0x1
-+                     0x800 0x0 0x0 IRQ_INTA  &gic  0x0 0x5 0x1
-+                    0x1000 0x0 0x0 IRQ_INTA  &gic  0x0 0x6 0x1
-+                    0x1800 0x0 0x0 IRQ_INTA  &gic  0x0 0x7 0x1>;
- 
-     // PCI_DEVICE(3)  INT#(1)
--    interrupt-map-mask = <0xf800 0x0 0x0  0x7>;
-+    interrupt-map-mask = <0xf800 0x0 0x0 IRQ_MAP_ALL>;
- }
-diff --git a/Documentation/devicetree/bindings/pci/kirin-pcie.txt b/Documentation/devicetree/bindings/pci/kirin-pcie.txt
-index 6bbe43818ad5..7da640d6578e 100644
---- a/Documentation/devicetree/bindings/pci/kirin-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/kirin-pcie.txt
-@@ -34,11 +34,11 @@ Example based on kirin960:
- 		ranges = <0x02000000 0x0 0x00000000 0x0 0xf5000000 0x0 0x2000000>;
- 		num-lanes = <1>;
- 		#interrupt-cells = <1>;
--		interrupt-map-mask = <0xf800 0 0 7>;
--		interrupt-map = <0x0 0 0 1 &gic 0 0 0  282 4>,
--				<0x0 0 0 2 &gic 0 0 0  283 4>,
--				<0x0 0 0 3 &gic 0 0 0  284 4>,
--				<0x0 0 0 4 &gic 0 0 0  285 4>;
-+		interrupt-map-mask = <0xf800 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0x0 0 0 IRQ_INTA &gic 0 0 0  282 4>,
-+				<0x0 0 0 IRQ_INTB &gic 0 0 0  283 4>,
-+				<0x0 0 0 IRQ_INTC &gic 0 0 0  284 4>,
-+				<0x0 0 0 IRQ_INTD &gic 0 0 0  285 4>;
- 		clocks = <&crg_ctrl HI3660_PCIEPHY_REF>,
- 			 <&crg_ctrl HI3660_CLK_GATE_PCIEAUX>,
- 			 <&crg_ctrl HI3660_PCLK_GATE_PCIE_PHY>,
-diff --git a/Documentation/devicetree/bindings/pci/layerscape-pci.txt b/Documentation/devicetree/bindings/pci/layerscape-pci.txt
-index e20ceaab9b38..1016e9f8982a 100644
---- a/Documentation/devicetree/bindings/pci/layerscape-pci.txt
-+++ b/Documentation/devicetree/bindings/pci/layerscape-pci.txt
-@@ -56,9 +56,9 @@ Example:
- 			  0xc2000000 0x0 0x20000000 0x40 0x20000000 0x0 0x20000000   /* prefetchable memory */
- 			  0x82000000 0x0 0x40000000 0x40 0x40000000 0x0 0x40000000>; /* non-prefetchable memory */
- 		#interrupt-cells = <1>;
--		interrupt-map-mask = <0 0 0 7>;
--		interrupt-map = <0000 0 0 1 &gic GIC_SPI 91  IRQ_TYPE_LEVEL_HIGH>,
--				<0000 0 0 2 &gic GIC_SPI 188 IRQ_TYPE_LEVEL_HIGH>,
--				<0000 0 0 3 &gic GIC_SPI 190 IRQ_TYPE_LEVEL_HIGH>,
--				<0000 0 0 4 &gic GIC_SPI 192 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0000 0 0 IRQ_INTA &gic GIC_SPI 91  IRQ_TYPE_LEVEL_HIGH>,
-+				<0000 0 0 IRQ_INTB &gic GIC_SPI 188 IRQ_TYPE_LEVEL_HIGH>,
-+				<0000 0 0 IRQ_INTC &gic GIC_SPI 190 IRQ_TYPE_LEVEL_HIGH>,
-+				<0000 0 0 IRQ_INTD &gic GIC_SPI 192 IRQ_TYPE_LEVEL_HIGH>;
- 	};
-diff --git a/Documentation/devicetree/bindings/pci/mediatek-pcie.txt b/Documentation/devicetree/bindings/pci/mediatek-pcie.txt
-index 7468d666763a..00728cdad957 100644
---- a/Documentation/devicetree/bindings/pci/mediatek-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/mediatek-pcie.txt
-@@ -169,11 +169,11 @@ Examples for MT2712:
- 			#size-cells = <2>;
- 			#interrupt-cells = <1>;
- 			ranges;
--			interrupt-map-mask = <0 0 0 7>;
--			interrupt-map = <0 0 0 1 &pcie_intc0 0>,
--					<0 0 0 2 &pcie_intc0 1>,
--					<0 0 0 3 &pcie_intc0 2>,
--					<0 0 0 4 &pcie_intc0 3>;
-+			interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+			interrupt-map = <0 0 0 IRQ_INTA &pcie_intc0 0>,
-+					<0 0 0 IRQ_INTB &pcie_intc0 1>,
-+					<0 0 0 IRQ_INTC &pcie_intc0 2>,
-+					<0 0 0 IRQ_INTD &pcie_intc0 3>;
- 			pcie_intc0: interrupt-controller {
- 				interrupt-controller;
- 				#address-cells = <0>;
-@@ -187,11 +187,11 @@ Examples for MT2712:
- 			#size-cells = <2>;
- 			#interrupt-cells = <1>;
- 			ranges;
--			interrupt-map-mask = <0 0 0 7>;
--			interrupt-map = <0 0 0 1 &pcie_intc1 0>,
--					<0 0 0 2 &pcie_intc1 1>,
--					<0 0 0 3 &pcie_intc1 2>,
--					<0 0 0 4 &pcie_intc1 3>;
-+			interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+			interrupt-map = <0 0 0 IRQ_INTA &pcie_intc1 0>,
-+					<0 0 0 IRQ_INTB &pcie_intc1 1>,
-+					<0 0 0 IRQ_INTC &pcie_intc1 2>,
-+					<0 0 0 IRQ_INTD &pcie_intc1 3>;
- 			pcie_intc1: interrupt-controller {
- 				interrupt-controller;
- 				#address-cells = <0>;
-@@ -240,11 +240,11 @@ Examples for MT7622:
- 			#size-cells = <2>;
- 			#interrupt-cells = <1>;
- 			ranges;
--			interrupt-map-mask = <0 0 0 7>;
--			interrupt-map = <0 0 0 1 &pcie_intc0 0>,
--					<0 0 0 2 &pcie_intc0 1>,
--					<0 0 0 3 &pcie_intc0 2>,
--					<0 0 0 4 &pcie_intc0 3>;
-+			interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+			interrupt-map = <0 0 0 IRQ_INTA &pcie_intc0 0>,
-+					<0 0 0 IRQ_INTB &pcie_intc0 1>,
-+					<0 0 0 IRQ_INTC &pcie_intc0 2>,
-+					<0 0 0 IRQ_INTD &pcie_intc0 3>;
- 			pcie_intc0: interrupt-controller {
- 				interrupt-controller;
- 				#address-cells = <0>;
-@@ -258,11 +258,11 @@ Examples for MT7622:
- 			#size-cells = <2>;
- 			#interrupt-cells = <1>;
- 			ranges;
--			interrupt-map-mask = <0 0 0 7>;
--			interrupt-map = <0 0 0 1 &pcie_intc1 0>,
--					<0 0 0 2 &pcie_intc1 1>,
--					<0 0 0 3 &pcie_intc1 2>,
--					<0 0 0 4 &pcie_intc1 3>;
-+			interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+			interrupt-map = <0 0 0 IRQ_INTA &pcie_intc1 0>,
-+					<0 0 0 IRQ_INTB &pcie_intc1 1>,
-+					<0 0 0 IRQ_INTC &pcie_intc1 2>,
-+					<0 0 0 IRQ_INTD &pcie_intc1 3>;
- 			pcie_intc1: interrupt-controller {
- 				interrupt-controller;
- 				#address-cells = <0>;
-diff --git a/Documentation/devicetree/bindings/pci/mobiveil-pcie.txt b/Documentation/devicetree/bindings/pci/mobiveil-pcie.txt
-index 64156993e052..03070b3bfda1 100644
---- a/Documentation/devicetree/bindings/pci/mobiveil-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/mobiveil-pcie.txt
-@@ -62,11 +62,11 @@ Example:
- 		interrupt-parent = <&gic>;
- 		#interrupt-cells = <1>;
- 		interrupts = < 0 89 4 >;
--		interrupt-map-mask = <0 0 0 7>;
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
- 		interrupt-map = <0 0 0 0 &pci_express 0>,
--				<0 0 0 1 &pci_express 1>,
--				<0 0 0 2 &pci_express 2>,
--				<0 0 0 3 &pci_express 3>;
-+				<0 0 0 IRQ_INTA &pci_express 1>,
-+				<0 0 0 IRQ_INTB &pci_express 2>,
-+				<0 0 0 IRQ_INTC &pci_express 3>;
- 		ranges = < 0x83000000 0 0x00000000 0xa8000000 0 0x8000000>;
- 
- 	};
-diff --git a/Documentation/devicetree/bindings/pci/pci-rcar-gen2.txt b/Documentation/devicetree/bindings/pci/pci-rcar-gen2.txt
-index b94078f58d8e..7c6a19e0b131 100644
---- a/Documentation/devicetree/bindings/pci/pci-rcar-gen2.txt
-+++ b/Documentation/devicetree/bindings/pci/pci-rcar-gen2.txt
-@@ -56,10 +56,10 @@ Example SoC configuration:
- 		#size-cells = <2>;
- 		#interrupt-cells = <1>;
- 		dma-ranges = <0x42000000 0 0x40000000 0 0x40000000 0 0x40000000>;
--		interrupt-map-mask = <0xff00 0 0 0x7>;
--		interrupt-map = <0x0000 0 0 1 &gic 0 108 IRQ_TYPE_LEVEL_HIGH
--				 0x0800 0 0 1 &gic 0 108 IRQ_TYPE_LEVEL_HIGH
--				 0x1000 0 0 2 &gic 0 108 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-map-mask = <0xff00 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0x0000 0 0 IRQ_INTA &gic 0 108 IRQ_TYPE_LEVEL_HIGH
-+				 0x0800 0 0 IRQ_INTA &gic 0 108 IRQ_TYPE_LEVEL_HIGH
-+				 0x1000 0 0 IRQ_INTB &gic 0 108 IRQ_TYPE_LEVEL_HIGH>;
- 
- 		usb@1,0 {
- 			reg = <0x800 0 0 0 0>;
-diff --git a/Documentation/devicetree/bindings/pci/pci-thunder-pem.txt b/Documentation/devicetree/bindings/pci/pci-thunder-pem.txt
-index f131faea3b7c..edfaedfe8c8c 100644
---- a/Documentation/devicetree/bindings/pci/pci-thunder-pem.txt
-+++ b/Documentation/devicetree/bindings/pci/pci-thunder-pem.txt
-@@ -35,9 +35,9 @@ Example:
- 		 <0x03000000 0x87e0 0xc2f00000 0x87e0 0xc2000000 0x00 0x00100000>; /* mem64 PEM BAR4 */
- 
- 	#interrupt-cells = <1>;
--	interrupt-map-mask = <0 0 0 7>;
--	interrupt-map = <0 0 0 1 &gic0 0 0 0 24 4>, /* INTA */
--			<0 0 0 2 &gic0 0 0 0 25 4>, /* INTB */
--			<0 0 0 3 &gic0 0 0 0 26 4>, /* INTC */
--			<0 0 0 4 &gic0 0 0 0 27 4>; /* INTD */
-+	interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+	interrupt-map = <0 0 0 IRQ_INTA &gic0 0 0 0 24 4>,
-+			<0 0 0 IRQ_INTB &gic0 0 0 0 25 4>,
-+			<0 0 0 IRQ_INTC &gic0 0 0 0 26 4>,
-+			<0 0 0 IRQ_INTD &gic0 0 0 0 27 4>;
-     };
-diff --git a/Documentation/devicetree/bindings/pci/pcie-al.txt b/Documentation/devicetree/bindings/pci/pcie-al.txt
-index 557a5089229d..8bb3d935d3fa 100644
---- a/Documentation/devicetree/bindings/pci/pcie-al.txt
-+++ b/Documentation/devicetree/bindings/pci/pcie-al.txt
-@@ -40,7 +40,7 @@ Example:
- 		#size-cells = <2>;
- 		#interrupt-cells = <1>;
- 		interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
--		interrupt-map-mask = <0x00 0 0 7>;
--		interrupt-map = <0x0000 0 0 1 &gic GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>; /* INTa */
-+		interrupt-map-mask = <0x00 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0x0000 0 0 IRQ_INTA &gic GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>;
- 		ranges = <0x02000000 0x0 0xc0010000 0x0 0xc0010000 0x0 0x07ff0000>;
- 	};
-diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.txt b/Documentation/devicetree/bindings/pci/qcom,pcie.txt
-index ada80b01bf0c..898599eed2e5 100644
---- a/Documentation/devicetree/bindings/pci/qcom,pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/qcom,pcie.txt
-@@ -251,11 +251,11 @@
- 		interrupts = <GIC_SPI 238 IRQ_TYPE_NONE>;
- 		interrupt-names = "msi";
- 		#interrupt-cells = <1>;
--		interrupt-map-mask = <0 0 0 0x7>;
--		interrupt-map = <0 0 0 1 &intc 0 36 IRQ_TYPE_LEVEL_HIGH>, /* int_a */
--				<0 0 0 2 &intc 0 37 IRQ_TYPE_LEVEL_HIGH>, /* int_b */
--				<0 0 0 3 &intc 0 38 IRQ_TYPE_LEVEL_HIGH>, /* int_c */
--				<0 0 0 4 &intc 0 39 IRQ_TYPE_LEVEL_HIGH>; /* int_d */
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0 0 0 IRQ_INTA &intc 0 36 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 0 IRQ_INTB &intc 0 37 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 0 IRQ_INTC &intc 0 38 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 0 IRQ_INTD &intc 0 39 IRQ_TYPE_LEVEL_HIGH>;
- 		clocks = <&gcc PCIE_A_CLK>,
- 			 <&gcc PCIE_H_CLK>,
- 			 <&gcc PCIE_PHY_CLK>;
-@@ -289,11 +289,11 @@
- 		interrupts = <GIC_SPI 243 IRQ_TYPE_NONE>;
- 		interrupt-names = "msi";
- 		#interrupt-cells = <1>;
--		interrupt-map-mask = <0 0 0 0x7>;
--		interrupt-map = <0 0 0 1 &intc 0 244 IRQ_TYPE_LEVEL_HIGH>, /* int_a */
--				<0 0 0 2 &intc 0 245 IRQ_TYPE_LEVEL_HIGH>, /* int_b */
--				<0 0 0 3 &intc 0 247 IRQ_TYPE_LEVEL_HIGH>, /* int_c */
--				<0 0 0 4 &intc 0 248 IRQ_TYPE_LEVEL_HIGH>; /* int_d */
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0 0 0 IRQ_INTA &intc 0 244 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 0 IRQ_INTB &intc 0 245 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 0 IRQ_INTC &intc 0 247 IRQ_TYPE_LEVEL_HIGH>,
-+				<0 0 0 IRQ_INTD &intc 0 248 IRQ_TYPE_LEVEL_HIGH>;
- 		clocks = <&gcc GCC_PCIE_0_CFG_AHB_CLK>,
- 			 <&gcc GCC_PCIE_0_MSTR_AXI_CLK>,
- 			 <&gcc GCC_PCIE_0_SLV_AXI_CLK>,
-diff --git a/Documentation/devicetree/bindings/pci/ralink,rt3883-pci.txt b/Documentation/devicetree/bindings/pci/ralink,rt3883-pci.txt
-index ffba4f63d71f..09a4a28fb472 100644
---- a/Documentation/devicetree/bindings/pci/ralink,rt3883-pci.txt
-+++ b/Documentation/devicetree/bindings/pci/ralink,rt3883-pci.txt
-@@ -131,18 +131,18 @@
- 				0x01000000 0 0x00000000 0x10160000 0 0x00010000 /* io space */
- 			>;
- 
--			interrupt-map-mask = <0xf800 0 0 7>;
-+			interrupt-map-mask = <0xf800 0 0 IRQ_INT_ALL>;
- 			interrupt-map = <
- 				/* IDSEL 17 */
--				0x8800 0 0 1 &pciintc 18
--				0x8800 0 0 2 &pciintc 18
--				0x8800 0 0 3 &pciintc 18
--				0x8800 0 0 4 &pciintc 18
-+				0x8800 0 0 IRQ_INTA &pciintc 18
-+				0x8800 0 0 IRQ_INTB &pciintc 18
-+				0x8800 0 0 IRQ_INTC &pciintc 18
-+				0x8800 0 0 IRQ_INTD &pciintc 18
- 				/* IDSEL 18 */
--				0x9000 0 0 1 &pciintc 19
--				0x9000 0 0 2 &pciintc 19
--				0x9000 0 0 3 &pciintc 19
--				0x9000 0 0 4 &pciintc 19
-+				0x9000 0 0 IRQ_INTA &pciintc 19
-+				0x9000 0 0 IRQ_INTB &pciintc 19
-+				0x9000 0 0 IRQ_INTC &pciintc 19
-+				0x9000 0 0 IRQ_INTD &pciintc 19
- 			>;
- 
- 			pci-bridge@1 {
-diff --git a/Documentation/devicetree/bindings/pci/rockchip-pcie-host.txt b/Documentation/devicetree/bindings/pci/rockchip-pcie-host.txt
-index af34c65773fd..4538d18b4c3c 100644
---- a/Documentation/devicetree/bindings/pci/rockchip-pcie-host.txt
-+++ b/Documentation/devicetree/bindings/pci/rockchip-pcie-host.txt
-@@ -112,11 +112,11 @@ pcie0: pcie@f8000000 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pcie_clkreq>;
- 	#interrupt-cells = <1>;
--	interrupt-map-mask = <0 0 0 7>;
--	interrupt-map = <0 0 0 1 &pcie0_intc 0>,
--			<0 0 0 2 &pcie0_intc 1>,
--			<0 0 0 3 &pcie0_intc 2>,
--			<0 0 0 4 &pcie0_intc 3>;
-+	interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+	interrupt-map = <0 0 0 IRQ_INTA &pcie0_intc 0>,
-+			<0 0 0 IRQ_INTB &pcie0_intc 1>,
-+			<0 0 0 IRQ_INTC &pcie0_intc 2>,
-+			<0 0 0 IRQ_INTD &pcie0_intc 3>;
- 	pcie0_intc: interrupt-controller {
- 		interrupt-controller;
- 		#address-cells = <0>;
-diff --git a/Documentation/devicetree/bindings/pci/ti-pci.txt b/Documentation/devicetree/bindings/pci/ti-pci.txt
-index d5cbfe6b0d89..795b09755977 100644
---- a/Documentation/devicetree/bindings/pci/ti-pci.txt
-+++ b/Documentation/devicetree/bindings/pci/ti-pci.txt
-@@ -88,11 +88,11 @@ axi {
- 		ti,hwmods = "pcie1";
- 		phys = <&pcie1_phy>;
- 		phy-names = "pcie-phy0";
--		interrupt-map-mask = <0 0 0 7>;
--		interrupt-map = <0 0 0 1 &pcie_intc 1>,
--				<0 0 0 2 &pcie_intc 2>,
--				<0 0 0 3 &pcie_intc 3>,
--				<0 0 0 4 &pcie_intc 4>;
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0 0 0 IRQ_INTA &pcie_intc 1>,
-+				<0 0 0 IRQ_INTB &pcie_intc 2>,
-+				<0 0 0 IRQ_INTC &pcie_intc 3>,
-+				<0 0 0 IRQ_INTD &pcie_intc 4>;
- 		pcie_intc: interrupt-controller {
- 			interrupt-controller;
- 			#address-cells = <0>;
-diff --git a/Documentation/devicetree/bindings/pci/uniphier-pcie.txt b/Documentation/devicetree/bindings/pci/uniphier-pcie.txt
-index 1fa2c5906d4d..b5416798a638 100644
---- a/Documentation/devicetree/bindings/pci/uniphier-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/uniphier-pcie.txt
-@@ -66,11 +66,11 @@ Example:
- 		#interrupt-cells = <1>;
- 		interrupt-names = "dma", "msi";
- 		interrupts = <0 224 4>, <0 225 4>;
--		interrupt-map-mask = <0 0 0  7>;
--		interrupt-map = <0 0 0  1  &pcie_intc 0>,	/* INTA */
--				<0 0 0  2  &pcie_intc 1>,	/* INTB */
--				<0 0 0  3  &pcie_intc 2>,	/* INTC */
--				<0 0 0  4  &pcie_intc 3>;	/* INTD */
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0 0 0  IRQ_INTA  &pcie_intc 0>,
-+				<0 0 0  IRQ_INTB  &pcie_intc 1>,
-+				<0 0 0  IRQ_INTC  &pcie_intc 2>,
-+				<0 0 0  IRQ_INTD  &pcie_intc 3>;
- 
- 		pcie_intc: legacy-interrupt-controller {
- 			interrupt-controller;
-diff --git a/Documentation/devicetree/bindings/pci/v3-v360epc-pci.txt b/Documentation/devicetree/bindings/pci/v3-v360epc-pci.txt
-index 11063293f761..bfa37aa4933d 100644
---- a/Documentation/devicetree/bindings/pci/v3-v360epc-pci.txt
-+++ b/Documentation/devicetree/bindings/pci/v3-v360epc-pci.txt
-@@ -50,27 +50,27 @@ pci: pciv3@62000000 {
- 		0x20000000 0 0x20000000 /* 512 MB @ LB 20000000 1:1 */
- 		0x02000000 0 0x80000000 /* Core module alias memory */
- 		0x80000000 0 0x40000000>; /* 1GB @ LB 80000000 */
--	interrupt-map-mask = <0xf800 0 0 0x7>;
-+	interrupt-map-mask = <0xf800 0 0 IRQ_INT_ALL>;
- 	interrupt-map = <
- 	/* IDSEL 9 */
--	0x4800 0 0 1 &pic 13 /* INT A on slot 9 is irq 13 */
--	0x4800 0 0 2 &pic 14 /* INT B on slot 9 is irq 14 */
--	0x4800 0 0 3 &pic 15 /* INT C on slot 9 is irq 15 */
--	0x4800 0 0 4 &pic 16 /* INT D on slot 9 is irq 16 */
-+	0x4800 0 0 IRQ_INTA &pic 13 /* INT A on slot 9 is irq 13 */
-+	0x4800 0 0 IRQ_INTB &pic 14 /* INT B on slot 9 is irq 14 */
-+	0x4800 0 0 IRQ_INTC &pic 15 /* INT C on slot 9 is irq 15 */
-+	0x4800 0 0 IRQ_INTD &pic 16 /* INT D on slot 9 is irq 16 */
- 	/* IDSEL 10 */
--	0x5000 0 0 1 &pic 14 /* INT A on slot 10 is irq 14 */
--	0x5000 0 0 2 &pic 15 /* INT B on slot 10 is irq 15 */
--	0x5000 0 0 3 &pic 16 /* INT C on slot 10 is irq 16 */
--	0x5000 0 0 4 &pic 13 /* INT D on slot 10 is irq 13 */
-+	0x5000 0 0 IRQ_INTA &pic 14 /* INT A on slot 10 is irq 14 */
-+	0x5000 0 0 IRQ_INTB &pic 15 /* INT B on slot 10 is irq 15 */
-+	0x5000 0 0 IRQ_INTC &pic 16 /* INT C on slot 10 is irq 16 */
-+	0x5000 0 0 IRQ_INTD &pic 13 /* INT D on slot 10 is irq 13 */
- 	/* IDSEL 11 */
--	0x5800 0 0 1 &pic 15 /* INT A on slot 11 is irq 15 */
--	0x5800 0 0 2 &pic 16 /* INT B on slot 11 is irq 16 */
--	0x5800 0 0 3 &pic 13 /* INT C on slot 11 is irq 13 */
--	0x5800 0 0 4 &pic 14 /* INT D on slot 11 is irq 14 */
-+	0x5800 0 0 IRQ_INTA &pic 15 /* INT A on slot 11 is irq 15 */
-+	0x5800 0 0 IRQ_INTB &pic 16 /* INT B on slot 11 is irq 16 */
-+	0x5800 0 0 IRQ_INTC &pic 13 /* INT C on slot 11 is irq 13 */
-+	0x5800 0 0 IRQ_INTD &pic 14 /* INT D on slot 11 is irq 14 */
- 	/* IDSEL 12 */
--	0x6000 0 0 1 &pic 16 /* INT A on slot 12 is irq 16 */
--	0x6000 0 0 2 &pic 13 /* INT B on slot 12 is irq 13 */
--	0x6000 0 0 3 &pic 14 /* INT C on slot 12 is irq 14 */
--	0x6000 0 0 4 &pic 15 /* INT D on slot 12 is irq 15 */
-+	0x6000 0 0 IRQ_INTA &pic 16 /* INT A on slot 12 is irq 16 */
-+	0x6000 0 0 IRQ_INTB &pic 13 /* INT B on slot 12 is irq 13 */
-+	0x6000 0 0 IRQ_INTC &pic 14 /* INT C on slot 12 is irq 14 */
-+	0x6000 0 0 IRQ_INTD &pic 15 /* INT D on slot 12 is irq 15 */
- 	>;
- };
-diff --git a/Documentation/devicetree/bindings/pci/versatile.txt b/Documentation/devicetree/bindings/pci/versatile.txt
-index 0a702b13d2ac..a02c7b9683ac 100644
---- a/Documentation/devicetree/bindings/pci/versatile.txt
-+++ b/Documentation/devicetree/bindings/pci/versatile.txt
-@@ -36,24 +36,24 @@ pci-controller@10001000 {
- 		  0x02000000 0 0x50000000 0x50000000 0 0x10000000   /* non-prefetchable memory */
- 		  0x42000000 0 0x60000000 0x60000000 0 0x10000000>; /* prefetchable memory */
- 
--	interrupt-map-mask = <0x1800 0 0 7>;
--	interrupt-map = <0x1800 0 0 1 &sic 28
--			 0x1800 0 0 2 &sic 29
--			 0x1800 0 0 3 &sic 30
--			 0x1800 0 0 4 &sic 27
--
--			 0x1000 0 0 1 &sic 27
--			 0x1000 0 0 2 &sic 28
--			 0x1000 0 0 3 &sic 29
--			 0x1000 0 0 4 &sic 30
--
--			 0x0800 0 0 1 &sic 30
--			 0x0800 0 0 2 &sic 27
--			 0x0800 0 0 3 &sic 28
--			 0x0800 0 0 4 &sic 29
--
--			 0x0000 0 0 1 &sic 29
--			 0x0000 0 0 2 &sic 30
--			 0x0000 0 0 3 &sic 27
--			 0x0000 0 0 4 &sic 28>;
-+	interrupt-map-mask = <0x1800 0 0 IRQ_INT_ALL>;
-+	interrupt-map = <0x1800 0 0 IRQ_INTA &sic 28
-+			 0x1800 0 0 IRQ_INTB &sic 29
-+			 0x1800 0 0 IRQ_INTC &sic 30
-+			 0x1800 0 0 IRQ_INTD &sic 27
-+
-+			 0x1000 0 0 IRQ_INTA &sic 27
-+			 0x1000 0 0 IRQ_INTB &sic 28
-+			 0x1000 0 0 IRQ_INTC &sic 29
-+			 0x1000 0 0 IRQ_INTD &sic 30
-+
-+			 0x0800 0 0 IRQ_INTA &sic 30
-+			 0x0800 0 0 IRQ_INTB &sic 27
-+			 0x0800 0 0 IRQ_INTC &sic 28
-+			 0x0800 0 0 IRQ_INTD &sic 29
-+
-+			 0x0000 0 0 IRQ_INTA &sic 29
-+			 0x0000 0 0 IRQ_INTB &sic 30
-+			 0x0000 0 0 IRQ_INTC &sic 27
-+			 0x0000 0 0 IRQ_INTD &sic 28>;
- };
-diff --git a/Documentation/devicetree/bindings/pci/xgene-pci-msi.txt b/Documentation/devicetree/bindings/pci/xgene-pci-msi.txt
-index 85d9b95234f7..0e84e6621b4a 100644
---- a/Documentation/devicetree/bindings/pci/xgene-pci-msi.txt
-+++ b/Documentation/devicetree/bindings/pci/xgene-pci-msi.txt
-@@ -57,11 +57,11 @@ SoC DTSI:
- 			  0x02000000 0x00 0x80000000 0xe1 0x80000000 0x00 0x80000000>; /* mem */
- 		dma-ranges = <0x42000000 0x80 0x00000000 0x80 0x00000000 0x00 0x80000000
- 			      0x42000000 0x00 0x00000000 0x00 0x00000000 0x80 0x00000000>;
--		interrupt-map-mask = <0x0 0x0 0x0 0x7>;
--		interrupt-map = <0x0 0x0 0x0 0x1 &gic 0x0 0xc2 0x1
--				 0x0 0x0 0x0 0x2 &gic 0x0 0xc3 0x1
--				 0x0 0x0 0x0 0x3 &gic 0x0 0xc4 0x1
--				 0x0 0x0 0x0 0x4 &gic 0x0 0xc5 0x1>;
-+		interrupt-map-mask = <0x0 0x0 0x0 IRQ_INT_ALL>;
-+		interrupt-map = <0x0 0x0 0x0 IRQ_INTA &gic 0x0 0xc2 0x1
-+				 0x0 0x0 0x0 IRQ_INTB &gic 0x0 0xc3 0x1
-+				 0x0 0x0 0x0 IRQ_INTC &gic 0x0 0xc4 0x1
-+				 0x0 0x0 0x0 IRQ_INTD &gic 0x0 0xc5 0x1>;
- 		dma-coherent;
- 		clocks = <&pcie0clk 0>;
- 		msi-parent= <&msi>;
-diff --git a/Documentation/devicetree/bindings/pci/xgene-pci.txt b/Documentation/devicetree/bindings/pci/xgene-pci.txt
-index 92490330dc1c..0f0e3eb64101 100644
---- a/Documentation/devicetree/bindings/pci/xgene-pci.txt
-+++ b/Documentation/devicetree/bindings/pci/xgene-pci.txt
-@@ -39,11 +39,11 @@ Example:
- 			  0x02000000 0x00 0x80000000 0xe1 0x80000000 0x00 0x80000000>; /* mem */
- 		dma-ranges = <0x42000000 0x80 0x00000000 0x80 0x00000000 0x00 0x80000000
- 			      0x42000000 0x00 0x00000000 0x00 0x00000000 0x80 0x00000000>;
--		interrupt-map-mask = <0x0 0x0 0x0 0x7>;
--		interrupt-map = <0x0 0x0 0x0 0x1 &gic 0x0 0xc2 0x1
--				 0x0 0x0 0x0 0x2 &gic 0x0 0xc3 0x1
--				 0x0 0x0 0x0 0x3 &gic 0x0 0xc4 0x1
--				 0x0 0x0 0x0 0x4 &gic 0x0 0xc5 0x1>;
-+		interrupt-map-mask = <0x0 0x0 0x0 IRQ_INT_ALL>;
-+		interrupt-map = <0x0 0x0 0x0 IRQ_INTA &gic 0x0 0xc2 0x1
-+				 0x0 0x0 0x0 IRQ_INTB &gic 0x0 0xc3 0x1
-+				 0x0 0x0 0x0 IRQ_INTC &gic 0x0 0xc4 0x1
-+				 0x0 0x0 0x0 IRQ_INTD &gic 0x0 0xc5 0x1>;
- 		dma-coherent;
- 		clocks = <&pcie0clk 0>;
- 	};
-diff --git a/Documentation/devicetree/bindings/pci/xilinx-nwl-pcie.txt b/Documentation/devicetree/bindings/pci/xilinx-nwl-pcie.txt
-index 01bf7fdf4c19..5964fdf752bc 100644
---- a/Documentation/devicetree/bindings/pci/xilinx-nwl-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/xilinx-nwl-pcie.txt
-@@ -47,11 +47,11 @@ nwl_pcie: pcie@fd0e0000 {
- 	interrupt-parent = <&gic>;
- 	interrupts = <0 114 4>, <0 115 4>, <0 116 4>, <0 117 4>, <0 118 4>;
- 	interrupt-names = "msi0", "msi1", "intx", "dummy", "misc";
--	interrupt-map-mask = <0x0 0x0 0x0 0x7>;
--	interrupt-map = <0x0 0x0 0x0 0x1 &pcie_intc 0x1>,
--			<0x0 0x0 0x0 0x2 &pcie_intc 0x2>,
--			<0x0 0x0 0x0 0x3 &pcie_intc 0x3>,
--			<0x0 0x0 0x0 0x4 &pcie_intc 0x4>;
-+	interrupt-map-mask = <0x0 0x0 0x0 IRQ_INT_ALL>;
-+	interrupt-map = <0x0 0x0 0x0 IRQ_INTA &pcie_intc 0x1>,
-+			<0x0 0x0 0x0 IRQ_INTB &pcie_intc 0x2>,
-+			<0x0 0x0 0x0 IRQ_INTC &pcie_intc 0x3>,
-+			<0x0 0x0 0x0 IRQ_INTD &pcie_intc 0x4>;
- 
- 	msi-parent = <&nwl_pcie>;
- 	reg = <0x0 0xfd0e0000 0x0 0x1000>,
-diff --git a/Documentation/devicetree/bindings/pci/xilinx-pcie.txt b/Documentation/devicetree/bindings/pci/xilinx-pcie.txt
-index fd57a81180a4..82b7d07bda51 100644
---- a/Documentation/devicetree/bindings/pci/xilinx-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/xilinx-pcie.txt
-@@ -47,11 +47,11 @@ Zynq:
- 		reg = < 0x50000000 0x1000000 >;
- 		device_type = "pci";
- 		interrupts = < 0 52 4 >;
--		interrupt-map-mask = <0 0 0 7>;
--		interrupt-map = <0 0 0 1 &pcie_intc 1>,
--				<0 0 0 2 &pcie_intc 2>,
--				<0 0 0 3 &pcie_intc 3>,
--				<0 0 0 4 &pcie_intc 4>;
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0 0 0 IRQ_INTA &pcie_intc 1>,
-+				<0 0 0 IRQ_INTB &pcie_intc 2>,
-+				<0 0 0 IRQ_INTC &pcie_intc 3>,
-+				<0 0 0 IRQ_INTD &pcie_intc 4>;
- 		ranges = < 0x02000000 0 0x60000000 0x60000000 0 0x10000000 >;
- 
- 		pcie_intc: interrupt-controller {
-@@ -72,11 +72,11 @@ Microblaze:
- 		device_type = "pci";
- 		interrupt-parent = <&microblaze_0_intc>;
- 		interrupts = <1 2>;
--		interrupt-map-mask = <0 0 0 7>;
--		interrupt-map = <0 0 0 1 &pcie_intc 1>,
--				<0 0 0 2 &pcie_intc 2>,
--				<0 0 0 3 &pcie_intc 3>,
--				<0 0 0 4 &pcie_intc 4>;
-+		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
-+		interrupt-map = <0 0 0 IRQ_INTA &pcie_intc 1>,
-+				<0 0 0 IRQ_INTB &pcie_intc 2>,
-+				<0 0 0 IRQ_INTC &pcie_intc 3>,
-+				<0 0 0 IRQ_INTD &pcie_intc 4>;
- 		ranges = <0x02000000 0x00000000 0x80000000 0x80000000 0x00000000 0x10000000>;
- 
- 		pcie_intc: interrupt-controller {
--- 
-2.21.0
-
+Sami
 
 _______________________________________________
 linux-arm-kernel mailing list
