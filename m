@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31370EDF33
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 12:54:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74DAAEDF47
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 12:55:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y9axP/ziOGjvHww8P1ftZPE4vBKURIHGDRg/brxoo4g=; b=ej1+HWw6UNxxRG
-	HmE/1Q+W1nTRHuXCz3993pss1txS6koXQ7CDltg2Be92m7CWhcu4WXdPytEV1HUWOf0osgIXAJI7b
-	e8Cj4AZK3ouJY6eiMD5/kutD7lpWhlGJojp6z7cZGNB3FA7j13EpdrAceH5v9p3HT24lMlLn+up0+
-	BTJD9SbBm9JAF2azxmjL3e32eTzMpJIuq1DjoRt0494sqO/x5iiokvDXwdC1diBX/uXcuczelj0qx
-	z+5FHvEpmB/XrBGzFTxzFZw5WtGL7Hi46L3gpHvd2/sDu1hCDfdnRcK1uTHE0LQsXoG8hmWyq0uJu
-	43lTtN9HakaMoBAzyahw==;
+	List-Owner; bh=glVbp4++WqESYgx+nqX4tH56F621k83n9LjH4UgN598=; b=f3fX5EqIdHQLjd
+	HUupsRLcZxezdg6AXWI9EDGehDLMX6P5LYeQJi5et3/FrZgjp/NXZyY1L+YDiyKWHJyPsRNLhNmWb
+	xLKlczaHMe4SjMShFWionO0rwhmANMkuvpWUUGIQfAS4AnCJYrUgv8zFz2k4qf8TKrwKhZya/HiAQ
+	4g5QqHAlPNCFV2EuskroCpXLsSxQidWPHksyy6XiIm3fRLEV/t6ETCki+AFzxIT7kevfUJyCsExqh
+	BzcJDAyTc66L7KqRr3g58n7f72RN8q8QWcyBtErnjT0IsYdOT4UtdXgJxiXStdoIEDGrP6S39xYZZ
+	5Na58Czw9pxTZ9/CT2sg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRawI-0007C1-Hs; Mon, 04 Nov 2019 11:54:30 +0000
-Received: from skedge04.snt-world.com ([91.208.41.69])
+	id 1iRawf-0007eU-Hd; Mon, 04 Nov 2019 11:54:53 +0000
+Received: from skedge03.snt-world.com ([91.208.41.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRavs-0006yq-Vo
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 11:54:06 +0000
-Received: from sntmail11s.snt-is.com (unknown [10.203.32.181])
+ id 1iRavv-00071i-Hc
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 11:54:09 +0000
+Received: from sntmail10s.snt-is.com (unknown [10.203.32.183])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by skedge04.snt-world.com (Postfix) with ESMTPS id 17F9560039D;
- Mon,  4 Nov 2019 12:54:03 +0100 (CET)
-Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail11s.snt-is.com
- (10.203.32.181) with Microsoft SMTP Server (version=TLS1_2,
+ by skedge03.snt-world.com (Postfix) with ESMTPS id 6A81C60CAE4;
+ Mon,  4 Nov 2019 12:54:05 +0100 (CET)
+Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail10s.snt-is.com
+ (10.203.32.183) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Mon, 4 Nov 2019
- 12:54:02 +0100
+ 12:54:05 +0100
 Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
  sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
- 15.01.1713.004; Mon, 4 Nov 2019 12:54:02 +0100
+ 15.01.1713.004; Mon, 4 Nov 2019 12:54:04 +0100
 From: Schrempf Frieder <frieder.schrempf@kontron.de>
 To: Krzysztof Kozlowski <krzk@kernel.org>, Fabio Estevam <festevam@gmail.com>, 
  Mark Rutland <mark.rutland@arm.com>, NXP Linux Team <linux-imx@nxp.com>,
  Pengutronix Kernel Team <kernel@pengutronix.de>, Rob Herring
  <robh+dt@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>, Shawn Guo
  <shawnguo@kernel.org>
-Subject: [PATCH v4 2/9] ARM: dts: Add support for two more Kontron SoMs N6311
- and N6411
-Thread-Topic: [PATCH v4 2/9] ARM: dts: Add support for two more Kontron SoMs
- N6311 and N6411
-Thread-Index: AQHVkwaMgDUA/1D6C0q01Gb6m+Vg6Q==
-Date: Mon, 4 Nov 2019 11:54:02 +0000
-Message-ID: <20191104115352.8728-3-frieder.schrempf@kontron.de>
+Subject: [PATCH v4 3/9] ARM: dts: imx6ul-kontron-n6310-s: Disable the
+ snvs-poweroff driver
+Thread-Topic: [PATCH v4 3/9] ARM: dts: imx6ul-kontron-n6310-s: Disable the
+ snvs-poweroff driver
+Thread-Index: AQHVkwaOvyDXmZ4jYUO0AcU0XbojRA==
+Date: Mon, 4 Nov 2019 11:54:04 +0000
+Message-ID: <20191104115352.8728-4-frieder.schrempf@kontron.de>
 References: <20191104115352.8728-1-frieder.schrempf@kontron.de>
 In-Reply-To: <20191104115352.8728-1-frieder.schrempf@kontron.de>
 Accept-Language: de-DE, en-US
@@ -59,7 +59,7 @@ x-originating-ip: [172.25.9.193]
 x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
 MIME-Version: 1.0
 X-SnT-MailScanner-Information: Please contact the ISP for more information
-X-SnT-MailScanner-ID: 17F9560039D.A23F8
+X-SnT-MailScanner-ID: 6A81C60CAE4.A0587
 X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
  Provider for details
 X-SnT-MailScanner-SpamCheck: 
@@ -71,15 +71,15 @@ X-SnT-MailScanner-To: devicetree@vger.kernel.org, festevam@gmail.com,
  robh+dt@kernel.org, s.hauer@pengutronix.de, shawnguo@kernel.org
 X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_035405_361433_36D7960D 
-X-CRM114-Status: GOOD (  13.00  )
+X-CRM114-CacheID: sfid-20191104_035407_769888_2A44DAE0 
+X-CRM114-Status: GOOD (  11.68  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [91.208.41.69 listed in list.dnswl.org]
+ no trust [91.208.41.68 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -105,112 +105,36 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Frieder Schrempf <frieder.schrempf@kontron.de>
 
-The N6311 and the N6411 SoM are similar to the Kontron N6310 SoM.
-They are pin-compatible, but feature a larger RAM and NAND flash
-(512MiB instead of 256MiB). Further, the N6411 has an i.MX6ULL SoC,
-instead of an i.MX6UL.
+The snvs-poweroff driver can power off the system by pulling the
+PMIC_ON_REQ signal low, to let the PMIC disable the power.
+The Kontron SoMs do not have this signal connected, so let's remove
+the node.
+
+This fixes a real issue when the signal is asserted at poweroff,
+but not actually causing the power to turn off. It was observed,
+that in this case the system would not shut down properly.
 
 Signed-off-by: Frieder Schrempf <frieder.schrempf@kontron.de>
-Reviewed-by: Krzysztof Kozlowski <krzk@kernel.org>
+Fixes: 1ea4b76cdfde ("ARM: dts: imx6ul-kontron-n6310: Add Kontron i.MX6UL N6310 SoM and boards")
 ---
- .../boot/dts/imx6ul-kontron-n6311-som.dtsi    | 40 +++++++++++++++++++
- .../boot/dts/imx6ull-kontron-n6411-som.dtsi   | 40 +++++++++++++++++++
- 2 files changed, 80 insertions(+)
- create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6311-som.dtsi
- create mode 100644 arch/arm/boot/dts/imx6ull-kontron-n6411-som.dtsi
+ arch/arm/boot/dts/imx6ul-kontron-n6310-s.dts | 4 ----
+ 1 file changed, 4 deletions(-)
 
-diff --git a/arch/arm/boot/dts/imx6ul-kontron-n6311-som.dtsi b/arch/arm/boot/dts/imx6ul-kontron-n6311-som.dtsi
-new file mode 100644
-index 000000000000..a095a7654ac6
---- /dev/null
-+++ b/arch/arm/boot/dts/imx6ul-kontron-n6311-som.dtsi
-@@ -0,0 +1,40 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2017 exceet electronics GmbH
-+ * Copyright (C) 2018 Kontron Electronics GmbH
-+ */
-+
-+#include "imx6ul.dtsi"
-+#include "imx6ul-kontron-n6x1x-som-common.dtsi"
-+
-+/ {
-+	model = "Kontron N6311 SOM";
-+	compatible = "kontron,imx6ul-n6311-som", "fsl,imx6ul";
-+
-+	memory@80000000 {
-+		reg = <0x80000000 0x20000000>;
-+		device_type = "memory";
-+	};
-+};
-+
-+&qspi {
-+	spi-flash@0 {
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		compatible = "spi-nand";
-+		spi-max-frequency = <104000000>;
-+		spi-tx-bus-width = <4>;
-+		spi-rx-bus-width = <4>;
-+		reg = <0>;
-+
-+		partition@0 {
-+			label = "ubi1";
-+			reg = <0x00000000 0x08000000>;
-+		};
-+
-+		partition@8000000 {
-+			label = "ubi2";
-+			reg = <0x08000000 0x18000000>;
-+		};
-+	};
-+};
-diff --git a/arch/arm/boot/dts/imx6ull-kontron-n6411-som.dtsi b/arch/arm/boot/dts/imx6ull-kontron-n6411-som.dtsi
-new file mode 100644
-index 000000000000..b7e984284e1a
---- /dev/null
-+++ b/arch/arm/boot/dts/imx6ull-kontron-n6411-som.dtsi
-@@ -0,0 +1,40 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2017 exceet electronics GmbH
-+ * Copyright (C) 2018 Kontron Electronics GmbH
-+ */
-+
-+#include "imx6ull.dtsi"
-+#include "imx6ul-kontron-n6x1x-som-common.dtsi"
-+
-+/ {
-+	model = "Kontron N6411 SOM";
-+	compatible = "kontron,imx6ull-n6311-som", "fsl,imx6ull";
-+
-+	memory@80000000 {
-+		reg = <0x80000000 0x20000000>;
-+		device_type = "memory";
-+	};
-+};
-+
-+&qspi {
-+	spi-flash@0 {
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		compatible = "spi-nand";
-+		spi-max-frequency = <104000000>;
-+		spi-tx-bus-width = <4>;
-+		spi-rx-bus-width = <4>;
-+		reg = <0>;
-+
-+		partition@0 {
-+			label = "ubi1";
-+			reg = <0x00000000 0x08000000>;
-+		};
-+
-+		partition@8000000 {
-+			label = "ubi2";
-+			reg = <0x08000000 0x18000000>;
-+		};
-+	};
-+};
+diff --git a/arch/arm/boot/dts/imx6ul-kontron-n6310-s.dts b/arch/arm/boot/dts/imx6ul-kontron-n6310-s.dts
+index 0205fd56d975..4e99e6c79a68 100644
+--- a/arch/arm/boot/dts/imx6ul-kontron-n6310-s.dts
++++ b/arch/arm/boot/dts/imx6ul-kontron-n6310-s.dts
+@@ -157,10 +157,6 @@
+ 	status = "okay";
+ };
+ 
+-&snvs_poweroff {
+-	status = "okay";
+-};
+-
+ &uart1 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_uart1>;
 -- 
 2.17.1
 
