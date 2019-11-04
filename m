@@ -2,76 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F14CED69A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 01:19:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BADF0ED6A2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 01:32:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vAOb+qyzA+nJcA7qucKJzlJiAhaFW2U2JQ4mnf8DyPc=; b=tyEnOOM0GS+2Qb
-	apl/q7/ybEOzn8ghUA7EfRkUI20p6S+2dDkWJ9VTb38VSRWP1rkDeB3iulRRqeXSv+vOy5BX7aBUr
-	ra9uvGDAwtrqAkR79LmWjKTcbtLyfYHXR1bk9itjTHzzi1EjcRyuVNY9kBTC4XMTB2gCQt+UJAv9W
-	A8v+oJMjBQQS67amQs50Qh7Tuo6jItNKgO5SneyHed279L49uWLf9DrlKiSzW+fAYWZGOXEaVZuEE
-	mWxwcUhBDew58vpFKj0T7IbUJOtdGexzuGqYWS0GCbS/vk9zMrYNQ7sNLPXPfvctJ6+JgpCXEkYGb
-	9zFDwt8Me0ZKkjCnE2Ow==;
+	List-Owner; bh=Dd+R6GUe1LJxw9NFBQTE0OurIWTiKxo6Kane3AgIAaA=; b=j13sh+Urj00V5O
+	m9wvWrcoBG9t1+s1LdxLT0FEkftXPVc3yOr3Ne3xq7Umo29HrHm/fBl+/GH/k7i4FBooizk4sriie
+	4dPseoMDJG0nKTfdgsdLc1Pt6FqX4hOFTCOqqxWh4lmrze6LJdNYkKfBo8QP+/mKHkeaOqCmGhrEp
+	bPIgIzMKSZFWkbmtsmdiRK6yCna1T7dcHPP4EeMK8WRXAyz0sgxLRmQzNQR39q34ZngKPT9BdMc6m
+	p0D5tGyIS850PMIiLEtZ3Bv+S5I0FXo/V2HbpRKvnzKfZlSsMQ0RTmSX5m0wAwNcprQzofDV6xUFY
+	Z70uXtLwf62fRfiDY8wg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRQ5a-0001Ir-Lx; Mon, 04 Nov 2019 00:19:22 +0000
-Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
+	id 1iRQHh-0006Xr-KB; Mon, 04 Nov 2019 00:31:53 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRQ51-0000wT-IF
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 00:18:50 +0000
-Received: by mail-ua1-x944.google.com with SMTP id i13so4429413uaq.7
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 03 Nov 2019 16:18:43 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=+5L2eq9DWTqYID3ithkG+AoL6nhEs7tI6RGB4Dd8Zf4=;
- b=oAlES9Uid7iSYZ2y6NPfHWjyad0j5hCqs5prmtdgJ2mK997WAVlxzJG3ynZVmC7nVi
- mB54L2mfLf/Ymo2mr37VdY7P/VmPPDIkSj6dVPXoVoUbv4/bi0abmhjwnmb/FELUCiFe
- WUmE0cxKBRBV/GLK0T6OlpT++peIpQTvzfheDW+VYHwnVh2WMPfAGGv0Jll4lQ9KmdAX
- KUTaR0YLzT9+mGViBviY1QVrl63MXjbWJ1L7dXjYhxykfLjDCnezbRw37cjm6t8NlKrx
- vUEPiPlqJXQVEvz5N1BTYEZa2S6mllw04JXsrNQAwnirXTN3hH91Hd5eJcmUXVJGR71Z
- pSrA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=+5L2eq9DWTqYID3ithkG+AoL6nhEs7tI6RGB4Dd8Zf4=;
- b=AnCajNoD/chSoWSwcQBfWNVZkt7uIciJheK66UyYgv9/lg9fb5WoDuafraPXqgwzb/
- zeoMgkdJpk6ZoT8ZGfuTTcmwdw9if0LGs5hXaeb34q70gEIUHGKeR2XUPcDKnJMqJiDu
- vzGS97WRxPsBwTBTBLpv2/PpNaTq9FhFZXyCik7Um6EREm5JyiwqdrPKnla69zLDCglu
- Ouw2fxcLn8uCbAW2JS+wEGEGNlkMlPDgxS7RhyJO8FDZ/VE88xcjDQBx7+0MdC/BfT60
- hzBorRc1FJ4bpgtL1HlPRPBnamzNbdY2FKUKo6tHgwKbUalq679azPvfzp0av8WcIZZv
- /N+A==
-X-Gm-Message-State: APjAAAWVcV6ip+jRSKCrrGOyf2j/7vNkEQuR1IAlDoqlO9bH0EGWeLyy
- McKOOdrWyGNVRGS0LoqB/ZVcXK8uzxO961ew/6/43w==
-X-Google-Smtp-Source: APXvYqxaDMOhPupmDshbsu4K1ddLDJNFp+Loev7XOmTsYtFTpgq7W/3FH8VrI3bEONc6DjxIfdtklet+o4Mib1wkwhc=
-X-Received: by 2002:ab0:70a9:: with SMTP id q9mr4518172ual.84.1572826722501;
- Sun, 03 Nov 2019 16:18:42 -0800 (PST)
+ id 1iRQHb-0006XK-H2
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 00:31:48 +0000
+Received: from dragon (li1038-30.members.linode.com [45.33.96.30])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1592F217F5;
+ Mon,  4 Nov 2019 00:31:42 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572827506;
+ bh=CldERrCzQwiiIbuXrc0z7jHVBE+pqa/CxcUwR1ejtr4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Tiu8kmWcTaFT3aHiUWtuePlXcjY/VFpKj886+myYPNiw3l8g5bhWfKLoXitKcs8Uf
+ gFo4GQXWvKrKqsAXTNclf23W6KzSeUj72BjG102yt0PTHtfChffKRTKA/7iZruZYxs
+ iegnWaQMNsf5muw9gzytng+YUhqlMJjEfMPD1GYE=
+Date: Mon, 4 Nov 2019 08:31:22 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Stefan Agner <stefan@agner.ch>
+Subject: Re: [PATCH] ARM: imx: use generic function to exit coherency
+Message-ID: <20191104003121.GA24620@dragon>
+References: <3f58c55e48c28f41e92883e81c675b8478af6a5e.1554937960.git.stefan@agner.ch>
+ <20190416042337.GA4690@X250.skyworth_vap>
+ <a99b439b8c8deb247f7ba2e6b598e808@agner.ch>
 MIME-Version: 1.0
-References: <20191017122640.22976-1-yuehaibing@huawei.com>
- <20191017122640.22976-2-yuehaibing@huawei.com>
-In-Reply-To: <20191017122640.22976-2-yuehaibing@huawei.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 4 Nov 2019 01:18:31 +0100
-Message-ID: <CACRpkdb8D_zxHfzY=+ramnNjXVsN9MMO8Q-3=iZFLS2A_ZDQuw@mail.gmail.com>
-Subject: Re: [PATCH -next 01/30] pinctrl: pxa25x: use
- devm_platform_ioremap_resource() to simplify code
-To: YueHaibing <yuehaibing@huawei.com>
+Content-Disposition: inline
+In-Reply-To: <a99b439b8c8deb247f7ba2e6b598e808@agner.ch>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191103_161847_610794_DC45985F 
-X-CRM114-Status: GOOD (  12.25  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191103_163147_589714_758FCCAF 
+X-CRM114-Status: GOOD (  14.45  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -81,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,49 +78,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Neil Armstrong <narmstrong@baylibre.com>, Baruch Siach <baruch@tkos.co.il>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "thierry.reding@gmail.com" <thierry.reding@gmail.com>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- Jesper Nilsson <jesper.nilsson@axis.com>,
- Florian Fainelli <f.fainelli@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
- linux-arm-kernel@axis.com, Jon Hunter <jonathanh@nvidia.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Andy Gross <agross@kernel.org>,
- bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
- MSM <linux-arm-msm@vger.kernel.org>, Ray Jui <rjui@broadcom.com>,
- Haojian Zhuang <haojian.zhuang@gmail.com>, Vladimir Zapolskiy <vz@mleia.com>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Lars Persson <lars.persson@axis.com>, linux-tegra@vger.kernel.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Scott Branden <sbranden@broadcom.com>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>, linux-oxnas@groups.io,
- =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
- Daniel Mack <daniel@zonque.org>
+Cc: s.hauer@pengutronix.de, linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
+ linux-imx@nxp.com, kernel@pengutronix.de, festevam@gmail.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 17, 2019 at 2:48 PM YueHaibing <yuehaibing@huawei.com> wrote:
+On Fri, Nov 01, 2019 at 10:40:46PM +0100, Stefan Agner wrote:
+> Hi Shawn,
+> 
+> On 2019-04-16 07:46, Shawn Guo wrote:
+> > On Thu, Apr 11, 2019 at 01:14:12AM +0200, Stefan Agner wrote:
+> >> The common ARM architecture code provides a generic function to exit
+> >> coherency called v7_exit_coherency_flush(). Replace the machine
+> >> specific implementation using the generic function.
+> >>
+> >> Tested on a i.MX 6Dual by hotplugging the secondary CPU under load
+> >> through sysfs several 1000 times.
+> >>
+> >> Tested-by: Stefan Agner <stefan@agner.ch>
+> >> Signed-off-by: Stefan Agner <stefan@agner.ch>
+> > 
+> > Applied, thanks.
+> 
+> It seems like this patch never made it upstream. Any specific reason?
 
-> Use devm_platform_ioremap_resource() to simplify the code a bit.
-> This is detected by coccinelle.
->
-> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+It got lost due to some accident on my side.  I'm sorry for that.  I
+will send it for the coming merge window.
 
-These are too many patches changing too little.
-One patch should be one technical step.
-
-I'd say squash them all into one big patch and resend.
-
-You can collect the ACKs you received, but don't put
-too many people on CC, they will be annoyed.
-
-Yours,
-Linus Walleij
+Shawn
 
 _______________________________________________
 linux-arm-kernel mailing list
