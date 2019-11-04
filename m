@@ -2,95 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D98EDEF0A8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 23:36:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51770EF0AE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 23:39:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=zVK35JeeK726KmRcpyCeDXeAD3YI35Gj3n14C4XUA5w=; b=Ucfzjqo73VQae7M3kDn8ilAg4
-	wCerQZ/Nu6NUZnEFE/MoZ5nZyJepoBvoDMuQKn1njilaztQL1CYYlvuXEkzNaX0DPc42JLDuASHjo
-	W4cqlGlo5UcCNEZo93GypdKQVeWwaNF/XPOqI2Q9t8Fi/UltyAaZfT95H+tJCuysIG2d1uQXVdzFF
-	hDb6hDeOIYfFR2CAjYzC4bIHqQvbPzQq+lXyETI5Qug6qyDt5ZE4O9CjARwb5wFXfQHgl1s7mWl6w
-	v3L2ItWp4jGbFzKQ6xceZuV+qXpVOgvNMwSK3MXX/XVK1mOgRmEIXshPemDd+/84Sz6XL+UfPaOZ8
-	188vFn3pg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=+2ZWCUNgQf/zPwcBPddNLsoaudyWKrYMyXTGqR2mbLA=; b=EfE
+	N9gyEPif5IU0/7vuIbIJbiuxnU8p+N8uiKXnNhohI9vDVlm/ujMgx/uxFnsqGCiD42XzwKiQ7Li3d
+	MUsolf5hfyfV01gwZeEUPICDntB60+P84Qh010MAGqbVTVtkhxSxRftF/KYFENJzfVbvtBl1h7SYL
+	ZaElfW6kiXmI0LKhyFve+0T1ehqFLE8qkabPeIaO6+L9TnBH+IyiQ77jaIKn0QiuAwBbQvI3bzgEo
+	snoWJw2BtlUib2sW7zk1AYiMqrkc3MKGXB78l7LVfkBRtALC9MKS1ovQjorrzD4cQr4i24ZuoFJ43
+	Y0+9i5N6FZCn1TQSv4tt4ukMlpXAIiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRkxW-0000WQ-08; Mon, 04 Nov 2019 22:36:26 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iRl0f-0000vV-Gm; Mon, 04 Nov 2019 22:39:41 +0000
+Received: from ozlabs.org ([203.11.71.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRkxO-0000Vi-6T
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 22:36:19 +0000
-Received: by mail-wr1-x441.google.com with SMTP id l10so18989960wrb.2
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 Nov 2019 14:36:17 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-transfer-encoding:content-language;
- bh=yt61aaoIi4X+D1skHgelntwrijUFfx+CPihl4lVOcBE=;
- b=qlX6GyRWJUAMjOXhhzdrU1Ppe/XPxtW+NWVbN5N1At2Rkz4jcLCSHO/RQsE9+zwIE7
- qnwvdQOk0Cmiy23dUGb9vJPXSRHksStiAcPV1xKZCXrX7cU9PSleuWIMqudEVvEkRX9H
- pWelAkOWyE/DTcY/QkOaoX8DJMDVX1Qj6PqBbuvGVnLFbkjhmMag41rBITh/cPeowbzB
- 7SLNy9Ss4RuxvPcrtgDvBrKHB4QlO6a7lOlISqoDT1CtbiW8VCh/jRWU2pxK8vKzYYmU
- L/wy0Um7ma7R+zvL7m/y59uFzcK67YfXISldV1hGEg2nCzU9DWmiGXn6tUAB7IkNJAhX
- y6NQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=yt61aaoIi4X+D1skHgelntwrijUFfx+CPihl4lVOcBE=;
- b=P9MapmYPedqmZ2elrQsVFMlKCa06LZYnI96F3D+31GqmalWWIn3xN1zKBaEp9A+Nv4
- Md4iXEt4YZa2ckUIVOnJLlT1wvhlV3a3vwzkSpc2almkM+6L/7H5y+h0//BdKo+hYoZ0
- SJ/2AnsWQ9zplW/qiEv2TK0w1mNqZCv3RzcDKLMd+ucN6lRHB/IuAapUkg0FiE83sDxu
- 4Q339fno5HBjnmVFmQX0iDlkON7pFxKq924iWAKdvWy2LJHBqgExVX4FtvcnFjO6xL4a
- /FZ8HDzyZLyy651GjKbqhTGOucpiEozsNjcSmfTPbYsnbdQ6Cp43SMzIiiXEMkOYTyKt
- FzYw==
-X-Gm-Message-State: APjAAAUV7fITqbHmt6letygFTswKK79KcXdQXi1wL+eVEGP900/G/yNU
- j5M/7AlURX2AVaasRlR3Sk9cfTuK
-X-Google-Smtp-Source: APXvYqxyk/q1jfPot0rvz5aSaP6+6VcvYVBirYRGggTUq+gjY219kwAZVNNWOShfkr34aaK0vIOURw==
-X-Received: by 2002:a5d:49c9:: with SMTP id t9mr26013487wrs.146.1572906975600; 
- Mon, 04 Nov 2019 14:36:15 -0800 (PST)
-Received: from [172.30.90.90] (sjewanfw1-nat.mentorg.com. [139.181.7.34])
- by smtp.gmail.com with ESMTPSA id q14sm24692915wre.27.2019.11.04.14.36.12
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 04 Nov 2019 14:36:14 -0800 (PST)
-Subject: Re: [PATCH 2/2] dt-bindings: timer: imx: gpt: Add pin group bindings
- for input capture
-To: Rob Herring <robh@kernel.org>
-References: <20191016010544.14561-1-slongerbeam@gmail.com>
- <20191016010544.14561-3-slongerbeam@gmail.com> <20191027212121.GA3049@bogus>
- <2daa37a6-83a7-ec08-b89c-a07268b3ea4a@gmail.com>
- <CAL_JsqJK5CzQDpCWGZWKgp_8dPG7x0W1HLe+B3zHRP-Te9SToA@mail.gmail.com>
- <ef514e28-e92f-d8fc-0a5f-330a6207b638@gmail.com>
- <CAL_Jsq+1X_62+Xc76GH-n+sBeBqZo6Nw7Viq+1R9SAWHAFmDDQ@mail.gmail.com>
-From: Steve Longerbeam <slongerbeam@gmail.com>
-Message-ID: <17d9e46a-7f79-cc9a-f702-89bf2e835917@gmail.com>
-Date: Mon, 4 Nov 2019 14:36:10 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iRl0W-0000sh-DG
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 22:39:33 +0000
+Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by mail.ozlabs.org (Postfix) with ESMTPSA id 476SQk0J3jz9s4Y;
+ Tue,  5 Nov 2019 09:39:26 +1100 (AEDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
+ s=201702; t=1572907166;
+ bh=9oLJgy9YhD2/uxYf9HCCJm4CgrXLkCKAqUiXoi7Lzm0=;
+ h=Date:From:To:Cc:Subject:From;
+ b=qCZfwWIeGg949YF6o72C31LNMDkkKUwtcNqN0j08fNYuzB8MHGKlEqt81xEtP/0Cl
+ x348o6g69/g+bLLm/5aExm0eWwK9p6oLaALBeQEsorkv7ssimIaKRSjb2N42v/uGZa
+ CigtPL0tZeX5ujIFCApkB8YTTYqFgbqPwiSXkUSgqOQZl8/8T+6Wf6RK65Rd3/lx6x
+ qf9973MdWppY+BRsqHewyMHrlv2pLMkrD/35CTHpjrM/F/QBiejfVuWeRG1lS4d5R7
+ nIognTgoS2osyNNHgQnk+DnamR5ls4JtR/FfDrB6LpZ4paYbKztHJOnhyEqh/U7pBP
+ gNWdDRx/QIJ6g==
+Date: Tue, 5 Nov 2019 09:39:20 +1100
+From: Stephen Rothwell <sfr@canb.auug.org.au>
+To: Andy Gross <agross@kernel.org>, Olof Johansson <olof@lixom.net>, Arnd
+ Bergmann <arnd@arndb.de>, ARM <linux-arm-kernel@lists.infradead.org>
+Subject: linux-next: manual merge of the qcom tree with the arm-soc tree
+Message-ID: <20191105093920.7869c1eb@canb.auug.org.au>
 MIME-Version: 1.0
-In-Reply-To: <CAL_Jsq+1X_62+Xc76GH-n+sBeBqZo6Nw7Viq+1R9SAWHAFmDDQ@mail.gmail.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_143618_269776_D4074465 
-X-CRM114-Status: GOOD (  33.22  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191104_143932_611066_190075EA 
+X-CRM114-Status: UNSURE (   7.73  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (slongerbeam[at]gmail.com)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -107,223 +73,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Fabio Estevam <festevam@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, "open list:CLOCKSOURCE,
- CLOCKEVENT DRIVERS" <linux-kernel@vger.kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Thomas Gleixner <tglx@linutronix.de>, Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Zhou Wang <wangzhou1@hisilicon.com>,
+ Linux Next Mailing List <linux-next@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Wei Xu <xuwei5@hisilicon.com>, Bjorn Andersson <bjorn.andersson@linaro.org>
+Content-Type: multipart/mixed; boundary="===============3065028582502720278=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+--===============3065028582502720278==
+Content-Type: multipart/signed; boundary="Sig_/N.KP0oVduH6feDqNG=/N3Wb";
+ protocol="application/pgp-signature"; micalg=pgp-sha256
+
+--Sig_/N.KP0oVduH6feDqNG=/N3Wb
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: quoted-printable
+
+Hi all,
+
+Today's linux-next merge of the qcom tree got a conflict in:
+
+  arch/arm64/configs/defconfig
+
+between commit:
+
+  af24cb20689d ("arm64: defconfig: Enable HiSilicon ZIP controller")
+
+from the arm-soc tree and commit:
+
+  ca1561a3d8e4 ("arm64: defconfig: Enable Qualcomm pseudo rng")
+
+from the qcom tree.
+
+I fixed it up (see below) and can carry the fix as necessary. This
+is now fixed as far as linux-next is concerned, but any non trivial
+conflicts should be mentioned to your upstream maintainer when your tree
+is submitted for merging.  You may also want to consider cooperating
+with the maintainer of the conflicting tree to minimise any particularly
+complex conflicts.
+
+--=20
+Cheers,
+Stephen Rothwell
+
+diff --cc arch/arm64/configs/defconfig
+index d3a289e12c92,0de751801c98..000000000000
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@@ -750,8 -749,8 +759,9 @@@ CONFIG_QCOM_SMEM=3D
+  CONFIG_QCOM_SMD_RPM=3Dy
+  CONFIG_QCOM_SMP2P=3Dy
+  CONFIG_QCOM_SMSM=3Dy
++ CONFIG_QCOM_SOCINFO=3Dm
+  CONFIG_ARCH_R8A774A1=3Dy
+ +CONFIG_ARCH_R8A774B1=3Dy
+  CONFIG_ARCH_R8A774C0=3Dy
+  CONFIG_ARCH_R8A7795=3Dy
+  CONFIG_ARCH_R8A7796=3Dy
+@@@ -861,7 -860,8 +873,9 @@@ CONFIG_NLS_ISO8859_1=3D
+  CONFIG_SECURITY=3Dy
+  CONFIG_CRYPTO_ECHAINIV=3Dy
+  CONFIG_CRYPTO_ANSI_CPRNG=3Dy
+ +CONFIG_CRYPTO_DEV_HISI_ZIP=3Dm
++ CONFIG_CRYPTO_USER_API_RNG=3Dm
++ CONFIG_CRYPTO_DEV_QCOM_RNG=3Dm
+  CONFIG_DMA_CMA=3Dy
+  CONFIG_CMA_SIZE_MBYTES=3D32
+  CONFIG_PRINTK_TIME=3Dy
+
+--Sig_/N.KP0oVduH6feDqNG=/N3Wb
+Content-Type: application/pgp-signature
+Content-Description: OpenPGP digital signature
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAl3AqJgACgkQAVBC80lX
+0GzN9gf/ZVgW42+vigalmlsEuJfUi4o5+3pp/xfkPhZCycQypHIZnNKwPQ/pZT5N
+Jf5jpxWHLXA+ScZSF53P1mJtFq9Xwty4wIC0qDgworyfy69F+PPBky3nSnkUVv6I
+CSdufLshzxmJd5TCMzagS1WXY96t3Qkwo9FRkMTzpaS1Y/K0wYF3hr7Rj2wYBhgy
+wneGoCMNp/DtgzkWrMuC+hJIJHyBfFh8x1zhkbvNdMn9eyqTHE1oPeXPDVcP7bBF
+CuxO+/26ppYpkzmIJamWJZkHo9P3KO9cCIgdGNF/0uNvSMxl9aBm53Yxw7iDOhed
+QJ4IrHVT1ATczepnbej766XETAwgMQ==
+=QRTI
+-----END PGP SIGNATURE-----
+
+--Sig_/N.KP0oVduH6feDqNG=/N3Wb--
 
 
-On 11/4/19 12:09 PM, Rob Herring wrote:
-> On Sun, Nov 3, 2019 at 2:20 PM Steve Longerbeam <slongerbeam@gmail.com> wrote:
->>
->>
->> On 10/29/19 12:58 PM, Rob Herring wrote:
->>> On Mon, Oct 28, 2019 at 6:59 PM Steve Longerbeam <slongerbeam@gmail.com> wrote:
->>>> Hi Rob,
->>>>
->>>> Thanks for reviewing.
->>>>
->>>> On 10/27/19 2:21 PM, Rob Herring wrote:
->>>>> On Tue, Oct 15, 2019 at 06:05:44PM -0700, Steve Longerbeam wrote:
->>>>>> Add pin group bindings to support input capture function of the i.MX
->>>>>> GPT.
->>>>>>
->>>>>> Signed-off-by: Steve Longerbeam <slongerbeam@gmail.com>
->>>>>> ---
->>>>>>     .../devicetree/bindings/timer/fsl,imxgpt.txt  | 28 +++++++++++++++++++
->>>>>>     1 file changed, 28 insertions(+)
->>>>>>
->>>>>> diff --git a/Documentation/devicetree/bindings/timer/fsl,imxgpt.txt b/Documentation/devicetree/bindings/timer/fsl,imxgpt.txt
->>>>>> index 5d8fd5b52598..32797b7b0d02 100644
->>>>>> --- a/Documentation/devicetree/bindings/timer/fsl,imxgpt.txt
->>>>>> +++ b/Documentation/devicetree/bindings/timer/fsl,imxgpt.txt
->>>>>> @@ -33,6 +33,13 @@ Required properties:
->>>>>>                an entry for each entry in clock-names.
->>>>>>     - clock-names : must include "ipg" entry first, then "per" entry.
->>>>>>
->>>>>> +Optional properties:
->>>>>> +
->>>>>> +- pinctrl-0: For the i.MX GPT to support the Input Capture function,
->>>>>> +         the input capture channel pin groups must be listed here.
->>>>>> +- pinctrl-names: must be "default".
->>>>>> +
->>>>>> +
->>>>>>     Example:
->>>>>>
->>>>>>     gpt1: timer@10003000 {
->>>>>> @@ -43,3 +50,24 @@ gpt1: timer@10003000 {
->>>>>>                 <&clks IMX27_CLK_PER1_GATE>;
->>>>>>        clock-names = "ipg", "per";
->>>>>>     };
->>>>>> +
->>>>>> +
->>>>>> +Example with input capture channel 0 support:
->>>>>> +
->>>>>> +pinctrl_gpt_input_capture0: gptinputcapture0grp {
->>>>>> +    fsl,pins = <
->>>>>> +            MX6QDL_PAD_SD1_DAT0__GPT_CAPTURE1 0x1b0b0
->>>>>> +    >;
->>>>>> +};
->>>>>> +
->>>>>> +gpt: gpt@2098000 {
->>>>> timer@...
->>>> Ok.
->>>>
->>>>> I don't really think this merits another example though.
->>>> Ok.
->>>>
->>>> But for version 2 of this patch-set I'd like to run some ideas by you.
->>>>
->>>> Because in this version I did not make any attempt to create a generic
->>>> timer capture framework. I just exported a couple imx-specific functions
->>>> to request and free a timer input capture channel in the imx-gpt driver.
->>>>
->>>> So for version 2 I am thinking about a simple framework that other SoC
->>>> timers with timer input capture support can make use of.
->>>>
->>>> To begin with I don't see that timer input capture warrants the
->>>> definition of a new device. At least for imx, timer input capture is
->>>> just one function of the imx GPT, where the other is Output Compare
->>>> which is used for the system timer. I think that is likely the case for
->>>> most all SoC timers, that is, input capture and output compare are
->>>> tightly interwoven functions of general purpose timers.
->>>>
->>>> So I'm thinking there needs to be an additional #input-capture-cells
->>>> property that defines how many input capture channels the timer
->>>> contains, where a channel refers to a single input signal edge that can
->>>> capture the timer counter. The imx GPT has two input capture channels (2
->>>> separate input signals).
->>> #foo-cells is not how many of something, but how many u32 parameters a
->>> 'foos' consumer property has. But seems like that's what you meant
->>> based on the example.
->> Sorry yes that's what I meant, my wording was imprecise. If a timer has
->> only one input capture channel, no arguments are needed to specify the
->> channel in the timer-input-capture property and #input-capture-cells
->> would be <0>.
->>
->>
->>>> For example, on imx:
->>>>
->>>> gpt: timer@2098000 {
->>>>           compatible = "fsl,imx6q-gpt", "fsl,imx31-gpt";
->>>>           /* ... */
->>>>           #input-capture-cells = <1>;
->>>>           pinctrl-names = "default", "icap1";
->>>>           pinctrl-0 = <&pinctrl_gpt_input_capture0>;
->>>>           pinctrl-1 = <&pinctrl_gpt_input_capture1>;
->>>> };
->>>>
->>>>
->>>> A device that is a listener/consumer of an timer capture event would then refer to a timer capture channel:
->>>>
->>>> some-device {
->>>>           /* ... */
->>>>           timer-input-capture = <&gpt 0>;
->>>> };
->>> We'd want to be more consistent in the naming, but seems reasonable.
->> Yeah, maybe rename the properties to #timer-capture-cells and timer-capture.
->>
->>
->>> One of the challenges with timers is selecting which timer is used for
->>> what function. This helps as you can know if a timer is used for input
->>> capture or not. One issue will be is having '#input-capture-cells'
->>> enough to decide that,
->>
->> Yes, it does bother me somewhat that
->>
->> timer-capture = <&gpt 0>;
->>
->> is referring to the timer itself and not its input-capture functionality.
->>
->> Maybe it would be better, since the timer has multiple functions, to
->> make the timer compatible with simple-mfd, so that a timer-capture
->> sub-device can be defined, for example on i.MX6:
->>
->> gpt: timer@2098000 {
->>           compatible = "fsl,imx6q-gpt", "fsl,imx31-gpt", "simple-mfd";
->>           /* ... */
->>
->>          tcap: timer-capture {
->>                  compatible = "fsl,imx6q-gpt-capture";
->>                  #timer-capture-cells = <1>;
->>                  pinctrl-names = "default", "icap1";
->>                  pinctrl-0 = <&pinctrl_gpt_input_capture0>;
->>                  pinctrl-1 = <&pinctrl_gpt_input_capture1>;
->>          };
->> };
->>
->> some-device {
->>           /* ... */
->>           timer-capture = <&tcap 0>;
->> };
-> No, worse IMO. It's not really a separate h/w block to make it a child
-> node. A single node can be multiple providers.
-
-Well, agreed, it's not a separate h/w block, that was my original 
-argument. I'm fine with dropping the MFD sub-device idea.
-
->
->>>    or does one have to walk the DT and find all
->>> the 'timer-input-capture' properties (shouldn't be a lot)?
->>>    You could
->>> also want to use input capture, but not describe the connection in DT.
->> That's a thought, but I'm not sure how the kernel API would look in that
->> case, i.e. it would not be as straightforward to locate the timer
->> clocksource driver that contains the timer capture support. The
->> advantage of using a 'timer-capture' property that contains a timer
->> phandle, is that it is simple to locate the clocksource driver that has
->> the timer capture function.
-> Ignoring issues with clocksources not being drivers, anything could be
-> an input capture provider whether DT provides that info or you just
-> have some API to register an input capture device. IOW, it could be
-> implicit in DT if you know you always want to expose the
-> functionality.
->
->>> Another thought is should it be just 'timers' to cover both input
->>> capture and output compare with those being selected with flags (like
->>> GPIO).
->>>
->>> My other question is just what are some real examples of devices
->>> needing to describe this connection. Timers have had input capture
->>> forever, but I've rarely seen it used. Output compare even less so.
->> In this specific use-case, the i.MX6 CSI often cannot recover from
->> corrupted frame synchronization info in the incoming video frames,
->> especially for BT.656 sources (too many or too few lines between two
->> SAV/EAV codes, or missing codes altogether). The result is loss of
->> vertical sync in the captured frames. The only indication of this error
->> condition on i.MX6 is a drop in the captured frame intervals. So a
->> workaround is to implement a frame interval monitor that measures the
->> FI's and reports a V4L2 event to userspace when a FI falls outside some
->> tolerance value. Userspace can then take corrective action such as
->> restarting video streaming. Finally getting to the use-case here, the
->> most accurate way to measure FI's is to capture a timer counter between
->> two falling edges of a VSYNC signal from the video source.
-> I would think VSYNC is slow enough you could just use a GPIO interrupt
-> unless it's 1 bad frame only and a small change in the timing.
-
-It can be a single bad frame, and a single missing line within that 
-frame, which for NTSC is only 63 usec. Interrupt latencies can 
-completely drown out that delta, thus the bad frame is not detected. Or 
-interrupt latency can create false events, say by someone plugging in a 
-USB device during video capture. Hence the need for timer input capture 
-which is not subject to interrupt latency errors.
-
-Steve
-
+--===============3065028582502720278==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3065028582502720278==--
+
