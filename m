@@ -2,73 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A2177EEA79
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 21:51:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4208EEA7A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 21:51:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uLAt0m6PYEjhHuMyjkSF8Kz+L5NXhFiZTQBR3+tMzUs=; b=NbPFf6CqlBujBd
-	HpM9CFNlwYXp750XaAKeewsdyRHKNSbdM2MWy1JYynz8T4srLkJCRbG+hhYd6MtOVwYcsj4KYG3Qw
-	zw5c8hOnE7eQY2RFZoOzcoTqOkSY4iAiQKYPH9p5F96b0lQTMowXkjWKGlWU8bywSAPaEx5qQZGBO
-	kry8hbBey5lCRhWGgwt4L1sUIcQde6/XrkgJ0ToBbnaw4hB+ZqsUC4rdlbEzUvrqZ9/GHyQ2NrpgK
-	V87zidAb2fQWW+z8SCkAvbkJpjVfKzpABT1kqXywjIMBr1Af1ZGLSdmZutkwLH5tja+bo5V6pUl1c
-	dHVhZo5jdAoNR00xeajQ==;
+	List-Owner; bh=Cm3/vjd1HcJQsZj+Rbgpb16UYgMFW/jZzAhYNfsHysY=; b=czDBpvQIuLB/7P
+	WCTVcksxJLPPlVONBeQamdLdOlJE6EYa9MWwEhSsuIb+52WN1EzlWk/TZkiL1nSfUB8J+NiHLfAjx
+	yux7ekZozNZSdg39ctQdUr9if0VzzD4xg8giVyCNM6nd/jgxUdU6fg03qjK8JhhX5KVhy0/9B+JXL
+	l5it/oJtqEyHNFjbqMBpgz+LgmYUM4g7An5dB5IaoIWO6AZkPjvL4Uji1XttP8AhBwdPfh/nFlGgS
+	+UiM1i7rpMjq/yjfd990ortBHc/yEVzPhYIYPEkmFEUNPODLqGuuyInvSxtWOe5YYL6KnDDCK4hDf
+	y9Hwet2/+tVqu1bM6m2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRjK3-0004DV-S6; Mon, 04 Nov 2019 20:51:35 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1iRjKF-0004V1-Nd; Mon, 04 Nov 2019 20:51:47 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRjHw-00010D-EK
+ id 1iRjHx-00011f-6o
  for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 20:49:29 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xA4KnL6D129121;
- Mon, 4 Nov 2019 14:49:21 -0600
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xA4KnM1l129245;
+ Mon, 4 Nov 2019 14:49:22 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1572900561;
- bh=5YwKxLUT1Ge9lm3+PQt2DCNmDKOmd3ZEoeOT6dyfUE0=;
+ s=ti-com-17Q1; t=1572900562;
+ bh=0fj8Qp2adqwqoFx0I0SajIf2oiXQh0fr56mPE6nrtIM=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=Gdrsec7g1gLRBIB3Q8YWE7HT1B5dUcMy4Id8+mIRY8GY4lyFucaEkzJ2WVgL+deT8
- ct/KtVAApcYYnttuvkZuD669D69E/fKHiDuqyOlHdB+LZT1wS2A/yURPpjTx807xJc
- 0eQ8X9HQ+WhCU2agHPkAF6TY8YNiwH0FTefiCAYA=
-Received: from DLEE102.ent.ti.com (dlee102.ent.ti.com [157.170.170.32])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xA4KnL2Z130277
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 4 Nov 2019 14:49:21 -0600
-Received: from DLEE104.ent.ti.com (157.170.170.34) by DLEE102.ent.ti.com
- (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
+ b=cxKDavxoZ0edDg1LLVjvO+WPBjWVmhiuC0tv2ZzauwC0yPB8UOAKGBn4ajdNoU2Xu
+ zCrc8eqVSe+hSLS8ge3+jOfiggGqFoDNqc5NmhbuIWS909ksFUcaTG+bkSOED2Ezm8
+ 84vG2dYp1NA1IZC0tFgClhjR/9lVJLhzdJyInpu0=
+Received: from DLEE115.ent.ti.com (dlee115.ent.ti.com [157.170.170.26])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xA4KnMw0005321;
+ Mon, 4 Nov 2019 14:49:22 -0600
+Received: from DLEE111.ent.ti.com (157.170.170.22) by DLEE115.ent.ti.com
+ (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 4 Nov
- 2019 14:49:06 -0600
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE104.ent.ti.com
- (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
+ 2019 14:49:22 -0600
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE111.ent.ti.com
+ (157.170.170.22) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Mon, 4 Nov 2019 14:49:06 -0600
+ Frontend Transport; Mon, 4 Nov 2019 14:49:07 -0600
 Received: from ula0869644.dal.design.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xA4Kmv04038360;
- Mon, 4 Nov 2019 14:49:20 -0600
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xA4Kmv05038360;
+ Mon, 4 Nov 2019 14:49:21 -0600
 From: Benoit Parrot <bparrot@ti.com>
 To: Tony Lindgren <tony@atomide.com>, Tero Kristo <t-kristo@ti.com>
-Subject: [Patch v2 08/10] arm: dts: dra76-evm: Add CAL and OV5640 nodes
-Date: Mon, 4 Nov 2019 14:48:51 -0600
-Message-ID: <20191104204853.4355-9-bparrot@ti.com>
+Subject: [Patch v2 09/10] arm64: dts: k3-am65-main Add CAL node
+Date: Mon, 4 Nov 2019 14:48:52 -0600
+Message-ID: <20191104204853.4355-10-bparrot@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191104204853.4355-1-bparrot@ti.com>
 References: <20191104204853.4355-1-bparrot@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_124924_582284_A86B63CE 
-X-CRM114-Status: GOOD (  11.94  )
+X-CRM114-CacheID: sfid-20191104_124925_383304_73DABE76 
+X-CRM114-Status: GOOD (  10.35  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -99,75 +98,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add device nodes for CSI2 camera board OV5640.
-Add the CAL port nodes with the necessary linkage to the ov5640 nodes.
+Add CAL dtsi node for AM654 device. Including proper power-domains and
+clock properties.
 
 Signed-off-by: Benoit Parrot <bparrot@ti.com>
 ---
- arch/arm/boot/dts/dra76-evm.dts | 39 +++++++++++++++++++++++++++++++++
- 1 file changed, 39 insertions(+)
+ arch/arm64/boot/dts/ti/k3-am65-main.dtsi | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
 
-diff --git a/arch/arm/boot/dts/dra76-evm.dts b/arch/arm/boot/dts/dra76-evm.dts
-index 1fb6f13fb5e2..a0a4bf0e1e30 100644
---- a/arch/arm/boot/dts/dra76-evm.dts
-+++ b/arch/arm/boot/dts/dra76-evm.dts
-@@ -116,6 +116,12 @@
- 		regulator-min-microvolt = <1800000>;
- 		regulator-max-microvolt = <1800000>;
+diff --git a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
+index 799c75fa7981..4c65ed445e8b 100644
+--- a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
++++ b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
+@@ -516,4 +516,27 @@
+ 		dma-coherent;
+ 		interrupts = <GIC_SPI 355 IRQ_TYPE_EDGE_RISING>;
  	};
 +
-+	clk_ov5640_fixed: clock {
-+		compatible = "fixed-clock";
-+		#clock-cells = <0>;
-+		clock-frequency = <24000000>;
-+	};
- };
- 
- &i2c1 {
-@@ -317,6 +323,27 @@
- 	};
- };
- 
-+&i2c5 {
-+	status = "okay";
-+	clock-frequency = <400000>;
++	cal: cal@6f03000 {
++		compatible = "ti,am654-cal";
++		reg = <0x0 0x06f03000 0x0 0x400>,
++		      <0x0 0x06f03800 0x0 0x40>;
++		reg-names = "cal_top",
++			    "cal_rx_core0";
++		interrupts = <GIC_SPI 152 IRQ_TYPE_LEVEL_HIGH>;
++		ti,camerrx-control = <&scm_conf 0x40c0>;
++		clock-names = "fck";
++		clocks = <&k3_clks 2 0>;
++		power-domains = <&k3_pds 2 TI_SCI_PD_EXCLUSIVE>;
++		status = "disabled";
 +
-+	ov5640@3c {
-+		compatible = "ovti,ov5640";
-+		reg = <0x3c>;
++		ports {
++			#address-cells = <1>;
++			#size-cells = <0>;
 +
-+		clocks = <&clk_ov5640_fixed>;
-+		clock-names = "xclk";
-+
-+		port {
-+			csi2_cam0: endpoint {
-+				remote-endpoint = <&csi2_phy0>;
-+				clock-lanes = <0>;
-+				data-lanes = <1 2>;
++			csi2_0: port@0 {
++				reg = <0>;
 +			};
 +		};
 +	};
-+};
-+
- &cpu0 {
- 	vdd-supply = <&buck10_reg>;
  };
-@@ -447,3 +474,15 @@
- 		max-bitrate = <5000000>;
- 	};
- };
-+
-+&cal {
-+	status = "okay";
-+};
-+
-+&csi2_0 {
-+	csi2_phy0: endpoint@0 {
-+		remote-endpoint = <&csi2_cam0>;
-+		clock-lanes = <0>;
-+		data-lanes = <1 2>;
-+	};
-+};
 -- 
 2.17.1
 
