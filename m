@@ -2,64 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F616EDD19
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 11:56:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEC36EDD0C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 11:56:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ae0vw+qKIimqGsaOwtD4ApQ7GvhkDa0Tr+GEmy57/Ss=; b=u9YppZWBOtX7WP
-	ZK1W1KCC28uLzbCyGSZmEBOSTilqNEUYLgzjy79A4jw6UrP79fOZNlwiDbJgXWN6AOm3eiJgnih5B
-	U6scuBcGkHvARZQrNv4J7yBwfs7XH0zgn3qMJ0LFq8E8Shydp2l3jUpjnIWgyyjpBdw/+EIGuvKIu
-	kj+hTuiF8ilJko3IFmYCSkG/ytgVsAyQYERez/187rJvk68PDoSlIXUAj+tTmDXJuaGdfKLWOfHAd
-	PTFXZ2sgqQuL3Yt8HgV+abv4Ub9NU3D13STSvPgoAJvEbVcefS6gCT8qlTMUsTOLWvjytw/E4vLjB
-	4zfMuAoCULR08Gp7P5lg==;
+	List-Owner; bh=yR6U1mt9abpBGEGVrN/yWO/y6jH5evtirtzM2iGne5c=; b=tQp1kNkqAwqgir
+	nwhMKPbSe/wb+ocONCSBS7KJ4GPdjv/tB50LIlry5cFTtwlhiU3Z0BxzHPVfsCzQJAkqykI5LIX0Y
+	jqxP1TUUjAGEis/iqp0tKmk9u6zDK9tgdEt/PLQoYtDgq2tNL4QN+P6ECPt6pNn859IReGRpZh61t
+	j1DJ/STvMp7gGOXCeQ9J3wRi1izVDZmzc5ddk+dJrdWzdxawpg40GxuOqcgzeJWaltPegyKm76nHL
+	Gktetcqbe+zLz76bP2/SyS9n3aJq+6IS99uv7lUgzVtBMbniZTgpSpAqYYdlv1uCKOqKLCmVrYWWt
+	5qHnF3MkBvXEAOMlKV6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRa1v-00062u-Mv; Mon, 04 Nov 2019 10:56:15 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1iRa1j-0005jl-Ev; Mon, 04 Nov 2019 10:56:03 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRa1P-0005Zb-BB
+ id 1iRa1O-0005ZY-SG
  for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 10:55:45 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xA4Asmnt023844; Mon, 4 Nov 2019 11:55:37 +0100
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xA4AtJ63011818; Mon, 4 Nov 2019 11:55:38 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=Ceu5Duw6hF7vdL1evLyVczyJdrbrZgbra9bYDT3Z5D4=;
- b=oTuhypX7XdxIMlREiK1/GaTKk1TqA6KNl0C6TsU+yWTTXOGvwa982axTSFnE3h4PvCOR
- oy54loDCqtMyZlvuD8e1eZS9T1oHuJzQmbDVURzD67XFKsUy3syZbB+zahHfRT2ZYhdD
- ouvsdCVxhwJNNukSrLDRCEJOqIFJ4Wb33n8ovYGLVP1MF5Fcj4keSechTCOx7P2t+KZc
- MuL5bpivJj8pzP5e6/w+go8w1hGr4HLRJxE8FtrTEEE64PdXh+yc967j0yPmei8w2Yzp
- Mu326zDJ02MF3Sn8VgjT+IqvznAZN+aC+a7gKF7unuOb+GwXcIdQxCRvIPK76LDmux1x Iw== 
+ bh=b8YspRAaoetqeQ0AOmzT0Wn61T1GntjuB/aZCDQVJfI=;
+ b=BjdLQQ1ihUa4pmNq3LHS8oiHwfXRF2/ZE6/Veoeie1mBMskvtdsjEI+99eXuRVlcGaKX
+ QJ3Vu+LAygF7ceIHCQKAvZwl1QOxfVt1L+jkSwmZzxCS8DePWTy5Os97TrEUEkMwGMNC
+ 4GzM8Q1mSQksmnFh595qcdZ4DYN5RNMwGJsOFfA9KBZiuXLrAq+nnePMQ7LkD0odDnVA
+ u8TmAD8aAOrC1LgQkDQX3pLGaxqxfbUm42OelwYRtlfSzjzBWIx3MpAs9hcoQ3f1QqD7
+ y2256RTRTTVblicJRl0rXUR73l1Wtnq2J/ZANSqSIEcL6o4Y2tWhWZyf3rNTuSJIo/Ol bg== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2w1054h1xv-1
+ by mx08-00178001.pphosted.com with ESMTP id 2w0ytchn2h-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 04 Nov 2019 11:55:36 +0100
+ Mon, 04 Nov 2019 11:55:38 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 8E92A10002A;
- Mon,  4 Nov 2019 11:55:36 +0100 (CET)
-Received: from Webmail-eu.st.com (Safex1hubcas23.st.com [10.75.90.46])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 7C3B02BDA95;
- Mon,  4 Nov 2019 11:55:36 +0100 (CET)
-Received: from SAFEX1HUBCAS24.st.com (10.75.90.95) by SAFEX1HUBCAS23.st.com
- (10.75.90.46) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 4 Nov 2019
- 11:55:36 +0100
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id D762010002A;
+ Mon,  4 Nov 2019 11:55:37 +0100 (CET)
+Received: from Webmail-eu.st.com (Safex1hubcas22.st.com [10.75.90.92])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id C5ED72BDA96;
+ Mon,  4 Nov 2019 11:55:37 +0100 (CET)
+Received: from SAFEX1HUBCAS24.st.com (10.75.90.95) by Safex1hubcas22.st.com
+ (10.75.90.92) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 4 Nov 2019
+ 11:55:37 +0100
 Received: from localhost (10.201.22.141) by webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 4 Nov 2019 11:55:35
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 4 Nov 2019 11:55:36
  +0100
 From: Amelie Delaunay <amelie.delaunay@st.com>
 To: Maxime Coquelin <mcoquelin.stm32@gmail.com>, Alexandre Torgue
  <alexandre.torgue@st.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
  <mark.rutland@arm.com>
-Subject: [PATCH v2 1/2] ARM: dts: stm32: remove OV5640 pinctrl definition on
+Subject: [PATCH v2 2/2] ARM: dts: stm32: change joystick pinctrl definition on
  stm32mp157c-ev1
-Date: Mon, 4 Nov 2019 11:55:28 +0100
-Message-ID: <20191104105529.8049-2-amelie.delaunay@st.com>
+Date: Mon, 4 Nov 2019 11:55:29 +0100
+Message-ID: <20191104105529.8049-3-amelie.delaunay@st.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191104105529.8049-1-amelie.delaunay@st.com>
 References: <20191104105529.8049-1-amelie.delaunay@st.com>
@@ -68,15 +69,15 @@ X-Originating-IP: [10.201.22.141]
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
  definitions=2019-11-04_08:2019-11-04,2019-11-04 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_025543_684352_65DE1253 
-X-CRM114-Status: GOOD (  15.90  )
+X-CRM114-CacheID: sfid-20191104_025543_196710_94CE7562 
+X-CRM114-Status: GOOD (  13.59  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -105,52 +106,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-"push-pull" configuration is now fully handled by the gpiolib and the
-STMFX pinctrl driver. There is no longer need to declare a pinctrl group
-to only configure "push-pull" setting for the line. It is done directly by
-the gpiolib.
+Pins used for joystick are all configured as input. "push-pull" is not a
+valid setting for an input pin.
 
 Fixes: a502b343ebd0 ("pinctrl: stmfx: update pinconf settings")
 Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
 Signed-off-by: Amelie Delaunay <amelie.delaunay@st.com>
 ---
- arch/arm/boot/dts/stm32mp157c-ev1.dts | 12 ++----------
- 1 file changed, 2 insertions(+), 10 deletions(-)
+ arch/arm/boot/dts/stm32mp157c-ev1.dts | 1 -
+ 1 file changed, 1 deletion(-)
 
 diff --git a/arch/arm/boot/dts/stm32mp157c-ev1.dts b/arch/arm/boot/dts/stm32mp157c-ev1.dts
-index 2baae5f25e2c..3f7fcba3a516 100644
+index 3f7fcba3a516..3789312c8539 100644
 --- a/arch/arm/boot/dts/stm32mp157c-ev1.dts
 +++ b/arch/arm/boot/dts/stm32mp157c-ev1.dts
-@@ -182,14 +182,12 @@
+@@ -220,7 +220,6 @@
  
- 	ov5640: camera@3c {
- 		compatible = "ovti,ov5640";
--		pinctrl-names = "default";
--		pinctrl-0 = <&ov5640_pins>;
- 		reg = <0x3c>;
- 		clocks = <&clk_ext_camera>;
- 		clock-names = "xclk";
- 		DOVDD-supply = <&v2v8>;
--		powerdown-gpios = <&stmfx_pinctrl 18 GPIO_ACTIVE_HIGH>;
--		reset-gpios = <&stmfx_pinctrl 19 GPIO_ACTIVE_LOW>;
-+		powerdown-gpios = <&stmfx_pinctrl 18 (GPIO_ACTIVE_HIGH | GPIO_PUSH_PULL)>;
-+		reset-gpios = <&stmfx_pinctrl 19 (GPIO_ACTIVE_LOW | GPIO_PUSH_PULL)>;
- 		rotation = <180>;
- 		status = "okay";
- 
-@@ -225,12 +223,6 @@
- 				drive-push-pull;
+ 			joystick_pins: joystick {
+ 				pins = "gpio0", "gpio1", "gpio2", "gpio3", "gpio4";
+-				drive-push-pull;
  				bias-pull-down;
  			};
--
--			ov5640_pins: camera {
--				pins = "agpio2", "agpio3"; /* stmfx pins 18 & 19 */
--				drive-push-pull;
--				output-low;
--			};
  		};
- 	};
- };
 -- 
 2.17.1
 
