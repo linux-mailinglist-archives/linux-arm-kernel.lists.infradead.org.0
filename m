@@ -2,55 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DD68EE446
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 16:51:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F053EE4B5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 17:34:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W6MplqTN6IRXZKqnxY0RVn1ECA+U/VnbGwOn6Dg7RX0=; b=Zn4p/GLdh519Id
-	V8ll75/aPZISW9Xb3pQoGzG/h+fIaFy/aaOcz4iyq3Xir2GmFPB6VroLJXrA86/efxc04qJn1CYx/
-	hW/DsA4vQihNCABiEFQt+5OSqhbNQT6MG5qE3niEr640Yc4QI/rVskCsMUscuyyLcQdTl66LWLp5z
-	5V3bBBcyaTeZSY077iB/AV2PZcTejjR0Y5ccPhpJx22MlnlPBq/Esv94GQVqLSowdkD6LY9lcTseV
-	3g3o1u0N8yIlorfSCrTheDkSMwCbMpJ+mPDzS+xByKjEV9EYtgeaVsWCFgak7VpTC6n6rs4RnBEzI
-	I7ERh+zQH/Kg5ITgecIQ==;
+	List-Owner; bh=ahJmjv6gfIAfkTnsNi0MCSaHlSJZokvVmkoIi65kAVI=; b=SFS9SeaYHWXnsi
+	1KvTSYB1TokUZNLSh2hIqM3E5WWyRsB6yS1I5cii+irt72qeGZxa0wYT164bp5f0Ru+JAG7COYOuf
+	Eq850uOyoq1vgYw6jBdGVC5XnIfEY2gO91y/GTiQbHnnE1ybDFF3qNTympjWfkCYvbgEVd2ADpvHW
+	X5Qczs81zo6X4B+2oCoEKkCcjkn24WFz9T+1BnIAXjTWHuGuMswqNNt89oO8A4Yw+pq/qlgbfoCT3
+	lGLTj+wf9bbBmEjavq6kwYWajcx95I26Az5ez0ZUXDzFj3N/95klpYmBPR94bt4ReGiJxmmsBqEQu
+	JkPlomo9cTOk8eWEhA4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRedx-0005aX-I0; Mon, 04 Nov 2019 15:51:49 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRedp-0005Zr-4p
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 15:51:42 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 15BE41FB;
- Mon,  4 Nov 2019 07:51:40 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CA20A3F71A;
- Mon,  4 Nov 2019 07:51:37 -0800 (PST)
-Date: Mon, 4 Nov 2019 15:51:33 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: linux-arm-kernel@lists.infradead.org, Jessica Yu <jeyu@kernel.org>,
- Helge Deller <deller@gmx.de>,
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>
-Subject: Re: [PATCHv2 2/8] module/ftrace: handle patchable-function-entry
-Message-ID: <20191104155132.GA1643@lakrids.cambridge.arm.com>
-References: <20191029165832.33606-1-mark.rutland@arm.com>
- <20191029165832.33606-3-mark.rutland@arm.com>
+	id 1iRfIu-0003tE-Sw; Mon, 04 Nov 2019 16:34:08 +0000
+Received: from mailoutvs3.siol.net ([185.57.226.194] helo=mail.siol.net)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iRfIl-0003rh-Uy
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 16:34:02 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTP id 94E61525106;
+ Mon,  4 Nov 2019 17:33:51 +0100 (CET)
+X-Virus-Scanned: amavisd-new at psrvmta10.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta10.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id cL8U28b3yVhv; Mon,  4 Nov 2019 17:33:51 +0100 (CET)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTPS id E8F185250EB;
+ Mon,  4 Nov 2019 17:33:50 +0100 (CET)
+Received: from jernej-laptop.localnet (cpe-86-58-102-7.static.triera.net
+ [86.58.102.7]) (Authenticated sender: jernej.skrabec@siol.net)
+ by mail.siol.net (Postfix) with ESMTPA id EA0315251A3;
+ Mon,  4 Nov 2019 17:33:46 +0100 (CET)
+From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
+To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+Subject: Re: [PATCH 1/3] media: cedrus: Properly signal size in mode register
+Date: Mon, 04 Nov 2019 17:33:46 +0100
+Message-ID: <7309638.L6IRxaGt1L@jernej-laptop>
+In-Reply-To: <20191104100228.GD502900@aptenodytes>
+References: <20191026074959.1073512-1-jernej.skrabec@siol.net>
+ <20191026074959.1073512-2-jernej.skrabec@siol.net>
+ <20191104100228.GD502900@aptenodytes>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191029165832.33606-3-mark.rutland@arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_075141_277736_EF0FB748 
-X-CRM114-Status: GOOD (  26.20  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191104_083400_158003_32939230 
+X-CRM114-Status: GOOD (  20.70  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.194 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,166 +71,189 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jthierry@redhat.com, linux-parisc@vger.kernel.org, peterz@infradead.org,
- catalin.marinas@arm.com, duwe@suse.de, linux-kernel@vger.kernel.org,
- rostedt@goodmis.org, takahiro.akashi@linaro.org, will@kernel.org,
- mingo@redhat.com, james.morse@arm.com, jpoimboe@redhat.com,
- amit.kachhap@arm.com, svens@stackframe.org
+Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
+ linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org, mripard@kernel.org,
+ wens@csie.org, hverkuil-cisco@xs4all.nl, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jessica, Helge,
-
-Are you ok with the module and parisc changes, repectively?
-
-The kbuild test robot is happy building this for multiple architectures,
-Sven has tested that this works correctly on parisc, and others have
-tested other architectures.
-
-I'd like to queue this in the arm64 tree soon if possible.
-
-Thanks,
-Mark.
-
-On Tue, Oct 29, 2019 at 04:58:26PM +0000, Mark Rutland wrote:
-> When using patchable-function-entry, the compiler will record the
-> callsites into a section named "__patchable_function_entries" rather
-> than "__mcount_loc". Let's abstract this difference behind a new
-> FTRACE_CALLSITE_SECTION, so that architectures don't have to handle this
-> explicitly (e.g. with custom module linker scripts).
+Dne ponedeljek, 04. november 2019 ob 11:02:28 CET je Paul Kocialkowski 
+napisal(a):
+> Hi Jernej,
 > 
-> As parisc currently handles this explicitly, it is fixed up accordingly,
-> with its custom linker script removed. Since FTRACE_CALLSITE_SECTION is
-> only defined when DYNAMIC_FTRACE is selected, the parisc module loading
-> code is updated to only use the definition in that case. When
-> DYNAMIC_FTRACE is not selected, modules shouldn't have this section, so
-> this removes some redundant work in that case.
+> On Sat 26 Oct 19, 09:49, Jernej Skrabec wrote:
+> > Mode register also holds information if video width is bigger than 2048
+> > and if it is equal to 4096.
+> > 
+> > Rework cedrus_engine_enable() to properly signal this properties.
 > 
-> I built parisc generic-{32,64}bit_defconfig with DYNAMIC_FTRACE enabled,
-> and verified that the section made it into the .ko files for modules.
+> Thanks for the patch, looks good to me!
 > 
-> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-> Reviewed-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> Cc: Helge Deller <deller@gmx.de>
-> Cc: Ingo Molnar <mingo@redhat.com>
-> Cc: James E.J. Bottomley <James.Bottomley@HansenPartnership.com>
-> Cc: Jessica Yu <jeyu@kernel.org>
-> Cc: Steven Rostedt <rostedt@goodmis.org>
-> Cc: Sven Schnelle <svens@stackframe.org>
-> Cc: linux-parisc@vger.kernel.org
-> ---
->  arch/parisc/Makefile          |  1 -
->  arch/parisc/kernel/module.c   | 10 +++++++---
->  arch/parisc/kernel/module.lds |  7 -------
->  include/linux/ftrace.h        |  5 +++++
->  kernel/module.c               |  2 +-
->  5 files changed, 13 insertions(+), 12 deletions(-)
->  delete mode 100644 arch/parisc/kernel/module.lds
+> Acked-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 > 
-> diff --git a/arch/parisc/Makefile b/arch/parisc/Makefile
-> index 36b834f1c933..dca8f2de8cf5 100644
-> --- a/arch/parisc/Makefile
-> +++ b/arch/parisc/Makefile
-> @@ -60,7 +60,6 @@ KBUILD_CFLAGS += -DCC_USING_PATCHABLE_FUNCTION_ENTRY=1 \
->  		 -DFTRACE_PATCHABLE_FUNCTION_SIZE=$(NOP_COUNT)
->  
->  CC_FLAGS_FTRACE := -fpatchable-function-entry=$(NOP_COUNT),$(shell echo $$(($(NOP_COUNT)-1)))
-> -KBUILD_LDS_MODULE += $(srctree)/arch/parisc/kernel/module.lds
->  endif
->  
->  OBJCOPY_FLAGS =-O binary -R .note -R .comment -S
-> diff --git a/arch/parisc/kernel/module.c b/arch/parisc/kernel/module.c
-> index ac5f34993b53..1c50093e2ebe 100644
-> --- a/arch/parisc/kernel/module.c
-> +++ b/arch/parisc/kernel/module.c
-> @@ -43,6 +43,7 @@
->  #include <linux/elf.h>
->  #include <linux/vmalloc.h>
->  #include <linux/fs.h>
-> +#include <linux/ftrace.h>
->  #include <linux/string.h>
->  #include <linux/kernel.h>
->  #include <linux/bug.h>
-> @@ -862,7 +863,7 @@ int module_finalize(const Elf_Ehdr *hdr,
->  	const char *strtab = NULL;
->  	const Elf_Shdr *s;
->  	char *secstrings;
-> -	int err, symindex = -1;
-> +	int symindex = -1;
->  	Elf_Sym *newptr, *oldptr;
->  	Elf_Shdr *symhdr = NULL;
->  #ifdef DEBUG
-> @@ -946,11 +947,13 @@ int module_finalize(const Elf_Ehdr *hdr,
->  			/* patch .altinstructions */
->  			apply_alternatives(aseg, aseg + s->sh_size, me->name);
->  
-> +#ifdef CONFIG_DYNAMIC_FTRACE
->  		/* For 32 bit kernels we're compiling modules with
->  		 * -ffunction-sections so we must relocate the addresses in the
-> -		 *__mcount_loc section.
-> +		 *  ftrace callsite section.
->  		 */
-> -		if (symindex != -1 && !strcmp(secname, "__mcount_loc")) {
-> +		if (symindex != -1 && !strcmp(secname, FTRACE_CALLSITE_SECTION)) {
-> +			int err;
->  			if (s->sh_type == SHT_REL)
->  				err = apply_relocate((Elf_Shdr *)sechdrs,
->  							strtab, symindex,
-> @@ -962,6 +965,7 @@ int module_finalize(const Elf_Ehdr *hdr,
->  			if (err)
->  				return err;
->  		}
-> +#endif
->  	}
->  	return 0;
->  }
-> diff --git a/arch/parisc/kernel/module.lds b/arch/parisc/kernel/module.lds
-> deleted file mode 100644
-> index 1a9a92aca5c8..000000000000
-> --- a/arch/parisc/kernel/module.lds
-> +++ /dev/null
-> @@ -1,7 +0,0 @@
-> -/* SPDX-License-Identifier: GPL-2.0 */
-> -
-> -SECTIONS {
-> -	__mcount_loc : {
-> -		*(__patchable_function_entries)
-> -	}
-> -}
-> diff --git a/include/linux/ftrace.h b/include/linux/ftrace.h
-> index 9867d90d635e..9141f2263286 100644
-> --- a/include/linux/ftrace.h
-> +++ b/include/linux/ftrace.h
-> @@ -738,6 +738,11 @@ static inline unsigned long get_lock_parent_ip(void)
->  
->  #ifdef CONFIG_FTRACE_MCOUNT_RECORD
->  extern void ftrace_init(void);
-> +#ifdef CC_USING_PATCHABLE_FUNCTION_ENTRY
-> +#define FTRACE_CALLSITE_SECTION	"__patchable_function_entries"
-> +#else
-> +#define FTRACE_CALLSITE_SECTION	"__mcount_loc"
-> +#endif
->  #else
->  static inline void ftrace_init(void) { }
->  #endif
-> diff --git a/kernel/module.c b/kernel/module.c
-> index ff2d7359a418..acf7962936c4 100644
-> --- a/kernel/module.c
-> +++ b/kernel/module.c
-> @@ -3222,7 +3222,7 @@ static int find_module_sections(struct module *mod, struct load_info *info)
->  #endif
->  #ifdef CONFIG_FTRACE_MCOUNT_RECORD
->  	/* sechdrs[0].sh_size is always zero */
-> -	mod->ftrace_callsites = section_objs(info, "__mcount_loc",
-> +	mod->ftrace_callsites = section_objs(info, FTRACE_CALLSITE_SECTION,
->  					     sizeof(*mod->ftrace_callsites),
->  					     &mod->num_ftrace_callsites);
->  #endif
-> -- 
-> 2.11.0
+> One minor thing: maybe we should have a way to set the maximum dimensions
+> depending on the generation of the engine in use and the actual maximum
+> supported by the hardware.
 > 
+> Maybe either as dedicated new fields in struct cedrus_variant or as
+> capability flags.
+
+I was thinking about first solution, but after going trough manuals, it was 
+unclear what are real limitations. For example, H3 manual states that it is 
+capable of decoding H264 1080p@60Hz. However, I know for a fact that it is 
+also capable of decoding 4k videos, but probably not at 60 Hz. I don't own 
+anything older that A83T, so I don't know what are capabilities of those SoCs. 
+Anyway, being slow is still ok for some tasks, like transcoding, so we can't 
+limit decoding to 1080p just because it's slow. It is probably still faster 
+than doing it in SW. Not to mention that it's still ok for some videos, a lot 
+of them uses 24 fps.
+
+Best regards,
+Jernej
+
+> 
+> Anyway that can be done later since we were already hardcoding this.
+> 
+> Cheers,
+> 
+> Paul
+> 
+> > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> > ---
+> > 
+> >  drivers/staging/media/sunxi/cedrus/cedrus_h264.c  | 2 +-
+> >  drivers/staging/media/sunxi/cedrus/cedrus_h265.c  | 2 +-
+> >  drivers/staging/media/sunxi/cedrus/cedrus_hw.c    | 9 +++++++--
+> >  drivers/staging/media/sunxi/cedrus/cedrus_hw.h    | 2 +-
+> >  drivers/staging/media/sunxi/cedrus/cedrus_mpeg2.c | 2 +-
+> >  drivers/staging/media/sunxi/cedrus/cedrus_regs.h  | 2 ++
+> >  6 files changed, 13 insertions(+), 6 deletions(-)
+> > 
+> > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
+> > b/drivers/staging/media/sunxi/cedrus/cedrus_h264.c index
+> > 7487f6ab7576..d2c854ecdf15 100644
+> > --- a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
+> > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
+> > @@ -485,7 +485,7 @@ static void cedrus_h264_setup(struct cedrus_ctx *ctx,
+> > 
+> >  {
+> >  
+> >  	struct cedrus_dev *dev = ctx->dev;
+> > 
+> > -	cedrus_engine_enable(dev, CEDRUS_CODEC_H264);
+> > +	cedrus_engine_enable(ctx, CEDRUS_CODEC_H264);
+> > 
+> >  	cedrus_write(dev, VE_H264_SDROT_CTRL, 0);
+> >  	cedrus_write(dev, VE_H264_EXTRA_BUFFER1,
+> > 
+> > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
+> > b/drivers/staging/media/sunxi/cedrus/cedrus_h265.c index
+> > 9bc921866f70..6945dc74e1d7 100644
+> > --- a/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
+> > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
+> > @@ -276,7 +276,7 @@ static void cedrus_h265_setup(struct cedrus_ctx *ctx,
+> > 
+> >  	}
+> >  	
+> >  	/* Activate H265 engine. */
+> > 
+> > -	cedrus_engine_enable(dev, CEDRUS_CODEC_H265);
+> > +	cedrus_engine_enable(ctx, CEDRUS_CODEC_H265);
+> > 
+> >  	/* Source offset and length in bits. */
+> > 
+> > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
+> > b/drivers/staging/media/sunxi/cedrus/cedrus_hw.c index
+> > 570a9165dd5d..3acfa21bc124 100644
+> > --- a/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
+> > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
+> > @@ -30,7 +30,7 @@
+> > 
+> >  #include "cedrus_hw.h"
+> >  #include "cedrus_regs.h"
+> > 
+> > -int cedrus_engine_enable(struct cedrus_dev *dev, enum cedrus_codec codec)
+> > +int cedrus_engine_enable(struct cedrus_ctx *ctx, enum cedrus_codec codec)
+> > 
+> >  {
+> >  
+> >  	u32 reg = 0;
+> > 
+> > @@ -58,7 +58,12 @@ int cedrus_engine_enable(struct cedrus_dev *dev, enum
+> > cedrus_codec codec)> 
+> >  		return -EINVAL;
+> >  	
+> >  	}
+> > 
+> > -	cedrus_write(dev, VE_MODE, reg);
+> > +	if (ctx->src_fmt.width == 4096)
+> > +		reg |= VE_MODE_PIC_WIDTH_IS_4096;
+> > +	if (ctx->src_fmt.width > 2048)
+> > +		reg |= VE_MODE_PIC_WIDTH_MORE_2048;
+> > +
+> > +	cedrus_write(ctx->dev, VE_MODE, reg);
+> > 
+> >  	return 0;
+> >  
+> >  }
+> > 
+> > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_hw.h
+> > b/drivers/staging/media/sunxi/cedrus/cedrus_hw.h index
+> > 27d0882397aa..604ff932fbf5 100644
+> > --- a/drivers/staging/media/sunxi/cedrus/cedrus_hw.h
+> > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_hw.h
+> > @@ -16,7 +16,7 @@
+> > 
+> >  #ifndef _CEDRUS_HW_H_
+> >  #define _CEDRUS_HW_H_
+> > 
+> > -int cedrus_engine_enable(struct cedrus_dev *dev, enum cedrus_codec
+> > codec);
+> > +int cedrus_engine_enable(struct cedrus_ctx *ctx, enum cedrus_codec
+> > codec);
+> > 
+> >  void cedrus_engine_disable(struct cedrus_dev *dev);
+> >  
+> >  void cedrus_dst_format_set(struct cedrus_dev *dev,
+> > 
+> > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_mpeg2.c
+> > b/drivers/staging/media/sunxi/cedrus/cedrus_mpeg2.c index
+> > 13c34927bad5..8bcd6b8f9e2d 100644
+> > --- a/drivers/staging/media/sunxi/cedrus/cedrus_mpeg2.c
+> > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_mpeg2.c
+> > @@ -96,7 +96,7 @@ static void cedrus_mpeg2_setup(struct cedrus_ctx *ctx,
+> > struct cedrus_run *run)> 
+> >  	quantization = run->mpeg2.quantization;
+> >  	
+> >  	/* Activate MPEG engine. */
+> > 
+> > -	cedrus_engine_enable(dev, CEDRUS_CODEC_MPEG2);
+> > +	cedrus_engine_enable(ctx, CEDRUS_CODEC_MPEG2);
+> > 
+> >  	/* Set intra quantization matrix. */
+> > 
+> > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
+> > b/drivers/staging/media/sunxi/cedrus/cedrus_regs.h index
+> > 4275a307d282..ace3d49fcd82 100644
+> > --- a/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
+> > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
+> > @@ -35,6 +35,8 @@
+> > 
+> >  #define VE_MODE					0x00
+> > 
+> > +#define VE_MODE_PIC_WIDTH_IS_4096		BIT(22)
+> > +#define VE_MODE_PIC_WIDTH_MORE_2048		BIT(21)
+> > 
+> >  #define VE_MODE_REC_WR_MODE_2MB			(0x01 << 20)
+> >  #define VE_MODE_REC_WR_MODE_1MB			(0x00 << 20)
+> >  #define VE_MODE_DDR_MODE_BW_128			(0x03 << 16)
+
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
