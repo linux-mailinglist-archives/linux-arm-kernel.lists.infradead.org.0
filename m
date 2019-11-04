@@ -2,70 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1BDE8ED75F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 02:58:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E200BED763
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 03:02:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7IT2gj9FYfKVjJNecVGD5XRLEFZKCp11p2tQsiMBouc=; b=sTDP7jzYBY7gOv
-	d7MhGUsS6yQsvVVYDuSsiCk7SpSWuROPjNJ/QRHSRkZ5ywh4iLpB/rDjP2arnySfyNHuaqkvuSpmL
-	ej584NE+hOB82sCcMXk7WBUAwUOVB/ej1d3uas9Z/e2mLYSkKRQAVegWQVMRymWwvsShGGjdIeD7R
-	+BolnnQBNwDGP3Z14XD0vCJ3cNFFPh1LPjpcXYb7td1iYBT1qLE3g//QXcJWxeJCceiCT/nYNDbWv
-	EWRg/n7Fpb5I0QP4DZXxjZ/Nf5tjzMvbWXkCVvpjpVtMzXSykqY9aBRDeM/Oj290fIf4p2h6sQ7Fm
-	VsfXoN1WNcmeu5uGi1xg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=G4E+BbvQ4pH4/yy3FSejz0OOj3rKJF5xxh6VHotd4hY=; b=kw4lp+iWvVc5tA
+	H/FRmsB+YSqUY/Zk3PncRwrwPHo9hZ1pjtDuC+Xg2DwDCLEJMTuQvxp2BNrdFg0OSpjdQLe4qFnFG
+	Roued3rLSMSqeZnUA4TLh2k4Rq48T1vt+uHoeeFWvkuMJ9ceKjO9u8VJ5YCCYwitoA6iSkPj2f9bF
+	fjDVH6PRWYFkX8PUWUxJQEnS2TXUQpiCHzxs3KdJCVaXLpUkb9vCwvlH4gG+vL5qHJJBpnSy3HRAn
+	YgDMfrc4Vbcsct3weIXRSUNx/1xxXjZOodestbq8i2Pzs7Fo521b6mAOKXBzbDKjedh1fLUd8IhNO
+	P3sFfYEFvA8zO/vAdIfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRRd3-0002dm-1S; Mon, 04 Nov 2019 01:58:01 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iRRhP-0004I1-CW; Mon, 04 Nov 2019 02:02:31 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRRcq-0002dN-Tg
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 01:57:50 +0000
-Received: from dragon (li1038-30.members.linode.com [45.33.96.30])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5FBEA217F5;
- Mon,  4 Nov 2019 01:57:43 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572832668;
- bh=mtTHSbd7Hygdqlh64EyjBn0IsDGy91z2yQc/KOzX5WU=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=uFGqMMQUSdY8FeF1cxANXcYO0epjGC61gmKn4S+OW0/Fx4k3PD3xtBqv9JPI9642X
- 2xPvSnF+uXUEXdrhuT8Rc/n6L6aPR3hypcKwH97mHpRtARM1mtV+sByJLA/hhyV9ja
- rum3NU0wfmTs9wtJTTYMYKB9FtlsaQmB+oo7kX38=
-Date: Mon, 4 Nov 2019 09:57:23 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH V2] ARM: dts: imx7ulp-evk: Use APLL_PFD1 as usdhc's clock
- source
-Message-ID: <20191104015722.GM24620@dragon>
-References: <1572482622-22070-1-git-send-email-Anson.Huang@nxp.com>
+ id 1iRRhH-0004H1-D1
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 02:02:25 +0000
+Received: from DGGEMS406-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 6F104AC0AF1BEAE267E5;
+ Mon,  4 Nov 2019 10:02:16 +0800 (CST)
+Received: from [127.0.0.1] (10.74.221.148) by DGGEMS406-HUB.china.huawei.com
+ (10.3.19.206) with Microsoft SMTP Server id 14.3.439.0; Mon, 4 Nov 2019
+ 10:02:15 +0800
+Subject: Re: [PATCH] arm64: perf: Simplify the ARMv8 PMUv3 event attributes
+To: Robin Murphy <robin.murphy@arm.com>, Will Deacon <will@kernel.org>
+References: <1572407177-48229-1-git-send-email-zhangshaokun@hisilicon.com>
+ <20191031160804.GA28325@willie-the-truck> <20191101085319.GA3508@blommer>
+ <20191101103616.GA2392@willie-the-truck>
+ <ddb8d44c-d7cc-5080-1cbc-59f758b699ae@arm.com>
+ <20191101105557.GC2392@willie-the-truck>
+ <7b1e730e-9083-75b9-f1bc-7d84c686c97c@arm.com>
+From: Shaokun Zhang <zhangshaokun@hisilicon.com>
+Message-ID: <181d59c8-6252-c01c-79a9-364158be7105@hisilicon.com>
+Date: Mon, 4 Nov 2019 10:02:15 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.1.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1572482622-22070-1-git-send-email-Anson.Huang@nxp.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+In-Reply-To: <7b1e730e-9083-75b9-f1bc-7d84c686c97c@arm.com>
+X-Originating-IP: [10.74.221.148]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191103_175749_357325_06B7F00D 
-X-CRM114-Status: GOOD (  10.05  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191103_180223_610029_EB6CB335 
+X-CRM114-Status: GOOD (  13.83  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,46 +69,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, s.hauer@pengutronix.de,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, Linux-imx@nxp.com,
- kernel@pengutronix.de, festevam@gmail.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 31, 2019 at 08:43:42AM +0800, Anson Huang wrote:
-> i.MX7ULP does NOT support runtime switching clock source for PCC,
-> APLL_PFD1 by default is usdhc's clock source, so just use it
-> in kernel to avoid below kernel dump during kernel boot up and
-> make sure kernel can boot up with SD root file-system.
-> 
-> [    3.035892] Loading compiled-in X.509 certificates
-> [    3.136301] sdhci-esdhc-imx 40370000.mmc: Got CD GPIO
-> [    3.242886] mmc0: Reset 0x1 never completed.
-> [    3.247190] mmc0: sdhci: ============ SDHCI REGISTER DUMP ===========
-> [    3.253751] mmc0: sdhci: Sys addr:  0x00000000 | Version:  0x00000002
-> [    3.260218] mmc0: sdhci: Blk size:  0x00000200 | Blk cnt:  0x00000001
-> [    3.266775] mmc0: sdhci: Argument:  0x00009a64 | Trn mode: 0x00000000
-> [    3.273333] mmc0: sdhci: Present:   0x00088088 | Host ctl: 0x00000002
-> [    3.279794] mmc0: sdhci: Power:     0x00000000 | Blk gap:  0x00000080
-> [    3.286350] mmc0: sdhci: Wake-up:   0x00000008 | Clock:    0x0000007f
-> [    3.292901] mmc0: sdhci: Timeout:   0x0000008c | Int stat: 0x00000000
-> [    3.299364] mmc0: sdhci: Int enab:  0x007f010b | Sig enab: 0x00000000
-> [    3.305918] mmc0: sdhci: ACmd stat: 0x00000000 | Slot int: 0x00008402
-> [    3.312471] mmc0: sdhci: Caps:      0x07eb0000 | Caps_1:   0x0000b400
-> [    3.318934] mmc0: sdhci: Cmd:       0x0000113a | Max curr: 0x00ffffff
-> [    3.325488] mmc0: sdhci: Resp[0]:   0x00000900 | Resp[1]:  0x0039b37f
-> [    3.332040] mmc0: sdhci: Resp[2]:   0x325b5900 | Resp[3]:  0x00400e00
-> [    3.338501] mmc0: sdhci: Host ctl2: 0x00000000
-> [    3.343051] mmc0: sdhci: ============================================
-> 
-> Fixes: 20434dc92c05 ("ARM: dts: imx: add common imx7ulp dtsi support")
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> Tested-by: Fabio Estevam <festevam@gmail.com>
+Hi Robin,
 
-Applied, thanks.
+On 2019/11/1 19:11, Robin Murphy wrote:
+> On 2019-11-01 10:55 am, Will Deacon wrote:
+>> On Fri, Nov 01, 2019 at 10:54:21AM +0000, Robin Murphy wrote:
+>>> On 2019-11-01 10:36 am, Will Deacon wrote:
+>>>> On Fri, Nov 01, 2019 at 08:53:19AM +0000, Mark Rutland wrote:
+>>>>> On Thu, Oct 31, 2019 at 04:08:04PM +0000, Will Deacon wrote:
+>>>>>> On Wed, Oct 30, 2019 at 11:46:17AM +0800, Shaokun Zhang wrote:
+>>>>>>> For each PMU event, there is a ARMV8_EVENT_ATTR(xx, XX) and
+>>>>>>> &armv8_event_attr_xx.attr.attr. Let's redefine the ARMV8_EVENT_ATTR
+>>>>>>> to simplify the armv8_pmuv3_event_attrs.
+>>>>>>>
+>>>>>>> Cc: Will Deacon <will@kernel.org>
+>>>>>>> Cc: Mark Rutland <mark.rutland@arm.com>
+>>>>>>> Signed-off-by: Shaokun Zhang <zhangshaokun@hisilicon.com>
+>>>>>>> ---
+>>>>>>>    arch/arm64/kernel/perf_event.c | 189 ++++++++++++++---------------------------
+>>>>>>>    1 file changed, 65 insertions(+), 124 deletions(-)
+>>>>>>>
+>>>>>>> diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
+>>>>>>> index a0b4f1bca491..d0f084939bcf 100644
+>>>>>>> --- a/arch/arm64/kernel/perf_event.c
+>>>>>>> +++ b/arch/arm64/kernel/perf_event.c
+>>>>>>> @@ -159,132 +159,73 @@ armv8pmu_events_sysfs_show(struct device *dev,
+>>>>>>>    }
+>>>>>>
+>>>>>> [...]
+>>>>>>
+>>>>>>> +    (&((struct perf_pmu_events_attr[]) { \
+>>>>>>> +        { .attr = __ATTR(name, 0444, armv8pmu_events_sysfs_show, NULL), \
+>>>>>>> +          .id = config, } \
+>>>>>>> +    })[0].attr.attr)
+>>>>>>
+>>>>>> I don't get the need for the array here. Why can't you do:
+>>>>>>
+>>>>>>     (&((struct perf_pmu_events_attr) {
+>>>>>>         .attr = ...,
+>>>>>>         .id = ...,
+>>>>>>     }).attr.attr)
+>>>>>
+>>>>> You need want &(obj.attr.attr) rather than &(obj).attr.attr, i.e.
+>>>>>
+>>>>> #define ARMV8_EVENT_ATTR(name, config) \
+>>>>>     (&((struct perf_pmu_events_attr) { \
+>>>>>         .attr = __ATTR(name, 0444, armv8pmu_events_sysfs_show, NULL), \
+>>>>>         .id = config, \
+>>>>>     }.attr.attr))
+>>>>> ... which compiles for me.
+>>>>
+>>>> Weird, the following compiles fine for me with both GCC and clang:
+>>>>
+>>>> #define ARMV8_EVENT_ATTR(name, config)                        \
+>>>>     (&((struct perf_pmu_events_attr) {                    \
+>>>>         .attr = __ATTR(name, 0444, armv8pmu_events_sysfs_show, NULL),    \
+>>>>         .id = config,                            \
+>>>>     }).attr.attr)
+>>>
+>>> You know that the expressions are equivalent because unary "&" has lower
+>>> precedence than ".", right? ;)
+>>
+>> Right, which is why it's weird that Shaokun claims that the version I posted
+>> doesn't compile. I assume it didn't build for Mark either, hence his extra
+>> brackets.
+> 
+> Because different compilers have different ideas of whether "obj" is a valid thing to dereference at all, regardless of where you put parentheses. From what I remember, the array trick was the only way to convince older GCCs to treat the floating struct initialiser as an actual object definition. I guess newer versions are a bit more lenient.
+> 
+
+Thanks for your detailed explanations, sounds great! Both GCC 5.4 and 7.3 are
+unhappy without the array trick.
+
+Thanks,
+Shaokun
+
+> Robin.
+> 
+> .
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
