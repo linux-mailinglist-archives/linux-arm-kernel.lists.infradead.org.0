@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89B97EE16D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 14:38:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECD5FEE190
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 14:52:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rbLK9SeBXCMZTBWcwitettlFw3BJOZBTtxR7kblQypc=; b=if08WcTU8LrFHM
-	yrUmWnAsFbgdQS0z5LmG8uvxPBKzQmIJR3zqoHWl+DVPkBFsbgx2x13mUdUpVCW64Hh7m1uGCSIYv
-	2jDLfxcZDb4Z9fiyQQeKu7+XKYPiElxyFtIGbBrMmE3rhz5BidyPBOvL6Aw2mH8rQxb7WynTyqWqR
-	TzV3Tzpz7CoYZi+IvlVnexSmzbjEpltsrzKjV0ljvIDPzLrQhyFSN4xyi7oQ40uRpoOPgycfn8dVh
-	I3CC48jyTDTY1Ht34J+s77vKF4QfKUCyS2NnqZRaIGadocHV3snGfGthPF2pzI15NqHP8LXIUc5Zm
-	O5yL5GvtUqav6l2uv7fw==;
+	List-Owner; bh=Fx9nlO4AG6QMg6Bal/bx9vmPiatykYVDKJP+/xCEnok=; b=inBk+/WOaCZFZm
+	H5gFPqfdgYpvftZeD9ztuKyVXGR0u9/WNgx9N8abIq+NnB091U7tS0YBsheDNBC6uUK6WuaRvun4n
+	WgY5LwMdX8/Wg6ks4ZejbK67cobIpKH15FjvG3Jr2yr5m95NQSsLD9bKCBN+AWXHMSjSOyFpLoCAw
+	SdHtBWqe6kLuqM42h/R9bRxMga2fdTzZ0qFNS3cVMNc9xwS+nTb4WGBRJCyqzPniRwGnkUabWiAmp
+	IZ8QKOqON4EHPhDm8Mo/9MKN8dgz1UXmGCC1YncTiv5vK72A+JdQAqLXQ9Rgqz/GnRMoXldFJIzub
+	L6xjjG77S6dsA72Eq/yQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRcZF-0004XD-3P; Mon, 04 Nov 2019 13:38:49 +0000
+	id 1iRcmA-0001GC-22; Mon, 04 Nov 2019 13:52:10 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRcZ7-0004WR-Nb
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 13:38:43 +0000
+ id 1iRcm3-0001FH-9g
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 13:52:04 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 97DD81FB;
- Mon,  4 Nov 2019 05:38:40 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C5F171FB;
+ Mon,  4 Nov 2019 05:52:00 -0800 (PST)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5FE8D3F6C4;
- Mon,  4 Nov 2019 05:38:38 -0800 (PST)
-Date: Mon, 4 Nov 2019 13:38:36 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 739A93F6C4;
+ Mon,  4 Nov 2019 05:51:58 -0800 (PST)
+Date: Mon, 4 Nov 2019 13:51:56 +0000
 From: Mark Rutland <mark.rutland@arm.com>
-To: Steven Rostedt <rostedt@goodmis.org>
-Subject: Re: [PATCHv2 1/8] ftrace: add ftrace_init_nop()
-Message-ID: <20191104133836.GF45140@lakrids.cambridge.arm.com>
+To: Amit Daniel Kachhap <amit.kachhap@arm.com>
+Subject: Re: [PATCHv2 7/8] arm64: implement ftrace with regs
+Message-ID: <20191104135155.GG45140@lakrids.cambridge.arm.com>
 References: <20191029165832.33606-1-mark.rutland@arm.com>
- <20191029165832.33606-2-mark.rutland@arm.com>
- <20191104081620.732320a8@grimm.local.home>
+ <20191029165832.33606-8-mark.rutland@arm.com>
+ <8132dc13-9fbd-24e2-8a5e-28b005043c3e@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191104081620.732320a8@grimm.local.home>
+In-Reply-To: <8132dc13-9fbd-24e2-8a5e-28b005043c3e@arm.com>
 User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_053841_812366_8EA83C82 
-X-CRM114-Status: GOOD (  15.55  )
+X-CRM114-CacheID: sfid-20191104_055203_379621_F3D7EB6B 
+X-CRM114-Status: GOOD (  10.20  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,53 +65,38 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: jthierry@redhat.com, linux-parisc@vger.kernel.org, peterz@infradead.org,
  catalin.marinas@arm.com, deller@gmx.de, jpoimboe@redhat.com,
- linux-kernel@vger.kernel.org, James.Bottomley@HansenPartnership.com,
- takahiro.akashi@linaro.org, will@kernel.org, mingo@redhat.com,
- james.morse@arm.com, jeyu@kernel.org, amit.kachhap@arm.com,
- svens@stackframe.org, duwe@suse.de, linux-arm-kernel@lists.infradead.org
+ linux-kernel@vger.kernel.org, rostedt@goodmis.org,
+ James.Bottomley@HansenPartnership.com, takahiro.akashi@linaro.org,
+ will@kernel.org, mingo@redhat.com, james.morse@arm.com, jeyu@kernel.org,
+ Torsten Duwe <duwe@lst.de>, svens@stackframe.org, duwe@suse.de,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 04, 2019 at 08:16:20AM -0500, Steven Rostedt wrote:
-> On Tue, 29 Oct 2019 16:58:25 +0000
-> Mark Rutland <mark.rutland@arm.com> wrote:
-> 
-> > Architectures may need to perform special initialization of ftrace
-> > callsites, and today they do so by special-casing ftrace_make_nop() when
-> > the expected branch address is MCOUNT_ADDR. In some cases (e.g. for
-> > patchable-function-entry), we don't have an mcount-like symbol and don't
-> > want a synthetic MCOUNT_ADDR, but we may need to perform some
-> > initialization of callsites.
-> > 
-> > To make it possible to separate initialization from runtime
-> > modification, and to handle cases without an mcount-like symbol, this
-> > patch adds an optional ftrace_init_nop() function that architectures can
-> > implement, which does not pass a branch address.
-> > 
-> > Where an architecture does not provide ftrace_init_nop(), we will fall
-> > back to the existing behaviour of calling ftrace_make_nop() with
-> > MCOUNT_ADDR.
-> > 
-> > At the same time, ftrace_code_disable() is renamed to
-> > ftrace_nop_initialize() to make it clearer that it is intended to
-> > intialize a callsite into a disabled state, and is not for disabling a
-> > callsite that has been runtime enabled. The kerneldoc description of rec
-> > arguments is updated to cover non-mcount callsites.
-> > 
-> > Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-> > Reviewed-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> > Cc: Ingo Molnar <mingo@redhat.com>
-> > Cc: Steven Rostedt <rostedt@goodmis.org>
-> 
-> Reviewed-by: Steven Rostedt (VMware) <rostedt@goodmis.org>
+On Sat, Nov 02, 2019 at 05:51:46PM +0530, Amit Daniel Kachhap wrote:
+> On 10/29/19 10:28 PM, Mark Rutland wrote:
+> > +/*
+> > + * Due to -fpatchable-function-entry=2, the compiler has placed two NOPs before
+> > + * the regular function prologue. For an enabled callsite, ftrace_init_nop() and
+> > + * ftrace_make_call() have patched those NOPs to:
+> > + *
+> > + * 	MOV	X9, LR
+> > + * 	BL	<entry>
+> > + *
+> > + * ... where <entry> is either ftrace_caller or ftrace_regs_caller.
+> > + *
+> > + * Each instrumented function follows the AAPCS, so here x0-x8 and x19-x30 are
+> > + * live, and x9-x18 are safe to clobber.
+> > + *
+> > + * We save the callsite's context into a pt_regs before invoking and ftrace
 
-Thanks!
+> s/invoking and ftrace callbacks/invoking the ftrace callbacks
 
-Just to check, are you happy if this were to go via the arm64 tree with
-the rest of the patches?
+Whoops, that was meant to be 'any'. I've fixed that up locally.
 
+Thanks,
 Mark.
 
 _______________________________________________
