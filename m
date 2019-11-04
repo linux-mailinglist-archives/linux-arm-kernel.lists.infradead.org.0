@@ -2,56 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AEAD4EE78E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 19:43:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21587EE791
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 19:43:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=66ZbMdDUZoEbdWssVPlffqTmlyvJf+F3xiyrkonmiQA=; b=p8RziBr2EaJGEscTjOOeGbSsl
-	o4u3HFw4ixNsRZcFRagSHVo1ds7ZA7FLHY2WWS5Rgtf0JZmYGJEiXijvPDi4QqwPM0oixyfq5IpeU
-	pOB/LUaZhtgrbSQ1Iluv/Su79S5GB3cRidMpVm8hqTX9YjTH3LGef1/KUmFMXcANm44HjzGV5UPDp
-	nyWFQhUY+3yQH1Yh9fejh93ZNun4dk09NhLgyLzVqzkuAz6vA9XvnPh8csju/jyRnd4+/kTdGUSbP
-	NzYSkiiGGSxsQyFxkKzquEkxUHgFJYYwCzL2oE4H8c+vmcN5VAxmG2XYdgc2JaR8yZPBvF9QkqGrs
-	y6Y65HnZg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=szD025SSb51PSz2tR/SV0RxFoBePtpko6kT8cGaEsFs=; b=EhyL8cBUuXD+D0
+	h5A09ZMSHhO39wthkpmor8cjUX08CePP9M/U9XbZgAHRix4t/VTXCWW6BNlcqULTYcUPI76snzdv4
+	4g09u+k2xogpfNCpboydcCshuOiOFYWoDYdm/zoKhzH1ZOryuwv3LdGxQnVsqKnOZhRyuGLJvVIk+
+	k0F1NbE3Bf+VaTCbX8LSd55V4V0u91LolA7+tvzJ//2R21e6QEBUxvFYlQq3it9uux8YDKd8JsfVS
+	Jg985aKj4ZTfiR92Mr8nZda6v0FPeKor6XDYZOsRmNffvQkt2hJ5Uu9enYWR40+/gV6WGeve6r13v
+	XsqnKZSPYu/6OXeZX/Mw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRhJr-0006IO-PC; Mon, 04 Nov 2019 18:43:15 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRhJl-0006Hz-Uj
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 18:43:11 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9BB4C1F1;
- Mon,  4 Nov 2019 10:43:08 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 03F983F71A;
- Mon,  4 Nov 2019 10:43:07 -0800 (PST)
-Subject: Re: [PATCH v2 07/10] iommu/io-pgtable-arm: Rationalise MAIR handling
-To: Will Deacon <will@kernel.org>
-References: <cover.1572024119.git.robin.murphy@arm.com>
- <c6bee9e6de5e7f4aa2293ee5385ffa2dd95600d3.1572024120.git.robin.murphy@arm.com>
- <20191104182029.GG24909@willie-the-truck>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <d7d7513d-9e54-6ae8-168a-2460a306a027@arm.com>
-Date: Mon, 4 Nov 2019 18:43:06 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1iRhKC-0006XJ-3L; Mon, 04 Nov 2019 18:43:36 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iRhJz-0006UI-Ip
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 18:43:25 +0000
+Received: by mail-pg1-x544.google.com with SMTP id 29so623632pgm.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 04 Nov 2019 10:43:21 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=cyveooZxsbFfSYt42gpZZRf9Ppul5ahlN5Luw1xLEm4=;
+ b=FO4ChYOqG1oNRDV8SFJM1O6g1rKgs4mD1S0mwnjOEy5e6gznsdmb5Jbzut8qZl6Npe
+ nqbw1ZRdW9fKLWI5Fl5LwloHqCuMW7rAUEVfq0trD5a+642EDknbaeqZIRAT5A62TOuR
+ nIucVLMqEbDF1rT+VQ24c/BaY4GgmhPZAGiq+fG8zGyDtzg2xmJu/a8ZacMBFkjSqeEd
+ rqbgql8j3pybZYsun81OVSIhtsL3ptEH0Zd2G0xjPuoDh0Cx1vRULjqZYELe6VPVwPlG
+ Yd7sLRbWek0Zz+j+/3c8/eyRXvV9+bz1a+94RsFKowibI+XSM/pcD6UMqaoe5Z4qqPnh
+ LYsA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=cyveooZxsbFfSYt42gpZZRf9Ppul5ahlN5Luw1xLEm4=;
+ b=FvXJ7UeSHZXuNTs0oRrk/dlnps8uRCYSTmH2dxw5eiW4K2pqm+YBoPj9sxHda8GicH
+ y0wY7WfNhEsJGegoGKDtZk/JjqYK4QLJVm2h8+kRVev0jEzA/aomCnCdlOyrhusvVm9v
+ jMwRX/3nyATp/2Q/9xolytnZlWXbJNUqKJuQhWCa9OP+o0ByEMV5Ix26J7JLT+xldeE5
+ zPk6TFShEFOdovluLxl4YqLejEc3xlljQciZYDQYTXHXgfiu03n6mL54wsB1RAwK1WIG
+ CC8nB69HLqHwWP+WLYrG5yMRyJEw2nibTaLCvWNdHsH8HJG8jJnjKxk8zubOyIraEuAA
+ VxMQ==
+X-Gm-Message-State: APjAAAU1FFUY3jqFLAZaYCdohEzhGf+0D1hT0C+Gha+41k6/c2HOdHP7
+ pHK4BsuuaYra/gk/QEKvs5ibWO5zVltN/ZWX7ZRUdg==
+X-Google-Smtp-Source: APXvYqzuga0pKYHVfkPxXV2Lqd6Ui/1l1fMs3gogk5Nnz/GzfH+hGl3UgXjsw4DiCvAlC8VU05yqiG01ckGdVV3QW3g=
+X-Received: by 2002:a63:d70e:: with SMTP id d14mr31076676pgg.10.1572893000068; 
+ Mon, 04 Nov 2019 10:43:20 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20191104182029.GG24909@willie-the-truck>
-Content-Language: en-GB
+References: <20191030174429.248697-1-ndesaulniers@google.com>
+ <fa4e28a9a16c54319916be005159e250@agner.ch>
+In-Reply-To: <fa4e28a9a16c54319916be005159e250@agner.ch>
+From: Nick Desaulniers <ndesaulniers@google.com>
+Date: Mon, 4 Nov 2019 10:43:08 -0800
+Message-ID: <CAKwvOd==f801+AfJWwrO3tbSRoizCa2HV7pViOqedJbipN9nOw@mail.gmail.com>
+Subject: Re: [PATCH] arm: replace Sun/Solaris style flag on section directive
+To: Stefan Agner <stefan@agner.ch>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_104310_032862_CA0FAA30 
-X-CRM114-Status: GOOD (  19.02  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191104_104323_640577_29FA4F68 
+X-CRM114-Status: GOOD (  15.03  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,64 +97,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: iommu@lists.linux-foundation.org, jcrouse@codeaurora.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Richard Fontana <rfontana@redhat.com>,
+ afzal mohammed <afzal.mohd.ma@gmail.com>, Fangrui Song <maskray@google.com>,
+ Russell King <linux@armlinux.org.uk>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Allison Randal <allison@lohutok.net>, Dave Martin <Dave.Martin@arm.com>,
+ Vladimir Murzin <vladimir.murzin@arm.com>,
+ Hans Ulli Kroll <ulli.kroll@googlemail.com>, Jian Cai <jiancai@google.com>,
+ Peter Smith <peter.smith@linaro.org>, Roy Franz <rfranz@marvell.com>,
+ Doug Anderson <armlinux@m.disordat.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Sonny Rao <sonnyrao@chromium.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Nicolas Pitre <nico@fluxnic.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ LKML <linux-kernel@vger.kernel.org>, Enrico Weigelt <info@metux.net>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 04/11/2019 18:20, Will Deacon wrote:
-> On Fri, Oct 25, 2019 at 07:08:36PM +0100, Robin Murphy wrote:
->> Between VMSAv8-64 and the various 32-bit formats, there is either one
->> 64-bit MAIR or a pair of 32-bit MAIR0/MAIR1 or NMRR/PMRR registers.
->> As such, keeping two 64-bit values in io_pgtable_cfg has always been
->> overkill.
->>
->> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
->> ---
->>   drivers/iommu/arm-smmu-v3.c    | 2 +-
->>   drivers/iommu/arm-smmu.c       | 4 ++--
->>   drivers/iommu/io-pgtable-arm.c | 3 +--
->>   drivers/iommu/ipmmu-vmsa.c     | 2 +-
->>   drivers/iommu/qcom_iommu.c     | 4 ++--
->>   include/linux/io-pgtable.h     | 2 +-
->>   6 files changed, 8 insertions(+), 9 deletions(-)
->>
->> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
->> index 8da93e730d6f..3f20e548f1ec 100644
->> --- a/drivers/iommu/arm-smmu-v3.c
->> +++ b/drivers/iommu/arm-smmu-v3.c
->> @@ -2172,7 +2172,7 @@ static int arm_smmu_domain_finalise_s1(struct arm_smmu_domain *smmu_domain,
->>   	cfg->cd.asid	= (u16)asid;
->>   	cfg->cd.ttbr	= pgtbl_cfg->arm_lpae_s1_cfg.ttbr[0];
->>   	cfg->cd.tcr	= pgtbl_cfg->arm_lpae_s1_cfg.tcr;
->> -	cfg->cd.mair	= pgtbl_cfg->arm_lpae_s1_cfg.mair[0];
->> +	cfg->cd.mair	= pgtbl_cfg->arm_lpae_s1_cfg.mair;
->>   	return 0;
->>   
->>   out_free_asid:
->> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
->> index 080af0326816..2bc3e93b11e6 100644
->> --- a/drivers/iommu/arm-smmu.c
->> +++ b/drivers/iommu/arm-smmu.c
->> @@ -552,8 +552,8 @@ static void arm_smmu_init_context_bank(struct arm_smmu_domain *smmu_domain,
->>   			cb->mair[0] = pgtbl_cfg->arm_v7s_cfg.prrr;
->>   			cb->mair[1] = pgtbl_cfg->arm_v7s_cfg.nmrr;
->>   		} else {
->> -			cb->mair[0] = pgtbl_cfg->arm_lpae_s1_cfg.mair[0];
->> -			cb->mair[1] = pgtbl_cfg->arm_lpae_s1_cfg.mair[1];
->> +			cb->mair[0] = pgtbl_cfg->arm_lpae_s1_cfg.mair;
->> +			cb->mair[1] = pgtbl_cfg->arm_lpae_s1_cfg.mair >> 32;
-> 
-> Does this work correctly for big-endian?
+On Fri, Nov 1, 2019 at 2:05 PM Stefan Agner <stefan@agner.ch> wrote:
+>
+> Hi Nick,
+>
+> On 2019-10-30 18:44, Nick Desaulniers wrote:
+> > It looks like a section directive was using "Solaris style" to declare
+> > the section flags. Replace this with the GNU style so that Clang's
+> > integrated assembler can assemble this directive.
+> >
+> > The modified instances were identified via:
+> > $ ag \\.section | grep \#
 
-I don't see why it wouldn't - cfg.mair is read and written as a u64, so 
-this should always return its most significant word regardless of the 
-storage format. We're not doing anything dodgy like trying to type-pun 
-the u64 directly into the u32[2].
+Submitted: https://www.armlinux.org.uk/developer/patches/viewpatch.php?id=8933/1
 
-Robin.
+>
+> I actually have the *very same* patch on my tree, just did not cleanup
+> the commit message and submit :-(
+
+Send in those patches!
+
+>
+> Anyways, this looks good to me:
+>
+> Reviewed-by: Stefan Agner <stefan@agner.ch>
+
+
+Thanks all for those reviews.
+-- 
+Thanks,
+~Nick Desaulniers
 
 _______________________________________________
 linux-arm-kernel mailing list
