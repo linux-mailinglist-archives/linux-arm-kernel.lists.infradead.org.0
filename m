@@ -2,84 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BEC1DEE3BD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 16:26:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 628EEEE3DA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 16:32:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qNRIPeb4DXjJzy7MLKFekwidB3132BYgN5zXLUWKJhc=; b=oMM7tWqmY0UVfv
-	TwM1XMbTDhqGp1sZijNh+fxKUFfQ/osexQqB4mkbxISjjGCzMcMkJVrPyNUeVEOiEn/xkKSA9Xans
-	LxCa/q/SZykGtiT7Th69h/QnhOh/BSsMYAZQG6kfqIz73Qwb/EZ3Zue3wQYfxT/4Cbxy8mbRo+7zG
-	vP58091WBxCiRYxnlN3cefhyf93EyDxq4A/CIMhi01UqjTfKbw1eHiDjNablYjnK6xMQJTCiBrYsl
-	4H8u/HxqDdAgGOQQdps9t67AmKBc/9694mDvQcgJvBkgN9UhAijSUU8nji5CTaUDJU0osWu+pEUPm
-	h/UIGb6Zw2AV9l6KTROw==;
+	List-Owner; bh=pImF9PeBEIl/TNSPBKHdI5VVDogx9cftlQzcI7KJ+BM=; b=AXhwGo6YTq9zD4
+	gv2JcKq7mNB0Qxg/e3u/yRWuR+/sMFt4h6vcLMZGV4ER06P7FSg8e0CtYYSdDPkkgdxqiFzS9/6sS
+	vOwsiplYGehTGptsYysN43pzWwjUUn1xvKHsAY6Z+6Aj1Xt6wogK1F7DrSwC4badcYuu/vBM0AMYl
+	KGdsTDskSnmpXdcujaglG4XF8FJd59NnBsNvVoknuBcy8yrwgSp99E9ERHcQZEc7LUZaTWNcwwGac
+	Ntr6M/n/TjU80vtxatCvhJTiLvQvSySEXNILf03sctVgZr16wmIY9CaADc2w2OYWvM/LtQ5VXjMDI
+	uGE46eYJtJL4DJILSotg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iReEy-0001rW-HG; Mon, 04 Nov 2019 15:26:00 +0000
-Received: from mout.kundenserver.de ([212.227.17.10])
+	id 1iReL8-0004Lk-Mw; Mon, 04 Nov 2019 15:32:22 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iReEp-0001qY-Fg
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 15:25:53 +0000
-Received: from mail-qk1-f175.google.com ([209.85.222.175]) by
- mrelayeu.kundenserver.de (mreue106 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1M7rxE-1iWc2x0TEw-0055JO for <linux-arm-kernel@lists.infradead.org>; Mon,
- 04 Nov 2019 16:25:49 +0100
-Received: by mail-qk1-f175.google.com with SMTP id q70so17923746qke.12
+ id 1iReKx-0004KF-8D
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 15:32:12 +0000
+Received: by mail-lf1-x143.google.com with SMTP id z12so12568369lfj.9
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 Nov 2019 07:25:47 -0800 (PST)
-X-Gm-Message-State: APjAAAWThHwV6dpaseFgySMJ0vDDzDnZuq1modK9dZ5PCSEP9FtHZkJI
- So6TMQUxHW3mlWkGU8tYtMhJ5XKo9mqy/r1btRM=
-X-Google-Smtp-Source: APXvYqzFZt8fB9folG/dB9+o4OKV18odAQAK5Xk5C+z1pe04hR7xC3ih594ii6t+6rsPIHnw1KOyYjwhv3nQwrhHlNQ=
-X-Received: by 2002:a37:4f0a:: with SMTP id d10mr17070233qkb.286.1572881146989; 
- Mon, 04 Nov 2019 07:25:46 -0800 (PST)
+ Mon, 04 Nov 2019 07:32:10 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Mr/Uxcplv3NXuIJk8Ti1kfrQNEUtvUFgTdHmY4Gpbzk=;
+ b=njWpSQ8wDNfkaVeUU2fNdyl/gHikLxNHX+GZiK4dn0gkcKvE2mFYSrOLzmK2F+9yI2
+ yDo7PYJAV0oFUMmlVjZkfIPH4OJYceMAFu0zAAst9LYxuOk3A6wMgldPfh8qYnbwtEiS
+ iuZ67Ot57VBDn7SomMOrrcp2180LktPjNdmsEbuPvcbfOj344XahHiSBnukd+u7OAY6q
+ COjC6T+tZYOp5/Kf4yz9UkVsB/4xPlqch4aZmdpLncF2G5Oo1HApFzkg1F/tMZ8izNTI
+ /0OB+EkTifoz0cTCW4/1xKTo0f4iMZ3uFpVbdVlwTl6aZP+xmcRscxWfxcC7ikuH0pyS
+ bHlQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Mr/Uxcplv3NXuIJk8Ti1kfrQNEUtvUFgTdHmY4Gpbzk=;
+ b=UTWL7AWxZyRgp/a4Hn4ytR3/pknZftu+94kpzSWXhRUkGo+cDdw3LqDsmzCJU845pG
+ 6fVnsS6zJCbuOP2ZTQhS//bnv0xi9OOFaPY/6Jzyg6Ysbx+Df9vma49Bt900yfws1MFE
+ v2rYDwu8vzmn1bNN/+7D1bvxz2XzHnWX7JgLCP6JutkIQ9tSicL2tYAJSV5nh9PLwVdM
+ X0ta3B2uxZXMGzSbBL3PHUo/llWmYt1M4V3ZEord+aBKA8P1Mjs9t3EsUIKyKd/zhEiP
+ 65pNnmXi+wViRMxKlQdGX+pdOMQwvUlpOgxLbHJGad8cVm8G8+6Ce5sEBCW7ZaIF9qT9
+ eOyg==
+X-Gm-Message-State: APjAAAXaZg1xoHk2mX/O1k3Us1tG4IewZ27HH4X17PIa9rhgo3j0ZyR2
+ 4kg4BjwGt2YfevmNn+YzE16UBeCcMkmEXEr0Tp20RQ==
+X-Google-Smtp-Source: APXvYqxK6Pwq1Qm86hnw4EI2i8gx2+V2iuKJsfnwP8M8v6pQOu8BH+b+jtXWQgx2oKQZuZQAKVxi6hoscfSl4OQ33fo=
+X-Received: by 2002:ac2:4a8f:: with SMTP id l15mr16987288lfp.5.1572881529546; 
+ Mon, 04 Nov 2019 07:32:09 -0800 (PST)
 MIME-Version: 1.0
-References: <20191018163047.1284736-1-arnd@arndb.de>
- <20191104151310.GA1872@bogus>
-In-Reply-To: <20191104151310.GA1872@bogus>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Mon, 4 Nov 2019 16:25:13 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a1B5v_3p0XhddoeWu7wChr6BndfqVVjPUvWYC6=aRfLXg@mail.gmail.com>
-Message-ID: <CAK8P3a1B5v_3p0XhddoeWu7wChr6BndfqVVjPUvWYC6=aRfLXg@mail.gmail.com>
-Subject: Re: [PATCH 1/6] ARM: versatile: move integrator/realview/vexpress to
- versatile
-To: Sudeep Holla <sudeep.holla@arm.com>
-X-Provags-ID: V03:K1:XKL0hDOeNAgNTgjUpgcz8Byx9nfe7KTr/T1ZlJe0tFEXEdEt317
- ClQQLRnTIzGZA6F+bUjyYoHcYToLTqNN2KBf4v+hp+lgT0zqoZ+gXnN+5+bnc2eFwe8Fjvn
- 4e5IZq9ogN+fLSKSpAQxbPujHDjSQwDt3PxbwlJqWw6SAYOuGlkwojCiw87Hl7BVelYnqda
- dECPFQdoKo5qp+apSsVqg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:1at2hxz/uo8=:xTNPu/qKQWJOU4rSWKp0Y2
- 0l6jr3/GaEKM4iLKQ/sKjkB3AZHR/ZRzYyFYpex92qEBgp03VXCqVPCQvTpUiZKUONuJifjR2
- cxsj3c4/Ch7AaIsjA8hNh5kEteV1CN1zAS+/HVOKOyhnekdkTyUcoOyMntsiXvYLsLQoecB5m
- ySw6N2Db2Rjs2prhHP+J8WdZkz8AkymjAo7n+srTHZoahZjZWmNB2AmmBYEbSkTZNXh6Qu6vY
- INONAZ62nfTUk7msZqsDSrLwCttm1sRZNJtFYYZxi41+RIFhWI7ELit0AV79skScjpWwVtHah
- jXounuyTH/Dh68CUllsPoLZOLXrRmzyf94Fh8okuVAOMDECy0AQUU9d3l+G9Vq/HXEoSQzIxN
- DDMoN7owWlqsIZwOBOVd0AjNIgluroYb33HXIUZGVJa0hEqnaZTwGa/+UdnfZme4oBlDjxiDK
- mM9rwIROZdrqvVAh8o91W+n2pjgU2XCHBIWzdm6ewupGXqcdgrpWZuwiiyNfbkDTvucmVfuv7
- AeREw0AJmtZdRn73RKVzfKNZqy11O2W0ZjSDa70GfgB7izMaHex7G5Fs8Me/GSrDEOaWmzN4s
- 8qDq444Sa2AUyzeHKs6NmjWOzAzgWLVCiB5zfCUB8b01U6BVRglVmRZmYXj2j7Tqr6IqKjKfM
- SAJajJ0iHlKkyxbRhOdYxdsWu6B6+g7oiHT7xv89XVqLftLyiS7TxRoNOYsyw//3Fx648ybY8
- 9259bjd3v2Jm5vJJCQFKycWhY5VP8t75Pm32zlomZVsksS/THhYSxFN3OpJhw64LxvJohuAQr
- zYuxgfD1NtRxYJ+7vtkK/ApDz4pOInhdupzgYj7L7E2fPA5NpPNMhLezzs6zjxm3jWcM4BkaP
- FL/pJmbHQkPvpXd8D+iw==
+References: <1572004167-24150-1-git-send-email-qianggui.song@amlogic.com>
+ <1572004167-24150-2-git-send-email-qianggui.song@amlogic.com>
+In-Reply-To: <1572004167-24150-2-git-send-email-qianggui.song@amlogic.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Mon, 4 Nov 2019 16:31:57 +0100
+Message-ID: <CACRpkdZZpc0yrewfseG3PUXgvV3H9XED25Ej21VeMYn8cUxasg@mail.gmail.com>
+Subject: Re: [PATCH v4 1/4] pinctrl: add compatible for Amlogic Meson A1 pin
+ controller
+To: Qianggui Song <qianggui.song@amlogic.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_072551_815858_0C44B059 
-X-CRM114-Status: GOOD (  12.30  )
-X-Spam-Score: 2.5 (++)
+X-CRM114-CacheID: sfid-20191104_073211_300433_1883115E 
+X-CRM114-Status: UNSURE (   9.33  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.10 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.10 listed in wl.mailspike.net]
- 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,43 +93,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>, Liviu Dudau <liviu.dudau@arm.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Hanjie Lin <hanjie.lin@amlogic.com>,
+ Jianxin Pan <jianxin.pan@amlogic.com>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Russell King <linux@armlinux.org.uk>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Carlo Caione <carlo@caione.org>,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+ Xingyu Chen <xingyu.chen@amlogic.com>, Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 4, 2019 at 4:13 PM Sudeep Holla <sudeep.holla@arm.com> wrote:
+On Fri, Oct 25, 2019 at 1:49 PM Qianggui Song <qianggui.song@amlogic.com> wrote:
+
+> Add new compatible name for Amlogic's Meson-A1 pin controller
+> add a dt-binding header file which document the detail pin names.
+> Note that A1 doesn't need DS bank reg any more, use gpio reg as
+> base.
 >
-> On Fri, Oct 18, 2019 at 06:29:14PM +0200, Arnd Bergmann wrote:
-> > These are all fairly small platforms by now, and they are
-> > closely related. Just move them all into a single directory.
-> >
-> > Cc: Linus Walleij <linus.walleij@linaro.org>
-> > Cc: Liviu Dudau <liviu.dudau@arm.com>
-> > Cc: Sudeep Holla <sudeep.holla@arm.com>
->
-> Looks good to me, so for vexpress part:
-> Acked-by: Sudeep Holla <sudeep.holla@arm.com>
->
-> As Linus W requested, if you share a branch, I can give it a go on
-> Vexpress TC2.
+> Reviewed-by: Rob Herring <robh@kernel.org>
+> Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
+> Signed-off-by: Qianggui Song <qianggui.song@amlogic.com>
 
-You are of course both right, I should have split this out into a separate
-branch, rather than sticking it on the end of the completely unrelated
-pxa-multiplatform branch.
+Patch applied.
 
-For testing the changes, this should be fine in the meantime:
-
-https://git.kernel.org/pub/scm/linux/kernel/git/arnd/playground.git/log/?h=pxa-multiplatform
-
-
-
-     Arnd
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
