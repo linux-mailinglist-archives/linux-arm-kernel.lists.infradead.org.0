@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D40E6EE6C3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 18:58:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1FB2EE6CC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 18:59:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=RLHq2b3TgMgVX3fxFl9wNQ4t6j/Cq4sHwIoNC4dH94E=; b=SLa
-	XZpo/cQiU/CRWn960bMydIhw7iFmWjDa5wwc7qlKH6wxTCGlWlnWM4LmFCZfLHlruQsAQey+84xqe
-	G1XI1qNqTLqozhkcPTfMExszdLA4B4ckV/B8PR+hKXEk/IENHkH+o9UE6YuvnekVuQ8qdulsD0t1X
-	HPHe6+Rzirua3ShQ6RrRLSkXEXA3tmVt6LxjXCDeam7omlcuN7RJzOvqDI6o/QGC2PbVfqmWOVoe+
-	xTOGwWCM7vsClePnSUk9GMxmWdude+fjAu+Tsifo/zFBd8qKGMfR0rKhHxgpXUOWJtu0xKewhW26b
-	AGKJZcyHcuU1sLy9LsrQrDzCpg87QEQ==;
+	References:List-Owner; bh=XopKqo6nObhml710IqXHMZZP9Bh7XLK1lmgKcKCFWlI=; b=ZW9
+	t8LuvF3N84L0e0bmaw0zCYfNPqdyj3wqDG6h454VUYKWGpoTo8XrqSIhA6Q6Wx74RREsA+gjS6p+4
+	udEJSbxVC1+7ixNrsskdMNPDb5afrzHkSXUT6Y1bbKORz8eokNR6MPU+zaiIqSERQ4GrkF3tk+q3o
+	cO7GnKaFf5dt5fQKaJjZSF3GGjXSCuftTW60a6hf2tee2ulNmum46hrcLzwfc0bqpZB/RlYD4KOP+
+	/oFW4WDlYUKrhe/2Is1LDcf4BIWP38pJl5JZaKtvurkoCiACdI6EkGer0mbQWQ9NRqnPdF5hE551C
+	Fp7ksufd6AQNh7CKZSgeiCHzcbHpylg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRgc5-0000wn-Si; Mon, 04 Nov 2019 17:58:01 +0000
+	id 1iRgdJ-0001Kn-Mf; Mon, 04 Nov 2019 17:59:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRgbx-0000w8-Sm
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 17:57:55 +0000
+ id 1iRgdD-0001KR-DE
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 17:59:12 +0000
 Received: from localhost.localdomain (unknown [194.230.155.180])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 063EA20B7C;
- Mon,  4 Nov 2019 17:57:49 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id F0CC620B7C;
+ Mon,  4 Nov 2019 17:59:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572890272;
- bh=IjSEu9sfsdTQLLr2k3rmKdHTN5zkOVDlK7n/cmmSx0E=;
+ s=default; t=1572890351;
+ bh=LGIo8ZmiAbwfkL3OFX1XtCq8eoQUgUNanwlaQmqqLIk=;
  h=From:To:Cc:Subject:Date:From;
- b=IsOkeKkQg0RNjneVRSm0lUjDXjGoAbtLABF61Spn/HW4acXLFURvr3+WxuY+6OTws
- cET84CYoXKPs3Lsdl9SwDsTganuIbSSWKTmEx5eQ4EgMFtEpDnBdHAS+k8NDIAW92V
- g2aWXBzNdQu+biZ/1k1Lg1IwhTjIoxjaA4DxxNYk=
+ b=nrxoEJpw15kTTwxCPN6JNJjPoR41rcctJ4NZpnAanKB7BK2d9kEASyceLFBzeYMi0
+ kutqZYMXKDVmMyLdVFNZoETmfEd/+8Tn+wmJomRBptRyrt5vD4YxBcE9ok9ohGFREr
+ aU5WLrGnnQy4FKIjYkDyrliLa9vR7BQYyA3/5OMo=
 From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: [GIT PULL] pinctrl: samsung: Pull for v5.5
-Date: Mon,  4 Nov 2019 18:57:44 +0100
-Message-Id: <20191104175744.12041-1-krzk@kernel.org>
+To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>,
+ arm@kernel.org, soc@kernel.org
+Subject: [GIT PULL 1/2] soc: samsung: Drivers for v5.5
+Date: Mon,  4 Nov 2019 18:59:01 +0100
+Message-Id: <20191104175902.12224-1-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_095753_948361_1ADFF678 
-X-CRM114-Status: UNSURE (   9.37  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191104_095911_465681_CC7B64C2 
+X-CRM114-Status: GOOD (  14.49  )
 X-Spam-Score: -1.6 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-1.6 points)
@@ -75,15 +75,22 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org,
- Sylwester Nawrocki <snawrocki@kernel.org>, linux-kernel@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>, Tomasz Figa <tomasz.figa@gmail.com>,
- linux-gpio@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-samsung-soc@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Krzysztof Kozlowski <krzk@kernel.org>,
+ linux-kernel@vger.kernel.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
+
+Hi,
+
+This includes dependency from PM/OPP.
+
+Best regards,
+Krzysztof
+
 
 The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
 
@@ -91,33 +98,50 @@ The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
 
 are available in the Git repository at:
 
-  https://git.kernel.org/pub/scm/linux/kernel/git/pinctrl/samsung.git tags/samsung-pinctrl-5.5
+  https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-drivers-5.5
 
-for you to fetch changes up to a322b3377f4bac32aa25fb1acb9e7afbbbbd0137:
+for you to fetch changes up to 89e551e83869732d5b9fd21d7cfdb1f8d62cf5d0:
 
-  pinctrl: samsung: Fix device node refcount leaks in init code (2019-10-01 20:22:04 +0200)
-
-----------------------------------------------------------------
-Samsung pinctrl drivers changes for v5.5
-
-Fix several device node refcnt leaks (missing of_node_put()) in several
-drivers.
+  soc: samsung: exynos-asv: Potential NULL dereference in exynos_asv_update_opps() (2019-10-30 19:04:32 +0100)
 
 ----------------------------------------------------------------
-Krzysztof Kozlowski (4):
-      pinctrl: samsung: Fix device node refcount leaks in Exynos wakeup controller init
-      pinctrl: samsung: Fix device node refcount leaks in S3C24xx wakeup controller init
-      pinctrl: samsung: Fix device node refcount leaks in S3C64xx wakeup controller init
-      pinctrl: samsung: Fix device node refcount leaks in init code
+Samsung soc drivers changes for v5.5
 
-Nishka Dasgupta (1):
-      pinctrl: samsung: Add of_node_put() before return in error path
+1. Minor fixes to Exynos Chipid driver.
+2. Add Exynos Adaptive Supply Voltage driver allowing to adjust voltages
+   used during CPU frequency scaling based on revision of SoC.  This
+   also pulls dependency from PM/OPP tree - driver uses newly added
+   dev_pm_opp_adjust_voltage() function.
 
- drivers/pinctrl/samsung/pinctrl-exynos.c  | 14 +++++++++++---
- drivers/pinctrl/samsung/pinctrl-s3c24xx.c |  6 +++++-
- drivers/pinctrl/samsung/pinctrl-s3c64xx.c |  6 +++++-
- drivers/pinctrl/samsung/pinctrl-samsung.c | 10 ++++++++--
- 4 files changed, 29 insertions(+), 7 deletions(-)
+----------------------------------------------------------------
+Dan Carpenter (1):
+      soc: samsung: exynos-asv: Potential NULL dereference in exynos_asv_update_opps()
+
+Krzysztof Kozlowski (1):
+      Merge tag 'opp-5.4-support-adjust-voltages' of https://git.kernel.org/.../vireshk/pm into next/drivers
+
+Stephen Boyd (1):
+      PM / OPP: Support adjusting OPP voltages at runtime
+
+Sylwester Nawrocki (3):
+      soc: samsung: chipid: Make exynos_chipid_early_init() static
+      soc: samsung: Add Exynos Adaptive Supply Voltage driver
+      soc: samsung: chipid: Drop "syscon" compatible requirement
+
+ drivers/opp/core.c                   |  69 +++++
+ drivers/soc/samsung/Kconfig          |  10 +
+ drivers/soc/samsung/Makefile         |   3 +
+ drivers/soc/samsung/exynos-asv.c     | 177 ++++++++++++
+ drivers/soc/samsung/exynos-asv.h     |  71 +++++
+ drivers/soc/samsung/exynos-chipid.c  |  12 +-
+ drivers/soc/samsung/exynos5422-asv.c | 505 +++++++++++++++++++++++++++++++++++
+ drivers/soc/samsung/exynos5422-asv.h |  31 +++
+ include/linux/pm_opp.h               |  13 +
+ 9 files changed, 889 insertions(+), 2 deletions(-)
+ create mode 100644 drivers/soc/samsung/exynos-asv.c
+ create mode 100644 drivers/soc/samsung/exynos-asv.h
+ create mode 100644 drivers/soc/samsung/exynos5422-asv.c
+ create mode 100644 drivers/soc/samsung/exynos5422-asv.h
 
 _______________________________________________
 linux-arm-kernel mailing list
