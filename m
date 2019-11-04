@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B77FED9EF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 08:32:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EFFEEED9F2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 08:33:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jRpyqxs/fbCGnfaOTIEznFpABm+2J7PgP08S63aJgXg=; b=eqgZQsE8Umg85j
-	4/ipTwcgy0yamq4xJMsLB/1qXOIe6eoRbUzJiFV1SOXKthEmgnpsUW9p+fZ8Kfg9EuuIM5XCht2s2
-	0B84DRWp62YLeDk/4QH2PYtXNZUgml+gWJ/ipO8ohymBD5wemRwLBqf6oKmhzsr0xdaXP8w5KUs3O
-	li5SseqmCb93xm2qz+dR2ASEG/TJH352Ou3n7WkL//RzjnOiBqVwJYUqU1lK773knR6kGiyaGlnjP
-	myh1sfHFU3njqCL7BbcjmNO9XUEJvI2/jxxCDoRUQo5bYrN/jq0cEVfJCKoxH0+LTc2I9O6eEW1IH
-	Kd+sZCyHkOmYd7LDfUjw==;
+	List-Owner; bh=ioxw3wPBXAUDQDLzkqazg7YNaNJOVVr019qBN5RXAo4=; b=PE8dNIDP5VX2kb
+	ggpCfBDXgIY9nvxiKno1HF+cilRKTay3rIe6OhPfHB+if570vm+pwlbbc3trGLLyjRtRLCGIQbb98
+	K6dEuBlEREZW0oHExNoM4aET7x8LCNgMfdmtcCJPhuN07LY1REs8jdPe0WaRmPSMJdOx+iJXRHpaA
+	v5SkMoKecivK9pgYQhxxevdEHoIiT9TO3msnIgYhFV5nyUux6HiCOavd/6IWbc0q1lxYnN4WNdjoo
+	G6xBMhNVGvadxHqpZe3famkPNVVI+DAtZaMFkH93rclpv5lzjyuX2pIAdTEuzmFPeZMeGwuStxCiC
+	I0Qemn1fHne1fIRZELZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRWqi-0001uR-0Y; Mon, 04 Nov 2019 07:32:28 +0000
+	id 1iRWry-0002CL-LY; Mon, 04 Nov 2019 07:33:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRWqZ-0001tp-Ea
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 07:32:20 +0000
+ id 1iRWro-0002Bu-R5
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 07:33:38 +0000
 Received: from dragon (li1038-30.members.linode.com [45.33.96.30])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 71AF921D71;
- Mon,  4 Nov 2019 07:32:12 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 03CF621D71;
+ Mon,  4 Nov 2019 07:33:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572852739;
- bh=ayt9FfBU8eNkEx5C3qhg37/hdrYd8vuX/qA86acnJEE=;
+ s=default; t=1572852816;
+ bh=+D8VoXTzQPyAV6DM35IIJdbQigog+kzxRKbryuCUPKY=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=qBRB+4+APc0noomEvQDynpelje9OGoU7byUlVPN4D+hQzQpZXc6oazAa/k9SPeEI7
- pmIEyo0tIqwhISJFM7cXzYG9fKwiA+Uaz0EYzxx/ZYyop1sYctwox9UkCY30ViAtuT
- 7uwCslD8QDSZEkEeLhi4LveQiDczfFyR/J59qWTE=
-Date: Mon, 4 Nov 2019 15:31:52 +0800
+ b=qBz+rtNtyUb+3kL84/rMzmNNB/C/fv9RdHhxwqzqbUCCQUYNYG1IKtem/MIrdarGF
+ sFXbnaoOTVPDixbPvGuJfBqdMPWSwrDx5kXIJ5q+vgEwcbojbW8iPX286X096/We8Y
+ CB+/ipxSOcU3qhuuJiKzzJu8xBTzDTbObW+uhmow=
+Date: Mon, 4 Nov 2019 15:33:11 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Schrempf Frieder <frieder.schrempf@kontron.de>
-Subject: Re: [PATCH v3 07/11] ARM: dts: imx6ul-kontron-n6x1x-s: Add
- vbus-supply and overcurrent polarity to usb nodes
-Message-ID: <20191104073151.GR24620@dragon>
+Subject: Re: [PATCH v3 08/11] ARM: dts: imx6ul-kontron-n6x1x-s: Remove an
+ obsolete comment and fix indentation
+Message-ID: <20191104073310.GS24620@dragon>
 References: <20191031142112.12431-1-frieder.schrempf@kontron.de>
- <20191031142112.12431-8-frieder.schrempf@kontron.de>
+ <20191031142112.12431-9-frieder.schrempf@kontron.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191031142112.12431-8-frieder.schrempf@kontron.de>
+In-Reply-To: <20191031142112.12431-9-frieder.schrempf@kontron.de>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191103_233219_511672_5B403628 
-X-CRM114-Status: GOOD (  17.55  )
+X-CRM114-CacheID: sfid-20191103_233336_900432_37FE626C 
+X-CRM114-Status: GOOD (  17.26  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -92,57 +92,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 31, 2019 at 02:24:21PM +0000, Schrempf Frieder wrote:
+On Thu, Oct 31, 2019 at 02:24:24PM +0000, Schrempf Frieder wrote:
 > From: Frieder Schrempf <frieder.schrempf@kontron.de>
 > 
-> To silence the warnings shown by the driver at boot time, we add a
-> fixed regulator for the 5V supply of usbotg2 and specify the polarity
-> of the overcurrent signal for usbotg1.
+> The ECSPI1 is not used for a FRAM chip, so remove the comment.
+> While at it, also change some whitespaces to tabs to comply with the
+> indentation style of the rest of the file.
 > 
 > Signed-off-by: Frieder Schrempf <frieder.schrempf@kontron.de>
 > Fixes: 1ea4b76cdfde ("ARM: dts: imx6ul-kontron-n6310: Add Kontron i.MX6UL N6310 SoM and boards")
 
-I do not think it's a bug fix, so the Fixes tag doesn't really apply.
+It's not a bug fix.
 
 Shawn
 
 > ---
->  arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi | 9 +++++++++
->  1 file changed, 9 insertions(+)
+>  arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi | 13 ++++++-------
+>  1 file changed, 6 insertions(+), 7 deletions(-)
 > 
 > diff --git a/arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi b/arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi
-> index 2299cad900af..d3eb21aa9014 100644
+> index d3eb21aa9014..e18a8bd239be 100644
 > --- a/arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi
 > +++ b/arch/arm/boot/dts/imx6ul-kontron-n6x1x-s.dtsi
-> @@ -45,6 +45,13 @@
->  		regulator-max-microvolt = <3300000>;
+> @@ -256,7 +256,6 @@
+>  		>;
 >  	};
 >  
-> +	reg_5v: regulator-5v {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "5v";
-> +		regulator-min-microvolt = <5000000>;
-> +		regulator-max-microvolt = <5000000>;
-> +	};
-> +
->  	reg_usb_otg1_vbus: regulator-usb-otg1-vbus {
->  		compatible = "regulator-fixed";
->  		regulator-name = "usb_otg1_vbus";
-> @@ -191,6 +198,7 @@
->  	srp-disable;
->  	hnp-disable;
->  	adp-disable;
-> +	over-current-active-low;
->  	vbus-supply = <&reg_usb_otg1_vbus>;
->  	status = "okay";
->  };
-> @@ -198,6 +206,7 @@
->  &usbotg2 {
->  	dr_mode = "host";
->  	disable-over-current;
-> +	vbus-supply = <&reg_5v>;
->  	status = "okay";
->  };
+> -	/* FRAM */
+>  	pinctrl_ecspi1: ecspi1grp {
+>  		fsl,pins = <
+>  			MX6UL_PAD_CSI_DATA07__ECSPI1_MISO	0x100b1
+> @@ -281,8 +280,8 @@
+>  
+>  	pinctrl_enet2_mdio: enet2mdiogrp {
+>  		fsl,pins = <
+> -			MX6UL_PAD_GPIO1_IO07__ENET2_MDC         0x1b0b0
+> -			MX6UL_PAD_GPIO1_IO06__ENET2_MDIO        0x1b0b0
+> +			MX6UL_PAD_GPIO1_IO07__ENET2_MDC		0x1b0b0
+> +			MX6UL_PAD_GPIO1_IO06__ENET2_MDIO	0x1b0b0
+>  		>;
+>  	};
+>  
+> @@ -295,10 +294,10 @@
+>  
+>  	pinctrl_gpio: gpiogrp {
+>  		fsl,pins = <
+> -			MX6UL_PAD_SNVS_TAMPER5__GPIO5_IO05	0x1b0b0 /* DOUT1 */
+> -			MX6UL_PAD_SNVS_TAMPER4__GPIO5_IO04	0x1b0b0 /* DIN1 */
+> -			MX6UL_PAD_SNVS_TAMPER1__GPIO5_IO01	0x1b0b0 /* DOUT2 */
+> -			MX6UL_PAD_SNVS_TAMPER0__GPIO5_IO00	0x1b0b0 /* DIN2 */
+> +			MX6UL_PAD_SNVS_TAMPER5__GPIO5_IO05	0x1b0b0	/* DOUT1 */
+> +			MX6UL_PAD_SNVS_TAMPER4__GPIO5_IO04	0x1b0b0	/* DIN1 */
+> +			MX6UL_PAD_SNVS_TAMPER1__GPIO5_IO01	0x1b0b0	/* DOUT2 */
+> +			MX6UL_PAD_SNVS_TAMPER0__GPIO5_IO00	0x1b0b0	/* DIN2 */
+>  		>;
+>  	};
 >  
 > -- 
 > 2.17.1
