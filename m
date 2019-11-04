@@ -2,95 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CDCEBEE57E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 18:04:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A032CEE583
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 18:05:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wyxjmmenz3Z1OfIl1XUtpMQTFirL0qsLwGYs78ewOxE=; b=izSRH+kRNFBh/K
-	UH8MHqSlaS7EehOxK069ZyzSvZVFjL/qaSYp0g7EIAYIf1hy5dm4bZy6/ooIanAZifN07+V2xxQac
-	Q7jOJlm/RqRyfeLpq5OardxQlCl3eelgYyDnIeZEK3i5SWBnf1taA5t4556SXwzMEYWhNooRfj5kl
-	ddsnstD4XtHRWzgD8VQHSA+qc4ebc1Fm5862svbzgzD7Mm2XPgz9A+0m//FT4/SD1IxbIXngGUzJX
-	Kf6C+4KE6ghGRyqL4YgiVt+8+SzrLwPTE9uGfBztc0BzWPhGRlSPHpWWEGWyGI2YNc1/bj+RcettR
-	NiZCV54ynuFi6J5w5glA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bZ5grUOThjcyXrtly8dBa5NOeuOAJr4ifaj17ORsPCc=; b=gC7r3Ii8+OmqKT
+	dadFjvM7ypS4ZEjE6nzILGHs6br47L04dOnaEgB1z7YhdJG4A+5IBeaGNbZP8w2GHdIYMJur6NUq7
+	e1Z1hK+qIqtm9QTCbpCzoyciEbZluIq72JqeBmSa7w8fJCkqhjnP7PZOJqam06lxi3NDJ6+RkueUQ
+	Z6PeiP23rOsEo7vjP4jLJLRikX1eWJc88hLBodiFXn4v+iOSRz+X48EyiBhCYECxJ4Zry7hQoJU0Z
+	lTocccsIA06eE8AMyeNomCm4535MstVrItwGzD5JG3mguLdCTHKlJ3g2uOiJU7c4Mpc3JQHuBXP58
+	w7ZqqAtyi+5pDhZCjvnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRfls-0003hF-49; Mon, 04 Nov 2019 17:04:04 +0000
-Received: from mout.gmx.net ([212.227.17.21])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRfli-0003gd-Qy
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 17:03:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1572887016;
- bh=PI7dAw1uU03KDM2kwW+WwA/xzQ2h0kyFFuuTAXPmP5w=;
- h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
- b=jIcuW1V9N/vp0Pp6ApmnBa6GDUV+x38frXo+Cp26LOHZYKBcp2S5r0LsBQtXDK38h
- znyF0vsjXAZYb0K2AXk1Ly37fCzmKUDZzPCYqfhOu0iAzIajKih0YE1E/g3ZOQfeIz
- 8mujWGnkg8CwCDyobwRBkx9Njav/7KO8YCRm0EU8=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [192.168.1.164] ([37.4.249.112]) by mail.gmx.com (mrgmx104
- [212.227.17.168]) with ESMTPSA (Nemesis) id 1N95iR-1hq5fU3Wtz-0164Ln; Mon, 04
- Nov 2019 18:03:35 +0100
-Subject: Re: [PATCH] ARM: dts: bcm2837-rpi-cm3: Avoid leds-gpio probing issue
-To: Pavel Machek <pavel@ucw.cz>
-References: <1570964003-20227-1-git-send-email-wahrenst@gmx.net>
- <20191104090919.GC12355@duo.ucw.cz>
-From: Stefan Wahren <wahrenst@gmx.net>
-Message-ID: <6426d9b6-8ef1-903a-47fb-6844e29dffdd@gmx.net>
-Date: Mon, 4 Nov 2019 18:03:34 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1iRfn4-0004WU-C2; Mon, 04 Nov 2019 17:05:19 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iRfmp-0004Ea-VD
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 17:05:05 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9992D1F1;
+ Mon,  4 Nov 2019 09:05:02 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 605073F71A;
+ Mon,  4 Nov 2019 09:05:00 -0800 (PST)
+Date: Mon, 4 Nov 2019 17:04:54 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Sami Tolvanen <samitolvanen@google.com>
+Subject: Re: [PATCH v4 10/17] arm64: disable kretprobes with SCS
+Message-ID: <20191104170454.GA2024@lakrids.cambridge.arm.com>
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20191101221150.116536-1-samitolvanen@google.com>
+ <20191101221150.116536-11-samitolvanen@google.com>
 MIME-Version: 1.0
-In-Reply-To: <20191104090919.GC12355@duo.ucw.cz>
-Content-Language: en-US
-X-Provags-ID: V03:K1:qX/zG45X4O/oDA29SB1fKSYqUQKAxW6UyeV3mrJ54AmiRk8x42G
- GeCQLS92oaCS6+ejAGhrH5tRSWBnLEEN3i0xwdkQQ2t3NDXvesDw3uP6lql1w4N46tGJa7d
- K+HBDBxJy8NCMO6SiGtGcVy/L2o6kUTUcNDMBZs9UMzNpj4NI6Du3s5GYbITiRLC0oYqImm
- NUONt5iURZ9CFbGoSkZoA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:AKi8FyK/A4k=:Zv18n1lZNDVxFqawjJrsWx
- 3i+KX7zMM/HVqfGvzpMMbf+FVUYJB+4KFcORTlcbHvLDBmwnSYTw5JzEM5VCSr80raPDBv8od
- HzYkSy+Zor2VG8NedKvihSwAokRmJtHeCsaLr0DJKd4C4tCI3qk+oC1brqMwlgKvvHDAROCvX
- x8xybu+M70awLnyZOS/n+zDCgrA2W9M2SLs3a2nzJtbjVEl+HSYsN9yDmRTgjg0hOrf4vb45i
- uu9whvCd6VitDwzncHaBkiIsRk2wi5MT4cnc8FUe4FsvVcyQOewU+0325+d/xyiyyEDgIG2VW
- ZKFNCrzCqFQKi69azL6SWvtGd073+JVt1JX7jLeLiijQ3gO3O4h8hMVxRlwziBJ+84TZ+dKIb
- 1zDBZjdeSIrNwJ/E8vLLyyaU4qi0/DWS5KmMp1N+qzMbQSYeG76ObJDUVqZWlv4xDq+jxRROX
- Hu29FVgNApGEq7O6xxuX5yYZ+dNXEGU95UHQ1qTIQmEAmzZlaNa1dXlbwrfJ3UK6SfwaQbFZe
- CeFuhkJFOduxGApViqeo/CGjcJ5n4pQF1Pl31B8voPlu1L+Tq2FuDNFFuxeQFs9Mh4624/2bW
- KMIQnqQRLGH9W46xMzbsl8H5jM86n+6kEQjwSPFhCWLJ/eUAsgndx/WqPKCf/Syhlax5EsKyZ
- 9ETxCEkGF10OmX3qLxTGRmvjY+iu+n9b/gKHD6wASLmMsjZEAwwZSPiMgOQ94oZWJ/H+60mSa
- lwVlmVKV895BQQSDQf3A3Z8NZT8ptG4Wld+cYy6MvfjDgsSRpAwqu1lONv07PJJ2HsaoutNAv
- EJruYDJ92hXjYXSZutNFyqbiYck7fk2qR7QdlKFbUX/5JIOElIG0RtuZjnBMaMmXTrNr/ep3h
- LK+O3ZiNFAHqJIW0QY8aLx5kSypTnNRYWHUa0qQW5cvNmY67e3LrcLqjbuR/Mwi6inW4uuBbL
- 6AwxF3IvWb4KhCjMTxTKfSEBxPlTpXOBNXSuqyw6dmIe4eJReTHsdmocnKmUhRPIvxH3aSpse
- bHoxVEQBmluuKaor6lpzkfh08B/1nqJt0ZiVcTPjy8VLRwnizoShGHl4DDftBZOfVPXBNFQUi
- JmAtPLfh7Dj0lVqfCNmhEK6qvxEB1AszMAh9hFD9OdWDB+/a+oDM0H6CvxH7jWsh25+dT+yoa
- yIcP/q25izAzqyIzHWIH/mp1G18HK990uhGRVkNMtmWM0sZb8gP7f1v0ORvXviQEo/PFqTAjb
- txLVVfBOOq2FwlAE7lA411ge+6OfqYG7baLUNEQg06vgOyDv1wvr9gFf6+dg=
+Content-Disposition: inline
+In-Reply-To: <20191101221150.116536-11-samitolvanen@google.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_090355_263620_D17D0AD1 
-X-CRM114-Status: GOOD (  13.21  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191104_090504_050450_AC786CAF 
+X-CRM114-Status: GOOD (  18.55  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.21 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,46 +63,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Florian Fainelli <f.fainelli@gmail.com>, Scott Branden <sbranden@broadcom.com>,
- Ray Jui <rjui@broadcom.com>, Linus Walleij <linus.walleij@linaro.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Eric Anholt <eric@anholt.net>,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- Dan Murphy <dmurphy@ti.com>, linux-leds@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ Steven Rostedt <rostedt@goodmis.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ clang-built-linux@googlegroups.com, Masami Hiramatsu <mhiramat@kernel.org>,
+ Marc Zyngier <maz@kernel.org>, kernel-hardening@lists.openwall.com,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Pavel,
+On Fri, Nov 01, 2019 at 03:11:43PM -0700, Sami Tolvanen wrote:
+> With CONFIG_KRETPROBES, function return addresses are modified to
+> redirect control flow to kretprobe_trampoline. This is incompatible
+> with SCS.
 
-Am 04.11.19 um 10:09 schrieb Pavel Machek:
-> On Sun 2019-10-13 12:53:23, Stefan Wahren wrote:
->> bcm2835-rpi.dtsi defines the behavior of the ACT LED, which is available
->> on all Raspberry Pi boards. But there is no driver for this particual
->> GPIO on CM3 in mainline yet, so this node was left incomplete without
->> the actual GPIO definition. Since commit 025bf37725f1 ("gpio: Fix return
->> value mismatch of function gpiod_get_from_of_node()") this causing probe
->> issues of the leds-gpio driver for users of the CM3 dtsi file.
->>
->>   leds-gpio: probe of leds failed with error -2
->>
->> Until we have the necessary GPIO driver hide the ACT node for CM3
->> to avoid this.
->>
->> Reported-by: Fredrik Yhlen <fredrik.yhlen@endian.se>
->> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
->> Fixes: a54fe8a6cf66 ("ARM: dts: add Raspberry Pi Compute Module 3 and IO board")
->> Cc: Linus Walleij <linus.walleij@linaro.org>
->> Cc: Krzysztof Kozlowski <krzk@kernel.org>
-> Acked-by: Pavel Machek <pavel@ucw.cz>
+I'm a bit confused as to why that's the case -- could you please
+elaborate on how this is incompatible?
 
-thanks but this patch has already been applied.
+IIUC kretrobes works by patching the function entry point with a BRK, so
+that it can modify the LR _before_ it is saved to the stack. I don't see
+how SCS affects that.
 
-Can i consider this as a "yes" to my intended question ( Is the behavior
-change in leds-gpio desired )?
+When the instrumented function returns, it'll balance its SCS state,
+then "return" to kretprobe_trampoline. Since kretprobe_trampoline is
+plain assembly, it doesn't have SCS, and can modify the LR live, as it
+does.
 
+So functionally, that appears to work. What am I missing? 
+
+Thanks,
+Mark.
+
+> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
+> Reviewed-by: Kees Cook <keescook@chromium.org>
+> ---
+>  arch/arm64/Kconfig | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index 3f047afb982c..e7b57a8a5531 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -165,7 +165,7 @@ config ARM64
+>  	select HAVE_STACKPROTECTOR
+>  	select HAVE_SYSCALL_TRACEPOINTS
+>  	select HAVE_KPROBES
+> -	select HAVE_KRETPROBES
+> +	select HAVE_KRETPROBES if !SHADOW_CALL_STACK
+>  	select HAVE_GENERIC_VDSO
+>  	select IOMMU_DMA if IOMMU_SUPPORT
+>  	select IRQ_DOMAIN
+> -- 
+> 2.24.0.rc1.363.gb1bccd3e3d-goog
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
