@@ -2,173 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C010EE092
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 14:04:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8700BEE0C2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 14:12:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0bjPK6F3m/o0Re2stGSLEr0sWGXR4VCOo1SKHQHNe1E=; b=l3Z7pNFFJT2v54
-	xXA1A+NO8gdmhuSeyZivpttgGCdl8zahPuRfwVaG/gXzec6uI035vgWwB7+5hpgusbpZTVcwD27UA
-	/difGbWwxuxJvUa1maotrhyDZ7ys4LV7raEXoW/ad/7Wux/VA6UWuOV1LNYexrXgpzPdITVrN2gwc
-	KBWAvEoHs9Dy4jK+AybVTCvoV+HstjUNf1VGsSI1FdLic5oYe6tBYDZpp111CubO+WUPPxB7K7AO2
-	EW7HO+qdNr0AIcVWhQbJ/tx5ZPqJJlgULRB2cNtlxNIqLKyBdUO+awvLDqNF4hPPqnl03iIHbuRDT
-	u/KsYdhVc1yK4YXjgznQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IsTh1Q+/fB5+B3NECsssyTpN6PUyGnpRvNMwHsrKaeM=; b=LGDs9krbozO9k2
+	3dQ1Jxey7f+M0xke6rZc3KXnTDJiZ+VOvVAHIc68lRajOQRbpHylwYpLsBEnh6uMTlK5u6kR2O9eR
+	Utrz4pcwy9JpgrCgQGTD7W0KZSV75ma+D8+1/sa7ZVSGCXxbzyAcCtjkMmSRTU1jQanKSYIcGVk5X
+	BN4QFSd4YLH+dheDvzKDgOIb3q7x/NonBKdW/r4T4Az4+ZjzVoZzP1Rkh1QTMvD0xYRVS5sm6DbVL
+	6BMyXMympBaKnbpfPR8MgYV5FNmcdsG4y02ECjmkmfZsh2yoHIdHmefyIvQ5zEg+AY3xFnrqk2mHS
+	O3vsHiPTyig/ifZLgdIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRc20-0000Qb-F9; Mon, 04 Nov 2019 13:04:28 +0000
-Received: from mail-eopbgr40075.outbound.protection.outlook.com ([40.107.4.75]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1iRc9c-0004EU-5W; Mon, 04 Nov 2019 13:12:20 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRc1s-0000Ok-88
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 13:04:22 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=2ORRMSGv2rFGkesJmJDWRHtB2BsJWDbuQEnKfg1jvow=;
- b=iym1wqat/Ltgw8K2eWiBBP0TF+2aheZLfYCKf2sYiAlv3URpiWwDWJ5K5HoAnGWS3aaknVL3Wqz6oHfABAiZHQ9qkqoyj8TX3G2thRbWkGayAgV0Q0ML0NtYSUCjly9yWSAw0iJAAH0s87FuHVob+Kli1baKo/61/eoHItzxHaM=
-Received: from VE1PR08CA0036.eurprd08.prod.outlook.com (2603:10a6:803:104::49)
- by DBBPR08MB4267.eurprd08.prod.outlook.com (2603:10a6:10:cb::22) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2408.24; Mon, 4 Nov
- 2019 13:04:03 +0000
-Received: from DB5EUR03FT021.eop-EUR03.prod.protection.outlook.com
- (2a01:111:f400:7e0a::207) by VE1PR08CA0036.outlook.office365.com
- (2603:10a6:803:104::49) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2408.24 via Frontend
- Transport; Mon, 4 Nov 2019 13:04:03 +0000
-Authentication-Results: spf=fail (sender IP is 63.35.35.123)
- smtp.mailfrom=arm.com; lists.infradead.org; dkim=pass (signature was
- verified) header.d=armh.onmicrosoft.com;lists.infradead.org; dmarc=none
- action=none header.from=arm.com;
-Received-SPF: Fail (protection.outlook.com: domain of arm.com does not
- designate 63.35.35.123 as permitted sender) receiver=protection.outlook.com;
- client-ip=63.35.35.123; helo=64aa7808-outbound-1.mta.getcheckrecipient.com;
-Received: from 64aa7808-outbound-1.mta.getcheckrecipient.com (63.35.35.123) by
- DB5EUR03FT021.mail.protection.outlook.com (10.152.20.238) with
- Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2387.20 via Frontend Transport; Mon, 4 Nov 2019 13:04:03 +0000
-Received: ("Tessian outbound 851a1162fca7:v33");
- Mon, 04 Nov 2019 13:03:59 +0000
-X-CheckRecipientChecked: true
-X-CR-MTA-CID: a870a74861de1579
-X-CR-MTA-TID: 64aa7808
-Received: from 2120e66fa18b.2 (cr-mta-lb-1.cr-mta-net [104.47.25.106])
- by 64aa7808-outbound-1.mta.getcheckrecipient.com id
- FD506A8B-42D2-477A-AD36-4834073605C3.1; 
- Mon, 04 Nov 2019 13:03:54 +0000
-Received: from FRA01-MR2-obe.outbound.protection.outlook.com
- (mail-mr2fra01on0106.outbound.protection.outlook.com [104.47.25.106])
- by 64aa7808-outbound-1.mta.getcheckrecipient.com with ESMTPS id 2120e66fa18b.2
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384);
- Mon, 04 Nov 2019 13:03:54 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=CkbCgIvLp6G2AodUpCMh110xHqnDlE63LLi1loCzLIZJUpeQlhOJrlLq4t7evebpPI0ZrFKTOn1yZhVt5bq7QKgTP4MAyFrOX8+N6DzVeeMp0cMb+IROQpFRMFckGy4WZZ3sKvP+cFM/wvsC+tTK+vk6EbkQMFGnR1BSdWK2n5JkwXSE2wIK120m+JINN/BitBWfY6yI9ILSvzlVhGZXQb6kZanO1p5g29qyYFR7M126ovxMYrtHTYl9d9Dq+jMBzuR2jadYI7ei4GmnXk2aUb9F9/yIPFbN0LZRbJoyUx+NUjv5D2geszOCfvKly9rmOgMhsSgAixDJJKQpC8JKIw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=xSRwqzYZFRfuZuiIHCNwblOYFAbXzOxXZ4OYw3QN83k=;
- b=Zlxm27siW8bmC89MM9kjNWpZxdK3gCK58SYgWoXH+Z+RX/2CFxHhL9DPzzi0Vrwqlby6eUR/EgOB350WYC4GwFePUUBlWlJbovFl0VMFVhMbBsBwDdQD2nztHv0QdSZJoVLNlGP5Eig//YuX1uLPHIvfr+5Jja2B09G0mAiPC3vkAHkKu6j4zG1gt0wpgAm3nkQu9FB67tjyBLibYvW2XWHEDiZiUC2KsomAI81E+gTO+Xd9bw748d/mSyehthJDI7DSwsM+DI3xZ/E8EmrBxV32AMj5aD9zBCL1UlzJzNLSm26QhsKzwSYU1gJkFNxslmSZplJsoImGqDpJQXZ93A==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=arm.com; dmarc=pass action=none header.from=arm.com; dkim=pass
- header.d=arm.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=xSRwqzYZFRfuZuiIHCNwblOYFAbXzOxXZ4OYw3QN83k=;
- b=OCMAUq2DcwmX/6PHEw5zur9gDzk5sUsIvU7GJSRS8EGkhNkKRkp32EESYBIdw6WliL4KSaKkJHH4TJKy81slFmbrm/VkvmkUb40Q1cRFIdsGGpUUsqvEaiT4KzB0od1GnI27gqXNg5ptYNLqQQnK5VxPzpx604l9Ioa/qo3Nudc=
-Received: from PR2PR08MB4843.eurprd08.prod.outlook.com (52.133.110.76) by
- PR2PR08MB4700.eurprd08.prod.outlook.com (52.133.108.10) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2408.24; Mon, 4 Nov 2019 13:03:52 +0000
-Received: from PR2PR08MB4843.eurprd08.prod.outlook.com
- ([fe80::70a7:3eec:4700:3131]) by PR2PR08MB4843.eurprd08.prod.outlook.com
- ([fe80::70a7:3eec:4700:3131%2]) with mapi id 15.20.2408.024; Mon, 4 Nov 2019
- 13:03:51 +0000
-From: Amit Kachhap <Amit.Kachhap@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCHv2 0/8] arm64: ftrace cleanup + FTRACE_WITH_REGS
-Thread-Topic: [PATCHv2 0/8] arm64: ftrace cleanup + FTRACE_WITH_REGS
-Thread-Index: AQHVjnomuaxy+Iiw8UaPeqvM+8cAdKd4LNKAgALU0oCAAAH4AA==
-Date: Mon, 4 Nov 2019 13:03:51 +0000
-Message-ID: <d9b738fa-b7c5-f1b2-3878-d7afa4ba7ba5@arm.com>
-References: <20191029165832.33606-1-mark.rutland@arm.com>
- <42c113ee-e7fc-3e94-cca0-f05f1c89fdb8@arm.com>
- <20191104125637.GB24108@willie-the-truck>
-In-Reply-To: <20191104125637.GB24108@willie-the-truck>
-Accept-Language: en-IN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: MAXPR0101CA0058.INDPRD01.PROD.OUTLOOK.COM
- (2603:1096:a00:e::20) To PR2PR08MB4843.eurprd08.prod.outlook.com
- (2603:10a6:101:24::12)
-Authentication-Results-Original: spf=none (sender IP is )
- smtp.mailfrom=Amit.Kachhap@arm.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [217.140.105.40]
-x-ms-publictraffictype: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 5da5e06e-c97f-4c48-3d7f-08d76127778b
-X-MS-TrafficTypeDiagnostic: PR2PR08MB4700:|PR2PR08MB4700:|DBBPR08MB4267:
-x-ms-exchange-transport-forked: True
-X-Microsoft-Antispam-PRVS: <DBBPR08MB4267B15A143BF31C8C8FDEE68C7F0@DBBPR08MB4267.eurprd08.prod.outlook.com>
-x-checkrecipientrouted: true
-x-ms-oob-tlc-oobclassifiers: OLM:9508;OLM:9508;
-x-forefront-prvs: 0211965D06
-X-Forefront-Antispam-Report-Untrusted: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(376002)(136003)(39860400002)(366004)(396003)(189003)(199004)(81166006)(81156014)(7416002)(102836004)(8676002)(4326008)(66476007)(64756008)(66066001)(5660300002)(66556008)(66446008)(386003)(6506007)(71200400001)(53546011)(71190400001)(66946007)(6512007)(14454004)(229853002)(6436002)(36756003)(478600001)(11346002)(446003)(2616005)(3846002)(25786009)(6116002)(26005)(476003)(186003)(305945005)(2906002)(7736002)(31686004)(256004)(6246003)(44832011)(8936002)(99286004)(54906003)(86362001)(31696002)(76176011)(486006)(316002)(6486002)(6916009)(52116002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:PR2PR08MB4700;
- H:PR2PR08MB4843.eurprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: arm.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Untrusted: BCL:0;
-X-Microsoft-Antispam-Message-Info-Original: ZH5PGaRnfRr57b1gSuP2rVkk7VdbUKOQUWEW5CkAdsB1vuGphpC9keGZjUKcYNVRQN6OaNVBEaK4Y4SEAlahVnI6sb2D0QevCATY5QZShVIj1E5KDPzQI5zqSuUx17zeywwrtPNf+V1gLhia4VA5MlhnggFvJAEv8bYmdE/1BXS5MP75+K2ouvrvuYmyn4uh/w/QK5JXUOyICixyaQ7AtA3wNcaW8DdeJNzzkTljTz285hrxJJyCKoDfNL25lXkoWSKsigcFMyPy76uJcOP3riPZUhGEtjfAV9YptbHF5xMzbfPooIhXB6woCT1oCgMd8lbCuRji4iALglfhp5ASkRCo0BzBq46kIdUbLycMAUiiTgChIfENLlO4+TswNzGzLAwmjf9EhOAg1Ne7RtPbluEUimEb9UtvqnuKR0GvO8dHBbNeDSe27n03gzXuIJAQ
-Content-ID: <7C71A00549171B49956BEC8D60D9E624@eurprd08.prod.outlook.com>
+ id 1iRc9R-0004Ct-54
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 13:12:11 +0000
+Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 8F5C42910DE0A13ECD44;
+ Mon,  4 Nov 2019 21:11:59 +0800 (CST)
+Received: from [127.0.0.1] (10.177.223.23) by DGGEMS407-HUB.china.huawei.com
+ (10.3.19.207) with Microsoft SMTP Server id 14.3.439.0; Mon, 4 Nov 2019
+ 21:11:49 +0800
+Subject: Re: stable-rc-4.19: cpufeature.c:909:21: error: 'MIDR_HISI_TSV110'
+ undeclared
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+References: <CA+G9fYtoODTuayzXdsv=bFuRPvw1-+dmZxHqQePy6LX8ixOG5A@mail.gmail.com>
+ <98f10e13-8ec8-1690-a867-f212bcea969f@huawei.com>
+ <20191104105910.GB1945210@kroah.com>
+From: Hanjun Guo <guohanjun@huawei.com>
+Message-ID: <b4249354-a84e-73c8-ae76-81306301b1c1@huawei.com>
+Date: Mon, 4 Nov 2019 21:11:12 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
+ Thunderbird/52.5.0
 MIME-Version: 1.0
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PR2PR08MB4700
-Original-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=Amit.Kachhap@arm.com; 
-X-EOPAttributedMessage: 0
-X-MS-Exchange-Transport-CrossTenantHeadersStripped: DB5EUR03FT021.eop-EUR03.prod.protection.outlook.com
-X-Forefront-Antispam-Report: CIP:63.35.35.123; IPV:CAL; SCL:-1; CTRY:IE;
- EFV:NLI; SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(346002)(39860400002)(136003)(376002)(1110001)(339900001)(40434004)(199004)(189003)(126002)(7736002)(6512007)(6486002)(76176011)(8676002)(305945005)(107886003)(2906002)(478600001)(6506007)(356004)(54906003)(6862004)(22756006)(6246003)(316002)(436003)(4326008)(336012)(23676004)(186003)(26005)(14444005)(53546011)(386003)(5024004)(229853002)(102836004)(6116002)(3846002)(70206006)(70586007)(476003)(2486003)(76130400001)(50466002)(81156014)(105606002)(36756003)(8936002)(81166006)(25786009)(26826003)(31686004)(31696002)(5660300002)(86362001)(14454004)(11346002)(446003)(2616005)(66066001)(486006)(47776003)(99286004);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DBBPR08MB4267;
- H:64aa7808-outbound-1.mta.getcheckrecipient.com; FPR:; SPF:Fail; LANG:en;
- PTR:ec2-63-35-35-123.eu-west-1.compute.amazonaws.com; A:1; MX:1; 
-X-MS-Office365-Filtering-Correlation-Id-Prvs: 8a41a572-7531-4f20-0f1d-08d761277086
-X-Forefront-PRVS: 0211965D06
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: EDCgPwnB1m5+ty2dtXL4cEuCpTefQSxlaTSbOfn6jcCqrik6DJI+OCFYsAN0uU9s93RcC+lxJ/lA2iB85R3+0UgqfGjK+HhqcY5NDlujTh8ZnUxTQ0rZIVtSuQiEmM4A+0vcoMd0v9vbA9oXd3V7ptgpchBKujqZW/6Iz06RXtjX6CxMo4JogHq8N7ZtyQ71wEfLVVx3Lw3AfMO+I5dj60icELip1KxH1fmn4bS5XTypy4cI1eg+qyubf2qzmZgOCxkpFEFpktGd+cnm88XrMcdSJBQaGNrHRv/zakmlx1nV/tDFQAUNGx+Tbrsu0E5jtjn+HuEcS9LFAwLubiDZLtI4u5bg3qsuJr0rF3RiqGklCDGIl4Wd9l/h2B886FEiEvyu5SqEAa5aAL0oL44LCyBZJvPhQfl2r/B3ueO2Mitkb3XxvQfjD2Y3eBMMTVFG
-X-OriginatorOrg: arm.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Nov 2019 13:04:03.2956 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5da5e06e-c97f-4c48-3d7f-08d76127778b
-X-MS-Exchange-CrossTenant-Id: f34e5979-57d9-4aaa-ad4d-b122a662184d
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=f34e5979-57d9-4aaa-ad4d-b122a662184d; Ip=[63.35.35.123];
- Helo=[64aa7808-outbound-1.mta.getcheckrecipient.com]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DBBPR08MB4267
+In-Reply-To: <20191104105910.GB1945210@kroah.com>
+Content-Language: en-US
+X-Originating-IP: [10.177.223.23]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_050420_295233_0FCC838F 
-X-CRM114-Status: GOOD (  13.03  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191104_051209_792835_C4867488 
+X-CRM114-Status: UNSURE (   9.70  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.4.75 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -180,78 +69,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>,
- "jthierry@redhat.com" <jthierry@redhat.com>,
- "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
- "peterz@infradead.org" <peterz@infradead.org>,
- Catalin Marinas <Catalin.Marinas@arm.com>, "deller@gmx.de" <deller@gmx.de>,
- "jpoimboe@redhat.com" <jpoimboe@redhat.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "rostedt@goodmis.org" <rostedt@goodmis.org>,
- "James.Bottomley@HansenPartnership.com"
- <James.Bottomley@HansenPartnership.com>,
- "takahiro.akashi@linaro.org" <takahiro.akashi@linaro.org>,
- "mingo@redhat.com" <mingo@redhat.com>, James Morse <James.Morse@arm.com>,
- "jeyu@kernel.org" <jeyu@kernel.org>,
- "svens@stackframe.org" <svens@stackframe.org>, "duwe@suse.de" <duwe@suse.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Sasha Levin <sashal@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ suzuki.poulose@arm.com, catalin.marinas@arm.com,
+ Naresh Kamboju <naresh.kamboju@linaro.org>, john.garry@huawei.com,
+ open list <linux-kernel@vger.kernel.org>,
+ linux- stable <stable@vger.kernel.org>, zhangshaokun@hisilicon.com,
+ lkft-triage@lists.linaro.org, andrew.murray@arm.com, will@kernel.org,
+ Dave P Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 11/4/19 6:26 PM, Will Deacon wrote:
-> On Sat, Nov 02, 2019 at 05:42:25PM +0530, Amit Daniel Kachhap wrote:
->> On 10/29/19 10:28 PM, Mark Rutland wrote:
->>> This series is a reworked version of Torsten's FTRACE_WITH_REGS series
->>> [1]. I've tried to rework the existing code in preparatory patches so
->>> that the patchable-function-entry bits slot in with fewer surprises.
->>> This version is based on v5.4-rc3, and can be found in my
->>> arm64/ftrace-with-regs branch [2].
->>>
->>> Patch 1 adds an (optional) ftrace_init_nop(), which the core code uses
->>> to initialize callsites. This allows us to avoid a synthetic MCOUNT_ADDR
->>> symbol, and more cleanly separates the one-time initialization of the
->>> callsite from dynamic NOP<->CALL modification. Architectures which don't
->>> implement this get the existing ftrace_make_nop() with MCOUNT_ADDR.
->>>
->>> Recently parisc gained ftrace support using patchable-function-entry.
->>> Patch 2 makes the handling of module callsite locations common in
->>> kernel/module.c with a new FTRACE_CALLSITE_SECTION definition, and
->>> removed the newly redundant bits from arch/parisc.
->>>
->>> Patches 3 and 4 move the module PLT initialization to module load time,
->>> which simplifies runtime callsite modification. This also means that we
->>> don't transitently mark the module text RW, and will allow for the
->>> removal of module_disable_ro().
->>>
->>> Patches 5 and 6 add some trivial infrastructure, with patch 7 finally
->>> adding FTRACE_WITH_REGS support. Additional work will be required for
->>> livepatching (e.g. implementing reliable stack trace), which is
->>> commented as part of patch 7.
->>>
->>> Patch 8 is a trivial cleanup atop of the rest of the series, making the
->>> code easier to read and less susceptible to config-specific breakage.
->> I tested the whole series with my latest in-kernel ptrauth patches [1]
->> and graph_tracer/function_graph_tracer works fine, So for the whole series,
->> Tested-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+On 2019/11/4 18:59, Greg Kroah-Hartman wrote:
+> On Mon, Nov 04, 2019 at 09:10:06AM +0800, Hanjun Guo wrote:
+>> Hi Sasha, Greg,
 >>
->> Also I gave few minor comments in the individual patches. With those
->> comments,
->> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
-Oops sorry I meant,
-Reviewed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
->
-> I don't think this means what you think it means. Please read:
-Thanks for pointing it.
->
-> Documentation/process/submitting-patches.rst
->
-> Will
->
-IMPORTANT NOTICE: The contents of this email and any attachments are confidential and may also be privileged. If you are not the intended recipient, please notify the sender immediately and do not disclose the contents to any other person, use it for any purpose, or store or copy the information in any medium. Thank you.
+>> On 2019/11/4 7:22, Naresh Kamboju wrote:
+>>> stable rc 4.19  branch build broken for arm64 with the below error log,
+>>>
+>>> Build error log,
+>>> arch/arm64/kernel/cpufeature.c: In function 'unmap_kernel_at_el0':
+>>> arch/arm64/kernel/cpufeature.c:909:21: error: 'MIDR_HISI_TSV110'
+>>> undeclared (first use in this function); did you mean
+>>> 'GICR_ISACTIVER0'?
+>>>   MIDR_ALL_VERSIONS(MIDR_HISI_TSV110),
+>>>                     ^
+>>> arch/arm64/include/asm/cputype.h:141:12: note: in definition of macro
+>>> 'MIDR_RANGE'
+>>>   .model = m,     \
+>>>            ^
+>>> arch/arm64/kernel/cpufeature.c:909:3: note: in expansion of macro
+>>> 'MIDR_ALL_VERSIONS'
+>>>   MIDR_ALL_VERSIONS(MIDR_HISI_TSV110),
+>>>   ^~~~~~~~~~~~~~~~~
+>>> arch/arm64/kernel/cpufeature.c:909:21: note: each undeclared
+>>> identifier is reported only once for each function it appears in
+>>>   MIDR_ALL_VERSIONS(MIDR_HISI_TSV110),
+>>>                     ^
+>>> arch/arm64/include/asm/cputype.h:141:12: note: in definition of macro
+>>> 'MIDR_RANGE'
+>>>   .model = m,     \
+>>>            ^
+>>> arch/arm64/kernel/cpufeature.c:909:3: note: in expansion of macro
+>>> 'MIDR_ALL_VERSIONS'
+>>>   MIDR_ALL_VERSIONS(MIDR_HISI_TSV110),
+>>
+>> Patch "efd00c7 arm64: Add MIDR encoding for HiSilicon Taishan CPUs" needs to
+>> be bacported as well, would you like me to do that, or just cherry-pick by yourself?
+> 
+> I need the backport please, cherry-pick fails :(
+
+I will send it out later.
+
+Thanks
+Hanjun
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
