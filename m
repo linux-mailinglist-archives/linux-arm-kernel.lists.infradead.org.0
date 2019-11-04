@@ -2,56 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B7DDEDF58
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 12:56:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D2500EDF9C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 13:04:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Maik5saQQ4iK3k1c1TvFmA0NIr5UbVr8U7s1RhPqwSU=; b=auhYVgr8UqX85q
-	n82ZwmMNzplfm94HAjAqeXKOEB3YGxQcGfWcM0zl0hQXg/Q/syvWsAv0gTb+PY88Uextt19Y+Hw2D
-	z2Vvuhs/me/vRhMw8pCrqSJppIL/MeoIyHquDcSDhpqsV+kEFtGPZCyiAvonoM2rtXWYYj1g6VCuO
-	dcrETJGZ7jayEvdkNSeiggp84jqFAqizrRC5fFshL6D2dMHAywjmz/Q80L0nghelxRH0iWZqwvXHT
-	cdUxwlFWNUr5g7c9QAgKl/8LYa80FKTYKUB9rzZRb5IPxY2P+Xk5abqiGx6VuzdyuYqcSKGgCbMwW
-	9cRbgGVwGhHGy07tQWsA==;
+	List-Owner; bh=POobopKh0DLmwdwG7y6qia2TSZAlZFIPu2hJQnQsTkE=; b=bmDz4l9a8UHAYZ
+	vnxtavyEqdqHEvi3ED7um/+qIvZojNqXm6VUzJVys0I2uRgeHBdSFASP4N3Wa0hMIwjTahG1eJHz8
+	k980uNSO5idaN/tHX+7AiJ62SdKCFfHqeL45xcJ8ZtoB6o8tKOFSvsg9DDUx0wfz6KIgW0drGCBRp
+	O66TKcoeAGw7UjmperWF+wgUpP9sId5io4Mqm2OGy8h59904IkLjDMr4lEQboKJEJSXVu45pxJSf5
+	fMZjl+HQxtryh2WAG9IZheIuioZZ9kiErxeH2NX3MmJAR2PDXPG67h5vWP8Li4NhcYK5IPxDttaW8
+	xNQ7aebMPLiVqjFlYPIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRayO-0001vh-Ug; Mon, 04 Nov 2019 11:56:41 +0000
+	id 1iRb5P-00071J-3M; Mon, 04 Nov 2019 12:03:55 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRawC-0007K3-OJ; Mon, 04 Nov 2019 11:54:26 +0000
-X-UUID: 22103ee091884675b15c4676e35e411e-20191104
-X-UUID: 22103ee091884675b15c4676e35e411e-20191104
+ id 1iRb4T-0006H0-9A; Mon, 04 Nov 2019 12:02:58 +0000
+X-UUID: 70aa4d6f4a29492a92ffe7867c0e537e-20191104
+X-UUID: 70aa4d6f4a29492a92ffe7867c0e537e-20191104
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <chao.hao@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2025200130; Mon, 04 Nov 2019 03:54:27 -0800
-Received: from MTKMBS06N1.mediatek.inc (172.21.101.129) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 4 Nov 2019 03:53:14 -0800
+ with ESMTP id 1620001168; Mon, 04 Nov 2019 04:02:57 -0800
+Received: from MTKMBS06N2.mediatek.inc (172.21.101.130) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 4 Nov 2019 03:53:24 -0800
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs06n1.mediatek.inc (172.21.101.129) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 4 Nov 2019 19:53:15 +0800
+ mtkmbs06n2.mediatek.inc (172.21.101.130) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 4 Nov 2019 19:53:25 +0800
 Received: from localhost.localdomain (10.15.20.246) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 4 Nov 2019 19:53:11 +0800
+ Transport; Mon, 4 Nov 2019 19:53:14 +0800
 From: Chao Hao <chao.hao@mediatek.com>
 To: Joerg Roedel <joro@8bytes.org>, Rob Herring <robh+dt@kernel.org>,
  "Matthias Brugger" <matthias.bgg@gmail.com>
 Subject: [RESEND,
- PATCH 12/13] iommu/mediatek: Change single domain to multiple domains
-Date: Mon, 4 Nov 2019 19:52:37 +0800
-Message-ID: <20191104115238.2394-13-chao.hao@mediatek.com>
+ PATCH 13/13] iommu/mediatek: Add multiple mtk_iommu_domain support
+ for mt6779
+Date: Mon, 4 Nov 2019 19:52:38 +0800
+Message-ID: <20191104115238.2394-14-chao.hao@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20191104115238.2394-1-chao.hao@mediatek.com>
 References: <20191104115238.2394-1-chao.hao@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: F8AD794D9FEF6333CE5BE9CFD73E711FCAB89F13FD72EC4B1E68F3848BF91BB72000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_035424_806345_639E8FA5 
-X-CRM114-Status: GOOD (  17.38  )
+X-CRM114-CacheID: sfid-20191104_040257_351407_8C9A09F9 
+X-CRM114-Status: GOOD (  10.71  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -86,189 +88,89 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Based on one mtk_iommu_domain, this patch supports multiple
-mtk_iommu_domains to realize different iova regions.
-
-Every module has one smi_larb port, so we can create different
-mtk_iommu_domains by smi_larb port define. So we will add port_mask
-variable to mtk_domain_data, if some modules need special iova regions,
-they can write smi_larb port which corresponding to themselves to
-post_mask variable and specify the start and end address of iova region.
-The form of port_mask can use "MTK_M4U_ID(larb, port)", larb and port can
-refer to "mtxxxx-larb-port.h(ex: mt6779-larb-port.h)" file.
-
-The architecture diagram is as below:
-
-				mtk_iommu_pgtable
-					|
-				mtk_domain_data
-					|
-		-------------------------------------------------
-		|			|			|
-	mtk_iommu_domain1	mtk_iommu_domain2	mtk_iommu_domain3
+For mt6779, it need to support three mtk_iommu_domains, every
+mtk_iommu_domain's iova space is different.
+Three mtk_iommu_domains is as below:
+1. Normal mtk_iommu_domain exclude 0x4000_0000~0x47ff_ffff and
+   0x7da0_0000~7fbf_ffff.
+2. CCU mtk_iommu_domain include 0x4000_0000~0x47ff_ffff.
+3. VPU mtk_iommu_domain 0x7da0_0000~0x7fbf_ffff.
 
 Signed-off-by: Chao Hao <chao.hao@mediatek.com>
 ---
- drivers/iommu/mtk_iommu.c | 48 +++++++++++++++++++++++++++++++++------
- drivers/iommu/mtk_iommu.h | 11 ++++++++-
- 2 files changed, 51 insertions(+), 8 deletions(-)
+ drivers/iommu/mtk_iommu.c | 45 +++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 43 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-index c0cd7da71c2c..c33ea55a1841 100644
+index c33ea55a1841..882fe01ff770 100644
 --- a/drivers/iommu/mtk_iommu.c
 +++ b/drivers/iommu/mtk_iommu.c
-@@ -130,6 +130,8 @@ struct mtk_iommu_pgtable {
- 	struct io_pgtable_ops	*iop;
- 	struct device		*init_dev;
- 	struct list_head	m4u_dom_v2;
-+	spinlock_t		domain_lock; /* lock for domain count */
-+	u32			domain_count;
- 	const struct mtk_domain_data	*dom_region;
+@@ -140,6 +140,30 @@ const struct mtk_domain_data single_dom = {
+ 	.max_iova = DMA_BIT_MASK(32)
  };
  
-@@ -172,11 +174,15 @@ static LIST_HEAD(m4ulist);	/* List all the M4U HWs */
- static u32 get_domain_id(struct mtk_iommu_data *data, u32 portid)
- {
- 	u32 dom_id = 0;
--	int i;
-+	const struct mtk_domain_data *mtk_dom_array = data->plat_data->dom_data;
-+	int i, j;
- 
--	/* only support one mtk_iommu_domain currently(dom_cnt = 1) */
--	for (i = 0; i < data->plat_data->dom_cnt; i++)
--		return i;
-+	for (i = 0; i < data->plat_data->dom_cnt; i++) {
-+		for (j = 0; j < MTK_MAX_PORT_NUM; j++) {
-+			if (portid == mtk_dom_array[i].port_mask[j])
-+				return i;
-+		}
++/*
++ * related file: mt6779-larb-port.h
++ */
++const struct mtk_domain_data mt6779_multi_dom[] = {
++	/* normal domain */
++	{
++	 .min_iova = 0x0,
++	 .max_iova = DMA_BIT_MASK(32),
++	},
++	/* ccu domain */
++	{
++	 .min_iova = 0x40000000,
++	 .max_iova = 0x48000000 - 1,
++	 .port_mask = {MTK_M4U_ID(9, 21), MTK_M4U_ID(9, 22),
++		       MTK_M4U_ID(12, 0), MTK_M4U_ID(12, 1)}
++	},
++	/* vpu domain */
++	{
++	 .min_iova = 0x7da00000,
++	 .max_iova = 0x7fc00000 - 1,
++	 .port_mask = {MTK_M4U_ID(13, 0)}
 +	}
- 
- 	return dom_id;
- }
-@@ -416,6 +422,8 @@ static struct mtk_iommu_pgtable *create_pgtable(struct mtk_iommu_data *data)
- 	if (!pgtable)
- 		return ERR_PTR(-ENOMEM);
- 
-+	spin_lock_init(&pgtable->domain_lock);
-+	pgtable->domain_count = 0;
- 	INIT_LIST_HEAD(&pgtable->m4u_dom_v2);
- 
- 	pgtable->cfg = (struct io_pgtable_cfg) {
-@@ -476,6 +484,7 @@ static struct iommu_domain *mtk_iommu_domain_alloc(unsigned type)
- 	struct mtk_iommu_data *data;
- 	struct mtk_iommu_domain *dom;
- 	struct device *dev;
-+	unsigned long flags;
- 
- 	if (type != IOMMU_DOMAIN_DMA)
- 		return NULL;
-@@ -503,18 +512,34 @@ static struct iommu_domain *mtk_iommu_domain_alloc(unsigned type)
- 	if (dom->id >= data->plat_data->dom_cnt)
- 		goto  put_dma_cookie;
- 
-+	spin_lock_irqsave(&pgtable->domain_lock, flags);
-+	if (pgtable->domain_count >= data->plat_data->dom_cnt) {
-+		spin_unlock_irqrestore(&pgtable->domain_lock, flags);
-+		dev_err(dev, "%s, too many domain, count=%u\n",
-+			__func__, pgtable->domain_count);
-+		goto  put_dma_cookie;
-+	}
-+	pgtable->domain_count++;
-+	spin_unlock_irqrestore(&pgtable->domain_lock, flags);
- 	dom->data = data;
- 	dom->group = data->m4u_group;
++};
 +
- 	/* Update our support page sizes bitmap */
- 	dom->domain.pgsize_bitmap = pgtable->cfg.pgsize_bitmap;
+ static struct mtk_iommu_pgtable *share_pgtable;
+ static const struct iommu_ops mtk_iommu_ops;
  
- 	dom->domain.geometry.aperture_start =
--				pgtable->dom_region->min_iova;
-+				pgtable->dom_region[dom->id].min_iova;
- 	dom->domain.geometry.aperture_end =
--				pgtable->dom_region->max_iova;
-+				pgtable->dom_region[dom->id].max_iova;
- 	dom->domain.geometry.force_aperture = true;
- 	list_add_tail(&dom->list, &pgtable->m4u_dom_v2);
+@@ -1055,6 +1079,21 @@ static const struct dev_pm_ops mtk_iommu_pm_ops = {
+ 	SET_NOIRQ_SYSTEM_SLEEP_PM_OPS(mtk_iommu_suspend, mtk_iommu_resume)
+ };
  
-+	dev_info(dev, "%s: dom_id:%u, start:%pa, end:%pa, dom_cnt:%u\n",
-+		 __func__, dom->id,
-+		 &dom->domain.geometry.aperture_start,
-+		 &dom->domain.geometry.aperture_end,
-+		 pgtable->domain_count);
++static const struct mtk_iommu_resv_iova_region mt6779_iommu_rsv_list[] = {
++	{
++		.dom_id = 0,
++		.iova_base = 0x40000000,	/* CCU */
++		.iova_size = 0x8000000,
++		.type = IOMMU_RESV_RESERVED,
++	},
++	{
++		.dom_id = 0,
++		.iova_base = 0x7da00000,	/* VPU/MDLA */
++		.iova_size = 0x2700000,
++		.type = IOMMU_RESV_RESERVED,
++	},
++};
 +
- 	return &dom->domain;
+ static const struct mtk_iommu_plat_data mt2712_data = {
+ 	.m4u_plat     = M4U_MT2712,
+ 	.has_4gb_mode = true,
+@@ -1068,8 +1107,10 @@ static const struct mtk_iommu_plat_data mt2712_data = {
  
- put_dma_cookie:
-@@ -527,9 +552,17 @@ static struct iommu_domain *mtk_iommu_domain_alloc(unsigned type)
- static void mtk_iommu_domain_free(struct iommu_domain *domain)
- {
- 	struct mtk_iommu_pgtable *pgtable = mtk_iommu_get_pgtable();
-+	unsigned long flags;
- 
- 	iommu_put_dma_cookie(domain);
- 	kfree(to_mtk_domain(domain));
-+	spin_lock_irqsave(&pgtable->domain_lock, flags);
-+	pgtable->domain_count--;
-+	if (pgtable->domain_count > 0) {
-+		spin_unlock_irqrestore(&pgtable->domain_lock, flags);
-+		return;
-+	}
-+	spin_unlock_irqrestore(&pgtable->domain_lock, flags);
- 	free_io_pgtable_ops(pgtable->iop);
- 	kfree(pgtable);
- }
-@@ -703,6 +736,7 @@ static void mtk_iommu_get_resv_regions(struct device *dev,
- {
- 	struct mtk_iommu_data *data = dev_iommu_fwspec_get(dev)->iommu_priv;
- 	unsigned int i, total_cnt = data->plat_data->resv_cnt;
-+	u32 dom_id = mtk_iommu_get_domain_id(dev);
- 	const struct mtk_iommu_resv_iova_region *resv_data;
- 	struct iommu_resv_region *region;
- 	unsigned long base = 0;
-@@ -717,7 +751,7 @@ static void mtk_iommu_get_resv_regions(struct device *dev,
- 			base = (unsigned long)resv_data[i].iova_base;
- 			size = resv_data[i].iova_size;
- 		}
--		if (!size)
-+		if (!size || resv_data[i].dom_id != dom_id)
- 			continue;
- 
- 		region = iommu_alloc_resv_region(base, size, prot,
-diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
-index 10476b23adee..345c0a0c2881 100644
---- a/drivers/iommu/mtk_iommu.h
-+++ b/drivers/iommu/mtk_iommu.h
-@@ -37,6 +37,7 @@ enum mtk_iommu_plat {
- };
- 
- struct mtk_iommu_resv_iova_region {
-+	u32			dom_id;
- 	dma_addr_t		iova_base;
- 	size_t			iova_size;
- 	enum iommu_resv_type	type;
-@@ -50,12 +51,20 @@ struct mtk_iommu_resv_iova_region {
-  * struct mtk_domain_data:	domain configuration
-  * @min_iova:	Start address of iova
-  * @max_iova:	End address of iova
-- * Note: one user can only belong to one domain
-+ * @port_mask:	User can specify mtk_iommu_domain by smi larb and port.
-+ *		Different mtk_iommu_domain have different iova space,
-+ *		port_mask is made up of larb_id and port_id.
-+ *		The format of larb and port can refer to mtxxxx-larb-port.h.
-+ *		bit[4:0] = port_id  bit[11:5] = larb_id.
-+ * Note: one user can only belong to one domain,
-+ * the port mask is in unit of SMI larb.
-  */
-+#define MTK_MAX_PORT_NUM	5
- 
- struct mtk_domain_data {
- 	dma_addr_t	min_iova;
- 	dma_addr_t	max_iova;
-+	u32		port_mask[MTK_MAX_PORT_NUM];
- };
- 
- struct mtk_iommu_plat_data {
+ static const struct mtk_iommu_plat_data mt6779_data = {
+ 	.m4u_plat = M4U_MT6779,
+-	.dom_cnt = 1,
+-	.dom_data = &single_dom,
++	.resv_cnt     = ARRAY_SIZE(mt6779_iommu_rsv_list),
++	.resv_region  = mt6779_iommu_rsv_list,
++	.dom_cnt = ARRAY_SIZE(mt6779_multi_dom),
++	.dom_data = mt6779_multi_dom,
+ 	.larbid_remap[0] = {0, 1, 2, 3, 5, 7, 10, 9},
+ 	/* vp6a, vp6b, mdla/core2, mdla/edmc*/
+ 	.larbid_remap[1] = {2, 0, 3, 1},
 -- 
 2.18.0
 
