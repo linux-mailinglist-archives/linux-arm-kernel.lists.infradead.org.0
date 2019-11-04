@@ -2,81 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7869EEE21F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 15:23:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10630EE23E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 15:27:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=iAHVm+eWT/qNm9KUO79t+XTYwEo5rYRiBLyNObNwWwc=; b=W9MjybDLwhKI/QujJSsI6xqFfG
-	Hl+URw2oU9+Spltl1ALyNEIHES3zfeMKyIwI/CK68zu3L2jsINEpvDC9IWhfHDBtyReu8L4x34/hH
-	t+CI9GZAhBUny1pZPJzNJRd62YjUZB8cwA6YQZqGcnjnfPsKA4UrwxkHOZIrdl8UhSiPmCwX1qVEz
-	mayzAKdiUeYSFM7iiwxDxkmL68WwowIhz7conqrPm3sgwxJoUpQW4BMkC6IFDgsgMFoLl6PjD2Zph
-	32TTl39Yt9kP1tXWeeRArSvE0+c5/c9uzEfnuKpDmhXyXB28KpOEUTVH4vq4QmpplD0kYYY8tH7iz
-	TdpgGMiA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FQsmh9gKNSHtOqY+LEzLJ6TGlD+P8Q3sxyoT7T7xcgU=; b=E+NZguhhvpNWx+
+	fvZA0Z607/hImkCDobH9nlerDy8ChnNJ7jCV1RjEQIQBbi4nA5aV+o7xpc/2P0TravUT+dyPfOinN
+	ekdDYOIPQlAVLGyJNoImJx/XoxAsTb8wahg2ItzjR9DOb7/pnqfKAWeZ0NzjEIm9fjw+oj7b3LKgB
+	84KzxTC5qwDl6vT81GXNV+UjM25kf7sTzeS9j24Xl+5sj+4ABE3w8I373DTa6IWMrm2Wfv7/F3Rbu
+	rt0ybQnv6ctGKjh5EpcMlxr7yDqbuVsM0633HXgrWs4PfEryuDG1fMvkL0iOBTDbUcW7nzPGEvvLX
+	/PnONg72k5IspuguLKcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRdGe-00075I-Br; Mon, 04 Nov 2019 14:23:40 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iRdK2-0000lS-CC; Mon, 04 Nov 2019 14:27:10 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRdGG-0006vu-NQ
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 14:23:18 +0000
-Received: by mail-wm1-x342.google.com with SMTP id c22so16272361wmd.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 Nov 2019 06:23:16 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=DlHGsHCYz6i9keGsLrYM+8DrDokVvhA17QRfhwApon4=;
- b=pformDiSnMnhGM0gWYP61EL4IsZN5i5fQ20RPhOIcGPtbvADApmq3GGz3ONVTEshHm
- wUje680PA6qM1Er/+RfRn3rLoXyJ3NpKVfmdZ8nVsuKHtCIStEltZD9vqc8Gru0cEJLj
- BBXQmTmeGmCPA0FSuvLswr1oygRQXRacmKn6mMNa7Wj5mCsqwfQ7W3jvUbNWOjsPrE5C
- +s9Tr0F8RqgF+zp6uKjx9lunA6aY0/AHe3l7bor+KvIjirdp5ndgS/qnucYbOCKyo4IN
- EoV8o3HmWJqw6Ffth7CtcZB8UJLk0rlpMe4fCx0380dohUIF1SUGT2Ksbfsdn3hdIR+b
- f/RA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=DlHGsHCYz6i9keGsLrYM+8DrDokVvhA17QRfhwApon4=;
- b=Emzm9zrvyt3KEVJHG4lhNwCQVwgZyZKFSEJ1e7sePkWeQPhEEqpNtjrB2GnBzXhc+e
- KDYOCaxzsuDZ7nA3eER0Hu3Nudq07GGeX/zTT4LrvlA/C5PYDOoMO+xPpdnZ9skaOD0p
- hQvxtW9ChWFcKmd9ZLnADNIeFxBAQUlREBGhs7+xzOJXMWRzO0j5R5gy6xhMwX8aunVS
- Umh5/cYk9AdNTqhzntMSKc6vYHZnH0k3c6wkvofHxe3PPiXH9YM2F+XaOfurq/L/+QqR
- LJOJgVDstykJW65zNinv8p8xkFiZd1DGxkxSy/fQOFKJtt9OmKzSbneXWz6S8qBIXWp1
- 7I0g==
-X-Gm-Message-State: APjAAAWYzS0+iNjNo1ncRR9XUfeoOEJaRjIt43ERhwCnkwiz5bQIzMee
- emkbZ7riMuydkeK+86TxPaV0CA==
-X-Google-Smtp-Source: APXvYqw5dRFCT4rWakrmWngzJkmEsTf4OzwjQFejtITeq3kHdmXf626rugiPj/J78gqdopl+XXEyQw==
-X-Received: by 2002:a7b:cc89:: with SMTP id p9mr21507045wma.99.1572877394844; 
- Mon, 04 Nov 2019 06:23:14 -0800 (PST)
-Received: from mai.imgcgcw.net ([2a01:e34:ed2f:f020:58da:b044:f184:d281])
- by smtp.gmail.com with ESMTPSA id l18sm21692446wrn.48.2019.11.04.06.23.13
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 04 Nov 2019 06:23:14 -0800 (PST)
-From: Daniel Lezcano <daniel.lezcano@linaro.org>
-To: tglx@linutronix.de
-Subject: [PATCH 4/5] clocksource/drivers/renesas-ostm: Use unique device name
- instead of ostm
-Date: Mon,  4 Nov 2019 15:22:56 +0100
-Message-Id: <20191104142257.30029-4-daniel.lezcano@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191104142257.30029-1-daniel.lezcano@linaro.org>
-References: <6fd4d800-b1f8-d757-458e-23742d20884c@linaro.org>
- <20191104142257.30029-1-daniel.lezcano@linaro.org>
+ id 1iRdJs-0000kO-8v
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 14:27:01 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 01E0A217F4;
+ Mon,  4 Nov 2019 14:26:57 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572877619;
+ bh=0IjKRPtlsAuGGSBfyycUTHeq+OKoAcUZR2xfdqbrOgs=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=EcwNhrNW699SAWToP/HTLcjb/0Z5KD9Ws4UgUPP7G8FaI4CkH1achz2b6G8yRHmPX
+ KUp8mUaFn23KKjjV7S2q8vXsnnkEzHKzEAr4SIsa4FWir9RubmKdDuAKKQDOi7z3UW
+ gtlvHv2zF/WuZLLl1N2CUhO2A3M06mGFLMG2ZfgA=
+Date: Mon, 4 Nov 2019 14:26:54 +0000
+From: Will Deacon <will@kernel.org>
+To: Shaokun Zhang <zhangshaokun@hisilicon.com>
+Subject: Re: [RFC] About perf-mem command support on arm64 platform
+Message-ID: <20191104142654.GA24609@willie-the-truck>
+References: <74f8ddb5-13cc-5dce-82a6-ca8bd02f8175@hisilicon.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <74f8ddb5-13cc-5dce-82a6-ca8bd02f8175@hisilicon.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_062316_766038_7ECF8AA6 
-X-CRM114-Status: GOOD (  13.69  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191104_062700_333931_54981979 
+X-CRM114-Status: GOOD (  18.00  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -86,6 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,82 +76,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>, linux-kernel@vger.kernel.org,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- "moderated list:ARM/STM32 ARCHITECTURE"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "moderated list:ARM/STM32 ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, john.garry@huawei.com,
+ linux-kernel@vger.kernel.org, Arnaldo Carvalho de Melo <acme@kernel.org>,
+ liuqi115@hisilicon.com, huangdaode@hisilicon.com,
+ Jonathan Cameron <Jonathan.Cameron@huawei.com>, Jiri Olsa <jolsa@redhat.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Geert Uytterhoeven <geert+renesas@glider.be>
+On Mon, Nov 04, 2019 at 05:18:00PM +0800, Shaokun Zhang wrote:
+> perf-mem is used to profile memory access which has been implemented on x86
+> platform. It needs mem-stores events and mem-loads/load-latency.
+> For mem-stores events, it is MEM_INST_RETIRED_ALL_STORES whose raw number
+> is r82d0, and mem-loads/load-latency is from PEBS if I follow its code.
+> 
+> Now, for some arm64 cores, like HiSilicon's tsv110 and ARM's Neoverse N1,
+> has supported the SPE(Statistical Profiling Extensions), so is it a
+> possibility that perf-mem is supported on arm64?
+> https://developer.arm.com/ip-products/processors/neoverse/neoverse-n1
 
-Currently all OSTM devices are called "ostm", also in kernel messages.
+I don't understand the relationship you're trying to draw between mem-stores
+and SPE. How does perf-mem work and what does it actually require from the
+CPU?
 
-As there can be multiple instances in an SoC, this can confuse the user.
-Hence construct a unique name from the DT node name, like is done for
-platform devices.
+One thing that may be worth noting is that SPE isn't generally able to
+capture information about all instructions being executed by the CPU:
+instead, it instructions (most likely micro-ops) are sampled based on
+some user-specified period. The CPU advertises a minimum recommended
+period which we expose under /sys and enforce when programming events.
 
-On RSK+RZA1, the boot log changes like:
+> For arm64 PMU, it has 'st_retired' event that the event number is 0x0007
+> which is equal to mem-stores on x86, if we want support perf-mem, it seems
+> that 'st_retired' shall be replaced by 'mem-stores'
+> in arch/arm64/kernel/perf_event.c file. Of course, the cpu core should
+> support st_retired event. I'm not sure Will/Mark are happy on this.;-)
+> 
+> For mem-loads/load-latency, we can derive them from SPE sampled data which
+> supports by load_filter and min_latency in SPE driver. and we may do some
+> work on tools/perf/builtin-mem.c.
 
-    -clocksource: ostm: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 57352151442 ns
-    +clocksource: timer@fcfec000: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 57352151442 ns
-     sched_clock: 32 bits at 33MHz, resolution 30ns, wraps every 64440619504ns
-    -ostm: used for clocksource
-    -ostm: used for clock events
-    +/soc/timer@fcfec000: used for clocksource
-    +/soc/timer@fcfec400: used for clock events
-     ...
-    -clocksource: Switched to clocksource ostm
-    +clocksource: Switched to clocksource timer@fcfec000
+I don't see how you could reconcile the sampling nature of SPE with a
+CPU PMU counter, particularly as filtering in SPE happens /after/ sampling.
 
-Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
-Link: https://lore.kernel.org/r/20191016144747.29538-5-geert+renesas@glider.be
----
- drivers/clocksource/renesas-ostm.c | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
+> From the above conditions, it seems that we may have the opportunity to
+> support the perf-mem command on arm64.
+> I'm not very sure about it, so I send this RFC and any comments are welcome.
 
-diff --git a/drivers/clocksource/renesas-ostm.c b/drivers/clocksource/renesas-ostm.c
-index 46012d905604..3d06ba66008c 100644
---- a/drivers/clocksource/renesas-ostm.c
-+++ b/drivers/clocksource/renesas-ostm.c
-@@ -64,9 +64,9 @@ static int __init ostm_init_clksrc(struct timer_of *to)
- 	writeb(CTL_FREERUN, timer_of_base(to) + OSTM_CTL);
- 	writeb(TS, timer_of_base(to) + OSTM_TS);
- 
--	return clocksource_mmio_init(timer_of_base(to) + OSTM_CNT, "ostm",
--				     timer_of_rate(to), 300, 32,
--				     clocksource_mmio_readl_up);
-+	return clocksource_mmio_init(timer_of_base(to) + OSTM_CNT,
-+				     to->np->full_name, timer_of_rate(to), 300,
-+				     32, clocksource_mmio_readl_up);
- }
- 
- static u64 notrace ostm_read_sched_clock(void)
-@@ -190,13 +190,13 @@ static int __init ostm_init(struct device_node *np)
- 			goto err_cleanup;
- 
- 		ostm_init_sched_clock(to);
--		pr_info("ostm: used for clocksource\n");
-+		pr_info("%pOF: used for clocksource\n", np);
- 	} else {
- 		ret = ostm_init_clkevt(to);
- 		if (ret)
- 			goto err_cleanup;
- 
--		pr_info("ostm: used for clock events\n");
-+		pr_info("%pOF: used for clock events\n", np);
- 	}
- 
- 	return 0;
--- 
-2.17.1
+I don't think there's enough information here to comment meaningfully more
+than SPE != PEBS.
 
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
