@@ -2,95 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54699EDA49
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 09:04:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34998EDA4C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 09:04:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xEpDqiTMp9vHfLrcRHz5fZtpO5rVE+uN2PDh7Hka74o=; b=RYmxHDd2NCyocf
-	w+uaOKr/ljjMjg1SPv7paDOe9xwYbH1K5tb+O+IxEceTiETQ/Ejy23OJIQ5rI6dvWktDTNU+oW8So
-	Q4EMhfrUqzmsALDSdh3vEuu0xiEonpdg0Vets7wnZQ9baE4rjhEIdV5fGhl+njblStXRNL9anGTDL
-	WQkw7yZ8jpCnQ1QZUEAMd0+/KpoiPAGf/khvjF583Ugc9X93BlRUnu8QkhS5L1HRgVKrsfh5pYhyB
-	DJoxlUTsaKvjmmUR+4dxfsDJ4IoFYtrsP0lf3fsxvGyAGodY6eQyfNR+C4TdEgERLNG4lSTL2OF2d
-	g34JGf0SeU41JYXokhOQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Bru3lH/lBcBJBxIDYSi6L29iBwtVXNXzpiAHLEKDmag=; b=JUUbdJeaaQuVeJ
+	tlFMKx6LhfkhyoA/CldVl1cncuEfgo8mZ/YHnvZSxD2/n5ShyVwGD7o19RtZ7B7r9ug0UfVdsoxKf
+	7JVuL+5YlqYATXrYuVDQFqjzNuLPOiLrwT7mhYioBYEx/Xs002l8B8S2J2BHWYuqbSs/W7jHICm/C
+	mwDhaQMp+zNsyLwR1JrFEoqsZbiAY5TJylikP96EM4PrC50pxY6ftnGkVKv1J9aL7bBRNJjn0701G
+	5ms0Kk8QbCNYXiSnoGU60RCqG7rchLoeLLYb4XWNF3ts2RtlHmHqQwUmz9UXee6bfP+ZxZEhvNEg5
+	27BQwnb3Oa1yD40X/25A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRXLH-0006wh-4a; Mon, 04 Nov 2019 08:04:03 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1iRXLV-00079t-Br; Mon, 04 Nov 2019 08:04:17 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRXLA-0006wG-M2
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 08:03:57 +0000
-Received: by mail-lf1-x141.google.com with SMTP id 19so6325978lft.13
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 Nov 2019 00:03:56 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=rasmusvillemoes.dk; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=LxAxNMBVL+dSGienin6qaCrk7en5CTrpwUxUJmlZZRg=;
- b=TrDTWGfMBfFjlWZ8uZDUT0w3BNWxwNGte+a8IpvcI6chs9MWID54loPeAyScghAAh8
- c7UhsZiHgMWlgfVzsY3JlounwUiaxX53oS0f2R2DthwMn0wijXA35T62J9fbrpjvwxSd
- vvkuLYbB2jATrla63DCyxhxyaqfj/lNl8Jy6g=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=LxAxNMBVL+dSGienin6qaCrk7en5CTrpwUxUJmlZZRg=;
- b=IEsT/zpqVsCidD1S3rX3e3KdQ+bcIzzKJFBnY+81khTscaa/MBHYN8WrZ5P8Chg4Ow
- 05XKox60HyfumNcmTBrxFVrjZwlp9IodZRlqmqc/7VHeox4nPfXJaMwxZQC3vuorT6W6
- 0MrkQa7RvJpGnu2L/Zcx/1XBKZ57EnRX/WtV8lsVsZGZXq/nQp9OSbWzZpjcaK2L4lm6
- te5dNcNAn3qJMClrdZ1/4c3EMOzO20siqmAUlRQ6oOtpGipaxAJmRdBSOet4Frq87+Be
- n+bykLR2Egt4hhp3ORzjRMmFjdCGl2XY4ZE7eaJsHxSMEOqThgw/WsC4pxx4aOfH1ayz
- 1iWA==
-X-Gm-Message-State: APjAAAUIiALxBkXWOMcw2E1JeOJKzChvFTV4IYbF3VPzPNk6ahb4AOqd
- /eqKA6T8MIN9z/8gBcD1zNp1KA==
-X-Google-Smtp-Source: APXvYqwZ6WMPtJAcL4H1FSM0qke7qolXLVZOH2UexXvXSedbKeL3kV7Vji/MC2YFBHtLQv0vvrHfxw==
-X-Received: by 2002:ac2:4357:: with SMTP id o23mr3316354lfl.51.1572854634877; 
- Mon, 04 Nov 2019 00:03:54 -0800 (PST)
-Received: from [172.16.11.28] ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id e2sm6742553lfc.2.2019.11.04.00.03.53
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 04 Nov 2019 00:03:54 -0800 (PST)
-Subject: Re: [PATCH v3 31/36] serial: ucc_uart: stub out soft_uart_init for
- !CONFIG_PPC32
-To: Christophe Leroy <christophe.leroy@c-s.fr>,
- Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>
-References: <20191018125234.21825-1-linux@rasmusvillemoes.dk>
- <20191101124210.14510-1-linux@rasmusvillemoes.dk>
- <20191101124210.14510-32-linux@rasmusvillemoes.dk>
- <53c1c463-53fc-2005-3b62-a6f430815b45@c-s.fr>
-From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
-Message-ID: <6d1e4a08-4107-753f-8701-d3acb44b0104@rasmusvillemoes.dk>
-Date: Mon, 4 Nov 2019 09:03:52 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iRXLL-00075o-Hp
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 08:04:09 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iRXLF-0006NS-DR; Mon, 04 Nov 2019 09:04:01 +0100
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iRXLD-0007VH-Qm; Mon, 04 Nov 2019 09:03:59 +0100
+Date: Mon, 4 Nov 2019 09:03:59 +0100
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: =?iso-8859-1?Q?Cl=E9ment_P=E9ron?= <peron.clem@gmail.com>
+Subject: Re: [PATCH v2 1/7] dt-bindings: pwm: allwinner: Add H6 PWM description
+Message-ID: <20191104080359.6kjugbt3yi63ywhb@pengutronix.de>
+References: <20191103203334.10539-1-peron.clem@gmail.com>
+ <20191103203334.10539-2-peron.clem@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <53c1c463-53fc-2005-3b62-a6f430815b45@c-s.fr>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191103203334.10539-2-peron.clem@gmail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_000356_720548_C59E652A 
-X-CRM114-Status: GOOD (  15.72  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191104_000407_593859_00498C0B 
+X-CRM114-Status: GOOD (  18.40  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,36 +68,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Scott Wood <oss@buserror.net>, linuxppc-dev@lists.ozlabs.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-serial@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-pwm@vger.kernel.org,
+ Jernej Skrabec <jernej.skrabec@siol.net>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Thierry Reding <thierry.reding@gmail.com>, kernel@pengutronix.de,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMDEvMTEvMjAxOSAxNy4yNywgQ2hyaXN0b3BoZSBMZXJveSB3cm90ZToKPiAKPiAKPiBMZSAw
-MS8xMS8yMDE5IMOgIDEzOjQyLCBSYXNtdXMgVmlsbGVtb2VzIGEgw6ljcml0wqA6Cj4+IFRoZSBT
-b2Z0IFVBUlQgaGFjayBpcyBvbmx5IG5lZWRlZCBmb3Igc29tZSBQUEMtYmFzZWQgU09Dcy4gVG8g
-YWxsb3cKPj4gYnVpbGRpbmcgdGhpcyBkcml2ZXIgZm9yIG5vbi1QUEMsIGd1YXJkIHNvZnRfdWFy
-dF9pbml0KCkgYW5kIGl0cwo+PiBoZWxwZXJzIGJ5IENPTkZJR19QUEMzMiwgYW5kIHVzZSBhIG5v
-LW9wIHNvZnRfdWFydF9pbml0KCkgb3RoZXJ3aXNlLgo+IAo+IEkgZG9uJ3QgbGlrZSB0b28gbXVj
-aCBpZmRlZnMgaW4gQyBmaWxlcywgZXNwZWNpYWxseSBhcmNoIHNwZWNpZmljIGlmZGVmcwo+IGlu
-IGdlbmVyaWMgZHJpdmVycy4KCk1lIG5laXRoZXIuIEhvd2V2ZXIsCgo+IEhvdyBkbyB3ZSBnZXQg
-dGhlIFFFIHZlcnNpb24gb24gQVJNID8KPiAKPiBXb3VsZG4ndCBpdCBiZSBjbGVhbmVyIHRvIGNy
-ZWF0ZSBhIGhlbHBlciBmb3IgZ2V0dGluZyB0aGUgUUUgdmVyc2lvbiwKPiB3aGljaCB3b3VsZCBi
-ZSBkZWZpbmVkIGluIGFuIGFyY2ggc3BlY2lmaWMgaGVhZGVyIGZpbGUsIGNhbGxpbmcKPiBtZnNw
-cihTUFJOX1NWUikgb24gcG93ZXJwYyBhbmQgd2hhdGV2ZXIgbmVlZGVkIG9uIGFybSA/CgpGaXJz
-dCwgdGhhdCB3b3VsZCBtZWFuIHdlJ2QgaGF2ZSB0byBpbnRyb2R1Y2UgImRlcGVuZHMgb24gUFBD
-MzIgfHwgQVJNIgpyYXRoZXIgdGhhbiBkcm9wICJkZXBlbmRzIG9uIFBQQzMyIi4gU2Vjb25kLCB0
-aGUgd2F5IHRoZSBTT0MgdmVyc2lvbiBpcwpiZWluZyB1c2VkIHRvIGNvbnN0cnVjdCB0aGUgbmFt
-ZSBvZiB0aGUgbWljcm9jb2RlIGJsb2Igc2VlbXMgdmVyeQpwcGMtc3BlY2lmaWMsIHNvIEkgZG9u
-J3Qgc2VlIGhvdyBvbmUgY2FuIHJlYXNvbmFibHkgZGVmaW5lIGFuIGludGVyZmFjZQp0aGF0IHdv
-dWxkIHdvcmsgZm9yIGFsbCBhcmNoaXRlY3R1cmVzLiBCdXQgaXQncyBhbHNvIGtpbmQgb2YgbW9v
-dCBzaW5jZQp0aGUgQVJNIFNPQ3MgZG9uJ3QgbmVlZCB0aGlzIHdvcmthcm91bmQuCgpJTU8sIGhh
-dmluZyB0byBhZGQgcWUtc3BlY2lmaWMgY29kZSB0byBhcmNoLyBpcyBhIGN1cmUgd29yc2UgdGhh
-biB0aGUKZGlzZWFzZS4gSSdkIG11Y2ggcmF0aGVyIGFkZCBhcmNoLXNwZWNpZmljIGNvZGUgdG8g
-cWUuCgpSYXNtdXMKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LWFybS1rZXJuZWwK
+On Sun, Nov 03, 2019 at 09:33:28PM +0100, Cl=E9ment P=E9ron wrote:
+> From: Jernej Skrabec <jernej.skrabec@siol.net>
+> =
+
+> H6 PWM block is basically the same as A20 PWM, except that it also has
+> bus clock and reset line which needs to be handled accordingly.
+> =
+
+> Expand Allwinner PWM binding with H6 PWM specifics.
+> =
+
+> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> Signed-off-by: Cl=E9ment P=E9ron <peron.clem@gmail.com>
+> ---
+>  .../bindings/pwm/allwinner,sun4i-a10-pwm.yaml | 45 ++++++++++++++++++-
+>  1 file changed, 44 insertions(+), 1 deletion(-)
+> =
+
+> diff --git a/Documentation/devicetree/bindings/pwm/allwinner,sun4i-a10-pw=
+m.yaml b/Documentation/devicetree/bindings/pwm/allwinner,sun4i-a10-pwm.yaml
+> index 0ac52f83a58c..bf36ea509f31 100644
+> --- a/Documentation/devicetree/bindings/pwm/allwinner,sun4i-a10-pwm.yaml
+> +++ b/Documentation/devicetree/bindings/pwm/allwinner,sun4i-a10-pwm.yaml
+> @@ -30,13 +30,46 @@ properties:
+>        - items:
+>            - const: allwinner,sun50i-h5-pwm
+>            - const: allwinner,sun5i-a13-pwm
+> +      - const: allwinner,sun50i-h6-pwm
+>  =
+
+>    reg:
+>      maxItems: 1
+>  =
+
+> -  clocks:
+> +  # Even though it only applies to subschemas under the conditionals,
+> +  # not listing them here will trigger a warning because of the
+> +  # additionalsProperties set to false.
+> +  clocks: true
+> +  clock-names: true
+> +  resets:
+>      maxItems: 1
+>  =
+
+> +  if:
+> +    properties:
+> +      compatible:
+> +        contains:
+> +          const: allwinner,sun50i-h6-pwm
+> +
+> +  then:
+> +    properties:
+> +      clocks:
+> +        items:
+> +          - description: Module Clock
+> +          - description: Bus Clock
+> +
+> +      clock-names:
+> +        items:
+> +          - const: mod
+> +          - const: bus
+> +
+> +    required:
+> +      - clock-names
+> +      - resets
+> +
+> +  else:
+> +    properties:
+> +      clocks:
+> +        maxItems: 1
+> +
+
+I guess this hunk says "If this is a allwinner,sun50i-h6-pwm, a mod and
+bus clock is required.", right?
+
+I wonder if it is sensible to require a clock-names property in the else
+branch, too. This would make it obvious if the clock there corresponds
+to the "mod" or the "bus" clock on H6. (I guess it's "mod".)
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
