@@ -2,85 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0DC8EE3B5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 16:25:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEC1DEE3BD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 16:26:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B+Z6qdRPKr/ewSHlfBr0x1maqEbcXRuibHP3CO8wEWM=; b=N24vN+GYnDa2RV
-	YOpzu4ce7MIiMUL8330GFbGWxRWMxMO7h97GBk0asWTSKNYam7+lLiucFkTnmtyZWSwBFcdygyRw1
-	FN8//hvjMD4T6QxxwNpqwc4LrN/wF8MZ6pVVhcZu+v8Q/ZNSzf4qJCQxAbjID4pP/uFiEAfk7TX5Z
-	BFrbGfK8X2STfb7Kdo7LXAQLaM9E9X1vnj1fBxpuXRyytKbSHekObbNdcCsdufO3oi/78617rXj4C
-	9kN2lQkrrg8J08PGxtOaEddVy340pllt7lnSX3TcCHjKRD7bvg38/Lvb6qrnEAeLk/KAWgzX2d65C
-	c03nZYefKFo1aDsol/kA==;
+	List-Owner; bh=qNRIPeb4DXjJzy7MLKFekwidB3132BYgN5zXLUWKJhc=; b=oMM7tWqmY0UVfv
+	TwM1XMbTDhqGp1sZijNh+fxKUFfQ/osexQqB4mkbxISjjGCzMcMkJVrPyNUeVEOiEn/xkKSA9Xans
+	LxCa/q/SZykGtiT7Th69h/QnhOh/BSsMYAZQG6kfqIz73Qwb/EZ3Zue3wQYfxT/4Cbxy8mbRo+7zG
+	vP58091WBxCiRYxnlN3cefhyf93EyDxq4A/CIMhi01UqjTfKbw1eHiDjNablYjnK6xMQJTCiBrYsl
+	4H8u/HxqDdAgGOQQdps9t67AmKBc/9694mDvQcgJvBkgN9UhAijSUU8nji5CTaUDJU0osWu+pEUPm
+	h/UIGb6Zw2AV9l6KTROw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iReEE-00012K-Eq; Mon, 04 Nov 2019 15:25:14 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1iReEy-0001rW-HG; Mon, 04 Nov 2019 15:26:00 +0000
+Received: from mout.kundenserver.de ([212.227.17.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iReE5-0000al-18
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 15:25:06 +0000
-Received: by mail-lj1-x244.google.com with SMTP id m9so18046784ljh.8
+ id 1iReEp-0001qY-Fg
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 15:25:53 +0000
+Received: from mail-qk1-f175.google.com ([209.85.222.175]) by
+ mrelayeu.kundenserver.de (mreue106 [212.227.15.145]) with ESMTPSA (Nemesis)
+ id 1M7rxE-1iWc2x0TEw-0055JO for <linux-arm-kernel@lists.infradead.org>; Mon,
+ 04 Nov 2019 16:25:49 +0100
+Received: by mail-qk1-f175.google.com with SMTP id q70so17923746qke.12
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 Nov 2019 07:25:04 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=vaEPIoS2t8hUZV5j+rbrQAWA68wAJcFqrHD13iQZNVQ=;
- b=s1TIVkFrUgUqgiD/eCRPacD4FbkSkrQplNYQ/fhkXZtJHcKc0SOQG/Uqx1uWBOWTIk
- wGjwq+fupT6LcupwghxWtbONfk4yQpKCtZexO2I/4c1nESvOL6MUcxGXqA20Y9hZjAsj
- yKavZOz+rt+j7ocQUbzsnqU9SoPZb/b0kojChjUxJ1nJaOfzn+9ssmC9a8WlEP9L6c/u
- ossTO6WbRm6o4ZbJSRi+E+g+Q2oh4wyvy2uzYOMCmT2xcIhm9Nft9IAUjWzNRpXTtI7Z
- NGguI0b+9fDPYA8DPF17kXRvQG3BfLAT9xYJnRA+IAdq+pfwkg9FE0tmVObk8z98ptkd
- NfiA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=vaEPIoS2t8hUZV5j+rbrQAWA68wAJcFqrHD13iQZNVQ=;
- b=r0FDxOrAFdB5xKGx+D2wcQZeD8dVK8JZZhSDn5lNasbmBnkjI5ii36KG+o8Pwymsc8
- a88AUhr/6es5UETOqZXdomzcocqwGnYvDaJh1huNQebyClHz7SZHs8/svr+51YOiTKFd
- EBzFr3OTLKeen4yMKSywWG3ZZ/Ypc6Ciw8LCdSFBhH+czeOMvh7Dv6oOB7LVfnfXFIeG
- ZjBGYst2fo8NntBmi82lGmrP4GBPrcRhFHD9e/TbNrqOYWj17mi/UAeTfMDDBvegZz4J
- /i/HqsqVEz5Kae9bDqfd+Roxxek0u3hIe8qV6O4Mbdi+Ncz2cRHFC7y6zM0rYKqSKdLn
- CTLg==
-X-Gm-Message-State: APjAAAUbnCQWIw3SdpIwku4DI6YYpuu8VT0ORmPwke20remaw93dJW8+
- wut2uGrChc0jmLY2Nl3/6dakQWwTx66F5n/mPqSK2A==
-X-Google-Smtp-Source: APXvYqxzvhxQEC2lVXS9XLU/+X6UlgEVhaZM82+Iw9teO/FERLxOvAN0X//SI7N3tlH1MqOFaHplMyQGcIb96hV7Nrw=
-X-Received: by 2002:a05:651c:1202:: with SMTP id
- i2mr19270245lja.218.1572881103566; 
- Mon, 04 Nov 2019 07:25:03 -0800 (PST)
+ Mon, 04 Nov 2019 07:25:47 -0800 (PST)
+X-Gm-Message-State: APjAAAWThHwV6dpaseFgySMJ0vDDzDnZuq1modK9dZ5PCSEP9FtHZkJI
+ So6TMQUxHW3mlWkGU8tYtMhJ5XKo9mqy/r1btRM=
+X-Google-Smtp-Source: APXvYqzFZt8fB9folG/dB9+o4OKV18odAQAK5Xk5C+z1pe04hR7xC3ih594ii6t+6rsPIHnw1KOyYjwhv3nQwrhHlNQ=
+X-Received: by 2002:a37:4f0a:: with SMTP id d10mr17070233qkb.286.1572881146989; 
+ Mon, 04 Nov 2019 07:25:46 -0800 (PST)
 MIME-Version: 1.0
-References: <20191104001819.2300-1-chris.packham@alliedtelesis.co.nz>
- <20191104001819.2300-3-chris.packham@alliedtelesis.co.nz>
-In-Reply-To: <20191104001819.2300-3-chris.packham@alliedtelesis.co.nz>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 4 Nov 2019 16:24:52 +0100
-Message-ID: <CACRpkdb530Do3BnVBA6Q7TWOQ0_QfytqaPHPXCPoZP_742Rvzw@mail.gmail.com>
-Subject: Re: [PATCH v3 2/2] pinctrl: bcm: nsp: implement get_direction
-To: Chris Packham <chris.packham@alliedtelesis.co.nz>
+References: <20191018163047.1284736-1-arnd@arndb.de>
+ <20191104151310.GA1872@bogus>
+In-Reply-To: <20191104151310.GA1872@bogus>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Mon, 4 Nov 2019 16:25:13 +0100
+X-Gmail-Original-Message-ID: <CAK8P3a1B5v_3p0XhddoeWu7wChr6BndfqVVjPUvWYC6=aRfLXg@mail.gmail.com>
+Message-ID: <CAK8P3a1B5v_3p0XhddoeWu7wChr6BndfqVVjPUvWYC6=aRfLXg@mail.gmail.com>
+Subject: Re: [PATCH 1/6] ARM: versatile: move integrator/realview/vexpress to
+ versatile
+To: Sudeep Holla <sudeep.holla@arm.com>
+X-Provags-ID: V03:K1:XKL0hDOeNAgNTgjUpgcz8Byx9nfe7KTr/T1ZlJe0tFEXEdEt317
+ ClQQLRnTIzGZA6F+bUjyYoHcYToLTqNN2KBf4v+hp+lgT0zqoZ+gXnN+5+bnc2eFwe8Fjvn
+ 4e5IZq9ogN+fLSKSpAQxbPujHDjSQwDt3PxbwlJqWw6SAYOuGlkwojCiw87Hl7BVelYnqda
+ dECPFQdoKo5qp+apSsVqg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:1at2hxz/uo8=:xTNPu/qKQWJOU4rSWKp0Y2
+ 0l6jr3/GaEKM4iLKQ/sKjkB3AZHR/ZRzYyFYpex92qEBgp03VXCqVPCQvTpUiZKUONuJifjR2
+ cxsj3c4/Ch7AaIsjA8hNh5kEteV1CN1zAS+/HVOKOyhnekdkTyUcoOyMntsiXvYLsLQoecB5m
+ ySw6N2Db2Rjs2prhHP+J8WdZkz8AkymjAo7n+srTHZoahZjZWmNB2AmmBYEbSkTZNXh6Qu6vY
+ INONAZ62nfTUk7msZqsDSrLwCttm1sRZNJtFYYZxi41+RIFhWI7ELit0AV79skScjpWwVtHah
+ jXounuyTH/Dh68CUllsPoLZOLXrRmzyf94Fh8okuVAOMDECy0AQUU9d3l+G9Vq/HXEoSQzIxN
+ DDMoN7owWlqsIZwOBOVd0AjNIgluroYb33HXIUZGVJa0hEqnaZTwGa/+UdnfZme4oBlDjxiDK
+ mM9rwIROZdrqvVAh8o91W+n2pjgU2XCHBIWzdm6ewupGXqcdgrpWZuwiiyNfbkDTvucmVfuv7
+ AeREw0AJmtZdRn73RKVzfKNZqy11O2W0ZjSDa70GfgB7izMaHex7G5Fs8Me/GSrDEOaWmzN4s
+ 8qDq444Sa2AUyzeHKs6NmjWOzAzgWLVCiB5zfCUB8b01U6BVRglVmRZmYXj2j7Tqr6IqKjKfM
+ SAJajJ0iHlKkyxbRhOdYxdsWu6B6+g7oiHT7xv89XVqLftLyiS7TxRoNOYsyw//3Fx648ybY8
+ 9259bjd3v2Jm5vJJCQFKycWhY5VP8t75Pm32zlomZVsksS/THhYSxFN3OpJhw64LxvJohuAQr
+ zYuxgfD1NtRxYJ+7vtkK/ApDz4pOInhdupzgYj7L7E2fPA5NpPNMhLezzs6zjxm3jWcM4BkaP
+ FL/pJmbHQkPvpXd8D+iw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_072505_116128_77F3386F 
-X-CRM114-Status: GOOD (  13.08  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191104_072551_815858_0C44B059 
+X-CRM114-Status: GOOD (  12.30  )
+X-Spam-Score: 2.5 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [212.227.17.10 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.10 listed in wl.mailspike.net]
+ 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,35 +91,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Liviu Dudau <liviu.dudau@arm.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
+ Russell King <linux@armlinux.org.uk>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 4, 2019 at 1:18 AM Chris Packham
-<chris.packham@alliedtelesis.co.nz> wrote:
-
-> The get_direction api is strongly recommended to be implemented. In fact
-> if it is not implemented gpio-hogs will not get the correct direction.
-> Add an implementation of get_direction for the nsp-gpio driver.
+On Mon, Nov 4, 2019 at 4:13 PM Sudeep Holla <sudeep.holla@arm.com> wrote:
 >
-> Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
-> Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+> On Fri, Oct 18, 2019 at 06:29:14PM +0200, Arnd Bergmann wrote:
+> > These are all fairly small platforms by now, and they are
+> > closely related. Just move them all into a single directory.
+> >
+> > Cc: Linus Walleij <linus.walleij@linaro.org>
+> > Cc: Liviu Dudau <liviu.dudau@arm.com>
+> > Cc: Sudeep Holla <sudeep.holla@arm.com>
+>
+> Looks good to me, so for vexpress part:
+> Acked-by: Sudeep Holla <sudeep.holla@arm.com>
+>
+> As Linus W requested, if you share a branch, I can give it a go on
+> Vexpress TC2.
 
-BTW I think it looks like this the GPIO part of this driver can be
-converted to use GPIO_GENERIC. Compare to other
-drivers such as drivers/gpio/gpio-ftgpio010.c.
+You are of course both right, I should have split this out into a separate
+branch, rather than sticking it on the end of the completely unrelated
+pxa-multiplatform branch.
 
-It's a fun way to cut down lines if you have time to check
-and test!
+For testing the changes, this should be fine in the meantime:
 
-Yours,
-Linus Walleij
+https://git.kernel.org/pub/scm/linux/kernel/git/arnd/playground.git/log/?h=pxa-multiplatform
+
+
+
+     Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
