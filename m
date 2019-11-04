@@ -2,57 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98AB5EE05D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 13:46:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97475EE083
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 13:56:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pJInFWCjS2x8aHL1vytXCVT1nBNJaUWVNUgRVFyfL+4=; b=PTrKtC1e3zKChP
-	VIE6pWv1V/h46bZXaXfZIFhxonHfZDztIoZW0QwE8UWdAxai3xpf2ZQFx3VzV+bhumCN/h8Q/Ll6I
-	WJuu7TYW8nlGTsNbo2J9qOdLQsk5CwDYcw2BqXC0tKNdAsGdyG3Zz2iOSXiVejriwOWz2mrLGOD72
-	fj9dFk65oWu37d+iXfbJAySeCtIc8PX/fW747ztx3ciQklMjruXgJ7/9O2a7/5TkCpJBIMGM9J52g
-	owhdSKtXCg4iO4PQMGkHMfJ/9DF/FIxCF4OaskMLsDF5oQOw3tjlUm2C1YMEV0stIc3NSEoOesIQB
-	YJTyiE9d5jivvJ7ajQEg==;
+	List-Owner; bh=mAyBNPx+1HZyK9LkJmJkL8Zw4lBkESkuGjbVJK187so=; b=bO9Tl7bUQpw2zo
+	l2tESp/cVnq1h0gGJfHsLpKjCWSGcpf5vF610V8KdhxJvGI7CFkFtQ6mVOxtez+plZ5/liHOfcPeR
+	o8ClRZcH6ycdw8sj36qp+F0AJt1e9f8JniqSejY9aattwRj4csGV54anouB/o0XjUYQ4TGgZC67t8
+	gQWqbl+GRcTT9U9uIOJQV0ou1h3KU+wYCtwfDvaUOTqenkFSI48z6mtSgHnrQPaqZ9d1IGeQUoqsh
+	7f4O2s8aRqgbepznku9reDvlpI+bXIDdLACft/g987MFlcoFMlNiDIAYkeyyvaoofG5T5FYH56L8L
+	P9Sk8J040HKxsNyHj8+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRbkc-0002UJ-Ap; Mon, 04 Nov 2019 12:46:30 +0000
+	id 1iRbuh-0006AE-FM; Mon, 04 Nov 2019 12:56:55 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRbkV-0002Tr-DK
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 12:46:24 +0000
-Received: from dragon (li1038-30.members.linode.com [45.33.96.30])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 11BD8218BA;
- Mon,  4 Nov 2019 12:46:17 +0000 (UTC)
+ id 1iRbuX-00069N-IE
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 12:56:46 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3A3B220B7C;
+ Mon,  4 Nov 2019 12:56:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572871583;
- bh=uu6hMcwvil/xb9dqy8jjyGW+1kTfPIrio1g2NerX6OE=;
+ s=default; t=1572872205;
+ bh=DahvUIlMUGAvXZNBwm3AJ9Zsp/qhwnO1waU2i3Z3O2k=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Dxf2qdCcOkPEg/SW5EDL+yx9RaRwjiVhtnRit11I3Y0pAfi0DJ5GvvIuch+W02iXF
- 1c/lS5US48HKzpmbDWvTmti++TWT0jI3XG/Vlkf6AM5BYboyPPtELDCYqzZRZKfO3O
- kbzIXvY/7wzA+S6xm9qMwBXQAHY3NXdT7iNrG4iI=
-Date: Mon, 4 Nov 2019 20:45:55 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Schrempf Frieder <frieder.schrempf@kontron.de>
-Subject: Re: [PATCH v3 09/11] ARM: dts: imx6ul-kontron-n6x1x-s: Disable the
- snvs-poweroff driver
-Message-ID: <20191104124553.GY24620@dragon>
-References: <20191031142112.12431-1-frieder.schrempf@kontron.de>
- <20191031142112.12431-10-frieder.schrempf@kontron.de>
- <20191104074346.GT24620@dragon>
- <626ad87a-eb1d-4dca-7cd3-8c5f38025aec@kontron.de>
- <7da30a17-d16c-3cde-12a8-430ff3eec692@kontron.de>
+ b=ANcqbdpcOD+qx5TOZbLJ26nPQKLLmJvFwfi6qYNY1tnbVf9ahc7PM7qVJY2Esv3Fa
+ 9gBOFp9LjxnfpIs4mMsG3mL8NuMRmG9tcj5Wi2NB54GYcNm38JMAFisbqlEZDo7tPw
+ gLo+QIFKVZ/aMCithTya39NboeCucFgc79ZMq1bQ=
+Date: Mon, 4 Nov 2019 12:56:39 +0000
+From: Will Deacon <will@kernel.org>
+To: Amit Daniel Kachhap <amit.kachhap@arm.com>
+Subject: Re: [PATCHv2 0/8] arm64: ftrace cleanup + FTRACE_WITH_REGS
+Message-ID: <20191104125637.GB24108@willie-the-truck>
+References: <20191029165832.33606-1-mark.rutland@arm.com>
+ <42c113ee-e7fc-3e94-cca0-f05f1c89fdb8@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <7da30a17-d16c-3cde-12a8-430ff3eec692@kontron.de>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+In-Reply-To: <42c113ee-e7fc-3e94-cca0-f05f1c89fdb8@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_044623_490770_BCE3B2F2 
-X-CRM114-Status: GOOD (  30.39  )
+X-CRM114-CacheID: sfid-20191104_045645_629347_DCB3D48B 
+X-CRM114-Status: GOOD (  18.21  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,111 +77,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>, jthierry@redhat.com,
+ linux-parisc@vger.kernel.org, peterz@infradead.org, catalin.marinas@arm.com,
+ deller@gmx.de, jpoimboe@redhat.com, linux-kernel@vger.kernel.org,
+ rostedt@goodmis.org, James.Bottomley@HansenPartnership.com,
+ takahiro.akashi@linaro.org, mingo@redhat.com, james.morse@arm.com,
+ jeyu@kernel.org, svens@stackframe.org, duwe@suse.de,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 04, 2019 at 11:18:19AM +0000, Schrempf Frieder wrote:
-> On 04.11.19 09:06, Frieder Schrempf wrote:
-> > Hi Shawn,
-> > =
+On Sat, Nov 02, 2019 at 05:42:25PM +0530, Amit Daniel Kachhap wrote:
+> On 10/29/19 10:28 PM, Mark Rutland wrote:
+> > This series is a reworked version of Torsten's FTRACE_WITH_REGS series
+> > [1]. I've tried to rework the existing code in preparatory patches so
+> > that the patchable-function-entry bits slot in with fewer surprises.
+> > This version is based on v5.4-rc3, and can be found in my
+> > arm64/ftrace-with-regs branch [2].
+> > 
+> > Patch 1 adds an (optional) ftrace_init_nop(), which the core code uses
+> > to initialize callsites. This allows us to avoid a synthetic MCOUNT_ADDR
+> > symbol, and more cleanly separates the one-time initialization of the
+> > callsite from dynamic NOP<->CALL modification. Architectures which don't
+> > implement this get the existing ftrace_make_nop() with MCOUNT_ADDR.
+> > 
+> > Recently parisc gained ftrace support using patchable-function-entry.
+> > Patch 2 makes the handling of module callsite locations common in
+> > kernel/module.c with a new FTRACE_CALLSITE_SECTION definition, and
+> > removed the newly redundant bits from arch/parisc.
+> > 
+> > Patches 3 and 4 move the module PLT initialization to module load time,
+> > which simplifies runtime callsite modification. This also means that we
+> > don't transitently mark the module text RW, and will allow for the
+> > removal of module_disable_ro().
+> > 
+> > Patches 5 and 6 add some trivial infrastructure, with patch 7 finally
+> > adding FTRACE_WITH_REGS support. Additional work will be required for
+> > livepatching (e.g. implementing reliable stack trace), which is
+> > commented as part of patch 7.
+> > 
+> > Patch 8 is a trivial cleanup atop of the rest of the series, making the
+> > code easier to read and less susceptible to config-specific breakage.
+> I tested the whole series with my latest in-kernel ptrauth patches [1]
+> and graph_tracer/function_graph_tracer works fine, So for the whole series,
+> Tested-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+> 
+> Also I gave few minor comments in the individual patches. With those
+> comments,
+> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 
-> > On 04.11.19 08:43, Shawn Guo wrote:
-> >> On Thu, Oct 31, 2019 at 02:24:27PM +0000, Schrempf Frieder wrote:
-> >>> From: Frieder Schrempf <frieder.schrempf@kontron.de>
-> >>>
-> >>> The snvs-poweroff driver can power off the system by pulling the
-> >>> PMIC_ON_REQ signal low, to let the PMIC disable the power.
-> >>> The Kontron SoMs do not have this signal connected, so let's remove
-> >>> the node.
-> >>>
-> >>> This seems to fix a real issue when the signal is asserted at
-> >>> poweroff, but not actually causing the power to turn off. It was
-> >>> observed, that in this case the system would not shut down properly.
-> >>
-> >> I do not quite follow on this.=A0 How does disabling snvs_poweroff fix=
- the
-> >> issue?=A0 The root cause of system not shut down properly seems to be =
-that
-> >> PMIC doesn't shut down power.=A0 This looks like a clean-up rather than
-> >> bug fix.
-> > =
+I don't think this means what you think it means. Please read:
 
-> > I don't know the exact reasons, but we had issues on these boards when =
+Documentation/process/submitting-patches.rst
 
-> > doing a "poweroff". The kernel would print something like the log below.
-> > Disabling the snvs-poweroff solved this.
-> > =
-
-> > But note that this has last been reproduced on v4.14. So I'm not sure i=
-f =
-
-> > this is still a problem with the current kernel.
-> > =
-
-> > #######
-> > reboot: Power down
-> > Unable to poweroff system
-> > =
-
-> > =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
-> > WARNING: halt/675 still has locks held!
-> > 4.14.104-exceet #1 Not tainted
-> > ------------------------------------
-> > 1 lock held by halt/675:
-> >  =A0#0:=A0 (reboot_mutex){+.+.}, at: [<c0145a98>] SyS_reboot+0x14c/0x1dc
-> > #######
-> > =
-
-> >>
-> >>>
-> >>> Signed-off-by: Frieder Schrempf <frieder.schrempf@kontron.de>
-> >>> Fixes: 1ea4b76cdfde ("ARM: dts: imx6ul-kontron-n6310: Add Kontron =
-
-> >>> i.MX6UL N6310 SoM and boards")
-> >>
-> >> If you think this is really a bug fix, it should be applied to the file
-> >> before renaming rather than the one after renaming.
-> > =
-
-> > I will try to reproduce the issue with the current kernel and depending =
-
-> > on the results either drop the Fixes tag or move the patch before the =
-
-> > renaming.
-> =
-
-> I just tried this with 5.4-rc5 and the issue persists. When =
-
-> snvs-poweroff is enabled without the hardware actually being able to =
-
-> power down via PMIC I get a locking WARNING from the kernel. Probably =
-
-> because the system is still running, when it's already supposed to be =
-
-> shut down by the PMIC.
-
-I still do not get it.  Are you saying that with snvs-poweroff being
-disabled, your system is now able to be shut down properly by PMIC?
-
-Shawn
-
-> =
-
-> So this fixes a real problem and therefore I will keep the Fixes tag and =
-
-> move the patch to the proper place in this series.
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
