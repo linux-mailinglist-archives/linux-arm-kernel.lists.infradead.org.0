@@ -2,64 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0264EE112
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 14:27:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB961EE110
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 14:26:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rPzhMbDOGLaLcZ5dHTPRZBgmTkdBXDyTHeYGzWWPJP8=; b=RjL7FmZP3/9KA3
-	D1ggKTt+4vnxDcJ7G/f3sIO5Fdr5F04yKI1VJ2Dm8AjkUuopV6boEbv811kcqOQJ3q7AtiCkY4sTv
-	I1bXzG0Wnn0Orb4+P1xGX+scpdua5DOcG/WvkQ5jovtMvm7kRlqo8JTwCIS2jmCjVgJ/ll0LXYhJM
-	UGVZ2wdrCiT3v7arujMxLIrSUlNgnQlKDBtS/7Ym0pUwTUkWLaOWnbQtADcFuonl6oWIJvLcX/N95
-	FJPz1x5/wRxR+U2wzmPHfyhy3Dk3cKS/KkqUpzE1MYC4dbL74LXrju9BESd9X07V0Nr9aDmg60GdM
-	lSfi9ly1IGKlnGWc538Q==;
+	List-Owner; bh=5QomQmNZpkOi38ZhEMhqKjkFT+bJqxAKxKE9Xvpr4+E=; b=Sctu+MiJAu4cO/
+	LRPJlxZvvC1NKDhD/BC2hSw/BvuXFblw+Auzcsh3Bsr1pU0BXt/M8e+e688IiRalykWs3gelFqol3
+	ObNZVlkka7TVqvqq5afuv/soY4OrApyGLKC7cgCD2twYCXUPo4gZgsDkB7/52gBZ5+yolrXw5QrLm
+	iTPcrW1wj6wen85RKyvEDeMxiTdibQVQqn6dm2PrCRIIKcOdQaq2CaKrpwaqbBIowy+vUiM/DKSJO
+	v4/AMSr3zzuoou0TZd02ZGppnrxyHnR/OkygAoEbrJL3kgmc5xFK5iBsTt1zg5e5Qf+PYyrMKtTTQ
+	c3mIoOcC07IqEAPf3rqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRcNr-0005MK-Aq; Mon, 04 Nov 2019 13:27:03 +0000
+	id 1iRcNS-0004ro-RH; Mon, 04 Nov 2019 13:26:38 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRcMg-00046O-Ol
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 13:25:52 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ id 1iRcMd-000453-Pq
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 13:25:49 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
  by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xA4DMwV5005875; Mon, 4 Nov 2019 14:25:40 +0100
+ xA4DNHxI017943; Mon, 4 Nov 2019 14:25:41 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=CODhr+HDgZkmDdBSbE1YP8Qun5G0drMcjRcuyYv9BoA=;
- b=SrhGiluZItWO8Gdmy3vFI501UpPp1VHfmk1LApQ4x+fm8WZyZPrQgBkzMi8LU4i/3cfe
- 9EE2FeerfQKL6554yOEAbwg+37x+WQG0mewsX2AYjTQ07tOWjMOyrxDrYfY19JnJTY2h
- MBNyvC37h9BDTnNJjclBKboD314e8DbmwQU03bRiSRW/v9eQKfaWlOGZRrfW/DfPx5WG
- ldAtytOQordo5A2mIlEPJN9M44XAV52xl+YI5Y8qmBJW18XtGoRb+MQMG0PKQ+Yx5gkV
- Y3xPO0JxWxymGXcI3qnTCzfgVWkA2ehZPA3CKDaKJzdiTsVH17bPi+DRvsRc81oXtdex fQ== 
+ bh=PasrWJUoa3UFwSs+GtbCxK+KUm1QgPk+g2vbUrQXP80=;
+ b=escz3tFhfHuDlSHLH2Vm0iOtu9babUaVvcVFdMTFvSmhQlLsajW6VF4hBtssOkyKQ8WO
+ 5PcAQqWLH/QTPmsu7fMBK5vIVYBijUl9LMzi5WVjIsm9FJaoSro1Y+C0N2Sahcb8ZJrt
+ RrYuJaioEiRAN9AkoXXywIsNb3RTcnQTb3fVqDbntrXrJLPCpP1P2v9mN3E0QmhxnNbr
+ xkH/qpZhEO8sxmheY1Y24kcz0wZf/YLngg8Xl5TdjYeL3fZt3H5Cpyyrp3sEgciB3Cos
+ P9H+zjJn/6FpOsNH+BXmMcRH6gY8YftxNsdvfYpoZ9PoWtVrM02nKZmI/keTxqRHR/M6 ow== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2w0ytcj8g3-1
+ by mx08-00178001.pphosted.com with ESMTP id 2w11jn1v9p-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 04 Nov 2019 14:25:40 +0100
+ Mon, 04 Nov 2019 14:25:41 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 19F5F10002A;
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 051D510002A;
+ Mon,  4 Nov 2019 14:25:41 +0100 (CET)
+Received: from Webmail-eu.st.com (Safex1hubcas24.st.com [10.75.90.94])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id EA9672BFC79;
  Mon,  4 Nov 2019 14:25:40 +0100 (CET)
-Received: from Webmail-eu.st.com (Safex1hubcas22.st.com [10.75.90.92])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 0BC2B2BFC79;
- Mon,  4 Nov 2019 14:25:40 +0100 (CET)
-Received: from SAFEX1HUBCAS21.st.com (10.75.90.45) by Safex1hubcas22.st.com
- (10.75.90.92) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 4 Nov 2019
- 14:25:39 +0100
+Received: from SAFEX1HUBCAS21.st.com (10.75.90.45) by Safex1hubcas24.st.com
+ (10.75.90.94) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 4 Nov 2019
+ 14:25:40 +0100
 Received: from localhost (10.201.22.222) by Webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 4 Nov 2019 14:25:39
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 4 Nov 2019 14:25:40
  +0100
 From: Christophe Roullier <christophe.roullier@st.com>
 To: <robh@kernel.org>, <davem@davemloft.net>, <joabreu@synopsys.com>,
  <mark.rutland@arm.com>, <mcoquelin.stm32@gmail.com>,
  <alexandre.torgue@st.com>, <peppe.cavallaro@st.com>
-Subject: [PATCH net-next 3/4] ARM: dts: stm32: adjust slew rate for Ethernet
-Date: Mon, 4 Nov 2019 14:25:32 +0100
-Message-ID: <20191104132533.5153-4-christophe.roullier@st.com>
+Subject: [PATCH net-next 4/4] ARM: dts: stm32: Enable gating of the MAC TX
+ clock during TX low-power mode on stm32mp157c
+Date: Mon, 4 Nov 2019 14:25:33 +0100
+Message-ID: <20191104132533.5153-5-christophe.roullier@st.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191104132533.5153-1-christophe.roullier@st.com>
 References: <20191104132533.5153-1-christophe.roullier@st.com>
@@ -68,8 +69,8 @@ X-Originating-IP: [10.201.22.222]
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
  definitions=2019-11-04_08:2019-11-04,2019-11-04 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_052551_118529_0BA0CECC 
-X-CRM114-Status: GOOD (  14.56  )
+X-CRM114-CacheID: sfid-20191104_052548_126438_B32C2947 
+X-CRM114-Status: GOOD (  13.59  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -105,38 +106,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-ETH_MDIO slew-rate should be set to "0" instead of "2"
+When there is no activity on ethernet phy link, the ETH_GTX_CLK is cut
 
 Signed-off-by: Christophe Roullier <christophe.roullier@st.com>
 ---
- arch/arm/boot/dts/stm32mp157-pinctrl.dtsi | 9 +++++++--
- 1 file changed, 7 insertions(+), 2 deletions(-)
+ arch/arm/boot/dts/stm32mp157c.dtsi | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
-index 0a3a7d66737b..9a8f0d4c9ea3 100644
---- a/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
-+++ b/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
-@@ -217,13 +217,18 @@
- 						 <STM32_PINMUX('C', 2, AF11)>, /* ETH_RGMII_TXD2 */
- 						 <STM32_PINMUX('E', 2, AF11)>, /* ETH_RGMII_TXD3 */
- 						 <STM32_PINMUX('B', 11, AF11)>, /* ETH_RGMII_TX_CTL */
--						 <STM32_PINMUX('A', 2, AF11)>, /* ETH_MDIO */
- 						 <STM32_PINMUX('C', 1, AF11)>; /* ETH_MDC */
- 					bias-disable;
- 					drive-push-pull;
--					slew-rate = <3>;
-+					slew-rate = <2>;
- 				};
- 				pins2 {
-+					pinmux = <STM32_PINMUX('A', 2, AF11)>; /* ETH_MDIO */
-+					bias-disable;
-+					drive-push-pull;
-+					slew-rate = <0>;
-+				};
-+				pins3 {
- 					pinmux = <STM32_PINMUX('C', 4, AF11)>, /* ETH_RGMII_RXD0 */
- 						 <STM32_PINMUX('C', 5, AF11)>, /* ETH_RGMII_RXD1 */
- 						 <STM32_PINMUX('B', 0, AF11)>, /* ETH_RGMII_RXD2 */
+diff --git a/arch/arm/boot/dts/stm32mp157c.dtsi b/arch/arm/boot/dts/stm32mp157c.dtsi
+index f13c2348d130..8df2986dd452 100644
+--- a/arch/arm/boot/dts/stm32mp157c.dtsi
++++ b/arch/arm/boot/dts/stm32mp157c.dtsi
+@@ -1334,6 +1334,7 @@
+ 			st,syscon = <&syscfg 0x4>;
+ 			snps,mixed-burst;
+ 			snps,pbl = <2>;
++			snps,en-tx-lpi-clockgating;
+ 			snps,axi-config = <&stmmac_axi_config_0>;
+ 			snps,tso;
+ 			status = "disabled";
 -- 
 2.17.1
 
