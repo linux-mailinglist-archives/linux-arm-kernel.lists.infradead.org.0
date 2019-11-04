@@ -2,93 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9A94EEB59
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 22:44:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E3DBEEC68
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 22:57:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QkVesvDIN5SCy7w7iFIhk3hNrwF47E6dPtNy6l58izo=; b=ZjdnSDDm5ELkEQ
-	Bz8oY2Of9KhAUUSHrAoYIinGeaMp0e+6qR8eHHOk6YdtZakpYyGcAjBiUci3uUemT5nYyE8cLYw7G
-	11Xne0WwT5RGFFxPQkQFpJkiOyPVYOrUDh5i1d5mJhG3vLIhob2qq4GiNyH9+Nt8DTQ+qC2DwQ8Yo
-	jzk9byIvwrW+o3hqaWtXULCdtZO5IbOEWppUXVeFJi4OGeB6iwtRMBUUcG16XC9CHvIL6ds1KhRhJ
-	99W8wTs2USV6Tsr8Rmq12q3a6RTUI9fn6zEs55ZixLp4FbDsBBtvEuLZCflyPoIRSqVDmvVFjyuvJ
-	n2MdMnZcN9h+ynkXlRZA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=+gtW6DAXUFEf3GcArTYqgvIOwcQ7rWwDDhiDuVJgvpE=; b=gwY
+	7TFjglWpOOtWBSBFhWx2vhCIZRd3o0Np8HSaOzlzpQqPeHWnlU3d02pcyH83QItBVfMBUjXbaDFca
+	+MWPor9+ZMCJffsCN0628HqhUhMyHebTb2Z05UEoQUpdB5e7gysRq4Bp2XFRUBrunhnFeA2EtVrmk
+	AghBGXC+GCh+kwSKkOCaQ7xx6fijGMMSzhC6mQY4mURMMTOJ7NBKsQ+n36BTuo9Ab7wnqxYvXwysl
+	fMiMf0z/ON+BLe1snsrtyz/yXFBwciFxkngucMB2sefTwdAh+ikDCN5bAPcogBHIbQT2IxAVvFpq7
+	GClSojjjSHRF7RE7gsQ4pWX3ZPEowEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRk9e-0001B2-4u; Mon, 04 Nov 2019 21:44:54 +0000
-Received: from mail-ua1-x943.google.com ([2607:f8b0:4864:20::943])
+	id 1iRkLb-0007hm-Uu; Mon, 04 Nov 2019 21:57:15 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRk9T-0001AD-JM
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 21:44:46 +0000
-Received: by mail-ua1-x943.google.com with SMTP id y17so2619690uaq.6
+ id 1iRkLV-0007gC-0r
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 21:57:11 +0000
+Received: from mail-pg1-f198.google.com (mail-pg1-f198.google.com
+ [209.85.215.198])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id A7FDD3DE2E
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 Nov 2019 13:44:42 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=kaXvf9wE3k9UaecG65PnRrmHU9a0z9eeJYq+CJlozEg=;
- b=pHQfGMcFvDs8Sz/sj2D9FDXz3MnOQRQu+N4CdnI6FNzotw2uFLAsGlw2AfCslqt5i1
- NhuT8B5Ezfwhp9svCCthVzKrqQzSaREP2/BOyA4VdDO3mOGFMeEnNqjZV9EKKb5BwgAH
- bM/dxgbkeGBwpw6v8NjWHN7WfR5TQqN/xXvS5kz11espcMoT6/ho31I/XOxv81JBcV1z
- GeqbggJuYjxj2QeyalY3/MCFCfCDWJn8/AxC+ZFPpCHvzX/Cpnxf1nw4yPeZBVh+ScLp
- O8nGwga8BiVRzIj9L+z7DaZgwmXUgoNZyiEQqIULFC5kXaLbkCP27rPqGbTAVSPqhK1Q
- tN3Q==
+ Mon,  4 Nov 2019 21:57:07 +0000 (UTC)
+Received: by mail-pg1-f198.google.com with SMTP id t76so5064378pgb.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 04 Nov 2019 13:57:07 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=kaXvf9wE3k9UaecG65PnRrmHU9a0z9eeJYq+CJlozEg=;
- b=gp3zNyIXJSZMUZMAiEaumVB/U5LaLCXQdPwvF+lvKgZTLiBpluxNG9B+x74itJbgHP
- 1aj6lgPF+hK4ghKJAJ+26BO01tWzy1tHBsvBKql+eGSs/hH+9b7Gbi1d5RZbM5pfwRB6
- i2i5zHbLbJZ6PB7EFxi7JssQs9PaZH5Xh/Hmrl3jliLUQyh1KWDBlmQ9aGa2kSfTFsUB
- kE0FDQLaH7fuBDxI2LQcuc93qZAGTCt+leRWEEmke90pjh86ZaKaYmfoYOPTbXq6R0lt
- 4Jf5RFiOEZb7BmG3ES/MoVloPh4bcPNck5AxnWzfaXNsdEq5JOOXrUTA7t5SzpAs904w
- yE1g==
-X-Gm-Message-State: APjAAAUeNHDL4z6dTRutf8r/+vry8koA+GZCs/Ri1+ENuB1fBMV53wD5
- X0zoxCgc7ZqvnE6ztEmZpU4W17F2ix/OzH9GMgXHvw==
-X-Google-Smtp-Source: APXvYqyozZ81Thh7mlXHgf1QUiqKh64ERV1FrTZSir+nNNiHAQ72oavyDPOWqxJDAI6llfn+2fNkSSVjyIyFG0syB7k=
-X-Received: by 2002:ab0:5981:: with SMTP id g1mr1829842uad.98.1572903881724;
- Mon, 04 Nov 2019 13:44:41 -0800 (PST)
-MIME-Version: 1.0
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20191101221150.116536-1-samitolvanen@google.com>
- <20191101221150.116536-4-samitolvanen@google.com>
- <20191104115138.GB45140@lakrids.cambridge.arm.com>
-In-Reply-To: <20191104115138.GB45140@lakrids.cambridge.arm.com>
-From: Sami Tolvanen <samitolvanen@google.com>
-Date: Mon, 4 Nov 2019 13:44:30 -0800
-Message-ID: <CABCJKuf4wi6oUkJ68Z49UkK5q4WYYmSPt1X0pyw34ueNMkGC5Q@mail.gmail.com>
-Subject: Re: [PATCH v4 03/17] arm64: kvm: stop treating register x18 as caller
- save
-To: Mark Rutland <mark.rutland@arm.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=VEjZbpLdVwy3arAkz9SYmqq7myiGlsbhXTCJx2Y0Xq4=;
+ b=ZEIGiL608chq+FpV8NFek9xX3K66jobzwVofDY4uUHEGB3nODTbjeizYo8Wai/aTl6
+ eEPJ0a9P0h6QK0CwtyM9y5Rx62GXaV18EeMf1VDQnuOg83u1mkuJAUCuRd2iZTrgJ33k
+ XawwKlwVeSufXpkAbam1qPE/Vc+so8uVHbapojXdOMo1xycLLzs5RkuV48Xjg/E/HJYw
+ Tx++w4JPAefuNZKO4NTHoleREE2YyvJbgbNiQzj4azKJeeQSXXi5mhDrrSiY2QUbZ0YH
+ wg1N/lj234Xsf+H8M+2sk0hWrAWdapr7XlZRKTZLilWZAMSK5G24ZDZveCTifeAl5+Ol
+ 4hgQ==
+X-Gm-Message-State: APjAAAXyPxAw0f2AQTUCAn8OOWt7cqDIarixIAB89+jgGE0NwmOEl2oF
+ zuPb3WFvzBIYizDDd05g4MmJLTIGHuzOSGdQ0UvMgRBkNJzCMQbfDwAgdNxwzqU6GoSipQ06Kyw
+ Upw6PAZiPFVVQfEEG1txQOwOM6Wod3cDEZRQ=
+X-Received: by 2002:a17:90a:b90b:: with SMTP id
+ p11mr1792614pjr.73.1572904626742; 
+ Mon, 04 Nov 2019 13:57:06 -0800 (PST)
+X-Google-Smtp-Source: APXvYqxek4cnLo2j7JE5LY3Fdlz8cmjGPUDJiJmdDcXnAJbnRW3R15BMc9ytXLGrz8UQlHX/du+CWQ==
+X-Received: by 2002:a17:90a:b90b:: with SMTP id
+ p11mr1792574pjr.73.1572904626420; 
+ Mon, 04 Nov 2019 13:57:06 -0800 (PST)
+Received: from localhost ([182.69.200.119])
+ by smtp.gmail.com with ESMTPSA id r8sm4661118pgr.59.2019.11.04.13.57.04
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 04 Nov 2019 13:57:05 -0800 (PST)
+From: Bhupesh Sharma <bhsharma@redhat.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: mm: Remove MAX_USER_VA_BITS definition
+Date: Tue,  5 Nov 2019 03:26:46 +0530
+Message-Id: <1572904606-27961-1-git-send-email-bhsharma@redhat.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_134443_662750_97B5A4F4 
-X-CRM114-Status: GOOD (  11.92  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20191104_135709_109129_69C9ECB0 
+X-CRM114-Status: GOOD (  18.51  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:943 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,51 +86,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
- Nick Desaulniers <ndesaulniers@google.com>,
- LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Masami Hiramatsu <mhiramat@kernel.org>, Marc Zyngier <maz@kernel.org>,
- Kernel Hardening <kernel-hardening@lists.openwall.com>,
- Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Steve Capper <steve.capper@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, bhsharma@redhat.com,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ bhupesh.linux@gmail.com, Will Deacon <will@kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 4, 2019 at 3:51 AM Mark Rutland <mark.rutland@arm.com> wrote:
-> > --- a/arch/arm64/kvm/hyp/entry.S
-> > +++ b/arch/arm64/kvm/hyp/entry.S
-> > @@ -23,6 +23,7 @@
-> >       .pushsection    .hyp.text, "ax"
-> >
->
-> Could we please add a note here, e.g.
->
-> /*
->  * We treat x18 as callee-saved as the host may use it as a platform
->  * register (e.g. for shadow call stack).
->  */
->
-> ... as that will avoid anyone trying to optimize this away in future
-> after reading the AAPCS.
+commit 9b31cf493ffa ("arm64: mm: Introduce MAX_USER_VA_BITS definition")
+introduced the MAX_USER_VA_BITS definition, which was used to support
+the arm64 mm use-cases where the user-space could use 52-bit virtual
+addresses whereas the kernel-space would still could a maximum of 48-bit
+virtual addressing.
 
-Sure, that's a good idea.
+But, now with commit b6d00d47e81a ("arm64: mm: Introduce 52-bit Kernel
+VAs"), we removed the 52-bit user/48-bit kernel kconfig option and hence
+there is no longer any scenario where user VA != kernel VA size
+(even with CONFIG_ARM64_FORCE_52BIT enabled, the same is true).
 
-> >  .macro restore_callee_saved_regs ctxt
-> > +     // We assume \ctxt is not x18-x28
->
-> Probably worth s/assume/require/ here.
+Hence we can do away with the MAX_USER_VA_BITS macro as it is equal to
+VA_BITS (maximum VA space size) in all possible use-cases. Note that
+even though the 'vabits_actual' value would be 48 for arm64 hardware
+which don't support LVA-8.2 extension (even when CONFIG_ARM64_VA_BITS_52
+is enabled), VA_BITS would still be set to a value 52. Hence this change
+would be safe in all possible VA address space combinations.
 
-Agreed, I'll change this in v5.
+Cc: James Morse <james.morse@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Will Deacon <will@kernel.org>
+Cc: Steve Capper <steve.capper@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Cc: linux-kernel@vger.kernel.org
+Cc: kexec@lists.infradead.org
+Signed-off-by: Bhupesh Sharma <bhsharma@redhat.com>
+---
+ arch/arm64/include/asm/memory.h        | 6 ------
+ arch/arm64/include/asm/pgtable-hwdef.h | 2 +-
+ arch/arm64/include/asm/processor.h     | 2 +-
+ 3 files changed, 2 insertions(+), 8 deletions(-)
 
-Sami
+diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
+index c23c47360664..a4f9ca5479b0 100644
+--- a/arch/arm64/include/asm/memory.h
++++ b/arch/arm64/include/asm/memory.h
+@@ -69,12 +69,6 @@
+ #define KERNEL_START		_text
+ #define KERNEL_END		_end
+ 
+-#ifdef CONFIG_ARM64_VA_BITS_52
+-#define MAX_USER_VA_BITS	52
+-#else
+-#define MAX_USER_VA_BITS	VA_BITS
+-#endif
+-
+ /*
+  * Generic and tag-based KASAN require 1/8th and 1/16th of the kernel virtual
+  * address space for the shadow region respectively. They can bloat the stack
+diff --git a/arch/arm64/include/asm/pgtable-hwdef.h b/arch/arm64/include/asm/pgtable-hwdef.h
+index 3df60f97da1f..d9fbd433cc17 100644
+--- a/arch/arm64/include/asm/pgtable-hwdef.h
++++ b/arch/arm64/include/asm/pgtable-hwdef.h
+@@ -69,7 +69,7 @@
+ #define PGDIR_SHIFT		ARM64_HW_PGTABLE_LEVEL_SHIFT(4 - CONFIG_PGTABLE_LEVELS)
+ #define PGDIR_SIZE		(_AC(1, UL) << PGDIR_SHIFT)
+ #define PGDIR_MASK		(~(PGDIR_SIZE-1))
+-#define PTRS_PER_PGD		(1 << (MAX_USER_VA_BITS - PGDIR_SHIFT))
++#define PTRS_PER_PGD		(1 << (VA_BITS - PGDIR_SHIFT))
+ 
+ /*
+  * Section address mask and size definitions.
+diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
+index 5623685c7d13..586fcd4b1965 100644
+--- a/arch/arm64/include/asm/processor.h
++++ b/arch/arm64/include/asm/processor.h
+@@ -9,7 +9,7 @@
+ #define __ASM_PROCESSOR_H
+ 
+ #define KERNEL_DS		UL(-1)
+-#define USER_DS			((UL(1) << MAX_USER_VA_BITS) - 1)
++#define USER_DS			((UL(1) << VA_BITS) - 1)
+ 
+ /*
+  * On arm64 systems, unaligned accesses by the CPU are cheap, and so there is
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
