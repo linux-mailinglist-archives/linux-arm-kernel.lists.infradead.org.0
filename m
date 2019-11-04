@@ -2,55 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0553EE837
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 20:21:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E77C2EE83E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 20:22:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lxt0HOaLti/qoVN7Y5YcVkBNC2RqQp7t8PVgxsQOXAw=; b=j8a1Wzfg2s34sP
-	8uWj9Y2MWOuX4rTFsjx5xo0vXwwG62/dcqaRVN/Bs+eGMDHAvJwr6kYYOLF4sxSltKXPAYWIftzu/
-	AWOa1k4z2tOhJX2iOrDMT9lh06onKNPYOSiUuRL6TiFbPE8amAwgI4X69xyr2OLcAQqkLANVp7iaI
-	TduCcBFSerWyupFg6FFafjyYII84aI5rElkXcjiRKbaDrp7u5pHAzEE2BZo/FzM/7kxVxlp/wEG9r
-	AJbMDguJTlH3s60CUSXaTel4Xhlo+Rww65d60WrztyGl9iAtsG7BBOr4spkJX0GK7FUHIRIdsQbRD
-	Zxay90UttoJfepW9UDSQ==;
+	List-Owner; bh=SADIUyGSAh2w9cEv5r3ialNoAXCiG5DkbrRKb6rsoc4=; b=RfThgQx9R5u2da
+	c7NMFq+QoHKaPUo0vwCBxeQF8ZLw80lAXqr6MMSNpTvHQUrToKN/Axx8o3MvYPA4a+O93Q68DXCPN
+	sh4Ac+Z2O9VzTem0N+LaTavZNKE3x2JnV93GW00V9W7sPdPxE+DS5aAYnz7DJp3e4k6+UrfxavgKo
+	p2ol907PKX6IJmJZ+NBG1hVTxmTRTjKfwKnCcwsfZZevunRXDXoHmRekZxCJlNUhgJ+lwYWjItuGA
+	EDC0Yetoutw56X5puulFqydH6nqmwH840mSANYKuaf4GpZIpd0exLUvIOGNO4zlLp5D6gRX65cYqB
+	G/5in1s2rnetgYUOffHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRhuX-0006Rl-IS; Mon, 04 Nov 2019 19:21:09 +0000
+	id 1iRhw0-0006kq-Ha; Mon, 04 Nov 2019 19:22:40 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRhuQ-0006RM-P2
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 19:21:04 +0000
+ id 1iRhvt-0006kV-FV
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 19:22:34 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 95E1120869;
- Mon,  4 Nov 2019 19:21:01 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4D90F2084D;
+ Mon,  4 Nov 2019 19:22:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572895262;
- bh=0pyQ8Sc7FGWhaT61rQFe+TgPhbVjyMRw3yVAjAFRHLg=;
+ s=default; t=1572895353;
+ bh=MhG1SjLYJ/MiCKm1KPNAmPokTvBcbqXpuiAnoMPPBg0=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=azk+ixxdkGfyQsjm7JGI0AccOCitFiYsmJKUFe10dmGKJRKXJFZ4V7WhM8E1AY0S+
- SaZJJ4TFvolsYecyc/V67Wh/W3EFgX725W3Hs84b73KN7QjEsJYtwxkv3IzgV4IipR
- H10c4ggXFXuyD/KZtp1hNphP0Wqa6eKHgPf9wKXQ=
-Date: Mon, 4 Nov 2019 19:20:58 +0000
+ b=Bc7u55gEFoctioL006Je3W8RgfHRUpFfA9UoJApZvIElhrrOUsSsjCNy/gH5aQkpm
+ 9yNVmC9s2tVzfw0qUFjsGxrRENo3JRZpY3EynkP4lDpT83SvzkGyNwfhPT3Lz2T1b/
+ fUyWki51LJYGZb8NIBDxQOQaYOK3XIQ6KGeClhv0=
+Date: Mon, 4 Nov 2019 19:22:29 +0000
 From: Will Deacon <will@kernel.org>
 To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH v2 07/10] iommu/io-pgtable-arm: Rationalise MAIR handling
-Message-ID: <20191104192058.GK24909@willie-the-truck>
+Subject: Re: [PATCH v2 00/10] iommu/io-pgtable: Cleanup and prep for split
+ tables
+Message-ID: <20191104192228.GL24909@willie-the-truck>
 References: <cover.1572024119.git.robin.murphy@arm.com>
- <c6bee9e6de5e7f4aa2293ee5385ffa2dd95600d3.1572024120.git.robin.murphy@arm.com>
- <20191104182029.GG24909@willie-the-truck>
- <d7d7513d-9e54-6ae8-168a-2460a306a027@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <d7d7513d-9e54-6ae8-168a-2460a306a027@arm.com>
+In-Reply-To: <cover.1572024119.git.robin.murphy@arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_112102_834233_D024B7E4 
-X-CRM114-Status: GOOD (  20.92  )
+X-CRM114-CacheID: sfid-20191104_112233_541902_DE22F1F0 
+X-CRM114-Status: GOOD (  15.59  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,58 +84,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 04, 2019 at 06:43:06PM +0000, Robin Murphy wrote:
-> On 04/11/2019 18:20, Will Deacon wrote:
-> > On Fri, Oct 25, 2019 at 07:08:36PM +0100, Robin Murphy wrote:
-> > > Between VMSAv8-64 and the various 32-bit formats, there is either one
-> > > 64-bit MAIR or a pair of 32-bit MAIR0/MAIR1 or NMRR/PMRR registers.
-> > > As such, keeping two 64-bit values in io_pgtable_cfg has always been
-> > > overkill.
-> > > 
-> > > Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-> > > ---
-> > >   drivers/iommu/arm-smmu-v3.c    | 2 +-
-> > >   drivers/iommu/arm-smmu.c       | 4 ++--
-> > >   drivers/iommu/io-pgtable-arm.c | 3 +--
-> > >   drivers/iommu/ipmmu-vmsa.c     | 2 +-
-> > >   drivers/iommu/qcom_iommu.c     | 4 ++--
-> > >   include/linux/io-pgtable.h     | 2 +-
-> > >   6 files changed, 8 insertions(+), 9 deletions(-)
-> > > 
-> > > diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-> > > index 8da93e730d6f..3f20e548f1ec 100644
-> > > --- a/drivers/iommu/arm-smmu-v3.c
-> > > +++ b/drivers/iommu/arm-smmu-v3.c
-> > > @@ -2172,7 +2172,7 @@ static int arm_smmu_domain_finalise_s1(struct arm_smmu_domain *smmu_domain,
-> > >   	cfg->cd.asid	= (u16)asid;
-> > >   	cfg->cd.ttbr	= pgtbl_cfg->arm_lpae_s1_cfg.ttbr[0];
-> > >   	cfg->cd.tcr	= pgtbl_cfg->arm_lpae_s1_cfg.tcr;
-> > > -	cfg->cd.mair	= pgtbl_cfg->arm_lpae_s1_cfg.mair[0];
-> > > +	cfg->cd.mair	= pgtbl_cfg->arm_lpae_s1_cfg.mair;
-> > >   	return 0;
-> > >   out_free_asid:
-> > > diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-> > > index 080af0326816..2bc3e93b11e6 100644
-> > > --- a/drivers/iommu/arm-smmu.c
-> > > +++ b/drivers/iommu/arm-smmu.c
-> > > @@ -552,8 +552,8 @@ static void arm_smmu_init_context_bank(struct arm_smmu_domain *smmu_domain,
-> > >   			cb->mair[0] = pgtbl_cfg->arm_v7s_cfg.prrr;
-> > >   			cb->mair[1] = pgtbl_cfg->arm_v7s_cfg.nmrr;
-> > >   		} else {
-> > > -			cb->mair[0] = pgtbl_cfg->arm_lpae_s1_cfg.mair[0];
-> > > -			cb->mair[1] = pgtbl_cfg->arm_lpae_s1_cfg.mair[1];
-> > > +			cb->mair[0] = pgtbl_cfg->arm_lpae_s1_cfg.mair;
-> > > +			cb->mair[1] = pgtbl_cfg->arm_lpae_s1_cfg.mair >> 32;
-> > 
-> > Does this work correctly for big-endian?
-> 
-> I don't see why it wouldn't - cfg.mair is read and written as a u64, so this
-> should always return its most significant word regardless of the storage
-> format. We're not doing anything dodgy like trying to type-pun the u64
-> directly into the u32[2].
+Hi Robin,
 
-Urgh, I need to convince myself about this then. Off to draw those silly
-ABCD DCBA diagrams on some paper.
+On Fri, Oct 25, 2019 at 07:08:29PM +0100, Robin Murphy wrote:
+> Since the flawed first attempt, I've reworked things with an abstracted
+> TCR and an explicit TTBR1 quirk. I originally envisaged the need to pass
+> the quirk all the way down to the TLBI calls, hence getting diverted
+> into trying to make the parameter passing less cluttered in general, but
+> in the end it turned out fairly neat to just fix the indexing such that
+> we can always just pass around the original unmodified IOVA. Most of the
+> new patches come from staring at that indexing code for long enough to
+> see the subtle inefficiencies that were worth ironing out, plus a bit of
+> random cleanup which doesn't feel worth posting separately.
+> 
+> Note that these patches depend on the fixes already queued in -rc4,
+> otherwise there will be conflicts in arm_mali_lpae_alloc_pgtable().
+> 
+> Robin.
+> 
+> 
+> Robin Murphy (10):
+>   iommu/io-pgtable: Make selftest gubbins consistently __init
+>   iommu/io-pgtable-arm: Rationalise size check
+>   iommu/io-pgtable-arm: Simplify bounds checks
+>   iommu/io-pgtable-arm: Simplify start level lookup
+>   iommu/io-pgtable-arm: Simplify PGD size handling
+>   iommu/io-pgtable-arm: Simplify level indexing
+>   iommu/io-pgtable-arm: Rationalise MAIR handling
+>   iommu/io-pgtable-arm: Rationalise TTBRn handling
+>   iommu/io-pgtable-arm: Rationalise TCR handling
+>   iommu/io-pgtable-arm: Prepare for TTBR1 usage
+
+Overall, this looks really good to me. There's a bit more work to do
+(see my comments) and I'd like Jordan to have a look as well, but on the
+whole it's a big improvement. Thanks.
 
 Will
 
