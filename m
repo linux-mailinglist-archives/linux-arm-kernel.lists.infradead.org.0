@@ -2,66 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91D8EEDD7C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 12:09:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 764ADEDD59
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 12:04:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qtcTCcm8/+ppT+yl8DhOOxuFN9ZjE22kC+IaJFaVhSw=; b=P4HsYFngiuGpcz
-	SOUDSeFt/PQVgIDXQiu7hAHhcOMHze/46r2LzMvmh53Vn4ebKc0iaM9DyOf6ODC+0VvDAi35Xddf/
-	2dTHwUaEcTTMAfzFo/q70ue0tYuW1l6jW5ExoWb83vrIzn/3B08BfbJZMHWPVP+bOGwrH3hyWqEvA
-	Ju6JqK5ZvmQIknwN92PAdvPWnXf/5q4muTF5IHHOjEqcHLJk/gez6//nVBChqc03Sa4Qxm7EZ5MmA
-	Xl07avItM3KqYDWsQFK1frO9axClIOCLcPCZ5wXBTa6s04gVBZd5/lA6tgicH7kMfvu4EBaPdyy2D
-	MoFHoIBGku++QqBt0SDA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
+	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Mt7n+eOpyAsWYh3P/H8N1zj6kPLk7JVE45Ygg7GVLGg=; b=C3NXi11WC5INBNi6F7OBK2T8I
+	zq59tcI0mC9FKdCv848OxcQRsvbI+nnvOp3u3Nsri9M1A46w5ltvH5kFMNt2qapOBq90NZdWTpqzH
+	7WFXOkcbBLJBsuck6sAW6PQTboWG0L66C+XP1QiDPGsKN1gvx7qhNbiGtt0mLV7hu/m2JZPUQhzCJ
+	U5eGSPd7bSp1ObCvtvzTlOhqATI/BxgC0uQJbP4X2nW4svbxYjUgzkTURoxasigImwQEGN+kMqrHB
+	q63/9YSuUONpiDwhR/8g9CftKZkBCEzmXXwATWOWG0Xb5klkNwYFR7hD4XyoqvMcCu/5tQvM6LiDu
+	9fPlyWpxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRaEH-0004HJ-4M; Mon, 04 Nov 2019 11:09:01 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1iRa9v-0000Uy-6k; Mon, 04 Nov 2019 11:04:31 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRaCg-000369-Rr; Mon, 04 Nov 2019 11:07:24 +0000
-X-UUID: e2b071e5405d473b89ee1c8030eb423d-20191104
-X-UUID: e2b071e5405d473b89ee1c8030eb423d-20191104
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <dongchun.zhu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1228601311; Mon, 04 Nov 2019 03:07:24 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 4 Nov 2019 02:57:15 -0800
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 4 Nov 2019 18:57:15 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 4 Nov 2019 18:57:14 +0800
-From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-To: <mchehab@kernel.org>, <andriy.shevchenko@linux.intel.com>,
- <robh+dt@kernel.org>, <mark.rutland@arm.com>, <sakari.ailus@linux.intel.com>, 
- <drinkcat@chromium.org>, <tfiga@chromium.org>, <matthias.bgg@gmail.com>,
- <bingbu.cao@intel.com>
-Subject: [V5, 1/2] media: dt-bindings: media: i2c: Document OV02A10 bindings
-Date: Mon, 4 Nov 2019 18:57:12 +0800
-Message-ID: <20191104105713.24311-2-dongchun.zhu@mediatek.com>
-X-Mailer: git-send-email 2.9.2
-In-Reply-To: <20191104105713.24311-1-dongchun.zhu@mediatek.com>
-References: <20191104105713.24311-1-dongchun.zhu@mediatek.com>
+ id 1iRa9b-0000NH-U4
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 11:04:13 +0000
+Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
+ (envelope-from <maz@kernel.org>)
+ id 1iRa95-0003Mx-DL; Mon, 04 Nov 2019 12:03:39 +0100
+To: Sami Tolvanen <samitolvanen@google.com>
+Subject: Re: [PATCH v4 03/17] arm64: kvm: stop treating register x18 as caller
+ save
+X-PHP-Originating-Script: 0:main.inc
 MIME-Version: 1.0
-X-MTK: N
+Date: Mon, 04 Nov 2019 12:13:00 +0109
+From: Marc Zyngier <maz@kernel.org>
+In-Reply-To: <20191101221150.116536-4-samitolvanen@google.com>
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20191101221150.116536-1-samitolvanen@google.com>
+ <20191101221150.116536-4-samitolvanen@google.com>
+Message-ID: <79e8f958cbde52a3d90aec24dd4638d9@www.loen.fr>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/0.7.2
+X-SA-Exim-Connect-IP: <locally generated>
+X-SA-Exim-Rcpt-To: samitolvanen@google.com, will@kernel.org,
+ catalin.marinas@arm.com, rostedt@goodmis.org, mhiramat@kernel.org,
+ ard.biesheuvel@linaro.org, dave.martin@arm.com, keescook@chromium.org,
+ labbott@redhat.com, mark.rutland@arm.com, ndesaulniers@google.com,
+ jannh@google.com, miguel.ojeda.sandonis@gmail.com,
+ yamada.masahiro@socionext.com, clang-built-linux@googlegroups.com,
+ kernel-hardening@lists.openwall.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_030722_985255_3A3045FD 
-X-CRM114-Status: GOOD (  11.95  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191104_030412_137412_3710546F 
+X-CRM114-Status: UNSURE (   8.94  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.7 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.6 INVALID_DATE_TZ_ABSURD Invalid Date: header (timezone does not
+ exist)
+ 0.1 BUG6152_INVALID_DATE_TZ_ABSURD No description available.
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,107 +77,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
- shengnan.wang@mediatek.com, sj.huang@mediatek.com,
- linux-mediatek@lists.infradead.org, dongchun.zhu@mediatek.com,
- louis.kuo@mediatek.com, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ Steven Rostedt <rostedt@goodmis.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>, clang-built-linux@googlegroups.com,
+ kernel-hardening@lists.openwall.com, Laura Abbott <labbott@redhat.com>,
+ Will Deacon <will@kernel.org>, Dave Martin <dave.martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add device tree bindings documentation for Omnivision OV02A10 image sensor.
+Hi Sami,
 
-Reviewed-by: Rob Herring <robh@kernel.org>
-Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
----
- .../devicetree/bindings/media/i2c/ov02a10.txt      | 54 ++++++++++++++++++++++
- MAINTAINERS                                        |  7 +++
- 2 files changed, 61 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/media/i2c/ov02a10.txt
+On 2019-11-01 23:20, Sami Tolvanen wrote:
+> From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+>
+> In preparation of reserving x18, stop treating it as caller save in
+> the KVM guest entry/exit code. Currently, the code assumes there is
+> no need to preserve it for the host, given that it would have been
+> assumed clobbered anyway by the function call to __guest_enter().
+> Instead, preserve its value and restore it upon return.
+>
+> Link: https://patchwork.kernel.org/patch/9836891/
+> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> [Sami: updated commit message, switched from x18 to x29 for the guest
+> context]
+> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
+> Reviewed-by: Kees Cook <keescook@chromium.org>
 
-diff --git a/Documentation/devicetree/bindings/media/i2c/ov02a10.txt b/Documentation/devicetree/bindings/media/i2c/ov02a10.txt
-new file mode 100644
-index 0000000..38dd8db
---- /dev/null
-+++ b/Documentation/devicetree/bindings/media/i2c/ov02a10.txt
-@@ -0,0 +1,54 @@
-+* Omnivision OV02A10 MIPI CSI-2 sensor
-+
-+Required Properties:
-+- compatible: shall be "ovti,ov02a10"
-+- clocks: reference to the eclk input clock
-+- clock-names: shall be "eclk"
-+- dovdd-supply: Digital I/O voltage supply, 1.8 volts
-+- avdd-supply: Analog voltage supply, 2.8 volts
-+- dvdd-supply: Digital core voltage supply, 1.8 volts
-+- powerdown-gpios: reference to the GPIO connected to the powerdown pin,
-+		   if any. This is an active low signal to the OV02A10.
-+- reset-gpios: reference to the GPIO connected to the reset pin, if any.
-+	       This is an active high signal to the OV02A10.
-+
-+Optional Properties:
-+- rotation: as defined in
-+	    Documentation/devicetree/bindings/media/video-interfaces.txt,
-+	    valid values are 0 (sensor mounted upright; the default) and
-+	    180 (sensor mounted upside down).
-+
-+The device node shall contain one 'port' child node with an
-+'endpoint' subnode for its digital output video port,
-+in accordance with the video interface bindings defined in
-+Documentation/devicetree/bindings/media/video-interfaces.txt.
-+
-+Example:
-+&i2c4 {
-+	ov02a10: camera-sensor@3d {
-+		compatible = "ovti,ov02a10";
-+		reg = <0x3d>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&camera_pins_cam1_mclk_on>;
-+
-+		clocks = <&topckgen CLK_TOP_MUX_CAMTG2>,
-+			<&topckgen CLK_TOP_UNIVP_192M_D8>;
-+		clock-names = "eclk", "freq_mux";
-+		clock-frequency = <24000000>;
-+
-+		dovdd-supply = <&mt6358_vcamio_reg>;
-+		avdd-supply = <&mt6358_vcama1_reg>;
-+		dvdd-supply = <&mt6358_vcn18_reg>;
-+		powerdown-gpios = <&pio 107 GPIO_ACTIVE_LOW>;
-+		reset-gpios = <&pio 109 GPIO_ACTIVE_HIGH>;
-+		rotation = <180>;
-+
-+		port {
-+			/* MIPI CSI-2 bus endpoint */
-+			ov02a10_core: endpoint {
-+				remote-endpoint = <&ov02a10_0>;
-+				link-frequencies = /bits/ 64 <390000000>;
-+			};
-+		};
-+	};
-+};
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 296de2b..ca503fc 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -11949,6 +11949,13 @@ T:	git git://linuxtv.org/media_tree.git
- S:	Maintained
- F:	drivers/media/i2c/ov13858.c
- 
-+OMNIVISION OV02A10 SENSOR DRIVER
-+M:	Dongchun Zhu <dongchun.zhu@mediatek.com>
-+L:	linux-media@vger.kernel.org
-+T:	git git://linuxtv.org/media_tree.git
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/media/i2c/ov02a10.txt
-+
- OMNIVISION OV2680 SENSOR DRIVER
- M:	Rui Miguel Silva <rmfrfs@gmail.com>
- L:	linux-media@vger.kernel.org
+If you intend for this to be merged via the arm64 tree, please add my
+
+Reviewed-by: Marc Zyngier <marc.zyngier@arm.com>
+
+Thanks,
+
+         M.
 -- 
-2.9.2
-
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
