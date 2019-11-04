@@ -2,59 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74338EDA62
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 09:12:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2936EEDA6B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 09:16:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r7MjxJZQ3vO0wKTtRcAq+okIXZc68Nw6YhRtb8HlOOU=; b=q+OrpkHiOjzLAr
-	hPWzoWTHBzgV/h+lwYqXONNN42t90dqiqj49NZ+oowzwKP/ZrsBKRP340BGMoh6tL5wm2vQLOJ6QN
-	x4xsfiMzRQ/yqpxtKswFt5YNoX6pIujb9Ap4AaSg0gFfR1osoPgAGIjJrh8AJ+6BZhvaPqToSavtO
-	QbPk3sgW0pKAbjeiHKpjbYWHbnETzVvFNfiJ5sEHVMxWv7/gYQ1hVx9V+fAnLHNQj4t/TnPmD9Hc6
-	aJN0SwKZI7S26ltMCwMkd2zPeYca3n/0vz0klx/DF+Ts0id2ey0JHqnDccFrsYvtaBIeENhwVgHdQ
-	yTNQ71+QhPuSJKnd9NrQ==;
+	List-Owner; bh=/DcDB5FujpCkyayRDCTnOKR9ygmw7V0Gz+6uQ/onsjk=; b=n2+XmHTbnm6CgY
+	waZb2z80J3+1ubQZ9ZO7gzWK5ykv7BJ7SikSt1c6aixPtMtlG1tQVh935CX+OtxtQtElns7TsR1FZ
+	MRAdYVmsDiZwtrfkgtAVPQsOpriOEivgaHRPjyxvS31AY9x1yQR1L30GsKegC+JgWObOty83aE+ok
+	eQ0Yzp5+4KZF6wu45EA6oezNa8X2zUPmwNSKIAnTmmdQiYIraymhOc9RrZBXwjPw8aWfO0FsUYYi0
+	1ZFXlzHdz1ANS+6reqwhDEXtL8SFLhEFdmkGwXHtYUAtNTV7wS7aW+nAtF1CNg5btQZATrWFQ/wpj
+	bTFXHFnYzIm4EGauACQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRXTD-00038A-Ox; Mon, 04 Nov 2019 08:12:15 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iRXXP-0005gn-SQ; Mon, 04 Nov 2019 08:16:35 +0000
+Received: from skedge04.snt-world.com ([91.208.41.69])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRXT0-00037X-Td
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 08:12:04 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1iRXSw-0007k4-NO; Mon, 04 Nov 2019 09:11:58 +0100
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1iRXSv-0007lA-Q7; Mon, 04 Nov 2019 09:11:57 +0100
-Date: Mon, 4 Nov 2019 09:11:57 +0100
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: =?iso-8859-1?Q?Cl=E9ment_P=E9ron?= <peron.clem@gmail.com>
-Subject: Re: [PATCH v2 2/7] pwm: sun4i: Add an optional probe for reset line
-Message-ID: <20191104081157.373v22atswsaktbe@pengutronix.de>
-References: <20191103203334.10539-1-peron.clem@gmail.com>
- <20191103203334.10539-3-peron.clem@gmail.com>
+ id 1iRXXG-0005g2-He
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 08:16:28 +0000
+Received: from sntmail10s.snt-is.com (unknown [10.203.32.183])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by skedge04.snt-world.com (Postfix) with ESMTPS id 3561D600391;
+ Mon,  4 Nov 2019 09:16:24 +0100 (CET)
+Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail10s.snt-is.com
+ (10.203.32.183) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Mon, 4 Nov 2019
+ 09:16:23 +0100
+Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
+ sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
+ 15.01.1713.004; Mon, 4 Nov 2019 09:16:23 +0100
+From: Schrempf Frieder <frieder.schrempf@kontron.de>
+To: Shawn Guo <shawnguo@kernel.org>
+Subject: Re: [PATCH v3 11/11] MAINTAINERS: Add an entry for Kontron
+ Electronics ARM board support
+Thread-Topic: [PATCH v3 11/11] MAINTAINERS: Add an entry for Kontron
+ Electronics ARM board support
+Thread-Index: AQHVj/bq00l6FB82qEKQsJ90JRSWJad6lucAgAAIsYA=
+Date: Mon, 4 Nov 2019 08:16:23 +0000
+Message-ID: <78b7f1e9-5c21-9829-07b9-9746991e56db@kontron.de>
+References: <20191031142112.12431-1-frieder.schrempf@kontron.de>
+ <20191031142112.12431-12-frieder.schrempf@kontron.de>
+ <20191104074514.GU24620@dragon>
+In-Reply-To: <20191104074514.GU24620@dragon>
+Accept-Language: de-DE, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [172.25.9.193]
+x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
+Content-ID: <923E8A050600B14F89B6675F9074D87F@snt-world.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191103203334.10539-3-peron.clem@gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+X-SnT-MailScanner-Information: Please contact the ISP for more information
+X-SnT-MailScanner-ID: 3561D600391.ABEC6
+X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
+ Provider for details
+X-SnT-MailScanner-SpamCheck: 
+X-SnT-MailScanner-From: frieder.schrempf@kontron.de
+X-SnT-MailScanner-To: devicetree@vger.kernel.org, festevam@gmail.com,
+ kernel@pengutronix.de, krzk@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
+ linux-kernel@vger.kernel.org, mark.rutland@arm.com,
+ robh+dt@kernel.org, s.hauer@pengutronix.de, shawnguo@kernel.org
+X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_001202_956572_58E8B2B7 
-X-CRM114-Status: GOOD (  21.08  )
+X-CRM114-CacheID: sfid-20191104_001626_914118_83B69A67 
+X-CRM114-Status: GOOD (  13.74  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [91.208.41.69 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,142 +91,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-pwm@vger.kernel.org,
- Jernej Skrabec <jernej.skrabec@siol.net>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+On 04.11.19 08:45, Shawn Guo wrote:
+> On Thu, Oct 31, 2019 at 02:24:34PM +0000, Schrempf Frieder wrote:
+>> From: Frieder Schrempf <frieder.schrempf@kontron.de>
+>>
+>> Kontron Electronics GmbH produces several ARM boards, that are
+>> planned to be upstreamed eventually. For now we have some
+>> i.MX6UL/ULL based SoMs and boards, that are already available
+>> in the kernel.
+>>
+>> Signed-off-by: Frieder Schrempf <frieder.schrempf@kontron.de>
+> 
+> We usually do not need MAINTAINERS entry for individual DTS files.
 
-adding Philipp Zabel (=3D reset controller maintainer) to Cc: and so I'm
-not stripping the uncommented parts of the patch.
+Ok, I just thought it would be nice for things like get_maintainer.pl, 
+to make sure I receive notifications, when someone sends patches for 
+theses DTS files. But if this is against the usual conventions, I will 
+drop this.
 
-On Sun, Nov 03, 2019 at 09:33:29PM +0100, Cl=E9ment P=E9ron wrote:
-> From: Jernej Skrabec <jernej.skrabec@siol.net>
-> =
-
-> H6 PWM core needs deasserted reset line in order to work.
-> =
-
-> Add an optional probe for it.
-> =
-
-> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> Signed-off-by: Cl=E9ment P=E9ron <peron.clem@gmail.com>
-> ---
->  drivers/pwm/pwm-sun4i.c | 32 ++++++++++++++++++++++++++++++--
->  1 file changed, 30 insertions(+), 2 deletions(-)
-> =
-
-> diff --git a/drivers/pwm/pwm-sun4i.c b/drivers/pwm/pwm-sun4i.c
-> index 6f5840a1a82d..d194b8ebdb00 100644
-> --- a/drivers/pwm/pwm-sun4i.c
-> +++ b/drivers/pwm/pwm-sun4i.c
-> @@ -16,6 +16,7 @@
->  #include <linux/of_device.h>
->  #include <linux/platform_device.h>
->  #include <linux/pwm.h>
-> +#include <linux/reset.h>
->  #include <linux/slab.h>
->  #include <linux/spinlock.h>
->  #include <linux/time.h>
-> @@ -78,6 +79,7 @@ struct sun4i_pwm_data {
->  struct sun4i_pwm_chip {
->  	struct pwm_chip chip;
->  	struct clk *clk;
-> +	struct reset_control *rst;
->  	void __iomem *base;
->  	spinlock_t ctrl_lock;
->  	const struct sun4i_pwm_data *data;
-> @@ -365,6 +367,20 @@ static int sun4i_pwm_probe(struct platform_device *p=
-dev)
->  	if (IS_ERR(pwm->clk))
->  		return PTR_ERR(pwm->clk);
->  =
-
-> +	pwm->rst =3D devm_reset_control_get_optional(&pdev->dev, NULL);
-> +	if (IS_ERR(pwm->rst)) {
-> +		if (PTR_ERR(pwm->rst) =3D=3D -EPROBE_DEFER)
-> +			return PTR_ERR(pwm->rst);
-> +		dev_info(&pdev->dev, "no reset control found\n");
-
-I would degrade this to a dev_dbg. Otherwise this spams the log for all
-unaffected machines. devm_reset_control_get_optional() is defined in a
-section that has a comment "These inline function calls will be removed
-once all consumers have been moved over to the new explicit API.", so I
-guess you want devm_reset_control_get_optional_exclusive or even
-devm_reset_control_get_optional_shared here.
-
-@Philipp: maybe a check in checkpatch that warns about introduction of
-such new instances would be good?!
-
-> +	}
-> +
-> +	/* Deassert reset */
-> +	ret =3D reset_control_deassert(pwm->rst);
-> +	if (ret) {
-> +		dev_err(&pdev->dev, "Cannot deassert reset control\n");
-> +		return ret;
-> +	}
-> +
->  	pwm->chip.dev =3D &pdev->dev;
->  	pwm->chip.ops =3D &sun4i_pwm_ops;
->  	pwm->chip.base =3D -1;
-> @@ -377,19 +393,31 @@ static int sun4i_pwm_probe(struct platform_device *=
-pdev)
->  	ret =3D pwmchip_add(&pwm->chip);
->  	if (ret < 0) {
->  		dev_err(&pdev->dev, "failed to add PWM chip: %d\n", ret);
-> -		return ret;
-> +		goto err_pwm_add;
->  	}
->  =
-
->  	platform_set_drvdata(pdev, pwm);
->  =
-
->  	return 0;
-> +
-> +err_pwm_add:
-> +	reset_control_assert(pwm->rst);
-> +
-> +	return ret;
->  }
->  =
-
->  static int sun4i_pwm_remove(struct platform_device *pdev)
->  {
->  	struct sun4i_pwm_chip *pwm =3D platform_get_drvdata(pdev);
-> +	int ret;
-> +
-> +	ret =3D pwmchip_remove(&pwm->chip);
-> +	if (ret)
-> +		return ret;
-> +
-> +	reset_control_assert(pwm->rst);
->  =
-
-> -	return pwmchip_remove(&pwm->chip);
-> +	return 0;
->  }
->  =
-
->  static struct platform_driver sun4i_pwm_driver =3D {
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-
+> 
+> Shawn
+> 
+>> ---
+>>   MAINTAINERS | 6 ++++++
+>>   1 file changed, 6 insertions(+)
+>>
+>> diff --git a/MAINTAINERS b/MAINTAINERS
+>> index 296de2b51c83..a461d31ee98d 100644
+>> --- a/MAINTAINERS
+>> +++ b/MAINTAINERS
+>> @@ -9103,6 +9103,12 @@ F:	include/linux/kmod.h
+>>   F:	lib/test_kmod.c
+>>   F:	tools/testing/selftests/kmod/
+>>   
+>> +KONTRON ELECTRONICS ARM BOARDS SUPPORT
+>> +M:	Frieder Schrempf <frieder.schrempf@kontron.de>
+>> +S:	Maintained
+>> +F:	arch/arm/boot/dts/imx6ul-kontron-*
+>> +F:	arch/arm/boot/dts/imx6ull-kontron-*
+>> +
+>>   KPROBES
+>>   M:	Naveen N. Rao <naveen.n.rao@linux.ibm.com>
+>>   M:	Anil S Keshavamurthy <anil.s.keshavamurthy@intel.com>
+>> -- 
+>> 2.17.1
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
