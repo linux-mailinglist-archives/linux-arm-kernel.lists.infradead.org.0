@@ -2,70 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 764ADEDD59
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 12:04:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB9D3EDD7F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 12:09:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Mt7n+eOpyAsWYh3P/H8N1zj6kPLk7JVE45Ygg7GVLGg=; b=C3NXi11WC5INBNi6F7OBK2T8I
-	zq59tcI0mC9FKdCv848OxcQRsvbI+nnvOp3u3Nsri9M1A46w5ltvH5kFMNt2qapOBq90NZdWTpqzH
-	7WFXOkcbBLJBsuck6sAW6PQTboWG0L66C+XP1QiDPGsKN1gvx7qhNbiGtt0mLV7hu/m2JZPUQhzCJ
-	U5eGSPd7bSp1ObCvtvzTlOhqATI/BxgC0uQJbP4X2nW4svbxYjUgzkTURoxasigImwQEGN+kMqrHB
-	q63/9YSuUONpiDwhR/8g9CftKZkBCEzmXXwATWOWG0Xb5klkNwYFR7hD4XyoqvMcCu/5tQvM6LiDu
-	9fPlyWpxQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ijZ2fWO6V1d7D6LJuFjkD2JVUrrG7ZOi+S6Ig2qJDEE=; b=CNYWqj5H+8dxWX
+	b3+FuXBx21a6s4DLrv6qdz+jsXpdv4Ofm1RwjU54/FFeaI++CEHOcQ7skNK+thcaIKdAceAQJLjK5
+	lTUjMHUNpU1sqGH0o9PjvAyYneR30EteJ6DMVhL78AegbFm0Yk+8pXk2/OrJu0mjnYPROBLbfuHwL
+	J3ycnrO2JkVkmFWeTD8kI4Kt+CiAyF6R1FgUofzGaXK+H2Bp9trzfiLHRZlWQek7ByfKGfkQ5pOeF
+	oivc4WFbcagthtL+hGmV23oYTBSKJ2+ARLLvQRgVlaXTLRYZ1MNGJR6//Apim97sD0Mdismjr5Yzh
+	JgfLPhtQJhGrH3FjKoiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRa9v-0000Uy-6k; Mon, 04 Nov 2019 11:04:31 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1iRaEn-0004a4-Kk; Mon, 04 Nov 2019 11:09:33 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRa9b-0000NH-U4
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 11:04:13 +0000
-Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1iRa95-0003Mx-DL; Mon, 04 Nov 2019 12:03:39 +0100
-To: Sami Tolvanen <samitolvanen@google.com>
-Subject: Re: [PATCH v4 03/17] arm64: kvm: stop treating register x18 as caller
- save
-X-PHP-Originating-Script: 0:main.inc
+ id 1iRaEd-0004Zc-H0
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 11:09:24 +0000
+Received: from dragon (li1038-30.members.linode.com [45.33.96.30])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4F18521D81;
+ Mon,  4 Nov 2019 11:09:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572865763;
+ bh=ED2+1l4ATP0OGk62gY0UI54W/7Sig6CV0sihleJDKzA=;
+ h=Date:From:To:Cc:Subject:From;
+ b=cfSvfGSuyCd7Gp5N+tSJ751niPlDFEuZRhtOva2P/UBpeL8dqWk9Bk8LhqabdsLfP
+ N7aJIWYYRkuk/E/+/l5JoirmB7IJ/hkt0x4Br0Pj8EOJQEtuc3zxs37weDpuDiNiuu
+ dxwyI5d8r6gyhjUJLuzbDovxEnwt5k9LqWNl9pGs=
+Date: Mon, 4 Nov 2019 19:08:57 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Stephen Boyd <sboyd@kernel.org>
+Subject: [GIT PULL] i.MX clock changes for 5.5
+Message-ID: <20191104110856.GX24620@dragon>
 MIME-Version: 1.0
-Date: Mon, 04 Nov 2019 12:13:00 +0109
-From: Marc Zyngier <maz@kernel.org>
-In-Reply-To: <20191101221150.116536-4-samitolvanen@google.com>
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20191101221150.116536-1-samitolvanen@google.com>
- <20191101221150.116536-4-samitolvanen@google.com>
-Message-ID: <79e8f958cbde52a3d90aec24dd4638d9@www.loen.fr>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/0.7.2
-X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: samitolvanen@google.com, will@kernel.org,
- catalin.marinas@arm.com, rostedt@goodmis.org, mhiramat@kernel.org,
- ard.biesheuvel@linaro.org, dave.martin@arm.com, keescook@chromium.org,
- labbott@redhat.com, mark.rutland@arm.com, ndesaulniers@google.com,
- jannh@google.com, miguel.ojeda.sandonis@gmail.com,
- yamada.masahiro@socionext.com, clang-built-linux@googlegroups.com,
- kernel-hardening@lists.openwall.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_030412_137412_3710546F 
-X-CRM114-Status: UNSURE (   8.94  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.7 (+)
+X-CRM114-CacheID: sfid-20191104_030923_601463_C8E6AB44 
+X-CRM114-Status: GOOD (  13.12  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.6 INVALID_DATE_TZ_ABSURD Invalid Date: header (timezone does not
- exist)
- 0.1 BUG6152_INVALID_DATE_TZ_ABSURD No description available.
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,49 +74,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
- Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
- Steven Rostedt <rostedt@goodmis.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- Masami Hiramatsu <mhiramat@kernel.org>, clang-built-linux@googlegroups.com,
- kernel-hardening@lists.openwall.com, Laura Abbott <labbott@redhat.com>,
- Will Deacon <will@kernel.org>, Dave Martin <dave.martin@arm.com>,
+Cc: Stefan Agner <stefan@agner.ch>, linux-imx@nxp.com, kernel@pengutronix.de,
+ Fabio Estevam <festevam@gmail.com>, linux-clk@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sami,
+The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
 
-On 2019-11-01 23:20, Sami Tolvanen wrote:
-> From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
->
-> In preparation of reserving x18, stop treating it as caller save in
-> the KVM guest entry/exit code. Currently, the code assumes there is
-> no need to preserve it for the host, given that it would have been
-> assumed clobbered anyway by the function call to __guest_enter().
-> Instead, preserve its value and restore it upon return.
->
-> Link: https://patchwork.kernel.org/patch/9836891/
-> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> [Sami: updated commit message, switched from x18 to x29 for the guest
-> context]
-> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-> Reviewed-by: Kees Cook <keescook@chromium.org>
+  Linux 5.4-rc1 (2019-09-30 10:35:40 -0700)
 
-If you intend for this to be merged via the arm64 tree, please add my
+are available in the Git repository at:
 
-Reviewed-by: Marc Zyngier <marc.zyngier@arm.com>
+  git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/imx-clk-5.5
 
-Thanks,
+for you to fetch changes up to bceed71ba13116de4b1459c2c6db47d927b48e68:
 
-         M.
--- 
-Jazz is not dead. It just smells funny...
+  clk: imx: imx8mq: fix sys3_pll_out_sels (2019-11-04 09:10:49 +0800)
+
+----------------------------------------------------------------
+i.MX clock changes for 5.5:
+ - Make 1443X/1416X PLL clock structure common for reusing among i.MX8
+   SoCs.
+ - A couple of imx7ulp clock multiplexer option corrections.
+ - Drop IMX7ULP_CLK_MIPI_PLL clock, as it's a MIPI DSI local clock and
+   shouldn't be used externally.
+ - Add VIDEO2_PLL clock for imx8mq which is needed by DCSS when high
+   resolutions are used.
+ - Add missing gate clock for pll1/2 fixed dividers on i.MX8 SoCs.
+ - Register SYS_PLL1 and SYS_PLL2 as fixed clock rather than pll14xx
+   type of clock.
+ - Use imx_obtain_fixed_clk_hw() to simplify i.MX6/7/8 clock driver code
+   a little bit.
+ - One cosmetic change on clk-pll14xx code to make variables static.
+
+----------------------------------------------------------------
+Anson Huang (4):
+      clk: imx8mm: Move 1443X/1416X PLL clock structure to common place
+      clk: imx8mn: Use common 1443X/1416X PLL clock structure
+      clk: imx7ulp: Correct system clock source option #7
+      clk: imx7ulp: Correct DDR clock mux options
+
+Fancy Fang (1):
+      clk: imx7ulp: do not export out IMX7ULP_CLK_MIPI_PLL clock
+
+Laurentiu Palcu (1):
+      clk: imx8mq: Add VIDEO2_PLL clock
+
+Leonard Crestez (4):
+      clk: imx: pll14xx: Fix quick switch of S/K parameter
+      clk: imx8mq: Define gates for pll1/2 fixed dividers
+      clk: imx8mm: Define gates for pll1/2 fixed dividers
+      clk: imx8mn: Define gates for pll1/2 fixed dividers
+
+Peng Fan (8):
+      clk: imx: imx8mm: mark sys_pll1/2 as fixed clock
+      clk: imx: imx8mn: mark sys_pll1/2 as fixed clock
+      clk: imx: imx8mq: mark sys1/2_pll as fixed clock
+      clk: imx: imx7d: use imx_obtain_fixed_clk_hw to simplify code
+      clk: imx: imx6sll: use imx_obtain_fixed_clk_hw to simplify code
+      clk: imx: imx6sx: use imx_obtain_fixed_clk_hw to simplify code
+      clk: imx: imx6ul: use imx_obtain_fixed_clk_hw to simplify code
+      clk: imx: imx8mq: fix sys3_pll_out_sels
+
+YueHaibing (1):
+      clk: imx: clk-pll14xx: Make two variables static
+
+ .../devicetree/bindings/clock/imx7ulp-clock.txt    |   1 -
+ drivers/clk/imx/clk-imx6sll.c                      |   8 +-
+ drivers/clk/imx/clk-imx6sx.c                       |  12 +-
+ drivers/clk/imx/clk-imx6ul.c                       |   8 +-
+ drivers/clk/imx/clk-imx7d.c                        |   4 +-
+ drivers/clk/imx/clk-imx7ulp.c                      |   9 +-
+ drivers/clk/imx/clk-imx8mm.c                       | 150 +++++++-------------
+ drivers/clk/imx/clk-imx8mn.c                       | 152 +++++++--------------
+ drivers/clk/imx/clk-imx8mq.c                       |  77 +++++++----
+ drivers/clk/imx/clk-pll14xx.c                      |  72 +++++-----
+ drivers/clk/imx/clk.h                              |   3 +
+ include/dt-bindings/clock/imx7ulp-clock.h          |   1 +
+ include/dt-bindings/clock/imx8mm-clock.h           |  19 ++-
+ include/dt-bindings/clock/imx8mn-clock.h           |  19 ++-
+ include/dt-bindings/clock/imx8mq-clock.h           |  24 +++-
+ 15 files changed, 268 insertions(+), 291 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
