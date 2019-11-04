@@ -2,59 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10630EE23E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 15:27:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74293EE28F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 15:32:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FQsmh9gKNSHtOqY+LEzLJ6TGlD+P8Q3sxyoT7T7xcgU=; b=E+NZguhhvpNWx+
-	fvZA0Z607/hImkCDobH9nlerDy8ChnNJ7jCV1RjEQIQBbi4nA5aV+o7xpc/2P0TravUT+dyPfOinN
-	ekdDYOIPQlAVLGyJNoImJx/XoxAsTb8wahg2ItzjR9DOb7/pnqfKAWeZ0NzjEIm9fjw+oj7b3LKgB
-	84KzxTC5qwDl6vT81GXNV+UjM25kf7sTzeS9j24Xl+5sj+4ABE3w8I373DTa6IWMrm2Wfv7/F3Rbu
-	rt0ybQnv6ctGKjh5EpcMlxr7yDqbuVsM0633HXgrWs4PfEryuDG1fMvkL0iOBTDbUcW7nzPGEvvLX
-	/PnONg72k5IspuguLKcg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tfkMFdAz4VuhDEFEmYJ8V3gyej58tGk+NFiH6lpLeAc=; b=gXBzVQXeCnoCkh
+	mNMamxoiDCO5/to1zYTbu3/DiVFV9bkjLIOrYOkuGal/9PY9izVh7y638yhRasrwLRiFf4REj4ayr
+	Gk9paUSowylpyg/6gE7aTVFUFDVfbtkEZB+O+gN+y1Ibc7rdIF0BL5CQ8o8D1yXtp9cEEeY3ggzw9
+	b2rV2bXEmHdDcYMG/ELR1eRZwjZkYdMIL/XarGEF75fvSO7DcXtGRedHjrRCpjtCyRwoSvK/poX6n
+	eqo5RNuPCMlkzt545Xa/rtHJ01Ahneh0pks/dMQOqSDXcYqUJnHpbzszY+D192smznlRjaZpdo2le
+	0Hy/axaYtpSxZDowdhGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRdK2-0000lS-CC; Mon, 04 Nov 2019 14:27:10 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iRdOt-0002hg-0i; Mon, 04 Nov 2019 14:32:11 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRdJs-0000kO-8v
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 14:27:01 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 01E0A217F4;
- Mon,  4 Nov 2019 14:26:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572877619;
- bh=0IjKRPtlsAuGGSBfyycUTHeq+OKoAcUZR2xfdqbrOgs=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=EcwNhrNW699SAWToP/HTLcjb/0Z5KD9Ws4UgUPP7G8FaI4CkH1achz2b6G8yRHmPX
- KUp8mUaFn23KKjjV7S2q8vXsnnkEzHKzEAr4SIsa4FWir9RubmKdDuAKKQDOi7z3UW
- gtlvHv2zF/WuZLLl1N2CUhO2A3M06mGFLMG2ZfgA=
-Date: Mon, 4 Nov 2019 14:26:54 +0000
-From: Will Deacon <will@kernel.org>
-To: Shaokun Zhang <zhangshaokun@hisilicon.com>
-Subject: Re: [RFC] About perf-mem command support on arm64 platform
-Message-ID: <20191104142654.GA24609@willie-the-truck>
-References: <74f8ddb5-13cc-5dce-82a6-ca8bd02f8175@hisilicon.com>
+ id 1iRdOj-0002hL-QP
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 14:32:03 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xA4ER8QN006158; Mon, 4 Nov 2019 15:31:51 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=CMrndWG+ZiADLifRh/ny34DDuov8Fnz6puAWI7fXAts=;
+ b=d62Wn1Tn8/n1Q+HCfMMOW1vPAEGj8o1xlvb4fjMyFue9RYFMh4zaBqkSSHgCOvih+rXS
+ FN3sIzNOZVUjSDkTC5NFCiXPx5tm4FmBsuVMG6KIqXb0H5Wm+OZ0Mshalnjb+oTRj5WI
+ x5l6Tq8GpnK/rkUlAuY7Q2x5Pq96SqzJhvfx5KIwGazhzn59g0qDv2iAhBJa1+gq7r3a
+ BkuC6k/hB5v9IYxRD2kwWaDkg63LLeV551lPij11CSE0uvGeUG126bUJMIodwdEj7GQq
+ D0tBCrZ7BuYZNg4t2TamaEHCbUDx8sf+HQHD1sqh1votSZzfkl+/W70YHtp3MuY1XFLQ Ng== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2w1054hx1p-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 04 Nov 2019 15:31:51 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 7161E100034;
+ Mon,  4 Nov 2019 15:31:50 +0100 (CET)
+Received: from Webmail-eu.st.com (Safex1hubcas23.st.com [10.75.90.46])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 603772D3776;
+ Mon,  4 Nov 2019 15:31:50 +0100 (CET)
+Received: from SAFEX1HUBCAS21.st.com (10.75.90.45) by SAFEX1HUBCAS23.st.com
+ (10.75.90.46) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 4 Nov 2019
+ 15:31:50 +0100
+Received: from localhost (10.201.22.222) by Webmail-ga.st.com (10.75.90.48)
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 4 Nov 2019 15:31:49
+ +0100
+From: Christophe Roullier <christophe.roullier@st.com>
+To: <robh@kernel.org>, <davem@davemloft.net>, <joabreu@synopsys.com>,
+ <mark.rutland@arm.com>, <mcoquelin.stm32@gmail.com>,
+ <alexandre.torgue@st.com>, <peppe.cavallaro@st.com>
+Subject: [PATCH  1/1] ARM: dts: stm32: Fix CAN RAM mapping on stm32mp157c
+Date: Mon, 4 Nov 2019 15:31:45 +0100
+Message-ID: <20191104143145.7053-1-christophe.roullier@st.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <74f8ddb5-13cc-5dce-82a6-ca8bd02f8175@hisilicon.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Originating-IP: [10.201.22.222]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
+ definitions=2019-11-04_08:2019-11-04,2019-11-04 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_062700_333931_54981979 
-X-CRM114-Status: GOOD (  18.00  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191104_063202_309548_C572E3D3 
+X-CRM114-Status: GOOD (  14.50  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -64,7 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,58 +93,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, john.garry@huawei.com,
- linux-kernel@vger.kernel.org, Arnaldo Carvalho de Melo <acme@kernel.org>,
- liuqi115@hisilicon.com, huangdaode@hisilicon.com,
- Jonathan Cameron <Jonathan.Cameron@huawei.com>, Jiri Olsa <jolsa@redhat.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, andrew@lunn.ch, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ christophe.roullier@st.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 04, 2019 at 05:18:00PM +0800, Shaokun Zhang wrote:
-> perf-mem is used to profile memory access which has been implemented on x86
-> platform. It needs mem-stores events and mem-loads/load-latency.
-> For mem-stores events, it is MEM_INST_RETIRED_ALL_STORES whose raw number
-> is r82d0, and mem-loads/load-latency is from PEBS if I follow its code.
-> 
-> Now, for some arm64 cores, like HiSilicon's tsv110 and ARM's Neoverse N1,
-> has supported the SPE(Statistical Profiling Extensions), so is it a
-> possibility that perf-mem is supported on arm64?
-> https://developer.arm.com/ip-products/processors/neoverse/neoverse-n1
+Split the 10Kbytes CAN message RAM to be able to use simultaneously
+FDCAN1 and FDCAN2 instances.
+First 5Kbytes are allocated to FDCAN1 and last 5Kbytes are used for
+FDCAN2. To do so, set the offset to 0x1400 in mram-cfg for FDCAN2.
 
-I don't understand the relationship you're trying to draw between mem-stores
-and SPE. How does perf-mem work and what does it actually require from the
-CPU?
+Fixes: d44d6e021301 ("ARM: dts: stm32: change CAN RAM mapping on stm32mp157c")
+Signed-off-by: Christophe Roullier <christophe.roullier@st.com>
+---
+ arch/arm/boot/dts/stm32mp157c.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-One thing that may be worth noting is that SPE isn't generally able to
-capture information about all instructions being executed by the CPU:
-instead, it instructions (most likely micro-ops) are sampled based on
-some user-specified period. The CPU advertises a minimum recommended
-period which we expose under /sys and enforce when programming events.
+diff --git a/arch/arm/boot/dts/stm32mp157c.dtsi b/arch/arm/boot/dts/stm32mp157c.dtsi
+index 9b11654a0a39..f98e0370c0bc 100644
+--- a/arch/arm/boot/dts/stm32mp157c.dtsi
++++ b/arch/arm/boot/dts/stm32mp157c.dtsi
+@@ -932,7 +932,7 @@
+ 			interrupt-names = "int0", "int1";
+ 			clocks = <&rcc CK_HSE>, <&rcc FDCAN_K>;
+ 			clock-names = "hclk", "cclk";
+-			bosch,mram-cfg = <0x1400 0 0 32 0 0 2 2>;
++			bosch,mram-cfg = <0x0 0 0 32 0 0 2 2>;
+ 			status = "disabled";
+ 		};
+ 
+@@ -945,7 +945,7 @@
+ 			interrupt-names = "int0", "int1";
+ 			clocks = <&rcc CK_HSE>, <&rcc FDCAN_K>;
+ 			clock-names = "hclk", "cclk";
+-			bosch,mram-cfg = <0x0 0 0 32 0 0 2 2>;
++			bosch,mram-cfg = <0x1400 0 0 32 0 0 2 2>;
+ 			status = "disabled";
+ 		};
+ 
+-- 
+2.17.1
 
-> For arm64 PMU, it has 'st_retired' event that the event number is 0x0007
-> which is equal to mem-stores on x86, if we want support perf-mem, it seems
-> that 'st_retired' shall be replaced by 'mem-stores'
-> in arch/arm64/kernel/perf_event.c file. Of course, the cpu core should
-> support st_retired event. I'm not sure Will/Mark are happy on this.;-)
-> 
-> For mem-loads/load-latency, we can derive them from SPE sampled data which
-> supports by load_filter and min_latency in SPE driver. and we may do some
-> work on tools/perf/builtin-mem.c.
-
-I don't see how you could reconcile the sampling nature of SPE with a
-CPU PMU counter, particularly as filtering in SPE happens /after/ sampling.
-
-> From the above conditions, it seems that we may have the opportunity to
-> support the perf-mem command on arm64.
-> I'm not very sure about it, so I send this RFC and any comments are welcome.
-
-I don't think there's enough information here to comment meaningfully more
-than SPE != PEBS.
-
-Will
 
 _______________________________________________
 linux-arm-kernel mailing list
