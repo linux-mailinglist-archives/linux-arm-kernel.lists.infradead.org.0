@@ -2,52 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD8ABEE1B0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 14:55:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E868EE1B5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 Nov 2019 14:55:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R7pokVFaGUQ36bgfKW1ZcjD6X8pRmidF5AlZwckZfF4=; b=EHQuer9eA4SQcD
-	gOb7j5lnF3DJcJnrF6gVYF0YMwTOp7l2rYryGyFq+IkW5qRs2cGlrG/wkd5PLkDtthe/EncrwFu2R
-	vJG9Ym9vag3fcKvFenA6eQxGksMIGie7Utbchi8jYM97VcwxIjSFCmEiOFQgFiaLA3tzzdki+gsuX
-	ERvml1ARkFAp8ZJRxy5ZEvDQs/Fe3jgchdCueaVUuhLC9W7+zoMS7bDIDuNczOBAT9W3Ip1JH6yXB
-	ebqNj6nyRSpq7rJOw9VA3VDg3ldB0vjsmGZY89J+oXtZiyOuu1YEzM3sJOAv0kSBm2PN9tpvGFoSn
-	TKkqbCwtLiz0U9d94ukw==;
+	List-Owner; bh=5GIZu+pmht2EcYwj5ex8aW2jmTTj0OaCxhjRjIsdCpE=; b=SM/hKEudZY/K8E
+	aGbRdR52veY8Pp2EpwxWaVvjAxw5jMA2unPg18RctbQ0v4c52e1yDG1ApKx7qW2Y/4nyce6kZd1ZE
+	1Z1zYqA3Nnx2ViDQIHl3exG5vIbODTAhSAfGVu13lrQzuIvGoqG+eHIIgjxUbPHr/MxAMHw5SOQ0u
+	pOuteFwZF+JyPLSiE3Iio1PpR3FT2Mkb4rEQq26Vnu7j0spL9LQC4JovRPt8MaHZ37RCUjg7nfmaZ
+	GRMp8SHaE2m22LInlqj69gL8ZmIFSgVE7DNc+Qi/WH4duSKwZosfkQkyMU7ZNjJLPueniEWbefNRO
+	zTEwenNgZ8Io/BD1GW7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRcpP-0003WT-7F; Mon, 04 Nov 2019 13:55:31 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRcol-0001tA-Gw; Mon, 04 Nov 2019 13:54:53 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id A3D45AF05;
- Mon,  4 Nov 2019 13:54:48 +0000 (UTC)
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: catalin.marinas@arm.com, devicetree@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH 2/2] arm64: mm: reserve CMA and crashkernel in ZONE_DMA32
-Date: Mon,  4 Nov 2019 14:54:12 +0100
-Message-Id: <20191104135412.32118-3-nsaenzjulienne@suse.de>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191104135412.32118-1-nsaenzjulienne@suse.de>
-References: <20191104135412.32118-1-nsaenzjulienne@suse.de>
+	id 1iRcpk-0003tT-DW; Mon, 04 Nov 2019 13:55:52 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iRcpd-0003t6-Dr
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 13:55:46 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D21141FB;
+ Mon,  4 Nov 2019 05:55:44 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 976583F6C4;
+ Mon,  4 Nov 2019 05:55:42 -0800 (PST)
+Date: Mon, 4 Nov 2019 13:55:40 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Amit Daniel Kachhap <amit.kachhap@arm.com>
+Subject: Re: [PATCHv2 4/8] arm64: module/ftrace: intialize PLT at load time
+Message-ID: <20191104135540.GH45140@lakrids.cambridge.arm.com>
+References: <20191029165832.33606-1-mark.rutland@arm.com>
+ <20191029165832.33606-5-mark.rutland@arm.com>
+ <d22b27b5-6b76-6124-efff-fd577a8f482e@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <d22b27b5-6b76-6124-efff-fd577a8f482e@arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_055451_704032_CDF0C812 
-X-CRM114-Status: GOOD (  11.32  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191104_055545_505332_7379077D 
+X-CRM114-Status: GOOD (  12.00  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -61,53 +63,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Will Deacon <will@kernel.org>, Qian Cai <cai@lca.pw>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: jthierry@redhat.com, linux-parisc@vger.kernel.org, peterz@infradead.org,
+ catalin.marinas@arm.com, deller@gmx.de, jpoimboe@redhat.com,
+ linux-kernel@vger.kernel.org, rostedt@goodmis.org,
+ James.Bottomley@HansenPartnership.com, takahiro.akashi@linaro.org,
+ will@kernel.org, mingo@redhat.com, james.morse@arm.com, jeyu@kernel.org,
+ svens@stackframe.org, duwe@suse.de, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-With the introduction of ZONE_DMA in arm64 we moved the default CMA and
-crashkernel reservation into that area. This caused a regression on big
-machines that need big CMA and crashkernel reservations. Note that
-ZONE_DMA is only 1GB big.
+On Sat, Nov 02, 2019 at 05:50:02PM +0530, Amit Daniel Kachhap wrote:
+> On 10/29/19 10:28 PM, Mark Rutland wrote:
+> > @@ -485,24 +486,33 @@ static const Elf_Shdr *find_section(const Elf_Ehdr *hdr,
+> >   	return NULL;
+> >   }
+> > +int module_init_ftrace_plt(const Elf_Ehdr *hdr,
+> > +			   const Elf_Shdr *sechdrs,
+> > +			   struct module *mod)
+> I think this function can be made static as it is not used anywhere.
 
-Restore the previous behavior as the wide majority of devices are OK
-with reserving these in ZONE_DMA32. The ones that need them in ZONE_DMA
-will configure it explicitly.
+It's only called by module_finalize() below, so making it static makese
+sense; done.
 
-Reported-by: Qian Cai <cai@lca.pw>
-Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
----
- arch/arm64/mm/init.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+Thanks
+Mark.
 
-diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
-index 580d1052ac34..8385d3c0733f 100644
---- a/arch/arm64/mm/init.c
-+++ b/arch/arm64/mm/init.c
-@@ -88,7 +88,7 @@ static void __init reserve_crashkernel(void)
- 
- 	if (crash_base == 0) {
- 		/* Current arm64 boot protocol requires 2MB alignment */
--		crash_base = memblock_find_in_range(0, ARCH_LOW_ADDRESS_LIMIT,
-+		crash_base = memblock_find_in_range(0, arm64_dma32_phys_limit,
- 				crash_size, SZ_2M);
- 		if (crash_base == 0) {
- 			pr_warn("cannot allocate crashkernel (size:0x%llx)\n",
-@@ -454,7 +454,7 @@ void __init arm64_memblock_init(void)
- 
- 	high_memory = __va(memblock_end_of_DRAM() - 1) + 1;
- 
--	dma_contiguous_reserve(arm64_dma_phys_limit ? : arm64_dma32_phys_limit);
-+	dma_contiguous_reserve(arm64_dma32_phys_limit);
- }
- 
- void __init bootmem_init(void)
--- 
-2.23.0
-
+> > +{
+> > +#if defined(CONFIG_ARM64_MODULE_PLTS) && defined(CONFIG_DYNAMIC_FTRACE)
+> > +	const Elf_Shdr *s;
+> > +	struct plt_entry *plt;
+> > +
+> > +	s = find_section(hdr, sechdrs, ".text.ftrace_trampoline");
+> > +	if (!s)
+> > +		return -ENOEXEC;
+> > +
+> > +	plt = (void *)s->sh_addr;
+> > +	*plt = get_plt_entry(FTRACE_ADDR, plt);
+> > +	mod->arch.ftrace_trampoline = plt;
+> > +#endif
+> > +	return 0;
+> > +}
+> > +
+> >   int module_finalize(const Elf_Ehdr *hdr,
+> >   		    const Elf_Shdr *sechdrs,
+> >   		    struct module *me)
+> >   {
+> >   	const Elf_Shdr *s;
+> > -
+> >   	s = find_section(hdr, sechdrs, ".altinstructions");
+> >   	if (s)
+> >   		apply_alternatives_module((void *)s->sh_addr, s->sh_size);
+> > -#ifdef CONFIG_ARM64_MODULE_PLTS
+> > -	if (IS_ENABLED(CONFIG_DYNAMIC_FTRACE)) {
+> > -		s = find_section(hdr, sechdrs, ".text.ftrace_trampoline");
+> > -		if (!s)
+> > -			return -ENOEXEC;
+> > -		me->arch.ftrace_trampoline = (void *)s->sh_addr;
+> > -	}
+> > -#endif
+> > -
+> > -	return 0;
+> > +	return module_init_ftrace_plt(hdr, sechdrs, me);
+> >   }
+> > 
 
 _______________________________________________
 linux-arm-kernel mailing list
