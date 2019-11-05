@@ -2,43 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D2032EF292
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 02:26:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49C40EF2C2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 02:31:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LmbPfp3jqZJl7rBgE/euX+mleCM1LDFfdwjSIM1C+k4=; b=n4H0R4YkdrnCIc
-	LFN39iXy+NUrtasDa9ySqaSXKQILsDE66DWOXbvLWUj/UCsl7Xybl6xDPmJ1pszWAFU20YojMbDXK
-	jPIShjL2cFf2e5E8EkCJOdTx51r39IBBl9uMkRWc+dnNvkHO1lvHxormXjhKicE4lqD9K0MSWOhv0
-	fuKxO2SA3buNWTKLIcy367EYRhNPheSfDO0dovn8Z27BraAKqm1V0hj/qWjjCLKXPUP9JsbpuKL6Z
-	l/hERrQH2fG5sBG3m34hpyu8wUAd6Yk80Zqakt/QaIZEh1S2NMuX8zgANhxQZlAN3SCE/Nx5awfnD
-	7ivHolo2shLzgL7sWobw==;
+	List-Owner; bh=lCoxON68EoQC80cKxJlw7AKVwg4eCbVXtp6v6+3qqmk=; b=sCHJM0o91wOXNi
+	mcEndrrZM+Wv78U/KtCiC6yCeb8HcXPS3mpPresvbitQ5hrZ9by87Wb4Ebtal+JMLs/CUlz2wlZd3
+	uShb3RQ9m5x0Tow6bX+Kj7MVeJhWDYPzpYpOX6XJ56eWbjspW8JHxQu8OzTp3KM1KpPRFy+/+TZjV
+	rGa++UuRxPcaeqoX7E0PGCsQW5pDx933RcWNevNqF4MLQpa5pfsBq2MsfjzI+orLPtTYbXhdKa5S4
+	kwVMAMq5QE5Y+7OLxWjvOX7iMHAeHRV/mpnTCuXEAiAYsvUSBjelLpvy6mztazLZoL3vJ34SIf0bI
+	qY4kCyRI0Gs2l6eV/jOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRnc5-0004gH-9o; Tue, 05 Nov 2019 01:26:29 +0000
+	id 1iRngh-0007KG-M5; Tue, 05 Nov 2019 01:31:15 +0000
 Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRnby-0004fX-Co; Tue, 05 Nov 2019 01:26:23 +0000
+ id 1iRngb-0007Ji-5K; Tue, 05 Nov 2019 01:31:10 +0000
 Received: by verein.lst.de (Postfix, from userid 2407)
- id 33FE268BE1; Tue,  5 Nov 2019 02:26:18 +0100 (CET)
-Date: Tue, 5 Nov 2019 02:26:17 +0100
+ id 9991D68BE1; Tue,  5 Nov 2019 02:31:06 +0100 (CET)
+Date: Tue, 5 Nov 2019 02:31:06 +0100
 From: Christoph Hellwig <hch@lst.de>
-To: Guo Ren <guoren@kernel.org>
-Subject: Re: [PATCH 20/21] csky: remove ioremap_cache
-Message-ID: <20191105012617.GA31847@lst.de>
-References: <20191017174554.29840-1-hch@lst.de>
- <20191017174554.29840-21-hch@lst.de>
- <CAJF2gTQ_VeBfi1uaafgtp+uA2skq-w2px12ig=5QD1O9J+PgbA@mail.gmail.com>
+To: Arnd Bergmann <arnd@arndb.de>, Guo Ren <guoren@kernel.org>,
+ Michal Simek <monstr@monstr.eu>, Greentime Hu <green.hu@gmail.com>,
+ Vincent Chen <deanbo422@gmail.com>, Guan Xuetao <gxt@pku.edu.cn>,
+ x86@kernel.org
+Subject: Re: generic ioremap (and lots of cleanups) v3
+Message-ID: <20191105013106.GA32497@lst.de>
+References: <20191029064834.23438-1-hch@lst.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAJF2gTQ_VeBfi1uaafgtp+uA2skq-w2px12ig=5QD1O9J+PgbA@mail.gmail.com>
+In-Reply-To: <20191029064834.23438-1-hch@lst.de>
 User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_172622_585015_4FC3D572 
-X-CRM114-Status: UNSURE (   6.26  )
+X-CRM114-CacheID: sfid-20191104_173109_354150_5C4C48D1 
+X-CRM114-Status: UNSURE (   5.50  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -60,28 +61,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-mtd@lists.infradead.org, sparclinux@vger.kernel.org,
- linux-riscv@lists.infradead.org, Vincent Chen <deanbo422@gmail.com>,
- Christoph Hellwig <hch@lst.de>, linux-arch <linux-arch@vger.kernel.org>,
- linux-s390@vger.kernel.org, linux-hexagon@vger.kernel.org, x86@kernel.org,
- linux-snps-arc@lists.infradead.org, linux-xtensa@linux-xtensa.org,
- Arnd Bergmann <arnd@arndb.de>, linux-m68k@lists.linux-m68k.org,
- openrisc@lists.librecores.org, Greentime Hu <green.hu@gmail.com>,
- Guan Xuetao <gxt@pku.edu.cn>, linux-arm-kernel@lists.infradead.org,
- Michal Simek <monstr@monstr.eu>, linux-parisc@vger.kernel.org,
- linux-mips@vger.kernel.org, linux-alpha@vger.kernel.org,
- nios2-dev@lists.rocketboards.org
+Cc: linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ linux-ia64@vger.kernel.org, linux-parisc@vger.kernel.org,
+ linux-sh@vger.kernel.org, linux-hexagon@vger.kernel.org,
+ linux-xtensa@linux-xtensa.org, linux-mips@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-m68k@lists.linux-m68k.org,
+ openrisc@lists.librecores.org, linux-mtd@lists.infradead.org,
+ linux-alpha@vger.kernel.org, sparclinux@vger.kernel.org,
+ nios2-dev@lists.rocketboards.org, linux-riscv@lists.infradead.org,
+ linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 21, 2019 at 03:58:28PM +0800, Guo Ren wrote:
-> Acked-by: Guo Ren <guoren@kernel.org>
+Hi folks,
 
-Can you also take a look at the next patch and give me a review?
+can I get a few more reviews?  Especially for the actual generic
+ioremap implementation and the asm-generic bits?  I'd love to be able
+to queue this up for linux-next some time this week.
 
 _______________________________________________
 linux-arm-kernel mailing list
