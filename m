@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55702F07DB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:11:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42DBDF07DE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:11:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,44 +11,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=tdkPCMQ//mQ+Z4fPHAHME2XZ6Jsqsm066E3Dr4X2Ql0=; b=HY3pn/Y6CqxUPW1yMXNdtxi7rp
-	5iNnvY7rnGZDxm71Jt2dGYjlAKQ76rXl1e6/5GYiMc9XtXNxLaMy9n+Y3IVj29YQ7BUI5JY0l67M5
-	RqVUDU7FrLI8+L+meIVqAd+Hw5lC1cX57EX4f5CEUQEToktMjY9QrzxQipqDVRmlES+nMm9enxdj2
-	CdxF/HEZ9rpYMVKzIgnScvTxcmRDg3MUYt0YNn3JXc4i1/JDvMf+hQM/RI/rTWMCyi1E133LIX5PU
-	Q5MB3ZR1OHtyxFSKsf/4vw+xqd5IdT9pCjQ0UiVppjMkUT8Uhax9ok7NOWvnHXopxYxWQBgCw335d
-	ucznt/Cw==;
+	bh=0Jqy0WS45dDOWwUvOl9A0f9q4bShuWIufpv5GwSzFQo=; b=P7T2va24+L+5F2ulgF3QwgZExl
+	oWftn9xqj4IQ3dIxZmdEm9w04NdBFlu2Q1vphY+fcTGNkj5/Vo00og8+/ds0Xeb9O16qXf9nITyG0
+	gjPCHW+IoPMJfaA4gQow00v/nueST3V4UuhqMfjx9fdORg9Gj8jfLs1k1MTghTjHzEoRBWhKlQZUY
+	AWDYTuDikRgi9vSD4TmAFJzBFZYkxfK5LLLn6jLtBT1LRWaSqE4PWi3qiD8lWeM4M/v4WhCCtvD3a
+	7QtQu0vx8+Dgj1hl8/VaiJ86vMb51tatHZFlEomIPTUWn0k/iJ6/Sa3lbVAxjPEEGfLakmAJlTI33
+	83vGBTWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS66r-0003Mk-Mh; Tue, 05 Nov 2019 21:11:29 +0000
+	id 1iS678-0003b5-4T; Tue, 05 Nov 2019 21:11:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS5wk-0008D4-Qp
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 21:01:04 +0000
+ id 1iS5wn-0008Fb-Ms
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 21:01:07 +0000
 Received: from e123331-lin.home (lfbn-mar-1-643-104.w90-118.abo.wanadoo.fr
  [90.118.215.104])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C198121D7C;
- Tue,  5 Nov 2019 21:00:59 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BB21521D6C;
+ Tue,  5 Nov 2019 21:01:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572987662;
- bh=Ij7AZEFGD8uEnpHzLkYxvrY2zmloHlyyapfy5Ifl4ts=;
+ s=default; t=1572987665;
+ bh=jWOANhJL6EzpgiEKGFNTOM+DgnUYbmrCpeLFQrzcz0c=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=eTMYi5yNbUXG7vdYv3ISNjHuC3o3yWgtwGhNfwsXSYRee/QGltwIBD7rT9r2jrd8K
- mdexVu07s+A3sGZ9nD3zifC/eu++bwVIzpkCLHVu5NDrPA1SX/rE5bx+aGNKO7vjty
- mLkKXPqoHk+ZuJ98kUzIaSqvfvYCF0p9kJ/++Wp4=
+ b=m1FKPnGloabn950QYvmCPERPyAhIGWQDB7jv94z7vIxkMX6K3Em8aTBXvsaR3XzID
+ 52lHxfzwHtlqJh5UGVmLr4+x2YRz1Ad2z3nSLNFpsGRNZkWTxPDrr0zIY3epXS2FMR
+ FQuoaUU43yCamlDVHEnb4aSWCYR+eqkPpbQ91PKc=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH for-stable-v4.4 43/53] ARM: 8794/1: uaccess: Prevent
- speculative use of the current addr_limit
-Date: Tue,  5 Nov 2019 21:58:36 +0100
-Message-Id: <20191105205846.1394-44-ardb@kernel.org>
+Subject: [PATCH for-stable-v4.4 44/53] ARM: 8795/1: spectre-v1.1: use
+ put_user() for __put_user()
+Date: Tue,  5 Nov 2019 21:58:37 +0100
+Message-Id: <20191105205846.1394-45-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191105205846.1394-1-ardb@kernel.org>
 References: <20191105205846.1394-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_130102_920976_4995BD53 
-X-CRM114-Status: GOOD (  11.74  )
+X-CRM114-CacheID: sfid-20191105_130105_795462_EB35D3B8 
+X-CRM114-Status: GOOD (  10.44  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -92,18 +92,11 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Julien Thierry <julien.thierry@arm.com>
 
-Commit 621afc677465db231662ed126ae1f355bf8eac47 upstream.
+Commit e3aa6243434fd9a82e84bb79ab1abd14f2d9a5a7 upstream.
 
-A mispredicted conditional call to set_fs could result in the wrong
-addr_limit being forwarded under speculation to a subsequent access_ok
-check, potentially forming part of a spectre-v1 attack using uaccess
-routines.
-
-This patch prevents this forwarding from taking place, but putting heavy
-barriers in set_fs after writing the addr_limit.
-
-Porting commit c2f0ad4fc089cff8 ("arm64: uaccess: Prevent speculative use
-of the current addr_limit").
+When Spectre mitigation is required, __put_user() needs to include
+check_uaccess. This is already the case for put_user(), so just make
+__put_user() an alias of put_user().
 
 Signed-off-by: Julien Thierry <julien.thierry@arm.com>
 Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
@@ -112,28 +105,49 @@ Reviewed-by: Julien Thierry <julien.thierry@arm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- arch/arm/include/asm/uaccess.h | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ arch/arm/include/asm/uaccess.h | 15 +++++++++------
+ 1 file changed, 9 insertions(+), 6 deletions(-)
 
 diff --git a/arch/arm/include/asm/uaccess.h b/arch/arm/include/asm/uaccess.h
-index fd33021da6f6..0404dd101331 100644
+index 0404dd101331..98bbf89763a6 100644
 --- a/arch/arm/include/asm/uaccess.h
 +++ b/arch/arm/include/asm/uaccess.h
-@@ -99,6 +99,14 @@ extern int __put_user_bad(void);
- static inline void set_fs(mm_segment_t fs)
- {
- 	current_thread_info()->addr_limit = fs;
-+
-+	/*
-+	 * Prevent a mispredicted conditional call to set_fs from forwarding
-+	 * the wrong address limit to access_ok under speculation.
-+	 */
-+	dsb(nsh);
-+	isb();
-+
- 	modify_domain(DOMAIN_KERNEL, fs ? DOMAIN_CLIENT : DOMAIN_MANAGER);
- }
+@@ -408,6 +408,14 @@ do {									\
+ 	__pu_err;							\
+ })
  
++#ifdef CONFIG_CPU_SPECTRE
++/*
++ * When mitigating Spectre variant 1.1, all accessors need to include
++ * verification of the address space.
++ */
++#define __put_user(x, ptr) put_user(x, ptr)
++
++#else
+ #define __put_user(x, ptr)						\
+ ({									\
+ 	long __pu_err = 0;						\
+@@ -415,12 +423,6 @@ do {									\
+ 	__pu_err;							\
+ })
+ 
+-#define __put_user_error(x, ptr, err)					\
+-({									\
+-	__put_user_switch((x), (ptr), (err), __put_user_nocheck);	\
+-	(void) 0;							\
+-})
+-
+ #define __put_user_nocheck(x, __pu_ptr, __err, __size)			\
+ 	do {								\
+ 		unsigned long __pu_addr = (unsigned long)__pu_ptr;	\
+@@ -500,6 +502,7 @@ do {									\
+ 	: "r" (x), "i" (-EFAULT)				\
+ 	: "cc")
+ 
++#endif /* !CONFIG_CPU_SPECTRE */
+ 
+ #ifdef CONFIG_MMU
+ extern unsigned long __must_check
 -- 
 2.17.1
 
