@@ -2,60 +2,111 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C4E7EF65A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 08:20:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A07EEF65F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 08:21:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=KoHwbOEDuNTVcvJgt4Vgyff3uNhs7LWfm5h8+BSsKFo=; b=ngKqcRtOhMwY7ZbEEjDb2WLdSr
-	S3kjipIfLkdWUFYcbhZoaLcNzTrwi4O5HQhbX2xolJMk5fwVh7lhXcQcS9l8u+pLmrW7EtZriZPpZ
-	4axqL0Qpo8GQSqfP97malrB2tvQunBL+ejNKKMa4Vzpw5ihlHvquTunLTERdizZU13v3aCIpU6h5f
-	YlKxUIh0XnIeDY5daxjiVlus0M6JTpsPc2jibLTaovWK/68hyaEL4Xi6T3ti+CZvelkfPQn+ESE8u
-	1+qmuuv59p+c9Z1483FtZ+GywS9bJWze772nMKpZlfPYLVTJlYfffAUVeCQr5kkaaJYSKBZ/g75ym
-	Apj+oA8Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Dk2lcM4VLLUh085O94htTOqICD/J6dIEOddRG14WaHk=; b=pTi0RDu5cIXp8X
+	dl98Kabi4QwLzFDEvf9vdLUJ0EIh9Q8d5YO1OoEgcrhXx/76VYzQD+/WKIgIcFZoEIz5m2y7gQNOs
+	wtjQDBpNAD0LEHThGF1oc9zZRF481HZjT3r1j8gCYIAuRg5V/LPbH3y0UagJe/sSwAAIaHgFsh7tQ
+	0QX3Krtfa54qh3UjYSraMDYxjtz0VYmzh1168GCVZ+JmMGsxbtRhgNnroFgK2HeWkIuk1VBaivgas
+	juHY8ToLJcnagcvoa6RBtslZYcGaLHvS5R965gDQ7eW2mNA2ZBPmYcoGLF9cggRoAJTYtpW63VAmw
+	+IJ/vRhFYnatJUPlcLeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRt8z-00029m-0K; Tue, 05 Nov 2019 07:20:49 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iRt9Y-0002Xr-Kc; Tue, 05 Nov 2019 07:21:24 +0000
+Received: from mail-eopbgr70071.outbound.protection.outlook.com ([40.107.7.71]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRt64-0006vE-KN; Tue, 05 Nov 2019 07:17:50 +0000
-Received: from aquarius.haifa.ibm.com (nesher1.haifa.il.ibm.com [195.110.40.7])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AD01A20818;
- Tue,  5 Nov 2019 07:17:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572938268;
- bh=0lGj0AI/IfAJbVTLRfdK6fD/lMA7GlT+qoua/5oNwys=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=d4AJP6GBs/LniVfFS2ahF6uWLgrZ8yBukH8Klz6vDbBKOn0ePFcVJ2qFDbpN2z0NH
- HW5NlgbElXreyTFqvbfIkv5/YUfXO1d9uGUOTusZma2qgZ/6YW8SE6IEfE1n1kLsZr
- hpzGaAvxkw5eDy0K3e0cvsqid8ZGBAggy+C0KmTA=
-From: Mike Rapoport <rppt@kernel.org>
-To: linux-mm@kvack.org
-Subject: [PATCH v4 13/13] mm: remove __ARCH_HAS_4LEVEL_HACK and
- include/asm-generic/4level-fixup.h
-Date: Tue,  5 Nov 2019 09:15:35 +0200
-Message-Id: <1572938135-31886-14-git-send-email-rppt@kernel.org>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1572938135-31886-1-git-send-email-rppt@kernel.org>
-References: <1572938135-31886-1-git-send-email-rppt@kernel.org>
+ id 1iRt9O-0002Wp-PI
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 07:21:16 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=TXiXCy7JD9DKbj41pBrfQ28alYxk80Xt4VKI9nG65Ea9Kp14PvjWGW4523GQ2LUxScfS7oZ0zDQQxkdmkcFgeZPc36h+jNbUH+7tsHbSjOTCi54O2HRCIxFMbBhP1n7JdnFPy8/C0JHUgILi+ilXc/uOcSy1C3WsV4GJt4JIbicC6+P1dgninlJSxXx5oDcpf+1fB8QJRGEBPTAOSgS6Fh2DW0NPL/XGs4x7y+cppSJU5K/19i8ErzJsKsv4rTFGOXINzx9sOEQUtUGka5/bGmsbwsK6ZzM226JyRHAZdA2HqgQHBoGVFh9E0vPmQpU7hDb1Di4+J3j1tt4906z4+w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Fg0VOfmyRVkQU2nDPkCCMCeqPGGYcOrVpqW1PWLizG8=;
+ b=Rezp3SIcGRlq8t9Hkw4bb68345+lZ7xXZrKhlGgDTBNuh8h+s6usFt6SpPCRYlLfZG2BO+oDt+NM4a0K/5DhRpgQR7DCO6YODsHTdlafyC1VHurt58uYTHaLHmJFOfHAXUBSC5S9D0kzeoLngLO5bjOC+WnJDYXMcgosDhqklEueIVAbV6op8cZcdXd9N46FG7iX3MeDi6bOZYH/7unja39HjxL0Mdfd2pB0jM2vJWkLzR4nu5T+QeSOWBPWDYiZeBHNoig8BcBB5q+fU6dvcA4xu/UebKuTrob0/+lkkQAwivMM0Fae0WSPRh9KULzctB4PSi1CmnTtvUhTqvb4pA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Fg0VOfmyRVkQU2nDPkCCMCeqPGGYcOrVpqW1PWLizG8=;
+ b=jG161WRXUYi4oBaImT+CZQ/LP+/kPXcaGLizY66g4REc88HIpcCm58SRbVXaJbQzUuhuoTjCswzst1+Bw9rfVZYnk4TIr8DlfUinvL+64RWn/2JhP9gW9MH2NmeOiISAIVpi77ykhtvMArq//PmDd1ACTJiH3DMmUM+E17XXuPo=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB5668.eurprd04.prod.outlook.com (20.178.202.143) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2408.24; Tue, 5 Nov 2019 07:21:08 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::f16d:a26a:840:f97c]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::f16d:a26a:840:f97c%4]) with mapi id 15.20.2408.024; Tue, 5 Nov 2019
+ 07:21:08 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: "sboyd@kernel.org" <sboyd@kernel.org>, "shawnguo@kernel.org"
+ <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>, Abel Vesa <abel.vesa@nxp.com>
+Subject: [PATCH] clk: imx: pll14xx: initialize flags to 0
+Thread-Topic: [PATCH] clk: imx: pll14xx: initialize flags to 0
+Thread-Index: AQHVk6mXpyRie0JbfEaM7Eg+PLW60Q==
+Date: Tue, 5 Nov 2019 07:21:08 +0000
+Message-ID: <1572938372-7006-1-git-send-email-peng.fan@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.7.4
+x-clientproxiedby: HK0PR01CA0039.apcprd01.prod.exchangelabs.com
+ (2603:1096:203:3e::27) To AM0PR04MB4481.eurprd04.prod.outlook.com
+ (2603:10a6:208:70::15)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: b85e1df4-3c68-400b-4b2f-08d761c0ba2a
+x-ms-traffictypediagnostic: AM0PR04MB5668:|AM0PR04MB5668:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM0PR04MB5668043D5AA829C1C874BFDD887E0@AM0PR04MB5668.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:576;
+x-forefront-prvs: 0212BDE3BE
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(366004)(346002)(396003)(39860400002)(376002)(199004)(189003)(66556008)(6486002)(66476007)(5660300002)(25786009)(3846002)(6116002)(316002)(2616005)(186003)(476003)(26005)(2201001)(52116002)(2906002)(7736002)(305945005)(99286004)(8936002)(50226002)(110136005)(4744005)(44832011)(54906003)(86362001)(486006)(64756008)(66446008)(2501003)(66066001)(256004)(6636002)(81166006)(81156014)(102836004)(4326008)(8676002)(6436002)(478600001)(36756003)(14454004)(71200400001)(386003)(6506007)(71190400001)(66946007)(6512007);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5668;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 0WvJlG0hvf9BAwubKE9CNCLUt54s6IfV6u9tPlMKDeigHLGx5/5Th53R66Kx8JlF31VgM1I8V/blJAaWaauwr+va+psQTB9ug2rE1ZgLRD7hxh0CTbxs90WAPuRfBfmSAFGzX36TQAumIejw0hhd1AFVAt4TkAP0Or0gx/s8Hnai/llUfMNlw3LLyvK9YDfG+LdFNp79q2fOWUlD520yT5B/oMZ1rzLkpz6PKUr+hGPPhUkdhkJiLq/ZRhRHJEktxDKWmIYz3IyDmSFuetZl09QGDphGy9+vKHzyltS3oivupG0ZlqEm/VLqDSLMq0Y5LVTSCZ6d5oG2RRveTyQTSnfKEatth8aohdmFdn/3m+dXBdLY0YIafWqb1jm0NRdrKktv8gXphSVWB4mcqNc44HqcsYgQ7chL3aiRlqKSGH0EqTPLBcYPPncNoN7JqxuE
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: b85e1df4-3c68-400b-4b2f-08d761c0ba2a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Nov 2019 07:21:08.5461 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: wg5T5xGuYOoycXU1D7f7yOrI1e80SPN3Zl9Pq6IdbopNrlbYMmxjOEIEg/CTep0k2vCEBU28LMmYgFzFuS7SVA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5668
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_231748_737705_82FE14DC 
-X-CRM114-Status: GOOD (  12.22  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191104_232114_918324_141936EC 
+X-CRM114-Status: UNSURE (   9.46  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.7.71 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -63,7 +114,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,166 +125,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- sparclinux@vger.kernel.org, Rolf Eike Beer <eike-kernel@sf-tec.de>,
- Vincent Chen <deanbo422@gmail.com>, Greg Ungerer <gerg@linux-m68k.org>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>, linux-arch@vger.kernel.org,
- linux-c6x-dev@linux-c6x.org, Richard Weinberger <richard@nod.at>,
- Helge Deller <deller@gmx.de>, Russell King <linux@armlinux.org.uk>,
- Mike Rapoport <rppt@linux.ibm.com>, Geert Uytterhoeven <geert@linux-m68k.org>,
- Mark Salter <msalter@redhat.com>, Matt Turner <mattst88@gmail.com>,
- Jeff Dike <jdike@addtoit.com>, Sam Creasey <sammy@sammy.net>,
- Arnd Bergmann <arnd@arndb.de>, Vineet Gupta <Vineet.Gupta1@synopsys.com>,
- linux-um@lists.infradead.org, linux-m68k@lists.linux-m68k.org,
- Greentime Hu <green.hu@gmail.com>, "Kirill A. Shutemov" <kirill@shutemov.name>,
- linux-arm-kernel@lists.infradead.org, Michal Simek <monstr@monstr.eu>,
- linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
- "David S. Miller" <davem@davemloft.net>, linux-alpha@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>, Peter Rosin <peda@axentia.se>,
- Mike Rapoport <rppt@kernel.org>
-MIME-Version: 1.0
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Peng Fan <peng.fan@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Mike Rapoport <rppt@linux.ibm.com>
+From: Peng Fan <peng.fan@nxp.com>
 
-There are no architectures that use include/asm-generic/4level-fixup.h
-therefore it can be removed along with __ARCH_HAS_4LEVEL_HACK define.
+init.flags is initialized with value from pll_clk->flags, however
+imx_1443x_pll and imx_1416x_pll are not static structure, so flags
+might be random value. So let's initialize flags as 0 now.
 
-Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
+Signed-off-by: Peng Fan <peng.fan@nxp.com>
 ---
- include/asm-generic/4level-fixup.h | 40 --------------------------------------
- include/asm-generic/tlb.h          |  2 --
- include/linux/mm.h                 | 10 +++++-----
- mm/memory.c                        |  8 --------
- 4 files changed, 5 insertions(+), 55 deletions(-)
- delete mode 100644 include/asm-generic/4level-fixup.h
+ drivers/clk/imx/clk-pll14xx.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/include/asm-generic/4level-fixup.h b/include/asm-generic/4level-fixup.h
-deleted file mode 100644
-index e3667c9..0000000
---- a/include/asm-generic/4level-fixup.h
-+++ /dev/null
-@@ -1,40 +0,0 @@
--/* SPDX-License-Identifier: GPL-2.0 */
--#ifndef _4LEVEL_FIXUP_H
--#define _4LEVEL_FIXUP_H
--
--#define __ARCH_HAS_4LEVEL_HACK
--#define __PAGETABLE_PUD_FOLDED 1
--
--#define PUD_SHIFT			PGDIR_SHIFT
--#define PUD_SIZE			PGDIR_SIZE
--#define PUD_MASK			PGDIR_MASK
--#define PTRS_PER_PUD			1
--
--#define pud_t				pgd_t
--
--#define pmd_alloc(mm, pud, address) \
--	((unlikely(pgd_none(*(pud))) && __pmd_alloc(mm, pud, address))? \
-- 		NULL: pmd_offset(pud, address))
--
--#define pud_offset(pgd, start)		(pgd)
--#define pud_none(pud)			0
--#define pud_bad(pud)			0
--#define pud_present(pud)		1
--#define pud_ERROR(pud)			do { } while (0)
--#define pud_clear(pud)			pgd_clear(pud)
--#define pud_val(pud)			pgd_val(pud)
--#define pud_populate(mm, pud, pmd)	pgd_populate(mm, pud, pmd)
--#define pud_page(pud)			pgd_page(pud)
--#define pud_page_vaddr(pud)		pgd_page_vaddr(pud)
--
--#undef pud_free_tlb
--#define pud_free_tlb(tlb, x, addr)	do { } while (0)
--#define pud_free(mm, x)			do { } while (0)
--#define __pud_free_tlb(tlb, x, addr)	do { } while (0)
--
--#undef  pud_addr_end
--#define pud_addr_end(addr, end)		(end)
--
--#include <asm-generic/5level-fixup.h>
--
--#endif
-diff --git a/include/asm-generic/tlb.h b/include/asm-generic/tlb.h
-index 04c0644..5e0c2d0 100644
---- a/include/asm-generic/tlb.h
-+++ b/include/asm-generic/tlb.h
-@@ -584,7 +584,6 @@ static inline void tlb_end_vma(struct mmu_gather *tlb, struct vm_area_struct *vm
- 	} while (0)
- #endif
+diff --git a/drivers/clk/imx/clk-pll14xx.c b/drivers/clk/imx/clk-pll14xx.c
+index fa76e04251c4..a7f1c1abe664 100644
+--- a/drivers/clk/imx/clk-pll14xx.c
++++ b/drivers/clk/imx/clk-pll14xx.c
+@@ -65,12 +65,14 @@ struct imx_pll14xx_clk imx_1443x_pll = {
+ 	.type = PLL_1443X,
+ 	.rate_table = imx_pll1443x_tbl,
+ 	.rate_count = ARRAY_SIZE(imx_pll1443x_tbl),
++	.flags = 0,
+ };
  
--#ifndef __ARCH_HAS_4LEVEL_HACK
- #ifndef pud_free_tlb
- #define pud_free_tlb(tlb, pudp, address)			\
- 	do {							\
-@@ -594,7 +593,6 @@ static inline void tlb_end_vma(struct mmu_gather *tlb, struct vm_area_struct *vm
- 		__pud_free_tlb(tlb, pudp, address);		\
- 	} while (0)
- #endif
--#endif
+ struct imx_pll14xx_clk imx_1416x_pll = {
+ 	.type = PLL_1416X,
+ 	.rate_table = imx_pll1416x_tbl,
+ 	.rate_count = ARRAY_SIZE(imx_pll1416x_tbl),
++	.flags = 0,
+ };
  
- #ifndef __ARCH_HAS_5LEVEL_HACK
- #ifndef p4d_free_tlb
-diff --git a/include/linux/mm.h b/include/linux/mm.h
-index cc29227..477b52a 100644
---- a/include/linux/mm.h
-+++ b/include/linux/mm.h
-@@ -1850,12 +1850,12 @@ static inline void mm_dec_nr_ptes(struct mm_struct *mm) {}
- int __pte_alloc(struct mm_struct *mm, pmd_t *pmd);
- int __pte_alloc_kernel(pmd_t *pmd);
- 
-+#if defined(CONFIG_MMU)
-+
- /*
-- * The following ifdef needed to get the 4level-fixup.h header to work.
-- * Remove it when 4level-fixup.h has been removed.
-+ * The following ifdef needed to get the 5level-fixup.h header to work.
-+ * Remove it when 5level-fixup.h has been removed.
-  */
--#if defined(CONFIG_MMU) && !defined(__ARCH_HAS_4LEVEL_HACK)
--
- #ifndef __ARCH_HAS_5LEVEL_HACK
- static inline p4d_t *p4d_alloc(struct mm_struct *mm, pgd_t *pgd,
- 		unsigned long address)
-@@ -1877,7 +1877,7 @@ static inline pmd_t *pmd_alloc(struct mm_struct *mm, pud_t *pud, unsigned long a
- 	return (unlikely(pud_none(*pud)) && __pmd_alloc(mm, pud, address))?
- 		NULL: pmd_offset(pud, address);
- }
--#endif /* CONFIG_MMU && !__ARCH_HAS_4LEVEL_HACK */
-+#endif /* CONFIG_MMU */
- 
- #if USE_SPLIT_PTE_PTLOCKS
- #if ALLOC_SPLIT_PTLOCKS
-diff --git a/mm/memory.c b/mm/memory.c
-index b1ca51a..50300f0 100644
---- a/mm/memory.c
-+++ b/mm/memory.c
-@@ -4095,19 +4095,11 @@ int __pmd_alloc(struct mm_struct *mm, pud_t *pud, unsigned long address)
- 	smp_wmb(); /* See comment in __pte_alloc */
- 
- 	ptl = pud_lock(mm, pud);
--#ifndef __ARCH_HAS_4LEVEL_HACK
- 	if (!pud_present(*pud)) {
- 		mm_inc_nr_pmds(mm);
- 		pud_populate(mm, pud, new);
- 	} else	/* Another has populated it */
- 		pmd_free(mm, new);
--#else
--	if (!pgd_present(*pud)) {
--		mm_inc_nr_pmds(mm);
--		pgd_populate(mm, pud, new);
--	} else /* Another has populated it */
--		pmd_free(mm, new);
--#endif /* __ARCH_HAS_4LEVEL_HACK */
- 	spin_unlock(ptl);
- 	return 0;
- }
+ static const struct imx_pll14xx_rate_table *imx_get_pll_settings(
 -- 
-2.7.4
+2.16.4
 
 
 _______________________________________________
