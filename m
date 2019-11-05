@@ -2,65 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BBB7EEFC86
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 12:36:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78E22EFC8A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 12:38:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kVXcVQhVGrBqBIxcftwRBFfGzL8bUYyYdPCpkZ7g5Q0=; b=LznmbuEoRZUAkc
-	HEaberkv6lUcZWk7AUfeyxqsVnaN1jIYky9+AlLJ+5j27vBz1eaZ8sQQPOLfrvlr3IwBKdS5B4Iwt
-	Y2oTC7YMU6jqR8opV9Hs+7dnFKJxc0xCC7cbUUF/mnJb4kHMWRLQRieboP2UEWw0I61Ol+Xj0hlbc
-	qegMVmiyaEX3ZhSQ2whrfJIDAlYllU/WZ6pcHBVLJwPSRS+7rhdT339tgUEHtsGTS9v5SB9QYzVUY
-	dL9UMw0XiCcIVR0HgQ51nrhqJ2KyRKbYMWOC1JDYw/83uT6QfVbuq1i2qXMh+pwVOC5aV3LASNydj
-	c41M8mScYdRbF8kNXQcw==;
+	List-Owner; bh=HHBzupsQ64haMBvq4D88AJXYqcdeDpSyk/mOUZWtkXk=; b=CPiUmTlrIfk2Xx
+	9yU9R0Xj10jeZJRdh3a8+mU4n76JKA8xRc5i8nmLsyQsqgoJOe6TeyPbR+mCmgwWzWWlp2fRiHB1X
+	mw3mXDunTHddlDS8jEKwxaHZulzpD/YhAd5DQpWua3Fy4XKnL3hAK2JULHejvdcjUaIwrw4NmM89x
+	OYNmnqLNiP5th8j6R4OkwKXQle08PABb6ljzuRaz/Pc/PDGxoao49rNmkm25e6vB+sZ21g2s9cEc6
+	ZU+eQ4MMd/UPhyJe8th3EgGK/BDAXKqiml92Fk6AhD5FFLXZOFURmHjCbyOH0Nm42Uc0GVB53laOj
+	W6/KwtdsZexe8u2Zf4iA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRx8r-0001VF-4x; Tue, 05 Nov 2019 11:36:57 +0000
-Received: from mail-eopbgr70053.outbound.protection.outlook.com ([40.107.7.53]
- helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+	id 1iRxA5-0001ri-BY; Tue, 05 Nov 2019 11:38:13 +0000
+Received: from mail-eopbgr20050.outbound.protection.outlook.com ([40.107.2.50]
+ helo=EUR02-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRx8h-0001UG-PW
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 11:36:50 +0000
+ id 1iRx9w-0001qB-MZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 11:38:06 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=eNk5ZXRN8tbuJTqMz02r+cbh87OiYCSIwfRhs5ZnGpS5q8aR90GP8HOGHLyUELg/i1DnZpNypSpH7x2WEZsgBsbVfEUHtnGOanK25Ra92mSOoEU/dovTDrb+fL3reNLExqaifuc+tn1WfeH9FzU9bJsTiBvXm+lVYGhGF9GU1GCfI7eWsQlNeVdm+hBEAGjzU2MUxEVXghxRWO573t43id6OMCp0ksKRt2U4DRbBUjdcDzmvU2lYfUutjfj2UHCHXGC2mLoUu/ghU7fMNQSqPVZgqIXJRs5k61fy2h2NiAD/cCCVGVRT94CmGFJc28bTWB18UQw/hLbqqgqCgrQ/5A==
+ b=mQVGwOglq8TcNHDGKLeNQkBAH9QKmoX3fq6p5qEJnRaA+ci1xDF+M8X6Z5RcioI97VdN82EYE5AG8ZdefshnKRRCGYEO0/pEa+kqfXq5SWl1Om3ZUmbBPP1hTISxA4h1NkgvPTk9TYUTcg5J4PtNyJVUd3TLSvjdZ1CI0GZa20J0X6QEUij4nuY/Gdx3MhzIsxQibYgfS9UdGr7VJORFUdJCbuaqHT4kTwgwbXTSI8Yvq/AKjhwzsLX9E/2WqK/pjBzXfipOT2MF5gFCp/yAWeWNfeqyzko+ic1R4iDPFAYWa/bEXnxiEPjCql84QWYo9g8lcfXMtYGrlT+Yy/wrkw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=f5GK/SRnyvxDk0UH/yjYL38NqanFe4eDxBiMo/yr8fg=;
- b=DogFVzbLsPL8Gi7N+4B04KiiZy2FweGg9AEbXGhLTBfd59b2KOdrZTO7wlm1A1Lw4GsqeUMHPqStcoV+7WSa2atHqNDqj3qJtTUJovs4x4d2nd4IbSDpiY28hgHDDyvPTsIz8ZMCsu3BZRAY7b6GvDgQ9D7iP43OQVv/9ximzuR72PFO+ecnIKDXUjXN7YAS34Q2Fpc2gdd8U0j2w9Q3NR4oVHvPiBPPj3f6f9ppNTFywJw4tOoxPjGiVr7FS/4HhCaBOTXeYMEvChUycOpjSTlyUEp9BaVRy/bkUyQdFIrKAr6i2L2xrNIU5qMlSbK/lLDf2t9Qktm2NbTZJBR6qg==
+ bh=Y98z3OBgAdzDOLCLxyD+9+dC7Pj2S+fFajW8lxMzebw=;
+ b=ItwjNsFw9e1hs0SHatIa8Sw9Kv3sBwaKAKYsKLX0ubJSGKE3KzRCuhbDlITOh3NdKLyvfQr4qb26QW+hnor51MXVX/lNv+qKx8FWDCr74TifQv54Fuh8s//6GO5ZzwIbiEABUcvAgC2MlypM0F/+IbEeX6xGY9YCPiCO+KjCQ2H/NzBIe4qGu6h4fETxF3st7qXU4DJu3H+SExY4Yc0gervzA1INMxTdcZTIo+1tA5f4ctVzNH++xAvMdat5YN/64X71TH6XT1RYsJEN7JwkcKdVMFQwTSNWY2aTL6/VSrI5vDNkV7tIqvKEkgAH4CTzVuCV4M05GIAAREoDuoJHwg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=f5GK/SRnyvxDk0UH/yjYL38NqanFe4eDxBiMo/yr8fg=;
- b=KiuoMFEUt9dJziYshMlUv+wSQBolN5oQ+A6er/e3h+EWLMTdjn0lMiVuBrzdl/WGjS50KzjwggFoJ+qfA5Usz7rwxL4GTrcWgyTPEG464jhxxt1OLJ15lkyzrvavBts25JGJP0JQFHy4hj5IGQh/z5jDZdYvvd3htps6Swb5GR8=
+ bh=Y98z3OBgAdzDOLCLxyD+9+dC7Pj2S+fFajW8lxMzebw=;
+ b=A0yq1dT+oCjApIiyHpANTEdhkszjCFpVMNWhjNUxOQf0RQThV8HNpVLHxYWuCaH/Nco5EO4EVIMovhYXM8z3sLrchlHfG1rxU1zCPP/9eRGFjL37409QjOgrpDH9gvMGy8QFApNq4G2y8W8lXJgBipf7V+F12VO87GDyWnhMQ1o=
 Received: from AM0PR04MB5779.eurprd04.prod.outlook.com (20.178.202.151) by
- AM0PR04MB5201.eurprd04.prod.outlook.com (20.177.42.18) with Microsoft SMTP
+ AM0PR04MB4595.eurprd04.prod.outlook.com (52.135.148.14) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2408.24; Tue, 5 Nov 2019 11:36:44 +0000
+ 15.20.2408.24; Tue, 5 Nov 2019 11:37:58 +0000
 Received: from AM0PR04MB5779.eurprd04.prod.outlook.com
  ([fe80::fd44:1b14:587c:9fde]) by AM0PR04MB5779.eurprd04.prod.outlook.com
  ([fe80::fd44:1b14:587c:9fde%7]) with mapi id 15.20.2430.020; Tue, 5 Nov 2019
- 11:36:44 +0000
+ 11:37:58 +0000
 From: Abel Vesa <abel.vesa@nxp.com>
 To: Peng Fan <peng.fan@nxp.com>
-Subject: Re: [PATCH] clk: imx: imx8mn: add IMX8MN_CLK_SAI7_IPG clk
-Thread-Topic: [PATCH] clk: imx: imx8mn: add IMX8MN_CLK_SAI7_IPG clk
-Thread-Index: AQHVkuiWYOV+kg2wl0yC3cmY9ucIdad8dMaA
-Date: Tue, 5 Nov 2019 11:36:44 +0000
-Message-ID: <20191105113643.542aaahiiabccrm7@fsr-ub1664-175>
-References: <1572855483-10624-1-git-send-email-peng.fan@nxp.com>
-In-Reply-To: <1572855483-10624-1-git-send-email-peng.fan@nxp.com>
+Subject: Re: [PATCH 2/2] clk: imx: clk-divider-gate: drop redundant
+ initialization
+Thread-Topic: [PATCH 2/2] clk: imx: clk-divider-gate: drop redundant
+ initialization
+Thread-Index: AQHVkvg/xrfIJzKQG0a+hb51V+MVqad8dP+A
+Date: Tue, 5 Nov 2019 11:37:58 +0000
+Message-ID: <20191105113757.7emblygbcqfa6gyl@fsr-ub1664-175>
+References: <1572862200-29923-1-git-send-email-peng.fan@nxp.com>
+ <1572862200-29923-2-git-send-email-peng.fan@nxp.com>
+In-Reply-To: <1572862200-29923-2-git-send-email-peng.fan@nxp.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-clientproxiedby: AM0PR10CA0059.EURPRD10.PROD.OUTLOOK.COM
- (2603:10a6:20b:150::39) To AM0PR04MB5779.eurprd04.prod.outlook.com
+x-clientproxiedby: AM0PR02CA0087.eurprd02.prod.outlook.com
+ (2603:10a6:208:154::28) To AM0PR04MB5779.eurprd04.prod.outlook.com
  (2603:10a6:208:131::23)
 x-originating-ip: [89.37.124.34]
 authentication-results: spf=none (sender IP is )
@@ -68,42 +71,42 @@ authentication-results: spf=none (sender IP is )
 x-ms-exchange-messagesentrepresentingtype: 1
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: cfb30290-4e7f-4b22-c155-08d761e46f6e
-x-ms-traffictypediagnostic: AM0PR04MB5201:|AM0PR04MB5201:
+x-ms-office365-filtering-correlation-id: 8b5ddda4-83f1-4e8b-68d2-08d761e49b74
+x-ms-traffictypediagnostic: AM0PR04MB4595:|AM0PR04MB4595:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB52014C7DC64056DB34E61F4FF67E0@AM0PR04MB5201.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2803;
+x-microsoft-antispam-prvs: <AM0PR04MB45959DDEAEBA6202C9C220B2F67E0@AM0PR04MB4595.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:597;
 x-forefront-prvs: 0212BDE3BE
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(7916004)(136003)(396003)(376002)(366004)(39860400002)(346002)(199004)(189003)(66556008)(64756008)(66066001)(54906003)(476003)(102836004)(7736002)(6636002)(76176011)(256004)(8936002)(66476007)(478600001)(6486002)(8676002)(386003)(26005)(66446008)(6246003)(71190400001)(71200400001)(81166006)(6436002)(2906002)(6116002)(99286004)(1076003)(3846002)(6512007)(9686003)(229853002)(6506007)(4326008)(305945005)(86362001)(5660300002)(52116002)(316002)(186003)(446003)(486006)(44832011)(81156014)(11346002)(66946007)(25786009)(53546011)(14454004)(6862004)(33716001)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5201;
+ SFS:(10009020)(7916004)(4636009)(136003)(39860400002)(396003)(376002)(346002)(366004)(189003)(199004)(86362001)(476003)(478600001)(5660300002)(81156014)(6436002)(1076003)(44832011)(14454004)(486006)(25786009)(33716001)(6636002)(71190400001)(305945005)(71200400001)(7736002)(11346002)(9686003)(6506007)(6512007)(99286004)(229853002)(102836004)(53546011)(52116002)(6486002)(76176011)(316002)(2906002)(386003)(54906003)(6246003)(4326008)(256004)(14444005)(66476007)(66556008)(66946007)(64756008)(66066001)(66446008)(446003)(6862004)(8936002)(81166006)(186003)(26005)(8676002)(6116002)(3846002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4595;
  H:AM0PR04MB5779.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
+ PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: fAXWuLVaXwe+As2wxEqp3IVM+ePW0hzEEZUczrcrjdIs2enmAXNIv1NOqruPr3xnIO+/877EOoxPlNoIOtO2numhpLJnzI5BjcMLjjO8VTWFRD5jeOI7eEOEPhowSGMUje6drfpAoHdpCBn3tg9yJpMLsE1Vl5SCEDaZTa35NN08CN8IAF5RSMuuWTc4+I/pRE9BubUouCM/6A3wzYy2uGazThU/Vv8zvuwNQaDxi+noVyCU/QlW3N8BpL9eZn/eGYvNFNTVcWRgdPpW0fcJzGGAyzD0hv0J//ksqVoFtSlug0U1knIb5L1Exeyxv0CXZeiyOGA17Yr8GKPyRdEMPRBbamnvKK8HX8yrTP4pxgu3ACnsAHOw95mCCEl5xoFPRxjGi2P9mLQVMqwJLlm2efV+r2RdpAFG4WOl8F/Mh7XoGOvTDy7I4+d1PifcD7iq
-Content-ID: <C5F8A37A58208042ABF7A82BFBFA95FD@eurprd04.prod.outlook.com>
+x-microsoft-antispam-message-info: aCiiY8Xr1W7vGmM/Z2U/Pdt7lPeYxvcgRhHADcY+nc0zm5sLS7rYRT97NsowwSgIHftgnjk6Git70ZtANy5UWBBvBHIzqIscVuMRo8W6evHEUp/QVx36lH1DcQsG5k29SG42+oq/76pOqQEyVIcbtyI7wZVauFqAdZIJGNcPDKJY2XBalephnsmId+QQxhoiEQ992DRAT2u1WdRqIdgIHvhFnHMrjZpH23HUTBViF7nf+RwD/80KGtqw/Ct6x74I9Jtb/GgiHv6cfvU7hq3K7+US8tfQeqw1fnLQKJjQHjiVNsVYEz6keMs5TeTGjGNeOz0fYNlw0qQAut3CScKjv+TOticv1nlSLrGg8f6X/ZWuSK8Qbxu3FNuretdEKtwKHMkttpjccUWPlUjcfITpYcJdPOEYrua+Bz/+L4hjnW5HosCI8mYO2COEqSY4VPB1
+Content-ID: <4DAE11B15D0F814F82A82AE72658CCDF@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: cfb30290-4e7f-4b22-c155-08d761e46f6e
-X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Nov 2019 11:36:44.8190 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8b5ddda4-83f1-4e8b-68d2-08d761e49b74
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Nov 2019 11:37:58.7858 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: gciK5sSkgLDeMppey5ojrx1hkKbw4QNao7hjEB0as2uxY1MKtamJmmfh5pdYg+8g874amkJ6V2usxvrHJa/L3g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5201
+X-MS-Exchange-CrossTenant-userprincipalname: J4q+yUkdCi9aiXspDBFEe1T+WklC3gjZlZET0zbzi5JZoQxMmzMMoFtYNtZJ2psUUr9XwjplB4qggnKEhCPLeg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4595
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_033647_828371_B07D9CE8 
-X-CRM114-Status: GOOD (  13.38  )
+X-CRM114-CacheID: sfid-20191105_033804_740961_679890B6 
+X-CRM114-Status: GOOD (  13.44  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.7.53 listed in list.dnswl.org]
+ no trust [40.107.2.50 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -124,8 +127,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jacky Bai <ping.bai@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- "sboyd@kernel.org" <sboyd@kernel.org>,
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, "sboyd@kernel.org" <sboyd@kernel.org>,
  "shawnguo@kernel.org" <shawnguo@kernel.org>,
  "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
@@ -140,33 +142,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19-11-04 08:19:33, Peng Fan wrote:
+On 19-11-04 10:11:37, Peng Fan wrote:
 > From: Peng Fan <peng.fan@nxp.com>
 > 
-> It does not make sense to use shared count for IMX8MN_CLK_SAI7_ROOT
-> without ipg clk. Actually there are ipg clks for other sai clks,
-> let's add IMX8MN_CLK_SAI7_IPG clk.
+> There is no need to initialize flags as 0.
 > 
 > Signed-off-by: Peng Fan <peng.fan@nxp.com>
 
 Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
 
 > ---
->  drivers/clk/imx/clk-imx8mn.c | 1 +
->  1 file changed, 1 insertion(+)
+>  drivers/clk/imx/clk-divider-gate.c | 8 ++++----
+>  1 file changed, 4 insertions(+), 4 deletions(-)
 > 
-> diff --git a/drivers/clk/imx/clk-imx8mn.c b/drivers/clk/imx/clk-imx8mn.c
-> index 838f6e2347f1..5e801892c631 100644
-> --- a/drivers/clk/imx/clk-imx8mn.c
-> +++ b/drivers/clk/imx/clk-imx8mn.c
-> @@ -556,6 +556,7 @@ static int imx8mn_clocks_probe(struct platform_device *pdev)
->  	clks[IMX8MN_CLK_SDMA2_ROOT] = imx_clk_hw_gate4("sdma2_clk", "ipg_audio_root", base + 0x43b0, 0);
->  	clks[IMX8MN_CLK_SDMA3_ROOT] = imx_clk_hw_gate4("sdma3_clk", "ipg_audio_root", base + 0x45f0, 0);
->  	clks[IMX8MN_CLK_SAI7_ROOT] = imx_clk_hw_gate2_shared2("sai7_root_clk", "sai7", base + 0x4650, 0, &share_count_sai7);
-> +	clks[IMX8MN_CLK_SAI7_IPG] = imx_clk_hw_gate2_shared2("sai7_ipg_clk", "ipg_audio_root", base + 0x4650, 0, &share_count_sai7);
+> diff --git a/drivers/clk/imx/clk-divider-gate.c b/drivers/clk/imx/clk-divider-gate.c
+> index 214e18eb2b22..4145594af53b 100644
+> --- a/drivers/clk/imx/clk-divider-gate.c
+> +++ b/drivers/clk/imx/clk-divider-gate.c
+> @@ -43,7 +43,7 @@ static unsigned long clk_divider_gate_recalc_rate(struct clk_hw *hw,
+>  {
+>  	struct clk_divider_gate *div_gate = to_clk_divider_gate(hw);
+>  	struct clk_divider *div = to_clk_divider(hw);
+> -	unsigned long flags = 0;
+> +	unsigned long flags;
+>  	unsigned int val;
 >  
->  	clks[IMX8MN_CLK_DRAM_ALT_ROOT] = imx_clk_hw_fixed_factor("dram_alt_root", "dram_alt", 1, 4);
+>  	spin_lock_irqsave(div->lock, flags);
+> @@ -75,7 +75,7 @@ static int clk_divider_gate_set_rate(struct clk_hw *hw, unsigned long rate,
+>  {
+>  	struct clk_divider_gate *div_gate = to_clk_divider_gate(hw);
+>  	struct clk_divider *div = to_clk_divider(hw);
+> -	unsigned long flags = 0;
+> +	unsigned long flags;
+>  	int value;
+>  	u32 val;
 >  
+> @@ -104,7 +104,7 @@ static int clk_divider_enable(struct clk_hw *hw)
+>  {
+>  	struct clk_divider_gate *div_gate = to_clk_divider_gate(hw);
+>  	struct clk_divider *div = to_clk_divider(hw);
+> -	unsigned long flags = 0;
+> +	unsigned long flags;
+>  	u32 val;
+>  
+>  	if (!div_gate->cached_val) {
+> @@ -127,7 +127,7 @@ static void clk_divider_disable(struct clk_hw *hw)
+>  {
+>  	struct clk_divider_gate *div_gate = to_clk_divider_gate(hw);
+>  	struct clk_divider *div = to_clk_divider(hw);
+> -	unsigned long flags = 0;
+> +	unsigned long flags;
+>  	u32 val;
+>  
+>  	spin_lock_irqsave(div->lock, flags);
 > -- 
 > 2.16.4
 > 
