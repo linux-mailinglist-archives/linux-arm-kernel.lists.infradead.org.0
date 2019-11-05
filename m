@@ -2,85 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BFB8AF0542
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 19:42:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C13BF054A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 19:45:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aIAMvfVJbCjRxiyd5d+X2QDI/8MprEGQvd+M5eV0Piw=; b=o4HvDl56KCY8hN
-	8zVLaSrzy6oN4qUT3DjnWUMt7lrC0492WczK8qxp3e3cfqxL2d0ra24EPbubG2KzJ3nNAidhDyCJa
-	DXiRzKmkIWCfturKbc2VcXlgs05VK5EFhGzn6WJjktJpxJYeM7rflhNFtN+n6d4sSmQov1MH9BKwx
-	wo3dVmr7UBNIEIQ6uEx9VkTRZxp5jYUAEqnZiJEyguVdDyUbKxjsNWIwvqjRJ+pBMPKtryw7aGG77
-	EeYTOMNUR+HUWLoPHdGBGubqbSsp/Mwr42pHUSC4HAuBG7g5QSF+c7ufxpxDhRZKLTNJmkfCOndbL
-	5Pjgob9H2RMUaUuZq+rA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hmBjn0g35uPUAK3M+tXsDL2IaRkHSC6adfEvgFfRxpU=; b=XsYxKvz3yxU3YR
+	TLOyLk8rF/IqmhLtaXQ1+hdLH5xeqQBYqSkOI+G8huNWvZIFjiRHZMO7MEifAiHoOqcKK55hbyfkJ
+	xxPlXfeATjz0G9CVlw17KB8O7prKMVHQROiYiK5MO6LJL1C4EsAPWEIjvVPmBPEyruqFw3ZZG2VLC
+	ybeWJN9AMAkZ5WsXbfacz5Tiff1IUpxBg8gLNoCa0MYnFZRNvio4H03woClCF8ce6BPUGnEavTU1c
+	CTK/TWjRU49SeoJfX/JOxviL9m7wW1SbqBGzVaE9LqHPgYGglj537DCJj35jKORHU1Vwl70CRBmfw
+	nYbbUw14z8ULAAUiHtwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS3mA-000155-1l; Tue, 05 Nov 2019 18:41:58 +0000
-Received: from mail-ot1-f68.google.com ([209.85.210.68])
+	id 1iS3pi-0003D9-PY; Tue, 05 Nov 2019 18:45:38 +0000
+Received: from hqemgate14.nvidia.com ([216.228.121.143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS3lz-00010P-4B
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 18:41:48 +0000
-Received: by mail-ot1-f68.google.com with SMTP id e17so10002916otk.6
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 Nov 2019 10:41:46 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ZcTS25xDAMIirazFonzLL/ydaCeZnXdtGHuL+mEiDCE=;
- b=enFAqvee2fZOvS5dWr/Q4Q1CRCVtkZevIR8bjDvqXY3SBge48r1YvbtJQjOlb/Wt3p
- 2aQ/cLLvH6FsWA85DWskLqhqbROcCQ80/J7P58EBEZxiTAbL+G3ekoUce+qEev6S7MLD
- SWTQWkklfbPfL4xDarxcloAA3SBHxErBZ64huscCA/tCgccSzsK9KvjAUa2HFscJyqee
- 5lVcVs0mRXXJ8B/nesTLCJs0zYLiokIBur8rLX89tM6cWzfgzCN3whTFHDcU5KBU+if+
- ZWG51u556g7lQIRshclvTF/Inu1k25fdlq8/MxdjngVDXjybdaKdbFIAnPD7j7gY2uIo
- riKQ==
-X-Gm-Message-State: APjAAAWHPCl8g5ItnWFDYfn3SsV1s05mq3xm0ZrsPQqVo2m7WFVLJuk+
- L5fJKK1CMRAaTDuuo7kb6w==
-X-Google-Smtp-Source: APXvYqwa/eDD8mpnX7OYEJYfOGvN4ZSwKb0NYl0obJNUJgwpRsdPswN/MTugiyfx57WysSknfSo7fw==
-X-Received: by 2002:a9d:5605:: with SMTP id e5mr869941oti.150.1572979306019;
- Tue, 05 Nov 2019 10:41:46 -0800 (PST)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id c20sm1474934otm.80.2019.11.05.10.41.44
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 05 Nov 2019 10:41:45 -0800 (PST)
-Date: Tue, 5 Nov 2019 12:41:44 -0600
-From: Rob Herring <robh@kernel.org>
-To: Claudiu Beznea <claudiu.beznea@microchip.com>
-Subject: Re: [PATCH v2 1/2] dt-bindings: arm: atmel: add bindings for PIT64B
-Message-ID: <20191105184144.GA29029@bogus>
-References: <1572880204-4514-1-git-send-email-claudiu.beznea@microchip.com>
- <1572880204-4514-2-git-send-email-claudiu.beznea@microchip.com>
+ id 1iS3pZ-0003Ck-Gh
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 18:45:30 +0000
+Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate14.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5dc1c34f0000>; Tue, 05 Nov 2019 10:45:35 -0800
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate102.nvidia.com (PGP Universal service);
+ Tue, 05 Nov 2019 10:45:28 -0800
+X-PGP-Universal: processed;
+ by hqpgpgate102.nvidia.com on Tue, 05 Nov 2019 10:45:28 -0800
+Received: from HQMAIL109.nvidia.com (172.20.187.15) by HQMAIL111.nvidia.com
+ (172.20.187.18) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 5 Nov
+ 2019 18:45:28 +0000
+Received: from rnnvemgw01.nvidia.com (10.128.109.123) by HQMAIL109.nvidia.com
+ (172.20.187.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via
+ Frontend Transport; Tue, 5 Nov 2019 18:45:28 +0000
+Received: from rwileyLinux.nvidia.com (Not Verified[172.17.136.178]) by
+ rnnvemgw01.nvidia.com with Trustwave SEG (v7, 5, 8, 10121)
+ id <B5dc1c3470000>; Tue, 05 Nov 2019 10:45:27 -0800
+From: Rich Wiley <rwiley@nvidia.com>
+To: <linux-arm-kernel@lists.infradead.org>
+Subject: [PATCH] arm64: kpti: Add NVIDIA's Carmel core to the KPTI whitelist
+Date: Tue, 5 Nov 2019 10:45:10 -0800
+Message-ID: <1572979510-792-1-git-send-email-rwiley@nvidia.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1572880204-4514-2-git-send-email-claudiu.beznea@microchip.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1572979535; bh=LSq7ZgQrGt5CzqRd50ioovGg97ZF5CUTy/YYWoG+6Bc=;
+ h=X-PGP-Universal:From:To:CC:Subject:Date:Message-ID:X-Mailer:
+ MIME-Version:Content-Type;
+ b=fc3CHmVEd85zqiHHuvukD9QqiJvk9SXzAToGZAyJBaNE2lICVRY2/5ToAlC1CAsvD
+ LHinmxTEnSa/jOzx2X3U+IV7usyY/F9I3YTJZVYpKxR+ADcO1POafRN70qNEJFwVao
+ J99bCzvQC+1Tp4m4jE/O6Dtqda4fWueEzuXIGZcubJ14qJP1VDYMApINKtPMoolHS2
+ ISz+bsJSA8xEPQJMWkPWWdaIn1uZjlsN5fX6OJmIbc6IrSBkYyvNrnQ9vOc9PjuEO0
+ nBwmlPyWEfUUm7kxra4HbKvfD1e30obmDKzbriZ0g+71RMK5ofAG1VtaPzdZP3iC0O
+ 2NrhwdSxS3cjw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_104147_182386_584F3BD0 
-X-CRM114-Status: GOOD (  12.28  )
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20191105_104529_559050_5C59030B 
+X-CRM114-Status: UNSURE (   8.66  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.68 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.143 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,39 +89,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- alexandre.belloni@bootlin.com, daniel.lezcano@linaro.org,
- linux-kernel@vger.kernel.org, ludovic.desroches@microchip.com,
- tglx@linutronix.de, linux-arm-kernel@lists.infradead.org
+Cc: catalin.marinas@arm.com, will.deacon@arm.com,
+ Rich Wiley <rwiley@nvidia.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 04, 2019 at 05:10:03PM +0200, Claudiu Beznea wrote:
-> Add device tree bindings for PIT64B timer.
-> 
-> Cc: Rob Herring <robh@kernel.org>
-> Cc: Nicolas Ferre <nicolas.ferre@microchip.com>
-> Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
-> ---
-> 
-> Hi Rob, Nicolas,
-> 
-> You Reviewed-by/Acked-by v1 [1] of this patch but I didn't collect it in this
-> version since I removed the clock-frequency binding in this version. 
-> 
-> Thank you!
-> 
-> Change in v2:
-> - removed clock-frequency binding
-> 
-> [1] https://lore.kernel.org/lkml/1552580772-8499-1-git-send-email-claudiu.beznea@microchip.com/
-> 
->  Documentation/devicetree/bindings/arm/atmel-sysregs.txt | 6 ++++++
->  1 file changed, 6 insertions(+)
+NVIDIA Carmel CPUs don't implement ID_AA64PFR0_EL1.CSV3 but
+aren't susceptible to Meltdown, so add Carmel to kpti_safe_list[].
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Rich Wiley <rwiley@nvidia.com>
+---
+ arch/arm64/kernel/cpufeature.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index 9323bcc..2ec60eb 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -976,6 +976,7 @@ static bool unmap_kernel_at_el0(const struct arm64_cpu_capabilities *entry,
+ 		MIDR_ALL_VERSIONS(MIDR_CORTEX_A72),
+ 		MIDR_ALL_VERSIONS(MIDR_CORTEX_A73),
+ 		MIDR_ALL_VERSIONS(MIDR_HISI_TSV110),
++		MIDR_ALL_VERSIONS(MIDR_NVIDIA_CARMEL),
+ 		{ /* sentinel */ }
+ 	};
+ 	char const *str = "kpti command line option";
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
