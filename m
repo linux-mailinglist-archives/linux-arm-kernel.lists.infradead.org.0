@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B58C9EF889
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 10:22:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C58B8EF88B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 10:22:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OuuGLxZWU2ZnaOUT0PBbWFFh1z4nusk/tVcUHrYkHMw=; b=X6oNAjxy81xCaY
-	bT08w4Imp8ewQBZlnpjuU+kjs9mZr6Mt2piew/7JKSgARqSe/hu0QNAIe+zkBJZXieJUMEDMNfUI/
-	tlP+x0LHj52oYBkA0MheCFmK3aKDdLVBuzoln+o7Vzzb3h68MsatM51W8hsfjhAZFiZVsjDxHPasP
-	DnNMcdaTR/KHaHhvUBf45AUU2D14V1WGpu37N3B6NKJOswCiyfZ3ypoZnKZX+1LwnyVNIpo+qnSZc
-	PMc5FVi+R24WyFRfS+5Mdfq4l6oCQZYhKZUcDHnDcIa1gEVA3yoOxNydF2m8wheij5Tt6MdqsXO1S
-	XcB/r4EoksvnjhuBKqgA==;
+	List-Owner; bh=Fv7oazKjLSvlAEiqoU4SDwfWU0GFiey99nKCbgM0eHo=; b=eBgsz+lgeI/RI3
+	lTI+abFlUNHxzu+Dg+DYHhOeJUL8ObMKexjXurVH5GVqJfwQBRkcRWk2F84xSdKpjz8qqltx0DsMn
+	vRpOVK3/fnVSAJkZAelZ1mZkN1gtiGAHm5SiEnaMd/f5xktWe4NTGQ3UtFG4I5RHVpRUlAFsy44/o
+	xpZXcAaZKVvFbsxL2dWAnOoyZIdrSJ1FC9N7QEibDjPqlt3EzgMY6iDJnBeynbAGs4IfCm8qYk4w/
+	vAkfOsL2+5x9zJb3RZkijdLQ9QX68PPW3W5bQybmAtHHgrHQ5yzWj7yrmeL7+VyznW0VHe96n/T0m
+	0UJg98jerF/TE0uwdwww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRv26-0007ef-Qe; Tue, 05 Nov 2019 09:21:50 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1iRv2h-0007uV-Bc; Tue, 05 Nov 2019 09:22:27 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRv1z-0007df-5B
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 09:21:44 +0000
-Received: by mail-lj1-x243.google.com with SMTP id n5so9928468ljc.9
+ id 1iRv2a-0007u0-Hx
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 09:22:21 +0000
+Received: by mail-lf1-x144.google.com with SMTP id 195so14514294lfj.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 Nov 2019 01:21:41 -0800 (PST)
+ Tue, 05 Nov 2019 01:22:19 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=U/CqzVlG8zZAxxKu0vX1NdhVqqh2p9Uh91d/oE5bEMc=;
- b=cB/L6dgy3oPjI3dV+qGMCvc4MOdB5pQERdwKy0ik6L9roaBW6UIyW2VEtSjvxT9yC5
- sn48tazf1Tx/XEX0UzchEkwheBAraWYqFdbbBVS/CQQWWsmqt0Zi0mECdk9PRbeLD3gw
- 3PIs8WRvvJqRv4HAbYDqEkLcsHOfv7rJfVS5txO6KwIqN+rbja0ui/iLe3v3a0BH1IQY
- qnBmhU7rltn+IcsBboFu3T3puSPhwhyu/knnR7iAEvpqoGXcc4EPkZe54WJ+GTNGvypy
- NxYDE4Ox6omwzjNIQbrC7ZIGduIYLK2eG6n4vsDSUabJpjE9MLcFvS+U5K88rcs0DD2i
- yDSw==
+ :cc; bh=zT+1Y7p9/KJc9h5D2GRF7qfZtVnGufdHVpBg/W0NqHo=;
+ b=ZwkOtNt5VUl11C77Q+z56zLs2I+csPAQAsgRQjB47zGyNSCR0Kg6cRabic9UhhWEwA
+ N0Gv7FmAv/516sORohvg4vdXZFunZZarxm8ZdPsc50kbb31tvdjv4Vj6woz+w9YnntMz
+ B0Qdzkx08jMesl1R2NO8wOct84UjT0XGvNHWJGi52lgYp5wjPBFiJ8KiaSDJ4pEXZH2R
+ G05DJFV6PDy7slo60/TCchbTZvPcTuIwKkfMqfsyCPdSMf9a2ETL3CQLbPHez+AyIHdK
+ 3m4lBve1nyb78ScgbOCRuwcW/1kOcpLp8yP81uetBqFoJCgyMdTuJSsHrniPMAgAio+V
+ UALw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=U/CqzVlG8zZAxxKu0vX1NdhVqqh2p9Uh91d/oE5bEMc=;
- b=BU/fK6F7eWwh2F/9Rzob7xX431NuBCY2ETBBn5BxpF1KoaDzqQNbUvGjeo4K1VWrTh
- P9ELTxrHCxDCAySYDQdX9h8enwKRb19JUCrblvydp3WGj4qqubk4KIUgTf+WuR2Z8ohF
- pd36w+b+0LrvCdQJWhljMYi0SRmHHAnqFWD4oxq+FU2EWs/SMGvxd7pzP0y69kdptWdE
- eknhpNepeMFMOsfNjOTZ41EvMTOZanKToMxi54fdn+fJEbpMighS+BLEud6p/Hoe+35V
- 2GtDE3uHPx3HzM1Eh9a+JBdPV2ywVyCw9rUa8iI8umvWWvbZrfB4uJWr2fBZ6vM++6XO
- 2BqQ==
-X-Gm-Message-State: APjAAAWM6HzYEJ2JZN9CrMQwDGI8I/PPHvK/aAucNg73X+Zyn6tdIi4D
- Pou5CZaCCytm6A4Po6/F2wSAFyIBt4yKkISyQXgwGA==
-X-Google-Smtp-Source: APXvYqwmMv3t6J3okAPckGlL9lzAur03q2Mfx8rqE3VQcM3317qB2lKyitRE461c8i9EOJ6uFvuH5xh8sDJfPyofi9c=
-X-Received: by 2002:a2e:5c46:: with SMTP id q67mr21359472ljb.42.1572945700516; 
- Tue, 05 Nov 2019 01:21:40 -0800 (PST)
+ bh=zT+1Y7p9/KJc9h5D2GRF7qfZtVnGufdHVpBg/W0NqHo=;
+ b=mIDkGEQSQukfEb3N9fePGoCxrDjKcpHEBVj2HmfOeJeeciKlOlMGigKnVqRet7cdKa
+ nIovvKgrh1MrwGYsMJvWgezGD4BlgqLhURaCLXRP9jfog3+FAn8f+1KFUfuN7JR1S0a5
+ As2xOQzFfBu+zHbZuMDvBE3XgbXOs6wvS16qZTu5JTgD1juJdRZSXiVX+M/aCq55uF0x
+ Nh8mBF32OAKJSxsGFC8mSJTqxyYJSqtX2vZqfLiGg4TNVBc8hg98gRVkAysDc2bb0nsH
+ HZXhC/hSwL+0eLhVoAPL8yuThFvu8bIKSMIz5DSYIi36Gzllk1d9AoEzbC2dnfg5/KnF
+ oZrw==
+X-Gm-Message-State: APjAAAV0htICpDX5QuBX3mFDdsFlE9ct3vAPx/RyULxsrgasilqBmWkM
+ YehPnvXAK7J4WUig4wgval6Cn+xyRy8rBCOjwuXv+g==
+X-Google-Smtp-Source: APXvYqzpYAIITTHyBlX7CRUeDoZEPf4WEShwX/ix+K2/HWFa8VXeIGqJrHDlKgc52PfZ9txl+qufupLsU//qO5Q8CZQ=
+X-Received: by 2002:a19:6a0d:: with SMTP id u13mr11068219lfu.86.1572945738652; 
+ Tue, 05 Nov 2019 01:22:18 -0800 (PST)
 MIME-Version: 1.0
 References: <20191018154052.1276506-1-arnd@arndb.de>
- <20191018154201.1276638-22-arnd@arndb.de>
-In-Reply-To: <20191018154201.1276638-22-arnd@arndb.de>
+ <20191018154201.1276638-23-arnd@arndb.de>
+In-Reply-To: <20191018154201.1276638-23-arnd@arndb.de>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 5 Nov 2019 10:21:29 +0100
-Message-ID: <CACRpkdZT_3fV+u6aLk_w453XdgLF7KbQMzPB5ZJ4xd8V-LvoqA@mail.gmail.com>
-Subject: Re: [PATCH 22/46] ARM: pxa: eseries: use gpio lookup for audio
+Date: Tue, 5 Nov 2019 10:22:07 +0100
+Message-ID: <CACRpkdb8FQ8qqkSJic-7S5nA8c_fzNruYMrTC=dWwTridxygAg@mail.gmail.com>
+Subject: Re: [PATCH 23/46] ARM: pxa: z2: use gpio lookup for audio device
 To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_012143_202504_45D32632 
-X-CRM114-Status: GOOD (  11.90  )
+X-CRM114-CacheID: sfid-20191105_012220_590292_3A29725D 
+X-CRM114-Status: GOOD (  13.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -102,22 +102,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 18, 2019 at 5:42 PM Arnd Bergmann <arnd@arndb.de> wrote:
+On Fri, Oct 18, 2019 at 5:43 PM Arnd Bergmann <arnd@arndb.de> wrote:
 
-> The three eseries machines have very similar drivers for audio, all
-> using the mach/eseries-gpio.h header for finding the gpio numbers.
+> The audio device is allocated by the audio driver, and it uses a gpio
+> number from the mach/z2.h header file.
 >
-> Change these to use gpio descriptors to avoid the header file
-> dependency.
->
-> I convert the _OFF gpio numbers into GPIO_ACTIVE_LOW ones for
-> consistency here.
+> Change it to use a gpio lookup table for the device allocated by the
+> driver to keep the header file local to the machine.
 >
 > Cc: Mark Brown <broonie@kernel.org>
 > Cc: alsa-devel@alsa-project.org
 > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 
-This is consistent with the way I imagine it should be done so:
 Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 
 Yours,
