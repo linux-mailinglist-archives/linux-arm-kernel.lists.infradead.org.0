@@ -2,76 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92133EF159
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 00:45:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2637BEF198
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 01:02:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UUUTbSZzCRNg7sklzX2dQK0m2sUydlCA4JnAS5Og1V4=; b=URobjOCyg7ZNjS
-	j5ikPTDCDGOOEP59QKg/Nz794j2sMtO9R7ThNXf2Lq8FdAs0tgrH0pTRp10qnyHAFbD/Nynp9sMcz
-	Zx8MddUDompPe6VUg8Y259vt+eZXSQiCpQYkFk2IhSc6kGcmckCDwRK5YIHuCainQPVT/e7SfGGvF
-	/GGUQu7YeSR6JGRu3fOdKJAsQmuc7gI7xwX0s55FTufKmKBhQMhpe3Fq870xQfHUXH8UVyE9wrFil
-	PbFCOEwhAqwJnEstiaYEGBIHXQGlGPTA/Tjclo4duBNzFDx18TejKU89yCjeWDTggnJpmHeVE+LNK
-	pj78yVQEUalKoinCeokQ==;
+	List-Owner; bh=bxoKuOtsRQCRbzZTFceinTnWXmbJFBNkrtAVLChQflk=; b=Tqh9PmZVMVCxNY
+	ihPIrTY7qAf9ABAU4O0WIrBY8UW/QKFKKV1Ptcm27QJGDc8peGnsWHFvdT3bqfMOA7Um8fg0FM45E
+	uuFrQKR0x8R3X/AEiL8F2W2vpMvCeLrsK2s8My9KLZRqSKDPb7nxyx/c2xMaQvM1bThMx5CDTgMgE
+	Pd6bDWwpScHyFw+YrGfsoVeRLF6WsIlLbeT8Ms/eTMnTOMIkmSYAvBHdCWIOj/wmbrT1FvaWyLTeP
+	e4Sg7Vu0NVi1gdUQl2WS8hiUU9YxzU/9nJ4WXfaLwUE7eQyBiQ6Ac2YqqI6uz1FwOAe7bE/tcPRlZ
+	GkOImRN9s6+jA7odQOeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRm1s-0000Od-1r; Mon, 04 Nov 2019 23:45:00 +0000
-Received: from mail-ua1-x943.google.com ([2607:f8b0:4864:20::943])
+	id 1iRmIy-0007RN-Nu; Tue, 05 Nov 2019 00:02:40 +0000
+Received: from mail-ua1-x942.google.com ([2607:f8b0:4864:20::942])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRm1k-0000Nn-EE
- for linux-arm-kernel@lists.infradead.org; Mon, 04 Nov 2019 23:44:53 +0000
-Received: by mail-ua1-x943.google.com with SMTP id z9so1805277uan.3
+ id 1iRmIr-0007Ql-4V
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 00:02:34 +0000
+Received: by mail-ua1-x942.google.com with SMTP id s25so1192092uap.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 Nov 2019 15:44:51 -0800 (PST)
+ Mon, 04 Nov 2019 16:02:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=SpNwJfSJO9MidRCrn2p9uupIwuhjvEPSgYuh9TBYZuw=;
- b=XWr7kryZXstmsXgYE4dBJ4NrnDur3s/AC0seExuiGF6z4UGQCwWfIPFNeY7JeVwPM3
- wnP1G5A/K76IWU2DyV/IUlCtYDCgPO0n/bDVtTP4pu+zHCoH+fei6dyO2OcLB2gsC6W7
- yHM2c0/FUmsEcEYZY0y9ta70pnWbez+C+rMSFS+aiM6DHbB5OA98h3MrtmOeV6q9EDtK
- bw1zfaHUujqN+zHGVRnnbiam+tcW3d2rc3/Pvust522b4CCrQ9v9kAdVmg3Axk3wD37y
- xqCPcphfjtbZ+wkJQy35r/dA4lS8knkpiqdmkjVq1MbYxp8Jbw1P5SRRjv/N4BJhioPs
- zRZg==
+ :cc; bh=wgpWA2jEqJlvczDoO9RtXFfmusK0XNDziQd8UVfs11k=;
+ b=A/SrpqmEvJhiTvT76G/tSSPqak6qEdOAyAD0F4wbDPWu94/+f0jv3efhmZsUUXe6qq
+ CybWZB2b/qOXaj/r1Nbyes7WY8VgUjIelgdCzOnhxzWtIMGBD3T63FRfkZ2BE6eRGZIr
+ i+vb47qqghQKbHOImu5dkJFEY1uT2BH1eHjRTifgfw5MuC7sgilYydbBLxES9g+KuSIL
+ L1WK07dG7pk4sigbooRRP48Y+8xvQtnMOXhJZ3I7J9ghmadqrbCv75YuBU7BR9vJzSEx
+ yswAlaOaltIuwCoBGp+vRv4vjVT08L2K0P3ry0DuYv+zs81b3l/ZkUjrhpODm7ydYXfj
+ xzig==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=SpNwJfSJO9MidRCrn2p9uupIwuhjvEPSgYuh9TBYZuw=;
- b=nemoOrjuqmts+chzdp0hfyOqmYOMLnWKxLVcExiImslnyxxyIcmEMpKdw9s3vDm3Uv
- SzgvY7kn/l9CeED3Qvr+mQ/qnwwqFYSyV9DZW+1iPADMEEbOSFkEvj+fEtWzwMqsPT2L
- 5AEOziSlq01ay9gjzqdFICUZSG4V8lu4ooxrfYdqtRPO3+mSkvvxGUmjbt1yQMbVbZRA
- eYmokh8+xltWNuqog6iUbV1oDawA2DePcqN0txASR4rSfmwrFNjBOPwgzvU5+lzYPIqb
- oGux/BeHzL0xVqDym9OE8Ba9ZbAYit7DkCkZj20YBzPPWZF589dwqnW1jw9ZoS7QWBX2
- h0sg==
-X-Gm-Message-State: APjAAAX2EOcHq6uT0pcxnpiikUXnCIF0Y/RjbuUMJJBl+x7GmJJr9OqM
- NwK9OMd8VDflzE3aiwwUP+YskPBEV5++W94YFt24og==
-X-Google-Smtp-Source: APXvYqwMrHXnmCbhr/Nl5pMJrYHuxKP6Lu2UQKV7ItSK55vLCW1x6A4Use4SMcLe4G85I9Dvt99c2soxGNjz4r8rNRQ=
-X-Received: by 2002:ab0:4587:: with SMTP id u7mr3850575uau.67.1572911090684;
- Mon, 04 Nov 2019 15:44:50 -0800 (PST)
+ bh=wgpWA2jEqJlvczDoO9RtXFfmusK0XNDziQd8UVfs11k=;
+ b=bYIW0OfKTk0fskKgHO1/t6XsgX2XwhFoN7ct4VINFYkZdtFZPcqbOt81w3exw0y2Bo
+ 7NEBed+7OqSIGIMN1z7h5a0q2V58btQBYaJHU+kBet+1bWra2ho9YL3SCOt+e7ERRRfd
+ kPBxqMvrxdIjS7zhYHOMXGDjbPg/AeM4mo7FKAqKVc7M/2zLRKiiuqqsWBwEo4soaxmo
+ bt79Z19NKYTQyPnUeQ0kzkpTbXBNqVeUyB466A4dxnb4iAO1QFjUDIP5A5SXIH7yJxNz
+ RKcDu/zEzYk8+oU1qfyvEn9ly6Cr27jIQu2pH1HdaG6RIr20/5cfH87D9BamCOlQFcYA
+ D18g==
+X-Gm-Message-State: APjAAAVJDiP1bk3E+jnUsSVHqBPrErZTCPXk2vS13MGgYMZSA+inJ/sC
+ v/jDI9/7XLZfy8wgQAbZyInoQcvgxpVRP2UtzP3+eQ==
+X-Google-Smtp-Source: APXvYqxDpgmQ9n/cnDstvJ7riCGFej5xZ9eZp7xC3KSVKRHhU1yTfVmSiCTnVQNCB9cZ2N32DJmU1C4HUXLbveOO274=
+X-Received: by 2002:a9f:3772:: with SMTP id a47mr13452102uae.53.1572912151471; 
+ Mon, 04 Nov 2019 16:02:31 -0800 (PST)
 MIME-Version: 1.0
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20191101221150.116536-1-samitolvanen@google.com>
- <20191101221150.116536-12-samitolvanen@google.com>
- <20191104171132.GB2024@lakrids.cambridge.arm.com>
-In-Reply-To: <20191104171132.GB2024@lakrids.cambridge.arm.com>
+ <20191101221150.116536-14-samitolvanen@google.com>
+ <02c56a5273f94e9d832182f1b3cb5097@www.loen.fr>
+ <CABCJKucVON6uUMH6hVP7RODqH8u63AP3SgTCBWirrS30yDOmdA@mail.gmail.com>
+ <CAKwvOdkDbX4zLChH_DKrnOah1sJjTA-e3uZOXUP6nUs-EaJreg@mail.gmail.com>
+In-Reply-To: <CAKwvOdkDbX4zLChH_DKrnOah1sJjTA-e3uZOXUP6nUs-EaJreg@mail.gmail.com>
 From: Sami Tolvanen <samitolvanen@google.com>
-Date: Mon, 4 Nov 2019 15:44:39 -0800
-Message-ID: <CABCJKufDnLjP9vA-wSW0gSY05Cbr=NOpJ-WCh-bdj2ZNq7VNXw@mail.gmail.com>
-Subject: Re: [PATCH v4 11/17] arm64: disable function graph tracing with SCS
-To: Mark Rutland <mark.rutland@arm.com>
+Date: Mon, 4 Nov 2019 16:02:16 -0800
+Message-ID: <CABCJKueN+Op8xm+L3aSFgCL9BLC8b-WHj3oBYhf1W=OcX2aqCg@mail.gmail.com>
+Subject: Re: [PATCH v4 13/17] arm64: preserve x18 when CPU is suspended
+To: Nick Desaulniers <ndesaulniers@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_154452_504258_587B0092 
-X-CRM114-Status: GOOD (  11.53  )
+X-CRM114-CacheID: sfid-20191104_160233_398340_84680A23 
+X-CRM114-Status: GOOD (  15.06  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:943 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:942 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
@@ -99,38 +101,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
  Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
- Nick Desaulniers <ndesaulniers@google.com>,
- LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>, Marc Zyngier <maz@kernel.org>,
+ Jann Horn <jannh@google.com>, LKML <linux-kernel@vger.kernel.org>,
+ Steven Rostedt <rostedt@goodmis.org>,
  Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
  clang-built-linux <clang-built-linux@googlegroups.com>,
- Masami Hiramatsu <mhiramat@kernel.org>, Marc Zyngier <maz@kernel.org>,
+ Masami Hiramatsu <mhiramat@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
  Kernel Hardening <kernel-hardening@lists.openwall.com>,
  Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>,
+ Dave Martin <dave.martin@arm.com>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 4, 2019 at 9:11 AM Mark Rutland <mark.rutland@arm.com> wrote:
-> Can you please elaborate on _how_ this is incompatible in the commit
-> message?
+On Mon, Nov 4, 2019 at 1:59 PM Nick Desaulniers <ndesaulniers@google.com> wrote:
 >
-> For example, it's not clear to me if you mean that's functionally
-> incompatible, or if you're trying to remove return-altering gadgets.
+> On Mon, Nov 4, 2019 at 1:38 PM Sami Tolvanen <samitolvanen@google.com> wrote:
+> >
+> > On Mon, Nov 4, 2019 at 5:20 AM Marc Zyngier <maz@kernel.org> wrote:
+> > > >  ENTRY(cpu_do_suspend)
+> > > >       mrs     x2, tpidr_el0
+> > > > @@ -73,6 +75,9 @@ alternative_endif
+> > > >       stp     x8, x9, [x0, #48]
+> > > >       stp     x10, x11, [x0, #64]
+> > > >       stp     x12, x13, [x0, #80]
+> > > > +#ifdef CONFIG_SHADOW_CALL_STACK
+> > > > +     str     x18, [x0, #96]
+> > > > +#endif
+> > >
+> > > Do we need the #ifdefery here? We didn't add that to the KVM path,
+> > > and I'd feel better having a single behaviour, specially when
+> > > NR_CTX_REGS is unconditionally sized to hold 13 regs.
+> >
+> > I'm fine with dropping the ifdefs here in v5 unless someone objects to this.
 >
-> If there's a functional incompatibility, please spell that out a bit
-> more clearly. Likewise if this is about minimizing the set of places
-> that can mess with control-flow outside of usual function conventions.
+> Oh, yeah I guess it would be good to be consistent.  Rather than drop
+> the ifdefs, would you (Marc) be ok with conditionally setting
+> NR_CTX_REGS based on CONFIG_SHADOW_CALL_STACK, and doing so in KVM?
+> (So 3 ifdefs, rather than 0)?
+>
+> Without any conditionals or comments, it's not clear why x18 is being
+> saved and restored (unless git blame survives, or a comment is added
+> in place of the ifdefs in v6).
 
-Sure, I'll add a better description in v5. In this case, the return
-address is modified in the kernel stack, which means the changes are
-ignored with SCS.
+True. Clearing the sleep state buffer in cpu_do_resume is also
+pointless without CONFIG_SHADOW_CALL_STACK, so if the ifdefs are
+removed, some kind of an explanation is needed there.
 
 Sami
 
