@@ -2,118 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 762FFF05EE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 20:26:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2AF6AF0675
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 20:55:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=najExg/VdD9HBceZsQ1pCazly2Af4XaP9tSQVDJl2is=; b=gJ9l+eLLtiaumv
-	RGH6VDG0Lc/Soi4EqabzeBREYQCZzjYb0kzuXlBTvcZu0hDRcXCf5c7h7ridQWL0q5pW+uft1Gvs4
-	d4xltrOgevrLcfcil4mpBW213ehvnNRH8atjsry/xIMkjVcFVRiqAto1d6hXmeGLMlLk86g49arLU
-	w6k3BWcuhil1nREysXNr3HS7m/VcDIYM6NuzNT4KTRB5HEEtZcyQpv7NLNuui4dtKxn/7dinRMS4m
-	dZbrjuw59Vv+g/ZxK5RE85TrlIVHv9uvfxR2Z8WycsqQARoStgvIUdHzsUMcOm0wXOKvZsjUq3bb7
-	VeT00p0Zpuv1SiS/qDog==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ky6nhvK/7H2JVp4d9yzHKQSsFyFh2jjmRpNhmL58Pms=; b=uUzXyLpaBcr7Ej
+	K7r8nYQvA3GPjv61KpexsBSKCSbBOVTmJvrqQFvKEhuuRz4N78W5iv8kFf+iD9f0Hhi8ttxyVVOpD
+	Z/iLQaNpNHIhAL1o7nWv22SGrUi1k92+f72qnN6A+s/RCXJrss9gRtSXaUdY6RL4eaJHtO9Qs3EOo
+	Fi66ZtdzKJm6avNXqwBVY83B7FiZ8dxU34MWNU0v6KjApgY44xlBzI3BvCcJVkAoXFq3ci4ejjaX+
+	XtqI7NLwcMAJy36AISh3s/iFM7JozJPLRwOXm1fgZ15tmebEAvod18/ElX51NKbiyBcK2YPAiyGTp
+	Z66/5OZo34rSLVK7h+vQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS4Sz-0004G5-P6; Tue, 05 Nov 2019 19:26:13 +0000
-Received: from mail-eopbgr10051.outbound.protection.outlook.com ([40.107.1.51]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS4Sp-0004EQ-Om
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 19:26:05 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=G8GJcIbZ0JLnP3fHrgMIQhYTTaOukFilNoKhbPYmZkFe0ynm+Nse/AHh1UE+x/Vv3zVw61XAEVrb0zOpYT5QbkGmaFk10RpWn96cG4332qDpHzQ6k/ALD8XDoxV7ssal+G3QHCHcO9Bm9sWnWkIk64I9jQ4K8i0s+Gc2DIk5A4vZDI5AS2tVuMnDR+ivjnqC35T7zAgQvofXFZSxFepNRFcoOpdvKIkVFxX/ILE+u5CeyBsPg/vsuqyLlysbPOgQBXehcNuLMLMy9YKPyuSVF02wVV2UCaxIIYfpkEmXO64aFBZZ+oN6toK4ujavqvhU948Kzq+8tXy5/EhoPOueDw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Ddzith1KCgIQvGUdk2FllzeY1o8XmIkimAvZ7eZbiYs=;
- b=COAAhHsclhEZuBQzouJ0PXBlvbbzqQakeqDC9TmimKaXFSx9Zx+dLesIrsAt+mqVeQRdkGPMgKO99v3DHG36cByPtAHs9AeRibYTWwB+U+bhmZAKbQUb5AsvH1SLOfnxPqefXh0/HpizoivvD+PcIYnyB8mcwAYlWepqEIqHqWaOjaerl+v7GPqt+cCEqEKuJKrpGvcR4O3M2DL9cRi8SE8kgfptrIMxi4VAK0Js3EGcvJp66JadcsBRxROlkyVxPTnTNvLdmTJQgM9N+nR6qU/7HP//Q80T33D1lnDW2i91powk8GORqMqE7Ky2PtF+qX0bjMlAEGVqfPCXeC8Irw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Ddzith1KCgIQvGUdk2FllzeY1o8XmIkimAvZ7eZbiYs=;
- b=TiRRiiKd3PMgcKZa8aTGsNLsH1rEnm8rKWzx36QC0XlBJAq80e3nRDeUuSZfUmMeDBzCp2QOYkeRzja5xR3T1/o6fpBBIWkRi5A5dyk/HQW7/QGTYYefHVmzftqVOfmYvgwT/PFNnAlJwpfwMrHA4QdMXAyzckr5+e4QEZneZPE=
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
- VI1PR04MB5759.eurprd04.prod.outlook.com (20.178.125.151) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2408.24; Tue, 5 Nov 2019 19:25:57 +0000
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::dd0c:72dc:e462:16b3]) by VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::dd0c:72dc:e462:16b3%5]) with mapi id 15.20.2408.024; Tue, 5 Nov 2019
- 19:25:57 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Rob Herring <robh@kernel.org>, MyungJoo Ham <myungjoo.ham@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>, Chanwoo Choi
- <cw00.choi@samsung.com>
-Subject: Re: [PATCH v3 3/6] dt-bindings: devfreq: Add bindings for imx ddr
- controller
-Thread-Topic: [PATCH v3 3/6] dt-bindings: devfreq: Add bindings for imx ddr
- controller
-Thread-Index: AQHVkDU6emQ0aN+uuUOlCrShp6WAog==
-Date: Tue, 5 Nov 2019 19:25:57 +0000
-Message-ID: <VI1PR04MB7023F375AEDC4549FA12247FEE7E0@VI1PR04MB7023.eurprd04.prod.outlook.com>
-References: <cover.1572558427.git.leonard.crestez@nxp.com>
- <b9a87c69eb603622303add4f0c02dd4c1262462a.1572558427.git.leonard.crestez@nxp.com>
- <20191104222126.GB5218@bogus>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [89.37.124.34]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 7825f8c0-8c2c-4ef3-babd-08d76225fc19
-x-ms-traffictypediagnostic: VI1PR04MB5759:|VI1PR04MB5759:
-x-ms-exchange-purlcount: 2
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR04MB5759EF7E2A85C3636D71C34CEE7E0@VI1PR04MB5759.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 0212BDE3BE
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(376002)(366004)(136003)(346002)(396003)(189003)(199004)(476003)(6246003)(9686003)(256004)(102836004)(81156014)(8676002)(76176011)(446003)(66556008)(25786009)(3846002)(71200400001)(6116002)(66476007)(6306002)(6436002)(71190400001)(14454004)(66946007)(45080400002)(76116006)(66446008)(316002)(4326008)(478600001)(966005)(7696005)(2906002)(186003)(6506007)(110136005)(86362001)(26005)(7736002)(8936002)(305945005)(64756008)(55016002)(7416002)(91956017)(486006)(99286004)(66066001)(5660300002)(44832011)(33656002)(229853002)(52536014)(74316002)(81166006)(54906003)(53546011);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5759;
- H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: xOa7ZzTL1I5s6UPvJLkyJ9akHpwqlqN4jM8FQgWliUnzpUJo5UaZ1eQ4ftkyq/7Vrm5+8YCLdEY6kEcnm0Khr6du5HDqMWKWwLwFPf1GoqDEiGkBeGyvsGlMyG6Jes4ta/ggAQqyMvRZ4gg7N7BjhA6Mj25Fl43cNibbJG/7CD1KMZNKUYWdd4aUaJfpTLrVbrPTrVnjOrwlu84T3N0n1sV2lqzjqoXPStTkJTw52sQ1AT8X/0Gjwqzqlon0V+FTmSTfE5+NTQTLP3HdEtsRXzFEoMGkfA5T52DuiWahwAp2eGhEhWJk4Uyg6nwEZgR88FTGPnRytcFHe61MWA+pae/F0yVTwAWJIFoiS9mP7m/Eqhiv3EfoLp9Y9KuiZf55BYaywtNGeO0nrL53xm9lA2uK2ulh5AAmNeE85n0eUVWMVIperKlprNPzcAF9bDHcNblRfKjS2VtoSJ7IQBtY49h7l2UcWX579SEN2F2drxM=
+	id 1iS4vX-0001j0-Bc; Tue, 05 Nov 2019 19:55:43 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iS4uq-00007E-T0; Tue, 05 Nov 2019 19:55:05 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8E0787BB;
+ Tue,  5 Nov 2019 11:54:56 -0800 (PST)
+Received: from [192.168.225.149] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9E7CA3FA35;
+ Mon,  4 Nov 2019 16:29:58 -0800 (PST)
+Subject: Re: [PATCH V8] mm/debug: Add tests validating architecture page table
+ helpers
+To: linux-mm@kvack.org
+References: <1572240562-23630-1-git-send-email-anshuman.khandual@arm.com>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <18cdce9e-2107-04b3-f58f-b1e932265965@arm.com>
+Date: Tue, 5 Nov 2019 06:00:31 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7825f8c0-8c2c-4ef3-babd-08d76225fc19
-X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Nov 2019 19:25:57.7010 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: YXe8EaZx92W5tqBZ1CuAbY9i5q0W5GALgOEt4d1n23gxr0hJlzHlYXUrfN1tDkhAqVTMYFzjODj5vW2X+I0AjA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5759
+In-Reply-To: <1572240562-23630-1-git-send-email-anshuman.khandual@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_112603_895035_919E33AD 
-X-CRM114-Status: GOOD (  14.44  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191105_115501_019399_9372295A 
+X-CRM114-Status: GOOD (  22.10  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.1.51 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -125,140 +61,145 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- =?iso-8859-2?Q?Artur_=A6wigo=F1?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
- Alexandre Bailon <abailon@baylibre.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, Matthias Kaehlcke <mka@chromium.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- Martin Kepplinger <martink@posteo.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Stephen Boyd <sboyd@kernel.org>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Georgi Djakov <georgi.djakov@linaro.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
+ James Hogan <jhogan@kernel.org>, Heiko Carstens <heiko.carstens@de.ibm.com>,
+ Michal Hocko <mhocko@kernel.org>, Dave Hansen <dave.hansen@intel.com>,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
+ Jason Gunthorpe <jgg@ziepe.ca>, Michael Ellerman <mpe@ellerman.id.au>,
+ x86@kernel.org, Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Ingo Molnar <mingo@kernel.org>, Kees Cook <keescook@chromium.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
+ Christophe Leroy <christophe.leroy@c-s.fr>,
+ Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
+ Vineet Gupta <vgupta@synopsys.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 05.11.2019 00:21, Rob Herring wrote:
-> On Thu, Oct 31, 2019 at 11:50:24PM +0200, Leonard Crestez wrote:
->> Add devicetree bindings for the i.MX DDR Controller on imx8m series
->> chips. It supports dynamic frequency switching between multiple data
->> rates and this is exposed to Linux via the devfreq subsystem.
->>
->> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
->> ---
->>   .../devicetree/bindings/devfreq/imx-ddrc.yaml | 60 +++++++++++++++++++
+On 10/28/2019 10:59 AM, Anshuman Khandual wrote:
+> This adds tests which will validate architecture page table helpers and
+> other accessors in their compliance with expected generic MM semantics.
+> This will help various architectures in validating changes to existing
+> page table helpers or addition of new ones.
 > 
-> .../bindings/memory-controllers/
-
-Okay, but I'm not sure about the rules here. Usually there is a 1:1 
-mapping between subsystems and bindings directory but I guess devfreq is 
-odd since it's not really a physical class of device.
-
-I saw there is also a drivers/memory and there is already a 
-devfreq-using driver in there (EXYNOS5422_DMC).
-
-It's not clear if my driver fits in there; as far as I can see the only 
-"core" functionality in drivers/memory is parsing DDR timings from DTS 
-but for imx8m this is all controlled in firmware.
-
->>   1 file changed, 60 insertions(+)
->>   create mode 100644 Documentation/devicetree/bindings/devfreq/imx-ddrc.yaml
->>
->> diff --git a/Documentation/devicetree/bindings/devfreq/imx-ddrc.yaml b/Documentation/devicetree/bindings/devfreq/imx-ddrc.yaml
->> new file mode 100644
->> index 000000000000..31db204e6845
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/devfreq/imx-ddrc.yaml
->> @@ -0,0 +1,60 @@
->> +# SPDX-License-Identifier: GPL-2.0
+> This test covers basic page table entry transformations including but not
+> limited to old, young, dirty, clean, write, write protect etc at various
+> level along with populating intermediate entries with next page table page
+> and validating them.
 > 
-> For new bindings:
+> Test page table pages are allocated from system memory with required size
+> and alignments. The mapped pfns at page table levels are derived from a
+> real pfn representing a valid kernel text symbol. This test gets called
+> right after page_alloc_init_late().
 > 
-> # SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> This gets build and run when CONFIG_DEBUG_VM_PGTABLE is selected along with
+> CONFIG_VM_DEBUG. Architectures willing to subscribe this test also need to
+> select CONFIG_ARCH_HAS_DEBUG_VM_PGTABLE which for now is limited to x86 and
+> arm64. Going forward, other architectures too can enable this after fixing
+> build or runtime problems (if any) with their page table helpers.
 > 
->> +%YAML 1.2
->> +---
->> +$id: https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fdevicetree.org%2Fschemas%2Fdevfreq%2Fimx-devfreq.yaml%23&amp;data=02%7C01%7Cleonard.crestez%40nxp.com%7Cba47e72161764d5a969a08d761755736%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C1%7C637085028918247356&amp;sdata=2DjKgyATOPu7qhzpOCfRrmUM0%2FSAQrV9R7AxZxib8gk%3D&amp;reserved=0
+> Folks interested in making sure that a given platform's page table helpers
+> conform to expected generic MM semantics should enable the above config
+> which will just trigger this test during boot. Any non conformity here will
+> be reported as an warning which would need to be fixed. This test will help
+> catch any changes to the agreed upon semantics expected from generic MM and
+> enable platforms to accommodate it thereafter.
 > 
-> Run 'make dt_binding_check'. This will fail as the filename doesn't
-> match.
+> Cc: Andrew Morton <akpm@linux-foundation.org>
+> Cc: Vlastimil Babka <vbabka@suse.cz>
+> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> Cc: Thomas Gleixner <tglx@linutronix.de>
+> Cc: Mike Rapoport <rppt@linux.vnet.ibm.com>
+> Cc: Jason Gunthorpe <jgg@ziepe.ca>
+> Cc: Dan Williams <dan.j.williams@intel.com>
+> Cc: Peter Zijlstra <peterz@infradead.org>
+> Cc: Michal Hocko <mhocko@kernel.org>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: Mark Brown <broonie@kernel.org>
+> Cc: Steven Price <Steven.Price@arm.com>
+> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
+> Cc: Kees Cook <keescook@chromium.org>
+> Cc: Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>
+> Cc: Matthew Wilcox <willy@infradead.org>
+> Cc: Sri Krishna chowdary <schowdary@nvidia.com>
+> Cc: Dave Hansen <dave.hansen@intel.com>
+> Cc: Russell King - ARM Linux <linux@armlinux.org.uk>
+> Cc: Michael Ellerman <mpe@ellerman.id.au>
+> Cc: Paul Mackerras <paulus@samba.org>
+> Cc: Martin Schwidefsky <schwidefsky@de.ibm.com>
+> Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
+> Cc: "David S. Miller" <davem@davemloft.net>
+> Cc: Vineet Gupta <vgupta@synopsys.com>
+> Cc: James Hogan <jhogan@kernel.org>
+> Cc: Paul Burton <paul.burton@mips.com>
+> Cc: Ralf Baechle <ralf@linux-mips.org>
+> Cc: Kirill A. Shutemov <kirill@shutemov.name>
+> Cc: Gerald Schaefer <gerald.schaefer@de.ibm.com>
+> Cc: Christophe Leroy <christophe.leroy@c-s.fr>
+> Cc: Ingo Molnar <mingo@kernel.org>
+> Cc: linux-snps-arc@lists.infradead.org
+> Cc: linux-mips@vger.kernel.org
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-ia64@vger.kernel.org
+> Cc: linuxppc-dev@lists.ozlabs.org
+> Cc: linux-s390@vger.kernel.org
+> Cc: linux-sh@vger.kernel.org
+> Cc: sparclinux@vger.kernel.org
+> Cc: x86@kernel.org
+> Cc: linux-kernel@vger.kernel.org
 > 
->> +$schema: https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fdevicetree.org%2Fmeta-schemas%2Fcore.yaml%23&amp;data=02%7C01%7Cleonard.crestez%40nxp.com%7Cba47e72161764d5a969a08d761755736%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C1%7C637085028918247356&amp;sdata=EbyVK2ZF6Z22vE%2F4LfIVv0S1LoMe7%2BxhM43H1i8nxtE%3D&amp;reserved=0
->> +
->> +title: i.MX DDR Controller
+> Tested-by: Christophe Leroy <christophe.leroy@c-s.fr>		#PPC32
+> Suggested-by: Catalin Marinas <catalin.marinas@arm.com>
+> Signed-off-by: Andrew Morton <akpm@linux-foundation.org>
+> Signed-off-by: Christophe Leroy <christophe.leroy@c-s.fr>
+> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+> ---
 > 
-> Perhaps i.MX8x as it's not all i.MX chips. And the filename too?
+> This adds a test validation for architecture exported page table helpers.
+> Patch adds basic transformation tests at various levels of the page table.
+> 
+> This test was originally suggested by Catalin during arm64 THP migration
+> RFC discussion earlier. Going forward it can include more specific tests
+> with respect to various generic MM functions like THP, HugeTLB etc and
+> platform specific tests.
+> 
+> https://lore.kernel.org/linux-mm/20190628102003.GA56463@arrakis.emea.arm.com/
+> 
+> Needs to be applied on linux-next (next-20191025).
+> 
+> Changes in V8:
+> 
+> - Enabled ARCH_HAS_DEBUG_VM_PGTABLE on PPC32 platform per Christophe
+> - Updated feature documentation as DEBUG_VM_PGTABLE is now enabled on PPC32 platform
+> - Moved ARCH_HAS_DEBUG_VM_PGTABLE earlier to indent it with DEBUG_VM per Christophe
+> - Added an information message in debug_vm_pgtable() per Christophe
+> - Dropped random_vaddr boundary condition checks per Christophe and Qian
+> - Replaced virt_addr_valid() check with pfn_valid() check in debug_vm_pgtable()
+> - Slightly changed pr_fmt(fmt) information
+Hello Andrew,
 
-Ok, will rename to imx8m-ddrc since it's not even for all imx8.
+Just wondering if this version looks okay or is there anything else which still
+needs to be accommodated here first, before this test can be considered for merging ?
+Thank you.
 
->> +
->> +maintainers:
->> +  - Leonard Crestez <leonard.crestez@nxp.com>
->> +
->> +properties:
->> +  compatible:
->> +    items:
->> +      - enum:
->> +        - fsl,imx8mn-ddrc
->> +        - fsl,imx8mm-ddrc
->> +        - fsl,imx8mq-ddrc
->> +      - const: fsl,imx8m-ddrc
->> +
->> +  reg:
->> +    maxItems: 1
->> +
->> +  clocks:
->> +    maxItems: 4
->> +
->> +  clock-names:
->> +    items:
->> +      - const: dram_core
->> +      - const: dram_pll
->> +      - const: dram_alt
->> +      - const: dram_apb
-> 
-> Drop 'dram_'
-
-OK
-
->> +
->> +  operating-points-v2: true
->> +
->> +  devfreq-events:
->> +    description: Phandle of PMU node
->> +    $ref: "/schemas/types.yaml#/definitions/phandle"
->> +
->> +required:
->> +  - reg
->> +  - compatible
->> +  - clocks
->> +  - clock-names
->> +
->> +additionalProperties: false
->> +
->> +examples:
->> +  - |
->> +    #include <dt-bindings/clock/imx8mm-clock.h>
->> +    ddrc: dram-controller@3d400000 {
->> +        compatible = "fsl,imx8mm-ddrc", "fsl,imx8m-ddrc";
->> +        reg = <0x3d400000 0x400000>;
->> +        clock-names = "dram_core", "dram_pll", "dram_alt", "dram_apb";
->> +        clocks = <&clk IMX8MM_CLK_DRAM_CORE>,
->> +                 <&clk IMX8MM_DRAM_PLL>,
->> +                 <&clk IMX8MM_CLK_DRAM_ALT>,
->> +                 <&clk IMX8MM_CLK_DRAM_APB>;
->> +        operating-points-v2 = <&ddrc_opp_table>;
->> +    };
+- Anshuman
 
 _______________________________________________
 linux-arm-kernel mailing list
