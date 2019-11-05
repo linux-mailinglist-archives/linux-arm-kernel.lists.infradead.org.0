@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 250F3EF80E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 10:08:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64861EF81D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 10:09:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T9XDBVmcbK2DtmpeEN6VBAEfFEFvtqH83JrNjBLbGrY=; b=ua8s1uKki23YF0
-	w1uPfd4shCdPaeSlrCyus2n2+xnpd+3Y4KUCT8c7gE7JXkg4sZZvc0vG+oK/hqMZTrWO2wxDy4rgD
-	yDB91xKIuwcPQTXDiCHL0dHqCO1qApN/uvO8WxFlfDfujutzhz9vetGyx7aeqxfpOwNAjB+VFCms3
-	lNNLOBCX+ltD6wFw2QwjQZDmvopohVcTmjmnkbKujTlSXBnmNpjAQjTDw13D4aYUB5E34vPGLogEX
-	HKloL+vDqjb01qYg/NWkGYS3kpQMovNVJc1UjrgKuyz4uz4cmqOY9oCBMc38+4Eog9iH1cotmD3A8
-	zWGBGRc3+gf396HO8Cqg==;
+	List-Owner; bh=3e0ZHvU2/YvdqdSUuQ10Y4P+rtrM3zXrnH/wKFVDsJc=; b=nZBB3tOeHKwUKB
+	PdGBXLBLa8fw7Shn3RHB+2bO1IWAFMxTgoqSPXPbKFMpuIWYeg01A4/VxBMM6zjOeYt28adXNFwGW
+	Tf1WSjlajLwIzMrtyFQPVknc2HdFe794KhZh1d3dXSv0Ljjm/JDTGT/GO0p+9EhDr77a6xPszm/Jd
+	Brg0lQGbNDZXPIY1Zk8uDt0PhpMonfH3L1m/iXMijNhWyunHkWrtWitrgsMIhIqEbtBzqKxOLjJOM
+	BbOZ1EREz8rpt7AmLo+xsypx8Szwcc6z4mVYPOnIpvnOzyfw/I6Kcb+jUrB48WCaNfEs5LmLK+fal
+	QmyCYCmJOfwgPNfX2bTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRupX-0001A1-AQ; Tue, 05 Nov 2019 09:08:51 +0000
-Received: from mout-p-201.mailbox.org ([80.241.56.171])
+	id 1iRupo-0001SJ-ED; Tue, 05 Nov 2019 09:09:08 +0000
+Received: from mout-p-101.mailbox.org ([80.241.56.151])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRupD-0000yG-HE
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 09:08:33 +0000
+ id 1iRupY-0001Lf-3u
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 09:08:57 +0000
 Received: from smtp2.mailbox.org (smtp2.mailbox.org
  [IPv6:2001:67c:2050:105:465:1:2:0])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mout-p-201.mailbox.org (Postfix) with ESMTPS id 476kNZ1fKKzQlBB;
- Tue,  5 Nov 2019 10:08:30 +0100 (CET)
+ by mout-p-101.mailbox.org (Postfix) with ESMTPS id 476kNy2PVPzKmfb;
+ Tue,  5 Nov 2019 10:08:50 +0100 (CET)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
 Received: from smtp2.mailbox.org ([80.241.60.241])
- by spamfilter05.heinlein-hosting.de (spamfilter05.heinlein-hosting.de
- [80.241.56.123]) (amavisd-new, port 10030)
- with ESMTP id XFEh1KaOuye9; Tue,  5 Nov 2019 10:08:24 +0100 (CET)
+ by gerste.heinlein-support.de (gerste.heinlein-support.de [91.198.250.173])
+ (amavisd-new, port 10030)
+ with ESMTP id 3l4xZapOJhKq; Tue,  5 Nov 2019 10:08:43 +0100 (CET)
 From: Aleksa Sarai <cyphar@cyphar.com>
 To: Al Viro <viro@zeniv.linux.org.uk>, Jeff Layton <jlayton@kernel.org>,
  "J. Bruce Fields" <bfields@fieldses.org>, Arnd Bergmann <arnd@arndb.de>,
  David Howells <dhowells@redhat.com>, Shuah Khan <shuah@kernel.org>,
  Shuah Khan <skhan@linuxfoundation.org>, Ingo Molnar <mingo@redhat.com>,
  Peter Zijlstra <peterz@infradead.org>
-Subject: [PATCH v15 5/9] namei: LOOKUP_IN_ROOT: chroot-like scoped resolution
-Date: Tue,  5 Nov 2019 20:05:49 +1100
-Message-Id: <20191105090553.6350-6-cyphar@cyphar.com>
+Subject: [PATCH v15 6/9] namei: LOOKUP_{IN_ROOT,
+ BENEATH}: permit limited ".." resolution
+Date: Tue,  5 Nov 2019 20:05:50 +1100
+Message-Id: <20191105090553.6350-7-cyphar@cyphar.com>
 In-Reply-To: <20191105090553.6350-1-cyphar@cyphar.com>
 References: <20191105090553.6350-1-cyphar@cyphar.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_010831_905501_0CAC04CC 
-X-CRM114-Status: GOOD (  19.26  )
+X-CRM114-CacheID: sfid-20191105_010852_504554_FFAEE15F 
+X-CRM114-Status: GOOD (  22.14  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -93,124 +94,154 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-/* Background. */
-Container runtimes or other administrative management processes will
-often interact with root filesystems while in the host mount namespace,
-because the cost of doing a chroot(2) on every operation is too
-prohibitive (especially in Go, which cannot safely use vfork). However,
-a malicious program can trick the management process into doing
-operations on files outside of the root filesystem through careful
-crafting of symlinks.
+Allow LOOKUP_BENEATH and LOOKUP_IN_ROOT to safely permit ".." resolution
+(in the case of LOOKUP_BENEATH the resolution will still fail if ".."
+resolution would resolve a path outside of the root -- while
+LOOKUP_IN_ROOT will chroot(2)-style scope it). Magic-link jumps are
+still disallowed entirely[*].
 
-Most programs that need this feature have attempted to make this process
-safe, by doing all of the path resolution in userspace (with symlinks
-being scoped to the root of the malicious root filesystem).
-Unfortunately, this method is prone to foot-guns and usually such
-implementations have subtle security bugs.
+As Jann explains[1,2], the need for this patch (and the original no-".."
+restriction) is explained by observing there is a fairly easy-to-exploit
+race condition with chroot(2) (and thus by extension LOOKUP_IN_ROOT and
+LOOKUP_BENEATH if ".." is allowed) where a rename(2) of a path can be
+used to "skip over" nd->root and thus escape to the filesystem above
+nd->root.
 
-Thus, what userspace needs is a way to resolve a path as though it were
-in a chroot(2) -- with all absolute symlinks being resolved relative to
-the dirfd root (and ".." components being stuck under the dirfd root).
-It is much simpler and more straight-forward to provide this
-functionality in-kernel (because it can be done far more cheaply and
-correctly).
+  thread1 [attacker]:
+    for (;;)
+      renameat2(AT_FDCWD, "/a/b/c", AT_FDCWD, "/a/d", RENAME_EXCHANGE);
+  thread2 [victim]:
+    for (;;)
+      openat2(dirb, "b/c/../../etc/shadow",
+              { .flags = O_PATH, .resolve = RESOLVE_IN_ROOT } );
 
-More classical applications that also have this problem (which have
-their own potentially buggy userspace path sanitisation code) include
-web servers, archive extraction tools, network file servers, and so on.
+With fairly significant regularity, thread2 will resolve to
+"/etc/shadow" rather than "/a/b/etc/shadow". There is also a similar
+(though somewhat more privileged) attack using MS_MOVE.
 
-/* Userspace API. */
-LOOKUP_IN_ROOT will be exposed to userspace through openat2(2).
+With this patch, such cases will be detected *during* ".." resolution
+and will return -EAGAIN for userspace to decide to either retry or abort
+the lookup. It should be noted that ".." is the weak point of chroot(2)
+-- walking *into* a subdirectory tautologically cannot result in you
+walking *outside* nd->root (except through a bind-mount or magic-link).
+There is also no other way for a directory's parent to change (which is
+the primary worry with ".." resolution here) other than a rename or
+MS_MOVE.
 
-/* Semantics. */
-Unlike most other LOOKUP flags (most notably LOOKUP_FOLLOW),
-LOOKUP_IN_ROOT applies to all components of the path.
+This is a first-pass implementation, where -EAGAIN will be returned if
+any rename or mount occurs anywhere on the host (in any namespace). This
+will result in spurious errors, but there isn't a satisfactory
+alternative (other than denying ".." altogether).
 
-With LOOKUP_IN_ROOT, any path component which attempts to cross the
-starting point of the pathname lookup (the dirfd passed to openat) will
-remain at the starting point. Thus, all absolute paths and symlinks will
-be scoped within the starting point.
+One other possible alternative (which previous versions of this patch
+used) would be to check with path_is_under() if there was a racing
+rename or mount (after re-taking the relevant seqlocks). While this does
+work, it results in possible O(n*m) behaviour if there are many renames
+or mounts occuring *anywhere on the system*.
 
-There is a slight change in behaviour regarding pathnames -- if the
-pathname is absolute then the dirfd is still used as the root of
-resolution of LOOKUP_IN_ROOT is specified (this is to avoid obvious
-foot-guns, at the cost of a minor API inconsistency).
+A variant of the above attack is included in the selftests for
+openat2(2) later in this patch series. I've run this test on several
+machines for several days and no instances of a breakout were detected.
+While this is not concrete proof that this is safe, when combined with
+the above argument it should lend some trustworthiness to this
+construction.
 
-As with LOOKUP_BENEATH, Jann's security concern about ".."[1] applies to
-LOOKUP_IN_ROOT -- therefore ".." resolution is blocked. This restriction
-will be lifted in a future patch, but requires more work to ensure that
-permitting ".." is done safely.
-
-Magic-link jumps are also blocked, because they can beam the path lookup
-across the starting point. It would be possible to detect and block
-only the "bad" crossings with path_is_under() checks, but it's unclear
-whether it makes sense to permit magic-links at all. However, userspace
-is recommended to pass LOOKUP_NO_MAGICLINKS if they want to ensure that
-magic-link crossing is entirely disabled.
-
-/* Testing. */
-LOOKUP_IN_ROOT is tested as part of the openat2(2) selftests.
+[*] It may be acceptable in the future to do a path_is_under() check (as
+    with the alternative solution for "..") for magic-links after they
+    are resolved. However this seems unlikely to be a feature that
+    people *really* need -- it can be added later if it turns out a lot
+    of people want it.
 
 [1]: https://lore.kernel.org/lkml/CAG48ez1jzNvxB+bfOBnERFGp=oMM0vHWuLD6EULmne3R6xa53w@mail.gmail.com/
+[2]: https://lore.kernel.org/lkml/CAG48ez30WJhbsro2HOc_DR7V91M+hNFzBP5ogRMZaxbAORvqzg@mail.gmail.com/
 
 Cc: Christian Brauner <christian.brauner@ubuntu.com>
+Suggested-by: Jann Horn <jannh@google.com>
+Suggested-by: Linus Torvalds <torvalds@linux-foundation.org>
 Signed-off-by: Aleksa Sarai <cyphar@cyphar.com>
 ---
- fs/namei.c            | 15 ++++++++++++---
- include/linux/namei.h |  3 ++-
- 2 files changed, 14 insertions(+), 4 deletions(-)
+ fs/namei.c | 42 +++++++++++++++++++++++++++++-------------
+ 1 file changed, 29 insertions(+), 13 deletions(-)
 
 diff --git a/fs/namei.c b/fs/namei.c
-index 54fdbdfbeb94..a3d199a60708 100644
+index a3d199a60708..174d69cf9084 100644
 --- a/fs/namei.c
 +++ b/fs/namei.c
-@@ -2277,12 +2277,20 @@ static const char *path_init(struct nameidata *nd, unsigned flags)
+@@ -491,7 +491,7 @@ struct nameidata {
+ 	struct path	root;
+ 	struct inode	*inode; /* path.dentry.d_inode */
+ 	unsigned int	flags;
+-	unsigned	seq, m_seq;
++	unsigned	seq, m_seq, r_seq;
+ 	int		last_type;
+ 	unsigned	depth;
+ 	int		total_link_count;
+@@ -1769,22 +1769,35 @@ static inline int handle_dots(struct nameidata *nd, int type)
+ 	if (type == LAST_DOTDOT) {
+ 		int error = 0;
  
- 	nd->m_seq = read_seqbegin(&mount_lock);
- 
--	/* Figure out the starting path and root (if needed). */
--	if (*s == '/') {
-+	/* Absolute pathname -- fetch the root. */
-+	if (flags & LOOKUP_IN_ROOT) {
-+		/* With LOOKUP_IN_ROOT, act as a relative path. */
-+		while (*s == '/')
-+			s++;
-+	} else if (*s == '/') {
- 		error = nd_jump_root(nd);
- 		if (unlikely(error))
- 			return ERR_PTR(error);
--	} else if (nd->dfd == AT_FDCWD) {
-+		return s;
-+	}
-+
-+	/* Relative pathname -- get the starting-point it is relative to. */
-+	if (nd->dfd == AT_FDCWD) {
- 		if (flags & LOOKUP_RCU) {
- 			struct fs_struct *fs = current->fs;
- 			unsigned seq;
-@@ -2322,6 +2330,7 @@ static const char *path_init(struct nameidata *nd, unsigned flags)
+-		/*
+-		 * Scoped-lookup flags resolving ".." is not currently safe --
+-		 * races can cause our parent to have moved outside of the root
+-		 * and us to skip over it.
+-		 */
+-		if (unlikely(nd->flags & LOOKUP_IS_SCOPED))
+-			return -EXDEV;
+ 		if (!nd->root.mnt) {
+ 			error = set_root(nd);
+ 			if (error)
+ 				return error;
  		}
- 		fdput(f);
- 	}
+-		if (nd->flags & LOOKUP_RCU) {
+-			return follow_dotdot_rcu(nd);
+-		} else
+-			return follow_dotdot(nd);
++		if (nd->flags & LOOKUP_RCU)
++			error = follow_dotdot_rcu(nd);
++		else
++			error = follow_dotdot(nd);
++		if (error)
++			return error;
 +
- 	/* For scoped-lookups we need to set the root to the dirfd as well. */
- 	if (flags & LOOKUP_IS_SCOPED) {
- 		nd->root = nd->path;
-diff --git a/include/linux/namei.h b/include/linux/namei.h
-index 12f4f36835c2..96b374e08230 100644
---- a/include/linux/namei.h
-+++ b/include/linux/namei.h
-@@ -46,8 +46,9 @@ enum {LAST_NORM, LAST_ROOT, LAST_DOT, LAST_DOTDOT, LAST_BIND};
- #define LOOKUP_NO_MAGICLINKS	0x040000 /* No /proc/$pid/fd/ "symlink" crossing. */
- #define LOOKUP_NO_XDEV		0x080000 /* No mountpoint crossing. */
- #define LOOKUP_BENEATH		0x100000 /* No escaping from starting point. */
-+#define LOOKUP_IN_ROOT		0x200000 /* Treat dirfd as %current->fs->root. */
- /* LOOKUP_* flags which do scope-related checks based on the dirfd. */
--#define LOOKUP_IS_SCOPED LOOKUP_BENEATH
-+#define LOOKUP_IS_SCOPED (LOOKUP_BENEATH | LOOKUP_IN_ROOT)
++		if (unlikely(nd->flags & LOOKUP_IS_SCOPED)) {
++			bool m_retry = read_seqretry(&mount_lock, nd->m_seq);
++			bool r_retry = read_seqretry(&rename_lock, nd->r_seq);
++
++			/*
++			 * If there was a racing rename or mount along our
++			 * path, then we can't be sure that ".." hasn't jumped
++			 * above nd->root (and so userspace should retry or use
++			 * some fallback).
++			 *
++			 * In future we could do a path_is_under() check here
++			 * instead, but there are O(n*m) performance
++			 * considerations with such a setup.
++			 */
++			if (unlikely(m_retry || r_retry))
++				return -EAGAIN;
++		}
+ 	}
+ 	return 0;
+ }
+@@ -2254,6 +2267,10 @@ static const char *path_init(struct nameidata *nd, unsigned flags)
+ 	nd->last_type = LAST_ROOT; /* if there are only slashes... */
+ 	nd->flags = flags | LOOKUP_JUMPED | LOOKUP_PARENT;
+ 	nd->depth = 0;
++
++	nd->m_seq = read_seqbegin(&mount_lock);
++	nd->r_seq = read_seqbegin(&rename_lock);
++
+ 	if (flags & LOOKUP_ROOT) {
+ 		struct dentry *root = nd->root.dentry;
+ 		struct inode *inode = root->d_inode;
+@@ -2275,7 +2292,6 @@ static const char *path_init(struct nameidata *nd, unsigned flags)
+ 	nd->path.mnt = NULL;
+ 	nd->path.dentry = NULL;
  
- extern int path_pts(struct path *path);
+-	nd->m_seq = read_seqbegin(&mount_lock);
  
+ 	/* Absolute pathname -- fetch the root. */
+ 	if (flags & LOOKUP_IN_ROOT) {
 -- 
 2.23.0
 
