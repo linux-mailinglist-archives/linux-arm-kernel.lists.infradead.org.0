@@ -2,53 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 486B1F03FB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 18:18:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C193EF0404
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 18:20:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1uxro5FxSUU0KMKXQgDVKN87/pMfJQzk65/ClFFEkPg=; b=DeiNvzogRTGdVv
-	3JNMEnTW8Xn+/EIki6J+Y3XnmPcZA/JHNGKFLfwydDmJr8M2H2rOvXWjFhRxxMbg/MlRemD6ChSno
-	1nBk/OXKl8oqQsBNQmlMCAHn+ol3uwsZCWPzkPIs1TUVrLriRx9I+k7T9YHFiYlsCBireEcoM5Ion
-	GT+Lg++FAsAlFsNinRXhLsrRrF5jsjjAWfaZr+CgGRR7CYWLCWePr9+2Jmj0MWhs3SPi1rdoZj/vn
-	t/9gmwWYdlW7gOesyE0EOcpXdEZCmG7eqkw8vf02SGxgTy0pvnTnrmuJhNkAwfSVuiqnhOmTDuQIE
-	BbPPCtx0EfK+1PsdeyUw==;
+	List-Owner; bh=tDsvhe5hSMtJ9rlW8uIIXC5IpKNFCjkH60ztO7YyGFE=; b=GfCRJBwQd1t+Vd
+	ziCkhtDkCaMVP6r+me3VSx7ubJW16qghVvN1ykCrKZe5hgLesqFhkRAz4HL/W3yx2hsMXmkWXlgAB
+	6Hilqo98oS4iExv755011bKBgje5yDXQYMOW2jyWEwUL8xgG0nyw7iAHL5ZG4GdMtj92BC/tpoQyI
+	iGOt1qsJeV+dU0uzb10AGAzo75QypO0AYq488LiVAMGID6yFA9eI8ik1ep2/puQTgKPpcWYDrNUNq
+	C+sh5uWRxuDD63IJkYSwh/LZUGXPLY+e+WvMvknmaZxUsQaNrW3IZQg3oVrSPbTJ6pg8ldonfC/bL
+	NTgZWtdeLZr0xcytEd8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS2Tk-0005G2-S3; Tue, 05 Nov 2019 17:18:52 +0000
-Received: from relay5-d.mail.gandi.net ([217.70.183.197])
+	id 1iS2VK-0006uc-9S; Tue, 05 Nov 2019 17:20:30 +0000
+Received: from smtp2.axis.com ([195.60.68.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS2Tc-0005FK-Mr
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 17:18:46 +0000
-X-Originating-IP: 92.137.17.54
-Received: from localhost (alyon-657-1-975-54.w92-137.abo.wanadoo.fr
- [92.137.17.54]) (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 932D31C0007;
- Tue,  5 Nov 2019 17:18:28 +0000 (UTC)
-Date: Tue, 5 Nov 2019 18:18:27 +0100
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Chuhong Yuan <hslester96@gmail.com>
-Subject: Re: [PATCH v2] rtc: brcmstb-waketimer: add missed
- clk_disable_unprepare
-Message-ID: <20191105171827.GE8309@piout.net>
-References: <20191105160043.20018-1-hslester96@gmail.com>
+ id 1iS2VB-0006tE-Gu
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 17:20:23 +0000
+IronPort-SDR: F0oPtGUTmrMxkUzDVCVrZr5h34rmDSMXw6pi1MHjjcupDP4CkTU2+3tJPGZLl1JJ9ecwhWzveC
+ BMO1xkLjJFp7T9CrU0hOck0ednRvpCS/YQLSbKjG02276SPboa0R9WDfKlw+Un695jXNFs1G9R
+ OfjS9zAmL5jq0NsQ9DXJKTbZEvCCSDrYYgSBpo05VOTnMdSOOudHPefQXhoi3eHQTMokOu0jFq
+ iKUOA5UCo7bRocKaqM9vOD9Ki8G6gvd5csLagUmJkRxI52GPyu3J7dZX/qods0VdOqA/L2Vapy
+ o9E=
+X-IronPort-AV: E=Sophos;i="5.68,271,1569276000"; 
+   d="scan'208";a="2106277"
+X-Axis-User: NO
+X-Axis-NonUser: YES
+X-Virus-Scanned: Debian amavisd-new at bes.se.axis.com
+Date: Tue, 5 Nov 2019 18:20:16 +0100
+From: Jesper Nilsson <jesper.nilsson@axis.com>
+To: Andrew Murray <andrew.murray@arm.com>
+Subject: Re: [PATCH v1 3/7] arm: dts: Use IRQ flags for legacy PCI IRQ
+ interrupts
+Message-ID: <20191105172016.iq4mx7qa4c5sregk@axis.com>
+References: <20191104163834.8932-1-andrew.murray@arm.com>
+ <20191104163834.8932-4-andrew.murray@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191105160043.20018-1-hslester96@gmail.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <20191104163834.8932-4-andrew.murray@arm.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_091844_885681_7D6311AD 
-X-CRM114-Status: GOOD (  11.92  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191105_092021_892543_8EBDD30C 
+X-CRM114-Status: UNSURE (   8.21  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.197 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -62,33 +67,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>,
- Florian Fainelli <f.fainelli@gmail.com>, linux-kernel@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Antoine Tenart <antoine.tenart@bootlin.com>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Santosh Shilimkar <ssantosh@kernel.org>, Andy Gross <agross@kernel.org>,
+ linux-arm-kernel@axis.com, Jesper Nilsson <jespern@axis.com>,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Lars Persson <larper@axis.com>, linux-arm-msm@vger.kernel.org,
+ Shawn Guo <shawnguo@kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Tsahee Zidenberg <tsahee@annapurnalabs.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 06/11/2019 00:00:43+0800, Chuhong Yuan wrote:
-> This driver forgets to disable and unprepare clock when remove.
-> Add a call to clk_disable_unprepare to fix it.
-> 
-> Fixes: c4f07ecee22e ("rtc: brcmstb-waketimer: Add Broadcom STB wake-timer")
-> Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
-> ---
-> Changes in v2:
->   - Remove the check for timer->clk and add fixes tag.
-> 
->  drivers/rtc/rtc-brcmstb-waketimer.c | 1 +
->  1 file changed, 1 insertion(+)
-> 
-Applied, thanks.
+On Mon, Nov 04, 2019 at 04:38:17PM +0000, Andrew Murray wrote:
+> Replace magic numbers used to describe legacy PCI IRQ interrupts
+> with #define.
 
+Looks good,
+
+Acked-by: Jesper Nilsson <jesper.nilsson@axis.com>
+
+> Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+> ---
+>  arch/arm/boot/dts/alpine.dtsi              |  6 ++--
+>  arch/arm/boot/dts/artpec6.dtsi             | 10 +++---
+>  arch/arm/boot/dts/gemini-dlink-dir-685.dts | 34 ++++++++++----------
+>  arch/arm/boot/dts/gemini-sl93512r.dts      | 34 ++++++++++----------
+>  arch/arm/boot/dts/gemini-sq201.dts         | 34 ++++++++++----------
+>  arch/arm/boot/dts/gemini-wbd111.dts        | 34 ++++++++++----------
+>  arch/arm/boot/dts/gemini-wbd222.dts        | 34 ++++++++++----------
+>  arch/arm/boot/dts/imx6qdl.dtsi             | 10 +++---
+>  arch/arm/boot/dts/imx6sx.dtsi              | 10 +++---
+>  arch/arm/boot/dts/integratorap.dts         | 36 ++++++++++++----------
+>  arch/arm/boot/dts/keystone-k2e.dtsi        | 11 ++++---
+>  arch/arm/boot/dts/keystone.dtsi            | 10 +++---
+>  arch/arm/boot/dts/qcom-apq8064.dtsi        | 10 +++---
+>  arch/arm/boot/dts/qcom-ipq4019.dtsi        | 10 +++---
+>  arch/arm/boot/dts/versatile-pb.dts         | 36 ++++++++++++----------
+>  15 files changed, 162 insertions(+), 157 deletions(-)
+
+/^JN - Jesper Nilsson
 -- 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+               Jesper Nilsson -- jesper.nilsson@axis.com
 
 _______________________________________________
 linux-arm-kernel mailing list
