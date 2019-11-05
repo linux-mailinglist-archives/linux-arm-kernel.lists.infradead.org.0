@@ -2,78 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E11EEFB84
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 11:37:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F683EFB96
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 11:40:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1lvRn2EGFqbOYgpylKpTU9lLa3gHZJvHrcfBcIaeni0=; b=ugtEpgZQIC3fhS
-	JSuIj4d7PGip+cvEDF9gam0Mls0e/ooybgvY+yAt5o4EX0hEjP1UpiEwUJy3tplsWnKl6U5SfNT/r
-	zulY3LxWfMGvigLB2qX/QuJn+nU9ORcGk0INK/Sbb2Ci7To/BqVb5QY6apjaMc4R3ppJ5AHfaHw2U
-	T1hbJxa5ZquFMlToGLqHeCpu6BPUjVqrjskWZgFOR4kBTMXZ3MeMry0jakC6CicuTgyNtIw5NEOrK
-	uij1IdEtSUA8hWZQ81NFfTKJGgRedbP8x08O2EZbvgVUulV9UiBZ65vGL5ug09E8y0QgOFBQCAcyH
-	0Kr6TeQbE0f63x8k6q1g==;
+	List-Owner; bh=H8Lz5fMKyEqkVkABqTnBUaOOU3Ot7VCZbQSBuCfQjkM=; b=UCL1AgYAwcwHqO
+	89iU5iO64Gb9RWpnrsHUq3nXf12Xa+pAvMUbzPy1nWLk5fKIg4C8ayGCy5nzO0gbgW0NXTYwDPNP7
+	IR3geVduci3J9Hxo5iMOtD/16aeyCJtn1SVv7q6W+dp5MtjRZvAyGlCwMWRtSIwI5glgEO7ymDnLM
+	6L9ML7W65nY5KrYodlG6/moGU5FOO7hUHOYfLdNM8vmCLnTY/gbtiy74hrwKZpMedV6anEpAG0csc
+	TKZqSlSzuCvV8Mf1rRaX/tx0Oe5w2Z0wT+LDoS82dPEyvKV5j6U3lMvYggCgRv2aM7boK2u4G1K2Y
+	OG7VetFkX/kReXzEu3hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRwDI-0007ZQ-UB; Tue, 05 Nov 2019 10:37:28 +0000
-Received: from mail-lf1-f66.google.com ([209.85.167.66])
+	id 1iRwGZ-0000ta-L2; Tue, 05 Nov 2019 10:40:51 +0000
+Received: from mail-lj1-f194.google.com ([209.85.208.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRwD7-0007Yx-38
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 10:37:18 +0000
-Received: by mail-lf1-f66.google.com with SMTP id j5so14704373lfh.10
+ id 1iRwGQ-0000t3-K9
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 10:40:43 +0000
+Received: by mail-lj1-f194.google.com with SMTP id e9so7916582ljp.13
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 Nov 2019 02:37:15 -0800 (PST)
+ Tue, 05 Nov 2019 02:40:42 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=YxCUxQ2AH3iW52PLmjYcbS92SUaB2Uqnrk/wUaP6I30=;
- b=niiQr7oJJU2KmGnFMCzQT/RjsSeMG0r09440efXEv/IpgguA28sGQUbzd9Gnrj4SAw
- DKfxYlHeD7+HSFNWsakSoJYDN6fzbtEH+89UtGqQHzJnyTJ+SOSuWREck+/AZVgx4M7w
- SjopmLLIfdjr9kngi+Ul+zqP8FbIGZUFsUGyw47scaRoSmLtLwBEDCT2hImeJTbCIzBi
- G8ioqm93uLdJxOaubgVsCvCEW3Uww0+ayGU6Xyj/6NERq9A9U+k4Lvgt/btleOS+i2RV
- 2DYf4xMqfV+8cEZ2LlWACUjjjgxNQ/qyjsq8gqVTMPG0/UmCLOFaycVt7fprq3vkqV1K
- zC7g==
-X-Gm-Message-State: APjAAAWYelGkDsMZGw9fofTcI1jjLJRNd/ztCVkSTJZJA87+0UjdijQj
- sOUM2hwOeilcOA/oEU2Gr+o=
-X-Google-Smtp-Source: APXvYqx0soK/6+YFJvOUfM4wZlhc4IAIKRp28eUSkfFwUnucV6JkAgnyyv+E9I2zDPSIn3+uI5KyXA==
-X-Received: by 2002:a19:cc47:: with SMTP id c68mr19812904lfg.95.1572950234631; 
- Tue, 05 Nov 2019 02:37:14 -0800 (PST)
+ bh=IHVLnZpvti7kYubzGuAOCqnl9G7u/7Mk5Hsa0dcUqxo=;
+ b=KT5bb2ztKVHk1Kh5OaYGsRuC4sTTvAQyav1l1du7+S4MVENfwM60fCnKt7kzFRXfSo
+ QuXqfEaNQHE3lixu6DQ7jkIOgS+K9GjLsORn3E3rgb20OJlKt+QhtsYe/gCOs/BYsigc
+ SmZnzu6O2hqLTDolrEsHxFFVe/2r9cSlwOv0zOMgRi06z82IqOWxZdSZNdx0GEuvYWNa
+ BACJmS5mAUEw4BWKtC4riw4a6vdxzhqWbv+BP1mUvvK6YF+kE86FhXkvVDz1TrSeC93J
+ wZ9U9j/r86SEU/+mnTd1mqVslwMB5IE10BN585IJJsG00e87lFET+uUqSosezK5uNdOZ
+ LiAg==
+X-Gm-Message-State: APjAAAUFyYqmqq3POujBY1FB+5em1BtB4eFS7KdzCZBfjqXjnIrEV4a0
+ QsIwtCSSuZ5Se6jqc5udNXo=
+X-Google-Smtp-Source: APXvYqwimd8o/BHmE5NIoxB7Pal0yHYLbggrwuzo9Wj10a1ugIpMkJVn+AXIoXE/WqvLKNk0aYNS8g==
+X-Received: by 2002:a2e:8654:: with SMTP id i20mr23048472ljj.238.1572950441184; 
+ Tue, 05 Nov 2019 02:40:41 -0800 (PST)
 Received: from localhost.localdomain ([213.255.186.46])
- by smtp.gmail.com with ESMTPSA id u11sm8041749ljo.17.2019.11.05.02.37.13
+ by smtp.gmail.com with ESMTPSA id i8sm10605111ljj.11.2019.11.05.02.40.40
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 05 Nov 2019 02:37:14 -0800 (PST)
-Date: Tue, 5 Nov 2019 12:37:04 +0200
+ Tue, 05 Nov 2019 02:40:40 -0800 (PST)
+Date: Tue, 5 Nov 2019 12:40:35 +0200
 From: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
 To: matti.vaittinen@fi.rohmeurope.com, mazziesaccount@gmail.com
-Subject: [PATCH 54/62] gpio: gpio-uniphier: Use new GPIO_LINE_DIRECTION
-Message-ID: <189eeb5f43c2cbf3ca37e95410d8f2728b2d03fd.1572945998.git.matti.vaittinen@fi.rohmeurope.com>
-References: <cover.1572945998.git.matti.vaittinen@fi.rohmeurope.com>
+Subject: [PATCH 60/62] gpio: gpio-zynq: Use new GPIO_LINE_DIRECTION
+Message-ID: <e3a74a28d9c0831fe798909d95695dc978d43030.1572946015.git.matti.vaittinen@fi.rohmeurope.com>
+References: <cover.1572946015.git.matti.vaittinen@fi.rohmeurope.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <cover.1572945998.git.matti.vaittinen@fi.rohmeurope.com>
+In-Reply-To: <cover.1572946015.git.matti.vaittinen@fi.rohmeurope.com>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_023717_133997_33FC2275 
-X-CRM114-Status: GOOD (  11.70  )
+X-CRM114-CacheID: sfid-20191105_024042_662996_48393D25 
+X-CRM114-Status: GOOD (  12.02  )
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.66 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.66 listed in wl.mailspike.net]
+ no trust [209.85.208.194 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (mazziesaccount[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.194 listed in wl.mailspike.net]
  0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -87,8 +87,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-gpio@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
- Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
+Cc: linux-gpio@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ linux-kernel@vger.kernel.org, Michal Simek <michal.simek@xilinx.com>,
  Bartosz Golaszewski <bgolaszewski@baylibre.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
@@ -102,25 +102,34 @@ GPIO_LINE_DIRECTION_OUT to help them out.
 
 Signed-off-by: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
 ---
- drivers/gpio/gpio-uniphier.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+ drivers/gpio/gpio-zynq.c | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/gpio/gpio-uniphier.c b/drivers/gpio/gpio-uniphier.c
-index 93cdcc41e9fb..bd203e8fa58e 100644
---- a/drivers/gpio/gpio-uniphier.c
-+++ b/drivers/gpio/gpio-uniphier.c
-@@ -113,7 +113,10 @@ static int uniphier_gpio_offset_read(struct gpio_chip *chip,
- static int uniphier_gpio_get_direction(struct gpio_chip *chip,
- 				       unsigned int offset)
+diff --git a/drivers/gpio/gpio-zynq.c b/drivers/gpio/gpio-zynq.c
+index cd475ff4bcad..4c3f6370eab4 100644
+--- a/drivers/gpio/gpio-zynq.c
++++ b/drivers/gpio/gpio-zynq.c
+@@ -360,7 +360,7 @@ static int zynq_gpio_dir_out(struct gpio_chip *chip, unsigned int pin,
+  *
+  * This function returns the direction of the specified GPIO.
+  *
+- * Return: 0 for output, 1 for input
++ * Return: GPIO_LINE_DIRECTION_OUT or GPIO_LINE_DIRECTION_IN
+  */
+ static int zynq_gpio_get_direction(struct gpio_chip *chip, unsigned int pin)
  {
--	return uniphier_gpio_offset_read(chip, offset, UNIPHIER_GPIO_PORT_DIR);
-+	if (uniphier_gpio_offset_read(chip, offset, UNIPHIER_GPIO_PORT_DIR))
-+		return GPIO_LINE_DIRECTION_IN;
+@@ -372,7 +372,10 @@ static int zynq_gpio_get_direction(struct gpio_chip *chip, unsigned int pin)
+ 
+ 	reg = readl_relaxed(gpio->base_addr + ZYNQ_GPIO_DIRM_OFFSET(bank_num));
+ 
+-	return !(reg & BIT(bank_pin_num));
++	if (reg & BIT(bank_pin_num))
++		return GPIO_LINE_DIRECTION_OUT;
 +
-+	return GPIO_LINE_DIRECTION_OUT;
++	return GPIO_LINE_DIRECTION_IN;
  }
  
- static int uniphier_gpio_direction_input(struct gpio_chip *chip,
+ /**
 -- 
 2.21.0
 
