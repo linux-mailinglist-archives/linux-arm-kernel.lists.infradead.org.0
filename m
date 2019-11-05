@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 230E5F07BF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:09:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E093F07C3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:09:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,43 +11,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=SHP7uzfU4DGr4D1YjIBp9TsKL+KK7LTcSucUPVOo6DM=; b=Dw/o2Wkx7kQBtcIeNvcu32rLDv
-	RWDQO9kKhWmGSz6gmWBZBnnYW7qmPMunLP78WmEAOjpWH1wUnpdsnboVVduVH2M8olQOwhw6P7D38
-	rn8BC5gP21PXnKN0TzclCF2iQfbIJQCE5AJTzujJi+iwtzK0g/fDf2NiyBnW0UVcN8Q5OwytHPWwd
-	JfSahpyW5vVUvtSN9MLyjDERtO8nuBhjQKVVh3sHzY2GO4IUdIz2oRGlGEdzpZkWlhC3iXYunSgKl
-	M9LsY/r+RZNUvMj1e8KG5qcgnRD86OBm/HpNzI3z21902sBcJy9+PVjG0sP8S1ERi8Go6JySMSZr/
-	Z0e9UfXQ==;
+	bh=pFQIS0T1GEUHuspFy+QluvSpPU6NA7CszVZHNPtJRt0=; b=p6GreeslLewsUJqFkKam55yWoq
+	DVeWzDzNcCifxnUtZne5sqVQPE1G6E9hyKW5CdoUwQParxqtupAqcl6O4ECbcvYFjlhAb0q+HrM3V
+	o5ESqLVnj9N1vfzdRVrbv62tzfVp41JoPi02XxYIBJuKiqbuShE54Kxdaaqwdd/0h7M47xXG74a1s
+	RPYouwJdp7Fffiv8nVbDxeVSuL1R5K8HASkMqta7eaAobetjdnhs5RM6Xh/SqaaDSVH423wz1WqhS
+	N/G/SB/HQs2mY4G11zAlynuj+7UOCSZD9Y4noepD1jltwlE9c4G4vak8I1Fb9O0PDVeSPnaoa2y3Y
+	1jSdcoeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS64o-0008TN-0E; Tue, 05 Nov 2019 21:09:22 +0000
+	id 1iS656-0000EK-8K; Tue, 05 Nov 2019 21:09:40 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS5wQ-0007tU-3f
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 21:00:43 +0000
+ id 1iS5wT-0007wj-1L
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 21:00:46 +0000
 Received: from e123331-lin.home (lfbn-mar-1-643-104.w90-118.abo.wanadoo.fr
  [90.118.215.104])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 27936222C1;
- Tue,  5 Nov 2019 21:00:38 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id EC6ED21D6C;
+ Tue,  5 Nov 2019 21:00:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572987641;
- bh=PrJxHKO5S9Dv+7PQfrsKi1HHONnn89DYZf4WM6yFPHA=;
+ s=default; t=1572987644;
+ bh=pA/Dm4dtcPygG47J2WY3DC/j1I2HfkxehJVrSXMlYDQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=PLrCA7G4/NZV590cfdHDVvHFh/CzhQjU8GH01om6DbtpccreEB0ADlxQaferCsO6B
- 7g/vJdp5Z39J9iuv/vWbSgzzgnK0z2luCROFb0dMd8B+CXsmPJgxK0a2OQEKbYJfCE
- xNcbSP6KcbVATrPSdvgtFleDGDPAqlE6Xo3WdPAI=
+ b=uwX4gepQHKJFOXLKzZEmzsajx7FhFSW3RmPXNAL/Z3eghqBZR+MZwgxVfuwTgYJqM
+ zLebEsyFNj8TnMkA/9VG2OrtrurnTxOU/chPzrxrMUxSu5dUdDb2j70bAR4HH9dffk
+ whCg9RWXCZiv5PdYbJqsqIbV7nzN36DSrGej1fEo=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH for-stable-v4.4 36/53] ARM: use __inttype() in get_user()
-Date: Tue,  5 Nov 2019 21:58:29 +0100
-Message-Id: <20191105205846.1394-37-ardb@kernel.org>
+Subject: [PATCH for-stable-v4.4 37/53] ARM: spectre-v1: use get_user() for
+ __get_user()
+Date: Tue,  5 Nov 2019 21:58:30 +0100
+Message-Id: <20191105205846.1394-38-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191105205846.1394-1-ardb@kernel.org>
 References: <20191105205846.1394-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_130042_181000_DD7FFD0A 
-X-CRM114-Status: GOOD (  12.70  )
+X-CRM114-CacheID: sfid-20191105_130045_117449_4102B7A1 
+X-CRM114-Status: GOOD (  13.04  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -91,14 +92,16 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Russell King <rmk+kernel@armlinux.org.uk>
 
-Commit d09fbb327d670737ab40fd8bbb0765ae06b8b739 upstream.
+Commit b1cd0a14806321721aae45f5446ed83a3647c914 upstream.
 
-Borrow the x86 implementation of __inttype() to use in get_user() to
-select an integer type suitable to temporarily hold the result value.
-This is necessary to avoid propagating the volatile nature of the
-result argument, which can cause the following warning:
+Fixing __get_user() for spectre variant 1 is not sane: we would have to
+add address space bounds checking in order to validate that the location
+should be accessed, and then zero the address if found to be invalid.
 
-lib/iov_iter.c:413:5: warning: optimization may eliminate reads and/or writes to register variables [-Wvolatile-register-var]
+Since __get_user() is supposed to avoid the bounds check, and this is
+exactly what get_user() does, there's no point having two different
+implementations that are doing the same thing.  So, when the Spectre
+workarounds are required, make __get_user() an alias of get_user().
 
 Acked-by: Mark Rutland <mark.rutland@arm.com>
 Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
@@ -106,36 +109,51 @@ Signed-off-by: David A. Long <dave.long@linaro.org>
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- arch/arm/include/asm/uaccess.h | 9 ++++++++-
- 1 file changed, 8 insertions(+), 1 deletion(-)
+ arch/arm/include/asm/uaccess.h | 17 +++++++++++------
+ 1 file changed, 11 insertions(+), 6 deletions(-)
 
 diff --git a/arch/arm/include/asm/uaccess.h b/arch/arm/include/asm/uaccess.h
-index b0f9269bef1c..99005567fb92 100644
+index 99005567fb92..fd33021da6f6 100644
 --- a/arch/arm/include/asm/uaccess.h
 +++ b/arch/arm/include/asm/uaccess.h
-@@ -122,6 +122,13 @@ static inline void set_fs(mm_segment_t fs)
- 		: "cc"); \
- 	flag; })
+@@ -288,6 +288,16 @@ static inline void set_fs(mm_segment_t fs)
+ #define user_addr_max() \
+ 	(segment_eq(get_fs(), KERNEL_DS) ? ~0UL : get_fs())
  
++#ifdef CONFIG_CPU_SPECTRE
 +/*
-+ * This is a type: either unsigned long, if the argument fits into
-+ * that type, or otherwise unsigned long long.
++ * When mitigating Spectre variant 1, it is not worth fixing the non-
++ * verifying accessors, because we need to add verification of the
++ * address space there.  Force these to use the standard get_user()
++ * version instead.
 + */
-+#define __inttype(x) \
-+	__typeof__(__builtin_choose_expr(sizeof(x) > sizeof(0UL), 0ULL, 0UL))
++#define __get_user(x, ptr) get_user(x, ptr)
++#else
 +
  /*
-  * Single-value transfer routines.  They automatically use the right
-  * size if we just have the right pointer type.  Note that the functions
-@@ -191,7 +198,7 @@ extern int __get_user_64t_4(void *);
- 	({								\
- 		unsigned long __limit = current_thread_info()->addr_limit - 1; \
- 		register const typeof(*(p)) __user *__p asm("r0") = (p);\
--		register typeof(x) __r2 asm("r2");			\
-+		register __inttype(x) __r2 asm("r2");			\
- 		register unsigned long __l asm("r1") = __limit;		\
- 		register int __e asm("r0");				\
- 		unsigned int __ua_flags = uaccess_save_and_enable();	\
+  * The "__xxx" versions of the user access functions do not verify the
+  * address space - it must have been done previously with a separate
+@@ -304,12 +314,6 @@ static inline void set_fs(mm_segment_t fs)
+ 	__gu_err;							\
+ })
+ 
+-#define __get_user_error(x, ptr, err)					\
+-({									\
+-	__get_user_err((x), (ptr), err);				\
+-	(void) 0;							\
+-})
+-
+ #define __get_user_err(x, ptr, err)					\
+ do {									\
+ 	unsigned long __gu_addr = (unsigned long)(ptr);			\
+@@ -369,6 +373,7 @@ do {									\
+ 
+ #define __get_user_asm_word(x, addr, err)			\
+ 	__get_user_asm(x, addr, err, ldr)
++#endif
+ 
+ 
+ #define __put_user_switch(x, ptr, __err, __fn)				\
 -- 
 2.17.1
 
