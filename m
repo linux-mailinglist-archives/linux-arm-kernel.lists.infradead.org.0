@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6FEBFF07F0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:13:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9753BF07F3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:14:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,44 +11,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=rbQqTuYrUQmpvKAaGv92odOHaDZfgTS+6TleLoBoPP0=; b=HSA2nGdaQeS4WVV21vOqiwrJcX
-	IdVcRh/e9Ixp70gE366ATdyHG/3hJ0xdG0zxzHtzKzYdppRtCY4ZSJw21PJ40Ua0D1qdh+B0ck/LP
-	p08K/Jbaokpt1qXSw6Mh+kO4y38g9oacm4k34XB00NugIVHbcTIOK77soHcj79xR7zQ5sO9gETNCL
-	KjhpW48AD2iEaS/21u5h5sSbYCB8L2OZSmzk36/3ykTnxEOd3q+rd6NaCkMlOwRncjh2bGJ1HLo9h
-	otXQbR0B95TAXJijje9wVRVLLMfqkXwP63DGJMKaPdna08Q4fQTGE9FjPdzrjHwDULaulZnJ/PV0K
-	QXgKs+uA==;
+	bh=mVvhQbnWpay4+XuNNp+VMjidBJFvX6q6w9dgV+cSBNY=; b=KuCWjo2UE+flRVu5uKAc6/061t
+	zBBrIA2G0wFcO95eyV9QhEucF+zHIR8veMyrflumEEsyUlkdjGQq5yPimSpvI5Lc736+S5tqXkcrA
+	4ijQs5zpAk3LR3Yi+t6AodscdkITXGvfuLgQRx9GFsLOYoCOnBTG/oyDKLSTkBCNd9pdAB/DqaYIj
+	/1GkJ4wMtmyLqFVkaXAqtcZl/ea2JXuaSLSt1JdUlLoNkXd/+LCo+xTtWtfvq12+svI0zJ6wJR6WQ
+	gEo75ndIXOEAfxkaVHjGT26K+RatDOi05Kh9oHvM3jPkLRmcnLGK8oIUgxQOKQCz3DY9BQ6lGQXsk
+	Z52vQW6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS69C-00065Q-4t; Tue, 05 Nov 2019 21:13:54 +0000
+	id 1iS69Q-0006MH-Vc; Tue, 05 Nov 2019 21:14:08 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS5xB-00008Z-3R
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 21:01:30 +0000
+ id 1iS5xD-0000B2-IP
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 21:01:34 +0000
 Received: from e123331-lin.home (lfbn-mar-1-643-104.w90-118.abo.wanadoo.fr
  [90.118.215.104])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A9A1521929;
- Tue,  5 Nov 2019 21:01:25 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 730502087E;
+ Tue,  5 Nov 2019 21:01:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572987688;
- bh=OHFK0s++1NG+26ps1ryADcjFmcu2J6IdT8VhHfuWE0o=;
+ s=default; t=1572987690;
+ bh=l/Zzc3defaUXVahIWnfD+VzKm5AD0QaEXHldCvfs2uI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=WsnW4MeIJJc1lr+sTxK9BSL8fSPo8EPqEe7n8xK0hZfUCUsz4La4UL86EdSQ+L4zh
- goul9BLytd14903WI9G2E1+Ntknh2AlQ0kFxgycl+Eu3genK05H4WXajqZrdwY9zxj
- 3G/vQELUHVfqCJXkDPDEQy/+N4srPL6+zDq3ydRk=
+ b=qrNO0kp8bcvjE5XjE7DqoMcBPqdn4HFHdM8No7fQT0z+r1gKF026CREDQXQueI8JC
+ gk67hmr26pwSLm7QuCH0lg2vRdJNj++4EcZBRDMg0TANCDg4hJqFHlTMgCxceTJ3hR
+ +WCsuSiUgA8IwIjJr41V6/8S0aVzztFE1woaGuXk=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH for-stable-v4.4 52/53] ARM: ensure that processor vtables is
- not lost after boot
-Date: Tue,  5 Nov 2019 21:58:45 +0100
-Message-Id: <20191105205846.1394-53-ardb@kernel.org>
+Subject: [PATCH for-stable-v4.4 53/53] ARM: fix the cockup in the previous
+ patch
+Date: Tue,  5 Nov 2019 21:58:46 +0100
+Message-Id: <20191105205846.1394-54-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191105205846.1394-1-ardb@kernel.org>
 References: <20191105205846.1394-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_130129_240939_54E6A7E0 
-X-CRM114-Status: GOOD (  12.07  )
+X-CRM114-CacheID: sfid-20191105_130131_701921_2EE00031 
+X-CRM114-Status: GOOD (  12.68  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -91,55 +91,48 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Russell King <rmk+kernel@armlinux.org.uk>
 
-Commit 3a4d0c2172bcf15b7a3d9d498b2b355f9864286b upstream.
+Commit d6951f582cc50ba0ad22ef46b599740966599b14 upstream.
 
-Marek Szyprowski reported problems with CPU hotplug in current kernels.
-This was tracked down to the processor vtables being located in an
-init section, and therefore discarded after kernel boot, despite being
-required after boot to properly initialise the non-boot CPUs.
+The intention in the previous patch was to only place the processor
+tables in the .rodata section if big.Little was being built and we
+wanted the branch target hardening, but instead (due to the way it
+was tested) it ended up always placing the tables into the .rodata
+section.
 
-Arrange for these tables to end up in .rodata when required.
+Although harmless, let's correct this anyway.
 
-Reported-by: Marek Szyprowski <m.szyprowski@samsung.com>
-Tested-by: Krzysztof Kozlowski <krzk@kernel.org>
-Fixes: 383fb3ee8024 ("ARM: spectre-v2: per-CPU vtables to work around big.Little systems")
+Fixes: 3a4d0c2172bc ("ARM: ensure that processor vtables is not lost after boot")
 Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 Signed-off-by: David A. Long <dave.long@linaro.org>
 Reviewed-by: Julien Thierry <julien.thierry@arm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- arch/arm/mm/proc-macros.S | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ arch/arm/mm/proc-macros.S | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/arch/arm/mm/proc-macros.S b/arch/arm/mm/proc-macros.S
-index 212147c78f4b..d36a283b4099 100644
+index d36a283b4099..e6bfdcc381f8 100644
 --- a/arch/arm/mm/proc-macros.S
 +++ b/arch/arm/mm/proc-macros.S
-@@ -259,6 +259,13 @@
- 	.endm
- 
- .macro define_processor_functions name:req, dabort:req, pabort:req, nommu=0, suspend=0, bugs=0
-+/*
-+ * If we are building for big.Little with branch predictor hardening,
-+ * we need the processor function tables to remain available after boot.
-+ */
-+#if 1 // defined(CONFIG_BIG_LITTLE) && defined(CONFIG_HARDEN_BRANCH_PREDICTOR)
-+	.section ".rodata"
-+#endif
+@@ -263,7 +263,7 @@
+  * If we are building for big.Little with branch predictor hardening,
+  * we need the processor function tables to remain available after boot.
+  */
+-#if 1 // defined(CONFIG_BIG_LITTLE) && defined(CONFIG_HARDEN_BRANCH_PREDICTOR)
++#if defined(CONFIG_BIG_LITTLE) && defined(CONFIG_HARDEN_BRANCH_PREDICTOR)
+ 	.section ".rodata"
+ #endif
  	.type	\name\()_processor_functions, #object
- 	.align 2
- ENTRY(\name\()_processor_functions)
-@@ -294,6 +301,9 @@ ENTRY(\name\()_processor_functions)
+@@ -301,7 +301,7 @@ ENTRY(\name\()_processor_functions)
  	.endif
  
  	.size	\name\()_processor_functions, . - \name\()_processor_functions
-+#if 1 // defined(CONFIG_BIG_LITTLE) && defined(CONFIG_HARDEN_BRANCH_PREDICTOR)
-+	.previous
-+#endif
+-#if 1 // defined(CONFIG_BIG_LITTLE) && defined(CONFIG_HARDEN_BRANCH_PREDICTOR)
++#if defined(CONFIG_BIG_LITTLE) && defined(CONFIG_HARDEN_BRANCH_PREDICTOR)
+ 	.previous
+ #endif
  .endm
- 
- .macro define_cache_functions name:req
 -- 
 2.17.1
 
