@@ -2,50 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3AC2AF0687
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 21:00:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2827F0698
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 21:05:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/sQGtGsesQsEZbYUXOohBCEFwiu80X6mnxwFYvrhvIE=; b=cmuLHf05HOu3EyW95qwUXn+OV
-	nJ16pJpoyVs0ucNOUAzOtjD6FW6Gq+Qrel7kWtMGYaD2yOVjyJpeSX/xY+rmffKdEDHqnsS4WQaMw
-	3ZgUyxGw1e0JsnUHSjm50N6YYGFSbvVTHGOg1TC1Vg3fgxANIZKI2OXS7VT+frYwOafJ+0OSTEFwT
-	I+9tbAzjtYBc6zmqxNNmriChVVYyCNQ7Yb0JqTEVdGZRX/ebIaOWErje5r+kjOVRqCp1tV4CiKKwx
-	t6h3Dcw/n+N/XmD52wLVswd/xtmWrHWJ91RN/xdakC6rXbwt35KSZSbSXKbvTmOZixW7pIDku3p+6
-	ZzdKNi4Fw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cD2JZqwdmOXqNyMEQcUbh48AQW62lqzPugBUMHYIAGo=; b=GapccpY4qHzAL8
+	xjoHgG5Si8iWb5sxWgj/z/f5PNdGoUCif30yrTygDuWJ8hL8zBoVb230z+KyP5+zJ8mIk5jhvm89+
+	1IRAgg4+9BEaGQjCQM9V3DWQmN/lYEx7yig9teppF4k3OBearrXmdQZdHxGovLjFeukoNyNZwM+4e
+	/8I3ilDAxn3uGWd/hUEVanTk2NtTtgz422ek+T9FerGw3SIGJabvohpzWC5Ky0DIsMxielTIH853R
+	XTUl7n2+LKjyvXrO3KA4HZIYq29XtF84NIPxQRg54xXeFuOTXcPWESFN+BikvkT+I6MXJr1XjVe82
+	5X0myVUJgJNd6FUEm4xA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS50E-0003pU-EG; Tue, 05 Nov 2019 20:00:34 +0000
+	id 1iS54p-0005HC-8q; Tue, 05 Nov 2019 20:05:19 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS4zg-0002Mz-Vw
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 20:00:02 +0000
+ id 1iS54T-0004hf-F6; Tue, 05 Nov 2019 20:04:59 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DFEB14F2;
- Tue,  5 Nov 2019 11:59:56 -0800 (PST)
-Received: from [10.162.40.121] (a075563-lin.blr.arm.com [10.162.40.121])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 33DFF3FB40;
- Mon,  4 Nov 2019 23:02:20 -0800 (PST)
-Subject: Re: [PATCHv2 1/8] ftrace: add ftrace_init_nop()
-To: Steven Rostedt <rostedt@goodmis.org>
-References: <20191029165832.33606-1-mark.rutland@arm.com>
- <20191029165832.33606-2-mark.rutland@arm.com>
- <daad0785-a33f-3cfb-cf0f-657b6c677257@arm.com>
- <20191104081136.645e9b1a@grimm.local.home>
-From: Amit Kachhap <amit.kachhap@arm.com>
-Message-ID: <ca7dd81e-5d98-c0f6-3d84-4f2cc20f4676@arm.com>
-Date: Tue, 5 Nov 2019 12:29:23 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 47F387AD;
+ Tue,  5 Nov 2019 12:04:56 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C3D0B3FBD2;
+ Tue,  5 Nov 2019 01:27:03 -0800 (PST)
+Date: Tue, 5 Nov 2019 09:27:01 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Bhupesh Sharma <bhsharma@redhat.com>
+Subject: Re: [PATCH] arm64: mm: Remove MAX_USER_VA_BITS definition
+Message-ID: <20191105092701.GD4743@lakrids.cambridge.arm.com>
+References: <1572904606-27961-1-git-send-email-bhsharma@redhat.com>
 MIME-Version: 1.0
-In-Reply-To: <20191104081136.645e9b1a@grimm.local.home>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <1572904606-27961-1-git-send-email-bhsharma@redhat.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_120001_068634_6860CA21 
-X-CRM114-Status: GOOD (  14.75  )
+X-CRM114-CacheID: sfid-20191105_120457_594198_292039F8 
+X-CRM114-Status: GOOD (  18.37  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,40 +60,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, jthierry@redhat.com,
- linux-parisc@vger.kernel.org, peterz@infradead.org, catalin.marinas@arm.com,
- deller@gmx.de, jpoimboe@redhat.com, linux-kernel@vger.kernel.org,
- James.Bottomley@HansenPartnership.com, takahiro.akashi@linaro.org,
- will@kernel.org, mingo@redhat.com, james.morse@arm.com, jeyu@kernel.org,
- svens@stackframe.org, duwe@suse.de, linux-arm-kernel@lists.infradead.org
+Cc: Steve Capper <steve.capper@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ bhupesh.linux@gmail.com, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 11/4/19 6:41 PM, Steven Rostedt wrote:
-> On Sat, 2 Nov 2019 17:49:00 +0530
-> Amit Daniel Kachhap <amit.kachhap@arm.com> wrote:
+On Tue, Nov 05, 2019 at 03:26:46AM +0530, Bhupesh Sharma wrote:
+> commit 9b31cf493ffa ("arm64: mm: Introduce MAX_USER_VA_BITS definition")
+> introduced the MAX_USER_VA_BITS definition, which was used to support
+> the arm64 mm use-cases where the user-space could use 52-bit virtual
+> addresses whereas the kernel-space would still could a maximum of 48-bit
+> virtual addressing.
 > 
->> Now that ftrace_init_nop is also an arch implemented function so it may
->> be added in Documentation/trace/ftrace-design.rst along with
->> ftrace_make_nop.
->> In general also, adding some description about patchable-function-entry
->> in kernel Documentation will be useful.
+> But, now with commit b6d00d47e81a ("arm64: mm: Introduce 52-bit Kernel
+> VAs"), we removed the 52-bit user/48-bit kernel kconfig option and hence
+> there is no longer any scenario where user VA != kernel VA size
+> (even with CONFIG_ARM64_FORCE_52BIT enabled, the same is true).
 > 
-> I think this part is outside the scope of this patch set. Honestly, I
-> need to chisel out some time to rewrite the ftrace-design document, as
-> that's been long needed. But that can come at a later time. I'm
-> currently rewriting some of it now, so it will be best to not waste
-> effort to update a document that will soon become stale. ;-)
-Yes it makes sense.
+> Hence we can do away with the MAX_USER_VA_BITS macro as it is equal to
+> VA_BITS (maximum VA space size) in all possible use-cases. Note that
+> even though the 'vabits_actual' value would be 48 for arm64 hardware
+> which don't support LVA-8.2 extension (even when CONFIG_ARM64_VA_BITS_52
+> is enabled), VA_BITS would still be set to a value 52. Hence this change
+> would be safe in all possible VA address space combinations.
+> 
+> Cc: James Morse <james.morse@arm.com>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Steve Capper <steve.capper@arm.com>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> Cc: linux-kernel@vger.kernel.org
+> Cc: kexec@lists.infradead.org
+> Signed-off-by: Bhupesh Sharma <bhsharma@redhat.com>
 
-Thanks,
-Amit
+As the commit message says, there should be no functional change as a
+result of this patch, and it looks like a nice cleanup to me:
+
+Reviewed-by: Mark Rutland <mark.rutland@arm.com>
+
+Mark.
+
+> ---
+>  arch/arm64/include/asm/memory.h        | 6 ------
+>  arch/arm64/include/asm/pgtable-hwdef.h | 2 +-
+>  arch/arm64/include/asm/processor.h     | 2 +-
+>  3 files changed, 2 insertions(+), 8 deletions(-)
 > 
-> -- Steve
+> diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
+> index c23c47360664..a4f9ca5479b0 100644
+> --- a/arch/arm64/include/asm/memory.h
+> +++ b/arch/arm64/include/asm/memory.h
+> @@ -69,12 +69,6 @@
+>  #define KERNEL_START		_text
+>  #define KERNEL_END		_end
+>  
+> -#ifdef CONFIG_ARM64_VA_BITS_52
+> -#define MAX_USER_VA_BITS	52
+> -#else
+> -#define MAX_USER_VA_BITS	VA_BITS
+> -#endif
+> -
+>  /*
+>   * Generic and tag-based KASAN require 1/8th and 1/16th of the kernel virtual
+>   * address space for the shadow region respectively. They can bloat the stack
+> diff --git a/arch/arm64/include/asm/pgtable-hwdef.h b/arch/arm64/include/asm/pgtable-hwdef.h
+> index 3df60f97da1f..d9fbd433cc17 100644
+> --- a/arch/arm64/include/asm/pgtable-hwdef.h
+> +++ b/arch/arm64/include/asm/pgtable-hwdef.h
+> @@ -69,7 +69,7 @@
+>  #define PGDIR_SHIFT		ARM64_HW_PGTABLE_LEVEL_SHIFT(4 - CONFIG_PGTABLE_LEVELS)
+>  #define PGDIR_SIZE		(_AC(1, UL) << PGDIR_SHIFT)
+>  #define PGDIR_MASK		(~(PGDIR_SIZE-1))
+> -#define PTRS_PER_PGD		(1 << (MAX_USER_VA_BITS - PGDIR_SHIFT))
+> +#define PTRS_PER_PGD		(1 << (VA_BITS - PGDIR_SHIFT))
+>  
+>  /*
+>   * Section address mask and size definitions.
+> diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
+> index 5623685c7d13..586fcd4b1965 100644
+> --- a/arch/arm64/include/asm/processor.h
+> +++ b/arch/arm64/include/asm/processor.h
+> @@ -9,7 +9,7 @@
+>  #define __ASM_PROCESSOR_H
+>  
+>  #define KERNEL_DS		UL(-1)
+> -#define USER_DS			((UL(1) << MAX_USER_VA_BITS) - 1)
+> +#define USER_DS			((UL(1) << VA_BITS) - 1)
+>  
+>  /*
+>   * On arm64 systems, unaligned accesses by the CPU are cheap, and so there is
+> -- 
+> 2.7.4
 > 
 
 _______________________________________________
