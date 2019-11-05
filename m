@@ -2,93 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7A5BEF5D6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 07:56:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 432C0EF5E3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 08:01:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Rxhez2KH8B9MVv06whkpSVN1s5eFtGKm/Yg3iFtfO3A=; b=uO36Vwhmo1Sv41
-	hSz6qLMv45uUW3sbpSltDCMHxi3XIklzF7AZOb3McNe5DBjfjxg9Bca2kjBbTy7ZkjJgEZ2xEXmg8
-	zOiCcl08VWsyGEs4zwMNzYkaEP3eS0LH/EAQ2mxQlAK/wLny+60nidP0OsXq1mpf4LjsDXF4gpNnl
-	6kD4veWa7jRwPf8Xw3uXcTOmfI3Qiwql2dnYVGvQG6/uMLl8g40xpK0Pll4Tp7hdCMSLYjLl09QC6
-	xwzmxpDudm+jj7ruPuEyMVF1ll8FwYiicomvh4gv2ln5ITE8jmUNarwrgaokUkIATt4uqHmSig436
-	w/SXUGtEh3c5DSxwHUxQ==;
+	List-Owner; bh=U2Q90C7ISH/P5WrAzGNSPaH+3m/W3YxXWn18HwFvaU4=; b=bf0h0poprZPP2S
+	pGG39hN+B8jBjV7iheAvMhjuXjaKQ93PRCHynGw5cQR3NLHKmBFERsEQjuajfy1OMQ77RqFMO1pSl
+	lXxeLYxwDooIN5Q2U9e64N5mOrMtvquDbd9hfoIwL0/klnfN3gU7BBuOd/DEmphacxpdqOWX52sa8
+	HFJvtoI9m1GNu0Rl4mfqB22rDgqhVpqCgFq1Q9hosYYG9+EyJB2v+MN1lH36K4ND01dCF7c6rO8d1
+	HstxnNIexOHsT+MRCgfGbvgA7CojBYfYJA9zaVYSNjr6pRDL00l1vfKnACDa4IhOUkiHUO7Otwvkn
+	nK5pFo59gs0e6ewUqmvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRslj-0006rO-0s; Tue, 05 Nov 2019 06:56:47 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1iRsqW-0000D7-OJ; Tue, 05 Nov 2019 07:01:44 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRslR-0006pT-Qo
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 06:56:31 +0000
-Received: by mail-pf1-x442.google.com with SMTP id s5so6191771pfh.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 Nov 2019 22:56:29 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=ov53IhqY+y2u5I+jv06ZVDSheZi0X6lfhJFxD0jJ1jY=;
- b=sYLkh9eJyOp3PyVAMRShFJBgV1u3OrLWHhznBG/lzdcqiGFWBpMogdewuNIZ3W3Aya
- ypLA2lOiSwS7Mha8F74R9we2LjzymNASflKZGpVmyMj53Piod7y5wFvSaOEFK8NTIqzX
- e98lI5w7K8FqOpp1Po8LPB+KCLElA32LZ59m8Q9kj09uLtL6/pZDGNms0qOh+stWZvZ7
- 50KtkyGhiw2X9OTLkgY/wnVfuHo6DXt34Be2bWVmGsnb5BajtNdRyIo+awmobq0fbO6m
- /576r3DcKQV0OAk9cEOOfxTloL5WzxdlqLvM5aZ0rI5paZdh8hZIR4yK1bv1JeuiL5VE
- nllQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ov53IhqY+y2u5I+jv06ZVDSheZi0X6lfhJFxD0jJ1jY=;
- b=Z72ZyU10iHmAIvhMzlb+g3qmhoDO8OUc2DrAaQvGSb4tos7zLwX2Gu/iM4c7F5VQBK
- R4eRd6+uQtzqUQJ7/GXGNV38r6Dg7+4yTd+ddz7mKf4omAEAwK+X0TiyhXlIvC3LtBV2
- fQQlWO0qpSXPA3mDRnklNv7MPYT1uHhca5OJAFooU7II7572sKSEKjX6KIaSiXX1G1PG
- Y0ZjWpHq2D1KstYXkFCIQmcKZ49p/CrCRvw7SjvEh8U0fbOSeYywevYyDHN1BbavO+qU
- Ytd4faO3+4OsyQ9nQ56rB1cgsR5EmQ7d7sogDEvSr6ZrOpevgnE5TzrSOjRYqpYhZWo2
- Xekw==
-X-Gm-Message-State: APjAAAWu1wkeIG7iwT6xKIdGXehBjzN68M43BRnM4iWcMuvSsNwALild
- +j9+ceyA20Q0u8I9w1WTCmMCKg==
-X-Google-Smtp-Source: APXvYqziJLDh7KltXxceWTUbGJJMReFbby2FRl5eOFtHFG7ihNZWZjPXD1U+iFBCnM+RPj2q5kPBAw==
-X-Received: by 2002:a62:61c4:: with SMTP id v187mr35889736pfb.23.1572936988079; 
- Mon, 04 Nov 2019 22:56:28 -0800 (PST)
-Received: from localhost ([122.171.110.253])
- by smtp.gmail.com with ESMTPSA id y16sm19426905pfo.62.2019.11.04.22.56.26
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 04 Nov 2019 22:56:27 -0800 (PST)
-Date: Tue, 5 Nov 2019 12:26:21 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Roger Lu <roger.lu@mediatek.com>
-Subject: Re: [v4, 6/8] PM / OPP: Support adjusting OPP voltages at runtime
-Message-ID: <20191105065621.iq6lp74tydrneshk@vireshk-i7>
-References: <1565703113-31479-1-git-send-email-andrew-sh.cheng@mediatek.com>
- <1565703113-31479-7-git-send-email-andrew-sh.cheng@mediatek.com>
- <20190819111836.5cu245xre6ky6xav@vireshk-i7>
- <1572595738.6939.7.camel@mtksdaap41>
+ id 1iRsqP-0000Cf-DB
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 07:01:38 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <pza@pengutronix.de>)
+ id 1iRsqI-00057P-4n; Tue, 05 Nov 2019 08:01:30 +0100
+Received: from pza by ptx.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <pza@pengutronix.de>)
+ id 1iRsqG-0008UW-VW; Tue, 05 Nov 2019 08:01:28 +0100
+Date: Tue, 5 Nov 2019 08:01:28 +0100
+From: Philipp Zabel <pza@pengutronix.de>
+To: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+Subject: Re: [PATCH v2 2/7] pwm: sun4i: Add an optional probe for reset line
+Message-ID: <20191105070128.ve73ha5ibiymcxnx@pengutronix.de>
+References: <20191103203334.10539-1-peron.clem@gmail.com>
+ <20191103203334.10539-3-peron.clem@gmail.com>
+ <20191104081157.373v22atswsaktbe@pengutronix.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1572595738.6939.7.camel@mtksdaap41>
-User-Agent: NeoMutt/20180716-391-311a52
+In-Reply-To: <20191104081157.373v22atswsaktbe@pengutronix.de>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 07:50:49 up 120 days, 13:01, 112 users,  load average: 0.25, 0.17,
+ 0.11
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: pza@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_225629_879158_8294FE98 
-X-CRM114-Status: GOOD (  11.76  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191104_230137_445951_4794179A 
+X-CRM114-Status: GOOD (  23.78  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,39 +76,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>,
- Andrew-sh Cheng =?utf-8?B?KOmEreW8j+WLsyk=?=
- <andrew-sh.cheng@mediatek.com>, srv_heupstream <srv_heupstream@mediatek.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, Stephen Boyd <sboyd@codeaurora.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Fan Chen =?utf-8?B?KOmZs+WHoSk=?= <fan.chen@mediatek.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-pwm@vger.kernel.org,
+ Jernej Skrabec <jernej.skrabec@siol.net>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ =?iso-8859-1?Q?Cl=E9ment_P=E9ron?= <peron.clem@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 01-11-19, 16:08, Roger Lu wrote:
-> I've studied opp/core.c and still don't know meaning of triplet here.
-> Could you give me more hints (reference API?) about how to take a
-> triplet instead? Thanks in advance.
+On Mon, Nov 04, 2019 at 09:11:57AM +0100, Uwe Kleine-K=F6nig wrote:
+> Hello,
+> =
 
-I was hoping you to follow this thread :)
+> adding Philipp Zabel (=3D reset controller maintainer) to Cc: and so I'm
+> not stripping the uncommented parts of the patch.
+> =
 
-https://lore.kernel.org/linux-arm-kernel/20191016145756.16004-2-s.nawrocki@samsung.com/
+> On Sun, Nov 03, 2019 at 09:33:29PM +0100, Cl=E9ment P=E9ron wrote:
+> > From: Jernej Skrabec <jernej.skrabec@siol.net>
+> > =
 
-I already applied this patch to the OPP tree.
+> > H6 PWM core needs deasserted reset line in order to work.
+> > =
 
--- 
-viresh
+> > Add an optional probe for it.
+> > =
+
+> > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> > Signed-off-by: Cl=E9ment P=E9ron <peron.clem@gmail.com>
+> > ---
+> >  drivers/pwm/pwm-sun4i.c | 32 ++++++++++++++++++++++++++++++--
+> >  1 file changed, 30 insertions(+), 2 deletions(-)
+> > =
+
+> > diff --git a/drivers/pwm/pwm-sun4i.c b/drivers/pwm/pwm-sun4i.c
+> > index 6f5840a1a82d..d194b8ebdb00 100644
+> > --- a/drivers/pwm/pwm-sun4i.c
+> > +++ b/drivers/pwm/pwm-sun4i.c
+> > @@ -16,6 +16,7 @@
+> >  #include <linux/of_device.h>
+> >  #include <linux/platform_device.h>
+> >  #include <linux/pwm.h>
+> > +#include <linux/reset.h>
+> >  #include <linux/slab.h>
+> >  #include <linux/spinlock.h>
+> >  #include <linux/time.h>
+> > @@ -78,6 +79,7 @@ struct sun4i_pwm_data {
+> >  struct sun4i_pwm_chip {
+> >  	struct pwm_chip chip;
+> >  	struct clk *clk;
+> > +	struct reset_control *rst;
+> >  	void __iomem *base;
+> >  	spinlock_t ctrl_lock;
+> >  	const struct sun4i_pwm_data *data;
+> > @@ -365,6 +367,20 @@ static int sun4i_pwm_probe(struct platform_device =
+*pdev)
+> >  	if (IS_ERR(pwm->clk))
+> >  		return PTR_ERR(pwm->clk);
+> >  =
+
+> > +	pwm->rst =3D devm_reset_control_get_optional(&pdev->dev, NULL);
+> > +	if (IS_ERR(pwm->rst)) {
+> > +		if (PTR_ERR(pwm->rst) =3D=3D -EPROBE_DEFER)
+> > +			return PTR_ERR(pwm->rst);
+> > +		dev_info(&pdev->dev, "no reset control found\n");
+> =
+
+> I would degrade this to a dev_dbg. Otherwise this spams the log for all
+> unaffected machines.
+
+The _optional variants return NULL if the reset is not specified in the
+device tree, so this is not "no reset control found", but a real error
+that should be returned.
+
+> devm_reset_control_get_optional() is defined in a section that has a
+> comment "These inline function calls will be removed once all
+> consumers have been moved over to the new explicit API.", so I guess
+> you want devm_reset_control_get_optional_exclusive or even
+> devm_reset_control_get_optional_shared here.
+
+Correct. If this driver deasserts in probe() and asserts the reset in
+remove(), this can use the refcounting _shared variant.
+
+> @Philipp: maybe a check in checkpatch that warns about introduction of
+> such new instances would be good?!
+
+Yes, that would be helpful.
+
+regards
+Philipp
 
 _______________________________________________
 linux-arm-kernel mailing list
