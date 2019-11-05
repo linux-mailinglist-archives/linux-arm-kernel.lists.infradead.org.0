@@ -2,82 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 05245F00F9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 16:14:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06B75F01D8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 16:47:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0rB2Pc9MLUyPgHmIV0SKku1/XSsIevjK1IJoFccm5Kk=; b=bnbEuB0Mn+6Sd+DQnY1Dowuus
-	nVlCpHrfGytQfhNcUwqTKFvY+wIL+fd7APGZQnyJzVcjq4xZRex3BzlLReaP9iaP2QIP323rVs36b
-	FbnnkQuKqYW2WL5+p8ShFLwxmwS/yZanlbBupP401Z07nwT3b3KFEzDN/wDLA5N1RdKe9n41OSdEm
-	NcQaWwFg06+NOVy7WhS0nmn15hQnsASN8jY3x28X8z5LT9NA0hNkwxdemNMmX16fla0rO/k0vlYXh
-	FWvtT9WNCBV+P1tuguzXG/cUID6c5FfXgBoD1bW2R89wWcJhFkg4+k8yquBzpG/SazUiVzPBogMl1
-	jPufLhLzg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ASXA9ZXa/fRpGNakOcDxtW0PVi5GTwKsrFJdXYOHAFA=; b=X6p
+	V8SiOZeLToUaTGYNSetdhGpNK5FoohtRkAGJZsll0c8/pmvRo9dMxapcAGC5C5Uzj4H2wcoUZz+gI
+	8yKv0srGA5oFzZNmffhNrapdqpX/SrdsB/iywb5Ub1gsww8ZcKRiGBMWq/qqtD1y+r+FoX65wvrx5
+	bNY93z8Hisv8Y2ehrL3Vm7Oya7LAAaSu9zCowJhwfm7hQUO6FAZcetmBfBKfL6NHGnw8+88z3sgai
+	zH+igtIoYOca024u2ITkITW1Te1WQA4o8IrE5TgNYbbDSOwf3lEpek8IBz+gFkNlq9RnUkSQ99wNO
+	4YSgn8G0mrAx/yBSbADU2qh/s9DtNOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS0XR-00060w-IJ; Tue, 05 Nov 2019 15:14:33 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1iS13i-00050n-Pt; Tue, 05 Nov 2019 15:47:54 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS0XK-0005yw-BV
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 15:14:28 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xA5F2XXW016060; Tue, 5 Nov 2019 16:14:21 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=sGcJotaSzAOF4wGBo2lc42IY7N+BpinNhWjk4Wx5zlY=;
- b=NeNQEYXPLvC3WCliUp9foYV7DboksxXg5AylZVZxb3SgTkByJKTqjh4al8hpgwgwC+kw
- KDq8KB+bY+m/l/sPplfQ1h3g2R4FboTw2eX3sStxXNQmYMx+wUSbd+e+qkOFnTbuvB16
- oh2QlH5a05G3/CRmytr5aW7l1TZx8MyIXOG84pD9gAzqPuJlKPipM3xI+E4phHECsjdV
- dGuU7sYCxIuxgh0SuDcunzdaQ6QdFBSIQ/ht29GmniLT0SCWXAatRqmm3duk5wX6ODZJ
- yY+NDtcAk+1n62SgZTGjDI0rmzcKvhblqXCWvBlPCLGo2W6PRYs7pdQs4H3Qi6W0rrE0 7A== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2w1054r40k-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 05 Nov 2019 16:14:21 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 9294C10002A;
- Tue,  5 Nov 2019 16:14:19 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 82FD92D3768;
- Tue,  5 Nov 2019 16:14:19 +0100 (CET)
-Received: from lmecxl0995.lme.st.com (10.75.127.44) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 5 Nov
- 2019 16:14:18 +0100
-Subject: Re: [PATCH 1/1] pinctrl: stmfx: fix valid_mask init sequence
-To: Linus Walleij <linus.walleij@linaro.org>
-References: <20191104100908.10880-1-amelie.delaunay@st.com>
- <CACRpkdb1c-NHXDQXYS78VTcGPnJApmxjzZbF_cM8SUknhDiQ4Q@mail.gmail.com>
-From: Amelie DELAUNAY <amelie.delaunay@st.com>
-Message-ID: <64f8096f-cec6-fef1-5a4e-ddca3bf8c73d@st.com>
-Date: Tue, 5 Nov 2019 16:14:18 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <CACRpkdb1c-NHXDQXYS78VTcGPnJApmxjzZbF_cM8SUknhDiQ4Q@mail.gmail.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.44]
-X-ClientProxiedBy: SFHDAG7NODE3.st.com (10.75.127.21) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
- definitions=2019-11-05_05:2019-11-05,2019-11-05 signatures=0
+ id 1iS13Z-0004zt-Jc
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 15:47:49 +0000
+Received: by mail-pf1-x444.google.com with SMTP id r4so15778365pfl.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 05 Nov 2019 07:47:45 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=t1L6+m9hBLLg9ecbvS9SNg9rj75+gCrGi1CLLHD4RZI=;
+ b=PGrGX37h6vvBl57jC4IPFGeAF72tRRMVpY/1u5ZDRcSz+b9CsrZpGheA+F5QIWYR1y
+ ynl6FkUdWNOsE8cFWwh9ZitQL0e7+JWV30m2rf0XSt/fQxlhMI/hXVom1BmMiSjNopg7
+ VpE6JzwisyZOQttNkmyVtxMjdzOfN9kG/7UkBQjBsSZsUt/K4E6eB2fiKMlgP+TNFPqQ
+ /vqa23kZBHFtDVfaqRlmhZbnztSDoGS7HUTKcVxkli9tUxjKadvZXBTmz2AE91LRZBEj
+ 0iVzAN0chn/Yc3jjzAX0gFxGF4gtBVJnzCIU1f6atxKSwCQYA+c7xK4rhBc55RymIGtd
+ BbvQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=t1L6+m9hBLLg9ecbvS9SNg9rj75+gCrGi1CLLHD4RZI=;
+ b=ZcM8Dwue6Mih6Tj9Wtm4Y9W7oMsDYdvmloIe/pVJH0Q4gsVC0/gvT5+nfPt6zGLMHS
+ NV/WrGStaCB9Wt9sfQDeuY9u0FrZ/WflsPKc/aJqjx24v6FmlSAQQqsgKRvoXBEzqiUi
+ qtxK1022lSNuzjuovnyRKLaOTwXV7U1SBfsyb1bpQblMbQ09fxaNxR5w/SKfIjr4L9Ov
+ j4SL/aeHiC3iayY1YlXy7TJQ0470Cdv5SUOv8hNrvhNtpUUpAa/ewns71Ho5wiQdCXCi
+ q3VK5fQdCmDNIlb2XRjO52rlVpdi5pzV6r6Fg7nOOrsutjB5PAVBnP6lOu1l+Z5MaW7o
+ ApNg==
+X-Gm-Message-State: APjAAAWGvoXJy2KXRrlRzecx9IPFyoWMxK2KjQpflUK+6iNc3ayCVj86
+ gQa6/pP3LtCduLxDJrz0tYQ=
+X-Google-Smtp-Source: APXvYqwQqlhN/HGHnoENik9dC2Bi7i9KmZTeqoa+THOVerV8WYt+h0+5wEzmGZtfcafZF8ZlTcXvhw==
+X-Received: by 2002:a63:6786:: with SMTP id
+ b128mr21971412pgc.126.1572968864389; 
+ Tue, 05 Nov 2019 07:47:44 -0800 (PST)
+Received: from localhost.localdomain ([137.97.114.236])
+ by smtp.gmail.com with ESMTPSA id x190sm23446824pfc.89.2019.11.05.07.47.41
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 05 Nov 2019 07:47:43 -0800 (PST)
+From: Jayachandran C <c.jayachandran@gmail.com>
+To: arm soc <arm@kernel.org>,
+	Robert Richter <rrichter@marvell.com>
+Subject: [PATCH] MAINTAINERS: update Cavium ThunderX2 maintainers
+Date: Tue,  5 Nov 2019 21:16:54 +0530
+Message-Id: <20191105154654.4675-1-c.jayachandran@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_071426_846575_3DFF3B0F 
-X-CRM114-Status: GOOD (  18.80  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191105_074745_648444_8F47FC15 
+X-CRM114-Status: GOOD (  10.86  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.1 URIBL_SBL_A Contains URL's A record listed in the Spamhaus SBL
+ blocklist [URIs: obsidianresearch.com]
+ 0.6 URIBL_SBL Contains an URL's NS IP listed in the Spamhaus SBL
+ blocklist [URIs: obsidianresearch.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (c.jayachandran[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -96,69 +99,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre TORGUE <alexandre.torgue@st.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Jayachandran C <c.jayachandran@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Jonathan Corbet <corbet@lwn.net>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiAxMS81LzE5IDM6MzIgUE0sIExpbnVzIFdhbGxlaWogd3JvdGU6Cj4gT24gTW9uLCBOb3Yg
-NCwgMjAxOSBhdCAxMTowOSBBTSBBbWVsaWUgRGVsYXVuYXkgPGFtZWxpZS5kZWxhdW5heUBzdC5j
-b20+IAo+IHdyb3RlOgo+IAo+PiBXaXRoIHN0bWZ4X3BpbmN0cmxfZ3Bpb19pbml0X3ZhbGlkX21h
-c2sgY2FsbGJhY2ssIGdwaW9fdmFsaWRfbWFzayB3YXMgdXNlZAo+PiB0byBpbml0aWFsaXplIGdw
-aW9jaGlwIHZhbGlkX21hc2sgZm9yIGdwaW9saWIuIEJ1dCBncGlvX3ZhbGlkX21hc2sgd2FzIG5v
-dAo+PiB5ZXQgaW5pdGlhbGl6ZWQuIGdwaW9fdmFsaWRfbWFzayByZXF1aXJlZCBncGlvLXJhbmdl
-cyB0byBiZSByZWdpc3RlcmVkLAo+PiB0aGlzIGlzIHRoZSBjYXNlIGFmdGVyIGdwaW9jaGlwX2Fk
-ZF9kYXRhIGNhbGwuIEJ1dCBpbml0X3ZhbGlkX21hc2sKPj4gY2FsbGJhY2sgaXMgYWxzbyBjYWxs
-ZWQgdW5kZXIgZ3Bpb2NoaXBfYWRkX2RhdGEuIGdwaW9fdmFsaWRfbWFzawo+PiBpbml0aWFsaXph
-dGlvbiBjYW5ub3QgYmUgbW92ZWQgYmVmb3JlIGdwaW9jaGlwX2FkZF9kYXRhIGJlY2F1c2UKPj4g
-Z3Bpby1yYW5nZXMgYXJlIG5vdCByZWdpc3RlcmVkLgo+IAo+IFNvcnJ5IGJ1dCB0aGlzIGRvZXNu
-J3QgYWRkIHVwLCBsb29rIGF0IHRoaXMgY2FsbCBncmFwaDoKPiAKPiBncGlvY2hpcF9hZGRfZGF0
-YSgpCj4gIMKgIGdwaW9jaGlwX2FkZF9kYXRhX3dpdGhfa2V5KCkKPiAgwqDCoMKgIGdwaW9jaGlw
-X2FsbG9jX3ZhbGlkX21hc2soKQo+ICDCoMKgwqAgb2ZfZ3Bpb2NoaXBfYWRkKCkKPiAgwqDCoMKg
-IG9mX2dwaW9jaGlwX2FkZF9waW5fcmFuZ2UoKQo+ICDCoMKgwqAgZ3Bpb2NoaXBfaW5pdF92YWxp
-ZF9tYXNrKCkKPiAKPiBTbyB0aGUgLmluaXRpX3ZhbGlkX21hc2soKSBpcyBjbGVhcmx5IGNhbGxl
-ZCAqYWZ0ZXIqCj4gb2ZfZ3Bpb2NoaXBfYWRkX3Bpbl9yYW5nZSgpIHNvIHRoaXMgY2Fubm90IGJl
-IHRoZSByZWFsIHJlYXNvbiwKPiBwcm92aWRlZCB0aGF0IHRoZSByYW5nZXMgY29tZSBmcm9tIHRo
-ZSBkZXZpY2UgdHJlZS4gQUZBSUNUIHRoYXQKPiBpcyB0aGUgY2FzZSB3aXRoIHRoZSBzdG1meC4K
-PiAKPiBDYW4geW91IGNoZWNrIGFuZCBzZWUgaWYgdGhlIHByb2JsZW0gaXMgc29tZXRoaW5nIGVs
-c2U/Cj4KCnN0bWZ4X3BpbmN0cmxfZ3Bpb19pbml0X3ZhbGlkX21hc2sgdXNlcyBwY3RsLT5ncGlv
-X3ZhbGlkX21hc2sgdG8gCmluaXRpYWxpemUgZ3Bpb2NoaXAgdmFsaWRfbWFzay4KCnBjdGwtPmdw
-aW9fdmFsaWRfbWFzayBpcyBpbml0aWFsaXplZCBpbiAKc3RtZnhfcGluY3RybF9ncGlvX2Z1bmN0
-aW9uX2VuYWJsZSBkZXBlbmRpbmcgb24gZ3BpbyByYW5nZXMuCgpzdG1meF9waW5jdHJsX2dwaW9f
-ZnVuY3Rpb25fZW5hYmxlIGlzIGNhbGxlZCBhZnRlciBncGlvY2hpcF9hZGRfZGF0YSAKYmVjYXVz
-ZSBpdCByZXF1aXJlcyBncGlvIHJhbmdlcyB0byBiZSByZWdpc3RlcmVkLgoKU28sIGluIHN0bWZ4
-IGRyaXZlciB0aGUgY2FsbCBncmFwaCBpcwoKc3RtZnhfcGluY3RybF9wcm9iZQogICBncGlvY2hp
-cF9hZGRfZGF0YSgpCiAgICAgZ3Bpb2NoaXBfYWRkX2RhdGFfd2l0aF9rZXkoKQogICAgICAgZ3Bp
-b2NoaXBfYWxsb2NfdmFsaWRfbWFzaygpCiAgICAgICBvZl9ncGlvY2hpcF9hZGQoKQogICAgICAg
-b2ZfZ3Bpb2NoaXBfYWRkX3Bpbl9yYW5nZSgpCiAgICAgICBncGlvY2hpcF9pbml0X3ZhbGlkX21h
-c2soKQogICAgICAgICBzdG1meF9waW5jdHJsX2dwaW9faW5pdF92YWxpZF9tYXNrIChidXQgcGN0
-bC0+Z3Bpb192YWxpZF9tYXNrIAppcyBub3QgeWV0IGluaXRpYWxpemVkIHNvIGdwaW9jaGlwIHZh
-bGlkX21hc2sgaXMgd3JvbmcpCiAgIHN0bWZ4X3BpbmN0cmxfZ3Bpb19mdW5jdGlvbl9lbmFibGUg
-KHBjdGwtPmdwaW9fdmFsaWRfbWFzayBpcyBnb2luZyB0byAKYmUgaW5pdGlhbGl6ZWQgdGhhbmtz
-IHRvIGdwaW8gcmFuZ2VzKQoKV2hlbiBjb25zdW1lciB0cmllcyB0byB0YWtlIGEgcGluIChpdCBp
-cyB0aGUgY2FzZSBmb3IgdGhlIGpveXN0aWNrIG9uIApzdG0zMm1wMTU3Yy1ldjEpLCBpdCBnZXRz
-IHRoZSBmb2xsb3dpbmcgaXNzdWU6ClsgICAgMy4zNDczOTFdIGlycTogOnNvYzppMmNANDAwMTMw
-MDA6c3RtZnhANDI6c3RtZngtcGluLWNvbnRyb2xsZXIgCmRpZG4ndCBsaWtlIGh3aXJxLTB4MCB0
-byBWSVJROTIgbWFwcGluZyAocmM9LTYpClsgICAgMy4zNTY0MThdIGlycTogOnNvYzppMmNANDAw
-MTMwMDA6c3RtZnhANDI6c3RtZngtcGluLWNvbnRyb2xsZXIgCmRpZG4ndCBsaWtlIGh3aXJxLTB4
-MSB0byBWSVJROTIgbWFwcGluZyAocmM9LTYpClsgICAgMy4zNjY1MTJdIGlycTogOnNvYzppMmNA
-NDAwMTMwMDA6c3RtZnhANDI6c3RtZngtcGluLWNvbnRyb2xsZXIgCmRpZG4ndCBsaWtlIGh3aXJx
-LTB4MiB0byBWSVJROTIgbWFwcGluZyAocmM9LTYpClsgICAgMy4zNzY2NzFdIGlycTogOnNvYzpp
-MmNANDAwMTMwMDA6c3RtZnhANDI6c3RtZngtcGluLWNvbnRyb2xsZXIgCmRpZG4ndCBsaWtlIGh3
-aXJxLTB4MyB0byBWSVJROTIgbWFwcGluZyAocmM9LTYpClsgICAgMy4zODcxNjldIGlycTogOnNv
-YzppMmNANDAwMTMwMDA6c3RtZnhANDI6c3RtZngtcGluLWNvbnRyb2xsZXIgCmRpZG4ndCBsaWtl
-IGh3aXJxLTB4NCB0byBWSVJROTIgbWFwcGluZyAocmM9LTYpClsgICAgMy4zOTcwNjVdIGdwaW8t
-a2V5cyBqb3lzdGljazogRm91bmQgYnV0dG9uIHdpdGhvdXQgZ3BpbyBvciBpcnEKWyAgICAzLjQw
-MzA0MV0gZ3Bpby1rZXlzOiBwcm9iZSBvZiBqb3lzdGljayBmYWlsZWQgd2l0aCBlcnJvciAtMjIK
-CkkgY2FuIHJld29yZCB0aGUgY29tbWl0IG1lc3NhZ2UgdG8gbWFrZSBpdCBjbGVhcmVyLgoKUmVn
-YXJkcywKQW1lbGllCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
-LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1hcm0ta2VybmVsCg==
+jnair is no longer at caviumnetworks.com (or at marvell.com). This also
+means that Cavium ThunderX2 will now be maintained by Robert.
+
+This is probably a good time to map various email addresses used for
+my patches to my personal email ID, update .mailcap to do this.
+
+Signed-off-by: Jayachandran C <c.jayachandran@gmail.com>
+---
+
+Hope this will be merged thru the ARM SoC tree, let me know if I
+need to send it to someone else.
+
+JC
+
+ .mailmap    | 4 ++++
+ MAINTAINERS | 1 -
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/.mailmap b/.mailmap
+index 83d7e750c2fc..fd6219293057 100644
+--- a/.mailmap
++++ b/.mailmap
+@@ -108,6 +108,10 @@ Jason Gunthorpe <jgg@ziepe.ca> <jgg@mellanox.com>
+ Jason Gunthorpe <jgg@ziepe.ca> <jgunthorpe@obsidianresearch.com>
+ Javi Merino <javi.merino@kernel.org> <javi.merino@arm.com>
+ <javier@osg.samsung.com> <javier.martinez@collabora.co.uk>
++Jayachandran C <c.jayachandran@gmail.com> <jayachandranc@netlogicmicro.com>
++Jayachandran C <c.jayachandran@gmail.com> <jchandra@broadcom.com>
++Jayachandran C <c.jayachandran@gmail.com> <jchandra@digeo.com>
++Jayachandran C <c.jayachandran@gmail.com> <jnair@caviumnetworks.com>
+ Jean Tourrilhes <jt@hpl.hp.com>
+ <jean-philippe@linaro.org> <jean-philippe.brucker@arm.com>
+ Jeff Garzik <jgarzik@pretzel.yyz.us>
+diff --git a/MAINTAINERS b/MAINTAINERS
+index cba1095547fd..21c7a8a25e00 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -3737,7 +3737,6 @@ F:	drivers/crypto/cavium/cpt/
+ 
+ CAVIUM THUNDERX2 ARM64 SOC
+ M:	Robert Richter <rrichter@cavium.com>
+-M:	Jayachandran C <jnair@caviumnetworks.com>
+ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+ S:	Maintained
+ F:	arch/arm64/boot/dts/cavium/thunder2-99xx*
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
