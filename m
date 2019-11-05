@@ -2,69 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4D93EF26E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 02:04:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4FDD8EF27F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 02:17:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HsYw9aly1O8FzZwiY6bjiurCxcj6fEdrVUjFSU/QMn8=; b=ri7Or1dIK8WkTy
-	Rhz74vxQAELj/jBJdHzlTpXwOjPUtz7WvJ/LRS6NmWRnSRKsfqu2P/gPJykXybIHyEHeddAbqoG1X
-	h/kTcg2XOhixXvy3CGGE0IJWu7kn1EsNGeqfZaOjpF0VHgwYPK/6x9D+54HHVEyX4XzClLhPTcnvE
-	q1t4D3a6jLs1J3yEa6TY1mNV9td+dJZkft6/QaFzXF/6cx6slp6bUMnZudlPWACzF3zyNUOeVcKG3
-	WbQ04Sm3NW5wB5Y0Zjcd886HEP0dnI9CREFMvG+hWmtsYNjSSvl+aYTD2uMOByUZTS3dxdbXTJnDV
-	X8jeP2x0eYEcEol7hJ4Q==;
+	List-Owner; bh=8iePHkk9woBy89M7n9P99oYZGA7YcG2nJlQeLQAJhPA=; b=CeDev3DP1ORONb
+	pQugQOeBoGNww6QY/EXP9TqdWpvsgGWxPcr0c+P37fYJ2EGMOdMXpbJDEM6j16Grx33fGx2Y4PzgC
+	lUREquLdyN1koruH708junTyrskEdxgKayiOnxXEdMF+P4ZLrKawVADm5GwzjoNYib6pjtv8f2rq7
+	/qSGuVmvkkczx0xWEkiK0g1Uvu9CSHUDFvw4Hr7ZwtGj9xMvZvVIk3q0zFSWPWdNZaPDQnXgSza8R
+	QlhHO0tBKDyB9e8C61jlN5uSRFY7M60AsIDYdEyDfUyse18MjDJFp2Frgcp5yQj9ZMYFnG4vAeRbh
+	eXDNMaLFzd5pi949vDig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRnGm-0004Cz-Gg; Tue, 05 Nov 2019 01:04:28 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iRnSv-0001B1-UA; Tue, 05 Nov 2019 01:17:01 +0000
+Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRnGf-0004CA-Ft
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 01:04:24 +0000
-Received: from mail-qk1-f173.google.com (mail-qk1-f173.google.com
- [209.85.222.173])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CD6B8214D9
+ id 1iRnSp-0001Ab-8D
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 01:16:56 +0000
+Received: by mail-oi1-x243.google.com with SMTP id n14so263871oie.13
  for <linux-arm-kernel@lists.infradead.org>;
- Tue,  5 Nov 2019 01:04:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572915860;
- bh=sTcBCA8l2RZxRpdS9VTLmDe7MskoQYokwGOaXyovaL0=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=SEBWjM+2C7C+IcNnpZxGZfG9B2EaB1eSzHoQ6F4AHHiw7rFMeAukOWRRIbLk7Buxd
- M8jOUKACjHyvm1xZxB+aM2PzpGfOwuCSQn3SszWspFcSDzBeUiCxV/M48Gg6Y60cos
- 55l1rgdjNrkh4pK/dr0GP8NZzO8ffSU1uKHuSusI=
-Received: by mail-qk1-f173.google.com with SMTP id d13so19629383qko.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 Nov 2019 17:04:19 -0800 (PST)
-X-Gm-Message-State: APjAAAURvEfcK3LenIjhwd/4zCPNxPJDrWsK6+IHDru601a52Ugb4LwZ
- 3Z+HCNbASAOpdjSSQjXhjezSxwYkgM9NIit7dA==
-X-Google-Smtp-Source: APXvYqwsMu703NinjvwjbQZjTIbHvV30WH6ox/R/wnr91ZuuYkfPj8qqz/+pre0d3AXOsSI7kgSuVkXvG0Sts88cEm4=
-X-Received: by 2002:a37:f703:: with SMTP id q3mr25759531qkj.254.1572915858826; 
- Mon, 04 Nov 2019 17:04:18 -0800 (PST)
+ Mon, 04 Nov 2019 17:16:54 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=kBeY4f2OvdQA5xTLMkQLC0YdOsAuWNMqH+SmmFAXcgs=;
+ b=bCx9UYoyZMXoeo3o8cc0y22tALdHKfscWqvoj5CIoH+KXchcEQ8N7GY26Iwj1HHWTh
+ 5GSaNGSgUqrYUKv7WUsQ7VZ8NG1PbBsppoGug8I4DEIbcfXGqC0bBkIOpIu08X0E09Oa
+ +Q7gxj/Yt6IeVVLtXM9nayAGqADYROl6IGC0yU3xXkXsMETPoxZu8rO7BNigtGQDc6R3
+ wJxxMCtvIsRuLF3Vy68ozP0dHrE9SBhxzydlWOwbK3lh/VlIstUu5NM8wA+MD4UVe3cM
+ 8l4JpJApDFg8NUoFqJTvwgdKwbht27ZViljR1/4cz8SPOJYxT8l0J2rQpVm4XlvsUcdl
+ bKaw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=kBeY4f2OvdQA5xTLMkQLC0YdOsAuWNMqH+SmmFAXcgs=;
+ b=PevvLnxQ9anXzZTIyWTMufxp8wSlvy17jp0oEorOoYhAaCUTFH8SfbObbL6gxJQ9aw
+ Fuq/T3i4w0M67LZV6rYeY9YlHXd0fONnOhC+rwKnhDbPnNLnDXNrUL1kGRJoOhOHDmXY
+ 8H6L/1FUuJyZ4QDdQvMZKeD90N5DtDjKcMJ4FbiRXoazyvh+bMMaYUQNZvJgM2I/aF6n
+ baKmiYirRHLySRSKCaz5PfNc2sCEqperjjATO+tn0sTXcQ1idhvVa/yHhakXLQyBdGYj
+ g/uG6McOBBKPIRBWm1+tQxi7+aabIep+O0BHkZFR3uLq1nZrsAKFhIq13ewSP/YWYteR
+ va3A==
+X-Gm-Message-State: APjAAAW4iue4bUdCUtyRNNQS2sgups3v576LUnfj+LLWOAb0Z0LwrbYO
+ df/zylYV8moyEiTXk0JBrNpmVam3yHOeztFGuhRaSQ==
+X-Google-Smtp-Source: APXvYqyf7IeMKspg6JW7fJbbf2hW11JVdVyOHNLOnfin4tyCvuxMjfE67fC863wVdT3V1oGIhBhfkC4oLJhg/ULtgGA=
+X-Received: by 2002:a05:6808:113:: with SMTP id
+ b19mr1571484oie.169.1572916613450; 
+ Mon, 04 Nov 2019 17:16:53 -0800 (PST)
 MIME-Version: 1.0
-References: <20191101081148.23274-1-yamada.masahiro@socionext.com>
- <20191101081148.23274-3-yamada.masahiro@socionext.com>
-In-Reply-To: <20191101081148.23274-3-yamada.masahiro@socionext.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Mon, 4 Nov 2019 19:04:07 -0600
-X-Gmail-Original-Message-ID: <CAL_Jsq+_vKmhVacTnt7fXJFsFGkg0AopdiZ4XaQ3V4M=zhn_CA@mail.gmail.com>
-Message-ID: <CAL_Jsq+_vKmhVacTnt7fXJFsFGkg0AopdiZ4XaQ3V4M=zhn_CA@mail.gmail.com>
-Subject: Re: [PATCH v2 2/3] ARM: decompressor: simplify libfdt builds
-To: Masahiro Yamada <yamada.masahiro@socionext.com>
+References: <20191029153051.24367-1-catalin.marinas@arm.com>
+In-Reply-To: <20191029153051.24367-1-catalin.marinas@arm.com>
+From: John Stultz <john.stultz@linaro.org>
+Date: Mon, 4 Nov 2019 17:16:42 -0800
+Message-ID: <CALAqxLXuxZVg0kqNQXF_dH17NzH9m14-Ci_rzruHzmms0V7pvg@mail.gmail.com>
+Subject: Re: [PATCH] arm64: Ensure VM_WRITE|VM_SHARED ptes are clean by default
+To: Catalin Marinas <catalin.marinas@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_170421_568664_1F99890F 
-X-CRM114-Status: GOOD (  20.10  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191104_171655_299896_CB896AB7 
+X-CRM114-Status: GOOD (  18.81  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -74,7 +80,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,212 +91,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
- Russell King <linux@armlinux.org.uk>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Frank Rowand <frowand.list@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- David Gibson <david@gibson.dropbear.id.au>
+Cc: Alistair Delva <adelva@google.com>, Sandeep Patil <sspatil@google.com>,
+ Will Deacon <will@kernel.org>, stable <stable@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 1, 2019 at 3:12 AM Masahiro Yamada
-<yamada.masahiro@socionext.com> wrote:
+On Tue, Oct 29, 2019 at 8:31 AM Catalin Marinas <catalin.marinas@arm.com> wrote:
 >
-> Copying source files during the build time may not end up with
-> as clean code as you expect.
+> Shared and writable mappings (__S.1.) should be clean (!dirty) initially
+> and made dirty on a subsequent write either through the hardware DBM
+> (dirty bit management) mechanism or through a write page fault. A clean
+> pte for the arm64 kernel is one that has PTE_RDONLY set and PTE_DIRTY
+> clear.
 >
-> lib/fdt*.c simply wrap scripts/dtc/libfdt/fdt*.c, and it works
-> nicely. Let's follow that approach for the arm decompressor, too.
+> The PAGE_SHARED{,_EXEC} attributes have PTE_WRITE set (PTE_DBM) and
+> PTE_DIRTY clear. Prior to commit 73e86cb03cf2 ("arm64: Move PTE_RDONLY
+> bit handling out of set_pte_at()"), it was the responsibility of
+> set_pte_at() to set the PTE_RDONLY bit and mark the pte clean if the
+> software PTE_DIRTY bit was not set. However, the above commit removed
+> the pte_sw_dirty() check and the subsequent setting of PTE_RDONLY in
+> set_pte_at() while leaving the PAGE_SHARED{,_EXEC} definitions
+> unchanged. The result is that shared+writable mappings are now dirty by
+> default
 >
-> Add four wrappers, arch/arm/boot/compressed/fdt*.c and remove the
-> Makefile messes.
+> Fix the above by explicitly setting PTE_RDONLY in PAGE_SHARED{,_EXEC}.
+> In addition, remove the superfluous PTE_DIRTY bit from the kernel PROT_*
+> attributes.
 >
-> Another nice thing is we no longer need to maintain the separate
-> libfdt_env.h since we can include <linux/libfdt_env.h>, and the
-> diff stat also looks nice.
->
-> Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
-> ---
->
-> Changes in v2: None
->
->  arch/arm/boot/compressed/.gitignore     |  9 -------
->  arch/arm/boot/compressed/Makefile       | 33 +++++++------------------
->  arch/arm/boot/compressed/atags_to_fdt.c |  1 +
->  arch/arm/boot/compressed/fdt.c          |  2 ++
->  arch/arm/boot/compressed/fdt_ro.c       |  2 ++
->  arch/arm/boot/compressed/fdt_rw.c       |  2 ++
->  arch/arm/boot/compressed/fdt_wip.c      |  2 ++
->  arch/arm/boot/compressed/libfdt_env.h   | 22 -----------------
->  8 files changed, 18 insertions(+), 55 deletions(-)
->  create mode 100644 arch/arm/boot/compressed/fdt.c
->  create mode 100644 arch/arm/boot/compressed/fdt_ro.c
->  create mode 100644 arch/arm/boot/compressed/fdt_rw.c
->  create mode 100644 arch/arm/boot/compressed/fdt_wip.c
->  delete mode 100644 arch/arm/boot/compressed/libfdt_env.h
+> Fixes: 73e86cb03cf2 ("arm64: Move PTE_RDONLY bit handling out of set_pte_at()")
+> Cc: <stable@vger.kernel.org> # 4.14.x-
+> Cc: Will Deacon <will@kernel.org>
+> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 
-Looks fine to me other than my question on licensing on patch 1.
+Hey,
+  So I'm not yet sure why, but I've just validated that this patch is
+causing trouble with booting AOSP on HiKey960 with 5.4-rc6 (-rc5 works
+fine).
+Its odd, because the system does boot and is alive, but seems to stall
+out at the boot animation, and userland never finishes coming up to
+the home screen. It just sits there without a useful error message
+that I can find so far.  Reverting just this patch seems to solve it
+and it boots all the way.
 
-Who did you want to take the series? I can take it with Russell's ack.
+I'll try to dig further to see what might be going on (the mali driver
+is a prime suspect here), but I wanted to raise the flag since we're
+at the end of the -rc cycle.
 
-One other side comment below.
-
-> diff --git a/arch/arm/boot/compressed/.gitignore b/arch/arm/boot/compressed/.gitignore
-> index 86b2f5d28240..2fdb4885846b 100644
-> --- a/arch/arm/boot/compressed/.gitignore
-> +++ b/arch/arm/boot/compressed/.gitignore
-> @@ -6,12 +6,3 @@ hyp-stub.S
->  piggy_data
->  vmlinux
->  vmlinux.lds
-> -
-> -# borrowed libfdt files
-> -fdt.c
-> -fdt.h
-> -fdt_ro.c
-> -fdt_rw.c
-> -fdt_wip.c
-> -libfdt.h
-> -libfdt_internal.h
-> diff --git a/arch/arm/boot/compressed/Makefile b/arch/arm/boot/compressed/Makefile
-> index 9219389bbe61..a0d645c66980 100644
-> --- a/arch/arm/boot/compressed/Makefile
-> +++ b/arch/arm/boot/compressed/Makefile
-> @@ -76,29 +76,23 @@ compress-$(CONFIG_KERNEL_LZMA) = lzma
->  compress-$(CONFIG_KERNEL_XZ)   = xzkern
->  compress-$(CONFIG_KERNEL_LZ4)  = lz4
->
-> -# Borrowed libfdt files for the ATAG compatibility mode
-> -
-> -libfdt         := fdt_rw.c fdt_ro.c fdt_wip.c fdt.c
-> -libfdt_hdrs    := fdt.h libfdt.h libfdt_internal.h
-> -
-> -libfdt_objs    := $(addsuffix .o, $(basename $(libfdt)))
-> -
-> -$(addprefix $(obj)/,$(libfdt) $(libfdt_hdrs)): $(obj)/%: $(srctree)/scripts/dtc/libfdt/%
-> -       $(call cmd,shipped)
-> +ifeq ($(CONFIG_ARM_ATAG_DTB_COMPAT),y)
-> +libfdt_objs = fdt_rw.o fdt_ro.o fdt_wip.o fdt.o atags_to_fdt.o
->
-> -$(addprefix $(obj)/,$(libfdt_objs) atags_to_fdt.o): \
-> -       $(addprefix $(obj)/,$(libfdt_hdrs))
-> +OBJS   += $(libfdt_objs)
-
-Seems like this file could benefit from doing 'OBJS-$(CONFIG_*)' style
-variables.
-
-> -ifeq ($(CONFIG_ARM_ATAG_DTB_COMPAT),y)
-> -OBJS   += $(libfdt_objs) atags_to_fdt.o
-> +# -fstack-protector-strong triggers protection checks in this code,
-> +# but it is being used too early to link to meaningful stack_chk logic.
-> +nossp_flags := $(call cc-option, -fno-stack-protector)
-> +$(foreach o, $(libfdt_objs), \
-> +       $(eval CFLAGS_$(o) := -I $(srctree)/scripts/dtc/libfdt) $(nossp_flags))
->  endif
->
->  targets       := vmlinux vmlinux.lds piggy_data piggy.o \
->                  lib1funcs.o ashldi3.o bswapsdi2.o \
->                  head.o $(OBJS)
->
-> -clean-files += piggy_data lib1funcs.S ashldi3.S bswapsdi2.S \
-> -               $(libfdt) $(libfdt_hdrs) hyp-stub.S
-> +clean-files += piggy_data lib1funcs.S ashldi3.S bswapsdi2.S hyp-stub.S
->
->  KBUILD_CFLAGS += -DDISABLE_BRANCH_PROFILING
->  KBUILD_CFLAGS += $(DISABLE_ARM_SSP_PER_TASK_PLUGIN)
-> @@ -108,15 +102,6 @@ ORIG_CFLAGS := $(KBUILD_CFLAGS)
->  KBUILD_CFLAGS = $(subst -pg, , $(ORIG_CFLAGS))
->  endif
->
-> -# -fstack-protector-strong triggers protection checks in this code,
-> -# but it is being used too early to link to meaningful stack_chk logic.
-> -nossp_flags := $(call cc-option, -fno-stack-protector)
-> -CFLAGS_atags_to_fdt.o := $(nossp_flags)
-> -CFLAGS_fdt.o := $(nossp_flags)
-> -CFLAGS_fdt_ro.o := $(nossp_flags)
-> -CFLAGS_fdt_rw.o := $(nossp_flags)
-> -CFLAGS_fdt_wip.o := $(nossp_flags)
-> -
->  ccflags-y := -fpic $(call cc-option,-mno-single-pic-base,) -fno-builtin -I$(obj)
->  asflags-y := -DZIMAGE
->
-> diff --git a/arch/arm/boot/compressed/atags_to_fdt.c b/arch/arm/boot/compressed/atags_to_fdt.c
-> index 330cd3c2eae5..53a60ba066a1 100644
-> --- a/arch/arm/boot/compressed/atags_to_fdt.c
-> +++ b/arch/arm/boot/compressed/atags_to_fdt.c
-> @@ -1,4 +1,5 @@
->  // SPDX-License-Identifier: GPL-2.0
-> +#include <linux/libfdt_env.h>
->  #include <asm/setup.h>
->  #include <libfdt.h>
->
-> diff --git a/arch/arm/boot/compressed/fdt.c b/arch/arm/boot/compressed/fdt.c
-> new file mode 100644
-> index 000000000000..f8ea7a201ab1
-> --- /dev/null
-> +++ b/arch/arm/boot/compressed/fdt.c
-> @@ -0,0 +1,2 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +#include "../../../../lib/fdt.c"
-> diff --git a/arch/arm/boot/compressed/fdt_ro.c b/arch/arm/boot/compressed/fdt_ro.c
-> new file mode 100644
-> index 000000000000..93970a4ad5ae
-> --- /dev/null
-> +++ b/arch/arm/boot/compressed/fdt_ro.c
-> @@ -0,0 +1,2 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +#include "../../../../lib/fdt_ro.c"
-> diff --git a/arch/arm/boot/compressed/fdt_rw.c b/arch/arm/boot/compressed/fdt_rw.c
-> new file mode 100644
-> index 000000000000..f7c6b8b7e01c
-> --- /dev/null
-> +++ b/arch/arm/boot/compressed/fdt_rw.c
-> @@ -0,0 +1,2 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +#include "../../../../lib/fdt_rw.c"
-> diff --git a/arch/arm/boot/compressed/fdt_wip.c b/arch/arm/boot/compressed/fdt_wip.c
-> new file mode 100644
-> index 000000000000..048d2c7a088d
-> --- /dev/null
-> +++ b/arch/arm/boot/compressed/fdt_wip.c
-> @@ -0,0 +1,2 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +#include "../../../../lib/fdt_wip.c"
-> diff --git a/arch/arm/boot/compressed/libfdt_env.h b/arch/arm/boot/compressed/libfdt_env.h
-> deleted file mode 100644
-> index b36c0289a308..000000000000
-> --- a/arch/arm/boot/compressed/libfdt_env.h
-> +++ /dev/null
-> @@ -1,22 +0,0 @@
-> -/* SPDX-License-Identifier: GPL-2.0 */
-> -#ifndef _ARM_LIBFDT_ENV_H
-> -#define _ARM_LIBFDT_ENV_H
-> -
-> -#include <linux/types.h>
-> -#include <linux/string.h>
-> -#include <asm/byteorder.h>
-> -
-> -#define INT_MAX                        ((int)(~0U>>1))
-> -
-> -typedef __be16 fdt16_t;
-> -typedef __be32 fdt32_t;
-> -typedef __be64 fdt64_t;
-> -
-> -#define fdt16_to_cpu(x)                be16_to_cpu(x)
-> -#define cpu_to_fdt16(x)                cpu_to_be16(x)
-> -#define fdt32_to_cpu(x)                be32_to_cpu(x)
-> -#define cpu_to_fdt32(x)                cpu_to_be32(x)
-> -#define fdt64_to_cpu(x)                be64_to_cpu(x)
-> -#define cpu_to_fdt64(x)                cpu_to_be64(x)
-> -
-> -#endif
-> --
-> 2.17.1
->
+thanks
+-john
 
 _______________________________________________
 linux-arm-kernel mailing list
