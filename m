@@ -2,87 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF370F068A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 21:01:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA199F06A7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 21:08:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EZrabF5jUyeMecBSwVF7qsyEqLPIKvo48GLg/crmzxo=; b=kV5YY4PkaX9wnj
-	t4ci/3Ag0St9pIEc2GHxoROxYFRP2GjVtcGF+A1pgQ24KUXqx+Wg7oj5vR9OS690ohKjF+a///p6z
-	a5yF6t1i7EqBBo7bG9jaQdmcRFbHa1kl5fOuW/6pCiPJKjqp0ZO4C9dzlz1mMoOpNxHcf8Q0FsXh3
-	gEUsa6gnNaM3g0oxJPcgDZ/OUHFrqWmuoMrNIP6AMNUzMKj6rraI5n2OMSd5UdxZvj5ftNOAwPiyj
-	+iQ1cdQq8uEgxBGvtRJ9LfUVz2fN47nOR6JyHCAP98Nh6/CrI6j3jJgAWX48aS6ZEVJAdc/u/qZWs
-	ptQRbT2nWiiMM9kL9HnQ==;
+	List-Owner; bh=+Tvrrlyow+XjKQ0oJqAIydZypMd7epdC4617NNgMuH8=; b=ENNCR9vBKhGvLk
+	roUhnp4Ezac5O+SjYbPH8pUj04CL9wgQPF+u4JV99RbhFlwmmr/XDM0LBRu3fh2aITWnI6zxB+V14
+	0VeBdg+VU1vBtnSD19z8taMJLuDF5qJg89fJ5rFZ7Qz3ifXK3npd2/bz4PrW0PK1M4wiGWbDE83zK
+	kbPhW1nskfTVfs27xGa/Mi4lhAo/8yzdM+BgK43shkVxOZo4oNDYCDpIrV03McFpHWCWd+j3XjF2t
+	CeitB1fSgXpLCVP3tiYWW4bG7/tfsm+0TR67xEVnZK+lPVD+sU1+n35FlWN8DPihgoPvxe1J5dwzK
+	gcd4gKT5oyFu8+DIm9hA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS50W-0004BE-V9; Tue, 05 Nov 2019 20:00:52 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1iS57a-0006mU-KP; Tue, 05 Nov 2019 20:08:10 +0000
+Received: from gate2.alliedtelesis.co.nz ([2001:df5:b000:5::4])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS50L-00047q-G6
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 20:00:42 +0000
-Received: by mail-pf1-x443.google.com with SMTP id d13so16574424pfq.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 Nov 2019 12:00:38 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ijT2GiWjIk0i5IPeCeqTo4IKLHUoxPnZNqQGZcLSsUM=;
- b=IlrzHL7ezty7NJqDoQVYCYZlgd5TLmozpoptOSResx7u8dduPfsVCwxetHhcwt9646
- G5tawFW78NnqVIQt8407pHG1e5zjGMrJqwSAl/oTDeue+ZI2bATAOFZnrvI5R4CrFfiJ
- n/6N9z9oo1SS6gVNC+qeZlwIfm5V4ROnhCdfuQ88aX5YBI34+oEw7Plr+gCPLfYF88Vv
- t5tkx9zp3H7o8W4fjZlCkI79/q3S/1dYYa3tpdlZAhUsRg24PXeyBp+HEkPn07uvN5Ub
- L9GkaFYee6+WNZPm2Nz3Y0BWrpxuapPuy18/e3w0kK2dmoGn0+nwp0yPpHzqG6gUGVPj
- itFQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ijT2GiWjIk0i5IPeCeqTo4IKLHUoxPnZNqQGZcLSsUM=;
- b=W6C9SzKdhrPWihfdgUkhW2Qx4zR+V3GEqOWbwEZi94y+jxcJu5aiLOnKDFp34UrliJ
- vKSXQ3Fm5CKZWw4F5GHLYOjCsGmnn9cCWxtb8DaDALhLLfag9Snmk+FY+SfCinYXpMzy
- jAeMu4nYFvbrfyUF9pyRr0OGvldcQ8A1eRaomOlpCbtq1cMMetEWm16zgUfuFTMU7B00
- ppynzVpsPIYANgxyZoxDD8ZZwlvZKnI27/4A0RZNDf5tWSKI60K3sR0gIgPHuN2jaI82
- Y/3lrL8/AzVjNs1kU02mWACCDd4of/TIsdPUkv0qCaODg2juqwjc8wvWNGQvlPNFIbBA
- /OWw==
-X-Gm-Message-State: APjAAAXt98crDkZCyOFgGpAXX+GUyh5TAHCqCkxxjdFSIYP70vv7NlaS
- Pyocl0l2GCKgqOrgdwRo75NVToNbAkVSSVMTxLxZow==
-X-Google-Smtp-Source: APXvYqyIFpCKniQqTsvrpnzyV0E86VzxTLXkPlxCMRfFt3g4qhjOa1M4benI/dNGWIb6R6YCFbVunWVoJWRhpBKoHRs=
-X-Received: by 2002:a17:90a:178e:: with SMTP id
- q14mr1056137pja.134.1572984037414; 
- Tue, 05 Nov 2019 12:00:37 -0800 (PST)
+ id 1iS57Q-0006kt-Ng
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 20:08:03 +0000
+Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id B13C28365A;
+ Wed,  6 Nov 2019 09:07:49 +1300 (NZDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
+ s=mail181024; t=1572984469;
+ bh=lHjwz71E/Xg4m738q0J/T5/3YlB+63AdTckR6CbpTf8=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To;
+ b=sbMfx1ncLH2xNDcnnjsrpyEOYMV4A5Xmp1wQ+aoovd95E2gMR8deiWjdQIHC6A/gc
+ flkdKoFwf4E8fcA8d3cA+m8dJADMOshyt1pbTwCLaPCGjeWXFxnNWh+s2r/ZRRUrxt
+ /lSTb31yObZniMqgDlnlXZ0sPrajuUNC3ec1HkGYW17UQnNVTigsiAwhK+czrwX8H1
+ rbow6hqbGlimL09AgB6m3fpde6IXLNJsFPIGCZXXR3mZxMi3jBEKvMwTU3YIW0eo2N
+ 3nzqhmysAaOk/BAZXud2j1E/PnJ4tosJZmiHSWIcK94NZ+ENnGNbQThOfcRfxSQwZy
+ p5B0SEZ29LGbw==
+Received: from svr-chch-ex1.atlnz.lc (Not Verified[10.32.16.77]) by
+ mmarshal3.atlnz.lc with Trustwave SEG (v7, 5, 8, 10121)
+ id <B5dc1d6940000>; Wed, 06 Nov 2019 09:07:49 +1300
+Received: from svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8:409d:36f5:8899:92e8)
+ by svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8:409d:36f5:8899:92e8) with
+ Microsoft SMTP Server (TLS) id 15.0.1156.6; Wed, 6 Nov 2019 09:07:47 +1300
+Received: from svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8]) by
+ svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8%12]) with mapi id
+ 15.00.1156.000; Wed, 6 Nov 2019 09:07:47 +1300
+From: Chris Packham <Chris.Packham@alliedtelesis.co.nz>
+To: "broonie@kernel.org" <broonie@kernel.org>, "linus.walleij@linaro.org"
+ <linus.walleij@linaro.org>, "bgolaszewski@baylibre.com"
+ <bgolaszewski@baylibre.com>
+Subject: Re: [PATCH] gpio: xgs-iproc: Fix section mismatch on device tree
+ match table
+Thread-Topic: [PATCH] gpio: xgs-iproc: Fix section mismatch on device tree
+ match table
+Thread-Index: AQHVk9d2GHMYQw+EyUqkZ/V+4uyDVad8J8QA
+Date: Tue, 5 Nov 2019 20:07:47 +0000
+Message-ID: <b8563b7fde5bf3fa7ac255e8d3149dcd6d773f7f.camel@alliedtelesis.co.nz>
+References: <20191105124915.34100-1-broonie@kernel.org>
+In-Reply-To: <20191105124915.34100-1-broonie@kernel.org>
+Accept-Language: en-NZ, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [2001:df5:b000:22:d4b1:92dc:7823:3af2]
+Content-ID: <212704B755D168488BFC89B45BF894EA@atlnz.lc>
 MIME-Version: 1.0
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20191101221150.116536-1-samitolvanen@google.com>
- <20191101221150.116536-12-samitolvanen@google.com>
- <20191104171132.GB2024@lakrids.cambridge.arm.com>
- <CABCJKufDnLjP9vA-wSW0gSY05Cbr=NOpJ-WCh-bdj2ZNq7VNXw@mail.gmail.com>
- <20191105091301.GB4743@lakrids.cambridge.arm.com>
-In-Reply-To: <20191105091301.GB4743@lakrids.cambridge.arm.com>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Tue, 5 Nov 2019 12:00:25 -0800
-Message-ID: <CAKwvOd=3mEUaxMX7Q6n3DAMAdge4eB=KYdiQxn2tY77taCD1NA@mail.gmail.com>
-Subject: Re: [PATCH v4 11/17] arm64: disable function graph tracing with SCS
-To: Mark Rutland <mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_120041_541883_15F4A595 
-X-CRM114-Status: UNSURE (   6.79  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20191105_120802_107852_9101A8B7 
+X-CRM114-Status: GOOD (  18.28  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -90,8 +87,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,33 +98,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
- LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Masami Hiramatsu <mhiramat@kernel.org>,
- Sami Tolvanen <samitolvanen@google.com>, Marc Zyngier <maz@kernel.org>,
- Kernel Hardening <kernel-hardening@lists.openwall.com>,
- Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "bcm-kernel-feedback-list@broadcom.com"
+ <bcm-kernel-feedback-list@broadcom.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 5, 2019 at 11:55 AM Mark Rutland <mark.rutland@arm.com> wrote:
-> Similarly, if clang gained -fpatchable-funciton-etnry, we'd get that for
-> free.
+Hi Mark,
 
-Filed: https://bugs.llvm.org/show_bug.cgi?id=43912
--- 
-Thanks,
-~Nick Desaulniers
+On Tue, 2019-11-05 at 12:49 +0000, Mark Brown wrote:
+> The table of devicetree identifiers is annotated as __initconst
+> indicating that it can be discarded after kernel boot but it is
+> referenced from the driver struct which has no init annotation leading
+> to a linker warning:
+> 
+> WARNING: vmlinux.o(.data+0x82d58): Section mismatch in reference from the variable bcm_iproc_gpio_driver to the variable .init.rodata:bcm_iproc_gpio_of_match
+> The variable bcm_iproc_gpio_driver references
+> the variable __initconst bcm_iproc_gpio_of_match
+> 
+> Since drivers can be probed after init the lack of annotation on the
+> driver struct is correct so remove the annotation from the match table.
+> 
+> Signed-off-by: Mark Brown <broonie@kernel.org>
 
+Thanks for picking this up
+
+Reviewed-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
+
+Is it worth including 'Fixes: 6a41b6c5fc20 ("gpio: Add xgs-iproc
+driver")'?
+
+> ---
+>  drivers/gpio/gpio-xgs-iproc.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/gpio/gpio-xgs-iproc.c b/drivers/gpio/gpio-xgs-iproc.c
+> index a3fdd95cc9e6..bb183f584d92 100644
+> --- a/drivers/gpio/gpio-xgs-iproc.c
+> +++ b/drivers/gpio/gpio-xgs-iproc.c
+> @@ -299,7 +299,7 @@ static int __exit iproc_gpio_remove(struct platform_device *pdev)
+>  	return 0;
+>  }
+>  
+> -static const struct of_device_id bcm_iproc_gpio_of_match[] __initconst = {
+> +static const struct of_device_id bcm_iproc_gpio_of_match[] = {
+>  	{ .compatible = "brcm,iproc-gpio-cca" },
+>  	{}
+>  };
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
