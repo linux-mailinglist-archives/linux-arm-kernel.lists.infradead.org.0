@@ -2,89 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3377EFEE1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 14:43:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99EFBEFF0A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 14:53:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=/vKq2zPwEuIAROJY+xNeZQOvJrUmsD+NutqcjNEgZcs=; b=IZs
-	h1Dyg9Doh0nW4QMOnuWkjMcaCdrG1cY2EkLLpywaDMHE9ITzW+8wKlLiY4Nnx9VquV/wL7Rr3W84v
-	R953vrgFQePrmijybbYyJlaHoVm0X60a1BEQTiAEi3fC/oAK8pWWzVFe0kUcAN+NxHSmUPMI1evoe
-	dYsfiz5Oez3iF4Htg6eA+xma90Zi0LfFmI1cwC6Di1CPYvOPP0RnvFXV9b6vdOAPg8rc8t1KgOj/a
-	1LLdRkfu56lZNOIN+uT6FWSnrefKIS5bscskwzg8XeW+8rfgLpjmFqY00KEGgWBTOkfRYVfAs3lyk
-	i1x0+dEg8zhzjG1VB1+ufpyxVUbzJew==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZriPCZTO7w/Xr+dTYOGC75YMP7M31L8DZDKcYTQJRFY=; b=u3mQq2XMB2z46o
+	QsH6hA0c6quM1h4krv8vOCWdMehjvePSjgBl+I1E1otoST71ant1kJDsksz4njLp/Map9qZ1XMlpk
+	JvQUHmCCLDnoZpXb8Zmxn9p04IdKwQikmCcXgYMQmvrARCL/HsZOYkKw/kAOXac4JTIPw3Fm1BHdP
+	3Rp2HpR+ElVr7bGWUNE0B3CNiUnigv7617R8Uxw27zcPNiJCzN8f1brpoxhCUjKog0VJ14ZbM/tRA
+	a/DYDLm3NahNkgo6JEYajKuafOpZOyySNEXl7Bx1+warqVoI3YQQ6MUPf7VsCS7o3YKFwsLsQhDEy
+	6L5MQRPQNuy+MKwy8kHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRz70-0006ns-Jc; Tue, 05 Nov 2019 13:43:10 +0000
-Received: from mail-yw1-xc44.google.com ([2607:f8b0:4864:20::c44])
+	id 1iRzGx-0002Bh-BY; Tue, 05 Nov 2019 13:53:27 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRz6s-0006n4-5L
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 13:43:03 +0000
-Received: by mail-yw1-xc44.google.com with SMTP id a83so6856892ywe.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 Nov 2019 05:43:01 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=njeGNBuVFQ43NI4DdNgIJL31gMijUvEBHfE4Xmmetwc=;
- b=BvXGUDs9nIxDhMeJUhdvT5Mrkk2WJyzK542AKZFQUaW/ATM//VfL8Iq7pR9VcpInrH
- nMZXU3awfM6KLv7i2Uwrbxo0Od9JNV55xhQGK2p0SqX7bVoaXRWACVTBRwroflPvKvbA
- TSMnUaTfzakRXNgz5z2iPZV/GqxRbkjgogUPz+XSr0GHX5YzAVgPGoraW7JmHlCkfvEu
- RybalO/nMyZ9qLjIZxFCYOUIZP/7HczjKYDtYqspSOKY6zSSF3PyDWFLi3zUSX6idmus
- PoZVXbf82wTBtdTUHhOZN3EEBK7H6SP98iNkAcm5QfObC6OKLJlJn8GcW6emah+DFHZ4
- Uv+w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=njeGNBuVFQ43NI4DdNgIJL31gMijUvEBHfE4Xmmetwc=;
- b=F+JM2WErM0nxsxwBqpqTMsNRgEYkbiTrNFWWW/vRjuRZC9Qw62EjdsSOto+QGOzfMd
- f6spq3yvlKccxZb4QfC7xocNZ+sQ2alW7WqJ2Rc1gEeKfZEW3jx/ShgxOpv8cmk7/VHH
- GIEc+rMB7DL/cmTGILSvTwrt07IeAoRjXt0pRkysScqbhdjqGTKVgoKbtLE7nXJ8/NC2
- mfxKFTOxnbFMzD9+rwV5oyrT+Y98Th/HEpImIf/JiIWgdEOtwheD4QqbSuFP2EkCaHFW
- CvcCgv8IbcrDckJZn1+dubZ5VxgdyCnxC7Qr8bzC565OYr+Sga9U+noQqbPsOy4x+gqG
- ZWcw==
-X-Gm-Message-State: APjAAAVQ2E57cDeZC1d1BgkCf6bDHCuYi6dVYLkdOZPHPj9CmMB8WcMj
- QH+36Ve5RvoGml+4ufUG5aAFlvC9
-X-Google-Smtp-Source: APXvYqwAZps/+Nk40M2NKxBJ1i+2bdSbJSSirVXkegeUiIlBNzUhi+OGLaa5kFersS+OrE2WTQf3LQ==
-X-Received: by 2002:a81:1ac4:: with SMTP id a187mr1397999ywa.5.1572961380383; 
- Tue, 05 Nov 2019 05:43:00 -0800 (PST)
-Received: from aford-OptiPlex-7050.logicpd.com ([174.46.170.158])
- by smtp.gmail.com with ESMTPSA id g71sm5088366ywe.90.2019.11.05.05.42.54
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 05 Nov 2019 05:42:55 -0800 (PST)
-From: Adam Ford <aford173@gmail.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] ARM: imx_v6_v7_defconfig: Enable TOUCHSCREEN_ILI210X
-Date: Tue,  5 Nov 2019 07:42:45 -0600
-Message-Id: <20191105134245.22568-1-aford173@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ id 1iRzGq-0002B7-OT
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 13:53:22 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iRzGm-0001vT-7A; Tue, 05 Nov 2019 14:53:16 +0100
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iRzGk-0007sU-H8; Tue, 05 Nov 2019 14:53:14 +0100
+Date: Tue, 5 Nov 2019 14:53:14 +0100
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: =?iso-8859-1?Q?Cl=E9ment_P=E9ron?= <peron.clem@gmail.com>
+Subject: Re: [PATCH v3 2/7] pwm: sun4i: Add an optional probe for reset line
+Message-ID: <20191105135314.f7clp7itzcioxtbw@pengutronix.de>
+References: <20191105131456.32400-1-peron.clem@gmail.com>
+ <20191105131456.32400-3-peron.clem@gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191105131456.32400-3-peron.clem@gmail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_054302_229350_435E00F4 
-X-CRM114-Status: UNSURE (   7.51  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191105_055320_794820_787591B6 
+X-CRM114-Status: GOOD (  10.06  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c44 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (aford173[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (aford173[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,40 +68,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabio Estevam <festevam@gmail.com>, adam.ford@logicpd.com,
- Sascha Hauer <s.hauer@pengutronix.de>, Russell King <linux@armlinux.org.uk>,
- linux-kernel@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, Adam Ford <aford173@gmail.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-pwm@vger.kernel.org,
+ Jernej Skrabec <jernej.skrabec@siol.net>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Philipp Zabel <pza@pengutronix.de>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The imx6q-logicpd board supports an LCD with an ili2117
-touchscreen controller.
+On Tue, Nov 05, 2019 at 02:14:51PM +0100, Cl=E9ment P=E9ron wrote:
+> From: Jernej Skrabec <jernej.skrabec@siol.net>
+> =
 
-This patch enables the TOUCHSCREEN_ILI210X which will support
-the ili2117.
+> H6 PWM core needs deasserted reset line in order to work.
+> =
 
-Signed-off-by: Adam Ford <aford173@gmail.com>
+> Add an optional probe for it.
+> =
 
-diff --git a/arch/arm/configs/imx_v6_v7_defconfig b/arch/arm/configs/imx_v6_v7_defconfig
-index 0f7381ee0c37..d1ec6afe4aee 100644
---- a/arch/arm/configs/imx_v6_v7_defconfig
-+++ b/arch/arm/configs/imx_v6_v7_defconfig
-@@ -181,6 +181,7 @@ CONFIG_INPUT_TOUCHSCREEN=y
- CONFIG_TOUCHSCREEN_ADS7846=y
- CONFIG_TOUCHSCREEN_EGALAX=y
- CONFIG_TOUCHSCREEN_GOODIX=y
-+CONFIG_TOUCHSCREEN_ILI210X=y
- CONFIG_TOUCHSCREEN_MAX11801=y
- CONFIG_TOUCHSCREEN_IMX6UL_TSC=y
- CONFIG_TOUCHSCREEN_EDT_FT5X06=y
--- 
-2.17.1
+> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> Signed-off-by: Cl=E9ment P=E9ron <peron.clem@gmail.com>
+Reviewed-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
 
+Thanks
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
 
 _______________________________________________
 linux-arm-kernel mailing list
